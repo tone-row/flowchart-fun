@@ -1,0 +1,100 @@
+html {
+  font-size: 20px;
+}
+
+body {
+  --color: #ffffff;
+  background-color: var(--color);
+}
+
+.App {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  padding: var(--space-h-px);
+}
+
+@media (min-width: 800px) {
+  .App {
+    gap: var(--space-h-px);
+    grid-template-rows: none;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+.TextareaContainer {
+  position: relative;
+  --lh: 30px;
+}
+
+.TextareaContainer textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border-radius: 3px;
+  --c3: #ffffff;
+  --c4: #d3d3d3;
+  font-size: 16px;
+  font-family: Menlo, Monaco, monospace;
+  line-height: var(--lh);
+  padding: 0 calc(var(--lh) / 2) 0 calc(var(--lh) / 2 + 20px);
+  border: 1px solid white;
+  border-width: calc(var(--lh) / 2) 0;
+  background: repeating-linear-gradient(
+    var(--c3),
+    var(--c3) calc(var(--lh) - 1px),
+    var(--c4) calc(var(--lh) - 1px),
+    var(--c4) var(--lh)
+  );
+  white-space: nowrap;
+}
+
+.TextareaContainer textarea:focus {
+  outline: none;
+}
+
+.GraphContainer {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: var(--space-v-px);
+  overflow: hidden;
+  width: 100%;
+}
+
+.GraphContainer [id="cy"] {
+  width: 100%;
+  overflow: hidden;
+}
+
+.Buttons {
+  display: grid;
+  justify-content: space-between;
+  align-items: end;
+  grid-auto-flow: column;
+}
+
+.Buttons button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 12px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.Buttons a {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+  cursor: pointer;
+}
+
+.LineNumbers {
+  position: absolute;
+  top: calc(var(--lh) / 2);
+  font-size: 16px;
+  font-family: Menlo, Monaco, monospace;
+  line-height: var(--lh);
+  opacity: 0.2;
+  left: 10px;
+}
