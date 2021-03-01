@@ -52,6 +52,15 @@ function App() {
           as="textarea"
           value={textarea}
           placeholder={defaultText}
+          onKeyDown={(e: any)=> {
+            if (e.keyCode === 9) {
+              // Tab Key pressed
+              setText(e.target.value + '  ');
+              setTextToParseThrottle(e.target.value + '  ');
+              e.preventDefault();
+              return false;
+            }
+          }}
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
             setText(e.target.value);
             setTextToParseThrottle(e.target.value);
