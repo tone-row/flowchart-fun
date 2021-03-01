@@ -16,8 +16,12 @@ import cytoscapeSvg from "cytoscape-svg";
 import { Github, Twitter } from "./svgs";
 import useLocalStorage from "react-use-localstorage";
 
-cytoscape.use(dagre);
-cytoscape.use(cytoscapeSvg);
+
+if (!cytoscape.prototype.hasInitialised) {
+  cytoscape.use(dagre);
+  cytoscape.use(cytoscapeSvg);
+  cytoscape.prototype.hasInitialised = true;
+}
 
 const LAYOUT: any = {
   name: "dagre",
@@ -29,6 +33,8 @@ const LAYOUT: any = {
 
 const lineColor = "#000000";
 const textColor = "#000000";
+const defaultCursorPosition = -1;
+const tabKeyCharacters = '  ';
 
 const defaultText = `this app works by typing
  new lines create new nodes
@@ -39,11 +45,39 @@ const defaultText = `this app works by typing
 
 function App() {
   const [textarea, setText] = useLocalStorage("flowcharts.fun", defaultText);
+  const cursorPosition = useRef<number>(defaultCursorPosition);
+  const boxRef = useRef<HTMLTextAreaElement>();
+  const setBoxRef = (boxElement: HTMLTextAreaElement) => boxRef.current = boxElement;
   const [textToParse, setTextToParse] = useReducer(
     (t: string, u: string) => u,
     textarea
   );
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
+
+  useEffect(() => {
+    setTextToParseThrottle(textarea);
+  }, [textarea, setTextToParseThrottle]);
+
+  useEffect(() => {
+    if (cursorPosition.current > defaultCursorPosition && boxRef.current) {
+      boxRef.current.selectionStart = boxRef.current.selectionEnd = cursorPosition.current
+      cursorPosition.current = defaultCursorPosition;
+    }
+  }, [textarea, cursorPosition, boxRef])
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Tab') {
+      const startIndex = e.currentTarget.selectionStart;
+      const endIndex = e.currentTarget.selectionEnd;
+      const textBeforeCursor = textarea.substring(0, startIndex);
+      const textAfterCursor = textarea.substring(endIndex);
+      cursorPosition.current = startIndex + tabKeyCharacters.length;
+      const updatedText = `${textBeforeCursor}  ${textAfterCursor}`;
+      setText(updatedText);
+      e.preventDefault();
+      return false;
+    }
+  };
 
   return (
     <Layout className={styles.App}>
@@ -54,8 +88,9 @@ function App() {
           placeholder={defaultText}
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
             setText(e.target.value);
-            setTextToParseThrottle(e.target.value);
           }}
+          onKeyDown={handleKeyDown}
+          ref={setBoxRef}
         />
         <div className={styles.LineNumbers}>
           {textarea.split("\n").map((_, i) => (
