@@ -71,7 +71,7 @@ function App() {
               const newValue = value.substring(0, selectionStart) + TAB + value.substring(selectionEnd);
               setCurrentPosition({
                 selectionStart: selectionStart + TAB.length,
-                selectionEnd: selectionStart + TAB.length
+                selectionEnd: selectionEnd + TAB.length
               });
               setText(newValue);
               setTextToParseThrottle(newValue);
