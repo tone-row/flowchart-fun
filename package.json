@@ -19,6 +19,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
+    "react-use-localstorage": "^3.5.3",
     "svg-parser": "^2.0.4",
     "typescript": "^4.1.2",
     "use-debounce": "^5.2.1",

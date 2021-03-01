@@ -13,6 +13,8 @@ import dagre from "cytoscape-dagre";
 import { saveAs } from "file-saver";
 import { useDebouncedCallback } from "use-debounce";
 import cytoscapeSvg from "cytoscape-svg";
+import { Github, Twitter } from "./svgs";
+import useLocalStorage from "react-use-localstorage";
 
 cytoscape.use(dagre);
 cytoscape.use(cytoscapeSvg);
@@ -36,10 +38,7 @@ const defaultText = `this app works by typing
     like this: (1)`;
 
 function App() {
-  const [textarea, setText] = useReducer(
-    (t: string, u: string) => u,
-    defaultText
-  );
+  const [textarea, setText] = useLocalStorage("flowcharts.fun", defaultText);
   const [textToParse, setTextToParse] = useReducer(
     (t: string, u: string) => u,
     textarea
@@ -52,6 +51,7 @@ function App() {
         <Box
           as="textarea"
           value={textarea}
+          placeholder={defaultText}
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
             setText(e.target.value);
             setTextToParseThrottle(e.target.value);
@@ -154,7 +154,8 @@ function Graph({ textToParse }: { textToParse: string }) {
             "line-height": 1.25,
             "border-width": 1,
             shape: "rectangle",
-            "font-family": "system-ui",
+            "font-family":
+              "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             width: 100,
             height: 75,
           },
@@ -173,6 +174,8 @@ function Graph({ textToParse }: { textToParse: string }) {
             label: "data(label)",
             "font-size": 10,
             "text-valign": "center",
+            "font-family":
+              "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "text-halign": "center",
             // @ts-ignore
             "edge-text-rotation": "autorotate",
@@ -201,11 +204,19 @@ function Graph({ textToParse }: { textToParse: string }) {
   return (
     <Box className={styles.GraphContainer}>
       <Layout id="cy" />
-      <Box className={styles.Buttons}>
-        <Type>
-          Made by <a href="https://twitter.com/row_tone">Tone Row</a>
+      <Box className={styles.Buttons} p={1}>
+        <div>
+          <Type>Made by Tone Row</Type>
+          <a href="https://twitter.com/row_tone">
+            <Twitter />
+          </a>
+          <a href="https://github.com/tone-row/flowchart-fun">
+            <Github />
+          </a>
+        </div>
+        <Type as="button" onClick={downloadImage}>
+          Download SVG
         </Type>
-        <button onClick={downloadImage}>Download SVG</button>
       </Box>
     </Box>
   );

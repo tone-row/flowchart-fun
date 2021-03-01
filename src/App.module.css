@@ -1,21 +1,11 @@
-html {
-  font-size: 20px;
-}
-
-body {
-  --color: #ffffff;
-  background-color: var(--color);
-}
-
 .App {
   display: grid;
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-  padding: var(--space-h-px);
+  overflow: hidden;
 }
 
 @media (min-width: 800px) {
   .App {
-    gap: var(--space-h-px);
     grid-template-rows: none;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
@@ -23,7 +13,7 @@ body {
 
 .TextareaContainer {
   position: relative;
-  --lh: 30px;
+  --lh: 25px;
 }
 
 .TextareaContainer textarea {
@@ -33,19 +23,28 @@ body {
   border-radius: 3px;
   --c3: #ffffff;
   --c4: #d3d3d3;
-  font-size: 16px;
+  font-size: 14px;
   font-family: Menlo, Monaco, monospace;
   line-height: var(--lh);
   padding: 0 calc(var(--lh) / 2) 0 calc(var(--lh) / 2 + 20px);
-  border: 1px solid white;
-  border-width: calc(var(--lh) / 2) 0;
+  border: none;
+  border-top: solid calc(var(--lh) / 2) white;
   background: repeating-linear-gradient(
     var(--c3),
     var(--c3) calc(var(--lh) - 1px),
     var(--c4) calc(var(--lh) - 1px),
     var(--c4) var(--lh)
   );
-  white-space: nowrap;
+  white-space: pre;
+}
+
+@media (min-width: 800px) {
+  .TextareaContainer {
+    --lh: 30px;
+  }
+  .TextareaContainer textarea {
+    font-size: 16px;
+  }
 }
 
 .TextareaContainer textarea:focus {
@@ -72,19 +71,22 @@ body {
   grid-auto-flow: column;
 }
 
+.Buttons div {
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--space-h-px);
+  align-items: center;
+}
+
 .Buttons button {
-  font-family: inherit;
-  font-size: inherit;
+  -webkit-appearance: none;
+  background: none;
   border: none;
-  border-radius: 3px;
-  padding: 8px 12px;
-  background-color: white;
   cursor: pointer;
 }
 
 .Buttons a {
   text-decoration: none;
-  font-weight: bold;
   color: inherit;
   cursor: pointer;
 }
