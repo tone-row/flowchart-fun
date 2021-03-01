@@ -2,6 +2,9 @@
   display: grid;
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   overflow: hidden;
+  height: 100%;
+  height: -webkit-fill-available;
+  min-height: 100%;
 }
 
 @media (min-width: 800px) {

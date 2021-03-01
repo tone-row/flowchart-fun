@@ -9,9 +9,12 @@
   padding: 0;
 }
 
+html,
+body,
 #__next,
 #root {
   height: 100%;
+  height: -webkit-fill-available;
 }
 
 html {
@@ -19,12 +22,9 @@ html {
     Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: -webkit-fill-available;
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
