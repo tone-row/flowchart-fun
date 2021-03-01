@@ -67,12 +67,11 @@ function App() {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Tab') {
-      const startIndex = e.currentTarget.selectionStart;
-      const endIndex = e.currentTarget.selectionEnd;
-      const textBeforeCursor = textarea.substring(0, startIndex);
-      const textAfterCursor = textarea.substring(endIndex);
-      cursorPosition.current = startIndex + tabKeyCharacters.length;
-      const updatedText = `${textBeforeCursor}  ${textAfterCursor}`;
+      const {selectionStart, selectionEnd} = e.currentTarget;
+      const textBeforeCursor = textarea.substring(0, selectionStart);
+      const textAfterCursor = textarea.substring(selectionEnd);
+      cursorPosition.current = selectionStart + tabKeyCharacters.length;
+      const updatedText = `${textBeforeCursor}${tabKeyCharacters}${textAfterCursor}`;
       setText(updatedText);
       e.preventDefault();
       return false;
