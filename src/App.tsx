@@ -4,7 +4,7 @@ import React, {
   useEffect,
   useReducer,
   useRef,
-} from "react";
+  useState, } from "react";
 import { Box, Layout, Type } from "@tone-row/slang";
 import styles from "./App.module.css";
 import { useThrottleCallback } from "@react-hook/throttle";
@@ -44,6 +44,16 @@ function App() {
     textarea
   );
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
+  const inputRef = useRef({} as HTMLTextAreaElement);
+  const [currentPosition, setCurrentPosition] = useState({
+    selectionStart: textarea.length,
+    selectionEnd: textarea.length
+  });
+  React.useEffect(()=> {
+    inputRef.current.selectionStart = currentPosition.selectionStart;
+    inputRef.current.selectionEnd = currentPosition.selectionEnd;
+    // eslint-disable-next-line
+  }, [textarea]);
 
   return (
     <Layout className={styles.App}>
@@ -52,16 +62,26 @@ function App() {
           as="textarea"
           value={textarea}
           placeholder={defaultText}
+          ref={inputRef}
           onKeyDown={(e: any)=> {
             if (e.keyCode === 9) {
               // Tab Key pressed
-              setText(e.target.value + '  ');
-              setTextToParseThrottle(e.target.value + '  ');
+              const TAB = "  "; // Two spaces
+              const {selectionStart, selectionEnd, value} = e.target;
+              const newValue = value.substring(0, selectionStart) + TAB + value.substring(selectionEnd);
+              setCurrentPosition({
+                selectionStart: selectionStart + TAB.length,
+                selectionEnd: selectionStart + TAB.length
+              });
+              setText(newValue);
+              setTextToParseThrottle(newValue);
               e.preventDefault();
               return false;
             }
           }}
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
+            const {selectionStart, selectionEnd} = e.target;
+            setCurrentPosition({selectionStart, selectionEnd});
             setText(e.target.value);
             setTextToParseThrottle(e.target.value);
           }}
