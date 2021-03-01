@@ -13,7 +13,7 @@
 
 .TextareaContainer {
   position: relative;
-  --lh: 25px;
+  --lh: 30px;
 }
 
 .TextareaContainer textarea {
@@ -23,7 +23,7 @@
   border-radius: 3px;
   --c3: #ffffff;
   --c4: #d3d3d3;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Menlo, Monaco, monospace;
   line-height: var(--lh);
   padding: 0 calc(var(--lh) / 2) 0 calc(var(--lh) / 2 + 20px);
@@ -36,15 +36,6 @@
     var(--c4) var(--lh)
   );
   white-space: pre;
-}
-
-@media (min-width: 800px) {
-  .TextareaContainer {
-    --lh: 30px;
-  }
-  .TextareaContainer textarea {
-    font-size: 16px;
-  }
 }
 
 .TextareaContainer textarea:focus {

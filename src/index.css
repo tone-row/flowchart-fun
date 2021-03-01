@@ -13,7 +13,7 @@ html,
 body,
 #__next,
 #root {
-  height: 100%;
+  height: -webkit-fill-available;
 }
 
 html {

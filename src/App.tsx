@@ -198,15 +198,12 @@ function Graph({ textToParse }: { textToParse: string }) {
     updateGraph();
   }, [updateGraph]);
 
-  // useeffect, if there is an error
-  // we will set to current elemetns
-
   return (
     <Box className={styles.GraphContainer}>
       <Layout id="cy" />
       <Box className={styles.Buttons} p={1}>
         <div>
-          <Type>Made by Tone Row</Type>
+          <Type>Tone Row</Type>
           <a href="https://twitter.com/row_tone">
             <Twitter />
           </a>
