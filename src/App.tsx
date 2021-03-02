@@ -125,8 +125,7 @@ function Graph({ textToParse }: { textToParse: string }) {
 
   const handleResize = useCallback(() => {
     cy.current?.invalidateDimensions();
-    cy.current?.layout(LAYOUT as any).run();
-    cy.current?.center();
+    cy.current?.animate({ fit: { padding: 5 } } as any);
   }, []);
 
   const debouncedResize = useDebouncedCallback(handleResize, 200);
