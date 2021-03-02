@@ -4,6 +4,7 @@ import React, {
   useEffect,
   useReducer,
   useRef,
+  useState,
 } from "react";
 import { Box, Layout, Type } from "@tone-row/slang";
 import styles from "./App.module.css";
@@ -15,7 +16,7 @@ import { useDebouncedCallback } from "use-debounce";
 import cytoscapeSvg from "cytoscape-svg";
 import { Github, Twitter } from "./svgs";
 import useLocalStorage from "react-use-localstorage";
-
+import FocusLock from "react-focus-lock";
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
@@ -33,8 +34,6 @@ const LAYOUT: any = {
 
 const lineColor = "#000000";
 const textColor = "#000000";
-const defaultCursorPosition = -1;
-const tabKeyCharacters = '  ';
 
 const defaultText = `this app works by typing
  new lines create new nodes
@@ -45,52 +44,46 @@ const defaultText = `this app works by typing
 
 function App() {
   const [textarea, setText] = useLocalStorage("flowcharts.fun", defaultText);
-  const cursorPosition = useRef<number>(defaultCursorPosition);
-  const boxRef = useRef<HTMLTextAreaElement>();
-  const setBoxRef = (boxElement: HTMLTextAreaElement) => boxRef.current = boxElement;
   const [textToParse, setTextToParse] = useReducer(
     (t: string, u: string) => u,
     textarea
   );
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
+  const [focusLocked, setFocusLocked] = useState(false);
 
   useEffect(() => {
     setTextToParseThrottle(textarea);
   }, [textarea, setTextToParseThrottle]);
 
   useEffect(() => {
-    if (cursorPosition.current > defaultCursorPosition && boxRef.current) {
-      boxRef.current.selectionStart = boxRef.current.selectionEnd = cursorPosition.current
-      cursorPosition.current = defaultCursorPosition;
+    function handleEscPress(e: KeyboardEvent) {
+      if (e.key === "Escape") setFocusLocked(false);
     }
-  }, [textarea, cursorPosition, boxRef])
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Tab') {
-      const {selectionStart, selectionEnd} = e.currentTarget;
-      const textBeforeCursor = textarea.substring(0, selectionStart);
-      const textAfterCursor = textarea.substring(selectionEnd);
-      cursorPosition.current = selectionStart + tabKeyCharacters.length;
-      const updatedText = `${textBeforeCursor}${tabKeyCharacters}${textAfterCursor}`;
-      setText(updatedText);
-      e.preventDefault();
-      return false;
+    if (focusLocked) {
+      const textarea = document.querySelector("textarea");
+      if (textarea) {
+        textarea.addEventListener("keydown", handleEscPress);
+        return () => textarea.removeEventListener("keydown", handleEscPress);
+      }
     }
-  };
+  }, [focusLocked]);
 
   return (
     <Layout className={styles.App}>
       <Layout className={styles.TextareaContainer}>
-        <Box
-          as="textarea"
-          value={textarea}
-          placeholder={defaultText}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
-            setText(e.target.value);
-          }}
-          onKeyDown={handleKeyDown}
-          ref={setBoxRef}
-        />
+        <FocusLock disabled={!focusLocked} className={styles.FocusLock}>
+          <Box
+            as="textarea"
+            value={textarea}
+            placeholder={defaultText}
+            onFocus={() => {
+              setFocusLocked(true);
+            }}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
+              setText(e.target.value);
+            }}
+          />
+        </FocusLock>
         <div className={styles.LineNumbers}>
           {textarea.split("\n").map((_, i) => (
             <div key={i}>{i + 1}</div>

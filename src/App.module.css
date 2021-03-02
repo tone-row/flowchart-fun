@@ -41,7 +41,7 @@
   white-space: pre;
 }
 
-.TextareaContainer textarea:focus {
+.TextareaContainer [data-focus-lock-disabled="false"] textarea:focus {
   outline: none;
 }
 
@@ -93,4 +93,8 @@
   line-height: var(--lh);
   opacity: 0.2;
   left: 10px;
+}
+
+.FocusLock {
+  height: 100%;
 }

@@ -18,6 +18,7 @@
     "file-saver": "^2.0.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-focus-lock": "^2.5.0",
     "react-scripts": "4.0.3",
     "react-use-localstorage": "^3.5.3",
     "svg-parser": "^2.0.4",
