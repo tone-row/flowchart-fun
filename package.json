@@ -1,7 +1,11 @@
 {
-  "name": "flow-chart",
-  "version": "0.1.0",
-  "private": true,
+  "name": "flowchart-fun",
+  "version": "0.0.1",
+  "main": "module/module.js",
+  "license": "MIT",
+  "bin": {
+    "flowchart-fun": "module/run.js"
+  },
   "dependencies": {
     "@react-hook/throttle": "^2.2.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -32,7 +36,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "theme": "generateTheme src/slang.config.json src/slang.css",
-    "theme:watch": "generateTheme src/slang.config.json src/slang.css -w"
+    "theme:watch": "generateTheme src/slang.config.json src/slang.css -w",
+    "build:module": "tsc --project tsconfig.module.json"
   },
   "eslintConfig": {
     "extends": [

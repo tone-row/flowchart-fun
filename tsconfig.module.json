@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "outDir": "module"
+  },
+  "files": ["src/module/generate.ts", "src/module/run.ts"],
+  "lib": ["es2015"]
+}
