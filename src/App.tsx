@@ -148,15 +148,20 @@ function Graph({ textToParse }: { textToParse: string }) {
       );
       squares = [...squares, ...svgEl.children[0].querySelectorAll("rect")];
       squares.forEach((el) => el.setAttribute("fill", "#ffffff"));
-      const correctedSvgStr = svgEl.documentElement.outerHTML;
 
+      // Add comment
+      const originalTextComment = svgEl.createComment(
+        `Original Flowchart Text (flowchart.fun):\n\n${textToParse}\n\n`
+      );
+      svgEl.children[0].appendChild(originalTextComment);
+      const correctedSvgStr = svgEl.documentElement.outerHTML;
       saveAs(
         new Blob([correctedSvgStr], {
           type: "image/svg+xml;charset=utf-8",
         })
       );
     }
-  }, []);
+  }, [textToParse]);
 
   useEffect(() => {
     errorCy.current = cytoscape();
