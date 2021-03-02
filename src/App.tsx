@@ -37,10 +37,13 @@ const textColor = "#000000";
 
 const defaultText = `this app works by typing
  new lines create new nodes
-  indentation creates child nodes
-  any text: before a colon+space creates a label
-   and: you can link to nodes with their line number in parentheses
-    like this: (1)`;
+  indentation creates child nodes 
+  and any text: before a colon+space creates a label
+ [linking] you can link to nodes using their ID in parentheses
+  like this: (1)
+  lines have a default ID of their line-number
+   but you can also supply a custom ID in brackets
+    like this: (linking)`;
 
 function App() {
   const [textarea, setText] = useLocalStorage("flowcharts.fun", defaultText);
@@ -253,6 +256,7 @@ function Graph({ textToParse }: { textToParse: string }) {
 
 export default App;
 
+const idMatch = new RegExp(/^\s*\[(.*)\]/);
 function parseText(text: string) {
   const matchIndent = new RegExp(/^( )+/g);
   const lines = text.split("\n");
@@ -261,12 +265,10 @@ function parseText(text: string) {
   for (const line of lines) {
     let indentMatch = line.match(matchIndent);
     let linkMatch: RegExpMatchArray | null | string = getNodeLabel(line).match(
-      /^\((\d+)\)$/
+      /^\((.+)\)$/
     );
     if (linkMatch) {
-      const linkToLine = parseInt(linkMatch[1]);
-      linkMatch =
-        linkToLine.toString() === linkMatch[1] ? linkToLine.toString() : null; // valid number
+      linkMatch = linkMatch[1];
     }
 
     if (indentMatch) {
@@ -286,8 +288,8 @@ function parseText(text: string) {
       }
       // If we found a parent
       if (parent) {
-        const source = parent.toString();
-        const target = linkMatch ? linkMatch : lineNumber.toString();
+        const source = getNodeId(lines[checkLine - 1], checkLine);
+        const target = linkMatch ? linkMatch : getNodeId(line, lineNumber);
         elements.push({
           data: {
             id: [source, target].join("_"),
@@ -299,28 +301,38 @@ function parseText(text: string) {
       }
     }
     if (!linkMatch) {
+      // Check for custom id
+      const hasId = line.match(idMatch);
       elements.push({
         data: {
-          id: lineNumber.toString(),
+          id: hasId ? hasId[1] : lineNumber.toString(),
           label: getNodeLabel(line),
         },
       });
     }
     lineNumber++;
   }
-
+  debugger;
   return elements;
 }
 
 function getEdgeLabel(line: string) {
-  if (line.indexOf(": ") > -1) {
-    return line.split(": ")[0].trim();
+  const hasId = line.match(idMatch);
+  const lineWithoutId = hasId ? line.slice(hasId[0].length) : line;
+  if (lineWithoutId.indexOf(": ") > -1) {
+    return lineWithoutId.split(": ")[0].trim();
   }
   return "";
 }
 function getNodeLabel(line: string) {
-  if (line.indexOf(": ") > -1) {
-    return line.split(": ").slice(1).join(": ").trim();
+  const hasId = line.match(idMatch);
+  const lineWithoutId = hasId ? line.slice(hasId[0].length) : line;
+  if (lineWithoutId.indexOf(": ") > -1) {
+    return lineWithoutId.split(": ").slice(1).join(": ").trim();
   }
-  return line.trim();
+  return lineWithoutId.trim();
+}
+function getNodeId(line: string, lineNumber: number) {
+  const hasId = line.match(idMatch);
+  return hasId ? hasId[1] : lineNumber.toString();
 }
