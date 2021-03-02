@@ -312,7 +312,6 @@ function parseText(text: string) {
     }
     lineNumber++;
   }
-  debugger;
   return elements;
 }
 

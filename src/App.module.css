@@ -5,6 +5,11 @@
   height: 100%;
   height: -webkit-fill-available;
   min-height: 100%;
+  max-height: 100%;
+}
+
+.FocusLock {
+  height: 100%;
 }
 
 @media (min-width: 800px) {
@@ -93,8 +98,4 @@
   line-height: var(--lh);
   opacity: 0.2;
   left: 10px;
-}
-
-.FocusLock {
-  height: 100%;
 }
