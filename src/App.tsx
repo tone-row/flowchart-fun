@@ -153,7 +153,7 @@ function Graph({ textToParse }: { textToParse: string }) {
     }
   }, []);
 
-  const debouncedResize = useDebouncedCallback(handleResize, 500);
+  const debouncedResize = useDebouncedCallback(handleResize, 250);
 
   useEffect(() => {
     window.addEventListener("resize", debouncedResize.callback);
