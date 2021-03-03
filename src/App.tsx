@@ -1,5 +1,7 @@
 import React, {
   ChangeEvent,
+  CSSProperties,
+  UIEvent,
   useCallback,
   useEffect,
   useReducer,
@@ -71,9 +73,29 @@ function App() {
     }
   }, [focusLocked]);
 
+  const handleTextareaScroll = useCallback(
+    (e: UIEvent<HTMLTextAreaElement>) => {
+      // @ts-ignore
+      e.target.parentNode?.parentNode?.style.setProperty(
+        "--scroll",
+        // @ts-ignore
+        e.target.scrollTop.toString()
+      );
+    },
+    []
+  );
+
+  const throttleHandleTextareaScroll = useThrottleCallback(
+    handleTextareaScroll,
+    60
+  );
+
   return (
     <Layout className={styles.App}>
-      <Layout className={styles.TextareaContainer}>
+      <Layout
+        className={styles.TextareaContainer}
+        style={{ "--scroll": 0 } as CSSProperties}
+      >
         <FocusLock disabled={!focusLocked} className={styles.FocusLock}>
           <Box
             as="textarea"
@@ -85,6 +107,7 @@ function App() {
             onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
               setText(e.target.value);
             }}
+            onScroll={throttleHandleTextareaScroll}
           />
         </FocusLock>
         <div className={styles.LineNumbers}>
@@ -124,11 +147,13 @@ function Graph({ textToParse }: { textToParse: string }) {
   }, [textToParse]);
 
   const handleResize = useCallback(() => {
-    cy.current?.invalidateDimensions();
-    cy.current?.animate({ fit: { padding: 5 } } as any);
+    if (cy.current) {
+      cy.current.resize();
+      cy.current.animate({ fit: { padding: 5 } } as any);
+    }
   }, []);
 
-  const debouncedResize = useDebouncedCallback(handleResize, 200);
+  const debouncedResize = useDebouncedCallback(handleResize, 250);
 
   useEffect(() => {
     window.addEventListener("resize", debouncedResize.callback);
