@@ -4,6 +4,8 @@
 
 Made with [create react app](https://github.com/facebook/create-react-app) and [cytoscape.js](https://github.com/cytoscape/cytoscape.js)
 
+![app](https://github.com/tone-row/flowchart-fun/blob/main/public/app.png?raw=true)
+
 ## In the works
 
 - A NPM package that generates the svg from a text file. Useful for documentation.
