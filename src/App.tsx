@@ -222,6 +222,9 @@ function Graph({ textToParse }: { textToParse: string }) {
         {
           selector: "edge",
           style: {
+            // @ts-ignore
+            "loop-direction": "0deg",
+            "loop-sweep": "20deg",
             width: 1,
             "text-background-opacity": 1,
             "text-background-color": "#ffffff",
