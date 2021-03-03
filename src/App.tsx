@@ -45,7 +45,14 @@ const defaultText = `this app works by typing
   like this: (1)
   lines have a default ID of their line-number
    but you can also supply a custom ID in brackets
-    like this: (linking)`;
+    like this: (linking) // use single line comments
+/*
+or 
+multiline 
+comments
+
+Have fun! 🎉
+*/`;
 
 function App() {
   const [textarea, setText] = useLocalStorage("flowcharts.fun", defaultText);
@@ -289,8 +296,37 @@ function parseText(text: string) {
   const lines = text.split("\n");
   let elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
-  for (const line of lines) {
-    if (line === "") continue;
+
+  //Handle comments
+  let insideComment = false;
+  function removeInlineComment(str: string) {
+    const multiLineStart = str.includes("/*");
+    const multiLineEnd = str.includes("*/");
+    const singleLineStart = str.includes("//");
+
+    if (multiLineStart && multiLineEnd) {
+      return [
+        str.slice(0, str.indexOf("/*")),
+        str.slice(str.indexOf("*/") + 2),
+      ].join("");
+    } else if (multiLineStart) {
+      insideComment = true;
+      return str.slice(0, str.indexOf("/*"));
+    } else if (multiLineEnd) {
+      insideComment = false;
+      return str.slice(str.indexOf("*/") + 2);
+    } else if (singleLineStart) {
+      return str.slice(0, str.indexOf("//"));
+    }
+    return str;
+  }
+
+  // Loop
+  for (let line of lines) {
+    if (line.trim().indexOf("//") === 0) continue;
+    line = removeInlineComment(line);
+    if (insideComment) continue;
+    if (line.trim() === "") continue;
     let indentMatch = line.match(matchIndent);
     let linkMatch: RegExpMatchArray | null | string = getNodeLabel(line).match(
       /^\((.+)\)$/
