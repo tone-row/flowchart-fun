@@ -56,7 +56,12 @@
   gap: var(--space-v-px);
   overflow: hidden;
   width: 100%;
-  height: 100vh;
+}
+
+@media (min-width: 800px) {
+  .GraphContainer {
+    height: 100vh;
+  }
 }
 
 .GraphContainer [id="cy"] {
