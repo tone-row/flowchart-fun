@@ -290,6 +290,7 @@ function parseText(text: string) {
   let elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
   for (const line of lines) {
+    if (line === "") continue;
     let indentMatch = line.match(matchIndent);
     let linkMatch: RegExpMatchArray | null | string = getNodeLabel(line).match(
       /^\((.+)\)$/
