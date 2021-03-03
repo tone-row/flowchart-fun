@@ -8,6 +8,7 @@ Made with [create react app](https://github.com/facebook/create-react-app) and [
 
 - A NPM package that generates the svg from a text file. Useful for documentation.
 - Converting https://flowchart.fun to a PWA so it is installable
+- Add tests so things don't break as we go
 
 ## How to run locally
 
