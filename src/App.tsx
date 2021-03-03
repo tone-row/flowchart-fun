@@ -1,5 +1,7 @@
 import React, {
   ChangeEvent,
+  CSSProperties,
+  UIEvent,
   useCallback,
   useEffect,
   useReducer,
@@ -71,9 +73,29 @@ function App() {
     }
   }, [focusLocked]);
 
+  const handleTextareaScroll = useCallback(
+    (e: UIEvent<HTMLTextAreaElement>) => {
+      // @ts-ignore
+      e.target.parentNode?.parentNode?.style.setProperty(
+        "--scroll",
+        // @ts-ignore
+        e.target.scrollTop.toString()
+      );
+    },
+    []
+  );
+
+  const throttleHandleTextareaScroll = useThrottleCallback(
+    handleTextareaScroll,
+    60
+  );
+
   return (
     <Layout className={styles.App}>
-      <Layout className={styles.TextareaContainer}>
+      <Layout
+        className={styles.TextareaContainer}
+        style={{ "--scroll": 0 } as CSSProperties}
+      >
         <FocusLock disabled={!focusLocked} className={styles.FocusLock}>
           <Box
             as="textarea"
@@ -85,6 +107,7 @@ function App() {
             onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
               setText(e.target.value);
             }}
+            onScroll={throttleHandleTextareaScroll}
           />
         </FocusLock>
         <div className={styles.LineNumbers}>
