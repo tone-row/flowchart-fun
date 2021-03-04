@@ -344,8 +344,6 @@ function parseText(text: string) {
       linkMatch = linkMatch[1];
     }
 
-    if (line === " hi") debugger;
-
     if (indentMatch) {
       const indent = indentMatch[0];
       let parent;
