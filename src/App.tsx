@@ -323,10 +323,19 @@ function parseText(text: string) {
 
   // Loop
   for (let line of lines) {
-    if (line.trim().indexOf("//") === 0) continue;
+    if (line.trim().indexOf("//") === 0) {
+      lineNumber++;
+      continue;
+    }
     line = removeInlineComment(line);
-    if (insideComment) continue;
-    if (line.trim() === "") continue;
+    if (insideComment) {
+      lineNumber++;
+      continue;
+    }
+    if (line.trim() === "") {
+      lineNumber++;
+      continue;
+    }
     let indentMatch = line.match(matchIndent);
     let linkMatch: RegExpMatchArray | null | string = getNodeLabel(line).match(
       /^\((.+)\)$/
