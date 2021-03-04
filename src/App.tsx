@@ -41,7 +41,7 @@ const defaultText = `this app works by typing
  new lines create new nodes
   indentation creates child nodes 
   and any text: before a colon+space creates a label
- [linking] you can link to nodes using their ID in parentheses
+  [linking] you can link to nodes using their ID in parentheses
   like this: (1)
   lines have a default ID of their line-number
    but you can also supply a custom ID in brackets
