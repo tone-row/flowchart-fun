@@ -11,7 +11,13 @@ import React, {
 import { Box, Layout, Type } from "@tone-row/slang";
 import styles from "./App.module.css";
 import { useThrottleCallback } from "@react-hook/throttle";
-import cytoscape, { Core, CytoscapeOptions, Layouts } from "cytoscape";
+import cytoscape, {
+  Core,
+  CytoscapeOptions,
+  EdgeSingular,
+  Layouts,
+  NodeSingular,
+} from "cytoscape";
 import dagre from "cytoscape-dagre";
 import { saveAs } from "file-saver";
 import { useDebouncedCallback } from "use-debounce";
@@ -256,6 +262,21 @@ function Graph({ textToParse }: { textToParse: string }) {
       boxSelectionEnabled: false,
     });
 
+    // Hovering Events
+    function highlight(this: NodeSingular | EdgeSingular) {
+      document.documentElement.style.setProperty(
+        "--hovering",
+        this.data().lineNumber
+      );
+    }
+    function unhighlight() {
+      document.documentElement.style.removeProperty("--hovering");
+    }
+    cy.current.on("mouseover", "node, edge", highlight);
+    cy.current.on("tapstart", "node, edge", highlight);
+    cy.current.on("mouseout", "node, edge", unhighlight);
+    cy.current.on("tapend", "node, edge", unhighlight);
+
     return () => {
       cy.current?.destroy();
       errorCy.current?.destroy();
@@ -377,6 +398,7 @@ function parseText(text: string) {
             source,
             target,
             label: getEdgeLabel(line),
+            lineNumber,
           },
         });
       }
@@ -388,6 +410,7 @@ function parseText(text: string) {
         data: {
           id: hasId ? hasId[1] : lineNumber.toString(),
           label: getNodeLabel(line),
+          lineNumber,
         },
       });
     }
