@@ -20,3 +20,9 @@ Made with [create react app](https://github.com/facebook/create-react-app) and [
 - `yarn start`
 
 For more information on developing, check out [create-react-app's README](https://github.com/facebook/create-react-app/blob/master/README.md)
+
+---
+
+## Development Sponsored By
+
+[![Public Domain Publishing Company](https://github.com/tone-row/flowchart-fun/blob/main/public/pdpc.png?raw=true)](https://publicdomaincompany.com/)
