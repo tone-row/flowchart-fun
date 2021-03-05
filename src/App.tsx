@@ -24,7 +24,7 @@ import cytoscapeSvg from "cytoscape-svg";
 import { Github, Twitter } from "./svgs";
 import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
-import strip from "strip-comments";
+import strip from "@tone-row/strip-comments";
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
@@ -114,6 +114,7 @@ function App() {
             fontSize: 16,
             tabSize: 2,
             insertSpaces: true,
+            wordBasedSuggestions: false,
           }}
           onChange={(value) => value && setText(value)}
           onMount={(editor, monaco) => {

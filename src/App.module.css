@@ -36,6 +36,9 @@
   gap: var(--space-v-px);
   overflow: hidden;
   width: 100%;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 @media (min-width: 800px) {
