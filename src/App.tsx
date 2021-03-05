@@ -149,8 +149,7 @@ function Graph({
       try {
         newElements = parseText(textToParse);
         errorCy.current?.json({ elements: newElements });
-      } catch (e) {
-        console.log(e);
+      } catch {
         error = true;
         errorCy.current?.destroy();
         errorCy.current = cytoscape();
