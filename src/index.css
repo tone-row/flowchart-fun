@@ -28,3 +28,11 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
 }
+
+.node-hover {
+  background: #ededec;
+}
+
+.view-line {
+  box-shadow: 0 1px 0px #ededec;
+}
