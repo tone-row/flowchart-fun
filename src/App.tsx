@@ -115,6 +115,7 @@ function App() {
             tabSize: 2,
             insertSpaces: true,
             wordBasedSuggestions: false,
+            occurrencesHighlight: false,
           }}
           onChange={(value) => value && setText(value)}
           onMount={(editor, monaco) => {
