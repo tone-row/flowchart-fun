@@ -1,7 +1,6 @@
 import React, {
-  ChangeEvent,
-  CSSProperties,
-  UIEvent,
+  Dispatch,
+  SetStateAction,
   useCallback,
   useEffect,
   useReducer,
@@ -24,7 +23,8 @@ import { useDebouncedCallback } from "use-debounce";
 import cytoscapeSvg from "cytoscape-svg";
 import { Github, Twitter } from "./svgs";
 import useLocalStorage from "react-use-localstorage";
-import FocusLock from "react-focus-lock";
+import Editor from "@monaco-editor/react";
+import strip from "strip-comments";
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
@@ -67,74 +67,75 @@ function App() {
     textarea
   );
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
-  const [focusLocked, setFocusLocked] = useState(false);
+  const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
+  const editorRef = useRef(null);
+  const decorations = useRef<any[]>([]);
+
+  useEffect(() => {
+    if (editorRef.current) {
+      const editor = editorRef.current;
+      if (typeof hoverLineNumber === "number") {
+        //@ts-ignore
+        decorations.current = editor.deltaDecorations(
+          [],
+          [
+            {
+              range: {
+                startLineNumber: hoverLineNumber,
+                startColumn: 1,
+                endLineNumber: hoverLineNumber,
+                endColumn: 1,
+              },
+              options: {
+                isWholeLine: true,
+                className: "node-hover",
+              },
+            },
+          ]
+        );
+      } else {
+        // @ts-ignore
+        decorations.current = editor.deltaDecorations(decorations.current, []);
+      }
+    }
+  }, [hoverLineNumber]);
 
   useEffect(() => {
     setTextToParseThrottle(textarea);
   }, [textarea, setTextToParseThrottle]);
 
-  useEffect(() => {
-    function handleEscPress(e: KeyboardEvent) {
-      if (e.key === "Escape") setFocusLocked(false);
-    }
-    if (focusLocked) {
-      const textarea = document.querySelector("textarea");
-      if (textarea) {
-        textarea.addEventListener("keydown", handleEscPress);
-        return () => textarea.removeEventListener("keydown", handleEscPress);
-      }
-    }
-  }, [focusLocked]);
-
-  const handleTextareaScroll = useCallback(
-    (e: UIEvent<HTMLTextAreaElement>) => {
-      // @ts-ignore
-      e.target.parentNode?.parentNode?.style.setProperty(
-        "--scroll",
-        // @ts-ignore
-        e.target.scrollTop.toString()
-      );
-    },
-    []
-  );
-
-  const throttleHandleTextareaScroll = useThrottleCallback(
-    handleTextareaScroll,
-    60
-  );
-
   return (
     <Layout className={styles.App}>
-      <Layout
-        className={styles.TextareaContainer}
-        style={{ "--scroll": 0 } as CSSProperties}
-      >
-        <FocusLock disabled={!focusLocked} className={styles.FocusLock}>
-          <Box
-            as="textarea"
-            value={textarea}
-            placeholder={defaultText}
-            onFocus={() => {
-              setFocusLocked(true);
-            }}
-            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
-              setText(e.target.value);
-            }}
-            onScroll={throttleHandleTextareaScroll}
-          />
-        </FocusLock>
-        <div className={styles.LineNumbers}>
-          {textarea.split("\n").map((_, i) => (
-            <div key={i}>{i + 1}</div>
-          ))}
-        </div>
+      <Layout className={styles.TextareaContainer}>
+        <Editor
+          defaultValue={textarea}
+          options={{
+            minimap: { enabled: false },
+            fontSize: 16,
+            tabSize: 2,
+            insertSpaces: true,
+          }}
+          onChange={(value) => value && setText(value)}
+          onMount={(editor, monaco) => {
+            editorRef.current = editor;
+          }}
+        />
       </Layout>
-      <Graph textToParse={textToParse} />
+      <Graph
+        textToParse={textToParse}
+        setHoverLineNumber={setHoverLineNumber}
+      />
     </Layout>
   );
 }
 
-function Graph({ textToParse }: { textToParse: string }) {
+function Graph({
+  textToParse,
+  setHoverLineNumber,
+}: {
+  textToParse: string;
+  setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
+}) {
   const cy = useRef<undefined | Core>();
   const errorCy = useRef<undefined | Core>();
   const layout = useRef<undefined | Layouts>();
@@ -146,7 +147,8 @@ function Graph({ textToParse }: { textToParse: string }) {
       try {
         newElements = parseText(textToParse);
         errorCy.current?.json({ elements: newElements });
-      } catch {
+      } catch (e) {
+        console.log(e);
         error = true;
         errorCy.current?.destroy();
         errorCy.current = cytoscape();
@@ -162,7 +164,7 @@ function Graph({ textToParse }: { textToParse: string }) {
   const handleResize = useCallback(() => {
     if (cy.current) {
       cy.current.resize();
-      cy.current.animate({ fit: { padding: 5 } } as any);
+      cy.current.animate({ fit: { padding: 6 } } as any);
     }
   }, []);
 
@@ -264,13 +266,10 @@ function Graph({ textToParse }: { textToParse: string }) {
 
     // Hovering Events
     function highlight(this: NodeSingular | EdgeSingular) {
-      document.documentElement.style.setProperty(
-        "--hovering",
-        this.data().lineNumber
-      );
+      setHoverLineNumber(this.data().lineNumber);
     }
     function unhighlight() {
-      document.documentElement.style.removeProperty("--hovering");
+      setHoverLineNumber(undefined);
     }
     cy.current.on("mouseover", "node, edge", highlight);
     cy.current.on("tapstart", "node, edge", highlight);
@@ -282,7 +281,7 @@ function Graph({ textToParse }: { textToParse: string }) {
       errorCy.current?.destroy();
       layout.current = undefined;
     };
-  }, []);
+  }, [setHoverLineNumber]);
 
   useEffect(() => {
     updateGraph();
@@ -314,45 +313,12 @@ export default App;
 const idMatch = new RegExp(/^\s*\[(.*)\]/);
 function parseText(text: string) {
   const matchIndent = new RegExp(/^( )+/g);
-  const lines = text.split("\n");
+  const lines = strip(text, { preserveNewlines: true }).split("\n");
   let elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
 
-  //Handle comments
-  let insideComment = false;
-  function removeInlineComment(str: string) {
-    const multiLineStart = str.includes("/*");
-    const multiLineEnd = str.includes("*/");
-    const singleLineStart = str.includes("//");
-
-    if (multiLineStart && multiLineEnd) {
-      return [
-        str.slice(0, str.indexOf("/*")),
-        str.slice(str.indexOf("*/") + 2),
-      ].join("");
-    } else if (multiLineStart) {
-      insideComment = true;
-      return str.slice(0, str.indexOf("/*"));
-    } else if (multiLineEnd) {
-      insideComment = false;
-      return str.slice(str.indexOf("*/") + 2);
-    } else if (singleLineStart) {
-      return str.slice(0, str.indexOf("//"));
-    }
-    return str;
-  }
-
   // Loop
   for (let line of lines) {
-    if (line.trim().indexOf("//") === 0) {
-      lineNumber++;
-      continue;
-    }
-    line = removeInlineComment(line);
-    if (insideComment) {
-      lineNumber++;
-      continue;
-    }
     if (line.trim() === "") {
       lineNumber++;
       continue;
@@ -370,9 +336,16 @@ function parseText(text: string) {
       let parent;
       let checkLine = lineNumber;
       let checkLength = indent.length;
+
       while (checkLine >= 1) {
         checkLine -= 1;
         let currentLine = lines[checkLine - 1];
+
+        /* Determine whether valid line */
+        if (currentLine.trim() === "") {
+          continue;
+        }
+
         const currentLineIndent = currentLine.match(matchIndent);
         checkLength = currentLineIndent?.[0].length ?? 0;
         if (checkLength < indent.length) {
