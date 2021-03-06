@@ -109,6 +109,7 @@ function App() {
       <Layout className={styles.TextareaContainer}>
         <Editor
           defaultValue={textarea}
+          value={textarea}
           options={{
             minimap: { enabled: false },
             fontSize: 16,
@@ -126,6 +127,7 @@ function App() {
       <Graph
         textToParse={textToParse}
         setHoverLineNumber={setHoverLineNumber}
+        setText={setText}
       />
     </Layout>
   );
@@ -134,9 +136,11 @@ function App() {
 function Graph({
   textToParse,
   setHoverLineNumber,
+  setText,
 }: {
   textToParse: string;
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
+  setText: Dispatch<string>;
 }) {
   const cy = useRef<undefined | Core>();
   const errorCy = useRef<undefined | Core>();
@@ -208,11 +212,35 @@ function Graph({
 
   const downloadJson = useCallback(() => {
     if (cy.current) {
-      saveAs(
-        new File([JSON.stringify(cy.current.json())], "flowchart-fun.json")
-      );
+      const jsonExport = {
+        editorText: textToParse,
+      };
+      saveAs(new File([JSON.stringify(jsonExport)], "flowchart-fun.json"));
     }
-  }, []);
+  }, [textToParse]);
+
+  const uploadJsonInput = useRef<HTMLInputElement>();
+  const uploadJson = useCallback(() => {
+    uploadJsonInput.current = document.createElement("input");
+    uploadJsonInput.current.type = "file";
+    uploadJsonInput.current.accept = "application/json";
+    uploadJsonInput.current.click();
+    uploadJsonInput.current.onchange = (e) => {
+      const target = e.target as HTMLInputElement;
+      const file = (target.files as FileList)[0];
+
+      const fileReader = new FileReader();
+      fileReader.readAsText(file, "UTF-8");
+
+      fileReader.onload = (loadEvent) => {
+        const jsonImport = JSON.parse(
+          (loadEvent.target?.result || "") as string
+        );
+
+        setText(jsonImport["editorText"]);
+      };
+    };
+  }, [setText]);
 
   useEffect(() => {
     errorCy.current = cytoscape();
@@ -316,6 +344,11 @@ function Graph({
           <span>|</span>
           <Type as="button" onClick={downloadJson} title="Download JSON">
             JSON
+          </Type>
+        </div>
+        <div className={styles.downloadOptions}>
+          <Type as="button" onClick={uploadJson} title="Upload JSON">
+            Upload JSON
           </Type>
         </div>
       </Box>
