@@ -206,6 +206,14 @@ function Graph({
     }
   }, [textToParse]);
 
+  const downloadJson = useCallback(() => {
+    if (cy.current) {
+      saveAs(
+        new File([JSON.stringify(cy.current.json())], "flowchart-fun.json")
+      );
+    }
+  }, [textToParse]);
+
   useEffect(() => {
     errorCy.current = cytoscape();
     cy.current = cytoscape({
@@ -301,9 +309,14 @@ function Graph({
             <Github />
           </a>
         </div>
-        <Type as="button" onClick={downloadImage}>
-          Download SVG
-        </Type>
+        <div>
+          <Type as="button" onClick={downloadImage}>
+            Download SVG
+          </Type>
+          <Type as="button" onClick={downloadJson}>
+            Download JSON
+          </Type>
+        </div>
       </Box>
     </Box>
   );
