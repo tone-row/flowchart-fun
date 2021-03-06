@@ -78,3 +78,9 @@
   color: inherit;
   cursor: pointer;
 }
+
+.downloadOptions {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+}
