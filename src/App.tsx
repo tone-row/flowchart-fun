@@ -116,6 +116,16 @@ function App() {
             insertSpaces: true,
             wordBasedSuggestions: false,
             occurrencesHighlight: false,
+            renderLineHighlight: false,
+            highlightActiveIndentGuide: false,
+            scrollBeyondLastLine: false,
+            renderIndentGuides: false,
+            overviewRulerBorder: false,
+            lineDecorationsWidth: "10px",
+            renderValidationDecorations: "off",
+            hideCursorInOverviewRuler: true,
+            matchBrackets: "never",
+            lineHeight: 28,
           }}
           onChange={(value) => value && setText(value)}
           onMount={(editor, monaco) => {
@@ -267,6 +277,20 @@ function Graph({
             "edge-text-rotation": "autorotate",
           },
         },
+        {
+          selector: ".edgeHovered",
+          style: {
+            "line-color": "#aaaaaa",
+            "target-arrow-color": "#aaaaaa",
+            color: "#aaaaaa",
+          },
+        },
+        {
+          selector: ".nodeHovered",
+          style: {
+            backgroundColor: "#ededec",
+          },
+        },
       ],
       userZoomingEnabled: true,
       userPanningEnabled: true,
@@ -274,18 +298,34 @@ function Graph({
     });
 
     // Hovering Events
-    function highlight(this: NodeSingular | EdgeSingular) {
+    function nodeHighlight(this: NodeSingular | EdgeSingular) {
+      this.addClass("nodeHovered");
       setHoverLineNumber(this.data().lineNumber);
     }
-    function unhighlight() {
+    function edgeHighlight(this: NodeSingular | EdgeSingular) {
+      this.addClass("edgeHovered");
+      setHoverLineNumber(this.data().lineNumber);
+    }
+    function unhighlight(this: NodeSingular | EdgeSingular) {
+      this.removeClass("nodeHovered");
+      this.removeClass("edgeHovered");
       setHoverLineNumber(undefined);
     }
-    cy.current.on("mouseover", "node, edge", highlight);
-    cy.current.on("tapstart", "node, edge", highlight);
+    cy.current.on("mouseover", "node", nodeHighlight);
+    cy.current.on("mouseover", "edge", edgeHighlight);
+    cy.current.on("tapstart", "node", nodeHighlight);
+    cy.current.on("tapstart", "edge", edgeHighlight);
     cy.current.on("mouseout", "node, edge", unhighlight);
     cy.current.on("tapend", "node, edge", unhighlight);
 
     return () => {
+      // // @ts-ignore
+      // decorations.current &&
+      //   // @ts-ignore
+      //   editorRef.current &&
+      //   // @ts-ignore
+      //   editorRef.current.deltaDecorations(decorations.current, []);
+
       cy.current?.destroy();
       errorCy.current?.destroy();
       layout.current = undefined;

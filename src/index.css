@@ -34,5 +34,9 @@ body {
 }
 
 .view-line {
-  box-shadow: 0 1px 0px #ededec;
+  box-shadow: 1px 1px 0px #ededec;
+}
+
+.monaco-editor .line-numbers {
+  color: #b6b6b6 !important;
 }
