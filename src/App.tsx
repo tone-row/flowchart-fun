@@ -309,12 +309,13 @@ function Graph({
             <Github />
           </a>
         </div>
-        <div>
-          <Type as="button" onClick={downloadImage}>
+        <div className={styles.downloadOptions}>
+          <Type as="button" onClick={downloadImage} title="Download SVG">
             Download SVG
           </Type>
-          <Type as="button" onClick={downloadJson}>
-            Download JSON
+          <span>|</span>
+          <Type as="button" onClick={downloadJson} title="Download JSON">
+            JSON
           </Type>
         </div>
       </Box>
