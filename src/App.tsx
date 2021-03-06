@@ -212,7 +212,7 @@ function Graph({
         new File([JSON.stringify(cy.current.json())], "flowchart-fun.json")
       );
     }
-  }, [textToParse]);
+  }, []);
 
   useEffect(() => {
     errorCy.current = cytoscape();
