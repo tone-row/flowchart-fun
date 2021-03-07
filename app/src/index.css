@@ -22,6 +22,7 @@ html {
     Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --color: #dddddd;
 }
 
 body {
@@ -34,9 +35,15 @@ body {
 }
 
 .view-line {
-  box-shadow: 1px 1px 0px #ededec;
+  box-shadow: 1px 1px 0px var(--color);
 }
 
 .monaco-editor .line-numbers {
   color: #b6b6b6 !important;
+}
+
+.monaco-editor,
+.monaco-editor-background,
+.monaco-editor .inputarea.ime-input {
+  background: none !important;
 }
