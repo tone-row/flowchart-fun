@@ -25,6 +25,7 @@ import { Github, Twitter } from "./svgs";
 import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
 import strip from "@tone-row/strip-comments";
+import { Resizable } from "re-resizable";
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
@@ -70,6 +71,7 @@ function App() {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
+  const [shouldResize, triggerResize] = useState(0);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -106,7 +108,17 @@ function App() {
 
   return (
     <Layout className={styles.App}>
-      <Layout className={styles.TextareaContainer}>
+      <Resizable
+        defaultSize={{
+          width: "50%",
+          height: "auto",
+        }}
+        maxWidth="90%"
+        minWidth="10%"
+        enable={{ right: true }}
+        className={styles.TextareaContainer}
+        onResizeStop={() => triggerResize((n) => n + 1)}
+      >
         <Editor
           defaultValue={textarea}
           options={{
@@ -133,10 +145,11 @@ function App() {
             editorRef.current = editor;
           }}
         />
-      </Layout>
+      </Resizable>
       <Graph
         textToParse={textToParse}
         setHoverLineNumber={setHoverLineNumber}
+        shouldResize={shouldResize}
       />
       <div id="resizer" className={styles.resizer} />
     </Layout>
@@ -146,9 +159,11 @@ function App() {
 function Graph({
   textToParse,
   setHoverLineNumber,
+  shouldResize,
 }: {
   textToParse: string;
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
+  shouldResize: number;
 }) {
   const cy = useRef<undefined | Core>();
   const errorCy = useRef<undefined | Core>();
@@ -180,6 +195,10 @@ function Graph({
       cy.current.animate({ fit: { padding: 6 } } as any);
     }
   }, []);
+
+  useEffect(() => {
+    handleResize();
+  }, [handleResize, shouldResize]);
 
   const debouncedResize = useDebouncedCallback(handleResize, 250);
 
@@ -429,7 +448,6 @@ function parseText(text: string) {
     }
     lineNumber++;
   }
-  console.log(elements);
   return elements;
 }
 

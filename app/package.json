@@ -19,6 +19,7 @@
     "cytoscape-dagre": "^2.3.2",
     "cytoscape-svg": "^0.3.1",
     "file-saver": "^2.0.5",
+    "re-resizable": "^6.9.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",

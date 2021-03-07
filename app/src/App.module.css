@@ -11,22 +11,31 @@
 .FocusLock {
   height: 100%;
 }
-
+@media (max-width: 799px) {
+  .TextareaContainer {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+}
 @media (min-width: 800px) {
   .App {
     grid-template-rows: none;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    /* grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); */
+
+    display: flex;
   }
 
   .TextareaContainer {
     border-bottom: none;
+    box-shadow: inset -1px 0px 0px var(--color);
   }
 }
 
 .TextareaContainer {
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid #ededec;
+  border-bottom: 1px solid var(--color);
 }
 
 .GraphContainer {
