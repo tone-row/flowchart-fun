@@ -37,7 +37,7 @@ const LAYOUT: any = {
   fit: true,
   animate: true,
   rankDir: "LR",
-  spacingFactor: 1,
+  spacingFactor: 1.25,
 };
 
 const lineColor = "#000000";
