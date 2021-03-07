@@ -1,69 +1,10 @@
 {
-  "name": "flowchart-fun",
-  "version": "0.0.1",
-  "main": "module/module.js",
-  "license": "MIT",
-  "bin": {
-    "flowchart-fun": "module/run.js"
-  },
-  "dependencies": {
-    "@monaco-editor/react": "^4.0.11",
-    "@react-hook/throttle": "^2.2.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@tone-row/slang": "^1.2.30",
-    "@tone-row/strip-comments": "^2.0.1",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "cytoscape": "^3.18.1",
-    "cytoscape-dagre": "^2.3.2",
-    "cytoscape-svg": "^0.3.1",
-    "file-saver": "^2.0.5",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "react-use-localstorage": "^3.5.3",
-    "svg-parser": "^2.0.4",
-    "typescript": "^4.1.2",
-    "use-debounce": "^5.2.1",
-    "web-vitals": "^1.0.1"
-  },
+  "private": true,
+  "workspaces": [
+    "app",
+    "module"
+  ],
   "scripts": {
-    "start": "concurrently -n 'react,slang' 'react-scripts start' 'yarn theme:watch'",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "theme": "generateTheme src/slang.config.json src/slang.css",
-    "theme:watch": "generateTheme src/slang.config.json src/slang.css -w",
-    "build:module": "tsc --project tsconfig.module.json"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@types/cytoscape": "^3.14.12",
-    "@types/download": "^6.2.4",
-    "@types/file-saver": "^2.0.1",
-    "@types/strip-comments": "^2.0.0",
-    "@types/svg-parser": "^2.0.1",
-    "concurrently": "^6.0.0"
+    "start": "yarn workspace app start"
   }
 }
