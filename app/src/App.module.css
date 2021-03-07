@@ -21,8 +21,6 @@
 @media (min-width: 800px) {
   .App {
     grid-template-rows: none;
-    /* grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); */
-
     display: flex;
   }
 
