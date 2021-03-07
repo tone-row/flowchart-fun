@@ -4,8 +4,8 @@
     "esModuleInterop": true,
     "target": "es6",
     "moduleResolution": "node",
-    "outDir": "module"
+    "outDir": "lib"
   },
-  "files": ["src/module/generate.ts", "src/module/run.ts"],
+  "files": ["src/generate.ts", "src/run.ts"],
   "lib": ["es2015"]
 }
