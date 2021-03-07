@@ -125,6 +125,7 @@ function App() {
             renderValidationDecorations: "off",
             hideCursorInOverviewRuler: true,
             matchBrackets: "never",
+            selectionHighlight: false,
             lineHeight: 28,
           }}
           onChange={(value) => value && setText(value)}
@@ -137,6 +138,7 @@ function App() {
         textToParse={textToParse}
         setHoverLineNumber={setHoverLineNumber}
       />
+      <div id="resizer" className={styles.resizer} />
     </Layout>
   );
 }
@@ -211,18 +213,11 @@ function Graph({
       saveAs(
         new Blob([correctedSvgStr], {
           type: "image/svg+xml;charset=utf-8",
-        })
+        }),
+        "flowchart.svg"
       );
     }
   }, [textToParse]);
-
-  const downloadJson = useCallback(() => {
-    if (cy.current) {
-      saveAs(
-        new File([JSON.stringify(cy.current.json())], "flowchart-fun.json")
-      );
-    }
-  }, []);
 
   useEffect(() => {
     errorCy.current = cytoscape();
@@ -249,8 +244,8 @@ function Graph({
             shape: "rectangle",
             "font-family":
               "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-            width: 100,
-            height: 75,
+            width: "data(width)",
+            height: "data(height)",
           },
         },
         {
@@ -319,13 +314,6 @@ function Graph({
     cy.current.on("tapend", "node, edge", unhighlight);
 
     return () => {
-      // // @ts-ignore
-      // decorations.current &&
-      //   // @ts-ignore
-      //   editorRef.current &&
-      //   // @ts-ignore
-      //   editorRef.current.deltaDecorations(decorations.current, []);
-
       cy.current?.destroy();
       errorCy.current?.destroy();
       layout.current = undefined;
@@ -349,15 +337,9 @@ function Graph({
             <Github />
           </a>
         </div>
-        <div className={styles.downloadOptions}>
-          <Type as="button" onClick={downloadImage} title="Download SVG">
-            Download SVG
-          </Type>
-          <span>|</span>
-          <Type as="button" onClick={downloadJson} title="Download JSON">
-            JSON
-          </Type>
-        </div>
+        <Type as="button" onClick={downloadImage} title="Download SVG">
+          Download SVG
+        </Type>
       </Box>
     </Box>
   );
@@ -432,19 +414,50 @@ function parseText(text: string) {
       }
     }
     if (!linkMatch) {
+      const label = getNodeLabel(line);
+
       // Check for custom id
       const hasId = line.match(idMatch);
       elements.push({
         data: {
           id: hasId ? hasId[1] : lineNumber.toString(),
-          label: getNodeLabel(line),
+          label,
           lineNumber,
+          ...getSize(label),
         },
       });
     }
     lineNumber++;
   }
+  console.log(elements);
   return elements;
+}
+
+const base = 12.5;
+const minWidth = 8 * base;
+const minHeight = 6 * base;
+
+function getSize(label: string) {
+  const resizer = document.getElementById("resizer");
+  if (resizer) {
+    resizer.innerHTML = label;
+    if (resizer.firstChild) {
+      const range = document.createRange();
+      range.selectNodeContents(resizer.firstChild);
+      const size = Array.from(range.getClientRects()).reduce(
+        (max, { width, height }) => ({
+          width: width > max.width ? width : max.width,
+          height: height > max.height ? height : max.height,
+        }),
+        { width: 0, height: 0 }
+      );
+      return {
+        width: Math.max(minWidth, cleanup(regression(size.width))),
+        height: Math.max(minHeight, cleanup(regression(size.height))),
+      };
+    }
+  }
+  return undefined;
 }
 
 function getEdgeLabel(line: string) {
@@ -466,4 +479,14 @@ function getNodeLabel(line: string) {
 function getNodeId(line: string, lineNumber: number) {
   const hasId = line.match(idMatch);
   return hasId ? hasId[1] : lineNumber.toString();
+}
+
+// linear regression of text node width to graph node size
+function regression(x: number) {
+  return Math.floor(0.63567 * x + 5.47265);
+}
+
+// put things roughly on the same scale
+function cleanup(x: number) {
+  return Math.ceil(x / base) * base;
 }
