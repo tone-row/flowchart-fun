@@ -4,7 +4,7 @@
 
 Made with [create react app](https://github.com/facebook/create-react-app) and [cytoscape.js](https://github.com/cytoscape/cytoscape.js)
 
-![app](https://github.com/tone-row/flowchart-fun/blob/main/public/app.png?raw=true)
+![app](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
 
 ## In the works
 
