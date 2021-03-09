@@ -458,11 +458,12 @@ const minHeight = 6 * base;
 function getSize(label: string) {
   const resizer = document.getElementById("resizer");
   if (resizer) {
+    // TODO: Widen boxes as box height climbs
     // resizer.style.width = "128px";
     // const initialHeight = resizer.clientHeight;
     // const add = Math.max(0, Math.ceil((initialHeight - 150) / 50)) * 8;
     // resizer.style.width = `${128 + add}px`;
-    resizer.innerHTML = label;
+    resizer.innerHTML = preventBreakOnHypen(label);
     if (resizer.firstChild) {
       const range = document.createRange();
       range.selectNodeContents(resizer.firstChild);
@@ -474,7 +475,6 @@ function getSize(label: string) {
         width: Math.max(minWidth, cleanup(regressionX(width))),
         height: Math.max(minHeight, cleanup(regressionY(resizer.clientHeight))),
       };
-      console.log(finalSize);
       return finalSize;
     }
   }
@@ -485,6 +485,7 @@ function getEdgeLabel(line: string) {
   const hasId = line.match(idMatch);
   const lineWithoutId = hasId ? line.slice(hasId[0].length) : line;
   if (lineWithoutId.indexOf(": ") > -1) {
+    debugger;
     return lineWithoutId.split(": ")[0].trim();
   }
   return "";
@@ -492,11 +493,13 @@ function getEdgeLabel(line: string) {
 function getNodeLabel(line: string) {
   const hasId = line.match(idMatch);
   const lineWithoutId = hasId ? line.slice(hasId[0].length) : line;
+  let value = lineWithoutId.trim();
   if (lineWithoutId.indexOf(": ") > -1) {
-    return lineWithoutId.split(": ").slice(1).join(": ").trim();
+    value = lineWithoutId.split(": ").slice(1).join(": ").trim();
   }
-  return lineWithoutId.trim();
+  return stripSlashes(value);
 }
+
 function getNodeId(line: string, lineNumber: number) {
   const hasId = line.match(idMatch);
   return hasId ? hasId[1] : lineNumber.toString();
@@ -513,4 +516,12 @@ function regressionY(x: number) {
 // put things roughly on the same scale
 function cleanup(x: number) {
   return Math.ceil(x / base) * base;
+}
+
+function stripSlashes(str: string) {
+  return str.replace(/\\(.)/gm, "$1");
+}
+
+function preventBreakOnHypen(str: string) {
+  return str.replace(/-/gm, "&#x2011;");
 }
