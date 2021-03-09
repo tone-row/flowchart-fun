@@ -458,21 +458,24 @@ const minHeight = 6 * base;
 function getSize(label: string) {
   const resizer = document.getElementById("resizer");
   if (resizer) {
-    resizer.innerHTML = label;
+    // TODO: Widen boxes as box height climbs
+    // resizer.style.width = "128px";
+    // const initialHeight = resizer.clientHeight;
+    // const add = Math.max(0, Math.ceil((initialHeight - 150) / 50)) * 8;
+    // resizer.style.width = `${128 + add}px`;
+    resizer.innerHTML = preventBreakOnHypen(label);
     if (resizer.firstChild) {
       const range = document.createRange();
       range.selectNodeContents(resizer.firstChild);
-      const size = Array.from(range.getClientRects()).reduce(
-        (max, { width, height }) => ({
-          width: width > max.width ? width : max.width,
-          height: height > max.height ? height : max.height,
-        }),
-        { width: 0, height: 0 }
+      const width = Array.from(range.getClientRects()).reduce(
+        (max, { width }) => (width > max ? width : max),
+        0
       );
-      return {
-        width: Math.max(minWidth, cleanup(regression(size.width))),
-        height: Math.max(minHeight, cleanup(regression(size.height))),
+      const finalSize = {
+        width: Math.max(minWidth, cleanup(regressionX(width))),
+        height: Math.max(minHeight, cleanup(regressionY(resizer.clientHeight))),
       };
+      return finalSize;
     }
   }
   return undefined;
@@ -482,6 +485,7 @@ function getEdgeLabel(line: string) {
   const hasId = line.match(idMatch);
   const lineWithoutId = hasId ? line.slice(hasId[0].length) : line;
   if (lineWithoutId.indexOf(": ") > -1) {
+    debugger;
     return lineWithoutId.split(": ")[0].trim();
   }
   return "";
@@ -489,22 +493,35 @@ function getEdgeLabel(line: string) {
 function getNodeLabel(line: string) {
   const hasId = line.match(idMatch);
   const lineWithoutId = hasId ? line.slice(hasId[0].length) : line;
+  let value = lineWithoutId.trim();
   if (lineWithoutId.indexOf(": ") > -1) {
-    return lineWithoutId.split(": ").slice(1).join(": ").trim();
+    value = lineWithoutId.split(": ").slice(1).join(": ").trim();
   }
-  return lineWithoutId.trim();
+  return stripSlashes(value);
 }
+
 function getNodeId(line: string, lineNumber: number) {
   const hasId = line.match(idMatch);
   return hasId ? hasId[1] : lineNumber.toString();
 }
 
 // linear regression of text node width to graph node size
-function regression(x: number) {
-  return Math.floor(0.63567 * x + 5.47265);
+function regressionX(x: number) {
+  return Math.floor(0.63567 * x + 6);
+}
+function regressionY(x: number) {
+  return Math.floor(0.63567 * x + 20);
 }
 
 // put things roughly on the same scale
 function cleanup(x: number) {
   return Math.ceil(x / base) * base;
+}
+
+function stripSlashes(str: string) {
+  return str.replace(/\\(.)/gm, "$1");
+}
+
+function preventBreakOnHypen(str: string) {
+  return str.replace(/-/gm, "&#x2011;");
 }
