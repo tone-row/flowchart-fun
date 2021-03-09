@@ -458,21 +458,24 @@ const minHeight = 6 * base;
 function getSize(label: string) {
   const resizer = document.getElementById("resizer");
   if (resizer) {
+    // resizer.style.width = "128px";
+    // const initialHeight = resizer.clientHeight;
+    // const add = Math.max(0, Math.ceil((initialHeight - 150) / 50)) * 8;
+    // resizer.style.width = `${128 + add}px`;
     resizer.innerHTML = label;
     if (resizer.firstChild) {
       const range = document.createRange();
       range.selectNodeContents(resizer.firstChild);
-      const size = Array.from(range.getClientRects()).reduce(
-        (max, { width, height }) => ({
-          width: width > max.width ? width : max.width,
-          height: height > max.height ? height : max.height,
-        }),
-        { width: 0, height: 0 }
+      const width = Array.from(range.getClientRects()).reduce(
+        (max, { width }) => (width > max ? width : max),
+        0
       );
-      return {
-        width: Math.max(minWidth, cleanup(regression(size.width))),
-        height: Math.max(minHeight, cleanup(regression(size.height))),
+      const finalSize = {
+        width: Math.max(minWidth, cleanup(regressionX(width))),
+        height: Math.max(minHeight, cleanup(regressionY(resizer.clientHeight))),
       };
+      console.log(finalSize);
+      return finalSize;
     }
   }
   return undefined;
@@ -500,8 +503,11 @@ function getNodeId(line: string, lineNumber: number) {
 }
 
 // linear regression of text node width to graph node size
-function regression(x: number) {
-  return Math.floor(0.63567 * x + 5.47265);
+function regressionX(x: number) {
+  return Math.floor(0.63567 * x + 6);
+}
+function regressionY(x: number) {
+  return Math.floor(0.63567 * x + 20);
 }
 
 // put things roughly on the same scale
