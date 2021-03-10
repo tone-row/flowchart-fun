@@ -9,7 +9,7 @@ import Layout from "./Layout";
 function Edit() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const [textarea, setText] = useLocalStorage(
-    `flowcharts.fun:${workspace}`,
+    ["flowcharts.fun", workspace].filter(Boolean).join(":"),
     defaultText
   );
   const [textToParse, setTextToParse] = useReducer(
