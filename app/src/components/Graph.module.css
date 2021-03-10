@@ -1,0 +1,48 @@
+.GraphContainer {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: var(--space-v-px);
+  overflow: hidden;
+  width: 100%;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 800px) {
+  .GraphContainer {
+    height: 100vh;
+  }
+}
+
+.GraphContainer [id="cy"] {
+  width: 100%;
+  overflow: hidden;
+}
+
+.Buttons {
+  display: grid;
+  justify-content: space-between;
+  align-items: end;
+  grid-auto-flow: column;
+}
+
+.Buttons div {
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--space-h-px);
+  align-items: center;
+}
+
+.Buttons button {
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.Buttons a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
