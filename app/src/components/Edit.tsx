@@ -23,7 +23,7 @@ function Edit() {
 
   useEffect(() => {
     // @ts-ignore
-    window.flowchartFunSetText = setText;
+    window.flowchartFunSetText = setTextToParse;
 
     if (editorRef.current) {
       const editor = editorRef.current;
