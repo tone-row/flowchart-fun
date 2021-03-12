@@ -22,9 +22,6 @@ function Edit() {
   const decorations = useRef<any[]>([]);
 
   useEffect(() => {
-    // @ts-ignore
-    window.flowchartFunSetText = setTextToParse;
-
     if (editorRef.current) {
       const editor = editorRef.current;
       if (typeof hoverLineNumber === "number") {
