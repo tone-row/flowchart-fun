@@ -226,7 +226,14 @@ function Graph({
           <a href="https://github.com/tone-row/flowchart-fun">
             <Github />
           </a>
-          {/* <a
+        </div>
+        <Box>
+          <Type as="button" onClick={downloadImage} title="Download SVG">
+            Download SVG
+          </Type>
+          |
+          <Type
+            as="a"
             href={`${new URL(window.location.href).origin}/r/${encodeURI(
               textToParse
             )}`}
@@ -234,11 +241,8 @@ function Graph({
             target="_blank"
           >
             Share
-          </a> */}
-        </div>
-        <Type as="button" onClick={downloadImage} title="Download SVG">
-          Download SVG
-        </Type>
+          </Type>
+        </Box>
       </Box>
     </Box>
   );
