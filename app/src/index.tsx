@@ -1,10 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import * as Sentry from "@sentry/react";
+import { Integrations } from "@sentry/tracing";
 import "./index.css";
 import "@tone-row/slang/build/index.css";
 import "./slang.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+Sentry.init({
+  dsn:
+    "https://5c0087f5d8ae4a6ab7aa4f42eab785f1@o394152.ingest.sentry.io/5673697",
+  integrations: [new Integrations.BrowserTracing()],
+  // percentage of transactions to capture for performance monitoring.
+  tracesSampleRate: 0.25,
+});
 
 ReactDOM.render(
   <React.StrictMode>
