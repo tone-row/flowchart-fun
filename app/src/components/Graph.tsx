@@ -6,12 +6,7 @@ import React, {
   useMemo,
   useRef,
 } from "react";
-import cytoscape, {
-  Core,
-  EdgeSingular,
-  Layouts,
-  NodeSingular,
-} from "cytoscape";
+import cytoscape, { Core, EdgeSingular, NodeSingular } from "cytoscape";
 import { useDebouncedCallback } from "use-debounce";
 import { Box, Type, Layout } from "@tone-row/slang";
 import dagre from "cytoscape-dagre";
@@ -41,7 +36,6 @@ function Graph({
   const errorCy = useRef<undefined | Core>();
   const animate = useAnimationSetting();
   const layoutSettings = useMemo(() => ({ ...LAYOUT, animate }), [animate]);
-  const layout = useRef<undefined | Layouts>();
 
   const updateGraph = useCallback(() => {
     if (cy.current) {
@@ -184,6 +178,8 @@ function Graph({
       userPanningEnabled: true,
       boxSelectionEnabled: false,
     });
+    const cyCurrent = cy.current;
+    const errorCyCurrent = errorCy.current;
 
     // Hovering Events
     function nodeHighlight(this: NodeSingular) {
@@ -199,17 +195,18 @@ function Graph({
       this.removeClass("edgeHovered");
       setHoverLineNumber(undefined);
     }
-    cy.current.on("mouseover", "node", nodeHighlight);
-    cy.current.on("mouseover", "edge", edgeHighlight);
-    cy.current.on("tapstart", "node", nodeHighlight);
-    cy.current.on("tapstart", "edge", edgeHighlight);
-    cy.current.on("mouseout", "node, edge", unhighlight);
-    cy.current.on("tapend", "node, edge", unhighlight);
+    cyCurrent.on("mouseover", "node", nodeHighlight);
+    cyCurrent.on("mouseover", "edge", edgeHighlight);
+    cyCurrent.on("tapstart", "node", nodeHighlight);
+    cyCurrent.on("tapstart", "edge", edgeHighlight);
+    cyCurrent.on("mouseout", "node, edge", unhighlight);
+    cyCurrent.on("tapend", "node, edge", unhighlight);
 
     return () => {
-      cy.current?.destroy();
-      errorCy.current?.destroy();
-      layout.current = undefined;
+      cyCurrent.destroy();
+      errorCyCurrent.destroy();
+      cy.current = undefined;
+      errorCy.current = undefined;
     };
   }, [layoutSettings, setHoverLineNumber]);
 
