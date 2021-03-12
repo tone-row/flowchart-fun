@@ -6,6 +6,6 @@
     "moduleResolution": "node",
     "outDir": "lib"
   },
-  "files": ["src/generate.ts", "src/run.ts"],
+  "includes": ["src"],
   "lib": ["es2015"]
 }

@@ -5,7 +5,7 @@ import Layout from "./Layout";
 
 function ReadOnly() {
   const { graphText } = useParams<{ graphText: string }>();
-  const textToParse = decodeURI(graphText);
+  const textToParse = decodeURIComponent(graphText);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
