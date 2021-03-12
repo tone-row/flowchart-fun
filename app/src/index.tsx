@@ -14,6 +14,7 @@ Sentry.init({
   integrations: [new Integrations.BrowserTracing()],
   // percentage of transactions to capture for performance monitoring.
   tracesSampleRate: 0.25,
+  enabled: process.env.REACT_APP_SENTRY_ENABLED === "1",
 });
 
 ReactDOM.render(
