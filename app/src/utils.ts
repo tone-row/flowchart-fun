@@ -3,13 +3,17 @@ import { CytoscapeOptions } from "cytoscape";
 import { useLocation } from "react-router-dom";
 
 const idMatch = new RegExp(/^\s*\[(.*)\]/);
+const matchIndent = new RegExp(/^( )+/g);
 export function parseText(text: string) {
-  const matchIndent = new RegExp(/^( )+/g);
-  const lines = strip(text, { preserveNewlines: true }).split("\n");
   let elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
 
-  // Loop
+  // break into lines, removing comments but
+  // leaving newlines created in comments to
+  // preserve line numbers
+  const lines = strip(text, { preserveNewlines: true }).split("\n");
+
+  // Loop over liens
   for (let line of lines) {
     if (line.trim() === "") {
       lineNumber++;
@@ -84,6 +88,29 @@ export function parseText(text: string) {
     }
     lineNumber++;
   }
+
+  // Before returning elements, check if user
+  // used label text as pointer, and replace with id
+  const labelToId = elements.reduce<Record<string, string>>(
+    (acc, el) => ({
+      ...acc,
+      [el.data.label]: el.data.id,
+    }),
+    {}
+  );
+
+  for (let [index, element] of Object.entries(elements)) {
+    // If it is an edge
+    if ("target" in element.data) {
+      if (!Object.values(labelToId).includes(element.data.target)) {
+        if (element.data.target in labelToId) {
+          elements[parseInt(index)].data.target =
+            labelToId[element.data.target];
+        }
+      }
+    }
+  }
+
   return elements;
 }
 
