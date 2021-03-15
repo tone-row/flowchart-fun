@@ -234,9 +234,9 @@ function Graph({
           |
           <Type
             as="a"
-            href={`${new URL(window.location.href).origin}/r/${encodeURI(
-              textToParse
-            )}`}
+            href={`${
+              new URL(window.location.href).origin
+            }/r/${encodeURIComponent(textToParse)}`}
             rel="noreferrer"
             target="_blank"
           >
