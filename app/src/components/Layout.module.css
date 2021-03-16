@@ -56,3 +56,12 @@
 .resizableHandle:active {
   opacity: 0.25;
 }
+
+.Loading {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
