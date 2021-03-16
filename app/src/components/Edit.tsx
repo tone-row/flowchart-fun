@@ -5,6 +5,7 @@ import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
 import { defaultText } from "../constants";
 import Layout from "./Layout";
+import UnmountDeclare from "./UnmountDeclare";
 
 function Edit() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
@@ -83,6 +84,7 @@ function Edit() {
           lineHeight: 28,
         }}
         onChange={(value) => value && setText(value)}
+        loading={<UnmountDeclare />}
         onMount={(editor, monaco) => {
           editorRef.current = editor;
         }}

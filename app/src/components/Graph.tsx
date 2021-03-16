@@ -3,7 +3,6 @@ import React, {
   SetStateAction,
   useCallback,
   useEffect,
-  useMemo,
   useRef,
 } from "react";
 import cytoscape, { Core, EdgeSingular, NodeSingular } from "cytoscape";
@@ -35,7 +34,7 @@ function Graph({
   const cy = useRef<undefined | Core>();
   const errorCy = useRef<undefined | Core>();
   const animate = useAnimationSetting();
-  const layoutSettings = useMemo(() => ({ ...LAYOUT, animate }), [animate]);
+  const graphInitialized = useRef(false);
 
   const updateGraph = useCallback(() => {
     if (cy.current) {
@@ -51,11 +50,17 @@ function Graph({
       }
       if (!error) {
         cy.current.json({ elements: newElements });
-        cy.current.layout(layoutSettings as any).run();
+        cy.current
+          .layout({
+            ...LAYOUT,
+            animate: graphInitialized.current ? animate : false,
+          } as any)
+          .run();
         cy.current.center();
+        graphInitialized.current = true;
       }
     }
-  }, [layoutSettings, textToParse]);
+  }, [animate, textToParse]);
 
   const handleResize = useCallback(() => {
     if (cy.current) {
@@ -110,7 +115,7 @@ function Graph({
     errorCy.current = cytoscape();
     cy.current = cytoscape({
       container: document.getElementById("cy"), // container to render in
-      layout: layoutSettings,
+      layout: { ...LAYOUT },
       elements: [],
       style: [
         {
@@ -208,7 +213,7 @@ function Graph({
       cy.current = undefined;
       errorCy.current = undefined;
     };
-  }, [layoutSettings, setHoverLineNumber]);
+  }, [setHoverLineNumber]);
 
   useEffect(() => {
     updateGraph();
@@ -229,7 +234,7 @@ function Graph({
         </div>
         <Box>
           <Type as="button" onClick={downloadImage} title="Download SVG">
-            Download SVG
+            Download
           </Type>
           |
           <Type

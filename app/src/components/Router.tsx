@@ -1,6 +1,7 @@
+import { lazy } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Edit from "./Edit";
-import ReadOnly from "./ReadOnly";
+const Edit = lazy(() => import("./Edit"));
+const ReadOnly = lazy(() => import("./ReadOnly"));
 
 export default function Router() {
   return (

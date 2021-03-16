@@ -1,7 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
 import Layout from "./Layout";
+import { AppContext } from "./AppContext";
+import UnmountDeclare from "./UnmountDeclare";
 
 function ReadOnly() {
   const { graphText } = useParams<{ graphText: string }>();
@@ -9,6 +11,7 @@ function ReadOnly() {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
+  const { setIsReady } = useContext(AppContext);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -44,6 +47,7 @@ function ReadOnly() {
       <Editor
         defaultValue={textToParse}
         value={textToParse}
+        loading={<UnmountDeclare />}
         options={{
           minimap: { enabled: false },
           fontSize: 16,
@@ -67,6 +71,7 @@ function ReadOnly() {
         }}
         onMount={(editor, monaco) => {
           editorRef.current = editor;
+          setIsReady();
         }}
       />
     </Layout>

@@ -1,0 +1,16 @@
+@keyframes load {
+  from {
+    stroke-dashoffset: 106.8141502221;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.Spinner circle {
+  animation-name: load;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
