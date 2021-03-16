@@ -57,6 +57,7 @@ function Graph({
           } as any)
           .run();
         cy.current.center();
+        graphInitialized.current = true;
       }
     }
   }, [animate, textToParse]);
@@ -233,7 +234,7 @@ function Graph({
         </div>
         <Box>
           <Type as="button" onClick={downloadImage} title="Download SVG">
-            Download SVG
+            Download
           </Type>
           |
           <Type
