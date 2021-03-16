@@ -10,6 +10,7 @@ import React, {
 } from "react";
 import Graph from "./Graph";
 import { AppContext } from "./AppContext";
+import Spinner from "./Spinner";
 
 export default function Layout({
   children,
@@ -52,5 +53,9 @@ export default function Layout({
 }
 
 function Loading() {
-  return <div className={styles.Loading} />;
+  return (
+    <div className={styles.Loading}>
+      <Spinner />
+    </div>
+  );
 }
