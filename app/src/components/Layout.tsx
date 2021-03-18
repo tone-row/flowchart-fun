@@ -40,7 +40,16 @@ export default function Layout({
           }}
           maxWidth="90%"
           minWidth="10%"
-          enable={{ right: true }}
+          enable={{
+            top: false,
+            right: true,
+            bottom: false,
+            left: false,
+            topRight: false,
+            bottomRight: false,
+            bottomLeft: false,
+            topLeft: false,
+          }}
           className={styles.TextareaContainer}
           handleClasses={{ right: styles.resizableHandle }}
           onResizeStop={() => triggerResize((n) => n + 1)}

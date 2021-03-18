@@ -63,6 +63,7 @@ function Graph({
   }, [animate, textToParse]);
 
   const handleResize = useCallback(() => {
+    console.log("Resizing!");
     if (cy.current) {
       cy.current.resize();
       cy.current.animate({ fit: { padding: 6 } } as any);
@@ -222,7 +223,7 @@ function Graph({
   return (
     <Box
       className={styles.GraphContainer}
-      template="minmax(0, 1fr) auto"
+      template="minmax(0, 1fr) auto / none"
       overflow="hidden"
     >
       <Box id="cy" overflow="hidden" />
