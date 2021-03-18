@@ -11,7 +11,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@tone-row/slang": "^1.2.30",
+    "@tone-row/slang": "^1.2.33",
     "@tone-row/strip-comments": "^2.0.1",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
@@ -37,8 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "theme": "generateTheme src/slang.config.json src/slang.css",
-    "theme:watch": "generateTheme src/slang.config.json src/slang.css -w"
+    "theme": "slang src/slang",
+    "theme:watch": "slang src/slang -w"
   },
   "eslintConfig": {
     "extends": [
