@@ -1,11 +1,11 @@
 .App {
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-  overflow: hidden;
-  height: 100%;
-  height: -webkit-fill-available;
-  min-height: 100%;
   max-height: 100%;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .App {
+    max-height: -webkit-fill-available;
+  }
 }
 
 @media (max-width: 799px) {
@@ -16,22 +16,27 @@
   }
 }
 
-@media (min-width: 800px) {
-  .App {
-    grid-template-rows: none;
-    display: flex;
-  }
-
-  .TextareaContainer {
-    border-bottom: none;
-    box-shadow: inset -1px 0px 0px var(--color);
-  }
+.resizableHandle {
+  background-color: black;
+  opacity: 0;
 }
 
 .TextareaContainer {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--color);
+}
+
+@media (min-width: 800px) {
+  .TextareaContainer {
+    border-bottom: none;
+    box-shadow: inset -1px 0px 0px var(--color);
+  }
+
+  .resizableHandle:hover,
+  .resizableHandle:active {
+    opacity: 0.25;
+  }
 }
 
 .resizer {
@@ -47,24 +52,11 @@
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.resizableHandle {
-  background-color: black;
-  opacity: 0;
-}
-
-.resizableHandle:hover,
-.resizableHandle:active {
-  opacity: 0.25;
-}
-
 .Loading {
   position: fixed;
-  background-color: white;
   z-index: 100;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: grid;
-  place-content: center;
 }

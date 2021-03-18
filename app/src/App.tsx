@@ -1,8 +1,8 @@
-import { Box, Type } from "@tone-row/slang";
 import Router from "./components/Router";
 import * as Sentry from "@sentry/react";
 import React, { Suspense } from "react";
 import Provider from "./components/AppContext";
+import { Box, Type } from "./slang";
 
 export default function App() {
   return (
