@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
 import "./index.css";
-import "@tone-row/slang/build/index.css";
-import "./slang.css";
+import "./slang/slang.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 

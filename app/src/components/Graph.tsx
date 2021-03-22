@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import cytoscape, { Core, EdgeSingular, NodeSingular } from "cytoscape";
 import { useDebouncedCallback } from "use-debounce";
-import { Box, Type, Layout } from "@tone-row/slang";
 import dagre from "cytoscape-dagre";
 import cytoscapeSvg from "cytoscape-svg";
 import { LAYOUT, lineColor, textColor } from "../constants";
@@ -15,6 +14,7 @@ import { parseText, useAnimationSetting } from "../utils";
 import { Github, Twitter } from "./svgs";
 import styles from "./Graph.module.css";
 import { saveAs } from "file-saver";
+import { Box, Type } from "../slang";
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
@@ -63,6 +63,7 @@ function Graph({
   }, [animate, textToParse]);
 
   const handleResize = useCallback(() => {
+    console.log("Resizing!");
     if (cy.current) {
       cy.current.resize();
       cy.current.animate({ fit: { padding: 6 } } as any);
@@ -246,19 +247,26 @@ function Graph({
   }, [updateGraph]);
 
   return (
-    <Box className={styles.GraphContainer}>
-      <Layout id="cy" />
-      <Box className={styles.Buttons} p={1}>
-        <div>
+    <Box
+      className={styles.GraphContainer}
+      template="minmax(0, 1fr) auto / none"
+      overflow="hidden"
+    >
+      <Box id="cy" overflow="hidden" />
+      <Box content="space-between" flow="column" p={2}>
+        <Box flow="column" items="center" gap={2}>
           <Type>Tone Row</Type>
-          <a href="https://twitter.com/row_tone">
+          <a href="https://twitter.com/row_tone" className={styles.media}>
             <Twitter />
           </a>
-          <a href="https://github.com/tone-row/flowchart-fun">
+          <a
+            href="https://github.com/tone-row/flowchart-fun"
+            className={styles.media}
+          >
             <Github />
           </a>
         </div>
-        <Box>
+        <Box flow="column" items="center" gap={2}>
           <Type as="button" onClick={downloadImageAsSVG} title="Download SVG">
             SVG
           </Type>

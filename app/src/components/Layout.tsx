@@ -1,4 +1,3 @@
-import { Layout as SlangLayout } from "@tone-row/slang";
 import styles from "./Layout.module.css";
 import { Resizable } from "re-resizable";
 import React, {
@@ -11,6 +10,7 @@ import React, {
 import Graph from "./Graph";
 import { AppContext } from "./AppContext";
 import Spinner from "./Spinner";
+import { Box } from "../slang";
 
 export default function Layout({
   children,
@@ -26,7 +26,13 @@ export default function Layout({
   return (
     <>
       {!isReady && <Loading />}
-      <SlangLayout className={styles.App}>
+      <Box
+        template="minmax(0, 1fr) minmax(0, 1fr) / none"
+        overflow="hidden"
+        className={styles.App}
+        at={{ tablet: { display: "flex", template: "none / none" } }}
+        root
+      >
         <Resizable
           defaultSize={{
             width: "50%",
@@ -34,7 +40,16 @@ export default function Layout({
           }}
           maxWidth="90%"
           minWidth="10%"
-          enable={{ right: true }}
+          enable={{
+            top: false,
+            right: true,
+            bottom: false,
+            left: false,
+            topRight: false,
+            bottomRight: false,
+            bottomLeft: false,
+            topLeft: false,
+          }}
           className={styles.TextareaContainer}
           handleClasses={{ right: styles.resizableHandle }}
           onResizeStop={() => triggerResize((n) => n + 1)}
@@ -47,15 +62,20 @@ export default function Layout({
           shouldResize={shouldResize}
         />
         <div id="resizer" className={styles.resizer} />
-      </SlangLayout>
+      </Box>
     </>
   );
 }
 
 function Loading() {
   return (
-    <div className={styles.Loading}>
+    <Box
+      background="color-background"
+      content="center"
+      className={styles.Loading}
+      root
+    >
       <Spinner />
-    </div>
+    </Box>
   );
 }

@@ -1,16 +1,24 @@
+import { CSSProperties } from "react";
 import style from "./Spinner.module.css";
+const r = 20;
+const s = 3;
+const d = Math.PI * r;
 export default function Spinner() {
   return (
-    <svg width={40} height={40} className={style.Spinner}>
+    <svg
+      width={2 * (r + s)}
+      height={2 * (r + s)}
+      className={style.Spinner}
+      style={{ "--d": 2 * d } as CSSProperties}
+    >
       <circle
-        r={17}
-        strokeWidth={1}
+        r={r}
+        strokeWidth={s}
         fill="transparent"
-        cx={20}
-        cy={20}
-        stroke="var(--color)"
-        strokeDasharray={53.407}
-        strokeDashoffset={53.407}
+        cx={r + s}
+        cy={r + s}
+        strokeDasharray={d}
+        strokeDashoffset={d}
       />
     </svg>
   );

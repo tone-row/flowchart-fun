@@ -1,16 +1,17 @@
 @keyframes load {
   from {
-    stroke-dashoffset: 106.8141502221;
+    stroke-dashoffset: var(--d);
+    stroke: var(--color);
+  }
+  50% {
+    stroke: rgb(155, 150, 150);
   }
   to {
     stroke-dashoffset: 0;
+    stroke: var(--color);
   }
 }
 
 .Spinner circle {
-  animation-name: load;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
+  animation: load 1s linear 0s infinite forwards;
 }
