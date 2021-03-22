@@ -80,7 +80,7 @@ function Graph({
     return () => window.removeEventListener("resize", debouncedResize.callback);
   }, [debouncedResize]);
 
-  const downloadImage = useCallback(() => {
+  const downloadImageAsSVG = useCallback(() => {
     if (cy.current) {
       // @ts-ignore
       const svgStr = cy.current.svg({ full: true, scale: 1.5 });
@@ -107,6 +107,32 @@ function Graph({
           type: "image/svg+xml;charset=utf-8",
         }),
         "flowchart.svg"
+      );
+    }
+  }, [textToParse]);
+
+  const downloadImageAsPNG = useCallback(() => {
+    if (cy.current) {
+      // @ts-ignore
+      const pngStr = cy.current.png({ full: true, scale: 1.5, output: 'blob' });     
+      saveAs(
+        new Blob([pngStr], {
+          type: "image/png",
+        }),
+        "flowchart.png"
+      );
+    }
+  }, [textToParse]);
+
+  const downloadImageAsJPG = useCallback(() => {
+    if (cy.current) {
+      // @ts-ignore
+      const pngStr = cy.current.jpg({ full: true, scale: 1.5, output: 'blob' });     
+      saveAs(
+        new Blob([pngStr], {
+          type: "image/jpg",
+        }),
+        "flowchart.jpg"
       );
     }
   }, [textToParse]);
@@ -233,10 +259,18 @@ function Graph({
           </a>
         </div>
         <Box>
-          <Type as="button" onClick={downloadImage} title="Download SVG">
-            Download
+          <Type as="button" onClick={downloadImageAsSVG} title="Download SVG">
+            SVG
           </Type>
           |
+          <Type as="button" onClick={downloadImageAsJPG} title="Download JPG">
+            JPG
+          </Type>
+          |
+          <Type as="button" onClick={downloadImageAsPNG} title="Download PNG">
+            PNG
+          </Type>    
+          |                
           <Type
             as="a"
             href={`${
