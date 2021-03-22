@@ -265,7 +265,7 @@ function Graph({
           >
             <Github />
           </a>
-        </div>
+        </Box>
         <Box flow="column" items="center" gap={2}>
           <Type as="button" onClick={downloadImageAsSVG} title="Download SVG">
             SVG
