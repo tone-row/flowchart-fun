@@ -123,20 +123,20 @@ function Graph({
         "flowchart.png"
       );
     }
-  }, [textToParse]);
+  }, []);
 
   const downloadImageAsJPG = useCallback(() => {
     if (cy.current) {
       // @ts-ignore
-      const pngStr = cy.current.jpg({ full: true, scale: 1.5, output: 'blob' });     
+      const jpgStr = cy.current.jpg({ full: true, scale: 1.5, output: 'blob' });     
       saveAs(
-        new Blob([pngStr], {
+        new Blob([jpgStr], {
           type: "image/jpg",
         }),
         "flowchart.jpg"
       );
     }
-  }, [textToParse]);
+  }, []);
 
   useEffect(() => {
     errorCy.current = cytoscape();
