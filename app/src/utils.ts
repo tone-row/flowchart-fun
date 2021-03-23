@@ -114,13 +114,8 @@ export function getLineData(text: string, lineNumber: number) {
   // 4) Node Label (?<nodelabel>.+?) -- store the node label
   const lineRegex = /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgelabel>.+): )?(?<nodelabel>.+?)$/;
   const { groups } = text.match(lineRegex) || {};
-  const {
-    color,
-    nodelabel = "",
-    edgelabel = "",
-    indent,
-    id = lineNumber.toString(),
-  } = groups || {};
+  const { nodelabel = "", edgelabel = "", indent, id = lineNumber.toString() } =
+    groups || {};
   const { groups: labelGroups } =
     nodelabel.match(/^\((?<linkedId>.+)\)\s*$/) || {};
   const { linkedId } = labelGroups || {};
