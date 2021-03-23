@@ -36,6 +36,7 @@
     "start": "concurrently -n 'react,slang' 'react-scripts start' 'yarn theme:watch'",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "theme": "slang src/slang",
     "theme:watch": "slang src/slang -w"
