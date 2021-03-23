@@ -17,7 +17,7 @@ export function parseText(text: string) {
       lineNumber++;
       continue;
     }
-    const { linkedId, nodelabel, edgelabel, indent, id } = getLineData(
+    const { linkedId, nodeLabel, edgeLabel, indent, id } = getLineData(
       line,
       lineNumber
     );
@@ -61,7 +61,7 @@ export function parseText(text: string) {
             id,
             source,
             target,
-            label: edgelabel,
+            label: edgeLabel,
             lineNumber,
           },
         });
@@ -72,9 +72,9 @@ export function parseText(text: string) {
       elements.push({
         data: {
           id,
-          label: nodelabel,
+          label: nodeLabel,
           lineNumber,
-          ...getSize(nodelabel),
+          ...getSize(nodeLabel),
         },
       });
     }
@@ -110,16 +110,16 @@ export function getLineData(text: string, lineNumber: number) {
   // Whole line description in one regex with named capture groups
   // 1) Indent ^(?<indent>\s*) -- store the indent which is 0 or more whitespace at the start
   // 2) ID (\[(?<id>.*)\])? -- store the ID if it exists after the indent in square brackets
-  // 3) Edge Label ((?<edgelabel>.+): )? -- store the edge label if it exists
-  // 4) Node Label (?<nodelabel>.+?) -- store the node label
-  const lineRegex = /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgelabel>.+): )?(?<nodelabel>.+?)$/;
+  // 3) Edge Label ((?<edgeLabel>.+): )? -- store the edge label if it exists
+  // 4) Node Label (?<nodeLabel>.+?) -- store the node label
+  const lineRegex = /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgeLabel>.+): )?(?<nodeLabel>.+?)$/;
   const { groups } = text.match(lineRegex) || {};
-  const { nodelabel = "", edgelabel = "", indent, id = lineNumber.toString() } =
+  const { nodeLabel = "", edgeLabel = "", indent, id = lineNumber.toString() } =
     groups || {};
   const { groups: labelGroups } =
-    nodelabel.match(/^\((?<linkedId>.+)\)\s*$/) || {};
+    nodeLabel.match(/^\((?<linkedId>.+)\)\s*$/) || {};
   const { linkedId } = labelGroups || {};
-  return { nodelabel, edgelabel, indent, id, linkedId };
+  return { nodeLabel, edgeLabel, indent, id, linkedId };
 }
 
 const base = 12.5;
