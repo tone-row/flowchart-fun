@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 on: push
 jobs:
   build:
@@ -10,4 +10,11 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Run the tests
-        run: yarn workspace app test
+        run: yarn workspace app test:coverage
+      - name: Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ./app/coverage/*.json # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
