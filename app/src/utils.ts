@@ -119,7 +119,13 @@ export function getLineData(text: string, lineNumber: number) {
   const { groups: labelGroups } =
     nodeLabel.match(/^\((?<linkedId>.+)\)\s*$/) || {};
   const { linkedId } = labelGroups || {};
-  return { nodeLabel, edgeLabel, indent, id, linkedId };
+  return {
+    nodeLabel: nodeLabel.trim(),
+    edgeLabel: edgeLabel.trim(),
+    indent,
+    id,
+    linkedId,
+  };
 }
 
 const base = 12.5;
