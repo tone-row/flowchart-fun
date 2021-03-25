@@ -15,6 +15,7 @@ import { Github, Twitter } from "./svgs";
 import styles from "./Graph.module.css";
 import { saveAs } from "file-saver";
 import { Box, Type } from "../slang";
+import { compressToEncodedURIComponent as compress } from "lz-string";
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
@@ -63,7 +64,6 @@ function Graph({
   }, [animate, textToParse]);
 
   const handleResize = useCallback(() => {
-    console.log("Resizing!");
     if (cy.current) {
       cy.current.resize();
       cy.current.animate({ fit: { padding: 6 } } as any);
@@ -115,7 +115,7 @@ function Graph({
   const downloadImageAsPNG = useCallback(() => {
     if (cy.current) {
       // @ts-ignore
-      const pngStr = cy.current.png({ full: true, scale: 1.5, output: 'blob' });     
+      const pngStr = cy.current.png({ full: true, scale: 1.5, output: "blob" });
       saveAs(
         new Blob([pngStr], {
           type: "image/png",
@@ -128,7 +128,7 @@ function Graph({
   const downloadImageAsJPG = useCallback(() => {
     if (cy.current) {
       // @ts-ignore
-      const jpgStr = cy.current.jpg({ full: true, scale: 1.5, output: 'blob' });     
+      const jpgStr = cy.current.jpg({ full: true, scale: 1.5, output: "blob" });
       saveAs(
         new Blob([jpgStr], {
           type: "image/jpg",
@@ -277,13 +277,13 @@ function Graph({
           |
           <Type as="button" onClick={downloadImageAsPNG} title="Download PNG">
             PNG
-          </Type>    
-          |                
+          </Type>
+          |
           <Type
             as="a"
-            href={`${
-              new URL(window.location.href).origin
-            }/r/${encodeURIComponent(textToParse)}`}
+            href={`${new URL(window.location.href).origin}/c/${compress(
+              textToParse
+            )}`}
             rel="noreferrer"
             target="_blank"
           >
