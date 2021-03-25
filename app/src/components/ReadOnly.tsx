@@ -4,10 +4,13 @@ import { useParams } from "react-router";
 import Layout from "./Layout";
 import { AppContext } from "./AppContext";
 import UnmountDeclare from "./UnmountDeclare";
+import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 
-function ReadOnly() {
+function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const { graphText } = useParams<{ graphText: string }>();
-  const textToParse = decodeURIComponent(graphText);
+  const textToParse = compressed
+    ? decompress(graphText) ?? ""
+    : decodeURIComponent(graphText);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
