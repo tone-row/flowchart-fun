@@ -1,0 +1,23 @@
+name: Codecov
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Install Dependencies
+        run: yarn
+      - name: Run the tests
+        run: yarn workspace app test:coverage
+      - name: Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ./app/coverage/*.json # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
