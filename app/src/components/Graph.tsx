@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import cytoscape, { Core, EdgeSingular, NodeSingular } from "cytoscape";
 import { useDebouncedCallback } from "use-debounce";
-import { Box, Type, Layout } from "@tone-row/slang";
 import dagre from "cytoscape-dagre";
 import cytoscapeSvg from "cytoscape-svg";
 import { LAYOUT, lineColor, textColor } from "../constants";
@@ -15,6 +14,8 @@ import { parseText, useAnimationSetting } from "../utils";
 import { Github, Twitter } from "./svgs";
 import styles from "./Graph.module.css";
 import { saveAs } from "file-saver";
+import { Box, Type } from "../slang";
+import { compressToEncodedURIComponent as compress } from "lz-string";
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
@@ -80,7 +81,7 @@ function Graph({
     return () => window.removeEventListener("resize", debouncedResize.callback);
   }, [debouncedResize]);
 
-  const downloadImage = useCallback(() => {
+  const downloadImageAsSVG = useCallback(() => {
     if (cy.current) {
       // @ts-ignore
       const svgStr = cy.current.svg({ full: true, scale: 1.5 });
@@ -110,6 +111,32 @@ function Graph({
       );
     }
   }, [textToParse]);
+
+  const downloadImageAsPNG = useCallback(() => {
+    if (cy.current) {
+      // @ts-ignore
+      const pngStr = cy.current.png({ full: true, scale: 1.5, output: "blob" });
+      saveAs(
+        new Blob([pngStr], {
+          type: "image/png",
+        }),
+        "flowchart.png"
+      );
+    }
+  }, []);
+
+  const downloadImageAsJPG = useCallback(() => {
+    if (cy.current) {
+      // @ts-ignore
+      const jpgStr = cy.current.jpg({ full: true, scale: 1.5, output: "blob" });
+      saveAs(
+        new Blob([jpgStr], {
+          type: "image/jpg",
+        }),
+        "flowchart.jpg"
+      );
+    }
+  }, []);
 
   useEffect(() => {
     errorCy.current = cytoscape();
@@ -220,28 +247,43 @@ function Graph({
   }, [updateGraph]);
 
   return (
-    <Box className={styles.GraphContainer}>
-      <Layout id="cy" />
-      <Box className={styles.Buttons} p={1}>
-        <div>
+    <Box
+      className={styles.GraphContainer}
+      template="minmax(0, 1fr) auto / none"
+      overflow="hidden"
+    >
+      <Box id="cy" overflow="hidden" />
+      <Box content="space-between" flow="column" p={2}>
+        <Box flow="column" items="center" gap={2}>
           <Type>Tone Row</Type>
-          <a href="https://twitter.com/row_tone">
+          <a href="https://twitter.com/row_tone" className={styles.media}>
             <Twitter />
           </a>
-          <a href="https://github.com/tone-row/flowchart-fun">
+          <a
+            href="https://github.com/tone-row/flowchart-fun"
+            className={styles.media}
+          >
             <Github />
           </a>
-        </div>
-        <Box>
-          <Type as="button" onClick={downloadImage} title="Download SVG">
-            Download
+        </Box>
+        <Box flow="column" items="center" gap={2}>
+          <Type as="button" onClick={downloadImageAsSVG} title="Download SVG">
+            SVG
+          </Type>
+          |
+          <Type as="button" onClick={downloadImageAsJPG} title="Download JPG">
+            JPG
+          </Type>
+          |
+          <Type as="button" onClick={downloadImageAsPNG} title="Download PNG">
+            PNG
           </Type>
           |
           <Type
             as="a"
-            href={`${
-              new URL(window.location.href).origin
-            }/r/${encodeURIComponent(textToParse)}`}
+            href={`${new URL(window.location.href).origin}/c/${compress(
+              textToParse
+            )}`}
             rel="noreferrer"
             target="_blank"
           >

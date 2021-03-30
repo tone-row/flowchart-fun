@@ -2,8 +2,6 @@ import strip from "@tone-row/strip-comments";
 import { CytoscapeOptions } from "cytoscape";
 import { useLocation } from "react-router-dom";
 
-const idMatch = new RegExp(/^\s*\[(.*)\]/);
-const matchIndent = new RegExp(/^( )+/g);
 export function parseText(text: string) {
   let elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
@@ -13,25 +11,20 @@ export function parseText(text: string) {
   // preserve line numbers
   const lines = strip(text, { preserveNewlines: true }).split("\n");
 
-  // Loop over liens
+  // Loop over lines
   for (let line of lines) {
     if (line.trim() === "") {
       lineNumber++;
       continue;
     }
-    let indentMatch = line.match(matchIndent);
-    let linkMatch: RegExpMatchArray | null | string = getNodeLabel(line).match(
-      /^\((.+)\)$/
+    const { linkedId, nodeLabel, edgeLabel, indent, id } = getLineData(
+      line,
+      lineNumber
     );
-    if (linkMatch) {
-      linkMatch = linkMatch[1];
-    }
 
-    if (indentMatch) {
-      const indent = indentMatch[0];
+    if (indent) {
       let parent;
       let checkLine = lineNumber;
-      let checkLength = indent.length;
 
       while (checkLine >= 1) {
         checkLine -= 1;
@@ -42,17 +35,19 @@ export function parseText(text: string) {
           continue;
         }
 
-        const currentLineIndent = currentLine.match(matchIndent);
-        checkLength = currentLineIndent?.[0].length ?? 0;
-        if (checkLength < indent.length) {
+        const { indent: currentLineIndent } = getLineData(
+          currentLine,
+          checkLine
+        );
+        if (currentLineIndent.length < indent.length) {
           parent = checkLine;
           break;
         }
       }
       // If we found a parent
       if (parent) {
-        const source = getNodeId(lines[checkLine - 1], checkLine);
-        const target = linkMatch ? linkMatch : getNodeId(line, lineNumber);
+        const { id: source } = getLineData(lines[checkLine - 1], checkLine);
+        const target = linkedId || getLineData(line, lineNumber).id;
 
         // Find a unique id
         let id = `${source}_${target}:0`;
@@ -66,23 +61,20 @@ export function parseText(text: string) {
             id,
             source,
             target,
-            label: getEdgeLabel(line),
+            label: edgeLabel,
             lineNumber,
           },
         });
       }
     }
-    if (!linkMatch) {
-      const label = getNodeLabel(line);
-
+    if (!linkedId) {
       // Check for custom id
-      const hasId = line.match(idMatch);
       elements.push({
         data: {
-          id: hasId ? hasId[1] : lineNumber.toString(),
-          label,
+          id,
+          label: nodeLabel,
           lineNumber,
-          ...getSize(label),
+          ...getSize(nodeLabel),
         },
       });
     }
@@ -112,6 +104,28 @@ export function parseText(text: string) {
   }
 
   return elements;
+}
+
+export function getLineData(text: string, lineNumber: number) {
+  // Whole line description in one regex with named capture groups
+  // 1) Indent ^(?<indent>\s*) -- store the indent which is 0 or more whitespace at the start
+  // 2) ID (\[(?<id>.*)\])? -- store the ID if it exists after the indent in square brackets
+  // 3) Edge Label ((?<edgeLabel>.+): )? -- store the edge label if it exists
+  // 4) Node Label (?<nodeLabel>.+?) -- store the node label
+  const lineRegex = /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgeLabel>.+): )?(?<nodeLabel>.+?)$/;
+  const { groups } = text.match(lineRegex) || {};
+  const { nodeLabel = "", edgeLabel = "", indent, id = lineNumber.toString() } =
+    groups || {};
+  const { groups: labelGroups } =
+    nodeLabel.match(/^\((?<linkedId>.+)\)\s*$/) || {};
+  const { linkedId } = labelGroups || {};
+  return {
+    nodeLabel: nodeLabel.trim(),
+    edgeLabel: edgeLabel.trim(),
+    indent,
+    id,
+    linkedId,
+  };
 }
 
 const base = 12.5;
@@ -144,29 +158,6 @@ function getSize(label: string) {
   return undefined;
 }
 
-function getEdgeLabel(line: string) {
-  const hasId = line.match(idMatch);
-  const lineWithoutId = hasId ? line.slice(hasId[0].length) : line;
-  if (lineWithoutId.indexOf(": ") > -1) {
-    return lineWithoutId.split(": ")[0].trim();
-  }
-  return "";
-}
-function getNodeLabel(line: string) {
-  const hasId = line.match(idMatch);
-  const lineWithoutId = hasId ? line.slice(hasId[0].length) : line;
-  let value = lineWithoutId.trim();
-  if (lineWithoutId.indexOf(": ") > -1) {
-    value = lineWithoutId.split(": ").slice(1).join(": ").trim();
-  }
-  return stripSlashes(value);
-}
-
-function getNodeId(line: string, lineNumber: number) {
-  const hasId = line.match(idMatch);
-  return hasId ? hasId[1] : lineNumber.toString();
-}
-
 // linear regression of text node width to graph node size
 function regressionX(x: number) {
   return Math.floor(0.63567 * x + 6);
@@ -178,10 +169,6 @@ function regressionY(x: number) {
 // put things roughly on the same scale
 function cleanup(x: number) {
   return Math.ceil(x / base) * base;
-}
-
-function stripSlashes(str: string) {
-  return str.replace(/\\(.)/gm, "$1");
 }
 
 function preventBreakOnHypen(str: string) {

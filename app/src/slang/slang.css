@@ -1,0 +1,817 @@
+/*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+
+/*
+Document
+========
+*/
+
+/**
+Use a better box model (opinionated).
+*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/**
+Use a more readable tab size (opinionated).
+*/
+
+:root {
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+
+html {
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/*
+Sections
+========
+*/
+
+/**
+Remove the margin in all browsers.
+*/
+
+body {
+	margin: 0;
+}
+
+/**
+Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+*/
+
+body {
+	font-family:
+		system-ui,
+		-apple-system, /* Firefox supports this but not yet `system-ui` */
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+}
+
+/*
+Grouping content
+================
+*/
+
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+
+hr {
+	height: 0; /* 1 */
+	color: inherit; /* 2 */
+}
+
+/*
+Text-level semantics
+====================
+*/
+
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr[title] {
+	text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+
+small {
+	font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+
+table {
+	text-indent: 0; /* 1 */
+	border-color: inherit; /* 2 */
+}
+
+/*
+Forms
+=====
+*/
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+1. Remove the inheritance of text transform in Firefox.
+*/
+
+button,
+select { /* 1 */
+	text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+
+::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+
+:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+
+:-moz-ui-invalid {
+	box-shadow: none;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+
+legend {
+	padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+	vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+	display: list-item;
+}
+
+/* Modern Normalize does the box sizing... */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Cascade heights for Next.js and Create-React-App */
+html,
+body,
+#__next,
+#root {
+  height: 100%;
+  /* height: -webkit-fill-available; */
+}
+
+@supports (-webkit-touch-callout: none) {
+  html,
+  body,
+  #__next,
+  #root {
+    height: -webkit-fill-available;
+  }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--base-font-family);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.slang-box {
+  /* Defaults are reset for each element */
+  --display: grid;
+  --contain: none;
+  --template: none;
+  --content: normal;
+  --gap: 0;
+  --flow: rows;
+
+  display: var(--display);
+  grid-template: var(--template);
+}
+
+.slang-box.stretch {
+  height: 100vh;
+}
+@supports (-webkit-touch-callout: none) {
+  .slang-box.stretch {
+    height: -webkit-fill-available;
+  }
+}
+
+.slang-box.contain {
+  width: 100%;
+  max-width: var(--contain);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slang-type {
+  --multiplier: var(--multiplier-0);
+  --mobile-multiplier: var(--mobile-multiplier-0);
+  --lhMultiplier: var(--lh-multiplier-0);
+  --lhMultiplierMobile: var(--lh-mobile-multiplier-0);
+  --errorTopMultiplier: var(--error-top-multiplier-0);
+  --errorBottomMultiplier: var(--error-bottom-multiplier-0);
+  --unitless-difference: calc(
+    var(--multiplier) * var(--base-font-size) - var(--mobile-multiplier) *
+      var(--base-font-size-mobile)
+  );
+  --mobile-size: calc(
+    var(--mobile-multiplier) * var(--base-font-size-mobile-px)
+  );
+  --msnu: calc(var(--mobile-multiplier) * var(--base-font-size-mobile));
+  --desktop-size: calc(var(--multiplier) * var(--base-font-size-px));
+  --dsnu: calc(var(--multiplier) * var(--base-font-size));
+  --fluid-font-size: clamp(
+    var(--mobile-size),
+    calc(
+      var(--mobile-size) + var(--unitless-difference) *
+        (
+          (100vw - var(--fluid-min-screen-size-px)) /
+            (var(--fluid-max-screen-size) - var(--fluid-min-screen-size))
+        )
+    ),
+    var(--desktop-size)
+  );
+  --mobile-line-height: calc(
+    var(--lhMultiplierMobile) * var(--base-font-line-height-mobile)
+  );
+  --desktop-line-height: calc(
+    var(--lhMultiplier) * var(--base-font-line-height)
+  );
+  --mlhnu: calc(var(--mobile-line-height) * var(--msnu));
+  --dlhnu: calc(var(--desktop-line-height) * var(--dsnu));
+  --line-height-difference: calc(var(--dlhnu) - var(--mlhnu));
+  --fluid-line-height: clamp(
+    calc(var(--mlhnu) * 1px),
+    calc(
+      (var(--mlhnu) * 1px) +
+        (
+          (100vw - var(--fluid-min-screen-size-px)) *
+            var(--line-height-difference) /
+            (var(--fluid-max-screen-size) - var(--fluid-min-screen-size))
+        )
+    ),
+    calc(var(--dlhnu) * 1px)
+  );
+  font-family: var(--base-font-family);
+  font-size: var(--fluid-font-size);
+  line-height: var(--fluid-line-height);
+  margin-top: calc( var(--error-correction-top-px, 0) * var(--errorTopMultiplier, 1));
+  margin-bottom: calc( var(--error-correction-bottom-px, 0) * var(--errorBottomMultiplier, 1)); }
+  .slang-type.size--3 {
+    --multiplier: var(--multiplier--3);
+    --mobile-multiplier: var(--mobile-multiplier--3);
+    --lhMultiplier: var(--lh-multiplier--3);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier--3);
+    --errorTopMultiplier: var(--error-top-multiplier--3);
+    --errorBottomMultiplier: var(--error-bottom-multiplier--3); }
+  .slang-type.size--2 {
+    --multiplier: var(--multiplier--2);
+    --mobile-multiplier: var(--mobile-multiplier--2);
+    --lhMultiplier: var(--lh-multiplier--2);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier--2);
+    --errorTopMultiplier: var(--error-top-multiplier--2);
+    --errorBottomMultiplier: var(--error-bottom-multiplier--2); }
+  .slang-type.size--1 {
+    --multiplier: var(--multiplier--1);
+    --mobile-multiplier: var(--mobile-multiplier--1);
+    --lhMultiplier: var(--lh-multiplier--1);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier--1);
+    --errorTopMultiplier: var(--error-top-multiplier--1);
+    --errorBottomMultiplier: var(--error-bottom-multiplier--1); }
+  .slang-type.size-0 {
+    --multiplier: var(--multiplier-0);
+    --mobile-multiplier: var(--mobile-multiplier-0);
+    --lhMultiplier: var(--lh-multiplier-0);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier-0);
+    --errorTopMultiplier: var(--error-top-multiplier-0);
+    --errorBottomMultiplier: var(--error-bottom-multiplier-0); }
+  .slang-type.size-1 {
+    --multiplier: var(--multiplier-1);
+    --mobile-multiplier: var(--mobile-multiplier-1);
+    --lhMultiplier: var(--lh-multiplier-1);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier-1);
+    --errorTopMultiplier: var(--error-top-multiplier-1);
+    --errorBottomMultiplier: var(--error-bottom-multiplier-1); }
+  .slang-type.size-2 {
+    --multiplier: var(--multiplier-2);
+    --mobile-multiplier: var(--mobile-multiplier-2);
+    --lhMultiplier: var(--lh-multiplier-2);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier-2);
+    --errorTopMultiplier: var(--error-top-multiplier-2);
+    --errorBottomMultiplier: var(--error-bottom-multiplier-2); }
+  .slang-type.size-3 {
+    --multiplier: var(--multiplier-3);
+    --mobile-multiplier: var(--mobile-multiplier-3);
+    --lhMultiplier: var(--lh-multiplier-3);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier-3);
+    --errorTopMultiplier: var(--error-top-multiplier-3);
+    --errorBottomMultiplier: var(--error-bottom-multiplier-3); }
+  .slang-type.size-4 {
+    --multiplier: var(--multiplier-4);
+    --mobile-multiplier: var(--mobile-multiplier-4);
+    --lhMultiplier: var(--lh-multiplier-4);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier-4);
+    --errorTopMultiplier: var(--error-top-multiplier-4);
+    --errorBottomMultiplier: var(--error-bottom-multiplier-4); }
+  .slang-type.size-5 {
+    --multiplier: var(--multiplier-5);
+    --mobile-multiplier: var(--mobile-multiplier-5);
+    --lhMultiplier: var(--lh-multiplier-5);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier-5);
+    --errorTopMultiplier: var(--error-top-multiplier-5);
+    --errorBottomMultiplier: var(--error-bottom-multiplier-5); }
+  .slang-type.size-6 {
+    --multiplier: var(--multiplier-6);
+    --mobile-multiplier: var(--mobile-multiplier-6);
+    --lhMultiplier: var(--lh-multiplier-6);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier-6);
+    --errorTopMultiplier: var(--error-top-multiplier-6);
+    --errorBottomMultiplier: var(--error-bottom-multiplier-6); }
+  .slang-type.size-7 {
+    --multiplier: var(--multiplier-7);
+    --mobile-multiplier: var(--mobile-multiplier-7);
+    --lhMultiplier: var(--lh-multiplier-7);
+    --lhMultiplierMobile: var(--lh-mobile-multiplier-7);
+    --errorTopMultiplier: var(--error-top-multiplier-7);
+    --errorBottomMultiplier: var(--error-bottom-multiplier-7); }
+
+:root {
+	--base-font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	--base-font-size-px:20px;
+	--base-font-size:20;
+	--base-font-size-mobile-px:16px;
+	--base-font-size-mobile:16;
+	--base-font-line-height:1.15;
+	--base-font-line-height-mobile:1.15;
+	--spacer-px:4px;
+	--spacer:4;
+	--base-spacing-px:16px;
+	--base-spacing:16;
+	--base-container-size-px:600px;
+	--base-container-size:600;
+	--base-spacing-scale:1.1;
+	--error-correction-top-px:0px;
+	--error-correction-top:0;
+	--error-correction-top-scale:1;
+	--error-correction-bottom-px:0px;
+	--error-correction-bottom:0;
+	--error-correction-bottom-scale:1;
+	--type-scale-base:1.16;
+	--type-scale-base-mobile:1.16;
+	--inverse-type-scale-line-height:1;
+	--inverse-type-scale-line-height-mobile:1;
+	--mapping-to-user-agent-headers:4;
+	--smallest-border-radius-px:3px;
+	--smallest-border-radius:3;
+	--fluid-min-screen-size-px:375px;
+	--fluid-min-screen-size:375;
+	--fluid-max-screen-size-px:1200px;
+	--fluid-max-screen-size:1200;
+	--multiplier--3:0.6406576735413507;
+	--multiplier--2:0.7431629013079668;
+	--multiplier--1:0.8620689655172414;
+	--multiplier-0:1;
+	--multiplier-1:1.16;
+	--multiplier-2:1.3456;
+	--multiplier-3:1.5608959999999996;
+	--multiplier-4:1.8106393599999995;
+	--multiplier-5:2.100341657599999;
+	--multiplier-6:2.436396322815999;
+	--multiplier-7:2.8262197344665587;
+	--multiplier-8:3.2784148919812077;
+	--mobile-multiplier--3:0.6406576735413507;
+	--mobile-multiplier--2:0.7431629013079668;
+	--mobile-multiplier--1:0.8620689655172414;
+	--mobile-multiplier-0:1;
+	--mobile-multiplier-1:1.16;
+	--mobile-multiplier-2:1.3456;
+	--mobile-multiplier-3:1.5608959999999996;
+	--mobile-multiplier-4:1.8106393599999995;
+	--mobile-multiplier-5:2.100341657599999;
+	--mobile-multiplier-6:2.436396322815999;
+	--mobile-multiplier-7:2.8262197344665587;
+	--mobile-multiplier-8:3.2784148919812077;
+	--lh-multiplier--3:1;
+	--lh-multiplier--2:1;
+	--lh-multiplier--1:1;
+	--lh-multiplier-0:1;
+	--lh-multiplier-1:1;
+	--lh-multiplier-2:1;
+	--lh-multiplier-3:1;
+	--lh-multiplier-4:1;
+	--lh-multiplier-5:1;
+	--lh-multiplier-6:1;
+	--lh-multiplier-7:1;
+	--lh-multiplier-8:1;
+	--lh-mobile-multiplier--3:1;
+	--lh-mobile-multiplier--2:1;
+	--lh-mobile-multiplier--1:1;
+	--lh-mobile-multiplier-0:1;
+	--lh-mobile-multiplier-1:1;
+	--lh-mobile-multiplier-2:1;
+	--lh-mobile-multiplier-3:1;
+	--lh-mobile-multiplier-4:1;
+	--lh-mobile-multiplier-5:1;
+	--lh-mobile-multiplier-6:1;
+	--lh-mobile-multiplier-7:1;
+	--lh-mobile-multiplier-8:1;
+	--error-top-multiplier--3:1;
+	--error-top-multiplier--2:1;
+	--error-top-multiplier--1:1;
+	--error-top-multiplier-0:1;
+	--error-top-multiplier-1:1;
+	--error-top-multiplier-2:1;
+	--error-top-multiplier-3:1;
+	--error-top-multiplier-4:1;
+	--error-top-multiplier-5:1;
+	--error-top-multiplier-6:1;
+	--error-top-multiplier-7:1;
+	--error-top-multiplier-8:1;
+	--error-bottom-multiplier--3:1;
+	--error-bottom-multiplier--2:1;
+	--error-bottom-multiplier--1:1;
+	--error-bottom-multiplier-0:1;
+	--error-bottom-multiplier-1:1;
+	--error-bottom-multiplier-2:1;
+	--error-bottom-multiplier-3:1;
+	--error-bottom-multiplier-4:1;
+	--error-bottom-multiplier-5:1;
+	--error-bottom-multiplier-6:1;
+	--error-bottom-multiplier-7:1;
+	--error-bottom-multiplier-8:1;
+	--palette-black-0:#000000;
+	--palette-white-0:#ffffff;
+	--color-background:var(--palette-white-0);
+	--color-foreground:var(--palette-black-0);
+ }
+
+.slang-box.flow {
+grid-auto-flow: var(--flow);
+}
+.slang-box.content {
+place-content: var(--content);
+}
+.slang-box.items {
+place-items: var(--items);
+}
+.slang-box.self {
+place-self: var(--self);
+}
+.slang-box.p {
+padding: calc(var(--spacer-px) * var(--p));
+}
+.slang-box.py {
+padding-top: calc(var(--spacer-px) * var(--py)); padding-bottom: calc(var(--spacer-px) * var(--py));
+}
+.slang-box.px {
+padding-left: calc(var(--spacer-px) * var(--px)); padding-right: calc(var(--spacer-px) * var(--px));
+}
+.slang-box.pt {
+padding-top: calc(var(--spacer-px) * var(--pt));
+}
+.slang-box.pr {
+padding-right: calc(var(--spacer-px) * var(--pr));
+}
+.slang-box.pb {
+padding-bottom: calc(var(--spacer-px) * var(--pb));
+}
+.slang-box.pl {
+padding-left: calc(var(--spacer-px) * var(--pl));
+}
+.slang-box.gap {
+gap: calc(var(--spacer-px) * var(--gap));
+}
+.slang-box.template {
+grid-template: var(--template);
+}
+.slang-box.display {
+display: var(--display);
+}
+.slang-box.overflow {
+overflow: var(--overflow);
+}
+.slang-box.h {
+height: var(--h);
+}
+.slang-box.root {
+min-height: var(--root);
+}
+@supports (-webkit-touch-callout: none) {
+.slang-box.root-safari {
+min-height: var(--root-safari);
+}
+}
+.slang-box.background {
+background-color: var(--background);
+}
+.slang-box.contain {
+max-width: var(--contain);
+}
+.slang-box.rad {
+border-radius: calc(var(--smallest-border-radius-px) * var(--rad));
+}
+@media(min-width: 800px) {
+.slang-box.flow-tablet {
+grid-auto-flow: var(--flow-tablet);
+}
+.slang-box.content-tablet {
+place-content: var(--content-tablet);
+}
+.slang-box.items-tablet {
+place-items: var(--items-tablet);
+}
+.slang-box.self-tablet {
+place-self: var(--self-tablet);
+}
+.slang-box.p-tablet {
+padding: calc(var(--spacer-px) * var(--p-tablet));
+}
+.slang-box.py-tablet {
+padding-top: calc(var(--spacer-px) * var(--py-tablet)); padding-bottom: calc(var(--spacer-px) * var(--py-tablet));
+}
+.slang-box.px-tablet {
+padding-left: calc(var(--spacer-px) * var(--px-tablet)); padding-right: calc(var(--spacer-px) * var(--px-tablet));
+}
+.slang-box.pt-tablet {
+padding-top: calc(var(--spacer-px) * var(--pt-tablet));
+}
+.slang-box.pr-tablet {
+padding-right: calc(var(--spacer-px) * var(--pr-tablet));
+}
+.slang-box.pb-tablet {
+padding-bottom: calc(var(--spacer-px) * var(--pb-tablet));
+}
+.slang-box.pl-tablet {
+padding-left: calc(var(--spacer-px) * var(--pl-tablet));
+}
+.slang-box.gap-tablet {
+gap: calc(var(--spacer-px) * var(--gap-tablet));
+}
+.slang-box.template-tablet {
+grid-template: var(--template-tablet);
+}
+.slang-box.display-tablet {
+display: var(--display-tablet);
+}
+.slang-box.overflow-tablet {
+overflow: var(--overflow-tablet);
+}
+.slang-box.h-tablet {
+height: var(--h-tablet);
+}
+.slang-box.root-tablet {
+min-height: var(--root-tablet);
+}
+.slang-box.background-tablet {
+background-color: var(--background-tablet);
+}
+.slang-box.contain-tablet {
+max-width: var(--contain-tablet);
+}
+.slang-box.rad-tablet {
+border-radius: calc(var(--smallest-border-radius-px) * var(--rad-tablet));
+}
+}
+@media(min-width: 1024px) {
+.slang-box.flow-desktop {
+grid-auto-flow: var(--flow-desktop);
+}
+.slang-box.content-desktop {
+place-content: var(--content-desktop);
+}
+.slang-box.items-desktop {
+place-items: var(--items-desktop);
+}
+.slang-box.self-desktop {
+place-self: var(--self-desktop);
+}
+.slang-box.p-desktop {
+padding: calc(var(--spacer-px) * var(--p-desktop));
+}
+.slang-box.py-desktop {
+padding-top: calc(var(--spacer-px) * var(--py-desktop)); padding-bottom: calc(var(--spacer-px) * var(--py-desktop));
+}
+.slang-box.px-desktop {
+padding-left: calc(var(--spacer-px) * var(--px-desktop)); padding-right: calc(var(--spacer-px) * var(--px-desktop));
+}
+.slang-box.pt-desktop {
+padding-top: calc(var(--spacer-px) * var(--pt-desktop));
+}
+.slang-box.pr-desktop {
+padding-right: calc(var(--spacer-px) * var(--pr-desktop));
+}
+.slang-box.pb-desktop {
+padding-bottom: calc(var(--spacer-px) * var(--pb-desktop));
+}
+.slang-box.pl-desktop {
+padding-left: calc(var(--spacer-px) * var(--pl-desktop));
+}
+.slang-box.gap-desktop {
+gap: calc(var(--spacer-px) * var(--gap-desktop));
+}
+.slang-box.template-desktop {
+grid-template: var(--template-desktop);
+}
+.slang-box.display-desktop {
+display: var(--display-desktop);
+}
+.slang-box.overflow-desktop {
+overflow: var(--overflow-desktop);
+}
+.slang-box.h-desktop {
+height: var(--h-desktop);
+}
+.slang-box.root-desktop {
+min-height: var(--root-desktop);
+}
+.slang-box.background-desktop {
+background-color: var(--background-desktop);
+}
+.slang-box.contain-desktop {
+max-width: var(--contain-desktop);
+}
+.slang-box.rad-desktop {
+border-radius: calc(var(--smallest-border-radius-px) * var(--rad-desktop));
+}
+}
+.slang-type.weight {
+font-weight: var(--weight);
+}
+.slang-type.color {
+color: var(--color);
+}
+@media(min-width: 800px) {
+.slang-type.weight-tablet {
+font-weight: var(--weight-tablet);
+}
+.slang-type.color-tablet {
+color: var(--color-tablet);
+}
+}
+@media(min-width: 1024px) {
+.slang-type.weight-desktop {
+font-weight: var(--weight-desktop);
+}
+.slang-type.color-desktop {
+color: var(--color-desktop);
+}
+}
