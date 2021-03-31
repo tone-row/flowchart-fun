@@ -209,9 +209,7 @@ function Graph({
       userZoomingEnabled: true,
       userPanningEnabled: true,
       boxSelectionEnabled: false,
-      wheelSensitivity: 0.2,
-      minZoom: 0.2,
-      maxZoom: 6
+      wheelSensitivity: 0.2      
     });
     const cyCurrent = cy.current;
     const errorCyCurrent = errorCy.current;
