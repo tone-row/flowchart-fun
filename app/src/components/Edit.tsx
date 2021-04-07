@@ -4,7 +4,7 @@ import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
 import { defaultText } from "../constants";
-import Layout from "./Layout";
+import ResizableLayout from "./ResizableLayout";
 import UnmountDeclare from "./UnmountDeclare";
 
 function Edit() {
@@ -61,7 +61,10 @@ function Edit() {
   }, [textarea, setTextToParseThrottle]);
 
   return (
-    <Layout setHoverLineNumber={setHoverLineNumber} textToParse={textToParse}>
+    <ResizableLayout
+      setHoverLineNumber={setHoverLineNumber}
+      textToParse={textToParse}
+    >
       <Editor
         defaultValue={textarea}
         options={{
@@ -89,7 +92,7 @@ function Edit() {
           editorRef.current = editor;
         }}
       />
-    </Layout>
+    </ResizableLayout>
   );
 }
 

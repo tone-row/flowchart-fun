@@ -1,4 +1,4 @@
-import styles from "./Layout.module.css";
+import styles from "./ResizableLayout.module.css";
 import { Resizable } from "re-resizable";
 import React, {
   Dispatch,
@@ -12,7 +12,7 @@ import { AppContext } from "./AppContext";
 import Spinner from "./Spinner";
 import { Box } from "../slang";
 
-export default function Layout({
+export default function ResizableLayout({
   children,
   textToParse,
   setHoverLineNumber,
