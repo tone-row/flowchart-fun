@@ -11,7 +11,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@tone-row/slang": "^1.2.33",
+    "@tone-row/slang": "^1.2.35",
     "@tone-row/strip-comments": "^2.0.1",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",

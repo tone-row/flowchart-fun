@@ -1743,10 +1743,10 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@tone-row/slang@^1.2.33":
-  version "1.2.33"
-  resolved "https://registry.yarnpkg.com/@tone-row/slang/-/slang-1.2.33.tgz#de8a7e42a224e0f7bbc407bc39ec0ff55f15f713"
-  integrity sha512-I8NnkMKw3S5b0hja8wtTMFy/dfIX/3pE6Yl8DZ45JerNOFVwJH/j2MFh3M2NozMBo8rU7yp36g1f0twKoJYJkw==
+"@tone-row/slang@^1.2.35":
+  version "1.2.35"
+  resolved "https://registry.yarnpkg.com/@tone-row/slang/-/slang-1.2.35.tgz#6383a837f21798ed79923c78efae6d812f968c80"
+  integrity sha512-TSBm167q7DaTI2AR7bQz8XWJMYSuhxS61kSTSRjt8WtJJW/CIQpr7pKst5M+JNTUwBD+W3hr+3hDwEhgz4dGPA==
   dependencies:
     modern-normalize "^1.0.0"
     ts-node "^9.1.1"
