@@ -1,0 +1,26 @@
+@media (max-width: 799px) {
+  .TextareaContainer {
+    display: none;
+  }
+}
+
+.Top {
+  overflow: hidden;
+}
+
+.TextareaContainer {
+  border-right: solid 1px var(--color);
+  overflow: hidden;
+}
+
+.resizableHandle {
+  background-color: black;
+  opacity: 0;
+}
+
+@media (min-width: 800px) {
+  .resizableHandle:hover,
+  .resizableHandle:active {
+    opacity: 0.25;
+  }
+}

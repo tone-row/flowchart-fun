@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "nm";
+  src: url("./nm.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
 *,
 *::before,
 *::after {
@@ -18,8 +25,9 @@ body,
 }
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: nm, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --color: #d4d4d4;
@@ -32,14 +40,18 @@ body {
 
 .node-hover {
   background: #ededec;
+  box-shadow: inset -1px 0px 0px var(--color);
 }
 
 .view-line {
   box-shadow: 1px 1px 0px var(--color);
+  font-variant-numeric: tabular-nums;
 }
 
 .monaco-editor .line-numbers {
   color: #838383 !important;
+  font-family: nm, monospace;
+  font-size: 13px;
 }
 
 .monaco-editor,
@@ -71,4 +83,20 @@ body {
   font-size: inherit;
   padding: 1rem;
   border-radius: 2px;
+}
+
+button {
+  background-color: var(--color-background);
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.monaco-editor .margin {
+  background-color: transparent;
 }

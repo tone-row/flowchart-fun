@@ -3,7 +3,7 @@ import { useThrottleCallback } from "@react-hook/throttle";
 import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
-import { defaultText } from "../constants";
+import { defaultText, editorOptions } from "../constants";
 import ResizableLayout from "./ResizableLayout";
 import UnmountDeclare from "./UnmountDeclare";
 
@@ -67,25 +67,7 @@ function Edit() {
     >
       <Editor
         defaultValue={textarea}
-        options={{
-          minimap: { enabled: false },
-          fontSize: 16,
-          tabSize: 2,
-          insertSpaces: true,
-          wordBasedSuggestions: false,
-          occurrencesHighlight: false,
-          renderLineHighlight: false,
-          highlightActiveIndentGuide: false,
-          scrollBeyondLastLine: false,
-          renderIndentGuides: false,
-          overviewRulerBorder: false,
-          lineDecorationsWidth: "10px",
-          renderValidationDecorations: "off",
-          hideCursorInOverviewRuler: true,
-          matchBrackets: "never",
-          selectionHighlight: false,
-          lineHeight: 28,
-        }}
+        options={editorOptions}
         onChange={(value) => value && setText(value)}
         loading={<UnmountDeclare />}
         onMount={(editor, monaco) => {

@@ -1,0 +1,15 @@
+.Layout {
+  max-height: 100%;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .Layout {
+    max-height: -webkit-fill-available;
+  }
+}
+
+@media (max-width: 799px) {
+  .TabletWrapper[data-showing="editor"] {
+    grid-template: minmax(0, 1fr) minmax(0, 1fr) / none;
+  }
+}

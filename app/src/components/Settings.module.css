@@ -1,0 +1,18 @@
+.iconButton {
+  font-size: 0;
+}
+
+.twitter {
+  --icon-size: 22px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+.twitter path {
+  fill: #1da1f2;
+}
+
+@media (min-width: 800px) {
+  .twitter {
+    --icon-size: 24px;
+  }
+}

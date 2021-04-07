@@ -8,48 +8,20 @@
   }
 }
 
-@media (max-width: 799px) {
-  .TextareaContainer {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
-  }
-}
-
-.resizableHandle {
-  background-color: black;
-  opacity: 0;
-}
-
-.TextareaContainer {
+.Resizable {
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--color);
+  /* border-bottom: 1px solid var(--color); */
 }
 
-@media (min-width: 800px) {
-  .TextareaContainer {
-    border-bottom: none;
-    box-shadow: inset -1px 0px 0px var(--color);
-  }
-
-  .resizableHandle:hover,
-  .resizableHandle:active {
-    opacity: 0.25;
-  }
+.TabletWrapper {
+  height: 100%;
 }
 
-.resizer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-  z-index: -1;
-  width: 128px;
-  display: inline-block;
-  word-break: keep-all;
-  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+@media (max-width: 799px) {
+  .Resizable {
+    display: none;
+  }
 }
 
 .Loading {

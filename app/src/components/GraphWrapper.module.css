@@ -1,0 +1,21 @@
+.GraphWrapper {
+  display: none;
+  width: 100%;
+  background-color: var(--color-background);
+  position: relative;
+}
+
+.GraphWrapper[data-showing="editor"] {
+  display: block;
+}
+
+@media (max-width: 799px) {
+  .GraphWrapper {
+    border-top: solid 1px var(--color);
+  }
+}
+@media (min-width: 800px) {
+  .GraphWrapper {
+    display: block !important;
+  }
+}

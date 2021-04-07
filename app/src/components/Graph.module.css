@@ -18,6 +18,9 @@
   cursor: pointer;
 }
 
-.media {
-  font-size: 0;
+.TypeLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  place-self: center;
 }

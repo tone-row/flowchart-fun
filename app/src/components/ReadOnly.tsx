@@ -5,6 +5,7 @@ import ResizableLayout from "./ResizableLayout";
 import { AppContext } from "./AppContext";
 import UnmountDeclare from "./UnmountDeclare";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
+import { editorOptions } from "../constants";
 
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const { graphText } = useParams<{ graphText: string }>();
@@ -55,24 +56,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
         value={textToParse}
         loading={<UnmountDeclare />}
         options={{
-          minimap: { enabled: false },
-          fontSize: 16,
-          tabSize: 2,
-          insertSpaces: true,
-          wordBasedSuggestions: false,
-          occurrencesHighlight: false,
-          renderLineHighlight: false,
-          highlightActiveIndentGuide: false,
-          scrollBeyondLastLine: false,
-          renderIndentGuides: false,
-          overviewRulerBorder: false,
-          lineDecorationsWidth: "10px",
-          renderValidationDecorations: "off",
-          hideCursorInOverviewRuler: true,
-          matchBrackets: "never",
-          selectionHighlight: false,
-          lineHeight: 28,
-          // model: null,
+          ...editorOptions,
           readOnly: true,
         }}
         onMount={(editor, monaco) => {
