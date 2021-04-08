@@ -65,7 +65,7 @@ export default function Menu({
           </MenuRightButton>
           <MenuRightButton
             as="a"
-            className={styles.TypeLink}
+            className={[styles.TypeLink, styles.menuRightButton].join(" ")}
             target="_blank"
             rel="noreferrer"
             href={shareLink}

@@ -1,32 +1,32 @@
-import React from "react";
-import { Box } from "../slang";
+import React, { ReactNode, useContext } from "react";
+import { Box, BoxProps, Type } from "../slang";
+import { AppContext } from "./AppContext";
+import styles from "./Share.module.css";
 
 export default function Share() {
+  const { shareLink } = useContext(AppContext);
   return (
-    <Box flow="column" items="center" gap={2}>
-      sup down
-      {/* <Type as="button" onClick={downloadImageAsSVG} title="Download SVG">
-    SVG
-  </Type>
-  |
-  <Type as="button" onClick={downloadImageAsJPG} title="Download JPG">
-    JPG
-  </Type>
-  |
-  <Type as="button" onClick={downloadImageAsPNG} title="Download PNG">
-    PNG
-  </Type>
-  |
-  <Type
-    as="a"
-    href={`${new URL(window.location.href).origin}/c/${compress(
-      textToParse
-    )}`}
-    rel="noreferrer"
-    target="_blank"
-  >
-    Share
-  </Type> */}
+    <Box gap={2} content="start stretch" p={4}>
+      <Button as="a" href={shareLink} rel="noreferrer" target="_blank">
+        Open Share Link
+      </Button>
+      <Button onClick={() => window.flowchartFunDownloadSVG()}>
+        Download SVG
+      </Button>
+      <Button onClick={() => window.flowchartFunDownloadPNG()}>
+        Download PNG
+      </Button>
+      <Button onClick={() => window.flowchartFunDownloadJPG()}>
+        Download JPG
+      </Button>
+    </Box>
+  );
+}
+
+function Button({ children, ...props }: { children: ReactNode } & BoxProps) {
+  return (
+    <Box as="button" p={3} className={styles.ShareButton} {...props}>
+      <Type>{children}</Type>
     </Box>
   );
 }
