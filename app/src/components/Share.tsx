@@ -4,6 +4,7 @@ import { Box } from "../slang";
 export default function Share() {
   return (
     <Box flow="column" items="center" gap={2}>
+      sup down
       {/* <Type as="button" onClick={downloadImageAsSVG} title="Download SVG">
     SVG
   </Type>

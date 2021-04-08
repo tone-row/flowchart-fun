@@ -4,6 +4,7 @@ import { LayoutContext } from "../constants";
 import { Box } from "../slang";
 import styles from "./ResponsiveLayout.module.css";
 import Settings from "./Settings";
+import Share from "./Share";
 
 const Reresizable = ({
   children,
@@ -52,6 +53,8 @@ export default function ResponsiveLayout({
       children
     ) : showing === "settings" ? (
       <Settings />
+    ) : showing === "share" ? (
+      <Share />
     ) : (
       showing
     );

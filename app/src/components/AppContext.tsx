@@ -1,10 +1,13 @@
 import {
   createContext,
+  Dispatch,
   DispatchWithoutAction,
   ReactNode,
+  SetStateAction,
   useCallback,
   useMemo,
   useReducer,
+  useState,
 } from "react";
 import useLocalStorage from "react-use-localstorage";
 import { colors, darkTheme } from "../slang/config";
@@ -21,10 +24,13 @@ export const AppContext = createContext({ setIsReady: () => {} } as {
   setIsReady: DispatchWithoutAction;
   updateUserSettings: (newSettings: Partial<UserSettings>) => void;
   theme: Theme;
+  shareLink: string;
+  setShareLink: Dispatch<SetStateAction<string>>;
 } & Partial<UserSettings>);
 
 const Provider = ({ children }: { children?: ReactNode }) => {
   const [isReady, setIsReady] = useReducer(() => true, false);
+  const [shareLink, setShareLink] = useState("");
   const [userSettingsString, setUserSettings] = useLocalStorage(
     "flowcharts.fun.user.settings",
     "{}"
@@ -52,7 +58,15 @@ const Provider = ({ children }: { children?: ReactNode }) => {
 
   return (
     <AppContext.Provider
-      value={{ isReady, setIsReady, updateUserSettings, theme, ...settings }}
+      value={{
+        isReady,
+        setIsReady,
+        updateUserSettings,
+        theme,
+        shareLink,
+        setShareLink,
+        ...settings,
+      }}
     >
       {children}
     </AppContext.Provider>

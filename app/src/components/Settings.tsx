@@ -63,10 +63,14 @@ export default function Settings() {
             <Type as="a" href="https://twitter.com/row_tone" size={-2}>
               Follow Us
             </Type>
-            <Type as="a" href="https://twitter.com/row_tone" size={-2}>
+            <Type
+              as="a"
+              href="https://opencollective.com/tone-row/donate"
+              size={-2}
+            >
               Make a Donation
             </Type>
-            <Type as="a" href="https://twitter.com/row_tone" size={-2}>
+            <Type as="a" href="https://github.com/sponsors/tone-row" size={-2}>
               Become a Sponsor
             </Type>
           </Box>

@@ -15,7 +15,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
-  const { setIsReady } = useContext(AppContext);
+  const { mode, setIsReady } = useContext(AppContext);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -54,6 +54,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
       <Editor
         defaultValue={textToParse}
         value={textToParse}
+        theme={mode === "dark" ? "vs-dark" : "light"}
         loading={<UnmountDeclare />}
         options={{
           ...editorOptions,

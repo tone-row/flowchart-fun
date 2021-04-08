@@ -20,11 +20,18 @@ import { LAYOUT } from "../constants";
 import { parseText, useAnimationSetting } from "../utils";
 import styles from "./Graph.module.css";
 import { saveAs } from "file-saver";
-import { Box, BoxProps, Type } from "../slang";
+import { Box } from "../slang";
 import { compressToEncodedURIComponent as compress } from "lz-string";
-import MenuRight from "./MenuRight";
 import { AppContext } from "./AppContext";
 import { colors } from "../slang/config";
+
+declare global {
+  interface Window {
+    flowchartFunDownloadSVG: () => void;
+    flowchartFunDownloadPNG: () => void;
+    flowchartFunDownloadJPG: () => void;
+  }
+}
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
@@ -46,7 +53,7 @@ const Graph = memo(
     const errorCy = useRef<undefined | Core>();
     const animate = useAnimationSetting();
     const graphInitialized = useRef(false);
-    const { theme } = useContext(AppContext);
+    const { theme, setShareLink } = useContext(AppContext);
     const themeString = JSON.stringify(theme);
 
     const updateGraph = useCallback(() => {
@@ -95,7 +102,7 @@ const Graph = memo(
         window.removeEventListener("resize", debouncedResize.callback);
     }, [debouncedResize]);
 
-    const downloadImageAsSVG = useCallback(() => {
+    const downloadSVG = useCallback(() => {
       if (cy.current) {
         // @ts-ignore
         const svgStr = cy.current.svg({
@@ -130,7 +137,7 @@ const Graph = memo(
       }
     }, [textToParse, theme.background]);
 
-    const downloadImageAsPNG = useCallback(() => {
+    const downloadPNG = useCallback(() => {
       if (cy.current) {
         // @ts-ignore
         const pngStr = cy.current.png({
@@ -147,13 +154,14 @@ const Graph = memo(
       }
     }, []);
 
-    const downloadImageAsJPG = useCallback(() => {
+    const downloadJPG = useCallback(() => {
       if (cy.current) {
         // @ts-ignore
         const jpgStr = cy.current.jpg({
           full: true,
           scale: 1.5,
           output: "blob",
+          bg: theme.background,
         });
         saveAs(
           new Blob([jpgStr], {
@@ -162,7 +170,19 @@ const Graph = memo(
           "flowchart.jpg"
         );
       }
-    }, []);
+    }, [theme.background]);
+
+    useEffect(() => {
+      window.flowchartFunDownloadSVG = downloadSVG;
+      window.flowchartFunDownloadPNG = downloadPNG;
+      window.flowchartFunDownloadJPG = downloadJPG;
+    }, [downloadSVG, downloadPNG, downloadJPG]);
+
+    useEffect(() => {
+      setShareLink(
+        `${new URL(window.location.href).origin}/c/${compress(textToParse)}`
+      );
+    }, [setShareLink, textToParse]);
 
     useEffect(() => {
       errorCy.current = cytoscape();
@@ -216,9 +236,7 @@ const Graph = memo(
       } catch (e) {
         console.error(e);
       }
-      console.log(cy.current);
       if (cy.current) {
-        console.log("TRYING");
         cy.current.json({ style: getCyStyleFromTheme(newTheme) });
         cy.current.center();
       }
@@ -229,44 +247,13 @@ const Graph = memo(
     }, [updateGraph]);
 
     return (
-      <>
-        <Box
-          className={[styles.GraphContainer, "graph"].join(" ")}
-          overflow="hidden"
-          h="100%"
-        >
-          <Box id="cy" overflow="hidden" />
-        </Box>
-        <MenuRight>
-          <Box
-            flow="column"
-            display={false}
-            at={{ tablet: { display: true } }}
-            pr={4}
-          >
-            <MenuButton onClick={downloadImageAsSVG} title="Download SVG">
-              SVG
-            </MenuButton>
-            <MenuButton onClick={downloadImageAsJPG} title="Download JPG">
-              JPG
-            </MenuButton>
-            <MenuButton onClick={downloadImageAsPNG} title="Download PNG">
-              PNG
-            </MenuButton>
-            <MenuButton
-              as="a"
-              className={styles.TypeLink}
-              target="_blank"
-              rel="noreferrer"
-              href={`${new URL(window.location.href).origin}/c/${compress(
-                textToParse
-              )}`}
-            >
-              Share
-            </MenuButton>
-          </Box>
-        </MenuRight>
-      </>
+      <Box
+        className={[styles.GraphContainer, "graph"].join(" ")}
+        overflow="hidden"
+        h="100%"
+      >
+        <Box id="cy" overflow="hidden" />
+      </Box>
     );
   }
 );
@@ -274,24 +261,6 @@ const Graph = memo(
 Graph.displayName = "Graph";
 
 export default Graph;
-
-function MenuButton({
-  children,
-  className = "",
-  ...props
-}: { children: string } & BoxProps) {
-  return (
-    <Box
-      as="button"
-      content="center"
-      px={2}
-      className={[styles.menuRightButton, className].join(" ")}
-      {...props}
-    >
-      <Type>{children}</Type>
-    </Box>
-  );
-}
 
 function getCyStyleFromTheme(theme: typeof colors): CytoscapeOptions["style"] {
   return [
