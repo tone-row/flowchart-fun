@@ -1,14 +1,14 @@
 @keyframes load {
   from {
     stroke-dashoffset: var(--d);
-    stroke: var(--color);
+    stroke: var(--color-uiAccent);
   }
   50% {
-    stroke: rgb(155, 150, 150);
+    stroke: var(--color-nodeHover);
   }
   to {
     stroke-dashoffset: 0;
-    stroke: var(--color);
+    stroke: var(--color-uiAccent);
   }
 }
 

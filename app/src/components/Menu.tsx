@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction, useContext } from "react";
 import { LayoutContext, Showing } from "../constants";
-import { Box, BoxProps, Type } from "../slang";
+import { Box, BoxProps, Type, TypeProps } from "../slang";
 import styles from "./Menu.module.css";
+import { ReactComponent as Brand } from "./brand.svg";
 
 export default function Menu({
   setShowing,
@@ -11,13 +12,15 @@ export default function Menu({
   return (
     <Box className={styles.Menu} content="normal space-between" flow="column">
       <Box as="ul" flow="column" content="normal start">
-        <MenuButton
-          show="navigation"
-          onClick={() => setShowing("navigation")}
-          disabled
+        <Box
+          px={4}
+          py={0}
+          content="center"
+          style={{ fontSize: 0, lineHeight: 1 }}
+          className="brand"
         >
-          FF
-        </MenuButton>
+          <Brand width={40} />
+        </Box>
         <MenuButton show="editor" onClick={() => setShowing("editor")}>
           Editor
         </MenuButton>
@@ -41,8 +44,9 @@ export default function Menu({
 function MenuButton({
   children,
   show,
+  typeProps = {},
   ...props
-}: BoxProps & { children: string; show: Showing }) {
+}: BoxProps & { children: string; show: Showing; typeProps?: TypeProps }) {
   const { showing } = useContext(LayoutContext);
   const isActive = showing === show;
   return (
@@ -53,11 +57,12 @@ function MenuButton({
         py={3}
         aria-selected={isActive}
         className={styles.MenuButton}
-        background="palette-white-0"
         disabled={isActive}
         {...props}
       >
-        <Type>{children}</Type>
+        <Type as="span" {...typeProps}>
+          {children}
+        </Type>
       </Box>
     </Box>
   );

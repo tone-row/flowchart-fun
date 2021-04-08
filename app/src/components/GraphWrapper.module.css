@@ -1,7 +1,6 @@
 .GraphWrapper {
   display: none;
   width: 100%;
-  background-color: var(--color-background);
   position: relative;
 }
 
@@ -11,7 +10,7 @@
 
 @media (max-width: 799px) {
   .GraphWrapper {
-    border-top: solid 1px var(--color);
+    border-top: solid 1px var(--color-uiAccent);
   }
 }
 @media (min-width: 800px) {

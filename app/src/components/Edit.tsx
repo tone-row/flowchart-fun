@@ -1,4 +1,10 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
 import { useThrottleCallback } from "@react-hook/throttle";
 import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
@@ -6,6 +12,7 @@ import { useParams } from "react-router";
 import { defaultText, editorOptions } from "../constants";
 import ResizableLayout from "./ResizableLayout";
 import UnmountDeclare from "./UnmountDeclare";
+import { AppContext } from "./AppContext";
 
 function Edit() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
@@ -21,6 +28,7 @@ function Edit() {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
+  const { mode } = useContext(AppContext);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -68,6 +76,7 @@ function Edit() {
       <Editor
         defaultValue={textarea}
         options={editorOptions}
+        theme={mode === "dark" ? "vs-dark" : "light"}
         onChange={(value) => value && setText(value)}
         loading={<UnmountDeclare />}
         onMount={(editor, monaco) => {

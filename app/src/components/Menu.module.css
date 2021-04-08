@@ -1,14 +1,10 @@
 .Menu {
-  border-bottom: 1px solid var(--color);
+  border-bottom: 1px solid var(--color-uiAccent);
 }
 
 .MenuButton {
-  border-right: 1px solid var(--color);
+  border-right: 1px solid var(--color-uiAccent);
   position: relative;
-}
-
-.MenuButton:active {
-  outline: none;
 }
 
 .MenuButton[aria-selected="true"]::after {

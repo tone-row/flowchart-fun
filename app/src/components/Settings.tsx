@@ -1,18 +1,38 @@
-import React from "react";
-import { Box, Type } from "../slang";
-import { Twitter } from "./svgs";
+import React, { ReactNode, useContext } from "react";
+import { Box, BoxProps, Type } from "../slang";
 import styles from "./Settings.module.css";
+import { AppContext } from "./AppContext";
 
 export default function Settings() {
+  const { updateUserSettings, mode } = useContext(AppContext);
   return (
     <Box
       px={4}
       pb={4}
+      pt={2}
       at={{ tablet: { pb: 0 } }}
       template="minmax(0, 1fr) auto / none"
     >
-      <Box>
-        <Type size={1}>User Settings</Type>
+      <Box content="start" gap={4}>
+        <Type size={-1} weight="700">
+          Preferences
+        </Type>
+        <Box flow="column">
+          <GroupButton
+            disabled={mode === "light"}
+            aria-selected={mode === "light"}
+            onClick={() => updateUserSettings({ mode: "light" })}
+          >
+            Light Mode
+          </GroupButton>
+          <GroupButton
+            disabled={mode === "dark"}
+            aria-selected={mode === "dark"}
+            onClick={() => updateUserSettings({ mode: "dark" })}
+          >
+            Dark Mode
+          </GroupButton>
+        </Box>
       </Box>
       <Box
         flow="column"
@@ -20,8 +40,9 @@ export default function Settings() {
         content="normal space-between"
         self="stretch"
         gap={12}
+        className={styles.LowerLinks}
       >
-        <Box gap={3}>
+        <Box gap={2}>
           <Type as="a" href="https://js.cytoscape.org/" size={-1}>
             Built with Cytoscape.js
           </Type>
@@ -32,15 +53,36 @@ export default function Settings() {
           >
             Hosted on Github
           </Type>
-
-          <Type as="a" href="https://tone-row.com" size={-1}>
-            Made by Tone Row
-          </Type>
+          <Box flow="column" gap={4} items="end normal">
+            <Type as="a" href="https://tone-row.com" size={-1}>
+              Made by{" "}
+              <Type weight="700" as="span" size={-1}>
+                Tone Row
+              </Type>
+            </Type>
+            <Type as="a" href="https://twitter.com/row_tone" size={-2}>
+              Follow Us
+            </Type>
+            <Type as="a" href="https://twitter.com/row_tone" size={-2}>
+              Make a Donation
+            </Type>
+            <Type as="a" href="https://twitter.com/row_tone" size={-2}>
+              Become a Sponsor
+            </Type>
+          </Box>
         </Box>
-        <a href="https://twitter.com/row_tone" className={styles.iconButton}>
-          <Twitter className={styles.twitter} />
-        </a>
       </Box>
+    </Box>
+  );
+}
+
+function GroupButton({
+  children,
+  ...props
+}: { children: ReactNode } & BoxProps) {
+  return (
+    <Box as="button" p={3} className={styles.GroupButton} {...props}>
+      <Type size={-1}>{children}</Type>
     </Box>
   );
 }

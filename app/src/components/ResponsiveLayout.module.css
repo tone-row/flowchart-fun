@@ -9,12 +9,12 @@
 }
 
 .TextareaContainer {
-  border-right: solid 1px var(--color);
+  border-right: solid 1px var(--color-uiAccent);
   overflow: hidden;
 }
 
 .resizableHandle {
-  background-color: black;
+  background-color: var(--color-foreground);
   opacity: 0;
 }
 

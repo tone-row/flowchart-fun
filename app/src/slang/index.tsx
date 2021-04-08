@@ -12,8 +12,30 @@ type Breakpoints = "tablet" | "desktop";
 type Colors = 
   | "color-background"
   | "color-foreground"
+  | "color-lineColor"
+  | "color-uiAccent"
+  | "color-nodeHover"
+  | "color-edgeHover"
+  | "color-lineNumbers"
+  | "color-buttonFocus"
+  | "color-highlightColor"
+  | "palette-white-0"
+  | "palette-white-1"
+  | "palette-white-2"
+  | "palette-white-3"
+  | "palette-white-4"
   | "palette-black-0"
-  | "palette-white-0";
+  | "palette-purple-0"
+  | "palette-purple-1"
+  | "palette-purple-2"
+  | "palette-green-0"
+  | "palette-green-1"
+  | "palette-green-2"
+  | "palette-blue-0"
+  | "palette-yellow-0"
+  | "palette-yellow-1"
+  | "palette-orange-0"
+  | "palette-orange-1";
 export type BoxProps = PropsWithAs<BaseBoxProps<Breakpoints, Colors>>;
 export type TypeProps = PropsWithAs<BaseTypeProps<Breakpoints, Colors>>;
 const Box = forwardRefWithAs<BoxProps, "div">(BoxComponent);

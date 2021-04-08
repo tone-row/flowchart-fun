@@ -4,6 +4,12 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: "nm";
+  src: url("./nmb.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
 
 *,
 *::before,
@@ -30,7 +36,6 @@ html {
     Segoe UI Symbol;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color: #d4d4d4;
 }
 
 body {
@@ -39,17 +44,30 @@ body {
 }
 
 .node-hover {
-  background: #ededec;
-  box-shadow: inset -1px 0px 0px var(--color);
+  /* color: orange; */
+  /* font-size: 100px; */
+  /* box-shadow: inset -10px 0px 0px 0px var(--color-highlightColor); */
+  background: var(--color-uiAccent);
 }
 
 .view-line {
-  box-shadow: 1px 1px 0px var(--color);
+  box-shadow: inset 0px 0px 0px 0px var(--color-uiAccent);
   font-variant-numeric: tabular-nums;
+  transition: box-shadow 100ms ease;
+}
+
+.view-line::after {
+  width: 100%;
+  content: " ";
+  height: 1px;
+  background-color: var(--color-uiAccent);
+  display: block;
+  position: absolute;
+  top: calc(100% - 1px);
 }
 
 .monaco-editor .line-numbers {
-  color: #838383 !important;
+  color: var(--color-lineNumbers) !important;
   font-family: nm, monospace;
   font-size: 13px;
 }
@@ -62,7 +80,7 @@ body {
 
 .errorMessage {
   padding: 1rem;
-  background-color: #ededec;
+  background-color: var(--color-nodeHover);
   font-size: 1rem;
 }
 
@@ -78,7 +96,7 @@ body {
 }
 
 .errorWrapper button {
-  border: 1px solid #b6b6b6;
+  border: 1px solid var(--color-edgeHover);
   font-family: inherit;
   font-size: inherit;
   padding: 1rem;
@@ -86,10 +104,15 @@ body {
 }
 
 button {
-  background-color: var(--color-background);
+  background-color: transparent;
+  color: var(--color-foreground);
   appearance: none;
   border: none;
   cursor: pointer;
+}
+
+button:active {
+  outline: none;
 }
 
 a {
@@ -98,5 +121,25 @@ a {
 }
 
 .monaco-editor .margin {
-  background-color: transparent;
+  background-color: transparent !important;
+}
+
+.mtk1 {
+  color: var(--color-foreground) !important;
+}
+
+.brand {
+  border-right: 1px solid var(--color-uiAccent);
+}
+.brand svg path {
+  fill: var(--color-foreground);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 3px var(--color-buttonFocus);
+}
+
+.monaco-editor .selected-text {
+  background-color: var(--color-highlightColor) !important;
 }

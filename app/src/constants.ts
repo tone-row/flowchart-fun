@@ -9,9 +9,6 @@ export const LAYOUT: any = {
   spacingFactor: 1.25,
 };
 
-export const lineColor = "#000000";
-export const textColor = "#000000";
-
 export const defaultText = `this app works by typing
   new lines create new nodes
     indentation creates child nodes 
@@ -53,5 +50,6 @@ export const editorOptions: EditorProps["options"] = {
   matchBrackets: "never",
   selectionHighlight: false,
   lineHeight: 28,
-  lineNumbersMinChars: 3,
+  lineNumbersMinChars: 5,
+  cursorWidth: 2,
 };

@@ -3,20 +3,28 @@ import React, {
   memo,
   SetStateAction,
   useCallback,
+  useContext,
   useEffect,
   useRef,
 } from "react";
-import cytoscape, { Core, EdgeSingular, NodeSingular } from "cytoscape";
+import cytoscape, {
+  Core,
+  CytoscapeOptions,
+  EdgeSingular,
+  NodeSingular,
+} from "cytoscape";
 import { useDebouncedCallback } from "use-debounce";
 import dagre from "cytoscape-dagre";
 import cytoscapeSvg from "cytoscape-svg";
-import { LAYOUT, lineColor, textColor } from "../constants";
+import { LAYOUT } from "../constants";
 import { parseText, useAnimationSetting } from "../utils";
 import styles from "./Graph.module.css";
 import { saveAs } from "file-saver";
-import { Box, Type } from "../slang";
+import { Box, BoxProps, Type } from "../slang";
 import { compressToEncodedURIComponent as compress } from "lz-string";
 import MenuRight from "./MenuRight";
+import { AppContext } from "./AppContext";
+import { colors } from "../slang/config";
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
@@ -38,11 +46,14 @@ const Graph = memo(
     const errorCy = useRef<undefined | Core>();
     const animate = useAnimationSetting();
     const graphInitialized = useRef(false);
+    const { theme } = useContext(AppContext);
+    const themeString = JSON.stringify(theme);
 
     const updateGraph = useCallback(() => {
       if (cy.current) {
         let error = false;
         let newElements: cytoscape.ElementDefinition[] = [];
+
         try {
           newElements = parseText(textToParse);
           errorCy.current?.json({ elements: newElements });
@@ -87,7 +98,11 @@ const Graph = memo(
     const downloadImageAsSVG = useCallback(() => {
       if (cy.current) {
         // @ts-ignore
-        const svgStr = cy.current.svg({ full: true, scale: 1.5 });
+        const svgStr = cy.current.svg({
+          full: true,
+          scale: 1.5,
+          bg: theme.background === "#ffffff" ? undefined : theme.background,
+        });
         const domparser = new DOMParser();
         let svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
         let squares: Element[] = [
@@ -98,7 +113,7 @@ const Graph = memo(
             x.getAttribute("paint-order") === "fill stroke markers"
         );
         squares = [...squares, ...svgEl.children[0].querySelectorAll("rect")];
-        squares.forEach((el) => el.setAttribute("fill", "#ffffff"));
+        squares.forEach((el) => el.setAttribute("fill", theme.background));
 
         // Add comment
         const originalTextComment = svgEl.createComment(
@@ -113,7 +128,7 @@ const Graph = memo(
           "flowchart.svg"
         );
       }
-    }, [textToParse]);
+    }, [textToParse, theme.background]);
 
     const downloadImageAsPNG = useCallback(() => {
       if (cy.current) {
@@ -155,68 +170,7 @@ const Graph = memo(
         container: document.getElementById("cy"), // container to render in
         layout: { ...LAYOUT },
         elements: [],
-        style: [
-          {
-            selector: "node",
-            style: {
-              backgroundColor: "#FFFFFF",
-              "border-color": lineColor,
-              color: textColor,
-              label: "data(label)",
-              "font-size": 10,
-              "text-wrap": "wrap",
-              "text-max-width": "80",
-              "text-valign": "center",
-              "text-halign": "center",
-              // @ts-ignore
-              "line-height": 1.25,
-              "border-width": 1,
-              shape: "rectangle",
-              "font-family":
-                "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-              width: "data(width)",
-              height: "data(height)",
-            },
-          },
-          {
-            selector: "edge",
-            style: {
-              // @ts-ignore
-              "loop-direction": "0deg",
-              "loop-sweep": "20deg",
-              width: 1,
-              "text-background-opacity": 1,
-              "text-background-color": "#ffffff",
-              "line-color": lineColor,
-              "target-arrow-color": lineColor,
-              "target-arrow-shape": "vee",
-              "arrow-scale": 1,
-              "curve-style": "bezier",
-              label: "data(label)",
-              "font-size": 10,
-              "text-valign": "center",
-              "font-family":
-                "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-              "text-halign": "center",
-              // @ts-ignore
-              "edge-text-rotation": "autorotate",
-            },
-          },
-          {
-            selector: ".edgeHovered",
-            style: {
-              "line-color": "#aaaaaa",
-              "target-arrow-color": "#aaaaaa",
-              color: "#aaaaaa",
-            },
-          },
-          {
-            selector: ".nodeHovered",
-            style: {
-              backgroundColor: "#ededec",
-            },
-          },
-        ],
+        style: getCyStyleFromTheme(colors),
         userZoomingEnabled: true,
         userPanningEnabled: true,
         boxSelectionEnabled: false,
@@ -254,6 +208,22 @@ const Graph = memo(
       };
     }, [setHoverLineNumber]);
 
+    // Update graph color
+    useEffect(() => {
+      let newTheme = colors;
+      try {
+        newTheme = JSON.parse(themeString);
+      } catch (e) {
+        console.error(e);
+      }
+      console.log(cy.current);
+      if (cy.current) {
+        console.log("TRYING");
+        cy.current.json({ style: getCyStyleFromTheme(newTheme) });
+        cy.current.center();
+      }
+    }, [themeString]);
+
     useEffect(() => {
       updateGraph();
     }, [updateGraph]);
@@ -270,36 +240,20 @@ const Graph = memo(
         <MenuRight>
           <Box
             flow="column"
-            gap={4}
             display={false}
             at={{ tablet: { display: true } }}
             pr={4}
           >
-            <Box
-              as="button"
-              onClick={downloadImageAsSVG}
-              title="Download SVG"
-              content="center"
-            >
-              <Type>svg</Type>
-            </Box>
-            <Box
-              as="button"
-              onClick={downloadImageAsJPG}
-              title="Download JPG"
-              content="center"
-            >
-              <Type>jpg</Type>
-            </Box>
-            <Box
-              as="button"
-              onClick={downloadImageAsPNG}
-              title="Download PNG"
-              content="center"
-            >
-              <Type>png</Type>
-            </Box>
-            <Type
+            <MenuButton onClick={downloadImageAsSVG} title="Download SVG">
+              SVG
+            </MenuButton>
+            <MenuButton onClick={downloadImageAsJPG} title="Download JPG">
+              JPG
+            </MenuButton>
+            <MenuButton onClick={downloadImageAsPNG} title="Download PNG">
+              PNG
+            </MenuButton>
+            <MenuButton
               as="a"
               className={styles.TypeLink}
               target="_blank"
@@ -308,8 +262,8 @@ const Graph = memo(
                 textToParse
               )}`}
             >
-              share
-            </Type>
+              Share
+            </MenuButton>
           </Box>
         </MenuRight>
       </>
@@ -320,3 +274,87 @@ const Graph = memo(
 Graph.displayName = "Graph";
 
 export default Graph;
+
+function MenuButton({
+  children,
+  className = "",
+  ...props
+}: { children: string } & BoxProps) {
+  return (
+    <Box
+      as="button"
+      content="center"
+      px={2}
+      className={[styles.menuRightButton, className].join(" ")}
+      {...props}
+    >
+      <Type>{children}</Type>
+    </Box>
+  );
+}
+
+function getCyStyleFromTheme(theme: typeof colors): CytoscapeOptions["style"] {
+  return [
+    {
+      selector: "node",
+      style: {
+        backgroundColor: theme.background,
+        "border-color": theme.foreground,
+        color: theme.foreground,
+        label: "data(label)",
+        "font-size": 10,
+        "text-wrap": "wrap",
+        "text-max-width": "80",
+        "text-valign": "center",
+        "text-halign": "center",
+        // @ts-ignore
+        "line-height": 1.25,
+        "border-width": 1,
+        shape: "rectangle",
+        "font-family":
+          "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+        width: "data(width)",
+        height: "data(height)",
+      },
+    },
+    {
+      selector: "edge",
+      style: {
+        // @ts-ignore
+        "loop-direction": "0deg",
+        "loop-sweep": "20deg",
+        width: 1,
+        "text-background-opacity": 1,
+        "text-background-color": theme.background,
+        "line-color": theme.foreground,
+        "target-arrow-color": theme.foreground,
+        "target-arrow-shape": "vee",
+        "arrow-scale": 1,
+        "curve-style": "bezier",
+        label: "data(label)",
+        color: theme.foreground,
+        "font-size": 10,
+        "text-valign": "center",
+        "font-family":
+          "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+        "text-halign": "center",
+        // @ts-ignore
+        "edge-text-rotation": "autorotate",
+      },
+    },
+    {
+      selector: ".edgeHovered",
+      style: {
+        "line-color": theme.edgeHover,
+        "target-arrow-color": theme.edgeHover,
+        color: theme.edgeHover,
+      },
+    },
+    {
+      selector: ".nodeHovered",
+      style: {
+        backgroundColor: theme.nodeHover,
+      },
+    },
+  ];
+}
