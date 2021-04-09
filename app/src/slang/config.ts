@@ -1,6 +1,6 @@
 import { SlangConfig } from "@tone-row/slang";
 
-export const palette: SlangConfig["palette"] = {
+const palette: SlangConfig["palette"] = {
   white: ["#ffffff", "#ededec", "#f0f0f0", "#aaaaaa", "##757575"],
   black: ["#000000"],
   purple: ["#5c6fff", "#929bff", "#D3CCF3"],
