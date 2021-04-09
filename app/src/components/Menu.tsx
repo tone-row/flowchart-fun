@@ -68,7 +68,7 @@ const Menu = memo(
             target="_blank"
             rel="noreferrer"
             href={shareLink}
-            title="Open Shareble Link"
+            title="Open Read-only Link for Sharing"
           >
             Share
           </MenuRightButton>
