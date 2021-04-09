@@ -16,7 +16,6 @@ export default function ResizableLayout({
   const [shouldResize, triggerResize] = useState(0);
   return (
     <>
-      {/* {!isReady && <Loading />} */}
       <ResponsiveLayout triggerResize={() => triggerResize((n) => n + 1)}>
         {children}
       </ResponsiveLayout>

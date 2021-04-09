@@ -31,9 +31,6 @@ body {
 }
 
 .node-hover {
-  /* color: orange; */
-  /* font-size: 100px; */
-  /* box-shadow: inset -10px 0px 0px 0px var(--color-highlightColor); */
   background: var(--color-uiAccent);
 }
 
