@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
-import ResizableLayout from "./ResizableLayout";
+import WithGraph from "./WithGraph";
 import { AppContext } from "./AppContext";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { editorOptions } from "../constants";
@@ -47,7 +47,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   }, [hoverLineNumber]);
 
   return (
-    <ResizableLayout
+    <WithGraph
       setHoverLineNumber={setHoverLineNumber}
       textToParse={textToParse}
     >
@@ -64,7 +64,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
           editorRef.current = editor;
         }}
       />
-    </ResizableLayout>
+    </WithGraph>
   );
 }
 

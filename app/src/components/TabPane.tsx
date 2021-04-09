@@ -1,12 +1,12 @@
-import { Resizable } from "re-resizable";
+import { Resizable as Reresizable } from "re-resizable";
 import React, { ReactNode, useContext } from "react";
 import { Box } from "../slang";
 import { LayoutContext } from "./Layout";
-import styles from "./ResponsiveLayout.module.css";
+import styles from "./TabPane.module.css";
 import Settings from "./Settings";
 import Share from "./Share";
 
-const Reresizable = ({
+const Resizable = ({
   children,
   triggerResize,
 }: {
@@ -14,7 +14,7 @@ const Reresizable = ({
   triggerResize: () => void;
 }) => {
   return (
-    <Resizable
+    <Reresizable
       defaultSize={{
         width: "50%",
         height: "auto",
@@ -36,11 +36,11 @@ const Reresizable = ({
       onResizeStop={triggerResize}
     >
       {children}
-    </Resizable>
+    </Reresizable>
   );
 };
 
-export default function ResponsiveLayout({
+export default function TabPane({
   children,
   triggerResize,
 }: {
@@ -58,6 +58,7 @@ export default function ResponsiveLayout({
     ) : (
       showing
     );
+
   return (
     <>
       <Box
@@ -68,7 +69,7 @@ export default function ResponsiveLayout({
       >
         {child}
       </Box>
-      <Reresizable triggerResize={triggerResize}>
+      <Resizable triggerResize={triggerResize}>
         <Box
           pt={4}
           h="100%"
@@ -76,7 +77,7 @@ export default function ResponsiveLayout({
         >
           {child}
         </Box>
-      </Reresizable>
+      </Resizable>
     </>
   );
 }

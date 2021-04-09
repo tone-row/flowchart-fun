@@ -1,10 +1,10 @@
 import React, { Dispatch, ReactNode, SetStateAction, useState } from "react";
-import ResponsiveLayout from "./ResponsiveLayout";
+import TabPane from "./TabPane";
 import Graph from "./Graph";
 import TextResizer from "./TextResizer";
 import GraphWrapper from "./GraphWrapper";
 
-export default function ResizableLayout({
+export default function WithGraph({
   children,
   textToParse,
   setHoverLineNumber,
@@ -16,9 +16,9 @@ export default function ResizableLayout({
   const [shouldResize, triggerResize] = useState(0);
   return (
     <>
-      <ResponsiveLayout triggerResize={() => triggerResize((n) => n + 1)}>
+      <TabPane triggerResize={() => triggerResize((n) => n + 1)}>
         {children}
-      </ResponsiveLayout>
+      </TabPane>
       <GraphWrapper>
         <Graph
           textToParse={textToParse}

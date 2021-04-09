@@ -10,7 +10,7 @@ import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
 import { defaultText, editorOptions } from "../constants";
-import ResizableLayout from "./ResizableLayout";
+import WithGraph from "./WithGraph";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
 
@@ -69,7 +69,7 @@ function Edit() {
   }, [textarea, setTextToParseThrottle]);
 
   return (
-    <ResizableLayout
+    <WithGraph
       setHoverLineNumber={setHoverLineNumber}
       textToParse={textToParse}
     >
@@ -83,7 +83,7 @@ function Edit() {
           editorRef.current = editor;
         }}
       />
-    </ResizableLayout>
+    </WithGraph>
   );
 }
 
