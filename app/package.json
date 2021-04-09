@@ -40,7 +40,8 @@
     "test:coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "theme": "slang src/slang",
-    "theme:watch": "slang src/slang -w"
+    "theme:watch": "slang src/slang -w",
+    "unused-exports": "ts-unused-exports tsconfig.json"
   },
   "eslintConfig": {
     "extends": [
@@ -68,6 +69,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/strip-comments": "^2.0.0",
     "@types/svg-parser": "^2.0.1",
-    "concurrently": "^6.0.0"
+    "concurrently": "^6.0.0",
+    "ts-unused-exports": "^7.0.3"
   }
 }
