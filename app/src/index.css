@@ -1,16 +1,3 @@
-@font-face {
-  font-family: "nm";
-  src: url("./nm.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "nm";
-  src: url("./nmb.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
 *,
 *::before,
 *::after {

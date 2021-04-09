@@ -31,6 +31,7 @@ const Layout = memo(
         >
           <Menu setShowing={setShowing} />
           <Box
+            as="main"
             className={styles.TabletWrapper}
             at={{ tablet: { display: "flex", template: "none / none" } }}
             data-showing={showing}

@@ -12,8 +12,13 @@ const Menu = memo(
   ({ setShowing }: { setShowing: Dispatch<SetStateAction<Showing>> }) => {
     const { shareLink } = useContext(AppContext);
     return (
-      <Box className={styles.Menu} content="normal space-between" flow="column">
-        <Box as="ul" flow="column" content="normal start">
+      <Box
+        className={styles.Menu}
+        as="header"
+        content="normal space-between"
+        flow="column"
+      >
+        <Box flow="column" content="normal start" role="tablist">
           <Box
             px={4}
             py={0}
@@ -85,20 +90,19 @@ function MenuButton({
   const { showing } = useContext(LayoutContext);
   const isActive = showing === show;
   return (
-    <Box as="li">
-      <Box
-        as="button"
-        px={4}
-        py={3}
-        aria-selected={isActive}
-        className={styles.MenuButton}
-        disabled={isActive}
-        {...props}
-      >
-        <Type as="span" {...typeProps}>
-          {children}
-        </Type>
-      </Box>
+    <Box
+      as="button"
+      px={4}
+      py={3}
+      role="tab"
+      aria-selected={isActive}
+      className={styles.MenuButton}
+      disabled={isActive}
+      {...props}
+    >
+      <Type as="span" {...typeProps}>
+        {children}
+      </Type>
     </Box>
   );
 }
