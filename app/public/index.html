@@ -28,7 +28,20 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="canonical" href="https://flowchart.fun/" />
-
+    <link
+      rel="preload"
+      href="/fonts/nm.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs/base/browser/ui/codicons/codicon/codicon.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -51,12 +64,14 @@
         src: url("/fonts/nm.woff2") format("woff2");
         font-weight: 400;
         font-style: normal;
+        font-display: swap;
       }
       @font-face {
         font-family: "nm";
         src: url("/fonts/nmb.woff2") format("woff2");
         font-weight: 700;
         font-style: normal;
+        font-display: swap;
       }
     </style>
   </head>
