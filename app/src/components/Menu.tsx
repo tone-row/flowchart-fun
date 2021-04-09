@@ -1,9 +1,9 @@
 import { Dispatch, memo, SetStateAction, useContext } from "react";
-import { LayoutContext, Showing } from "../constants";
 import { Box, BoxProps, Type, TypeProps } from "../slang";
 import styles from "./Menu.module.css";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 import { AppContext } from "./AppContext";
+import { LayoutContext, Showing } from "./Layout";
 
 const hideShareButton = { tablet: { display: false } };
 const showMenuRight = { tablet: { display: true } };

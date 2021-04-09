@@ -1,5 +1,4 @@
 import { EditorProps } from "@monaco-editor/react";
-import { createContext } from "react";
 
 export const LAYOUT: any = {
   name: "dagre",
@@ -25,12 +24,6 @@ comments
 
 Have fun! 🎉
 */`;
-
-export type Showing = "navigation" | "editor" | "settings" | "share";
-
-export const LayoutContext = createContext({ showing: "editor" } as {
-  showing: Showing;
-});
 
 export const editorOptions: EditorProps["options"] = {
   minimap: { enabled: false },

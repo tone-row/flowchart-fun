@@ -1,7 +1,7 @@
 import { Resizable } from "re-resizable";
 import React, { ReactNode, useContext } from "react";
-import { LayoutContext } from "../constants";
 import { Box } from "../slang";
+import { LayoutContext } from "./Layout";
 import styles from "./ResponsiveLayout.module.css";
 import Settings from "./Settings";
 import Share from "./Share";

@@ -1,4 +1,5 @@
 import {
+  createContext,
   Dispatch,
   memo,
   ReactNode,
@@ -9,7 +10,6 @@ import {
 import { Box } from "../slang";
 import Menu from "./Menu";
 import styles from "./Layout.module.css";
-import { LayoutContext, Showing } from "../constants";
 import ColorMode from "./ColorMode";
 
 const Layout = memo(
@@ -46,6 +46,12 @@ const Layout = memo(
 );
 
 Layout.displayName = "Layout";
+
+export type Showing = "navigation" | "editor" | "settings" | "share";
+
+export const LayoutContext = createContext({ showing: "editor" } as {
+  showing: Showing;
+});
 
 export default function LayoutWrapper({ children }: { children: ReactNode }) {
   const [showing, setShowing] = useState<Showing>("editor");
