@@ -15,7 +15,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
-  const { mode, setIsReady } = useContext(AppContext);
+  const { mode } = useContext(AppContext);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -62,7 +62,6 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
         }}
         onMount={(editor, monaco) => {
           editorRef.current = editor;
-          setIsReady();
         }}
       />
     </ResizableLayout>

@@ -1,12 +1,10 @@
 import {
   createContext,
   Dispatch,
-  DispatchWithoutAction,
   ReactNode,
   SetStateAction,
   useCallback,
   useMemo,
-  useReducer,
   useState,
 } from "react";
 import useLocalStorage from "react-use-localstorage";
@@ -20,8 +18,6 @@ type UserSettings = {
 };
 
 type TAppContext = {
-  isReady: boolean;
-  setIsReady: DispatchWithoutAction;
   updateUserSettings: (newSettings: Partial<UserSettings>) => void;
   theme: Theme;
   shareLink: string;
@@ -31,7 +27,6 @@ type TAppContext = {
 export const AppContext = createContext({} as TAppContext);
 
 const Provider = ({ children }: { children?: ReactNode }) => {
-  const [isReady, setIsReady] = useReducer(() => true, false);
   const [shareLink, setShareLink] = useState("");
   const [userSettingsString, setUserSettings] = useLocalStorage(
     "flowcharts.fun.user.settings",
@@ -68,12 +63,10 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   return (
     <AppContext.Provider
       value={{
-        isReady,
-        setIsReady,
-        updateUserSettings,
         theme,
         shareLink,
         setShareLink,
+        updateUserSettings,
         ...settings,
       }}
     >
