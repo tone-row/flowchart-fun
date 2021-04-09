@@ -8,7 +8,7 @@
   BaseTypeProps,
 } from "@tone-row/slang";
 
-type Breakpoints = "tablet" | "desktop";
+type Breakpoints = "small" | "tablet" | "desktop";
 type Colors = 
   | "color-background"
   | "color-foreground"

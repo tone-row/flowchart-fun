@@ -39,6 +39,7 @@ const config: Partial<SlangConfig> = {
     "nm, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   baseFontSizePx: 20,
   breakpoints: {
+    small: 450,
     tablet: 800,
     desktop: 1024,
   },

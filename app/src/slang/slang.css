@@ -769,6 +769,146 @@ border-radius: calc(var(--smallest-border-radius-px) * var(--rad));
 .slang-box.rad_hover:hover {
 border-radius: calc(var(--smallest-border-radius-px) * var(--rad_hover));
 }
+@media(min-width: 450px) {
+.slang-box.flow-small {
+grid-auto-flow: var(--flow-small);
+}
+.slang-box.flow-small_hover:hover {
+grid-auto-flow: var(--flow-small_hover);
+}
+.slang-box.content-small {
+place-content: var(--content-small);
+}
+.slang-box.content-small_hover:hover {
+place-content: var(--content-small_hover);
+}
+.slang-box.items-small {
+place-items: var(--items-small);
+}
+.slang-box.items-small_hover:hover {
+place-items: var(--items-small_hover);
+}
+.slang-box.self-small {
+place-self: var(--self-small);
+}
+.slang-box.self-small_hover:hover {
+place-self: var(--self-small_hover);
+}
+.slang-box.p-small {
+padding: calc(var(--spacer-px) * var(--p-small));
+}
+.slang-box.p-small_hover:hover {
+padding: calc(var(--spacer-px) * var(--p-small_hover));
+}
+.slang-box.py-small {
+padding-top: calc(var(--spacer-px) * var(--py-small)); padding-bottom: calc(var(--spacer-px) * var(--py-small));
+}
+.slang-box.py-small_hover:hover {
+padding-top: calc(var(--spacer-px) * var(--py-small_hover)); padding-bottom: calc(var(--spacer-px) * var(--py-small_hover));
+}
+.slang-box.px-small {
+padding-left: calc(var(--spacer-px) * var(--px-small)); padding-right: calc(var(--spacer-px) * var(--px-small));
+}
+.slang-box.px-small_hover:hover {
+padding-left: calc(var(--spacer-px) * var(--px-small_hover)); padding-right: calc(var(--spacer-px) * var(--px-small_hover));
+}
+.slang-box.pt-small {
+padding-top: calc(var(--spacer-px) * var(--pt-small));
+}
+.slang-box.pt-small_hover:hover {
+padding-top: calc(var(--spacer-px) * var(--pt-small_hover));
+}
+.slang-box.pr-small {
+padding-right: calc(var(--spacer-px) * var(--pr-small));
+}
+.slang-box.pr-small_hover:hover {
+padding-right: calc(var(--spacer-px) * var(--pr-small_hover));
+}
+.slang-box.pb-small {
+padding-bottom: calc(var(--spacer-px) * var(--pb-small));
+}
+.slang-box.pb-small_hover:hover {
+padding-bottom: calc(var(--spacer-px) * var(--pb-small_hover));
+}
+.slang-box.pl-small {
+padding-left: calc(var(--spacer-px) * var(--pl-small));
+}
+.slang-box.pl-small_hover:hover {
+padding-left: calc(var(--spacer-px) * var(--pl-small_hover));
+}
+.slang-box.gap-small {
+gap: calc(var(--spacer-px) * var(--gap-small));
+}
+.slang-box.gap-small_hover:hover {
+gap: calc(var(--spacer-px) * var(--gap-small_hover));
+}
+.slang-box.columnGap-small {
+column-gap: calc(var(--spacer-px) * var(--columnGap-small));
+}
+.slang-box.columnGap-small_hover:hover {
+column-gap: calc(var(--spacer-px) * var(--columnGap-small_hover));
+}
+.slang-box.rowGap-small {
+row-gap: calc(var(--spacer-px) * var(--rowGap-small));
+}
+.slang-box.rowGap-small_hover:hover {
+row-gap: calc(var(--spacer-px) * var(--rowGap-small_hover));
+}
+.slang-box.template-small {
+grid-template: var(--template-small);
+}
+.slang-box.template-small_hover:hover {
+grid-template: var(--template-small_hover);
+}
+.slang-box.display-small {
+display: var(--display-small);
+}
+.slang-box.display-small_hover:hover {
+display: var(--display-small_hover);
+}
+.slang-box.overflow-small {
+overflow: var(--overflow-small);
+}
+.slang-box.overflow-small_hover:hover {
+overflow: var(--overflow-small_hover);
+}
+.slang-box.h-small {
+height: var(--h-small);
+}
+.slang-box.h-small_hover:hover {
+height: var(--h-small_hover);
+}
+.slang-box.root-small {
+min-height: var(--root-small);
+}
+.slang-box.root-small_hover:hover {
+min-height: var(--root-small_hover);
+}
+.slang-box.background-small {
+background-color: var(--background-small);
+}
+.slang-box.background-small_hover:hover {
+background-color: var(--background-small_hover);
+}
+.slang-box.color-small {
+color: var(--color-small);
+}
+.slang-box.color-small_hover:hover {
+color: var(--color-small_hover);
+}
+.slang-box.contain-small {
+max-width: var(--contain-small);
+}
+.slang-box.contain-small_hover:hover {
+max-width: var(--contain-small_hover);
+}
+.slang-box.rad-small {
+border-radius: calc(var(--smallest-border-radius-px) * var(--rad-small));
+}
+.slang-box.rad-small_hover:hover {
+border-radius: calc(var(--smallest-border-radius-px) * var(--rad-small_hover));
+}
+}
 @media(min-width: 800px) {
 .slang-box.flow-tablet {
 grid-auto-flow: var(--flow-tablet);
@@ -1060,6 +1200,20 @@ color: var(--color);
 }
 .slang-type.color_hover:hover {
 color: var(--color_hover);
+}
+@media(min-width: 450px) {
+.slang-type.weight-small {
+font-weight: var(--weight-small);
+}
+.slang-type.weight-small_hover:hover {
+font-weight: var(--weight-small_hover);
+}
+.slang-type.color-small {
+color: var(--color-small);
+}
+.slang-type.color-small_hover:hover {
+color: var(--color-small_hover);
+}
 }
 @media(min-width: 800px) {
 .slang-type.weight-tablet {

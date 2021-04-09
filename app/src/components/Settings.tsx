@@ -11,6 +11,7 @@ export default function Settings() {
       pb={4}
       pt={2}
       at={{ tablet: { pb: 0 } }}
+      gap={4}
       template="minmax(0, 1fr) auto / none"
     >
       <Box content="start" gap={4}>
@@ -34,46 +35,47 @@ export default function Settings() {
           </GroupButton>
         </Box>
       </Box>
-      <Box
-        flow="column"
-        items="end normal"
-        content="normal space-between"
-        self="stretch"
-        gap={12}
-        className={styles.LowerLinks}
-      >
-        <Box gap={2}>
-          <Type as="a" href="https://js.cytoscape.org/" size={-1}>
-            Built with Cytoscape.js
+      <Box gap={4} className={styles.LowerLinks}>
+        <Type as="a" href="https://tone-row.com" size={-1}>
+          Made by{" "}
+          <Type weight="700" as="span" size={-1}>
+            Tone Row
+          </Type>
+        </Type>
+        <Box
+          gap={2}
+          at={{
+            tablet: {
+              pb: 4,
+            },
+            desktop: {
+              gap: 4,
+              flow: "column",
+              items: "end normal",
+              content: "normal start",
+            },
+          }}
+        >
+          <Type as="a" href="https://twitter.com/row_tone" size={-2}>
+            Follow Us
           </Type>
           <Type
             as="a"
             href="https://github.com/tone-row/flowchart-fun"
-            size={-1}
+            size={-2}
           >
-            Hosted on Github
+            View on Github
           </Type>
-          <Box flow="column" gap={4} items="end normal">
-            <Type as="a" href="https://tone-row.com" size={-1}>
-              Made by{" "}
-              <Type weight="700" as="span" size={-1}>
-                Tone Row
-              </Type>
-            </Type>
-            <Type as="a" href="https://twitter.com/row_tone" size={-2}>
-              Follow Us
-            </Type>
-            <Type
-              as="a"
-              href="https://opencollective.com/tone-row/donate"
-              size={-2}
-            >
-              Make a Donation
-            </Type>
-            <Type as="a" href="https://github.com/sponsors/tone-row" size={-2}>
-              Become a Sponsor
-            </Type>
-          </Box>
+          <Type
+            as="a"
+            href="https://opencollective.com/tone-row/donate"
+            size={-2}
+          >
+            Make a Donation
+          </Type>
+          <Type as="a" href="https://github.com/sponsors/tone-row" size={-2}>
+            Become a Sponsor
+          </Type>
         </Box>
       </Box>
     </Box>

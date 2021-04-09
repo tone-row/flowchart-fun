@@ -60,11 +60,20 @@ export default function ResponsiveLayout({
     );
   return (
     <>
-      <Box at={{ tablet: { display: false } }} className={styles.Top} pt={2}>
+      <Box
+        at={{ tablet: { display: false } }}
+        className={styles.Top}
+        pt={2}
+        overflow="auto"
+      >
         {child}
       </Box>
       <Reresizable triggerResize={triggerResize}>
-        <Box py={4} h="100%">
+        <Box
+          py={4}
+          h="100%"
+          overflow={showing !== "editor" ? "auto" : undefined}
+        >
           {child}
         </Box>
       </Reresizable>
