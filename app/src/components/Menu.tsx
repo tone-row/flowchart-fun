@@ -64,7 +64,7 @@ const Menu = memo(
           </MenuRightButton>
           <MenuRightButton
             as="a"
-            className={[styles.TypeLink, styles.menuRightButton].join(" ")}
+            className={styles.TypeLink}
             target="_blank"
             rel="noreferrer"
             href={shareLink}
