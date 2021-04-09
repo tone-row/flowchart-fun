@@ -22,25 +22,23 @@ const Layout = memo(
   }) => {
     const { showing } = useContext(LayoutContext);
     return (
-      <>
+      <Box
+        root
+        overflow="hidden"
+        className={styles.Layout}
+        template="auto minmax(0, 1fr) / none"
+      >
+        <Menu setShowing={setShowing} />
         <Box
-          root
-          overflow="hidden"
-          className={styles.Layout}
-          template="auto minmax(0, 1fr) / none"
+          as="main"
+          className={styles.TabletWrapper}
+          at={{ tablet: { display: "flex", template: "none / none" } }}
+          data-showing={showing}
         >
-          <Menu setShowing={setShowing} />
-          <Box
-            as="main"
-            className={styles.TabletWrapper}
-            at={{ tablet: { display: "flex", template: "none / none" } }}
-            data-showing={showing}
-          >
-            {children}
-          </Box>
+          {children}
         </Box>
         <ColorMode />
-      </>
+      </Box>
     );
   }
 );
