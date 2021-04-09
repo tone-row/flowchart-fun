@@ -3,9 +3,9 @@ import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
 import ResizableLayout from "./ResizableLayout";
 import { AppContext } from "./AppContext";
-import UnmountDeclare from "./UnmountDeclare";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { editorOptions } from "../constants";
+import Loading from "./Loading";
 
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const { graphText } = useParams<{ graphText: string }>();
@@ -55,7 +55,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
         defaultValue={textToParse}
         value={textToParse}
         theme={mode === "dark" ? "vs-dark" : "light"}
-        loading={<UnmountDeclare />}
+        loading={<Loading />}
         options={{
           ...editorOptions,
           readOnly: true,

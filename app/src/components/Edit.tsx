@@ -11,8 +11,8 @@ import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
 import { defaultText, editorOptions } from "../constants";
 import ResizableLayout from "./ResizableLayout";
-import UnmountDeclare from "./UnmountDeclare";
 import { AppContext } from "./AppContext";
+import Loading from "./Loading";
 
 function Edit() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
@@ -78,7 +78,7 @@ function Edit() {
         options={editorOptions}
         theme={mode === "dark" ? "vs-dark" : "light"}
         onChange={(value) => value && setText(value)}
-        loading={<UnmountDeclare />}
+        loading={<Loading />}
         onMount={(editor, monaco) => {
           editorRef.current = editor;
         }}

@@ -1,14 +1,4 @@
-import styles from "./ResizableLayout.module.css";
-import React, {
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  useContext,
-  useState,
-} from "react";
-import { AppContext } from "./AppContext";
-import Spinner from "./Spinner";
-import { Box } from "../slang";
+import React, { Dispatch, ReactNode, SetStateAction, useState } from "react";
 import ResponsiveLayout from "./ResponsiveLayout";
 import Graph from "./Graph";
 import TextResizer from "./TextResizer";
@@ -24,10 +14,9 @@ export default function ResizableLayout({
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
 }) {
   const [shouldResize, triggerResize] = useState(0);
-  const { isReady } = useContext(AppContext);
   return (
     <>
-      {!isReady && <Loading />}
+      {/* {!isReady && <Loading />} */}
       <ResponsiveLayout triggerResize={() => triggerResize((n) => n + 1)}>
         {children}
       </ResponsiveLayout>
@@ -40,18 +29,5 @@ export default function ResizableLayout({
       </GraphWrapper>
       <TextResizer />
     </>
-  );
-}
-
-function Loading() {
-  return (
-    <Box
-      background="color-background"
-      content="center"
-      className={styles.Loading}
-      root
-    >
-      <Spinner />
-    </Box>
   );
 }
