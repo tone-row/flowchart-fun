@@ -29,12 +29,12 @@
   border-color: var(--color-buttonFocus);
 }
 
-.GroupButton[aria-selected="true"] {
+.GroupButton[aria-pressed="true"] {
   background-color: var(--color-foreground);
   color: var(--color-background);
 }
 
-.GroupButton[aria-selected="false"]:hover {
+.GroupButton[aria-pressed="false"]:hover {
   background-color: var(--color-uiAccent);
 }
 

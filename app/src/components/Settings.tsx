@@ -21,14 +21,16 @@ export default function Settings() {
         <Box flow="column">
           <GroupButton
             disabled={mode === "light"}
-            aria-selected={mode === "light"}
+            aria-pressed={mode === "light"}
+            aria-label="Light Mode"
             onClick={() => updateUserSettings({ mode: "light" })}
           >
             Light Mode
           </GroupButton>
           <GroupButton
             disabled={mode === "dark"}
-            aria-selected={mode === "dark"}
+            aria-pressed={mode === "dark"}
+            aria-label="Dark Mode"
             onClick={() => updateUserSettings({ mode: "dark" })}
           >
             Dark Mode
