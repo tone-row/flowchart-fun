@@ -1,0 +1,12 @@
+.TextResizer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: -1;
+  width: 128px;
+  display: inline-block;
+  word-break: keep-all;
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}

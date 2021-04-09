@@ -1,11 +1,18 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
 import { useThrottleCallback } from "@react-hook/throttle";
 import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
-import { defaultText } from "../constants";
-import Layout from "./Layout";
-import UnmountDeclare from "./UnmountDeclare";
+import { defaultText, editorOptions } from "../constants";
+import WithGraph from "./WithGraph";
+import { AppContext } from "./AppContext";
+import Loading from "./Loading";
 
 function Edit() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
@@ -21,6 +28,7 @@ function Edit() {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
+  const { mode } = useContext(AppContext);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -61,35 +69,21 @@ function Edit() {
   }, [textarea, setTextToParseThrottle]);
 
   return (
-    <Layout setHoverLineNumber={setHoverLineNumber} textToParse={textToParse}>
+    <WithGraph
+      setHoverLineNumber={setHoverLineNumber}
+      textToParse={textToParse}
+    >
       <Editor
         defaultValue={textarea}
-        options={{
-          minimap: { enabled: false },
-          fontSize: 16,
-          tabSize: 2,
-          insertSpaces: true,
-          wordBasedSuggestions: false,
-          occurrencesHighlight: false,
-          renderLineHighlight: false,
-          highlightActiveIndentGuide: false,
-          scrollBeyondLastLine: false,
-          renderIndentGuides: false,
-          overviewRulerBorder: false,
-          lineDecorationsWidth: "10px",
-          renderValidationDecorations: "off",
-          hideCursorInOverviewRuler: true,
-          matchBrackets: "never",
-          selectionHighlight: false,
-          lineHeight: 28,
-        }}
+        options={editorOptions}
+        theme={mode === "dark" ? "vs-dark" : "light"}
         onChange={(value) => value && setText(value)}
-        loading={<UnmountDeclare />}
+        loading={<Loading />}
         onMount={(editor, monaco) => {
           editorRef.current = editor;
         }}
       />
-    </Layout>
+    </WithGraph>
   );
 }
 

@@ -1,3 +1,5 @@
+import { EditorProps } from "@monaco-editor/react";
+
 export const LAYOUT: any = {
   name: "dagre",
   fit: true,
@@ -5,9 +7,6 @@ export const LAYOUT: any = {
   rankDir: "LR",
   spacingFactor: 1.25,
 };
-
-export const lineColor = "#000000";
-export const textColor = "#000000";
 
 export const defaultText = `this app works by typing
   new lines create new nodes
@@ -25,3 +24,25 @@ comments
 
 Have fun! 🎉
 */`;
+
+export const editorOptions: EditorProps["options"] = {
+  minimap: { enabled: false },
+  fontSize: 16,
+  tabSize: 2,
+  insertSpaces: true,
+  wordBasedSuggestions: false,
+  occurrencesHighlight: false,
+  renderLineHighlight: false,
+  highlightActiveIndentGuide: false,
+  scrollBeyondLastLine: false,
+  renderIndentGuides: false,
+  overviewRulerBorder: false,
+  lineDecorationsWidth: "10px",
+  renderValidationDecorations: "off",
+  hideCursorInOverviewRuler: true,
+  matchBrackets: "never",
+  selectionHighlight: false,
+  lineHeight: 28,
+  lineNumbersMinChars: 5,
+  cursorWidth: 2,
+};

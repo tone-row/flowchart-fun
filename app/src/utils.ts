@@ -106,7 +106,7 @@ export function parseText(text: string) {
   return elements;
 }
 
-export function getLineData(text: string, lineNumber: number) {
+function getLineData(text: string, lineNumber: number) {
   // Whole line description in one regex with named capture groups
   // 1) Indent ^(?<indent>\s*) -- store the indent which is 0 or more whitespace at the start
   // 2) ID (\[(?<id>.*)\])? -- store the ID if it exists after the indent in square brackets

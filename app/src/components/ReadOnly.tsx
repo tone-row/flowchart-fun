@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
-import Layout from "./Layout";
+import WithGraph from "./WithGraph";
 import { AppContext } from "./AppContext";
-import UnmountDeclare from "./UnmountDeclare";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
+import { editorOptions } from "../constants";
+import Loading from "./Loading";
 
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const { graphText } = useParams<{ graphText: string }>();
@@ -14,7 +15,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
-  const { setIsReady } = useContext(AppContext);
+  const { mode } = useContext(AppContext);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -46,38 +47,24 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   }, [hoverLineNumber]);
 
   return (
-    <Layout setHoverLineNumber={setHoverLineNumber} textToParse={textToParse}>
+    <WithGraph
+      setHoverLineNumber={setHoverLineNumber}
+      textToParse={textToParse}
+    >
       <Editor
         defaultValue={textToParse}
         value={textToParse}
-        loading={<UnmountDeclare />}
+        theme={mode === "dark" ? "vs-dark" : "light"}
+        loading={<Loading />}
         options={{
-          minimap: { enabled: false },
-          fontSize: 16,
-          tabSize: 2,
-          insertSpaces: true,
-          wordBasedSuggestions: false,
-          occurrencesHighlight: false,
-          renderLineHighlight: false,
-          highlightActiveIndentGuide: false,
-          scrollBeyondLastLine: false,
-          renderIndentGuides: false,
-          overviewRulerBorder: false,
-          lineDecorationsWidth: "10px",
-          renderValidationDecorations: "off",
-          hideCursorInOverviewRuler: true,
-          matchBrackets: "never",
-          selectionHighlight: false,
-          lineHeight: 28,
-          // model: null,
+          ...editorOptions,
           readOnly: true,
         }}
         onMount={(editor, monaco) => {
           editorRef.current = editor;
-          setIsReady();
         }}
       />
-    </Layout>
+    </WithGraph>
   );
 }
 
