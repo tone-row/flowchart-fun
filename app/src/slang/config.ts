@@ -24,7 +24,7 @@ export const colors = {
 
 export const darkTheme: typeof colors = {
   background: "#0f0f0f",
-  foreground: "white",
+  foreground: "rgb(250, 250, 250)",
   edgeHover: "#2e2e2e",
   lineColor: "yellow",
   lineNumbers: "#737373",

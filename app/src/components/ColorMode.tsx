@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "./AppContext";
 
+// Writes current theme color css props onto body
 export default function ColorMode() {
   const { theme } = useContext(AppContext);
   const themeString = JSON.stringify(theme);

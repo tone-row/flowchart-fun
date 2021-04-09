@@ -19,14 +19,16 @@ type UserSettings = {
   mode: "light" | "dark";
 };
 
-export const AppContext = createContext({ setIsReady: () => {} } as {
+type TAppContext = {
   isReady: boolean;
   setIsReady: DispatchWithoutAction;
   updateUserSettings: (newSettings: Partial<UserSettings>) => void;
   theme: Theme;
   shareLink: string;
   setShareLink: Dispatch<SetStateAction<string>>;
-} & Partial<UserSettings>);
+} & Partial<UserSettings>;
+
+export const AppContext = createContext({} as TAppContext);
 
 const Provider = ({ children }: { children?: ReactNode }) => {
   const [isReady, setIsReady] = useReducer(() => true, false);
@@ -41,7 +43,14 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   }>(() => {
     try {
       const settings = JSON.parse(userSettingsString);
-      const theme = settings.mode === "dark" ? darkTheme : colors;
+      const theme =
+        settings.mode === "dark"
+          ? darkTheme
+          : typeof settings.mode === "undefined" &&
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? darkTheme
+          : colors;
       return { settings, theme };
     } catch (e) {
       console.error(e);
