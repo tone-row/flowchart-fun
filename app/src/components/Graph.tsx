@@ -301,9 +301,11 @@ function getCyStyleFromTheme(theme: typeof colors): CytoscapeOptions["style"] {
         "arrow-scale": 1,
         "curve-style": "bezier",
         label: "data(label)",
+
         color: theme.foreground,
         "font-size": 10,
         "text-valign": "center",
+        "text-wrap": "wrap",
         "font-family":
           "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
         "text-halign": "center",

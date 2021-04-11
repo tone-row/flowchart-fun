@@ -120,8 +120,8 @@ function getLineData(text: string, lineNumber: number) {
     nodeLabel.match(/^\((?<linkedId>.+)\)\s*$/) || {};
   const { linkedId } = labelGroups || {};
   return {
-    nodeLabel: nodeLabel.trim(),
-    edgeLabel: edgeLabel.trim(),
+    nodeLabel: decodeURIComponent(nodeLabel.trim()),
+    edgeLabel: decodeURIComponent(edgeLabel.trim()),
     indent,
     id,
     linkedId,
