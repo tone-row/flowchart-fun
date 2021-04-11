@@ -22,6 +22,7 @@ import styles from "./Graph.module.css";
 import { saveAs } from "file-saver";
 import { Box } from "../slang";
 import { compressToEncodedURIComponent as compress } from "lz-string";
+import matter from "gray-matter";
 import { AppContext } from "./AppContext";
 import { colors } from "../slang/config";
 
@@ -60,20 +61,35 @@ const Graph = memo(
       if (cy.current) {
         let error = false;
         let newElements: cytoscape.ElementDefinition[] = [];
+        let layout = {};
 
         try {
-          newElements = parseText(textToParse);
+          const { data, content } = matter(textToParse);
+          // need to test data as well
+          const { layout: newLayout = {} } = data;
+          newElements = parseText(content);
           errorCy.current?.json({ elements: newElements });
-        } catch {
+          errorCy.current
+            ?.layout({
+              ...LAYOUT,
+              animate: false,
+              ...newLayout,
+            } as any)
+            .run();
+          layout = newLayout;
+        } catch (e) {
           error = true;
+          console.log(e);
           errorCy.current?.destroy();
           errorCy.current = cytoscape();
         }
+
         if (!error) {
           cy.current.json({ elements: newElements });
           cy.current
             .layout({
               ...LAYOUT,
+              ...layout,
               animate: graphInitialized.current ? animate : false,
             } as any)
             .run();
