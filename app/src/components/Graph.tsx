@@ -64,7 +64,7 @@ const Graph = memo(
         let layout = {};
 
         try {
-          const { data, content } = matter(textToParse);
+          const { data, content } = matter(textToParse, { delimiters: "~~~" });
           // need to test data as well
           const { layout: newLayout = {} } = data;
           newElements = parseText(content);
