@@ -213,18 +213,30 @@ const Graph = memo(
         this.removeClass("edgeHovered");
         setHoverLineNumber(undefined);
       }
+      function handleMouseOut() {
+        cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
+        cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
+        setHoverLineNumber(undefined);
+      }
+
       cyCurrent.on("mouseover", "node", nodeHighlight);
       cyCurrent.on("mouseover", "edge", edgeHighlight);
       cyCurrent.on("tapstart", "node", nodeHighlight);
       cyCurrent.on("tapstart", "edge", edgeHighlight);
       cyCurrent.on("mouseout", "node, edge", unhighlight);
       cyCurrent.on("tapend", "node, edge", unhighlight);
+      document
+        .getElementById("cy")
+        ?.addEventListener("mouseout", handleMouseOut);
 
       return () => {
         cyCurrent.destroy();
         errorCyCurrent.destroy();
         cy.current = undefined;
         errorCy.current = undefined;
+        document
+          .getElementById("cy")
+          ?.removeEventListener("mouseout", handleMouseOut);
       };
     }, [setHoverLineNumber]);
 
