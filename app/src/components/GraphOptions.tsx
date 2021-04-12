@@ -42,19 +42,7 @@ const GraphOptions = memo(() => {
     <Box content="start stretch" gap={4} as="form">
       <Type weight="700">Graph Options</Type>
       <Box gap={4}>
-        <Box gap={1}>
-          <Type size={-1}>Layout</Type>
-          <Type size={-3}>
-            Auto-layout strategy. Find out more about available sub-settings at
-            <a
-              href="https://js.cytoscape.org/#layouts"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://js.cytoscape.org/#layouts
-            </a>
-          </Type>
-        </Box>
+        <Type size={-1}>Layout</Type>
         <Box
           p={3}
           as="select"
