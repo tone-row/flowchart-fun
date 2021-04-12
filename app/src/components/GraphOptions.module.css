@@ -1,0 +1,21 @@
+.Select {
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  border-color: currentColor;
+  background-position: right 12px top 17px;
+  background-repeat: no-repeat;
+}
+
+.Select:focus {
+  outline: none;
+  border-color: var(--color-buttonFocus);
+  box-shadow: inset 0 0 0 2px var(--color-buttonFocus);
+}
+
+.Select:disabled {
+  color: var(--color-uiAccent);
+}

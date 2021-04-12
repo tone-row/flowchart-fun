@@ -501,7 +501,7 @@ body {
 	--base-font-size-mobile-px:16px;
 	--base-font-size-mobile:16;
 	--base-font-line-height:1.15;
-	--base-font-line-height-mobile:1.15;
+	--base-font-line-height-mobile:1.75;
 	--spacer-px:4px;
 	--spacer:4;
 	--base-spacing-px:16px;
@@ -618,7 +618,7 @@ body {
 	--color-background:#ffffff;
 	--color-foreground:#000000;
 	--color-lineColor:#000000;
-	--color-uiAccent:#f0f0f0;
+	--color-uiAccent:#ededec;
 	--color-nodeHover:#f0f0f0;
 	--color-edgeHover:#aaaaaa;
 	--color-lineNumbers:##757575;

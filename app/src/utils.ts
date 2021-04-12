@@ -2,14 +2,16 @@ import strip from "@tone-row/strip-comments";
 import { CytoscapeOptions } from "cytoscape";
 import { useLocation } from "react-router-dom";
 
+export function stripComments(t: string) {
+  return strip(t, { preserveNewlines: true });
+}
+
 export function parseText(text: string) {
   let elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
 
-  // break into lines, removing comments but
-  // leaving newlines created in comments to
-  // preserve line numbers
-  const lines = strip(text, { preserveNewlines: true }).split("\n");
+  // break into lines
+  const lines = text.split("\n");
 
   // Loop over lines
   for (let line of lines) {
@@ -124,7 +126,8 @@ function getLineData(text: string, lineNumber: number) {
     edgeLabel: decodeURIComponent(edgeLabel.trim()),
     indent,
     id,
-    linkedId,
+    linkedId:
+      typeof linkedId !== "undefined" ? decodeURIComponent(linkedId) : linkedId,
   };
 }
 

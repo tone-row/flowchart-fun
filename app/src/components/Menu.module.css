@@ -30,7 +30,3 @@
 .MenuBox:focus-within svg {
   stroke: var(--color-buttonFocus);
 }
-
-.MenuBox:hover svg {
-  stroke: var(--color-buttonFocus);
-}

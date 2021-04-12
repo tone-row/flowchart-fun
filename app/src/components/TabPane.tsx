@@ -1,5 +1,5 @@
 import { Resizable as Reresizable } from "re-resizable";
-import React, { ReactNode, useContext } from "react";
+import React, { memo, ReactNode, useContext, useMemo } from "react";
 import { Box } from "../slang";
 import { LayoutContext } from "./Layout";
 import styles from "./TabPane.module.css";
@@ -40,44 +40,52 @@ const Resizable = ({
   );
 };
 
-export default function TabPane({
-  children,
-  triggerResize,
-}: {
-  children: ReactNode;
-  triggerResize: () => void;
-}) {
-  const { showing } = useContext(LayoutContext);
-  const child =
-    showing === "editor" ? (
-      children
-    ) : showing === "settings" ? (
-      <Settings />
-    ) : showing === "share" ? (
-      <Share />
-    ) : (
-      showing
-    );
+const hideAtTablet = { tablet: { display: false } };
 
-  return (
-    <>
-      <Box
-        at={{ tablet: { display: false } }}
-        className={styles.Top}
-        pt={2}
-        overflow={showing !== "editor" ? "auto" : undefined}
-      >
-        {child}
-      </Box>
-      <Resizable triggerResize={triggerResize}>
+const TabPane = memo(
+  ({
+    children,
+    triggerResize,
+  }: {
+    children: ReactNode;
+    triggerResize: () => void;
+  }) => {
+    const { showing } = useContext(LayoutContext);
+    const child = useMemo(() => {
+      return showing === "editor" ? (
+        children
+      ) : showing === "settings" ? (
+        <Settings />
+      ) : showing === "share" ? (
+        <Share />
+      ) : (
+        showing
+      );
+    }, [children, showing]);
+    return (
+      <>
         <Box
-          pt={4}
-          h="100%"
+          at={hideAtTablet}
+          className={styles.Top}
+          pt={2}
           overflow={showing !== "editor" ? "auto" : undefined}
         >
           {child}
         </Box>
-      </Resizable>
-    </>
-  );
-}
+        <Resizable triggerResize={triggerResize}>
+          <Box
+            pt={4}
+            h="100%"
+            overflow={showing !== "editor" ? "auto" : undefined}
+          >
+            {child}
+          </Box>
+        </Resizable>
+      </>
+    );
+  }
+);
+
+TabPane.displayName = "TabPane";
+
+export default TabPane;

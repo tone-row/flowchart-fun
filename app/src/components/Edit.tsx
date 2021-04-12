@@ -1,4 +1,5 @@
 import React, {
+  useCallback,
   useContext,
   useEffect,
   useReducer,
@@ -9,10 +10,12 @@ import { useThrottleCallback } from "@react-hook/throttle";
 import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
-import { defaultText, editorOptions } from "../constants";
-import WithGraph from "./WithGraph";
+import { defaultText, editorOptions, GraphOptionsObject } from "../constants";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
+import WithGraphWrapper from "./WithGraph";
+import matter, { stringify } from "gray-matter";
+import useGraphOptions from "./useGraphOptions";
 
 function Edit() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
@@ -68,22 +71,43 @@ function Edit() {
     setTextToParseThrottle(textarea);
   }, [textarea, setTextToParseThrottle]);
 
+  const graphOptions = useGraphOptions(textToParse);
+
+  const updateGraphOptionsText = useCallback(
+    (o: GraphOptionsObject) => {
+      const { data, content } = matter(textToParse, { delimiters: "~~~" });
+      let text = "";
+      if (Object.keys(data).length) {
+        text = stringify(content, { ...data, ...o }, { delimiters: "~~~" });
+      } else {
+        // No frontmatter
+        text = stringify(textToParse, o, { delimiters: "~~~" });
+      }
+      setText(text);
+      setTextToParse(text);
+    },
+    [setText, textToParse]
+  );
+
   return (
-    <WithGraph
-      setHoverLineNumber={setHoverLineNumber}
+    <WithGraphWrapper
+      editable={true}
       textToParse={textToParse}
+      setHoverLineNumber={setHoverLineNumber}
+      graphOptions={graphOptions}
+      updateGraphOptionsText={updateGraphOptionsText}
     >
       <Editor
         defaultValue={textarea}
         options={editorOptions}
         theme={mode === "dark" ? "vs-dark" : "light"}
-        onChange={(value) => value && setText(value)}
+        onChange={(value) => setText(value ?? "")}
         loading={<Loading />}
         onMount={(editor, monaco) => {
           editorRef.current = editor;
         }}
       />
-    </WithGraph>
+    </WithGraphWrapper>
   );
 }
 

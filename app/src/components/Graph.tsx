@@ -16,8 +16,8 @@ import cytoscape, {
 import { useDebouncedCallback } from "use-debounce";
 import dagre from "cytoscape-dagre";
 import cytoscapeSvg from "cytoscape-svg";
-import { LAYOUT } from "../constants";
-import { parseText, useAnimationSetting } from "../utils";
+import { GraphOptionsObject, LAYOUT } from "../constants";
+import { parseText, stripComments, useAnimationSetting } from "../utils";
 import styles from "./Graph.module.css";
 import { saveAs } from "file-saver";
 import { Box } from "../slang";
@@ -64,9 +64,11 @@ const Graph = memo(
         let layout = {};
 
         try {
-          const { data, content } = matter(textToParse, { delimiters: "~~~" });
+          const { data, content } = matter(stripComments(textToParse), {
+            delimiters: "~~~",
+          });
           // need to test data as well
-          const { layout: newLayout = {} } = data;
+          const { layout: newLayout = {} } = data as GraphOptionsObject;
           newElements = parseText(content);
           errorCy.current?.json({ elements: newElements });
           errorCy.current
