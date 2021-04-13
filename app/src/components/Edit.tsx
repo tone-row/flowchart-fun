@@ -1,11 +1,22 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
 import { useThrottleCallback } from "@react-hook/throttle";
 import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
-import { defaultText } from "../constants";
-import Layout from "./Layout";
-import UnmountDeclare from "./UnmountDeclare";
+import { defaultText, editorOptions, GraphOptionsObject } from "../constants";
+import { AppContext } from "./AppContext";
+import Loading from "./Loading";
+import GraphProvider from "./GraphProvider";
+import { stringify } from "gray-matter";
+import useGraphOptions from "./useGraphOptions";
+import merge from "deepmerge";
 
 function Edit() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
@@ -21,6 +32,7 @@ function Edit() {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
+  const { mode } = useContext(AppContext);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -60,36 +72,44 @@ function Edit() {
     setTextToParseThrottle(textarea);
   }, [textarea, setTextToParseThrottle]);
 
+  const { graphOptions, content } = useGraphOptions(textToParse);
+
+  const updateGraphOptionsText = useCallback(
+    (o: GraphOptionsObject) => {
+      let text = "";
+      if (Object.keys(graphOptions).length) {
+        text = stringify(content, merge(graphOptions, o), {
+          delimiters: "~~~",
+        });
+      } else {
+        // No frontmatter
+        text = stringify(textToParse, o, { delimiters: "~~~" });
+      }
+      setText(text);
+      setTextToParse(text);
+    },
+    [content, graphOptions, setText, textToParse]
+  );
+
   return (
-    <Layout setHoverLineNumber={setHoverLineNumber} textToParse={textToParse}>
+    <GraphProvider
+      editable={true}
+      textToParse={textToParse}
+      setHoverLineNumber={setHoverLineNumber}
+      graphOptions={graphOptions}
+      updateGraphOptionsText={updateGraphOptionsText}
+    >
       <Editor
         defaultValue={textarea}
-        options={{
-          minimap: { enabled: false },
-          fontSize: 16,
-          tabSize: 2,
-          insertSpaces: true,
-          wordBasedSuggestions: false,
-          occurrencesHighlight: false,
-          renderLineHighlight: false,
-          highlightActiveIndentGuide: false,
-          scrollBeyondLastLine: false,
-          renderIndentGuides: false,
-          overviewRulerBorder: false,
-          lineDecorationsWidth: "10px",
-          renderValidationDecorations: "off",
-          hideCursorInOverviewRuler: true,
-          matchBrackets: "never",
-          selectionHighlight: false,
-          lineHeight: 28,
-        }}
-        onChange={(value) => value && setText(value)}
-        loading={<UnmountDeclare />}
+        options={editorOptions}
+        theme={mode === "dark" ? "vs-dark" : "light"}
+        onChange={(value) => setText(value ?? "")}
+        loading={<Loading />}
         onMount={(editor, monaco) => {
           editorRef.current = editor;
         }}
       />
-    </Layout>
+    </GraphProvider>
   );
 }
 

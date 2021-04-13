@@ -1,81 +1,61 @@
-import styles from "./Layout.module.css";
-import { Resizable } from "re-resizable";
-import React, {
+import {
+  createContext,
   Dispatch,
+  memo,
   ReactNode,
   SetStateAction,
   useContext,
   useState,
 } from "react";
-import Graph from "./Graph";
-import { AppContext } from "./AppContext";
-import Spinner from "./Spinner";
 import { Box } from "../slang";
+import Menu from "./Menu";
+import styles from "./Layout.module.css";
+import ColorMode from "./ColorMode";
 
-export default function Layout({
-  children,
-  textToParse,
-  setHoverLineNumber,
-}: {
-  children?: ReactNode;
-  textToParse: string;
-  setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
-}) {
-  const [shouldResize, triggerResize] = useState(0);
-  const { isReady } = useContext(AppContext);
-  return (
-    <>
-      {!isReady && <Loading />}
+const Layout = memo(
+  ({
+    children,
+    setShowing,
+  }: {
+    children: ReactNode;
+    setShowing: Dispatch<SetStateAction<Showing>>;
+  }) => {
+    const { showing } = useContext(LayoutContext);
+    return (
       <Box
-        template="minmax(0, 1fr) minmax(0, 1fr) / none"
-        overflow="hidden"
-        className={styles.App}
-        at={{ tablet: { display: "flex", template: "none / none" } }}
         root
+        overflow="hidden"
+        className={styles.Layout}
+        template="auto minmax(0, 1fr) / none"
       >
-        <Resizable
-          defaultSize={{
-            width: "50%",
-            height: "auto",
-          }}
-          maxWidth="90%"
-          minWidth="10%"
-          enable={{
-            top: false,
-            right: true,
-            bottom: false,
-            left: false,
-            topRight: false,
-            bottomRight: false,
-            bottomLeft: false,
-            topLeft: false,
-          }}
-          className={styles.TextareaContainer}
-          handleClasses={{ right: styles.resizableHandle }}
-          onResizeStop={() => triggerResize((n) => n + 1)}
+        <Menu setShowing={setShowing} />
+        <Box
+          as="main"
+          className={styles.TabletWrapper}
+          at={{ tablet: { display: "flex", template: "none / none" } }}
+          data-showing={showing}
         >
           {children}
-        </Resizable>
-        <Graph
-          textToParse={textToParse}
-          setHoverLineNumber={setHoverLineNumber}
-          shouldResize={shouldResize}
-        />
-        <div id="resizer" className={styles.resizer} />
+        </Box>
+        <ColorMode />
       </Box>
-    </>
-  );
-}
+    );
+  }
+);
 
-function Loading() {
+Layout.displayName = "Layout";
+
+export type Showing = "navigation" | "editor" | "settings" | "share";
+
+export const LayoutContext = createContext({ showing: "editor" } as {
+  showing: Showing;
+});
+
+export default function LayoutWrapper({ children }: { children: ReactNode }) {
+  const [showing, setShowing] = useState<Showing>("editor");
   return (
-    <Box
-      background="color-background"
-      content="center"
-      className={styles.Loading}
-      root
-    >
-      <Spinner />
-    </Box>
+    <LayoutContext.Provider value={{ showing }}>
+      <Layout setShowing={setShowing}>{children}</Layout>
+    </LayoutContext.Provider>
   );
 }

@@ -1,62 +1,15 @@
-.App {
+.Layout {
   max-height: 100%;
 }
 
 @supports (-webkit-touch-callout: none) {
-  .App {
+  .Layout {
     max-height: -webkit-fill-available;
   }
 }
 
 @media (max-width: 799px) {
-  .TextareaContainer {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: 100% !important;
+  .TabletWrapper[data-showing="editor"] {
+    grid-template: minmax(0, 1fr) minmax(0, 1fr) / none;
   }
-}
-
-.resizableHandle {
-  background-color: black;
-  opacity: 0;
-}
-
-.TextareaContainer {
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid var(--color);
-}
-
-@media (min-width: 800px) {
-  .TextareaContainer {
-    border-bottom: none;
-    box-shadow: inset -1px 0px 0px var(--color);
-  }
-
-  .resizableHandle:hover,
-  .resizableHandle:active {
-    opacity: 0.25;
-  }
-}
-
-.resizer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-  z-index: -1;
-  width: 128px;
-  display: inline-block;
-  word-break: keep-all;
-  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-}
-
-.Loading {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
