@@ -64,11 +64,16 @@ const Graph = memo(
         let layout = {};
 
         try {
-          const { data, content } = matter(stripComments(textToParse), {
-            delimiters: "~~~",
-          });
+          const { data, content, matter: dataString } = matter(
+            stripComments(textToParse),
+            {
+              delimiters: "~~~",
+            }
+          );
+          const startingLineNumber =
+            dataString === "" ? 0 : dataString.split("\n").length + 1;
           const { layout: newLayout = {} } = data as GraphOptionsObject;
-          newElements = parseText(content);
+          newElements = parseText(content, startingLineNumber);
           errorCy.current?.json({ elements: newElements });
           errorCy.current
             ?.layout({
