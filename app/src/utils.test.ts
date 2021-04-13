@@ -116,23 +116,15 @@ describe("parseText", () => {
     expect(result.length).toEqual(2);
   });
 
-  /* Comments */
-  it("should strip comments", () => {
-    let result = parseText("a\n/* long comment */b");
-    expect(result).toHaveLength(2);
-
-    result = parseText("a// inline comment");
-    const node = result[0];
-    expect(node.data.label).toBe("a");
-  });
-
-  it("should add correct line number to cy element", () => {
-    const numReturns = Math.floor(Math.random() * 10);
-    const result = parseText(
-      `a\n/*multilinecomment${Array(numReturns).fill("\n").join("")}*/\nb`
-    );
-    const b = result[1];
-    expect(b.data.lineNumber).toEqual(numReturns + 3);
+  it("should add an edge to labels that need to be decoded", () => {
+    const originalLabel = `my
+    fun
+    multiline
+    label!(*)$(@*#$)`;
+    const label = encodeURIComponent(originalLabel);
+    const text = `${label}\n  good times: (${label})`;
+    const result = parseText(text);
+    expect(result.filter(edgesOnly)[0].data.id).toEqual(`1_${originalLabel}:0`);
   });
 });
 

@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
-import WithGraph from "./WithGraph";
 import { AppContext } from "./AppContext";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { editorOptions } from "../constants";
+import { editorOptions, GraphOptionsObject } from "../constants";
 import Loading from "./Loading";
+import GraphProvider from "./GraphProvider";
+import matter from "gray-matter";
 
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const { graphText } = useParams<{ graphText: string }>();
@@ -46,10 +47,15 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
     }
   }, [hoverLineNumber]);
 
+  const { data: graphOptions } = matter(textToParse, { delimiters: "~~~" });
+
   return (
-    <WithGraph
+    <GraphProvider
+      editable={false}
       setHoverLineNumber={setHoverLineNumber}
       textToParse={textToParse}
+      updateGraphOptionsText={(_n: GraphOptionsObject) => {}}
+      graphOptions={graphOptions}
     >
       <Editor
         defaultValue={textToParse}
@@ -64,7 +70,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
           editorRef.current = editor;
         }}
       />
-    </WithGraph>
+    </GraphProvider>
   );
 }
 

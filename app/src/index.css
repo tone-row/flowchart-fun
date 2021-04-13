@@ -123,7 +123,3 @@ button:focus {
   outline: none;
   box-shadow: inset 0 0 0 3px var(--color-buttonFocus);
 }
-
-.monaco-editor .selected-text {
-  background-color: var(--color-highlightColor) !important;
-}

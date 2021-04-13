@@ -14,7 +14,7 @@ export const colors = {
   background: palette.white[0],
   foreground: palette.black[0],
   lineColor: palette.black[0],
-  uiAccent: palette.white[2],
+  uiAccent: palette.white[1],
   nodeHover: palette.white[2],
   edgeHover: palette.white[3],
   lineNumbers: palette.white[4],
@@ -38,6 +38,7 @@ const config: Partial<SlangConfig> = {
   baseFontFamily:
     "nm, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   baseFontSizePx: 20,
+  baseFontLineHeightMobile: 1.75,
   breakpoints: {
     small: 450,
     tablet: 800,
