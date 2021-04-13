@@ -6,7 +6,7 @@ export function stripComments(t: string) {
   return strip(t, { preserveNewlines: true });
 }
 
-export function parseText(text: string, startingLineNumber = 1) {
+export function parseText(text: string, startingLineNumber = 0) {
   let elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
 
