@@ -13,9 +13,10 @@ import { useParams } from "react-router";
 import { defaultText, editorOptions, GraphOptionsObject } from "../constants";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
-import WithGraphWrapper from "./WithGraph";
-import matter, { stringify } from "gray-matter";
+import GraphProvider from "./GraphProvider";
+import { stringify } from "gray-matter";
 import useGraphOptions from "./useGraphOptions";
+import merge from "deepmerge";
 
 function Edit() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
@@ -71,14 +72,15 @@ function Edit() {
     setTextToParseThrottle(textarea);
   }, [textarea, setTextToParseThrottle]);
 
-  const graphOptions = useGraphOptions(textToParse);
+  const { graphOptions, content } = useGraphOptions(textToParse);
 
   const updateGraphOptionsText = useCallback(
     (o: GraphOptionsObject) => {
-      const { data, content } = matter(textToParse, { delimiters: "~~~" });
       let text = "";
-      if (Object.keys(data).length) {
-        text = stringify(content, { ...data, ...o }, { delimiters: "~~~" });
+      if (Object.keys(graphOptions).length) {
+        text = stringify(content, merge(graphOptions, o), {
+          delimiters: "~~~",
+        });
       } else {
         // No frontmatter
         text = stringify(textToParse, o, { delimiters: "~~~" });
@@ -86,11 +88,11 @@ function Edit() {
       setText(text);
       setTextToParse(text);
     },
-    [setText, textToParse]
+    [content, graphOptions, setText, textToParse]
   );
 
   return (
-    <WithGraphWrapper
+    <GraphProvider
       editable={true}
       textToParse={textToParse}
       setHoverLineNumber={setHoverLineNumber}
@@ -107,7 +109,7 @@ function Edit() {
           editorRef.current = editor;
         }}
       />
-    </WithGraphWrapper>
+    </GraphProvider>
   );
 }
 

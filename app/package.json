@@ -20,6 +20,7 @@
     "cytoscape": "^3.18.1",
     "cytoscape-dagre": "^2.3.2",
     "cytoscape-svg": "^0.3.1",
+    "deepmerge": "^4.2.2",
     "file-saver": "^2.0.5",
     "gray-matter": "^4.0.2",
     "lz-string": "^1.4.4",

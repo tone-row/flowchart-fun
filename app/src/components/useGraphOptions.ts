@@ -1,12 +1,13 @@
 import matter from "gray-matter";
-// import { useState } from "react";
 import { GraphOptionsObject } from "../constants";
 
-export default function useGraphOptions(text: string): GraphOptionsObject {
+export default function useGraphOptions(
+  text: string
+): { graphOptions: GraphOptionsObject; content: string } {
   try {
-    const { data } = matter(text, { delimiters: "~~~" });
-    return data;
+    const { data: graphOptions, content } = matter(text, { delimiters: "~~~" });
+    return { graphOptions, content };
   } catch (error) {
-    return {};
+    return { graphOptions: {}, content: text };
   }
 }

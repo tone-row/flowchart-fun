@@ -5,7 +5,7 @@ import { AppContext } from "./AppContext";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { editorOptions, GraphOptionsObject } from "../constants";
 import Loading from "./Loading";
-import WithGraphWrapper from "./WithGraph";
+import GraphProvider from "./GraphProvider";
 import matter from "gray-matter";
 
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
@@ -50,7 +50,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const { data: graphOptions } = matter(textToParse, { delimiters: "~~~" });
 
   return (
-    <WithGraphWrapper
+    <GraphProvider
       editable={false}
       setHoverLineNumber={setHoverLineNumber}
       textToParse={textToParse}
@@ -70,7 +70,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
           editorRef.current = editor;
         }}
       />
-    </WithGraphWrapper>
+    </GraphProvider>
   );
 }
 

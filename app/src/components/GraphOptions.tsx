@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./GraphOptions.module.css";
-import { WithGraphContext } from "./WithGraph";
+import { GraphContext } from "./GraphProvider";
 
 const layouts = [
   { label: "Dagre (default)", value: "dagre" },
   { label: "Breadthfirst", value: "breadthfirst" },
-  { label: "COSE", value: "cose" },
+  { label: "CoSE", value: "cose" },
   { label: "Concentric", value: "concentric" },
   { label: "Circle", value: "circle" },
   { label: "Random", value: "random" },
@@ -18,8 +18,9 @@ const layouts = [
 const GraphOptions = memo(() => {
   const { theme } = useContext(AppContext);
   const { editable, updateGraphOptionsText, graphOptions } = useContext(
-    WithGraphContext
+    GraphContext
   );
+  // Caret for select
   const backgroundImage = `url("data:image/svg+xml,%3Csvg stroke='${encodeURIComponent(
     editable ? theme.foreground : theme.uiAccent
   )}' fill='none' stroke-width='2' viewBox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`;

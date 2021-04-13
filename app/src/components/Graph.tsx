@@ -67,7 +67,6 @@ const Graph = memo(
           const { data, content } = matter(stripComments(textToParse), {
             delimiters: "~~~",
           });
-          // need to test data as well
           const { layout: newLayout = {} } = data as GraphOptionsObject;
           newElements = parseText(content);
           errorCy.current?.json({ elements: newElements });
