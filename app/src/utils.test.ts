@@ -115,6 +115,17 @@ describe("parseText", () => {
     const result = parseText("a\n\n\n\n\nb");
     expect(result.length).toEqual(2);
   });
+
+  it("should add an edge to labels that need to be decoded", () => {
+    const originalLabel = `my
+    fun
+    multiline
+    label!(*)$(@*#$)`;
+    const label = encodeURIComponent(originalLabel);
+    const text = `${label}\n  good times: (${label})`;
+    const result = parseText(text);
+    expect(result.filter(edgesOnly)[0].data.id).toEqual(`1_${originalLabel}:0`);
+  });
 });
 
 function nodesOnly(el: cytoscape.ElementDefinition) {
