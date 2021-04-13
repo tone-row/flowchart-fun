@@ -73,8 +73,8 @@ const Graph = memo(
           errorCy.current
             ?.layout({
               ...LAYOUT,
-              animate: false,
               ...newLayout,
+              animate: false,
             } as any)
             .run();
           layout = newLayout;
@@ -91,7 +91,11 @@ const Graph = memo(
             .layout({
               ...LAYOUT,
               ...layout,
-              animate: graphInitialized.current ? animate : false,
+              animate: graphInitialized.current
+                ? newElements.length < 200
+                  ? animate
+                  : false
+                : false,
             } as any)
             .run();
           cy.current.center();
@@ -197,7 +201,7 @@ const Graph = memo(
 
     useEffect(() => {
       setShareLink(
-        `${new URL(window.location.href).origin}/c/${compress(textToParse)}`
+        `${new URL(window.location.href).origin}/c#${compress(textToParse)}`
       );
     }, [setShareLink, textToParse]);
 

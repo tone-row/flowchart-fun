@@ -12,10 +12,10 @@ export default function Router() {
           <Route path="/" exact>
             <Edit />
           </Route>
-          <Route path="/r/:graphText">
+          <Route path="/r/:graphText?">
             <ReadOnly />
           </Route>
-          <Route path="/c/:graphText">
+          <Route path="/c/:graphText?">
             <ReadOnly compressed={true} />
           </Route>
           <Route path="/:workspace">
