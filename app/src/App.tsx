@@ -3,24 +3,19 @@ import * as Sentry from "@sentry/react";
 import React, { Suspense } from "react";
 import Provider from "./components/AppContext";
 import { Box, Type } from "./slang";
-import { i18n } from "@lingui/core";
-import { I18nProvider } from "@lingui/react";
-import { messages } from "./locales/zh/messages.js";
-
-i18n.load("zh", messages);
-i18n.activate("zh");
+import { I18n } from "./locales/i18n";
 
 export default function App() {
   return (
-    <I18nProvider i18n={i18n}>
-      <Provider>
-        <Sentry.ErrorBoundary fallback={ErrorFallback}>
+    <Provider>
+      <Sentry.ErrorBoundary fallback={ErrorFallback}>
+        <I18n>
           <Suspense fallback={null}>
             <Router />
           </Suspense>
-        </Sentry.ErrorBoundary>
-      </Provider>
-    </I18nProvider>
+        </I18n>
+      </Sentry.ErrorBoundary>
+    </Provider>
   );
 }
 

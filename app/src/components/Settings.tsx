@@ -4,6 +4,7 @@ import styles from "./Settings.module.css";
 import { AppContext } from "./AppContext";
 import GraphOptions from "./GraphOptions";
 import { Trans } from "@lingui/macro";
+import { languages } from "../locales/i18n";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 const lowerLinksAt: BoxProps["at"] = {
@@ -21,13 +22,14 @@ const lowerLinksAt: BoxProps["at"] = {
 const largeGap = 10;
 
 const Settings = memo(() => {
-  const { updateUserSettings, mode } = useContext(AppContext);
+  const { updateUserSettings, mode, language } = useContext(AppContext);
   const setLightMode = useCallback(() => {
     updateUserSettings({ mode: "light" });
   }, [updateUserSettings]);
   const setDarkMode = useCallback(() => {
     updateUserSettings({ mode: "dark" });
   }, [updateUserSettings]);
+
   return (
     <Box
       px={4}
@@ -41,23 +43,47 @@ const Settings = memo(() => {
         <GraphOptions />
         <Box content="start" gap={4}>
           <Type weight="700">User Preferences</Type>
-          <Box flow="column">
-            <GroupButton
-              disabled={mode === "light"}
-              aria-pressed={mode === "light"}
-              aria-label="Light Mode"
-              onClick={setLightMode}
-            >
-              <Trans>Light Mode</Trans>
-            </GroupButton>
-            <GroupButton
-              disabled={mode === "dark"}
-              aria-pressed={mode === "dark"}
-              aria-label="Dark Mode"
-              onClick={setDarkMode}
-            >
-              <Trans>Dark Mode</Trans>
-            </GroupButton>
+          <Box gap={2}>
+            <Type size={-1}>Language</Type>
+            <Box flow="column" gap={4}>
+              {Object.keys(languages).map((locale) => (
+                <Box
+                  as="button"
+                  key={locale}
+                  className={styles.Language}
+                  disabled={language === locale}
+                  onClick={() => updateUserSettings({ language: locale })}
+                  aria-label={`Select Language: ${
+                    languages[locale as keyof typeof languages]
+                  }`}
+                >
+                  <Type size={-2}>
+                    {languages[locale as keyof typeof languages]}
+                  </Type>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+          <Box gap={2}>
+            <Type size={-1}>Appearance</Type>
+            <Box flow="column">
+              <GroupButton
+                disabled={mode === "light"}
+                aria-pressed={mode === "light"}
+                aria-label="Light Mode"
+                onClick={setLightMode}
+              >
+                <Trans>Light Mode</Trans>
+              </GroupButton>
+              <GroupButton
+                disabled={mode === "dark"}
+                aria-pressed={mode === "dark"}
+                aria-label="Dark Mode"
+                onClick={setDarkMode}
+              >
+                <Trans>Dark Mode</Trans>
+              </GroupButton>
+            </Box>
           </Box>
         </Box>
       </Box>
