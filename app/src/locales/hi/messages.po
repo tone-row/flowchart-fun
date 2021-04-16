@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-04-15 21:20-0400\n"
+"POT-Creation-Date: 2021-04-16 00:36-0400\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: en\n"
+"Language: hi\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -15,88 +15,88 @@ msgstr ""
 
 #: src/components/Settings.tsx:71
 msgid "Become a Sponsor"
-msgstr "Become a Sponsor"
+msgstr "एक प्रायोजक बनें"
 
 #: src/constants.ts:12
 msgid "Create a link directly using the exact label text"
-msgstr "Create a link directly using the exact label text"
+msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
 
 #: src/components/Settings.tsx:49
 msgid "Dark Mode"
-msgstr "Dark Mode"
+msgstr "डार्क मोड"
 
 #: src/components/Menu.tsx:30
 msgid "Editor"
-msgstr "Editor"
+msgstr "संपादक"
 
 #: src/components/Settings.tsx:62
 msgid "Follow Us"
-msgstr "Follow Us"
+msgstr "हमें फॉलो करें"
 
 #: src/constants.ts:20
 msgid "Have fun! 🎉"
-msgstr "Have fun! 🎉"
+msgstr "मज़े करो! 🎉"
 
 #: src/constants.ts:10
 msgid "Indenting creates a link to the current line"
-msgstr "Indenting creates a link to the current line"
+msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
 #: src/components/Settings.tsx:46
 msgid "Light Mode"
-msgstr "Light Mode"
+msgstr "लाइट मोड"
 
 #: src/components/Settings.tsx:56
 msgid "Made by <0>Tone Row</0>"
-msgstr "Made by <0>Tone Row</0>"
+msgstr "<0>Tone Row</0> द्वारा बना"
 
 #: src/components/Settings.tsx:68
 msgid "Make a Donation"
-msgstr "Make a Donation"
+msgstr "दान करें"
 
 #: src/components/Menu.tsx:33
 msgid "Settings"
-msgstr "Settings"
+msgstr "सेटिंग्स"
 
 #: src/components/Menu.tsx:53
 msgid "Share"
-msgstr "Share"
+msgstr "शेयर"
 
 #: src/constants.ts:9
 msgid "This app works by typing"
-msgstr "This app works by typing"
+msgstr "यह ऐप टाइप द्वारा काम करता है"
 
 #: src/components/Settings.tsx:65
 msgid "View on Github"
-msgstr "View on Github"
+msgstr "Github पर देखें"
 
 #: src/constants.ts:14
 msgid "[custom ID] or"
-msgstr "[custom ID] or"
+msgstr "[कस्टम ID] या"
 
 #: src/constants.ts:11
 msgid "any text: before a colon creates a label"
-msgstr "any text: before a colon creates a label"
+msgstr "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है"
 
 #: src/constants.ts:15
 msgid "by adding an [ID] and referencing that"
-msgstr "by adding an [ID] and referencing that"
+msgstr "एक [ID] जोड़कर संदर्भित है और उस"
 
 #: src/constants.ts:19
 msgid "comments"
-msgstr "comments"
+msgstr "कमेंट को"
 
 #: src/constants.ts:13
 msgid "like this: (This app works by typing)"
-msgstr "like this: (This app works by typing)"
+msgstr "इस तरह: (यह ऐप टाइप द्वारा काम करता है)"
 
 #: src/constants.ts:16
 msgid "like this: (custom ID) // You can also use single-line comments"
-msgstr "like this: (custom ID) // You can also use single-line comments"
+msgstr "इस तरह: (कस्टम ID) // आप सिंगल-लाइन टिप्पणियों का भी उपयोग कर सकते हैं"
 
 #: src/constants.ts:18
 msgid "multiline"
-msgstr "multiline"
+msgstr "एक से अधिक लाइन"
 
 #: src/constants.ts:17
 msgid "or"
-msgstr "or"
+msgstr "या"

@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-04-15 21:20-0400\n"
+"POT-Creation-Date: 2021-04-16 00:35-0400\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: en\n"
+"Language: de\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -15,15 +15,15 @@ msgstr ""
 
 #: src/components/Settings.tsx:71
 msgid "Become a Sponsor"
-msgstr "Become a Sponsor"
+msgstr "Werden Sie zum Sponsoren"
 
 #: src/constants.ts:12
 msgid "Create a link directly using the exact label text"
-msgstr "Create a link directly using the exact label text"
+msgstr "Erstellen Sie direkt einen Link mit dem genauen Beschriftungstext"
 
 #: src/components/Settings.tsx:49
 msgid "Dark Mode"
-msgstr "Dark Mode"
+msgstr "Dunkelmodus"
 
 #: src/components/Menu.tsx:30
 msgid "Editor"
@@ -31,72 +31,72 @@ msgstr "Editor"
 
 #: src/components/Settings.tsx:62
 msgid "Follow Us"
-msgstr "Follow Us"
+msgstr "Folgen Sie uns"
 
 #: src/constants.ts:20
 msgid "Have fun! 🎉"
-msgstr "Have fun! 🎉"
+msgstr "Viel Spaß! 🎉"
 
 #: src/constants.ts:10
 msgid "Indenting creates a link to the current line"
-msgstr "Indenting creates a link to the current line"
+msgstr "Durch das Einrücken wird eine Verbindung zur aktuellen Zeile hergestellt"
 
 #: src/components/Settings.tsx:46
 msgid "Light Mode"
-msgstr "Light Mode"
+msgstr "Heller Modus"
 
 #: src/components/Settings.tsx:56
 msgid "Made by <0>Tone Row</0>"
-msgstr "Made by <0>Tone Row</0>"
+msgstr "Gemacht von <0>Tone Row</0>"
 
 #: src/components/Settings.tsx:68
 msgid "Make a Donation"
-msgstr "Make a Donation"
+msgstr "Spenden"
 
 #: src/components/Menu.tsx:33
 msgid "Settings"
-msgstr "Settings"
+msgstr "Einstellungen"
 
 #: src/components/Menu.tsx:53
 msgid "Share"
-msgstr "Share"
+msgstr "Teilen"
 
 #: src/constants.ts:9
 msgid "This app works by typing"
-msgstr "This app works by typing"
+msgstr "Diese App funktioniert durch Tippen"
 
 #: src/components/Settings.tsx:65
 msgid "View on Github"
-msgstr "View on Github"
+msgstr "Auf Github ansehen"
 
 #: src/constants.ts:14
 msgid "[custom ID] or"
-msgstr "[custom ID] or"
+msgstr "[benutzerdefinierte ID] oder"
 
 #: src/constants.ts:11
 msgid "any text: before a colon creates a label"
-msgstr "any text: before a colon creates a label"
+msgstr "Jeder beliebige Text: vor einem Doppelpunkt wird zu einer Beschriftung"
 
 #: src/constants.ts:15
 msgid "by adding an [ID] and referencing that"
-msgstr "by adding an [ID] and referencing that"
+msgstr "indem man ein [ID] hinzufügt und darauf verweist"
 
 #: src/constants.ts:19
 msgid "comments"
-msgstr "comments"
+msgstr "Kommentare"
 
 #: src/constants.ts:13
 msgid "like this: (This app works by typing)"
-msgstr "like this: (This app works by typing)"
+msgstr "so wie hier: (Diese App funktioniert durch Tippen)"
 
 #: src/constants.ts:16
 msgid "like this: (custom ID) // You can also use single-line comments"
-msgstr "like this: (custom ID) // You can also use single-line comments"
+msgstr "so wie hier: (benutzerdefinierte ID) // Sie können auch einzeilige Kommentare verwenden"
 
 #: src/constants.ts:18
 msgid "multiline"
-msgstr "multiline"
+msgstr "mehrzeilige"
 
 #: src/constants.ts:17
 msgid "or"
-msgstr "or"
+msgstr "oder"

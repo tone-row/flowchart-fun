@@ -5,10 +5,10 @@ import Provider from "./components/AppContext";
 import { Box, Type } from "./slang";
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
-import { messages } from "./locales/fr/messages.js";
+import { messages } from "./locales/zh/messages.js";
 
-i18n.load("en", messages);
-i18n.activate("en");
+i18n.load("zh", messages);
+i18n.activate("zh");
 
 export default function App() {
   return (

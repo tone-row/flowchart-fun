@@ -15,15 +15,15 @@ msgstr ""
 
 #: src/components/Settings.tsx:71
 msgid "Become a Sponsor"
-msgstr ""
+msgstr "Devenir un sponsor"
 
 #: src/constants.ts:12
 msgid "Create a link directly using the exact label text"
-msgstr ""
+msgstr "Créer un lien directement vers une boite en utilisant le texte exact de celle-ci"
 
 #: src/components/Settings.tsx:49
 msgid "Dark Mode"
-msgstr ""
+msgstr "Mode sombre"
 
 #: src/components/Menu.tsx:30
 msgid "Editor"
@@ -31,27 +31,27 @@ msgstr "Éditeur"
 
 #: src/components/Settings.tsx:62
 msgid "Follow Us"
-msgstr ""
+msgstr "Suivez-nous"
 
 #: src/constants.ts:20
 msgid "Have fun! 🎉"
-msgstr ""
+msgstr "Amusez-vous ! 🎉"
 
 #: src/constants.ts:10
 msgid "Indenting creates a link to the current line"
-msgstr ""
+msgstr "La mise en retrait crée un lien vers la ligne courante."
 
 #: src/components/Settings.tsx:46
 msgid "Light Mode"
-msgstr ""
+msgstr "Mode lumineux"
 
 #: src/components/Settings.tsx:56
 msgid "Made by <0>Tone Row</0>"
-msgstr ""
+msgstr "Réalisé par <0>Tone Row</0>"
 
 #: src/components/Settings.tsx:68
 msgid "Make a Donation"
-msgstr ""
+msgstr "Faire un don"
 
 #: src/components/Menu.tsx:33
 msgid "Settings"
@@ -59,62 +59,44 @@ msgstr "Paramètres"
 
 #: src/components/Menu.tsx:53
 msgid "Share"
-msgstr ""
+msgstr "Partager"
 
 #: src/constants.ts:9
 msgid "This app works by typing"
-msgstr ""
-
-#: src/constants.ts:9
-#~ msgid ""
-#~ "This app works by typing\n"
-#~ "Indenting creates a link to the current line\n"
-#~ "any text: before a colon creates a label\n"
-#~ "Create a link directly using the exact label text\n"
-#~ "like this: (This app works by typing)\n"
-#~ "[custom ID] or\n"
-#~ "by adding an [ID] and referencing that\n"
-#~ "like this: (custom ID) // You can also use single-line comments\n"
-#~ "/*\n"
-#~ "or \n"
-#~ "multiline \n"
-#~ "comments\n"
-#~ "Have fun! 🎉\n"
-#~ "*/"
-#~ msgstr ""
+msgstr "Chaque ligne creé une nouvelle boite"
 
 #: src/components/Settings.tsx:65
 msgid "View on Github"
-msgstr ""
+msgstr "Voir sur"
 
 #: src/constants.ts:14
 msgid "[custom ID] or"
-msgstr ""
+msgstr "[ID personnalisé] ou"
 
 #: src/constants.ts:11
 msgid "any text: before a colon creates a label"
-msgstr ""
+msgstr "n'importe quel texte : avant deux points, crée une étiquette pour le lien"
 
 #: src/constants.ts:15
 msgid "by adding an [ID] and referencing that"
-msgstr ""
+msgstr "en ajoutant un [ID] et en référençant celui-ci"
 
 #: src/constants.ts:19
 msgid "comments"
-msgstr ""
+msgstr "des commentaires"
 
 #: src/constants.ts:13
 msgid "like this: (This app works by typing)"
-msgstr ""
+msgstr "comme ceci : (Chaque ligne creé une nouvelle boite)"
 
 #: src/constants.ts:16
 msgid "like this: (custom ID) // You can also use single-line comments"
-msgstr ""
+msgstr "comme ceci : (ID personnalisé) // Vous pouvez également ajouter des commentaires d'une ligne,"
 
 #: src/constants.ts:18
 msgid "multiline"
-msgstr ""
+msgstr "de plusieurs lignes"
 
 #: src/constants.ts:17
 msgid "or"
-msgstr ""
+msgstr "ou"

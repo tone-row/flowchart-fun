@@ -2,7 +2,10 @@
   "locales": [
     "en",
     "fr",
-    "zh"
+    "zh",
+    "de",
+    "hi",
+    "ko"
   ],
   "sourceLocale": "en",
   "catalogs": [

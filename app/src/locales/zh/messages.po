@@ -6,91 +6,97 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: zh\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: src/components/Settings.tsx:71
 msgid "Become a Sponsor"
-msgstr ""
+msgstr "赞助我们"
 
 #: src/constants.ts:12
 msgid "Create a link directly using the exact label text"
-msgstr ""
+msgstr "使用完全一样的标签文本，直接创建链接"
 
 #: src/components/Settings.tsx:49
 msgid "Dark Mode"
-msgstr ""
+msgstr "黑暗模式"
 
 #: src/components/Menu.tsx:30
 msgid "Editor"
-msgstr ""
+msgstr "编辑器"
 
 #: src/components/Settings.tsx:62
 msgid "Follow Us"
-msgstr ""
+msgstr "关注我们"
 
 #: src/constants.ts:20
 msgid "Have fun! 🎉"
-msgstr ""
+msgstr "玩得开心！🎉"
 
 #: src/constants.ts:10
 msgid "Indenting creates a link to the current line"
-msgstr ""
+msgstr "缩进可创建连接到当前行的链接"
 
 #: src/components/Settings.tsx:46
 msgid "Light Mode"
-msgstr ""
+msgstr "灯光模式"
 
 #: src/components/Settings.tsx:56
 msgid "Made by <0>Tone Row</0>"
-msgstr ""
+msgstr "由 <0>Tone Row</0> 制作"
 
 #: src/components/Settings.tsx:68
 msgid "Make a Donation"
-msgstr ""
+msgstr "捐款"
 
 #: src/components/Menu.tsx:33
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: src/components/Menu.tsx:53
 msgid "Share"
-msgstr ""
+msgstr "分享"
 
 #: src/constants.ts:9
 msgid "This app works by typing"
-msgstr ""
+msgstr "这款应用的工作原理是输入"
 
 #: src/components/Settings.tsx:65
 msgid "View on Github"
-msgstr ""
+msgstr "在 Github 上查看"
 
 #: src/constants.ts:14
 msgid "[custom ID] or"
-msgstr ""
+msgstr "[自定义 ID] 或"
 
 #: src/constants.ts:11
 msgid "any text: before a colon creates a label"
-msgstr ""
+msgstr "任何文本：在冒号前创建一个标签"
 
 #: src/constants.ts:15
 msgid "by adding an [ID] and referencing that"
-msgstr ""
+msgstr "通过添加并引用一个 [ID]"
 
 #: src/constants.ts:19
 msgid "comments"
-msgstr ""
+msgstr "注释"
 
 #: src/constants.ts:13
 msgid "like this: (This app works by typing)"
-msgstr ""
+msgstr "像这样：（这款应用的工作原理是输入）"
 
 #: src/constants.ts:16
 msgid "like this: (custom ID) // You can also use single-line comments"
-msgstr ""
+msgstr "像这样：（自定义 ID）// 你也可以使用单行注释"
 
 #: src/constants.ts:18
 msgid "multiline"
-msgstr ""
+msgstr "多行"
 
 #: src/constants.ts:17
 msgid "or"
-msgstr ""
+msgstr "或"

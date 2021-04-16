@@ -48,7 +48,7 @@
     "theme": "slang src/slang",
     "theme:watch": "slang src/slang -w",
     "unused-exports": "ts-unused-exports tsconfig.json",
-    "extract": "lingui extract",
+    "extract": "lingui extract --clean",
     "compile": "lingui compile"
   },
   "eslintConfig": {
