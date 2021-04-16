@@ -1,0 +1,1 @@
+/*eslint-disable*/module.exports={messages:{"Editor":"Editor","Settings":"Settings"}};

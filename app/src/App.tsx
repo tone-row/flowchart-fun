@@ -3,16 +3,24 @@ import * as Sentry from "@sentry/react";
 import React, { Suspense } from "react";
 import Provider from "./components/AppContext";
 import { Box, Type } from "./slang";
+import { i18n } from "@lingui/core";
+import { I18nProvider } from "@lingui/react";
+import { messages } from "./locales/fr/messages.js";
+
+i18n.load("en", messages);
+i18n.activate("en");
 
 export default function App() {
   return (
-    <Provider>
-      <Sentry.ErrorBoundary fallback={ErrorFallback}>
-        <Suspense fallback={null}>
-          <Router />
-        </Suspense>
-      </Sentry.ErrorBoundary>
-    </Provider>
+    <I18nProvider i18n={i18n}>
+      <Provider>
+        <Sentry.ErrorBoundary fallback={ErrorFallback}>
+          <Suspense fallback={null}>
+            <Router />
+          </Suspense>
+        </Sentry.ErrorBoundary>
+      </Provider>
+    </I18nProvider>
   );
 }
 

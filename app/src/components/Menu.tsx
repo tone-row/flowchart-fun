@@ -5,6 +5,7 @@ import { ReactComponent as BrandSvg } from "./brand.svg";
 import { AppContext } from "./AppContext";
 import { LayoutContext, Showing } from "./Layout";
 import { FiDownload, FiShare2 } from "react-icons/fi";
+import { Trans } from "@lingui/macro";
 
 const hideShareButton = { tablet: { display: false } };
 const showMenuRight = { tablet: { display: true } };
@@ -30,10 +31,10 @@ const Menu = memo(
             <BrandSvg width={40} />
           </Box>
           <MenuButton show="editor" onClick={() => setShowing("editor")}>
-            Editor
+            <Trans>Editor</Trans>
           </MenuButton>
           <MenuButton show="settings" onClick={() => setShowing("settings")}>
-            Settings
+            <Trans>Settings</Trans>
           </MenuButton>
           <MenuButton
             show="share"
@@ -92,7 +93,7 @@ function MenuButton({
   show,
   typeProps = {},
   ...props
-}: BoxProps & { children: string; show: Showing; typeProps?: TypeProps }) {
+}: BoxProps & { children: ReactNode; show: Showing; typeProps?: TypeProps }) {
   const { showing } = useContext(LayoutContext);
   const isActive = showing === show;
   return (
