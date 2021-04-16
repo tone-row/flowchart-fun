@@ -3,6 +3,7 @@ import { Box, BoxProps, Type } from "../slang";
 import styles from "./Settings.module.css";
 import { AppContext } from "./AppContext";
 import GraphOptions from "./GraphOptions";
+import { Trans } from "@lingui/macro";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 const lowerLinksAt: BoxProps["at"] = {
@@ -47,7 +48,7 @@ const Settings = memo(() => {
               aria-label="Light Mode"
               onClick={setLightMode}
             >
-              Light Mode
+              <Trans>Light Mode</Trans>
             </GroupButton>
             <GroupButton
               disabled={mode === "dark"}
@@ -55,35 +56,37 @@ const Settings = memo(() => {
               aria-label="Dark Mode"
               onClick={setDarkMode}
             >
-              Dark Mode
+              <Trans>Dark Mode</Trans>
             </GroupButton>
           </Box>
         </Box>
       </Box>
       <Box gap={4} className={styles.LowerLinks}>
         <Type as="a" href="https://tone-row.com" size={-1}>
-          Made by <strong>Tone Row</strong>
+          <Trans>
+            Made by <strong>Tone Row</strong>
+          </Trans>
         </Type>
         <Box gap={2} at={lowerLinksAt}>
           <Type as="a" href="https://twitter.com/row_tone" size={-2}>
-            Follow Us
+            <Trans>Follow Us</Trans>
           </Type>
           <Type
             as="a"
             href="https://github.com/tone-row/flowchart-fun"
             size={-2}
           >
-            View on Github
+            <Trans>View on Github</Trans>
           </Type>
           <Type
             as="a"
             href="https://opencollective.com/tone-row/donate"
             size={-2}
           >
-            Make a Donation
+            <Trans>Make a Donation</Trans>
           </Type>
           <Type as="a" href="https://github.com/sponsors/tone-row" size={-2}>
-            Become a Sponsor
+            <Trans>Become a Sponsor</Trans>
           </Type>
         </Box>
       </Box>

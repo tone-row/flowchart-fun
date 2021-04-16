@@ -1,7 +1,8 @@
 {
   "locales": [
     "en",
-    "fr"
+    "fr",
+    "zh"
   ],
   "sourceLocale": "en",
   "catalogs": [

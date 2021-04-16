@@ -75,7 +75,7 @@ const Menu = memo(
               href={shareLink}
               title="Open Read-only Link for Sharing"
             >
-              Share
+              <Trans>Share</Trans>
             </MenuRightButton>
           </MenuBox>
         </Box>
@@ -118,7 +118,7 @@ function MenuRightButton({
   children,
   className = "",
   ...props
-}: { children: string } & BoxProps) {
+}: { children: ReactNode } & BoxProps) {
   return (
     <Box
       as="button"

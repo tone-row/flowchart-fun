@@ -13,10 +13,122 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/components/Settings.tsx:71
+msgid "Become a Sponsor"
+msgstr "Become a Sponsor"
+
+#: src/constants.ts:12
+msgid "Create a link directly using the exact label text"
+msgstr "Create a link directly using the exact label text"
+
+#: src/components/Settings.tsx:49
+msgid "Dark Mode"
+msgstr "Dark Mode"
+
 #: src/components/Menu.tsx:30
 msgid "Editor"
 msgstr "Editor"
 
+#: src/components/Settings.tsx:62
+msgid "Follow Us"
+msgstr "Follow Us"
+
+#: src/constants.ts:20
+msgid "Have fun! 🎉"
+msgstr "Have fun! 🎉"
+
+#: src/constants.ts:10
+msgid "Indenting creates a link to the current line"
+msgstr "Indenting creates a link to the current line"
+
+#: src/components/Settings.tsx:46
+msgid "Light Mode"
+msgstr "Light Mode"
+
+#: src/components/Settings.tsx:56
+msgid "Made by <0>Tone Row</0>"
+msgstr "Made by <0>Tone Row</0>"
+
+#: src/components/Settings.tsx:68
+msgid "Make a Donation"
+msgstr "Make a Donation"
+
 #: src/components/Menu.tsx:33
 msgid "Settings"
 msgstr "Settings"
+
+#: src/components/Menu.tsx:53
+msgid "Share"
+msgstr "Share"
+
+#: src/constants.ts:9
+msgid "This app works by typing"
+msgstr "This app works by typing"
+
+#: src/constants.ts:9
+#~ msgid ""
+#~ "This app works by typing\n"
+#~ "Indenting creates a link to the current line\n"
+#~ "any text: before a colon creates a label\n"
+#~ "Create a link directly using the exact label text\n"
+#~ "like this: (This app works by typing)\n"
+#~ "[custom ID] or\n"
+#~ "by adding an [ID] and referencing that\n"
+#~ "like this: (custom ID) // You can also use single-line comments\n"
+#~ "/*\n"
+#~ "or \n"
+#~ "multiline \n"
+#~ "comments\n"
+#~ "Have fun! 🎉\n"
+#~ "*/"
+#~ msgstr ""
+#~ "This app works by typing\n"
+#~ "Indenting creates a link to the current line\n"
+#~ "any text: before a colon creates a label\n"
+#~ "Create a link directly using the exact label text\n"
+#~ "like this: (This app works by typing)\n"
+#~ "[custom ID] or\n"
+#~ "by adding an [ID] and referencing that\n"
+#~ "like this: (custom ID) // You can also use single-line comments\n"
+#~ "/*\n"
+#~ "or \n"
+#~ "multiline \n"
+#~ "comments\n"
+#~ "Have fun! 🎉\n"
+#~ "*/"
+
+#: src/components/Settings.tsx:65
+msgid "View on Github"
+msgstr "View on Github"
+
+#: src/constants.ts:14
+msgid "[custom ID] or"
+msgstr "[custom ID] or"
+
+#: src/constants.ts:11
+msgid "any text: before a colon creates a label"
+msgstr "any text: before a colon creates a label"
+
+#: src/constants.ts:15
+msgid "by adding an [ID] and referencing that"
+msgstr "by adding an [ID] and referencing that"
+
+#: src/constants.ts:19
+msgid "comments"
+msgstr "comments"
+
+#: src/constants.ts:13
+msgid "like this: (This app works by typing)"
+msgstr "like this: (This app works by typing)"
+
+#: src/constants.ts:16
+msgid "like this: (custom ID) // You can also use single-line comments"
+msgstr "like this: (custom ID) // You can also use single-line comments"
+
+#: src/constants.ts:18
+msgid "multiline"
+msgstr "multiline"
+
+#: src/constants.ts:17
+msgid "or"
+msgstr "or"
