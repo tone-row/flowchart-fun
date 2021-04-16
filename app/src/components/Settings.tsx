@@ -29,6 +29,12 @@ const Settings = memo(() => {
   const setDarkMode = useCallback(() => {
     updateUserSettings({ mode: "dark" });
   }, [updateUserSettings]);
+  const changeLanguage = useCallback(
+    (l: string) => {
+      updateUserSettings({ language: l });
+    },
+    [updateUserSettings]
+  );
 
   return (
     <Box
@@ -52,7 +58,7 @@ const Settings = memo(() => {
                   key={locale}
                   className={styles.Language}
                   disabled={language === locale}
-                  onClick={() => updateUserSettings({ language: locale })}
+                  onClick={() => changeLanguage(locale)}
                   aria-label={`Select Language: ${
                     languages[locale as keyof typeof languages]
                   }`}

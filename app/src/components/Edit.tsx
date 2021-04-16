@@ -7,26 +7,21 @@ import React, {
   useState,
 } from "react";
 import { useThrottleCallback } from "@react-hook/throttle";
-import useLocalStorage from "react-use-localstorage";
 import Editor from "@monaco-editor/react";
-import { useParams } from "react-router";
-import { defaultText, editorOptions, GraphOptionsObject } from "../constants";
+import { editorOptions, GraphOptionsObject } from "../constants";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
 import GraphProvider from "./GraphProvider";
 import { stringify } from "gray-matter";
 import useGraphOptions from "./useGraphOptions";
 import merge from "deepmerge";
+import { useLocalStorageText } from "../utils";
 
 function Edit() {
-  const { workspace = "" } = useParams<{ workspace?: string }>();
-  const [textarea, setText] = useLocalStorage(
-    ["flowcharts.fun", workspace].filter(Boolean).join(":"),
-    defaultText
-  );
+  const [text, setText] = useLocalStorageText();
   const [textToParse, setTextToParse] = useReducer(
     (t: string, u: string) => u,
-    textarea
+    text
   );
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
@@ -69,8 +64,8 @@ function Edit() {
   }, [hoverLineNumber, setText]);
 
   useEffect(() => {
-    setTextToParseThrottle(textarea);
-  }, [textarea, setTextToParseThrottle]);
+    setTextToParseThrottle(text);
+  }, [text, setTextToParseThrottle]);
 
   const { graphOptions, content } = useGraphOptions(textToParse);
 
@@ -100,7 +95,7 @@ function Edit() {
       updateGraphOptionsText={updateGraphOptionsText}
     >
       <Editor
-        defaultValue={textarea}
+        defaultValue={text}
         options={editorOptions}
         theme={mode === "dark" ? "vs-dark" : "light"}
         onChange={(value) => setText(value ?? "")}
