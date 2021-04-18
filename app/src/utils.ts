@@ -1,9 +1,5 @@
 import strip from "@tone-row/strip-comments";
 import { CytoscapeOptions } from "cytoscape";
-import { Dispatch } from "react";
-import { useLocation, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
-import { t } from "@lingui/macro";
 
 export function stripComments(t: string) {
   return strip(t, { preserveNewlines: true });
@@ -185,39 +181,4 @@ function preventCyRenderingBugs(str: string) {
       // prevent break on chinese comma
       .replace(/，/gm, "&#x2011;")
   );
-}
-
-export function useAnimationSetting() {
-  let { search } = useLocation();
-  const query = new URLSearchParams(search);
-  const animation = query.get("animation");
-  return animation === "0" ? false : true;
-}
-
-export function useLocalStorageText(): [string, Dispatch<string>] {
-  const { workspace = "" } = useParams<{ workspace?: string }>();
-  const [text, setText] = useLocalStorage(
-    ["flowcharts.fun", workspace].filter(Boolean).join(":"),
-    ""
-  );
-  return [
-    text
-      ? text
-      : `${t`This app works by typing`}
-  ${t`Indenting creates a link to the current line`}
-  ${t`any text: before a colon creates a label`}
-  ${t`Create a link directly using the exact label text`}
-    ${t`like this: (This app works by typing)`}
-    ${t`[custom ID] or`}
-      ${t`by adding an [ID] and referencing that`}
-        ${t`like this: (custom ID) // You can also use single-line comments`}
-/*
-${t`or`}
-${t`multiline`}
-${t`comments`}
-
-${t`Have fun! 🎉`}
-*/`,
-    setText,
-  ];
 }
