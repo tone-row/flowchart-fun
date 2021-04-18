@@ -24,6 +24,8 @@ For more information on developing, check out [create-react-app's README](https:
 1. `docker build -t flowchart-fun`
 1. `docker run -p 3035:3000 flowchart-fun`
 
+Now you can access the flowchar app on `[http://localhost:3035](http://localhost:3035)`
+
 For more information on creating a docker for production  please follow first [create-react-app's README](https://github.com/facebook/create-react-app/blob/master/README.md) and then use the environment variables and docker-compose to create the  production ready server.
 
 ## Contributing
