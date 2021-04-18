@@ -18,6 +18,14 @@ This repository is organized in workspaces. [/app](/app) contains the code for h
 
 For more information on developing, check out [create-react-app's README](https://github.com/facebook/create-react-app/blob/master/README.md)
 
+### Start DEV server using docker
+1. `git clone`
+1. `cd flowchart-fun`
+1. `docker build -t flowchart-fun`
+1. `docker run -p 3035:3000 flowchart-fun`
+
+For more information on creating a docker for production  please follow first [create-react-app's README](https://github.com/facebook/create-react-app/blob/master/README.md) and then use the environment variables and docker-compose to create the  production ready server.
+
 ## Contributing
 
 This repo is always open to contributions. Before opening a PR with a new feature, consider opening an issue or discussion to gauge support and confirm your implementation.
