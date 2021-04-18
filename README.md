@@ -21,7 +21,7 @@ For more information on developing, check out [create-react-app's README](https:
 ### Start DEV server using docker
 1. `git clone`
 1. `cd flowchart-fun`
-1. `docker build -t flowchart-fun`
+1. `docker build -t flowchart-fun .`
 1. `docker run -p 3035:3000 flowchart-fun`
 
 Now you can access the flowchar app on [http://localhost:3035](http://localhost:3035)
