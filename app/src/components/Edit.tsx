@@ -15,7 +15,7 @@ import GraphProvider from "./GraphProvider";
 import { stringify } from "gray-matter";
 import useGraphOptions from "./useGraphOptions";
 import merge from "deepmerge";
-import { useLocalStorageText } from "../utils";
+import { useLocalStorageText } from "../hooks";
 
 function Edit() {
   const [text, setText] = useLocalStorageText();
