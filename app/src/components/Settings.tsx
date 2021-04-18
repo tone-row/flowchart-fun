@@ -48,9 +48,13 @@ const Settings = memo(() => {
       <Box content="start stretch" gap={largeGap}>
         <GraphOptions />
         <Box content="start" gap={4}>
-          <Type weight="700">User Preferences</Type>
+          <Type weight="700">
+            <Trans>User Preferences</Trans>
+          </Type>
           <Box gap={2}>
-            <Type size={-1}>Language</Type>
+            <Type size={-1}>
+              <Trans>Language</Trans>
+            </Type>
             <Box flow="column" gap={4}>
               {Object.keys(languages).map((locale) => (
                 <Box
@@ -71,7 +75,9 @@ const Settings = memo(() => {
             </Box>
           </Box>
           <Box gap={2}>
-            <Type size={-1}>Appearance</Type>
+            <Type size={-1}>
+              <Trans>Appearance</Trans>
+            </Type>
             <Box flow="column">
               <GroupButton
                 disabled={mode === "light"}

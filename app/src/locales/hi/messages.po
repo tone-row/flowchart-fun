@@ -13,90 +13,161 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:64
+msgid "Appearance"
+msgstr "दिखावट"
+
+#: src/components/Settings.tsx:94
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
-#: src/constants.ts:12
+#: src/components/GraphOptions.tsx:21
+msgid "Bottom to Top"
+msgstr "नीचे से शीर्ष तक"
+
+#: src/components/GraphOptions.tsx:10
+msgid "Breadthfirst"
+msgstr "चौड़ाई पहले"
+
+#: src/components/GraphOptions.tsx:13
+msgid "Circle"
+msgstr "परिधि"
+
+#: src/components/GraphOptions.tsx:12
+msgid "Concentric"
+msgstr "गाढ़ा"
+
+#: src/utils.ts:159
 msgid "Create a link directly using the exact label text"
 msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
 
-#: src/components/Settings.tsx:49
+#: src/components/Settings.tsx:71
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/components/Menu.tsx:30
+#: src/components/GraphOptions.tsx:46
+msgid "Direction"
+msgstr "दिशा"
+
+#: src/components/Share.tsx:24
+#: src/components/Share.tsx:27
+#: src/components/Share.tsx:30
+msgid "Download"
+msgstr "डाउनलोड"
+
+#: src/components/Menu.tsx:29
 msgid "Editor"
 msgstr "संपादक"
 
-#: src/components/Settings.tsx:62
+#: src/components/Settings.tsx:85
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
-#: src/constants.ts:20
+#: src/components/GraphOptions.tsx:36
+msgid "Graph Options"
+msgstr "ग्राफ विकल्प"
+
+#: src/components/GraphOptions.tsx:15
+msgid "Grid"
+msgstr "ग्रिड"
+
+#: src/utils.ts:169
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/constants.ts:10
+#: src/utils.ts:157
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
-#: src/components/Settings.tsx:46
+#: src/components/Settings.tsx:52
+msgid "Language"
+msgstr "भाषा"
+
+#: src/components/GraphOptions.tsx:40
+msgid "Layout"
+msgstr "ख़ाका"
+
+#: src/components/GraphOptions.tsx:18
+msgid "Left to Right (default)"
+msgstr "बाएं से दाएं (डिफ़ॉल्ट)"
+
+#: src/components/Settings.tsx:68
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/Settings.tsx:56
+#: src/components/Settings.tsx:79
 msgid "Made by <0>Tone Row</0>"
 msgstr "<0>Tone Row</0> द्वारा बना"
 
-#: src/components/Settings.tsx:68
+#: src/components/Settings.tsx:91
 msgid "Make a Donation"
 msgstr "दान करें"
 
-#: src/components/Menu.tsx:33
+#: src/components/Share.tsx:21
+msgid "Open Share Link"
+msgstr "शेयर लिंक खोलें"
+
+#: src/components/GraphOptions.tsx:14
+msgid "Random"
+msgstr "अनियमित"
+
+#: src/components/GraphOptions.tsx:20
+msgid "Right to Left"
+msgstr "दाएं से बाएं"
+
+#: src/components/Menu.tsx:32
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: src/components/Menu.tsx:53
+#: src/components/Menu.tsx:35
+#: src/components/Menu.tsx:52
 msgid "Share"
 msgstr "शेयर"
 
-#: src/constants.ts:9
+#: src/utils.ts:156
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
-#: src/components/Settings.tsx:65
+#: src/components/GraphOptions.tsx:19
+msgid "Top to Bottom"
+msgstr "ऊपर से नीचे"
+
+#: src/components/Settings.tsx:48
+msgid "User Preferences"
+msgstr "उपयोगकर्ता वरीयताएं"
+
+#: src/components/Settings.tsx:88
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/constants.ts:14
+#: src/utils.ts:161
 msgid "[custom ID] or"
 msgstr "[कस्टम ID] या"
 
-#: src/constants.ts:11
+#: src/utils.ts:158
 msgid "any text: before a colon creates a label"
 msgstr "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है"
 
-#: src/constants.ts:15
+#: src/utils.ts:162
 msgid "by adding an [ID] and referencing that"
 msgstr "एक [ID] जोड़कर संदर्भित है और उस"
 
-#: src/constants.ts:19
+#: src/utils.ts:167
 msgid "comments"
 msgstr "कमेंट को"
 
-#: src/constants.ts:13
+#: src/utils.ts:160
 msgid "like this: (This app works by typing)"
 msgstr "इस तरह: (यह ऐप टाइप द्वारा काम करता है)"
 
-#: src/constants.ts:16
+#: src/utils.ts:163
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "इस तरह: (कस्टम ID) // आप सिंगल-लाइन टिप्पणियों का भी उपयोग कर सकते हैं"
 
-#: src/constants.ts:18
+#: src/utils.ts:166
 msgid "multiline"
 msgstr "एक से अधिक लाइन"
 
-#: src/constants.ts:17
+#: src/utils.ts:165
 msgid "or"
 msgstr "या"

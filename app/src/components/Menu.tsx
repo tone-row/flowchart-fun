@@ -40,7 +40,7 @@ const Menu = memo(() => {
           display={true}
           at={hideShareButton}
         >
-          Share
+          <Trans>Share</Trans>
         </MenuButton>
       </Box>
       <Box flow="column" display={false} at={showMenuRight} pr={4} gap={6}>

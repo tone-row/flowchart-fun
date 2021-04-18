@@ -13,90 +13,161 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:64
+msgid "Appearance"
+msgstr "外观"
+
+#: src/components/Settings.tsx:94
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
-#: src/constants.ts:12
+#: src/components/GraphOptions.tsx:21
+msgid "Bottom to Top"
+msgstr "从下到上"
+
+#: src/components/GraphOptions.tsx:10
+msgid "Breadthfirst"
+msgstr "宽度优先"
+
+#: src/components/GraphOptions.tsx:13
+msgid "Circle"
+msgstr "圆圈"
+
+#: src/components/GraphOptions.tsx:12
+msgid "Concentric"
+msgstr "同心"
+
+#: src/utils.ts:159
 msgid "Create a link directly using the exact label text"
 msgstr "使用完全一样的标签文本，直接创建链接"
 
-#: src/components/Settings.tsx:49
+#: src/components/Settings.tsx:71
 msgid "Dark Mode"
 msgstr "黑暗模式"
 
-#: src/components/Menu.tsx:30
+#: src/components/GraphOptions.tsx:46
+msgid "Direction"
+msgstr "方向"
+
+#: src/components/Share.tsx:24
+#: src/components/Share.tsx:27
+#: src/components/Share.tsx:30
+msgid "Download"
+msgstr "下载"
+
+#: src/components/Menu.tsx:29
 msgid "Editor"
 msgstr "编辑器"
 
-#: src/components/Settings.tsx:62
+#: src/components/Settings.tsx:85
 msgid "Follow Us"
 msgstr "关注我们"
 
-#: src/constants.ts:20
+#: src/components/GraphOptions.tsx:36
+msgid "Graph Options"
+msgstr "图形选项"
+
+#: src/components/GraphOptions.tsx:15
+msgid "Grid"
+msgstr "网格"
+
+#: src/utils.ts:169
 msgid "Have fun! 🎉"
 msgstr "玩得开心！🎉"
 
-#: src/constants.ts:10
+#: src/utils.ts:157
 msgid "Indenting creates a link to the current line"
 msgstr "缩进可创建连接到当前行的链接"
 
-#: src/components/Settings.tsx:46
+#: src/components/Settings.tsx:52
+msgid "Language"
+msgstr "语言"
+
+#: src/components/GraphOptions.tsx:40
+msgid "Layout"
+msgstr "布局"
+
+#: src/components/GraphOptions.tsx:18
+msgid "Left to Right (default)"
+msgstr "从左到右（默认）"
+
+#: src/components/Settings.tsx:68
 msgid "Light Mode"
 msgstr "灯光模式"
 
-#: src/components/Settings.tsx:56
+#: src/components/Settings.tsx:79
 msgid "Made by <0>Tone Row</0>"
 msgstr "由 <0>Tone Row</0> 制作"
 
-#: src/components/Settings.tsx:68
+#: src/components/Settings.tsx:91
 msgid "Make a Donation"
 msgstr "捐款"
 
-#: src/components/Menu.tsx:33
+#: src/components/Share.tsx:21
+msgid "Open Share Link"
+msgstr "打开共享链接"
+
+#: src/components/GraphOptions.tsx:14
+msgid "Random"
+msgstr "随机"
+
+#: src/components/GraphOptions.tsx:20
+msgid "Right to Left"
+msgstr "从右到左"
+
+#: src/components/Menu.tsx:32
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/Menu.tsx:53
+#: src/components/Menu.tsx:35
+#: src/components/Menu.tsx:52
 msgid "Share"
 msgstr "分享"
 
-#: src/constants.ts:9
+#: src/utils.ts:156
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
 
-#: src/components/Settings.tsx:65
+#: src/components/GraphOptions.tsx:19
+msgid "Top to Bottom"
+msgstr "从上到下"
+
+#: src/components/Settings.tsx:48
+msgid "User Preferences"
+msgstr "用户首选项"
+
+#: src/components/Settings.tsx:88
 msgid "View on Github"
 msgstr "在 Github 上查看"
 
-#: src/constants.ts:14
+#: src/utils.ts:161
 msgid "[custom ID] or"
 msgstr "[自定义 ID] 或"
 
-#: src/constants.ts:11
+#: src/utils.ts:158
 msgid "any text: before a colon creates a label"
 msgstr "任何文本：在冒号前创建一个标签"
 
-#: src/constants.ts:15
+#: src/utils.ts:162
 msgid "by adding an [ID] and referencing that"
 msgstr "通过添加并引用一个 [ID]"
 
-#: src/constants.ts:19
+#: src/utils.ts:167
 msgid "comments"
 msgstr "注释"
 
-#: src/constants.ts:13
+#: src/utils.ts:160
 msgid "like this: (This app works by typing)"
 msgstr "像这样：（这款应用的工作原理是输入）"
 
-#: src/constants.ts:16
+#: src/utils.ts:163
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "像这样：（自定义 ID）// 你也可以使用单行注释"
 
-#: src/constants.ts:18
+#: src/utils.ts:166
 msgid "multiline"
 msgstr "多行"
 
-#: src/constants.ts:17
+#: src/utils.ts:165
 msgid "or"
 msgstr "或"

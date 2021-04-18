@@ -13,90 +13,161 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:64
+msgid "Appearance"
+msgstr "Erscheinungsbild"
+
+#: src/components/Settings.tsx:94
 msgid "Become a Sponsor"
 msgstr "Werden Sie zum Sponsoren"
 
-#: src/constants.ts:12
+#: src/components/GraphOptions.tsx:21
+msgid "Bottom to Top"
+msgstr "Von unten nach oben"
+
+#: src/components/GraphOptions.tsx:10
+msgid "Breadthfirst"
+msgstr "In die Breite"
+
+#: src/components/GraphOptions.tsx:13
+msgid "Circle"
+msgstr "Kreis"
+
+#: src/components/GraphOptions.tsx:12
+msgid "Concentric"
+msgstr "Konzentrisch"
+
+#: src/utils.ts:159
 msgid "Create a link directly using the exact label text"
 msgstr "Erstellen Sie direkt einen Link mit dem genauen Beschriftungstext"
 
-#: src/components/Settings.tsx:49
+#: src/components/Settings.tsx:71
 msgid "Dark Mode"
 msgstr "Dunkelmodus"
 
-#: src/components/Menu.tsx:30
+#: src/components/GraphOptions.tsx:46
+msgid "Direction"
+msgstr "Richtung"
+
+#: src/components/Share.tsx:24
+#: src/components/Share.tsx:27
+#: src/components/Share.tsx:30
+msgid "Download"
+msgstr "Herunterladen"
+
+#: src/components/Menu.tsx:29
 msgid "Editor"
 msgstr "Editor"
 
-#: src/components/Settings.tsx:62
+#: src/components/Settings.tsx:85
 msgid "Follow Us"
 msgstr "Folgen Sie uns"
 
-#: src/constants.ts:20
+#: src/components/GraphOptions.tsx:36
+msgid "Graph Options"
+msgstr "Grafik-Optionen"
+
+#: src/components/GraphOptions.tsx:15
+msgid "Grid"
+msgstr "Raster"
+
+#: src/utils.ts:169
 msgid "Have fun! 🎉"
 msgstr "Viel Spaß! 🎉"
 
-#: src/constants.ts:10
+#: src/utils.ts:157
 msgid "Indenting creates a link to the current line"
 msgstr "Durch das Einrücken wird eine Verbindung zur aktuellen Zeile hergestellt"
 
-#: src/components/Settings.tsx:46
+#: src/components/Settings.tsx:52
+msgid "Language"
+msgstr "Sprache"
+
+#: src/components/GraphOptions.tsx:40
+msgid "Layout"
+msgstr "Layout"
+
+#: src/components/GraphOptions.tsx:18
+msgid "Left to Right (default)"
+msgstr "Von links nach rechts (voreingestellt)"
+
+#: src/components/Settings.tsx:68
 msgid "Light Mode"
 msgstr "Heller Modus"
 
-#: src/components/Settings.tsx:56
+#: src/components/Settings.tsx:79
 msgid "Made by <0>Tone Row</0>"
 msgstr "Gemacht von <0>Tone Row</0>"
 
-#: src/components/Settings.tsx:68
+#: src/components/Settings.tsx:91
 msgid "Make a Donation"
 msgstr "Spenden"
 
-#: src/components/Menu.tsx:33
+#: src/components/Share.tsx:21
+msgid "Open Share Link"
+msgstr "Freigabe-Link öffnen"
+
+#: src/components/GraphOptions.tsx:14
+msgid "Random"
+msgstr "Zufällig"
+
+#: src/components/GraphOptions.tsx:20
+msgid "Right to Left"
+msgstr "Von rechts nach links"
+
+#: src/components/Menu.tsx:32
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/components/Menu.tsx:53
+#: src/components/Menu.tsx:35
+#: src/components/Menu.tsx:52
 msgid "Share"
 msgstr "Teilen"
 
-#: src/constants.ts:9
+#: src/utils.ts:156
 msgid "This app works by typing"
 msgstr "Diese App funktioniert durch Tippen"
 
-#: src/components/Settings.tsx:65
+#: src/components/GraphOptions.tsx:19
+msgid "Top to Bottom"
+msgstr "Von oben nach unten"
+
+#: src/components/Settings.tsx:48
+msgid "User Preferences"
+msgstr "Benutzerpräferenzen"
+
+#: src/components/Settings.tsx:88
 msgid "View on Github"
 msgstr "Auf Github ansehen"
 
-#: src/constants.ts:14
+#: src/utils.ts:161
 msgid "[custom ID] or"
 msgstr "[benutzerdefinierte ID] oder"
 
-#: src/constants.ts:11
+#: src/utils.ts:158
 msgid "any text: before a colon creates a label"
 msgstr "Jeder beliebige Text: vor einem Doppelpunkt wird zu einer Beschriftung"
 
-#: src/constants.ts:15
+#: src/utils.ts:162
 msgid "by adding an [ID] and referencing that"
 msgstr "indem man ein [ID] hinzufügt und darauf verweist"
 
-#: src/constants.ts:19
+#: src/utils.ts:167
 msgid "comments"
 msgstr "Kommentare"
 
-#: src/constants.ts:13
+#: src/utils.ts:160
 msgid "like this: (This app works by typing)"
 msgstr "so wie hier: (Diese App funktioniert durch Tippen)"
 
-#: src/constants.ts:16
+#: src/utils.ts:163
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "so wie hier: (benutzerdefinierte ID) // Sie können auch einzeilige Kommentare verwenden"
 
-#: src/constants.ts:18
+#: src/utils.ts:166
 msgid "multiline"
 msgstr "mehrzeilige"
 
-#: src/constants.ts:17
+#: src/utils.ts:165
 msgid "or"
 msgstr "oder"
