@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2021-04-16 00:36-0400\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ko\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/Settings.tsx:64
+msgid "Appearance"
+msgstr ""
+
+#: src/components/Settings.tsx:94
+msgid "Become a Sponsor"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:21
+msgid "Bottom to Top"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:10
+msgid "Breadthfirst"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:13
+msgid "Circle"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:12
+msgid "Concentric"
+msgstr ""
+
+#: src/utils.ts:159
+msgid "Create a link directly using the exact label text"
+msgstr ""
+
+#: src/components/Settings.tsx:71
+msgid "Dark Mode"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:46
+msgid "Direction"
+msgstr ""
+
+#: src/components/Share.tsx:24
+#: src/components/Share.tsx:27
+#: src/components/Share.tsx:30
+msgid "Download"
+msgstr ""
+
+#: src/components/Menu.tsx:29
+msgid "Editor"
+msgstr ""
+
+#: src/components/Settings.tsx:85
+msgid "Follow Us"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:36
+msgid "Graph Options"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:15
+msgid "Grid"
+msgstr ""
+
+#: src/utils.ts:169
+msgid "Have fun! 🎉"
+msgstr ""
+
+#: src/utils.ts:157
+msgid "Indenting creates a link to the current line"
+msgstr ""
+
+#: src/components/Settings.tsx:52
+msgid "Language"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:40
+msgid "Layout"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:18
+msgid "Left to Right (default)"
+msgstr ""
+
+#: src/components/Settings.tsx:68
+msgid "Light Mode"
+msgstr ""
+
+#: src/components/Settings.tsx:79
+msgid "Made by <0>Tone Row</0>"
+msgstr ""
+
+#: src/components/Settings.tsx:91
+msgid "Make a Donation"
+msgstr ""
+
+#: src/components/Share.tsx:21
+msgid "Open Share Link"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:14
+msgid "Random"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:20
+msgid "Right to Left"
+msgstr ""
+
+#: src/components/Menu.tsx:32
+msgid "Settings"
+msgstr ""
+
+#: src/components/Menu.tsx:35
+#: src/components/Menu.tsx:52
+msgid "Share"
+msgstr ""
+
+#: src/utils.ts:156
+msgid "This app works by typing"
+msgstr ""
+
+#: src/components/GraphOptions.tsx:19
+msgid "Top to Bottom"
+msgstr ""
+
+#: src/components/Settings.tsx:48
+msgid "User Preferences"
+msgstr ""
+
+#: src/components/Settings.tsx:88
+msgid "View on Github"
+msgstr ""
+
+#: src/utils.ts:161
+msgid "[custom ID] or"
+msgstr ""
+
+#: src/utils.ts:158
+msgid "any text: before a colon creates a label"
+msgstr ""
+
+#: src/utils.ts:162
+msgid "by adding an [ID] and referencing that"
+msgstr ""
+
+#: src/utils.ts:167
+msgid "comments"
+msgstr ""
+
+#: src/utils.ts:160
+msgid "like this: (This app works by typing)"
+msgstr ""
+
+#: src/utils.ts:163
+msgid "like this: (custom ID) // You can also use single-line comments"
+msgstr ""
+
+#: src/utils.ts:166
+msgid "multiline"
+msgstr ""
+
+#: src/utils.ts:165
+msgid "or"
+msgstr ""

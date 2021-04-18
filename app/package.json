@@ -4,6 +4,8 @@
   "main": "module/module.js",
   "license": "MIT",
   "dependencies": {
+    "@lingui/core": "^3.8.9",
+    "@lingui/react": "^3.8.9",
     "@monaco-editor/react": "^4.0.11",
     "@react-hook/throttle": "^2.2.0",
     "@sentry/react": "^6.2.5",
@@ -45,7 +47,9 @@
     "eject": "react-scripts eject",
     "theme": "slang src/slang",
     "theme:watch": "slang src/slang -w",
-    "unused-exports": "ts-unused-exports tsconfig.json"
+    "unused-exports": "ts-unused-exports tsconfig.json",
+    "extract": "lingui extract --clean",
+    "compile": "lingui compile"
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +70,8 @@
     ]
   },
   "devDependencies": {
+    "@lingui/cli": "^3.8.9",
+    "@lingui/macro": "^3.8.9",
     "@types/cytoscape": "^3.14.12",
     "@types/download": "^6.2.4",
     "@types/file-saver": "^2.0.1",

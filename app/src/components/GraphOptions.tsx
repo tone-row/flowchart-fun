@@ -1,4 +1,5 @@
-import { memo, useContext, useEffect } from "react";
+import { t, Trans } from "@lingui/macro";
+import React, { memo, useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
@@ -6,20 +7,20 @@ import styles from "./GraphOptions.module.css";
 import { GraphContext } from "./GraphProvider";
 
 const layouts = [
-  { label: "Dagre (default)", value: "dagre" },
-  { label: "Breadthfirst", value: "breadthfirst" },
-  { label: "CoSE", value: "cose" },
-  { label: "Concentric", value: "concentric" },
-  { label: "Circle", value: "circle" },
-  { label: "Random", value: "random" },
-  { label: "Grid", value: "grid" },
+  { label: () => `Dagre (default)`, value: "dagre" },
+  { label: () => t`Breadthfirst`, value: "breadthfirst" },
+  { label: () => `CoSE`, value: "cose" },
+  { label: () => t`Concentric`, value: "concentric" },
+  { label: () => t`Circle`, value: "circle" },
+  { label: () => t`Random`, value: "random" },
+  { label: () => t`Grid`, value: "grid" },
 ];
 
 const directions = [
-  { label: "Left to Right (default)", value: "LR" },
-  { label: "Top to Bottom", value: "TB" },
-  { label: "Right to Left", value: "RL" },
-  { label: "Bottom to Top", value: "BT" },
+  { label: () => t`Left to Right (default)`, value: "LR" },
+  { label: () => t`Top to Bottom`, value: "TB" },
+  { label: () => t`Right to Left`, value: "RL" },
+  { label: () => t`Bottom to Top`, value: "BT" },
 ];
 
 const GraphOptions = memo(() => {
@@ -41,9 +42,13 @@ const GraphOptions = memo(() => {
 
   return (
     <Box content="start stretch" gap={4} as="form">
-      <Type weight="700">Graph Options</Type>
+      <Type weight="700">
+        <Trans>Graph Options</Trans>
+      </Type>
       <Box gap={4}>
-        <Type size={-1}>Layout</Type>
+        <Type size={-1}>
+          <Trans>Layout</Trans>
+        </Type>
         <Select
           options={layouts}
           register={register}
@@ -53,7 +58,9 @@ const GraphOptions = memo(() => {
         {(graphOptions.layout?.name === "dagre" ||
           typeof graphOptions.layout?.name === "undefined") && (
           <>
-            <Type size={-1}>Direction</Type>
+            <Type size={-1}>
+              <Trans>Direction</Trans>
+            </Type>
             <Select
               options={directions}
               register={register}
@@ -78,7 +85,7 @@ function Select({
   value,
 }: {
   register: any;
-  options: { value: string; label: string }[];
+  options: { value: string; label: () => string }[];
   name: string;
   value: string | undefined;
 }) {
@@ -98,11 +105,13 @@ function Select({
       value={value}
       {...register(name)}
     >
-      {options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>
-      ))}
+      {options.map((option) => {
+        return (
+          <option key={option.value} value={option.value}>
+            {option.label()}
+          </option>
+        );
+      })}
     </Box>
   );
 }

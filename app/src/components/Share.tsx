@@ -1,3 +1,4 @@
+import { Trans } from "@lingui/macro";
 import React, { ReactNode, useContext } from "react";
 import { Box, BoxProps, Type } from "../slang";
 import { AppContext } from "./AppContext";
@@ -8,16 +9,16 @@ export default function Share() {
   return (
     <Box gap={2} content="start stretch" p={4}>
       <Button as="a" href={shareLink} rel="noreferrer" target="_blank">
-        Open Share Link
+        <Trans>Open Share Link</Trans>
       </Button>
       <Button onClick={() => window.flowchartFunDownloadSVG()}>
-        Download SVG
+        <Trans>Download</Trans> SVG
       </Button>
       <Button onClick={() => window.flowchartFunDownloadPNG()}>
-        Download PNG
+        <Trans>Download</Trans> PNG
       </Button>
       <Button onClick={() => window.flowchartFunDownloadJPG()}>
-        Download JPG
+        <Trans>Download</Trans> JPG
       </Button>
     </Box>
   );

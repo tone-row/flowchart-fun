@@ -42,3 +42,12 @@
   outline: none;
   color: var(--color-buttonFocus);
 }
+
+.Language:focus {
+  color: var(--color-buttonFocus);
+  box-shadow: none;
+}
+
+.Language:disabled {
+  font-weight: 700;
+}
