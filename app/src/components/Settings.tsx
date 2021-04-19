@@ -24,17 +24,17 @@ const largeGap = 10;
 const Settings = memo(() => {
   const { updateUserSettings, mode, language } = useContext(AppContext);
   const setLightMode = useCallback(() => {
-    window.plausible("Set Dark or Light Mode");
     updateUserSettings({ mode: "light" });
+    window.plausible("Set Appearance", { props: { mode: "light" } });
   }, [updateUserSettings]);
   const setDarkMode = useCallback(() => {
-    window.plausible("Set Dark or Light Mode");
     updateUserSettings({ mode: "dark" });
+    window.plausible("Set Appearance", { props: { mode: "dark" } });
   }, [updateUserSettings]);
   const changeLanguage = useCallback(
     (l: string) => {
-      window.plausible("Set Language");
       updateUserSettings({ language: l });
+      window.plausible("Set Language", { props: { language: l } });
     },
     [updateUserSettings]
   );
