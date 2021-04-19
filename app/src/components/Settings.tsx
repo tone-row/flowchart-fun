@@ -25,13 +25,16 @@ const Settings = memo(() => {
   const { updateUserSettings, mode, language } = useContext(AppContext);
   const setLightMode = useCallback(() => {
     updateUserSettings({ mode: "light" });
+    window.plausible("Set Appearance", { props: { mode: "light" } });
   }, [updateUserSettings]);
   const setDarkMode = useCallback(() => {
     updateUserSettings({ mode: "dark" });
+    window.plausible("Set Appearance", { props: { mode: "dark" } });
   }, [updateUserSettings]);
   const changeLanguage = useCallback(
     (l: string) => {
       updateUserSettings({ language: l });
+      window.plausible("Set Language", { props: { language: l } });
     },
     [updateUserSettings]
   );
@@ -120,10 +123,16 @@ const Settings = memo(() => {
             as="a"
             href="https://opencollective.com/tone-row/donate"
             size={-2}
+            onClick={() => window.plausible("Make a Donation")}
           >
             <Trans>Make a Donation</Trans>
           </Type>
-          <Type as="a" href="https://github.com/sponsors/tone-row" size={-2}>
+          <Type
+            as="a"
+            href="https://github.com/sponsors/tone-row"
+            size={-2}
+            onClick={() => window.plausible("Become a Sponsor")}
+          >
             <Trans>Become a Sponsor</Trans>
           </Type>
         </Box>

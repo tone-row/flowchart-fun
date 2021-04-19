@@ -9,6 +9,15 @@ import { Trans } from "@lingui/macro";
 const hideShareButton = { tablet: { display: false } };
 const showMenuRight = { tablet: { display: true } };
 
+declare global {
+  interface Window {
+    plausible: (
+      s: string,
+      t?: { callback?: () => void; props?: Record<string, any> }
+    ) => void;
+  }
+}
+
 const Menu = memo(() => {
   const { shareLink, setShowing } = useContext(AppContext);
   return (
@@ -46,19 +55,31 @@ const Menu = memo(() => {
       <Box flow="column" display={false} at={showMenuRight} pr={4} gap={6}>
         <MenuBox icon={<FiImage />}>
           <MenuRightButton
-            onClick={() => window.flowchartFunDownloadSVG()}
+            onClick={() => {
+              window.plausible("Download SVG", {
+                callback: window.flowchartFunDownloadSVG,
+              });
+            }}
             title="Download SVG"
           >
             SVG
           </MenuRightButton>
           <MenuRightButton
-            onClick={() => window.flowchartFunDownloadPNG()}
+            onClick={() => {
+              window.plausible("Download PNG", {
+                callback: window.flowchartFunDownloadPNG,
+              });
+            }}
             title="Download PNG"
           >
             PNG
           </MenuRightButton>
           <MenuRightButton
-            onClick={() => window.flowchartFunDownloadJPG()}
+            onClick={() => {
+              window.plausible("Download JPG", {
+                callback: window.flowchartFunDownloadJPG,
+              });
+            }}
             title="Download JPG"
           >
             JPG
