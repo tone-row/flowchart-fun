@@ -13,161 +13,161 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Settings.tsx:64
+#: src/components/Settings.tsx:67
 msgid "Appearance"
-msgstr ""
+msgstr "외관"
 
-#: src/components/Settings.tsx:94
+#: src/components/Settings.tsx:97
 msgid "Become a Sponsor"
-msgstr ""
+msgstr "스폰서 되기"
 
 #: src/components/GraphOptions.tsx:21
 msgid "Bottom to Top"
-msgstr ""
+msgstr "아래에서 위로"
 
 #: src/components/GraphOptions.tsx:10
 msgid "Breadthfirst"
-msgstr ""
+msgstr "폭 우선"
 
 #: src/components/GraphOptions.tsx:13
 msgid "Circle"
-msgstr ""
+msgstr "원"
 
 #: src/components/GraphOptions.tsx:12
 msgid "Concentric"
-msgstr ""
+msgstr "동심"
 
-#: src/utils.ts:159
+#: src/hooks.ts:19
 msgid "Create a link directly using the exact label text"
-msgstr ""
+msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:74
 msgid "Dark Mode"
-msgstr ""
+msgstr "다크 모드"
 
-#: src/components/GraphOptions.tsx:46
+#: src/components/GraphOptions.tsx:48
 msgid "Direction"
-msgstr ""
+msgstr "방향"
 
 #: src/components/Share.tsx:24
 #: src/components/Share.tsx:27
 #: src/components/Share.tsx:30
 msgid "Download"
-msgstr ""
+msgstr "다운로드"
 
 #: src/components/Menu.tsx:29
 msgid "Editor"
-msgstr ""
+msgstr "에디터"
 
-#: src/components/Settings.tsx:85
+#: src/components/Settings.tsx:88
 msgid "Follow Us"
-msgstr ""
+msgstr "팔로우하세요"
 
-#: src/components/GraphOptions.tsx:36
+#: src/components/GraphOptions.tsx:38
 msgid "Graph Options"
-msgstr ""
+msgstr "그래프 옵션"
 
 #: src/components/GraphOptions.tsx:15
 msgid "Grid"
-msgstr ""
+msgstr "그리드"
 
-#: src/utils.ts:169
+#: src/hooks.ts:29
 msgid "Have fun! 🎉"
-msgstr ""
+msgstr "즐겨보세요! 🎉"
 
-#: src/utils.ts:157
+#: src/hooks.ts:17
 msgid "Indenting creates a link to the current line"
-msgstr ""
+msgstr "들여쓰기는 현재 줄에 대한 링크를 생성합니다"
 
-#: src/components/Settings.tsx:52
+#: src/components/Settings.tsx:55
 msgid "Language"
-msgstr ""
+msgstr "언어"
 
-#: src/components/GraphOptions.tsx:40
+#: src/components/GraphOptions.tsx:42
 msgid "Layout"
-msgstr ""
+msgstr "레이아웃"
 
 #: src/components/GraphOptions.tsx:18
 msgid "Left to Right (default)"
-msgstr ""
+msgstr "왼쪽에서 오른쪽으로 (기본값)"
 
-#: src/components/Settings.tsx:68
+#: src/components/Settings.tsx:71
 msgid "Light Mode"
-msgstr ""
+msgstr "라이트 모드"
 
-#: src/components/Settings.tsx:79
+#: src/components/Settings.tsx:82
 msgid "Made by <0>Tone Row</0>"
-msgstr ""
+msgstr "<0>Tone Row</0> 제작"
 
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:94
 msgid "Make a Donation"
-msgstr ""
+msgstr "기부하기"
 
 #: src/components/Share.tsx:21
 msgid "Open Share Link"
-msgstr ""
+msgstr "공유 링크 열기"
 
 #: src/components/GraphOptions.tsx:14
 msgid "Random"
-msgstr ""
+msgstr "무작위"
 
 #: src/components/GraphOptions.tsx:20
 msgid "Right to Left"
-msgstr ""
+msgstr "오른쪽에서 왼쪽으로"
 
 #: src/components/Menu.tsx:32
 msgid "Settings"
-msgstr ""
+msgstr "설정"
 
 #: src/components/Menu.tsx:35
-#: src/components/Menu.tsx:52
+#: src/components/Menu.tsx:64
 msgid "Share"
-msgstr ""
+msgstr "공유"
 
-#: src/utils.ts:156
+#: src/hooks.ts:16
 msgid "This app works by typing"
-msgstr ""
+msgstr "이 앱은 타이핑으로 작동합니다"
 
 #: src/components/GraphOptions.tsx:19
 msgid "Top to Bottom"
-msgstr ""
+msgstr "위에서 아래로"
 
-#: src/components/Settings.tsx:48
+#: src/components/Settings.tsx:51
 msgid "User Preferences"
-msgstr ""
+msgstr "사용자 기본 설정"
 
-#: src/components/Settings.tsx:88
+#: src/components/Settings.tsx:91
 msgid "View on Github"
-msgstr ""
+msgstr "Github에서 보기"
 
-#: src/utils.ts:161
+#: src/hooks.ts:21
 msgid "[custom ID] or"
-msgstr ""
+msgstr "[사용자 지정 ID] 또는"
 
-#: src/utils.ts:158
+#: src/hooks.ts:18
 msgid "any text: before a colon creates a label"
-msgstr ""
+msgstr "콜론 앞의 모든 텍스트는: 레이블을 생성합니다"
 
-#: src/utils.ts:162
+#: src/hooks.ts:22
 msgid "by adding an [ID] and referencing that"
-msgstr ""
+msgstr "[ID]를 추가하고 참조하여"
 
-#: src/utils.ts:167
+#: src/hooks.ts:27
 msgid "comments"
-msgstr ""
+msgstr "댓글"
 
-#: src/utils.ts:160
+#: src/hooks.ts:20
 msgid "like this: (This app works by typing)"
-msgstr ""
+msgstr "이렇게: (이 앱은 타이핑으로 작동합니다)"
 
-#: src/utils.ts:163
+#: src/hooks.ts:23
 msgid "like this: (custom ID) // You can also use single-line comments"
-msgstr ""
+msgstr "이렇게: (사용자 지정 ID) // 한 줄을 사용할 수도 있습니다 댓글"
 
-#: src/utils.ts:166
+#: src/hooks.ts:26
 msgid "multiline"
-msgstr ""
+msgstr "멀티라인"
 
-#: src/utils.ts:165
+#: src/hooks.ts:25
 msgid "or"
-msgstr ""
+msgstr "또는"

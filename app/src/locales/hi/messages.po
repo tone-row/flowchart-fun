@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Settings.tsx:64
+#: src/components/Settings.tsx:67
 msgid "Appearance"
 msgstr "दिखावट"
 
-#: src/components/Settings.tsx:94
+#: src/components/Settings.tsx:97
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
@@ -37,15 +37,15 @@ msgstr "परिधि"
 msgid "Concentric"
 msgstr "गाढ़ा"
 
-#: src/utils.ts:159
+#: src/hooks.ts:19
 msgid "Create a link directly using the exact label text"
 msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:74
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/components/GraphOptions.tsx:46
+#: src/components/GraphOptions.tsx:48
 msgid "Direction"
 msgstr "दिशा"
 
@@ -59,11 +59,11 @@ msgstr "डाउनलोड"
 msgid "Editor"
 msgstr "संपादक"
 
-#: src/components/Settings.tsx:85
+#: src/components/Settings.tsx:88
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
-#: src/components/GraphOptions.tsx:36
+#: src/components/GraphOptions.tsx:38
 msgid "Graph Options"
 msgstr "ग्राफ विकल्प"
 
@@ -71,19 +71,19 @@ msgstr "ग्राफ विकल्प"
 msgid "Grid"
 msgstr "ग्रिड"
 
-#: src/utils.ts:169
+#: src/hooks.ts:29
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/utils.ts:157
+#: src/hooks.ts:17
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
-#: src/components/Settings.tsx:52
+#: src/components/Settings.tsx:55
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/GraphOptions.tsx:40
+#: src/components/GraphOptions.tsx:42
 msgid "Layout"
 msgstr "ख़ाका"
 
@@ -91,15 +91,15 @@ msgstr "ख़ाका"
 msgid "Left to Right (default)"
 msgstr "बाएं से दाएं (डिफ़ॉल्ट)"
 
-#: src/components/Settings.tsx:68
+#: src/components/Settings.tsx:71
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/Settings.tsx:79
+#: src/components/Settings.tsx:82
 msgid "Made by <0>Tone Row</0>"
 msgstr "<0>Tone Row</0> द्वारा बना"
 
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:94
 msgid "Make a Donation"
 msgstr "दान करें"
 
@@ -120,11 +120,11 @@ msgid "Settings"
 msgstr "सेटिंग्स"
 
 #: src/components/Menu.tsx:35
-#: src/components/Menu.tsx:52
+#: src/components/Menu.tsx:64
 msgid "Share"
 msgstr "शेयर"
 
-#: src/utils.ts:156
+#: src/hooks.ts:16
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
@@ -132,42 +132,42 @@ msgstr "यह ऐप टाइप द्वारा काम करता ह
 msgid "Top to Bottom"
 msgstr "ऊपर से नीचे"
 
-#: src/components/Settings.tsx:48
+#: src/components/Settings.tsx:51
 msgid "User Preferences"
 msgstr "उपयोगकर्ता वरीयताएं"
 
-#: src/components/Settings.tsx:88
+#: src/components/Settings.tsx:91
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/utils.ts:161
+#: src/hooks.ts:21
 msgid "[custom ID] or"
 msgstr "[कस्टम ID] या"
 
-#: src/utils.ts:158
+#: src/hooks.ts:18
 msgid "any text: before a colon creates a label"
 msgstr "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है"
 
-#: src/utils.ts:162
+#: src/hooks.ts:22
 msgid "by adding an [ID] and referencing that"
 msgstr "एक [ID] जोड़कर संदर्भित है और उस"
 
-#: src/utils.ts:167
+#: src/hooks.ts:27
 msgid "comments"
 msgstr "कमेंट को"
 
-#: src/utils.ts:160
+#: src/hooks.ts:20
 msgid "like this: (This app works by typing)"
 msgstr "इस तरह: (यह ऐप टाइप द्वारा काम करता है)"
 
-#: src/utils.ts:163
+#: src/hooks.ts:23
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "इस तरह: (कस्टम ID) // आप सिंगल-लाइन टिप्पणियों का भी उपयोग कर सकते हैं"
 
-#: src/utils.ts:166
+#: src/hooks.ts:26
 msgid "multiline"
 msgstr "एक से अधिक लाइन"
 
-#: src/utils.ts:165
+#: src/hooks.ts:25
 msgid "or"
 msgstr "या"

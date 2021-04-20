@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Settings.tsx:64
+#: src/components/Settings.tsx:67
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/components/Settings.tsx:94
+#: src/components/Settings.tsx:97
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
@@ -37,15 +37,15 @@ msgstr "Circle"
 msgid "Concentric"
 msgstr "Concentric"
 
-#: src/utils.ts:159
+#: src/hooks.ts:19
 msgid "Create a link directly using the exact label text"
 msgstr "Create a link directly using the exact label text"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:74
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/components/GraphOptions.tsx:46
+#: src/components/GraphOptions.tsx:48
 msgid "Direction"
 msgstr "Direction"
 
@@ -59,11 +59,11 @@ msgstr "Download"
 msgid "Editor"
 msgstr "Editor"
 
-#: src/components/Settings.tsx:85
+#: src/components/Settings.tsx:88
 msgid "Follow Us"
 msgstr "Follow Us"
 
-#: src/components/GraphOptions.tsx:36
+#: src/components/GraphOptions.tsx:38
 msgid "Graph Options"
 msgstr "Graph Options"
 
@@ -71,19 +71,19 @@ msgstr "Graph Options"
 msgid "Grid"
 msgstr "Grid"
 
-#: src/utils.ts:169
+#: src/hooks.ts:29
 msgid "Have fun! 🎉"
 msgstr "Have fun! 🎉"
 
-#: src/utils.ts:157
+#: src/hooks.ts:17
 msgid "Indenting creates a link to the current line"
 msgstr "Indenting creates a link to the current line"
 
-#: src/components/Settings.tsx:52
+#: src/components/Settings.tsx:55
 msgid "Language"
 msgstr "Language"
 
-#: src/components/GraphOptions.tsx:40
+#: src/components/GraphOptions.tsx:42
 msgid "Layout"
 msgstr "Layout"
 
@@ -91,15 +91,15 @@ msgstr "Layout"
 msgid "Left to Right (default)"
 msgstr "Left to Right (default)"
 
-#: src/components/Settings.tsx:68
+#: src/components/Settings.tsx:71
 msgid "Light Mode"
 msgstr "Light Mode"
 
-#: src/components/Settings.tsx:79
+#: src/components/Settings.tsx:82
 msgid "Made by <0>Tone Row</0>"
 msgstr "Made by <0>Tone Row</0>"
 
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:94
 msgid "Make a Donation"
 msgstr "Make a Donation"
 
@@ -120,11 +120,11 @@ msgid "Settings"
 msgstr "Settings"
 
 #: src/components/Menu.tsx:35
-#: src/components/Menu.tsx:52
+#: src/components/Menu.tsx:64
 msgid "Share"
 msgstr "Share"
 
-#: src/utils.ts:156
+#: src/hooks.ts:16
 msgid "This app works by typing"
 msgstr "This app works by typing"
 
@@ -132,42 +132,42 @@ msgstr "This app works by typing"
 msgid "Top to Bottom"
 msgstr "Top to Bottom"
 
-#: src/components/Settings.tsx:48
+#: src/components/Settings.tsx:51
 msgid "User Preferences"
 msgstr "User Preferences"
 
-#: src/components/Settings.tsx:88
+#: src/components/Settings.tsx:91
 msgid "View on Github"
 msgstr "View on Github"
 
-#: src/utils.ts:161
+#: src/hooks.ts:21
 msgid "[custom ID] or"
 msgstr "[custom ID] or"
 
-#: src/utils.ts:158
+#: src/hooks.ts:18
 msgid "any text: before a colon creates a label"
 msgstr "any text: before a colon creates a label"
 
-#: src/utils.ts:162
+#: src/hooks.ts:22
 msgid "by adding an [ID] and referencing that"
 msgstr "by adding an [ID] and referencing that"
 
-#: src/utils.ts:167
+#: src/hooks.ts:27
 msgid "comments"
 msgstr "comments"
 
-#: src/utils.ts:160
+#: src/hooks.ts:20
 msgid "like this: (This app works by typing)"
 msgstr "like this: (This app works by typing)"
 
-#: src/utils.ts:163
+#: src/hooks.ts:23
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "like this: (custom ID) // You can also use single-line comments"
 
-#: src/utils.ts:166
+#: src/hooks.ts:26
 msgid "multiline"
 msgstr "multiline"
 
-#: src/utils.ts:165
+#: src/hooks.ts:25
 msgid "or"
 msgstr "or"

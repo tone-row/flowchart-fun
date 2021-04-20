@@ -9,6 +9,7 @@ export const languages = {
   en: "English",
   fr: "Français",
   hi: "हिन्दी",
+  ko: "조선말",
   zh: "中文",
 };
 
