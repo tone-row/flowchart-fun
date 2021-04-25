@@ -3,7 +3,7 @@ import { Box, BoxProps, Type, TypeProps } from "../slang";
 import styles from "./Menu.module.css";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 import { AppContext, Showing } from "./AppContext";
-import { FiImage, FiShare2 } from "react-icons/fi";
+import { FiHelpCircle, FiImage, FiShare2 } from "react-icons/fi";
 import { Trans } from "@lingui/macro";
 
 const hideShareButton = { tablet: { display: false } };
@@ -43,6 +43,7 @@ const Menu = memo(() => {
         <MenuButton show="settings" onClick={() => setShowing("settings")}>
           <Trans>Settings</Trans>
         </MenuButton>
+        <HelpButton display={false} at={{ tablet: { display: true } }} />
         <MenuButton
           show="share"
           onClick={() => setShowing("share")}
@@ -51,6 +52,7 @@ const Menu = memo(() => {
         >
           <Trans>Share</Trans>
         </MenuButton>
+        <HelpButton display={true} at={hideShareButton} />
       </Box>
       <Box flow="column" display={false} at={showMenuRight} pr={4} gap={10}>
         <MenuBox icon={<FiImage />}>
@@ -161,6 +163,23 @@ function MenuBox({
     <Box flow="column" gap={2} className={styles.MenuBox}>
       <Box self="center">{icon}</Box>
       <Box flow="column">{children}</Box>
+    </Box>
+  );
+}
+
+function HelpButton(props: BoxProps) {
+  return (
+    <Box
+      as="button"
+      px={4}
+      py={3}
+      content="center"
+      onClick={() => {
+        window.flowchartFunSetHelpText && window.flowchartFunSetHelpText();
+      }}
+      {...props}
+    >
+      <FiHelpCircle />
     </Box>
   );
 }

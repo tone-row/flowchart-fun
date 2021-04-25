@@ -10,16 +10,9 @@ export function useAnimationSetting() {
   return animation === "0" ? false : true;
 }
 
-export function useLocalStorageText(): [string, Dispatch<string>] {
+export function useLocalStorageText(): [string, Dispatch<string>, string] {
   const { workspace = "" } = useParams<{ workspace?: string }>();
-  const [text, setText] = useLocalStorage(
-    ["flowcharts.fun", workspace].filter(Boolean).join(":"),
-    ""
-  );
-  return [
-    text
-      ? text
-      : `${t`This app works by typing`}
+  const defaultText = `${t`This app works by typing`}
   ${t`Indenting creates a link to the current line`}
   ${t`any text: before a colon creates a label`}
   ${t`Create a link directly using the exact label text`}
@@ -33,7 +26,10 @@ ${t`multiline`}
 ${t`comments`}
 
 ${t`Have fun! 🎉`}
-*/`,
-    setText,
-  ];
+*/`;
+  const [text, setText] = useLocalStorage(
+    ["flowcharts.fun", workspace].filter(Boolean).join(":"),
+    defaultText
+  );
+  return [text, setText, defaultText];
 }
