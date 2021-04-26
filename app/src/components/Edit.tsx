@@ -37,7 +37,7 @@ function Edit() {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
-  const { mode, setShowing, showing } = useContext(AppContext);
+  const { mode } = useContext(AppContext);
 
   useEffect(() => {
     if (editorRef.current) {
