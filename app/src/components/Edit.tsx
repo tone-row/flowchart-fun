@@ -16,6 +16,10 @@ import { stringify } from "gray-matter";
 import useGraphOptions from "./useGraphOptions";
 import merge from "deepmerge";
 import { useLocalStorageText } from "../hooks";
+import { Box, BoxProps } from "../slang";
+import { IoMdHelp } from "react-icons/io";
+import styles from "./Edit.module.css";
+import { t } from "@lingui/macro";
 
 declare global {
   interface Window {
@@ -128,8 +132,27 @@ function Edit() {
           editorRef.current = editor;
         }}
       />
+      <HelpButton />
     </GraphProvider>
   );
 }
 
 export default Edit;
+
+function HelpButton(props: BoxProps) {
+  return (
+    <Box
+      as="button"
+      content="center"
+      onClick={() => {
+        window.flowchartFunSetHelpText && window.flowchartFunSetHelpText();
+        window.plausible("Set Help Text");
+      }}
+      {...props}
+      className={styles.HelpButton}
+      title={t`Help`}
+    >
+      <IoMdHelp size={24} />
+    </Box>
+  );
+}
