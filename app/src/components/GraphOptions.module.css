@@ -2,10 +2,11 @@
   border-radius: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   background-color: var(--color-background);
   color: var(--color-foreground);
-  border-color: currentColor;
+  border: 1px solid currentColor;
   background-position: right 12px top 17px;
   background-repeat: no-repeat;
 }
