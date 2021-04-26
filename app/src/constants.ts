@@ -31,3 +31,5 @@ export const editorOptions: EditorProps["options"] = {
 };
 
 export type GraphOptionsObject = { layout?: Partial<cytoscape.LayoutOptions> };
+
+export const delimiters = "~~~";

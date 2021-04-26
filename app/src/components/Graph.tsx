@@ -16,7 +16,7 @@ import cytoscape, {
 import { useDebouncedCallback } from "use-debounce";
 import dagre from "cytoscape-dagre";
 import cytoscapeSvg from "cytoscape-svg";
-import { GraphOptionsObject, LAYOUT } from "../constants";
+import { delimiters, GraphOptionsObject, LAYOUT } from "../constants";
 import { parseText, stripComments } from "../utils";
 import styles from "./Graph.module.css";
 import { saveAs } from "file-saver";
@@ -68,11 +68,13 @@ const Graph = memo(
           const { data, content, matter: dataString } = matter(
             stripComments(textToParse),
             {
-              delimiters: "~~~",
+              delimiters,
             }
           );
           const startingLineNumber =
-            dataString === "" ? 0 : dataString.split("\n").length + 1;
+            !dataString || dataString === ""
+              ? 0
+              : dataString.split("\n").length + 1;
           const { layout: newLayout = {} } = data as GraphOptionsObject;
           newElements = parseText(content, startingLineNumber);
           errorCy.current?.json({ elements: newElements });

@@ -1,13 +1,21 @@
 import matter from "gray-matter";
-import { GraphOptionsObject } from "../constants";
+import { delimiters, GraphOptionsObject } from "../constants";
 
 export default function useGraphOptions(
   text: string
-): { graphOptions: GraphOptionsObject; content: string } {
+): {
+  graphOptions: GraphOptionsObject;
+  content: string;
+  graphOptionsString: string;
+} {
   try {
-    const { data: graphOptions, content } = matter(text, { delimiters: "~~~" });
-    return { graphOptions, content };
+    const {
+      data: graphOptions,
+      content,
+      matter: graphOptionsString,
+    } = matter(text, { delimiters });
+    return { graphOptions, content, graphOptionsString };
   } catch (error) {
-    return { graphOptions: {}, content: text };
+    return { graphOptions: {}, content: text, graphOptionsString: "" };
   }
 }
