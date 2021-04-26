@@ -94,18 +94,13 @@ function Edit() {
   );
 
   const setHelpText = useCallback(() => {
-    const contentString = content ? content : "";
     const optionsString = graphOptionsString
       ? `${delimiters}${graphOptionsString}\n${delimiters}\n`
       : "";
-    console.log(contentString, defaultText);
-    if (!contentString.includes(defaultText)) {
-      setText(
-        [optionsString, defaultText, contentString].filter(Boolean).join("\n")
-      );
+    if (!content.includes(defaultText)) {
+      setText([optionsString, defaultText, content].filter(Boolean).join("\n"));
     }
-    if (showing !== "editor") setShowing("editor");
-  }, [content, defaultText, graphOptionsString, setShowing, setText, showing]);
+  }, [content, defaultText, graphOptionsString, setText]);
 
   useEffect(() => {
     window.flowchartFunSetHelpText = setHelpText;
