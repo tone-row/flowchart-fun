@@ -109,7 +109,7 @@ const Settings = memo(() => {
           </Trans>
         </Type>
         <Box gap={2} at={lowerLinksAt}>
-          <Type as="a" href="https://twitter.com/row_tone" size={-2}>
+          <Type as="a" href="https://twitter.com/tone_row_" size={-2}>
             <Trans>Follow Us</Trans>
           </Type>
           <Type
