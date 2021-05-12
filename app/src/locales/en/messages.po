@@ -37,7 +37,7 @@ msgstr "Circle"
 msgid "Concentric"
 msgstr "Concentric"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:15
 msgid "Create a link directly using the exact label text"
 msgstr "Create a link directly using the exact label text"
 
@@ -45,7 +45,7 @@ msgstr "Create a link directly using the exact label text"
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/components/GraphOptions.tsx:48
+#: src/components/GraphOptions.tsx:53
 msgid "Direction"
 msgstr "Direction"
 
@@ -63,7 +63,7 @@ msgstr "Editor"
 msgid "Follow Us"
 msgstr "Follow Us"
 
-#: src/components/GraphOptions.tsx:38
+#: src/components/GraphOptions.tsx:43
 msgid "Graph Options"
 msgstr "Graph Options"
 
@@ -71,11 +71,15 @@ msgstr "Graph Options"
 msgid "Grid"
 msgstr "Grid"
 
-#: src/hooks.ts:29
+#: src/hooks.ts:25
 msgid "Have fun! 🎉"
 msgstr "Have fun! 🎉"
 
-#: src/hooks.ts:17
+#: src/components/Edit.tsx:94
+msgid "Help"
+msgstr "Help"
+
+#: src/hooks.ts:13
 msgid "Indenting creates a link to the current line"
 msgstr "Indenting creates a link to the current line"
 
@@ -83,7 +87,7 @@ msgstr "Indenting creates a link to the current line"
 msgid "Language"
 msgstr "Language"
 
-#: src/components/GraphOptions.tsx:42
+#: src/components/GraphOptions.tsx:47
 msgid "Layout"
 msgstr "Layout"
 
@@ -124,7 +128,7 @@ msgstr "Settings"
 msgid "Share"
 msgstr "Share"
 
-#: src/hooks.ts:16
+#: src/hooks.ts:12
 msgid "This app works by typing"
 msgstr "This app works by typing"
 
@@ -140,34 +144,34 @@ msgstr "User Preferences"
 msgid "View on Github"
 msgstr "View on Github"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:17
 msgid "[custom ID] or"
 msgstr "[custom ID] or"
 
-#: src/hooks.ts:18
+#: src/hooks.ts:14
 msgid "any text: before a colon creates a label"
 msgstr "any text: before a colon creates a label"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:18
 msgid "by adding an [ID] and referencing that"
 msgstr "by adding an [ID] and referencing that"
 
-#: src/hooks.ts:27
+#: src/hooks.ts:23
 msgid "comments"
 msgstr "comments"
 
-#: src/hooks.ts:20
+#: src/hooks.ts:16
 msgid "like this: (This app works by typing)"
 msgstr "like this: (This app works by typing)"
 
-#: src/hooks.ts:23
+#: src/hooks.ts:19
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "like this: (custom ID) // You can also use single-line comments"
 
-#: src/hooks.ts:26
+#: src/hooks.ts:22
 msgid "multiline"
 msgstr "multiline"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:21
 msgid "or"
 msgstr "or"

@@ -37,7 +37,7 @@ msgstr "圆圈"
 msgid "Concentric"
 msgstr "同心"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:15
 msgid "Create a link directly using the exact label text"
 msgstr "使用完全一样的标签文本，直接创建链接"
 
@@ -45,7 +45,7 @@ msgstr "使用完全一样的标签文本，直接创建链接"
 msgid "Dark Mode"
 msgstr "黑暗模式"
 
-#: src/components/GraphOptions.tsx:48
+#: src/components/GraphOptions.tsx:53
 msgid "Direction"
 msgstr "方向"
 
@@ -63,7 +63,7 @@ msgstr "编辑器"
 msgid "Follow Us"
 msgstr "关注我们"
 
-#: src/components/GraphOptions.tsx:38
+#: src/components/GraphOptions.tsx:43
 msgid "Graph Options"
 msgstr "图形选项"
 
@@ -71,11 +71,15 @@ msgstr "图形选项"
 msgid "Grid"
 msgstr "网格"
 
-#: src/hooks.ts:29
+#: src/hooks.ts:25
 msgid "Have fun! 🎉"
 msgstr "玩得开心！🎉"
 
-#: src/hooks.ts:17
+#: src/components/Edit.tsx:94
+msgid "Help"
+msgstr ""
+
+#: src/hooks.ts:13
 msgid "Indenting creates a link to the current line"
 msgstr "缩进可创建连接到当前行的链接"
 
@@ -83,7 +87,7 @@ msgstr "缩进可创建连接到当前行的链接"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/GraphOptions.tsx:42
+#: src/components/GraphOptions.tsx:47
 msgid "Layout"
 msgstr "布局"
 
@@ -124,7 +128,7 @@ msgstr "设置"
 msgid "Share"
 msgstr "分享"
 
-#: src/hooks.ts:16
+#: src/hooks.ts:12
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
 
@@ -140,34 +144,34 @@ msgstr "用户首选项"
 msgid "View on Github"
 msgstr "在 Github 上查看"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:17
 msgid "[custom ID] or"
 msgstr "[自定义 ID] 或"
 
-#: src/hooks.ts:18
+#: src/hooks.ts:14
 msgid "any text: before a colon creates a label"
 msgstr "任何文本：在冒号前创建一个标签"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:18
 msgid "by adding an [ID] and referencing that"
 msgstr "通过添加并引用一个 [ID]"
 
-#: src/hooks.ts:27
+#: src/hooks.ts:23
 msgid "comments"
 msgstr "注释"
 
-#: src/hooks.ts:20
+#: src/hooks.ts:16
 msgid "like this: (This app works by typing)"
 msgstr "像这样：（这款应用的工作原理是输入）"
 
-#: src/hooks.ts:23
+#: src/hooks.ts:19
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "像这样：（自定义 ID）// 你也可以使用单行注释"
 
-#: src/hooks.ts:26
+#: src/hooks.ts:22
 msgid "multiline"
 msgstr "多行"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:21
 msgid "or"
 msgstr "或"

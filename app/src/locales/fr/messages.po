@@ -37,7 +37,7 @@ msgstr "Cercle"
 msgid "Concentric"
 msgstr "Concentrique"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:15
 msgid "Create a link directly using the exact label text"
 msgstr "Créer un lien directement vers une boite en utilisant le texte exact de celle-ci"
 
@@ -45,7 +45,7 @@ msgstr "Créer un lien directement vers une boite en utilisant le texte exact de
 msgid "Dark Mode"
 msgstr "Mode sombre"
 
-#: src/components/GraphOptions.tsx:48
+#: src/components/GraphOptions.tsx:53
 msgid "Direction"
 msgstr "Direction"
 
@@ -63,7 +63,7 @@ msgstr "Éditeur"
 msgid "Follow Us"
 msgstr "Suivez-nous"
 
-#: src/components/GraphOptions.tsx:38
+#: src/components/GraphOptions.tsx:43
 msgid "Graph Options"
 msgstr "Options du graphique"
 
@@ -71,11 +71,15 @@ msgstr "Options du graphique"
 msgid "Grid"
 msgstr "Quadrillage"
 
-#: src/hooks.ts:29
+#: src/hooks.ts:25
 msgid "Have fun! 🎉"
 msgstr "Amusez-vous ! 🎉"
 
-#: src/hooks.ts:17
+#: src/components/Edit.tsx:94
+msgid "Help"
+msgstr ""
+
+#: src/hooks.ts:13
 msgid "Indenting creates a link to the current line"
 msgstr "La mise en retrait crée un lien vers la ligne courante."
 
@@ -83,7 +87,7 @@ msgstr "La mise en retrait crée un lien vers la ligne courante."
 msgid "Language"
 msgstr "Langue"
 
-#: src/components/GraphOptions.tsx:42
+#: src/components/GraphOptions.tsx:47
 msgid "Layout"
 msgstr "Disposition "
 
@@ -124,7 +128,7 @@ msgstr "Paramètres"
 msgid "Share"
 msgstr "Partager"
 
-#: src/hooks.ts:16
+#: src/hooks.ts:12
 msgid "This app works by typing"
 msgstr "Chaque ligne creé une nouvelle boite"
 
@@ -140,34 +144,34 @@ msgstr "Préférences de l'utilisateur"
 msgid "View on Github"
 msgstr "Voir sur Github"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:17
 msgid "[custom ID] or"
 msgstr "[ID personnalisé] ou"
 
-#: src/hooks.ts:18
+#: src/hooks.ts:14
 msgid "any text: before a colon creates a label"
 msgstr "n'importe quel texte : avant deux points, crée une étiquette pour le lien"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:18
 msgid "by adding an [ID] and referencing that"
 msgstr "en ajoutant un [ID] et en référençant celui-ci"
 
-#: src/hooks.ts:27
+#: src/hooks.ts:23
 msgid "comments"
 msgstr "des commentaires"
 
-#: src/hooks.ts:20
+#: src/hooks.ts:16
 msgid "like this: (This app works by typing)"
 msgstr "comme ceci : (Chaque ligne creé une nouvelle boite)"
 
-#: src/hooks.ts:23
+#: src/hooks.ts:19
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "comme ceci : (ID personnalisé) // Vous pouvez également ajouter des commentaires d'une ligne,"
 
-#: src/hooks.ts:26
+#: src/hooks.ts:22
 msgid "multiline"
 msgstr "de plusieurs lignes"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:21
 msgid "or"
 msgstr "ou"

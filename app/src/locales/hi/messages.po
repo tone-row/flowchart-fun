@@ -37,7 +37,7 @@ msgstr "परिधि"
 msgid "Concentric"
 msgstr "गाढ़ा"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:15
 msgid "Create a link directly using the exact label text"
 msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
 
@@ -45,7 +45,7 @@ msgstr "सही लेबल टेक्स्ट का उपयोग क�
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/components/GraphOptions.tsx:48
+#: src/components/GraphOptions.tsx:53
 msgid "Direction"
 msgstr "दिशा"
 
@@ -63,7 +63,7 @@ msgstr "संपादक"
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
-#: src/components/GraphOptions.tsx:38
+#: src/components/GraphOptions.tsx:43
 msgid "Graph Options"
 msgstr "ग्राफ विकल्प"
 
@@ -71,11 +71,15 @@ msgstr "ग्राफ विकल्प"
 msgid "Grid"
 msgstr "ग्रिड"
 
-#: src/hooks.ts:29
+#: src/hooks.ts:25
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/hooks.ts:17
+#: src/components/Edit.tsx:94
+msgid "Help"
+msgstr ""
+
+#: src/hooks.ts:13
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
@@ -83,7 +87,7 @@ msgstr "इंडेंटिंग वर्तमान लाइन का �
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/GraphOptions.tsx:42
+#: src/components/GraphOptions.tsx:47
 msgid "Layout"
 msgstr "ख़ाका"
 
@@ -124,7 +128,7 @@ msgstr "सेटिंग्स"
 msgid "Share"
 msgstr "शेयर"
 
-#: src/hooks.ts:16
+#: src/hooks.ts:12
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
@@ -140,34 +144,34 @@ msgstr "उपयोगकर्ता वरीयताएं"
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:17
 msgid "[custom ID] or"
 msgstr "[कस्टम ID] या"
 
-#: src/hooks.ts:18
+#: src/hooks.ts:14
 msgid "any text: before a colon creates a label"
 msgstr "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:18
 msgid "by adding an [ID] and referencing that"
 msgstr "एक [ID] जोड़कर संदर्भित है और उस"
 
-#: src/hooks.ts:27
+#: src/hooks.ts:23
 msgid "comments"
 msgstr "कमेंट को"
 
-#: src/hooks.ts:20
+#: src/hooks.ts:16
 msgid "like this: (This app works by typing)"
 msgstr "इस तरह: (यह ऐप टाइप द्वारा काम करता है)"
 
-#: src/hooks.ts:23
+#: src/hooks.ts:19
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "इस तरह: (कस्टम ID) // आप सिंगल-लाइन टिप्पणियों का भी उपयोग कर सकते हैं"
 
-#: src/hooks.ts:26
+#: src/hooks.ts:22
 msgid "multiline"
 msgstr "एक से अधिक लाइन"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:21
 msgid "or"
 msgstr "या"

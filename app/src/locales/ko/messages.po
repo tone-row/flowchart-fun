@@ -37,7 +37,7 @@ msgstr "원"
 msgid "Concentric"
 msgstr "동심"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:15
 msgid "Create a link directly using the exact label text"
 msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 
@@ -45,7 +45,7 @@ msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 msgid "Dark Mode"
 msgstr "다크 모드"
 
-#: src/components/GraphOptions.tsx:48
+#: src/components/GraphOptions.tsx:53
 msgid "Direction"
 msgstr "방향"
 
@@ -63,7 +63,7 @@ msgstr "에디터"
 msgid "Follow Us"
 msgstr "팔로우하세요"
 
-#: src/components/GraphOptions.tsx:38
+#: src/components/GraphOptions.tsx:43
 msgid "Graph Options"
 msgstr "그래프 옵션"
 
@@ -71,11 +71,15 @@ msgstr "그래프 옵션"
 msgid "Grid"
 msgstr "그리드"
 
-#: src/hooks.ts:29
+#: src/hooks.ts:25
 msgid "Have fun! 🎉"
 msgstr "즐겨보세요! 🎉"
 
-#: src/hooks.ts:17
+#: src/components/Edit.tsx:94
+msgid "Help"
+msgstr ""
+
+#: src/hooks.ts:13
 msgid "Indenting creates a link to the current line"
 msgstr "들여쓰기는 현재 줄에 대한 링크를 생성합니다"
 
@@ -83,7 +87,7 @@ msgstr "들여쓰기는 현재 줄에 대한 링크를 생성합니다"
 msgid "Language"
 msgstr "언어"
 
-#: src/components/GraphOptions.tsx:42
+#: src/components/GraphOptions.tsx:47
 msgid "Layout"
 msgstr "레이아웃"
 
@@ -124,7 +128,7 @@ msgstr "설정"
 msgid "Share"
 msgstr "공유"
 
-#: src/hooks.ts:16
+#: src/hooks.ts:12
 msgid "This app works by typing"
 msgstr "이 앱은 타이핑으로 작동합니다"
 
@@ -140,34 +144,34 @@ msgstr "사용자 기본 설정"
 msgid "View on Github"
 msgstr "Github에서 보기"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:17
 msgid "[custom ID] or"
 msgstr "[사용자 지정 ID] 또는"
 
-#: src/hooks.ts:18
+#: src/hooks.ts:14
 msgid "any text: before a colon creates a label"
 msgstr "콜론 앞의 모든 텍스트는: 레이블을 생성합니다"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:18
 msgid "by adding an [ID] and referencing that"
 msgstr "[ID]를 추가하고 참조하여"
 
-#: src/hooks.ts:27
+#: src/hooks.ts:23
 msgid "comments"
 msgstr "댓글"
 
-#: src/hooks.ts:20
+#: src/hooks.ts:16
 msgid "like this: (This app works by typing)"
 msgstr "이렇게: (이 앱은 타이핑으로 작동합니다)"
 
-#: src/hooks.ts:23
+#: src/hooks.ts:19
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "이렇게: (사용자 지정 ID) // 한 줄을 사용할 수도 있습니다 댓글"
 
-#: src/hooks.ts:26
+#: src/hooks.ts:22
 msgid "multiline"
 msgstr "멀티라인"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:21
 msgid "or"
 msgstr "또는"
