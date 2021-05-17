@@ -59,9 +59,8 @@ const Menu = memo(() => {
         <MenuBox icon={<FiImage />}>
           <MenuRightButton
             onClick={() => {
-              window.plausible("Download SVG", {
-                callback: window.flowchartFunDownloadSVG,
-              });
+              window.plausible("Download SVG");
+              window.flowchartFunDownloadSVG();
             }}
             title="Download SVG"
           >
@@ -69,9 +68,8 @@ const Menu = memo(() => {
           </MenuRightButton>
           <MenuRightButton
             onClick={() => {
-              window.plausible("Download PNG", {
-                callback: window.flowchartFunDownloadPNG,
-              });
+              window.plausible("Download PNG");
+              window.flowchartFunDownloadPNG();
             }}
             title="Download PNG"
           >
@@ -79,9 +77,8 @@ const Menu = memo(() => {
           </MenuRightButton>
           <MenuRightButton
             onClick={() => {
-              window.plausible("Download JPG", {
-                callback: window.flowchartFunDownloadJPG,
-              });
+              window.plausible("Download JPG");
+              window.flowchartFunDownloadJPG();
             }}
             title="Download JPG"
           >
