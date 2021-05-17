@@ -1,5 +1,5 @@
 import { memo, ReactNode, useContext } from "react";
-import { Box, BoxProps, Type, TypeProps } from "../slang";
+import { Box, BoxProps, Type } from "../slang";
 import styles from "./Menu.module.css";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 import { AppContext, Showing } from "./AppContext";
@@ -28,20 +28,25 @@ const Menu = memo(() => {
       flow="column"
     >
       <Box flow="column" content="normal start" role="tablist">
-        <Box
+        <MenuButton
+          show="navigation"
           px={4}
           py={0}
           content="center"
           style={{ fontSize: 0, lineHeight: 1 }}
-          className="brand"
+          onClick={() => setShowing("navigation")}
         >
           <BrandSvg width={40} />
-        </Box>
+        </MenuButton>
         <MenuButton show="editor" onClick={() => setShowing("editor")}>
-          <Trans>Editor</Trans>
+          <Type as="span">
+            <Trans>Editor</Trans>
+          </Type>
         </MenuButton>
         <MenuButton show="settings" onClick={() => setShowing("settings")}>
-          <Trans>Settings</Trans>
+          <Type as="span">
+            <Trans>Settings</Trans>
+          </Type>
         </MenuButton>
         <MenuButton
           show="share"
@@ -49,7 +54,9 @@ const Menu = memo(() => {
           display={true}
           at={hideShareButton}
         >
-          <Trans>Share</Trans>
+          <Type as="span">
+            <Trans>Share</Trans>
+          </Type>
         </MenuButton>
       </Box>
       <Box flow="column" display={false} at={showMenuRight} pr={4} gap={10}>
@@ -109,9 +116,8 @@ export default Menu;
 function MenuButton({
   children,
   show,
-  typeProps = {},
   ...props
-}: BoxProps & { children: ReactNode; show: Showing; typeProps?: TypeProps }) {
+}: BoxProps & { children: ReactNode; show: Showing }) {
   const { showing } = useContext(AppContext);
   const isActive = showing === show;
   return (
@@ -125,9 +131,7 @@ function MenuButton({
       disabled={isActive}
       {...props}
     >
-      <Type as="span" {...typeProps}>
-        {children}
-      </Type>
+      {children}
     </Box>
   );
 }
