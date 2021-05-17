@@ -624,6 +624,7 @@ body {
 	--color-lineNumbers:##757575;
 	--color-buttonFocus:#5c6fff;
 	--color-highlightColor:#5c6fff;
+	--color-overlayColor:0, 50%, 0%;
  }
 
 .slang-box.flow {

@@ -1,6 +1,8 @@
 import {
+  Dispatch,
   forwardRef,
   ReactNode,
+  SetStateAction,
   useCallback,
   useContext,
   useEffect,
@@ -12,6 +14,8 @@ import styles from "./Navigation.module.css";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router-dom";
 import { AppContext } from "./AppContext";
+import { Dialog } from "@reach/dialog";
+import "@reach/dialog/styles.css";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 const largeGap = 10;
@@ -23,6 +27,8 @@ export default function Navigation() {
   const [charts, setCharts] = useState<string[]>([]);
   const { push } = useHistory();
   const { workspace = "" } = useParams<{ workspace?: string }>();
+  const [erase, setErase] = useState("");
+  const [copy, setCopy] = useState("");
 
   const onSubmit = useCallback(
     ({ chartTitle }: { chartTitle: string }) => {
@@ -34,24 +40,51 @@ export default function Navigation() {
     [push, setShowing]
   );
 
+  const handleCopy = useCallback(
+    ({ chartTitle }: { chartTitle: string }) => {
+      // copy in localStorage
+      const data = window.localStorage.getItem(titleToLocalStorageKey(copy));
+      window.localStorage.setItem(
+        titleToLocalStorageKey(chartTitle),
+        data ?? ""
+      );
+      push(`/${chartTitle}`);
+      setCopy("");
+      setShowing("editor");
+    },
+    [copy, push, setShowing]
+  );
+
+  const handleDelete = useCallback(() => {
+    // if on this path, move to index
+    if (workspace === erase && workspace !== "") {
+      push("/");
+    }
+    window.localStorage.removeItem(titleToLocalStorageKey(erase));
+    setErase("");
+  }, [erase, push, workspace]);
+
   useEffect(() => {
     setCharts(
-      Object.keys(window.localStorage)
-        .filter(
-          (key) =>
-            key.indexOf("flowcharts.fun") === 0 &&
-            key !== "flowcharts.fun.user.settings"
+      [""]
+        .concat(
+          Object.keys(window.localStorage)
+            .filter(
+              (key) =>
+                key.indexOf("flowcharts.fun:") === 0 &&
+                key !== "flowcharts.fun.user.settings"
+            )
+            .map((file) => file.split(":")[1])
         )
-        .map((file) => `${file.includes(":") ? file.split(":")[1] : ""}`)
         .sort()
     );
-  }, []);
+  }, [erase]);
 
   return (
     <Box
       px={4}
       pb={4}
-      pt={2}
+      py={2}
       at={noPaddingBottom}
       gap={largeGap}
       content="start normal"
@@ -99,23 +132,46 @@ export default function Navigation() {
                 >
                   {chart || "/"}
                 </Type>
-                <Box
-                  as="menu"
-                  template="none / repeat(2, 70px)"
-                  items="normal end"
-                >
-                  <Type size={-2} as="button" className={styles.MenuButton}>
-                    Copy
-                  </Type>
-                  <Type size={-2} as="button" className={styles.MenuButton}>
-                    Delete
-                  </Type>
-                </Box>
+                {workspace === chart && (
+                  <Box
+                    as="menu"
+                    template="none / repeat(2, 70px)"
+                    items="normal end"
+                  >
+                    <Type
+                      size={-2}
+                      as="button"
+                      className={styles.MenuButton}
+                      onClick={() => setCopy(chart || "/")}
+                    >
+                      Copy
+                    </Type>
+                    <Type
+                      size={-2}
+                      as="button"
+                      className={styles.MenuButton}
+                      onClick={() => setErase(chart || "/")}
+                    >
+                      Delete
+                    </Type>
+                  </Box>
+                )}
               </Box>
             ))}
           </Box>
         </Section>
       </Box>
+      <DeleteChart
+        erase={erase}
+        setErase={setErase}
+        handleDelete={handleDelete}
+      />
+      <CopyChart
+        copy={copy}
+        setCopy={setCopy}
+        charts={charts}
+        handleCopy={handleCopy}
+      />
     </Box>
   );
 }
@@ -150,3 +206,98 @@ const Input = forwardRef((props, ref) => {
 
 const setValueAs = (value: string) =>
   value.replace(/[^a-z0-9]/gi, "-").toLocaleLowerCase();
+
+function DeleteChart({
+  erase,
+  setErase,
+  handleDelete,
+}: {
+  erase: string;
+  setErase: Dispatch<SetStateAction<string>>;
+  handleDelete: () => void;
+}) {
+  const handleDismiss = useCallback(() => {
+    setErase("");
+  }, [setErase]);
+
+  return (
+    <Dialog
+      isOpen={Boolean(erase)}
+      onDismiss={handleDismiss}
+      aria-label="delete flowchart"
+    >
+      <Box gap={10}>
+        <Section>
+          <Type>Are you sure you want to delete this? </Type>
+          <Type weight="700" self="normal center">
+            {erase}
+          </Type>
+        </Section>
+        <Box content="normal space-between" flow="column" gap={3}>
+          <Button onClick={handleDismiss}>Cancel</Button>
+          <Button onClick={handleDelete}>Delete</Button>
+        </Box>
+      </Box>
+    </Dialog>
+  );
+}
+
+function CopyChart({
+  copy,
+  setCopy,
+  handleCopy,
+  charts,
+}: {
+  copy: string;
+  setCopy: Dispatch<SetStateAction<string>>;
+  handleCopy: (data: { chartTitle: string }) => void;
+  charts: string[];
+}) {
+  const { register, setValue, watch, handleSubmit } = useForm({
+    defaultValues: { chartTitle: `${copy}-copy` },
+  });
+  const title = watch("chartTitle");
+
+  const handleDismiss = useCallback(() => {
+    setCopy("");
+  }, [setCopy]);
+
+  useEffect(() => {
+    setValue(
+      "chartTitle",
+      [copy === "/" ? "" : copy, "copy"].filter(Boolean).join("-")
+    );
+  }, [copy, setValue]);
+
+  return (
+    <Dialog
+      isOpen={Boolean(copy)}
+      onDismiss={handleDismiss}
+      aria-label="copy flowchart"
+    >
+      <Box gap={10} as="form" onSubmit={handleSubmit(handleCopy)}>
+        <Section>
+          <Type>What would you like to call this copy?</Type>
+          <Input
+            {...register("chartTitle", {
+              setValueAs,
+            })}
+          />
+        </Section>
+        <Box content="normal space-between" flow="column" gap={3}>
+          <Button onClick={handleDismiss}>Cancel</Button>
+          <Button
+            type="submit"
+            disabled={title?.length < 2 || charts.includes(title)}
+          >
+            Create
+          </Button>
+        </Box>
+      </Box>
+    </Dialog>
+  );
+}
+
+function titleToLocalStorageKey(chartTitle: string) {
+  return `flowcharts.fun${chartTitle === "/" ? "" : `:${chartTitle}`}`;
+}

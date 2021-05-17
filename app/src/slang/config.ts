@@ -20,6 +20,7 @@ export const colors = {
   lineNumbers: palette.white[4],
   buttonFocus: palette.purple[0],
   highlightColor: palette.purple[0],
+  overlayColor: "0, 50%, 0%",
 };
 
 export const darkTheme: typeof colors = {
@@ -32,6 +33,7 @@ export const darkTheme: typeof colors = {
   uiAccent: "#2e2e2e",
   buttonFocus: palette.purple[0],
   highlightColor: palette.purple[0],
+  overlayColor: "0, 50%, 100%",
 };
 
 const config: Partial<SlangConfig> = {
