@@ -256,6 +256,7 @@ function CopyChart({
   const { register, setValue, watch, handleSubmit } = useForm({
     defaultValues: { chartTitle: `${copy}-copy` },
   });
+
   const title = watch("chartTitle");
 
   const handleDismiss = useCallback(() => {
@@ -285,7 +286,9 @@ function CopyChart({
           />
         </Section>
         <Box content="normal space-between" flow="column" gap={3}>
-          <Button onClick={handleDismiss}>Cancel</Button>
+          <Button type="button" onClick={handleDismiss}>
+            Cancel
+          </Button>
           <Button
             type="submit"
             disabled={title?.length < 2 || charts.includes(title)}
