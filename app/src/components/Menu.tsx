@@ -1,5 +1,5 @@
 import { memo, ReactNode, useContext } from "react";
-import { Box, BoxProps, Type } from "../slang";
+import { Box, BoxProps, Type, TypeProps } from "../slang";
 import styles from "./Menu.module.css";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 import { AppContext, Showing } from "./AppContext";
@@ -28,25 +28,23 @@ const Menu = memo(() => {
       flow="column"
     >
       <Box flow="column" content="normal start" role="tablist">
-        <MenuButton
-          show="navigation"
+        <Box
           px={4}
           py={0}
           content="center"
           style={{ fontSize: 0, lineHeight: 1 }}
-          onClick={() => setShowing("navigation")}
+          className="brand"
         >
           <BrandSvg width={40} />
-        </MenuButton>
+        </Box>
         <MenuButton show="editor" onClick={() => setShowing("editor")}>
-          <Type as="span">
-            <Trans>Editor</Trans>
-          </Type>
+          <Trans>Editor</Trans>
         </MenuButton>
         <MenuButton show="settings" onClick={() => setShowing("settings")}>
-          <Type as="span">
-            <Trans>Settings</Trans>
-          </Type>
+          <Trans>Settings</Trans>
+        </MenuButton>
+        <MenuButton show="navigation" onClick={() => setShowing("navigation")}>
+          <Trans>Charts</Trans>
         </MenuButton>
         <MenuButton
           show="share"
@@ -54,9 +52,7 @@ const Menu = memo(() => {
           display={true}
           at={hideShareButton}
         >
-          <Type as="span">
-            <Trans>Share</Trans>
-          </Type>
+          <Trans>Share</Trans>
         </MenuButton>
       </Box>
       <Box flow="column" display={false} at={showMenuRight} pr={4} gap={10}>
@@ -116,8 +112,9 @@ export default Menu;
 function MenuButton({
   children,
   show,
+  typeProps = {},
   ...props
-}: BoxProps & { children: ReactNode; show: Showing }) {
+}: BoxProps & { children: ReactNode; show: Showing; typeProps?: TypeProps }) {
   const { showing } = useContext(AppContext);
   const isActive = showing === show;
   return (
@@ -131,7 +128,9 @@ function MenuButton({
       disabled={isActive}
       {...props}
     >
-      {children}
+      <Type as="span" {...typeProps}>
+        {children}
+      </Type>
     </Box>
   );
 }
