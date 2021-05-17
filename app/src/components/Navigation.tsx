@@ -152,7 +152,7 @@ export default function Navigation() {
                       className={styles.MenuButton}
                       onClick={() => setErase(chart || "/")}
                     >
-                      Delete
+                      {chart === "" ? "Reset" : "Delete"}
                     </Type>
                   </Box>
                 )}
@@ -228,14 +228,18 @@ function DeleteChart({
     >
       <Box gap={10}>
         <Section>
-          <Type>Are you sure you want to delete this? </Type>
+          <Type>
+            Are you sure you want to {erase === "/" ? "reset" : "delete"} this?{" "}
+          </Type>
           <Type weight="700" self="normal center">
             {erase}
           </Type>
         </Section>
         <Box content="normal space-between" flow="column" gap={3}>
           <Button onClick={handleDismiss}>Cancel</Button>
-          <Button onClick={handleDelete}>Delete</Button>
+          <Button onClick={handleDelete}>
+            {erase === "/" ? "Reset" : "Delete"}
+          </Button>
         </Box>
       </Box>
     </Dialog>
