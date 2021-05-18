@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { Box, BoxProps, Type } from "../slang";
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import styles from "./Navigation.module.css";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router-dom";
@@ -104,7 +104,7 @@ export default function Navigation() {
               disabled={title?.length < 2 || charts.includes(title)}
               type="submit"
             >
-              Create
+              <Trans>Create</Trans>
             </Button>
           </Box>
           <Type size={-2} color="palette-white-3">
@@ -144,7 +144,7 @@ export default function Navigation() {
                       className={styles.MenuButton}
                       onClick={() => setCopy(chart || "/")}
                     >
-                      Copy
+                      <Trans>Copy</Trans>
                     </Type>
                     <Type
                       size={-2}
@@ -152,7 +152,7 @@ export default function Navigation() {
                       className={styles.MenuButton}
                       onClick={() => setErase(chart || "/")}
                     >
-                      {chart === "" ? "Reset" : "Delete"}
+                      {chart === "" ? t`Reset` : t`Delete`}
                     </Type>
                   </Box>
                 )}
@@ -224,12 +224,14 @@ function DeleteChart({
     <Dialog
       isOpen={Boolean(erase)}
       onDismiss={handleDismiss}
-      aria-label="delete flowchart"
+      aria-label={t`Delete Chart`}
     >
       <Box gap={10}>
         <Section>
           <Type>
-            Are you sure you want to {erase === "/" ? "reset" : "delete"} this?{" "}
+            {erase === "/"
+              ? t`Are you sure you want to reset this?`
+              : t`Are you sure you want to delete this?`}
           </Type>
           <Type weight="700" self="normal center">
             {erase}
@@ -238,7 +240,7 @@ function DeleteChart({
         <Box content="normal space-between" flow="column" gap={3}>
           <Button onClick={handleDismiss}>Cancel</Button>
           <Button onClick={handleDelete}>
-            {erase === "/" ? "Reset" : "Delete"}
+            {erase === "/" ? t`Reset` : t`Delete`}
           </Button>
         </Box>
       </Box>
@@ -278,11 +280,13 @@ function CopyChart({
     <Dialog
       isOpen={Boolean(copy)}
       onDismiss={handleDismiss}
-      aria-label="copy flowchart"
+      aria-label={t`Copy Chart`}
     >
       <Box gap={10} as="form" onSubmit={handleSubmit(handleCopy)}>
         <Section>
-          <Type>What would you like to call this copy?</Type>
+          <Type>
+            <Trans>What would you like to name this copy?</Trans>
+          </Type>
           <Input
             {...register("chartTitle", {
               setValueAs,
@@ -291,13 +295,13 @@ function CopyChart({
         </Section>
         <Box content="normal space-between" flow="column" gap={3}>
           <Button type="button" onClick={handleDismiss}>
-            Cancel
+            <Trans>Cancel</Trans>
           </Button>
           <Button
             type="submit"
             disabled={title?.length < 2 || charts.includes(title)}
           >
-            Create
+            <Trans>Create</Trans>
           </Button>
         </Box>
       </Box>
