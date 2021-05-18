@@ -121,14 +121,22 @@ export default function Navigation() {
                 key={chart}
                 className={styles.ChartWrapper}
                 py={1}
-                template="none / 1fr auto"
-                items="center normal"
+                template="auto auto / none"
+                gap={1}
+                at={{
+                  tablet: {
+                    template: "none / 1fr auto",
+                    items: "center normal",
+                    gap: 3,
+                  },
+                }}
               >
                 <Type
                   as="button"
                   onClick={() => push(`/${chart}`)}
                   className={styles.ChartLink}
                   aria-current={workspace === chart ? "page" : undefined}
+                  title={chart || "Home"}
                 >
                   {chart || "/"}
                 </Type>
@@ -137,7 +145,8 @@ export default function Navigation() {
                     as="menu"
                     template="none / auto auto"
                     gap={4}
-                    items="normal end"
+                    content="normal start"
+                    at={{ tablet: { items: "normal end" } }}
                   >
                     <Type
                       size={-2}

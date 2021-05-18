@@ -72,9 +72,8 @@ function Edit() {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
 
-  const { graphOptions, content, graphOptionsString } = useGraphOptions(
-    textToParse
-  );
+  const { graphOptions, content, graphOptionsString } =
+    useGraphOptions(textToParse);
 
   const updateGraphOptionsText = useCallback(
     (o: GraphOptionsObject) => {

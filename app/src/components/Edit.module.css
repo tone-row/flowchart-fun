@@ -4,7 +4,7 @@
   right: 0;
   font-size: 0;
   background-color: var(--color-background);
-  padding: 14px;
+  padding: 5px;
 }
 
 @media (min-width: 800px) {

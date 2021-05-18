@@ -9,6 +9,7 @@
   border: none;
   background-color: transparent;
   color: var(--color-foreground);
+  width: 100%;
 }
 
 .Input input:focus {
@@ -57,6 +58,9 @@
 
 .ChartLink {
   text-align: left;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .ChartLink:focus {

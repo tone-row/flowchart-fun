@@ -58,7 +58,11 @@ const Settings = memo(() => {
             <Type size={-1}>
               <Trans>Language</Trans>
             </Type>
-            <Box flow="column" gap={4}>
+            <Box
+              gap={1}
+              items="normal start"
+              at={{ tablet: { flow: "column", gap: 4 } }}
+            >
               {Object.keys(languages).map((locale) => (
                 <Box
                   as="button"
