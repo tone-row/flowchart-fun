@@ -4,6 +4,7 @@ import {
   ReactNode,
   SetStateAction,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -73,6 +74,12 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     },
     [setUserSettings, settings]
   );
+
+  useEffect(() => {
+    // Remove chart that may have been stored, so
+    // two indexes aren't shown on charts page
+    window.localStorage.removeItem("flowcharts.fun:");
+  }, []);
 
   return (
     <AppContext.Provider
