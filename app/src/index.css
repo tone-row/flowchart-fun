@@ -127,6 +127,14 @@ button:focus {
 div[data-reach-dialog-content] {
   background: var(--color-background);
   color: var(--color-foreground);
+  width: 90vw;
+  overflow: auto;
+}
+
+@media (min-width: 800px) {
+  div[data-reach-dialog-content] {
+    width: 60vw;
+  }
 }
 
 div[data-reach-dialog-overlay] {
