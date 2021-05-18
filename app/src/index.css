@@ -123,3 +123,20 @@ button:focus {
   outline: none;
   box-shadow: inset 0 0 0 3px var(--color-buttonFocus);
 }
+
+div[data-reach-dialog-content] {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  width: 90vw;
+  overflow: auto;
+}
+
+@media (min-width: 800px) {
+  div[data-reach-dialog-content] {
+    width: 60vw;
+  }
+}
+
+div[data-reach-dialog-overlay] {
+  background: hsla(var(--color-overlayColor), 0.5);
+}

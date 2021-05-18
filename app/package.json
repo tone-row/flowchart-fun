@@ -7,6 +7,7 @@
     "@lingui/core": "^3.8.9",
     "@lingui/react": "^3.8.9",
     "@monaco-editor/react": "^4.0.11",
+    "@reach/dialog": "^0.15.0",
     "@react-hook/throttle": "^2.2.0",
     "@sentry/react": "^6.2.5",
     "@sentry/tracing": "^6.2.5",

@@ -17,6 +17,14 @@ msgstr ""
 msgid "Appearance"
 msgstr "Appearance"
 
+#: src/components/Navigation.tsx:139
+msgid "Are you sure you want to delete this?"
+msgstr "Are you sure you want to delete this?"
+
+#: src/components/Navigation.tsx:138
+msgid "Are you sure you want to reset this?"
+msgstr "Are you sure you want to reset this?"
+
 #: src/components/Settings.tsx:97
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
@@ -29,6 +37,15 @@ msgstr "Bottom to Top"
 msgid "Breadthfirst"
 msgstr "Breadthfirst"
 
+#: src/components/Navigation.tsx:147
+#: src/components/Navigation.tsx:179
+msgid "Cancel"
+msgstr "Cancel"
+
+#: src/components/Menu.tsx:35
+msgid "Charts"
+msgstr "Charts"
+
 #: src/components/GraphOptions.tsx:13
 msgid "Circle"
 msgstr "Circle"
@@ -37,6 +54,15 @@ msgstr "Circle"
 msgid "Concentric"
 msgstr "Concentric"
 
+#: src/components/Navigation.tsx:73
+#: src/components/Navigation.tsx:182
+msgid "Create"
+msgstr "Create"
+
+#: src/components/Navigation.tsx:66
+msgid "Create a New Chart"
+msgstr "Create a New Chart"
+
 #: src/hooks.ts:15
 msgid "Create a link directly using the exact label text"
 msgstr "Create a link directly using the exact label text"
@@ -44,6 +70,12 @@ msgstr "Create a link directly using the exact label text"
 #: src/components/Settings.tsx:74
 msgid "Dark Mode"
 msgstr "Dark Mode"
+
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:150
+msgid "Delete"
+msgstr "Delete"
 
 #: src/components/GraphOptions.tsx:53
 msgid "Direction"
@@ -54,6 +86,11 @@ msgstr "Direction"
 #: src/components/Share.tsx:30
 msgid "Download"
 msgstr "Download"
+
+#: src/components/Navigation.tsx:97
+#: src/components/Navigation.tsx:167
+msgid "Duplicate"
+msgstr "Duplicate"
 
 #: src/components/Menu.tsx:29
 msgid "Editor"
@@ -115,6 +152,11 @@ msgstr "Open Share Link"
 msgid "Random"
 msgstr "Random"
 
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:150
+msgid "Reset"
+msgstr "Reset"
+
 #: src/components/GraphOptions.tsx:20
 msgid "Right to Left"
 msgstr "Right to Left"
@@ -123,7 +165,7 @@ msgstr "Right to Left"
 msgid "Settings"
 msgstr "Settings"
 
-#: src/components/Menu.tsx:35
+#: src/components/Menu.tsx:38
 #: src/components/Menu.tsx:64
 msgid "Share"
 msgstr "Share"
@@ -143,6 +185,14 @@ msgstr "User Preferences"
 #: src/components/Settings.tsx:91
 msgid "View on Github"
 msgstr "View on Github"
+
+#: src/components/Navigation.tsx:171
+msgid "What would you like to name this copy?"
+msgstr "What would you like to name this copy?"
+
+#: src/components/Navigation.tsx:82
+msgid "Your Charts"
+msgstr "Your Charts"
 
 #: src/hooks.ts:17
 msgid "[custom ID] or"

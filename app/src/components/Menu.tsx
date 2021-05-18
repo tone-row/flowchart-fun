@@ -43,6 +43,9 @@ const Menu = memo(() => {
         <MenuButton show="settings" onClick={() => setShowing("settings")}>
           <Trans>Settings</Trans>
         </MenuButton>
+        <MenuButton show="navigation" onClick={() => setShowing("navigation")}>
+          <Trans>Charts</Trans>
+        </MenuButton>
         <MenuButton
           show="share"
           onClick={() => setShowing("share")}
@@ -56,9 +59,8 @@ const Menu = memo(() => {
         <MenuBox icon={<FiImage />}>
           <MenuRightButton
             onClick={() => {
-              window.plausible("Download SVG", {
-                callback: window.flowchartFunDownloadSVG,
-              });
+              window.plausible("Download SVG");
+              window.flowchartFunDownloadSVG();
             }}
             title="Download SVG"
           >
@@ -66,9 +68,8 @@ const Menu = memo(() => {
           </MenuRightButton>
           <MenuRightButton
             onClick={() => {
-              window.plausible("Download PNG", {
-                callback: window.flowchartFunDownloadPNG,
-              });
+              window.plausible("Download PNG");
+              window.flowchartFunDownloadPNG();
             }}
             title="Download PNG"
           >
@@ -76,9 +77,8 @@ const Menu = memo(() => {
           </MenuRightButton>
           <MenuRightButton
             onClick={() => {
-              window.plausible("Download JPG", {
-                callback: window.flowchartFunDownloadJPG,
-              });
+              window.plausible("Download JPG");
+              window.flowchartFunDownloadJPG();
             }}
             title="Download JPG"
           >
@@ -121,7 +121,7 @@ function MenuButton({
       py={3}
       role="tab"
       aria-selected={isActive}
-      className={styles.MenuButton}
+      className={[styles.MenuButton, "MenuButton"].join(" ")}
       disabled={isActive}
       {...props}
     >
