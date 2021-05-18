@@ -51,6 +51,7 @@ export default function Navigation() {
       push(`/${chartTitle}`);
       setCopy("");
       setShowing("editor");
+      window.plausible("Copy Chart");
     },
     [copy, push, setShowing]
   );
@@ -62,6 +63,7 @@ export default function Navigation() {
     }
     window.localStorage.removeItem(titleToLocalStorageKey(erase));
     setErase("");
+    window.plausible("Delete Chart");
   }, [erase, push, workspace]);
 
   useEffect(() => {
@@ -103,6 +105,7 @@ export default function Navigation() {
             <Button
               disabled={title?.length < 2 || charts.includes(title)}
               type="submit"
+              onClick={() => window.plausible("Create New Chart")}
             >
               <Trans>Create</Trans>
             </Button>
