@@ -37,7 +37,8 @@ msgstr "아래에서 위로"
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
-#: src/components/Navigation.tsx:171
+#: src/components/Navigation.tsx:141
+#: src/components/Navigation.tsx:173
 msgid "Cancel"
 msgstr ""
 
@@ -53,16 +54,8 @@ msgstr "원"
 msgid "Concentric"
 msgstr "동심"
 
-#: src/components/Navigation.tsx:91
-msgid "Copy"
-msgstr ""
-
-#: src/components/Navigation.tsx:159
-msgid "Copy Chart"
-msgstr ""
-
 #: src/components/Navigation.tsx:73
-#: src/components/Navigation.tsx:174
+#: src/components/Navigation.tsx:176
 msgid "Create"
 msgstr ""
 
@@ -79,12 +72,9 @@ msgid "Dark Mode"
 msgstr "다크 모드"
 
 #: src/components/Navigation.tsx:94
-#: src/components/Navigation.tsx:142
-msgid "Delete"
-msgstr ""
-
 #: src/components/Navigation.tsx:127
-msgid "Delete Chart"
+#: src/components/Navigation.tsx:144
+msgid "Delete"
 msgstr ""
 
 #: src/components/GraphOptions.tsx:53
@@ -96,6 +86,11 @@ msgstr "방향"
 #: src/components/Share.tsx:30
 msgid "Download"
 msgstr "다운로드"
+
+#: src/components/Navigation.tsx:91
+#: src/components/Navigation.tsx:161
+msgid "Duplicate"
+msgstr ""
 
 #: src/components/Menu.tsx:29
 msgid "Editor"
@@ -158,7 +153,7 @@ msgid "Random"
 msgstr "무작위"
 
 #: src/components/Navigation.tsx:94
-#: src/components/Navigation.tsx:142
+#: src/components/Navigation.tsx:144
 msgid "Reset"
 msgstr ""
 
@@ -191,7 +186,7 @@ msgstr "사용자 기본 설정"
 msgid "View on Github"
 msgstr "Github에서 보기"
 
-#: src/components/Navigation.tsx:163
+#: src/components/Navigation.tsx:165
 msgid "What would you like to name this copy?"
 msgstr ""
 

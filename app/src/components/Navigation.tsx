@@ -135,7 +135,8 @@ export default function Navigation() {
                 {workspace === chart && (
                   <Box
                     as="menu"
-                    template="none / repeat(2, 70px)"
+                    template="none / auto auto"
+                    gap={4}
                     items="normal end"
                   >
                     <Type
@@ -144,7 +145,7 @@ export default function Navigation() {
                       className={styles.MenuButton}
                       onClick={() => setCopy(chart || "/")}
                     >
-                      <Trans>Copy</Trans>
+                      <Trans>Duplicate</Trans>
                     </Type>
                     <Type
                       size={-2}
@@ -224,7 +225,7 @@ function DeleteChart({
     <Dialog
       isOpen={Boolean(erase)}
       onDismiss={handleDismiss}
-      aria-label={t`Delete Chart`}
+      aria-label={t`Delete`}
     >
       <Box gap={10}>
         <Section>
@@ -238,7 +239,9 @@ function DeleteChart({
           </Type>
         </Section>
         <Box content="normal space-between" flow="column" gap={3}>
-          <Button onClick={handleDismiss}>Cancel</Button>
+          <Button onClick={handleDismiss}>
+            <Trans>Cancel</Trans>
+          </Button>
           <Button onClick={handleDelete}>
             {erase === "/" ? t`Reset` : t`Delete`}
           </Button>
@@ -280,7 +283,7 @@ function CopyChart({
     <Dialog
       isOpen={Boolean(copy)}
       onDismiss={handleDismiss}
-      aria-label={t`Copy Chart`}
+      aria-label={t`Duplicate`}
     >
       <Box gap={10} as="form" onSubmit={handleSubmit(handleCopy)}>
         <Section>
