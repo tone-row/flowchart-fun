@@ -17,11 +17,11 @@ msgstr ""
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:139
 msgid "Are you sure you want to delete this?"
 msgstr "Are you sure you want to delete this?"
 
-#: src/components/Navigation.tsx:132
+#: src/components/Navigation.tsx:138
 msgid "Are you sure you want to reset this?"
 msgstr "Are you sure you want to reset this?"
 
@@ -37,8 +37,8 @@ msgstr "Bottom to Top"
 msgid "Breadthfirst"
 msgstr "Breadthfirst"
 
-#: src/components/Navigation.tsx:141
-#: src/components/Navigation.tsx:173
+#: src/components/Navigation.tsx:147
+#: src/components/Navigation.tsx:179
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -55,7 +55,7 @@ msgid "Concentric"
 msgstr "Concentric"
 
 #: src/components/Navigation.tsx:73
-#: src/components/Navigation.tsx:176
+#: src/components/Navigation.tsx:182
 msgid "Create"
 msgstr "Create"
 
@@ -71,9 +71,9 @@ msgstr "Create a link directly using the exact label text"
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/components/Navigation.tsx:94
-#: src/components/Navigation.tsx:127
-#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:150
 msgid "Delete"
 msgstr "Delete"
 
@@ -87,8 +87,8 @@ msgstr "Direction"
 msgid "Download"
 msgstr "Download"
 
-#: src/components/Navigation.tsx:91
-#: src/components/Navigation.tsx:161
+#: src/components/Navigation.tsx:97
+#: src/components/Navigation.tsx:167
 msgid "Duplicate"
 msgstr "Duplicate"
 
@@ -152,8 +152,8 @@ msgstr "Open Share Link"
 msgid "Random"
 msgstr "Random"
 
-#: src/components/Navigation.tsx:94
-#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:150
 msgid "Reset"
 msgstr "Reset"
 
@@ -186,7 +186,7 @@ msgstr "User Preferences"
 msgid "View on Github"
 msgstr "View on Github"
 
-#: src/components/Navigation.tsx:165
+#: src/components/Navigation.tsx:171
 msgid "What would you like to name this copy?"
 msgstr "What would you like to name this copy?"
 

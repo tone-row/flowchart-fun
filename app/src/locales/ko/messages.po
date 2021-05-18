@@ -17,13 +17,13 @@ msgstr ""
 msgid "Appearance"
 msgstr "외관"
 
-#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:139
 msgid "Are you sure you want to delete this?"
-msgstr ""
+msgstr "삭제하시겠습니까?"
 
-#: src/components/Navigation.tsx:132
+#: src/components/Navigation.tsx:138
 msgid "Are you sure you want to reset this?"
-msgstr ""
+msgstr "재설정하시겠습니까?"
 
 #: src/components/Settings.tsx:97
 msgid "Become a Sponsor"
@@ -37,14 +37,14 @@ msgstr "아래에서 위로"
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
-#: src/components/Navigation.tsx:141
-#: src/components/Navigation.tsx:173
+#: src/components/Navigation.tsx:147
+#: src/components/Navigation.tsx:179
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: src/components/Menu.tsx:35
 msgid "Charts"
-msgstr ""
+msgstr "차트"
 
 #: src/components/GraphOptions.tsx:13
 msgid "Circle"
@@ -55,13 +55,13 @@ msgid "Concentric"
 msgstr "동심"
 
 #: src/components/Navigation.tsx:73
-#: src/components/Navigation.tsx:176
+#: src/components/Navigation.tsx:182
 msgid "Create"
-msgstr ""
+msgstr "만들기"
 
 #: src/components/Navigation.tsx:66
 msgid "Create a New Chart"
-msgstr ""
+msgstr "새 차트 만들기"
 
 #: src/hooks.ts:15
 msgid "Create a link directly using the exact label text"
@@ -71,11 +71,11 @@ msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 msgid "Dark Mode"
 msgstr "다크 모드"
 
-#: src/components/Navigation.tsx:94
-#: src/components/Navigation.tsx:127
-#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:150
 msgid "Delete"
-msgstr ""
+msgstr "삭제"
 
 #: src/components/GraphOptions.tsx:53
 msgid "Direction"
@@ -87,10 +87,10 @@ msgstr "방향"
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/Navigation.tsx:91
-#: src/components/Navigation.tsx:161
+#: src/components/Navigation.tsx:97
+#: src/components/Navigation.tsx:167
 msgid "Duplicate"
-msgstr ""
+msgstr "복제"
 
 #: src/components/Menu.tsx:29
 msgid "Editor"
@@ -114,7 +114,7 @@ msgstr "즐겨보세요! 🎉"
 
 #: src/components/Edit.tsx:94
 msgid "Help"
-msgstr ""
+msgstr "도움말"
 
 #: src/hooks.ts:13
 msgid "Indenting creates a link to the current line"
@@ -152,10 +152,10 @@ msgstr "공유 링크 열기"
 msgid "Random"
 msgstr "무작위"
 
-#: src/components/Navigation.tsx:94
-#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:150
 msgid "Reset"
-msgstr ""
+msgstr "재설정"
 
 #: src/components/GraphOptions.tsx:20
 msgid "Right to Left"
@@ -186,13 +186,13 @@ msgstr "사용자 기본 설정"
 msgid "View on Github"
 msgstr "Github에서 보기"
 
-#: src/components/Navigation.tsx:165
+#: src/components/Navigation.tsx:171
 msgid "What would you like to name this copy?"
-msgstr ""
+msgstr "이 사본의 이름을 무엇으로 지정하시겠습니까?"
 
 #: src/components/Navigation.tsx:82
 msgid "Your Charts"
-msgstr ""
+msgstr "귀하의 차트"
 
 #: src/hooks.ts:17
 msgid "[custom ID] or"

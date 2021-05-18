@@ -17,13 +17,13 @@ msgstr ""
 msgid "Appearance"
 msgstr "दिखावट"
 
-#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:139
 msgid "Are you sure you want to delete this?"
-msgstr ""
+msgstr "क्या आप वाकई इसे हटाना चाहते हैं?"
 
-#: src/components/Navigation.tsx:132
+#: src/components/Navigation.tsx:138
 msgid "Are you sure you want to reset this?"
-msgstr ""
+msgstr "क्या आप वाकई इसे रीसेट करना चाहते हैं?"
 
 #: src/components/Settings.tsx:97
 msgid "Become a Sponsor"
@@ -37,14 +37,14 @@ msgstr "नीचे से शीर्ष तक"
 msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
-#: src/components/Navigation.tsx:141
-#: src/components/Navigation.tsx:173
+#: src/components/Navigation.tsx:147
+#: src/components/Navigation.tsx:179
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करें"
 
 #: src/components/Menu.tsx:35
 msgid "Charts"
-msgstr ""
+msgstr "चार्ट"
 
 #: src/components/GraphOptions.tsx:13
 msgid "Circle"
@@ -55,13 +55,13 @@ msgid "Concentric"
 msgstr "गाढ़ा"
 
 #: src/components/Navigation.tsx:73
-#: src/components/Navigation.tsx:176
+#: src/components/Navigation.tsx:182
 msgid "Create"
-msgstr ""
+msgstr "बनाएँ"
 
 #: src/components/Navigation.tsx:66
 msgid "Create a New Chart"
-msgstr ""
+msgstr "एक नया चार्ट बनाएँ"
 
 #: src/hooks.ts:15
 msgid "Create a link directly using the exact label text"
@@ -71,11 +71,11 @@ msgstr "सही लेबल टेक्स्ट का उपयोग क�
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/components/Navigation.tsx:94
-#: src/components/Navigation.tsx:127
-#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:150
 msgid "Delete"
-msgstr ""
+msgstr "हटाएँ"
 
 #: src/components/GraphOptions.tsx:53
 msgid "Direction"
@@ -87,10 +87,10 @@ msgstr "दिशा"
 msgid "Download"
 msgstr "डाउनलोड"
 
-#: src/components/Navigation.tsx:91
-#: src/components/Navigation.tsx:161
+#: src/components/Navigation.tsx:97
+#: src/components/Navigation.tsx:167
 msgid "Duplicate"
-msgstr ""
+msgstr "डुप्लिकेट बनाएँ"
 
 #: src/components/Menu.tsx:29
 msgid "Editor"
@@ -114,7 +114,7 @@ msgstr "मज़े करो! 🎉"
 
 #: src/components/Edit.tsx:94
 msgid "Help"
-msgstr ""
+msgstr "मदद"
 
 #: src/hooks.ts:13
 msgid "Indenting creates a link to the current line"
@@ -152,10 +152,10 @@ msgstr "शेयर लिंक खोलें"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/components/Navigation.tsx:94
-#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:150
 msgid "Reset"
-msgstr ""
+msgstr "रीसेट करें"
 
 #: src/components/GraphOptions.tsx:20
 msgid "Right to Left"
@@ -186,13 +186,13 @@ msgstr "उपयोगकर्ता वरीयताएं"
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/components/Navigation.tsx:165
+#: src/components/Navigation.tsx:171
 msgid "What would you like to name this copy?"
-msgstr ""
+msgstr "क्या आप इस कॉपी को नाम देना चाहेंगे?"
 
 #: src/components/Navigation.tsx:82
 msgid "Your Charts"
-msgstr ""
+msgstr "आपके चार्ट"
 
 #: src/hooks.ts:17
 msgid "[custom ID] or"
