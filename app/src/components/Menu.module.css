@@ -7,10 +7,6 @@
   position: relative;
 }
 
-.MenuButton svg {
-  fill: var(--color-foreground);
-}
-
 .MenuButton[aria-selected="true"]::after {
   content: " ";
   width: 100%;
