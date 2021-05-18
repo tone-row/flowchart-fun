@@ -133,7 +133,10 @@ export default function Navigation() {
               >
                 <Type
                   as="button"
-                  onClick={() => push(`/${chart}`)}
+                  onClick={() => {
+                    push(`/${chart}`);
+                    if (window.innerWidth < 800) setShowing("editor");
+                  }}
                   className={styles.ChartLink}
                   aria-current={workspace === chart ? "page" : undefined}
                   title={chart || "Home"}

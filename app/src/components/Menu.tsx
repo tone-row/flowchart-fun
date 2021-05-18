@@ -121,7 +121,7 @@ function MenuButton({
       py={3}
       role="tab"
       aria-selected={isActive}
-      className={styles.MenuButton}
+      className={[styles.MenuButton, "MenuButton"].join(" ")}
       disabled={isActive}
       {...props}
     >
