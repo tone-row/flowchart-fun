@@ -19,6 +19,7 @@ type Colors =
   | "color-lineNumbers"
   | "color-buttonFocus"
   | "color-highlightColor"
+  | "color-overlayColor"
   | "palette-white-0"
   | "palette-white-1"
   | "palette-white-2"

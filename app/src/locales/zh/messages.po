@@ -1,0 +1,227 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2021-04-15 22:08-0400\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: zh\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/Settings.tsx:67
+msgid "Appearance"
+msgstr "外观"
+
+#: src/components/Navigation.tsx:139
+msgid "Are you sure you want to delete this?"
+msgstr "你确定要删除这一项吗？"
+
+#: src/components/Navigation.tsx:138
+msgid "Are you sure you want to reset this?"
+msgstr "你确定要重置这一项吗？"
+
+#: src/components/Settings.tsx:97
+msgid "Become a Sponsor"
+msgstr "赞助我们"
+
+#: src/components/GraphOptions.tsx:21
+msgid "Bottom to Top"
+msgstr "从下到上"
+
+#: src/components/GraphOptions.tsx:10
+msgid "Breadthfirst"
+msgstr "宽度优先"
+
+#: src/components/Navigation.tsx:147
+#: src/components/Navigation.tsx:179
+msgid "Cancel"
+msgstr "取消"
+
+#: src/components/Menu.tsx:35
+msgid "Charts"
+msgstr "图表"
+
+#: src/components/GraphOptions.tsx:13
+msgid "Circle"
+msgstr "圆圈"
+
+#: src/components/GraphOptions.tsx:12
+msgid "Concentric"
+msgstr "同心"
+
+#: src/components/Navigation.tsx:73
+#: src/components/Navigation.tsx:182
+msgid "Create"
+msgstr "创建"
+
+#: src/components/Navigation.tsx:66
+msgid "Create a New Chart"
+msgstr "创建新图表"
+
+#: src/hooks.ts:15
+msgid "Create a link directly using the exact label text"
+msgstr "使用完全一样的标签文本，直接创建链接"
+
+#: src/components/Settings.tsx:74
+msgid "Dark Mode"
+msgstr "黑暗模式"
+
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:150
+msgid "Delete"
+msgstr "删除"
+
+#: src/components/GraphOptions.tsx:53
+msgid "Direction"
+msgstr "方向"
+
+#: src/components/Share.tsx:24
+#: src/components/Share.tsx:27
+#: src/components/Share.tsx:30
+msgid "Download"
+msgstr "下载"
+
+#: src/components/Navigation.tsx:97
+#: src/components/Navigation.tsx:167
+msgid "Duplicate"
+msgstr "复制"
+
+#: src/components/Menu.tsx:29
+msgid "Editor"
+msgstr "编辑器"
+
+#: src/components/Settings.tsx:88
+msgid "Follow Us"
+msgstr "关注我们"
+
+#: src/components/GraphOptions.tsx:43
+msgid "Graph Options"
+msgstr "图形选项"
+
+#: src/components/GraphOptions.tsx:15
+msgid "Grid"
+msgstr "网格"
+
+#: src/hooks.ts:25
+msgid "Have fun! 🎉"
+msgstr "玩得开心！🎉"
+
+#: src/components/Edit.tsx:94
+msgid "Help"
+msgstr "帮助"
+
+#: src/hooks.ts:13
+msgid "Indenting creates a link to the current line"
+msgstr "缩进可创建连接到当前行的链接"
+
+#: src/components/Settings.tsx:55
+msgid "Language"
+msgstr "语言"
+
+#: src/components/GraphOptions.tsx:47
+msgid "Layout"
+msgstr "布局"
+
+#: src/components/GraphOptions.tsx:18
+msgid "Left to Right (default)"
+msgstr "从左到右（默认）"
+
+#: src/components/Settings.tsx:71
+msgid "Light Mode"
+msgstr "灯光模式"
+
+#: src/components/Settings.tsx:82
+msgid "Made by <0>Tone Row</0>"
+msgstr "由 <0>Tone Row</0> 制作"
+
+#: src/components/Settings.tsx:94
+msgid "Make a Donation"
+msgstr "捐款"
+
+#: src/components/Share.tsx:21
+msgid "Open Share Link"
+msgstr "打开共享链接"
+
+#: src/components/GraphOptions.tsx:14
+msgid "Random"
+msgstr "随机"
+
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:150
+msgid "Reset"
+msgstr "重置"
+
+#: src/components/GraphOptions.tsx:20
+msgid "Right to Left"
+msgstr "从右到左"
+
+#: src/components/Menu.tsx:32
+msgid "Settings"
+msgstr "设置"
+
+#: src/components/Menu.tsx:38
+#: src/components/Menu.tsx:64
+msgid "Share"
+msgstr "分享"
+
+#: src/hooks.ts:12
+msgid "This app works by typing"
+msgstr "这款应用的工作原理是输入"
+
+#: src/components/GraphOptions.tsx:19
+msgid "Top to Bottom"
+msgstr "从上到下"
+
+#: src/components/Settings.tsx:51
+msgid "User Preferences"
+msgstr "用户首选项"
+
+#: src/components/Settings.tsx:91
+msgid "View on Github"
+msgstr "在 Github 上查看"
+
+#: src/components/Navigation.tsx:171
+msgid "What would you like to name this copy?"
+msgstr "你想将这个副本命名为什么？"
+
+#: src/components/Navigation.tsx:82
+msgid "Your Charts"
+msgstr "你的图表"
+
+#: src/hooks.ts:17
+msgid "[custom ID] or"
+msgstr "[自定义 ID] 或"
+
+#: src/hooks.ts:14
+msgid "any text: before a colon creates a label"
+msgstr "任何文本：在冒号前创建一个标签"
+
+#: src/hooks.ts:18
+msgid "by adding an [ID] and referencing that"
+msgstr "通过添加并引用一个 [ID]"
+
+#: src/hooks.ts:23
+msgid "comments"
+msgstr "注释"
+
+#: src/hooks.ts:16
+msgid "like this: (This app works by typing)"
+msgstr "像这样：（这款应用的工作原理是输入）"
+
+#: src/hooks.ts:19
+msgid "like this: (custom ID) // You can also use single-line comments"
+msgstr "像这样：（自定义 ID）// 你也可以使用单行注释"
+
+#: src/hooks.ts:22
+msgid "multiline"
+msgstr "多行"
+
+#: src/hooks.ts:21
+msgid "or"
+msgstr "或"

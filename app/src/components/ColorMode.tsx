@@ -6,9 +6,12 @@ export default function ColorMode() {
   const { theme } = useContext(AppContext);
 
   useEffect(() => {
-    if (document.body) {
+    if (document.documentElement) {
       for (const [key, value] of Object.entries(theme)) {
-        document.body.style.setProperty(`--color-${key}`, value as string);
+        document.documentElement.style.setProperty(
+          `--color-${key}`,
+          value as string
+        );
       }
     }
   }, [theme]);

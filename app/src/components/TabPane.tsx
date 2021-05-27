@@ -1,10 +1,11 @@
 import { Resizable as Reresizable } from "re-resizable";
 import React, { memo, ReactNode, useContext, useMemo } from "react";
 import { Box } from "../slang";
-import { LayoutContext } from "./Layout";
 import styles from "./TabPane.module.css";
 import Settings from "./Settings";
 import Share from "./Share";
+import { AppContext } from "./AppContext";
+import Navigation from "./Navigation";
 
 const Resizable = ({
   children,
@@ -50,7 +51,7 @@ const TabPane = memo(
     children: ReactNode;
     triggerResize: () => void;
   }) => {
-    const { showing } = useContext(LayoutContext);
+    const { showing } = useContext(AppContext);
     const child = useMemo(() => {
       return showing === "editor" ? (
         children
@@ -58,6 +59,8 @@ const TabPane = memo(
         <Settings />
       ) : showing === "share" ? (
         <Share />
+      ) : showing === "navigation" ? (
+        <Navigation />
       ) : (
         showing
       );

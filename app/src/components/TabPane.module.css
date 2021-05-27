@@ -6,6 +6,7 @@
 
 .Top {
   overflow: hidden;
+  position: relative;
 }
 
 .TextareaContainer {

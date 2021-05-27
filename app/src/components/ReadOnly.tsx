@@ -3,7 +3,7 @@ import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
 import { AppContext } from "./AppContext";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { editorOptions, GraphOptionsObject } from "../constants";
+import { delimiters, editorOptions, GraphOptionsObject } from "../constants";
 import Loading from "./Loading";
 import GraphProvider from "./GraphProvider";
 import matter from "gray-matter";
@@ -49,7 +49,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
     }
   }, [hoverLineNumber]);
 
-  const { data: graphOptions } = matter(textToParse, { delimiters: "~~~" });
+  const { data: graphOptions } = matter(textToParse, { delimiters });
 
   return (
     <GraphProvider

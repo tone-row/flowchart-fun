@@ -1,6 +1,5 @@
 import strip from "@tone-row/strip-comments";
 import { CytoscapeOptions } from "cytoscape";
-import { useLocation } from "react-router-dom";
 
 export function stripComments(t: string) {
   return strip(t, { preserveNewlines: true });
@@ -114,12 +113,12 @@ function getLineData(text: string, lineNumber: number) {
   // 2) ID (\[(?<id>.*)\])? -- store the ID if it exists after the indent in square brackets
   // 3) Edge Label ((?<edgeLabel>.+): )? -- store the edge label if it exists
   // 4) Node Label (?<nodeLabel>.+?) -- store the node label
-  const lineRegex = /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgeLabel>.+): )?(?<nodeLabel>.+?)$/;
+  const lineRegex = /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgeLabel>.+)[:：] *)?(?<nodeLabel>.+?)$/;
   const { groups } = text.match(lineRegex) || {};
   const { nodeLabel = "", edgeLabel = "", indent, id = lineNumber.toString() } =
     groups || {};
   const { groups: labelGroups } =
-    nodeLabel.match(/^\((?<linkedId>.+)\)\s*$/) || {};
+    nodeLabel.match(/^[(（](?<linkedId>.+)[)）]\s*$/) || {};
   const { linkedId } = labelGroups || {};
   return {
     nodeLabel: decodeURIComponent(nodeLabel.trim()),
@@ -143,7 +142,7 @@ function getSize(label: string) {
     // const initialHeight = resizer.clientHeight;
     // const add = Math.max(0, Math.ceil((initialHeight - 150) / 50)) * 8;
     // resizer.style.width = `${128 + add}px`;
-    resizer.innerHTML = preventBreakOnHypen(label);
+    resizer.innerHTML = preventCyRenderingBugs(label);
     if (resizer.firstChild) {
       const range = document.createRange();
       range.selectNodeContents(resizer.firstChild);
@@ -174,13 +173,12 @@ function cleanup(x: number) {
   return Math.ceil(x / base) * base;
 }
 
-function preventBreakOnHypen(str: string) {
-  return str.replace(/-/gm, "&#x2011;");
-}
-
-export function useAnimationSetting() {
-  let { search } = useLocation();
-  const query = new URLSearchParams(search);
-  const animation = query.get("animation");
-  return animation === "0" ? false : true;
+function preventCyRenderingBugs(str: string) {
+  return (
+    str
+      // prevent break on hypen
+      .replace(/-/gm, "&#x2011;")
+      // prevent break on chinese comma
+      .replace(/，/gm, "&#x2011;")
+  );
 }

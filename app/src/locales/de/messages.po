@@ -1,0 +1,227 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2021-04-16 00:35-0400\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: de\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/Settings.tsx:67
+msgid "Appearance"
+msgstr "Erscheinungsbild"
+
+#: src/components/Navigation.tsx:139
+msgid "Are you sure you want to delete this?"
+msgstr "Sind Sie sicher, dass Sie dies löschen möchten?"
+
+#: src/components/Navigation.tsx:138
+msgid "Are you sure you want to reset this?"
+msgstr "Sind Sie sicher, dass Sie dies zurücksetzen möchten?"
+
+#: src/components/Settings.tsx:97
+msgid "Become a Sponsor"
+msgstr "Werden Sie zum Sponsoren"
+
+#: src/components/GraphOptions.tsx:21
+msgid "Bottom to Top"
+msgstr "Von unten nach oben"
+
+#: src/components/GraphOptions.tsx:10
+msgid "Breadthfirst"
+msgstr "In die Breite"
+
+#: src/components/Navigation.tsx:147
+#: src/components/Navigation.tsx:179
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/components/Menu.tsx:35
+msgid "Charts"
+msgstr "Diagramme"
+
+#: src/components/GraphOptions.tsx:13
+msgid "Circle"
+msgstr "Kreis"
+
+#: src/components/GraphOptions.tsx:12
+msgid "Concentric"
+msgstr "Konzentrisch"
+
+#: src/components/Navigation.tsx:73
+#: src/components/Navigation.tsx:182
+msgid "Create"
+msgstr "Erstellen"
+
+#: src/components/Navigation.tsx:66
+msgid "Create a New Chart"
+msgstr "Neues Diagramm erstellen"
+
+#: src/hooks.ts:15
+msgid "Create a link directly using the exact label text"
+msgstr "Erstellen Sie direkt einen Link mit dem genauen Beschriftungstext"
+
+#: src/components/Settings.tsx:74
+msgid "Dark Mode"
+msgstr "Dunkelmodus"
+
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:150
+msgid "Delete"
+msgstr "Löschen"
+
+#: src/components/GraphOptions.tsx:53
+msgid "Direction"
+msgstr "Richtung"
+
+#: src/components/Share.tsx:24
+#: src/components/Share.tsx:27
+#: src/components/Share.tsx:30
+msgid "Download"
+msgstr "Herunterladen"
+
+#: src/components/Navigation.tsx:97
+#: src/components/Navigation.tsx:167
+msgid "Duplicate"
+msgstr "Duplizieren"
+
+#: src/components/Menu.tsx:29
+msgid "Editor"
+msgstr "Editor"
+
+#: src/components/Settings.tsx:88
+msgid "Follow Us"
+msgstr "Folgen Sie uns"
+
+#: src/components/GraphOptions.tsx:43
+msgid "Graph Options"
+msgstr "Grafik-Optionen"
+
+#: src/components/GraphOptions.tsx:15
+msgid "Grid"
+msgstr "Raster"
+
+#: src/hooks.ts:25
+msgid "Have fun! 🎉"
+msgstr "Viel Spaß! 🎉"
+
+#: src/components/Edit.tsx:94
+msgid "Help"
+msgstr "Hilfe"
+
+#: src/hooks.ts:13
+msgid "Indenting creates a link to the current line"
+msgstr "Durch das Einrücken wird eine Verbindung zur aktuellen Zeile hergestellt"
+
+#: src/components/Settings.tsx:55
+msgid "Language"
+msgstr "Sprache"
+
+#: src/components/GraphOptions.tsx:47
+msgid "Layout"
+msgstr "Layout"
+
+#: src/components/GraphOptions.tsx:18
+msgid "Left to Right (default)"
+msgstr "Von links nach rechts (voreingestellt)"
+
+#: src/components/Settings.tsx:71
+msgid "Light Mode"
+msgstr "Heller Modus"
+
+#: src/components/Settings.tsx:82
+msgid "Made by <0>Tone Row</0>"
+msgstr "Gemacht von <0>Tone Row</0>"
+
+#: src/components/Settings.tsx:94
+msgid "Make a Donation"
+msgstr "Spenden"
+
+#: src/components/Share.tsx:21
+msgid "Open Share Link"
+msgstr "Freigabe-Link öffnen"
+
+#: src/components/GraphOptions.tsx:14
+msgid "Random"
+msgstr "Zufällig"
+
+#: src/components/Navigation.tsx:100
+#: src/components/Navigation.tsx:150
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#: src/components/GraphOptions.tsx:20
+msgid "Right to Left"
+msgstr "Von rechts nach links"
+
+#: src/components/Menu.tsx:32
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: src/components/Menu.tsx:38
+#: src/components/Menu.tsx:64
+msgid "Share"
+msgstr "Teilen"
+
+#: src/hooks.ts:12
+msgid "This app works by typing"
+msgstr "Diese App funktioniert durch Tippen"
+
+#: src/components/GraphOptions.tsx:19
+msgid "Top to Bottom"
+msgstr "Von oben nach unten"
+
+#: src/components/Settings.tsx:51
+msgid "User Preferences"
+msgstr "Benutzerpräferenzen"
+
+#: src/components/Settings.tsx:91
+msgid "View on Github"
+msgstr "Auf Github ansehen"
+
+#: src/components/Navigation.tsx:171
+msgid "What would you like to name this copy?"
+msgstr "Wie möchten Sie diese Kopie nennen?"
+
+#: src/components/Navigation.tsx:82
+msgid "Your Charts"
+msgstr "Ihre Diagramme"
+
+#: src/hooks.ts:17
+msgid "[custom ID] or"
+msgstr "[benutzerdefinierte ID] oder"
+
+#: src/hooks.ts:14
+msgid "any text: before a colon creates a label"
+msgstr "Jeder beliebige Text: vor einem Doppelpunkt wird zu einer Beschriftung"
+
+#: src/hooks.ts:18
+msgid "by adding an [ID] and referencing that"
+msgstr "indem man ein [ID] hinzufügt und darauf verweist"
+
+#: src/hooks.ts:23
+msgid "comments"
+msgstr "Kommentare"
+
+#: src/hooks.ts:16
+msgid "like this: (This app works by typing)"
+msgstr "so wie hier: (Diese App funktioniert durch Tippen)"
+
+#: src/hooks.ts:19
+msgid "like this: (custom ID) // You can also use single-line comments"
+msgstr "so wie hier: (benutzerdefinierte ID) // Sie können auch einzeilige Kommentare verwenden"
+
+#: src/hooks.ts:22
+msgid "multiline"
+msgstr "mehrzeilige"
+
+#: src/hooks.ts:21
+msgid "or"
+msgstr "oder"
