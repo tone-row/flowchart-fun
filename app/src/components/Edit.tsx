@@ -61,16 +61,6 @@ function Edit() {
     }
   }, [monaco]);
 
-  // useEffect(() => {
-  //   if (monaco) {
-  //     if (mode === "dark") {
-  //       monaco.editor.setTheme(themeNameDark);
-  //     } else {
-  //       monaco.editor.setTheme(themeNameLight);
-  //     }
-  //   }
-  // }, [mode, monaco]);
-
   useEffect(() => {
     if (editorRef.current) {
       const editor = editorRef.current;
