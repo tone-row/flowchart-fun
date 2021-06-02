@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 import { useThrottleCallback } from "@react-hook/throttle";
-import Editor from "@monaco-editor/react";
+import Editor, { useMonaco } from "@monaco-editor/react";
 import { delimiters, editorOptions, GraphOptionsObject } from "../constants";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
@@ -20,6 +20,13 @@ import { Box, BoxProps } from "../slang";
 import { IoMdHelp } from "react-icons/io";
 import styles from "./Edit.module.css";
 import { t } from "@lingui/macro";
+import {
+  defineThemes,
+  languageId,
+  registerLanguage,
+  themeNameDark,
+  themeNameLight,
+} from "../registerLanguage";
 
 declare global {
   interface Window {
@@ -28,6 +35,7 @@ declare global {
 }
 
 function Edit() {
+  const monaco = useMonaco();
   const [text, setText, defaultText] = useLocalStorageText();
   const [textToParse, setTextToParse] = useReducer(
     (t: string, u: string) => u,
@@ -38,6 +46,20 @@ function Edit() {
   const editorRef = useRef(null);
   const decorations = useRef<any[]>([]);
   const { mode } = useContext(AppContext);
+
+  // Add language
+  useEffect(() => {
+    if (monaco) {
+      const isRegistered = monaco.languages
+        .getLanguages()
+        .map(({ id }: { id: string }) => id)
+        .includes("flowchartfun");
+
+      if (!isRegistered) {
+        registerLanguage(monaco);
+      }
+    }
+  }, [monaco]);
 
   useEffect(() => {
     if (editorRef.current) {
@@ -118,12 +140,14 @@ function Edit() {
     >
       <Editor
         value={text}
+        defaultLanguage={languageId}
         options={editorOptions}
-        theme={mode === "dark" ? "vs-dark" : "light"}
+        theme={mode === "dark" ? themeNameDark : themeNameLight}
         onChange={(value) => setText(value ?? "")}
         loading={<Loading />}
         onMount={(editor, monaco) => {
           editorRef.current = editor;
+          defineThemes(monaco);
         }}
       />
       <HelpButton />

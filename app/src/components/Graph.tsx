@@ -65,12 +65,13 @@ const Graph = memo(
         let layout = {};
 
         try {
-          const { data, content, matter: dataString } = matter(
-            stripComments(textToParse),
-            {
-              delimiters,
-            }
-          );
+          const {
+            data,
+            content,
+            matter: dataString,
+          } = matter(stripComments(textToParse), {
+            delimiters,
+          });
           const startingLineNumber =
             !dataString || dataString === ""
               ? 0
@@ -88,7 +89,6 @@ const Graph = memo(
           layout = newLayout;
         } catch (e) {
           error = true;
-          console.log(e);
           errorCy.current?.destroy();
           errorCy.current = cytoscape();
         }
