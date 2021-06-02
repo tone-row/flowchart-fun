@@ -108,9 +108,9 @@ a {
   background-color: transparent !important;
 }
 
-.mtk1 {
+/* .mtk1 {
   color: var(--color-foreground) !important;
-}
+} */
 
 .brand {
   border-right: 1px solid var(--color-uiAccent);
