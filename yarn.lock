@@ -2033,6 +2033,11 @@
   resolved "https://registry.yarnpkg.com/@types/cytoscape/-/cytoscape-3.14.12.tgz#b46c445da97df76d486c5b3b25554f616deefd41"
   integrity sha512-Tf7ClW9H+8S0Sp/C4l5g7lLiANMMz7a8lPkANosqQQ4liku+0/aMRGFoZwV6bFm4aK//PF6ClPiTKBU3LhHhkw==
 
+"@types/cytoscape@^3.14.15":
+  version "3.14.15"
+  resolved "https://registry.yarnpkg.com/@types/cytoscape/-/cytoscape-3.14.15.tgz#ce3fc1b494f44d6bccb93a099eb005553fc2a14e"
+  integrity sha512-gl4fmjtiV027bgKyAkPPksa2XVCWfwZ3TOaEejeQQ6cmtdrKqrr13m8zpOYkcIYtRqzA4AT8iUzn7P4/p4sUkA==
+
 "@types/decompress@*":
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/@types/decompress/-/decompress-4.2.3.tgz#98eed48af80001038aa05690b2094915f296fe65"
@@ -4492,10 +4497,10 @@ cytoscape-svg@^0.3.1:
   resolved "https://registry.yarnpkg.com/cytoscape-svg/-/cytoscape-svg-0.3.1.tgz#5f49b7438e8cf9c779c1a999802f4a52384e4533"
   integrity sha512-CaU6sUWIcCJcOWw+G1ZWHqC7ssHwXabWVo6okyIPUy3veEKoodZ3Ud2AG3Zbd8vFl8Z1W10hzyXnyy25aBXFXA==
 
-cytoscape@^3.18.1:
-  version "3.18.1"
-  resolved "https://registry.yarnpkg.com/cytoscape/-/cytoscape-3.18.1.tgz#58197622f748c0eb24db7bdc7313c7cd96e6a10a"
-  integrity sha512-XTGI9RPcufWOQ4itNm4lleILvnwBT2jY85eDxWVU6FsKk5Gahd6jl0QQcpzxsIbh86pd7XjEgXHdvi2Z4+g0hA==
+cytoscape@^3.19.0:
+  version "3.19.0"
+  resolved "https://registry.yarnpkg.com/cytoscape/-/cytoscape-3.19.0.tgz#b3e3136f823ca00a1c7752741c2a349e52545f57"
+  integrity sha512-DANM8bM4EuSTS3DraPK0nLSmzANrzQ2g/cb3u5Biexu/NVsJA+xAoXVvWHRIHDXz3y0gpMjTPv3Z13ZbkNrEPw==
   dependencies:
     heap "^0.2.6"
     lodash.debounce "^4.0.8"

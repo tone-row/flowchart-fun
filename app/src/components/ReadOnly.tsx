@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import Editor from "@monaco-editor/react";
+import Editor, { OnMount } from "@monaco-editor/react";
 import { useParams } from "react-router";
 import { AppContext } from "./AppContext";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
@@ -16,15 +16,14 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
     ? decompress(graphText) ?? ""
     : decodeURIComponent(graphText);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
-  const editorRef = useRef(null);
+  const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const decorations = useRef<any[]>([]);
   const { mode } = useContext(AppContext);
 
   useEffect(() => {
     if (editorRef.current) {
       const editor = editorRef.current;
-      if (typeof hoverLineNumber === "number") {
-        //@ts-ignore
+      if (typeof hoverLineNumber === "number" && editor) {
         decorations.current = editor.deltaDecorations(
           [],
           [
@@ -43,7 +42,6 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
           ]
         );
       } else {
-        // @ts-ignore
         decorations.current = editor.deltaDecorations(decorations.current, []);
       }
     }

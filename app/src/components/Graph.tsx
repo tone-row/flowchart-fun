@@ -133,6 +133,7 @@ const Graph = memo(
 
     const downloadSVG = useCallback(() => {
       if (cy.current) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         const svgStr = cy.current.svg({
           full: true,
@@ -315,6 +316,7 @@ function getCyStyleFromTheme(theme: typeof colors): CytoscapeOptions["style"] {
         "text-max-width": "80",
         "text-valign": "center",
         "text-halign": "center",
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         "line-height": 1.25,
         "border-width": 1,
@@ -328,6 +330,7 @@ function getCyStyleFromTheme(theme: typeof colors): CytoscapeOptions["style"] {
     {
       selector: "edge",
       style: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         "loop-direction": "0deg",
         "loop-sweep": "20deg",
