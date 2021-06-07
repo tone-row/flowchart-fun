@@ -43,7 +43,7 @@ const GraphOptions = memo(() => {
           rankDir: options.layout.rankDir,
         },
       });
-      updateGraphOptionsText(options);
+      updateGraphOptionsText && updateGraphOptionsText(options);
     }
   }, [updateGraphOptionsText, isDirty, valuesString]);
 

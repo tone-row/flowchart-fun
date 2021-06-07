@@ -47,7 +47,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     "flowcharts.fun.user.settings",
     "{}"
   );
-  let { settings, theme } = useMemo<{
+  const { settings, theme } = useMemo<{
     settings: Partial<UserSettings>;
     theme: Theme;
   }>(() => {

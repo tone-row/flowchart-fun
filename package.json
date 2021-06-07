@@ -5,10 +5,15 @@
     "module"
   ],
   "scripts": {
-    "start": "yarn workspace app start"
+    "start": "yarn workspace app start",
+    "prepare": "husky install",
+    "app:lint:format": "yarn workspace app lint:fix && yarn workspace app format"
   },
   "dependencies": {
     "@sentry/react": "^6.5.1",
     "@sentry/tracing": "^6.5.1"
+  },
+  "devDependencies": {
+    "husky": "^6.0.0"
   }
 }

@@ -3,7 +3,7 @@ import Editor from "@monaco-editor/react";
 import { useParams } from "react-router";
 import { AppContext } from "./AppContext";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { delimiters, editorOptions, GraphOptionsObject } from "../constants";
+import { delimiters, editorOptions } from "../constants";
 import Loading from "./Loading";
 import GraphProvider from "./GraphProvider";
 import matter from "gray-matter";
@@ -56,7 +56,6 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
       editable={false}
       setHoverLineNumber={setHoverLineNumber}
       textToParse={textToParse}
-      updateGraphOptionsText={(_n: GraphOptionsObject) => {}}
       graphOptions={graphOptions}
     >
       <Editor
@@ -68,7 +67,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
           ...editorOptions,
           readOnly: true,
         }}
-        onMount={(editor, monaco) => {
+        onMount={(editor) => {
           editorRef.current = editor;
         }}
       />

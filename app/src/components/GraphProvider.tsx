@@ -1,10 +1,10 @@
-import React, { createContext, useCallback } from "react";
+import React, { createContext } from "react";
 import { GraphOptionsObject } from "../constants";
 import Main, { MainProps } from "./Main";
 
 type GraphContextType = {
   editable: boolean;
-  updateGraphOptionsText: (n: GraphOptionsObject) => void;
+  updateGraphOptionsText?: (n: GraphOptionsObject) => void;
   graphOptions: GraphOptionsObject;
 };
 
@@ -16,14 +16,11 @@ export default function GraphProvider({
   graphOptions,
   ...props
 }: MainProps & GraphContextType) {
-  const updateOptions = useCallback(updateGraphOptionsText, [
-    updateGraphOptionsText,
-  ]);
   return (
     <GraphContext.Provider
       value={{
         editable,
-        updateGraphOptionsText: updateOptions,
+        updateGraphOptionsText,
         graphOptions,
       }}
     >

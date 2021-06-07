@@ -140,7 +140,7 @@ const Graph = memo(
           bg: theme.background === "#ffffff" ? undefined : theme.background,
         });
         const domparser = new DOMParser();
-        let svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
+        const svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
         let squares: Element[] = [
           ...svgEl.children[0].querySelectorAll("path"),
         ].filter(
@@ -168,7 +168,6 @@ const Graph = memo(
 
     const downloadPNG = useCallback(() => {
       if (cy.current) {
-        // @ts-ignore
         const pngStr = cy.current.png({
           full: true,
           scale: 1.5,
@@ -185,7 +184,6 @@ const Graph = memo(
 
     const downloadJPG = useCallback(() => {
       if (cy.current) {
-        // @ts-ignore
         const jpgStr = cy.current.jpg({
           full: true,
           scale: 1.5,
@@ -350,7 +348,6 @@ function getCyStyleFromTheme(theme: typeof colors): CytoscapeOptions["style"] {
         "font-family":
           "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
         "text-halign": "center",
-        // @ts-ignore
         "edge-text-rotation": "autorotate",
       },
     },

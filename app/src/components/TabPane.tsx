@@ -1,11 +1,11 @@
 import { Resizable as Reresizable } from "re-resizable";
-import React, { memo, ReactNode, useContext, useMemo } from "react";
+import { lazy, memo, ReactNode, useContext, useMemo } from "react";
 import { Box } from "../slang";
 import styles from "./TabPane.module.css";
-import Settings from "./Settings";
-import Share from "./Share";
+const Share = lazy(() => import("./Share"));
+const Settings = lazy(() => import("./Settings"));
+const Navigation = lazy(() => import("./Navigation"));
 import { AppContext } from "./AppContext";
-import Navigation from "./Navigation";
 
 const Resizable = ({
   children,
