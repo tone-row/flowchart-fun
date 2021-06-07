@@ -1,0 +1,21 @@
+name: Version
+on: 
+  push:
+    branches-ignore:
+      - main
+jobs:
+  build:
+    name: Check if version updated
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Print Package Version
+        run: |
+        PACKAGE_VERSION=$(cat app/package.json \
+          | grep version \
+          | head -1 \
+          | awk -F: '{ print $2 }' \
+          | sed 's/[",]//g')
+
+        echo $PACKAGE_VERSION
