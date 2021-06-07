@@ -6,5 +6,9 @@
   ],
   "scripts": {
     "start": "yarn workspace app start"
+  },
+  "dependencies": {
+    "@sentry/react": "^6.5.1",
+    "@sentry/tracing": "^6.5.1"
   }
 }
