@@ -1,6 +1,8 @@
 name: Version
 on: 
   push:
+    branches:
+      - '*'
     branches-ignore:
       - main
 jobs:
