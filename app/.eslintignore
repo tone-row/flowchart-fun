@@ -1,0 +1,7 @@
+build
+node_modules
+.github
+**/*.test.ts
+**/*.test.tsx
+.eslintrc.js
+src/slang

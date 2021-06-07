@@ -23,7 +23,12 @@ function ErrorFallback({ error }: { error: Error }) {
   return (
     <div className="errorWrapper">
       <Box role="alert" className="error-wrapper">
-        <Type>Sorry! Something went wrong. 😔</Type>
+        <Type>
+          Sorry! Something went wrong.{" "}
+          <span role="img" aria-label="Sad face emoji">
+            😔
+          </span>
+        </Type>
         <div className="errorMessage">
           <pre>{error.message}</pre>
         </div>

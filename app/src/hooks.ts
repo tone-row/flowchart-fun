@@ -4,7 +4,7 @@ import { useLocation, useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
 export function useAnimationSetting() {
-  let { search } = useLocation();
+  const { search } = useLocation();
   const query = new URLSearchParams(search);
   const animation = query.get("animation");
   return animation === "0" ? false : true;

@@ -219,6 +219,7 @@ const Input = forwardRef((props, ref) => {
     </Box>
   );
 });
+Input.displayName = "Input";
 
 const setValueAs = (value: string) =>
   value.replace(/[^a-z0-9]/gi, "-").toLocaleLowerCase();

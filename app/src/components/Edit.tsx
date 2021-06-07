@@ -1,4 +1,4 @@
-import React, {
+import {
   useCallback,
   useContext,
   useEffect,
@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 import { useThrottleCallback } from "@react-hook/throttle";
-import Editor, { useMonaco } from "@monaco-editor/react";
+import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
 import { delimiters, editorOptions, GraphOptionsObject } from "../constants";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
@@ -43,7 +43,7 @@ function Edit() {
   );
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
-  const editorRef = useRef(null);
+  const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const decorations = useRef<any[]>([]);
   const { mode } = useContext(AppContext);
 
@@ -65,7 +65,6 @@ function Edit() {
     if (editorRef.current) {
       const editor = editorRef.current;
       if (typeof hoverLineNumber === "number") {
-        //@ts-ignore
         decorations.current = editor.deltaDecorations(
           [],
           [
@@ -84,7 +83,6 @@ function Edit() {
           ]
         );
       } else {
-        // @ts-ignore
         decorations.current = editor.deltaDecorations(decorations.current, []);
       }
     }

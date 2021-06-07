@@ -6,14 +6,14 @@ export function stripComments(t: string) {
 }
 
 export function parseText(text: string, startingLineNumber = 0) {
-  let elements: CytoscapeOptions["elements"] = [];
+  const elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
 
   // break into lines
   const lines = text.split("\n");
 
   // Loop over lines
-  for (let line of lines) {
+  for (const line of lines) {
     if (line.trim() === "") {
       lineNumber++;
       continue;
@@ -29,7 +29,7 @@ export function parseText(text: string, startingLineNumber = 0) {
 
       while (checkLine >= 1) {
         checkLine -= 1;
-        let currentLine = lines[checkLine - 1];
+        const currentLine = lines[checkLine - 1];
 
         /* Determine whether valid line */
         if (currentLine.trim() === "") {
@@ -92,12 +92,12 @@ export function parseText(text: string, startingLineNumber = 0) {
     {}
   );
 
-  for (let [index, element] of Object.entries(elements)) {
+  for (const [index, element] of Object.entries(elements)) {
     // If it is an edge
     if ("target" in element.data) {
       if (!Object.values(labelToId).includes(element.data.target)) {
         if (element.data.target in labelToId) {
-          elements[parseInt(index)].data.target =
+          elements[parseInt(index, 10)].data.target =
             labelToId[element.data.target];
         }
       }
@@ -113,10 +113,15 @@ function getLineData(text: string, lineNumber: number) {
   // 2) ID (\[(?<id>.*)\])? -- store the ID if it exists after the indent in square brackets
   // 3) Edge Label ((?<edgeLabel>.+): )? -- store the edge label if it exists
   // 4) Node Label (?<nodeLabel>.+?) -- store the node label
-  const lineRegex = /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgeLabel>.+)[:：] *)?(?<nodeLabel>.+?)$/;
+  const lineRegex =
+    /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgeLabel>.+)[:：] *)?(?<nodeLabel>.+?)$/;
   const { groups } = text.match(lineRegex) || {};
-  const { nodeLabel = "", edgeLabel = "", indent, id = lineNumber.toString() } =
-    groups || {};
+  const {
+    nodeLabel = "",
+    edgeLabel = "",
+    indent,
+    id = lineNumber.toString(),
+  } = groups || {};
   const { groups: labelGroups } =
     nodeLabel.match(/^[(（](?<linkedId>.+)[)）]\s*$/) || {};
   const { linkedId } = labelGroups || {};

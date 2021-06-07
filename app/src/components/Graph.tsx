@@ -133,6 +133,7 @@ const Graph = memo(
 
     const downloadSVG = useCallback(() => {
       if (cy.current) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         const svgStr = cy.current.svg({
           full: true,
@@ -140,7 +141,7 @@ const Graph = memo(
           bg: theme.background === "#ffffff" ? undefined : theme.background,
         });
         const domparser = new DOMParser();
-        let svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
+        const svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
         let squares: Element[] = [
           ...svgEl.children[0].querySelectorAll("path"),
         ].filter(
@@ -168,7 +169,6 @@ const Graph = memo(
 
     const downloadPNG = useCallback(() => {
       if (cy.current) {
-        // @ts-ignore
         const pngStr = cy.current.png({
           full: true,
           scale: 1.5,
@@ -185,7 +185,6 @@ const Graph = memo(
 
     const downloadJPG = useCallback(() => {
       if (cy.current) {
-        // @ts-ignore
         const jpgStr = cy.current.jpg({
           full: true,
           scale: 1.5,
@@ -317,6 +316,7 @@ function getCyStyleFromTheme(theme: typeof colors): CytoscapeOptions["style"] {
         "text-max-width": "80",
         "text-valign": "center",
         "text-halign": "center",
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         "line-height": 1.25,
         "border-width": 1,
@@ -330,6 +330,7 @@ function getCyStyleFromTheme(theme: typeof colors): CytoscapeOptions["style"] {
     {
       selector: "edge",
       style: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         "loop-direction": "0deg",
         "loop-sweep": "20deg",
@@ -350,7 +351,6 @@ function getCyStyleFromTheme(theme: typeof colors): CytoscapeOptions["style"] {
         "font-family":
           "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
         "text-halign": "center",
-        // @ts-ignore
         "edge-text-rotation": "autorotate",
       },
     },
