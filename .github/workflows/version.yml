@@ -1,10 +1,5 @@
 name: Version
-on: 
-  push:
-    branches:
-      - '*'
-    branches-ignore:
-      - main
+on: push
 jobs:
   build:
     name: Check if version updated
