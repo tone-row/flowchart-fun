@@ -16,11 +16,14 @@ jobs:
           path: main
       - name: Print Package Versions
         run: |
-          ls -la
-        # run: |
-        #   CURRENT_PACKAGE_VERSION=$(cat ./current/app/package.json \
-        #     | grep version \
-        #     | head -1 \
-        #     | awk -F: '{ print $2 }' \
-        #     | sed 's/[",]//g');
-        #   echo $CURRENT_PACKAGE_VERSION;
+          CURRENT_PACKAGE_VERSION=$(cat ./current/app/package.json \
+            | grep version \
+            | head -1 \
+            | awk -F: '{ print $2 }' \
+            | sed 's/[",]//g');
+          MAIN_PACKAGE_VERSION=$(cat ./main/app/package.json \
+            | grep version \
+            | head -1 \
+            | awk -F: '{ print $2 }' \
+            | sed 's/[",]//g');
+          if [ "$CURRENT_PACKAGE_VERSION" -eq "$MAIN_PACKAGE_VERSION" ] exit 1;
