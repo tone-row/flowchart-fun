@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "module/module.js",
   "license": "MIT",
   "dependencies": {
@@ -9,8 +9,8 @@
     "@monaco-editor/react": "^4.0.11",
     "@reach/dialog": "^0.15.0",
     "@react-hook/throttle": "^2.2.0",
-    "@sentry/react": "^6.2.5",
-    "@sentry/tracing": "^6.2.5",
+    "@sentry/react": "6.5.1",
+    "@sentry/tracing": "^6.5.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",

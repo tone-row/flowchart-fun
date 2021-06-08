@@ -10,8 +10,6 @@
     "app:lint:format": "yarn workspace app lint:fix && yarn workspace app format"
   },
   "dependencies": {
-    "@sentry/react": "^6.5.1",
-    "@sentry/tracing": "^6.5.1",
     "@types/cytoscape": "^3.14.15",
     "cytoscape-dagre": "^2.3.2",
     "cytoscape-svg": "^0.3.1"
