@@ -8,13 +8,12 @@ jobs:
       - name: Checkout current branch
         uses: actions/checkout@v2
         with:
+          path: current
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+        with:
+          ref: main
           path: main
-      # - name: Checkout main branch
-      #   uses: actions/checkout@v2
-      #   with:
-      #     ref: main
-      #     path: main
-      - uses: actions/checkout@v2
       - name: Print Package Versions
         run: |
           ls -la
