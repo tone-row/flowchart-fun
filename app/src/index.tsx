@@ -9,6 +9,8 @@ import * as shim from "./shim";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+console.log(process.env.REACT_APP_COMMIT_REF);
+
 Sentry.init({
   release: `flowchartfun@${process.env.REACT_APP_COMMIT_REF}`,
   dsn: "https://5c0087f5d8ae4a6ab7aa4f42eab785f1@o394152.ingest.sentry.io/5673697",
