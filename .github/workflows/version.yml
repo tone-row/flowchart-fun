@@ -9,24 +9,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: current
-
-      - name: Checkout main branch
-        uses: actions/checkout@v2
-        with:
-          ref: main
-          path: main
+      # - name: Checkout main branch
+      #   uses: actions/checkout@v2
+      #   with:
+      #     ref: main
+      #     path: main
       - uses: actions/checkout@v2
       - name: Print Package Versions
         run: |
-          MAIN_PACKAGE_VERSION=$(cat main/app/package.json \
+          CURRENT_PACKAGE_VERSION=$(cat ./current/app/package.json \
             | grep version \
             | head -1 \
             | awk -F: '{ print $2 }' \
             | sed 's/[",]//g');
-          CURRENT_PACKAGE_VERSION=$(cat current/app/package.json \
-            | grep version \
-            | head -1 \
-            | awk -F: '{ print $2 }' \
-            | sed 's/[",]//g');
-          echo $MAIN_PACKAGE_VERSION;
           echo $CURRENT_PACKAGE_VERSION;
