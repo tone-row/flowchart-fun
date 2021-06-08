@@ -1,0 +1,29 @@
+name: Version
+on: push
+jobs:
+  version:
+    name: Check if version has been updated
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v2
+        with:
+          path: current
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+        with:
+          ref: main
+          path: main
+      - name: Print Package Versions
+        run: |
+          CURRENT_PACKAGE_VERSION=$(cat ./current/app/package.json \
+            | grep version \
+            | head -1 \
+            | awk -F: '{ print $2 }' \
+            | sed 's/[",]//g');
+          MAIN_PACKAGE_VERSION=$(cat ./main/app/package.json \
+            | grep version \
+            | head -1 \
+            | awk -F: '{ print $2 }' \
+            | sed 's/[",]//g');
+          [ "$CURRENT_PACKAGE_VERSION" != "$MAIN_PACKAGE_VERSION" ]
