@@ -8,7 +8,7 @@ jobs:
       - name: Checkout current branch
         uses: actions/checkout@v2
         with:
-          path: current
+          path: main
       # - name: Checkout main branch
       #   uses: actions/checkout@v2
       #   with:
