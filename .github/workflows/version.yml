@@ -5,13 +5,28 @@ jobs:
     name: Check if version has been updated
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v2
+        with:
+          path: current
+
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+        with:
+          ref: main
+          path: main
       - uses: actions/checkout@v2
-      - name: Print Package Version
+      - name: Print Package Versions
         run: |
-          PACKAGE_VERSION=$(cat app/package.json \
+          MAIN_PACKAGE_VERSION=$(cat main/app/package.json \
             | grep version \
             | head -1 \
             | awk -F: '{ print $2 }' \
             | sed 's/[",]//g');
-
-          echo $PACKAGE_VERSION;
+          CURRENT_PACKAGE_VERSION=$(cat current/app/package.json \
+            | grep version \
+            | head -1 \
+            | awk -F: '{ print $2 }' \
+            | sed 's/[",]//g');
+          echo $MAIN_PACKAGE_VERSION;
+          echo $CURRENT_PACKAGE_VERSION;
