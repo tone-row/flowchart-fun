@@ -26,4 +26,4 @@ jobs:
             | head -1 \
             | awk -F: '{ print $2 }' \
             | sed 's/[",]//g');
-          if [ "$CURRENT_PACKAGE_VERSION" -eq "$MAIN_PACKAGE_VERSION" ] exit 1;
+          [ "$CURRENT_PACKAGE_VERSION" != "$MAIN_PACKAGE_VERSION" ]
