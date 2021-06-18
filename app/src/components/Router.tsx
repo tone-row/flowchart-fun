@@ -18,6 +18,9 @@ export default function Router() {
           <Route path="/c/:graphText?">
             <ReadOnly compressed={true} />
           </Route>
+          <Route path="/f/:graphText?">
+            <ReadOnly compressed={true} />
+          </Route>
           <Route path="/:workspace">
             <Edit />
           </Route>

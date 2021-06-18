@@ -4,17 +4,22 @@ import Menu from "./Menu";
 import styles from "./Layout.module.css";
 import ColorMode from "./ColorMode";
 import { AppContext } from "./AppContext";
+import { useLocation } from "react-router-dom";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const { showing } = useContext(AppContext);
+  const { pathname } = useLocation();
+  const isFullscreen = pathname === "/f";
   return (
     <Box
       root
       overflow="hidden"
       className={styles.Layout}
-      template="auto minmax(0, 1fr) / none"
+      template={
+        isFullscreen ? "minmax(0, 1fr) / none" : "auto minmax(0, 1fr) / none"
+      }
     >
-      <Menu />
+      {isFullscreen ? null : <Menu />}
       <Box
         as="main"
         className={styles.TabletWrapper}
