@@ -7,6 +7,7 @@ import React, {
   useCallback,
   Suspense,
 } from "react";
+import { useRouteMatch } from "react-router-dom";
 import CurrentTab from "./CurrentTab";
 import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
@@ -24,13 +25,17 @@ const Main = memo(
   ({ children, textToParse, setHoverLineNumber }: MainProps) => {
     const [shouldResize, triggerResize] = useState(0);
     const trigger = useCallback(() => triggerResize((n) => n + 1), []);
+    const { path } = useRouteMatch();
+    const isFullscreen = path === "/f/:graphText?";
     return (
       <>
-        <TabPane triggerResize={trigger}>
-          <Suspense fallback={<Loading />}>
-            <CurrentTab>{children}</CurrentTab>
-          </Suspense>
-        </TabPane>
+        {isFullscreen ? null : (
+          <TabPane triggerResize={trigger}>
+            <Suspense fallback={<Loading />}>
+              <CurrentTab>{children}</CurrentTab>
+            </Suspense>
+          </TabPane>
+        )}
         <GraphWrapper>
           <Graph
             textToParse={textToParse}
