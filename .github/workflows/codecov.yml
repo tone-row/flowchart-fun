@@ -19,5 +19,5 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: ./app/coverage/*.json # optional
-          fail_ci_if_error: true # optional (default = false)
+          fail_ci_if_error: false # optional (default = false)
           verbose: true # optional (default = false)
