@@ -1,4 +1,5 @@
 import { Monaco } from "@monaco-editor/react";
+import { useEffect } from "react";
 import { palette } from "./slang/config";
 
 export const languageId = "flowchartfun";
@@ -20,7 +21,6 @@ export function registerLanguage(monaco: Monaco) {
         [/\s*[\w\s\W]+[:：]\s*/, "keyword.operator.assignment"],
         [/[(（].+[)）]/, "support.function"],
         [/\/\/.*/, "comment"],
-        [/((?!\/\/)(?!\/\*)[^(（])*/, "string"],
       ],
       comment: [
         ["\\*/", "comment", "@pop"],
@@ -37,7 +37,7 @@ export function registerLanguage(monaco: Monaco) {
 export function defineThemes(monaco: Monaco) {
   monaco.editor.defineTheme(themeNameLight, {
     base: "vs",
-    inherit: false,
+    inherit: true,
     rules: [
       { token: "variable.other.property", foreground: palette.purple[0] },
       {
@@ -53,7 +53,7 @@ export function defineThemes(monaco: Monaco) {
 
   monaco.editor.defineTheme(themeNameDark, {
     base: "vs-dark",
-    inherit: false,
+    inherit: true,
     rules: [
       { token: "variable.other.property", foreground: palette.purple[0] },
       {
@@ -66,4 +66,19 @@ export function defineThemes(monaco: Monaco) {
       { token: "meta.embedded.block", foreground: palette.orange[0] },
     ],
   });
+}
+
+export function useMonacoLanguage(monaco: any) {
+  useEffect(() => {
+    if (monaco) {
+      const isRegistered = monaco.languages
+        .getLanguages()
+        .map(({ id }: { id: string }) => id)
+        .includes(languageId);
+
+      if (!isRegistered) {
+        registerLanguage(monaco);
+      }
+    }
+  }, [monaco]);
 }
