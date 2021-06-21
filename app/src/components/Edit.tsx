@@ -23,9 +23,9 @@ import { t } from "@lingui/macro";
 import {
   defineThemes,
   languageId,
-  registerLanguage,
   themeNameDark,
   themeNameLight,
+  useMonacoLanguage,
 } from "../registerLanguage";
 
 declare global {
@@ -48,18 +48,7 @@ function Edit() {
   const { mode } = useContext(AppContext);
 
   // Add language
-  useEffect(() => {
-    if (monaco) {
-      const isRegistered = monaco.languages
-        .getLanguages()
-        .map(({ id }: { id: string }) => id)
-        .includes("flowchartfun");
-
-      if (!isRegistered) {
-        registerLanguage(monaco);
-      }
-    }
-  }, [monaco]);
+  useMonacoLanguage(monaco);
 
   useEffect(() => {
     if (editorRef.current) {
