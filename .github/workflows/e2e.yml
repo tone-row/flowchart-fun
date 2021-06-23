@@ -15,7 +15,7 @@ jobs:
         run: npx playwright install-deps
       - name: Install Deps
         run: |
-          yarn workspace app install --frozen-lockfile
+          yarn
       - name: Wait for 200 from the Netlify Preview
         uses: jakepartusch/wait-for-netlify-action@v1.2
         id: waitFor200
