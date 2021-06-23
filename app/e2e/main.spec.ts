@@ -32,7 +32,7 @@ describe("App", () => {
 
     // Snapshot
     expect(await page.screenshot()).toMatchSnapshot("basic-editing.png", {
-      threshold: 0.2,
+      threshold: 0.5,
     });
   });
 });
