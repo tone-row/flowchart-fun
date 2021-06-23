@@ -52,7 +52,7 @@
     "extract": "lingui extract --clean",
     "compile": "lingui compile",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
-    "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
+    "format": "prettier --write '{src,e2e}/**/*.{ts,tsx,scss,css,json}'",
     "e2e": "npx playwright test --browser=all e2e"
   },
   "eslintConfig": {
