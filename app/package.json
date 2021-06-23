@@ -52,7 +52,8 @@
     "extract": "lingui extract --clean",
     "compile": "lingui compile",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
-    "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'"
+    "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
+    "e2e": "npx playwright test --browser=all e2e"
   },
   "eslintConfig": {
     "extends": [
@@ -75,6 +76,7 @@
   "devDependencies": {
     "@lingui/cli": "^3.8.9",
     "@lingui/macro": "^3.8.9",
+    "@playwright/test": "^1.12.2",
     "@types/cytoscape": "^3.14.12",
     "@types/download": "^6.2.4",
     "@types/file-saver": "^2.0.1",
