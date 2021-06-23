@@ -14,8 +14,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: Setup Playwright
-        run: npx playwright install-deps
       - name: Install Deps
         run: |
           yarn
