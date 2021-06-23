@@ -5,6 +5,9 @@ on: [pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
 
     steps:
       - uses: actions/checkout@v2
@@ -22,4 +25,4 @@ jobs:
         with:
           site_name: "agitated-knuth-acd401"
       - name: Run E2E Tests on Netlify URL
-        run: E2E_START_URL="${{ steps.waitFor200.outputs.url }}" yarn workspace app e2e
+        run: E2E_START_URL="${{ steps.waitFor200.outputs.url }}" yarn e2e
