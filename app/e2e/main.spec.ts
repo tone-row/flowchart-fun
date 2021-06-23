@@ -13,4 +13,26 @@ describe("App", () => {
       "Flowchart Fun - Easily generate graphs from structured text";
     expect(await page.title()).toBe(pageTitle);
   });
+
+  test.only("User can enter text", async ({ page }) => {
+    // Select Text
+    await page.click(':nth-match(:text("This app works by typing"), 2)');
+
+    // Select All
+    await page.press(".view-lines", "Meta+a");
+
+    // Delete
+    await page.press(".view-lines", "Backspace");
+
+    // Type
+    await page.type(".view-lines", `Hello\n\tWorld\n\t\t1 2 3`);
+
+    // Wait for graph to animate
+    await new Promise((res) => setTimeout(res, 2500));
+
+    // Snapshot
+    expect(await page.screenshot()).toMatchSnapshot("basic-editing.png", {
+      threshold: 0.2,
+    });
+  });
 });
