@@ -30,4 +30,4 @@ jobs:
         if: ${{ always() }}
         with:
           name: test-results
-          path: test-results
+          path: app/test-results
