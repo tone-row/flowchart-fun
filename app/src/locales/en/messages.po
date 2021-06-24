@@ -17,11 +17,11 @@ msgstr ""
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/components/Navigation.tsx:139
+#: src/components/Navigation.tsx:146
 msgid "Are you sure you want to delete this?"
 msgstr "Are you sure you want to delete this?"
 
-#: src/components/Navigation.tsx:138
+#: src/components/Navigation.tsx:145
 msgid "Are you sure you want to reset this?"
 msgstr "Are you sure you want to reset this?"
 
@@ -37,8 +37,8 @@ msgstr "Bottom to Top"
 msgid "Breadthfirst"
 msgstr "Breadthfirst"
 
-#: src/components/Navigation.tsx:147
-#: src/components/Navigation.tsx:179
+#: src/components/Navigation.tsx:154
+#: src/components/Navigation.tsx:186
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -54,12 +54,12 @@ msgstr "Circle"
 msgid "Concentric"
 msgstr "Concentric"
 
-#: src/components/Navigation.tsx:73
-#: src/components/Navigation.tsx:182
+#: src/components/Navigation.tsx:75
+#: src/components/Navigation.tsx:189
 msgid "Create"
 msgstr "Create"
 
-#: src/components/Navigation.tsx:66
+#: src/components/Navigation.tsx:68
 msgid "Create a New Chart"
 msgstr "Create a New Chart"
 
@@ -71,9 +71,9 @@ msgstr "Create a link directly using the exact label text"
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/components/Navigation.tsx:100
-#: src/components/Navigation.tsx:133
-#: src/components/Navigation.tsx:150
+#: src/components/Navigation.tsx:106
+#: src/components/Navigation.tsx:140
+#: src/components/Navigation.tsx:157
 msgid "Delete"
 msgstr "Delete"
 
@@ -87,8 +87,8 @@ msgstr "Direction"
 msgid "Download"
 msgstr "Download"
 
-#: src/components/Navigation.tsx:97
-#: src/components/Navigation.tsx:167
+#: src/components/Navigation.tsx:103
+#: src/components/Navigation.tsx:174
 msgid "Duplicate"
 msgstr "Duplicate"
 
@@ -112,7 +112,7 @@ msgstr "Grid"
 msgid "Have fun! 🎉"
 msgstr "Have fun! 🎉"
 
-#: src/components/Edit.tsx:94
+#: src/components/Edit.tsx:99
 msgid "Help"
 msgstr "Help"
 
@@ -152,8 +152,8 @@ msgstr "Open Share Link"
 msgid "Random"
 msgstr "Random"
 
-#: src/components/Navigation.tsx:100
-#: src/components/Navigation.tsx:150
+#: src/components/Navigation.tsx:106
+#: src/components/Navigation.tsx:157
 msgid "Reset"
 msgstr "Reset"
 
@@ -169,6 +169,10 @@ msgstr "Settings"
 #: src/components/Menu.tsx:64
 msgid "Share"
 msgstr "Share"
+
+#: src/components/HasError.tsx:12
+msgid "Text Invalid"
+msgstr "Text Invalid"
 
 #: src/hooks.ts:12
 msgid "This app works by typing"
@@ -186,11 +190,11 @@ msgstr "User Preferences"
 msgid "View on Github"
 msgstr "View on Github"
 
-#: src/components/Navigation.tsx:171
+#: src/components/Navigation.tsx:178
 msgid "What would you like to name this copy?"
 msgstr "What would you like to name this copy?"
 
-#: src/components/Navigation.tsx:82
+#: src/components/Navigation.tsx:84
 msgid "Your Charts"
 msgstr "Your Charts"
 

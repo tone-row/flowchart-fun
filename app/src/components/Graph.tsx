@@ -16,13 +16,13 @@ import cytoscape, {
 import { useDebouncedCallback } from "use-debounce";
 import dagre from "cytoscape-dagre";
 import cytoscapeSvg from "cytoscape-svg";
-import { delimiters, GraphOptionsObject, LAYOUT } from "../constants";
+import { delimiters, GraphOptionsObject, defaultLayout } from "../constants";
 import { parseText, stripComments } from "../utils";
 import styles from "./Graph.module.css";
 import { saveAs } from "file-saver";
 import { Box } from "../slang";
 import { compressToEncodedURIComponent as compress } from "lz-string";
-import matter from "gray-matter";
+import frontmatter from "gray-matter";
 import { AppContext } from "./AppContext";
 import { colors } from "../slang/config";
 import { useAnimationSetting } from "../hooks";
@@ -52,10 +52,10 @@ const Graph = memo(
     shouldResize: number;
   }) => {
     const cy = useRef<undefined | Core>();
-    const errorCy = useRef<undefined | Core>();
+    const errorCatcher = useRef<undefined | Core>();
     const animate = useAnimationSetting();
     const graphInitialized = useRef(false);
-    const { theme, setShareLink } = useContext(AppContext);
+    const { theme, setShareLink, setHasError } = useContext(AppContext);
     const themeString = JSON.stringify(theme);
 
     const updateGraph = useCallback(() => {
@@ -65,39 +65,39 @@ const Graph = memo(
         let layout = {};
 
         try {
-          const {
-            data,
-            content,
-            matter: dataString,
-          } = matter(stripComments(textToParse), {
-            delimiters,
-          });
+          const { data, content, matter } = frontmatter(
+            stripComments(textToParse),
+            {
+              delimiters,
+            }
+          );
+
           const startingLineNumber =
-            !dataString || dataString === ""
-              ? 0
-              : dataString.split("\n").length + 1;
-          const { layout: newLayout = {} } = data as GraphOptionsObject;
+            !matter || matter === "" ? 0 : matter.split("\n").length + 1;
+          const { layout: userLayout = {} } = data as GraphOptionsObject;
           newElements = parseText(content, startingLineNumber);
-          errorCy.current?.json({ elements: newElements });
-          errorCy.current
+          errorCatcher.current?.json({ elements: newElements });
+          errorCatcher.current
             ?.layout({
-              ...LAYOUT,
-              ...newLayout,
+              ...defaultLayout,
+              ...userLayout,
               animate: false,
-            } as any)
+              name: "null",
+            })
             .run();
-          layout = newLayout;
+          layout = userLayout;
         } catch (e) {
           error = true;
-          errorCy.current?.destroy();
-          errorCy.current = cytoscape();
+          errorCatcher.current?.destroy();
+          errorCatcher.current = cytoscape();
+          setHasError(true);
         }
 
         if (!error) {
           cy.current.json({ elements: newElements });
           cy.current
             .layout({
-              ...LAYOUT,
+              ...defaultLayout,
               ...layout,
               animate: graphInitialized.current
                 ? newElements.length < 200
@@ -108,9 +108,15 @@ const Graph = memo(
             .run();
           cy.current.center();
           graphInitialized.current = true;
+          // Reinitialize error catcher because
+          // the cy.json method clearly stores some memory
+          // which causes it not always to catch errors
+          errorCatcher.current?.destroy();
+          errorCatcher.current = cytoscape();
+          setHasError(false);
         }
       }
-    }, [animate, textToParse]);
+    }, [animate, setHasError, textToParse]);
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -213,10 +219,10 @@ const Graph = memo(
     }, [setShareLink, textToParse]);
 
     useEffect(() => {
-      errorCy.current = cytoscape();
+      errorCatcher.current = cytoscape();
       cy.current = cytoscape({
         container: document.getElementById("cy"), // container to render in
-        layout: { ...LAYOUT },
+        layout: { ...defaultLayout },
         elements: [],
         style: getCyStyleFromTheme(colors),
         userZoomingEnabled: true,
@@ -225,7 +231,7 @@ const Graph = memo(
         wheelSensitivity: 0.2,
       });
       const cyCurrent = cy.current;
-      const errorCyCurrent = errorCy.current;
+      const errorCyCurrent = errorCatcher.current;
 
       // Hovering Events
       function nodeHighlight(this: NodeSingular) {
@@ -261,7 +267,7 @@ const Graph = memo(
         cyCurrent.destroy();
         errorCyCurrent.destroy();
         cy.current = undefined;
-        errorCy.current = undefined;
+        errorCatcher.current = undefined;
         document
           .getElementById("cy")
           ?.removeEventListener("mouseout", handleMouseOut);

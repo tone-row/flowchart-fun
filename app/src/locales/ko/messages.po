@@ -17,11 +17,11 @@ msgstr ""
 msgid "Appearance"
 msgstr "외관"
 
-#: src/components/Navigation.tsx:139
+#: src/components/Navigation.tsx:146
 msgid "Are you sure you want to delete this?"
 msgstr "삭제하시겠습니까?"
 
-#: src/components/Navigation.tsx:138
+#: src/components/Navigation.tsx:145
 msgid "Are you sure you want to reset this?"
 msgstr "재설정하시겠습니까?"
 
@@ -37,8 +37,8 @@ msgstr "아래에서 위로"
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
-#: src/components/Navigation.tsx:147
-#: src/components/Navigation.tsx:179
+#: src/components/Navigation.tsx:154
+#: src/components/Navigation.tsx:186
 msgid "Cancel"
 msgstr "취소"
 
@@ -54,12 +54,12 @@ msgstr "원"
 msgid "Concentric"
 msgstr "동심"
 
-#: src/components/Navigation.tsx:73
-#: src/components/Navigation.tsx:182
+#: src/components/Navigation.tsx:75
+#: src/components/Navigation.tsx:189
 msgid "Create"
 msgstr "만들기"
 
-#: src/components/Navigation.tsx:66
+#: src/components/Navigation.tsx:68
 msgid "Create a New Chart"
 msgstr "새 차트 만들기"
 
@@ -71,9 +71,9 @@ msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 msgid "Dark Mode"
 msgstr "다크 모드"
 
-#: src/components/Navigation.tsx:100
-#: src/components/Navigation.tsx:133
-#: src/components/Navigation.tsx:150
+#: src/components/Navigation.tsx:106
+#: src/components/Navigation.tsx:140
+#: src/components/Navigation.tsx:157
 msgid "Delete"
 msgstr "삭제"
 
@@ -87,8 +87,8 @@ msgstr "방향"
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/Navigation.tsx:97
-#: src/components/Navigation.tsx:167
+#: src/components/Navigation.tsx:103
+#: src/components/Navigation.tsx:174
 msgid "Duplicate"
 msgstr "복제"
 
@@ -112,7 +112,7 @@ msgstr "그리드"
 msgid "Have fun! 🎉"
 msgstr "즐겨보세요! 🎉"
 
-#: src/components/Edit.tsx:94
+#: src/components/Edit.tsx:99
 msgid "Help"
 msgstr "도움말"
 
@@ -152,8 +152,8 @@ msgstr "공유 링크 열기"
 msgid "Random"
 msgstr "무작위"
 
-#: src/components/Navigation.tsx:100
-#: src/components/Navigation.tsx:150
+#: src/components/Navigation.tsx:106
+#: src/components/Navigation.tsx:157
 msgid "Reset"
 msgstr "재설정"
 
@@ -169,6 +169,10 @@ msgstr "설정"
 #: src/components/Menu.tsx:64
 msgid "Share"
 msgstr "공유"
+
+#: src/components/HasError.tsx:12
+msgid "Text Invalid"
+msgstr ""
 
 #: src/hooks.ts:12
 msgid "This app works by typing"
@@ -186,11 +190,11 @@ msgstr "사용자 기본 설정"
 msgid "View on Github"
 msgstr "Github에서 보기"
 
-#: src/components/Navigation.tsx:171
+#: src/components/Navigation.tsx:178
 msgid "What would you like to name this copy?"
 msgstr "이 사본의 이름을 무엇으로 지정하시겠습니까?"
 
-#: src/components/Navigation.tsx:82
+#: src/components/Navigation.tsx:84
 msgid "Your Charts"
 msgstr "귀하의 차트"
 
