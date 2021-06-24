@@ -1,20 +1,13 @@
 import { test, expect } from "@playwright/test";
 const { describe, beforeEach } = test;
 
-const startUrl = process.env.E2E_START_URL ?? "http://localhost:3000";
+const startUrl =
+  process.env.E2E_START_URL ?? "http://localhost:3000?animation=0";
 
 describe("App", () => {
   beforeEach(async ({ page }) => {
     await page.goto(startUrl);
-  });
 
-  test("Correct Page Title", async ({ page }) => {
-    const pageTitle =
-      "Flowchart Fun - Easily generate graphs from structured text";
-    expect(await page.title()).toBe(pageTitle);
-  });
-
-  test.only("User can enter text", async ({ page }) => {
     // Select Text
     await page.click(':nth-match(:text("This app works by typing"), 2)');
 
@@ -24,15 +17,57 @@ describe("App", () => {
     // Delete
     await page.press(".view-lines", "Backspace");
 
-    // Type
-    await page.type(".view-lines", `Hello\n\tWorld\n\t\t1 2 3`);
+    await page.type(".view-lines", `hello\n  [test] world\n  (hello)\n`);
 
-    // Wait for graph to animate
-    await new Promise((res) => setTimeout(res, 2500));
+    await page.press(".view-lines", "Meta+Backspace");
 
-    // Snapshot
-    expect(await page.screenshot()).toMatchSnapshot("basic-editing.png", {
-      threshold: 0.5,
-    });
+    await page.type(".view-lines", `goodbye\n  (test)`);
+  });
+
+  // test.skip("User can type", async ({page}) => {})
+  // test.skip("User can change graph type", async ({page}) => {})
+  // test.skip("User can change user settings", async ({page}) => {})
+  // test.skip("User can create a new graph", async ({page}) => {})
+
+  test("SVG", async ({ page }) => {
+    const [download] = await Promise.all([
+      page.waitForEvent("download"), // wait for download to start
+      page.click('button:has-text("SVG")'),
+    ]);
+
+    const stream = await download.createReadStream();
+    const buffer = await streamToBuffer(stream);
+    expect(buffer).toMatchSnapshot("test.svg");
+  });
+
+  test("PNG", async ({ page }) => {
+    const [download] = await Promise.all([
+      page.waitForEvent("download"), // wait for download to start
+      page.click('button:has-text("PNG")'),
+    ]);
+
+    const stream = await download.createReadStream();
+    const buffer = await streamToBuffer(stream);
+    expect(buffer).toMatchSnapshot("test.png");
+  });
+
+  test("JPG", async ({ page }) => {
+    const [download] = await Promise.all([
+      page.waitForEvent("download"), // wait for download to start
+      page.click('button:has-text("JPG")'),
+    ]);
+
+    const stream = await download.createReadStream();
+    const buffer = await streamToBuffer(stream);
+    expect(buffer).toMatchSnapshot("test.jpg");
   });
 });
+
+function streamToBuffer(stream) {
+  const chunks = [];
+  return new Promise((resolve, reject) => {
+    stream.on("data", (chunk) => chunks.push(Buffer.from(chunk)));
+    stream.on("error", (err) => reject(err));
+    stream.on("end", () => resolve(Buffer.concat(chunks)));
+  });
+}
