@@ -1,0 +1,33 @@
+name: E2E
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Setup Playwright
+        run: npx playwright install-deps
+      - name: Install Deps
+        run: |
+          yarn
+      - name: Wait for 200 from the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1.2
+        id: waitFor200
+        with:
+          site_name: "agitated-knuth-acd401"
+      - name: Run E2E Tests on Netlify URL
+        run: E2E_START_URL="${{ steps.waitFor200.outputs.url }}" yarn e2e
+      - uses: actions/upload-artifact@v2
+        if: ${{ always() }}
+        with:
+          name: test-results
+          path: app/test-results

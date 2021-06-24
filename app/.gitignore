@@ -24,3 +24,6 @@ yarn-error.log*
 
 # module
 /module
+
+# testing
+/test-results
