@@ -70,6 +70,7 @@ describe("App", () => {
     await new Promise((res) => setTimeout(res, 500));
 
     // Expect the tab to be in French
+    await page.waitForSelector('button[role="tab"]:has-text("Éditeur")');
     expect(await page.isVisible('button[role="tab"]:has-text("Éditeur")')).toBe(
       true
     );
