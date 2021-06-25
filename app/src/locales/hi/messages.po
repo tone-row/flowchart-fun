@@ -172,7 +172,7 @@ msgstr "शेयर"
 
 #: src/components/HasError.tsx:12
 msgid "Text Invalid"
-msgstr ""
+msgstr "टेक्स्ट अमान्य है"
 
 #: src/hooks.ts:12
 msgid "This app works by typing"
