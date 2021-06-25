@@ -27,6 +27,7 @@ import {
   themeNameLight,
   useMonacoLanguage,
 } from "../registerLanguage";
+import HasError from "./HasError";
 
 declare global {
   interface Window {
@@ -45,7 +46,7 @@ function Edit() {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const decorations = useRef<any[]>([]);
-  const { mode } = useContext(AppContext);
+  const { mode, hasError } = useContext(AppContext);
 
   // Add language
   useMonacoLanguage(monaco);
@@ -138,6 +139,7 @@ function Edit() {
         }}
       />
       <HelpButton />
+      <HasError show={hasError} />
     </GraphProvider>
   );
 }

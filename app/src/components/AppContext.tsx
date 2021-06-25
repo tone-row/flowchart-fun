@@ -36,6 +36,8 @@ type TAppContext = {
   language: string;
   showing: Showing;
   setShowing: Dispatch<SetStateAction<Showing>>;
+  hasError: boolean;
+  setHasError: Dispatch<SetStateAction<boolean>>;
 } & Partial<UserSettings>;
 
 export const AppContext = createContext({} as TAppContext);
@@ -81,6 +83,8 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     window.localStorage.removeItem("flowcharts.fun:");
   }, []);
 
+  const [hasError, setHasError] = useState(false);
+
   return (
     <AppContext.Provider
       value={{
@@ -90,6 +94,8 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         updateUserSettings,
         showing,
         setShowing,
+        hasError,
+        setHasError,
         ...settings,
         language: settings.language ?? defaultLanguage,
       }}

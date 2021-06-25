@@ -89,4 +89,55 @@ describe("App", () => {
     const url = await page.$eval("html", () => window.location.pathname);
     expect(url).toEqual("/my-new-chart");
   });
+
+  test("SVG", async ({ page }) => {
+    await page.goto(
+      `${startUrl}/c#BYUwNmD2BQAEsG0AuIDOSC6sDukBOYAJnPLABSgSQCU0A5pJIQEYCeIJZK61QA`
+    );
+    const [download] = await Promise.all([
+      page.waitForEvent("download"), // wait for download to start
+      page.click('button:has-text("SVG")'),
+    ]);
+
+    const stream = await download.createReadStream();
+    const buffer = await streamToBuffer(stream);
+    expect(buffer).toMatchSnapshot("test.svg", { threshold: 1 });
+  });
+
+  test("PNG", async ({ page }) => {
+    await page.goto(
+      `${startUrl}/c#BYUwNmD2BQAEsG0AuIDOSC6sDukBOYAJnPLABSgSQCU0A5pJIQEYCeIJZK61QA`
+    );
+    const [download] = await Promise.all([
+      page.waitForEvent("download"), // wait for download to start
+      page.click('button:has-text("PNG")'),
+    ]);
+
+    const stream = await download.createReadStream();
+    const buffer = await streamToBuffer(stream);
+    expect(buffer).toMatchSnapshot("test.png", { threshold: 1 });
+  });
+
+  test("JPG", async ({ page }) => {
+    await page.goto(
+      `${startUrl}/c#BYUwNmD2BQAEsG0AuIDOSC6sDukBOYAJnPLABSgSQCU0A5pJIQEYCeIJZK61QA`
+    );
+    const [download] = await Promise.all([
+      page.waitForEvent("download"), // wait for download to start
+      page.click('button:has-text("JPG")'),
+    ]);
+
+    const stream = await download.createReadStream();
+    const buffer = await streamToBuffer(stream);
+    expect(buffer).toMatchSnapshot("test.jpg", { threshold: 1 });
+  });
 });
+
+function streamToBuffer(stream) {
+  const chunks = [];
+  return new Promise((resolve, reject) => {
+    stream.on("data", (chunk) => chunks.push(Buffer.from(chunk)));
+    stream.on("error", (err) => reject(err));
+    stream.on("end", () => resolve(Buffer.concat(chunks)));
+  });
+}

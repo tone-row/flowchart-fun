@@ -17,11 +17,11 @@ msgstr ""
 msgid "Appearance"
 msgstr "दिखावट"
 
-#: src/components/Navigation.tsx:139
+#: src/components/Navigation.tsx:146
 msgid "Are you sure you want to delete this?"
 msgstr "क्या आप वाकई इसे हटाना चाहते हैं?"
 
-#: src/components/Navigation.tsx:138
+#: src/components/Navigation.tsx:145
 msgid "Are you sure you want to reset this?"
 msgstr "क्या आप वाकई इसे रीसेट करना चाहते हैं?"
 
@@ -37,8 +37,8 @@ msgstr "नीचे से शीर्ष तक"
 msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
-#: src/components/Navigation.tsx:147
-#: src/components/Navigation.tsx:179
+#: src/components/Navigation.tsx:154
+#: src/components/Navigation.tsx:186
 msgid "Cancel"
 msgstr "रद्द करें"
 
@@ -54,12 +54,12 @@ msgstr "परिधि"
 msgid "Concentric"
 msgstr "गाढ़ा"
 
-#: src/components/Navigation.tsx:73
-#: src/components/Navigation.tsx:182
+#: src/components/Navigation.tsx:75
+#: src/components/Navigation.tsx:189
 msgid "Create"
 msgstr "बनाएँ"
 
-#: src/components/Navigation.tsx:66
+#: src/components/Navigation.tsx:68
 msgid "Create a New Chart"
 msgstr "एक नया चार्ट बनाएँ"
 
@@ -71,9 +71,9 @@ msgstr "सही लेबल टेक्स्ट का उपयोग क�
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/components/Navigation.tsx:100
-#: src/components/Navigation.tsx:133
-#: src/components/Navigation.tsx:150
+#: src/components/Navigation.tsx:106
+#: src/components/Navigation.tsx:140
+#: src/components/Navigation.tsx:157
 msgid "Delete"
 msgstr "हटाएँ"
 
@@ -87,8 +87,8 @@ msgstr "दिशा"
 msgid "Download"
 msgstr "डाउनलोड"
 
-#: src/components/Navigation.tsx:97
-#: src/components/Navigation.tsx:167
+#: src/components/Navigation.tsx:103
+#: src/components/Navigation.tsx:174
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
 
@@ -112,7 +112,7 @@ msgstr "ग्रिड"
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/components/Edit.tsx:94
+#: src/components/Edit.tsx:99
 msgid "Help"
 msgstr "मदद"
 
@@ -152,8 +152,8 @@ msgstr "शेयर लिंक खोलें"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/components/Navigation.tsx:100
-#: src/components/Navigation.tsx:150
+#: src/components/Navigation.tsx:106
+#: src/components/Navigation.tsx:157
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -169,6 +169,10 @@ msgstr "सेटिंग्स"
 #: src/components/Menu.tsx:64
 msgid "Share"
 msgstr "शेयर"
+
+#: src/components/HasError.tsx:12
+msgid "Text Invalid"
+msgstr "टेक्स्ट अमान्य है"
 
 #: src/hooks.ts:12
 msgid "This app works by typing"
@@ -186,11 +190,11 @@ msgstr "उपयोगकर्ता वरीयताएं"
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/components/Navigation.tsx:171
+#: src/components/Navigation.tsx:178
 msgid "What would you like to name this copy?"
 msgstr "क्या आप इस कॉपी को नाम देना चाहेंगे?"
 
-#: src/components/Navigation.tsx:82
+#: src/components/Navigation.tsx:84
 msgid "Your Charts"
 msgstr "आपके चार्ट"
 

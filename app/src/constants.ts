@@ -1,11 +1,14 @@
 import { EditorProps } from "@monaco-editor/react";
+import cytoscape from "cytoscape";
 
-export const LAYOUT: any = {
+export const defaultLayout: cytoscape.LayoutOptions = {
   name: "dagre",
   fit: true,
   animate: true,
-  rankDir: "LR",
   spacingFactor: 1.25,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  rankDir: "LR", // Specific to cytoscape-dagre
 };
 
 export const editorOptions: EditorProps["options"] = {
