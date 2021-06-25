@@ -94,8 +94,10 @@ const Graph = memo(
         }
 
         if (!error) {
-          cy.current.json({ elements: newElements });
           cy.current
+            .json({
+              elements: newElements,
+            })
             .layout({
               ...defaultLayout,
               ...layout,
@@ -144,6 +146,7 @@ const Graph = memo(
         const svgStr = cy.current.svg({
           full: true,
           scale: 1.5,
+          quality: 1,
           bg: theme.background === "#ffffff" ? undefined : theme.background,
         });
         const domparser = new DOMParser();
@@ -177,7 +180,7 @@ const Graph = memo(
       if (cy.current) {
         const pngStr = cy.current.png({
           full: true,
-          scale: 1.5,
+          scale: 2,
           output: "blob",
         });
         saveAs(
@@ -193,7 +196,8 @@ const Graph = memo(
       if (cy.current) {
         const jpgStr = cy.current.jpg({
           full: true,
-          scale: 1.5,
+          scale: 2,
+          quality: 1,
           output: "blob",
           bg: theme.background,
         });
