@@ -172,7 +172,7 @@ msgstr "공유"
 
 #: src/components/HasError.tsx:12
 msgid "Text Invalid"
-msgstr ""
+msgstr "잘못된 텍스트"
 
 #: src/hooks.ts:12
 msgid "This app works by typing"
