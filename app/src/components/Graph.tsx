@@ -110,9 +110,7 @@ const Graph = memo(
             .run();
           cy.current.center();
           graphInitialized.current = true;
-          // Reinitialize error catcher because
-          // the cy.json method clearly stores some memory
-          // which causes it not always to catch errors
+          // Reinitialize to avoid missing errors
           errorCatcher.current?.destroy();
           errorCatcher.current = cytoscape();
           setHasError(false);
