@@ -22,7 +22,7 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
       {isFullscreen ? null : <Menu />}
       <Box
         as="main"
-        className={styles.TabletWrapper}
+        className={isFullscreen ? undefined : styles.TabletWrapper}
         at={{ tablet: { display: "flex", template: "none / none" } }}
         data-showing={showing}
       >
