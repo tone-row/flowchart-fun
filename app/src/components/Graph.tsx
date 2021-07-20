@@ -77,12 +77,10 @@ const Graph = memo(
           const { layout: userLayout = {} } = data as GraphOptionsObject;
           newElements = parseText(content, startingLineNumber);
           errorCatcher.current?.json({ elements: newElements });
-          errorCatcher.current
-            ?.layout({
-              ...defaultLayout,
-              ...userLayout,
-            })
-            .run();
+          errorCatcher.current?.layout({
+            ...defaultLayout,
+            ...userLayout,
+          });
           layout = userLayout;
         } catch (e) {
           error = true;
