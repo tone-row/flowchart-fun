@@ -81,8 +81,6 @@ const Graph = memo(
             ?.layout({
               ...defaultLayout,
               ...userLayout,
-              animate: false,
-              name: "null",
             })
             .run();
           layout = userLayout;
