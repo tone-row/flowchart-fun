@@ -33,6 +33,9 @@ export const editorOptions: EditorProps["options"] = {
   cursorWidth: 2,
 };
 
-export type GraphOptionsObject = { layout?: Partial<cytoscape.LayoutOptions> };
+export type GraphOptionsObject = {
+  layout?: Partial<cytoscape.LayoutOptions>;
+  style?: cytoscape.Stylesheet[];
+};
 
 export const delimiters = "~~~";

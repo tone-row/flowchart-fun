@@ -12,7 +12,7 @@ import useLocalStorage from "react-use-localstorage";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
 
-type Theme = typeof colors;
+export type Theme = typeof colors;
 
 export type Showing = "navigation" | "editor" | "settings" | "share";
 
