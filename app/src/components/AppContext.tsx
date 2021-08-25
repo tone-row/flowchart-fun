@@ -55,14 +55,15 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   }>(() => {
     try {
       const settings = JSON.parse(userSettingsString);
-      const theme =
-        settings.mode === "dark"
-          ? darkTheme
-          : typeof settings.mode === "undefined" &&
-            window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? darkTheme
-          : colors;
+      if (typeof settings.mode === "undefined") {
+        settings.mode =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+      }
+      const theme = settings.mode === "dark" ? darkTheme : colors;
+
       return { settings, theme };
     } catch (e) {
       console.error(e);

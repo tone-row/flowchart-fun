@@ -197,7 +197,6 @@ function updateGraph(
 
       // Parse
       const elements = parseText(content, startingLineNumber);
-      console.log(elements);
 
       // Test Error First
       errorCatcher.current?.json({ elements, style });
