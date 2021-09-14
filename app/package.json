@@ -9,6 +9,7 @@
     "@monaco-editor/react": "^4.0.11",
     "@reach/dialog": "^0.15.0",
     "@react-hook/throttle": "^2.2.0",
+    "@sendgrid/mail": "^7.4.6",
     "@sentry/react": "6.5.1",
     "@sentry/tracing": "^6.5.1",
     "@testing-library/jest-dom": "^5.11.4",

@@ -11,6 +11,7 @@
 type Breakpoints = "small" | "tablet" | "desktop";
 type Colors = 
   | "color-background"
+  | "color-backgroundHsl"
   | "color-foreground"
   | "color-lineColor"
   | "color-uiAccent"

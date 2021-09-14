@@ -12,6 +12,7 @@ export const palette = {
 
 export const colors = {
   background: palette.white[0],
+  backgroundHsl: "0, 0%, 100%",
   foreground: palette.black[0],
   lineColor: palette.black[0],
   uiAccent: palette.white[1],
@@ -26,6 +27,7 @@ export const colors = {
 
 export const darkTheme: typeof colors = {
   background: "#0f0f0f",
+  backgroundHsl: "0, 0%, 6%",
   foreground: "rgb(250, 250, 250)",
   edgeHover: "#2e2e2e",
   lineColor: "yellow",

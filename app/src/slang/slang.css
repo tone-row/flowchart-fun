@@ -618,6 +618,7 @@ body {
 	--palette-orange-0:#ff7044;
 	--palette-orange-1:#ffa500;
 	--color-background:#ffffff;
+	--color-backgroundHsl:0, 0%, 100%;
 	--color-foreground:#000000;
 	--color-lineColor:#000000;
 	--color-uiAccent:#ededec;
