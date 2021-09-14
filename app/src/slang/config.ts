@@ -1,8 +1,8 @@
 import { SlangConfig } from "@tone-row/slang";
 
 export const palette = {
-  white: ["#ffffff", "#ededec", "#f0f0f0", "#aaaaaa", "##757575"],
-  black: ["#000000"],
+  white: ["#ffffff", "#ededec", "#f0f0f0", "#aaaaaa", "#757575", "#fafafa"],
+  black: ["#000000", "#202020"],
   purple: ["#5c6fff", "#929bff", "#D3CCF3"],
   green: ["#01d857", "#84ff82", "#00c722"],
   blue: ["#3947ff"],
@@ -21,6 +21,7 @@ export const colors = {
   buttonFocus: palette.purple[0],
   highlightColor: palette.purple[0],
   overlayColor: "0, 50%, 0%",
+  input: palette.white[5],
 };
 
 export const darkTheme: typeof colors = {
@@ -34,6 +35,7 @@ export const darkTheme: typeof colors = {
   buttonFocus: palette.purple[0],
   highlightColor: palette.purple[0],
   overlayColor: "0, 50%, 100%",
+  input: palette.black[1],
 };
 
 const config: Partial<SlangConfig> = {

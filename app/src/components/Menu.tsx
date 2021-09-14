@@ -46,6 +46,9 @@ const Menu = memo(() => {
         <MenuButton show="navigation" onClick={() => setShowing("navigation")}>
           <Trans>Charts</Trans>
         </MenuButton>
+        <MenuButton show="feedback" onClick={() => setShowing("feedback")}>
+          <Trans>Feedback</Trans>
+        </MenuButton>
         <MenuButton
           show="share"
           onClick={() => setShowing("share")}

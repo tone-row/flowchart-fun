@@ -602,8 +602,10 @@ body {
 	--palette-white-1:#ededec;
 	--palette-white-2:#f0f0f0;
 	--palette-white-3:#aaaaaa;
-	--palette-white-4:##757575;
+	--palette-white-4:#757575;
+	--palette-white-5:#fafafa;
 	--palette-black-0:#000000;
+	--palette-black-1:#202020;
 	--palette-purple-0:#5c6fff;
 	--palette-purple-1:#929bff;
 	--palette-purple-2:#D3CCF3;
@@ -621,10 +623,11 @@ body {
 	--color-uiAccent:#ededec;
 	--color-nodeHover:#f0f0f0;
 	--color-edgeHover:#aaaaaa;
-	--color-lineNumbers:##757575;
+	--color-lineNumbers:#757575;
 	--color-buttonFocus:#5c6fff;
 	--color-highlightColor:#5c6fff;
 	--color-overlayColor:0, 50%, 0%;
+	--color-input:#fafafa;
  }
 
 .slang-box.flow {

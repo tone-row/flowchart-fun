@@ -3,6 +3,7 @@ import { AppContext } from "./AppContext";
 const Share = lazy(() => import("./Share"));
 const Settings = lazy(() => import("./Settings"));
 const Navigation = lazy(() => import("./Navigation"));
+const Feedback = lazy(() => import("./Feedback"));
 
 export default function CurrentTab({ children }: { children: ReactNode }) {
   const { showing } = useContext(AppContext);
@@ -15,6 +16,8 @@ export default function CurrentTab({ children }: { children: ReactNode }) {
       <Share />
     ) : showing === "navigation" ? (
       <Navigation />
+    ) : showing === "feedback" ? (
+      <Feedback />
     ) : (
       showing
     );
