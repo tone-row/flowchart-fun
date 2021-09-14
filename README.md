@@ -18,6 +18,14 @@ This repository is organized in workspaces. [/app](/app) contains the code for h
 
 For more information on developing, check out [create-react-app's README](https://github.com/facebook/create-react-app/blob/master/README.md)
 
+_NOTE_ – the module is no longer maintained
+
+## Feedback / Backend Functionality
+
+This app sends emails using Sendgrid and Vercel's serverless functions.
+
+It's possible to run this app without the feedback functionality, but if you do wish to run it with the feedback functionality you will need to deploy it on vercel and set the `REACT_APP_FEEDBACK_TO` and `SENDGRID_API_KEY` environment variables.
+
 ## Contributing
 
 This repo is always open to contributions. Before opening a PR with a new feature, consider opening an issue or discussion to gauge support and confirm your implementation.

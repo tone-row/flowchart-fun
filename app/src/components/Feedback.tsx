@@ -13,7 +13,7 @@ const largeGap = 10;
 type FormData = { from?: string; text: string };
 
 const msg = {
-  to: "info@tone-row.com",
+  to: process.env.REACT_APP_FEEDBACK_TO,
   subject: "Flowchart Fun Feedback",
 };
 
