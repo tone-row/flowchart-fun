@@ -5,7 +5,7 @@ on: [pull_request]
 jobs:
   commit_hash:
     name: Wait for Preview
-    runs-on: "ubuntu-latest"
+    runs-on: "macos-latest"
     steps:
       - name: Wait until ready
         id: get_url
@@ -24,4 +24,18 @@ jobs:
           echo "Deployment is ready!"
           URL=https://$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .url')
           echo ::set-output name=preview_url::$(echo $URL)
-      - run: echo ${{ steps.get_url.outputs.preview_url }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Setup Playwright
+        run: npx playwright install-deps
+      - name: Install Deps
+        run: yarn install --network-timeout 1000000
+      - name: Run E2E Tests on Netlify URL
+        run: E2E_START_URL="${{ steps.get_url.outputs.preview_url }}" yarn e2e
+      - uses: actions/upload-artifact@v2
+        if: ${{ always() }}
+        with:
+          name: test-results
+          path: app/test-results
