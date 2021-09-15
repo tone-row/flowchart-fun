@@ -1,4 +1,4 @@
-import { Trans } from "@lingui/macro";
+import { Trans, t } from "@lingui/macro";
 import { ReactNode, useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Box, BoxProps, Type } from "../slang";
@@ -17,8 +17,7 @@ const msg = {
   subject: "Flowchart Fun Feedback",
 };
 
-const defaultError =
-  "An error occured. Try re-submitting or email info@tone-row.com directly.";
+const defaultError = t`An error occurred. Try resubmitting or email ${process.env.REACT_APP_FEEDBACK_TO} directly.`;
 
 export default function Feedback() {
   const { register, handleSubmit, reset } = useForm<FormData>();
