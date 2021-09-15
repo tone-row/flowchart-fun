@@ -21,3 +21,5 @@ jobs:
             sleep 5
           done
           echo "Deployment is ready!"
+          URL=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .url')
+          echo $URL
