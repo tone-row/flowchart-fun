@@ -21,5 +21,6 @@ jobs:
             sleep 5
           done
           echo "Deployment is ready!"
-          URL=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .url')
-          echo $URL
+          URL=https://$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .url')
+          echo "::set-env name=URL::$URL"
+      - run: echo $URL
