@@ -9,8 +9,9 @@ jobs:
     steps:
       - run: |
           sleep 10
-          echo $GITHUB_SHA
-          curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[].meta.githubCommitSha"
+          $CURRENT_HASH=$(git log -n 1 --pretty=format:"%H")
+          echo $CURRENT_HASH
+          curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[] | select(.meta.githubCommitSha==$CURRENT_HASH)"
       # - run: |-
       #     STATE="not ready"
       #     until [ "$STATE" = '"READY"' ]
