@@ -7,12 +7,13 @@ jobs:
     name: Wait for Preview
     runs-on: "ubuntu-latest"
     steps:
-      - run: |-
-          STATE="not ready"
-          until [ "$STATE" = '"READY"' ]
-          do
-            STATE=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq '.deployments[] | select(.meta.githubCommitSha=="$GITHUB_SHA") | .state')
-            echo $STATE
-            sleep 5
-          done
-          echo "Deployment is ready!"
+      - run: curl -s -H 'Accept: application/json' -H 'Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}' "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun"
+      # - run: |-
+      #     STATE="not ready"
+      #     until [ "$STATE" = '"READY"' ]
+      #     do
+      #       STATE=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq '.deployments[] | select(.meta.githubCommitSha=="$GITHUB_SHA") | .state')
+      #       echo $STATE
+      #       sleep 5
+      #     done
+      #     echo "Deployment is ready!"
