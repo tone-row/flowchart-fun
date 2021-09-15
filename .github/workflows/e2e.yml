@@ -8,7 +8,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: Show GitHub context
-        run: echo "{{ github.event.after }}"
+        run: echo "${{ github.event.after }}"
       # - run: |
       #     sleep 10
       #     $CURRENT_HASH=$(git log -n 1 --pretty=format:"%H")
