@@ -8,8 +8,9 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - run: |
+          sleep 10
           echo $GITHUB_SHA
-          curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[] | select(.meta.githubCommitSha=='$GITHUB_SHA')"
+          curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[] | select(.meta.githubCommitSha==$GITHUB_SHA)"
       # - run: |-
       #     STATE="not ready"
       #     until [ "$STATE" = '"READY"' ]
