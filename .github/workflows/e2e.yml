@@ -10,7 +10,7 @@ jobs:
       - name: Find It
         run: |
           sleep 10
-          curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[] | select(.meta.githubCommitSha==${{ github.event.after }})"
+          curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[] | select(.meta.githubCommitSha=='${{ github.event.after }}')"
       # - run: |-
       #     STATE="not ready"
       #     until [ "$STATE" = '"READY"' ]
