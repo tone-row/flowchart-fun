@@ -18,7 +18,7 @@ jobs:
           CURRENT_HASH=${{ github.event.after }}
           echo Current Hash $CURRENT_HASH
           RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
-          STATE=$(echo $RESULTS | jq ".deployments[] | .state")
+          STATE=$(echo $RESULTS | jq ".deployments[] | .meta.githubCommitSha")
           echo $STATE
       # - name: Wait for ready
       #   run: |
