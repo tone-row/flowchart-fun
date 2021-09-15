@@ -29,6 +29,7 @@ jobs:
           do
             RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
             CLEAN=$(echo $RESULTS | tr -d '[:cntrl:]')
+            echo $CLEAN
             STATE=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .state');
             sleep 5
           done
