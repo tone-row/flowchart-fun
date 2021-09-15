@@ -7,22 +7,17 @@ jobs:
     name: Capture Vercel preview URL
     runs-on: "ubuntu-latest"
     steps:
-      - uses: aaimio/vercel-preview-url-action@v1
+      - run: sleep 60
+      - name: vercel-preview-url
+        uses: zentered/vercel-preview-url@v1.0.0
         id: vercel_preview_url
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Below is merely an example of what you could do with the preview URL.
-      # The preview URL is accessed through ${{ steps.<step_id>.outputs.vercel_preview_url }}
-      - uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'The preview URL is: ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}.'
-            });
+          vercel_team_id: "tone-row"
+          vercel_project_id: "flowchart-fun"
+      - name: Get URL
+        run: echo "https://${{ steps.vercel_preview_url.outputs.preview_url }}"
   test:
     runs-on: macos-latest
     defaults:
