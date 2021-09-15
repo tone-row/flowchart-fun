@@ -7,7 +7,7 @@ jobs:
     name: Wait for Preview
     runs-on: "ubuntu-latest"
     steps:
-      - run: |
+      - run: >-
         STATE="not ready"
         until [ "$STATE" = '"READY"' ]
         do
