@@ -20,7 +20,7 @@ jobs:
           echo $CURRENT_HASH
           until [ "$STATE" = '"READY"' ]
           do
-            STATE=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[] | select(.meta.githubCommitSha==$CURRENT_HASH) | .state" 2>&1)
+            STATE=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[] | select(.meta.githubCommitSha==$CURRENT_HASH) | .state") 2>&1
             echo $STATE
             sleep 5
           done
