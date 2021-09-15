@@ -8,7 +8,8 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - run: |
-          curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun"
+          STATE=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
+          echo $STATE
       # - run: |-
       #     STATE="not ready"
       #     until [ "$STATE" = '"READY"' ]
