@@ -7,7 +7,8 @@ jobs:
     name: Wait for Preview
     runs-on: "ubuntu-latest"
     steps:
-      - run: curl -s -H 'Accept: application/json' -H 'Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}' "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun"
+      - run: |
+          curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun"
       # - run: |-
       #     STATE="not ready"
       #     until [ "$STATE" = '"READY"' ]
