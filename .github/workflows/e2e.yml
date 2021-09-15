@@ -13,23 +13,23 @@ jobs:
       #     CURRENT_HASH=${{ github.event.after }}
       #     echo $CURRENT_HASH
       #     curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[] | select(.meta.githubCommitSha==$CURRENT_HASH)"
-      - name: One At A Time
-        run: |
-          CURRENT_HASH=${{ github.event.after }}
-          echo Current Hash $CURRENT_HASH
-          RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
-          STATE=$(echo $RESULTS | jq ".deployments[] | .meta.githubCommitSha")
-          echo $STATE
-      # - name: Wait for ready
+      # - name: One At A Time
       #   run: |
-      #     STATE="not ready"
       #     CURRENT_HASH=${{ github.event.after }}
-      #     echo $CURRENT_HASH
-      #     until [ "$STATE" = '"READY"' ]
-      #     do
-      #       RESULT=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
-      #       STATE=$(echo $RESULT | jq ".deployments[] | select(.meta.githubCommitSha=='$CURRENT_HASH') | .state")
-      #       echo $STATE
-      #       sleep 5
-      #     done
-      #     echo "Deployment is ready!"
+      #     echo Current Hash $CURRENT_HASH
+      #     RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
+      #     STATE=$(echo $RESULTS | jq ".deployments[] | .meta.githubCommitSha")
+      #     echo $STATE
+      - name: Wait until ready
+        run: |
+          STATE="not ready"
+          CURRENT_HASH=${{ github.event.after }}
+          echo $CURRENT_HASH
+          until [ "$STATE" = '"READY"' ]
+          do
+            RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
+            CLEAN=$(echo $RESULTS | tr -d '[:cntrl:]')
+            STATE=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .state');
+            sleep 5
+          done
+          echo "Deployment is ready!"
