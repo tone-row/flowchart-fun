@@ -10,15 +10,14 @@ jobs:
         working-directory: ./app
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: Setup Playwright
-        run: npx playwright install-deps
-      - name: Install Deps
-        run: yarn install --network-timeout 1000000
-      - run: sleep 240
+      # - uses: actions/checkout@v2
+      # - uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12.x
+      # - name: Setup Playwright
+      #   run: npx playwright install-deps
+      # - name: Install Deps
+      #   run: yarn install --network-timeout 1000000
       - name: vercel-preview-url
         uses: zentered/vercel-preview-url@v1.0.0
         id: vercel_preview_url
