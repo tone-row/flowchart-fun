@@ -7,19 +7,6 @@ jobs:
     name: Wait for Preview
     runs-on: "ubuntu-latest"
     steps:
-      # - name: Find It
-      #   run: |
-      #     sleep 10
-      #     CURRENT_HASH=${{ github.event.after }}
-      #     echo $CURRENT_HASH
-      #     curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun" | jq ".deployments[] | select(.meta.githubCommitSha==$CURRENT_HASH)"
-      # - name: One At A Time
-      #   run: |
-      #     CURRENT_HASH=${{ github.event.after }}
-      #     echo Current Hash $CURRENT_HASH
-      #     RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
-      #     STATE=$(echo $RESULTS | jq ".deployments[] | .meta.githubCommitSha")
-      #     echo $STATE
       - name: Wait until ready
         run: |
           STATE="not ready"
@@ -29,8 +16,8 @@ jobs:
           do
             RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
             CLEAN=$(echo $RESULTS | tr -d '[:cntrl:]')
-            echo $CLEAN
             STATE=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .state');
+            echo $STATE
             sleep 5
           done
           echo "Deployment is ready!"
