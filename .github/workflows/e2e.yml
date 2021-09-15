@@ -3,43 +3,8 @@ name: E2E
 on: [pull_request]
 
 jobs:
-  capture_vercel_preview_url:
-    name: Capture Vercel preview URL
+  commit_hash:
+    name: Commit Hash
     runs-on: "ubuntu-latest"
     steps:
-      - run: sleep 60
-      - name: vercel-preview-url
-        uses: zentered/vercel-preview-url@v1.0.0
-        id: vercel_preview_url
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        with:
-          vercel_team_id: "tone-row"
-          vercel_project_id: "flowchart-fun"
-      - name: Get URL
-        run: echo "https://${{ steps.vercel_preview_url.outputs.preview_url }}"
-  test:
-    runs-on: macos-latest
-    defaults:
-      run:
-        working-directory: ./app
-
-    steps:
-      # - uses: actions/checkout@v2
-      # - uses: actions/setup-node@v1
-      #   with:
-      #     node-version: 12.x
-      # - name: Setup Playwright
-      #   run: npx playwright install-deps
-      # - name: Install Deps
-      #   run: yarn install --network-timeout 1000000
-      - name: vercel-preview-url
-        uses: zentered/vercel-preview-url@v1.0.0
-        id: vercel_preview_url
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        with:
-          vercel_team_id: "tone-row"
-          vercel_project_id: "flowchart-fun"
-      - name: Get URL
-        run: echo "https://${{ steps.vercel_preview_url.outputs.preview_url }}"
+      - run: echo $GITHUB_SHA
