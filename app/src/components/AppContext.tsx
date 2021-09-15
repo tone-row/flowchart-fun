@@ -14,7 +14,12 @@ import { colors, darkTheme } from "../slang/config";
 
 export type Theme = typeof colors;
 
-export type Showing = "navigation" | "editor" | "settings" | "share";
+export type Showing =
+  | "navigation"
+  | "editor"
+  | "settings"
+  | "share"
+  | "feedback";
 
 // Stored in localStorage
 type UserSettings = {

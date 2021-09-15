@@ -11,6 +11,7 @@
 type Breakpoints = "small" | "tablet" | "desktop";
 type Colors = 
   | "color-background"
+  | "color-backgroundHsl"
   | "color-foreground"
   | "color-lineColor"
   | "color-uiAccent"
@@ -20,12 +21,15 @@ type Colors =
   | "color-buttonFocus"
   | "color-highlightColor"
   | "color-overlayColor"
+  | "color-input"
   | "palette-white-0"
   | "palette-white-1"
   | "palette-white-2"
   | "palette-white-3"
   | "palette-white-4"
+  | "palette-white-5"
   | "palette-black-0"
+  | "palette-black-1"
   | "palette-purple-0"
   | "palette-purple-1"
   | "palette-purple-2"

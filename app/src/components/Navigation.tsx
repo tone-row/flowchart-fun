@@ -1,6 +1,5 @@
 import {
   Dispatch,
-  forwardRef,
   ReactNode,
   SetStateAction,
   useCallback,
@@ -16,6 +15,8 @@ import { useHistory, useParams } from "react-router-dom";
 import { AppContext } from "./AppContext";
 import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
+import { Input } from "./Input";
+import { Button } from "./Button";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 const largeGap = 10;
@@ -203,23 +204,6 @@ function Section({
     </Box>
   );
 }
-
-function Button({ children, ...props }: { children: ReactNode } & BoxProps) {
-  return (
-    <Box as="button" className={styles.Button} p={3} px={6} {...props}>
-      <Type as="span">{children}</Type>
-    </Box>
-  );
-}
-
-const Input = forwardRef((props, ref) => {
-  return (
-    <Box p={3} className={styles.Input}>
-      <Type as="input" autoComplete="off" type="text" ref={ref} {...props} />
-    </Box>
-  );
-});
-Input.displayName = "Input";
 
 const setValueAs = (value: string) =>
   value.replace(/[^a-z0-9]/gi, "-").toLocaleLowerCase();

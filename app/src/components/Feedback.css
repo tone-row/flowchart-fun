@@ -1,0 +1,21 @@
+.feedback-form {
+  position: relative;
+}
+
+.submitting::after {
+  content: " ";
+  position: absolute;
+  background: hsla(var(--color-backgroundHsl), 0.75);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.feedback-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 1;
+}

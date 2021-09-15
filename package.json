@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "start": "yarn workspace app start",
+    "env:pull": "vercel env pull app/.env",
     "prepare": "husky install",
     "app:lint:format": "yarn workspace app lint:fix && yarn workspace app format"
   },

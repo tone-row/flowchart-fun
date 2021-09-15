@@ -40,6 +40,7 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-ts-comment": "warn",
   },
+  ignorePatterns: ["api/**/*.js"],
   overrides: [
     {
       files: [
