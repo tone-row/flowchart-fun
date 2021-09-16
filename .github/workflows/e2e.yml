@@ -3,9 +3,9 @@ name: E2E
 on: [pull_request]
 
 jobs:
-  commit_hash:
+  test:
     name: End-to-end Tests
-    runs-on: "macos-latest"
+    runs-on: macos-latest
     steps:
       - name: Get preview url
         id: get_url

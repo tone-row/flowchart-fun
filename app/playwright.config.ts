@@ -2,6 +2,7 @@ import { PlaywrightTestConfig } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
   timeout: 10000,
+  retries: 3,
   use: {
     acceptDownloads: true,
     viewport: {
