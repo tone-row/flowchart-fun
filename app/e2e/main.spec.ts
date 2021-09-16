@@ -101,7 +101,7 @@ describe("App", () => {
 
     const stream = await download.createReadStream();
     const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("test.svg", { threshold: 1 });
+    expect(buffer).toMatchSnapshot("test.svg");
   });
 
   test("PNG", async ({ page }) => {
@@ -115,7 +115,7 @@ describe("App", () => {
 
     const stream = await download.createReadStream();
     const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("test.png", { threshold: 1 });
+    expect(buffer).toMatchSnapshot("test.png");
   });
 
   test("JPG", async ({ page }) => {
@@ -129,7 +129,7 @@ describe("App", () => {
 
     const stream = await download.createReadStream();
     const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("test.jpg", { threshold: 1 });
+    expect(buffer).toMatchSnapshot("test.jpg");
   });
 });
 
