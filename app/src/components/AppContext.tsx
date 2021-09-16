@@ -11,6 +11,7 @@ import {
 import useLocalStorage from "react-use-localstorage";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
+import { FlagsProvider } from "flagged";
 
 export type Theme = typeof colors;
 
@@ -83,6 +84,8 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     [setUserSettings, settings]
   );
 
+  const [flags, setFeatures] = useState([]);
+
   useEffect(() => {
     // Remove chart that may have been stored, so
     // two indexes aren't shown on charts page
@@ -90,6 +93,18 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   }, []);
 
   const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch("/api/feature", {
+        mode: "cors",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+      });
+      const features = await response.json();
+      setFeatures(features);
+    })();
+  }, []);
 
   return (
     <AppContext.Provider
@@ -106,7 +121,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         language: settings.language ?? defaultLanguage,
       }}
     >
-      {children}
+      <FlagsProvider features={flags}>{children}</FlagsProvider>
     </AppContext.Provider>
   );
 };

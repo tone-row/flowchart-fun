@@ -20,6 +20,7 @@ declare global {
 
 const Menu = memo(() => {
   const { shareLink, setShowing } = useContext(AppContext);
+
   return (
     <Box
       className={styles.Menu}
