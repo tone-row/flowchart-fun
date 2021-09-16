@@ -7,7 +7,7 @@ jobs:
     name: End-to-end Tests
     runs-on: "macos-latest"
     steps:
-      - name: Wait until ready
+      - name: Get preview url
         id: get_url
         run: |
           STATE="not ready"
@@ -24,8 +24,10 @@ jobs:
           echo "Deployment is ready!"
           URL=https://$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .url')
           echo ::set-output name=preview_url::$(echo $URL)
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: Install Playwright
