@@ -11,6 +11,7 @@ import {
 import useLocalStorage from "react-use-localstorage";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
+import { FlagsProvider } from "flagged";
 
 export type Theme = typeof colors;
 
@@ -91,6 +92,16 @@ const Provider = ({ children }: { children?: ReactNode }) => {
 
   const [hasError, setHasError] = useState(false);
 
+  useEffect(() => {
+    (async function () {
+      const result = await fetch("/api/feature", {
+        mode: "cors",
+        credentials: "same-origin",
+      });
+      console.log(result);
+    })();
+  }, []);
+
   return (
     <AppContext.Provider
       value={{
@@ -106,7 +117,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         language: settings.language ?? defaultLanguage,
       }}
     >
-      {children}
+      <FlagsProvider features={[""]}>{children}</FlagsProvider>
     </AppContext.Provider>
   );
 };
