@@ -5,11 +5,14 @@ import styles from "./Layout.module.css";
 import ColorMode from "./ColorMode";
 import { AppContext } from "./AppContext";
 import { useLocation } from "react-router-dom";
+import { useFeature } from "flagged";
+import MenuNext from "./MenuNext";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const { showing } = useContext(AppContext);
   const { pathname } = useLocation();
   const isFullscreen = pathname === "/f";
+  const isNext = useFeature("next");
   return (
     <Box
       root
@@ -19,7 +22,7 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
         isFullscreen ? "minmax(0, 1fr) / none" : "auto minmax(0, 1fr) / none"
       }
     >
-      {isFullscreen ? null : <Menu />}
+      {isFullscreen ? null : isNext ? <MenuNext /> : <Menu />}
       <Box
         as="main"
         className={isFullscreen ? undefined : styles.TabletWrapper}

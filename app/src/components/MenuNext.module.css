@@ -1,0 +1,68 @@
+body:not([class*="disableAnimation"]) .Menu button,
+body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 600ms;
+}
+
+.MenuTabButton[aria-selected="true"] svg rect:first-child {
+  stroke-width: 0;
+}
+
+.MenuTabButton[aria-selected="true"] svg rect,
+.MenuTabButton[aria-selected="true"] svg line,
+.MenuTabButton[aria-selected="true"] svg path,
+.MenuTabButton[aria-selected="true"] svg circle {
+  stroke: var(--color-buttonFocus);
+}
+
+.MenuTabButton:hover,
+.MenuTabButton:focus {
+  background-color: var(--color-uiAccent);
+}
+
+.MenuTabButton[aria-selected="true"],
+.MenuTabButton[aria-selected="true"]:hover,
+.MenuTabButton[aria-selected="true"]:focus {
+  background-color: var(--color-input);
+}
+
+body:not([class*="disableAnimation"]) .MenuTabButton[aria-selected="true"],
+body:not([class*="disableAnimation"])
+  .MenuTabButton[aria-selected="true"]:hover,
+body:not([class*="disableAnimation"])
+  .MenuTabButton[aria-selected="true"]:focus {
+  transition-delay: 100ms;
+}
+
+.Menu button:focus {
+  box-shadow: none;
+}
+
+.Menu svg rect,
+.Menu svg line,
+.Menu svg path,
+.Menu svg circle {
+  stroke-width: 10;
+}
+
+/* Workspace Button */
+.WorkspaceButton {
+  border: 1px solid var(--color-uiAccent);
+  background-color: var(--color-input);
+}
+
+.WorkspaceButton:hover {
+  border-color: var(--color-edgeHover);
+  background-color: var(--color-uiAccent);
+}
+
+.WorkspaceButtonIcon {
+  border-right: 1px solid var(--color-uiAccent);
+}
+
+.WorkspaceButton:hover .WorkspaceButtonIcon {
+  border-color: var(--color-edgeHover);
+}
+
+.Brand {
+  fill: var(--color-foreground);
+}

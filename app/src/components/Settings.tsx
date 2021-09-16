@@ -24,12 +24,16 @@ const largeGap = 10;
 const Settings = memo(() => {
   const { updateUserSettings, mode, language } = useContext(AppContext);
   const setLightMode = useCallback(() => {
+    document.body.classList.add("disableAnimation");
     updateUserSettings({ mode: "light" });
     window.plausible("Set Appearance", { props: { mode: "light" } });
+    setTimeout(() => document.body.classList.remove("disableAnimation"), 100);
   }, [updateUserSettings]);
   const setDarkMode = useCallback(() => {
+    document.body.classList.add("disableAnimation");
     updateUserSettings({ mode: "dark" });
     window.plausible("Set Appearance", { props: { mode: "dark" } });
+    setTimeout(() => document.body.classList.remove("disableAnimation"), 100);
   }, [updateUserSettings]);
   const changeLanguage = useCallback(
     (l: string) => {

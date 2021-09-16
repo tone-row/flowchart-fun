@@ -84,6 +84,8 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     [setUserSettings, settings]
   );
 
+  const [flags, setFeatures] = useState([]);
+
   useEffect(() => {
     // Remove chart that may have been stored, so
     // two indexes aren't shown on charts page
@@ -94,11 +96,13 @@ const Provider = ({ children }: { children?: ReactNode }) => {
 
   useEffect(() => {
     (async function () {
-      const result = await fetch("/api/feature", {
+      const response = await fetch("/api/feature", {
         mode: "cors",
         credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
       });
-      console.log(result);
+      const features = await response.json();
+      setFeatures(features);
     })();
   }, []);
 
@@ -117,7 +121,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         language: settings.language ?? defaultLanguage,
       }}
     >
-      <FlagsProvider features={[""]}>{children}</FlagsProvider>
+      <FlagsProvider features={flags}>{children}</FlagsProvider>
     </AppContext.Provider>
   );
 };
