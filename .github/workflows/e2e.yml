@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs:
   commit_hash:
-    name: Wait for Preview
+    name: End-to-end Tests
     runs-on: "macos-latest"
     steps:
       - name: Wait until ready
@@ -28,9 +28,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: Setup Playwright
-        run: npx playwright install-deps
-      - name: Run E2E Tests on Netlify URL
+      - name: Install Playwright
+        run: |
+          npx playwright install-deps
+          npm install -D @playwright/test
+      - name: Run E2E Tests on Vercel Preview URL
         run: E2E_START_URL="${{ steps.get_url.outputs.preview_url }}" yarn workspace app e2e
       - uses: actions/upload-artifact@v2
         if: ${{ always() }}
