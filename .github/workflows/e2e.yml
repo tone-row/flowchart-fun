@@ -30,10 +30,8 @@ jobs:
           node-version: 12.x
       - name: Setup Playwright
         run: npx playwright install-deps
-      - name: Install Deps
-        run: yarn install --network-timeout 1000000
       - name: Run E2E Tests on Netlify URL
-        run: E2E_START_URL="${{ steps.get_url.outputs.preview_url }}" yarn e2e
+        run: E2E_START_URL="${{ steps.get_url.outputs.preview_url }}" yarn workspace app e2e
       - uses: actions/upload-artifact@v2
         if: ${{ always() }}
         with:
