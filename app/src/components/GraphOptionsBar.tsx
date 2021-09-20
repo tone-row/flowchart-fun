@@ -80,21 +80,23 @@ const GraphOptionsBar = memo(() => {
           )}
         />
       </OptionWithIcon>
-      <OptionWithIcon icon={ArrowUpRight}>
-        <Controller
-          control={control}
-          name="layout.rankDir"
-          render={({ field: { onChange } }) => (
-            <MySelect
-              options={directions}
-              onChange={(dir: typeof directions[0]) =>
-                dir && onChange(dir.value)
-              }
-              value={selectedDirection}
-            />
-          )}
-        />
-      </OptionWithIcon>
+      {graphOptions.layout?.name === "dagre" && (
+        <OptionWithIcon icon={ArrowUpRight}>
+          <Controller
+            control={control}
+            name="layout.rankDir"
+            render={({ field: { onChange } }) => (
+              <MySelect
+                options={directions}
+                onChange={(dir: typeof directions[0]) =>
+                  dir && onChange(dir.value)
+                }
+                value={selectedDirection}
+              />
+            )}
+          />
+        </OptionWithIcon>
+      )}
     </Box>
   );
 });

@@ -17,7 +17,7 @@ msgstr ""
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "Es ist ein Fehler aufgetreten. Versuchen Sie, es erneut einzureichen oder senden Sie eine E-Mail direkt an {0}."
 
-#: src/components/Settings.tsx:67
+#: src/components/Settings.tsx:71
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
@@ -29,15 +29,15 @@ msgstr "Sind Sie sicher, dass Sie dies löschen möchten?"
 msgid "Are you sure you want to reset this?"
 msgstr "Sind Sie sicher, dass Sie dies zurücksetzen möchten?"
 
-#: src/components/Settings.tsx:97
+#: src/components/Settings.tsx:101
 msgid "Become a Sponsor"
 msgstr "Werden Sie zum Sponsoren"
 
-#: src/components/GraphOptions.tsx:21
+#: src/lib/graphOptions.ts:15
 msgid "Bottom to Top"
 msgstr "Von unten nach oben"
 
-#: src/components/GraphOptions.tsx:10
+#: src/lib/graphOptions.ts:4
 msgid "Breadthfirst"
 msgstr "In die Breite"
 
@@ -50,11 +50,11 @@ msgstr "Abbrechen"
 msgid "Charts"
 msgstr "Diagramme"
 
-#: src/components/GraphOptions.tsx:13
+#: src/lib/graphOptions.ts:7
 msgid "Circle"
 msgstr "Kreis"
 
-#: src/components/GraphOptions.tsx:12
+#: src/lib/graphOptions.ts:6
 msgid "Concentric"
 msgstr "Konzentrisch"
 
@@ -71,7 +71,7 @@ msgstr "Neues Diagramm erstellen"
 msgid "Create a link directly using the exact label text"
 msgstr "Erstellen Sie direkt einen Link mit dem genauen Beschriftungstext"
 
-#: src/components/Settings.tsx:74
+#: src/components/Settings.tsx:78
 msgid "Dark Mode"
 msgstr "Dunkelmodus"
 
@@ -81,7 +81,7 @@ msgstr "Dunkelmodus"
 msgid "Delete"
 msgstr "Löschen"
 
-#: src/components/GraphOptions.tsx:53
+#: src/components/GraphOptions.tsx:50
 msgid "Direction"
 msgstr "Richtung"
 
@@ -109,15 +109,15 @@ msgstr "E-Mail (optional)"
 msgid "Feedback"
 msgstr "Feedback"
 
-#: src/components/Settings.tsx:88
+#: src/components/Settings.tsx:92
 msgid "Follow Us"
 msgstr "Folgen Sie uns"
 
-#: src/components/GraphOptions.tsx:43
+#: src/components/GraphOptions.tsx:40
 msgid "Graph Options"
 msgstr "Grafik-Optionen"
 
-#: src/components/GraphOptions.tsx:15
+#: src/lib/graphOptions.ts:9
 msgid "Grid"
 msgstr "Raster"
 
@@ -133,27 +133,27 @@ msgstr "Hilfe"
 msgid "Indenting creates a link to the current line"
 msgstr "Durch das Einrücken wird eine Verbindung zur aktuellen Zeile hergestellt"
 
-#: src/components/Settings.tsx:55
+#: src/components/Settings.tsx:59
 msgid "Language"
 msgstr "Sprache"
 
-#: src/components/GraphOptions.tsx:47
+#: src/components/GraphOptions.tsx:44
 msgid "Layout"
 msgstr "Layout"
 
-#: src/components/GraphOptions.tsx:18
-msgid "Left to Right (default)"
-msgstr "Von links nach rechts (voreingestellt)"
+#: src/lib/graphOptions.ts:12
+msgid "Left to Right"
+msgstr "Von links nach rechts"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:75
 msgid "Light Mode"
 msgstr "Heller Modus"
 
-#: src/components/Settings.tsx:82
+#: src/components/Settings.tsx:86
 msgid "Made by <0>Tone Row</0>"
 msgstr "Gemacht von <0>Tone Row</0>"
 
-#: src/components/Settings.tsx:94
+#: src/components/Settings.tsx:98
 msgid "Make a Donation"
 msgstr "Spenden"
 
@@ -161,7 +161,7 @@ msgstr "Spenden"
 msgid "Open Share Link"
 msgstr "Freigabe-Link öffnen"
 
-#: src/components/GraphOptions.tsx:14
+#: src/lib/graphOptions.ts:8
 msgid "Random"
 msgstr "Zufällig"
 
@@ -170,7 +170,7 @@ msgstr "Zufällig"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: src/components/GraphOptions.tsx:20
+#: src/lib/graphOptions.ts:14
 msgid "Right to Left"
 msgstr "Von rechts nach links"
 
@@ -195,15 +195,15 @@ msgstr "Danke für Ihr Feedback!"
 msgid "This app works by typing"
 msgstr "Diese App funktioniert durch Tippen"
 
-#: src/components/GraphOptions.tsx:19
+#: src/lib/graphOptions.ts:13
 msgid "Top to Bottom"
 msgstr "Von oben nach unten"
 
-#: src/components/Settings.tsx:51
+#: src/components/Settings.tsx:55
 msgid "User Preferences"
 msgstr "Benutzerpräferenzen"
 
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:95
 msgid "View on Github"
 msgstr "Auf Github ansehen"
 
