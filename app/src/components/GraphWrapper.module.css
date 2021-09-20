@@ -16,5 +16,11 @@
 @media (min-width: 800px) {
   .GraphWrapper {
     display: block !important;
+    padding-left: 4px; /* This is for the resize handle */
   }
+}
+
+.GraphWrapperInner {
+  border: 1px solid var(--color-uiAccent);
+  height: 100%;
 }

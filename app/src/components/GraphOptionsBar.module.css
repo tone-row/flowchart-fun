@@ -1,0 +1,21 @@
+.GraphOptionsBar {
+  border-bottom: solid 1px var(--color-uiAccent);
+  background-color: var(--color-input);
+}
+
+.Select {
+  appearance: none;
+  border: 1px solid var(--color-edgeHover);
+  background: none;
+}
+
+.Option[data-focused="true"],
+.Option:hover {
+  color: var(--color-highlightColor);
+  cursor: pointer;
+}
+
+.Option[aria-selected="true"] {
+  background-color: var(--color-uiAccent);
+  color: var(--color-foreground);
+}

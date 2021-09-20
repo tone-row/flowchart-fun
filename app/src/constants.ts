@@ -31,6 +31,7 @@ export const editorOptions: EditorProps["options"] = {
   lineHeight: 28,
   lineNumbersMinChars: 5,
   cursorWidth: 2,
+  automaticLayout: true,
 };
 
 export type GraphOptionsObject = {

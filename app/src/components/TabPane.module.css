@@ -11,17 +11,34 @@
 
 .TextareaContainer {
   border-right: solid 1px var(--color-uiAccent);
+}
+
+.Handle {
+  height: 100%;
+  z-index: 1;
+  position: relative;
   overflow: hidden;
 }
 
-.resizableHandle {
-  background-color: var(--color-foreground);
-  opacity: 0;
+.Handle svg circle {
+  stroke-width: 10;
+  stroke: var(--color-edgeHover);
 }
 
-@media (min-width: 800px) {
-  .resizableHandle:hover,
-  .resizableHandle:active {
-    opacity: 0.25;
-  }
+.Handle:hover svg circle,
+.Handle[data-dragging="true"] svg circle {
+  stroke: var(--color-foreground);
+}
+.Handle:hover,
+.Handle[data-dragging="true"] {
+  background: linear-gradient(
+    to bottom,
+    var(--color-background),
+    var(--color-input),
+    var(--color-background)
+  );
+}
+
+.resizableHandle {
+  background-color: var(--color-background);
 }

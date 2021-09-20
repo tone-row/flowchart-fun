@@ -14,6 +14,7 @@ import {
   themeNameLight,
   useMonacoLanguage,
 } from "../registerLanguage";
+import styles from "./ReadOnly.module.css";
 
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const monaco = useMonaco();
@@ -70,6 +71,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
         value={textToParse}
         defaultValue={textToParse}
         defaultLanguage={languageId}
+        wrapperClassName={styles.Editor}
         theme={mode === "dark" ? themeNameDark : themeNameLight}
         loading={<Loading />}
         options={{

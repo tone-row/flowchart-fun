@@ -1,27 +1,11 @@
-import { t, Trans } from "@lingui/macro";
+import { Trans } from "@lingui/macro";
 import React, { memo, useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Box, Type } from "../slang";
+import { directions, layouts } from "../lib/graphOptions";
+import { Box, BoxProps, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./GraphOptions.module.css";
 import { GraphContext } from "./GraphProvider";
-
-const layouts = [
-  { label: () => `Dagre (default)`, value: "dagre" },
-  { label: () => t`Breadthfirst`, value: "breadthfirst" },
-  { label: () => `CoSE`, value: "cose" },
-  { label: () => t`Concentric`, value: "concentric" },
-  { label: () => t`Circle`, value: "circle" },
-  { label: () => t`Random`, value: "random" },
-  { label: () => t`Grid`, value: "grid" },
-];
-
-const directions = [
-  { label: () => t`Left to Right (default)`, value: "LR" },
-  { label: () => t`Top to Bottom`, value: "TB" },
-  { label: () => t`Right to Left`, value: "RL" },
-  { label: () => t`Bottom to Top`, value: "BT" },
-];
 
 const GraphOptions = memo(() => {
   const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
@@ -90,12 +74,15 @@ function Select({
   options,
   name,
   value,
+  className = "",
+  ...props
 }: {
   register: any;
   options: { value: string; label: () => string }[];
   name: string;
   value: string | undefined;
-}) {
+  className?: string;
+} & BoxProps) {
   const { theme } = useContext(AppContext);
   const { editable } = useContext(GraphContext);
   // Caret for select
@@ -106,11 +93,12 @@ function Select({
     <Box
       p={3}
       as="select"
-      className={[styles.Select, "slang-type size--1"].join(" ")}
+      className={[styles.Select, "slang-type size--1", className].join(" ")}
       style={{ backgroundImage }}
       disabled={!editable}
       value={value}
       {...register(name)}
+      {...props}
     >
       {options.map((option) => {
         return (

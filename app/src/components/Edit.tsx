@@ -128,6 +128,7 @@ function Edit() {
     >
       <Editor
         value={text}
+        wrapperClassName={styles.Editor}
         defaultLanguage={languageId}
         options={editorOptions}
         theme={mode === "dark" ? themeNameDark : themeNameLight}

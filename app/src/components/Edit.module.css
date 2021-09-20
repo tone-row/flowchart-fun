@@ -19,3 +19,7 @@
 .HelpButton:hover svg {
   fill: var(--color-foreground);
 }
+
+.Editor {
+  overflow: hidden;
+}
