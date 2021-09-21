@@ -2,7 +2,7 @@ import { Trans } from "@lingui/macro";
 import React, { memo, useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { directions, layouts } from "../lib/graphOptions";
-import { Box, BoxProps, Type } from "../slang";
+import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./GraphOptions.module.css";
 import { GraphContext } from "./GraphProvider";
@@ -74,13 +74,12 @@ function Select({
   options,
   name,
   value,
-  ...props
 }: {
   register: any;
   options: { value: string; label: () => string }[];
   name: string;
   value: string | undefined;
-} & BoxProps) {
+}) {
   const { theme } = useContext(AppContext);
   const { editable } = useContext(GraphContext);
   // Caret for select
@@ -96,7 +95,6 @@ function Select({
       disabled={!editable}
       value={value}
       {...register(name)}
-      {...props}
     >
       {options.map((option) => {
         return (
