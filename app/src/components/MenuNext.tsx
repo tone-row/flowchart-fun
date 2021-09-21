@@ -17,21 +17,37 @@ export default function MenuNext() {
   return (
     <Box
       as="header"
-      template="1fr / 1fr auto 1fr"
+      template="auto auto / auto [main] auto"
+      at={{
+        tablet: { template: "[main] auto / 1fr [main] auto 1fr", p: 3, pl: 5 },
+      }}
       flow="column"
-      p={3}
-      pl={5}
       items="center normal"
       className={styles.Menu}
     >
-      <Box flow="column" items="center" content="stretch start" gap={2}>
+      <Box
+        flow="column"
+        items="center"
+        content="stretch start"
+        p={1}
+        gap={1}
+        pl={2}
+        at={{ tablet: { p: 0, gap: 2, pl: 0 } }}
+      >
         <BrandSvg width={40} className={styles.Brand} />
         <MenuTabButton icon={TreeStructure} tab="editor" />
         <MenuTabButton icon={Folder} tab="navigation" />
-        <MenuTabButton icon={Gear} tab="settings" />
       </Box>
       <WorkspaceButton />
-      <Box content="stretch end">
+      <Box
+        content="stretch end"
+        flow="column"
+        items="center"
+        p={1}
+        gap={1}
+        at={{ tablet: { p: 0 } }}
+      >
+        <MenuTabButton icon={Gear} tab="settings" />
         <MenuTabButton icon={Chat} tab="feedback" />
       </Box>
     </Box>
@@ -67,10 +83,11 @@ function WorkspaceButton() {
     <Box
       as="button"
       className={styles.WorkspaceButton}
-      rad={1}
       onClick={() => setShowing("navigation")}
       flow="column"
       items="center normal"
+      template="auto / auto 1fr"
+      at={{ tablet: { rad: 1 } }}
     >
       <Box p={2} className={styles.WorkspaceButtonIcon}>
         <Laptop width={33} height={33} />

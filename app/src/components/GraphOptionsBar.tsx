@@ -6,7 +6,6 @@ import { directions, layouts } from "../lib/graphOptions";
 import { Box, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
-import isEqual from "fast-deep-equal";
 
 const GraphOptionsBar = memo(() => {
   const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
@@ -24,7 +23,7 @@ const GraphOptionsBar = memo(() => {
     // Check if different than current values
     if (isDirty) {
       const options = JSON.parse(valuesString);
-      if (!isEqual(options, graphOptions)) {
+      if (!softIsEqual(options, graphOptions)) {
         window.plausible("Update Graph Options", {
           props: {
             layoutName: options.layout.name,
@@ -50,7 +49,7 @@ const GraphOptionsBar = memo(() => {
         ? directions.find(
             (l) => l.value === (graphOptions.layout as any)?.rankDir
           )
-        : undefined,
+        : "",
     [graphOptions.layout]
   );
 
@@ -238,4 +237,25 @@ function CaretDown(props: React.SVGProps<SVGSVGElement>) {
       </g>
     </svg>
   );
+}
+
+type R = string | number | null | undefined | boolean | any;
+interface Z {
+  [key: string]: R | Z;
+}
+type O = R | Z;
+// Are values equal for known keys in a, BUT ignores unknown keys
+function softIsEqual(a: O, b: O): boolean {
+  if (typeof a !== "object") return a === b;
+  if (typeof b !== "object") return false;
+  if (!b) return false;
+
+  let result = true;
+  for (const key in a) {
+    if (!softIsEqual(a[key], b[key])) {
+      result = false;
+      break;
+    }
+  }
+  return result;
 }

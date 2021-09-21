@@ -48,6 +48,13 @@ body:not([class*="disableAnimation"])
 .WorkspaceButton {
   border: 1px solid var(--color-uiAccent);
   background-color: var(--color-input);
+  grid-area: main;
+  grid-column: span 2;
+}
+@media (min-width: 800px) {
+  .WorkspaceButton {
+    grid-column: auto;
+  }
 }
 
 .WorkspaceButton:hover {

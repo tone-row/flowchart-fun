@@ -61,17 +61,12 @@ const TabPane = memo(
         <Box
           at={hideAtTablet}
           className={styles.Top}
-          pt={2}
           overflow={showing !== "editor" ? "auto" : undefined}
         >
           {children}
         </Box>
         <Resizable triggerResize={triggerResize}>
-          <Box
-            pt={4}
-            h="100%"
-            overflow={showing !== "editor" ? "auto" : undefined}
-          >
+          <Box h="100%" overflow={showing !== "editor" ? "auto" : undefined}>
             {children}
           </Box>
         </Resizable>
