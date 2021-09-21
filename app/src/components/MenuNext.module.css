@@ -63,7 +63,8 @@ body:not([class*="disableAnimation"])
   background-color: var(--color-input);
 }
 
-.WorkspaceButton:hover {
+.WorkspaceButton:hover,
+.WorkspaceButton:focus {
   border-color: var(--color-edgeHover);
   background-color: var(--color-uiAccent);
 }
@@ -72,10 +73,17 @@ body:not([class*="disableAnimation"])
   border-right: 1px solid var(--color-uiAccent);
 }
 
-.WorkspaceButton:hover .WorkspaceButtonIcon {
-  border-color: var(--color-edgeHover);
-}
-
 .Brand {
   fill: var(--color-foreground);
+}
+
+.IconButtonText {
+  border-left: 1px solid var(--color-uiAccent);
+}
+
+.WorkspaceButton:hover .WorkspaceButtonIcon,
+.WorkspaceButton:hover .IconButtonText,
+.WorkspaceButton:focus .WorkspaceButtonIcon,
+.WorkspaceButton:focus .IconButtonText {
+  border-color: var(--color-edgeHover);
 }

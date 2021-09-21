@@ -13,6 +13,7 @@ import {
 import { AppContext, Showing } from "./AppContext";
 import { useCallback, useContext } from "react";
 import styles from "./MenuNext.module.css";
+import { Trans } from "@lingui/macro";
 
 export default function MenuNext() {
   return (
@@ -86,7 +87,14 @@ function WorkspaceSection() {
   );
 
   return (
-    <Box flow="column" gap={2} className={styles.WorkspaceSection}>
+    <Box
+      flow="column"
+      template="auto / 1fr auto"
+      gap={2}
+      className={styles.WorkspaceSection}
+      px={2}
+      at={{ tablet: { px: 0 } }}
+    >
       <Box
         as="button"
         className={styles.WorkspaceButton}
@@ -108,13 +116,20 @@ function WorkspaceSection() {
         rad={1}
         className={styles.WorkspaceButton}
         items="center normal"
-        template="auto / auto 1fr"
+        at={{ tablet: { template: "auto / auto 1fr" } }}
       >
-        <Box p={2} className={styles.WorkspaceButtonIcon}>
+        <Box p={2}>
           <Share width={33} height={33} />
         </Box>
-        <Box px={3}>
-          <Type size={-1}>Export</Type>
+        <Box
+          display="none"
+          px={3}
+          at={{ tablet: { display: "grid" } }}
+          className={styles.IconButtonText}
+        >
+          <Type size={-1}>
+            <Trans>Export</Trans>
+          </Type>
         </Box>
       </Box>
     </Box>
