@@ -40,21 +40,27 @@ body:not([class*="disableAnimation"])
 .Menu svg rect,
 .Menu svg line,
 .Menu svg path,
-.Menu svg circle {
+.Menu svg circle,
+.Menu svg polyline {
   stroke-width: 10;
+}
+
+/* Workspace Section */
+.WorkspaceSection {
+  grid-area: main;
+  grid-column: span 2;
+}
+
+@media (min-width: 800px) {
+  .WorkspaceSection {
+    grid-column: auto;
+  }
 }
 
 /* Workspace Button */
 .WorkspaceButton {
   border: 1px solid var(--color-uiAccent);
   background-color: var(--color-input);
-  grid-area: main;
-  grid-column: span 2;
-}
-@media (min-width: 800px) {
-  .WorkspaceButton {
-    grid-column: auto;
-  }
 }
 
 .WorkspaceButton:hover {

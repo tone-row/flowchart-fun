@@ -10,10 +10,13 @@ import { GraphContext } from "./GraphProvider";
 const GraphOptionsBar = memo(() => {
   const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
 
+  const optionsInContext = JSON.stringify(graphOptions);
+
   const {
     watch,
     control,
     formState: { isDirty },
+    reset,
   } = useForm();
 
   const values = watch();
@@ -35,6 +38,11 @@ const GraphOptionsBar = memo(() => {
     }
   }, [updateGraphOptionsText, isDirty, valuesString, graphOptions]);
 
+  useEffect(() => {
+    const inContext = JSON.parse(optionsInContext);
+    reset({ layout: inContext.layout });
+  }, [optionsInContext, reset]);
+
   const selectedLayout = useMemo(
     () =>
       graphOptions.layout?.name
@@ -49,7 +57,7 @@ const GraphOptionsBar = memo(() => {
         ? directions.find(
             (l) => l.value === (graphOptions.layout as any)?.rankDir
           )
-        : "",
+        : directions[0],
     [graphOptions.layout]
   );
 
@@ -68,31 +76,35 @@ const GraphOptionsBar = memo(() => {
         <Controller
           control={control}
           name="layout.name"
-          render={({ field: { onChange } }) => (
-            <MySelect
-              options={layouts}
-              onChange={(layout: typeof layouts[0]) =>
-                layout && onChange(layout.value)
-              }
-              value={selectedLayout}
-            />
-          )}
+          render={({ field: { onChange } }) => {
+            return (
+              <MySelect
+                options={layouts}
+                onChange={(layout: typeof layouts[0]) =>
+                  layout && onChange(layout.value)
+                }
+                value={selectedLayout}
+              />
+            );
+          }}
         />
       </OptionWithIcon>
-      {graphOptions.layout?.name === "dagre" && (
+      {selectedLayout?.value === "dagre" && (
         <OptionWithIcon icon={ArrowUpRight}>
           <Controller
             control={control}
             name="layout.rankDir"
-            render={({ field: { onChange } }) => (
-              <MySelect
-                options={directions}
-                onChange={(dir: typeof directions[0]) =>
-                  dir && onChange(dir.value)
-                }
-                value={selectedDirection}
-              />
-            )}
+            render={({ field: { onChange } }) => {
+              return (
+                <MySelect
+                  options={directions}
+                  onChange={(dir: typeof directions[0]) =>
+                    dir && onChange(dir.value)
+                  }
+                  value={selectedDirection}
+                />
+              );
+            }}
           />
         </OptionWithIcon>
       )}

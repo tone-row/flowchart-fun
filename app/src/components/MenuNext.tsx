@@ -8,6 +8,7 @@ import {
   Chat,
   IconProps,
   Gear,
+  Share,
 } from "phosphor-react";
 import { AppContext, Showing } from "./AppContext";
 import { useContext } from "react";
@@ -38,7 +39,7 @@ export default function MenuNext() {
         <MenuTabButton icon={TreeStructure} tab="editor" />
         <MenuTabButton icon={Folder} tab="navigation" />
       </Box>
-      <WorkspaceButton />
+      <WorkspaceSection />
       <Box
         content="stretch end"
         flow="column"
@@ -75,25 +76,41 @@ function MenuTabButton({ icon: Icon, tab }: { icon: Icon; tab: Showing }) {
   );
 }
 
-function WorkspaceButton() {
+function WorkspaceSection() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const { setShowing } = useContext(AppContext);
 
   return (
-    <Box
-      as="button"
-      className={styles.WorkspaceButton}
-      onClick={() => setShowing("navigation")}
-      flow="column"
-      items="center normal"
-      template="auto / auto 1fr"
-      at={{ tablet: { rad: 1 } }}
-    >
-      <Box p={2} className={styles.WorkspaceButtonIcon}>
-        <Laptop width={33} height={33} />
+    <Box flow="column" gap={2} className={styles.WorkspaceSection}>
+      <Box
+        as="button"
+        className={styles.WorkspaceButton}
+        onClick={() => setShowing("navigation")}
+        flow="column"
+        items="center normal"
+        template="auto / auto 1fr"
+        rad={1}
+      >
+        <Box p={2} className={styles.WorkspaceButtonIcon}>
+          <Laptop width={33} height={33} />
+        </Box>
+        <Box px={3}>
+          <Type as="h1">/{workspace}</Type>
+        </Box>
       </Box>
-      <Box px={3}>
-        <Type as="h1">/{workspace}</Type>
+      <Box
+        as="button"
+        rad={1}
+        className={styles.WorkspaceButton}
+        items="center normal"
+        template="auto / auto 1fr"
+      >
+        <Box p={2} className={styles.WorkspaceButtonIcon}>
+          <Share width={33} height={33} />
+        </Box>
+        <Box px={3}>
+          <Type size={-1}>Export</Type>
+        </Box>
       </Box>
     </Box>
   );

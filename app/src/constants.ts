@@ -29,7 +29,7 @@ export const editorOptions: EditorProps["options"] = {
   matchBrackets: "never",
   selectionHighlight: false,
   lineHeight: 28,
-  lineNumbersMinChars: 5,
+  lineNumbersMinChars: 3,
   cursorWidth: 2,
   automaticLayout: true,
 };
