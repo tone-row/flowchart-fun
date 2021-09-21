@@ -19,24 +19,26 @@ const GraphOptionsBar = memo(() => {
   const values = watch();
   const valuesString = JSON.stringify(values);
 
+  // Update graph options text if different that useForm
   useEffect(() => {
+    if (!isDirty) return;
+
     // Check if different than current values
-    if (isDirty) {
-      const options = JSON.parse(valuesString);
-      if (!isEqual(options, graphOptions)) {
-        window.plausible("Update Graph Options", {
-          props: {
-            layoutName: options.layout.name,
-            rankDir: options.layout.rankDir,
-          },
-        });
-        updateGraphOptionsText && updateGraphOptionsText(options);
-      }
+    const options = JSON.parse(valuesString);
+    if (!isEqual(options, graphOptions)) {
+      window.plausible("Update Graph Options", {
+        props: {
+          layoutName: options.layout.name,
+          rankDir: options.layout.rankDir,
+        },
+      });
+      updateGraphOptionsText && updateGraphOptionsText(options);
     }
   }, [updateGraphOptionsText, isDirty, valuesString, graphOptions]);
 
   const ctxGraphOptions = JSON.stringify(graphOptions);
 
+  // Reset useForm to match whats in context
   useEffect(() => {
     const inContext = JSON.parse(ctxGraphOptions);
     reset({ layout: inContext.layout });
@@ -44,17 +46,15 @@ const GraphOptionsBar = memo(() => {
 
   const currentLayout = useMemo(
     () =>
-      graphOptions.layout?.name
-        ? layouts.find(({ value }) => value === graphOptions.layout?.name)
-        : layouts[0],
+      layouts.find(({ value }) => value === graphOptions.layout?.name) ??
+      layouts[0],
     [graphOptions.layout?.name]
   );
 
   const currentDirection = useMemo(
     () =>
-      graphOptions.layout?.rankDir
-        ? directions.find(({ value }) => value === graphOptions.layout?.rankDir)
-        : directions[0],
+      directions.find(({ value }) => value === graphOptions.layout?.rankDir) ??
+      directions[0],
     [graphOptions.layout]
   );
 

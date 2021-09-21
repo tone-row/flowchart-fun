@@ -15,8 +15,8 @@ export const layouts: {
 ];
 
 export const directions = [
-  { label: () => t`Left to Right`, value: "LR" },
   { label: () => t`Top to Bottom`, value: "TB" },
+  { label: () => t`Left to Right`, value: "LR" },
   { label: () => t`Right to Left`, value: "RL" },
   { label: () => t`Bottom to Top`, value: "BT" },
 ];
