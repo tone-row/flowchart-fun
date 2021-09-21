@@ -56,7 +56,7 @@ const GraphOptions = memo(() => {
               options={directions}
               register={register}
               name="layout.rankDir"
-              value={(graphOptions.layout as any)?.rankDir}
+              value={graphOptions.layout?.rankDir}
             />
           </>
         )}
@@ -74,14 +74,12 @@ function Select({
   options,
   name,
   value,
-  className = "",
   ...props
 }: {
   register: any;
   options: { value: string; label: () => string }[];
   name: string;
   value: string | undefined;
-  className?: string;
 } & BoxProps) {
   const { theme } = useContext(AppContext);
   const { editable } = useContext(GraphContext);
@@ -93,7 +91,7 @@ function Select({
     <Box
       p={3}
       as="select"
-      className={[styles.Select, "slang-type size--1", className].join(" ")}
+      className={[styles.Select, "slang-type size--1"].join(" ")}
       style={{ backgroundImage }}
       disabled={!editable}
       value={value}
