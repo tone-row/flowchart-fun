@@ -11,7 +11,7 @@ import {
   Share,
 } from "phosphor-react";
 import { AppContext, Showing } from "./AppContext";
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import styles from "./MenuNext.module.css";
 
 export default function MenuNext() {
@@ -79,13 +79,18 @@ function MenuTabButton({ icon: Icon, tab }: { icon: Icon; tab: Showing }) {
 function WorkspaceSection() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const { setShowing } = useContext(AppContext);
+  const toggle = useCallback(
+    () => setShowing((s) => (s === "editor" ? "navigation" : "editor")),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   return (
     <Box flow="column" gap={2} className={styles.WorkspaceSection}>
       <Box
         as="button"
         className={styles.WorkspaceButton}
-        onClick={() => setShowing("navigation")}
+        onClick={toggle}
         flow="column"
         items="center normal"
         template="auto / auto 1fr"
