@@ -17,7 +17,7 @@ msgstr ""
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件至{0}。"
 
-#: src/components/Settings.tsx:67
+#: src/components/Settings.tsx:71
 msgid "Appearance"
 msgstr "外观"
 
@@ -29,15 +29,15 @@ msgstr "你确定要删除这一项吗？"
 msgid "Are you sure you want to reset this?"
 msgstr "你确定要重置这一项吗？"
 
-#: src/components/Settings.tsx:97
+#: src/components/Settings.tsx:101
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
-#: src/components/GraphOptions.tsx:21
+#: src/lib/graphOptions.ts:15
 msgid "Bottom to Top"
 msgstr "从下到上"
 
-#: src/components/GraphOptions.tsx:10
+#: src/lib/graphOptions.ts:4
 msgid "Breadthfirst"
 msgstr "宽度优先"
 
@@ -50,11 +50,11 @@ msgstr "取消"
 msgid "Charts"
 msgstr "图表"
 
-#: src/components/GraphOptions.tsx:13
+#: src/lib/graphOptions.ts:7
 msgid "Circle"
 msgstr "圆圈"
 
-#: src/components/GraphOptions.tsx:12
+#: src/lib/graphOptions.ts:6
 msgid "Concentric"
 msgstr "同心"
 
@@ -71,7 +71,7 @@ msgstr "创建新图表"
 msgid "Create a link directly using the exact label text"
 msgstr "使用完全一样的标签文本，直接创建链接"
 
-#: src/components/Settings.tsx:74
+#: src/components/Settings.tsx:78
 msgid "Dark Mode"
 msgstr "黑暗模式"
 
@@ -81,7 +81,7 @@ msgstr "黑暗模式"
 msgid "Delete"
 msgstr "删除"
 
-#: src/components/GraphOptions.tsx:53
+#: src/components/GraphOptions.tsx:50
 msgid "Direction"
 msgstr "方向"
 
@@ -109,15 +109,15 @@ msgstr "电子邮件（可选）"
 msgid "Feedback"
 msgstr "反馈"
 
-#: src/components/Settings.tsx:88
+#: src/components/Settings.tsx:92
 msgid "Follow Us"
 msgstr "关注我们"
 
-#: src/components/GraphOptions.tsx:43
+#: src/components/GraphOptions.tsx:40
 msgid "Graph Options"
 msgstr "图形选项"
 
-#: src/components/GraphOptions.tsx:15
+#: src/lib/graphOptions.ts:9
 msgid "Grid"
 msgstr "网格"
 
@@ -133,27 +133,27 @@ msgstr "帮助"
 msgid "Indenting creates a link to the current line"
 msgstr "缩进可创建连接到当前行的链接"
 
-#: src/components/Settings.tsx:55
+#: src/components/Settings.tsx:59
 msgid "Language"
 msgstr "语言"
 
-#: src/components/GraphOptions.tsx:47
+#: src/components/GraphOptions.tsx:44
 msgid "Layout"
 msgstr "布局"
 
-#: src/components/GraphOptions.tsx:18
-msgid "Left to Right (default)"
-msgstr "从左到右（默认）"
+#: src/lib/graphOptions.ts:12
+msgid "Left to Right"
+msgstr "从左到右"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:75
 msgid "Light Mode"
 msgstr "灯光模式"
 
-#: src/components/Settings.tsx:82
+#: src/components/Settings.tsx:86
 msgid "Made by <0>Tone Row</0>"
 msgstr "由 <0>Tone Row</0> 制作"
 
-#: src/components/Settings.tsx:94
+#: src/components/Settings.tsx:98
 msgid "Make a Donation"
 msgstr "捐款"
 
@@ -161,7 +161,7 @@ msgstr "捐款"
 msgid "Open Share Link"
 msgstr "打开共享链接"
 
-#: src/components/GraphOptions.tsx:14
+#: src/lib/graphOptions.ts:8
 msgid "Random"
 msgstr "随机"
 
@@ -170,7 +170,7 @@ msgstr "随机"
 msgid "Reset"
 msgstr "重置"
 
-#: src/components/GraphOptions.tsx:20
+#: src/lib/graphOptions.ts:14
 msgid "Right to Left"
 msgstr "从右到左"
 
@@ -195,15 +195,15 @@ msgstr "感谢您的反馈!"
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
 
-#: src/components/GraphOptions.tsx:19
+#: src/lib/graphOptions.ts:13
 msgid "Top to Bottom"
 msgstr "从上到下"
 
-#: src/components/Settings.tsx:51
+#: src/components/Settings.tsx:55
 msgid "User Preferences"
 msgstr "用户首选项"
 
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:95
 msgid "View on Github"
 msgstr "在 Github 上查看"
 

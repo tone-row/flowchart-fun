@@ -1,7 +1,15 @@
 import { SlangConfig } from "@tone-row/slang";
 
 export const palette = {
-  white: ["#ffffff", "#ededec", "#f0f0f0", "#aaaaaa", "#757575", "#fafafa"],
+  white: [
+    "#ffffff",
+    "#d4d4d3",
+    "#f0f0f0",
+    "#aaaaaa",
+    "#757575",
+    "#fafafa",
+    "#ededec",
+  ],
   black: ["#000000", "#202020"],
   purple: ["#5c6fff", "#929bff", "#D3CCF3"],
   green: ["#01d857", "#84ff82", "#00c722"],
@@ -14,7 +22,8 @@ export const colors = {
   background: palette.white[0],
   backgroundHsl: "0, 0%, 100%",
   foreground: palette.black[0],
-  lineColor: palette.black[0],
+  foregroundHsl: "0, 0%, 0%",
+  lineColor: palette.white[6],
   uiAccent: palette.white[1],
   nodeHover: palette.white[2],
   edgeHover: palette.white[3],
@@ -29,8 +38,9 @@ export const darkTheme: typeof colors = {
   background: "#0f0f0f",
   backgroundHsl: "0, 0%, 6%",
   foreground: "rgb(250, 250, 250)",
+  foregroundHsl: "0, 0%, 100%",
   edgeHover: "#2e2e2e",
-  lineColor: "yellow",
+  lineColor: "#2e2e2e",
   lineNumbers: "#737373",
   nodeHover: "#2e2e2e",
   uiAccent: "#2e2e2e",

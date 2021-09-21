@@ -1,27 +1,11 @@
-import { t, Trans } from "@lingui/macro";
+import { Trans } from "@lingui/macro";
 import React, { memo, useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { directions, layouts } from "../lib/graphOptions";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./GraphOptions.module.css";
 import { GraphContext } from "./GraphProvider";
-
-const layouts = [
-  { label: () => `Dagre (default)`, value: "dagre" },
-  { label: () => t`Breadthfirst`, value: "breadthfirst" },
-  { label: () => `CoSE`, value: "cose" },
-  { label: () => t`Concentric`, value: "concentric" },
-  { label: () => t`Circle`, value: "circle" },
-  { label: () => t`Random`, value: "random" },
-  { label: () => t`Grid`, value: "grid" },
-];
-
-const directions = [
-  { label: () => t`Left to Right (default)`, value: "LR" },
-  { label: () => t`Top to Bottom`, value: "TB" },
-  { label: () => t`Right to Left`, value: "RL" },
-  { label: () => t`Bottom to Top`, value: "BT" },
-];
 
 const GraphOptions = memo(() => {
   const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
@@ -72,7 +56,7 @@ const GraphOptions = memo(() => {
               options={directions}
               register={register}
               name="layout.rankDir"
-              value={(graphOptions.layout as any)?.rankDir}
+              value={graphOptions.layout?.rankDir}
             />
           </>
         )}

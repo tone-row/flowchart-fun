@@ -17,7 +17,7 @@ msgstr ""
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접 이메일을 보내주십시오."
 
-#: src/components/Settings.tsx:67
+#: src/components/Settings.tsx:71
 msgid "Appearance"
 msgstr "외관"
 
@@ -29,15 +29,15 @@ msgstr "삭제하시겠습니까?"
 msgid "Are you sure you want to reset this?"
 msgstr "재설정하시겠습니까?"
 
-#: src/components/Settings.tsx:97
+#: src/components/Settings.tsx:101
 msgid "Become a Sponsor"
 msgstr "스폰서 되기"
 
-#: src/components/GraphOptions.tsx:21
+#: src/lib/graphOptions.ts:15
 msgid "Bottom to Top"
 msgstr "아래에서 위로"
 
-#: src/components/GraphOptions.tsx:10
+#: src/lib/graphOptions.ts:4
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
@@ -50,11 +50,11 @@ msgstr "취소"
 msgid "Charts"
 msgstr "차트"
 
-#: src/components/GraphOptions.tsx:13
+#: src/lib/graphOptions.ts:7
 msgid "Circle"
 msgstr "원"
 
-#: src/components/GraphOptions.tsx:12
+#: src/lib/graphOptions.ts:6
 msgid "Concentric"
 msgstr "동심"
 
@@ -71,7 +71,7 @@ msgstr "새 차트 만들기"
 msgid "Create a link directly using the exact label text"
 msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 
-#: src/components/Settings.tsx:74
+#: src/components/Settings.tsx:78
 msgid "Dark Mode"
 msgstr "다크 모드"
 
@@ -81,7 +81,7 @@ msgstr "다크 모드"
 msgid "Delete"
 msgstr "삭제"
 
-#: src/components/GraphOptions.tsx:53
+#: src/components/GraphOptions.tsx:50
 msgid "Direction"
 msgstr "방향"
 
@@ -109,15 +109,15 @@ msgstr "이메일 (선택사항)"
 msgid "Feedback"
 msgstr "피드백"
 
-#: src/components/Settings.tsx:88
+#: src/components/Settings.tsx:92
 msgid "Follow Us"
 msgstr "팔로우하세요"
 
-#: src/components/GraphOptions.tsx:43
+#: src/components/GraphOptions.tsx:40
 msgid "Graph Options"
 msgstr "그래프 옵션"
 
-#: src/components/GraphOptions.tsx:15
+#: src/lib/graphOptions.ts:9
 msgid "Grid"
 msgstr "그리드"
 
@@ -133,27 +133,27 @@ msgstr "도움말"
 msgid "Indenting creates a link to the current line"
 msgstr "들여쓰기는 현재 줄에 대한 링크를 생성합니다"
 
-#: src/components/Settings.tsx:55
+#: src/components/Settings.tsx:59
 msgid "Language"
 msgstr "언어"
 
-#: src/components/GraphOptions.tsx:47
+#: src/components/GraphOptions.tsx:44
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/components/GraphOptions.tsx:18
-msgid "Left to Right (default)"
-msgstr "왼쪽에서 오른쪽으로 (기본값)"
+#: src/lib/graphOptions.ts:12
+msgid "Left to Right"
+msgstr "왼쪽에서 오른쪽으로"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:75
 msgid "Light Mode"
 msgstr "라이트 모드"
 
-#: src/components/Settings.tsx:82
+#: src/components/Settings.tsx:86
 msgid "Made by <0>Tone Row</0>"
 msgstr "<0>Tone Row</0> 제작"
 
-#: src/components/Settings.tsx:94
+#: src/components/Settings.tsx:98
 msgid "Make a Donation"
 msgstr "기부하기"
 
@@ -161,7 +161,7 @@ msgstr "기부하기"
 msgid "Open Share Link"
 msgstr "공유 링크 열기"
 
-#: src/components/GraphOptions.tsx:14
+#: src/lib/graphOptions.ts:8
 msgid "Random"
 msgstr "무작위"
 
@@ -170,7 +170,7 @@ msgstr "무작위"
 msgid "Reset"
 msgstr "재설정"
 
-#: src/components/GraphOptions.tsx:20
+#: src/lib/graphOptions.ts:14
 msgid "Right to Left"
 msgstr "오른쪽에서 왼쪽으로"
 
@@ -195,15 +195,15 @@ msgstr "피드백을 해주셔서 감사합니다!"
 msgid "This app works by typing"
 msgstr "이 앱은 타이핑으로 작동합니다"
 
-#: src/components/GraphOptions.tsx:19
+#: src/lib/graphOptions.ts:13
 msgid "Top to Bottom"
 msgstr "위에서 아래로"
 
-#: src/components/Settings.tsx:51
+#: src/components/Settings.tsx:55
 msgid "User Preferences"
 msgstr "사용자 기본 설정"
 
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:95
 msgid "View on Github"
 msgstr "Github에서 보기"
 

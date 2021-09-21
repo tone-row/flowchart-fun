@@ -8,30 +8,48 @@ import {
   Chat,
   IconProps,
   Gear,
+  Share,
 } from "phosphor-react";
 import { AppContext, Showing } from "./AppContext";
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import styles from "./MenuNext.module.css";
+import { Trans } from "@lingui/macro";
 
 export default function MenuNext() {
   return (
     <Box
       as="header"
-      template="1fr / 1fr auto 1fr"
+      template="auto auto / auto [main] auto"
+      at={{
+        tablet: { template: "[main] auto / 1fr [main] auto 1fr", p: 3, pl: 5 },
+      }}
       flow="column"
-      p={3}
-      pl={5}
       items="center normal"
       className={styles.Menu}
     >
-      <Box flow="column" items="center" content="stretch start" gap={2}>
+      <Box
+        flow="column"
+        items="center"
+        content="stretch start"
+        p={1}
+        gap={1}
+        pl={2}
+        at={{ tablet: { p: 0, gap: 2, pl: 0 } }}
+      >
         <BrandSvg width={40} className={styles.Brand} />
         <MenuTabButton icon={TreeStructure} tab="editor" />
         <MenuTabButton icon={Folder} tab="navigation" />
-        <MenuTabButton icon={Gear} tab="settings" />
       </Box>
-      <WorkspaceButton />
-      <Box content="stretch end">
+      <WorkspaceSection />
+      <Box
+        content="stretch end"
+        flow="column"
+        items="center"
+        p={1}
+        gap={1}
+        at={{ tablet: { p: 0 } }}
+      >
+        <MenuTabButton icon={Gear} tab="settings" />
         <MenuTabButton icon={Chat} tab="feedback" />
       </Box>
     </Box>
@@ -59,24 +77,60 @@ function MenuTabButton({ icon: Icon, tab }: { icon: Icon; tab: Showing }) {
   );
 }
 
-function WorkspaceButton() {
+function WorkspaceSection() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const { setShowing } = useContext(AppContext);
+  const toggle = useCallback(
+    () => setShowing((s) => (s === "editor" ? "navigation" : "editor")),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   return (
     <Box
-      as="button"
-      className={styles.WorkspaceButton}
-      rad={1}
-      onClick={() => setShowing("navigation")}
       flow="column"
-      items="center normal"
+      template="auto / 1fr auto"
+      gap={2}
+      className={styles.WorkspaceSection}
+      px={2}
+      at={{ tablet: { px: 0 } }}
     >
-      <Box p={2} className={styles.WorkspaceButtonIcon}>
-        <Laptop width={33} height={33} />
+      <Box
+        as="button"
+        className={styles.WorkspaceButton}
+        onClick={toggle}
+        flow="column"
+        items="center normal"
+        template="auto / auto 1fr"
+        rad={1}
+      >
+        <Box p={2} className={styles.WorkspaceButtonIcon}>
+          <Laptop width={33} height={33} />
+        </Box>
+        <Box px={3}>
+          <Type as="h1">/{workspace}</Type>
+        </Box>
       </Box>
-      <Box px={3}>
-        <Type as="h1">/{workspace}</Type>
+      <Box
+        as="button"
+        rad={1}
+        className={styles.WorkspaceButton}
+        items="center normal"
+        at={{ tablet: { template: "auto / auto 1fr" } }}
+      >
+        <Box p={2}>
+          <Share width={33} height={33} />
+        </Box>
+        <Box
+          display="none"
+          px={3}
+          at={{ tablet: { display: "grid" } }}
+          className={styles.IconButtonText}
+        >
+          <Type size={-1}>
+            <Trans>Export</Trans>
+          </Type>
+        </Box>
       </Box>
     </Box>
   );

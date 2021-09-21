@@ -17,7 +17,7 @@ msgstr ""
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "एक एरर हो गया. फिर से सबमिट करने की कोशिश करें या सीधे {0} ईमेल करें."
 
-#: src/components/Settings.tsx:67
+#: src/components/Settings.tsx:71
 msgid "Appearance"
 msgstr "दिखावट"
 
@@ -29,15 +29,15 @@ msgstr "क्या आप वाकई इसे हटाना चाहत�
 msgid "Are you sure you want to reset this?"
 msgstr "क्या आप वाकई इसे रीसेट करना चाहते हैं?"
 
-#: src/components/Settings.tsx:97
+#: src/components/Settings.tsx:101
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
-#: src/components/GraphOptions.tsx:21
+#: src/lib/graphOptions.ts:15
 msgid "Bottom to Top"
 msgstr "नीचे से शीर्ष तक"
 
-#: src/components/GraphOptions.tsx:10
+#: src/lib/graphOptions.ts:4
 msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
@@ -50,11 +50,11 @@ msgstr "रद्द करें"
 msgid "Charts"
 msgstr "चार्ट"
 
-#: src/components/GraphOptions.tsx:13
+#: src/lib/graphOptions.ts:7
 msgid "Circle"
 msgstr "परिधि"
 
-#: src/components/GraphOptions.tsx:12
+#: src/lib/graphOptions.ts:6
 msgid "Concentric"
 msgstr "गाढ़ा"
 
@@ -71,7 +71,7 @@ msgstr "एक नया चार्ट बनाएँ"
 msgid "Create a link directly using the exact label text"
 msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
 
-#: src/components/Settings.tsx:74
+#: src/components/Settings.tsx:78
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
@@ -81,7 +81,7 @@ msgstr "डार्क मोड"
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: src/components/GraphOptions.tsx:53
+#: src/components/GraphOptions.tsx:50
 msgid "Direction"
 msgstr "दिशा"
 
@@ -109,15 +109,15 @@ msgstr "ईमेल (ऐच्छिक)"
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
-#: src/components/Settings.tsx:88
+#: src/components/Settings.tsx:92
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
-#: src/components/GraphOptions.tsx:43
+#: src/components/GraphOptions.tsx:40
 msgid "Graph Options"
 msgstr "ग्राफ विकल्प"
 
-#: src/components/GraphOptions.tsx:15
+#: src/lib/graphOptions.ts:9
 msgid "Grid"
 msgstr "ग्रिड"
 
@@ -133,27 +133,27 @@ msgstr "मदद"
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
-#: src/components/Settings.tsx:55
+#: src/components/Settings.tsx:59
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/GraphOptions.tsx:47
+#: src/components/GraphOptions.tsx:44
 msgid "Layout"
 msgstr "ख़ाका"
 
-#: src/components/GraphOptions.tsx:18
-msgid "Left to Right (default)"
-msgstr "बाएं से दाएं (डिफ़ॉल्ट)"
+#: src/lib/graphOptions.ts:12
+msgid "Left to Right"
+msgstr "बाएं से दाएं"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:75
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/Settings.tsx:82
+#: src/components/Settings.tsx:86
 msgid "Made by <0>Tone Row</0>"
 msgstr "<0>Tone Row</0> द्वारा बना"
 
-#: src/components/Settings.tsx:94
+#: src/components/Settings.tsx:98
 msgid "Make a Donation"
 msgstr "दान करें"
 
@@ -161,7 +161,7 @@ msgstr "दान करें"
 msgid "Open Share Link"
 msgstr "शेयर लिंक खोलें"
 
-#: src/components/GraphOptions.tsx:14
+#: src/lib/graphOptions.ts:8
 msgid "Random"
 msgstr "अनियमित"
 
@@ -170,7 +170,7 @@ msgstr "अनियमित"
 msgid "Reset"
 msgstr "रीसेट करें"
 
-#: src/components/GraphOptions.tsx:20
+#: src/lib/graphOptions.ts:14
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
@@ -195,15 +195,15 @@ msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
-#: src/components/GraphOptions.tsx:19
+#: src/lib/graphOptions.ts:13
 msgid "Top to Bottom"
 msgstr "ऊपर से नीचे"
 
-#: src/components/Settings.tsx:51
+#: src/components/Settings.tsx:55
 msgid "User Preferences"
 msgstr "उपयोगकर्ता वरीयताएं"
 
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:95
 msgid "View on Github"
 msgstr "Github पर देखें"
 

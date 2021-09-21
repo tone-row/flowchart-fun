@@ -1,8 +1,9 @@
 import { Resizable as Reresizable } from "re-resizable";
-import { memo, ReactNode, useContext } from "react";
+import { memo, ReactNode, useContext, useState } from "react";
 import { Box } from "../slang";
 import styles from "./TabPane.module.css";
 import { AppContext } from "./AppContext";
+import { DotsThreeOutlineVertical } from "phosphor-react";
 
 const Resizable = ({
   children,
@@ -11,6 +12,8 @@ const Resizable = ({
   children: ReactNode;
   triggerResize: () => void;
 }) => {
+  const [dragging, setDragging] = useState(false);
+
   return (
     <Reresizable
       defaultSize={{
@@ -30,8 +33,12 @@ const Resizable = ({
         topLeft: false,
       }}
       className={styles.TextareaContainer}
-      handleClasses={{ right: styles.resizableHandle }}
-      onResizeStop={triggerResize}
+      handleComponent={{ right: <Handle dragging={dragging} /> }}
+      onResizeStart={() => setDragging(true)}
+      onResizeStop={() => {
+        setDragging(false);
+        triggerResize();
+      }}
     >
       {children}
     </Reresizable>
@@ -54,17 +61,12 @@ const TabPane = memo(
         <Box
           at={hideAtTablet}
           className={styles.Top}
-          pt={2}
           overflow={showing !== "editor" ? "auto" : undefined}
         >
           {children}
         </Box>
         <Resizable triggerResize={triggerResize}>
-          <Box
-            pt={4}
-            h="100%"
-            overflow={showing !== "editor" ? "auto" : undefined}
-          >
+          <Box h="100%" overflow={showing !== "editor" ? "auto" : undefined}>
             {children}
           </Box>
         </Resizable>
@@ -76,3 +78,14 @@ const TabPane = memo(
 TabPane.displayName = "TabPane";
 
 export default TabPane;
+
+const Handle = ({ dragging = false }: { dragging: boolean }) => (
+  <Box
+    background="color-background"
+    className={styles.Handle}
+    content="center"
+    data-dragging={dragging}
+  >
+    <DotsThreeOutlineVertical height={24} width={24} />
+  </Box>
+);

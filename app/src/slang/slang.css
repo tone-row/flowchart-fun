@@ -620,6 +620,7 @@ body {
 	--color-background:#ffffff;
 	--color-backgroundHsl:0, 0%, 100%;
 	--color-foreground:#000000;
+	--color-foregroundHsl:0, 0%, 0%;
 	--color-lineColor:#000000;
 	--color-uiAccent:#ededec;
 	--color-nodeHover:#f0f0f0;

@@ -13,6 +13,7 @@ type Colors =
   | "color-background"
   | "color-backgroundHsl"
   | "color-foreground"
+  | "color-foregroundHsl"
   | "color-lineColor"
   | "color-uiAccent"
   | "color-nodeHover"
