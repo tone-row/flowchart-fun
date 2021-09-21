@@ -9,9 +9,6 @@ import { GraphContext } from "./GraphProvider";
 
 const GraphOptionsBar = memo(() => {
   const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
-
-  const optionsInContext = JSON.stringify(graphOptions);
-
   const {
     watch,
     control,
@@ -26,7 +23,7 @@ const GraphOptionsBar = memo(() => {
     // Check if different than current values
     if (isDirty) {
       const options = JSON.parse(valuesString);
-      if (!softIsEqual(options, graphOptions)) {
+      if (!isEqual(options, graphOptions)) {
         window.plausible("Update Graph Options", {
           props: {
             layoutName: options.layout.name,
@@ -38,25 +35,25 @@ const GraphOptionsBar = memo(() => {
     }
   }, [updateGraphOptionsText, isDirty, valuesString, graphOptions]);
 
-  useEffect(() => {
-    const inContext = JSON.parse(optionsInContext);
-    reset({ layout: inContext.layout });
-  }, [optionsInContext, reset]);
+  const ctxGraphOptions = JSON.stringify(graphOptions);
 
-  const selectedLayout = useMemo(
+  useEffect(() => {
+    const inContext = JSON.parse(ctxGraphOptions);
+    reset({ layout: inContext.layout });
+  }, [ctxGraphOptions, reset]);
+
+  const currentLayout = useMemo(
     () =>
       graphOptions.layout?.name
-        ? layouts.find((l) => l.value === graphOptions.layout?.name)
+        ? layouts.find(({ value }) => value === graphOptions.layout?.name)
         : layouts[0],
     [graphOptions.layout?.name]
   );
 
-  const selectedDirection = useMemo(
+  const currentDirection = useMemo(
     () =>
-      (graphOptions.layout as any)?.rankDir
-        ? directions.find(
-            (l) => l.value === (graphOptions.layout as any)?.rankDir
-          )
+      graphOptions.layout?.rankDir
+        ? directions.find(({ value }) => value === graphOptions.layout?.rankDir)
         : directions[0],
     [graphOptions.layout]
   );
@@ -83,13 +80,13 @@ const GraphOptionsBar = memo(() => {
                 onChange={(layout: typeof layouts[0]) =>
                   layout && onChange(layout.value)
                 }
-                value={selectedLayout}
+                value={currentLayout}
               />
             );
           }}
         />
       </OptionWithIcon>
-      {selectedLayout?.value === "dagre" && (
+      {currentLayout?.value === "dagre" && (
         <OptionWithIcon icon={ArrowUpRight}>
           <Controller
             control={control}
@@ -101,7 +98,7 @@ const GraphOptionsBar = memo(() => {
                   onChange={(dir: typeof directions[0]) =>
                     dir && onChange(dir.value)
                   }
-                  value={selectedDirection}
+                  value={currentDirection}
                 />
               );
             }}
@@ -257,14 +254,14 @@ interface Z {
 }
 type O = R | Z;
 // Are values equal for known keys in a, BUT ignores unknown keys
-function softIsEqual(a: O, b: O): boolean {
+function isEqual(a: O, b: O): boolean {
   if (typeof a !== "object") return a === b;
   if (typeof b !== "object") return false;
   if (!b) return false;
 
   let result = true;
   for (const key in a) {
-    if (!softIsEqual(a[key], b[key])) {
+    if (!isEqual(a[key], b[key])) {
       result = false;
       break;
     }
