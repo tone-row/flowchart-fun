@@ -11,7 +11,6 @@ import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
 import { delimiters, editorOptions, GraphOptionsObject } from "../constants";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
-import GraphProvider from "./GraphProvider";
 import { stringify } from "gray-matter";
 import useGraphOptions from "./useGraphOptions";
 import merge from "deepmerge";
@@ -28,6 +27,7 @@ import {
   useMonacoLanguage,
 } from "../registerLanguage";
 import HasError from "./HasError";
+import GraphProvider from "./GraphProvider";
 
 declare global {
   interface Window {

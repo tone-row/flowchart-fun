@@ -5,7 +5,6 @@ import { AppContext } from "./AppContext";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { delimiters, editorOptions } from "../constants";
 import Loading from "./Loading";
-import GraphProvider from "./GraphProvider";
 import matter from "gray-matter";
 import {
   defineThemes,
@@ -15,6 +14,7 @@ import {
   useMonacoLanguage,
 } from "../registerLanguage";
 import styles from "./ReadOnly.module.css";
+import GraphProvider from "./GraphProvider";
 
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const monaco = useMonaco();

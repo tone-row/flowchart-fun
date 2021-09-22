@@ -5,9 +5,9 @@ import { Box } from "../slang";
 import Menu from "./Menu";
 import ColorMode from "./ColorMode";
 import { AppContext } from "./AppContext";
-import CurrentTab from "./CurrentTab";
 import MenuNext from "./MenuNext";
 import styles from "./Layout.module.css";
+import CurrentTab from "./CurrentTab";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
