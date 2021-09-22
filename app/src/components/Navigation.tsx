@@ -88,9 +88,11 @@ export default function Navigation() {
       px={4}
       pb={4}
       py={2}
+      pt={4}
       at={noPaddingBottom}
       gap={largeGap}
       content="start normal"
+      className={styles.Navigation}
     >
       <Box gap={10}>
         <Section as="form" onSubmit={handleSubmit(onSubmit)}>

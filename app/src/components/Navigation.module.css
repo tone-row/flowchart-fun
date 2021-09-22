@@ -1,3 +1,9 @@
+.Navigation {
+  width: 100%;
+  max-width: 800px;
+  justify-self: center;
+}
+
 .ChartLink {
   text-align: left;
   overflow-x: hidden;
