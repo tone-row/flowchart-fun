@@ -11,9 +11,9 @@ import { useRouteMatch } from "react-router-dom";
 import Graph from "./Graph";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
-import CurrentTab from "./CurrentTab";
 import GraphWrapper from "./GraphWrapper";
 import Loading from "./Loading";
+import CurrentTab from "./CurrentTab";
 
 export type MainProps = {
   children?: ReactNode;
