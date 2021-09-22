@@ -8,12 +8,12 @@ import React, {
   Suspense,
 } from "react";
 import { useRouteMatch } from "react-router-dom";
+import CurrentTab from "./CurrentTab";
 import Graph from "./Graph";
-import TabPane from "./TabPane";
-import TextResizer from "./TextResizer";
 import GraphWrapper from "./GraphWrapper";
 import Loading from "./Loading";
-import CurrentTab from "./CurrentTab";
+import TabPane from "./TabPane";
+import TextResizer from "./TextResizer";
 
 export type MainProps = {
   children?: ReactNode;
