@@ -61,7 +61,6 @@ function LayoutWrapper({
 
 function LayoutWrapperNext({ children }: { children: ReactNode }) {
   const { showing } = useContext(AppContext);
-  console.log({ showing });
   return <Box root={showing === "editor"}>{children}</Box>;
 }
 
