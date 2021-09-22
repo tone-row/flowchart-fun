@@ -7,12 +7,40 @@ import { AppContext } from "./AppContext";
 import { useLocation } from "react-router-dom";
 import { useFeature } from "flagged";
 import MenuNext from "./MenuNext";
+import CurrentTab from "./CurrentTab";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
-  const { showing } = useContext(AppContext);
   const { pathname } = useLocation();
   const isFullscreen = pathname === "/f";
   const isNext = useFeature("next");
+  return (
+    <LayoutWrapper isFullscreen={isFullscreen}>
+      {isFullscreen ? null : isNext ? <MenuNext /> : <Menu />}
+
+      {isNext ? (
+        <EditorWrapperNext>
+          <CurrentTab>{children}</CurrentTab>
+        </EditorWrapperNext>
+      ) : (
+        <EditorWrapper isFullscreen={isFullscreen}>{children}</EditorWrapper>
+      )}
+
+      <ColorMode />
+    </LayoutWrapper>
+  );
+});
+
+Layout.displayName = "Layout";
+
+export default Layout;
+
+function LayoutWrapper({
+  children,
+  isFullscreen,
+}: {
+  children: ReactNode;
+  isFullscreen: boolean;
+}) {
   return (
     <Box
       root
@@ -22,20 +50,35 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
         isFullscreen ? "minmax(0, 1fr) / none" : "auto minmax(0, 1fr) / none"
       }
     >
-      {isFullscreen ? null : isNext ? <MenuNext /> : <Menu />}
-      <Box
-        as="main"
-        className={isFullscreen ? undefined : styles.TabletWrapper}
-        at={{ tablet: { display: "flex", template: "none / none" } }}
-        data-showing={showing}
-      >
-        {children}
-      </Box>
-      <ColorMode />
+      {children}
     </Box>
   );
-});
+}
 
-Layout.displayName = "Layout";
+function EditorWrapper({
+  children,
+  isFullscreen,
+}: {
+  children: ReactNode;
+  isFullscreen: boolean;
+}) {
+  return (
+    <Box
+      as="main"
+      className={isFullscreen ? undefined : styles.TabletWrapper}
+      at={{ tablet: { display: "flex", template: "none / none" } }}
+      data-showing="editor"
+    >
+      {children}
+    </Box>
+  );
+}
 
-export default Layout;
+function EditorWrapperNext({ children }: { children: ReactNode }) {
+  const { showing } = useContext(AppContext);
+  return (
+    <Box as="main" className={styles.EditorWrapperNext} data-showing={showing}>
+      {children}
+    </Box>
+  );
+}

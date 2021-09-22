@@ -13,3 +13,9 @@
     grid-template: minmax(0, 1fr) minmax(0, 1fr) / none;
   }
 }
+
+@media (min-width: 800px) {
+  .EditorWrapperNext[data-showing="editor"] {
+    display: flex;
+  }
+}

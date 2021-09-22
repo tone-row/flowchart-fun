@@ -22,7 +22,7 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
 .MenuTabButton[aria-selected="true"],
 .MenuTabButton[aria-selected="true"]:hover,
 .MenuTabButton[aria-selected="true"]:focus {
-  background-color: var(--color-input);
+  background-color: var(--color-lineColor);
 }
 
 body:not([class*="disableAnimation"]) .MenuTabButton[aria-selected="true"],
