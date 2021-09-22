@@ -13,18 +13,22 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
   const isFullscreen = pathname === "/f";
   const isNext = useFeature("next");
-  return (
-    <LayoutWrapper isFullscreen={isFullscreen}>
-      {isFullscreen ? null : isNext ? <MenuNext /> : <Menu />}
 
-      {isNext ? (
+  if (isNext)
+    return (
+      <LayoutWrapperNext>
+        {isFullscreen ? null : <MenuNext />}
         <EditorWrapperNext>
           <CurrentTab>{children}</CurrentTab>
         </EditorWrapperNext>
-      ) : (
-        <EditorWrapper isFullscreen={isFullscreen}>{children}</EditorWrapper>
-      )}
+        <ColorMode />
+      </LayoutWrapperNext>
+    );
 
+  return (
+    <LayoutWrapper isFullscreen={isFullscreen}>
+      {isFullscreen ? null : <Menu />}
+      <EditorWrapper isFullscreen={isFullscreen}>{children}</EditorWrapper>
       <ColorMode />
     </LayoutWrapper>
   );
@@ -50,6 +54,16 @@ function LayoutWrapper({
         isFullscreen ? "minmax(0, 1fr) / none" : "auto minmax(0, 1fr) / none"
       }
     >
+      {children}
+    </Box>
+  );
+}
+
+function LayoutWrapperNext({ children }: { children: ReactNode }) {
+  const { showing } = useContext(AppContext);
+  console.log({ showing });
+  return (
+    <Box root={showing === "editor"} className={styles.LayoutWrapperNext}>
       {children}
     </Box>
   );
