@@ -1,13 +1,13 @@
 import { memo, ReactNode, useContext } from "react";
-import { Box } from "../slang";
-import Menu from "./Menu";
-import styles from "./Layout.module.css";
-import ColorMode from "./ColorMode";
-import { AppContext } from "./AppContext";
 import { useLocation } from "react-router-dom";
 import { useFeature } from "flagged";
-import MenuNext from "./MenuNext";
+import { Box } from "../slang";
+import Menu from "./Menu";
+import ColorMode from "./ColorMode";
+import { AppContext } from "./AppContext";
 import CurrentTab from "./CurrentTab";
+import MenuNext from "./MenuNext";
+import styles from "./Layout.module.css";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
