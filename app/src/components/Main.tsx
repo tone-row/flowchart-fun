@@ -9,9 +9,9 @@ import React, {
 } from "react";
 import { useRouteMatch } from "react-router-dom";
 import CurrentTab from "./CurrentTab";
+import Loading from "./Loading";
 import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
-import Loading from "./Loading";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
 
