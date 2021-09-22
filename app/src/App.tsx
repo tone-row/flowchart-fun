@@ -3,7 +3,7 @@ import * as Sentry from "@sentry/react";
 import React, { Suspense } from "react";
 import Provider from "./components/AppContext";
 import { Box, Type } from "./slang";
-import { I18n } from "./locales/i18n";
+import { I18n } from "./components/I18n";
 
 export default function App() {
   return (

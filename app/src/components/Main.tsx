@@ -9,11 +9,11 @@ import React, {
 } from "react";
 import { useRouteMatch } from "react-router-dom";
 import Graph from "./Graph";
-import GraphWrapper from "./GraphWrapper";
-import Loading from "./Loading";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
 import CurrentTab from "./CurrentTab";
+import GraphWrapper from "./GraphWrapper";
+import Loading from "./Loading";
 
 export type MainProps = {
   children?: ReactNode;
