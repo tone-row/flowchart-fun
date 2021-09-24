@@ -8,6 +8,7 @@
     "@lingui/react": "^3.8.9",
     "@monaco-editor/react": "^4.0.11",
     "@reach/dialog": "^0.15.0",
+    "@reach/visually-hidden": "^0.16.0",
     "@react-hook/throttle": "^2.2.0",
     "@sendgrid/mail": "^7.4.6",
     "@sentry/react": "6.5.1",

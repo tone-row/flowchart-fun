@@ -1,0 +1,55 @@
+.CloseButton svg line {
+  stroke-width: 10;
+  stroke: var(--color-edgeHover);
+  transition: 100ms stroke ease;
+}
+
+.CloseButton:hover svg line {
+  stroke: var(--color-foreground);
+}
+
+.Title {
+  text-align: center;
+}
+
+.Button {
+  background-color: var(--color-input);
+  border: 1px solid var(--color-uiAccent);
+}
+
+.Button:hover {
+  background-color: var(--color-uiAccent);
+  border-color: var(--color-edgeHover);
+}
+
+.InnerDialog {
+  border: 1px solid var(--color-uiAccent);
+}
+
+.LinkCopyInput {
+  appearance: none;
+  border: none;
+  background: none;
+  padding-block: 5px;
+  text-overflow: ellipsis;
+  width: 100%;
+  color: var(--color-foreground);
+}
+
+.LinkCopyButton {
+  border: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.LinkCopy {
+  border: 1px solid var(--color-uiAccent);
+}
+.LinkCopy .Button {
+  border: 1px solid var(--color-uiAccent);
+}
+
+.LinkCopy input:focus {
+  outline: none;
+  background-color: var(--color-uiAccent);
+}

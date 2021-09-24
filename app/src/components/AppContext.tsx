@@ -44,6 +44,8 @@ type TAppContext = {
   setShowing: Dispatch<SetStateAction<Showing>>;
   hasError: boolean;
   setHasError: Dispatch<SetStateAction<boolean>>;
+  shareModal: boolean;
+  setShareModal: Dispatch<SetStateAction<boolean>>;
 } & Partial<UserSettings>;
 
 export const AppContext = createContext({} as TAppContext);
@@ -51,6 +53,7 @@ export const AppContext = createContext({} as TAppContext);
 const Provider = ({ children }: { children?: ReactNode }) => {
   const [showing, setShowing] = useState<Showing>("editor");
   const [shareLink, setShareLink] = useState("");
+  const [shareModal, setShareModal] = useState(false);
   const [userSettingsString, setUserSettings] = useLocalStorage(
     "flowcharts.fun.user.settings",
     "{}"
@@ -117,6 +120,8 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         setShowing,
         hasError,
         setHasError,
+        setShareModal,
+        shareModal,
         ...settings,
         language: settings.language ?? defaultLanguage,
       }}

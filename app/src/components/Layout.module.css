@@ -19,3 +19,8 @@
     display: flex;
   }
 }
+
+.LayoutWrapperNext:not([data-fullscreen="true"]) {
+  align-content: start;
+  grid-template-rows: auto 1fr;
+}

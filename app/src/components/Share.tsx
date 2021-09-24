@@ -8,7 +8,12 @@ export default function Share() {
   const { shareLink } = useContext(AppContext);
   return (
     <Box gap={2} content="start stretch" p={4}>
-      <Button as="a" href={shareLink} rel="noreferrer" target="_blank">
+      <Button
+        as="a"
+        href={`${new URL(window.location.href).origin}/c#${shareLink}`}
+        rel="noreferrer"
+        target="_blank"
+      >
         <Trans>Open Share Link</Trans>
       </Button>
       <Button onClick={() => window.flowchartFunDownloadSVG()}>

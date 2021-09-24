@@ -57,9 +57,11 @@ const Settings = memo(() => {
       <Box content="start stretch" gap={largeGap}>
         {!isNext && <GraphOptions />}
         <Box content="start" gap={4}>
-          <Type weight="700">
-            <Trans>User Preferences</Trans>
-          </Type>
+          {!isNext && (
+            <Type weight="700">
+              <Trans>User Preferences</Trans>
+            </Type>
+          )}
           <Box gap={2}>
             <Type size={-1}>
               <Trans>Language</Trans>

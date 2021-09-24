@@ -3,19 +3,22 @@ import { ReactComponent as BrandSvg } from "./brand.svg";
 import { Box, Type } from "../slang";
 import {
   TreeStructure,
-  Folder,
   Laptop,
   Chat,
   IconProps,
   Gear,
   Share,
+  FolderOpen,
 } from "phosphor-react";
 import { AppContext, Showing } from "./AppContext";
 import { useCallback, useContext } from "react";
 import styles from "./MenuNext.module.css";
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
+
+const chartSpecific: Showing[] = ["editor", "navigation", "share"];
 
 export default function MenuNext() {
+  const { showing } = useContext(AppContext);
   return (
     <Box
       as="header"
@@ -38,9 +41,13 @@ export default function MenuNext() {
       >
         <BrandSvg width={40} className={styles.Brand} />
         <MenuTabButton icon={TreeStructure} tab="editor" />
-        <MenuTabButton icon={Folder} tab="navigation" />
+        <MenuTabButton icon={FolderOpen} tab="navigation" />
       </Box>
-      <WorkspaceSection />
+      {chartSpecific.includes(showing) ? (
+        <WorkspaceSection />
+      ) : (
+        <Type>{translatedTitle(showing)}</Type>
+      )}
       <Box
         content="stretch end"
         flow="column"
@@ -79,7 +86,7 @@ function MenuTabButton({ icon: Icon, tab }: { icon: Icon; tab: Showing }) {
 
 function WorkspaceSection() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
-  const { setShowing } = useContext(AppContext);
+  const { setShowing, setShareModal } = useContext(AppContext);
   const toggle = useCallback(
     () => setShowing((s) => (s === "editor" ? "navigation" : "editor")),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -90,10 +97,10 @@ function WorkspaceSection() {
     <Box
       flow="column"
       template="auto / 1fr auto"
-      gap={2}
+      gap={1}
       className={styles.WorkspaceSection}
-      px={2}
-      at={{ tablet: { px: 0 } }}
+      px={1}
+      at={{ tablet: { px: 0, gap: 2 } }}
     >
       <Box
         as="button"
@@ -117,6 +124,7 @@ function WorkspaceSection() {
         className={styles.WorkspaceButton}
         items="center normal"
         at={{ tablet: { template: "auto / auto 1fr" } }}
+        onClick={() => setShareModal(true)}
       >
         <Box p={2}>
           <Share width={33} height={33} />
@@ -134,4 +142,15 @@ function WorkspaceSection() {
       </Box>
     </Box>
   );
+}
+
+function translatedTitle(current: Showing) {
+  switch (current) {
+    case "feedback":
+      return t`Feedback`;
+    case "settings":
+      return t`User Preferences`;
+    default:
+      return current;
+  }
 }

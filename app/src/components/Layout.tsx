@@ -1,4 +1,4 @@
-import { memo, ReactNode, useContext } from "react";
+import { memo, ReactNode, Suspense, useContext } from "react";
 import { Box } from "../slang";
 import Menu from "./Menu";
 import styles from "./Layout.module.css";
@@ -8,6 +8,9 @@ import CurrentTab from "./CurrentTab";
 import { useLocation } from "react-router-dom";
 import { useFeature } from "flagged";
 import MenuNext from "./MenuNext";
+import Loading from "./Loading";
+import Share from "./Share";
+import ShareDialog from "./ShareDialog";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
@@ -16,12 +19,13 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
 
   if (isNext)
     return (
-      <LayoutWrapperNext>
+      <LayoutWrapperNext isFullscreen={isFullscreen}>
         {isFullscreen ? null : <MenuNext />}
         <EditorWrapperNext>
           <CurrentTab>{children}</CurrentTab>
         </EditorWrapperNext>
         <ColorMode />
+        <ShareDialog />
       </LayoutWrapperNext>
     );
 
@@ -59,9 +63,27 @@ function LayoutWrapper({
   );
 }
 
-function LayoutWrapperNext({ children }: { children: ReactNode }) {
-  const { showing } = useContext(AppContext);
-  return <Box root={showing === "editor"}>{children}</Box>;
+function LayoutWrapperNext({
+  children,
+  isFullscreen,
+}: {
+  children: ReactNode;
+  isFullscreen: boolean;
+}) {
+  const { showing, shareModal } = useContext(AppContext);
+  return (
+    <>
+      <Box
+        root
+        className={styles.LayoutWrapperNext}
+        data-showing={showing}
+        data-fullscreen={isFullscreen}
+      >
+        {children}
+      </Box>
+      {shareModal && <Share />}
+    </>
+  );
 }
 
 function EditorWrapper({
@@ -87,7 +109,7 @@ function EditorWrapperNext({ children }: { children: ReactNode }) {
   const { showing } = useContext(AppContext);
   return (
     <Box as="main" className={styles.EditorWrapperNext} data-showing={showing}>
-      {children}
+      <Suspense fallback={<Loading />}>{children}</Suspense>
     </Box>
   );
 }
