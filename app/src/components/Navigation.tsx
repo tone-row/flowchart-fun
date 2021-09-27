@@ -88,9 +88,11 @@ export default function Navigation() {
       px={4}
       pb={4}
       py={2}
+      pt={4}
       at={noPaddingBottom}
       gap={largeGap}
       content="start normal"
+      className={styles.Navigation}
     >
       <Box gap={10}>
         <Section as="form" onSubmit={handleSubmit(onSubmit)}>
@@ -139,7 +141,7 @@ export default function Navigation() {
                   as="button"
                   onClick={() => {
                     push(`/${chart}`);
-                    if (window.innerWidth < 800) setShowing("editor");
+                    setShowing("editor");
                   }}
                   className={styles.ChartLink}
                   aria-current={workspace === chart ? "page" : undefined}

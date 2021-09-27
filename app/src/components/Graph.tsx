@@ -27,6 +27,12 @@ import { colors } from "../slang/config";
 import { useAnimationSetting } from "../hooks";
 import useDownloadHandlers from "./useDownloadHandlers";
 
+declare global {
+  interface Window {
+    _flowchartFunGraph?: cytoscape.Core;
+  }
+}
+
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
   cytoscape.use(cytoscapeSvg);
@@ -72,9 +78,7 @@ const Graph = memo(
     useDownloadHandlers(textToParse, cy);
 
     useEffect(() => {
-      setShareLink(
-        `${new URL(window.location.href).origin}/c#${compress(textToParse)}`
-      );
+      setShareLink(compress(textToParse));
     }, [setShareLink, textToParse]);
 
     // Initialize Graph
@@ -128,6 +132,7 @@ function initializeGraph(
     boxSelectionEnabled: false,
     wheelSensitivity: 0.2,
   });
+  window._flowchartFunGraph = cy.current;
   const cyCurrent = cy.current;
   const errorCyCurrent = errorCatcher.current;
 

@@ -7,6 +7,7 @@
 .Top {
   overflow: hidden;
   position: relative;
+  grid-area: main;
 }
 
 .TextareaContainer {
@@ -15,9 +16,9 @@
 
 .Handle {
   height: 100%;
-  z-index: 1;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .Handle svg circle {

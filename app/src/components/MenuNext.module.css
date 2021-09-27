@@ -1,3 +1,7 @@
+.MenuTabButton {
+  cursor: pointer;
+}
+
 body:not([class*="disableAnimation"]) .Menu button,
 body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 600ms;
@@ -10,27 +14,20 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
 .MenuTabButton[aria-selected="true"] svg rect,
 .MenuTabButton[aria-selected="true"] svg line,
 .MenuTabButton[aria-selected="true"] svg path,
-.MenuTabButton[aria-selected="true"] svg circle {
+.MenuTabButton[aria-selected="true"] svg circle,
+.MenuTabButton[aria-selected="true"] svg polyline {
   stroke: var(--color-buttonFocus);
 }
 
 .MenuTabButton:hover,
 .MenuTabButton:focus {
-  background-color: var(--color-uiAccent);
+  background-color: var(--color-lineColor);
 }
 
 .MenuTabButton[aria-selected="true"],
 .MenuTabButton[aria-selected="true"]:hover,
 .MenuTabButton[aria-selected="true"]:focus {
-  background-color: var(--color-input);
-}
-
-body:not([class*="disableAnimation"]) .MenuTabButton[aria-selected="true"],
-body:not([class*="disableAnimation"])
-  .MenuTabButton[aria-selected="true"]:hover,
-body:not([class*="disableAnimation"])
-  .MenuTabButton[aria-selected="true"]:focus {
-  transition-delay: 100ms;
+  background-color: var(--color-background);
 }
 
 .Menu button:focus {
@@ -57,33 +54,16 @@ body:not([class*="disableAnimation"])
   }
 }
 
-/* Workspace Button */
-.WorkspaceButton {
-  border: 1px solid var(--color-uiAccent);
-  background-color: var(--color-input);
-}
-
-.WorkspaceButton:hover,
-.WorkspaceButton:focus {
-  border-color: var(--color-edgeHover);
-  background-color: var(--color-uiAccent);
-}
-
-.WorkspaceButtonIcon {
-  border-right: 1px solid var(--color-uiAccent);
-}
-
 .Brand {
   fill: var(--color-foreground);
 }
 
-.IconButtonText {
-  border-left: 1px solid var(--color-uiAccent);
+.ExportButton {
+  background-color: var(--color-input);
+  border: 1px solid var(--color-uiAccent);
 }
 
-.WorkspaceButton:hover .WorkspaceButtonIcon,
-.WorkspaceButton:hover .IconButtonText,
-.WorkspaceButton:focus .WorkspaceButtonIcon,
-.WorkspaceButton:focus .IconButtonText {
+.ExportButton:hover {
   border-color: var(--color-edgeHover);
+  /* background-color: var(--color-uiAccent); */
 }

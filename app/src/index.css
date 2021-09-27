@@ -28,11 +28,10 @@ html {
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
-  overflow: hidden;
 }
 
 .node-hover {
-  background: var(--color-uiAccent);
+  background: var(--color-lineColor);
 }
 
 .view-line {
@@ -136,4 +135,5 @@ div[data-reach-dialog-content] {
 
 div[data-reach-dialog-overlay] {
   background: hsla(var(--color-overlayColor), 0.5);
+  z-index: 1;
 }

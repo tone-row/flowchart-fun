@@ -33,3 +33,8 @@ ${t`Have fun! 🎉`}
   );
   return [text, setText, defaultText];
 }
+
+export function useFullscreen() {
+  const { pathname } = useLocation();
+  return pathname === "/f";
+}

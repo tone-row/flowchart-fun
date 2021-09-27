@@ -1,4 +1,4 @@
-import React, {
+import {
   ReactNode,
   Dispatch,
   SetStateAction,
@@ -7,13 +7,14 @@ import React, {
   useCallback,
   Suspense,
 } from "react";
-import { useRouteMatch } from "react-router-dom";
 import CurrentTab from "./CurrentTab";
+import Loading from "./Loading";
 import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
-import Loading from "./Loading";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
+import MobileTabToggle from "./MobileTabToggle";
+import { useFullscreen } from "../hooks";
 
 export type MainProps = {
   children?: ReactNode;
@@ -25,8 +26,7 @@ const Main = memo(
   ({ children, textToParse, setHoverLineNumber }: MainProps) => {
     const [shouldResize, triggerResize] = useState(0);
     const trigger = useCallback(() => triggerResize((n) => n + 1), []);
-    const { path } = useRouteMatch();
-    const isFullscreen = path === "/f/:graphText?";
+    const isFullscreen = useFullscreen();
     return (
       <>
         {isFullscreen ? null : (
@@ -43,6 +43,7 @@ const Main = memo(
             shouldResize={shouldResize}
           />
         </GraphWrapper>
+        <MobileTabToggle />
         <TextResizer />
       </>
     );

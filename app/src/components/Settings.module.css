@@ -51,3 +51,9 @@
 .Language:disabled {
   font-weight: 700;
 }
+
+.Settings {
+  max-width: 800px;
+  width: 100%;
+  justify-self: center;
+}
