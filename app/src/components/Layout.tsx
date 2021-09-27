@@ -5,16 +5,15 @@ import styles from "./Layout.module.css";
 import ColorMode from "./ColorMode";
 import { AppContext } from "./AppContext";
 import CurrentTab from "./CurrentTab";
-import { useLocation } from "react-router-dom";
 import { useFeature } from "flagged";
 import MenuNext from "./MenuNext";
 import Loading from "./Loading";
 import Share from "./Share";
 import ShareDialog from "./ShareDialog";
+import { useFullscreen } from "../hooks";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
-  const { pathname } = useLocation();
-  const isFullscreen = pathname === "/f";
+  const isFullscreen = useFullscreen();
   const isNext = useFeature("next");
 
   if (isNext)
