@@ -57,7 +57,7 @@ msgstr "원"
 
 #: src/components/ShareDialog.tsx:28
 msgid "Close"
-msgstr ""
+msgstr "닫기"
 
 #: src/lib/graphOptions.ts:6
 msgid "Concentric"
@@ -66,7 +66,7 @@ msgstr "동심"
 #: src/components/ShareDialog.tsx:37
 #: src/components/ShareDialog.tsx:94
 msgid "Copy"
-msgstr ""
+msgstr "복사"
 
 #: src/components/Navigation.tsx:77
 #: src/components/Navigation.tsx:178
@@ -103,7 +103,7 @@ msgstr "다운로드"
 
 #: src/components/ShareDialog.tsx:46
 msgid "Download Image"
-msgstr ""
+msgstr "이미지 다운로드"
 
 #: src/components/Navigation.tsx:104
 #: src/components/Navigation.tsx:163
@@ -120,7 +120,7 @@ msgstr "이메일 (선택사항)"
 
 #: src/components/MenuNext.tsx:74
 msgid "Export"
-msgstr ""
+msgstr "내보내기"
 
 #: src/components/Feedback.tsx:85
 #: src/components/Menu.tsx:38
@@ -134,7 +134,7 @@ msgstr "팔로우하세요"
 
 #: src/components/ShareDialog.tsx:40
 msgid "Fullscreen"
-msgstr ""
+msgstr "전체 화면"
 
 #: src/components/GraphOptions.tsx:29
 msgid "Graph Options"
@@ -245,7 +245,7 @@ msgstr "무엇을 공유하시겠습니까?"
 
 #: src/components/ShareDialog.tsx:41
 msgid "With Editor"
-msgstr ""
+msgstr "에디터와 함께"
 
 #: src/components/Navigation.tsx:86
 msgid "Your Charts"
