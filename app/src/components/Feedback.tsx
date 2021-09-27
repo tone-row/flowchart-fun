@@ -4,8 +4,9 @@ import { useForm } from "react-hook-form";
 import { Box, BoxProps, Type } from "../slang";
 import { Button } from "./Button";
 import { Input, Textarea } from "./Input";
-import "./Feedback.css";
+import styles from "./Feedback.module.css";
 import Spinner from "./Spinner";
+import { useFeature } from "flagged";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 const largeGap = 10;
@@ -24,6 +25,7 @@ export default function Feedback() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const isNext = useFeature("next");
   const onSubmit = useCallback(
     (data: FormData) => {
       (async function () {
@@ -61,6 +63,8 @@ export default function Feedback() {
       at={noPaddingBottom}
       gap={largeGap}
       content="start normal"
+      className={styles.FeedbackWrapper}
+      self="stretch center"
     >
       {success ? (
         <Success />
@@ -70,14 +74,17 @@ export default function Feedback() {
           as="form"
           pb={4}
           onSubmit={handleSubmit(onSubmit)}
-          className={["feedback-form", submitting ? "submitting" : ""].join(
-            " "
-          )}
+          className={[
+            styles.FeedbackForm,
+            submitting ? styles.Submitting : "",
+          ].join(" ")}
         >
           <Section>
-            <Type weight="700">
-              <Trans>Feedback</Trans>
-            </Type>
+            {!isNext && (
+              <Type weight="700">
+                <Trans>Feedback</Trans>
+              </Type>
+            )}
             <Type as="p">
               <Trans>
                 We appreciate all of your feedback, suggestions, bugs, and
@@ -107,7 +114,7 @@ export default function Feedback() {
           )}
         </Box>
       )}
-      {submitting && <Spinner className="feedback-loading" />}
+      {submitting && <Spinner className={styles.FeedbackLoading} />}
     </Box>
   );
 }

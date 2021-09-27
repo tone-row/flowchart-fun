@@ -1,3 +1,7 @@
+.MenuTabButton {
+  cursor: pointer;
+}
+
 body:not([class*="disableAnimation"]) .Menu button,
 body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 600ms;
@@ -17,13 +21,13 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
 
 .MenuTabButton:hover,
 .MenuTabButton:focus {
-  background-color: var(--color-uiAccent);
+  background-color: var(--color-lineColor);
 }
 
 .MenuTabButton[aria-selected="true"],
 .MenuTabButton[aria-selected="true"]:hover,
 .MenuTabButton[aria-selected="true"]:focus {
-  background-color: var(--color-lineColor);
+  background-color: var(--color-background);
 }
 
 .Menu button:focus {
@@ -50,20 +54,16 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   }
 }
 
-/* Workspace Button */
-.WorkspaceButton {
-  /* border: 1px solid var(--color-uiAccent); */
-  background-color: var(--color-lineColor);
-}
-
-.WorkspaceButton:hover {
-  background-color: var(--color-edgeHover);
-}
-
-.WorkspaceButtonIcon {
-  border-right: 1px solid var(--color-uiAccent);
-}
-
 .Brand {
   fill: var(--color-foreground);
+}
+
+.ExportButton {
+  background-color: var(--color-input);
+  border: 1px solid var(--color-uiAccent);
+}
+
+.ExportButton:hover {
+  border-color: var(--color-edgeHover);
+  /* background-color: var(--color-uiAccent); */
 }

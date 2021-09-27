@@ -12,6 +12,11 @@
   .TabletWrapper[data-showing="editor"] {
     grid-template: minmax(0, 1fr) minmax(0, 1fr) / none;
   }
+
+  .EditorWrapperNext[data-showing="editor"] {
+    max-height: 100%;
+    overflow: hidden;
+  }
 }
 
 @media (min-width: 800px) {
@@ -20,7 +25,11 @@
   }
 }
 
+.LayoutWrapperNext[data-showing="editor"] {
+  max-height: 100%;
+}
+
 .LayoutWrapperNext:not([data-fullscreen="true"]) {
   align-content: start;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(0, 1fr);
 }

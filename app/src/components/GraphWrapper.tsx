@@ -12,7 +12,11 @@ export default function GraphWrapper({ children }: { children: ReactNode }) {
   const isFullscreen = useFullscreen();
 
   return (
-    <Box className={styles.GraphWrapper} data-showing={showing} pb={2} pr={2}>
+    <Box
+      className={styles.GraphWrapper}
+      data-showing={showing}
+      at={{ tablet: { pr: 2, pb: 2 } }}
+    >
       {isNext && !isFullscreen ? (
         <Box
           template="auto 1fr / 1fr"

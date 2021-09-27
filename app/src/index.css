@@ -135,4 +135,5 @@ div[data-reach-dialog-content] {
 
 div[data-reach-dialog-overlay] {
   background: hsla(var(--color-overlayColor), 0.5);
+  z-index: 1;
 }

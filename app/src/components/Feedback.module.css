@@ -1,8 +1,8 @@
-.feedback-form {
+.FeedbackForm {
   position: relative;
 }
 
-.submitting::after {
+.Submitting::after {
   content: " ";
   position: absolute;
   background: hsla(var(--color-backgroundHsl), 0.75);
@@ -12,10 +12,15 @@
   bottom: 0;
 }
 
-.feedback-loading {
+.FeedbackLoading {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   z-index: 1;
+}
+
+.FeedbackWrapper {
+  max-width: 800px;
+  width: 100%;
 }

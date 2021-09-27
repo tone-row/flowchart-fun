@@ -14,6 +14,7 @@ import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
+import MobileTabToggle from "./MobileTabToggle";
 
 export type MainProps = {
   children?: ReactNode;
@@ -43,6 +44,7 @@ const Main = memo(
             shouldResize={shouldResize}
           />
         </GraphWrapper>
+        <MobileTabToggle />
         <TextResizer />
       </>
     );

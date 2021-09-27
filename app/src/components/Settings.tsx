@@ -53,6 +53,7 @@ const Settings = memo(() => {
       at={noPaddingBottom}
       gap={largeGap}
       template="minmax(0, 1fr) auto / none"
+      className={styles.Settings}
     >
       <Box content="start stretch" gap={largeGap}>
         {!isNext && <GraphOptions />}

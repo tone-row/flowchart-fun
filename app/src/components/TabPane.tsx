@@ -62,6 +62,7 @@ const TabPane = memo(
           at={hideAtTablet}
           className={styles.Top}
           overflow={showing !== "editor" ? "auto" : undefined}
+          background="color-background"
         >
           {children}
         </Box>

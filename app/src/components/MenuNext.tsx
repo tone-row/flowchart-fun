@@ -11,11 +11,11 @@ import {
   FolderOpen,
 } from "phosphor-react";
 import { AppContext, Showing } from "./AppContext";
-import { useCallback, useContext } from "react";
+import { useContext } from "react";
 import styles from "./MenuNext.module.css";
 import { t, Trans } from "@lingui/macro";
 
-const chartSpecific: Showing[] = ["editor", "navigation", "share"];
+const chartSpecific: Showing[] = ["editor", "share"];
 
 export default function MenuNext() {
   const { showing } = useContext(AppContext);
@@ -24,7 +24,12 @@ export default function MenuNext() {
       as="header"
       template="auto auto / auto [main] auto"
       at={{
-        tablet: { template: "[main] auto / 1fr [main] auto 1fr", p: 3, pl: 5 },
+        tablet: {
+          template: "[main] auto / 1fr [main] auto 1fr",
+          p: 2,
+          pl: 5,
+          pr: 3,
+        },
       }}
       flow="column"
       items="center normal"
@@ -86,12 +91,6 @@ function MenuTabButton({ icon: Icon, tab }: { icon: Icon; tab: Showing }) {
 
 function WorkspaceSection() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
-  const { setShowing, setShareModal } = useContext(AppContext);
-  const toggle = useCallback(
-    () => setShowing((s) => (s === "editor" ? "navigation" : "editor")),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
 
   return (
     <Box
@@ -100,46 +99,26 @@ function WorkspaceSection() {
       gap={1}
       className={styles.WorkspaceSection}
       px={1}
-      at={{ tablet: { px: 0, gap: 2 } }}
+      at={{ tablet: { px: 0, gap: 6 } }}
     >
       <Box
-        as="button"
         className={styles.WorkspaceButton}
-        onClick={toggle}
         flow="column"
         items="center normal"
         template="auto / auto 1fr"
         rad={1}
+        gap={3}
       >
-        <Box p={2} className={styles.WorkspaceButtonIcon}>
+        <Box className={styles.WorkspaceButtonIcon}>
           <Laptop width={33} height={33} />
         </Box>
-        <Box px={3}>
-          <Type as="h1">/{workspace}</Type>
-        </Box>
-      </Box>
-      <Box
-        as="button"
-        rad={1}
-        className={styles.WorkspaceButton}
-        items="center normal"
-        at={{ tablet: { template: "auto / auto 1fr" } }}
-        onClick={() => setShareModal(true)}
-      >
-        <Box p={2}>
-          <Share width={33} height={33} />
-        </Box>
-        <Box
-          display="none"
-          px={3}
-          at={{ tablet: { display: "grid" } }}
-          className={styles.IconButtonText}
-        >
-          <Type size={-1}>
-            <Trans>Export</Trans>
+        <Box>
+          <Type as="h1" weight="400">
+            /{workspace}
           </Type>
         </Box>
       </Box>
+      <ExportButton />
     </Box>
   );
 }
@@ -150,7 +129,39 @@ function translatedTitle(current: Showing) {
       return t`Feedback`;
     case "settings":
       return t`User Preferences`;
+    case "navigation":
+      return t`Charts`;
     default:
       return current;
   }
+}
+
+function ExportButton() {
+  const { setShareModal } = useContext(AppContext);
+
+  return (
+    <Box
+      as="button"
+      rad={1}
+      py={1}
+      className={styles.ExportButton}
+      items="center normal"
+      at={{ tablet: { template: "auto / auto 1fr" } }}
+      onClick={() => setShareModal(true)}
+    >
+      <Box p={2}>
+        <Share />
+      </Box>
+      <Box
+        display="none"
+        pr={3}
+        at={{ tablet: { display: "grid" } }}
+        className={styles.IconButtonText}
+      >
+        <Type size={-1}>
+          <Trans>Export</Trans>
+        </Type>
+      </Box>
+    </Box>
+  );
 }

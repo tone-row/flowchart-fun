@@ -106,9 +106,15 @@ function EditorWrapper({
 }
 
 function EditorWrapperNext({ children }: { children: ReactNode }) {
-  const { showing } = useContext(AppContext);
+  const { showing, mobileEditorTab } = useContext(AppContext);
   return (
-    <Box as="main" className={styles.EditorWrapperNext} data-showing={showing}>
+    <Box
+      as="main"
+      className={styles.EditorWrapperNext}
+      data-showing={showing}
+      data-mobile-tab={mobileEditorTab}
+      template="[main] minmax(0, 1fr) auto / [main] minmax(0, 1fr)"
+    >
       <Suspense fallback={<Loading />}>{children}</Suspense>
     </Box>
   );

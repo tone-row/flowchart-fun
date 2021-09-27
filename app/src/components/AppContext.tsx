@@ -34,6 +34,8 @@ const defaultLanguage = Object.keys(languages).includes(browserLanguage)
   ? browserLanguage
   : "en";
 
+type mobileEditorTab = "text" | "graph";
+
 type TAppContext = {
   updateUserSettings: (newSettings: Partial<UserSettings>) => void;
   theme: Theme;
@@ -46,6 +48,8 @@ type TAppContext = {
   setHasError: Dispatch<SetStateAction<boolean>>;
   shareModal: boolean;
   setShareModal: Dispatch<SetStateAction<boolean>>;
+  mobileEditorTab: mobileEditorTab;
+  toggleMobileEditorTab: () => void;
 } & Partial<UserSettings>;
 
 export const AppContext = createContext({} as TAppContext);
@@ -57,6 +61,15 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [userSettingsString, setUserSettings] = useLocalStorage(
     "flowcharts.fun.user.settings",
     "{}"
+  );
+  const [mobileEditorTab, setMobileEditorTab] =
+    useState<mobileEditorTab>("text");
+  const toggleMobileEditorTab = useCallback(
+    () =>
+      setMobileEditorTab((currentTab) =>
+        currentTab === "text" ? "graph" : "text"
+      ),
+    []
   );
   const { settings, theme } = useMemo<{
     settings: Partial<UserSettings>;
@@ -122,6 +135,8 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         setHasError,
         setShareModal,
         shareModal,
+        mobileEditorTab,
+        toggleMobileEditorTab,
         ...settings,
         language: settings.language ?? defaultLanguage,
       }}
