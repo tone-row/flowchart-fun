@@ -6,6 +6,7 @@ import { AppContext } from "./AppContext";
 import { Box, Type } from "../slang";
 import { Check, LinkSimple, X } from "phosphor-react";
 import styles from "./ShareDialog.module.css";
+import { t, Trans } from "@lingui/macro";
 
 export default function ShareDialog() {
   const { shareModal, setShareModal, shareLink } = useContext(AppContext);
@@ -29,7 +30,9 @@ export default function ShareDialog() {
           onClick={close}
           self="normal end"
         >
-          <VisuallyHidden>Close</VisuallyHidden>
+          <VisuallyHidden>
+            <Trans>Close</Trans>
+          </VisuallyHidden>
           <X width={33} height={33} aria-hidden />
         </Box>
         <Box
@@ -43,14 +46,18 @@ export default function ShareDialog() {
           }}
         >
           <Column>
-            <Title>Copy URL</Title>
+            <Title>
+              <Trans>Copy</Trans> URL
+            </Title>
             <Box gap={4}>
-              <LinkCopy value={fullscreen} title="Fullscreen" />
-              <LinkCopy value={withEditor} title="With Editor" />
+              <LinkCopy value={fullscreen} title={t`Fullscreen`} />
+              <LinkCopy value={withEditor} title={t`With Editor`} />
             </Box>
           </Column>
           <Column>
-            <Title>Download Image</Title>
+            <Title>
+              <Trans>Download Image</Trans>
+            </Title>
             <Box gap={2}>
               <Button onClick={window.flowchartFunDownloadSVG}>SVG</Button>
               <Button onClick={window.flowchartFunDownloadPNG}>PNG</Button>
@@ -150,7 +157,7 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
             }}
             className={styles.LinkCopyButton}
           >
-            Copy
+            <Trans>Copy</Trans>
           </Button>
         </Box>
       </Box>

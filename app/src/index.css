@@ -31,7 +31,7 @@ body {
 }
 
 .node-hover {
-  background: var(--color-uiAccent);
+  background: var(--color-lineColor);
 }
 
 .view-line {
