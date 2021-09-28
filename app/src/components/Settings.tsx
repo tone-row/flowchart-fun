@@ -83,7 +83,12 @@ const Settings = memo(() => {
           <SectionTitle>
             <Trans>Appearance</Trans>
           </SectionTitle>
-          <Box flow="column" className={styles.ButtonGroup} gap={1}>
+          <Box
+            flow="column"
+            className={styles.ButtonGroup}
+            gap={1}
+            at={{ tablet: { gap: 0 } }}
+          >
             <GroupButton
               disabled={mode === "light"}
               aria-pressed={mode === "light"}

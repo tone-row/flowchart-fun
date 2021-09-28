@@ -1,5 +1,5 @@
-.Input,
-.Button {
+body:not([class*="disableAnimation"]) .Input,
+body:not([class*="disableAnimation"]) .Button {
   transition: 100ms cubic-bezier(0.075, 0.82, 0.165, 1) all;
 }
 
@@ -9,6 +9,7 @@
   background-color: var(--color-input);
   color: var(--color-uiAccent);
 }
+
 .Input input,
 .Input textarea {
   appearance: none;
