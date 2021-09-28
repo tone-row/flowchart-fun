@@ -24,7 +24,7 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
 .MenuTabButton[aria-selected="true"]:focus {
   transition-duration: 1s;
   transition-delay: 100ms;
-  background-color: hsl(var(--color-brandHsl), 1%);
+  background-color: hsl(var(--color-brandHsl), 10%);
 }
 
 .MenuTabButton:hover,
@@ -37,11 +37,11 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   box-shadow: none;
 }
 
-.Menu svg rect,
-.Menu svg line,
-.Menu svg path,
-.Menu svg circle,
-.Menu svg polyline {
+.Side svg rect,
+.Side svg line,
+.Side svg path,
+.Side svg circle,
+.Side svg polyline {
   stroke-width: 10;
 }
 

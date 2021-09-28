@@ -9,7 +9,7 @@ import { X } from "phosphor-react";
 import "@reach/tooltip/styles.css";
 
 export const smallBtnTypeSize = -1;
-export const smallIconSize = 16;
+export const smallIconSize = 18;
 
 export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {
   return (
@@ -28,7 +28,7 @@ export const Section = ({ as = "section", children, ...props }: BoxProps) => {
 };
 export const Page = ({ as = "div", children, ...props }: BoxProps) => {
   return (
-    <Box as={as} gap={10} at={{ tablet: { gap: 14 } }} {...props}>
+    <Box as={as} gap={6} at={{ tablet: { gap: 14 } }} {...props}>
       {children}
     </Box>
   );

@@ -71,13 +71,14 @@ const GraphOptionsBar = memo(() => {
   return (
     <Box
       className={styles.GraphOptionsBar}
-      p={2}
-      px={4}
+      p={1}
+      px={2}
       flow="column"
-      gap={4}
+      gap={2}
       content="normal start"
       items="center stretch"
       as="form"
+      at={{ tablet: { p: 2, px: 4, gap: 4 } }}
     >
       <OptionWithIcon icon={CirclesThree}>
         <Controller
@@ -145,7 +146,6 @@ const selectStyles: StylesConfig<any, false> = {
   control: (p, { isFocused }) => {
     return {
       ...p,
-
       border: "none",
       backgroundColor: isFocused
         ? "var(--color-nodeHover)"
@@ -225,7 +225,7 @@ function MySelect(props: any) {
 }
 
 const SingleValue = ({ children }: SingleValueProps<any>) => (
-  <Box p={2}>
+  <Box p={1} at={{ tablet: { p: 2 } }}>
     <Type size={smallBtnTypeSize}>{children}</Type>
   </Box>
 );
@@ -240,7 +240,8 @@ const Option = ({
     <Box
       className={styles.Option}
       ref={innerRef}
-      p={2}
+      p={1}
+      at={{ tablet: { p: 2 } }}
       {...innerProps}
       aria-selected={isSelected}
       data-focused={isFocused}

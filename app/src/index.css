@@ -93,6 +93,7 @@ button {
   appearance: none;
   border: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 button:active {
@@ -125,11 +126,13 @@ div[data-reach-dialog-content] {
   color: var(--color-foreground);
   width: 90vw;
   overflow: auto;
+  margin: 5vh auto;
 }
 
 @media (min-width: 800px) {
   div[data-reach-dialog-content] {
     width: 60vw;
+    margin: 10vh auto;
   }
 }
 

@@ -4,11 +4,10 @@ import { useForm } from "react-hook-form";
 import { Box, Type } from "../slang";
 import styles from "./Feedback.module.css";
 import Spinner from "./Spinner";
-import { Input, Section, SectionTitle, Textarea, Button } from "./Shared";
+import { Input, Section, SectionTitle, Textarea, Button, Page } from "./Shared";
 import { AppContext } from "./AppContext";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
-const largeGap = 10;
 
 type FormData = { from?: string; text: string };
 
@@ -56,11 +55,10 @@ export default function Feedback() {
     [reset]
   );
   return (
-    <Box
+    <Page
       px={4}
       py={8}
       at={noPaddingBottom}
-      gap={largeGap}
       content="start normal"
       className={styles.FeedbackWrapper}
       self="stretch center"
@@ -68,8 +66,7 @@ export default function Feedback() {
       {success ? (
         <Success />
       ) : (
-        <Box
-          gap={largeGap}
+        <Page
           as="form"
           pb={4}
           onSubmit={handleSubmit(onSubmit)}
@@ -108,10 +105,10 @@ export default function Feedback() {
               <Type>{error}</Type>
             </Box>
           )}
-        </Box>
+        </Page>
       )}
       {submitting && <Spinner className={styles.FeedbackLoading} />}
-    </Box>
+    </Page>
   );
 }
 

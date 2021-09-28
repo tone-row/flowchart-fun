@@ -42,19 +42,20 @@ export default function MenuNext() {
         flow="column"
         items="center"
         content="stretch start"
-        p={1}
-        gap={1}
         pl={2}
         at={{ tablet: { p: 0, gap: 2, pl: 0 } }}
+        className={styles.Side}
       >
-        <BrandSvg width={40} className={styles.Brand} />
+        <Box pr={2} at={{ tablet: { pr: 0 } }}>
+          <BrandSvg width={40} className={styles.Brand} />
+        </Box>
         <MenuTabButton icon={TreeStructure} tab="editor" label={t`Editor`} />
         <MenuTabButton icon={FolderOpen} tab="navigation" label={t`Charts`} />
       </Box>
       {chartSpecific.includes(showing) ? (
         <WorkspaceSection />
       ) : (
-        <Box className={styles.PageTitle}>
+        <Box className={styles.PageTitle} pt={5} at={{ tablet: { pt: 0 } }}>
           <Type>{translatedTitle(showing)}</Type>
         </Box>
       )}
@@ -62,9 +63,8 @@ export default function MenuNext() {
         content="stretch end"
         flow="column"
         items="center"
-        p={1}
-        gap={1}
-        at={{ tablet: { p: 0 } }}
+        at={{ tablet: { gap: 2, pr: 2 } }}
+        className={styles.Side}
       >
         <MenuTabButton icon={Gear} tab="settings" label={t`User Preferences`} />
         <MenuTabButton icon={Chat} tab="feedback" label={t`Feedback`} />
@@ -113,13 +113,13 @@ function WorkspaceSection() {
   return (
     <Box
       flow="column"
-      template="auto / 1fr auto"
-      gap={1}
       className={styles.WorkspaceSection}
       px={1}
-      pb={1}
-      items="stretch center"
-      at={{ tablet: { px: 0, gap: 6, pb: 0 } }}
+      py={5}
+      gap={3}
+      items="center"
+      content="normal center"
+      at={{ tablet: { px: 0, gap: 6, py: 0 } }}
     >
       <Box
         className={styles.WorkspaceButton}
@@ -127,14 +127,17 @@ function WorkspaceSection() {
         items="center normal"
         template="auto / auto 1fr"
         rad={1}
-        gap={3}
       >
-        <Box className={styles.WorkspaceButtonIcon} px={1}>
-          <Laptop size={28} />
+        <Box
+          className={styles.WorkspaceButtonIcon}
+          pr={2}
+          at={{ tablet: { px: 1, pr: 3 } }}
+        >
+          <Laptop size={smallIconSize} />
         </Box>
         <Box>
           <Type as="h1" weight="400" className={styles.WorkspaceTitle}>
-            /{workspace}
+            {workspace || "(-)"}
           </Type>
         </Box>
       </Box>
@@ -163,14 +166,12 @@ function ExportButton() {
     <Box
       as="button"
       rad={1}
-      px={1}
-      py={2}
       className={styles.ExportButton}
       items="center normal"
       at={{ tablet: { template: "auto / auto 1fr", px: 0 } }}
       onClick={() => setShareModal(true)}
     >
-      <Box p={1} px={2}>
+      <Box p={1} at={{ tablet: { p: 3 } }}>
         <Share size={smallIconSize} />
       </Box>
       <Box
