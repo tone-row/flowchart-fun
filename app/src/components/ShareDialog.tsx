@@ -35,9 +35,15 @@ export default function ShareDialog() {
           <Trans>Download Image</Trans>
         </Title>
         <Box gap={2}>
-          <Button onClick={window.flowchartFunDownloadSVG}>SVG</Button>
-          <Button onClick={window.flowchartFunDownloadPNG}>PNG</Button>
-          <Button onClick={window.flowchartFunDownloadJPG}>JPG</Button>
+          <Button onClick={window.flowchartFunDownloadSVG} aria-label="SVG">
+            SVG
+          </Button>
+          <Button onClick={window.flowchartFunDownloadPNG} aria-label="PNG">
+            PNG
+          </Button>
+          <Button onClick={window.flowchartFunDownloadJPG} aria-label="JPG">
+            JPG
+          </Button>
         </Box>
       </Column>
     </Dialog>

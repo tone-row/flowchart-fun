@@ -91,9 +91,12 @@ describe("Export", () => {
     await page.goto(
       `${startUrl}/c#BYUwNmD2BQAEsG0AuIDOSC6sDukBOYAJnPLABSgSQCU0A5pJIQEYCeIJZK61QA`
     );
+
+    await page.click('button:has-text("Export")');
+
     const [download] = await Promise.all([
-      page.waitForEvent("download"), // wait for download to start
-      page.click('button:has-text("SVG")'),
+      page.waitForEvent("download"),
+      page.click('[aria-label="SVG"]'),
     ]);
 
     const stream = await download.createReadStream();
@@ -105,9 +108,12 @@ describe("Export", () => {
     await page.goto(
       `${startUrl}/c#BYUwNmD2BQAEsG0AuIDOSC6sDukBOYAJnPLABSgSQCU0A5pJIQEYCeIJZK61QA`
     );
+
+    await page.click('button:has-text("Export")');
+
     const [download] = await Promise.all([
-      page.waitForEvent("download"), // wait for download to start
-      page.click('button:has-text("PNG")'),
+      page.waitForEvent("download"),
+      page.click('[aria-label="PNG"]'),
     ]);
 
     const stream = await download.createReadStream();
@@ -119,9 +125,12 @@ describe("Export", () => {
     await page.goto(
       `${startUrl}/c#BYUwNmD2BQAEsG0AuIDOSC6sDukBOYAJnPLABSgSQCU0A5pJIQEYCeIJZK61QA`
     );
+
+    await page.click('button:has-text("Export")');
+
     const [download] = await Promise.all([
-      page.waitForEvent("download"), // wait for download to start
-      page.click('button:has-text("JPG")'),
+      page.waitForEvent("download"),
+      page.click('[aria-label="JPG"]'),
     ]);
 
     const stream = await download.createReadStream();
