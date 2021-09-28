@@ -1,13 +1,12 @@
 import {
   Dispatch,
-  ReactNode,
   SetStateAction,
   useCallback,
   useContext,
   useEffect,
   useState,
 } from "react";
-import { Box, BoxProps, Type } from "../slang";
+import { Box, Type } from "../slang";
 import { t, Trans } from "@lingui/macro";
 import styles from "./Navigation.module.css";
 import { useForm } from "react-hook-form";
@@ -15,8 +14,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { AppContext } from "./AppContext";
 import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
-import { Input } from "./Input";
-import { Button } from "./Button";
+import { Input, Page, Section, SectionTitle, Button } from "./Shared";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 const largeGap = 10;
@@ -86,19 +84,17 @@ export default function Navigation() {
   return (
     <Box
       px={4}
-      pb={4}
-      py={2}
-      pt={4}
+      py={8}
       at={noPaddingBottom}
       gap={largeGap}
       content="start normal"
       className={styles.Navigation}
     >
-      <Box gap={10}>
+      <Page>
         <Section as="form" onSubmit={handleSubmit(onSubmit)}>
-          <Type weight="700">
+          <SectionTitle>
             <Trans>Create a New Chart</Trans>
-          </Type>
+          </SectionTitle>
           <Box template="none / 1fr auto" gap={3}>
             <Input
               {...register("chartTitle", {
@@ -118,37 +114,40 @@ export default function Navigation() {
           </Type>
         </Section>
         <Section>
-          <Type weight="700">
+          <SectionTitle>
             <Trans>Your Charts</Trans>
-          </Type>
-          <Box>
+          </SectionTitle>
+          <Box className={styles.ChartList} rad={1}>
             {charts.map((chart) => (
               <Box
                 key={chart}
                 className={styles.ChartWrapper}
-                py={1}
                 template="auto auto / none"
                 gap={1}
                 at={{
                   tablet: {
                     template: "none / 1fr auto",
                     items: "center normal",
-                    gap: 3,
+                    gap: 0,
                   },
                 }}
               >
-                <Type
-                  as="button"
+                <Box
                   onClick={() => {
                     push(`/${chart}`);
                     setShowing("editor");
                   }}
-                  className={styles.ChartLink}
-                  aria-current={workspace === chart ? "page" : undefined}
                   title={chart || "Home"}
+                  aria-current={workspace === chart ? "page" : undefined}
+                  as="button"
+                  p={3}
+                  tabIndex={workspace === chart ? -1 : undefined}
+                  className={styles.ChartLink}
                 >
-                  {chart || "/"}
-                </Type>
+                  <Type as="span" size={-1}>
+                    {`/${chart}`}
+                  </Type>
+                </Box>
                 {workspace === chart && (
                   <Box
                     as="menu"
@@ -179,7 +178,7 @@ export default function Navigation() {
             ))}
           </Box>
         </Section>
-      </Box>
+      </Page>
       <DeleteChart
         erase={erase}
         setErase={setErase}
@@ -191,18 +190,6 @@ export default function Navigation() {
         charts={charts}
         handleCopy={handleCopy}
       />
-    </Box>
-  );
-}
-
-function Section({
-  as = "div",
-  children,
-  ...props
-}: { children: ReactNode } & BoxProps) {
-  return (
-    <Box gap={2} as={as} {...props}>
-      {children}
     </Box>
   );
 }

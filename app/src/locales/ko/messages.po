@@ -13,23 +13,27 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Feedback.tsx:36
+#: src/components/Feedback.tsx:24
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접 이메일을 보내주십시오."
 
-#: src/components/Settings.tsx:73
+#: src/components/Settings.tsx:64
 msgid "Appearance"
 msgstr "외관"
 
-#: src/components/Navigation.tsx:135
+#: src/components/Navigation.tsx:119
 msgid "Are you sure you want to delete this?"
 msgstr "삭제하시겠습니까?"
 
-#: src/components/Navigation.tsx:134
+#: src/components/Navigation.tsx:118
 msgid "Are you sure you want to reset this?"
 msgstr "재설정하시겠습니까?"
 
-#: src/components/Settings.tsx:103
+#: src/components/Feedback.tsx:108
+msgid "Back To Editor"
+msgstr "편집기로 돌아가기"
+
+#: src/components/Settings.tsx:92
 msgid "Become a Sponsor"
 msgstr "스폰서 되기"
 
@@ -41,8 +45,8 @@ msgstr "아래에서 위로"
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
-#: src/components/Navigation.tsx:143
-#: src/components/Navigation.tsx:175
+#: src/components/Navigation.tsx:127
+#: src/components/Navigation.tsx:159
 msgid "Cancel"
 msgstr "취소"
 
@@ -55,7 +59,7 @@ msgstr "차트"
 msgid "Circle"
 msgstr "원"
 
-#: src/components/ShareDialog.tsx:28
+#: src/components/ShareDialog.tsx:29
 msgid "Close"
 msgstr "닫기"
 
@@ -63,17 +67,17 @@ msgstr "닫기"
 msgid "Concentric"
 msgstr "동심"
 
-#: src/components/ShareDialog.tsx:37
-#: src/components/ShareDialog.tsx:94
+#: src/components/ShareDialog.tsx:38
+#: src/components/ShareDialog.tsx:90
 msgid "Copy"
 msgstr "복사"
 
-#: src/components/Navigation.tsx:77
-#: src/components/Navigation.tsx:178
+#: src/components/Navigation.tsx:65
+#: src/components/Navigation.tsx:162
 msgid "Create"
 msgstr "만들기"
 
-#: src/components/Navigation.tsx:70
+#: src/components/Navigation.tsx:58
 msgid "Create a New Chart"
 msgstr "새 차트 만들기"
 
@@ -81,13 +85,13 @@ msgstr "새 차트 만들기"
 msgid "Create a link directly using the exact label text"
 msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 
-#: src/components/Settings.tsx:80
+#: src/components/Settings.tsx:71
 msgid "Dark Mode"
 msgstr "다크 모드"
 
-#: src/components/Navigation.tsx:107
-#: src/components/Navigation.tsx:129
-#: src/components/Navigation.tsx:146
+#: src/components/Navigation.tsx:97
+#: src/components/Navigation.tsx:113
+#: src/components/Navigation.tsx:130
 msgid "Delete"
 msgstr "삭제"
 
@@ -95,18 +99,18 @@ msgstr "삭제"
 msgid "Direction"
 msgstr "방향"
 
-#: src/components/Share.tsx:24
-#: src/components/Share.tsx:27
-#: src/components/Share.tsx:30
+#: src/components/Share.tsx:13
+#: src/components/Share.tsx:16
+#: src/components/Share.tsx:19
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/ShareDialog.tsx:46
+#: src/components/ShareDialog.tsx:47
 msgid "Download Image"
 msgstr "이미지 다운로드"
 
-#: src/components/Navigation.tsx:104
-#: src/components/Navigation.tsx:163
+#: src/components/Navigation.tsx:94
+#: src/components/Navigation.tsx:147
 msgid "Duplicate"
 msgstr "복제"
 
@@ -114,7 +118,7 @@ msgstr "복제"
 msgid "Editor"
 msgstr "에디터"
 
-#: src/components/Feedback.tsx:102
+#: src/components/Feedback.tsx:87
 msgid "Email (optional)"
 msgstr "이메일 (선택사항)"
 
@@ -122,17 +126,16 @@ msgstr "이메일 (선택사항)"
 msgid "Export"
 msgstr "내보내기"
 
-#: src/components/Feedback.tsx:85
 #: src/components/Menu.tsx:38
 #: src/components/MenuNext.tsx:57
 msgid "Feedback"
 msgstr "피드백"
 
-#: src/components/Settings.tsx:94
+#: src/components/Settings.tsx:83
 msgid "Follow Us"
 msgstr "팔로우하세요"
 
-#: src/components/ShareDialog.tsx:40
+#: src/components/ShareDialog.tsx:41
 msgid "Fullscreen"
 msgstr "전체 화면"
 
@@ -156,7 +159,7 @@ msgstr "도움말"
 msgid "Indenting creates a link to the current line"
 msgstr "들여쓰기는 현재 줄에 대한 링크를 생성합니다"
 
-#: src/components/Settings.tsx:61
+#: src/components/Settings.tsx:52
 msgid "Language"
 msgstr "언어"
 
@@ -168,19 +171,19 @@ msgstr "레이아웃"
 msgid "Left to Right"
 msgstr "왼쪽에서 오른쪽으로"
 
-#: src/components/Settings.tsx:77
+#: src/components/Settings.tsx:68
 msgid "Light Mode"
 msgstr "라이트 모드"
 
-#: src/components/Settings.tsx:88
+#: src/components/Settings.tsx:77
 msgid "Made by <0>Tone Row</0>"
 msgstr "<0>Tone Row</0> 제작"
 
-#: src/components/Settings.tsx:100
+#: src/components/Settings.tsx:89
 msgid "Make a Donation"
 msgstr "기부하기"
 
-#: src/components/Share.tsx:21
+#: src/components/Share.tsx:10
 msgid "Open Share Link"
 msgstr "공유 링크 열기"
 
@@ -188,8 +191,8 @@ msgstr "공유 링크 열기"
 msgid "Random"
 msgstr "무작위"
 
-#: src/components/Navigation.tsx:107
-#: src/components/Navigation.tsx:146
+#: src/components/Navigation.tsx:97
+#: src/components/Navigation.tsx:130
 msgid "Reset"
 msgstr "재설정"
 
@@ -206,11 +209,15 @@ msgstr "설정"
 msgid "Share"
 msgstr "공유"
 
+#: src/components/Feedback.tsx:92
+msgid "Submit"
+msgstr "보내다"
+
 #: src/components/HasError.tsx:12
 msgid "Text Invalid"
 msgstr "잘못된 텍스트"
 
-#: src/components/Feedback.tsx:124
+#: src/components/Feedback.tsx:105
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
@@ -223,31 +230,30 @@ msgid "Top to Bottom"
 msgstr "위에서 아래로"
 
 #: src/components/MenuNext.tsx:59
-#: src/components/Settings.tsx:57
 msgid "User Preferences"
 msgstr "사용자 기본 설정"
 
-#: src/components/Settings.tsx:97
+#: src/components/Settings.tsx:86
 msgid "View on Github"
 msgstr "Github에서 보기"
 
-#: src/components/Feedback.tsx:88
+#: src/components/Feedback.tsx:77
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다!"
 
-#: src/components/Navigation.tsx:167
+#: src/components/Navigation.tsx:151
 msgid "What would you like to name this copy?"
 msgstr "이 사본의 이름을 무엇으로 지정하시겠습니까?"
 
-#: src/components/Feedback.tsx:96
+#: src/components/Feedback.tsx:74
 msgid "What would you like to share with us?"
 msgstr "무엇을 공유하시겠습니까?"
 
-#: src/components/ShareDialog.tsx:41
+#: src/components/ShareDialog.tsx:42
 msgid "With Editor"
 msgstr "에디터와 함께"
 
-#: src/components/Navigation.tsx:86
+#: src/components/Navigation.tsx:74
 msgid "Your Charts"
 msgstr "귀하의 차트"
 

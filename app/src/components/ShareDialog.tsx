@@ -7,6 +7,7 @@ import { Box, Type } from "../slang";
 import { Check, LinkSimple, X } from "phosphor-react";
 import styles from "./ShareDialog.module.css";
 import { t, Trans } from "@lingui/macro";
+import { Button } from "./Shared";
 
 export default function ShareDialog() {
   const { shareModal, setShareModal, shareLink } = useContext(AppContext);
@@ -85,28 +86,6 @@ function Column({ children }: { children: ReactNode }) {
       gap={2}
       at={{ tablet: { gap: 6 } }}
       content="start normal"
-    >
-      {children}
-    </Box>
-  );
-}
-
-function Button({
-  children,
-  onClick,
-  className = "",
-}: {
-  children: ReactNode;
-  onClick: () => void;
-  className?: string;
-}) {
-  return (
-    <Box
-      p={3}
-      as="button"
-      className={[styles.Button, className].join(" ")}
-      rad={1}
-      onClick={onClick}
     >
       {children}
     </Box>

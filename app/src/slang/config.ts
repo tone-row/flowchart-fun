@@ -32,6 +32,7 @@ export const colors = {
   highlightColor: palette.purple[0],
   overlayColor: "0, 50%, 0%",
   input: palette.white[5],
+  brandHsl: "233, 100%, 68%",
 };
 
 export const darkTheme: typeof colors = {
@@ -48,6 +49,7 @@ export const darkTheme: typeof colors = {
   highlightColor: palette.purple[0],
   overlayColor: "0, 50%, 100%",
   input: palette.black[1],
+  brandHsl: "233, 100%, 68%",
 };
 
 const config: Partial<SlangConfig> = {

@@ -1,13 +1,11 @@
-import React, { memo, ReactNode, useCallback, useContext } from "react";
+import { memo, ReactNode, useCallback, useContext } from "react";
 import { Box, BoxProps, Type } from "../slang";
 import styles from "./Settings.module.css";
 import { AppContext } from "./AppContext";
-import GraphOptions from "./GraphOptions";
 import { Trans } from "@lingui/macro";
 import { languages } from "../locales/i18n";
-import { useFeature } from "flagged";
+import { Page, Section, SectionTitle } from "./Shared";
 
-const noPaddingBottom = { tablet: { pb: 0 } };
 const lowerLinksAt: BoxProps["at"] = {
   tablet: {
     pb: 4,
@@ -20,10 +18,7 @@ const lowerLinksAt: BoxProps["at"] = {
   },
 };
 
-const largeGap = 10;
-
 const Settings = memo(() => {
-  const isNext = useFeature("next");
   const { updateUserSettings, mode, language } = useContext(AppContext);
   const setLightMode = useCallback(() => {
     document.body.classList.add("disableAnimation");
@@ -46,110 +41,94 @@ const Settings = memo(() => {
   );
 
   return (
-    <Box
-      px={4}
-      pb={4}
-      pt={2}
-      at={noPaddingBottom}
-      gap={largeGap}
-      template="minmax(0, 1fr) auto / none"
-      className={styles.Settings}
-    >
-      <Box content="start stretch" gap={largeGap}>
-        {!isNext && <GraphOptions />}
-        <Box content="start" gap={4}>
-          {!isNext && (
-            <Type weight="700">
-              <Trans>User Preferences</Trans>
-            </Type>
-          )}
-          <Box gap={2}>
-            <Type size={-1}>
-              <Trans>Language</Trans>
-            </Type>
-            <Box
-              gap={1}
-              items="normal start"
-              at={{ tablet: { flow: "column", gap: 4 } }}
+    <Box px={4} pb={4} pt={2} className={styles.Settings}>
+      <Page items="start" content="start">
+        <Section>
+          <SectionTitle>
+            <Trans>Language</Trans>
+          </SectionTitle>
+          <Box
+            gap={1}
+            items="normal start"
+            at={{ tablet: { flow: "column", gap: 4 } }}
+          >
+            {Object.keys(languages).map((locale) => (
+              <Box
+                as="button"
+                key={locale}
+                className={styles.Language}
+                disabled={language === locale}
+                onClick={() => changeLanguage(locale)}
+                aria-label={`Select Language: ${
+                  languages[locale as keyof typeof languages]
+                }`}
+              >
+                <Type size={-1}>
+                  {languages[locale as keyof typeof languages]}
+                </Type>
+              </Box>
+            ))}
+          </Box>
+        </Section>
+        <Section>
+          <SectionTitle>
+            <Trans>Appearance</Trans>
+          </SectionTitle>
+          <Box flow="column">
+            <GroupButton
+              disabled={mode === "light"}
+              aria-pressed={mode === "light"}
+              aria-label="Light Mode"
+              onClick={setLightMode}
             >
-              {Object.keys(languages).map((locale) => (
-                <Box
-                  as="button"
-                  key={locale}
-                  className={styles.Language}
-                  disabled={language === locale}
-                  onClick={() => changeLanguage(locale)}
-                  aria-label={`Select Language: ${
-                    languages[locale as keyof typeof languages]
-                  }`}
-                >
-                  <Type size={-2}>
-                    {languages[locale as keyof typeof languages]}
-                  </Type>
-                </Box>
-              ))}
-            </Box>
+              <Trans>Light Mode</Trans>
+            </GroupButton>
+            <GroupButton
+              disabled={mode === "dark"}
+              aria-pressed={mode === "dark"}
+              aria-label="Dark Mode"
+              onClick={setDarkMode}
+            >
+              <Trans>Dark Mode</Trans>
+            </GroupButton>
           </Box>
-          <Box gap={2}>
-            <Type size={-1}>
-              <Trans>Appearance</Trans>
+        </Section>
+        <Section className={styles.LowerLinks}>
+          <SectionTitle as="a" href="https://tone-row.com">
+            <Trans>
+              Made by <strong>Tone Row</strong>
+            </Trans>
+          </SectionTitle>
+          <Section at={lowerLinksAt}>
+            <Type as="a" href="https://twitter.com/tone_row_" size={-1}>
+              <Trans>Follow Us</Trans>
             </Type>
-            <Box flow="column">
-              <GroupButton
-                disabled={mode === "light"}
-                aria-pressed={mode === "light"}
-                aria-label="Light Mode"
-                onClick={setLightMode}
-              >
-                <Trans>Light Mode</Trans>
-              </GroupButton>
-              <GroupButton
-                disabled={mode === "dark"}
-                aria-pressed={mode === "dark"}
-                aria-label="Dark Mode"
-                onClick={setDarkMode}
-              >
-                <Trans>Dark Mode</Trans>
-              </GroupButton>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-      <Box gap={4} className={styles.LowerLinks}>
-        <Type as="a" href="https://tone-row.com" size={-1}>
-          <Trans>
-            Made by <strong>Tone Row</strong>
-          </Trans>
-        </Type>
-        <Box gap={2} at={lowerLinksAt}>
-          <Type as="a" href="https://twitter.com/tone_row_" size={-2}>
-            <Trans>Follow Us</Trans>
-          </Type>
-          <Type
-            as="a"
-            href="https://github.com/tone-row/flowchart-fun"
-            size={-2}
-          >
-            <Trans>View on Github</Trans>
-          </Type>
-          <Type
-            as="a"
-            href="https://opencollective.com/tone-row/donate"
-            size={-2}
-            onClick={() => window.plausible("Make a Donation")}
-          >
-            <Trans>Make a Donation</Trans>
-          </Type>
-          <Type
-            as="a"
-            href="https://github.com/sponsors/tone-row"
-            size={-2}
-            onClick={() => window.plausible("Become a Sponsor")}
-          >
-            <Trans>Become a Sponsor</Trans>
-          </Type>
-        </Box>
-      </Box>
+            <Type
+              as="a"
+              href="https://github.com/tone-row/flowchart-fun"
+              size={-1}
+            >
+              <Trans>View on Github</Trans>
+            </Type>
+            <Type
+              as="a"
+              href="https://opencollective.com/tone-row/donate"
+              size={-1}
+              onClick={() => window.plausible("Make a Donation")}
+            >
+              <Trans>Make a Donation</Trans>
+            </Type>
+            <Type
+              as="a"
+              href="https://github.com/sponsors/tone-row"
+              size={-1}
+              onClick={() => window.plausible("Become a Sponsor")}
+            >
+              <Trans>Become a Sponsor</Trans>
+            </Type>
+          </Section>
+        </Section>
+      </Page>
     </Box>
   );
 });

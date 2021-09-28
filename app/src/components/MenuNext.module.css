@@ -19,15 +19,18 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   stroke: var(--color-buttonFocus);
 }
 
-.MenuTabButton:hover,
-.MenuTabButton:focus {
-  background-color: var(--color-lineColor);
-}
-
 .MenuTabButton[aria-selected="true"],
 .MenuTabButton[aria-selected="true"]:hover,
 .MenuTabButton[aria-selected="true"]:focus {
-  background-color: var(--color-background);
+  transition-duration: 1s;
+  transition-delay: 100ms;
+  background-color: hsl(var(--color-brandHsl), 1%);
+}
+
+.MenuTabButton:hover,
+.MenuTabButton:focus,
+.MenuTabButton[aria-selected="true"]:focus-visible {
+  background-color: var(--color-lineColor);
 }
 
 .Menu button:focus {
