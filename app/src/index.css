@@ -137,3 +137,11 @@ div[data-reach-dialog-overlay] {
   background: hsla(var(--color-overlayColor), 0.5);
   z-index: 1;
 }
+
+div[data-reach-tooltip] {
+  background-color: var(--color-nodeHover);
+  border-color: var(--color-nodeHover);
+  box-shadow: none;
+  border-radius: 2px;
+  color: var(--color-foreground);
+}

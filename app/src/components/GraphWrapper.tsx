@@ -2,13 +2,11 @@ import React, { ReactNode, useContext } from "react";
 import { Box } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./GraphWrapper.module.css";
-import { useFeature } from "flagged";
 import GraphOptionsBar from "./GraphOptionsBar";
 import { useFullscreen } from "../hooks";
 
 export default function GraphWrapper({ children }: { children: ReactNode }) {
   const { showing } = useContext(AppContext);
-  const isNext = useFeature("next");
   const isFullscreen = useFullscreen();
 
   return (
@@ -17,7 +15,7 @@ export default function GraphWrapper({ children }: { children: ReactNode }) {
       data-showing={showing}
       at={{ tablet: { pr: 2, pb: 2 } }}
     >
-      {isNext && !isFullscreen ? (
+      {!isFullscreen ? (
         <Box
           template="auto 1fr / 1fr"
           className={styles.GraphWrapperInner}

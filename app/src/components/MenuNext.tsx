@@ -11,10 +11,11 @@ import {
   FolderOpen,
 } from "phosphor-react";
 import { AppContext, Showing } from "./AppContext";
-import { forwardRef, useContext } from "react";
+import { useContext } from "react";
 import styles from "./MenuNext.module.css";
 import { t, Trans } from "@lingui/macro";
 import { Tooltip } from "./Shared";
+import VisuallyHidden from "@reach/visually-hidden";
 
 const chartSpecific: Showing[] = ["editor", "share"];
 
@@ -47,12 +48,8 @@ export default function MenuNext() {
         at={{ tablet: { p: 0, gap: 2, pl: 0 } }}
       >
         <BrandSvg width={40} className={styles.Brand} />
-        <Tooltip label={t`Editor`}>
-          <MenuTabButton icon={TreeStructure} tab="editor" />
-        </Tooltip>
-        <Tooltip label={t`Charts`}>
-          <MenuTabButton icon={FolderOpen} tab="navigation" />
-        </Tooltip>
+        <MenuTabButton icon={TreeStructure} tab="editor" label={t`Editor`} />
+        <MenuTabButton icon={FolderOpen} tab="navigation" label={t`Charts`} />
       </Box>
       {chartSpecific.includes(showing) ? (
         <WorkspaceSection />
@@ -69,12 +66,8 @@ export default function MenuNext() {
         gap={1}
         at={{ tablet: { p: 0 } }}
       >
-        <Tooltip label={t`User Preferences`}>
-          <MenuTabButton icon={Gear} tab="settings" />
-        </Tooltip>
-        <Tooltip label={t`Feedback`}>
-          <MenuTabButton icon={Chat} tab="feedback" />
-        </Tooltip>
+        <MenuTabButton icon={Gear} tab="settings" label={t`User Preferences`} />
+        <MenuTabButton icon={Chat} tab="feedback" label={t`Feedback`} />
       </Box>
     </Box>
   );
@@ -84,13 +77,15 @@ type Icon = React.ForwardRefExoticComponent<
   IconProps & React.RefAttributes<SVGSVGElement>
 >;
 
-const MenuTabButton = forwardRef(
-  (
-    { icon: Icon, tab, ...props }: { icon: Icon; tab: Showing } & BoxProps,
-    ref
-  ) => {
-    const { showing, setShowing } = useContext(AppContext);
-    return (
+const MenuTabButton = ({
+  icon: Icon,
+  tab,
+  label,
+  ...props
+}: { icon: Icon; tab: Showing; label: string } & BoxProps) => {
+  const { showing, setShowing } = useContext(AppContext);
+  return (
+    <Tooltip label={label} aria-label={label} className="slang-type size--2">
       <Box
         as="button"
         p={2}
@@ -99,16 +94,14 @@ const MenuTabButton = forwardRef(
         aria-selected={tab === showing}
         onClick={() => setShowing(tab)}
         className={styles.MenuTabButton}
-        ref={ref}
         {...props}
       >
         <Icon height={33} width={33} />
+        <VisuallyHidden>{label}</VisuallyHidden>
       </Box>
-    );
-  }
-);
-
-MenuTabButton.displayName = "MenuTabButton";
+    </Tooltip>
+  );
+};
 
 function WorkspaceSection() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
