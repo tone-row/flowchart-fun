@@ -4,7 +4,7 @@ import styles from "./Settings.module.css";
 import { AppContext } from "./AppContext";
 import { Trans } from "@lingui/macro";
 import { languages } from "../locales/i18n";
-import { Page, Section, SectionTitle } from "./Shared";
+import { Button, Page, Section, SectionTitle } from "./Shared";
 
 const lowerLinksAt: BoxProps["at"] = {
   tablet: {
@@ -41,22 +41,20 @@ const Settings = memo(() => {
   );
 
   return (
-    <Box px={4} pb={4} pt={2} className={styles.Settings}>
+    <Box px={4} pb={4} pt={8} className={styles.Settings}>
       <Page items="start" content="start">
         <Section>
           <SectionTitle>
             <Trans>Language</Trans>
           </SectionTitle>
           <Box
-            gap={1}
             items="normal start"
-            at={{ tablet: { flow: "column", gap: 4 } }}
+            className={styles.ButtonGroup}
+            at={{ tablet: { flow: "column" } }}
           >
             {Object.keys(languages).map((locale) => (
-              <Box
-                as="button"
+              <GroupButton
                 key={locale}
-                className={styles.Language}
                 disabled={language === locale}
                 onClick={() => changeLanguage(locale)}
                 aria-label={`Select Language: ${
@@ -66,7 +64,7 @@ const Settings = memo(() => {
                 <Type size={-1}>
                   {languages[locale as keyof typeof languages]}
                 </Type>
-              </Box>
+              </GroupButton>
             ))}
           </Box>
         </Section>
@@ -74,7 +72,7 @@ const Settings = memo(() => {
           <SectionTitle>
             <Trans>Appearance</Trans>
           </SectionTitle>
-          <Box flow="column">
+          <Box flow="column" className={styles.ButtonGroup}>
             <GroupButton
               disabled={mode === "light"}
               aria-pressed={mode === "light"}
@@ -138,11 +136,15 @@ Settings.displayName = "Settings";
 export default Settings;
 
 const GroupButton = memo(
-  ({ children, ...props }: { children: ReactNode } & BoxProps) => {
+  ({
+    children,
+    className = "",
+    ...props
+  }: { children: ReactNode } & BoxProps) => {
     return (
-      <Box as="button" p={3} className={styles.GroupButton} {...props}>
-        <Type size={-1}>{children}</Type>
-      </Box>
+      <Button className={[styles.GroupButton, className].join(" ")} {...props}>
+        {children}
+      </Button>
     );
   }
 );

@@ -1,6 +1,12 @@
-import { forwardRef } from "react";
+import { forwardRef, ReactNode } from "react";
 import { Box, BoxProps, Type, TypeProps } from "../slang";
+import "@reach/dialog/styles.css";
+import ReachDialog, { DialogProps } from "@reach/dialog";
+import VisuallyHidden from "@reach/visually-hidden";
 import styles from "./Shared.module.css";
+import { Trans } from "@lingui/macro";
+import { X } from "phosphor-react";
+import "@reach/tooltip/styles.css";
 
 export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {
   return (
@@ -82,3 +88,50 @@ export function Button({
     </Box>
   );
 }
+
+export const Dialog = ({
+  dialogProps,
+  children,
+  innerBoxProps: { as = "div", ...props },
+}: {
+  dialogProps: DialogProps;
+  children: ReactNode;
+  innerBoxProps: BoxProps;
+}) => {
+  return (
+    <Box
+      as={ReachDialog}
+      p={2}
+      rad={2}
+      background="color-input"
+      {...dialogProps}
+    >
+      <Box gap={1}>
+        <Box
+          as="button"
+          className={styles.CloseButton}
+          onClick={dialogProps.onDismiss}
+          self="normal end"
+        >
+          <VisuallyHidden>
+            <Trans>Close</Trans>
+          </VisuallyHidden>
+          <X width={33} height={33} aria-hidden />
+        </Box>
+        <Box
+          as={as}
+          p={10}
+          rad={1}
+          background="color-background"
+          className={styles.InnerDialog}
+          {...props}
+        >
+          {children}
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+
+export { default as Tooltip } from "@reach/tooltip";
+export type { TooltipProps } from "@reach/tooltip";

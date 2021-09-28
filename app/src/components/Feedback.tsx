@@ -58,7 +58,7 @@ export default function Feedback() {
   return (
     <Box
       px={4}
-      py={2}
+      py={8}
       at={noPaddingBottom}
       gap={largeGap}
       content="start normal"
@@ -78,18 +78,16 @@ export default function Feedback() {
             submitting ? styles.Submitting : "",
           ].join(" ")}
         >
+          <Type className={styles.Callout}>
+            <Trans>
+              We appreciate all of your feedback, suggestions, bugs, and feature
+              requests!
+            </Trans>
+          </Type>
           <Section>
-            <Box gap={2}>
-              <SectionTitle>
-                <Trans>What would you like to share with us?</Trans>
-              </SectionTitle>
-              <Type as="p" size={-1}>
-                <Trans>
-                  We appreciate all of your feedback, suggestions, bugs, and
-                  feature requests!
-                </Trans>
-              </Type>
-            </Box>
+            <SectionTitle>
+              <Trans>What would you like to share with us?</Trans>
+            </SectionTitle>
             <Textarea rows={4} {...register("text", { required: true })} />
           </Section>
           <Section>

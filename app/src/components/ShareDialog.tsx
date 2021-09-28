@@ -1,13 +1,10 @@
-import Dialog from "@reach/dialog";
-import VisuallyHidden from "@reach/visually-hidden";
-import "@reach/dialog/styles.css";
 import { ReactNode, useCallback, useContext, useEffect, useState } from "react";
 import { AppContext } from "./AppContext";
 import { Box, Type } from "../slang";
-import { Check, LinkSimple, X } from "phosphor-react";
+import { Check, LinkSimple } from "phosphor-react";
 import styles from "./ShareDialog.module.css";
 import { t, Trans } from "@lingui/macro";
-import { Button } from "./Shared";
+import { Button, Dialog } from "./Shared";
 
 export default function ShareDialog() {
   const { shareModal, setShareModal, shareLink } = useContext(AppContext);
@@ -15,59 +12,35 @@ export default function ShareDialog() {
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const withEditor = `${new URL(window.location.href).origin}/c#${shareLink}`;
   return (
-    <Box
-      as={Dialog}
-      isOpen={shareModal}
-      onDismiss={close}
-      p={2}
-      rad={2}
-      background="color-input"
-      className={styles.Dialog}
+    <Dialog
+      dialogProps={{ isOpen: shareModal, onDismiss: close }}
+      innerBoxProps={{
+        gap: 6,
+        at: {
+          tablet: { template: "auto / repeat(2, minmax(0, 1fr))", gap: 10 },
+        },
+      }}
     >
-      <Box gap={1}>
-        <Box
-          as="button"
-          className={styles.CloseButton}
-          onClick={close}
-          self="normal end"
-        >
-          <VisuallyHidden>
-            <Trans>Close</Trans>
-          </VisuallyHidden>
-          <X width={33} height={33} aria-hidden />
+      <Column>
+        <Title>
+          <Trans>Copy</Trans> URL
+        </Title>
+        <Box gap={4}>
+          <LinkCopy value={fullscreen} title={t`Fullscreen`} />
+          <LinkCopy value={withEditor} title={t`With Editor`} />
         </Box>
-        <Box
-          p={10}
-          rad={1}
-          background="color-background"
-          className={styles.InnerDialog}
-          gap={6}
-          at={{
-            tablet: { template: "auto / repeat(2, minmax(0, 1fr))", gap: 10 },
-          }}
-        >
-          <Column>
-            <Title>
-              <Trans>Copy</Trans> URL
-            </Title>
-            <Box gap={4}>
-              <LinkCopy value={fullscreen} title={t`Fullscreen`} />
-              <LinkCopy value={withEditor} title={t`With Editor`} />
-            </Box>
-          </Column>
-          <Column>
-            <Title>
-              <Trans>Download Image</Trans>
-            </Title>
-            <Box gap={2}>
-              <Button onClick={window.flowchartFunDownloadSVG}>SVG</Button>
-              <Button onClick={window.flowchartFunDownloadPNG}>PNG</Button>
-              <Button onClick={window.flowchartFunDownloadJPG}>JPG</Button>
-            </Box>
-          </Column>
+      </Column>
+      <Column>
+        <Title>
+          <Trans>Download Image</Trans>
+        </Title>
+        <Box gap={2}>
+          <Button onClick={window.flowchartFunDownloadSVG}>SVG</Button>
+          <Button onClick={window.flowchartFunDownloadPNG}>PNG</Button>
+          <Button onClick={window.flowchartFunDownloadJPG}>JPG</Button>
         </Box>
-      </Box>
-    </Box>
+      </Column>
+    </Dialog>
   );
 }
 

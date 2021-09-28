@@ -4,17 +4,17 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
-import { Box, Type } from "../slang";
+import { Box, BoxProps, Type } from "../slang";
 import { t, Trans } from "@lingui/macro";
 import styles from "./Navigation.module.css";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router-dom";
 import { AppContext } from "./AppContext";
-import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
-import { Input, Page, Section, SectionTitle, Button } from "./Shared";
+import { Input, Page, Section, SectionTitle, Button, Dialog } from "./Shared";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 const largeGap = 10;
@@ -118,64 +118,57 @@ export default function Navigation() {
             <Trans>Your Charts</Trans>
           </SectionTitle>
           <Box className={styles.ChartList} rad={1}>
-            {charts.map((chart) => (
-              <Box
-                key={chart}
-                className={styles.ChartWrapper}
-                template="auto auto / none"
-                gap={1}
-                at={{
-                  tablet: {
-                    template: "none / 1fr auto",
-                    items: "center normal",
-                    gap: 0,
-                  },
-                }}
-              >
+            {charts.map((chart) => {
+              const isActive = workspace === chart;
+              return (
                 <Box
-                  onClick={() => {
-                    push(`/${chart}`);
-                    setShowing("editor");
+                  key={chart}
+                  className={styles.ChartWrapper}
+                  template="auto auto / none"
+                  at={{
+                    tablet: {
+                      template: "none / 1fr auto",
+                      items: "stretch normal",
+                    },
                   }}
-                  title={chart || "Home"}
-                  aria-current={workspace === chart ? "page" : undefined}
-                  as="button"
-                  p={3}
-                  tabIndex={workspace === chart ? -1 : undefined}
-                  className={styles.ChartLink}
                 >
-                  <Type as="span" size={-1}>
-                    {`/${chart}`}
-                  </Type>
-                </Box>
-                {workspace === chart && (
                   <Box
-                    as="menu"
-                    template="none / auto auto"
-                    gap={4}
-                    content="normal start"
-                    at={{ tablet: { items: "normal end" } }}
+                    onClick={() => {
+                      push(`/${chart}`);
+                      setShowing("editor");
+                    }}
+                    title={chart || "Home"}
+                    aria-current={isActive ? "page" : undefined}
+                    as="button"
+                    disabled={isActive}
+                    className={styles.ChartLink}
+                    p={3}
+                    pb={isActive ? 1 : 3}
+                    at={{ tablet: { pb: 3 } }}
                   >
-                    <Type
-                      size={-2}
-                      as="button"
-                      className={styles.MenuButton}
-                      onClick={() => setCopy(chart || "/")}
-                    >
-                      <Trans>Duplicate</Trans>
-                    </Type>
-                    <Type
-                      size={-2}
-                      as="button"
-                      className={styles.MenuButton}
-                      onClick={() => setErase(chart || "/")}
-                    >
-                      {chart === "" ? t`Reset` : t`Delete`}
+                    <Type as="span" size={-1}>
+                      {`/${chart}`}
                     </Type>
                   </Box>
-                )}
-              </Box>
-            ))}
+                  {isActive && (
+                    <Box
+                      as="menu"
+                      template="none / auto auto"
+                      content="normal start"
+                      at={{ tablet: { items: "normal end" } }}
+                      background="color-input"
+                    >
+                      <SmallButton onClick={() => setCopy(chart || "/")}>
+                        <Trans>Duplicate</Trans>
+                      </SmallButton>
+                      <SmallButton onClick={() => setErase(chart || "/")}>
+                        {chart === "" ? t`Reset` : t`Delete`}
+                      </SmallButton>
+                    </Box>
+                  )}
+                </Box>
+              );
+            })}
           </Box>
         </Section>
       </Page>
@@ -212,29 +205,30 @@ function DeleteChart({
 
   return (
     <Dialog
-      isOpen={Boolean(erase)}
-      onDismiss={handleDismiss}
+      dialogProps={{
+        isOpen: Boolean(erase),
+        onDismiss: handleDismiss,
+      }}
       aria-label={t`Delete`}
+      innerBoxProps={{ gap: 10 }}
     >
-      <Box gap={10}>
-        <Section>
-          <Type>
-            {erase === "/"
-              ? t`Are you sure you want to reset this?`
-              : t`Are you sure you want to delete this?`}
-          </Type>
-          <Type weight="700" self="normal center">
-            {erase}
-          </Type>
-        </Section>
-        <Box content="normal space-between" flow="column" gap={3}>
-          <Button onClick={handleDismiss}>
-            <Trans>Cancel</Trans>
-          </Button>
-          <Button onClick={handleDelete}>
-            {erase === "/" ? t`Reset` : t`Delete`}
-          </Button>
-        </Box>
+      <Box content="normal start" gap={2} at={{ tablet: { flow: "column" } }}>
+        <Type>
+          {erase === "/"
+            ? t`Are you sure you want to reset this?`
+            : t`Are you sure you want to delete this?`}
+        </Type>
+        <Type weight="700" self="normal center">
+          {erase}
+        </Type>
+      </Box>
+      <Box content="normal space-between" flow="column" gap={3}>
+        <Button onClick={handleDismiss}>
+          <Trans>Cancel</Trans>
+        </Button>
+        <Button onClick={handleDelete}>
+          {erase === "/" ? t`Reset` : t`Delete`}
+        </Button>
       </Box>
     </Dialog>
   );
@@ -251,9 +245,11 @@ function CopyChart({
   handleCopy: (data: { chartTitle: string }) => void;
   charts: string[];
 }) {
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const { register, setValue, watch, handleSubmit } = useForm({
     defaultValues: { chartTitle: `${copy}-copy` },
   });
+  const { ref, ...rest } = register("chartTitle", { setValueAs });
 
   const title = watch("chartTitle");
 
@@ -270,25 +266,31 @@ function CopyChart({
 
   return (
     <Dialog
-      isOpen={Boolean(copy)}
-      onDismiss={handleDismiss}
+      dialogProps={{
+        isOpen: Boolean(copy),
+        onDismiss: handleDismiss,
+        initialFocusRef: inputRef,
+      }}
       aria-label={t`Duplicate`}
+      innerBoxProps={{
+        gap: 10,
+        as: "form",
+        onSubmit: handleSubmit(handleCopy),
+      }}
     >
-      <Box gap={10} as="form" onSubmit={handleSubmit(handleCopy)}>
-        <Section>
-          <Type>
-            <Trans>What would you like to name this copy?</Trans>
-          </Type>
+      <Section>
+        <Type>
+          <Trans>What would you like to name this copy?</Trans>
+        </Type>
+        <Box template="none / minmax(0, 1fr) auto" gap={3}>
           <Input
-            {...register("chartTitle", {
-              setValueAs,
-            })}
+            ref={(r) => {
+              inputRef.current = r;
+              ref(r);
+            }}
+            {...rest}
+            name="chartTitle"
           />
-        </Section>
-        <Box content="normal space-between" flow="column" gap={3}>
-          <Button type="button" onClick={handleDismiss}>
-            <Trans>Cancel</Trans>
-          </Button>
           <Button
             type="submit"
             disabled={title?.length < 2 || charts.includes(title)}
@@ -296,11 +298,29 @@ function CopyChart({
             <Trans>Create</Trans>
           </Button>
         </Box>
-      </Box>
+      </Section>
     </Dialog>
   );
 }
 
 function titleToLocalStorageKey(chartTitle: string) {
   return `flowcharts.fun${chartTitle === "/" ? "" : `:${chartTitle}`}`;
+}
+
+function SmallButton({ as = "button", children, ...props }: BoxProps) {
+  return (
+    <Box
+      as={as}
+      className={styles.MenuButton}
+      px={3}
+      pb={3}
+      content="center"
+      at={{ tablet: { pb: 0 } }}
+      {...props}
+    >
+      <Type size={-2} as="span">
+        {children}
+      </Type>
+    </Box>
+  );
 }

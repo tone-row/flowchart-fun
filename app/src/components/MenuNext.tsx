@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { ReactComponent as BrandSvg } from "./brand.svg";
-import { Box, Type } from "../slang";
+import { Box, BoxProps, Type } from "../slang";
 import {
   TreeStructure,
   Laptop,
@@ -11,9 +11,10 @@ import {
   FolderOpen,
 } from "phosphor-react";
 import { AppContext, Showing } from "./AppContext";
-import { useContext } from "react";
+import { forwardRef, useContext } from "react";
 import styles from "./MenuNext.module.css";
 import { t, Trans } from "@lingui/macro";
+import { Tooltip } from "./Shared";
 
 const chartSpecific: Showing[] = ["editor", "share"];
 
@@ -29,6 +30,7 @@ export default function MenuNext() {
           p: 2,
           pl: 5,
           pr: 3,
+          gap: 4,
         },
       }}
       flow="column"
@@ -45,13 +47,19 @@ export default function MenuNext() {
         at={{ tablet: { p: 0, gap: 2, pl: 0 } }}
       >
         <BrandSvg width={40} className={styles.Brand} />
-        <MenuTabButton icon={TreeStructure} tab="editor" />
-        <MenuTabButton icon={FolderOpen} tab="navigation" />
+        <Tooltip label={t`Editor`}>
+          <MenuTabButton icon={TreeStructure} tab="editor" />
+        </Tooltip>
+        <Tooltip label={t`Charts`}>
+          <MenuTabButton icon={FolderOpen} tab="navigation" />
+        </Tooltip>
       </Box>
       {chartSpecific.includes(showing) ? (
         <WorkspaceSection />
       ) : (
-        <Type>{translatedTitle(showing)}</Type>
+        <Box className={styles.PageTitle}>
+          <Type>{translatedTitle(showing)}</Type>
+        </Box>
       )}
       <Box
         content="stretch end"
@@ -61,8 +69,12 @@ export default function MenuNext() {
         gap={1}
         at={{ tablet: { p: 0 } }}
       >
-        <MenuTabButton icon={Gear} tab="settings" />
-        <MenuTabButton icon={Chat} tab="feedback" />
+        <Tooltip label={t`User Preferences`}>
+          <MenuTabButton icon={Gear} tab="settings" />
+        </Tooltip>
+        <Tooltip label={t`Feedback`}>
+          <MenuTabButton icon={Chat} tab="feedback" />
+        </Tooltip>
       </Box>
     </Box>
   );
@@ -72,22 +84,31 @@ type Icon = React.ForwardRefExoticComponent<
   IconProps & React.RefAttributes<SVGSVGElement>
 >;
 
-function MenuTabButton({ icon: Icon, tab }: { icon: Icon; tab: Showing }) {
-  const { showing, setShowing } = useContext(AppContext);
-  return (
-    <Box
-      as="button"
-      p={2}
-      rad={1}
-      role="tab"
-      aria-selected={tab === showing}
-      onClick={() => setShowing(tab)}
-      className={styles.MenuTabButton}
-    >
-      <Icon height={33} width={33} />
-    </Box>
-  );
-}
+const MenuTabButton = forwardRef(
+  (
+    { icon: Icon, tab, ...props }: { icon: Icon; tab: Showing } & BoxProps,
+    ref
+  ) => {
+    const { showing, setShowing } = useContext(AppContext);
+    return (
+      <Box
+        as="button"
+        p={2}
+        rad={1}
+        role="tab"
+        aria-selected={tab === showing}
+        onClick={() => setShowing(tab)}
+        className={styles.MenuTabButton}
+        ref={ref}
+        {...props}
+      >
+        <Icon height={33} width={33} />
+      </Box>
+    );
+  }
+);
+
+MenuTabButton.displayName = "MenuTabButton";
 
 function WorkspaceSection() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
@@ -110,10 +131,10 @@ function WorkspaceSection() {
         gap={3}
       >
         <Box className={styles.WorkspaceButtonIcon}>
-          <Laptop width={33} height={33} />
+          <Laptop size={28} />
         </Box>
         <Box>
-          <Type as="h1" weight="400">
+          <Type as="h1" weight="400" className={styles.WorkspaceTitle}>
             /{workspace}
           </Type>
         </Box>
@@ -149,8 +170,8 @@ function ExportButton() {
       at={{ tablet: { template: "auto / auto 1fr" } }}
       onClick={() => setShareModal(true)}
     >
-      <Box p={2}>
-        <Share />
+      <Box p={1} px={2}>
+        <Share size={28} />
       </Box>
       <Box
         display="none"

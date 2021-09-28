@@ -21,17 +21,17 @@ msgstr "एक एरर हो गया. फिर से सबमिट क�
 msgid "Appearance"
 msgstr "दिखावट"
 
-#: src/components/Navigation.tsx:119
+#: src/components/Navigation.tsx:133
 msgid "Are you sure you want to delete this?"
 msgstr "क्या आप वाकई इसे हटाना चाहते हैं?"
 
-#: src/components/Navigation.tsx:118
+#: src/components/Navigation.tsx:132
 msgid "Are you sure you want to reset this?"
 msgstr "क्या आप वाकई इसे रीसेट करना चाहते हैं?"
 
-#: src/components/Feedback.tsx:108
+#: src/components/Feedback.tsx:106
 msgid "Back To Editor"
-msgstr ""
+msgstr "संपादक पर वापस जाएं"
 
 #: src/components/Settings.tsx:92
 msgid "Become a Sponsor"
@@ -45,13 +45,13 @@ msgstr "नीचे से शीर्ष तक"
 msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
-#: src/components/Navigation.tsx:127
-#: src/components/Navigation.tsx:159
+#: src/components/Navigation.tsx:141
 msgid "Cancel"
 msgstr "रद्द करें"
 
 #: src/components/Menu.tsx:35
-#: src/components/MenuNext.tsx:61
+#: src/components/MenuNext.tsx:38
+#: src/components/MenuNext.tsx:86
 msgid "Charts"
 msgstr "चार्ट"
 
@@ -59,25 +59,25 @@ msgstr "चार्ट"
 msgid "Circle"
 msgstr "परिधि"
 
-#: src/components/ShareDialog.tsx:29
+#: src/components/Shared.tsx:65
 msgid "Close"
-msgstr ""
+msgstr "बंद करें"
 
 #: src/lib/graphOptions.ts:6
 msgid "Concentric"
 msgstr "गाढ़ा"
 
-#: src/components/ShareDialog.tsx:38
-#: src/components/ShareDialog.tsx:90
+#: src/components/ShareDialog.tsx:30
+#: src/components/ShareDialog.tsx:80
 msgid "Copy"
-msgstr ""
+msgstr "कॉपी करें"
 
-#: src/components/Navigation.tsx:65
-#: src/components/Navigation.tsx:162
+#: src/components/Navigation.tsx:75
+#: src/components/Navigation.tsx:181
 msgid "Create"
 msgstr "बनाएँ"
 
-#: src/components/Navigation.tsx:58
+#: src/components/Navigation.tsx:68
 msgid "Create a New Chart"
 msgstr "एक नया चार्ट बनाएँ"
 
@@ -89,9 +89,9 @@ msgstr "सही लेबल टेक्स्ट का उपयोग क�
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/components/Navigation.tsx:97
-#: src/components/Navigation.tsx:113
-#: src/components/Navigation.tsx:130
+#: src/components/Navigation.tsx:108
+#: src/components/Navigation.tsx:128
+#: src/components/Navigation.tsx:144
 msgid "Delete"
 msgstr "हटाएँ"
 
@@ -105,29 +105,31 @@ msgstr "दिशा"
 msgid "Download"
 msgstr "डाउनलोड"
 
-#: src/components/ShareDialog.tsx:47
+#: src/components/ShareDialog.tsx:39
 msgid "Download Image"
-msgstr ""
+msgstr "इमेज डाउनलोड करें"
 
-#: src/components/Navigation.tsx:94
-#: src/components/Navigation.tsx:147
+#: src/components/Navigation.tsx:105
+#: src/components/Navigation.tsx:166
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
 
 #: src/components/Menu.tsx:29
+#: src/components/MenuNext.tsx:35
 msgid "Editor"
 msgstr "संपादक"
 
-#: src/components/Feedback.tsx:87
+#: src/components/Feedback.tsx:85
 msgid "Email (optional)"
 msgstr "ईमेल (ऐच्छिक)"
 
-#: src/components/MenuNext.tsx:74
+#: src/components/MenuNext.tsx:99
 msgid "Export"
-msgstr ""
+msgstr "एक्सपोर्ट करें"
 
 #: src/components/Menu.tsx:38
-#: src/components/MenuNext.tsx:57
+#: src/components/MenuNext.tsx:49
+#: src/components/MenuNext.tsx:82
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
@@ -135,9 +137,9 @@ msgstr "फ़ीडबैक"
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
-#: src/components/ShareDialog.tsx:41
+#: src/components/ShareDialog.tsx:33
 msgid "Fullscreen"
-msgstr ""
+msgstr "फ़ुलस्क्रीन"
 
 #: src/components/GraphOptions.tsx:29
 msgid "Graph Options"
@@ -191,8 +193,8 @@ msgstr "शेयर लिंक खोलें"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/components/Navigation.tsx:97
-#: src/components/Navigation.tsx:130
+#: src/components/Navigation.tsx:108
+#: src/components/Navigation.tsx:144
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -209,15 +211,15 @@ msgstr "सेटिंग्स"
 msgid "Share"
 msgstr "शेयर"
 
-#: src/components/Feedback.tsx:92
+#: src/components/Feedback.tsx:90
 msgid "Submit"
-msgstr ""
+msgstr "भेजना"
 
 #: src/components/HasError.tsx:12
 msgid "Text Invalid"
 msgstr "टेक्स्ट अमान्य है"
 
-#: src/components/Feedback.tsx:105
+#: src/components/Feedback.tsx:103
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
@@ -229,7 +231,8 @@ msgstr "यह ऐप टाइप द्वारा काम करता ह
 msgid "Top to Bottom"
 msgstr "ऊपर से नीचे"
 
-#: src/components/MenuNext.tsx:59
+#: src/components/MenuNext.tsx:46
+#: src/components/MenuNext.tsx:84
 msgid "User Preferences"
 msgstr "उपयोगकर्ता वरीयताएं"
 
@@ -237,23 +240,23 @@ msgstr "उपयोगकर्ता वरीयताएं"
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/components/Feedback.tsx:77
+#: src/components/Feedback.tsx:72
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "हम आपके सभी फ़ीडबैक, सुझावों, बग्स और विशेष अनुरोधों की सराहना करते हैं!"
 
-#: src/components/Navigation.tsx:151
+#: src/components/Navigation.tsx:173
 msgid "What would you like to name this copy?"
 msgstr "क्या आप इस कॉपी को नाम देना चाहेंगे?"
 
-#: src/components/Feedback.tsx:74
+#: src/components/Feedback.tsx:79
 msgid "What would you like to share with us?"
 msgstr "आप हमारे साथ क्या शेयर करना चाहेंगे?"
 
-#: src/components/ShareDialog.tsx:42
+#: src/components/ShareDialog.tsx:34
 msgid "With Editor"
-msgstr ""
+msgstr "एडिटर के साथ"
 
-#: src/components/Navigation.tsx:74
+#: src/components/Navigation.tsx:84
 msgid "Your Charts"
 msgstr "आपके चार्ट"
 

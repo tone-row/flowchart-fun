@@ -70,3 +70,16 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   border-color: var(--color-edgeHover);
   /* background-color: var(--color-uiAccent); */
 }
+
+@media (max-width: 799px) {
+  .PageTitle {
+    place-self: center;
+    grid-column: span 2;
+  }
+}
+
+.WorkspaceTitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
