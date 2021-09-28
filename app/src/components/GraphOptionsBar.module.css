@@ -11,7 +11,7 @@
 
 .Option[data-focused="true"],
 .Option:hover {
-  color: var(--color-highlightColor);
+  background-color: var(--color-nodeHover);
   cursor: pointer;
 }
 

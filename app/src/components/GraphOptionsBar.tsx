@@ -1,11 +1,21 @@
-import { ArrowUpRight, CirclesThree, IconProps } from "phosphor-react";
+import {
+  ArrowUpRight,
+  CirclesThree,
+  IconProps,
+  CaretDown,
+} from "phosphor-react";
 import { memo, ReactNode, useContext, useEffect, useMemo } from "react";
 import { Controller, useForm } from "react-hook-form";
-import Select, { StylesConfig, SingleValueProps } from "react-select";
+import Select, {
+  StylesConfig,
+  SingleValueProps,
+  components,
+} from "react-select";
 import { directions, layouts } from "../lib/graphOptions";
 import { Box, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
+import { smallBtnTypeSize, smallIconSize } from "./Shared";
 
 const GraphOptionsBar = memo(() => {
   const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
@@ -124,8 +134,8 @@ function OptionWithIcon({
   children: ReactNode;
 }) {
   return (
-    <Box flow="column" gap={2} items="center normal">
-      <Icon />
+    <Box flow="column" gap={1} items="center normal">
+      <Icon size={smallIconSize} />
       {children}
     </Box>
   );
@@ -135,17 +145,20 @@ const selectStyles: StylesConfig<any, false> = {
   control: (p, { isFocused }) => {
     return {
       ...p,
-      border: `solid 1px ${
-        isFocused ? "var(--color-edgeHover)" : "var(--color-uiAccent)"
-      }`,
-      backgroundColor: "var(--color-background)",
+
+      border: "none",
+      backgroundColor: isFocused
+        ? "var(--color-nodeHover)"
+        : "var(--color-input)",
       boxShadow: "none",
       transition: "none",
       cursor: "pointer",
+      minHeight: 0,
       "&:hover": {
         borderColor: "var(--color-edgeHover)",
-        "& [class*='indicatorContainer'] svg path": {
-          fill: "var(--color-edgeHover)",
+        backgroundColor: "var(--color-nodeHover)",
+        "& [class*='indicatorContainer'] svg polyline": {
+          stroke: "var(--color-edgeHover)",
         },
       },
     };
@@ -164,29 +177,33 @@ const selectStyles: StylesConfig<any, false> = {
     maxWidth: "100%",
     color: "var(--color-foreground)",
   }),
-  valueContainer: (z) => ({
-    ...z,
-    paddingInline: "calc(var(--spacer-px) * 2)",
-    paddingBlock: "calc(var(--spacer-py) * 1)",
-  }),
-  indicatorsContainer: (z) => ({
-    ...z,
-    padding: "calc(var(--spacer-px) * 1)",
-  }),
-  dropdownIndicator: (z, { isFocused }) => ({
-    ...z,
+  valueContainer: (provided) => ({
+    ...provided,
     padding: 0,
+  }),
+  indicatorsContainer: (provided) => ({
+    ...provided,
+  }),
+  dropdownIndicator: (provided, { isFocused }) => ({
+    ...provided,
+    padding: 0,
+    paddingRight: "calc(var(--spacer-px) * 2)",
     transition: "none",
-    path: {
-      fill: isFocused ? "var(--color-edgeHover)" : "var(--color-uiAccent)",
+    polyline: {
+      stroke: isFocused ? "var(--color-edgeHover)" : "var(--color-uiAccent)",
     },
   }),
-  menu: (z) => ({
-    ...z,
+  menu: (provided) => ({
+    ...provided,
     backgroundColor: "var(--color-background)",
     border: "solid 1px var(--color-uiAccent)",
     boxShadow: "none",
-    width: 200,
+    width: 150,
+  }),
+  menuList: (provided) => ({
+    ...provided,
+    paddingTop: 0,
+    paddingBottom: 0,
   }),
 };
 
@@ -201,14 +218,16 @@ function MySelect(props: any) {
         IndicatorSeparator: () => null,
         SingleValue,
         Option,
-        DownChevron: CaretDown,
+        DropdownIndicator: DIndicator,
       }}
     />
   );
 }
 
 const SingleValue = ({ children }: SingleValueProps<any>) => (
-  <Type size={-1}>{children}</Type>
+  <Box p={2}>
+    <Type size={smallBtnTypeSize}>{children}</Type>
+  </Box>
 );
 const Option = ({
   children,
@@ -221,32 +240,23 @@ const Option = ({
     <Box
       className={styles.Option}
       ref={innerRef}
-      px={2}
-      py={1}
+      p={2}
       {...innerProps}
       aria-selected={isSelected}
       data-focused={isFocused}
     >
-      <Type size={-1}>{children}</Type>
+      <Type size={smallBtnTypeSize}>{children}</Type>
     </Box>
   );
 };
 
-function CaretDown(props: React.SVGProps<SVGSVGElement>) {
+const DIndicator = (props: any) => {
   return (
-    <svg width={17} height={17} xmlns="http://www.w3.org/2000/svg" {...props}>
-      <g fill="none" fillRule="evenodd">
-        <path d="M0 0h17v17H0z" />
-        <path
-          stroke="#000"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M14 6l-5.5 5L3 6"
-        />
-      </g>
-    </svg>
+    <components.DropdownIndicator {...props}>
+      <CaretDown />
+    </components.DropdownIndicator>
   );
-}
+};
 
 type R = string | number | null | undefined | boolean | any;
 interface Z {

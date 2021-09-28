@@ -66,9 +66,10 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   border: 1px solid var(--color-uiAccent);
 }
 
-.ExportButton:hover {
+.ExportButton:hover,
+.ExportButton:focus {
   border-color: var(--color-edgeHover);
-  /* background-color: var(--color-uiAccent); */
+  background-color: var(--color-nodeHover);
 }
 
 @media (max-width: 799px) {

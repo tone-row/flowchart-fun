@@ -8,6 +8,9 @@ import { Trans } from "@lingui/macro";
 import { X } from "phosphor-react";
 import "@reach/tooltip/styles.css";
 
+export const smallBtnTypeSize = -1;
+export const smallIconSize = 16;
+
 export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {
   return (
     <Type as={as} weight="400" size={1} {...props}>

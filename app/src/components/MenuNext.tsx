@@ -14,7 +14,7 @@ import { AppContext, Showing } from "./AppContext";
 import { useContext } from "react";
 import styles from "./MenuNext.module.css";
 import { t, Trans } from "@lingui/macro";
-import { Tooltip } from "./Shared";
+import { smallBtnTypeSize, smallIconSize, Tooltip } from "./Shared";
 import VisuallyHidden from "@reach/visually-hidden";
 
 const chartSpecific: Showing[] = ["editor", "share"];
@@ -85,7 +85,11 @@ const MenuTabButton = ({
 }: { icon: Icon; tab: Showing; label: string } & BoxProps) => {
   const { showing, setShowing } = useContext(AppContext);
   return (
-    <Tooltip label={label} aria-label={label} className="slang-type size--2">
+    <Tooltip
+      label={label}
+      aria-label={label}
+      className={`slang-type size-${smallBtnTypeSize}`}
+    >
       <Box
         as="button"
         p={2}
@@ -159,14 +163,15 @@ function ExportButton() {
     <Box
       as="button"
       rad={1}
-      py={1}
+      px={1}
+      py={2}
       className={styles.ExportButton}
       items="center normal"
-      at={{ tablet: { template: "auto / auto 1fr" } }}
+      at={{ tablet: { template: "auto / auto 1fr", px: 0 } }}
       onClick={() => setShareModal(true)}
     >
       <Box p={1} px={2}>
-        <Share size={28} />
+        <Share size={smallIconSize} />
       </Box>
       <Box
         display="none"
@@ -174,7 +179,7 @@ function ExportButton() {
         at={{ tablet: { display: "grid" } }}
         className={styles.IconButtonText}
       >
-        <Type size={-1}>
+        <Type size={smallBtnTypeSize}>
           <Trans>Export</Trans>
         </Type>
       </Box>

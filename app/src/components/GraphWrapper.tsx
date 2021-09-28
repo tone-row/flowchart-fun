@@ -19,7 +19,7 @@ export default function GraphWrapper({ children }: { children: ReactNode }) {
         <Box
           template="auto 1fr / 1fr"
           className={styles.GraphWrapperInner}
-          rad={1}
+          at={{ tablet: { rad: 1 } }}
         >
           <GraphOptionsBar />
           {children}
