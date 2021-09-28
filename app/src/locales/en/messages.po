@@ -50,8 +50,8 @@ msgid "Cancel"
 msgstr "Cancel"
 
 #: src/components/Menu.tsx:35
-#: src/components/MenuNext.tsx:38
-#: src/components/MenuNext.tsx:86
+#: src/components/MenuNext.tsx:37
+#: src/components/MenuNext.tsx:81
 msgid "Charts"
 msgstr "Charts"
 
@@ -115,7 +115,8 @@ msgid "Duplicate"
 msgstr "Duplicate"
 
 #: src/components/Menu.tsx:29
-#: src/components/MenuNext.tsx:35
+#: src/components/MenuNext.tsx:36
+#: src/components/MobileTabToggle.tsx:9
 msgid "Editor"
 msgstr "Editor"
 
@@ -123,13 +124,13 @@ msgstr "Editor"
 msgid "Email (optional)"
 msgstr "Email (optional)"
 
-#: src/components/MenuNext.tsx:99
+#: src/components/MenuNext.tsx:94
 msgid "Export"
 msgstr "Export"
 
 #: src/components/Menu.tsx:38
-#: src/components/MenuNext.tsx:49
-#: src/components/MenuNext.tsx:82
+#: src/components/MenuNext.tsx:44
+#: src/components/MenuNext.tsx:77
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -140,6 +141,10 @@ msgstr "Follow Us"
 #: src/components/ShareDialog.tsx:33
 msgid "Fullscreen"
 msgstr "Fullscreen"
+
+#: src/components/MobileTabToggle.tsx:9
+msgid "Graph"
+msgstr "Graph"
 
 #: src/components/GraphOptions.tsx:29
 msgid "Graph Options"
@@ -231,8 +236,8 @@ msgstr "This app works by typing"
 msgid "Top to Bottom"
 msgstr "Top to Bottom"
 
-#: src/components/MenuNext.tsx:46
-#: src/components/MenuNext.tsx:84
+#: src/components/MenuNext.tsx:43
+#: src/components/MenuNext.tsx:79
 msgid "User Preferences"
 msgstr "User Preferences"
 

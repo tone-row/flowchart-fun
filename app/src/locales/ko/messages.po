@@ -50,8 +50,8 @@ msgid "Cancel"
 msgstr "취소"
 
 #: src/components/Menu.tsx:35
-#: src/components/MenuNext.tsx:38
-#: src/components/MenuNext.tsx:86
+#: src/components/MenuNext.tsx:37
+#: src/components/MenuNext.tsx:81
 msgid "Charts"
 msgstr "차트"
 
@@ -115,7 +115,8 @@ msgid "Duplicate"
 msgstr "복제"
 
 #: src/components/Menu.tsx:29
-#: src/components/MenuNext.tsx:35
+#: src/components/MenuNext.tsx:36
+#: src/components/MobileTabToggle.tsx:9
 msgid "Editor"
 msgstr "에디터"
 
@@ -123,13 +124,13 @@ msgstr "에디터"
 msgid "Email (optional)"
 msgstr "이메일 (선택사항)"
 
-#: src/components/MenuNext.tsx:99
+#: src/components/MenuNext.tsx:94
 msgid "Export"
 msgstr "내보내기"
 
 #: src/components/Menu.tsx:38
-#: src/components/MenuNext.tsx:49
-#: src/components/MenuNext.tsx:82
+#: src/components/MenuNext.tsx:44
+#: src/components/MenuNext.tsx:77
 msgid "Feedback"
 msgstr "피드백"
 
@@ -140,6 +141,10 @@ msgstr "팔로우하세요"
 #: src/components/ShareDialog.tsx:33
 msgid "Fullscreen"
 msgstr "전체 화면"
+
+#: src/components/MobileTabToggle.tsx:9
+msgid "Graph"
+msgstr "그래프"
 
 #: src/components/GraphOptions.tsx:29
 msgid "Graph Options"
@@ -231,8 +236,8 @@ msgstr "이 앱은 타이핑으로 작동합니다"
 msgid "Top to Bottom"
 msgstr "위에서 아래로"
 
-#: src/components/MenuNext.tsx:46
-#: src/components/MenuNext.tsx:84
+#: src/components/MenuNext.tsx:43
+#: src/components/MenuNext.tsx:79
 msgid "User Preferences"
 msgstr "사용자 기본 설정"
 

@@ -1,9 +1,10 @@
+import { t } from "@lingui/macro";
 import { useContext } from "react";
 import { Box } from "../slang";
 import { AppContext } from "./AppContext";
 
 export default function MobileTabToggle() {
-  const { toggleMobileEditorTab } = useContext(AppContext);
+  const { toggleMobileEditorTab, mobileEditorTab } = useContext(AppContext);
   return (
     <Box
       p={1}
@@ -18,7 +19,7 @@ export default function MobileTabToggle() {
         p={2}
         onClick={toggleMobileEditorTab}
       >
-        Text Editor / Graph
+        {mobileEditorTab === "graph" ? t`Editor` : t`Graph`}
       </Box>
     </Box>
   );

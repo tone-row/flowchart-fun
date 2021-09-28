@@ -43,7 +43,7 @@ const Main = memo(
             shouldResize={shouldResize}
           />
         </GraphWrapper>
-        <MobileTabToggle />
+        {!isFullscreen && <MobileTabToggle />}
         <TextResizer />
       </>
     );

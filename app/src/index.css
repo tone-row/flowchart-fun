@@ -145,3 +145,9 @@ div[data-reach-tooltip] {
   border-radius: 2px;
   color: var(--color-foreground);
 }
+
+@media (max-width: 799px) {
+  div[data-reach-tooltip] {
+    display: none !important;
+  }
+}

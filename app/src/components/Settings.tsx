@@ -42,15 +42,26 @@ const Settings = memo(() => {
 
   return (
     <Box px={4} pb={4} pt={8} className={styles.Settings}>
-      <Page items="start" content="start">
+      <Page
+        content="start normal"
+        at={{ tablet: { items: "start", content: "start" } }}
+      >
         <Section>
           <SectionTitle>
             <Trans>Language</Trans>
           </SectionTitle>
           <Box
-            items="normal start"
             className={styles.ButtonGroup}
-            at={{ tablet: { flow: "column" } }}
+            template="auto / repeat(3, minmax(0, 1fr))"
+            gap={1}
+            at={{
+              tablet: {
+                flow: "column",
+                items: "normal start",
+                template: "none",
+                gap: 0,
+              },
+            }}
           >
             {Object.keys(languages).map((locale) => (
               <GroupButton
@@ -72,7 +83,7 @@ const Settings = memo(() => {
           <SectionTitle>
             <Trans>Appearance</Trans>
           </SectionTitle>
-          <Box flow="column" className={styles.ButtonGroup}>
+          <Box flow="column" className={styles.ButtonGroup} gap={1}>
             <GroupButton
               disabled={mode === "light"}
               aria-pressed={mode === "light"}

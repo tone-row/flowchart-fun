@@ -210,9 +210,9 @@ function DeleteChart({
         onDismiss: handleDismiss,
       }}
       aria-label={t`Delete`}
-      innerBoxProps={{ gap: 10 }}
+      innerBoxProps={{ gap: 8 }}
     >
-      <Box content="normal start" gap={2} at={{ tablet: { flow: "column" } }}>
+      <Box content="normal start" at={{ tablet: { flow: "column" } }}>
         <Type>
           {erase === "/"
             ? t`Are you sure you want to reset this?`

@@ -10,7 +10,6 @@
 
 @media (max-width: 799px) {
   .GraphWrapper {
-    border-top: solid 1px var(--color-uiAccent);
     grid-area: main;
     background-color: var(--color-background);
     z-index: -1;

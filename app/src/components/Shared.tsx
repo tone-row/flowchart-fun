@@ -120,10 +120,11 @@ export const Dialog = ({
         </Box>
         <Box
           as={as}
-          p={10}
+          p={5}
           rad={1}
           background="color-background"
           className={styles.InnerDialog}
+          at={{ tablet: { p: 10 } }}
           {...props}
         >
           {children}

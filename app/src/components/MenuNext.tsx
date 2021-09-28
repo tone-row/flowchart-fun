@@ -113,7 +113,9 @@ function WorkspaceSection() {
       gap={1}
       className={styles.WorkspaceSection}
       px={1}
-      at={{ tablet: { px: 0, gap: 6 } }}
+      pb={1}
+      items="stretch center"
+      at={{ tablet: { px: 0, gap: 6, pb: 0 } }}
     >
       <Box
         className={styles.WorkspaceButton}
@@ -123,7 +125,7 @@ function WorkspaceSection() {
         rad={1}
         gap={3}
       >
-        <Box className={styles.WorkspaceButtonIcon}>
+        <Box className={styles.WorkspaceButtonIcon} px={1}>
           <Laptop size={28} />
         </Box>
         <Box>
