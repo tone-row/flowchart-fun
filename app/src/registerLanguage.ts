@@ -6,7 +6,7 @@ export const languageId = "flowchartfun";
 export const themeNameLight = "flowchartfun-light";
 export const themeNameDark = "flowchartfun-dark";
 
-export function registerLanguage(monaco: Monaco) {
+function registerLanguage(monaco: Monaco) {
   monaco.languages.register({ id: languageId });
 
   monaco.languages.setMonarchTokensProvider(languageId, {

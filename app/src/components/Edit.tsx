@@ -32,6 +32,7 @@ import HasError from "./HasError";
 declare global {
   interface Window {
     flowchartFunSetHelpText?: () => void;
+    plausible: any;
   }
 }
 

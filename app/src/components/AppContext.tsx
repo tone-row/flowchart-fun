@@ -13,7 +13,7 @@ import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
 import { FlagsProvider } from "flagged";
 
-export type Theme = typeof colors;
+type Theme = typeof colors;
 
 export type Showing =
   | "navigation"

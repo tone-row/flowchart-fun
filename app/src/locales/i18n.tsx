@@ -1,4 +1,3 @@
-export const defaultLocale = "en";
 export const languages = {
   de: "Deutsche",
   en: "English",
