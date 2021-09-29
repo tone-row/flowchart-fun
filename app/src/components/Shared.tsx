@@ -98,7 +98,6 @@ export const Dialog = ({
   children,
   innerBoxProps: { as = "div", ...props },
 }: {
-  // dialogProps: DialogProps & HTMLProps<HTMLDivElement>;
   dialogProps: Parameters<
     Polymorphic.ForwardRefComponent<"div", DialogProps>
   >[0] &

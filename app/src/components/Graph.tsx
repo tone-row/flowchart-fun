@@ -124,7 +124,7 @@ function initializeGraph(
   errorCatcher.current = cytoscape();
   cy.current = cytoscape({
     container: document.getElementById("cy"), // container to render in
-    layout: { ...defaultLayout },
+    layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
     elements: [],
     style: getCyStyleFromTheme(colors),
     userZoomingEnabled: true,
@@ -206,7 +206,7 @@ function updateGraph(
       // Test Error First
       errorCatcher.current?.json({ elements, style });
       errorCatcher.current?.layout({
-        ...defaultLayout,
+        ...(defaultLayout as cytoscape.LayoutOptions),
         ...layout,
       });
 

@@ -13,27 +13,27 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Feedback.tsx:24
+#: src/components/Feedback.tsx:23
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "Une erreur s'est produite. Essayez de l'envoyer à nouveau ou bien envoyez un e-mail à l'adresse {0}."
 
-#: src/components/Settings.tsx:64
+#: src/components/Settings.tsx:71
 msgid "Appearance"
 msgstr "Thème"
 
-#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:134
 msgid "Are you sure you want to delete this?"
 msgstr "Êtes-vous certain de vouloir supprimer ceci ?"
 
-#: src/components/Navigation.tsx:132
+#: src/components/Navigation.tsx:133
 msgid "Are you sure you want to reset this?"
 msgstr "Êtes-vous certain de vouloir réinitialiser ceci ?"
 
-#: src/components/Feedback.tsx:106
+#: src/components/Feedback.tsx:105
 msgid "Back To Editor"
 msgstr "Retour à l'éditeur"
 
-#: src/components/Settings.tsx:92
+#: src/components/Settings.tsx:99
 msgid "Become a Sponsor"
 msgstr "Devenir un sponsor"
 
@@ -45,13 +45,13 @@ msgstr "De bas en haut"
 msgid "Breadthfirst"
 msgstr "Parcours en largeur"
 
-#: src/components/Navigation.tsx:141
+#: src/components/Navigation.tsx:142
 msgid "Cancel"
 msgstr "Annuler"
 
 #: src/components/Menu.tsx:35
-#: src/components/MenuNext.tsx:37
-#: src/components/MenuNext.tsx:81
+#: src/components/MenuNext.tsx:39
+#: src/components/MenuNext.tsx:83
 msgid "Charts"
 msgstr "Graphiques"
 
@@ -59,7 +59,7 @@ msgstr "Graphiques"
 msgid "Circle"
 msgstr "Cercle"
 
-#: src/components/Shared.tsx:65
+#: src/components/Shared.tsx:67
 msgid "Close"
 msgstr "Fermer"
 
@@ -67,13 +67,17 @@ msgstr "Fermer"
 msgid "Concentric"
 msgstr "Concentrique"
 
-#: src/components/ShareDialog.tsx:30
-#: src/components/ShareDialog.tsx:80
+#: src/components/GraphOptionsBar.tsx:79
+msgid "Contract"
+msgstr "Réduire"
+
+#: src/components/ShareDialog.tsx:34
+#: src/components/ShareDialog.tsx:90
 msgid "Copy"
 msgstr "Copier"
 
 #: src/components/Navigation.tsx:75
-#: src/components/Navigation.tsx:181
+#: src/components/Navigation.tsx:183
 msgid "Create"
 msgstr "Créer"
 
@@ -85,17 +89,18 @@ msgstr "Créer un nouveau graphique"
 msgid "Create a link directly using the exact label text"
 msgstr "Créer un lien directement vers une boite en utilisant le texte exact de celle-ci"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:78
 msgid "Dark Mode"
 msgstr "Mode sombre"
 
 #: src/components/Navigation.tsx:108
 #: src/components/Navigation.tsx:128
-#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:145
 msgid "Delete"
 msgstr "Supprimer"
 
 #: src/components/GraphOptions.tsx:39
+#: src/components/GraphOptionsBar.tsx:73
 msgid "Direction"
 msgstr "Direction"
 
@@ -105,44 +110,49 @@ msgstr "Direction"
 msgid "Download"
 msgstr "Télécharger"
 
-#: src/components/ShareDialog.tsx:39
+#: src/components/ShareDialog.tsx:43
 msgid "Download Image"
 msgstr "Télécharger l'image"
 
 #: src/components/Navigation.tsx:105
-#: src/components/Navigation.tsx:166
+#: src/components/Navigation.tsx:167
 msgid "Duplicate"
 msgstr "Dupliquer"
 
 #: src/components/Menu.tsx:29
-#: src/components/MenuNext.tsx:36
-#: src/components/MobileTabToggle.tsx:9
+#: src/components/MenuNext.tsx:38
+#: src/components/MobileTabToggle.tsx:11
 msgid "Editor"
 msgstr "Éditeur"
 
-#: src/components/Feedback.tsx:85
+#: src/components/Feedback.tsx:84
 msgid "Email (optional)"
 msgstr "E-mail (facultatif)"
 
-#: src/components/MenuNext.tsx:94
+#: src/components/GraphOptionsBar.tsx:80
+msgid "Expand"
+msgstr "Agrandir"
+
+#: src/components/MenuNext.tsx:96
+#: src/components/ShareDialog.tsx:25
 msgid "Export"
 msgstr "Exporter"
 
 #: src/components/Menu.tsx:38
-#: src/components/MenuNext.tsx:44
-#: src/components/MenuNext.tsx:77
+#: src/components/MenuNext.tsx:46
+#: src/components/MenuNext.tsx:79
 msgid "Feedback"
 msgstr "Commentaire"
 
-#: src/components/Settings.tsx:83
+#: src/components/Settings.tsx:90
 msgid "Follow Us"
 msgstr "Suivez-nous"
 
-#: src/components/ShareDialog.tsx:33
+#: src/components/ShareDialog.tsx:37
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#: src/components/MobileTabToggle.tsx:9
+#: src/components/MobileTabToggle.tsx:11
 msgid "Graph"
 msgstr "Graphique"
 
@@ -171,6 +181,7 @@ msgid "Language"
 msgstr "Langue"
 
 #: src/components/GraphOptions.tsx:33
+#: src/components/GraphOptionsBar.tsx:68
 msgid "Layout"
 msgstr "Disposition"
 
@@ -178,15 +189,15 @@ msgstr "Disposition"
 msgid "Left to Right"
 msgstr "De gauche à droite"
 
-#: src/components/Settings.tsx:68
+#: src/components/Settings.tsx:75
 msgid "Light Mode"
 msgstr "Mode lumineux"
 
-#: src/components/Settings.tsx:77
+#: src/components/Settings.tsx:84
 msgid "Made by <0>Tone Row</0>"
 msgstr "Réalisé par <0>Tone Row</0>"
 
-#: src/components/Settings.tsx:89
+#: src/components/Settings.tsx:96
 msgid "Make a Donation"
 msgstr "Faire un don"
 
@@ -199,7 +210,7 @@ msgid "Random"
 msgstr "Aléatoire"
 
 #: src/components/Navigation.tsx:108
-#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:145
 msgid "Reset"
 msgstr "Réinitialiser"
 
@@ -216,7 +227,7 @@ msgstr "Paramètres"
 msgid "Share"
 msgstr "Partager"
 
-#: src/components/Feedback.tsx:90
+#: src/components/Feedback.tsx:89
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -224,7 +235,7 @@ msgstr "Soumettre"
 msgid "Text Invalid"
 msgstr "Texte invalide"
 
-#: src/components/Feedback.tsx:103
+#: src/components/Feedback.tsx:102
 msgid "Thank you for your feedback!"
 msgstr "Merci pour votre commentaire !"
 
@@ -236,28 +247,28 @@ msgstr "Chaque ligne creé une nouvelle boite"
 msgid "Top to Bottom"
 msgstr "De haut en bas"
 
-#: src/components/MenuNext.tsx:43
-#: src/components/MenuNext.tsx:79
+#: src/components/MenuNext.tsx:45
+#: src/components/MenuNext.tsx:81
 msgid "User Preferences"
 msgstr "Préférences de l'utilisateur"
 
-#: src/components/Settings.tsx:86
+#: src/components/Settings.tsx:93
 msgid "View on Github"
 msgstr "Voir sur Github"
 
-#: src/components/Feedback.tsx:72
+#: src/components/Feedback.tsx:71
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Nous apprécions tous vos commentaires, suggestions, retours sur les bugs et demandes de fonctionnalités !"
 
-#: src/components/Navigation.tsx:173
+#: src/components/Navigation.tsx:175
 msgid "What would you like to name this copy?"
 msgstr "Comment aimeriez-vous nommer cette copie ?"
 
-#: src/components/Feedback.tsx:79
+#: src/components/Feedback.tsx:78
 msgid "What would you like to share with us?"
 msgstr "Que voudriez-vous partager avec nous ?"
 
-#: src/components/ShareDialog.tsx:34
+#: src/components/ShareDialog.tsx:38
 msgid "With Editor"
 msgstr "Avec l'éditeur"
 

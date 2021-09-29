@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import VisuallyHidden from "@reach/visually-hidden";
 import {
   ArrowUpRight,
@@ -117,14 +118,13 @@ const GraphOptionsBar = memo(() => {
       as="form"
       at={{ tablet: { p: 2, px: 4, gap: 4 } }}
     >
-      <OptionWithIcon icon={CirclesThree}>
+      <OptionWithIcon icon={CirclesThree} label={t`Layout`}>
         <Controller
           control={control}
           name="layout.name"
           render={({ field: { onChange } }) => {
             return (
               <MySelect
-                label="Layout"
                 options={layouts}
                 onChange={(layout: typeof layouts[0]) =>
                   layout && onChange(layout.value)
@@ -136,14 +136,13 @@ const GraphOptionsBar = memo(() => {
         />
       </OptionWithIcon>
       {currentLayout?.value === "dagre" && (
-        <OptionWithIcon icon={ArrowUpRight}>
+        <OptionWithIcon icon={ArrowUpRight} label={t`Direction`}>
           <Controller
             control={control}
             name="layout.rankDir"
             render={({ field: { onChange } }) => {
               return (
                 <MySelect
-                  label="Direction"
                   options={directions}
                   onChange={(dir: typeof directions[0]) =>
                     dir && onChange(dir.value)
@@ -156,8 +155,12 @@ const GraphOptionsBar = memo(() => {
         </OptionWithIcon>
       )}
       <Box flow="column">
-        <IconButton icon={ArrowsInSimple} onClick={contract} label="Contract" />
-        <IconButton icon={ArrowsOutSimple} onClick={expand} label="Expand" />
+        <IconButton
+          icon={ArrowsInSimple}
+          onClick={contract}
+          label={t`Contract`}
+        />
+        <IconButton icon={ArrowsOutSimple} onClick={expand} label={t`Expand`} />
       </Box>
     </Box>
   );
@@ -173,15 +176,23 @@ type Icon = React.ForwardRefExoticComponent<
 function OptionWithIcon({
   icon: Icon,
   children,
+  label,
 }: {
   icon: Icon;
   children: ReactNode;
+  label: string;
 }) {
   return (
-    <Box flow="column" gap={1} items="center normal">
-      <Icon size={smallIconSize} />
-      {children}
-    </Box>
+    <Tooltip
+      label={label}
+      aria-label={label}
+      className={`slang-type size-${smallBtnTypeSize}`}
+    >
+      <Box flow="column" gap={1} items="center normal">
+        <Icon size={smallIconSize} />
+        {children}
+      </Box>
+    </Tooltip>
   );
 }
 
@@ -250,7 +261,7 @@ const selectStyles: StylesConfig<any, false> = {
   }),
 };
 
-function MySelect({ label, ...props }: any & { label: string }) {
+function MySelect(props: any) {
   return (
     <Select
       {...props}
@@ -259,12 +270,7 @@ function MySelect({ label, ...props }: any & { label: string }) {
       styles={selectStyles}
       components={{
         IndicatorSeparator: () => null,
-        // eslint-disable-next-line react/display-name
-        SingleValue: ({ children, ...props }: SingleValueProps<any>) => (
-          <SingleValue {...props} label={label}>
-            {children}
-          </SingleValue>
-        ),
+        SingleValue,
         Option,
         DropdownIndicator: DIndicator,
       }}
@@ -272,20 +278,12 @@ function MySelect({ label, ...props }: any & { label: string }) {
   );
 }
 
-const SingleValue = ({
-  children,
-  label,
-}: SingleValueProps<any> & { label: string }) => (
-  <Tooltip
-    label={label}
-    aria-label={label}
-    className={`slang-type size-${smallBtnTypeSize}`}
-  >
-    <Box p={1} at={{ tablet: { p: 2 } }}>
-      <Type size={smallBtnTypeSize}>{children}</Type>
-    </Box>
-  </Tooltip>
+const SingleValue = ({ children }: SingleValueProps<any>) => (
+  <Box p={1} at={{ tablet: { p: 2 } }}>
+    <Type size={smallBtnTypeSize}>{children}</Type>
+  </Box>
 );
+
 const Option = ({
   children,
   innerProps,
