@@ -208,8 +208,8 @@ function DeleteChart({
       dialogProps={{
         isOpen: Boolean(erase),
         onDismiss: handleDismiss,
+        "aria-label": t`Delete`,
       }}
-      aria-label={t`Delete`}
       innerBoxProps={{ gap: 8 }}
     >
       <Box content="normal start" at={{ tablet: { flow: "column" } }}>
@@ -270,8 +270,8 @@ function CopyChart({
         isOpen: Boolean(copy),
         onDismiss: handleDismiss,
         initialFocusRef: inputRef,
+        "aria-label": t`Duplicate`,
       }}
-      aria-label={t`Duplicate`}
       innerBoxProps={{
         gap: 10,
         as: "form",

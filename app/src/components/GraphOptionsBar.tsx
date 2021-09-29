@@ -1,21 +1,34 @@
+import VisuallyHidden from "@reach/visually-hidden";
 import {
   ArrowUpRight,
   CirclesThree,
   IconProps,
   CaretDown,
+  ArrowsOutSimple,
+  ArrowsInSimple,
 } from "phosphor-react";
-import { memo, ReactNode, useContext, useEffect, useMemo } from "react";
+import {
+  ForwardRefExoticComponent,
+  memo,
+  ReactNode,
+  RefAttributes,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+} from "react";
 import { Controller, useForm } from "react-hook-form";
 import Select, {
   StylesConfig,
   SingleValueProps,
   components,
 } from "react-select";
+import { defaultSpacingFactor } from "../constants";
 import { directions, layouts } from "../lib/graphOptions";
-import { Box, Type } from "../slang";
+import { Box, BoxProps, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
-import { smallBtnTypeSize, smallIconSize } from "./Shared";
+import { smallBtnTypeSize, smallIconSize, Tooltip } from "./Shared";
 
 const GraphOptionsBar = memo(() => {
   const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
@@ -68,6 +81,30 @@ const GraphOptionsBar = memo(() => {
     [graphOptions.layout]
   );
 
+  const expand = useCallback(
+    () =>
+      updateGraphOptionsText &&
+      updateGraphOptionsText({
+        layout: {
+          spacingFactor:
+            (graphOptions.layout?.spacingFactor || defaultSpacingFactor) + 0.25,
+        },
+      }),
+    [graphOptions.layout?.spacingFactor, updateGraphOptionsText]
+  );
+
+  const contract = useCallback(
+    () =>
+      updateGraphOptionsText &&
+      updateGraphOptionsText({
+        layout: {
+          spacingFactor:
+            (graphOptions.layout?.spacingFactor || defaultSpacingFactor) - 0.25,
+        },
+      }),
+    [graphOptions.layout?.spacingFactor, updateGraphOptionsText]
+  );
+
   return (
     <Box
       className={styles.GraphOptionsBar}
@@ -87,6 +124,7 @@ const GraphOptionsBar = memo(() => {
           render={({ field: { onChange } }) => {
             return (
               <MySelect
+                label="Layout"
                 options={layouts}
                 onChange={(layout: typeof layouts[0]) =>
                   layout && onChange(layout.value)
@@ -105,6 +143,7 @@ const GraphOptionsBar = memo(() => {
             render={({ field: { onChange } }) => {
               return (
                 <MySelect
+                  label="Direction"
                   options={directions}
                   onChange={(dir: typeof directions[0]) =>
                     dir && onChange(dir.value)
@@ -116,6 +155,10 @@ const GraphOptionsBar = memo(() => {
           />
         </OptionWithIcon>
       )}
+      <Box flow="column">
+        <IconButton icon={ArrowsInSimple} onClick={contract} label="Contract" />
+        <IconButton icon={ArrowsOutSimple} onClick={expand} label="Expand" />
+      </Box>
     </Box>
   );
 });
@@ -207,7 +250,7 @@ const selectStyles: StylesConfig<any, false> = {
   }),
 };
 
-function MySelect(props: any) {
+function MySelect({ label, ...props }: any & { label: string }) {
   return (
     <Select
       {...props}
@@ -216,7 +259,12 @@ function MySelect(props: any) {
       styles={selectStyles}
       components={{
         IndicatorSeparator: () => null,
-        SingleValue,
+        // eslint-disable-next-line react/display-name
+        SingleValue: ({ children, ...props }: SingleValueProps<any>) => (
+          <SingleValue {...props} label={label}>
+            {children}
+          </SingleValue>
+        ),
         Option,
         DropdownIndicator: DIndicator,
       }}
@@ -224,10 +272,19 @@ function MySelect(props: any) {
   );
 }
 
-const SingleValue = ({ children }: SingleValueProps<any>) => (
-  <Box p={1} at={{ tablet: { p: 2 } }}>
-    <Type size={smallBtnTypeSize}>{children}</Type>
-  </Box>
+const SingleValue = ({
+  children,
+  label,
+}: SingleValueProps<any> & { label: string }) => (
+  <Tooltip
+    label={label}
+    aria-label={label}
+    className={`slang-type size-${smallBtnTypeSize}`}
+  >
+    <Box p={1} at={{ tablet: { p: 2 } }}>
+      <Type size={smallBtnTypeSize}>{children}</Type>
+    </Box>
+  </Tooltip>
 );
 const Option = ({
   children,
@@ -278,4 +335,34 @@ function isEqual(a: O, b: O): boolean {
     }
   }
   return result;
+}
+
+function IconButton({
+  icon: Icon,
+  onClick,
+  label,
+}: {
+  icon: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
+  onClick: () => void;
+  label: string;
+} & BoxProps) {
+  return (
+    <Tooltip
+      label={label}
+      aria-label={label}
+      className={`slang-type size-${smallBtnTypeSize}`}
+    >
+      <Box
+        as="button"
+        onClick={onClick}
+        type="button"
+        p={2}
+        rad={1}
+        className={styles.IconButton}
+      >
+        <Icon size={smallIconSize + 2} />
+        <VisuallyHidden>{label}</VisuallyHidden>
+      </Box>
+    </Tooltip>
+  );
 }

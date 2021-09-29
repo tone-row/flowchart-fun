@@ -2,6 +2,7 @@ import { forwardRef, ReactNode } from "react";
 import { Box, BoxProps, Type, TypeProps } from "../slang";
 import "@reach/dialog/styles.css";
 import ReachDialog, { DialogProps } from "@reach/dialog";
+import type * as Polymorphic from "@reach/utils/polymorphic";
 import VisuallyHidden from "@reach/visually-hidden";
 import styles from "./Shared.module.css";
 import { Trans } from "@lingui/macro";
@@ -97,7 +98,11 @@ export const Dialog = ({
   children,
   innerBoxProps: { as = "div", ...props },
 }: {
-  dialogProps: DialogProps;
+  // dialogProps: DialogProps & HTMLProps<HTMLDivElement>;
+  dialogProps: Parameters<
+    Polymorphic.ForwardRefComponent<"div", DialogProps>
+  >[0] &
+    BoxProps;
   children: ReactNode;
   innerBoxProps: BoxProps;
 }) => {

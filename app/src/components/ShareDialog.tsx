@@ -13,7 +13,11 @@ export default function ShareDialog() {
   const withEditor = `${new URL(window.location.href).origin}/c#${shareLink}`;
   return (
     <Dialog
-      dialogProps={{ isOpen: shareModal, onDismiss: close }}
+      dialogProps={{
+        isOpen: shareModal,
+        onDismiss: close,
+        "aria-label": t`Export`,
+      }}
       innerBoxProps={{
         gap: 6,
         at: {

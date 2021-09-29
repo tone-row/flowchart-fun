@@ -19,3 +19,10 @@
   background-color: var(--color-uiAccent);
   color: var(--color-foreground);
 }
+
+.IconButton:hover,
+.IconButton:focus {
+  background-color: var(--color-nodeHover);
+  outline: none;
+  box-shadow: none;
+}
