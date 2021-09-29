@@ -29,7 +29,12 @@ import { directions, layouts } from "../lib/graphOptions";
 import { Box, BoxProps, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
-import { smallBtnTypeSize, smallIconSize, Tooltip } from "./Shared";
+import {
+  smallBtnTypeSize,
+  smallIconSize,
+  Tooltip,
+  tooltipSize,
+} from "./Shared";
 
 const GraphOptionsBar = memo(() => {
   const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
@@ -88,7 +93,7 @@ const GraphOptionsBar = memo(() => {
       updateGraphOptionsText({
         layout: {
           spacingFactor:
-            (graphOptions.layout?.spacingFactor || defaultSpacingFactor) + 0.25,
+            (graphOptions.layout?.spacingFactor ?? defaultSpacingFactor) + 0.25,
         },
       }),
     [graphOptions.layout?.spacingFactor, updateGraphOptionsText]
@@ -100,7 +105,7 @@ const GraphOptionsBar = memo(() => {
       updateGraphOptionsText({
         layout: {
           spacingFactor:
-            (graphOptions.layout?.spacingFactor || defaultSpacingFactor) - 0.25,
+            (graphOptions.layout?.spacingFactor ?? defaultSpacingFactor) - 0.25,
         },
       }),
     [graphOptions.layout?.spacingFactor, updateGraphOptionsText]
@@ -186,7 +191,7 @@ function OptionWithIcon({
     <Tooltip
       label={label}
       aria-label={label}
-      className={`slang-type size-${smallBtnTypeSize}`}
+      className={`slang-type size-${tooltipSize}`}
     >
       <Box flow="column" gap={1} items="center normal">
         <Icon size={smallIconSize} />
@@ -348,7 +353,7 @@ function IconButton({
     <Tooltip
       label={label}
       aria-label={label}
-      className={`slang-type size-${smallBtnTypeSize}`}
+      className={`slang-type size-${tooltipSize}`}
     >
       <Box
         as="button"

@@ -10,6 +10,7 @@ import { X } from "phosphor-react";
 import "@reach/tooltip/styles.css";
 
 export const smallBtnTypeSize = -1;
+export const tooltipSize = -2;
 export const smallIconSize = 18;
 
 export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {

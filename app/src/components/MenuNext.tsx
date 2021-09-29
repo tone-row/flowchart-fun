@@ -14,7 +14,12 @@ import { AppContext, Showing } from "./AppContext";
 import { useContext } from "react";
 import styles from "./MenuNext.module.css";
 import { t, Trans } from "@lingui/macro";
-import { smallBtnTypeSize, smallIconSize, Tooltip } from "./Shared";
+import {
+  smallBtnTypeSize,
+  smallIconSize,
+  Tooltip,
+  tooltipSize,
+} from "./Shared";
 import VisuallyHidden from "@reach/visually-hidden";
 
 const chartSpecific: Showing[] = ["editor", "share"];
@@ -88,7 +93,7 @@ const MenuTabButton = ({
     <Tooltip
       label={label}
       aria-label={label}
-      className={`slang-type size-${smallBtnTypeSize}`}
+      className={`slang-type size-${tooltipSize}`}
     >
       <Box
         as="button"
