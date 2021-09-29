@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { AppContext } from "./AppContext";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { delimiters, editorOptions } from "../constants";
