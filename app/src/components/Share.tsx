@@ -1,8 +1,8 @@
 import { Trans } from "@lingui/macro";
-import React, { ReactNode, useContext } from "react";
-import { Box, BoxProps, Type } from "../slang";
+import { useContext } from "react";
+import { Box } from "../slang";
 import { AppContext } from "./AppContext";
-import styles from "./Share.module.css";
+import { Button } from "./Shared";
 
 export default function Share() {
   const { shareLink } = useContext(AppContext);
@@ -25,14 +25,6 @@ export default function Share() {
       <Button onClick={() => window.flowchartFunDownloadJPG()}>
         <Trans>Download</Trans> JPG
       </Button>
-    </Box>
-  );
-}
-
-function Button({ children, ...props }: { children: ReactNode } & BoxProps) {
-  return (
-    <Box as="button" p={3} className={styles.ShareButton} {...props}>
-      <Type>{children}</Type>
     </Box>
   );
 }

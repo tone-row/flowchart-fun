@@ -1,29 +1,5 @@
-.CloseButton svg line {
-  stroke-width: 10;
-  stroke: var(--color-edgeHover);
-  transition: 100ms stroke ease;
-}
-
-.CloseButton:hover svg line {
-  stroke: var(--color-foreground);
-}
-
 .Title {
   text-align: center;
-}
-
-.Button {
-  background-color: var(--color-input);
-  border: 1px solid var(--color-uiAccent);
-}
-
-.Button:hover {
-  background-color: var(--color-uiAccent);
-  border-color: var(--color-edgeHover);
-}
-
-.InnerDialog {
-  border: 1px solid var(--color-uiAccent);
 }
 
 .LinkCopyInput {

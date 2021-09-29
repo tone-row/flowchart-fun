@@ -4,7 +4,7 @@
   justify-self: center;
 }
 
-.ChartLink {
+.ChartLink [class*="slang-type"] {
   text-align: left;
   overflow-x: hidden;
   white-space: nowrap;
@@ -17,24 +17,19 @@
   box-shadow: none;
 }
 
-.ChartLink:focus {
-  color: var(--color-buttonFocus);
-}
-.ChartLink:focus:not(:focus-visible) {
-  color: var(--color-foreground);
-}
+.ChartLink:focus,
 .ChartLink:focus-visible {
-  color: var(--color-buttonFocus);
+  background-color: var(--color-nodeHover);
 }
 
 .ChartLink:hover,
 .ChartLink:active,
 .ChartLink:focus:not(:focus-visible):active {
-  color: var(--color-buttonFocus);
+  background-color: var(--color-nodeHover);
 }
 
 .ChartLink[aria-current="page"] {
-  font-weight: 700;
+  background-color: var(--color-input);
 }
 
 .ChartWrapper + .ChartWrapper {
@@ -60,4 +55,8 @@
 }
 .MenuButton:focus-visible {
   color: var(--color-foreground);
+}
+
+.ChartList {
+  border: 1px solid var(--color-uiAccent);
 }

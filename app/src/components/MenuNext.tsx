@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { ReactComponent as BrandSvg } from "./brand.svg";
-import { Box, Type } from "../slang";
+import { Box, BoxProps, Type } from "../slang";
 import {
   TreeStructure,
   Laptop,
@@ -14,6 +14,8 @@ import { AppContext, Showing } from "./AppContext";
 import { useContext } from "react";
 import styles from "./MenuNext.module.css";
 import { t, Trans } from "@lingui/macro";
+import { smallBtnTypeSize, smallIconSize, Tooltip } from "./Shared";
+import VisuallyHidden from "@reach/visually-hidden";
 
 const chartSpecific: Showing[] = ["editor", "share"];
 
@@ -29,6 +31,7 @@ export default function MenuNext() {
           p: 2,
           pl: 5,
           pr: 3,
+          gap: 4,
         },
       }}
       flow="column"
@@ -39,30 +42,32 @@ export default function MenuNext() {
         flow="column"
         items="center"
         content="stretch start"
-        p={1}
-        gap={1}
         pl={2}
         at={{ tablet: { p: 0, gap: 2, pl: 0 } }}
+        className={styles.Side}
       >
-        <BrandSvg width={40} className={styles.Brand} />
-        <MenuTabButton icon={TreeStructure} tab="editor" />
-        <MenuTabButton icon={FolderOpen} tab="navigation" />
+        <Box pr={2} at={{ tablet: { pr: 0 } }}>
+          <BrandSvg width={40} className={styles.Brand} />
+        </Box>
+        <MenuTabButton icon={TreeStructure} tab="editor" label={t`Editor`} />
+        <MenuTabButton icon={FolderOpen} tab="navigation" label={t`Charts`} />
       </Box>
       {chartSpecific.includes(showing) ? (
         <WorkspaceSection />
       ) : (
-        <Type>{translatedTitle(showing)}</Type>
+        <Box className={styles.PageTitle} pt={5} at={{ tablet: { pt: 0 } }}>
+          <Type>{translatedTitle(showing)}</Type>
+        </Box>
       )}
       <Box
         content="stretch end"
         flow="column"
         items="center"
-        p={1}
-        gap={1}
-        at={{ tablet: { p: 0 } }}
+        at={{ tablet: { gap: 2, pr: 2 } }}
+        className={styles.Side}
       >
-        <MenuTabButton icon={Gear} tab="settings" />
-        <MenuTabButton icon={Chat} tab="feedback" />
+        <MenuTabButton icon={Gear} tab="settings" label={t`User Preferences`} />
+        <MenuTabButton icon={Chat} tab="feedback" label={t`Feedback`} />
       </Box>
     </Box>
   );
@@ -72,22 +77,35 @@ type Icon = React.ForwardRefExoticComponent<
   IconProps & React.RefAttributes<SVGSVGElement>
 >;
 
-function MenuTabButton({ icon: Icon, tab }: { icon: Icon; tab: Showing }) {
+const MenuTabButton = ({
+  icon: Icon,
+  tab,
+  label,
+  ...props
+}: { icon: Icon; tab: Showing; label: string } & BoxProps) => {
   const { showing, setShowing } = useContext(AppContext);
   return (
-    <Box
-      as="button"
-      p={2}
-      rad={1}
-      role="tab"
-      aria-selected={tab === showing}
-      onClick={() => setShowing(tab)}
-      className={styles.MenuTabButton}
+    <Tooltip
+      label={label}
+      aria-label={label}
+      className={`slang-type size-${smallBtnTypeSize}`}
     >
-      <Icon height={33} width={33} />
-    </Box>
+      <Box
+        as="button"
+        p={2}
+        rad={1}
+        role="tab"
+        aria-selected={tab === showing}
+        onClick={() => setShowing(tab)}
+        className={styles.MenuTabButton}
+        {...props}
+      >
+        <Icon height={33} width={33} />
+        <VisuallyHidden>{label}</VisuallyHidden>
+      </Box>
+    </Tooltip>
   );
-}
+};
 
 function WorkspaceSection() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
@@ -95,11 +113,13 @@ function WorkspaceSection() {
   return (
     <Box
       flow="column"
-      template="auto / 1fr auto"
-      gap={1}
       className={styles.WorkspaceSection}
       px={1}
-      at={{ tablet: { px: 0, gap: 6 } }}
+      py={5}
+      gap={3}
+      items="center"
+      content="normal center"
+      at={{ tablet: { px: 0, gap: 6, py: 0 } }}
     >
       <Box
         className={styles.WorkspaceButton}
@@ -107,14 +127,17 @@ function WorkspaceSection() {
         items="center normal"
         template="auto / auto 1fr"
         rad={1}
-        gap={3}
       >
-        <Box className={styles.WorkspaceButtonIcon}>
-          <Laptop width={33} height={33} />
+        <Box
+          className={styles.WorkspaceButtonIcon}
+          pr={2}
+          at={{ tablet: { px: 1, pr: 3 } }}
+        >
+          <Laptop size={smallIconSize} />
         </Box>
         <Box>
-          <Type as="h1" weight="400">
-            /{workspace}
+          <Type as="h1" weight="400" className={styles.WorkspaceTitle}>
+            {workspace || "(-)"}
           </Type>
         </Box>
       </Box>
@@ -143,14 +166,13 @@ function ExportButton() {
     <Box
       as="button"
       rad={1}
-      py={1}
       className={styles.ExportButton}
       items="center normal"
-      at={{ tablet: { template: "auto / auto 1fr" } }}
+      at={{ tablet: { template: "auto / auto 1fr", px: 0 } }}
       onClick={() => setShareModal(true)}
     >
-      <Box p={2}>
-        <Share />
+      <Box p={1} at={{ tablet: { p: 3 } }}>
+        <Share size={smallIconSize} />
       </Box>
       <Box
         display="none"
@@ -158,7 +180,7 @@ function ExportButton() {
         at={{ tablet: { display: "grid" } }}
         className={styles.IconButtonText}
       >
-        <Type size={-1}>
+        <Type size={smallBtnTypeSize}>
           <Trans>Export</Trans>
         </Type>
       </Box>

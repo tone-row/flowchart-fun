@@ -15,41 +15,43 @@
   .twitter {
     --icon-size: 24px;
   }
+
+  .ButtonGroup .GroupButton:not(:first-child):not(:last-child) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .ButtonGroup .GroupButton:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .ButtonGroup .GroupButton:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 
+.GroupButton[aria-pressed="true"],
 .GroupButton:disabled {
   cursor: default;
+  z-index: -1;
 }
 
-.GroupButton {
-  border: 1px solid var(--color-foreground);
-}
-
+.GroupButton:hover,
 .GroupButton:focus {
-  border-color: var(--color-buttonFocus);
+  z-index: 1;
 }
 
-.GroupButton[aria-pressed="true"] {
-  background-color: var(--color-foreground);
-  color: var(--color-background);
-}
-
-.GroupButton[aria-pressed="false"]:hover {
-  background-color: var(--color-uiAccent);
+.GroupButton + .GroupButton {
+  margin-left: -1px;
 }
 
 .LowerLinks a:focus {
   outline: none;
   color: var(--color-buttonFocus);
-}
-
-.Language:focus {
-  color: var(--color-buttonFocus);
-  box-shadow: none;
-}
-
-.Language:disabled {
-  font-weight: 700;
 }
 
 .Settings {

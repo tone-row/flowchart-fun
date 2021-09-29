@@ -13,23 +13,27 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Feedback.tsx:36
+#: src/components/Feedback.tsx:24
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件至{0}。"
 
-#: src/components/Settings.tsx:73
+#: src/components/Settings.tsx:64
 msgid "Appearance"
 msgstr "外观"
 
-#: src/components/Navigation.tsx:135
+#: src/components/Navigation.tsx:133
 msgid "Are you sure you want to delete this?"
 msgstr "你确定要删除这一项吗？"
 
-#: src/components/Navigation.tsx:134
+#: src/components/Navigation.tsx:132
 msgid "Are you sure you want to reset this?"
 msgstr "你确定要重置这一项吗？"
 
-#: src/components/Settings.tsx:103
+#: src/components/Feedback.tsx:106
+msgid "Back To Editor"
+msgstr "返回编辑器"
+
+#: src/components/Settings.tsx:92
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
@@ -41,13 +45,13 @@ msgstr "从下到上"
 msgid "Breadthfirst"
 msgstr "宽度优先"
 
-#: src/components/Navigation.tsx:143
-#: src/components/Navigation.tsx:175
+#: src/components/Navigation.tsx:141
 msgid "Cancel"
 msgstr "取消"
 
 #: src/components/Menu.tsx:35
-#: src/components/MenuNext.tsx:61
+#: src/components/MenuNext.tsx:37
+#: src/components/MenuNext.tsx:81
 msgid "Charts"
 msgstr "图表"
 
@@ -55,7 +59,7 @@ msgstr "图表"
 msgid "Circle"
 msgstr "圆圈"
 
-#: src/components/ShareDialog.tsx:28
+#: src/components/Shared.tsx:65
 msgid "Close"
 msgstr "关闭"
 
@@ -63,17 +67,17 @@ msgstr "关闭"
 msgid "Concentric"
 msgstr "同心"
 
-#: src/components/ShareDialog.tsx:37
-#: src/components/ShareDialog.tsx:94
+#: src/components/ShareDialog.tsx:30
+#: src/components/ShareDialog.tsx:80
 msgid "Copy"
 msgstr "复制"
 
-#: src/components/Navigation.tsx:77
-#: src/components/Navigation.tsx:178
+#: src/components/Navigation.tsx:75
+#: src/components/Navigation.tsx:181
 msgid "Create"
 msgstr "创建"
 
-#: src/components/Navigation.tsx:70
+#: src/components/Navigation.tsx:68
 msgid "Create a New Chart"
 msgstr "创建新图表"
 
@@ -81,13 +85,13 @@ msgstr "创建新图表"
 msgid "Create a link directly using the exact label text"
 msgstr "使用完全一样的标签文本，直接创建链接"
 
-#: src/components/Settings.tsx:80
+#: src/components/Settings.tsx:71
 msgid "Dark Mode"
 msgstr "黑暗模式"
 
-#: src/components/Navigation.tsx:107
-#: src/components/Navigation.tsx:129
-#: src/components/Navigation.tsx:146
+#: src/components/Navigation.tsx:108
+#: src/components/Navigation.tsx:128
+#: src/components/Navigation.tsx:144
 msgid "Delete"
 msgstr "删除"
 
@@ -95,46 +99,52 @@ msgstr "删除"
 msgid "Direction"
 msgstr "方向"
 
-#: src/components/Share.tsx:24
-#: src/components/Share.tsx:27
-#: src/components/Share.tsx:30
+#: src/components/Share.tsx:13
+#: src/components/Share.tsx:16
+#: src/components/Share.tsx:19
 msgid "Download"
 msgstr "下载"
 
-#: src/components/ShareDialog.tsx:46
+#: src/components/ShareDialog.tsx:39
 msgid "Download Image"
 msgstr "下载图片"
 
-#: src/components/Navigation.tsx:104
-#: src/components/Navigation.tsx:163
+#: src/components/Navigation.tsx:105
+#: src/components/Navigation.tsx:166
 msgid "Duplicate"
 msgstr "复制"
 
 #: src/components/Menu.tsx:29
+#: src/components/MenuNext.tsx:36
+#: src/components/MobileTabToggle.tsx:9
 msgid "Editor"
 msgstr "编辑器"
 
-#: src/components/Feedback.tsx:102
+#: src/components/Feedback.tsx:85
 msgid "Email (optional)"
 msgstr "电子邮件（可选）"
 
-#: src/components/MenuNext.tsx:74
+#: src/components/MenuNext.tsx:94
 msgid "Export"
 msgstr "导出"
 
-#: src/components/Feedback.tsx:85
 #: src/components/Menu.tsx:38
-#: src/components/MenuNext.tsx:57
+#: src/components/MenuNext.tsx:44
+#: src/components/MenuNext.tsx:77
 msgid "Feedback"
 msgstr "反馈"
 
-#: src/components/Settings.tsx:94
+#: src/components/Settings.tsx:83
 msgid "Follow Us"
 msgstr "关注我们"
 
-#: src/components/ShareDialog.tsx:40
+#: src/components/ShareDialog.tsx:33
 msgid "Fullscreen"
 msgstr "全屏"
+
+#: src/components/MobileTabToggle.tsx:9
+msgid "Graph"
+msgstr "图表"
 
 #: src/components/GraphOptions.tsx:29
 msgid "Graph Options"
@@ -156,7 +166,7 @@ msgstr "帮助"
 msgid "Indenting creates a link to the current line"
 msgstr "缩进可创建连接到当前行的链接"
 
-#: src/components/Settings.tsx:61
+#: src/components/Settings.tsx:52
 msgid "Language"
 msgstr "语言"
 
@@ -168,19 +178,19 @@ msgstr "布局"
 msgid "Left to Right"
 msgstr "从左到右"
 
-#: src/components/Settings.tsx:77
+#: src/components/Settings.tsx:68
 msgid "Light Mode"
 msgstr "灯光模式"
 
-#: src/components/Settings.tsx:88
+#: src/components/Settings.tsx:77
 msgid "Made by <0>Tone Row</0>"
 msgstr "由 <0>Tone Row</0> 制作"
 
-#: src/components/Settings.tsx:100
+#: src/components/Settings.tsx:89
 msgid "Make a Donation"
 msgstr "捐款"
 
-#: src/components/Share.tsx:21
+#: src/components/Share.tsx:10
 msgid "Open Share Link"
 msgstr "打开共享链接"
 
@@ -188,8 +198,8 @@ msgstr "打开共享链接"
 msgid "Random"
 msgstr "随机"
 
-#: src/components/Navigation.tsx:107
-#: src/components/Navigation.tsx:146
+#: src/components/Navigation.tsx:108
+#: src/components/Navigation.tsx:144
 msgid "Reset"
 msgstr "重置"
 
@@ -206,11 +216,15 @@ msgstr "设置"
 msgid "Share"
 msgstr "分享"
 
+#: src/components/Feedback.tsx:90
+msgid "Submit"
+msgstr "提交"
+
 #: src/components/HasError.tsx:12
 msgid "Text Invalid"
 msgstr "文本无效"
 
-#: src/components/Feedback.tsx:124
+#: src/components/Feedback.tsx:103
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
@@ -222,32 +236,32 @@ msgstr "这款应用的工作原理是输入"
 msgid "Top to Bottom"
 msgstr "从上到下"
 
-#: src/components/MenuNext.tsx:59
-#: src/components/Settings.tsx:57
+#: src/components/MenuNext.tsx:43
+#: src/components/MenuNext.tsx:79
 msgid "User Preferences"
 msgstr "用户首选项"
 
-#: src/components/Settings.tsx:97
+#: src/components/Settings.tsx:86
 msgid "View on Github"
 msgstr "在 Github 上查看"
 
-#: src/components/Feedback.tsx:88
+#: src/components/Feedback.tsx:72
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "我们感谢您的全部反馈、建议、报错和关于功能的需求！"
 
-#: src/components/Navigation.tsx:167
+#: src/components/Navigation.tsx:173
 msgid "What would you like to name this copy?"
 msgstr "你想将这个副本命名为什么？"
 
-#: src/components/Feedback.tsx:96
+#: src/components/Feedback.tsx:79
 msgid "What would you like to share with us?"
 msgstr "您想跟我们分享什么？"
 
-#: src/components/ShareDialog.tsx:41
+#: src/components/ShareDialog.tsx:34
 msgid "With Editor"
 msgstr "使用编辑器"
 
-#: src/components/Navigation.tsx:86
+#: src/components/Navigation.tsx:84
 msgid "Your Charts"
 msgstr "你的图表"
 

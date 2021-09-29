@@ -1,0 +1,83 @@
+body:not([class*="disableAnimation"]) .Input,
+body:not([class*="disableAnimation"]) .Button {
+  transition: 100ms cubic-bezier(0.075, 0.82, 0.165, 1) all;
+}
+
+.Input {
+  border-radius: 0;
+  border: 1px solid var(--color-uiAccent);
+  background-color: var(--color-input);
+  color: var(--color-uiAccent);
+}
+
+.Input input,
+.Input textarea {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  color: var(--color-foreground);
+  width: 100%;
+  resize: none;
+}
+
+.Input input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.Input:focus-within {
+  outline: none;
+}
+
+.Button {
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--color-input);
+  border: 1px solid var(--color-uiAccent);
+  color: var(--color-foreground);
+  background-position: right 12px top 17px;
+  background-repeat: no-repeat;
+}
+
+.Button:hover,
+.Button:focus,
+.Button:active,
+.Input:focus-within {
+  background-color: var(--color-nodeHover);
+  border-color: var(--color-edgeHover);
+  box-shadow: none;
+}
+
+.Button:disabled,
+.Button:disabled:active {
+  color: var(--color-edgeHover);
+  border-color: var(--color-lineColor);
+  background-color: var(--color-background);
+  box-shadow: none;
+}
+
+.Button:disabled:hover {
+  background-color: var(--color-input);
+  border-color: var(--color-uiAccent);
+}
+
+.ButtonType {
+  color: inherit;
+}
+
+.InnerDialog {
+  border: 1px solid var(--color-uiAccent);
+}
+
+.CloseButton svg line {
+  stroke-width: 10;
+  stroke: var(--color-edgeHover);
+  transition: 100ms stroke ease;
+}
+
+.CloseButton:hover svg line {
+  stroke: var(--color-foreground);
+}

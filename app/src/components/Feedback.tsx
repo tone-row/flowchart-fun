@@ -1,15 +1,13 @@
 import { Trans, t } from "@lingui/macro";
-import { ReactNode, useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Box, BoxProps, Type } from "../slang";
-import { Button } from "./Button";
-import { Input, Textarea } from "./Input";
+import { Box, Type } from "../slang";
 import styles from "./Feedback.module.css";
 import Spinner from "./Spinner";
-import { useFeature } from "flagged";
+import { Input, Section, SectionTitle, Textarea, Button, Page } from "./Shared";
+import { AppContext } from "./AppContext";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
-const largeGap = 10;
 
 type FormData = { from?: string; text: string };
 
@@ -21,11 +19,11 @@ const msg = {
 const defaultError = t`An error occurred. Try resubmitting or email ${process.env.REACT_APP_FEEDBACK_TO} directly.`;
 
 export default function Feedback() {
-  const { register, handleSubmit, reset } = useForm<FormData>();
+  const { register, handleSubmit, reset, watch } = useForm<FormData>();
+  const textMessage = watch("text");
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
-  const isNext = useFeature("next");
   const onSubmit = useCallback(
     (data: FormData) => {
       (async function () {
@@ -57,11 +55,10 @@ export default function Feedback() {
     [reset]
   );
   return (
-    <Box
+    <Page
       px={4}
-      py={2}
+      py={8}
       at={noPaddingBottom}
-      gap={largeGap}
       content="start normal"
       className={styles.FeedbackWrapper}
       self="stretch center"
@@ -69,8 +66,7 @@ export default function Feedback() {
       {success ? (
         <Success />
       ) : (
-        <Box
-          gap={largeGap}
+        <Page
           as="form"
           pb={4}
           onSubmit={handleSubmit(onSubmit)}
@@ -79,66 +75,57 @@ export default function Feedback() {
             submitting ? styles.Submitting : "",
           ].join(" ")}
         >
+          <Type className={styles.Callout}>
+            <Trans>
+              We appreciate all of your feedback, suggestions, bugs, and feature
+              requests!
+            </Trans>
+          </Type>
           <Section>
-            {!isNext && (
-              <Type weight="700">
-                <Trans>Feedback</Trans>
-              </Type>
-            )}
-            <Type as="p">
-              <Trans>
-                We appreciate all of your feedback, suggestions, bugs, and
-                feature requests!
-              </Trans>
-            </Type>
-          </Section>
-          <Section>
-            <Type size={-1} weight="700">
+            <SectionTitle>
               <Trans>What would you like to share with us?</Trans>
-            </Type>
+            </SectionTitle>
             <Textarea rows={4} {...register("text", { required: true })} />
           </Section>
           <Section>
-            <Type size={-1} weight="700">
+            <SectionTitle>
               <Trans>Email (optional)</Trans>
-            </Type>
+            </SectionTitle>
             <Input type="email" {...register("from")} />
           </Section>
-          <Button type="submit" style={{ justifySelf: "start" }}>
-            Submit
+          <Button
+            type="submit"
+            style={{ justifySelf: "start" }}
+            disabled={!(textMessage && textMessage.length)}
+          >
+            <Trans>Submit</Trans>
           </Button>
           {error && (
             <Box background="palette-orange-1" p={2} color="palette-black-0">
               <Type>{error}</Type>
             </Box>
           )}
-        </Box>
+        </Page>
       )}
       {submitting && <Spinner className={styles.FeedbackLoading} />}
-    </Box>
-  );
-}
-
-function Section({
-  as = "div",
-  children,
-  ...props
-}: { children: ReactNode } & BoxProps) {
-  return (
-    <Box gap={2} as={as} {...props}>
-      {children}
-    </Box>
+    </Page>
   );
 }
 
 function Success() {
+  const { setShowing } = useContext(AppContext);
   return (
-    <Type weight="700">
-      <Trans>Thank you for your feedback!</Trans>
-    </Type>
+    <Section self="center">
+      <Type size={3} color="palette-green-0">
+        <Trans>Thank you for your feedback!</Trans>
+      </Type>
+      <Button onClick={() => setShowing("editor")}>
+        <Trans>Back To Editor</Trans>
+      </Button>
+    </Section>
   );
 }
 
-function isError(pet: unknown): pet is Error {
-  return (pet as Error).message !== undefined;
+function isError(x: unknown): x is Error {
+  return (x as Error).message !== undefined;
 }

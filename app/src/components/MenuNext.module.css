@@ -19,26 +19,29 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   stroke: var(--color-buttonFocus);
 }
 
-.MenuTabButton:hover,
-.MenuTabButton:focus {
-  background-color: var(--color-lineColor);
-}
-
 .MenuTabButton[aria-selected="true"],
 .MenuTabButton[aria-selected="true"]:hover,
 .MenuTabButton[aria-selected="true"]:focus {
-  background-color: var(--color-background);
+  transition-duration: 1s;
+  transition-delay: 100ms;
+  background-color: hsl(var(--color-brandHsl), 10%);
+}
+
+.MenuTabButton:hover,
+.MenuTabButton:focus,
+.MenuTabButton[aria-selected="true"]:focus-visible {
+  background-color: var(--color-lineColor);
 }
 
 .Menu button:focus {
   box-shadow: none;
 }
 
-.Menu svg rect,
-.Menu svg line,
-.Menu svg path,
-.Menu svg circle,
-.Menu svg polyline {
+.Side svg rect,
+.Side svg line,
+.Side svg path,
+.Side svg circle,
+.Side svg polyline {
   stroke-width: 10;
 }
 
@@ -63,7 +66,21 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   border: 1px solid var(--color-uiAccent);
 }
 
-.ExportButton:hover {
+.ExportButton:hover,
+.ExportButton:focus {
   border-color: var(--color-edgeHover);
-  /* background-color: var(--color-uiAccent); */
+  background-color: var(--color-nodeHover);
+}
+
+@media (max-width: 799px) {
+  .PageTitle {
+    place-self: center;
+    grid-column: span 2;
+  }
+}
+
+.WorkspaceTitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
