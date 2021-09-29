@@ -26,3 +26,8 @@
   outline: none;
   box-shadow: none;
 }
+
+.IconButton:disabled {
+  color: var(--color-edgeHover);
+  background-color: var(--color-input);
+}

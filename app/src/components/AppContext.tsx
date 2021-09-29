@@ -23,9 +23,9 @@ export type Showing =
   | "feedback";
 
 // Stored in localStorage
-type UserSettings = {
+export type UserSettings = {
   mode: "light" | "dark";
-  language: string;
+  language?: string;
 };
 
 // Get default languages
@@ -50,7 +50,7 @@ type TAppContext = {
   setShareModal: Dispatch<SetStateAction<boolean>>;
   mobileEditorTab: mobileEditorTab;
   toggleMobileEditorTab: () => void;
-} & Partial<UserSettings>;
+} & UserSettings;
 
 export const AppContext = createContext({} as TAppContext);
 
@@ -72,7 +72,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     []
   );
   const { settings, theme } = useMemo<{
-    settings: Partial<UserSettings>;
+    settings: UserSettings;
     theme: Theme;
   }>(() => {
     try {
