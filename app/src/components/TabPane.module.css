@@ -15,12 +15,6 @@
   }
 }
 
-.Top {
-  overflow: hidden;
-  position: relative;
-  grid-area: main;
-}
-
 .TextareaContainer {
   border-right: solid 1px var(--color-uiAccent);
 }
