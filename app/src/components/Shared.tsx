@@ -143,4 +143,3 @@ export const Dialog = ({
 };
 
 export { default as Tooltip } from "@reach/tooltip";
-export type { TooltipProps } from "@reach/tooltip";

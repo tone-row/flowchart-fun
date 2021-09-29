@@ -45,8 +45,6 @@ const Resizable = ({
   );
 };
 
-const hideAtTablet = { tablet: { display: false } };
-
 const TabPane = memo(
   ({
     children,
@@ -57,21 +55,11 @@ const TabPane = memo(
   }) => {
     const { showing } = useContext(AppContext);
     return (
-      <>
-        <Box
-          at={hideAtTablet}
-          className={styles.Top}
-          overflow={showing !== "editor" ? "auto" : undefined}
-          background="color-background"
-        >
+      <Resizable triggerResize={triggerResize}>
+        <Box h="100%" overflow={showing !== "editor" ? "auto" : undefined}>
           {children}
         </Box>
-        <Resizable triggerResize={triggerResize}>
-          <Box h="100%" overflow={showing !== "editor" ? "auto" : undefined}>
-            {children}
-          </Box>
-        </Resizable>
-      </>
+      </Resizable>
     );
   }
 );

@@ -23,8 +23,6 @@ import { t } from "@lingui/macro";
 import {
   defineThemes,
   languageId,
-  themeNameDark,
-  themeNameLight,
   useMonacoLanguage,
 } from "../registerLanguage";
 import HasError from "./HasError";
@@ -32,6 +30,7 @@ import HasError from "./HasError";
 declare global {
   interface Window {
     flowchartFunSetHelpText?: () => void;
+    plausible: any;
   }
 }
 
@@ -76,7 +75,7 @@ function Edit() {
         decorations.current = editor.deltaDecorations(decorations.current, []);
       }
     }
-  }, [hoverLineNumber, setText]);
+  }, [hoverLineNumber]);
 
   useEffect(() => {
     setTextToParseThrottle(text);
@@ -118,6 +117,17 @@ function Edit() {
     };
   }, [setHelpText]);
 
+  const loading = useRef(<Loading />);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const onChange = useCallback((value) => setText(value ?? ""), []);
+  const onMount = useCallback(
+    (editor, monaco) => {
+      editorRef.current = editor;
+      defineThemes(monaco, mode);
+    },
+    [mode]
+  );
+
   return (
     <GraphProvider
       editable={true}
@@ -131,13 +141,9 @@ function Edit() {
         wrapperClassName={styles.Editor}
         defaultLanguage={languageId}
         options={editorOptions}
-        theme={mode === "dark" ? themeNameDark : themeNameLight}
-        onChange={(value) => setText(value ?? "")}
-        loading={<Loading />}
-        onMount={(editor, monaco) => {
-          editorRef.current = editor;
-          defineThemes(monaco);
-        }}
+        onChange={onChange}
+        loading={loading.current}
+        onMount={onMount}
       />
       <HelpButton />
       <HasError show={hasError} />

@@ -104,8 +104,10 @@ const GraphOptionsBar = memo(() => {
       updateGraphOptionsText &&
       updateGraphOptionsText({
         layout: {
-          spacingFactor:
+          spacingFactor: Math.max(
             (graphOptions.layout?.spacingFactor ?? defaultSpacingFactor) - 0.25,
+            0
+          ),
         },
       }),
     [graphOptions.layout?.spacingFactor, updateGraphOptionsText]
@@ -164,6 +166,10 @@ const GraphOptionsBar = memo(() => {
           icon={ArrowsInSimple}
           onClick={contract}
           label={t`Contract`}
+          disabled={
+            graphOptions.layout?.spacingFactor &&
+            graphOptions.layout?.spacingFactor <= 0.25
+          }
         />
         <IconButton icon={ArrowsOutSimple} onClick={expand} label={t`Expand`} />
       </Box>
@@ -344,6 +350,7 @@ function IconButton({
   icon: Icon,
   onClick,
   label,
+  ...props
 }: {
   icon: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
   onClick: () => void;
@@ -362,6 +369,7 @@ function IconButton({
         p={2}
         rad={1}
         className={styles.IconButton}
+        {...props}
       >
         <Icon size={smallIconSize + 2} />
         <VisuallyHidden>{label}</VisuallyHidden>

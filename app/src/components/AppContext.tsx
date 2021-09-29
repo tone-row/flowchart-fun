@@ -13,7 +13,7 @@ import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
 import { FlagsProvider } from "flagged";
 
-export type Theme = typeof colors;
+type Theme = typeof colors;
 
 export type Showing =
   | "navigation"
@@ -23,9 +23,9 @@ export type Showing =
   | "feedback";
 
 // Stored in localStorage
-type UserSettings = {
+export type UserSettings = {
   mode: "light" | "dark";
-  language: string;
+  language?: string;
 };
 
 // Get default languages
@@ -50,7 +50,7 @@ type TAppContext = {
   setShareModal: Dispatch<SetStateAction<boolean>>;
   mobileEditorTab: mobileEditorTab;
   toggleMobileEditorTab: () => void;
-} & Partial<UserSettings>;
+} & UserSettings;
 
 export const AppContext = createContext({} as TAppContext);
 
@@ -72,7 +72,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     []
   );
   const { settings, theme } = useMemo<{
-    settings: Partial<UserSettings>;
+    settings: UserSettings;
     theme: Theme;
   }>(() => {
     try {

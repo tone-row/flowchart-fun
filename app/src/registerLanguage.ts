@@ -1,12 +1,45 @@
 import { Monaco } from "@monaco-editor/react";
 import { useEffect } from "react";
+import { UserSettings } from "./components/AppContext";
 import { palette } from "./slang/config";
 
 export const languageId = "flowchartfun";
 export const themeNameLight = "flowchartfun-light";
 export const themeNameDark = "flowchartfun-dark";
 
-export function registerLanguage(monaco: Monaco) {
+const lightTheme = {
+  base: "vs",
+  inherit: true,
+  rules: [
+    { token: "variable.other.property", foreground: palette.purple[0] },
+    {
+      token: "keyword.operator.assignment",
+      foreground: palette.purple[1],
+    },
+    { token: "support.function", foreground: palette.green[2] },
+    { token: "comment", foreground: palette.white[3], fontStyle: "italic" },
+    { token: "string", foreground: palette.black[0] },
+    { token: "meta.embedded.block", foreground: palette.orange[0] },
+  ],
+};
+
+const darkTheme = {
+  base: "vs-dark",
+  inherit: true,
+  rules: [
+    { token: "variable.other.property", foreground: palette.purple[0] },
+    {
+      token: "keyword.operator.assignment",
+      foreground: palette.purple[1],
+    },
+    { token: "support.function", foreground: palette.green[1] },
+    { token: "comment", foreground: "cccccc", fontStyle: "italic" },
+    { token: "string", foreground: palette.white[0] },
+    { token: "meta.embedded.block", foreground: palette.orange[0] },
+  ],
+};
+
+function registerLanguage(monaco: Monaco) {
   monaco.languages.register({ id: languageId });
 
   monaco.languages.setMonarchTokensProvider(languageId, {
@@ -34,38 +67,15 @@ export function registerLanguage(monaco: Monaco) {
   });
 }
 
-export function defineThemes(monaco: Monaco) {
-  monaco.editor.defineTheme(themeNameLight, {
-    base: "vs",
-    inherit: true,
-    rules: [
-      { token: "variable.other.property", foreground: palette.purple[0] },
-      {
-        token: "keyword.operator.assignment",
-        foreground: palette.purple[1],
-      },
-      { token: "support.function", foreground: palette.green[2] },
-      { token: "comment", foreground: palette.white[3], fontStyle: "italic" },
-      { token: "string", foreground: palette.black[0] },
-      { token: "meta.embedded.block", foreground: palette.orange[0] },
-    ],
-  });
+export function defineThemes(monaco: Monaco, theme: UserSettings["mode"]) {
+  if (theme === "light") {
+    monaco.editor.defineTheme(themeNameLight, lightTheme);
+    monaco.editor.setTheme(themeNameLight);
+    return;
+  }
 
-  monaco.editor.defineTheme(themeNameDark, {
-    base: "vs-dark",
-    inherit: true,
-    rules: [
-      { token: "variable.other.property", foreground: palette.purple[0] },
-      {
-        token: "keyword.operator.assignment",
-        foreground: palette.purple[1],
-      },
-      { token: "support.function", foreground: palette.green[1] },
-      { token: "comment", foreground: "cccccc", fontStyle: "italic" },
-      { token: "string", foreground: palette.white[0] },
-      { token: "meta.embedded.block", foreground: palette.orange[0] },
-    ],
-  });
+  monaco.editor.defineTheme(themeNameDark, darkTheme);
+  monaco.editor.setTheme(themeNameDark);
 }
 
 export function useMonacoLanguage(monaco: any) {

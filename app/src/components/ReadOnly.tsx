@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { AppContext } from "./AppContext";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { delimiters, editorOptions } from "../constants";
@@ -60,6 +60,15 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
 
   const { data: graphOptions } = matter(textToParse, { delimiters });
 
+  const loading = useRef(<Loading />);
+  const onMount = useCallback(
+    (editor, monaco) => {
+      editorRef.current = editor;
+      defineThemes(monaco, mode);
+    },
+    [mode]
+  );
+
   return (
     <GraphProvider
       editable={false}
@@ -73,15 +82,12 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
         defaultLanguage={languageId}
         wrapperClassName={styles.Editor}
         theme={mode === "dark" ? themeNameDark : themeNameLight}
-        loading={<Loading />}
+        loading={loading.current}
         options={{
           ...editorOptions,
           readOnly: true,
         }}
-        onMount={(editor, monaco) => {
-          editorRef.current = editor;
-          defineThemes(monaco);
-        }}
+        onMount={onMount}
       />
     </GraphProvider>
   );

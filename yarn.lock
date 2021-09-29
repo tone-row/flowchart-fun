@@ -2118,7 +2118,7 @@
     tiny-warning "^1.0.3"
     tslib "^2.1.0"
 
-"@reach/utils@0.16.0":
+"@reach/utils@0.16.0", "@reach/utils@^0.16.0":
   version "0.16.0"
   resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.16.0.tgz#5b0777cf16a7cab1ddd4728d5d02762df0ba84ce"
   integrity sha512-PCggBet3qaQmwFNcmQ/GqHSefadAFyNCUekq9RrWoaU9hh/S4iaFgf2MBMdM47eQj5i/Bk0Mm07cP/XPFlkN+Q==

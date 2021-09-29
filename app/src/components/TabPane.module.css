@@ -1,13 +1,18 @@
 @media (max-width: 799px) {
   .TextareaContainer {
-    display: none;
+    /* display: none; */
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    grid-area: main;
+    background-color: var(--color-background);
   }
-}
 
-.Top {
-  overflow: hidden;
-  position: relative;
-  grid-area: main;
+  .Handle {
+    display: none !important;
+  }
 }
 
 .TextareaContainer {
