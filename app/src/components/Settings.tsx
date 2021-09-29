@@ -44,7 +44,7 @@ const Settings = memo(() => {
     <Box px={4} pb={4} pt={8} className={styles.Settings}>
       <Page
         content="start normal"
-        at={{ tablet: { items: "start", content: "start" } }}
+        at={{ tablet: { items: "start", content: "start", gap: 14 } }}
       >
         <Section>
           <SectionTitle>

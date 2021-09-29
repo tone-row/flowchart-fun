@@ -1,14 +1,29 @@
 import { EditorProps } from "@monaco-editor/react";
 import cytoscape from "cytoscape";
 
-export const defaultLayout: cytoscape.LayoutOptions = {
+type AllKeys<T> = T extends any ? keyof T : never;
+type PickType<T, K extends AllKeys<T>> = T extends { [k in K]?: any }
+  ? T[K]
+  : undefined;
+type Merge<T extends object> = {
+  [k in AllKeys<T>]: PickType<T, k>;
+};
+
+type Layout = Merge<cytoscape.LayoutOptions>;
+
+export type GraphOptionsObject = {
+  layout?: Partial<Layout> & { rankDir?: string };
+  style?: cytoscape.Stylesheet[];
+};
+
+export const defaultSpacingFactor = 1.25;
+
+export const defaultLayout: GraphOptionsObject["layout"] = {
   name: "dagre",
   fit: true,
   animate: true,
-  spacingFactor: 1.25,
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  rankDir: "LR", // Specific to cytoscape-dagre
+  spacingFactor: defaultSpacingFactor,
+  rankDir: "TB",
 };
 
 export const editorOptions: EditorProps["options"] = {
@@ -32,11 +47,6 @@ export const editorOptions: EditorProps["options"] = {
   lineNumbersMinChars: 3,
   cursorWidth: 2,
   automaticLayout: true,
-};
-
-export type GraphOptionsObject = {
-  layout?: Partial<cytoscape.LayoutOptions> & { rankDir?: string };
-  style?: cytoscape.Stylesheet[];
 };
 
 export const delimiters = "~~~";

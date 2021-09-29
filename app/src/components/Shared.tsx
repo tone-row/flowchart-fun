@@ -2,6 +2,7 @@ import { forwardRef, ReactNode } from "react";
 import { Box, BoxProps, Type, TypeProps } from "../slang";
 import "@reach/dialog/styles.css";
 import ReachDialog, { DialogProps } from "@reach/dialog";
+import type * as Polymorphic from "@reach/utils/polymorphic";
 import VisuallyHidden from "@reach/visually-hidden";
 import styles from "./Shared.module.css";
 import { Trans } from "@lingui/macro";
@@ -9,6 +10,7 @@ import { X } from "phosphor-react";
 import "@reach/tooltip/styles.css";
 
 export const smallBtnTypeSize = -1;
+export const tooltipSize = -2;
 export const smallIconSize = 18;
 
 export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {
@@ -97,7 +99,10 @@ export const Dialog = ({
   children,
   innerBoxProps: { as = "div", ...props },
 }: {
-  dialogProps: DialogProps;
+  dialogProps: Parameters<
+    Polymorphic.ForwardRefComponent<"div", DialogProps>
+  >[0] &
+    BoxProps;
   children: ReactNode;
   innerBoxProps: BoxProps;
 }) => {

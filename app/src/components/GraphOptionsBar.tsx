@@ -1,21 +1,40 @@
+import { t } from "@lingui/macro";
+import VisuallyHidden from "@reach/visually-hidden";
 import {
   ArrowUpRight,
   CirclesThree,
   IconProps,
   CaretDown,
+  ArrowsOutSimple,
+  ArrowsInSimple,
 } from "phosphor-react";
-import { memo, ReactNode, useContext, useEffect, useMemo } from "react";
+import {
+  ForwardRefExoticComponent,
+  memo,
+  ReactNode,
+  RefAttributes,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+} from "react";
 import { Controller, useForm } from "react-hook-form";
 import Select, {
   StylesConfig,
   SingleValueProps,
   components,
 } from "react-select";
+import { defaultSpacingFactor } from "../constants";
 import { directions, layouts } from "../lib/graphOptions";
-import { Box, Type } from "../slang";
+import { Box, BoxProps, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
-import { smallBtnTypeSize, smallIconSize } from "./Shared";
+import {
+  smallBtnTypeSize,
+  smallIconSize,
+  Tooltip,
+  tooltipSize,
+} from "./Shared";
 
 const GraphOptionsBar = memo(() => {
   const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
@@ -68,6 +87,30 @@ const GraphOptionsBar = memo(() => {
     [graphOptions.layout]
   );
 
+  const expand = useCallback(
+    () =>
+      updateGraphOptionsText &&
+      updateGraphOptionsText({
+        layout: {
+          spacingFactor:
+            (graphOptions.layout?.spacingFactor ?? defaultSpacingFactor) + 0.25,
+        },
+      }),
+    [graphOptions.layout?.spacingFactor, updateGraphOptionsText]
+  );
+
+  const contract = useCallback(
+    () =>
+      updateGraphOptionsText &&
+      updateGraphOptionsText({
+        layout: {
+          spacingFactor:
+            (graphOptions.layout?.spacingFactor ?? defaultSpacingFactor) - 0.25,
+        },
+      }),
+    [graphOptions.layout?.spacingFactor, updateGraphOptionsText]
+  );
+
   return (
     <Box
       className={styles.GraphOptionsBar}
@@ -80,7 +123,7 @@ const GraphOptionsBar = memo(() => {
       as="form"
       at={{ tablet: { p: 2, px: 4, gap: 4 } }}
     >
-      <OptionWithIcon icon={CirclesThree}>
+      <OptionWithIcon icon={CirclesThree} label={t`Layout`}>
         <Controller
           control={control}
           name="layout.name"
@@ -98,7 +141,7 @@ const GraphOptionsBar = memo(() => {
         />
       </OptionWithIcon>
       {currentLayout?.value === "dagre" && (
-        <OptionWithIcon icon={ArrowUpRight}>
+        <OptionWithIcon icon={ArrowUpRight} label={t`Direction`}>
           <Controller
             control={control}
             name="layout.rankDir"
@@ -116,6 +159,14 @@ const GraphOptionsBar = memo(() => {
           />
         </OptionWithIcon>
       )}
+      <Box flow="column">
+        <IconButton
+          icon={ArrowsInSimple}
+          onClick={contract}
+          label={t`Contract`}
+        />
+        <IconButton icon={ArrowsOutSimple} onClick={expand} label={t`Expand`} />
+      </Box>
     </Box>
   );
 });
@@ -130,15 +181,23 @@ type Icon = React.ForwardRefExoticComponent<
 function OptionWithIcon({
   icon: Icon,
   children,
+  label,
 }: {
   icon: Icon;
   children: ReactNode;
+  label: string;
 }) {
   return (
-    <Box flow="column" gap={1} items="center normal">
-      <Icon size={smallIconSize} />
-      {children}
-    </Box>
+    <Tooltip
+      label={label}
+      aria-label={label}
+      className={`slang-type size-${tooltipSize}`}
+    >
+      <Box flow="column" gap={1} items="center normal">
+        <Icon size={smallIconSize} />
+        {children}
+      </Box>
+    </Tooltip>
   );
 }
 
@@ -229,6 +288,7 @@ const SingleValue = ({ children }: SingleValueProps<any>) => (
     <Type size={smallBtnTypeSize}>{children}</Type>
   </Box>
 );
+
 const Option = ({
   children,
   innerProps,
@@ -278,4 +338,34 @@ function isEqual(a: O, b: O): boolean {
     }
   }
   return result;
+}
+
+function IconButton({
+  icon: Icon,
+  onClick,
+  label,
+}: {
+  icon: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
+  onClick: () => void;
+  label: string;
+} & BoxProps) {
+  return (
+    <Tooltip
+      label={label}
+      aria-label={label}
+      className={`slang-type size-${tooltipSize}`}
+    >
+      <Box
+        as="button"
+        onClick={onClick}
+        type="button"
+        p={2}
+        rad={1}
+        className={styles.IconButton}
+      >
+        <Icon size={smallIconSize + 2} />
+        <VisuallyHidden>{label}</VisuallyHidden>
+      </Box>
+    </Tooltip>
+  );
 }
