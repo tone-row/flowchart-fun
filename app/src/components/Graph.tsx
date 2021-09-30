@@ -23,9 +23,9 @@ import { Box } from "../slang";
 import { compressToEncodedURIComponent as compress } from "lz-string";
 import frontmatter from "gray-matter";
 import { AppContext } from "./AppContext";
-import { colors } from "../slang/config";
-import { useAnimationSetting } from "../hooks";
+import { useAnimationSetting, useGraphTheme } from "../hooks";
 import useDownloadHandlers from "./useDownloadHandlers";
+import { graphThemes, GraphThemes } from "./graphThemes";
 
 declare global {
   interface Window {
@@ -53,8 +53,9 @@ const Graph = memo(
     const errorCatcher = useRef<undefined | Core>();
     const animate = useAnimationSetting();
     const graphInitialized = useRef(false);
-    const { theme, setShareLink, setHasError } = useContext(AppContext);
-    const themeString = JSON.stringify(theme);
+    const { setShareLink, setHasError } = useContext(AppContext);
+
+    const graphTheme = useGraphTheme();
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -96,15 +97,16 @@ const Graph = memo(
         setHasError,
         graphInitialized,
         animate,
-        themeString
+        graphTheme
       );
-    }, [animate, setHasError, textToParse, themeString]);
+    }, [animate, graphTheme, setHasError, textToParse]);
 
     return (
       <Box
         className={[styles.GraphContainer, "graph"].join(" ")}
         overflow="hidden"
         h="100%"
+        style={{ backgroundColor: graphThemes[graphTheme].bg }}
       >
         <Box id="cy" overflow="hidden" />
       </Box>
@@ -126,7 +128,7 @@ function initializeGraph(
     container: document.getElementById("cy"), // container to render in
     layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
     elements: [],
-    style: getCyStyleFromTheme(colors),
+    style: getCytoStyle("original"),
     userZoomingEnabled: true,
     userPanningEnabled: true,
     boxSelectionEnabled: false,
@@ -182,7 +184,7 @@ function updateGraph(
   setHasError: React.Dispatch<React.SetStateAction<boolean>>,
   graphInitialized: React.MutableRefObject<boolean>,
   animate: boolean,
-  themeString: string
+  graphTheme: GraphThemes
 ) {
   if (cy.current) {
     try {
@@ -198,7 +200,7 @@ function updateGraph(
       const { layout = {}, style: userStyle = [] } = data as GraphOptionsObject;
 
       // Prepare Styles
-      const style = getCyStyleFromTheme(JSON.parse(themeString), userStyle);
+      const style = getCytoStyle(graphTheme, userStyle);
 
       // Parse
       const elements = parseText(content, startingLineNumber);
@@ -234,6 +236,7 @@ function updateGraph(
       errorCatcher.current = cytoscape();
       setHasError(false);
     } catch (e) {
+      console.log(e);
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
       setHasError(true);
@@ -241,75 +244,9 @@ function updateGraph(
   }
 }
 
-function getCyStyleFromTheme(
-  theme: typeof colors,
-  nextUserStyles: cytoscape.Stylesheet[] = []
+function getCytoStyle(
+  theme: GraphThemes,
+  userStyle: cytoscape.Stylesheet[] = []
 ): CytoscapeOptions["style"] {
-  return [
-    {
-      selector: "node",
-      style: {
-        backgroundColor: theme.background,
-        "border-color": theme.foreground,
-        color: theme.foreground,
-        label: "data(label)",
-        "font-size": 10,
-        "text-wrap": "wrap",
-        "text-max-width": "80",
-        "text-valign": "center",
-        "text-halign": "center",
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        "line-height": 1.25,
-        "border-width": 1,
-        shape: "rectangle",
-        "font-family":
-          "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-        width: "data(width)",
-        height: "data(height)",
-      },
-    },
-    {
-      selector: "edge",
-      style: {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        "loop-direction": "0deg",
-        "loop-sweep": "20deg",
-        width: 1,
-        "text-background-opacity": 1,
-        "text-background-color": theme.background,
-        "line-color": theme.foreground,
-        "target-arrow-color": theme.foreground,
-        "target-arrow-shape": "vee",
-        "arrow-scale": 1,
-        "curve-style": "bezier",
-        label: "data(label)",
-
-        color: theme.foreground,
-        "font-size": 10,
-        "text-valign": "center",
-        "text-wrap": "wrap",
-        "font-family":
-          "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-        "text-halign": "center",
-        "edge-text-rotation": "autorotate",
-      },
-    },
-    {
-      selector: ".edgeHovered",
-      style: {
-        "line-color": theme.edgeHover,
-        "target-arrow-color": theme.edgeHover,
-        color: theme.edgeHover,
-      },
-    },
-    {
-      selector: ".nodeHovered",
-      style: {
-        backgroundColor: theme.nodeHover,
-      },
-    },
-    ...nextUserStyles,
-  ];
+  return [...graphThemes[theme].styles, ...userStyle];
 }

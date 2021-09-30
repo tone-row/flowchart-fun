@@ -1,6 +1,8 @@
 import { useCallback, useContext, useEffect } from "react";
 import { saveAs } from "file-saver";
 import { AppContext } from "./AppContext";
+import { useGraphTheme } from "../hooks";
+import { graphThemes } from "./graphThemes";
 
 declare global {
   interface Window {
@@ -15,15 +17,17 @@ export default function useDownloadHandlers(
   cy: React.MutableRefObject<cytoscape.Core | undefined>
 ) {
   const { theme } = useContext(AppContext);
+  const graphTheme = useGraphTheme();
   const downloadSVG = useCallback(() => {
     if (cy.current) {
+      const { bg } = graphThemes[graphTheme];
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const svgStr = cy.current.svg({
         full: true,
         scale: 1.5,
         quality: 1,
-        bg: theme.background === "#ffffff" ? undefined : theme.background,
+        bg,
       });
       const domparser = new DOMParser();
       const svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
@@ -35,7 +39,7 @@ export default function useDownloadHandlers(
           x.getAttribute("paint-order") === "fill stroke markers"
       );
       squares = [...squares, ...svgEl.children[0].querySelectorAll("rect")];
-      squares.forEach((el) => el.setAttribute("fill", theme.background));
+      squares.forEach((el) => el.setAttribute("fill", bg));
 
       // Add comment
       const originalTextComment = svgEl.createComment(
@@ -52,7 +56,7 @@ export default function useDownloadHandlers(
     }
     // cy is a ref
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [textToParse, theme.background]);
+  }, [graphTheme, textToParse]);
 
   const downloadPNG = useCallback(() => {
     if (cy.current) {

@@ -7,6 +7,7 @@ import {
   CaretDown,
   ArrowsOutSimple,
   ArrowsInSimple,
+  PaintBrush,
 } from "phosphor-react";
 import {
   ForwardRefExoticComponent,
@@ -25,10 +26,12 @@ import Select, {
   components,
 } from "react-select";
 import { defaultSpacingFactor } from "../constants";
+import { useGraphTheme } from "../hooks";
 import { directions, layouts } from "../lib/graphOptions";
 import { Box, BoxProps, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
+import { themes } from "./graphThemes";
 import {
   smallBtnTypeSize,
   smallIconSize,
@@ -87,6 +90,12 @@ const GraphOptionsBar = memo(() => {
     [graphOptions.layout]
   );
 
+  const currentGraphTheme = useGraphTheme();
+  const currentTheme = useMemo(
+    () => themes.find(({ value }) => value === currentGraphTheme),
+    [currentGraphTheme]
+  );
+
   const expand = useCallback(
     () =>
       updateGraphOptionsText &&
@@ -118,12 +127,8 @@ const GraphOptionsBar = memo(() => {
       className={styles.GraphOptionsBar}
       p={1}
       px={2}
-      flow="column"
-      gap={2}
-      content="normal start"
-      items="center stretch"
       as="form"
-      at={{ tablet: { p: 2, px: 4, gap: 4 } }}
+      at={{ tablet: { p: 2, px: 4 } }}
     >
       <OptionWithIcon icon={CirclesThree} label={t`Layout`}>
         <Controller
@@ -173,6 +178,23 @@ const GraphOptionsBar = memo(() => {
         />
         <IconButton icon={ArrowsOutSimple} onClick={expand} label={t`Expand`} />
       </Box>
+      <OptionWithIcon icon={PaintBrush} label={t`Theme`}>
+        <Controller
+          control={control}
+          name="theme"
+          render={({ field: { onChange } }) => {
+            return (
+              <MySelect
+                options={themes}
+                onChange={(theme: typeof themes[0]) =>
+                  theme && onChange(theme.value)
+                }
+                value={currentTheme}
+              />
+            );
+          }}
+        />
+      </OptionWithIcon>
     </Box>
   );
 });
@@ -199,7 +221,7 @@ function OptionWithIcon({
       aria-label={label}
       className={`slang-type size-${tooltipSize}`}
     >
-      <Box flow="column" gap={1} items="center normal">
+      <Box flow="column" gap={1} items="center normal" content="normal start">
         <Icon size={smallIconSize} />
         {children}
       </Box>
@@ -245,6 +267,7 @@ const selectStyles: StylesConfig<any, false> = {
   valueContainer: (provided) => ({
     ...provided,
     padding: 0,
+    flexWrap: "nowrap",
   }),
   indicatorsContainer: (provided) => ({
     ...provided,
@@ -263,12 +286,16 @@ const selectStyles: StylesConfig<any, false> = {
     backgroundColor: "var(--color-background)",
     border: "solid 1px var(--color-uiAccent)",
     boxShadow: "none",
-    width: 150,
+    width: 180,
+    zIndex: 2,
   }),
   menuList: (provided) => ({
     ...provided,
     paddingTop: 0,
     paddingBottom: 0,
+  }),
+  menuPortal: (provided) => ({
+    ...provided,
   }),
 };
 

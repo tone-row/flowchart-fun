@@ -15,8 +15,10 @@
   }
 }
 
-.TextareaContainer {
-  border-right: solid 1px var(--color-uiAccent);
+@media (min-width: 800px) {
+  .TextareaContainer {
+    border-right: solid 1px var(--color-uiAccent);
+  }
 }
 
 .Handle {

@@ -105,6 +105,7 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
           as="input"
           type="text"
           value={value}
+          readOnly
           p={1}
           pl={2}
           className={styles.LinkCopyInput}
