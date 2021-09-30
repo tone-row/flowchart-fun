@@ -44,7 +44,8 @@ export function useFullscreen() {
 export function useGraphTheme() {
   const { graphOptions } = useContext(GraphContext);
   return (
-    (graphOptions.theme &&
+    (graphOptions &&
+      graphOptions.theme &&
       allGraphThemes.includes(graphOptions.theme) &&
       graphOptions.theme) ||
     defaultGraphTheme

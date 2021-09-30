@@ -29,3 +29,13 @@
   outline: none;
   background-color: var(--color-uiAccent);
 }
+
+.Preview svg {
+  width: 100%;
+  height: auto;
+}
+
+.Preview {
+  background-color: var(--bg);
+  box-shadow: 0 0 10px var(--color-uiAccent);
+}

@@ -1,14 +1,15 @@
-import { useCallback, useContext, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { saveAs } from "file-saver";
-import { AppContext } from "./AppContext";
 import { useGraphTheme } from "../hooks";
 import { graphThemes } from "./graphThemes";
 
 declare global {
   interface Window {
+    flowchartFunGetSVG: () => string;
     flowchartFunDownloadSVG: () => void;
     flowchartFunDownloadPNG: () => void;
     flowchartFunDownloadJPG: () => void;
+    flowchartFunGetGraphThemeBG: () => string;
   }
 }
 
@@ -16,11 +17,10 @@ export default function useDownloadHandlers(
   textToParse: string,
   cy: React.MutableRefObject<cytoscape.Core | undefined>
 ) {
-  const { theme } = useContext(AppContext);
   const graphTheme = useGraphTheme();
-  const downloadSVG = useCallback(() => {
+  const { bg } = graphThemes[graphTheme];
+  const getSVG = useCallback(() => {
     if (cy.current) {
-      const { bg } = graphThemes[graphTheme];
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const svgStr = cy.current.svg({
@@ -46,17 +46,32 @@ export default function useDownloadHandlers(
         `Original Flowchart Text (flowchart.fun):\n\n${textToParse}\n\n`
       );
       svgEl.children[0].appendChild(originalTextComment);
+
+      svgEl.children[0].setAttribute(
+        "viewBox",
+        `0 0 ${svgEl.children[0].getAttribute(
+          "width"
+        )} ${svgEl.children[0].getAttribute("height")}`
+      );
+
       const correctedSvgStr = svgEl.documentElement.outerHTML;
+      return correctedSvgStr;
+    }
+    return "";
+    // "cy" is a ref
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bg, textToParse]);
+
+  const downloadSVG = useCallback(() => {
+    const correctedSvgStr = getSVG();
+    if (correctedSvgStr)
       saveAs(
         new Blob([correctedSvgStr], {
           type: "image/svg+xml;charset=utf-8",
         }),
         "flowchart.svg"
       );
-    }
-    // cy is a ref
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [graphTheme, textToParse]);
+  }, [getSVG]);
 
   const downloadPNG = useCallback(() => {
     if (cy.current) {
@@ -83,7 +98,7 @@ export default function useDownloadHandlers(
         scale: 2,
         quality: 1,
         output: "blob",
-        bg: theme.background,
+        bg,
       });
       saveAs(
         new Blob([jpgStr], {
@@ -94,11 +109,17 @@ export default function useDownloadHandlers(
     }
     // cy is a ref
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [theme.background]);
+  }, [bg]);
+
+  const getGraphThemeBG = useCallback(() => {
+    return graphThemes[graphTheme].bg;
+  }, [graphTheme]);
 
   useEffect(() => {
+    window.flowchartFunGetSVG = getSVG;
     window.flowchartFunDownloadSVG = downloadSVG;
     window.flowchartFunDownloadPNG = downloadPNG;
     window.flowchartFunDownloadJPG = downloadJPG;
-  }, [downloadSVG, downloadPNG, downloadJPG]);
+    window.flowchartFunGetGraphThemeBG = getGraphThemeBG;
+  }, [downloadJPG, downloadPNG, downloadSVG, getGraphThemeBG, getSVG]);
 }
