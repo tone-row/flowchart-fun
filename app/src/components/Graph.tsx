@@ -213,7 +213,6 @@ function updateGraph(
   graphInitialized: React.MutableRefObject<boolean>,
   animate: boolean
 ) {
-  console.log("UPDATE GRAPH");
   if (cy.current) {
     try {
       const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];

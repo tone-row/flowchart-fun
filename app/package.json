@@ -15,6 +15,7 @@
     "@sendgrid/mail": "^7.4.6",
     "@sentry/react": "6.5.1",
     "@sentry/tracing": "^6.5.1",
+    "@supabase/supabase-js": "^1.24.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
