@@ -5,6 +5,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
 } from "react";
 import cytoscape, {
@@ -88,18 +89,42 @@ const Graph = memo(
       [setHoverLineNumber]
     );
 
-    // Update
+    const { content, startingLineNumber, layout, userStyle } = useMemo(() => {
+      const { data, content, matter } = frontmatter(
+        stripComments(textToParse),
+        {
+          delimiters,
+        }
+      );
+      const { layout = {}, style: userStyle = [] } = data as GraphOptionsObject;
+      const startingLineNumber =
+        !matter || matter === "" ? 0 : matter.split("\n").length + 1;
+      return {
+        content,
+        startingLineNumber,
+        layout: JSON.stringify(layout),
+        userStyle: JSON.stringify(userStyle),
+      };
+    }, [textToParse]);
+
+    // Update Graph Nodes
     useEffect(() => {
       updateGraph(
         cy,
-        textToParse,
+        content,
+        startingLineNumber,
+        layout,
         errorCatcher,
         setHasError,
         graphInitialized,
-        animate,
-        graphTheme
+        animate
       );
-    }, [animate, graphTheme, setHasError, textToParse]);
+    }, [animate, content, layout, setHasError, startingLineNumber]);
+
+    // Update Style
+    useEffect(() => {
+      updateStyle(cy, userStyle, errorCatcher, setHasError, graphTheme);
+    }, [graphTheme, setHasError, userStyle]);
 
     return (
       <Box
@@ -177,36 +202,27 @@ function initializeGraph(
   };
 }
 
+// Update nodes & edges
 function updateGraph(
   cy: React.MutableRefObject<cytoscape.Core | undefined>,
-  textToParse: string,
+  content: string,
+  startingLineNumber: number,
+  layoutString: string,
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
   setHasError: React.Dispatch<React.SetStateAction<boolean>>,
   graphInitialized: React.MutableRefObject<boolean>,
-  animate: boolean,
-  graphTheme: GraphThemes
+  animate: boolean
 ) {
+  console.log("UPDATE GRAPH");
   if (cy.current) {
     try {
-      const { data, content, matter } = frontmatter(
-        stripComments(textToParse),
-        {
-          delimiters,
-        }
-      );
-
-      const startingLineNumber =
-        !matter || matter === "" ? 0 : matter.split("\n").length + 1;
-      const { layout = {}, style: userStyle = [] } = data as GraphOptionsObject;
-
-      // Prepare Styles
-      const style = getCytoStyle(graphTheme, userStyle);
+      const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
 
       // Parse
       const elements = parseText(content, startingLineNumber);
 
       // Test Error First
-      errorCatcher.current?.json({ elements, style });
+      errorCatcher.current?.json({ elements });
       errorCatcher.current?.layout({
         ...(defaultLayout as cytoscape.LayoutOptions),
         ...layout,
@@ -216,7 +232,6 @@ function updateGraph(
       cy.current
         .json({
           elements: elements,
-          style,
         })
         .layout({
           ...defaultLayout,
@@ -230,6 +245,42 @@ function updateGraph(
         .run();
       cy.current.center();
       graphInitialized.current = true;
+
+      // Reinitialize to avoid missing errors
+      errorCatcher.current?.destroy();
+      errorCatcher.current = cytoscape();
+      setHasError(false);
+    } catch (e) {
+      console.log(e);
+      errorCatcher.current?.destroy();
+      errorCatcher.current = cytoscape();
+      setHasError(true);
+    }
+  }
+}
+
+function updateStyle(
+  cy: React.MutableRefObject<cytoscape.Core | undefined>,
+  userStyleString: string,
+  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
+  setHasError: React.Dispatch<React.SetStateAction<boolean>>,
+  graphTheme: GraphThemes
+) {
+  if (cy.current) {
+    try {
+      const userStyle = JSON.parse(
+        userStyleString
+      ) as GraphOptionsObject["style"];
+      // Prepare Styles
+      const style = getCytoStyle(graphTheme, userStyle);
+
+      // Test Error First
+      errorCatcher.current?.json({ style });
+
+      // Real
+      cy.current.json({
+        style,
+      });
 
       // Reinitialize to avoid missing errors
       errorCatcher.current?.destroy();

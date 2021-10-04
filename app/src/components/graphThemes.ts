@@ -40,6 +40,7 @@ export const graphThemes: Record<
             "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
           width: "data(width)",
           height: "data(height)",
+          "transition-duration": 0,
         },
       },
       {

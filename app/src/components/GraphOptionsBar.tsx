@@ -64,6 +64,7 @@ const GraphOptionsBar = memo(() => {
           rankDir: options.layout.rankDir,
         },
       });
+      if (isEmpty(options.layout)) delete options.layout;
       updateGraphOptionsText && updateGraphOptionsText(options);
     }
   }, [updateGraphOptionsText, isDirty, valuesString, graphOptions]);
@@ -402,5 +403,13 @@ function IconButton({
         <VisuallyHidden>{label}</VisuallyHidden>
       </Box>
     </Tooltip>
+  );
+}
+
+function isEmpty(obj: object) {
+  return (
+    obj &&
+    Object.keys(obj).length === 0 &&
+    Object.getPrototypeOf(obj) === Object.prototype
   );
 }
