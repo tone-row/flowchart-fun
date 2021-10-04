@@ -2,6 +2,7 @@ import { useCallback, useEffect } from "react";
 import { saveAs } from "file-saver";
 import { useGraphTheme } from "../hooks";
 import { graphThemes } from "./graphThemes";
+import { useParams } from "react-router-dom";
 
 declare global {
   interface Window {
@@ -17,6 +18,8 @@ export default function useDownloadHandlers(
   textToParse: string,
   cy: React.MutableRefObject<cytoscape.Core | undefined>
 ) {
+  const { workspace = "" } = useParams<{ workspace?: string }>();
+  const filename = workspace || "flowchart";
   const graphTheme = useGraphTheme();
   const { bg } = graphThemes[graphTheme];
   const getSVG = useCallback(() => {
@@ -69,9 +72,9 @@ export default function useDownloadHandlers(
         new Blob([correctedSvgStr], {
           type: "image/svg+xml;charset=utf-8",
         }),
-        "flowchart.svg"
+        `${filename}.svg`
       );
-  }, [getSVG]);
+  }, [filename, getSVG]);
 
   const downloadPNG = useCallback(() => {
     if (cy.current) {
@@ -84,7 +87,7 @@ export default function useDownloadHandlers(
         new Blob([pngStr], {
           type: "image/png",
         }),
-        "flowchart.png"
+        `${filename}.png`
       );
     }
     // cy is a ref
@@ -104,7 +107,7 @@ export default function useDownloadHandlers(
         new Blob([jpgStr], {
           type: "image/jpg",
         }),
-        "flowchart.jpg"
+        `${filename}.jpg`
       );
     }
     // cy is a ref
