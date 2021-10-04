@@ -4,8 +4,8 @@ import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
 import "./index.css";
 import "./slang/slang.css";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import * as shim from "./shim";
+import "core-js/features/object/from-entries";
+import "core-js/features/object/entries";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
