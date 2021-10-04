@@ -1,12 +1,16 @@
-import { useCallback, useContext, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { saveAs } from "file-saver";
-import { AppContext } from "./AppContext";
+import { useGraphTheme } from "../hooks";
+import { graphThemes } from "./graphThemes";
+import { useParams } from "react-router-dom";
 
 declare global {
   interface Window {
+    flowchartFunGetSVG: () => string;
     flowchartFunDownloadSVG: () => void;
     flowchartFunDownloadPNG: () => void;
     flowchartFunDownloadJPG: () => void;
+    flowchartFunGetGraphThemeBG: () => string;
   }
 }
 
@@ -14,8 +18,11 @@ export default function useDownloadHandlers(
   textToParse: string,
   cy: React.MutableRefObject<cytoscape.Core | undefined>
 ) {
-  const { theme } = useContext(AppContext);
-  const downloadSVG = useCallback(() => {
+  const { workspace = "" } = useParams<{ workspace?: string }>();
+  const filename = workspace || "flowchart";
+  const graphTheme = useGraphTheme();
+  const { bg } = graphThemes[graphTheme];
+  const getSVG = useCallback(() => {
     if (cy.current) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -23,7 +30,7 @@ export default function useDownloadHandlers(
         full: true,
         scale: 1.5,
         quality: 1,
-        bg: theme.background === "#ffffff" ? undefined : theme.background,
+        bg,
       });
       const domparser = new DOMParser();
       const svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
@@ -35,24 +42,39 @@ export default function useDownloadHandlers(
           x.getAttribute("paint-order") === "fill stroke markers"
       );
       squares = [...squares, ...svgEl.children[0].querySelectorAll("rect")];
-      squares.forEach((el) => el.setAttribute("fill", theme.background));
+      squares.forEach((el) => el.setAttribute("fill", bg));
 
       // Add comment
       const originalTextComment = svgEl.createComment(
         `Original Flowchart Text (flowchart.fun):\n\n${textToParse}\n\n`
       );
       svgEl.children[0].appendChild(originalTextComment);
+
+      svgEl.children[0].setAttribute(
+        "viewBox",
+        `0 0 ${svgEl.children[0].getAttribute(
+          "width"
+        )} ${svgEl.children[0].getAttribute("height")}`
+      );
+
       const correctedSvgStr = svgEl.documentElement.outerHTML;
+      return correctedSvgStr;
+    }
+    return "";
+    // "cy" is a ref
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bg, textToParse]);
+
+  const downloadSVG = useCallback(() => {
+    const correctedSvgStr = getSVG();
+    if (correctedSvgStr)
       saveAs(
         new Blob([correctedSvgStr], {
           type: "image/svg+xml;charset=utf-8",
         }),
-        "flowchart.svg"
+        `${filename}.svg`
       );
-    }
-    // cy is a ref
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [textToParse, theme.background]);
+  }, [filename, getSVG]);
 
   const downloadPNG = useCallback(() => {
     if (cy.current) {
@@ -65,7 +87,7 @@ export default function useDownloadHandlers(
         new Blob([pngStr], {
           type: "image/png",
         }),
-        "flowchart.png"
+        `${filename}.png`
       );
     }
     // cy is a ref
@@ -79,22 +101,28 @@ export default function useDownloadHandlers(
         scale: 2,
         quality: 1,
         output: "blob",
-        bg: theme.background,
+        bg,
       });
       saveAs(
         new Blob([jpgStr], {
           type: "image/jpg",
         }),
-        "flowchart.jpg"
+        `${filename}.jpg`
       );
     }
     // cy is a ref
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [theme.background]);
+  }, [bg]);
+
+  const getGraphThemeBG = useCallback(() => {
+    return graphThemes[graphTheme].bg;
+  }, [graphTheme]);
 
   useEffect(() => {
+    window.flowchartFunGetSVG = getSVG;
     window.flowchartFunDownloadSVG = downloadSVG;
     window.flowchartFunDownloadPNG = downloadPNG;
     window.flowchartFunDownloadJPG = downloadJPG;
-  }, [downloadSVG, downloadPNG, downloadJPG]);
+    window.flowchartFunGetGraphThemeBG = getGraphThemeBG;
+  }, [downloadJPG, downloadPNG, downloadSVG, getGraphThemeBG, getSVG]);
 }

@@ -1,6 +1,11 @@
 .GraphOptionsBar {
   border-bottom: solid 1px var(--color-uiAccent);
   background-color: var(--color-input);
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  column-gap: 10px;
 }
 
 .Select {

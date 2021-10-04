@@ -1,5 +1,6 @@
 import { EditorProps } from "@monaco-editor/react";
 import cytoscape from "cytoscape";
+import { GraphThemes } from "./components/graphThemes";
 
 type AllKeys<T> = T extends any ? keyof T : never;
 type PickType<T, K extends AllKeys<T>> = T extends { [k in K]?: any }
@@ -14,6 +15,7 @@ type Layout = Merge<cytoscape.LayoutOptions>;
 export type GraphOptionsObject = {
   layout?: Partial<Layout> & { rankDir?: string };
   style?: cytoscape.Stylesheet[];
+  theme?: GraphThemes;
 };
 
 export const defaultSpacingFactor = 1.25;

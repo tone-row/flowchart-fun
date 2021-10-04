@@ -1,4 +1,11 @@
-import { ReactNode, useCallback, useContext, useEffect, useState } from "react";
+import {
+  ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { AppContext } from "./AppContext";
 import { Box, Type } from "../slang";
 import { Check, LinkSimple } from "phosphor-react";
@@ -21,7 +28,7 @@ export default function ShareDialog() {
       innerBoxProps={{
         gap: 6,
         at: {
-          tablet: { template: "auto / repeat(2, minmax(0, 1fr))", gap: 10 },
+          tablet: { template: "auto / repeat(3, minmax(0, 1fr))", gap: 10 },
         },
       }}
     >
@@ -49,6 +56,12 @@ export default function ShareDialog() {
             JPG
           </Button>
         </Box>
+      </Column>
+      <Column>
+        <Title>
+          <Trans>Preview</Trans>
+        </Title>
+        <Preview />
       </Column>
     </Dialog>
   );
@@ -105,6 +118,7 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
           as="input"
           type="text"
           value={value}
+          readOnly
           p={1}
           pl={2}
           className={styles.LinkCopyInput}
@@ -124,5 +138,23 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
         </Box>
       </Box>
     </Box>
+  );
+}
+
+function Preview() {
+  const [html, set] = useReducer((_: string, x: string) => x, "");
+  const [bg, setBG] = useReducer((_: string, x: string) => x, "");
+  useEffect(() => {
+    setTimeout(() => set(window.flowchartFunGetSVG()), 0);
+    setTimeout(() => setBG(window.flowchartFunGetGraphThemeBG()), 0);
+  }, []);
+  return (
+    <Box
+      className={styles.Preview}
+      dangerouslySetInnerHTML={{ __html: html }}
+      p={1}
+      rad={1}
+      style={{ "--bg": bg }}
+    />
   );
 }

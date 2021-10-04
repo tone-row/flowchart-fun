@@ -5,6 +5,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
 } from "react";
 import cytoscape, {
@@ -23,9 +24,9 @@ import { Box } from "../slang";
 import { compressToEncodedURIComponent as compress } from "lz-string";
 import frontmatter from "gray-matter";
 import { AppContext } from "./AppContext";
-import { colors } from "../slang/config";
-import { useAnimationSetting } from "../hooks";
+import { useAnimationSetting, useGraphTheme } from "../hooks";
 import useDownloadHandlers from "./useDownloadHandlers";
+import { graphThemes, GraphThemes } from "./graphThemes";
 
 declare global {
   interface Window {
@@ -53,8 +54,9 @@ const Graph = memo(
     const errorCatcher = useRef<undefined | Core>();
     const animate = useAnimationSetting();
     const graphInitialized = useRef(false);
-    const { theme, setShareLink, setHasError } = useContext(AppContext);
-    const themeString = JSON.stringify(theme);
+    const { setShareLink, setHasError } = useContext(AppContext);
+
+    const graphTheme = useGraphTheme();
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -87,24 +89,49 @@ const Graph = memo(
       [setHoverLineNumber]
     );
 
-    // Update
+    const { content, startingLineNumber, layout, userStyle } = useMemo(() => {
+      const { data, content, matter } = frontmatter(
+        stripComments(textToParse),
+        {
+          delimiters,
+        }
+      );
+      const { layout = {}, style: userStyle = [] } = data as GraphOptionsObject;
+      const startingLineNumber =
+        !matter || matter === "" ? 0 : matter.split("\n").length + 1;
+      return {
+        content,
+        startingLineNumber,
+        layout: JSON.stringify(layout),
+        userStyle: JSON.stringify(userStyle),
+      };
+    }, [textToParse]);
+
+    // Update Graph Nodes
     useEffect(() => {
       updateGraph(
         cy,
-        textToParse,
+        content,
+        startingLineNumber,
+        layout,
         errorCatcher,
         setHasError,
         graphInitialized,
-        animate,
-        themeString
+        animate
       );
-    }, [animate, setHasError, textToParse, themeString]);
+    }, [animate, content, layout, setHasError, startingLineNumber]);
+
+    // Update Style
+    useEffect(() => {
+      updateStyle(cy, userStyle, errorCatcher, setHasError, graphTheme);
+    }, [graphTheme, setHasError, userStyle]);
 
     return (
       <Box
         className={[styles.GraphContainer, "graph"].join(" ")}
         overflow="hidden"
         h="100%"
+        style={{ backgroundColor: graphThemes[graphTheme].bg }}
       >
         <Box id="cy" overflow="hidden" />
       </Box>
@@ -126,7 +153,7 @@ function initializeGraph(
     container: document.getElementById("cy"), // container to render in
     layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
     elements: [],
-    style: getCyStyleFromTheme(colors),
+    style: getCytoStyle("original"),
     userZoomingEnabled: true,
     userPanningEnabled: true,
     boxSelectionEnabled: false,
@@ -175,36 +202,27 @@ function initializeGraph(
   };
 }
 
+// Update nodes & edges
 function updateGraph(
   cy: React.MutableRefObject<cytoscape.Core | undefined>,
-  textToParse: string,
+  content: string,
+  startingLineNumber: number,
+  layoutString: string,
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
   setHasError: React.Dispatch<React.SetStateAction<boolean>>,
   graphInitialized: React.MutableRefObject<boolean>,
-  animate: boolean,
-  themeString: string
+  animate: boolean
 ) {
+  console.log("UPDATE GRAPH");
   if (cy.current) {
     try {
-      const { data, content, matter } = frontmatter(
-        stripComments(textToParse),
-        {
-          delimiters,
-        }
-      );
-
-      const startingLineNumber =
-        !matter || matter === "" ? 0 : matter.split("\n").length + 1;
-      const { layout = {}, style: userStyle = [] } = data as GraphOptionsObject;
-
-      // Prepare Styles
-      const style = getCyStyleFromTheme(JSON.parse(themeString), userStyle);
+      const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
 
       // Parse
       const elements = parseText(content, startingLineNumber);
 
       // Test Error First
-      errorCatcher.current?.json({ elements, style });
+      errorCatcher.current?.json({ elements });
       errorCatcher.current?.layout({
         ...(defaultLayout as cytoscape.LayoutOptions),
         ...layout,
@@ -214,7 +232,6 @@ function updateGraph(
       cy.current
         .json({
           elements: elements,
-          style,
         })
         .layout({
           ...defaultLayout,
@@ -234,6 +251,7 @@ function updateGraph(
       errorCatcher.current = cytoscape();
       setHasError(false);
     } catch (e) {
+      console.log(e);
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
       setHasError(true);
@@ -241,75 +259,45 @@ function updateGraph(
   }
 }
 
-function getCyStyleFromTheme(
-  theme: typeof colors,
-  nextUserStyles: cytoscape.Stylesheet[] = []
-): CytoscapeOptions["style"] {
-  return [
-    {
-      selector: "node",
-      style: {
-        backgroundColor: theme.background,
-        "border-color": theme.foreground,
-        color: theme.foreground,
-        label: "data(label)",
-        "font-size": 10,
-        "text-wrap": "wrap",
-        "text-max-width": "80",
-        "text-valign": "center",
-        "text-halign": "center",
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        "line-height": 1.25,
-        "border-width": 1,
-        shape: "rectangle",
-        "font-family":
-          "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-        width: "data(width)",
-        height: "data(height)",
-      },
-    },
-    {
-      selector: "edge",
-      style: {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        "loop-direction": "0deg",
-        "loop-sweep": "20deg",
-        width: 1,
-        "text-background-opacity": 1,
-        "text-background-color": theme.background,
-        "line-color": theme.foreground,
-        "target-arrow-color": theme.foreground,
-        "target-arrow-shape": "vee",
-        "arrow-scale": 1,
-        "curve-style": "bezier",
-        label: "data(label)",
+function updateStyle(
+  cy: React.MutableRefObject<cytoscape.Core | undefined>,
+  userStyleString: string,
+  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
+  setHasError: React.Dispatch<React.SetStateAction<boolean>>,
+  graphTheme: GraphThemes
+) {
+  if (cy.current) {
+    try {
+      const userStyle = JSON.parse(
+        userStyleString
+      ) as GraphOptionsObject["style"];
+      // Prepare Styles
+      const style = getCytoStyle(graphTheme, userStyle);
 
-        color: theme.foreground,
-        "font-size": 10,
-        "text-valign": "center",
-        "text-wrap": "wrap",
-        "font-family":
-          "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
-        "text-halign": "center",
-        "edge-text-rotation": "autorotate",
-      },
-    },
-    {
-      selector: ".edgeHovered",
-      style: {
-        "line-color": theme.edgeHover,
-        "target-arrow-color": theme.edgeHover,
-        color: theme.edgeHover,
-      },
-    },
-    {
-      selector: ".nodeHovered",
-      style: {
-        backgroundColor: theme.nodeHover,
-      },
-    },
-    ...nextUserStyles,
-  ];
+      // Test Error First
+      errorCatcher.current?.json({ style });
+
+      // Real
+      cy.current.json({
+        style,
+      });
+
+      // Reinitialize to avoid missing errors
+      errorCatcher.current?.destroy();
+      errorCatcher.current = cytoscape();
+      setHasError(false);
+    } catch (e) {
+      console.log(e);
+      errorCatcher.current?.destroy();
+      errorCatcher.current = cytoscape();
+      setHasError(true);
+    }
+  }
+}
+
+function getCytoStyle(
+  theme: GraphThemes,
+  userStyle: cytoscape.Stylesheet[] = []
+): CytoscapeOptions["style"] {
+  return [...graphThemes[theme].styles, ...userStyle];
 }

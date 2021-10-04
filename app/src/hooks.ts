@@ -1,7 +1,9 @@
 import { t } from "@lingui/macro";
-import { Dispatch } from "react";
+import { Dispatch, useContext } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
+import { GraphContext } from "./components/GraphProvider";
+import { allGraphThemes, defaultGraphTheme } from "./components/graphThemes";
 
 export function useAnimationSetting() {
   const { search } = useLocation();
@@ -37,4 +39,15 @@ ${t`Have fun! 🎉`}
 export function useFullscreen() {
   const { pathname } = useLocation();
   return pathname === "/f";
+}
+
+export function useGraphTheme() {
+  const { graphOptions } = useContext(GraphContext);
+  return (
+    (graphOptions &&
+      graphOptions.theme &&
+      allGraphThemes.includes(graphOptions.theme) &&
+      graphOptions.theme) ||
+    defaultGraphTheme
+  );
 }

@@ -12,8 +12,9 @@ export default function GraphWrapper({ children }: { children: ReactNode }) {
   return (
     <Box
       className={styles.GraphWrapper}
+      data-is-fullscreen={isFullscreen}
       data-showing={showing}
-      at={{ tablet: { pr: 2, pb: 2 } }}
+      at={isFullscreen ? undefined : { tablet: { pr: 2, pb: 2 } }}
     >
       {!isFullscreen ? (
         <Box
