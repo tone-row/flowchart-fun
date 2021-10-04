@@ -30,6 +30,10 @@ body {
   color: var(--color-foreground);
 }
 
+html body {
+  margin-right: 0 !important;
+}
+
 .node-hover {
   background: var(--color-lineColor);
 }

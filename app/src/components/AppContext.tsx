@@ -12,6 +12,8 @@ import useLocalStorage from "react-use-localstorage";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
 import { FlagsProvider } from "flagged";
+import { Session } from "@supabase/gotrue-js";
+import { supabase } from "../supabaseClient";
 
 type Theme = typeof colors;
 
@@ -20,7 +22,8 @@ export type Showing =
   | "editor"
   | "settings"
   | "share"
-  | "feedback";
+  | "feedback"
+  | "login";
 
 // Stored in localStorage
 export type UserSettings = {
@@ -50,6 +53,7 @@ type TAppContext = {
   setShareModal: Dispatch<SetStateAction<boolean>>;
   mobileEditorTab: mobileEditorTab;
   toggleMobileEditorTab: () => void;
+  session: Session | null;
 } & UserSettings;
 
 export const AppContext = createContext({} as TAppContext);
@@ -122,6 +126,15 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     })();
   }, []);
 
+  const [session, setSession] = useState<Session | null>(null);
+
+  useEffect(() => {
+    setSession(supabase.auth.session());
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
+
   return (
     <AppContext.Provider
       value={{
@@ -137,6 +150,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         shareModal,
         mobileEditorTab,
         toggleMobileEditorTab,
+        session,
         ...settings,
         language: settings.language ?? defaultLanguage,
       }}

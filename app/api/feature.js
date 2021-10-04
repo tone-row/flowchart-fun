@@ -4,8 +4,8 @@
  */
 export default async function handler(_req, res) {
   let flags = [];
-  // if (process.env.VERCEL_ENV === "development") {
-  //   flags.push("next");
-  // }
+  if (process.env.VERCEL_ENV === "development") {
+    flags.push("next");
+  }
   res.json(flags);
 }

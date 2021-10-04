@@ -6,6 +6,7 @@ import styles from "./Feedback.module.css";
 import Spinner from "./Spinner";
 import { Input, Section, SectionTitle, Textarea, Button, Page } from "./Shared";
 import { AppContext } from "./AppContext";
+import { isError } from "./isError";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 
@@ -124,8 +125,4 @@ function Success() {
       </Button>
     </Section>
   );
-}
-
-function isError(x: unknown): x is Error {
-  return (x as Error).message !== undefined;
 }

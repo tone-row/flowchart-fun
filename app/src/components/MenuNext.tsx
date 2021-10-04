@@ -9,6 +9,7 @@ import {
   Gear,
   Share,
   FolderOpen,
+  UserCircle,
 } from "phosphor-react";
 import { AppContext, Showing } from "./AppContext";
 import { useContext } from "react";
@@ -73,6 +74,7 @@ export default function MenuNext() {
       >
         <MenuTabButton icon={Gear} tab="settings" label={t`User Preferences`} />
         <MenuTabButton icon={Chat} tab="feedback" label={t`Feedback`} />
+        <MenuTabButton icon={UserCircle} tab="login" label={t`Log In`} />
       </Box>
     </Box>
   );
@@ -159,6 +161,8 @@ function translatedTitle(current: Showing) {
       return t`User Preferences`;
     case "navigation":
       return t`Charts`;
+    case "login":
+      return t`Log In`;
     default:
       return current;
   }
