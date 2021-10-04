@@ -89,22 +89,36 @@ const Graph = memo(
       [setHoverLineNumber]
     );
 
+    const lastValues = useRef<{
+      content: string;
+      startingLineNumber: number;
+      layout: string;
+      userStyle: string;
+    }>({ content: "", startingLineNumber: 0, layout: "", userStyle: "" });
+
     const { content, startingLineNumber, layout, userStyle } = useMemo(() => {
-      const { data, content, matter } = frontmatter(
-        stripComments(textToParse),
-        {
-          delimiters,
-        }
-      );
-      const { layout = {}, style: userStyle = [] } = data as GraphOptionsObject;
-      const startingLineNumber =
-        !matter || matter === "" ? 0 : matter.split("\n").length + 1;
-      return {
-        content,
-        startingLineNumber,
-        layout: JSON.stringify(layout),
-        userStyle: JSON.stringify(userStyle),
-      };
+      try {
+        const { data, content, matter } = frontmatter(
+          stripComments(textToParse),
+          {
+            delimiters,
+          }
+        );
+        const { layout = {}, style: userStyle = [] } =
+          data as GraphOptionsObject;
+        const startingLineNumber =
+          !matter || matter === "" ? 0 : matter.split("\n").length + 1;
+        const values = {
+          content,
+          startingLineNumber,
+          layout: JSON.stringify(layout),
+          userStyle: JSON.stringify(userStyle),
+        };
+        lastValues.current = values;
+        return values;
+      } catch {
+        return lastValues.current;
+      }
     }, [textToParse]);
 
     // Update Graph Nodes
@@ -213,7 +227,6 @@ function updateGraph(
   graphInitialized: React.MutableRefObject<boolean>,
   animate: boolean
 ) {
-  console.log("UPDATE GRAPH");
   if (cy.current) {
     try {
       const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
