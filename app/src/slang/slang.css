@@ -495,7 +495,7 @@ body {
     --errorBottomMultiplier: var(--error-bottom-multiplier-7); }
 
 :root {
-	--base-font-family:nm, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	--base-font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	--base-font-size-px:20px;
 	--base-font-size:20;
 	--base-font-size-mobile-px:16px;

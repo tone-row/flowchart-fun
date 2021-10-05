@@ -5,7 +5,20 @@ export function stripComments(t: string) {
   return strip(t, { preserveNewlines: true });
 }
 
-export function parseText(text: string, startingLineNumber = 0) {
+export function parseText(
+  text: string,
+  getSize: (
+    label: string,
+    minWidth?: number,
+    minHeight?: number
+  ) =>
+    | {
+        width: number;
+        height: number;
+      }
+    | undefined,
+  startingLineNumber = 0
+) {
   const elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
 
@@ -133,57 +146,4 @@ function getLineData(text: string, lineNumber: number) {
     linkedId:
       typeof linkedId !== "undefined" ? decodeURIComponent(linkedId) : linkedId,
   };
-}
-
-const base = 12.5;
-const minWidth = 8 * base;
-const minHeight = 6 * base;
-
-function getSize(label: string) {
-  const resizer = document.getElementById("resizer");
-  if (resizer) {
-    // TODO: Widen boxes as box height climbs
-    // resizer.style.width = "128px";
-    // const initialHeight = resizer.clientHeight;
-    // const add = Math.max(0, Math.ceil((initialHeight - 150) / 50)) * 8;
-    // resizer.style.width = `${128 + add}px`;
-    resizer.innerHTML = preventCyRenderingBugs(label);
-    if (resizer.firstChild) {
-      const range = document.createRange();
-      range.selectNodeContents(resizer.firstChild);
-      const width = Array.from(range.getClientRects()).reduce(
-        (max, { width }) => (width > max ? width : max),
-        0
-      );
-      const finalSize = {
-        width: Math.max(minWidth, cleanup(regressionX(width))),
-        height: Math.max(minHeight, cleanup(regressionY(resizer.clientHeight))),
-      };
-      return finalSize;
-    }
-  }
-  return undefined;
-}
-
-// linear regression of text node width to graph node size
-function regressionX(x: number) {
-  return Math.floor(0.63567 * x + 6);
-}
-function regressionY(x: number) {
-  return Math.floor(0.63567 * x + 20);
-}
-
-// put things roughly on the same scale
-function cleanup(x: number) {
-  return Math.ceil(x / base) * base;
-}
-
-function preventCyRenderingBugs(str: string) {
-  return (
-    str
-      // prevent break on hypen
-      .replace(/-/gm, "&#x2011;")
-      // prevent break on chinese comma
-      .replace(/，/gm, "&#x2011;")
-  );
 }

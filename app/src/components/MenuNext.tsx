@@ -142,7 +142,7 @@ function WorkspaceSection() {
         </Box>
         <Box>
           <Type as="h1" weight="400" className={styles.WorkspaceTitle}>
-            {workspace || "(-)"}
+            {workspace || "flowchart.fun"}
           </Type>
         </Box>
       </Box>
