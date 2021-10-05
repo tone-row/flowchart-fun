@@ -49,7 +49,6 @@ msgstr "चौड़ाई पहले"
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: src/components/Menu.tsx:35
 #: src/components/MenuNext.tsx:39
 #: src/components/MenuNext.tsx:83
 msgid "Charts"
@@ -59,7 +58,7 @@ msgstr "चार्ट"
 msgid "Circle"
 msgstr "परिधि"
 
-#: src/components/Shared.tsx:67
+#: src/components/Shared.tsx:68
 msgid "Close"
 msgstr "बंद करें"
 
@@ -67,12 +66,12 @@ msgstr "बंद करें"
 msgid "Concentric"
 msgstr "गाढ़ा"
 
-#: src/components/GraphOptionsBar.tsx:79
+#: src/components/GraphOptionsBar.tsx:96
 msgid "Contract"
 msgstr "सिकोड़ना"
 
 #: src/components/ShareDialog.tsx:34
-#: src/components/ShareDialog.tsx:90
+#: src/components/ShareDialog.tsx:96
 msgid "Copy"
 msgstr "कॉपी करें"
 
@@ -85,9 +84,13 @@ msgstr "बनाएँ"
 msgid "Create a New Chart"
 msgstr "एक नया चार्ट बनाएँ"
 
-#: src/hooks.ts:15
+#: src/hooks.ts:18
 msgid "Create a link directly using the exact label text"
 msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
+
+#: src/components/graphThemes.ts:9
+msgid "Dark"
+msgstr "डार्क"
 
 #: src/components/Settings.tsx:78
 msgid "Dark Mode"
@@ -99,8 +102,7 @@ msgstr "डार्क मोड"
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: src/components/GraphOptions.tsx:39
-#: src/components/GraphOptionsBar.tsx:73
+#: src/components/GraphOptionsBar.tsx:90
 msgid "Direction"
 msgstr "दिशा"
 
@@ -119,17 +121,20 @@ msgstr "इमेज डाउनलोड करें"
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
 
-#: src/components/Menu.tsx:29
 #: src/components/MenuNext.tsx:38
 #: src/components/MobileTabToggle.tsx:11
 msgid "Editor"
 msgstr "संपादक"
 
+#: src/components/graphThemes.ts:10
+msgid "Eggs"
+msgstr "अंडे"
+
 #: src/components/Feedback.tsx:84
 msgid "Email (optional)"
 msgstr "ईमेल (ऐच्छिक)"
 
-#: src/components/GraphOptionsBar.tsx:80
+#: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
 msgstr "फैलाव"
 
@@ -138,7 +143,6 @@ msgstr "फैलाव"
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
-#: src/components/Menu.tsx:38
 #: src/components/MenuNext.tsx:46
 #: src/components/MenuNext.tsx:79
 msgid "Feedback"
@@ -156,23 +160,19 @@ msgstr "फ़ुलस्क्रीन"
 msgid "Graph"
 msgstr "ग्राफ़"
 
-#: src/components/GraphOptions.tsx:29
-msgid "Graph Options"
-msgstr "ग्राफ विकल्प"
-
 #: src/lib/graphOptions.ts:9
 msgid "Grid"
 msgstr "ग्रिड"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:28
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/components/Edit.tsx:99
+#: src/components/Edit.tsx:103
 msgid "Help"
 msgstr "मदद"
 
-#: src/hooks.ts:13
+#: src/hooks.ts:16
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
@@ -180,14 +180,17 @@ msgstr "इंडेंटिंग वर्तमान लाइन का �
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/GraphOptions.tsx:33
-#: src/components/GraphOptionsBar.tsx:68
+#: src/components/GraphOptionsBar.tsx:85
 msgid "Layout"
 msgstr "ख़ाका"
 
 #: src/lib/graphOptions.ts:13
 msgid "Left to Right"
 msgstr "बाएं से दाएं"
+
+#: src/components/graphThemes.ts:8
+msgid "Light"
+msgstr "लाइट"
 
 #: src/components/Settings.tsx:75
 msgid "Light Mode"
@@ -205,6 +208,10 @@ msgstr "दान करें"
 msgid "Open Share Link"
 msgstr "शेयर लिंक खोलें"
 
+#: src/components/ShareDialog.tsx:59
+msgid "Preview"
+msgstr "पूर्व दर्शन"
+
 #: src/lib/graphOptions.ts:8
 msgid "Random"
 msgstr "अनियमित"
@@ -218,15 +225,6 @@ msgstr "रीसेट करें"
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
-#: src/components/Menu.tsx:32
-msgid "Settings"
-msgstr "सेटिंग्स"
-
-#: src/components/Menu.tsx:41
-#: src/components/Menu.tsx:67
-msgid "Share"
-msgstr "शेयर"
-
 #: src/components/Feedback.tsx:89
 msgid "Submit"
 msgstr "भेजना"
@@ -239,7 +237,11 @@ msgstr "टेक्स्ट अमान्य है"
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
-#: src/hooks.ts:12
+#: src/components/GraphOptionsBar.tsx:100
+msgid "Theme"
+msgstr "शैली"
+
+#: src/hooks.ts:15
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
@@ -276,34 +278,34 @@ msgstr "एडिटर के साथ"
 msgid "Your Charts"
 msgstr "आपके चार्ट"
 
-#: src/hooks.ts:17
+#: src/hooks.ts:20
 msgid "[custom ID] or"
 msgstr "[कस्टम ID] या"
 
-#: src/hooks.ts:14
+#: src/hooks.ts:17
 msgid "any text: before a colon creates a label"
 msgstr "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है"
 
-#: src/hooks.ts:18
+#: src/hooks.ts:21
 msgid "by adding an [ID] and referencing that"
 msgstr "एक [ID] जोड़कर संदर्भित है और उस"
 
-#: src/hooks.ts:23
+#: src/hooks.ts:26
 msgid "comments"
 msgstr "कमेंट को"
 
-#: src/hooks.ts:16
+#: src/hooks.ts:19
 msgid "like this: (This app works by typing)"
 msgstr "इस तरह: (यह ऐप टाइप द्वारा काम करता है)"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:22
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "इस तरह: (कस्टम ID) // आप सिंगल-लाइन टिप्पणियों का भी उपयोग कर सकते हैं"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:25
 msgid "multiline"
 msgstr "एक से अधिक लाइन"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:24
 msgid "or"
 msgstr "या"
