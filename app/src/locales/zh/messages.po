@@ -49,7 +49,6 @@ msgstr "宽度优先"
 msgid "Cancel"
 msgstr "取消"
 
-#: src/components/Menu.tsx:35
 #: src/components/MenuNext.tsx:39
 #: src/components/MenuNext.tsx:83
 msgid "Charts"
@@ -59,7 +58,7 @@ msgstr "图表"
 msgid "Circle"
 msgstr "圆圈"
 
-#: src/components/Shared.tsx:67
+#: src/components/Shared.tsx:68
 msgid "Close"
 msgstr "关闭"
 
@@ -67,12 +66,12 @@ msgstr "关闭"
 msgid "Concentric"
 msgstr "同心"
 
-#: src/components/GraphOptionsBar.tsx:79
+#: src/components/GraphOptionsBar.tsx:96
 msgid "Contract"
 msgstr "收缩"
 
 #: src/components/ShareDialog.tsx:34
-#: src/components/ShareDialog.tsx:90
+#: src/components/ShareDialog.tsx:96
 msgid "Copy"
 msgstr "复制"
 
@@ -85,9 +84,13 @@ msgstr "创建"
 msgid "Create a New Chart"
 msgstr "创建新图表"
 
-#: src/hooks.ts:15
+#: src/hooks.ts:18
 msgid "Create a link directly using the exact label text"
 msgstr "使用完全一样的标签文本，直接创建链接"
+
+#: src/components/graphThemes.ts:9
+msgid "Dark"
+msgstr "黑暗"
 
 #: src/components/Settings.tsx:78
 msgid "Dark Mode"
@@ -99,8 +102,7 @@ msgstr "黑暗模式"
 msgid "Delete"
 msgstr "删除"
 
-#: src/components/GraphOptions.tsx:39
-#: src/components/GraphOptionsBar.tsx:73
+#: src/components/GraphOptionsBar.tsx:90
 msgid "Direction"
 msgstr "方向"
 
@@ -119,17 +121,20 @@ msgstr "下载图片"
 msgid "Duplicate"
 msgstr "复制"
 
-#: src/components/Menu.tsx:29
 #: src/components/MenuNext.tsx:38
 #: src/components/MobileTabToggle.tsx:11
 msgid "Editor"
 msgstr "编辑器"
 
+#: src/components/graphThemes.ts:10
+msgid "Eggs"
+msgstr "蛋"
+
 #: src/components/Feedback.tsx:84
 msgid "Email (optional)"
 msgstr "电子邮件（可选）"
 
-#: src/components/GraphOptionsBar.tsx:80
+#: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
 msgstr "扩大"
 
@@ -138,7 +143,6 @@ msgstr "扩大"
 msgid "Export"
 msgstr "导出"
 
-#: src/components/Menu.tsx:38
 #: src/components/MenuNext.tsx:46
 #: src/components/MenuNext.tsx:79
 msgid "Feedback"
@@ -156,23 +160,19 @@ msgstr "全屏"
 msgid "Graph"
 msgstr "图表"
 
-#: src/components/GraphOptions.tsx:29
-msgid "Graph Options"
-msgstr "图形选项"
-
 #: src/lib/graphOptions.ts:9
 msgid "Grid"
 msgstr "网格"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:28
 msgid "Have fun! 🎉"
 msgstr "玩得开心！🎉"
 
-#: src/components/Edit.tsx:99
+#: src/components/Edit.tsx:103
 msgid "Help"
 msgstr "帮助"
 
-#: src/hooks.ts:13
+#: src/hooks.ts:16
 msgid "Indenting creates a link to the current line"
 msgstr "缩进可创建连接到当前行的链接"
 
@@ -180,14 +180,17 @@ msgstr "缩进可创建连接到当前行的链接"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/GraphOptions.tsx:33
-#: src/components/GraphOptionsBar.tsx:68
+#: src/components/GraphOptionsBar.tsx:85
 msgid "Layout"
 msgstr "布局"
 
 #: src/lib/graphOptions.ts:13
 msgid "Left to Right"
 msgstr "从左到右"
+
+#: src/components/graphThemes.ts:8
+msgid "Light"
+msgstr "灯光"
 
 #: src/components/Settings.tsx:75
 msgid "Light Mode"
@@ -205,6 +208,10 @@ msgstr "捐款"
 msgid "Open Share Link"
 msgstr "打开共享链接"
 
+#: src/components/ShareDialog.tsx:59
+msgid "Preview"
+msgstr "预览"
+
 #: src/lib/graphOptions.ts:8
 msgid "Random"
 msgstr "随机"
@@ -218,15 +225,6 @@ msgstr "重置"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/Menu.tsx:32
-msgid "Settings"
-msgstr "设置"
-
-#: src/components/Menu.tsx:41
-#: src/components/Menu.tsx:67
-msgid "Share"
-msgstr "分享"
-
 #: src/components/Feedback.tsx:89
 msgid "Submit"
 msgstr "提交"
@@ -239,7 +237,11 @@ msgstr "文本无效"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/hooks.ts:12
+#: src/components/GraphOptionsBar.tsx:100
+msgid "Theme"
+msgstr "风格"
+
+#: src/hooks.ts:15
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
 
@@ -276,34 +278,34 @@ msgstr "使用编辑器"
 msgid "Your Charts"
 msgstr "你的图表"
 
-#: src/hooks.ts:17
+#: src/hooks.ts:20
 msgid "[custom ID] or"
 msgstr "[自定义 ID] 或"
 
-#: src/hooks.ts:14
+#: src/hooks.ts:17
 msgid "any text: before a colon creates a label"
 msgstr "任何文本：在冒号前创建一个标签"
 
-#: src/hooks.ts:18
+#: src/hooks.ts:21
 msgid "by adding an [ID] and referencing that"
 msgstr "通过添加并引用一个 [ID]"
 
-#: src/hooks.ts:23
+#: src/hooks.ts:26
 msgid "comments"
 msgstr "注释"
 
-#: src/hooks.ts:16
+#: src/hooks.ts:19
 msgid "like this: (This app works by typing)"
 msgstr "像这样：（这款应用的工作原理是输入）"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:22
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "像这样：（自定义 ID）// 你也可以使用单行注释"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:25
 msgid "multiline"
 msgstr "多行"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:24
 msgid "or"
 msgstr "或"

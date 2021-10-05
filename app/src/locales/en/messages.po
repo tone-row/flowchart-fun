@@ -49,7 +49,6 @@ msgstr "Breadthfirst"
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/components/Menu.tsx:35
 #: src/components/MenuNext.tsx:39
 #: src/components/MenuNext.tsx:83
 msgid "Charts"
@@ -59,7 +58,7 @@ msgstr "Charts"
 msgid "Circle"
 msgstr "Circle"
 
-#: src/components/Shared.tsx:67
+#: src/components/Shared.tsx:68
 msgid "Close"
 msgstr "Close"
 
@@ -67,12 +66,12 @@ msgstr "Close"
 msgid "Concentric"
 msgstr "Concentric"
 
-#: src/components/GraphOptionsBar.tsx:79
+#: src/components/GraphOptionsBar.tsx:96
 msgid "Contract"
 msgstr "Contract"
 
 #: src/components/ShareDialog.tsx:34
-#: src/components/ShareDialog.tsx:90
+#: src/components/ShareDialog.tsx:96
 msgid "Copy"
 msgstr "Copy"
 
@@ -85,9 +84,13 @@ msgstr "Create"
 msgid "Create a New Chart"
 msgstr "Create a New Chart"
 
-#: src/hooks.ts:15
+#: src/hooks.ts:18
 msgid "Create a link directly using the exact label text"
 msgstr "Create a link directly using the exact label text"
+
+#: src/components/graphThemes.ts:9
+msgid "Dark"
+msgstr "Dark"
 
 #: src/components/Settings.tsx:78
 msgid "Dark Mode"
@@ -99,8 +102,7 @@ msgstr "Dark Mode"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/components/GraphOptions.tsx:39
-#: src/components/GraphOptionsBar.tsx:73
+#: src/components/GraphOptionsBar.tsx:90
 msgid "Direction"
 msgstr "Direction"
 
@@ -119,17 +121,20 @@ msgstr "Download Image"
 msgid "Duplicate"
 msgstr "Duplicate"
 
-#: src/components/Menu.tsx:29
 #: src/components/MenuNext.tsx:38
 #: src/components/MobileTabToggle.tsx:11
 msgid "Editor"
 msgstr "Editor"
 
+#: src/components/graphThemes.ts:10
+msgid "Eggs"
+msgstr "Eggs"
+
 #: src/components/Feedback.tsx:84
 msgid "Email (optional)"
 msgstr "Email (optional)"
 
-#: src/components/GraphOptionsBar.tsx:80
+#: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
 msgstr "Expand"
 
@@ -138,7 +143,6 @@ msgstr "Expand"
 msgid "Export"
 msgstr "Export"
 
-#: src/components/Menu.tsx:38
 #: src/components/MenuNext.tsx:46
 #: src/components/MenuNext.tsx:79
 msgid "Feedback"
@@ -156,23 +160,19 @@ msgstr "Fullscreen"
 msgid "Graph"
 msgstr "Graph"
 
-#: src/components/GraphOptions.tsx:29
-msgid "Graph Options"
-msgstr "Graph Options"
-
 #: src/lib/graphOptions.ts:9
 msgid "Grid"
 msgstr "Grid"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:28
 msgid "Have fun! 🎉"
 msgstr "Have fun! 🎉"
 
-#: src/components/Edit.tsx:99
+#: src/components/Edit.tsx:103
 msgid "Help"
 msgstr "Help"
 
-#: src/hooks.ts:13
+#: src/hooks.ts:16
 msgid "Indenting creates a link to the current line"
 msgstr "Indenting creates a link to the current line"
 
@@ -180,14 +180,17 @@ msgstr "Indenting creates a link to the current line"
 msgid "Language"
 msgstr "Language"
 
-#: src/components/GraphOptions.tsx:33
-#: src/components/GraphOptionsBar.tsx:68
+#: src/components/GraphOptionsBar.tsx:85
 msgid "Layout"
 msgstr "Layout"
 
 #: src/lib/graphOptions.ts:13
 msgid "Left to Right"
 msgstr "Left to Right"
+
+#: src/components/graphThemes.ts:8
+msgid "Light"
+msgstr "Light"
 
 #: src/components/Settings.tsx:75
 msgid "Light Mode"
@@ -205,6 +208,10 @@ msgstr "Make a Donation"
 msgid "Open Share Link"
 msgstr "Open Share Link"
 
+#: src/components/ShareDialog.tsx:59
+msgid "Preview"
+msgstr "Preview"
+
 #: src/lib/graphOptions.ts:8
 msgid "Random"
 msgstr "Random"
@@ -218,15 +225,6 @@ msgstr "Reset"
 msgid "Right to Left"
 msgstr "Right to Left"
 
-#: src/components/Menu.tsx:32
-msgid "Settings"
-msgstr "Settings"
-
-#: src/components/Menu.tsx:41
-#: src/components/Menu.tsx:67
-msgid "Share"
-msgstr "Share"
-
 #: src/components/Feedback.tsx:89
 msgid "Submit"
 msgstr "Submit"
@@ -239,7 +237,11 @@ msgstr "Text Invalid"
 msgid "Thank you for your feedback!"
 msgstr "Thank you for your feedback!"
 
-#: src/hooks.ts:12
+#: src/components/GraphOptionsBar.tsx:100
+msgid "Theme"
+msgstr "Theme"
+
+#: src/hooks.ts:15
 msgid "This app works by typing"
 msgstr "This app works by typing"
 
@@ -276,34 +278,34 @@ msgstr "With Editor"
 msgid "Your Charts"
 msgstr "Your Charts"
 
-#: src/hooks.ts:17
+#: src/hooks.ts:20
 msgid "[custom ID] or"
 msgstr "[custom ID] or"
 
-#: src/hooks.ts:14
+#: src/hooks.ts:17
 msgid "any text: before a colon creates a label"
 msgstr "any text: before a colon creates a label"
 
-#: src/hooks.ts:18
+#: src/hooks.ts:21
 msgid "by adding an [ID] and referencing that"
 msgstr "by adding an [ID] and referencing that"
 
-#: src/hooks.ts:23
+#: src/hooks.ts:26
 msgid "comments"
 msgstr "comments"
 
-#: src/hooks.ts:16
+#: src/hooks.ts:19
 msgid "like this: (This app works by typing)"
 msgstr "like this: (This app works by typing)"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:22
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "like this: (custom ID) // You can also use single-line comments"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:25
 msgid "multiline"
 msgstr "multiline"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:24
 msgid "or"
 msgstr "or"

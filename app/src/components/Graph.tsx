@@ -24,7 +24,7 @@ import { Box } from "../slang";
 import { compressToEncodedURIComponent as compress } from "lz-string";
 import frontmatter from "gray-matter";
 import { AppContext } from "./AppContext";
-import { useAnimationSetting, useGraphTheme } from "../hooks";
+import { useAnimationSetting, useGetSize, useGraphTheme } from "../hooks";
 import useDownloadHandlers from "./useDownloadHandlers";
 import { graphThemes, GraphThemes } from "./graphThemes";
 
@@ -57,6 +57,10 @@ const Graph = memo(
     const { setShareLink, setHasError } = useContext(AppContext);
 
     const graphTheme = useGraphTheme();
+    const getSize = useGetSize(
+      graphThemes[graphTheme].minWidth,
+      graphThemes[graphTheme].minHeight
+    );
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -131,9 +135,10 @@ const Graph = memo(
         errorCatcher,
         setHasError,
         graphInitialized,
-        animate
+        animate,
+        getSize
       );
-    }, [animate, content, layout, setHasError, startingLineNumber]);
+    }, [animate, content, getSize, layout, setHasError, startingLineNumber]);
 
     // Update Style
     useEffect(() => {
@@ -225,14 +230,20 @@ function updateGraph(
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
   setHasError: React.Dispatch<React.SetStateAction<boolean>>,
   graphInitialized: React.MutableRefObject<boolean>,
-  animate: boolean
+  animate: boolean,
+  getSize: (label: string) =>
+    | {
+        width: number;
+        height: number;
+      }
+    | undefined
 ) {
   if (cy.current) {
     try {
       const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
 
       // Parse
-      const elements = parseText(content, startingLineNumber);
+      const elements = parseText(content, getSize, startingLineNumber);
 
       // Test Error First
       errorCatcher.current?.json({ elements });

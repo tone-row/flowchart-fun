@@ -1,27 +1,29 @@
 import cytoscape from "cytoscape";
 import { parseText } from "./utils";
 
+const getSize = jest.fn();
+
 describe("parseText", () => {
   it("should return an array of elements", () => {
-    const result = parseText("");
+    const result = parseText("", getSize);
     expect(Array.isArray(result)).toBe(true);
   });
 
   it("creates one node per line", () => {
-    const result = parseText("a\nb\nc");
+    const result = parseText("a\nb\nc", getSize);
     expect(result.length).toEqual(3);
   });
 
   it("should not create a node if a pointer is present", () => {
-    const result = parseText("a\n  (a)");
+    const result = parseText("a\n  (a)", getSize);
     expect(result.filter(nodesOnly).length).toEqual(1);
   });
 
   it("should create an edge between indented nodes", () => {
-    let result = parseText("a\n  (a)");
+    let result = parseText("a\n  (a)", getSize);
     expect(result.filter(edgesOnly).length).toEqual(1);
 
-    result = parseText("a\n  b");
+    result = parseText("a\n  b", getSize);
     expect(result.filter(edgesOnly).length).toEqual(1);
     expect(result).toContainEqual({
       data: {
@@ -36,37 +38,37 @@ describe("parseText", () => {
 
   it("should trim node labels", () => {
     const fakeLabel = `test label`;
-    const result = parseText(`${fakeLabel}     `);
+    const result = parseText(`${fakeLabel}     `, getSize);
     const node = result.filter(nodesOnly)[0];
     expect(node.data.label).toEqual(fakeLabel);
   });
 
   it("should parse edge labels", () => {
     const fakeLabel = `test label`;
-    const result = parseText(`a\n  ${fakeLabel}: [a]`);
+    const result = parseText(`a\n  ${fakeLabel}: [a]`, getSize);
     const edge = result.filter(edgesOnly)[0];
     expect(edge.data.label).toEqual(fakeLabel);
   });
 
   it("should trim edge labels", () => {
     const fakeLabel = `test label`;
-    const result = parseText(`a\n  ${fakeLabel}    : [a]`);
+    const result = parseText(`a\n  ${fakeLabel}    : [a]`, getSize);
     const edge = result.filter(edgesOnly)[0];
     expect(edge.data.label).toEqual(fakeLabel);
   });
 
   it("should allow custom ids", () => {
     const fakeId = `test id`;
-    const result = parseText(`[${fakeId}] a`);
+    const result = parseText(`[${fakeId}] a`, getSize);
     const node = result[0];
     expect(node.data.id).toEqual(fakeId);
   });
 
   it("should generate & increment edge ids", () => {
-    let result = parseText("a\n  b");
+    let result = parseText("a\n  b", getSize);
     const edge = result.filter(edgesOnly)[0];
     expect(edge.data.id).toEqual("1_2:0");
-    result = parseText("a\n  b\n  (2)");
+    result = parseText("a\n  b\n  (2)", getSize);
     const edges = result.filter(edgesOnly);
     expect(edges.length).toEqual(2);
     expect(edges).toContainEqual({
@@ -77,7 +79,7 @@ describe("parseText", () => {
   /* Pointers */
 
   it("should create edge with line number", () => {
-    const result = parseText("a\nb\n  (1)");
+    const result = parseText("a\nb\n  (1)", getSize);
     expect(result).toContainEqual({
       data: { id: "2_1:0", label: "", lineNumber: 3, source: "2", target: "1" },
     });
@@ -85,7 +87,7 @@ describe("parseText", () => {
 
   it("should create edge with id", () => {
     const fakeId = `fake id`;
-    const result = parseText(`[${fakeId}] a\nb\n  (${fakeId})`);
+    const result = parseText(`[${fakeId}] a\nb\n  (${fakeId})`, getSize);
     expect(result).toContainEqual({
       data: {
         id: `2_${fakeId}:0`,
@@ -99,7 +101,7 @@ describe("parseText", () => {
 
   it("should create edge with exact label", () => {
     const label = `exact label`;
-    const result = parseText(`${label}\nb\n  (${label})`);
+    const result = parseText(`${label}\nb\n  (${label})`, getSize);
     expect(result).toContainEqual({
       data: {
         id: `2_${label}:0`,
@@ -112,7 +114,7 @@ describe("parseText", () => {
   });
 
   it("should ignore empty lines", () => {
-    const result = parseText("a\n\n\n\n\nb");
+    const result = parseText("a\n\n\n\n\nb", getSize);
     expect(result.length).toEqual(2);
   });
 
@@ -123,7 +125,7 @@ describe("parseText", () => {
     label!(*)$(@*#$)`;
     const label = encodeURIComponent(originalLabel);
     const text = `${label}\n  good times: (${label})`;
-    const result = parseText(text);
+    const result = parseText(text, getSize);
     expect(result.filter(edgesOnly)[0].data.id).toEqual(`1_${originalLabel}:0`);
   });
 });
