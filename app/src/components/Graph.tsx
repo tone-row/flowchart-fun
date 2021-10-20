@@ -18,7 +18,7 @@ import { useDebouncedCallback } from "use-debounce";
 import dagre from "cytoscape-dagre";
 import cytoscapeSvg from "cytoscape-svg";
 import { delimiters, GraphOptionsObject, defaultLayout } from "../constants";
-import { parseText, stripComments } from "../utils";
+import { parseText, stripComments } from "../lib/utils";
 import styles from "./Graph.module.css";
 import { Box } from "../slang";
 import { compressToEncodedURIComponent as compress } from "lz-string";

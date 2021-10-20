@@ -50,6 +50,7 @@ function Edit() {
   // Add language
   useMonacoLanguage(monaco);
 
+  // Hover
   useEffect(() => {
     if (editorRef.current) {
       const editor = editorRef.current;

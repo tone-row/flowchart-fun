@@ -38,12 +38,14 @@ type Colors =
   | "palette-purple-0"
   | "palette-purple-1"
   | "palette-purple-2"
+  | "palette-purple-3"
   | "palette-green-0"
   | "palette-green-1"
   | "palette-green-2"
   | "palette-blue-0"
   | "palette-yellow-0"
   | "palette-yellow-1"
+  | "palette-yellow-2"
   | "palette-orange-0"
   | "palette-orange-1";
 export type BoxProps = PropsWithAs<BaseBoxProps<Breakpoints, Colors>>;

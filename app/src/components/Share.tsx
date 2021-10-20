@@ -1,4 +1,4 @@
-import { Trans } from "@lingui/macro";
+import { t } from "@lingui/macro";
 import { useContext } from "react";
 import { Box } from "../slang";
 import { AppContext } from "./AppContext";
@@ -13,18 +13,20 @@ export default function Share() {
         href={`${new URL(window.location.href).origin}/c#${shareLink}`}
         rel="noreferrer"
         target="_blank"
-      >
-        <Trans>Open Share Link</Trans>
-      </Button>
-      <Button onClick={() => window.flowchartFunDownloadSVG()}>
-        <Trans>Download</Trans> SVG
-      </Button>
-      <Button onClick={() => window.flowchartFunDownloadPNG()}>
-        <Trans>Download</Trans> PNG
-      </Button>
-      <Button onClick={() => window.flowchartFunDownloadJPG()}>
-        <Trans>Download</Trans> JPG
-      </Button>
+        text={t`Open Share Link`}
+      />
+      <Button
+        onClick={() => window.flowchartFunDownloadSVG()}
+        text={`${t`Download`} SVG`}
+      />
+      <Button
+        onClick={() => window.flowchartFunDownloadPNG()}
+        text={`${t`Download`} PNG`}
+      />
+      <Button
+        onClick={() => window.flowchartFunDownloadJPG()}
+        text={`${t`Download`} JPG`}
+      />
     </Box>
   );
 }

@@ -1,8 +1,8 @@
-import { memo, ReactNode, useCallback, useContext } from "react";
+import { memo, useCallback, useContext } from "react";
 import { Box, BoxProps, Type } from "../slang";
 import styles from "./Settings.module.css";
 import { AppContext } from "./AppContext";
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import { languages } from "../locales/i18n";
 import { Button, Page, Section, SectionTitle } from "./Shared";
 
@@ -71,11 +71,8 @@ const Settings = memo(() => {
                 aria-label={`Select Language: ${
                   languages[locale as keyof typeof languages]
                 }`}
-              >
-                <Type size={-1}>
-                  {languages[locale as keyof typeof languages]}
-                </Type>
-              </GroupButton>
+                text={languages[locale as keyof typeof languages]}
+              />
             ))}
           </Box>
         </Section>
@@ -94,17 +91,15 @@ const Settings = memo(() => {
               aria-pressed={mode === "light"}
               aria-label="Light Mode"
               onClick={setLightMode}
-            >
-              <Trans>Light Mode</Trans>
-            </GroupButton>
+              text={t`Light Mode`}
+            />
             <GroupButton
               disabled={mode === "dark"}
               aria-pressed={mode === "dark"}
               aria-label="Dark Mode"
               onClick={setDarkMode}
-            >
-              <Trans>Dark Mode</Trans>
-            </GroupButton>
+              text={t`Dark Mode`}
+            />
           </Box>
         </Section>
         <Section className={styles.LowerLinks}>
@@ -151,18 +146,12 @@ Settings.displayName = "Settings";
 
 export default Settings;
 
-const GroupButton = memo(
-  ({
-    children,
-    className = "",
-    ...props
-  }: { children: ReactNode } & BoxProps) => {
-    return (
-      <Button className={[styles.GroupButton, className].join(" ")} {...props}>
-        {children}
-      </Button>
-    );
-  }
-);
+const GroupButton = memo(({ children, className = "", ...props }: BoxProps) => {
+  return (
+    <Button className={[styles.GroupButton, className].join(" ")} {...props}>
+      {children}
+    </Button>
+  );
+});
 
 GroupButton.displayName = "GroupButton";

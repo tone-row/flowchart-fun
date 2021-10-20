@@ -40,7 +40,7 @@ describe("App", () => {
   test("User can change user settings", async ({ page }) => {
     await page.goto(`${startUrl}?animation=0`);
 
-    await page.click('button[role="tab"]:has-text("User Preferences")');
+    await page.click('button[role="tab"]:has-text("Settings")');
 
     // Click [aria-label="Dark Mode"]
     await page.click('[aria-label="Dark Mode"]');

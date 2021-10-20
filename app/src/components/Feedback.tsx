@@ -6,54 +6,40 @@ import styles from "./Feedback.module.css";
 import Spinner from "./Spinner";
 import { Input, Section, SectionTitle, Textarea, Button, Page } from "./Shared";
 import { AppContext } from "./AppContext";
-import { isError } from "./isError";
+import { useMutation } from "react-query";
+import { mail } from "../lib/queries";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 
-type FormData = { from?: string; text: string };
+type FormData = { from: string; text: string };
 
 const msg = {
-  to: process.env.REACT_APP_FEEDBACK_TO,
+  to: process.env.REACT_APP_FEEDBACK_TO as string,
   subject: "Flowchart Fun Feedback",
 };
 
-const defaultError = t`An error occurred. Try resubmitting or email ${process.env.REACT_APP_FEEDBACK_TO} directly.`;
-
 export default function Feedback() {
   const { register, handleSubmit, reset, watch } = useForm<FormData>();
-  const textMessage = watch("text");
-  const [submitting, setSubmitting] = useState(false);
+  const message = watch("text");
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
+  const {
+    error,
+    isLoading,
+    mutate: send,
+  } = useMutation({
+    mutationFn: mail,
+    onSuccess: () => {
+      setSuccess(true);
+      reset();
+    },
+  });
   const onSubmit = useCallback(
     (data: FormData) => {
-      (async function () {
-        try {
-          setError("");
-          setSubmitting(true);
-          const email = { ...msg, ...data };
-          if (!email.from) email.from = "Unknown Sender <info@tone-row.com>";
-          const response = await fetch("/api/mail", {
-            method: "POST",
-            mode: "cors",
-            cache: "no-cache",
-            credentials: "same-origin",
-            body: JSON.stringify({ email }),
-            headers: { "Content-Type": "application/json" },
-          });
-          if (!response) throw new Error(defaultError);
-          const body = await response.json();
-          if (!body?.success) throw new Error(defaultError);
-          reset();
-          setSuccess(true);
-        } catch (err) {
-          if (isError(err)) setError(err.message);
-        } finally {
-          setSubmitting(false);
-        }
-      })();
+      const email = { ...msg, ...data };
+      if (!email.from) email.from = "Unknown Sender <info@tone-row.com>";
+      send(email);
     },
-    [reset]
+    [send]
   );
   return (
     <Page
@@ -73,10 +59,10 @@ export default function Feedback() {
           onSubmit={handleSubmit(onSubmit)}
           className={[
             styles.FeedbackForm,
-            submitting ? styles.Submitting : "",
+            isLoading ? styles.Submitting : "",
           ].join(" ")}
         >
-          <Type className={styles.Callout}>
+          <Type>
             <Trans>
               We appreciate all of your feedback, suggestions, bugs, and feature
               requests!
@@ -97,18 +83,24 @@ export default function Feedback() {
           <Button
             type="submit"
             style={{ justifySelf: "start" }}
-            disabled={!(textMessage && textMessage.length)}
-          >
-            <Trans>Submit</Trans>
-          </Button>
-          {error && (
-            <Box background="palette-orange-1" p={2} color="palette-black-0">
-              <Type>{error}</Type>
+            disabled={!(message && message.length)}
+            text={t`Submit`}
+          />
+          {error instanceof Error && (
+            <Box
+              background="palette-orange-1"
+              p={2}
+              color="palette-black-0"
+              rad={1}
+            >
+              <Type
+                size={-1}
+              >{t`An error occurred. Try resubmitting or email ${process.env.REACT_APP_FEEDBACK_TO} directly.`}</Type>
             </Box>
           )}
         </Page>
       )}
-      {submitting && <Spinner className={styles.FeedbackLoading} />}
+      {isLoading && <Spinner className={styles.FeedbackLoading} />}
     </Page>
   );
 }
@@ -117,12 +109,10 @@ function Success() {
   const { setShowing } = useContext(AppContext);
   return (
     <Section self="center">
-      <Type size={3} color="palette-green-0">
+      <Type size={2}>
         <Trans>Thank you for your feedback!</Trans>
       </Type>
-      <Button onClick={() => setShowing("editor")}>
-        <Trans>Back To Editor</Trans>
-      </Button>
+      <Button onClick={() => setShowing("editor")} text={t`Back To Editor`} />
     </Section>
   );
 }

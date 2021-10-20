@@ -8,12 +8,14 @@ import {
   useMemo,
   useState,
 } from "react";
+import Stripe from "stripe";
 import useLocalStorage from "react-use-localstorage";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
 import { FlagsProvider } from "flagged";
 import { Session } from "@supabase/gotrue-js";
 import { supabase } from "../supabaseClient";
+import { useCustomerInfo, useUserFeatures } from "../lib/queries";
 
 type Theme = typeof colors;
 
@@ -23,7 +25,7 @@ export type Showing =
   | "settings"
   | "share"
   | "feedback"
-  | "login";
+  | "sponsor";
 
 // Stored in localStorage
 export type UserSettings = {
@@ -54,7 +56,14 @@ type TAppContext = {
   mobileEditorTab: mobileEditorTab;
   toggleMobileEditorTab: () => void;
   session: Session | null;
+  customer?: CustomerInfo;
+  customerIsLoading: boolean;
 } & UserSettings;
+
+type CustomerInfo = {
+  customerId: string;
+  subscription?: Stripe.Subscription;
+};
 
 export const AppContext = createContext({} as TAppContext);
 
@@ -75,6 +84,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
       ),
     []
   );
+
   const { settings, theme } = useMemo<{
     settings: UserSettings;
     theme: Theme;
@@ -104,8 +114,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     [setUserSettings, settings]
   );
 
-  const [flags, setFeatures] = useState([]);
-
   useEffect(() => {
     // Remove chart that may have been stored, so
     // two indexes aren't shown on charts page
@@ -114,26 +122,21 @@ const Provider = ({ children }: { children?: ReactNode }) => {
 
   const [hasError, setHasError] = useState(false);
 
-  useEffect(() => {
-    (async function () {
-      const response = await fetch("/api/feature", {
-        mode: "cors",
-        credentials: "same-origin",
-        headers: { "Content-Type": "application/json" },
-      });
-      const features = await response.json();
-      setFeatures(features);
-    })();
-  }, []);
+  const { data: flags } = useUserFeatures();
 
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
-    setSession(supabase.auth.session());
+    const session = supabase.auth.session();
+    setSession(session);
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
   }, []);
+
+  const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
+    session?.user?.email
+  );
 
   return (
     <AppContext.Provider
@@ -151,6 +154,8 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         mobileEditorTab,
         toggleMobileEditorTab,
         session,
+        customer,
+        customerIsLoading,
         ...settings,
         language: settings.language ?? defaultLanguage,
       }}

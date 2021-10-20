@@ -1,0 +1,23 @@
+.InvoicesTable {
+  overflow: hidden;
+}
+
+tbody .TableCell {
+  border-top: 1px solid var(--color-uiAccent);
+  background-color: var(--color-background);
+}
+
+tbody .TableCell:not(:first-child) {
+  border-left: 1px solid var(--color-nodeHover);
+}
+
+.InvoicesTable {
+  background-color: var(--color-input);
+  box-shadow: 0 0 0px 1px var(--color-uiAccent);
+  display: table;
+  border-collapse: collapse;
+}
+
+.CardEl {
+  border: 1px solid var(--color-uiAccent);
+}

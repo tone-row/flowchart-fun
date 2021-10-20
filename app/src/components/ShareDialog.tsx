@@ -46,15 +46,21 @@ export default function ShareDialog() {
           <Trans>Download Image</Trans>
         </Title>
         <Box gap={2}>
-          <Button onClick={window.flowchartFunDownloadSVG} aria-label="SVG">
-            SVG
-          </Button>
-          <Button onClick={window.flowchartFunDownloadPNG} aria-label="PNG">
-            PNG
-          </Button>
-          <Button onClick={window.flowchartFunDownloadJPG} aria-label="JPG">
-            JPG
-          </Button>
+          <Button
+            onClick={window.flowchartFunDownloadSVG}
+            aria-label="SVG"
+            text="SVG"
+          />
+          <Button
+            onClick={window.flowchartFunDownloadPNG}
+            aria-label="PNG"
+            text="PNG"
+          />
+          <Button
+            onClick={window.flowchartFunDownloadJPG}
+            aria-label="JPG"
+            text="JPG"
+          />
         </Box>
       </Column>
       <Column>
@@ -132,9 +138,8 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
               })();
             }}
             className={styles.LinkCopyButton}
-          >
-            <Trans>Copy</Trans>
-          </Button>
+            text={t`Copy`}
+          />
         </Box>
       </Box>
     </Box>

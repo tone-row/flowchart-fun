@@ -1,9 +1,11 @@
 import { t } from "@lingui/macro";
 import { Dispatch, useCallback, useContext } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
+import { AppContext } from "./components/AppContext";
 import { GraphContext } from "./components/GraphProvider";
 import { allGraphThemes, defaultGraphTheme } from "./components/graphThemes";
+import { useChart } from "./lib/queries";
 
 export function useAnimationSetting() {
   const { search } = useLocation();
@@ -116,4 +118,18 @@ function preventCyRenderingBugs(str: string) {
       // prevent break on chinese comma
       .replace(/，/gm, "&#x2011;")
   );
+}
+
+export function useIsValidSponsor() {
+  const { customer } = useContext(AppContext);
+  return Boolean(customer?.subscription?.status === "active");
+}
+
+export function useTitle() {
+  const { workspace = "" } = useParams<{ workspace?: string }>();
+  const { path, params } = useRouteMatch<{ id?: string }>();
+  const id = params.id || undefined;
+  const { data: chart } = useChart(id);
+  if (path === "/u/:id" && chart) return [chart.name, true];
+  return [workspace, false];
 }

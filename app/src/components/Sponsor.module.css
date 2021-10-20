@@ -1,0 +1,58 @@
+.Page {
+  max-width: 500px;
+  width: 100%;
+  justify-self: center;
+}
+
+@media (min-width: 800px) {
+  .Page {
+    max-width: 900px;
+  }
+}
+
+.SponsorBlock {
+  background-color: var(--palette-purple-3);
+  color: black;
+}
+
+.SponsorBlock ul {
+  padding-left: 1em;
+}
+
+.SponsorFormInput {
+  background-color: white;
+  border: none;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+.SponsorFormInput input {
+  font-size: 16px !important;
+}
+
+.SponsorFormInput:focus-within,
+.SponsorFormInput input:focus {
+  background-color: white;
+}
+
+.SponsorFormInput input::placeholder {
+  color: #757575;
+}
+
+.SignUpButton {
+  background-color: var(--palette-purple-0);
+  border-color: var(--palette-purple-0);
+  color: white;
+}
+
+.SignUpButton span {
+  font-size: 16px !important;
+}
+
+.SignUpButton:hover,
+.SignUpButton:focus {
+  background-color: #5062ed;
+  border-color: #5062ed;
+  color: white;
+}

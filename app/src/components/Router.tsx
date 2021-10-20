@@ -1,30 +1,32 @@
 import { lazy, memo } from "react";
-import { BrowserRouter, Route, RouteProps, Switch } from "react-router-dom";
+import { Route, RouteProps, Switch } from "react-router-dom";
 import Layout from "./Layout";
 const Edit = lazy(() => import("./Edit"));
+const EditUserChart = lazy(() => import("./EditUserChart"));
 const ReadOnly = lazy(() => import("./ReadOnly"));
 
 export default function Router() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <LayoutRoute path="/" exact>
-          <Edit />
-        </LayoutRoute>
-        <LayoutRoute path="/r/:graphText?">
-          <ReadOnly />
-        </LayoutRoute>
-        <LayoutRoute path="/c/:graphText?">
-          <ReadOnly compressed={true} />
-        </LayoutRoute>
-        <LayoutRoute path="/f/:graphText?">
-          <ReadOnly compressed={true} />
-        </LayoutRoute>
-        <LayoutRoute path="/:workspace">
-          <Edit />
-        </LayoutRoute>
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <LayoutRoute path="/" exact>
+        <Edit />
+      </LayoutRoute>
+      <LayoutRoute path="/u/:id">
+        <EditUserChart />
+      </LayoutRoute>
+      <LayoutRoute path="/r/:graphText?">
+        <ReadOnly />
+      </LayoutRoute>
+      <LayoutRoute path="/c/:graphText?">
+        <ReadOnly compressed={true} />
+      </LayoutRoute>
+      <LayoutRoute path="/f/:graphText?">
+        <ReadOnly compressed={true} />
+      </LayoutRoute>
+      <LayoutRoute path="/:workspace">
+        <Edit />
+      </LayoutRoute>
+    </Switch>
   );
 }
 

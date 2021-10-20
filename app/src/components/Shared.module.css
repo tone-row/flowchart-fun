@@ -1,9 +1,12 @@
 body:not([class*="disableAnimation"]) .Input,
 body:not([class*="disableAnimation"]) .Button {
-  transition: 100ms cubic-bezier(0.075, 0.82, 0.165, 1) all;
+  transition: 100ms cubic-bezier(0.075, 0.82, 0.165, 1) background-color,
+    100ms cubic-bezier(0.075, 0.82, 0.165, 1) color,
+    100ms cubic-bezier(0.075, 0.82, 0.165, 1) border-color;
 }
 
 .Input {
+  position: relative;
   border-radius: 0;
   border: 1px solid var(--color-uiAccent);
   background-color: var(--color-input);
@@ -29,6 +32,13 @@ textarea:focus {
   outline: none;
 }
 
+.InputSpinner {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
 .Button {
   border-radius: 0;
   -moz-appearance: none;
@@ -40,6 +50,7 @@ textarea:focus {
   color: var(--color-foreground);
   background-position: right 12px top 17px;
   background-repeat: no-repeat;
+  min-width: 100px;
 }
 
 .Button:hover,
@@ -57,11 +68,12 @@ textarea:focus {
   border-color: var(--color-lineColor);
   background-color: var(--color-background);
   box-shadow: none;
+  cursor: default;
 }
 
 .Button:disabled:hover {
-  background-color: var(--color-input);
-  border-color: var(--color-uiAccent);
+  border-color: var(--color-lineColor);
+  background-color: var(--color-background);
 }
 
 .ButtonType {
@@ -80,4 +92,18 @@ textarea:focus {
 
 .CloseButton:hover svg line {
   stroke: var(--color-foreground);
+}
+
+.CancelNotice[data-style="warning"] {
+  border: 1px solid var(--palette-yellow-2);
+  background-color: var(--palette-yellow-2);
+}
+
+.CancelNotice[data-style="info"] {
+  border: 1px solid var(--palette-purple-3);
+  background-color: var(--palette-purple-3);
+}
+
+button.CancelNotice[data-style="info"]:hover {
+  color: var(--color-highlightColor);
 }
