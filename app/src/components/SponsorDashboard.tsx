@@ -282,18 +282,17 @@ function BecomeASponsor() {
       paymentMethodId: paymentMethod.id,
     });
     if (createSubscriptionError) throw createSubscriptionError;
-    window.location.reload();
+    queryClient.resetQueries(["auth"]);
   });
   return (
     <Box
       as="form"
       onSubmit={handleSubmit(() => submit.mutate())}
-      template="none / auto minmax(0, 1fr) auto"
+      template="none / minmax(0, 1fr) auto auto"
       content="normal start"
       flow="column"
       gap={2}
     >
-      {submit.isLoading ? <Spinner /> : <div />}
       <Box p={2} px={3} rad={1} className={classes.CardEl}>
         <CardElement
           options={{
@@ -310,6 +309,7 @@ function BecomeASponsor() {
         />
       </Box>
       <Button type="submit">Subscribe</Button>
+      {submit.isLoading ? <Spinner /> : <div />}
     </Box>
   );
 }
