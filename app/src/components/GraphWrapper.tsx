@@ -11,7 +11,10 @@ export default function GraphWrapper({ children }: { children: ReactNode }) {
   const isFullscreen = useFullscreen();
   const { path } = useRouteMatch();
   const validSponsor = useIsValidSponsor();
-  const shouldHideGraphOptions = path === "/u/:id" && !validSponsor;
+  const shouldHideGraphOptions =
+    (path === "/u/:id" && !validSponsor) ||
+    path === "/c/:graphText?" ||
+    path === "/r/:graphText?";
   const template = shouldHideGraphOptions
     ? "minmax(0, 1fr) / minmax(0, 1fr)"
     : "auto minmax(0, 1fr) / minmax(0, 1fr)";

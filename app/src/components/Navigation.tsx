@@ -27,12 +27,12 @@ import {
 import { formatDistanceStrict, parseISO } from "date-fns";
 import { Copy, Trash } from "phosphor-react";
 import Loading from "./Loading";
-import { useIsValidSponsor } from "../hooks";
+import { useIsValidCustomer, useIsValidSponsor } from "../hooks";
 
 const largeGap = 10;
 
 export default function Charts() {
-  const validSponsor = useIsValidSponsor();
+  const validCustomer = useIsValidCustomer();
   return (
     <Box
       px={4}
@@ -41,7 +41,7 @@ export default function Charts() {
       content="start normal"
       className={styles.Navigation}
     >
-      {validSponsor && <HostedCharts />}
+      {validCustomer && <HostedCharts />}
       <LocalCharts />
     </Box>
   );
@@ -57,7 +57,7 @@ function LocalCharts() {
   const { pathname } = useLocation();
   const [erase, setErase] = useState("");
   const [copy, setCopy] = useState("");
-  const validSponsor = useIsValidSponsor();
+  const validCustomer = useIsValidCustomer();
 
   const onSubmit = useCallback(
     ({ chartTitle }: { chartTitle: string }) => {
@@ -122,13 +122,12 @@ function LocalCharts() {
         erased.`,
         ]}
       />
-      {!validSponsor && (
+      {!validCustomer && (
         <Box
           p={2}
           px={3}
           pr={4}
           rad={1}
-          background="palette-purple-3"
           as="button"
           onClick={() => setShowing("sponsor")}
           className={styles.CallOut}
@@ -392,8 +391,8 @@ function HostedCharts() {
       ) : (
         <Notice>
           <Trans>
-            Your subscription is no longer active. If you want to create new
-            hosted charts{" "}
+            Your subscription is no longer active. If you want to create and
+            edit hosted charts{" "}
             <button
               onClick={() => setShowing("sponsor")}
               style={{ textDecoration: "underline" }}

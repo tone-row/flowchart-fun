@@ -125,6 +125,11 @@ export function useIsValidSponsor() {
   return Boolean(customer?.subscription?.status === "active");
 }
 
+export function useIsValidCustomer() {
+  const { customer } = useContext(AppContext);
+  return Boolean(customer?.subscription);
+}
+
 export function useTitle() {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const { path, params } = useRouteMatch<{ id?: string }>();

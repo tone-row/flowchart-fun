@@ -106,8 +106,11 @@
 
 .CallOut {
   transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 300ms;
+  background-color: hsla(var(--color-brandHsl), 0.1);
 }
 .CallOut:hover,
-.CallOut:focus-visible {
+.CallOut:focus-visible,
+.CallOut:focus {
   color: hsla(var(--color-brandHsl), 1);
+  box-shadow: none;
 }
