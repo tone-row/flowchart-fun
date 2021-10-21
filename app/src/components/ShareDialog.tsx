@@ -43,7 +43,7 @@ export default function ShareDialog() {
       </Column>
       <Column>
         <Title>
-          <Trans>Download Image</Trans>
+          <Trans>Download</Trans>
         </Title>
         <Box gap={2}>
           <Button

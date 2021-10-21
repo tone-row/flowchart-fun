@@ -278,3 +278,12 @@ export async function createCustomer(email: string) {
   const customerSubscriptionOrError = await response.json();
   return customerSubscriptionOrError;
 }
+
+export async function renameChart(id: number, name: string) {
+  const { data, error } = await supabase
+    .from<definitions["user_charts"]>("user_charts")
+    .update({ name })
+    .eq("id", id);
+  if (error) throw error;
+  return data;
+}

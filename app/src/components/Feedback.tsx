@@ -4,15 +4,7 @@ import { useForm } from "react-hook-form";
 import { Type } from "../slang";
 import styles from "./Feedback.module.css";
 import Spinner from "./Spinner";
-import {
-  Input,
-  Section,
-  SectionTitle,
-  Textarea,
-  Button,
-  Page,
-  Notice,
-} from "./Shared";
+import { Input, Section, Textarea, Button, Page, Notice } from "./Shared";
 import { AppContext } from "./AppContext";
 import { useMutation } from "react-query";
 import { mail } from "../lib/queries";
@@ -77,15 +69,15 @@ export default function Feedback() {
             </Trans>
           </Type>
           <Section>
-            <SectionTitle>
+            <Type>
               <Trans>What would you like to share with us?</Trans>
-            </SectionTitle>
+            </Type>
             <Textarea rows={4} {...register("text", { required: true })} />
           </Section>
           <Section>
-            <SectionTitle>
+            <Type>
               <Trans>Email (optional)</Trans>
-            </SectionTitle>
+            </Type>
             <Input type="email" {...register("from")} />
           </Section>
           <Button

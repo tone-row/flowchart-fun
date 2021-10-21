@@ -33,7 +33,11 @@ export function LoginForm() {
       </SectionTitle>
       {success ? (
         <Box background="color-nodeHover" p={2} rad={2}>
-          <Type>{t`Check your email for a login link.`}</Type>
+          <Type>
+            <Trans>
+              Check your email for a link to log in. You can close this window.
+            </Trans>
+          </Type>
         </Box>
       ) : (
         <Box gap={2}>

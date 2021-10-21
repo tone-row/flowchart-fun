@@ -61,8 +61,10 @@ export function SponsorDashboard() {
             <Trans>Become a Sponsor</Trans>
           </SectionTitle>
           <Type>
-            {t`Your subscription has ended. If you want to become a sponsor again
-            sign up here.`}
+            <Trans>
+              Your subscription is no longer active. If you want to create and
+              edit hosted charts become a sponsor.
+            </Trans>
           </Type>
           <BecomeASponsor />
         </Section>
@@ -72,20 +74,32 @@ export function SponsorDashboard() {
           <Trans>Subscription</Trans>
         </SectionTitle>
         <Box template="auto / repeat(2, minmax(0, 1fr))" columnGap={6}>
-          <Type size={-1}>Status</Type>
-          <Type size={-1} style={{ textTransform: "capitalize" }}>
-            {subscription?.status}
-          </Type>
+          <InfoCell>
+            <Trans>Status</Trans>
+          </InfoCell>
+          <InfoCell>{subscription?.status}</InfoCell>
           {subscription?.current_period_end &&
             !subscription?.cancel_at_period_end &&
             subscription?.status === "active" && (
               <>
-                <Type size={-1}>
-                  <Trans>Next Charge</Trans>
-                </Type>
-                <Type size={-1} style={{ textTransform: "capitalize" }}>
+                <InfoCell>
+                  <Trans>Next charge</Trans>
+                </InfoCell>
+                <InfoCell>
                   {formatDate(subscription?.current_period_end.toString())}
-                </Type>
+                </InfoCell>
+              </>
+            )}
+          {!subscription?.cancel_at_period_end &&
+            subscription?.created &&
+            subscription?.status === "active" && (
+              <>
+                <InfoCell>
+                  <Trans>Start</Trans>
+                </InfoCell>
+                <InfoCell>
+                  {formatRelative(subscription.created.toString())}
+                </InfoCell>
               </>
             )}
         </Box>
@@ -101,27 +115,27 @@ export function SponsorDashboard() {
             />
           </Box>
         )}
-
-        {!subscription?.cancel_at_period_end &&
-          subscription?.created &&
-          subscription?.status === "active" && (
-            <>
-              <Type size={-1}>
-                <Trans>
-                  Thank you for being a flowchart.fun sponsor since{" "}
-                  {formatRelative(subscription.created.toString())}. You can
-                  cancel your subscription at anytime, and you will keep your
-                  persistent charts in a read-only state.
-                </Trans>
-              </Type>
-              <Button
-                self="normal start"
-                onClick={() => setCancelModal(true)}
-                text={t`Cancel Subscription`}
-              />
-            </>
-          )}
       </Section>
+      {!subscription?.cancel_at_period_end &&
+        subscription?.created &&
+        subscription?.status === "active" && (
+          <Section>
+            <SectionTitle>
+              <Trans>Cancel</Trans>
+            </SectionTitle>
+            <Type>
+              <Trans>
+                Cancel your subscription. Your hosted charts will become
+                read-only.
+              </Trans>
+            </Type>
+            <Button
+              self="normal start"
+              onClick={() => setCancelModal(true)}
+              text={t`Cancel`}
+            />
+          </Section>
+        )}
       <Section>
         <SectionTitle>
           <Trans>History</Trans>
@@ -207,7 +221,7 @@ function ConfirmCancel({
       dialogProps={{
         isOpen,
         onDismiss,
-        "aria-label": t`Cancel Subscription`,
+        "aria-label": t`Cancel`,
       }}
       innerBoxProps={{ gap: 6 }}
     >
@@ -219,7 +233,7 @@ function ConfirmCancel({
         <Button
           disabled={loading}
           onClick={cancelSubscription}
-          text={t`Cancel Subscription`}
+          text={t`Cancel`}
         />
       </Box>
       {loading && <Spinner />}
@@ -258,9 +272,9 @@ function ConfirmResume({
       innerBoxProps={{ gap: 4 }}
     >
       <Type as="p">
-        <Trans>Would you like to resume your subscription?</Trans>
+        <Trans>Resume Subscription</Trans>
         <br />
-        <Trans>Your next charge:</Trans> {formatDate(period)}.
+        <Trans>Next charge</Trans> {formatDate(period)}.
       </Type>
       <Box content="normal space-between" flow="column" gap={3}>
         <Button onClick={onDismiss} disabled={loading} text={t`Cancel`} />
@@ -331,4 +345,8 @@ function BecomeASponsor() {
       {submit.isLoading ? <Spinner /> : <div />}
     </Box>
   );
+}
+
+function InfoCell({ children }: { children: ReactNode }) {
+  return <Type className={classes.InfoCell}>{children}</Type>;
 }

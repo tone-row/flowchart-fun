@@ -44,8 +44,8 @@ export default function Sponsor() {
           </SectionTitle>
           <Type>
             <Trans>
-              Sponsor flowchart.fun for $1 a month to get access to hosted
-              flowcharts and the newest styles and features.
+              Sponsor flowchart.fun for $1 a month to access hosted flowcharts
+              and the newest styles and features
             </Trans>
           </Type>
           <SignUpForm />
@@ -122,8 +122,7 @@ function SignUpForm() {
   return success ? (
     <div>
       <Trans>
-        Thank you for sponsoring flowchart.fun! Check your email for a link to
-        log in. You can now close this window.
+        Check your email for a link to log in. You can close this window.
       </Trans>
     </div>
   ) : (

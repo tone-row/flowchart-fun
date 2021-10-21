@@ -9,19 +9,30 @@ import {
   FolderOpen,
   User,
   Globe,
+  Pencil,
 } from "phosphor-react";
 import { AppContext, Showing } from "./AppContext";
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import styles from "./MenuNext.module.css";
 import { t, Trans } from "@lingui/macro";
 import {
+  Button,
+  Dialog,
+  Input,
+  Notice,
+  Section,
   smallBtnTypeSize,
   smallIconSize,
   Tooltip,
   tooltipSize,
 } from "./Shared";
 import VisuallyHidden from "@reach/visually-hidden";
-import { useTitle } from "../hooks";
+import { useCurrentHostedChart, useLocalStorageText, useTitle } from "../hooks";
+import { useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+import { queryClient, renameChart } from "../lib/queries";
+import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
+import { useHistory } from "react-router";
 
 const chartSpecific: Showing[] = ["editor", "share"];
 
@@ -149,7 +160,10 @@ function WorkspaceSection() {
           </Type>
         </Box>
       </Box>
-      <ExportButton />
+      <Box flow="column" gap={1}>
+        <RenameButton />
+        <ExportButton />
+      </Box>
     </Box>
   );
 }
@@ -169,6 +183,93 @@ function translatedTitle(current: Showing) {
   }
 }
 
+function RenameButton() {
+  const [initialName, isHosted] = useTitle();
+  const { data } = useCurrentHostedChart();
+  const [text] = useLocalStorageText();
+  const [dialog, setDialog] = useState(false);
+  const { push } = useHistory();
+  const { register, handleSubmit, formState } = useForm<{ name: string }>({
+    defaultValues: { name: initialName },
+    mode: "onChange",
+  });
+  const { ref, ...rest } = register("name", {
+    required: true,
+    minLength: 2,
+    setValueAs: (z) => (isHosted ? z : slugify(z)),
+  });
+  const inputRef = useRef<null | HTMLInputElement>(null);
+  const rename = useMutation(
+    "updateChartName",
+    async ({ name }: { name: string }) => {
+      if (isHosted && data) {
+        await renameChart(data.id, name);
+      } else {
+        const oldKey = titleToLocalStorageKey(slugify(initialName));
+        const newSlug = slugify(name);
+        const newKey = titleToLocalStorageKey(newSlug);
+        if (window.localStorage.getItem(newKey) !== null)
+          throw new Error("Chart already exists");
+        window.localStorage.setItem(newKey, text);
+        push(`/${newSlug}`);
+        window.localStorage.removeItem(oldKey);
+      }
+    },
+    {
+      onSuccess: () => {
+        setDialog(false);
+        if (isHosted) queryClient.resetQueries(["useChart"]);
+      },
+    }
+  );
+  return (
+    <>
+      <Button
+        style={{ minWidth: 0 }}
+        className={styles.MenuNextTitleButton}
+        onClick={() => setDialog(true)}
+      >
+        <Pencil size={smallIconSize} />
+      </Button>
+      <Dialog
+        dialogProps={{
+          isOpen: dialog,
+          onDismiss: () => setDialog(false),
+          initialFocusRef: inputRef,
+        }}
+        innerBoxProps={{
+          as: "form",
+          onSubmit: handleSubmit((data) => rename.mutate(data)),
+        }}
+      >
+        <Section>
+          <Input
+            {...rest}
+            ref={(el) => {
+              ref(el);
+              inputRef.current = el;
+            }}
+            isLoading={rename.isLoading}
+          />
+          <Box flow="column" content="normal space-between">
+            <Button
+              type="button"
+              text={`Cancel`}
+              onClick={() => setDialog(false)}
+            />
+            <Button
+              type="submit"
+              text={t`Submit`}
+              disabled={!formState.isDirty || !formState.isValid}
+            />
+          </Box>
+          {isError(rename.error) && <Notice>{rename.error.message}</Notice>}
+        </Section>
+      </Dialog>
+    </>
+  );
+}
+
 function ExportButton() {
   const { setShareModal } = useContext(AppContext);
 
@@ -176,12 +277,12 @@ function ExportButton() {
     <Box
       as="button"
       rad={1}
-      className={styles.ExportButton}
+      className={[styles.ExportButton, styles.MenuNextTitleButton].join(" ")}
       items="center normal"
       at={{ tablet: { template: "auto / auto 1fr", px: 0 } }}
       onClick={() => setShareModal(true)}
     >
-      <Box p={1} at={{ tablet: { p: 2 } }}>
+      <Box p={2} px={3}>
         <Share size={smallIconSize} />
       </Box>
       <Box

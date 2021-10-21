@@ -21,3 +21,7 @@ tbody .TableCell:not(:first-child) {
 .CardEl {
   border: 1px solid var(--color-uiAccent);
 }
+
+.InfoCell::first-letter {
+  text-transform: capitalize;
+}

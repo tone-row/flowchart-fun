@@ -130,11 +130,16 @@ export function useIsValidCustomer() {
   return Boolean(customer?.subscription);
 }
 
-export function useTitle() {
+export function useTitle(): [string, boolean] {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const { path, params } = useRouteMatch<{ id?: string }>();
   const id = params.id || undefined;
   const { data: chart } = useChart(id);
   if (path === "/u/:id" && chart) return [chart.name, true];
   return [workspace, false];
+}
+
+export function useCurrentHostedChart() {
+  const { id } = useParams<{ id?: string }>();
+  return useChart(id);
 }

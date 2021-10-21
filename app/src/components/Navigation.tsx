@@ -29,6 +29,7 @@ import { formatDistanceStrict, parseISO } from "date-fns";
 import { Copy, Trash } from "phosphor-react";
 import Loading from "./Loading";
 import { useIsValidCustomer, useIsValidSponsor } from "../hooks";
+import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 
 const largeGap = 10;
 
@@ -133,8 +134,8 @@ function LocalCharts() {
         >
           <Type size={-1}>
             <Trans>
-              Get access to Hosted Flowcharts by becoming a flowchart.fun
-              sponsor for $1 per month
+              Sponsor flowchart.fun for $1 a month to access hosted flowcharts
+              and the newest styles and features
             </Trans>
           </Type>
         </Box>
@@ -145,7 +146,7 @@ function LocalCharts() {
             <Input
               placeholder="Enter a title"
               {...register("chartTitle", {
-                setValueAs,
+                setValueAs: slugify,
               })}
             />
             <Button
@@ -210,9 +211,6 @@ function LocalCharts() {
   );
 }
 
-const setValueAs = (value: string) =>
-  value.replace(/[^a-z0-9]/gi, "-").toLocaleLowerCase();
-
 function DeleteChart({
   erase,
   setErase,
@@ -236,13 +234,9 @@ function DeleteChart({
       innerBoxProps={{ gap: 8 }}
     >
       <Box content="normal start" gap={2} at={{ tablet: { flow: "column" } }}>
-        <Type>
-          {erase === "/"
-            ? t`Do you want to reset this?`
-            : t`Do you want to delete this?`}
-        </Type>
+        <Type>{erase === "/" ? t`Reset` : t`Delete`}</Type>
         <Type weight="700" self="normal center">
-          {erase}
+          flowchart.fun/{erase}
         </Type>
       </Box>
       <Box content="normal space-between" flow="column" gap={3}>
@@ -271,7 +265,7 @@ function CopyChart({
   const { register, setValue, watch, handleSubmit } = useForm({
     defaultValues: { chartTitle: `${copy}-copy` },
   });
-  const { ref, ...rest } = register("chartTitle", { setValueAs });
+  const { ref, ...rest } = register("chartTitle", { setValueAs: slugify });
 
   const title = watch("chartTitle");
 
@@ -324,10 +318,6 @@ function CopyChart({
   );
 }
 
-function titleToLocalStorageKey(chartTitle: string) {
-  return `flowcharts.fun${chartTitle === "/" ? "" : `:${chartTitle}`}`;
-}
-
 function HostedCharts() {
   const validSponsor = useIsValidSponsor();
   const { session, setShowing } = useContext(AppContext);
@@ -360,7 +350,7 @@ function HostedCharts() {
       <TitleAndSummary
         title={t`Hosted Charts`}
         summary={[
-          t`Access these charts from all of your devices. Share and embed charts that stay in sync with your edits.`,
+          t`Access these charts from anywhere. Share/embed charts that stay in sync with your edits.`,
         ]}
       />
       {validSponsor ? (
@@ -387,16 +377,12 @@ function HostedCharts() {
           </Notice>
         )
       ) : (
-        <Notice>
+        <Notice
+          boxProps={{ as: "button", onClick: () => setShowing("sponsor") }}
+        >
           <Trans>
             Your subscription is no longer active. If you want to create and
-            edit hosted charts{" "}
-            <button
-              onClick={() => setShowing("sponsor")}
-              style={{ textDecoration: "underline" }}
-            >
-              become a sponsor.
-            </button>
+            edit hosted charts become a sponsor.
           </Trans>
         </Notice>
       )}
@@ -531,7 +517,7 @@ function CopyHostedChart({
       dialogProps={{
         isOpen: typeof isOpen === "number",
         onDismiss,
-        "aria-label": t`Copy Chart`,
+        "aria-label": t`Copy`,
       }}
       innerBoxProps={{}}
     >
@@ -598,8 +584,8 @@ function CopyHostedChartInner({
         }}
       />
       <Box content="normal space-between" flow="column">
-        <Button onClick={onDismiss}>Cancel</Button>
-        <Button disabled={!copyName}>Copy</Button>
+        <Button onClick={onDismiss} type="button" text={t`Cancel`} />
+        <Button disabled={!copyName} type="submit" text={t`Copy`} />
       </Box>
     </Section>
   );
@@ -633,7 +619,7 @@ function DeleteHostedChart({
       dialogProps={{
         isOpen: isOpen !== false,
         onDismiss,
-        "aria-label": t`Copy Chart`,
+        "aria-label": t`Copy`,
       }}
       innerBoxProps={{}}
     >
@@ -648,8 +634,8 @@ function DeleteHostedChart({
             </Type>
           </Type>
           <Box content="normal space-between" flow="column">
-            <Button onClick={() => onDismiss()}>Cancel</Button>
-            <Button type="submit">Delete</Button>
+            <Button onClick={() => onDismiss()} text={t`Cancel`} />
+            <Button type="submit" text={t`Delete`} />
           </Box>
         </Section>
       )}

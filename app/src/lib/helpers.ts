@@ -17,3 +17,10 @@ export function formatCents(cents: number) {
 export function isError(x: unknown): x is Error {
   return Boolean(typeof x === "object" && x && "message" in x);
 }
+
+export function titleToLocalStorageKey(chartTitle: string) {
+  return `flowcharts.fun${chartTitle === "/" ? "" : `:${chartTitle}`}`;
+}
+
+export const slugify = (value: string) =>
+  value.replace(/[^a-z0-9]/gi, "-").toLocaleLowerCase();
