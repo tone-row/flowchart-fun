@@ -134,9 +134,19 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     });
   }, []);
 
-  const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
-    session?.user?.email
-  );
+  const {
+    data: customer,
+    isFetching: customerIsLoading,
+    error,
+  } = useCustomerInfo(session?.user?.email);
+
+  useEffect(() => {
+    if (error) {
+      console.log(error);
+      // supabase.auth.signOut();
+      // window.location.reload();
+    }
+  }, [error]);
 
   return (
     <AppContext.Provider

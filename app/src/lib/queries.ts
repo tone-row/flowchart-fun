@@ -88,6 +88,7 @@ export async function login(email: string): Promise<boolean> {
       email,
     }),
   });
+  if (!response.ok) throw new Error("Unable to connect");
   const result = await response.json();
   if (result.error) throw result.error;
   const { error: supabaseErr } = await supabase.auth.signIn({
@@ -260,4 +261,19 @@ export function createSubscription({
         return error;
       })
   );
+}
+
+export async function createCustomer(email: string) {
+  const response = await fetch("/api/create-customer", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+    }),
+  });
+  if (!response.ok) throw new Error("Unable to connect");
+  const customerSubscriptionOrError = await response.json();
+  return customerSubscriptionOrError;
 }

@@ -132,7 +132,7 @@ function LocalCharts() {
           onClick={() => setShowing("sponsor")}
           className={styles.CallOut}
         >
-          <Type size={-1} weight="700">
+          <Type size={-1}>
             <Trans>
               Get access to Hosted Flowcharts by becoming a flowchart.fun
               sponsor for $1 per month

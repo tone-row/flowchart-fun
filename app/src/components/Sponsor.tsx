@@ -11,7 +11,9 @@ import { useForm } from "react-hook-form";
 import { supabase } from "../supabaseClient";
 import Spinner from "./Spinner";
 import { t, Trans } from "@lingui/macro";
-import { createSubscription } from "../lib/queries";
+import { createCustomer, createSubscription } from "../lib/queries";
+import { useMutation } from "react-query";
+import { isError } from "../lib/helpers";
 
 export default function Sponsor() {
   const { session } = useContext(AppContext);
@@ -54,15 +56,12 @@ export default function Sponsor() {
 function SignUpForm() {
   const stripe = useStripe();
   const elements = useElements();
-  const [loading, setLoading] = useState(false);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<{ email: string }>();
   const { theme } = useContext(AppContext);
-  const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
-  const onSubmit = async ({ email }: { email: string }) => {
-    try {
-      setLoading(true);
-      setError("");
+  const create = useMutation(
+    "createCustomer",
+    async ({ email }: { email: string }) => {
       if (!stripe || !elements) {
         // Stripe.js has not loaded yet. Make sure to disable
         // form submission until Stripe.js has loaded.
@@ -76,6 +75,7 @@ function SignUpForm() {
         error,
       } = await createCustomer(email);
       if (error) throw error;
+
       if (earlySubscription) {
         throw new Error("Please try logging in.");
       }
@@ -109,14 +109,13 @@ function SignUpForm() {
         email,
       });
       if (supabaseError) throw supabaseError;
-
-      setSuccess(true);
-    } catch (error) {
-      setError((error as Error).message);
-    } finally {
-      setLoading(false);
+    },
+    {
+      onSuccess: () => {
+        setSuccess(true);
+      },
     }
-  };
+  );
 
   return success ? (
     <div>
@@ -124,7 +123,12 @@ function SignUpForm() {
       in. You can now close this window.
     </div>
   ) : (
-    <Box as="form" gap={2} pt={3} onSubmit={handleSubmit(onSubmit)}>
+    <Box
+      as="form"
+      gap={2}
+      pt={3}
+      onSubmit={handleSubmit((data) => create.mutate(data))}
+    >
       <Input
         className={styles.SponsorFormInput}
         type="email"
@@ -151,28 +155,20 @@ function SignUpForm() {
         <Type size={-2} as="span">
           We use cookies to keep you logged in.
         </Type>
-        {loading && <Spinner r={14} s={2} c="var(--palette-purple-0)" />}
+        {create.isLoading && (
+          <Spinner r={14} s={2} c="var(--palette-purple-0)" />
+        )}
       </Box>
 
-      {error && (
+      {create.error && (
         <Notice>
-          <span dangerouslySetInnerHTML={{ __html: error }} />
+          <span
+            dangerouslySetInnerHTML={{
+              __html: isError(create.error) ? create.error.message : "",
+            }}
+          />
         </Notice>
       )}
     </Box>
   );
-}
-
-async function createCustomer(email: string) {
-  const response = await fetch("/api/create-customer", {
-    method: "post",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-    }),
-  });
-  const customerSubscriptionOrError = await response.json();
-  return customerSubscriptionOrError;
 }

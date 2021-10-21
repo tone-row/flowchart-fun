@@ -1,10 +1,18 @@
 import { Trans, t } from "@lingui/macro";
 import { useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Box, Type } from "../slang";
+import { Type } from "../slang";
 import styles from "./Feedback.module.css";
 import Spinner from "./Spinner";
-import { Input, Section, SectionTitle, Textarea, Button, Page } from "./Shared";
+import {
+  Input,
+  Section,
+  SectionTitle,
+  Textarea,
+  Button,
+  Page,
+  Notice,
+} from "./Shared";
 import { AppContext } from "./AppContext";
 import { useMutation } from "react-query";
 import { mail } from "../lib/queries";
@@ -87,16 +95,9 @@ export default function Feedback() {
             text={t`Submit`}
           />
           {error instanceof Error && (
-            <Box
-              background="palette-orange-1"
-              p={2}
-              color="palette-black-0"
-              rad={1}
-            >
-              <Type
-                size={-1}
-              >{t`An error occurred. Try resubmitting or email ${process.env.REACT_APP_FEEDBACK_TO} directly.`}</Type>
-            </Box>
+            <Notice>
+              {t`An error occurred. Try resubmitting or email ${process.env.REACT_APP_FEEDBACK_TO} directly.`}
+            </Notice>
           )}
         </Page>
       )}
