@@ -49,12 +49,17 @@ export function SponsorDashboard() {
       self="stretch center"
     >
       <Section>
-        <Type>Logged in as {session?.user?.email}</Type>
+        <SectionTitle>
+          <Trans>User</Trans>
+        </SectionTitle>
+        <Type>{session?.user?.email}</Type>
         <Button self="start" onClick={signOut} text={t`Log Out`} />
       </Section>
       {subscription?.status === "canceled" && (
         <Section>
-          <SectionTitle>Become a Sponsor</SectionTitle>
+          <SectionTitle>
+            <Trans>Become a Sponsor</Trans>
+          </SectionTitle>
           <Type>
             {t`Your subscription has ended. If you want to become a sponsor again
             sign up here.`}
@@ -63,7 +68,9 @@ export function SponsorDashboard() {
         </Section>
       )}
       <Section>
-        <SectionTitle>Subscription</SectionTitle>
+        <SectionTitle>
+          <Trans>Subscription</Trans>
+        </SectionTitle>
         <Box template="auto / repeat(2, minmax(0, 1fr))" columnGap={6}>
           <Type size={-1}>Status</Type>
           <Type size={-1} style={{ textTransform: "capitalize" }}>
@@ -73,7 +80,9 @@ export function SponsorDashboard() {
             !subscription?.cancel_at_period_end &&
             subscription?.status === "active" && (
               <>
-                <Type size={-1}>Next Payment Due</Type>
+                <Type size={-1}>
+                  <Trans>Next Charge</Trans>
+                </Type>
                 <Type size={-1} style={{ textTransform: "capitalize" }}>
                   {formatDate(subscription?.current_period_end.toString())}
                 </Type>
@@ -83,7 +92,7 @@ export function SponsorDashboard() {
         {subscription?.cancel_at_period_end && (
           <Box flow="column" content="start" gap={4}>
             <Notice>
-              <Trans>Subscription will cancel</Trans>{" "}
+              <Trans>Subscription will end</Trans>{" "}
               {formatDate(subscription.current_period_end.toString())}
             </Notice>
             <Button
@@ -98,10 +107,12 @@ export function SponsorDashboard() {
           subscription?.status === "active" && (
             <>
               <Type size={-1}>
-                Thank you for being a flowchart.fun sponsor since{" "}
-                {formatRelative(subscription.created.toString())}. You can
-                cancel your subscription at anytime, and you will keep your
-                persistent charts in a read-only state.
+                <Trans>
+                  Thank you for being a flowchart.fun sponsor since{" "}
+                  {formatRelative(subscription.created.toString())}. You can
+                  cancel your subscription at anytime, and you will keep your
+                  persistent charts in a read-only state.
+                </Trans>
               </Type>
               <Button
                 self="normal start"
@@ -112,7 +123,9 @@ export function SponsorDashboard() {
           )}
       </Section>
       <Section>
-        <SectionTitle>History</SectionTitle>
+        <SectionTitle>
+          <Trans>History</Trans>
+        </SectionTitle>
         <Box as="table" className={classes.InvoicesTable} rad={1}>
           <colgroup>
             <col width="50%" />
@@ -120,8 +133,12 @@ export function SponsorDashboard() {
           </colgroup>
           <thead>
             <tr>
-              <Td typeProps={{ size: -1 }}>Date</Td>
-              <Td typeProps={{ size: -1 }}>Amount Paid</Td>
+              <Td typeProps={{ size: -1 }}>
+                <Trans>Date</Trans>
+              </Td>
+              <Td typeProps={{ size: -1 }}>
+                <Trans>Amount</Trans>
+              </Td>
             </tr>
           </thead>
           <tbody>
@@ -190,17 +207,19 @@ function ConfirmCancel({
       dialogProps={{
         isOpen,
         onDismiss,
-        "aria-label": "Cancel Subscription",
+        "aria-label": t`Cancel Subscription`,
       }}
       innerBoxProps={{ gap: 6 }}
     >
-      <Type>Are you sure you want to cancel your subscription?</Type>
+      <Type>
+        <Trans>Do you want to cancel your subscription?</Trans>
+      </Type>
       <Box content="normal space-between" flow="column" gap={3}>
         <Button onClick={onDismiss} disabled={loading} text={t`Return`} />
         <Button
           disabled={loading}
           onClick={cancelSubscription}
-          text={t`Cancel My Subscription`}
+          text={t`Cancel Subscription`}
         />
       </Box>
       {loading && <Spinner />}
@@ -235,20 +254,20 @@ function ConfirmResume({
   }
   return (
     <Dialog
-      dialogProps={{ isOpen, onDismiss, "aria-label": "Resume Subscription" }}
+      dialogProps={{ isOpen, onDismiss, "aria-label": t`Resume Subscription` }}
       innerBoxProps={{ gap: 4 }}
     >
       <Type as="p">
-        Would you like to resume your subscription?
+        <Trans>Would you like to resume your subscription?</Trans>
         <br />
-        Your next charge will be on {formatDate(period)}.
+        <Trans>Your next charge:</Trans> {formatDate(period)}.
       </Type>
       <Box content="normal space-between" flow="column" gap={3}>
-        <Button onClick={onDismiss} disabled={loading} text={t`Return`} />
+        <Button onClick={onDismiss} disabled={loading} text={t`Cancel`} />
         <Button
           disabled={loading}
           onClick={resumeSubscription}
-          text={t`Resume My Subscription`}
+          text={t`Resume Subscription`}
         />
       </Box>
       {loading && <Spinner />}

@@ -13,27 +13,29 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Feedback.tsx:23
+#: src/components/Navigation.tsx:216
+msgid "Access these charts from all of your devices. Share and embed charts that stay in sync with your edits."
+msgstr ""
+
+#: src/components/SponsorDashboard.tsx:120
+msgid "Amount"
+msgstr ""
+
+#: src/components/Feedback.tsx:58
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "एक एरर हो गया. फिर से सबमिट करने की कोशिश करें या सीधे {0} ईमेल करें."
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:67
 msgid "Appearance"
 msgstr "दिखावट"
 
-#: src/components/Navigation.tsx:134
-msgid "Are you sure you want to delete this?"
-msgstr "क्या आप वाकई इसे हटाना चाहते हैं?"
-
-#: src/components/Navigation.tsx:133
-msgid "Are you sure you want to reset this?"
-msgstr "क्या आप वाकई इसे रीसेट करना चाहते हैं?"
-
-#: src/components/Feedback.tsx:105
+#: src/components/Feedback.tsx:70
 msgid "Back To Editor"
 msgstr "संपादक पर वापस जाएं"
 
-#: src/components/Settings.tsx:99
+#: src/components/Settings.tsx:91
+#: src/components/Sponsor.tsx:38
+#: src/components/SponsorDashboard.tsx:55
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
@@ -45,20 +47,31 @@ msgstr "नीचे से शीर्ष तक"
 msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
-#: src/components/Navigation.tsx:142
+#: src/components/Navigation.tsx:146
+#: src/components/SponsorDashboard.tsx:207
 msgid "Cancel"
 msgstr "रद्द करें"
 
+#: src/components/SponsorDashboard.tsx:102
+#: src/components/SponsorDashboard.tsx:165
+#: src/components/SponsorDashboard.tsx:172
+msgid "Cancel Subscription"
+msgstr ""
+
 #: src/components/MenuNext.tsx:39
-#: src/components/MenuNext.tsx:83
+#: src/components/MenuNext.tsx:85
 msgid "Charts"
 msgstr "चार्ट"
+
+#: src/components/Login.tsx:29
+msgid "Check your email for a login link."
+msgstr ""
 
 #: src/lib/graphOptions.ts:7
 msgid "Circle"
 msgstr "परिधि"
 
-#: src/components/Shared.tsx:68
+#: src/components/Shared.tsx:71
 msgid "Close"
 msgstr "बंद करें"
 
@@ -71,20 +84,23 @@ msgid "Contract"
 msgstr "सिकोड़ना"
 
 #: src/components/ShareDialog.tsx:34
-#: src/components/ShareDialog.tsx:96
+#: src/components/ShareDialog.tsx:89
 msgid "Copy"
 msgstr "कॉपी करें"
 
-#: src/components/Navigation.tsx:75
+#: src/components/Navigation.tsx:298
+#: src/components/Navigation.tsx:370
+msgid "Copy Chart"
+msgstr ""
+
+#: src/components/Navigation.tsx:96
 #: src/components/Navigation.tsx:183
+#: src/components/Navigation.tsx:221
 msgid "Create"
 msgstr "बनाएँ"
 
-#: src/components/Navigation.tsx:68
-msgid "Create a New Chart"
-msgstr "एक नया चार्ट बनाएँ"
-
-#: src/hooks.ts:18
+#: src/hooks.ts:20
+#: src/lib/queries.ts:137
 msgid "Create a link directly using the exact label text"
 msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
 
@@ -92,13 +108,17 @@ msgstr "सही लेबल टेक्स्ट का उपयोग क�
 msgid "Dark"
 msgstr "डार्क"
 
-#: src/components/Settings.tsx:78
+#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:71
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/components/Navigation.tsx:108
-#: src/components/Navigation.tsx:128
-#: src/components/Navigation.tsx:145
+#: src/components/SponsorDashboard.tsx:117
+msgid "Date"
+msgstr ""
+
+#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:147
 msgid "Delete"
 msgstr "हटाएँ"
 
@@ -106,9 +126,22 @@ msgstr "हटाएँ"
 msgid "Direction"
 msgstr "दिशा"
 
-#: src/components/Share.tsx:13
-#: src/components/Share.tsx:16
-#: src/components/Share.tsx:19
+#: src/components/SponsorDashboard.tsx:168
+msgid "Do you want to cancel your subscription?"
+msgstr ""
+
+#: src/components/Navigation.tsx:139
+#: src/components/Navigation.tsx:374
+msgid "Do you want to delete this?"
+msgstr ""
+
+#: src/components/Navigation.tsx:138
+msgid "Do you want to reset this?"
+msgstr ""
+
+#: src/components/Share.tsx:10
+#: src/components/Share.tsx:11
+#: src/components/Share.tsx:12
 msgid "Download"
 msgstr "डाउनलोड"
 
@@ -116,8 +149,8 @@ msgstr "डाउनलोड"
 msgid "Download Image"
 msgstr "इमेज डाउनलोड करें"
 
-#: src/components/Navigation.tsx:105
-#: src/components/Navigation.tsx:167
+#: src/components/Navigation.tsx:168
+#: src/components/Navigation.tsx:335
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
 
@@ -130,7 +163,11 @@ msgstr "संपादक"
 msgid "Eggs"
 msgstr "अंडे"
 
-#: src/components/Feedback.tsx:84
+#: src/components/Login.tsx:32
+msgid "Email"
+msgstr ""
+
+#: src/components/Feedback.tsx:52
 msgid "Email (optional)"
 msgstr "ईमेल (ऐच्छिक)"
 
@@ -138,23 +175,27 @@ msgstr "ईमेल (ऐच्छिक)"
 msgid "Expand"
 msgstr "फैलाव"
 
-#: src/components/MenuNext.tsx:96
+#: src/components/MenuNext.tsx:100
 #: src/components/ShareDialog.tsx:25
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
 #: src/components/MenuNext.tsx:46
-#: src/components/MenuNext.tsx:79
+#: src/components/MenuNext.tsx:81
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
-#: src/components/Settings.tsx:90
+#: src/components/Settings.tsx:82
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
 #: src/components/ShareDialog.tsx:37
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
+
+#: src/components/Navigation.tsx:84
+msgid "Get access to Hosted Flowcharts by becoming a flowchart.fun sponsor for $1 per month"
+msgstr ""
 
 #: src/components/MobileTabToggle.tsx:11
 msgid "Graph"
@@ -164,15 +205,29 @@ msgstr "ग्राफ़"
 msgid "Grid"
 msgstr "ग्रिड"
 
-#: src/hooks.ts:28
+#: src/hooks.ts:30
+#: src/lib/queries.ts:147
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/components/Edit.tsx:103
+#: src/components/Edit.tsx:104
 msgid "Help"
 msgstr "मदद"
 
-#: src/hooks.ts:16
+#: src/components/SponsorDashboard.tsx:107
+msgid "History"
+msgstr ""
+
+#: src/App.tsx:51
+msgid "Home"
+msgstr ""
+
+#: src/components/Navigation.tsx:215
+msgid "Hosted Charts"
+msgstr ""
+
+#: src/hooks.ts:18
+#: src/lib/queries.ts:135
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
@@ -192,23 +247,40 @@ msgstr "बाएं से दाएं"
 msgid "Light"
 msgstr "लाइट"
 
-#: src/components/Settings.tsx:75
+#: src/components/Settings.tsx:70
+#: src/components/Settings.tsx:70
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/Settings.tsx:84
+#: src/components/Navigation.tsx:79
+msgid "Local Charts"
+msgstr ""
+
+#: src/components/Login.tsx:26
+msgid "Log In"
+msgstr ""
+
+#: src/components/SponsorDashboard.tsx:51
+msgid "Log Out"
+msgstr ""
+
+#: src/components/Settings.tsx:76
 msgid "Made by <0>Tone Row</0>"
 msgstr "<0>Tone Row</0> द्वारा बना"
 
-#: src/components/Settings.tsx:96
+#: src/components/Settings.tsx:88
 msgid "Make a Donation"
 msgstr "दान करें"
 
-#: src/components/Share.tsx:10
+#: src/components/SponsorDashboard.tsx:76
+msgid "Next Charge"
+msgstr ""
+
+#: src/components/Share.tsx:9
 msgid "Open Share Link"
 msgstr "शेयर लिंक खोलें"
 
-#: src/components/ShareDialog.tsx:59
+#: src/components/ShareDialog.tsx:53
 msgid "Preview"
 msgstr "पूर्व दर्शन"
 
@@ -216,24 +288,68 @@ msgstr "पूर्व दर्शन"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/components/Navigation.tsx:108
-#: src/components/Navigation.tsx:145
+#: src/components/Navigation.tsx:147
 msgid "Reset"
 msgstr "रीसेट करें"
+
+#: src/components/SponsorDashboard.tsx:88
+#: src/components/SponsorDashboard.tsx:200
+#: src/components/SponsorDashboard.tsx:208
+msgid "Resume Subscription"
+msgstr ""
+
+#: src/components/SponsorDashboard.tsx:171
+msgid "Return"
+msgstr ""
 
 #: src/lib/graphOptions.ts:14
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
-#: src/components/Feedback.tsx:89
+#: src/components/MenuNext.tsx:45
+#: src/components/MenuNext.tsx:83
+msgid "Settings"
+msgstr ""
+
+#: src/components/Sponsor.tsx:122
+msgid "Sign Up"
+msgstr ""
+
+#: src/components/Sponsor.tsx:41
+msgid "Sponsor flowchart.fun for $1 a month to get access to hosted flowcharts and the newest styles and features."
+msgstr ""
+
+#: src/components/MenuNext.tsx:47
+#: src/components/MenuNext.tsx:87
+msgid "Sponsors"
+msgstr ""
+
+#: src/components/Feedback.tsx:56
+#: src/components/Login.tsx:33
 msgid "Submit"
 msgstr "भेजना"
+
+#: src/components/SponsorDashboard.tsx:65
+msgid "Subscription"
+msgstr ""
+
+#: src/components/SponsorDashboard.tsx:85
+msgid "Subscription will end"
+msgstr ""
 
 #: src/components/HasError.tsx:12
 msgid "Text Invalid"
 msgstr "टेक्स्ट अमान्य है"
 
-#: src/components/Feedback.tsx:102
+#: src/components/SponsorDashboard.tsx:95
+msgid "Thank you for being a flowchart.fun sponsor since {0}. You can cancel your subscription at anytime, and you will keep your persistent charts in a read-only state."
+msgstr ""
+
+#: src/components/Sponsor.tsx:104
+msgid "Thank you for sponsoring flowchart.fun! Check your email for a link to log in. You can now close this window."
+msgstr ""
+
+#: src/components/Feedback.tsx:68
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
@@ -241,7 +357,12 @@ msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 msgid "Theme"
 msgstr "शैली"
 
-#: src/hooks.ts:15
+#: src/components/Navigation.tsx:80
+msgid "These charts are only available in this browser on this device. Clearing your browser {localStorage} will erase these."
+msgstr ""
+
+#: src/hooks.ts:17
+#: src/lib/queries.ts:134
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
@@ -249,24 +370,31 @@ msgstr "यह ऐप टाइप द्वारा काम करता ह
 msgid "Top to Bottom"
 msgstr "ऊपर से नीचे"
 
-#: src/components/MenuNext.tsx:45
-#: src/components/MenuNext.tsx:81
-msgid "User Preferences"
-msgstr "उपयोगकर्ता वरीयताएं"
+#: src/App.tsx:48
+msgid "Try again"
+msgstr ""
 
-#: src/components/Settings.tsx:93
+#: src/components/SponsorDashboard.tsx:48
+msgid "User"
+msgstr ""
+
+#: src/components/Settings.tsx:85
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/components/Feedback.tsx:71
+#: src/components/Feedback.tsx:39
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "हम आपके सभी फ़ीडबैक, सुझावों, बग्स और विशेष अनुरोधों की सराहना करते हैं!"
 
-#: src/components/Navigation.tsx:175
+#: src/components/Sponsor.tsx:125
+msgid "We use cookies to keep you logged in."
+msgstr ""
+
+#: src/components/Navigation.tsx:176
 msgid "What would you like to name this copy?"
 msgstr "क्या आप इस कॉपी को नाम देना चाहेंगे?"
 
-#: src/components/Feedback.tsx:78
+#: src/components/Feedback.tsx:46
 msgid "What would you like to share with us?"
 msgstr "आप हमारे साथ क्या शेयर करना चाहेंगे?"
 
@@ -274,38 +402,60 @@ msgstr "आप हमारे साथ क्या शेयर करना 
 msgid "With Editor"
 msgstr "एडिटर के साथ"
 
-#: src/components/Navigation.tsx:84
-msgid "Your Charts"
-msgstr "आपके चार्ट"
+#: src/components/SponsorDashboard.tsx:202
+msgid "Would you like to resume your subscription?"
+msgstr ""
 
-#: src/hooks.ts:20
+#: src/components/SponsorDashboard.tsx:204
+msgid "Your next charge:"
+msgstr ""
+
+#: src/components/SponsorDashboard.tsx:58
+msgid ""
+"Your subscription has ended. If you want to become a sponsor again\n"
+"sign up here."
+msgstr ""
+
+#: src/components/Navigation.tsx:227
+msgid "Your subscription is no longer active. If you want to create and edit hosted charts <0>become a sponsor.</0>"
+msgstr ""
+
+#: src/hooks.ts:22
+#: src/lib/queries.ts:139
 msgid "[custom ID] or"
 msgstr "[कस्टम ID] या"
 
-#: src/hooks.ts:17
+#: src/hooks.ts:19
+#: src/lib/queries.ts:136
 msgid "any text: before a colon creates a label"
 msgstr "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:23
+#: src/lib/queries.ts:140
 msgid "by adding an [ID] and referencing that"
 msgstr "एक [ID] जोड़कर संदर्भित है और उस"
 
-#: src/hooks.ts:26
+#: src/hooks.ts:28
+#: src/lib/queries.ts:145
 msgid "comments"
 msgstr "कमेंट को"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:21
+#: src/lib/queries.ts:138
 msgid "like this: (This app works by typing)"
 msgstr "इस तरह: (यह ऐप टाइप द्वारा काम करता है)"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:24
+#: src/lib/queries.ts:141
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "इस तरह: (कस्टम ID) // आप सिंगल-लाइन टिप्पणियों का भी उपयोग कर सकते हैं"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:27
+#: src/lib/queries.ts:144
 msgid "multiline"
 msgstr "एक से अधिक लाइन"
 
-#: src/hooks.ts:24
+#: src/hooks.ts:26
+#: src/lib/queries.ts:143
 msgid "or"
 msgstr "या"

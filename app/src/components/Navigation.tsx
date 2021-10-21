@@ -6,6 +6,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
 } from "react";
@@ -47,6 +48,7 @@ export default function Charts() {
   );
 }
 
+const localStorage = "local storage";
 function LocalCharts() {
   const { setShowing } = useContext(AppContext);
   const { watch, register, handleSubmit } = useForm();
@@ -116,10 +118,7 @@ function LocalCharts() {
       <TitleAndSummary
         title={t`Local Charts`}
         summary={[
-          t`Device charts are only available in this 
-        browser on this device.`,
-          t`Clearing your browser's local storage will cause these to be
-        erased.`,
+          t`These charts are only available in this browser on this device. Clearing your browser ${localStorage} will erase these.`,
         ]}
       />
       {!validCustomer && (
@@ -153,7 +152,7 @@ function LocalCharts() {
               disabled={title?.length < 2 || charts.includes(title)}
               type="submit"
               onClick={() => window.plausible("Create New Chart")}
-              text={t`New`}
+              text={t`Create`}
             />
           </Box>
           <Type size={-2} color="palette-white-3">
@@ -239,8 +238,8 @@ function DeleteChart({
       <Box content="normal start" gap={2} at={{ tablet: { flow: "column" } }}>
         <Type>
           {erase === "/"
-            ? t`Are you sure you want to reset this?`
-            : t`Are you sure you want to delete this?`}
+            ? t`Do you want to reset this?`
+            : t`Do you want to delete this?`}
         </Type>
         <Type weight="700" self="normal center">
           {erase}
@@ -361,8 +360,7 @@ function HostedCharts() {
       <TitleAndSummary
         title={t`Hosted Charts`}
         summary={[
-          t`Access these charts from all your devices when you're logged in.`,
-          t`Easily share and embed charts, which stay up to date with your edits.`,
+          t`Access these charts from all of your devices. Share and embed charts that stay in sync with your edits.`,
         ]}
       />
       {validSponsor ? (
@@ -533,7 +531,7 @@ function CopyHostedChart({
       dialogProps={{
         isOpen: typeof isOpen === "number",
         onDismiss,
-        "aria-label": "Copy Hosted Chart",
+        "aria-label": t`Copy Chart`,
       }}
       innerBoxProps={{}}
     >
@@ -575,19 +573,29 @@ function CopyHostedChartInner({
     }
   }
 
+  const inputRef = useRef<null | HTMLInputElement>(null);
+  const { ref, ...rest } = register("name", { required: true });
+  useLayoutEffect(() => {
+    inputRef.current && inputRef.current.focus();
+  }, []);
+
   return newChart.isLoading || !chart ? (
     <Loading />
   ) : (
     <Section as="form" onSubmit={handleSubmit(onSubmit)}>
       <Type>
-        <Trans>Create a copy?</Trans>{" "}
+        <Trans>Duplicate</Trans>{" "}
         <Type color="color-highlightColor" as="span">
           {chart.name}
         </Type>
       </Type>
       <Input
         placeholder="Enter a title"
-        {...register("name", { required: true })}
+        {...rest}
+        ref={(el) => {
+          ref(el);
+          inputRef.current = el;
+        }}
       />
       <Box content="normal space-between" flow="column">
         <Button onClick={onDismiss}>Cancel</Button>
@@ -625,7 +633,7 @@ function DeleteHostedChart({
       dialogProps={{
         isOpen: isOpen !== false,
         onDismiss,
-        "aria-label": "Copy Hosted Chart",
+        "aria-label": t`Copy Chart`,
       }}
       innerBoxProps={{}}
     >
@@ -634,7 +642,7 @@ function DeleteHostedChart({
       ) : (
         <Section as="form" onSubmit={handleSubmit(onSubmit)}>
           <Type>
-            <Trans>Do you want to delete this chart?</Trans>{" "}
+            <Trans>Do you want to delete this?</Trans>{" "}
             <Type color="color-highlightColor" as="span">
               {isOpen && isOpen.name}
             </Type>

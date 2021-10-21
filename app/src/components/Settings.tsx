@@ -89,14 +89,14 @@ const Settings = memo(() => {
             <GroupButton
               disabled={mode === "light"}
               aria-pressed={mode === "light"}
-              aria-label="Light Mode"
+              aria-label={t`Light Mode`}
               onClick={setLightMode}
               text={t`Light Mode`}
             />
             <GroupButton
               disabled={mode === "dark"}
               aria-pressed={mode === "dark"}
-              aria-label="Dark Mode"
+              aria-label={t`Dark Mode`}
               onClick={setDarkMode}
               text={t`Dark Mode`}
             />

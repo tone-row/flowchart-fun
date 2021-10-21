@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { useContext } from "react";
 import { QueryClient, useQuery } from "react-query";
 import Stripe from "stripe";
@@ -135,34 +136,34 @@ export function useOrderHistory(customerId?: string, subscriptionId?: string) {
   );
 }
 
-const defaultChartText = `This app works by typing
-  Indenting creates a link to the current line
-  any text: before a colon creates a label
-  Create a link directly using the exact label text
-    like this: (This app works by typing)
-    [custom ID] or
-      by adding an [ID] and referencing that
-        like this: (custom ID) // You can also use single-line comments
-  /*
-  or
-  multiline
-  comments
-
-  Have fun! 🎉
-  */`;
-
 export async function makeChart({
   name,
   user_id,
-  chart = defaultChartText,
+  chart,
 }: {
   name: string;
   user_id: string;
   chart?: string;
 }) {
+  const defaultText = `${t`This app works by typing`}
+  ${t`Indenting creates a link to the current line`}
+  ${t`any text: before a colon creates a label`}
+  ${t`Create a link directly using the exact label text`}
+    ${t`like this: (This app works by typing)`}
+    ${t`[custom ID] or`}
+      ${t`by adding an [ID] and referencing that`}
+        ${t`like this: (custom ID) // You can also use single-line comments`}
+/*
+${t`or`}
+${t`multiline`}
+${t`comments`}
+
+${t`Have fun! 🎉`}
+*/`;
+
   return supabase
     .from<definitions["user_charts"]>("user_charts")
-    .insert({ name, chart, user_id });
+    .insert({ name, chart: chart ?? defaultText, user_id });
 }
 
 async function userCharts() {

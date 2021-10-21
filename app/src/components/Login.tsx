@@ -7,7 +7,7 @@ import { SponsorDashboard } from "./SponsorDashboard";
 import { useMutation } from "react-query";
 import { login } from "../lib/queries";
 import { isError } from "../lib/helpers";
-import { t } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 
 export default function Login() {
   const { session } = useContext(AppContext);
@@ -28,10 +28,12 @@ export function LoginForm() {
   );
   return (
     <Section as="form" onSubmit={handleSubmit(onSubmit)}>
-      <SectionTitle>Log In</SectionTitle>
+      <SectionTitle>
+        <Trans>Log In</Trans>
+      </SectionTitle>
       {success ? (
         <Box background="color-nodeHover" p={2} rad={2}>
-          <Type>Check your email for the login link!</Type>
+          <Type>{t`Check your email for a login link.`}</Type>
         </Box>
       ) : (
         <Box gap={2}>
@@ -39,7 +41,7 @@ export function LoginForm() {
             <Input
               {...register("email", { required: true })}
               disabled={isLoading}
-              placeholder="Email"
+              placeholder={t`Email`}
               isLoading={isLoading}
             />
             <Button type="submit" text={t`Submit`} />

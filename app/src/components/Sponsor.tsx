@@ -43,8 +43,10 @@ export default function Sponsor() {
             <Trans>Become a Sponsor</Trans>
           </SectionTitle>
           <Type>
-            Sponsor flowchart.fun for $1 a month to get access to{" "}
-            <u>hosted flowcharts</u> and the newest styles and features.
+            <Trans>
+              Sponsor flowchart.fun for $1 a month to get access to hosted
+              flowcharts and the newest styles and features.
+            </Trans>
           </Type>
           <SignUpForm />
         </Section>
@@ -119,8 +121,10 @@ function SignUpForm() {
 
   return success ? (
     <div>
-      Thank you for sponsoring flowchart.fun! Check your email for a link to log
-      in. You can now close this window.
+      <Trans>
+        Thank you for sponsoring flowchart.fun! Check your email for a link to
+        log in. You can now close this window.
+      </Trans>
     </div>
   ) : (
     <Box
@@ -153,7 +157,7 @@ function SignUpForm() {
       <Button type="submit" text={t`Sign Up`} className={styles.SignUpButton} />
       <Box template="auto / auto auto" content="normal space-between">
         <Type size={-2} as="span">
-          We use cookies to keep you logged in.
+          <Trans>We use cookies to keep you logged in.</Trans>
         </Type>
         {create.isLoading && (
           <Spinner r={14} s={2} c="var(--palette-purple-0)" />
