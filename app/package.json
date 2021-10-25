@@ -40,7 +40,7 @@
     "lz-string": "^1.4.4",
     "moniker": "^0.1.2",
     "phosphor-react": "^1.3.1",
-    "playwright": "^1.12.2",
+    "playwright": "^1.16",
     "re-resizable": "^6.9.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -70,7 +70,7 @@
     "compile": "lingui compile",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "format": "prettier --write '{src,e2e}/**/*.{ts,tsx,scss,css,json}'",
-    "e2e": "npx playwright test --browser=all --config=playwright.config.ts e2e",
+    "e2e": "npx playwright test --config=playwright.config.ts",
     "generate:types": "export $(cat .env.local | xargs) && npx openapi-typescript \"${SB_URL}/rest/v1/?apikey=${SB_ANON_KEY}\" --output src/types/supabase.ts"
   },
   "eslintConfig": {
@@ -94,7 +94,7 @@
   "devDependencies": {
     "@lingui/cli": "^3.8.9",
     "@lingui/macro": "^3.8.9",
-    "@playwright/test": "^1.12.2",
+    "@playwright/test": "^1.16",
     "@types/cytoscape": "^3.14.12",
     "@types/download": "^6.2.4",
     "@types/file-saver": "^2.0.1",
