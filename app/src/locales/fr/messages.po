@@ -108,7 +108,7 @@ msgstr "Créer un lien directement vers une boite en utilisant le texte exact de
 
 #: src/components/Navigation.tsx:242
 msgid "Created"
-msgstr ""
+msgstr "Créé"
 
 #: src/components/graphThemes.ts:9
 msgid "Dark"
@@ -250,7 +250,7 @@ msgstr "Mode lumineux"
 
 #: src/components/ShareDialog.tsx:69
 msgid "Link"
-msgstr ""
+msgstr "Lien"
 
 #: src/components/Navigation.tsx:80
 msgid "Local Charts"
@@ -274,11 +274,11 @@ msgstr "Faire un don"
 
 #: src/components/ShareDialog.tsx:56
 msgid "Make publicly accessible"
-msgstr ""
+msgstr "Rendre accessible au public"
 
 #: src/components/Navigation.tsx:230
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: src/components/SponsorDashboard.tsx:78
 #: src/components/SponsorDashboard.tsx:216
@@ -297,7 +297,7 @@ msgstr "Aperçu"
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:64
 msgid "Public"
-msgstr ""
+msgstr "Public"
 
 #: src/lib/graphOptions.ts:8
 msgid "Random"
@@ -305,7 +305,7 @@ msgstr "Aléatoire"
 
 #: src/components/MenuNext.tsx:155
 msgid "Rename"
-msgstr ""
+msgstr "Renommer"
 
 #: src/components/Navigation.tsx:136
 #: src/components/Navigation.tsx:143
@@ -399,7 +399,7 @@ msgstr "Réessayer"
 
 #: src/components/Navigation.tsx:238
 msgid "Updated"
-msgstr ""
+msgstr "Mis à jour"
 
 #: src/components/SponsorDashboard.tsx:48
 msgid "User"
