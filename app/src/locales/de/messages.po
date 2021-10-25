@@ -108,7 +108,7 @@ msgstr "Erstellen Sie direkt einen Link mit dem genauen Beschriftungstext"
 
 #: src/components/Navigation.tsx:242
 msgid "Created"
-msgstr ""
+msgstr "Erstellt"
 
 #: src/components/graphThemes.ts:9
 msgid "Dark"
@@ -250,7 +250,7 @@ msgstr "Heller Modus"
 
 #: src/components/ShareDialog.tsx:69
 msgid "Link"
-msgstr ""
+msgstr "Link"
 
 #: src/components/Navigation.tsx:80
 msgid "Local Charts"
@@ -274,11 +274,11 @@ msgstr "Spenden"
 
 #: src/components/ShareDialog.tsx:56
 msgid "Make publicly accessible"
-msgstr ""
+msgstr "Öffentlich zugänglich machen"
 
 #: src/components/Navigation.tsx:230
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: src/components/SponsorDashboard.tsx:78
 #: src/components/SponsorDashboard.tsx:216
@@ -297,7 +297,7 @@ msgstr "Vorschau"
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:64
 msgid "Public"
-msgstr ""
+msgstr "Öffentlich"
 
 #: src/lib/graphOptions.ts:8
 msgid "Random"
@@ -305,7 +305,7 @@ msgstr "Zufällig"
 
 #: src/components/MenuNext.tsx:155
 msgid "Rename"
-msgstr ""
+msgstr "Umbenennen"
 
 #: src/components/Navigation.tsx:136
 #: src/components/Navigation.tsx:143
@@ -399,7 +399,7 @@ msgstr "Erneut versuchen"
 
 #: src/components/Navigation.tsx:238
 msgid "Updated"
-msgstr ""
+msgstr "Aktualisiert"
 
 #: src/components/SponsorDashboard.tsx:48
 msgid "User"

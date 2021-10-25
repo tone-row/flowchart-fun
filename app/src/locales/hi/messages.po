@@ -108,7 +108,7 @@ msgstr "सही लेबल टेक्स्ट का उपयोग क�
 
 #: src/components/Navigation.tsx:242
 msgid "Created"
-msgstr ""
+msgstr "बनाया गया"
 
 #: src/components/graphThemes.ts:9
 msgid "Dark"
@@ -250,7 +250,7 @@ msgstr "लाइट मोड"
 
 #: src/components/ShareDialog.tsx:69
 msgid "Link"
-msgstr ""
+msgstr "लिंक"
 
 #: src/components/Navigation.tsx:80
 msgid "Local Charts"
@@ -274,11 +274,11 @@ msgstr "दान करें"
 
 #: src/components/ShareDialog.tsx:56
 msgid "Make publicly accessible"
-msgstr ""
+msgstr "सार्वजनिक रूप से एक्सेस दें"
 
 #: src/components/Navigation.tsx:230
 msgid "Name"
-msgstr ""
+msgstr "नाम"
 
 #: src/components/SponsorDashboard.tsx:78
 #: src/components/SponsorDashboard.tsx:216
@@ -297,7 +297,7 @@ msgstr "पूर्व दर्शन"
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:64
 msgid "Public"
-msgstr ""
+msgstr "पब्लिक"
 
 #: src/lib/graphOptions.ts:8
 msgid "Random"
@@ -305,7 +305,7 @@ msgstr "अनियमित"
 
 #: src/components/MenuNext.tsx:155
 msgid "Rename"
-msgstr ""
+msgstr "फिर से नाम बदलें"
 
 #: src/components/Navigation.tsx:136
 #: src/components/Navigation.tsx:143
@@ -399,7 +399,7 @@ msgstr "फिर से कोशिश करें"
 
 #: src/components/Navigation.tsx:238
 msgid "Updated"
-msgstr ""
+msgstr "अपडेट किया गया"
 
 #: src/components/SponsorDashboard.tsx:48
 msgid "User"
