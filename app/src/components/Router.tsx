@@ -1,6 +1,7 @@
 import { lazy, memo } from "react";
 import { Route, RouteProps, Switch } from "react-router-dom";
 import Layout from "./Layout";
+import Public from "./Public";
 const Edit = lazy(() => import("./Edit"));
 const EditUserChart = lazy(() => import("./EditUserChart"));
 const ReadOnly = lazy(() => import("./ReadOnly"));
@@ -22,6 +23,9 @@ export default function Router() {
       </LayoutRoute>
       <LayoutRoute path="/f/:graphText?">
         <ReadOnly compressed={true} />
+      </LayoutRoute>
+      <LayoutRoute path="/p/:public_id">
+        <Public />
       </LayoutRoute>
       <LayoutRoute path="/:workspace">
         <Edit />

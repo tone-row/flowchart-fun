@@ -27,7 +27,12 @@ import {
   tooltipSize,
 } from "./Shared";
 import VisuallyHidden from "@reach/visually-hidden";
-import { useCurrentHostedChart, useLocalStorageText, useTitle } from "../hooks";
+import {
+  useCurrentHostedChart,
+  useIsReadOnly,
+  useLocalStorageText,
+  useTitle,
+} from "../hooks";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { queryClient, renameChart } from "../lib/queries";
@@ -128,6 +133,7 @@ const MenuTabButton = ({
 function WorkspaceSection() {
   const [title, isHosted] = useTitle();
   const Icon = isHosted ? Globe : Laptop;
+  const isReadOnly = useIsReadOnly();
   return (
     <Box
       flow="column"
@@ -161,7 +167,7 @@ function WorkspaceSection() {
         </Box>
       </Box>
       <Box flow="column" gap={1}>
-        <RenameButton />
+        {!isReadOnly && <RenameButton />}
         <ExportButton />
       </Box>
     </Box>
@@ -236,6 +242,7 @@ function RenameButton() {
           isOpen: dialog,
           onDismiss: () => setDialog(false),
           initialFocusRef: inputRef,
+          "aria-label": t`Rename`,
         }}
         innerBoxProps={{
           as: "form",

@@ -26,7 +26,7 @@ import {
   useCharts,
 } from "../lib/queries";
 import { formatDistanceStrict, parseISO } from "date-fns";
-import { Copy, Trash } from "phosphor-react";
+import { Check, Copy, Trash } from "phosphor-react";
 import Loading from "./Loading";
 import { useIsValidCustomer, useIsValidSponsor } from "../hooks";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
@@ -395,20 +395,27 @@ function HostedCharts() {
         <Box
           template="auto / minmax(0,1fr) repeat(1, 110px)"
           at={{
-            tablet: { template: "auto / minmax(0,1fr) repeat(2, 110px)" },
+            tablet: { template: "auto / minmax(0,1fr) repeat(3, 110px)" },
           }}
           px={3}
           gap={2}
           className={styles.LinkColumnTitles}
         >
           <Type size={-2} as="span">
-            Title
-          </Type>
-          <Type size={-2} as="span">
-            Updated
+            <Trans>Name</Trans>
           </Type>
           <Box display="none" at={{ tablet: { display: "block" } }}>
-            <Type size={-2}>Created</Type>
+            <Type size={-2}>
+              <Trans>Public</Trans>
+            </Type>
+          </Box>
+          <Type size={-2} as="span">
+            <Trans>Updated</Trans>
+          </Type>
+          <Box display="none" at={{ tablet: { display: "block" } }}>
+            <Type size={-2}>
+              <Trans>Created</Trans>
+            </Type>
           </Box>
         </Box>
         {validSponsor ? (
@@ -428,7 +435,7 @@ function HostedCharts() {
               items="center stretch"
               template="auto / minmax(0,1fr) repeat(1, 110px)"
               at={{
-                tablet: { template: "auto / minmax(0,1fr) repeat(2, 110px)" },
+                tablet: { template: "auto / minmax(0,1fr) repeat(3, 110px)" },
               }}
               gap={2}
               aria-current={
@@ -439,6 +446,13 @@ function HostedCharts() {
               <Type as="span" size={-1}>
                 {chart.name}
               </Type>
+              <Box
+                display="none"
+                at={{ tablet: { display: "block" } }}
+                self="normal end"
+              >
+                {chart.is_public ? <Check /> : <div />}
+              </Box>
               <Type as="span" size={-1} className={styles.NewChartLinkSubtext}>
                 {f(chart.updated_at)} ago
               </Type>

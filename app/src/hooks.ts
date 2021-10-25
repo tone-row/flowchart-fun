@@ -40,7 +40,18 @@ ${t`Have fun! 🎉`}
 
 export function useFullscreen() {
   const { pathname } = useLocation();
-  return pathname === "/f";
+  const { path } = useRouteMatch();
+  return pathname === "/f" || path === "/p/:public_id";
+}
+
+export function useIsReadOnly() {
+  const { path } = useRouteMatch();
+  return (
+    path === "/p/:public_id" ||
+    path === "/f" ||
+    path === "/c/:graphText?" ||
+    path === "/r/:graphText?"
+  );
 }
 
 export function useGraphTheme() {
@@ -130,13 +141,13 @@ export function useIsValidCustomer() {
   return Boolean(customer?.subscription);
 }
 
-export function useTitle(): [string, boolean] {
+export function useTitle(): [string, boolean, string | undefined] {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const { path, params } = useRouteMatch<{ id?: string }>();
   const id = params.id || undefined;
   const { data: chart } = useChart(id);
-  if (path === "/u/:id" && chart) return [chart.name, true];
-  return [workspace, false];
+  if (path === "/u/:id" && chart) return [chart.name, true, id];
+  return [workspace, false, undefined];
 }
 
 export function useCurrentHostedChart() {

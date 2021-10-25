@@ -116,7 +116,6 @@ export function parseText(
       }
     }
   }
-
   return elements;
 }
 

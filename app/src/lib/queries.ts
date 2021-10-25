@@ -1,4 +1,5 @@
 import { t } from "@lingui/macro";
+import { PostgrestError } from "@supabase/postgrest-js";
 import { useContext } from "react";
 import { QueryClient, useQuery } from "react-query";
 import Stripe from "stripe";
@@ -89,9 +90,14 @@ export async function login(email: string): Promise<boolean> {
       email,
     }),
   });
+  let result;
+  try {
+    result = await response.json();
+  } catch (e) {
+    console.log(e);
+  }
+  if (result?.error) throw result.error;
   if (!response.ok) throw new Error("Unable to connect");
-  const result = await response.json();
-  if (result.error) throw result.error;
   const { error: supabaseErr } = await supabase.auth.signIn({
     email,
   });
@@ -169,7 +175,7 @@ ${t`Have fun! 🎉`}
 async function userCharts() {
   const { data, error } = await supabase
     .from<definitions["user_charts"]>("user_charts")
-    .select("id,name,created_at,updated_at")
+    .select("id,name,created_at,updated_at,is_public")
     .order("updated_at", { ascending: false });
   if (error) throw error;
   return data;
@@ -189,7 +195,7 @@ async function getChart(id?: string) {
   if (!id) return;
   const { data, error } = await supabase
     .from<definitions["user_charts"]>("user_charts")
-    .select("id,name,chart,updated_at,created_at")
+    .select("id,name,chart,updated_at,created_at,public_id,is_public")
     .eq("id", id);
   if (error) throw error;
   if (!data || data.length === 0) throw new Error("Invalid Chart ID");
@@ -286,4 +292,77 @@ export async function renameChart(id: number, name: string) {
     .eq("id", id);
   if (error) throw error;
   return data;
+}
+
+export async function makeChartPublic(id: string, isPublic: boolean) {
+  const { data, error } = await supabase
+    .from("user_charts")
+    .select("is_public,public_id")
+    .eq("id", id);
+
+  if (error) throw error;
+  if (!data || data.length === 0) throw new Error("Invalid Chart");
+  const { is_public, public_id } = data[0];
+  if (is_public === isPublic) return;
+
+  let r;
+
+  // Generate public id if not already set
+  if (!public_id && isPublic) {
+    let error: PostgrestError | null = {
+      code: "23505",
+      message: "Duplicate key value violates unique constraint",
+      details: "",
+      hint: "",
+    };
+    // If unique violation, generate a new public id
+    let result;
+    while (error?.code === "23505") {
+      const publicId = await generatePublicId();
+      result = await supabase
+        .from<definitions["user_charts"]>("user_charts")
+        .update({ public_id: publicId, is_public: isPublic })
+        .eq("id", id);
+      error = result.error;
+    }
+
+    if (error) throw error;
+    r = result?.data;
+  } else {
+    // Just update is_public
+    const result = await supabase
+      .from<definitions["user_charts"]>("user_charts")
+      .update({ is_public: isPublic })
+      .eq("id", id);
+    if (result.error) throw result.error;
+    r = result.data;
+  }
+
+  return r;
+}
+async function generatePublicId(): Promise<string> {
+  const response = await fetch("/api/generate-public-id", {
+    mode: "cors",
+    credentials: "same-origin",
+    headers: { "Content-Type": "application/json" },
+  });
+  return response.json();
+}
+
+async function getPublicChart(publicId: string) {
+  const { data, error } = await fetch(`/api/public-chart/${publicId}`).then(
+    (result) => result.json()
+  );
+  if (error) throw error;
+  if (!data) throw new Error("Invalid Chart");
+  return data;
+}
+
+export function usePublicChart(publicId: string) {
+  return useQuery(["publicChart", publicId], () => getPublicChart(publicId), {
+    enabled: Boolean(publicId),
+    refetchOnMount: true,
+    staleTime: 0,
+    suspense: true,
+  });
 }

@@ -124,6 +124,8 @@ export interface paths {
           chart?: parameters["rowFilter.user_charts.chart"];
           updated_at?: parameters["rowFilter.user_charts.updated_at"];
           name?: parameters["rowFilter.user_charts.name"];
+          is_public?: parameters["rowFilter.user_charts.is_public"];
+          public_id?: parameters["rowFilter.user_charts.public_id"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -180,6 +182,8 @@ export interface paths {
           chart?: parameters["rowFilter.user_charts.chart"];
           updated_at?: parameters["rowFilter.user_charts.updated_at"];
           name?: parameters["rowFilter.user_charts.name"];
+          is_public?: parameters["rowFilter.user_charts.is_public"];
+          public_id?: parameters["rowFilter.user_charts.public_id"];
         };
         header: {
           /** Preference */
@@ -200,6 +204,8 @@ export interface paths {
           chart?: parameters["rowFilter.user_charts.chart"];
           updated_at?: parameters["rowFilter.user_charts.updated_at"];
           name?: parameters["rowFilter.user_charts.name"];
+          is_public?: parameters["rowFilter.user_charts.is_public"];
+          public_id?: parameters["rowFilter.user_charts.public_id"];
         };
         body: {
           /** user_charts */
@@ -242,6 +248,8 @@ export interface definitions {
     chart: string;
     updated_at: string;
     name: string;
+    is_public: boolean;
+    public_id?: string;
   };
 }
 
@@ -282,6 +290,8 @@ export interface parameters {
   "rowFilter.user_charts.chart": string;
   "rowFilter.user_charts.updated_at": string;
   "rowFilter.user_charts.name": string;
+  "rowFilter.user_charts.is_public": string;
+  "rowFilter.user_charts.public_id": string;
 }
 
 export interface operations {}
