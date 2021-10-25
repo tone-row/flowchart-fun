@@ -75,7 +75,7 @@ describe.only("User", async () => {
 
     const stream = await download.createReadStream();
     const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("2.png", { thres5old });
+    expect(buffer).toMatchSnapshot("2.png", { threshold: 0.5 });
 
     await page.click('button:has-text("Close")');
   });
@@ -125,7 +125,7 @@ describe.only("User", async () => {
 
     const stream = await download.createReadStream();
     const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("3.jpg", { thres5old });
+    expect(buffer).toMatchSnapshot("3.jpg", { threshold: 0.5 });
   });
 });
 
