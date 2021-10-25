@@ -45,7 +45,7 @@ describe.only("User", async () => {
 
     const stream = await download.createReadStream();
     const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("1.svg");
+    expect(buffer).toMatchSnapshot("1.svg", { threshold: 0.5 });
 
     // Close Modal
     await page.click('button:has-text("Close")');
@@ -75,7 +75,7 @@ describe.only("User", async () => {
 
     const stream = await download.createReadStream();
     const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("2.png");
+    expect(buffer).toMatchSnapshot("2.png", { thres5old });
 
     await page.click('button:has-text("Close")');
   });
@@ -125,7 +125,7 @@ describe.only("User", async () => {
 
     const stream = await download.createReadStream();
     const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("3.jpg");
+    expect(buffer).toMatchSnapshot("3.jpg", { thres5old });
   });
 });
 
