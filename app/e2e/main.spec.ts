@@ -17,11 +17,18 @@ describe.only("User", async () => {
     // Select All
     await page.press(".view-lines", "Meta+a");
 
-    // Delete
     await page.press(".view-lines", "Backspace");
-    await page.type(".view-lines", `hello\n  [test] world\n  (hello)\n`);
-    await page.press(".view-lines", "Meta+Backspace");
-    await page.type(".view-lines", `goodbye\n  (test)`);
+    await page.type(
+      ".view-lines",
+      `hello\n  to the: world\n    goodbye: (hello)\n`
+    );
+
+    await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
+
+    // Click text=Dagre
+    await page.click("text=Dagre");
+    // Click p:has-text("Breadthfirst")
+    await page.click('p:has-text("Breadthfirst")');
   });
 
   // Add test for changing name of local chart
@@ -45,8 +52,8 @@ describe.only("User", async () => {
   });
 
   test("can change layout", async () => {
-    await page.click("text=DagreTop to Bottom >> :nth-match(svg, 2)");
-    // Click p:has-text("Circle")
+    await page.click('p:has-text("Breadthfirst")');
+
     await page.click('p:has-text("Circle")');
 
     // Need to wait

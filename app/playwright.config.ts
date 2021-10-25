@@ -10,7 +10,6 @@ const config: PlaywrightTestConfig = {
     },
     // Development
     // headless: false,
-    // launchOptions: { slowMo: 10 },
   },
 };
 
