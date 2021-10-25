@@ -66,7 +66,7 @@ export default function ShareDialog() {
             gap={2}
           >
             <Type as="label" htmlFor="isPublic" size={-1}>
-              <Trans>Make publically accessible</Trans>
+              <Trans>Make publicly accessible</Trans>
             </Type>
             <input
               type="checkbox"

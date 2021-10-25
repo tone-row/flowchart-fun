@@ -48,8 +48,8 @@ msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
 #: src/components/Navigation.tsx:142
-#: src/components/Navigation.tsx:335
-#: src/components/Navigation.tsx:370
+#: src/components/Navigation.tsx:345
+#: src/components/Navigation.tsx:380
 #: src/components/SponsorDashboard.tsx:107
 #: src/components/SponsorDashboard.tsx:115
 #: src/components/SponsorDashboard.tsx:177
@@ -63,7 +63,7 @@ msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
 #: src/components/MenuNext.tsx:53
-#: src/components/MenuNext.tsx:102
+#: src/components/MenuNext.tsx:103
 msgid "Charts"
 msgstr "चार्ट"
 
@@ -88,11 +88,10 @@ msgstr "गाढ़ा"
 msgid "Contract"
 msgstr "सिकोड़ना"
 
-#: src/components/Navigation.tsx:288
-#: src/components/Navigation.tsx:336
-#: src/components/Navigation.tsx:360
-#: src/components/ShareDialog.tsx:34
-#: src/components/ShareDialog.tsx:89
+#: src/components/Navigation.tsx:298
+#: src/components/Navigation.tsx:346
+#: src/components/Navigation.tsx:370
+#: src/components/ShareDialog.tsx:124
 msgid "Copy"
 msgstr "कॉपी करें"
 
@@ -103,9 +102,13 @@ msgid "Create"
 msgstr "बनाएँ"
 
 #: src/hooks.ts:20
-#: src/lib/queries.ts:137
+#: src/lib/queries.ts:143
 msgid "Create a link directly using the exact label text"
 msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
+
+#: src/components/Navigation.tsx:242
+msgid "Created"
+msgstr ""
 
 #: src/components/graphThemes.ts:9
 msgid "Dark"
@@ -123,7 +126,7 @@ msgstr "तारीख़"
 #: src/components/Navigation.tsx:133
 #: src/components/Navigation.tsx:136
 #: src/components/Navigation.tsx:143
-#: src/components/Navigation.tsx:371
+#: src/components/Navigation.tsx:381
 msgid "Delete"
 msgstr "हटाएँ"
 
@@ -135,19 +138,19 @@ msgstr "दिशा"
 msgid "Do you want to cancel your subscription?"
 msgstr "क्या आप अपनी सदस्यता रद्द करना चाहते हैं?"
 
-#: src/components/Navigation.tsx:364
+#: src/components/Navigation.tsx:374
 msgid "Do you want to delete this?"
 msgstr "क्या आप इसे डिलीट करना चाहते हैं?"
 
 #: src/components/Share.tsx:10
 #: src/components/Share.tsx:11
 #: src/components/Share.tsx:12
-#: src/components/ShareDialog.tsx:43
+#: src/components/ShareDialog.tsx:78
 msgid "Download"
 msgstr "डाउनलोड"
 
 #: src/components/Navigation.tsx:164
-#: src/components/Navigation.tsx:325
+#: src/components/Navigation.tsx:335
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
 
@@ -172,13 +175,13 @@ msgstr "ईमेल (ऐच्छिक)"
 msgid "Expand"
 msgstr "फैलाव"
 
-#: src/components/MenuNext.tsx:180
-#: src/components/ShareDialog.tsx:25
+#: src/components/MenuNext.tsx:182
+#: src/components/ShareDialog.tsx:40
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
 #: src/components/MenuNext.tsx:60
-#: src/components/MenuNext.tsx:98
+#: src/components/MenuNext.tsx:99
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
@@ -186,7 +189,7 @@ msgstr "फ़ीडबैक"
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
-#: src/components/ShareDialog.tsx:37
+#: src/components/ShareDialog.tsx:72
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
@@ -199,7 +202,7 @@ msgid "Grid"
 msgstr "ग्रिड"
 
 #: src/hooks.ts:30
-#: src/lib/queries.ts:147
+#: src/lib/queries.ts:153
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
@@ -220,7 +223,7 @@ msgid "Hosted Charts"
 msgstr "होस्ट किए गए चार्ट"
 
 #: src/hooks.ts:18
-#: src/lib/queries.ts:135
+#: src/lib/queries.ts:141
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
@@ -245,6 +248,10 @@ msgstr "लाइट"
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
+#: src/components/ShareDialog.tsx:69
+msgid "Link"
+msgstr ""
+
 #: src/components/Navigation.tsx:80
 msgid "Local Charts"
 msgstr "लोकल चार्ट"
@@ -265,6 +272,14 @@ msgstr "<0>Tone Row</0> द्वारा बना"
 msgid "Make a Donation"
 msgstr "दान करें"
 
+#: src/components/ShareDialog.tsx:56
+msgid "Make publicly accessible"
+msgstr ""
+
+#: src/components/Navigation.tsx:230
+msgid "Name"
+msgstr ""
+
 #: src/components/SponsorDashboard.tsx:78
 #: src/components/SponsorDashboard.tsx:216
 msgid "Next charge"
@@ -274,13 +289,23 @@ msgstr "अगला चार्ज"
 msgid "Open Share Link"
 msgstr "शेयर लिंक खोलें"
 
-#: src/components/ShareDialog.tsx:53
+#: src/components/ShareDialog.tsx:88
 msgid "Preview"
 msgstr "पूर्व दर्शन"
+
+#: src/components/Navigation.tsx:234
+#: src/components/ShareDialog.tsx:52
+#: src/components/ShareDialog.tsx:64
+msgid "Public"
+msgstr ""
 
 #: src/lib/graphOptions.ts:8
 msgid "Random"
 msgstr "अनियमित"
+
+#: src/components/MenuNext.tsx:155
+msgid "Rename"
+msgstr ""
 
 #: src/components/Navigation.tsx:136
 #: src/components/Navigation.tsx:143
@@ -303,7 +328,7 @@ msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
 #: src/components/MenuNext.tsx:59
-#: src/components/MenuNext.tsx:100
+#: src/components/MenuNext.tsx:101
 msgid "Settings"
 msgstr "सेटिंग"
 
@@ -317,7 +342,7 @@ msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the 
 msgstr "होस्टेड फ़्लोचार्ट और नए स्टाइल और फ़ीचर को एक्सेस करने के लिए flowchart.fun को 1$ प्रति माह देकर स्पॉन्सर करें"
 
 #: src/components/MenuNext.tsx:61
-#: src/components/MenuNext.tsx:104
+#: src/components/MenuNext.tsx:105
 msgid "Sponsors"
 msgstr "स्पॉन्सर्स"
 
@@ -331,7 +356,7 @@ msgstr "स्टेटस"
 
 #: src/components/Feedback.tsx:56
 #: src/components/Login.tsx:37
-#: src/components/MenuNext.tsx:165
+#: src/components/MenuNext.tsx:167
 msgid "Submit"
 msgstr "भेजना"
 
@@ -360,7 +385,7 @@ msgid "These charts are only available in this browser on this device. Clearing 
 msgstr "ये चार्ट सिर्फ़ इस ब्राउज़र में इस डिवाइस पर उपलब्ध हैं. ब्राउज़र क्लियर करने से {localStorage} ये सब मिट जाएगा."
 
 #: src/hooks.ts:17
-#: src/lib/queries.ts:134
+#: src/lib/queries.ts:140
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
@@ -371,6 +396,10 @@ msgstr "ऊपर से नीचे"
 #: src/App.tsx:48
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
+
+#: src/components/Navigation.tsx:238
+msgid "Updated"
+msgstr ""
 
 #: src/components/SponsorDashboard.tsx:48
 msgid "User"
@@ -396,7 +425,7 @@ msgstr "क्या आप इस कॉपी को नाम देना �
 msgid "What would you like to share with us?"
 msgstr "आप हमारे साथ क्या शेयर करना चाहेंगे?"
 
-#: src/components/ShareDialog.tsx:38
+#: src/components/ShareDialog.tsx:73
 msgid "With Editor"
 msgstr "एडिटर के साथ"
 
@@ -406,41 +435,41 @@ msgid "Your subscription is no longer active. If you want to create and edit hos
 msgstr "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें."
 
 #: src/hooks.ts:22
-#: src/lib/queries.ts:139
+#: src/lib/queries.ts:145
 msgid "[custom ID] or"
 msgstr "[कस्टम ID] या"
 
 #: src/hooks.ts:19
-#: src/lib/queries.ts:136
+#: src/lib/queries.ts:142
 msgid "any text: before a colon creates a label"
 msgstr "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है"
 
 #: src/hooks.ts:23
-#: src/lib/queries.ts:140
+#: src/lib/queries.ts:146
 msgid "by adding an [ID] and referencing that"
 msgstr "एक [ID] जोड़कर संदर्भित है और उस"
 
 #: src/hooks.ts:28
-#: src/lib/queries.ts:145
+#: src/lib/queries.ts:151
 msgid "comments"
 msgstr "कमेंट को"
 
 #: src/hooks.ts:21
-#: src/lib/queries.ts:138
+#: src/lib/queries.ts:144
 msgid "like this: (This app works by typing)"
 msgstr "इस तरह: (यह ऐप टाइप द्वारा काम करता है)"
 
 #: src/hooks.ts:24
-#: src/lib/queries.ts:141
+#: src/lib/queries.ts:147
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "इस तरह: (कस्टम ID) // आप सिंगल-लाइन टिप्पणियों का भी उपयोग कर सकते हैं"
 
 #: src/hooks.ts:27
-#: src/lib/queries.ts:144
+#: src/lib/queries.ts:150
 msgid "multiline"
 msgstr "एक से अधिक लाइन"
 
 #: src/hooks.ts:26
-#: src/lib/queries.ts:143
+#: src/lib/queries.ts:149
 msgid "or"
 msgstr "या"
