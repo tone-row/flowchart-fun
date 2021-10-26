@@ -36,7 +36,11 @@ export function LoginForm() {
         <Box gap={2}>
           <Box template="auto / minmax(0, 1fr) auto" gap={2}>
             <Input
-              {...register("email", { required: true })}
+              type="email"
+              {...register("email", {
+                required: true,
+                setValueAs: (t) => t.toLowerCase(),
+              })}
               disabled={isLoading}
               placeholder={t`Email`}
               isLoading={isLoading}
