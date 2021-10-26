@@ -18,10 +18,7 @@ describe.only("User", async () => {
     await page.press(".view-lines", "Meta+a");
 
     await page.press(".view-lines", "Backspace");
-    await page.type(
-      ".view-lines",
-      `hello\n  to the: world\n    goodbye: (hello)\n`
-    );
+    await page.type(".view-lines", `hello\n  to the: world`);
 
     await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
 
