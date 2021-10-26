@@ -1,11 +1,10 @@
 import { ReactNode, useCallback, useContext, useState } from "react";
 import { Box, Type, TypeProps } from "../slang";
 import { Button, Dialog, Notice, Page, Section, SectionTitle } from "./Shared";
-import styles from "./Login.module.css";
 import { supabase } from "../supabaseClient";
 import { AppContext } from "./AppContext";
 import { formatCents, formatDate, formatRelative } from "../lib/helpers";
-import classes from "./SponsorDashboard.module.css";
+import styles from "./SponsorDashboard.module.css";
 import Spinner from "./Spinner";
 import {
   createSubscription,
@@ -140,7 +139,7 @@ export function SponsorDashboard() {
         <SectionTitle>
           <Trans>History</Trans>
         </SectionTitle>
-        <Box as="table" className={classes.InvoicesTable} rad={1}>
+        <Box as="table" className={styles.InvoicesTable} rad={1}>
           <colgroup>
             <col width="50%" />
             <col width="50%" />
@@ -185,7 +184,7 @@ const Td = ({
   children: ReactNode;
   typeProps?: TypeProps;
 }) => (
-  <Box as="td" px={3} py={2} display="table-cell" className={classes.TableCell}>
+  <Box as="td" px={3} py={2} display="table-cell" className={styles.TableCell}>
     <Type as="span" size={-1} {...typeProps}>
       {children}
     </Type>
@@ -326,7 +325,7 @@ function BecomeASponsor() {
       flow="column"
       gap={2}
     >
-      <Box p={2} px={3} rad={1} className={classes.CardEl}>
+      <Box p={2} px={3} rad={1} className={styles.CardEl}>
         <CardElement
           options={{
             style: {
@@ -348,5 +347,5 @@ function BecomeASponsor() {
 }
 
 function InfoCell({ children }: { children: ReactNode }) {
-  return <Type className={classes.InfoCell}>{children}</Type>;
+  return <Type className={styles.InfoCell}>{children}</Type>;
 }

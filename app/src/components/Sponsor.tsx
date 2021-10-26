@@ -1,5 +1,5 @@
 import { Box, Type } from "../slang";
-import { LoginForm } from "./Login";
+import { LoginForm } from "./LoginForm";
 import { SponsorDashboard } from "./SponsorDashboard";
 import { Button, Input, Notice, Page, Section, SectionTitle } from "./Shared";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";

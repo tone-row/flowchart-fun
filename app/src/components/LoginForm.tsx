@@ -1,18 +1,11 @@
-import { useCallback, useContext, useState } from "react";
+import { useCallback, useState } from "react";
 import { Box, Type } from "../slang";
 import { Button, Input, Notice, Section, SectionTitle } from "./Shared";
 import { useForm } from "react-hook-form";
-import { AppContext } from "./AppContext";
-import { SponsorDashboard } from "./SponsorDashboard";
 import { useMutation } from "react-query";
 import { login } from "../lib/queries";
 import { isError } from "../lib/helpers";
 import { t, Trans } from "@lingui/macro";
-
-export default function Login() {
-  const { session } = useContext(AppContext);
-  return !session ? <LoginForm /> : <SponsorDashboard />;
-}
 
 export function LoginForm() {
   const { register, handleSubmit } = useForm();
