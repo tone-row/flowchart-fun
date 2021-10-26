@@ -13,27 +13,29 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Feedback.tsx:23
+#: src/components/Navigation.tsx:209
+msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
+msgstr "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
+
+#: src/components/SponsorDashboard.tsx:132
+msgid "Amount"
+msgstr "Amount"
+
+#: src/components/Feedback.tsx:58
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "An error occurred. Try resubmitting or email {0} directly."
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:67
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/components/Navigation.tsx:134
-msgid "Are you sure you want to delete this?"
-msgstr "Are you sure you want to delete this?"
-
-#: src/components/Navigation.tsx:133
-msgid "Are you sure you want to reset this?"
-msgstr "Are you sure you want to reset this?"
-
-#: src/components/Feedback.tsx:105
+#: src/components/Feedback.tsx:70
 msgid "Back To Editor"
 msgstr "Back To Editor"
 
-#: src/components/Settings.tsx:99
+#: src/components/Settings.tsx:91
+#: src/components/Sponsor.tsx:38
+#: src/components/SponsorDashboard.tsx:55
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
@@ -46,19 +48,35 @@ msgid "Breadthfirst"
 msgstr "Breadthfirst"
 
 #: src/components/Navigation.tsx:142
+#: src/components/Navigation.tsx:345
+#: src/components/Navigation.tsx:380
+#: src/components/SponsorDashboard.tsx:107
+#: src/components/SponsorDashboard.tsx:115
+#: src/components/SponsorDashboard.tsx:177
+#: src/components/SponsorDashboard.tsx:184
+#: src/components/SponsorDashboard.tsx:219
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/components/MenuNext.tsx:39
-#: src/components/MenuNext.tsx:83
+#: src/components/SponsorDashboard.tsx:110
+msgid "Cancel your subscription. Your hosted charts will become read-only."
+msgstr "Cancel your subscription. Your hosted charts will become read-only."
+
+#: src/components/MenuNext.tsx:53
+#: src/components/MenuNext.tsx:103
 msgid "Charts"
 msgstr "Charts"
+
+#: src/components/Login.tsx:30
+#: src/components/Sponsor.tsx:104
+msgid "Check your email for a link to log in. You can close this window."
+msgstr "Check your email for a link to log in. You can close this window."
 
 #: src/lib/graphOptions.ts:7
 msgid "Circle"
 msgstr "Circle"
 
-#: src/components/Shared.tsx:68
+#: src/components/Shared.tsx:71
 msgid "Close"
 msgstr "Close"
 
@@ -70,35 +88,45 @@ msgstr "Concentric"
 msgid "Contract"
 msgstr "Contract"
 
-#: src/components/ShareDialog.tsx:34
-#: src/components/ShareDialog.tsx:96
+#: src/components/Navigation.tsx:298
+#: src/components/Navigation.tsx:346
+#: src/components/Navigation.tsx:370
+#: src/components/ShareDialog.tsx:124
 msgid "Copy"
 msgstr "Copy"
 
-#: src/components/Navigation.tsx:75
-#: src/components/Navigation.tsx:183
+#: src/components/Navigation.tsx:97
+#: src/components/Navigation.tsx:179
+#: src/components/Navigation.tsx:214
 msgid "Create"
 msgstr "Create"
 
-#: src/components/Navigation.tsx:68
-msgid "Create a New Chart"
-msgstr "Create a New Chart"
-
-#: src/hooks.ts:18
+#: src/hooks.ts:20
+#: src/lib/queries.ts:143
 msgid "Create a link directly using the exact label text"
 msgstr "Create a link directly using the exact label text"
+
+#: src/components/Navigation.tsx:242
+msgid "Created"
+msgstr "Created"
 
 #: src/components/graphThemes.ts:9
 msgid "Dark"
 msgstr "Dark"
 
-#: src/components/Settings.tsx:78
+#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:71
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/components/Navigation.tsx:108
-#: src/components/Navigation.tsx:128
-#: src/components/Navigation.tsx:145
+#: src/components/SponsorDashboard.tsx:129
+msgid "Date"
+msgstr "Date"
+
+#: src/components/Navigation.tsx:133
+#: src/components/Navigation.tsx:136
+#: src/components/Navigation.tsx:143
+#: src/components/Navigation.tsx:381
 msgid "Delete"
 msgstr "Delete"
 
@@ -106,22 +134,27 @@ msgstr "Delete"
 msgid "Direction"
 msgstr "Direction"
 
-#: src/components/Share.tsx:13
-#: src/components/Share.tsx:16
-#: src/components/Share.tsx:19
+#: src/components/SponsorDashboard.tsx:180
+msgid "Do you want to cancel your subscription?"
+msgstr "Do you want to cancel your subscription?"
+
+#: src/components/Navigation.tsx:374
+msgid "Do you want to delete this?"
+msgstr "Do you want to delete this?"
+
+#: src/components/Share.tsx:10
+#: src/components/Share.tsx:11
+#: src/components/Share.tsx:12
+#: src/components/ShareDialog.tsx:78
 msgid "Download"
 msgstr "Download"
 
-#: src/components/ShareDialog.tsx:43
-msgid "Download Image"
-msgstr "Download Image"
-
-#: src/components/Navigation.tsx:105
-#: src/components/Navigation.tsx:167
+#: src/components/Navigation.tsx:164
+#: src/components/Navigation.tsx:335
 msgid "Duplicate"
 msgstr "Duplicate"
 
-#: src/components/MenuNext.tsx:38
+#: src/components/MenuNext.tsx:52
 #: src/components/MobileTabToggle.tsx:11
 msgid "Editor"
 msgstr "Editor"
@@ -130,7 +163,11 @@ msgstr "Editor"
 msgid "Eggs"
 msgstr "Eggs"
 
-#: src/components/Feedback.tsx:84
+#: src/components/Login.tsx:36
+msgid "Email"
+msgstr "Email"
+
+#: src/components/Feedback.tsx:52
 msgid "Email (optional)"
 msgstr "Email (optional)"
 
@@ -138,21 +175,21 @@ msgstr "Email (optional)"
 msgid "Expand"
 msgstr "Expand"
 
-#: src/components/MenuNext.tsx:96
-#: src/components/ShareDialog.tsx:25
+#: src/components/MenuNext.tsx:182
+#: src/components/ShareDialog.tsx:40
 msgid "Export"
 msgstr "Export"
 
-#: src/components/MenuNext.tsx:46
-#: src/components/MenuNext.tsx:79
+#: src/components/MenuNext.tsx:60
+#: src/components/MenuNext.tsx:99
 msgid "Feedback"
 msgstr "Feedback"
 
-#: src/components/Settings.tsx:90
+#: src/components/Settings.tsx:82
 msgid "Follow Us"
 msgstr "Follow Us"
 
-#: src/components/ShareDialog.tsx:37
+#: src/components/ShareDialog.tsx:72
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
@@ -164,15 +201,29 @@ msgstr "Graph"
 msgid "Grid"
 msgstr "Grid"
 
-#: src/hooks.ts:28
+#: src/hooks.ts:30
+#: src/lib/queries.ts:153
 msgid "Have fun! 🎉"
 msgstr "Have fun! 🎉"
 
-#: src/components/Edit.tsx:103
+#: src/components/Edit.tsx:104
 msgid "Help"
 msgstr "Help"
 
-#: src/hooks.ts:16
+#: src/components/SponsorDashboard.tsx:119
+msgid "History"
+msgstr "History"
+
+#: src/App.tsx:51
+msgid "Home"
+msgstr "Home"
+
+#: src/components/Navigation.tsx:208
+msgid "Hosted Charts"
+msgstr "Hosted Charts"
+
+#: src/hooks.ts:18
+#: src/lib/queries.ts:141
 msgid "Indenting creates a link to the current line"
 msgstr "Indenting creates a link to the current line"
 
@@ -192,48 +243,136 @@ msgstr "Left to Right"
 msgid "Light"
 msgstr "Light"
 
-#: src/components/Settings.tsx:75
+#: src/components/Settings.tsx:70
+#: src/components/Settings.tsx:70
 msgid "Light Mode"
 msgstr "Light Mode"
 
-#: src/components/Settings.tsx:84
+#: src/components/ShareDialog.tsx:69
+msgid "Link"
+msgstr "Link"
+
+#: src/components/Navigation.tsx:80
+msgid "Local Charts"
+msgstr "Local Charts"
+
+#: src/components/Login.tsx:26
+msgid "Log In"
+msgstr "Log In"
+
+#: src/components/SponsorDashboard.tsx:51
+msgid "Log Out"
+msgstr "Log Out"
+
+#: src/components/Settings.tsx:76
 msgid "Made by <0>Tone Row</0>"
 msgstr "Made by <0>Tone Row</0>"
 
-#: src/components/Settings.tsx:96
+#: src/components/Settings.tsx:88
 msgid "Make a Donation"
 msgstr "Make a Donation"
 
-#: src/components/Share.tsx:10
+#: src/components/ShareDialog.tsx:56
+msgid "Make publicly accessible"
+msgstr "Make publicly accessible"
+
+#: src/components/Navigation.tsx:230
+msgid "Name"
+msgstr "Name"
+
+#: src/components/SponsorDashboard.tsx:78
+#: src/components/SponsorDashboard.tsx:216
+msgid "Next charge"
+msgstr "Next charge"
+
+#: src/components/Share.tsx:9
 msgid "Open Share Link"
 msgstr "Open Share Link"
 
-#: src/components/ShareDialog.tsx:59
+#: src/components/ShareDialog.tsx:88
 msgid "Preview"
 msgstr "Preview"
+
+#: src/components/Navigation.tsx:234
+#: src/components/ShareDialog.tsx:52
+#: src/components/ShareDialog.tsx:64
+msgid "Public"
+msgstr "Public"
 
 #: src/lib/graphOptions.ts:8
 msgid "Random"
 msgstr "Random"
 
-#: src/components/Navigation.tsx:108
-#: src/components/Navigation.tsx:145
+#: src/components/MenuNext.tsx:155
+msgid "Rename"
+msgstr "Rename"
+
+#: src/components/Navigation.tsx:136
+#: src/components/Navigation.tsx:143
 msgid "Reset"
 msgstr "Reset"
+
+#: src/components/SponsorDashboard.tsx:100
+#: src/components/SponsorDashboard.tsx:212
+#: src/components/SponsorDashboard.tsx:214
+#: src/components/SponsorDashboard.tsx:220
+msgid "Resume Subscription"
+msgstr "Resume Subscription"
+
+#: src/components/SponsorDashboard.tsx:183
+msgid "Return"
+msgstr "Return"
 
 #: src/lib/graphOptions.ts:14
 msgid "Right to Left"
 msgstr "Right to Left"
 
-#: src/components/Feedback.tsx:89
+#: src/components/MenuNext.tsx:59
+#: src/components/MenuNext.tsx:101
+msgid "Settings"
+msgstr "Settings"
+
+#: src/components/Sponsor.tsx:121
+msgid "Sign Up"
+msgstr "Sign Up"
+
+#: src/components/Navigation.tsx:85
+#: src/components/Sponsor.tsx:41
+msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
+msgstr "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
+
+#: src/components/MenuNext.tsx:61
+#: src/components/MenuNext.tsx:105
+msgid "Sponsors"
+msgstr "Sponsors"
+
+#: src/components/SponsorDashboard.tsx:88
+msgid "Start"
+msgstr "Start"
+
+#: src/components/SponsorDashboard.tsx:71
+msgid "Status"
+msgstr "Status"
+
+#: src/components/Feedback.tsx:56
+#: src/components/Login.tsx:37
+#: src/components/MenuNext.tsx:167
 msgid "Submit"
 msgstr "Submit"
+
+#: src/components/SponsorDashboard.tsx:67
+msgid "Subscription"
+msgstr "Subscription"
+
+#: src/components/SponsorDashboard.tsx:97
+msgid "Subscription will end"
+msgstr "Subscription will end"
 
 #: src/components/HasError.tsx:12
 msgid "Text Invalid"
 msgstr "Text Invalid"
 
-#: src/components/Feedback.tsx:102
+#: src/components/Feedback.tsx:68
 msgid "Thank you for your feedback!"
 msgstr "Thank you for your feedback!"
 
@@ -241,7 +380,12 @@ msgstr "Thank you for your feedback!"
 msgid "Theme"
 msgstr "Theme"
 
-#: src/hooks.ts:15
+#: src/components/Navigation.tsx:81
+msgid "These charts are only available in this browser on this device. Clearing your browser {localStorage} will erase these."
+msgstr "These charts are only available in this browser on this device. Clearing your browser {localStorage} will erase these."
+
+#: src/hooks.ts:17
+#: src/lib/queries.ts:140
 msgid "This app works by typing"
 msgstr "This app works by typing"
 
@@ -249,63 +393,83 @@ msgstr "This app works by typing"
 msgid "Top to Bottom"
 msgstr "Top to Bottom"
 
-#: src/components/MenuNext.tsx:45
-#: src/components/MenuNext.tsx:81
-msgid "User Preferences"
-msgstr "User Preferences"
+#: src/App.tsx:48
+msgid "Try again"
+msgstr "Try again"
 
-#: src/components/Settings.tsx:93
+#: src/components/Navigation.tsx:238
+msgid "Updated"
+msgstr "Updated"
+
+#: src/components/SponsorDashboard.tsx:48
+msgid "User"
+msgstr "User"
+
+#: src/components/Settings.tsx:85
 msgid "View on Github"
 msgstr "View on Github"
 
-#: src/components/Feedback.tsx:71
+#: src/components/Feedback.tsx:39
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 
-#: src/components/Navigation.tsx:175
+#: src/components/Sponsor.tsx:124
+msgid "We use cookies to keep you logged in."
+msgstr "We use cookies to keep you logged in."
+
+#: src/components/Navigation.tsx:172
 msgid "What would you like to name this copy?"
 msgstr "What would you like to name this copy?"
 
-#: src/components/Feedback.tsx:78
+#: src/components/Feedback.tsx:46
 msgid "What would you like to share with us?"
 msgstr "What would you like to share with us?"
 
-#: src/components/ShareDialog.tsx:38
+#: src/components/ShareDialog.tsx:73
 msgid "With Editor"
 msgstr "With Editor"
 
-#: src/components/Navigation.tsx:84
-msgid "Your Charts"
-msgstr "Your Charts"
+#: src/components/Navigation.tsx:220
+#: src/components/SponsorDashboard.tsx:58
+msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
+msgstr "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 
-#: src/hooks.ts:20
+#: src/hooks.ts:22
+#: src/lib/queries.ts:145
 msgid "[custom ID] or"
 msgstr "[custom ID] or"
 
-#: src/hooks.ts:17
+#: src/hooks.ts:19
+#: src/lib/queries.ts:142
 msgid "any text: before a colon creates a label"
 msgstr "any text: before a colon creates a label"
 
-#: src/hooks.ts:21
+#: src/hooks.ts:23
+#: src/lib/queries.ts:146
 msgid "by adding an [ID] and referencing that"
 msgstr "by adding an [ID] and referencing that"
 
-#: src/hooks.ts:26
+#: src/hooks.ts:28
+#: src/lib/queries.ts:151
 msgid "comments"
 msgstr "comments"
 
-#: src/hooks.ts:19
+#: src/hooks.ts:21
+#: src/lib/queries.ts:144
 msgid "like this: (This app works by typing)"
 msgstr "like this: (This app works by typing)"
 
-#: src/hooks.ts:22
+#: src/hooks.ts:24
+#: src/lib/queries.ts:147
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "like this: (custom ID) // You can also use single-line comments"
 
-#: src/hooks.ts:25
+#: src/hooks.ts:27
+#: src/lib/queries.ts:150
 msgid "multiline"
 msgstr "multiline"
 
-#: src/hooks.ts:24
+#: src/hooks.ts:26
+#: src/lib/queries.ts:149
 msgid "or"
 msgstr "or"

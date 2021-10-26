@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 800px;
   justify-self: center;
+  position: relative;
 }
 
 .ChartLink [class*="slang-type"] {
@@ -59,4 +60,57 @@
 
 .ChartList {
   border: 1px solid var(--color-uiAccent);
+}
+
+.NewChartLink,
+.IconButton {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.NewChartLink[aria-current="location"] {
+  border-color: transparent;
+  background-color: var(--color-highlightColor);
+  color: white;
+}
+
+.NewChartLink:focus-visible {
+  outline: hsla(var(--color-brandHsl), 1) invert 1px;
+}
+
+.NewChartLinkSubtext,
+.NewChartLinkSubtext p {
+  text-align: right;
+}
+
+.LinkColumnTitles {
+  color: var(--color-lineNumbers);
+}
+
+.LinkColumnTitles span,
+.LinkColumnTitles p {
+  text-align: right;
+}
+
+.LinkColumnTitles span:first-child {
+  text-align: left;
+}
+
+.IconButton {
+  min-width: 0;
+}
+.NewChartLink span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.CallOut {
+  transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 300ms;
+  background-color: hsla(var(--color-brandHsl), 0.1);
+}
+.CallOut:hover,
+.CallOut:focus-visible,
+.CallOut:focus {
+  color: hsla(var(--color-brandHsl), 1);
+  box-shadow: none;
 }

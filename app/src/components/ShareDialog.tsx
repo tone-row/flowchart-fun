@@ -12,12 +12,31 @@ import { Check, LinkSimple } from "phosphor-react";
 import styles from "./ShareDialog.module.css";
 import { t, Trans } from "@lingui/macro";
 import { Button, Dialog } from "./Shared";
+import { useTitle } from "../hooks";
+import { useMutation } from "react-query";
+import { makeChartPublic, queryClient, useChart } from "../lib/queries";
+import Spinner from "./Spinner";
 
 export default function ShareDialog() {
+  const [_, isHosted, id] = useTitle();
+  const { data: chart } = useChart(id);
   const { shareModal, setShareModal, shareLink } = useContext(AppContext);
   const close = useCallback(() => setShareModal(false), [setShareModal]);
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const withEditor = `${new URL(window.location.href).origin}/c#${shareLink}`;
+  const makePublic = useMutation(
+    "makeChartPublic",
+    async (isPublic: boolean) => {
+      if (isHosted && id) {
+        await makeChartPublic(id, isPublic);
+      }
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["useChart", id]);
+      },
+    }
+  );
   return (
     <Dialog
       dialogProps={{
@@ -28,13 +47,51 @@ export default function ShareDialog() {
       innerBoxProps={{
         gap: 6,
         at: {
-          tablet: { template: "auto / repeat(3, minmax(0, 1fr))", gap: 10 },
+          tablet: {
+            template: "auto / repeat(auto-fill, minmax(200px, 1fr))",
+            gap: 10,
+          },
         },
       }}
     >
+      {isHosted && (
+        <Column>
+          <Title>
+            <Trans>Public</Trans>
+          </Title>
+          <Box
+            flow="column"
+            content="normal start"
+            items="center stretch"
+            gap={2}
+          >
+            <Type as="label" htmlFor="isPublic" size={-1}>
+              <Trans>Make publicly accessible</Trans>
+            </Type>
+            <input
+              type="checkbox"
+              name="isPublic"
+              id="isPublic"
+              defaultChecked={chart?.is_public}
+              onChange={(e) => {
+                makePublic.mutate(e.target.checked);
+              }}
+            />
+            {makePublic.isLoading && <Spinner />}
+          </Box>
+          {chart?.is_public && (
+            <Box>
+              <LinkCopy
+                value={`${window.location.origin}/p/${chart.public_id}`}
+                title={t`Public`}
+              />
+            </Box>
+          )}
+        </Column>
+      )}
       <Column>
         <Title>
-          <Trans>Copy</Trans> URL
+          <Trans>Link</Trans>
         </Title>
         <Box gap={4}>
           <LinkCopy value={fullscreen} title={t`Fullscreen`} />
@@ -43,18 +100,24 @@ export default function ShareDialog() {
       </Column>
       <Column>
         <Title>
-          <Trans>Download Image</Trans>
+          <Trans>Download</Trans>
         </Title>
         <Box gap={2}>
-          <Button onClick={window.flowchartFunDownloadSVG} aria-label="SVG">
-            SVG
-          </Button>
-          <Button onClick={window.flowchartFunDownloadPNG} aria-label="PNG">
-            PNG
-          </Button>
-          <Button onClick={window.flowchartFunDownloadJPG} aria-label="JPG">
-            JPG
-          </Button>
+          <Button
+            onClick={window.flowchartFunDownloadSVG}
+            aria-label="SVG"
+            text="SVG"
+          />
+          <Button
+            onClick={window.flowchartFunDownloadPNG}
+            aria-label="PNG"
+            text="PNG"
+          />
+          <Button
+            onClick={window.flowchartFunDownloadJPG}
+            aria-label="JPG"
+            text="JPG"
+          />
         </Box>
       </Column>
       <Column>
@@ -132,9 +195,8 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
               })();
             }}
             className={styles.LinkCopyButton}
-          >
-            <Trans>Copy</Trans>
-          </Button>
+            text={t`Copy`}
+          />
         </Box>
       </Box>
     </Box>

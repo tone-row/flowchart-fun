@@ -1,15 +1,25 @@
 import { CSSProperties } from "react";
 import style from "./Spinner.module.css";
-const r = 20;
-const s = 3;
-const d = Math.PI * r;
-export default function Spinner({ className = "" }: { className?: string }) {
+
+export default function Spinner({
+  className = "",
+  r = 16,
+  s = 1.15,
+  c = "var(--color-foreground)",
+}: {
+  className?: string;
+  r?: number;
+  s?: number;
+  c?: string;
+}) {
+  const d = Math.PI * r;
+
   return (
     <svg
       width={2 * (r + s)}
       height={2 * (r + s)}
       className={[style.Spinner, className].join(" ")}
-      style={{ "--d": 2 * d } as CSSProperties}
+      style={{ "--d": 2 * d, "--c": c } as CSSProperties}
     >
       <circle
         r={r}

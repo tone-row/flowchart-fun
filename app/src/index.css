@@ -30,6 +30,10 @@ body {
   color: var(--color-foreground);
 }
 
+html body {
+  margin-right: 0 !important;
+}
+
 .node-hover {
   background: var(--color-lineColor);
 }
@@ -153,4 +157,8 @@ div[data-reach-tooltip] {
   div[data-reach-tooltip] {
     display: none !important;
   }
+}
+
+.slang-type.size--1 {
+  line-height: 1.6;
 }

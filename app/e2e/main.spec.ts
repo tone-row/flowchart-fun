@@ -1,33 +1,59 @@
 import { test, expect } from "@playwright/test";
-const { describe } = test;
+const { describe, beforeAll } = test;
 
 const startUrl = process.env.E2E_START_URL ?? "http://localhost:3000";
 
-describe("App", () => {
-  test("user can type", async ({ page }) => {
+describe.only("User", async () => {
+  let page;
+  beforeAll(async ({ browser }) => {
+    page = await browser.newPage();
     await page.goto(`${startUrl}?animation=0`);
+  });
 
+  test("can type", async () => {
     // Select Text
     await page.click(':nth-match(:text("This app works by typing"), 2)');
 
     // Select All
     await page.press(".view-lines", "Meta+a");
 
-    // Delete
     await page.press(".view-lines", "Backspace");
+    await page.type(
+      ".view-lines",
+      `hello\n  to the: world\n    goodbye: (hello)\n`
+    );
 
-    await page.type(".view-lines", `hello\n  [test] world\n  (hello)\n`);
+    await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
 
-    await page.press(".view-lines", "Meta+Backspace");
-
-    await page.type(".view-lines", `goodbye\n  (test)`);
+    // Click text=Dagre
+    await page.click("text=Dagre");
+    // Click p:has-text("Breadthfirst")
+    await page.click('p:has-text("Breadthfirst")');
   });
 
-  test("User can change graph type", async ({ page }) => {
-    await page.goto(`${startUrl}?animation=0`);
+  // Add test for changing name of local chart
 
-    await page.click("text=DagreTop to Bottom >> :nth-match(svg, 2)");
-    // Click p:has-text("Circle")
+  // Snapshot 1
+  test("can download SVG", async () => {
+    await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
+    await page.click('button:has-text("Export")');
+
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      page.click('[aria-label="SVG"]'),
+    ]);
+
+    const stream = await download.createReadStream();
+    const buffer = await streamToBuffer(stream);
+    expect(buffer).toMatchSnapshot("1.svg", { threshold: 0.5 });
+
+    // Close Modal
+    await page.click('button:has-text("Close")');
+  });
+
+  test("can change layout", async () => {
+    await page.click('p:has-text("Breadthfirst")');
+
     await page.click('p:has-text("Circle")');
 
     // Need to wait
@@ -37,10 +63,25 @@ describe("App", () => {
     expect(await page.isVisible("text=circle")).toBe(true);
   });
 
-  test("User can change user settings", async ({ page }) => {
-    await page.goto(`${startUrl}?animation=0`);
+  // Snapshot 2
+  test("can download PNG", async () => {
+    await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
+    await page.click('button:has-text("Export")');
 
-    await page.click('button[role="tab"]:has-text("User Preferences")');
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      page.click('[aria-label="PNG"]'),
+    ]);
+
+    const stream = await download.createReadStream();
+    const buffer = await streamToBuffer(stream);
+    expect(buffer).toMatchSnapshot("2.png", { threshold: 0.5 });
+
+    await page.click('button:has-text("Close")');
+  });
+
+  test("can change settings", async () => {
+    await page.click('button[role="tab"]:has-text("Settings")');
 
     // Click [aria-label="Dark Mode"]
     await page.click('[aria-label="Dark Mode"]');
@@ -61,71 +102,20 @@ describe("App", () => {
     await new Promise((res) => setTimeout(res, 500));
 
     // Expect the tab to be in French
-    await page.waitForSelector("text=Préférences de l'utilisateur");
-    expect(await page.isVisible("text=Préférences de l'utilisateur")).toBe(
-      true
-    );
+    await page.waitForSelector("text=Paramètres");
+    expect(await page.isVisible("text=Paramètres")).toBe(true);
   });
 
-  test("User can create a new graph", async ({ page }) => {
-    await page.goto(`${startUrl}?animation=0`);
-    // Go to charts
-    await page.click('button[role="tab"]:has-text("Charts")');
-    // Focus chart title
-
-    await page.click('input[name="chartTitle"]');
-
-    // Type title
-    await page.type('input[name="chartTitle"]', "My new chart");
-
-    // Create
-    await page.press('input[name="chartTitle"]', "Enter");
-
-    const url = await page.$eval("html", () => window.location.pathname);
-    expect(url).toEqual("/my-new-chart");
-  });
-});
-
-describe("Export", () => {
-  test("SVG", async ({ page }) => {
-    await page.goto(
-      `${startUrl}/c#BYUwNmD2BQAEsG0AuIDOSC6sDukBOYAJnPLABSgSQCU0A5pJIQEYCeIJZK61QA`
-    );
-
-    await page.click('button:has-text("Export")');
-
-    const [download] = await Promise.all([
-      page.waitForEvent("download"),
-      page.click('[aria-label="SVG"]'),
-    ]);
-
-    const stream = await download.createReadStream();
-    const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("test.svg");
+  test("can change other graph options", async () => {
+    await page.click('button[role="tab"]:has-text("Éditeur")');
+    await page.click('button:has-text("Agrandir")');
+    await page.click("text=Lumineux");
+    await page.click('p:has-text("Sombre")');
   });
 
-  test("PNG", async ({ page }) => {
-    await page.goto(
-      `${startUrl}/c#BYUwNmD2BQAEsG0AuIDOSC6sDukBOYAJnPLABSgSQCU0A5pJIQEYCeIJZK61QA`
-    );
-
-    await page.click('button:has-text("Export")');
-
-    const [download] = await Promise.all([
-      page.waitForEvent("download"),
-      page.click('[aria-label="PNG"]'),
-    ]);
-
-    const stream = await download.createReadStream();
-    const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("test.png");
-  });
-
-  test("JPG", async ({ page }) => {
-    await page.goto(
-      `${startUrl}/c#BYUwNmD2BQAEsG0AuIDOSC6sDukBOYAJnPLABSgSQCU0A5pJIQEYCeIJZK61QA`
-    );
-
+  // Snapshot 3
+  test("can download JPG", async () => {
+    await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
     await page.click('button:has-text("Export")');
 
     const [download] = await Promise.all([
@@ -135,7 +125,7 @@ describe("Export", () => {
 
     const stream = await download.createReadStream();
     const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("test.jpg");
+    expect(buffer).toMatchSnapshot("3.jpg", { threshold: 0.5 });
   });
 });
 

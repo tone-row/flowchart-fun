@@ -180,11 +180,6 @@ export const graphThemes: Record<
           // @ts-ignore
           "line-height": 1.25,
           shape: "ellipse",
-          "shadow-offset-x": "10px",
-          "shadow-offset-y": "10px",
-          "shadow-color": "#000000",
-          "shadow-opacity": "100%",
-          "shadow-blur": "0px",
           "font-family":
             "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
           width: "data(width)",
@@ -198,9 +193,6 @@ export const graphThemes: Record<
           "curve-style": "unbundled-bezier",
           "segment-distances": "60",
           "edge-distances": "intersection",
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          "edge-weights": "1 2 3 4",
           width: 0.5,
           "line-dash-pattern": [3, 1],
           "line-color": "#000000",
@@ -212,6 +204,8 @@ export const graphThemes: Record<
           "text-wrap": "wrap",
           "font-family":
             "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           "edge-text-rotation": "none",
           "text-background-opacity": 1,
           "text-background-color": "#FFF14B",

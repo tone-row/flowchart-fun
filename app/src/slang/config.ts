@@ -11,10 +11,10 @@ export const palette = {
     "#ededec",
   ],
   black: ["#000000", "#202020", "#464646", "#3f3f3f"],
-  purple: ["#5c6fff", "#929bff", "#D3CCF3"],
+  purple: ["#5c6fff", "#929bff", "#D3CCF3", "#EFF0FF"],
   green: ["#01d857", "#84ff82", "#00c722"],
   blue: ["#3947ff"],
-  yellow: ["#ffcf0d", "#ffcf0d8c"],
+  yellow: ["#ffcf0d", "#ffcf0d8c", "#FFE590"],
   orange: ["#ff7044", "#ffa500"],
 };
 
@@ -55,8 +55,11 @@ export const darkTheme: typeof colors = {
 const config: Partial<SlangConfig> = {
   baseFontFamily:
     "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  baseFontSizePx: 20,
-  baseFontLineHeightMobile: 1.75,
+  baseFontSizePx: 17,
+  typeScaleBase: 1.25,
+  baseFontLineHeight: 1.6,
+  baseFontLineHeightMobile: 1.4,
+  inverseTypeScaleLineHeight: 0.8,
   breakpoints: {
     small: 450,
     tablet: 800,

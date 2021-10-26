@@ -1,3 +1,4 @@
 {
-  "eslint.workingDirectories": ["./app"]
+  "eslint.workingDirectories": ["./app"],
+  "jest.jestCommandLine": "yarn workspace app test"
 }

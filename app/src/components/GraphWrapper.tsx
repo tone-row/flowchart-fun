@@ -3,11 +3,21 @@ import { Box } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./GraphWrapper.module.css";
 import GraphOptionsBar from "./GraphOptionsBar";
-import { useFullscreen } from "../hooks";
+import { useFullscreen, useIsValidSponsor } from "../hooks";
+import { useRouteMatch } from "react-router";
 
 export default function GraphWrapper({ children }: { children: ReactNode }) {
   const { showing } = useContext(AppContext);
   const isFullscreen = useFullscreen();
+  const { path } = useRouteMatch();
+  const validSponsor = useIsValidSponsor();
+  const shouldHideGraphOptions =
+    (path === "/u/:id" && !validSponsor) ||
+    path === "/c/:graphText?" ||
+    path === "/r/:graphText?";
+  const template = shouldHideGraphOptions
+    ? "minmax(0, 1fr) / minmax(0, 1fr)"
+    : "auto minmax(0, 1fr) / minmax(0, 1fr)";
 
   return (
     <Box
@@ -18,11 +28,11 @@ export default function GraphWrapper({ children }: { children: ReactNode }) {
     >
       {!isFullscreen ? (
         <Box
-          template="auto 1fr / 1fr"
+          template={template}
           className={styles.GraphWrapperInner}
           at={{ tablet: { rad: 1 } }}
         >
-          <GraphOptionsBar />
+          {!shouldHideGraphOptions && <GraphOptionsBar />}
           {children}
         </Box>
       ) : (

@@ -1,17 +1,13 @@
 @keyframes load {
   from {
     stroke-dashoffset: var(--d);
-    stroke: var(--color-uiAccent);
-  }
-  50% {
-    stroke: var(--color-nodeHover);
   }
   to {
     stroke-dashoffset: 0;
-    stroke: var(--color-uiAccent);
   }
 }
 
 .Spinner circle {
   animation: load 1s linear 0s infinite forwards;
+  stroke: var(--c);
 }
