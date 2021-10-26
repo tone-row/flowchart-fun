@@ -136,7 +136,10 @@ function SignUpForm() {
         className={styles.SponsorFormInput}
         type="email"
         placeholder="Email"
-        {...register("email", { required: true })}
+        {...register("email", {
+          required: true,
+          setValueAs: (t) => t.toLowerCase(),
+        })}
       />
       <Box p={3} background="palette-white-0" rad={1}>
         <CardElement
