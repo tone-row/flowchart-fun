@@ -16,22 +16,25 @@ import { Button } from "./components/Shared";
 import { BrowserRouter } from "react-router-dom";
 import { t } from "@lingui/macro";
 import Loading from "./components/Loading";
+import { UserSettingsProvider } from "./components/SettingsContext";
 
 export default function App() {
   return (
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <Provider>
-          <Sentry.ErrorBoundary fallback={ErrorFallback}>
-            <I18n>
-              <Elements stripe={stripePromise}>
-                <Suspense fallback={<Loading />}>
-                  <Router />
-                  <ReactQueryDevtools />
-                </Suspense>
-              </Elements>
-            </I18n>
-          </Sentry.ErrorBoundary>
+          <UserSettingsProvider>
+            <Sentry.ErrorBoundary fallback={ErrorFallback}>
+              <I18n>
+                <Elements stripe={stripePromise}>
+                  <Suspense fallback={<Loading />}>
+                    <Router />
+                    <ReactQueryDevtools />
+                  </Suspense>
+                </Elements>
+              </I18n>
+            </Sentry.ErrorBoundary>
+          </UserSettingsProvider>
         </Provider>
       </QueryClientProvider>
     </BrowserRouter>
