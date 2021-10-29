@@ -31,7 +31,7 @@ msgstr "Voltar ao editor"
 #: src/components/Sponsor.tsx:38
 #: src/components/SponsorDashboard.tsx:54
 msgid "Become a Sponsor"
-msgstr "Torne-se um patriocinador"
+msgstr "Torne-se um(a) patrocinador(a)"
 
 #: src/lib/graphOptions.ts:15
 msgid "Bottom to Top"
@@ -333,12 +333,12 @@ msgstr "Inscreva-se"
 #: src/components/Navigation.tsx:85
 #: src/components/Sponsor.tsx:41
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
-msgstr "Patriocine flowchart.fun com $1 por mês para ter acesso à diagramasfluídos hospedados e os mais novos estilos e funcionalidades"
+msgstr "Patrocine flowchart.fun com $1 por mês para ter acesso à diagramasfluídos hospedados e os mais novos estilos e funcionalidades"
 
 #: src/components/MenuNext.tsx:61
 #: src/components/MenuNext.tsx:105
 msgid "Sponsors"
-msgstr "Patriocinadores"
+msgstr "Patrocínios"
 
 #: src/components/SponsorDashboard.tsx:87
 msgid "Start"
@@ -426,7 +426,7 @@ msgstr "Com editor"
 #: src/components/Navigation.tsx:220
 #: src/components/SponsorDashboard.tsx:57
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
-msgstr "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um patriocinador."
+msgstr "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um(a) patrocinador(a)."
 
 #: src/hooks.ts:22
 #: src/lib/queries.ts:145
