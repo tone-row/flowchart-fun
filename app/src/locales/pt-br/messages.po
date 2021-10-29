@@ -219,7 +219,7 @@ msgstr "Diagramas hospedados"
 #: src/hooks.ts:18
 #: src/lib/queries.ts:141
 msgid "Indenting creates a link to the current line"
-msgstr "Indentando cria uma conxeção para com a linha atual"
+msgstr "Indentando cria uma conexão para com a linha atual"
 
 #: src/components/Settings.tsx:52
 msgid "Language"
