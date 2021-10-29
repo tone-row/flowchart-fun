@@ -17,7 +17,7 @@ msgstr ""
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
 msgstr "इन चार्ट को कहीं से भी एक्सेस करें. ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों."
 
-#: src/components/SponsorDashboard.tsx:132
+#: src/components/SponsorDashboard.tsx:131
 msgid "Amount"
 msgstr "रकम"
 
@@ -35,7 +35,7 @@ msgstr "संपादक पर वापस जाएं"
 
 #: src/components/Settings.tsx:91
 #: src/components/Sponsor.tsx:38
-#: src/components/SponsorDashboard.tsx:55
+#: src/components/SponsorDashboard.tsx:54
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
@@ -50,15 +50,15 @@ msgstr "चौड़ाई पहले"
 #: src/components/Navigation.tsx:142
 #: src/components/Navigation.tsx:345
 #: src/components/Navigation.tsx:380
-#: src/components/SponsorDashboard.tsx:107
-#: src/components/SponsorDashboard.tsx:115
-#: src/components/SponsorDashboard.tsx:177
-#: src/components/SponsorDashboard.tsx:184
-#: src/components/SponsorDashboard.tsx:219
+#: src/components/SponsorDashboard.tsx:106
+#: src/components/SponsorDashboard.tsx:114
+#: src/components/SponsorDashboard.tsx:176
+#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:218
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: src/components/SponsorDashboard.tsx:110
+#: src/components/SponsorDashboard.tsx:109
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
@@ -67,7 +67,7 @@ msgstr "अपनी सदस्यता रद्द करें. आपक�
 msgid "Charts"
 msgstr "चार्ट"
 
-#: src/components/Login.tsx:30
+#: src/components/LoginForm.tsx:24
 #: src/components/Sponsor.tsx:104
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
@@ -119,7 +119,7 @@ msgstr "डार्क"
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/components/SponsorDashboard.tsx:129
+#: src/components/SponsorDashboard.tsx:128
 msgid "Date"
 msgstr "तारीख़"
 
@@ -134,7 +134,7 @@ msgstr "हटाएँ"
 msgid "Direction"
 msgstr "दिशा"
 
-#: src/components/SponsorDashboard.tsx:180
+#: src/components/SponsorDashboard.tsx:179
 msgid "Do you want to cancel your subscription?"
 msgstr "क्या आप अपनी सदस्यता रद्द करना चाहते हैं?"
 
@@ -163,13 +163,19 @@ msgstr "संपादक"
 msgid "Eggs"
 msgstr "अंडे"
 
-#: src/components/Login.tsx:36
+#: src/components/LoginForm.tsx:33
 msgid "Email"
 msgstr "ईमेल"
 
 #: src/components/Feedback.tsx:52
 msgid "Email (optional)"
 msgstr "ईमेल (ऐच्छिक)"
+
+#: src/components/Navigation.tsx:94
+#: src/components/Navigation.tsx:213
+#: src/components/Navigation.tsx:340
+msgid "Enter a title"
+msgstr "एक शीर्षक दर्ज करें"
 
 #: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
@@ -210,7 +216,7 @@ msgstr "मज़े करो! 🎉"
 msgid "Help"
 msgstr "मदद"
 
-#: src/components/SponsorDashboard.tsx:119
+#: src/components/SponsorDashboard.tsx:118
 msgid "History"
 msgstr "हिस्ट्री"
 
@@ -256,11 +262,11 @@ msgstr "लिंक"
 msgid "Local Charts"
 msgstr "लोकल चार्ट"
 
-#: src/components/Login.tsx:26
+#: src/components/LoginForm.tsx:20
 msgid "Log In"
 msgstr "लॉग इन"
 
-#: src/components/SponsorDashboard.tsx:51
+#: src/components/SponsorDashboard.tsx:50
 msgid "Log Out"
 msgstr "लॉग आउट"
 
@@ -280,8 +286,8 @@ msgstr "सार्वजनिक रूप से एक्सेस दे�
 msgid "Name"
 msgstr "नाम"
 
-#: src/components/SponsorDashboard.tsx:78
-#: src/components/SponsorDashboard.tsx:216
+#: src/components/SponsorDashboard.tsx:77
+#: src/components/SponsorDashboard.tsx:215
 msgid "Next charge"
 msgstr "अगला चार्ज"
 
@@ -312,14 +318,14 @@ msgstr "फिर से नाम बदलें"
 msgid "Reset"
 msgstr "रीसेट करें"
 
-#: src/components/SponsorDashboard.tsx:100
-#: src/components/SponsorDashboard.tsx:212
-#: src/components/SponsorDashboard.tsx:214
-#: src/components/SponsorDashboard.tsx:220
+#: src/components/SponsorDashboard.tsx:99
+#: src/components/SponsorDashboard.tsx:211
+#: src/components/SponsorDashboard.tsx:213
+#: src/components/SponsorDashboard.tsx:219
 msgid "Resume Subscription"
 msgstr "सदस्यता फिर से शुरू करें"
 
-#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:182
 msgid "Return"
 msgstr "वापसी"
 
@@ -332,7 +338,7 @@ msgstr "दाएं से बाएं"
 msgid "Settings"
 msgstr "सेटिंग"
 
-#: src/components/Sponsor.tsx:121
+#: src/components/Sponsor.tsx:124
 msgid "Sign Up"
 msgstr "साइन अप"
 
@@ -346,25 +352,25 @@ msgstr "होस्टेड फ़्लोचार्ट और नए स्�
 msgid "Sponsors"
 msgstr "स्पॉन्सर्स"
 
-#: src/components/SponsorDashboard.tsx:88
+#: src/components/SponsorDashboard.tsx:87
 msgid "Start"
 msgstr "शुरू"
 
-#: src/components/SponsorDashboard.tsx:71
+#: src/components/SponsorDashboard.tsx:70
 msgid "Status"
 msgstr "स्टेटस"
 
 #: src/components/Feedback.tsx:56
-#: src/components/Login.tsx:37
+#: src/components/LoginForm.tsx:34
 #: src/components/MenuNext.tsx:167
 msgid "Submit"
 msgstr "भेजना"
 
-#: src/components/SponsorDashboard.tsx:67
+#: src/components/SponsorDashboard.tsx:66
 msgid "Subscription"
 msgstr "सदस्यता"
 
-#: src/components/SponsorDashboard.tsx:97
+#: src/components/SponsorDashboard.tsx:96
 msgid "Subscription will end"
 msgstr "सदस्यता समाप्त हो जाएगी"
 
@@ -401,7 +407,7 @@ msgstr "फिर से कोशिश करें"
 msgid "Updated"
 msgstr "अपडेट किया गया"
 
-#: src/components/SponsorDashboard.tsx:48
+#: src/components/SponsorDashboard.tsx:47
 msgid "User"
 msgstr "यूज़र"
 
@@ -413,7 +419,7 @@ msgstr "Github पर देखें"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "हम आपके सभी फ़ीडबैक, सुझावों, बग्स और विशेष अनुरोधों की सराहना करते हैं!"
 
-#: src/components/Sponsor.tsx:124
+#: src/components/Sponsor.tsx:127
 msgid "We use cookies to keep you logged in."
 msgstr "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं."
 
@@ -430,7 +436,7 @@ msgid "With Editor"
 msgstr "एडिटर के साथ"
 
 #: src/components/Navigation.tsx:220
-#: src/components/SponsorDashboard.tsx:58
+#: src/components/SponsorDashboard.tsx:57
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें."
 

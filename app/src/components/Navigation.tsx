@@ -144,7 +144,7 @@ function LocalCharts() {
         <Box gap={2}>
           <Box template="none / 1fr auto" gap={3}>
             <Input
-              placeholder="Enter a title"
+              placeholder={t`Enter a title`}
               {...register("chartTitle", {
                 setValueAs: slugify,
               })}
@@ -358,7 +358,7 @@ function HostedCharts() {
           <Section as="form" onSubmit={handleSubmit(onSubmit)}>
             <Box template="none / 1fr auto" gap={3}>
               <Input
-                placeholder="Enter a title"
+                placeholder={t`Enter a title`}
                 {...register("name", { required: true })}
                 disabled={isLoading}
                 isLoading={isLoading}
@@ -590,7 +590,7 @@ function CopyHostedChartInner({
         </Type>
       </Type>
       <Input
-        placeholder="Enter a title"
+        placeholder={t`Enter a title`}
         {...rest}
         ref={(el) => {
           ref(el);

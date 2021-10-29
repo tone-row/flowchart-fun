@@ -17,7 +17,7 @@ msgstr ""
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
 msgstr "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
 
-#: src/components/SponsorDashboard.tsx:132
+#: src/components/SponsorDashboard.tsx:131
 msgid "Amount"
 msgstr "Amount"
 
@@ -35,7 +35,7 @@ msgstr "Back To Editor"
 
 #: src/components/Settings.tsx:91
 #: src/components/Sponsor.tsx:38
-#: src/components/SponsorDashboard.tsx:55
+#: src/components/SponsorDashboard.tsx:54
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
@@ -50,15 +50,15 @@ msgstr "Breadthfirst"
 #: src/components/Navigation.tsx:142
 #: src/components/Navigation.tsx:345
 #: src/components/Navigation.tsx:380
-#: src/components/SponsorDashboard.tsx:107
-#: src/components/SponsorDashboard.tsx:115
-#: src/components/SponsorDashboard.tsx:177
-#: src/components/SponsorDashboard.tsx:184
-#: src/components/SponsorDashboard.tsx:219
+#: src/components/SponsorDashboard.tsx:106
+#: src/components/SponsorDashboard.tsx:114
+#: src/components/SponsorDashboard.tsx:176
+#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:218
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/components/SponsorDashboard.tsx:110
+#: src/components/SponsorDashboard.tsx:109
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Cancel your subscription. Your hosted charts will become read-only."
 
@@ -67,7 +67,7 @@ msgstr "Cancel your subscription. Your hosted charts will become read-only."
 msgid "Charts"
 msgstr "Charts"
 
-#: src/components/Login.tsx:30
+#: src/components/LoginForm.tsx:24
 #: src/components/Sponsor.tsx:104
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Check your email for a link to log in. You can close this window."
@@ -119,7 +119,7 @@ msgstr "Dark"
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/components/SponsorDashboard.tsx:129
+#: src/components/SponsorDashboard.tsx:128
 msgid "Date"
 msgstr "Date"
 
@@ -134,7 +134,7 @@ msgstr "Delete"
 msgid "Direction"
 msgstr "Direction"
 
-#: src/components/SponsorDashboard.tsx:180
+#: src/components/SponsorDashboard.tsx:179
 msgid "Do you want to cancel your subscription?"
 msgstr "Do you want to cancel your subscription?"
 
@@ -163,13 +163,19 @@ msgstr "Editor"
 msgid "Eggs"
 msgstr "Eggs"
 
-#: src/components/Login.tsx:36
+#: src/components/LoginForm.tsx:33
 msgid "Email"
 msgstr "Email"
 
 #: src/components/Feedback.tsx:52
 msgid "Email (optional)"
 msgstr "Email (optional)"
+
+#: src/components/Navigation.tsx:94
+#: src/components/Navigation.tsx:213
+#: src/components/Navigation.tsx:340
+msgid "Enter a title"
+msgstr "Enter a title"
 
 #: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
@@ -210,7 +216,7 @@ msgstr "Have fun! 🎉"
 msgid "Help"
 msgstr "Help"
 
-#: src/components/SponsorDashboard.tsx:119
+#: src/components/SponsorDashboard.tsx:118
 msgid "History"
 msgstr "History"
 
@@ -256,11 +262,11 @@ msgstr "Link"
 msgid "Local Charts"
 msgstr "Local Charts"
 
-#: src/components/Login.tsx:26
+#: src/components/LoginForm.tsx:20
 msgid "Log In"
 msgstr "Log In"
 
-#: src/components/SponsorDashboard.tsx:51
+#: src/components/SponsorDashboard.tsx:50
 msgid "Log Out"
 msgstr "Log Out"
 
@@ -280,8 +286,8 @@ msgstr "Make publicly accessible"
 msgid "Name"
 msgstr "Name"
 
-#: src/components/SponsorDashboard.tsx:78
-#: src/components/SponsorDashboard.tsx:216
+#: src/components/SponsorDashboard.tsx:77
+#: src/components/SponsorDashboard.tsx:215
 msgid "Next charge"
 msgstr "Next charge"
 
@@ -312,14 +318,14 @@ msgstr "Rename"
 msgid "Reset"
 msgstr "Reset"
 
-#: src/components/SponsorDashboard.tsx:100
-#: src/components/SponsorDashboard.tsx:212
-#: src/components/SponsorDashboard.tsx:214
-#: src/components/SponsorDashboard.tsx:220
+#: src/components/SponsorDashboard.tsx:99
+#: src/components/SponsorDashboard.tsx:211
+#: src/components/SponsorDashboard.tsx:213
+#: src/components/SponsorDashboard.tsx:219
 msgid "Resume Subscription"
 msgstr "Resume Subscription"
 
-#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:182
 msgid "Return"
 msgstr "Return"
 
@@ -332,7 +338,7 @@ msgstr "Right to Left"
 msgid "Settings"
 msgstr "Settings"
 
-#: src/components/Sponsor.tsx:121
+#: src/components/Sponsor.tsx:124
 msgid "Sign Up"
 msgstr "Sign Up"
 
@@ -346,25 +352,25 @@ msgstr "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the
 msgid "Sponsors"
 msgstr "Sponsors"
 
-#: src/components/SponsorDashboard.tsx:88
+#: src/components/SponsorDashboard.tsx:87
 msgid "Start"
 msgstr "Start"
 
-#: src/components/SponsorDashboard.tsx:71
+#: src/components/SponsorDashboard.tsx:70
 msgid "Status"
 msgstr "Status"
 
 #: src/components/Feedback.tsx:56
-#: src/components/Login.tsx:37
+#: src/components/LoginForm.tsx:34
 #: src/components/MenuNext.tsx:167
 msgid "Submit"
 msgstr "Submit"
 
-#: src/components/SponsorDashboard.tsx:67
+#: src/components/SponsorDashboard.tsx:66
 msgid "Subscription"
 msgstr "Subscription"
 
-#: src/components/SponsorDashboard.tsx:97
+#: src/components/SponsorDashboard.tsx:96
 msgid "Subscription will end"
 msgstr "Subscription will end"
 
@@ -401,7 +407,7 @@ msgstr "Try again"
 msgid "Updated"
 msgstr "Updated"
 
-#: src/components/SponsorDashboard.tsx:48
+#: src/components/SponsorDashboard.tsx:47
 msgid "User"
 msgstr "User"
 
@@ -413,7 +419,7 @@ msgstr "View on Github"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 
-#: src/components/Sponsor.tsx:124
+#: src/components/Sponsor.tsx:127
 msgid "We use cookies to keep you logged in."
 msgstr "We use cookies to keep you logged in."
 
@@ -430,7 +436,7 @@ msgid "With Editor"
 msgstr "With Editor"
 
 #: src/components/Navigation.tsx:220
-#: src/components/SponsorDashboard.tsx:58
+#: src/components/SponsorDashboard.tsx:57
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 
