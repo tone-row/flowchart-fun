@@ -9,37 +9,37 @@ msgstr ""
 
 #: src/components/Navigation.tsx:209
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
-msgstr ""
+msgstr "Acesse os diagramas de qualquer lugar. Compartilhe/incorpore diagramas que ficam em sincronização com suas edições."
 
 #: src/components/SponsorDashboard.tsx:131
 msgid "Amount"
-msgstr ""
+msgstr "Total"
 
 #: src/components/Feedback.tsx:58
 msgid "An error occurred. Try resubmitting or email {0} directly."
-msgstr ""
+msgstr "Ocorreu um erro. Tente reenviar ou envie um e-mail direto para {0}."
 
 #: src/components/Settings.tsx:67
 msgid "Appearance"
-msgstr ""
+msgstr "Aparência"
 
 #: src/components/Feedback.tsx:70
 msgid "Back To Editor"
-msgstr ""
+msgstr "Voltar ao editor"
 
 #: src/components/Settings.tsx:91
 #: src/components/Sponsor.tsx:38
 #: src/components/SponsorDashboard.tsx:54
 msgid "Become a Sponsor"
-msgstr ""
+msgstr "Torne-se um patriocinador"
 
 #: src/lib/graphOptions.ts:15
 msgid "Bottom to Top"
-msgstr ""
+msgstr "De baixo para cima"
 
 #: src/lib/graphOptions.ts:4
 msgid "Breadthfirst"
-msgstr ""
+msgstr "Por extensão"
 
 #: src/components/Navigation.tsx:142
 #: src/components/Navigation.tsx:345
@@ -50,420 +50,420 @@ msgstr ""
 #: src/components/SponsorDashboard.tsx:183
 #: src/components/SponsorDashboard.tsx:218
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: src/components/SponsorDashboard.tsx:109
 msgid "Cancel your subscription. Your hosted charts will become read-only."
-msgstr ""
+msgstr "Cancele sua inscrição. Seus diagramas hospedados não serão modificáveis."
 
 #: src/components/MenuNext.tsx:53
 #: src/components/MenuNext.tsx:103
 msgid "Charts"
-msgstr ""
+msgstr "Diagramas"
 
 #: src/components/LoginForm.tsx:24
 #: src/components/Sponsor.tsx:104
 msgid "Check your email for a link to log in. You can close this window."
-msgstr ""
+msgstr "Cheque seu e-mail com um link para logar. Você pode fechar esta janela."
 
 #: src/lib/graphOptions.ts:7
 msgid "Circle"
-msgstr ""
+msgstr "Círculo"
 
 #: src/components/Shared.tsx:71
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
 
 #: src/lib/graphOptions.ts:6
 msgid "Concentric"
-msgstr ""
+msgstr "Concêntrico"
 
 #: src/components/GraphOptionsBar.tsx:96
 msgid "Contract"
-msgstr ""
+msgstr "Contrair"
 
 #: src/components/Navigation.tsx:298
 #: src/components/Navigation.tsx:346
 #: src/components/Navigation.tsx:370
 #: src/components/ShareDialog.tsx:124
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: src/components/Navigation.tsx:97
 #: src/components/Navigation.tsx:179
 #: src/components/Navigation.tsx:214
 msgid "Create"
-msgstr ""
+msgstr "Criar"
 
 #: src/hooks.ts:20
 #: src/lib/queries.ts:143
 msgid "Create a link directly using the exact label text"
-msgstr ""
+msgstr "Crie uma conexão direta usando exatamente o mesmo texto da etiqueta"
 
 #: src/components/Navigation.tsx:242
 msgid "Created"
-msgstr ""
+msgstr "Criado"
 
 #: src/components/graphThemes.ts:9
 msgid "Dark"
-msgstr ""
+msgstr "Escuro"
 
 #: src/components/Settings.tsx:71
 #: src/components/Settings.tsx:71
 msgid "Dark Mode"
-msgstr ""
+msgstr "Modo escuro"
 
 #: src/components/SponsorDashboard.tsx:128
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #: src/components/Navigation.tsx:133
 #: src/components/Navigation.tsx:136
 #: src/components/Navigation.tsx:143
 #: src/components/Navigation.tsx:381
 msgid "Delete"
-msgstr ""
+msgstr "Deletar"
 
 #: src/components/GraphOptionsBar.tsx:90
 msgid "Direction"
-msgstr ""
+msgstr "Direção"
 
 #: src/components/SponsorDashboard.tsx:179
 msgid "Do you want to cancel your subscription?"
-msgstr ""
+msgstr "Você deseja cancelar sua inscrição?"
 
 #: src/components/Navigation.tsx:374
 msgid "Do you want to delete this?"
-msgstr ""
+msgstr "Você deseja deletar isso?"
 
 #: src/components/Share.tsx:10
 #: src/components/Share.tsx:11
 #: src/components/Share.tsx:12
 #: src/components/ShareDialog.tsx:78
 msgid "Download"
-msgstr ""
+msgstr "Baixar"
 
 #: src/components/Navigation.tsx:164
 #: src/components/Navigation.tsx:335
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplicar"
 
 #: src/components/MenuNext.tsx:52
 #: src/components/MobileTabToggle.tsx:11
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #: src/components/graphThemes.ts:10
 msgid "Eggs"
-msgstr ""
+msgstr "Ovos"
 
 #: src/components/LoginForm.tsx:33
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: src/components/Feedback.tsx:52
 msgid "Email (optional)"
-msgstr ""
+msgstr "E-mail (opcional)"
 
 #: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
-msgstr ""
+msgstr "Expandir"
 
 #: src/components/MenuNext.tsx:182
 #: src/components/ShareDialog.tsx:40
 msgid "Export"
-msgstr ""
+msgstr "Exportar"
 
 #: src/components/MenuNext.tsx:60
 #: src/components/MenuNext.tsx:99
 msgid "Feedback"
-msgstr ""
+msgstr "Feedback"
 
 #: src/components/Settings.tsx:82
 msgid "Follow Us"
-msgstr ""
+msgstr "Siga-nos"
 
 #: src/components/ShareDialog.tsx:72
 msgid "Fullscreen"
-msgstr ""
+msgstr "Tela cheia"
 
 #: src/components/MobileTabToggle.tsx:11
 msgid "Graph"
-msgstr ""
+msgstr "Diagrama"
 
 #: src/lib/graphOptions.ts:9
 msgid "Grid"
-msgstr ""
+msgstr "Grade"
 
 #: src/hooks.ts:30
 #: src/lib/queries.ts:153
 msgid "Have fun! 🎉"
-msgstr ""
+msgstr "Divirta-se! 🎉"
 
 #: src/components/Edit.tsx:104
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: src/components/SponsorDashboard.tsx:118
 msgid "History"
-msgstr ""
+msgstr "Histórico"
 
 #: src/App.tsx:51
 msgid "Home"
-msgstr ""
+msgstr "Página inicial"
 
 #: src/components/Navigation.tsx:208
 msgid "Hosted Charts"
-msgstr ""
+msgstr "Diagramas hospedados"
 
 #: src/hooks.ts:18
 #: src/lib/queries.ts:141
 msgid "Indenting creates a link to the current line"
-msgstr ""
+msgstr "Indentando cria uma conxeção para com a linha atual"
 
 #: src/components/Settings.tsx:52
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #: src/components/GraphOptionsBar.tsx:85
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #: src/lib/graphOptions.ts:13
 msgid "Left to Right"
-msgstr ""
+msgstr "Da esquerda para direita"
 
 #: src/components/graphThemes.ts:8
 msgid "Light"
-msgstr ""
+msgstr "Claro"
 
 #: src/components/Settings.tsx:70
 #: src/components/Settings.tsx:70
 msgid "Light Mode"
-msgstr ""
+msgstr "Modo claro"
 
 #: src/components/ShareDialog.tsx:69
 msgid "Link"
-msgstr ""
+msgstr "Link"
 
 #: src/components/Navigation.tsx:80
 msgid "Local Charts"
-msgstr ""
+msgstr "Diagramas locais"
 
 #: src/components/LoginForm.tsx:20
 msgid "Log In"
-msgstr ""
+msgstr "Logar"
 
 #: src/components/SponsorDashboard.tsx:50
 msgid "Log Out"
-msgstr ""
+msgstr "Deslogar"
 
 #: src/components/Settings.tsx:76
 msgid "Made by <0>Tone Row</0>"
-msgstr ""
+msgstr "Feito por <0>Tone Row</0>"
 
 #: src/components/Settings.tsx:88
 msgid "Make a Donation"
-msgstr ""
+msgstr "Faça uma doação"
 
 #: src/components/ShareDialog.tsx:56
 msgid "Make publicly accessible"
-msgstr ""
+msgstr "Tornar publicamente acessível"
 
 #: src/components/Navigation.tsx:230
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: src/components/SponsorDashboard.tsx:77
 #: src/components/SponsorDashboard.tsx:215
 msgid "Next charge"
-msgstr ""
+msgstr "Próxima cobrança"
 
 #: src/components/Share.tsx:9
 msgid "Open Share Link"
-msgstr ""
+msgstr "Abrir link de compartilhamento"
 
 #: src/components/ShareDialog.tsx:88
 msgid "Preview"
-msgstr ""
+msgstr "Pré-visualização"
 
 #: src/components/Navigation.tsx:234
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:64
 msgid "Public"
-msgstr ""
+msgstr "Público"
 
 #: src/lib/graphOptions.ts:8
 msgid "Random"
-msgstr ""
+msgstr "Aleatório"
 
 #: src/components/MenuNext.tsx:155
 msgid "Rename"
-msgstr ""
+msgstr "Renomear"
 
 #: src/components/Navigation.tsx:136
 #: src/components/Navigation.tsx:143
 msgid "Reset"
-msgstr ""
+msgstr "Resetar"
 
 #: src/components/SponsorDashboard.tsx:99
 #: src/components/SponsorDashboard.tsx:211
 #: src/components/SponsorDashboard.tsx:213
 #: src/components/SponsorDashboard.tsx:219
 msgid "Resume Subscription"
-msgstr ""
+msgstr "Resumir inscrição"
 
 #: src/components/SponsorDashboard.tsx:182
 msgid "Return"
-msgstr ""
+msgstr "Retornar"
 
 #: src/lib/graphOptions.ts:14
 msgid "Right to Left"
-msgstr ""
+msgstr "Da direita para esquerda"
 
 #: src/components/MenuNext.tsx:59
 #: src/components/MenuNext.tsx:101
 msgid "Settings"
-msgstr ""
+msgstr "Configurações"
 
 #: src/components/Sponsor.tsx:124
 msgid "Sign Up"
-msgstr ""
+msgstr "Inscreva-se"
 
 #: src/components/Navigation.tsx:85
 #: src/components/Sponsor.tsx:41
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
-msgstr ""
+msgstr "Patriocine flowchart.fun com $1 por mês para ter acesso à diagramasfluídos hospedados e os mais novos estilos e funcionalidades"
 
 #: src/components/MenuNext.tsx:61
 #: src/components/MenuNext.tsx:105
 msgid "Sponsors"
-msgstr ""
+msgstr "Patriocinadores"
 
 #: src/components/SponsorDashboard.tsx:87
 msgid "Start"
-msgstr ""
+msgstr "Início"
 
 #: src/components/SponsorDashboard.tsx:70
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: src/components/Feedback.tsx:56
 #: src/components/LoginForm.tsx:34
 #: src/components/MenuNext.tsx:167
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #: src/components/SponsorDashboard.tsx:66
 msgid "Subscription"
-msgstr ""
+msgstr "Inscrição"
 
 #: src/components/SponsorDashboard.tsx:96
 msgid "Subscription will end"
-msgstr ""
+msgstr "Inscrição acabará"
 
 #: src/components/HasError.tsx:12
 msgid "Text Invalid"
-msgstr ""
+msgstr "Texto inválido"
 
 #: src/components/Feedback.tsx:68
 msgid "Thank you for your feedback!"
-msgstr ""
+msgstr "Agradecimentos pelo seu feedback!"
 
 #: src/components/GraphOptionsBar.tsx:100
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: src/components/Navigation.tsx:81
 msgid "These charts are only available in this browser on this device. Clearing your browser {localStorage} will erase these."
-msgstr ""
+msgstr "Estes diagramas estão apenas disponíveis nesse navegador desse dispositivo. Limpando o {localStorage} do seu navegador, irá apagá-los."
 
 #: src/hooks.ts:17
 #: src/lib/queries.ts:140
 msgid "This app works by typing"
-msgstr ""
+msgstr "Este aplicativo funciona por digitação"
 
 #: src/lib/graphOptions.ts:12
 msgid "Top to Bottom"
-msgstr ""
+msgstr "De cima para baixo"
 
 #: src/App.tsx:48
 msgid "Try again"
-msgstr ""
+msgstr "Tente novamente"
 
 #: src/components/Navigation.tsx:238
 msgid "Updated"
-msgstr ""
+msgstr "Atualizado"
 
 #: src/components/SponsorDashboard.tsx:47
 msgid "User"
-msgstr ""
+msgstr "Usuário"
 
 #: src/components/Settings.tsx:85
 msgid "View on Github"
-msgstr ""
+msgstr "Visualizar no Github"
 
 #: src/components/Feedback.tsx:39
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
-msgstr ""
+msgstr "Nós agradecemos todos os seus feedbacks, sugestões, bugs, e requisições de funcionalidades!"
 
 #: src/components/Sponsor.tsx:127
 msgid "We use cookies to keep you logged in."
-msgstr ""
+msgstr "Nós usamos cookies para manter você logado."
 
 #: src/components/Navigation.tsx:172
 msgid "What would you like to name this copy?"
-msgstr ""
+msgstr "Como você gostaria de chamar essa cópia?"
 
 #: src/components/Feedback.tsx:46
 msgid "What would you like to share with us?"
-msgstr ""
+msgstr "O que você deseja compartilhar com a gente?"
 
 #: src/components/ShareDialog.tsx:73
 msgid "With Editor"
-msgstr ""
+msgstr "Com editor"
 
 #: src/components/Navigation.tsx:220
 #: src/components/SponsorDashboard.tsx:57
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
-msgstr ""
+msgstr "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um patriocinador."
 
 #: src/hooks.ts:22
 #: src/lib/queries.ts:145
 msgid "[custom ID] or"
-msgstr ""
+msgstr "[ID customizada] ou"
 
 #: src/hooks.ts:19
 #: src/lib/queries.ts:142
 msgid "any text: before a colon creates a label"
-msgstr ""
+msgstr "qualquer texto: antes de dois pontos cria uma etiqueta"
 
 #: src/hooks.ts:23
 #: src/lib/queries.ts:146
 msgid "by adding an [ID] and referencing that"
-msgstr ""
+msgstr "adicionando uma [ID] e referenciando esta"
 
 #: src/hooks.ts:28
 #: src/lib/queries.ts:151
 msgid "comments"
-msgstr ""
+msgstr "comentários"
 
 #: src/hooks.ts:21
 #: src/lib/queries.ts:144
 msgid "like this: (This app works by typing)"
-msgstr ""
+msgstr "tipo assim: (Este aplicativo funciona por digitação)"
 
 #: src/hooks.ts:24
 #: src/lib/queries.ts:147
 msgid "like this: (custom ID) // You can also use single-line comments"
-msgstr ""
+msgstr "tipo assim: (ID customizada) // Você pode também usar comentários de uma linha só"
 
 #: src/hooks.ts:27
 #: src/lib/queries.ts:150
 msgid "multiline"
-msgstr ""
+msgstr "multilinha"
 
 #: src/hooks.ts:26
 #: src/lib/queries.ts:149
 msgid "or"
-msgstr ""
+msgstr "ou"
