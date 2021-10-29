@@ -4,5 +4,6 @@ export const languages = {
   fr: "Français",
   hi: "हिन्दी",
   ko: "한국어",
+  "pt-br": "Português (Brasil)",
   zh: "中文",
 };

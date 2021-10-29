@@ -17,7 +17,7 @@ msgstr ""
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
 msgstr "随时随地访问这些图表。共享/嵌入与您编辑的文档保持同步的图表。"
 
-#: src/components/SponsorDashboard.tsx:132
+#: src/components/SponsorDashboard.tsx:131
 msgid "Amount"
 msgstr "数量"
 
@@ -35,7 +35,7 @@ msgstr "返回编辑器"
 
 #: src/components/Settings.tsx:91
 #: src/components/Sponsor.tsx:38
-#: src/components/SponsorDashboard.tsx:55
+#: src/components/SponsorDashboard.tsx:54
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
@@ -50,15 +50,15 @@ msgstr "宽度优先"
 #: src/components/Navigation.tsx:142
 #: src/components/Navigation.tsx:345
 #: src/components/Navigation.tsx:380
-#: src/components/SponsorDashboard.tsx:107
-#: src/components/SponsorDashboard.tsx:115
-#: src/components/SponsorDashboard.tsx:177
-#: src/components/SponsorDashboard.tsx:184
-#: src/components/SponsorDashboard.tsx:219
+#: src/components/SponsorDashboard.tsx:106
+#: src/components/SponsorDashboard.tsx:114
+#: src/components/SponsorDashboard.tsx:176
+#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:218
 msgid "Cancel"
 msgstr "取消"
 
-#: src/components/SponsorDashboard.tsx:110
+#: src/components/SponsorDashboard.tsx:109
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
 
@@ -67,7 +67,7 @@ msgstr "取消订阅。您的托管图表将变为只读。"
 msgid "Charts"
 msgstr "图表"
 
-#: src/components/Login.tsx:30
+#: src/components/LoginForm.tsx:24
 #: src/components/Sponsor.tsx:104
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
@@ -119,7 +119,7 @@ msgstr "黑暗"
 msgid "Dark Mode"
 msgstr "黑暗模式"
 
-#: src/components/SponsorDashboard.tsx:129
+#: src/components/SponsorDashboard.tsx:128
 msgid "Date"
 msgstr "日期"
 
@@ -134,7 +134,7 @@ msgstr "删除"
 msgid "Direction"
 msgstr "方向"
 
-#: src/components/SponsorDashboard.tsx:180
+#: src/components/SponsorDashboard.tsx:179
 msgid "Do you want to cancel your subscription?"
 msgstr "您要取消订阅吗？"
 
@@ -163,7 +163,7 @@ msgstr "编辑器"
 msgid "Eggs"
 msgstr "蛋"
 
-#: src/components/Login.tsx:36
+#: src/components/LoginForm.tsx:33
 msgid "Email"
 msgstr "电子邮件"
 
@@ -210,7 +210,7 @@ msgstr "玩得开心！🎉"
 msgid "Help"
 msgstr "帮助"
 
-#: src/components/SponsorDashboard.tsx:119
+#: src/components/SponsorDashboard.tsx:118
 msgid "History"
 msgstr "历史"
 
@@ -256,11 +256,11 @@ msgstr "链接"
 msgid "Local Charts"
 msgstr "本地的图表"
 
-#: src/components/Login.tsx:26
+#: src/components/LoginForm.tsx:20
 msgid "Log In"
 msgstr "登录"
 
-#: src/components/SponsorDashboard.tsx:51
+#: src/components/SponsorDashboard.tsx:50
 msgid "Log Out"
 msgstr "登出"
 
@@ -280,8 +280,8 @@ msgstr "设为公开访问"
 msgid "Name"
 msgstr "姓名"
 
-#: src/components/SponsorDashboard.tsx:78
-#: src/components/SponsorDashboard.tsx:216
+#: src/components/SponsorDashboard.tsx:77
+#: src/components/SponsorDashboard.tsx:215
 msgid "Next charge"
 msgstr "下次扣费"
 
@@ -312,14 +312,14 @@ msgstr "重命名"
 msgid "Reset"
 msgstr "重置"
 
-#: src/components/SponsorDashboard.tsx:100
-#: src/components/SponsorDashboard.tsx:212
-#: src/components/SponsorDashboard.tsx:214
-#: src/components/SponsorDashboard.tsx:220
+#: src/components/SponsorDashboard.tsx:99
+#: src/components/SponsorDashboard.tsx:211
+#: src/components/SponsorDashboard.tsx:213
+#: src/components/SponsorDashboard.tsx:219
 msgid "Resume Subscription"
 msgstr "恢复订阅"
 
-#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:182
 msgid "Return"
 msgstr "返回"
 
@@ -332,7 +332,7 @@ msgstr "从右到左"
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/Sponsor.tsx:121
+#: src/components/Sponsor.tsx:124
 msgid "Sign Up"
 msgstr "注册"
 
@@ -346,25 +346,25 @@ msgstr "以每月 1 美元的价格赞助 flowchart.fun，以访问托管的流�
 msgid "Sponsors"
 msgstr "赞助人"
 
-#: src/components/SponsorDashboard.tsx:88
+#: src/components/SponsorDashboard.tsx:87
 msgid "Start"
 msgstr "开始"
 
-#: src/components/SponsorDashboard.tsx:71
+#: src/components/SponsorDashboard.tsx:70
 msgid "Status"
 msgstr "状态"
 
 #: src/components/Feedback.tsx:56
-#: src/components/Login.tsx:37
+#: src/components/LoginForm.tsx:34
 #: src/components/MenuNext.tsx:167
 msgid "Submit"
 msgstr "提交"
 
-#: src/components/SponsorDashboard.tsx:67
+#: src/components/SponsorDashboard.tsx:66
 msgid "Subscription"
 msgstr "订阅"
 
-#: src/components/SponsorDashboard.tsx:97
+#: src/components/SponsorDashboard.tsx:96
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
@@ -401,7 +401,7 @@ msgstr "重试"
 msgid "Updated"
 msgstr "已更新"
 
-#: src/components/SponsorDashboard.tsx:48
+#: src/components/SponsorDashboard.tsx:47
 msgid "User"
 msgstr "用户"
 
@@ -413,7 +413,7 @@ msgstr "在 Github 上查看"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "我们感谢您的全部反馈、建议、报错和关于功能的需求！"
 
-#: src/components/Sponsor.tsx:124
+#: src/components/Sponsor.tsx:127
 msgid "We use cookies to keep you logged in."
 msgstr "我们使用 cookies 来让您保持登录状态。"
 
@@ -430,7 +430,7 @@ msgid "With Editor"
 msgstr "使用编辑器"
 
 #: src/components/Navigation.tsx:220
-#: src/components/SponsorDashboard.tsx:58
+#: src/components/SponsorDashboard.tsx:57
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。"
 

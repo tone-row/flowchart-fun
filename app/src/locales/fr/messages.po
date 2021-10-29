@@ -17,7 +17,7 @@ msgstr ""
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
 msgstr "Accédez à ces graphiques depuis n'importe où. Partagez ou intégrez des graphiques, qui se synchronisent au fil de vos modifications."
 
-#: src/components/SponsorDashboard.tsx:132
+#: src/components/SponsorDashboard.tsx:131
 msgid "Amount"
 msgstr "Montant"
 
@@ -35,7 +35,7 @@ msgstr "Retour à l'éditeur"
 
 #: src/components/Settings.tsx:91
 #: src/components/Sponsor.tsx:38
-#: src/components/SponsorDashboard.tsx:55
+#: src/components/SponsorDashboard.tsx:54
 msgid "Become a Sponsor"
 msgstr "Devenir un sponsor"
 
@@ -50,15 +50,15 @@ msgstr "Parcours en largeur"
 #: src/components/Navigation.tsx:142
 #: src/components/Navigation.tsx:345
 #: src/components/Navigation.tsx:380
-#: src/components/SponsorDashboard.tsx:107
-#: src/components/SponsorDashboard.tsx:115
-#: src/components/SponsorDashboard.tsx:177
-#: src/components/SponsorDashboard.tsx:184
-#: src/components/SponsorDashboard.tsx:219
+#: src/components/SponsorDashboard.tsx:106
+#: src/components/SponsorDashboard.tsx:114
+#: src/components/SponsorDashboard.tsx:176
+#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:218
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/components/SponsorDashboard.tsx:110
+#: src/components/SponsorDashboard.tsx:109
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Résilier votre abonnement. Vos graphiques hébergés seront en lecture seule."
 
@@ -67,7 +67,7 @@ msgstr "Résilier votre abonnement. Vos graphiques hébergés seront en lecture 
 msgid "Charts"
 msgstr "Graphiques"
 
-#: src/components/Login.tsx:30
+#: src/components/LoginForm.tsx:24
 #: src/components/Sponsor.tsx:104
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Consultez votre messagerie électronique pour le lien de connexion. Vous pouvez fermer cette fenêtre."
@@ -119,7 +119,7 @@ msgstr "Sombre"
 msgid "Dark Mode"
 msgstr "Mode sombre"
 
-#: src/components/SponsorDashboard.tsx:129
+#: src/components/SponsorDashboard.tsx:128
 msgid "Date"
 msgstr "Date"
 
@@ -134,7 +134,7 @@ msgstr "Supprimer"
 msgid "Direction"
 msgstr "Direction"
 
-#: src/components/SponsorDashboard.tsx:180
+#: src/components/SponsorDashboard.tsx:179
 msgid "Do you want to cancel your subscription?"
 msgstr "Souhaitez-vous résilier votre abonnement ?"
 
@@ -163,7 +163,7 @@ msgstr "Éditeur"
 msgid "Eggs"
 msgstr "Oeufs"
 
-#: src/components/Login.tsx:36
+#: src/components/LoginForm.tsx:33
 msgid "Email"
 msgstr "Messagerie électronique"
 
@@ -210,7 +210,7 @@ msgstr "Amusez-vous ! 🎉"
 msgid "Help"
 msgstr "Aide"
 
-#: src/components/SponsorDashboard.tsx:119
+#: src/components/SponsorDashboard.tsx:118
 msgid "History"
 msgstr "Historique"
 
@@ -256,11 +256,11 @@ msgstr "Lien"
 msgid "Local Charts"
 msgstr "Graphiques locaux"
 
-#: src/components/Login.tsx:26
+#: src/components/LoginForm.tsx:20
 msgid "Log In"
 msgstr "Connexion"
 
-#: src/components/SponsorDashboard.tsx:51
+#: src/components/SponsorDashboard.tsx:50
 msgid "Log Out"
 msgstr "Déconnexion"
 
@@ -280,8 +280,8 @@ msgstr "Rendre accessible au public"
 msgid "Name"
 msgstr "Nom"
 
-#: src/components/SponsorDashboard.tsx:78
-#: src/components/SponsorDashboard.tsx:216
+#: src/components/SponsorDashboard.tsx:77
+#: src/components/SponsorDashboard.tsx:215
 msgid "Next charge"
 msgstr "Prochain paiement"
 
@@ -312,14 +312,14 @@ msgstr "Renommer"
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: src/components/SponsorDashboard.tsx:100
-#: src/components/SponsorDashboard.tsx:212
-#: src/components/SponsorDashboard.tsx:214
-#: src/components/SponsorDashboard.tsx:220
+#: src/components/SponsorDashboard.tsx:99
+#: src/components/SponsorDashboard.tsx:211
+#: src/components/SponsorDashboard.tsx:213
+#: src/components/SponsorDashboard.tsx:219
 msgid "Resume Subscription"
 msgstr "Reprendre l'abonnement"
 
-#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:182
 msgid "Return"
 msgstr "Retour"
 
@@ -332,7 +332,7 @@ msgstr "De droite à gauche"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/components/Sponsor.tsx:121
+#: src/components/Sponsor.tsx:124
 msgid "Sign Up"
 msgstr "Inscription"
 
@@ -346,25 +346,25 @@ msgstr "Soutenez flowchart.fun pour 1 $ par mois et bénéficiez de l'hébergeme
 msgid "Sponsors"
 msgstr "Sponsors"
 
-#: src/components/SponsorDashboard.tsx:88
+#: src/components/SponsorDashboard.tsx:87
 msgid "Start"
 msgstr "Début"
 
-#: src/components/SponsorDashboard.tsx:71
+#: src/components/SponsorDashboard.tsx:70
 msgid "Status"
 msgstr "État"
 
 #: src/components/Feedback.tsx:56
-#: src/components/Login.tsx:37
+#: src/components/LoginForm.tsx:34
 #: src/components/MenuNext.tsx:167
 msgid "Submit"
 msgstr "Soumettre"
 
-#: src/components/SponsorDashboard.tsx:67
+#: src/components/SponsorDashboard.tsx:66
 msgid "Subscription"
 msgstr "Abonnement"
 
-#: src/components/SponsorDashboard.tsx:97
+#: src/components/SponsorDashboard.tsx:96
 msgid "Subscription will end"
 msgstr "L'abonnement prendra fin"
 
@@ -401,7 +401,7 @@ msgstr "Réessayer"
 msgid "Updated"
 msgstr "Mis à jour"
 
-#: src/components/SponsorDashboard.tsx:48
+#: src/components/SponsorDashboard.tsx:47
 msgid "User"
 msgstr "Utilisateur"
 
@@ -413,7 +413,7 @@ msgstr "Voir sur Github"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Nous apprécions tous vos commentaires, suggestions, retours sur les bugs et demandes de fonctionnalités !"
 
-#: src/components/Sponsor.tsx:124
+#: src/components/Sponsor.tsx:127
 msgid "We use cookies to keep you logged in."
 msgstr "Nous utilisons des cookies afin de maintenir votre connexion."
 
@@ -430,7 +430,7 @@ msgid "With Editor"
 msgstr "Avec l'éditeur"
 
 #: src/components/Navigation.tsx:220
-#: src/components/SponsorDashboard.tsx:58
+#: src/components/SponsorDashboard.tsx:57
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor."
 

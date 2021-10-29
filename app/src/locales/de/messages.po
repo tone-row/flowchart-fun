@@ -17,7 +17,7 @@ msgstr ""
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
 msgstr "Greifen Sie von überall auf diese Diagramme zu. Teilen/Einbetten von Diagrammen, die mit Ihren Bearbeitungen synchronisiert bleiben."
 
-#: src/components/SponsorDashboard.tsx:132
+#: src/components/SponsorDashboard.tsx:131
 msgid "Amount"
 msgstr "Betrag"
 
@@ -35,7 +35,7 @@ msgstr "Zurück zum Editor"
 
 #: src/components/Settings.tsx:91
 #: src/components/Sponsor.tsx:38
-#: src/components/SponsorDashboard.tsx:55
+#: src/components/SponsorDashboard.tsx:54
 msgid "Become a Sponsor"
 msgstr "Werden Sie zum Sponsoren"
 
@@ -50,15 +50,15 @@ msgstr "In die Breite"
 #: src/components/Navigation.tsx:142
 #: src/components/Navigation.tsx:345
 #: src/components/Navigation.tsx:380
-#: src/components/SponsorDashboard.tsx:107
-#: src/components/SponsorDashboard.tsx:115
-#: src/components/SponsorDashboard.tsx:177
-#: src/components/SponsorDashboard.tsx:184
-#: src/components/SponsorDashboard.tsx:219
+#: src/components/SponsorDashboard.tsx:106
+#: src/components/SponsorDashboard.tsx:114
+#: src/components/SponsorDashboard.tsx:176
+#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:218
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/components/SponsorDashboard.tsx:110
+#: src/components/SponsorDashboard.tsx:109
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Kündigen Sie Ihr Abonnement. Ihre gehosteten Diagramme werden schreibgeschützt."
 
@@ -67,7 +67,7 @@ msgstr "Kündigen Sie Ihr Abonnement. Ihre gehosteten Diagramme werden schreibge
 msgid "Charts"
 msgstr "Diagramme"
 
-#: src/components/Login.tsx:30
+#: src/components/LoginForm.tsx:24
 #: src/components/Sponsor.tsx:104
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses Fenster schließen."
@@ -119,7 +119,7 @@ msgstr "Dunkel"
 msgid "Dark Mode"
 msgstr "Dunkelmodus"
 
-#: src/components/SponsorDashboard.tsx:129
+#: src/components/SponsorDashboard.tsx:128
 msgid "Date"
 msgstr "Datum"
 
@@ -134,7 +134,7 @@ msgstr "Löschen"
 msgid "Direction"
 msgstr "Richtung"
 
-#: src/components/SponsorDashboard.tsx:180
+#: src/components/SponsorDashboard.tsx:179
 msgid "Do you want to cancel your subscription?"
 msgstr "Möchten Sie Ihr Abonnement kündigen?"
 
@@ -163,7 +163,7 @@ msgstr "Editor"
 msgid "Eggs"
 msgstr "Eier"
 
-#: src/components/Login.tsx:36
+#: src/components/LoginForm.tsx:33
 msgid "Email"
 msgstr "E-Mail"
 
@@ -210,7 +210,7 @@ msgstr "Viel Spaß! 🎉"
 msgid "Help"
 msgstr "Hilfe"
 
-#: src/components/SponsorDashboard.tsx:119
+#: src/components/SponsorDashboard.tsx:118
 msgid "History"
 msgstr "Verlauf"
 
@@ -256,11 +256,11 @@ msgstr "Link"
 msgid "Local Charts"
 msgstr "Lokale Diagramme"
 
-#: src/components/Login.tsx:26
+#: src/components/LoginForm.tsx:20
 msgid "Log In"
 msgstr "Anmelden"
 
-#: src/components/SponsorDashboard.tsx:51
+#: src/components/SponsorDashboard.tsx:50
 msgid "Log Out"
 msgstr "Abmelden"
 
@@ -280,8 +280,8 @@ msgstr "Öffentlich zugänglich machen"
 msgid "Name"
 msgstr "Name"
 
-#: src/components/SponsorDashboard.tsx:78
-#: src/components/SponsorDashboard.tsx:216
+#: src/components/SponsorDashboard.tsx:77
+#: src/components/SponsorDashboard.tsx:215
 msgid "Next charge"
 msgstr "Nächste Gebühr"
 
@@ -312,14 +312,14 @@ msgstr "Umbenennen"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: src/components/SponsorDashboard.tsx:100
-#: src/components/SponsorDashboard.tsx:212
-#: src/components/SponsorDashboard.tsx:214
-#: src/components/SponsorDashboard.tsx:220
+#: src/components/SponsorDashboard.tsx:99
+#: src/components/SponsorDashboard.tsx:211
+#: src/components/SponsorDashboard.tsx:213
+#: src/components/SponsorDashboard.tsx:219
 msgid "Resume Subscription"
 msgstr "Abonnement fortsetzen"
 
-#: src/components/SponsorDashboard.tsx:183
+#: src/components/SponsorDashboard.tsx:182
 msgid "Return"
 msgstr "Zurückkehren"
 
@@ -332,7 +332,7 @@ msgstr "Von rechts nach links"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/components/Sponsor.tsx:121
+#: src/components/Sponsor.tsx:124
 msgid "Sign Up"
 msgstr "Registrieren"
 
@@ -346,25 +346,25 @@ msgstr "Sponsern Sie flowchart.fun für 1 $ pro Monat, um Zugang zu gehosteten F
 msgid "Sponsors"
 msgstr "Sponsoren"
 
-#: src/components/SponsorDashboard.tsx:88
+#: src/components/SponsorDashboard.tsx:87
 msgid "Start"
 msgstr "Start"
 
-#: src/components/SponsorDashboard.tsx:71
+#: src/components/SponsorDashboard.tsx:70
 msgid "Status"
 msgstr "Status"
 
 #: src/components/Feedback.tsx:56
-#: src/components/Login.tsx:37
+#: src/components/LoginForm.tsx:34
 #: src/components/MenuNext.tsx:167
 msgid "Submit"
 msgstr "Einsenden"
 
-#: src/components/SponsorDashboard.tsx:67
+#: src/components/SponsorDashboard.tsx:66
 msgid "Subscription"
 msgstr "Abonnement"
 
-#: src/components/SponsorDashboard.tsx:97
+#: src/components/SponsorDashboard.tsx:96
 msgid "Subscription will end"
 msgstr "Abonnement wird beendet"
 
@@ -401,7 +401,7 @@ msgstr "Erneut versuchen"
 msgid "Updated"
 msgstr "Aktualisiert"
 
-#: src/components/SponsorDashboard.tsx:48
+#: src/components/SponsorDashboard.tsx:47
 msgid "User"
 msgstr "Benutzer"
 
@@ -413,7 +413,7 @@ msgstr "Auf Github ansehen"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Wir freuen uns über Ihr Feedback, Ihre Vorschläge, Fehler und Funktionsanfragen!"
 
-#: src/components/Sponsor.tsx:124
+#: src/components/Sponsor.tsx:127
 msgid "We use cookies to keep you logged in."
 msgstr "Wir verwenden Cookies, um Sie eingeloggt zu halten."
 
@@ -430,7 +430,7 @@ msgid "With Editor"
 msgstr "Mit Editor"
 
 #: src/components/Navigation.tsx:220
-#: src/components/SponsorDashboard.tsx:58
+#: src/components/SponsorDashboard.tsx:57
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Ihr Abonnement ist nicht mehr aktiv. Wenn Sie gehostete Diagramme erstellen und bearbeiten möchten, werden Sie Sponsor."
 
