@@ -171,6 +171,12 @@ msgstr "ईमेल"
 msgid "Email (optional)"
 msgstr "ईमेल (ऐच्छिक)"
 
+#: src/components/Navigation.tsx:94
+#: src/components/Navigation.tsx:213
+#: src/components/Navigation.tsx:340
+msgid "Enter a title"
+msgstr "एक शीर्षक दर्ज करें"
+
 #: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
 msgstr "फैलाव"

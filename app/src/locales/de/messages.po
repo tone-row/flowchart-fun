@@ -171,6 +171,12 @@ msgstr "E-Mail"
 msgid "Email (optional)"
 msgstr "E-Mail (optional)"
 
+#: src/components/Navigation.tsx:94
+#: src/components/Navigation.tsx:213
+#: src/components/Navigation.tsx:340
+msgid "Enter a title"
+msgstr "Titel eingeben"
+
 #: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
 msgstr "Erweitern"

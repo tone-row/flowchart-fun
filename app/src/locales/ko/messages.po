@@ -171,6 +171,12 @@ msgstr "이메일"
 msgid "Email (optional)"
 msgstr "이메일 (선택사항)"
 
+#: src/components/Navigation.tsx:94
+#: src/components/Navigation.tsx:213
+#: src/components/Navigation.tsx:340
+msgid "Enter a title"
+msgstr "제목을 입력하세요"
+
 #: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
 msgstr "넓히다"

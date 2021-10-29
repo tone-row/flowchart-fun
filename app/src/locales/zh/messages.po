@@ -171,6 +171,12 @@ msgstr "电子邮件"
 msgid "Email (optional)"
 msgstr "电子邮件（可选）"
 
+#: src/components/Navigation.tsx:94
+#: src/components/Navigation.tsx:213
+#: src/components/Navigation.tsx:340
+msgid "Enter a title"
+msgstr "输入标题"
+
 #: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
 msgstr "扩大"

@@ -6,6 +6,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: pt-br\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: src/components/Navigation.tsx:209
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
@@ -164,6 +170,12 @@ msgstr "E-mail"
 #: src/components/Feedback.tsx:52
 msgid "Email (optional)"
 msgstr "E-mail (opcional)"
+
+#: src/components/Navigation.tsx:94
+#: src/components/Navigation.tsx:213
+#: src/components/Navigation.tsx:340
+msgid "Enter a title"
+msgstr "Insira um título"
 
 #: src/components/GraphOptionsBar.tsx:98
 msgid "Expand"
