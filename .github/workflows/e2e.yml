@@ -18,7 +18,7 @@ jobs:
           STATE="not ready"
           echo "Hello World"
           echo "${{ github }}"
-          CURRENT_HASH=${{ github.event.after }}
+          CURRENT_HASH=${{ github.event.pull_request.head.sha }}
           echo $CURRENT_HASH
           until [ "$STATE" = '"READY"' ]
           do
