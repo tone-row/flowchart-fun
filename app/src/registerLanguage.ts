@@ -45,15 +45,20 @@ function registerLanguage(monaco: Monaco) {
   monaco.languages.setMonarchTokensProvider(languageId, {
     tokenizer: {
       root: [
-        { regex: "/\\*", action: { token: "comment", next: "@comment" } },
         {
           regex: "^~~~$",
           action: { token: "meta.embedded.block", next: "@yaml" },
         },
-        [/\s*\[[\w\s]+\]/, "variable.other.property"],
-        [/\s*[\w\s\W]+[:：]\s*/, "keyword.operator.assignment"],
-        [/[(（].+[)）]/, "support.function"],
+        { regex: /^\s+/, action: { token: "", next: "@child" } },
+        { regex: /\/\*/, action: { token: "comment", next: "@comment" } },
+        [/\[[\w\s]+\]/, "variable.other.property"],
         [/\/\/.*/, "comment"],
+      ],
+      child: [
+        [/\[[\s\w\s]+\]\s*/, "variable.other.property"],
+        [/[\w\s]+[:：]\s*/, "keyword.operator.assignment"],
+        [/[(（][^(（)）]+[)）]$/, "support.function"],
+        { regex: /\/\*/, action: { token: "comment", next: "@comment" } },
       ],
       comment: [
         ["\\*/", "comment", "@pop"],
