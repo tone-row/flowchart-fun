@@ -11,12 +11,12 @@ jobs:
         id: get_url
         run: |
           STATE="not ready"
-          CURRENT_HASH=${{ github.event.after }}
+          CURRENT_HASH=${{ github.event.pull_request.head.sha }}
           echo $CURRENT_HASH
           until [ "$STATE" = '"READY"' ]
           do
             RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
-            CLEAN=$(echo $RESULTS | tr -d '[:cntrl:]')
+            CLEAN=$(echo $RESULTS | tr -d '[:cntrl:]');
             STATE=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .state');
             echo $STATE
             sleep 5
