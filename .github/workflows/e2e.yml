@@ -11,6 +11,7 @@ jobs:
         id: get_url
         run: |
           STATE="not ready"
+          echo "${{ github }}"
           CURRENT_HASH=${{ github.event.after }}
           echo $CURRENT_HASH
           until [ "$STATE" = '"READY"' ]
