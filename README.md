@@ -1,6 +1,10 @@
-<h1 style="text-align: center;">flowchart-fun ⿻ 🎨</h1>
+<p align="center">
+ 
+ <img src="https://github.com/tone-row/flowchart-fun/blob/main/app/public/apple-touch-icon.png?raw=true" style="border-radius: 6px" alt="flowchart.fun">
 
-<a href="https://flowchart.fun/" style=" display: block; font-size: 1.5em; text-align: center;">Running at https://flowchart.fun/</a>
+# https://flowchart.fun/
+
+</p>
 
 ![app](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
 
@@ -10,9 +14,7 @@ flowchart.fun is a lightweight application to generate flowcharts and diagrams f
 
 This app also allows users to log in and save hosted charts, as well as send feedback. These features are built with [Vercel functions](https://vercel.com/docs/concepts/functions/introduction) / [supabase](https://supabase.io/), and [sendgrid](https://sendgrid.com/) respectively.
 
-> Note: It's not necessary to configure these services to run a lightweight version of this app.
->
-> Read below to find out more.
+**Note:** It's not necessary to configure these services to run a lightweight version of this app. Read below to find out more.
 
 ## Installation
 
@@ -22,13 +24,13 @@ This app also allows users to log in and save hosted charts, as well as send fee
 
 ## How to run without login features
 
-To run the app without login features, simply run `yarn start` in the root directory.
+`yarn start`
 
 ## How to run with login features
 
-To run with full functionality you'll need accounts with vercel, sendgrid, supabase and stripe.
+To run with full functionality you'll need accounts with vercel, sendgrid, supabase and stripe. Then you'll need to copy and fill the environment variables in _app/.env.example_ to _app/.env_. Then
 
----
+`vercel dev`
 
 ## Workspaces
 
@@ -36,4 +38,4 @@ This repository is organized in workspaces. [/app](/app) contains the code for t
 
 ## Contributing
 
-This repo is always open to contributions. Before opening a PR with a new feature, consider opening an issue or discussion to gauge support and confirm your implementation.
+We always welcome contributions! Before opening a pull request with a new feature, consider opening an issue or discussion to gauge support and/or confirm your implementation.
