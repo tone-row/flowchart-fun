@@ -1,31 +1,37 @@
-# flowchart-fun ⿻
+# [flowchart.fun ⿻](https://flowchart.fun/)
 
-## 👉 &nbsp;https://flowchart.fun/
-
-Generate charts from text ⿻
-Made with [create-react-app](https://github.com/facebook/create-react-app) and [cytoscape.js](https://github.com/cytoscape/cytoscape.js)
+Generate diagrams from text. **Running at https://flowchart.fun**
 
 ![app](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
 
-## How to Run
+## Summary
 
-1. `git clone`
+flowchart.fun is a lightweight application to generate flowcharts and diagrams from text. It is built with [create-react-app](https://github.com/facebook/create-react-app) and [cytoscape.js](https://github.com/cytoscape/cytoscape.js)
+
+This app also allows users to log in and save hosted charts, as well as send feedback. These features are built with [Vercel functions](https://vercel.com/docs/concepts/functions/introduction) / [supabase](https://supabase.io/), and [sendgrid](https://sendgrid.com/) respectively.
+
+**Note:** It's not necessary to configure these services to run a lightweight version of this app. Read below to find out more.
+
+## Installation
+
+1. Clone this repository
 1. `cd flowchart-fun`
 1. `yarn`
-1. `yarn start`
 
-This repository is organized in workspaces. [/app](/app) contains the code for https://flowchart.fun and [/module](/module) contains the code for the [flowchart-fun](https://www.npmjs.com/package/flowchart-fun) npm module
+## How to run without login features
 
-For more information on developing, check out [create-react-app's README](https://github.com/facebook/create-react-app/blob/master/README.md)
+`yarn start`
 
-_NOTE_ – the module is no longer maintained
+## How to run with login features
 
-## Feedback / Backend Functionality
+To run with full functionality you'll need accounts with vercel, sendgrid, supabase and stripe. Then you'll need to copy and fill the environment variables in _app/.env.example_ to _app/.env_. Then
 
-This app sends emails using Sendgrid and Vercel's serverless functions.
+`vercel dev`
 
-It's possible to run this app without the feedback functionality, but if you do wish to run it with the feedback functionality you will need to deploy it on vercel and set the `REACT_APP_FEEDBACK_TO` and `SENDGRID_API_KEY` environment variables.
+## Workspaces
+
+This repository is organized in workspaces. [/app](/app) contains the code for the react application and [/module](/module) contains the code for the **deprecated** [flowchart-fun](https://www.npmjs.com/package/flowchart-fun) npm module.
 
 ## Contributing
 
-This repo is always open to contributions. Before opening a PR with a new feature, consider opening an issue or discussion to gauge support and confirm your implementation.
+We always welcome contributions! Before opening a pull request with a new feature, consider opening an issue or discussion to gauge support and/or confirm your implementation.
