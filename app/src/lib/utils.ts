@@ -1,5 +1,5 @@
 import strip from "@tone-row/strip-comments";
-import { CytoscapeOptions } from "cytoscape";
+import cytoscape, { CytoscapeOptions } from "cytoscape";
 
 export function stripComments(t: string) {
   return strip(t, { preserveNewlines: true });
@@ -98,10 +98,13 @@ export function parseText(
   // Before returning elements, check if user
   // used label text as pointer, and replace with id
   const labelToId = elements.reduce<Record<string, string>>(
-    (acc, el) => ({
-      ...acc,
-      [el.data.label]: el.data.id,
-    }),
+    (acc, el) =>
+      isEdge(el)
+        ? acc
+        : {
+            ...acc,
+            [el.data.label]: el.data.id,
+          },
     {}
   );
 
@@ -116,6 +119,7 @@ export function parseText(
       }
     }
   }
+
   return elements;
 }
 
@@ -145,4 +149,8 @@ function getLineData(text: string, lineNumber: number) {
     linkedId:
       typeof linkedId !== "undefined" ? decodeURIComponent(linkedId) : linkedId,
   };
+}
+
+function isEdge(el: cytoscape.ElementDefinition) {
+  return "target" in el.data || "source" in el.data;
 }

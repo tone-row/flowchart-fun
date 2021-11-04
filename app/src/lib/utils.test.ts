@@ -128,6 +128,18 @@ describe("parseText", () => {
     const result = parseText(text, getSize);
     expect(result.filter(edgesOnly)[0].data.id).toEqual(`1_${originalLabel}:0`);
   });
+
+  it("should only link-by-label to nodes, not edges", () => {
+    const label = `A
+    test: B
+      (test)
+    test`;
+    const result = parseText(label, getSize);
+    const edges = result.filter(edgesOnly);
+    const targets = edges.map((e) => e.data.target);
+    // Including an underscore means that it points to an edge
+    expect(targets.some((target) => target.includes("_"))).toBe(false);
+  });
 });
 
 function nodesOnly(el: cytoscape.ElementDefinition) {
