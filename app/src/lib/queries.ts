@@ -81,6 +81,7 @@ export async function mail(email: {
  * Validate user before sending sign in link
  */
 export async function login(email: string): Promise<boolean> {
+  if (!supabase) return false;
   const response = await fetch("/api/validate", {
     method: "post",
     headers: {
@@ -151,6 +152,7 @@ export async function makeChart({
   user_id: string;
   chart?: string;
 }) {
+  if (!supabase) return;
   const defaultText = `${t`This app works by typing`}
   ${t`Indenting creates a link to the current line`}
   ${t`any text: before a colon creates a label`}
@@ -173,6 +175,7 @@ ${t`Have fun! 🎉`}
 }
 
 async function userCharts() {
+  if (!supabase) return;
   const { data, error } = await supabase
     .from<definitions["user_charts"]>("user_charts")
     .select("id,name,created_at,updated_at,is_public")
@@ -193,6 +196,7 @@ export function useCharts() {
 
 async function getChart(id?: string) {
   if (!id) return;
+  if (!supabase) return;
   const { data, error } = await supabase
     .from<definitions["user_charts"]>("user_charts")
     .select("id,name,chart,updated_at,created_at,public_id,is_public")
@@ -214,6 +218,7 @@ export function useChart(id?: string) {
 
 export async function updateChartText(chart: string, id?: string) {
   if (!id) return;
+  if (!supabase) return;
   return supabase
     .from<definitions["user_charts"]>("user_charts")
     .update({ chart })
@@ -221,6 +226,7 @@ export async function updateChartText(chart: string, id?: string) {
 }
 
 export async function deleteChart({ chartId }: { chartId: number }) {
+  if (!supabase) return;
   const { data, error } = await supabase
     .from<definitions["user_charts"]>("user_charts")
     .delete()
@@ -286,6 +292,7 @@ export async function createCustomer(email: string) {
 }
 
 export async function renameChart(id: number, name: string) {
+  if (!supabase) return;
   const { data, error } = await supabase
     .from<definitions["user_charts"]>("user_charts")
     .update({ name })
@@ -295,6 +302,7 @@ export async function renameChart(id: number, name: string) {
 }
 
 export async function makeChartPublic(id: string, isPublic: boolean) {
+  if (!supabase) return;
   const { data, error } = await supabase
     .from("user_charts")
     .select("is_public,public_id")

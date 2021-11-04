@@ -25,6 +25,7 @@ export function SponsorDashboard() {
   const { push } = useHistory();
   const signOut = useCallback(() => {
     (async () => {
+      if (!supabase) return;
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
       queryClient.removeQueries(["auth"]);

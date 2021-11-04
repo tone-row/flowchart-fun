@@ -130,11 +130,13 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
-    const session = supabase.auth.session();
-    setSession(session);
-    supabase.auth.onAuthStateChange((_event, session) => {
+    if (supabase) {
+      const session = supabase.auth.session();
       setSession(session);
-    });
+      supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session);
+      });
+    }
   }, []);
 
   const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
