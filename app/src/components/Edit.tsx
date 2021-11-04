@@ -45,7 +45,7 @@ function Edit() {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const decorations = useRef<any[]>([]);
-  const { mode, hasError } = useContext(AppContext);
+  const { mode, hasError, hasStyleError } = useContext(AppContext);
 
   // Add language
   useMonacoLanguage(monaco);
@@ -147,7 +147,7 @@ function Edit() {
         onMount={onMount}
       />
       <HelpButton />
-      <HasError show={hasError} />
+      <HasError show={hasError || hasStyleError} />
     </GraphProvider>
   );
 }

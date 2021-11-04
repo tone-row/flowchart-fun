@@ -51,6 +51,8 @@ type TAppContext = {
   setShowing: Dispatch<SetStateAction<Showing>>;
   hasError: boolean;
   setHasError: Dispatch<SetStateAction<boolean>>;
+  hasStyleError: boolean;
+  setHasStyleError: Dispatch<SetStateAction<boolean>>;
   shareModal: boolean;
   setShareModal: Dispatch<SetStateAction<boolean>>;
   mobileEditorTab: mobileEditorTab;
@@ -121,6 +123,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   }, []);
 
   const [hasError, setHasError] = useState(false);
+  const [hasStyleError, setHasStyleError] = useState(false);
 
   const { data: flags } = useUserFeatures();
 
@@ -156,6 +159,8 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         session,
         customer,
         customerIsLoading,
+        hasStyleError,
+        setHasStyleError,
         ...settings,
         language: settings.language ?? defaultLanguage,
       }}
