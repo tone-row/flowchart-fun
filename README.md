@@ -1,4 +1,6 @@
-# [flowchart.fun](https://flowchart.fun/)
+# [flowchart.fun ⿻](https://flowchart.fun/)
+
+Generate diagrams from text. **Running at https://flowchart.fun**
 
 ![app](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
 
