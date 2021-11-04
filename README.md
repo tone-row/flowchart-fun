@@ -1,18 +1,37 @@
 # flowchart-fun ⿻
 
-## 👉 &nbsp;https://flowchart.fun/
+<div style="padding: 1em; background-color: var(--color-border-default, whitesmoke); text-align: center; border-radius: 6px;">
 
-Generate charts from text ⿻
-Made with [create-react-app](https://github.com/facebook/create-react-app) and [cytoscape.js](https://github.com/cytoscape/cytoscape.js)
+[Check out https://flowchart.fun/](https://flowchart.fun/)
+
+</div>
 
 ![app](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
 
-## How to Run
+## Summary
 
-1. `git clone`
+flowchart.fun is a lightweight application to generate flowcharts and diagrams from text ⿻
+It's built with [create-react-app](https://github.com/facebook/create-react-app) and [cytoscape.js](https://github.com/cytoscape/cytoscape.js)
+
+The production version of this app allows users to log in and save hosted charts. This is built with [Vercel functions](https://vercel.com/docs/concepts/functions/introduction) and [supabase](https://supabase.io/).
+
+However, it's not necessary to configure these services to run a lightweight version of this app. Read below to find out more.
+
+## Installation
+
+1. Clone this repository
 1. `cd flowchart-fun`
 1. `yarn`
-1. `yarn start`
+
+## How to run without login features
+
+To run the app without login features, simply run `yarn start` in the root directory.
+
+## How to run this app with login features
+
+...
+
+---
 
 This repository is organized in workspaces. [/app](/app) contains the code for https://flowchart.fun and [/module](/module) contains the code for the [flowchart-fun](https://www.npmjs.com/package/flowchart-fun) npm module
 
