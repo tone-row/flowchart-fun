@@ -1,9 +1,4 @@
-<p align="center">
- 
- <img src="https://github.com/tone-row/flowchart-fun/blob/main/app/public/apple-touch-icon.png?raw=true" width="75" alt="flowchart.fun">
-</p>
-
-<h1><a href="https://flowchart.fun/">flowchart.fun</a></h1>
+# [flowchart.fun](https://flowchart.fun/)
 
 ![app](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
 
