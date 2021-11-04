@@ -1,9 +1,9 @@
 <p align="center">
  
- <img src="https://github.com/tone-row/flowchart-fun/blob/main/app/public/apple-touch-icon.png?raw=true" width="100" alt="flowchart.fun">
+ <img src="https://github.com/tone-row/flowchart-fun/blob/main/app/public/apple-touch-icon.png?raw=true" width="75" alt="flowchart.fun">
 </p>
 
-<h1 align="center"><a href="https://flowchart.fun/">https://flowchart.fun/</a></h1>
+<h1><a href="https://flowchart.fun/">flowchart.fun</a></h1>
 
 ![app](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
 
