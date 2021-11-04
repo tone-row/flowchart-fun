@@ -29,6 +29,7 @@ import styles from "./EditUserChart.module.css";
 import Spinner from "./Spinner";
 import { Check, Timer } from "phosphor-react";
 import { useIsValidSponsor } from "../hooks";
+import HasError from "./HasError";
 
 export default function EditUserChart() {
   const validSponsor = useIsValidSponsor();
@@ -43,7 +44,7 @@ export default function EditUserChart() {
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const { mode } = useContext(AppContext);
+  const { mode, hasError, hasStyleError } = useContext(AppContext);
   const loading = useRef(<Loading />);
   const { graphOptions, content } = useGraphOptions(textToParse);
 
@@ -166,6 +167,7 @@ export default function EditUserChart() {
           <Check size={30} color="var(--palette-green-0)" />
         )}
       </div>
+      <HasError show={hasError || hasStyleError} />
     </GraphProvider>
   );
 }

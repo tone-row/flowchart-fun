@@ -15,6 +15,7 @@ import {
   useMonacoLanguage,
 } from "../registerLanguage";
 import styles from "./ReadOnly.module.css";
+import HasError from "./HasError";
 
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const monaco = useMonaco();
@@ -27,7 +28,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const decorations = useRef<any[]>([]);
-  const { mode } = useContext(AppContext);
+  const { mode, hasError, hasStyleError } = useContext(AppContext);
 
   useMonacoLanguage(monaco);
 
@@ -89,6 +90,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
         }}
         onMount={onMount}
       />
+      <HasError show={hasError || hasStyleError} />
     </GraphProvider>
   );
 }

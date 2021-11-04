@@ -54,7 +54,8 @@ const Graph = memo(
     const errorCatcher = useRef<undefined | Core>();
     const animate = useAnimationSetting();
     const graphInitialized = useRef(false);
-    const { setShareLink, setHasError } = useContext(AppContext);
+    const { setShareLink, setHasError, setHasStyleError } =
+      useContext(AppContext);
 
     const graphTheme = useGraphTheme();
     const getSize = useGetSize(
@@ -142,8 +143,8 @@ const Graph = memo(
 
     // Update Style
     useEffect(() => {
-      updateStyle(cy, userStyle, errorCatcher, setHasError, graphTheme);
-    }, [graphTheme, setHasError, userStyle]);
+      updateStyle(cy, userStyle, errorCatcher, setHasStyleError, graphTheme);
+    }, [graphTheme, setHasStyleError, userStyle]);
 
     return (
       <Box
@@ -273,11 +274,13 @@ function updateGraph(
       // Reinitialize to avoid missing errors
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
+      // debugger;
       setHasError(false);
     } catch (e) {
       console.log(e);
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
+      // debugger;
       setHasError(true);
     }
   }
@@ -287,7 +290,7 @@ function updateStyle(
   cy: React.MutableRefObject<cytoscape.Core | undefined>,
   userStyleString: string,
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
-  setHasError: React.Dispatch<React.SetStateAction<boolean>>,
+  setHasStyleError: React.Dispatch<React.SetStateAction<boolean>>,
   graphTheme: GraphThemes
 ) {
   if (cy.current) {
@@ -309,12 +312,12 @@ function updateStyle(
       // Reinitialize to avoid missing errors
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
-      setHasError(false);
+      setHasStyleError(false);
     } catch (e) {
       console.log(e);
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
-      setHasError(true);
+      setHasStyleError(true);
     }
   }
 }

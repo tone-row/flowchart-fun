@@ -1,6 +1,6 @@
 .HasError {
   position: absolute;
-  bottom: calc(4 * var(--spacer-px));
-  left: calc(4 * var(--spacer-px));
+  bottom: calc(3 * var(--spacer-px));
+  right: calc(3 * var(--spacer-px));
   color: red;
 }
