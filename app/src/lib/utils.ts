@@ -108,14 +108,29 @@ export function parseText(
     {}
   );
 
-  for (const [index, element] of Object.entries(elements)) {
-    // If it is an edge
-    if ("target" in element.data) {
-      if (!Object.values(labelToId).includes(element.data.target)) {
-        if (element.data.target in labelToId) {
-          elements[parseInt(index, 10)].data.target =
-            labelToId[element.data.target];
-        }
+  // Reassign label, line number targets to IDs
+  for (const element of elements) {
+    const target = element.data.target;
+    // If element is an edge,
+    if (!target) continue;
+
+    // and the target is not an id
+    if (Object.values(labelToId).includes(target)) continue;
+
+    // replace target with id if it's a label
+    if (target in labelToId) {
+      element.data.target = labelToId[element.data.target];
+      continue;
+    }
+
+    // or if it's a valid line number
+    if (!isNaN(target)) {
+      const lineNumber = parseInt(target, 10);
+      const targetElement = elements.find(
+        ({ data: { lineNumber: elLineNumber } }) => elLineNumber === lineNumber
+      );
+      if (targetElement) {
+        element.data.target = targetElement.data.id;
       }
     }
   }
@@ -136,7 +151,7 @@ function getLineData(text: string, lineNumber: number) {
     nodeLabel = "",
     edgeLabel = "",
     indent,
-    id = lineNumber.toString(),
+    id = betterDefaultId(lineNumber),
   } = groups || {};
   const { groups: labelGroups } =
     nodeLabel.match(/^[(（](?<linkedId>.+)[)）]\s*$/) || {};
@@ -153,4 +168,8 @@ function getLineData(text: string, lineNumber: number) {
 
 function isEdge(el: cytoscape.ElementDefinition) {
   return "target" in el.data || "source" in el.data;
+}
+
+function betterDefaultId(lineNumber: number) {
+  return (333 + lineNumber).toString(16);
 }
