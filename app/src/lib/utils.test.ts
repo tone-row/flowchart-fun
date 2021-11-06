@@ -27,11 +27,11 @@ describe("parseText", () => {
     expect(result.filter(edgesOnly).length).toEqual(1);
     expect(result).toContainEqual({
       data: {
-        id: "1_2:0",
+        id: "14e_14f:0",
         label: "",
         lineNumber: 2,
-        source: "1",
-        target: "2",
+        source: "14e",
+        target: "14f",
       },
     });
   });
@@ -64,15 +64,21 @@ describe("parseText", () => {
     expect(node.data.id).toEqual(fakeId);
   });
 
-  it("should generate & increment edge ids", () => {
+  it("should generate & increment (slightly encoded) edge ids", () => {
     let result = parseText("a\n  b", getSize);
     const edge = result.filter(edgesOnly)[0];
-    expect(edge.data.id).toEqual("1_2:0");
+    expect(edge.data.id).toEqual("14e_14f:0");
     result = parseText("a\n  b\n  (2)", getSize);
     const edges = result.filter(edgesOnly);
     expect(edges.length).toEqual(2);
     expect(edges).toContainEqual({
-      data: { id: "1_2:1", label: "", lineNumber: 3, source: "1", target: "2" },
+      data: {
+        id: "14e_2:0",
+        label: "",
+        lineNumber: 3,
+        source: "14e",
+        target: "14e_14f:0",
+      },
     });
   });
 
@@ -81,7 +87,13 @@ describe("parseText", () => {
   it("should create edge with line number", () => {
     const result = parseText("a\nb\n  (1)", getSize);
     expect(result).toContainEqual({
-      data: { id: "2_1:0", label: "", lineNumber: 3, source: "2", target: "1" },
+      data: {
+        id: "14f_1:0",
+        label: "",
+        lineNumber: 3,
+        source: "14f",
+        target: "14e",
+      },
     });
   });
 
@@ -90,10 +102,10 @@ describe("parseText", () => {
     const result = parseText(`[${fakeId}] a\nb\n  (${fakeId})`, getSize);
     expect(result).toContainEqual({
       data: {
-        id: `2_${fakeId}:0`,
+        id: `14f_${fakeId}:0`,
         label: "",
         lineNumber: 3,
-        source: "2",
+        source: "14f",
         target: `${fakeId}`,
       },
     });
@@ -104,11 +116,11 @@ describe("parseText", () => {
     const result = parseText(`${label}\nb\n  (${label})`, getSize);
     expect(result).toContainEqual({
       data: {
-        id: `2_${label}:0`,
+        id: `14f_${label}:0`,
         label: "",
         lineNumber: 3,
-        source: "2",
-        target: "1",
+        source: "14f",
+        target: "14e",
       },
     });
   });
@@ -126,7 +138,9 @@ describe("parseText", () => {
     const label = encodeURIComponent(originalLabel);
     const text = `${label}\n  good times: (${label})`;
     const result = parseText(text, getSize);
-    expect(result.filter(edgesOnly)[0].data.id).toEqual(`1_${originalLabel}:0`);
+    expect(result.filter(edgesOnly)[0].data.id).toEqual(
+      `14e_${originalLabel}:0`
+    );
   });
 
   it("should only link-by-label to nodes, not edges", () => {
@@ -139,6 +153,62 @@ describe("parseText", () => {
     const targets = edges.map((e) => e.data.target);
     // Including an underscore means that it points to an edge
     expect(targets.some((target) => target.includes("_"))).toBe(false);
+  });
+
+  it("pointers should grab explicit ID first, then label, then line number", () => {
+    // and the first line has a label 1, second line has id 1
+    let testText = `1\n[1] b\nc\n\t(1)`;
+    let result = parseText(testText, getSize);
+    let edges = result.filter(edgesOnly);
+    let firstEdge = edges[0].data;
+    let nodes = result.filter(nodesOnly);
+    expect(firstEdge.source).toEqual("150");
+    expect(firstEdge.target).toEqual("1");
+    expect(nodes.length).toEqual(3);
+    // make sure all nodes have unique ids
+    let ids = nodes.map((n) => n.data.id);
+    expect(
+      ids.every((id) => ids.filter((_id) => _id === id).length === 1)
+    ).toBe(true);
+    // C should link to B even though it's the second line
+    expect(edges).toContainEqual({
+      data: {
+        id: "150_1:0",
+        label: "",
+        lineNumber: 4,
+        source: "150",
+        target: "1",
+      },
+    });
+
+    // prefer label over line number
+    // works even with explict id on target node
+    testText = `line 1\n[test] 1\nc\n\t(1)`;
+    result = parseText(testText, getSize);
+    edges = result.filter(edgesOnly);
+    expect(edges).toContainEqual({
+      data: {
+        id: "150_1:0",
+        label: "",
+        lineNumber: 4,
+        source: "150",
+        target: "test",
+      },
+    });
+
+    // uses line number if nothing else
+    testText = `line 1\n[to] x\n[from] c\n\t(2)`;
+    result = parseText(testText, getSize);
+    edges = result.filter(edgesOnly);
+    expect(edges).toContainEqual({
+      data: {
+        id: "from_2:0",
+        label: "",
+        lineNumber: 4,
+        source: "from",
+        target: "to",
+      },
+    });
   });
 });
 
