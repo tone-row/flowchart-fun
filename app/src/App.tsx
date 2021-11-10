@@ -9,7 +9,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "./lib/queries";
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY as string);
+export const stripePromise = loadStripe(
+  process.env.REACT_APP_STRIPE_KEY as string
+);
 
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Button } from "./components/Shared";
@@ -38,7 +40,7 @@ export default function App() {
   );
 }
 
-function ErrorFallback({ error }: { error: Error }) {
+export function ErrorFallback({ error }: { error: Error }) {
   return (
     <div className="errorWrapper">
       <Box role="alert" className="error-wrapper">
