@@ -108,6 +108,15 @@ export default function EditUserChart() {
     [content, graphOptions, setText, textToParse]
   );
 
+  const updateGraphText = useCallback(
+    (content: string) => {
+      const text = stringify(content, graphOptions, { delimiters });
+      setText(text);
+      setTextToParse(text);
+    },
+    [graphOptions, setText, setTextToParse]
+  );
+
   const decorations = useRef<any[]>([]);
 
   // Hover
@@ -145,6 +154,7 @@ export default function EditUserChart() {
       setHoverLineNumber={setHoverLineNumber}
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
+      updateGraphText={updateGraphText}
     >
       <Editor
         value={text}

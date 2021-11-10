@@ -16,6 +16,9 @@ import {
 import styles from "./ReadOnly.module.css";
 import { usePublicChart } from "../lib/queries";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const noop = () => {};
+
 function Public() {
   const monaco = useMonaco();
   const { public_id } = useParams<{ public_id: string }>();
@@ -73,6 +76,7 @@ function Public() {
       setHoverLineNumber={setHoverLineNumber}
       textToParse={textToParse}
       graphOptions={graphOptions}
+      updateGraphText={noop}
     >
       <Editor
         value={textToParse}

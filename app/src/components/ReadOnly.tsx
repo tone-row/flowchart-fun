@@ -17,6 +17,9 @@ import {
 import styles from "./ReadOnly.module.css";
 import HasError from "./HasError";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const noop = () => {};
+
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const monaco = useMonaco();
   const { graphText = window.location.hash.slice(1) } = useParams<{
@@ -76,6 +79,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
       setHoverLineNumber={setHoverLineNumber}
       textToParse={textToParse}
       graphOptions={graphOptions}
+      updateGraphText={noop}
     >
       <Editor
         value={textToParse}

@@ -97,9 +97,24 @@ function Edit() {
         text = stringify(textToParse, o, { delimiters });
       }
       setText(text);
-      setTextToParse(text);
     },
     [content, graphOptions, setText, textToParse]
+  );
+
+  // Updates graph content, leaving frontmatter intact
+  const updateGraphText = useCallback(
+    (content: string) => {
+      const editor = editorRef.current;
+      if (!editor) return;
+
+      const position = editor.getPosition();
+      const text = stringify(content, graphOptions, { delimiters });
+      setText(text);
+      setTimeout(() => {
+        editor.setPosition(position);
+      }, 0);
+    },
+    [graphOptions, setText]
   );
 
   const setHelpText = useCallback(() => {
@@ -121,8 +136,9 @@ function Edit() {
   const loading = useRef(<Loading />);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const onChange = useCallback((value) => setText(value ?? ""), []);
-  const onMount = useCallback(
+  const onMount = useCallback<OnMount>(
     (editor, monaco) => {
+      // console.log(editor);
       editorRef.current = editor;
       defineThemes(monaco, mode);
     },
@@ -136,6 +152,7 @@ function Edit() {
       setHoverLineNumber={setHoverLineNumber}
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
+      updateGraphText={updateGraphText}
     >
       <Editor
         value={text}

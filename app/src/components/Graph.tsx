@@ -1,6 +1,7 @@
 import React, {
   Dispatch,
   memo,
+  MutableRefObject,
   SetStateAction,
   useCallback,
   useContext,
@@ -45,10 +46,12 @@ const Graph = memo(
     textToParse,
     setHoverLineNumber,
     shouldResize,
+    updateGraphText,
   }: {
     textToParse: string;
     setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
     shouldResize: number;
+    updateGraphText: (text: string) => void;
   }) => {
     const cy = useRef<undefined | Core>();
     const errorCatcher = useRef<undefined | Core>();
@@ -56,6 +59,7 @@ const Graph = memo(
     const graphInitialized = useRef(false);
     const { setShareLink, setHasError, setHasStyleError } =
       useContext(AppContext);
+    const disableUpdate = useRef(false);
 
     const graphTheme = useGraphTheme();
     const getSize = useGetSize(
@@ -127,6 +131,7 @@ const Graph = memo(
     }, [textToParse]);
 
     // Update Graph Nodes
+    //
     useEffect(() => {
       updateGraph(
         cy,
@@ -137,9 +142,19 @@ const Graph = memo(
         setHasError,
         graphInitialized,
         animate,
-        getSize
+        getSize,
+        disableUpdate,
+        updateGraphText
       );
-    }, [animate, content, getSize, layout, setHasError, startingLineNumber]);
+    }, [
+      animate,
+      content,
+      getSize,
+      layout,
+      setHasError,
+      startingLineNumber,
+      updateGraphText,
+    ]);
 
     // Update Style
     useEffect(() => {
@@ -164,8 +179,8 @@ Graph.displayName = "Graph";
 export default Graph;
 
 function initializeGraph(
-  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
-  cy: React.MutableRefObject<cytoscape.Core | undefined>,
+  errorCatcher: MutableRefObject<cytoscape.Core | undefined>,
+  cy: MutableRefObject<cytoscape.Core | undefined>,
   setHoverLineNumber: React.Dispatch<React.SetStateAction<number | undefined>>
 ) {
   errorCatcher.current = cytoscape();
@@ -224,72 +239,88 @@ function initializeGraph(
 
 // Update nodes & edges
 function updateGraph(
-  cy: React.MutableRefObject<cytoscape.Core | undefined>,
+  cy: MutableRefObject<cytoscape.Core | undefined>,
   content: string,
   startingLineNumber: number,
   layoutString: string,
-  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
-  setHasError: React.Dispatch<React.SetStateAction<boolean>>,
-  graphInitialized: React.MutableRefObject<boolean>,
+  errorCatcher: MutableRefObject<cytoscape.Core | undefined>,
+  setHasError: Dispatch<React.SetStateAction<boolean>>,
+  graphInitialized: MutableRefObject<boolean>,
   animate: boolean,
   getSize: (label: string) =>
     | {
         width: number;
         height: number;
       }
-    | undefined
+    | undefined,
+  disableUpdate: MutableRefObject<boolean>,
+  updateGraphText: (text: string) => void
 ) {
-  if (cy.current) {
-    try {
-      const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
+  if (!cy.current) return;
+  if (disableUpdate.current) {
+    // Reset
+    disableUpdate.current = false;
+    return;
+  }
+  try {
+    const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
 
-      // Parse
-      const elements = parseText(content, getSize, startingLineNumber);
+    // Parse
+    // 1. Return [elements, newText | undefined]
+    // Runs with the new text, we just need to update the text and not run the parser again, but only once
+    const [elements, newText] = parseText(content, getSize, startingLineNumber);
 
-      // Test Error First
-      errorCatcher.current?.json({ elements });
-      errorCatcher.current?.layout({
-        ...(defaultLayout as cytoscape.LayoutOptions),
-        ...layout,
-      });
-
-      // Real
-      cy.current
-        .json({
-          elements: elements,
-        })
-        .layout({
-          ...defaultLayout,
-          ...layout,
-          animate: graphInitialized.current
-            ? elements.length < 200
-              ? animate
-              : false
-            : false,
-        } as any)
-        .run();
-      cy.current.center();
-      graphInitialized.current = true;
-
-      // Reinitialize to avoid missing errors
-      errorCatcher.current?.destroy();
-      errorCatcher.current = cytoscape();
-      // debugger;
-      setHasError(false);
-    } catch (e) {
-      console.log(e);
-      errorCatcher.current?.destroy();
-      errorCatcher.current = cytoscape();
-      // debugger;
-      setHasError(true);
+    // If there is new text, update the text and prevent the subsequent update
+    if (newText) {
+      // update new text
+      updateGraphText(newText);
+      // prevent subsequent update
+      disableUpdate.current = true;
     }
+
+    // Test Error First
+    errorCatcher.current?.json({ elements });
+    errorCatcher.current?.layout({
+      ...(defaultLayout as cytoscape.LayoutOptions),
+      ...layout,
+    });
+
+    // Real
+    cy.current
+      .json({
+        elements: elements,
+      })
+      .layout({
+        ...defaultLayout,
+        ...layout,
+        animate: graphInitialized.current
+          ? elements.length < 200
+            ? animate
+            : false
+          : false,
+      } as any)
+      .run();
+    cy.current.center();
+    graphInitialized.current = true;
+
+    // Reinitialize to avoid missing errors
+    errorCatcher.current?.destroy();
+    errorCatcher.current = cytoscape();
+    // debugger;
+    setHasError(false);
+  } catch (e) {
+    console.log(e);
+    errorCatcher.current?.destroy();
+    errorCatcher.current = cytoscape();
+    // debugger;
+    setHasError(true);
   }
 }
 
 function updateStyle(
-  cy: React.MutableRefObject<cytoscape.Core | undefined>,
+  cy: MutableRefObject<cytoscape.Core | undefined>,
   userStyleString: string,
-  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
+  errorCatcher: MutableRefObject<cytoscape.Core | undefined>,
   setHasStyleError: React.Dispatch<React.SetStateAction<boolean>>,
   graphTheme: GraphThemes
 ) {

@@ -20,10 +20,16 @@ export type MainProps = {
   children?: ReactNode;
   textToParse: string;
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
+  updateGraphText: (text: string) => void;
 };
 
 const Main = memo(
-  ({ children, textToParse, setHoverLineNumber }: MainProps) => {
+  ({
+    children,
+    textToParse,
+    setHoverLineNumber,
+    updateGraphText,
+  }: MainProps) => {
     const [shouldResize, triggerResize] = useState(0);
     const trigger = useCallback(() => triggerResize((n) => n + 1), []);
     const isFullscreen = useFullscreen();
@@ -41,6 +47,7 @@ const Main = memo(
             textToParse={textToParse}
             setHoverLineNumber={setHoverLineNumber}
             shouldResize={shouldResize}
+            updateGraphText={updateGraphText}
           />
         </GraphWrapper>
         {!isFullscreen && <MobileTabToggle />}
