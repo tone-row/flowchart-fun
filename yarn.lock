@@ -2644,6 +2644,13 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+"@tone-row/cytoscape-svg@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@tone-row/cytoscape-svg/-/cytoscape-svg-1.0.0.tgz#f97e0fd50e29eea6c81f18c43bf493a5eee51968"
+  integrity sha512-WMgY2rBwRpe4w78/KJ0Pxa/j1ctea0mVc0GadaEFu5JjlHBtt1AaIwSXT8RkhG+kd3A2ysrMN11Ym4hYHTuZ0g==
+  dependencies:
+    canvas-to-svg "^1.0.2"
+
 "@tone-row/slang@^1.2.35":
   version "1.2.35"
   resolved "https://registry.yarnpkg.com/@tone-row/slang/-/slang-1.2.35.tgz#6383a837f21798ed79923c78efae6d812f968c80"
@@ -4428,6 +4435,11 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, can
   dependencies:
     nanocolors "^0.1.0"
 
+canvas-to-svg@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/canvas-to-svg/-/canvas-to-svg-1.0.2.tgz#4196c305232af15dce8cc1e206c459ff78d62e19"
+  integrity sha512-zTvwwE2YtWQYOyXrESUc4wJT8jS4aNrOlHvtVUz5VrvtpdSuWy4KI7yV6GQwM2GJygVvtwU8Qdz7SmDz6M/AYg==
+
 capture-exit@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/capture-exit/-/capture-exit-2.0.0.tgz#fb953bfaebeb781f62898239dabb426d08a509a4"
@@ -5296,10 +5308,10 @@ cytoscape-svg@^0.3.1:
   resolved "https://registry.yarnpkg.com/cytoscape-svg/-/cytoscape-svg-0.3.1.tgz#5f49b7438e8cf9c779c1a999802f4a52384e4533"
   integrity sha512-CaU6sUWIcCJcOWw+G1ZWHqC7ssHwXabWVo6okyIPUy3veEKoodZ3Ud2AG3Zbd8vFl8Z1W10hzyXnyy25aBXFXA==
 
-cytoscape@^3.19.0:
-  version "3.19.0"
-  resolved "https://registry.yarnpkg.com/cytoscape/-/cytoscape-3.19.0.tgz#b3e3136f823ca00a1c7752741c2a349e52545f57"
-  integrity sha512-DANM8bM4EuSTS3DraPK0nLSmzANrzQ2g/cb3u5Biexu/NVsJA+xAoXVvWHRIHDXz3y0gpMjTPv3Z13ZbkNrEPw==
+cytoscape@^3.20.0:
+  version "3.20.0"
+  resolved "https://registry.yarnpkg.com/cytoscape/-/cytoscape-3.20.0.tgz#c626c1074f3a8a6f1bc58e8fbee8fd798a6fcbf3"
+  integrity sha512-V2OUoav8ltY9UPgdjuhQOqkkWT28IbJODioWCjcnLqmjym9lMpnD0ie0vdQCdAiZapjbTGAv8aoKmmSuVcC1gA==
   dependencies:
     heap "^0.2.6"
     lodash.debounce "^4.0.8"
