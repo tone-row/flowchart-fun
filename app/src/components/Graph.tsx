@@ -16,7 +16,7 @@ import cytoscape, {
 } from "cytoscape";
 import { useDebouncedCallback } from "use-debounce";
 import dagre from "cytoscape-dagre";
-import cytoscapeSvg from "cytoscape-svg";
+import cytoscapeSvg from "@tone-row/cytoscape-svg";
 import { delimiters, GraphOptionsObject, defaultLayout } from "../constants";
 import { parseText, stripComments } from "../lib/utils";
 import styles from "./Graph.module.css";

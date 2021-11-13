@@ -34,22 +34,14 @@ export default function useDownloadHandlers(
       });
       const domparser = new DOMParser();
       const svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
-      let squares: Element[] = [
-        ...svgEl.children[0].querySelectorAll("path"),
-      ].filter(
-        (x) =>
-          !x.getAttribute("fill") &&
-          x.getAttribute("paint-order") === "fill stroke markers"
-      );
-      squares = [...squares, ...svgEl.children[0].querySelectorAll("rect")];
-      squares.forEach((el) => el.setAttribute("fill", bg));
 
       // Add comment
       const originalTextComment = svgEl.createComment(
         `Original Flowchart Text (flowchart.fun):\n\n${textToParse}\n\n`
       );
-      svgEl.children[0].appendChild(originalTextComment);
 
+      // Fix Viewbox
+      svgEl.children[0].appendChild(originalTextComment);
       svgEl.children[0].setAttribute(
         "viewBox",
         `0 0 ${svgEl.children[0].getAttribute(
