@@ -2644,12 +2644,12 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@tone-row/cytoscape-svg@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@tone-row/cytoscape-svg/-/cytoscape-svg-1.0.0.tgz#f97e0fd50e29eea6c81f18c43bf493a5eee51968"
-  integrity sha512-WMgY2rBwRpe4w78/KJ0Pxa/j1ctea0mVc0GadaEFu5JjlHBtt1AaIwSXT8RkhG+kd3A2ysrMN11Ym4hYHTuZ0g==
+"@tone-row/cytoscape-svg@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@tone-row/cytoscape-svg/-/cytoscape-svg-1.0.1.tgz#632d2f8cdeafef8b935d61f2a80abae1ab232240"
+  integrity sha512-tKH674prVNKIJA0QLbOCU7zuKAd4sADzexufWzxEeYQlBju4Mwk35mJs0jaxPD6mayy6ZLqU1O3zRWtLlaT1fA==
   dependencies:
-    canvas-to-svg "^1.0.2"
+    canvas-to-svg "^1.0.3"
 
 "@tone-row/slang@^1.2.35":
   version "1.2.35"
@@ -4435,10 +4435,10 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, can
   dependencies:
     nanocolors "^0.1.0"
 
-canvas-to-svg@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/canvas-to-svg/-/canvas-to-svg-1.0.2.tgz#4196c305232af15dce8cc1e206c459ff78d62e19"
-  integrity sha512-zTvwwE2YtWQYOyXrESUc4wJT8jS4aNrOlHvtVUz5VrvtpdSuWy4KI7yV6GQwM2GJygVvtwU8Qdz7SmDz6M/AYg==
+canvas-to-svg@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/canvas-to-svg/-/canvas-to-svg-1.0.3.tgz#91ac34c1b84d5ee59ea098865a7abe07d9ae2bfe"
+  integrity sha512-qWQKPW0lRkOCClRmKtTzC5dNLtdOCzEOPYWASvW9ggkq4cRYL0o8RnC4fPc4tNE5WGm5YzJTGFztFG0JuCGXcQ==
 
 capture-exit@^2.0.0:
   version "2.0.0"
