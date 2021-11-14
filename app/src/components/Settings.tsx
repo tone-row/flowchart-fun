@@ -51,15 +51,16 @@ const Settings = memo(() => {
             <Trans>Language</Trans>
           </SectionTitle>
           <Box
-            className={styles.ButtonGroup}
-            template="auto / repeat(3, minmax(0, 1fr))"
+            className={styles.ButtonGroupTwoLines}
             gap={1}
             at={{
+              small: {
+                template: "auto / repeat(2, minmax(0, 1fr))",
+              },
               tablet: {
-                flow: "column",
-                items: "normal start",
-                template: "none",
-                gap: 0,
+                items: "normal stretch",
+                template: "auto / repeat(4, 150px)",
+                gap: 1,
               },
             }}
           >
@@ -82,9 +83,15 @@ const Settings = memo(() => {
           </SectionTitle>
           <Box
             flow="column"
-            className={styles.ButtonGroup}
+            className={styles.ButtonGroupTwoLines}
             gap={1}
-            at={{ tablet: { gap: 0 } }}
+            at={{
+              tablet: {
+                items: "normal stretch",
+                template: "auto / repeat(4, 150px)",
+                gap: 1,
+              },
+            }}
           >
             <GroupButton
               disabled={mode === "light"}
