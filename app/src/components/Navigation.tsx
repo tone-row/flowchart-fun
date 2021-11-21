@@ -1,3 +1,6 @@
+import { t, Trans } from "@lingui/macro";
+import { formatDistanceStrict, parseISO } from "date-fns";
+import { Check, Copy, Trash } from "phosphor-react";
 import React, {
   Dispatch,
   Fragment,
@@ -10,14 +13,12 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { Box, Type } from "../slang";
-import { t, Trans } from "@lingui/macro";
-import styles from "./Navigation.module.css";
 import { useForm } from "react-hook-form";
-import { Link, useHistory, useLocation, useParams } from "react-router-dom";
-import { AppContext } from "./AppContext";
-import { Input, Section, SectionTitle, Button, Dialog, Notice } from "./Shared";
 import { useMutation } from "react-query";
+import { Link, useHistory, useLocation, useParams } from "react-router-dom";
+
+import { slugify, titleToLocalStorageKey } from "../lib/helpers";
+import { useIsValidCustomer, useIsValidSponsor } from "../lib/hooks";
 import {
   deleteChart,
   makeChart,
@@ -25,11 +26,11 @@ import {
   useChart,
   useCharts,
 } from "../lib/queries";
-import { formatDistanceStrict, parseISO } from "date-fns";
-import { Check, Copy, Trash } from "phosphor-react";
+import { Box, Type } from "../slang";
+import { AppContext } from "./AppContext";
 import Loading from "./Loading";
-import { useIsValidCustomer, useIsValidSponsor } from "../hooks";
-import { slugify, titleToLocalStorageKey } from "../lib/helpers";
+import styles from "./Navigation.module.css";
+import { Button, Dialog, Input, Notice, Section, SectionTitle } from "./Shared";
 
 const largeGap = 10;
 

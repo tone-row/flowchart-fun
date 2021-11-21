@@ -1,20 +1,33 @@
-import { ReactComponent as BrandSvg } from "./brand.svg";
-import { Box, BoxProps, Type } from "../slang";
-import {
-  TreeStructure,
-  Laptop,
-  Chat,
-  Gear,
-  Share,
-  FolderOpen,
-  User,
-  Globe,
-  Pencil,
-} from "phosphor-react";
-import { AppContext, Showing } from "./AppContext";
-import { useContext, useRef, useState } from "react";
-import styles from "./MenuNext.module.css";
 import { t, Trans } from "@lingui/macro";
+import VisuallyHidden from "@reach/visually-hidden";
+import {
+  Chat,
+  FolderOpen,
+  Gear,
+  Globe,
+  Laptop,
+  Pencil,
+  Share,
+  TreeStructure,
+  User,
+} from "phosphor-react";
+import { useContext, useRef, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+import { useHistory } from "react-router";
+
+import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
+import {
+  useCurrentHostedChart,
+  useIsReadOnly,
+  useLocalStorageText,
+  useTitle,
+} from "../lib/hooks";
+import { queryClient, renameChart } from "../lib/queries";
+import { Box, BoxProps, Type } from "../slang";
+import { AppContext, Showing } from "./AppContext";
+import { ReactComponent as BrandSvg } from "./brand.svg";
+import styles from "./MenuNext.module.css";
 import {
   Button,
   Dialog,
@@ -26,18 +39,6 @@ import {
   Tooltip,
   tooltipSize,
 } from "./Shared";
-import VisuallyHidden from "@reach/visually-hidden";
-import {
-  useCurrentHostedChart,
-  useIsReadOnly,
-  useLocalStorageText,
-  useTitle,
-} from "../hooks";
-import { useForm } from "react-hook-form";
-import { useMutation } from "react-query";
-import { queryClient, renameChart } from "../lib/queries";
-import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
-import { useHistory } from "react-router";
 
 const chartSpecific: Showing[] = ["editor", "share"];
 
@@ -230,13 +231,15 @@ function RenameButton() {
   );
   return (
     <>
-      <Button
-        style={{ minWidth: 0 }}
-        className={styles.MenuNextTitleButton}
-        onClick={() => setDialog(true)}
+      <Tooltip
+        label={t`Rename`}
+        aria-label={t`Rename`}
+        className={`slang-type size-${tooltipSize}`}
       >
-        <Pencil size={smallIconSize} />
-      </Button>
+        <Button style={{ minWidth: 0 }} onClick={() => setDialog(true)}>
+          <Pencil size={smallIconSize} />
+        </Button>
+      </Tooltip>
       <Dialog
         dialogProps={{
           isOpen: dialog,

@@ -1,3 +1,5 @@
+import { t, Trans } from "@lingui/macro";
+import { Check, LinkSimple } from "phosphor-react";
 import {
   ReactNode,
   useCallback,
@@ -6,15 +8,14 @@ import {
   useReducer,
   useState,
 } from "react";
-import { AppContext } from "./AppContext";
-import { Box, Type } from "../slang";
-import { Check, LinkSimple } from "phosphor-react";
-import styles from "./ShareDialog.module.css";
-import { t, Trans } from "@lingui/macro";
-import { Button, Dialog } from "./Shared";
-import { useTitle } from "../hooks";
 import { useMutation } from "react-query";
+
+import { useTitle } from "../lib/hooks";
 import { makeChartPublic, queryClient, useChart } from "../lib/queries";
+import { Box, Type } from "../slang";
+import { AppContext } from "./AppContext";
+import { Button, Dialog } from "./Shared";
+import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
 
 export default function ShareDialog() {

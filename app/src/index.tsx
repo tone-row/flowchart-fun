@@ -1,12 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import * as Sentry from "@sentry/react";
-import { Integrations } from "@sentry/tracing";
 import "./index.css";
 import "./slang/slang.css";
 import "core-js/features/object/from-entries";
 import "core-js/features/object/entries";
-import App from "./App";
+
+import * as Sentry from "@sentry/react";
+import { Integrations } from "@sentry/tracing";
+import React from "react";
+import ReactDOM from "react-dom";
+
+import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 
 Sentry.init({

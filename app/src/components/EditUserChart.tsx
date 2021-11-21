@@ -1,5 +1,8 @@
-import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
+import Editor, { OnMount } from "@monaco-editor/react";
 import { useThrottleCallback } from "@react-hook/throttle";
+import merge from "deepmerge";
+import { stringify } from "gray-matter";
+import { Check, Timer } from "phosphor-react";
 import {
   useCallback,
   useContext,
@@ -8,28 +11,27 @@ import {
   useRef,
   useState,
 } from "react";
+import { useMutation } from "react-query";
 import { useParams } from "react-router";
-import { editorOptions, GraphOptionsObject, delimiters } from "../constants";
-import merge from "deepmerge";
-import { queryClient, updateChartText, useChart } from "../lib/queries";
+import { useDebouncedCallback } from "use-debounce";
+
 import {
-  useMonacoLanguage,
-  languageId,
-  defineThemes,
-} from "../registerLanguage";
+  delimiters,
+  editorOptions,
+  GraphOptionsObject,
+} from "../lib/constants";
+import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
+import { useIsValidSponsor } from "../lib/hooks";
+import { queryClient, updateChartText, useChart } from "../lib/queries";
+import { languageId } from "../lib/registerLanguage";
 import { AppContext } from "./AppContext";
 import editStyles from "./Edit.module.css";
-import GraphProvider from "./GraphProvider";
-import Loading from "./Loading";
-import { stringify } from "gray-matter";
-import useGraphOptions from "./useGraphOptions";
-import { useDebouncedCallback } from "use-debounce";
-import { useMutation } from "react-query";
 import styles from "./EditUserChart.module.css";
-import Spinner from "./Spinner";
-import { Check, Timer } from "phosphor-react";
-import { useIsValidSponsor } from "../hooks";
+import GraphProvider from "./GraphProvider";
 import HasError from "./HasError";
+import Loading from "./Loading";
+import Spinner from "./Spinner";
+import useGraphOptions from "./useGraphOptions";
 
 export default function EditUserChart() {
   const validSponsor = useIsValidSponsor();
@@ -38,12 +40,13 @@ export default function EditUserChart() {
   const [text, setText] = useState(data?.chart ?? "");
   const [textToParse, setTextToParse] = useReducer(
     (t: string, u: string) => u,
-    text as string
+    text
   );
   const lastText = useRef(text);
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
+  const decorations = useRef<any[]>([]);
   const { mode, hasError, hasStyleError } = useContext(AppContext);
   const loading = useRef(<Loading />);
   const { graphOptions, content } = useGraphOptions(textToParse);
@@ -79,17 +82,7 @@ export default function EditUserChart() {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
 
-  const monaco = useMonaco();
-  // Add language
-  useMonacoLanguage(monaco);
-
-  const onMount = useCallback(
-    (editor, monaco) => {
-      editorRef.current = editor;
-      defineThemes(monaco, mode);
-    },
-    [mode]
-  );
+  const onMount = useEditorOnMount(mode, editorRef);
 
   const updateGraphOptionsText = useCallback(
     (o: GraphOptionsObject) => {
@@ -108,35 +101,11 @@ export default function EditUserChart() {
     [content, graphOptions, setText, textToParse]
   );
 
-  const decorations = useRef<any[]>([]);
-
   // Hover
-  useEffect(() => {
-    if (editorRef.current) {
-      const editor = editorRef.current;
-      if (typeof hoverLineNumber === "number") {
-        decorations.current = editor.deltaDecorations(
-          [],
-          [
-            {
-              range: {
-                startLineNumber: hoverLineNumber,
-                startColumn: 1,
-                endLineNumber: hoverLineNumber,
-                endColumn: 1,
-              },
-              options: {
-                isWholeLine: true,
-                className: "node-hover",
-              },
-            },
-          ]
-        );
-      } else {
-        decorations.current = editor.deltaDecorations(decorations.current, []);
-      }
-    }
-  }, [hoverLineNumber]);
+  useEditorHover(editorRef, decorations, hoverLineNumber);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const onChange = useCallback((value) => setText(value ?? ""), []);
 
   return (
     <GraphProvider
@@ -154,20 +123,32 @@ export default function EditUserChart() {
           ...editorOptions,
           readOnly: !validSponsor,
         }}
-        onChange={(value) => setText(value ?? "")}
+        onChange={onChange}
         loading={loading.current}
         onMount={onMount}
       />
-      <div className={styles.LoadingState}>
-        {pending() ? (
-          <Timer size={28} color="var(--color-edgeHover)" />
-        ) : isLoading ? (
-          <Spinner r={10} s={2} c="var(--palette-purple-0)" />
-        ) : (
-          <Check size={30} color="var(--palette-green-0)" />
-        )}
-      </div>
+      <LoadingState isLoading={isLoading} pending={pending()} />
       <HasError show={hasError || hasStyleError} />
     </GraphProvider>
+  );
+}
+
+function LoadingState({
+  pending,
+  isLoading,
+}: {
+  pending: boolean;
+  isLoading: boolean;
+}) {
+  return (
+    <div className={styles.LoadingState}>
+      {pending ? (
+        <Timer size={28} color="var(--color-edgeHover)" />
+      ) : isLoading ? (
+        <Spinner r={10} s={2} c="var(--palette-purple-0)" />
+      ) : (
+        <Check size={30} color="var(--palette-green-0)" />
+      )}
+    </div>
   );
 }

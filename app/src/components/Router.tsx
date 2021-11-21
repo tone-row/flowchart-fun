@@ -1,5 +1,6 @@
 import { lazy, memo } from "react";
 import { Route, RouteProps, Switch } from "react-router-dom";
+
 import { usePageViews } from "../lib/analytics";
 import Layout from "./Layout";
 import Public from "./Public";

@@ -1,5 +1,6 @@
 import matter from "gray-matter";
-import { delimiters, GraphOptionsObject } from "../constants";
+
+import { delimiters, GraphOptionsObject } from "../lib/constants";
 
 export default function useGraphOptions(text: string): {
   graphOptions: GraphOptionsObject;

@@ -1,13 +1,14 @@
-import { Trans, t } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import { useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Type } from "../slang";
-import styles from "./Feedback.module.css";
-import Spinner from "./Spinner";
-import { Input, Section, Textarea, Button, Page, Notice } from "./Shared";
-import { AppContext } from "./AppContext";
 import { useMutation } from "react-query";
+
 import { mail } from "../lib/queries";
+import { Type } from "../slang";
+import { AppContext } from "./AppContext";
+import styles from "./Feedback.module.css";
+import { Button, Input, Notice, Page, Section, Textarea } from "./Shared";
+import Spinner from "./Spinner";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
 

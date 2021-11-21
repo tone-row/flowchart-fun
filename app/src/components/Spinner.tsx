@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+
 import style from "./Spinner.module.css";
 
 export default function Spinner({

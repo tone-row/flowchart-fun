@@ -1,7 +1,8 @@
 import { i18n } from "@lingui/core";
-import { AppContext } from "./AppContext";
 import { I18nProvider } from "@lingui/react";
 import { ReactNode, useContext, useEffect } from "react";
+
+import { AppContext } from "./AppContext";
 
 /**
  * We do a dynamic import of just the catalog that we need

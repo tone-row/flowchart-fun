@@ -1,20 +1,21 @@
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
-import { useParams } from "react-router-dom";
-import { AppContext } from "./AppContext";
-import { delimiters, editorOptions } from "../constants";
-import Loading from "./Loading";
-import GraphProvider from "./GraphProvider";
 import matter from "gray-matter";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
+
+import { delimiters, editorOptions } from "../lib/constants";
+import { usePublicChart } from "../lib/queries";
 import {
   defineThemes,
   languageId,
   themeNameDark,
   themeNameLight,
   useMonacoLanguage,
-} from "../registerLanguage";
+} from "../lib/registerLanguage";
+import { AppContext } from "./AppContext";
+import GraphProvider from "./GraphProvider";
+import Loading from "./Loading";
 import styles from "./ReadOnly.module.css";
-import { usePublicChart } from "../lib/queries";
 
 function Public() {
   const monaco = useMonaco();

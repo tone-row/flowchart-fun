@@ -1,9 +1,10 @@
+import { DotsThreeOutlineVertical } from "phosphor-react";
 import { Resizable as Reresizable } from "re-resizable";
 import { memo, ReactNode, useContext, useState } from "react";
+
 import { Box } from "../slang";
-import styles from "./TabPane.module.css";
 import { AppContext } from "./AppContext";
-import { DotsThreeOutlineVertical } from "phosphor-react";
+import styles from "./TabPane.module.css";
 
 const Resizable = ({
   children,

@@ -1,13 +1,15 @@
-import { forwardRef, ReactNode } from "react";
-import { Box, BoxProps, Type, TypeProps } from "../slang";
 import "@reach/dialog/styles.css";
+import "@reach/tooltip/styles.css";
+
+import { Trans } from "@lingui/macro";
 import ReachDialog, { DialogProps } from "@reach/dialog";
 import type * as Polymorphic from "@reach/utils/polymorphic";
 import VisuallyHidden from "@reach/visually-hidden";
-import styles from "./Shared.module.css";
-import { Trans } from "@lingui/macro";
 import { HandWaving, Warning, X } from "phosphor-react";
-import "@reach/tooltip/styles.css";
+import { forwardRef, ReactNode } from "react";
+
+import { Box, BoxProps, Type, TypeProps } from "../slang";
+import styles from "./Shared.module.css";
 import Spinner from "./Spinner";
 
 export const smallBtnTypeSize = -1;
@@ -83,14 +85,13 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TypeProps>(
 );
 Textarea.displayName = "Textarea";
 
-export function Button({
-  children,
-  as = "button",
-  onClick,
-  className = "",
-  text,
-  ...props
-}: BoxProps & { text?: string }) {
+export const Button = forwardRef<
+  HTMLButtonElement,
+  BoxProps & { text?: string }
+>(function Button(
+  { children, as = "button", onClick, className = "", text, ...props },
+  ref
+) {
   return (
     <Box
       p={2}
@@ -101,6 +102,7 @@ export function Button({
       onClick={onClick}
       content="center"
       {...props}
+      ref={ref}
     >
       {text ? (
         <Type className={styles.ButtonType} as="span" size={-1}>
@@ -111,7 +113,7 @@ export function Button({
       )}
     </Box>
   );
-}
+});
 
 export const Dialog = ({
   dialogProps,

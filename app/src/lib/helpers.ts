@@ -1,4 +1,4 @@
-import { parse, format, formatRelative as relative } from "date-fns";
+import { format, formatRelative as relative, parse } from "date-fns";
 export function formatDate(date: string) {
   return format(parse(date, "t", new Date()), "MMMM do, yyyy");
 }

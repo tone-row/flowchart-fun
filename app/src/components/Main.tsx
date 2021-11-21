@@ -1,20 +1,21 @@
 import {
-  ReactNode,
   Dispatch,
-  SetStateAction,
   memo,
-  useState,
-  useCallback,
+  ReactNode,
+  SetStateAction,
   Suspense,
+  useCallback,
+  useState,
 } from "react";
+
+import { useFullscreen } from "../lib/hooks";
 import CurrentTab from "./CurrentTab";
-import Loading from "./Loading";
 import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
+import Loading from "./Loading";
+import MobileTabToggle from "./MobileTabToggle";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
-import MobileTabToggle from "./MobileTabToggle";
-import { useFullscreen } from "../hooks";
 
 export type MainProps = {
   children?: ReactNode;

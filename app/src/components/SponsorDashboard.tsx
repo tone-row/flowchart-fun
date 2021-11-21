@@ -1,22 +1,23 @@
+import { t, Trans } from "@lingui/macro";
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { ReactNode, useCallback, useContext, useState } from "react";
-import { Box, Type, TypeProps } from "../slang";
-import { Button, Dialog, Notice, Page, Section, SectionTitle } from "./Shared";
-import { supabase } from "../supabaseClient";
-import { AppContext } from "./AppContext";
+import { useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+import { useHistory } from "react-router";
+
 import { formatCents, formatDate, formatRelative } from "../lib/helpers";
-import styles from "./SponsorDashboard.module.css";
-import Spinner from "./Spinner";
 import {
   createSubscription,
   queryClient,
   useOrderHistory,
 } from "../lib/queries";
+import { supabase } from "../lib/supabaseClient";
+import { Box, Type, TypeProps } from "../slang";
+import { AppContext } from "./AppContext";
 import Loading from "./Loading";
-import { t, Trans } from "@lingui/macro";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useForm } from "react-hook-form";
-import { useMutation } from "react-query";
-import { useHistory } from "react-router";
+import { Button, Dialog, Notice, Page, Section, SectionTitle } from "./Shared";
+import Spinner from "./Spinner";
+import styles from "./SponsorDashboard.module.css";
 
 export function SponsorDashboard() {
   const { customer, session, customerIsLoading } = useContext(AppContext);

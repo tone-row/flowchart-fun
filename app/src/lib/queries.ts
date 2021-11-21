@@ -3,9 +3,10 @@ import { PostgrestError } from "@supabase/postgrest-js";
 import { useContext } from "react";
 import { QueryClient, useQuery } from "react-query";
 import Stripe from "stripe";
+
 import { AppContext } from "../components/AppContext";
-import { supabase } from "../supabaseClient";
 import { definitions } from "../types/supabase";
+import { supabase } from "./supabaseClient";
 
 export const queryClient = new QueryClient();
 

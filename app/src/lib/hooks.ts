@@ -2,10 +2,11 @@ import { t } from "@lingui/macro";
 import { Dispatch, useCallback, useContext } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
-import { AppContext } from "./components/AppContext";
-import { GraphContext } from "./components/GraphProvider";
-import { allGraphThemes, defaultGraphTheme } from "./components/graphThemes";
-import { useChart } from "./lib/queries";
+
+import { AppContext } from "../components/AppContext";
+import { GraphContext } from "../components/GraphProvider";
+import { allGraphThemes, defaultGraphTheme } from "../components/graphThemes";
+import { useChart } from "./queries";
 
 export function useAnimationSetting() {
   const { search } = useLocation();

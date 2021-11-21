@@ -1,21 +1,22 @@
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
-import { useParams } from "react-router-dom";
-import { AppContext } from "./AppContext";
-import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { delimiters, editorOptions } from "../constants";
-import Loading from "./Loading";
-import GraphProvider from "./GraphProvider";
 import matter from "gray-matter";
+import { decompressFromEncodedURIComponent as decompress } from "lz-string";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
+
+import { delimiters, editorOptions } from "../lib/constants";
 import {
   defineThemes,
   languageId,
   themeNameDark,
   themeNameLight,
   useMonacoLanguage,
-} from "../registerLanguage";
-import styles from "./ReadOnly.module.css";
+} from "../lib/registerLanguage";
+import { AppContext } from "./AppContext";
+import GraphProvider from "./GraphProvider";
 import HasError from "./HasError";
+import Loading from "./Loading";
+import styles from "./ReadOnly.module.css";
 
 function ReadOnly({ compressed = false }: { compressed?: boolean }) {
   const monaco = useMonaco();
