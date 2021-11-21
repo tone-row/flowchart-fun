@@ -1,11 +1,12 @@
+import { t, Trans } from "@lingui/macro";
 import { useCallback, useState } from "react";
-import { Box, Type } from "../slang";
-import { Button, Input, Notice, Section, SectionTitle } from "./Shared";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { login } from "../lib/queries";
+
 import { isError } from "../lib/helpers";
-import { t, Trans } from "@lingui/macro";
+import { login } from "../lib/queries";
+import { Box, Type } from "../slang";
+import { Button, Input, Notice, Section, SectionTitle } from "./Shared";
 
 export function LoginForm() {
   const { register, handleSubmit } = useForm();

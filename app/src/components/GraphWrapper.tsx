@@ -1,10 +1,11 @@
 import React, { ReactNode, useContext } from "react";
+import { useRouteMatch } from "react-router";
+
+import { useFullscreen, useIsValidSponsor } from "../lib/hooks";
 import { Box } from "../slang";
 import { AppContext } from "./AppContext";
-import styles from "./GraphWrapper.module.css";
 import GraphOptionsBar from "./GraphOptionsBar";
-import { useFullscreen, useIsValidSponsor } from "../hooks";
-import { useRouteMatch } from "react-router";
+import styles from "./GraphWrapper.module.css";
 
 export default function GraphWrapper({ children }: { children: ReactNode }) {
   const { showing } = useContext(AppContext);

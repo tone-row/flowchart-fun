@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+
 import { AppContext } from "./AppContext";
 
 // Writes current theme color css props onto body

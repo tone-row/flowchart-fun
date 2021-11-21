@@ -1,9 +1,10 @@
-import { memo, useCallback, useContext } from "react";
-import { Box, BoxProps, Type } from "../slang";
-import styles from "./Settings.module.css";
-import { AppContext } from "./AppContext";
 import { t, Trans } from "@lingui/macro";
+import { memo, useCallback, useContext } from "react";
+
 import { languages } from "../locales/i18n";
+import { Box, BoxProps, Type } from "../slang";
+import { AppContext } from "./AppContext";
+import styles from "./Settings.module.css";
 import { Button, Page, Section, SectionTitle } from "./Shared";
 
 const lowerLinksAt: BoxProps["at"] = {

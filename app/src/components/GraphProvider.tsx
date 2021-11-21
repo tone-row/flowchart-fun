@@ -1,5 +1,6 @@
 import React, { createContext } from "react";
-import { GraphOptionsObject } from "../constants";
+
+import { GraphOptionsObject } from "../lib/constants";
 import Main, { MainProps } from "./Main";
 
 type GraphContextType = {

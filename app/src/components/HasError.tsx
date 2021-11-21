@@ -1,6 +1,6 @@
-import { BiErrorCircle } from "react-icons/bi";
-import { motion, AnimatePresence } from "framer-motion";
 import { Trans } from "@lingui/macro";
+import { AnimatePresence, motion } from "framer-motion";
+import { BiErrorCircle } from "react-icons/bi";
 
 import { Box, Type } from "../slang";
 import styles from "./HasError.module.css";

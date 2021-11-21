@@ -1,3 +1,5 @@
+import { Session } from "@supabase/gotrue-js";
+import { FlagsProvider } from "flagged";
 import {
   createContext,
   Dispatch,
@@ -8,14 +10,13 @@ import {
   useMemo,
   useState,
 } from "react";
-import Stripe from "stripe";
 import useLocalStorage from "react-use-localstorage";
+import Stripe from "stripe";
+
+import { useCustomerInfo, useUserFeatures } from "../lib/queries";
+import { supabase } from "../lib/supabaseClient";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
-import { FlagsProvider } from "flagged";
-import { Session } from "@supabase/gotrue-js";
-import { supabase } from "../supabaseClient";
-import { useCustomerInfo, useUserFeatures } from "../lib/queries";
 
 type Theme = typeof colors;
 

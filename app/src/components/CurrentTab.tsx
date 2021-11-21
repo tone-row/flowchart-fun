@@ -1,4 +1,5 @@
 import { lazy, ReactNode, useContext, useMemo } from "react";
+
 import { AppContext } from "./AppContext";
 const Share = lazy(() => import("./Share"));
 const Settings = lazy(() => import("./Settings"));

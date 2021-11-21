@@ -25,7 +25,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
   },
-  plugins: ["react", "jsx-a11y", "@typescript-eslint"],
+  plugins: ["react", "jsx-a11y", "@typescript-eslint", "simple-import-sort"],
   rules: {
     "@typescript-eslint/no-unused-vars": [
       "warn",
@@ -49,6 +49,7 @@ module.exports = {
     "@typescript-eslint/ban-types": "off",
     "react/prop-types": 0,
     "@typescript-eslint/no-empty-interface": 0,
+    "simple-import-sort/imports": "error",
   },
   ignorePatterns: ["api/**/*.js"],
   overrides: [

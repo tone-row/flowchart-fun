@@ -1,23 +1,25 @@
-import Router from "./components/Router";
 import * as Sentry from "@sentry/react";
-import React, { Suspense } from "react";
-import Provider from "./components/AppContext";
-import { Box, Type } from "./slang";
-import { I18n } from "./components/I18n";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import React, { Suspense } from "react";
 import { QueryClientProvider } from "react-query";
-import { queryClient } from "./lib/queries";
+
+import { queryClient } from "../lib/queries";
+import { Box, Type } from "../slang";
+import Provider from "./AppContext";
+import { I18n } from "./I18n";
+import Router from "./Router";
 
 export const stripePromise = loadStripe(
   process.env.REACT_APP_STRIPE_KEY as string
 );
 
-import { ReactQueryDevtools } from "react-query/devtools";
-import { Button } from "./components/Shared";
-import { BrowserRouter } from "react-router-dom";
 import { t } from "@lingui/macro";
-import Loading from "./components/Loading";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { BrowserRouter } from "react-router-dom";
+
+import Loading from "./Loading";
+import { Button } from "./Shared";
 
 export default function App() {
   return (

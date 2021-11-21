@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import { useContext } from "react";
+
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { smallBtnTypeSize } from "./Shared";

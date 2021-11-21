@@ -1,14 +1,15 @@
-import React, { FC, ReactElement, Suspense } from "react";
-import { render, RenderOptions } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
-import { QueryClientProvider } from "react-query";
-import { queryClient } from "./lib/queries";
-import Provider from "./components/AppContext";
 import * as Sentry from "@sentry/react";
-import { I18n } from "./components/I18n";
 import { Elements } from "@stripe/react-stripe-js";
-import { ErrorFallback, stripePromise } from "./App";
+import { render, RenderOptions } from "@testing-library/react";
+import React, { FC, ReactElement, Suspense } from "react";
+import { QueryClientProvider } from "react-query";
+import { BrowserRouter } from "react-router-dom";
+
+import { ErrorFallback, stripePromise } from "./components/App";
+import Provider from "./components/AppContext";
+import { I18n } from "./components/I18n";
 import Loading from "./components/Loading";
+import { queryClient } from "./lib/queries";
 
 const AllTheProviders: FC = ({ children }) => {
   return (

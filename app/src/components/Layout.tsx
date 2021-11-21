@@ -1,14 +1,15 @@
 import { memo, ReactNode, Suspense, useContext } from "react";
+
+import { useFullscreen } from "../lib/hooks";
 import { Box } from "../slang";
-import styles from "./Layout.module.css";
-import ColorMode from "./ColorMode";
 import { AppContext } from "./AppContext";
+import ColorMode from "./ColorMode";
 import CurrentTab from "./CurrentTab";
-import MenuNext from "./MenuNext";
+import styles from "./Layout.module.css";
 import Loading from "./Loading";
+import MenuNext from "./MenuNext";
 import Share from "./Share";
 import ShareDialog from "./ShareDialog";
-import { useFullscreen } from "../hooks";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const isFullscreen = useFullscreen();

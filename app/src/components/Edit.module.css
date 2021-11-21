@@ -1,25 +1,3 @@
-.HelpButton {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0;
-  background-color: var(--color-background);
-  padding: 5px;
-}
-
-@media (min-width: 800px) {
-  .HelpButton {
-    padding: 9.5px;
-  }
-}
-
-.HelpButton svg {
-  fill: var(--color-uiAccent);
-}
-.HelpButton:hover svg {
-  fill: var(--color-foreground);
-}
-
 .Editor {
   overflow: hidden;
 }

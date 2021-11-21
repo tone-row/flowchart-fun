@@ -1,19 +1,19 @@
-import { Box, Type } from "../slang";
-import { LoginForm } from "./LoginForm";
-import { SponsorDashboard } from "./SponsorDashboard";
-import { Button, Input, Notice, Page, Section, SectionTitle } from "./Shared";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-
-import styles from "./Sponsor.module.css";
-import { useContext, useState } from "react";
-import { AppContext } from "./AppContext";
-import { useForm } from "react-hook-form";
-import { supabase } from "../supabaseClient";
-import Spinner from "./Spinner";
 import { t, Trans } from "@lingui/macro";
-import { createCustomer, createSubscription } from "../lib/queries";
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { useContext, useState } from "react";
+import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
+
 import { isError } from "../lib/helpers";
+import { createCustomer, createSubscription } from "../lib/queries";
+import { supabase } from "../lib/supabaseClient";
+import { Box, Type } from "../slang";
+import { AppContext } from "./AppContext";
+import { LoginForm } from "./LoginForm";
+import { Button, Input, Notice, Page, Section, SectionTitle } from "./Shared";
+import Spinner from "./Spinner";
+import styles from "./Sponsor.module.css";
+import { SponsorDashboard } from "./SponsorDashboard";
 
 export default function Sponsor() {
   const { session } = useContext(AppContext);

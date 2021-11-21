@@ -1,3 +1,13 @@
+import cytoscapeSvg from "@tone-row/cytoscape-svg";
+import cytoscape, {
+  Core,
+  CytoscapeOptions,
+  EdgeSingular,
+  NodeSingular,
+} from "cytoscape";
+import dagre from "cytoscape-dagre";
+import frontmatter from "gray-matter";
+import { compressToEncodedURIComponent as compress } from "lz-string";
 import React, {
   Dispatch,
   memo,
@@ -8,25 +18,20 @@ import React, {
   useMemo,
   useRef,
 } from "react";
-import cytoscape, {
-  Core,
-  CytoscapeOptions,
-  EdgeSingular,
-  NodeSingular,
-} from "cytoscape";
 import { useDebouncedCallback } from "use-debounce";
-import dagre from "cytoscape-dagre";
-import cytoscapeSvg from "@tone-row/cytoscape-svg";
-import { delimiters, GraphOptionsObject, defaultLayout } from "../constants";
+
+import {
+  defaultLayout,
+  delimiters,
+  GraphOptionsObject,
+} from "../lib/constants";
+import { useAnimationSetting, useGetSize, useGraphTheme } from "../lib/hooks";
 import { parseText, stripComments } from "../lib/utils";
-import styles from "./Graph.module.css";
 import { Box } from "../slang";
-import { compressToEncodedURIComponent as compress } from "lz-string";
-import frontmatter from "gray-matter";
 import { AppContext } from "./AppContext";
-import { useAnimationSetting, useGetSize, useGraphTheme } from "../hooks";
+import styles from "./Graph.module.css";
+import { GraphThemes, graphThemes } from "./graphThemes";
 import useDownloadHandlers from "./useDownloadHandlers";
-import { graphThemes, GraphThemes } from "./graphThemes";
 
 declare global {
   interface Window {

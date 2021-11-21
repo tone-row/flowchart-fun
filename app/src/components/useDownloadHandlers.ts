@@ -1,8 +1,9 @@
-import { useCallback, useEffect } from "react";
 import { saveAs } from "file-saver";
-import { useGraphTheme } from "../hooks";
-import { graphThemes } from "./graphThemes";
+import { useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
+import { useGraphTheme } from "../lib/hooks";
+import { graphThemes } from "./graphThemes";
 
 declare global {
   interface Window {
