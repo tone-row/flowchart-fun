@@ -85,14 +85,13 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TypeProps>(
 );
 Textarea.displayName = "Textarea";
 
-export function Button({
-  children,
-  as = "button",
-  onClick,
-  className = "",
-  text,
-  ...props
-}: BoxProps & { text?: string }) {
+export const Button = forwardRef<
+  HTMLButtonElement,
+  BoxProps & { text?: string }
+>(function Button(
+  { children, as = "button", onClick, className = "", text, ...props },
+  ref
+) {
   return (
     <Box
       p={2}
@@ -103,6 +102,7 @@ export function Button({
       onClick={onClick}
       content="center"
       {...props}
+      ref={ref}
     >
       {text ? (
         <Type className={styles.ButtonType} as="span" size={-1}>
@@ -113,7 +113,7 @@ export function Button({
       )}
     </Box>
   );
-}
+});
 
 export const Dialog = ({
   dialogProps,

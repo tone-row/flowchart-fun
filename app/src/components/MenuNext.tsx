@@ -231,13 +231,15 @@ function RenameButton() {
   );
   return (
     <>
-      <Button
-        style={{ minWidth: 0 }}
-        className={styles.MenuNextTitleButton}
-        onClick={() => setDialog(true)}
+      <Tooltip
+        label={t`Rename`}
+        aria-label={t`Rename`}
+        className={`slang-type size-${tooltipSize}`}
       >
-        <Pencil size={smallIconSize} />
-      </Button>
+        <Button style={{ minWidth: 0 }} onClick={() => setDialog(true)}>
+          <Pencil size={smallIconSize} />
+        </Button>
+      </Tooltip>
       <Dialog
         dialogProps={{
           isOpen: dialog,
