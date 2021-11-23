@@ -25,12 +25,12 @@ import {
   delimiters,
   GraphOptionsObject,
 } from "../lib/constants";
+import { GraphThemes, graphThemes } from "../lib/graphThemes";
 import { useAnimationSetting, useGetSize, useGraphTheme } from "../lib/hooks";
 import { parseText, stripComments } from "../lib/utils";
 import { Box } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./Graph.module.css";
-import { GraphThemes, graphThemes } from "./graphThemes";
 import useDownloadHandlers from "./useDownloadHandlers";
 
 declare global {
@@ -71,7 +71,7 @@ const Graph = memo(
     const handleResize = useCallback(() => {
       if (cy.current) {
         cy.current.resize();
-        cy.current.animate({ fit: { padding: 6 } } as any);
+        // cy.current.animate({ fit: { padding: 6 } } as any);
       }
     }, []);
 
@@ -131,6 +131,11 @@ const Graph = memo(
       }
     }, [textToParse]);
 
+    // Update Style
+    useEffect(() => {
+      updateStyle(cy, userStyle, errorCatcher, setHasStyleError, graphTheme);
+    }, [graphTheme, setHasStyleError, userStyle]);
+
     // Update Graph Nodes
     useEffect(() => {
       updateGraph(
@@ -145,11 +150,6 @@ const Graph = memo(
         getSize
       );
     }, [animate, content, getSize, layout, setHasError, startingLineNumber]);
-
-    // Update Style
-    useEffect(() => {
-      updateStyle(cy, userStyle, errorCatcher, setHasStyleError, graphTheme);
-    }, [graphTheme, setHasStyleError, userStyle]);
 
     return (
       <Box

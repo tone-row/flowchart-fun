@@ -1,5 +1,5 @@
 import { useMonaco } from "@monaco-editor/react";
-import { MutableRefObject, useCallback, useEffect } from "react";
+import { MutableRefObject, useCallback, useEffect, useRef } from "react";
 
 import { defineThemes, useMonacoLanguage } from "./registerLanguage";
 
@@ -23,9 +23,9 @@ export function useEditorOnMount(
 
 export function useEditorHover(
   editorRef: MutableRefObject<any>,
-  decorations: MutableRefObject<any>,
   hoverLineNumber?: number
 ) {
+  const decorations = useRef<any[]>([]);
   useEffect(() => {
     if (editorRef.current) {
       const editor = editorRef.current;

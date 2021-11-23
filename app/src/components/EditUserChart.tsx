@@ -46,7 +46,6 @@ export default function EditUserChart() {
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const decorations = useRef<any[]>([]);
   const { mode, hasError, hasStyleError } = useContext(AppContext);
   const loading = useRef(<Loading />);
   const { graphOptions, content } = useGraphOptions(textToParse);
@@ -102,7 +101,7 @@ export default function EditUserChart() {
   );
 
   // Hover
-  useEditorHover(editorRef, decorations, hoverLineNumber);
+  useEditorHover(editorRef, hoverLineNumber);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const onChange = useCallback((value) => setText(value ?? ""), []);
