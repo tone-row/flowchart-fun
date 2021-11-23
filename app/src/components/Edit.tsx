@@ -36,7 +36,6 @@ export default function Edit() {
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const decorations = useRef<any[]>([]);
   const { mode, hasError, hasStyleError } = useContext(AppContext);
   const loading = useRef(<Loading />);
   const { graphOptions, content, graphOptionsString } =
@@ -65,7 +64,7 @@ export default function Edit() {
   );
 
   // Hover
-  useEditorHover(editorRef, decorations, hoverLineNumber);
+  useEditorHover(editorRef, hoverLineNumber);
 
   const setHelpText = useCallback(() => {
     const optionsString = graphOptionsString
