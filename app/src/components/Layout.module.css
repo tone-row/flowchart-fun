@@ -25,11 +25,12 @@
   }
 }
 
-.LayoutWrapperNext[data-showing="editor"] {
+.LayoutWrapper[data-showing="editor"] {
   max-height: 100%;
+  overflow: hidden;
 }
 
-.LayoutWrapperNext:not([data-fullscreen="true"]) {
+.LayoutWrapper:not([data-fullscreen="true"]) {
   align-content: start;
   grid-template-rows: auto minmax(0, 1fr);
 }
