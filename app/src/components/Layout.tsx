@@ -42,7 +42,7 @@ function LayoutWrapper({
     <>
       <Box
         root
-        className={styles.LayoutWrapperNext}
+        className={styles.LayoutWrapper}
         data-showing={showing}
         data-fullscreen={isFullscreen}
       >
