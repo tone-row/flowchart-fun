@@ -5,7 +5,7 @@ import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
 import { GraphContext } from "../components/GraphProvider";
-import { allGraphThemes, defaultGraphTheme } from "../components/graphThemes";
+import { allGraphThemes, defaultGraphTheme } from "./graphThemes";
 import { useChart } from "./queries";
 
 export function useAnimationSetting() {

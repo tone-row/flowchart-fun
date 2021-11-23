@@ -1,7 +1,7 @@
 import { EditorProps } from "@monaco-editor/react";
 import cytoscape from "cytoscape";
 
-import { GraphThemes } from "../components/graphThemes";
+import { GraphThemes } from "./graphThemes";
 
 type AllKeys<T> = T extends any ? keyof T : never;
 type PickType<T, K extends AllKeys<T>> = T extends { [k in K]?: any }

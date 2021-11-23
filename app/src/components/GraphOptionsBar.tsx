@@ -28,11 +28,11 @@ import Select, {
 
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts } from "../lib/graphOptions";
+import { themes } from "../lib/graphThemes";
 import { useGraphTheme } from "../lib/hooks";
 import { Box, BoxProps, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
-import { themes } from "./graphThemes";
 import {
   smallBtnTypeSize,
   smallIconSize,
