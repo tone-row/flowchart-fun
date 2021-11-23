@@ -1,6 +1,15 @@
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
+import { de, en, fr, hi, ko, pt, zh } from "make-plural/plurals";
 import { ReactNode, useContext, useEffect } from "react";
+
+i18n.loadLocaleData("en", { plurals: en });
+i18n.loadLocaleData("fr", { plurals: fr });
+i18n.loadLocaleData("zh", { plurals: zh });
+i18n.loadLocaleData("ko", { plurals: ko });
+i18n.loadLocaleData("de", { plurals: de });
+i18n.loadLocaleData("hi", { plurals: hi });
+i18n.loadLocaleData("pt-br", { plurals: pt });
 
 import { AppContext } from "./AppContext";
 

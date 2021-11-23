@@ -119,9 +119,7 @@ function LocalCharts() {
     <Section>
       <TitleAndSummary
         title={t`Local Charts`}
-        summary={[
-          t`These charts are only available in this browser on this device. Clearing your browser ${localStorage} will erase these.`,
-        ]}
+        summary={t`These charts are only available in this browser on this device. Clearing your browser ${localStorage} will erase these.`}
       />
       {!validCustomer && (
         <Box
@@ -350,9 +348,7 @@ function HostedCharts() {
     <Section content="start normal">
       <TitleAndSummary
         title={t`Hosted Charts`}
-        summary={[
-          t`Access these charts from anywhere. Share/embed charts that stay in sync with your edits.`,
-        ]}
+        summary={t`Access these charts from anywhere. Share/embed charts that stay in sync with your edits.`}
       />
       {validSponsor ? (
         !tooManyCharts ? (
@@ -502,17 +498,13 @@ function TitleAndSummary({
   summary,
 }: {
   title: string;
-  summary: string[];
+  summary: string;
 }) {
   return (
     <Box gap={2}>
       <SectionTitle>{title}</SectionTitle>
       <Box>
-        {summary.map((line) => (
-          <Type key={line} size={-1}>
-            {line}
-          </Type>
-        ))}
+        <Type size={-1}>{summary}</Type>
       </Box>
     </Box>
   );
