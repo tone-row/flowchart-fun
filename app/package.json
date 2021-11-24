@@ -31,6 +31,7 @@
     "core-js": "^3.18.1",
     "cytoscape": "^3.20.0",
     "cytoscape-dagre": "^2.3.2",
+    "cytoscape-klay": "^3.1.4",
     "date-fns": "^2.25.0",
     "deepmerge": "^4.2.2",
     "file-saver": "^2.0.5",
@@ -54,6 +55,7 @@
     "react-use-localstorage": "^3.5.3",
     "stripe": "^8.179.0",
     "svg-parser": "^2.0.4",
+    "svgo": "^2.8.0",
     "typescript": "^4.1.2",
     "use-debounce": "^5.2.1",
     "web-vitals": "^1.0.1"
@@ -104,6 +106,7 @@
     "@types/react-select": "^4.0.17",
     "@types/strip-comments": "^2.0.0",
     "@types/svg-parser": "^2.0.1",
+    "@types/svgo": "^2.6.0",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
     "concurrently": "^6.0.0",

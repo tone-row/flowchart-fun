@@ -6,6 +6,7 @@ export const layouts: {
   value: cytoscape.LayoutOptions["name"];
 }[] = [
   { label: () => `Dagre`, value: "dagre" },
+  { label: () => `Klay`, value: "klay" },
   { label: () => t`Breadthfirst`, value: "breadthfirst" },
   { label: () => `CoSE`, value: "cose" },
   { label: () => t`Concentric`, value: "concentric" },
