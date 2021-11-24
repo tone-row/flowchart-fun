@@ -51,7 +51,9 @@ export default function useDownloadHandlers(
       );
 
       const correctedSvgStr = svgEl.documentElement.outerHTML;
-      const { optimize } = await import("svgo");
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      const { optimize } = await import("svgo/dist/svgo.browser");
       const { data } = optimize(correctedSvgStr, {
         js2svg: { pretty: true, indent: 2 },
         plugins: ["removeDimensions"],
