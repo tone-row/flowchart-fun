@@ -31,6 +31,7 @@
     "core-js": "^3.18.1",
     "cytoscape": "^3.20.0",
     "cytoscape-dagre": "^2.3.2",
+    "cytoscape-klay": "^3.1.4",
     "date-fns": "^2.25.0",
     "deepmerge": "^4.2.2",
     "file-saver": "^2.0.5",

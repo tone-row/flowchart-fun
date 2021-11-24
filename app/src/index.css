@@ -151,6 +151,7 @@ div[data-reach-tooltip] {
   box-shadow: none;
   border-radius: 2px;
   color: var(--color-foreground);
+  padding: 0 calc(1 * var(--spacer-px));
 }
 
 @media (max-width: 799px) {

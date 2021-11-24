@@ -6,6 +6,7 @@ import cytoscape, {
   NodeSingular,
 } from "cytoscape";
 import dagre from "cytoscape-dagre";
+import klay from "cytoscape-klay";
 import frontmatter from "gray-matter";
 import { compressToEncodedURIComponent as compress } from "lz-string";
 import React, {
@@ -41,6 +42,7 @@ declare global {
 
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
+  cytoscape.use(klay);
   cytoscape.use(cytoscapeSvg);
   cytoscape.prototype.hasInitialised = true;
 }
@@ -71,7 +73,7 @@ const Graph = memo(
     const handleResize = useCallback(() => {
       if (cy.current) {
         cy.current.resize();
-        // cy.current.animate({ fit: { padding: 6 } } as any);
+        cy.current.animate({ fit: { padding: 6 } } as any);
       }
     }, []);
 

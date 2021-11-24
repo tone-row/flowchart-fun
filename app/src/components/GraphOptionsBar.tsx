@@ -130,7 +130,7 @@ const GraphOptionsBar = memo(() => {
       p={1}
       px={2}
       as="form"
-      at={{ tablet: { p: 2, px: 4 } }}
+      at={{ tablet: { px: 4 } }}
     >
       <OptionWithIcon icon={CirclesThree} label={t`Layout`}>
         <Controller
