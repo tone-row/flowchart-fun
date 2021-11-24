@@ -7,7 +7,7 @@ import { useGraphTheme } from "../lib/hooks";
 
 declare global {
   interface Window {
-    flowchartFunGetSVG: () => string;
+    flowchartFunGetSVG: () => Promise<string>;
     flowchartFunDownloadSVG: () => void;
     flowchartFunDownloadPNG: () => void;
     flowchartFunDownloadJPG: () => void;
@@ -23,7 +23,7 @@ export default function useDownloadHandlers(
   const filename = workspace || "flowchart";
   const graphTheme = useGraphTheme();
   const { bg } = graphThemes[graphTheme];
-  const getSVG = useCallback(() => {
+  const getSVG = useCallback(async () => {
     if (cy.current) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -51,15 +51,20 @@ export default function useDownloadHandlers(
       );
 
       const correctedSvgStr = svgEl.documentElement.outerHTML;
-      return correctedSvgStr;
+      const { optimize } = await import("svgo");
+      const { data } = optimize(correctedSvgStr, {
+        js2svg: { pretty: true, indent: 2 },
+        plugins: ["removeDimensions"],
+      });
+      return data;
     }
     return "";
     // "cy" is a ref
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bg, textToParse]);
 
-  const downloadSVG = useCallback(() => {
-    const correctedSvgStr = getSVG();
+  const downloadSVG = useCallback(async () => {
+    const correctedSvgStr = await getSVG();
     if (correctedSvgStr)
       saveAs(
         new Blob([correctedSvgStr], {

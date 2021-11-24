@@ -208,8 +208,11 @@ function Preview() {
   const [html, set] = useReducer((_: string, x: string) => x, "");
   const [bg, setBG] = useReducer((_: string, x: string) => x, "");
   useEffect(() => {
-    setTimeout(() => set(window.flowchartFunGetSVG()), 0);
     setTimeout(() => setBG(window.flowchartFunGetGraphThemeBG()), 0);
+    (async () => {
+      const svg = await window.flowchartFunGetSVG();
+      set(svg);
+    })();
   }, []);
   return (
     <Box
