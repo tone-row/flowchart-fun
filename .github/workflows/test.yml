@@ -13,3 +13,5 @@ jobs:
         run: yarn
       - name: Run the tests
         run: yarn workspace app test:coverage
+      - name: Benchmark
+        run: yarn workspace app benchmark
