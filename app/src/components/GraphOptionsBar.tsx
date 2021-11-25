@@ -26,6 +26,7 @@ import Select, {
   StylesConfig,
 } from "react-select";
 
+import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts } from "../lib/graphOptions";
 import { themes } from "../lib/graphThemes";
@@ -65,6 +66,7 @@ const GraphOptionsBar = memo(() => {
           rankDir: options.layout.rankDir,
         },
       });
+      gaChangeGraphOption({ action: "layout", label: options.layout.name });
       if (isEmpty(options.layout)) delete options.layout;
       updateGraphOptionsText && updateGraphOptionsText(options);
     }
@@ -140,7 +142,7 @@ const GraphOptionsBar = memo(() => {
             return (
               <MySelect
                 options={layouts}
-                onChange={(layout: typeof layouts[0]) =>
+                onChange={(layout: typeof layouts[number]) =>
                   layout && onChange(layout.value)
                 }
                 value={currentLayout}
