@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router";
 
+import { gaChangeTab } from "../lib/analytics";
 import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
 import {
   useCurrentHostedChart,
@@ -39,8 +40,6 @@ import {
   Tooltip,
   tooltipSize,
 } from "./Shared";
-
-const chartSpecific: Showing[] = ["editor", "share"];
 
 export default function MenuNext() {
   const { showing, session } = useContext(AppContext);
@@ -75,7 +74,7 @@ export default function MenuNext() {
         <MenuTabButton icon={TreeStructure} tab="editor" label={t`Editor`} />
         <MenuTabButton icon={FolderOpen} tab="navigation" label={t`Charts`} />
       </Box>
-      {chartSpecific.includes(showing) ? (
+      {showing === "editor" ? (
         <WorkspaceSection />
       ) : (
         <Box className={styles.PageTitle} pt={5} at={{ tablet: { pt: 0 } }}>
@@ -120,7 +119,10 @@ const MenuTabButton = ({
         rad={1}
         role="tab"
         aria-selected={tab === showing}
-        onClick={() => setShowing(tab)}
+        onClick={() => {
+          setShowing(tab);
+          gaChangeTab({ action: tab });
+        }}
         className={styles.MenuTabButton}
         {...props}
       >
@@ -290,7 +292,9 @@ function ExportButton() {
       className={[styles.ExportButton, styles.MenuNextTitleButton].join(" ")}
       items="center normal"
       at={{ tablet: { template: "auto / auto 1fr", px: 0 } }}
-      onClick={() => setShareModal(true)}
+      onClick={() => {
+        setShareModal(true);
+      }}
     >
       <Box p={2} px={3}>
         <Share size={smallIconSize} />

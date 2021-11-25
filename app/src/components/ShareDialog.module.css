@@ -33,9 +33,11 @@
 .Preview svg {
   width: 100%;
   height: auto;
+  max-height: 100%;
 }
 
 .Preview {
   background-color: var(--bg);
-  box-shadow: 0 0 10px var(--color-uiAccent);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-uiAccent);
 }

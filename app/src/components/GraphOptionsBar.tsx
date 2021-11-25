@@ -51,7 +51,17 @@ const GraphOptionsBar = memo(() => {
   } = useForm();
 
   const values = watch();
+  const layout = watch("layout.name");
+  const theme = watch("theme");
   const valuesString = JSON.stringify(values);
+
+  useEffect(() => {
+    if (layout) gaChangeGraphOption({ action: "layout", label: layout });
+  }, [layout]);
+
+  useEffect(() => {
+    if (theme) gaChangeGraphOption({ action: "theme", label: theme });
+  }, [theme]);
 
   // Update graph options text if different that useForm
   useEffect(() => {
@@ -60,13 +70,6 @@ const GraphOptionsBar = memo(() => {
     // Check if different than current values
     const options = JSON.parse(valuesString);
     if (!isEqual(options, graphOptions)) {
-      window.plausible("Update Graph Options", {
-        props: {
-          layoutName: options.layout.name,
-          rankDir: options.layout.rankDir,
-        },
-      });
-      gaChangeGraphOption({ action: "layout", label: options.layout.name });
       if (isEmpty(options.layout)) delete options.layout;
       updateGraphOptionsText && updateGraphOptionsText(options);
     }
@@ -77,7 +80,8 @@ const GraphOptionsBar = memo(() => {
   // Reset useForm to match whats in context
   useEffect(() => {
     const inContext = JSON.parse(ctxGraphOptions);
-    reset({ layout: inContext.layout });
+    // All Top-Level Keys must be present here!
+    reset({ layout: inContext.layout, theme: inContext.theme });
   }, [ctxGraphOptions, reset]);
 
   const currentLayout = useMemo(
