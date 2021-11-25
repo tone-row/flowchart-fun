@@ -1,10 +1,13 @@
+/* eslint @typescript-eslint/no-empty-function: 0 */
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const gaEnabled = process.env.REACT_APP_ANALYTICS_ENABLED === "1";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
+// hook
 let usePageViews = () => {};
+// goals
+let gaChangeGraphOption = (_: { label: string; action: string }) => {};
 
 if (gaEnabled) {
   import("react-ga").then((ReactGA) => {
@@ -15,7 +18,15 @@ if (gaEnabled) {
         ReactGA.pageview(location.pathname + location.search);
       }, [location.pathname, location.search]);
     };
+
+    gaChangeGraphOption = ({ label, action }) => {
+      ReactGA.event({
+        category: "Change Graph Options",
+        action,
+        label,
+      });
+    };
   });
 }
 
-export { usePageViews };
+export { usePageViews, gaChangeGraphOption };
