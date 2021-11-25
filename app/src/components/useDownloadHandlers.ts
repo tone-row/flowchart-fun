@@ -23,8 +23,10 @@ export default function useDownloadHandlers(
   const filename = workspace || "flowchart";
   const graphTheme = useGraphTheme();
   const { bg } = graphThemes[graphTheme];
-  const getSVG = useCallback(async () => {
-    if (cy.current) {
+  window.flowchartFunGetSVG = async () => {
+    if (!cy.current) throw new Error("Cytoscape not initialized");
+
+    try {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const svgStr = cy.current.svg({
@@ -51,22 +53,21 @@ export default function useDownloadHandlers(
       );
 
       const correctedSvgStr = svgEl.documentElement.outerHTML;
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       const { optimize } = await import("svgo/dist/svgo.browser");
+
       const { data } = optimize(correctedSvgStr, {
         js2svg: { pretty: true, indent: 2 },
         plugins: ["removeDimensions"],
       });
-      return data;
-    }
-    return "";
-    // "cy" is a ref
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bg, textToParse]);
 
-  const downloadSVG = useCallback(async () => {
-    const correctedSvgStr = await getSVG();
+      return data;
+    } catch (e) {
+      return "";
+    }
+  };
+
+  window.flowchartFunDownloadSVG = async () => {
+    const correctedSvgStr = await window.flowchartFunGetSVG();
     if (correctedSvgStr)
       saveAs(
         new Blob([correctedSvgStr], {
@@ -74,7 +75,7 @@ export default function useDownloadHandlers(
         }),
         `${filename}.svg`
       );
-  }, [filename, getSVG]);
+  };
 
   const downloadPNG = useCallback(() => {
     if (cy.current) {
@@ -119,10 +120,8 @@ export default function useDownloadHandlers(
   }, [graphTheme]);
 
   useEffect(() => {
-    window.flowchartFunGetSVG = getSVG;
-    window.flowchartFunDownloadSVG = downloadSVG;
     window.flowchartFunDownloadPNG = downloadPNG;
     window.flowchartFunDownloadJPG = downloadJPG;
     window.flowchartFunGetGraphThemeBG = getGraphThemeBG;
-  }, [downloadJPG, downloadPNG, downloadSVG, getGraphThemeBG, getSVG]);
+  }, [downloadJPG, downloadPNG, getGraphThemeBG]);
 }

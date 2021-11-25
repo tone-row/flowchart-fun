@@ -2644,10 +2644,10 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@tone-row/cytoscape-svg@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@tone-row/cytoscape-svg/-/cytoscape-svg-1.0.1.tgz#632d2f8cdeafef8b935d61f2a80abae1ab232240"
-  integrity sha512-tKH674prVNKIJA0QLbOCU7zuKAd4sADzexufWzxEeYQlBju4Mwk35mJs0jaxPD6mayy6ZLqU1O3zRWtLlaT1fA==
+"@tone-row/cytoscape-svg@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@tone-row/cytoscape-svg/-/cytoscape-svg-1.0.2.tgz#e23713fa8f6f68123150a83418aa1be163efdb34"
+  integrity sha512-mJdzejXqZ53TYEkKGpMDmn0vBmmgRYY0UH3R1vbD2ZfzsaPj664c0WHSjX3vhZu+hg/KksGXtPQFpLMDo0U8PQ==
   dependencies:
     canvas-to-svg "^1.0.3"
 

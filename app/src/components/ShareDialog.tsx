@@ -216,19 +216,23 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
 }
 
 function Preview() {
-  const [html, set] = useReducer((_: string, x: string) => x, "");
+  const [__html, set] = useReducer((_: string, x: string) => x, "");
   const [bg, setBG] = useReducer((_: string, x: string) => x, "");
   useEffect(() => {
+    // defer
     setTimeout(() => setBG(window.flowchartFunGetGraphThemeBG()), 0);
-    (async () => {
-      const svg = await window.flowchartFunGetSVG();
-      set(svg);
-    })();
+    setTimeout(() => {
+      (async () => {
+        const svg = await window.flowchartFunGetSVG();
+        set(svg);
+      })();
+    }, 0);
   }, []);
+  if (!__html) return <>...</>;
   return (
     <Box
       className={styles.Preview}
-      dangerouslySetInnerHTML={{ __html: html }}
+      dangerouslySetInnerHTML={{ __html }}
       p={2}
       rad={1}
       style={{ "--bg": bg, maxHeight: "50vh" }}
