@@ -8,7 +8,6 @@ import CurrentTab from "./CurrentTab";
 import styles from "./Layout.module.css";
 import Loading from "./Loading";
 import MenuNext from "./MenuNext";
-import Share from "./Share";
 import ShareDialog from "./ShareDialog";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
@@ -37,19 +36,16 @@ function LayoutWrapper({
   children: ReactNode;
   isFullscreen: boolean;
 }) {
-  const { showing, shareModal } = useContext(AppContext);
+  const { showing } = useContext(AppContext);
   return (
-    <>
-      <Box
-        root
-        className={styles.LayoutWrapper}
-        data-showing={showing}
-        data-fullscreen={isFullscreen}
-      >
-        {children}
-      </Box>
-      {shareModal && <Share />}
-    </>
+    <Box
+      root
+      className={styles.LayoutWrapper}
+      data-showing={showing}
+      data-fullscreen={isFullscreen}
+    >
+      {children}
+    </Box>
   );
 }
 

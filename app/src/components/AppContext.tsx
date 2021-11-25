@@ -24,7 +24,6 @@ export type Showing =
   | "navigation"
   | "editor"
   | "settings"
-  | "share"
   | "feedback"
   | "sponsor";
 
