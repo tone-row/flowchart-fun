@@ -217,6 +217,24 @@ describe("parseText", () => {
       "Line 2 has an edge label but no indent."
     );
   });
+
+  it("should parse classes for nodes", () => {
+    const label = `[.one.two.three] a`;
+    const result = parseText(label, getSize);
+    expect(result).toContainEqual({
+      classes: "one two three",
+      data: { id: "14e", label: "a", lineNumber: 1 },
+    });
+  });
+
+  it("id or class only should create node", () => {
+    const label = `[someId]`;
+    const result = parseText(label, getSize);
+    expect(result).toContainEqual({
+      classes: "",
+      data: { id: "someId", label: "", lineNumber: 1 },
+    });
+  });
 });
 
 function nodesOnly(el: cytoscape.ElementDefinition) {
