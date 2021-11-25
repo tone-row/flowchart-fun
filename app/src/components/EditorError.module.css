@@ -1,7 +1,8 @@
 .EditorError {
   position: absolute;
   bottom: 0;
-  right: 0;
-  color: red;
-  background-color: hsla(var(--color-backgroundHsl), 0.75);
+  right: var(--spacer-px);
+  left: var(--spacer-px);
+  bottom: var(--spacer-px);
+  color: black;
 }

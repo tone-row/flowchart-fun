@@ -80,6 +80,15 @@ export function parseText(
           },
         });
       }
+    } else {
+      // No indent
+      if (edgeLabel) {
+        throw new Error(
+          `Line ${
+            lineNumber + startingLineNumber
+          } has an edge label but no indent.`
+        );
+      }
     }
     if (!linkedId) {
       // Check for custom id
