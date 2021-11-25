@@ -42,7 +42,7 @@ const defaultLanguage = Object.keys(languages).includes(browserLanguage)
 
 type mobileEditorTab = "text" | "graph";
 
-type TAppContext = {
+export type TAppContext = {
   updateUserSettings: (newSettings: Partial<UserSettings>) => void;
   theme: Theme;
   shareLink: string;
@@ -50,10 +50,10 @@ type TAppContext = {
   language: string;
   showing: Showing;
   setShowing: Dispatch<SetStateAction<Showing>>;
-  hasError: boolean;
-  setHasError: Dispatch<SetStateAction<boolean>>;
-  hasStyleError: boolean;
-  setHasStyleError: Dispatch<SetStateAction<boolean>>;
+  hasError: false | string;
+  setHasError: Dispatch<SetStateAction<false | string>>;
+  hasStyleError: false | string;
+  setHasStyleError: Dispatch<SetStateAction<false | string>>;
   shareModal: boolean;
   setShareModal: Dispatch<SetStateAction<boolean>>;
   mobileEditorTab: mobileEditorTab;
@@ -123,8 +123,9 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     window.localStorage.removeItem("flowcharts.fun:");
   }, []);
 
-  const [hasError, setHasError] = useState(false);
-  const [hasStyleError, setHasStyleError] = useState(false);
+  const [hasError, setHasError] = useState<TAppContext["hasError"]>(false);
+  const [hasStyleError, setHasStyleError] =
+    useState<TAppContext["hasStyleError"]>(false);
 
   const { data: flags } = useUserFeatures();
 

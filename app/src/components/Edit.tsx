@@ -21,8 +21,8 @@ import { useLocalStorageText } from "../lib/hooks";
 import { languageId } from "../lib/registerLanguage";
 import { AppContext } from "./AppContext";
 import styles from "./Edit.module.css";
+import EditorError from "./EditorError";
 import GraphProvider from "./GraphProvider";
-import HasError from "./HasError";
 import { HelpButton } from "./HelpButton";
 import Loading from "./Loading";
 import useGraphOptions from "./useGraphOptions";
@@ -36,7 +36,7 @@ export default function Edit() {
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const { mode, hasError, hasStyleError } = useContext(AppContext);
+  const { mode } = useContext(AppContext);
   const loading = useRef(<Loading />);
   const { graphOptions, content, graphOptionsString } =
     useGraphOptions(textToParse);
@@ -103,7 +103,7 @@ export default function Edit() {
         onMount={onMount}
       />
       <HelpButton />
-      <HasError show={hasError || hasStyleError} />
+      <EditorError />
     </GraphProvider>
   );
 }

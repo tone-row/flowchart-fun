@@ -27,10 +27,11 @@ import {
   GraphOptionsObject,
 } from "../lib/constants";
 import { GraphThemes, graphThemes } from "../lib/graphThemes";
+import { isError } from "../lib/helpers";
 import { useAnimationSetting, useGetSize, useGraphTheme } from "../lib/hooks";
 import { parseText, stripComments } from "../lib/utils";
 import { Box } from "../slang";
-import { AppContext } from "./AppContext";
+import { AppContext, TAppContext } from "./AppContext";
 import styles from "./Graph.module.css";
 import useDownloadHandlers from "./useDownloadHandlers";
 
@@ -236,7 +237,7 @@ function updateGraph(
   startingLineNumber: number,
   layoutString: string,
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
-  setHasError: React.Dispatch<React.SetStateAction<boolean>>,
+  setHasError: TAppContext["setHasError"],
   graphInitialized: React.MutableRefObject<boolean>,
   animate: boolean,
   getSize: (label: string) =>
@@ -247,11 +248,12 @@ function updateGraph(
     | undefined
 ) {
   if (cy.current) {
+    let elements: cytoscape.ElementDefinition[] = [];
     try {
       const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
 
       // Parse
-      const elements = parseText(content, getSize, startingLineNumber);
+      elements = parseText(content, getSize, startingLineNumber);
 
       // Test Error First
       errorCatcher.current?.json({ elements });
@@ -273,6 +275,7 @@ function updateGraph(
               ? animate
               : false
             : false,
+          animationDuration: animate ? 333 : 0,
         } as any)
         .run();
       cy.current.center();
@@ -281,14 +284,14 @@ function updateGraph(
       // Reinitialize to avoid missing errors
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
-      // debugger;
       setHasError(false);
     } catch (e) {
       console.log(e);
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
-      // debugger;
-      setHasError(true);
+      if (isError(e)) {
+        setHasError(sanitizeMessage(e.message, elements));
+      }
     }
   }
 }
@@ -297,7 +300,7 @@ function updateStyle(
   cy: React.MutableRefObject<cytoscape.Core | undefined>,
   userStyleString: string,
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
-  setHasStyleError: React.Dispatch<React.SetStateAction<boolean>>,
+  setHasStyleError: TAppContext["setHasStyleError"],
   graphTheme: GraphThemes
 ) {
   if (cy.current) {
@@ -305,6 +308,7 @@ function updateStyle(
       const userStyle = JSON.parse(
         userStyleString
       ) as GraphOptionsObject["style"];
+
       // Prepare Styles
       const style = getCytoStyle(graphTheme, userStyle);
 
@@ -324,7 +328,9 @@ function updateStyle(
       console.log(e);
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
-      setHasStyleError(true);
+      if (isError(e)) {
+        setHasStyleError(sanitizeStyleMessage(e.message));
+      }
     }
   }
 }
@@ -333,5 +339,33 @@ function getCytoStyle(
   theme: GraphThemes,
   userStyle: cytoscape.Stylesheet[] = []
 ): CytoscapeOptions["style"] {
+  // if (!Array.isArray(userStyle)) throw new Error("Invalid Style");
   return [...graphThemes[theme].styles, ...userStyle];
+}
+
+function sanitizeMessage(
+  message: string,
+  elements: cytoscape.ElementDefinition[]
+) {
+  let test = null;
+  if ((test = edgeSource.exec(message))) {
+    const { edge, source } = test.groups as { edge: string; source: string };
+    const edgeElement = elements.find((e) => e.data.id === edge);
+    edgeSource.lastIndex = 0;
+    return message
+      .replace(`\`${edge}\``, `to line ${edgeElement?.data?.lineNumber}`)
+      .replace(`\`${source}\``, "")
+      .replace("with", "from");
+  }
+  return message;
+}
+
+const edgeSource =
+  /Can not create edge `(?<edge>[^`]+)` with nonexistant source `(?<source>[^`]+)`/gm;
+
+function sanitizeStyleMessage(message: string) {
+  if (/userStyle is not iterable/gi.test(message)) {
+    return "Style object invalid";
+  }
+  return message;
 }
