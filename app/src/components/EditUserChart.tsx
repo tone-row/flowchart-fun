@@ -26,9 +26,9 @@ import { queryClient, updateChartText, useChart } from "../lib/queries";
 import { languageId } from "../lib/registerLanguage";
 import { AppContext } from "./AppContext";
 import editStyles from "./Edit.module.css";
+import EditorError from "./EditorError";
 import styles from "./EditUserChart.module.css";
 import GraphProvider from "./GraphProvider";
-import HasError from "./HasError";
 import Loading from "./Loading";
 import Spinner from "./Spinner";
 import useGraphOptions from "./useGraphOptions";
@@ -46,7 +46,7 @@ export default function EditUserChart() {
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const { mode, hasError, hasStyleError } = useContext(AppContext);
+  const { mode } = useContext(AppContext);
   const loading = useRef(<Loading />);
   const { graphOptions, content } = useGraphOptions(textToParse);
 
@@ -127,7 +127,7 @@ export default function EditUserChart() {
         onMount={onMount}
       />
       <LoadingState isLoading={isLoading} pending={pending()} />
-      <HasError show={hasError || hasStyleError} />
+      <EditorError />
     </GraphProvider>
   );
 }

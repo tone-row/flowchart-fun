@@ -12,8 +12,8 @@ import {
   themeNameLight,
 } from "../lib/registerLanguage";
 import { AppContext } from "./AppContext";
+import EditorError from "./EditorError";
 import GraphProvider from "./GraphProvider";
-import HasError from "./HasError";
 import Loading from "./Loading";
 import styles from "./ReadOnly.module.css";
 
@@ -26,7 +26,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
     : decodeURIComponent(graphText);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const { mode, hasError, hasStyleError } = useContext(AppContext);
+  const { mode } = useContext(AppContext);
   const loading = useRef(<Loading />);
 
   const onMount = useEditorOnMount(mode, editorRef);
@@ -54,7 +54,7 @@ function ReadOnly({ compressed = false }: { compressed?: boolean }) {
         loading={loading.current}
         onMount={onMount}
       />
-      <HasError show={hasError || hasStyleError} />
+      <EditorError />
     </GraphProvider>
   );
 }
