@@ -17,6 +17,7 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { Link, useHistory, useLocation, useParams } from "react-router-dom";
 
+import { gaCreateChart, gaSponsorCTA } from "../lib/analytics";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer, useIsValidSponsor } from "../lib/hooks";
 import {
@@ -68,6 +69,7 @@ function LocalCharts() {
       if (chartTitle) {
         push(`/${chartTitle}`);
         setShowing("editor");
+        gaCreateChart({ action: "local" });
       }
     },
     [push, setShowing]
@@ -128,7 +130,10 @@ function LocalCharts() {
           pr={4}
           rad={1}
           as="button"
-          onClick={() => setShowing("sponsor")}
+          onClick={() => {
+            setShowing("sponsor");
+            gaSponsorCTA({ action: "from navigation" });
+          }}
           className={styles.CallOut}
         >
           <Type size={-1}>
@@ -151,7 +156,9 @@ function LocalCharts() {
             <Button
               disabled={title?.length < 2 || charts.includes(title)}
               type="submit"
-              onClick={() => window.plausible("Create New Chart")}
+              onClick={() => {
+                window.plausible("Create New Chart");
+              }}
               text={t`Create`}
             />
           </Box>
@@ -327,6 +334,7 @@ function HostedCharts() {
       queryClient.invalidateQueries(["auth", "userCharts"]);
       push(`/u/${response.data[0].id}`);
       setShowing("editor");
+      gaCreateChart({ action: "hosted" });
     },
   });
   const { data: charts } = useCharts();

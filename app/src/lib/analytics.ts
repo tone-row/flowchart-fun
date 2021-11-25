@@ -7,7 +7,11 @@ const gaEnabled = process.env.REACT_APP_ANALYTICS_ENABLED === "1";
 // hook
 let usePageViews = () => {};
 // goals
-let gaChangeGraphOption = (_: { label: string; action: string }) => {};
+let gaChangeGraphOption = (_: { action: string; label: string }) => {};
+let gaChangeTab = (_: { action: string }) => {};
+let gaSponsorCTA = (_: { action: string }) => {};
+let gaCreateChart = (_: { action: string }) => {};
+let gaExportChart = (_: { action: string; label: string }) => {};
 
 if (gaEnabled) {
   import("react-ga").then((ReactGA) => {
@@ -26,7 +30,43 @@ if (gaEnabled) {
         label,
       });
     };
+
+    gaChangeTab = ({ action }) => {
+      ReactGA.event({
+        category: "Change Tab",
+        action,
+      });
+    };
+
+    gaSponsorCTA = ({ action }) => {
+      ReactGA.event({
+        category: "Sponsor CTA",
+        action,
+      });
+    };
+
+    gaCreateChart = ({ action }) => {
+      ReactGA.event({
+        category: "Create Chart",
+        action,
+      });
+    };
+
+    gaExportChart = ({ action, label }) => {
+      ReactGA.event({
+        category: "Export Chart",
+        action,
+        label,
+      });
+    };
   });
 }
 
-export { usePageViews, gaChangeGraphOption };
+export {
+  usePageViews,
+  gaChangeGraphOption,
+  gaChangeTab,
+  gaSponsorCTA,
+  gaCreateChart,
+  gaExportChart,
+};

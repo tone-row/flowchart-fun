@@ -10,6 +10,7 @@ import {
 } from "react";
 import { useMutation } from "react-query";
 
+import { gaExportChart } from "../lib/analytics";
 import { useTitle } from "../lib/hooks";
 import { makeChartPublic, queryClient, useChart } from "../lib/queries";
 import { Box, Type } from "../slang";
@@ -105,17 +106,26 @@ export default function ShareDialog() {
         </Title>
         <Box gap={2}>
           <Button
-            onClick={window.flowchartFunDownloadSVG}
+            onClick={() => {
+              window.flowchartFunDownloadSVG();
+              gaExportChart({ action: "Download", label: "SVG" });
+            }}
             aria-label="SVG"
             text="SVG"
           />
           <Button
-            onClick={window.flowchartFunDownloadPNG}
+            onClick={() => {
+              window.flowchartFunDownloadPNG();
+              gaExportChart({ action: "Download", label: "PNG" });
+            }}
             aria-label="PNG"
             text="PNG"
           />
           <Button
-            onClick={window.flowchartFunDownloadJPG}
+            onClick={() => {
+              window.flowchartFunDownloadJPG();
+              gaExportChart({ action: "Download", label: "JPG" });
+            }}
             aria-label="JPG"
             text="JPG"
           />
@@ -193,6 +203,7 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
               (async () => {
                 await navigator.clipboard.writeText(value);
                 setCopied(true);
+                gaExportChart({ action: "Copy Link", label: title });
               })();
             }}
             className={styles.LinkCopyButton}
@@ -218,9 +229,9 @@ function Preview() {
     <Box
       className={styles.Preview}
       dangerouslySetInnerHTML={{ __html: html }}
-      p={1}
+      p={2}
       rad={1}
-      style={{ "--bg": bg }}
+      style={{ "--bg": bg, maxHeight: "50vh" }}
     />
   );
 }
