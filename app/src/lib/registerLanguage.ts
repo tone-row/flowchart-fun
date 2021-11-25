@@ -12,7 +12,7 @@ const lightTheme = {
   base: "vs",
   inherit: true,
   rules: [
-    { token: "variable.other.property", foreground: palette.purple[0] },
+    { token: "nodeIdAndClass", foreground: palette.purple[0] },
     {
       token: "keyword.operator.assignment",
       foreground: palette.purple[1],
@@ -28,7 +28,8 @@ const darkTheme = {
   base: "vs-dark",
   inherit: true,
   rules: [
-    { token: "variable.other.property", foreground: palette.purple[0] },
+    // ID
+    { token: "nodeIdAndClass", foreground: palette.purple[0] },
     {
       token: "keyword.operator.assignment",
       foreground: palette.purple[1],
@@ -52,14 +53,15 @@ function registerLanguage(monaco: Monaco) {
         },
         { regex: /^\s+/, action: { token: "", next: "@child" } },
         { regex: /\/\*/, action: { token: "comment", next: "@comment" } },
-        [/\[[\w\s]+\]/, "variable.other.property"],
+        [/\[[\w\s.-]+\]/, "nodeIdAndClass"],
         [/\/\/.*/, "comment"],
       ],
       child: [
-        [/\[[\s\w\s]+\]\s*/, "variable.other.property"],
+        [/\[[\s\w.-]+\]*/, "nodeIdAndClass"],
         [/[\w\s]+[:：]\s*/, "keyword.operator.assignment"],
         [/[(（][^(（)）]+[)）]$/, "support.function"],
         { regex: /\/\*/, action: { token: "comment", next: "@comment" } },
+        [/\/\/.*/, "comment"],
       ],
       comment: [
         ["\\*/", "comment", "@pop"],

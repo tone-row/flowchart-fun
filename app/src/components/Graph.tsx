@@ -21,6 +21,7 @@ import React, {
 } from "react";
 import { useDebouncedCallback } from "use-debounce";
 
+import { baseGraphStyles } from "../lib/baseGraphStyles";
 import {
   defaultLayout,
   delimiters,
@@ -339,8 +340,7 @@ function getCytoStyle(
   theme: GraphThemes,
   userStyle: cytoscape.Stylesheet[] = []
 ): CytoscapeOptions["style"] {
-  // if (!Array.isArray(userStyle)) throw new Error("Invalid Style");
-  return [...graphThemes[theme].styles, ...userStyle];
+  return [...graphThemes[theme].styles, ...baseGraphStyles, ...userStyle];
 }
 
 function sanitizeMessage(

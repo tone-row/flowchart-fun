@@ -31,7 +31,7 @@ export function parseText(
     lineData[lineNumber] = getLineData(lineStr, lineNumber);
     const line = lineData[lineNumber];
     if (line) {
-      const { linkedId, nodeLabel, edgeLabel, indent, id } = line;
+      const { linkedId, nodeLabel, edgeLabel, indent, id, classes } = line;
 
       if (indent) {
         let parent, lineNumberToCheck;
@@ -85,6 +85,7 @@ export function parseText(
       if (!linkedId) {
         // Check for custom id
         elements.push({
+          classes,
           data: {
             id,
             label: nodeLabel,
@@ -148,13 +149,15 @@ function getLineData(text: string, lineNumber: number) {
   // 3) Edge Label ((?<edgeLabel>.+): )? -- store the edge label if it exists
   // 4) Node Label (?<nodeLabel>.+?) -- store the node label
   const lineRegex =
-    /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgeLabel>.+)[:：] *)?(?<nodeLabel>.+?)$/;
+    /^(?<indent>\s*)(\[(?<id>[^.]*)?(?<classes>(\.[_a-zA-Z]*[_a-zA-Z0-9-]*)*?)\])?((?<edgeLabel>.+)[:：] *)?(?<nodeLabel>.+?)?$/;
+  // /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgeLabel>.+)[:：] *)?(?<nodeLabel>.+?)$/;
   const { groups } = text.match(lineRegex) || {};
   const {
     nodeLabel = "",
     edgeLabel = "",
     indent,
     id = betterDefaultId(lineNumber),
+    classes,
   } = groups || {};
   const { groups: labelGroups } =
     nodeLabel.match(/^[(（](?<linkedId>.+)[)）]\s*$/) || {};
@@ -164,6 +167,7 @@ function getLineData(text: string, lineNumber: number) {
     edgeLabel: decodeURIComponent(edgeLabel.trim()),
     indent,
     id,
+    classes: classes ? classes.slice(1).replace(/\./gi, " ") : "",
     linkedId:
       typeof linkedId !== "undefined" ? decodeURIComponent(linkedId) : linkedId,
   };
