@@ -76,7 +76,8 @@
     "e2e": "npx playwright test --config=playwright.config.ts",
     "generate:types": "export $(cat .env.local | xargs) && npx openapi-typescript \"${SB_URL}/rest/v1/?apikey=${SB_ANON_KEY}\" --output src/types/supabase.ts",
     "benchmark": "npx ts-node -O '{\"module\":\"commonjs\"}' --files benchmarks/utils.ts",
-    "benchmark:write": "yarn benchmark --write"
+    "benchmark:write": "yarn benchmark --write",
+    "benchmark:compare": "yarn benchmark --compare"
   },
   "eslintConfig": {
     "extends": [

@@ -47,16 +47,17 @@ suite
     console.log(String(event.target));
   })
   .on("complete", function () {
-    if (!process.env.CI && argv.write) {
+    if (!process.env.CI && !argv.compare && argv.write) {
       writeFileSync(resultsPath, JSON.stringify(runResults, null, "  "));
     }
 
-    if (process.env.CI) {
+    if (process.env.CI || argv.compare) {
       const prevResults = JSON.parse(readFileSync(resultsPath, "utf8"));
       for (const result in runResults) {
         if (result in prevResults) {
           const percentageDiff =
             (runResults[result] - prevResults[result]) / prevResults[result];
+          console.log(`${result}: ${percentageDiff * 100}%`);
           if (percentageDiff < -0.15) {
             console.error(`${result} is 15% slower than expected`);
             process.exit(1);
