@@ -24,73 +24,75 @@ export function parseText(
 
   // break into lines
   const lines = text.split("\n");
+  const lineData: ReturnType<typeof getLineData>[] = [];
 
   // Loop over lines
-  for (const line of lines) {
-    if (line.trim() === "") {
-      lineNumber++;
-      continue;
-    }
-    const { linkedId, nodeLabel, edgeLabel, indent, id } = getLineData(
-      line,
-      lineNumber
-    );
+  for (const lineStr of lines) {
+    lineData[lineNumber] = getLineData(lineStr, lineNumber);
+    const line = lineData[lineNumber];
+    if (line) {
+      const { linkedId, nodeLabel, edgeLabel, indent, id } = line;
 
-    if (indent) {
-      let parent;
-      let checkLine = lineNumber;
+      if (indent) {
+        let parent, lineNumberToCheck;
 
-      while (checkLine >= 1) {
-        checkLine -= 1;
-        const currentLine = lines[checkLine - 1];
+        for (
+          lineNumberToCheck = lineNumber - 1;
+          lineNumberToCheck >= 1;
+          lineNumberToCheck--
+        ) {
+          const lineToCheck = lineData[lineNumberToCheck];
+          if (!lineToCheck) continue;
 
-        /* Determine whether valid line */
-        if (currentLine.trim() === "") {
-          continue;
+          if (lineToCheck.indent.length < indent.length) {
+            parent = lineData[lineNumberToCheck];
+            break;
+          }
         }
 
-        const { indent: currentLineIndent } = getLineData(
-          currentLine,
-          checkLine
-        );
-        if (currentLineIndent.length < indent.length) {
-          parent = checkLine;
-          break;
+        // If we found a parent
+        if (parent) {
+          const source = parent.id;
+          const target = linkedId || line.id;
+
+          // Find a unique id
+          let id = `${source}_${target}:0`;
+          while (elements.map(({ data: { id } }) => id).includes(id)) {
+            let [, count] = id.split(":");
+            count = (parseInt(count, 10) + 1).toString();
+            id = `${source}_${target}:${count}`;
+          }
+          elements.push({
+            data: {
+              id,
+              source,
+              target,
+              label: edgeLabel,
+              lineNumber: lineNumber + startingLineNumber,
+            },
+          });
+        }
+      } else {
+        // No indent
+        if (edgeLabel) {
+          throw new Error(
+            `Line ${
+              lineNumber + startingLineNumber
+            } has an edge label but no indent.`
+          );
         }
       }
-      // If we found a parent
-      if (parent) {
-        const { id: source } = getLineData(lines[checkLine - 1], checkLine);
-        const target = linkedId || getLineData(line, lineNumber).id;
-
-        // Find a unique id
-        let id = `${source}_${target}:0`;
-        while (elements.map(({ data: { id } }) => id).includes(id)) {
-          let [, count] = id.split(":");
-          count = (parseInt(count, 10) + 1).toString();
-          id = `${source}_${target}:${count}`;
-        }
+      if (!linkedId) {
+        // Check for custom id
         elements.push({
           data: {
             id,
-            source,
-            target,
-            label: edgeLabel,
+            label: nodeLabel,
             lineNumber: lineNumber + startingLineNumber,
+            ...getSize(nodeLabel),
           },
         });
       }
-    }
-    if (!linkedId) {
-      // Check for custom id
-      elements.push({
-        data: {
-          id,
-          label: nodeLabel,
-          lineNumber: lineNumber + startingLineNumber,
-          ...getSize(nodeLabel),
-        },
-      });
     }
     lineNumber++;
   }
@@ -139,6 +141,7 @@ export function parseText(
 }
 
 function getLineData(text: string, lineNumber: number) {
+  if (text.trim() === "") return;
   // Whole line description in one regex with named capture groups
   // 1) Indent ^(?<indent>\s*) -- store the indent which is 0 or more whitespace at the start
   // 2) ID (\[(?<id>.*)\])? -- store the ID if it exists after the indent in square brackets

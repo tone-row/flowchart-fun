@@ -210,6 +210,13 @@ describe("parseText", () => {
       },
     });
   });
+
+  it("should error labeled edges with no indent", () => {
+    const label = `A\ntest: B`;
+    expect(() => parseText(label, getSize)).toThrow(
+      "Line 2 has an edge label but no indent."
+    );
+  });
 });
 
 function nodesOnly(el: cytoscape.ElementDefinition) {

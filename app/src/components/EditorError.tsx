@@ -22,12 +22,16 @@ export default function EditorError() {
             className={styles.EditorError}
             flow="column"
             columnGap={1}
+            content="center start"
             items="center"
             p={2}
             rad={2}
+            background="palette-orange-0"
           >
             <BiErrorCircle size={24} />
-            <Type size={-1}>{show}</Type>
+            <Type size={-1} weight="700">
+              {show}
+            </Type>
           </Box>
         </motion.div>
       ) : null}
