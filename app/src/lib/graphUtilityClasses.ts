@@ -49,7 +49,7 @@ const css1colors = {
   aqua: "#00ffff",
 };
 
-export const baseGraphStyles: Stylesheet[] = shapes
+export const graphUtilityClasses: Stylesheet[] = shapes
   .map<Stylesheet>((shape) => ({
     selector: `.${shape}`,
     style: {
@@ -71,4 +71,18 @@ export const baseGraphStyles: Stylesheet[] = shapes
         color: value,
       },
     }))
-  );
+  )
+  .concat([
+    {
+      selector: ".edgeHovered",
+      style: {
+        opacity: 0.5,
+      },
+    },
+    {
+      selector: ".nodeHovered",
+      style: {
+        opacity: 0.5,
+      },
+    },
+  ]);

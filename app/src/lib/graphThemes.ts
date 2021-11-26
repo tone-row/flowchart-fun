@@ -43,9 +43,13 @@ export const graphThemes: Record<
           shape: "rectangle",
           "font-family":
             "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+        },
+      },
+      {
+        selector: "node[label!='']",
+        style: {
           width: "data(width)",
           height: "data(height)",
-          "transition-duration": 0,
         },
       },
       {
@@ -74,20 +78,6 @@ export const graphThemes: Record<
           "edge-text-rotation": "autorotate",
         },
       },
-      {
-        selector: ".edgeHovered",
-        style: {
-          "line-color": "#aaaaaa",
-          "target-arrow-color": "#aaaaaa",
-          color: "#aaaaaa",
-        },
-      },
-      {
-        selector: ".nodeHovered",
-        style: {
-          backgroundColor: "#f0f0f0",
-        },
-      },
     ],
   },
   "original-dark": {
@@ -112,6 +102,11 @@ export const graphThemes: Record<
           shape: "rectangle",
           "font-family":
             "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+        },
+      },
+      {
+        selector: "node[label!='']",
+        style: {
           width: "data(width)",
           height: "data(height)",
         },
@@ -140,20 +135,6 @@ export const graphThemes: Record<
             "-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
           "text-halign": "center",
           "edge-text-rotation": "autorotate",
-        },
-      },
-      {
-        selector: ".edgeHovered",
-        style: {
-          "line-color": "#464646",
-          "target-arrow-color": "#464646",
-          color: "#464646",
-        },
-      },
-      {
-        selector: ".nodeHovered",
-        style: {
-          backgroundColor: "#2e2e2e",
         },
       },
     ],
