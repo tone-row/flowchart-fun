@@ -21,12 +21,13 @@ import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
 import {
   useCurrentHostedChart,
   useIsReadOnly,
+  useIsValidSponsor,
   useLocalStorageText,
   useTitle,
 } from "../lib/hooks";
-import { queryClient, renameChart } from "../lib/queries";
+import { makeChart, queryClient, renameChart } from "../lib/queries";
 import { Box, BoxProps, Type } from "../slang";
-import { AppContext, Showing } from "./AppContext";
+import { AppContext, Showing, useSession } from "./AppContext";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 import styles from "./MenuNext.module.css";
 import {
@@ -193,26 +194,53 @@ function translatedTitle(current: Showing) {
 }
 
 function RenameButton() {
+  const isValidSponsor = useIsValidSponsor();
+  const session = useSession();
   const [initialName, isHosted] = useTitle();
   const { data } = useCurrentHostedChart();
   const [text] = useLocalStorageText();
   const [dialog, setDialog] = useState(false);
   const { push } = useHistory();
-  const { register, handleSubmit, formState } = useForm<{ name: string }>({
-    defaultValues: { name: initialName },
+  const { register, handleSubmit, watch, formState } = useForm<{
+    name: string;
+    convertToHosted?: boolean;
+  }>({
+    defaultValues: { name: initialName, convertToHosted: false },
     mode: "onChange",
   });
+  const convertToHosted = watch("convertToHosted");
+  const currentName = watch("name");
   const { ref, ...rest } = register("name", {
     required: true,
     minLength: 2,
-    setValueAs: (z) => (isHosted ? z : slugify(z)),
+    setValueAs: (z) => (isHosted || convertToHosted ? z : slugify(z)),
   });
   const inputRef = useRef<null | HTMLInputElement>(null);
   const rename = useMutation(
     "updateChartName",
-    async ({ name }: { name: string }) => {
+    async ({
+      name,
+      convertToHosted,
+    }: {
+      name: string;
+      convertToHosted?: boolean;
+    }) => {
       if (isHosted && data) {
         await renameChart(data.id, name);
+      } else if (convertToHosted) {
+        if (session?.user?.id) {
+          const response = await makeChart({
+            name,
+            user_id: session?.user?.id,
+            chart: text,
+          });
+          if (!response) throw new Error("Could not create hosted chart");
+          const charts = response.data;
+          if (!charts) throw new Error("Could not create hosted chart");
+          const chart = charts[0];
+          if (!chart) throw new Error("Could not create hosted chart");
+          push(`/u/${chart.id}`);
+        }
       } else {
         const oldKey = titleToLocalStorageKey(slugify(initialName));
         const newSlug = slugify(name);
@@ -255,6 +283,22 @@ function RenameButton() {
         }}
       >
         <Section>
+          <Type as="h2" weight="400">
+            <Trans>Rename</Trans>
+          </Type>
+          {isValidSponsor && !isHosted ? (
+            <Box
+              flow="column"
+              gap={2}
+              content="normal start"
+              items="center normal"
+            >
+              <Type size={-1}>
+                <Trans>Convert to hosted chart?</Trans>
+              </Type>
+              <input type="checkbox" {...register("convertToHosted")} />
+            </Box>
+          ) : null}
           <Input
             {...rest}
             ref={(el) => {
@@ -272,7 +316,10 @@ function RenameButton() {
             <Button
               type="submit"
               text={t`Submit`}
-              disabled={!formState.isDirty || !formState.isValid}
+              disabled={
+                (currentName === initialName && !convertToHosted) ||
+                !formState.isValid
+              }
             />
           </Box>
           {isError(rename.error) && <Notice>{rename.error.message}</Notice>}

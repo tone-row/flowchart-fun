@@ -56,55 +56,46 @@ export default function ShareDialog() {
         },
       }}
     >
-      {isHosted && (
-        <Column>
-          <Title>
-            <Trans>Public</Trans>
-          </Title>
-          <Box
-            flow="column"
-            content="normal start"
-            items="center stretch"
-            gap={2}
-          >
-            <Type as="label" htmlFor="isPublic" size={-1}>
-              <Trans>Make publicly accessible</Trans>
-            </Type>
-            <input
-              type="checkbox"
-              name="isPublic"
-              id="isPublic"
-              defaultChecked={chart?.is_public}
-              onChange={(e) => {
-                makePublic.mutate(e.target.checked);
-              }}
-            />
-            {makePublic.isLoading && <Spinner />}
-          </Box>
-          {chart?.is_public && (
-            <Box>
-              <LinkCopy
-                value={`${window.location.origin}/p/${chart.public_id}`}
-                title={t`Public`}
+      <Column>
+        {isHosted && (
+          <Column>
+            <Title>
+              <Trans>Public</Trans>
+            </Title>
+            <Box
+              flow="column"
+              content="normal start"
+              items="center stretch"
+              gap={2}
+            >
+              <Type as="label" htmlFor="isPublic" size={-1}>
+                <Trans>Make publicly accessible</Trans>
+              </Type>
+              <input
+                type="checkbox"
+                name="isPublic"
+                id="isPublic"
+                defaultChecked={chart?.is_public}
+                onChange={(e) => {
+                  makePublic.mutate(e.target.checked);
+                }}
               />
+              {makePublic.isLoading && <Spinner />}
             </Box>
-          )}
-        </Column>
-      )}
-      <Column>
-        <Title>
-          <Trans>Link</Trans>
-        </Title>
-        <Box gap={4}>
-          <LinkCopy value={fullscreen} title={t`Fullscreen`} />
-          <LinkCopy value={withEditor} title={t`With Editor`} />
-        </Box>
-      </Column>
-      <Column>
+            {chart?.is_public && (
+              <Box>
+                <LinkCopy
+                  value={`${window.location.origin}/p/${chart.public_id}`}
+                  title={t`Public`}
+                />
+              </Box>
+            )}
+          </Column>
+        )}
         <Title>
           <Trans>Download</Trans>
         </Title>
-        <Box gap={2}>
+        <Box gap={2} flow="column" className={styles.DownloadButtons}>
           <Button
             onClick={() => {
               window.flowchartFunDownloadSVG();
@@ -133,6 +124,15 @@ export default function ShareDialog() {
       </Column>
       <Column>
         <Title>
+          <Trans>Link</Trans>
+        </Title>
+        <Box gap={4}>
+          <LinkCopy value={fullscreen} title={t`Fullscreen`} />
+          <LinkCopy value={withEditor} title={t`With Editor`} />
+        </Box>
+      </Column>
+      <Column>
+        <Title>
           <Trans>Preview</Trans>
         </Title>
         <Preview />
@@ -142,11 +142,7 @@ export default function ShareDialog() {
 }
 
 function Title({ children }: { children: ReactNode }) {
-  return (
-    <Type size={1} className={styles.Title}>
-      {children}
-    </Type>
-  );
+  return <Type>{children}</Type>;
 }
 
 function Column({ children }: { children: ReactNode }) {
@@ -154,7 +150,7 @@ function Column({ children }: { children: ReactNode }) {
     <Box
       className={styles.Column}
       gap={2}
-      at={{ tablet: { gap: 6 } }}
+      at={{ tablet: { gap: 4 } }}
       content="start normal"
     >
       {children}
@@ -173,31 +169,28 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
       <Type size={-1}>{title}</Type>
       <Box
         template="auto / auto 1fr auto"
-        background="color-input"
-        items="center normal"
+        items="stretch normal"
         className={styles.LinkCopy}
         rad={1}
-        gap={3}
+        gap={1}
       >
         <Box
           content="center"
           className={styles.LinkCopyLeft}
           self="stretch normal"
-          pl={3}
         >
-          <Icon width={18} height={18} />
+          <Icon width={15} height={15} />
         </Box>
         <Type
           size={-2}
           as="input"
           type="text"
-          value={value}
+          value={value.slice(0, 40)}
           readOnly
-          p={1}
           pl={2}
           className={styles.LinkCopyInput}
         />
-        <Box p={1} pl={0}>
+        <Box>
           <Button
             onClick={() => {
               (async () => {
@@ -208,6 +201,7 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
             }}
             className={styles.LinkCopyButton}
             text={t`Copy`}
+            py={2}
           />
         </Box>
       </Box>
@@ -235,7 +229,7 @@ function Preview() {
       dangerouslySetInnerHTML={{ __html }}
       p={2}
       rad={1}
-      style={{ "--bg": bg, maxHeight: "50vh" }}
+      style={{ "--bg": bg }}
     />
   );
 }

@@ -6,6 +6,7 @@ import {
   ReactNode,
   SetStateAction,
   useCallback,
+  useContext,
   useEffect,
   useMemo,
   useState,
@@ -174,3 +175,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
 };
 
 export default Provider;
+
+export function useSession() {
+  return useContext(AppContext).session;
+}
