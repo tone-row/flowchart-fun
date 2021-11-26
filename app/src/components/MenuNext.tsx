@@ -259,6 +259,8 @@ function RenameButton() {
       },
     }
   );
+  const isValid =
+    formState.isValid && (currentName !== initialName || convertToHosted);
   return (
     <>
       <Tooltip
@@ -313,14 +315,7 @@ function RenameButton() {
               text={`Cancel`}
               onClick={() => setDialog(false)}
             />
-            <Button
-              type="submit"
-              text={t`Submit`}
-              disabled={
-                (currentName === initialName && !convertToHosted) ||
-                !formState.isValid
-              }
-            />
+            <Button type="submit" text={t`Submit`} disabled={!isValid} />
           </Box>
           {isError(rename.error) && <Notice>{rename.error.message}</Notice>}
         </Section>
