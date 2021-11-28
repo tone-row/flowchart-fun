@@ -87,6 +87,7 @@ export default function ShareDialog() {
                 <LinkCopy
                   value={`${window.location.origin}/p/${chart.public_id}`}
                   title={t`Public`}
+                  rawTitle="Public"
                 />
               </Box>
             )}
@@ -127,8 +128,16 @@ export default function ShareDialog() {
           <Trans>Link</Trans>
         </Title>
         <Box gap={4}>
-          <LinkCopy value={fullscreen} title={t`Fullscreen`} />
-          <LinkCopy value={withEditor} title={t`With Editor`} />
+          <LinkCopy
+            value={fullscreen}
+            title={t`Fullscreen`}
+            rawTitle="Fullscreen"
+          />
+          <LinkCopy
+            value={withEditor}
+            title={t`With Editor`}
+            rawTitle="With Editor"
+          />
         </Box>
       </Column>
       <Column>
@@ -158,7 +167,15 @@ function Column({ children }: { children: ReactNode }) {
   );
 }
 
-function LinkCopy({ value, title }: { value: string; title: string }) {
+function LinkCopy({
+  value,
+  title,
+  rawTitle,
+}: {
+  value: string;
+  title: string;
+  rawTitle: string;
+}) {
   const [copied, setCopied] = useState(false);
   const Icon = copied ? Check : LinkSimple;
   useEffect(() => {
@@ -196,7 +213,7 @@ function LinkCopy({ value, title }: { value: string; title: string }) {
               (async () => {
                 await navigator.clipboard.writeText(value);
                 setCopied(true);
-                gaExportChart({ action: "Copy Link", label: title });
+                gaExportChart({ action: "Copy Link", label: rawTitle });
               })();
             }}
             className={styles.LinkCopyButton}
