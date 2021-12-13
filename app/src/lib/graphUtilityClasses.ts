@@ -29,7 +29,7 @@ const shapes: cytoscape.Css.Node["shape"][] = [
   "concave-hexagon",
 ];
 
-/* CSS1 Color Spec */
+/* CSS2 Color Spec */
 const css1colors = {
   black: "#000000",
   silver: "#c0c0c0",
@@ -42,6 +42,7 @@ const css1colors = {
   green: "#008000",
   lime: "#00ff00",
   olive: "#808000",
+  orange: "#ffA500",
   yellow: "#ffff00",
   navy: "#000080",
   blue: "#0000ff",
