@@ -105,9 +105,6 @@ describe.only("User", async () => {
     expect(svgBuffer).toMatchSnapshot("svg.svg", { threshold: 0.5 });
     expect(pngBuffer).toMatchSnapshot("png.png", { threshold: 0.5 });
     expect(jpgBuffer).toMatchSnapshot("jpg.jpg", { threshold: 0.5 });
-
-    // Close Modal
-    await page.click('button:has-text("Close")');
   });
 });
 
