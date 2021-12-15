@@ -93,17 +93,18 @@ describe.only("User", async () => {
       page.click('[aria-label="JPG"]'),
     ]);
 
-    let stream = await downloadSVG[0].createReadStream();
-    let buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("1.svg", { threshold: 0.5 });
+    const svgStream = await downloadSVG[0].createReadStream();
+    const svgBuffer = await streamToBuffer(svgStream);
 
-    stream = await downloadPNG[0].createReadStream();
-    buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("2.png", { threshold: 0.5 });
+    const pngStream = await downloadPNG[0].createReadStream();
+    const pngBuffer = await streamToBuffer(pngStream);
 
-    stream = await downloadJPG[0].createReadStream();
-    buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("3.jpg", { threshold: 0.5 });
+    const jpgStream = await downloadJPG[0].createReadStream();
+    const jpgBuffer = await streamToBuffer(jpgStream);
+
+    expect(svgBuffer).toMatchSnapshot("svg.svg", { threshold: 0.5 });
+    expect(pngBuffer).toMatchSnapshot("png.png", { threshold: 0.5 });
+    expect(jpgBuffer).toMatchSnapshot("jpg.jpg", { threshold: 0.5 });
 
     // Close Modal
     await page.click('button:has-text("Close")');
