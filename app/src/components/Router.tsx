@@ -19,13 +19,13 @@ export default function Router() {
         <EditUserChart />
       </LayoutRoute>
       <LayoutRoute path="/r/:graphText?">
-        <ReadOnly />
+        <ReadOnly compressed={false} />
       </LayoutRoute>
       <LayoutRoute path="/c/:graphText?">
         <ReadOnly compressed={true} />
       </LayoutRoute>
       <LayoutRoute path="/f/:graphText?">
-        <ReadOnly compressed={false} />
+        <ReadOnly compressed={true} />
       </LayoutRoute>
       <LayoutRoute path="/p/:public_id">
         <Public />
