@@ -25,7 +25,7 @@ export default function Router() {
         <ReadOnly compressed={true} />
       </LayoutRoute>
       <LayoutRoute path="/f/:graphText?">
-        <ReadOnly compressed={true} />
+        <ReadOnly compressed={false} />
       </LayoutRoute>
       <LayoutRoute path="/p/:public_id">
         <Public />

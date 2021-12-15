@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 const { describe, beforeAll } = test;
 
 const startUrl = process.env.E2E_START_URL ?? "http://localhost:3000";
@@ -28,26 +28,6 @@ describe.only("User", async () => {
     await page.click('p:has-text("Breadthfirst")');
   });
 
-  // Add test for changing name of local chart
-
-  // Snapshot 1
-  test("can download SVG", async () => {
-    await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
-    await page.click('button:has-text("Export")');
-
-    const [download] = await Promise.all([
-      page.waitForEvent("download"),
-      page.click('[aria-label="SVG"]'),
-    ]);
-
-    const stream = await download.createReadStream();
-    const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("1.svg", { threshold: 0.5 });
-
-    // Close Modal
-    await page.click('button:has-text("Close")');
-  });
-
   test("can change layout", async () => {
     await page.click('p:has-text("Breadthfirst")');
 
@@ -58,23 +38,6 @@ describe.only("User", async () => {
     await new Promise((res) => setTimeout(res, 1000));
 
     expect(await page.isVisible("text=circle")).toBe(true);
-  });
-
-  // Snapshot 2
-  test("can download PNG", async () => {
-    await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
-    await page.click('button:has-text("Export")');
-
-    const [download] = await Promise.all([
-      page.waitForEvent("download"),
-      page.click('[aria-label="PNG"]'),
-    ]);
-
-    const stream = await download.createReadStream();
-    const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("2.png", { threshold: 0.5 });
-
-    await page.click('button:has-text("Close")');
   });
 
   test("can change settings", async () => {
@@ -110,19 +73,38 @@ describe.only("User", async () => {
     await page.click('p:has-text("Sombre")');
   });
 
-  // Snapshot 3
-  test("can download JPG", async () => {
+  // Take All Snapshots
+  test("can download SVG", async () => {
     await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
     await page.click('button:has-text("Export")');
 
-    const [download] = await Promise.all([
+    const downloadSVG = await Promise.all([
+      page.waitForEvent("download"),
+      page.click('[aria-label="SVG"]'),
+    ]);
+
+    const downloadPNG = await Promise.all([
+      page.waitForEvent("download"),
+      page.click('[aria-label="PNG"]'),
+    ]);
+
+    const downloadJPG = await Promise.all([
       page.waitForEvent("download"),
       page.click('[aria-label="JPG"]'),
     ]);
 
-    const stream = await download.createReadStream();
-    const buffer = await streamToBuffer(stream);
-    expect(buffer).toMatchSnapshot("3.jpg", { threshold: 0.5 });
+    const svgStream = await downloadSVG[0].createReadStream();
+    const svgBuffer = await streamToBuffer(svgStream);
+
+    const pngStream = await downloadPNG[0].createReadStream();
+    const pngBuffer = await streamToBuffer(pngStream);
+
+    const jpgStream = await downloadJPG[0].createReadStream();
+    const jpgBuffer = await streamToBuffer(jpgStream);
+
+    expect(svgBuffer).toMatchSnapshot("svg.svg", { threshold: 0.5 });
+    expect(pngBuffer).toMatchSnapshot("png.png", { threshold: 0.5 });
+    expect(jpgBuffer).toMatchSnapshot("jpg.jpg", { threshold: 0.5 });
   });
 });
 

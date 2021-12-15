@@ -102,6 +102,7 @@
     "@lingui/macro": "^3.8.9",
     "@playwright/test": "^1.16",
     "@types/benchmark": "^2.1.1",
+    "@types/css-font-loading-module": "^0.0.7",
     "@types/cytoscape": "^3.14.12",
     "@types/download": "^6.2.4",
     "@types/file-saver": "^2.0.1",

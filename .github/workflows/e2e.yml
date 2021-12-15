@@ -5,7 +5,7 @@ on: [pull_request]
 jobs:
   test:
     name: End-to-end Tests
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get preview url
         id: get_url

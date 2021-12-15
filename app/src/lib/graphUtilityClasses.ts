@@ -62,6 +62,7 @@ export const graphUtilityClasses: Stylesheet[] = shapes
       selector: `.bg-${color}`,
       style: {
         "background-color": value,
+        "background-opacity": 1,
       },
     }))
   )
