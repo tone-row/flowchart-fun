@@ -26,10 +26,12 @@ import {
   delimiters,
   GraphOptionsObject,
 } from "../lib/constants";
-import { GraphThemes, graphThemes } from "../lib/graphThemes";
+import { useGraphTheme } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
-import { useAnimationSetting, useGetSize, useGraphTheme } from "../lib/hooks";
+import { useAnimationSetting, useGetSize } from "../lib/hooks";
+import { Theme } from "../lib/themes/constants";
+import original from "../lib/themes/original";
 import { parseText, stripComments } from "../lib/utils";
 import { Box } from "../slang";
 import { AppContext, TAppContext } from "./AppContext";
@@ -66,10 +68,11 @@ const Graph = memo(
     const { setShareLink, setHasError, setHasStyleError } =
       useContext(AppContext);
 
-    const graphTheme = useGraphTheme();
+    const theme = useGraphTheme();
     const getSize = useGetSize(
-      graphThemes[graphTheme].minWidth,
-      graphThemes[graphTheme].minHeight
+      theme.minWidth,
+      theme.minHeight,
+      theme.font?.fontFamily
     );
 
     const handleResize = useCallback(() => {
@@ -137,8 +140,8 @@ const Graph = memo(
 
     // Update Style
     useEffect(() => {
-      updateStyle(cy, userStyle, errorCatcher, setHasStyleError, graphTheme);
-    }, [graphTheme, setHasStyleError, userStyle]);
+      updateStyle(cy, userStyle, errorCatcher, setHasStyleError, theme);
+    }, [theme, setHasStyleError, userStyle]);
 
     // Update Graph Nodes
     useEffect(() => {
@@ -160,7 +163,7 @@ const Graph = memo(
         className={[styles.GraphContainer, "graph"].join(" ")}
         overflow="hidden"
         h="100%"
-        style={{ backgroundColor: graphThemes[graphTheme].bg }}
+        style={{ background: theme.bg }}
       >
         <Box id="cy" overflow="hidden" />
       </Box>
@@ -182,7 +185,7 @@ function initializeGraph(
     container: document.getElementById("cy"), // container to render in
     layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
     elements: [],
-    style: getCytoStyle("original"),
+    style: getCytoStyle(original),
     userZoomingEnabled: true,
     userPanningEnabled: true,
     boxSelectionEnabled: false,
@@ -302,7 +305,7 @@ function updateStyle(
   userStyleString: string,
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
   setHasStyleError: TAppContext["setHasStyleError"],
-  graphTheme: GraphThemes
+  graphTheme: Theme
 ) {
   if (cy.current) {
     try {
@@ -337,10 +340,10 @@ function updateStyle(
 }
 
 function getCytoStyle(
-  theme: GraphThemes,
+  theme: Theme,
   userStyle: cytoscape.Stylesheet[] = []
 ): CytoscapeOptions["style"] {
-  return [...graphThemes[theme].styles, ...userStyle, ...graphUtilityClasses];
+  return [...theme.styles, ...userStyle, ...graphUtilityClasses];
 }
 
 function sanitizeMessage(

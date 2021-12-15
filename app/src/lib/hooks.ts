@@ -4,9 +4,8 @@ import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
-import { GraphContext } from "../components/GraphProvider";
-import { allGraphThemes, defaultGraphTheme } from "./graphThemes";
 import { useChart } from "./queries";
+import { defaultFontFamily } from "./themes/constants";
 
 export function useAnimationSetting() {
   const { search } = useLocation();
@@ -55,17 +54,6 @@ export function useIsReadOnly() {
   );
 }
 
-export function useGraphTheme() {
-  const { graphOptions } = useContext(GraphContext);
-  return (
-    (graphOptions &&
-      graphOptions.theme &&
-      allGraphThemes.includes(graphOptions.theme) &&
-      graphOptions.theme) ||
-    defaultGraphTheme
-  );
-}
-
 const base = 12.5;
 const defaultMinWidth = 8;
 const defaultMinHeight = 6;
@@ -73,11 +61,13 @@ const defaultMinHeight = 6;
 // returns getSize based on theme to determine node size
 export function useGetSize(
   minWidth = defaultMinWidth,
-  minHeight = defaultMinHeight
+  minHeight = defaultMinHeight,
+  fontFamily = defaultFontFamily
 ) {
   const getSize = useCallback(
     (label: string) => {
       const resizer = document.getElementById("resizer");
+      resizer?.setAttribute("style", `font-family: ${fontFamily}`);
       if (resizer) {
         // TODO: Widen boxes as box height climbs
         // resizer.style.width = "128px";
@@ -104,7 +94,7 @@ export function useGetSize(
       }
       return undefined;
     },
-    [minHeight, minWidth]
+    [minHeight, minWidth, fontFamily]
   );
   return getSize;
 }

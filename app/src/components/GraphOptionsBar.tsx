@@ -29,8 +29,7 @@ import Select, {
 import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts } from "../lib/graphOptions";
-import { themes } from "../lib/graphThemes";
-import { useGraphTheme } from "../lib/hooks";
+import { themes, useGraphTheme } from "../lib/graphThemes";
 import { Box, BoxProps, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
@@ -50,6 +49,7 @@ const GraphOptionsBar = memo(() => {
     reset,
   } = useForm();
 
+  const currentTheme = useGraphTheme();
   const values = watch();
   const layout = watch("layout.name");
   const theme = watch("theme");
@@ -98,12 +98,6 @@ const GraphOptionsBar = memo(() => {
     [graphOptions.layout]
   );
 
-  const currentGraphTheme = useGraphTheme();
-  const currentTheme = useMemo(
-    () => themes.find(({ value }) => value === currentGraphTheme),
-    [currentGraphTheme]
-  );
-
   const expand = useCallback(
     () =>
       updateGraphOptionsText &&
@@ -144,12 +138,13 @@ const GraphOptionsBar = memo(() => {
           name="layout.name"
           render={({ field: { onChange } }) => {
             return (
-              <MySelect
+              <Select
                 options={layouts}
                 onChange={(layout: typeof layouts[number]) =>
                   layout && onChange(layout.value)
                 }
                 value={currentLayout}
+                {...selectProps}
               />
             );
           }}
@@ -162,12 +157,13 @@ const GraphOptionsBar = memo(() => {
             name="layout.rankDir"
             render={({ field: { onChange } }) => {
               return (
-                <MySelect
+                <Select
                   options={directions}
                   onChange={(dir: typeof directions[0]) =>
                     dir && onChange(dir.value)
                   }
                   value={currentDirection}
+                  {...selectProps}
                 />
               );
             }}
@@ -192,12 +188,15 @@ const GraphOptionsBar = memo(() => {
           name="theme"
           render={({ field: { onChange } }) => {
             return (
-              <MySelect
+              <Select
                 options={themes}
                 onChange={(theme: typeof themes[0]) =>
                   theme && onChange(theme.value)
                 }
-                value={currentTheme}
+                value={themes.find(
+                  (theme) => theme.value === currentTheme.value
+                )}
+                {...selectProps}
               />
             );
           }}
@@ -307,23 +306,6 @@ const selectStyles: StylesConfig<any, false> = {
   }),
 };
 
-function MySelect(props: any) {
-  return (
-    <Select
-      {...props}
-      isSearchable={false}
-      getOptionLabel={({ label }) => (label as unknown as () => string)()}
-      styles={selectStyles}
-      components={{
-        IndicatorSeparator: () => null,
-        SingleValue,
-        Option,
-        DropdownIndicator: DIndicator,
-      }}
-    />
-  );
-}
-
 const SingleValue = ({ children }: SingleValueProps<any>) => (
   <Box p={1} at={{ tablet: { p: 2 } }}>
     <Type size={smallBtnTypeSize}>{children}</Type>
@@ -358,6 +340,18 @@ const DIndicator = (props: any) => {
       <CaretDown />
     </components.DropdownIndicator>
   );
+};
+
+const selectProps = {
+  isSearchable: false,
+  getOptionLabel: ({ label }: any) => (label as unknown as () => string)(),
+  styles: selectStyles,
+  components: {
+    IndicatorSeparator: () => null,
+    SingleValue,
+    Option,
+    DropdownIndicator: DIndicator,
+  },
 };
 
 type R = string | number | null | undefined | boolean | any;
