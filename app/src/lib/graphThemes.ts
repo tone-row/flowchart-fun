@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import { GraphContext } from "../components/GraphProvider";
 import { Theme } from "./themes/constants";
@@ -32,6 +32,7 @@ function useLoadedTheme(theme: GraphThemes) {
   const [loaded, setLoaded] = useState<Record<string, Theme>>({
     original,
   });
+  const lastTheme = useRef<GraphThemes>(theme ?? defaultGraphTheme);
   useEffect(() => {
     if (!(theme in loaded)) {
       dynamicActivate(theme).then((result: Theme) => {
@@ -44,14 +45,14 @@ function useLoadedTheme(theme: GraphThemes) {
             document.fonts.add(font);
             setLoaded({ ...loaded, [theme]: result });
           });
+          lastTheme.current = theme;
         } else {
           setLoaded({ ...loaded, [theme]: result });
         }
       });
     }
   }, [theme, loaded]);
-  // This should eventually return the last theme
-  return loaded[theme] ?? original;
+  return loaded[theme] ?? loaded[lastTheme.current] ?? original;
 }
 
 export function useGraphTheme() {
