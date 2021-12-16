@@ -82,8 +82,7 @@ export default function Edit() {
     };
   }, [setHelpText]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const onChange = useCallback((value) => setText(value ?? ""), []);
+  const onChange = useCallback((value) => setText(value ?? ""), [setText]);
 
   return (
     <GraphProvider
