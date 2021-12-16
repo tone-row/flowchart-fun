@@ -1,4 +1,5 @@
 import { t } from "@lingui/macro";
+import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { Dispatch, useCallback, useContext } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
@@ -144,4 +145,16 @@ export function useTitle(): [string, boolean, string | undefined] {
 export function useCurrentHostedChart() {
   const { id } = useParams<{ id?: string }>();
   return useChart(id);
+}
+
+/** Returns the graph text in the hash for read-only routes */
+export function useReadOnlyText() {
+  const { path } = useRouteMatch();
+  const isCompressed = ["/c/:graphText?", "/f/:graphText?"].includes(path);
+  const { graphText = window.location.hash.slice(1) } = useParams<{
+    graphText: string;
+  }>();
+  return isCompressed
+    ? decompress(graphText) ?? ""
+    : decodeURIComponent(graphText);
 }

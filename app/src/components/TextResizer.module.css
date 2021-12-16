@@ -1,7 +1,7 @@
 .TextResizer {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 30px;
+  left: 30px;
   visibility: hidden;
   z-index: -1;
   width: 128px;
