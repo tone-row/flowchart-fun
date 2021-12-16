@@ -2,11 +2,12 @@ import { t, Trans } from "@lingui/macro";
 import VisuallyHidden from "@reach/visually-hidden";
 import {
   Chat,
+  CopySimple,
   FolderOpen,
   Gear,
   Globe,
   Laptop,
-  Pencil,
+  NotePencil,
   Plus,
   Share,
   TreeStructure,
@@ -17,13 +18,19 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router";
 
-import { gaChangeTab, gaNewChart } from "../lib/analytics";
-import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
+import { gaChangeTab, gaCopyChart, gaNewChart } from "../lib/analytics";
+import {
+  isError,
+  randomChartName,
+  slugify,
+  titleToLocalStorageKey,
+} from "../lib/helpers";
 import {
   useCurrentHostedChart,
   useIsReadOnly,
   useIsValidSponsor,
   useLocalStorageText,
+  useReadOnlyText,
   useTitle,
 } from "../lib/hooks";
 import { makeChart, queryClient, renameChart } from "../lib/queries";
@@ -98,7 +105,7 @@ export default function MenuNext() {
           icon={Plus}
           label={t`Create`}
           onClick={() => {
-            push(`/${(Math.random() + 1).toString(36).substring(7)}`);
+            push(`/${randomChartName()}`);
             setShowing("editor");
             gaNewChart();
           }}
@@ -207,24 +214,24 @@ function WorkspaceSection() {
         items="center normal"
         template="auto / auto 1fr"
         rad={1}
-        gap={2}
+        gap={1}
       >
         <Box
-          background="color-nodeHover"
           content="center"
           className={styles.WorkspaceButtonIcon}
+          color="color-edgeHover"
         >
           <Icon size={20} />
         </Box>
-        <Box>
-          <Type as="h1" weight="400" className={styles.WorkspaceTitle}>
+        <Box style={{ marginTop: "-1px" }}>
+          <Type as="h1" weight="400" className={styles.WorkspaceTitle} size={1}>
             {title || "flowchart.fun"}
           </Type>
         </Box>
       </Box>
       <Box flow="column" gap={1}>
         {!isReadOnly && <RenameButton />}
-        <ExportButton />
+        {isReadOnly ? <CopyButton /> : <ExportButton />}
       </Box>
     </Box>
   );
@@ -321,7 +328,7 @@ function RenameButton() {
         className={`slang-type size-${tooltipSize}`}
       >
         <Button style={{ minWidth: 0 }} onClick={() => setDialog(true)}>
-          <Pencil size={smallIconSize} />
+          <NotePencil size={smallIconSize} />
         </Button>
       </Tooltip>
       <Dialog
@@ -401,6 +408,44 @@ function ExportButton() {
       >
         <Type size={smallBtnTypeSize}>
           <Trans>Export</Trans>
+        </Type>
+      </Box>
+    </Box>
+  );
+}
+
+/** Allow users to copy read-only charts */
+export function CopyButton() {
+  const text = useReadOnlyText();
+  const { push } = useHistory();
+  return (
+    <Box
+      as="button"
+      rad={1}
+      className={[styles.ExportButton, styles.MenuNextTitleButton].join(" ")}
+      items="center normal"
+      at={{ tablet: { template: "auto / auto 1fr", px: 0 } }}
+      onClick={() => {
+        const newChartTitle = randomChartName();
+        window.localStorage.setItem(
+          titleToLocalStorageKey(newChartTitle),
+          text ?? ""
+        );
+        push(`/${newChartTitle}`);
+        gaCopyChart();
+      }}
+    >
+      <Box p={2} px={3}>
+        <CopySimple size={smallIconSize} />
+      </Box>
+      <Box
+        display="none"
+        pr={3}
+        at={{ tablet: { display: "grid" } }}
+        className={styles.IconButtonText}
+      >
+        <Type size={smallBtnTypeSize}>
+          <Trans>Copy</Trans>
         </Type>
       </Box>
     </Box>

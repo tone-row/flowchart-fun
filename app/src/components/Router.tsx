@@ -22,10 +22,10 @@ export default function Router() {
         <ReadOnly />
       </LayoutRoute>
       <LayoutRoute path="/c/:graphText?">
-        <ReadOnly compressed={true} />
+        <ReadOnly />
       </LayoutRoute>
       <LayoutRoute path="/f/:graphText?">
-        <ReadOnly compressed={false} />
+        <ReadOnly />
       </LayoutRoute>
       <LayoutRoute path="/p/:public_id">
         <Public />

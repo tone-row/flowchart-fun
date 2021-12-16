@@ -1,11 +1,10 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import matter from "gray-matter";
-import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { useContext, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
 
 import { delimiters, editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
+import { useReadOnlyText } from "../lib/hooks";
 import {
   languageId,
   themeNameDark,
@@ -17,13 +16,8 @@ import GraphProvider from "./GraphProvider";
 import Loading from "./Loading";
 import styles from "./ReadOnly.module.css";
 
-function ReadOnly({ compressed = false }: { compressed?: boolean }) {
-  const { graphText = window.location.hash.slice(1) } = useParams<{
-    graphText: string;
-  }>();
-  const textToParse = compressed
-    ? decompress(graphText) ?? ""
-    : decodeURIComponent(graphText);
+function ReadOnly() {
+  const textToParse = useReadOnlyText();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const { mode } = useContext(AppContext);

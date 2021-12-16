@@ -62,15 +62,14 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
 }
 
 .ExportButton {
-  border: 1px solid var(--color-uiAccent);
-  background-color: var(--palette-purple-0);
-  color: white;
+  border: 1px solid hsl(var(--color-brandHsl), 50%) !important;
+  background-color: hsl(var(--color-brandHsl), 10%);
+  color: var(--color-buttonFocus);
 }
 
 .ExportButton:hover,
 .ExportButton:focus {
-  border-color: var(--color-edgeHover);
-  background-color: var(--color-nodeHover);
+  background-color: hsl(var(--color-brandHsl), 30%);
 }
 
 @media (max-width: 799px) {
@@ -111,15 +110,4 @@ button:focus .ActiveUser {
 .WorkspaceButtonIcon {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
-}
-
-.MenuNextTitleButton {
-  border: none;
-}
-
-.MenuNextTitleButton:hover,
-.MenuNextTitleButton:focus,
-.MenuNextTitleButton:focus-visible {
-  background-color: var(--palette-blue-0);
 }

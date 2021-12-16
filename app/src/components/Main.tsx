@@ -13,6 +13,8 @@ import CurrentTab from "./CurrentTab";
 import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
 import Loading from "./Loading";
+import styles from "./Main.module.css";
+import { CopyButton } from "./MenuNext";
 import MobileTabToggle from "./MobileTabToggle";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
@@ -43,6 +45,11 @@ const Main = memo(
             setHoverLineNumber={setHoverLineNumber}
             shouldResize={shouldResize}
           />
+          {isFullscreen ? (
+            <div className={styles.CopyButtonWrapper}>
+              <CopyButton />
+            </div>
+          ) : null}
         </GraphWrapper>
         {!isFullscreen && <MobileTabToggle />}
         <TextResizer />
