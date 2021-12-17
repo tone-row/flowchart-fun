@@ -11,7 +11,6 @@ export function HelpButton(props: BoxProps) {
       content="center"
       onClick={() => {
         window.flowchartFunSetHelpText && window.flowchartFunSetHelpText();
-        window.plausible("Set Help Text");
       }}
       {...props}
       className={styles.HelpButton}

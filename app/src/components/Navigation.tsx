@@ -86,7 +86,6 @@ function LocalCharts() {
       push(`/${chartTitle}`);
       setCopy("");
       setShowing("editor");
-      window.plausible("Copy Chart");
     },
     [copy, push, setShowing]
   );
@@ -98,7 +97,6 @@ function LocalCharts() {
     }
     window.localStorage.removeItem(titleToLocalStorageKey(erase));
     setErase("");
-    window.plausible("Delete Chart");
   }, [erase, push, workspace]);
 
   useEffect(() => {
@@ -156,9 +154,6 @@ function LocalCharts() {
             <Button
               disabled={title?.length < 2 || charts.includes(title)}
               type="submit"
-              onClick={() => {
-                window.plausible("Create New Chart");
-              }}
               text={t`Create`}
             />
           </Box>
