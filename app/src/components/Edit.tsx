@@ -110,6 +110,5 @@ export default function Edit() {
 declare global {
   interface Window {
     flowchartFunSetHelpText?: () => void;
-    plausible: any;
   }
 }

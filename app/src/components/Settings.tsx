@@ -24,19 +24,16 @@ const Settings = memo(() => {
   const setLightMode = useCallback(() => {
     document.body.classList.add("disableAnimation");
     updateUserSettings({ mode: "light" });
-    window.plausible("Set Appearance", { props: { mode: "light" } });
     setTimeout(() => document.body.classList.remove("disableAnimation"), 100);
   }, [updateUserSettings]);
   const setDarkMode = useCallback(() => {
     document.body.classList.add("disableAnimation");
     updateUserSettings({ mode: "dark" });
-    window.plausible("Set Appearance", { props: { mode: "dark" } });
     setTimeout(() => document.body.classList.remove("disableAnimation"), 100);
   }, [updateUserSettings]);
   const changeLanguage = useCallback(
     (l: string) => {
       updateUserSettings({ language: l });
-      window.plausible("Set Language", { props: { language: l } });
     },
     [updateUserSettings]
   );
@@ -131,16 +128,10 @@ const Settings = memo(() => {
               as="a"
               href="https://opencollective.com/tone-row/donate"
               size={-1}
-              onClick={() => window.plausible("Make a Donation")}
             >
               <Trans>Make a Donation</Trans>
             </Type>
-            <Type
-              as="a"
-              href="https://github.com/sponsors/tone-row"
-              size={-1}
-              onClick={() => window.plausible("Become a Sponsor")}
-            >
+            <Type as="a" href="https://github.com/sponsors/tone-row" size={-1}>
               <Trans>Become a Sponsor</Trans>
             </Type>
           </Section>
