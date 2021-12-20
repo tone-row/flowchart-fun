@@ -33,7 +33,7 @@ export default function Edit() {
     (t: string, u: string) => u,
     text
   );
-  const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
+  const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const { mode } = useContext(AppContext);

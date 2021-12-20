@@ -5,6 +5,7 @@ import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
+import { useGraphTheme } from "./graphThemes";
 import { useChart } from "./queries";
 import { defaultFontFamily } from "./themes/constants";
 
@@ -60,21 +61,25 @@ const defaultMinWidth = 8;
 const defaultMinHeight = 6;
 
 // returns getSize based on theme to determine node size
-export function useGetSize(
-  minWidth = defaultMinWidth,
-  minHeight = defaultMinHeight,
-  fontFamily = defaultFontFamily
-) {
+export function useGetSize() {
+  const theme = useGraphTheme();
+  const minWidth = theme.minWidth ?? defaultMinWidth;
+  const minHeight = theme.minHeight ?? defaultMinHeight;
+  const fontFamily = theme.font?.fontFamily ?? defaultFontFamily;
+  const lineHeight = theme.font?.lineHeight;
   const getSize = useCallback(
     (label: string) => {
       const resizer = document.getElementById("resizer");
-      resizer?.setAttribute("style", `font-family: ${fontFamily}`);
       if (resizer) {
         // TODO: Widen boxes as box height climbs
         // resizer.style.width = "128px";
         // const initialHeight = resizer.clientHeight;
         // const add = Math.max(0, Math.ceil((initialHeight - 150) / 50)) * 8;
         // resizer.style.width = `${128 + add}px`;
+        resizer.setAttribute(
+          "style",
+          `font-family: ${fontFamily}; line-height: ${lineHeight};`
+        );
         resizer.innerHTML = preventCyRenderingBugs(label);
         if (resizer.firstChild) {
           const range = document.createRange();
@@ -84,10 +89,10 @@ export function useGetSize(
             0
           );
           const finalSize = {
-            width: Math.max(minWidth * base, cleanup(regressionX(width))),
+            width: Math.max(minWidth * base, regressionX(width)),
             height: Math.max(
               minHeight * base,
-              cleanup(regressionY(resizer.clientHeight))
+              regressionY(resizer.clientHeight)
             ),
           };
           return finalSize;
@@ -95,7 +100,7 @@ export function useGetSize(
       }
       return undefined;
     },
-    [minHeight, minWidth, fontFamily]
+    [fontFamily, lineHeight, minWidth, minHeight]
   );
   return getSize;
 }
@@ -106,11 +111,6 @@ function regressionX(x: number) {
 }
 function regressionY(x: number) {
   return Math.floor(0.63567 * x + 20);
-}
-
-// put things roughly on the same scale
-function cleanup(x: number) {
-  return Math.ceil(x / base) * base;
 }
 
 function preventCyRenderingBugs(str: string) {

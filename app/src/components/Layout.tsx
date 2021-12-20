@@ -1,4 +1,5 @@
 import { memo, ReactNode, Suspense, useContext } from "react";
+import { useRouteMatch } from "react-router-dom";
 
 import { useFullscreen } from "../lib/hooks";
 import { Box } from "../slang";
@@ -12,9 +13,9 @@ import ShareDialog from "./ShareDialog";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const isFullscreen = useFullscreen();
-
+  const { url } = useRouteMatch();
   return (
-    <LayoutWrapper isFullscreen={isFullscreen}>
+    <LayoutWrapper isFullscreen={isFullscreen} key={url}>
       {isFullscreen ? null : <MenuNext />}
       <EditorWrapper>
         <CurrentTab>{children}</CurrentTab>

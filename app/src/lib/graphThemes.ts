@@ -4,12 +4,18 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { GraphContext } from "../components/GraphProvider";
 import { Theme } from "./themes/constants";
 import original from "./themes/original";
-export type GraphThemes = "original" | "original-dark" | "eggs" | "excalidraw";
+export type GraphThemes =
+  | "original"
+  | "original-dark"
+  | "eggs"
+  | "excalidraw"
+  | "monospace";
 export const allGraphThemes: GraphThemes[] = [
   "original",
   "original-dark",
   "eggs",
   "excalidraw",
+  "monospace",
 ];
 export const themes: {
   label: () => string;
@@ -19,6 +25,7 @@ export const themes: {
   { label: () => t`Dark`, value: "original-dark" },
   { label: () => t`Eggs`, value: "eggs" },
   { label: () => t`Excalidraw`, value: "excalidraw" },
+  { label: () => t`Monospace`, value: "monospace" },
 ];
 export const defaultGraphTheme: GraphThemes = "original";
 
@@ -36,7 +43,7 @@ function useLoadedTheme(theme: GraphThemes) {
   useEffect(() => {
     if (!(theme in loaded)) {
       dynamicActivate(theme).then((result: Theme) => {
-        if (result.font) {
+        if (result.font?.filename) {
           const font = new FontFace(
             result.font.fontFamily,
             `url(/fonts/${result.font.filename})`

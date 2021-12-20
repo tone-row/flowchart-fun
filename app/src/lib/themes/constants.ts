@@ -1,7 +1,7 @@
 import { Stylesheet } from "cytoscape";
 
 export type Theme = {
-  font?: { filename: string; fontFamily: string };
+  font?: { filename?: string; fontFamily: string; lineHeight?: number };
   value: string;
   bg: string;
   minWidth?: number;
