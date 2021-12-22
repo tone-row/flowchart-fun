@@ -1,0 +1,54 @@
+.help {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.help > * + * {
+  margin-top: calc(2 * var(--spacer-px));
+}
+
+.help .code-sample,
+.help p > code {
+  font-size: 12px;
+  background-color: #f7f6f3;
+  padding: 10px;
+  border-radius: 4px;
+  position: relative;
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.help .code-example-link {
+  font-family: sans-serif;
+  right: 3px;
+  top: 3px;
+  background-color: whitesmoke;
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  position: absolute;
+  color: inherit;
+  border: 1px solid lightgrey;
+  color: gray;
+}
+
+.help p > code {
+  display: inline-block;
+  padding: 2px 4px;
+}
+
+.help video,
+.help img {
+  max-width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.help img + img {
+  margin-top: 1rem;
+}

@@ -2,7 +2,9 @@ import Editor, { OnMount } from "@monaco-editor/react";
 import { useThrottleCallback } from "@react-hook/throttle";
 import merge from "deepmerge";
 import { stringify } from "gray-matter";
+import { Resizable } from "re-resizable";
 import {
+  Suspense,
   useCallback,
   useContext,
   useEffect,
@@ -20,6 +22,7 @@ import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useLocalStorageText } from "../lib/hooks";
 import { languageId } from "../lib/registerLanguage";
 import { AppContext } from "./AppContext";
+import Docs from "./Docs";
 import styles from "./Edit.module.css";
 import EditorError from "./EditorError";
 import GraphProvider from "./GraphProvider";
@@ -65,6 +68,13 @@ export default function Edit() {
   // Hover
   useEditorHover(editorRef, hoverLineNumber);
 
+  useEffect(() => {
+    window.flowchartFunSetHelpText = setText;
+    return () => {
+      delete window.flowchartFunSetHelpText;
+    };
+  }, [setText]);
+
   const onChange = useCallback((value) => setText(value ?? ""), [setText]);
 
   return (
@@ -75,16 +85,60 @@ export default function Edit() {
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
     >
-      <Editor
-        value={text}
-        wrapperClassName={styles.Editor}
-        defaultLanguage={languageId}
-        options={editorOptions}
-        onChange={onChange}
-        loading={loading.current}
-        onMount={onMount}
-      />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          overflow: "hidden",
+        }}
+      >
+        <Resizable
+          defaultSize={{ width: "100%", height: "50vh" }}
+          style={{
+            overflow: "hidden",
+            borderBottom: "var(--spacer-px) solid var(--color-nodeHover)",
+          }}
+          enable={{
+            top: false,
+            right: false,
+            bottom: true,
+            left: false,
+            topRight: false,
+            bottomRight: false,
+            bottomLeft: false,
+            topLeft: false,
+          }}
+        >
+          <div
+            style={{
+              overflowY: "auto",
+              overflowX: "hidden",
+              height: "100%",
+              width: "100%",
+            }}
+          >
+            <Suspense fallback={<div>Loading...</div>}>
+              <Docs />
+            </Suspense>
+          </div>
+        </Resizable>
+        <Editor
+          value={text}
+          wrapperClassName={styles.Editor}
+          defaultLanguage={languageId}
+          options={editorOptions}
+          onChange={onChange}
+          loading={loading.current}
+          onMount={onMount}
+        />
+      </div>
       <EditorError />
     </GraphProvider>
   );
+}
+
+declare global {
+  interface Window {
+    flowchartFunSetHelpText?: (text: string) => void;
+  }
 }
