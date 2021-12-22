@@ -12,10 +12,13 @@ describe.only("User", async () => {
 
   test("can type", async () => {
     // Select Text
-    await page.click(':nth-match(:text("This app works by typing"), 2)');
+    await page.click("text=This app works by typing");
 
     // Select All
-    await page.press(".view-lines", "Meta+a");
+    await page.press(
+      '[aria-label="Editor content;Press Alt+F1 for Accessibility Options."]',
+      "Control+a"
+    );
 
     await page.press(".view-lines", "Backspace");
     await page.type(".view-lines", `hello\n  to the: world`);
