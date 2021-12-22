@@ -1,45 +1,52 @@
 import { Theme } from "./constants";
 
-const brightColor = "#818bff";
-const darker = "#626ffe";
+const brightBlue = "#818bff";
+const darkBlue = "#626ffe";
 const fontFamily = '"Fira Mono", monospace';
-const lineHeight = 1.5;
+const lineHeight = 1.4;
 const backgroundColor = "#141418";
+const textMaxWidth = 128;
+const fontSize = 10;
+const padding = "10px";
 
 const monospace: Theme = {
-  bg: backgroundColor,
   value: "monospace",
-  minHeight: 1,
-  minWidth: 6,
+  bg: backgroundColor,
+  minHeight: 0,
+  minWidth: 0,
+  textMaxWidth,
   font: {
     fontFamily,
-    filename: "FiraMono-Regular.ttf",
+    files: [{ url: "FiraMono-Regular.ttf", name: "Fira Mono" }],
     lineHeight,
+    fontSize,
   },
   styles: [
     {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": "10px",
+        "font-size": fontSize,
         label: "data(label)",
-        color: "black",
+        color: brightBlue,
         "text-valign": "center",
+        "text-halign": "center",
         width: "data(width)",
         height: "data(height)",
-        "text-halign": "center",
-        padding: "5px",
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        "background-opacity": "1",
-        backgroundColor: brightColor,
-        "border-color": darker,
+        "padding-left": padding,
+        "padding-right": padding,
+        "padding-top": padding,
+        "padding-bottom": padding,
+        backgroundColor: backgroundColor,
+        "border-color": brightBlue,
         "border-width": "2px",
         "border-opacity": 1,
-        "line-height": lineHeight,
         "text-wrap": "wrap",
-        "text-max-width": "data(width)",
+        "text-max-width": `${textMaxWidth}px`,
         shape: "roundrectangle",
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        "line-height": lineHeight,
         "text-justification": "left",
       },
     },
@@ -47,19 +54,17 @@ const monospace: Theme = {
       selector: "edge",
       style: {
         "font-family": fontFamily,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         "curve-style": "segments",
         "font-size": "10px",
         opacity: 1,
         width: "2px",
         label: "data(label)",
-        color: brightColor,
+        color: brightBlue,
         "target-arrow-shape": "triangle",
         "target-arrow-fill": "filled",
-        "target-arrow-color": darker,
+        "target-arrow-color": darkBlue,
         "target-distance-from-node": 10,
-        "arrow-scale": 1.5,
+        "arrow-scale": 1.25,
         "source-distance-from-node": 10,
         "text-background-shape": "roundrectangle",
         "text-background-color": backgroundColor,
@@ -68,10 +73,10 @@ const monospace: Theme = {
         "line-style": "solid",
         "line-fill": "linear-gradient",
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        "line-gradient-stop-colors": `${brightColor} ${darker}`,
+        // @ts-expect-error
+        "line-gradient-stop-colors": `${brightBlue} ${darkBlue}`,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
+        // @ts-expect-error
         "line-gradient-stop-positions": "0% 100%",
       },
     },

@@ -5,9 +5,8 @@ import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
-import { useGraphTheme } from "./graphThemes";
 import { useChart } from "./queries";
-import { defaultFontFamily } from "./themes/constants";
+import { Theme } from "./themes/constants";
 
 export function useAnimationSetting() {
   const { search } = useLocation();
@@ -61,25 +60,25 @@ const defaultMinWidth = 8;
 const defaultMinHeight = 6;
 
 // returns getSize based on theme to determine node size
-export function useGetSize() {
-  const theme = useGraphTheme();
-  const minWidth = theme.minWidth ?? defaultMinWidth;
-  const minHeight = theme.minHeight ?? defaultMinHeight;
-  const fontFamily = theme.font?.fontFamily ?? defaultFontFamily;
-  const lineHeight = theme.font?.lineHeight;
-  const getSize = useCallback(
+export function useGetSize(theme: Theme) {
+  return useCallback(
     (label: string) => {
+      const { minWidth = defaultMinWidth, minHeight = defaultMinHeight } =
+        theme;
       const resizer = document.getElementById("resizer");
       if (resizer) {
+        // We have to write styles imperatively otherwise we get race conditions
+        const style = [
+          ["max-width", `${theme.textMaxWidth}px`],
+          ["font-size", `${theme.font?.fontSize}px`],
+          ["line-height", theme.font?.lineHeight],
+          ["font-family", theme.font?.fontFamily],
+        ]
+          .filter(([_, b]) => b)
+          .map(([k, v]) => `${k}: ${v}`)
+          .join(";");
+        resizer.setAttribute("style", style);
         // TODO: Widen boxes as box height climbs
-        // resizer.style.width = "128px";
-        // const initialHeight = resizer.clientHeight;
-        // const add = Math.max(0, Math.ceil((initialHeight - 150) / 50)) * 8;
-        // resizer.style.width = `${128 + add}px`;
-        resizer.setAttribute(
-          "style",
-          `font-family: ${fontFamily}; line-height: ${lineHeight};`
-        );
         resizer.innerHTML = preventCyRenderingBugs(label);
         if (resizer.firstChild) {
           const range = document.createRange();
@@ -89,28 +88,16 @@ export function useGetSize() {
             0
           );
           const finalSize = {
-            width: Math.max(minWidth * base, regressionX(width)),
-            height: Math.max(
-              minHeight * base,
-              regressionY(resizer.clientHeight)
-            ),
+            width: Math.max(minWidth * base, width),
+            height: Math.max(minHeight * base, resizer.clientHeight),
           };
           return finalSize;
         }
       }
       return undefined;
     },
-    [fontFamily, lineHeight, minWidth, minHeight]
+    [theme]
   );
-  return getSize;
-}
-
-// linear regression of text node width to graph node size
-function regressionX(x: number) {
-  return Math.floor(0.63567 * x + 6);
-}
-function regressionY(x: number) {
-  return Math.floor(0.63567 * x + 20);
 }
 
 function preventCyRenderingBugs(str: string) {
