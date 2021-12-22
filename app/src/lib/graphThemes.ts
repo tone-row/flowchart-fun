@@ -34,6 +34,14 @@ async function dynamicActivate(name: string) {
   return theme.default;
 }
 
+async function loadFont(name: string, url: string, unicodeRange?: string) {
+  const font = new FontFace(name, `url(/fonts/${url})`, {
+    unicodeRange,
+  });
+  await font.load();
+  document.fonts.add(font);
+}
+
 // Loading them dynamically if not loaded
 function useLoadedTheme(theme: GraphThemes) {
   const [loaded, setLoaded] = useState<Record<string, Theme>>({
@@ -43,16 +51,15 @@ function useLoadedTheme(theme: GraphThemes) {
   useEffect(() => {
     if (!(theme in loaded)) {
       dynamicActivate(theme).then((result: Theme) => {
-        if (result.font?.filename) {
-          const font = new FontFace(
-            result.font.fontFamily,
-            `url(/fonts/${result.font.filename})`
-          );
-          font.load().then(() => {
-            document.fonts.add(font);
-            setLoaded({ ...loaded, [theme]: result });
+        if (result.font?.files) {
+          Promise.all(
+            result.font.files.map((file) =>
+              loadFont(file.name, file.url, file.unicodeRange)
+            )
+          ).then(() => {
+            setLoaded((loaded) => ({ ...loaded, [theme]: result }));
+            lastTheme.current = theme;
           });
-          lastTheme.current = theme;
         } else {
           setLoaded({ ...loaded, [theme]: result });
         }

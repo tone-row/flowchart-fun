@@ -80,8 +80,9 @@ export default function useDownloadHandlers(
     if (cy.current) {
       const pngStr = cy.current.png({
         full: true,
-        scale: 2,
+        scale: 4,
         output: "blob",
+        bg,
       });
       saveAs(
         new Blob([pngStr], {
@@ -92,13 +93,13 @@ export default function useDownloadHandlers(
     }
     // cy is a ref
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [bg]);
 
   const downloadJPG = useCallback(() => {
     if (cy.current) {
       const jpgStr = cy.current.jpg({
         full: true,
-        scale: 2,
+        scale: 4,
         quality: 1,
         output: "blob",
         bg,

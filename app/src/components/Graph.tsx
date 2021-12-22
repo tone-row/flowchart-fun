@@ -69,7 +69,7 @@ const Graph = memo(
       useContext(AppContext);
 
     const theme = useGraphTheme();
-    const getSize = useGetSize();
+    const getSize = useGetSize(theme);
 
     const handleResize = useCallback(() => {
       if (cy.current) {
