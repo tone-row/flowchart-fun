@@ -458,7 +458,7 @@ export function CopyButton() {
         className={styles.IconButtonText}
       >
         <Type size={smallBtnTypeSize}>
-          <Trans>Copy</Trans>
+          <Trans>Create</Trans>
         </Type>
       </Box>
     </Box>

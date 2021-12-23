@@ -35,7 +35,7 @@ export default function Docs({ currentText }: { currentText: string }) {
   const [contents, setContents] = useState<[string, string[]][]>([]);
   useEffect(() => {
     const contents: [string, string[]][] = [];
-    const main = document.querySelector(".help main");
+    const main = document.querySelector(".flowchartFunHelp main");
     if (!main) return;
     main.childNodes.forEach((el) => {
       if (!el) return;
