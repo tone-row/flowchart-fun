@@ -344,7 +344,7 @@ function RenameButton() {
         <Button
           style={{ minWidth: 0 }}
           onClick={() => setDialog(true)}
-          name={t`Rename`}
+          aria-label={t`Rename`}
         >
           <NotePencil size={smallIconSize} />
         </Button>
