@@ -18,6 +18,7 @@ import { t } from "@lingui/macro";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter } from "react-router-dom";
 
+import { ThemeLoaderProvider } from "../lib/graphThemes";
 import Loading from "./Loading";
 import { Button } from "./Shared";
 
@@ -28,12 +29,14 @@ export default function App() {
         <Provider>
           <Sentry.ErrorBoundary fallback={ErrorFallback}>
             <I18n>
-              <Elements stripe={stripePromise}>
-                <Suspense fallback={<Loading />}>
-                  <Router />
-                  <ReactQueryDevtools />
-                </Suspense>
-              </Elements>
+              <ThemeLoaderProvider>
+                <Elements stripe={stripePromise}>
+                  <Suspense fallback={<Loading />}>
+                    <Router />
+                    <ReactQueryDevtools />
+                  </Suspense>
+                </Elements>
+              </ThemeLoaderProvider>
             </I18n>
           </Sentry.ErrorBoundary>
         </Provider>
