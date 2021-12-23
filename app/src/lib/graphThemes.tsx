@@ -1,5 +1,14 @@
 import { t } from "@lingui/macro";
-import { useContext, useEffect, useRef, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import { GraphContext } from "../components/GraphProvider";
 import { Theme } from "./themes/constants";
@@ -42,11 +51,27 @@ async function loadFont(name: string, url: string, unicodeRange?: string) {
   document.fonts.add(font);
 }
 
-// Loading them dynamically if not loaded
-function useLoadedTheme(theme: GraphThemes) {
+const ThemeLoader = createContext(
+  {} as {
+    loaded: Record<string, Theme>;
+    setLoaded: Dispatch<SetStateAction<Record<string, Theme>>>;
+  }
+);
+
+export const ThemeLoaderProvider = ({ children }: { children: ReactNode }) => {
   const [loaded, setLoaded] = useState<Record<string, Theme>>({
     original,
   });
+  return (
+    <ThemeLoader.Provider value={{ loaded, setLoaded }}>
+      {children}
+    </ThemeLoader.Provider>
+  );
+};
+
+// Loading them dynamically if not loaded
+function useLoadedTheme(theme: GraphThemes) {
+  const { loaded, setLoaded } = useContext(ThemeLoader);
   const lastTheme = useRef<GraphThemes>(theme ?? defaultGraphTheme);
   useEffect(() => {
     if (!(theme in loaded)) {
@@ -65,7 +90,7 @@ function useLoadedTheme(theme: GraphThemes) {
         }
       });
     }
-  }, [theme, loaded]);
+  }, [theme, loaded, setLoaded]);
   return loaded[theme] ?? loaded[lastTheme.current] ?? original;
 }
 
