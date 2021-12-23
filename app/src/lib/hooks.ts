@@ -15,8 +15,10 @@ export function useAnimationSetting() {
   return animation === "0" ? false : true;
 }
 
-export function useLocalStorageText(): [string, Dispatch<string>, string] {
-  const { workspace = "" } = useParams<{ workspace?: string }>();
+export function useLocalStorageText(
+  defaultWorkspace = ""
+): [string, Dispatch<string>, string] {
+  const { workspace = defaultWorkspace } = useParams<{ workspace?: string }>();
   const defaultText = `${t`This app works by typing`}
   ${t`Indenting creates a link to the current line`}
   ${t`any text: before a colon creates a label`}

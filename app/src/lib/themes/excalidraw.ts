@@ -43,6 +43,7 @@ const excalidraw: Theme = {
         width: "data(width)", // width and height need to be taken from current font
         height: "data(height)",
         backgroundColor: backgroundColor,
+        "background-opacity": 0,
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,
@@ -55,7 +56,7 @@ const excalidraw: Theme = {
     {
       selector: "edge",
       style: {
-        "curve-style": "unbundled-bezier",
+        "curve-style": "bezier",
         "segment-distances": "60",
         "edge-distances": "intersection",
         width: 1,

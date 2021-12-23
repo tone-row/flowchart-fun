@@ -9,6 +9,7 @@ import {
   Laptop,
   NotePencil,
   Plus,
+  Question,
   Share,
   TreeStructure,
   User,
@@ -16,7 +17,7 @@ import {
 import { useContext, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { useHistory } from "react-router";
+import { useHistory, useRouteMatch } from "react-router";
 
 import { gaChangeTab, gaCopyChart, gaNewChart } from "../lib/analytics";
 import {
@@ -54,6 +55,8 @@ export default function MenuNext() {
   const { showing, session } = useContext(AppContext);
   const { setShowing } = useContext(AppContext);
   const { push } = useHistory();
+  const { url } = useRouteMatch();
+  const isHelpPage = url === "/h";
 
   return (
     <Box
@@ -85,16 +88,17 @@ export default function MenuNext() {
         </Box>
         <MenuTabButton
           icon={TreeStructure}
-          tab="editor"
+          selected={"editor" === showing && !isHelpPage}
           label={t`Editor`}
           onClick={() => {
             setShowing("editor");
+            isHelpPage && push("/");
             gaChangeTab({ action: "editor" });
           }}
         />
         <MenuTabButton
           icon={FolderOpen}
-          tab="navigation"
+          selected={"navigation" === showing}
           label={t`Charts`}
           onClick={() => {
             setShowing("navigation");
@@ -108,6 +112,16 @@ export default function MenuNext() {
             push(`/${randomChartName()}`);
             setShowing("editor");
             gaNewChart();
+          }}
+        />
+        <MenuTabButton
+          icon={Question}
+          label={t`Help`}
+          selected={"editor" === showing && isHelpPage}
+          onClick={() => {
+            push("/h");
+            setShowing("editor");
+            gaChangeTab({ action: "help" });
           }}
         />
       </Box>
@@ -127,7 +141,7 @@ export default function MenuNext() {
       >
         <MenuTabButton
           icon={Gear}
-          tab="settings"
+          selected={"settings" === showing}
           label={t`Settings`}
           onClick={() => {
             setShowing("settings");
@@ -136,7 +150,7 @@ export default function MenuNext() {
         />
         <MenuTabButton
           icon={Chat}
-          tab="feedback"
+          selected={"feedback" === showing}
           label={t`Feedback`}
           onClick={() => {
             setShowing("feedback");
@@ -145,7 +159,7 @@ export default function MenuNext() {
         />
         <MenuTabButton
           icon={session ? ActiveUser : User}
-          tab="sponsor"
+          selected={"sponsor" === showing}
           label={t`Sponsors`}
           onClick={() => {
             setShowing("sponsor");
@@ -159,17 +173,16 @@ export default function MenuNext() {
 
 const MenuTabButton = ({
   icon: Icon,
-  tab,
+  selected,
   label,
   onClick,
   ...props
 }: {
   icon: any;
-  tab?: Showing;
+  selected?: boolean;
   label: string;
   onClick?: () => void;
 } & BoxProps) => {
-  const { showing } = useContext(AppContext);
   return (
     <Tooltip
       label={label}
@@ -181,7 +194,7 @@ const MenuTabButton = ({
         p={2}
         rad={1}
         role="tab"
-        aria-selected={tab ? tab === showing : undefined}
+        aria-selected={selected}
         onClick={onClick}
         className={styles.MenuTabButton}
         {...props}

@@ -17,15 +17,12 @@ body,
   height: -webkit-fill-available;
 }
 
-html {
-  font-family: nm, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
     Segoe UI Symbol;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
   background-color: var(--color-background);
   color: var(--color-foreground);
 }
