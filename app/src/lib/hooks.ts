@@ -1,12 +1,12 @@
 import { t } from "@lingui/macro";
+import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { Dispatch, useCallback, useContext } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
-import { GraphContext } from "../components/GraphProvider";
-import { allGraphThemes, defaultGraphTheme } from "./graphThemes";
 import { useChart } from "./queries";
+import { Theme } from "./themes/constants";
 
 export function useAnimationSetting() {
   const { search } = useLocation();
@@ -15,8 +15,10 @@ export function useAnimationSetting() {
   return animation === "0" ? false : true;
 }
 
-export function useLocalStorageText(): [string, Dispatch<string>, string] {
-  const { workspace = "" } = useParams<{ workspace?: string }>();
+export function useLocalStorageText(
+  defaultWorkspace = ""
+): [string, Dispatch<string>, string] {
+  const { workspace = defaultWorkspace } = useParams<{ workspace?: string }>();
   const defaultText = `${t`This app works by typing`}
   ${t`Indenting creates a link to the current line`}
   ${t`any text: before a colon creates a label`}
@@ -55,35 +57,30 @@ export function useIsReadOnly() {
   );
 }
 
-export function useGraphTheme() {
-  const { graphOptions } = useContext(GraphContext);
-  return (
-    (graphOptions &&
-      graphOptions.theme &&
-      allGraphThemes.includes(graphOptions.theme) &&
-      graphOptions.theme) ||
-    defaultGraphTheme
-  );
-}
-
 const base = 12.5;
 const defaultMinWidth = 8;
 const defaultMinHeight = 6;
 
 // returns getSize based on theme to determine node size
-export function useGetSize(
-  minWidth = defaultMinWidth,
-  minHeight = defaultMinHeight
-) {
-  const getSize = useCallback(
+export function useGetSize(theme: Theme) {
+  return useCallback(
     (label: string) => {
+      const { minWidth = defaultMinWidth, minHeight = defaultMinHeight } =
+        theme;
       const resizer = document.getElementById("resizer");
       if (resizer) {
+        // We have to write styles imperatively otherwise we get race conditions
+        const style = [
+          ["max-width", `${theme.textMaxWidth}px`],
+          ["font-size", `${theme.font?.fontSize}px`],
+          ["line-height", theme.font?.lineHeight],
+          ["font-family", theme.font?.fontFamily],
+        ]
+          .filter(([_, b]) => b)
+          .map(([k, v]) => `${k}: ${v}`)
+          .join(";");
+        resizer.setAttribute("style", style);
         // TODO: Widen boxes as box height climbs
-        // resizer.style.width = "128px";
-        // const initialHeight = resizer.clientHeight;
-        // const add = Math.max(0, Math.ceil((initialHeight - 150) / 50)) * 8;
-        // resizer.style.width = `${128 + add}px`;
         resizer.innerHTML = preventCyRenderingBugs(label);
         if (resizer.firstChild) {
           const range = document.createRange();
@@ -93,33 +90,16 @@ export function useGetSize(
             0
           );
           const finalSize = {
-            width: Math.max(minWidth * base, cleanup(regressionX(width))),
-            height: Math.max(
-              minHeight * base,
-              cleanup(regressionY(resizer.clientHeight))
-            ),
+            width: Math.max(minWidth * base, width),
+            height: Math.max(minHeight * base, resizer.clientHeight),
           };
           return finalSize;
         }
       }
       return undefined;
     },
-    [minHeight, minWidth]
+    [theme]
   );
-  return getSize;
-}
-
-// linear regression of text node width to graph node size
-function regressionX(x: number) {
-  return Math.floor(0.63567 * x + 6);
-}
-function regressionY(x: number) {
-  return Math.floor(0.63567 * x + 20);
-}
-
-// put things roughly on the same scale
-function cleanup(x: number) {
-  return Math.ceil(x / base) * base;
 }
 
 function preventCyRenderingBugs(str: string) {
@@ -154,4 +134,16 @@ export function useTitle(): [string, boolean, string | undefined] {
 export function useCurrentHostedChart() {
   const { id } = useParams<{ id?: string }>();
   return useChart(id);
+}
+
+/** Returns the graph text in the hash for read-only routes */
+export function useReadOnlyText() {
+  const { path } = useRouteMatch();
+  const isCompressed = ["/c/:graphText?", "/f/:graphText?"].includes(path);
+  const { graphText = window.location.hash.slice(1) } = useParams<{
+    graphText: string;
+  }>();
+  return isCompressed
+    ? decompress(graphText) ?? ""
+    : decodeURIComponent(graphText);
 }

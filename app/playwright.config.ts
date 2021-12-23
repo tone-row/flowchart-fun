@@ -11,6 +11,7 @@ const config: PlaywrightTestConfig = {
     // Development
     // headless: false,
   },
+  // timeout: 60000,
 };
 
 export default config;

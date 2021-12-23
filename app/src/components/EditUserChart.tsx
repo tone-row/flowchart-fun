@@ -43,7 +43,7 @@ export default function EditUserChart() {
     text
   );
   const lastText = useRef(text);
-  const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2);
+  const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const { mode } = useContext(AppContext);

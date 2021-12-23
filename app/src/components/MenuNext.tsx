@@ -2,11 +2,14 @@ import { t, Trans } from "@lingui/macro";
 import VisuallyHidden from "@reach/visually-hidden";
 import {
   Chat,
+  CopySimple,
   FolderOpen,
   Gear,
   Globe,
   Laptop,
-  Pencil,
+  NotePencil,
+  Plus,
+  Question,
   Share,
   TreeStructure,
   User,
@@ -14,15 +17,21 @@ import {
 import { useContext, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { useHistory } from "react-router";
+import { useHistory, useRouteMatch } from "react-router";
 
-import { gaChangeTab } from "../lib/analytics";
-import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
+import { gaChangeTab, gaCopyChart, gaNewChart } from "../lib/analytics";
+import {
+  isError,
+  randomChartName,
+  slugify,
+  titleToLocalStorageKey,
+} from "../lib/helpers";
 import {
   useCurrentHostedChart,
   useIsReadOnly,
   useIsValidSponsor,
   useLocalStorageText,
+  useReadOnlyText,
   useTitle,
 } from "../lib/hooks";
 import { makeChart, queryClient, renameChart } from "../lib/queries";
@@ -44,6 +53,11 @@ import {
 
 export default function MenuNext() {
   const { showing, session } = useContext(AppContext);
+  const { setShowing } = useContext(AppContext);
+  const { push } = useHistory();
+  const { url } = useRouteMatch();
+  const isHelpPage = url === "/h";
+
   return (
     <Box
       as="header"
@@ -59,6 +73,7 @@ export default function MenuNext() {
       }}
       flow="column"
       items="center normal"
+      role="tablist"
       className={styles.Menu}
     >
       <Box
@@ -72,8 +87,44 @@ export default function MenuNext() {
         <Box pr={2} at={{ tablet: { pr: 0 } }}>
           <BrandSvg width={40} className={styles.Brand} />
         </Box>
-        <MenuTabButton icon={TreeStructure} tab="editor" label={t`Editor`} />
-        <MenuTabButton icon={FolderOpen} tab="navigation" label={t`Charts`} />
+        <MenuTabButton
+          icon={TreeStructure}
+          selected={"editor" === showing && !isHelpPage}
+          label={t`Editor`}
+          onClick={() => {
+            setShowing("editor");
+            isHelpPage && push("/");
+            gaChangeTab({ action: "editor" });
+          }}
+        />
+        <MenuTabButton
+          icon={FolderOpen}
+          selected={"navigation" === showing}
+          label={t`Charts`}
+          onClick={() => {
+            setShowing("navigation");
+            gaChangeTab({ action: "navigation" });
+          }}
+        />
+        <MenuTabButton
+          icon={Plus}
+          label={t`Create`}
+          onClick={() => {
+            push(`/${randomChartName()}`);
+            setShowing("editor");
+            gaNewChart();
+          }}
+        />
+        <MenuTabButton
+          icon={Question}
+          label={t`Help`}
+          selected={"editor" === showing && isHelpPage}
+          onClick={() => {
+            push("/h");
+            setShowing("editor");
+            gaChangeTab({ action: "help" });
+          }}
+        />
       </Box>
       {showing === "editor" ? (
         <WorkspaceSection />
@@ -89,12 +140,32 @@ export default function MenuNext() {
         at={{ tablet: { gap: 2, pr: 2 } }}
         className={styles.Side}
       >
-        <MenuTabButton icon={Gear} tab="settings" label={t`Settings`} />
-        <MenuTabButton icon={Chat} tab="feedback" label={t`Feedback`} />
+        <MenuTabButton
+          icon={Gear}
+          selected={"settings" === showing}
+          label={t`Settings`}
+          onClick={() => {
+            setShowing("settings");
+            gaChangeTab({ action: "settings" });
+          }}
+        />
+        <MenuTabButton
+          icon={Chat}
+          selected={"feedback" === showing}
+          label={t`Feedback`}
+          onClick={() => {
+            setShowing("feedback");
+            gaChangeTab({ action: "feedback" });
+          }}
+        />
         <MenuTabButton
           icon={session ? ActiveUser : User}
-          tab="sponsor"
+          selected={"sponsor" === showing}
           label={t`Sponsors`}
+          onClick={() => {
+            setShowing("sponsor");
+            gaChangeTab({ action: "sponsor" });
+          }}
         />
       </Box>
     </Box>
@@ -103,11 +174,16 @@ export default function MenuNext() {
 
 const MenuTabButton = ({
   icon: Icon,
-  tab,
+  selected,
   label,
+  onClick,
   ...props
-}: { icon: any; tab: Showing; label: string } & BoxProps) => {
-  const { showing, setShowing } = useContext(AppContext);
+}: {
+  icon: any;
+  selected?: boolean;
+  label: string;
+  onClick?: () => void;
+} & BoxProps) => {
   return (
     <Tooltip
       label={label}
@@ -119,11 +195,8 @@ const MenuTabButton = ({
         p={2}
         rad={1}
         role="tab"
-        aria-selected={tab === showing}
-        onClick={() => {
-          setShowing(tab);
-          gaChangeTab({ action: tab });
-        }}
+        aria-selected={selected}
+        onClick={onClick}
         className={styles.MenuTabButton}
         {...props}
       >
@@ -155,24 +228,24 @@ function WorkspaceSection() {
         items="center normal"
         template="auto / auto 1fr"
         rad={1}
-        gap={2}
+        gap={1}
       >
         <Box
-          background="color-nodeHover"
           content="center"
           className={styles.WorkspaceButtonIcon}
+          color="color-edgeHover"
         >
           <Icon size={20} />
         </Box>
-        <Box>
-          <Type as="h1" weight="400" className={styles.WorkspaceTitle}>
+        <Box style={{ marginTop: "-1px" }}>
+          <Type as="h1" weight="400" className={styles.WorkspaceTitle} size={1}>
             {title || "flowchart.fun"}
           </Type>
         </Box>
       </Box>
       <Box flow="column" gap={1}>
         {!isReadOnly && <RenameButton />}
-        <ExportButton />
+        {isReadOnly ? <CopyButton /> : <ExportButton />}
       </Box>
     </Box>
   );
@@ -268,8 +341,12 @@ function RenameButton() {
         aria-label={t`Rename`}
         className={`slang-type size-${tooltipSize}`}
       >
-        <Button style={{ minWidth: 0 }} onClick={() => setDialog(true)}>
-          <Pencil size={smallIconSize} />
+        <Button
+          style={{ minWidth: 0 }}
+          onClick={() => setDialog(true)}
+          aria-label={t`Rename`}
+        >
+          <NotePencil size={smallIconSize} />
         </Button>
       </Tooltip>
       <Dialog
@@ -341,14 +418,42 @@ function ExportButton() {
       <Box p={2} px={3}>
         <Share size={smallIconSize} />
       </Box>
-      <Box
-        display="none"
-        pr={3}
-        at={{ tablet: { display: "grid" } }}
-        className={styles.IconButtonText}
-      >
+      <Box display="none" pr={3} at={{ tablet: { display: "grid" } }}>
         <Type size={smallBtnTypeSize}>
           <Trans>Export</Trans>
+        </Type>
+      </Box>
+    </Box>
+  );
+}
+
+/** Allow users to copy read-only charts */
+export function CopyButton() {
+  const text = useReadOnlyText();
+  const { push } = useHistory();
+  return (
+    <Box
+      as="button"
+      rad={1}
+      className={[styles.ExportButton, styles.MenuNextTitleButton].join(" ")}
+      items="center normal"
+      at={{ tablet: { template: "auto / auto 1fr", px: 0 } }}
+      onClick={() => {
+        const newChartTitle = randomChartName();
+        window.localStorage.setItem(
+          titleToLocalStorageKey(newChartTitle),
+          text ?? ""
+        );
+        push(`/${newChartTitle}`);
+        gaCopyChart();
+      }}
+    >
+      <Box p={2} px={3}>
+        <CopySimple size={smallIconSize} />
+      </Box>
+      <Box display="none" pr={3} at={{ tablet: { display: "grid" } }}>
+        <Type size={smallBtnTypeSize}>
+          <Trans>Create</Trans>
         </Type>
       </Box>
     </Box>

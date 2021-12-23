@@ -375,3 +375,20 @@ export function usePublicChart(publicId: string) {
     suspense: true,
   });
 }
+
+async function fetchDocs() {
+  const { data, error } = await fetch("/api/docs").then((result) =>
+    result.json()
+  );
+  if (error) throw error;
+  return data;
+}
+
+export function useDocs() {
+  return useQuery(["docs"], fetchDocs, {
+    enabled: true,
+    refetchOnMount: false,
+    staleTime: 0,
+    suspense: true,
+  });
+}

@@ -5,6 +5,7 @@ import { usePageViews } from "../lib/analytics";
 import Layout from "./Layout";
 import Public from "./Public";
 const Edit = lazy(() => import("./Edit"));
+const Help = lazy(() => import("./Help"));
 const EditUserChart = lazy(() => import("./EditUserChart"));
 const ReadOnly = lazy(() => import("./ReadOnly"));
 
@@ -15,17 +16,20 @@ export default function Router() {
       <LayoutRoute path="/" exact>
         <Edit />
       </LayoutRoute>
+      <LayoutRoute path="/h" exact>
+        <Help />
+      </LayoutRoute>
       <LayoutRoute path="/u/:id">
         <EditUserChart />
       </LayoutRoute>
       <LayoutRoute path="/r/:graphText?">
-        <ReadOnly compressed={false} />
+        <ReadOnly />
       </LayoutRoute>
       <LayoutRoute path="/c/:graphText?">
-        <ReadOnly compressed={true} />
+        <ReadOnly />
       </LayoutRoute>
       <LayoutRoute path="/f/:graphText?">
-        <ReadOnly compressed={true} />
+        <ReadOnly />
       </LayoutRoute>
       <LayoutRoute path="/p/:public_id">
         <Public />

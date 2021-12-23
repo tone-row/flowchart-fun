@@ -29,8 +29,7 @@ import Select, {
 import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts } from "../lib/graphOptions";
-import { themes } from "../lib/graphThemes";
-import { useGraphTheme } from "../lib/hooks";
+import { themes, useGraphTheme } from "../lib/graphThemes";
 import { Box, BoxProps, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
@@ -50,6 +49,7 @@ const GraphOptionsBar = memo(() => {
     reset,
   } = useForm();
 
+  const currentTheme = useGraphTheme();
   const values = watch();
   const layout = watch("layout.name");
   const theme = watch("theme");
@@ -98,12 +98,6 @@ const GraphOptionsBar = memo(() => {
     [graphOptions.layout]
   );
 
-  const currentGraphTheme = useGraphTheme();
-  const currentTheme = useMemo(
-    () => themes.find(({ value }) => value === currentGraphTheme),
-    [currentGraphTheme]
-  );
-
   const expand = useCallback(
     () =>
       updateGraphOptionsText &&
@@ -138,36 +132,44 @@ const GraphOptionsBar = memo(() => {
       as="form"
       at={{ tablet: { px: 4 } }}
     >
-      <OptionWithIcon icon={CirclesThree} label={t`Layout`}>
+      <OptionWithIcon icon={CirclesThree} label={t`Layout`} labelFor="layout">
         <Controller
           control={control}
           name="layout.name"
           render={({ field: { onChange } }) => {
             return (
-              <MySelect
+              <Select
+                inputId="layout"
                 options={layouts}
                 onChange={(layout: typeof layouts[number]) =>
                   layout && onChange(layout.value)
                 }
                 value={currentLayout}
+                {...selectProps}
               />
             );
           }}
         />
       </OptionWithIcon>
       {currentLayout?.value === "dagre" && (
-        <OptionWithIcon icon={ArrowUpRight} label={t`Direction`}>
+        <OptionWithIcon
+          icon={ArrowUpRight}
+          label={t`Direction`}
+          labelFor="direction"
+        >
           <Controller
             control={control}
             name="layout.rankDir"
             render={({ field: { onChange } }) => {
               return (
-                <MySelect
+                <Select
+                  inputId="direction"
                   options={directions}
                   onChange={(dir: typeof directions[0]) =>
                     dir && onChange(dir.value)
                   }
                   value={currentDirection}
+                  {...selectProps}
                 />
               );
             }}
@@ -186,18 +188,22 @@ const GraphOptionsBar = memo(() => {
         />
         <IconButton icon={ArrowsOutSimple} onClick={expand} label={t`Expand`} />
       </Box>
-      <OptionWithIcon icon={PaintBrush} label={t`Theme`}>
+      <OptionWithIcon icon={PaintBrush} label={t`Theme`} labelFor="theme">
         <Controller
           control={control}
           name="theme"
           render={({ field: { onChange } }) => {
             return (
-              <MySelect
+              <Select
+                inputId="theme"
                 options={themes}
                 onChange={(theme: typeof themes[0]) =>
                   theme && onChange(theme.value)
                 }
-                value={currentTheme}
+                value={themes.find(
+                  (theme) => theme.value === currentTheme.value
+                )}
+                {...selectProps}
               />
             );
           }}
@@ -218,22 +224,29 @@ function OptionWithIcon({
   icon: Icon,
   children,
   label,
+  labelFor,
 }: {
   icon: Icon;
   children: ReactNode;
   label: string;
+  labelFor: string;
 }) {
   return (
-    <Tooltip
-      label={label}
-      aria-label={label}
-      className={`slang-type size-${tooltipSize}`}
-    >
-      <Box flow="column" gap={1} items="center normal" content="normal start">
-        <Icon size={smallIconSize} />
-        {children}
-      </Box>
-    </Tooltip>
+    <>
+      <VisuallyHidden as="label" htmlFor={labelFor}>
+        {label}
+      </VisuallyHidden>
+      <Tooltip
+        label={label}
+        aria-label={label}
+        className={`slang-type size-${tooltipSize}`}
+      >
+        <Box flow="column" gap={1} items="center normal" content="normal start">
+          <Icon size={smallIconSize} />
+          {children}
+        </Box>
+      </Tooltip>
+    </>
   );
 }
 
@@ -307,23 +320,6 @@ const selectStyles: StylesConfig<any, false> = {
   }),
 };
 
-function MySelect(props: any) {
-  return (
-    <Select
-      {...props}
-      isSearchable={false}
-      getOptionLabel={({ label }) => (label as unknown as () => string)()}
-      styles={selectStyles}
-      components={{
-        IndicatorSeparator: () => null,
-        SingleValue,
-        Option,
-        DropdownIndicator: DIndicator,
-      }}
-    />
-  );
-}
-
 const SingleValue = ({ children }: SingleValueProps<any>) => (
   <Box p={1} at={{ tablet: { p: 2 } }}>
     <Type size={smallBtnTypeSize}>{children}</Type>
@@ -358,6 +354,18 @@ const DIndicator = (props: any) => {
       <CaretDown />
     </components.DropdownIndicator>
   );
+};
+
+const selectProps = {
+  isSearchable: false,
+  getOptionLabel: ({ label }: any) => (label as unknown as () => string)(),
+  styles: selectStyles,
+  components: {
+    IndicatorSeparator: () => null,
+    SingleValue,
+    Option,
+    DropdownIndicator: DIndicator,
+  },
 };
 
 type R = string | number | null | undefined | boolean | any;

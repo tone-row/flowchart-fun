@@ -12,6 +12,8 @@ let gaChangeTab = (_: { action: string }) => {};
 let gaSponsorCTA = (_: { action: string }) => {};
 let gaCreateChart = (_: { action: string }) => {};
 let gaExportChart = (_: { action: string; label: string }) => {};
+let gaNewChart = () => {};
+let gaCopyChart = () => {};
 
 if (gaEnabled) {
   import("react-ga").then((ReactGA) => {
@@ -59,6 +61,20 @@ if (gaEnabled) {
         label,
       });
     };
+
+    gaNewChart = () => {
+      ReactGA.event({
+        category: "Home",
+        action: "New Chart",
+      });
+    };
+
+    gaCopyChart = () => {
+      ReactGA.event({
+        category: "Home",
+        action: "Copy Chart To New",
+      });
+    };
   });
 }
 
@@ -69,4 +85,6 @@ export {
   gaSponsorCTA,
   gaCreateChart,
   gaExportChart,
+  gaNewChart,
+  gaCopyChart,
 };

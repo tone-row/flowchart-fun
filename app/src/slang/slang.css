@@ -495,7 +495,7 @@ body {
     --errorBottomMultiplier: var(--error-bottom-multiplier-7); }
 
 :root {
-	--base-font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	--base-font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	--base-font-size-px:17px;
 	--base-font-size:17;
 	--base-font-size-mobile-px:16px;
@@ -613,6 +613,7 @@ body {
 	--palette-purple-1:#929bff;
 	--palette-purple-2:#D3CCF3;
 	--palette-purple-3:#EFF0FF;
+	--palette-purple-4:#001EFF;
 	--palette-green-0:#01d857;
 	--palette-green-1:#84ff82;
 	--palette-green-2:#00c722;
@@ -636,6 +637,7 @@ body {
 	--color-overlayColor:0, 50%, 0%;
 	--color-input:#fafafa;
 	--color-brandHsl:233, 100%, 68%;
+	--color-darkHighlight:#001EFF;
  }
 
 .slang-box.flow {

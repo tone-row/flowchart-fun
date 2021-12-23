@@ -1,12 +1,13 @@
 {
   "name": "app",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "main": "module/module.js",
   "license": "MIT",
   "dependencies": {
     "@lingui/core": "^3.8.9",
     "@lingui/react": "^3.8.9",
     "@monaco-editor/react": "^4.0.11",
+    "@notionhq/client": "^0.4.11",
     "@reach/dialog": "^0.15.0",
     "@reach/tooltip": "^0.16.0",
     "@reach/utils": "^0.16.0",
@@ -102,6 +103,7 @@
     "@lingui/macro": "^3.8.9",
     "@playwright/test": "^1.16",
     "@types/benchmark": "^2.1.1",
+    "@types/css-font-loading-module": "^0.0.7",
     "@types/cytoscape": "^3.14.12",
     "@types/download": "^6.2.4",
     "@types/file-saver": "^2.0.1",
