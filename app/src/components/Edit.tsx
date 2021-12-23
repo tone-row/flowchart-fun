@@ -27,7 +27,7 @@ import Loading from "./Loading";
 import useGraphOptions from "./useGraphOptions";
 
 export default function Edit() {
-  const [text, setText, defaultText] = useLocalStorageText();
+  const [text, setText] = useLocalStorageText();
   const [textToParse, setTextToParse] = useReducer(
     (t: string, u: string) => u,
     text
@@ -37,8 +37,7 @@ export default function Edit() {
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const { mode } = useContext(AppContext);
   const loading = useRef(<Loading />);
-  const { graphOptions, content, graphOptionsString } =
-    useGraphOptions(textToParse);
+  const { graphOptions, content } = useGraphOptions(textToParse);
   useEffect(() => {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);

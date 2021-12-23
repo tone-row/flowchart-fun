@@ -121,6 +121,7 @@ export default function MenuNext() {
           onClick={() => {
             push("/h");
             setShowing("editor");
+            gaChangeTab({ action: "help" });
           }}
         />
       </Box>

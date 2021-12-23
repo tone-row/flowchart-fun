@@ -26,11 +26,12 @@ import Docs from "./Docs";
 import styles from "./Edit.module.css";
 import EditorError from "./EditorError";
 import GraphProvider from "./GraphProvider";
+import helpStyles from "./Help.module.css";
 import Loading from "./Loading";
 import useGraphOptions from "./useGraphOptions";
 
-export default function Edit() {
-  const [text, setText, defaultText] = useLocalStorageText();
+export default function Help() {
+  const [text, setText] = useLocalStorageText("h"); // fixed workspace name
   const [textToParse, setTextToParse] = useReducer(
     (t: string, u: string) => u,
     text
@@ -40,8 +41,7 @@ export default function Edit() {
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const { mode } = useContext(AppContext);
   const loading = useRef(<Loading />);
-  const { graphOptions, content, graphOptionsString } =
-    useGraphOptions(textToParse);
+  const { graphOptions, content } = useGraphOptions(textToParse);
   useEffect(() => {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
@@ -85,19 +85,10 @@ export default function Edit() {
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          overflow: "hidden",
-        }}
-      >
+      <div className={helpStyles.helpWrapper}>
         <Resizable
           defaultSize={{ width: "100%", height: "50vh" }}
-          style={{
-            overflow: "hidden",
-            borderBottom: "var(--spacer-px) solid var(--color-nodeHover)",
-          }}
+          className={helpStyles.resizable}
           enable={{
             top: false,
             right: false,
@@ -109,17 +100,12 @@ export default function Edit() {
             topLeft: false,
           }}
         >
-          <div
-            style={{
-              overflowY: "auto",
-              overflowX: "hidden",
-              height: "100%",
-              width: "100%",
-            }}
-          >
-            <Suspense fallback={<div>Loading...</div>}>
-              <Docs />
-            </Suspense>
+          <div className={helpStyles.docsWrapper}>
+            <div className={helpStyles.docsWrapperScroll}>
+              <Suspense fallback={<Loading />}>
+                <Docs currentText={text} />
+              </Suspense>
+            </div>
           </div>
         </Resizable>
         <Editor
