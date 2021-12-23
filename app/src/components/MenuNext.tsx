@@ -73,6 +73,7 @@ export default function MenuNext() {
       }}
       flow="column"
       items="center normal"
+      role="tablist"
       className={styles.Menu}
     >
       <Box
@@ -340,7 +341,11 @@ function RenameButton() {
         aria-label={t`Rename`}
         className={`slang-type size-${tooltipSize}`}
       >
-        <Button style={{ minWidth: 0 }} onClick={() => setDialog(true)}>
+        <Button
+          style={{ minWidth: 0 }}
+          onClick={() => setDialog(true)}
+          aria-label={t`Rename`}
+        >
           <NotePencil size={smallIconSize} />
         </Button>
       </Tooltip>
@@ -413,12 +418,7 @@ function ExportButton() {
       <Box p={2} px={3}>
         <Share size={smallIconSize} />
       </Box>
-      <Box
-        display="none"
-        pr={3}
-        at={{ tablet: { display: "grid" } }}
-        className={styles.IconButtonText}
-      >
+      <Box display="none" pr={3} at={{ tablet: { display: "grid" } }}>
         <Type size={smallBtnTypeSize}>
           <Trans>Export</Trans>
         </Type>
@@ -451,12 +451,7 @@ export function CopyButton() {
       <Box p={2} px={3}>
         <CopySimple size={smallIconSize} />
       </Box>
-      <Box
-        display="none"
-        pr={3}
-        at={{ tablet: { display: "grid" } }}
-        className={styles.IconButtonText}
-      >
+      <Box display="none" pr={3} at={{ tablet: { display: "grid" } }}>
         <Type size={smallBtnTypeSize}>
           <Trans>Create</Trans>
         </Type>
