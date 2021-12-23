@@ -132,13 +132,14 @@ const GraphOptionsBar = memo(() => {
       as="form"
       at={{ tablet: { px: 4 } }}
     >
-      <OptionWithIcon icon={CirclesThree} label={t`Layout`}>
+      <OptionWithIcon icon={CirclesThree} label={t`Layout`} labelFor="layout">
         <Controller
           control={control}
           name="layout.name"
           render={({ field: { onChange } }) => {
             return (
               <Select
+                inputId="layout"
                 options={layouts}
                 onChange={(layout: typeof layouts[number]) =>
                   layout && onChange(layout.value)
@@ -151,13 +152,18 @@ const GraphOptionsBar = memo(() => {
         />
       </OptionWithIcon>
       {currentLayout?.value === "dagre" && (
-        <OptionWithIcon icon={ArrowUpRight} label={t`Direction`}>
+        <OptionWithIcon
+          icon={ArrowUpRight}
+          label={t`Direction`}
+          labelFor="direction"
+        >
           <Controller
             control={control}
             name="layout.rankDir"
             render={({ field: { onChange } }) => {
               return (
                 <Select
+                  inputId="direction"
                   options={directions}
                   onChange={(dir: typeof directions[0]) =>
                     dir && onChange(dir.value)
@@ -182,13 +188,14 @@ const GraphOptionsBar = memo(() => {
         />
         <IconButton icon={ArrowsOutSimple} onClick={expand} label={t`Expand`} />
       </Box>
-      <OptionWithIcon icon={PaintBrush} label={t`Theme`}>
+      <OptionWithIcon icon={PaintBrush} label={t`Theme`} labelFor="theme">
         <Controller
           control={control}
           name="theme"
           render={({ field: { onChange } }) => {
             return (
               <Select
+                inputId="theme"
                 options={themes}
                 onChange={(theme: typeof themes[0]) =>
                   theme && onChange(theme.value)
@@ -217,22 +224,29 @@ function OptionWithIcon({
   icon: Icon,
   children,
   label,
+  labelFor,
 }: {
   icon: Icon;
   children: ReactNode;
   label: string;
+  labelFor: string;
 }) {
   return (
-    <Tooltip
-      label={label}
-      aria-label={label}
-      className={`slang-type size-${tooltipSize}`}
-    >
-      <Box flow="column" gap={1} items="center normal" content="normal start">
-        <Icon size={smallIconSize} />
-        {children}
-      </Box>
-    </Tooltip>
+    <>
+      <VisuallyHidden as="label" htmlFor={labelFor}>
+        {label}
+      </VisuallyHidden>
+      <Tooltip
+        label={label}
+        aria-label={label}
+        className={`slang-type size-${tooltipSize}`}
+      >
+        <Box flow="column" gap={1} items="center normal" content="normal start">
+          <Icon size={smallIconSize} />
+          {children}
+        </Box>
+      </Tooltip>
+    </>
   );
 }
 

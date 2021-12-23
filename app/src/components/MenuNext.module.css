@@ -67,9 +67,10 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
 }
 
 .ExportButton {
-  border: 1px solid hsl(var(--color-brandHsl), 50%) !important;
+  border: 2px solid hsl(var(--color-brandHsl), 100%) !important;
   background-color: hsl(var(--color-brandHsl), 10%);
-  color: var(--color-buttonFocus);
+  color: hsl(var(--color-brandHsl), 100%);
+  font-weight: 700;
 }
 
 .ExportButton:hover,
