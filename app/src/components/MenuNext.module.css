@@ -19,6 +19,7 @@ body:not([class*="disableAnimation"]) .Menu .WorkspaceButtonIcon {
   stroke: var(--color-buttonFocus);
 }
 
+/* To fix dot in question mark of help button */
 .MenuTabButton[aria-selected="true"] svg:not(.ActiveUser) circle:nth-child(3) {
   fill: var(--color-buttonFocus);
 }

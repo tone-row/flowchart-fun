@@ -1,14 +1,15 @@
+const dbId = "d5f40c86fade464698575fdadaac61dc";
+
 export default async function server(req, res) {
   const { Client } = require("@notionhq/client");
-
   const notion = new Client({ auth: process.env.NOTION_ACCESS_TOKEN });
 
-  const dbId = "d5f40c86fade464698575fdadaac61dc";
   const { results } = await notion.databases.query({ database_id: dbId });
   const pageIds = results
     .sort((a, b) => a.properties.Order.number - b.properties.Order.number)
     .map((page) => page.id);
   const pages = [];
+
   for (let page_id of pageIds) {
     const page = await notion.pages.retrieve({ page_id });
     const title = page.properties.Section.title[0].plain_text;
@@ -17,6 +18,7 @@ export default async function server(req, res) {
     ).results.map(getChild);
     pages.push({ id: page_id, title, html: children.join("\n") });
   }
+
   res.json({ data: pages[0].html });
 }
 
@@ -49,7 +51,7 @@ function getChild(child) {
 }
 
 function getText({ text, annotations }) {
-  const { bold, italic, strikethrough, underline, code, color } = annotations;
+  const { bold, code } = annotations;
   if (bold) {
     return `<strong>${text.content}</strong>`;
   }

@@ -7,6 +7,8 @@ import { useDocs } from "../lib/queries";
 export default function Docs({ currentText }: { currentText: string }) {
   const { data } = useDocs();
   const help = useRef<HTMLDivElement>(null);
+
+  // Add View Example Button
   useEffect(() => {
     if (data && help.current) {
       help.current.querySelectorAll(".code-sample code").forEach((el) => {
@@ -29,8 +31,8 @@ export default function Docs({ currentText }: { currentText: string }) {
     }
   }, [data]);
 
-  const [contents, setContents] = useState<[string, string[]][]>([]);
   // Build Table of Contents
+  const [contents, setContents] = useState<[string, string[]][]>([]);
   useEffect(() => {
     const contents: [string, string[]][] = [];
     const main = document.querySelector(".help main");
@@ -63,8 +65,9 @@ export default function Docs({ currentText }: { currentText: string }) {
       });
     }
   }, [currentText, data]);
+
   return (
-    <div className="help">
+    <div className="flowchartFunHelp">
       <header>
         <details>
           <summary>Table of Contents</summary>

@@ -163,39 +163,41 @@ function LocalCharts() {
         </Box>
       </Section>
       <Box gap={1} template="auto / minmax(0,1fr) repeat(2, 42px)">
-        {charts?.map((chart) => {
-          const isActive = workspace === chart || pathname === `/${chart}`;
-          return (
-            <Fragment key={chart}>
-              <Button
-                as={Link}
-                to={`/${chart}`}
-                onClick={() => setShowing("editor")}
-                className={styles.NewChartLink}
-                content="normal start"
-                items="center stretch"
-                gap={2}
-                aria-current={isActive ? "location" : undefined}
-              >
-                <Type as="span" size={-1}>
-                  {`/${chart}`}
-                </Type>
-              </Button>
-              <Button
-                className={styles.IconButton}
-                onClick={() => setCopy(chart || "/")}
-              >
-                <Copy />
-              </Button>
-              <Button
-                className={styles.IconButton}
-                onClick={() => setErase(chart || "/")}
-              >
-                <Trash />
-              </Button>
-            </Fragment>
-          );
-        })}
+        {charts
+          ?.filter((c) => c !== "h")
+          .map((chart) => {
+            const isActive = workspace === chart || pathname === `/${chart}`;
+            return (
+              <Fragment key={chart}>
+                <Button
+                  as={Link}
+                  to={`/${chart}`}
+                  onClick={() => setShowing("editor")}
+                  className={styles.NewChartLink}
+                  content="normal start"
+                  items="center stretch"
+                  gap={2}
+                  aria-current={isActive ? "location" : undefined}
+                >
+                  <Type as="span" size={-1}>
+                    {`/${chart}`}
+                  </Type>
+                </Button>
+                <Button
+                  className={styles.IconButton}
+                  onClick={() => setCopy(chart || "/")}
+                >
+                  <Copy />
+                </Button>
+                <Button
+                  className={styles.IconButton}
+                  onClick={() => setErase(chart || "/")}
+                >
+                  <Trash />
+                </Button>
+              </Fragment>
+            );
+          })}
       </Box>
       <DeleteChart
         erase={erase}
