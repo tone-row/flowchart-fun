@@ -23,7 +23,7 @@ export default function Router() {
         <EditUserChart />
       </LayoutRoute>
       <LayoutRoute path="/r/:graphText?">
-        <ReadOnly />
+        <ReadOnly compressed={false} />
       </LayoutRoute>
       <LayoutRoute path="/c/:graphText?">
         <ReadOnly />

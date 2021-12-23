@@ -29,6 +29,14 @@ const shapes: cytoscape.Css.Node["shape"][] = [
   "concave-hexagon",
 ];
 
+const circle: Stylesheet = {
+  selector: ".circle",
+  style: {
+    shape: "ellipse",
+    height: "data(width)",
+  },
+};
+
 /* CSS2 Color Spec */
 const css1colors = {
   black: "#000000",
@@ -57,6 +65,7 @@ export const graphUtilityClasses: Stylesheet[] = shapes
       shape,
     },
   }))
+  .concat(circle)
   .concat(
     Object.entries(css1colors).map<Stylesheet>(([color, value]) => ({
       selector: `.bg-${color}`,
