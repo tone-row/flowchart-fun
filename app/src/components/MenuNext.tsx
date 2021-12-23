@@ -192,7 +192,8 @@ const MenuTabButton = ({
     >
       <Box
         as="button"
-        p={2}
+        p={1}
+        at={{ desktop: { p: 2 } }}
         rad={1}
         role="tab"
         aria-selected={selected}
