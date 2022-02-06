@@ -147,3 +147,8 @@ export function useReadOnlyText() {
     ? decompress(graphText) ?? ""
     : decodeURIComponent(graphText);
 }
+
+export function useIsHelp() {
+  const { path } = useRouteMatch();
+  return path === "/h";
+}
