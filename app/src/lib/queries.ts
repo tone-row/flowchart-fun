@@ -188,7 +188,7 @@ async function userCharts() {
 export function useCharts() {
   const { session } = useContext(AppContext);
   return useQuery(["auth", "userCharts"], userCharts, {
-    suspense: true,
+    suspense: false,
     enabled: Boolean(session?.user?.id),
     refetchOnMount: true,
     staleTime: 0,
