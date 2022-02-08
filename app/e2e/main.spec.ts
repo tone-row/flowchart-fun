@@ -109,6 +109,55 @@ describe.only("User", async () => {
     expect(pngBuffer).toMatchSnapshot("png.png", { threshold: 0.5 });
     expect(jpgBuffer).toMatchSnapshot("jpg.jpg", { threshold: 0.5 });
   });
+
+  test.only("modal is closed when navigating charts", async () => {
+    await page.click('button[role="tab"]:has-text("Charts")');
+
+    await page.fill('[placeholder="Enter a title"]', "Chart A");
+
+    await page.click("text=Createflowchart.fun/chart-a >> button");
+
+    await expect(page).toHaveURL("http://localhost:3000/chart-a");
+
+    await page.click("text=This app works by typing");
+
+    await page.press(
+      '[aria-label="Editor content;Press Alt+F1 for Accessibility Options."]',
+      "Meta+a"
+    );
+    await page.fill(
+      '[aria-label="Editor content;Press Alt+F1 for Accessibility Options."]',
+      "x"
+    );
+
+    await page.click('button[role="tab"]:has-text("Charts")');
+
+    await page.fill('[placeholder="Enter a title"]', "Chart B");
+
+    await page.click("text=Createflowchart.fun/chart-b >> button");
+
+    await expect(page).toHaveURL("http://localhost:3000/chart-b");
+
+    await page.click("text=This app works by typing");
+
+    await page.press(
+      '[aria-label="Editor content;Press Alt+F1 for Accessibility Options."]',
+      "Meta+a"
+    );
+
+    await page.fill(
+      '[aria-label="Editor content;Press Alt+F1 for Accessibility Options."]',
+      "x"
+    );
+
+    await page.click('button:has-text("Export")');
+
+    expect(await page.locator("[aria-label=Export]").isVisible()).toBe(true);
+
+    await page.goBack();
+
+    expect(await page.locator("[aria-label=Export]").isVisible()).toBe(false);
+  });
 });
 
 function streamToBuffer(stream) {
