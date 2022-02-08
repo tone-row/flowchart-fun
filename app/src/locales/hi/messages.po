@@ -90,7 +90,7 @@ msgstr "सिकोड़ना"
 
 #: src/components/MenuNext.tsx:222
 msgid "Convert to hosted chart?"
-msgstr ""
+msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
 #: src/components/Navigation.tsx:297
 #: src/components/Navigation.tsx:345
@@ -299,7 +299,7 @@ msgstr "नाम"
 
 #: src/components/EditorError.tsx:21
 msgid "Need Help? <0>Check out our documentation.</0>"
-msgstr ""
+msgstr "मदद चाहिए? <0>हमारे दस्तावेज़ देखें।</0>"
 
 #: src/components/SponsorDashboard.tsx:79
 #: src/components/SponsorDashboard.tsx:217
