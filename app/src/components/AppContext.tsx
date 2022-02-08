@@ -14,6 +14,7 @@ import {
 import useLocalStorage from "react-use-localstorage";
 import Stripe from "stripe";
 
+import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { useCustomerInfo, useUserFeatures } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { languages } from "../locales/i18n";
@@ -75,7 +76,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [shareLink, setShareLink] = useState("");
   const [shareModal, setShareModal] = useState(false);
   const [userSettingsString, setUserSettings] = useLocalStorage(
-    "flowcharts.fun.user.settings",
+    LOCAL_STORAGE_SETTINGS_KEY,
     "{}"
   );
   const [mobileEditorTab, setMobileEditorTab] =
