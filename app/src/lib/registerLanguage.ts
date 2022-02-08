@@ -34,7 +34,7 @@ const darkTheme = {
       foreground: palette.purple[1],
     },
     { token: "support.function", foreground: palette.green[1] },
-    { token: "comment", foreground: "cccccc", fontStyle: "italic" },
+    { token: "comment", foreground: "888888", fontStyle: "italic" },
     { token: "string", foreground: palette.white[0] },
     { token: "meta.embedded.block", foreground: palette.orange[0] },
   ],
