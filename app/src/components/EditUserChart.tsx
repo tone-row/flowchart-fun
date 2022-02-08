@@ -3,14 +3,7 @@ import { useThrottleCallback } from "@react-hook/throttle";
 import merge from "deepmerge";
 import { stringify } from "gray-matter";
 import { Check, Timer } from "phosphor-react";
-import {
-  useCallback,
-  useContext,
-  useEffect,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useParams } from "react-router";
 import { useDebouncedCallback } from "use-debounce";
@@ -22,9 +15,17 @@ import {
 } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useIsValidSponsor } from "../lib/hooks";
-import { queryClient, updateChartText, useChart } from "../lib/queries";
-import { languageId } from "../lib/registerLanguage";
-import { AppContext } from "./AppContext";
+import {
+  queryClient,
+  updateChartText,
+  useAppMode,
+  useChart,
+} from "../lib/queries";
+import {
+  languageId,
+  themeNameDark,
+  themeNameLight,
+} from "../lib/registerLanguage";
 import editStyles from "./Edit.module.css";
 import EditorError from "./EditorError";
 import styles from "./EditUserChart.module.css";
@@ -46,7 +47,9 @@ export default function EditUserChart() {
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const { mode } = useContext(AppContext);
+  const monacoRef = useRef<any>();
+  const { data: mode } = useAppMode();
+  if (!mode) throw new Error(); // Cannot be undefined, query suspends
   const loading = useRef(<Loading />);
   const { graphOptions, content } = useGraphOptions(textToParse);
 
@@ -81,7 +84,20 @@ export default function EditUserChart() {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
 
-  const onMount = useEditorOnMount(mode, editorRef);
+  const onMount = useEditorOnMount(editorRef, monacoRef);
+  useEffect(() => {
+    if (!monacoRef.current) return;
+    monacoRef.current.editor.setTheme(
+      mode === "light" ? themeNameLight : themeNameDark
+    );
+  }, [mode]);
+
+  useEffect(() => {
+    if (!monacoRef.current) return;
+    monacoRef.current.editor.setTheme(
+      mode === "light" ? themeNameLight : themeNameDark
+    );
+  }, [mode]);
 
   const updateGraphOptionsText = useCallback(
     (o: GraphOptionsObject) => {

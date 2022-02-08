@@ -2,14 +2,7 @@ import Editor, { OnMount } from "@monaco-editor/react";
 import { useThrottleCallback } from "@react-hook/throttle";
 import merge from "deepmerge";
 import { stringify } from "gray-matter";
-import {
-  useCallback,
-  useContext,
-  useEffect,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
 import {
   delimiters,
@@ -18,8 +11,12 @@ import {
 } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useLocalStorageText } from "../lib/hooks";
-import { languageId } from "../lib/registerLanguage";
-import { AppContext } from "./AppContext";
+import { useAppMode } from "../lib/queries";
+import {
+  languageId,
+  themeNameDark,
+  themeNameLight,
+} from "../lib/registerLanguage";
 import styles from "./Edit.module.css";
 import EditorError from "./EditorError";
 import GraphProvider from "./GraphProvider";
@@ -34,15 +31,23 @@ export default function Edit() {
   );
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
-  const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const { mode } = useContext(AppContext);
+  const editorRef = useRef<Parameters<OnMount>[0]>(null);
+  const monacoRef = useRef<any>();
+  const { data: mode } = useAppMode();
+  if (!mode) throw new Error(); // Cannot be undefined, query suspends
   const loading = useRef(<Loading />);
   const { graphOptions, content } = useGraphOptions(textToParse);
   useEffect(() => {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
 
-  const onMount = useEditorOnMount(mode, editorRef);
+  const onMount = useEditorOnMount(editorRef, monacoRef);
+  useEffect(() => {
+    if (!monacoRef.current) return;
+    monacoRef.current.editor.setTheme(
+      mode === "light" ? themeNameLight : themeNameDark
+    );
+  }, [mode]);
 
   const updateGraphOptionsText = useCallback(
     (o: GraphOptionsObject) => {

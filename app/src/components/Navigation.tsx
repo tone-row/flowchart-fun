@@ -18,6 +18,7 @@ import { useMutation } from "react-query";
 import { Link, useHistory, useLocation, useParams } from "react-router-dom";
 
 import { gaCreateChart, gaSponsorCTA } from "../lib/analytics";
+import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer, useIsValidSponsor } from "../lib/hooks";
 import {
@@ -107,7 +108,7 @@ function LocalCharts() {
             .filter(
               (key) =>
                 key.indexOf("flowcharts.fun:") === 0 &&
-                key !== "flowcharts.fun.user.settings"
+                key !== LOCAL_STORAGE_SETTINGS_KEY
             )
             .map((file) => file.split(":")[1])
         )

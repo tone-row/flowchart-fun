@@ -1,12 +1,12 @@
 import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
 import matter from "gray-matter";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { delimiters, editorOptions } from "../lib/constants";
+import { useEditorOnMount } from "../lib/editorHooks";
 import { usePublicChart } from "../lib/queries";
 import {
-  defineThemes,
   languageId,
   themeNameDark,
   themeNameLight,
@@ -25,6 +25,7 @@ function Public() {
   const textToParse = data?.chart ?? "";
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
+  const monacoRef = useRef<any>();
   const decorations = useRef<any[]>([]);
   const { mode } = useContext(AppContext);
 
@@ -60,13 +61,7 @@ function Public() {
   const { data: graphOptions } = matter(textToParse, { delimiters });
 
   const loading = useRef(<Loading />);
-  const onMount = useCallback(
-    (editor, monaco) => {
-      editorRef.current = editor;
-      defineThemes(monaco, mode);
-    },
-    [mode]
-  );
+  const onMount = useEditorOnMount(editorRef, monacoRef);
 
   return (
     <GraphProvider

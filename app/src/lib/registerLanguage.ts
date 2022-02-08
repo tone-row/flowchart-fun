@@ -75,15 +75,9 @@ function registerLanguage(monaco: Monaco) {
   });
 }
 
-export function defineThemes(monaco: Monaco, theme: UserSettings["mode"]) {
-  if (theme === "light") {
-    monaco.editor.defineTheme(themeNameLight, lightTheme);
-    monaco.editor.setTheme(themeNameLight);
-    return;
-  }
-
+export function defineThemes(monaco: Monaco) {
+  monaco.editor.defineTheme(themeNameLight, lightTheme);
   monaco.editor.defineTheme(themeNameDark, darkTheme);
-  monaco.editor.setTheme(themeNameDark);
 }
 
 export function useMonacoLanguage(monaco: any) {

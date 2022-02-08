@@ -4,8 +4,9 @@ import { useContext } from "react";
 import { QueryClient, useQuery } from "react-query";
 import Stripe from "stripe";
 
-import { AppContext } from "../components/AppContext";
+import { AppContext, UserSettings } from "../components/AppContext";
 import { definitions } from "../types/supabase";
+import { LOCAL_STORAGE_SETTINGS_KEY } from "./constants";
 import { supabase } from "./supabaseClient";
 
 export const queryClient = new QueryClient();
@@ -391,4 +392,28 @@ export function useDocs() {
     staleTime: 0,
     suspense: true,
   });
+}
+
+export function useAppMode() {
+  return useQuery<UserSettings["mode"]>(
+    ["appMode"],
+    () => {
+      const settings = JSON.parse(
+        window.localStorage.getItem(LOCAL_STORAGE_SETTINGS_KEY) ?? "{}"
+      );
+      return typeof settings.mode == null
+        ? window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+        : settings.mode;
+    },
+    {
+      refetchOnMount: true,
+      refetchOnWindowFocus: true,
+      refetchOnReconnect: true,
+      staleTime: 0,
+      suspense: true,
+    }
+  );
 }
