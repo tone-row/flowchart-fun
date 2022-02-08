@@ -49,7 +49,6 @@ export default function EditUserChart() {
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
   const { data: mode } = useAppMode();
-  if (!mode) throw new Error(); // Cannot be undefined, query suspends
   const loading = useRef(<Loading />);
   const { graphOptions, content } = useGraphOptions(textToParse);
 
