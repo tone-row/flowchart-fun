@@ -1,7 +1,6 @@
 import { Monaco } from "@monaco-editor/react";
 import { useEffect } from "react";
 
-import { UserSettings } from "../components/AppContext";
 import { palette } from "../slang/config";
 
 export const languageId = "flowchartfun";
