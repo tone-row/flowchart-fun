@@ -3,6 +3,8 @@ import { I18nProvider } from "@lingui/react";
 import { de, en, fr, hi, ko, pt, zh } from "make-plural/plurals";
 import { ReactNode, useContext, useEffect } from "react";
 
+import { messages as enMessages } from "../locales/en/messages";
+
 i18n.loadLocaleData("en", { plurals: en });
 i18n.loadLocaleData("fr", { plurals: fr });
 i18n.loadLocaleData("zh", { plurals: zh });
@@ -13,13 +15,16 @@ i18n.loadLocaleData("pt-br", { plurals: pt });
 
 import { AppContext } from "./AppContext";
 
+i18n.load({ en: enMessages });
+i18n.activate("en");
+
 /**
  * We do a dynamic import of just the catalog that we need
  * @param locale any locale string
  */
 async function dynamicActivate(locale: string) {
   const { messages } = await import(`../locales/${locale}/messages`);
-  i18n.load(locale, messages);
+  i18n.load({ [locale]: messages });
   i18n.activate(locale);
 }
 
