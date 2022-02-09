@@ -90,7 +90,7 @@ msgstr "缩小"
 
 #: src/components/MenuNext.tsx:222
 msgid "Convert to hosted chart?"
-msgstr ""
+msgstr "是否转换为托管图表？"
 
 #: src/components/Navigation.tsx:297
 #: src/components/Navigation.tsx:345
@@ -299,7 +299,7 @@ msgstr "姓名"
 
 #: src/components/EditorError.tsx:21
 msgid "Need Help? <0>Check out our documentation.</0>"
-msgstr ""
+msgstr "需要帮助？<0>请查看我们的文档。</0>"
 
 #: src/components/SponsorDashboard.tsx:79
 #: src/components/SponsorDashboard.tsx:217
