@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Navigation.tsx:210
+#: src/components/Navigation.tsx:211
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다. 편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
 
@@ -47,9 +47,9 @@ msgstr "아래에서 위로"
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
-#: src/components/Navigation.tsx:143
-#: src/components/Navigation.tsx:343
-#: src/components/Navigation.tsx:378
+#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:344
+#: src/components/Navigation.tsx:379
 #: src/components/SponsorDashboard.tsx:108
 #: src/components/SponsorDashboard.tsx:116
 #: src/components/SponsorDashboard.tsx:178
@@ -63,7 +63,7 @@ msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다."
 
 #: src/components/MenuNext.tsx:61
-#: src/components/MenuNext.tsx:132
+#: src/components/MenuNext.tsx:133
 msgid "Charts"
 msgstr "차트"
 
@@ -88,31 +88,31 @@ msgstr "동심"
 msgid "Contract"
 msgstr "줄다"
 
-#: src/components/MenuNext.tsx:221
+#: src/components/MenuNext.tsx:222
 msgid "Convert to hosted chart?"
-msgstr ""
+msgstr "호스팅 차트로 변환하시겠습니까?"
 
-#: src/components/Navigation.tsx:296
-#: src/components/Navigation.tsx:344
-#: src/components/Navigation.tsx:368
+#: src/components/Navigation.tsx:297
+#: src/components/Navigation.tsx:345
+#: src/components/Navigation.tsx:369
 #: src/components/ShareDialog.tsx:133
 msgid "Copy"
 msgstr "복사"
 
 #: src/components/MenuNext.tsx:65
-#: src/components/MenuNext.tsx:268
-#: src/components/Navigation.tsx:98
-#: src/components/Navigation.tsx:180
-#: src/components/Navigation.tsx:214
+#: src/components/MenuNext.tsx:269
+#: src/components/Navigation.tsx:99
+#: src/components/Navigation.tsx:181
+#: src/components/Navigation.tsx:215
 msgid "Create"
 msgstr "만들기"
 
 #: src/lib/hooks.ts:19
-#: src/lib/queries.ts:147
+#: src/lib/queries.ts:148
 msgid "Create a link directly using the exact label text"
 msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 
-#: src/components/Navigation.tsx:242
+#: src/components/Navigation.tsx:243
 msgid "Created"
 msgstr "생성됨"
 
@@ -129,10 +129,10 @@ msgstr "다크 모드"
 msgid "Date"
 msgstr "날짜"
 
-#: src/components/Navigation.tsx:134
-#: src/components/Navigation.tsx:137
-#: src/components/Navigation.tsx:144
-#: src/components/Navigation.tsx:379
+#: src/components/Navigation.tsx:135
+#: src/components/Navigation.tsx:138
+#: src/components/Navigation.tsx:145
+#: src/components/Navigation.tsx:380
 msgid "Delete"
 msgstr "삭제"
 
@@ -144,7 +144,7 @@ msgstr "방향"
 msgid "Do you want to cancel your subscription?"
 msgstr "구독을 취소하시겠습니까?"
 
-#: src/components/Navigation.tsx:372
+#: src/components/Navigation.tsx:373
 msgid "Do you want to delete this?"
 msgstr "본 항목을 삭제하시겠습니까?"
 
@@ -152,8 +152,8 @@ msgstr "본 항목을 삭제하시겠습니까?"
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/Navigation.tsx:165
-#: src/components/Navigation.tsx:333
+#: src/components/Navigation.tsx:166
+#: src/components/Navigation.tsx:334
 msgid "Duplicate"
 msgstr "복제"
 
@@ -174,27 +174,27 @@ msgstr "이메일"
 msgid "Email (optional)"
 msgstr "이메일 (선택사항)"
 
-#: src/components/Navigation.tsx:95
-#: src/components/Navigation.tsx:213
-#: src/components/Navigation.tsx:338
+#: src/components/Navigation.tsx:96
+#: src/components/Navigation.tsx:214
+#: src/components/Navigation.tsx:339
 msgid "Enter a title"
 msgstr "제목을 입력하세요"
 
 #: src/lib/graphThemes.tsx:25
 msgid "Excalidraw"
-msgstr ""
+msgstr "Excalidraw"
 
 #: src/components/GraphOptionsBar.tsx:102
 msgid "Expand"
 msgstr "넓히다"
 
-#: src/components/MenuNext.tsx:248
+#: src/components/MenuNext.tsx:249
 #: src/components/ShareDialog.tsx:41
 msgid "Export"
 msgstr "내보내기"
 
 #: src/components/MenuNext.tsx:84
-#: src/components/MenuNext.tsx:128
+#: src/components/MenuNext.tsx:129
 msgid "Feedback"
 msgstr "피드백"
 
@@ -215,7 +215,7 @@ msgid "Grid"
 msgstr "그리드"
 
 #: src/lib/hooks.ts:29
-#: src/lib/queries.ts:157
+#: src/lib/queries.ts:158
 msgid "Have fun! 🎉"
 msgstr "즐겨보세요! 🎉"
 
@@ -231,12 +231,12 @@ msgstr "기록"
 msgid "Home"
 msgstr "집"
 
-#: src/components/Navigation.tsx:210
+#: src/components/Navigation.tsx:211
 msgid "Hosted Charts"
 msgstr "호스트 차트"
 
 #: src/lib/hooks.ts:17
-#: src/lib/queries.ts:145
+#: src/lib/queries.ts:146
 msgid "Indenting creates a link to the current line"
 msgstr "들여쓰기는 현재 줄에 대한 링크를 생성합니다"
 
@@ -265,7 +265,7 @@ msgstr "라이트 모드"
 msgid "Link"
 msgstr "링크"
 
-#: src/components/Navigation.tsx:80
+#: src/components/Navigation.tsx:81
 msgid "Local Charts"
 msgstr "로컬 차트"
 
@@ -291,11 +291,15 @@ msgstr "공개적으로 액세스 가능하게 만들기"
 
 #: src/lib/graphThemes.tsx:26
 msgid "Monospace"
-msgstr ""
+msgstr "Monospace"
 
-#: src/components/Navigation.tsx:230
+#: src/components/Navigation.tsx:231
 msgid "Name"
 msgstr "이름"
+
+#: src/components/EditorError.tsx:21
+msgid "Need Help? <0>Check out our documentation.</0>"
+msgstr "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</0>"
 
 #: src/components/SponsorDashboard.tsx:79
 #: src/components/SponsorDashboard.tsx:217
@@ -306,7 +310,7 @@ msgstr "다음 청구 금액"
 msgid "Preview"
 msgstr "시사"
 
-#: src/components/Navigation.tsx:234
+#: src/components/Navigation.tsx:235
 #: src/components/ShareDialog.tsx:54
 #: src/components/ShareDialog.tsx:66
 msgid "Public"
@@ -316,16 +320,16 @@ msgstr "공용"
 msgid "Random"
 msgstr "무작위"
 
-#: src/components/MenuNext.tsx:201
-#: src/components/MenuNext.tsx:201
 #: src/components/MenuNext.tsx:202
-#: src/components/MenuNext.tsx:210
-#: src/components/MenuNext.tsx:217
+#: src/components/MenuNext.tsx:202
+#: src/components/MenuNext.tsx:203
+#: src/components/MenuNext.tsx:211
+#: src/components/MenuNext.tsx:218
 msgid "Rename"
 msgstr "이름 바꾸기"
 
-#: src/components/Navigation.tsx:137
-#: src/components/Navigation.tsx:144
+#: src/components/Navigation.tsx:138
+#: src/components/Navigation.tsx:145
 msgid "Reset"
 msgstr "재설정"
 
@@ -345,7 +349,7 @@ msgid "Right to Left"
 msgstr "오른쪽에서 왼쪽으로"
 
 #: src/components/MenuNext.tsx:80
-#: src/components/MenuNext.tsx:130
+#: src/components/MenuNext.tsx:131
 msgid "Settings"
 msgstr "설정"
 
@@ -353,13 +357,13 @@ msgstr "설정"
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/components/Navigation.tsx:86
+#: src/components/Navigation.tsx:87
 #: src/components/Sponsor.tsx:41
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 msgstr "Flowchart.fun을 월 1달러에 후원해서 호스트 플로우차트, 최신 스타일과 기능을 이용하세요"
 
 #: src/components/MenuNext.tsx:88
-#: src/components/MenuNext.tsx:134
+#: src/components/MenuNext.tsx:135
 msgid "Sponsors"
 msgstr "후원자"
 
@@ -373,7 +377,7 @@ msgstr "상태"
 
 #: src/components/Feedback.tsx:56
 #: src/components/LoginForm.tsx:34
-#: src/components/MenuNext.tsx:231
+#: src/components/MenuNext.tsx:232
 msgid "Submit"
 msgstr "보내다"
 
@@ -393,12 +397,12 @@ msgstr "피드백을 해주셔서 감사합니다!"
 msgid "Theme"
 msgstr "테마"
 
-#: src/components/Navigation.tsx:80
+#: src/components/Navigation.tsx:81
 msgid "These charts are only available in this browser on this device. Clearing your browser {localStorage} will erase these."
 msgstr "다음의 차트는 이 장치의 이 브라우저에서만 이용하실 수 있습니다. 브라우저를 정리하면 {localStorage} 에서 다음의 차트를 삭제합니다."
 
 #: src/lib/hooks.ts:16
-#: src/lib/queries.ts:144
+#: src/lib/queries.ts:145
 msgid "This app works by typing"
 msgstr "이 앱은 타이핑으로 작동합니다"
 
@@ -410,7 +414,7 @@ msgstr "위에서 아래로"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/components/Navigation.tsx:238
+#: src/components/Navigation.tsx:239
 msgid "Updated"
 msgstr "업데이트됨"
 
@@ -430,7 +434,7 @@ msgstr "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다
 msgid "We use cookies to keep you logged in."
 msgstr "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다."
 
-#: src/components/Navigation.tsx:173
+#: src/components/Navigation.tsx:174
 msgid "What would you like to name this copy?"
 msgstr "이 사본의 이름을 무엇으로 지정하시겠습니까?"
 
@@ -442,47 +446,47 @@ msgstr "무엇을 공유하시겠습니까?"
 msgid "With Editor"
 msgstr "에디터와 함께"
 
-#: src/components/Navigation.tsx:220
+#: src/components/Navigation.tsx:221
 #: src/components/SponsorDashboard.tsx:59
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오."
 
 #: src/lib/hooks.ts:21
-#: src/lib/queries.ts:149
+#: src/lib/queries.ts:150
 msgid "[custom ID] or"
 msgstr "[사용자 지정 ID] 또는"
 
 #: src/lib/hooks.ts:18
-#: src/lib/queries.ts:146
+#: src/lib/queries.ts:147
 msgid "any text: before a colon creates a label"
 msgstr "콜론 앞의 모든 텍스트는: 레이블을 생성합니다"
 
 #: src/lib/hooks.ts:22
-#: src/lib/queries.ts:150
+#: src/lib/queries.ts:151
 msgid "by adding an [ID] and referencing that"
 msgstr "[ID]를 추가하고 참조하여"
 
 #: src/lib/hooks.ts:27
-#: src/lib/queries.ts:155
+#: src/lib/queries.ts:156
 msgid "comments"
 msgstr "댓글"
 
 #: src/lib/hooks.ts:20
-#: src/lib/queries.ts:148
+#: src/lib/queries.ts:149
 msgid "like this: (This app works by typing)"
 msgstr "이렇게: (이 앱은 타이핑으로 작동합니다)"
 
 #: src/lib/hooks.ts:23
-#: src/lib/queries.ts:151
+#: src/lib/queries.ts:152
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "이렇게: (사용자 지정 ID) // 한 줄을 사용할 수도 있습니다 댓글"
 
 #: src/lib/hooks.ts:26
-#: src/lib/queries.ts:154
+#: src/lib/queries.ts:155
 msgid "multiline"
 msgstr "멀티라인"
 
 #: src/lib/hooks.ts:25
-#: src/lib/queries.ts:153
+#: src/lib/queries.ts:154
 msgid "or"
 msgstr "또는"
