@@ -11,6 +11,7 @@ import {
   useMemo,
   useState,
 } from "react";
+import { useLocation } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import Stripe from "stripe";
 
@@ -141,6 +142,10 @@ const Provider = ({ children }: { children?: ReactNode }) => {
       });
     }
   }, []);
+
+  // Close Share Modal when navigating
+  const { pathname } = useLocation();
+  useEffect(() => setShareModal(false), [pathname]);
 
   const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
     session?.user?.email
