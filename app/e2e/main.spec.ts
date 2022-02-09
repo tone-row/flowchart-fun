@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { Stream } from "stream";
 const { describe, beforeAll } = test;
 
 const startUrl = process.env.E2E_START_URL ?? "http://localhost:3000";
@@ -74,40 +75,8 @@ describe.only("User", async () => {
     await page.click('button:has-text("Agrandir")');
     await page.click("text=Lumineux");
     await page.click('p:has-text("Sombre")');
-  });
-
-  // Take All Snapshots
-  test("can download SVG", async () => {
-    await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
-    await page.click('button:has-text("Export")');
-
-    const downloadSVG = await Promise.all([
-      page.waitForEvent("download"),
-      page.click('[aria-label="SVG"]'),
-    ]);
-
-    const downloadPNG = await Promise.all([
-      page.waitForEvent("download"),
-      page.click('[aria-label="PNG"]'),
-    ]);
-
-    const downloadJPG = await Promise.all([
-      page.waitForEvent("download"),
-      page.click('[aria-label="JPG"]'),
-    ]);
-
-    const svgStream = await downloadSVG[0].createReadStream();
-    const svgBuffer = await streamToBuffer(svgStream);
-
-    const pngStream = await downloadPNG[0].createReadStream();
-    const pngBuffer = await streamToBuffer(pngStream);
-
-    const jpgStream = await downloadJPG[0].createReadStream();
-    const jpgBuffer = await streamToBuffer(jpgStream);
-
-    expect(svgBuffer).toMatchSnapshot("svg.svg", { threshold: 0.5 });
-    expect(pngBuffer).toMatchSnapshot("png.png", { threshold: 0.5 });
-    expect(jpgBuffer).toMatchSnapshot("jpg.jpg", { threshold: 0.5 });
+    await page.click('button[role="tab"]:has-text("Paramètres")');
+    await page.click('[aria-label="Select Language: English"]');
   });
 
   test("modal is closed when navigating charts", async () => {
@@ -164,13 +133,33 @@ describe.only("User", async () => {
 
     expect(await page.locator("[aria-label=Export]").isVisible()).toBe(false);
   });
+
+  // Take All Snapshots
+  test("can download SVG", async () => {
+    await new Promise((res) => setTimeout(res, 1000)); // wait for animation to finish
+    await page.click('button:has-text("Export")');
+
+    const downloadSVG = await Promise.all([
+      page.waitForEvent("download"),
+      page.click('[aria-label="SVG"]'),
+    ]);
+
+    const svgStream = await downloadSVG[0].createReadStream();
+    const svgStr = ((await streamToString(svgStream)) as string).replace(
+      /\s/g,
+      ""
+    );
+    expect(svgStr).toEqual(
+      `<svgxmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink"version="1.1"viewBox="00103.5103.5"><defs/><g><rectfill="#ffffff"stroke="none"x="0"y="0"width="103.5"height="103.5"/><gtransform="translate(1.5,1.5)scale(1.5,1.5)"><pathfill="rgb(255,255,255)"stroke="rgb(0,0,0)"paint-order="fillstrokemarkers"d="M33.50.5L58.50.5L58.50.5A8800166.58.5L66.558.5L66.558.5A8800158.566.5L8.566.5L8.566.5A880010.558.5L0.58.5L0.58.500000000000002A880018.50.5L33.50.5Z"fill-opacity="1"stroke-opacity="1"stroke-miterlimit="10"/><textfill="rgb(0,0,0)"stroke="none"font-family="Helvetica,Arial,sans-serif,AppleColorEmoji,SegoeUIEmoji,SegoeUISymbol"font-size="10px"font-style="normal"font-weight="normal"text-decoration="normal"x="33.5"y="38.5"text-anchor="middle"dominant-baseline="text-after-edge"fill-opacity="1">x</text><gtransform="scale(0.6666666666666666,0.6666666666666666)translate(-1.5,-1.5)"/></g></g><!--OriginalFlowchartText(flowchart.fun):x--></svg>`
+    );
+  });
 });
 
-function streamToBuffer(stream) {
+function streamToString(stream: Stream) {
   const chunks = [];
   return new Promise((resolve, reject) => {
     stream.on("data", (chunk) => chunks.push(Buffer.from(chunk)));
     stream.on("error", (err) => reject(err));
-    stream.on("end", () => resolve(Buffer.concat(chunks)));
+    stream.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
   });
 }
