@@ -110,14 +110,20 @@ describe.only("User", async () => {
     expect(jpgBuffer).toMatchSnapshot("jpg.jpg", { threshold: 0.5 });
   });
 
-  test.only("modal is closed when navigating charts", async () => {
+  test("modal is closed when navigating charts", async () => {
+    const html = page.locator("html");
+
+    const base = await html.evaluate(
+      () => new URL(window.location.href).origin
+    );
+
     await page.click('button[role="tab"]:has-text("Charts")');
 
     await page.fill('[placeholder="Enter a title"]', "Chart A");
 
     await page.click("text=Createflowchart.fun/chart-a >> button");
 
-    await expect(page).toHaveURL("http://localhost:3000/chart-a");
+    await expect(page).toHaveURL(`${base}/chart-a`);
 
     await page.click("text=This app works by typing");
 
@@ -136,7 +142,7 @@ describe.only("User", async () => {
 
     await page.click("text=Createflowchart.fun/chart-b >> button");
 
-    await expect(page).toHaveURL("http://localhost:3000/chart-b");
+    await expect(page).toHaveURL(`${base}/chart-b`);
 
     await page.click("text=This app works by typing");
 
