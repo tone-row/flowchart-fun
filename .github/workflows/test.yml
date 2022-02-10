@@ -1,5 +1,5 @@
 name: CI
-on: push
+on: [push]
 jobs:
   build:
     name: Test
@@ -20,5 +20,3 @@ jobs:
           files: ./app/coverage/*.json # optional
           fail_ci_if_error: false # optional (default = false)
           verbose: true # optional (default = false)
-      - name: Benchmark
-        run: yarn workspace app benchmark
