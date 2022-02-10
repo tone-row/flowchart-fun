@@ -11,7 +11,14 @@ jobs:
           node-version: 14.x
       - name: Install Dependencies
         run: yarn
-      - name: Run the tests
+      - name: Test
         run: yarn workspace app test:coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ./app/coverage/*.json # optional
+          fail_ci_if_error: false # optional (default = false)
+          verbose: true # optional (default = false)
       - name: Benchmark
         run: yarn workspace app benchmark
