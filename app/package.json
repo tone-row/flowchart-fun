@@ -100,8 +100,8 @@
     ]
   },
   "devDependencies": {
-    "@lingui/cli": "^3.8.9",
-    "@lingui/macro": "^3.8.9",
+    "@lingui/cli": "^3.13.2",
+    "@lingui/macro": "^3.13.2",
     "@playwright/test": "^1.16",
     "@types/benchmark": "^2.1.1",
     "@types/css-font-loading-module": "^0.0.7",
@@ -127,7 +127,9 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "jest-canvas-mock": "^2.3.1",
     "minimist": "^1.2.5",
+    "msw": "^0.36.8",
     "prettier": "^2.3.1",
     "ts-unused-exports": "^7.0.3"
   },

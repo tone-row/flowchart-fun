@@ -3,7 +3,7 @@ import { Route, RouteProps, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
 import Layout from "./Layout";
-import Public from "./Public";
+const Public = lazy(() => import("./Public"));
 const Edit = lazy(() => import("./Edit"));
 const Help = lazy(() => import("./Help"));
 const EditUserChart = lazy(() => import("./EditUserChart"));

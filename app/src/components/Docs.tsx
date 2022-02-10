@@ -21,7 +21,7 @@ export default function Docs({ currentText }: { currentText: string }) {
             window.flowchartFunSetHelpText(text)
         );
         button.classList.add("code-example-link");
-        button.innerText = "View Example";
+        button.appendChild(document.createTextNode("View Example"));
         if (el.parentNode) el.parentNode.appendChild(button);
       });
       return () =>
@@ -55,13 +55,15 @@ export default function Docs({ currentText }: { currentText: string }) {
     if (data && help.current) {
       help.current.querySelectorAll(".code-sample code").forEach((el) => {
         const text = el.textContent ?? "";
-        const parent = el.parentNode;
+        const parent = el.parentNode as HTMLElement | undefined;
         if (!parent) return;
         if (text === currentText) {
-          (parent as Element).setAttribute("aria-current", "location");
+          parent.setAttribute("aria-current", "location");
+          parent.dataset.testid = "active-code-example";
           return;
         }
-        (parent as Element).removeAttribute("aria-current");
+        parent.removeAttribute("aria-current");
+        delete parent.dataset.testid;
       });
     }
   }, [currentText, data]);

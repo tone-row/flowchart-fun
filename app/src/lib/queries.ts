@@ -18,6 +18,7 @@ queryClient.setDefaultOptions({
   },
 });
 
+// Currently Unused
 async function userFeatures(): Promise<string[]> {
   const response = await fetch("/api/feature", {
     mode: "cors",

@@ -1,5 +1,4 @@
 import { Session } from "@supabase/gotrue-js";
-import { FlagsProvider } from "flagged";
 import {
   createContext,
   Dispatch,
@@ -16,7 +15,7 @@ import useLocalStorage from "react-use-localstorage";
 import Stripe from "stripe";
 
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
-import { useCustomerInfo, useUserFeatures } from "../lib/queries";
+import { useCustomerInfo } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
@@ -129,8 +128,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [hasStyleError, setHasStyleError] =
     useState<TAppContext["hasStyleError"]>(false);
 
-  const { data: flags } = useUserFeatures();
-
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
@@ -175,7 +172,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         language: settings.language ?? defaultLanguage,
       }}
     >
-      <FlagsProvider features={flags}>{children}</FlagsProvider>
+      {children}
     </AppContext.Provider>
   );
 };

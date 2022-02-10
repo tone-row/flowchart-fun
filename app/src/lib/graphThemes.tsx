@@ -51,12 +51,15 @@ async function loadFont(name: string, url: string, unicodeRange?: string) {
   document.fonts.add(font);
 }
 
-const ThemeLoader = createContext(
-  {} as {
-    loaded: Record<string, Theme>;
-    setLoaded: Dispatch<SetStateAction<Record<string, Theme>>>;
-  }
-);
+type TThemeLoader = {
+  loaded: Record<string, Theme>;
+  setLoaded: Dispatch<SetStateAction<Record<string, Theme>>>;
+};
+
+const ThemeLoader = createContext<TThemeLoader>({
+  loaded: {},
+  setLoaded: () => null,
+});
 
 export const ThemeLoaderProvider = ({ children }: { children: ReactNode }) => {
   const [loaded, setLoaded] = useState<Record<string, Theme>>({
@@ -69,11 +72,12 @@ export const ThemeLoaderProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Loading them dynamically if not loaded
+// Loading theme dynamically if not loaded
 function useLoadedTheme(theme: GraphThemes) {
   const { loaded, setLoaded } = useContext(ThemeLoader);
   const lastTheme = useRef<GraphThemes>(theme ?? defaultGraphTheme);
   useEffect(() => {
+    if (!loaded) return;
     if (!(theme in loaded)) {
       dynamicActivate(theme).then((result: Theme) => {
         if (result.font?.files) {
@@ -91,13 +95,13 @@ function useLoadedTheme(theme: GraphThemes) {
       });
     }
   }, [theme, loaded, setLoaded]);
-  return loaded[theme] ?? loaded[lastTheme.current] ?? original;
+  return loaded?.[theme] ?? loaded?.[lastTheme.current] ?? original;
 }
 
 export function useGraphTheme() {
   const { graphOptions } = useContext(GraphContext);
   let theme = defaultGraphTheme;
-  if (graphOptions.theme && allGraphThemes.includes(graphOptions.theme))
+  if (graphOptions?.theme && allGraphThemes.includes(graphOptions.theme))
     theme = graphOptions.theme;
   return useLoadedTheme(theme);
 }

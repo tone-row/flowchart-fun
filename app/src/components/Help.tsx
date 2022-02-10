@@ -95,7 +95,7 @@ export default function Help() {
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
     >
-      <div className={helpStyles.helpWrapper}>
+      <div className={helpStyles.helpWrapper} data-testid="help">
         <Resizable
           defaultSize={{ width: "100%", height: "50vh" }}
           className={helpStyles.resizable}
