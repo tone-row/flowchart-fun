@@ -50,6 +50,7 @@ export default function Feedback() {
       content="start normal"
       className={styles.FeedbackWrapper}
       self="stretch center"
+      data-testid="feedback"
     >
       {success ? (
         <Success />
@@ -73,13 +74,17 @@ export default function Feedback() {
             <Type>
               <Trans>What would you like to share with us?</Trans>
             </Type>
-            <Textarea rows={4} {...register("text", { required: true })} />
+            <Textarea
+              rows={4}
+              {...register("text", { required: true })}
+              data-testid="message"
+            />
           </Section>
           <Section>
             <Type>
               <Trans>Email (optional)</Trans>
             </Type>
-            <Input type="email" {...register("from")} />
+            <Input type="email" {...register("from")} data-testid="email" />
           </Section>
           <Button
             type="submit"

@@ -1,9 +1,10 @@
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
 import { render, RenderOptions } from "@testing-library/react";
+import { createMemoryHistory } from "history";
 import React, { FC, ReactElement, Suspense } from "react";
 import { QueryClientProvider } from "react-query";
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
 
 import { ErrorFallback, stripePromise } from "./components/App";
 import Provider from "./components/AppContext";
@@ -11,9 +12,11 @@ import { I18n } from "./components/I18n";
 import Loading from "./components/Loading";
 import { queryClient } from "./lib/queries";
 
+export const history = createMemoryHistory();
+
 const AllTheProviders: FC = ({ children }) => {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <QueryClientProvider client={queryClient}>
         <Provider>
           <Sentry.ErrorBoundary fallback={ErrorFallback}>
@@ -25,7 +28,7 @@ const AllTheProviders: FC = ({ children }) => {
           </Sentry.ErrorBoundary>
         </Provider>
       </QueryClientProvider>
-    </BrowserRouter>
+    </Router>
   );
 };
 
