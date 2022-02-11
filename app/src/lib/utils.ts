@@ -60,7 +60,6 @@ export function parseText(
 
           // Find a unique id
           let id = `${source}_${target}:0`;
-          // if (id === "1ef_1f0:0") debugger;
           while (elements.map(({ data: { id } }) => id).includes(id)) {
             let [, count] = id.split(":");
             count = (parseInt(count, 10) + 1).toString();
