@@ -19,6 +19,7 @@ export function parseText(
     | undefined,
   startingLineNumber = 0
 ) {
+  const ids: string[] = [];
   const elements: CytoscapeOptions["elements"] = [];
   let lineNumber = 1;
 
@@ -32,6 +33,8 @@ export function parseText(
     const line = lineData[lineNumber];
     if (line) {
       const { linkedId, nodeLabel, edgeLabel, indent, id, classes } = line;
+      if (ids.includes(id)) throw new Error(`Duplicate ID: ${id}`);
+      ids.push(id);
 
       if (indent) {
         let parent, lineNumberToCheck;
@@ -57,6 +60,7 @@ export function parseText(
 
           // Find a unique id
           let id = `${source}_${target}:0`;
+          // if (id === "1ef_1f0:0") debugger;
           while (elements.map(({ data: { id } }) => id).includes(id)) {
             let [, count] = id.split(":");
             count = (parseInt(count, 10) + 1).toString();
@@ -178,5 +182,5 @@ function isEdge(el: cytoscape.ElementDefinition) {
 }
 
 function betterDefaultId(lineNumber: number) {
-  return (333 + lineNumber).toString(16);
+  return `N${(333 + lineNumber).toString(16)}`;
 }

@@ -27,11 +27,11 @@ describe("parseText", () => {
     expect(result.filter(edgesOnly).length).toEqual(1);
     expect(result).toContainEqual({
       data: {
-        id: "14e_14f:0",
+        id: "N14e_N14f:0",
         label: "",
         lineNumber: 2,
-        source: "14e",
-        target: "14f",
+        source: "N14e",
+        target: "N14f",
       },
     });
   });
@@ -67,17 +67,17 @@ describe("parseText", () => {
   it("should generate & increment (slightly encoded) edge ids", () => {
     let result = parseText("a\n  b", getSize);
     const edge = result.filter(edgesOnly)[0];
-    expect(edge.data.id).toEqual("14e_14f:0");
+    expect(edge.data.id).toEqual("N14e_N14f:0");
     result = parseText("a\n  b\n  (2)", getSize);
     const edges = result.filter(edgesOnly);
     expect(edges.length).toEqual(2);
     expect(edges).toContainEqual({
       data: {
-        id: "14e_2:0",
+        id: "N14e_2:0",
         label: "",
         lineNumber: 3,
-        source: "14e",
-        target: "14e_14f:0",
+        source: "N14e",
+        target: "N14e_N14f:0",
       },
     });
   });
@@ -88,11 +88,11 @@ describe("parseText", () => {
     const result = parseText("a\nb\n  (1)", getSize);
     expect(result).toContainEqual({
       data: {
-        id: "14f_1:0",
+        id: "N14f_1:0",
         label: "",
         lineNumber: 3,
-        source: "14f",
-        target: "14e",
+        source: "N14f",
+        target: "N14e",
       },
     });
   });
@@ -102,10 +102,10 @@ describe("parseText", () => {
     const result = parseText(`[${fakeId}] a\nb\n  (${fakeId})`, getSize);
     expect(result).toContainEqual({
       data: {
-        id: `14f_${fakeId}:0`,
+        id: `N14f_${fakeId}:0`,
         label: "",
         lineNumber: 3,
-        source: "14f",
+        source: "N14f",
         target: `${fakeId}`,
       },
     });
@@ -116,11 +116,11 @@ describe("parseText", () => {
     const result = parseText(`${label}\nb\n  (${label})`, getSize);
     expect(result).toContainEqual({
       data: {
-        id: `14f_${label}:0`,
+        id: `N14f_${label}:0`,
         label: "",
         lineNumber: 3,
-        source: "14f",
-        target: "14e",
+        source: "N14f",
+        target: "N14e",
       },
     });
   });
@@ -139,7 +139,7 @@ describe("parseText", () => {
     const text = `${label}\n  good times: (${label})`;
     const result = parseText(text, getSize);
     expect(result.filter(edgesOnly)[0].data.id).toEqual(
-      `14e_${originalLabel}:0`
+      `N14e_${originalLabel}:0`
     );
   });
 
@@ -162,7 +162,7 @@ describe("parseText", () => {
     let edges = result.filter(edgesOnly);
     let firstEdge = edges[0].data;
     let nodes = result.filter(nodesOnly);
-    expect(firstEdge.source).toEqual("150");
+    expect(firstEdge.source).toEqual("N150");
     expect(firstEdge.target).toEqual("1");
     expect(nodes.length).toEqual(3);
     // make sure all nodes have unique ids
@@ -173,10 +173,10 @@ describe("parseText", () => {
     // C should link to B even though it's the second line
     expect(edges).toContainEqual({
       data: {
-        id: "150_1:0",
+        id: "N150_1:0",
         label: "",
         lineNumber: 4,
-        source: "150",
+        source: "N150",
         target: "1",
       },
     });
@@ -188,10 +188,10 @@ describe("parseText", () => {
     edges = result.filter(edgesOnly);
     expect(edges).toContainEqual({
       data: {
-        id: "150_1:0",
+        id: "N150_1:0",
         label: "",
         lineNumber: 4,
-        source: "150",
+        source: "N150",
         target: "test",
       },
     });
@@ -223,7 +223,7 @@ describe("parseText", () => {
     const result = parseText(label, getSize);
     expect(result).toContainEqual({
       classes: "one two three",
-      data: { id: "14e", label: "a", lineNumber: 1 },
+      data: { id: "N14e", label: "a", lineNumber: 1 },
     });
   });
 
@@ -234,6 +234,11 @@ describe("parseText", () => {
       classes: "",
       data: { id: "someId", label: "", lineNumber: 1 },
     });
+  });
+
+  test("Should throw if ID used more than once", () => {
+    const getResult = () => parseText(`[hello] hi\n[hello] hi`, getSize);
+    expect(getResult).toThrow();
   });
 });
 
