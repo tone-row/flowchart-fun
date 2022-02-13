@@ -28,6 +28,7 @@ import {
 } from "../lib/helpers";
 import {
   useCurrentHostedChart,
+  useIsHelp,
   useIsReadOnly,
   useIsValidSponsor,
   useLocalStorageText,
@@ -212,6 +213,7 @@ function WorkspaceSection() {
   const [title, isHosted] = useTitle();
   const Icon = isHosted ? Globe : Laptop;
   const isReadOnly = useIsReadOnly();
+  const isHelp = useIsHelp();
   return (
     <Box
       flow="column"
@@ -245,7 +247,7 @@ function WorkspaceSection() {
         </Box>
       </Box>
       <Box flow="column" gap={1}>
-        {!isReadOnly && <RenameButton />}
+        {!isReadOnly && !isHelp && <RenameButton />}
         {isReadOnly ? <CopyButton /> : <ExportButton />}
       </Box>
     </Box>

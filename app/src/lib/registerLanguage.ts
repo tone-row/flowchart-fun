@@ -1,7 +1,6 @@
 import { Monaco } from "@monaco-editor/react";
 import { useEffect } from "react";
 
-import { UserSettings } from "../components/AppContext";
 import { palette } from "../slang/config";
 
 export const languageId = "flowchartfun";
@@ -35,7 +34,7 @@ const darkTheme = {
       foreground: palette.purple[1],
     },
     { token: "support.function", foreground: palette.green[1] },
-    { token: "comment", foreground: "cccccc", fontStyle: "italic" },
+    { token: "comment", foreground: "888888", fontStyle: "italic" },
     { token: "string", foreground: palette.white[0] },
     { token: "meta.embedded.block", foreground: palette.orange[0] },
   ],
@@ -75,15 +74,9 @@ function registerLanguage(monaco: Monaco) {
   });
 }
 
-export function defineThemes(monaco: Monaco, theme: UserSettings["mode"]) {
-  if (theme === "light") {
-    monaco.editor.defineTheme(themeNameLight, lightTheme);
-    monaco.editor.setTheme(themeNameLight);
-    return;
-  }
-
+export function defineThemes(monaco: Monaco) {
+  monaco.editor.defineTheme(themeNameLight, lightTheme);
   monaco.editor.defineTheme(themeNameDark, darkTheme);
-  monaco.editor.setTheme(themeNameDark);
 }
 
 export function useMonacoLanguage(monaco: any) {

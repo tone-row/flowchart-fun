@@ -17,7 +17,7 @@ const monospace: Theme = {
   textMaxWidth,
   font: {
     fontFamily,
-    files: [{ url: "FiraMono-Regular.ttf", name: "Fira Mono" }],
+    files: [{ url: "FiraMono-Regular.woff2", name: "Fira Mono" }],
     lineHeight,
     fontSize,
   },

@@ -41,7 +41,8 @@ import {
 } from "./Shared";
 
 const GraphOptionsBar = memo(() => {
-  const { updateGraphOptionsText, graphOptions } = useContext(GraphContext);
+  const { updateGraphOptionsText, graphOptions = {} } =
+    useContext(GraphContext);
   const {
     watch,
     control,

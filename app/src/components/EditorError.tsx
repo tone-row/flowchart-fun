@@ -1,6 +1,8 @@
+import { Trans } from "@lingui/macro";
 import { AnimatePresence, motion } from "framer-motion";
 import { useContext } from "react";
 import { BiErrorCircle } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
@@ -29,9 +31,16 @@ export default function EditorError() {
             background="palette-orange-0"
           >
             <BiErrorCircle size={24} />
-            <Type size={-1} weight="700">
-              {show}
-            </Type>
+            <Box gap={1}>
+              <Type size={-1} weight="700">
+                {show}
+              </Type>
+              <Type as={Link} to="/h" size={-2} style={{ lineHeight: 1 }}>
+                <Trans>
+                  Need Help? <u>Check out our documentation.</u>
+                </Trans>
+              </Type>
+            </Box>
           </Box>
         </motion.div>
       ) : null}

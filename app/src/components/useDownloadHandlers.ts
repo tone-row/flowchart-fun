@@ -51,6 +51,29 @@ export default function useDownloadHandlers(
         )} ${svgEl.children[0].getAttribute("height")}`
       );
 
+      // Add font file if necessary
+      let fontString = "";
+      if (graphTheme.font?.files) {
+        for (const { url, name } of graphTheme.font?.files) {
+          if (!(url in window.__flowchartFunBase64EncodedFonts)) {
+            const fontUrl = `/fonts/${url}`;
+            const font = await fetch(fontUrl)
+              .then((res) => res.arrayBuffer())
+              .catch((e) => console.error(e));
+            if (!font) continue;
+            const base64 = arrayBufferToBase64(font);
+            window.__flowchartFunBase64EncodedFonts[url] = base64;
+          }
+          fontString += `@font-face { font-family: "${name}"; src: url(data:application/x-font-woff2;charset=utf-8;base64,${window.__flowchartFunBase64EncodedFonts[url]}) format("woff2"); }}`;
+        }
+      }
+
+      if (fontString) {
+        const style = document.createElement("style");
+        style.innerHTML = fontString;
+        svgEl.children[0].prepend(style);
+      }
+
       const correctedSvgStr = svgEl.documentElement.outerHTML;
       const { optimize } = await import("svgo/dist/svgo.browser");
 
@@ -124,4 +147,14 @@ export default function useDownloadHandlers(
     window.flowchartFunDownloadJPG = downloadJPG;
     window.flowchartFunGetGraphThemeBG = getGraphThemeBG;
   }, [downloadJPG, downloadPNG, getGraphThemeBG]);
+}
+
+function arrayBufferToBase64(buffer: ArrayBuffer) {
+  let binary = "";
+  const bytes = new Uint8Array(buffer);
+  const len = bytes.byteLength;
+  for (let i = 0; i < len; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return window.btoa(binary);
 }
