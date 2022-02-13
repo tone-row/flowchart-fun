@@ -43,6 +43,14 @@ async function dynamicActivate(name: string) {
   return theme.default;
 }
 
+declare global {
+  interface Window {
+    __flowchartFunBase64EncodedFonts: Record<string, string>;
+  }
+}
+
+window.__flowchartFunBase64EncodedFonts = {};
+
 async function loadFont(name: string, url: string, unicodeRange?: string) {
   const font = new FontFace(name, `url(/fonts/${url})`, {
     unicodeRange,
