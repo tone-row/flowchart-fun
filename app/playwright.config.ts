@@ -9,7 +9,7 @@ const config: PlaywrightTestConfig = {
       height: 1080,
     },
     // Development
-    // headless: false,
+    headless: process.env.HEADLESS === "0" ? false : true,
   },
   // timeout: 60000,
 };

@@ -6,7 +6,6 @@ import { Resizable } from "re-resizable";
 import {
   Suspense,
   useCallback,
-  useContext,
   useEffect,
   useReducer,
   useRef,
@@ -20,8 +19,12 @@ import {
 } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useLocalStorageText } from "../lib/hooks";
-import { languageId } from "../lib/registerLanguage";
-import { AppContext } from "./AppContext";
+import { useAppMode } from "../lib/queries";
+import {
+  languageId,
+  themeNameDark,
+  themeNameLight,
+} from "../lib/registerLanguage";
 import Docs from "./Docs";
 import styles from "./Edit.module.css";
 import EditorError from "./EditorError";
@@ -39,14 +42,21 @@ export default function Help() {
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const { mode } = useContext(AppContext);
+  const monacoRef = useRef<any>();
+  const { data: mode } = useAppMode();
   const loading = useRef(<Loading />);
   const { graphOptions, content } = useGraphOptions(textToParse);
   useEffect(() => {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
 
-  const onMount = useEditorOnMount(mode, editorRef);
+  const onMount = useEditorOnMount(editorRef, monacoRef);
+  useEffect(() => {
+    if (!monacoRef.current) return;
+    monacoRef.current.editor.setTheme(
+      mode === "light" ? themeNameLight : themeNameDark
+    );
+  }, [mode]);
 
   const updateGraphOptionsText = useCallback(
     (o: GraphOptionsObject) => {
@@ -85,7 +95,7 @@ export default function Help() {
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
     >
-      <div className={helpStyles.helpWrapper}>
+      <div className={helpStyles.helpWrapper} data-testid="help">
         <Resizable
           defaultSize={{ width: "100%", height: "50vh" }}
           className={helpStyles.resizable}

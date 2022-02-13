@@ -1,5 +1,4 @@
 import { Session } from "@supabase/gotrue-js";
-import { FlagsProvider } from "flagged";
 import {
   createContext,
   Dispatch,
@@ -11,10 +10,12 @@ import {
   useMemo,
   useState,
 } from "react";
+import { useLocation } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import Stripe from "stripe";
 
-import { useCustomerInfo, useUserFeatures } from "../lib/queries";
+import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
+import { useCustomerInfo } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
@@ -75,7 +76,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [shareLink, setShareLink] = useState("");
   const [shareModal, setShareModal] = useState(false);
   const [userSettingsString, setUserSettings] = useLocalStorage(
-    "flowcharts.fun.user.settings",
+    LOCAL_STORAGE_SETTINGS_KEY,
     "{}"
   );
   const [mobileEditorTab, setMobileEditorTab] =
@@ -127,8 +128,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [hasStyleError, setHasStyleError] =
     useState<TAppContext["hasStyleError"]>(false);
 
-  const { data: flags } = useUserFeatures();
-
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
@@ -140,6 +139,10 @@ const Provider = ({ children }: { children?: ReactNode }) => {
       });
     }
   }, []);
+
+  // Close Share Modal when navigating
+  const { pathname } = useLocation();
+  useEffect(() => setShareModal(false), [pathname]);
 
   const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
     session?.user?.email
@@ -169,7 +172,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         language: settings.language ?? defaultLanguage,
       }}
     >
-      <FlagsProvider features={flags}>{children}</FlagsProvider>
+      {children}
     </AppContext.Provider>
   );
 };

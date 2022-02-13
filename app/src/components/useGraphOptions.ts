@@ -9,7 +9,7 @@ export default function useGraphOptions(text: string): {
 } {
   try {
     const {
-      data: graphOptions,
+      data: graphOptions = {},
       content,
       matter: graphOptionsString,
     } = matter(text, { delimiters });

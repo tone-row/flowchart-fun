@@ -1,7 +1,7 @@
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
 import { render, RenderOptions } from "@testing-library/react";
-import React, { FC, ReactElement, Suspense } from "react";
+import { FC, ReactElement, Suspense } from "react";
 import { QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 

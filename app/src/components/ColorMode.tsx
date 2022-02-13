@@ -1,4 +1,5 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
+import { createPortal } from "react-dom";
 
 import { AppContext } from "./AppContext";
 
@@ -6,15 +7,14 @@ import { AppContext } from "./AppContext";
 export default function ColorMode() {
   const { theme } = useContext(AppContext);
 
-  useEffect(() => {
-    if (document.documentElement) {
-      for (const [key, value] of Object.entries(theme)) {
-        document.documentElement.style.setProperty(
-          `--color-${key}`,
-          value as string
-        );
-      }
-    }
-  }, [theme]);
-  return null;
+  return createPortal(
+    <style
+      dangerouslySetInnerHTML={{
+        __html: `:root {${Object.entries(theme)
+          .map(([key, value]) => `--color-${key}: ${value};`)
+          .join("\n")}}`,
+      }}
+    />,
+    document.head
+  );
 }

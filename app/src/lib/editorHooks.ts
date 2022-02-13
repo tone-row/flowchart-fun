@@ -1,23 +1,39 @@
-import { useMonaco } from "@monaco-editor/react";
-import { MutableRefObject, useCallback, useEffect, useRef } from "react";
+import { OnMount, useMonaco } from "@monaco-editor/react";
+import {
+  MutableRefObject,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+} from "react";
 
-import { defineThemes, useMonacoLanguage } from "./registerLanguage";
+import { AppContext } from "../components/AppContext";
+import {
+  defineThemes,
+  themeNameDark,
+  themeNameLight,
+  useMonacoLanguage,
+} from "./registerLanguage";
 
 export function useEditorOnMount(
-  theme: "light" | "dark",
-  editorRef: MutableRefObject<any>
+  editorRef: MutableRefObject<any>,
+  monacoRef: MutableRefObject<any>
 ) {
+  const { mode } = useContext(AppContext);
   const monaco = useMonaco();
   // Add language
   useMonacoLanguage(monaco);
 
-  return useCallback(
+  return useCallback<OnMount>(
     (editor, monaco) => {
       editorRef.current = editor;
-      defineThemes(monaco, theme);
+      monacoRef.current = monaco;
+      defineThemes(monaco);
+      monacoRef.current?.editor.setTheme(
+        mode === "light" ? themeNameLight : themeNameDark
+      );
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [theme]
+    [editorRef, mode, monacoRef]
   );
 }
 
