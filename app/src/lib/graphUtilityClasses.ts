@@ -1,6 +1,6 @@
 import { Stylesheet } from "cytoscape";
 
-const shapes: cytoscape.Css.Node["shape"][] = [
+export const shapes: cytoscape.Css.Node["shape"][] = [
   "rectangle",
   "roundrectangle",
   "ellipse",
@@ -38,7 +38,7 @@ const circle: Stylesheet = {
 };
 
 /* CSS2 Color Spec */
-const css1colors = {
+export const css2Colors = {
   black: "#000000",
   silver: "#c0c0c0",
   gray: "#808080",
@@ -67,7 +67,7 @@ export const graphUtilityClasses: Stylesheet[] = shapes
   }))
   .concat(circle)
   .concat(
-    Object.entries(css1colors).map<Stylesheet>(([color, value]) => ({
+    Object.entries(css2Colors).map<Stylesheet>(([color, value]) => ({
       selector: `.bg-${color}`,
       style: {
         "background-color": value,
@@ -76,7 +76,7 @@ export const graphUtilityClasses: Stylesheet[] = shapes
     }))
   )
   .concat(
-    Object.entries(css1colors).map<Stylesheet>(([color, value]) => ({
+    Object.entries(css2Colors).map<Stylesheet>(([color, value]) => ({
       selector: `.color-${color}`,
       style: {
         color: value,

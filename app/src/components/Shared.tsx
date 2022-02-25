@@ -67,22 +67,30 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 );
 Input.displayName = "Input";
 
-export const Textarea = forwardRef<HTMLTextAreaElement, TypeProps>(
-  (props, ref) => {
-    return (
-      <Box p={3} rad={1} className={styles.Input}>
-        <Type
-          as="textarea"
-          autoComplete="off"
-          type="text"
-          ref={ref}
-          size={-1}
-          {...props}
-        />
-      </Box>
-    );
-  }
-);
+export const Textarea = forwardRef<
+  HTMLTextAreaElement,
+  TypeProps & { box: BoxProps }
+>(({ box = {}, ...props }, ref) => {
+  const { as = "div", ...boxProps } = box;
+  return (
+    <Box
+      p={3}
+      rad={1}
+      as={as}
+      className={[styles.Input, boxProps.className ?? ""].join(" ")}
+      {...boxProps}
+    >
+      <Type
+        as="textarea"
+        autoComplete="off"
+        type="text"
+        ref={ref}
+        size={-1}
+        {...props}
+      />
+    </Box>
+  );
+});
 Textarea.displayName = "Textarea";
 
 export const Button = forwardRef<

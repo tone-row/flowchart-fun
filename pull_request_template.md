@@ -1,2 +1,2 @@
-[ ] Docs updated
-[ ] QA on mobile
+- [ ] Docs updated
+- [ ] QA on mobile

@@ -176,7 +176,7 @@ function getLineData(text: string, lineNumber: number) {
   };
 }
 
-function isEdge(el: cytoscape.ElementDefinition) {
+export function isEdge(el: cytoscape.ElementDefinition) {
   return "target" in el.data || "source" in el.data;
 }
 
