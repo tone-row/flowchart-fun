@@ -41,7 +41,6 @@ export default function ShareDialog() {
       },
     }
   );
-  const mermaid = useMermaidJS();
 
   return (
     <Dialog
@@ -144,15 +143,7 @@ export default function ShareDialog() {
         <Title>
           <Trans>Export</Trans>
         </Title>
-        <Type size={-1}>Mermaid.JS</Type>
-        <Textarea
-          value={mermaid}
-          readOnly
-          className={styles.CustomTextarea}
-          box={{ p: 1 }}
-          size={-2}
-          rows={Math.min(mermaid.split("\n").length, 20)}
-        />
+        <Mermaid />
       </Column>
     </Dialog>
   );
@@ -263,4 +254,39 @@ function useMermaidJS() {
   const elements = useStoreGraph((store) => store.elements);
   console.log({ layout, elements });
   return toMermaidJS({ layout, elements });
+}
+
+function Mermaid() {
+  const [copied, setCopied] = useState(false);
+  const mermaid = useMermaidJS();
+  return (
+    <>
+      <Type size={-1}>Mermaid.JS</Type>
+      <Textarea
+        value={mermaid}
+        readOnly
+        disabled
+        className={styles.CustomTextarea}
+        box={{ p: 1 }}
+        size={-2}
+        rows={Math.min(mermaid.split("\n").length, 20)}
+      />
+      <Box flow="column" items="center" content="start" gap={2}>
+        <Button
+          self="normal start"
+          onClick={() => {
+            (async () => {
+              await navigator.clipboard.writeText(mermaid);
+              setCopied(true);
+              gaExportChart({ action: "Copy Link", label: "Mermaid" });
+            })();
+          }}
+          className={styles.LinkCopyButton}
+          text={t`Copy`}
+          py={2}
+        />
+        {copied && <Check />}
+      </Box>
+    </>
+  );
 }
