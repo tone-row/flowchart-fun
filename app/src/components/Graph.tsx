@@ -30,6 +30,7 @@ import { useGraphTheme } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
 import { useAnimationSetting, useGetSize } from "../lib/hooks";
+import { StoreGraph, useStoreGraph } from "../lib/store.graph";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
 import { parseText, stripComments } from "../lib/utils";
@@ -70,6 +71,8 @@ const Graph = memo(
 
     const theme = useGraphTheme();
     const getSize = useGetSize(theme);
+    const setLayout = useStoreGraph((store) => store.setLayout);
+    const setElements = useStoreGraph((store) => store.setElements);
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -141,18 +144,29 @@ const Graph = memo(
 
     // Update Graph Nodes
     useEffect(() => {
-      updateGraph(
+      updateGraph({
         cy,
         content,
         startingLineNumber,
-        layout,
+        layoutString: layout,
         errorCatcher,
         setHasError,
         graphInitialized,
         animate,
-        getSize
-      );
-    }, [animate, content, getSize, layout, setHasError, startingLineNumber]);
+        getSize,
+        setLayout,
+        setElements,
+      });
+    }, [
+      animate,
+      content,
+      getSize,
+      layout,
+      setElements,
+      setHasError,
+      setLayout,
+      startingLineNumber,
+    ]);
 
     return (
       <Box
@@ -231,22 +245,36 @@ function initializeGraph(
 }
 
 // Update nodes & edges
-function updateGraph(
-  cy: React.MutableRefObject<cytoscape.Core | undefined>,
-  content: string,
-  startingLineNumber: number,
-  layoutString: string,
-  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
-  setHasError: TAppContext["setHasError"],
-  graphInitialized: React.MutableRefObject<boolean>,
-  animate: boolean,
+function updateGraph({
+  cy,
+  content,
+  startingLineNumber,
+  layoutString,
+  errorCatcher,
+  setHasError,
+  graphInitialized,
+  animate,
+  getSize,
+  setLayout,
+  setElements,
+}: {
+  cy: React.MutableRefObject<cytoscape.Core | undefined>;
+  content: string;
+  startingLineNumber: number;
+  layoutString: string;
+  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
+  setHasError: TAppContext["setHasError"];
+  graphInitialized: React.MutableRefObject<boolean>;
+  animate: boolean;
+  setLayout: StoreGraph["setLayout"];
+  setElements: StoreGraph["setElements"];
   getSize: (label: string) =>
     | {
         width: number;
         height: number;
       }
-    | undefined
-) {
+    | undefined;
+}) {
   if (cy.current) {
     let elements: cytoscape.ElementDefinition[] = [];
     try {
@@ -285,6 +313,10 @@ function updateGraph(
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
       setHasError(false);
+
+      // Update Graph Store
+      setLayout(layout);
+      setElements(elements);
     } catch (e) {
       console.log(e);
       errorCatcher.current?.destroy();
