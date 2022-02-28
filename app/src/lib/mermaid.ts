@@ -27,11 +27,15 @@ export function toMermaidJS({
     [[], []]
   );
 
+  function getSafe(s: string) {
+    return s.replace(/\s+/g, "_");
+  }
+
   for (const node of nodes) {
     const { classes = "", data } = node;
     const { id, label } = data;
     if (!id) continue;
-    const safeId = id.replace(/[^a-zA-Z0-9]/g, "_");
+    const safeId = getSafe(id);
 
     // find shape
     const shape = classes
@@ -50,8 +54,8 @@ export function toMermaidJS({
 
   for (const edge of edges) {
     const { source, target, label } = edge.data;
-    const safeSource = source.replace(/[^a-zA-Z0-9]/g, "_");
-    const safeTarget = target.replace(/[^a-zA-Z0-9]/g, "_");
+    const safeSource = getSafe(source);
+    const safeTarget = getSafe(target);
     lines.push(
       `\t${safeSource} -${label ? `- "${label}" -` : ""}-> ${safeTarget}`
     );
