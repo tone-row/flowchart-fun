@@ -12,10 +12,12 @@ import { useMutation } from "react-query";
 
 import { gaExportChart } from "../lib/analytics";
 import { useTitle } from "../lib/hooks";
+import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic, queryClient, useChart } from "../lib/queries";
+import { useStoreGraph } from "../lib/store.graph";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
-import { Button, Dialog } from "./Shared";
+import { Button, Dialog, Textarea } from "./Shared";
 import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
 
@@ -39,6 +41,7 @@ export default function ShareDialog() {
       },
     }
   );
+
   return (
     <Dialog
       dialogProps={{
@@ -48,54 +51,13 @@ export default function ShareDialog() {
       }}
       innerBoxProps={{
         gap: 6,
-        at: {
-          tablet: {
-            template: "auto / repeat(auto-fill, minmax(200px, 1fr))",
-            gap: 10,
-          },
-        },
       }}
     >
       <Column>
-        {isHosted && (
-          <Column>
-            <Title>
-              <Trans>Public</Trans>
-            </Title>
-            <Box
-              flow="column"
-              content="normal start"
-              items="center stretch"
-              gap={2}
-            >
-              <Type as="label" htmlFor="isPublic" size={-1}>
-                <Trans>Make publicly accessible</Trans>
-              </Type>
-              <input
-                type="checkbox"
-                name="isPublic"
-                id="isPublic"
-                defaultChecked={chart?.is_public}
-                onChange={(e) => {
-                  makePublic.mutate(e.target.checked);
-                }}
-              />
-              {makePublic.isLoading && <Spinner />}
-            </Box>
-            {chart?.is_public && (
-              <Box>
-                <LinkCopy
-                  value={`${window.location.origin}/p/${chart.public_id}`}
-                  title={t`Public`}
-                  rawTitle="Public"
-                />
-              </Box>
-            )}
-          </Column>
-        )}
         <Title>
           <Trans>Download</Trans>
         </Title>
+        <Preview />
         <Box gap={2} flow="column" className={styles.DownloadButtons}>
           <Button
             onClick={() => {
@@ -123,6 +85,43 @@ export default function ShareDialog() {
           />
         </Box>
       </Column>
+      {isHosted && (
+        <Column>
+          <Title>
+            <Trans>Public</Trans>
+          </Title>
+          <Box
+            flow="column"
+            content="normal start"
+            items="center stretch"
+            gap={2}
+          >
+            <Type as="label" htmlFor="isPublic" size={-1}>
+              <Trans>Make publicly accessible</Trans>
+            </Type>
+            <input
+              type="checkbox"
+              name="isPublic"
+              id="isPublic"
+              defaultChecked={chart?.is_public}
+              onChange={(e) => {
+                makePublic.mutate(e.target.checked);
+              }}
+            />
+            {makePublic.isLoading && <Spinner />}
+          </Box>
+          {chart?.is_public && (
+            <Box>
+              <LinkCopy
+                value={`${window.location.origin}/p/${chart.public_id}`}
+                title={t`Public`}
+                rawTitle="Public"
+              />
+            </Box>
+          )}
+        </Column>
+      )}
+
       <Column>
         <Title>
           <Trans>Link</Trans>
@@ -142,26 +141,25 @@ export default function ShareDialog() {
       </Column>
       <Column>
         <Title>
-          <Trans>Preview</Trans>
+          <Trans>Export</Trans>
         </Title>
-        <Preview />
+        <Mermaid />
       </Column>
     </Dialog>
   );
 }
 
 function Title({ children }: { children: ReactNode }) {
-  return <Type>{children}</Type>;
+  return (
+    <Type weight="700" size={1}>
+      {children}
+    </Type>
+  );
 }
 
 function Column({ children }: { children: ReactNode }) {
   return (
-    <Box
-      className={styles.Column}
-      gap={2}
-      at={{ tablet: { gap: 4 } }}
-      content="start normal"
-    >
+    <Box className={styles.Column} gap={1} content="start normal">
       {children}
     </Box>
   );
@@ -248,5 +246,47 @@ function Preview() {
       rad={1}
       style={{ "--bg": bg }}
     />
+  );
+}
+
+function useMermaidJS() {
+  const layout = useStoreGraph((store) => store.layout);
+  const elements = useStoreGraph((store) => store.elements);
+  console.log({ layout, elements });
+  return toMermaidJS({ layout, elements });
+}
+
+function Mermaid() {
+  const [copied, setCopied] = useState(false);
+  const mermaid = useMermaidJS();
+  return (
+    <>
+      <Type size={-1}>Mermaid.JS</Type>
+      <Textarea
+        value={mermaid}
+        readOnly
+        disabled
+        className={styles.CustomTextarea}
+        box={{ p: 1 }}
+        size={-2}
+        rows={Math.min(mermaid.split("\n").length, 20)}
+      />
+      <Box flow="column" items="center" content="start" gap={2}>
+        <Button
+          self="normal start"
+          onClick={() => {
+            (async () => {
+              await navigator.clipboard.writeText(mermaid);
+              setCopied(true);
+              gaExportChart({ action: "Copy Link", label: "Mermaid" });
+            })();
+          }}
+          className={styles.LinkCopyButton}
+          text={t`Copy`}
+          py={2}
+        />
+        {copied && <Check />}
+      </Box>
+    </>
   );
 }

@@ -44,3 +44,9 @@
 .DownloadButtons button {
   min-width: 0;
 }
+
+.CustomTextarea {
+  font-family: monospace;
+  line-height: 1.2;
+  white-space: pre;
+}
