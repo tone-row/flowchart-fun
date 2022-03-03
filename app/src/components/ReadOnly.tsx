@@ -1,4 +1,5 @@
 import Editor, { OnMount } from "@monaco-editor/react";
+import strip from "@tone-row/strip-comments";
 import matter from "gray-matter";
 import { useEffect, useRef, useState } from "react";
 
@@ -34,7 +35,7 @@ function ReadOnly() {
 
   useEditorHover(editorRef, hoverLineNumber);
 
-  const { data: graphOptions } = matter(textToParse, { delimiters });
+  const { data: graphOptions } = matter(strip(textToParse), { delimiters });
 
   return (
     <GraphProvider

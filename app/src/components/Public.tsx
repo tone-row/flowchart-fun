@@ -1,4 +1,5 @@
 import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
+import strip from "@tone-row/strip-comments";
 import matter from "gray-matter";
 import { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -58,7 +59,7 @@ function Public() {
     }
   }, [hoverLineNumber]);
 
-  const { data: graphOptions } = matter(textToParse, { delimiters });
+  const { data: graphOptions } = matter(strip(textToParse), { delimiters });
 
   const loading = useRef(<Loading />);
   const onMount = useEditorOnMount(editorRef, monacoRef);
