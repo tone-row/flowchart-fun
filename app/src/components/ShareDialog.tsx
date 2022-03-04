@@ -252,7 +252,6 @@ function Preview() {
 function useMermaidJS() {
   const layout = useStoreGraph((store) => store.layout);
   const elements = useStoreGraph((store) => store.elements);
-  console.log({ layout, elements });
   return toMermaidJS({ layout, elements });
 }
 
