@@ -32,9 +32,17 @@ export function parseText(
     lineData[lineNumber] = getLineData(lineStr, lineNumber);
     const line = lineData[lineNumber];
     if (line) {
-      const { linkedId, nodeLabel, edgeLabel, indent, id, classes } = line;
-      if (ids.includes(id)) throw new Error(`Duplicate ID: ${id}`);
-      ids.push(id);
+      const {
+        linkedId,
+        nodeLabel,
+        edgeLabel,
+        indent,
+        id: lineId,
+        classes,
+        userProvidedId,
+      } = line;
+      if (ids.includes(lineId)) throw new Error(`Duplicate ID: ${lineId}`);
+      ids.push(lineId);
 
       if (indent) {
         let parent, lineNumberToCheck;
@@ -55,6 +63,13 @@ export function parseText(
 
         // If we found a parent
         if (parent) {
+          // Error if node ID provided AND linked ID provided
+          if (userProvidedId && linkedId) {
+            throw new Error(
+              `Node ID [${lineId}] provided on line ${lineNumber} but target is node "${linkedId}"— [${lineId}] should be applied on the "${linkedId}" line.`
+            );
+          }
+
           const source = parent.id;
           const target = linkedId || line.id;
 
@@ -74,6 +89,12 @@ export function parseText(
               lineNumber: lineNumber + startingLineNumber,
             },
           });
+        } else {
+          if (edgeLabel) {
+            throw new Error(
+              `Edge label found on line ${lineNumber} but no parent found`
+            );
+          }
         }
       } else {
         // No indent
@@ -84,13 +105,18 @@ export function parseText(
             } has an edge label but no indent.`
           );
         }
+        if (linkedId) {
+          throw new Error(
+            `Linked ID "${linkedId}" found on line ${lineNumber} but no parent found`
+          );
+        }
       }
       if (!linkedId) {
         // Check for custom id
         elements.push({
           classes,
           data: {
-            id,
+            id: lineId,
             label: nodeLabel,
             lineNumber: lineNumber + startingLineNumber,
             ...getSize(nodeLabel),
@@ -155,13 +181,10 @@ function getLineData(text: string, lineNumber: number) {
     /^(?<indent>\s*)(\[(?<id>[^.]*)?(?<classes>(\.[_a-zA-Z]*[_a-zA-Z0-9-]*)*?)\])?((?<edgeLabel>.+)[:：] *)?(?<nodeLabel>.+?)?$/;
   // /^(?<indent>\s*)(\[(?<id>.*)\])?((?<edgeLabel>.+)[:：] *)?(?<nodeLabel>.+?)$/;
   const { groups } = text.match(lineRegex) || {};
-  const {
-    nodeLabel = "",
-    edgeLabel = "",
-    indent,
-    id = betterDefaultId(lineNumber),
-    classes,
-  } = groups || {};
+  const { nodeLabel = "", edgeLabel = "", indent, classes } = groups || {};
+  let id = groups?.id;
+  const userProvidedId = !!id;
+  if (!id) id = betterDefaultId(lineNumber);
   const { groups: labelGroups } =
     nodeLabel.match(/^[(（](?<linkedId>.+)[)）]\s*$/) || {};
   const { linkedId } = labelGroups || {};
@@ -173,6 +196,7 @@ function getLineData(text: string, lineNumber: number) {
     classes: classes ? classes.slice(1).replace(/\./gi, " ") : "",
     linkedId:
       typeof linkedId !== "undefined" ? decodeURIComponent(linkedId) : linkedId,
+    userProvidedId,
   };
 }
 
