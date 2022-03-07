@@ -8,6 +8,11 @@ import { useMutation } from "react-query";
 import { useParams } from "react-router";
 import { useDebouncedCallback } from "use-debounce";
 
+import EditorError from "../components/EditorError";
+import GraphProvider from "../components/GraphProvider";
+import Loading from "../components/Loading";
+import Spinner from "../components/Spinner";
+import useGraphOptions from "../components/useGraphOptions";
 import {
   delimiters,
   editorOptions,
@@ -27,12 +32,7 @@ import {
   themeNameLight,
 } from "../lib/registerLanguage";
 import editStyles from "./Edit.module.css";
-import EditorError from "./EditorError";
 import styles from "./EditUserChart.module.css";
-import GraphProvider from "./GraphProvider";
-import Loading from "./Loading";
-import Spinner from "./Spinner";
-import useGraphOptions from "./useGraphOptions";
 
 export default function EditUserChart() {
   const validSponsor = useIsValidSponsor();
