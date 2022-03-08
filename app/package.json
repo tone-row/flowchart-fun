@@ -8,6 +8,7 @@
     "@lingui/react": "^3.8.9",
     "@monaco-editor/react": "^4.0.11",
     "@notionhq/client": "^0.4.11",
+    "@radix-ui/react-radio-group": "^0.1.5",
     "@reach/dialog": "^0.15.0",
     "@reach/tooltip": "^0.16.0",
     "@reach/utils": "^0.16.0",

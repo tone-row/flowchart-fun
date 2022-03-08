@@ -241,9 +241,11 @@ export async function deleteChart({ chartId }: { chartId: number }) {
 export function createSubscription({
   customerId,
   paymentMethodId,
+  subscriptionType,
 }: {
   customerId: string;
   paymentMethodId: string;
+  subscriptionType: "monthly" | "yearly";
 }) {
   return (
     fetch("/api/create-subscription", {
@@ -252,8 +254,9 @@ export function createSubscription({
         "Content-type": "application/json",
       },
       body: JSON.stringify({
-        customerId: customerId,
-        paymentMethodId: paymentMethodId,
+        customerId,
+        paymentMethodId,
+        subscriptionType,
       }),
     })
       .then((response) => {
