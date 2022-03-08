@@ -74,34 +74,36 @@ export function SponsorDashboard() {
         <SectionTitle>
           <Trans>Subscription</Trans>
         </SectionTitle>
-        <Box template="auto / repeat(2, minmax(0, 1fr))" columnGap={6}>
-          <InfoCell>
-            <Trans>Status</Trans>
-          </InfoCell>
-          <InfoCell>{subscription?.status}</InfoCell>
+        <Box gap={2}>
+          <Box>
+            <InfoHeading>
+              <Trans>Status</Trans>
+            </InfoHeading>
+            <InfoCell>{subscription?.status}</InfoCell>
+          </Box>
           {subscription?.current_period_end &&
             !subscription?.cancel_at_period_end &&
             subscription?.status === "active" && (
-              <>
-                <InfoCell>
+              <Box>
+                <InfoHeading>
                   <Trans>Next charge</Trans>
-                </InfoCell>
+                </InfoHeading>
                 <InfoCell>
                   {formatDate(subscription?.current_period_end.toString())}
                 </InfoCell>
-              </>
+              </Box>
             )}
           {!subscription?.cancel_at_period_end &&
             subscription?.created &&
             subscription?.status === "active" && (
-              <>
-                <InfoCell>
+              <Box>
+                <InfoHeading>
                   <Trans>Start</Trans>
-                </InfoCell>
+                </InfoHeading>
                 <InfoCell>
                   {formatRelative(subscription.created.toString())}
                 </InfoCell>
-              </>
+              </Box>
             )}
         </Box>
         {subscription?.cancel_at_period_end && (
@@ -314,6 +316,7 @@ function BecomeASponsor() {
     const { error: createSubscriptionError } = await createSubscription({
       customerId: customer.customerId,
       paymentMethodId: paymentMethod.id,
+      subscriptionType: "monthly", // Need to fix this
     });
     if (createSubscriptionError) throw createSubscriptionError;
     queryClient.resetQueries(["auth"]);
@@ -350,4 +353,12 @@ function BecomeASponsor() {
 
 function InfoCell({ children }: { children: ReactNode }) {
   return <Type className={styles.InfoCell}>{children}</Type>;
+}
+
+function InfoHeading({ children }: { children: ReactNode }) {
+  return (
+    <Type className={styles.InfoHeading} size={-1} color="color-lineNumbers">
+      {children}
+    </Type>
+  );
 }

@@ -1,8 +1,16 @@
 import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_KEY);
 
+const subscriptionTypes = {
+  monthly: process.env.STRIPE_PRICE_ID,
+  yearly: process.env.STRIPE_PRICE_ID_YEARLY,
+};
+
 export default async function handler(req, res) {
   try {
+    const subscriptionType = req.body.subscriptionType ?? "monthly";
+    const price = subscriptionTypes[subscriptionType];
+
     // Attach payment method to customer
     await stripe.paymentMethods.attach(req.body.paymentMethodId, {
       customer: req.body.customerId,
@@ -18,7 +26,7 @@ export default async function handler(req, res) {
     // Create the subscription
     const subscription = await stripe.subscriptions.create({
       customer: req.body.customerId,
-      items: [{ price: process.env.STRIPE_PRICE_ID }],
+      items: [{ price }],
       expand: ["latest_invoice.payment_intent"],
     });
 

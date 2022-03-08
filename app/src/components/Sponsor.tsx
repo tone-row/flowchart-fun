@@ -1,7 +1,8 @@
 import { t, Trans } from "@lingui/macro";
+import * as RadioGroup from "@radix-ui/react-radio-group";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
 import { isError } from "../lib/helpers";
@@ -55,20 +56,32 @@ export default function Sponsor() {
   );
 }
 
+type SignUpFormData = {
+  email: string;
+  subscription: "monthly" | "yearly";
+};
 function SignUpForm() {
   const stripe = useStripe();
   const elements = useElements();
-  const { register, handleSubmit } = useForm<{ email: string }>();
+  const { register, handleSubmit, control } = useForm<SignUpFormData>({
+    defaultValues: { subscription: "monthly", email: "" },
+  });
   const { theme } = useContext(AppContext);
   const [success, setSuccess] = useState(false);
   const create = useMutation(
     "createCustomer",
-    async ({ email }: { email: string }) => {
+    async ({ email, subscription }: SignUpFormData) => {
       if (!stripe || !elements || !supabase) {
         // Stripe.js has not loaded yet. Make sure to disable
         // form submission until Stripe.js has loaded.
         return;
       }
+
+      // Get a reference to a mounted CardElement. Elements knows how
+      // to find your CardElement because there can only ever be one of
+      // each type of element.
+      const cardElement = elements.getElement(CardElement);
+      if (!cardElement) throw new Error("No Card Element Found");
 
       // get/create customer
       const {
@@ -81,12 +94,6 @@ function SignUpForm() {
       if (earlySubscription) {
         throw new Error("Please try logging in.");
       }
-
-      // Get a reference to a mounted CardElement. Elements knows how
-      // to find your CardElement because there can only ever be one of
-      // each type of element.
-      const cardElement = elements.getElement(CardElement);
-      if (!cardElement) throw new Error("No Card Element Found");
 
       // Use your card Element with other Stripe.js APIs
       const { error: createPaymentError, paymentMethod } =
@@ -102,6 +109,7 @@ function SignUpForm() {
       const { error: createSubscriptionError } = await createSubscription({
         customerId: customer.id,
         paymentMethodId: paymentMethod.id,
+        subscriptionType: subscription,
       });
 
       if (createSubscriptionError) throw createSubscriptionError;
@@ -130,7 +138,10 @@ function SignUpForm() {
       as="form"
       gap={2}
       pt={3}
-      onSubmit={handleSubmit((data) => create.mutate(data))}
+      onSubmit={handleSubmit((data) => {
+        console.log(data);
+        // create.mutate(data);
+      })}
     >
       <Input
         className={styles.SponsorFormInput}
@@ -141,6 +152,56 @@ function SignUpForm() {
           setValueAs: (t) => t.toLowerCase(),
         })}
       />
+
+      <Controller
+        render={({ field }) => (
+          <RadioGroup.Root
+            {...field}
+            onValueChange={(value) => field.onChange(value)}
+          >
+            <Box flow="column" gap={2}>
+              {[
+                { label: t`$1 / Month`, value: "monthly" },
+                { label: t`$10 / Year`, value: "yearly" },
+              ].map((el) => (
+                <Box
+                  as={RadioGroup.Item}
+                  key={el.value}
+                  value={el.value}
+                  className={styles.RadioButton}
+                  p={1}
+                  px={2}
+                  rad={2}
+                >
+                  <RadioGroup.Indicator />
+                  <Type size={-1}>{el.label}</Type>
+                </Box>
+              ))}
+            </Box>
+          </RadioGroup.Root>
+        )}
+        name="subscription"
+        control={control}
+        defaultValue="monthly"
+      />
+      {/* <label htmlFor="monthly">
+        <input
+          type="radio"
+          value="monthly"
+          id="monthly"
+          {...register("subscription")}
+        />
+        <Type>$1 / Month</Type>
+      </label>
+      <label htmlFor="yearly">
+        <input
+          type="radio"
+          value="yearly"
+          id="yearly"
+          {...register("subscription")}
+        />
+        <Type>$10 / Year</Type>
+      </label> */}
       <Box p={3} background="palette-white-0" rad={1}>
         <CardElement
           options={{
