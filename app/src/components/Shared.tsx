@@ -18,7 +18,7 @@ export const smallIconSize = 18;
 
 export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {
   return (
-    <Type as={as} weight="400" size={1} {...props}>
+    <Type as={as} weight="700" size={1} {...props}>
       {children}
     </Type>
   );
@@ -26,7 +26,7 @@ export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {
 
 export const Section = ({ as = "section", children, ...props }: BoxProps) => {
   return (
-    <Box gap={2} at={{ tablet: { gap: 5 } }} as={as} {...props}>
+    <Box gap={2} at={{ tablet: { gap: 4 } }} as={as} {...props}>
       {children}
     </Box>
   );

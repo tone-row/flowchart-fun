@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import { formatDistanceStrict, parseISO } from "date-fns";
-import { Check, Copy, Trash } from "phosphor-react";
+import { Check, Copy, Database, Trash } from "phosphor-react";
 import React, {
   Dispatch,
   Fragment,
@@ -118,16 +118,15 @@ function LocalCharts() {
 
   return (
     <Section>
-      <TitleAndSummary
-        title={t`Local Charts`}
-        summary={t`These charts are only available in this browser on this device. Clearing your browser ${localStorage} will erase these.`}
-      />
       {!validCustomer && (
         <Box
           p={2}
           px={3}
           pr={4}
           rad={1}
+          flow="column"
+          items="start normal"
+          gap={3}
           as="button"
           onClick={() => {
             setShowing("sponsor");
@@ -135,7 +134,11 @@ function LocalCharts() {
           }}
           className={styles.CallOut}
         >
-          <Type size={-1}>
+          <Database size={36} />
+          <Type as="span" className={styles.CalloutInner}>
+            <span style={{ fontWeight: 700 }}>
+              <Trans>Hosted Charts</Trans> ~{" "}
+            </span>
             <Trans>
               Sponsor flowchart.fun for $1 a month to access hosted flowcharts
               and the newest styles and features
@@ -143,6 +146,10 @@ function LocalCharts() {
           </Type>
         </Box>
       )}
+      <TitleAndSummary
+        title={t`Local Charts`}
+        summary={t`These charts are only available in this browser on this device. Clearing your browser ${localStorage} will erase these.`}
+      />
       <Section as="form" onSubmit={handleSubmit(onSubmit)}>
         <Box gap={2}>
           <Box template="none / 1fr auto" gap={3}>

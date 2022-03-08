@@ -1,6 +1,11 @@
 import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_KEY);
 
+const validPrices = [
+  process.env.STRIPE_PRICE_ID,
+  process.env.STRIPE_PRICE_ID_YEARLY,
+];
+
 export default async function handler(req, res) {
   try {
     const { data: customers } = await stripe.customers.list({
@@ -11,11 +16,17 @@ export default async function handler(req, res) {
 
     const { data: subscriptions } = await stripe.subscriptions.list({
       customer: customer.id,
-      price: process.env.STRIPE_PRICE_ID,
       status: "all",
     });
 
     let subscription = subscriptions.length ? subscriptions[0] : undefined;
+
+    // check if valid price
+    if (
+      !subscription.items.data.some(({ plan }) => validPrices.includes(plan.id))
+    ) {
+      throw new Error("Subscription ID is not valid");
+    }
 
     res.json({ customerId: customer.id, subscription });
   } catch (error) {

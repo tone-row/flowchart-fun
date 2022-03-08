@@ -1,7 +1,11 @@
 import Editor, { OnMount } from "@monaco-editor/react";
+import strip from "@tone-row/strip-comments";
 import matter from "gray-matter";
 import { useEffect, useRef, useState } from "react";
 
+import EditorError from "../components/EditorError";
+import GraphProvider from "../components/GraphProvider";
+import Loading from "../components/Loading";
 import { delimiters, editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useReadOnlyText } from "../lib/hooks";
@@ -11,9 +15,6 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import EditorError from "./EditorError";
-import GraphProvider from "./GraphProvider";
-import Loading from "./Loading";
 import styles from "./ReadOnly.module.css";
 
 function ReadOnly() {
@@ -34,7 +35,7 @@ function ReadOnly() {
 
   useEditorHover(editorRef, hoverLineNumber);
 
-  const { data: graphOptions } = matter(textToParse, { delimiters });
+  const { data: graphOptions } = matter(strip(textToParse), { delimiters });
 
   return (
     <GraphProvider

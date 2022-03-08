@@ -240,6 +240,25 @@ describe("parseText", () => {
     const getResult = () => parseText(`[hello] hi\n[hello] hi`, getSize);
     expect(getResult).toThrow();
   });
+
+  test("Should throw an error if edge label with no parent", () => {
+    const getResult = () =>
+      parseText(
+        `  [test] hi: (uh oh, this is the right higlighting but)`,
+        getSize
+      );
+    expect(getResult).toThrow();
+  });
+
+  test("Should throw an error for pointer with no indent", () => {
+    const getResult = () => parseText(`(fun)`, getSize);
+    expect(getResult).toThrow();
+  });
+
+  test("Should throw an error on line with linked id", () => {
+    const getResult = () => parseText(`a\n\tb\n\t[bye] for each: (b)`, getSize);
+    expect(getResult).toThrow();
+  });
 });
 
 function nodesOnly(el: cytoscape.ElementDefinition) {

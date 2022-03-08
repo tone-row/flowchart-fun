@@ -3,11 +3,11 @@ import { Route, RouteProps, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
 import Layout from "./Layout";
-const Public = lazy(() => import("./Public"));
-const Edit = lazy(() => import("./Edit"));
-const Help = lazy(() => import("./Help"));
-const EditUserChart = lazy(() => import("./EditUserChart"));
-const ReadOnly = lazy(() => import("./ReadOnly"));
+const Public = lazy(() => import("../pages/Public"));
+const Edit = lazy(() => import("../pages/Edit"));
+const Help = lazy(() => import("../pages/Help"));
+const EditUserChart = lazy(() => import("../pages/EditUserChart"));
+const ReadOnly = lazy(() => import("../pages/ReadOnly"));
 
 export default function Router() {
   usePageViews();

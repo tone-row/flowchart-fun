@@ -13,6 +13,10 @@
 .SponsorBlock {
   background-color: var(--palette-purple-3);
   color: black;
+  border: 1px solid hsla(var(--color-brandHsl), 0.33);
+  box-shadow: 0px 0px 0.3px rgba(0, 0, 0, 0.012),
+    0px 0px 0.9px rgba(0, 0, 0, 0.018), 0px 0px 1.8px rgba(0, 0, 0, 0.022),
+    0px 0px 3.7px rgba(0, 0, 0, 0.028), 0px 0px 10px rgba(0, 0, 0, 0.04);
 }
 
 .SponsorBlock ul {
@@ -44,6 +48,7 @@
   background-color: var(--palette-purple-0);
   border-color: var(--palette-purple-0);
   color: white;
+  font-weight: 700;
 }
 
 .SignUpButton span {
@@ -55,4 +60,16 @@
   background-color: #5062ed;
   border-color: #5062ed;
   color: white;
+}
+
+.RadioButton {
+  background-color: hsla(var(--color-brandHsl), 0.05);
+}
+.RadioButton:focus-visible,
+.RadioButton:hover {
+  background-color: hsla(var(--color-brandHsl), 0.3);
+}
+
+.RadioButton[aria-checked="true"] {
+  background-color: hsla(var(--color-brandHsl), 0.5);
 }
