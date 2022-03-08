@@ -4,6 +4,9 @@ import matter from "gray-matter";
 import { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import { AppContext } from "../components/AppContext";
+import GraphProvider from "../components/GraphProvider";
+import Loading from "../components/Loading";
 import { delimiters, editorOptions } from "../lib/constants";
 import { useEditorOnMount } from "../lib/editorHooks";
 import { usePublicChart } from "../lib/queries";
@@ -13,9 +16,6 @@ import {
   themeNameLight,
   useMonacoLanguage,
 } from "../lib/registerLanguage";
-import { AppContext } from "./AppContext";
-import GraphProvider from "./GraphProvider";
-import Loading from "./Loading";
 import styles from "./ReadOnly.module.css";
 
 function Public() {
