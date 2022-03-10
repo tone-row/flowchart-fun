@@ -32,6 +32,15 @@ To run with full functionality you'll need accounts with vercel, sendgrid, supab
 
 This repository is organized in workspaces. [/app](/app) contains the code for the react application and [/module](/module) contains the code for the **deprecated** [flowchart-fun](https://www.npmjs.com/package/flowchart-fun) npm module.
 
+# Releasing
+
+Documenting so as not to forget!
+
+- Work on feature branches which are merged to `dev`
+- When ready to release update version in /app/package.json and merge directly to `dev`
+- Open pull request from `dev` to `main`
+- Merging pull request should create new github release
+
 ## Contributing
 
 We always welcome contributions! Before opening a pull request with a new feature, consider opening an issue or discussion to gauge support and/or confirm your implementation.
