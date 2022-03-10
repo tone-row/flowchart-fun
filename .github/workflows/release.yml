@@ -1,0 +1,19 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Automatic GitHub Release
+        uses: justincy/github-action-npm-release@2.0.1
+        id: release
+        with:
+          path: "${{ github.workspace }}/app"
