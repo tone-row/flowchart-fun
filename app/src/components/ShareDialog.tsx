@@ -179,6 +179,12 @@ function LinkCopy({
   useEffect(() => {
     if (copied) setTimeout(() => setCopied(false), 3000);
   }, [copied]);
+
+  async function copyText() {
+    await navigator.clipboard.writeText(value);
+    setCopied(true);
+    gaExportChart({ action: "Copy Link", label: rawTitle });
+  }
   return (
     <Box gap={2}>
       <Type size={-1}>{title}</Type>
@@ -193,27 +199,25 @@ function LinkCopy({
           content="center"
           className={styles.LinkCopyLeft}
           self="stretch normal"
+          background={copied ? "palette-green-2" : undefined}
+          rad={2}
+          p={1}
         >
-          <Icon width={15} height={15} />
+          <Icon width={15} height={15} color={copied ? "white" : "black"} />
         </Box>
         <Type
           size={-2}
           as="input"
           type="text"
-          value={value.slice(0, 40)}
+          value={value}
           readOnly
           pl={2}
           className={styles.LinkCopyInput}
+          onFocus={copyText}
         />
         <Box>
           <Button
-            onClick={() => {
-              (async () => {
-                await navigator.clipboard.writeText(value);
-                setCopied(true);
-                gaExportChart({ action: "Copy Link", label: rawTitle });
-              })();
-            }}
+            onClick={copyText}
             className={styles.LinkCopyButton}
             text={t`Copy`}
             py={2}
