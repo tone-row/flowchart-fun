@@ -139,8 +139,7 @@ function SignUpForm() {
       gap={2}
       pt={3}
       onSubmit={handleSubmit((data) => {
-        console.log(data);
-        // create.mutate(data);
+        create.mutate(data);
       })}
     >
       <Input
