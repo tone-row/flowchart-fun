@@ -33,6 +33,7 @@
 
 .SponsorFormInput input {
   font-size: 16px !important;
+  color: black !important;
 }
 
 .SponsorFormInput:focus-within,
