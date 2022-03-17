@@ -4,7 +4,7 @@ const fontFamily = '"Virgil", "Liu Jian Mao Cao"';
 const fontSize = 10;
 const textMaxWidth = 80;
 const backgroundColor = "#ffffff";
-const arrowColor = "#cccccc";
+const arrowColor = "#dddddd";
 const lineHeight = 1.3;
 const padding = "8px";
 
@@ -24,7 +24,19 @@ const excalidraw: Theme = {
   },
   textMaxWidth,
   value: "excalidraw",
-  bg: backgroundColor,
+  bg: `repeating-linear-gradient(
+    0deg,
+    #ffffff80,
+    #ffffff80 30px,
+    #ebebeb80 30px 31px
+  ),
+  repeating-linear-gradient(
+    90deg,
+    #ffffff80,
+    #ffffff80 30px,
+    #ebebeb80 30px 31px
+  )`,
+  safeBg: backgroundColor,
   minWidth: 0,
   minHeight: 0,
   styles: [
@@ -36,7 +48,7 @@ const excalidraw: Theme = {
         "text-valign": "center",
         "text-halign": "center",
         "text-wrap": "wrap",
-        "text-max-width": `${textMaxWidth}px`,
+        "text-max-width": "data(width)",
         color: "#000000",
         "font-size": fontSize,
         shape: "roundrectangle",
@@ -76,6 +88,7 @@ const excalidraw: Theme = {
         "text-rotation": "autorotate",
         "target-arrow-shape": "triangle-backcurve",
         "target-arrow-color": arrowColor,
+        "arrow-scale": 2,
       },
     },
   ],

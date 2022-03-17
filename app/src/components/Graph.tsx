@@ -258,7 +258,10 @@ function updateGraph({
   animate: boolean;
   setLayout: StoreGraph["setLayout"];
   setElements: StoreGraph["setElements"];
-  getSize: (label: string) =>
+  getSize: (
+    label: string,
+    classes: string[]
+  ) =>
     | {
         width: number;
         height: number;

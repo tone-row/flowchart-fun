@@ -1,14 +1,17 @@
 import { Theme } from "./constants";
 
+const textBlue = "#abb2ff";
 const brightBlue = "#818bff";
 const darkBlue = "#626ffe";
 const fontFamily = '"Fira Mono", monospace';
 const lineHeight = 1.4;
 const backgroundColor = "#141418";
+const darkerBackgroundColor = "#060608";
 const textMaxWidth = 128;
 const fontSize = 10;
 const padding = "10px";
 
+const edgeWidth = 1;
 const monospace: Theme = {
   value: "monospace",
   bg: backgroundColor,
@@ -28,26 +31,26 @@ const monospace: Theme = {
         "font-family": fontFamily,
         "font-size": fontSize,
         label: "data(label)",
-        color: brightBlue,
+        color: textBlue,
         "text-valign": "center",
         "text-halign": "center",
+        "text-wrap": "wrap",
+        "text-max-width": "data(width)",
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        "line-height": lineHeight,
+        "text-justification": "left",
         width: "data(width)",
         height: "data(height)",
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,
         "padding-bottom": padding,
-        backgroundColor: backgroundColor,
+        backgroundColor: darkerBackgroundColor,
         "border-color": brightBlue,
-        "border-width": "2px",
+        "border-width": edgeWidth,
         "border-opacity": 1,
-        "text-wrap": "wrap",
-        "text-max-width": `${textMaxWidth}px`,
         shape: "roundrectangle",
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
-        "line-height": lineHeight,
-        "text-justification": "left",
       },
     },
     {
@@ -55,11 +58,11 @@ const monospace: Theme = {
       style: {
         "font-family": fontFamily,
         "curve-style": "segments",
-        "font-size": "10px",
+        "font-size": fontSize,
         opacity: 1,
-        width: "2px",
+        width: edgeWidth,
         label: "data(label)",
-        color: brightBlue,
+        color: textBlue,
         "target-arrow-shape": "triangle",
         "target-arrow-fill": "filled",
         "target-arrow-color": darkBlue,

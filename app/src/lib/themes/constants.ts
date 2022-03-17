@@ -10,6 +10,8 @@ export type Theme = {
   textMaxWidth?: number;
   value: string;
   bg: string;
+  /** Used if regular bg can't be rendered to SVG */
+  safeBg?: string;
   minWidth?: number;
   minHeight?: number;
   styles: Stylesheet[];

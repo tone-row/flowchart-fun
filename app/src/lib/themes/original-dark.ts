@@ -37,7 +37,7 @@ const originalDark: Theme = {
         color: arrowColor,
         label: "data(label)",
         "text-wrap": "wrap",
-        "text-max-width": "80",
+        "text-max-width": "data(width)",
         "text-valign": "center",
         "text-halign": "center",
         "border-width": 1,

@@ -58,11 +58,28 @@ export const css2Colors = {
   aqua: "#00ffff",
 };
 
+function shapeHelper(shape: cytoscape.Css.Node["shape"]): any {
+  switch (shape) {
+    case "star":
+    case "vee":
+    case "triangle":
+      return {
+        width: "30",
+        height: "30",
+        "text-halign": "right",
+        "text-margin-x": "10",
+      };
+    default:
+      return {};
+  }
+}
+
 export const graphUtilityClasses: Stylesheet[] = shapes
   .map<Stylesheet>((shape) => ({
     selector: `.${shape}`,
     style: {
       shape,
+      // ...shapeHelper(shape),
     },
   }))
   .concat(circle)

@@ -6,7 +6,7 @@ const textMaxWidth = 80;
 const backgroundColor = "#ffffff";
 const arrowColor = "#000000";
 const lineHeight = 1.25;
-const padding = "8px";
+const padding = "9px";
 
 const original: Theme = {
   value: "original",
@@ -37,7 +37,7 @@ const original: Theme = {
         color: arrowColor,
         label: "data(label)",
         "text-wrap": "wrap",
-        "text-max-width": `${textMaxWidth}px`,
+        "text-max-width": `data(width)`,
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,
