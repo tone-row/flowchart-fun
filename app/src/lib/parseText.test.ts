@@ -225,10 +225,12 @@ describe("parseText", () => {
   test("should parse classes for nodes", () => {
     const label = `[.one.two.three] a`;
     const result = parseText(label, getSize);
-    expect(result).toContainEqual({
-      classes: "one two three",
-      data: { id: "N14e", label: "a", lineNumber: 1 },
-    });
+    expect(result).toEqual([
+      {
+        classes: "one two three",
+        data: { id: "N14e", label: "a", lineNumber: 1 },
+      },
+    ]);
   });
 
   test("id or class only should create node", () => {
@@ -289,6 +291,22 @@ describe("parseText", () => {
   test("should throw an error if pointer with no leadingSpace", () => {
     const getResult = () => parseText(`fun\n(fun)`, getSize);
     expect(getResult).toThrow();
+  });
+
+  test("should work with chinese colon and parentheses", () => {
+    const result = parseText(`中文\n to：（中文）`, getSize);
+    expect(result).toEqual([
+      { classes: "", data: { id: "N14e", label: "中文", lineNumber: 1 } },
+      {
+        data: {
+          id: "N14e_中文:0",
+          label: "to",
+          lineNumber: 2,
+          source: "N14e",
+          target: "N14e",
+        },
+      },
+    ]);
   });
 });
 
