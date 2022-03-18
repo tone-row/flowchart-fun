@@ -6,6 +6,7 @@ export default function useGraphOptions(text: string): {
   graphOptions: GraphOptionsObject;
   content: string;
   graphOptionsString: string;
+  linesOfYaml: number;
 } {
   try {
     const {
@@ -13,8 +14,20 @@ export default function useGraphOptions(text: string): {
       content,
       matter: graphOptionsString,
     } = matter(text, { delimiters });
-    return { graphOptions, content, graphOptionsString };
+    return {
+      graphOptions,
+      content,
+      graphOptionsString,
+      linesOfYaml: graphOptionsString
+        ? graphOptionsString.split("\n").length + 1
+        : 0,
+    };
   } catch (error) {
-    return { graphOptions: {}, content: text, graphOptionsString: "" };
+    return {
+      graphOptions: {},
+      content: text,
+      graphOptionsString: "",
+      linesOfYaml: 0,
+    };
   }
 }

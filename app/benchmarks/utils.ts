@@ -2,7 +2,7 @@ import Benchmark from "benchmark";
 import { readFileSync, writeFileSync } from "fs";
 import minimist from "minimist";
 
-import { parseText } from "../src/lib/utils";
+import { parseText } from "../src/lib/parseText";
 
 const suite = new Benchmark.Suite();
 const mockGetSize: Parameters<typeof parseText>[1] = () => ({
@@ -18,7 +18,7 @@ const demoText = `This app works by typing
   Create a link directly using the exact label text
     like this: (This app works by typing)
     [custom ID] or
-      by adding an [ID] and referencing that
+      by adding an %5BID%5D and referencing that
       like this: (custom ID) // You can also use single-line comments
 /*
 or

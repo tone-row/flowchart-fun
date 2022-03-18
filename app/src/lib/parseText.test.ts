@@ -1,29 +1,27 @@
 import cytoscape from "cytoscape";
-import { parseText } from "./utils";
+import { parseText } from "./parseText";
+import { encode } from "./utils";
 
-const getSize = jest.fn();
+const getSize = jest.fn(() => ({ width: 0, height: 0 }));
 
 describe("parseText", () => {
-  it("should return an array of elements", () => {
+  test("should return an array of elements", () => {
     const result = parseText("", getSize);
     expect(Array.isArray(result)).toBe(true);
   });
 
-  it("creates one node per line", () => {
+  test("creates one node per line with label", () => {
     const result = parseText("a\nb\nc", getSize);
     expect(result.length).toEqual(3);
   });
 
-  it("should not create a node if a pointer is present", () => {
+  test("should not create a node if no nodeLabel is present", () => {
     const result = parseText("a\n  (a)", getSize);
     expect(result.filter(nodesOnly).length).toEqual(1);
   });
 
-  it("should create an edge between indented nodes", () => {
-    let result = parseText("a\n  (a)", getSize);
-    expect(result.filter(edgesOnly).length).toEqual(1);
-
-    result = parseText("a\n  b", getSize);
+  test("should create an edge between indented nodes", () => {
+    let result = parseText("a\n  b", getSize);
     expect(result.filter(edgesOnly).length).toEqual(1);
     expect(result).toContainEqual({
       data: {
@@ -36,35 +34,42 @@ describe("parseText", () => {
     });
   });
 
-  it("should trim node labels", () => {
+  test("should trim node labels", () => {
     const fakeLabel = `test label`;
     const result = parseText(`${fakeLabel}     `, getSize);
     const node = result.filter(nodesOnly)[0];
     expect(node.data.label).toEqual(fakeLabel);
   });
 
-  it("should parse edge labels", () => {
+  test("should parse edge labels", () => {
     const fakeLabel = `test label`;
     const result = parseText(`a\n  ${fakeLabel}: [a]`, getSize);
     const edge = result.filter(edgesOnly)[0];
     expect(edge.data.label).toEqual(fakeLabel);
   });
 
-  it("should trim edge labels", () => {
+  test("should trim edge labels", () => {
     const fakeLabel = `test label`;
     const result = parseText(`a\n  ${fakeLabel}    : [a]`, getSize);
     const edge = result.filter(edgesOnly)[0];
     expect(edge.data.label).toEqual(fakeLabel);
   });
 
-  it("should allow custom ids", () => {
-    const fakeId = `test id`;
-    const result = parseText(`[${fakeId}] a`, getSize);
-    const node = result[0];
+  test("should allow custom ids", () => {
+    const fakeId = `test-id`;
+    let result = parseText(`[${fakeId}] a`, getSize);
+    let node = result[0];
+    expect(node.data.id).toEqual(fakeId);
+
+    result = parseText(`[${fakeId}.djklksj] a`, getSize);
+    node = result[0];
     expect(node.data.id).toEqual(fakeId);
   });
 
-  it("should generate & increment (slightly encoded) edge ids", () => {
+  test.todo("Things should be removed from label, customId, etc.");
+  test.todo("Throws on multiple id blocks");
+
+  test("should allow for more than one edge to between nodes", () => {
     let result = parseText("a\n  b", getSize);
     const edge = result.filter(edgesOnly)[0];
     expect(edge.data.id).toEqual("N14e_N14f:0");
@@ -73,18 +78,18 @@ describe("parseText", () => {
     expect(edges.length).toEqual(2);
     expect(edges).toContainEqual({
       data: {
-        id: "N14e_2:0",
+        id: "N14e_2:1",
         label: "",
         lineNumber: 3,
         source: "N14e",
-        target: "N14e_N14f:0",
+        target: "N14f",
       },
     });
   });
 
   /* Pointers */
 
-  it("should create edge with line number", () => {
+  test("should create edge with line number", () => {
     const result = parseText("a\nb\n  (1)", getSize);
     expect(result).toContainEqual({
       data: {
@@ -97,7 +102,7 @@ describe("parseText", () => {
     });
   });
 
-  it("should create edge with id", () => {
+  test("should create edge with id", () => {
     const fakeId = `fake id`;
     const result = parseText(`[${fakeId}] a\nb\n  (${fakeId})`, getSize);
     expect(result).toContainEqual({
@@ -111,7 +116,7 @@ describe("parseText", () => {
     });
   });
 
-  it("should create edge with exact label", () => {
+  test("should create edge with exact label", () => {
     const label = `exact label`;
     const result = parseText(`${label}\nb\n  (${label})`, getSize);
     expect(result).toContainEqual({
@@ -125,25 +130,24 @@ describe("parseText", () => {
     });
   });
 
-  it("should ignore empty lines", () => {
+  test("should ignore empty lines", () => {
     const result = parseText("a\n\n\n\n\nb", getSize);
     expect(result.length).toEqual(2);
   });
 
-  it("should add an edge to labels that need to be decoded", () => {
+  test("should add an edge to labels that need to be decoded", () => {
     const originalLabel = `my
     fun
     multiline
     label!(*)$(@*#$)`;
-    const label = encodeURIComponent(originalLabel);
-    const text = `${label}\n  good times: (${label})`;
+    const nodeLabel = encode(originalLabel);
+    const text = `${nodeLabel}\n  good times: (${nodeLabel})`;
     const result = parseText(text, getSize);
-    expect(result.filter(edgesOnly)[0].data.id).toEqual(
-      `N14e_${originalLabel}:0`
-    );
+    // This used to use unencoded labels and I don't know why.
+    expect(result.filter(edgesOnly)[0].data.id).toEqual(`N14e_${nodeLabel}:0`);
   });
 
-  it("should only link-by-label to nodes, not edges", () => {
+  test("should only link-by-label to nodes, not edges", () => {
     const label = `A
     test: B
       (test)
@@ -155,7 +159,7 @@ describe("parseText", () => {
     expect(targets.some((target) => target.includes("_"))).toBe(false);
   });
 
-  it("pointers should grab explicit ID first, then label, then line number", () => {
+  test("pointers should grab explicit ID first, then label, then line number", () => {
     // and the first line has a label 1, second line has id 1
     let testText = `1\n[1] b\nc\n\t(1)`;
     let result = parseText(testText, getSize);
@@ -211,14 +215,14 @@ describe("parseText", () => {
     });
   });
 
-  it("should error labeled edges with no indent", () => {
+  test("should error labeled edges with no indent", () => {
     const label = `A\ntest: B`;
     expect(() => parseText(label, getSize)).toThrow(
-      "Line 2 has an edge label but no indent."
+      'Edge Label without Parent: "test"'
     );
   });
 
-  it("should parse classes for nodes", () => {
+  test("should parse classes for nodes", () => {
     const label = `[.one.two.three] a`;
     const result = parseText(label, getSize);
     expect(result).toContainEqual({
@@ -227,7 +231,7 @@ describe("parseText", () => {
     });
   });
 
-  it("id or class only should create node", () => {
+  test("id or class only should create node", () => {
     const label = `[someId]`;
     const result = parseText(label, getSize);
     expect(result).toContainEqual({
@@ -255,8 +259,35 @@ describe("parseText", () => {
     expect(getResult).toThrow();
   });
 
-  test("Should throw an error on line with linked id", () => {
+  test.skip("Should throw an error on line with linked id", () => {
     const getResult = () => parseText(`a\n\tb\n\t[bye] for each: (b)`, getSize);
+    expect(getResult).toThrow();
+  });
+
+  test("Should work with multiple pointers", () => {
+    const result = parseText(`a\nb\n goes to: (a) (b)`, getSize);
+    expect(result).toContainEqual({
+      data: {
+        id: "N14f_a:0",
+        label: "goes to",
+        lineNumber: 3,
+        source: "N14f",
+        target: "N14e",
+      },
+    });
+    expect(result).toContainEqual({
+      data: {
+        id: "N14f_b:1",
+        label: "goes to",
+        lineNumber: 3,
+        source: "N14f",
+        target: "N14f",
+      },
+    });
+  });
+
+  test("should throw an error if pointer with no leadingSpace", () => {
+    const getResult = () => parseText(`fun\n(fun)`, getSize);
     expect(getResult).toThrow();
   });
 });

@@ -463,8 +463,8 @@ msgstr "콜론 앞의 모든 텍스트는: 레이블을 생성합니다"
 
 #: src/lib/hooks.ts:22
 #: src/lib/queries.ts:151
-msgid "by adding an [ID] and referencing that"
-msgstr "[ID]를 추가하고 참조하여"
+msgid "by adding an %5BID%5D and referencing that"
+msgstr "%5BID%5D를 추가하고 참조하여"
 
 #: src/lib/hooks.ts:27
 #: src/lib/queries.ts:156

@@ -33,9 +33,16 @@ function ReadOnly() {
     );
   }, [mode]);
 
-  useEditorHover(editorRef, hoverLineNumber);
+  const { data: graphOptions, matter: graphOptionsString } = matter(
+    strip(textToParse),
+    { delimiters }
+  );
 
-  const { data: graphOptions } = matter(strip(textToParse), { delimiters });
+  const linesOfYaml = graphOptionsString
+    ? graphOptionsString.split("\n").length + 1
+    : 0;
+
+  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   return (
     <GraphProvider
