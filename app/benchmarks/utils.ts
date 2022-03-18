@@ -2,7 +2,7 @@ import Benchmark from "benchmark";
 import { readFileSync, writeFileSync } from "fs";
 import minimist from "minimist";
 
-import { parseText } from "../src/lib/utils";
+import { parseText } from "../src/lib/parseText";
 
 const suite = new Benchmark.Suite();
 const mockGetSize: Parameters<typeof parseText>[1] = () => ({
