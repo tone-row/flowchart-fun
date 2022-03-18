@@ -18,7 +18,9 @@ export default function useGraphOptions(text: string): {
       graphOptions,
       content,
       graphOptionsString,
-      linesOfYaml: graphOptionsString.split("\n").length + 1,
+      linesOfYaml: graphOptionsString
+        ? graphOptionsString.split("\n").length + 1
+        : 0,
     };
   } catch (error) {
     return {

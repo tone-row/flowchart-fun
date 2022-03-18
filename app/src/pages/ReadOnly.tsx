@@ -38,7 +38,9 @@ function ReadOnly() {
     { delimiters }
   );
 
-  const linesOfYaml = graphOptionsString.split("\n").length + 1;
+  const linesOfYaml = graphOptionsString
+    ? graphOptionsString.split("\n").length + 1
+    : 0;
 
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 

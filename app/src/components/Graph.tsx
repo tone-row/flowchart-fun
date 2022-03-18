@@ -30,7 +30,7 @@ import { useGraphTheme } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
 import { useAnimationSetting, useGetSize } from "../lib/hooks";
-import { parseText as parseText } from "../lib/parseText";
+import { parseText } from "../lib/parseText";
 import { StoreGraph, useStoreGraph } from "../lib/store.graph";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
