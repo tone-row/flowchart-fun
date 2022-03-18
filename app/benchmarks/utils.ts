@@ -18,7 +18,7 @@ const demoText = `This app works by typing
   Create a link directly using the exact label text
     like this: (This app works by typing)
     [custom ID] or
-      by adding an [ID] and referencing that
+      by adding an %5BID%5D and referencing that
       like this: (custom ID) // You can also use single-line comments
 /*
 or

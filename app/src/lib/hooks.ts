@@ -25,7 +25,7 @@ export function useLocalStorageText(
   ${t`Create a link directly using the exact label text`}
     ${t`like this: (This app works by typing)`}
     ${t`[custom ID] or`}
-      ${t`by adding an [ID] and referencing that`}
+      ${t`by adding an %5BID%5D and referencing that`}
         ${t`like this: (custom ID) // You can also use single-line comments`}
 /*
 ${t`or`}

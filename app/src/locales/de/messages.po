@@ -463,8 +463,8 @@ msgstr "Jeder beliebige Text: vor einem Doppelpunkt wird zu einer Beschriftung"
 
 #: src/lib/hooks.ts:22
 #: src/lib/queries.ts:151
-msgid "by adding an [ID] and referencing that"
-msgstr "indem man ein [ID] hinzufügt und darauf verweist"
+msgid "by adding an %5BID%5D and referencing that"
+msgstr "indem man ein %5BID%5D hinzufügt und darauf verweist"
 
 #: src/lib/hooks.ts:27
 #: src/lib/queries.ts:156

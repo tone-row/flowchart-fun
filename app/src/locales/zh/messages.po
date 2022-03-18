@@ -463,8 +463,8 @@ msgstr "任何文本：在冒号前创建一个标签"
 
 #: src/lib/hooks.ts:22
 #: src/lib/queries.ts:151
-msgid "by adding an [ID] and referencing that"
-msgstr "通过添加并引用一个 [ID]"
+msgid "by adding an %5BID%5D and referencing that"
+msgstr "通过添加并引用一个 %5BID%5D"
 
 #: src/lib/hooks.ts:27
 #: src/lib/queries.ts:156
