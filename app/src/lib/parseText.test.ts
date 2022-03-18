@@ -1,11 +1,10 @@
 import cytoscape from "cytoscape";
-// import { parseText, parseText as parseTextOld } from "./utils";
-import { parseText as parseText } from "./parseText";
+import { parseText } from "./parseText";
 import { encode } from "./utils";
 
-const getSize = jest.fn();
+const getSize = jest.fn(() => ({ width: 0, height: 0 }));
 
-describe.only("parseText", () => {
+describe("parseText", () => {
   test("should return an array of elements", () => {
     const result = parseText("", getSize);
     expect(Array.isArray(result)).toBe(true);
@@ -219,7 +218,7 @@ describe.only("parseText", () => {
   test("should error labeled edges with no indent", () => {
     const label = `A\ntest: B`;
     expect(() => parseText(label, getSize)).toThrow(
-      "Edge Label without Parent: 2"
+      'Edge Label without Parent: "test"'
     );
   });
 
@@ -265,13 +264,7 @@ describe.only("parseText", () => {
     expect(getResult).toThrow();
   });
 
-  test("should give nodes a width and height", () => {
-    const result = parseText(`a`, getSize);
-    expect(result[0].data).toHaveProperty("width");
-    expect(result[0].data).toHaveProperty("height");
-  });
-
-  test.only("Should work with multiple pointers", () => {
+  test("Should work with multiple pointers", () => {
     const result = parseText(`a\nb\n goes to: (a) (b)`, getSize);
     expect(result).toContainEqual({
       data: {
@@ -291,6 +284,11 @@ describe.only("parseText", () => {
         target: "N14f",
       },
     });
+  });
+
+  test("should throw an error if pointer with no leadingSpace", () => {
+    const getResult = () => parseText(`fun\n(fun)`, getSize);
+    expect(getResult).toThrow();
   });
 });
 

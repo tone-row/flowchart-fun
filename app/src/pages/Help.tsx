@@ -45,7 +45,7 @@ export default function Help() {
   const monacoRef = useRef<any>();
   const { data: mode } = useAppMode();
   const loading = useRef(<Loading />);
-  const { graphOptions, content } = useGraphOptions(textToParse);
+  const { graphOptions, content, linesOfYaml } = useGraphOptions(textToParse);
   useEffect(() => {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
@@ -76,7 +76,7 @@ export default function Help() {
   );
 
   // Hover
-  useEditorHover(editorRef, hoverLineNumber);
+  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   useEffect(() => {
     window.flowchartFunSetHelpText = setText;

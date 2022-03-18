@@ -35,7 +35,7 @@ export default function Edit() {
   const monacoRef = useRef<any>();
   const { data: mode } = useAppMode();
   const loading = useRef(<Loading />);
-  const { graphOptions, content } = useGraphOptions(textToParse);
+  const { graphOptions, content, linesOfYaml } = useGraphOptions(textToParse);
   useEffect(() => {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
@@ -66,7 +66,7 @@ export default function Edit() {
   );
 
   // Hover
-  useEditorHover(editorRef, hoverLineNumber);
+  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   const onChange = useCallback((value) => setText(value ?? ""), [setText]);
 

@@ -54,6 +54,10 @@ export function parseText(
 
     // Extract Pointers
     const pointers = getPointers(line);
+    if (pointers.length && !parentId) {
+      throw new Error(`Pointers found without parent: ${pointers}`);
+    }
+
     for (const pointer of pointers) {
       line = line.replace(pointer, "");
       const pointsTo = pointer.slice(1, -1);
@@ -78,7 +82,7 @@ export function parseText(
       .reverse();
 
     if (edgeLabel && !parentId)
-      throw new Error(`Edge Label without Parent: ${line}`);
+      throw new Error(`Edge Label without Parent: "${edgeLabel}"`);
 
     if (nodeLabel || userSuppliedId) {
       // Add Element for Node
