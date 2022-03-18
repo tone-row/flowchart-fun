@@ -7,7 +7,6 @@ const fontFamily = '"Fira Mono", monospace';
 const lineHeight = 1.4;
 const backgroundColor = "#141418";
 const darkerBackgroundColor = "#060608";
-const textMaxWidth = 128;
 const fontSize = 10;
 const padding = "10px";
 
@@ -17,7 +16,6 @@ const monospace: Theme = {
   bg: backgroundColor,
   minHeight: 0,
   minWidth: 0,
-  textMaxWidth,
   font: {
     fontFamily,
     files: [{ url: "FiraMono-Regular.woff2", name: "Fira Mono" }],

@@ -2,16 +2,14 @@ import { defaultFontFamily, Theme } from "./constants";
 
 const fontFamily = defaultFontFamily;
 const fontSize = 10;
-const textMaxWidth = 80;
 const backgroundColor = "#ffffff";
 const arrowColor = "#000000";
 const lineHeight = 1.25;
-const padding = "9px";
+const padding = "11px";
 
 const original: Theme = {
   value: "original",
   bg: backgroundColor,
-  textMaxWidth,
   minHeight: 4,
   minWidth: 4,
   font: {

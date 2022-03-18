@@ -58,30 +58,28 @@ export function useIsReadOnly() {
   );
 }
 
-const base = 12.5;
-const defaultMinWidth = 8;
-const defaultMinHeight = 6;
-
 // returns getSize based on theme to determine node size
 export function useGetSize(theme: Theme) {
   return useCallback(
     (label: string, classes: string[]) => {
-      const { minWidth = defaultMinWidth, minHeight = defaultMinHeight } =
-        theme;
       const resizer = document.getElementById("resizer");
       if (resizer) {
         const text = preventCyRenderingBugs(label);
         // We have to write styles imperatively otherwise we get race conditions
-        const style = [
-          ["max-width", `${getWidth(text.length)}px`],
-          ["font-size", `${theme.font?.fontSize}px`],
-          ["line-height", theme.font?.lineHeight],
-          ["font-family", theme.font?.fontFamily],
-        ]
-          .filter(([_, b]) => b)
-          .map(([k, v]) => `${k}: ${v}`)
-          .join(";");
-        resizer.setAttribute("style", style);
+        const style = {
+          "max-width": `${getWidth(text.length)}px`,
+          "font-size": `${
+            theme.font?.fontSize ? 1.27 * theme.font.fontSize : 10
+          }px`,
+          "line-height": theme.font?.lineHeight,
+          "font-family": theme.font?.fontFamily,
+        };
+        resizer.setAttribute(
+          "style",
+          `${Object.entries(style)
+            .map(([key, value]) => `${key}: ${value};`)
+            .join(" ")}`
+        );
         // TODO: Widen boxes as box height climbs
         resizer.innerHTML = text;
 
@@ -94,7 +92,9 @@ export function useGetSize(theme: Theme) {
           );
           const finalSize = {
             // width: Math.max(minWidth * base, width),
-            width: resizer.clientWidth,
+            // width: resizer.clientWidth,
+            width,
+
             // height: Math.max(minHeight * base, resizer.clientHeight),
             height: resizer.clientHeight,
           };

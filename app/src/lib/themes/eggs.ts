@@ -2,7 +2,6 @@ import { Theme } from "./constants";
 
 const fontFamily = "Gaegu";
 const fontSize = 13;
-const textMaxWidth = 80;
 const backgroundColor = "#FFF14B";
 const arrowColor = "#000000";
 const lineHeight = 1;
@@ -12,7 +11,6 @@ const borderWidth = 1.5;
 const eggs: Theme = {
   value: "eggs",
   bg: backgroundColor,
-  textMaxWidth,
   minWidth: 0,
   minHeight: 0,
   font: {

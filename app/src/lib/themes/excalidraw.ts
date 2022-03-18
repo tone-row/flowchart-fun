@@ -2,7 +2,6 @@ import { Theme } from "./constants";
 
 const fontFamily = '"Virgil", "Liu Jian Mao Cao"';
 const fontSize = 10;
-const textMaxWidth = 80;
 const backgroundColor = "#ffffff";
 const arrowColor = "#dddddd";
 const lineHeight = 1.3;
@@ -22,7 +21,6 @@ const excalidraw: Theme = {
     ],
     lineHeight: lineHeight,
   },
-  textMaxWidth,
   value: "excalidraw",
   bg: `repeating-linear-gradient(
     0deg,
