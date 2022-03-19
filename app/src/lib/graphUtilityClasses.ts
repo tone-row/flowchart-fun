@@ -63,7 +63,6 @@ export const graphUtilityClasses: Stylesheet[] = shapes
     selector: `.${shape}`,
     style: {
       shape,
-      // ...shapeHelper(shape),
     },
   }))
   .concat(circle)

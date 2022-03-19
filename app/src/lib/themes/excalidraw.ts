@@ -39,6 +39,15 @@ const excalidraw: Theme = {
   minHeight: 0,
   styles: [
     {
+      selector: "node[label!='']",
+      style: {
+        width: "data(shapeWidth)",
+        height: "data(shapeHeight)",
+        "text-margin-y": "data(textMarginY)" as any,
+        "text-margin-x": "data(textMarginX)" as any,
+      },
+    },
+    {
       selector: "node",
       style: {
         "font-family": fontFamily,
@@ -50,8 +59,6 @@ const excalidraw: Theme = {
         color: "#000000",
         "font-size": fontSize,
         shape: "roundrectangle",
-        width: "data(width)", // width and height need to be taken from current font
-        height: "data(height)",
         backgroundColor: backgroundColor,
         "background-opacity": 0,
         "padding-left": padding,

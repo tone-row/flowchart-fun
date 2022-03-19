@@ -21,6 +21,15 @@ const eggs: Theme = {
   },
   styles: [
     {
+      selector: "node[label!='']",
+      style: {
+        width: "data(shapeWidth)",
+        height: "data(shapeHeight)",
+        "text-margin-y": "data(textMarginY)" as any,
+        "text-margin-x": "data(textMarginX)" as any,
+      },
+    },
+    {
       selector: "node",
       style: {
         "font-family": fontFamily,
@@ -32,10 +41,7 @@ const eggs: Theme = {
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
         "text-valign": "center",
-        // "border-width": borderWidth,
         shape: "ellipse",
-        width: "data(width)",
-        height: "data(height)",
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,

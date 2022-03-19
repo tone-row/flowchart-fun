@@ -21,8 +21,10 @@ const original: Theme = {
     {
       selector: "node[label!='']",
       style: {
-        width: "data(width)",
-        height: "data(height)",
+        width: "data(shapeWidth)",
+        height: "data(shapeHeight)",
+        "text-margin-y": "data(textMarginY)" as any,
+        "text-margin-x": "data(textMarginX)" as any,
       },
     },
     {

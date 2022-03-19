@@ -4,15 +4,7 @@ import { decode } from "./utils";
 
 export function parseText(
   text: string,
-  getSize: (
-    label: string,
-    classes: string[]
-  ) =>
-    | {
-        width: number;
-        height: number;
-      }
-    | undefined
+  getSize: (label: string, classes: string[]) => Record<string, any> | undefined
 ): cytoscape.ElementDefinition[] {
   const lines = text.split("\n");
 
@@ -95,7 +87,7 @@ export function parseText(
           id,
           label: decode(nodeLabel),
           lineNumber,
-          ...getSize(nodeLabel, classes.split(" ")),
+          ...getSize(nodeLabel, classes.split(".")),
         },
       });
       if (nodeIds.includes(id)) throw new Error(`Duplicate ID: ${id}`);

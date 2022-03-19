@@ -1,13 +1,11 @@
-/* eslint-disable no-empty */
 import { t } from "@lingui/macro";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { Dispatch, useCallback, useContext } from "react";
+import { Dispatch, useContext } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
 import { useChart } from "./queries";
-import { Theme } from "./themes/constants";
 
 export function useAnimationSetting() {
   const { search } = useLocation();
@@ -55,127 +53,6 @@ export function useIsReadOnly() {
     path === "/f" ||
     path === "/c/:graphText?" ||
     path === "/r/:graphText?"
-  );
-}
-
-// returns getSize based on theme to determine node size
-export function useGetSize(theme: Theme) {
-  return useCallback(
-    (label: string, classes: string[]) => {
-      const resizer = document.getElementById("resizer");
-      if (resizer) {
-        const text = preventCyRenderingBugs(label);
-        // We have to write styles imperatively otherwise we get race conditions
-        const style = {
-          "max-width": `${getWidth(text.length)}px`,
-          "font-size": `${
-            theme.font?.fontSize ? 1.27 * theme.font.fontSize : 10
-          }px`,
-          "line-height": theme.font?.lineHeight,
-          "font-family": theme.font?.fontFamily,
-        };
-        resizer.setAttribute(
-          "style",
-          `${Object.entries(style)
-            .map(([key, value]) => `${key}: ${value};`)
-            .join(" ")}`
-        );
-        // TODO: Widen boxes as box height climbs
-        resizer.innerHTML = text;
-
-        if (resizer.firstChild) {
-          const range = document.createRange();
-          range.selectNodeContents(resizer.firstChild);
-          const width = Array.from(range.getClientRects()).reduce(
-            (max, { width }) => (width > max ? width : max),
-            0
-          );
-          const finalSize = {
-            // width: Math.max(minWidth * base, width),
-            // width: resizer.clientWidth,
-            width,
-
-            // height: Math.max(minHeight * base, resizer.clientHeight),
-            height: resizer.clientHeight,
-          };
-
-          if (classes.includes("rectangle")) {
-          }
-          if (classes.includes("roundrectangle")) {
-          }
-          if (classes.includes("ellipse")) {
-          }
-          if (classes.includes("triangle")) {
-          }
-          if (classes.includes("pentagon")) {
-          }
-          if (classes.includes("hexagon")) {
-          }
-          if (classes.includes("heptagon")) {
-          }
-          if (classes.includes("octagon")) {
-          }
-          if (classes.includes("star")) {
-            finalSize.width = finalSize.width * 2.25;
-            finalSize.height = finalSize.height * 2.5;
-          }
-          if (classes.includes("barrel")) {
-          }
-          if (classes.includes("diamond")) {
-          }
-          if (classes.includes("vee")) {
-          }
-          if (classes.includes("rhomboid")) {
-          }
-          if (classes.includes("polygon")) {
-          }
-          if (classes.includes("tag")) {
-          }
-          if (classes.includes("round-rectangle")) {
-          }
-          if (classes.includes("round-triangle")) {
-          }
-          if (classes.includes("round-diamond")) {
-          }
-          if (classes.includes("round-pentagon")) {
-          }
-          if (classes.includes("round-hexagon")) {
-          }
-          if (classes.includes("round-heptagon")) {
-          }
-          if (classes.includes("round-octagon")) {
-          }
-          if (classes.includes("round-tag")) {
-          }
-          if (classes.includes("cut-rectangle")) {
-          }
-          if (classes.includes("bottom-round-rectangle")) {
-          }
-          if (classes.includes("concave-hexagon")) {
-          }
-
-          return finalSize;
-        }
-      }
-      return undefined;
-    },
-    [theme]
-  );
-}
-
-const A = -38.614819;
-const B = 33.8993;
-function getWidth(characters: number) {
-  return Math.floor(A + B * Math.log(characters));
-}
-
-function preventCyRenderingBugs(str: string) {
-  return (
-    str
-      // prevent break on hypen
-      .replace(/-/gm, "&#x2011;")
-      // prevent break on chinese comma
-      .replace(/，/gm, "&#x2011;")
   );
 }
 
