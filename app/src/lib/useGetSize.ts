@@ -114,6 +114,9 @@ export function useGetSize(theme: Theme) {
 
 const A = -38.614819;
 const B = 33.8993;
+/**
+ * Grow text width based on number of characters
+ */
 export function getWidth(characters: number) {
   return Math.floor(A + B * Math.log(characters));
 }
