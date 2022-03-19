@@ -1,10 +1,11 @@
 import cytoscape from "cytoscape";
 
+import { TGetSize } from "./useGetSize";
 import { decode } from "./utils";
 
 export function parseText(
   text: string,
-  getSize: (label: string, classes: string[]) => Record<string, any> | undefined
+  getSize: TGetSize
 ): cytoscape.ElementDefinition[] {
   const lines = text.split("\n");
 
