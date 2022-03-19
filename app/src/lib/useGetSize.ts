@@ -39,9 +39,10 @@ export function useGetSize(theme: Theme) {
           const finalSize: Record<string, any> = {
             width,
             shapeWidth: width,
-
             height: resizer.clientHeight,
             shapeHeight: resizer.clientHeight,
+            textMarginY: 0,
+            textMarginX: 0,
           };
 
           if (classes.includes("circle")) {
