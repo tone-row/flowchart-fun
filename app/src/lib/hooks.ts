@@ -1,12 +1,11 @@
 import { t } from "@lingui/macro";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { Dispatch, useCallback, useContext } from "react";
+import { Dispatch, useContext } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
 import { useChart } from "./queries";
-import { Theme } from "./themes/constants";
 
 export function useAnimationSetting() {
   const { search } = useLocation();
@@ -54,61 +53,6 @@ export function useIsReadOnly() {
     path === "/f" ||
     path === "/c/:graphText?" ||
     path === "/r/:graphText?"
-  );
-}
-
-const base = 12.5;
-const defaultMinWidth = 8;
-const defaultMinHeight = 6;
-
-// returns getSize based on theme to determine node size
-export function useGetSize(theme: Theme) {
-  return useCallback(
-    (label: string) => {
-      const { minWidth = defaultMinWidth, minHeight = defaultMinHeight } =
-        theme;
-      const resizer = document.getElementById("resizer");
-      if (resizer) {
-        // We have to write styles imperatively otherwise we get race conditions
-        const style = [
-          ["max-width", `${theme.textMaxWidth}px`],
-          ["font-size", `${theme.font?.fontSize}px`],
-          ["line-height", theme.font?.lineHeight],
-          ["font-family", theme.font?.fontFamily],
-        ]
-          .filter(([_, b]) => b)
-          .map(([k, v]) => `${k}: ${v}`)
-          .join(";");
-        resizer.setAttribute("style", style);
-        // TODO: Widen boxes as box height climbs
-        resizer.innerHTML = preventCyRenderingBugs(label);
-        if (resizer.firstChild) {
-          const range = document.createRange();
-          range.selectNodeContents(resizer.firstChild);
-          const width = Array.from(range.getClientRects()).reduce(
-            (max, { width }) => (width > max ? width : max),
-            0
-          );
-          const finalSize = {
-            width: Math.max(minWidth * base, width),
-            height: Math.max(minHeight * base, resizer.clientHeight),
-          };
-          return finalSize;
-        }
-      }
-      return undefined;
-    },
-    [theme]
-  );
-}
-
-function preventCyRenderingBugs(str: string) {
-  return (
-    str
-      // prevent break on hypen
-      .replace(/-/gm, "&#x2011;")
-      // prevent break on chinese comma
-      .replace(/，/gm, "&#x2011;")
   );
 }
 

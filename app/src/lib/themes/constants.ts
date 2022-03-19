@@ -1,15 +1,16 @@
 import { Stylesheet } from "cytoscape";
 
 export type Theme = {
-  font?: {
+  font: {
     files?: { name: string; url: string; unicodeRange?: string }[];
     fontFamily: string;
-    lineHeight?: number;
-    fontSize?: number;
+    lineHeight: number;
+    fontSize: number;
   };
-  textMaxWidth?: number;
   value: string;
   bg: string;
+  /** Used if regular bg can't be rendered to SVG */
+  safeBg?: string;
   minWidth?: number;
   minHeight?: number;
   styles: Stylesheet[];

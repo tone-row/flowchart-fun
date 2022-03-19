@@ -1,19 +1,11 @@
 import cytoscape from "cytoscape";
 
+import { TGetSize } from "./useGetSize";
 import { decode } from "./utils";
 
 export function parseText(
   text: string,
-  getSize: (
-    label: string,
-    minWidth?: number,
-    minHeight?: number
-  ) =>
-    | {
-        width: number;
-        height: number;
-      }
-    | undefined
+  getSize: TGetSize
 ): cytoscape.ElementDefinition[] {
   const lines = text.split("\n");
 
@@ -75,11 +67,15 @@ export function parseText(
     }
 
     // Label Text
-    const [nodeLabel = "", edgeLabel = ""] = line
-      .split(/:(.+)/)
-      .filter(Boolean)
-      .map((s) => s.trim())
-      .reverse();
+    const labelSeparator = /[:：]/.exec(line);
+    let nodeLabel = "",
+      edgeLabel = "";
+    if (labelSeparator) {
+      edgeLabel = line.slice(0, labelSeparator.index).trim();
+      nodeLabel = line.slice(labelSeparator.index + 1).trim();
+    } else {
+      nodeLabel = line.trim();
+    }
 
     if (edgeLabel && !parentId)
       throw new Error(`Edge Label without Parent: "${edgeLabel}"`);
@@ -92,7 +88,7 @@ export function parseText(
           id,
           label: decode(nodeLabel),
           lineNumber,
-          ...getSize(nodeLabel),
+          ...getSize(nodeLabel, classes.split(".")),
         },
       });
       if (nodeIds.includes(id)) throw new Error(`Duplicate ID: ${id}`);

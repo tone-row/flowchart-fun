@@ -21,7 +21,7 @@ export default function useDownloadHandlers(
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const filename = workspace || "flowchart";
   const graphTheme = useGraphTheme();
-  const { bg } = graphTheme;
+  const bg = graphTheme.safeBg ?? graphTheme.bg;
   window.flowchartFunGetSVG = async () => {
     if (!cy.current) throw new Error("Cytoscape not initialized");
 
@@ -139,7 +139,7 @@ export default function useDownloadHandlers(
   }, [bg]);
 
   const getGraphThemeBG = useCallback(() => {
-    return graphTheme.bg;
+    return graphTheme.safeBg ?? graphTheme.bg;
   }, [graphTheme]);
 
   useEffect(() => {

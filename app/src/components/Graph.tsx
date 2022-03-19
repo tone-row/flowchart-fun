@@ -29,11 +29,12 @@ import {
 import { useGraphTheme } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
-import { useAnimationSetting, useGetSize } from "../lib/hooks";
+import { useAnimationSetting } from "../lib/hooks";
 import { parseText } from "../lib/parseText";
 import { StoreGraph, useStoreGraph } from "../lib/store.graph";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
+import { TGetSize, useGetSize } from "../lib/useGetSize";
 import { stripComments } from "../lib/utils";
 import { Box } from "../slang";
 import { AppContext, TAppContext } from "./AppContext";
@@ -258,12 +259,7 @@ function updateGraph({
   animate: boolean;
   setLayout: StoreGraph["setLayout"];
   setElements: StoreGraph["setElements"];
-  getSize: (label: string) =>
-    | {
-        width: number;
-        height: number;
-      }
-    | undefined;
+  getSize: TGetSize;
 }) {
   if (cy.current) {
     let elements: cytoscape.ElementDefinition[] = [];
