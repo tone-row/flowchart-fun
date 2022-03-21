@@ -50,20 +50,14 @@ function registerLanguage(monaco: Monaco) {
           regex: "^~~~$",
           action: { token: "meta.embedded.block", next: "@yaml" },
         },
-        { regex: /^\s+/, action: { token: "", next: "@child" } },
         { regex: /\/\*/, action: { token: "comment", next: "@comment" } },
-        [/\[[\w\s.-]+\]/, "nodeIdAndClass"],
-        [/\/\/.*/, "comment"],
-      ],
-      child: [
-        [/\[[\s\w.-]+\]*/, "nodeIdAndClass"],
         [/[\w\s]+[:：]\s*/, "keyword.operator.assignment"],
-        [/[(（][^(（)）]+[)）]$/, "support.function"],
-        { regex: /\/\*/, action: { token: "comment", next: "@comment" } },
+        [/\[[\s\w.-]+\]*/, "nodeIdAndClass"],
+        [/[(（][^(（)）]+[)）]/, "support.function"],
         [/\/\/.*/, "comment"],
       ],
       comment: [
-        ["\\*/", "comment", "@pop"],
+        [/[\s\S]*\*\//gm, "comment", "@pop"],
         [".*", "comment"],
       ],
       yaml: [

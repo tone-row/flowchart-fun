@@ -2,16 +2,14 @@ import { defaultFontFamily, Theme } from "./constants";
 
 const fontFamily = defaultFontFamily;
 const fontSize = 10;
-const textMaxWidth = 80;
 const backgroundColor = "#0f0f0f";
 const arrowColor = "#ffffff";
 const lineHeight = 1.25;
-const padding = "8px";
+const padding = "11px";
 
 const originalDark: Theme = {
   value: "original-dark",
   bg: backgroundColor,
-  textMaxWidth,
   minHeight: 4,
   minWidth: 4,
   font: {
@@ -23,8 +21,10 @@ const originalDark: Theme = {
     {
       selector: "node[label!='']",
       style: {
-        width: "data(width)",
-        height: "data(height)",
+        width: "data(shapeWidth)",
+        height: "data(shapeHeight)",
+        "text-margin-y": "data(textMarginY)" as any,
+        "text-margin-x": "data(textMarginX)" as any,
       },
     },
     {
@@ -37,7 +37,7 @@ const originalDark: Theme = {
         color: arrowColor,
         label: "data(label)",
         "text-wrap": "wrap",
-        "text-max-width": "80",
+        "text-max-width": "data(width)",
         "text-valign": "center",
         "text-halign": "center",
         "border-width": 1,

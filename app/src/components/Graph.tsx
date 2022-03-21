@@ -29,11 +29,13 @@ import {
 import { useGraphTheme } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
-import { useAnimationSetting, useGetSize } from "../lib/hooks";
+import { useAnimationSetting } from "../lib/hooks";
+import { parseText } from "../lib/parseText";
 import { StoreGraph, useStoreGraph } from "../lib/store.graph";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
-import { parseText, stripComments } from "../lib/utils";
+import { TGetSize, useGetSize } from "../lib/useGetSize";
+import { stripComments } from "../lib/utils";
 import { Box } from "../slang";
 import { AppContext, TAppContext } from "./AppContext";
 import styles from "./Graph.module.css";
@@ -107,26 +109,19 @@ const Graph = memo(
 
     const lastValues = useRef<{
       content: string;
-      startingLineNumber: number;
       layout: string;
       userStyle: string;
-    }>({ content: "", startingLineNumber: 0, layout: "", userStyle: "" });
+    }>({ content: "", layout: "", userStyle: "" });
 
-    const { content, startingLineNumber, layout, userStyle } = useMemo(() => {
+    const { content, layout, userStyle } = useMemo(() => {
       try {
-        const { data, content, matter } = frontmatter(
-          stripComments(textToParse),
-          {
-            delimiters,
-          }
-        );
+        const { data, content } = frontmatter(stripComments(textToParse), {
+          delimiters,
+        });
         const { layout = {}, style: userStyle = [] } =
           data as GraphOptionsObject;
-        const startingLineNumber =
-          !matter || matter === "" ? 0 : matter.split("\n").length + 1;
         const values = {
           content,
-          startingLineNumber,
           layout: JSON.stringify(layout),
           userStyle: JSON.stringify(userStyle),
         };
@@ -147,7 +142,6 @@ const Graph = memo(
       updateGraph({
         cy,
         content,
-        startingLineNumber,
         layoutString: layout,
         errorCatcher,
         setHasError,
@@ -165,7 +159,6 @@ const Graph = memo(
       setElements,
       setHasError,
       setLayout,
-      startingLineNumber,
     ]);
 
     return (
@@ -248,7 +241,6 @@ function initializeGraph(
 function updateGraph({
   cy,
   content,
-  startingLineNumber,
   layoutString,
   errorCatcher,
   setHasError,
@@ -260,7 +252,6 @@ function updateGraph({
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   content: string;
-  startingLineNumber: number;
   layoutString: string;
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
   setHasError: TAppContext["setHasError"];
@@ -268,12 +259,7 @@ function updateGraph({
   animate: boolean;
   setLayout: StoreGraph["setLayout"];
   setElements: StoreGraph["setElements"];
-  getSize: (label: string) =>
-    | {
-        width: number;
-        height: number;
-      }
-    | undefined;
+  getSize: TGetSize;
 }) {
   if (cy.current) {
     let elements: cytoscape.ElementDefinition[] = [];
@@ -281,7 +267,7 @@ function updateGraph({
       const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
 
       // Parse
-      elements = parseText(content, getSize, startingLineNumber);
+      elements = parseText(content, getSize);
 
       // Test Error First
       errorCatcher.current?.json({ elements });

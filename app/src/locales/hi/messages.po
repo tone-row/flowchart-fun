@@ -463,8 +463,8 @@ msgstr "कोई भी टेक्स्ट: कॉलन से पहले
 
 #: src/lib/hooks.ts:22
 #: src/lib/queries.ts:151
-msgid "by adding an [ID] and referencing that"
-msgstr "एक [ID] जोड़कर संदर्भित है और उस"
+msgid "by adding an %5BID%5D and referencing that"
+msgstr "एक %5BID%5D जोड़कर संदर्भित है और उस"
 
 #: src/lib/hooks.ts:27
 #: src/lib/queries.ts:156

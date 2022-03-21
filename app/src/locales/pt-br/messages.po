@@ -463,8 +463,8 @@ msgstr "qualquer texto: antes de dois pontos cria uma etiqueta"
 
 #: src/lib/hooks.ts:22
 #: src/lib/queries.ts:151
-msgid "by adding an [ID] and referencing that"
-msgstr "adicionando uma [ID] e referenciando esta"
+msgid "by adding an %5BID%5D and referencing that"
+msgstr "adicionando uma %5BID%5D e referenciando esta"
 
 #: src/lib/hooks.ts:27
 #: src/lib/queries.ts:156

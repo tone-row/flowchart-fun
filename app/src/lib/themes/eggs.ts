@@ -2,7 +2,6 @@ import { Theme } from "./constants";
 
 const fontFamily = "Gaegu";
 const fontSize = 13;
-const textMaxWidth = 80;
 const backgroundColor = "#FFF14B";
 const arrowColor = "#000000";
 const lineHeight = 1;
@@ -12,7 +11,6 @@ const borderWidth = 1.5;
 const eggs: Theme = {
   value: "eggs",
   bg: backgroundColor,
-  textMaxWidth,
   minWidth: 0,
   minHeight: 0,
   font: {
@@ -23,6 +21,15 @@ const eggs: Theme = {
   },
   styles: [
     {
+      selector: "node[label!='']",
+      style: {
+        width: "data(shapeWidth)",
+        height: "data(shapeHeight)",
+        "text-margin-y": "data(textMarginY)" as any,
+        "text-margin-x": "data(textMarginX)" as any,
+      },
+    },
+    {
       selector: "node",
       style: {
         "font-family": fontFamily,
@@ -32,12 +39,9 @@ const eggs: Theme = {
         color: arrowColor,
         label: "data(label)",
         "text-wrap": "wrap",
-        "text-max-width": `${textMaxWidth}px`,
+        "text-max-width": "data(width)",
         "text-valign": "center",
-        // "border-width": borderWidth,
         shape: "ellipse",
-        width: "data(width)",
-        height: "data(width)",
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,

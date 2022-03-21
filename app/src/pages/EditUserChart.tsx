@@ -50,7 +50,7 @@ export default function EditUserChart() {
   const monacoRef = useRef<any>();
   const { data: mode } = useAppMode();
   const loading = useRef(<Loading />);
-  const { graphOptions, content } = useGraphOptions(textToParse);
+  const { graphOptions, content, linesOfYaml } = useGraphOptions(textToParse);
 
   const { mutate, isLoading } = useMutation((currentText: string) =>
     updateChartText(currentText, id)
@@ -116,7 +116,7 @@ export default function EditUserChart() {
   );
 
   // Hover
-  useEditorHover(editorRef, hoverLineNumber);
+  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const onChange = useCallback((value) => setText(value ?? ""), []);
