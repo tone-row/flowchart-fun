@@ -75,6 +75,7 @@ const Graph = memo(
     const getSize = useGetSize(theme);
     const setLayout = useStoreGraph((store) => store.setLayout);
     const setElements = useStoreGraph((store) => store.setElements);
+    const runLayout = useStoreGraph((store) => store.runLayout);
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -150,12 +151,14 @@ const Graph = memo(
         getSize,
         setLayout,
         setElements,
+        runLayout,
       });
     }, [
       animate,
       content,
       getSize,
       layout,
+      runLayout,
       setElements,
       setHasError,
       setLayout,
@@ -249,6 +252,7 @@ function updateGraph({
   getSize,
   setLayout,
   setElements,
+  runLayout = true,
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   content: string;
@@ -260,6 +264,7 @@ function updateGraph({
   setLayout: StoreGraph["setLayout"];
   setElements: StoreGraph["setElements"];
   getSize: TGetSize;
+  runLayout?: boolean;
 }) {
   if (cy.current) {
     let elements: cytoscape.ElementDefinition[] = [];
@@ -277,22 +282,25 @@ function updateGraph({
       });
 
       // Real
-      cy.current
-        .json({
-          elements: elements,
-        })
-        .layout({
-          ...defaultLayout,
-          ...layout,
-          animate: graphInitialized.current
-            ? elements.length < 200
-              ? animate
-              : false
-            : false,
-          animationDuration: animate ? 333 : 0,
-        } as any)
-        .run();
-      cy.current.center();
+      cy.current.json({
+        elements: elements,
+      });
+
+      if (runLayout) {
+        cy.current
+          .layout({
+            ...defaultLayout,
+            ...layout,
+            animate: graphInitialized.current
+              ? elements.length < 200
+                ? animate
+                : false
+              : false,
+            animationDuration: animate ? 333 : 0,
+          } as any)
+          .run();
+        cy.current.center();
+      }
       graphInitialized.current = true;
 
       // Reinitialize to avoid missing errors

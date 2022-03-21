@@ -1,4 +1,5 @@
 import { t } from "@lingui/macro";
+import * as Switch from "@radix-ui/react-switch";
 import VisuallyHidden from "@reach/visually-hidden";
 import {
   ArrowsInSimple,
@@ -20,6 +21,7 @@ import {
   useMemo,
 } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { MdPlayArrow, MdPlayDisabled } from "react-icons/md";
 import Select, {
   components,
   SingleValueProps,
@@ -30,6 +32,7 @@ import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts } from "../lib/graphOptions";
 import { themes, useGraphTheme } from "../lib/graphThemes";
+import { useStoreGraph } from "../lib/store.graph";
 import { Box, BoxProps, Type } from "../slang";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
@@ -55,6 +58,7 @@ const GraphOptionsBar = memo(() => {
   const layout = watch("layout.name");
   const theme = watch("theme");
   const valuesString = JSON.stringify(values);
+  const runLayout = useStoreGraph((store) => store.runLayout);
 
   useEffect(() => {
     if (layout) gaChangeGraphOption({ action: "layout", label: layout });
@@ -126,69 +130,76 @@ const GraphOptionsBar = memo(() => {
   );
 
   return (
-    <Box
-      className={styles.GraphOptionsBar}
-      p={1}
-      px={2}
-      as="form"
-      at={{ tablet: { px: 4 } }}
-    >
-      <OptionWithIcon icon={CirclesThree} label={t`Layout`} labelFor="layout">
-        <Controller
-          control={control}
-          name="layout.name"
-          render={({ field: { onChange } }) => {
-            return (
-              <Select
-                inputId="layout"
-                options={layouts}
-                onChange={(layout: typeof layouts[number]) =>
-                  layout && onChange(layout.value)
-                }
-                value={currentLayout}
-                {...selectProps}
+    <Box className={styles.GraphOptionsBar} as="form">
+      <AutoLayoutSwitch />
+      {runLayout ? (
+        <>
+          <OptionWithIcon
+            icon={CirclesThree}
+            label={t`Layout`}
+            labelFor="layout"
+          >
+            <Controller
+              control={control}
+              name="layout.name"
+              render={({ field: { onChange } }) => {
+                return (
+                  <Select
+                    inputId="layout"
+                    options={layouts}
+                    onChange={(layout: typeof layouts[number]) =>
+                      layout && onChange(layout.value)
+                    }
+                    value={currentLayout}
+                    {...selectProps}
+                  />
+                );
+              }}
+            />
+          </OptionWithIcon>
+          {currentLayout?.value === "dagre" && (
+            <OptionWithIcon
+              icon={ArrowUpRight}
+              label={t`Direction`}
+              labelFor="direction"
+            >
+              <Controller
+                control={control}
+                name="layout.rankDir"
+                render={({ field: { onChange } }) => {
+                  return (
+                    <Select
+                      inputId="direction"
+                      options={directions}
+                      onChange={(dir: typeof directions[0]) =>
+                        dir && onChange(dir.value)
+                      }
+                      value={currentDirection}
+                      {...selectProps}
+                    />
+                  );
+                }}
               />
-            );
-          }}
-        />
-      </OptionWithIcon>
-      {currentLayout?.value === "dagre" && (
-        <OptionWithIcon
-          icon={ArrowUpRight}
-          label={t`Direction`}
-          labelFor="direction"
-        >
-          <Controller
-            control={control}
-            name="layout.rankDir"
-            render={({ field: { onChange } }) => {
-              return (
-                <Select
-                  inputId="direction"
-                  options={directions}
-                  onChange={(dir: typeof directions[0]) =>
-                    dir && onChange(dir.value)
-                  }
-                  value={currentDirection}
-                  {...selectProps}
-                />
-              );
-            }}
-          />
-        </OptionWithIcon>
-      )}
-      <Box flow="column">
-        <IconButton
-          icon={ArrowsInSimple}
-          onClick={contract}
-          label={t`Contract`}
-          disabled={
-            graphOptions.layout?.spacingFactor &&
-            graphOptions.layout?.spacingFactor <= 0.25
-          }
-        />
-        <IconButton icon={ArrowsOutSimple} onClick={expand} label={t`Expand`} />
-      </Box>
+            </OptionWithIcon>
+          )}
+          <Box flow="column" className={styles.BarSection}>
+            <IconButton
+              icon={ArrowsInSimple}
+              onClick={contract}
+              label={t`Contract`}
+              disabled={
+                graphOptions.layout?.spacingFactor &&
+                graphOptions.layout?.spacingFactor <= 0.25
+              }
+            />
+            <IconButton
+              icon={ArrowsOutSimple}
+              onClick={expand}
+              label={t`Expand`}
+            />
+          </Box>
+        </>
+      ) : null}
       <OptionWithIcon icon={PaintBrush} label={t`Theme`} labelFor="theme">
         <Controller
           control={control}
@@ -242,8 +253,16 @@ function OptionWithIcon({
         aria-label={label}
         className={`slang-type size-${tooltipSize}`}
       >
-        <Box flow="column" gap={1} items="center normal" content="normal start">
-          <Icon size={smallIconSize} />
+        <Box
+          flow="column"
+          gap={1}
+          items="center normal"
+          content="normal start"
+          className={styles.BarSection}
+        >
+          <Box className={styles.BarSectionSvgWrapper} pl={2}>
+            <Icon size={smallIconSize} />
+          </Box>
           {children}
         </Box>
       </Tooltip>
@@ -429,3 +448,38 @@ function isEmpty(obj: object) {
     Object.getPrototypeOf(obj) === Object.prototype
   );
 }
+
+const AutoLayoutSwitch = memo(function AutoLayoutSwitch() {
+  const setRunLayout = useStoreGraph((store) => store.setRunLayout);
+  const runLayout = useStoreGraph((store) => store.runLayout);
+  return (
+    <Tooltip
+      label={"Autolayout"}
+      aria-label={"Autolayout"}
+      className={`slang-type size-${tooltipSize}`}
+    >
+      <Box
+        className={`${styles.BarSection} ${styles.AutoLayout} ${
+          runLayout ? "checked" : ""
+        }`}
+        content="center"
+        items="center"
+        flow="column"
+        gap={1}
+      >
+        {runLayout ? (
+          <MdPlayArrow size={smallIconSize} />
+        ) : (
+          <MdPlayDisabled size={smallIconSize} />
+        )}
+        <Switch.Root
+          className={styles.SwitchRoot}
+          onCheckedChange={setRunLayout}
+          checked={runLayout}
+        >
+          <Switch.Thumb className={styles.SwitchThumb} />
+        </Switch.Root>
+      </Box>
+    </Tooltip>
+  );
+});

@@ -1,11 +1,11 @@
 .GraphOptionsBar {
-  border-bottom: solid 1px var(--color-uiAccent);
+  --border-color: var(--color-uiAccent);
+  border-bottom: solid 1px var(--border-color);
   background-color: var(--color-input);
   display: flex;
   flex-direction: row;
   white-space: nowrap;
-  flex-wrap: wrap;
-  column-gap: 10px;
+  flex-wrap: nowrap;
 }
 
 .Select {
@@ -35,4 +35,57 @@
 .IconButton:disabled {
   color: var(--color-edgeHover);
   background-color: var(--color-input);
+}
+
+.BarSection {
+  border-right: solid 1px var(--border-color);
+  padding: var(--spacer-px);
+}
+
+.BarSectionSvgWrapper {
+  font-size: 0;
+}
+
+.SwitchRoot {
+  --w: 40px;
+  --h: 21px;
+  width: var(--w);
+  height: var(--h);
+  position: relative;
+  background-color: var(--color-nodeHover);
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+}
+
+.SwitchRoot:focus {
+  box-shadow: none;
+}
+
+.SwitchThumb {
+  --offset: 2px;
+  width: calc(50% - 2 * var(--offset));
+  background: var(--color-edgeHover);
+  aspect-ratio: 1;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  top: var(--offset);
+  left: var(--offset);
+  transition: left 300ms ease;
+}
+
+.SwitchThumb[data-state="checked"] {
+  left: calc(50% + var(--offset));
+}
+
+.SwitchRoot:hover .SwitchThumb,
+.SwitchRoot:focus-visible .SwitchThumb {
+  background: var(--color-lineNumbers);
+}
+
+.AutoLayout svg {
+  opacity: 0.5;
+}
+.AutoLayout[class*="checked"] svg {
+  opacity: 1;
 }
