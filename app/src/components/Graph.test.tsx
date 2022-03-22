@@ -20,4 +20,7 @@ describe("<Graph/>", () => {
       />
     );
   });
+
+  it.todo("turns off auto layout on dragging");
+  it.todo("turns on auto layout when it first loads");
 });

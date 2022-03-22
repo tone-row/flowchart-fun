@@ -59,9 +59,9 @@ const config: Partial<SlangConfig> = {
     "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   baseFontSizePx: 17,
   typeScaleBase: 1.25,
-  baseFontLineHeight: 1.6,
+  baseFontLineHeight: 1.5,
   baseFontLineHeightMobile: 1.4,
-  inverseTypeScaleLineHeight: 0.8,
+  inverseTypeScaleLineHeight: 0.9,
   breakpoints: {
     small: 450,
     tablet: 800,

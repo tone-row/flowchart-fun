@@ -76,6 +76,18 @@ const Graph = memo(
     const setLayout = useStoreGraph((store) => store.setLayout);
     const setElements = useStoreGraph((store) => store.setElements);
     const runLayout = useStoreGraph((store) => store.runLayout);
+    const setRunLayout = useStoreGraph((store) => store.setRunLayout);
+
+    // Always begin with the layout running
+    useEffect(() => {
+      setRunLayout(true);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const handleDrag = useCallback(() => {
+      setRunLayout(false);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -104,8 +116,9 @@ const Graph = memo(
 
     // Initialize Graph
     useEffect(
-      () => initializeGraph(errorCatcher, cy, setHoverLineNumber),
-      [setHoverLineNumber]
+      () =>
+        initializeGraph({ errorCatcher, cy, setHoverLineNumber, handleDrag }),
+      [handleDrag, setHoverLineNumber]
     );
 
     const lastValues = useRef<{
@@ -181,11 +194,17 @@ Graph.displayName = "Graph";
 
 export default Graph;
 
-function initializeGraph(
-  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
-  cy: React.MutableRefObject<cytoscape.Core | undefined>,
-  setHoverLineNumber: React.Dispatch<React.SetStateAction<number | undefined>>
-) {
+function initializeGraph({
+  errorCatcher,
+  cy,
+  setHoverLineNumber,
+  handleDrag,
+}: {
+  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
+  cy: React.MutableRefObject<cytoscape.Core | undefined>;
+  setHoverLineNumber: React.Dispatch<React.SetStateAction<number | undefined>>;
+  handleDrag: () => void;
+}) {
   errorCatcher.current = cytoscape();
   cy.current = cytoscape({
     container: document.getElementById("cy"), // container to render in
@@ -221,12 +240,17 @@ function initializeGraph(
     setHoverLineNumber(undefined);
   }
 
+  function onDrag() {
+    handleDrag();
+  }
+
   cyCurrent.on("mouseover", "node", nodeHighlight);
   cyCurrent.on("mouseover", "edge", edgeHighlight);
   cyCurrent.on("tapstart", "node", nodeHighlight);
   cyCurrent.on("tapstart", "edge", edgeHighlight);
   cyCurrent.on("mouseout", "node, edge", unhighlight);
   cyCurrent.on("tapend", "node, edge", unhighlight);
+  cyCurrent.on("drag", "node", onDrag);
   document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
 
   return () => {

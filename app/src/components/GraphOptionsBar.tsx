@@ -1,5 +1,4 @@
 import { t } from "@lingui/macro";
-import * as Switch from "@radix-ui/react-switch";
 import VisuallyHidden from "@reach/visually-hidden";
 import {
   ArrowsInSimple,
@@ -21,7 +20,6 @@ import {
   useMemo,
 } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { MdPlayArrow, MdPlayDisabled } from "react-icons/md";
 import Select, {
   components,
   SingleValueProps,
@@ -34,6 +32,7 @@ import { directions, layouts } from "../lib/graphOptions";
 import { themes, useGraphTheme } from "../lib/graphThemes";
 import { useStoreGraph } from "../lib/store.graph";
 import { Box, BoxProps, Type } from "../slang";
+import { AutoLayoutSwitch } from "./AutoLayoutSwitch";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
 import {
@@ -448,38 +447,3 @@ function isEmpty(obj: object) {
     Object.getPrototypeOf(obj) === Object.prototype
   );
 }
-
-const AutoLayoutSwitch = memo(function AutoLayoutSwitch() {
-  const setRunLayout = useStoreGraph((store) => store.setRunLayout);
-  const runLayout = useStoreGraph((store) => store.runLayout);
-  return (
-    <Tooltip
-      label={"Autolayout"}
-      aria-label={"Autolayout"}
-      className={`slang-type size-${tooltipSize}`}
-    >
-      <Box
-        className={`${styles.BarSection} ${styles.AutoLayout} ${
-          runLayout ? "checked" : ""
-        }`}
-        content="center"
-        items="center"
-        flow="column"
-        gap={1}
-      >
-        {runLayout ? (
-          <MdPlayArrow size={smallIconSize} />
-        ) : (
-          <MdPlayDisabled size={smallIconSize} />
-        )}
-        <Switch.Root
-          className={styles.SwitchRoot}
-          onCheckedChange={setRunLayout}
-          checked={runLayout}
-        >
-          <Switch.Thumb className={styles.SwitchThumb} />
-        </Switch.Root>
-      </Box>
-    </Tooltip>
-  );
-});
