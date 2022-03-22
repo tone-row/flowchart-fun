@@ -1,3 +1,4 @@
+import { t, Trans } from "@lingui/macro";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import * as Switch from "@radix-ui/react-switch";
 import { Info } from "phosphor-react";
@@ -49,9 +50,11 @@ export const AutoLayoutSwitch = memo(function AutoLayoutSwitch() {
             gap={1}
             className={styles.Popover}
           >
-            <Type size={-1}>Auto Layout</Type>
+            <Type size={-1}>
+              <Trans>Auto Layout</Trans>
+            </Type>
             <Type size={-2}>
-              {`Automatically run the layout algorithm while editing your chart. Turn this off to customize your chart. NOTE: Currently, custom layouts only work for exported images: layouts are not saved between refreshes, navigations, or in share links.`}
+              {t`Automatically run the layout algorithm while editing your chart. Turn this off to customize your chart. NOTE: Currently, custom layouts only work for exported images: layouts are not saved between refreshes, navigations, or in share links.`}
             </Type>
             <HoverCard.Arrow style={{ fill: "var(--color-nodeHover)" }} />
           </Box>
