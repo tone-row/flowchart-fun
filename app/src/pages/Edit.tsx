@@ -77,6 +77,7 @@ export default function Edit() {
       setHoverLineNumber={setHoverLineNumber}
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
+      linesOfYaml={linesOfYaml}
     >
       <Editor
         value={text}

@@ -60,8 +60,10 @@ const Graph = memo(
     textToParse,
     setHoverLineNumber,
     shouldResize,
+    linesOfYaml = 0,
   }: {
     textToParse: string;
+    linesOfYaml?: number;
     setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
     shouldResize: number;
   }) => {
@@ -167,12 +169,14 @@ const Graph = memo(
         setLayout,
         setElements,
         runLayout,
+        lineNumberStart: linesOfYaml,
       });
     }, [
       animate,
       content,
       getSize,
       layout,
+      linesOfYaml,
       runLayout,
       setElements,
       setHasError,
@@ -279,6 +283,7 @@ function updateGraph({
   setLayout,
   setElements,
   runLayout = true,
+  lineNumberStart = 1,
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   content: string;
@@ -291,6 +296,7 @@ function updateGraph({
   setElements: StoreGraph["setElements"];
   getSize: TGetSize;
   runLayout?: boolean;
+  lineNumberStart?: number;
 }) {
   if (cy.current) {
     let elements: cytoscape.ElementDefinition[] = [];
@@ -298,7 +304,7 @@ function updateGraph({
       const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
 
       // Parse
-      elements = parseText(content, getSize);
+      elements = parseText(content, getSize, lineNumberStart);
 
       // Test Error First
       errorCatcher.current?.json({ elements });
