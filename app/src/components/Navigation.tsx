@@ -120,9 +120,7 @@ function LocalCharts() {
     <Section>
       {!validCustomer && (
         <Box
-          p={2}
-          px={3}
-          pr={4}
+          p={4}
           rad={1}
           flow="column"
           items="start normal"

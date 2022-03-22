@@ -21,6 +21,7 @@ import React, {
 } from "react";
 import { useDebouncedCallback } from "use-debounce";
 
+import { gaChangeGraphOption } from "../lib/analytics";
 import {
   defaultLayout,
   delimiters,
@@ -75,6 +76,20 @@ const Graph = memo(
     const getSize = useGetSize(theme);
     const setLayout = useStoreGraph((store) => store.setLayout);
     const setElements = useStoreGraph((store) => store.setElements);
+    const runLayout = useStoreGraph((store) => store.runLayout);
+    const setRunLayout = useStoreGraph((store) => store.setRunLayout);
+
+    // Always begin with the layout running
+    useEffect(() => {
+      setRunLayout(true);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const handleDrag = useCallback(() => {
+      gaChangeGraphOption({ action: "Auto Layout", label: "TOGGLE" });
+      setRunLayout(false);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -103,8 +118,9 @@ const Graph = memo(
 
     // Initialize Graph
     useEffect(
-      () => initializeGraph(errorCatcher, cy, setHoverLineNumber),
-      [setHoverLineNumber]
+      () =>
+        initializeGraph({ errorCatcher, cy, setHoverLineNumber, handleDrag }),
+      [handleDrag, setHoverLineNumber]
     );
 
     const lastValues = useRef<{
@@ -150,12 +166,14 @@ const Graph = memo(
         getSize,
         setLayout,
         setElements,
+        runLayout,
       });
     }, [
       animate,
       content,
       getSize,
       layout,
+      runLayout,
       setElements,
       setHasError,
       setLayout,
@@ -178,11 +196,17 @@ Graph.displayName = "Graph";
 
 export default Graph;
 
-function initializeGraph(
-  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
-  cy: React.MutableRefObject<cytoscape.Core | undefined>,
-  setHoverLineNumber: React.Dispatch<React.SetStateAction<number | undefined>>
-) {
+function initializeGraph({
+  errorCatcher,
+  cy,
+  setHoverLineNumber,
+  handleDrag,
+}: {
+  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
+  cy: React.MutableRefObject<cytoscape.Core | undefined>;
+  setHoverLineNumber: React.Dispatch<React.SetStateAction<number | undefined>>;
+  handleDrag: () => void;
+}) {
   errorCatcher.current = cytoscape();
   cy.current = cytoscape({
     container: document.getElementById("cy"), // container to render in
@@ -218,12 +242,17 @@ function initializeGraph(
     setHoverLineNumber(undefined);
   }
 
+  function onDrag() {
+    handleDrag();
+  }
+
   cyCurrent.on("mouseover", "node", nodeHighlight);
   cyCurrent.on("mouseover", "edge", edgeHighlight);
   cyCurrent.on("tapstart", "node", nodeHighlight);
   cyCurrent.on("tapstart", "edge", edgeHighlight);
   cyCurrent.on("mouseout", "node, edge", unhighlight);
   cyCurrent.on("tapend", "node, edge", unhighlight);
+  cyCurrent.on("drag", "node", onDrag);
   document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
 
   return () => {
@@ -249,6 +278,7 @@ function updateGraph({
   getSize,
   setLayout,
   setElements,
+  runLayout = true,
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   content: string;
@@ -260,6 +290,7 @@ function updateGraph({
   setLayout: StoreGraph["setLayout"];
   setElements: StoreGraph["setElements"];
   getSize: TGetSize;
+  runLayout?: boolean;
 }) {
   if (cy.current) {
     let elements: cytoscape.ElementDefinition[] = [];
@@ -277,22 +308,25 @@ function updateGraph({
       });
 
       // Real
-      cy.current
-        .json({
-          elements: elements,
-        })
-        .layout({
-          ...defaultLayout,
-          ...layout,
-          animate: graphInitialized.current
-            ? elements.length < 200
-              ? animate
-              : false
-            : false,
-          animationDuration: animate ? 333 : 0,
-        } as any)
-        .run();
-      cy.current.center();
+      cy.current.json({
+        elements: elements,
+      });
+
+      if (runLayout) {
+        cy.current
+          .layout({
+            ...defaultLayout,
+            ...layout,
+            animate: graphInitialized.current
+              ? elements.length < 200
+                ? animate
+                : false
+              : false,
+            animationDuration: animate ? 333 : 0,
+          } as any)
+          .run();
+        cy.current.center();
+      }
       graphInitialized.current = true;
 
       // Reinitialize to avoid missing errors

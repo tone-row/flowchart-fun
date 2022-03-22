@@ -1,11 +1,11 @@
 .GraphOptionsBar {
-  border-bottom: solid 1px var(--color-uiAccent);
+  --border-color: var(--color-uiAccent);
+  border-bottom: solid 1px var(--border-color);
   background-color: var(--color-input);
   display: flex;
   flex-direction: row;
   white-space: nowrap;
-  flex-wrap: wrap;
-  column-gap: 10px;
+  flex-wrap: nowrap;
 }
 
 .Select {
@@ -35,4 +35,13 @@
 .IconButton:disabled {
   color: var(--color-edgeHover);
   background-color: var(--color-input);
+}
+
+.BarSection {
+  border-right: solid 1px var(--border-color);
+  padding: var(--spacer-px);
+}
+
+.BarSectionSvgWrapper {
+  font-size: 0;
 }
