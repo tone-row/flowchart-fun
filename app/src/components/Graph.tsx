@@ -21,6 +21,7 @@ import React, {
 } from "react";
 import { useDebouncedCallback } from "use-debounce";
 
+import { gaChangeGraphOption } from "../lib/analytics";
 import {
   defaultLayout,
   delimiters,
@@ -85,6 +86,7 @@ const Graph = memo(
     }, []);
 
     const handleDrag = useCallback(() => {
+      gaChangeGraphOption({ action: "Auto Layout", label: "TOGGLE" });
       setRunLayout(false);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
