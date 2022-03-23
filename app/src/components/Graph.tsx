@@ -19,10 +19,10 @@ import React, {
   useMemo,
   useRef,
 } from "react";
-import { useContextMenu } from "react-contexify";
+import { TriggerEvent, useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
-import { gaChangeGraphOption } from "../lib/analytics";
+import { gaChangeGraphOption, gaUseGraphContextMenu } from "../lib/analytics";
 import {
   defaultLayout,
   delimiters,
@@ -186,6 +186,10 @@ const Graph = memo(
     ]);
 
     const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
+    const handleContextMenu = (e: TriggerEvent) => {
+      gaUseGraphContextMenu({ action: "SHOW" });
+      show(e);
+    };
 
     return (
       <Box
@@ -193,7 +197,7 @@ const Graph = memo(
         overflow="hidden"
         h="100%"
         style={{ background: theme.bg }}
-        onContextMenu={show}
+        onContextMenu={handleContextMenu}
       >
         <Box id="cy" overflow="hidden" />
         <GraphContextMenu />

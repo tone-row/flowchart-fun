@@ -6,6 +6,7 @@ import { Item, Menu, Separator } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
+import { gaUseGraphContextMenu } from "../lib/analytics";
 import { Box, Type } from "../slang";
 import styles from "./GraphContextMenu.module.css";
 import { smallIconSize } from "./Shared";
@@ -22,17 +23,32 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <CopyPNG />
       <CopySVG />
       <Separator />
-      <Item onClick={() => window.flowchartFunDownloadPNG()}>
+      <Item
+        onClick={() => {
+          gaUseGraphContextMenu({ action: "Download PNG" });
+          window.flowchartFunDownloadPNG();
+        }}
+      >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
           <Trans>Download PNG</Trans>
         </WithIcon>
       </Item>
-      <Item onClick={() => window.flowchartFunDownloadJPG()}>
+      <Item
+        onClick={() => {
+          gaUseGraphContextMenu({ action: "Download JPG" });
+          window.flowchartFunDownloadJPG();
+        }}
+      >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
           <Trans>Download JPG</Trans>
         </WithIcon>
       </Item>
-      <Item onClick={() => window.flowchartFunDownloadSVG()}>
+      <Item
+        onClick={() => {
+          gaUseGraphContextMenu({ action: "Download SVG" });
+          window.flowchartFunDownloadSVG();
+        }}
+      >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
           <Trans>Download SVG</Trans>
         </WithIcon>
@@ -48,6 +64,7 @@ function CopySVG() {
     "idle"
   );
   function handleClick() {
+    gaUseGraphContextMenu({ action: "Copy SVG" });
     (async () => {
       dispatch("loading");
       const svgStr = await window.flowchartFunGetSVG();
@@ -72,6 +89,7 @@ function CopyPNG() {
     "idle"
   );
   function handleClick() {
+    gaUseGraphContextMenu({ action: "Copy PNG" });
     dispatch("loading");
     setTimeout(() => {
       window.flowchartFunCopyPNG().then(() => {
