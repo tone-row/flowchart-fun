@@ -94,6 +94,7 @@ export default function Help() {
       setHoverLineNumber={setHoverLineNumber}
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
+      linesOfYaml={linesOfYaml}
     >
       <div className={helpStyles.helpWrapper} data-testid="help">
         <Resizable
