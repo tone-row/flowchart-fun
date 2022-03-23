@@ -2,7 +2,8 @@ import { Theme } from "./constants";
 
 const fontFamily = "Gaegu";
 const fontSize = 13;
-const backgroundColor = "#FFF14B";
+// const backgroundColor = "#FFF14B";
+const backgroundColor = "#fffa96";
 const arrowColor = "#000000";
 const lineHeight = 1;
 const padding = "14px";
@@ -55,29 +56,35 @@ const eggs: Theme = {
       selector: "edge",
       style: {
         "curve-style": "unbundled-bezier",
-        "segment-distances": "60",
-        "edge-distances": "intersection",
+        // "segment-distances": "60",
+        // "edge-distances": "intersection",
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        "loop-direction": "10deg",
+        "loop-sweep": "20deg",
         width: borderWidth,
-        "line-dash-pattern": [6, 3],
+        // "line-dash-pattern": [6, 3],
         "line-color": arrowColor,
-        "line-style": "dashed",
+        // "line-style": "dashed",
         label: "data(label)",
         color: arrowColor,
         "font-size": fontSize,
         "text-valign": "bottom",
         "text-wrap": "wrap",
         "font-family": fontFamily,
+        "target-arrow-color": arrowColor,
+        "target-arrow-shape": "triangle",
         "text-background-opacity": 1,
-        "text-background-color": "#FFF14B",
-        "text-background-padding": "6px",
-        "text-border-color": arrowColor,
-        "text-border-width": borderWidth,
-        "text-border-opacity": 1,
+        "text-background-color": backgroundColor,
+        "text-background-padding": "3px",
+        // "text-border-color": arrowColor,
+        // "text-border-width": borderWidth,
+        // "text-border-opacity": 1,
         "text-background-shape": "roundrectangle",
         "text-border-style": "solid",
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        "edge-text-rotation": "none",
+        "edge-text-rotation": "autorotate",
       },
     },
   ],
