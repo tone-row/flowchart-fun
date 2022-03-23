@@ -34,15 +34,13 @@ import Loading from "./Loading";
 import styles from "./Navigation.module.css";
 import { Button, Dialog, Input, Notice, Section, SectionTitle } from "./Shared";
 
-const largeGap = 10;
-
 export default function Charts() {
   const validCustomer = useIsValidCustomer();
   return (
     <Box
       px={4}
       py={8}
-      gap={largeGap}
+      gap={14}
       content="start normal"
       className={styles.Navigation}
     >

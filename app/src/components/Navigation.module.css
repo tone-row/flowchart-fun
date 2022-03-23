@@ -112,6 +112,7 @@
     0px 0px 0.9px rgba(0, 0, 0, 0.018), 0px 0px 1.8px rgba(0, 0, 0, 0.022),
     0px 0px 3.7px rgba(0, 0, 0, 0.028), 0px 0px 10px rgba(0, 0, 0, 0.04);
   text-align: left;
+  margin-bottom: 2rem;
 }
 .CallOut:hover,
 .CallOut:focus-visible,

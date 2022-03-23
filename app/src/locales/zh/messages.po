@@ -116,6 +116,14 @@ msgstr "是否转换为托管图表？"
 msgid "Copy"
 msgstr "复制"
 
+#: src/components/GraphContextMenu.tsx:85
+msgid "Copy PNG Image"
+msgstr "复制PNG图像"
+
+#: src/components/GraphContextMenu.tsx:62
+msgid "Copy SVG Code"
+msgstr "复制 SVG 代码"
+
 #: src/components/MenuNext.tsx:112
 #: src/components/MenuNext.tsx:459
 #: src/components/Navigation.tsx:163
@@ -168,6 +176,18 @@ msgstr "您要将其删除吗？"
 #: src/components/ShareDialog.tsx:58
 msgid "Download"
 msgstr "下载"
+
+#: src/components/GraphContextMenu.tsx:32
+msgid "Download JPG"
+msgstr "下载 JPG"
+
+#: src/components/GraphContextMenu.tsx:27
+msgid "Download PNG"
+msgstr "下载 PNG"
+
+#: src/components/GraphContextMenu.tsx:37
+msgid "Download SVG"
+msgstr "下载 SVG"
 
 #: src/components/Navigation.tsx:298
 #: src/components/Navigation.tsx:591

@@ -9,6 +9,7 @@ declare global {
     flowchartFunGetSVG: () => Promise<string>;
     flowchartFunDownloadSVG: () => void;
     flowchartFunDownloadPNG: () => void;
+    flowchartFunCopyPNG: () => Promise<void>;
     flowchartFunDownloadJPG: () => void;
     flowchartFunGetGraphThemeBG: () => string;
   }
@@ -22,6 +23,7 @@ export default function useDownloadHandlers(
   const filename = workspace || "flowchart";
   const graphTheme = useGraphTheme();
   const bg = graphTheme.safeBg ?? graphTheme.bg;
+
   window.flowchartFunGetSVG = async () => {
     if (!cy.current) throw new Error("Cytoscape not initialized");
 
@@ -118,6 +120,26 @@ export default function useDownloadHandlers(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bg]);
 
+  const copyPNG = useCallback(() => {
+    if (!cy.current) throw new Error("Cytoscape not initialized");
+
+    const pngStr = cy.current.png({
+      full: true,
+      scale: 4,
+      output: "blob",
+      bg,
+    });
+
+    return navigator.clipboard.write([
+      new ClipboardItem({
+        [`image/png`]: pngStr,
+      }),
+    ]);
+
+    // cy is a ref
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bg]);
+
   const downloadJPG = useCallback(() => {
     if (cy.current) {
       const jpgStr = cy.current.jpg({
@@ -144,9 +166,10 @@ export default function useDownloadHandlers(
 
   useEffect(() => {
     window.flowchartFunDownloadPNG = downloadPNG;
+    window.flowchartFunCopyPNG = copyPNG;
     window.flowchartFunDownloadJPG = downloadJPG;
     window.flowchartFunGetGraphThemeBG = getGraphThemeBG;
-  }, [downloadJPG, downloadPNG, getGraphThemeBG]);
+  }, [copyPNG, downloadJPG, downloadPNG, getGraphThemeBG]);
 }
 
 function arrayBufferToBase64(buffer: ArrayBuffer) {
