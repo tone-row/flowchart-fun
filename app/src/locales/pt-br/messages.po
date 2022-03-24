@@ -116,6 +116,14 @@ msgstr "Converter em diagrama hospedado?"
 msgid "Copy"
 msgstr "Copiar"
 
+#: src/components/GraphContextMenu.tsx:85
+msgid "Copy PNG Image"
+msgstr "Copiar imagem PNG"
+
+#: src/components/GraphContextMenu.tsx:62
+msgid "Copy SVG Code"
+msgstr "Copiar código SVG"
+
 #: src/components/MenuNext.tsx:112
 #: src/components/MenuNext.tsx:459
 #: src/components/Navigation.tsx:163
@@ -168,6 +176,18 @@ msgstr "Você deseja deletar isso?"
 #: src/components/ShareDialog.tsx:58
 msgid "Download"
 msgstr "Baixar"
+
+#: src/components/GraphContextMenu.tsx:32
+msgid "Download JPG"
+msgstr "Baixar JPG"
+
+#: src/components/GraphContextMenu.tsx:27
+msgid "Download PNG"
+msgstr "Baixar PNG"
+
+#: src/components/GraphContextMenu.tsx:37
+msgid "Download SVG"
+msgstr "Baixar SVG"
 
 #: src/components/Navigation.tsx:298
 #: src/components/Navigation.tsx:591

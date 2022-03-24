@@ -116,6 +116,14 @@ msgstr "호스팅 차트로 변환하시겠습니까?"
 msgid "Copy"
 msgstr "복사"
 
+#: src/components/GraphContextMenu.tsx:85
+msgid "Copy PNG Image"
+msgstr "PNG 이미지 복사"
+
+#: src/components/GraphContextMenu.tsx:62
+msgid "Copy SVG Code"
+msgstr "SVG 코드 복사"
+
 #: src/components/MenuNext.tsx:112
 #: src/components/MenuNext.tsx:459
 #: src/components/Navigation.tsx:163
@@ -168,6 +176,18 @@ msgstr "본 항목을 삭제하시겠습니까?"
 #: src/components/ShareDialog.tsx:58
 msgid "Download"
 msgstr "다운로드"
+
+#: src/components/GraphContextMenu.tsx:32
+msgid "Download JPG"
+msgstr "JPG 다운로드"
+
+#: src/components/GraphContextMenu.tsx:27
+msgid "Download PNG"
+msgstr "PNG 다운로드"
+
+#: src/components/GraphContextMenu.tsx:37
+msgid "Download SVG"
+msgstr "SVG 다운로드"
 
 #: src/components/Navigation.tsx:298
 #: src/components/Navigation.tsx:591

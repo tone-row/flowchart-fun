@@ -19,9 +19,10 @@ import React, {
   useMemo,
   useRef,
 } from "react";
+import { TriggerEvent, useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
-import { gaChangeGraphOption } from "../lib/analytics";
+import { gaChangeGraphOption, gaUseGraphContextMenu } from "../lib/analytics";
 import {
   defaultLayout,
   delimiters,
@@ -40,6 +41,7 @@ import { stripComments } from "../lib/utils";
 import { Box } from "../slang";
 import { AppContext, TAppContext } from "./AppContext";
 import styles from "./Graph.module.css";
+import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import useDownloadHandlers from "./useDownloadHandlers";
 
 declare global {
@@ -183,14 +185,22 @@ const Graph = memo(
       setLayout,
     ]);
 
+    const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
+    const handleContextMenu = (e: TriggerEvent) => {
+      gaUseGraphContextMenu({ action: "SHOW" });
+      show(e);
+    };
+
     return (
       <Box
         className={[styles.GraphContainer, "graph"].join(" ")}
         overflow="hidden"
         h="100%"
         style={{ background: theme.bg }}
+        onContextMenu={handleContextMenu}
       >
         <Box id="cy" overflow="hidden" />
+        <GraphContextMenu />
       </Box>
     );
   }

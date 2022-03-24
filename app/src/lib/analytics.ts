@@ -14,6 +14,7 @@ let gaCreateChart = (_: { action: string }) => {};
 let gaExportChart = (_: { action: string; label: string }) => {};
 let gaNewChart = () => {};
 let gaCopyChart = () => {};
+let gaUseGraphContextMenu = (_: { action: string }) => {};
 
 if (gaEnabled) {
   import("react-ga").then((ReactGA) => {
@@ -75,6 +76,13 @@ if (gaEnabled) {
         action: "Copy Chart To New",
       });
     };
+
+    gaUseGraphContextMenu = ({ action }) => {
+      ReactGA.event({
+        category: "Graph Context Menu",
+        action: action,
+      });
+    };
   });
 }
 
@@ -87,4 +95,5 @@ export {
   gaExportChart,
   gaNewChart,
   gaCopyChart,
+  gaUseGraphContextMenu,
 };

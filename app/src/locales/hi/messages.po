@@ -116,6 +116,14 @@ msgstr "होस्टेड चार्ट में कनवर्ट क�
 msgid "Copy"
 msgstr "कॉपी करें"
 
+#: src/components/GraphContextMenu.tsx:85
+msgid "Copy PNG Image"
+msgstr "PNG छवि कॉपी करें"
+
+#: src/components/GraphContextMenu.tsx:62
+msgid "Copy SVG Code"
+msgstr "SVG कोड कॉपी करें"
+
 #: src/components/MenuNext.tsx:112
 #: src/components/MenuNext.tsx:459
 #: src/components/Navigation.tsx:163
@@ -168,6 +176,18 @@ msgstr "क्या आप इसे डिलीट करना चाहत�
 #: src/components/ShareDialog.tsx:58
 msgid "Download"
 msgstr "डाउनलोड"
+
+#: src/components/GraphContextMenu.tsx:32
+msgid "Download JPG"
+msgstr "JPG डाउनलोड करें"
+
+#: src/components/GraphContextMenu.tsx:27
+msgid "Download PNG"
+msgstr "PNG डाउनलोड करें"
+
+#: src/components/GraphContextMenu.tsx:37
+msgid "Download SVG"
+msgstr "SVG डाउनलोड करें"
 
 #: src/components/Navigation.tsx:298
 #: src/components/Navigation.tsx:591
