@@ -145,6 +145,7 @@ function SignUpForm() {
       <Input
         className={styles.SponsorFormInput}
         type="email"
+        data-testid="email"
         placeholder="Email"
         {...register("email", {
           required: true,
@@ -183,25 +184,12 @@ function SignUpForm() {
         control={control}
         defaultValue="monthly"
       />
-      {/* <label htmlFor="monthly">
-        <input
-          type="radio"
-          value="monthly"
-          id="monthly"
-          {...register("subscription")}
-        />
-        <Type>$1 / Month</Type>
-      </label>
-      <label htmlFor="yearly">
-        <input
-          type="radio"
-          value="yearly"
-          id="yearly"
-          {...register("subscription")}
-        />
-        <Type>$10 / Year</Type>
-      </label> */}
-      <Box p={3} background="palette-white-0" rad={1}>
+      <Box
+        p={3}
+        background="palette-white-0"
+        rad={1}
+        data-testid="card-element"
+      >
         <CardElement
           options={{
             style: {
