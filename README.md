@@ -32,7 +32,7 @@ To run with full functionality you'll need accounts with vercel, sendgrid, supab
 
 This repository is organized in workspaces. [/app](/app) contains the code for the react application and [/module](/module) contains the code for the **deprecated** [flowchart-fun](https://www.npmjs.com/package/flowchart-fun) npm module.
 
-# Releasing
+## Releasing
 
 Documenting so as not to forget!
 
