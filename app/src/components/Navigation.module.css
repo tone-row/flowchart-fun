@@ -107,7 +107,12 @@
 .CallOut {
   transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 300ms;
   background-color: hsla(var(--color-brandHsl), 0.1);
+  border: 1px solid hsla(var(--color-brandHsl), 0.33);
+  box-shadow: 0px 0px 0.3px rgba(0, 0, 0, 0.012),
+    0px 0px 0.9px rgba(0, 0, 0, 0.018), 0px 0px 1.8px rgba(0, 0, 0, 0.022),
+    0px 0px 3.7px rgba(0, 0, 0, 0.028), 0px 0px 10px rgba(0, 0, 0, 0.04);
   text-align: left;
+  margin-bottom: 2rem;
 }
 .CallOut:hover,
 .CallOut:focus-visible,

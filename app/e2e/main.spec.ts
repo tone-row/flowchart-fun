@@ -155,6 +155,61 @@ describe.only("User", async () => {
 
     expect(await page.locator("[aria-label=Export]").isVisible()).toBe(false);
   });
+
+  test.only("can sign up as a sponsor", async () => {
+    await page.click('button[role="tab"]:has-text("Sponsors")');
+
+    await page.click('[data-testid="email"]');
+
+    const fakeEmail = `test+${Date.now()}@example.com`;
+
+    await page.fill('[data-testid="email"]', fakeEmail);
+
+    // get iframe name
+    const iframeName = await page.evaluate(() => {
+      const iframe = document.querySelector("iframe");
+      return iframe.name;
+    });
+
+    await page
+      .frame({
+        name: iframeName,
+      })
+      .click('[placeholder="Card number"]');
+
+    await page
+      .frame({
+        name: iframeName,
+      })
+      .fill('[placeholder="Card number"]', "4242 4242 4242 4242");
+
+    await page
+      .frame({
+        name: iframeName,
+      })
+      .fill('[placeholder="MM / YY"]', "02 / 24");
+
+    await page
+      .frame({
+        name: iframeName,
+      })
+      .fill('[placeholder="CVC"]', "222");
+
+    await page
+      .frame({
+        name: iframeName,
+      })
+      .fill('[placeholder="ZIP"]', "22222");
+
+    await page.click('button:has-text("Sign Up")');
+
+    // Expect 'Check your email for a link to log in. You can close this window.' to be in the document
+    await expect(
+      page.locator(
+        "text=Check your email for a link to log in. You can close this window."
+      )
+    ).toBeVisible({ timeout: 20000 });
+  });
 });
 
 function streamToString(stream: Stream) {

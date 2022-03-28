@@ -5,7 +5,8 @@ import { decode } from "./utils";
 
 export function parseText(
   text: string,
-  getSize: TGetSize
+  getSize: TGetSize,
+  lineNumberStart = 0
 ): cytoscape.ElementDefinition[] {
   const lines = text.split("\n");
 
@@ -19,7 +20,7 @@ export function parseText(
   // const edgeLabels: string[] = [];
   const lineNumbers: { [lineNumber: number]: string } = {};
 
-  let lineNumber = 1,
+  let lineNumber = lineNumberStart + 1,
     uniqueEdgeId = 0,
     indentation: string[] = [];
   for (let line of lines) {

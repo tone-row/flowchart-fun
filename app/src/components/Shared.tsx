@@ -18,7 +18,7 @@ export const smallIconSize = 18;
 
 export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {
   return (
-    <Type as={as} weight="700" size={1} {...props}>
+    <Type as={as} weight="400" size={1} {...props}>
       {children}
     </Type>
   );

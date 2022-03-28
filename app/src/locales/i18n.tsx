@@ -1,5 +1,5 @@
 export const languages = {
-  de: "Deutsche",
+  de: "Deutsch",
   en: "English",
   fr: "Français",
   hi: "हिन्दी",

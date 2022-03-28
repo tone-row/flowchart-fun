@@ -128,6 +128,7 @@ export default function EditUserChart() {
       setHoverLineNumber={setHoverLineNumber}
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
+      linesOfYaml={linesOfYaml}
     >
       <Editor
         value={text}
