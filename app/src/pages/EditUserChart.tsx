@@ -2,7 +2,7 @@ import Editor, { OnMount } from "@monaco-editor/react";
 import { useThrottleCallback } from "@react-hook/throttle";
 import merge from "deepmerge";
 import { stringify } from "gray-matter";
-import { Check, Timer } from "phosphor-react";
+import { Check, DotsThree } from "phosphor-react";
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useParams } from "react-router";
@@ -158,11 +158,11 @@ function LoadingState({
   return (
     <div className={styles.LoadingState}>
       {pending ? (
-        <Timer size={28} color="var(--color-edgeHover)" />
+        <DotsThree size={18} color="var(--palette-purple-0)" />
       ) : isLoading ? (
-        <Spinner r={10} s={2} c="var(--palette-purple-0)" />
+        <Spinner r={4} s={1} c="var(--palette-purple-0)" />
       ) : (
-        <Check size={30} color="var(--palette-green-0)" />
+        <Check size={17} color="var(--palette-purple-0)" />
       )}
     </div>
   );
