@@ -4,8 +4,9 @@
   bottom: 0;
   left: 0;
   place-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: var(--color-background);
-  border-radius: 50%;
+  width: 30px;
+  height: 20px;
+  border-radius: 0px 3px 0 0;
+  background-color: var(--color-nodeHover);
+  pointer-events: none;
 }
