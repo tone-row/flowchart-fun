@@ -4,43 +4,31 @@ import {
   ArrowsInSimple,
   ArrowsOutSimple,
   ArrowUpRight,
-  CaretDown,
-  CirclesThree,
   IconProps,
+  LineSegments,
   PaintBrush,
 } from "phosphor-react";
 import {
   ForwardRefExoticComponent,
   memo,
-  ReactNode,
   RefAttributes,
   useCallback,
   useContext,
   useEffect,
-  useMemo,
 } from "react";
 import { Controller, useForm } from "react-hook-form";
-import Select, {
-  components,
-  SingleValueProps,
-  StylesConfig,
-} from "react-select";
 
 import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts } from "../lib/graphOptions";
 import { themes, useGraphTheme } from "../lib/graphThemes";
 import { useStoreGraph } from "../lib/store.graph";
-import { Box, BoxProps, Type } from "../slang";
+import { Box, BoxProps } from "../slang";
 import { AutoLayoutSwitch } from "./AutoLayoutSwitch";
+import { GraphDropdown } from "./GraphDropdown";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
-import {
-  smallBtnTypeSize,
-  smallIconSize,
-  Tooltip,
-  tooltipSize,
-} from "./Shared";
+import { smallIconSize, Tooltip, tooltipSize } from "./Shared";
 
 const GraphOptionsBar = memo(() => {
   const { updateGraphOptionsText, graphOptions = {} } =
@@ -88,19 +76,8 @@ const GraphOptionsBar = memo(() => {
     reset({ layout: inContext.layout, theme: inContext.theme });
   }, [ctxGraphOptions, reset]);
 
-  const currentLayout = useMemo(
-    () =>
-      layouts.find(({ value }) => value === graphOptions.layout?.name) ??
-      layouts[0],
-    [graphOptions.layout?.name]
-  );
-
-  const currentDirection = useMemo(
-    () =>
-      directions.find(({ value }) => value === graphOptions.layout?.rankDir) ??
-      directions[0],
-    [graphOptions.layout]
-  );
+  const currentLayout = graphOptions.layout?.name ?? layouts[0].value;
+  const currentDirection = graphOptions.layout?.rankDir ?? directions[0].value;
 
   const expand = useCallback(
     () =>
@@ -133,53 +110,57 @@ const GraphOptionsBar = memo(() => {
       <AutoLayoutSwitch />
       {runLayout ? (
         <>
-          <OptionWithIcon
-            icon={CirclesThree}
+          <Tooltip
             label={t`Layout`}
-            labelFor="layout"
+            aria-label={t`Layout`}
+            className={`slang-type size-${tooltipSize}`}
           >
-            <Controller
-              control={control}
-              name="layout.name"
-              render={({ field: { onChange } }) => {
-                return (
-                  <Select
-                    inputId="layout"
-                    options={layouts}
-                    onChange={(layout: typeof layouts[number]) =>
-                      layout && onChange(layout.value)
-                    }
-                    value={currentLayout}
-                    {...selectProps}
-                  />
-                );
-              }}
-            />
-          </OptionWithIcon>
-          {currentLayout?.value === "dagre" && (
-            <OptionWithIcon
-              icon={ArrowUpRight}
-              label={t`Direction`}
-              labelFor="direction"
-            >
+            <div className={styles.BarSection}>
               <Controller
                 control={control}
-                name="layout.rankDir"
+                name="layout.name"
                 render={({ field: { onChange } }) => {
                   return (
-                    <Select
-                      inputId="direction"
-                      options={directions}
-                      onChange={(dir: typeof directions[0]) =>
-                        dir && onChange(dir.value)
-                      }
-                      value={currentDirection}
-                      {...selectProps}
-                    />
+                    <GraphDropdown
+                      value={currentLayout}
+                      options={layouts}
+                      handleValueChange={(layout) => {
+                        onChange(layout);
+                      }}
+                    >
+                      <LineSegments size={smallIconSize} />
+                    </GraphDropdown>
                   );
                 }}
               />
-            </OptionWithIcon>
+            </div>
+          </Tooltip>
+          {currentLayout === "dagre" && (
+            <Tooltip
+              label={t`Direction`}
+              aria-label={t`Direction`}
+              className={`slang-type size-${tooltipSize}`}
+            >
+              <div className={styles.BarSection}>
+                <Controller
+                  control={control}
+                  name="layout.rankDir"
+                  render={({ field: { onChange } }) => {
+                    return (
+                      <GraphDropdown
+                        value={currentDirection}
+                        options={directions}
+                        handleValueChange={(direction) => {
+                          onChange(direction);
+                        }}
+                      >
+                        <ArrowUpRight size={smallIconSize} />
+                      </GraphDropdown>
+                    );
+                  }}
+                />
+              </div>
+            </Tooltip>
           )}
           <Box flow="column" className={styles.BarSection}>
             <IconButton
@@ -199,193 +180,37 @@ const GraphOptionsBar = memo(() => {
           </Box>
         </>
       ) : null}
-      <OptionWithIcon icon={PaintBrush} label={t`Theme`} labelFor="theme">
-        <Controller
-          control={control}
-          name="theme"
-          render={({ field: { onChange } }) => {
-            return (
-              <Select
-                inputId="theme"
-                options={themes}
-                onChange={(theme: typeof themes[0]) =>
-                  theme && onChange(theme.value)
-                }
-                value={themes.find(
-                  (theme) => theme.value === currentTheme.value
-                )}
-                {...selectProps}
-              />
-            );
-          }}
-        />
-      </OptionWithIcon>
+      <Tooltip
+        label={t`Theme`}
+        aria-label={t`Theme`}
+        className={`slang-type size-${tooltipSize}`}
+      >
+        <div className={styles.BarSection}>
+          <Controller
+            control={control}
+            name="theme"
+            render={({ field: { onChange } }) => {
+              return (
+                <GraphDropdown
+                  value={currentTheme.value}
+                  options={themes}
+                  handleValueChange={(theme) => {
+                    onChange(theme);
+                  }}
+                >
+                  <PaintBrush size={smallIconSize} />
+                </GraphDropdown>
+              );
+            }}
+          />
+        </div>
+      </Tooltip>
     </Box>
   );
 });
 
 GraphOptionsBar.displayName = "GraphOptionsBar";
 export default GraphOptionsBar;
-
-type Icon = React.ForwardRefExoticComponent<
-  IconProps & React.RefAttributes<SVGSVGElement>
->;
-
-function OptionWithIcon({
-  icon: Icon,
-  children,
-  label,
-  labelFor,
-}: {
-  icon: Icon;
-  children: ReactNode;
-  label: string;
-  labelFor: string;
-}) {
-  return (
-    <>
-      <VisuallyHidden as="label" htmlFor={labelFor}>
-        {label}
-      </VisuallyHidden>
-      <Tooltip
-        label={label}
-        aria-label={label}
-        className={`slang-type size-${tooltipSize}`}
-      >
-        <Box
-          flow="column"
-          gap={1}
-          items="center normal"
-          content="normal start"
-          className={styles.BarSection}
-        >
-          <Box className={styles.BarSectionSvgWrapper} pl={2}>
-            <Icon size={smallIconSize} />
-          </Box>
-          {children}
-        </Box>
-      </Tooltip>
-    </>
-  );
-}
-
-const selectStyles: StylesConfig<any, false> = {
-  control: (p, { isFocused }) => {
-    return {
-      ...p,
-      border: "none",
-      backgroundColor: isFocused
-        ? "var(--color-nodeHover)"
-        : "var(--color-input)",
-      boxShadow: "none",
-      transition: "none",
-      cursor: "pointer",
-      minHeight: 0,
-      "&:hover": {
-        borderColor: "var(--color-edgeHover)",
-        backgroundColor: "var(--color-nodeHover)",
-        "& [class*='indicatorContainer'] svg polyline": {
-          stroke: "var(--color-edgeHover)",
-        },
-      },
-    };
-  },
-  placeholder: (provided) => ({
-    ...provided,
-    position: "static",
-    transform: "none",
-  }),
-  singleValue: (provided) => ({
-    ...provided,
-    position: "static",
-    transform: "none",
-    marginLeft: 0,
-    marginRight: 0,
-    maxWidth: "100%",
-    color: "var(--color-foreground)",
-  }),
-  valueContainer: (provided) => ({
-    ...provided,
-    padding: 0,
-    flexWrap: "nowrap",
-  }),
-  indicatorsContainer: (provided) => ({
-    ...provided,
-  }),
-  dropdownIndicator: (provided, { isFocused }) => ({
-    ...provided,
-    padding: 0,
-    paddingRight: "calc(var(--spacer-px) * 2)",
-    transition: "none",
-    polyline: {
-      stroke: isFocused ? "var(--color-edgeHover)" : "var(--color-uiAccent)",
-    },
-  }),
-  menu: (provided) => ({
-    ...provided,
-    backgroundColor: "var(--color-background)",
-    border: "solid 1px var(--color-uiAccent)",
-    boxShadow: "none",
-    width: 180,
-    zIndex: 2,
-  }),
-  menuList: (provided) => ({
-    ...provided,
-    paddingTop: 0,
-    paddingBottom: 0,
-  }),
-  menuPortal: (provided) => ({
-    ...provided,
-  }),
-};
-
-const SingleValue = ({ children }: SingleValueProps<any>) => (
-  <Box p={1} at={{ tablet: { p: 2 } }}>
-    <Type size={smallBtnTypeSize}>{children}</Type>
-  </Box>
-);
-
-const Option = ({
-  children,
-  innerProps,
-  innerRef,
-  isSelected,
-  isFocused,
-}: any) => {
-  return (
-    <Box
-      className={styles.Option}
-      ref={innerRef}
-      p={1}
-      at={{ tablet: { p: 2 } }}
-      {...innerProps}
-      aria-selected={isSelected}
-      data-focused={isFocused}
-    >
-      <Type size={smallBtnTypeSize}>{children}</Type>
-    </Box>
-  );
-};
-
-const DIndicator = (props: any) => {
-  return (
-    <components.DropdownIndicator {...props}>
-      <CaretDown />
-    </components.DropdownIndicator>
-  );
-};
-
-const selectProps = {
-  isSearchable: false,
-  getOptionLabel: ({ label }: any) => (label as unknown as () => string)(),
-  styles: selectStyles,
-  components: {
-    IndicatorSeparator: () => null,
-    SingleValue,
-    Option,
-    DropdownIndicator: DIndicator,
-  },
-};
 
 type R = string | number | null | undefined | boolean | any;
 interface Z {
