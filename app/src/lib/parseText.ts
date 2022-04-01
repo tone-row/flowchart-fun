@@ -36,31 +36,28 @@ export function parseText(
     // Find parent
     const parentId = findParentId(leadingSpace, indentation);
 
-    // Extract Custom Id, Throw on multiple
-    let m: RegExpExecArray | null;
-    if ((m = getIdAndClasses(line))) {
-      line = line.replace(m[0], "");
-    }
-    const userSuppliedId = !!m?.groups?.id;
-    const id = m?.groups?.id ?? ID(lineNumber);
-    const classes = m?.groups?.classes ?? "";
+    const {
+      id = ID(lineNumber),
+      classes,
+      pointers,
+      userSuppliedId,
+      newLine,
+    } = getSymbols(line);
 
-    // Extract Pointers
-    const pointers = getPointers(line);
+    line = newLine;
+
     if (pointers.length && !parentId) {
       throw new Error(`Pointers found without parent: ${pointers}`);
     }
 
     for (const pointer of pointers) {
-      line = line.replace(pointer, "");
-      const pointsTo = pointer.slice(1, -1);
-      const edgeId = `${parentId}_${pointsTo}:${uniqueEdgeId++}`;
+      const edgeId = `${parentId}_${pointer}:${uniqueEdgeId++}`;
       // create edge to parent
       edgesNoLabel.push({
         data: {
           id: edgeId,
           source: parentId,
-          target: pointsTo,
+          target: pointer,
           lineNumber,
         },
       });
@@ -169,35 +166,51 @@ function ID(lineNumber: number) {
   return `N${(333 + lineNumber).toString(16)}`;
 }
 
-function getIdAndClasses(s: string): null | RegExpExecArray {
-  const re = /\[(?<id>[^.\]]*)?(?<classes>(?:\.[a-zA-Z]{1}[\w-]*)*)\]/g;
-  let match: RegExpExecArray | null;
-  const matches: RegExpExecArray[] = [];
-  while ((match = re.exec(s)) != null) {
-    matches.push(match);
-  }
-  if (!matches.length) return null;
-  if (matches.length > 1) {
-    throw new Error(`Multiple IDs found: ${matches}`);
-  }
-  return matches[0];
-}
-
-// An ID (user or generated), an edge id eventually, and the actual text label
-function getPointers(s: string): string[] {
-  const re = /[(（](?<pointer>[^(（)）]+)[)）]/g;
-  let match: RegExpExecArray | null;
-  const matches: RegExpExecArray[] = [];
-  while ((match = re.exec(s)) != null) {
-    matches.push(match);
-  }
-  if (!matches.length) return [];
-  return matches.map((m) => m[0]);
-}
-
 function getLineNumber(str: string): null | number {
   const re = /^[1-9]{1}\d*$/;
   const match = re.exec(str);
   if (!match) return null;
   return parseInt(match[0], 10);
+}
+
+/**
+ * Gets poiters, node ids, and edge ids
+ */
+function getSymbols(line: string): {
+  pointers: string[];
+  id: string | undefined;
+  classes: string;
+  userSuppliedId: boolean;
+  newLine: string;
+} {
+  const pointers: string[] = [];
+  let id = undefined;
+  let classes = "";
+
+  const toReplace: string[] = [];
+  const re =
+    /(?<replace>([(（](?<pointer>[^(（)）]+)[)）])|(\[(?<id>[^.\]]*)?(?<classes>(?:\.[a-zA-Z]{1}[\w-]*)*)\]))/g;
+  let match: RegExpExecArray | null;
+  while ((match = re.exec(line)) != null) {
+    if (!match.groups) continue;
+    if (match.groups.replace) {
+      toReplace.push(match.groups.replace);
+    }
+    if (match.groups.pointer) pointers.push(match.groups.pointer);
+    if (match.groups.id) id = match.groups.id;
+    if (match.groups.classes) classes = match.groups.classes;
+  }
+
+  // Remove all toReplace from line
+  for (const replace of toReplace) {
+    line = line.replace(replace, "");
+  }
+
+  return {
+    pointers,
+    id,
+    classes,
+    userSuppliedId: Boolean(id),
+    newLine: line,
+  };
 }
