@@ -10,6 +10,11 @@ describe("parseText", () => {
     expect(Array.isArray(result)).toBe(true);
   });
 
+  test("creates default node ID", () => {
+    const result = parseText("a", getSize);
+    expect(result[0].data.id).toBe("N14e");
+  });
+
   test("creates one node per line with label", () => {
     const result = parseText("a\nb\nc", getSize);
     expect(result.length).toEqual(3);
