@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import { defaultFontFamily, Theme } from "./constants";
 
 const fontFamily = defaultFontFamily;
@@ -5,13 +8,12 @@ const fontSize = 10;
 const backgroundColor = "#ffffff";
 const arrowColor = "#000000";
 const lineHeight = 1.25;
-const padding = "11px";
+const padding = "6px";
 
+const arrowWidth = 1;
 const original: Theme = {
   value: "original",
   bg: backgroundColor,
-  minHeight: 4,
-  minWidth: 4,
   font: {
     fontFamily,
     fontSize,
@@ -44,21 +46,17 @@ const original: Theme = {
         "padding-bottom": padding,
         "text-valign": "center",
         "text-halign": "center",
-        "border-width": 1,
-        shape: "roundrectangle",
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
+        "border-width": arrowWidth,
+        shape: "rectangle",
         "line-height": lineHeight,
       },
     },
     {
       selector: "edge",
       style: {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         "loop-direction": "0deg",
         "loop-sweep": "20deg",
-        width: 1,
+        width: arrowWidth,
         "text-background-opacity": 1,
         "text-background-color": backgroundColor,
         "text-background-padding": "3px",
@@ -75,6 +73,8 @@ const original: Theme = {
         fontFamily,
         "text-halign": "center",
         "edge-text-rotation": "autorotate",
+        "target-distance-from-node": 1,
+        "source-distance-from-node": 0,
       },
     },
   ],

@@ -18,13 +18,21 @@ export type GraphThemes =
   | "original-dark"
   | "eggs"
   | "excalidraw"
-  | "monospace";
+  | "monospace"
+  | "clay"
+  | "playbook"
+  | "blokus"
+  | "museum";
 export const allGraphThemes: GraphThemes[] = [
   "original",
   "original-dark",
   "eggs",
   "excalidraw",
   "monospace",
+  "clay",
+  "playbook",
+  "blokus",
+  "museum",
 ];
 export const themes: {
   label: () => string;
@@ -35,6 +43,10 @@ export const themes: {
   { label: () => t`Eggs`, value: "eggs" },
   { label: () => t`Excalidraw`, value: "excalidraw" },
   { label: () => t`Monospace`, value: "monospace" },
+  { label: () => t`Clay`, value: "clay" },
+  { label: () => t`Playbook`, value: "playbook" },
+  { label: () => `Blokus`, value: "blokus" },
+  { label: () => t`Museum`, value: "museum" },
 ];
 export const defaultGraphTheme: GraphThemes = "original";
 
@@ -52,7 +64,10 @@ declare global {
 window.__flowchartFunBase64EncodedFonts = {};
 
 async function loadFont(name: string, url: string, unicodeRange?: string) {
-  const font = new FontFace(name, `url(/fonts/${url})`, {
+  const toLoadUrl = url.startsWith("http")
+    ? `url(${url})`
+    : `url(/fonts/${url})`;
+  const font = new FontFace(name, toLoadUrl, {
     unicodeRange,
   });
   await font.load();
