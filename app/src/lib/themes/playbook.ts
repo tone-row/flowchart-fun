@@ -4,7 +4,7 @@
 import { Theme } from "./constants";
 
 const fontFamily = "Karla";
-const fontSize = 9;
+const fontSize = 10;
 const backgroundColor = "#ffffff";
 const nodeBackgroundColor = backgroundColor;
 const edgeLabelBackgroundColor = "#EDECF9";

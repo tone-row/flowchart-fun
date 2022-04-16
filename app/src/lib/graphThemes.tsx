@@ -1,4 +1,3 @@
-import { t } from "@lingui/macro";
 import {
   createContext,
   Dispatch,
@@ -11,8 +10,11 @@ import {
 } from "react";
 
 import { GraphContext } from "../components/GraphProvider";
+import { themes } from "./graphOptions";
+import { useIsPublicHostedCharted, useIsValidSponsor } from "./hooks";
 import { Theme } from "./themes/constants";
 import original from "./themes/original";
+
 export type GraphThemes =
   | "original"
   | "original-dark"
@@ -23,32 +25,16 @@ export type GraphThemes =
   | "playbook"
   | "blokus"
   | "museum";
-export const allGraphThemes: GraphThemes[] = [
-  "original",
-  "original-dark",
-  "eggs",
-  "excalidraw",
-  "monospace",
-  "clay",
-  "playbook",
-  "blokus",
-  "museum",
-];
-export const themes: {
-  label: () => string;
-  value: GraphThemes;
-}[] = [
-  { label: () => t`Light`, value: "original" },
-  { label: () => t`Dark`, value: "original-dark" },
-  { label: () => t`Eggs`, value: "eggs" },
-  { label: () => t`Excalidraw`, value: "excalidraw" },
-  { label: () => t`Monospace`, value: "monospace" },
-  { label: () => t`Clay`, value: "clay" },
-  { label: () => t`Playbook`, value: "playbook" },
-  { label: () => `Blokus`, value: "blokus" },
-  { label: () => t`Museum`, value: "museum" },
-];
-export const defaultGraphTheme: GraphThemes = "original";
+
+const publicThemes = themes
+  .filter((theme) => !theme.sponsorOnly)
+  .map((theme) => theme.value) as GraphThemes[];
+
+const sponsorOnlyThemes = themes
+  .filter((theme) => theme.sponsorOnly)
+  .map((theme) => theme.value) as GraphThemes[];
+
+const defaultGraphTheme: GraphThemes = "original";
 
 async function dynamicActivate(name: string) {
   const theme = await import(`./themes/${name}`);
@@ -101,6 +87,7 @@ function useLoadedTheme(theme: GraphThemes) {
   const lastTheme = useRef<GraphThemes>(theme ?? defaultGraphTheme);
   useEffect(() => {
     if (!loaded) return;
+
     if (!(theme in loaded)) {
       dynamicActivate(theme).then((result: Theme) => {
         if (result.font?.files) {
@@ -116,15 +103,24 @@ function useLoadedTheme(theme: GraphThemes) {
           setLoaded({ ...loaded, [theme]: result });
         }
       });
+    } else {
+      lastTheme.current = theme;
     }
   }, [theme, loaded, setLoaded]);
   return loaded?.[theme] ?? loaded?.[lastTheme.current] ?? original;
 }
 
 export function useGraphTheme() {
+  const isValidSponsor = useIsValidSponsor();
+  const isPublicHostedChart = useIsPublicHostedCharted();
   const { graphOptions } = useContext(GraphContext);
   let theme = defaultGraphTheme;
-  if (graphOptions?.theme && allGraphThemes.includes(graphOptions.theme))
+  if (
+    graphOptions?.theme &&
+    (publicThemes.includes(graphOptions.theme) ||
+      ((isValidSponsor || isPublicHostedChart) &&
+        sponsorOnlyThemes.includes(graphOptions.theme)))
+  )
     theme = graphOptions.theme;
   return useLoadedTheme(theme);
 }
