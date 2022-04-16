@@ -13,15 +13,15 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Sponsor.tsx:163
+#: src/components/Sponsor.tsx:164
 msgid "$1 / Month"
 msgstr "1 美元/月"
 
-#: src/components/Sponsor.tsx:164
+#: src/components/Sponsor.tsx:165
 msgid "$10 / Year"
 msgstr "10 美元/年"
 
-#: src/components/Navigation.tsx:362
+#: src/components/Navigation.tsx:360
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
 msgstr "随时随地访问这些图表。共享/嵌入与您编辑的文档保持同步的图表。"
 
@@ -55,17 +55,17 @@ msgstr "返回编辑器"
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
-#: src/lib/graphOptions.ts:22
+#: src/lib/graphOptions.ts:36
 msgid "Bottom to Top"
 msgstr "从下到上"
 
-#: src/lib/graphOptions.ts:10
+#: src/lib/graphOptions.ts:24
 msgid "Breadthfirst"
 msgstr "宽度优先"
 
-#: src/components/Navigation.tsx:252
-#: src/components/Navigation.tsx:605
-#: src/components/Navigation.tsx:655
+#: src/components/Navigation.tsx:250
+#: src/components/Navigation.tsx:603
+#: src/components/Navigation.tsx:653
 #: src/components/SponsorDashboard.tsx:127
 #: src/components/SponsorDashboard.tsx:138
 #: src/components/SponsorDashboard.tsx:227
@@ -88,19 +88,23 @@ msgstr "图表"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/lib/graphOptions.ts:13
+#: src/lib/graphOptions.ts:27
 msgid "Circle"
 msgstr "圆圈"
+
+#: src/lib/graphOptions.ts:46
+msgid "Clay"
+msgstr "粘土"
 
 #: src/components/Shared.tsx:154
 msgid "Close"
 msgstr "关闭"
 
-#: src/lib/graphOptions.ts:12
+#: src/lib/graphOptions.ts:26
 msgid "Concentric"
 msgstr "同心"
 
-#: src/components/GraphOptionsBar.tsx:188
+#: src/components/GraphOptionsBar.tsx:197
 msgid "Contract"
 msgstr "缩小"
 
@@ -108,27 +112,27 @@ msgstr "缩小"
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
-#: src/components/Navigation.tsx:538
-#: src/components/Navigation.tsx:606
-#: src/components/Navigation.tsx:640
+#: src/components/Navigation.tsx:536
+#: src/components/Navigation.tsx:604
+#: src/components/Navigation.tsx:638
 #: src/components/ShareDialog.tsx:222
 #: src/components/ShareDialog.tsx:288
 msgid "Copy"
 msgstr "复制"
 
-#: src/components/GraphContextMenu.tsx:85
+#: src/components/GraphContextMenu.tsx:103
 msgid "Copy PNG Image"
 msgstr "复制PNG图像"
 
-#: src/components/GraphContextMenu.tsx:62
+#: src/components/GraphContextMenu.tsx:79
 msgid "Copy SVG Code"
 msgstr "复制 SVG 代码"
 
 #: src/components/MenuNext.tsx:112
 #: src/components/MenuNext.tsx:459
-#: src/components/Navigation.tsx:163
-#: src/components/Navigation.tsx:322
-#: src/components/Navigation.tsx:377
+#: src/components/Navigation.tsx:161
+#: src/components/Navigation.tsx:320
+#: src/components/Navigation.tsx:375
 msgid "Create"
 msgstr "创建"
 
@@ -137,11 +141,11 @@ msgstr "创建"
 msgid "Create a link directly using the exact label text"
 msgstr "使用完全一样的标签文本，直接创建链接"
 
-#: src/components/Navigation.tsx:425
+#: src/components/Navigation.tsx:423
 msgid "Created"
 msgstr "已创建"
 
-#: src/lib/graphThemes.tsx:34
+#: src/lib/graphOptions.ts:41
 msgid "Dark"
 msgstr "深色"
 
@@ -154,14 +158,14 @@ msgstr "深色模式"
 msgid "Date"
 msgstr "日期"
 
-#: src/components/Navigation.tsx:241
-#: src/components/Navigation.tsx:246
-#: src/components/Navigation.tsx:255
-#: src/components/Navigation.tsx:656
+#: src/components/Navigation.tsx:239
+#: src/components/Navigation.tsx:244
+#: src/components/Navigation.tsx:253
+#: src/components/Navigation.tsx:654
 msgid "Delete"
 msgstr "删除"
 
-#: src/components/GraphOptionsBar.tsx:162
+#: src/components/GraphOptionsBar.tsx:168
 msgid "Direction"
 msgstr "方向"
 
@@ -169,7 +173,7 @@ msgstr "方向"
 msgid "Do you want to cancel your subscription?"
 msgstr "您要取消订阅吗？"
 
-#: src/components/Navigation.tsx:649
+#: src/components/Navigation.tsx:647
 msgid "Do you want to delete this?"
 msgstr "您要将其删除吗？"
 
@@ -177,20 +181,20 @@ msgstr "您要将其删除吗？"
 msgid "Download"
 msgstr "下载"
 
-#: src/components/GraphContextMenu.tsx:32
+#: src/components/GraphContextMenu.tsx:43
 msgid "Download JPG"
 msgstr "下载 JPG"
 
-#: src/components/GraphContextMenu.tsx:27
+#: src/components/GraphContextMenu.tsx:33
 msgid "Download PNG"
 msgstr "下载 PNG"
 
-#: src/components/GraphContextMenu.tsx:37
+#: src/components/GraphContextMenu.tsx:53
 msgid "Download SVG"
 msgstr "下载 SVG"
 
-#: src/components/Navigation.tsx:298
-#: src/components/Navigation.tsx:591
+#: src/components/Navigation.tsx:296
+#: src/components/Navigation.tsx:589
 msgid "Duplicate"
 msgstr "复制"
 
@@ -199,7 +203,7 @@ msgstr "复制"
 msgid "Editor"
 msgstr "编辑器"
 
-#: src/lib/graphThemes.tsx:35
+#: src/lib/graphOptions.ts:42
 msgid "Eggs"
 msgstr "蛋"
 
@@ -211,17 +215,17 @@ msgstr "电子邮件"
 msgid "Email (optional)"
 msgstr "电子邮件（可选）"
 
-#: src/components/Navigation.tsx:155
-#: src/components/Navigation.tsx:369
-#: src/components/Navigation.tsx:597
+#: src/components/Navigation.tsx:153
+#: src/components/Navigation.tsx:367
+#: src/components/Navigation.tsx:595
 msgid "Enter a title"
 msgstr "输入标题"
 
-#: src/lib/graphThemes.tsx:36
+#: src/lib/graphOptions.ts:43
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:197
+#: src/components/GraphOptionsBar.tsx:206
 msgid "Expand"
 msgstr "放大"
 
@@ -244,11 +248,15 @@ msgstr "关注我们"
 msgid "Fullscreen"
 msgstr "全屏"
 
+#: src/lib/graphOptions.ts:50
+msgid "Get More Themes"
+msgstr "获取更多主题"
+
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
 msgstr "图表"
 
-#: src/lib/graphOptions.ts:15
+#: src/lib/graphOptions.ts:29
 msgid "Grid"
 msgstr "网格"
 
@@ -269,8 +277,8 @@ msgstr "历史"
 msgid "Home"
 msgstr "主页"
 
-#: src/components/Navigation.tsx:138
-#: src/components/Navigation.tsx:361
+#: src/components/Navigation.tsx:136
+#: src/components/Navigation.tsx:359
 msgid "Hosted Charts"
 msgstr "托管的图表"
 
@@ -283,15 +291,15 @@ msgstr "缩进可创建连接到当前行的链接"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/GraphOptionsBar.tsx:138
+#: src/components/GraphOptionsBar.tsx:144
 msgid "Layout"
 msgstr "布局"
 
-#: src/lib/graphOptions.ts:20
+#: src/lib/graphOptions.ts:34
 msgid "Left to Right"
 msgstr "从左到右"
 
-#: src/lib/graphThemes.tsx:33
+#: src/lib/graphOptions.ts:40
 msgid "Light"
 msgstr "浅色"
 
@@ -304,7 +312,7 @@ msgstr "浅色模式"
 msgid "Link"
 msgstr "链接"
 
-#: src/components/Navigation.tsx:148
+#: src/components/Navigation.tsx:146
 msgid "Local Charts"
 msgstr "本地的图表"
 
@@ -328,11 +336,15 @@ msgstr "捐款"
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
-#: src/lib/graphThemes.tsx:37
+#: src/lib/graphOptions.ts:44
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/Navigation.tsx:413
+#: src/lib/graphOptions.ts:48
+msgid "Museum"
+msgstr "博物馆"
+
+#: src/components/Navigation.tsx:411
 msgid "Name"
 msgstr "姓名"
 
@@ -345,13 +357,17 @@ msgstr "需要帮助？<0>请查看我们的文档。</0>"
 msgid "Next charge"
 msgstr "下次扣费"
 
-#: src/components/Navigation.tsx:417
+#: src/lib/graphOptions.ts:47
+msgid "Playbook"
+msgstr "剧本"
+
+#: src/components/Navigation.tsx:415
 #: src/components/ShareDialog.tsx:91
 #: src/components/ShareDialog.tsx:117
 msgid "Public"
 msgstr "公开"
 
-#: src/lib/graphOptions.ts:14
+#: src/lib/graphOptions.ts:28
 msgid "Random"
 msgstr "随机"
 
@@ -363,8 +379,8 @@ msgstr "随机"
 msgid "Rename"
 msgstr "重命名"
 
-#: src/components/Navigation.tsx:246
-#: src/components/Navigation.tsx:255
+#: src/components/Navigation.tsx:244
+#: src/components/Navigation.tsx:253
 msgid "Reset"
 msgstr "重置"
 
@@ -379,7 +395,7 @@ msgstr "恢复订阅"
 msgid "Return"
 msgstr "返回"
 
-#: src/lib/graphOptions.ts:21
+#: src/lib/graphOptions.ts:35
 msgid "Right to Left"
 msgstr "从右到左"
 
@@ -388,11 +404,11 @@ msgstr "从右到左"
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/Sponsor.tsx:219
+#: src/components/Sponsor.tsx:207
 msgid "Sign Up"
 msgstr "注册"
 
-#: src/components/Navigation.tsx:140
+#: src/components/Navigation.tsx:138
 #: src/components/Sponsor.tsx:47
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 msgstr "以每月 1 美元的价格赞助 flowchart.fun，以访问托管的流程图、最新的样式和功能"
@@ -428,11 +444,11 @@ msgstr "订阅即将到期"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/GraphOptionsBar.tsx:202
+#: src/components/GraphOptionsBar.tsx:211
 msgid "Theme"
 msgstr "风格"
 
-#: src/components/Navigation.tsx:149
+#: src/components/Navigation.tsx:147
 msgid "These charts are only available in this browser on this device. Clearing your browser {localStorage} will erase these."
 msgstr "这些图表仅在此设备上的此浏览器中可用。清除浏览器的 {localStorage} 将删除这些图表。"
 
@@ -441,7 +457,7 @@ msgstr "这些图表仅在此设备上的此浏览器中可用。清除浏览器
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
 
-#: src/lib/graphOptions.ts:19
+#: src/lib/graphOptions.ts:33
 msgid "Top to Bottom"
 msgstr "从上到下"
 
@@ -449,7 +465,7 @@ msgstr "从上到下"
 msgid "Try again"
 msgstr "重试"
 
-#: src/components/Navigation.tsx:421
+#: src/components/Navigation.tsx:419
 msgid "Updated"
 msgstr "已更新"
 
@@ -465,11 +481,11 @@ msgstr "在 Github 上查看"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "我们感谢您的全部反馈、建议、报错和关于功能的需求！"
 
-#: src/components/Sponsor.tsx:222
+#: src/components/Sponsor.tsx:210
 msgid "We use cookies to keep you logged in."
 msgstr "我们使用 cookies 来让您保持登录状态。"
 
-#: src/components/Navigation.tsx:308
+#: src/components/Navigation.tsx:306
 msgid "What would you like to name this copy?"
 msgstr "你想将这个副本命名为什么？"
 
@@ -481,7 +497,7 @@ msgstr "您想跟我们分享什么？"
 msgid "With Editor"
 msgstr "使用编辑器"
 
-#: src/components/Navigation.tsx:391
+#: src/components/Navigation.tsx:389
 #: src/components/SponsorDashboard.tsx:65
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。"

@@ -13,15 +13,15 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Sponsor.tsx:163
+#: src/components/Sponsor.tsx:164
 msgid "$1 / Month"
 msgstr "$1 / 월"
 
-#: src/components/Sponsor.tsx:164
+#: src/components/Sponsor.tsx:165
 msgid "$10 / Year"
 msgstr "$10 / 연"
 
-#: src/components/Navigation.tsx:362
+#: src/components/Navigation.tsx:360
 msgid "Access these charts from anywhere. Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다. 편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
 
@@ -55,17 +55,17 @@ msgstr "편집기로 돌아가기"
 msgid "Become a Sponsor"
 msgstr "스폰서 되기"
 
-#: src/lib/graphOptions.ts:22
+#: src/lib/graphOptions.ts:36
 msgid "Bottom to Top"
 msgstr "아래에서 위로"
 
-#: src/lib/graphOptions.ts:10
+#: src/lib/graphOptions.ts:24
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
-#: src/components/Navigation.tsx:252
-#: src/components/Navigation.tsx:605
-#: src/components/Navigation.tsx:655
+#: src/components/Navigation.tsx:250
+#: src/components/Navigation.tsx:603
+#: src/components/Navigation.tsx:653
 #: src/components/SponsorDashboard.tsx:127
 #: src/components/SponsorDashboard.tsx:138
 #: src/components/SponsorDashboard.tsx:227
@@ -88,19 +88,23 @@ msgstr "차트"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
-#: src/lib/graphOptions.ts:13
+#: src/lib/graphOptions.ts:27
 msgid "Circle"
 msgstr "원"
+
+#: src/lib/graphOptions.ts:46
+msgid "Clay"
+msgstr "점토"
 
 #: src/components/Shared.tsx:154
 msgid "Close"
 msgstr "닫기"
 
-#: src/lib/graphOptions.ts:12
+#: src/lib/graphOptions.ts:26
 msgid "Concentric"
 msgstr "동심"
 
-#: src/components/GraphOptionsBar.tsx:188
+#: src/components/GraphOptionsBar.tsx:197
 msgid "Contract"
 msgstr "줄다"
 
@@ -108,27 +112,27 @@ msgstr "줄다"
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
-#: src/components/Navigation.tsx:538
-#: src/components/Navigation.tsx:606
-#: src/components/Navigation.tsx:640
+#: src/components/Navigation.tsx:536
+#: src/components/Navigation.tsx:604
+#: src/components/Navigation.tsx:638
 #: src/components/ShareDialog.tsx:222
 #: src/components/ShareDialog.tsx:288
 msgid "Copy"
 msgstr "복사"
 
-#: src/components/GraphContextMenu.tsx:85
+#: src/components/GraphContextMenu.tsx:103
 msgid "Copy PNG Image"
 msgstr "PNG 이미지 복사"
 
-#: src/components/GraphContextMenu.tsx:62
+#: src/components/GraphContextMenu.tsx:79
 msgid "Copy SVG Code"
 msgstr "SVG 코드 복사"
 
 #: src/components/MenuNext.tsx:112
 #: src/components/MenuNext.tsx:459
-#: src/components/Navigation.tsx:163
-#: src/components/Navigation.tsx:322
-#: src/components/Navigation.tsx:377
+#: src/components/Navigation.tsx:161
+#: src/components/Navigation.tsx:320
+#: src/components/Navigation.tsx:375
 msgid "Create"
 msgstr "만들기"
 
@@ -137,11 +141,11 @@ msgstr "만들기"
 msgid "Create a link directly using the exact label text"
 msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 
-#: src/components/Navigation.tsx:425
+#: src/components/Navigation.tsx:423
 msgid "Created"
 msgstr "생성됨"
 
-#: src/lib/graphThemes.tsx:34
+#: src/lib/graphOptions.ts:41
 msgid "Dark"
 msgstr "다크"
 
@@ -154,14 +158,14 @@ msgstr "다크 모드"
 msgid "Date"
 msgstr "날짜"
 
-#: src/components/Navigation.tsx:241
-#: src/components/Navigation.tsx:246
-#: src/components/Navigation.tsx:255
-#: src/components/Navigation.tsx:656
+#: src/components/Navigation.tsx:239
+#: src/components/Navigation.tsx:244
+#: src/components/Navigation.tsx:253
+#: src/components/Navigation.tsx:654
 msgid "Delete"
 msgstr "삭제"
 
-#: src/components/GraphOptionsBar.tsx:162
+#: src/components/GraphOptionsBar.tsx:168
 msgid "Direction"
 msgstr "방향"
 
@@ -169,7 +173,7 @@ msgstr "방향"
 msgid "Do you want to cancel your subscription?"
 msgstr "구독을 취소하시겠습니까?"
 
-#: src/components/Navigation.tsx:649
+#: src/components/Navigation.tsx:647
 msgid "Do you want to delete this?"
 msgstr "본 항목을 삭제하시겠습니까?"
 
@@ -177,20 +181,20 @@ msgstr "본 항목을 삭제하시겠습니까?"
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/GraphContextMenu.tsx:32
+#: src/components/GraphContextMenu.tsx:43
 msgid "Download JPG"
 msgstr "JPG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:27
+#: src/components/GraphContextMenu.tsx:33
 msgid "Download PNG"
 msgstr "PNG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:37
+#: src/components/GraphContextMenu.tsx:53
 msgid "Download SVG"
 msgstr "SVG 다운로드"
 
-#: src/components/Navigation.tsx:298
-#: src/components/Navigation.tsx:591
+#: src/components/Navigation.tsx:296
+#: src/components/Navigation.tsx:589
 msgid "Duplicate"
 msgstr "복제"
 
@@ -199,7 +203,7 @@ msgstr "복제"
 msgid "Editor"
 msgstr "에디터"
 
-#: src/lib/graphThemes.tsx:35
+#: src/lib/graphOptions.ts:42
 msgid "Eggs"
 msgstr "달걀"
 
@@ -211,17 +215,17 @@ msgstr "이메일"
 msgid "Email (optional)"
 msgstr "이메일 (선택사항)"
 
-#: src/components/Navigation.tsx:155
-#: src/components/Navigation.tsx:369
-#: src/components/Navigation.tsx:597
+#: src/components/Navigation.tsx:153
+#: src/components/Navigation.tsx:367
+#: src/components/Navigation.tsx:595
 msgid "Enter a title"
 msgstr "제목을 입력하세요"
 
-#: src/lib/graphThemes.tsx:36
+#: src/lib/graphOptions.ts:43
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:197
+#: src/components/GraphOptionsBar.tsx:206
 msgid "Expand"
 msgstr "넓히다"
 
@@ -244,11 +248,15 @@ msgstr "팔로우하세요"
 msgid "Fullscreen"
 msgstr "전체 화면"
 
+#: src/lib/graphOptions.ts:50
+msgid "Get More Themes"
+msgstr "더 많은 테마 받기"
+
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
 msgstr "그래프"
 
-#: src/lib/graphOptions.ts:15
+#: src/lib/graphOptions.ts:29
 msgid "Grid"
 msgstr "그리드"
 
@@ -269,8 +277,8 @@ msgstr "기록"
 msgid "Home"
 msgstr "집"
 
-#: src/components/Navigation.tsx:138
-#: src/components/Navigation.tsx:361
+#: src/components/Navigation.tsx:136
+#: src/components/Navigation.tsx:359
 msgid "Hosted Charts"
 msgstr "호스트 차트"
 
@@ -283,15 +291,15 @@ msgstr "들여쓰기는 현재 줄에 대한 링크를 생성합니다"
 msgid "Language"
 msgstr "언어"
 
-#: src/components/GraphOptionsBar.tsx:138
+#: src/components/GraphOptionsBar.tsx:144
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/lib/graphOptions.ts:20
+#: src/lib/graphOptions.ts:34
 msgid "Left to Right"
 msgstr "왼쪽에서 오른쪽으로"
 
-#: src/lib/graphThemes.tsx:33
+#: src/lib/graphOptions.ts:40
 msgid "Light"
 msgstr "라이트"
 
@@ -304,7 +312,7 @@ msgstr "라이트 모드"
 msgid "Link"
 msgstr "링크"
 
-#: src/components/Navigation.tsx:148
+#: src/components/Navigation.tsx:146
 msgid "Local Charts"
 msgstr "로컬 차트"
 
@@ -328,11 +336,15 @@ msgstr "기부하기"
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
-#: src/lib/graphThemes.tsx:37
+#: src/lib/graphOptions.ts:44
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/Navigation.tsx:413
+#: src/lib/graphOptions.ts:48
+msgid "Museum"
+msgstr "박물관"
+
+#: src/components/Navigation.tsx:411
 msgid "Name"
 msgstr "이름"
 
@@ -345,13 +357,17 @@ msgstr "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</
 msgid "Next charge"
 msgstr "다음 청구 금액"
 
-#: src/components/Navigation.tsx:417
+#: src/lib/graphOptions.ts:47
+msgid "Playbook"
+msgstr "플레이북"
+
+#: src/components/Navigation.tsx:415
 #: src/components/ShareDialog.tsx:91
 #: src/components/ShareDialog.tsx:117
 msgid "Public"
 msgstr "공용"
 
-#: src/lib/graphOptions.ts:14
+#: src/lib/graphOptions.ts:28
 msgid "Random"
 msgstr "무작위"
 
@@ -363,8 +379,8 @@ msgstr "무작위"
 msgid "Rename"
 msgstr "이름 바꾸기"
 
-#: src/components/Navigation.tsx:246
-#: src/components/Navigation.tsx:255
+#: src/components/Navigation.tsx:244
+#: src/components/Navigation.tsx:253
 msgid "Reset"
 msgstr "재설정"
 
@@ -379,7 +395,7 @@ msgstr "구독 재개"
 msgid "Return"
 msgstr "반품"
 
-#: src/lib/graphOptions.ts:21
+#: src/lib/graphOptions.ts:35
 msgid "Right to Left"
 msgstr "오른쪽에서 왼쪽으로"
 
@@ -388,11 +404,11 @@ msgstr "오른쪽에서 왼쪽으로"
 msgid "Settings"
 msgstr "설정"
 
-#: src/components/Sponsor.tsx:219
+#: src/components/Sponsor.tsx:207
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/components/Navigation.tsx:140
+#: src/components/Navigation.tsx:138
 #: src/components/Sponsor.tsx:47
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 msgstr "Flowchart.fun을 월 1달러에 후원해서 호스트 플로우차트, 최신 스타일과 기능을 이용하세요"
@@ -428,11 +444,11 @@ msgstr "구독이 종료될 예정입니다."
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
-#: src/components/GraphOptionsBar.tsx:202
+#: src/components/GraphOptionsBar.tsx:211
 msgid "Theme"
 msgstr "테마"
 
-#: src/components/Navigation.tsx:149
+#: src/components/Navigation.tsx:147
 msgid "These charts are only available in this browser on this device. Clearing your browser {localStorage} will erase these."
 msgstr "다음의 차트는 이 장치의 이 브라우저에서만 이용하실 수 있습니다. 브라우저를 정리하면 {localStorage} 에서 다음의 차트를 삭제합니다."
 
@@ -441,7 +457,7 @@ msgstr "다음의 차트는 이 장치의 이 브라우저에서만 이용하실
 msgid "This app works by typing"
 msgstr "이 앱은 타이핑으로 작동합니다"
 
-#: src/lib/graphOptions.ts:19
+#: src/lib/graphOptions.ts:33
 msgid "Top to Bottom"
 msgstr "위에서 아래로"
 
@@ -449,7 +465,7 @@ msgstr "위에서 아래로"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/components/Navigation.tsx:421
+#: src/components/Navigation.tsx:419
 msgid "Updated"
 msgstr "업데이트됨"
 
@@ -465,11 +481,11 @@ msgstr "Github에서 보기"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다!"
 
-#: src/components/Sponsor.tsx:222
+#: src/components/Sponsor.tsx:210
 msgid "We use cookies to keep you logged in."
 msgstr "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다."
 
-#: src/components/Navigation.tsx:308
+#: src/components/Navigation.tsx:306
 msgid "What would you like to name this copy?"
 msgstr "이 사본의 이름을 무엇으로 지정하시겠습니까?"
 
@@ -481,7 +497,7 @@ msgstr "무엇을 공유하시겠습니까?"
 msgid "With Editor"
 msgstr "에디터와 함께"
 
-#: src/components/Navigation.tsx:391
+#: src/components/Navigation.tsx:389
 #: src/components/SponsorDashboard.tsx:65
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오."

@@ -1,4 +1,3 @@
-import { t } from "@lingui/macro";
 import {
   createContext,
   Dispatch,
@@ -11,32 +10,31 @@ import {
 } from "react";
 
 import { GraphContext } from "../components/GraphProvider";
+import { themes } from "./graphOptions";
+import { useIsPublicHostedCharted, useIsValidSponsor } from "./hooks";
 import { Theme } from "./themes/constants";
 import original from "./themes/original";
+
 export type GraphThemes =
   | "original"
   | "original-dark"
   | "eggs"
   | "excalidraw"
-  | "monospace";
-export const allGraphThemes: GraphThemes[] = [
-  "original",
-  "original-dark",
-  "eggs",
-  "excalidraw",
-  "monospace",
-];
-export const themes: {
-  label: () => string;
-  value: GraphThemes;
-}[] = [
-  { label: () => t`Light`, value: "original" },
-  { label: () => t`Dark`, value: "original-dark" },
-  { label: () => t`Eggs`, value: "eggs" },
-  { label: () => t`Excalidraw`, value: "excalidraw" },
-  { label: () => t`Monospace`, value: "monospace" },
-];
-export const defaultGraphTheme: GraphThemes = "original";
+  | "monospace"
+  | "clay"
+  | "playbook"
+  | "blokus"
+  | "museum";
+
+const publicThemes = themes
+  .filter((theme) => !theme.sponsorOnly)
+  .map((theme) => theme.value) as GraphThemes[];
+
+const sponsorOnlyThemes = themes
+  .filter((theme) => theme.sponsorOnly)
+  .map((theme) => theme.value) as GraphThemes[];
+
+const defaultGraphTheme: GraphThemes = "original";
 
 async function dynamicActivate(name: string) {
   const theme = await import(`./themes/${name}`);
@@ -52,7 +50,10 @@ declare global {
 window.__flowchartFunBase64EncodedFonts = {};
 
 async function loadFont(name: string, url: string, unicodeRange?: string) {
-  const font = new FontFace(name, `url(/fonts/${url})`, {
+  const toLoadUrl = url.startsWith("http")
+    ? `url(${url})`
+    : `url(/fonts/${url})`;
+  const font = new FontFace(name, toLoadUrl, {
     unicodeRange,
   });
   await font.load();
@@ -86,6 +87,7 @@ function useLoadedTheme(theme: GraphThemes) {
   const lastTheme = useRef<GraphThemes>(theme ?? defaultGraphTheme);
   useEffect(() => {
     if (!loaded) return;
+
     if (!(theme in loaded)) {
       dynamicActivate(theme).then((result: Theme) => {
         if (result.font?.files) {
@@ -101,15 +103,24 @@ function useLoadedTheme(theme: GraphThemes) {
           setLoaded({ ...loaded, [theme]: result });
         }
       });
+    } else {
+      lastTheme.current = theme;
     }
   }, [theme, loaded, setLoaded]);
   return loaded?.[theme] ?? loaded?.[lastTheme.current] ?? original;
 }
 
 export function useGraphTheme() {
+  const isValidSponsor = useIsValidSponsor();
+  const isPublicHostedChart = useIsPublicHostedCharted();
   const { graphOptions } = useContext(GraphContext);
   let theme = defaultGraphTheme;
-  if (graphOptions?.theme && allGraphThemes.includes(graphOptions.theme))
+  if (
+    graphOptions?.theme &&
+    (publicThemes.includes(graphOptions.theme) ||
+      ((isValidSponsor || isPublicHostedChart) &&
+        sponsorOnlyThemes.includes(graphOptions.theme)))
+  )
     theme = graphOptions.theme;
   return useLoadedTheme(theme);
 }

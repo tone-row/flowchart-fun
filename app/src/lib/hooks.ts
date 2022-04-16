@@ -1,6 +1,6 @@
 import { t } from "@lingui/macro";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { Dispatch, useContext } from "react";
+import { Dispatch, useContext, useMemo } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
@@ -54,6 +54,11 @@ export function useIsReadOnly() {
     path === "/c/:graphText?" ||
     path === "/r/:graphText?"
   );
+}
+
+export function useIsPublicHostedCharted() {
+  const { path } = useRouteMatch();
+  return useMemo(() => path === "/p/:public_id", [path]);
 }
 
 export function useIsValidSponsor() {

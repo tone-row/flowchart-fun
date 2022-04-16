@@ -3,16 +3,20 @@
 
 import { Theme } from "./constants";
 
-const fontFamily = "Gaegu";
+const fontFamily = "Poor Story";
 const fontSize = 13;
-const backgroundColor = "#fffa96";
-const arrowColor = "#000000";
+const backgroundColor = "#664C4A";
+const nodeBackgroundColor = backgroundColor;
+const arrowColor = "#FCFAF1";
+const nodeLabelColor = "#FFFFFF";
+const arrowLabelColor = "#B5817E";
 const lineHeight = 1;
-const padding = "14px";
-const borderWidth = 1.5;
+const padding = "4px";
+const arrowWidth = 2;
+const edgeLabelBackgroundColor = backgroundColor;
 
-const eggs: Theme = {
-  value: "eggs",
+const clay: Theme = {
+  value: "clay",
   bg: backgroundColor,
   minWidth: 0,
   minHeight: 0,
@@ -20,7 +24,7 @@ const eggs: Theme = {
     fontFamily,
     fontSize,
     lineHeight,
-    files: [{ name: "Gaegu", url: "Gaegu-Regular.woff2" }],
+    files: [{ name: fontFamily, url: "PoorStory-Regular.woff2" }],
   },
   styles: [
     {
@@ -37,9 +41,9 @@ const eggs: Theme = {
       style: {
         "font-family": fontFamily,
         "font-size": fontSize,
-        backgroundColor: "white",
+        backgroundColor: nodeBackgroundColor,
         "border-color": arrowColor,
-        color: arrowColor,
+        color: nodeLabelColor,
         label: "data(label)",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
@@ -56,12 +60,11 @@ const eggs: Theme = {
       selector: "edge",
       style: {
         "curve-style": "unbundled-bezier",
-        "loop-direction": "10deg",
-        "loop-sweep": "20deg",
-        width: borderWidth,
+        "control-point-distances": "-20",
+        width: arrowWidth,
         "line-color": arrowColor,
         label: "data(label)",
-        color: arrowColor,
+        color: arrowLabelColor,
         "font-size": fontSize,
         "text-valign": "bottom",
         "text-wrap": "wrap",
@@ -69,14 +72,16 @@ const eggs: Theme = {
         "target-arrow-color": arrowColor,
         "target-arrow-shape": "triangle",
         "text-background-opacity": 1,
-        "text-background-color": backgroundColor,
+        "text-background-color": edgeLabelBackgroundColor,
         "text-background-padding": "3px",
+        "text-border-opacity": 1,
         "text-background-shape": "roundrectangle",
-        "text-border-style": "solid",
-        "edge-text-rotation": "autorotate",
+        "text-rotation": "autorotate",
+        "target-distance-from-node": "0px",
+        "source-distance-from-node": "0px",
       },
     },
   ],
 };
 
-export default eggs;
+export default clay;

@@ -1,0 +1,100 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
+import { Theme } from "./constants";
+
+const fontFamily = "Sporting Grotesque";
+const fontSize = 10;
+const backgroundColor = "#ffffff";
+const nodeBackgroundColor = backgroundColor;
+const arrowColor = "#36321F";
+const nodeLabelColor = arrowColor;
+const arrowLabelColor = arrowColor;
+const lineHeight = 1.33;
+const padding = "5px";
+const arrowWidth = 1.5;
+const borderWidth = arrowWidth * 2;
+const distanceFromNode = 3;
+const borderColor = arrowColor;
+const underlayColor = borderColor;
+
+const museum: Theme = {
+  value: "museum",
+  bg: backgroundColor,
+  minWidth: 0,
+  minHeight: 0,
+  font: {
+    fontFamily,
+    fontSize,
+    lineHeight,
+    files: [{ name: fontFamily, url: "Sporting_Grotesque-Regular_web.woff2" }],
+  },
+  styles: [
+    {
+      selector: "node[label!='']",
+      style: {
+        width: "data(shapeWidth)",
+        height: "data(shapeHeight)",
+        "text-margin-y": "data(textMarginY)" as any,
+        "text-margin-x": "data(textMarginX)" as any,
+      },
+    },
+    {
+      selector: "node",
+      style: {
+        "font-family": fontFamily,
+        "font-size": fontSize,
+        backgroundColor: nodeBackgroundColor,
+        "border-color": arrowColor,
+        color: nodeLabelColor,
+        "text-justification": "center",
+        label: "data(label)",
+        "text-wrap": "wrap",
+        "text-max-width": "data(width)",
+        "text-valign": "center",
+        shape: "roundrectangle",
+        "padding-left": padding,
+        "padding-right": padding,
+        "padding-top": padding,
+        "padding-bottom": padding,
+        "line-height": lineHeight,
+        "border-style": "solid",
+        "border-width": borderWidth,
+        "border-color": borderColor,
+        "underlay-color": underlayColor,
+        "underlay-padding": "4px",
+        "underlay-opacity": 1,
+        "underlay-shape": "ellipse",
+      },
+    },
+    {
+      selector: "edge",
+      style: {
+        "curve-style": "bezier",
+        "control-point-step-size": "60",
+        width: arrowWidth,
+        "line-color": arrowColor,
+        label: "data(label)",
+        color: arrowLabelColor,
+        "font-size": fontSize,
+        "text-valign": "bottom",
+        "text-wrap": "wrap",
+        "font-family": fontFamily,
+        "text-background-opacity": 1,
+        "text-background-color": backgroundColor,
+        "text-background-padding": "2px",
+        "text-border-opacity": 1,
+        "text-background-shape": "rectangle",
+        "edge-text-rotation": "autorotate",
+        "source-distance-from-node": distanceFromNode,
+        "target-distance-from-node": 5,
+        "target-arrow-shape": "triangle",
+        "target-arrow-color": arrowColor,
+        "source-arrow-color": arrowColor,
+        "arrow-scale": 0.75,
+      },
+    },
+  ],
+};
+
+export default museum;

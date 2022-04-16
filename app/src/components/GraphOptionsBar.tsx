@@ -10,6 +10,7 @@ import {
   PaintBrush,
 } from "phosphor-react";
 import {
+  CSSProperties,
   ForwardRefExoticComponent,
   memo,
   ReactNode,
@@ -28,10 +29,12 @@ import Select, {
 
 import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
-import { directions, layouts } from "../lib/graphOptions";
-import { themes, useGraphTheme } from "../lib/graphThemes";
+import { directions, layouts, SelectOption, themes } from "../lib/graphOptions";
+import { useGraphTheme } from "../lib/graphThemes";
+import { useIsValidSponsor } from "../lib/hooks";
 import { useStoreGraph } from "../lib/store.graph";
 import { Box, BoxProps, Type } from "../slang";
+import { AppContext } from "./AppContext";
 import { AutoLayoutSwitch } from "./AutoLayoutSwitch";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
@@ -43,6 +46,9 @@ import {
 } from "./Shared";
 
 const GraphOptionsBar = memo(() => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const setShowing = useCallback(useContext(AppContext).setShowing, []);
+  const isValidSponsor = useIsValidSponsor();
   const { updateGraphOptionsText, graphOptions = {} } =
     useContext(GraphContext);
   const {
@@ -145,7 +151,7 @@ const GraphOptionsBar = memo(() => {
                 return (
                   <Select
                     inputId="layout"
-                    options={layouts}
+                    options={filterOptionsForSponsors(isValidSponsor, layouts)}
                     onChange={(layout: typeof layouts[number]) =>
                       layout && onChange(layout.value)
                     }
@@ -169,7 +175,10 @@ const GraphOptionsBar = memo(() => {
                   return (
                     <Select
                       inputId="direction"
-                      options={directions}
+                      options={filterOptionsForSponsors(
+                        isValidSponsor,
+                        directions
+                      )}
                       onChange={(dir: typeof directions[0]) =>
                         dir && onChange(dir.value)
                       }
@@ -207,10 +216,14 @@ const GraphOptionsBar = memo(() => {
             return (
               <Select
                 inputId="theme"
-                options={themes}
-                onChange={(theme: typeof themes[0]) =>
-                  theme && onChange(theme.value)
-                }
+                options={filterOptionsForSponsors(isValidSponsor, themes)}
+                onChange={(theme: typeof themes[0]) => {
+                  if (theme.handleClick) {
+                    theme.handleClick(setShowing);
+                  } else if (theme) {
+                    onChange(theme.value);
+                  }
+                }}
                 value={themes.find(
                   (theme) => theme.value === currentTheme.value
                 )}
@@ -269,7 +282,7 @@ function OptionWithIcon({
   );
 }
 
-const selectStyles: StylesConfig<any, false> = {
+const selectStyles: StylesConfig<SelectOption, false> = {
   control: (p, { isFocused }) => {
     return {
       ...p,
@@ -351,7 +364,9 @@ const Option = ({
   innerRef,
   isSelected,
   isFocused,
+  data,
 }: any) => {
+  const { style = {} } = data;
   return (
     <Box
       className={styles.Option}
@@ -361,6 +376,7 @@ const Option = ({
       {...innerProps}
       aria-selected={isSelected}
       data-focused={isFocused}
+      style={style as CSSProperties}
     >
       <Type size={smallBtnTypeSize}>{children}</Type>
     </Box>
@@ -446,4 +462,16 @@ function isEmpty(obj: object) {
     Object.keys(obj).length === 0 &&
     Object.getPrototypeOf(obj) === Object.prototype
   );
+}
+
+function filterOptionsForSponsors(
+  isValidSponsor: boolean,
+  options: SelectOption[]
+) {
+  return options.filter((option) => {
+    if (option.hideIfSponsor && isValidSponsor) return false;
+    if (!option.sponsorOnly) return true;
+    if (isValidSponsor) return true;
+    return false;
+  });
 }

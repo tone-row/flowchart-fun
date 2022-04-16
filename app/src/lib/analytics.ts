@@ -15,6 +15,8 @@ let gaExportChart = (_: { action: string; label: string }) => {};
 let gaNewChart = () => {};
 let gaCopyChart = () => {};
 let gaUseGraphContextMenu = (_: { action: string }) => {};
+let gaJumpToSponsorPage = (_: { action: string }) => {};
+// Jump to Sponsor Page
 
 if (gaEnabled) {
   import("react-ga").then((ReactGA) => {
@@ -83,6 +85,13 @@ if (gaEnabled) {
         action: action,
       });
     };
+
+    gaJumpToSponsorPage = ({ action }) => {
+      ReactGA.event({
+        category: "Jump to Sponsor Page",
+        action,
+      });
+    };
   });
 }
 
@@ -96,4 +105,5 @@ export {
   gaNewChart,
   gaCopyChart,
   gaUseGraphContextMenu,
+  gaJumpToSponsorPage,
 };
