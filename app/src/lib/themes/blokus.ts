@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-nocheck
+// @ts-nocheck
 import { Theme } from "./constants";
 
 const textColor = "#FFFFFF";
@@ -18,7 +18,6 @@ const blokus: Theme = {
   minWidth: 0,
   font: {
     fontFamily,
-    // files: [{ url: "FiraMono-Regular.woff2", name: "Fira Mono" }],
     lineHeight,
     fontSize,
   },
@@ -32,17 +31,6 @@ const blokus: Theme = {
         "text-margin-x": "data(textMarginX)" as any,
       },
     },
-    /*
-    background-image: linear-gradient(
-  180deg,
-  hsl(240deg 9% 9%) 0%,
-  hsl(234deg 42% 18%) 50%,
-  hsl(234deg 54% 28%) 100%
-
-
-  hsl(240deg 9% 9%) hsl(234deg 42% 18%) hsl(234deg 54% 28%)
-);
-    */
     {
       selector: "node",
       style: {
@@ -57,8 +45,6 @@ const blokus: Theme = {
         "text-halign": "center",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
         "line-height": lineHeight,
         "text-justification": "left",
         "padding-left": padding,
@@ -66,9 +52,6 @@ const blokus: Theme = {
         "padding-top": padding,
         "padding-bottom": padding,
         backgroundColor: darkerBackgroundColor,
-        // "border-color": brightBlue,
-        // "border-width": edgeWidth,
-        // "border-opacity": 1,
         shape: "roundrectangle",
         "underlay-color": "#1d1d38",
         "underlay-opacity": 0.3,
