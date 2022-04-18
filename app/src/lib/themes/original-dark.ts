@@ -1,12 +1,18 @@
-import { defaultFontFamily, Theme } from "./constants";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 
-const fontFamily = defaultFontFamily;
+import { Theme } from "./constants";
+
+const fontFamily = "Porpora, sans-serif";
 const fontSize = 10;
-const backgroundColor = "#0f0f0f";
-const arrowColor = "#ffffff";
+const backgroundColor = "#101010";
+const color = "#fafaf3";
+const arrowColor = color;
 const lineHeight = 1.25;
-const padding = "11px";
+const padding = "5px";
 
+const borderWidth = 1.111;
+const arrowWidth = borderWidth;
 const originalDark: Theme = {
   value: "original-dark",
   bg: backgroundColor,
@@ -16,6 +22,12 @@ const originalDark: Theme = {
     fontFamily,
     fontSize,
     lineHeight,
+    files: [
+      {
+        name: fontFamily,
+        url: "Porpora-Regular.woff2",
+      },
+    ],
   },
   styles: [
     {
@@ -34,46 +46,46 @@ const originalDark: Theme = {
         "font-size": fontSize,
         backgroundColor: backgroundColor,
         "border-color": arrowColor,
-        color: arrowColor,
+        color: color,
         label: "data(label)",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
         "text-valign": "center",
         "text-halign": "center",
-        "border-width": 1,
+        "border-width": borderWidth,
         shape: "rectangle",
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,
         "padding-bottom": padding,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         "line-height": lineHeight,
       },
     },
     {
       selector: "edge",
       style: {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
+        "font-family": fontFamily,
+        "font-size": fontSize,
         "loop-direction": "0deg",
         "loop-sweep": "20deg",
-        width: 1,
+        width: arrowWidth,
         "text-background-opacity": 1,
         "text-background-color": backgroundColor,
+        "text-background-shape": "rectangle",
+        "text-background-padding": "4px",
         "line-color": arrowColor,
+        color: arrowColor,
         "target-arrow-color": arrowColor,
         "target-arrow-shape": "triangle",
-        "arrow-scale": 1,
         "curve-style": "bezier",
         label: "data(label)",
-        color: arrowColor,
-        "font-size": 10,
         "text-valign": "center",
+        "arrow-scale": 1,
         "text-wrap": "wrap",
-        "font-family": defaultFontFamily,
         "text-halign": "center",
-        "edge-text-rotation": "autorotate",
+        "text-rotation": "autorotate",
+        "target-distance-from-node": 2,
+        "source-distance-from-node": 2,
       },
     },
   ],

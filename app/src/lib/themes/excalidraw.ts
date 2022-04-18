@@ -1,39 +1,24 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import { Theme } from "./constants";
 
-const fontFamily = '"Virgil", "Liu Jian Mao Cao"';
+const fontFamily = '"Virgil"';
 const fontSize = 10;
 const backgroundColor = "#ffffff";
-const arrowColor = "#dddddd";
+const arrowColor = "#cccccc";
 const lineHeight = 1.3;
-const padding = "8px";
+const padding = "0px";
 
 const excalidraw: Theme = {
   font: {
     fontFamily,
     fontSize,
-    files: [
-      { url: "Virgil.woff2", name: "Virgil" },
-      {
-        url: "LiuJianMaoCao-Regular.woff2",
-        name: "Liu Jian Mao Cao",
-        unicodeRange: "U+4E00-9FFF",
-      },
-    ],
+    files: [{ url: "Virgil.woff2", name: "Virgil" }],
     lineHeight: lineHeight,
   },
   value: "excalidraw",
-  bg: `repeating-linear-gradient(
-    0deg,
-    #ffffff80,
-    #ffffff80 30px,
-    #ebebeb80 30px 31px
-  ),
-  repeating-linear-gradient(
-    90deg,
-    #ffffff80,
-    #ffffff80 30px,
-    #ebebeb80 30px 31px
-  )`,
+  bg: backgroundColor,
   safeBg: backgroundColor,
   minWidth: 0,
   minHeight: 0,
@@ -58,15 +43,13 @@ const excalidraw: Theme = {
         "text-max-width": "data(width)",
         color: "#000000",
         "font-size": fontSize,
-        shape: "roundrectangle",
+        shape: "rectangle",
         backgroundColor: backgroundColor,
         "background-opacity": 0,
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,
         "padding-bottom": padding,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         "line-height": lineHeight,
       },
     },
@@ -76,24 +59,20 @@ const excalidraw: Theme = {
         "curve-style": "bezier",
         "segment-distances": "60",
         "edge-distances": "intersection",
-        width: 1,
+        width: 1.3,
         "line-color": arrowColor,
-        "line-style": "solid",
+        "line-style": "dashed",
         label: "data(label)",
         color: "#000000",
         "font-size": fontSize,
         "text-wrap": "wrap",
         "font-family": fontFamily,
-        "text-margin-y": -5,
-        "text-margin-x": 5,
         "source-distance-from-node": 4,
         "target-distance-from-node": 4,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        "text-rotation": "autorotate",
+        "text-rotation": "-15deg",
         "target-arrow-shape": "triangle-backcurve",
         "target-arrow-color": arrowColor,
-        "arrow-scale": 2,
+        "arrow-scale": 1,
       },
     },
   ],
