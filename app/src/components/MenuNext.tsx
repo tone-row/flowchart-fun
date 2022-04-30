@@ -7,7 +7,7 @@ import {
   Gear,
   Globe,
   Laptop,
-  NotePencil,
+  PencilSimple,
   Plus,
   Question,
   Share,
@@ -349,7 +349,7 @@ function RenameButton() {
           onClick={() => setDialog(true)}
           aria-label={t`Rename`}
         >
-          <NotePencil size={smallIconSize} />
+          <PencilSimple size={smallIconSize} />
         </Button>
       </Tooltip>
       <Dialog

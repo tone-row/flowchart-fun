@@ -55,6 +55,7 @@ async function customerInfo(
 export function useCustomerInfo(email: string | undefined) {
   return useQuery(["auth", "customerInfo", email], () => customerInfo(email), {
     enabled: Boolean(email),
+    staleTime: Infinity,
   });
 }
 
@@ -214,10 +215,22 @@ export function useChart(id?: string) {
   return useQuery(["useChart", id], () => getChart(id), {
     enabled: Boolean(id),
     refetchOnMount: true,
-    staleTime: 0,
+    staleTime: 2000,
+    cacheTime: 2000,
     suspense: true,
+    onSettled: () => {
+      console.log("Ran again!");
+    },
   });
 }
+
+// function useChartNoSuspense(id?: string) {
+//   return useQuery(["useChartNoSuspense", id], () => getChart(id), {
+//     enabled: Boolean(id),
+//     refetchOnMount: true,
+//     suspense: false,
+//   });
+// }
 
 export async function updateChartText(chart: string, id?: string) {
   if (!id) return;
