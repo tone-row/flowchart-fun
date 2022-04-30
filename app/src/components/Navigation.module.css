@@ -5,6 +5,21 @@
   position: relative;
 }
 
+@media (min-width: 1200px) {
+  .Navigation {
+    width: 100%;
+    max-width: 1400px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: space-around;
+    align-items: start;
+  }
+}
+
+.ChartSection {
+  grid-template-rows: auto 80px auto;
+  align-items: start;
+}
+
 .ChartLink [class*="slang-type"] {
   text-align: left;
   overflow-x: hidden;

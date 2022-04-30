@@ -16,9 +16,15 @@ export const smallBtnTypeSize = -1;
 export const tooltipSize = -2;
 export const smallIconSize = 18;
 
-export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {
+export const SectionTitle = ({
+  children,
+  as = "h2",
+  weight = "400",
+  size = 3,
+  ...props
+}: TypeProps) => {
   return (
-    <Type as={as} weight="400" size={1} {...props}>
+    <Type as={as} weight={weight} size={size} {...props}>
       {children}
     </Type>
   );
