@@ -174,7 +174,9 @@ function SignUpForm() {
                   rad={2}
                 >
                   <RadioGroup.Indicator />
-                  <Type size={-1}>{el.label}</Type>
+                  <Type size={-1} color="palette-black-0">
+                    {el.label}
+                  </Type>
                 </Box>
               ))}
             </Box>

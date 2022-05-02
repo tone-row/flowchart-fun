@@ -156,8 +156,8 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   useEffect(() => {
     if (session) {
       loadSponsorOnlyLayouts();
-      // trigger re-render with unused state
-      sponsorLayoutsLoaded();
+      // trigger re-render with unused state, defer
+      setTimeout(() => sponsorLayoutsLoaded(), 0);
     }
   }, [session]);
 
