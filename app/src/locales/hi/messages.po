@@ -13,17 +13,21 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Sponsor.tsx:164
+#: src/components/Sponsor.tsx:195
 msgid "$1 / Month"
 msgstr "$1 / माह"
 
-#: src/components/Sponsor.tsx:165
+#: src/components/Sponsor.tsx:196
 msgid "$10 / Year"
 msgstr "$10 / वर्ष"
 
 #: src/components/Navigation.tsx:365
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों."
+
+#: src/components/Sponsor.tsx:329
+msgid "Already a sponsor? Log in here"
+msgstr ""
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Amount"
@@ -50,7 +54,7 @@ msgid "Back To Editor"
 msgstr "संपादक पर वापस जाएं"
 
 #: src/components/Settings.tsx:135
-#: src/components/Sponsor.tsx:44
+#: src/components/Sponsor.tsx:316
 #: src/components/SponsorDashboard.tsx:62
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
@@ -83,8 +87,8 @@ msgstr "अपनी सदस्यता रद्द करें. आपक�
 msgid "Charts"
 msgstr "चार्ट"
 
-#: src/components/LoginForm.tsx:31
-#: src/components/Sponsor.tsx:132
+#: src/components/LoginForm.tsx:30
+#: src/components/Sponsor.tsx:163
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
 
@@ -96,7 +100,7 @@ msgstr "परिधि"
 msgid "Clay"
 msgstr "मिट्टी"
 
-#: src/components/Shared.tsx:160
+#: src/components/Shared.tsx:168
 msgid "Close"
 msgstr "बंद करें"
 
@@ -198,6 +202,10 @@ msgstr "SVG डाउनलोड करें"
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
 
+#: src/components/Sponsor.tsx:62
+msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
+msgstr ""
+
 #: src/components/MenuNext.tsx:94
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
@@ -207,7 +215,7 @@ msgstr "संपादक"
 msgid "Eggs"
 msgstr "अंडे"
 
-#: src/components/LoginForm.tsx:46
+#: src/components/LoginForm.tsx:45
 msgid "Email"
 msgstr "ईमेल"
 
@@ -256,6 +264,10 @@ msgstr ""
 msgid "Get More Themes"
 msgstr "ज़्यादा थीम पाएं"
 
+#: src/components/Sponsor.tsx:45
+msgid "Get access to alternative styles for your flowcharts"
+msgstr ""
+
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
 msgstr "ग्राफ़"
@@ -283,6 +295,7 @@ msgstr "होम"
 
 #: src/components/Navigation.tsx:68
 #: src/components/Navigation.tsx:364
+#: src/components/Sponsor.tsx:59
 msgid "Hosted Charts"
 msgstr "होस्ट किए गए चार्ट"
 
@@ -320,10 +333,6 @@ msgstr "लिंक"
 msgid "Local Charts"
 msgstr "लोकल चार्ट"
 
-#: src/components/LoginForm.tsx:26
-msgid "Log In"
-msgstr "लॉग इन"
-
 #: src/components/SponsorDashboard.tsx:57
 msgid "Log Out"
 msgstr "लॉग आउट"
@@ -343,6 +352,14 @@ msgstr "सार्वजनिक रूप से एक्सेस दे�
 #: src/lib/graphOptions.ts:64
 msgid "Monospace"
 msgstr "Monospace"
+
+#: src/components/Sponsor.tsx:49
+msgid "More Layouts"
+msgstr ""
+
+#: src/components/Sponsor.tsx:42
+msgid "More Themes"
+msgstr ""
 
 #: src/lib/graphOptions.ts:68
 msgid "Museum"
@@ -365,6 +382,10 @@ msgstr "अगला चार्ज"
 #: src/lib/graphOptions.ts:67
 msgid "Playbook"
 msgstr "प्लेबुक"
+
+#: src/components/Sponsor.tsx:52
+msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
+msgstr ""
 
 #: src/components/Navigation.tsx:615
 #: src/components/ShareDialog.tsx:91
@@ -409,14 +430,17 @@ msgstr "दाएं से बाएं"
 msgid "Settings"
 msgstr "सेटिंग"
 
-#: src/components/Sponsor.tsx:209
+#: src/components/Sponsor.tsx:241
 msgid "Sign Up"
 msgstr "साइन अप"
 
 #: src/components/Navigation.tsx:70
-#: src/components/Sponsor.tsx:47
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 msgstr "होस्टेड फ़्लोचार्ट और नए स्टाइल और फ़ीचर को एक्सेस करने के लिए flowchart.fun को 1$ प्रति माह देकर स्पॉन्सर करें"
+
+#: src/components/Sponsor.tsx:27
+msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
+msgstr ""
 
 #: src/components/MenuNext.tsx:165
 #: src/components/MenuNext.tsx:266
@@ -432,7 +456,7 @@ msgid "Status"
 msgstr "स्टेटस"
 
 #: src/components/Feedback.tsx:93
-#: src/components/LoginForm.tsx:49
+#: src/components/LoginForm.tsx:53
 #: src/components/MenuNext.tsx:398
 msgid "Submit"
 msgstr "भेजना"
@@ -486,7 +510,7 @@ msgstr "Github पर देखें"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "हम आपके सभी फ़ीडबैक, सुझावों, बग्स और विशेष अनुरोधों की सराहना करते हैं!"
 
-#: src/components/Sponsor.tsx:212
+#: src/components/Sponsor.tsx:248
 msgid "We use cookies to keep you logged in."
 msgstr "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं."
 

@@ -2,7 +2,7 @@ import { saveAs } from "file-saver";
 import { useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { useGraphTheme } from "../lib/graphThemes";
+import { useBackground, useGraphTheme } from "../lib/graphThemes";
 
 declare global {
   interface Window {
@@ -22,7 +22,7 @@ export default function useDownloadHandlers(
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const filename = workspace || "flowchart";
   const graphTheme = useGraphTheme();
-  const bg = graphTheme.safeBg ?? graphTheme.bg;
+  const bg = useBackground();
 
   window.flowchartFunGetSVG = async () => {
     if (!cy.current) throw new Error("Cytoscape not initialized");
@@ -160,9 +160,7 @@ export default function useDownloadHandlers(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bg]);
 
-  const getGraphThemeBG = useCallback(() => {
-    return graphTheme.safeBg ?? graphTheme.bg;
-  }, [graphTheme]);
+  const getGraphThemeBG = useCallback(() => bg, [bg]);
 
   useEffect(() => {
     window.flowchartFunDownloadPNG = downloadPNG;

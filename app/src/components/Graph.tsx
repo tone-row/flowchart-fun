@@ -24,7 +24,7 @@ import {
   GraphOptionsObject,
 } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
-import { useGraphTheme } from "../lib/graphThemes";
+import { useBackground, useGraphTheme } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
 import { useAnimationSetting } from "../lib/hooks";
@@ -74,6 +74,7 @@ const Graph = memo(
       useContext(AppContext);
 
     const theme = useGraphTheme();
+    const bg = useBackground();
     const getSize = useGetSize(theme);
     const setLayout = useStoreGraph((store) => store.setLayout);
     const setElements = useStoreGraph((store) => store.setElements);
@@ -198,7 +199,7 @@ const Graph = memo(
         className={[styles.GraphContainer, "graph"].join(" ")}
         overflow="hidden"
         h="100%"
-        style={{ background: theme.bg }}
+        style={{ background: bg }}
         onContextMenu={handleContextMenu}
       >
         <Box id="cy" overflow="hidden" />

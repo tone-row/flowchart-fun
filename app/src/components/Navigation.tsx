@@ -386,7 +386,7 @@ function HostedCharts() {
             </Box>
           </Section>
         ) : (
-          <Notice>
+          <Notice boxProps={{ self: "start start" }}>
             <span>{`16 is currently the maximum number of charts. This number will
             increase in the near future.`}</span>
           </Notice>

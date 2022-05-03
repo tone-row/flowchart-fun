@@ -5,8 +5,9 @@
 }
 
 .orange {
-  color: orange;
+  color: var(--palette-purple-0);
   font-weight: 700;
+  display: inline-block;
 }
 
 @media (min-width: 800px) {
@@ -87,4 +88,10 @@
 
 .SponsorBlockTitle {
   text-align: center;
+}
+
+.ReasonToSubscribeImg {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
 }

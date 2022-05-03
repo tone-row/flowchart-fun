@@ -22,28 +22,46 @@ export default function Sponsor() {
   if (session) return <SponsorDashboard />;
 
   return (
-    <Box className={styles.Page} p={5} gap={10}>
+    <Box className={styles.Page} p={5} gap={10} pt={10}>
       <Type className={styles.PageTitle} size={1}>
         <Trans>
           Sponsor flowchart.fun for{" "}
-          <span className={styles.orange}>$1 / month</span> or{" "}
-          <span className={styles.orange}>$10 / year</span> to get access to...
+          <Box as="span" className={styles.orange}>
+            $1 / month
+          </Box>{" "}
+          or{" "}
+          <Box as="span" className={styles.orange}>
+            $10 / year
+          </Box>{" "}
+          to get access to...
         </Trans>
       </Type>
       <Box gap={10}>
-        <ReasonToSubscribe heading={<Trans>More Themes</Trans>}>
+        <ReasonToSubscribe
+          alt="More Themes"
+          heading={<Trans>More Themes</Trans>}
+          imgSrc="/images/i.png"
+        >
           <Trans>Get access to alternative styles for your flowcharts</Trans>
         </ReasonToSubscribe>
-        <ReasonToSubscribe heading={<Trans>More Layouts</Trans>}>
+        <ReasonToSubscribe
+          alt="More Layouts"
+          heading={<Trans>More Layouts</Trans>}
+          imgSrc="/images/k.png"
+        >
           <Trans>
             Powerful layout algorithms that bring order to graphs of all shapes
             and sizes
           </Trans>
         </ReasonToSubscribe>
-        <ReasonToSubscribe heading={<Trans>Hosted Charts</Trans>}>
+        <ReasonToSubscribe
+          alt="Hosted Charts"
+          heading={<Trans>Hosted Charts</Trans>}
+          imgSrc="/images/e.png"
+        >
           <Trans>
             Edit your charts on any device. Share them with anyone. Publish your
-            charts once and they remains up to date with all your changes.
+            charts once and they remain up to date with your changes.
           </Trans>
         </ReasonToSubscribe>
       </Box>
@@ -251,13 +269,26 @@ function SignUpForm() {
 function ReasonToSubscribe({
   heading,
   children,
+  imgSrc,
+  objectFit = "cover",
+  alt,
 }: {
   heading: ReactNode;
   children: ReactNode;
+  imgSrc: string;
+  objectFit?: string;
+  alt: string;
 }) {
   return (
-    <Box flow="column" gap={4} content="start" items="center">
-      <Box as="img" rad={3} src="https://placekitten.com/170" alt="anything" />
+    <Box flow="column" gap={7} content="start" items="center">
+      <Box
+        as="img"
+        rad={3}
+        src={imgSrc}
+        alt={alt}
+        className={styles.ReasonToSubscribeImg}
+        style={{ objectFit }}
+      />
       <Box gap={2}>
         <Type size={3} weight="400" as="h2">
           {heading}

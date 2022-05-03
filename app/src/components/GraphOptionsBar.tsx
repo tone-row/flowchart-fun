@@ -166,7 +166,7 @@ const GraphOptionsBar = memo(() => {
               }}
             />
           </OptionWithIcon>
-          {currentLayout?.value === "dagre" && (
+          {["dagre"].includes(currentLayout?.value) && (
             <OptionWithIcon
               icon={ArrowUpRight}
               label={t`Direction`}

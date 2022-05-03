@@ -13,17 +13,21 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Sponsor.tsx:164
+#: src/components/Sponsor.tsx:195
 msgid "$1 / Month"
 msgstr "1 dólar / mês"
 
-#: src/components/Sponsor.tsx:165
+#: src/components/Sponsor.tsx:196
 msgid "$10 / Year"
 msgstr "10 dólares / Ano"
 
 #: src/components/Navigation.tsx:365
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Acesse os diagramas de qualquer lugar.<0/>Compartilhe/incorpore diagramas que ficam em sincronização com suas edições."
+
+#: src/components/Sponsor.tsx:329
+msgid "Already a sponsor? Log in here"
+msgstr ""
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Amount"
@@ -50,7 +54,7 @@ msgid "Back To Editor"
 msgstr "Voltar ao editor"
 
 #: src/components/Settings.tsx:135
-#: src/components/Sponsor.tsx:44
+#: src/components/Sponsor.tsx:316
 #: src/components/SponsorDashboard.tsx:62
 msgid "Become a Sponsor"
 msgstr "Torne-se um(a) patrocinador(a)"
@@ -83,8 +87,8 @@ msgstr "Cancele sua inscrição. Seus diagramas hospedados não serão modificá
 msgid "Charts"
 msgstr "Diagramas"
 
-#: src/components/LoginForm.tsx:31
-#: src/components/Sponsor.tsx:132
+#: src/components/LoginForm.tsx:30
+#: src/components/Sponsor.tsx:163
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Cheque seu e-mail com um link para logar. Você pode fechar esta janela."
 
@@ -96,7 +100,7 @@ msgstr "Círculo"
 msgid "Clay"
 msgstr "Argila"
 
-#: src/components/Shared.tsx:160
+#: src/components/Shared.tsx:168
 msgid "Close"
 msgstr "Fechar"
 
@@ -198,6 +202,10 @@ msgstr "Baixar SVG"
 msgid "Duplicate"
 msgstr "Duplicar"
 
+#: src/components/Sponsor.tsx:62
+msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
+msgstr ""
+
 #: src/components/MenuNext.tsx:94
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
@@ -207,7 +215,7 @@ msgstr "Editor"
 msgid "Eggs"
 msgstr "Ovos"
 
-#: src/components/LoginForm.tsx:46
+#: src/components/LoginForm.tsx:45
 msgid "Email"
 msgstr "E-mail"
 
@@ -256,6 +264,10 @@ msgstr ""
 msgid "Get More Themes"
 msgstr "Obtenha mais temas"
 
+#: src/components/Sponsor.tsx:45
+msgid "Get access to alternative styles for your flowcharts"
+msgstr ""
+
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
 msgstr "Diagrama"
@@ -283,6 +295,7 @@ msgstr "Página inicial"
 
 #: src/components/Navigation.tsx:68
 #: src/components/Navigation.tsx:364
+#: src/components/Sponsor.tsx:59
 msgid "Hosted Charts"
 msgstr "Diagramas hospedados"
 
@@ -320,10 +333,6 @@ msgstr "Link"
 msgid "Local Charts"
 msgstr "Diagramas locais"
 
-#: src/components/LoginForm.tsx:26
-msgid "Log In"
-msgstr "Logar"
-
 #: src/components/SponsorDashboard.tsx:57
 msgid "Log Out"
 msgstr "Deslogar"
@@ -343,6 +352,14 @@ msgstr "Tornar publicamente acessível"
 #: src/lib/graphOptions.ts:64
 msgid "Monospace"
 msgstr "Monospace"
+
+#: src/components/Sponsor.tsx:49
+msgid "More Layouts"
+msgstr ""
+
+#: src/components/Sponsor.tsx:42
+msgid "More Themes"
+msgstr ""
 
 #: src/lib/graphOptions.ts:68
 msgid "Museum"
@@ -365,6 +382,10 @@ msgstr "Próxima cobrança"
 #: src/lib/graphOptions.ts:67
 msgid "Playbook"
 msgstr "Cartilha"
+
+#: src/components/Sponsor.tsx:52
+msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
+msgstr ""
 
 #: src/components/Navigation.tsx:615
 #: src/components/ShareDialog.tsx:91
@@ -409,14 +430,17 @@ msgstr "Da direita para esquerda"
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/components/Sponsor.tsx:209
+#: src/components/Sponsor.tsx:241
 msgid "Sign Up"
 msgstr "Inscreva-se"
 
 #: src/components/Navigation.tsx:70
-#: src/components/Sponsor.tsx:47
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 msgstr "Patrocine flowchart.fun com $1 por mês para ter acesso à diagramasfluídos hospedados e os mais novos estilos e funcionalidades"
+
+#: src/components/Sponsor.tsx:27
+msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
+msgstr ""
 
 #: src/components/MenuNext.tsx:165
 #: src/components/MenuNext.tsx:266
@@ -432,7 +456,7 @@ msgid "Status"
 msgstr "Status"
 
 #: src/components/Feedback.tsx:93
-#: src/components/LoginForm.tsx:49
+#: src/components/LoginForm.tsx:53
 #: src/components/MenuNext.tsx:398
 msgid "Submit"
 msgstr "Enviar"
@@ -486,7 +510,7 @@ msgstr "Visualizar no Github"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Nós agradecemos todos os seus feedbacks, sugestões, bugs, e requisições de funcionalidades!"
 
-#: src/components/Sponsor.tsx:212
+#: src/components/Sponsor.tsx:248
 msgid "We use cookies to keep you logged in."
 msgstr "Nós usamos cookies para manter você logado."
 

@@ -19,6 +19,7 @@ export type GraphOptionsObject = {
   layout?: Partial<Layout> & { rankDir?: string };
   style?: cytoscape.Stylesheet[];
   theme?: GraphThemes;
+  background?: string;
 };
 
 export const defaultSpacingFactor = 1.25;

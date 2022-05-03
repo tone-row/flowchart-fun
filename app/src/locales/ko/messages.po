@@ -13,17 +13,21 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Sponsor.tsx:164
+#: src/components/Sponsor.tsx:195
 msgid "$1 / Month"
 msgstr "$1 / 월"
 
-#: src/components/Sponsor.tsx:165
+#: src/components/Sponsor.tsx:196
 msgid "$10 / Year"
 msgstr "$10 / 연"
 
 #: src/components/Navigation.tsx:365
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
+
+#: src/components/Sponsor.tsx:329
+msgid "Already a sponsor? Log in here"
+msgstr ""
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Amount"
@@ -50,7 +54,7 @@ msgid "Back To Editor"
 msgstr "편집기로 돌아가기"
 
 #: src/components/Settings.tsx:135
-#: src/components/Sponsor.tsx:44
+#: src/components/Sponsor.tsx:316
 #: src/components/SponsorDashboard.tsx:62
 msgid "Become a Sponsor"
 msgstr "스폰서 되기"
@@ -83,8 +87,8 @@ msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전�
 msgid "Charts"
 msgstr "차트"
 
-#: src/components/LoginForm.tsx:31
-#: src/components/Sponsor.tsx:132
+#: src/components/LoginForm.tsx:30
+#: src/components/Sponsor.tsx:163
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
@@ -96,7 +100,7 @@ msgstr "원"
 msgid "Clay"
 msgstr "점토"
 
-#: src/components/Shared.tsx:160
+#: src/components/Shared.tsx:168
 msgid "Close"
 msgstr "닫기"
 
@@ -198,6 +202,10 @@ msgstr "SVG 다운로드"
 msgid "Duplicate"
 msgstr "복제"
 
+#: src/components/Sponsor.tsx:62
+msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
+msgstr ""
+
 #: src/components/MenuNext.tsx:94
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
@@ -207,7 +215,7 @@ msgstr "에디터"
 msgid "Eggs"
 msgstr "달걀"
 
-#: src/components/LoginForm.tsx:46
+#: src/components/LoginForm.tsx:45
 msgid "Email"
 msgstr "이메일"
 
@@ -256,6 +264,10 @@ msgstr ""
 msgid "Get More Themes"
 msgstr "더 많은 테마 받기"
 
+#: src/components/Sponsor.tsx:45
+msgid "Get access to alternative styles for your flowcharts"
+msgstr ""
+
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
 msgstr "그래프"
@@ -283,6 +295,7 @@ msgstr "집"
 
 #: src/components/Navigation.tsx:68
 #: src/components/Navigation.tsx:364
+#: src/components/Sponsor.tsx:59
 msgid "Hosted Charts"
 msgstr "호스트 차트"
 
@@ -320,10 +333,6 @@ msgstr "링크"
 msgid "Local Charts"
 msgstr "로컬 차트"
 
-#: src/components/LoginForm.tsx:26
-msgid "Log In"
-msgstr "로그인"
-
 #: src/components/SponsorDashboard.tsx:57
 msgid "Log Out"
 msgstr "로그아웃"
@@ -343,6 +352,14 @@ msgstr "공개적으로 액세스 가능하게 만들기"
 #: src/lib/graphOptions.ts:64
 msgid "Monospace"
 msgstr "Monospace"
+
+#: src/components/Sponsor.tsx:49
+msgid "More Layouts"
+msgstr ""
+
+#: src/components/Sponsor.tsx:42
+msgid "More Themes"
+msgstr ""
 
 #: src/lib/graphOptions.ts:68
 msgid "Museum"
@@ -365,6 +382,10 @@ msgstr "다음 청구 금액"
 #: src/lib/graphOptions.ts:67
 msgid "Playbook"
 msgstr "플레이북"
+
+#: src/components/Sponsor.tsx:52
+msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
+msgstr ""
 
 #: src/components/Navigation.tsx:615
 #: src/components/ShareDialog.tsx:91
@@ -409,14 +430,17 @@ msgstr "오른쪽에서 왼쪽으로"
 msgid "Settings"
 msgstr "설정"
 
-#: src/components/Sponsor.tsx:209
+#: src/components/Sponsor.tsx:241
 msgid "Sign Up"
 msgstr "가입"
 
 #: src/components/Navigation.tsx:70
-#: src/components/Sponsor.tsx:47
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 msgstr "Flowchart.fun을 월 1달러에 후원해서 호스트 플로우차트, 최신 스타일과 기능을 이용하세요"
+
+#: src/components/Sponsor.tsx:27
+msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
+msgstr ""
 
 #: src/components/MenuNext.tsx:165
 #: src/components/MenuNext.tsx:266
@@ -432,7 +456,7 @@ msgid "Status"
 msgstr "상태"
 
 #: src/components/Feedback.tsx:93
-#: src/components/LoginForm.tsx:49
+#: src/components/LoginForm.tsx:53
 #: src/components/MenuNext.tsx:398
 msgid "Submit"
 msgstr "보내다"
@@ -486,7 +510,7 @@ msgstr "Github에서 보기"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다!"
 
-#: src/components/Sponsor.tsx:212
+#: src/components/Sponsor.tsx:248
 msgid "We use cookies to keep you logged in."
 msgstr "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다."
 
