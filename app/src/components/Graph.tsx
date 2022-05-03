@@ -79,6 +79,9 @@ const Graph = memo(
     const setElements = useStoreGraph((store) => store.setElements);
     const runLayout = useStoreGraph((store) => store.runLayout);
     const setRunLayout = useStoreGraph((store) => store.setRunLayout);
+    const graphUpdateNumber = useStoreGraph(
+      useCallback((store) => store.graphUpdateNumber, [])
+    );
 
     // Always begin with the layout running
     useEffect(() => {
@@ -180,6 +183,8 @@ const Graph = memo(
       setElements,
       setHasError,
       setLayout,
+      // Force update on graphUpdateNumber change
+      graphUpdateNumber,
     ]);
 
     const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });

@@ -1,0 +1,14 @@
+.SignInButton {
+  background-color: var(--palette-white-1);
+  color: var(--palette-black-0);
+  font-weight: 700;
+}
+
+.LoginFormInput {
+  background-color: var(--palette-white-0);
+  border: none;
+}
+
+.LoginFormInput:focus-within {
+  background-color: var(--palette-white-0) !important;
+}

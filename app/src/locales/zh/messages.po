@@ -55,7 +55,7 @@ msgstr "返回编辑器"
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
-#: src/lib/graphOptions.ts:36
+#: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
 msgstr "从下到上"
 
@@ -92,7 +92,7 @@ msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口
 msgid "Circle"
 msgstr "圆圈"
 
-#: src/lib/graphOptions.ts:46
+#: src/lib/graphOptions.ts:66
 msgid "Clay"
 msgstr "粘土"
 
@@ -104,7 +104,7 @@ msgstr "关闭"
 msgid "Concentric"
 msgstr "同心"
 
-#: src/components/GraphOptionsBar.tsx:197
+#: src/components/GraphOptionsBar.tsx:201
 msgid "Contract"
 msgstr "缩小"
 
@@ -145,7 +145,7 @@ msgstr "使用完全一样的标签文本，直接创建链接"
 msgid "Created"
 msgstr "已创建"
 
-#: src/lib/graphOptions.ts:41
+#: src/lib/graphOptions.ts:61
 msgid "Dark"
 msgstr "深色"
 
@@ -165,7 +165,7 @@ msgstr "日期"
 msgid "Delete"
 msgstr "删除"
 
-#: src/components/GraphOptionsBar.tsx:168
+#: src/components/GraphOptionsBar.tsx:172
 msgid "Direction"
 msgstr "方向"
 
@@ -203,7 +203,7 @@ msgstr "复制"
 msgid "Editor"
 msgstr "编辑器"
 
-#: src/lib/graphOptions.ts:42
+#: src/lib/graphOptions.ts:62
 msgid "Eggs"
 msgstr "蛋"
 
@@ -221,11 +221,11 @@ msgstr "电子邮件（可选）"
 msgid "Enter a title"
 msgstr "输入标题"
 
-#: src/lib/graphOptions.ts:43
+#: src/lib/graphOptions.ts:63
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:206
+#: src/components/GraphOptionsBar.tsx:210
 msgid "Expand"
 msgstr "放大"
 
@@ -248,7 +248,11 @@ msgstr "关注我们"
 msgid "Fullscreen"
 msgstr "全屏"
 
-#: src/lib/graphOptions.ts:50
+#: src/lib/graphOptions.ts:38
+msgid "Get More Layouts"
+msgstr ""
+
+#: src/lib/graphOptions.ts:70
 msgid "Get More Themes"
 msgstr "获取更多主题"
 
@@ -295,11 +299,11 @@ msgstr "语言"
 msgid "Layout"
 msgstr "布局"
 
-#: src/lib/graphOptions.ts:34
+#: src/lib/graphOptions.ts:54
 msgid "Left to Right"
 msgstr "从左到右"
 
-#: src/lib/graphOptions.ts:40
+#: src/lib/graphOptions.ts:60
 msgid "Light"
 msgstr "浅色"
 
@@ -336,11 +340,11 @@ msgstr "捐款"
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
-#: src/lib/graphOptions.ts:44
+#: src/lib/graphOptions.ts:64
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/lib/graphOptions.ts:48
+#: src/lib/graphOptions.ts:68
 msgid "Museum"
 msgstr "博物馆"
 
@@ -358,7 +362,7 @@ msgstr "需要帮助？<0>请查看我们的文档。</0>"
 msgid "Next charge"
 msgstr "下次扣费"
 
-#: src/lib/graphOptions.ts:47
+#: src/lib/graphOptions.ts:67
 msgid "Playbook"
 msgstr "剧本"
 
@@ -396,7 +400,7 @@ msgstr "恢复订阅"
 msgid "Return"
 msgstr "返回"
 
-#: src/lib/graphOptions.ts:35
+#: src/lib/graphOptions.ts:55
 msgid "Right to Left"
 msgstr "从右到左"
 
@@ -405,7 +409,7 @@ msgstr "从右到左"
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/Sponsor.tsx:207
+#: src/components/Sponsor.tsx:209
 msgid "Sign Up"
 msgstr "注册"
 
@@ -445,7 +449,7 @@ msgstr "订阅即将到期"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/GraphOptionsBar.tsx:211
+#: src/components/GraphOptionsBar.tsx:215
 msgid "Theme"
 msgstr "风格"
 
@@ -458,7 +462,7 @@ msgstr "这些图表仅在此设备上的此浏览器中可用。<0/>清除浏�
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
 
-#: src/lib/graphOptions.ts:33
+#: src/lib/graphOptions.ts:53
 msgid "Top to Bottom"
 msgstr "从上到下"
 
@@ -482,7 +486,7 @@ msgstr "在 Github 上查看"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "我们感谢您的全部反馈、建议、报错和关于功能的需求！"
 
-#: src/components/Sponsor.tsx:210
+#: src/components/Sponsor.tsx:212
 msgid "We use cookies to keep you logged in."
 msgstr "我们使用 cookies 来让您保持登录状态。"
 

@@ -1,7 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useContext, useState } from "react";
+import { ReactNode, useContext, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
@@ -11,7 +11,7 @@ import { supabase } from "../lib/supabaseClient";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { LoginForm } from "./LoginForm";
-import { Button, Input, Notice, Page, Section, SectionTitle } from "./Shared";
+import { Button, Input, Notice, Section, SectionTitle } from "./Shared";
 import Spinner from "./Spinner";
 import styles from "./Sponsor.module.css";
 import { SponsorDashboard } from "./SponsorDashboard";
@@ -22,8 +22,36 @@ export default function Sponsor() {
   if (session) return <SponsorDashboard />;
 
   return (
-    <Page className={styles.Page} px={5}>
-      <Box
+    <Box className={styles.Page} p={5} gap={10}>
+      <Type className={styles.PageTitle} size={1}>
+        <Trans>
+          Sponsor flowchart.fun for{" "}
+          <span className={styles.orange}>$1 / month</span> or{" "}
+          <span className={styles.orange}>$10 / year</span> to get access to...
+        </Trans>
+      </Type>
+      <Box gap={10}>
+        <ReasonToSubscribe heading={<Trans>More Themes</Trans>}>
+          <Trans>Get access to alternative styles for your flowcharts</Trans>
+        </ReasonToSubscribe>
+        <ReasonToSubscribe heading={<Trans>More Layouts</Trans>}>
+          <Trans>
+            Powerful layout algorithms that bring order to graphs of all shapes
+            and sizes
+          </Trans>
+        </ReasonToSubscribe>
+        <ReasonToSubscribe heading={<Trans>Hosted Charts</Trans>}>
+          <Trans>
+            Edit your charts on any device. Share them with anyone. Publish your
+            charts once and they remains up to date with all your changes.
+          </Trans>
+        </ReasonToSubscribe>
+      </Box>
+      <Box gap={4}>
+        <SponsorBlock />
+        <LoginBlock />
+      </Box>
+      {/* <Box
         content="start normal"
         items="start stretch"
         rowGap={4}
@@ -34,25 +62,9 @@ export default function Sponsor() {
         <Box pt={4} px={4}>
           <LoginForm />
         </Box>
-        <Section
-          content="start normal"
-          className={styles.SponsorBlock}
-          p={4}
-          rad={2}
-        >
-          <SectionTitle color="palette-purple-0" weight="700">
-            <Trans>Become a Sponsor</Trans>
-          </SectionTitle>
-          <Type>
-            <Trans>
-              Sponsor flowchart.fun for $1 a month to access hosted flowcharts
-              and the newest styles and features
-            </Trans>
-          </Type>
-          <SignUpForm />
-        </Section>
-      </Box>
-    </Page>
+        
+      </Box> */}
+    </Box>
   );
 }
 
@@ -60,6 +72,7 @@ type SignUpFormData = {
   email: string;
   subscription: "monthly" | "yearly";
 };
+
 function SignUpForm() {
   const stripe = useStripe();
   const elements = useElements();
@@ -136,7 +149,7 @@ function SignUpForm() {
   ) : (
     <Box
       as="form"
-      gap={2}
+      gap={7}
       pt={3}
       onSubmit={handleSubmit((data) => {
         create.mutate(data);
@@ -169,12 +182,10 @@ function SignUpForm() {
                   key={el.value}
                   value={el.value}
                   className={styles.RadioButton}
-                  p={1}
-                  px={2}
-                  rad={2}
+                  p={3}
+                  rad={1}
                 >
-                  <RadioGroup.Indicator />
-                  <Type size={-1} color="palette-black-0">
+                  <Type as="span" size={0} weight="700">
                     {el.label}
                   </Type>
                 </Box>
@@ -206,14 +217,22 @@ function SignUpForm() {
           }}
         />
       </Box>
-      <Button type="submit" text={t`Sign Up`} className={styles.SignUpButton} />
-      <Box template="auto / auto auto" content="normal space-between">
-        <Type size={-2} as="span">
-          <Trans>We use cookies to keep you logged in.</Trans>
-        </Type>
-        {create.isLoading && (
-          <Spinner r={14} s={2} c="var(--palette-purple-0)" />
-        )}
+      <Box gap={2}>
+        <Button
+          type="submit"
+          text={t`Sign Up`}
+          className={styles.SignUpButton}
+          p={3}
+          typeProps={{ size: 1 }}
+        />
+        <Box template="auto / auto auto" content="normal space-between">
+          <Type size={-1} as="span">
+            *<Trans>We use cookies to keep you logged in.</Trans>
+          </Type>
+          {create.isLoading && (
+            <Spinner r={14} s={2} c="var(--palette-purple-0)" />
+          )}
+        </Box>
       </Box>
 
       {create.error && (
@@ -225,6 +244,61 @@ function SignUpForm() {
           />
         </Notice>
       )}
+    </Box>
+  );
+}
+
+function ReasonToSubscribe({
+  heading,
+  children,
+}: {
+  heading: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <Box flow="column" gap={4} content="start" items="center">
+      <Box as="img" rad={3} src="https://placekitten.com/170" alt="anything" />
+      <Box gap={2}>
+        <Type size={3} weight="400" as="h2">
+          {heading}
+        </Type>
+        <Type size={0}>{children}</Type>
+      </Box>
+    </Box>
+  );
+}
+
+function SponsorBlock() {
+  return (
+    <Section
+      content="start normal"
+      className={styles.SponsorBlock}
+      p={8}
+      rad={2}
+      gap={8}
+    >
+      <SectionTitle
+        color="palette-purple-0"
+        weight="700"
+        className={styles.SponsorBlockTitle}
+      >
+        <Trans>Become a Sponsor</Trans>
+      </SectionTitle>
+      <SignUpForm />
+    </Section>
+  );
+}
+
+function LoginBlock() {
+  return (
+    <Box p={8} pt={7} background="palette-white-2" rad={3}>
+      <LoginForm
+        heading={
+          <Type style={{ textAlign: "center" }} color="palette-black-0">
+            <Trans>Already a sponsor? Log in here</Trans>
+          </Type>
+        }
+      />
     </Box>
   );
 }

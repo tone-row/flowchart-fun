@@ -55,7 +55,7 @@ msgstr "Voltar ao editor"
 msgid "Become a Sponsor"
 msgstr "Torne-se um(a) patrocinador(a)"
 
-#: src/lib/graphOptions.ts:36
+#: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
 msgstr "De baixo para cima"
 
@@ -92,7 +92,7 @@ msgstr "Cheque seu e-mail com um link para logar. Você pode fechar esta janela.
 msgid "Circle"
 msgstr "Círculo"
 
-#: src/lib/graphOptions.ts:46
+#: src/lib/graphOptions.ts:66
 msgid "Clay"
 msgstr "Argila"
 
@@ -104,7 +104,7 @@ msgstr "Fechar"
 msgid "Concentric"
 msgstr "Concêntrico"
 
-#: src/components/GraphOptionsBar.tsx:197
+#: src/components/GraphOptionsBar.tsx:201
 msgid "Contract"
 msgstr "Contrair"
 
@@ -145,7 +145,7 @@ msgstr "Crie uma conexão direta usando exatamente o mesmo texto da etiqueta"
 msgid "Created"
 msgstr "Criado"
 
-#: src/lib/graphOptions.ts:41
+#: src/lib/graphOptions.ts:61
 msgid "Dark"
 msgstr "Escuro"
 
@@ -165,7 +165,7 @@ msgstr "Data"
 msgid "Delete"
 msgstr "Deletar"
 
-#: src/components/GraphOptionsBar.tsx:168
+#: src/components/GraphOptionsBar.tsx:172
 msgid "Direction"
 msgstr "Direção"
 
@@ -203,7 +203,7 @@ msgstr "Duplicar"
 msgid "Editor"
 msgstr "Editor"
 
-#: src/lib/graphOptions.ts:42
+#: src/lib/graphOptions.ts:62
 msgid "Eggs"
 msgstr "Ovos"
 
@@ -221,11 +221,11 @@ msgstr "E-mail (opcional)"
 msgid "Enter a title"
 msgstr "Insira um título"
 
-#: src/lib/graphOptions.ts:43
+#: src/lib/graphOptions.ts:63
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:206
+#: src/components/GraphOptionsBar.tsx:210
 msgid "Expand"
 msgstr "Expandir"
 
@@ -248,7 +248,11 @@ msgstr "Siga-nos"
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
-#: src/lib/graphOptions.ts:50
+#: src/lib/graphOptions.ts:38
+msgid "Get More Layouts"
+msgstr ""
+
+#: src/lib/graphOptions.ts:70
 msgid "Get More Themes"
 msgstr "Obtenha mais temas"
 
@@ -295,11 +299,11 @@ msgstr "Idioma"
 msgid "Layout"
 msgstr "Layout"
 
-#: src/lib/graphOptions.ts:34
+#: src/lib/graphOptions.ts:54
 msgid "Left to Right"
 msgstr "Da esquerda para direita"
 
-#: src/lib/graphOptions.ts:40
+#: src/lib/graphOptions.ts:60
 msgid "Light"
 msgstr "Claro"
 
@@ -336,11 +340,11 @@ msgstr "Faça uma doação"
 msgid "Make publicly accessible"
 msgstr "Tornar publicamente acessível"
 
-#: src/lib/graphOptions.ts:44
+#: src/lib/graphOptions.ts:64
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/lib/graphOptions.ts:48
+#: src/lib/graphOptions.ts:68
 msgid "Museum"
 msgstr "Museu"
 
@@ -358,7 +362,7 @@ msgstr "Preciso de ajuda? <0>Confira nossa documentação.</0>"
 msgid "Next charge"
 msgstr "Próxima cobrança"
 
-#: src/lib/graphOptions.ts:47
+#: src/lib/graphOptions.ts:67
 msgid "Playbook"
 msgstr "Cartilha"
 
@@ -396,7 +400,7 @@ msgstr "Resumir inscrição"
 msgid "Return"
 msgstr "Retornar"
 
-#: src/lib/graphOptions.ts:35
+#: src/lib/graphOptions.ts:55
 msgid "Right to Left"
 msgstr "Da direita para esquerda"
 
@@ -405,7 +409,7 @@ msgstr "Da direita para esquerda"
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/components/Sponsor.tsx:207
+#: src/components/Sponsor.tsx:209
 msgid "Sign Up"
 msgstr "Inscreva-se"
 
@@ -445,7 +449,7 @@ msgstr "Inscrição acabará"
 msgid "Thank you for your feedback!"
 msgstr "Agradecimentos pelo seu feedback!"
 
-#: src/components/GraphOptionsBar.tsx:211
+#: src/components/GraphOptionsBar.tsx:215
 msgid "Theme"
 msgstr "Tema"
 
@@ -458,7 +462,7 @@ msgstr "Estes diagramas estão apenas disponíveis nesse navegador desse disposi
 msgid "This app works by typing"
 msgstr "Este aplicativo funciona por digitação"
 
-#: src/lib/graphOptions.ts:33
+#: src/lib/graphOptions.ts:53
 msgid "Top to Bottom"
 msgstr "De cima para baixo"
 
@@ -482,7 +486,7 @@ msgstr "Visualizar no Github"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Nós agradecemos todos os seus feedbacks, sugestões, bugs, e requisições de funcionalidades!"
 
-#: src/components/Sponsor.tsx:210
+#: src/components/Sponsor.tsx:212
 msgid "We use cookies to keep you logged in."
 msgstr "Nós usamos cookies para manter você logado."
 

@@ -8,7 +8,6 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useReducer,
   useState,
 } from "react";
 import { useLocation } from "react-router-dom";
@@ -18,6 +17,7 @@ import Stripe from "stripe";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { loadSponsorOnlyLayouts } from "../lib/cytoscape";
 import { useCustomerInfo } from "../lib/queries";
+import { useStoreGraph } from "../lib/store.graph";
 import { supabase } from "../lib/supabaseClient";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
@@ -74,6 +74,9 @@ type CustomerInfo = {
 export const AppContext = createContext({} as TAppContext);
 
 const Provider = ({ children }: { children?: ReactNode }) => {
+  const incrementGraphUpdateNumber = useStoreGraph(
+    useCallback((store) => store.incrementGraphUpdateNumber, [])
+  );
   const [showing, setShowing] = useState<Showing>("editor");
   const [shareLink, setShareLink] = useState("");
   const [shareModal, setShareModal] = useState(false);
@@ -130,7 +133,22 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [hasStyleError, setHasStyleError] =
     useState<TAppContext["hasStyleError"]>(false);
 
+  // const [_, sponsorLayoutsLoaded] = useReducer(() => true, false);
+
   const [session, setSession] = useState<Session | null>(null);
+
+  /* Load Sponsor-only layouts when logged in */
+  useEffect(() => {
+    if (session) {
+      // setRunLayout(false);
+      loadSponsorOnlyLayouts().then(() => {
+        incrementGraphUpdateNumber();
+        // trigger re-render with unused state, defer
+        // setTimeout(() => sponsorLayoutsLoaded(), 0);
+        // setRunLayout(true);
+      });
+    }
+  }, [incrementGraphUpdateNumber, session]);
 
   useEffect(() => {
     if (supabase) {
@@ -149,17 +167,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
     session?.user?.email
   );
-
-  const [_, sponsorLayoutsLoaded] = useReducer(() => true, false);
-
-  /* Load Sponsor-only layouts when logged in */
-  useEffect(() => {
-    if (session) {
-      loadSponsorOnlyLayouts();
-      // trigger re-render with unused state, defer
-      setTimeout(() => sponsorLayoutsLoaded(), 0);
-    }
-  }, [session]);
 
   return (
     <AppContext.Provider

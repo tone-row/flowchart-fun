@@ -55,7 +55,7 @@ msgstr "संपादक पर वापस जाएं"
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
-#: src/lib/graphOptions.ts:36
+#: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
 msgstr "नीचे से शीर्ष तक"
 
@@ -92,7 +92,7 @@ msgstr "लॉग इन वाले लिंक के लिए अपना
 msgid "Circle"
 msgstr "परिधि"
 
-#: src/lib/graphOptions.ts:46
+#: src/lib/graphOptions.ts:66
 msgid "Clay"
 msgstr "मिट्टी"
 
@@ -104,7 +104,7 @@ msgstr "बंद करें"
 msgid "Concentric"
 msgstr "गाढ़ा"
 
-#: src/components/GraphOptionsBar.tsx:197
+#: src/components/GraphOptionsBar.tsx:201
 msgid "Contract"
 msgstr "सिकोड़ना"
 
@@ -145,7 +145,7 @@ msgstr "सही लेबल टेक्स्ट का उपयोग क�
 msgid "Created"
 msgstr "बनाया गया"
 
-#: src/lib/graphOptions.ts:41
+#: src/lib/graphOptions.ts:61
 msgid "Dark"
 msgstr "डार्क"
 
@@ -165,7 +165,7 @@ msgstr "तारीख़"
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: src/components/GraphOptionsBar.tsx:168
+#: src/components/GraphOptionsBar.tsx:172
 msgid "Direction"
 msgstr "दिशा"
 
@@ -203,7 +203,7 @@ msgstr "डुप्लिकेट बनाएँ"
 msgid "Editor"
 msgstr "संपादक"
 
-#: src/lib/graphOptions.ts:42
+#: src/lib/graphOptions.ts:62
 msgid "Eggs"
 msgstr "अंडे"
 
@@ -221,11 +221,11 @@ msgstr "ईमेल (ऐच्छिक)"
 msgid "Enter a title"
 msgstr "एक शीर्षक दर्ज करें"
 
-#: src/lib/graphOptions.ts:43
+#: src/lib/graphOptions.ts:63
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:206
+#: src/components/GraphOptionsBar.tsx:210
 msgid "Expand"
 msgstr "फैलाव"
 
@@ -248,7 +248,11 @@ msgstr "हमें फॉलो करें"
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
-#: src/lib/graphOptions.ts:50
+#: src/lib/graphOptions.ts:38
+msgid "Get More Layouts"
+msgstr ""
+
+#: src/lib/graphOptions.ts:70
 msgid "Get More Themes"
 msgstr "ज़्यादा थीम पाएं"
 
@@ -295,11 +299,11 @@ msgstr "भाषा"
 msgid "Layout"
 msgstr "ख़ाका"
 
-#: src/lib/graphOptions.ts:34
+#: src/lib/graphOptions.ts:54
 msgid "Left to Right"
 msgstr "बाएं से दाएं"
 
-#: src/lib/graphOptions.ts:40
+#: src/lib/graphOptions.ts:60
 msgid "Light"
 msgstr "लाइट"
 
@@ -336,11 +340,11 @@ msgstr "दान करें"
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
-#: src/lib/graphOptions.ts:44
+#: src/lib/graphOptions.ts:64
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/lib/graphOptions.ts:48
+#: src/lib/graphOptions.ts:68
 msgid "Museum"
 msgstr "म्यूज़ियम"
 
@@ -358,7 +362,7 @@ msgstr "मदद चाहिए? <0>हमारे दस्तावेज�
 msgid "Next charge"
 msgstr "अगला चार्ज"
 
-#: src/lib/graphOptions.ts:47
+#: src/lib/graphOptions.ts:67
 msgid "Playbook"
 msgstr "प्लेबुक"
 
@@ -396,7 +400,7 @@ msgstr "सदस्यता फिर से शुरू करें"
 msgid "Return"
 msgstr "वापसी"
 
-#: src/lib/graphOptions.ts:35
+#: src/lib/graphOptions.ts:55
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
@@ -405,7 +409,7 @@ msgstr "दाएं से बाएं"
 msgid "Settings"
 msgstr "सेटिंग"
 
-#: src/components/Sponsor.tsx:207
+#: src/components/Sponsor.tsx:209
 msgid "Sign Up"
 msgstr "साइन अप"
 
@@ -445,7 +449,7 @@ msgstr "सदस्यता समाप्त हो जाएगी"
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
-#: src/components/GraphOptionsBar.tsx:211
+#: src/components/GraphOptionsBar.tsx:215
 msgid "Theme"
 msgstr "शैली"
 
@@ -458,7 +462,7 @@ msgstr "ये चार्ट सिर्फ़ इस ब्राउज़र �
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
-#: src/lib/graphOptions.ts:33
+#: src/lib/graphOptions.ts:53
 msgid "Top to Bottom"
 msgstr "ऊपर से नीचे"
 
@@ -482,7 +486,7 @@ msgstr "Github पर देखें"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "हम आपके सभी फ़ीडबैक, सुझावों, बग्स और विशेष अनुरोधों की सराहना करते हैं!"
 
-#: src/components/Sponsor.tsx:210
+#: src/components/Sponsor.tsx:212
 msgid "We use cookies to keep you logged in."
 msgstr "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं."
 
