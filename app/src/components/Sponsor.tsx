@@ -40,14 +40,14 @@ export default function Sponsor() {
         <ReasonToSubscribe
           alt="More Themes"
           heading={<Trans>More Themes</Trans>}
-          imgSrc="/images/i.png"
+          imgSrc="/images/n.png"
         >
           <Trans>Get access to alternative styles for your flowcharts</Trans>
         </ReasonToSubscribe>
         <ReasonToSubscribe
           alt="More Layouts"
           heading={<Trans>More Layouts</Trans>}
-          imgSrc="/images/k.png"
+          imgSrc="/images/l.png"
         >
           <Trans>
             Powerful layout algorithms that bring order to graphs of all shapes

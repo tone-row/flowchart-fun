@@ -27,7 +27,7 @@ msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 �
 
 #: src/components/Sponsor.tsx:329
 msgid "Already a sponsor? Log in here"
-msgstr ""
+msgstr "이미 후원중이신가요? 여기서 로그인하세요"
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Amount"
@@ -204,7 +204,7 @@ msgstr "복제"
 
 #: src/components/Sponsor.tsx:62
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
-msgstr ""
+msgstr "어떤 기기에서나 차트를 편집할 수 있습니다. 누구와도 공유할 수 있습니다. 한 번 차트를 배포하면 수정사항이 즉각 반영됩니다."
 
 #: src/components/MenuNext.tsx:94
 #: src/components/MobileTabToggle.tsx:21
@@ -258,7 +258,7 @@ msgstr "전체 화면"
 
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
-msgstr ""
+msgstr "더 많은 레이아웃을 보고 싶어요"
 
 #: src/lib/graphOptions.ts:70
 msgid "Get More Themes"
@@ -266,7 +266,7 @@ msgstr "더 많은 테마 받기"
 
 #: src/components/Sponsor.tsx:45
 msgid "Get access to alternative styles for your flowcharts"
-msgstr ""
+msgstr "플로우차트에 적용할 새로운 스타일을 잠금해제하세요"
 
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
@@ -355,11 +355,11 @@ msgstr "Monospace"
 
 #: src/components/Sponsor.tsx:49
 msgid "More Layouts"
-msgstr ""
+msgstr "더 많은 레이아웃"
 
 #: src/components/Sponsor.tsx:42
 msgid "More Themes"
-msgstr ""
+msgstr "더 많은 테마 보기"
 
 #: src/lib/graphOptions.ts:68
 msgid "Museum"
@@ -385,7 +385,7 @@ msgstr "플레이북"
 
 #: src/components/Sponsor.tsx:52
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
-msgstr ""
+msgstr "온갖 크기와 모양의 그래프를 질서있게 정리하는 강력한 레이아웃 알고리즘"
 
 #: src/components/Navigation.tsx:615
 #: src/components/ShareDialog.tsx:91
@@ -440,7 +440,7 @@ msgstr "Flowchart.fun을 월 1달러에 후원해서 호스트 플로우차트, 
 
 #: src/components/Sponsor.tsx:27
 msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
-msgstr ""
+msgstr "1개월에 $1 또는 1년에 $10으로 다음 기능 잠금해제..."
 
 #: src/components/MenuNext.tsx:165
 #: src/components/MenuNext.tsx:266

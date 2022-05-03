@@ -27,7 +27,7 @@ msgstr "Greifen Sie von überall auf diese Diagramme zu.<0/>Teilen/Einbetten von
 
 #: src/components/Sponsor.tsx:329
 msgid "Already a sponsor? Log in here"
-msgstr ""
+msgstr "Sind Sie schon ein Sponsor? Hier anmelden"
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Amount"
@@ -204,7 +204,7 @@ msgstr "Duplizieren"
 
 #: src/components/Sponsor.tsx:62
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
-msgstr ""
+msgstr "Bearbeiten Sie Ihre Diagramme auf jedem Gerät. Teilen Sie diese mit jedem. Veröffentlichen Sie Ihre Diagramme einmal und sie bleiben mit Ihren Änderungen auf dem neuesten Stand."
 
 #: src/components/MenuNext.tsx:94
 #: src/components/MobileTabToggle.tsx:21
@@ -258,7 +258,7 @@ msgstr "Vollbild"
 
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
-msgstr ""
+msgstr "Mehr Layouts erhalten"
 
 #: src/lib/graphOptions.ts:70
 msgid "Get More Themes"
@@ -266,7 +266,7 @@ msgstr "Weitere Themen erhalten"
 
 #: src/components/Sponsor.tsx:45
 msgid "Get access to alternative styles for your flowcharts"
-msgstr ""
+msgstr "Erhalten Sie Zugriff auf alternative Stile für Ihre Flussdiagramme"
 
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
@@ -355,11 +355,11 @@ msgstr "Monospace"
 
 #: src/components/Sponsor.tsx:49
 msgid "More Layouts"
-msgstr ""
+msgstr "Weitere Layouts"
 
 #: src/components/Sponsor.tsx:42
 msgid "More Themes"
-msgstr ""
+msgstr "Weitere Themen"
 
 #: src/lib/graphOptions.ts:68
 msgid "Museum"
@@ -385,7 +385,7 @@ msgstr "Spielbuch"
 
 #: src/components/Sponsor.tsx:52
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
-msgstr ""
+msgstr "Leistungsstarke Layout-Algorithmen, die Ordnung in Diagramme aller Formen und Größen bringen"
 
 #: src/components/Navigation.tsx:615
 #: src/components/ShareDialog.tsx:91
@@ -440,7 +440,7 @@ msgstr "Sponsern Sie flowchart.fun für 1 $ pro Monat, um Zugang zu gehosteten F
 
 #: src/components/Sponsor.tsx:27
 msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
-msgstr ""
+msgstr "Sponsern Sie flowchart.fun für <0>$1 / Monat</0> oder <1>$10 / Jahr</1>, um Zugang zu..."
 
 #: src/components/MenuNext.tsx:165
 #: src/components/MenuNext.tsx:266

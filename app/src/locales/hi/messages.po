@@ -27,7 +27,7 @@ msgstr "इन चार्ट को कहीं से भी एक्से
 
 #: src/components/Sponsor.tsx:329
 msgid "Already a sponsor? Log in here"
-msgstr ""
+msgstr "पहले से ही एक स्पॉनसर हैं? यहां लॉगिन करें"
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Amount"
@@ -204,7 +204,7 @@ msgstr "डुप्लिकेट बनाएँ"
 
 #: src/components/Sponsor.tsx:62
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
-msgstr ""
+msgstr "अपने चार्ट को किसी भी डिवाइस पर एडिट करें. किसी के भी साथ उन्हें शेयर करें. एक बार अपने चार्ट को पब्लिश करें और वह बदलाव के साथ अप टू डेट रहेगा."
 
 #: src/components/MenuNext.tsx:94
 #: src/components/MobileTabToggle.tsx:21
@@ -258,7 +258,7 @@ msgstr "फ़ुलस्क्रीन"
 
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
-msgstr ""
+msgstr "ज़्यादा लेआउट पाएं"
 
 #: src/lib/graphOptions.ts:70
 msgid "Get More Themes"
@@ -266,7 +266,7 @@ msgstr "ज़्यादा थीम पाएं"
 
 #: src/components/Sponsor.tsx:45
 msgid "Get access to alternative styles for your flowcharts"
-msgstr ""
+msgstr "अपने फ़्लोचार्ट्स के लिए वैकल्पिक स्टाइल का एक्सेस पाएं"
 
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
@@ -355,11 +355,11 @@ msgstr "Monospace"
 
 #: src/components/Sponsor.tsx:49
 msgid "More Layouts"
-msgstr ""
+msgstr "ज़्यादा लेआउट"
 
 #: src/components/Sponsor.tsx:42
 msgid "More Themes"
-msgstr ""
+msgstr "ज़्यादा थीम"
 
 #: src/lib/graphOptions.ts:68
 msgid "Museum"
@@ -385,7 +385,7 @@ msgstr "प्लेबुक"
 
 #: src/components/Sponsor.tsx:52
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
-msgstr ""
+msgstr "शक्तिशाली लेआउट एल्गोरिदम जो सभी शेप और साइज़ के ग्राफ़ में क्रम लाते हैं"
 
 #: src/components/Navigation.tsx:615
 #: src/components/ShareDialog.tsx:91
@@ -440,7 +440,7 @@ msgstr "होस्टेड फ़्लोचार्ट और नए स्�
 
 #: src/components/Sponsor.tsx:27
 msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
-msgstr ""
+msgstr "स्पॉनसर flowchart.fun $1/महीने या $10/साल के लिए, इस का एक्सेस पाने के ख़ातिर..."
 
 #: src/components/MenuNext.tsx:165
 #: src/components/MenuNext.tsx:266

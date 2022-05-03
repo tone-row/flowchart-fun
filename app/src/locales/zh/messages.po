@@ -27,7 +27,7 @@ msgstr "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档�
 
 #: src/components/Sponsor.tsx:329
 msgid "Already a sponsor? Log in here"
-msgstr ""
+msgstr "已经是赞助商了吗？在此登录"
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Amount"
@@ -204,7 +204,7 @@ msgstr "复制"
 
 #: src/components/Sponsor.tsx:62
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
-msgstr ""
+msgstr "在任意设备上编辑图表；与任何人分享这些图表；仅需发布一次图表，它们会自动更新您的更改。"
 
 #: src/components/MenuNext.tsx:94
 #: src/components/MobileTabToggle.tsx:21
@@ -258,7 +258,7 @@ msgstr "全屏"
 
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
-msgstr ""
+msgstr "获取更多布局"
 
 #: src/lib/graphOptions.ts:70
 msgid "Get More Themes"
@@ -266,7 +266,7 @@ msgstr "获取更多主题"
 
 #: src/components/Sponsor.tsx:45
 msgid "Get access to alternative styles for your flowcharts"
-msgstr ""
+msgstr "获取流程图的替代样式"
 
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
@@ -355,11 +355,11 @@ msgstr "Monospace"
 
 #: src/components/Sponsor.tsx:49
 msgid "More Layouts"
-msgstr ""
+msgstr "更多布局"
 
 #: src/components/Sponsor.tsx:42
 msgid "More Themes"
-msgstr ""
+msgstr "更多主题"
 
 #: src/lib/graphOptions.ts:68
 msgid "Museum"
@@ -385,7 +385,7 @@ msgstr "剧本"
 
 #: src/components/Sponsor.tsx:52
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
-msgstr ""
+msgstr "强大的布局算法，让各种形状和大小的图形井然有序"
 
 #: src/components/Navigation.tsx:615
 #: src/components/ShareDialog.tsx:91
@@ -440,7 +440,7 @@ msgstr "以每月 1 美元的价格赞助 flowchart.fun，以访问托管的流�
 
 #: src/components/Sponsor.tsx:27
 msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
-msgstr ""
+msgstr "以每月 1 美元或每年 10 美元的价格赞助 flowchart.fun ，就可以获得......"
 
 #: src/components/MenuNext.tsx:165
 #: src/components/MenuNext.tsx:266

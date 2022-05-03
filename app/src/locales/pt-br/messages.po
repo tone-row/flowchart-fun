@@ -27,7 +27,7 @@ msgstr "Acesse os diagramas de qualquer lugar.<0/>Compartilhe/incorpore diagrama
 
 #: src/components/Sponsor.tsx:329
 msgid "Already a sponsor? Log in here"
-msgstr ""
+msgstr "Já é um patrocinador? Faça login aqui"
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Amount"
@@ -204,7 +204,7 @@ msgstr "Duplicar"
 
 #: src/components/Sponsor.tsx:62
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
-msgstr ""
+msgstr "Edite seus gráficos em qualquer dispositivo. Compartilhe-os com qualquer pessoa. Publique seus gráficos uma vez e eles permanecerão atualizados com suas alterações."
 
 #: src/components/MenuNext.tsx:94
 #: src/components/MobileTabToggle.tsx:21
@@ -258,7 +258,7 @@ msgstr "Tela cheia"
 
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
-msgstr ""
+msgstr "Obtenha Mais Leiautes"
 
 #: src/lib/graphOptions.ts:70
 msgid "Get More Themes"
@@ -266,7 +266,7 @@ msgstr "Obtenha mais temas"
 
 #: src/components/Sponsor.tsx:45
 msgid "Get access to alternative styles for your flowcharts"
-msgstr ""
+msgstr "Obtenha acesso a estilos alternativos para seus fluxogramas"
 
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
@@ -355,11 +355,11 @@ msgstr "Monospace"
 
 #: src/components/Sponsor.tsx:49
 msgid "More Layouts"
-msgstr ""
+msgstr "Mais Layouts"
 
 #: src/components/Sponsor.tsx:42
 msgid "More Themes"
-msgstr ""
+msgstr "Mais temas"
 
 #: src/lib/graphOptions.ts:68
 msgid "Museum"
@@ -385,7 +385,7 @@ msgstr "Cartilha"
 
 #: src/components/Sponsor.tsx:52
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
-msgstr ""
+msgstr "Poderosos algoritmos de layout que trazem ordem para gráficos de todos os formatos e tamanhos"
 
 #: src/components/Navigation.tsx:615
 #: src/components/ShareDialog.tsx:91
@@ -440,7 +440,7 @@ msgstr "Patrocine flowchart.fun com $1 por mês para ter acesso à diagramasflu�
 
 #: src/components/Sponsor.tsx:27
 msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
-msgstr ""
+msgstr "Colabore com o flowchart.fun com <0>US$ 1,00 por mês</0> ou <1>US$ 10,00 por ano</1> para ter acesso a..."
 
 #: src/components/MenuNext.tsx:165
 #: src/components/MenuNext.tsx:266
