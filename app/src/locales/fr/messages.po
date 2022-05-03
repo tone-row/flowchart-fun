@@ -13,17 +13,21 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Sponsor.tsx:164
+#: src/components/Sponsor.tsx:195
 msgid "$1 / Month"
 msgstr "1 $ / mois"
 
-#: src/components/Sponsor.tsx:165
+#: src/components/Sponsor.tsx:196
 msgid "$10 / Year"
 msgstr "10 $ / an"
 
 #: src/components/Navigation.tsx:365
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Accédez à ces graphiques depuis n'importe où.<0/>Partagez ou intégrez des graphiques, qui se synchronisent au fil de vos modifications."
+
+#: src/components/Sponsor.tsx:329
+msgid "Already a sponsor? Log in here"
+msgstr "Déjà parrain ? Connectez-vous ici"
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Amount"
@@ -50,12 +54,12 @@ msgid "Back To Editor"
 msgstr "Retour à l'éditeur"
 
 #: src/components/Settings.tsx:135
-#: src/components/Sponsor.tsx:44
+#: src/components/Sponsor.tsx:316
 #: src/components/SponsorDashboard.tsx:62
 msgid "Become a Sponsor"
 msgstr "Devenir un sponsor"
 
-#: src/lib/graphOptions.ts:36
+#: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
 msgstr "De bas en haut"
 
@@ -83,8 +87,8 @@ msgstr "Résilier votre abonnement. Vos graphiques hébergés seront en lecture 
 msgid "Charts"
 msgstr "Graphiques"
 
-#: src/components/LoginForm.tsx:31
-#: src/components/Sponsor.tsx:132
+#: src/components/LoginForm.tsx:30
+#: src/components/Sponsor.tsx:163
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Consultez votre messagerie électronique pour le lien de connexion. Vous pouvez fermer cette fenêtre."
 
@@ -92,11 +96,11 @@ msgstr "Consultez votre messagerie électronique pour le lien de connexion. Vous
 msgid "Circle"
 msgstr "Cercle"
 
-#: src/lib/graphOptions.ts:46
+#: src/lib/graphOptions.ts:66
 msgid "Clay"
 msgstr "Argile"
 
-#: src/components/Shared.tsx:160
+#: src/components/Shared.tsx:168
 msgid "Close"
 msgstr "Fermer"
 
@@ -104,7 +108,7 @@ msgstr "Fermer"
 msgid "Concentric"
 msgstr "Concentrique"
 
-#: src/components/GraphOptionsBar.tsx:197
+#: src/components/GraphOptionsBar.tsx:201
 msgid "Contract"
 msgstr "Réduire"
 
@@ -145,7 +149,7 @@ msgstr "Créer un lien directement vers une boite en utilisant le texte exact de
 msgid "Created"
 msgstr "Créé"
 
-#: src/lib/graphOptions.ts:41
+#: src/lib/graphOptions.ts:61
 msgid "Dark"
 msgstr "Sombre"
 
@@ -165,7 +169,7 @@ msgstr "Date"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: src/components/GraphOptionsBar.tsx:168
+#: src/components/GraphOptionsBar.tsx:172
 msgid "Direction"
 msgstr "Direction"
 
@@ -198,16 +202,20 @@ msgstr "Télécharger SVG"
 msgid "Duplicate"
 msgstr "Dupliquer"
 
+#: src/components/Sponsor.tsx:62
+msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
+msgstr "Modifiez vos graphiques sur n'importe quel appareil. Partagez-les avec tout le monde. Publiez vos graphiques une seule fois et ils demeureront à jour au fur et à mesure que vous apportez des modifications."
+
 #: src/components/MenuNext.tsx:94
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "Éditeur"
 
-#: src/lib/graphOptions.ts:42
+#: src/lib/graphOptions.ts:62
 msgid "Eggs"
 msgstr "Oeufs"
 
-#: src/components/LoginForm.tsx:46
+#: src/components/LoginForm.tsx:45
 msgid "Email"
 msgstr "Messagerie électronique"
 
@@ -221,11 +229,11 @@ msgstr "E-mail (facultatif)"
 msgid "Enter a title"
 msgstr "Entrez un titre"
 
-#: src/lib/graphOptions.ts:43
+#: src/lib/graphOptions.ts:63
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:206
+#: src/components/GraphOptionsBar.tsx:210
 msgid "Expand"
 msgstr "Agrandir"
 
@@ -248,9 +256,17 @@ msgstr "Suivez-nous"
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#: src/lib/graphOptions.ts:50
+#: src/lib/graphOptions.ts:38
+msgid "Get More Layouts"
+msgstr "Obtenez plus de mises en page"
+
+#: src/lib/graphOptions.ts:70
 msgid "Get More Themes"
 msgstr "Obtenez plus de thèmes"
+
+#: src/components/Sponsor.tsx:45
+msgid "Get access to alternative styles for your flowcharts"
+msgstr "Obtenez des styles alternatifs pour vos logigrammes"
 
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
@@ -279,6 +295,7 @@ msgstr "Accueil"
 
 #: src/components/Navigation.tsx:68
 #: src/components/Navigation.tsx:364
+#: src/components/Sponsor.tsx:59
 msgid "Hosted Charts"
 msgstr "Graphiques hébergés"
 
@@ -295,11 +312,11 @@ msgstr "Langue"
 msgid "Layout"
 msgstr "Disposition"
 
-#: src/lib/graphOptions.ts:34
+#: src/lib/graphOptions.ts:54
 msgid "Left to Right"
 msgstr "De gauche à droite"
 
-#: src/lib/graphOptions.ts:40
+#: src/lib/graphOptions.ts:60
 msgid "Light"
 msgstr "Lumineux"
 
@@ -315,10 +332,6 @@ msgstr "Lien"
 #: src/components/Navigation.tsx:147
 msgid "Local Charts"
 msgstr "Graphiques locaux"
-
-#: src/components/LoginForm.tsx:26
-msgid "Log In"
-msgstr "Connexion"
 
 #: src/components/SponsorDashboard.tsx:57
 msgid "Log Out"
@@ -336,11 +349,19 @@ msgstr "Faire un don"
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
-#: src/lib/graphOptions.ts:44
+#: src/lib/graphOptions.ts:64
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/lib/graphOptions.ts:48
+#: src/components/Sponsor.tsx:49
+msgid "More Layouts"
+msgstr "Plus de mises en page"
+
+#: src/components/Sponsor.tsx:42
+msgid "More Themes"
+msgstr "Plus de thèmes"
+
+#: src/lib/graphOptions.ts:68
 msgid "Museum"
 msgstr "Musée"
 
@@ -358,9 +379,13 @@ msgstr "Besoin d'aide? <0>Consultez notre documentation.</0>"
 msgid "Next charge"
 msgstr "Prochain paiement"
 
-#: src/lib/graphOptions.ts:47
+#: src/lib/graphOptions.ts:67
 msgid "Playbook"
 msgstr "Livre-jeu"
+
+#: src/components/Sponsor.tsx:52
+msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
+msgstr "Algorithmes de mise en page puissants qui mettent de l'ordre dans les graphiques de toutes formes et tailles"
 
 #: src/components/Navigation.tsx:615
 #: src/components/ShareDialog.tsx:91
@@ -396,7 +421,7 @@ msgstr "Reprendre l'abonnement"
 msgid "Return"
 msgstr "Retour"
 
-#: src/lib/graphOptions.ts:35
+#: src/lib/graphOptions.ts:55
 msgid "Right to Left"
 msgstr "De droite à gauche"
 
@@ -405,14 +430,17 @@ msgstr "De droite à gauche"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/components/Sponsor.tsx:207
+#: src/components/Sponsor.tsx:241
 msgid "Sign Up"
 msgstr "Inscription"
 
 #: src/components/Navigation.tsx:70
-#: src/components/Sponsor.tsx:47
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 msgstr "Soutenez flowchart.fun pour 1 $ par mois et bénéficiez de l'hébergement des organigrammes, et des dernières nouveautés en termes de styles et de fonctionnalités."
+
+#: src/components/Sponsor.tsx:27
+msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
+msgstr "Parrainez flowchart.fun pour <0>1 $ / mois</0> ou <1>10 $ / an</1> pour avoir accès à..."
 
 #: src/components/MenuNext.tsx:165
 #: src/components/MenuNext.tsx:266
@@ -428,7 +456,7 @@ msgid "Status"
 msgstr "État"
 
 #: src/components/Feedback.tsx:93
-#: src/components/LoginForm.tsx:49
+#: src/components/LoginForm.tsx:53
 #: src/components/MenuNext.tsx:398
 msgid "Submit"
 msgstr "Soumettre"
@@ -445,7 +473,7 @@ msgstr "L'abonnement prendra fin"
 msgid "Thank you for your feedback!"
 msgstr "Merci pour votre commentaire !"
 
-#: src/components/GraphOptionsBar.tsx:211
+#: src/components/GraphOptionsBar.tsx:215
 msgid "Theme"
 msgstr "Thème"
 
@@ -458,7 +486,7 @@ msgstr "Ces graphiques sont uniquement disponibles dans le navigateur de cet app
 msgid "This app works by typing"
 msgstr "Chaque ligne creé une nouvelle boite"
 
-#: src/lib/graphOptions.ts:33
+#: src/lib/graphOptions.ts:53
 msgid "Top to Bottom"
 msgstr "De haut en bas"
 
@@ -482,7 +510,7 @@ msgstr "Voir sur Github"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Nous apprécions tous vos commentaires, suggestions, retours sur les bugs et demandes de fonctionnalités !"
 
-#: src/components/Sponsor.tsx:210
+#: src/components/Sponsor.tsx:248
 msgid "We use cookies to keep you logged in."
 msgstr "Nous utilisons des cookies afin de maintenir votre connexion."
 

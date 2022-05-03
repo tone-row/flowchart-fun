@@ -1,14 +1,15 @@
 import { t, Trans } from "@lingui/macro";
-import { useCallback, useState } from "react";
+import { ReactNode, useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
 import { isError } from "../lib/helpers";
 import { login } from "../lib/queries";
 import { Box, Type } from "../slang";
-import { Button, Input, Notice, Section, SectionTitle } from "./Shared";
+import styles from "./LoginForm.module.css";
+import { Button, Input, Notice, Section } from "./Shared";
 
-export function LoginForm() {
+export function LoginForm({ heading }: { heading: ReactNode }) {
   const { register, handleSubmit } = useForm();
   const [success, setSuccess] = useState(false);
   const { mutate, isLoading, error } = useMutation(login, {
@@ -22,9 +23,7 @@ export function LoginForm() {
   );
   return (
     <Section as="form" onSubmit={handleSubmit(onSubmit)}>
-      <SectionTitle>
-        <Trans>Log In</Trans>
-      </SectionTitle>
+      {heading}
       {success ? (
         <Box background="color-nodeHover" p={2} rad={2}>
           <Type>
@@ -45,16 +44,22 @@ export function LoginForm() {
               disabled={isLoading}
               placeholder={t`Email`}
               isLoading={isLoading}
+              size={0}
+              className={styles.LoginFormInput}
             />
-            <Button type="submit" text={t`Submit`} />
+            <Button
+              className={styles.SignInButton}
+              type="submit"
+              text={t`Submit`}
+            />
           </Box>
-          <Box flow="column" items="start space-between">
-            {isError(error) && (
+          {isError(error) && (
+            <Box flow="column" items="start space-between">
               <Notice>
                 <Type size={-1}>{(error as { message: string }).message}</Type>
               </Notice>
-            )}
-          </Box>
+            </Box>
+          )}
         </Box>
       )}
     </Section>

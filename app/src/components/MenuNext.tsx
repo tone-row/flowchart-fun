@@ -422,7 +422,7 @@ function ExportButton() {
         <Share size={smallIconSize} />
       </Box>
       <Box display="none" pr={3} at={{ tablet: { display: "grid" } }}>
-        <Type size={smallBtnTypeSize}>
+        <Type size={smallBtnTypeSize} weight="700" color="palette-white-0">
           <Trans>Export</Trans>
         </Type>
       </Box>
