@@ -27,6 +27,26 @@ export const layouts: SelectOption[] = [
   { label: () => t`Circle`, value: "circle" },
   { label: () => t`Random`, value: "random" },
   { label: () => t`Grid`, value: "grid" },
+  // Elk layouts
+  { label: () => "Box", value: "elk-box", sponsorOnly: true },
+  { label: () => "Disco", value: "elk-disco", sponsorOnly: true },
+  { label: () => "Force", value: "elk-force", sponsorOnly: true },
+  { label: () => "Layered", value: "elk-layered", sponsorOnly: true },
+  { label: () => "Tree", value: "elk-mrtree", sponsorOnly: true },
+  { label: () => "Stress", value: "elk-stress", sponsorOnly: true },
+  {
+    label: () => t`Get More Layouts`,
+    value: "more",
+    hideIfSponsor: true,
+    handleClick: (setShowing) => {
+      setShowing("sponsor");
+      gaJumpToSponsorPage({ action: "Get More Layouts" });
+    },
+    style: {
+      color: "var(--color-highlightColor)",
+      backgroundColor: "hsla(var(--color-brandHsl), 0.2)",
+    },
+  },
 ];
 
 export const directions: SelectOption[] = [

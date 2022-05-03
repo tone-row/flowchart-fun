@@ -8,6 +8,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useReducer,
   useState,
 } from "react";
 import { useLocation } from "react-router-dom";
@@ -15,6 +16,7 @@ import useLocalStorage from "react-use-localstorage";
 import Stripe from "stripe";
 
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
+import { loadSponsorOnlyLayouts } from "../lib/cytoscape";
 import { useCustomerInfo } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { languages } from "../locales/i18n";
@@ -147,6 +149,17 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
     session?.user?.email
   );
+
+  const [_, sponsorLayoutsLoaded] = useReducer(() => true, false);
+
+  /* Load Sponsor-only layouts when logged in */
+  useEffect(() => {
+    if (session) {
+      loadSponsorOnlyLayouts();
+      // trigger re-render with unused state, defer
+      setTimeout(() => sponsorLayoutsLoaded(), 0);
+    }
+  }, [session]);
 
   return (
     <AppContext.Provider

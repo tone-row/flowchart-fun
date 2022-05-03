@@ -5795,6 +5795,13 @@ cytoscape-dagre@^2.3.2:
   dependencies:
     dagre "^0.8.5"
 
+cytoscape-elk@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/cytoscape-elk/-/cytoscape-elk-2.0.2.tgz#dc8cf9b3ac3c9dfb16a67273f2ef6fd62d676cfc"
+  integrity sha512-P47PY63YECC42JVJm/PozKDZMLmx/BPGEhmfAEQzMRAz03DC09CsGrMC4TM4ggErnI8uPMzmI42F1oP6Zu4iUw==
+  dependencies:
+    elkjs "^0.7.0"
+
 cytoscape-klay@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/cytoscape-klay/-/cytoscape-klay-3.1.4.tgz#0e5bbb5c482b384b2ff2485150173aaecebc324b"
@@ -6287,6 +6294,11 @@ electron-to-chromium@^1.3.723:
   version "1.3.755"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.755.tgz#4b6101f13de910cf3f0a1789ddc57328133b9332"
   integrity sha512-BJ1s/kuUuOeo1bF/EM2E4yqW9te0Hpof3wgwBx40AWJE18zsD1Tqo0kr7ijnOc+lRsrlrqKPauJAHqaxOItoUA==
+
+elkjs@^0.7.0:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/elkjs/-/elkjs-0.7.1.tgz#4751c5e918a4988139baf7f214e010aea22de969"
+  integrity sha512-lD86RWdh480/UuRoHhRcnv2IMkIcK6yMDEuT8TPBIbO3db4HfnVF+1lgYdQi99Ck0yb+lg5Eb46JCHI5uOsmAw==
 
 elliptic@^6.5.3:
   version "6.5.4"
@@ -14604,6 +14616,11 @@ web-vitals@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.0.tgz#7f410d9a1f7a1cd5d952806b45776204b47dc274"
   integrity sha512-1cx54eRxY/+M0KNKdNpNnuXAXG+vJEvwScV4DiV9rOYDguHoeDIzm09ghBohOPtkqPO5OtPC14FWkNva3SDisg==
+
+web-worker@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/web-worker/-/web-worker-1.2.0.tgz#5d85a04a7fbc1e7db58f66595d7a3ac7c9c180da"
+  integrity sha512-PgF341avzqyx60neE9DD+XS26MMNMoUQRz9NOZwW32nPQrF6p77f1htcnjBSEV8BGMKZ16choqUG4hyI0Hx7mA==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
