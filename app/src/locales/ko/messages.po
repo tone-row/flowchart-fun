@@ -21,7 +21,7 @@ msgstr "$1 / 월"
 msgid "$10 / Year"
 msgstr "$10 / 연"
 
-#: src/components/Navigation.tsx:365
+#: src/components/Navigation.tsx:376
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
 
@@ -67,9 +67,9 @@ msgstr "아래에서 위로"
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
-#: src/components/Navigation.tsx:256
-#: src/components/Navigation.tsx:536
-#: src/components/Navigation.tsx:586
+#: src/components/Navigation.tsx:267
+#: src/components/Navigation.tsx:547
+#: src/components/Navigation.tsx:597
 #: src/components/SponsorDashboard.tsx:127
 #: src/components/SponsorDashboard.tsx:138
 #: src/components/SponsorDashboard.tsx:227
@@ -116,9 +116,9 @@ msgstr "줄다"
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
-#: src/components/Navigation.tsx:469
-#: src/components/Navigation.tsx:537
-#: src/components/Navigation.tsx:571
+#: src/components/Navigation.tsx:480
+#: src/components/Navigation.tsx:548
+#: src/components/Navigation.tsx:582
 #: src/components/ShareDialog.tsx:222
 #: src/components/ShareDialog.tsx:288
 msgid "Copy"
@@ -134,9 +134,9 @@ msgstr "SVG 코드 복사"
 
 #: src/components/MenuNext.tsx:112
 #: src/components/MenuNext.tsx:459
-#: src/components/Navigation.tsx:166
-#: src/components/Navigation.tsx:326
-#: src/components/Navigation.tsx:384
+#: src/components/Navigation.tsx:177
+#: src/components/Navigation.tsx:337
+#: src/components/Navigation.tsx:395
 msgid "Create"
 msgstr "만들기"
 
@@ -145,7 +145,7 @@ msgstr "만들기"
 msgid "Create a link directly using the exact label text"
 msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 
-#: src/components/Navigation.tsx:623
+#: src/components/Navigation.tsx:634
 msgid "Created"
 msgstr "생성됨"
 
@@ -162,10 +162,10 @@ msgstr "다크 모드"
 msgid "Date"
 msgstr "날짜"
 
-#: src/components/Navigation.tsx:245
-#: src/components/Navigation.tsx:250
-#: src/components/Navigation.tsx:259
-#: src/components/Navigation.tsx:587
+#: src/components/Navigation.tsx:256
+#: src/components/Navigation.tsx:261
+#: src/components/Navigation.tsx:270
+#: src/components/Navigation.tsx:598
 msgid "Delete"
 msgstr "삭제"
 
@@ -177,7 +177,7 @@ msgstr "방향"
 msgid "Do you want to cancel your subscription?"
 msgstr "구독을 취소하시겠습니까?"
 
-#: src/components/Navigation.tsx:580
+#: src/components/Navigation.tsx:591
 msgid "Do you want to delete this?"
 msgstr "본 항목을 삭제하시겠습니까?"
 
@@ -197,8 +197,8 @@ msgstr "PNG 다운로드"
 msgid "Download SVG"
 msgstr "SVG 다운로드"
 
-#: src/components/Navigation.tsx:302
-#: src/components/Navigation.tsx:522
+#: src/components/Navigation.tsx:313
+#: src/components/Navigation.tsx:533
 msgid "Duplicate"
 msgstr "복제"
 
@@ -223,9 +223,9 @@ msgstr "이메일"
 msgid "Email (optional)"
 msgstr "이메일 (선택사항)"
 
-#: src/components/Navigation.tsx:158
-#: src/components/Navigation.tsx:376
-#: src/components/Navigation.tsx:528
+#: src/components/Navigation.tsx:169
+#: src/components/Navigation.tsx:387
+#: src/components/Navigation.tsx:539
 msgid "Enter a title"
 msgstr "제목을 입력하세요"
 
@@ -293,8 +293,8 @@ msgstr "기록"
 msgid "Home"
 msgstr "집"
 
-#: src/components/Navigation.tsx:68
-#: src/components/Navigation.tsx:364
+#: src/components/Navigation.tsx:56
+#: src/components/Navigation.tsx:375
 #: src/components/Sponsor.tsx:59
 msgid "Hosted Charts"
 msgstr "호스트 차트"
@@ -311,6 +311,10 @@ msgstr "언어"
 #: src/components/GraphOptionsBar.tsx:144
 msgid "Layout"
 msgstr "레이아웃"
+
+#: src/components/Navigation.tsx:74
+msgid "Learn More"
+msgstr "더 알아보기"
 
 #: src/lib/graphOptions.ts:54
 msgid "Left to Right"
@@ -329,7 +333,7 @@ msgstr "라이트 모드"
 msgid "Link"
 msgstr "링크"
 
-#: src/components/Navigation.tsx:147
+#: src/components/Navigation.tsx:158
 msgid "Local Charts"
 msgstr "로컬 차트"
 
@@ -365,8 +369,8 @@ msgstr "더 많은 테마 보기"
 msgid "Museum"
 msgstr "박물관"
 
-#: src/components/Navigation.tsx:611
-#: src/components/Navigation.tsx:647
+#: src/components/Navigation.tsx:622
+#: src/components/Navigation.tsx:658
 msgid "Name"
 msgstr "이름"
 
@@ -387,7 +391,7 @@ msgstr "플레이북"
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "온갖 크기와 모양의 그래프를 질서있게 정리하는 강력한 레이아웃 알고리즘"
 
-#: src/components/Navigation.tsx:615
+#: src/components/Navigation.tsx:626
 #: src/components/ShareDialog.tsx:91
 #: src/components/ShareDialog.tsx:117
 msgid "Public"
@@ -405,8 +409,8 @@ msgstr "무작위"
 msgid "Rename"
 msgstr "이름 바꾸기"
 
-#: src/components/Navigation.tsx:250
-#: src/components/Navigation.tsx:259
+#: src/components/Navigation.tsx:261
+#: src/components/Navigation.tsx:270
 msgid "Reset"
 msgstr "재설정"
 
@@ -434,7 +438,7 @@ msgstr "설정"
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/components/Navigation.tsx:70
+#: src/components/Navigation.tsx:63
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 msgstr "Flowchart.fun을 월 1달러에 후원해서 호스트 플로우차트, 최신 스타일과 기능을 이용하세요"
 
@@ -477,7 +481,7 @@ msgstr "피드백을 해주셔서 감사합니다!"
 msgid "Theme"
 msgstr "테마"
 
-#: src/components/Navigation.tsx:148
+#: src/components/Navigation.tsx:159
 msgid "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these."
 msgstr "다음의 차트는 이 장치의 이 브라우저에서만 이용하실 수 있습니다.<0/>브라우저를 정리하면 local storage 에서 다음의 차트를 삭제합니다."
 
@@ -494,7 +498,7 @@ msgstr "위에서 아래로"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/components/Navigation.tsx:619
+#: src/components/Navigation.tsx:630
 msgid "Updated"
 msgstr "업데이트됨"
 
@@ -514,7 +518,7 @@ msgstr "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다
 msgid "We use cookies to keep you logged in."
 msgstr "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다."
 
-#: src/components/Navigation.tsx:312
+#: src/components/Navigation.tsx:323
 msgid "What would you like to name this copy?"
 msgstr "이 사본의 이름을 무엇으로 지정하시겠습니까?"
 
@@ -526,7 +530,7 @@ msgstr "무엇을 공유하시겠습니까?"
 msgid "With Editor"
 msgstr "에디터와 함께"
 
-#: src/components/Navigation.tsx:398
+#: src/components/Navigation.tsx:409
 #: src/components/SponsorDashboard.tsx:65
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오."

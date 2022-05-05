@@ -11,7 +11,7 @@ export const palette = {
     "#ededec",
   ],
   black: ["#000000", "#202020", "#464646", "#3f3f3f"],
-  purple: ["#5c6fff", "#929bff", "#D3CCF3", "#EFF0FF", "#001EFF"],
+  purple: ["#5c6fff", "#929bff", "#D3CCF3", "#EFF0FF", "#001EFF", "#4a5de8"],
   green: ["#01d857", "#84ff82", "#00c722"],
   blue: ["#3947ff"],
   yellow: ["#ffcf0d", "#ffcf0d8c", "#FFE590"],

@@ -21,7 +21,7 @@ msgstr "1 $ / Monat"
 msgid "$10 / Year"
 msgstr "10 $ / Jahr"
 
-#: src/components/Navigation.tsx:365
+#: src/components/Navigation.tsx:376
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Greifen Sie von überall auf diese Diagramme zu.<0/>Teilen/Einbetten von Diagrammen, die mit Ihren Bearbeitungen synchronisiert bleiben."
 
@@ -67,9 +67,9 @@ msgstr "Von unten nach oben"
 msgid "Breadthfirst"
 msgstr "In die Breite"
 
-#: src/components/Navigation.tsx:256
-#: src/components/Navigation.tsx:536
-#: src/components/Navigation.tsx:586
+#: src/components/Navigation.tsx:267
+#: src/components/Navigation.tsx:547
+#: src/components/Navigation.tsx:597
 #: src/components/SponsorDashboard.tsx:127
 #: src/components/SponsorDashboard.tsx:138
 #: src/components/SponsorDashboard.tsx:227
@@ -116,9 +116,9 @@ msgstr "Zusammenziehen"
 msgid "Convert to hosted chart?"
 msgstr "In gehostetes Diagramm konvertieren?"
 
-#: src/components/Navigation.tsx:469
-#: src/components/Navigation.tsx:537
-#: src/components/Navigation.tsx:571
+#: src/components/Navigation.tsx:480
+#: src/components/Navigation.tsx:548
+#: src/components/Navigation.tsx:582
 #: src/components/ShareDialog.tsx:222
 #: src/components/ShareDialog.tsx:288
 msgid "Copy"
@@ -134,9 +134,9 @@ msgstr "Kopieren Sie den SVG-Code"
 
 #: src/components/MenuNext.tsx:112
 #: src/components/MenuNext.tsx:459
-#: src/components/Navigation.tsx:166
-#: src/components/Navigation.tsx:326
-#: src/components/Navigation.tsx:384
+#: src/components/Navigation.tsx:177
+#: src/components/Navigation.tsx:337
+#: src/components/Navigation.tsx:395
 msgid "Create"
 msgstr "Erstellen"
 
@@ -145,7 +145,7 @@ msgstr "Erstellen"
 msgid "Create a link directly using the exact label text"
 msgstr "Erstellen Sie direkt einen Link mit dem genauen Beschriftungstext"
 
-#: src/components/Navigation.tsx:623
+#: src/components/Navigation.tsx:634
 msgid "Created"
 msgstr "Erstellt"
 
@@ -162,10 +162,10 @@ msgstr "Dunkelmodus"
 msgid "Date"
 msgstr "Datum"
 
-#: src/components/Navigation.tsx:245
-#: src/components/Navigation.tsx:250
-#: src/components/Navigation.tsx:259
-#: src/components/Navigation.tsx:587
+#: src/components/Navigation.tsx:256
+#: src/components/Navigation.tsx:261
+#: src/components/Navigation.tsx:270
+#: src/components/Navigation.tsx:598
 msgid "Delete"
 msgstr "Löschen"
 
@@ -177,7 +177,7 @@ msgstr "Richtung"
 msgid "Do you want to cancel your subscription?"
 msgstr "Möchten Sie Ihr Abonnement kündigen?"
 
-#: src/components/Navigation.tsx:580
+#: src/components/Navigation.tsx:591
 msgid "Do you want to delete this?"
 msgstr "Möchten Sie dies löschen?"
 
@@ -197,8 +197,8 @@ msgstr "PNG herunterladen"
 msgid "Download SVG"
 msgstr "SVG herunterladen"
 
-#: src/components/Navigation.tsx:302
-#: src/components/Navigation.tsx:522
+#: src/components/Navigation.tsx:313
+#: src/components/Navigation.tsx:533
 msgid "Duplicate"
 msgstr "Duplizieren"
 
@@ -223,9 +223,9 @@ msgstr "E-Mail"
 msgid "Email (optional)"
 msgstr "E-Mail (optional)"
 
-#: src/components/Navigation.tsx:158
-#: src/components/Navigation.tsx:376
-#: src/components/Navigation.tsx:528
+#: src/components/Navigation.tsx:169
+#: src/components/Navigation.tsx:387
+#: src/components/Navigation.tsx:539
 msgid "Enter a title"
 msgstr "Titel eingeben"
 
@@ -293,8 +293,8 @@ msgstr "Verlauf"
 msgid "Home"
 msgstr "Startseite"
 
-#: src/components/Navigation.tsx:68
-#: src/components/Navigation.tsx:364
+#: src/components/Navigation.tsx:56
+#: src/components/Navigation.tsx:375
 #: src/components/Sponsor.tsx:59
 msgid "Hosted Charts"
 msgstr "Gehostete Diagramme"
@@ -311,6 +311,10 @@ msgstr "Sprache"
 #: src/components/GraphOptionsBar.tsx:144
 msgid "Layout"
 msgstr "Layout"
+
+#: src/components/Navigation.tsx:74
+msgid "Learn More"
+msgstr "Mehr erfahren"
 
 #: src/lib/graphOptions.ts:54
 msgid "Left to Right"
@@ -329,7 +333,7 @@ msgstr "Heller Modus"
 msgid "Link"
 msgstr "Link"
 
-#: src/components/Navigation.tsx:147
+#: src/components/Navigation.tsx:158
 msgid "Local Charts"
 msgstr "Lokale Diagramme"
 
@@ -365,8 +369,8 @@ msgstr "Weitere Themen"
 msgid "Museum"
 msgstr "Museum"
 
-#: src/components/Navigation.tsx:611
-#: src/components/Navigation.tsx:647
+#: src/components/Navigation.tsx:622
+#: src/components/Navigation.tsx:658
 msgid "Name"
 msgstr "Name"
 
@@ -387,7 +391,7 @@ msgstr "Spielbuch"
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "Leistungsstarke Layout-Algorithmen, die Ordnung in Diagramme aller Formen und Größen bringen"
 
-#: src/components/Navigation.tsx:615
+#: src/components/Navigation.tsx:626
 #: src/components/ShareDialog.tsx:91
 #: src/components/ShareDialog.tsx:117
 msgid "Public"
@@ -405,8 +409,8 @@ msgstr "Zufällig"
 msgid "Rename"
 msgstr "Umbenennen"
 
-#: src/components/Navigation.tsx:250
-#: src/components/Navigation.tsx:259
+#: src/components/Navigation.tsx:261
+#: src/components/Navigation.tsx:270
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -434,7 +438,7 @@ msgstr "Einstellungen"
 msgid "Sign Up"
 msgstr "Registrieren"
 
-#: src/components/Navigation.tsx:70
+#: src/components/Navigation.tsx:63
 msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 msgstr "Sponsern Sie flowchart.fun für 1 $ pro Monat, um Zugang zu gehosteten Flussdiagrammen und den neuesten Stilen und Funktionen zu erhalten"
 
@@ -477,7 +481,7 @@ msgstr "Danke für Ihr Feedback!"
 msgid "Theme"
 msgstr "Thema"
 
-#: src/components/Navigation.tsx:148
+#: src/components/Navigation.tsx:159
 msgid "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these."
 msgstr "Diese Diagramme sind nur in diesem Browser auf diesem Gerät verfügbar.<0/>Wenn Sie Ihren Browser-local storage leeren, werden sie gelöscht."
 
@@ -494,7 +498,7 @@ msgstr "Von oben nach unten"
 msgid "Try again"
 msgstr "Erneut versuchen"
 
-#: src/components/Navigation.tsx:619
+#: src/components/Navigation.tsx:630
 msgid "Updated"
 msgstr "Aktualisiert"
 
@@ -514,7 +518,7 @@ msgstr "Wir freuen uns über Ihr Feedback, Ihre Vorschläge, Fehler und Funktion
 msgid "We use cookies to keep you logged in."
 msgstr "Wir verwenden Cookies, um Sie eingeloggt zu halten."
 
-#: src/components/Navigation.tsx:312
+#: src/components/Navigation.tsx:323
 msgid "What would you like to name this copy?"
 msgstr "Wie möchten Sie diese Kopie nennen?"
 
@@ -526,7 +530,7 @@ msgstr "Was möchten Sie uns mitteilen?"
 msgid "With Editor"
 msgstr "Mit Editor"
 
-#: src/components/Navigation.tsx:398
+#: src/components/Navigation.tsx:409
 #: src/components/SponsorDashboard.tsx:65
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Ihr Abonnement ist nicht mehr aktiv. Wenn Sie gehostete Diagramme erstellen und bearbeiten möchten, werden Sie Sponsor."
