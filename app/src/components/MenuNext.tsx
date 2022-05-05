@@ -7,7 +7,7 @@ import {
   Gear,
   Globe,
   Laptop,
-  NotePencil,
+  PencilSimple,
   Plus,
   Question,
   Share,
@@ -349,7 +349,7 @@ function RenameButton() {
           onClick={() => setDialog(true)}
           aria-label={t`Rename`}
         >
-          <NotePencil size={smallIconSize} />
+          <PencilSimple size={smallIconSize} />
         </Button>
       </Tooltip>
       <Dialog
@@ -422,7 +422,7 @@ function ExportButton() {
         <Share size={smallIconSize} />
       </Box>
       <Box display="none" pr={3} at={{ tablet: { display: "grid" } }}>
-        <Type size={smallBtnTypeSize}>
+        <Type size={smallBtnTypeSize} weight="700" color="palette-white-0">
           <Trans>Export</Trans>
         </Type>
       </Box>

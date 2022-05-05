@@ -1,18 +1,12 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import { useThrottleCallback } from "@react-hook/throttle";
-import merge from "deepmerge";
-import { stringify } from "gray-matter";
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
 import EditorError from "../components/EditorError";
 import GraphProvider from "../components/GraphProvider";
 import Loading from "../components/Loading";
 import useGraphOptions from "../components/useGraphOptions";
-import {
-  delimiters,
-  editorOptions,
-  GraphOptionsObject,
-} from "../lib/constants";
+import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useLocalStorageText } from "../lib/hooks";
 import { useAppMode } from "../lib/queries";
@@ -21,6 +15,7 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
+import { useUpdateGraphOptionsText } from "../lib/useUpdateGraphOptionsText";
 import styles from "./Edit.module.css";
 
 export default function Edit() {
@@ -40,6 +35,8 @@ export default function Edit() {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
 
+  console.log({ graphOptions });
+
   const onMount = useEditorOnMount(editorRef, monacoRef);
   useEffect(() => {
     if (!monacoRef.current) return;
@@ -48,21 +45,12 @@ export default function Edit() {
     );
   }, [mode]);
 
-  const updateGraphOptionsText = useCallback(
-    (o: GraphOptionsObject) => {
-      let text = "";
-      if (Object.keys(graphOptions).length) {
-        text = stringify(content, merge(graphOptions, o), {
-          delimiters,
-        });
-      } else {
-        // No frontmatter
-        text = stringify(textToParse, o, { delimiters });
-      }
-      setText(text);
-      setTextToParse(text);
-    },
-    [content, graphOptions, setText, textToParse]
+  const updateGraphOptionsText = useUpdateGraphOptionsText(
+    content,
+    graphOptions,
+    setText,
+    setTextToParse,
+    textToParse
   );
 
   // Hover

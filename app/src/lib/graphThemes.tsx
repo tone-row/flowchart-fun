@@ -124,3 +124,9 @@ export function useGraphTheme() {
     theme = graphOptions.theme;
   return useLoadedTheme(theme);
 }
+
+export function useBackground() {
+  const { graphOptions } = useContext(GraphContext);
+  const graphTheme = useGraphTheme();
+  return graphOptions?.background ?? graphTheme.safeBg ?? graphTheme.bg;
+}

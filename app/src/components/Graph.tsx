@@ -1,10 +1,5 @@
 import cytoscapeSvg from "@tone-row/cytoscape-svg";
-import cytoscape, {
-  Core,
-  CytoscapeOptions,
-  EdgeSingular,
-  NodeSingular,
-} from "cytoscape";
+import { Core, CytoscapeOptions, EdgeSingular, NodeSingular } from "cytoscape";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import frontmatter from "gray-matter";
@@ -28,11 +23,13 @@ import {
   delimiters,
   GraphOptionsObject,
 } from "../lib/constants";
-import { useGraphTheme } from "../lib/graphThemes";
+import { cytoscape } from "../lib/cytoscape";
+import { useBackground, useGraphTheme } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
 import { useAnimationSetting } from "../lib/hooks";
 import { parseText } from "../lib/parseText";
+import { preprocessGraphLayout } from "../lib/preprocessGraphLayout";
 import { StoreGraph, useStoreGraph } from "../lib/store.graph";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
@@ -77,11 +74,15 @@ const Graph = memo(
       useContext(AppContext);
 
     const theme = useGraphTheme();
+    const bg = useBackground();
     const getSize = useGetSize(theme);
     const setLayout = useStoreGraph((store) => store.setLayout);
     const setElements = useStoreGraph((store) => store.setElements);
     const runLayout = useStoreGraph((store) => store.runLayout);
     const setRunLayout = useStoreGraph((store) => store.setRunLayout);
+    const graphUpdateNumber = useStoreGraph(
+      useCallback((store) => store.graphUpdateNumber, [])
+    );
 
     // Always begin with the layout running
     useEffect(() => {
@@ -183,6 +184,8 @@ const Graph = memo(
       setElements,
       setHasError,
       setLayout,
+      // Force update on graphUpdateNumber change
+      graphUpdateNumber,
     ]);
 
     const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
@@ -196,7 +199,7 @@ const Graph = memo(
         className={[styles.GraphContainer, "graph"].join(" ")}
         overflow="hidden"
         h="100%"
-        style={{ background: theme.bg }}
+        style={{ background: bg }}
         onContextMenu={handleContextMenu}
       >
         <Box id="cy" overflow="hidden" />
@@ -311,7 +314,9 @@ function updateGraph({
   if (cy.current) {
     let elements: cytoscape.ElementDefinition[] = [];
     try {
-      const layout = JSON.parse(layoutString) as GraphOptionsObject["layout"];
+      const layout = preprocessGraphLayout(
+        JSON.parse(layoutString) as GraphOptionsObject["layout"]
+      );
 
       // Parse
       elements = parseText(content, getSize, lineNumberStart);

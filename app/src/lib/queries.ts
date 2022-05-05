@@ -55,6 +55,7 @@ async function customerInfo(
 export function useCustomerInfo(email: string | undefined) {
   return useQuery(["auth", "customerInfo", email], () => customerInfo(email), {
     enabled: Boolean(email),
+    staleTime: Infinity,
   });
 }
 
@@ -214,7 +215,8 @@ export function useChart(id?: string) {
   return useQuery(["useChart", id], () => getChart(id), {
     enabled: Boolean(id),
     refetchOnMount: true,
-    staleTime: 0,
+    staleTime: 2000,
+    cacheTime: 2000,
     suspense: true,
   });
 }

@@ -152,9 +152,13 @@ const GraphOptionsBar = memo(() => {
                   <Select
                     inputId="layout"
                     options={filterOptionsForSponsors(isValidSponsor, layouts)}
-                    onChange={(layout: typeof layouts[number]) =>
-                      layout && onChange(layout.value)
-                    }
+                    onChange={(layout: typeof layouts[number]) => {
+                      if (layout.handleClick) {
+                        layout.handleClick(setShowing);
+                      } else if (layout) {
+                        onChange(layout.value);
+                      }
+                    }}
                     value={currentLayout}
                     {...selectProps}
                   />
@@ -162,7 +166,7 @@ const GraphOptionsBar = memo(() => {
               }}
             />
           </OptionWithIcon>
-          {currentLayout?.value === "dagre" && (
+          {["dagre"].includes(currentLayout?.value) && (
             <OptionWithIcon
               icon={ArrowUpRight}
               label={t`Direction`}

@@ -41,6 +41,7 @@ type Colors =
   | "palette-purple-2"
   | "palette-purple-3"
   | "palette-purple-4"
+  | "palette-purple-5"
   | "palette-green-0"
   | "palette-green-1"
   | "palette-green-2"

@@ -16,9 +16,15 @@ export const smallBtnTypeSize = -1;
 export const tooltipSize = -2;
 export const smallIconSize = 18;
 
-export const SectionTitle = ({ children, as = "h2", ...props }: TypeProps) => {
+export const SectionTitle = ({
+  children,
+  as = "h2",
+  weight = "400",
+  size = 3,
+  ...props
+}: TypeProps) => {
   return (
-    <Type as={as} weight="400" size={1} {...props}>
+    <Type as={as} weight={weight} size={size} {...props}>
       {children}
     </Type>
   );
@@ -95,9 +101,17 @@ Textarea.displayName = "Textarea";
 
 export const Button = forwardRef<
   HTMLButtonElement,
-  BoxProps & { text?: string }
+  BoxProps & { text?: string; typeProps?: TypeProps }
 >(function Button(
-  { children, as = "button", onClick, className = "", text, ...props },
+  {
+    children,
+    as = "button",
+    onClick,
+    className = "",
+    text,
+    typeProps = { size: -1 },
+    ...props
+  },
   ref
 ) {
   return (
@@ -113,7 +127,7 @@ export const Button = forwardRef<
       ref={ref}
     >
       {text ? (
-        <Type className={styles.ButtonType} as="span" size={-1}>
+        <Type className={styles.ButtonType} as="span" {...typeProps}>
           {text}
         </Type>
       ) : (

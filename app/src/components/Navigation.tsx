@@ -1,9 +1,11 @@
 import { t, Trans } from "@lingui/macro";
 import { formatDistanceStrict, parseISO } from "date-fns";
-import { Check, Copy, Database, Trash } from "phosphor-react";
-import React, {
+import { Check, Copy, Trash } from "phosphor-react";
+import {
   Dispatch,
   Fragment,
+  memo,
+  ReactNode,
   SetStateAction,
   Suspense,
   useCallback,
@@ -36,21 +38,59 @@ import { Button, Dialog, Input, Notice, Section, SectionTitle } from "./Shared";
 
 export default function Charts() {
   const validCustomer = useIsValidCustomer();
+  const { setShowing } = useContext(AppContext);
+
   return (
     <Box
-      px={4}
+      px={5}
       py={8}
-      gap={14}
+      gap={10}
       content="start normal"
       className={styles.Navigation}
     >
+      {!validCustomer && (
+        <Box gap={8} items="start">
+          <Box gap={4} items="start">
+            <Box gap={2}>
+              <Type size={3}>
+                <Trans>Hosted Charts</Trans>
+              </Type>
+              <Type
+                className={styles.CalloutInner}
+                size={-1}
+                style={{ maxWidth: 400 }}
+              >
+                <Trans>
+                  Sponsor flowchart.fun for $1 a month to access hosted
+                  flowcharts and the newest styles and features
+                </Trans>
+              </Type>
+            </Box>
+            <Button
+              className={styles.BlueButton}
+              p={3}
+              px={6}
+              typeProps={{ size: 0 }}
+              text={t`Learn More`}
+              onClick={() => {
+                setShowing("sponsor");
+                gaSponsorCTA({ action: "from navigation" });
+              }}
+            />
+          </Box>
+          <img
+            src="/images/flowchart-person.svg"
+            alt="Person making a flowchart"
+            className={styles.FlowchartPerson}
+          />
+        </Box>
+      )}
       {validCustomer && <HostedCharts />}
       <LocalCharts />
     </Box>
   );
 }
 
-const localStorage = "local storage";
 function LocalCharts() {
   const { setShowing } = useContext(AppContext);
   const { watch, register, handleSubmit } = useForm();
@@ -61,7 +101,6 @@ function LocalCharts() {
   const { pathname } = useLocation();
   const [erase, setErase] = useState("");
   const [copy, setCopy] = useState("");
-  const validCustomer = useIsValidCustomer();
 
   const onSubmit = useCallback(
     ({ chartTitle }: { chartTitle: string }) => {
@@ -115,39 +154,16 @@ function LocalCharts() {
   }, [erase]);
 
   return (
-    <Section>
-      {!validCustomer && (
-        <Box
-          p={4}
-          rad={1}
-          flow="column"
-          items="start normal"
-          gap={3}
-          as="button"
-          onClick={() => {
-            setShowing("sponsor");
-            gaSponsorCTA({ action: "from navigation" });
-          }}
-          className={styles.CallOut}
-        >
-          <Database size={36} />
-          <Type as="span" className={styles.CalloutInner}>
-            <span style={{ fontWeight: 700 }}>
-              <Trans>Hosted Charts</Trans> ~{" "}
-            </span>
-            <Trans>
-              Sponsor flowchart.fun for $1 a month to access hosted flowcharts
-              and the newest styles and features
-            </Trans>
-          </Type>
-        </Box>
-      )}
-      <TitleAndSummary
-        title={t`Local Charts`}
-        summary={t`These charts are only available in this browser on this device. Clearing your browser ${localStorage} will erase these.`}
-      />
+    <Section className={styles.ChartSection}>
+      <TitleAndSummary title={t`Local Charts`}>
+        <Trans>
+          These charts are only available in this browser on this device.
+          <br />
+          Clearing your browser {"local storage"} will erase these.
+        </Trans>
+      </TitleAndSummary>
       <Section as="form" onSubmit={handleSubmit(onSubmit)}>
-        <Box gap={2}>
+        <Box gap={1}>
           <Box template="none / 1fr auto" gap={3}>
             <Input
               placeholder={t`Enter a title`}
@@ -167,6 +183,7 @@ function LocalCharts() {
         </Box>
       </Section>
       <Box gap={1} template="auto / minmax(0,1fr) repeat(2, 42px)">
+        <LocalChartListTitles />
         {charts
           ?.filter((c) => c !== "h")
           .map((chart) => {
@@ -354,11 +371,14 @@ function HostedCharts() {
   const tooManyCharts = (charts?.length || 0) >= 16;
 
   return (
-    <Section content="start normal">
-      <TitleAndSummary
-        title={t`Hosted Charts`}
-        summary={t`Access these charts from anywhere. Share/embed charts that stay in sync with your edits.`}
-      />
+    <Section content="start normal" className={styles.ChartSection}>
+      <TitleAndSummary title={t`Hosted Charts`}>
+        <Trans>
+          Access these charts from anywhere.
+          <br />
+          Share/embed charts that stay in sync with your edits.
+        </Trans>
+      </TitleAndSummary>
       {validSponsor ? (
         !tooManyCharts ? (
           <Section as="form" onSubmit={handleSubmit(onSubmit)}>
@@ -377,7 +397,7 @@ function HostedCharts() {
             </Box>
           </Section>
         ) : (
-          <Notice>
+          <Notice boxProps={{ self: "start start" }}>
             <span>{`16 is currently the maximum number of charts. This number will
             increase in the near future.`}</span>
           </Notice>
@@ -395,99 +415,23 @@ function HostedCharts() {
       <Box
         gap={1}
         template={
-          validSponsor ? "auto / minmax(0,1fr) repeat(2, 42px)" : "auto / auto"
+          validSponsor ? "auto / minmax(0, 1fr) repeat(2, 42px)" : "auto / auto"
         }
       >
-        <Box
-          template="auto / minmax(0,1fr) repeat(1, 110px)"
-          at={{
-            tablet: { template: "auto / minmax(0,1fr) repeat(3, 110px)" },
-          }}
-          px={3}
-          gap={2}
-          className={styles.LinkColumnTitles}
-        >
-          <Type size={-2} as="span">
-            <Trans>Name</Trans>
-          </Type>
-          <Box display="none" at={{ tablet: { display: "block" } }}>
-            <Type size={-2}>
-              <Trans>Public</Trans>
-            </Type>
-          </Box>
-          <Type size={-2} as="span">
-            <Trans>Updated</Trans>
-          </Type>
-          <Box display="none" at={{ tablet: { display: "block" } }}>
-            <Type size={-2}>
-              <Trans>Created</Trans>
-            </Type>
-          </Box>
-        </Box>
-        {validSponsor ? (
-          <>
-            <div />
-            <div />
-          </>
-        ) : null}
+        <HostedChartListTitles />
         {charts?.map((chart) => (
-          <Fragment key={chart.id}>
-            <Button
-              as={Link}
-              to={`/u/${chart.id}`}
-              onClick={() => setShowing("editor")}
-              className={styles.NewChartLink}
-              content="normal start"
-              items="center stretch"
-              template="auto / minmax(0,1fr) repeat(1, 110px)"
-              at={{
-                tablet: { template: "auto / minmax(0,1fr) repeat(3, 110px)" },
-              }}
-              gap={2}
-              aria-current={
-                id && parseInt(id, 10) === chart.id ? "location" : undefined
-              }
-              title={chart.name}
-            >
-              <Type as="span" size={-1}>
-                {chart.name}
-              </Type>
-              <Box
-                display="none"
-                at={{ tablet: { display: "block" } }}
-                self="normal end"
-              >
-                {chart.is_public ? <Check /> : <div />}
-              </Box>
-              <Type as="span" size={-1} className={styles.NewChartLinkSubtext}>
-                {f(chart.updated_at)} ago
-              </Type>
-              <Box display="none" at={{ tablet: { display: "block" } }}>
-                <Type size={-1} className={styles.NewChartLinkSubtext}>
-                  {f(chart.created_at)} ago
-                </Type>
-              </Box>
-            </Button>
-            {validSponsor ? (
-              <>
-                <Button
-                  className={styles.IconButton}
-                  onClick={() => setCopyModal(chart.id)}
-                  disabled={tooManyCharts}
-                >
-                  <Copy />
-                </Button>
-                <Button
-                  className={styles.IconButton}
-                  onClick={() =>
-                    setDeleteModal({ id: chart.id, name: chart.name })
-                  }
-                >
-                  <Trash />
-                </Button>
-              </>
-            ) : null}
-          </Fragment>
+          <ChartButton
+            key={chart.id}
+            chartId={chart.id}
+            chartName={chart.name}
+            tooManyCharts={tooManyCharts}
+            setCopyModal={setCopyModal}
+            setDeleteModal={setDeleteModal}
+            is_public={chart.is_public}
+            created_at={chart.created_at}
+            updated_at={chart.updated_at}
+            id={id}
+          />
         ))}
       </Box>
       <CopyHostedChart
@@ -504,10 +448,10 @@ function HostedCharts() {
 
 function TitleAndSummary({
   title,
-  summary,
+  children: summary,
 }: {
   title: string;
-  summary: string;
+  children: ReactNode;
 }) {
   return (
     <Box gap={2}>
@@ -658,3 +602,148 @@ function DeleteHostedChart({
     </Dialog>
   );
 }
+
+function HostedChartListTitles() {
+  const validSponsor = useIsValidSponsor();
+  return (
+    <>
+      <Box
+        template="auto / minmax(0,1fr) repeat(1, 110px)"
+        at={{
+          tablet: {
+            template: "auto / minmax(0,1fr) 40px repeat(2, 110px)",
+          },
+        }}
+        px={3}
+        gap={2}
+        className={styles.LinkColumnTitles}
+      >
+        <Type size={-2} as="span">
+          <Trans>Name</Trans>
+        </Type>
+        <Box display="none" at={{ tablet: { display: "block" } }}>
+          <Type size={-2}>
+            <Trans>Public</Trans>
+          </Type>
+        </Box>
+        <Type size={-2} as="span">
+          <Trans>Updated</Trans>
+        </Type>
+        <Box display="none" at={{ tablet: { display: "block" } }}>
+          <Type size={-2}>
+            <Trans>Created</Trans>
+          </Type>
+        </Box>
+      </Box>
+      {validSponsor ? (
+        <>
+          <div />
+          <div />
+        </>
+      ) : null}
+    </>
+  );
+}
+
+function LocalChartListTitles() {
+  return (
+    <>
+      <Box
+        template="auto / auto"
+        px={3}
+        gap={2}
+        className={styles.LinkColumnTitles}
+      >
+        <Type size={-2} as="span">
+          <Trans>Name</Trans>
+        </Type>
+      </Box>
+      <div />
+      <div />
+    </>
+  );
+}
+
+const ChartButton = memo(function ChartButton({
+  chartId,
+  chartName,
+  is_public,
+  updated_at,
+  created_at,
+  id,
+  setCopyModal,
+  setDeleteModal,
+  tooManyCharts,
+}: {
+  chartId: number;
+  chartName: string;
+  is_public: boolean;
+  updated_at: string;
+  created_at: string;
+  id?: string;
+  setCopyModal: any;
+  setDeleteModal: any;
+  tooManyCharts: boolean;
+}) {
+  const validSponsor = useIsValidSponsor();
+  const setShowing = useContext(AppContext).setShowing;
+  return (
+    <>
+      <Button
+        as={Link}
+        to={`/u/${chartId}`}
+        onClick={() => setShowing("editor")}
+        className={styles.NewChartLink}
+        content="normal start"
+        items="center stretch"
+        template="auto / minmax(0,1fr) repeat(1, 110px)"
+        at={{
+          tablet: {
+            template: "auto / minmax(0,1fr) 40px repeat(2, 110px)",
+          },
+        }}
+        gap={2}
+        aria-current={
+          id && parseInt(id, 10) === chartId ? "location" : undefined
+        }
+        title={chartName}
+      >
+        <Type as="span" size={-1}>
+          {chartName}
+        </Type>
+        <Box
+          display="none"
+          at={{ tablet: { display: "block" } }}
+          self="normal end"
+        >
+          {is_public ? <Check /> : <div />}
+        </Box>
+        <Type as="span" size={-2} className={styles.NewChartLinkSubtext}>
+          {f(updated_at)} ago
+        </Type>
+        <Box display="none" at={{ tablet: { display: "block" } }}>
+          <Type size={-2} className={styles.NewChartLinkSubtext}>
+            {f(created_at)} ago
+          </Type>
+        </Box>
+      </Button>
+      {validSponsor ? (
+        <>
+          <Button
+            className={styles.IconButton}
+            onClick={() => setCopyModal(chartId)}
+            disabled={tooManyCharts}
+          >
+            <Copy />
+          </Button>
+          <Button
+            className={styles.IconButton}
+            onClick={() => setDeleteModal({ id: chartId, name: chartName })}
+          >
+            <Trash />
+          </Button>
+        </>
+      ) : null}
+    </>
+  );
+});

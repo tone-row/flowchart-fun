@@ -11,12 +11,15 @@ type Merge<T extends object> = {
   [k in AllKeys<T>]: PickType<T, k>;
 };
 
-type Layout = Merge<cytoscape.LayoutOptions>;
+type Layout = Merge<cytoscape.LayoutOptions> & {
+  elk?: any;
+};
 
 export type GraphOptionsObject = {
   layout?: Partial<Layout> & { rankDir?: string };
   style?: cytoscape.Stylesheet[];
   theme?: GraphThemes;
+  background?: string;
 };
 
 export const defaultSpacingFactor = 1.25;

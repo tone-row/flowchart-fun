@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "main": "module/module.js",
   "license": "MIT",
   "dependencies": {
@@ -35,6 +35,7 @@
     "core-js": "^3.18.1",
     "cytoscape": "^3.20.0",
     "cytoscape-dagre": "^2.3.2",
+    "cytoscape-elk": "^2.0.2",
     "cytoscape-klay": "^3.1.4",
     "date-fns": "^2.25.0",
     "deepmerge": "^4.2.2",
@@ -136,7 +137,8 @@
     "minimist": "^1.2.5",
     "msw": "^0.36.8",
     "prettier": "^2.3.1",
-    "ts-unused-exports": "^7.0.3"
+    "ts-unused-exports": "^7.0.3",
+    "web-worker": "^1.2.0"
   },
   "jest": {
     "testMatch": [

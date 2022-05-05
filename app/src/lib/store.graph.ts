@@ -9,6 +9,9 @@ export type StoreGraph = {
   setElements: (elements: cytoscape.ElementDefinition[]) => void;
   runLayout: boolean;
   setRunLayout: (runLayout: boolean) => void;
+  graphUpdateNumber: number;
+  /** Trigger a graph update manually with update number */
+  incrementGraphUpdateNumber: () => void;
 };
 
 export const useStoreGraph = create<StoreGraph>((set) => ({
@@ -18,4 +21,10 @@ export const useStoreGraph = create<StoreGraph>((set) => ({
   setElements: (elements) => set((state) => ({ ...state, elements })),
   runLayout: true,
   setRunLayout: (runLayout) => set((state) => ({ ...state, runLayout })),
+  graphUpdateNumber: 0,
+  incrementGraphUpdateNumber: () =>
+    set((state) => ({
+      ...state,
+      graphUpdateNumber: state.graphUpdateNumber + 1,
+    })),
 }));
