@@ -1,7 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import { formatDistanceStrict, parseISO } from "date-fns";
-import { Check, Copy, Database, Trash } from "phosphor-react";
-import React, {
+import { Check, Copy, Trash } from "phosphor-react";
+import {
   Dispatch,
   Fragment,
   memo,
@@ -49,29 +49,40 @@ export default function Charts() {
       className={styles.Navigation}
     >
       {!validCustomer && (
-        <Box
-          p={4}
-          rad={1}
-          flow="column"
-          items="start normal"
-          gap={3}
-          as="button"
-          onClick={() => {
-            setShowing("sponsor");
-            gaSponsorCTA({ action: "from navigation" });
-          }}
-          className={styles.CallOut}
-        >
-          <Database size={36} />
-          <Type as="span" className={styles.CalloutInner}>
-            <span style={{ fontWeight: 700 }}>
-              <Trans>Hosted Charts</Trans> ~{" "}
-            </span>
-            <Trans>
-              Sponsor flowchart.fun for $1 a month to access hosted flowcharts
-              and the newest styles and features
-            </Trans>
-          </Type>
+        <Box gap={8} items="start">
+          <Box gap={4} items="start">
+            <Box gap={2}>
+              <Type size={3}>
+                <Trans>Hosted Charts</Trans>
+              </Type>
+              <Type
+                className={styles.CalloutInner}
+                size={-1}
+                style={{ maxWidth: 400 }}
+              >
+                <Trans>
+                  Sponsor flowchart.fun for $1 a month to access hosted
+                  flowcharts and the newest styles and features
+                </Trans>
+              </Type>
+            </Box>
+            <Button
+              className={styles.BlueButton}
+              p={3}
+              px={6}
+              typeProps={{ size: 0 }}
+              text={t`Learn More`}
+              onClick={() => {
+                setShowing("sponsor");
+                gaSponsorCTA({ action: "from navigation" });
+              }}
+            />
+          </Box>
+          <img
+            src="/images/flowchart-person.svg"
+            alt="Person making a flowchart"
+            className={styles.FlowchartPerson}
+          />
         </Box>
       )}
       {validCustomer && <HostedCharts />}
