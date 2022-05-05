@@ -141,5 +141,5 @@
 .BlueButton:focus,
 .BlueButton:hover,
 .BlueButton:active {
-  background-color: var(--palette-purple-2);
+  background-color: var(--palette-purple-5);
 }
