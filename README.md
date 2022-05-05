@@ -37,7 +37,7 @@ This repository is organized in workspaces. [/app](/app) contains the code for t
 Documenting so as not to forget!
 
 - Work on feature branches which are merged to `dev`
-- When ready to release update version in /app/package.json and merge directly to `dev`
+- When ready to release update version in /app/package.json and commit directly to `dev`. Push.
 - Open pull request from `dev` to `main`
 - Merging pull request should create new github release
 
