@@ -21,7 +21,13 @@ export default async function handler(req, res) {
       status: "all",
       price: process.env.STRIPE_PRICE_ID,
     });
-    if (!subscriptions.length) throw new Error(defaultErrorMessage);
+    const { data: yearlySubscription } = await stripe.subscriptions.list({
+      customer,
+      status: "all",
+      price: process.env.STRIPE_PRICE_ID_YEARLY,
+    });
+    if (!subscriptions.length && !yearlySubscription.length)
+      throw new Error(defaultErrorMessage);
 
     res.json({ subscription: "found" });
   } catch (error) {

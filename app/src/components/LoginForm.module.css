@@ -9,6 +9,10 @@
   border: none;
 }
 
+.LoginFormInput input {
+  color: var(--palette-black-0) !important;
+}
+
 .LoginFormInput:focus-within {
   background-color: var(--palette-white-0) !important;
 }
