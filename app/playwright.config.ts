@@ -1,7 +1,10 @@
+import "dotenv/config";
+
 import { PlaywrightTestConfig } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
   testDir: "e2e",
+  workers: 6,
   use: {
     acceptDownloads: true,
     viewport: {
@@ -10,8 +13,30 @@ const config: PlaywrightTestConfig = {
     },
     // Development
     headless: process.env.HEADLESS === "0" ? false : true,
+    launchOptions: {
+      slowMo: process.env.SLOWMO ? parseInt(process.env.SLOWMO, 10) : 0,
+    },
   },
-  // timeout: 60000,
+  projects: [
+    {
+      name: "Chromium",
+      use: {
+        browserName: "chromium",
+      },
+    },
+    {
+      name: "Firefox",
+      use: {
+        browserName: "firefox",
+      },
+    },
+    {
+      name: "Webkit",
+      use: {
+        browserName: "webkit",
+      },
+    },
+  ],
 };
 
 export default config;

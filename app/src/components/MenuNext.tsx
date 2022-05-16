@@ -131,7 +131,9 @@ export default function MenuNext() {
         <WorkspaceSection />
       ) : (
         <Box className={styles.PageTitle} pt={5} at={{ tablet: { pt: 0 } }}>
-          <Type size={1}>{translatedTitle(showing)}</Type>
+          <Type size={1} as="h1">
+            {translatedTitle(showing)}
+          </Type>
         </Box>
       )}
       <Box
@@ -413,6 +415,7 @@ function ExportButton() {
       rad={1}
       className={[styles.ExportButton, styles.MenuNextTitleButton].join(" ")}
       items="center normal"
+      aria-label="Open Export Dialog"
       at={{ tablet: { template: "auto / auto 1fr", px: 0 } }}
       onClick={() => {
         setShareModal(true);
