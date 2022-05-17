@@ -34,9 +34,8 @@ jobs:
         run: |
           npx playwright install-deps
           npm install -D @playwright/test
-      - name: Install test deps
-        run: |
-          yarn global add dotenv axios
+      - name: Install Deps
+        run: yarn
       - name: Run E2E Tests on Vercel Preview URL
         run: E2E_START_URL="${{ steps.get_url.outputs.preview_url }}" yarn workspace app e2e
       - uses: actions/upload-artifact@v2
