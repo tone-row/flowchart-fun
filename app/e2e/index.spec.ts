@@ -34,13 +34,13 @@ test.describe("Unauthorized", () => {
     await page.fill('[placeholder="Enter a title"]', "My New Chart");
     // Click text=Createflowchart.fun/my-new-chart >> button
     await page.click("text=Createflowchart.fun/my-new-chart >> button");
-    await expect(page).toHaveURL("http://localhost:3000/my-new-chart");
+    await expect(page).toHaveURL(`${BASE_URL}/my-new-chart`);
   });
 
   test("Open a Chart", async ({ page }) => {
     await goToTab(page, "Charts");
     await page.click('a:has-text("/")');
-    await expect(page).toHaveURL("http://localhost:3000/");
+    await expect(page).toHaveURL(`${BASE_URL}/`);
   });
 
   test("Clone a Chart", async ({ page }) => {
@@ -69,7 +69,7 @@ test.describe("Unauthorized", () => {
     await page
       .locator('[aria-label="Duplicate"] button:has-text("Create")')
       .click();
-    await expect(page).toHaveURL("http://localhost:3000/my-copy");
+    await expect(page).toHaveURL(`${BASE_URL}/my-copy`);
     // Click text=my-copy
 
     await expect(page.locator("text=my-copy")).toBeVisible();
@@ -85,7 +85,7 @@ test.describe("Unauthorized", () => {
     await page.locator("text=Createflowchart.fun/delete >> button").click();
 
     // Expect to be on delete-me page
-    await expect(page).toHaveURL("http://localhost:3000/delete-me");
+    await expect(page).toHaveURL(`${BASE_URL}/delete-me`);
 
     await goToTab(page, "Charts");
     // Click [placeholder="Enter a title"]
@@ -328,8 +328,152 @@ test.describe("Unauthorized", () => {
     ).toBeVisible();
   });
 
+  test.only("Editor", async ({ page }) => {
+    // Type in editor
+
+    // Click text=This app works by typing >> nth=0
+    await page.locator("text=This app works by typing").first().click();
+    // Press a with modifiers
+    await page
+      .locator(
+        '[aria-label="Editor content\\;Press Alt\\+F1 for Accessibility Options\\."]'
+      )
+      .press("Meta+a");
+    await page
+      .locator(
+        '[aria-label="Editor content\\;Press Alt\\+F1 for Accessibility Options\\."]'
+      )
+      .type("hello world");
+
+    await expect(
+      page.locator('div[role="code"] >> text=hello world')
+    ).toBeVisible();
+
+    // Resize Editor/Graph
+
+    // Contract Graph
+    // Click button:has-text("Contract")
+    await page.locator('button:has-text("Contract")').click();
+    await expect(page.locator("text=spacingFactor: 1")).toBeVisible();
+
+    // Expand Graph
+    // Click button:has-text("Expand")
+    await page.locator('button:has-text("Expand")').click();
+    await expect(page.locator("text=spacingFactor: 1.25")).toBeVisible();
+
+    // Change Graph Options Layout Direction
+    // Click form div:has-text("Top to Bottom") >> nth=4
+    await page.locator('form div:has-text("Top to Bottom")').nth(4).click();
+    // Click p:has-text("Left to Right")
+    await page.locator('p:has-text("Left to Right")').click();
+
+    // Change Graph Options Layout
+    // Click form div:has-text("Dagre") >> nth=4
+    await page.locator('form div:has-text("Dagre")').nth(4).click();
+    // Click p:has-text("Breadthfirst")
+    await page.locator('p:has-text("Breadthfirst")').click();
+    // Click text=name: cose
+    await expect(page.locator("text=name: breadthfirst")).toBeVisible();
+
+    // Change Graph Options Theme
+    // Click form div:has-text("Light") >> nth=4
+    await page.locator('form div:has-text("Light")').nth(4).click();
+    // Click p:has-text("Eggs")
+    await page.locator('p:has-text("Eggs")').click();
+    // Click text=theme: eggs
+    await page.locator("text=theme: eggs").click();
+
+    // Disable Graph Animation
+    await page.locator('[aria-label="Auto Layout"]').click();
+    expect(
+      await page
+        .locator('[aria-label="Auto Layout"]')
+        .getAttribute("aria-checked")
+    ).toBe("false");
+
+    await page
+      .locator("#cy canvas")
+      .first()
+      .click({
+        button: "right",
+        position: {
+          x: 463,
+          y: 79,
+        },
+      });
+    // Click text=Copy PNG Image
+    await page.locator("text=Copy PNG Image").click();
+    // Click #cy canvas >> nth=0
+    await page
+      .locator("#cy canvas")
+      .first()
+      .click({
+        button: "right",
+        position: {
+          x: 505,
+          y: 91,
+        },
+      });
+    // Click text=Copy SVG Code
+    await page.locator("text=Copy SVG Code").click();
+    // Click #cy canvas >> nth=0
+    await page
+      .locator("#cy canvas")
+      .first()
+      .click({
+        button: "right",
+        position: {
+          x: 440,
+          y: 74,
+        },
+      });
+    // Click text=Download PNG
+    const [png] = await Promise.all([
+      page.waitForEvent("download"),
+      page.locator("text=Download PNG").click(),
+    ]);
+
+    expect(png.suggestedFilename()).toBe("flowchart.png");
+
+    await page
+      .locator("#cy canvas")
+      .first()
+      .click({
+        button: "right",
+        position: {
+          x: 267,
+          y: 297,
+        },
+      });
+    // Click text=Download JPG
+    const [jpg] = await Promise.all([
+      page.waitForEvent("download"),
+      page.locator("text=Download JPG").click(),
+    ]);
+
+    expect(jpg.suggestedFilename()).toBe("flowchart.jpg");
+
+    await page
+      .locator("#cy canvas")
+      .first()
+      .click({
+        button: "right",
+        position: {
+          x: 485,
+          y: 73,
+        },
+      });
+    // Click text=Download SVG
+    const [svg] = await Promise.all([
+      page.waitForEvent("download"),
+      page.locator("text=Download SVG").click(),
+    ]);
+
+    expect(svg.suggestedFilename()).toBe("flowchart.svg");
+  });
+
   for (const plan of SPONSOR_PLANS) {
-    test(`Sponsors > Become a ${plan} Sponsor`, async ({ page }) => {
+    test.skip(`Sponsors > Become a ${plan} Sponsor`, async ({ page }) => {
       test.setTimeout(60000);
 
       const email = await getTempEmail();
