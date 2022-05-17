@@ -561,7 +561,7 @@ async function openExportDialog(page: Page) {
   // Click [aria-label="Export"]
   page.locator('[aria-label="Open Export Dialog"]').click();
   // Click text=Download
-  await expect(page.locator("text=Download")).toBeVisible();
+  await expect(page.locator("text=Download")).toBeVisible({ timeout: 60000 });
 }
 
 /** Generates a temp email address */
