@@ -7,6 +7,7 @@ import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import { gaUseGraphContextMenu } from "../lib/analytics";
+import { useIsFirefox } from "../lib/hooks";
 import { Box, Type } from "../slang";
 import styles from "./GraphContextMenu.module.css";
 import { smallIconSize } from "./Shared";
@@ -14,13 +15,14 @@ import { smallIconSize } from "./Shared";
 export const GRAPH_CONTEXT_MENU_ID = "graph-context-menu";
 
 export const GraphContextMenu = memo(function GraphContextMenu() {
+  const isFirefox = useIsFirefox();
   return (
     <Menu
       id={GRAPH_CONTEXT_MENU_ID}
       className={styles.GraphContextMenu}
       animation="fade"
     >
-      <CopyPNG />
+      {!isFirefox && <CopyPNG />}
       <CopySVG />
       <Separator />
       <Item

@@ -64,7 +64,7 @@ export default function ShareDialog() {
               window.flowchartFunDownloadSVG();
               gaExportChart({ action: "Download", label: "SVG" });
             }}
-            aria-label="SVG"
+            aria-label="Download SVG"
             text="SVG"
           />
           <Button
@@ -72,7 +72,7 @@ export default function ShareDialog() {
               window.flowchartFunDownloadPNG();
               gaExportChart({ action: "Download", label: "PNG" });
             }}
-            aria-label="PNG"
+            aria-label="Download PNG"
             text="PNG"
           />
           <Button
@@ -80,7 +80,7 @@ export default function ShareDialog() {
               window.flowchartFunDownloadJPG();
               gaExportChart({ action: "Download", label: "JPG" });
             }}
-            aria-label="JPG"
+            aria-label="Download JPG"
             text="JPG"
           />
         </Box>
@@ -203,7 +203,12 @@ function LinkCopy({
           rad={2}
           p={1}
         >
-          <Icon width={15} height={15} color={copied ? "white" : "black"} />
+          <Icon
+            width={15}
+            height={15}
+            data-testid={copied ? `Copied ${rawTitle}` : ""}
+            color={copied ? "white" : "black"}
+          />
         </Box>
         <Type
           size={-2}
@@ -220,6 +225,7 @@ function LinkCopy({
             onClick={copyText}
             className={styles.LinkCopyButton}
             text={t`Copy`}
+            aria-label={`${t`Copy`} ${title}`}
             py={2}
           />
         </Box>
@@ -286,9 +292,10 @@ function Mermaid() {
           }}
           className={styles.LinkCopyButton}
           text={t`Copy`}
+          aria-label="Copy Mermaid Code"
           py={2}
         />
-        {copied && <Check />}
+        {copied && <Check data-testid="Copied Mermaid Code" />}
       </Box>
     </>
   );

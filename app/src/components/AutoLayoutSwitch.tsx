@@ -33,6 +33,7 @@ export const AutoLayoutSwitch = memo(function AutoLayoutSwitch() {
         className={styles.SwitchRoot}
         onCheckedChange={setRunLayout}
         checked={runLayout}
+        aria-label={t`Auto Layout`}
       >
         <Switch.Thumb className={styles.SwitchThumb} />
       </Switch.Root>
