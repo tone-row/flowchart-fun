@@ -290,8 +290,8 @@ test.describe("Unauthorized", () => {
         getComputedStyle(document.body).getPropertyValue("--color-foreground"),
       ];
     });
-    expect(background).toBe(" #0f0f0f");
-    expect(foreground).toBe(" rgb(250, 250, 250)");
+    expect(background.trim()).toBe("#0f0f0f");
+    expect(foreground.trim()).toBe("rgb(250, 250, 250)");
   });
   test("Open Feedback > Type in feedback > Submit", async ({ page }) => {
     await goToTab(page, "Feedback");
@@ -328,7 +328,7 @@ test.describe("Unauthorized", () => {
     ).toBeVisible();
   });
 
-  test.only("Editor", async ({ page }) => {
+  test("Editor", async ({ page }) => {
     // Type in editor
 
     // Click text=This app works by typing >> nth=0
@@ -391,18 +391,6 @@ test.describe("Unauthorized", () => {
         .getAttribute("aria-checked")
     ).toBe("false");
 
-    await page
-      .locator("#cy canvas")
-      .first()
-      .click({
-        button: "right",
-        position: {
-          x: 463,
-          y: 79,
-        },
-      });
-    // Click text=Copy PNG Image
-    await page.locator("text=Copy PNG Image").click();
     // Click #cy canvas >> nth=0
     await page
       .locator("#cy canvas")

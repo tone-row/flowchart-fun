@@ -5,6 +5,7 @@ import { PlaywrightTestConfig } from "@playwright/test";
 const config: PlaywrightTestConfig = {
   testDir: "e2e",
   workers: 6,
+  timeout: 90000,
   use: {
     acceptDownloads: true,
     viewport: {
