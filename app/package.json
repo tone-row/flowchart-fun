@@ -81,7 +81,7 @@
     "format": "prettier --write '{src,e2e}/**/*.{ts,tsx,scss,css,json}'",
     "e2e": "npx playwright test --config=playwright.config.ts",
     "e2e:generate": "npx playwright codegen localhost:3000",
-    "e2e:debug": "HEADLESS=0 SLOWMO=1000 yarn e2e --workers 1",
+    "e2e:debug": "HEADLESS=0 SLOWMO=500 yarn e2e --workers 1",
     "generate:types": "export $(cat .env.local | xargs) && npx openapi-typescript \"${SB_URL}/rest/v1/?apikey=${SB_ANON_KEY}\" --output src/types/supabase.ts",
     "benchmark": "npx ts-node -O '{\"module\":\"commonjs\"}' --files benchmarks/utils.ts",
     "benchmark:write": "yarn benchmark --write",
