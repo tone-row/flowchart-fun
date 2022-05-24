@@ -5,7 +5,7 @@ import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
-import { useChart } from "./queries";
+import { useChart, usePublicChart } from "./queries";
 
 export function useAnimationSetting() {
   const { search } = useLocation();
@@ -87,11 +87,14 @@ export function useCurrentHostedChart() {
 
 /** Returns the graph text in the hash for read-only routes */
 export function useReadOnlyText() {
+  const { public_id = "" } = useParams<{ public_id: string }>();
+  const { data } = usePublicChart(public_id);
   const { path } = useRouteMatch();
   const isCompressed = ["/c/:graphText?", "/f/:graphText?"].includes(path);
   const { graphText = window.location.hash.slice(1) } = useParams<{
     graphText: string;
   }>();
+  if (path === "/p/:public_id") return data.chart ?? "";
   return isCompressed
     ? decompress(graphText) ?? ""
     : decodeURIComponent(graphText);
