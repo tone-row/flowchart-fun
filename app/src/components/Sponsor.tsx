@@ -187,7 +187,7 @@ function SignUpForm() {
       <Controller
         render={({ field }) => (
           <RadioGroup.Root
-            {...field}
+            value={field.value}
             onValueChange={(value) => field.onChange(value)}
           >
             <Box flow="column" gap={2}>
@@ -199,6 +199,7 @@ function SignUpForm() {
                   as={RadioGroup.Item}
                   key={el.value}
                   value={el.value}
+                  id={el.value}
                   className={styles.RadioButton}
                   p={3}
                   rad={1}
