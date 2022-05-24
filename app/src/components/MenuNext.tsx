@@ -250,7 +250,7 @@ function WorkspaceSection() {
       </Box>
       <Box flow="column" gap={1}>
         {!isReadOnly && !isHelp && <RenameButton />}
-        {isReadOnly ? <CopyButton /> : <ExportButton />}
+        {isReadOnly ? <CloneButton /> : <ExportButton />}
       </Box>
     </Box>
   );
@@ -434,7 +434,7 @@ function ExportButton() {
 }
 
 /** Allow users to copy read-only charts */
-export function CopyButton() {
+export function CloneButton() {
   const text = useReadOnlyText();
   const { push } = useHistory();
   return (
@@ -444,6 +444,7 @@ export function CopyButton() {
       className={[styles.ExportButton, styles.MenuNextTitleButton].join(" ")}
       items="center normal"
       at={{ tablet: { template: "auto / auto 1fr", px: 0 } }}
+      aria-label={t`Clone`}
       onClick={() => {
         const newChartTitle = randomChartName();
         window.localStorage.setItem(
@@ -456,11 +457,6 @@ export function CopyButton() {
     >
       <Box p={2} px={3}>
         <CopySimple size={smallIconSize} />
-      </Box>
-      <Box display="none" pr={3} at={{ tablet: { display: "grid" } }}>
-        <Type size={smallBtnTypeSize}>
-          <Trans>Create</Trans>
-        </Type>
       </Box>
     </Box>
   );

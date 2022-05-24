@@ -14,7 +14,7 @@ import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
 import Loading from "./Loading";
 import styles from "./Main.module.css";
-import { CopyButton } from "./MenuNext";
+import { CloneButton } from "./MenuNext";
 import MobileTabToggle from "./MobileTabToggle";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
@@ -49,7 +49,7 @@ const Main = memo(
           />
           {isFullscreen ? (
             <div className={styles.CopyButtonWrapper}>
-              <CopyButton />
+              <CloneButton />
             </div>
           ) : null}
         </GraphWrapper>
