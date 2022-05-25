@@ -114,24 +114,24 @@ function SignUpForm() {
       const cardElement = elements.getElement(CardElement);
       if (!cardElement) throw new Error("No Card Element Found");
 
-      // get/create customer
-      const {
-        customer,
-        subscription: earlySubscription,
-        error,
-      } = await createCustomer(email);
-      if (error) throw error;
-
-      if (earlySubscription) {
-        throw new Error("Please try logging in.");
-      }
-
-      // Use your card Element with other Stripe.js APIs
+      // Test Payment Method
       const { error: createPaymentError, paymentMethod } =
         await stripe.createPaymentMethod({
           type: "card",
           card: cardElement,
         });
+
+      // Create Customer
+      const {
+        customer,
+        subscription: preexistingSubscription,
+        error,
+      } = await createCustomer(email);
+      if (error) throw error;
+
+      if (preexistingSubscription) {
+        throw new Error("Please try logging in.");
+      }
 
       if (createPaymentError) throw createPaymentError;
       if (!paymentMethod) throw new Error("No Payment Method");
