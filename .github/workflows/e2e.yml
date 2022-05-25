@@ -26,28 +26,24 @@ jobs:
           echo ::set-output name=preview_url::$(echo $URL)
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Determine where I am in inside the runner
-        run: |
-          pwd
-          ls -al
       - name: Add env
         run: |
           touch .env
           echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> .env
-      # - name: Setup Node
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: 14.x
-      # - name: Install Playwright
-      #   run: |
-      #     yarn global add playwright@1.23.0-alpha-may-16-2022
-      #     playwright install
-      # - name: Install Deps
-      #   run: yarn
-      # - name: Run E2E Tests on Vercel Preview URL
-      #   run: E2E_START_URL="${{ steps.get_url.outputs.preview_url }}" yarn workspace app e2e
-      # - uses: actions/upload-artifact@v2
-      #   if: ${{ always() }}
-      #   with:
-      #     name: test-results
-      #     path: app/test-results
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install Playwright
+        run: |
+          yarn global add playwright@1.23.0-alpha-may-16-2022
+          playwright install
+      - name: Install Deps
+        run: yarn
+      - name: Run E2E Tests on Vercel Preview URL
+        run: E2E_START_URL="${{ steps.get_url.outputs.preview_url }}" yarn workspace app e2e
+      - uses: actions/upload-artifact@v2
+        if: ${{ always() }}
+        with:
+          name: test-results
+          path: app/test-results
