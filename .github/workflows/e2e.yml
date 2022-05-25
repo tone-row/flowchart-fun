@@ -7,6 +7,10 @@ jobs:
     name: End-to-end Tests
     runs-on: ubuntu-latest
     steps:
+      - name: Add env
+        run: |
+          touch app/.env
+          echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> app/.env
       - name: Get preview url
         id: get_url
         run: |

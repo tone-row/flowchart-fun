@@ -25,12 +25,12 @@ const config: PlaywrightTestConfig = {
         browserName: "chromium",
       },
     },
-    // {
-    //   name: "Firefox",
-    //   use: {
-    //     browserName: "firefox",
-    //   },
-    // },
+    {
+      name: "Firefox",
+      use: {
+        browserName: "firefox",
+      },
+    },
   ],
 };
 
