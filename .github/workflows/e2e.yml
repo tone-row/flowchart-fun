@@ -28,8 +28,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Add env
         run: |
-          touch .env
-          echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> .env
+          touch app/.env
+          echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> app/.env
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
