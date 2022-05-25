@@ -13,17 +13,33 @@ export default async function handler(req, res) {
     if (data.length) {
       customer = data[0];
 
-      // Check if subscription exists
-      const { data: subscriptions } = await stripe.subscriptions.list({
+      // Check for monthly subscription
+      const { data: monthlySubscriptions } = await stripe.subscriptions.list({
         customer: customer.id,
         price: process.env.STRIPE_PRICE_ID,
       });
 
-      if (subscriptions.length) {
-        res.json({ customer, subscription: subscriptions[0] });
-      } else {
-        res.json({ customer });
+      if (monthlySubscriptions.length) {
+        return res.status(200).json({
+          customer,
+          subscription: monthlySubscriptions[0],
+        });
       }
+
+      // Check for yearly subscription
+      const { data: yearlySubscriptions } = await stripe.subscriptions.list({
+        customer: customer.id,
+        price: process.env.STRIPE_PRICE_ID_YEARLY,
+      });
+
+      if (yearlySubscriptions.length) {
+        return res.status(200).json({
+          customer,
+          subscription: yearlySubscriptions[0],
+        });
+      }
+
+      res.json({ customer });
     } else {
       customer = await stripe.customers.create({ email });
       res.json({ customer });
