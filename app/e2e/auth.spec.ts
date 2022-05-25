@@ -7,7 +7,7 @@ const EMAILS: Record<typeof SPONSOR_PLANS[number], string> = {
   "$1 / Month": "",
   "$10 / Year": "",
 };
-test.describe.only("Sign Up", () => {
+test.describe("Sign Up", () => {
   test.beforeEach(async ({ page }) => {
     await goToPath(page);
   });
