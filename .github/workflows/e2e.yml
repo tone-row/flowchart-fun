@@ -7,7 +7,7 @@ jobs:
     name: End-to-end Tests
     runs-on: ubuntu-latest
     steps:
-      - steps: Determine where I am in inside the runner
+      - name: Determine where I am in inside the runner
         run: |
           pwd
           ls -al
