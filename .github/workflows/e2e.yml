@@ -11,29 +11,29 @@ jobs:
         run: |
           pwd
           ls -al
-      # - name: Add env
-      #   run: |
-      #     touch .env
-      #     echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> .env
-      # - name: Get preview url
-      #   id: get_url
-      #   run: |
-      #     STATE="not ready"
-      #     CURRENT_HASH=${{ github.event.pull_request.head.sha }}
-      #     echo $CURRENT_HASH
-      #     until [ "$STATE" = '"READY"' ]
-      #     do
-      #       RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
-      #       CLEAN=$(echo $RESULTS | tr -d '[:cntrl:]');
-      #       STATE=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .state');
-      #       echo $STATE
-      #       sleep 5
-      #     done
-      #     echo "Deployment is ready!"
-      #     URL=https://$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .url')
-      #     echo ::set-output name=preview_url::$(echo $URL)
-      # - name: Checkout Code
-      #   uses: actions/checkout@v2
+      - name: Add env
+        run: |
+          touch .env
+          echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> .env
+      - name: Get preview url
+        id: get_url
+        run: |
+          STATE="not ready"
+          CURRENT_HASH=${{ github.event.pull_request.head.sha }}
+          echo $CURRENT_HASH
+          until [ "$STATE" = '"READY"' ]
+          do
+            RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
+            CLEAN=$(echo $RESULTS | tr -d '[:cntrl:]');
+            STATE=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .state');
+            echo $STATE
+            sleep 5
+          done
+          echo "Deployment is ready!"
+          URL=https://$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .url')
+          echo ::set-output name=preview_url::$(echo $URL)
+      - name: Checkout Code
+        uses: actions/checkout@v2
       # - name: Setup Node
       #   uses: actions/setup-node@v1
       #   with:
