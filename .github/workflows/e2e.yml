@@ -7,14 +7,6 @@ jobs:
     name: End-to-end Tests
     runs-on: ubuntu-latest
     steps:
-      - name: Determine where I am in inside the runner
-        run: |
-          pwd
-          ls -al
-      - name: Add env
-        run: |
-          touch .env
-          echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> .env
       - name: Get preview url
         id: get_url
         run: |
@@ -34,6 +26,14 @@ jobs:
           echo ::set-output name=preview_url::$(echo $URL)
       - name: Checkout Code
         uses: actions/checkout@v2
+      - name: Determine where I am in inside the runner
+        run: |
+          pwd
+          ls -al
+      - name: Add env
+        run: |
+          touch .env
+          echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> .env
       # - name: Setup Node
       #   uses: actions/setup-node@v1
       #   with:
