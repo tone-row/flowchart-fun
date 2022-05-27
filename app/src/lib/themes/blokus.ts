@@ -2,6 +2,18 @@
 // @ts-nocheck
 import { Theme } from "./constants";
 
+const blokusColors = {
+  red: ["#ba1700", "#d13721", "#fc5b42"],
+  orange: ["#bf5900", "#e6954e", "#ff9c45"],
+  blue: ["#001194", "#3043d1", "#6172F9"],
+  black: ["#171817", "#202a2d", "#242b2e"],
+  white: ["#e3dcdc", "#fdfbfb", "#ffffff"],
+  green: ["#026F4A", "#019467", "#03B181"],
+  yellow: ["#ba9500", "#d4ae17", "#fad545"],
+  gray: ["#75736d", "#878378", "#9c9687"],
+  purple: ["#4d1db5", "#714bdb", "#9563ff"],
+};
+
 const textColor = "#FFFFFF";
 const fontFamily = '"Space Mono", monospace';
 const lineHeight = 1.4;
@@ -86,6 +98,13 @@ const blokus: Theme = {
         "line-gradient-stop-positions": "0% 100%",
       },
     },
+    ...Object.entries(blokusColors).map<Stylesheet>(([color, value]) => ({
+      selector: `.${color}`,
+      style: {
+        "background-gradient-stop-colors": `${value[0]} ${value[1]} ${value[2]}`,
+        color: color === "white" ? blokusColors.black[0] : textColor,
+      },
+    })),
   ],
 };
 

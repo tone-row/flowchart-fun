@@ -1,5 +1,6 @@
-import { css2Colors, shapes } from "./graphUtilityClasses";
+import { shapes } from "./graphUtilityClasses";
 import { StoreGraph } from "./store.graph";
+import { originalColors } from "./themes/original";
 import { isEdge } from "./utils";
 
 export function toMermaidJS({
@@ -97,17 +98,19 @@ function getStyle({
   backgroundColor?: string;
 }) {
   const style = [];
-  if (color && css2Colors[color.slice(6) as keyof typeof css2Colors]) {
+  if (color && originalColors[color.slice(6) as keyof typeof originalColors]) {
     style.push(
-      `color:${css2Colors[color.slice(6) as keyof typeof css2Colors]}`
+      `color:${originalColors[color.slice(6) as keyof typeof originalColors]}`
     );
   }
   if (
     backgroundColor &&
-    css2Colors[backgroundColor.slice(3) as keyof typeof css2Colors]
+    originalColors[backgroundColor.slice(3) as keyof typeof originalColors]
   ) {
     style.push(
-      `fill:${css2Colors[backgroundColor.slice(3) as keyof typeof css2Colors]}`
+      `fill:${
+        originalColors[backgroundColor.slice(3) as keyof typeof originalColors]
+      }`
     );
   }
   // add initial space

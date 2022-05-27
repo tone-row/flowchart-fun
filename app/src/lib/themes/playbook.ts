@@ -3,14 +3,26 @@
 
 import { Theme } from "./constants";
 
+const playbookColors = {
+  black: "#000000",
+  white: "#ffffff",
+  green: "#3cae5a",
+  yellow: "#e3ca0b",
+  blue: "#3634ba",
+  orange: "#edae4e",
+  purple: "#7256f0",
+  red: "#ef4a33",
+  gray: "#a3a69d",
+};
+
 const fontFamily = "Karla";
 const fontSize = 10;
-const backgroundColor = "#ffffff";
+const backgroundColor = playbookColors.white;
 const nodeBackgroundColor = backgroundColor;
 const edgeLabelBackgroundColor = "#EDECF9";
-const arrowColor = "#3634ba";
-const nodeLabelColor = "#000000";
-const arrowLabelColor = "#000000";
+const arrowColor = playbookColors.blue;
+const nodeLabelColor = playbookColors.black;
+const arrowLabelColor = playbookColors.black;
 const lineHeight = 1.33;
 const padding = "0px";
 const arrowWidth = 1;
@@ -49,7 +61,7 @@ const playbook: Theme = {
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
         "text-valign": "center",
-        shape: "rectangle",
+        shape: "roundrectangle",
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,
@@ -89,6 +101,17 @@ const playbook: Theme = {
         "ghost-opacity": 0.1,
       },
     },
+    ...Object.entries(playbookColors).map<Stylesheet>(([color, value]) => ({
+      selector: `node.${color}`,
+      style: {
+        color: `${value}`,
+        ...(color === "white"
+          ? {
+              "background-color": playbookColors.blue,
+            }
+          : {}),
+      },
+    })),
   ],
 };
 
