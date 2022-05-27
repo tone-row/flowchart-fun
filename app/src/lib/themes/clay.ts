@@ -3,15 +3,27 @@
 
 import { Theme } from "./constants";
 
+const clayColors = {
+  black: "#28152e",
+  white: "#FFFFFF",
+  green: "#abb17c",
+  yellow: "#eec752",
+  blue: "#81b4c0",
+  orange: "#edae4e",
+  purple: "#7256f0",
+  red: "#B5817E",
+  gray: "#664C4A",
+};
+
 const fontFamily = "Poor Story";
 const fontSize = 13;
-const backgroundColor = "#664C4A";
+const backgroundColor = clayColors.gray;
 const nodeBackgroundColor = backgroundColor;
 const arrowColor = "#FCFAF1";
-const nodeLabelColor = "#FFFFFF";
-const arrowLabelColor = "#B5817E";
+const nodeLabelColor = clayColors.white;
+const arrowLabelColor = clayColors.red;
 const lineHeight = 1;
-const padding = "4px";
+const padding = "6px";
 const arrowWidth = 2;
 const edgeLabelBackgroundColor = backgroundColor;
 
@@ -81,6 +93,16 @@ const clay: Theme = {
         "source-distance-from-node": "0px",
       },
     },
+    ...Object.entries(clayColors).map<Stylesheet>(([color, value]) => ({
+      selector: `node.${color}`,
+      style: {
+        "background-color": `${value}`,
+        "background-opacity": 1,
+        color: ["yellow", "white", "green", "orange"].includes(color)
+          ? clayColors.black
+          : clayColors.white,
+      },
+    })),
   ],
 };
 

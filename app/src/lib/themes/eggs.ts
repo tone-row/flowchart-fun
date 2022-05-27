@@ -3,10 +3,22 @@
 
 import { Theme } from "./constants";
 
+const eggsColors = {
+  red: "#f05935",
+  orange: "#ecbb40",
+  blue: "#425cde",
+  black: "#352f39",
+  white: "#fffdfd",
+  green: "#5ba662",
+  yellow: "#fffa96",
+  gray: "#e3ded7",
+  purple: "#6620e4  ",
+};
+
 const fontFamily = "Gaegu";
 const fontSize = 13;
-const backgroundColor = "#fffa96";
-const arrowColor = "#000000";
+const backgroundColor = eggsColors.yellow;
+const arrowColor = eggsColors.black;
 const lineHeight = 1;
 const padding = "14px";
 const borderWidth = 1.5;
@@ -37,7 +49,7 @@ const eggs: Theme = {
       style: {
         "font-family": fontFamily,
         "font-size": fontSize,
-        backgroundColor: "white",
+        backgroundColor: eggsColors.white,
         "border-color": arrowColor,
         color: arrowColor,
         label: "data(label)",
@@ -76,6 +88,16 @@ const eggs: Theme = {
         "edge-text-rotation": "autorotate",
       },
     },
+    ...Object.entries(eggsColors).map<Stylesheet>(([color, value]) => ({
+      selector: `node.${color}`,
+      style: {
+        "background-color": `${value}`,
+        "background-opacity": 1,
+        color: ["purple", "blue", "red", "green", "black"].includes(color)
+          ? eggsColors.white
+          : eggsColors.black,
+      },
+    })),
   ],
 };
 

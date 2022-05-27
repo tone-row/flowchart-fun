@@ -37,27 +37,6 @@ const circle: Stylesheet = {
   },
 };
 
-/* CSS2 Color Spec */
-export const css2Colors = {
-  black: "#000000",
-  silver: "#c0c0c0",
-  gray: "#808080",
-  white: "#ffffff",
-  maroon: "#800000",
-  red: "#ff0000",
-  purple: "#800080",
-  fuchsia: "#ff00ff",
-  green: "#008000",
-  lime: "#00ff00",
-  olive: "#808000",
-  orange: "#ffA500",
-  yellow: "#ffff00",
-  navy: "#000080",
-  blue: "#0000ff",
-  teal: "#008080",
-  aqua: "#00ffff",
-};
-
 export const graphUtilityClasses: Stylesheet[] = shapes
   .map<Stylesheet>((shape) => ({
     selector: `.${shape}`,
@@ -66,23 +45,6 @@ export const graphUtilityClasses: Stylesheet[] = shapes
     },
   }))
   .concat(circle)
-  .concat(
-    Object.entries(css2Colors).map<Stylesheet>(([color, value]) => ({
-      selector: `.bg-${color}`,
-      style: {
-        "background-color": value,
-        "background-opacity": 1,
-      },
-    }))
-  )
-  .concat(
-    Object.entries(css2Colors).map<Stylesheet>(([color, value]) => ({
-      selector: `.color-${color}`,
-      style: {
-        color: value,
-      },
-    }))
-  )
   .concat([
     {
       selector: ".edgeHovered",

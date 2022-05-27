@@ -3,11 +3,23 @@
 
 import { Theme } from "./constants";
 
+const museumColors = {
+  black: "#36321F",
+  white: "#ffffff",
+  green: "#01d857",
+  yellow: "#ffcf0d",
+  blue: "#6172F9",
+  orange: "#ff7044",
+  purple: "#a492ff",
+  red: "#f7454b",
+  gray: "#aaaaaa",
+};
+
 const fontFamily = "Sporting Grotesque";
 const fontSize = 10;
-const backgroundColor = "#ffffff";
+const backgroundColor = museumColors.white;
 const nodeBackgroundColor = backgroundColor;
-const arrowColor = "#36321F";
+const arrowColor = museumColors.black;
 const nodeLabelColor = arrowColor;
 const arrowLabelColor = arrowColor;
 const lineHeight = 1.33;
@@ -94,6 +106,13 @@ const museum: Theme = {
         "arrow-scale": 0.75,
       },
     },
+    ...Object.entries(museumColors).map<Stylesheet>(([color, value]) => ({
+      selector: `node.${color}`,
+      style: {
+        "underlay-color": `${value}`,
+        ...(color === "white" ? { "border-color": `${value}` } : {}),
+      },
+    })),
   ],
 };
 

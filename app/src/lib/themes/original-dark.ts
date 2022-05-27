@@ -3,10 +3,22 @@
 
 import { Theme } from "./constants";
 
+const originalDarkColors = {
+  black: "#101010",
+  white: "#fafaf3",
+  green: "#01d857",
+  yellow: "#ffcf0d",
+  blue: "#6172F9",
+  orange: "#ff7044",
+  purple: "#a492ff",
+  red: "#f7454b",
+  gray: "#aaaaaa",
+};
+
 const fontFamily = "Porpora, sans-serif";
 const fontSize = 10;
-const backgroundColor = "#101010";
-const color = "#fafaf3";
+const backgroundColor = originalDarkColors.black;
+const color = originalDarkColors.white;
 const arrowColor = color;
 const lineHeight = 1.25;
 const padding = "5px";
@@ -88,6 +100,17 @@ const originalDark: Theme = {
         "source-distance-from-node": 2,
       },
     },
+    ...Object.entries(originalDarkColors).map<Stylesheet>(([color, value]) => ({
+      selector: `node.${color}`,
+      style: {
+        "background-color": `${value}`,
+        "background-opacity": 1,
+        "border-color": `${value}`,
+        color: ["blue", "black"].includes(color)
+          ? originalDarkColors.white
+          : originalDarkColors.black,
+      },
+    })),
   ],
 };
 
