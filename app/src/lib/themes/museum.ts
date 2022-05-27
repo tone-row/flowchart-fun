@@ -11,7 +11,7 @@ const museumColors = {
   blue: "#6172F9",
   orange: "#ff7044",
   purple: "#a492ff",
-  red: "#f7454b",
+  red: "#fa2323",
   gray: "#aaaaaa",
 };
 
