@@ -128,13 +128,9 @@ test.describe("Unauthorized", () => {
     await expect(page).toHaveURL(`${BASE_URL}/h`);
     // Click text=Table of Contents
     await page.locator("text=Table of Contents").click();
-    // Click a:has-text("Shapes, Colors, Background Colors")
-    await page
-      .locator('a:has-text("Shapes, Colors, Background Colors")')
-      .click();
-    await expect(page).toHaveURL(
-      `${BASE_URL}/h#shapes,-colors,-background-colors`
-    );
+    // Click a:has-text("Adding Shapes and Colors")
+    await page.locator('a:has-text("Adding Shapes and Colors")').click();
+    await expect(page).toHaveURL(`${BASE_URL}/h#adding-shapes-and-colors`);
 
     await page
       .locator(
