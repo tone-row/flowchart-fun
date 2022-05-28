@@ -35,8 +35,6 @@ export default function Edit() {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
 
-  console.log({ graphOptions });
-
   const onMount = useEditorOnMount(editorRef, monacoRef);
   useEffect(() => {
     if (!monacoRef.current) return;

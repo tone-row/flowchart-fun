@@ -26,14 +26,20 @@ jobs:
           echo ::set-output name=preview_url::$(echo $URL)
       - name: Checkout Code
         uses: actions/checkout@v2
+      - name: Add env
+        run: |
+          touch app/.env
+          echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> app/.env
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - name: Install Playwright
         run: |
-          npx playwright install-deps
-          npm install -D @playwright/test
+          yarn global add playwright@1.23.0-alpha-may-16-2022
+          playwright install
+      - name: Install Deps
+        run: yarn
       - name: Run E2E Tests on Vercel Preview URL
         run: E2E_START_URL="${{ steps.get_url.outputs.preview_url }}" yarn workspace app e2e
       - uses: actions/upload-artifact@v2

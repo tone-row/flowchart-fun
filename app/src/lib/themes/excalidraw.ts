@@ -3,12 +3,24 @@
 
 import { Theme } from "./constants";
 
+const excalidrawColors = {
+  red: "#F84A4B",
+  orange: "#FC7427",
+  blue: "#4363ED",
+  black: "#000000",
+  white: "#ffffff",
+  green: "#3BB755",
+  yellow: "#f9dc46",
+  gray: "#C7CED4",
+  purple: "#6D47EA",
+};
+
 const fontFamily = '"Virgil"';
 const fontSize = 10;
-const backgroundColor = "#ffffff";
-const arrowColor = "#cccccc";
+const backgroundColor = excalidrawColors.white;
+const arrowColor = excalidrawColors.gray;
 const lineHeight = 1.3;
-const padding = "0px";
+const padding = "2px";
 
 const excalidraw: Theme = {
   font: {
@@ -41,7 +53,7 @@ const excalidraw: Theme = {
         "text-halign": "center",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
-        color: "#000000",
+        color: excalidrawColors.black,
         "font-size": fontSize,
         shape: "rectangle",
         backgroundColor: backgroundColor,
@@ -61,9 +73,9 @@ const excalidraw: Theme = {
         "edge-distances": "intersection",
         width: 1.3,
         "line-color": arrowColor,
-        "line-style": "dashed",
+        "line-style": "solid",
         label: "data(label)",
-        color: "#000000",
+        color: excalidrawColors.black,
         "font-size": fontSize,
         "text-wrap": "wrap",
         "font-family": fontFamily,
@@ -75,6 +87,18 @@ const excalidraw: Theme = {
         "arrow-scale": 1,
       },
     },
+    ...Object.entries(excalidrawColors).map<Stylesheet>(([color, value]) => ({
+      selector: `.${color}`,
+      style: {
+        "background-color": `${value}`,
+        "background-opacity": 1,
+        color: ["purple", "blue", "red", "green", "black", "orange"].includes(
+          color
+        )
+          ? excalidrawColors.white
+          : excalidrawColors.black,
+      },
+    })),
   ],
 };
 
