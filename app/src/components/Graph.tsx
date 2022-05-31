@@ -67,7 +67,7 @@ const Graph = memo(
     linesOfYaml?: number;
     setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
     shouldResize: number;
-    setHiddenGraphOptions?: (newOptions: any) => void;
+    setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
     hiddenGraphOptions?: HiddenGraphOptions;
   }) => {
     const cy = useRef<undefined | Core>();

@@ -1,6 +1,7 @@
 import React, { ReactNode, useContext } from "react";
 import { useRouteMatch } from "react-router";
 
+import { HiddenGraphOptions } from "../lib/helpers";
 import { useFullscreen, useIsValidSponsor } from "../lib/hooks";
 import { Box } from "../slang";
 import { AppContext } from "./AppContext";
@@ -12,7 +13,7 @@ export default function GraphWrapper({
   setHiddenGraphOptions,
 }: {
   children: ReactNode;
-  setHiddenGraphOptions?: (newOptions: any) => void;
+  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
 }) {
   const { showing } = useContext(AppContext);
   const isFullscreen = useFullscreen();

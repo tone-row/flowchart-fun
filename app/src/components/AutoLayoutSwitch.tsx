@@ -4,6 +4,7 @@ import * as Toggle from "@radix-ui/react-toggle";
 import { memo } from "react";
 import { FaSnowflake } from "react-icons/fa";
 
+import { HiddenGraphOptions } from "../lib/helpers";
 import { useStoreGraph } from "../lib/store.graph";
 import { Box, Type } from "../slang";
 import styles from "./AutoLayoutSwitch.module.css";
@@ -13,7 +14,7 @@ import graphBarStyles from "./GraphOptionsBar.module.css";
 export const AutoLayoutSwitch = memo(function AutoLayoutSwitch({
   setHiddenGraphOptions,
 }: {
-  setHiddenGraphOptions?: (newOptions: any) => void;
+  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
 }) {
   const setRunLayout = useStoreGraph((store) => store.setRunLayout);
   const runLayout = useStoreGraph((store) => store.runLayout);

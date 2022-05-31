@@ -31,6 +31,7 @@ import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts, SelectOption, themes } from "../lib/graphOptions";
 import { useGraphTheme } from "../lib/graphThemes";
+import { HiddenGraphOptions } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { useStoreGraph } from "../lib/store.graph";
 import { Box, BoxProps, Type } from "../slang";
@@ -48,7 +49,7 @@ import {
 const GraphOptionsBar = ({
   setHiddenGraphOptions,
 }: {
-  setHiddenGraphOptions?: (newOptions: any) => void;
+  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
 }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const setShowing = useCallback(useContext(AppContext).setShowing, []);

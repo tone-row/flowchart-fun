@@ -25,7 +25,7 @@ export type MainProps = {
   textToParse: string;
   linesOfYaml?: number;
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
-  setHiddenGraphOptions?: (newOptions: any) => void;
+  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
   hiddenGraphOptions?: HiddenGraphOptions;
 };
 
