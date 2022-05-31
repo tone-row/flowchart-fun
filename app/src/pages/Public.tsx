@@ -16,14 +16,15 @@ import {
   themeNameLight,
   useMonacoLanguage,
 } from "../lib/registerLanguage";
+import { getTextAndHiddenGraphOptions } from "./getTextAndHiddenGraphOptions";
 import styles from "./ReadOnly.module.css";
 
 function Public() {
   const monaco = useMonaco();
   const { public_id } = useParams<{ public_id: string }>();
   const { data } = usePublicChart(public_id);
-
-  const textToParse = data?.chart ?? "";
+  const { text: textToParse, hiddenGraphOptions } =
+    getTextAndHiddenGraphOptions(data?.chart ?? "");
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
@@ -77,6 +78,7 @@ function Public() {
       textToParse={textToParse}
       graphOptions={graphOptions}
       linesOfYaml={linesOfYaml}
+      hiddenGraphOptions={hiddenGraphOptions}
     >
       <Editor
         value={textToParse}

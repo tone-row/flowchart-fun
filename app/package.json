@@ -11,6 +11,7 @@
     "@radix-ui/react-hover-card": "^0.1.5",
     "@radix-ui/react-radio-group": "^0.1.5",
     "@radix-ui/react-switch": "^0.1.5",
+    "@radix-ui/react-toggle": "^0.1.4",
     "@reach/dialog": "^0.15.0",
     "@reach/tooltip": "^0.16.0",
     "@reach/utils": "^0.16.0",

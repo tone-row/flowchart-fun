@@ -318,13 +318,21 @@ describe("parseText", () => {
     const edges = parseText(`a\n\t(5)`, getSize, 4).filter(edgesOnly);
     expect(edges).toContainEqual({
       data: {
-        id: "N152_5:0",
+        id: "N14e_5:0",
         label: "",
         lineNumber: 6,
-        source: "N152",
-        target: "N152",
+        source: "N14e",
+        target: "N14e",
       },
     });
+  });
+
+  test("should produce the same ID's regardless of line number start'", () => {
+    const resultA = parseText(`a\nb`, getSize, 0);
+    const idsA = resultA.map((n) => n.data.id);
+    const resultB = parseText(`a\nb`, getSize, 1);
+    const idsB = resultB.map((n) => n.data.id);
+    expect(idsA).toEqual(idsB);
   });
 });
 

@@ -1,16 +1,21 @@
 import { t, Trans } from "@lingui/macro";
 import * as HoverCard from "@radix-ui/react-hover-card";
-import * as Switch from "@radix-ui/react-switch";
-import { Info } from "phosphor-react";
+import * as Toggle from "@radix-ui/react-toggle";
 import { memo } from "react";
-import { MdPlayArrow, MdPlayDisabled } from "react-icons/md";
+import { HiLockClosed } from "react-icons/hi";
+import { MdPlayArrow } from "react-icons/md";
 
 import { useStoreGraph } from "../lib/store.graph";
 import { Box, Type } from "../slang";
 import styles from "./AutoLayoutSwitch.module.css";
+import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import graphBarStyles from "./GraphOptionsBar.module.css";
 
-export const AutoLayoutSwitch = memo(function AutoLayoutSwitch() {
+export const AutoLayoutSwitch = memo(function AutoLayoutSwitch({
+  setHiddenGraphOptions,
+}: {
+  setHiddenGraphOptions?: (newOptions: any) => void;
+}) {
   const setRunLayout = useStoreGraph((store) => store.setRunLayout);
   const runLayout = useStoreGraph((store) => store.runLayout);
   return (
@@ -24,24 +29,27 @@ export const AutoLayoutSwitch = memo(function AutoLayoutSwitch() {
       gap={1}
       pr={2}
     >
-      {runLayout ? (
-        <MdPlayArrow className={styles.Play} size={16} />
-      ) : (
-        <MdPlayDisabled className={styles.Play} size={16} />
-      )}
-      <Switch.Root
-        className={styles.SwitchRoot}
-        onCheckedChange={setRunLayout}
-        checked={runLayout}
-        aria-label={t`Auto Layout`}
-      >
-        <Switch.Thumb className={styles.SwitchThumb} />
-      </Switch.Root>
       <HoverCard.Root openDelay={0}>
         <HoverCard.Trigger asChild>
-          <Box pl={0.5}>
-            <Info className={styles.Info} size={16} />
-          </Box>
+          <Toggle.Root
+            className={styles.Toggle}
+            pressed={runLayout}
+            onPressedChange={(pressed) => {
+              setRunLayout(pressed);
+              if (pressed && setHiddenGraphOptions) {
+                setHiddenGraphOptions({});
+              } else if (!pressed && setHiddenGraphOptions && window.__cy) {
+                const nodePositions = getNodePositionsFromCy();
+                setHiddenGraphOptions({ nodePositions });
+              }
+            }}
+          >
+            {runLayout ? (
+              <MdPlayArrow className={styles.Play} size={18} />
+            ) : (
+              <HiLockClosed className={styles.Play} size={18} />
+            )}
+          </Toggle.Root>
         </HoverCard.Trigger>
         <HoverCard.Content asChild>
           <Box

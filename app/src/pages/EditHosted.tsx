@@ -1,17 +1,19 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import { useThrottleCallback } from "@react-hook/throttle";
+import { compressToEncodedURIComponent } from "lz-string";
 import { Check, DotsThree } from "phosphor-react";
-import { useCallback, useEffect, useReducer, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useParams } from "react-router";
 import { useDebouncedCallback } from "use-debounce";
 
+import { AppContext } from "../components/AppContext";
 import EditorError from "../components/EditorError";
 import GraphProvider from "../components/GraphProvider";
 import Loading from "../components/Loading";
 import Spinner from "../components/Spinner";
 import useGraphOptions from "../components/useGraphOptions";
-import { editorOptions } from "../lib/constants";
+import { editorOptions, HIDDEN_GRAPH_OPTIONS_DIVIDER } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useIsValidSponsor } from "../lib/hooks";
 import {
@@ -27,18 +29,25 @@ import {
 } from "../lib/registerLanguage";
 import { useUpdateGraphOptionsText } from "../lib/useUpdateGraphOptionsText";
 import editStyles from "./Edit.module.css";
-import styles from "./EditUserChart.module.css";
+import styles from "./EditHosted.module.css";
+import { getTextAndHiddenGraphOptions } from "./getTextAndHiddenGraphOptions";
 
-export default function EditUserChart() {
+export default function EditHosted() {
   const validSponsor = useIsValidSponsor();
   const { id } = useParams<{ id?: string }>();
   const { data } = useChart(id);
-  const [text, setText] = useState(data?.chart ?? "");
-  const [textToParse, setTextToParse] = useReducer(
-    (t: string, u: string) => u,
-    text
+  const { text: _text, hiddenGraphOptions: _hiddenGraphOptions } =
+    getTextAndHiddenGraphOptions(data?.chart ?? "");
+  const [text, setText] = useState(_text ?? "");
+  const [hiddenGraphOptions, setHiddenGraphOptions] =
+    useState(_hiddenGraphOptions);
+  const hiddenGraphOptionsString = JSON.stringify(hiddenGraphOptions);
+  const [textToParse, setTextToParse] = useState(text);
+  const fullText = mergeTextAndHiddenGraphOptions(
+    text,
+    hiddenGraphOptionsString
   );
-  const lastText = useRef(text);
+  const lastText = useRef(fullText);
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
@@ -51,19 +60,24 @@ export default function EditUserChart() {
     updateChartText(currentText, id)
   );
   const {
-    callback: debounced,
+    callback: debouncedUpdate,
     flush,
     pending,
   } = useDebouncedCallback((currentText: string) => {
     mutate(currentText);
   }, 1000);
 
+  const { setShareLink } = useContext(AppContext);
   useEffect(() => {
-    if (lastText.current !== text) {
-      debounced(text);
-      lastText.current = text;
+    setShareLink(compressToEncodedURIComponent(fullText));
+  }, [fullText, setShareLink]);
+
+  useEffect(() => {
+    if (lastText.current !== fullText) {
+      debouncedUpdate(fullText);
+      lastText.current = fullText;
     }
-  }, [text, debounced]);
+  }, [debouncedUpdate, fullText]);
 
   // This is to make sure we update if people exit the tab quickly
   useEffect(() => {
@@ -115,6 +129,8 @@ export default function EditUserChart() {
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
       linesOfYaml={linesOfYaml}
+      hiddenGraphOptions={hiddenGraphOptions}
+      setHiddenGraphOptions={setHiddenGraphOptions}
     >
       <Editor
         value={text}
@@ -152,4 +168,12 @@ function LoadingState({
       )}
     </div>
   );
+}
+
+function mergeTextAndHiddenGraphOptions(
+  text: string,
+  hiddenGraphOptions: string
+) {
+  if (!hiddenGraphOptions) return text;
+  return `${text}${HIDDEN_GRAPH_OPTIONS_DIVIDER}${hiddenGraphOptions}`;
 }

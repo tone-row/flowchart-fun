@@ -14,7 +14,7 @@ import {
   TreeStructure,
   User,
 } from "phosphor-react";
-import { useContext, useRef, useState } from "react";
+import { memo, useContext, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory, useRouteMatch } from "react-router";
@@ -175,7 +175,7 @@ export default function MenuNext() {
   );
 }
 
-const MenuTabButton = ({
+const MenuTabButton = memo(function MenuTabButton({
   icon: Icon,
   selected,
   label,
@@ -186,7 +186,7 @@ const MenuTabButton = ({
   selected?: boolean;
   label: string;
   onClick?: () => void;
-} & BoxProps) => {
+} & BoxProps) {
   return (
     <Tooltip
       label={label}
@@ -209,9 +209,9 @@ const MenuTabButton = ({
       </Box>
     </Tooltip>
   );
-};
+});
 
-function WorkspaceSection() {
+const WorkspaceSection = memo(function WorkspaceSection() {
   const [title, isHosted] = useTitle();
   const Icon = isHosted ? Globe : Laptop;
   const isReadOnly = useIsReadOnly();
@@ -254,7 +254,7 @@ function WorkspaceSection() {
       </Box>
     </Box>
   );
-}
+});
 
 function translatedTitle(current: Showing) {
   switch (current) {
@@ -276,7 +276,7 @@ function RenameButton() {
   const session = useSession();
   const [initialName, isHosted] = useTitle();
   const { data } = useCurrentHostedChart();
-  const [text] = useLocalStorageText();
+  const { fullText } = useLocalStorageText();
   const [dialog, setDialog] = useState(false);
   const { push } = useHistory();
   const { register, handleSubmit, watch, formState } = useForm<{
@@ -310,7 +310,7 @@ function RenameButton() {
           const response = await makeChart({
             name,
             user_id: session?.user?.id,
-            chart: text,
+            chart: fullText,
           });
           if (!response) throw new Error("Could not create hosted chart");
           const charts = response.data;
@@ -325,7 +325,7 @@ function RenameButton() {
         const newKey = titleToLocalStorageKey(newSlug);
         if (window.localStorage.getItem(newKey) !== null)
           throw new Error("Chart already exists");
-        window.localStorage.setItem(newKey, text);
+        window.localStorage.setItem(newKey, fullText);
         push(`/${newSlug}`);
         window.localStorage.removeItem(oldKey);
       }
@@ -435,7 +435,7 @@ function ExportButton() {
 
 /** Allow users to copy read-only charts */
 export function CloneButton() {
-  const text = useReadOnlyText();
+  const { fullText } = useReadOnlyText();
   const { push } = useHistory();
   return (
     <Box
@@ -449,7 +449,7 @@ export function CloneButton() {
         const newChartTitle = randomChartName();
         window.localStorage.setItem(
           titleToLocalStorageKey(newChartTitle),
-          text ?? ""
+          fullText ?? ""
         );
         push(`/${newChartTitle}`);
         gaCopyChart();

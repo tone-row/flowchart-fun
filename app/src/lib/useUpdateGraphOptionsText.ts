@@ -15,7 +15,6 @@ export function useUpdateGraphOptionsText(
   return useCallback(
     (o: GraphOptionsObject) => {
       let text = "";
-      console.log({ o });
       if (Object.keys(graphOptions).length) {
         text = stringify(content, merge(graphOptions, o), {
           delimiters,
