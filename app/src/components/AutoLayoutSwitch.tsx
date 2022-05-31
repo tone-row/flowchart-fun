@@ -2,8 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import * as Toggle from "@radix-ui/react-toggle";
 import { memo } from "react";
-import { HiLockClosed } from "react-icons/hi";
-import { MdPlayArrow } from "react-icons/md";
+import { FaSnowflake } from "react-icons/fa";
 
 import { useStoreGraph } from "../lib/store.graph";
 import { Box, Type } from "../slang";
@@ -34,6 +33,7 @@ export const AutoLayoutSwitch = memo(function AutoLayoutSwitch({
           <Toggle.Root
             className={styles.Toggle}
             pressed={runLayout}
+            aria-label={t`Freeze Layout`}
             onPressedChange={(pressed) => {
               setRunLayout(pressed);
               if (pressed && setHiddenGraphOptions) {
@@ -44,11 +44,7 @@ export const AutoLayoutSwitch = memo(function AutoLayoutSwitch({
               }
             }}
           >
-            {runLayout ? (
-              <MdPlayArrow className={styles.Play} size={18} />
-            ) : (
-              <HiLockClosed className={styles.Play} size={18} />
-            )}
+            <FaSnowflake className={styles.Play} size={18} />
           </Toggle.Root>
         </HoverCard.Trigger>
         <HoverCard.Content asChild>
@@ -60,10 +56,10 @@ export const AutoLayoutSwitch = memo(function AutoLayoutSwitch({
             className={styles.Popover}
           >
             <Type size={-1}>
-              <Trans>Auto Layout</Trans>
+              <Trans>Freeze Layout</Trans>
             </Type>
             <Type size={-2}>
-              {t`Automatically run the layout algorithm while editing your chart. Turn this off to customize your chart. NOTE: Currently, custom layouts only work for exported images: layouts are not saved between refreshes, navigations, or in share links.`}
+              {t`Freezing your chart allows you to customize the layout by disabling automatic layout.`}
             </Type>
             <HoverCard.Arrow style={{ fill: "var(--color-nodeHover)" }} />
           </Box>
