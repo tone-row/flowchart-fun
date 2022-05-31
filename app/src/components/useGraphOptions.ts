@@ -1,33 +1,38 @@
 import matter from "gray-matter";
+import { useMemo } from "react";
 
 import { delimiters, GraphOptionsObject } from "../lib/constants";
 
-export default function useGraphOptions(text: string): {
+type UseGraphOptionsReturn = {
   graphOptions: GraphOptionsObject;
   content: string;
   graphOptionsString: string;
   linesOfYaml: number;
-} {
-  try {
-    const {
-      data: graphOptions = {},
-      content,
-      matter: graphOptionsString,
-    } = matter(text, { delimiters });
-    return {
-      graphOptions,
-      content,
-      graphOptionsString,
-      linesOfYaml: graphOptionsString
-        ? graphOptionsString.split("\n").length + 1
-        : 0,
-    };
-  } catch (error) {
-    return {
-      graphOptions: {},
-      content: text,
-      graphOptionsString: "",
-      linesOfYaml: 0,
-    };
-  }
+};
+
+export default function useGraphOptions(text: string): UseGraphOptionsReturn {
+  return useMemo(() => {
+    try {
+      const {
+        data: graphOptions = {},
+        content,
+        matter: graphOptionsString,
+      } = matter(text, { delimiters });
+      return {
+        graphOptions,
+        content,
+        graphOptionsString,
+        linesOfYaml: graphOptionsString
+          ? graphOptionsString.split("\n").length + 1
+          : 0,
+      };
+    } catch (error) {
+      return {
+        graphOptions: {},
+        content: text,
+        graphOptionsString: "",
+        linesOfYaml: 0,
+      };
+    }
+  }, [text]);
 }

@@ -18,7 +18,7 @@ import {
 import styles from "./ReadOnly.module.css";
 
 function ReadOnly() {
-  const textToParse = useReadOnlyText();
+  const { text, hiddenGraphOptions } = useReadOnlyText();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
@@ -34,7 +34,7 @@ function ReadOnly() {
   }, [mode]);
 
   const { data: graphOptions, matter: graphOptionsString } = matter(
-    strip(textToParse),
+    strip(text),
     { delimiters }
   );
 
@@ -48,19 +48,20 @@ function ReadOnly() {
     <GraphProvider
       editable={false}
       setHoverLineNumber={setHoverLineNumber}
-      textToParse={textToParse}
+      textToParse={text}
       graphOptions={graphOptions}
       linesOfYaml={linesOfYaml}
+      hiddenGraphOptions={hiddenGraphOptions}
     >
       <Editor
-        value={textToParse}
+        value={text}
         wrapperClassName={styles.Editor}
         defaultLanguage={languageId}
         options={{
           ...editorOptions,
           readOnly: true,
         }}
-        defaultValue={textToParse}
+        defaultValue={text}
         theme={mode === "dark" ? themeNameDark : themeNameLight}
         loading={loading.current}
         onMount={onMount}

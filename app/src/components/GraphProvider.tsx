@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import { createContext } from "react";
 
 import { GraphOptionsObject } from "../lib/constants";
 import Main, { MainProps } from "./Main";

@@ -373,11 +373,11 @@ test.describe("Unauthorized", () => {
     await page.locator("text=theme: eggs").click();
 
     // Disable Graph Animation
-    await page.locator('[aria-label="Auto Layout"]').click();
+    await page.locator('[aria-label="Freeze Layout"]').click();
     expect(
       await page
-        .locator('[aria-label="Auto Layout"]')
-        .getAttribute("aria-checked")
+        .locator('[aria-label="Freeze Layout"]')
+        .getAttribute("aria-pressed")
     ).toBe("false");
 
     // Click #cy canvas >> nth=0

@@ -1,14 +1,7 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import { useThrottleCallback } from "@react-hook/throttle";
 import { Resizable } from "re-resizable";
-import {
-  Suspense,
-  useCallback,
-  useEffect,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
 import Docs from "../components/Docs";
 import EditorError from "../components/EditorError";
@@ -29,11 +22,9 @@ import styles from "./Edit.module.css";
 import helpStyles from "./Help.module.css";
 
 export default function Help() {
-  const [text, setText] = useLocalStorageText("h"); // fixed workspace name
-  const [textToParse, setTextToParse] = useReducer(
-    (t: string, u: string) => u,
-    text
-  );
+  const { text, setText, hiddenGraphOptions, setHiddenGraphOptions } =
+    useLocalStorageText("h"); // fixed workspace name
+  const [textToParse, setTextToParse] = useState(text);
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
@@ -81,6 +72,8 @@ export default function Help() {
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
       linesOfYaml={linesOfYaml}
+      hiddenGraphOptions={hiddenGraphOptions}
+      setHiddenGraphOptions={setHiddenGraphOptions}
     >
       <div className={helpStyles.helpWrapper} data-testid="help">
         <Resizable

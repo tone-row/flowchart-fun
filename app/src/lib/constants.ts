@@ -58,3 +58,5 @@ export const editorOptions: EditorProps["options"] = {
 export const delimiters = "~~~";
 
 export const LOCAL_STORAGE_SETTINGS_KEY = "flowcharts.fun.user.settings";
+
+export const HIDDEN_GRAPH_OPTIONS_DIVIDER = "¼▓╬";
