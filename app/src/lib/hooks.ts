@@ -41,9 +41,7 @@ ${t`Have fun! 🎉`}
     defaultText
   );
 
-  // check if the string contains our divider and only return the first part if it does
-  // make sure setText doesn't erase our divider and we provide a way to set the dividing data as well
-  // it may as well be stringified JSON, there's no reason to add another yaml parse to our flow
+  // check if the string contains our divider and divide if so
   let text = localStorageText,
     setText = setLocalStorageText,
     hiddenGraphOptions: HiddenGraphOptions = {};

@@ -12,7 +12,7 @@ export function getTextAndHiddenGraphOptions(fullText: string) {
     try {
       hiddenGraphOptions = JSON.parse(textAfter);
     } catch (e) {
-      // do nothing
+      console.error(e);
     }
   }
   return { text, hiddenGraphOptions };
