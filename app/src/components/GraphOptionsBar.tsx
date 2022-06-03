@@ -31,6 +31,7 @@ import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts, SelectOption, themes } from "../lib/graphOptions";
 import { useGraphTheme } from "../lib/graphThemes";
+import { HiddenGraphOptions } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { useStoreGraph } from "../lib/store.graph";
 import { Box, BoxProps, Type } from "../slang";
@@ -45,7 +46,11 @@ import {
   tooltipSize,
 } from "./Shared";
 
-const GraphOptionsBar = memo(() => {
+const GraphOptionsBar = ({
+  setHiddenGraphOptions,
+}: {
+  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
+}) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const setShowing = useCallback(useContext(AppContext).setShowing, []);
   const isValidSponsor = useIsValidSponsor();
@@ -136,7 +141,7 @@ const GraphOptionsBar = memo(() => {
 
   return (
     <Box className={styles.GraphOptionsBar} as="form">
-      <AutoLayoutSwitch />
+      <AutoLayoutSwitch setHiddenGraphOptions={setHiddenGraphOptions} />
       {runLayout ? (
         <>
           <OptionWithIcon
@@ -239,7 +244,7 @@ const GraphOptionsBar = memo(() => {
       </OptionWithIcon>
     </Box>
   );
-});
+};
 
 GraphOptionsBar.displayName = "GraphOptionsBar";
 export default GraphOptionsBar;
@@ -356,20 +361,24 @@ const selectStyles: StylesConfig<SelectOption, false> = {
   }),
 };
 
-const SingleValue = ({ children }: SingleValueProps<any>) => (
-  <Box p={1} at={{ tablet: { p: 2 } }}>
-    <Type size={smallBtnTypeSize}>{children}</Type>
-  </Box>
-);
+const SingleValue = memo(function SingleValue({
+  children,
+}: SingleValueProps<any>) {
+  return (
+    <Box p={1} at={{ tablet: { p: 2 } }}>
+      <Type size={smallBtnTypeSize}>{children}</Type>
+    </Box>
+  );
+});
 
-const Option = ({
+const Option = memo(function Option({
   children,
   innerProps,
   innerRef,
   isSelected,
   isFocused,
   data,
-}: any) => {
+}: any) {
   const { style = {} } = data;
   return (
     <Box
@@ -385,22 +394,25 @@ const Option = ({
       <Type size={smallBtnTypeSize}>{children}</Type>
     </Box>
   );
-};
+});
 
-const DIndicator = (props: any) => {
+const DIndicator = memo(function DIndicator(props: any) {
   return (
     <components.DropdownIndicator {...props}>
       <CaretDown />
     </components.DropdownIndicator>
   );
-};
+});
+const IndicatorSeparator = memo(function IndicatorSeparator() {
+  return <>{null}</>;
+});
 
 const selectProps = {
   isSearchable: false,
   getOptionLabel: ({ label }: any) => (label as unknown as () => string)(),
   styles: selectStyles,
   components: {
-    IndicatorSeparator: () => null,
+    IndicatorSeparator,
     SingleValue,
     Option,
     DropdownIndicator: DIndicator,

@@ -1,10 +1,15 @@
 import { t } from "@lingui/macro";
-import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { Dispatch, useContext, useMemo } from "react";
+import {
+  compressToEncodedURIComponent as compress,
+  decompressFromEncodedURIComponent as decompress,
+} from "lz-string";
+import { useContext, useEffect, useMemo } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
+import { HIDDEN_GRAPH_OPTIONS_DIVIDER } from "./constants";
+import { HiddenGraphOptions } from "./helpers";
 import { useChart, usePublicChart } from "./queries";
 
 export function useAnimationSetting() {
@@ -14,9 +19,7 @@ export function useAnimationSetting() {
   return animation === "0" ? false : true;
 }
 
-export function useLocalStorageText(
-  defaultWorkspace = ""
-): [string, Dispatch<string>, string] {
+export function useLocalStorageText(defaultWorkspace = "") {
   const { workspace = defaultWorkspace } = useParams<{ workspace?: string }>();
   const defaultText = `${t`This app works by typing`}
   ${t`Indenting creates a link to the current line`}
@@ -33,11 +36,52 @@ ${t`comments`}
 
 ${t`Have fun! 🎉`}
 */`;
-  const [text, setText] = useLocalStorage(
+  const [localStorageText, setLocalStorageText] = useLocalStorage(
     ["flowcharts.fun", workspace].filter(Boolean).join(":"),
     defaultText
   );
-  return [text, setText, defaultText];
+
+  // check if the string contains our divider and divide if so
+  let text = localStorageText,
+    setText = setLocalStorageText,
+    hiddenGraphOptions: HiddenGraphOptions = {};
+
+  if (localStorageText.includes(HIDDEN_GRAPH_OPTIONS_DIVIDER)) {
+    const [_text, hiddenGraphOptionsText] = localStorageText.split(
+      HIDDEN_GRAPH_OPTIONS_DIVIDER
+    );
+    text = _text;
+    setText = (newText) => {
+      setLocalStorageText(
+        newText + HIDDEN_GRAPH_OPTIONS_DIVIDER + hiddenGraphOptionsText
+      );
+    };
+
+    try {
+      hiddenGraphOptions = JSON.parse(hiddenGraphOptionsText.trim());
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const setHiddenGraphOptions = (newOptions: any) => {
+    setLocalStorageText(
+      text + HIDDEN_GRAPH_OPTIONS_DIVIDER + JSON.stringify(newOptions)
+    );
+  };
+
+  const { setShareLink } = useContext(AppContext);
+  useEffect(() => {
+    setShareLink(compress(localStorageText));
+  }, [localStorageText, setShareLink]);
+
+  return {
+    text,
+    setText,
+    hiddenGraphOptions,
+    setHiddenGraphOptions,
+    fullText: localStorageText,
+  };
 }
 
 export function useFullscreen() {
@@ -94,10 +138,33 @@ export function useReadOnlyText() {
   const { graphText = window.location.hash.slice(1) } = useParams<{
     graphText: string;
   }>();
-  if (path === "/p/:public_id") return data.chart ?? "";
-  return isCompressed
+  if (path === "/p/:public_id") {
+    return getTextAndHiddenGraphOptions(data.chart ?? "");
+  }
+
+  const fullText = isCompressed
     ? decompress(graphText) ?? ""
     : decodeURIComponent(graphText);
+
+  return getTextAndHiddenGraphOptions(fullText);
+
+  function getTextAndHiddenGraphOptions(fullText: string) {
+    let text = fullText,
+      hiddenGraphOptions: HiddenGraphOptions = {};
+
+    if (fullText.includes(HIDDEN_GRAPH_OPTIONS_DIVIDER)) {
+      const [_text, hiddenGraphOptionsText] = fullText.split(
+        HIDDEN_GRAPH_OPTIONS_DIVIDER
+      );
+      text = _text;
+      try {
+        hiddenGraphOptions = JSON.parse(hiddenGraphOptionsText.trim());
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    return { text, hiddenGraphOptions, fullText };
+  }
 }
 
 export function useIsHelp() {

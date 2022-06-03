@@ -25,7 +25,7 @@ msgstr "10 $ / Jahr"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Greifen Sie von überall auf diese Diagramme zu.<0/>Teilen/Einbetten von Diagrammen, die mit Ihren Bearbeitungen synchronisiert bleiben."
 
-#: src/components/Sponsor.tsx:329
+#: src/components/Sponsor.tsx:330
 msgid "Already a sponsor? Log in here"
 msgstr "Sind Sie schon ein Sponsor? Hier anmelden"
 
@@ -41,20 +41,12 @@ msgstr "Es ist ein Fehler aufgetreten. Versuchen Sie, es erneut einzureichen ode
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
-#: src/components/AutoLayoutSwitch.tsx:54
-msgid "Auto Layout"
-msgstr "Automatisches Layout"
-
-#: src/components/AutoLayoutSwitch.tsx:57
-msgid "Automatically run the layout algorithm while editing your chart. Turn this off to customize your chart. NOTE: Currently, custom layouts only work for exported images: layouts are not saved between refreshes, navigations, or in share links."
-msgstr "Führen Sie automatisch den Layout-Algorithmus aus, während Sie Ihr Diagramm bearbeiten. Schalten Sie diese Option aus, um Ihr Diagramm anzupassen. HINWEIS: Aktuell funktionieren benutzerdefinierte Layouts nur bei exportierten Bildern. Layouts werden nicht gespeichert, wenn Sie die Seite aktualisieren, auf eine andere Seite navigieren oder Links mit anderen teilen."
-
 #: src/components/Feedback.tsx:114
 msgid "Back To Editor"
 msgstr "Zurück zum Editor"
 
 #: src/components/Settings.tsx:135
-#: src/components/Sponsor.tsx:316
+#: src/components/Sponsor.tsx:317
 #: src/components/SponsorDashboard.tsx:62
 msgid "Become a Sponsor"
 msgstr "Werden Sie zum Sponsoren"
@@ -83,7 +75,7 @@ msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Kündigen Sie Ihr Abonnement. Ihre gehosteten Diagramme werden schreibgeschützt."
 
 #: src/components/MenuNext.tsx:104
-#: src/components/MenuNext.tsx:264
+#: src/components/MenuNext.tsx:266
 msgid "Charts"
 msgstr "Diagramme"
 
@@ -100,6 +92,10 @@ msgstr "Kreis"
 msgid "Clay"
 msgstr "Ton"
 
+#: src/components/MenuNext.tsx:447
+msgid "Clone"
+msgstr "Klon"
+
 #: src/components/Shared.tsx:168
 msgid "Close"
 msgstr "Schließen"
@@ -108,39 +104,39 @@ msgstr "Schließen"
 msgid "Concentric"
 msgstr "Konzentrisch"
 
-#: src/components/GraphOptionsBar.tsx:201
+#: src/components/GraphOptionsBar.tsx:206
 msgid "Contract"
 msgstr "Zusammenziehen"
 
-#: src/components/MenuNext.tsx:379
+#: src/components/MenuNext.tsx:381
 msgid "Convert to hosted chart?"
 msgstr "In gehostetes Diagramm konvertieren?"
 
 #: src/components/Navigation.tsx:480
 #: src/components/Navigation.tsx:548
 #: src/components/Navigation.tsx:582
-#: src/components/ShareDialog.tsx:222
-#: src/components/ShareDialog.tsx:288
+#: src/components/ShareDialog.tsx:227
+#: src/components/ShareDialog.tsx:228
+#: src/components/ShareDialog.tsx:294
 msgid "Copy"
 msgstr "Kopieren"
 
-#: src/components/GraphContextMenu.tsx:103
+#: src/components/GraphContextMenu.tsx:105
 msgid "Copy PNG Image"
 msgstr "PNG-Bild kopieren"
 
-#: src/components/GraphContextMenu.tsx:79
+#: src/components/GraphContextMenu.tsx:81
 msgid "Copy SVG Code"
 msgstr "Kopieren Sie den SVG-Code"
 
 #: src/components/MenuNext.tsx:112
-#: src/components/MenuNext.tsx:459
 #: src/components/Navigation.tsx:177
 #: src/components/Navigation.tsx:337
 #: src/components/Navigation.tsx:395
 msgid "Create"
 msgstr "Erstellen"
 
-#: src/lib/hooks.ts:24
+#: src/lib/hooks.ts:27
 #: src/lib/queries.ts:163
 msgid "Create a link directly using the exact label text"
 msgstr "Erstellen Sie direkt einen Link mit dem genauen Beschriftungstext"
@@ -169,7 +165,7 @@ msgstr "Datum"
 msgid "Delete"
 msgstr "Löschen"
 
-#: src/components/GraphOptionsBar.tsx:172
+#: src/components/GraphOptionsBar.tsx:177
 msgid "Direction"
 msgstr "Richtung"
 
@@ -185,15 +181,15 @@ msgstr "Möchten Sie dies löschen?"
 msgid "Download"
 msgstr "Herunterladen"
 
-#: src/components/GraphContextMenu.tsx:43
+#: src/components/GraphContextMenu.tsx:45
 msgid "Download JPG"
 msgstr "JPG herunterladen"
 
-#: src/components/GraphContextMenu.tsx:33
+#: src/components/GraphContextMenu.tsx:35
 msgid "Download PNG"
 msgstr "PNG herunterladen"
 
-#: src/components/GraphContextMenu.tsx:53
+#: src/components/GraphContextMenu.tsx:55
 msgid "Download SVG"
 msgstr "SVG herunterladen"
 
@@ -233,24 +229,33 @@ msgstr "Titel eingeben"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:210
+#: src/components/GraphOptionsBar.tsx:215
 msgid "Expand"
 msgstr "Erweitern"
 
-#: src/components/MenuNext.tsx:426
+#: src/components/MenuNext.tsx:429
 #: src/components/ShareDialog.tsx:50
 #: src/components/ShareDialog.tsx:144
 msgid "Export"
 msgstr "Exportieren"
 
-#: src/components/MenuNext.tsx:156
-#: src/components/MenuNext.tsx:260
+#: src/components/MenuNext.tsx:158
+#: src/components/MenuNext.tsx:262
 msgid "Feedback"
 msgstr "Feedback"
 
 #: src/components/Settings.tsx:118
 msgid "Follow Us"
 msgstr "Folgen Sie uns"
+
+#: src/components/AutoLayoutSwitch.tsx:37
+#: src/components/AutoLayoutSwitch.tsx:60
+msgid "Freeze Layout"
+msgstr "Layout einfrieren"
+
+#: src/components/AutoLayoutSwitch.tsx:63
+msgid "Freezing your chart allows you to customize the layout by disabling automatic layout."
+msgstr "Wenn Sie Ihr Diagramm einfrieren, können Sie das Layout anpassen, indem Sie das automatische Layout deaktivieren."
 
 #: src/components/ShareDialog.tsx:132
 msgid "Fullscreen"
@@ -276,7 +281,7 @@ msgstr "Diagramm"
 msgid "Grid"
 msgstr "Raster"
 
-#: src/lib/hooks.ts:34
+#: src/lib/hooks.ts:37
 #: src/lib/queries.ts:173
 msgid "Have fun! 🎉"
 msgstr "Viel Spaß! 🎉"
@@ -299,7 +304,7 @@ msgstr "Startseite"
 msgid "Hosted Charts"
 msgstr "Gehostete Diagramme"
 
-#: src/lib/hooks.ts:22
+#: src/lib/hooks.ts:25
 #: src/lib/queries.ts:161
 msgid "Indenting creates a link to the current line"
 msgstr "Durch das Einrücken wird eine Verbindung zur aktuellen Zeile hergestellt"
@@ -308,7 +313,7 @@ msgstr "Durch das Einrücken wird eine Verbindung zur aktuellen Zeile hergestell
 msgid "Language"
 msgstr "Sprache"
 
-#: src/components/GraphOptionsBar.tsx:144
+#: src/components/GraphOptionsBar.tsx:149
 msgid "Layout"
 msgstr "Layout"
 
@@ -401,11 +406,11 @@ msgstr "Öffentlich"
 msgid "Random"
 msgstr "Zufällig"
 
-#: src/components/MenuNext.tsx:343
-#: src/components/MenuNext.tsx:344
-#: src/components/MenuNext.tsx:350
-#: src/components/MenuNext.tsx:360
-#: src/components/MenuNext.tsx:369
+#: src/components/MenuNext.tsx:345
+#: src/components/MenuNext.tsx:346
+#: src/components/MenuNext.tsx:352
+#: src/components/MenuNext.tsx:362
+#: src/components/MenuNext.tsx:371
 msgid "Rename"
 msgstr "Umbenennen"
 
@@ -429,12 +434,12 @@ msgstr "Zurückkehren"
 msgid "Right to Left"
 msgstr "Von rechts nach links"
 
-#: src/components/MenuNext.tsx:147
-#: src/components/MenuNext.tsx:262
+#: src/components/MenuNext.tsx:149
+#: src/components/MenuNext.tsx:264
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/components/Sponsor.tsx:241
+#: src/components/Sponsor.tsx:242
 msgid "Sign Up"
 msgstr "Registrieren"
 
@@ -446,8 +451,8 @@ msgstr "Sponsern Sie flowchart.fun für 1 $ pro Monat, um Zugang zu gehosteten F
 msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
 msgstr "Sponsern Sie flowchart.fun für <0>$1 / Monat</0> oder <1>$10 / Jahr</1>, um Zugang zu..."
 
-#: src/components/MenuNext.tsx:165
-#: src/components/MenuNext.tsx:266
+#: src/components/MenuNext.tsx:167
+#: src/components/MenuNext.tsx:268
 msgid "Sponsors"
 msgstr "Sponsoren"
 
@@ -461,7 +466,7 @@ msgstr "Status"
 
 #: src/components/Feedback.tsx:93
 #: src/components/LoginForm.tsx:53
-#: src/components/MenuNext.tsx:398
+#: src/components/MenuNext.tsx:400
 msgid "Submit"
 msgstr "Einsenden"
 
@@ -477,7 +482,7 @@ msgstr "Abonnement wird beendet"
 msgid "Thank you for your feedback!"
 msgstr "Danke für Ihr Feedback!"
 
-#: src/components/GraphOptionsBar.tsx:215
+#: src/components/GraphOptionsBar.tsx:220
 msgid "Theme"
 msgstr "Thema"
 
@@ -485,7 +490,7 @@ msgstr "Thema"
 msgid "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these."
 msgstr "Diese Diagramme sind nur in diesem Browser auf diesem Gerät verfügbar.<0/>Wenn Sie Ihren Browser-local storage leeren, werden sie gelöscht."
 
-#: src/lib/hooks.ts:21
+#: src/lib/hooks.ts:24
 #: src/lib/queries.ts:160
 msgid "This app works by typing"
 msgstr "Diese App funktioniert durch Tippen"
@@ -514,7 +519,7 @@ msgstr "Auf Github ansehen"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Wir freuen uns über Ihr Feedback, Ihre Vorschläge, Fehler und Funktionsanfragen!"
 
-#: src/components/Sponsor.tsx:248
+#: src/components/Sponsor.tsx:249
 msgid "We use cookies to keep you logged in."
 msgstr "Wir verwenden Cookies, um Sie eingeloggt zu halten."
 
@@ -535,42 +540,42 @@ msgstr "Mit Editor"
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Ihr Abonnement ist nicht mehr aktiv. Wenn Sie gehostete Diagramme erstellen und bearbeiten möchten, werden Sie Sponsor."
 
-#: src/lib/hooks.ts:26
+#: src/lib/hooks.ts:29
 #: src/lib/queries.ts:165
 msgid "[custom ID] or"
 msgstr "[benutzerdefinierte ID] oder"
 
-#: src/lib/hooks.ts:23
+#: src/lib/hooks.ts:26
 #: src/lib/queries.ts:162
 msgid "any text: before a colon creates a label"
 msgstr "Jeder beliebige Text: vor einem Doppelpunkt wird zu einer Beschriftung"
 
-#: src/lib/hooks.ts:27
+#: src/lib/hooks.ts:30
 #: src/lib/queries.ts:166
 msgid "by adding an %5BID%5D and referencing that"
 msgstr "indem man ein %5BID%5D hinzufügt und darauf verweist"
 
-#: src/lib/hooks.ts:32
+#: src/lib/hooks.ts:35
 #: src/lib/queries.ts:171
 msgid "comments"
 msgstr "Kommentare"
 
-#: src/lib/hooks.ts:25
+#: src/lib/hooks.ts:28
 #: src/lib/queries.ts:164
 msgid "like this: (This app works by typing)"
 msgstr "so wie hier: (Diese App funktioniert durch Tippen)"
 
-#: src/lib/hooks.ts:28
+#: src/lib/hooks.ts:31
 #: src/lib/queries.ts:167
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "so wie hier: (benutzerdefinierte ID) // Sie können auch einzeilige Kommentare verwenden"
 
-#: src/lib/hooks.ts:31
+#: src/lib/hooks.ts:34
 #: src/lib/queries.ts:170
 msgid "multiline"
 msgstr "mehrzeilige"
 
-#: src/lib/hooks.ts:30
+#: src/lib/hooks.ts:33
 #: src/lib/queries.ts:169
 msgid "or"
 msgstr "oder"

@@ -1,6 +1,6 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import { useThrottleCallback } from "@react-hook/throttle";
-import { useCallback, useEffect, useReducer, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useRef, useState } from "react";
 
 import EditorError from "../components/EditorError";
 import GraphProvider from "../components/GraphProvider";
@@ -18,22 +18,22 @@ import {
 import { useUpdateGraphOptionsText } from "../lib/useUpdateGraphOptionsText";
 import styles from "./Edit.module.css";
 
-export default function Edit() {
-  const [text, setText] = useLocalStorageText();
-  const [textToParse, setTextToParse] = useReducer(
-    (t: string, u: string) => u,
-    text
-  );
-  const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
-  const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
+const Edit = memo(function Edit() {
+  const { text, setText, hiddenGraphOptions, setHiddenGraphOptions } =
+    useLocalStorageText();
+  const [toParse, setToParse] = useState(text);
+  const throttleSetToParse = useThrottleCallback(setToParse, 2, true);
+  const { graphOptions, content, linesOfYaml } = useGraphOptions(toParse);
+
+  const loading = useRef(<Loading />);
+
+  const { data: mode } = useAppMode();
   const editorRef = useRef<Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
-  const { data: mode } = useAppMode();
-  const loading = useRef(<Loading />);
-  const { graphOptions, content, linesOfYaml } = useGraphOptions(textToParse);
+  const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   useEffect(() => {
-    setTextToParseThrottle(text);
-  }, [text, setTextToParseThrottle]);
+    throttleSetToParse(text);
+  }, [text, throttleSetToParse]);
 
   const onMount = useEditorOnMount(editorRef, monacoRef);
   useEffect(() => {
@@ -47,8 +47,8 @@ export default function Edit() {
     content,
     graphOptions,
     setText,
-    setTextToParse,
-    textToParse
+    setToParse,
+    toParse
   );
 
   // Hover
@@ -59,11 +59,13 @@ export default function Edit() {
   return (
     <GraphProvider
       editable={true}
-      textToParse={textToParse}
+      textToParse={toParse}
       setHoverLineNumber={setHoverLineNumber}
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
       linesOfYaml={linesOfYaml}
+      setHiddenGraphOptions={setHiddenGraphOptions}
+      hiddenGraphOptions={hiddenGraphOptions}
     >
       <Editor
         value={text}
@@ -77,4 +79,6 @@ export default function Edit() {
       <EditorError />
     </GraphProvider>
   );
-}
+});
+
+export default Edit;

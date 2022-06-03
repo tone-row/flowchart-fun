@@ -19,7 +19,7 @@ export const useStoreGraph = create<StoreGraph>((set) => ({
   setLayout: (layout) => set((state) => ({ ...state, layout })),
   elements: [],
   setElements: (elements) => set((state) => ({ ...state, elements })),
-  runLayout: true,
+  runLayout: false,
   setRunLayout: (runLayout) => set((state) => ({ ...state, runLayout })),
   graphUpdateNumber: 0,
   incrementGraphUpdateNumber: () =>

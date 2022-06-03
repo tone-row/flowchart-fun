@@ -6,7 +6,7 @@ import Layout from "./Layout";
 const Public = lazy(() => import("../pages/Public"));
 const Edit = lazy(() => import("../pages/Edit"));
 const Help = lazy(() => import("../pages/Help"));
-const EditUserChart = lazy(() => import("../pages/EditUserChart"));
+const EditHosted = lazy(() => import("../pages/EditHosted"));
 const ReadOnly = lazy(() => import("../pages/ReadOnly"));
 
 export default function Router() {
@@ -20,7 +20,7 @@ export default function Router() {
         <Help />
       </LayoutRoute>
       <LayoutRoute path="/u/:id">
-        <EditUserChart />
+        <EditHosted />
       </LayoutRoute>
       <LayoutRoute path="/r/:graphText?">
         <ReadOnly />

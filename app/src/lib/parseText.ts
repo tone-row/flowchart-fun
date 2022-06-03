@@ -37,7 +37,7 @@ export function parseText(
     const parentId = findParentId(leadingSpace, indentation);
 
     const {
-      id = ID(lineNumber),
+      id = ID(lineNumber - lineNumberStart),
       classes,
       pointers,
       userSuppliedId,

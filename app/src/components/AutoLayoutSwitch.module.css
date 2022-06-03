@@ -1,50 +1,36 @@
-.SwitchRoot {
-  --w: 40px;
-  --h: 21px;
-  width: var(--w);
-  height: var(--h);
-  position: relative;
-  background-color: var(--color-nodeHover);
-  border: 1px solid var(--border-color);
-  border-radius: 9999px;
+.Popover {
+  max-width: 400px;
 }
 
-.SwitchRoot:focus {
+.Toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--spacer-px) * 2);
+  border-radius: var(--smallest-border-radius-px);
+  color: hsl(var(--color-foregroundHsl), 33%);
+  border: 1px solid var(--color-uiAccent);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.Toggle:hover,
+.Toggle:focus-visible {
+  background-color: var(--color-lineColor);
+  color: hsl(var(--color-foregroundHsl), 66%);
+}
+
+.Toggle:focus {
   box-shadow: none;
 }
 
-.SwitchThumb {
-  --offset: 2px;
-  width: calc(50% - 2 * var(--offset));
-  background: var(--color-edgeHover);
-  aspect-ratio: 1;
-  display: block;
-  position: absolute;
-  border-radius: 50%;
-  top: var(--offset);
-  left: var(--offset);
-  transition: left 300ms ease;
+.Toggle[aria-pressed="false"] {
+  background-color: var(--color-uiAccent);
+  border-color: var(--color-uiAccent);
+  color: hsl(var(--color-foregroundHsl), 100%);
 }
 
-.SwitchThumb[data-state="checked"] {
-  left: calc(50% + var(--offset));
-}
-
-.SwitchRoot:hover .SwitchThumb,
-.SwitchRoot:focus-visible .SwitchThumb {
-  background: var(--color-lineNumbers);
-}
-
-.AutoLayout .Play {
-  opacity: 0.33;
-}
-.AutoLayout[class*="checked"] .Play {
-  opacity: 1;
-}
-
-.AutoLayout[class*="checked"] .Info {
-}
-
-.Popover {
-  max-width: 400px;
+.Toggle[aria-pressed="false"]:hover {
+  background-color: var(--color-edgeHover);
+  border-color: var(--color-edgeHover);
 }
