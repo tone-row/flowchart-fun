@@ -2,6 +2,7 @@ import { lazy, memo } from "react";
 import { Route, RouteProps, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
+import { New } from "../pages/New";
 import Layout from "./Layout";
 const Public = lazy(() => import("../pages/Public"));
 const Edit = lazy(() => import("../pages/Edit"));
@@ -19,6 +20,9 @@ export default function Router() {
       <LayoutRoute path="/h" exact>
         <Help />
       </LayoutRoute>
+      <Route path="/n" exact>
+        <New />
+      </Route>
       <LayoutRoute path="/u/:id">
         <EditHosted />
       </LayoutRoute>
