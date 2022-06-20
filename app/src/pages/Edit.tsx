@@ -2,6 +2,7 @@ import Editor, { OnMount } from "@monaco-editor/react";
 import { useThrottleCallback } from "@react-hook/throttle";
 import { memo, useCallback, useEffect, useRef, useState } from "react";
 
+import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
 import GraphProvider from "../components/GraphProvider";
 import Loading from "../components/Loading";
@@ -75,6 +76,15 @@ const Edit = memo(function Edit() {
         onChange={onChange}
         loading={loading.current}
         onMount={onMount}
+      />
+      <ClearTextButton
+        handleClear={() => {
+          setText("");
+          setToParse("");
+          if (editorRef.current) {
+            editorRef.current.focus();
+          }
+        }}
       />
       <EditorError />
     </GraphProvider>

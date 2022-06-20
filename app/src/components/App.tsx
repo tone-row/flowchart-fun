@@ -20,7 +20,10 @@ import { BrowserRouter } from "react-router-dom";
 
 import { ThemeLoaderProvider } from "../lib/graphThemes";
 import Loading from "./Loading";
+import { pageHeight } from "./pageHeight";
 import { Button } from "./Shared";
+
+pageHeight();
 
 export default function App() {
   return (

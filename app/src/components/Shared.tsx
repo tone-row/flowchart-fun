@@ -153,8 +153,9 @@ export const Dialog = ({
     <Box
       as={ReachDialog}
       p={2}
+      pt={1.5}
       rad={2}
-      background="color-input"
+      background="color-nodeHover"
       {...dialogProps}
     >
       <Box gap={1}>
@@ -167,7 +168,7 @@ export const Dialog = ({
           <VisuallyHidden>
             <Trans>Close</Trans>
           </VisuallyHidden>
-          <X width={33} height={33} aria-hidden />
+          <X size={24} aria-hidden />
         </Box>
         <Box
           as={as}

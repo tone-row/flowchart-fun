@@ -81,10 +81,6 @@ textarea:focus {
   color: inherit;
 }
 
-.InnerDialog {
-  border: 1px solid var(--color-uiAccent);
-}
-
 .CloseButton svg line {
   stroke-width: 10;
   stroke: var(--color-edgeHover);
