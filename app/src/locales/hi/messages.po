@@ -59,6 +59,7 @@ msgstr "नीचे से शीर्ष तक"
 msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
+#: src/components/ClearTextButton.tsx:43
 #: src/components/Navigation.tsx:267
 #: src/components/Navigation.tsx:547
 #: src/components/Navigation.tsx:597
@@ -92,11 +93,19 @@ msgstr "परिधि"
 msgid "Clay"
 msgstr "मिट्टी"
 
+#: src/components/ClearTextButton.tsx:41
+msgid "Clear"
+msgstr "साफ़"
+
+#: src/components/ClearTextButton.tsx:34
+msgid "Clear text?"
+msgstr "पाठ साफ़ करें?"
+
 #: src/components/MenuNext.tsx:447
 msgid "Clone"
 msgstr "क्लोन करें"
 
-#: src/components/Shared.tsx:168
+#: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "बंद करें"
 
@@ -294,7 +303,7 @@ msgstr "मदद"
 msgid "History"
 msgstr "हिस्ट्री"
 
-#: src/components/App.tsx:70
+#: src/components/App.tsx:73
 msgid "Home"
 msgstr "होम"
 
@@ -499,7 +508,7 @@ msgstr "यह ऐप टाइप द्वारा काम करता ह
 msgid "Top to Bottom"
 msgstr "ऊपर से नीचे"
 
-#: src/components/App.tsx:64
+#: src/components/App.tsx:67
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 

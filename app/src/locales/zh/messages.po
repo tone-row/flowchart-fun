@@ -59,6 +59,7 @@ msgstr "从下到上"
 msgid "Breadthfirst"
 msgstr "宽度优先"
 
+#: src/components/ClearTextButton.tsx:43
 #: src/components/Navigation.tsx:267
 #: src/components/Navigation.tsx:547
 #: src/components/Navigation.tsx:597
@@ -92,11 +93,19 @@ msgstr "圆圈"
 msgid "Clay"
 msgstr "粘土"
 
+#: src/components/ClearTextButton.tsx:41
+msgid "Clear"
+msgstr "清除"
+
+#: src/components/ClearTextButton.tsx:34
+msgid "Clear text?"
+msgstr "清除文字？"
+
 #: src/components/MenuNext.tsx:447
 msgid "Clone"
 msgstr "克隆"
 
-#: src/components/Shared.tsx:168
+#: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "关闭"
 
@@ -294,7 +303,7 @@ msgstr "帮助"
 msgid "History"
 msgstr "历史"
 
-#: src/components/App.tsx:70
+#: src/components/App.tsx:73
 msgid "Home"
 msgstr "主页"
 
@@ -499,7 +508,7 @@ msgstr "这款应用的工作原理是输入"
 msgid "Top to Bottom"
 msgstr "从上到下"
 
-#: src/components/App.tsx:64
+#: src/components/App.tsx:67
 msgid "Try again"
 msgstr "重试"
 
