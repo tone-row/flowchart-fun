@@ -59,6 +59,7 @@ msgstr "아래에서 위로"
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
+#: src/components/ClearTextButton.tsx:43
 #: src/components/Navigation.tsx:267
 #: src/components/Navigation.tsx:547
 #: src/components/Navigation.tsx:597
@@ -92,11 +93,19 @@ msgstr "원"
 msgid "Clay"
 msgstr "점토"
 
+#: src/components/ClearTextButton.tsx:41
+msgid "Clear"
+msgstr "지우다"
+
+#: src/components/ClearTextButton.tsx:34
+msgid "Clear text?"
+msgstr "텍스트를 지우시겠습니까?"
+
 #: src/components/MenuNext.tsx:447
 msgid "Clone"
 msgstr "클론"
 
-#: src/components/Shared.tsx:168
+#: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "닫기"
 
@@ -294,7 +303,7 @@ msgstr "도움말"
 msgid "History"
 msgstr "기록"
 
-#: src/components/App.tsx:70
+#: src/components/App.tsx:73
 msgid "Home"
 msgstr "집"
 
@@ -499,7 +508,7 @@ msgstr "이 앱은 타이핑으로 작동합니다"
 msgid "Top to Bottom"
 msgstr "위에서 아래로"
 
-#: src/components/App.tsx:64
+#: src/components/App.tsx:67
 msgid "Try again"
 msgstr "다시 시도하세요"
 

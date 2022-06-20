@@ -1,3 +1,4 @@
+import { t, Trans } from "@lingui/macro";
 import { Trash } from "phosphor-react";
 import { useState } from "react";
 
@@ -30,17 +31,16 @@ export function ClearTextButton({ handleClear }: { handleClear: () => void }) {
           onDismiss: () => setDialogOpen(false),
         }}
       >
-        Clear text?
+        <Trans>Clear text?</Trans>
         <Button
           onClick={() => {
             handleClear();
             setDialogOpen(false);
           }}
           className={styles.Clear}
-        >
-          Clear
-        </Button>
-        <Button onClick={() => setDialogOpen(false)}>Cancel</Button>
+          text={t`Clear`}
+        />
+        <Button onClick={() => setDialogOpen(false)} text={t`Cancel`} />
       </Dialog>
     </>
   );

@@ -59,6 +59,7 @@ msgstr "Bottom to Top"
 msgid "Breadthfirst"
 msgstr "Breadthfirst"
 
+#: src/components/ClearTextButton.tsx:43
 #: src/components/Navigation.tsx:267
 #: src/components/Navigation.tsx:547
 #: src/components/Navigation.tsx:597
@@ -92,11 +93,19 @@ msgstr "Circle"
 msgid "Clay"
 msgstr "Clay"
 
+#: src/components/ClearTextButton.tsx:41
+msgid "Clear"
+msgstr "Clear"
+
+#: src/components/ClearTextButton.tsx:34
+msgid "Clear text?"
+msgstr "Clear text?"
+
 #: src/components/MenuNext.tsx:447
 msgid "Clone"
 msgstr "Clone"
 
-#: src/components/Shared.tsx:168
+#: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "Close"
 
@@ -294,7 +303,7 @@ msgstr "Help"
 msgid "History"
 msgstr "History"
 
-#: src/components/App.tsx:70
+#: src/components/App.tsx:73
 msgid "Home"
 msgstr "Home"
 
@@ -499,7 +508,7 @@ msgstr "This app works by typing"
 msgid "Top to Bottom"
 msgstr "Top to Bottom"
 
-#: src/components/App.tsx:64
+#: src/components/App.tsx:67
 msgid "Try again"
 msgstr "Try again"
 

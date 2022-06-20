@@ -59,6 +59,7 @@ msgstr "De baixo para cima"
 msgid "Breadthfirst"
 msgstr "Por extensão"
 
+#: src/components/ClearTextButton.tsx:43
 #: src/components/Navigation.tsx:267
 #: src/components/Navigation.tsx:547
 #: src/components/Navigation.tsx:597
@@ -92,11 +93,19 @@ msgstr "Círculo"
 msgid "Clay"
 msgstr "Argila"
 
+#: src/components/ClearTextButton.tsx:41
+msgid "Clear"
+msgstr "Apagar"
+
+#: src/components/ClearTextButton.tsx:34
+msgid "Clear text?"
+msgstr "Limpar o texto?"
+
 #: src/components/MenuNext.tsx:447
 msgid "Clone"
 msgstr "Clonar"
 
-#: src/components/Shared.tsx:168
+#: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "Fechar"
 
@@ -294,7 +303,7 @@ msgstr "Ajuda"
 msgid "History"
 msgstr "Histórico"
 
-#: src/components/App.tsx:70
+#: src/components/App.tsx:73
 msgid "Home"
 msgstr "Página inicial"
 
@@ -499,7 +508,7 @@ msgstr "Este aplicativo funciona por digitação"
 msgid "Top to Bottom"
 msgstr "De cima para baixo"
 
-#: src/components/App.tsx:64
+#: src/components/App.tsx:67
 msgid "Try again"
 msgstr "Tente novamente"
 

@@ -59,6 +59,7 @@ msgstr "De bas en haut"
 msgid "Breadthfirst"
 msgstr "Parcours en largeur"
 
+#: src/components/ClearTextButton.tsx:43
 #: src/components/Navigation.tsx:267
 #: src/components/Navigation.tsx:547
 #: src/components/Navigation.tsx:597
@@ -92,11 +93,19 @@ msgstr "Cercle"
 msgid "Clay"
 msgstr "Argile"
 
+#: src/components/ClearTextButton.tsx:41
+msgid "Clear"
+msgstr "Effacer"
+
+#: src/components/ClearTextButton.tsx:34
+msgid "Clear text?"
+msgstr "Effacer le texte?"
+
 #: src/components/MenuNext.tsx:447
 msgid "Clone"
 msgstr "Cloner"
 
-#: src/components/Shared.tsx:168
+#: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "Fermer"
 
@@ -294,7 +303,7 @@ msgstr "Aide"
 msgid "History"
 msgstr "Historique"
 
-#: src/components/App.tsx:70
+#: src/components/App.tsx:73
 msgid "Home"
 msgstr "Accueil"
 
@@ -499,7 +508,7 @@ msgstr "Chaque ligne creé une nouvelle boite"
 msgid "Top to Bottom"
 msgstr "De haut en bas"
 
-#: src/components/App.tsx:64
+#: src/components/App.tsx:67
 msgid "Try again"
 msgstr "Réessayer"
 
