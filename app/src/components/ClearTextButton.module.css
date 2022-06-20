@@ -1,0 +1,38 @@
+.ClearTextButton {
+  position: absolute;
+  --offset: calc(var(--spacer-px) * 1);
+  bottom: 0;
+  left: var(--offset);
+  --size: calc(var(--spacer-px) * 9);
+  width: var(--size);
+  height: var(--size);
+  display: grid;
+  place-content: center;
+  background-color: var(--color-nodeHover);
+}
+
+@media (min-width: 800px) {
+  .ClearTextButton {
+    display: none;
+  }
+}
+
+.ClearTextButton:hover {
+  background-color: var(--color-uiAccent);
+}
+
+.ClearTextButton:active {
+  background-color: var(--color-edgeHover);
+}
+
+.ClearTextButton:focus {
+  box-shadow: none;
+}
+
+.Clear {
+  background-color: #ff7575;
+}
+
+.Clear:hover {
+  background-color: #ff5252;
+}
