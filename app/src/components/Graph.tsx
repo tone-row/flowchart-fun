@@ -59,12 +59,10 @@ const Graph = memo(
     textToParse,
     setHoverLineNumber,
     shouldResize,
-    linesOfYaml = 0,
     setHiddenGraphOptions,
     hiddenGraphOptions = {},
   }: {
     textToParse: string;
-    linesOfYaml?: number;
     setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
     shouldResize: number;
     setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
@@ -194,7 +192,6 @@ const Graph = memo(
         setLayout,
         setElements,
         runLayout,
-        lineNumberStart: linesOfYaml,
         hiddenGraphOptionsString,
       });
     }, [
@@ -202,7 +199,6 @@ const Graph = memo(
       content,
       getSize,
       layout,
-      linesOfYaml,
       runLayout,
       setElements,
       setHasError,
@@ -318,7 +314,6 @@ function updateGraph({
   setLayout,
   setElements,
   runLayout = true,
-  lineNumberStart = 1,
   hiddenGraphOptionsString = "{}",
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
@@ -332,7 +327,6 @@ function updateGraph({
   setElements: StoreGraph["setElements"];
   getSize: TGetSize;
   runLayout?: boolean;
-  lineNumberStart?: number;
   hiddenGraphOptionsString?: string;
 }) {
   if (cy.current) {
@@ -344,7 +338,7 @@ function updateGraph({
       );
 
       // Parse
-      elements = parseText(content, getSize, lineNumberStart);
+      elements = parseText(content, getSize);
 
       // Parse Hidden Graph Options
       let hiddenGraphOptions: HiddenGraphOptions = {};

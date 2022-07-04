@@ -50,7 +50,6 @@ function ReadOnly() {
       setHoverLineNumber={setHoverLineNumber}
       textToParse={text}
       graphOptions={graphOptions}
-      linesOfYaml={linesOfYaml}
       hiddenGraphOptions={hiddenGraphOptions}
     >
       <Editor

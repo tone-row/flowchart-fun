@@ -128,7 +128,6 @@ export default function EditHosted() {
       setHoverLineNumber={setHoverLineNumber}
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
-      linesOfYaml={linesOfYaml}
       hiddenGraphOptions={hiddenGraphOptions}
       setHiddenGraphOptions={setHiddenGraphOptions}
     >

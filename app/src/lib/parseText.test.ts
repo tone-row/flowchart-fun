@@ -314,7 +314,7 @@ describe("parseText", () => {
     ]);
   });
 
-  test("line number should account for yaml length, passed in", () => {
+  test.skip("line number should account for yaml length, passed in", () => {
     const edges = parseText(`a\n\t(5)`, getSize, 4).filter(edgesOnly);
     expect(edges).toContainEqual({
       data: {
