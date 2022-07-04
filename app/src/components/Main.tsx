@@ -23,7 +23,6 @@ import TextResizer from "./TextResizer";
 export type MainProps = {
   children?: ReactNode;
   textToParse: string;
-  linesOfYaml?: number;
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
   setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
   hiddenGraphOptions?: HiddenGraphOptions;
@@ -34,7 +33,6 @@ const Main = memo(
     children,
     textToParse,
     setHoverLineNumber,
-    linesOfYaml,
     setHiddenGraphOptions,
     hiddenGraphOptions,
   }: MainProps) => {
@@ -55,7 +53,6 @@ const Main = memo(
             textToParse={textToParse}
             setHoverLineNumber={setHoverLineNumber}
             shouldResize={shouldResize}
-            linesOfYaml={linesOfYaml}
             setHiddenGraphOptions={setHiddenGraphOptions}
             hiddenGraphOptions={hiddenGraphOptions}
           />
