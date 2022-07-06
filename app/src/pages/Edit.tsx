@@ -64,7 +64,6 @@ const Edit = memo(function Edit() {
       setHoverLineNumber={setHoverLineNumber}
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
-      linesOfYaml={linesOfYaml}
       setHiddenGraphOptions={setHiddenGraphOptions}
       hiddenGraphOptions={hiddenGraphOptions}
     >

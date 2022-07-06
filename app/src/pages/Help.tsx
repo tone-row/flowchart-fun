@@ -71,7 +71,6 @@ export default function Help() {
       setHoverLineNumber={setHoverLineNumber}
       graphOptions={graphOptions}
       updateGraphOptionsText={updateGraphOptionsText}
-      linesOfYaml={linesOfYaml}
       hiddenGraphOptions={hiddenGraphOptions}
       setHiddenGraphOptions={setHiddenGraphOptions}
     >

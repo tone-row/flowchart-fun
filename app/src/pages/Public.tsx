@@ -60,13 +60,7 @@ function Public() {
     }
   }, [hoverLineNumber]);
 
-  const { data: graphOptions, matter: graphOptionsString } = matter(
-    strip(textToParse),
-    { delimiters }
-  );
-  const linesOfYaml = graphOptionsString
-    ? graphOptionsString.split("\n").length + 1
-    : 0;
+  const { data: graphOptions } = matter(strip(textToParse), { delimiters });
 
   const loading = useRef(<Loading />);
   const onMount = useEditorOnMount(editorRef, monacoRef);
@@ -77,7 +71,6 @@ function Public() {
       setHoverLineNumber={setHoverLineNumber}
       textToParse={textToParse}
       graphOptions={graphOptions}
-      linesOfYaml={linesOfYaml}
       hiddenGraphOptions={hiddenGraphOptions}
     >
       <Editor
