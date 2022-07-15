@@ -47,7 +47,7 @@ export function toMermaidJS({
     const [before, after] = labelDelimiterFromShape(
       shape as cytoscape.Css.Node["shape"]
     );
-    lines.push(`\t${safeId}${before}"${label || " "}"${after}`);
+    lines.push(`\t${safeId}${before}"${getSafeLabel(label) || " "}"${after}`);
     // Add Style
     if (color || backgroundColor)
       styleLines.push(getStyle({ id: safeId, color, backgroundColor }));
@@ -57,8 +57,11 @@ export function toMermaidJS({
     const { source, target, label } = edge.data;
     const safeSource = getSafe(source);
     const safeTarget = getSafe(target);
+    const safeLabel = getSafeLabel(label);
     lines.push(
-      `\t${safeSource} -${label ? `- "${label}" -` : ""}-> ${safeTarget}`
+      `\t${safeSource} -${
+        safeLabel ? `- "${safeLabel}" -` : ""
+      }-> ${safeTarget}`
     );
   }
 
@@ -115,4 +118,13 @@ function getStyle({
   }
   // add initial space
   return style.length ? `style ${id} ${style.join(",")}` : "";
+}
+
+function getSafeLabel(unsafe: string) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }

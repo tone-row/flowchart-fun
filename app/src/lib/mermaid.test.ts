@@ -288,4 +288,24 @@ describe("toMermaidJS", () => {
       })
     ).toEqual('flowchart\n\tId_With_Spaces["a"]');
   });
+
+  test("Escapes characters in labels", () => {
+    expect(
+      toMermaidJS({
+        layout: {},
+        elements: [
+          {
+            classes: "",
+            data: {
+              id: "N14e",
+              label: 'has a "quote"',
+              lineNumber: 1,
+              width: 50,
+              height: 50,
+            },
+          },
+        ],
+      })
+    ).toEqual('flowchart\n\tN14e["has a &quot;quote&quot;"]');
+  });
 });
