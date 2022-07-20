@@ -32,6 +32,7 @@ const blokus: Theme = {
     fontFamily,
     lineHeight,
     fontSize,
+    files: [{ name: fontFamily, url: "SpaceMono-Regular.woff2" }],
   },
   styles: [
     {
