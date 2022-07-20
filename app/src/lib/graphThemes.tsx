@@ -24,7 +24,10 @@ export type GraphThemes =
   | "clay"
   | "playbook"
   | "blokus"
-  | "museum";
+  | "museum"
+  | "retro"
+  | "futuristic"
+  | "comic-book";
 
 const publicThemes = themes
   .filter((theme) => !theme.sponsorOnly)
