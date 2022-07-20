@@ -17,7 +17,7 @@ const colors = {
 
 const fontFamily = "Josefin Sans";
 const fontSize = 10;
-const backgroundColor = "#EFDDB0";
+const backgroundColor = "#F0DDB1";
 const nodeBackgroundColor = colors.white;
 const arrowColor = colors.black;
 const nodeLabelColor = arrowColor;
