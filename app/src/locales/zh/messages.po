@@ -89,7 +89,7 @@ msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口
 msgid "Circle"
 msgstr "圆圈"
 
-#: src/lib/graphOptions.ts:66
+#: src/lib/graphOptions.ts:69
 msgid "Clay"
 msgstr "粘土"
 
@@ -108,6 +108,10 @@ msgstr "克隆"
 #: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "关闭"
+
+#: src/lib/graphOptions.ts:68
+msgid "Comic Book"
+msgstr ""
 
 #: src/lib/graphOptions.ts:26
 msgid "Concentric"
@@ -207,7 +211,7 @@ msgstr "下载 SVG"
 msgid "Duplicate"
 msgstr "复制"
 
-#: src/components/Sponsor.tsx:62
+#: src/components/Sponsor.tsx:45
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "在任意设备上编辑图表；与任何人分享这些图表；仅需发布一次图表，它们会自动更新您的更改。"
 
@@ -270,15 +274,19 @@ msgstr "在冻结图表后，你可以通过禁用自动布局来自定义布局
 msgid "Fullscreen"
 msgstr "全屏"
 
+#: src/lib/graphOptions.ts:67
+msgid "Futuristic"
+msgstr ""
+
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
 msgstr "获取更多布局"
 
-#: src/lib/graphOptions.ts:70
+#: src/lib/graphOptions.ts:73
 msgid "Get More Themes"
 msgstr "获取更多主题"
 
-#: src/components/Sponsor.tsx:45
+#: src/components/Sponsor.tsx:55
 msgid "Get access to alternative styles for your flowcharts"
 msgstr "获取流程图的替代样式"
 
@@ -309,7 +317,7 @@ msgstr "主页"
 
 #: src/components/Navigation.tsx:56
 #: src/components/Navigation.tsx:375
-#: src/components/Sponsor.tsx:59
+#: src/components/Sponsor.tsx:42
 msgid "Hosted Charts"
 msgstr "托管的图表"
 
@@ -371,15 +379,15 @@ msgstr "设为公开访问"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/Sponsor.tsx:49
+#: src/components/Sponsor.tsx:59
 msgid "More Layouts"
 msgstr "更多布局"
 
-#: src/components/Sponsor.tsx:42
+#: src/components/Sponsor.tsx:52
 msgid "More Themes"
 msgstr "更多主题"
 
-#: src/lib/graphOptions.ts:68
+#: src/lib/graphOptions.ts:71
 msgid "Museum"
 msgstr "博物馆"
 
@@ -397,11 +405,11 @@ msgstr "需要帮助？<0>请查看我们的文档。</0>"
 msgid "Next charge"
 msgstr "下次扣费"
 
-#: src/lib/graphOptions.ts:67
+#: src/lib/graphOptions.ts:70
 msgid "Playbook"
 msgstr "剧本"
 
-#: src/components/Sponsor.tsx:52
+#: src/components/Sponsor.tsx:62
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "强大的布局算法，让各种形状和大小的图形井然有序"
 
@@ -435,6 +443,10 @@ msgstr "重置"
 msgid "Resume Subscription"
 msgstr "恢复订阅"
 
+#: src/lib/graphOptions.ts:66
+msgid "Retro"
+msgstr ""
+
 #: src/components/SponsorDashboard.tsx:235
 msgid "Return"
 msgstr "返回"
@@ -457,7 +469,7 @@ msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the 
 msgstr "以每月 1 美元的价格赞助 flowchart.fun，以访问托管的流程图、最新的样式和功能"
 
 #: src/components/Sponsor.tsx:27
-msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
+msgid "Sponsor flowchart.fun for <0>$1/month</0> or <1>$10/year</1> to get access to..."
 msgstr "以每月 1 美元或每年 10 美元的价格赞助 flowchart.fun ，就可以获得......"
 
 #: src/components/MenuNext.tsx:167

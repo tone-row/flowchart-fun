@@ -380,28 +380,21 @@ function HostedCharts() {
         </Trans>
       </TitleAndSummary>
       {validSponsor ? (
-        !tooManyCharts ? (
-          <Section as="form" onSubmit={handleSubmit(onSubmit)}>
-            <Box template="none / 1fr auto" gap={3}>
-              <Input
-                placeholder={t`Enter a title`}
-                {...register("name", { required: true })}
-                disabled={isLoading}
-                isLoading={isLoading}
-              />
-              <Button
-                disabled={!name || isLoading}
-                type="submit"
-                text={t`Create`}
-              />
-            </Box>
-          </Section>
-        ) : (
-          <Notice boxProps={{ self: "start start" }}>
-            <span>{`16 is currently the maximum number of charts. This number will
-            increase in the near future.`}</span>
-          </Notice>
-        )
+        <Section as="form" onSubmit={handleSubmit(onSubmit)}>
+          <Box template="none / 1fr auto" gap={3}>
+            <Input
+              placeholder={t`Enter a title`}
+              {...register("name", { required: true })}
+              disabled={isLoading}
+              isLoading={isLoading}
+            />
+            <Button
+              disabled={!name || isLoading}
+              type="submit"
+              text={t`Create`}
+            />
+          </Box>
+        </Section>
       ) : (
         <Notice
           boxProps={{ as: "button", onClick: () => setShowing("sponsor") }}

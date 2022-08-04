@@ -89,7 +89,7 @@ msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫�
 msgid "Circle"
 msgstr "원"
 
-#: src/lib/graphOptions.ts:66
+#: src/lib/graphOptions.ts:69
 msgid "Clay"
 msgstr "점토"
 
@@ -108,6 +108,10 @@ msgstr "클론"
 #: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "닫기"
+
+#: src/lib/graphOptions.ts:68
+msgid "Comic Book"
+msgstr ""
 
 #: src/lib/graphOptions.ts:26
 msgid "Concentric"
@@ -207,7 +211,7 @@ msgstr "SVG 다운로드"
 msgid "Duplicate"
 msgstr "복제"
 
-#: src/components/Sponsor.tsx:62
+#: src/components/Sponsor.tsx:45
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "어떤 기기에서나 차트를 편집할 수 있습니다. 누구와도 공유할 수 있습니다. 한 번 차트를 배포하면 수정사항이 즉각 반영됩니다."
 
@@ -270,15 +274,19 @@ msgstr "차트를 고정하면 자동 레이아웃을 비활성화하여 레이�
 msgid "Fullscreen"
 msgstr "전체 화면"
 
+#: src/lib/graphOptions.ts:67
+msgid "Futuristic"
+msgstr ""
+
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
 msgstr "더 많은 레이아웃을 보고 싶어요"
 
-#: src/lib/graphOptions.ts:70
+#: src/lib/graphOptions.ts:73
 msgid "Get More Themes"
 msgstr "더 많은 테마 받기"
 
-#: src/components/Sponsor.tsx:45
+#: src/components/Sponsor.tsx:55
 msgid "Get access to alternative styles for your flowcharts"
 msgstr "플로우차트에 적용할 새로운 스타일을 잠금해제하세요"
 
@@ -309,7 +317,7 @@ msgstr "집"
 
 #: src/components/Navigation.tsx:56
 #: src/components/Navigation.tsx:375
-#: src/components/Sponsor.tsx:59
+#: src/components/Sponsor.tsx:42
 msgid "Hosted Charts"
 msgstr "호스트 차트"
 
@@ -371,15 +379,15 @@ msgstr "공개적으로 액세스 가능하게 만들기"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/Sponsor.tsx:49
+#: src/components/Sponsor.tsx:59
 msgid "More Layouts"
 msgstr "더 많은 레이아웃"
 
-#: src/components/Sponsor.tsx:42
+#: src/components/Sponsor.tsx:52
 msgid "More Themes"
 msgstr "더 많은 테마 보기"
 
-#: src/lib/graphOptions.ts:68
+#: src/lib/graphOptions.ts:71
 msgid "Museum"
 msgstr "박물관"
 
@@ -397,11 +405,11 @@ msgstr "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</
 msgid "Next charge"
 msgstr "다음 청구 금액"
 
-#: src/lib/graphOptions.ts:67
+#: src/lib/graphOptions.ts:70
 msgid "Playbook"
 msgstr "플레이북"
 
-#: src/components/Sponsor.tsx:52
+#: src/components/Sponsor.tsx:62
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "온갖 크기와 모양의 그래프를 질서있게 정리하는 강력한 레이아웃 알고리즘"
 
@@ -435,6 +443,10 @@ msgstr "재설정"
 msgid "Resume Subscription"
 msgstr "구독 재개"
 
+#: src/lib/graphOptions.ts:66
+msgid "Retro"
+msgstr ""
+
 #: src/components/SponsorDashboard.tsx:235
 msgid "Return"
 msgstr "반품"
@@ -457,7 +469,7 @@ msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the 
 msgstr "Flowchart.fun을 월 1달러에 후원해서 호스트 플로우차트, 최신 스타일과 기능을 이용하세요"
 
 #: src/components/Sponsor.tsx:27
-msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
+msgid "Sponsor flowchart.fun for <0>$1/month</0> or <1>$10/year</1> to get access to..."
 msgstr "1개월에 $1 또는 1년에 $10으로 다음 기능 잠금해제..."
 
 #: src/components/MenuNext.tsx:167

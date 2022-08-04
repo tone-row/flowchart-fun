@@ -89,7 +89,7 @@ msgstr "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses
 msgid "Circle"
 msgstr "Kreis"
 
-#: src/lib/graphOptions.ts:66
+#: src/lib/graphOptions.ts:69
 msgid "Clay"
 msgstr "Ton"
 
@@ -108,6 +108,10 @@ msgstr "Klon"
 #: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "Schließen"
+
+#: src/lib/graphOptions.ts:68
+msgid "Comic Book"
+msgstr ""
 
 #: src/lib/graphOptions.ts:26
 msgid "Concentric"
@@ -207,7 +211,7 @@ msgstr "SVG herunterladen"
 msgid "Duplicate"
 msgstr "Duplizieren"
 
-#: src/components/Sponsor.tsx:62
+#: src/components/Sponsor.tsx:45
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "Bearbeiten Sie Ihre Diagramme auf jedem Gerät. Teilen Sie diese mit jedem. Veröffentlichen Sie Ihre Diagramme einmal und sie bleiben mit Ihren Änderungen auf dem neuesten Stand."
 
@@ -270,15 +274,19 @@ msgstr "Wenn Sie Ihr Diagramm einfrieren, können Sie das Layout anpassen, indem
 msgid "Fullscreen"
 msgstr "Vollbild"
 
+#: src/lib/graphOptions.ts:67
+msgid "Futuristic"
+msgstr ""
+
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
 msgstr "Mehr Layouts erhalten"
 
-#: src/lib/graphOptions.ts:70
+#: src/lib/graphOptions.ts:73
 msgid "Get More Themes"
 msgstr "Weitere Themen erhalten"
 
-#: src/components/Sponsor.tsx:45
+#: src/components/Sponsor.tsx:55
 msgid "Get access to alternative styles for your flowcharts"
 msgstr "Erhalten Sie Zugriff auf alternative Stile für Ihre Flussdiagramme"
 
@@ -309,7 +317,7 @@ msgstr "Startseite"
 
 #: src/components/Navigation.tsx:56
 #: src/components/Navigation.tsx:375
-#: src/components/Sponsor.tsx:59
+#: src/components/Sponsor.tsx:42
 msgid "Hosted Charts"
 msgstr "Gehostete Diagramme"
 
@@ -371,15 +379,15 @@ msgstr "Öffentlich zugänglich machen"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/Sponsor.tsx:49
+#: src/components/Sponsor.tsx:59
 msgid "More Layouts"
 msgstr "Weitere Layouts"
 
-#: src/components/Sponsor.tsx:42
+#: src/components/Sponsor.tsx:52
 msgid "More Themes"
 msgstr "Weitere Themen"
 
-#: src/lib/graphOptions.ts:68
+#: src/lib/graphOptions.ts:71
 msgid "Museum"
 msgstr "Museum"
 
@@ -397,11 +405,11 @@ msgstr "Brauchen Sie Hilfe? <0>Sehen Sie sich unsere Dokumentation an.</0>"
 msgid "Next charge"
 msgstr "Nächste Gebühr"
 
-#: src/lib/graphOptions.ts:67
+#: src/lib/graphOptions.ts:70
 msgid "Playbook"
 msgstr "Spielbuch"
 
-#: src/components/Sponsor.tsx:52
+#: src/components/Sponsor.tsx:62
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "Leistungsstarke Layout-Algorithmen, die Ordnung in Diagramme aller Formen und Größen bringen"
 
@@ -435,6 +443,10 @@ msgstr "Zurücksetzen"
 msgid "Resume Subscription"
 msgstr "Abonnement fortsetzen"
 
+#: src/lib/graphOptions.ts:66
+msgid "Retro"
+msgstr ""
+
 #: src/components/SponsorDashboard.tsx:235
 msgid "Return"
 msgstr "Zurückkehren"
@@ -457,7 +469,7 @@ msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the 
 msgstr "Sponsern Sie flowchart.fun für 1 $ pro Monat, um Zugang zu gehosteten Flussdiagrammen und den neuesten Stilen und Funktionen zu erhalten"
 
 #: src/components/Sponsor.tsx:27
-msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
+msgid "Sponsor flowchart.fun for <0>$1/month</0> or <1>$10/year</1> to get access to..."
 msgstr "Sponsern Sie flowchart.fun für <0>$1 / Monat</0> oder <1>$10 / Jahr</1>, um Zugang zu..."
 
 #: src/components/MenuNext.tsx:167

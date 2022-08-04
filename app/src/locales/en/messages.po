@@ -89,7 +89,7 @@ msgstr "Check your email for a link to log in. You can close this window."
 msgid "Circle"
 msgstr "Circle"
 
-#: src/lib/graphOptions.ts:66
+#: src/lib/graphOptions.ts:69
 msgid "Clay"
 msgstr "Clay"
 
@@ -108,6 +108,10 @@ msgstr "Clone"
 #: src/components/Shared.tsx:169
 msgid "Close"
 msgstr "Close"
+
+#: src/lib/graphOptions.ts:68
+msgid "Comic Book"
+msgstr "Comic Book"
 
 #: src/lib/graphOptions.ts:26
 msgid "Concentric"
@@ -207,7 +211,7 @@ msgstr "Download SVG"
 msgid "Duplicate"
 msgstr "Duplicate"
 
-#: src/components/Sponsor.tsx:62
+#: src/components/Sponsor.tsx:45
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 
@@ -270,15 +274,19 @@ msgstr "Freezing your chart allows you to customize the layout by disabling auto
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
+#: src/lib/graphOptions.ts:67
+msgid "Futuristic"
+msgstr "Futuristic"
+
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
 msgstr "Get More Layouts"
 
-#: src/lib/graphOptions.ts:70
+#: src/lib/graphOptions.ts:73
 msgid "Get More Themes"
 msgstr "Get More Themes"
 
-#: src/components/Sponsor.tsx:45
+#: src/components/Sponsor.tsx:55
 msgid "Get access to alternative styles for your flowcharts"
 msgstr "Get access to alternative styles for your flowcharts"
 
@@ -309,7 +317,7 @@ msgstr "Home"
 
 #: src/components/Navigation.tsx:56
 #: src/components/Navigation.tsx:375
-#: src/components/Sponsor.tsx:59
+#: src/components/Sponsor.tsx:42
 msgid "Hosted Charts"
 msgstr "Hosted Charts"
 
@@ -371,15 +379,15 @@ msgstr "Make publicly accessible"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/Sponsor.tsx:49
+#: src/components/Sponsor.tsx:59
 msgid "More Layouts"
 msgstr "More Layouts"
 
-#: src/components/Sponsor.tsx:42
+#: src/components/Sponsor.tsx:52
 msgid "More Themes"
 msgstr "More Themes"
 
-#: src/lib/graphOptions.ts:68
+#: src/lib/graphOptions.ts:71
 msgid "Museum"
 msgstr "Museum"
 
@@ -397,11 +405,11 @@ msgstr "Need Help? <0>Check out our documentation.</0>"
 msgid "Next charge"
 msgstr "Next charge"
 
-#: src/lib/graphOptions.ts:67
+#: src/lib/graphOptions.ts:70
 msgid "Playbook"
 msgstr "Playbook"
 
-#: src/components/Sponsor.tsx:52
+#: src/components/Sponsor.tsx:62
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 
@@ -435,6 +443,10 @@ msgstr "Reset"
 msgid "Resume Subscription"
 msgstr "Resume Subscription"
 
+#: src/lib/graphOptions.ts:66
+msgid "Retro"
+msgstr "Retro"
+
 #: src/components/SponsorDashboard.tsx:235
 msgid "Return"
 msgstr "Return"
@@ -457,8 +469,8 @@ msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the 
 msgstr "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the newest styles and features"
 
 #: src/components/Sponsor.tsx:27
-msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
-msgstr "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
+msgid "Sponsor flowchart.fun for <0>$1/month</0> or <1>$10/year</1> to get access to..."
+msgstr "Sponsor flowchart.fun for <0>$1/month</0> or <1>$10/year</1> to get access to..."
 
 #: src/components/MenuNext.tsx:167
 #: src/components/MenuNext.tsx:268
