@@ -89,6 +89,15 @@ export default function MenuNext() {
           <BrandSvg width={40} className={styles.Brand} />
         </Box>
         <MenuTabButton
+          icon={Plus}
+          label={t`New`}
+          onClick={() => {
+            push(`/${randomChartName()}`);
+            setShowing("editor");
+            gaNewChart();
+          }}
+        />
+        <MenuTabButton
           icon={TreeStructure}
           selected={"editor" === showing && !isHelpPage}
           label={t`Editor`}
@@ -108,22 +117,12 @@ export default function MenuNext() {
           }}
         />
         <MenuTabButton
-          icon={Plus}
-          label={t`Create`}
+          icon={session ? ActiveUser : User}
+          selected={"sponsor" === showing}
+          label={t`Sponsors`}
           onClick={() => {
-            push(`/${randomChartName()}`);
-            setShowing("editor");
-            gaNewChart();
-          }}
-        />
-        <MenuTabButton
-          icon={Question}
-          label={t`Help`}
-          selected={"editor" === showing && isHelpPage}
-          onClick={() => {
-            push("/h");
-            setShowing("editor");
-            gaChangeTab({ action: "help" });
+            setShowing("sponsor");
+            gaChangeTab({ action: "sponsor" });
           }}
         />
       </Box>
@@ -144,12 +143,13 @@ export default function MenuNext() {
         className={styles.Side}
       >
         <MenuTabButton
-          icon={Gear}
-          selected={"settings" === showing}
-          label={t`Settings`}
+          icon={Question}
+          label={t`Help`}
+          selected={"editor" === showing && isHelpPage}
           onClick={() => {
-            setShowing("settings");
-            gaChangeTab({ action: "settings" });
+            push("/h");
+            setShowing("editor");
+            gaChangeTab({ action: "help" });
           }}
         />
         <MenuTabButton
@@ -162,12 +162,12 @@ export default function MenuNext() {
           }}
         />
         <MenuTabButton
-          icon={session ? ActiveUser : User}
-          selected={"sponsor" === showing}
-          label={t`Sponsors`}
+          icon={Gear}
+          selected={"settings" === showing}
+          label={t`Settings`}
           onClick={() => {
-            setShowing("sponsor");
-            gaChangeTab({ action: "sponsor" });
+            setShowing("settings");
+            gaChangeTab({ action: "settings" });
           }}
         />
       </Box>

@@ -27,16 +27,26 @@ export default function Sponsor() {
         <Trans>
           Sponsor flowchart.fun for{" "}
           <Box as="span" className={styles.orange}>
-            $1 / month
+            $1/month
           </Box>{" "}
           or{" "}
           <Box as="span" className={styles.orange}>
-            $10 / year
+            $10/year
           </Box>{" "}
           to get access to...
         </Trans>
       </Type>
       <Box gap={10}>
+        <ReasonToSubscribe
+          alt="Hosted Charts"
+          heading={<Trans>Hosted Charts</Trans>}
+          imgSrc="/images/e.png"
+        >
+          <Trans>
+            Edit your charts on any device. Share them with anyone. Publish your
+            charts once and they remain up to date with your changes.
+          </Trans>
+        </ReasonToSubscribe>
         <ReasonToSubscribe
           alt="More Themes"
           heading={<Trans>More Themes</Trans>}
@@ -54,20 +64,10 @@ export default function Sponsor() {
             and sizes
           </Trans>
         </ReasonToSubscribe>
-        <ReasonToSubscribe
-          alt="Hosted Charts"
-          heading={<Trans>Hosted Charts</Trans>}
-          imgSrc="/images/e.png"
-        >
-          <Trans>
-            Edit your charts on any device. Share them with anyone. Publish your
-            charts once and they remain up to date with your changes.
-          </Trans>
-        </ReasonToSubscribe>
       </Box>
       <Box gap={4}>
-        <SponsorBlock />
         <LoginBlock />
+        <SponsorBlock />
       </Box>
       {/* <Box
         content="start normal"
