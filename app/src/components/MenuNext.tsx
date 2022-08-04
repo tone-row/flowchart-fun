@@ -90,7 +90,7 @@ export default function MenuNext() {
         </Box>
         <MenuTabButton
           icon={Plus}
-          label={t`Create`}
+          label={t`New`}
           onClick={() => {
             push(`/${randomChartName()}`);
             setShowing("editor");

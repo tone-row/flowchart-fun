@@ -61,8 +61,8 @@ msgstr "चौड़ाई पहले"
 
 #: src/components/ClearTextButton.tsx:43
 #: src/components/Navigation.tsx:267
-#: src/components/Navigation.tsx:547
-#: src/components/Navigation.tsx:597
+#: src/components/Navigation.tsx:540
+#: src/components/Navigation.tsx:590
 #: src/components/SponsorDashboard.tsx:127
 #: src/components/SponsorDashboard.tsx:138
 #: src/components/SponsorDashboard.tsx:227
@@ -75,12 +75,12 @@ msgstr "रद्द करें"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
-#: src/components/MenuNext.tsx:104
+#: src/components/MenuNext.tsx:113
 #: src/components/MenuNext.tsx:266
 msgid "Charts"
 msgstr "चार्ट"
 
-#: src/components/LoginForm.tsx:30
+#: src/components/LoginForm.tsx:35
 #: src/components/Sponsor.tsx:163
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
@@ -111,7 +111,7 @@ msgstr "बंद करें"
 
 #: src/lib/graphOptions.ts:68
 msgid "Comic Book"
-msgstr ""
+msgstr "कॉमिक बुक"
 
 #: src/lib/graphOptions.ts:26
 msgid "Concentric"
@@ -125,9 +125,9 @@ msgstr "सिकोड़ना"
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
-#: src/components/Navigation.tsx:480
-#: src/components/Navigation.tsx:548
-#: src/components/Navigation.tsx:582
+#: src/components/Navigation.tsx:473
+#: src/components/Navigation.tsx:541
+#: src/components/Navigation.tsx:575
 #: src/components/ShareDialog.tsx:227
 #: src/components/ShareDialog.tsx:228
 #: src/components/ShareDialog.tsx:294
@@ -142,10 +142,9 @@ msgstr "PNG छवि कॉपी करें"
 msgid "Copy SVG Code"
 msgstr "SVG कोड कॉपी करें"
 
-#: src/components/MenuNext.tsx:112
 #: src/components/Navigation.tsx:177
 #: src/components/Navigation.tsx:337
-#: src/components/Navigation.tsx:395
+#: src/components/Navigation.tsx:394
 msgid "Create"
 msgstr "बनाएँ"
 
@@ -154,7 +153,7 @@ msgstr "बनाएँ"
 msgid "Create a link directly using the exact label text"
 msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
 
-#: src/components/Navigation.tsx:634
+#: src/components/Navigation.tsx:627
 msgid "Created"
 msgstr "बनाया गया"
 
@@ -174,7 +173,7 @@ msgstr "तारीख़"
 #: src/components/Navigation.tsx:256
 #: src/components/Navigation.tsx:261
 #: src/components/Navigation.tsx:270
-#: src/components/Navigation.tsx:598
+#: src/components/Navigation.tsx:591
 msgid "Delete"
 msgstr "हटाएँ"
 
@@ -186,7 +185,7 @@ msgstr "दिशा"
 msgid "Do you want to cancel your subscription?"
 msgstr "क्या आप अपनी सदस्यता रद्द करना चाहते हैं?"
 
-#: src/components/Navigation.tsx:591
+#: src/components/Navigation.tsx:584
 msgid "Do you want to delete this?"
 msgstr "क्या आप इसे डिलीट करना चाहते हैं?"
 
@@ -207,7 +206,7 @@ msgid "Download SVG"
 msgstr "SVG डाउनलोड करें"
 
 #: src/components/Navigation.tsx:313
-#: src/components/Navigation.tsx:533
+#: src/components/Navigation.tsx:526
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
 
@@ -215,7 +214,7 @@ msgstr "डुप्लिकेट बनाएँ"
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "अपने चार्ट को किसी भी डिवाइस पर एडिट करें. किसी के भी साथ उन्हें शेयर करें. एक बार अपने चार्ट को पब्लिश करें और वह बदलाव के साथ अप टू डेट रहेगा."
 
-#: src/components/MenuNext.tsx:94
+#: src/components/MenuNext.tsx:103
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "संपादक"
@@ -224,7 +223,7 @@ msgstr "संपादक"
 msgid "Eggs"
 msgstr "अंडे"
 
-#: src/components/LoginForm.tsx:45
+#: src/components/LoginForm.tsx:50
 msgid "Email"
 msgstr "ईमेल"
 
@@ -233,8 +232,8 @@ msgid "Email (optional)"
 msgstr "ईमेल (ऐच्छिक)"
 
 #: src/components/Navigation.tsx:169
-#: src/components/Navigation.tsx:387
-#: src/components/Navigation.tsx:539
+#: src/components/Navigation.tsx:386
+#: src/components/Navigation.tsx:532
 msgid "Enter a title"
 msgstr "एक शीर्षक दर्ज करें"
 
@@ -276,7 +275,7 @@ msgstr "फ़ुलस्क्रीन"
 
 #: src/lib/graphOptions.ts:67
 msgid "Futuristic"
-msgstr ""
+msgstr "भविष्य का"
 
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
@@ -303,7 +302,7 @@ msgstr "ग्रिड"
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/components/MenuNext.tsx:121
+#: src/components/MenuNext.tsx:147
 msgid "Help"
 msgstr "मदद"
 
@@ -391,14 +390,18 @@ msgstr "ज़्यादा थीम"
 msgid "Museum"
 msgstr "म्यूज़ियम"
 
-#: src/components/Navigation.tsx:622
-#: src/components/Navigation.tsx:658
+#: src/components/Navigation.tsx:615
+#: src/components/Navigation.tsx:651
 msgid "Name"
 msgstr "नाम"
 
 #: src/components/EditorError.tsx:39
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "मदद चाहिए? <0>हमारे दस्तावेज़ देखें।</0>"
+
+#: src/components/MenuNext.tsx:93
+msgid "New"
+msgstr "नया"
 
 #: src/components/SponsorDashboard.tsx:89
 #: src/components/SponsorDashboard.tsx:280
@@ -413,7 +416,7 @@ msgstr "प्लेबुक"
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "शक्तिशाली लेआउट एल्गोरिदम जो सभी शेप और साइज़ के ग्राफ़ में क्रम लाते हैं"
 
-#: src/components/Navigation.tsx:626
+#: src/components/Navigation.tsx:619
 #: src/components/ShareDialog.tsx:91
 #: src/components/ShareDialog.tsx:117
 msgid "Public"
@@ -445,7 +448,7 @@ msgstr "सदस्यता फिर से शुरू करें"
 
 #: src/lib/graphOptions.ts:66
 msgid "Retro"
-msgstr ""
+msgstr "रेट्रो"
 
 #: src/components/SponsorDashboard.tsx:235
 msgid "Return"
@@ -455,10 +458,14 @@ msgstr "वापसी"
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
-#: src/components/MenuNext.tsx:149
+#: src/components/MenuNext.tsx:167
 #: src/components/MenuNext.tsx:264
 msgid "Settings"
 msgstr "सेटिंग"
+
+#: src/components/LoginForm.tsx:58
+msgid "Sign In"
+msgstr "साइन इन करें"
 
 #: src/components/Sponsor.tsx:242
 msgid "Sign Up"
@@ -472,7 +479,7 @@ msgstr "होस्टेड फ़्लोचार्ट और नए स्�
 msgid "Sponsor flowchart.fun for <0>$1/month</0> or <1>$10/year</1> to get access to..."
 msgstr "स्पॉनसर flowchart.fun $1/महीने या $10/साल के लिए, इस का एक्सेस पाने के ख़ातिर..."
 
-#: src/components/MenuNext.tsx:167
+#: src/components/MenuNext.tsx:122
 #: src/components/MenuNext.tsx:268
 msgid "Sponsors"
 msgstr "स्पॉन्सर्स"
@@ -486,7 +493,6 @@ msgid "Status"
 msgstr "स्टेटस"
 
 #: src/components/Feedback.tsx:93
-#: src/components/LoginForm.tsx:53
 #: src/components/MenuNext.tsx:400
 msgid "Submit"
 msgstr "भेजना"
@@ -524,7 +530,7 @@ msgstr "ऊपर से नीचे"
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
-#: src/components/Navigation.tsx:630
+#: src/components/Navigation.tsx:623
 msgid "Updated"
 msgstr "अपडेट किया गया"
 
@@ -556,7 +562,7 @@ msgstr "आप हमारे साथ क्या शेयर करना 
 msgid "With Editor"
 msgstr "एडिटर के साथ"
 
-#: src/components/Navigation.tsx:409
+#: src/components/Navigation.tsx:402
 #: src/components/SponsorDashboard.tsx:65
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें."
