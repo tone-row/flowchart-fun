@@ -61,8 +61,8 @@ msgstr "In die Breite"
 
 #: src/components/ClearTextButton.tsx:43
 #: src/components/Navigation.tsx:267
-#: src/components/Navigation.tsx:547
-#: src/components/Navigation.tsx:597
+#: src/components/Navigation.tsx:540
+#: src/components/Navigation.tsx:590
 #: src/components/SponsorDashboard.tsx:127
 #: src/components/SponsorDashboard.tsx:138
 #: src/components/SponsorDashboard.tsx:227
@@ -75,12 +75,12 @@ msgstr "Abbrechen"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Kündigen Sie Ihr Abonnement. Ihre gehosteten Diagramme werden schreibgeschützt."
 
-#: src/components/MenuNext.tsx:104
+#: src/components/MenuNext.tsx:113
 #: src/components/MenuNext.tsx:266
 msgid "Charts"
 msgstr "Diagramme"
 
-#: src/components/LoginForm.tsx:30
+#: src/components/LoginForm.tsx:35
 #: src/components/Sponsor.tsx:163
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses Fenster schließen."
@@ -89,7 +89,7 @@ msgstr "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses
 msgid "Circle"
 msgstr "Kreis"
 
-#: src/lib/graphOptions.ts:66
+#: src/lib/graphOptions.ts:69
 msgid "Clay"
 msgstr "Ton"
 
@@ -109,6 +109,10 @@ msgstr "Klon"
 msgid "Close"
 msgstr "Schließen"
 
+#: src/lib/graphOptions.ts:68
+msgid "Comic Book"
+msgstr "Comic-Buch"
+
 #: src/lib/graphOptions.ts:26
 msgid "Concentric"
 msgstr "Konzentrisch"
@@ -121,9 +125,9 @@ msgstr "Zusammenziehen"
 msgid "Convert to hosted chart?"
 msgstr "In gehostetes Diagramm konvertieren?"
 
-#: src/components/Navigation.tsx:480
-#: src/components/Navigation.tsx:548
-#: src/components/Navigation.tsx:582
+#: src/components/Navigation.tsx:473
+#: src/components/Navigation.tsx:541
+#: src/components/Navigation.tsx:575
 #: src/components/ShareDialog.tsx:227
 #: src/components/ShareDialog.tsx:228
 #: src/components/ShareDialog.tsx:294
@@ -138,10 +142,9 @@ msgstr "PNG-Bild kopieren"
 msgid "Copy SVG Code"
 msgstr "Kopieren Sie den SVG-Code"
 
-#: src/components/MenuNext.tsx:112
 #: src/components/Navigation.tsx:177
 #: src/components/Navigation.tsx:337
-#: src/components/Navigation.tsx:395
+#: src/components/Navigation.tsx:394
 msgid "Create"
 msgstr "Erstellen"
 
@@ -150,7 +153,7 @@ msgstr "Erstellen"
 msgid "Create a link directly using the exact label text"
 msgstr "Erstellen Sie direkt einen Link mit dem genauen Beschriftungstext"
 
-#: src/components/Navigation.tsx:634
+#: src/components/Navigation.tsx:627
 msgid "Created"
 msgstr "Erstellt"
 
@@ -170,7 +173,7 @@ msgstr "Datum"
 #: src/components/Navigation.tsx:256
 #: src/components/Navigation.tsx:261
 #: src/components/Navigation.tsx:270
-#: src/components/Navigation.tsx:598
+#: src/components/Navigation.tsx:591
 msgid "Delete"
 msgstr "Löschen"
 
@@ -182,7 +185,7 @@ msgstr "Richtung"
 msgid "Do you want to cancel your subscription?"
 msgstr "Möchten Sie Ihr Abonnement kündigen?"
 
-#: src/components/Navigation.tsx:591
+#: src/components/Navigation.tsx:584
 msgid "Do you want to delete this?"
 msgstr "Möchten Sie dies löschen?"
 
@@ -203,15 +206,15 @@ msgid "Download SVG"
 msgstr "SVG herunterladen"
 
 #: src/components/Navigation.tsx:313
-#: src/components/Navigation.tsx:533
+#: src/components/Navigation.tsx:526
 msgid "Duplicate"
 msgstr "Duplizieren"
 
-#: src/components/Sponsor.tsx:62
+#: src/components/Sponsor.tsx:45
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "Bearbeiten Sie Ihre Diagramme auf jedem Gerät. Teilen Sie diese mit jedem. Veröffentlichen Sie Ihre Diagramme einmal und sie bleiben mit Ihren Änderungen auf dem neuesten Stand."
 
-#: src/components/MenuNext.tsx:94
+#: src/components/MenuNext.tsx:103
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "Editor"
@@ -220,7 +223,7 @@ msgstr "Editor"
 msgid "Eggs"
 msgstr "Eier"
 
-#: src/components/LoginForm.tsx:45
+#: src/components/LoginForm.tsx:50
 msgid "Email"
 msgstr "E-Mail"
 
@@ -229,8 +232,8 @@ msgid "Email (optional)"
 msgstr "E-Mail (optional)"
 
 #: src/components/Navigation.tsx:169
-#: src/components/Navigation.tsx:387
-#: src/components/Navigation.tsx:539
+#: src/components/Navigation.tsx:386
+#: src/components/Navigation.tsx:532
 msgid "Enter a title"
 msgstr "Titel eingeben"
 
@@ -270,15 +273,19 @@ msgstr "Wenn Sie Ihr Diagramm einfrieren, können Sie das Layout anpassen, indem
 msgid "Fullscreen"
 msgstr "Vollbild"
 
+#: src/lib/graphOptions.ts:67
+msgid "Futuristic"
+msgstr "Futuristisch"
+
 #: src/lib/graphOptions.ts:38
 msgid "Get More Layouts"
 msgstr "Mehr Layouts erhalten"
 
-#: src/lib/graphOptions.ts:70
+#: src/lib/graphOptions.ts:73
 msgid "Get More Themes"
 msgstr "Weitere Themen erhalten"
 
-#: src/components/Sponsor.tsx:45
+#: src/components/Sponsor.tsx:55
 msgid "Get access to alternative styles for your flowcharts"
 msgstr "Erhalten Sie Zugriff auf alternative Stile für Ihre Flussdiagramme"
 
@@ -295,7 +302,7 @@ msgstr "Raster"
 msgid "Have fun! 🎉"
 msgstr "Viel Spaß! 🎉"
 
-#: src/components/MenuNext.tsx:121
+#: src/components/MenuNext.tsx:147
 msgid "Help"
 msgstr "Hilfe"
 
@@ -309,7 +316,7 @@ msgstr "Startseite"
 
 #: src/components/Navigation.tsx:56
 #: src/components/Navigation.tsx:375
-#: src/components/Sponsor.tsx:59
+#: src/components/Sponsor.tsx:42
 msgid "Hosted Charts"
 msgstr "Gehostete Diagramme"
 
@@ -371,20 +378,20 @@ msgstr "Öffentlich zugänglich machen"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/Sponsor.tsx:49
+#: src/components/Sponsor.tsx:59
 msgid "More Layouts"
 msgstr "Weitere Layouts"
 
-#: src/components/Sponsor.tsx:42
+#: src/components/Sponsor.tsx:52
 msgid "More Themes"
 msgstr "Weitere Themen"
 
-#: src/lib/graphOptions.ts:68
+#: src/lib/graphOptions.ts:71
 msgid "Museum"
 msgstr "Museum"
 
-#: src/components/Navigation.tsx:622
-#: src/components/Navigation.tsx:658
+#: src/components/Navigation.tsx:615
+#: src/components/Navigation.tsx:651
 msgid "Name"
 msgstr "Name"
 
@@ -392,20 +399,24 @@ msgstr "Name"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Brauchen Sie Hilfe? <0>Sehen Sie sich unsere Dokumentation an.</0>"
 
+#: src/components/MenuNext.tsx:93
+msgid "New"
+msgstr "Neues"
+
 #: src/components/SponsorDashboard.tsx:89
 #: src/components/SponsorDashboard.tsx:280
 msgid "Next charge"
 msgstr "Nächste Gebühr"
 
-#: src/lib/graphOptions.ts:67
+#: src/lib/graphOptions.ts:70
 msgid "Playbook"
 msgstr "Spielbuch"
 
-#: src/components/Sponsor.tsx:52
+#: src/components/Sponsor.tsx:62
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "Leistungsstarke Layout-Algorithmen, die Ordnung in Diagramme aller Formen und Größen bringen"
 
-#: src/components/Navigation.tsx:626
+#: src/components/Navigation.tsx:619
 #: src/components/ShareDialog.tsx:91
 #: src/components/ShareDialog.tsx:117
 msgid "Public"
@@ -435,6 +446,10 @@ msgstr "Zurücksetzen"
 msgid "Resume Subscription"
 msgstr "Abonnement fortsetzen"
 
+#: src/lib/graphOptions.ts:66
+msgid "Retro"
+msgstr "Retro"
+
 #: src/components/SponsorDashboard.tsx:235
 msgid "Return"
 msgstr "Zurückkehren"
@@ -443,10 +458,14 @@ msgstr "Zurückkehren"
 msgid "Right to Left"
 msgstr "Von rechts nach links"
 
-#: src/components/MenuNext.tsx:149
+#: src/components/MenuNext.tsx:167
 #: src/components/MenuNext.tsx:264
 msgid "Settings"
 msgstr "Einstellungen"
+
+#: src/components/LoginForm.tsx:58
+msgid "Sign In"
+msgstr "Einloggen"
 
 #: src/components/Sponsor.tsx:242
 msgid "Sign Up"
@@ -457,10 +476,10 @@ msgid "Sponsor flowchart.fun for $1 a month to access hosted flowcharts and the 
 msgstr "Sponsern Sie flowchart.fun für 1 $ pro Monat, um Zugang zu gehosteten Flussdiagrammen und den neuesten Stilen und Funktionen zu erhalten"
 
 #: src/components/Sponsor.tsx:27
-msgid "Sponsor flowchart.fun for <0>$1 / month</0> or <1>$10 / year</1> to get access to..."
+msgid "Sponsor flowchart.fun for <0>$1/month</0> or <1>$10/year</1> to get access to..."
 msgstr "Sponsern Sie flowchart.fun für <0>$1 / Monat</0> oder <1>$10 / Jahr</1>, um Zugang zu..."
 
-#: src/components/MenuNext.tsx:167
+#: src/components/MenuNext.tsx:122
 #: src/components/MenuNext.tsx:268
 msgid "Sponsors"
 msgstr "Sponsoren"
@@ -474,7 +493,6 @@ msgid "Status"
 msgstr "Status"
 
 #: src/components/Feedback.tsx:93
-#: src/components/LoginForm.tsx:53
 #: src/components/MenuNext.tsx:400
 msgid "Submit"
 msgstr "Einsenden"
@@ -512,7 +530,7 @@ msgstr "Von oben nach unten"
 msgid "Try again"
 msgstr "Erneut versuchen"
 
-#: src/components/Navigation.tsx:630
+#: src/components/Navigation.tsx:623
 msgid "Updated"
 msgstr "Aktualisiert"
 
@@ -544,7 +562,7 @@ msgstr "Was möchten Sie uns mitteilen?"
 msgid "With Editor"
 msgstr "Mit Editor"
 
-#: src/components/Navigation.tsx:409
+#: src/components/Navigation.tsx:402
 #: src/components/SponsorDashboard.tsx:65
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Ihr Abonnement ist nicht mehr aktiv. Wenn Sie gehostete Diagramme erstellen und bearbeiten möchten, werden Sie Sponsor."

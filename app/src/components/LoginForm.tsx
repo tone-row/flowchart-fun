@@ -25,8 +25,13 @@ export function LoginForm({ heading }: { heading: ReactNode }) {
     <Section as="form" onSubmit={handleSubmit(onSubmit)}>
       {heading}
       {success ? (
-        <Box background="color-nodeHover" p={2} rad={2}>
-          <Type>
+        <Box
+          background="color-nodeHover"
+          p={2}
+          rad={2}
+          style={{ textAlign: "center" }}
+        >
+          <Type size={-1}>
             <Trans>
               Check your email for a link to log in. You can close this window.
             </Trans>
@@ -50,7 +55,7 @@ export function LoginForm({ heading }: { heading: ReactNode }) {
             <Button
               className={styles.SignInButton}
               type="submit"
-              text={t`Submit`}
+              text={t`Sign In`}
             />
           </Box>
           {isError(error) && (
