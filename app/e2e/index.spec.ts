@@ -112,7 +112,7 @@ test.describe("Unauthorized", () => {
     expect(new URL(page.url()).pathname).toBe("/");
 
     // Click button[role="tab"]:has-text("Create")
-    await page.locator('button[role="tab"]:has-text("Create")').click();
+    await page.locator('button[role="tab"]:has-text("New")').click();
 
     // Make sure no longer on index
     expect(new URL(page.url()).pathname).not.toBe("/");
