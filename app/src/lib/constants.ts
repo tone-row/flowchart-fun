@@ -42,7 +42,6 @@ export const editorOptions: EditorProps["options"] = {
   renderLineHighlight: false,
   highlightActiveIndentGuide: false,
   scrollBeyondLastLine: false,
-  renderIndentGuides: false,
   overviewRulerBorder: false,
   lineDecorationsWidth: "10px",
   renderValidationDecorations: "off",
