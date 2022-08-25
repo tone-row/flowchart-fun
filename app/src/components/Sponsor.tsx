@@ -27,11 +27,11 @@ export default function Sponsor() {
         <Trans>
           Sponsor flowchart.fun for{" "}
           <Box as="span" className={styles.orange}>
-            $1/month
+            $5/month
           </Box>{" "}
           or{" "}
           <Box as="span" className={styles.orange}>
-            $10/year
+            $50/year
           </Box>{" "}
           to get access to...
         </Trans>
@@ -192,8 +192,8 @@ function SignUpForm() {
           >
             <Box flow="column" gap={2}>
               {[
-                { label: t`$1 / Month`, value: "monthly" },
-                { label: t`$10 / Year`, value: "yearly" },
+                { label: t`$5 / Month`, value: "monthly" },
+                { label: t`$50 / Year`, value: "yearly" },
               ].map((el) => (
                 <Box
                   as={RadioGroup.Item}
