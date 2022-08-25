@@ -7,7 +7,7 @@ const blokusColors = {
   orange: ["#bf5900", "#e6954e", "#ff9c45"],
   blue: ["#001194", "#3043d1", "#6172F9"],
   black: ["#171817", "#202a2d", "#242b2e"],
-  white: ["#e3dcdc", "#fdfbfb", "#ffffff"],
+  white: ["#cdc5c5", "#fdfbfb", "#ffffff"],
   green: ["#026F4A", "#019467", "#03B181"],
   yellow: ["#ba9500", "#d4ae17", "#fad545"],
   gray: ["#75736d", "#878378", "#9c9687"],
@@ -16,8 +16,8 @@ const blokusColors = {
 
 const textColor = "#FFFFFF";
 const fontFamily = '"Space Mono", monospace';
-const lineHeight = 1.4;
-const backgroundColor = "#2A294D";
+const lineHeight = 1.2;
+const backgroundColor = "#1b1b20";
 const darkerBackgroundColor = "#060608";
 const fontSize = 9;
 const padding = "6px";
@@ -50,26 +50,22 @@ const blokus: Theme = {
         "font-family": fontFamily,
         "font-size": fontSize,
         label: "data(label)",
-        color: textColor,
+        color: blokusColors.black[0],
         "background-fill": "linear-gradient",
-        "background-gradient-stop-colors": "#026F4A #019467 #03B181",
+        "background-gradient-stop-colors": blokusColors.white.join(" "),
         "background-gradient-direction": "to-top-right",
         "text-valign": "center",
         "text-halign": "center",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
         "line-height": lineHeight,
-        "text-justification": "left",
+        "text-justification": "center",
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,
         "padding-bottom": padding,
         backgroundColor: darkerBackgroundColor,
         shape: "roundrectangle",
-        "underlay-color": "#1d1d38",
-        "underlay-opacity": 0.3,
-        "underlay-padding": 5,
-        "underlay-shape": "roundrectangle",
       },
     },
     {

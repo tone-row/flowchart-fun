@@ -368,7 +368,6 @@ function HostedCharts() {
   const [deleteModal, setDeleteModal] = useState<
     false | { id: number; name: string }
   >(false);
-  const tooManyCharts = (charts?.length || 0) >= 16;
 
   return (
     <Section content="start normal" className={styles.ChartSection}>
@@ -417,7 +416,6 @@ function HostedCharts() {
             key={chart.id}
             chartId={chart.id}
             chartName={chart.name}
-            tooManyCharts={tooManyCharts}
             setCopyModal={setCopyModal}
             setDeleteModal={setDeleteModal}
             is_public={chart.is_public}
@@ -666,7 +664,6 @@ const ChartButton = memo(function ChartButton({
   id,
   setCopyModal,
   setDeleteModal,
-  tooManyCharts,
 }: {
   chartId: number;
   chartName: string;
@@ -676,7 +673,6 @@ const ChartButton = memo(function ChartButton({
   id?: string;
   setCopyModal: any;
   setDeleteModal: any;
-  tooManyCharts: boolean;
 }) {
   const validSponsor = useIsValidSponsor();
   const setShowing = useContext(AppContext).setShowing;
@@ -725,7 +721,6 @@ const ChartButton = memo(function ChartButton({
           <Button
             className={styles.IconButton}
             onClick={() => setCopyModal(chartId)}
-            disabled={tooManyCharts}
           >
             <Copy />
           </Button>
