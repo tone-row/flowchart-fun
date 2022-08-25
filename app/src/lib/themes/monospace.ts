@@ -17,7 +17,7 @@ const monospaceColors = {
 
 const darkBlue = "#9AADFD";
 const fontFamily = '"Fira Mono", monospace';
-const lineHeight = 1.4;
+const lineHeight = 1.1;
 const fontSize = 11;
 const padding = "5px";
 
@@ -57,7 +57,7 @@ const monospace: Theme = {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         "line-height": lineHeight,
-        "text-justification": "left",
+        "text-justification": "center",
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,
