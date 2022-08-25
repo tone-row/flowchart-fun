@@ -2,10 +2,10 @@ import { expect, test } from "@playwright/test";
 
 import { getTempEmail, getTempEmailMessage, goToPath, goToTab } from "./utils";
 
-const SPONSOR_PLANS = ["$1 / Month", "$10 / Year"] as const;
+const SPONSOR_PLANS = ["$5 / Month", "$50 / Year"] as const;
 const EMAILS: Record<typeof SPONSOR_PLANS[number], string> = {
-  "$1 / Month": "",
-  "$10 / Year": "",
+  "$5 / Month": "",
+  "$50 / Year": "",
 };
 test.describe("Sign Up", () => {
   test.beforeEach(async ({ page }) => {
