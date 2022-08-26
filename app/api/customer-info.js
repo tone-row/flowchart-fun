@@ -4,6 +4,8 @@ const stripe = new Stripe(process.env.STRIPE_KEY);
 const validPrices = [
   process.env.STRIPE_PRICE_ID,
   process.env.STRIPE_PRICE_ID_YEARLY,
+  process.env.LEGACY_STRIPE_PRICE_ID,
+  process.env.LEGACY_STRIPE_PRICE_ID_YEARLY,
 ];
 
 export default async function handler(req, res) {
