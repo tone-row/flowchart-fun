@@ -46,10 +46,18 @@ export function useGetSize(theme: Theme) {
           };
 
           if (classes.includes("circle")) {
-            finalSize.width =
-              finalSize.height > finalSize.width
-                ? finalSize.height
-                : finalSize.width;
+            console.log(finalSize);
+            if (finalSize.height > finalSize.width) {
+              finalSize.width =
+                finalSize.shapeWidth =
+                finalSize.shapeHeight =
+                  finalSize.height;
+            } else {
+              finalSize.height =
+                finalSize.shapeWidth =
+                finalSize.shapeHeight =
+                  finalSize.width;
+            }
           } else if (
             classes.includes("triangle") ||
             classes.includes("round-triangle")
@@ -63,6 +71,8 @@ export function useGetSize(theme: Theme) {
           ) {
             finalSize.shapeWidth = finalSize.width * 1.5;
             finalSize.shapeHeight = finalSize.height * 1.5;
+            finalSize.textMarginY = 2;
+            finalSize.textMarginX = 4;
           } else if (
             classes.includes("pentagon") ||
             classes.includes("round-pentagon")
