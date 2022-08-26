@@ -61,7 +61,7 @@ export default function Charts() {
                 style={{ maxWidth: 400 }}
               >
                 <Trans>
-                  Sponsor flowchart.fun for $1 a month to access hosted
+                  Sponsor flowchart.fun for $5 a month to access hosted
                   flowcharts and the newest styles and features
                 </Trans>
               </Type>
