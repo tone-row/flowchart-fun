@@ -1,26 +1,27 @@
 {
   "private": true,
   "workspaces": [
-    "app",
-    "module"
+    "app"
   ],
   "scripts": {
-    "start": "yarn workspace app start",
+    "start": "vercel dev",
+    "dev": "pnpm -F app start",
     "env:pull": "vercel env pull app/.env",
     "prepare": "husky install",
-    "app:lint:format": "yarn workspace app lint:fix && yarn workspace app format"
+    "app:lint:format": "pnpm -F app lint:fix && pnpm -F app format"
   },
   "dependencies": {
     "@playwright/test": "^1.16.1",
     "@types/cytoscape": "^3.14.15",
     "cytoscape-dagre": "^2.3.2",
     "cytoscape-svg": "^0.3.1",
-    "playwright": "^1.16.1"
+    "playwright": "^1.16.1",
+    "vercel": "^28.2.0"
   },
   "devDependencies": {
     "husky": "^6.0.0"
   },
   "engines": {
-    "node": "^14"
+    "node": "^16"
   }
 }

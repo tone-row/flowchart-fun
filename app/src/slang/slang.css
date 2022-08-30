@@ -494,7 +494,7 @@ body {
     --errorTopMultiplier: var(--error-top-multiplier-7);
     --errorBottomMultiplier: var(--error-bottom-multiplier-7); }
 
-:root {
+:where(:root) {
 	--base-font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	--base-font-size-px:17px;
 	--base-font-size:17;
@@ -665,6 +665,12 @@ place-self: var(--self);
 .slang-box.self_hover:hover {
 place-self: var(--self_hover);
 }
+.slang-box.area {
+grid-area: var(--area);
+}
+.slang-box.area_hover:hover {
+grid-area: var(--area_hover);
+}
 .slang-box.p {
 padding: calc(var(--spacer-px) * var(--p));
 }
@@ -809,6 +815,12 @@ place-self: var(--self-small);
 .slang-box.self-small_hover:hover {
 place-self: var(--self-small_hover);
 }
+.slang-box.area-small {
+grid-area: var(--area-small);
+}
+.slang-box.area-small_hover:hover {
+grid-area: var(--area-small_hover);
+}
 .slang-box.p-small {
 padding: calc(var(--spacer-px) * var(--p-small));
 }
@@ -949,6 +961,12 @@ place-self: var(--self-tablet);
 .slang-box.self-tablet_hover:hover {
 place-self: var(--self-tablet_hover);
 }
+.slang-box.area-tablet {
+grid-area: var(--area-tablet);
+}
+.slang-box.area-tablet_hover:hover {
+grid-area: var(--area-tablet_hover);
+}
 .slang-box.p-tablet {
 padding: calc(var(--spacer-px) * var(--p-tablet));
 }
@@ -1088,6 +1106,12 @@ place-self: var(--self-desktop);
 }
 .slang-box.self-desktop_hover:hover {
 place-self: var(--self-desktop_hover);
+}
+.slang-box.area-desktop {
+grid-area: var(--area-desktop);
+}
+.slang-box.area-desktop_hover:hover {
+grid-area: var(--area-desktop_hover);
 }
 .slang-box.p-desktop {
 padding: calc(var(--spacer-px) * var(--p-desktop));

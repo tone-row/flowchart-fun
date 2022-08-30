@@ -90,10 +90,12 @@ export default function Charts() {
     </Box>
   );
 }
-
+type Fields = {
+  chartTitle: string;
+};
 function LocalCharts() {
   const { setShowing } = useContext(AppContext);
-  const { watch, register, handleSubmit } = useForm();
+  const { watch, register, handleSubmit } = useForm<Fields>();
   const title = watch("chartTitle");
   const [charts, setCharts] = useState<string[]>([]);
   const { push } = useHistory();
@@ -103,7 +105,7 @@ function LocalCharts() {
   const [copy, setCopy] = useState("");
 
   const onSubmit = useCallback(
-    ({ chartTitle }: { chartTitle: string }) => {
+    ({ chartTitle }: Fields) => {
       if (chartTitle) {
         push(`/${chartTitle}`);
         setShowing("editor");
@@ -341,7 +343,9 @@ function CopyChart({
     </Dialog>
   );
 }
-
+type CreateNewFields = {
+  name: string;
+};
 function HostedCharts() {
   const validSponsor = useIsValidSponsor();
   const { session, setShowing } = useContext(AppContext);
@@ -356,10 +360,11 @@ function HostedCharts() {
     },
   });
   const { data: charts } = useCharts();
-  const { register, watch, handleSubmit } = useForm();
+  const { register, watch, handleSubmit } = useForm<CreateNewFields>();
   const name = watch("name");
+
   const onSubmit = useCallback(
-    ({ name }: { name: string }) => {
+    ({ name }: CreateNewFields) => {
       session?.user?.id && mutate({ name, user_id: session?.user?.id });
     },
     [mutate, session?.user?.id]
@@ -478,7 +483,9 @@ function CopyHostedChart({
     </Dialog>
   );
 }
-
+type CopyHostedFields = {
+  name: string;
+};
 function CopyHostedChartInner({
   isOpen,
   onDismiss,
@@ -486,7 +493,7 @@ function CopyHostedChartInner({
   isOpen: boolean | number;
   onDismiss: () => void;
 }) {
-  const { register, handleSubmit, watch } = useForm();
+  const { register, handleSubmit, watch } = useForm<CopyHostedFields>();
   const copyName = watch("name");
   const { push } = useHistory();
   const newChart = useMutation("makeChart", makeChart, {
@@ -500,7 +507,8 @@ function CopyHostedChartInner({
     typeof isOpen === "number" ? isOpen.toString() : undefined
   );
   const { session } = useContext(AppContext);
-  function onSubmit({ name }: { name: string }) {
+
+  function onSubmit({ name }: CopyHostedFields) {
     if (chart && session?.user?.id) {
       newChart.mutate({
         name,

@@ -6,10 +6,12 @@ import { palette } from "../slang/config";
 export const languageId = "flowchartfun";
 export const themeNameLight = "flowchartfun-light";
 export const themeNameDark = "flowchartfun-dark";
+import type { editor } from "monaco-editor";
 
-const lightTheme = {
+const lightTheme: editor.IStandaloneThemeData = {
   base: "vs",
   inherit: true,
+  colors: {},
   rules: [
     { token: "nodeIdAndClass", foreground: palette.purple[0] },
     {
@@ -23,9 +25,10 @@ const lightTheme = {
   ],
 };
 
-const darkTheme = {
+const darkTheme: editor.IStandaloneThemeData = {
   base: "vs-dark",
   inherit: true,
+  colors: {},
   rules: [
     // ID
     { token: "nodeIdAndClass", foreground: palette.purple[0] },

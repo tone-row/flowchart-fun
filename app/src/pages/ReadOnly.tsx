@@ -54,6 +54,7 @@ function ReadOnly() {
     >
       <Editor
         value={text}
+        // @ts-ignore
         wrapperClassName={styles.Editor}
         defaultLanguage={languageId}
         options={{

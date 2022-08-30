@@ -39,8 +39,8 @@ export const editorOptions: EditorProps["options"] = {
   insertSpaces: true,
   wordBasedSuggestions: false,
   occurrencesHighlight: false,
-  renderLineHighlight: false,
-  highlightActiveIndentGuide: false,
+  // TODO: choose the correct render line highlight, used to be false
+  renderLineHighlight: "none",
   scrollBeyondLastLine: false,
   overviewRulerBorder: false,
   lineDecorationsWidth: "10px",

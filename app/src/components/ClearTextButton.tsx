@@ -29,6 +29,7 @@ export function ClearTextButton({ handleClear }: { handleClear: () => void }) {
         dialogProps={{
           isOpen: dialogOpen,
           onDismiss: () => setDialogOpen(false),
+          "aria-label": t`Clear text`,
         }}
       >
         <Trans>Clear text?</Trans>
