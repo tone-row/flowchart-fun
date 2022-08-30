@@ -99,6 +99,7 @@ export default function Help() {
         </Resizable>
         <Editor
           value={text}
+          // @ts-ignore
           wrapperClassName={styles.Editor}
           defaultLanguage={languageId}
           options={editorOptions}

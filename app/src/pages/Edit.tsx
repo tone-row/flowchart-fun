@@ -69,6 +69,7 @@ const Edit = memo(function Edit() {
     >
       <Editor
         value={text}
+        // @ts-ignore
         wrapperClassName={styles.Editor}
         defaultLanguage={languageId}
         options={editorOptions}

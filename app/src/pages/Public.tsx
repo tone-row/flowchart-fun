@@ -77,6 +77,7 @@ function Public() {
         value={textToParse}
         defaultValue={textToParse}
         defaultLanguage={languageId}
+        // @ts-ignore
         wrapperClassName={styles.Editor}
         theme={mode === "dark" ? themeNameDark : themeNameLight}
         loading={loading.current}
