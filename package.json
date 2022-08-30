@@ -1,8 +1,7 @@
 {
   "private": true,
   "workspaces": [
-    "app",
-    "module"
+    "app"
   ],
   "scripts": {
     "start": "yarn workspace app start",
@@ -21,6 +20,6 @@
     "husky": "^6.0.0"
   },
   "engines": {
-    "node": "^14"
+    "node": "^16"
   }
 }
