@@ -282,19 +282,6 @@ test.describe("Unauthorized", () => {
     expect(background.trim()).toBe("#0f0f0f");
     expect(foreground.trim()).toBe("rgb(250, 250, 250)");
   });
-  test("Open Feedback > Type in feedback > Submit", async ({ page }) => {
-    await goToTab(page, "Feedback");
-    // Click [data-testid="message"]
-    await page.locator('[data-testid="message"]').click();
-    // Fill [data-testid="message"]
-    await page.locator('[data-testid="message"]').fill("This is a test");
-    // Click button:has-text("Submit")
-    await page.locator('button:has-text("Submit")').click();
-    // Click text=Thank you for your feedback!
-    await expect(
-      page.locator("text=Thank you for your feedback!")
-    ).toBeVisible();
-  });
 
   test("Open Feedback > Type feedback with email > Submit", async ({
     page,
