@@ -19,9 +19,17 @@
     "vercel": "^28.2.0"
   },
   "devDependencies": {
-    "husky": "^6.0.0"
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
   },
   "engines": {
     "node": "^16"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "pnpm -F app lint:fix",
+      "pnpm -F app format",
+      "git add"
+    ]
   }
 }
