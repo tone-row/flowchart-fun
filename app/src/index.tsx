@@ -21,6 +21,9 @@ declare global {
 }
 window.Buffer = Buffer;
 
+// tmp test to see if lint-staged setup correctly
+const x = 1;
+
 Sentry.init({
   release: `flowchartfun@${pkg.version}`,
   dsn: "https://5c0087f5d8ae4a6ab7aa4f42eab785f1@o394152.ingest.sentry.io/5673697",
