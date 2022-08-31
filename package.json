@@ -28,8 +28,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "pnpm -F app lint:fix",
-      "pnpm -F app format",
-      "git add"
+      "pnpm -F app format"
     ]
   }
 }
