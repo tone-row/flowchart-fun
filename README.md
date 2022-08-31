@@ -39,6 +39,14 @@ Premium features including auth, hosted charts and permalinks are built using in
 
 `pnpm dev`
 
+### Translations
+
+Flowchart Fun uses [Lingui](https://lingui.js.org/) for translations. These are the steps to follow:
+
+1. All text that should be translated should be wrapped in `<Trans>` component or `` t` `` template string. These are imported from `@lingui/macro`.
+1. Strings are extracted with `pnpm -F app extract`. Then translations can be added to `.po` files in `/app/src/locales/[language]/messages.po`
+1. When all translations are added, run `pnpm -F app compile`.
+
 ## Release
 
 1. Branch from `dev` to develop a feature

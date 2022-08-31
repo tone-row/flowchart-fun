@@ -21,7 +21,8 @@ const msg = {
 
 export default function Feedback() {
   const { register, handleSubmit, reset, watch } = useForm<FormData>();
-  const message = watch("text");
+  const fields = watch();
+  const isValid = fields.from && fields.text;
   const [success, setSuccess] = useState(false);
   const {
     error,
@@ -82,14 +83,18 @@ export default function Feedback() {
           </Section>
           <Section>
             <Type>
-              <Trans>Email (optional)</Trans>
+              <Trans>Email</Trans>
             </Type>
-            <Input type="email" {...register("from")} data-testid="email" />
+            <Input
+              type="email"
+              {...register("from", { required: true })}
+              data-testid="email"
+            />
           </Section>
           <Button
             type="submit"
             style={{ justifySelf: "start" }}
-            disabled={!(message && message.length)}
+            disabled={!isValid}
             text={t`Submit`}
           />
           {error instanceof Error && (
