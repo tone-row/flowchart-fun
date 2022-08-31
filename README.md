@@ -1,45 +1,60 @@
-# [flowchart.fun](https://flowchart.fun/)
+# [Flowchart Fun](https://flowchart.fun/)
 
-https://flowchart.fun | Generate diagrams from text
+A webapp for generating flowcharts from text @ https://flowchart.fun
 
-<a href="https://www.producthunt.com/posts/flowchart-fun?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-flowchart-fun" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=286540&theme=dark" alt="flowchart.fun - A versatile app for generating flowcharts from text | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-
-![app](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
+![screenshot of Flowchart Fun](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
 
 ## Summary
 
-flowchart.fun is a lightweight application to generate flowcharts and diagrams from text. It is built with [create-react-app](https://github.com/facebook/create-react-app) and [cytoscape.js](https://github.com/cytoscape/cytoscape.js) This app also allows users to log in and save hosted charts, as well as send feedback. These features are built with [Vercel functions](https://vercel.com/docs/concepts/functions/introduction) / [supabase](https://supabase.io/), and [sendgrid](https://sendgrid.com/) respectively.
+Flowchart Fun is a webapp for generating flowcharts from text built with React and [cytoscape.js](https://github.com/cytoscape/cytoscape.js).
 
-**Note:** It's not necessary to configure these services to run a lightweight version of this app. Read below to find out more.
+### Example
 
-## Installation
+```
+Node A
+  goes to: Node B
+  and: Node C
+    goes back to: (Node A)
+```
 
-1. Clone this repository
-1. `cd flowchart-fun`
-1. `yarn`
+![example flowchart](./example1.png)
 
-## How to run without login features
+## Development
 
-`yarn start`
+### Prerequisites
 
-## How to run with login features
+Premium features including auth, hosted charts and permalinks are built using integrations with [Vercel Functions](https://vercel.com/docs/concepts/functions/introduction), [Supabase](https://supabase.io/), [Stripe](https://stripe.com/) and [Sendgrid](https://sendgrid.com/) so you will need accounts with each of those services.
 
-To run with full functionality you'll need accounts with vercel, sendgrid, supabase and stripe. Then you'll need to copy and fill the environment variables in _app/.env.example_ to _app/.env_. Then
+### Getting Started
 
-`vercel dev`
+1. Clone the repository
+1. Copy `.env.example` to `.env` and add env variables
+1. `pnpm install` and `pnpm start`
 
-## Workspaces
+#### To run with login features:
 
-This repository is organized in workspaces. [/app](/app) contains the code for the react application and [/module](/module) contains the code for the **deprecated** [flowchart-fun](https://www.npmjs.com/package/flowchart-fun) npm module.
+`pnpm start`
 
-## Releasing
+#### To run without login features:
 
-Documenting so as not to forget!
+`pnpm dev`
 
-- Work on feature branches which are merged to `dev`
-- When ready to release update version in /app/package.json and commit directly to `dev`. Push.
-- Open pull request from `dev` to `main`
-- Merging pull request should create new github release
+### Translations
+
+Flowchart Fun uses [Lingui](https://lingui.js.org/) for translations. These are the steps to follow:
+
+1. All text that should be translated should be wrapped in `<Trans>` component or `` t` `` template string. These are imported from `@lingui/macro`.
+1. Strings are extracted with `pnpm -F app extract`. Then translations can be added to `.po` files in `/app/src/locales/[language]/messages.po`
+1. When all translations are added, run `pnpm -F app compile`.
+
+## Release
+
+1. Branch from `dev` to develop a feature
+1. **Squash** and merge the feature branch into `dev`
+1. (Repeat until happy)
+1. Update version in /app/package.json and commit directly to `dev`. Push.
+1. Open PR from `dev` to `main`
+1. Merge (**do not squash!**) PR and a new github release will be created
 
 ## Contributing
 
