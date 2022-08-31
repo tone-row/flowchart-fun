@@ -3,7 +3,7 @@ import axios from "axios";
 import crypto from "crypto";
 
 import { BASE_URL } from "./index.spec";
-const EMAIL_DOMAINS_LIST = [];
+const EMAIL_DOMAINS_LIST: string[] = [];
 
 export async function goToPath(page: Page, path = "") {
   await page.goto(`${BASE_URL}/${path}`);
@@ -37,6 +37,7 @@ export async function getTempEmail() {
 
 /** Returns inbox messages for a given email */
 export async function getTempEmailMessage(email: string) {
+  if (!process.env.RAPID_API_KEY) throw new Error("Missing API Key");
   const hash = crypto.createHash("md5").update(email).digest("hex");
   const response = await axios.request({
     method: "GET",
