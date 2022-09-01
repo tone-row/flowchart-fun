@@ -13,11 +13,21 @@ import {
   render,
 } from "../test-utils";
 import { New } from "./New";
-
 const fakeName = "fake-name";
+
+jest.mock("../lib/supabaseClient", () => ({
+  supabase: {
+    auth: {
+      session: jest.fn(() => null),
+      onAuthStateChange: jest.fn(),
+    },
+  },
+}));
 
 describe.only("New Page", () => {
   it("shoud render", async () => {
+    // if (!supabase) throw new Error("supabase is undefined");
+    // jest.spyOn(supabase.auth, "session").mockResolvedValue(null);
     render(<New />);
     await nextFrame();
   });
