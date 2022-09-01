@@ -8,6 +8,6 @@
 }
 
 .Spinner circle {
-  animation: load 1s linear 0s infinite forwards;
+  animation: load 1s cubic-bezier(0.11, 0.21, 0.77, 0.86) 0s infinite forwards;
   stroke: var(--c);
 }
