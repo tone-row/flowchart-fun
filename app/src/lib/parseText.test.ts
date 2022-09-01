@@ -315,7 +315,7 @@ describe("parseText", () => {
   });
 
   test.skip("line number should account for yaml length, passed in", () => {
-    const edges = parseText(`a\n\t(5)`, getSize, 4).filter(edgesOnly);
+    const edges = parseText(`a\n\t(5)`, getSize).filter(edgesOnly);
     expect(edges).toContainEqual({
       data: {
         id: "N14e_5:0",
@@ -328,9 +328,9 @@ describe("parseText", () => {
   });
 
   test("should produce the same ID's regardless of line number start'", () => {
-    const resultA = parseText(`a\nb`, getSize, 0);
+    const resultA = parseText(`a\nb`, getSize);
     const idsA = resultA.map((n) => n.data.id);
-    const resultB = parseText(`a\nb`, getSize, 1);
+    const resultB = parseText(`a\nb`, getSize);
     const idsB = resultB.map((n) => n.data.id);
     expect(idsA).toEqual(idsB);
   });

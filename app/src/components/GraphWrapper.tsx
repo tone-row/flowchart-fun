@@ -1,5 +1,5 @@
 import React, { ReactNode, useContext } from "react";
-import { useRouteMatch } from "react-router";
+import { useRouteMatch } from "react-router-dom";
 
 import { HiddenGraphOptions } from "../lib/helpers";
 import { useFullscreen, useIsValidSponsor } from "../lib/hooks";

@@ -152,6 +152,7 @@ const Graph = memo(
       userStyle: string;
     }>({ content: "", layout: "", userStyle: "" });
 
+    // Memoize values, return previous values if parsing fails
     const { content, layout, userStyle } = useMemo(() => {
       try {
         const { data, content } = frontmatter(stripComments(textToParse), {
@@ -166,7 +167,8 @@ const Graph = memo(
         };
         lastValues.current = values;
         return values;
-      } catch {
+      } catch (error) {
+        console.error(error);
         return lastValues.current;
       }
     }, [textToParse]);

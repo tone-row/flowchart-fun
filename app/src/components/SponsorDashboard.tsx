@@ -3,7 +3,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { ReactNode, useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 
 import { formatCents, formatDate, formatRelative } from "../lib/helpers";
 import {

@@ -5,12 +5,21 @@ import "core-js/features/object/entries";
 
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
+import { Buffer } from "buffer";
 import React from "react";
 import ReactDOM from "react-dom";
 
 import pkg from "../package.json";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
+
+// Fixes Webpack 5 Buffer polyfill issue
+declare global {
+  interface Window {
+    Buffer: typeof Buffer;
+  }
+}
+window.Buffer = Buffer;
 
 Sentry.init({
   release: `flowchartfun@${pkg.version}`,

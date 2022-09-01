@@ -55,8 +55,9 @@ export default function useDownloadHandlers(
 
       // Add font file if necessary
       let fontString = "";
-      if (graphTheme.font?.files) {
-        for (const { url, name } of graphTheme.font?.files) {
+      const files = graphTheme.font.files;
+      if (files) {
+        for (const { url, name } of files) {
           if (!(url in window.__flowchartFunBase64EncodedFonts)) {
             const fontUrl = `/fonts/${url}`;
             const font = await fetch(fontUrl)

@@ -8,15 +8,18 @@ import { login } from "../lib/queries";
 import { Box, Type } from "../slang";
 import styles from "./LoginForm.module.css";
 import { Button, Input, Notice, Section } from "./Shared";
-
+type Fields = {
+  email: string;
+};
 export function LoginForm({ heading }: { heading: ReactNode }) {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<Fields>();
   const [success, setSuccess] = useState(false);
   const { mutate, isLoading, error } = useMutation(login, {
     onSuccess: () => setSuccess(true),
   });
+
   const onSubmit = useCallback(
-    ({ email }: { email: string }) => {
+    ({ email }: Fields) => {
       mutate(email);
     },
     [mutate]

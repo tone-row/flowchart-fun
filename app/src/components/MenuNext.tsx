@@ -17,7 +17,7 @@ import {
 import { memo, useContext, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { useHistory, useRouteMatch } from "react-router";
+import { useHistory, useRouteMatch } from "react-router-dom";
 
 import { gaChangeTab, gaCopyChart, gaNewChart } from "../lib/analytics";
 import {

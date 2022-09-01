@@ -4,7 +4,7 @@ import { compressToEncodedURIComponent } from "lz-string";
 import { Check, DotsThree } from "phosphor-react";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useMutation } from "react-query";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
 
 import { AppContext } from "../components/AppContext";
@@ -133,6 +133,7 @@ export default function EditHosted() {
     >
       <Editor
         value={text}
+        // @ts-ignore
         wrapperClassName={editStyles.Editor}
         defaultLanguage={languageId}
         options={{
