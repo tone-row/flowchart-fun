@@ -3,6 +3,13 @@ const stripe = new Stripe(process.env.STRIPE_KEY);
 
 const defaultErrorMessage = "Unable to Sign In. Are you a sponsor?";
 
+const validPrices = [
+  process.env.STRIPE_PRICE_ID,
+  process.env.STRIPE_PRICE_ID_YEARLY,
+  process.env.LEGACY_STRIPE_PRICE_ID,
+  process.env.LEGACY_STRIPE_PRICE_ID_YEARLY,
+];
+
 /* Returns whether an email has a subscription */
 export default async function handler(req, res) {
   try {
@@ -19,15 +26,13 @@ export default async function handler(req, res) {
     const { data: subscriptions } = await stripe.subscriptions.list({
       customer,
       status: "all",
-      price: process.env.STRIPE_PRICE_ID,
     });
-    const { data: yearlySubscription } = await stripe.subscriptions.list({
-      customer,
-      status: "all",
-      price: process.env.STRIPE_PRICE_ID_YEARLY,
-    });
-    if (!subscriptions.length && !yearlySubscription.length)
-      throw new Error(defaultErrorMessage);
+
+    const hasValidSubscription = subscriptions.some(({ items }) =>
+      items.data.some(({ plan }) => validPrices.includes(plan.id))
+    );
+
+    if (!hasValidSubscription) throw new Error(defaultErrorMessage);
 
     res.json({ subscription: "found" });
   } catch (error) {
