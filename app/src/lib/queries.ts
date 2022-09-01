@@ -35,9 +35,10 @@ export function useUserFeatures() {
   return useQuery(["auth", "userFeatures"], userFeatures);
 }
 
-async function customerInfo(
+export async function customerInfo(
   email: string | undefined
 ): Promise<{ customerId: string; subscription: Stripe.Subscription }> {
+  console.log("being called");
   if (!email) return Promise.reject(new Error("Invalid Email"));
   const response = await fetch("/api/customer-info", {
     method: "post",
@@ -46,7 +47,7 @@ async function customerInfo(
     },
     body: JSON.stringify({ email }),
   });
-  return await response.json();
+  return response.json();
 }
 
 /**
@@ -173,7 +174,7 @@ ${t`comments`}
 ${t`Have fun! 🎉`}
 */`;
 
-  return supabase
+  return await supabase
     .from<definitions["user_charts"]>("user_charts")
     .insert({ name, chart: chart ?? defaultText, user_id });
 }
