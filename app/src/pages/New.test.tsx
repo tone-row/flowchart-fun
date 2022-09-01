@@ -26,8 +26,6 @@ jest.mock("../lib/supabaseClient", () => ({
 
 describe.only("New Page", () => {
   it("shoud render", async () => {
-    // if (!supabase) throw new Error("supabase is undefined");
-    // jest.spyOn(supabase.auth, "session").mockResolvedValue(null);
     render(<New />);
     await nextFrame();
   });

@@ -236,7 +236,7 @@ export const fakeMakeCartResponse = {
     {
       id: 84,
       created_at: "2022-09-01T18:17:55.828104+00:00",
-      user_id: "58faf58a-89c2-4ed2-9e1a-df50161796ec",
+      user_id: "xxx",
       chart:
         "This app works by typing\n  Indenting creates a link to the current line\n  any text: before a colon creates a label\n  Create a link directly using the exact label text\n    like this: (This app works by typing)\n    [custom ID] or\n      by adding an %5BID%5D and referencing that\n        like this: (custom ID) // You can also use single-line comments\n/*\nor\nmultiline\ncomments\n\nHave fun! 🎉\n*/",
       updated_at: "2022-09-01T18:17:55.828104+00:00",
@@ -251,7 +251,7 @@ export const fakeMakeCartResponse = {
     {
       id: 84,
       created_at: "2022-09-01T18:17:55.828104+00:00",
-      user_id: "58faf58a-89c2-4ed2-9e1a-df50161796ec",
+      user_id: "xxx",
       chart:
         "This app works by typing\n  Indenting creates a link to the current line\n  any text: before a colon creates a label\n  Create a link directly using the exact label text\n    like this: (This app works by typing)\n    [custom ID] or\n      by adding an %5BID%5D and referencing that\n        like this: (custom ID) // You can also use single-line comments\n/*\nor\nmultiline\ncomments\n\nHave fun! 🎉\n*/",
       updated_at: "2022-09-01T18:17:55.828104+00:00",

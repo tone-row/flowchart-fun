@@ -38,7 +38,6 @@ export function useUserFeatures() {
 export async function customerInfo(
   email: string | undefined
 ): Promise<{ customerId: string; subscription: Stripe.Subscription }> {
-  console.log("being called");
   if (!email) return Promise.reject(new Error("Invalid Email"));
   const response = await fetch("/api/customer-info", {
     method: "post",
