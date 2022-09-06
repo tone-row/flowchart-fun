@@ -24,7 +24,7 @@ jest.mock("../lib/supabaseClient", () => ({
   },
 }));
 
-describe.only("New Page", () => {
+describe("New Page", () => {
   it("shoud render", async () => {
     render(<New />);
     await nextFrame();

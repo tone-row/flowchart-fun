@@ -136,70 +136,75 @@ export default function useDownloadHandlers(
   }, [filename]);
 
   const getPNG = useCallback<
-    () => Promise<
-      { canvas: HTMLCanvasElement; cleanup: () => void } | undefined
-    >
-  >(async () => {
-    if (!cy.current) return;
-    const pngStr = await cy.current.png({
-      full: true,
-      scale: 3,
-      output: "blob-promise",
-      bg,
-    });
+    (
+      type: "jpg" | "png"
+    ) => Promise<{ canvas: HTMLCanvasElement; cleanup: () => void } | undefined>
+  >(
+    async (type) => {
+      if (!cy.current) return;
+      const pngStr = await cy.current[type]({
+        full: true,
+        scale: 3,
+        output: "blob-promise",
+        bg,
+      });
 
-    // Get width and height of flowchart
-    const { w, h } = await new Promise<{ w: number; h: number }>((resolve) => {
-      try {
-        const img = new Image();
-        img.src = window.URL.createObjectURL(pngStr);
-        let w: number, h: number;
+      // Get width and height of flowchart
+      const { w, h } = await new Promise<{ w: number; h: number }>(
+        (resolve) => {
+          try {
+            const img = new Image();
+            img.src = window.URL.createObjectURL(pngStr);
+            let w: number, h: number;
+            img.onload = () => {
+              w = img.width;
+              h = img.height;
+              document.body.removeChild(img);
+              resolve({ w, h });
+            };
+            document.body.appendChild(img);
+          } catch (e) {
+            resolve({ w: 0, h: 0 });
+          }
+        }
+      );
+
+      // Create canvas with size + padding
+      const canvas = document.createElement("canvas");
+      canvas.width = w + PADDING;
+      canvas.height = h + PADDING;
+
+      // add canvas to document and get context
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      // draw background on canvas
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // take the blob and draw it on center of canvas
+      const img = new Image();
+      img.src = window.URL.createObjectURL(pngStr);
+      return new Promise((resolve) => {
         img.onload = () => {
-          w = img.width;
-          h = img.height;
-          document.body.removeChild(img);
-          resolve({ w, h });
+          ctx.drawImage(img, PADDING / 2, PADDING / 2);
+          window.URL.revokeObjectURL(img.src);
+          resolve({
+            canvas,
+            cleanup: () => {
+              // throw away canvas
+              canvas.remove();
+            },
+          });
         };
-        document.body.appendChild(img);
-      } catch (e) {
-        resolve({ w: 0, h: 0 });
-      }
-    });
-
-    // Create canvas with size + padding
-    const canvas = document.createElement("canvas");
-    canvas.width = w + PADDING;
-    canvas.height = h + PADDING;
-
-    // add canvas to document and get context
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    // draw background on canvas
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // take the blob and draw it on center of canvas
-    const img = new Image();
-    img.src = window.URL.createObjectURL(pngStr);
-    return new Promise((resolve) => {
-      img.onload = () => {
-        ctx.drawImage(img, PADDING / 2, PADDING / 2);
-        window.URL.revokeObjectURL(img.src);
-        resolve({
-          canvas,
-          cleanup: () => {
-            // throw away canvas
-            canvas.remove();
-          },
-        });
-      };
-    });
-  }, [bg, cy]);
+      });
+    },
+    [bg, cy]
+  );
 
   useEffect(() => {
     window.__FF_downloadPNG = async () => {
-      const png = await getPNG();
+      const png = await getPNG("png");
       if (!png) return;
       const { canvas, cleanup } = png;
       saveAs(canvas.toDataURL("image/png"), `${filename}.png`);
@@ -209,7 +214,7 @@ export default function useDownloadHandlers(
 
   useEffect(() => {
     window.__FF_copyPNG = async () => {
-      const png = await getPNG();
+      const png = await getPNG("png");
       if (!png) return;
       const { canvas, cleanup } = png;
       const blob = await new Promise<Blob | null>((resolve) => {
@@ -227,10 +232,10 @@ export default function useDownloadHandlers(
 
   useEffect(() => {
     window.__FF_downloadJPG = async () => {
-      const img = await getPNG();
+      const img = await getPNG("jpg");
       if (!img) return;
       const { canvas, cleanup } = img;
-      saveAs(canvas.toDataURL("image/jpg"), `${filename}.jpg`);
+      saveAs(canvas.toDataURL("image/jpeg"), `${filename}.jpg`);
       cleanup();
     };
   }, [filename, getPNG]);

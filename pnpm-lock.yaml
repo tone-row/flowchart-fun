@@ -31,7 +31,7 @@ importers:
       '@lingui/react': ^3.8.9
       '@monaco-editor/react': ^4.0.11
       '@notionhq/client': ^0.4.11
-      '@playwright/test': 1.23.0-alpha-may-16-2022
+      '@playwright/test': 1.25.1
       '@radix-ui/react-hover-card': ^0.1.5
       '@radix-ui/react-radio-group': ^0.1.5
       '@radix-ui/react-switch': ^0.1.5
@@ -207,7 +207,7 @@ importers:
     devDependencies:
       '@lingui/cli': 3.14.0_dq5lmo4h23lmf75ogg5ipbjddi
       '@lingui/macro': 3.14.0_dbgdgklco3dywdwlcrfyitz5ce
-      '@playwright/test': 1.23.0-alpha-may-16-2022
+      '@playwright/test': 1.25.1
       '@types/benchmark': 2.1.2
       '@types/css-font-loading-module': 0.0.7
       '@types/cytoscape': 3.19.7
@@ -2173,7 +2173,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 12.20.55
+      '@types/node': 18.7.14
       '@types/yargs': 15.0.14
       chalk: 4.1.2
 
@@ -2442,14 +2442,6 @@ packages:
     resolution: {integrity: sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==}
     dev: true
 
-  /@playwright/test/1.23.0-alpha-may-16-2022:
-    resolution: {integrity: sha512-smfxtpVPAb3jyz9kaarWSVOHK9Qw+f0s1QomSZXamDdhTasH0SLNbnHUkjg2nPH6dqXod3GYi1NUAR+X4Z0Wyg==}
-    engines: {node: '>=14'}
-    hasBin: true
-    dependencies:
-      playwright-core: 1.23.0-alpha-may-16-2022
-    dev: true
-
   /@playwright/test/1.25.1:
     resolution: {integrity: sha512-IJ4X0yOakXtwkhbnNzKkaIgXe6df7u3H3FnuhI9Jqh+CdO0e/lYQlDLYiyI9cnXK8E7UAppAWP+VqAv6VX7HQg==}
     engines: {node: '>=14'}
@@ -2457,7 +2449,6 @@ packages:
     dependencies:
       '@types/node': 18.7.14
       playwright-core: 1.25.1
-    dev: false
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.7_wt5p3h66kg5yz5633zrrqkcxnm:
     resolution: {integrity: sha512-bcKCAzF0DV2IIROp9ZHkRJa6O4jy7NlnHdWL3GmcUxYWNjLXkK5kfELELwEfSP5hXPfVL/qOGMAROuMQb9GG8Q==}
@@ -3835,7 +3826,7 @@ packages:
   /@types/node-fetch/2.6.2:
     resolution: {integrity: sha512-DHqhlq5jeESLy19TYhLakJ07kNumXWjcDdxXsLUMJZ6ue8VZJj4kLPQVE/2mdHh3xZziNF1xppu5lwmS53HR+A==}
     dependencies:
-      '@types/node': 12.20.55
+      '@types/node': 18.7.14
       form-data: 3.0.1
     dev: false
 
@@ -3850,7 +3841,6 @@ packages:
 
   /@types/node/18.7.14:
     resolution: {integrity: sha512-6bbDaETVi8oyIARulOE9qF1/Qdi/23z6emrUh0fNJRUmjznqrixD4MpGDdgOFk5Xb0m2H6Xu42JGdvAxaJR/wA==}
-    dev: false
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -3955,7 +3945,7 @@ packages:
   /@types/set-cookie-parser/2.4.2:
     resolution: {integrity: sha512-fBZgytwhYAUkj/jC/FAV4RQ5EerRup1YQsXQCh8rZfiHkc4UahC192oH0smGwsXol3cL3A5oETuAHeQHmhXM4w==}
     dependencies:
-      '@types/node': 12.20.55
+      '@types/node': 18.7.14
     dev: true
 
   /@types/sockjs/0.3.33:
@@ -3990,7 +3980,7 @@ packages:
   /@types/through/0.0.30:
     resolution: {integrity: sha512-FvnCJljyxhPM3gkRgWmxmDZyAQSiBQQWLI0A0VFL0K7W1oRUrPJSqNO0NvTnLkBcotdlp3lKvaT0JrnyRDkzOg==}
     dependencies:
-      '@types/node': 12.20.55
+      '@types/node': 18.7.14
     dev: true
 
   /@types/trusted-types/2.0.2:
@@ -10170,17 +10160,10 @@ packages:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
     dev: true
 
-  /playwright-core/1.23.0-alpha-may-16-2022:
-    resolution: {integrity: sha512-BgQmWucNtsJI/ZYPmj4Rf5FtlkZypRVSVULJhqy4N508XN5Q4g2L0JNdzDj1gneFIYBk6TBZS+EEZUhABaGC0g==}
-    engines: {node: '>=14'}
-    hasBin: true
-    dev: true
-
   /playwright-core/1.25.1:
     resolution: {integrity: sha512-lSvPCmA2n7LawD2Hw7gSCLScZ+vYRkhU8xH0AapMyzwN+ojoDqhkH/KIEUxwNu2PjPoE/fcE0wLAksdOhJ2O5g==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: false
 
   /playwright/1.25.1:
     resolution: {integrity: sha512-kOlW7mllnQ70ALTwAor73q/FhdH9EEXLUqjdzqioYLcSVC4n4NBfDqeCikGuayFZrLECLkU6Hcbziy/szqTXSA==}

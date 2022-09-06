@@ -17,8 +17,8 @@
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "format": "prettier --write '{src,e2e}/**/*.{ts,tsx,scss,css,json}'",
     "e2e": "npx playwright test --config=playwright.config.ts",
+    "e2e:debug": "DEBUG=1 yarn e2e --workers 1",
     "e2e:generate": "npx playwright codegen localhost:3000",
-    "e2e:debug": "HEADLESS=0 SLOWMO=500 yarn e2e --workers 1",
     "generate:types": "export $(cat .env.local | xargs) && npx openapi-typescript \"${SB_URL}/rest/v1/?apikey=${SB_ANON_KEY}\" --output src/types/supabase.ts",
     "benchmark": "npx ts-node -O '{\"module\":\"commonjs\"}' --files benchmarks/utils.ts",
     "benchmark:write": "yarn benchmark --write",
@@ -115,7 +115,7 @@
   "devDependencies": {
     "@lingui/cli": "^3.13.2",
     "@lingui/macro": "^3.13.2",
-    "@playwright/test": "1.23.0-alpha-may-16-2022",
+    "@playwright/test": "1.25.1",
     "@types/benchmark": "^2.1.1",
     "@types/css-font-loading-module": "^0.0.7",
     "@types/cytoscape": "^3.14.12",

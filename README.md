@@ -47,6 +47,11 @@ Flowchart Fun uses [Lingui](https://lingui.js.org/) for translations. These are 
 1. Strings are extracted with `pnpm -F app extract`. Then translations can be added to `.po` files in `/app/src/locales/[language]/messages.po`
 1. When all translations are added, run `pnpm -F app compile`.
 
+### Tests
+
+- You can run jest tests with `pnpm test`
+- For E2E tests, start the app with `pnpm start` and then run `pnpm -F app e2e`
+
 ## Release
 
 1. Branch from `dev` to develop a feature
