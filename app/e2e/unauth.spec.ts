@@ -1,16 +1,16 @@
 import { expect, Page, test } from "@playwright/test";
 
-import { goToPath, goToTab } from "./utils";
-export const BASE_URL = process.env.E2E_START_URL ?? "http://localhost:3000";
+import { BASE_URL, goToPath, goToTab } from "./utils";
 
 // Run in parallel
 test.describe.configure({ mode: "parallel" });
-test.describe("Unauthorized", () => {
+
+test.describe("unauth", () => {
   test.beforeEach(async ({ page }) => {
     await goToPath(page);
   });
 
-  test("Learn More -> Sponsors Page", async ({ page }) => {
+  test("View Sponsors Page", async ({ page }) => {
     await goToTab(page, "Charts");
 
     await page.click('button:has-text("Learn More")');
@@ -123,7 +123,7 @@ test.describe("Unauthorized", () => {
     ).toBeVisible();
   });
 
-  test("Open Help Documentation > View an Example", async ({ page }) => {
+  test("View an Example", async ({ page }) => {
     await goToTab(page, "Help");
     await expect(page).toHaveURL(`${BASE_URL}/h`);
     // Click text=Table of Contents
@@ -166,7 +166,7 @@ test.describe("Unauthorized", () => {
     await expect(page.locator("text=cool-chart")).toBeVisible();
   });
 
-  test("Open Export > Download SVG", async ({ page }) => {
+  test("Download SVG", async ({ page }) => {
     await openExportDialog(page);
     // Click [aria-label="Download SVG"]
     const [download] = await Promise.all([
@@ -177,7 +177,7 @@ test.describe("Unauthorized", () => {
     expect(download.suggestedFilename()).toBe("flowchart.svg");
   });
 
-  test("Open Export > Download PNG", async ({ page }) => {
+  test("Download PNG", async ({ page }) => {
     await openExportDialog(page);
     // Click [aria-label="Download PNG"]
     const [download] = await Promise.all([
@@ -188,7 +188,7 @@ test.describe("Unauthorized", () => {
     expect(download.suggestedFilename()).toBe("flowchart.png");
   });
 
-  test("Open Export > Download JPG", async ({ page }) => {
+  test("Download JPG", async ({ page }) => {
     await openExportDialog(page);
     // Click [aria-label="Download JPG"]
     const [download] = await Promise.all([
@@ -199,7 +199,7 @@ test.describe("Unauthorized", () => {
     expect(download.suggestedFilename()).toBe("flowchart.jpg");
   });
 
-  test("Open Export > Copy FullScreen Link", async ({ page }) => {
+  test("Copy Fullscreen Link", async ({ page }) => {
     try {
       await openExportDialog(page);
 
@@ -221,7 +221,7 @@ test.describe("Unauthorized", () => {
     }
   });
 
-  test("Open Export > Copy With Editor Link", async ({ page }) => {
+  test("Copy With-Editor Link", async ({ page }) => {
     try {
       await openExportDialog(page);
 
@@ -245,7 +245,7 @@ test.describe("Unauthorized", () => {
     }
   });
 
-  test("Open Export > Copy Mermaid JS code", async ({ page }) => {
+  test("Copy Mermaid JS Code", async ({ page }) => {
     try {
       await openExportDialog(page);
 
@@ -261,7 +261,7 @@ test.describe("Unauthorized", () => {
     }
   });
 
-  test("Open Settings > Change Language", async ({ page }) => {
+  test("Change Language", async ({ page }) => {
     await goToTab(page, "Settings");
     // Click [aria-label="Select Language\: Deutsch"]
     await page.locator('[aria-label="Select Language\\: Deutsch"]').click();
@@ -269,7 +269,7 @@ test.describe("Unauthorized", () => {
     await expect(page.locator('h1:has-text("Einstellungen")')).toBeVisible();
   });
 
-  test("Open Settings > Change Appearance", async ({ page }) => {
+  test("Change Appearance", async ({ page }) => {
     await goToTab(page, "Settings");
     await page.locator('[aria-label="Dark Mode"]').click();
     // get value of css custom property --color-background
@@ -283,9 +283,7 @@ test.describe("Unauthorized", () => {
     expect(foreground.trim()).toBe("rgb(250, 250, 250)");
   });
 
-  test("Open Feedback > Type feedback with email > Submit", async ({
-    page,
-  }) => {
+  test("Submit Feedback", async ({ page }) => {
     await goToTab(page, "Feedback");
     // Click [data-testid="message"]
     await page.locator('[data-testid="message"]').click();

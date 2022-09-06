@@ -28,7 +28,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Item
         onClick={() => {
           gaUseGraphContextMenu({ action: "Download PNG" });
-          window.flowchartFunDownloadPNG();
+          window.__FF_downloadPNG();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
@@ -38,7 +38,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Item
         onClick={() => {
           gaUseGraphContextMenu({ action: "Download JPG" });
-          window.flowchartFunDownloadJPG();
+          window.__FF_downloadJPG();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
@@ -48,7 +48,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Item
         onClick={() => {
           gaUseGraphContextMenu({ action: "Download SVG" });
-          window.flowchartFunDownloadSVG();
+          window.__FF_downloadSVG();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
@@ -69,7 +69,7 @@ function CopySVG() {
     gaUseGraphContextMenu({ action: "Copy SVG" });
     (async () => {
       dispatch("loading");
-      const svgStr = await window.flowchartFunGetSVG();
+      const svgStr = await window.__FF_getSVG();
       // copy to clipboard using navigator
       await navigator.clipboard.writeText(svgStr);
       dispatch("success");
@@ -94,7 +94,7 @@ function CopyPNG() {
     gaUseGraphContextMenu({ action: "Copy PNG" });
     dispatch("loading");
     setTimeout(() => {
-      window.flowchartFunCopyPNG().then(() => {
+      window.__FF_copyPNG().then(() => {
         dispatch("success");
       });
     }, 0);
