@@ -22,7 +22,8 @@
     "generate:types": "export $(cat .env.local | xargs) && npx openapi-typescript \"${SB_URL}/rest/v1/?apikey=${SB_ANON_KEY}\" --output src/types/supabase.ts",
     "benchmark": "npx ts-node -O '{\"module\":\"commonjs\"}' --files benchmarks/utils.ts",
     "benchmark:write": "yarn benchmark --write",
-    "benchmark:compare": "yarn benchmark --compare"
+    "benchmark:compare": "yarn benchmark --compare",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "dependencies": {
     "@lingui/core": "^3.8.9",
@@ -151,6 +152,7 @@
     "msw": "^0.36.8",
     "node-localstorage": "^2.2.1",
     "prettier": "^2.3.1",
+    "source-map-explorer": "^2.5.2",
     "ts-unused-exports": "^7.0.3",
     "web-worker": "^1.2.0"
   },
