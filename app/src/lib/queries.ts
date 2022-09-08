@@ -35,7 +35,7 @@ export function useUserFeatures() {
   return useQuery(["auth", "userFeatures"], userFeatures);
 }
 
-async function customerInfo(
+export async function customerInfo(
   email: string | undefined
 ): Promise<{ customerId: string; subscription: Stripe.Subscription }> {
   if (!email) return Promise.reject(new Error("Invalid Email"));
@@ -46,7 +46,7 @@ async function customerInfo(
     },
     body: JSON.stringify({ email }),
   });
-  return await response.json();
+  return response.json();
 }
 
 /**
@@ -173,7 +173,7 @@ ${t`comments`}
 ${t`Have fun! 🎉`}
 */`;
 
-  return supabase
+  return await supabase
     .from<definitions["user_charts"]>("user_charts")
     .insert({ name, chart: chart ?? defaultText, user_id });
 }
@@ -188,11 +188,14 @@ async function userCharts() {
   return data;
 }
 
-export function useCharts() {
+/** We can manually pass the user id if we use this hook above the AppContext */
+export function useHostedCharts(iUserId?: string) {
   const { session } = useContext(AppContext);
-  return useQuery(["auth", "userCharts"], userCharts, {
+  const userId = iUserId ?? session?.user?.id;
+  const enabled = !!userId;
+  return useQuery(["auth", "hostedCharts"], userCharts, {
     suspense: false,
-    enabled: Boolean(session?.user?.id),
+    enabled,
     refetchOnMount: true,
     staleTime: 0,
   });

@@ -39,7 +39,7 @@ import { makeChart, queryClient, renameChart } from "../lib/queries";
 import { Box, BoxProps, Type } from "../slang";
 import { AppContext, Showing, useSession } from "./AppContext";
 import { ReactComponent as BrandSvg } from "./brand.svg";
-import styles from "./MenuNext.module.css";
+import styles from "./Menu.module.css";
 import {
   Button,
   Dialog,
@@ -52,7 +52,7 @@ import {
   tooltipSize,
 } from "./Shared";
 
-export default function MenuNext() {
+export function Menu() {
   const { showing, session } = useContext(AppContext);
   const { setShowing } = useContext(AppContext);
   const { push } = useHistory();
@@ -92,7 +92,7 @@ export default function MenuNext() {
           icon={Plus}
           label={t`New`}
           onClick={() => {
-            push(`/${randomChartName()}`);
+            push("/n");
             setShowing("editor");
             gaNewChart();
           }}

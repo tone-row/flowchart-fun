@@ -2,7 +2,7 @@ import { Page } from "@playwright/test";
 import axios from "axios";
 import crypto from "crypto";
 
-import { BASE_URL } from "./index.spec";
+export const BASE_URL = process.env.E2E_START_URL ?? "http://localhost:3000";
 const EMAIL_DOMAINS_LIST: string[] = [];
 
 export async function goToPath(page: Page, path = "") {

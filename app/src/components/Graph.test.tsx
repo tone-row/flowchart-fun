@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils";
 import { render } from "../test-utils";
 import Graph from "./Graph";
 

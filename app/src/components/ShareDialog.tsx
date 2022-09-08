@@ -61,7 +61,7 @@ export default function ShareDialog() {
         <Box gap={2} flow="column" className={styles.DownloadButtons}>
           <Button
             onClick={() => {
-              window.flowchartFunDownloadSVG();
+              window.__FF_downloadSVG();
               gaExportChart({ action: "Download", label: "SVG" });
             }}
             aria-label="Download SVG"
@@ -69,7 +69,7 @@ export default function ShareDialog() {
           />
           <Button
             onClick={() => {
-              window.flowchartFunDownloadPNG();
+              window.__FF_downloadPNG();
               gaExportChart({ action: "Download", label: "PNG" });
             }}
             aria-label="Download PNG"
@@ -77,7 +77,7 @@ export default function ShareDialog() {
           />
           <Button
             onClick={() => {
-              window.flowchartFunDownloadJPG();
+              window.__FF_downloadJPG();
               gaExportChart({ action: "Download", label: "JPG" });
             }}
             aria-label="Download JPG"
@@ -239,10 +239,10 @@ function Preview() {
   const [bg, setBG] = useReducer((_: string, x: string) => x, "");
   useEffect(() => {
     // defer
-    setTimeout(() => setBG(window.flowchartFunGetGraphThemeBG()), 0);
+    setTimeout(() => setBG(window.__FF_getGraphThemeBG()), 0);
     setTimeout(() => {
       (async () => {
-        const svg = await window.flowchartFunGetSVG();
+        const svg = await window.__FF_getSVG();
         set(svg);
       })();
     }, 0);

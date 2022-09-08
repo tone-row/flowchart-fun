@@ -5,8 +5,8 @@ import style from "./Spinner.module.css";
 export default function Spinner({
   className = "",
   r = 16,
-  s = 1.15,
-  c = "var(--color-foreground)",
+  s = 3,
+  c = "var(--color-uiAccent)",
 }: {
   className?: string;
   r?: number;

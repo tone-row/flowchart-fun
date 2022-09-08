@@ -8,7 +8,7 @@ import ColorMode from "./ColorMode";
 import CurrentTab from "./CurrentTab";
 import styles from "./Layout.module.css";
 import Loading from "./Loading";
-import MenuNext from "./MenuNext";
+import { Menu } from "./Menu";
 import ShareDialog from "./ShareDialog";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
@@ -17,7 +17,7 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
   const tab = useContext(AppContext).showing;
   return (
     <LayoutWrapper isFullscreen={isFullscreen} key={url}>
-      {isFullscreen ? null : <MenuNext />}
+      {isFullscreen ? null : <Menu />}
       <EditorWrapper>
         <CurrentTab>{children}</CurrentTab>
       </EditorWrapper>

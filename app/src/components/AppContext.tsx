@@ -16,7 +16,7 @@ import Stripe from "stripe";
 
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { loadSponsorOnlyLayouts } from "../lib/cytoscape";
-import { useCustomerInfo } from "../lib/queries";
+import { useCustomerInfo, useHostedCharts } from "../lib/queries";
 import { useStoreGraph } from "../lib/store.graph";
 import { supabase } from "../lib/supabaseClient";
 import { languages } from "../locales/i18n";
@@ -64,6 +64,7 @@ export type TAppContext = {
   session: Session | null;
   customer?: CustomerInfo;
   customerIsLoading: boolean;
+  checkedSession: boolean;
 } & UserSettings;
 
 type CustomerInfo = {
@@ -134,7 +135,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     useState<TAppContext["hasStyleError"]>(false);
 
   // const [_, sponsorLayoutsLoaded] = useReducer(() => true, false);
-
+  const [checkedSession, setCheckedSession] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
 
   /* Load Sponsor-only layouts when logged in */
@@ -154,9 +155,12 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     if (supabase) {
       const session = supabase.auth.session();
       setSession(session);
+      setCheckedSession(true);
       supabase.auth.onAuthStateChange((_event, session) => {
         setSession(session);
       });
+    } else {
+      setCheckedSession(true);
     }
   }, []);
 
@@ -167,6 +171,9 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
     session?.user?.email
   );
+
+  // Load hosted charts ahead of time
+  useHostedCharts(session?.user?.id);
 
   return (
     <AppContext.Provider
@@ -190,6 +197,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         setHasStyleError,
         ...settings,
         language: settings.language ?? defaultLanguage,
+        checkedSession,
       }}
     >
       {children}
