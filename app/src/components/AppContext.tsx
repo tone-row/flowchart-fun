@@ -16,7 +16,7 @@ import Stripe from "stripe";
 
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { loadSponsorOnlyLayouts } from "../lib/cytoscape";
-import { useCustomerInfo } from "../lib/queries";
+import { useCustomerInfo, useHostedCharts } from "../lib/queries";
 import { useStoreGraph } from "../lib/store.graph";
 import { supabase } from "../lib/supabaseClient";
 import { languages } from "../locales/i18n";
@@ -171,6 +171,9 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
     session?.user?.email
   );
+
+  // Load hosted charts ahead of time
+  useHostedCharts(session?.user?.id);
 
   return (
     <AppContext.Provider

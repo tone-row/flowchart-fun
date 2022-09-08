@@ -28,7 +28,7 @@ import {
   makeChart,
   queryClient,
   useChart,
-  useCharts,
+  useHostedCharts,
 } from "../lib/queries";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
@@ -353,13 +353,13 @@ function HostedCharts() {
   const { id } = useParams<{ id?: string }>();
   const { mutate, isLoading } = useMutation("makeChart", makeChart, {
     onSuccess: (response: any) => {
-      queryClient.invalidateQueries(["auth", "userCharts"]);
+      queryClient.invalidateQueries(["auth", "hostedCharts"]);
       push(`/u/${response.data[0].id}`);
       setShowing("editor");
       gaCreateChart({ action: "hosted" });
     },
   });
-  const { data: charts } = useCharts();
+  const { data: charts } = useHostedCharts();
   const { register, watch, handleSubmit } = useForm<CreateNewFields>();
   const name = watch("name");
 
@@ -498,7 +498,7 @@ function CopyHostedChartInner({
   const { push } = useHistory();
   const newChart = useMutation("makeChart", makeChart, {
     onSuccess: (response: any) => {
-      queryClient.invalidateQueries(["auth", "userCharts"]);
+      queryClient.invalidateQueries(["auth", "hostedCharts"]);
       push(`/u/${response.data[0].id}`);
       onDismiss();
     },
@@ -561,7 +561,7 @@ function DeleteHostedChart({
   const { push } = useHistory();
   const deleteChatMutation = useMutation("deleteChart", deleteChart, {
     onSuccess: () => {
-      queryClient.invalidateQueries(["auth", "userCharts"]);
+      queryClient.invalidateQueries(["auth", "hostedCharts"]);
       push(`/`);
       onDismiss();
     },
