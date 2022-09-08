@@ -11,17 +11,10 @@
     "app:lint:format": "pnpm -F app lint:fix && pnpm -F app format",
     "test": "pnpm -F app test"
   },
-  "dependencies": {
-    "@playwright/test": "^1.16.1",
-    "@types/cytoscape": "^3.14.15",
-    "cytoscape-dagre": "^2.3.2",
-    "cytoscape-svg": "^0.3.1",
-    "playwright": "^1.16.1",
-    "vercel": "^28.2.0"
-  },
   "devDependencies": {
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.3"
+    "lint-staged": "^13.0.3",
+    "vercel": "^28.2.3"
   },
   "engines": {
     "node": "^16"
