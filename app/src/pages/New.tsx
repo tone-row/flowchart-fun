@@ -21,7 +21,7 @@ export const New = memo(function New() {
   const { mutate, isLoading } = useMutation("makeChart", makeChart, {
     retry: false,
     onSuccess: (response: any) => {
-      queryClient.invalidateQueries(["auth", "userCharts"]);
+      queryClient.invalidateQueries(["auth", "hostedCharts"]);
       push(`/u/${response.data[0].id}`);
       setShowing("editor");
       gaCreateChart({ action: "hosted" });
