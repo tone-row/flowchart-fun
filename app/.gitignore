@@ -27,3 +27,6 @@ yarn-error.log*
 
 # testing
 /test-results
+
+# webpack bundle analysis
+stats.json

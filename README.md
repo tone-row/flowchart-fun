@@ -52,6 +52,10 @@ Flowchart Fun uses [Lingui](https://lingui.js.org/) for translations. These are 
 - You can run jest tests with `pnpm test`
 - For E2E tests, start the app with `pnpm start` and then run `pnpm -F app e2e`
 
+### Analyze the Bundle
+
+`pnpm -F app build && pnpm -F app analyze`
+
 ## Release
 
 1. Branch from `dev` to develop a feature
