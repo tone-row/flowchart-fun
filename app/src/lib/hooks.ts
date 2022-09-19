@@ -134,7 +134,11 @@ export function useReadOnlyText() {
   const { public_id = "" } = useParams<{ public_id: string }>();
   const { data } = usePublicChart(public_id);
   const { path } = useRouteMatch();
-  const isCompressed = ["/c/:graphText?", "/f/:graphText?"].includes(path);
+  const isCompressed = [
+    "/c/:graphText?",
+    "/f/:graphText?",
+    "/n/:graphText?",
+  ].includes(path);
   const { graphText = window.location.hash.slice(1) } = useParams<{
     graphText: string;
   }>();
