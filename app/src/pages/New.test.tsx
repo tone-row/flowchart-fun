@@ -38,7 +38,33 @@ describe("New Page", () => {
     expect(window.location.pathname).toEqual(`/${fakeName}`);
   });
 
+  it("should use editable template for unauth user", async () => {
+    // make sure we return a template
+    const fakeChart = "hello world";
+    jest.spyOn(hooks, "useReadOnlyText").mockReturnValue({
+      fullText: fakeChart,
+    } as any);
+
+    // control the generated chart name
+    const mock = jest.spyOn(helpers, "randomChartName");
+    mock.mockReturnValue(fakeName);
+
+    render(<New />);
+    await nextFrame();
+    expect(window.location.pathname).toEqual(`/${fakeName}`);
+
+    // Confirm it's in local storage
+    const key = helpers.titleToLocalStorageKey(fakeName);
+    expect(global.localStorage.getItem(key)).toEqual(fakeChart);
+  });
+
   it("should create a hosted chart if logged in", async () => {
+    // make sure we return a template
+    const fakeChart = "hello world";
+    jest.spyOn(hooks, "useReadOnlyText").mockReturnValue({
+      fullText: fakeChart,
+    } as any);
+
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
     const mockGetSession = jest.spyOn(supabase.auth, "session");
@@ -69,27 +95,7 @@ describe("New Page", () => {
     expect(mockMutate).toHaveBeenCalled();
   });
 
-  it("should use editable template for unauth user", async () => {
-    // make sure we return a template
-    const fakeChart = "hello world";
-    jest.spyOn(hooks, "useReadOnlyText").mockReturnValue({
-      fullText: fakeChart,
-    } as any);
-
-    // control the generated chart name
-    const mock = jest.spyOn(helpers, "randomChartName");
-    mock.mockReturnValue(fakeName);
-
-    render(<New />);
-    await nextFrame();
-    expect(window.location.pathname).toEqual(`/${fakeName}`);
-
-    // Confirm it's in local storage
-    const key = helpers.titleToLocalStorageKey(fakeName);
-    expect(global.localStorage.getItem(key)).toEqual(fakeChart);
-  });
-
-  it.skip("should use template for auth user", async () => {
+  it("should use template for auth user", async () => {
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
     const mockGetSession = jest.spyOn(supabase.auth, "session");
