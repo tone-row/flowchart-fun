@@ -24,7 +24,7 @@ jest.mock("../lib/supabaseClient", () => ({
   },
 }));
 
-describe.only("New Page", () => {
+describe("New Page", () => {
   it("shoud render", async () => {
     render(<New />);
     await nextFrame();
@@ -89,7 +89,7 @@ describe.only("New Page", () => {
     expect(global.localStorage.getItem(key)).toEqual(fakeChart);
   });
 
-  it("should use template for auth user", async () => {
+  it.skip("should use template for auth user", async () => {
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
     const mockGetSession = jest.spyOn(supabase.auth, "session");
