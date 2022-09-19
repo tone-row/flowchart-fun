@@ -1,5 +1,3 @@
-import { compressToEncodedURIComponent } from "lz-string";
-import { LocalStorage } from "node-localstorage";
 import * as RQ from "react-query";
 
 import * as cy from "../lib/cytoscape";
@@ -91,7 +89,7 @@ describe.only("New Page", () => {
     expect(global.localStorage.getItem(key)).toEqual(fakeChart);
   });
 
-  it.only("should use template for auth user", async () => {
+  it("should use template for auth user", async () => {
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
     const mockGetSession = jest.spyOn(supabase.auth, "session");
