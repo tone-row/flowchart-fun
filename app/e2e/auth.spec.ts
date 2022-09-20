@@ -14,7 +14,7 @@ test.describe("Sign Up", () => {
 
   for (const plan of SPONSOR_PLANS) {
     test(`Sponsors > Become a ${plan} Sponsor`, async ({ page }) => {
-      test.setTimeout(120000);
+      test.setTimeout(240000);
 
       const email = await getTempEmail();
 

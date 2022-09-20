@@ -7,7 +7,7 @@ const isDebug = !!process.env.DEBUG;
 const config: PlaywrightTestConfig = {
   testDir: "e2e",
   workers: 6,
-  timeout: 90000,
+  timeout: 120000,
   use: {
     acceptDownloads: true,
     viewport: {
