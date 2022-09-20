@@ -14,7 +14,7 @@ test.describe("Sign Up", () => {
 
   for (const plan of SPONSOR_PLANS) {
     test(`Sponsors > Become a ${plan} Sponsor`, async ({ page }) => {
-      test.setTimeout(60000);
+      test.setTimeout(120000);
 
       const email = await getTempEmail();
 
@@ -68,19 +68,16 @@ test.describe("Sign Up", () => {
       ).toBeVisible({ timeout: 60000 });
 
       // Wait 5 seconds
-      await new Promise((resolve) => setTimeout(resolve, 5000));
+      await new Promise((resolve) => setTimeout(resolve, 10000));
 
       // Make Sure Log in Email is sent
       let emails = (await getTempEmailMessage(EMAILS[plan])) || [];
 
-      console.log("1", emails);
-
       if (!emails.length) {
         // Wait 5 seconds
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        await new Promise((resolve) => setTimeout(resolve, 10000));
 
         emails = await getTempEmailMessage(EMAILS[plan]);
-        console.log("2", emails);
       }
 
       expect(emails?.length).toBeGreaterThanOrEqual(1);
