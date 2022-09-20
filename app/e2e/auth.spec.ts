@@ -67,20 +67,18 @@ test.describe("Sign Up", () => {
         )
       ).toBeVisible({ timeout: 60000 });
 
-      // Wait 5 seconds
-      await new Promise((resolve) => setTimeout(resolve, 10000));
-
-      // Make Sure Log in Email is sent
-      let emails = (await getTempEmailMessage(EMAILS[plan])) || [];
-
-      if (!emails.length) {
+      let emails = [],
+        i = 0;
+      while (emails.length === 0 && i < 10) {
         // Wait 5 seconds
         await new Promise((resolve) => setTimeout(resolve, 10000));
 
-        emails = await getTempEmailMessage(EMAILS[plan]);
+        // Make Sure Log in Email is sent
+        emails = (await getTempEmailMessage(EMAILS[plan])) || [];
+        i++;
       }
 
-      expect(emails?.length).toBeGreaterThanOrEqual(1);
+      expect(emails.length).toBeGreaterThanOrEqual(1);
       expect(
         emails.some((email: { mail_html: string }) =>
           /supabase.co\/auth\/v1\/verify/.test(email.mail_html)
