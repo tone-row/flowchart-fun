@@ -23,9 +23,9 @@ const config: PlaywrightTestConfig = {
   projects: isDebug
     ? [
         {
-          name: "Chromium",
+          name: "Firefox",
           use: {
-            browserName: "chromium",
+            browserName: "firefox",
           },
         },
       ]

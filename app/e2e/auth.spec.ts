@@ -73,8 +73,11 @@ test.describe("Sign Up", () => {
         // Wait 5 seconds
         await new Promise((resolve) => setTimeout(resolve, 10000));
 
-        // Make Sure Log in Email is sent
-        emails = (await getTempEmailMessage(EMAIL_ADDRESSES[plan])) || [];
+        const response = await getTempEmailMessage(EMAIL_ADDRESSES[plan]);
+
+        if (!("error" in response)) {
+          emails = response;
+        }
         i++;
       }
 
