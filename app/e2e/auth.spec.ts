@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 import { getTempEmail, getTempEmailMessage, goToPath, goToTab } from "./utils";
 
 const SPONSOR_PLANS = ["$5 / Month", "$50 / Year"] as const;
-const EMAILS: Record<typeof SPONSOR_PLANS[number], string> = {
+const EMAIL_ADDRESSES: Record<typeof SPONSOR_PLANS[number], string> = {
   "$5 / Month": "",
   "$50 / Year": "",
 };
@@ -21,7 +21,7 @@ test.describe("Sign Up", () => {
       // expect email not to be null
       expect(email).toBeTruthy();
 
-      EMAILS[plan] = email;
+      EMAIL_ADDRESSES[plan] = email;
 
       await goToTab(page, "Sponsors");
 
@@ -69,12 +69,12 @@ test.describe("Sign Up", () => {
 
       let emails = [],
         i = 0;
-      while (emails.length === 0 && i < 10) {
+      while (emails.length === 0 && i < 20) {
         // Wait 5 seconds
         await new Promise((resolve) => setTimeout(resolve, 10000));
 
         // Make Sure Log in Email is sent
-        emails = (await getTempEmailMessage(EMAILS[plan])) || [];
+        emails = (await getTempEmailMessage(EMAIL_ADDRESSES[plan])) || [];
         i++;
       }
 
