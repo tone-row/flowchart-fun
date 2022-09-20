@@ -75,8 +75,8 @@ msgstr "Cancelar"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Cancele sua inscrição. Seus diagramas hospedados não serão modificáveis."
 
-#: src/components/MenuNext.tsx:113
-#: src/components/MenuNext.tsx:266
+#: src/components/Menu.tsx:113
+#: src/components/Menu.tsx:266
 msgid "Charts"
 msgstr "Diagramas"
 
@@ -98,14 +98,11 @@ msgid "Clear"
 msgstr "Apagar"
 
 #: src/components/ClearTextButton.tsx:32
-msgid "Clear text"
-msgstr ""
-
 #: src/components/ClearTextButton.tsx:35
 msgid "Clear text?"
 msgstr "Limpar o texto?"
 
-#: src/components/MenuNext.tsx:447
+#: src/components/Menu.tsx:447
 msgid "Clone"
 msgstr "Clonar"
 
@@ -125,16 +122,16 @@ msgstr "Concêntrico"
 msgid "Contract"
 msgstr "Contrair"
 
-#: src/components/MenuNext.tsx:381
+#: src/components/Menu.tsx:381
 msgid "Convert to hosted chart?"
 msgstr "Converter em diagrama hospedado?"
 
 #: src/components/Navigation.tsx:476
 #: src/components/Navigation.tsx:547
 #: src/components/Navigation.tsx:581
-#: src/components/ShareDialog.tsx:227
-#: src/components/ShareDialog.tsx:228
-#: src/components/ShareDialog.tsx:294
+#: src/components/ShareDialog.tsx:229
+#: src/components/ShareDialog.tsx:230
+#: src/components/ShareDialog.tsx:296
 msgid "Copy"
 msgstr "Copiar"
 
@@ -193,7 +190,7 @@ msgstr "Você deseja cancelar sua inscrição?"
 msgid "Do you want to delete this?"
 msgstr "Você deseja deletar isso?"
 
-#: src/components/ShareDialog.tsx:58
+#: src/components/ShareDialog.tsx:59
 msgid "Download"
 msgstr "Baixar"
 
@@ -218,7 +215,11 @@ msgstr "Duplicar"
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "Edite seus gráficos em qualquer dispositivo. Compartilhe-os com qualquer pessoa. Publique seus gráficos uma vez e eles permanecerão atualizados com suas alterações."
 
-#: src/components/MenuNext.tsx:103
+#: src/components/ShareDialog.tsx:136
+msgid "Editable"
+msgstr "Editável"
+
+#: src/components/Menu.tsx:103
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "Editor"
@@ -246,14 +247,14 @@ msgstr "Excalidraw"
 msgid "Expand"
 msgstr "Expandir"
 
-#: src/components/MenuNext.tsx:429
-#: src/components/ShareDialog.tsx:50
-#: src/components/ShareDialog.tsx:144
+#: src/components/Menu.tsx:429
+#: src/components/ShareDialog.tsx:51
+#: src/components/ShareDialog.tsx:146
 msgid "Export"
 msgstr "Exportar"
 
-#: src/components/MenuNext.tsx:158
-#: src/components/MenuNext.tsx:262
+#: src/components/Menu.tsx:158
+#: src/components/Menu.tsx:262
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -270,7 +271,7 @@ msgstr "Travar Layout"
 msgid "Freezing your chart allows you to customize the layout by disabling automatic layout."
 msgstr "Congelar o seu gráfico permite que você personalize o layout desativando o layout automático."
 
-#: src/components/ShareDialog.tsx:132
+#: src/components/ShareDialog.tsx:133
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
@@ -303,7 +304,7 @@ msgstr "Grade"
 msgid "Have fun! 🎉"
 msgstr "Divirta-se! 🎉"
 
-#: src/components/MenuNext.tsx:147
+#: src/components/Menu.tsx:147
 msgid "Help"
 msgstr "Ajuda"
 
@@ -351,7 +352,7 @@ msgstr "Claro"
 msgid "Light Mode"
 msgstr "Modo claro"
 
-#: src/components/ShareDialog.tsx:127
+#: src/components/ShareDialog.tsx:128
 msgid "Link"
 msgstr "Link"
 
@@ -371,7 +372,7 @@ msgstr "Feito por <0>Tone Row</0>"
 msgid "Make a Donation"
 msgstr "Faça uma doação"
 
-#: src/components/ShareDialog.tsx:100
+#: src/components/ShareDialog.tsx:101
 msgid "Make publicly accessible"
 msgstr "Tornar publicamente acessível"
 
@@ -400,7 +401,7 @@ msgstr "Nome"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Preciso de ajuda? <0>Confira nossa documentação.</0>"
 
-#: src/components/MenuNext.tsx:93
+#: src/components/Menu.tsx:93
 msgid "New"
 msgstr "Novo"
 
@@ -418,8 +419,8 @@ msgid "Powerful layout algorithms that bring order to graphs of all shapes and s
 msgstr "Poderosos algoritmos de layout que trazem ordem para gráficos de todos os formatos e tamanhos"
 
 #: src/components/Navigation.tsx:625
-#: src/components/ShareDialog.tsx:91
-#: src/components/ShareDialog.tsx:117
+#: src/components/ShareDialog.tsx:92
+#: src/components/ShareDialog.tsx:118
 msgid "Public"
 msgstr "Público"
 
@@ -427,11 +428,15 @@ msgstr "Público"
 msgid "Random"
 msgstr "Aleatório"
 
-#: src/components/MenuNext.tsx:345
-#: src/components/MenuNext.tsx:346
-#: src/components/MenuNext.tsx:352
-#: src/components/MenuNext.tsx:362
-#: src/components/MenuNext.tsx:371
+#: src/components/ShareDialog.tsx:139
+msgid "Read-only"
+msgstr "Somente leitura"
+
+#: src/components/Menu.tsx:345
+#: src/components/Menu.tsx:346
+#: src/components/Menu.tsx:352
+#: src/components/Menu.tsx:362
+#: src/components/Menu.tsx:371
 msgid "Rename"
 msgstr "Renomear"
 
@@ -459,8 +464,8 @@ msgstr "Retornar"
 msgid "Right to Left"
 msgstr "Da direita para esquerda"
 
-#: src/components/MenuNext.tsx:167
-#: src/components/MenuNext.tsx:264
+#: src/components/Menu.tsx:167
+#: src/components/Menu.tsx:264
 msgid "Settings"
 msgstr "Configurações"
 
@@ -480,8 +485,8 @@ msgstr "Patrocine flowchart.fun com $5 por mês para ter acesso à diagramasflu�
 msgid "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to..."
 msgstr "Colabore com o flowchart.fun com <0>US$ 5,00 por mês</0> ou <1>US$ 50,00 por ano</1> para ter acesso a..."
 
-#: src/components/MenuNext.tsx:122
-#: src/components/MenuNext.tsx:268
+#: src/components/Menu.tsx:122
+#: src/components/Menu.tsx:268
 msgid "Sponsors"
 msgstr "Patrocínios"
 
@@ -494,7 +499,7 @@ msgid "Status"
 msgstr "Status"
 
 #: src/components/Feedback.tsx:98
-#: src/components/MenuNext.tsx:400
+#: src/components/Menu.tsx:400
 msgid "Submit"
 msgstr "Enviar"
 
@@ -558,10 +563,6 @@ msgstr "Como você gostaria de chamar essa cópia?"
 #: src/components/Feedback.tsx:76
 msgid "What would you like to share with us?"
 msgstr "O que você deseja compartilhar com a gente?"
-
-#: src/components/ShareDialog.tsx:137
-msgid "With Editor"
-msgstr "Com editor"
 
 #: src/components/Navigation.tsx:406
 #: src/components/SponsorDashboard.tsx:65

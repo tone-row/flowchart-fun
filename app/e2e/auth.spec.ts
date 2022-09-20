@@ -3,25 +3,25 @@ import { expect, test } from "@playwright/test";
 import { getTempEmail, getTempEmailMessage, goToPath, goToTab } from "./utils";
 
 const SPONSOR_PLANS = ["$5 / Month", "$50 / Year"] as const;
-const EMAILS: Record<typeof SPONSOR_PLANS[number], string> = {
+const EMAIL_ADDRESSES: Record<typeof SPONSOR_PLANS[number], string> = {
   "$5 / Month": "",
   "$50 / Year": "",
 };
-test.describe("Sign Up", () => {
+test.describe.skip("Sign Up", () => {
   test.beforeEach(async ({ page }) => {
     await goToPath(page);
   });
 
   for (const plan of SPONSOR_PLANS) {
     test(`Sponsors > Become a ${plan} Sponsor`, async ({ page }) => {
-      test.setTimeout(60000);
+      test.setTimeout(240000);
 
       const email = await getTempEmail();
 
       // expect email not to be null
       expect(email).toBeTruthy();
 
-      EMAILS[plan] = email;
+      EMAIL_ADDRESSES[plan] = email;
 
       await goToTab(page, "Sponsors");
 
@@ -67,17 +67,18 @@ test.describe("Sign Up", () => {
         )
       ).toBeVisible({ timeout: 60000 });
 
-      // Wait 5 seconds
-      await new Promise((resolve) => setTimeout(resolve, 5000));
-
-      // Make Sure Log in Email is sent
-      let emails = await getTempEmailMessage(EMAILS[plan]);
-
-      if (!emails.length) {
+      let emails = [],
+        i = 0;
+      while (emails.length === 0 && i < 20) {
         // Wait 5 seconds
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        await new Promise((resolve) => setTimeout(resolve, 10000));
 
-        emails = await getTempEmailMessage(EMAILS[plan]);
+        const response = await getTempEmailMessage(EMAIL_ADDRESSES[plan]);
+
+        if (!("error" in response)) {
+          emails = response;
+        }
+        i++;
       }
 
       expect(emails.length).toBeGreaterThanOrEqual(1);

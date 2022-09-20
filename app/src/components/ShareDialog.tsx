@@ -27,7 +27,8 @@ export default function ShareDialog() {
   const { shareModal, setShareModal, shareLink } = useContext(AppContext);
   const close = useCallback(() => setShareModal(false), [setShareModal]);
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
-  const withEditor = `${new URL(window.location.href).origin}/c#${shareLink}`;
+  const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
+  const editable = `${new URL(window.location.href).origin}/n/${shareLink}`;
   const makePublic = useMutation(
     "makeChartPublic",
     async (isPublic: boolean) => {
@@ -132,10 +133,11 @@ export default function ShareDialog() {
             title={t`Fullscreen`}
             rawTitle="Fullscreen"
           />
+          <LinkCopy value={editable} title={t`Editable`} rawTitle="Editable" />
           <LinkCopy
-            value={withEditor}
-            title={t`With Editor`}
-            rawTitle="With Editor"
+            value={readOnly}
+            title={t`Read-only`}
+            rawTitle="Read-only"
           />
         </Box>
       </Column>
