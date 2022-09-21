@@ -20,7 +20,7 @@ export default function Router() {
       <LayoutRoute path="/h" exact>
         <Help />
       </LayoutRoute>
-      <Route path="/n" exact>
+      <Route path="/n/:graphText?">
         <New />
       </Route>
       <LayoutRoute path="/u/:id">

@@ -5,12 +5,13 @@ import { useHistory } from "react-router-dom";
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
 import { gaCreateChart } from "../lib/analytics";
-import { randomChartName } from "../lib/helpers";
-import { useIsValidCustomer } from "../lib/hooks";
+import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
+import { useIsValidCustomer, useReadOnlyText } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { Type } from "../slang";
 
 export const New = memo(function New() {
+  const { fullText } = useReadOnlyText();
   const { push } = useHistory();
   const { setShowing, customerIsLoading, session, checkedSession } =
     useContext(AppContext);
@@ -34,7 +35,14 @@ export const New = memo(function New() {
 
     // If invalid customer, redirect to login
     if (!validCustomer || !userId) {
-      push(`/${randomChartName()}`);
+      // create random chart name
+      const name = randomChartName();
+      // If given template, set template before redirecting
+      if (fullText) {
+        const newKey = titleToLocalStorageKey(name);
+        window.localStorage.setItem(newKey, fullText);
+      }
+      push(`/${name}`);
       setShowing("editor");
       return;
     }
@@ -43,8 +51,8 @@ export const New = memo(function New() {
     if (isLoading) return;
 
     // If not, trigger mutation
-    mutate({ name: randomChartName(), user_id: userId });
-  }, [checkedSession, customerIsLoading, isLoading, mutate, push, setShowing, userId, validCustomer]);
+    mutate({ name: randomChartName(), user_id: userId, chart: fullText });
+  }, [checkedSession, customerIsLoading, fullText, isLoading, mutate, push, setShowing, userId, validCustomer]);
 
   if (customerIsLoading) {
     return <Loading />;
