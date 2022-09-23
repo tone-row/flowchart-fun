@@ -7,23 +7,29 @@ import Docs from "../components/Docs";
 import EditorError from "../components/EditorError";
 import GraphProvider from "../components/GraphProvider";
 import Loading from "../components/Loading";
-import useGraphOptions from "../components/useGraphOptions";
 import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
-import { useLocalStorageText } from "../lib/hooks";
 import { useAppMode } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useUpdateGraphOptionsText } from "../lib/useUpdateGraphOptionsText";
+import { useLocalStorageText } from "../lib/useLocalStorageText";
 import styles from "./Edit.module.css";
 import helpStyles from "./Help.module.css";
 
 export default function Help() {
-  const { text, setText, hiddenGraphOptions, setHiddenGraphOptions } =
-    useLocalStorageText("h"); // fixed workspace name
+  const {
+    text,
+    setText,
+    hiddenGraphOptions,
+    setHiddenGraphOptions,
+    options,
+    updateGraphOptionsText,
+  } = useLocalStorageText("h"); // fixed workspace name
+  const { graphOptions, linesOfYaml } = options;
+
   const [textToParse, setTextToParse] = useState(text);
   const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
@@ -31,7 +37,6 @@ export default function Help() {
   const monacoRef = useRef<any>();
   const { data: mode } = useAppMode();
   const loading = useRef(<Loading />);
-  const { graphOptions, content, linesOfYaml } = useGraphOptions(textToParse);
   useEffect(() => {
     setTextToParseThrottle(text);
   }, [text, setTextToParseThrottle]);
@@ -43,14 +48,6 @@ export default function Help() {
       mode === "light" ? themeNameLight : themeNameDark
     );
   }, [mode]);
-
-  const updateGraphOptionsText = useUpdateGraphOptionsText(
-    content,
-    graphOptions,
-    setText,
-    setTextToParse,
-    textToParse
-  );
 
   // Hover
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);

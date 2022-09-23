@@ -4,10 +4,15 @@ import { Route, RouteProps, Switch } from "react-router-dom";
 import { usePageViews } from "../lib/analytics";
 import { New } from "../pages/New";
 import Layout from "./Layout";
+/** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
+/** Edit charts in local storage */
 const Edit = lazy(() => import("../pages/Edit"));
+/** Interactive help, fixed name local storage chart */
 const Help = lazy(() => import("../pages/Help"));
+/** Edit hosted chart */
 const EditHosted = lazy(() => import("../pages/EditHosted"));
+/** Read only chart, encoded in url / maybe fullscreen */
 const ReadOnly = lazy(() => import("../pages/ReadOnly"));
 
 export default function Router() {

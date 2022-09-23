@@ -15,6 +15,7 @@ export type StoreGraph = {
 };
 
 export const useStoreGraph = create<StoreGraph>((set) => ({
+  /** This is only used by conversion to Mermaid */
   layout: undefined,
   setLayout: (layout) => set((state) => ({ ...state, layout })),
   elements: [],
@@ -22,9 +23,11 @@ export const useStoreGraph = create<StoreGraph>((set) => ({
   runLayout: false,
   setRunLayout: (runLayout) => set((state) => ({ ...state, runLayout })),
   graphUpdateNumber: 0,
-  incrementGraphUpdateNumber: () =>
+  // TODO: examine where this is used... seems hackish
+  incrementGraphUpdateNumber: () => {
     set((state) => ({
       ...state,
       graphUpdateNumber: state.graphUpdateNumber + 1,
-    })),
+    }));
+  },
 }));

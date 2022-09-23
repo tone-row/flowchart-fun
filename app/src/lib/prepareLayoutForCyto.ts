@@ -1,4 +1,5 @@
 import { GraphOptionsObject } from "./constants";
+import { HiddenGraphOptions } from "./helpers";
 
 /** Expand complex graph options that have
  * been abstracted before they're passed to
@@ -7,8 +8,9 @@ import { GraphOptionsObject } from "./constants";
  * For example, the layout named "stress", actually refers
  * to the "elk" layout with an elk algorithm specified.
  **/
-export function preprocessGraphLayout(
-  layout: GraphOptionsObject["layout"]
+export function prepareLayoutForCyto(
+  layout: GraphOptionsObject["layout"],
+  hiddenGraphOptions: HiddenGraphOptions
 ): GraphOptionsObject["layout"] {
   if (!layout) return;
 
@@ -18,6 +20,11 @@ export function preprocessGraphLayout(
     layout.name = "elk";
     if (!layout.elk) layout.elk = {};
     layout.elk.algorithm = elkAlgo;
+  }
+
+  // set positions
+  if (hiddenGraphOptions?.nodePositions) {
+    layout.positions = hiddenGraphOptions.nodePositions;
   }
 
   return layout;

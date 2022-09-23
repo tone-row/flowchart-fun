@@ -8,6 +8,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import { useLocation } from "react-router-dom";
@@ -134,21 +135,18 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [hasStyleError, setHasStyleError] =
     useState<TAppContext["hasStyleError"]>(false);
 
-  // const [_, sponsorLayoutsLoaded] = useReducer(() => true, false);
   const [checkedSession, setCheckedSession] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
+  const sponsorLayoutsLoaded = useRef(false);
 
   /* Load Sponsor-only layouts when logged in */
   useEffect(() => {
-    if (session) {
-      // setRunLayout(false);
-      loadSponsorOnlyLayouts().then(() => {
-        incrementGraphUpdateNumber();
-        // trigger re-render with unused state, defer
-        // setTimeout(() => sponsorLayoutsLoaded(), 0);
-        // setRunLayout(true);
-      });
-    }
+    if (!session) return;
+    if (sponsorLayoutsLoaded.current) return;
+    sponsorLayoutsLoaded.current = true;
+    loadSponsorOnlyLayouts().then(() => {
+      incrementGraphUpdateNumber();
+    });
   }, [incrementGraphUpdateNumber, session]);
 
   useEffect(() => {

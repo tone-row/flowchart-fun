@@ -1,30 +1,33 @@
 import Editor, { OnMount } from "@monaco-editor/react";
-import { useThrottleCallback } from "@react-hook/throttle";
 import { memo, useCallback, useEffect, useRef, useState } from "react";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
 import GraphProvider from "../components/GraphProvider";
 import Loading from "../components/Loading";
-import useGraphOptions from "../components/useGraphOptions";
 import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
-import { useLocalStorageText } from "../lib/hooks";
 import { useAppMode } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useUpdateGraphOptionsText } from "../lib/useUpdateGraphOptionsText";
+import { useLocalStorageText } from "../lib/useLocalStorageText";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit() {
-  const { text, setText, hiddenGraphOptions, setHiddenGraphOptions } =
-    useLocalStorageText();
-  const [toParse, setToParse] = useState(text);
-  const throttleSetToParse = useThrottleCallback(setToParse, 2, true);
-  const { graphOptions, content, linesOfYaml } = useGraphOptions(toParse);
+  const {
+    text,
+    setText,
+    hiddenGraphOptions,
+    setHiddenGraphOptions,
+    options,
+    toParse,
+    setToParse,
+    updateGraphOptionsText,
+  } = useLocalStorageText();
+  const { graphOptions, linesOfYaml } = options;
 
   const loading = useRef(<Loading />);
 
@@ -32,9 +35,6 @@ const Edit = memo(function Edit() {
   const editorRef = useRef<Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
-  useEffect(() => {
-    throttleSetToParse(text);
-  }, [text, throttleSetToParse]);
 
   const onMount = useEditorOnMount(editorRef, monacoRef);
   useEffect(() => {
@@ -43,14 +43,6 @@ const Edit = memo(function Edit() {
       mode === "light" ? themeNameLight : themeNameDark
     );
   }, [mode]);
-
-  const updateGraphOptionsText = useUpdateGraphOptionsText(
-    content,
-    graphOptions,
-    setText,
-    setToParse,
-    toParse
-  );
 
   // Hover
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);

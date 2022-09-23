@@ -36,7 +36,7 @@ import { useIsValidSponsor } from "../lib/hooks";
 import { useStoreGraph } from "../lib/store.graph";
 import { Box, BoxProps, Type } from "../slang";
 import { AppContext } from "./AppContext";
-import { AutoLayoutSwitch } from "./AutoLayoutSwitch";
+import { FreezeLayoutToggle } from "./FreezeLayoutToggle";
 import styles from "./GraphOptionsBar.module.css";
 import { GraphContext } from "./GraphProvider";
 import {
@@ -141,7 +141,7 @@ const GraphOptionsBar = ({
 
   return (
     <Box className={styles.GraphOptionsBar} as="form">
-      <AutoLayoutSwitch setHiddenGraphOptions={setHiddenGraphOptions} />
+      <FreezeLayoutToggle setHiddenGraphOptions={setHiddenGraphOptions} />
       {runLayout ? (
         <>
           <OptionWithIcon

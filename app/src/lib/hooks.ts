@@ -1,11 +1,6 @@
-import { t } from "@lingui/macro";
-import {
-  compressToEncodedURIComponent as compress,
-  decompressFromEncodedURIComponent as decompress,
-} from "lz-string";
-import { useContext, useEffect, useMemo } from "react";
+import { decompressFromEncodedURIComponent as decompress } from "lz-string";
+import { useContext, useMemo } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
 import { HIDDEN_GRAPH_OPTIONS_DIVIDER } from "./constants";
@@ -17,71 +12,6 @@ export function useAnimationSetting() {
   const query = new URLSearchParams(search);
   const animation = query.get("animation");
   return animation === "0" ? false : true;
-}
-
-export function useLocalStorageText(defaultWorkspace = "") {
-  const { workspace = defaultWorkspace } = useParams<{ workspace?: string }>();
-  const defaultText = `${t`This app works by typing`}
-  ${t`Indenting creates a link to the current line`}
-  ${t`any text: before a colon creates a label`}
-  ${t`Create a link directly using the exact label text`}
-    ${t`like this: (This app works by typing)`}
-    ${t`[custom ID] or`}
-      ${t`by adding an %5BID%5D and referencing that`}
-        ${t`like this: (custom ID) // You can also use single-line comments`}
-/*
-${t`or`}
-${t`multiline`}
-${t`comments`}
-
-${t`Have fun! 🎉`}
-*/`;
-  const [localStorageText, setLocalStorageText] = useLocalStorage(
-    ["flowcharts.fun", workspace].filter(Boolean).join(":"),
-    defaultText
-  );
-
-  // check if the string contains our divider and divide if so
-  let text = localStorageText,
-    setText = setLocalStorageText,
-    hiddenGraphOptions: HiddenGraphOptions = {};
-
-  if (localStorageText.includes(HIDDEN_GRAPH_OPTIONS_DIVIDER)) {
-    const [_text, hiddenGraphOptionsText] = localStorageText.split(
-      HIDDEN_GRAPH_OPTIONS_DIVIDER
-    );
-    text = _text;
-    setText = (newText) => {
-      setLocalStorageText(
-        newText + HIDDEN_GRAPH_OPTIONS_DIVIDER + hiddenGraphOptionsText
-      );
-    };
-
-    try {
-      hiddenGraphOptions = JSON.parse(hiddenGraphOptionsText.trim());
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  const setHiddenGraphOptions = (newOptions: any) => {
-    setLocalStorageText(
-      text + HIDDEN_GRAPH_OPTIONS_DIVIDER + JSON.stringify(newOptions)
-    );
-  };
-
-  const { setShareLink } = useContext(AppContext);
-  useEffect(() => {
-    setShareLink(compress(localStorageText));
-  }, [localStorageText, setShareLink]);
-
-  return {
-    text,
-    setText,
-    hiddenGraphOptions,
-    setHiddenGraphOptions,
-    fullText: localStorageText,
-  };
 }
 
 export function useFullscreen() {

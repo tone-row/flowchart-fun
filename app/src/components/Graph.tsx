@@ -2,7 +2,6 @@ import cytoscapeSvg from "@tone-row/cytoscape-svg";
 import { Core, CytoscapeOptions, EdgeSingular, NodeSingular } from "cytoscape";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
-import frontmatter from "gray-matter";
 import React, {
   Dispatch,
   memo,
@@ -10,30 +9,25 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useRef,
 } from "react";
 import { TriggerEvent, useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
 import { gaChangeGraphOption, gaUseGraphContextMenu } from "../lib/analytics";
-import {
-  defaultLayout,
-  delimiters,
-  GraphOptionsObject,
-} from "../lib/constants";
+import { defaultLayout, GraphOptionsObject } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { useBackground, useGraphTheme } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { HiddenGraphOptions, isError } from "../lib/helpers";
 import { useAnimationSetting } from "../lib/hooks";
 import { parseText } from "../lib/parseText";
-import { preprocessGraphLayout } from "../lib/preprocessGraphLayout";
-import { StoreGraph, useStoreGraph } from "../lib/store.graph";
+import { prepareLayoutForCyto } from "../lib/prepareLayoutForCyto";
+import { useStoreGraph } from "../lib/store.graph";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
 import { TGetSize, useGetSize } from "../lib/useGetSize";
-import { stripComments } from "../lib/utils";
+import { useLocalStorageText } from "../lib/useLocalStorageText";
 import { Box } from "../slang";
 import { AppContext, TAppContext } from "./AppContext";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
@@ -73,32 +67,42 @@ const Graph = memo(
     const animate = useAnimationSetting();
     const graphInitialized = useRef(false);
     const { setHasError, setHasStyleError } = useContext(AppContext);
+    const { updateLocalStorageText, options } = useLocalStorageText();
+    const layout = JSON.stringify(options.graphOptions.layout || {});
+    const userStyle = JSON.stringify(options.graphOptions.style || []);
 
     const theme = useGraphTheme();
     const bg = useBackground();
     const getSize = useGetSize(theme);
-    const setLayout = useStoreGraph((store) => store.setLayout);
-    const setElements = useStoreGraph((store) => store.setElements);
     const runLayout = useStoreGraph((store) => store.runLayout);
-    const setRunLayout = useStoreGraph((store) => store.setRunLayout);
     const graphUpdateNumber = useStoreGraph(
       useCallback((store) => store.graphUpdateNumber, [])
     );
+    // const { updateGraphOptionsText } = useContext(GraphContext);
 
     const isFirstRender = useRef(true);
 
     // Always begin with the layout running
-    useEffect(() => {
-      setRunLayout("nodePositions" in hiddenGraphOptions ? false : true);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    // useEffect(() => {
+    //   useStoreGraph.setState({
+    //     runLayout: "nodePositions" in hiddenGraphOptions ? false : true,
+    //   });
+    //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, []);
 
     const handleDragFree = useCallback(() => {
       const nodePositions = getNodePositionsFromCy();
-      setRunLayout(false);
-      setHiddenGraphOptions && setHiddenGraphOptions({ nodePositions });
+
+      updateLocalStorageText({
+        options: { layout: { name: "preset" } },
+        hidden: { nodePositions },
+      });
+
+      // currently handles the state of the Freeze Layout button
+      useStoreGraph.setState({ runLayout: false });
+
       gaChangeGraphOption({ action: "Auto Layout", label: "TOGGLE" });
-    }, [setHiddenGraphOptions, setRunLayout]);
+    }, [updateLocalStorageText]);
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -146,32 +150,32 @@ const Graph = memo(
       };
     }, [handleDragFree]);
 
-    const lastValues = useRef<{
-      content: string;
-      layout: string;
-      userStyle: string;
-    }>({ content: "", layout: "", userStyle: "" });
+    // const lastValues = useRef<{
+    //   content: string;
+    //   layout: string;
+    //   userStyle: string;
+    // }>({ content: "", layout: "", userStyle: "" });
 
     // Memoize values, return previous values if parsing fails
-    const { content, layout, userStyle } = useMemo(() => {
-      try {
-        const { data, content } = frontmatter(stripComments(textToParse), {
-          delimiters,
-        });
-        const { layout = {}, style: userStyle = [] } =
-          data as GraphOptionsObject;
-        const values = {
-          content,
-          layout: JSON.stringify(layout),
-          userStyle: JSON.stringify(userStyle),
-        };
-        lastValues.current = values;
-        return values;
-      } catch (error) {
-        console.error(error);
-        return lastValues.current;
-      }
-    }, [textToParse]);
+    // const { content, layout, userStyle } = useMemo(() => {
+    //   try {
+    //     const { data, content } = frontmatter(stripComments(textToParse), {
+    //       delimiters,
+    //     });
+    //     const { layout = {}, style: userStyle = [] } =
+    //       data as GraphOptionsObject;
+    //     const values = {
+    //       content,
+    //       layout: JSON.stringify(layout),
+    //       userStyle: JSON.stringify(userStyle),
+    //     };
+    //     lastValues.current = values;
+    //     return values;
+    //   } catch (error) {
+    //     console.error(error);
+    //     return lastValues.current;
+    //   }
+    // }, [textToParse]);
 
     // Update Style
     useEffect(() => {
@@ -184,30 +188,25 @@ const Graph = memo(
     useEffect(() => {
       updateGraph({
         cy,
-        content,
+        content: options.content,
         layoutString: layout,
         errorCatcher,
         setHasError,
         graphInitialized,
         animate,
         getSize,
-        setLayout,
-        setElements,
         runLayout,
         hiddenGraphOptionsString,
       });
     }, [
       animate,
-      content,
       getSize,
-      layout,
-      runLayout,
-      setElements,
-      setHasError,
-      setLayout,
-      // Force update on graphUpdateNumber change
-      graphUpdateNumber,
       hiddenGraphOptionsString,
+      layout,
+      options.content,
+      runLayout,
+      setHasError,
+      graphUpdateNumber, // force update with this
     ]);
 
     const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
@@ -289,7 +288,6 @@ function initializeGraph({
   cyCurrent.on("tapstart", "edge", edgeHighlight);
   cyCurrent.on("mouseout", "node, edge", unhighlight);
   cyCurrent.on("tapend", "node, edge", unhighlight);
-  // cyCurrent.on("dragfree", "node", handleDrag);
   document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
 
   return () => {
@@ -313,8 +311,6 @@ function updateGraph({
   graphInitialized,
   animate,
   getSize,
-  setLayout,
-  setElements,
   runLayout = true,
   hiddenGraphOptionsString = "{}",
 }: {
@@ -325,8 +321,6 @@ function updateGraph({
   setHasError: TAppContext["setHasError"];
   graphInitialized: React.MutableRefObject<boolean>;
   animate: boolean;
-  setLayout: StoreGraph["setLayout"];
-  setElements: StoreGraph["setElements"];
   getSize: TGetSize;
   runLayout?: boolean;
   hiddenGraphOptionsString?: string;
@@ -335,13 +329,6 @@ function updateGraph({
     let elements: cytoscape.ElementDefinition[] = [];
 
     try {
-      const layout = preprocessGraphLayout(
-        JSON.parse(layoutString) as GraphOptionsObject["layout"]
-      );
-
-      // Parse
-      elements = parseText(content, getSize);
-
       // Parse Hidden Graph Options
       let hiddenGraphOptions: HiddenGraphOptions = {};
       try {
@@ -350,17 +337,25 @@ function updateGraph({
         console.error(e);
       }
 
+      const layout = prepareLayoutForCyto(
+        JSON.parse(layoutString) as GraphOptionsObject["layout"],
+        hiddenGraphOptions
+      );
+
+      // Parse
+      elements = parseText(content, getSize);
+
       // Add positions if they exist
-      const positions = hiddenGraphOptions.nodePositions;
-      if (positions) {
-        elements = elements.map((element) => {
-          const id = element.data.id as string;
-          if (id in positions) {
-            element.position = positions[id];
-          }
-          return element;
-        });
-      }
+      // const positions = hiddenGraphOptions.nodePositions;
+      // if (positions) {
+      //   elements = elements.map((element) => {
+      //     const id = element.data.id as string;
+      //     if (id in positions) {
+      //       element.position = positions[id];
+      //     }
+      //     return element;
+      //   });
+      // }
 
       // Test Error First
       errorCatcher.current?.json({ elements });
@@ -374,7 +369,8 @@ function updateGraph({
         elements: elements,
       });
 
-      if (runLayout) {
+      if (layout?.name !== "preset") {
+        // if (runLayout) {
         cy.current
           .layout({
             ...defaultLayout,
@@ -388,6 +384,14 @@ function updateGraph({
           } as any)
           .run();
         cy.current.center();
+      } else {
+        // TODO: why is this running a fit layout?
+        cy.current
+          .layout({
+            ...layout,
+            animate: false,
+          } as any)
+          .run();
       }
 
       graphInitialized.current = true;
@@ -398,8 +402,7 @@ function updateGraph({
       setHasError(false);
 
       // Update Graph Store
-      setLayout(layout);
-      setElements(elements);
+      useStoreGraph.setState({ layout, elements });
     } catch (e) {
       console.log(e);
       errorCatcher.current?.destroy();

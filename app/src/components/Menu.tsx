@@ -31,11 +31,11 @@ import {
   useIsHelp,
   useIsReadOnly,
   useIsValidSponsor,
-  useLocalStorageText,
   useReadOnlyText,
   useTitle,
 } from "../lib/hooks";
 import { makeChart, queryClient, renameChart } from "../lib/queries";
+import { useLocalStorageText } from "../lib/useLocalStorageText";
 import { Box, BoxProps, Type } from "../slang";
 import { AppContext, Showing, useSession } from "./AppContext";
 import { ReactComponent as BrandSvg } from "./brand.svg";

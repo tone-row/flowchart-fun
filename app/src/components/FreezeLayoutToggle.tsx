@@ -1,23 +1,26 @@
 import { t, Trans } from "@lingui/macro";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import * as Toggle from "@radix-ui/react-toggle";
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { FaSnowflake } from "react-icons/fa";
 
+import { defaultLayout } from "../lib/constants";
 import { HiddenGraphOptions } from "../lib/helpers";
 import { useStoreGraph } from "../lib/store.graph";
 import { Box, Type } from "../slang";
-import styles from "./AutoLayoutSwitch.module.css";
+import styles from "./FreezeLayoutToggle.module.css";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import graphBarStyles from "./GraphOptionsBar.module.css";
+import { GraphContext } from "./GraphProvider";
 
-export const AutoLayoutSwitch = memo(function AutoLayoutSwitch({
+export const FreezeLayoutToggle = memo(function FreezeLayoutToggle({
   setHiddenGraphOptions,
 }: {
   setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
 }) {
   const setRunLayout = useStoreGraph((store) => store.setRunLayout);
   const runLayout = useStoreGraph((store) => store.runLayout);
+  const { updateGraphOptionsText } = useContext(GraphContext);
   return (
     <Box
       className={`${graphBarStyles.BarSection} ${styles.AutoLayout} ${
@@ -35,13 +38,24 @@ export const AutoLayoutSwitch = memo(function AutoLayoutSwitch({
             className={styles.Toggle}
             pressed={runLayout}
             aria-label={t`Freeze Layout`}
-            onPressedChange={(pressed) => {
-              setRunLayout(pressed);
-              if (pressed && setHiddenGraphOptions) {
-                setHiddenGraphOptions({});
-              } else if (!pressed && setHiddenGraphOptions && window.__cy) {
+            onPressedChange={(shouldRunLayout) => {
+              setRunLayout(shouldRunLayout);
+              if (shouldRunLayout) {
+                if (setHiddenGraphOptions) setHiddenGraphOptions({});
+                if (updateGraphOptionsText)
+                  updateGraphOptionsText({
+                    layout: { name: defaultLayout.name },
+                  });
+              } else if (
+                !shouldRunLayout &&
+                setHiddenGraphOptions &&
+                window.__cy
+              ) {
                 const nodePositions = getNodePositionsFromCy();
-                setHiddenGraphOptions({ nodePositions });
+                if (setHiddenGraphOptions)
+                  setHiddenGraphOptions({ nodePositions });
+                if (updateGraphOptionsText)
+                  updateGraphOptionsText({ layout: { name: "preset" } });
               }
             }}
           >

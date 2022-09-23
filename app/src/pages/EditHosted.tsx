@@ -111,8 +111,7 @@ export default function EditHosted() {
     content,
     graphOptions,
     setText,
-    setTextToParse,
-    textToParse
+    setTextToParse
   );
 
   // Hover
