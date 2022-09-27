@@ -35,7 +35,7 @@ import {
   useTitle,
 } from "../lib/hooks";
 import { makeChart, queryClient, renameChart } from "../lib/queries";
-import { useLocalStorageText } from "../lib/useLocalStorageText";
+import { useLocalDoc } from "../lib/useLocalDoc";
 import { Box, BoxProps, Type } from "../slang";
 import { AppContext, Showing, useSession } from "./AppContext";
 import { ReactComponent as BrandSvg } from "./brand.svg";
@@ -276,7 +276,7 @@ function RenameButton() {
   const session = useSession();
   const [initialName, isHosted] = useTitle();
   const { data } = useCurrentHostedChart();
-  const { fullText } = useLocalStorageText();
+  const { fullText } = useLocalDoc();
   const [dialog, setDialog] = useState(false);
   const { push } = useHistory();
   const { register, handleSubmit, watch, formState } = useForm<{

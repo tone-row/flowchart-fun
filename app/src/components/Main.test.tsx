@@ -1,3 +1,4 @@
+import original from "../lib/themes/original";
 import { render } from "../test-utils";
 import Main from "./Main";
 
@@ -8,6 +9,20 @@ beforeAll(() => {
 
 describe("Main", () => {
   test("renders", () => {
-    render(<Main textToParse="" setHoverLineNumber={() => null} />);
+    render(
+      <Main
+        textToParse=""
+        hiddenGraphOptionsText={""}
+        setHoverLineNumber={() => null}
+        options={{
+          graphOptions: {},
+          graphOptionsString: "",
+          linesOfYaml: 0,
+          content: "",
+        }}
+        theme={original}
+        bg={"#fff"}
+      />
+    );
   });
 });

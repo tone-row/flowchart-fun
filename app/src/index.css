@@ -9,13 +9,6 @@
   padding: 0;
 }
 
-html,
-body,
-#__next,
-#root {
-  height: var(--page-height, 100%) !important;
-}
-
 body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,

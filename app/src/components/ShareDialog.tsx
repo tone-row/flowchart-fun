@@ -14,7 +14,7 @@ import { gaExportChart } from "../lib/analytics";
 import { useTitle } from "../lib/hooks";
 import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic, queryClient, useChart } from "../lib/queries";
-import { useStoreGraph } from "../lib/store.graph";
+import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { Button, Dialog, Textarea } from "./Shared";
@@ -262,8 +262,8 @@ function Preview() {
 }
 
 function useMermaidJS() {
-  const layout = useStoreGraph((store) => store.layout);
-  const elements = useStoreGraph((store) => store.elements);
+  const layout = useGraphStore((store) => store.layout);
+  const elements = useGraphStore((store) => store.elements);
   return toMermaidJS({ layout, elements });
 }
 

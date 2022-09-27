@@ -3,8 +3,8 @@ import { memo, useCallback, useEffect, useRef, useState } from "react";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
-import GraphProvider from "../components/GraphProvider";
 import Loading from "../components/Loading";
+import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useAppMode } from "../lib/queries";
@@ -13,21 +13,20 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useLocalStorageText } from "../lib/useLocalStorageText";
+import { useLocalDoc } from "../lib/useLocalDoc";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit() {
   const {
     text,
-    setText,
-    hiddenGraphOptions,
-    setHiddenGraphOptions,
     options,
     toParse,
-    setToParse,
-    updateGraphOptionsText,
-  } = useLocalStorageText();
-  const { graphOptions, linesOfYaml } = options;
+    updateLocalDoc,
+    hiddenGraphOptionsText,
+    theme,
+    bg,
+  } = useLocalDoc();
+  const { linesOfYaml } = options;
 
   const loading = useRef(<Loading />);
 
@@ -47,17 +46,20 @@ const Edit = memo(function Edit() {
   // Hover
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
-  const onChange = useCallback((value) => setText(value ?? ""), [setText]);
+  const onChange = useCallback(
+    (value) => updateLocalDoc({ text: value ?? "" }),
+    [updateLocalDoc]
+  );
 
   return (
-    <GraphProvider
-      editable={true}
+    <Main
       textToParse={toParse}
       setHoverLineNumber={setHoverLineNumber}
-      graphOptions={graphOptions}
-      updateGraphOptionsText={updateGraphOptionsText}
-      setHiddenGraphOptions={setHiddenGraphOptions}
-      hiddenGraphOptions={hiddenGraphOptions}
+      hiddenGraphOptionsText={hiddenGraphOptionsText}
+      options={options}
+      update={updateLocalDoc}
+      theme={theme}
+      bg={bg}
     >
       <Editor
         value={text}
@@ -71,15 +73,14 @@ const Edit = memo(function Edit() {
       />
       <ClearTextButton
         handleClear={() => {
-          setText("");
-          setToParse("");
+          updateLocalDoc({ text: "", hidden: {} });
           if (editorRef.current) {
             editorRef.current.focus();
           }
         }}
       />
       <EditorError />
-    </GraphProvider>
+    </Main>
   );
 });
 

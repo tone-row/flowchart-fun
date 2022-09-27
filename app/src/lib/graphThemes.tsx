@@ -9,7 +9,6 @@ import {
   useState,
 } from "react";
 
-import { GraphContext } from "../components/GraphProvider";
 import { themes } from "./graphOptions";
 import { useIsPublicHostedCharted, useIsValidSponsor } from "./hooks";
 import { Theme } from "./themes/constants";
@@ -37,7 +36,7 @@ const sponsorOnlyThemes = themes
   .filter((theme) => theme.sponsorOnly)
   .map((theme) => theme.value) as GraphThemes[];
 
-const defaultGraphTheme: GraphThemes = "original";
+export const defaultGraphTheme: GraphThemes = "original";
 
 async function dynamicActivate(name: string) {
   const theme = await import(`./themes/${name}`);
@@ -113,23 +112,17 @@ function useLoadedTheme(theme: GraphThemes) {
   return loaded?.[theme] ?? loaded?.[lastTheme.current] ?? original;
 }
 
-export function useGraphTheme() {
+export function useGraphTheme(userTheme: GraphThemes | undefined = undefined) {
   const isValidSponsor = useIsValidSponsor();
   const isPublicHostedChart = useIsPublicHostedCharted();
-  const { graphOptions } = useContext(GraphContext);
   let theme = defaultGraphTheme;
-  if (
-    graphOptions?.theme &&
-    (publicThemes.includes(graphOptions.theme) ||
-      ((isValidSponsor || isPublicHostedChart) &&
-        sponsorOnlyThemes.includes(graphOptions.theme)))
-  )
-    theme = graphOptions.theme;
+  if (userTheme) {
+    // if not a sponsored theme
+    if (!sponsorOnlyThemes.includes(userTheme)) {
+      theme = userTheme;
+    } else if (isValidSponsor || isPublicHostedChart) {
+      theme = userTheme;
+    }
+  }
   return useLoadedTheme(theme);
-}
-
-export function useBackground() {
-  const { graphOptions } = useContext(GraphContext);
-  const graphTheme = useGraphTheme();
-  return graphOptions?.background ?? graphTheme.safeBg ?? graphTheme.bg;
 }

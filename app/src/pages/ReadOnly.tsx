@@ -1,24 +1,22 @@
 import Editor, { OnMount } from "@monaco-editor/react";
-import strip from "@tone-row/strip-comments";
-import matter from "gray-matter";
 import { useEffect, useRef, useState } from "react";
 
 import EditorError from "../components/EditorError";
-import GraphProvider from "../components/GraphProvider";
 import Loading from "../components/Loading";
-import { delimiters, editorOptions } from "../lib/constants";
+import Main from "../components/Main";
+import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
-import { useReadOnlyText } from "../lib/hooks";
 import { useAppMode } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
+import { useLocalDoc } from "../lib/useLocalDoc";
 import styles from "./ReadOnly.module.css";
 
 function ReadOnly() {
-  const { text, hiddenGraphOptions } = useReadOnlyText();
+  const { text, hiddenGraphOptionsText, options, theme, bg } = useLocalDoc();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
@@ -33,24 +31,18 @@ function ReadOnly() {
     );
   }, [mode]);
 
-  const { data: graphOptions, matter: graphOptionsString } = matter(
-    strip(text),
-    { delimiters }
-  );
-
-  const linesOfYaml = graphOptionsString
-    ? graphOptionsString.split("\n").length + 1
-    : 0;
+  const { linesOfYaml } = options;
 
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   return (
-    <GraphProvider
-      editable={false}
+    <Main
       setHoverLineNumber={setHoverLineNumber}
       textToParse={text}
-      graphOptions={graphOptions}
-      hiddenGraphOptions={hiddenGraphOptions}
+      hiddenGraphOptionsText={hiddenGraphOptionsText}
+      options={options}
+      theme={theme}
+      bg={bg}
     >
       <Editor
         value={text}
@@ -67,7 +59,7 @@ function ReadOnly() {
         onMount={onMount}
       />
       <EditorError />
-    </GraphProvider>
+    </Main>
   );
 }
 

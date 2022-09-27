@@ -18,8 +18,8 @@ import Stripe from "stripe";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { loadSponsorOnlyLayouts } from "../lib/cytoscape";
 import { useCustomerInfo, useHostedCharts } from "../lib/queries";
-import { useStoreGraph } from "../lib/store.graph";
 import { supabase } from "../lib/supabaseClient";
+import { useGraphStore } from "../lib/useGraphStore";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
 
@@ -76,7 +76,7 @@ type CustomerInfo = {
 export const AppContext = createContext({} as TAppContext);
 
 const Provider = ({ children }: { children?: ReactNode }) => {
-  const incrementGraphUpdateNumber = useStoreGraph(
+  const incrementGraphUpdateNumber = useGraphStore(
     useCallback((store) => store.incrementGraphUpdateNumber, [])
   );
   const [showing, setShowing] = useState<Showing>("editor");

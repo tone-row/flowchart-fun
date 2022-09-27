@@ -7,6 +7,7 @@ export type StoreGraph = {
   setLayout: (layout: GraphOptionsObject["layout"]) => void;
   elements: cytoscape.ElementDefinition[];
   setElements: (elements: cytoscape.ElementDefinition[]) => void;
+  isFrozen: boolean;
   runLayout: boolean;
   setRunLayout: (runLayout: boolean) => void;
   graphUpdateNumber: number;
@@ -14,7 +15,7 @@ export type StoreGraph = {
   incrementGraphUpdateNumber: () => void;
 };
 
-export const useStoreGraph = create<StoreGraph>((set) => ({
+export const useGraphStore = create<StoreGraph>((set) => ({
   /** This is only used by conversion to Mermaid */
   layout: undefined,
   setLayout: (layout) => set((state) => ({ ...state, layout })),
@@ -22,6 +23,7 @@ export const useStoreGraph = create<StoreGraph>((set) => ({
   setElements: (elements) => set((state) => ({ ...state, elements })),
   runLayout: false,
   setRunLayout: (runLayout) => set((state) => ({ ...state, runLayout })),
+  isFrozen: false,
   graphUpdateNumber: 0,
   // TODO: examine where this is used... seems hackish
   incrementGraphUpdateNumber: () => {

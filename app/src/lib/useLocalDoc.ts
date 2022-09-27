@@ -7,14 +7,21 @@ import useLocalStorage from "react-use-localstorage";
 
 import { AppContext } from "../components/AppContext";
 import useGraphOptions from "../components/useGraphOptions";
-import { GraphOptionsObject, HIDDEN_GRAPH_OPTIONS_DIVIDER } from "./constants";
-import { HiddenGraphOptions } from "./helpers";
+import { HIDDEN_GRAPH_OPTIONS_DIVIDER } from "./constants";
+import { getBackground } from "./getBackground";
+import { getHiddenGraphOptionsText } from "./getHiddenGraphOptionsText";
+import { useGraphTheme } from "./graphThemes";
+import { UpdateDoc } from "./UpdateDoc";
+import { useGraphStore } from "./useGraphStore";
 import {
   getNewTextFromGraphOptions,
   useUpdateGraphOptionsText,
 } from "./useUpdateGraphOptionsText";
 
-export function useLocalStorageText(defaultWorkspace = "") {
+let renders = 1;
+
+export function useLocalDoc(defaultWorkspace = "") {
+  console.log("useLocalDoc", renders++);
   const { workspace = defaultWorkspace } = useParams<{ workspace?: string }>();
   const defaultText = `${t`This app works by typing`}
   ${t`Indenting creates a link to the current line`}
@@ -31,51 +38,34 @@ ${t`comments`}
 
 ${t`Have fun! 🎉`}
 */`;
-  const [localStorageText, setLocalStorageText] = useLocalStorage(
+
+  const [fullText, setFullText] = useLocalStorage(
     ["flowcharts.fun", workspace].filter(Boolean).join(":"),
     defaultText
   );
 
-  // check if the string contains our divider and divide if so
-  /** the text w/o hidden graph options */
-  let text = localStorageText,
-    /** set the text w/o changing hidden graph options */
-    setText = setLocalStorageText,
-    /** anything stored in hidden graph options */
-    hiddenGraphOptions: HiddenGraphOptions = {};
+  const parts = fullText.split(HIDDEN_GRAPH_OPTIONS_DIVIDER);
+  const text = parts[0];
+  const hiddenGraphOptionsText = parts[1] ?? "{}";
 
-  if (localStorageText.includes(HIDDEN_GRAPH_OPTIONS_DIVIDER)) {
-    const [_text, hiddenGraphOptionsText] = localStorageText.split(
-      HIDDEN_GRAPH_OPTIONS_DIVIDER
+  const setText = (newText: string) => {
+    setFullText(
+      newText + HIDDEN_GRAPH_OPTIONS_DIVIDER + hiddenGraphOptionsText
     );
-    text = _text;
-    setText = (newText) => {
-      setLocalStorageText(
-        newText + HIDDEN_GRAPH_OPTIONS_DIVIDER + hiddenGraphOptionsText
-      );
-    };
+  };
 
-    try {
-      hiddenGraphOptions = JSON.parse(hiddenGraphOptionsText.trim());
-    } catch (e) {
-      console.log(e);
-    }
+  let hiddenGraphOptions = {};
+  try {
+    hiddenGraphOptions = JSON.parse(hiddenGraphOptionsText.trim());
+  } catch (e) {
+    console.log(e);
   }
 
-  const getHiddenGraphOptionsText = <T extends {}>(newOptions: T, t = text) => {
-    return t + HIDDEN_GRAPH_OPTIONS_DIVIDER + JSON.stringify(newOptions);
-  };
-
-  const setHiddenGraphOptions = <T extends {}>(newOptions: T) => {
-    const newText = getHiddenGraphOptionsText(newOptions);
-    console.log("__ setHiddenGraphOptions", newText);
-    setLocalStorageText(newText);
-  };
-
+  // TODO: the share link should be moved into a tiny zustand store
   const { setShareLink } = useContext(AppContext);
   useEffect(() => {
-    setShareLink(compress(localStorageText));
-  }, [localStorageText, setShareLink]);
+    setShareLink(compress(fullText));
+  }, [fullText, setShareLink]);
 
   const [toParse, setToParse] = useState(text);
   const throttleSetToParse = useThrottleCallback(setToParse, 2, true);
@@ -84,7 +74,13 @@ ${t`Have fun! 🎉`}
     throttleSetToParse(text);
   }, [text, throttleSetToParse]);
 
-  const options = useGraphOptions(toParse);
+  const options = useGraphOptions(text);
+
+  if (options.graphOptions?.layout?.name === "preset") {
+    useGraphStore.setState({ isFrozen: true });
+  } else {
+    useGraphStore.setState({ isFrozen: false });
+  }
 
   const updateGraphOptionsText = useUpdateGraphOptionsText(
     options.content,
@@ -100,21 +96,12 @@ ${t`Have fun! 🎉`}
    * This updater builds new local storage text from the three pieces
    * Replacing any existing pieces with ones passed as arguments
    */
-  const updateLocalStorageText = (
-    update:
-      | {
-          hidden?: object;
-          text?: string;
-        }
-      | {
-          hidden?: object;
-          options?: GraphOptionsObject;
-        }
-  ) => {
+  const updateLocalDoc: UpdateDoc = (update) => {
+    // set t to text w/o hidden graph options
     let t = text;
-    if ("text" in update && update.text) {
-      // Text has been updated from text editor
-      t = update.text;
+    if ("text" in update) {
+      // if text has been updated from text editor
+      t = update.text ?? "";
     } else if ("options" in update && update.options) {
       // Text has been updated from graph options
       t = getNewTextFromGraphOptions({
@@ -124,24 +111,45 @@ ${t`Have fun! 🎉`}
       });
     }
 
+    // if hidden graph options have been updated
     if ("hidden" in update && update.hidden) {
-      // Hidden graph options have been updated
-      const newText = getHiddenGraphOptionsText(update.hidden, t);
-      setLocalStorageText(newText);
+      // combine
+      const combinedText = getHiddenGraphOptionsText(update.hidden, t);
+
+      /**
+       * Because hidden graph options are not throttled,
+       * if updating them, we need to make sure to immediately
+       * update the throttled text to prevent a double render,
+       * i.e., short-circuit the throttle
+       */
+
+      // set
+      setFullText(combinedText);
+      // update throttled text
+      // setToParse(t);
+    } else {
+      // set text
+      setText(t);
     }
   };
 
+  // Get theme
+  const theme = useGraphTheme(options.graphOptions.theme);
+  const bg = getBackground(options.graphOptions, theme);
+
   return {
+    /** Text and Graph Options, what goes in the editor */
     text,
-    setText,
+    /** What's hidden from editor: node positions */
     hiddenGraphOptions,
-    setHiddenGraphOptions,
-    fullText: localStorageText,
+    fullText,
     options,
-    throttleSetToParse,
     toParse,
     setToParse,
     updateGraphOptionsText,
-    updateLocalStorageText,
+    updateLocalDoc,
+    hiddenGraphOptionsText,
+    theme,
+    bg,
   };
 }

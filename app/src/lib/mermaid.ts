@@ -1,6 +1,6 @@
 import { shapes } from "./graphUtilityClasses";
-import { StoreGraph } from "./store.graph";
 import { originalColors } from "./themes/original";
+import { StoreGraph } from "./useGraphStore";
 import { isEdge } from "./utils";
 
 export function toMermaidJS({

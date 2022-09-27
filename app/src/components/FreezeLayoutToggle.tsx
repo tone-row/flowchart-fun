@@ -1,31 +1,26 @@
 import { t, Trans } from "@lingui/macro";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import * as Toggle from "@radix-ui/react-toggle";
-import { memo, useContext } from "react";
+import { memo } from "react";
 import { FaSnowflake } from "react-icons/fa";
 
 import { defaultLayout } from "../lib/constants";
-import { HiddenGraphOptions } from "../lib/helpers";
-import { useStoreGraph } from "../lib/store.graph";
+import { UpdateDoc } from "../lib/UpdateDoc";
+import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import styles from "./FreezeLayoutToggle.module.css";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import graphBarStyles from "./GraphOptionsBar.module.css";
-import { GraphContext } from "./GraphProvider";
 
 export const FreezeLayoutToggle = memo(function FreezeLayoutToggle({
-  setHiddenGraphOptions,
+  update,
 }: {
-  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
+  update: UpdateDoc;
 }) {
-  const setRunLayout = useStoreGraph((store) => store.setRunLayout);
-  const runLayout = useStoreGraph((store) => store.runLayout);
-  const { updateGraphOptionsText } = useContext(GraphContext);
+  const isFrozen = useGraphStore((store) => store.isFrozen);
   return (
     <Box
-      className={`${graphBarStyles.BarSection} ${styles.AutoLayout} ${
-        runLayout ? "checked" : ""
-      }`}
+      className={`${graphBarStyles.BarSection} ${isFrozen ? "checked" : ""}`}
       content="center"
       items="center"
       flow="column"
@@ -36,26 +31,25 @@ export const FreezeLayoutToggle = memo(function FreezeLayoutToggle({
         <HoverCard.Trigger asChild>
           <Toggle.Root
             className={styles.Toggle}
-            pressed={runLayout}
+            pressed={isFrozen}
             aria-label={t`Freeze Layout`}
-            onPressedChange={(shouldRunLayout) => {
-              setRunLayout(shouldRunLayout);
-              if (shouldRunLayout) {
-                if (setHiddenGraphOptions) setHiddenGraphOptions({});
-                if (updateGraphOptionsText)
-                  updateGraphOptionsText({
-                    layout: { name: defaultLayout.name },
-                  });
-              } else if (
-                !shouldRunLayout &&
-                setHiddenGraphOptions &&
-                window.__cy
-              ) {
+            onPressedChange={(check) => {
+              if (check) {
+                if (!window.__cy) return;
                 const nodePositions = getNodePositionsFromCy();
-                if (setHiddenGraphOptions)
-                  setHiddenGraphOptions({ nodePositions });
-                if (updateGraphOptionsText)
-                  updateGraphOptionsText({ layout: { name: "preset" } });
+                update({
+                  hidden: { nodePositions },
+                  options: {
+                    layout: { name: "preset" },
+                  },
+                });
+              } else if (!check) {
+                update({
+                  hidden: {},
+                  options: {
+                    layout: { name: defaultLayout.name },
+                  },
+                });
               }
             }}
           >

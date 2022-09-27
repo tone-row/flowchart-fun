@@ -1,83 +1,47 @@
 import Editor, { OnMount } from "@monaco-editor/react";
-import { useThrottleCallback } from "@react-hook/throttle";
-import { compressToEncodedURIComponent } from "lz-string";
 import { Check, DotsThree } from "phosphor-react";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
-import { useMutation } from "react-query";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDebouncedCallback } from "use-debounce";
 
-import { AppContext } from "../components/AppContext";
 import EditorError from "../components/EditorError";
-import GraphProvider from "../components/GraphProvider";
 import Loading from "../components/Loading";
+import Main from "../components/Main";
 import Spinner from "../components/Spinner";
-import useGraphOptions from "../components/useGraphOptions";
-import { editorOptions, HIDDEN_GRAPH_OPTIONS_DIVIDER } from "../lib/constants";
+import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useIsValidSponsor } from "../lib/hooks";
-import {
-  queryClient,
-  updateChartText,
-  useAppMode,
-  useChart,
-} from "../lib/queries";
+import { queryClient, useAppMode } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useUpdateGraphOptionsText } from "../lib/useUpdateGraphOptionsText";
+import { useHostedDoc } from "../lib/useHostedDoc";
 import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
-import { getTextAndHiddenGraphOptions } from "./getTextAndHiddenGraphOptions";
 
 export default function EditHosted() {
   const validSponsor = useIsValidSponsor();
   const { id } = useParams<{ id?: string }>();
-  const { data } = useChart(id);
-  const { text: _text, hiddenGraphOptions: _hiddenGraphOptions } =
-    getTextAndHiddenGraphOptions(data?.chart ?? "");
-  const [text, setText] = useState(_text ?? "");
-  const [hiddenGraphOptions, setHiddenGraphOptions] =
-    useState(_hiddenGraphOptions);
-  const hiddenGraphOptionsString = JSON.stringify(hiddenGraphOptions);
-  const [textToParse, setTextToParse] = useState(text);
-  const fullText = mergeTextAndHiddenGraphOptions(
+  const {
+    flush,
+    options,
+    updateHostedDoc,
+    toParse,
+    hiddenGraphOptionsText,
+    isLoading,
     text,
-    hiddenGraphOptionsString
-  );
-  const lastText = useRef(fullText);
-  const setTextToParseThrottle = useThrottleCallback(setTextToParse, 2, true);
+    pending,
+    theme,
+    bg,
+  } = useHostedDoc(id);
+  const { linesOfYaml } = options;
+
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
   const { data: mode } = useAppMode();
   const loading = useRef(<Loading />);
-  const { graphOptions, content, linesOfYaml } = useGraphOptions(textToParse);
-
-  const { mutate, isLoading } = useMutation((currentText: string) =>
-    updateChartText(currentText, id)
-  );
-  const {
-    callback: debouncedUpdate,
-    flush,
-    pending,
-  } = useDebouncedCallback((currentText: string) => {
-    mutate(currentText);
-  }, 1000);
-
-  const { setShareLink } = useContext(AppContext);
-  useEffect(() => {
-    setShareLink(compressToEncodedURIComponent(fullText));
-  }, [fullText, setShareLink]);
-
-  useEffect(() => {
-    if (lastText.current !== fullText) {
-      debouncedUpdate(fullText);
-      lastText.current = fullText;
-    }
-  }, [debouncedUpdate, fullText]);
 
   // This is to make sure we update if people exit the tab quickly
   useEffect(() => {
@@ -87,10 +51,6 @@ export default function EditHosted() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    setTextToParseThrottle(text);
-  }, [text, setTextToParseThrottle]);
 
   const onMount = useEditorOnMount(editorRef, monacoRef);
   useEffect(() => {
@@ -107,28 +67,23 @@ export default function EditHosted() {
     );
   }, [mode]);
 
-  const updateGraphOptionsText = useUpdateGraphOptionsText(
-    content,
-    graphOptions,
-    setText,
-    setTextToParse
-  );
-
   // Hover
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const onChange = useCallback((value) => setText(value ?? ""), []);
+  const onChange = useCallback(
+    (value) => updateHostedDoc({ text: value ?? "" }),
+    [updateHostedDoc]
+  );
 
   return (
-    <GraphProvider
-      editable={true}
-      textToParse={textToParse}
+    <Main
       setHoverLineNumber={setHoverLineNumber}
-      graphOptions={graphOptions}
-      updateGraphOptionsText={updateGraphOptionsText}
-      hiddenGraphOptions={hiddenGraphOptions}
-      setHiddenGraphOptions={setHiddenGraphOptions}
+      textToParse={toParse}
+      hiddenGraphOptionsText={hiddenGraphOptionsText}
+      options={options}
+      update={updateHostedDoc}
+      theme={theme}
+      bg={bg}
     >
       <Editor
         value={text}
@@ -145,7 +100,7 @@ export default function EditHosted() {
       />
       <LoadingState isLoading={isLoading} pending={pending()} />
       <EditorError />
-    </GraphProvider>
+    </Main>
   );
 }
 
@@ -167,12 +122,4 @@ function LoadingState({
       )}
     </div>
   );
-}
-
-function mergeTextAndHiddenGraphOptions(
-  text: string,
-  hiddenGraphOptions: string
-) {
-  if (!hiddenGraphOptions) return text;
-  return `${text}${HIDDEN_GRAPH_OPTIONS_DIVIDER}${hiddenGraphOptions}`;
 }

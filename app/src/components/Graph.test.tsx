@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+import original from "../lib/themes/original";
 import { render } from "../test-utils";
 import Graph from "./Graph";
 
@@ -16,6 +18,15 @@ describe("<Graph/>", () => {
         textToParse={""}
         setHoverLineNumber={setHoverLineNumber}
         shouldResize={0}
+        hiddenGraphOptionsText={""}
+        options={{
+          graphOptions: {},
+          linesOfYaml: 0,
+          graphOptionsString: "",
+          content: "",
+        }}
+        theme={original}
+        bg={"#fff"}
       />
     );
   });

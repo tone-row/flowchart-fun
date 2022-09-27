@@ -27,6 +27,12 @@ export function prepareLayoutForCyto(
     layout.positions = hiddenGraphOptions.nodePositions;
   }
 
+  // If frozen, make sure to remove anything
+  // with a negative impact, i.e. spacingFactor
+  if (layout.name === "preset" && layout.spacingFactor) {
+    delete layout.spacingFactor;
+  }
+
   return layout;
 }
 
