@@ -27,6 +27,7 @@ import original from "../lib/themes/original";
 import { UpdateDoc } from "../lib/UpdateDoc";
 import { TGetSize, useGetSize } from "../lib/useGetSize";
 import { useGraphStore } from "../lib/useGraphStore";
+import { stripComments } from "../lib/utils";
 import { Box } from "../slang";
 import { AppContext, TAppContext } from "./AppContext";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
@@ -309,8 +310,11 @@ function updateGraph({
         hiddenGraphOptions
       );
 
+      // Strip Comments
+      const contentWithoutComments = stripComments(content);
+
       // Parse
-      elements = parseText(content, getSize);
+      elements = parseText(contentWithoutComments, getSize);
 
       // Test Error First
       errorCatcher.current?.json({ elements });
