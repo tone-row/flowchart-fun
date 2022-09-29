@@ -19,7 +19,6 @@ declare global {
 }
 
 export default function useDownloadHandlers(
-  textToParse: string,
   cy: React.MutableRefObject<cytoscape.Core | undefined>,
   graphTheme: Theme,
   bg: string
@@ -42,15 +41,6 @@ export default function useDownloadHandlers(
         });
         const domparser = new DOMParser();
         const svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
-
-        // TODO: remove if no longer needed in October 2022
-        // Add comment
-        // const originalTextComment = svgEl.createComment(
-        //   `Original Flowchart Text (flowchart.fun):\n\n${textToParse}\n\n`
-        // );
-
-        // Fix Viewbox
-        // svgEl.children[0].appendChild(originalTextComment);
 
         const pad = PADDING / 2;
         const svgTag = svgEl.children[0];

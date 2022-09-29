@@ -121,7 +121,7 @@ const Graph = memo(
         window.removeEventListener("resize", debouncedResize.callback);
     }, [debouncedResize]);
 
-    useDownloadHandlers(textToParse, cy, theme, bg);
+    useDownloadHandlers(cy, theme, bg);
 
     // Initialize Graph
     useEffect(
