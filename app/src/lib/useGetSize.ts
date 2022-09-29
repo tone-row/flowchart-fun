@@ -46,7 +46,6 @@ export function useGetSize(theme: Theme) {
           };
 
           if (classes.includes("circle")) {
-            console.log(finalSize);
             if (finalSize.height > finalSize.width) {
               finalSize.width =
                 finalSize.shapeWidth =

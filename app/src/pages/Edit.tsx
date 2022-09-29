@@ -3,6 +3,7 @@ import { memo, useCallback, useEffect, useRef, useState } from "react";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
+import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
@@ -20,11 +21,11 @@ const Edit = memo(function Edit() {
   const {
     text,
     options,
-    toParse,
     updateLocalDoc,
     hiddenGraphOptionsText,
     theme,
     bg,
+    isFrozen,
   } = useLocalDoc();
   const { linesOfYaml } = options;
 
@@ -52,35 +53,37 @@ const Edit = memo(function Edit() {
   );
 
   return (
-    <Main
-      textToParse={toParse}
-      setHoverLineNumber={setHoverLineNumber}
-      hiddenGraphOptionsText={hiddenGraphOptionsText}
-      options={options}
-      update={updateLocalDoc}
-      theme={theme}
-      bg={bg}
-    >
-      <Editor
-        value={text}
-        // @ts-ignore
-        wrapperClassName={styles.Editor}
-        defaultLanguage={languageId}
-        options={editorOptions}
-        onChange={onChange}
-        loading={loading.current}
-        onMount={onMount}
-      />
-      <ClearTextButton
-        handleClear={() => {
-          updateLocalDoc({ text: "", hidden: {} });
-          if (editorRef.current) {
-            editorRef.current.focus();
-          }
-        }}
-      />
-      <EditorError />
-    </Main>
+    <Layout>
+      <Main
+        setHoverLineNumber={setHoverLineNumber}
+        hiddenGraphOptionsText={hiddenGraphOptionsText}
+        options={options}
+        update={updateLocalDoc}
+        theme={theme}
+        bg={bg}
+        isFrozen={isFrozen}
+      >
+        <Editor
+          value={text}
+          // @ts-ignore
+          wrapperClassName={styles.Editor}
+          defaultLanguage={languageId}
+          options={editorOptions}
+          onChange={onChange}
+          loading={loading.current}
+          onMount={onMount}
+        />
+        <ClearTextButton
+          handleClear={() => {
+            updateLocalDoc({ text: "", hidden: {} });
+            if (editorRef.current) {
+              editorRef.current.focus();
+            }
+          }}
+        />
+        <EditorError />
+      </Main>
+    </Layout>
   );
 });
 

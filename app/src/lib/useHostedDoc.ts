@@ -35,6 +35,8 @@ export function useHostedDoc(id?: string) {
     console.log(e);
   }
 
+  const isFrozen = "nodePositions" in hiddenGraphOptions;
+
   const setText = (newText: string) => {
     setFullText(
       newText + HIDDEN_GRAPH_OPTIONS_DIVIDER + hiddenGraphOptionsText
@@ -132,5 +134,6 @@ export function useHostedDoc(id?: string) {
     hiddenGraphOptionsText,
     theme,
     bg,
+    isFrozen,
   };
 }

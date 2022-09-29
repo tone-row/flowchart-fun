@@ -13,10 +13,12 @@ export default function GraphWrapper({
   children,
   update,
   options,
+  isFrozen,
 }: {
   children: ReactNode;
   update?: UpdateDoc;
   options: UseGraphOptionsReturn;
+  isFrozen: boolean;
 }) {
   const { showing } = useContext(AppContext);
   const isFullscreen = useFullscreen();
@@ -44,7 +46,11 @@ export default function GraphWrapper({
           at={{ tablet: { rad: 1 } }}
         >
           {shouldHideGraphOptions || !update ? null : (
-            <GraphOptionsBar update={update} options={options} />
+            <GraphOptionsBar
+              update={update}
+              options={options}
+              isFrozen={isFrozen}
+            />
           )}
           {children}
         </Box>

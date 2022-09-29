@@ -51,7 +51,6 @@ if (!cytoscape.prototype.hasInitialised) {
 
 const Graph = memo(
   ({
-    textToParse,
     setHoverLineNumber,
     shouldResize,
     hiddenGraphOptionsText = "{}",
@@ -60,7 +59,6 @@ const Graph = memo(
     theme,
     bg,
   }: {
-    textToParse: string;
     setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
     shouldResize: number;
     hiddenGraphOptionsText: string;
@@ -86,13 +84,9 @@ const Graph = memo(
 
     const handleDragFree = useCallback(() => {
       if (!update) return;
-      console.log("drag free");
 
       const nodePositions = getNodePositionsFromCy();
       update({
-        options: {
-          layout: { name: "preset" },
-        },
         hidden: { nodePositions },
       });
 

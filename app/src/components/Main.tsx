@@ -24,26 +24,26 @@ import { UseGraphOptionsReturn } from "./useGraphOptions";
 
 export type MainProps = {
   children?: ReactNode;
-  textToParse: string;
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
   hiddenGraphOptionsText: string;
   options: UseGraphOptionsReturn;
   update?: UpdateDoc;
   theme: Theme;
   bg: string;
+  isFrozen: boolean;
 };
 
 /** The left/right column wrapper. Also controls when things should be fullscreen. */
 const Main = memo(
   ({
     children,
-    textToParse,
     setHoverLineNumber,
     hiddenGraphOptionsText,
     options,
     update,
     theme,
     bg,
+    isFrozen,
   }: MainProps) => {
     const [shouldResize, triggerResize] = useState(0);
     const trigger = useCallback(() => triggerResize((n) => n + 1), []);
@@ -57,9 +57,8 @@ const Main = memo(
             </Suspense>
           </TabPane>
         )}
-        <GraphWrapper update={update} options={options}>
+        <GraphWrapper update={update} options={options} isFrozen={isFrozen}>
           <Graph
-            textToParse={textToParse}
             setHoverLineNumber={setHoverLineNumber}
             shouldResize={shouldResize}
             hiddenGraphOptionsText={hiddenGraphOptionsText}
@@ -70,7 +69,7 @@ const Main = memo(
           />
           {isFullscreen ? (
             <div className={styles.CopyButtonWrapper}>
-              <CloneButton />
+              <CloneButton fullText="AHHHHH FIX ME TOOO" />
             </div>
           ) : null}
         </GraphWrapper>

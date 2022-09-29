@@ -25,6 +25,7 @@ export function prepareLayoutForCyto(
   // set positions
   if (hiddenGraphOptions?.nodePositions) {
     layout.positions = hiddenGraphOptions.nodePositions;
+    layout.name = "preset";
   }
 
   // If frozen, make sure to remove anything

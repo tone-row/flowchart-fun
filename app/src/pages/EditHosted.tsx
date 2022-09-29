@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import EditorError from "../components/EditorError";
+import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import Spinner from "../components/Spinner";
@@ -27,13 +28,13 @@ export default function EditHosted() {
     flush,
     options,
     updateHostedDoc,
-    toParse,
     hiddenGraphOptionsText,
     isLoading,
     text,
     pending,
     theme,
     bg,
+    isFrozen,
   } = useHostedDoc(id);
   const { linesOfYaml } = options;
 
@@ -76,31 +77,33 @@ export default function EditHosted() {
   );
 
   return (
-    <Main
-      setHoverLineNumber={setHoverLineNumber}
-      textToParse={toParse}
-      hiddenGraphOptionsText={hiddenGraphOptionsText}
-      options={options}
-      update={updateHostedDoc}
-      theme={theme}
-      bg={bg}
-    >
-      <Editor
-        value={text}
-        // @ts-ignore
-        wrapperClassName={editStyles.Editor}
-        defaultLanguage={languageId}
-        options={{
-          ...editorOptions,
-          readOnly: !validSponsor,
-        }}
-        onChange={onChange}
-        loading={loading.current}
-        onMount={onMount}
-      />
-      <LoadingState isLoading={isLoading} pending={pending()} />
-      <EditorError />
-    </Main>
+    <Layout>
+      <Main
+        setHoverLineNumber={setHoverLineNumber}
+        hiddenGraphOptionsText={hiddenGraphOptionsText}
+        options={options}
+        update={updateHostedDoc}
+        theme={theme}
+        bg={bg}
+        isFrozen={isFrozen}
+      >
+        <Editor
+          value={text}
+          // @ts-ignore
+          wrapperClassName={editStyles.Editor}
+          defaultLanguage={languageId}
+          options={{
+            ...editorOptions,
+            readOnly: !validSponsor,
+          }}
+          onChange={onChange}
+          loading={loading.current}
+          onMount={onMount}
+        />
+        <LoadingState isLoading={isLoading} pending={pending()} />
+        <EditorError />
+      </Main>
+    </Layout>
   );
 }
 

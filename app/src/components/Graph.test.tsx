@@ -15,7 +15,6 @@ describe("<Graph/>", () => {
   it("renders without crashing", () => {
     render(
       <Graph
-        textToParse={""}
         setHoverLineNumber={setHoverLineNumber}
         shouldResize={0}
         hiddenGraphOptionsText={""}

@@ -3,6 +3,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
+import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
@@ -13,15 +14,14 @@ import {
   themeNameLight,
   useMonacoLanguage,
 } from "../lib/registerLanguage";
-import { useHostedDoc } from "../lib/useHostedDoc";
+import { usePublicDoc } from "../lib/usePublicDoc";
 import styles from "./ReadOnly.module.css";
 
 function Public() {
   const monaco = useMonaco();
   const { public_id } = useParams<{ public_id: string }>();
-  const { options, toParse, hiddenGraphOptionsText, theme, bg } =
-    useHostedDoc(public_id);
-  const { graphOptions } = options;
+  const { options, toParse, hiddenGraphOptionsText, theme, bg, isFrozen } =
+    usePublicDoc(public_id);
 
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
@@ -62,29 +62,31 @@ function Public() {
   const onMount = useEditorOnMount(editorRef, monacoRef);
 
   return (
-    <Main
-      setHoverLineNumber={setHoverLineNumber}
-      textToParse={toParse}
-      hiddenGraphOptionsText={hiddenGraphOptionsText}
-      options={options}
-      theme={theme}
-      bg={bg}
-    >
-      <Editor
-        value={toParse}
-        defaultValue={toParse}
-        defaultLanguage={languageId}
-        // @ts-ignore
-        wrapperClassName={styles.Editor}
-        theme={mode === "dark" ? themeNameDark : themeNameLight}
-        loading={loading.current}
-        options={{
-          ...editorOptions,
-          readOnly: true,
-        }}
-        onMount={onMount}
-      />
-    </Main>
+    <Layout>
+      <Main
+        setHoverLineNumber={setHoverLineNumber}
+        hiddenGraphOptionsText={hiddenGraphOptionsText}
+        options={options}
+        theme={theme}
+        bg={bg}
+        isFrozen={isFrozen}
+      >
+        <Editor
+          value={toParse}
+          defaultValue={toParse}
+          defaultLanguage={languageId}
+          // @ts-ignore
+          wrapperClassName={styles.Editor}
+          theme={mode === "dark" ? themeNameDark : themeNameLight}
+          loading={loading.current}
+          options={{
+            ...editorOptions,
+            readOnly: true,
+          }}
+          onMount={onMount}
+        />
+      </Main>
+    </Layout>
   );
 }
 

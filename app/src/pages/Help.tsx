@@ -4,6 +4,7 @@ import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
 import Docs from "../components/Docs";
 import EditorError from "../components/EditorError";
+import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
@@ -23,12 +24,12 @@ export default function Help() {
     text,
     hiddenGraphOptionsText,
     options,
-    toParse,
     updateLocalDoc,
     theme,
     bg,
+    isFrozen,
   } = useLocalDoc("h"); // fixed workspace name
-  const { graphOptions, linesOfYaml } = options;
+  const { linesOfYaml } = options;
 
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
@@ -60,50 +61,52 @@ export default function Help() {
   );
 
   return (
-    <Main
-      textToParse={toParse}
-      setHoverLineNumber={setHoverLineNumber}
-      hiddenGraphOptionsText={hiddenGraphOptionsText}
-      options={options}
-      theme={theme}
-      bg={bg}
-    >
-      <div className={helpStyles.helpWrapper} data-testid="help">
-        <Resizable
-          defaultSize={{ width: "100%", height: "50vh" }}
-          className={helpStyles.resizable}
-          enable={{
-            top: false,
-            right: false,
-            bottom: true,
-            left: false,
-            topRight: false,
-            bottomRight: false,
-            bottomLeft: false,
-            topLeft: false,
-          }}
-        >
-          <div className={helpStyles.docsWrapper}>
-            <div className={helpStyles.docsWrapperScroll}>
-              <Suspense fallback={<Loading />}>
-                <Docs currentText={text} />
-              </Suspense>
+    <Layout>
+      <Main
+        setHoverLineNumber={setHoverLineNumber}
+        hiddenGraphOptionsText={hiddenGraphOptionsText}
+        options={options}
+        theme={theme}
+        bg={bg}
+        isFrozen={isFrozen}
+      >
+        <div className={helpStyles.helpWrapper} data-testid="help">
+          <Resizable
+            defaultSize={{ width: "100%", height: "50vh" }}
+            className={helpStyles.resizable}
+            enable={{
+              top: false,
+              right: false,
+              bottom: true,
+              left: false,
+              topRight: false,
+              bottomRight: false,
+              bottomLeft: false,
+              topLeft: false,
+            }}
+          >
+            <div className={helpStyles.docsWrapper}>
+              <div className={helpStyles.docsWrapperScroll}>
+                <Suspense fallback={<Loading />}>
+                  <Docs currentText={text} />
+                </Suspense>
+              </div>
             </div>
-          </div>
-        </Resizable>
-        <Editor
-          value={text}
-          // @ts-ignore
-          wrapperClassName={styles.Editor}
-          defaultLanguage={languageId}
-          options={editorOptions}
-          onChange={onChange}
-          loading={loading.current}
-          onMount={onMount}
-        />
-      </div>
-      <EditorError />
-    </Main>
+          </Resizable>
+          <Editor
+            value={text}
+            // @ts-ignore
+            wrapperClassName={styles.Editor}
+            defaultLanguage={languageId}
+            options={editorOptions}
+            onChange={onChange}
+            loading={loading.current}
+            onMount={onMount}
+          />
+        </div>
+        <EditorError />
+      </Main>
+    </Layout>
   );
 }
 

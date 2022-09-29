@@ -4,9 +4,7 @@ import * as Toggle from "@radix-ui/react-toggle";
 import { memo } from "react";
 import { FaSnowflake } from "react-icons/fa";
 
-import { defaultLayout } from "../lib/constants";
 import { UpdateDoc } from "../lib/UpdateDoc";
-import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import styles from "./FreezeLayoutToggle.module.css";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
@@ -14,10 +12,11 @@ import graphBarStyles from "./GraphOptionsBar.module.css";
 
 export const FreezeLayoutToggle = memo(function FreezeLayoutToggle({
   update,
+  isFrozen,
 }: {
   update: UpdateDoc;
+  isFrozen: boolean;
 }) {
-  const isFrozen = useGraphStore((store) => store.isFrozen);
   return (
     <Box
       className={`${graphBarStyles.BarSection} ${isFrozen ? "checked" : ""}`}
@@ -39,16 +38,10 @@ export const FreezeLayoutToggle = memo(function FreezeLayoutToggle({
                 const nodePositions = getNodePositionsFromCy();
                 update({
                   hidden: { nodePositions },
-                  options: {
-                    layout: { name: "preset" },
-                  },
                 });
               } else if (!check) {
                 update({
                   hidden: {},
-                  options: {
-                    layout: { name: defaultLayout.name },
-                  },
                 });
               }
             }}

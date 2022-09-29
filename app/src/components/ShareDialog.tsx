@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useReducer,
   useState,
 } from "react";
@@ -261,15 +262,14 @@ function Preview() {
   );
 }
 
-function useMermaidJS() {
-  const layout = useGraphStore((store) => store.layout);
-  const elements = useGraphStore((store) => store.elements);
+function getMermaidText() {
+  const { layout, elements } = useGraphStore.getState();
   return toMermaidJS({ layout, elements });
 }
 
 function Mermaid() {
   const [copied, setCopied] = useState(false);
-  const mermaid = useMermaidJS();
+  const mermaid = useMemo(() => getMermaidText(), []);
   return (
     <>
       <Type size={-1}>Mermaid.JS</Type>

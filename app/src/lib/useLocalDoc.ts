@@ -12,16 +12,12 @@ import { getBackground } from "./getBackground";
 import { getHiddenGraphOptionsText } from "./getHiddenGraphOptionsText";
 import { useGraphTheme } from "./graphThemes";
 import { UpdateDoc } from "./UpdateDoc";
-import { useGraphStore } from "./useGraphStore";
 import {
   getNewTextFromGraphOptions,
   useUpdateGraphOptionsText,
 } from "./useUpdateGraphOptionsText";
 
-let renders = 1;
-
 export function useLocalDoc(defaultWorkspace = "") {
-  console.log("useLocalDoc", renders++);
   const { workspace = defaultWorkspace } = useParams<{ workspace?: string }>();
   const defaultText = `${t`This app works by typing`}
   ${t`Indenting creates a link to the current line`}
@@ -61,6 +57,9 @@ ${t`Have fun! 🎉`}
     console.log(e);
   }
 
+  // Should we freeze graph
+  const isFrozen = "nodePositions" in hiddenGraphOptions;
+
   // TODO: the share link should be moved into a tiny zustand store
   const { setShareLink } = useContext(AppContext);
   useEffect(() => {
@@ -75,12 +74,6 @@ ${t`Have fun! 🎉`}
   }, [text, throttleSetToParse]);
 
   const options = useGraphOptions(text);
-
-  if (options.graphOptions?.layout?.name === "preset") {
-    useGraphStore.setState({ isFrozen: true });
-  } else {
-    useGraphStore.setState({ isFrozen: false });
-  }
 
   const updateGraphOptionsText = useUpdateGraphOptionsText(
     options.content,
@@ -151,5 +144,6 @@ ${t`Have fun! 🎉`}
     hiddenGraphOptionsText,
     theme,
     bg,
+    isFrozen,
   };
 }

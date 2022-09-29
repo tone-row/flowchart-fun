@@ -2,6 +2,7 @@ import Editor, { OnMount } from "@monaco-editor/react";
 import { useEffect, useRef, useState } from "react";
 
 import EditorError from "../components/EditorError";
+import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
@@ -16,7 +17,8 @@ import { useLocalDoc } from "../lib/useLocalDoc";
 import styles from "./ReadOnly.module.css";
 
 function ReadOnly() {
-  const { text, hiddenGraphOptionsText, options, theme, bg } = useLocalDoc();
+  const { text, hiddenGraphOptionsText, options, theme, bg, isFrozen } =
+    useLocalDoc();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
@@ -36,30 +38,32 @@ function ReadOnly() {
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   return (
-    <Main
-      setHoverLineNumber={setHoverLineNumber}
-      textToParse={text}
-      hiddenGraphOptionsText={hiddenGraphOptionsText}
-      options={options}
-      theme={theme}
-      bg={bg}
-    >
-      <Editor
-        value={text}
-        // @ts-ignore
-        wrapperClassName={styles.Editor}
-        defaultLanguage={languageId}
-        options={{
-          ...editorOptions,
-          readOnly: true,
-        }}
-        defaultValue={text}
-        theme={mode === "dark" ? themeNameDark : themeNameLight}
-        loading={loading.current}
-        onMount={onMount}
-      />
-      <EditorError />
-    </Main>
+    <Layout>
+      <Main
+        setHoverLineNumber={setHoverLineNumber}
+        hiddenGraphOptionsText={hiddenGraphOptionsText}
+        options={options}
+        theme={theme}
+        bg={bg}
+        isFrozen={isFrozen}
+      >
+        <Editor
+          value={text}
+          // @ts-ignore
+          wrapperClassName={styles.Editor}
+          defaultLanguage={languageId}
+          options={{
+            ...editorOptions,
+            readOnly: true,
+          }}
+          defaultValue={text}
+          theme={mode === "dark" ? themeNameDark : themeNameLight}
+          loading={loading.current}
+          onMount={onMount}
+        />
+        <EditorError />
+      </Main>
+    </Layout>
   );
 }
 

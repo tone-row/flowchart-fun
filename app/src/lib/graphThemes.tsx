@@ -28,7 +28,7 @@ export type GraphThemes =
   | "futuristic"
   | "comic-book";
 
-const publicThemes = themes
+export const publicThemes = themes
   .filter((theme) => !theme.sponsorOnly)
   .map((theme) => theme.value) as GraphThemes[];
 

@@ -41,9 +41,6 @@ describe("New Page", () => {
   it("should use editable template for unauth user", async () => {
     // make sure we return a template
     const fakeChart = "hello world";
-    jest.spyOn(hooks, "useReadOnlyText").mockReturnValue({
-      fullText: fakeChart,
-    } as any);
 
     // control the generated chart name
     const mock = jest.spyOn(helpers, "randomChartName");
@@ -59,12 +56,6 @@ describe("New Page", () => {
   });
 
   it("should create a hosted chart if logged in", async () => {
-    // make sure we return a template
-    const fakeChart = "hello world";
-    jest.spyOn(hooks, "useReadOnlyText").mockReturnValue({
-      fullText: fakeChart,
-    } as any);
-
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
     const mockGetSession = jest.spyOn(supabase.auth, "session");
@@ -110,9 +101,6 @@ describe("New Page", () => {
 
     // make sure we return a template
     const fakeChart = "hello world";
-    jest.spyOn(hooks, "useReadOnlyText").mockReturnValue({
-      fullText: fakeChart,
-    } as any);
 
     // control the generated chart name
     const mock = jest.spyOn(helpers, "randomChartName");

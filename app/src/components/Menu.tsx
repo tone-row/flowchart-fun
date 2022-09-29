@@ -31,11 +31,9 @@ import {
   useIsHelp,
   useIsReadOnly,
   useIsValidSponsor,
-  useReadOnlyText,
   useTitle,
 } from "../lib/hooks";
 import { makeChart, queryClient, renameChart } from "../lib/queries";
-import { useLocalDoc } from "../lib/useLocalDoc";
 import { Box, BoxProps, Type } from "../slang";
 import { AppContext, Showing, useSession } from "./AppContext";
 import { ReactComponent as BrandSvg } from "./brand.svg";
@@ -249,8 +247,12 @@ const WorkspaceSection = memo(function WorkspaceSection() {
         </Box>
       </Box>
       <Box flow="column" gap={1}>
-        {!isReadOnly && !isHelp && <RenameButton />}
-        {isReadOnly ? <CloneButton /> : <ExportButton />}
+        {!isReadOnly && !isHelp && <RenameButton fullText="PUMPKIN FUUUAHF" />}
+        {isReadOnly ? (
+          <CloneButton fullText="HELP I NEED HELP AHHHH" />
+        ) : (
+          <ExportButton />
+        )}
       </Box>
     </Box>
   );
@@ -271,12 +273,11 @@ function translatedTitle(current: Showing) {
   }
 }
 
-function RenameButton() {
+function RenameButton({ fullText }: { fullText: string }) {
   const isValidSponsor = useIsValidSponsor();
   const session = useSession();
   const [initialName, isHosted] = useTitle();
   const { data } = useCurrentHostedChart();
-  const { fullText } = useLocalDoc();
   const [dialog, setDialog] = useState(false);
   const { push } = useHistory();
   const { register, handleSubmit, watch, formState } = useForm<{
@@ -434,8 +435,7 @@ function ExportButton() {
 }
 
 /** Allow users to copy read-only charts */
-export function CloneButton() {
-  const { fullText } = useReadOnlyText();
+export function CloneButton({ fullText }: { fullText: string }) {
   const { push } = useHistory();
   return (
     <Box

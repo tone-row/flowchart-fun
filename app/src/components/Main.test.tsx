@@ -11,7 +11,6 @@ describe("Main", () => {
   test("renders", () => {
     render(
       <Main
-        textToParse=""
         hiddenGraphOptionsText={""}
         setHoverLineNumber={() => null}
         options={{
@@ -22,6 +21,7 @@ describe("Main", () => {
         }}
         theme={original}
         bg={"#fff"}
+        isFrozen={false}
       />
     );
   });

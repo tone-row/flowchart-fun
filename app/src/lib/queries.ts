@@ -369,21 +369,31 @@ async function generatePublicId(): Promise<string> {
 }
 
 async function getPublicChart(publicId: string) {
-  const { data, error } = await fetch(`/api/public-chart/${publicId}`).then(
+  if (!publicId) return;
+  const { data, error } = await fetch(`/api/public?id=${publicId}`).then(
     (result) => result.json()
   );
   if (error) throw error;
   if (!data) throw new Error("Invalid Chart");
-  return data;
+  return data as Pick<
+    definitions["user_charts"],
+    "name" | "chart" | "is_public"
+  >;
 }
 
-export function usePublicChart(publicId: string) {
-  return useQuery(["publicChart", publicId], () => getPublicChart(publicId), {
-    enabled: Boolean(publicId),
-    refetchOnMount: true,
-    staleTime: 0,
-    suspense: true,
-  });
+export function usePublicChart(publicId?: string) {
+  return useQuery(
+    ["publicChart", publicId],
+    () => {
+      if (publicId) return getPublicChart(publicId);
+    },
+    {
+      enabled: Boolean(publicId),
+      refetchOnMount: true,
+      staleTime: 0,
+      suspense: true,
+    }
+  );
 }
 
 async function fetchDocs() {

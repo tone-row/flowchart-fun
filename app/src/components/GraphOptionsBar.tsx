@@ -33,7 +33,6 @@ import { directions, layouts, SelectOption, themes } from "../lib/graphOptions";
 import { defaultGraphTheme } from "../lib/graphThemes";
 import { useIsValidSponsor } from "../lib/hooks";
 import { UpdateDoc } from "../lib/UpdateDoc";
-import { useGraphStore } from "../lib/useGraphStore";
 import { Box, BoxProps, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { FreezeLayoutToggle } from "./FreezeLayoutToggle";
@@ -49,9 +48,11 @@ import { UseGraphOptionsReturn } from "./useGraphOptions";
 const GraphOptionsBar = ({
   update,
   options,
+  isFrozen,
 }: {
   update: UpdateDoc;
   options: UseGraphOptionsReturn;
+  isFrozen: boolean;
 }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const setShowing = useCallback(useContext(AppContext).setShowing, []);
@@ -68,7 +69,6 @@ const GraphOptionsBar = ({
   const layout = watch("layout.name");
   const theme = watch("theme");
   const valuesString = JSON.stringify(values);
-  const isFrozen = useGraphStore((store) => store.isFrozen);
 
   useEffect(() => {
     if (layout) gaChangeGraphOption({ action: "layout", label: layout });
@@ -145,7 +145,7 @@ const GraphOptionsBar = ({
 
   return (
     <Box className={styles.GraphOptionsBar} as="form">
-      <FreezeLayoutToggle update={update} />
+      <FreezeLayoutToggle update={update} isFrozen={isFrozen} />
       {isFrozen ? null : (
         <>
           <OptionWithIcon
