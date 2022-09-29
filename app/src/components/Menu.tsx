@@ -50,7 +50,7 @@ import {
   tooltipSize,
 } from "./Shared";
 
-export function Menu() {
+export function Menu({ fullText }: { fullText: string }) {
   const { showing, session } = useContext(AppContext);
   const { setShowing } = useContext(AppContext);
   const { push } = useHistory();
@@ -125,7 +125,7 @@ export function Menu() {
         />
       </Box>
       {showing === "editor" ? (
-        <WorkspaceSection />
+        <WorkspaceSection fullText={fullText} />
       ) : (
         <Box className={styles.PageTitle} pt={5} at={{ tablet: { pt: 0 } }}>
           <Type size={1} as="h1">
@@ -209,7 +209,11 @@ const MenuTabButton = memo(function MenuTabButton({
   );
 });
 
-const WorkspaceSection = memo(function WorkspaceSection() {
+const WorkspaceSection = memo(function WorkspaceSection({
+  fullText,
+}: {
+  fullText: string;
+}) {
   const [title, isHosted] = useTitle();
   const Icon = isHosted ? Globe : Laptop;
   const isReadOnly = useIsReadOnly();
@@ -247,12 +251,8 @@ const WorkspaceSection = memo(function WorkspaceSection() {
         </Box>
       </Box>
       <Box flow="column" gap={1}>
-        {!isReadOnly && !isHelp && <RenameButton fullText="PUMPKIN FUUUAHF" />}
-        {isReadOnly ? (
-          <CloneButton fullText="HELP I NEED HELP AHHHH" />
-        ) : (
-          <ExportButton />
-        )}
+        {!isReadOnly && !isHelp && <RenameButton fullText={fullText} />}
+        {isReadOnly ? <CloneButton fullText={fullText} /> : <ExportButton />}
       </Box>
     </Box>
   );

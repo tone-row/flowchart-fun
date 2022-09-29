@@ -35,6 +35,7 @@ export default function EditHosted() {
     theme,
     bg,
     isFrozen,
+    fullText,
   } = useHostedDoc(id);
   const { linesOfYaml } = options;
 
@@ -77,7 +78,7 @@ export default function EditHosted() {
   );
 
   return (
-    <Layout>
+    <Layout fullText={fullText}>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}

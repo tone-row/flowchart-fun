@@ -13,12 +13,19 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useLocalDoc } from "../lib/useLocalDoc";
+import { useReadOnlyDoc } from "../lib/useReadOnlyDoc";
 import styles from "./ReadOnly.module.css";
 
 function ReadOnly() {
-  const { text, hiddenGraphOptionsText, options, theme, bg, isFrozen } =
-    useLocalDoc();
+  const {
+    text,
+    hiddenGraphOptionsText,
+    options,
+    theme,
+    bg,
+    isFrozen,
+    fullText,
+  } = useReadOnlyDoc();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
@@ -38,7 +45,7 @@ function ReadOnly() {
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   return (
-    <Layout>
+    <Layout fullText={fullText}>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}

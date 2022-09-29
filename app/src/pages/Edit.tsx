@@ -26,6 +26,7 @@ const Edit = memo(function Edit() {
     theme,
     bg,
     isFrozen,
+    fullText,
   } = useLocalDoc();
   const { linesOfYaml } = options;
 
@@ -53,7 +54,7 @@ const Edit = memo(function Edit() {
   );
 
   return (
-    <Layout>
+    <Layout fullText={fullText}>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}

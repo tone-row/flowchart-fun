@@ -28,6 +28,7 @@ export default function Help() {
     theme,
     bg,
     isFrozen,
+    fullText,
   } = useLocalDoc("h"); // fixed workspace name
   const { linesOfYaml } = options;
 
@@ -61,7 +62,7 @@ export default function Help() {
   );
 
   return (
-    <Layout>
+    <Layout fullText={fullText}>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}

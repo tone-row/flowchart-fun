@@ -29,7 +29,7 @@ export default function ShareDialog() {
   const close = useCallback(() => setShareModal(false), [setShareModal]);
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
-  const editable = `${new URL(window.location.href).origin}/n/${shareLink}`;
+  const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
   const makePublic = useMutation(
     "makeChartPublic",
     async (isPublic: boolean) => {
