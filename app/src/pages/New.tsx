@@ -9,13 +9,15 @@ import { gaCreateChart } from "../lib/analytics";
 import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
+import { useDefaultDoc } from "../lib/useDefaultDoc";
 import { Type } from "../slang";
 
 export const New = memo(function New() {
+  const defaultDoc = useDefaultDoc();
   const { graphText = window.location.hash.slice(1) } = useParams<{
     graphText: string;
   }>();
-  const fullText = decompress(graphText) ?? "";
+  const fullText = decompress(graphText) ?? defaultDoc;
   const { push } = useHistory();
   const { setShowing, customerIsLoading, session, checkedSession } =
     useContext(AppContext);

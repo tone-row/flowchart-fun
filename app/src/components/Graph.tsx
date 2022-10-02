@@ -211,22 +211,51 @@ function initializeGraph({
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   setHoverLineNumber: React.Dispatch<React.SetStateAction<number | undefined>>;
 }) {
-  errorCatcher.current = cytoscape();
-  cy.current = cytoscape({
-    container: document.getElementById("cy"), // container to render in
-    layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
-    elements: [],
-    style: getCytoStyle(original),
-    userZoomingEnabled: true,
-    userPanningEnabled: true,
-    boxSelectionEnabled: false,
-    wheelSensitivity: 0.2,
-  });
-  window.__cy = cy.current;
-  const cyCurrent = cy.current;
-  const errorCyCurrent = errorCatcher.current;
+  try {
+    errorCatcher.current = cytoscape();
+    cy.current = cytoscape({
+      container: document.getElementById("cy"), // container to render in
+      layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
+      elements: [],
+      style: getCytoStyle(original),
+      userZoomingEnabled: true,
+      userPanningEnabled: true,
+      boxSelectionEnabled: false,
+      wheelSensitivity: 0.2,
+    });
+    window.__cy = cy.current;
+    const cyCurrent = cy.current;
+    const errorCyCurrent = errorCatcher.current;
 
-  // Hovering Events
+    // Hover Events
+    const handleMouseOut = () => {
+      cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
+      cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
+      setHoverLineNumber(undefined);
+    };
+
+    cyCurrent.on("mouseover", "node", nodeHighlight);
+    cyCurrent.on("mouseover", "edge", edgeHighlight);
+    cyCurrent.on("tapstart", "node", nodeHighlight);
+    cyCurrent.on("tapstart", "edge", edgeHighlight);
+    cyCurrent.on("mouseout", "node, edge", unhighlight);
+    cyCurrent.on("tapend", "node, edge", unhighlight);
+    document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
+
+    return () => {
+      cyCurrent.destroy();
+      errorCyCurrent.destroy();
+      cy.current = undefined;
+      errorCatcher.current = undefined;
+      document
+        .getElementById("cy")
+        ?.removeEventListener("mouseout", handleMouseOut);
+    };
+  } catch (e) {
+    console.error(e);
+  }
+
+  // Hover Events that Need "this"
   function nodeHighlight(this: NodeSingular) {
     this.addClass("nodeHovered");
     setHoverLineNumber(this.data().lineNumber);
@@ -240,29 +269,6 @@ function initializeGraph({
     this.removeClass("edgeHovered");
     setHoverLineNumber(undefined);
   }
-  function handleMouseOut() {
-    cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
-    cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
-    setHoverLineNumber(undefined);
-  }
-
-  cyCurrent.on("mouseover", "node", nodeHighlight);
-  cyCurrent.on("mouseover", "edge", edgeHighlight);
-  cyCurrent.on("tapstart", "node", nodeHighlight);
-  cyCurrent.on("tapstart", "edge", edgeHighlight);
-  cyCurrent.on("mouseout", "node, edge", unhighlight);
-  cyCurrent.on("tapend", "node, edge", unhighlight);
-  document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
-
-  return () => {
-    cyCurrent.destroy();
-    errorCyCurrent.destroy();
-    cy.current = undefined;
-    errorCatcher.current = undefined;
-    document
-      .getElementById("cy")
-      ?.removeEventListener("mouseout", handleMouseOut);
-  };
 }
 
 // Update nodes & edges
