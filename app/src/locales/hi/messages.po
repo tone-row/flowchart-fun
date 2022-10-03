@@ -75,8 +75,8 @@ msgstr "रद्द करें"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
-#: src/components/Menu.tsx:113
-#: src/components/Menu.tsx:266
+#: src/components/Menu.tsx:111
+#: src/components/Menu.tsx:268
 msgid "Charts"
 msgstr "चार्ट"
 
@@ -118,19 +118,19 @@ msgstr "कॉमिक बुक"
 msgid "Concentric"
 msgstr "गाढ़ा"
 
-#: src/components/GraphOptionsBar.tsx:206
+#: src/components/GraphOptionsBar.tsx:210
 msgid "Contract"
 msgstr "सिकोड़ना"
 
-#: src/components/Menu.tsx:381
+#: src/components/Menu.tsx:382
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
 #: src/components/Navigation.tsx:476
 #: src/components/Navigation.tsx:547
 #: src/components/Navigation.tsx:581
-#: src/components/ShareDialog.tsx:229
 #: src/components/ShareDialog.tsx:230
+#: src/components/ShareDialog.tsx:231
 #: src/components/ShareDialog.tsx:296
 msgid "Copy"
 msgstr "कॉपी करें"
@@ -149,8 +149,8 @@ msgstr "SVG कोड कॉपी करें"
 msgid "Create"
 msgstr "बनाएँ"
 
-#: src/lib/hooks.ts:27
 #: src/lib/queries.ts:163
+#: src/lib/useDefaultDoc.ts:7
 msgid "Create a link directly using the exact label text"
 msgstr "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं"
 
@@ -178,7 +178,7 @@ msgstr "तारीख़"
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: src/components/GraphOptionsBar.tsx:177
+#: src/components/GraphOptionsBar.tsx:181
 msgid "Direction"
 msgstr "दिशा"
 
@@ -190,7 +190,7 @@ msgstr "क्या आप अपनी सदस्यता रद्द क�
 msgid "Do you want to delete this?"
 msgstr "क्या आप इसे डिलीट करना चाहते हैं?"
 
-#: src/components/ShareDialog.tsx:59
+#: src/components/ShareDialog.tsx:60
 msgid "Download"
 msgstr "डाउनलोड"
 
@@ -215,11 +215,11 @@ msgstr "डुप्लिकेट बनाएँ"
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "अपने चार्ट को किसी भी डिवाइस पर एडिट करें. किसी के भी साथ उन्हें शेयर करें. एक बार अपने चार्ट को पब्लिश करें और वह बदलाव के साथ अप टू डेट रहेगा."
 
-#: src/components/ShareDialog.tsx:136
+#: src/components/ShareDialog.tsx:137
 msgid "Editable"
 msgstr "संपादन योग्य"
 
-#: src/components/Menu.tsx:103
+#: src/components/Menu.tsx:101
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "संपादक"
@@ -243,18 +243,18 @@ msgstr "एक शीर्षक दर्ज करें"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:215
+#: src/components/GraphOptionsBar.tsx:219
 msgid "Expand"
 msgstr "फैलाव"
 
-#: src/components/Menu.tsx:429
-#: src/components/ShareDialog.tsx:51
-#: src/components/ShareDialog.tsx:146
+#: src/components/Menu.tsx:430
+#: src/components/ShareDialog.tsx:52
+#: src/components/ShareDialog.tsx:147
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
-#: src/components/Menu.tsx:158
-#: src/components/Menu.tsx:262
+#: src/components/Menu.tsx:156
+#: src/components/Menu.tsx:264
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
@@ -262,16 +262,16 @@ msgstr "फ़ीडबैक"
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
-#: src/components/AutoLayoutSwitch.tsx:37
-#: src/components/AutoLayoutSwitch.tsx:60
+#: src/components/FreezeLayoutToggle.tsx:34
+#: src/components/FreezeLayoutToggle.tsx:61
 msgid "Freeze Layout"
 msgstr "लेआउट फ्रीज़ करें"
 
-#: src/components/AutoLayoutSwitch.tsx:63
+#: src/components/FreezeLayoutToggle.tsx:64
 msgid "Freezing your chart allows you to customize the layout by disabling automatic layout."
 msgstr "अपने चार्ट को फ्रीज़ करके आप अपने-आप लेआउट बनना बंद कर सकते हैं और अपनी पसंद के हिसाब से लेआउट बना सकते हैं."
 
-#: src/components/ShareDialog.tsx:133
+#: src/components/ShareDialog.tsx:134
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
@@ -299,12 +299,12 @@ msgstr "ग्राफ़"
 msgid "Grid"
 msgstr "ग्रिड"
 
-#: src/lib/hooks.ts:37
 #: src/lib/queries.ts:173
+#: src/lib/useDefaultDoc.ts:17
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/components/Menu.tsx:147
+#: src/components/Menu.tsx:145
 msgid "Help"
 msgstr "मदद"
 
@@ -322,8 +322,8 @@ msgstr "होम"
 msgid "Hosted Charts"
 msgstr "होस्ट किए गए चार्ट"
 
-#: src/lib/hooks.ts:25
 #: src/lib/queries.ts:161
+#: src/lib/useDefaultDoc.ts:5
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
@@ -331,7 +331,7 @@ msgstr "इंडेंटिंग वर्तमान लाइन का �
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/GraphOptionsBar.tsx:149
+#: src/components/GraphOptionsBar.tsx:153
 msgid "Layout"
 msgstr "ख़ाका"
 
@@ -352,7 +352,7 @@ msgstr "लाइट"
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/ShareDialog.tsx:128
+#: src/components/ShareDialog.tsx:129
 msgid "Link"
 msgstr "लिंक"
 
@@ -372,7 +372,7 @@ msgstr "<0>Tone Row</0> द्वारा बना"
 msgid "Make a Donation"
 msgstr "दान करें"
 
-#: src/components/ShareDialog.tsx:101
+#: src/components/ShareDialog.tsx:102
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
@@ -401,7 +401,7 @@ msgstr "नाम"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "मदद चाहिए? <0>हमारे दस्तावेज़ देखें।</0>"
 
-#: src/components/Menu.tsx:93
+#: src/components/Menu.tsx:91
 msgid "New"
 msgstr "नया"
 
@@ -419,8 +419,8 @@ msgid "Powerful layout algorithms that bring order to graphs of all shapes and s
 msgstr "शक्तिशाली लेआउट एल्गोरिदम जो सभी शेप और साइज़ के ग्राफ़ में क्रम लाते हैं"
 
 #: src/components/Navigation.tsx:625
-#: src/components/ShareDialog.tsx:92
-#: src/components/ShareDialog.tsx:118
+#: src/components/ShareDialog.tsx:93
+#: src/components/ShareDialog.tsx:119
 msgid "Public"
 msgstr "पब्लिक"
 
@@ -428,15 +428,15 @@ msgstr "पब्लिक"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:140
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
 
-#: src/components/Menu.tsx:345
 #: src/components/Menu.tsx:346
-#: src/components/Menu.tsx:352
-#: src/components/Menu.tsx:362
-#: src/components/Menu.tsx:371
+#: src/components/Menu.tsx:347
+#: src/components/Menu.tsx:353
+#: src/components/Menu.tsx:363
+#: src/components/Menu.tsx:372
 msgid "Rename"
 msgstr "फिर से नाम बदलें"
 
@@ -464,8 +464,8 @@ msgstr "वापसी"
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
-#: src/components/Menu.tsx:167
-#: src/components/Menu.tsx:264
+#: src/components/Menu.tsx:165
+#: src/components/Menu.tsx:266
 msgid "Settings"
 msgstr "सेटिंग"
 
@@ -485,8 +485,8 @@ msgstr "होस्टेड फ़्लोचार्ट और नए स्�
 msgid "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to..."
 msgstr "स्पॉनसर flowchart.fun $5/महीने या $50/साल के लिए, इस का एक्सेस पाने के ख़ातिर..."
 
-#: src/components/Menu.tsx:122
-#: src/components/Menu.tsx:268
+#: src/components/Menu.tsx:120
+#: src/components/Menu.tsx:270
 msgid "Sponsors"
 msgstr "स्पॉन्सर्स"
 
@@ -499,7 +499,7 @@ msgid "Status"
 msgstr "स्टेटस"
 
 #: src/components/Feedback.tsx:98
-#: src/components/Menu.tsx:400
+#: src/components/Menu.tsx:401
 msgid "Submit"
 msgstr "भेजना"
 
@@ -515,7 +515,7 @@ msgstr "सदस्यता समाप्त हो जाएगी"
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
-#: src/components/GraphOptionsBar.tsx:220
+#: src/components/GraphOptionsBar.tsx:224
 msgid "Theme"
 msgstr "शैली"
 
@@ -523,8 +523,8 @@ msgstr "शैली"
 msgid "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these."
 msgstr "ये चार्ट सिर्फ़ इस ब्राउज़र में इस डिवाइस पर उपलब्ध हैं.<0/>ब्राउज़र क्लियर करने से local storage ये सब मिट जाएगा."
 
-#: src/lib/hooks.ts:24
 #: src/lib/queries.ts:160
+#: src/lib/useDefaultDoc.ts:4
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
@@ -569,42 +569,42 @@ msgstr "आप हमारे साथ क्या शेयर करना 
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें."
 
-#: src/lib/hooks.ts:29
 #: src/lib/queries.ts:165
+#: src/lib/useDefaultDoc.ts:9
 msgid "[custom ID] or"
 msgstr "[कस्टम ID] या"
 
-#: src/lib/hooks.ts:26
 #: src/lib/queries.ts:162
+#: src/lib/useDefaultDoc.ts:6
 msgid "any text: before a colon creates a label"
 msgstr "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है"
 
-#: src/lib/hooks.ts:30
 #: src/lib/queries.ts:166
+#: src/lib/useDefaultDoc.ts:10
 msgid "by adding an %5BID%5D and referencing that"
 msgstr "एक %5BID%5D जोड़कर संदर्भित है और उस"
 
-#: src/lib/hooks.ts:35
 #: src/lib/queries.ts:171
+#: src/lib/useDefaultDoc.ts:15
 msgid "comments"
 msgstr "कमेंट को"
 
-#: src/lib/hooks.ts:28
 #: src/lib/queries.ts:164
+#: src/lib/useDefaultDoc.ts:8
 msgid "like this: (This app works by typing)"
 msgstr "इस तरह: (यह ऐप टाइप द्वारा काम करता है)"
 
-#: src/lib/hooks.ts:31
 #: src/lib/queries.ts:167
+#: src/lib/useDefaultDoc.ts:11
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "इस तरह: (कस्टम ID) // आप सिंगल-लाइन टिप्पणियों का भी उपयोग कर सकते हैं"
 
-#: src/lib/hooks.ts:34
 #: src/lib/queries.ts:170
+#: src/lib/useDefaultDoc.ts:14
 msgid "multiline"
 msgstr "एक से अधिक लाइन"
 
-#: src/lib/hooks.ts:33
 #: src/lib/queries.ts:169
+#: src/lib/useDefaultDoc.ts:13
 msgid "or"
 msgstr "या"
