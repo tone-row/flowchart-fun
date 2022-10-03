@@ -76,9 +76,6 @@ const Graph = memo(
     const userStyle = JSON.stringify(options.graphOptions.style || []);
 
     const getSize = useGetSize(theme);
-    const graphUpdateNumber = useGraphStore(
-      useCallback((store) => store.graphUpdateNumber, [])
-    );
 
     const isFirstRender = useRef(true);
 
@@ -89,9 +86,6 @@ const Graph = memo(
       update({
         hidden: { nodePositions },
       });
-
-      // currently handles the state of the Freeze Layout button
-      useGraphStore.setState({ runLayout: false });
 
       gaChangeGraphOption({ action: "Auto Layout", label: "TOGGLE" });
     }, [update]);
@@ -171,7 +165,17 @@ const Graph = memo(
     // Update Graph Nodes
     useEffect(() => {
       updateTheGraph();
-    }, [updateTheGraph, graphUpdateNumber]);
+    }, [updateTheGraph]);
+
+    const sponsorLayoutsLoaded = useGraphStore(
+      useCallback((store) => store.sponsorLayoutsLoaded, [])
+    );
+    // Update Graph when Sponsor Layouts Load
+    useEffect(() => {
+      if (sponsorLayoutsLoaded) {
+        updateTheGraph();
+      }
+    }, [sponsorLayoutsLoaded, updateTheGraph]);
 
     const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
     const handleContextMenu = (e: TriggerEvent) => {

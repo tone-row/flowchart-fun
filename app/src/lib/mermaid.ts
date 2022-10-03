@@ -1,21 +1,21 @@
+import { GraphOptionsObject } from "./constants";
 import { shapes } from "./graphUtilityClasses";
 import { originalColors } from "./themes/original";
-import { StoreGraph } from "./useGraphStore";
 import { isEdge } from "./utils";
 
 export function toMermaidJS({
   layout,
   elements,
 }: {
-  layout: StoreGraph["layout"];
-  elements: StoreGraph["elements"];
+  layout: GraphOptionsObject["layout"];
+  elements: cytoscape.ElementDefinition[];
 }) {
   if (!elements.length) return "";
 
   const styleLines: string[] = [];
   const lines = [`flowchart${layout?.rankDir ? ` ${layout.rankDir}` : ""}`];
   const [nodes, edges] = elements.reduce<
-    [StoreGraph["elements"], StoreGraph["elements"]]
+    [cytoscape.ElementDefinition[], cytoscape.ElementDefinition[]]
   >(
     ([nodes, edges], element) => {
       if (isEdge(element)) {

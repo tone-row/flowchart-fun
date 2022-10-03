@@ -76,9 +76,6 @@ type CustomerInfo = {
 export const AppContext = createContext({} as TAppContext);
 
 const Provider = ({ children }: { children?: ReactNode }) => {
-  const incrementGraphUpdateNumber = useGraphStore(
-    useCallback((store) => store.incrementGraphUpdateNumber, [])
-  );
   const [showing, setShowing] = useState<Showing>("editor");
   const [shareLink, setShareLink] = useState("");
   const [shareModal, setShareModal] = useState(false);
@@ -137,17 +134,21 @@ const Provider = ({ children }: { children?: ReactNode }) => {
 
   const [checkedSession, setCheckedSession] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
-  const sponsorLayoutsLoaded = useRef(false);
+  const sponsorLayoutsLoading = useRef(false);
 
   /* Load Sponsor-only layouts when logged in */
   useEffect(() => {
+    // If not logged in, return
     if (!session) return;
-    if (sponsorLayoutsLoaded.current) return;
-    sponsorLayoutsLoaded.current = true;
+    // If already loaded, return
+    if (useGraphStore.getState().sponsorLayoutsLoaded) return;
+    // If in the process of loading, return
+    if (sponsorLayoutsLoading.current) return;
+    sponsorLayoutsLoading.current = true;
     loadSponsorOnlyLayouts().then(() => {
-      incrementGraphUpdateNumber();
+      useGraphStore.setState({ sponsorLayoutsLoaded: true });
     });
-  }, [incrementGraphUpdateNumber, session]);
+  }, [session]);
 
   useEffect(() => {
     if (supabase) {
