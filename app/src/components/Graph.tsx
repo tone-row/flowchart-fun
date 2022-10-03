@@ -2,7 +2,6 @@ import cytoscapeSvg from "@tone-row/cytoscape-svg";
 import { Core, CytoscapeOptions, EdgeSingular, NodeSingular } from "cytoscape";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
-import frontmatter from "gray-matter";
 import React, {
   Dispatch,
   memo,
@@ -10,29 +9,24 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useRef,
 } from "react";
 import { TriggerEvent, useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
 import { gaChangeGraphOption, gaUseGraphContextMenu } from "../lib/analytics";
-import {
-  defaultLayout,
-  delimiters,
-  GraphOptionsObject,
-} from "../lib/constants";
+import { defaultLayout, GraphOptionsObject } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
-import { useBackground, useGraphTheme } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { HiddenGraphOptions, isError } from "../lib/helpers";
 import { useAnimationSetting } from "../lib/hooks";
 import { parseText } from "../lib/parseText";
-import { preprocessGraphLayout } from "../lib/preprocessGraphLayout";
-import { StoreGraph, useStoreGraph } from "../lib/store.graph";
+import { prepareLayoutForCyto } from "../lib/prepareLayoutForCyto";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
+import { UpdateDoc } from "../lib/UpdateDoc";
 import { TGetSize, useGetSize } from "../lib/useGetSize";
+import { useGraphStore } from "../lib/useGraphStore";
 import { stripComments } from "../lib/utils";
 import { Box } from "../slang";
 import { AppContext, TAppContext } from "./AppContext";
@@ -40,6 +34,7 @@ import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import useDownloadHandlers from "./useDownloadHandlers";
+import { UseGraphOptionsReturn } from "./useGraphOptions";
 
 declare global {
   interface Window {
@@ -56,49 +51,44 @@ if (!cytoscape.prototype.hasInitialised) {
 
 const Graph = memo(
   ({
-    textToParse,
     setHoverLineNumber,
     shouldResize,
-    setHiddenGraphOptions,
-    hiddenGraphOptions = {},
+    hiddenGraphOptionsText = "{}",
+    options,
+    update,
+    theme,
+    bg,
   }: {
-    textToParse: string;
     setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
     shouldResize: number;
-    setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
-    hiddenGraphOptions?: HiddenGraphOptions;
+    hiddenGraphOptionsText: string;
+    options: UseGraphOptionsReturn;
+    update?: UpdateDoc;
+    theme: Theme;
+    bg: string;
   }) => {
     const cy = useRef<undefined | Core>();
     const errorCatcher = useRef<undefined | Core>();
     const animate = useAnimationSetting();
     const graphInitialized = useRef(false);
     const { setHasError, setHasStyleError } = useContext(AppContext);
+    const layout = JSON.stringify(options.graphOptions.layout || {});
+    const userStyle = JSON.stringify(options.graphOptions.style || []);
 
-    const theme = useGraphTheme();
-    const bg = useBackground();
     const getSize = useGetSize(theme);
-    const setLayout = useStoreGraph((store) => store.setLayout);
-    const setElements = useStoreGraph((store) => store.setElements);
-    const runLayout = useStoreGraph((store) => store.runLayout);
-    const setRunLayout = useStoreGraph((store) => store.setRunLayout);
-    const graphUpdateNumber = useStoreGraph(
-      useCallback((store) => store.graphUpdateNumber, [])
-    );
 
     const isFirstRender = useRef(true);
 
-    // Always begin with the layout running
-    useEffect(() => {
-      setRunLayout("nodePositions" in hiddenGraphOptions ? false : true);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
     const handleDragFree = useCallback(() => {
+      if (!update) return;
+
       const nodePositions = getNodePositionsFromCy();
-      setRunLayout(false);
-      setHiddenGraphOptions && setHiddenGraphOptions({ nodePositions });
+      update({
+        hidden: { nodePositions },
+      });
+
       gaChangeGraphOption({ action: "Auto Layout", label: "TOGGLE" });
-    }, [setHiddenGraphOptions, setRunLayout]);
+    }, [update]);
 
     const handleResize = useCallback(() => {
       if (cy.current) {
@@ -120,7 +110,7 @@ const Graph = memo(
         window.removeEventListener("resize", debouncedResize.callback);
     }, [debouncedResize]);
 
-    useDownloadHandlers(textToParse, cy);
+    useDownloadHandlers(cy, theme, bg);
 
     // Initialize Graph
     useEffect(
@@ -146,69 +136,46 @@ const Graph = memo(
       };
     }, [handleDragFree]);
 
-    const lastValues = useRef<{
-      content: string;
-      layout: string;
-      userStyle: string;
-    }>({ content: "", layout: "", userStyle: "" });
-
-    // Memoize values, return previous values if parsing fails
-    const { content, layout, userStyle } = useMemo(() => {
-      try {
-        const { data, content } = frontmatter(stripComments(textToParse), {
-          delimiters,
-        });
-        const { layout = {}, style: userStyle = [] } =
-          data as GraphOptionsObject;
-        const values = {
-          content,
-          layout: JSON.stringify(layout),
-          userStyle: JSON.stringify(userStyle),
-        };
-        lastValues.current = values;
-        return values;
-      } catch (error) {
-        console.error(error);
-        return lastValues.current;
-      }
-    }, [textToParse]);
-
     // Update Style
     useEffect(() => {
       updateStyle(cy, userStyle, errorCatcher, setHasStyleError, theme);
     }, [theme, setHasStyleError, userStyle]);
 
-    const hiddenGraphOptionsString = JSON.stringify(hiddenGraphOptions);
-
-    // Update Graph Nodes
-    useEffect(() => {
+    const updateTheGraph = useCallback(() => {
       updateGraph({
         cy,
-        content,
+        content: options.content,
         layoutString: layout,
         errorCatcher,
         setHasError,
         graphInitialized,
         animate,
         getSize,
-        setLayout,
-        setElements,
-        runLayout,
-        hiddenGraphOptionsString,
+        hiddenGraphOptionsText,
       });
     }, [
       animate,
-      content,
       getSize,
+      hiddenGraphOptionsText,
       layout,
-      runLayout,
-      setElements,
+      options.content,
       setHasError,
-      setLayout,
-      // Force update on graphUpdateNumber change
-      graphUpdateNumber,
-      hiddenGraphOptionsString,
     ]);
+
+    // Update Graph Nodes
+    useEffect(() => {
+      updateTheGraph();
+    }, [updateTheGraph]);
+
+    const sponsorLayoutsLoaded = useGraphStore(
+      useCallback((store) => store.sponsorLayoutsLoaded, [])
+    );
+    // Update Graph when Sponsor Layouts Load
+    useEffect(() => {
+      if (sponsorLayoutsLoaded) {
+        updateTheGraph();
+      }
+    }, [sponsorLayoutsLoaded, updateTheGraph]);
 
     const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
     const handleContextMenu = (e: TriggerEvent) => {
@@ -248,22 +215,51 @@ function initializeGraph({
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   setHoverLineNumber: React.Dispatch<React.SetStateAction<number | undefined>>;
 }) {
-  errorCatcher.current = cytoscape();
-  cy.current = cytoscape({
-    container: document.getElementById("cy"), // container to render in
-    layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
-    elements: [],
-    style: getCytoStyle(original),
-    userZoomingEnabled: true,
-    userPanningEnabled: true,
-    boxSelectionEnabled: false,
-    wheelSensitivity: 0.2,
-  });
-  window.__cy = cy.current;
-  const cyCurrent = cy.current;
-  const errorCyCurrent = errorCatcher.current;
+  try {
+    errorCatcher.current = cytoscape();
+    cy.current = cytoscape({
+      container: document.getElementById("cy"), // container to render in
+      layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
+      elements: [],
+      style: getCytoStyle(original),
+      userZoomingEnabled: true,
+      userPanningEnabled: true,
+      boxSelectionEnabled: false,
+      wheelSensitivity: 0.2,
+    });
+    window.__cy = cy.current;
+    const cyCurrent = cy.current;
+    const errorCyCurrent = errorCatcher.current;
 
-  // Hovering Events
+    // Hover Events
+    const handleMouseOut = () => {
+      cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
+      cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
+      setHoverLineNumber(undefined);
+    };
+
+    cyCurrent.on("mouseover", "node", nodeHighlight);
+    cyCurrent.on("mouseover", "edge", edgeHighlight);
+    cyCurrent.on("tapstart", "node", nodeHighlight);
+    cyCurrent.on("tapstart", "edge", edgeHighlight);
+    cyCurrent.on("mouseout", "node, edge", unhighlight);
+    cyCurrent.on("tapend", "node, edge", unhighlight);
+    document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
+
+    return () => {
+      cyCurrent.destroy();
+      errorCyCurrent.destroy();
+      cy.current = undefined;
+      errorCatcher.current = undefined;
+      document
+        .getElementById("cy")
+        ?.removeEventListener("mouseout", handleMouseOut);
+    };
+  } catch (e) {
+    console.error(e);
+  }
+
+  // Hover Events that Need "this"
   function nodeHighlight(this: NodeSingular) {
     this.addClass("nodeHovered");
     setHoverLineNumber(this.data().lineNumber);
@@ -277,30 +273,6 @@ function initializeGraph({
     this.removeClass("edgeHovered");
     setHoverLineNumber(undefined);
   }
-  function handleMouseOut() {
-    cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
-    cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
-    setHoverLineNumber(undefined);
-  }
-
-  cyCurrent.on("mouseover", "node", nodeHighlight);
-  cyCurrent.on("mouseover", "edge", edgeHighlight);
-  cyCurrent.on("tapstart", "node", nodeHighlight);
-  cyCurrent.on("tapstart", "edge", edgeHighlight);
-  cyCurrent.on("mouseout", "node, edge", unhighlight);
-  cyCurrent.on("tapend", "node, edge", unhighlight);
-  // cyCurrent.on("dragfree", "node", handleDrag);
-  document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
-
-  return () => {
-    cyCurrent.destroy();
-    errorCyCurrent.destroy();
-    cy.current = undefined;
-    errorCatcher.current = undefined;
-    document
-      .getElementById("cy")
-      ?.removeEventListener("mouseout", handleMouseOut);
-  };
 }
 
 // Update nodes & edges
@@ -313,10 +285,7 @@ function updateGraph({
   graphInitialized,
   animate,
   getSize,
-  setLayout,
-  setElements,
-  runLayout = true,
-  hiddenGraphOptionsString = "{}",
+  hiddenGraphOptionsText = "{}",
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   content: string;
@@ -325,42 +294,31 @@ function updateGraph({
   setHasError: TAppContext["setHasError"];
   graphInitialized: React.MutableRefObject<boolean>;
   animate: boolean;
-  setLayout: StoreGraph["setLayout"];
-  setElements: StoreGraph["setElements"];
   getSize: TGetSize;
-  runLayout?: boolean;
-  hiddenGraphOptionsString?: string;
+  hiddenGraphOptionsText?: string;
 }) {
   if (cy.current) {
     let elements: cytoscape.ElementDefinition[] = [];
 
     try {
-      const layout = preprocessGraphLayout(
-        JSON.parse(layoutString) as GraphOptionsObject["layout"]
-      );
-
-      // Parse
-      elements = parseText(content, getSize);
-
       // Parse Hidden Graph Options
       let hiddenGraphOptions: HiddenGraphOptions = {};
       try {
-        hiddenGraphOptions = JSON.parse(hiddenGraphOptionsString);
+        hiddenGraphOptions = JSON.parse(hiddenGraphOptionsText);
       } catch (e) {
         console.error(e);
       }
 
-      // Add positions if they exist
-      const positions = hiddenGraphOptions.nodePositions;
-      if (positions) {
-        elements = elements.map((element) => {
-          const id = element.data.id as string;
-          if (id in positions) {
-            element.position = positions[id];
-          }
-          return element;
-        });
-      }
+      const layout = prepareLayoutForCyto(
+        JSON.parse(layoutString) as GraphOptionsObject["layout"],
+        hiddenGraphOptions
+      );
+
+      // Strip Comments
+      const contentWithoutComments = stripComments(content);
+
+      // Parse
+      elements = parseText(contentWithoutComments, getSize);
 
       // Test Error First
       errorCatcher.current?.json({ elements });
@@ -374,7 +332,7 @@ function updateGraph({
         elements: elements,
       });
 
-      if (runLayout) {
+      if (layout?.name !== "preset") {
         cy.current
           .layout({
             ...defaultLayout,
@@ -388,6 +346,14 @@ function updateGraph({
           } as any)
           .run();
         cy.current.center();
+      } else {
+        cy.current
+          .layout({
+            ...layout,
+            animate: false,
+            fit: false,
+          } as any)
+          .run();
       }
 
       graphInitialized.current = true;
@@ -398,10 +364,8 @@ function updateGraph({
       setHasError(false);
 
       // Update Graph Store
-      setLayout(layout);
-      setElements(elements);
+      useGraphStore.setState({ layout, elements });
     } catch (e) {
-      console.log(e);
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
       if (isError(e)) {
@@ -440,7 +404,6 @@ function updateStyle(
       errorCatcher.current = cytoscape();
       setHasStyleError(false);
     } catch (e) {
-      console.log(e);
       errorCatcher.current?.destroy();
       errorCatcher.current = cytoscape();
       if (isError(e)) {

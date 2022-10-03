@@ -1,56 +1,50 @@
-import { lazy, memo } from "react";
-import { Route, RouteProps, Switch } from "react-router-dom";
+import { lazy } from "react";
+import { Route, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
 import { New } from "../pages/New";
-import Layout from "./Layout";
+/** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
+/** Edit charts in local storage */
 const Edit = lazy(() => import("../pages/Edit"));
+/** Interactive help, fixed name local storage chart */
 const Help = lazy(() => import("../pages/Help"));
+/** Edit hosted chart */
 const EditHosted = lazy(() => import("../pages/EditHosted"));
+/** Read only chart, encoded in url / maybe fullscreen */
 const ReadOnly = lazy(() => import("../pages/ReadOnly"));
 
 export default function Router() {
   usePageViews();
   return (
     <Switch>
-      <LayoutRoute path="/" exact>
+      <Route path="/" exact>
         <Edit />
-      </LayoutRoute>
-      <LayoutRoute path="/h" exact>
+      </Route>
+      <Route path="/h" exact>
         <Help />
-      </LayoutRoute>
+      </Route>
       <Route path="/n/:graphText?">
         <New />
       </Route>
-      <LayoutRoute path="/u/:id">
+      <Route path="/u/:id">
         <EditHosted />
-      </LayoutRoute>
-      <LayoutRoute path="/r/:graphText?">
+      </Route>
+      <Route path="/r/:graphText?">
         <ReadOnly />
-      </LayoutRoute>
-      <LayoutRoute path="/c/:graphText?">
+      </Route>
+      <Route path="/c/:graphText?">
         <ReadOnly />
-      </LayoutRoute>
-      <LayoutRoute path="/f/:graphText?">
+      </Route>
+      <Route path="/f/:graphText?">
         <ReadOnly />
-      </LayoutRoute>
-      <LayoutRoute path="/p/:public_id">
+      </Route>
+      <Route path="/p/:public_id">
         <Public />
-      </LayoutRoute>
-      <LayoutRoute path="/:workspace">
+      </Route>
+      <Route path="/:workspace">
         <Edit />
-      </LayoutRoute>
+      </Route>
     </Switch>
   );
 }
-
-const LayoutRoute = memo(({ children, ...props }: RouteProps) => {
-  return (
-    <Route {...props}>
-      <Layout>{children}</Layout>
-    </Route>
-  );
-});
-
-LayoutRoute.displayName = "LayoutRoute";

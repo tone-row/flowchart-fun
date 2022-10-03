@@ -31,8 +31,6 @@ import {
   useIsHelp,
   useIsReadOnly,
   useIsValidSponsor,
-  useLocalStorageText,
-  useReadOnlyText,
   useTitle,
 } from "../lib/hooks";
 import { makeChart, queryClient, renameChart } from "../lib/queries";
@@ -52,7 +50,7 @@ import {
   tooltipSize,
 } from "./Shared";
 
-export function Menu() {
+export function Menu({ fullText }: { fullText: string }) {
   const { showing, session } = useContext(AppContext);
   const { setShowing } = useContext(AppContext);
   const { push } = useHistory();
@@ -127,7 +125,7 @@ export function Menu() {
         />
       </Box>
       {showing === "editor" ? (
-        <WorkspaceSection />
+        <WorkspaceSection fullText={fullText} />
       ) : (
         <Box className={styles.PageTitle} pt={5} at={{ tablet: { pt: 0 } }}>
           <Type size={1} as="h1">
@@ -211,7 +209,11 @@ const MenuTabButton = memo(function MenuTabButton({
   );
 });
 
-const WorkspaceSection = memo(function WorkspaceSection() {
+const WorkspaceSection = memo(function WorkspaceSection({
+  fullText,
+}: {
+  fullText: string;
+}) {
   const [title, isHosted] = useTitle();
   const Icon = isHosted ? Globe : Laptop;
   const isReadOnly = useIsReadOnly();
@@ -249,8 +251,8 @@ const WorkspaceSection = memo(function WorkspaceSection() {
         </Box>
       </Box>
       <Box flow="column" gap={1}>
-        {!isReadOnly && !isHelp && <RenameButton />}
-        {isReadOnly ? <CloneButton /> : <ExportButton />}
+        {!isReadOnly && !isHelp && <RenameButton fullText={fullText} />}
+        {isReadOnly ? <CloneButton fullText={fullText} /> : <ExportButton />}
       </Box>
     </Box>
   );
@@ -271,12 +273,11 @@ function translatedTitle(current: Showing) {
   }
 }
 
-function RenameButton() {
+function RenameButton({ fullText }: { fullText: string }) {
   const isValidSponsor = useIsValidSponsor();
   const session = useSession();
   const [initialName, isHosted] = useTitle();
   const { data } = useCurrentHostedChart();
-  const { fullText } = useLocalStorageText();
   const [dialog, setDialog] = useState(false);
   const { push } = useHistory();
   const { register, handleSubmit, watch, formState } = useForm<{
@@ -434,8 +435,7 @@ function ExportButton() {
 }
 
 /** Allow users to copy read-only charts */
-export function CloneButton() {
-  const { fullText } = useReadOnlyText();
+export function CloneButton({ fullText }: { fullText: string }) {
   const { push } = useHistory();
   return (
     <Box

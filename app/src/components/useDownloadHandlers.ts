@@ -2,7 +2,7 @@ import { saveAs } from "file-saver";
 import { useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { useBackground, useGraphTheme } from "../lib/graphThemes";
+import { Theme } from "../lib/themes/constants";
 
 // padding, gets divided in half
 const PADDING = 60;
@@ -19,13 +19,12 @@ declare global {
 }
 
 export default function useDownloadHandlers(
-  textToParse: string,
-  cy: React.MutableRefObject<cytoscape.Core | undefined>
+  cy: React.MutableRefObject<cytoscape.Core | undefined>,
+  graphTheme: Theme,
+  bg: string
 ) {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const filename = workspace || "flowchart";
-  const graphTheme = useGraphTheme();
-  const bg = useBackground();
 
   useEffect(() => {
     window.__FF_getSVG = async () => {
@@ -42,15 +41,6 @@ export default function useDownloadHandlers(
         });
         const domparser = new DOMParser();
         const svgEl = domparser.parseFromString(svgStr, "image/svg+xml");
-
-        // TODO: remove if no longer needed in October 2022
-        // Add comment
-        // const originalTextComment = svgEl.createComment(
-        //   `Original Flowchart Text (flowchart.fun):\n\n${textToParse}\n\n`
-        // );
-
-        // Fix Viewbox
-        // svgEl.children[0].appendChild(originalTextComment);
 
         const pad = PADDING / 2;
         const svgTag = svgEl.children[0];

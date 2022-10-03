@@ -89,6 +89,7 @@ importers:
       file-saver: ^2.0.5
       framer-motion: ^4.1.17
       gray-matter: ^4.0.2
+      history: ^5.3.0
       identity-obj-proxy: ^3.0.0
       jest-canvas-mock: ^2.3.1
       lodash.throttle: ^4.1.1
@@ -224,6 +225,7 @@ importers:
       eslint-plugin-react: 7.31.1_eslint@8.23.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.23.0
       eslint-plugin-simple-import-sort: 7.0.0_eslint@8.23.0
+      history: 5.3.0
       identity-obj-proxy: 3.0.0
       jest-canvas-mock: 2.4.0
       minimist: 1.2.6
@@ -7762,6 +7764,12 @@ packages:
       tiny-warning: 1.0.3
       value-equal: 1.0.1
     dev: false
+
+  /history/5.3.0:
+    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
+    dependencies:
+      '@babel/runtime': 7.18.9
+    dev: true
 
   /hoist-non-react-statics/3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}

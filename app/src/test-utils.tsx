@@ -1,10 +1,11 @@
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
 import { render, RenderOptions } from "@testing-library/react";
+import { createMemoryHistory } from "history";
 import { FC, ReactElement, Suspense } from "react";
 import { act } from "react-dom/test-utils";
 import { QueryClientProvider } from "react-query";
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
 
 import { ErrorFallback, stripePromise } from "./components/App";
 import Provider from "./components/AppContext";
@@ -12,9 +13,11 @@ import { I18n } from "./components/I18n";
 import Loading from "./components/Loading";
 import { queryClient } from "./lib/queries";
 
-const AllTheProviders: FC = ({ children }) => {
+export const history = createMemoryHistory();
+
+const Wrapper: FC = ({ children }) => {
   return (
-    <BrowserRouter>
+    <Router history={history as any}>
       <QueryClientProvider client={queryClient}>
         <Provider>
           <Sentry.ErrorBoundary fallback={ErrorFallback}>
@@ -26,14 +29,14 @@ const AllTheProviders: FC = ({ children }) => {
           </Sentry.ErrorBoundary>
         </Provider>
       </QueryClientProvider>
-    </BrowserRouter>
+    </Router>
   );
 };
 
 const customRender = (
   ui: ReactElement,
   options?: Omit<RenderOptions, "wrapper">
-) => render(ui, { wrapper: AllTheProviders, ...options });
+) => render(ui, { wrapper: Wrapper, ...options });
 
 export * from "@testing-library/react";
 export { customRender as render };

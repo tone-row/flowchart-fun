@@ -49,13 +49,13 @@ export const graphUtilityClasses: Stylesheet[] = shapes
     {
       selector: ".edgeHovered",
       style: {
-        opacity: 0.5,
+        "line-opacity": 0.25,
       },
     },
     {
       selector: ".nodeHovered",
       style: {
-        opacity: 0.5,
+        opacity: 0.25,
       },
     },
   ]);

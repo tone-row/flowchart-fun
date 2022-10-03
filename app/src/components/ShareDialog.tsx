@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useReducer,
   useState,
 } from "react";
@@ -14,7 +15,7 @@ import { gaExportChart } from "../lib/analytics";
 import { useTitle } from "../lib/hooks";
 import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic, queryClient, useChart } from "../lib/queries";
-import { useStoreGraph } from "../lib/store.graph";
+import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { Button, Dialog, Textarea } from "./Shared";
@@ -28,7 +29,7 @@ export default function ShareDialog() {
   const close = useCallback(() => setShareModal(false), [setShareModal]);
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
-  const editable = `${new URL(window.location.href).origin}/n/${shareLink}`;
+  const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
   const makePublic = useMutation(
     "makeChartPublic",
     async (isPublic: boolean) => {
@@ -261,15 +262,14 @@ function Preview() {
   );
 }
 
-function useMermaidJS() {
-  const layout = useStoreGraph((store) => store.layout);
-  const elements = useStoreGraph((store) => store.elements);
+function getMermaidText() {
+  const { layout, elements } = useGraphStore.getState();
   return toMermaidJS({ layout, elements });
 }
 
 function Mermaid() {
   const [copied, setCopied] = useState(false);
-  const mermaid = useMermaidJS();
+  const mermaid = useMemo(() => getMermaidText(), []);
   return (
     <>
       <Type size={-1}>Mermaid.JS</Type>

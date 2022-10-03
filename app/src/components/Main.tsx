@@ -8,8 +8,9 @@ import {
   useState,
 } from "react";
 
-import { HiddenGraphOptions } from "../lib/helpers";
 import { useFullscreen } from "../lib/hooks";
+import { Theme } from "../lib/themes/constants";
+import { UpdateDoc } from "../lib/UpdateDoc";
 import CurrentTab from "./CurrentTab";
 import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
@@ -19,22 +20,32 @@ import { CloneButton } from "./Menu";
 import MobileTabToggle from "./MobileTabToggle";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
+import { UseGraphOptionsReturn } from "./useGraphOptions";
 
 export type MainProps = {
   children?: ReactNode;
-  textToParse: string;
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
-  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
-  hiddenGraphOptions?: HiddenGraphOptions;
+  hiddenGraphOptionsText: string;
+  options: UseGraphOptionsReturn;
+  update?: UpdateDoc;
+  theme: Theme;
+  bg: string;
+  isFrozen: boolean;
+  fullText: string;
 };
 
+/** The left/right column wrapper. Also controls when things should be fullscreen. */
 const Main = memo(
   ({
     children,
-    textToParse,
     setHoverLineNumber,
-    setHiddenGraphOptions,
-    hiddenGraphOptions,
+    hiddenGraphOptionsText,
+    options,
+    update,
+    theme,
+    bg,
+    isFrozen,
+    fullText,
   }: MainProps) => {
     const [shouldResize, triggerResize] = useState(0);
     const trigger = useCallback(() => triggerResize((n) => n + 1), []);
@@ -48,17 +59,19 @@ const Main = memo(
             </Suspense>
           </TabPane>
         )}
-        <GraphWrapper setHiddenGraphOptions={setHiddenGraphOptions}>
+        <GraphWrapper update={update} options={options} isFrozen={isFrozen}>
           <Graph
-            textToParse={textToParse}
             setHoverLineNumber={setHoverLineNumber}
             shouldResize={shouldResize}
-            setHiddenGraphOptions={setHiddenGraphOptions}
-            hiddenGraphOptions={hiddenGraphOptions}
+            hiddenGraphOptionsText={hiddenGraphOptionsText}
+            options={options}
+            update={update}
+            theme={theme}
+            bg={bg}
           />
           {isFullscreen ? (
             <div className={styles.CopyButtonWrapper}>
-              <CloneButton />
+              <CloneButton fullText={fullText} />
             </div>
           ) : null}
         </GraphWrapper>

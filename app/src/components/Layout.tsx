@@ -11,21 +11,23 @@ import Loading from "./Loading";
 import { Menu } from "./Menu";
 import ShareDialog from "./ShareDialog";
 
-const Layout = memo(({ children }: { children: ReactNode }) => {
-  const isFullscreen = useFullscreen();
-  const { url } = useRouteMatch();
-  const tab = useContext(AppContext).showing;
-  return (
-    <LayoutWrapper isFullscreen={isFullscreen} key={url}>
-      {isFullscreen ? null : <Menu />}
-      <EditorWrapper>
-        <CurrentTab>{children}</CurrentTab>
-      </EditorWrapper>
-      <ColorMode />
-      {tab === "editor" && <ShareDialog />}
-    </LayoutWrapper>
-  );
-});
+const Layout = memo(
+  ({ children, fullText }: { children: ReactNode; fullText: string }) => {
+    const isFullscreen = useFullscreen();
+    const { url } = useRouteMatch();
+    const tab = useContext(AppContext).showing;
+    return (
+      <LayoutWrapper isFullscreen={isFullscreen} key={url}>
+        {isFullscreen ? null : <Menu fullText={fullText} />}
+        <EditorWrapper>
+          <CurrentTab>{children}</CurrentTab>
+        </EditorWrapper>
+        <ColorMode />
+        {tab === "editor" && <ShareDialog />}
+      </LayoutWrapper>
+    );
+  }
+);
 
 Layout.displayName = "Layout";
 
