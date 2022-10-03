@@ -75,8 +75,8 @@ msgstr "取消"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
 
-#: src/components/Menu.tsx:113
-#: src/components/Menu.tsx:266
+#: src/components/Menu.tsx:111
+#: src/components/Menu.tsx:268
 msgid "Charts"
 msgstr "图表"
 
@@ -118,19 +118,19 @@ msgstr "漫画书"
 msgid "Concentric"
 msgstr "同心"
 
-#: src/components/GraphOptionsBar.tsx:206
+#: src/components/GraphOptionsBar.tsx:210
 msgid "Contract"
 msgstr "缩小"
 
-#: src/components/Menu.tsx:381
+#: src/components/Menu.tsx:382
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
 #: src/components/Navigation.tsx:476
 #: src/components/Navigation.tsx:547
 #: src/components/Navigation.tsx:581
-#: src/components/ShareDialog.tsx:229
 #: src/components/ShareDialog.tsx:230
+#: src/components/ShareDialog.tsx:231
 #: src/components/ShareDialog.tsx:296
 msgid "Copy"
 msgstr "复制"
@@ -149,8 +149,8 @@ msgstr "复制 SVG 代码"
 msgid "Create"
 msgstr "创建"
 
-#: src/lib/hooks.ts:27
 #: src/lib/queries.ts:163
+#: src/lib/useDefaultDoc.ts:7
 msgid "Create a link directly using the exact label text"
 msgstr "使用完全一样的标签文本，直接创建链接"
 
@@ -178,7 +178,7 @@ msgstr "日期"
 msgid "Delete"
 msgstr "删除"
 
-#: src/components/GraphOptionsBar.tsx:177
+#: src/components/GraphOptionsBar.tsx:181
 msgid "Direction"
 msgstr "方向"
 
@@ -190,7 +190,7 @@ msgstr "您要取消订阅吗？"
 msgid "Do you want to delete this?"
 msgstr "您要将其删除吗？"
 
-#: src/components/ShareDialog.tsx:59
+#: src/components/ShareDialog.tsx:60
 msgid "Download"
 msgstr "下载"
 
@@ -215,11 +215,11 @@ msgstr "复制"
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "在任意设备上编辑图表；与任何人分享这些图表；仅需发布一次图表，它们会自动更新您的更改。"
 
-#: src/components/ShareDialog.tsx:136
+#: src/components/ShareDialog.tsx:137
 msgid "Editable"
 msgstr "可编辑"
 
-#: src/components/Menu.tsx:103
+#: src/components/Menu.tsx:101
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "编辑器"
@@ -243,18 +243,18 @@ msgstr "输入标题"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:215
+#: src/components/GraphOptionsBar.tsx:219
 msgid "Expand"
 msgstr "放大"
 
-#: src/components/Menu.tsx:429
-#: src/components/ShareDialog.tsx:51
-#: src/components/ShareDialog.tsx:146
+#: src/components/Menu.tsx:430
+#: src/components/ShareDialog.tsx:52
+#: src/components/ShareDialog.tsx:147
 msgid "Export"
 msgstr "导出"
 
-#: src/components/Menu.tsx:158
-#: src/components/Menu.tsx:262
+#: src/components/Menu.tsx:156
+#: src/components/Menu.tsx:264
 msgid "Feedback"
 msgstr "反馈"
 
@@ -262,16 +262,16 @@ msgstr "反馈"
 msgid "Follow Us"
 msgstr "关注我们"
 
-#: src/components/AutoLayoutSwitch.tsx:37
-#: src/components/AutoLayoutSwitch.tsx:60
+#: src/components/FreezeLayoutToggle.tsx:34
+#: src/components/FreezeLayoutToggle.tsx:61
 msgid "Freeze Layout"
 msgstr "冻结布局"
 
-#: src/components/AutoLayoutSwitch.tsx:63
+#: src/components/FreezeLayoutToggle.tsx:64
 msgid "Freezing your chart allows you to customize the layout by disabling automatic layout."
 msgstr "在冻结图表后，你可以通过禁用自动布局来自定义布局。"
 
-#: src/components/ShareDialog.tsx:133
+#: src/components/ShareDialog.tsx:134
 msgid "Fullscreen"
 msgstr "全屏"
 
@@ -299,12 +299,12 @@ msgstr "图表"
 msgid "Grid"
 msgstr "网格"
 
-#: src/lib/hooks.ts:37
 #: src/lib/queries.ts:173
+#: src/lib/useDefaultDoc.ts:17
 msgid "Have fun! 🎉"
 msgstr "玩得开心！🎉"
 
-#: src/components/Menu.tsx:147
+#: src/components/Menu.tsx:145
 msgid "Help"
 msgstr "帮助"
 
@@ -322,8 +322,8 @@ msgstr "主页"
 msgid "Hosted Charts"
 msgstr "托管的图表"
 
-#: src/lib/hooks.ts:25
 #: src/lib/queries.ts:161
+#: src/lib/useDefaultDoc.ts:5
 msgid "Indenting creates a link to the current line"
 msgstr "缩进可创建连接到当前行的链接"
 
@@ -331,7 +331,7 @@ msgstr "缩进可创建连接到当前行的链接"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/GraphOptionsBar.tsx:149
+#: src/components/GraphOptionsBar.tsx:153
 msgid "Layout"
 msgstr "布局"
 
@@ -352,7 +352,7 @@ msgstr "浅色"
 msgid "Light Mode"
 msgstr "浅色模式"
 
-#: src/components/ShareDialog.tsx:128
+#: src/components/ShareDialog.tsx:129
 msgid "Link"
 msgstr "链接"
 
@@ -372,7 +372,7 @@ msgstr "由 <0>Tone Row</0> 制作"
 msgid "Make a Donation"
 msgstr "捐款"
 
-#: src/components/ShareDialog.tsx:101
+#: src/components/ShareDialog.tsx:102
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
@@ -401,7 +401,7 @@ msgstr "姓名"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "需要帮助？<0>请查看我们的文档。</0>"
 
-#: src/components/Menu.tsx:93
+#: src/components/Menu.tsx:91
 msgid "New"
 msgstr "新"
 
@@ -419,8 +419,8 @@ msgid "Powerful layout algorithms that bring order to graphs of all shapes and s
 msgstr "强大的布局算法，让各种形状和大小的图形井然有序"
 
 #: src/components/Navigation.tsx:625
-#: src/components/ShareDialog.tsx:92
-#: src/components/ShareDialog.tsx:118
+#: src/components/ShareDialog.tsx:93
+#: src/components/ShareDialog.tsx:119
 msgid "Public"
 msgstr "公开"
 
@@ -428,15 +428,15 @@ msgstr "公开"
 msgid "Random"
 msgstr "随机"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:140
 msgid "Read-only"
 msgstr "只读"
 
-#: src/components/Menu.tsx:345
 #: src/components/Menu.tsx:346
-#: src/components/Menu.tsx:352
-#: src/components/Menu.tsx:362
-#: src/components/Menu.tsx:371
+#: src/components/Menu.tsx:347
+#: src/components/Menu.tsx:353
+#: src/components/Menu.tsx:363
+#: src/components/Menu.tsx:372
 msgid "Rename"
 msgstr "重命名"
 
@@ -464,8 +464,8 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/Menu.tsx:167
-#: src/components/Menu.tsx:264
+#: src/components/Menu.tsx:165
+#: src/components/Menu.tsx:266
 msgid "Settings"
 msgstr "设置"
 
@@ -485,8 +485,8 @@ msgstr "以每月 5 美元的价格赞助 flowchart.fun，以访问托管的流�
 msgid "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to..."
 msgstr "以每月 5 美元或每年 50 美元的价格赞助 flowchart.fun ，就可以获得......"
 
-#: src/components/Menu.tsx:122
-#: src/components/Menu.tsx:268
+#: src/components/Menu.tsx:120
+#: src/components/Menu.tsx:270
 msgid "Sponsors"
 msgstr "赞助人"
 
@@ -499,7 +499,7 @@ msgid "Status"
 msgstr "状态"
 
 #: src/components/Feedback.tsx:98
-#: src/components/Menu.tsx:400
+#: src/components/Menu.tsx:401
 msgid "Submit"
 msgstr "提交"
 
@@ -515,7 +515,7 @@ msgstr "订阅即将到期"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/GraphOptionsBar.tsx:220
+#: src/components/GraphOptionsBar.tsx:224
 msgid "Theme"
 msgstr "风格"
 
@@ -523,8 +523,8 @@ msgstr "风格"
 msgid "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these."
 msgstr "这些图表仅在此设备上的此浏览器中可用。<0/>清除浏览器的 local storage 将删除这些图表。"
 
-#: src/lib/hooks.ts:24
 #: src/lib/queries.ts:160
+#: src/lib/useDefaultDoc.ts:4
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
 
@@ -569,42 +569,42 @@ msgstr "您想跟我们分享什么？"
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。"
 
-#: src/lib/hooks.ts:29
 #: src/lib/queries.ts:165
+#: src/lib/useDefaultDoc.ts:9
 msgid "[custom ID] or"
 msgstr "[自定义 ID] 或"
 
-#: src/lib/hooks.ts:26
 #: src/lib/queries.ts:162
+#: src/lib/useDefaultDoc.ts:6
 msgid "any text: before a colon creates a label"
 msgstr "任何文本：在冒号前创建一个标签"
 
-#: src/lib/hooks.ts:30
 #: src/lib/queries.ts:166
+#: src/lib/useDefaultDoc.ts:10
 msgid "by adding an %5BID%5D and referencing that"
 msgstr "通过添加并引用一个 %5BID%5D"
 
-#: src/lib/hooks.ts:35
 #: src/lib/queries.ts:171
+#: src/lib/useDefaultDoc.ts:15
 msgid "comments"
 msgstr "注释"
 
-#: src/lib/hooks.ts:28
 #: src/lib/queries.ts:164
+#: src/lib/useDefaultDoc.ts:8
 msgid "like this: (This app works by typing)"
 msgstr "像这样：（这款应用的工作原理是输入）"
 
-#: src/lib/hooks.ts:31
 #: src/lib/queries.ts:167
+#: src/lib/useDefaultDoc.ts:11
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "像这样：（自定义 ID）// 你也可以使用单行注释"
 
-#: src/lib/hooks.ts:34
 #: src/lib/queries.ts:170
+#: src/lib/useDefaultDoc.ts:14
 msgid "multiline"
 msgstr "多行"
 
-#: src/lib/hooks.ts:33
 #: src/lib/queries.ts:169
+#: src/lib/useDefaultDoc.ts:13
 msgid "or"
 msgstr "或"
