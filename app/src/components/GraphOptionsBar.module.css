@@ -1,6 +1,6 @@
 .GraphOptionsBar {
   --border-color: var(--color-uiAccent);
-  border-bottom: solid 1px var(--border-color);
+  border: solid 1px var(--border-color);
   background-color: var(--color-input);
   display: flex;
   flex-direction: row;
@@ -23,18 +23,6 @@
 .Option[aria-selected="true"] {
   background-color: var(--color-uiAccent);
   color: var(--color-foreground);
-}
-
-.IconButton:hover,
-.IconButton:focus {
-  background-color: var(--color-nodeHover);
-  outline: none;
-  box-shadow: none;
-}
-
-.IconButton:disabled {
-  color: var(--color-edgeHover);
-  background-color: var(--color-input);
 }
 
 .BarSection {
