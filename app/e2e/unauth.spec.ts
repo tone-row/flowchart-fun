@@ -363,7 +363,7 @@ test.describe("unauth", () => {
       await page
         .locator('[aria-label="Freeze Layout"]')
         .getAttribute("aria-pressed")
-    ).toBe("false");
+    ).toBe("true");
 
     // Click #cy canvas >> nth=0
     await page
