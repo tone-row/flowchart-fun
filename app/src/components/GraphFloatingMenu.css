@@ -1,0 +1,9 @@
+.graph-floating-menu {
+  position: absolute;
+  bottom: calc(1px + var(--spacer-px) * 3);
+  left: calc(var(--spacer-px) * 2);
+  border: solid 1px var(--color-uiAccent);
+  background-color: var(--color-input);
+  border-radius: calc(var(--smallest-border-radius-px) * 1);
+  font-size: 0;
+}

@@ -5,6 +5,7 @@ import { useFullscreen, useIsValidSponsor } from "../lib/hooks";
 import { UpdateDoc } from "../lib/UpdateDoc";
 import { Box } from "../slang";
 import { AppContext } from "./AppContext";
+import { GraphFloatingMenu } from "./GraphFloatingMenu";
 import GraphOptionsBar from "./GraphOptionsBar";
 import styles from "./GraphWrapper.module.css";
 import { UseGraphOptionsReturn } from "./useGraphOptions";
@@ -39,12 +40,10 @@ export default function GraphWrapper({
       data-is-fullscreen={isFullscreen}
       at={isFullscreen ? undefined : { tablet: { pr: 2, pb: 2 } }}
     >
-      {!isFullscreen ? (
-        <Box
-          template={template}
-          className={styles.GraphWrapperInner}
-          at={{ tablet: { rad: 1 } }}
-        >
+      {isFullscreen ? (
+        children
+      ) : (
+        <Box template={template} className={styles.GraphWrapperInner}>
           {shouldHideGraphOptions || !update ? null : (
             <GraphOptionsBar
               update={update}
@@ -53,9 +52,8 @@ export default function GraphWrapper({
             />
           )}
           {children}
+          <GraphFloatingMenu />
         </Box>
-      ) : (
-        children
       )}
     </Box>
   );

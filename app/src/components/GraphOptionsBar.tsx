@@ -11,10 +11,8 @@ import {
 } from "phosphor-react";
 import {
   CSSProperties,
-  ForwardRefExoticComponent,
   memo,
   ReactNode,
-  RefAttributes,
   useCallback,
   useContext,
   useEffect,
@@ -33,10 +31,11 @@ import { directions, layouts, SelectOption, themes } from "../lib/graphOptions";
 import { defaultGraphTheme } from "../lib/graphThemes";
 import { useIsValidSponsor } from "../lib/hooks";
 import { UpdateDoc } from "../lib/UpdateDoc";
-import { Box, BoxProps, Type } from "../slang";
+import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { FreezeLayoutToggle } from "./FreezeLayoutToggle";
 import styles from "./GraphOptionsBar.module.css";
+import { IconButton } from "./IconButton";
 import {
   smallBtnTypeSize,
   smallIconSize,
@@ -443,38 +442,6 @@ function isEqual(a: O, b: O): boolean {
     }
   }
   return result;
-}
-
-function IconButton({
-  icon: Icon,
-  onClick,
-  label,
-  ...props
-}: {
-  icon: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
-  onClick: () => void;
-  label: string;
-} & BoxProps) {
-  return (
-    <Tooltip
-      label={label}
-      aria-label={label}
-      className={`slang-type size-${tooltipSize}`}
-    >
-      <Box
-        as="button"
-        onClick={onClick}
-        type="button"
-        p={2}
-        rad={1}
-        className={styles.IconButton}
-        {...props}
-      >
-        <Icon size={smallIconSize + 2} />
-        <VisuallyHidden>{label}</VisuallyHidden>
-      </Box>
-    </Tooltip>
-  );
 }
 
 function isEmpty(obj: object) {
