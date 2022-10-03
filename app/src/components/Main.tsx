@@ -31,6 +31,7 @@ export type MainProps = {
   theme: Theme;
   bg: string;
   isFrozen: boolean;
+  fullText: string;
 };
 
 /** The left/right column wrapper. Also controls when things should be fullscreen. */
@@ -44,6 +45,7 @@ const Main = memo(
     theme,
     bg,
     isFrozen,
+    fullText,
   }: MainProps) => {
     const [shouldResize, triggerResize] = useState(0);
     const trigger = useCallback(() => triggerResize((n) => n + 1), []);
@@ -69,7 +71,7 @@ const Main = memo(
           />
           {isFullscreen ? (
             <div className={styles.CopyButtonWrapper}>
-              <CloneButton fullText="AHHHHH FIX ME TOOO" />
+              <CloneButton fullText={fullText} />
             </div>
           ) : null}
         </GraphWrapper>

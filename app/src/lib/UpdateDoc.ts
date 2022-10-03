@@ -1,26 +1,12 @@
 import { GraphOptionsObject } from "./constants";
 
-/*
-get chart text from server
-we get hidden graph options
-we store just visible text in some state
-we store graph options in some state
-we convert graph options back into a string
-we create some throttled visibleText state
-we merge the visibleText and the graphOptions text back into fullText
-we store the lastText in a ref
-
-the idea is that we have a recreated version of the fulltext based on new graphOptions or hiddenGraphOptions,
-and we only mutate (throtteled) when the recreated version doesn't match the current fullText
-
-...
-
-we grab mutate and isLoading state from react-query
-we create a debounced mutate function
-
-
-*/
-
+/**
+ * This the type for the update function returned from
+ * the use(*)Doc hooks. It is necessary because in some cases
+ * we need to update hidden parts of the doc at the same time
+ * that we update visible parts, and we didn't have a clear render
+ * pipeline to do that.
+ */
 export type UpdateDoc = (
   update:
     | {

@@ -77,6 +77,7 @@ function Public() {
         theme={theme}
         bg={bg}
         isFrozen={isFrozen}
+        fullText={fullText}
       >
         <Editor
           value={toParse}

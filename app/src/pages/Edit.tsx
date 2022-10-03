@@ -63,6 +63,7 @@ const Edit = memo(function Edit() {
         theme={theme}
         bg={bg}
         isFrozen={isFrozen}
+        fullText={fullText}
       >
         <Editor
           value={text}

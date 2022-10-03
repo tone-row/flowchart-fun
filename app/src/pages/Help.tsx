@@ -70,6 +70,7 @@ export default function Help() {
         theme={theme}
         bg={bg}
         isFrozen={isFrozen}
+        fullText={fullText}
       >
         <div className={helpStyles.helpWrapper} data-testid="help">
           <Resizable

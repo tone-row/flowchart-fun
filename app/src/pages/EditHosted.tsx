@@ -87,6 +87,7 @@ export default function EditHosted() {
         theme={theme}
         bg={bg}
         isFrozen={isFrozen}
+        fullText={fullText}
       >
         <Editor
           value={text}

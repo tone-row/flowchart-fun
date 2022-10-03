@@ -13,6 +13,7 @@ describe("Main", () => {
       <Main
         hiddenGraphOptionsText={""}
         setHoverLineNumber={() => null}
+        fullText={""}
         options={{
           graphOptions: {},
           graphOptionsString: "",
