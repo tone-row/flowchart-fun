@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { useParseDoc } from "./parseDoc";
 import { usePublicChart } from "./queries";
+import { useParseDoc } from "./useParseDoc";
 
 export function usePublicDoc(publicId?: string) {
   const { data } = usePublicChart(publicId);

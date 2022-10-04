@@ -2,7 +2,7 @@ import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { useState } from "react";
 import { useParams, useRouteMatch } from "react-router-dom";
 
-import { useParseDoc } from "./parseDoc";
+import { useParseDoc } from "./useParseDoc";
 
 export function useReadOnlyDoc() {
   const { path } = useRouteMatch();

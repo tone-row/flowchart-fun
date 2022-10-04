@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useDebouncedCallback } from "use-debounce";
 
-import { useParseDoc } from "./parseDoc";
 import { updateChartText, useChart } from "./queries";
+import { useParseDoc } from "./useParseDoc";
 
 export function useHostedDoc(id?: string) {
   const { data } = useChart(id);

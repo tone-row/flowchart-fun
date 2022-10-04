@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 
-import { useParseDoc } from "./parseDoc";
 import { useDefaultDoc } from "./useDefaultDoc";
+import { useParseDoc } from "./useParseDoc";
 
 export function useLocalDoc(defaultWorkspace = "") {
   const { workspace = defaultWorkspace } = useParams<{ workspace?: string }>();
