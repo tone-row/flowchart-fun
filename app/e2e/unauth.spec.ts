@@ -302,7 +302,7 @@ test.describe("unauth", () => {
     ).toBeVisible();
   });
 
-  test("Editor", async ({ page }) => {
+  test("Manipulate Editor Code", async ({ page }) => {
     // Type in editor
 
     // Click text=This app works by typing >> nth=0

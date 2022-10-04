@@ -1,5 +1,5 @@
 import { useThrottle } from "@react-hook/throttle";
-import { compress } from "lz-string";
+import { compressToEncodedURIComponent as compress } from "lz-string";
 import { useContext, useEffect } from "react";
 
 import { AppContext } from "../components/AppContext";
