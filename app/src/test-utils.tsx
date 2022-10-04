@@ -1,6 +1,7 @@
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
 import { render, RenderOptions } from "@testing-library/react";
+import { renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import { FC, ReactElement, Suspense } from "react";
 import { act } from "react-dom/test-utils";
@@ -38,8 +39,11 @@ const customRender = (
   options?: Omit<RenderOptions, "wrapper">
 ) => render(ui, { wrapper: Wrapper, ...options });
 
+const customRenderHook = <A, B>(hook: (props: A) => B) =>
+  renderHook(hook, { wrapper: Wrapper });
+
 export * from "@testing-library/react";
-export { customRender as render };
+export { customRender as render, customRenderHook as renderHook, act };
 
 // Wait for all queueMicrotask() callbacks
 export function flushMicrotasks() {

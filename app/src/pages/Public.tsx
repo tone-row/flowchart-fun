@@ -21,8 +21,8 @@ function Public() {
   const monaco = useMonaco();
   const { public_id } = useParams<{ public_id: string }>();
   const {
+    text,
     options,
-    toParse,
     hiddenGraphOptionsText,
     theme,
     bg,
@@ -80,8 +80,8 @@ function Public() {
         fullText={fullText}
       >
         <Editor
-          value={toParse}
-          defaultValue={toParse}
+          value={text}
+          defaultValue={text}
           defaultLanguage={languageId}
           // @ts-ignore
           wrapperClassName={styles.Editor}

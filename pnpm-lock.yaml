@@ -40,6 +40,7 @@ importers:
       '@svgr/webpack': ^6.3.1
       '@testing-library/jest-dom': ^5.11.4
       '@testing-library/react': ^11.1.0
+      '@testing-library/react-hooks': ^8.0.1
       '@testing-library/user-event': ^12.1.10
       '@tone-row/cytoscape-svg': ^1.0.2
       '@tone-row/slang': ^1.2.35
@@ -194,6 +195,7 @@ importers:
       '@lingui/cli': 3.14.0_dq5lmo4h23lmf75ogg5ipbjddi
       '@lingui/macro': 3.14.0_dbgdgklco3dywdwlcrfyitz5ce
       '@playwright/test': 1.25.1
+      '@testing-library/react-hooks': 8.0.1_sk3eihvpffgp52mstba5zhq3vu
       '@types/benchmark': 2.1.2
       '@types/css-font-loading-module': 0.0.7
       '@types/cytoscape': 3.19.7
@@ -3517,6 +3519,29 @@ packages:
       lodash: 4.17.21
       redent: 3.0.0
     dev: false
+
+  /@testing-library/react-hooks/8.0.1_sk3eihvpffgp52mstba5zhq3vu:
+    resolution: {integrity: sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      '@types/react': ^16.9.0 || ^17.0.0
+      react: ^16.9.0 || ^17.0.0
+      react-dom: ^16.9.0 || ^17.0.0
+      react-test-renderer: ^16.9.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react-dom:
+        optional: true
+      react-test-renderer:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.18.9
+      '@types/react': 17.0.48
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-error-boundary: 3.1.4_react@17.0.2
+    dev: true
 
   /@testing-library/react/11.2.7_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-tzRNp7pzd5QmbtXNG/mhdcl7Awfu/Iz1RaVHY75zTdOkmHCuzMhRL83gWHSgOAcjS3CCbyfwUHMZgRJb4kAfpA==}
@@ -11290,7 +11315,16 @@ packages:
       object-assign: 4.1.1
       react: 17.0.2
       scheduler: 0.20.2
-    dev: false
+
+  /react-error-boundary/3.1.4_react@17.0.2:
+    resolution: {integrity: sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==}
+    engines: {node: '>=10', npm: '>=6'}
+    peerDependencies:
+      react: '>=16.13.1'
+    dependencies:
+      '@babel/runtime': 7.18.9
+      react: 17.0.2
+    dev: true
 
   /react-error-overlay/6.0.11:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
@@ -11974,7 +12008,6 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-    dev: false
 
   /schema-utils/2.7.0:
     resolution: {integrity: sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==}

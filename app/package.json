@@ -114,6 +114,7 @@
     "@lingui/cli": "^3.13.2",
     "@lingui/macro": "^3.13.2",
     "@playwright/test": "1.25.1",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/benchmark": "^2.1.1",
     "@types/css-font-loading-module": "^0.0.7",
     "@types/cytoscape": "^3.14.12",
