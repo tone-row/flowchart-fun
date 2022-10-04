@@ -1,3 +1,4 @@
+import { act } from "react-dom/test-utils";
 import * as RQ from "react-query";
 
 import * as cy from "../lib/cytoscape";
@@ -5,12 +6,17 @@ import * as helpers from "../lib/helpers";
 import * as hooks from "../lib/hooks";
 import * as queries from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
+import { mockLocalStorage } from "../setupTests";
 import {
   fakeCustomer,
   fakeMakeCartResponse,
   fakeSession,
+  flushMicrotasks,
+  history,
   nextFrame,
   render,
+  screen,
+  sleep,
 } from "../test-utils";
 import { New } from "./New";
 const fakeName = "fake-name";
@@ -25,7 +31,7 @@ jest.mock("../lib/supabaseClient", () => ({
 }));
 
 describe("New Page", () => {
-  it("shoud render", async () => {
+  it("should render", async () => {
     render(<New />);
     await nextFrame();
   });
@@ -35,36 +41,29 @@ describe("New Page", () => {
     mock.mockReturnValue(fakeName);
     render(<New />);
     await nextFrame();
-    expect(window.location.pathname).toEqual(`/${fakeName}`);
+    expect(mock).toHaveBeenCalled();
+    expect(history.location.pathname).toEqual(`/${fakeName}`);
   });
 
-  it("should use editable template for unauth user", async () => {
-    // make sure we return a template
-    const fakeChart = "hello world";
-    jest.spyOn(hooks, "useReadOnlyText").mockReturnValue({
-      fullText: fakeChart,
-    } as any);
-
+  it("should use default text if no template passed for unauth user", async () => {
+    const tempFakeName = "temp-fake-name";
     // control the generated chart name
-    const mock = jest.spyOn(helpers, "randomChartName");
-    mock.mockReturnValue(fakeName);
-
+    jest.spyOn(helpers, "randomChartName").mockReturnValueOnce(tempFakeName);
+    const push = jest.spyOn(history, "push");
     render(<New />);
+    expect(await screen.findByText("Creating Flowchart")).toBeInTheDocument();
+
     await nextFrame();
-    expect(window.location.pathname).toEqual(`/${fakeName}`);
+    expect(push).toHaveBeenCalledWith(`/${tempFakeName}`);
 
     // Confirm it's in local storage
-    const key = helpers.titleToLocalStorageKey(fakeName);
-    expect(global.localStorage.getItem(key)).toEqual(fakeChart);
+    const key = helpers.titleToLocalStorageKey(tempFakeName);
+    expect(global.localStorage.getItem(key)).toEqual(
+      `This app works by typing\n  Indenting creates a link to the current line\n  any text: before a colon creates a label\n  Create a link directly using the exact label text\n    like this: (This app works by typing)\n    [custom ID] or\n      by adding an %5BID%5D and referencing that\n        like this: (custom ID) // You can also use single-line comments\n/*\nor\nmultiline\ncomments\n\nHave fun! 🎉\n*/`
+    );
   });
 
   it("should create a hosted chart if logged in", async () => {
-    // make sure we return a template
-    const fakeChart = "hello world";
-    jest.spyOn(hooks, "useReadOnlyText").mockReturnValue({
-      fullText: fakeChart,
-    } as any);
-
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
     const mockGetSession = jest.spyOn(supabase.auth, "session");
@@ -109,10 +108,7 @@ describe("New Page", () => {
     } as any);
 
     // make sure we return a template
-    const fakeChart = "hello world";
-    jest.spyOn(hooks, "useReadOnlyText").mockReturnValue({
-      fullText: fakeChart,
-    } as any);
+    const fakeChart = `This app works by typing\n  Indenting creates a link to the current line\n  any text: before a colon creates a label\n  Create a link directly using the exact label text\n    like this: (This app works by typing)\n    [custom ID] or\n      by adding an %5BID%5D and referencing that\n        like this: (custom ID) // You can also use single-line comments\n/*\nor\nmultiline\ncomments\n\nHave fun! 🎉\n*/`;
 
     // control the generated chart name
     const mock = jest.spyOn(helpers, "randomChartName");

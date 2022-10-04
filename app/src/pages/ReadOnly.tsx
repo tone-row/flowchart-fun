@@ -1,24 +1,31 @@
 import Editor, { OnMount } from "@monaco-editor/react";
-import strip from "@tone-row/strip-comments";
-import matter from "gray-matter";
 import { useEffect, useRef, useState } from "react";
 
 import EditorError from "../components/EditorError";
-import GraphProvider from "../components/GraphProvider";
+import Layout from "../components/Layout";
 import Loading from "../components/Loading";
-import { delimiters, editorOptions } from "../lib/constants";
+import Main from "../components/Main";
+import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
-import { useReadOnlyText } from "../lib/hooks";
 import { useAppMode } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
+import { useReadOnlyDoc } from "../lib/useReadOnlyDoc";
 import styles from "./ReadOnly.module.css";
 
 function ReadOnly() {
-  const { text, hiddenGraphOptions } = useReadOnlyText();
+  const {
+    text,
+    hiddenGraphOptionsText,
+    options,
+    theme,
+    bg,
+    isFrozen,
+    fullText,
+  } = useReadOnlyDoc();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
@@ -33,41 +40,38 @@ function ReadOnly() {
     );
   }, [mode]);
 
-  const { data: graphOptions, matter: graphOptionsString } = matter(
-    strip(text),
-    { delimiters }
-  );
-
-  const linesOfYaml = graphOptionsString
-    ? graphOptionsString.split("\n").length + 1
-    : 0;
+  const { linesOfYaml } = options;
 
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   return (
-    <GraphProvider
-      editable={false}
-      setHoverLineNumber={setHoverLineNumber}
-      textToParse={text}
-      graphOptions={graphOptions}
-      hiddenGraphOptions={hiddenGraphOptions}
-    >
-      <Editor
-        value={text}
-        // @ts-ignore
-        wrapperClassName={styles.Editor}
-        defaultLanguage={languageId}
-        options={{
-          ...editorOptions,
-          readOnly: true,
-        }}
-        defaultValue={text}
-        theme={mode === "dark" ? themeNameDark : themeNameLight}
-        loading={loading.current}
-        onMount={onMount}
-      />
-      <EditorError />
-    </GraphProvider>
+    <Layout fullText={fullText}>
+      <Main
+        setHoverLineNumber={setHoverLineNumber}
+        hiddenGraphOptionsText={hiddenGraphOptionsText}
+        options={options}
+        theme={theme}
+        bg={bg}
+        isFrozen={isFrozen}
+        fullText={fullText}
+      >
+        <Editor
+          value={text}
+          // @ts-ignore
+          wrapperClassName={styles.Editor}
+          defaultLanguage={languageId}
+          options={{
+            ...editorOptions,
+            readOnly: true,
+          }}
+          defaultValue={text}
+          theme={mode === "dark" ? themeNameDark : themeNameLight}
+          loading={loading.current}
+          onMount={onMount}
+        />
+        <EditorError />
+      </Main>
+    </Layout>
   );
 }
 

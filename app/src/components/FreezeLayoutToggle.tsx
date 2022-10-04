@@ -4,25 +4,22 @@ import * as Toggle from "@radix-ui/react-toggle";
 import { memo } from "react";
 import { FaSnowflake } from "react-icons/fa";
 
-import { HiddenGraphOptions } from "../lib/helpers";
-import { useStoreGraph } from "../lib/store.graph";
+import { UpdateDoc } from "../lib/UpdateDoc";
 import { Box, Type } from "../slang";
-import styles from "./AutoLayoutSwitch.module.css";
+import styles from "./FreezeLayoutToggle.module.css";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import graphBarStyles from "./GraphOptionsBar.module.css";
 
-export const AutoLayoutSwitch = memo(function AutoLayoutSwitch({
-  setHiddenGraphOptions,
+export const FreezeLayoutToggle = memo(function FreezeLayoutToggle({
+  update,
+  isFrozen,
 }: {
-  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
+  update: UpdateDoc;
+  isFrozen: boolean;
 }) {
-  const setRunLayout = useStoreGraph((store) => store.setRunLayout);
-  const runLayout = useStoreGraph((store) => store.runLayout);
   return (
     <Box
-      className={`${graphBarStyles.BarSection} ${styles.AutoLayout} ${
-        runLayout ? "checked" : ""
-      }`}
+      className={`${graphBarStyles.BarSection} ${isFrozen ? "checked" : ""}`}
       content="center"
       items="center"
       flow="column"
@@ -33,15 +30,19 @@ export const AutoLayoutSwitch = memo(function AutoLayoutSwitch({
         <HoverCard.Trigger asChild>
           <Toggle.Root
             className={styles.Toggle}
-            pressed={runLayout}
+            pressed={isFrozen}
             aria-label={t`Freeze Layout`}
-            onPressedChange={(pressed) => {
-              setRunLayout(pressed);
-              if (pressed && setHiddenGraphOptions) {
-                setHiddenGraphOptions({});
-              } else if (!pressed && setHiddenGraphOptions && window.__cy) {
+            onPressedChange={(check) => {
+              if (check) {
+                if (!window.__cy) return;
                 const nodePositions = getNodePositionsFromCy();
-                setHiddenGraphOptions({ nodePositions });
+                update({
+                  hidden: { nodePositions },
+                });
+              } else if (!check) {
+                update({
+                  hidden: {},
+                });
               }
             }}
           >

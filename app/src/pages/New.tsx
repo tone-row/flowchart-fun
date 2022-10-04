@@ -1,17 +1,23 @@
+import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { memo, useContext, useEffect } from "react";
 import { useMutation } from "react-query";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
 import { gaCreateChart } from "../lib/analytics";
 import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidCustomer, useReadOnlyText } from "../lib/hooks";
+import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
+import { useDefaultDoc } from "../lib/useDefaultDoc";
 import { Type } from "../slang";
 
 export const New = memo(function New() {
-  const { fullText } = useReadOnlyText();
+  const defaultDoc = useDefaultDoc();
+  const { graphText = window.location.hash.slice(1) } = useParams<{
+    graphText: string;
+  }>();
+  const fullText = decompress(graphText) ?? defaultDoc;
   const { push } = useHistory();
   const { setShowing, customerIsLoading, session, checkedSession } =
     useContext(AppContext);

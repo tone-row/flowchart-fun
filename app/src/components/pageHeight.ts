@@ -3,7 +3,7 @@ import throttle from "lodash.throttle";
 function writePageHeight() {
   document.documentElement.style.setProperty(
     "--page-height",
-    `${window.innerHeight}px`
+    `${window.innerHeight - 1}px`
   );
 }
 

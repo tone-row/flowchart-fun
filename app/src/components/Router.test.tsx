@@ -9,8 +9,7 @@ beforeAll(() => {
 
 describe("Router", () => {
   test("home page is Edit screen", async () => {
-    window.history.pushState({}, "", "/");
     render(<Router />);
-    expect(screen.getByText(/flowchart\.fun/)).toBeInTheDocument();
+    expect(await screen.findByText(/flowchart\.fun/)).toBeInTheDocument();
   });
 });

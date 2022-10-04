@@ -36,11 +36,7 @@ export default function Feedback() {
     },
   });
   const onSubmit = useCallback(
-    (data: FormData) => {
-      const email = { ...msg, ...data };
-      if (!email.from) email.from = "Unknown Sender <info@tone-row.com>";
-      send(email);
-    },
+    (data: FormData) => send({ ...msg, ...data }),
     [send]
   );
   return (

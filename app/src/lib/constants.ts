@@ -24,7 +24,7 @@ export type GraphOptionsObject = {
 
 export const defaultSpacingFactor = 1.25;
 
-export const defaultLayout: GraphOptionsObject["layout"] = {
+export const defaultLayout: Required<GraphOptionsObject>["layout"] = {
   name: "dagre",
   fit: true,
   animate: true,

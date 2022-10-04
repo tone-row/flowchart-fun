@@ -1,19 +1,25 @@
 import React, { ReactNode, useContext } from "react";
 import { useRouteMatch } from "react-router-dom";
 
-import { HiddenGraphOptions } from "../lib/helpers";
 import { useFullscreen, useIsValidSponsor } from "../lib/hooks";
+import { UpdateDoc } from "../lib/UpdateDoc";
 import { Box } from "../slang";
 import { AppContext } from "./AppContext";
+import { GraphFloatingMenu } from "./GraphFloatingMenu";
 import GraphOptionsBar from "./GraphOptionsBar";
 import styles from "./GraphWrapper.module.css";
+import { UseGraphOptionsReturn } from "./useGraphOptions";
 
 export default function GraphWrapper({
   children,
-  setHiddenGraphOptions,
+  update,
+  options,
+  isFrozen,
 }: {
   children: ReactNode;
-  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
+  update?: UpdateDoc;
+  options: UseGraphOptionsReturn;
+  isFrozen: boolean;
 }) {
   const { showing } = useContext(AppContext);
   const isFullscreen = useFullscreen();
@@ -34,19 +40,20 @@ export default function GraphWrapper({
       data-is-fullscreen={isFullscreen}
       at={isFullscreen ? undefined : { tablet: { pr: 2, pb: 2 } }}
     >
-      {!isFullscreen ? (
-        <Box
-          template={template}
-          className={styles.GraphWrapperInner}
-          at={{ tablet: { rad: 1 } }}
-        >
-          {shouldHideGraphOptions ? null : (
-            <GraphOptionsBar setHiddenGraphOptions={setHiddenGraphOptions} />
+      {isFullscreen ? (
+        children
+      ) : (
+        <Box template={template} className={styles.GraphWrapperInner}>
+          {shouldHideGraphOptions || !update ? null : (
+            <GraphOptionsBar
+              update={update}
+              options={options}
+              isFrozen={isFrozen}
+            />
           )}
           {children}
+          <GraphFloatingMenu />
         </Box>
-      ) : (
-        children
       )}
     </Box>
   );

@@ -11,10 +11,8 @@ import {
 } from "phosphor-react";
 import {
   CSSProperties,
-  ForwardRefExoticComponent,
   memo,
   ReactNode,
-  RefAttributes,
   useCallback,
   useContext,
   useEffect,
@@ -30,32 +28,35 @@ import Select, {
 import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts, SelectOption, themes } from "../lib/graphOptions";
-import { useGraphTheme } from "../lib/graphThemes";
-import { HiddenGraphOptions } from "../lib/helpers";
+import { defaultGraphTheme } from "../lib/graphThemes";
 import { useIsValidSponsor } from "../lib/hooks";
-import { useStoreGraph } from "../lib/store.graph";
-import { Box, BoxProps, Type } from "../slang";
+import { UpdateDoc } from "../lib/UpdateDoc";
+import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
-import { AutoLayoutSwitch } from "./AutoLayoutSwitch";
+import { FreezeLayoutToggle } from "./FreezeLayoutToggle";
 import styles from "./GraphOptionsBar.module.css";
-import { GraphContext } from "./GraphProvider";
+import { IconButton } from "./IconButton";
 import {
   smallBtnTypeSize,
   smallIconSize,
   Tooltip,
   tooltipSize,
 } from "./Shared";
+import { UseGraphOptionsReturn } from "./useGraphOptions";
 
 const GraphOptionsBar = ({
-  setHiddenGraphOptions,
+  update,
+  options,
+  isFrozen,
 }: {
-  setHiddenGraphOptions?: (newOptions: HiddenGraphOptions) => void;
+  update: UpdateDoc;
+  options: UseGraphOptionsReturn;
+  isFrozen: boolean;
 }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const setShowing = useCallback(useContext(AppContext).setShowing, []);
   const isValidSponsor = useIsValidSponsor();
-  const { updateGraphOptionsText, graphOptions = {} } =
-    useContext(GraphContext);
+  const { graphOptions = {} } = options;
   const {
     watch,
     control,
@@ -63,12 +64,10 @@ const GraphOptionsBar = ({
     reset,
   } = useForm();
 
-  const currentTheme = useGraphTheme();
   const values = watch();
   const layout = watch("layout.name");
   const theme = watch("theme");
   const valuesString = JSON.stringify(values);
-  const runLayout = useStoreGraph((store) => store.runLayout);
 
   useEffect(() => {
     if (layout) gaChangeGraphOption({ action: "layout", label: layout });
@@ -86,9 +85,9 @@ const GraphOptionsBar = ({
     const options = JSON.parse(valuesString);
     if (!isEqual(options, graphOptions)) {
       if (isEmpty(options.layout)) delete options.layout;
-      updateGraphOptionsText && updateGraphOptionsText(options);
+      update({ options });
     }
-  }, [updateGraphOptionsText, isDirty, valuesString, graphOptions]);
+  }, [graphOptions, isDirty, update, valuesString]);
 
   const ctxGraphOptions = JSON.stringify(graphOptions);
 
@@ -115,34 +114,38 @@ const GraphOptionsBar = ({
 
   const expand = useCallback(
     () =>
-      updateGraphOptionsText &&
-      updateGraphOptionsText({
-        layout: {
-          spacingFactor:
-            (graphOptions.layout?.spacingFactor ?? defaultSpacingFactor) + 0.25,
+      update({
+        options: {
+          layout: {
+            spacingFactor:
+              (graphOptions.layout?.spacingFactor ?? defaultSpacingFactor) +
+              0.25,
+          },
         },
       }),
-    [graphOptions.layout?.spacingFactor, updateGraphOptionsText]
+    [graphOptions.layout?.spacingFactor, update]
   );
 
   const contract = useCallback(
     () =>
-      updateGraphOptionsText &&
-      updateGraphOptionsText({
-        layout: {
-          spacingFactor: Math.max(
-            (graphOptions.layout?.spacingFactor ?? defaultSpacingFactor) - 0.25,
-            0
-          ),
+      update({
+        options: {
+          layout: {
+            spacingFactor: Math.max(
+              (graphOptions.layout?.spacingFactor ?? defaultSpacingFactor) -
+                0.25,
+              0
+            ),
+          },
         },
       }),
-    [graphOptions.layout?.spacingFactor, updateGraphOptionsText]
+    [graphOptions.layout?.spacingFactor, update]
   );
 
   return (
     <Box className={styles.GraphOptionsBar} as="form">
-      <AutoLayoutSwitch setHiddenGraphOptions={setHiddenGraphOptions} />
-      {runLayout ? (
+      <FreezeLayoutToggle update={update} isFrozen={isFrozen} />
+      {isFrozen ? null : (
         <>
           <OptionWithIcon
             icon={CirclesThree}
@@ -216,7 +219,7 @@ const GraphOptionsBar = ({
             />
           </Box>
         </>
-      ) : null}
+      )}
       <OptionWithIcon icon={PaintBrush} label={t`Theme`} labelFor="theme">
         <Controller
           control={control}
@@ -234,7 +237,8 @@ const GraphOptionsBar = ({
                   }
                 }}
                 value={themes.find(
-                  (theme) => theme.value === currentTheme.value
+                  (theme) =>
+                    theme.value === (graphOptions.theme || defaultGraphTheme)
                 )}
                 {...selectProps}
               />
@@ -438,38 +442,6 @@ function isEqual(a: O, b: O): boolean {
     }
   }
   return result;
-}
-
-function IconButton({
-  icon: Icon,
-  onClick,
-  label,
-  ...props
-}: {
-  icon: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
-  onClick: () => void;
-  label: string;
-} & BoxProps) {
-  return (
-    <Tooltip
-      label={label}
-      aria-label={label}
-      className={`slang-type size-${tooltipSize}`}
-    >
-      <Box
-        as="button"
-        onClick={onClick}
-        type="button"
-        p={2}
-        rad={1}
-        className={styles.IconButton}
-        {...props}
-      >
-        <Icon size={smallIconSize + 2} />
-        <VisuallyHidden>{label}</VisuallyHidden>
-      </Box>
-    </Tooltip>
-  );
 }
 
 function isEmpty(obj: object) {

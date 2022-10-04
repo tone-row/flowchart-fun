@@ -2,7 +2,7 @@
   position: absolute;
   --offset: calc(var(--spacer-px) * 1);
   bottom: 0;
-  left: var(--offset);
+  right: var(--offset);
   --size: calc(var(--spacer-px) * 9);
   width: var(--size);
   height: var(--size);

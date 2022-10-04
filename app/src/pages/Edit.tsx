@@ -1,40 +1,40 @@
 import Editor, { OnMount } from "@monaco-editor/react";
-import { useThrottleCallback } from "@react-hook/throttle";
 import { memo, useCallback, useEffect, useRef, useState } from "react";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
-import GraphProvider from "../components/GraphProvider";
+import Layout from "../components/Layout";
 import Loading from "../components/Loading";
-import useGraphOptions from "../components/useGraphOptions";
+import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
-import { useLocalStorageText } from "../lib/hooks";
 import { useAppMode } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useUpdateGraphOptionsText } from "../lib/useUpdateGraphOptionsText";
+import { useLocalDoc } from "../lib/useLocalDoc";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit() {
-  const { text, setText, hiddenGraphOptions, setHiddenGraphOptions } =
-    useLocalStorageText();
-  const [toParse, setToParse] = useState(text);
-  const throttleSetToParse = useThrottleCallback(setToParse, 2, true);
-  const { graphOptions, content, linesOfYaml } = useGraphOptions(toParse);
+  const {
+    text,
+    options,
+    updateDoc,
+    hiddenGraphOptionsText,
+    theme,
+    bg,
+    isFrozen,
+    fullText,
+  } = useLocalDoc();
+  const { linesOfYaml } = options;
 
-  const loading = useRef(<Loading />);
-
-  const { data: mode } = useAppMode();
-  const editorRef = useRef<Parameters<OnMount>[0]>(null);
-  const monacoRef = useRef<any>();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
-  useEffect(() => {
-    throttleSetToParse(text);
-  }, [text, throttleSetToParse]);
+  const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
+  const monacoRef = useRef<any>();
+  const { data: mode } = useAppMode();
+  const loading = useRef(<Loading />);
 
   const onMount = useEditorOnMount(editorRef, monacoRef);
   useEffect(() => {
@@ -44,50 +44,47 @@ const Edit = memo(function Edit() {
     );
   }, [mode]);
 
-  const updateGraphOptionsText = useUpdateGraphOptionsText(
-    content,
-    graphOptions,
-    setText,
-    setToParse,
-    toParse
-  );
-
   // Hover
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
-  const onChange = useCallback((value) => setText(value ?? ""), [setText]);
+  const onChange = useCallback(
+    (value) => updateDoc({ text: value ?? "" }),
+    [updateDoc]
+  );
 
   return (
-    <GraphProvider
-      editable={true}
-      textToParse={toParse}
-      setHoverLineNumber={setHoverLineNumber}
-      graphOptions={graphOptions}
-      updateGraphOptionsText={updateGraphOptionsText}
-      setHiddenGraphOptions={setHiddenGraphOptions}
-      hiddenGraphOptions={hiddenGraphOptions}
-    >
-      <Editor
-        value={text}
-        // @ts-ignore
-        wrapperClassName={styles.Editor}
-        defaultLanguage={languageId}
-        options={editorOptions}
-        onChange={onChange}
-        loading={loading.current}
-        onMount={onMount}
-      />
-      <ClearTextButton
-        handleClear={() => {
-          setText("");
-          setToParse("");
-          if (editorRef.current) {
-            editorRef.current.focus();
-          }
-        }}
-      />
-      <EditorError />
-    </GraphProvider>
+    <Layout fullText={fullText}>
+      <Main
+        setHoverLineNumber={setHoverLineNumber}
+        hiddenGraphOptionsText={hiddenGraphOptionsText}
+        options={options}
+        update={updateDoc}
+        theme={theme}
+        bg={bg}
+        isFrozen={isFrozen}
+        fullText={fullText}
+      >
+        <Editor
+          value={text}
+          // @ts-ignore
+          wrapperClassName={styles.Editor}
+          defaultLanguage={languageId}
+          options={editorOptions}
+          onChange={onChange}
+          loading={loading.current}
+          onMount={onMount}
+        />
+        <ClearTextButton
+          handleClear={() => {
+            updateDoc({ text: "", hidden: {} });
+            if (editorRef.current) {
+              editorRef.current.focus();
+            }
+          }}
+        />
+        <EditorError />
+      </Main>
+    </Layout>
   );
 });
 

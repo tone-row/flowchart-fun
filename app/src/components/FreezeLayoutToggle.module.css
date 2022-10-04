@@ -24,13 +24,13 @@
   box-shadow: none;
 }
 
-.Toggle[aria-pressed="false"] {
+.Toggle[aria-pressed="true"] {
   background-color: var(--color-uiAccent);
   border-color: var(--color-uiAccent);
   color: hsl(var(--color-foregroundHsl), 100%);
 }
 
-.Toggle[aria-pressed="false"]:hover {
+.Toggle[aria-pressed="true"]:hover {
   background-color: var(--color-edgeHover);
   border-color: var(--color-edgeHover);
 }

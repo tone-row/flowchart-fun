@@ -7,4 +7,6 @@ import "jest-canvas-mock";
 
 import { LocalStorage } from "node-localstorage";
 
-global.localStorage = new LocalStorage("./scratch");
+export const mockLocalStorage = new LocalStorage("./scratch");
+
+global.localStorage = mockLocalStorage;
