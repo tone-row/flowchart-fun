@@ -24,7 +24,7 @@ export default function Help() {
     text,
     hiddenGraphOptionsText,
     options,
-    updateLocalDoc,
+    updateDoc,
     theme,
     bg,
     isFrozen,
@@ -50,15 +50,15 @@ export default function Help() {
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   useEffect(() => {
-    window.flowchartFunSetHelpText = (text: string) => updateLocalDoc({ text });
+    window.flowchartFunSetHelpText = (text: string) => updateDoc({ text });
     return () => {
       delete window.flowchartFunSetHelpText;
     };
-  }, [updateLocalDoc]);
+  }, [updateDoc]);
 
   const onChange = useCallback(
-    (value) => updateLocalDoc({ text: value ?? "" }),
-    [updateLocalDoc]
+    (value) => updateDoc({ text: value ?? "" }),
+    [updateDoc]
   );
 
   return (

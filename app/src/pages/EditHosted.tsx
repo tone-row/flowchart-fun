@@ -3,6 +3,7 @@ import { Check, DotsThree } from "phosphor-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
@@ -27,7 +28,7 @@ export default function EditHosted() {
   const {
     flush,
     options,
-    updateHostedDoc,
+    updateDoc,
     hiddenGraphOptionsText,
     isLoading,
     text,
@@ -62,19 +63,12 @@ export default function EditHosted() {
     );
   }, [mode]);
 
-  useEffect(() => {
-    if (!monacoRef.current) return;
-    monacoRef.current.editor.setTheme(
-      mode === "light" ? themeNameLight : themeNameDark
-    );
-  }, [mode]);
-
   // Hover
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   const onChange = useCallback(
-    (value) => updateHostedDoc({ text: value ?? "" }),
-    [updateHostedDoc]
+    (value) => updateDoc({ text: value ?? "" }),
+    [updateDoc]
   );
 
   return (
@@ -83,7 +77,7 @@ export default function EditHosted() {
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}
         options={options}
-        update={updateHostedDoc}
+        update={updateDoc}
         theme={theme}
         bg={bg}
         isFrozen={isFrozen}
@@ -103,12 +97,23 @@ export default function EditHosted() {
           onMount={onMount}
         />
         <LoadingState isLoading={isLoading} pending={pending()} />
+        <ClearTextButton
+          handleClear={() => {
+            updateDoc({ text: "", hidden: {} });
+            if (editorRef.current) {
+              editorRef.current.focus();
+            }
+          }}
+        />
         <EditorError />
       </Main>
     </Layout>
   );
 }
 
+/**
+ * Shows whether the chart has synced to the server
+ */
 function LoadingState({
   pending,
   isLoading,

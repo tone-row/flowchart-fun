@@ -21,7 +21,7 @@ const Edit = memo(function Edit() {
   const {
     text,
     options,
-    updateLocalDoc,
+    updateDoc,
     hiddenGraphOptionsText,
     theme,
     bg,
@@ -30,12 +30,11 @@ const Edit = memo(function Edit() {
   } = useLocalDoc();
   const { linesOfYaml } = options;
 
-  const loading = useRef(<Loading />);
-
-  const { data: mode } = useAppMode();
-  const editorRef = useRef<Parameters<OnMount>[0]>(null);
-  const monacoRef = useRef<any>();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
+  const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
+  const monacoRef = useRef<any>();
+  const { data: mode } = useAppMode();
+  const loading = useRef(<Loading />);
 
   const onMount = useEditorOnMount(editorRef, monacoRef);
   useEffect(() => {
@@ -49,8 +48,8 @@ const Edit = memo(function Edit() {
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   const onChange = useCallback(
-    (value) => updateLocalDoc({ text: value ?? "" }),
-    [updateLocalDoc]
+    (value) => updateDoc({ text: value ?? "" }),
+    [updateDoc]
   );
 
   return (
@@ -59,7 +58,7 @@ const Edit = memo(function Edit() {
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}
         options={options}
-        update={updateLocalDoc}
+        update={updateDoc}
         theme={theme}
         bg={bg}
         isFrozen={isFrozen}
@@ -77,7 +76,7 @@ const Edit = memo(function Edit() {
         />
         <ClearTextButton
           handleClear={() => {
-            updateLocalDoc({ text: "", hidden: {} });
+            updateDoc({ text: "", hidden: {} });
             if (editorRef.current) {
               editorRef.current.focus();
             }
