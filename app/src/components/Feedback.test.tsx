@@ -13,7 +13,7 @@ const server = setupServer(
 
 beforeAll(() => {
   server.listen();
-  jest.spyOn(console, "error");
+  jest.spyOn(console, "error").mockImplementation(() => null);
 });
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
@@ -55,6 +55,5 @@ describe("Feedback", () => {
     userEvent.click(screen.getByText(/Submit/gi));
 
     expect(await screen.findByText(/An error occurred/)).toBeInTheDocument();
-    expect(console.error).toHaveBeenCalledTimes(1);
   });
 });
