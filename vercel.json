@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/changelog", "destination": "/astro/changelog" },
+    { "source": "/roadmap", "destination": "/astro/roadmap" },
+    { "source": "/blog", "destination": "/astro/blog" },
+    { "source": "/blog/:post", "destination": "/astro/blog/:post" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

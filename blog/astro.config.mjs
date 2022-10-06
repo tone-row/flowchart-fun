@@ -13,7 +13,7 @@ const site =
 export default defineConfig({
   site,
   base: "/",
-  outDir: "../app/build/a",
+  outDir: "../app/build/astro",
   integrations: [
     mdx(),
     partytown({
