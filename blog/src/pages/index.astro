@@ -23,7 +23,7 @@ const posts = (await Astro.glob('./post/*.mdx')).map((post) => {
 		<div class="blog-list">
 			{posts.map((post) => (
 				<article>
-					<a href={"/blog/post/" + post.slug} class="blog-post">
+					<a href={post.slug} class="blog-post">
 						<h2>{post.title}</h2>
 						<time datetime={post.date} class="publish-date">{post.publishDate}</time>
 						<p>{post.description}</p>
