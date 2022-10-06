@@ -5,11 +5,12 @@
   ],
   "scripts": {
     "start": "vercel dev",
-    "dev": "pnpm -F app start",
+    "dev": "pnpm -F '*' dev --parallel",
     "env:pull": "vercel env pull app/.env",
     "prepare": "husky install",
     "app:lint:format": "pnpm -F app lint:fix && pnpm -F app format",
-    "test": "pnpm -F app test"
+    "test": "pnpm -F app test",
+    "build": "pnpm -F app build && pnpm -F blog build"
   },
   "devDependencies": {
     "husky": "^8.0.1",
@@ -20,7 +21,7 @@
     "node": "^16"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "app/**/*.{js,jsx,ts,tsx}": [
       "pnpm -F app lint:fix",
       "pnpm -F app format"
     ]

@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently -n 'react,slang' 'react-scripts start' 'yarn theme:watch'",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/.pnpm/(?!react-use-localstorage)/\"",
     "test:coverage": "react-scripts test --watchAll=false --coverage",
