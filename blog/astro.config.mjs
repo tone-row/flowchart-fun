@@ -14,6 +14,7 @@ export default defineConfig({
   site,
   base: "/",
   outDir: "../app/build/astro",
+  publicDir: "../app/build/astro",
   integrations: [
     mdx(),
     partytown({
