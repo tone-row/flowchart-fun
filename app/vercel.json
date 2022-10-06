@@ -1,7 +1,10 @@
 {
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" },
-    { "source": "/a/:path", "destination": "/a/:path" },
+    { "source": "/changelog", "destination": "/changelog" },
+    { "source": "/roadmap", "destination": "/roadmap" },
+    { "source": "/blog", "destination": "/blog" },
+    { "source": "/blog/:post", "destination": "/blog/:post" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

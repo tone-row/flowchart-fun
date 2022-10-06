@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { dateString, niceDate } from '../components/niceData';
+import Layout from '../../layouts/Layout.astro';
+import { dateString, niceDate } from '../../components/niceData';
 
-const posts = (await Astro.glob('./posts/*.mdx')).map((post) => {
+const posts = (await Astro.glob('./*.mdx')).map((post) => {
 	const { frontmatter } = post;
 	const title = frontmatter.title;
 	const slug = post.url;

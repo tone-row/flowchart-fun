@@ -12,7 +12,7 @@ const site =
 // https://astro.build/config
 export default defineConfig({
   site,
-  base: "/a",
+  base: "/",
   outDir: "../app/build/a",
   integrations: [
     mdx(),
