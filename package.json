@@ -5,7 +5,7 @@
   ],
   "scripts": {
     "start": "vercel dev",
-    "dev": "pnpm -F '*' dev --parallel",
+    "dev": "pnpm -F '*' --parallel dev",
     "env:pull": "vercel env pull app/.env",
     "prepare": "husky install",
     "app:lint:format": "pnpm -F app lint:fix && pnpm -F app format",
