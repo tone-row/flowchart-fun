@@ -8,7 +8,7 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/.pnpm/(?!react-use-localstorage)/\"",
-    "test:coverage": "react-scripts test --watchAll=false --coverage",
+    "test:coverage": "react-scripts test --watchAll=false --transformIgnorePatterns \"node_modules/.pnpm/(?!react-use-localstorage)/\" --coverage",
     "eject": "react-scripts eject",
     "theme": "slang src/slang",
     "theme:watch": "slang src/slang -w",
