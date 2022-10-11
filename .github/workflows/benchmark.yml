@@ -9,7 +9,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16.x
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - name: Install Deps
         run: yarn
       - name: Benchmark
-        run: yarn workspace app benchmark
+        run: pnpm -F app benchmark
