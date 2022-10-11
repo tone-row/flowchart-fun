@@ -1,5 +1,6 @@
 import "./index.css";
 import "./slang/slang.css";
+import "shared/header.css";
 import "core-js/features/object/from-entries";
 import "core-js/features/object/entries";
 
