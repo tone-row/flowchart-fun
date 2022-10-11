@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 
-import { render } from "../test-utils";
+import { nextFrame, render } from "../test-utils";
 import Router from "./Router";
 
 beforeAll(() => {
@@ -10,6 +10,7 @@ beforeAll(() => {
 describe("Router", () => {
   test("home page is Edit screen", async () => {
     render(<Router />);
+    await nextFrame();
     expect(await screen.findByText(/flowchart\.fun/)).toBeInTheDocument();
   });
 });
