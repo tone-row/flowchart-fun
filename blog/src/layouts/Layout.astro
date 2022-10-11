@@ -1,0 +1,257 @@
+---
+export interface Props {
+	title: string;
+	frontmatter?: any;
+}
+
+const { title, frontmatter } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+const isBlog = (x: string) => x === "/a/" || x.includes('posts');
+
+// declare dataLayer on window typescript
+declare global {
+	interface Window {
+		dataLayer: any;
+	}
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-1P1MGNT78Q"></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){window.dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-1P1MGNT78Q');
+		</script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		{frontmatter?.canonical && <link rel="canonical" href={frontmatter.canonical} />}
+		
+		<!-- HTML Meta Tags -->
+		<meta name="description" content="Follow the development of the text-to-diagram generator app Flowchart Fun. Includes a Blog, Roadmap, and Changelog.">
+	
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://blog.flowchart.fun">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Flowchart Fun Blog">
+		<meta property="og:description" content="Follow the development of the text-to-diagram generator app Flowchart Fun. Includes a Blog, Roadmap, and Changelog.">
+		<meta property="og:image" content="https://blog.flowchart.fun/preview.png">
+	
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="blog.flowchart.fun">
+		<meta property="twitter:url" content="https://blog.flowchart.fun">
+		<meta name="twitter:title" content="Flowchart Fun Blog">
+		<meta name="twitter:description" content="Follow the development of the text-to-diagram generator app Flowchart Fun. Includes a Blog, Roadmap, and Changelog.">
+		<meta name="twitter:image" content="https://blog.flowchart.fun/preview.png">
+		
+		<!-- astro meta -->
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			the header to be!
+		</header>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--blue-100: #EEF0FF;
+		--blue-500: #6C7DFF;
+		--grey: #737373;
+		--border-radius: 3px;
+		--shadow-color: 233deg 30% 70%;
+		--shadow-elevation-low:
+			0.5px 0.4px 0.6px hsl(var(--shadow-color) / 0.36),
+			0.7px 0.6px 0.9px -1.8px hsl(var(--shadow-color) / 0.28),
+			1.7px 1.5px 2.1px -3.7px hsl(var(--shadow-color) / 0.2);
+		--shadow-elevation-medium:
+			0.5px 0.4px 0.6px hsl(var(--shadow-color) / 0.3),
+			0.9px 0.8px 1.1px -0.9px hsl(var(--shadow-color) / 0.26),
+			1.9px 1.7px 2.4px -1.8px hsl(var(--shadow-color) / 0.22),
+			4.1px 3.8px 5.3px -2.8px hsl(var(--shadow-color) / 0.18),
+			8.4px 7.7px 10.8px -3.7px hsl(var(--shadow-color) / 0.14);
+		--shadow-elevation-high:
+			0.5px 0.4px 0.6px hsl(var(--shadow-color) / 0.28),
+			1.2px 1.1px 1.5px -0.4px hsl(var(--shadow-color) / 0.26),
+			2px 1.9px 2.6px -0.8px hsl(var(--shadow-color) / 0.24),
+			3.3px 3px 4.2px -1.2px hsl(var(--shadow-color) / 0.22),
+			5.2px 4.7px 6.6px -1.6px hsl(var(--shadow-color) / 0.21),
+			8.1px 7.3px 10.3px -2.1px hsl(var(--shadow-color) / 0.19),
+			12.2px 11.1px 15.6px -2.5px hsl(var(--shadow-color) / 0.17),
+			17.9px 16.3px 22.9px -2.9px hsl(var(--shadow-color) / 0.15),
+			25.4px 23.1px 32.4px -3.3px hsl(var(--shadow-color) / 0.13),
+			35.1px 31.9px 44.8px -3.7px hsl(var(--shadow-color) / 0.12);
+	}
+
+	html {
+		font-family: Inter, system-ui, sans-serif;
+		line-height: 1.5;
+		font-size: 14px;
+	}
+
+	@media (min-width: 1044px) {
+		html {
+			font-size: 16px;
+		}
+	}
+
+	body {
+		margin: 0;
+		background-color: #EEF0FF;
+		padding-inline: 20px;
+		padding-bottom: 20px;
+	}
+
+	body::after {
+		content: "";
+		display: block;
+		height: 33vh;
+		background-image: linear-gradient(
+			180deg,
+			hsl(233deg 100% 97%) 0%,
+			hsl(233deg 100% 94%) 21%,
+			hsl(233deg 100% 91%) 30%,
+			hsl(234deg 100% 88%) 39%,
+			hsl(234deg 100% 86%) 46%,
+			hsl(234deg 100% 83%) 54%,
+			hsl(234deg 100% 80%) 61%,
+			hsl(234deg 100% 77%) 69%,
+			hsl(234deg 100% 74%) 79%,
+			hsl(233deg 100% 71%) 100%
+		);
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: -1;
+		mix-blend-mode: color-burn;
+	}
+
+	h1 {
+		margin: 0;
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	p.description {
+		font-weight: 700;
+		margin: 0;
+		color: var(--blue-500);
+	}
+
+	*:focus-visible {
+		outline: 1px dashed var(--blue-500);
+		outline-offset: 2px;
+	}
+</style>
+
+<style>
+	header {
+		padding-block: 20px;
+		display: grid;
+		gap: 7px;
+		align-items: center;
+		margin-inline: auto;
+	}
+
+	main {
+		background-color: white;
+		border-radius: 12px;
+		padding: 50px;
+		max-width: 1128px;
+		margin-inline: auto;
+		box-shadow: var(--shadow-elevation-medium);
+	}
+
+	@media (min-width: 1044px) {
+		header {
+			grid-template-columns: auto minmax(0, 1fr) auto;
+			grid-gap: 40px;
+			justify-content: start;
+		}
+		
+		:root {
+			--total: min(max(1000px, 85%), 1400px);
+		}
+		header {
+			padding-block: 40px;
+			max-width: var(--total);
+		}
+
+		main {
+			max-width: calc(var(--total) - 310px);
+		}
+		nav ul {
+			grid-auto-flow: column;
+			justify-content: start;
+		}
+
+		nav a, .to-ff {
+			padding: 8px 20px 9px;
+		}
+
+		.site-brand {
+			justify-self: auto;
+			margin-bottom: 0;
+		}
+
+	}
+
+	nav ul {
+		display: grid;
+		grid-gap: 7px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	nav a, .to-ff {
+		display: block;
+		border-radius: var(--border-radius);
+		border: 1px solid var(--blue-500);
+		color: var(--blue-500);
+		text-decoration: none;
+		padding: 8px 20px;
+		font-weight: 700;
+		font-size: 0.875rem;
+		text-align: center;
+	}
+
+	nav a.active {
+		background-color: var(--blue-500);
+		color: white;
+	}
+
+	a.to-ff {
+		background-color: white;
+	}
+
+	.site-brand {
+		line-height: 1;
+		align-self: center;
+		font-size: 0;
+		border-radius: var(--border-radius);
+		justify-self: center;
+		margin-bottom: 1rem;
+	}
+	
+	.site-brand:focus-visible {
+		outline-offset: 4px;
+	}
+
+</style>

@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { dateString, niceDate } from '../components/niceData';
+
+const posts = (await Astro.glob('./post/*.mdx')).map((post) => {
+	const { frontmatter } = post;
+	const title = frontmatter.title;
+	const slug = post.url;
+	const publishDate = niceDate(frontmatter.publishDate);
+	const date = dateString(frontmatter.publishDate);
+	const description = frontmatter.description;
+	const numberDate = Number(frontmatter.publishDate);
+	return { title, slug, publishDate, description, date, numberDate };
+}).sort((a, b) => a.numberDate - b.numberDate);
+---
+
+<Layout title="Flowchart Fun Blog">
+	<main>
+		<header>
+			<h1>Blog</h1>
+			<p class="description">Documenting the process of developing Flowchart Fun</p>
+		</header>
+		<div class="blog-list">
+			{posts.map((post) => (
+				<article>
+					<a href={post.slug} class="blog-post">
+						<h2>{post.title}</h2>
+						<time datetime={post.date} class="publish-date">{post.publishDate}</time>
+						<p>{post.description}</p>
+					</a>
+				</article>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	header {
+		display: grid;
+		gap: 1rem;
+		margin-bottom: 50px;
+	}
+	
+	
+	@media (min-width: 600px) {
+		header {
+			grid-template-columns: auto minmax(0, 1fr);
+		  align-items: baseline;
+		}
+	}
+
+	.blog-list {
+		display: grid;
+		gap: 40px;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		line-height: 1.2;
+		margin: 0;
+	}
+
+	a {
+		display: grid;
+		gap: 10px;
+		text-decoration: none;
+		color: black;
+		border-radius: var(--border-radius);
+	}
+	a:focus-visible {
+		outline-offset: 8px;
+	}
+
+	time {
+		font-size: 0.875rem;
+	}
+
+	p {
+		margin: 0;
+		color: var(--grey);
+		font-size: 0.875rem;
+	}
+</style>

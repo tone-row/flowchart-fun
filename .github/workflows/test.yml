@@ -9,10 +9,15 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16.x
+      - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
       - name: Install Dependencies
-        run: yarn
+        run: pnpm install
       - name: Test
-        run: yarn workspace app test:coverage
+        run: pnpm -F app test:coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
