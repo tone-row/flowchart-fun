@@ -159,6 +159,7 @@
     "node-localstorage": "^2.2.1",
     "prettier": "^2.3.1",
     "source-map-explorer": "^2.5.2",
+    "ts-node": "^10.9.1",
     "ts-unused-exports": "^7.0.3",
     "web-worker": "^1.2.0"
   },
