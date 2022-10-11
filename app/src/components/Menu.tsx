@@ -114,15 +114,6 @@ export function Menu({ fullText }: { fullText: string }) {
             gaChangeTab({ action: "navigation" });
           }}
         />
-        <MenuTabButton
-          icon={session ? ActiveUser : User}
-          selected={"sponsor" === showing}
-          label={t`Sponsors`}
-          onClick={() => {
-            setShowing("sponsor");
-            gaChangeTab({ action: "sponsor" });
-          }}
-        />
       </Box>
       {showing === "editor" ? (
         <WorkspaceSection fullText={fullText} />
@@ -166,6 +157,15 @@ export function Menu({ fullText }: { fullText: string }) {
           onClick={() => {
             setShowing("settings");
             gaChangeTab({ action: "settings" });
+          }}
+        />
+        <MenuTabButton
+          icon={session ? ActiveUser : User}
+          selected={"sponsor" === showing}
+          label={t`Sponsors`}
+          onClick={() => {
+            setShowing("sponsor");
+            gaChangeTab({ action: "sponsor" });
           }}
         />
       </Box>

@@ -71,6 +71,7 @@ export default function Help() {
         bg={bg}
         isFrozen={isFrozen}
         fullText={fullText}
+        update={updateDoc}
       >
         <div className={helpStyles.helpWrapper} data-testid="help">
           <Resizable

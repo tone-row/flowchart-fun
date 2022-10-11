@@ -495,7 +495,7 @@ body {
     --errorBottomMultiplier: var(--error-bottom-multiplier-7); }
 
 :where(:root) {
-	--base-font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	--base-font-family:Helvetica, 'Helvetica Neue', sans-serif;
 	--base-font-size-px:17px;
 	--base-font-size:17;
 	--base-font-size-mobile-px:16px;

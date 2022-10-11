@@ -1,0 +1,61 @@
+.shared-header {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-auto-flow: column;
+  padding: 7.5px 10px;
+}
+
+.shared-header nav {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+.shared-header__logo {
+  font-size: 0;
+}
+
+.shared-header-btn {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0.5rem;
+  align-items: center;
+  padding: 7px 8px 6px 10px;
+  border-radius: 8px;
+  transition: outline 100ms linear, color 100ms linear;
+  outline: 2px solid transparent;
+  outline-color: transparent;
+}
+
+/* .shared-header-btn:focus:hover {
+  outline-width: 0px;
+  outline-color: #eef0ff;
+} */
+
+/** Undoing */
+.shared-header-btn:focus-visible,
+.shared-header-btn:focus {
+  box-shadow: none;
+  outline: solid 2px transparent;
+}
+
+.shared-header-btn:hover,
+.shared-header-btn:focus-visible,
+.shared-header-btn:active {
+  outline-color: #eef0ff;
+}
+
+.shared-header-btn:active,
+.shared-header-btn[aria-current="page"] {
+  background-color: #eef0ff;
+}
+
+.shared-header-btn[aria-current="page"] {
+  color: #5c6fff;
+}
+
+.shared-header-btn__icon {
+  font-size: 0;
+}

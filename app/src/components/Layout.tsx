@@ -9,6 +9,7 @@ import CurrentTab from "./CurrentTab";
 import styles from "./Layout.module.css";
 import Loading from "./Loading";
 import { Menu } from "./Menu";
+// import { SharedHeader } from "./SharedHeader";
 import ShareDialog from "./ShareDialog";
 
 const Layout = memo(
@@ -19,6 +20,7 @@ const Layout = memo(
     return (
       <LayoutWrapper isFullscreen={isFullscreen} key={url}>
         {isFullscreen ? null : <Menu fullText={fullText} />}
+        {/* {isFullscreen ? null : <SharedHeader />} */}
         <EditorWrapper>
           <CurrentTab>{children}</CurrentTab>
         </EditorWrapper>

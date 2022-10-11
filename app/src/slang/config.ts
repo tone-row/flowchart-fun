@@ -55,8 +55,7 @@ export const darkTheme: typeof colors = {
 };
 
 const config: Partial<SlangConfig> = {
-  baseFontFamily:
-    "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+  baseFontFamily: "Helvetica, 'Helvetica Neue', sans-serif",
   baseFontSizePx: 17,
   typeScaleBase: 1.25,
   baseFontLineHeight: 1.5,
