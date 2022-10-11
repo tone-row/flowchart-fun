@@ -71,7 +71,7 @@ export function useParseDoc(
   }, [fullText, setShareLink]);
 
   // have a throttled visible text
-  const [toParse, setToParse] = useThrottle(text, 2);
+  const [toParse, setToParse] = useThrottle(text, 4);
   useEffect(() => {
     setToParse(text);
   }, [text, setToParse]);
