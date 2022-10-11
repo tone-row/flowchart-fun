@@ -13,6 +13,6 @@ jobs:
         with:
           version: 7
       - name: Install Deps
-        run: yarn
+        run: pnpm install
       - name: Benchmark
         run: pnpm -F app benchmark
