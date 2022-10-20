@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "1.14.1",
+  "version": "1.15.0",
   "main": "module/module.js",
   "license": "MIT",
   "scripts": {
@@ -20,7 +20,7 @@
     "e2e": "npx playwright test --config=playwright.config.ts",
     "e2e:debug": "DEBUG=1 yarn e2e --workers 1",
     "e2e:generate": "npx playwright codegen localhost:3000",
-    "generate:types": "export $(cat .env.local | xargs) && npx openapi-typescript \"${SB_URL}/rest/v1/?apikey=${SB_ANON_KEY}\" --output src/types/supabase.ts",
+    "generate:types": "export $(cat .env.local | xargs) && supabase gen types typescript --db-url \"${DB_URL}\" > src/types/database.types.ts",
     "benchmark": "npx ts-node -O '{\"module\":\"commonjs\"}' --files benchmarks/utils.ts",
     "benchmark:write": "yarn benchmark --write",
     "benchmark:compare": "yarn benchmark --compare",
@@ -45,9 +45,8 @@
     "@sentry/tracing": "^6.18.1",
     "@stripe/react-stripe-js": "^1.6.0",
     "@stripe/stripe-js": "^1.19.1",
-    "@supabase/gotrue-js": "^1.22.22",
-    "@supabase/postgrest-js": "^0.38.0",
-    "@supabase/supabase-js": "^1.24.0",
+    "@supabase/gotrue-js": "^2",
+    "@supabase/supabase-js": "^2",
     "@svgr/webpack": "^6.3.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

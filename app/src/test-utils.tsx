@@ -1,5 +1,6 @@
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
+import { Session } from "@supabase/gotrue-js";
 import { render, RenderOptions } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
@@ -63,7 +64,7 @@ export async function sleep(ms: number) {
   await nextFrame();
 }
 
-export const fakeSession = {
+export const fakeSession: Session = {
   access_token: "xxx",
   token_type: "bearer",
   expires_in: 3600,
@@ -88,6 +89,11 @@ export const fakeSession = {
     updated_at: "2022-09-01T17:15:20.043769Z",
   },
   expires_at: 1662056120,
+};
+
+export const mockGetSessionReturn = {
+  data: { session: fakeSession },
+  error: null,
 };
 
 export const fakeCustomer = {
