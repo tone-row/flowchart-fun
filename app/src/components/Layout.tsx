@@ -2,7 +2,7 @@ import { memo, ReactNode, Suspense, useContext } from "react";
 import { useRouteMatch } from "react-router-dom";
 
 import { useFullscreen } from "../lib/hooks";
-import { Box } from "../slang";
+import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import ColorMode from "./ColorMode";
 import CurrentTab from "./CurrentTab";
@@ -43,13 +43,25 @@ function LayoutWrapper({
   isFullscreen: boolean;
 }) {
   const { showing } = useContext(AppContext);
+  const hash = window.location.hash;
+  const showBanner = hash.startsWith("#message=");
   return (
     <Box
       root
       className={styles.LayoutWrapper}
       data-showing={showing}
       data-fullscreen={isFullscreen}
+      data-banner={showBanner}
     >
+      {showBanner && (
+        <Box className={styles.Banner} p={3}>
+          <Type size={-1}>
+            {decodeURIComponent(
+              hash.slice("#message=".length).replace(/\+/g, "%20")
+            )}
+          </Type>
+        </Box>
+      )}
       {children}
     </Box>
   );
