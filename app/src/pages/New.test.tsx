@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils";
 import * as RQ from "react-query";
 
 import * as cy from "../lib/cytoscape";
@@ -6,17 +5,14 @@ import * as helpers from "../lib/helpers";
 import * as hooks from "../lib/hooks";
 import * as queries from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
-import { mockLocalStorage } from "../setupTests";
 import {
   fakeCustomer,
   fakeMakeCartResponse,
-  fakeSession,
-  flushMicrotasks,
   history,
+  mockGetSessionReturn,
   nextFrame,
   render,
   screen,
-  sleep,
 } from "../test-utils";
 import { New } from "./New";
 const fakeName = "fake-name";
@@ -66,8 +62,8 @@ describe("New Page", () => {
   it("should create a hosted chart if logged in", async () => {
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
-    const mockGetSession = jest.spyOn(supabase.auth, "session");
-    mockGetSession.mockReturnValue(fakeSession);
+    const mockGetSession = jest.spyOn(supabase.auth, "getSession");
+    mockGetSession.mockResolvedValue(mockGetSessionReturn);
 
     // Make sure we have a valid customer
     const mockUseQuery = jest.spyOn(queries, "useCustomerInfo");
@@ -97,8 +93,8 @@ describe("New Page", () => {
   it("should use template for auth user", async () => {
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
-    const mockGetSession = jest.spyOn(supabase.auth, "session");
-    mockGetSession.mockReturnValue(fakeSession);
+    const mockGetSession = jest.spyOn(supabase.auth, "getSession");
+    mockGetSession.mockResolvedValue(mockGetSessionReturn);
 
     // Make sure we have a valid customer
     const mockUseQuery = jest.spyOn(queries, "useCustomerInfo");

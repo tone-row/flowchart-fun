@@ -34,3 +34,14 @@
   align-content: start;
   grid-template-rows: auto minmax(0, 1fr);
 }
+
+.LayoutWrapper[data-banner="true"]:not([data-fullscreen="true"]) {
+  grid-template: auto auto minmax(0, 1fr) / none;
+}
+
+.Banner {
+  background-color: var(--palette-purple-3);
+  font-weight: 700;
+  text-align: center;
+  color: var(--palette-purple-0);
+}

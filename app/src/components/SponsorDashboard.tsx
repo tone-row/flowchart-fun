@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { ReactNode, useCallback, useContext, useState } from "react";
+import React, { ReactNode, useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
@@ -15,7 +15,15 @@ import { supabase } from "../lib/supabaseClient";
 import { Box, Type, TypeProps } from "../slang";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
-import { Button, Dialog, Notice, Page, Section, SectionTitle } from "./Shared";
+import {
+  Button,
+  Dialog,
+  Input,
+  Notice,
+  Page,
+  Section,
+  SectionTitle,
+} from "./Shared";
 import Spinner from "./Spinner";
 import styles from "./SponsorDashboard.module.css";
 
@@ -39,6 +47,63 @@ export function SponsorDashboard() {
   );
   const subscription = customer?.subscription;
 
+  const changeEmail = useMutation((event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    return (async () => {
+      const currentEmail = session?.user?.email;
+      if (!currentEmail) throw new Error("Not logged in");
+
+      if (!supabase) throw new Error("Unknown Error");
+
+      const form = event.target as HTMLFormElement;
+      const email = (form.elements.namedItem("email") as HTMLInputElement)
+        .value;
+      const emailConfirm = (
+        form.elements.namedItem("emailConfirm") as HTMLInputElement
+      ).value;
+
+      if (email !== emailConfirm) {
+        throw new Error("Emails do not match");
+      }
+
+      // if email is the same, do nothing
+      if (email.toLocaleLowerCase() === currentEmail.toLocaleLowerCase()) {
+        throw new Error("Email is the same");
+      }
+
+      // update the email in supabase
+      const { error } = await supabase.auth.updateUser({ email });
+
+      if (error) throw error;
+
+      // update the email in stripe using our endpoint
+      const result = await fetch("/api/update-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          oldEmail: currentEmail,
+          newEmail: email,
+        }),
+      }).then((res) => res.json());
+
+      // if it fails, we'll just let the user know
+      if (result.error) {
+        throw new Error(result.error);
+      }
+
+      if (!("success" in result) || !result.success)
+        throw new Error("Failed to update email");
+
+      const hash = `#message=${encodeURIComponent(
+        "Respond to confirmation sent to old and new email address. You can close this window."
+      )}`;
+
+      window.location.hash = hash;
+    })();
+  });
+
   if (customerIsLoading) return <Loading />;
 
   return (
@@ -55,6 +120,36 @@ export function SponsorDashboard() {
         </SectionTitle>
         <Type>{session?.user?.email}</Type>
         <Button self="start" onClick={signOut} text={t`Log Out`} />
+      </Section>
+      <Section>
+        <SectionTitle>
+          <Trans>Update Email</Trans>
+        </SectionTitle>
+        <Box as="form" gap={2} items="start" onSubmit={changeEmail.mutate}>
+          <Input
+            type="email"
+            name="email"
+            required
+            placeholder={t`New Email`}
+            disabled={changeEmail.isLoading}
+          />
+          <Input
+            type="email"
+            name="emailConfirm"
+            required
+            placeholder={t`Confirm New Email`}
+            disabled={changeEmail.isLoading}
+          />
+          <Button
+            type="submit"
+            self="start"
+            text={t`Change Email Address`}
+            disabled={changeEmail.isLoading}
+          />
+          {changeEmail.isError && (
+            <Notice>{(changeEmail.error as Error).message}</Notice>
+          )}
+        </Box>
       </Section>
       {subscription?.status === "canceled" && (
         <Section>

@@ -69,19 +69,6 @@ export default function Sponsor() {
         <LoginBlock />
         <SponsorBlock />
       </Box>
-      {/* <Box
-        content="start normal"
-        items="start stretch"
-        rowGap={4}
-        at={{
-          tablet: { template: "auto / minmax(0, 1fr) minmax(0, 1fr)", pt: 8 },
-        }}
-      >
-        <Box pt={4} px={4}>
-          <LoginForm />
-        </Box>
-        
-      </Box> */}
     </Box>
   );
 }
@@ -146,7 +133,7 @@ function SignUpForm() {
       if (createSubscriptionError) throw createSubscriptionError;
 
       // Send Sign In Link
-      const { error: supabaseError } = await supabase.auth.signIn({
+      const { error: supabaseError } = await supabase.auth.signInWithOtp({
         email,
       });
       if (supabaseError) throw supabaseError;

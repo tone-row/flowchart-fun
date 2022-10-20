@@ -1,11 +1,10 @@
 import { t } from "@lingui/macro";
-import { PostgrestError } from "@supabase/postgrest-js";
+import { PostgrestError } from "@supabase/supabase-js";
 import { useContext } from "react";
 import { QueryClient, useQuery } from "react-query";
 import Stripe from "stripe";
 
 import { AppContext, UserSettings } from "../components/AppContext";
-import { definitions } from "../types/supabase";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "./constants";
 import { supabase } from "./supabaseClient";
 
@@ -103,7 +102,7 @@ export async function login(email: string): Promise<boolean> {
   }
   if (result?.error) throw result.error;
   if (!response.ok) throw new Error("Unable to connect");
-  const { error: supabaseErr } = await supabase.auth.signIn({
+  const { error: supabaseErr } = await supabase.auth.signInWithOtp({
     email,
   });
   if (supabaseErr) throw supabaseErr;
@@ -174,14 +173,15 @@ ${t`Have fun! 🎉`}
 */`;
 
   return await supabase
-    .from<definitions["user_charts"]>("user_charts")
-    .insert({ name, chart: chart ?? defaultText, user_id });
+    .from("user_charts")
+    .insert({ name, chart: chart ?? defaultText, user_id })
+    .select();
 }
 
 async function userCharts() {
   if (!supabase) return;
   const { data, error } = await supabase
-    .from<definitions["user_charts"]>("user_charts")
+    .from("user_charts")
     .select("id,name,created_at,updated_at,is_public")
     .order("updated_at", { ascending: false });
   if (error) throw error;
@@ -205,7 +205,7 @@ async function getChart(id?: string) {
   if (!id) return;
   if (!supabase) return;
   const { data, error } = await supabase
-    .from<definitions["user_charts"]>("user_charts")
+    .from("user_charts")
     .select("id,name,chart,updated_at,created_at,public_id,is_public")
     .eq("id", id);
   if (error) throw error;
@@ -227,18 +227,16 @@ export function useChart(id?: string) {
 export async function updateChartText(chart: string, id?: string) {
   if (!id) return;
   if (!supabase) return;
-  return supabase
-    .from<definitions["user_charts"]>("user_charts")
-    .update({ chart })
-    .eq("id", id);
+  return supabase.from("user_charts").update({ chart }).eq("id", id);
 }
 
 export async function deleteChart({ chartId }: { chartId: number }) {
   if (!supabase) return;
   const { data, error } = await supabase
-    .from<definitions["user_charts"]>("user_charts")
+    .from("user_charts")
     .delete()
-    .match({ id: chartId });
+    .match({ id: chartId })
+    .select();
   if (error) throw error;
   return data;
 }
@@ -305,7 +303,7 @@ export async function createCustomer(email: string) {
 export async function renameChart(id: number, name: string) {
   if (!supabase) return;
   const { data, error } = await supabase
-    .from<definitions["user_charts"]>("user_charts")
+    .from("user_charts")
     .update({ name })
     .eq("id", id);
   if (error) throw error;
@@ -339,7 +337,7 @@ export async function makeChartPublic(id: string, isPublic: boolean) {
     while (error?.code === "23505") {
       const publicId = await generatePublicId();
       result = await supabase
-        .from<definitions["user_charts"]>("user_charts")
+        .from("user_charts")
         .update({ public_id: publicId, is_public: isPublic })
         .eq("id", id);
       error = result.error;
@@ -350,7 +348,7 @@ export async function makeChartPublic(id: string, isPublic: boolean) {
   } else {
     // Just update is_public
     const result = await supabase
-      .from<definitions["user_charts"]>("user_charts")
+      .from("user_charts")
       .update({ is_public: isPublic })
       .eq("id", id);
     if (result.error) throw result.error;
@@ -375,10 +373,7 @@ async function getPublicChart(publicId: string) {
   );
   if (error) throw error;
   if (!data) throw new Error("Invalid Chart");
-  return data as Pick<
-    definitions["user_charts"],
-    "name" | "chart" | "is_public"
-  >;
+  return data;
 }
 
 export function usePublicChart(publicId?: string) {
