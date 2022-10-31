@@ -1,9 +1,10 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$5 / Month": "5 美元/月",
-    "$50 / Year": "50 美元/年",
+    "$3 / Month": "3 美元/月",
+    "$30 / Year": "30 美元 / 年",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。",
+    Account: "帐户",
     "Already a sponsor? Log in here": "已经是赞助商了吗？在此登录",
     Amount: "数量",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -19,6 +20,7 @@
     Cancel: "取消",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "取消订阅。您的托管图表将变为只读。",
+    "Change Email Address": "更改电子邮件地址",
     Charts: "图表",
     "Check your email for a link to log in. You can close this window.":
       "检查您的电子邮件以获取登录链接。您可以关闭此窗口。",
@@ -30,6 +32,7 @@
     Close: "关闭",
     "Comic Book": "漫画书",
     Concentric: "同心",
+    "Confirm New Email": "确认新电子邮件",
     Contract: "缩小",
     "Convert to hosted chart?": "是否转换为托管图表？",
     Copy: "复制",
@@ -46,6 +49,7 @@
     Direction: "方向",
     "Do you want to cancel your subscription?": "您要取消订阅吗？",
     "Do you want to delete this?": "您要将其删除吗？",
+    Documentation: "文档",
     Download: "下载",
     "Download JPG": "下载 JPG",
     "Download PNG": "下载 PNG",
@@ -81,6 +85,7 @@
     "Hosted Charts": "托管的图表",
     "Indenting creates a link to the current line":
       "缩进可创建连接到当前行的链接",
+    Info: "信息",
     Language: "语言",
     Layout: "布局",
     "Learn More": "学到更多",
@@ -101,6 +106,7 @@
     "Need Help? <0>Check out our documentation.</0>":
       "需要帮助？<0>请查看我们的文档。</0>",
     New: "新",
+    "New Email": "新邮件",
     "Next charge": "下次扣费",
     Playbook: "剧本",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
@@ -117,10 +123,10 @@
     Settings: "设置",
     "Sign In": "登录",
     "Sign Up": "注册",
-    "Sponsor flowchart.fun for $5 a month to access hosted flowcharts and the newest styles and features":
-      "以每月 5 美元的价格赞助 flowchart.fun，以访问托管的流程图、最新的样式和功能",
-    "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to...":
-      "以每月 5 美元或每年 50 美元的价格赞助 flowchart.fun ，就可以获得......",
+    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
+      "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能",
+    "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
+      "赞助 <0>$3 / 月</0> 或 <1>$30 / 年</1> 的流程图.fun 以获得访问...",
     Sponsors: "赞助人",
     Start: "开始",
     Status: "状态",
@@ -134,6 +140,7 @@
     "This app works by typing": "这款应用的工作原理是输入",
     "Top to Bottom": "从上到下",
     "Try again": "重试",
+    "Update Email": "更新电子邮件",
     Updated: "已更新",
     User: "用户",
     "View on Github": "在 Github 上查看",
