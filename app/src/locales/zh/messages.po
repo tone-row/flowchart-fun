@@ -13,27 +13,31 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Sponsor.tsx:195
-msgid "$5 / Month"
-msgstr "5 美元/月"
+#: src/components/Sponsor.tsx:182
+msgid "$3 / Month"
+msgstr "3 美元/月"
 
-#: src/components/Sponsor.tsx:196
-msgid "$50 / Year"
-msgstr "50 美元/年"
+#: src/components/Sponsor.tsx:183
+msgid "$30 / Year"
+msgstr "30 美元 / 年"
 
 #: src/components/Navigation.tsx:380
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。"
 
-#: src/components/Sponsor.tsx:330
+#: src/components/SharedHeader.tsx:123
+msgid "Account"
+msgstr "帐户"
+
+#: src/components/Sponsor.tsx:317
 msgid "Already a sponsor? Log in here"
 msgstr "已经是赞助商了吗？在此登录"
 
-#: src/components/SponsorDashboard.tsx:157
+#: src/components/SponsorDashboard.tsx:252
 msgid "Amount"
 msgstr "数量"
 
-#: src/components/Feedback.tsx:102
+#: src/components/Feedback.tsx:98
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件至{0}。"
 
@@ -41,13 +45,13 @@ msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件
 msgid "Appearance"
 msgstr "外观"
 
-#: src/components/Feedback.tsx:119
+#: src/components/Feedback.tsx:115
 msgid "Back To Editor"
 msgstr "返回编辑器"
 
 #: src/components/Settings.tsx:135
-#: src/components/Sponsor.tsx:317
-#: src/components/SponsorDashboard.tsx:62
+#: src/components/Sponsor.tsx:304
+#: src/components/SponsorDashboard.tsx:157
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
@@ -63,25 +67,30 @@ msgstr "宽度优先"
 #: src/components/Navigation.tsx:269
 #: src/components/Navigation.tsx:546
 #: src/components/Navigation.tsx:596
-#: src/components/SponsorDashboard.tsx:127
-#: src/components/SponsorDashboard.tsx:138
-#: src/components/SponsorDashboard.tsx:227
-#: src/components/SponsorDashboard.tsx:239
-#: src/components/SponsorDashboard.tsx:283
+#: src/components/SponsorDashboard.tsx:222
+#: src/components/SponsorDashboard.tsx:233
+#: src/components/SponsorDashboard.tsx:322
+#: src/components/SponsorDashboard.tsx:334
+#: src/components/SponsorDashboard.tsx:378
 msgid "Cancel"
 msgstr "取消"
 
-#: src/components/SponsorDashboard.tsx:130
+#: src/components/SponsorDashboard.tsx:225
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
 
+#: src/components/SponsorDashboard.tsx:146
+msgid "Change Email Address"
+msgstr "更改电子邮件地址"
+
 #: src/components/Menu.tsx:111
 #: src/components/Menu.tsx:268
+#: src/components/SharedHeader.tsx:65
 msgid "Charts"
 msgstr "图表"
 
 #: src/components/LoginForm.tsx:38
-#: src/components/Sponsor.tsx:163
+#: src/components/Sponsor.tsx:150
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
@@ -118,7 +127,11 @@ msgstr "漫画书"
 msgid "Concentric"
 msgstr "同心"
 
-#: src/components/GraphOptionsBar.tsx:210
+#: src/components/SponsorDashboard.tsx:140
+msgid "Confirm New Email"
+msgstr "确认新电子邮件"
+
+#: src/components/GraphOptionsBar.tsx:209
 msgid "Contract"
 msgstr "缩小"
 
@@ -149,7 +162,7 @@ msgstr "复制 SVG 代码"
 msgid "Create"
 msgstr "创建"
 
-#: src/lib/queries.ts:163
+#: src/lib/queries.ts:162
 #: src/lib/useDefaultDoc.ts:7
 msgid "Create a link directly using the exact label text"
 msgstr "使用完全一样的标签文本，直接创建链接"
@@ -167,7 +180,7 @@ msgstr "深色"
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: src/components/SponsorDashboard.tsx:154
+#: src/components/SponsorDashboard.tsx:249
 msgid "Date"
 msgstr "日期"
 
@@ -178,17 +191,21 @@ msgstr "日期"
 msgid "Delete"
 msgstr "删除"
 
-#: src/components/GraphOptionsBar.tsx:181
+#: src/components/GraphOptionsBar.tsx:180
 msgid "Direction"
 msgstr "方向"
 
-#: src/components/SponsorDashboard.tsx:232
+#: src/components/SponsorDashboard.tsx:327
 msgid "Do you want to cancel your subscription?"
 msgstr "您要取消订阅吗？"
 
 #: src/components/Navigation.tsx:590
 msgid "Do you want to delete this?"
 msgstr "您要将其删除吗？"
+
+#: src/components/SharedHeader.tsx:91
+msgid "Documentation"
+msgstr "文档"
 
 #: src/components/ShareDialog.tsx:60
 msgid "Download"
@@ -221,6 +238,7 @@ msgstr "可编辑"
 
 #: src/components/Menu.tsx:101
 #: src/components/MobileTabToggle.tsx:21
+#: src/components/SharedHeader.tsx:51
 msgid "Editor"
 msgstr "编辑器"
 
@@ -228,7 +246,7 @@ msgstr "编辑器"
 msgid "Eggs"
 msgstr "蛋"
 
-#: src/components/Feedback.tsx:86
+#: src/components/Feedback.tsx:82
 #: src/components/LoginForm.tsx:53
 msgid "Email"
 msgstr "电子邮件"
@@ -243,7 +261,7 @@ msgstr "输入标题"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:219
+#: src/components/GraphOptionsBar.tsx:218
 msgid "Expand"
 msgstr "放大"
 
@@ -253,7 +271,7 @@ msgstr "放大"
 msgid "Export"
 msgstr "导出"
 
-#: src/components/Menu.tsx:156
+#: src/components/Menu.tsx:147
 #: src/components/Menu.tsx:264
 msgid "Feedback"
 msgstr "反馈"
@@ -299,16 +317,17 @@ msgstr "图表"
 msgid "Grid"
 msgstr "网格"
 
-#: src/lib/queries.ts:173
+#: src/lib/queries.ts:172
 #: src/lib/useDefaultDoc.ts:17
 msgid "Have fun! 🎉"
 msgstr "玩得开心！🎉"
 
-#: src/components/Menu.tsx:145
+#: src/components/Menu.tsx:136
+#: src/components/SharedHeader.tsx:77
 msgid "Help"
 msgstr "帮助"
 
-#: src/components/SponsorDashboard.tsx:144
+#: src/components/SponsorDashboard.tsx:239
 msgid "History"
 msgstr "历史"
 
@@ -322,16 +341,20 @@ msgstr "主页"
 msgid "Hosted Charts"
 msgstr "托管的图表"
 
-#: src/lib/queries.ts:161
+#: src/lib/queries.ts:160
 #: src/lib/useDefaultDoc.ts:5
 msgid "Indenting creates a link to the current line"
 msgstr "缩进可创建连接到当前行的链接"
+
+#: src/components/SharedHeader.tsx:111
+msgid "Info"
+msgstr "信息"
 
 #: src/components/Settings.tsx:49
 msgid "Language"
 msgstr "语言"
 
-#: src/components/GraphOptionsBar.tsx:153
+#: src/components/GraphOptionsBar.tsx:152
 msgid "Layout"
 msgstr "布局"
 
@@ -360,7 +383,7 @@ msgstr "链接"
 msgid "Local Charts"
 msgstr "本地的图表"
 
-#: src/components/SponsorDashboard.tsx:57
+#: src/components/SponsorDashboard.tsx:122
 msgid "Log Out"
 msgstr "登出"
 
@@ -402,11 +425,16 @@ msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "需要帮助？<0>请查看我们的文档。</0>"
 
 #: src/components/Menu.tsx:91
+#: src/components/SharedHeader.tsx:40
 msgid "New"
 msgstr "新"
 
-#: src/components/SponsorDashboard.tsx:89
-#: src/components/SponsorDashboard.tsx:280
+#: src/components/SponsorDashboard.tsx:133
+msgid "New Email"
+msgstr "新邮件"
+
+#: src/components/SponsorDashboard.tsx:184
+#: src/components/SponsorDashboard.tsx:375
 msgid "Next charge"
 msgstr "下次扣费"
 
@@ -445,10 +473,10 @@ msgstr "重命名"
 msgid "Reset"
 msgstr "重置"
 
-#: src/components/SponsorDashboard.tsx:117
-#: src/components/SponsorDashboard.tsx:274
-#: src/components/SponsorDashboard.tsx:278
-#: src/components/SponsorDashboard.tsx:287
+#: src/components/SponsorDashboard.tsx:212
+#: src/components/SponsorDashboard.tsx:369
+#: src/components/SponsorDashboard.tsx:373
+#: src/components/SponsorDashboard.tsx:382
 msgid "Resume Subscription"
 msgstr "恢复订阅"
 
@@ -456,7 +484,7 @@ msgstr "恢复订阅"
 msgid "Retro"
 msgstr "复古的"
 
-#: src/components/SponsorDashboard.tsx:235
+#: src/components/SponsorDashboard.tsx:330
 msgid "Return"
 msgstr "返回"
 
@@ -464,8 +492,9 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/Menu.tsx:165
+#: src/components/Menu.tsx:156
 #: src/components/Menu.tsx:266
+#: src/components/SharedHeader.tsx:115
 msgid "Settings"
 msgstr "设置"
 
@@ -473,49 +502,49 @@ msgstr "设置"
 msgid "Sign In"
 msgstr "登录"
 
-#: src/components/Sponsor.tsx:242
+#: src/components/Sponsor.tsx:229
 msgid "Sign Up"
 msgstr "注册"
 
 #: src/components/Navigation.tsx:63
-msgid "Sponsor flowchart.fun for $5 a month to access hosted flowcharts and the newest styles and features"
-msgstr "以每月 5 美元的价格赞助 flowchart.fun，以访问托管的流程图、最新的样式和功能"
+msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
+msgstr "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能"
 
 #: src/components/Sponsor.tsx:27
-msgid "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to..."
-msgstr "以每月 5 美元或每年 50 美元的价格赞助 flowchart.fun ，就可以获得......"
+msgid "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
+msgstr "赞助 <0>$3 / 月</0> 或 <1>$30 / 年</1> 的流程图.fun 以获得访问..."
 
-#: src/components/Menu.tsx:120
+#: src/components/Menu.tsx:165
 #: src/components/Menu.tsx:270
 msgid "Sponsors"
 msgstr "赞助人"
 
-#: src/components/SponsorDashboard.tsx:101
+#: src/components/SponsorDashboard.tsx:196
 msgid "Start"
 msgstr "开始"
 
-#: src/components/SponsorDashboard.tsx:80
+#: src/components/SponsorDashboard.tsx:175
 msgid "Status"
 msgstr "状态"
 
-#: src/components/Feedback.tsx:98
+#: src/components/Feedback.tsx:94
 #: src/components/Menu.tsx:401
 msgid "Submit"
 msgstr "提交"
 
-#: src/components/SponsorDashboard.tsx:75
+#: src/components/SponsorDashboard.tsx:170
 msgid "Subscription"
 msgstr "订阅"
 
-#: src/components/SponsorDashboard.tsx:112
+#: src/components/SponsorDashboard.tsx:207
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
-#: src/components/Feedback.tsx:117
+#: src/components/Feedback.tsx:113
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/GraphOptionsBar.tsx:224
+#: src/components/GraphOptionsBar.tsx:223
 msgid "Theme"
 msgstr "风格"
 
@@ -523,7 +552,7 @@ msgstr "风格"
 msgid "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these."
 msgstr "这些图表仅在此设备上的此浏览器中可用。<0/>清除浏览器的 local storage 将删除这些图表。"
 
-#: src/lib/queries.ts:160
+#: src/lib/queries.ts:159
 #: src/lib/useDefaultDoc.ts:4
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
@@ -536,11 +565,15 @@ msgstr "从上到下"
 msgid "Try again"
 msgstr "重试"
 
+#: src/components/SponsorDashboard.tsx:126
+msgid "Update Email"
+msgstr "更新电子邮件"
+
 #: src/components/Navigation.tsx:629
 msgid "Updated"
 msgstr "已更新"
 
-#: src/components/SponsorDashboard.tsx:54
+#: src/components/SponsorDashboard.tsx:119
 msgid "User"
 msgstr "用户"
 
@@ -548,11 +581,11 @@ msgstr "用户"
 msgid "View on Github"
 msgstr "在 Github 上查看"
 
-#: src/components/Feedback.tsx:69
+#: src/components/Feedback.tsx:65
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "我们感谢您的全部反馈、建议、报错和关于功能的需求！"
 
-#: src/components/Sponsor.tsx:249
+#: src/components/Sponsor.tsx:236
 msgid "We use cookies to keep you logged in."
 msgstr "我们使用 cookies 来让您保持登录状态。"
 
@@ -560,51 +593,51 @@ msgstr "我们使用 cookies 来让您保持登录状态。"
 msgid "What would you like to name this copy?"
 msgstr "你想将这个副本命名为什么？"
 
-#: src/components/Feedback.tsx:76
+#: src/components/Feedback.tsx:72
 msgid "What would you like to share with us?"
 msgstr "您想跟我们分享什么？"
 
 #: src/components/Navigation.tsx:406
-#: src/components/SponsorDashboard.tsx:65
+#: src/components/SponsorDashboard.tsx:160
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。"
 
-#: src/lib/queries.ts:165
+#: src/lib/queries.ts:164
 #: src/lib/useDefaultDoc.ts:9
 msgid "[custom ID] or"
 msgstr "[自定义 ID] 或"
 
-#: src/lib/queries.ts:162
+#: src/lib/queries.ts:161
 #: src/lib/useDefaultDoc.ts:6
 msgid "any text: before a colon creates a label"
 msgstr "任何文本：在冒号前创建一个标签"
 
-#: src/lib/queries.ts:166
+#: src/lib/queries.ts:165
 #: src/lib/useDefaultDoc.ts:10
 msgid "by adding an %5BID%5D and referencing that"
 msgstr "通过添加并引用一个 %5BID%5D"
 
-#: src/lib/queries.ts:171
+#: src/lib/queries.ts:170
 #: src/lib/useDefaultDoc.ts:15
 msgid "comments"
 msgstr "注释"
 
-#: src/lib/queries.ts:164
+#: src/lib/queries.ts:163
 #: src/lib/useDefaultDoc.ts:8
 msgid "like this: (This app works by typing)"
 msgstr "像这样：（这款应用的工作原理是输入）"
 
-#: src/lib/queries.ts:167
+#: src/lib/queries.ts:166
 #: src/lib/useDefaultDoc.ts:11
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "像这样：（自定义 ID）// 你也可以使用单行注释"
 
-#: src/lib/queries.ts:170
+#: src/lib/queries.ts:169
 #: src/lib/useDefaultDoc.ts:14
 msgid "multiline"
 msgstr "多行"
 
-#: src/lib/queries.ts:169
+#: src/lib/queries.ts:168
 #: src/lib/useDefaultDoc.ts:13
 msgid "or"
 msgstr "或"
