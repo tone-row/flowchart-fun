@@ -1,9 +1,10 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$5 / Month": "$5 / माह",
-    "$50 / Year": "$50 / वर्ष",
+    "$3 / Month": "$3 / महीना",
+    "$30 / Year": "$30 / वर्ष",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों.",
+    Account: "खाता",
     "Already a sponsor? Log in here":
       "पहले से ही एक स्पॉनसर हैं? यहां लॉगिन करें",
     Amount: "रकम",
@@ -20,6 +21,7 @@
     Cancel: "रद्द करें",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे.",
+    "Change Email Address": "ईमेल पता बदलें",
     Charts: "चार्ट",
     "Check your email for a link to log in. You can close this window.":
       "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं.",
@@ -31,6 +33,7 @@
     Close: "बंद करें",
     "Comic Book": "कॉमिक बुक",
     Concentric: "गाढ़ा",
+    "Confirm New Email": "नई ईमेल की पुष्टि करें",
     Contract: "सिकोड़ना",
     "Convert to hosted chart?": "होस्टेड चार्ट में कनवर्ट करें?",
     Copy: "कॉपी करें",
@@ -48,6 +51,7 @@
     "Do you want to cancel your subscription?":
       "क्या आप अपनी सदस्यता रद्द करना चाहते हैं?",
     "Do you want to delete this?": "क्या आप इसे डिलीट करना चाहते हैं?",
+    Documentation: "प्रलेखन",
     Download: "डाउनलोड",
     "Download JPG": "JPG डाउनलोड करें",
     "Download PNG": "PNG डाउनलोड करें",
@@ -83,6 +87,7 @@
     "Hosted Charts": "होस्ट किए गए चार्ट",
     "Indenting creates a link to the current line":
       "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है",
+    Info: "जानकारी",
     Language: "भाषा",
     Layout: "ख़ाका",
     "Learn More": "और अधिक जानें",
@@ -103,6 +108,7 @@
     "Need Help? <0>Check out our documentation.</0>":
       "मदद चाहिए? <0>हमारे दस्तावेज़ देखें।</0>",
     New: "नया",
+    "New Email": "नई ईमेल",
     "Next charge": "अगला चार्ज",
     Playbook: "प्लेबुक",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
@@ -119,10 +125,10 @@
     Settings: "सेटिंग",
     "Sign In": "साइन इन करें",
     "Sign Up": "साइन अप",
-    "Sponsor flowchart.fun for $5 a month to access hosted flowcharts and the newest styles and features":
-      "होस्टेड फ़्लोचार्ट और नए स्टाइल और फ़ीचर को एक्सेस करने के लिए flowchart.fun को 1$ प्रति माह देकर स्पॉन्सर करें",
-    "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to...":
-      "स्पॉनसर flowchart.fun $5/महीने या $50/साल के लिए, इस का एक्सेस पाने के ख़ातिर...",
+    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
+      "होस्ट किए गए फ़्लोचार्ट और नवीनतम शैलियों और सुविधाओं तक पहुँचने के लिए $3/माह या $30/वर्ष के लिए फ़्लोचार्ट.फ़न को प्रायोजित करें",
+    "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
+      "प्रायोजक फ़्लोचार्ट। तक पहुँच प्राप्त करने के लिए <0>$3/माह</0> या <1>$30/वर्ष</1> के लिए मज़ा–",
     Sponsors: "स्पॉन्सर्स",
     Start: "शुरू",
     Status: "स्टेटस",
@@ -136,6 +142,7 @@
     "This app works by typing": "यह ऐप टाइप द्वारा काम करता है",
     "Top to Bottom": "ऊपर से नीचे",
     "Try again": "फिर से कोशिश करें",
+    "Update Email": "ईमेल अपडेट करें",
     Updated: "अपडेट किया गया",
     User: "यूज़र",
     "View on Github": "Github पर देखें",

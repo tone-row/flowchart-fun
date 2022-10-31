@@ -1,9 +1,10 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$5 / Month": "5 $ / Monat",
-    "$50 / Year": "50 $ / Jahr",
+    "$3 / Month": "$3 / Monat",
+    "$30 / Year": "$30 / Year",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Greifen Sie von überall auf diese Diagramme zu.<0/>Teilen/Einbetten von Diagrammen, die mit Ihren Bearbeitungen synchronisiert bleiben.",
+    Account: "Konto",
     "Already a sponsor? Log in here":
       "Sind Sie schon ein Sponsor? Hier anmelden",
     Amount: "Betrag",
@@ -20,6 +21,7 @@
     Cancel: "Abbrechen",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "Kündigen Sie Ihr Abonnement. Ihre gehosteten Diagramme werden schreibgeschützt.",
+    "Change Email Address": "E-Mail Adresse ändern",
     Charts: "Diagramme",
     "Check your email for a link to log in. You can close this window.":
       "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses Fenster schließen.",
@@ -31,6 +33,7 @@
     Close: "Schließen",
     "Comic Book": "Comic-Buch",
     Concentric: "Konzentrisch",
+    "Confirm New Email": "Neue E-Mail bestätigen",
     Contract: "Zusammenziehen",
     "Convert to hosted chart?": "In gehostetes Diagramm konvertieren?",
     Copy: "Kopieren",
@@ -48,6 +51,7 @@
     "Do you want to cancel your subscription?":
       "Möchten Sie Ihr Abonnement kündigen?",
     "Do you want to delete this?": "Möchten Sie dies löschen?",
+    Documentation: "Dokumentation",
     Download: "Herunterladen",
     "Download JPG": "JPG herunterladen",
     "Download PNG": "PNG herunterladen",
@@ -83,6 +87,7 @@
     "Hosted Charts": "Gehostete Diagramme",
     "Indenting creates a link to the current line":
       "Durch das Einrücken wird eine Verbindung zur aktuellen Zeile hergestellt",
+    Info: "Info",
     Language: "Sprache",
     Layout: "Layout",
     "Learn More": "Mehr erfahren",
@@ -103,6 +108,7 @@
     "Need Help? <0>Check out our documentation.</0>":
       "Brauchen Sie Hilfe? <0>Sehen Sie sich unsere Dokumentation an.</0>",
     New: "Neues",
+    "New Email": "Neue e-mail",
     "Next charge": "Nächste Gebühr",
     Playbook: "Spielbuch",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
@@ -119,10 +125,10 @@
     Settings: "Einstellungen",
     "Sign In": "Einloggen",
     "Sign Up": "Registrieren",
-    "Sponsor flowchart.fun for $5 a month to access hosted flowcharts and the newest styles and features":
-      "Sponsern Sie flowchart.fun für 5 $ pro Monat, um Zugang zu gehosteten Flussdiagrammen und den neuesten Stilen und Funktionen zu erhalten",
-    "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to...":
-      "Sponsern Sie flowchart.fun für <0>$5 / Monat</0> oder <1>$50 / Jahr</1>, um Zugang zu...",
+    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
+      "Sponsern Sie flowchart.fun für 3 $ / Monat oder 30 $ / Jahr, um auf gehostete Flussdiagramme und die neuesten Stile und Funktionen zuzugreifen",
+    "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
+      "Sponsern Sie flowchart.fun für <0>3 $ / Monat</0> oder <1>30 $ / Jahr</1>, um Zugang zu erhalten zu...",
     Sponsors: "Sponsoren",
     Start: "Start",
     Status: "Status",
@@ -136,6 +142,7 @@
     "This app works by typing": "Diese App funktioniert durch Tippen",
     "Top to Bottom": "Von oben nach unten",
     "Try again": "Erneut versuchen",
+    "Update Email": "E-Mail aktualisieren",
     Updated: "Aktualisiert",
     User: "Benutzer",
     "View on Github": "Auf Github ansehen",

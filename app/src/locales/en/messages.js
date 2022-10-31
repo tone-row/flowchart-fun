@@ -1,9 +1,10 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$5 / Month": "$5 / Month",
-    "$50 / Year": "$50 / Year",
+    "$3 / Month": "$3 / Month",
+    "$30 / Year": "$30 / Year",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.",
+    Account: "Account",
     "Already a sponsor? Log in here": "Already a sponsor? Log in here",
     Amount: "Amount",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -19,6 +20,7 @@
     Cancel: "Cancel",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "Cancel your subscription. Your hosted charts will become read-only.",
+    "Change Email Address": "Change Email Address",
     Charts: "Charts",
     "Check your email for a link to log in. You can close this window.":
       "Check your email for a link to log in. You can close this window.",
@@ -30,6 +32,7 @@
     Close: "Close",
     "Comic Book": "Comic Book",
     Concentric: "Concentric",
+    "Confirm New Email": "Confirm New Email",
     Contract: "Contract",
     "Convert to hosted chart?": "Convert to hosted chart?",
     Copy: "Copy",
@@ -47,6 +50,7 @@
     "Do you want to cancel your subscription?":
       "Do you want to cancel your subscription?",
     "Do you want to delete this?": "Do you want to delete this?",
+    Documentation: "Documentation",
     Download: "Download",
     "Download JPG": "Download JPG",
     "Download PNG": "Download PNG",
@@ -82,6 +86,7 @@
     "Hosted Charts": "Hosted Charts",
     "Indenting creates a link to the current line":
       "Indenting creates a link to the current line",
+    Info: "Info",
     Language: "Language",
     Layout: "Layout",
     "Learn More": "Learn More",
@@ -102,6 +107,7 @@
     "Need Help? <0>Check out our documentation.</0>":
       "Need Help? <0>Check out our documentation.</0>",
     New: "New",
+    "New Email": "New Email",
     "Next charge": "Next charge",
     Playbook: "Playbook",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
@@ -118,10 +124,10 @@
     Settings: "Settings",
     "Sign In": "Sign In",
     "Sign Up": "Sign Up",
-    "Sponsor flowchart.fun for $5 a month to access hosted flowcharts and the newest styles and features":
-      "Sponsor flowchart.fun for $5 a month to access hosted flowcharts and the newest styles and features",
-    "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to...":
-      "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to...",
+    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
+      "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features",
+    "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
+      "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...",
     Sponsors: "Sponsors",
     Start: "Start",
     Status: "Status",
@@ -135,6 +141,7 @@
     "This app works by typing": "This app works by typing",
     "Top to Bottom": "Top to Bottom",
     "Try again": "Try again",
+    "Update Email": "Update Email",
     Updated: "Updated",
     User: "User",
     "View on Github": "View on Github",

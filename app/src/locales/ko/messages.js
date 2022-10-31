@@ -1,9 +1,10 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$5 / Month": "$5 / 월",
-    "$50 / Year": "$50 / 연",
+    "$3 / Month": "$3/월",
+    "$30 / Year": "$30/년",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요",
+    Account: "계정",
     "Already a sponsor? Log in here":
       "이미 후원중이신가요? 여기서 로그인하세요",
     Amount: "금액",
@@ -20,6 +21,7 @@
     Cancel: "취소",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다.",
+    "Change Email Address": "이메일 주소 변경",
     Charts: "차트",
     "Check your email for a link to log in. You can close this window.":
       "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다.",
@@ -31,6 +33,7 @@
     Close: "닫기",
     "Comic Book": "만화책",
     Concentric: "동심",
+    "Confirm New Email": "새 이메일 확인",
     Contract: "줄다",
     "Convert to hosted chart?": "호스팅 차트로 변환하시겠습니까?",
     Copy: "복사",
@@ -47,6 +50,7 @@
     Direction: "방향",
     "Do you want to cancel your subscription?": "구독을 취소하시겠습니까?",
     "Do you want to delete this?": "본 항목을 삭제하시겠습니까?",
+    Documentation: "선적 서류 비치",
     Download: "다운로드",
     "Download JPG": "JPG 다운로드",
     "Download PNG": "PNG 다운로드",
@@ -82,6 +86,7 @@
     "Hosted Charts": "호스트 차트",
     "Indenting creates a link to the current line":
       "들여쓰기는 현재 줄에 대한 링크를 생성합니다",
+    Info: "정보",
     Language: "언어",
     Layout: "레이아웃",
     "Learn More": "더 알아보기",
@@ -102,6 +107,7 @@
     "Need Help? <0>Check out our documentation.</0>":
       "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</0>",
     New: "신규",
+    "New Email": "새 이메일",
     "Next charge": "다음 청구 금액",
     Playbook: "플레이북",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
@@ -118,10 +124,10 @@
     Settings: "설정",
     "Sign In": "로그인",
     "Sign Up": "가입",
-    "Sponsor flowchart.fun for $5 a month to access hosted flowcharts and the newest styles and features":
-      "Flowchart.fun을 월 5달러에 후원해서 호스트 플로우차트, 최신 스타일과 기능을 이용하세요",
-    "Sponsor flowchart.fun for <0>$5/month</0> or <1>$50/year</1> to get access to...":
-      "1개월에 $5 또는 1년에 $50으로 다음 기능 잠금해제...",
+    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
+      "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원",
+    "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
+      "<0>$3/월</0> 또는 <1>$30/년</1>에 대해 순서도.fun 후원하기–",
     Sponsors: "후원자",
     Start: "시작",
     Status: "상태",
@@ -135,6 +141,7 @@
     "This app works by typing": "이 앱은 타이핑으로 작동합니다",
     "Top to Bottom": "위에서 아래로",
     "Try again": "다시 시도하세요",
+    "Update Email": "이메일 업데이트",
     Updated: "업데이트됨",
     User: "사용자",
     "View on Github": "Github에서 보기",
