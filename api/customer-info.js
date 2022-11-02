@@ -6,7 +6,7 @@ const validPrices = [
   process.env.STRIPE_PRICE_ID_YEARLY,
   process.env.LEGACY_STRIPE_PRICE_ID,
   process.env.LEGACY_STRIPE_PRICE_ID_YEARLY,
-  ...OTHER_VALID_STRIPE_PRICE_IDS.split(","),
+  ...process.env.OTHER_VALID_STRIPE_PRICE_IDS.split(","),
 ];
 
 export default async function handler(req, res) {
