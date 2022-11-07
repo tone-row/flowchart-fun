@@ -124,6 +124,22 @@ declare global {
 		background-color: #EEF0FF;
 		padding-inline: 20px;
 		padding-bottom: 20px;
+		background-blend-mode: normal;
+		background-color: #0000;
+		background-image: repeating-linear-gradient(
+				360deg,
+				#d1d9ff61,
+				#d1d9ff61 1px,
+				#fff0 1px 21px
+			),
+			repeating-linear-gradient(291deg, #d1d9ff61, #d1d9ff61 1px, #fff0 1px 21px),
+			linear-gradient(90deg, #eef0ff, #eef0ff 30%);
+		background-position: 0 0;
+		background-repeat: repeat, repeat, repeat;
+		background-size: 100% 100%;
+		background-attachment: fixed, fixed, fixed;
+		background-origin: padding-box, padding-box, padding-box;
+		background-clip: border-box, border-box, border-box;
 	}
 
 	body::after {
@@ -148,7 +164,7 @@ declare global {
 		left: 0;
 		width: 100%;
 		z-index: -1;
-		mix-blend-mode: color-burn;
+		opacity: 0.2;
 	}
 
 	h1 {
