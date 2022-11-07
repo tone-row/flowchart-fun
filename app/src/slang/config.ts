@@ -34,6 +34,7 @@ export const colors = {
   input: palette.white[5],
   brandHsl: "233, 100%, 68%",
   darkHighlight: palette.purple[4],
+  headerBtnHover: palette.purple[3],
 };
 
 export const darkTheme: typeof colors = {
@@ -52,6 +53,7 @@ export const darkTheme: typeof colors = {
   input: palette.black[1],
   brandHsl: "233, 100%, 68%",
   darkHighlight: palette.purple[2],
+  headerBtnHover: palette.purple[3],
 };
 
 const config: Partial<SlangConfig> = {

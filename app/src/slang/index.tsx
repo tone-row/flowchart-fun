@@ -25,6 +25,7 @@ type Colors =
   | "color-input"
   | "color-brandHsl"
   | "color-darkHighlight"
+  | "color-headerBtnHover"
   | "palette-white-0"
   | "palette-white-1"
   | "palette-white-2"

@@ -639,6 +639,7 @@ body {
 	--color-input:#fafafa;
 	--color-brandHsl:233, 100%, 68%;
 	--color-darkHighlight:#001EFF;
+	--color-headerBtnHover:#EFF0FF;
  }
 
 .slang-box.flow {
