@@ -23,8 +23,10 @@ import {
   memo,
   ReactNode,
   useContext,
+  useEffect,
+  useState,
 } from "react";
-import { useHistory, useRouteMatch } from "react-router-dom";
+import { useHistory, useLocation, useRouteMatch } from "react-router-dom";
 
 import { gaChangeTab, gaNewChart } from "../lib/analytics";
 import { AppContext } from "./AppContext";
@@ -35,18 +37,27 @@ export const SharedHeader = memo(function SharedHeader() {
   const { push } = useHistory();
   const { url } = useRouteMatch();
   const isDocsPage = url === "/h" && showing === "editor";
+  const [collapsed, setCollapsed] = useState(true);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    setCollapsed(true);
+  }, [pathname, showing]);
   return (
     <NavigationMenu.Root asChild>
-      <header className="shared-header">
+      <header className={`shared-header ${collapsed ? "collapsed" : ""}`}>
         <NavigationMenu.List asChild>
           <nav className="shared-header__left">
-            <div className="shared-header__logo">
+            <button
+              onClick={() => setCollapsed(!collapsed)}
+              className="shared-header__logo"
+            >
               <BrandSvg width={40} />
-            </div>
+            </button>
             <NavigationMenu.Item asChild>
               <HeaderButton
                 label={t`New`}
                 icon={<Plus height={20} width={20} />}
+                className="shared-header__new"
                 onClick={() => {
                   push("/n");
                   setShowing("editor");
@@ -79,83 +90,126 @@ export const SharedHeader = memo(function SharedHeader() {
                 }}
               />
             </NavigationMenu.Item>
-            <DropdownMenu.Root>
-              <DropdownMenu.Trigger asChild>
-                <HeaderButton
-                  label={t`Help`}
-                  aria-current={
-                    showing === "feedback" || isDocsPage ? "page" : undefined
-                  }
-                  icon={<Question height={20} width={20} />}
-                />
-              </DropdownMenu.Trigger>
-              <DropdownMenu.Content
-                align="start"
-                className="shared-header__dropdown"
-              >
-                <DropdownMenu.Item asChild>
+            <DesktopOnly>
+              <DropdownMenu.Root>
+                <DropdownMenu.Trigger asChild>
                   <HeaderButton
-                    label={t`Documentation`}
-                    icon={<Book height={20} width={20} />}
-                    aria-current={isDocsPage ? "page" : undefined}
-                    onClick={() => {
-                      push("/h");
-                      setShowing("editor");
-                      gaChangeTab({ action: "help" });
-                    }}
+                    label={t`Help`}
+                    aria-current={
+                      showing === "feedback" || isDocsPage ? "page" : undefined
+                    }
+                    icon={<Question height={20} width={20} />}
                   />
-                </DropdownMenu.Item>
-                <DropdownMenu.Item asChild>
-                  <HeaderButton
-                    label={t`Feedback`}
-                    icon={<Chat height={20} width={20} />}
-                    aria-current={showing === "feedback" ? "page" : undefined}
-                    onClick={() => {
-                      setShowing("feedback");
-                      gaChangeTab({ action: "feedback" });
-                    }}
-                  />
-                </DropdownMenu.Item>
-              </DropdownMenu.Content>
-            </DropdownMenu.Root>
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Content
+                  align="start"
+                  className="shared-header__dropdown"
+                >
+                  <DropdownMenu.Item asChild>
+                    <HeaderButton
+                      label={t`Documentation`}
+                      icon={<Book height={20} width={20} />}
+                      aria-current={isDocsPage ? "page" : undefined}
+                      onClick={() => {
+                        push("/h");
+                        setShowing("editor");
+                        gaChangeTab({ action: "help" });
+                      }}
+                    />
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item asChild>
+                    <HeaderButton
+                      label={t`Feedback`}
+                      icon={<Chat height={20} width={20} />}
+                      aria-current={showing === "feedback" ? "page" : undefined}
+                      onClick={() => {
+                        setShowing("feedback");
+                        gaChangeTab({ action: "feedback" });
+                      }}
+                    />
+                  </DropdownMenu.Item>
+                </DropdownMenu.Content>
+              </DropdownMenu.Root>
+            </DesktopOnly>
+            <HeaderButton
+              label={t`Documentation`}
+              icon={<Book height={20} width={20} />}
+              aria-current={isDocsPage ? "page" : undefined}
+              className="mobile-only"
+              onClick={() => {
+                push("/h");
+                setShowing("editor");
+                gaChangeTab({ action: "help" });
+              }}
+            />
+            <HeaderButton
+              label={t`Feedback`}
+              icon={<Chat height={20} width={20} />}
+              aria-current={showing === "feedback" ? "page" : undefined}
+              className="mobile-only"
+              onClick={() => {
+                setShowing("feedback");
+                gaChangeTab({ action: "feedback" });
+              }}
+            />
           </nav>
         </NavigationMenu.List>
         <NavigationMenu.List asChild>
           <nav className="shared-header__right">
-            <DropdownMenu.Root>
-              <DropdownMenu.Trigger asChild>
-                <HeaderButton
-                  label={t`Info`}
-                  icon={<Info height={20} width={20} />}
-                />
-              </DropdownMenu.Trigger>
-              <DropdownMenu.Content
-                align="start"
-                className="shared-header__dropdown"
-              >
-                <DropdownMenu.Item asChild>
-                  <HeaderLink
-                    href="/blog/"
-                    label={t`Blog`}
-                    icon={<PencilLine height={20} width={20} />}
+            <DesktopOnly>
+              <DropdownMenu.Root>
+                <DropdownMenu.Trigger asChild>
+                  <HeaderButton
+                    label={t`Info`}
+                    icon={<Info height={20} width={20} />}
                   />
-                </DropdownMenu.Item>
-                <DropdownMenu.Item asChild>
-                  <HeaderLink
-                    href="/blog/changelog"
-                    label={t`Changelog`}
-                    icon={<Notebook height={20} width={20} />}
-                  />
-                </DropdownMenu.Item>
-                <DropdownMenu.Item asChild>
-                  <HeaderLink
-                    href="/blog/roadmap"
-                    label={t`Roadmap`}
-                    icon={<Signpost height={20} width={20} />}
-                  />
-                </DropdownMenu.Item>
-              </DropdownMenu.Content>
-            </DropdownMenu.Root>
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Content
+                  align="start"
+                  className="shared-header__dropdown"
+                >
+                  <DropdownMenu.Item asChild>
+                    <HeaderLink
+                      href="/blog/"
+                      label={t`Blog`}
+                      icon={<PencilLine height={20} width={20} />}
+                    />
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item asChild>
+                    <HeaderLink
+                      href="/blog/changelog"
+                      label={t`Changelog`}
+                      icon={<Notebook height={20} width={20} />}
+                    />
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item asChild>
+                    <HeaderLink
+                      href="/blog/roadmap"
+                      label={t`Roadmap`}
+                      icon={<Signpost height={20} width={20} />}
+                    />
+                  </DropdownMenu.Item>
+                </DropdownMenu.Content>
+              </DropdownMenu.Root>
+            </DesktopOnly>
+            <HeaderLink
+              href="/blog/"
+              label={t`Blog`}
+              className="mobile-only"
+              icon={<PencilLine height={20} width={20} />}
+            />
+            <HeaderLink
+              href="/blog/changelog"
+              label={t`Changelog`}
+              className="mobile-only"
+              icon={<Notebook height={20} width={20} />}
+            />
+            <HeaderLink
+              href="/blog/roadmap"
+              label={t`Roadmap`}
+              className="mobile-only"
+              icon={<Signpost height={20} width={20} />}
+            />
             <HeaderButton
               label={t`Settings`}
               icon={<Gear height={20} width={20} />}
@@ -191,9 +245,14 @@ type HeaderButtonProps = {
 
 // forward ref
 const HeaderButton = forwardRef<HTMLButtonElement, HeaderButtonProps>(
-  ({ label: children, icon, ...props }, ref) => {
+  ({ label: children, icon, className = "", ...props }, ref) => {
     return (
-      <button className="shared-header-btn" aria-current {...props} ref={ref}>
+      <button
+        className={`shared-header-btn ${className}`}
+        aria-current
+        {...props}
+        ref={ref}
+      >
         <span className="shared-header-btn__icon">{icon}</span>
         <span className="shared-header-btn__label">{children}</span>
       </button>
@@ -209,9 +268,14 @@ type HeaderLinkProps = {
 } & LinkHTMLAttributes<HTMLAnchorElement>;
 
 const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
-  ({ label: children, icon, ...props }, ref) => {
+  ({ label: children, icon, className = "", ...props }, ref) => {
     return (
-      <a className="shared-header-btn" aria-current {...props} ref={ref}>
+      <a
+        className={`shared-header-btn ${className}`}
+        aria-current
+        {...props}
+        ref={ref}
+      >
         <span className="shared-header-btn__icon">{icon}</span>
         <span className="shared-header-btn__label">{children}</span>
       </a>
@@ -220,3 +284,11 @@ const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
 );
 
 HeaderLink.displayName = "HeaderLink";
+
+function DesktopOnly({ children }: { children: ReactNode }) {
+  return <div className="desktop-only">{children}</div>;
+}
+
+function MobileOnly({ children }: { children: ReactNode }) {
+  return <div className="mobile-only">{children}</div>;
+}

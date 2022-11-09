@@ -22,9 +22,9 @@ const Layout = memo(
       <LayoutWrapper isFullscreen={isFullscreen} key={url}>
         {/* {isFullscreen ? null : <Menu fullText={fullText} />} */}
         {isFullscreen ? null : <SharedHeader />}
-        <EditorWrapper>
+        <CurrentTabWrapper>
           <CurrentTab>{children}</CurrentTab>
-        </EditorWrapper>
+        </CurrentTabWrapper>
         <ColorMode />
         {tab === "editor" && <ShareDialog />}
       </LayoutWrapper>
@@ -68,7 +68,7 @@ function LayoutWrapper({
   );
 }
 
-function EditorWrapper({ children }: { children: ReactNode }) {
+function CurrentTabWrapper({ children }: { children: ReactNode }) {
   const { showing, mobileEditorTab } = useContext(AppContext);
   return (
     <Box

@@ -1,0 +1,72 @@
+.EditorWrapper {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: calc(var(--spacer-px) * 5);
+}
+
+.EditorWrapper header {
+  padding: calc(var(--spacer-px) * 5) 26px 0;
+}
+
+.HeaderTitle {
+  display: flex;
+  align-items: baseline;
+  gap: calc(var(--spacer-px) * 5);
+}
+
+.ShareButton {
+  padding: 7px 14px 6px 15px;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  color: var(--palette-white-0);
+  border-radius: 9999px;
+  background-color: var(--palette-purple-0);
+  line-height: 1 !important;
+}
+
+.ShareButton:focus {
+  box-shadow: none;
+}
+
+.ShareButton:hover,
+.ShareButton:focus-visible {
+  outline: 4px solid var(--palette-purple-3);
+  outline-color: hsla(var(--color-brandHsl), 0.5);
+}
+
+.ShareButton:active {
+  background-color: var(--palette-purple-4);
+  outline-color: var(--palette-purple-2);
+}
+
+.EditorWrapper [data-rename-button] {
+  padding: calc(var(--spacer-px) * 0.5);
+  margin-left: calc(var(--spacer-px) * -0.5);
+}
+
+.EditorWrapper [data-rename-button]:hover,
+.EditorWrapper [data-rename-button]:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  color: var(--color-uiAccent);
+  text-decoration-color: var(--color-uiAccent);
+}
+
+.EditorWrapper [data-rename-button]:active {
+  color: var(--color-edgeHover);
+  text-decoration-color: var(--color-edgeHover);
+}
+
+.EditorWrapper [data-rename-button]:focus {
+  box-shadow: none;
+}
+
+.readOnly {
+  text-transform: uppercase;
+  color: var(--color-edgeHover);
+  font-weight: 700;
+}

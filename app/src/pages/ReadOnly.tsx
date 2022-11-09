@@ -2,6 +2,7 @@ import Editor, { OnMount } from "@monaco-editor/react";
 import { useEffect, useRef, useState } from "react";
 
 import EditorError from "../components/EditorError";
+import { EditorWrapper } from "../components/EditorWrapper";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
@@ -55,20 +56,22 @@ function ReadOnly() {
         isFrozen={isFrozen}
         fullText={fullText}
       >
-        <Editor
-          value={text}
-          // @ts-ignore
-          wrapperClassName={styles.Editor}
-          defaultLanguage={languageId}
-          options={{
-            ...editorOptions,
-            readOnly: true,
-          }}
-          defaultValue={text}
-          theme={mode === "dark" ? themeNameDark : themeNameLight}
-          loading={loading.current}
-          onMount={onMount}
-        />
+        <EditorWrapper fullText={fullText}>
+          <Editor
+            value={text}
+            // @ts-ignore
+            wrapperClassName={styles.Editor}
+            defaultLanguage={languageId}
+            options={{
+              ...editorOptions,
+              readOnly: true,
+            }}
+            defaultValue={text}
+            theme={mode === "dark" ? themeNameDark : themeNameLight}
+            loading={loading.current}
+            onMount={onMount}
+          />
+        </EditorWrapper>
         <EditorError />
       </Main>
     </Layout>

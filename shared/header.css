@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   grid-auto-flow: column;
-  padding: 7.5px 10px;
+  padding: 4px 10px;
 }
 
 .shared-header nav {
@@ -19,6 +19,11 @@
 
 .shared-header__logo {
   font-size: 0;
+}
+
+.shared-header__logo:focus,
+.shared-header__logo:focus-visible {
+  box-shadow: none;
 }
 
 .shared-header__logo svg path {
@@ -76,7 +81,6 @@ body:not([class*="disableAnimation"]) .shared-header-btn {
   border-radius: var(--rad);
   list-style: none;
   display: grid;
-  box-shadow: 1px 1px 3px -1px var(--color-edgeHover);
 }
 
 .shared-header__dropdown .shared-header-btn {
@@ -99,4 +103,77 @@ body:not([class*="disableAnimation"]) .shared-header-btn {
 .shared-header__dropdown .shared-header-btn:active {
   background-color: var(--color-uiAccent);
   outline: none;
+}
+
+@media (max-width: 799px) {
+  .shared-header {
+    --top: var(--spacer-px) * 12;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: var(--color-background);
+    grid-auto-flow: row;
+    justify-content: stretch;
+    gap: 0.5rem;
+    padding-inline: 0;
+    padding-top: calc(var(--top));
+    padding-bottom: calc(var(--spacer-px) * 1);
+    width: 300px;
+    max-width: calc(100% - 2rem);
+    transition: clip-path 100ms linear;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    border: 1px solid var(--color-lineColor);
+    border-width: 0px 0px 1px 1px;
+  }
+
+  .shared-header.collapsed {
+    --h: 45px;
+    --w: 67px;
+    background-color: transparent;
+    clip-path: polygon(
+      calc(100% - var(--w)) 0,
+      100% 0,
+      100% var(--h),
+      calc(100% - var(--w)) var(--h)
+    );
+  }
+
+  .shared-header nav {
+    grid-auto-flow: row;
+    grid-gap: 0.5rem;
+  }
+
+  .shared-header__logo {
+    position: absolute;
+    top: calc(-50px);
+    right: 0;
+    padding: calc(var(--spacer-px) * 3);
+  }
+}
+
+/* .shared-header__new {
+  padding-left: calc(var(--spacer-px) * 2);
+  padding-right: calc(var(--spacer-px) * 3);
+  border: 1px solid var(--color-edgeHover);
+}
+
+.shared-header__new:hover,
+.shared-header__new:focus-visible,
+.shared-header__new:active {
+  background-color: hsla(var(--color-brandHsl), 1);
+} */
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
 }
