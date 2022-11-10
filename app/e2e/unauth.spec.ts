@@ -15,8 +15,8 @@ test.describe("unauth", () => {
 
     await page.click('button:has-text("Learn More")');
 
-    const title = page.locator('h1:has-text("Sponsors")');
-    await expect(title).toBeVisible();
+    // Expect "Sponsor flowchart.fun" to be visible
+    await expect(page.getByText(/Sponsor flowchart.fun/i)).toBeVisible();
   });
 
   test("Create New Local Chart", async ({ page }) => {
@@ -112,7 +112,7 @@ test.describe("unauth", () => {
     expect(new URL(page.url()).pathname).toBe("/");
 
     // Click button[role="tab"]:has-text("Create")
-    await page.locator('button[role="tab"]:has-text("New")').click();
+    await page.locator('button:has-text("New")').click();
 
     // Make sure no longer on index
     expect(new URL(page.url()).pathname).not.toBe("/");
@@ -124,10 +124,17 @@ test.describe("unauth", () => {
   });
 
   test("View an Example", async ({ page }) => {
-    await goToTab(page, "Help");
+    // click button with text "Help"
+    await page.locator('button:has-text("Help")').click();
+
+    // click button with text "Documentation"
+    await page.locator('button:has-text("Documentation")').first().click();
+
     await expect(page).toHaveURL(`${BASE_URL}/h`);
+
     // Click text=Table of Contents
     await page.locator("text=Table of Contents").click();
+
     // Click a:has-text("Adding Shapes and Colors")
     await page.locator('a:has-text("Adding Shapes and Colors")').click();
     await expect(page).toHaveURL(`${BASE_URL}/h#adding-shapes-and-colors`);
@@ -265,8 +272,9 @@ test.describe("unauth", () => {
     await goToTab(page, "Settings");
     // Click [aria-label="Select Language\: Deutsch"]
     await page.locator('[aria-label="Select Language\\: Deutsch"]').click();
-    // Click h1:has-text("Einstellungen")
-    await expect(page.locator('h1:has-text("Einstellungen")')).toBeVisible();
+
+    // Expect to find a button with the text "Einstellungen"
+    await expect(page.getByText(/Einstellungen/)).toBeVisible();
   });
 
   test("Change Appearance", async ({ page }) => {
@@ -284,9 +292,15 @@ test.describe("unauth", () => {
   });
 
   test("Submit Feedback", async ({ page }) => {
-    await goToTab(page, "Feedback");
+    // click button with text "Help"
+    await page.locator('button:has-text("Help")').click();
+
+    // click button with text "Feedback"
+    await page.locator('button:has-text("Feedback")').first().click();
+
     // Click [data-testid="message"]
     await page.locator('[data-testid="message"]').click();
+
     // Fill [data-testid="message"]
     await page.locator('[data-testid="message"]').fill("This is a test");
 
@@ -453,7 +467,7 @@ async function changeEditorText(page: Page) {
 
 async function openExportDialog(page: Page) {
   // Click [aria-label="Export"]
-  page.locator('[aria-label="Open Export Dialog"]').click();
+  page.locator('[aria-label="Export"]').click();
   // Click text=Download
   await expect(page.locator("text=Download")).toBeVisible({ timeout: 60000 });
 }

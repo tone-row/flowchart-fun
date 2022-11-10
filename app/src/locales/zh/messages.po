@@ -25,7 +25,7 @@ msgstr "30 美元 / 年"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。"
 
-#: src/components/SharedHeader.tsx:123
+#: src/components/SharedHeader.tsx:223
 msgid "Account"
 msgstr "帐户"
 
@@ -55,6 +55,11 @@ msgstr "返回编辑器"
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
+#: src/components/SharedHeader.tsx:174
+#: src/components/SharedHeader.tsx:197
+msgid "Blog"
+msgstr "博客"
+
 #: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
 msgstr "从下到上"
@@ -83,9 +88,12 @@ msgstr "取消订阅。您的托管图表将变为只读。"
 msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
-#: src/components/Menu.tsx:111
-#: src/components/Menu.tsx:268
-#: src/components/SharedHeader.tsx:65
+#: src/components/SharedHeader.tsx:181
+#: src/components/SharedHeader.tsx:203
+msgid "Changelog"
+msgstr "变更日志"
+
+#: src/components/SharedHeader.tsx:84
 msgid "Charts"
 msgstr "图表"
 
@@ -111,7 +119,7 @@ msgstr "清除"
 msgid "Clear text?"
 msgstr "清除文字？"
 
-#: src/components/Menu.tsx:447
+#: src/components/CloneButton.tsx:25
 msgid "Clone"
 msgstr "克隆"
 
@@ -131,11 +139,11 @@ msgstr "同心"
 msgid "Confirm New Email"
 msgstr "确认新电子邮件"
 
-#: src/components/GraphOptionsBar.tsx:209
+#: src/components/GraphOptionsBar.tsx:208
 msgid "Contract"
 msgstr "缩小"
 
-#: src/components/Menu.tsx:382
+#: src/components/RenameButton.tsx:139
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
@@ -191,7 +199,7 @@ msgstr "日期"
 msgid "Delete"
 msgstr "删除"
 
-#: src/components/GraphOptionsBar.tsx:180
+#: src/components/GraphOptionsBar.tsx:179
 msgid "Direction"
 msgstr "方向"
 
@@ -203,7 +211,8 @@ msgstr "您要取消订阅吗？"
 msgid "Do you want to delete this?"
 msgstr "您要将其删除吗？"
 
-#: src/components/SharedHeader.tsx:91
+#: src/components/SharedHeader.tsx:110
+#: src/components/SharedHeader.tsx:135
 msgid "Documentation"
 msgstr "文档"
 
@@ -236,9 +245,8 @@ msgstr "在任意设备上编辑图表；与任何人分享这些图表；仅需
 msgid "Editable"
 msgstr "可编辑"
 
-#: src/components/Menu.tsx:101
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:51
+#: src/components/SharedHeader.tsx:70
 msgid "Editor"
 msgstr "编辑器"
 
@@ -261,18 +269,17 @@ msgstr "输入标题"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:218
+#: src/components/GraphOptionsBar.tsx:217
 msgid "Expand"
 msgstr "放大"
 
-#: src/components/Menu.tsx:430
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:147
 msgid "Export"
 msgstr "导出"
 
-#: src/components/Menu.tsx:147
-#: src/components/Menu.tsx:264
+#: src/components/SharedHeader.tsx:122
+#: src/components/SharedHeader.tsx:146
 msgid "Feedback"
 msgstr "反馈"
 
@@ -322,8 +329,7 @@ msgstr "网格"
 msgid "Have fun! 🎉"
 msgstr "玩得开心！🎉"
 
-#: src/components/Menu.tsx:136
-#: src/components/SharedHeader.tsx:77
+#: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "帮助"
 
@@ -346,7 +352,7 @@ msgstr "托管的图表"
 msgid "Indenting creates a link to the current line"
 msgstr "缩进可创建连接到当前行的链接"
 
-#: src/components/SharedHeader.tsx:111
+#: src/components/SharedHeader.tsx:163
 msgid "Info"
 msgstr "信息"
 
@@ -354,7 +360,7 @@ msgstr "信息"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/GraphOptionsBar.tsx:152
+#: src/components/GraphOptionsBar.tsx:151
 msgid "Layout"
 msgstr "布局"
 
@@ -424,8 +430,7 @@ msgstr "姓名"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "需要帮助？<0>请查看我们的文档。</0>"
 
-#: src/components/Menu.tsx:91
-#: src/components/SharedHeader.tsx:40
+#: src/components/SharedHeader.tsx:58
 msgid "New"
 msgstr "新"
 
@@ -456,15 +461,16 @@ msgstr "公开"
 msgid "Random"
 msgstr "随机"
 
+#: src/components/EditorWrapper.tsx:39
 #: src/components/ShareDialog.tsx:140
 msgid "Read-only"
 msgstr "只读"
 
-#: src/components/Menu.tsx:346
-#: src/components/Menu.tsx:347
-#: src/components/Menu.tsx:353
-#: src/components/Menu.tsx:363
-#: src/components/Menu.tsx:372
+#: src/components/RenameButton.tsx:103
+#: src/components/RenameButton.tsx:104
+#: src/components/RenameButton.tsx:110
+#: src/components/RenameButton.tsx:120
+#: src/components/RenameButton.tsx:129
 msgid "Rename"
 msgstr "重命名"
 
@@ -492,9 +498,12 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/Menu.tsx:156
-#: src/components/Menu.tsx:266
-#: src/components/SharedHeader.tsx:115
+#: src/components/SharedHeader.tsx:188
+#: src/components/SharedHeader.tsx:209
+msgid "Roadmap"
+msgstr "路线图"
+
+#: src/components/SharedHeader.tsx:214
 msgid "Settings"
 msgstr "设置"
 
@@ -514,11 +523,6 @@ msgstr "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访�
 msgid "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
 msgstr "赞助 <0>$3 / 月</0> 或 <1>$30 / 年</1> 的流程图.fun 以获得访问..."
 
-#: src/components/Menu.tsx:165
-#: src/components/Menu.tsx:270
-msgid "Sponsors"
-msgstr "赞助人"
-
 #: src/components/SponsorDashboard.tsx:196
 msgid "Start"
 msgstr "开始"
@@ -528,7 +532,7 @@ msgid "Status"
 msgstr "状态"
 
 #: src/components/Feedback.tsx:94
-#: src/components/Menu.tsx:401
+#: src/components/RenameButton.tsx:158
 msgid "Submit"
 msgstr "提交"
 
@@ -544,7 +548,7 @@ msgstr "订阅即将到期"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/GraphOptionsBar.tsx:223
+#: src/components/GraphOptionsBar.tsx:222
 msgid "Theme"
 msgstr "风格"
 

@@ -19,9 +19,19 @@
   }
 }
 
+.LayoutWrapper:not([data-fullscreen="true"]) {
+  align-content: start;
+  grid-template-rows: minmax(0, 1fr);
+}
+
 @media (min-width: 800px) {
   .EditorWrapperNext[data-showing="editor"] {
     display: flex;
+  }
+
+  .LayoutWrapper:not([data-fullscreen="true"]) {
+    align-content: start;
+    grid-template-rows: auto minmax(0, 1fr);
   }
 }
 
@@ -30,13 +40,8 @@
   overflow: hidden;
 }
 
-.LayoutWrapper:not([data-fullscreen="true"]) {
-  align-content: start;
-  grid-template-rows: auto minmax(0, 1fr);
-}
-
 .LayoutWrapper[data-banner="true"]:not([data-fullscreen="true"]) {
-  grid-template: auto auto minmax(0, 1fr) / none;
+  grid-template: auto minmax(0, 1fr) / none;
 }
 
 .Banner {

@@ -39,7 +39,7 @@ jobs:
           version: 7
       - name: Install Playwright
         run: |
-          pnpm add -g playwright@1.25.1
+          pnpm add -g playwright@1.27.1
           playwright install
       - name: Install Deps
         run: pnpm install

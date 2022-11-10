@@ -16,12 +16,14 @@
     Appearance: "दिखावट",
     "Back To Editor": "संपादक पर वापस जाएं",
     "Become a Sponsor": "एक प्रायोजक बनें",
+    Blog: "ब्लॉग",
     "Bottom to Top": "नीचे से शीर्ष तक",
     Breadthfirst: "चौड़ाई पहले",
     Cancel: "रद्द करें",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे.",
     "Change Email Address": "ईमेल पता बदलें",
+    Changelog: "बदलाव का",
     Charts: "चार्ट",
     "Check your email for a link to log in. You can close this window.":
       "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं.",
@@ -122,6 +124,7 @@
     Retro: "रेट्रो",
     Return: "वापसी",
     "Right to Left": "दाएं से बाएं",
+    Roadmap: "रोडमैप",
     Settings: "सेटिंग",
     "Sign In": "साइन इन करें",
     "Sign Up": "साइन अप",
@@ -129,7 +132,6 @@
       "होस्ट किए गए फ़्लोचार्ट और नवीनतम शैलियों और सुविधाओं तक पहुँचने के लिए $3/माह या $30/वर्ष के लिए फ़्लोचार्ट.फ़न को प्रायोजित करें",
     "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
       "प्रायोजक फ़्लोचार्ट। तक पहुँच प्राप्त करने के लिए <0>$3/माह</0> या <1>$30/वर्ष</1> के लिए मज़ा–",
-    Sponsors: "स्पॉन्सर्स",
     Start: "शुरू",
     Status: "स्टेटस",
     Submit: "भेजना",

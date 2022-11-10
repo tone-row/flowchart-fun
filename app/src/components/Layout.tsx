@@ -8,28 +8,24 @@ import ColorMode from "./ColorMode";
 import CurrentTab from "./CurrentTab";
 import styles from "./Layout.module.css";
 import Loading from "./Loading";
-import { Menu } from "./Menu";
-// import { SharedHeader } from "./SharedHeader";
+import { SharedHeader } from "./SharedHeader";
 import ShareDialog from "./ShareDialog";
 
-const Layout = memo(
-  ({ children, fullText }: { children: ReactNode; fullText: string }) => {
-    const isFullscreen = useFullscreen();
-    const { url } = useRouteMatch();
-    const tab = useContext(AppContext).showing;
-    return (
-      <LayoutWrapper isFullscreen={isFullscreen} key={url}>
-        {isFullscreen ? null : <Menu fullText={fullText} />}
-        {/* {isFullscreen ? null : <SharedHeader />} */}
-        <EditorWrapper>
-          <CurrentTab>{children}</CurrentTab>
-        </EditorWrapper>
-        <ColorMode />
-        {tab === "editor" && <ShareDialog />}
-      </LayoutWrapper>
-    );
-  }
-);
+const Layout = memo(({ children }: { children: ReactNode }) => {
+  const isFullscreen = useFullscreen();
+  const { url } = useRouteMatch();
+  const tab = useContext(AppContext).showing;
+  return (
+    <LayoutWrapper isFullscreen={isFullscreen} key={url}>
+      {isFullscreen ? null : <SharedHeader />}
+      <CurrentTabWrapper>
+        <CurrentTab>{children}</CurrentTab>
+      </CurrentTabWrapper>
+      <ColorMode />
+      {tab === "editor" && <ShareDialog />}
+    </LayoutWrapper>
+  );
+});
 
 Layout.displayName = "Layout";
 
@@ -67,7 +63,7 @@ function LayoutWrapper({
   );
 }
 
-function EditorWrapper({ children }: { children: ReactNode }) {
+function CurrentTabWrapper({ children }: { children: ReactNode }) {
   const { showing, mobileEditorTab } = useContext(AppContext);
   return (
     <Box

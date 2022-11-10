@@ -15,12 +15,14 @@
     Appearance: "Appearance",
     "Back To Editor": "Back To Editor",
     "Become a Sponsor": "Become a Sponsor",
+    Blog: "Blog",
     "Bottom to Top": "Bottom to Top",
     Breadthfirst: "Breadthfirst",
     Cancel: "Cancel",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "Cancel your subscription. Your hosted charts will become read-only.",
     "Change Email Address": "Change Email Address",
+    Changelog: "Changelog",
     Charts: "Charts",
     "Check your email for a link to log in. You can close this window.":
       "Check your email for a link to log in. You can close this window.",
@@ -121,6 +123,7 @@
     Retro: "Retro",
     Return: "Return",
     "Right to Left": "Right to Left",
+    Roadmap: "Roadmap",
     Settings: "Settings",
     "Sign In": "Sign In",
     "Sign Up": "Sign Up",
@@ -128,7 +131,6 @@
       "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features",
     "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
       "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...",
-    Sponsors: "Sponsors",
     Start: "Start",
     Status: "Status",
     Submit: "Submit",
