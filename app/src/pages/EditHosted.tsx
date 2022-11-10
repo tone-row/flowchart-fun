@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
+import { EditorWrapper } from "../components/EditorWrapper";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
@@ -72,7 +73,7 @@ export default function EditHosted() {
   );
 
   return (
-    <Layout fullText={fullText}>
+    <Layout>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}
@@ -83,19 +84,21 @@ export default function EditHosted() {
         isFrozen={isFrozen}
         fullText={fullText}
       >
-        <Editor
-          value={text}
-          // @ts-ignore
-          wrapperClassName={editStyles.Editor}
-          defaultLanguage={languageId}
-          options={{
-            ...editorOptions,
-            readOnly: !validSponsor,
-          }}
-          onChange={onChange}
-          loading={loading.current}
-          onMount={onMount}
-        />
+        <EditorWrapper fullText={fullText}>
+          <Editor
+            value={text}
+            // @ts-ignore
+            wrapperClassName={editStyles.Editor}
+            defaultLanguage={languageId}
+            options={{
+              ...editorOptions,
+              readOnly: !validSponsor,
+            }}
+            onChange={onChange}
+            loading={loading.current}
+            onMount={onMount}
+          />
+        </EditorWrapper>
         <LoadingState isLoading={isLoading} pending={pending()} />
         <ClearTextButton
           handleClear={() => {

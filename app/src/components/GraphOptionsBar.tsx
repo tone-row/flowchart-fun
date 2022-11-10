@@ -53,8 +53,7 @@ const GraphOptionsBar = ({
   options: UseGraphOptionsReturn;
   isFrozen: boolean;
 }) => {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const setShowing = useCallback(useContext(AppContext).setShowing, []);
+  const { setShowing } = useContext(AppContext);
   const isValidSponsor = useIsValidSponsor();
   const { graphOptions = {} } = options;
   const {

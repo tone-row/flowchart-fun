@@ -2,7 +2,7 @@ import create from "zustand";
 
 import { GraphOptionsObject } from "./constants";
 
-export type StoreGraph = {
+type StoreGraph = {
   layout: GraphOptionsObject["layout"];
   elements: cytoscape.ElementDefinition[];
   sponsorLayoutsLoaded: boolean;

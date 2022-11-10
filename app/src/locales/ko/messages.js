@@ -16,12 +16,14 @@
     Appearance: "외관",
     "Back To Editor": "편집기로 돌아가기",
     "Become a Sponsor": "스폰서 되기",
+    Blog: "블로그",
     "Bottom to Top": "아래에서 위로",
     Breadthfirst: "폭 우선",
     Cancel: "취소",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다.",
     "Change Email Address": "이메일 주소 변경",
+    Changelog: "변경 로그",
     Charts: "차트",
     "Check your email for a link to log in. You can close this window.":
       "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다.",
@@ -121,6 +123,7 @@
     Retro: "레트로",
     Return: "반품",
     "Right to Left": "오른쪽에서 왼쪽으로",
+    Roadmap: "로드맵",
     Settings: "설정",
     "Sign In": "로그인",
     "Sign Up": "가입",
@@ -128,7 +131,6 @@
       "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원",
     "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
       "<0>$3/월</0> 또는 <1>$30/년</1>에 대해 순서도.fun 후원하기–",
-    Sponsors: "후원자",
     Start: "시작",
     Status: "상태",
     Submit: "보내다",

@@ -29,11 +29,11 @@ Premium features including auth, hosted charts and permalinks are built using in
 
 1. Clone the repository
 1. Copy `.env.example` to `.env` and add env variables
-1. `pnpm install` and `pnpm start`
+1. `pnpm install` and `vercel dev`
 
 #### To run with login features:
 
-`pnpm start`
+`vercel dev`
 
 #### To run without login features:
 
@@ -49,8 +49,16 @@ Flowchart Fun uses [Lingui](https://lingui.js.org/) for translations. These are 
 
 ### Tests
 
+#### Unit Tests
+
 - You can run jest tests with `pnpm test`
-- For E2E tests, start the app with `pnpm start` and then run `pnpm -F app e2e`
+
+#### E2E Tests
+
+We use playwright for e2e tests. Playwright is always installed on the system so you need to globally install it at the correct version: `1.27.1`. You can find the version in the github e2e workflow file.
+
+1. Make sure playwright version 1.27.1 is installed globally
+1. Start the app with `vercel dev` and then run `pnpm -F app e2e`
 
 ### Analyze the Bundle
 

@@ -3,6 +3,7 @@ import { memo, useCallback, useEffect, useRef, useState } from "react";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
+import { EditorWrapper } from "../components/EditorWrapper";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
@@ -53,7 +54,7 @@ const Edit = memo(function Edit() {
   );
 
   return (
-    <Layout fullText={fullText}>
+    <Layout>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}
@@ -64,16 +65,18 @@ const Edit = memo(function Edit() {
         isFrozen={isFrozen}
         fullText={fullText}
       >
-        <Editor
-          value={text}
-          // @ts-ignore
-          wrapperClassName={styles.Editor}
-          defaultLanguage={languageId}
-          options={editorOptions}
-          onChange={onChange}
-          loading={loading.current}
-          onMount={onMount}
-        />
+        <EditorWrapper fullText={fullText}>
+          <Editor
+            value={text}
+            // @ts-ignore
+            wrapperClassName={styles.Editor}
+            defaultLanguage={languageId}
+            options={editorOptions}
+            onChange={onChange}
+            loading={loading.current}
+            onMount={onMount}
+          />
+        </EditorWrapper>
         <ClearTextButton
           handleClear={() => {
             updateDoc({ text: "", hidden: {} });

@@ -15,12 +15,14 @@
     Appearance: "外观",
     "Back To Editor": "返回编辑器",
     "Become a Sponsor": "赞助我们",
+    Blog: "博客",
     "Bottom to Top": "从下到上",
     Breadthfirst: "宽度优先",
     Cancel: "取消",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "取消订阅。您的托管图表将变为只读。",
     "Change Email Address": "更改电子邮件地址",
+    Changelog: "变更日志",
     Charts: "图表",
     "Check your email for a link to log in. You can close this window.":
       "检查您的电子邮件以获取登录链接。您可以关闭此窗口。",
@@ -120,6 +122,7 @@
     Retro: "复古的",
     Return: "返回",
     "Right to Left": "从右到左",
+    Roadmap: "路线图",
     Settings: "设置",
     "Sign In": "登录",
     "Sign Up": "注册",
@@ -127,7 +130,6 @@
       "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能",
     "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
       "赞助 <0>$3 / 月</0> 或 <1>$30 / 年</1> 的流程图.fun 以获得访问...",
-    Sponsors: "赞助人",
     Start: "开始",
     Status: "状态",
     Submit: "提交",

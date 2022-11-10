@@ -25,7 +25,7 @@ msgstr "$30 / Year"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 
-#: src/components/SharedHeader.tsx:123
+#: src/components/SharedHeader.tsx:223
 msgid "Account"
 msgstr "Account"
 
@@ -55,6 +55,11 @@ msgstr "Back To Editor"
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
+#: src/components/SharedHeader.tsx:174
+#: src/components/SharedHeader.tsx:197
+msgid "Blog"
+msgstr "Blog"
+
 #: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
 msgstr "Bottom to Top"
@@ -83,9 +88,12 @@ msgstr "Cancel your subscription. Your hosted charts will become read-only."
 msgid "Change Email Address"
 msgstr "Change Email Address"
 
-#: src/components/Menu.tsx:111
-#: src/components/Menu.tsx:268
-#: src/components/SharedHeader.tsx:65
+#: src/components/SharedHeader.tsx:181
+#: src/components/SharedHeader.tsx:203
+msgid "Changelog"
+msgstr "Changelog"
+
+#: src/components/SharedHeader.tsx:84
 msgid "Charts"
 msgstr "Charts"
 
@@ -111,7 +119,7 @@ msgstr "Clear"
 msgid "Clear text?"
 msgstr "Clear text?"
 
-#: src/components/Menu.tsx:447
+#: src/components/CloneButton.tsx:25
 msgid "Clone"
 msgstr "Clone"
 
@@ -131,11 +139,11 @@ msgstr "Concentric"
 msgid "Confirm New Email"
 msgstr "Confirm New Email"
 
-#: src/components/GraphOptionsBar.tsx:209
+#: src/components/GraphOptionsBar.tsx:208
 msgid "Contract"
 msgstr "Contract"
 
-#: src/components/Menu.tsx:382
+#: src/components/RenameButton.tsx:139
 msgid "Convert to hosted chart?"
 msgstr "Convert to hosted chart?"
 
@@ -191,7 +199,7 @@ msgstr "Date"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/components/GraphOptionsBar.tsx:180
+#: src/components/GraphOptionsBar.tsx:179
 msgid "Direction"
 msgstr "Direction"
 
@@ -203,7 +211,8 @@ msgstr "Do you want to cancel your subscription?"
 msgid "Do you want to delete this?"
 msgstr "Do you want to delete this?"
 
-#: src/components/SharedHeader.tsx:91
+#: src/components/SharedHeader.tsx:110
+#: src/components/SharedHeader.tsx:135
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -236,9 +245,8 @@ msgstr "Edit your charts on any device. Share them with anyone. Publish your cha
 msgid "Editable"
 msgstr "Editable"
 
-#: src/components/Menu.tsx:101
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:51
+#: src/components/SharedHeader.tsx:70
 msgid "Editor"
 msgstr "Editor"
 
@@ -261,18 +269,17 @@ msgstr "Enter a title"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:218
+#: src/components/GraphOptionsBar.tsx:217
 msgid "Expand"
 msgstr "Expand"
 
-#: src/components/Menu.tsx:430
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:147
 msgid "Export"
 msgstr "Export"
 
-#: src/components/Menu.tsx:147
-#: src/components/Menu.tsx:264
+#: src/components/SharedHeader.tsx:122
+#: src/components/SharedHeader.tsx:146
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -322,8 +329,7 @@ msgstr "Grid"
 msgid "Have fun! 🎉"
 msgstr "Have fun! 🎉"
 
-#: src/components/Menu.tsx:136
-#: src/components/SharedHeader.tsx:77
+#: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "Help"
 
@@ -346,7 +352,7 @@ msgstr "Hosted Charts"
 msgid "Indenting creates a link to the current line"
 msgstr "Indenting creates a link to the current line"
 
-#: src/components/SharedHeader.tsx:111
+#: src/components/SharedHeader.tsx:163
 msgid "Info"
 msgstr "Info"
 
@@ -354,7 +360,7 @@ msgstr "Info"
 msgid "Language"
 msgstr "Language"
 
-#: src/components/GraphOptionsBar.tsx:152
+#: src/components/GraphOptionsBar.tsx:151
 msgid "Layout"
 msgstr "Layout"
 
@@ -424,8 +430,7 @@ msgstr "Name"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Need Help? <0>Check out our documentation.</0>"
 
-#: src/components/Menu.tsx:91
-#: src/components/SharedHeader.tsx:40
+#: src/components/SharedHeader.tsx:58
 msgid "New"
 msgstr "New"
 
@@ -456,15 +461,16 @@ msgstr "Public"
 msgid "Random"
 msgstr "Random"
 
+#: src/components/EditorWrapper.tsx:39
 #: src/components/ShareDialog.tsx:140
 msgid "Read-only"
 msgstr "Read-only"
 
-#: src/components/Menu.tsx:346
-#: src/components/Menu.tsx:347
-#: src/components/Menu.tsx:353
-#: src/components/Menu.tsx:363
-#: src/components/Menu.tsx:372
+#: src/components/RenameButton.tsx:103
+#: src/components/RenameButton.tsx:104
+#: src/components/RenameButton.tsx:110
+#: src/components/RenameButton.tsx:120
+#: src/components/RenameButton.tsx:129
 msgid "Rename"
 msgstr "Rename"
 
@@ -492,9 +498,12 @@ msgstr "Return"
 msgid "Right to Left"
 msgstr "Right to Left"
 
-#: src/components/Menu.tsx:156
-#: src/components/Menu.tsx:266
-#: src/components/SharedHeader.tsx:115
+#: src/components/SharedHeader.tsx:188
+#: src/components/SharedHeader.tsx:209
+msgid "Roadmap"
+msgstr "Roadmap"
+
+#: src/components/SharedHeader.tsx:214
 msgid "Settings"
 msgstr "Settings"
 
@@ -514,11 +523,6 @@ msgstr "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flow
 msgid "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
 msgstr "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
 
-#: src/components/Menu.tsx:165
-#: src/components/Menu.tsx:270
-msgid "Sponsors"
-msgstr "Sponsors"
-
 #: src/components/SponsorDashboard.tsx:196
 msgid "Start"
 msgstr "Start"
@@ -528,7 +532,7 @@ msgid "Status"
 msgstr "Status"
 
 #: src/components/Feedback.tsx:94
-#: src/components/Menu.tsx:401
+#: src/components/RenameButton.tsx:158
 msgid "Submit"
 msgstr "Submit"
 
@@ -544,7 +548,7 @@ msgstr "Subscription will end"
 msgid "Thank you for your feedback!"
 msgstr "Thank you for your feedback!"
 
-#: src/components/GraphOptionsBar.tsx:223
+#: src/components/GraphOptionsBar.tsx:222
 msgid "Theme"
 msgstr "Theme"
 

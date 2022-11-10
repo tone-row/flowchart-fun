@@ -10,7 +10,7 @@ export async function goToPath(page: Page, path = "") {
 }
 
 export async function goToTab(page: Page, tabName: string) {
-  await page.click(`button[role="tab"]:has-text("${tabName}")`);
+  await page.click(`button:has-text("${tabName}")`);
 }
 
 /** Generates a temp email address */

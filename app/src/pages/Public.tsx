@@ -69,7 +69,7 @@ function Public() {
   const onMount = useEditorOnMount(editorRef, monacoRef);
 
   return (
-    <Layout fullText={fullText}>
+    <Layout>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}

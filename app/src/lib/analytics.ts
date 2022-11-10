@@ -13,7 +13,6 @@ let gaSponsorCTA = (_: { action: string }) => {};
 let gaCreateChart = (_: { action: string }) => {};
 let gaExportChart = (_: { action: string; label: string }) => {};
 let gaNewChart = () => {};
-let gaCopyChart = () => {};
 let gaUseGraphContextMenu = (_: { action: string }) => {};
 let gaJumpToSponsorPage = (_: { action: string }) => {};
 // Jump to Sponsor Page
@@ -72,13 +71,6 @@ if (gaEnabled) {
       });
     };
 
-    gaCopyChart = () => {
-      ReactGA.event({
-        category: "Home",
-        action: "Copy Chart To New",
-      });
-    };
-
     gaUseGraphContextMenu = ({ action }) => {
       ReactGA.event({
         category: "Graph Context Menu",
@@ -103,7 +95,6 @@ export {
   gaCreateChart,
   gaExportChart,
   gaNewChart,
-  gaCopyChart,
   gaUseGraphContextMenu,
   gaJumpToSponsorPage,
 };

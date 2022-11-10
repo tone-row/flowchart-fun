@@ -11,18 +11,18 @@ import {
 import { useFullscreen } from "../lib/hooks";
 import { Theme } from "../lib/themes/constants";
 import { UpdateDoc } from "../lib/UpdateDoc";
+import { CloneButton } from "./CloneButton";
 import CurrentTab from "./CurrentTab";
 import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
 import Loading from "./Loading";
 import styles from "./Main.module.css";
-import { CloneButton } from "./Menu";
 import MobileTabToggle from "./MobileTabToggle";
 import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
 import { UseGraphOptionsReturn } from "./useGraphOptions";
 
-export type MainProps = {
+type MainProps = {
   children?: ReactNode;
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
   hiddenGraphOptionsText: string;
