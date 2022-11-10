@@ -32,7 +32,7 @@ importers:
       '@lingui/react': ^3.8.9
       '@monaco-editor/react': ^4.0.11
       '@notionhq/client': ^0.4.11
-      '@playwright/test': 1.25.1
+      '@playwright/test': 1.27.1
       '@radix-ui/react-dropdown-menu': ^2.0.1
       '@radix-ui/react-hover-card': ^0.1.5
       '@radix-ui/react-navigation-menu': ^1.0.0
@@ -213,7 +213,7 @@ importers:
     devDependencies:
       '@lingui/cli': 3.14.0_tm4webiq2u57mg24iaejc4km4e
       '@lingui/macro': 3.14.0_77kbcrdiyapudxn3kt35uy5344
-      '@playwright/test': 1.25.1
+      '@playwright/test': 1.27.1
       '@testing-library/react-hooks': 8.0.1_hiunvzosbwliizyirxfy6hjyim
       '@types/benchmark': 2.1.2
       '@types/css-font-loading-module': 0.0.7
@@ -2880,13 +2880,13 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@playwright/test/1.25.1:
-    resolution: {integrity: sha512-IJ4X0yOakXtwkhbnNzKkaIgXe6df7u3H3FnuhI9Jqh+CdO0e/lYQlDLYiyI9cnXK8E7UAppAWP+VqAv6VX7HQg==}
+  /@playwright/test/1.27.1:
+    resolution: {integrity: sha512-mrL2q0an/7tVqniQQF6RBL2saskjljXzqNcCOVMUjRIgE6Y38nCNaP+Dc2FBW06bcpD3tqIws/HT9qiMHbNU0A==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      '@types/node': 12.20.55
-      playwright-core: 1.25.1
+      '@types/node': 18.8.3
+      playwright-core: 1.27.1
     dev: true
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.7_prxwy2zxcolvdag5hfkyuqbcze:
@@ -12716,8 +12716,8 @@ packages:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
     dev: true
 
-  /playwright-core/1.25.1:
-    resolution: {integrity: sha512-lSvPCmA2n7LawD2Hw7gSCLScZ+vYRkhU8xH0AapMyzwN+ojoDqhkH/KIEUxwNu2PjPoE/fcE0wLAksdOhJ2O5g==}
+  /playwright-core/1.27.1:
+    resolution: {integrity: sha512-9EmeXDncC2Pmp/z+teoVYlvmPWUC6ejSSYZUln7YaP89Z6lpAaiaAnqroUt/BoLo8tn7WYShcfaCh+xofZa44Q==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true

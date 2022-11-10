@@ -1,5 +1,4 @@
 import { t, Trans } from "@lingui/macro";
-import { PencilSimple } from "phosphor-react";
 import { ReactNode, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";

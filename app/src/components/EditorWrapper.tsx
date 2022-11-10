@@ -1,4 +1,4 @@
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import { useContext } from "react";
 import { FaShare } from "react-icons/fa";
 
@@ -43,6 +43,7 @@ export function EditorWrapper({
             <CloneButton fullText={fullText} />
           ) : (
             <button
+              aria-label={t`Export`}
               className={styles.ShareButton}
               onClick={() => setShareModal(true)}
             >
