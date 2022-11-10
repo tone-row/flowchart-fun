@@ -58,7 +58,7 @@ msgstr "스폰서 되기"
 #: src/components/SharedHeader.tsx:174
 #: src/components/SharedHeader.tsx:197
 msgid "Blog"
-msgstr ""
+msgstr "블로그"
 
 #: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
@@ -91,10 +91,8 @@ msgstr "이메일 주소 변경"
 #: src/components/SharedHeader.tsx:181
 #: src/components/SharedHeader.tsx:203
 msgid "Changelog"
-msgstr ""
+msgstr "변경 로그"
 
-#: src/components/Menu.tsx:92
-#: src/components/Menu.tsx:248
 #: src/components/SharedHeader.tsx:84
 msgid "Charts"
 msgstr "차트"
@@ -122,7 +120,6 @@ msgid "Clear text?"
 msgstr "텍스트를 지우시겠습니까?"
 
 #: src/components/CloneButton.tsx:25
-#: src/components/Menu.tsx:293
 msgid "Clone"
 msgstr "클론"
 
@@ -248,7 +245,6 @@ msgstr "어떤 기기에서나 차트를 편집할 수 있습니다. 누구와�
 msgid "Editable"
 msgstr "편집 가능"
 
-#: src/components/Menu.tsx:82
 #: src/components/MobileTabToggle.tsx:21
 #: src/components/SharedHeader.tsx:70
 msgid "Editor"
@@ -277,14 +273,11 @@ msgstr "Excalidraw"
 msgid "Expand"
 msgstr "넓히다"
 
-#: src/components/Menu.tsx:276
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:147
 msgid "Export"
 msgstr "내보내기"
 
-#: src/components/Menu.tsx:128
-#: src/components/Menu.tsx:244
 #: src/components/SharedHeader.tsx:122
 #: src/components/SharedHeader.tsx:146
 msgid "Feedback"
@@ -336,7 +329,6 @@ msgstr "그리드"
 msgid "Have fun! 🎉"
 msgstr "즐겨보세요! 🎉"
 
-#: src/components/Menu.tsx:117
 #: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "도움말"
@@ -438,7 +430,6 @@ msgstr "이름"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</0>"
 
-#: src/components/Menu.tsx:72
 #: src/components/SharedHeader.tsx:58
 msgid "New"
 msgstr "신규"
@@ -510,10 +501,8 @@ msgstr "오른쪽에서 왼쪽으로"
 #: src/components/SharedHeader.tsx:188
 #: src/components/SharedHeader.tsx:209
 msgid "Roadmap"
-msgstr ""
+msgstr "로드맵"
 
-#: src/components/Menu.tsx:137
-#: src/components/Menu.tsx:246
 #: src/components/SharedHeader.tsx:214
 msgid "Settings"
 msgstr "설정"
@@ -533,11 +522,6 @@ msgstr "호스트된 플로차트와 최신 스타일 및 기능에 액세스하
 #: src/components/Sponsor.tsx:27
 msgid "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
 msgstr "<0>$3/월</0> 또는 <1>$30/년</1>에 대해 순서도.fun 후원하기–"
-
-#: src/components/Menu.tsx:146
-#: src/components/Menu.tsx:250
-msgid "Sponsors"
-msgstr "후원자"
 
 #: src/components/SponsorDashboard.tsx:196
 msgid "Start"

@@ -93,8 +93,6 @@ msgstr "Change Email Address"
 msgid "Changelog"
 msgstr "Changelog"
 
-#: src/components/Menu.tsx:92
-#: src/components/Menu.tsx:248
 #: src/components/SharedHeader.tsx:84
 msgid "Charts"
 msgstr "Charts"
@@ -122,7 +120,6 @@ msgid "Clear text?"
 msgstr "Clear text?"
 
 #: src/components/CloneButton.tsx:25
-#: src/components/Menu.tsx:293
 msgid "Clone"
 msgstr "Clone"
 
@@ -248,7 +245,6 @@ msgstr "Edit your charts on any device. Share them with anyone. Publish your cha
 msgid "Editable"
 msgstr "Editable"
 
-#: src/components/Menu.tsx:82
 #: src/components/MobileTabToggle.tsx:21
 #: src/components/SharedHeader.tsx:70
 msgid "Editor"
@@ -277,14 +273,11 @@ msgstr "Excalidraw"
 msgid "Expand"
 msgstr "Expand"
 
-#: src/components/Menu.tsx:276
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:147
 msgid "Export"
 msgstr "Export"
 
-#: src/components/Menu.tsx:128
-#: src/components/Menu.tsx:244
 #: src/components/SharedHeader.tsx:122
 #: src/components/SharedHeader.tsx:146
 msgid "Feedback"
@@ -336,7 +329,6 @@ msgstr "Grid"
 msgid "Have fun! 🎉"
 msgstr "Have fun! 🎉"
 
-#: src/components/Menu.tsx:117
 #: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "Help"
@@ -438,7 +430,6 @@ msgstr "Name"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Need Help? <0>Check out our documentation.</0>"
 
-#: src/components/Menu.tsx:72
 #: src/components/SharedHeader.tsx:58
 msgid "New"
 msgstr "New"
@@ -512,8 +503,6 @@ msgstr "Right to Left"
 msgid "Roadmap"
 msgstr "Roadmap"
 
-#: src/components/Menu.tsx:137
-#: src/components/Menu.tsx:246
 #: src/components/SharedHeader.tsx:214
 msgid "Settings"
 msgstr "Settings"
@@ -533,11 +522,6 @@ msgstr "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flow
 #: src/components/Sponsor.tsx:27
 msgid "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
 msgstr "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
-
-#: src/components/Menu.tsx:146
-#: src/components/Menu.tsx:250
-msgid "Sponsors"
-msgstr "Sponsors"
 
 #: src/components/SponsorDashboard.tsx:196
 msgid "Start"

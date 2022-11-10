@@ -58,7 +58,7 @@ msgstr "赞助我们"
 #: src/components/SharedHeader.tsx:174
 #: src/components/SharedHeader.tsx:197
 msgid "Blog"
-msgstr ""
+msgstr "博客"
 
 #: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
@@ -91,10 +91,8 @@ msgstr "更改电子邮件地址"
 #: src/components/SharedHeader.tsx:181
 #: src/components/SharedHeader.tsx:203
 msgid "Changelog"
-msgstr ""
+msgstr "变更日志"
 
-#: src/components/Menu.tsx:92
-#: src/components/Menu.tsx:248
 #: src/components/SharedHeader.tsx:84
 msgid "Charts"
 msgstr "图表"
@@ -122,7 +120,6 @@ msgid "Clear text?"
 msgstr "清除文字？"
 
 #: src/components/CloneButton.tsx:25
-#: src/components/Menu.tsx:293
 msgid "Clone"
 msgstr "克隆"
 
@@ -248,7 +245,6 @@ msgstr "在任意设备上编辑图表；与任何人分享这些图表；仅需
 msgid "Editable"
 msgstr "可编辑"
 
-#: src/components/Menu.tsx:82
 #: src/components/MobileTabToggle.tsx:21
 #: src/components/SharedHeader.tsx:70
 msgid "Editor"
@@ -277,14 +273,11 @@ msgstr "Excalidraw"
 msgid "Expand"
 msgstr "放大"
 
-#: src/components/Menu.tsx:276
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:147
 msgid "Export"
 msgstr "导出"
 
-#: src/components/Menu.tsx:128
-#: src/components/Menu.tsx:244
 #: src/components/SharedHeader.tsx:122
 #: src/components/SharedHeader.tsx:146
 msgid "Feedback"
@@ -336,7 +329,6 @@ msgstr "网格"
 msgid "Have fun! 🎉"
 msgstr "玩得开心！🎉"
 
-#: src/components/Menu.tsx:117
 #: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "帮助"
@@ -438,7 +430,6 @@ msgstr "姓名"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "需要帮助？<0>请查看我们的文档。</0>"
 
-#: src/components/Menu.tsx:72
 #: src/components/SharedHeader.tsx:58
 msgid "New"
 msgstr "新"
@@ -510,10 +501,8 @@ msgstr "从右到左"
 #: src/components/SharedHeader.tsx:188
 #: src/components/SharedHeader.tsx:209
 msgid "Roadmap"
-msgstr ""
+msgstr "路线图"
 
-#: src/components/Menu.tsx:137
-#: src/components/Menu.tsx:246
 #: src/components/SharedHeader.tsx:214
 msgid "Settings"
 msgstr "设置"
@@ -533,11 +522,6 @@ msgstr "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访�
 #: src/components/Sponsor.tsx:27
 msgid "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
 msgstr "赞助 <0>$3 / 月</0> 或 <1>$30 / 年</1> 的流程图.fun 以获得访问..."
-
-#: src/components/Menu.tsx:146
-#: src/components/Menu.tsx:250
-msgid "Sponsors"
-msgstr "赞助人"
 
 #: src/components/SponsorDashboard.tsx:196
 msgid "Start"

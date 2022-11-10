@@ -58,7 +58,7 @@ msgstr "Werden Sie zum Sponsoren"
 #: src/components/SharedHeader.tsx:174
 #: src/components/SharedHeader.tsx:197
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
@@ -91,10 +91,8 @@ msgstr "E-Mail Adresse ändern"
 #: src/components/SharedHeader.tsx:181
 #: src/components/SharedHeader.tsx:203
 msgid "Changelog"
-msgstr ""
+msgstr "Änderungsprotokoll"
 
-#: src/components/Menu.tsx:92
-#: src/components/Menu.tsx:248
 #: src/components/SharedHeader.tsx:84
 msgid "Charts"
 msgstr "Diagramme"
@@ -122,7 +120,6 @@ msgid "Clear text?"
 msgstr "Text löschen?"
 
 #: src/components/CloneButton.tsx:25
-#: src/components/Menu.tsx:293
 msgid "Clone"
 msgstr "Klon"
 
@@ -248,7 +245,6 @@ msgstr "Bearbeiten Sie Ihre Diagramme auf jedem Gerät. Teilen Sie diese mit jed
 msgid "Editable"
 msgstr "Editierbar"
 
-#: src/components/Menu.tsx:82
 #: src/components/MobileTabToggle.tsx:21
 #: src/components/SharedHeader.tsx:70
 msgid "Editor"
@@ -277,14 +273,11 @@ msgstr "Excalidraw"
 msgid "Expand"
 msgstr "Erweitern"
 
-#: src/components/Menu.tsx:276
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:147
 msgid "Export"
 msgstr "Exportieren"
 
-#: src/components/Menu.tsx:128
-#: src/components/Menu.tsx:244
 #: src/components/SharedHeader.tsx:122
 #: src/components/SharedHeader.tsx:146
 msgid "Feedback"
@@ -336,7 +329,6 @@ msgstr "Raster"
 msgid "Have fun! 🎉"
 msgstr "Viel Spaß! 🎉"
 
-#: src/components/Menu.tsx:117
 #: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "Hilfe"
@@ -438,7 +430,6 @@ msgstr "Name"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Brauchen Sie Hilfe? <0>Sehen Sie sich unsere Dokumentation an.</0>"
 
-#: src/components/Menu.tsx:72
 #: src/components/SharedHeader.tsx:58
 msgid "New"
 msgstr "Neues"
@@ -510,10 +501,8 @@ msgstr "Von rechts nach links"
 #: src/components/SharedHeader.tsx:188
 #: src/components/SharedHeader.tsx:209
 msgid "Roadmap"
-msgstr ""
+msgstr "Fahrplan"
 
-#: src/components/Menu.tsx:137
-#: src/components/Menu.tsx:246
 #: src/components/SharedHeader.tsx:214
 msgid "Settings"
 msgstr "Einstellungen"
@@ -533,11 +522,6 @@ msgstr "Sponsern Sie flowchart.fun für 3 $ / Monat oder 30 $ / Jahr, um auf geh
 #: src/components/Sponsor.tsx:27
 msgid "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
 msgstr "Sponsern Sie flowchart.fun für <0>3 $ / Monat</0> oder <1>30 $ / Jahr</1>, um Zugang zu erhalten zu..."
-
-#: src/components/Menu.tsx:146
-#: src/components/Menu.tsx:250
-msgid "Sponsors"
-msgstr "Sponsoren"
 
 #: src/components/SponsorDashboard.tsx:196
 msgid "Start"

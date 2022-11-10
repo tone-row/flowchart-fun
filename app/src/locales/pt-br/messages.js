@@ -15,12 +15,14 @@
     Appearance: "Aparência",
     "Back To Editor": "Voltar ao editor",
     "Become a Sponsor": "Torne-se um(a) patrocinador(a)",
+    Blog: "Blog",
     "Bottom to Top": "De baixo para cima",
     Breadthfirst: "Por extensão",
     Cancel: "Cancelar",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "Cancele sua inscrição. Seus diagramas hospedados não serão modificáveis.",
     "Change Email Address": "Mude o endereço de email",
+    Changelog: "Registro de alterações",
     Charts: "Diagramas",
     "Check your email for a link to log in. You can close this window.":
       "Cheque seu e-mail com um link para logar. Você pode fechar esta janela.",
@@ -121,6 +123,7 @@
     Retro: "Retrô",
     Return: "Retornar",
     "Right to Left": "Da direita para esquerda",
+    Roadmap: "Roteiro",
     Settings: "Configurações",
     "Sign In": "Entrar",
     "Sign Up": "Inscreva-se",
@@ -128,7 +131,6 @@
       "Patrocine flowchart.fun por US$ 3/mês ou US$30/ano para acessar fluxogramas hospedados e os mais novos estilos e recursos",
     "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
       "Patrocine o flowchart.fun por <0>$ 3 / mês</0> ou <1>$ 30 / ano</1> para ter acesso a...",
-    Sponsors: "Patrocínios",
     Start: "Início",
     Status: "Status",
     Submit: "Enviar",
