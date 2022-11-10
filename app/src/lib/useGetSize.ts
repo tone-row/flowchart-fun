@@ -127,11 +127,11 @@ const B = 33.8993;
 /**
  * Grow text width based on number of characters
  */
-export function getWidth(characters: number) {
+function getWidth(characters: number) {
   return Math.max(64, Math.ceil(B * Math.log(characters) + A));
 }
 
-export function preventCyRenderingBugs(str: string) {
+function preventCyRenderingBugs(str: string) {
   return (
     str
       // prevent break on hypen

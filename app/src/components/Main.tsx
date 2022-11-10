@@ -22,7 +22,7 @@ import TabPane from "./TabPane";
 import TextResizer from "./TextResizer";
 import { UseGraphOptionsReturn } from "./useGraphOptions";
 
-export type MainProps = {
+type MainProps = {
   children?: ReactNode;
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
   hiddenGraphOptionsText: string;

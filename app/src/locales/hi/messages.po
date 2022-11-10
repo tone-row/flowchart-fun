@@ -25,7 +25,7 @@ msgstr "$30 / वर्ष"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों."
 
-#: src/components/SharedHeader.tsx:123
+#: src/components/SharedHeader.tsx:223
 msgid "Account"
 msgstr "खाता"
 
@@ -55,6 +55,11 @@ msgstr "संपादक पर वापस जाएं"
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
+#: src/components/SharedHeader.tsx:174
+#: src/components/SharedHeader.tsx:197
+msgid "Blog"
+msgstr ""
+
 #: src/lib/graphOptions.ts:56
 msgid "Bottom to Top"
 msgstr "नीचे से शीर्ष तक"
@@ -83,9 +88,14 @@ msgstr "अपनी सदस्यता रद्द करें. आपक�
 msgid "Change Email Address"
 msgstr "ईमेल पता बदलें"
 
-#: src/components/Menu.tsx:111
-#: src/components/Menu.tsx:268
-#: src/components/SharedHeader.tsx:65
+#: src/components/SharedHeader.tsx:181
+#: src/components/SharedHeader.tsx:203
+msgid "Changelog"
+msgstr ""
+
+#: src/components/Menu.tsx:92
+#: src/components/Menu.tsx:248
+#: src/components/SharedHeader.tsx:84
 msgid "Charts"
 msgstr "चार्ट"
 
@@ -111,7 +121,8 @@ msgstr "साफ़"
 msgid "Clear text?"
 msgstr "पाठ साफ़ करें?"
 
-#: src/components/Menu.tsx:447
+#: src/components/CloneButton.tsx:25
+#: src/components/Menu.tsx:293
 msgid "Clone"
 msgstr "क्लोन करें"
 
@@ -131,11 +142,11 @@ msgstr "गाढ़ा"
 msgid "Confirm New Email"
 msgstr "नई ईमेल की पुष्टि करें"
 
-#: src/components/GraphOptionsBar.tsx:209
+#: src/components/GraphOptionsBar.tsx:208
 msgid "Contract"
 msgstr "सिकोड़ना"
 
-#: src/components/Menu.tsx:382
+#: src/components/RenameButton.tsx:139
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
@@ -191,7 +202,7 @@ msgstr "तारीख़"
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: src/components/GraphOptionsBar.tsx:180
+#: src/components/GraphOptionsBar.tsx:179
 msgid "Direction"
 msgstr "दिशा"
 
@@ -203,7 +214,8 @@ msgstr "क्या आप अपनी सदस्यता रद्द क�
 msgid "Do you want to delete this?"
 msgstr "क्या आप इसे डिलीट करना चाहते हैं?"
 
-#: src/components/SharedHeader.tsx:91
+#: src/components/SharedHeader.tsx:110
+#: src/components/SharedHeader.tsx:135
 msgid "Documentation"
 msgstr "प्रलेखन"
 
@@ -236,9 +248,9 @@ msgstr "अपने चार्ट को किसी भी डिवाइ�
 msgid "Editable"
 msgstr "संपादन योग्य"
 
-#: src/components/Menu.tsx:101
+#: src/components/Menu.tsx:82
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:51
+#: src/components/SharedHeader.tsx:70
 msgid "Editor"
 msgstr "संपादक"
 
@@ -261,18 +273,20 @@ msgstr "एक शीर्षक दर्ज करें"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:218
+#: src/components/GraphOptionsBar.tsx:217
 msgid "Expand"
 msgstr "फैलाव"
 
-#: src/components/Menu.tsx:430
+#: src/components/Menu.tsx:276
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:147
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
-#: src/components/Menu.tsx:147
-#: src/components/Menu.tsx:264
+#: src/components/Menu.tsx:128
+#: src/components/Menu.tsx:244
+#: src/components/SharedHeader.tsx:122
+#: src/components/SharedHeader.tsx:146
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
@@ -322,8 +336,8 @@ msgstr "ग्रिड"
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/components/Menu.tsx:136
-#: src/components/SharedHeader.tsx:77
+#: src/components/Menu.tsx:117
+#: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "मदद"
 
@@ -346,7 +360,7 @@ msgstr "होस्ट किए गए चार्ट"
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
-#: src/components/SharedHeader.tsx:111
+#: src/components/SharedHeader.tsx:163
 msgid "Info"
 msgstr "जानकारी"
 
@@ -354,7 +368,7 @@ msgstr "जानकारी"
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/GraphOptionsBar.tsx:152
+#: src/components/GraphOptionsBar.tsx:151
 msgid "Layout"
 msgstr "ख़ाका"
 
@@ -424,8 +438,8 @@ msgstr "नाम"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "मदद चाहिए? <0>हमारे दस्तावेज़ देखें।</0>"
 
-#: src/components/Menu.tsx:91
-#: src/components/SharedHeader.tsx:40
+#: src/components/Menu.tsx:72
+#: src/components/SharedHeader.tsx:58
 msgid "New"
 msgstr "नया"
 
@@ -456,15 +470,16 @@ msgstr "पब्लिक"
 msgid "Random"
 msgstr "अनियमित"
 
+#: src/components/EditorWrapper.tsx:39
 #: src/components/ShareDialog.tsx:140
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
 
-#: src/components/Menu.tsx:346
-#: src/components/Menu.tsx:347
-#: src/components/Menu.tsx:353
-#: src/components/Menu.tsx:363
-#: src/components/Menu.tsx:372
+#: src/components/RenameButton.tsx:103
+#: src/components/RenameButton.tsx:104
+#: src/components/RenameButton.tsx:110
+#: src/components/RenameButton.tsx:120
+#: src/components/RenameButton.tsx:129
 msgid "Rename"
 msgstr "फिर से नाम बदलें"
 
@@ -492,9 +507,14 @@ msgstr "वापसी"
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
-#: src/components/Menu.tsx:156
-#: src/components/Menu.tsx:266
-#: src/components/SharedHeader.tsx:115
+#: src/components/SharedHeader.tsx:188
+#: src/components/SharedHeader.tsx:209
+msgid "Roadmap"
+msgstr ""
+
+#: src/components/Menu.tsx:137
+#: src/components/Menu.tsx:246
+#: src/components/SharedHeader.tsx:214
 msgid "Settings"
 msgstr "सेटिंग"
 
@@ -514,8 +534,8 @@ msgstr "होस्ट किए गए फ़्लोचार्ट और �
 msgid "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
 msgstr "प्रायोजक फ़्लोचार्ट। तक पहुँच प्राप्त करने के लिए <0>$3/माह</0> या <1>$30/वर्ष</1> के लिए मज़ा–"
 
-#: src/components/Menu.tsx:165
-#: src/components/Menu.tsx:270
+#: src/components/Menu.tsx:146
+#: src/components/Menu.tsx:250
 msgid "Sponsors"
 msgstr "स्पॉन्सर्स"
 
@@ -528,7 +548,7 @@ msgid "Status"
 msgstr "स्टेटस"
 
 #: src/components/Feedback.tsx:94
-#: src/components/Menu.tsx:401
+#: src/components/RenameButton.tsx:158
 msgid "Submit"
 msgstr "भेजना"
 
@@ -544,7 +564,7 @@ msgstr "सदस्यता समाप्त हो जाएगी"
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
-#: src/components/GraphOptionsBar.tsx:223
+#: src/components/GraphOptionsBar.tsx:222
 msgid "Theme"
 msgstr "शैली"
 
