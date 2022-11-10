@@ -46,7 +46,7 @@ function ReadOnly() {
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   return (
-    <Layout fullText={fullText}>
+    <Layout>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}

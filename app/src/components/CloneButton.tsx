@@ -1,3 +1,4 @@
+import { Trans } from "@lingui/macro";
 import { FaCopy } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 
@@ -20,7 +21,9 @@ export function CloneButton({ fullText }: { fullText: string }) {
       }}
     >
       <FaCopy size={20} />
-      <Type as="span">Clone</Type>
+      <Type as="span">
+        <Trans>Clone</Trans>
+      </Type>
     </button>
   );
 }

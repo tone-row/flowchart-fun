@@ -198,7 +198,6 @@ const WorkspaceSection = memo(function WorkspaceSection({
   const [title, isHosted] = useTitle();
   const Icon = isHosted ? Globe : Laptop;
   const isReadOnly = useIsReadOnly();
-  const isHelp = useIsHelp();
   return (
     <Box
       flow="column"

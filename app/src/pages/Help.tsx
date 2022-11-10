@@ -62,7 +62,7 @@ export default function Help() {
   );
 
   return (
-    <Layout fullText={fullText}>
+    <Layout>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}

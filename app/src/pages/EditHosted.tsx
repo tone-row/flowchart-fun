@@ -73,7 +73,7 @@ export default function EditHosted() {
   );
 
   return (
-    <Layout fullText={fullText}>
+    <Layout>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}

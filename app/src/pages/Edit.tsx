@@ -54,7 +54,7 @@ const Edit = memo(function Edit() {
   );
 
   return (
-    <Layout fullText={fullText}>
+    <Layout>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}

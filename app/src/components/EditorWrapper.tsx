@@ -1,7 +1,8 @@
+import { Trans } from "@lingui/macro";
 import { useContext } from "react";
 import { FaShare } from "react-icons/fa";
 
-import { useIsHelp, useIsReadOnly, useTitle } from "../lib/hooks";
+import { useIsReadOnly, useTitle } from "../lib/hooks";
 import { Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { CloneButton } from "./CloneButton";
@@ -15,10 +16,9 @@ export function EditorWrapper({
   children: React.ReactNode;
   fullText: string;
 }) {
-  const [title, isHosted] = useTitle();
+  const [title] = useTitle();
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
-  const isHelp = useIsHelp();
   return (
     <div className={styles.EditorWrapper}>
       <header>
@@ -36,7 +36,7 @@ export function EditorWrapper({
           </RenameButton>
           {isReadOnly && (
             <Type size={-1} className={styles.readOnly}>
-              Read Only
+              <Trans>Read-only</Trans>
             </Type>
           )}
           {isReadOnly ? (
@@ -47,7 +47,7 @@ export function EditorWrapper({
               onClick={() => setShareModal(true)}
             >
               <FaShare size={20} />
-              <Type as="span">Share</Type>
+              <Type as="span">Export</Type>
             </button>
           )}
         </div>
