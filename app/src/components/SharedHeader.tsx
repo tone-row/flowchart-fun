@@ -288,7 +288,3 @@ HeaderLink.displayName = "HeaderLink";
 function DesktopOnly({ children }: { children: ReactNode }) {
   return <div className="desktop-only">{children}</div>;
 }
-
-function MobileOnly({ children }: { children: ReactNode }) {
-  return <div className="mobile-only">{children}</div>;
-}

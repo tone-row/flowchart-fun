@@ -33,8 +33,7 @@
 
 .ShareButton:hover,
 .ShareButton:focus-visible {
-  outline: 4px solid var(--palette-purple-3);
-  outline-color: hsla(var(--color-brandHsl), 0.5);
+  box-shadow: 0px 0px 0px 4px hsla(var(--color-brandHsl), 0.33);
 }
 
 .ShareButton:active {
