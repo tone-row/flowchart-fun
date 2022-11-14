@@ -39,6 +39,7 @@ import { Button, Dialog, Input, Notice, Section, SectionTitle } from "./Shared";
 export default function Charts() {
   const validCustomer = useIsValidCustomer();
   const { setShowing } = useContext(AppContext);
+  const { push } = useHistory();
 
   return (
     <Box
@@ -73,7 +74,7 @@ export default function Charts() {
               typeProps={{ size: 0 }}
               text={t`Learn More`}
               onClick={() => {
-                setShowing("sponsor");
+                push("/sponsor");
                 gaSponsorCTA({ action: "from navigation" });
               }}
             />
@@ -401,7 +402,7 @@ function HostedCharts() {
         </Section>
       ) : (
         <Notice
-          boxProps={{ as: "button", onClick: () => setShowing("sponsor") }}
+          boxProps={{ as: "button", onClick: () => setShowing("account") }}
         >
           <Trans>
             Your subscription is no longer active. If you want to create and
