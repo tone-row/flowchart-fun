@@ -30,7 +30,7 @@ importers:
       '@lingui/core': ^3.8.9
       '@lingui/macro': ^3.13.2
       '@lingui/react': ^3.8.9
-      '@monaco-editor/react': ^4.0.11
+      '@monaco-editor/react': ^4.4.6
       '@notionhq/client': ^0.4.11
       '@playwright/test': 1.27.1
       '@radix-ui/react-dropdown-menu': ^2.0.1

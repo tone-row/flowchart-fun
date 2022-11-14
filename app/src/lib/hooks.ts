@@ -32,11 +32,18 @@ export function useIsPublicHostedCharted() {
   return useMemo(() => path === "/p/:public_id", [path]);
 }
 
+/** Use this to determine if the sponsor is valid.
+ * That means their subscription is currently active.
+ * i.e. They're in good standing, etc. */
 export function useIsValidSponsor() {
   const { customer } = useContext(AppContext);
   return Boolean(customer?.subscription?.status === "active");
 }
 
+/**
+ * Use this to determine if they are auth'd
+ * Even if their payment is past due, they're still logged in.
+ */
 export function useIsValidCustomer() {
   const { customer } = useContext(AppContext);
   return Boolean(customer?.subscription);

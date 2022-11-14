@@ -12,6 +12,7 @@ import {
   Plus,
   Question,
   Signpost,
+  Star,
   TreeStructure,
   User,
 } from "phosphor-react";
@@ -29,6 +30,7 @@ import {
 import { useHistory, useLocation, useRouteMatch } from "react-router-dom";
 
 import { gaChangeTab, gaNewChart } from "../lib/analytics";
+import { useIsValidCustomer } from "../lib/hooks";
 import { AppContext } from "./AppContext";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 
@@ -36,9 +38,14 @@ export const SharedHeader = memo(function SharedHeader() {
   const { showing, setShowing } = useContext(AppContext);
   const { push } = useHistory();
   const { url } = useRouteMatch();
-  const isDocsPage = url === "/h" && showing === "editor";
-  const [collapsed, setCollapsed] = useState(true);
   const { pathname } = useLocation();
+  const isDocsPage = url === "/h" && showing === "editor";
+  const isSponsorPage = url === "/sponsor";
+  const isEditor = showing === "editor" && !isDocsPage && !isSponsorPage;
+  const [collapsed, setCollapsed] = useState(true);
+  const isValidCustomer = useIsValidCustomer();
+  // If we're on another route and we change showing, we need to leave this route
+  const isAnotherRoute = isDocsPage || isSponsorPage;
   useEffect(() => {
     setCollapsed(true);
   }, [pathname, showing]);
@@ -69,12 +76,10 @@ export const SharedHeader = memo(function SharedHeader() {
               <HeaderButton
                 label={t`Editor`}
                 icon={<TreeStructure height={20} width={20} />}
-                aria-current={
-                  showing === "editor" && !isDocsPage ? "page" : undefined
-                }
+                aria-current={isEditor ? "page" : undefined}
                 onClick={() => {
                   setShowing("editor");
-                  isDocsPage && push("/");
+                  if (isAnotherRoute) push("/");
                   gaChangeTab({ action: "editor" });
                 }}
               />
@@ -86,6 +91,7 @@ export const SharedHeader = memo(function SharedHeader() {
                 aria-current={showing === "navigation" ? "page" : undefined}
                 onClick={() => {
                   setShowing("navigation");
+                  if (isAnotherRoute) push("/");
                   gaChangeTab({ action: "navigation" });
                 }}
               />
@@ -124,6 +130,7 @@ export const SharedHeader = memo(function SharedHeader() {
                       aria-current={showing === "feedback" ? "page" : undefined}
                       onClick={() => {
                         setShowing("feedback");
+                        if (isAnotherRoute) push("/");
                         gaChangeTab({ action: "feedback" });
                       }}
                     />
@@ -149,6 +156,7 @@ export const SharedHeader = memo(function SharedHeader() {
               className="mobile-only"
               onClick={() => {
                 setShowing("feedback");
+                if (isAnotherRoute) push("/");
                 gaChangeTab({ action: "feedback" });
               }}
             />
@@ -216,18 +224,29 @@ export const SharedHeader = memo(function SharedHeader() {
               aria-current={showing === "settings" ? "page" : undefined}
               onClick={() => {
                 setShowing("settings");
+                if (isAnotherRoute) push("/");
                 gaChangeTab({ action: "settings" });
               }}
             />
-            <HeaderButton
-              label={t`Account`}
-              icon={<User height={20} width={20} />}
-              aria-current={showing === "sponsor" ? "page" : undefined}
-              onClick={() => {
-                setShowing("sponsor");
-                gaChangeTab({ action: "sponsor" });
-              }}
-            />
+            {isValidCustomer ? (
+              <HeaderButton
+                label={t`Account`}
+                icon={<User height={20} width={20} />}
+                aria-current={showing === "account" ? "page" : undefined}
+                onClick={() => {
+                  setShowing("account");
+                  if (isAnotherRoute) push("/");
+                  gaChangeTab({ action: "account" });
+                }}
+              />
+            ) : (
+              <HeaderLink
+                href="/sponsor"
+                label={t`Become a Sponsor`}
+                icon={<Star height={20} width={20} />}
+                aria-current={isSponsorPage ? "page" : undefined}
+              />
+            )}
           </nav>
         </NavigationMenu.List>
       </header>

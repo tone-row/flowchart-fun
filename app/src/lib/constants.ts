@@ -53,6 +53,7 @@ export const editorOptions: EditorProps["options"] = {
   cursorWidth: 2,
   automaticLayout: true,
   lineNumbers: "off",
+  contextmenu: false,
 };
 
 export const delimiters = "~~~";
