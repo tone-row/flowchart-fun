@@ -10,66 +10,64 @@ import { createCustomer, createSubscription } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
+import Layout from "./Layout";
 import { LoginForm } from "./LoginForm";
 import { Button, Input, Notice, Section, SectionTitle } from "./Shared";
 import Spinner from "./Spinner";
 import styles from "./Sponsor.module.css";
-import { SponsorDashboard } from "./SponsorDashboard";
 
 export default function Sponsor() {
-  const { session } = useContext(AppContext);
-
-  if (session) return <SponsorDashboard />;
-
   return (
-    <Box className={styles.Page} p={5} gap={10} pt={10}>
-      <Type className={styles.PageTitle} size={1}>
-        <Trans>
-          Sponsor flowchart.fun for{" "}
-          <Box as="span" className={styles.orange}>
-            <Trans>$3 / month</Trans>
-          </Box>{" "}
-          or{" "}
-          <Box as="span" className={styles.orange}>
-            <Trans>$30 / year</Trans>
-          </Box>{" "}
-          to get access to...
-        </Trans>
-      </Type>
-      <Box gap={10}>
-        <ReasonToSubscribe
-          alt="Hosted Charts"
-          heading={<Trans>Hosted Charts</Trans>}
-          imgSrc="/images/e.png"
-        >
+    <Layout>
+      <Box className={styles.Page} p={5} gap={10} pt={10}>
+        <Type className={styles.PageTitle} size={1}>
           <Trans>
-            Edit your charts on any device. Share them with anyone. Publish your
-            charts once and they remain up to date with your changes.
+            Sponsor flowchart.fun for{" "}
+            <Box as="span" className={styles.orange}>
+              <Trans>$3 / month</Trans>
+            </Box>{" "}
+            or{" "}
+            <Box as="span" className={styles.orange}>
+              <Trans>$30 / year</Trans>
+            </Box>{" "}
+            to get access to...
           </Trans>
-        </ReasonToSubscribe>
-        <ReasonToSubscribe
-          alt="More Themes"
-          heading={<Trans>More Themes</Trans>}
-          imgSrc="/images/n.png"
-        >
-          <Trans>Get access to alternative styles for your flowcharts</Trans>
-        </ReasonToSubscribe>
-        <ReasonToSubscribe
-          alt="More Layouts"
-          heading={<Trans>More Layouts</Trans>}
-          imgSrc="/images/l.png"
-        >
-          <Trans>
-            Powerful layout algorithms that bring order to graphs of all shapes
-            and sizes
-          </Trans>
-        </ReasonToSubscribe>
+        </Type>
+        <Box gap={10}>
+          <ReasonToSubscribe
+            alt="Hosted Charts"
+            heading={<Trans>Hosted Charts</Trans>}
+            imgSrc="/images/e.png"
+          >
+            <Trans>
+              Edit your charts on any device. Share them with anyone. Publish
+              your charts once and they remain up to date with your changes.
+            </Trans>
+          </ReasonToSubscribe>
+          <ReasonToSubscribe
+            alt="More Themes"
+            heading={<Trans>More Themes</Trans>}
+            imgSrc="/images/n.png"
+          >
+            <Trans>Get access to alternative styles for your flowcharts</Trans>
+          </ReasonToSubscribe>
+          <ReasonToSubscribe
+            alt="More Layouts"
+            heading={<Trans>More Layouts</Trans>}
+            imgSrc="/images/l.png"
+          >
+            <Trans>
+              Powerful layout algorithms that bring order to graphs of all
+              shapes and sizes
+            </Trans>
+          </ReasonToSubscribe>
+        </Box>
+        <Box gap={4}>
+          <LoginBlock />
+          <SponsorBlock />
+        </Box>
       </Box>
-      <Box gap={4}>
-        <LoginBlock />
-        <SponsorBlock />
-      </Box>
-    </Box>
+    </Layout>
   );
 }
 

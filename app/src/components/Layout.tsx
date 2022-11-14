@@ -15,12 +15,18 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
   const isFullscreen = useFullscreen();
   const { url } = useRouteMatch();
   const tab = useContext(AppContext).showing;
+  // For some routes, tabs should not be accessible
+  const showTab = url !== "/sponsor";
   return (
     <LayoutWrapper isFullscreen={isFullscreen} key={url}>
       {isFullscreen ? null : <SharedHeader />}
-      <CurrentTabWrapper>
-        <CurrentTab>{children}</CurrentTab>
-      </CurrentTabWrapper>
+      {showTab ? (
+        <CurrentTabWrapper>
+          <CurrentTab>{children}</CurrentTab>
+        </CurrentTabWrapper>
+      ) : (
+        children
+      )}
       <ColorMode />
       {tab === "editor" && <ShareDialog />}
     </LayoutWrapper>

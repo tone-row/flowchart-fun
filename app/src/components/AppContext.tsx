@@ -30,7 +30,7 @@ export type Showing =
   | "editor"
   | "settings"
   | "feedback"
-  | "sponsor";
+  | "account";
 
 // Stored in localStorage
 export type UserSettings = {

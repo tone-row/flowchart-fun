@@ -27,8 +27,9 @@ import {
 import Spinner from "./Spinner";
 import styles from "./SponsorDashboard.module.css";
 
-export function SponsorDashboard() {
-  const { customer, session, customerIsLoading } = useContext(AppContext);
+export default function SponsorDashboard() {
+  const { customer, session, customerIsLoading, setShowing } =
+    useContext(AppContext);
   const [cancelModal, setCancelModal] = useState(false);
   const [resumeModal, setResumeModal] = useState(false);
   const { push } = useHistory();
@@ -39,8 +40,9 @@ export function SponsorDashboard() {
       if (error) throw error;
       queryClient.removeQueries(["auth"]);
       push("/");
+      setShowing("editor");
     })();
-  }, [push]);
+  }, [push, setShowing]);
   const { data: invoices = [] } = useOrderHistory(
     customer?.customerId,
     customer?.subscription?.id

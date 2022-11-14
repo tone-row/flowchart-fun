@@ -1,8 +1,8 @@
 import { t } from "@lingui/macro";
+import { History } from "history";
 import { CSSProperties } from "react";
 import { OptionTypeBase } from "react-select";
 
-import { TAppContext } from "../components/AppContext";
 import { gaJumpToSponsorPage } from "./analytics";
 
 export interface SelectOption extends OptionTypeBase {
@@ -13,7 +13,7 @@ export interface SelectOption extends OptionTypeBase {
   /** Whether this option should only be presented to non-sponsors */
   hideIfSponsor?: true;
   /** Alternative on click option */
-  handleClick?: (setShowing: TAppContext["setShowing"]) => void;
+  handleClick?: (push: History["push"]) => void;
   /** Style for this particular element */
   style?: CSSProperties;
 }
@@ -38,8 +38,8 @@ export const layouts: SelectOption[] = [
     label: () => t`Get More Layouts`,
     value: "more",
     hideIfSponsor: true,
-    handleClick: (setShowing) => {
-      setShowing("sponsor");
+    handleClick: (push) => {
+      push("/sponsor");
       gaJumpToSponsorPage({ action: "Get More Layouts" });
     },
     style: {
@@ -73,8 +73,8 @@ export const themes: SelectOption[] = [
     label: () => t`Get More Themes`,
     value: "more",
     hideIfSponsor: true,
-    handleClick: (setShowing) => {
-      setShowing("sponsor");
+    handleClick: (push) => {
+      push("/sponsor");
       gaJumpToSponsorPage({ action: "Get More Themes" });
     },
     style: {

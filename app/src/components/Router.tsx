@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
 import { New } from "../pages/New";
+import Sponsor from "./Sponsor";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
@@ -20,6 +21,9 @@ export default function Router() {
     <Switch>
       <Route path="/" exact>
         <Edit />
+      </Route>
+      <Route path="/sponsor" exact>
+        <Sponsor />
       </Route>
       <Route path="/h" exact>
         <Help />
