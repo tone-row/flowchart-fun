@@ -49,6 +49,7 @@ export function useIsValidCustomer() {
   return Boolean(customer?.subscription);
 }
 
+/** Get Chart Title for hosted or local chart */
 export function useTitle(): [string, boolean, string | undefined] {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const { path, params } = useRouteMatch<{ id?: string }>();
@@ -56,6 +57,19 @@ export function useTitle(): [string, boolean, string | undefined] {
   const { data: chart } = useChart(id);
   if (path === "/u/:id" && chart) return [chart.name, true, id];
   return [workspace, false, undefined];
+}
+
+/**
+ * Return a unique ID for any chart (local or hosted)
+ * Hosted charts will return their database ID
+ * Local charts will return their workspace name
+ */
+export function useChartId() {
+  const { workspace = "_index" } = useParams<{ workspace?: string }>();
+  const { path, params } = useRouteMatch<{ id?: string }>();
+  const id = params.id || undefined;
+  if (path === "/u/:id") return id;
+  return workspace;
 }
 
 export function useCurrentHostedChart() {
@@ -71,4 +85,23 @@ export function useIsHelp() {
 export function useIsFirefox() {
   const ua = window.navigator.userAgent;
   return ua.includes("Firefox");
+}
+
+/**
+ * Returns whether showing the two-column editor view
+ * Equivalent to the old "editor" tab
+ * So it returns true for hosted and local charts, read only charts, and the help page
+ *
+ * It's used to alter CSS with data-showing
+ */
+export function useIsEditorView() {
+  const { path, isExact } = useRouteMatch();
+  return (
+    path === "/u/:id" ||
+    path === "/c/:graphText?" ||
+    path === "/r/:graphText?" ||
+    path === "/h" ||
+    path === "/:workspace" ||
+    (path === "/" && isExact)
+  );
 }

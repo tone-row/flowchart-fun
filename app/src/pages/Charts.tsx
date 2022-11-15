@@ -17,8 +17,18 @@ import {
 } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { Link, useHistory, useLocation, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 
+import { AppContext } from "../components/AppContext";
+import Loading from "../components/Loading";
+import {
+  Button,
+  Dialog,
+  Input,
+  Notice,
+  Section,
+  SectionTitle,
+} from "../components/Shared";
 import { gaCreateChart, gaSponsorCTA } from "../lib/analytics";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
@@ -30,63 +40,29 @@ import {
   useChart,
   useHostedCharts,
 } from "../lib/queries";
+import { useLastChart } from "../lib/useLastChart";
 import { Box, Type } from "../slang";
-import { AppContext } from "./AppContext";
-import Loading from "./Loading";
-import styles from "./Navigation.module.css";
-import { Button, Dialog, Input, Notice, Section, SectionTitle } from "./Shared";
+import styles from "./Charts.module.css";
 
 export default function Charts() {
   const validCustomer = useIsValidCustomer();
-  const { setShowing } = useContext(AppContext);
-  const { push } = useHistory();
-
+  const customerIsLoading = useContext(AppContext).customerIsLoading;
+  // Still checking session
   return (
     <Box
       px={5}
       py={8}
-      gap={10}
+      gap={5}
       content="start normal"
       className={styles.Navigation}
     >
-      {!validCustomer && (
-        <Box gap={8} items="start">
-          <Box gap={4} items="start">
-            <Box gap={2}>
-              <Type size={3}>
-                <Trans>Hosted Charts</Trans>
-              </Type>
-              <Type
-                className={styles.CalloutInner}
-                size={-1}
-                style={{ maxWidth: 400 }}
-              >
-                <Trans>
-                  Sponsor flowchart.fun for $3 / month or $30 / year to access
-                  hosted flowcharts and the newest styles and features
-                </Trans>
-              </Type>
-            </Box>
-            <Button
-              className={styles.BlueButton}
-              p={3}
-              px={6}
-              typeProps={{ size: 0 }}
-              text={t`Learn More`}
-              onClick={() => {
-                push("/sponsor");
-                gaSponsorCTA({ action: "from navigation" });
-              }}
-            />
-          </Box>
-          <img
-            src="/images/flowchart-person.svg"
-            alt="Person making a flowchart"
-            className={styles.FlowchartPerson}
-          />
-        </Box>
+      {customerIsLoading ? (
+        <Loading />
+      ) : validCustomer ? (
+        <HostedCharts />
+      ) : (
+        <HostedChartsCallout />
       )}
-      {validCustomer && <HostedCharts />}
       <LocalCharts />
     </Box>
   );
@@ -95,13 +71,11 @@ type Fields = {
   chartTitle: string;
 };
 function LocalCharts() {
-  const { setShowing } = useContext(AppContext);
   const { watch, register, handleSubmit } = useForm<Fields>();
   const title = watch("chartTitle");
   const [charts, setCharts] = useState<string[]>([]);
   const { push } = useHistory();
   const { workspace = undefined } = useParams<{ workspace?: string }>();
-  const { pathname } = useLocation();
   const [erase, setErase] = useState("");
   const [copy, setCopy] = useState("");
 
@@ -109,11 +83,10 @@ function LocalCharts() {
     ({ chartTitle }: Fields) => {
       if (chartTitle) {
         push(`/${chartTitle}`);
-        setShowing("editor");
         gaCreateChart({ action: "local" });
       }
     },
-    [push, setShowing]
+    [push]
   );
 
   const handleCopy = useCallback(
@@ -126,9 +99,8 @@ function LocalCharts() {
       );
       push(`/${chartTitle}`);
       setCopy("");
-      setShowing("editor");
     },
-    [copy, push, setShowing]
+    [copy, push]
   );
 
   const handleDelete = useCallback(() => {
@@ -155,6 +127,8 @@ function LocalCharts() {
         .sort()
     );
   }, [erase]);
+
+  const lastChart = useLastChart((s) => s.lastChart);
 
   return (
     <Section className={styles.ChartSection}>
@@ -190,13 +164,13 @@ function LocalCharts() {
         {charts
           ?.filter((c) => c !== "h")
           .map((chart) => {
-            const isActive = workspace === chart || pathname === `/${chart}`;
+            const href = `/${chart}`;
+            const isActive = lastChart === href;
             return (
               <Fragment key={chart}>
                 <Button
                   as={Link}
                   to={`/${chart}`}
-                  onClick={() => setShowing("editor")}
                   className={styles.NewChartLink}
                   content="normal start"
                   items="center stretch"
@@ -214,6 +188,7 @@ function LocalCharts() {
                   <Copy />
                 </Button>
                 <Button
+                  aria-label={`Delete "${chart}"`}
                   className={styles.IconButton}
                   onClick={() => setErase(chart || "/")}
                 >
@@ -349,14 +324,13 @@ type CreateNewFields = {
 };
 function HostedCharts() {
   const validSponsor = useIsValidSponsor();
-  const { session, setShowing } = useContext(AppContext);
+  const { session } = useContext(AppContext);
   const { push } = useHistory();
   const { id } = useParams<{ id?: string }>();
   const { mutate, isLoading } = useMutation("makeChart", makeChart, {
     onSuccess: (response: any) => {
       queryClient.invalidateQueries(["auth", "hostedCharts"]);
       push(`/u/${response.data[0].id}`);
-      setShowing("editor");
       gaCreateChart({ action: "hosted" });
     },
   });
@@ -401,9 +375,7 @@ function HostedCharts() {
           </Box>
         </Section>
       ) : (
-        <Notice
-          boxProps={{ as: "button", onClick: () => setShowing("account") }}
-        >
+        <Notice boxProps={{ as: Link, to: "/a" }}>
           <Trans>
             Your subscription is no longer active. If you want to create and
             edit hosted charts become a sponsor.
@@ -427,7 +399,6 @@ function HostedCharts() {
             is_public={chart.is_public}
             created_at={chart.created_at}
             updated_at={chart.updated_at}
-            id={id}
           />
         ))}
       </Box>
@@ -670,7 +641,6 @@ const ChartButton = memo(function ChartButton({
   is_public,
   updated_at,
   created_at,
-  id,
   setCopyModal,
   setDeleteModal,
 }: {
@@ -684,13 +654,14 @@ const ChartButton = memo(function ChartButton({
   setDeleteModal: any;
 }) {
   const validSponsor = useIsValidSponsor();
-  const setShowing = useContext(AppContext).setShowing;
+  const lastChart = useLastChart((s) => s.lastChart);
+  const href = `/u/${chartId}`;
+  const isActive = lastChart === href;
   return (
     <>
       <Button
         as={Link}
-        to={`/u/${chartId}`}
-        onClick={() => setShowing("editor")}
+        to={href}
         className={styles.NewChartLink}
         content="normal start"
         items="center stretch"
@@ -701,9 +672,7 @@ const ChartButton = memo(function ChartButton({
           },
         }}
         gap={2}
-        aria-current={
-          id && parseInt(id, 10) === chartId ? "location" : undefined
-        }
+        aria-current={isActive ? "location" : undefined}
         title={chartName}
       >
         <Type as="span" size={-1}>
@@ -744,3 +713,44 @@ const ChartButton = memo(function ChartButton({
     </>
   );
 });
+
+function HostedChartsCallout() {
+  const { push } = useHistory();
+  return (
+    <Box gap={8} items="start">
+      <Box gap={4} items="start">
+        <Box gap={2}>
+          <Type size={3}>
+            <Trans>Hosted Charts</Trans>
+          </Type>
+          <Type
+            className={styles.CalloutInner}
+            size={-1}
+            style={{ maxWidth: 400 }}
+          >
+            <Trans>
+              Sponsor flowchart.fun for $3 / month or $30 / year to access
+              hosted flowcharts and the newest styles and features
+            </Trans>
+          </Type>
+        </Box>
+        <Button
+          className={styles.BlueButton}
+          p={3}
+          px={6}
+          typeProps={{ size: 0 }}
+          text={t`Learn More`}
+          onClick={() => {
+            push("/sponsor");
+            gaSponsorCTA({ action: "from navigation" });
+          }}
+        />
+      </Box>
+      <img
+        src="/images/flowchart-person.svg"
+        alt="Person making a flowchart"
+        className={styles.FlowchartPerson}
+      />
+    </Box>
+  );
+}

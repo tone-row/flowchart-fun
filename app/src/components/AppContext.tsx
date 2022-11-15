@@ -25,13 +25,6 @@ import { colors, darkTheme } from "../slang/config";
 
 type Theme = typeof colors;
 
-export type Showing =
-  | "navigation"
-  | "editor"
-  | "settings"
-  | "feedback"
-  | "account";
-
 // Stored in localStorage
 export type UserSettings = {
   mode: "light" | "dark";
@@ -52,8 +45,6 @@ export type TAppContext = {
   shareLink: string;
   setShareLink: Dispatch<SetStateAction<string>>;
   language: string;
-  showing: Showing;
-  setShowing: Dispatch<SetStateAction<Showing>>;
   hasError: false | string;
   setHasError: Dispatch<SetStateAction<false | string>>;
   hasStyleError: false | string;
@@ -65,6 +56,7 @@ export type TAppContext = {
   session: Session | null;
   customer?: CustomerInfo;
   customerIsLoading: boolean;
+  /** Whether or not we've finished discovering if the user is auth'd */
   checkedSession: boolean;
 } & UserSettings;
 
@@ -76,7 +68,6 @@ type CustomerInfo = {
 export const AppContext = createContext({} as TAppContext);
 
 const Provider = ({ children }: { children?: ReactNode }) => {
-  const [showing, setShowing] = useState<Showing>("editor");
   const [shareLink, setShareLink] = useState("");
   const [shareModal, setShareModal] = useState(false);
   const [userSettingsString, setUserSettings] = useLocalStorage(
@@ -185,8 +176,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         shareLink,
         setShareLink,
         updateUserSettings,
-        showing,
-        setShowing,
         hasError,
         setHasError,
         setShareModal,

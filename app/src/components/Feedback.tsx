@@ -1,11 +1,12 @@
 import { t, Trans } from "@lingui/macro";
-import { useCallback, useContext, useState } from "react";
+import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
+import { Link } from "react-router-dom";
 
 import { mail } from "../lib/queries";
+import { useLastChart } from "../lib/useLastChart";
 import { Type } from "../slang";
-import { AppContext } from "./AppContext";
 import styles from "./Feedback.module.css";
 import { Button, Input, Notice, Page, Section, Textarea } from "./Shared";
 import Spinner from "./Spinner";
@@ -106,13 +107,17 @@ export default function Feedback() {
 }
 
 function Success() {
-  const { setShowing } = useContext(AppContext);
+  const lastChart = useLastChart((s) => s.lastChart);
   return (
     <Section self="center">
       <Type size={2}>
         <Trans>Thank you for your feedback!</Trans>
       </Type>
-      <Button onClick={() => setShowing("editor")} text={t`Back To Editor`} />
+      <Type color="color-highlightColor">
+        <Link to={lastChart}>
+          <Trans>Back To Editor</Trans>
+        </Link>
+      </Type>
     </Section>
   );
 }

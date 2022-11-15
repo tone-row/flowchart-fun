@@ -11,7 +11,6 @@ export function useLocalDoc(defaultWorkspace = "") {
     ["flowcharts.fun", workspace].filter(Boolean).join(":"),
     defaultText
   );
-
   const parsedDoc = useParseDoc(fullText, setFullText, true);
 
   return {

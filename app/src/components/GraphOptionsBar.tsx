@@ -14,7 +14,6 @@ import {
   memo,
   ReactNode,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
 } from "react";
@@ -33,7 +32,6 @@ import { defaultGraphTheme } from "../lib/graphThemes";
 import { useIsValidSponsor } from "../lib/hooks";
 import { UpdateDoc } from "../lib/UpdateDoc";
 import { Box, Type } from "../slang";
-import { AppContext } from "./AppContext";
 import { FreezeLayoutToggle } from "./FreezeLayoutToggle";
 import styles from "./GraphOptionsBar.module.css";
 import { IconButton } from "./IconButton";

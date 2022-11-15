@@ -4,7 +4,7 @@ import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
 import Docs from "../components/Docs";
 import EditorError from "../components/EditorError";
-import Layout from "../components/Layout";
+import { EditWrapper } from "../components/EditWrapper";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
@@ -62,7 +62,7 @@ export default function Help() {
   );
 
   return (
-    <Layout>
+    <EditWrapper>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}
@@ -109,7 +109,7 @@ export default function Help() {
         </div>
         <EditorError />
       </Main>
-    </Layout>
+    </EditWrapper>
   );
 }
 

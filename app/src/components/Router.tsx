@@ -1,9 +1,14 @@
-import { lazy } from "react";
-import { Route, Switch } from "react-router-dom";
+import { lazy, ReactNode } from "react";
+import { Route, RouteProps, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
+import { useIsEditorView } from "../lib/hooks";
 import { New } from "../pages/New";
-import Sponsor from "./Sponsor";
+import Feedback from "./Feedback";
+import Layout from "./Layout";
+import Settings from "./Settings";
+import ShareDialog from "./ShareDialog";
+import SponsorDashboard from "./SponsorDashboard";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
@@ -14,41 +19,82 @@ const Help = lazy(() => import("../pages/Help"));
 const EditHosted = lazy(() => import("../pages/EditHosted"));
 /** Read only chart, encoded in url / maybe fullscreen */
 const ReadOnly = lazy(() => import("../pages/ReadOnly"));
+const Charts = lazy(() => import("../pages/Charts"));
+const Sponsor = lazy(() => import("../pages/Sponsor"));
 
 export default function Router() {
   usePageViews();
   return (
     <Switch>
-      <Route path="/" exact>
+      <RouteWithWrapper path="/" exact>
         <Edit />
-      </Route>
-      <Route path="/sponsor" exact>
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/sponsor" exact>
         <Sponsor />
-      </Route>
-      <Route path="/h" exact>
+      </RouteWithWrapper>
+      {/* "y" for "your charts" */}
+      <RouteWithWrapper path="/y" exact>
+        <Charts />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/h" exact>
         <Help />
-      </Route>
-      <Route path="/n/:graphText?">
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/n/:graphText?">
         <New />
-      </Route>
-      <Route path="/u/:id">
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/u/:id">
         <EditHosted />
-      </Route>
-      <Route path="/r/:graphText?">
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/r/:graphText?">
         <ReadOnly />
-      </Route>
-      <Route path="/c/:graphText?">
+      </RouteWithWrapper>
+      {/* c for "compressed" */}
+      <RouteWithWrapper path="/c/:graphText?">
         <ReadOnly />
-      </Route>
-      <Route path="/f/:graphText?">
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/f/:graphText?">
         <ReadOnly />
-      </Route>
-      <Route path="/p/:public_id">
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/p/:public_id">
         <Public />
-      </Route>
-      <Route path="/:workspace">
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/s">
+        <Settings />
+      </RouteWithWrapper>
+      {/* "o" for no reason at all */}
+      <RouteWithWrapper path="/o">
+        <Feedback />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/a">
+        <SponsorDashboard />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/:workspace">
         <Edit />
-      </Route>
+      </RouteWithWrapper>
     </Switch>
+  );
+}
+
+function RouteWrapper({ children }: { children: ReactNode }) {
+  const isEditorView = useIsEditorView();
+
+  return (
+    <>
+      <Layout>{children}</Layout>
+      {isEditorView && <ShareDialog />}
+    </>
+  );
+}
+
+function RouteWithWrapper({
+  children,
+  ...rest
+}: {
+  children: ReactNode;
+} & RouteProps) {
+  return (
+    <Route {...rest}>
+      <RouteWrapper>{children}</RouteWrapper>
+    </Route>
   );
 }
