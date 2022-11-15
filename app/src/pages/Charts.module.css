@@ -16,7 +16,6 @@
 }
 
 .ChartSection {
-  grid-template-rows: auto 80px auto;
   align-items: start;
 }
 

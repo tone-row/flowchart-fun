@@ -1,12 +1,12 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import { Check, DotsThree } from "phosphor-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useRouteMatch } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
 import { EditorWrapper } from "../components/EditorWrapper";
-import Layout from "../components/Layout";
+import { EditWrapper } from "../components/EditWrapper";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import Spinner from "../components/Spinner";
@@ -20,6 +20,7 @@ import {
   themeNameLight,
 } from "../lib/registerLanguage";
 import { useHostedDoc } from "../lib/useHostedDoc";
+import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
 
@@ -72,8 +73,11 @@ export default function EditHosted() {
     [updateDoc]
   );
 
+  const { url } = useRouteMatch();
+  useTrackLastChart(url);
+
   return (
-    <Layout>
+    <EditWrapper>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}
@@ -110,7 +114,7 @@ export default function EditHosted() {
         />
         <EditorError />
       </Main>
-    </Layout>
+    </EditWrapper>
   );
 }
 

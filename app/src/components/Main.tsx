@@ -12,7 +12,6 @@ import { useFullscreen } from "../lib/hooks";
 import { Theme } from "../lib/themes/constants";
 import { UpdateDoc } from "../lib/UpdateDoc";
 import { CloneButton } from "./CloneButton";
-import CurrentTab from "./CurrentTab";
 import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
 import Loading from "./Loading";
@@ -54,9 +53,7 @@ const Main = memo(
       <>
         {isFullscreen ? null : (
           <TabPane triggerResize={trigger}>
-            <Suspense fallback={<Loading />}>
-              <CurrentTab>{children}</CurrentTab>
-            </Suspense>
+            <Suspense fallback={<Loading />}>{children}</Suspense>
           </TabPane>
         )}
         <GraphWrapper update={update} options={options} isFrozen={isFrozen}>

@@ -46,6 +46,7 @@ export function useParseDoc(
   setFullText: (value: string) => void,
   editable: boolean
 ) {
+  // split hidden options from rest
   const parts = fullText.split(HIDDEN_GRAPH_OPTIONS_DIVIDER);
   const text = parts[0];
   const hiddenGraphOptionsText = parts[1] || "{}";

@@ -19,6 +19,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter } from "react-router-dom";
 
 import { ThemeLoaderProvider } from "../lib/graphThemes";
+import Layout from "./Layout";
 import Loading from "./Loading";
 import { pageHeight } from "./pageHeight";
 import { Button } from "./Shared";

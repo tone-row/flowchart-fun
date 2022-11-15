@@ -113,15 +113,19 @@ const Graph = memo(
     useDownloadHandlers(cy, theme, bg);
 
     // Initialize Graph
-    useEffect(
-      () =>
-        initializeGraph({
-          errorCatcher,
-          cy,
-          setHoverLineNumber,
-        }),
-      [setHoverLineNumber]
-    );
+    useEffect(() => {
+      initializeGraph({
+        errorCatcher,
+        cy,
+        setHoverLineNumber,
+      });
+      const cyc = cy.current;
+      const ecc = errorCatcher.current;
+      return () => {
+        if (cyc) cyc.destroy();
+        if (ecc) ecc.destroy();
+      };
+    }, [setHoverLineNumber]);
 
     // bind drag-free event
     useEffect(() => {
