@@ -1,4 +1,4 @@
-import { memo, ReactNode, Suspense, useContext } from "react";
+import { memo, ReactNode, Suspense } from "react";
 
 import { useFullscreen, useIsEditorView } from "../lib/hooks";
 import { Box, Type } from "../slang";

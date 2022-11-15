@@ -17,7 +17,7 @@ import {
 } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { Link, useHistory, useLocation, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
@@ -46,7 +46,6 @@ import styles from "./Charts.module.css";
 
 export default function Charts() {
   const validCustomer = useIsValidCustomer();
-  const { push } = useHistory();
   const customerIsLoading = useContext(AppContext).customerIsLoading;
   // Still checking session
   return (
@@ -77,7 +76,6 @@ function LocalCharts() {
   const [charts, setCharts] = useState<string[]>([]);
   const { push } = useHistory();
   const { workspace = undefined } = useParams<{ workspace?: string }>();
-  const { pathname } = useLocation();
   const [erase, setErase] = useState("");
   const [copy, setCopy] = useState("");
 
@@ -400,7 +398,6 @@ function HostedCharts() {
             is_public={chart.is_public}
             created_at={chart.created_at}
             updated_at={chart.updated_at}
-            id={id}
           />
         ))}
       </Box>
@@ -643,7 +640,6 @@ const ChartButton = memo(function ChartButton({
   is_public,
   updated_at,
   created_at,
-  id,
   setCopyModal,
   setDeleteModal,
 }: {

@@ -1,7 +1,7 @@
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { QueryClientProvider } from "react-query";
 
 import { queryClient } from "../lib/queries";
@@ -19,7 +19,6 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter } from "react-router-dom";
 
 import { ThemeLoaderProvider } from "../lib/graphThemes";
-import Layout from "./Layout";
 import Loading from "./Loading";
 import { pageHeight } from "./pageHeight";
 import { Button } from "./Shared";

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useLocation, useRouteMatch } from "react-router-dom";
 import create from "zustand";
 
 type LastChart = {
@@ -7,7 +6,7 @@ type LastChart = {
 };
 
 /** Store the last chart (hosted or local, but not help) that the user was on */
-export const useLastChart = create<LastChart>((set) => ({
+export const useLastChart = create<LastChart>(() => ({
   lastChart: "/",
 }));
 
@@ -16,8 +15,6 @@ export const useLastChart = create<LastChart>((set) => ({
  * So we can send people back to it with the Editor link
  */
 export function useTrackLastChart(url: string) {
-  // const { url } = useRouteMatch();
-
   useEffect(() => {
     if (url) {
       useLastChart.setState({ lastChart: url });
