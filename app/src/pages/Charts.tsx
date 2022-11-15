@@ -188,6 +188,7 @@ function LocalCharts() {
                   <Copy />
                 </Button>
                 <Button
+                  aria-label={`Delete "${chart}"`}
                   className={styles.IconButton}
                   onClick={() => setErase(chart || "/")}
                 >

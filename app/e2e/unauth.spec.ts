@@ -68,42 +68,57 @@ test.describe("unauth", () => {
     await expect(page.locator("text=my-copy")).toBeVisible();
   });
 
+  test("Local chart with no change doesn't save in local storage", async ({
+    page,
+  }) => {
+    // Click span:has-text("Charts")
+    await page.locator('span:has-text("Charts")').click();
+    await expect(page).toHaveURL(`${BASE_URL}/y`);
+    // Click [placeholder="Enter a title"]
+    await page.locator('[placeholder="Enter a title"]').click();
+    // Fill [placeholder="Enter a title"]
+    await page.locator('[placeholder="Enter a title"]').fill("my new chart");
+    // Click button:has-text("Create")
+    await page.locator('button:has-text("Create")').click();
+    await expect(page).toHaveURL(`${BASE_URL}/my-new-chart`);
+    // Click span:has-text("Charts")
+    await page.locator('span:has-text("Charts")').click();
+    await expect(page).toHaveURL(`${BASE_URL}/y`);
+
+    // expect "my-new-chart" NOT to be in the document
+    await expect(page.locator("text=my-new-chart")).not.toBeVisible();
+  });
+
   test("Delete a chart", async ({ page }) => {
-    await goToTab(page, "Charts");
+    // Click span:has-text("Charts")
+    await page.locator('span:has-text("Charts")').click();
+    await expect(page).toHaveURL(`${BASE_URL}/y`);
     // Click [placeholder="Enter a title"]
     await page.locator('[placeholder="Enter a title"]').click();
     // Fill [placeholder="Enter a title"]
     await page.locator('[placeholder="Enter a title"]').fill("delete me");
-
-    await page.locator("text=Createflowchart.fun/delete >> button").click();
-
-    // Expect to be on delete-me page
-    await expect(page).toHaveURL(`${BASE_URL}/delete-me`);
-
-    await goToTab(page, "Charts");
-    // Click [placeholder="Enter a title"]
-    await page.locator('[placeholder="Enter a title"]').click();
-    // Fill [placeholder="Enter a title"]
-    await page.locator('[placeholder="Enter a title"]').fill("delete me");
-    // Click text=Createflowchart.fun/delete-me >> button
-    await page.locator("text=Createflowchart.fun/delete-me >> button").click();
-
+    // Press Enter
+    await page.locator('[placeholder="Enter a title"]').press("Enter");
     await expect(page).toHaveURL(`${BASE_URL}/delete-me`);
 
     await changeEditorText(page);
 
-    await goToTab(page, "Charts");
+    // Click span:has-text("Charts")
+    await page.locator('span:has-text("Charts")').click();
 
-    const chart = page.locator("text=/.*/delete-me.*/");
-    await expect(chart).toBeVisible();
+    await expect(page).toHaveURL(`${BASE_URL}/y`);
 
-    // Click text=Name//delete-me >> button >> nth=3
-    await page.locator("text=Name//delete-me >> button").nth(3).click();
+    // expect "delete-me" to be in the document
+    await expect(page.locator("text=delete-me")).toBeVisible();
+
+    // Click [aria-label="Delete \"delete-me\""]
+    await page.locator('[aria-label="Delete \\"delete-me\\""]').click();
+
     // Click button:has-text("Delete")
     await page.locator('button:has-text("Delete")').click();
 
-    await expect(chart).not.toBeVisible();
-    await expect(page).toHaveURL(`${BASE_URL}/`);
+    // expect "delete-me" NOT to be in the document
+    await expect(page.locator("text=delete-me")).not.toBeVisible();
   });
 
   test("Create New", async ({ page }) => {
@@ -111,8 +126,8 @@ test.describe("unauth", () => {
 
     expect(new URL(page.url()).pathname).toBe("/");
 
-    // Click button[role="tab"]:has-text("Create")
-    await page.locator('button:has-text("New")').click();
+    // Click the link with the text New
+    await page.click('a:has-text("New")');
 
     // Make sure no longer on index
     expect(new URL(page.url()).pathname).not.toBe("/");
@@ -128,7 +143,7 @@ test.describe("unauth", () => {
     await page.locator('button:has-text("Help")').click();
 
     // click button with text "Documentation"
-    await page.locator('button:has-text("Documentation")').first().click();
+    await page.locator('a:has-text("Documentation")').first().click();
 
     await expect(page).toHaveURL(`${BASE_URL}/h`);
 
@@ -296,7 +311,7 @@ test.describe("unauth", () => {
     await page.locator('button:has-text("Help")').click();
 
     // click button with text "Feedback"
-    await page.locator('button:has-text("Feedback")').first().click();
+    await page.locator('a:has-text("Feedback")').first().click();
 
     // Click [data-testid="message"]
     await page.locator('[data-testid="message"]').click();
@@ -455,14 +470,17 @@ test.describe("unauth", () => {
 });
 
 async function changeEditorText(page: Page) {
-  // Put cursor in editor
-  await page.click("text=before a colon creates a label");
-
-  // Delete A Letter
-  await page.press(
-    '[aria-label="Editor content;Press Alt+F1 for Accessibility Options."]',
-    "Delete"
-  );
+  await page.getByText("This app works by typing").first().click();
+  await page
+    .getByRole("textbox", {
+      name: "Editor content;Press Alt+F1 for Accessibility Options.",
+    })
+    .press("Meta+a");
+  await page
+    .getByRole("textbox", {
+      name: "Editor content;Press Alt+F1 for Accessibility Options.",
+    })
+    .fill("1", { force: true });
 }
 
 async function openExportDialog(page: Page) {
