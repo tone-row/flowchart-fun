@@ -13,7 +13,7 @@ import Spinner from "../components/Spinner";
 import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useIsValidSponsor } from "../lib/hooks";
-import { queryClient, useAppMode } from "../lib/queries";
+import { queryClient, useAppMode, useChart } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
@@ -26,7 +26,8 @@ import styles from "./EditHosted.module.css";
 
 export default function EditHosted() {
   const validSponsor = useIsValidSponsor();
-  const { id } = useParams<{ id?: string }>();
+  const { id } = useParams<{ id: string }>();
+  const { data } = useChart(id);
   const {
     flush,
     options,
@@ -39,7 +40,8 @@ export default function EditHosted() {
     bg,
     isFrozen,
     fullText,
-  } = useHostedDoc(id);
+  } = useHostedDoc(id, data?.chart);
+
   const { linesOfYaml } = options;
 
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();

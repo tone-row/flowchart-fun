@@ -50,13 +50,13 @@ export function useIsValidCustomer() {
 }
 
 /** Get Chart Title for hosted or local chart */
-export function useTitle(): [string, boolean, string | undefined] {
+export function useTitle(): [string, boolean, string] {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const { path, params } = useRouteMatch<{ id?: string }>();
-  const id = params.id || undefined;
+  const id = params.id || ""; // setting fake ID for typescript
   const { data: chart } = useChart(id);
   if (path === "/u/:id" && chart) return [chart.name, true, id];
-  return [workspace, false, undefined];
+  return [workspace, false, id];
 }
 
 /**
@@ -73,7 +73,7 @@ export function useChartId() {
 }
 
 export function useCurrentHostedChart() {
-  const { id } = useParams<{ id?: string }>();
+  const { id } = useParams<{ id: string }>();
   return useChart(id);
 }
 

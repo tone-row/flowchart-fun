@@ -326,7 +326,6 @@ function HostedCharts() {
   const validSponsor = useIsValidSponsor();
   const { session } = useContext(AppContext);
   const { push } = useHistory();
-  const { id } = useParams<{ id?: string }>();
   const { mutate, isLoading } = useMutation("makeChart", makeChart, {
     onSuccess: (response: any) => {
       queryClient.invalidateQueries(["auth", "hostedCharts"]);
@@ -476,7 +475,7 @@ function CopyHostedChartInner({
     },
   });
   const { data: chart } = useChart(
-    typeof isOpen === "number" ? isOpen.toString() : undefined
+    typeof isOpen === "number" ? isOpen.toString() : ""
   );
   const { session } = useContext(AppContext);
 
