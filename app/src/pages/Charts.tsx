@@ -476,7 +476,7 @@ function CopyHostedChartInner({
     },
   });
   const { data: chart } = useChart(
-    typeof isOpen === "number" ? isOpen.toString() : undefined
+    typeof isOpen === "number" ? isOpen.toString() : ""
   );
   const { session } = useContext(AppContext);
 
