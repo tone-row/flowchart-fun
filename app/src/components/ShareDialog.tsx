@@ -24,25 +24,11 @@ import Spinner from "./Spinner";
 
 export default function ShareDialog() {
   const [_, isHosted, id] = useTitle();
-  const { data: chart } = useChart(id);
   const { shareModal, setShareModal, shareLink } = useContext(AppContext);
   const close = useCallback(() => setShareModal(false), [setShareModal]);
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
-  const makePublic = useMutation(
-    "makeChartPublic",
-    async (isPublic: boolean) => {
-      if (isHosted && id) {
-        await makeChartPublic(id, isPublic);
-      }
-    },
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries(["useChart", id]);
-      },
-    }
-  );
 
   return (
     <Dialog
@@ -87,43 +73,7 @@ export default function ShareDialog() {
           />
         </Box>
       </Column>
-      {isHosted && (
-        <Column>
-          <Title>
-            <Trans>Public</Trans>
-          </Title>
-          <Box
-            flow="column"
-            content="normal start"
-            items="center stretch"
-            gap={2}
-          >
-            <Type as="label" htmlFor="isPublic" size={-1}>
-              <Trans>Make publicly accessible</Trans>
-            </Type>
-            <input
-              type="checkbox"
-              name="isPublic"
-              id="isPublic"
-              defaultChecked={chart?.is_public}
-              onChange={(e) => {
-                makePublic.mutate(e.target.checked);
-              }}
-            />
-            {makePublic.isLoading && <Spinner />}
-          </Box>
-          {chart?.is_public && (
-            <Box>
-              <LinkCopy
-                value={`${window.location.origin}/p/${chart.public_id}`}
-                title={t`Public`}
-                rawTitle="Public"
-              />
-            </Box>
-          )}
-        </Column>
-      )}
-
+      {isHosted ? <HostedOptions id={id} /> : null}
       <Column>
         <Title>
           <Trans>Link</Trans>
@@ -300,5 +250,49 @@ function Mermaid() {
         {copied && <Check data-testid="Copied Mermaid Code" />}
       </Box>
     </>
+  );
+}
+
+function HostedOptions({ id }: { id: string }) {
+  const { data: chart } = useChart(id);
+  const makePublic = useMutation(
+    "makeChartPublic",
+    async (isPublic: boolean) => makeChartPublic(id, isPublic),
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["useChart", id]);
+      },
+    }
+  );
+  return (
+    <Column>
+      <Title>
+        <Trans>Public</Trans>
+      </Title>
+      <Box flow="column" content="normal start" items="center stretch" gap={2}>
+        <Type as="label" htmlFor="isPublic" size={-1}>
+          <Trans>Make publicly accessible</Trans>
+        </Type>
+        <input
+          type="checkbox"
+          name="isPublic"
+          id="isPublic"
+          defaultChecked={chart?.is_public}
+          onChange={(e) => {
+            makePublic.mutate(e.target.checked);
+          }}
+        />
+        {makePublic.isLoading && <Spinner />}
+      </Box>
+      {chart?.is_public && (
+        <Box>
+          <LinkCopy
+            value={`${window.location.origin}/p/${chart.public_id}`}
+            title={t`Public`}
+            rawTitle="Public"
+          />
+        </Box>
+      )}
+    </Column>
   );
 }

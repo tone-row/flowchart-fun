@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useDebouncedCallback } from "use-debounce";
 
-import { updateChartText, useChart } from "./queries";
+import { updateChartText } from "./queries";
 import { useParseDoc } from "./useParseDoc";
 
 export function useHostedDoc(id: string, initialFullText: string) {

@@ -53,7 +53,7 @@ export function useIsValidCustomer() {
 export function useTitle(): [string, boolean, string] {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const { path, params } = useRouteMatch<{ id?: string }>();
-  const id = params.id || "-"; // setting fake ID for typescript
+  const id = params.id || ""; // setting fake ID for typescript
   const { data: chart } = useChart(id);
   if (path === "/u/:id" && chart) return [chart.name, true, id];
   return [workspace, false, id];
