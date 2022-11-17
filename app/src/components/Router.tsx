@@ -1,5 +1,5 @@
 import { lazy, ReactNode } from "react";
-import { Route, RouteProps, Switch, useRouteMatch } from "react-router-dom";
+import { Route, RouteProps, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
 import { useIsEditorView } from "../lib/hooks";
@@ -24,7 +24,6 @@ const Sponsor = lazy(() => import("../pages/Sponsor"));
 
 export default function Router() {
   usePageViews();
-  const { url } = useRouteMatch();
   return (
     <Switch>
       <RouteWithWrapper path="/" exact>

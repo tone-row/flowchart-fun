@@ -41,7 +41,7 @@ export default function EditHosted() {
     isFrozen,
     fullText,
   } = useHostedDoc(id, data?.chart);
-  // console.log({ text, fullText, id });
+
   const { linesOfYaml } = options;
 
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
