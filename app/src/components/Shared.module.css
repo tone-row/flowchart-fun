@@ -28,6 +28,10 @@ textarea:focus {
   outline: none;
 }
 
+.InputText {
+  font-size: 16px !important;
+}
+
 .Input:focus-within {
   outline: none;
 }
