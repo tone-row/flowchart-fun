@@ -1,4 +1,5 @@
 import { t } from "@lingui/macro";
+import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import {
@@ -49,54 +50,47 @@ export const SharedHeader = memo(function SharedHeader() {
     !isHelpPage &&
     !isSettingsPage &&
     !isAccountPage;
-  const [collapsed, setCollapsed] = useState(true);
   const isValidCustomer = useIsValidCustomer();
-  useEffect(() => {
-    setCollapsed(true);
-  }, [pathname]);
   const lastChart = useLastChart((state) => state.lastChart);
   return (
-    <NavigationMenu.Root asChild>
-      <header className={`shared-header ${collapsed ? "collapsed" : ""}`}>
-        <NavigationMenu.List asChild>
-          <nav className="shared-header__left">
-            <button
-              onClick={() => setCollapsed(!collapsed)}
-              className="shared-header__logo"
-            >
-              <BrandSvg width={40} />
-            </button>
-            <NavigationMenu.Item asChild>
-              <HeaderClientLink
-                label={t`New`}
-                icon={<Plus height={20} width={20} />}
-                className="shared-header__new"
-                to="/n"
-                onClick={() => {
-                  gaNewChart();
-                }}
-              />
-            </NavigationMenu.Item>
-            <NavigationMenu.Item asChild>
-              <HeaderClientLink
-                label={t`Editor`}
-                icon={<TreeStructure height={20} width={20} />}
-                aria-current={isEditor ? "page" : undefined}
-                to={lastChart}
-              />
-            </NavigationMenu.Item>
-            <NavigationMenu.Item asChild>
-              <HeaderClientLink
-                label={t`Charts`}
-                to="/y"
-                icon={<FolderOpen height={20} width={20} />}
-                aria-current={isChartsPage ? "page" : undefined}
-                onClick={() => {
-                  gaChangeTab({ action: "navigation" });
-                }}
-              />
-            </NavigationMenu.Item>
-            <DesktopOnly>
+    <>
+      <NavigationMenu.Root asChild>
+        <header className={`shared-header`}>
+          <NavigationMenu.List asChild>
+            <nav className="shared-header__left">
+              <span className="shared-header__logo">
+                <BrandSvg width={40} />
+              </span>
+              <NavigationMenu.Item asChild>
+                <HeaderClientLink
+                  label={t`New`}
+                  icon={<Plus height={20} width={20} />}
+                  className="shared-header__new"
+                  to="/n"
+                  onClick={() => {
+                    gaNewChart();
+                  }}
+                />
+              </NavigationMenu.Item>
+              <NavigationMenu.Item asChild>
+                <HeaderClientLink
+                  label={t`Editor`}
+                  icon={<TreeStructure height={20} width={20} />}
+                  aria-current={isEditor ? "page" : undefined}
+                  to={lastChart}
+                />
+              </NavigationMenu.Item>
+              <NavigationMenu.Item asChild>
+                <HeaderClientLink
+                  label={t`Charts`}
+                  to="/y"
+                  icon={<FolderOpen height={20} width={20} />}
+                  aria-current={isChartsPage ? "page" : undefined}
+                  onClick={() => {
+                    gaChangeTab({ action: "navigation" });
+                  }}
+                />
+              </NavigationMenu.Item>
               <DropdownMenu.Root>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
@@ -133,32 +127,10 @@ export const SharedHeader = memo(function SharedHeader() {
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
               </DropdownMenu.Root>
-            </DesktopOnly>
-            <HeaderClientLink
-              label={t`Documentation`}
-              icon={<Book height={20} width={20} />}
-              aria-current={isDocsPage ? "page" : undefined}
-              className="mobile-only"
-              to="/h"
-              onClick={() => {
-                gaChangeTab({ action: "help" });
-              }}
-            />
-            <HeaderClientLink
-              label={t`Feedback`}
-              icon={<Chat height={20} width={20} />}
-              aria-current={isFeedbackPage ? "page" : undefined}
-              className="mobile-only"
-              to="/o"
-              onClick={() => {
-                gaChangeTab({ action: "feedback" });
-              }}
-            />
-          </nav>
-        </NavigationMenu.List>
-        <NavigationMenu.List asChild>
-          <nav className="shared-header__right">
-            <DesktopOnly>
+            </nav>
+          </NavigationMenu.List>
+          <NavigationMenu.List asChild>
+            <nav className="shared-header__right">
               <DropdownMenu.Root>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
@@ -193,56 +165,48 @@ export const SharedHeader = memo(function SharedHeader() {
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
               </DropdownMenu.Root>
-            </DesktopOnly>
-            <HeaderLink
-              href="/blog/"
-              label={t`Blog`}
-              className="mobile-only"
-              icon={<PencilLine height={20} width={20} />}
-            />
-            <HeaderLink
-              href="/blog/changelog"
-              label={t`Changelog`}
-              className="mobile-only"
-              icon={<Notebook height={20} width={20} />}
-            />
-            <HeaderLink
-              href="/blog/roadmap"
-              label={t`Roadmap`}
-              className="mobile-only"
-              icon={<Signpost height={20} width={20} />}
-            />
-            <HeaderClientLink
-              label={t`Settings`}
-              icon={<Gear height={20} width={20} />}
-              aria-current={isSettingsPage ? "page" : undefined}
-              to="/s"
-              onClick={() => {
-                gaChangeTab({ action: "settings" });
-              }}
-            />
-            {isValidCustomer ? (
               <HeaderClientLink
-                label={t`Account`}
-                icon={<User height={20} width={20} />}
-                aria-current={isAccountPage ? "page" : undefined}
-                to="/a"
+                label={t`Settings`}
+                icon={<Gear height={20} width={20} />}
+                aria-current={isSettingsPage ? "page" : undefined}
+                to="/s"
                 onClick={() => {
-                  gaChangeTab({ action: "account" });
+                  gaChangeTab({ action: "settings" });
                 }}
               />
-            ) : (
-              <HeaderLink
-                href="/sponsor"
-                label={t`Become a Sponsor`}
-                icon={<Star height={20} width={20} />}
-                aria-current={isSponsorPage ? "page" : undefined}
-              />
-            )}
-          </nav>
-        </NavigationMenu.List>
-      </header>
-    </NavigationMenu.Root>
+              {isValidCustomer ? (
+                <HeaderClientLink
+                  label={t`Account`}
+                  icon={<User height={20} width={20} />}
+                  aria-current={isAccountPage ? "page" : undefined}
+                  to="/a"
+                  onClick={() => {
+                    gaChangeTab({ action: "account" });
+                  }}
+                />
+              ) : (
+                <HeaderLink
+                  href="/sponsor"
+                  label={t`Become a Sponsor`}
+                  icon={<Star height={20} width={20} />}
+                  aria-current={isSponsorPage ? "page" : undefined}
+                />
+              )}
+            </nav>
+          </NavigationMenu.List>
+        </header>
+      </NavigationMenu.Root>
+      <MobileHeader
+        isDocsPage={isDocsPage}
+        isSponsorPage={isSponsorPage}
+        isChartsPage={isChartsPage}
+        isHelpPage={isHelpPage}
+        isSettingsPage={isSettingsPage}
+        isAccountPage={isAccountPage}
+        isFeedbackPage={isFeedbackPage}
+        isEditor={isEditor}
+      />
+    </>
   );
 });
 
@@ -277,6 +241,7 @@ type HeaderClientLink = {
   label: string;
   icon: ReactNode;
 } & LinkProps;
+
 const HeaderClientLink = forwardRef<HTMLAnchorElement, HeaderClientLink>(
   ({ label: children, icon, className = "", ...props }, ref) => {
     return (
@@ -317,6 +282,141 @@ const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
 
 HeaderLink.displayName = "HeaderLink";
 
-function DesktopOnly({ children }: { children: ReactNode }) {
-  return <div className="desktop-only">{children}</div>;
+function MobileHeader({
+  isDocsPage,
+  isSponsorPage,
+  isChartsPage,
+  isHelpPage,
+  isSettingsPage,
+  isAccountPage,
+  isFeedbackPage,
+  isEditor,
+}: {
+  isDocsPage: boolean;
+  isSponsorPage: boolean;
+  isChartsPage: boolean;
+  isHelpPage: boolean;
+  isSettingsPage: boolean;
+  isAccountPage: boolean;
+  isFeedbackPage: boolean;
+  isEditor: boolean;
+}) {
+  const lastChart = useLastChart((s) => s.lastChart);
+  const { pathname } = useLocation();
+  const [open, setOpen] = useState(false);
+  const isValidCustomer = useIsValidCustomer();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+  return (
+    <>
+      <Dialog.Root open={open}>
+        <Dialog.Trigger asChild>
+          <button
+            onClick={() => setOpen(true)}
+            className="mobile-header__toggle"
+          >
+            <BrandSvg width={40} />
+          </button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Overlay
+            className="mobile-header__overlay"
+            onClick={() => {
+              setOpen(false);
+            }}
+          />
+          <Dialog.Content className="mobile-header__content">
+            <HeaderClientLink
+              label={t`New`}
+              icon={<Plus height={20} width={20} />}
+              className="shared-header__new"
+              to="/n"
+              onClick={() => {
+                gaNewChart();
+              }}
+            />
+            <HeaderClientLink
+              label={t`Editor`}
+              icon={<TreeStructure height={20} width={20} />}
+              aria-current={isEditor ? "page" : undefined}
+              to={lastChart}
+            />
+            <HeaderClientLink
+              label={t`Charts`}
+              to="/y"
+              icon={<FolderOpen height={20} width={20} />}
+              aria-current={isChartsPage ? "page" : undefined}
+              onClick={() => {
+                gaChangeTab({ action: "navigation" });
+              }}
+            />
+            <HeaderClientLink
+              label={t`Documentation`}
+              icon={<Book height={20} width={20} />}
+              aria-current={isDocsPage ? "page" : undefined}
+              className="mobile-only"
+              to="/h"
+              onClick={() => {
+                gaChangeTab({ action: "help" });
+              }}
+            />
+            <HeaderClientLink
+              label={t`Feedback`}
+              icon={<Chat height={20} width={20} />}
+              aria-current={isFeedbackPage ? "page" : undefined}
+              className="mobile-only"
+              to="/o"
+              onClick={() => {
+                gaChangeTab({ action: "feedback" });
+              }}
+            />
+            <HeaderLink
+              href="/blog/"
+              label={t`Blog`}
+              icon={<PencilLine height={20} width={20} />}
+            />
+            <HeaderLink
+              href="/blog/changelog"
+              label={t`Changelog`}
+              icon={<Notebook height={20} width={20} />}
+            />
+            <HeaderLink
+              href="/blog/roadmap"
+              label={t`Roadmap`}
+              icon={<Signpost height={20} width={20} />}
+            />
+            <HeaderClientLink
+              label={t`Settings`}
+              icon={<Gear height={20} width={20} />}
+              aria-current={isSettingsPage ? "page" : undefined}
+              to="/s"
+              onClick={() => {
+                gaChangeTab({ action: "settings" });
+              }}
+            />
+            {isValidCustomer ? (
+              <HeaderClientLink
+                label={t`Account`}
+                icon={<User height={20} width={20} />}
+                aria-current={isAccountPage ? "page" : undefined}
+                to="/a"
+                onClick={() => {
+                  gaChangeTab({ action: "account" });
+                }}
+              />
+            ) : (
+              <HeaderLink
+                href="/sponsor"
+                label={t`Become a Sponsor`}
+                icon={<Star height={20} width={20} />}
+                aria-current={isSponsorPage ? "page" : undefined}
+              />
+            )}
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+    </>
+  );
 }
