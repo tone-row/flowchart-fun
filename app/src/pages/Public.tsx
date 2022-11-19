@@ -3,7 +3,6 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
-import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
@@ -69,32 +68,30 @@ function Public() {
   const onMount = useEditorOnMount(editorRef, monacoRef);
 
   return (
-    <Layout>
-      <Main
-        setHoverLineNumber={setHoverLineNumber}
-        hiddenGraphOptionsText={hiddenGraphOptionsText}
-        options={options}
-        theme={theme}
-        bg={bg}
-        isFrozen={isFrozen}
-        fullText={fullText}
-      >
-        <Editor
-          value={text}
-          defaultValue={text}
-          defaultLanguage={languageId}
-          // @ts-ignore
-          wrapperClassName={styles.Editor}
-          theme={mode === "dark" ? themeNameDark : themeNameLight}
-          loading={loading.current}
-          options={{
-            ...editorOptions,
-            readOnly: true,
-          }}
-          onMount={onMount}
-        />
-      </Main>
-    </Layout>
+    <Main
+      setHoverLineNumber={setHoverLineNumber}
+      hiddenGraphOptionsText={hiddenGraphOptionsText}
+      options={options}
+      theme={theme}
+      bg={bg}
+      isFrozen={isFrozen}
+      fullText={fullText}
+    >
+      <Editor
+        value={text}
+        defaultValue={text}
+        defaultLanguage={languageId}
+        // @ts-ignore
+        wrapperClassName={styles.Editor}
+        theme={mode === "dark" ? themeNameDark : themeNameLight}
+        loading={loading.current}
+        options={{
+          ...editorOptions,
+          readOnly: true,
+        }}
+        onMount={onMount}
+      />
+    </Main>
   );
 }
 

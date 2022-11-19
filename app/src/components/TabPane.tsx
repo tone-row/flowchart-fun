@@ -1,9 +1,9 @@
 import { DotsThreeOutlineVertical } from "phosphor-react";
 import { Resizable as Reresizable } from "re-resizable";
-import { memo, ReactNode, useContext, useState } from "react";
+import { memo, ReactNode, useState } from "react";
 
+import { useIsEditorView } from "../lib/hooks";
 import { Box } from "../slang";
-import { AppContext } from "./AppContext";
 import styles from "./TabPane.module.css";
 
 const Resizable = ({
@@ -54,10 +54,10 @@ const TabPane = memo(
     children: ReactNode;
     triggerResize: () => void;
   }) => {
-    const { showing } = useContext(AppContext);
+    const showing = useIsEditorView();
     return (
       <Resizable triggerResize={triggerResize}>
-        <Box h="100%" overflow={showing !== "editor" ? "auto" : undefined}>
+        <Box h="100%" overflow={!showing ? "auto" : undefined}>
           {children}
         </Box>
       </Resizable>

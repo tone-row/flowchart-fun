@@ -2,16 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useDebouncedCallback } from "use-debounce";
 
-import { updateChartText, useChart } from "./queries";
+import { updateChartText } from "./queries";
 import { useParseDoc } from "./useParseDoc";
 
-export function useHostedDoc(id?: string) {
-  const { data } = useChart(id);
+export function useHostedDoc(id: string, initialFullText: string) {
+  const [fullText, setFullText] = useState(initialFullText);
 
-  // immediate, full state
-  const [fullText, setFullText] = useState(data?.chart || "");
   const lastFullText = useRef(fullText);
-
   const parsedDoc = useParseDoc(fullText, setFullText, true);
 
   // get mutate and loading state

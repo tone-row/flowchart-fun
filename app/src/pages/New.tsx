@@ -18,9 +18,8 @@ export const New = memo(function New() {
     graphText: string;
   }>();
   const fullText = decompress(graphText) ?? defaultDoc;
-  const { push } = useHistory();
-  const { setShowing, customerIsLoading, session, checkedSession } =
-    useContext(AppContext);
+  const { replace } = useHistory();
+  const { customerIsLoading, session, checkedSession } = useContext(AppContext);
   const validCustomer = useIsValidCustomer();
   const userId = session?.user?.id;
 
@@ -29,8 +28,7 @@ export const New = memo(function New() {
     retry: false,
     onSuccess: (response: any) => {
       queryClient.invalidateQueries(["auth", "hostedCharts"]);
-      push(`/u/${response.data[0].id}`);
-      setShowing("editor");
+      replace(`/u/${response.data[0].id}`);
       gaCreateChart({ action: "hosted" });
     },
   });
@@ -48,8 +46,7 @@ export const New = memo(function New() {
         const newKey = titleToLocalStorageKey(name);
         window.localStorage.setItem(newKey, fullText);
       }
-      push(`/${name}`);
-      setShowing("editor");
+      replace(`/${name}`);
       return;
     }
 
@@ -58,7 +55,7 @@ export const New = memo(function New() {
 
     // If not, trigger mutation
     mutate({ name: randomChartName(), user_id: userId, chart: fullText });
-  }, [checkedSession, customerIsLoading, fullText, isLoading, mutate, push, setShowing, userId, validCustomer]);
+  }, [checkedSession, customerIsLoading, fullText, isLoading, mutate, replace, userId, validCustomer]);
 
   if (customerIsLoading) {
     return <Loading />;

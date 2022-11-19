@@ -1,7 +1,7 @@
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { QueryClientProvider } from "react-query";
 
 import { queryClient } from "../lib/queries";

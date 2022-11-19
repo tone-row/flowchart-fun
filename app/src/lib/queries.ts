@@ -214,7 +214,7 @@ async function getChart(id?: string) {
   return data[0];
 }
 
-export function useChart(id?: string) {
+export function useChart(id: string) {
   return useQuery(["useChart", id], () => getChart(id), {
     enabled: Boolean(id),
     refetchOnMount: true,

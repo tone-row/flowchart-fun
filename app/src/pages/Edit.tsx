@@ -1,10 +1,11 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import { memo, useCallback, useEffect, useRef, useState } from "react";
+import { useRouteMatch } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
 import { EditorWrapper } from "../components/EditorWrapper";
-import Layout from "../components/Layout";
+import { EditWrapper } from "../components/EditWrapper";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
@@ -15,6 +16,7 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
+import { useTrackLastChart } from "../lib/useLastChart";
 import { useLocalDoc } from "../lib/useLocalDoc";
 import styles from "./Edit.module.css";
 
@@ -53,8 +55,11 @@ const Edit = memo(function Edit() {
     [updateDoc]
   );
 
+  const { url } = useRouteMatch();
+  useTrackLastChart(url);
+
   return (
-    <Layout>
+    <EditWrapper>
       <Main
         setHoverLineNumber={setHoverLineNumber}
         hiddenGraphOptionsText={hiddenGraphOptionsText}
@@ -87,7 +92,7 @@ const Edit = memo(function Edit() {
         />
         <EditorError />
       </Main>
-    </Layout>
+    </EditWrapper>
   );
 });
 
