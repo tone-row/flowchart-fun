@@ -17,16 +17,18 @@ import {
 import { New } from "./New";
 const fakeName = "fake-name";
 
-jest.mock("../lib/supabaseClient", () => ({
-  supabase: {
-    auth: {
-      session: jest.fn(() => null),
-      onAuthStateChange: jest.fn(),
-    },
-  },
-}));
+describe.only("New Page", () => {
+  beforeEach(() => {
+    jest.mock("../lib/supabaseClient", () => ({
+      supabase: {
+        auth: {
+          getSession: jest.fn(() => mockGetSessionReturn),
+          onAuthStateChange: jest.fn(),
+        },
+      },
+    }));
+  });
 
-describe.skip("New Page", () => {
   it("should render", async () => {
     render(<New />);
     await nextFrame();
@@ -45,12 +47,12 @@ describe.skip("New Page", () => {
     const tempFakeName = "temp-fake-name";
     // control the generated chart name
     jest.spyOn(helpers, "randomChartName").mockReturnValueOnce(tempFakeName);
-    const push = jest.spyOn(history, "push");
+    const replace = jest.spyOn(history, "replace");
     render(<New />);
     expect(await screen.findByText("Creating Flowchart")).toBeInTheDocument();
 
     await nextFrame();
-    expect(push).toHaveBeenCalledWith(`/${tempFakeName}`);
+    expect(replace).toHaveBeenCalledWith(`/${tempFakeName}`);
 
     // Confirm it's in local storage
     const key = helpers.titleToLocalStorageKey(tempFakeName);
