@@ -1,92 +1,145 @@
 import { expect, test } from "@playwright/test";
+import jsdom from "jsdom";
 
-import { getTempEmail, getTempEmailMessage, goToPath, goToTab } from "./utils";
+import {
+  BASE_URL,
+  deleteCustomerByEmail,
+  getTempEmail,
+  getTempEmailMessage,
+  goToPath,
+} from "./utils";
 
-const SPONSOR_PLANS = ["$3 / Month", "$30 / Year"] as const;
-const EMAIL_ADDRESSES: Record<typeof SPONSOR_PLANS[number], string> = {
-  "$3 / Month": "",
-  "$30 / Year": "",
-};
-test.describe.skip("Sign Up", () => {
+test.describe("Sign Up", () => {
   test.beforeEach(async ({ page }) => {
     await goToPath(page);
   });
 
-  for (const plan of SPONSOR_PLANS) {
-    test(`Sponsors > Become a ${plan} Sponsor`, async ({ page }) => {
-      test.setTimeout(240000);
+  test("monthly sign-up", async ({ page }) => {
+    test.setTimeout(240000);
+    const plan = "$3 / Month";
+    await page.getByRole("link", { name: "Become a Sponsor" }).click();
+    await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
+    await page.getByTestId("email").click();
+    const email = await getTempEmail();
+    await page.getByTestId("email").fill(email);
+    await page.getByRole("radio", { name: plan }).click();
 
-      const email = await getTempEmail();
+    const iframe = page.frameLocator("iframe").first();
+    await iframe.getByPlaceholder("Card number").click();
+    await iframe.getByPlaceholder("Card number").fill("4242 4242 4242 4242");
+    await iframe.getByPlaceholder("MM / YY").fill("04 / 24");
+    await iframe.getByPlaceholder("CVC").fill("444");
+    await iframe.getByPlaceholder("ZIP").fill("44444");
+    await page.getByRole("button", { name: "Sign Up" }).click();
+    await expect(
+      page.getByText(
+        "Check your email for a link to log in. You can close this window."
+      )
+    ).toBeVisible({ timeout: 60000 });
 
-      // expect email not to be null
-      expect(email).toBeTruthy();
-
-      EMAIL_ADDRESSES[plan] = email;
-
-      await goToTab(page, "Sponsors");
-
-      // Click [data-testid="email"]
-      await page.locator('[data-testid="email"]').click();
-      // Fill [data-testid="email"]
-      await page.locator('[data-testid="email"]').fill(email);
-      // Click button[role="radio"]:has-text("$1 / Month")
-      await page.locator(`button[role="radio"]:has-text("${plan}")`).click();
-      // Click [data-testid="card-element"]
-      await page.locator('[data-testid="card-element"]').click();
-      // Click [placeholder="Card number"]
-      await page
-        .frameLocator('iframe[name*="__privateStripeFrame"]')
-        .locator('[placeholder="Card number"]')
-        .click();
-      // Fill [placeholder="Card number"]
-      await page
-        .frameLocator('iframe[name*="__privateStripeFrame"]')
-        .locator('[placeholder="Card number"]')
-        .fill("4242 4242 4242 4242");
-      // Fill [placeholder="MM \/ YY"]
-      await page
-        .frameLocator('iframe[name*="__privateStripeFrame"]')
-        .locator('[placeholder="MM \\/ YY"]')
-        .fill("01 / 30");
-      // Fill [placeholder="CVC"]
-      await page
-        .frameLocator('iframe[name*="__privateStripeFrame"]')
-        .locator('[placeholder="CVC"]')
-        .fill("222");
-      // Fill [placeholder="ZIP"]
-      await page
-        .frameLocator('iframe[name*="__privateStripeFrame"]')
-        .locator('[placeholder="ZIP"]')
-        .fill("22222");
-      // Click button:has-text("Sign Up")
-      await page.locator('button:has-text("Sign Up")').click();
-      // Click text=Check your email for a link to log in. You can close this window.
-      await expect(
-        page.locator(
-          "text=Check your email for a link to log in. You can close this window."
-        )
-      ).toBeVisible({ timeout: 60000 });
-
-      let emails = [],
-        i = 0;
-      while (emails.length === 0 && i < 20) {
-        // Wait 5 seconds
-        await new Promise((resolve) => setTimeout(resolve, 10000));
-
-        const response = await getTempEmailMessage(EMAIL_ADDRESSES[plan]);
-
-        if (!("error" in response)) {
-          emails = response;
-        }
-        i++;
+    // wait for email
+    let emails = [],
+      i = 0;
+    while (emails.length === 0 && i < 20) {
+      // Wait 5 seconds
+      await new Promise((resolve) => setTimeout(resolve, 10000));
+      // Check for email
+      const response = await getTempEmailMessage(email);
+      if (!("error" in response)) {
+        emails = response;
       }
+      i++;
+    }
 
-      expect(emails.length).toBeGreaterThanOrEqual(1);
-      expect(
-        emails.some((email: { mail_html: string }) =>
-          /supabase.co\/auth\/v1\/verify/.test(email.mail_html)
-        )
-      ).toEqual(true);
-    });
-  }
+    expect(emails.length).toBeGreaterThanOrEqual(1);
+    const signInEmailIndex = emails.findIndex((email: { mail_html: string }) =>
+      /supabase.co\/auth\/v1\/verify/.test(email.mail_html)
+    );
+
+    expect(signInEmailIndex).toBeGreaterThanOrEqual(0);
+
+    // apply this to a new document to get link and then load link and confirm the Account link present
+    const html = emails[signInEmailIndex].mail_html;
+    const { window } = new jsdom.JSDOM(html);
+    const { document } = window;
+    const link = document.querySelector("a");
+    expect(link).toBeTruthy();
+    expect(link?.href).toBeTruthy();
+    await page.goto(link?.href as string);
+
+    // expect link with "Account" to be present
+    await expect(page.getByText("Account")).toBeVisible();
+
+    // delete customer
+    await deleteCustomerByEmail(email);
+    console.log("deleted stripe customer: ", email);
+
+    // delete supabase user
+    // await deleteSupabaseUserByEmail(email);
+    // console.log("deleted supabase user: ", email);
+  });
+
+  test("yearly sign-up", async ({ page }) => {
+    test.setTimeout(240000);
+    const plan = "$30 / Year";
+    await page.getByRole("link", { name: "Become a Sponsor" }).click();
+    await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
+    await page.getByTestId("email").click();
+    const email = await getTempEmail();
+    await page.getByTestId("email").fill(email);
+    await page.getByRole("radio", { name: plan }).click();
+
+    const iframe = page.frameLocator("iframe").first();
+    await iframe.getByPlaceholder("Card number").click();
+    await iframe.getByPlaceholder("Card number").fill("4242 4242 4242 4242");
+    await iframe.getByPlaceholder("MM / YY").fill("04 / 24");
+    await iframe.getByPlaceholder("CVC").fill("444");
+    await iframe.getByPlaceholder("ZIP").fill("44444");
+    await page.getByRole("button", { name: "Sign Up" }).click();
+    await expect(
+      page.getByText(
+        "Check your email for a link to log in. You can close this window."
+      )
+    ).toBeVisible({ timeout: 60000 });
+
+    // wait for email
+    let emails = [],
+      i = 0;
+    while (emails.length === 0 && i < 20) {
+      // Wait 5 seconds
+      await new Promise((resolve) => setTimeout(resolve, 10000));
+      // Check for email
+      const response = await getTempEmailMessage(email);
+      if (!("error" in response)) {
+        emails = response;
+      }
+      i++;
+    }
+
+    expect(emails.length).toBeGreaterThanOrEqual(1);
+    const signInEmailIndex = emails.findIndex((email: { mail_html: string }) =>
+      /supabase.co\/auth\/v1\/verify/.test(email.mail_html)
+    );
+
+    expect(signInEmailIndex).toBeGreaterThanOrEqual(0);
+
+    // apply this to a new document to get link and then load link and confirm the Account link present
+    const html = emails[signInEmailIndex].mail_html;
+    const { window } = new jsdom.JSDOM(html);
+    const { document } = window;
+    const link = document.querySelector("a");
+    expect(link).toBeTruthy();
+    expect(link?.href).toBeTruthy();
+    await page.goto(link?.href as string);
+
+    // expect link with "Account" to be present
+    await expect(page.getByText("Account")).toBeVisible();
+
+    await deleteCustomerByEmail(email);
+    console.log("deleted stripe customer: ", email);
+
+    // delete supabase user
+    // await deleteSupabaseUserByEmail(email);
+    // console.log("deleted supabase user: ", email);
+  });
 });

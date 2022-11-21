@@ -30,6 +30,9 @@ jobs:
         run: |
           touch app/.env
           echo RAPID_API_KEY=${{ secrets.RAPID_API_KEY }} >> app/.env
+          echo STRIPE_KEY_TEST_ENV=${{ secrets.STRIPE_KEY_TEST_ENV }} >> app/.env
+          echo SUPABASE_TEST_URL=${{ secrets.SUPABASE_TEST_URL }} >> app/.env
+          echo SUPABASE_TEST_ANON_KEY=${{ secrets.SUPABASE_TEST_ANON_KEY }} >> app/.env
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
