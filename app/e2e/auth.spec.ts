@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import jsdom from "jsdom";
 
 import {
+  BASE_URL,
   deleteCustomerByEmail,
   getTempEmail,
   getTempEmailMessage,
@@ -17,7 +18,7 @@ test.describe("Sign Up", () => {
     test.setTimeout(240000);
     const plan = "$3 / Month";
     await page.getByRole("link", { name: "Become a Sponsor" }).click();
-    await expect(page).toHaveURL("http://localhost:3000/sponsor");
+    await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
     await page.getByTestId("email").click();
     const email = await getTempEmail();
     await page.getByTestId("email").fill(email);
@@ -82,7 +83,7 @@ test.describe("Sign Up", () => {
     test.setTimeout(240000);
     const plan = "$30 / Year";
     await page.getByRole("link", { name: "Become a Sponsor" }).click();
-    await expect(page).toHaveURL("http://localhost:3000/sponsor");
+    await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
     await page.getByTestId("email").click();
     const email = await getTempEmail();
     await page.getByTestId("email").fill(email);
