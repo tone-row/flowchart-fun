@@ -58,7 +58,7 @@ Flowchart Fun uses [Lingui](https://lingui.js.org/) for translations. These are 
 We use playwright for e2e tests. Playwright is always installed on the system so you need to globally install it at the correct version: `1.27.1`. You can find the version in the github e2e workflow file.
 
 1. Make sure playwright version 1.27.1 is installed globally
-1. Start the app with `vercel dev` and then run `pnpm -F app e2e`
+1. Start the app with `vercel dev` and then run `pnpm -F app e2e` (or for `pnpm -F app e2e:debug` debugging)
 
 ### Analyze the Bundle
 
