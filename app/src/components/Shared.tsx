@@ -57,6 +57,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           type="text"
           size={-1}
           ref={ref}
+          className={styles.InputText}
           {...props}
         />
         {isLoading && (

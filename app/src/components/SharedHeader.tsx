@@ -200,7 +200,6 @@ export const SharedHeader = memo(function SharedHeader() {
         isDocsPage={isDocsPage}
         isSponsorPage={isSponsorPage}
         isChartsPage={isChartsPage}
-        isHelpPage={isHelpPage}
         isSettingsPage={isSettingsPage}
         isAccountPage={isAccountPage}
         isFeedbackPage={isFeedbackPage}
@@ -286,7 +285,6 @@ function MobileHeader({
   isDocsPage,
   isSponsorPage,
   isChartsPage,
-  isHelpPage,
   isSettingsPage,
   isAccountPage,
   isFeedbackPage,
@@ -295,7 +293,6 @@ function MobileHeader({
   isDocsPage: boolean;
   isSponsorPage: boolean;
   isChartsPage: boolean;
-  isHelpPage: boolean;
   isSettingsPage: boolean;
   isAccountPage: boolean;
   isFeedbackPage: boolean;
