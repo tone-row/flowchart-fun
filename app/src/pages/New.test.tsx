@@ -95,7 +95,7 @@ describe("New Page", () => {
     expect(makeChart).toHaveBeenCalled();
   });
 
-  it("should use template for auth user", async () => {
+  it.skip("should use template for auth user", async () => {
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
     const mockGetSession = jest.spyOn(supabase.auth, "getSession");
