@@ -30,3 +30,23 @@ tbody .TableCell:not(:first-child) {
   max-width: 800px;
   width: 100%;
 }
+
+@media screen and (min-width: 800px) {
+  .Wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.CustomerPortalLink {
+  justify-self: start;
+  border: 1px solid hsla(var(--color-brandHsl), 1);
+  color: hsla(var(--color-brandHsl), 1);
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  display: grid;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: start;
+  grid-auto-flow: column;
+}

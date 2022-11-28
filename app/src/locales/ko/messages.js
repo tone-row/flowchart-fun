@@ -45,6 +45,7 @@
     "Create a link directly using the exact label text":
       "정확한 레이블 텍스트를 사용하여 직접 링크 만들기",
     Created: "생성됨",
+    "Customer Portal": "고객 포털",
     Dark: "다크",
     "Dark Mode": "다크 모드",
     Date: "날짜",
@@ -111,6 +112,7 @@
     New: "신규",
     "New Email": "새 이메일",
     "Next charge": "다음 청구 금액",
+    "Open Customer Portal": "고객 포털 열기",
     Playbook: "플레이북",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "온갖 크기와 모양의 그래프를 질서있게 정리하는 강력한 레이아웃 알고리즘",
@@ -145,6 +147,8 @@
     "Try again": "다시 시도하세요",
     "Update Email": "이메일 업데이트",
     Updated: "업데이트됨",
+    "Use the customer portal to change your billing information.":
+      "청구 정보를 변경하려면 고객 포털을 사용하십시오.",
     User: "사용자",
     "View on Github": "Github에서 보기",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":

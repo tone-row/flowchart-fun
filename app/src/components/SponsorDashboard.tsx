@@ -1,9 +1,12 @@
 import { t, Trans } from "@lingui/macro";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { ArrowSquareOut, User } from "phosphor-react";
 import React, { ReactNode, useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
+
+const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
 import { formatCents, formatDate, formatRelative } from "../lib/helpers";
 import {
@@ -118,9 +121,37 @@ export default function SponsorDashboard() {
         <SectionTitle>
           <Trans>User</Trans>
         </SectionTitle>
-        <Type>{session?.user?.email}</Type>
+        <Type size={1} color="color-lineNumbers">
+          {session?.user?.email}
+        </Type>
         <Button self="start" onClick={signOut} text={t`Log Out`} />
       </Section>
+      {customerPortalLink && (
+        <Section>
+          <SectionTitle>
+            <Trans>Customer Portal</Trans>
+          </SectionTitle>
+          <Type size={-1}>
+            <Trans>
+              Use the customer portal to change your billing information.
+            </Trans>
+          </Type>
+          <Box
+            as="a"
+            href={customerPortalLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.CustomerPortalLink}
+            rad={1}
+          >
+            <User size={16} />
+            <span>
+              <Trans>Open Customer Portal</Trans>
+            </span>
+            <ArrowSquareOut size={16} />
+          </Box>
+        </Section>
+      )}
       <Section>
         <SectionTitle>
           <Trans>Update Email</Trans>

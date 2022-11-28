@@ -45,6 +45,7 @@
     "Create a link directly using the exact label text":
       "Erstellen Sie direkt einen Link mit dem genauen Beschriftungstext",
     Created: "Erstellt",
+    "Customer Portal": "Kundenportal",
     Dark: "Dunkel",
     "Dark Mode": "Dunkelmodus",
     Date: "Datum",
@@ -112,6 +113,7 @@
     New: "Neues",
     "New Email": "Neue e-mail",
     "Next charge": "Nächste Gebühr",
+    "Open Customer Portal": "Öffnen Sie das Kundenportal",
     Playbook: "Spielbuch",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "Leistungsstarke Layout-Algorithmen, die Ordnung in Diagramme aller Formen und Größen bringen",
@@ -146,6 +148,8 @@
     "Try again": "Erneut versuchen",
     "Update Email": "E-Mail aktualisieren",
     Updated: "Aktualisiert",
+    "Use the customer portal to change your billing information.":
+      "Verwenden Sie das Kundenportal, um Ihre Rechnungsinformationen zu ändern.",
     User: "Benutzer",
     "View on Github": "Auf Github ansehen",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
