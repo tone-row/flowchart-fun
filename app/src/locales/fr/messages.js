@@ -44,6 +44,7 @@
     "Create a link directly using the exact label text":
       "Créer un lien directement vers une boite en utilisant le texte exact de celle-ci",
     Created: "Créé",
+    "Customer Portal": "Portail Clients",
     Dark: "Sombre",
     "Dark Mode": "Mode sombre",
     Date: "Date",
@@ -111,6 +112,7 @@
     New: "Nouveau",
     "New Email": "Nouveau courriel",
     "Next charge": "Prochain paiement",
+    "Open Customer Portal": "Ouvrir le portail client",
     Playbook: "Livre-jeu",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "Algorithmes de mise en page puissants qui mettent de l'ordre dans les graphiques de toutes formes et tailles",
@@ -145,6 +147,8 @@
     "Try again": "Réessayer",
     "Update Email": "Mettre à jour l'e-mail",
     Updated: "Mis à jour",
+    "Use the customer portal to change your billing information.":
+      "Utilisez le portail client pour modifier vos informations de facturation.",
     User: "Utilisateur",
     "View on Github": "Voir sur Github",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":

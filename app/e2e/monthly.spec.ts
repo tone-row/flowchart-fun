@@ -1,4 +1,4 @@
-import { expect, Page, test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import jsdom from "jsdom";
 
 import {
@@ -9,31 +9,18 @@ import {
   goToPath,
 } from "./utils";
 
-test.describe.configure({
-  mode: "serial",
-});
-
-let email = "";
-
-let page: Page;
-
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-  await page.goto(BASE_URL);
-});
-
-test.afterAll(async () => {
-  await page.close();
-});
-
 test.describe("Sign Up", () => {
-  test("yearly sign-up", async () => {
+  test.beforeEach(async ({ page }) => {
+    await goToPath(page);
+  });
+
+  test("monthly sign-up", async ({ page }) => {
     test.setTimeout(240000);
-    const plan = "$30 / Year";
+    const plan = "$3 / Month";
     await page.getByRole("link", { name: "Become a Sponsor" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
     await page.getByTestId("email").click();
-    email = await getTempEmail();
+    const email = await getTempEmail();
     await page.getByTestId("email").fill(email);
     await page.getByRole("radio", { name: plan }).click();
 
@@ -81,39 +68,12 @@ test.describe("Sign Up", () => {
     await page.goto(link?.href as string);
 
     // expect link with "Account" to be present
-    await expect(page.getByText("Account")).toBeVisible({ timeout: 10 * 1000 });
+    await expect(page.getByText("Account")).toBeVisible();
 
-    // TODO: delete supabase user, requires updating supabase sdk
-  });
-
-  test("can publish chart", async () => {
-    // page
-    await page.getByRole("link", { name: "New" }).click();
-    // expect url to be regex BASE_URL + /u/\d+
-    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
-
-    await page.getByRole("button", { name: "Export" }).click();
-    await page.getByLabel("Make publicly accessible").check();
-
-    // read the value from the textbox with the name 'Copy Public Link'
-    const publicLink = await page.getByRole("textbox", {
-      name: "Copy Public Link",
-    });
-    const publicLinkValue = await publicLink.getAttribute("value");
-
-    if (!publicLinkValue) throw new Error("Public link value is empty");
-
-    // navigate to public url
-    await page.goto(publicLinkValue);
-
-    // expect url to be regex BASE_URL + /p/\w+-\w+-\w+
-    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/p/\\w+-\\w+-\\w+`));
-
-    // expect Clone button to be present
-    await expect(page.getByRole("button", { name: "Clone" })).toBeVisible();
-
-    /* This should be run in the last test */
+    // delete customer
     await deleteCustomerByEmail(email);
     console.log("deleted stripe customer: ", email);
+
+    // TODO: delete supabase user, requires updating supabase sdk
   });
 });

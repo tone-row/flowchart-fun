@@ -17,16 +17,18 @@ import {
 import { New } from "./New";
 const fakeName = "fake-name";
 
-jest.mock("../lib/supabaseClient", () => ({
-  supabase: {
-    auth: {
-      session: jest.fn(() => null),
-      onAuthStateChange: jest.fn(),
-    },
-  },
-}));
+describe("New Page", () => {
+  beforeEach(() => {
+    jest.mock("../lib/supabaseClient", () => ({
+      supabase: {
+        auth: {
+          getSession: jest.fn(() => mockGetSessionReturn),
+          onAuthStateChange: jest.fn(),
+        },
+      },
+    }));
+  });
 
-describe.skip("New Page", () => {
   it("should render", async () => {
     render(<New />);
     await nextFrame();
@@ -45,12 +47,12 @@ describe.skip("New Page", () => {
     const tempFakeName = "temp-fake-name";
     // control the generated chart name
     jest.spyOn(helpers, "randomChartName").mockReturnValueOnce(tempFakeName);
-    const push = jest.spyOn(history, "push");
+    const replace = jest.spyOn(history, "replace");
     render(<New />);
     expect(await screen.findByText("Creating Flowchart")).toBeInTheDocument();
 
     await nextFrame();
-    expect(push).toHaveBeenCalledWith(`/${tempFakeName}`);
+    expect(replace).toHaveBeenCalledWith(`/${tempFakeName}`);
 
     // Confirm it's in local storage
     const key = helpers.titleToLocalStorageKey(tempFakeName);
@@ -59,11 +61,11 @@ describe.skip("New Page", () => {
     );
   });
 
-  it("should create a hosted chart if logged in", async () => {
+  it.skip("should create a hosted chart if logged in", async () => {
     // Make sure we have a supabase session
-    if (!supabase) throw new Error("supabase is undefined");
-    const mockGetSession = jest.spyOn(supabase.auth, "getSession");
-    mockGetSession.mockResolvedValue(mockGetSessionReturn);
+    // if (!supabase) throw new Error("supabase is undefined");
+    // const mockGetSession = jest.spyOn(supabase.auth, "getSession");
+    // mockGetSession.mockResolvedValue(mockGetSessionReturn);
 
     // Make sure we have a valid customer
     const mockUseQuery = jest.spyOn(queries, "useCustomerInfo");
@@ -78,19 +80,22 @@ describe.skip("New Page", () => {
     // mock valid customer
     jest.spyOn(hooks, "useIsValidCustomer").mockReturnValue(true);
 
-    const mockMutate = jest.fn().mockResolvedValue(fakeMakeCartResponse);
-    jest.spyOn(RQ, "useMutation").mockReturnValue({
-      mutate: mockMutate,
-      isLoading: false,
-    } as any);
+    let makeChart = jest.spyOn(queries, "makeChart");
+    makeChart.mockResolvedValue(fakeMakeCartResponse);
+
+    // const mockMutate = jest.fn().mockResolvedValue(fakeMakeCartResponse);
+    // jest.spyOn(RQ, "useMutation").mockReturnValue({
+    //   mutate: mockMutate,
+    //   isLoading: false,
+    // } as any);
 
     render(<New />);
     await nextFrame();
 
-    expect(mockMutate).toHaveBeenCalled();
+    expect(makeChart).toHaveBeenCalled();
   });
 
-  it("should use template for auth user", async () => {
+  it.skip("should use template for auth user", async () => {
     // Make sure we have a supabase session
     if (!supabase) throw new Error("supabase is undefined");
     const mockGetSession = jest.spyOn(supabase.auth, "getSession");

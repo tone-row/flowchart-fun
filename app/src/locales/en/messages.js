@@ -44,6 +44,7 @@
     "Create a link directly using the exact label text":
       "Create a link directly using the exact label text",
     Created: "Created",
+    "Customer Portal": "Customer Portal",
     Dark: "Dark",
     "Dark Mode": "Dark Mode",
     Date: "Date",
@@ -111,6 +112,7 @@
     New: "New",
     "New Email": "New Email",
     "Next charge": "Next charge",
+    "Open Customer Portal": "Open Customer Portal",
     Playbook: "Playbook",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "Powerful layout algorithms that bring order to graphs of all shapes and sizes",
@@ -145,6 +147,8 @@
     "Try again": "Try again",
     "Update Email": "Update Email",
     Updated: "Updated",
+    "Use the customer portal to change your billing information.":
+      "Use the customer portal to change your billing information.",
     User: "User",
     "View on Github": "View on Github",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
