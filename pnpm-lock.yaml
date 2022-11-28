@@ -17,11 +17,13 @@ importers:
       '@notionhq/client': ^0.4.11
       '@sendgrid/mail': ^7.4.6
       '@supabase/supabase-js': ^2
+      moniker: ^0.1.2
       stripe: ^8.222.0
     dependencies:
       '@notionhq/client': 0.4.13
       '@sendgrid/mail': 7.7.0
       '@supabase/supabase-js': 2.0.2
+      moniker: 0.1.2
       stripe: 8.222.0
 
   app:
