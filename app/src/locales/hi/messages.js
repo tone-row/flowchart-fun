@@ -45,6 +45,7 @@
     "Create a link directly using the exact label text":
       "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं",
     Created: "बनाया गया",
+    "Customer Portal": "ग्राहक पोर्टल",
     Dark: "डार्क",
     "Dark Mode": "डार्क मोड",
     Date: "तारीख़",
@@ -112,6 +113,7 @@
     New: "नया",
     "New Email": "नई ईमेल",
     "Next charge": "अगला चार्ज",
+    "Open Customer Portal": "ग्राहक पोर्टल खोलें",
     Playbook: "प्लेबुक",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "शक्तिशाली लेआउट एल्गोरिदम जो सभी शेप और साइज़ के ग्राफ़ में क्रम लाते हैं",
@@ -146,6 +148,8 @@
     "Try again": "फिर से कोशिश करें",
     "Update Email": "ईमेल अपडेट करें",
     Updated: "अपडेट किया गया",
+    "Use the customer portal to change your billing information.":
+      "अपनी बिलिंग जानकारी बदलने के लिए ग्राहक पोर्टल का उपयोग करें।",
     User: "यूज़र",
     "View on Github": "Github पर देखें",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":

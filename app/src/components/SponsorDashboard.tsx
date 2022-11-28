@@ -128,11 +128,14 @@ export default function SponsorDashboard() {
       </Section>
       {customerPortalLink && (
         <Section>
-          <SectionTitle>Customer Portal</SectionTitle>
+          <SectionTitle>
+            <Trans>Customer Portal</Trans>
+          </SectionTitle>
           <Type size={-1}>
-            Use the customer portal to change your billing information.
+            <Trans>
+              Use the customer portal to change your billing information.
+            </Trans>
           </Type>
-
           <Box
             as="a"
             href={customerPortalLink}
@@ -142,7 +145,9 @@ export default function SponsorDashboard() {
             rad={1}
           >
             <User size={16} />
-            <span>Open Customer Portal</span>
+            <span>
+              <Trans>Open Customer Portal</Trans>
+            </span>
             <ArrowSquareOut size={16} />
           </Box>
         </Section>

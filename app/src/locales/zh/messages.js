@@ -44,6 +44,7 @@
     "Create a link directly using the exact label text":
       "使用完全一样的标签文本，直接创建链接",
     Created: "已创建",
+    "Customer Portal": "客户门户",
     Dark: "深色",
     "Dark Mode": "深色模式",
     Date: "日期",
@@ -110,6 +111,7 @@
     New: "新",
     "New Email": "新邮件",
     "Next charge": "下次扣费",
+    "Open Customer Portal": "打开客户门户",
     Playbook: "剧本",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "强大的布局算法，让各种形状和大小的图形井然有序",
@@ -144,6 +146,8 @@
     "Try again": "重试",
     "Update Email": "更新电子邮件",
     Updated: "已更新",
+    "Use the customer portal to change your billing information.":
+      "使用客户门户更改您的账单信息。",
     User: "用户",
     "View on Github": "在 Github 上查看",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
