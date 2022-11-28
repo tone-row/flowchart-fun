@@ -122,10 +122,12 @@ function LinkCopy({
   value,
   title,
   rawTitle,
+  ariaLabel = "",
 }: {
   value: string;
   title: string;
   rawTitle: string;
+  ariaLabel?: string;
 }) {
   const [copied, setCopied] = useState(false);
   const Icon = copied ? Check : LinkSimple;
@@ -164,6 +166,7 @@ function LinkCopy({
           />
         </Box>
         <Type
+          aria-label={ariaLabel}
           size={-2}
           as="input"
           type="text"
@@ -290,6 +293,7 @@ function HostedOptions({ id }: { id: string }) {
             value={`${window.location.origin}/p/${chart.public_id}`}
             title={t`Public`}
             rawTitle="Public"
+            ariaLabel="Copy Public Link"
           />
         </Box>
       )}
