@@ -3,9 +3,11 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const gaEnabled = process.env.REACT_APP_ANALYTICS_ENABLED === "1";
+const gtmId = process.env.REACT_APP_GTM_ID ?? "";
 
 // hook
 let usePageViews = () => {};
+
 // goals
 let gaChangeGraphOption = (_: { action: string; label: string }) => {};
 let gaChangeTab = (_: { action: string }) => {};
@@ -15,17 +17,29 @@ let gaExportChart = (_: { action: string; label: string }) => {};
 let gaNewChart = () => {};
 let gaUseGraphContextMenu = (_: { action: string }) => {};
 let gaJumpToSponsorPage = (_: { action: string }) => {};
-// Jump to Sponsor Page
 
-if (gaEnabled) {
-  import("react-ga").then((ReactGA) => {
-    ReactGA.initialize("UA-136783019-2");
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
+if (gaEnabled && gtmId) {
+  import("react-gtm-module").then(({ default: TagManager }) => {
+    TagManager.initialize({ gtmId });
     usePageViews = () => {
       const location = useLocation();
       useEffect(() => {
-        ReactGA.pageview(location.pathname + location.search);
+        window.dataLayer.push({
+          event: "pageview",
+          page: { url: location.pathname },
+        });
       }, [location.pathname, location.search]);
     };
+  });
+
+  import("react-ga").then((ReactGA) => {
+    ReactGA.initialize("UA-136783019-2");
 
     gaChangeGraphOption = ({ label, action }) => {
       ReactGA.event({
