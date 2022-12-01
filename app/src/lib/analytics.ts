@@ -1,5 +1,6 @@
 /* eslint @typescript-eslint/no-empty-function: 0 */
 import { useEffect } from "react";
+import TagManager from "react-gtm-module";
 import { useLocation } from "react-router-dom";
 
 const gaEnabled = process.env.REACT_APP_ANALYTICS_ENABLED === "1";
@@ -25,18 +26,16 @@ declare global {
 }
 
 if (gaEnabled && gtmId) {
-  import("react-gtm-module").then(({ default: TagManager }) => {
-    TagManager.initialize({ gtmId });
-    usePageViews = () => {
-      const location = useLocation();
-      useEffect(() => {
-        window.dataLayer.push({
-          event: "pageview",
-          page: { url: location.pathname },
-        });
-      }, [location.pathname, location.search]);
-    };
-  });
+  TagManager.initialize({ gtmId });
+  usePageViews = () => {
+    const location = useLocation();
+    useEffect(() => {
+      window.dataLayer.push({
+        event: "pageview",
+        page: { url: location.pathname },
+      });
+    }, [location.pathname, location.search]);
+  };
 
   import("react-ga").then((ReactGA) => {
     ReactGA.initialize("UA-136783019-2");
