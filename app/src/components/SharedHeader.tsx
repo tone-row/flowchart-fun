@@ -185,8 +185,8 @@ export const SharedHeader = memo(function SharedHeader() {
                   }}
                 />
               ) : (
-                <HeaderLink
-                  href="/sponsor"
+                <HeaderClientLink
+                  to="/sponsor"
                   label={t`Become a Sponsor`}
                   icon={<Star height={20} width={20} />}
                   aria-current={isSponsorPage ? "page" : undefined}
@@ -412,8 +412,8 @@ function MobileHeader({
                 }}
               />
             ) : (
-              <HeaderLink
-                href="/sponsor"
+              <HeaderClientLink
+                to="/sponsor"
                 label={t`Become a Sponsor`}
                 icon={<Star height={20} width={20} />}
                 aria-current={isSponsorPage ? "page" : undefined}
