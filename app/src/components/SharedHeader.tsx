@@ -190,6 +190,14 @@ export const SharedHeader = memo(function SharedHeader() {
                   label={t`Become a Sponsor`}
                   icon={<Star height={20} width={20} />}
                   aria-current={isSponsorPage ? "page" : undefined}
+                  onClick={() => {
+                    // track in gtm
+                    window.dataLayer.push({
+                      event: "sponsor",
+                      action: "click",
+                      label: "header",
+                    });
+                  }}
                 />
               )}
             </nav>
@@ -409,6 +417,14 @@ function MobileHeader({
                 label={t`Become a Sponsor`}
                 icon={<Star height={20} width={20} />}
                 aria-current={isSponsorPage ? "page" : undefined}
+                onClick={() => {
+                  // track event with gtm
+                  window.dataLayer.push({
+                    event: "sponsor",
+                    action: "click",
+                    label: "mobile-header",
+                  });
+                }}
               />
             )}
           </Dialog.Content>
