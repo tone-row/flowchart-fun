@@ -29,7 +29,6 @@ import {
 } from "react";
 import { Link, LinkProps, useLocation } from "react-router-dom";
 
-import { gaChangeTab, gaNewChart } from "../lib/analytics";
 import { useIsValidCustomer } from "../lib/hooks";
 import { useLastChart } from "../lib/useLastChart";
 import { ReactComponent as BrandSvg } from "./brand.svg";
@@ -67,9 +66,6 @@ export const SharedHeader = memo(function SharedHeader() {
                   icon={<Plus height={20} width={20} />}
                   className="shared-header__new"
                   to="/n"
-                  onClick={() => {
-                    gaNewChart();
-                  }}
                 />
               </NavigationMenu.Item>
               <NavigationMenu.Item asChild>
@@ -86,9 +82,6 @@ export const SharedHeader = memo(function SharedHeader() {
                   to="/y"
                   icon={<FolderOpen height={20} width={20} />}
                   aria-current={isChartsPage ? "page" : undefined}
-                  onClick={() => {
-                    gaChangeTab({ action: "navigation" });
-                  }}
                 />
               </NavigationMenu.Item>
               <DropdownMenu.Root>
@@ -109,9 +102,6 @@ export const SharedHeader = memo(function SharedHeader() {
                       icon={<Book height={20} width={20} />}
                       aria-current={isDocsPage ? "page" : undefined}
                       to="/h"
-                      onClick={() => {
-                        gaChangeTab({ action: "help" });
-                      }}
                     />
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
@@ -120,9 +110,6 @@ export const SharedHeader = memo(function SharedHeader() {
                       icon={<Chat height={20} width={20} />}
                       aria-current={isFeedbackPage ? "page" : undefined}
                       to="/o"
-                      onClick={() => {
-                        gaChangeTab({ action: "feedback" });
-                      }}
                     />
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
@@ -170,9 +157,6 @@ export const SharedHeader = memo(function SharedHeader() {
                 icon={<Gear height={20} width={20} />}
                 aria-current={isSettingsPage ? "page" : undefined}
                 to="/s"
-                onClick={() => {
-                  gaChangeTab({ action: "settings" });
-                }}
               />
               {isValidCustomer ? (
                 <HeaderClientLink
@@ -180,9 +164,6 @@ export const SharedHeader = memo(function SharedHeader() {
                   icon={<User height={20} width={20} />}
                   aria-current={isAccountPage ? "page" : undefined}
                   to="/a"
-                  onClick={() => {
-                    gaChangeTab({ action: "account" });
-                  }}
                 />
               ) : (
                 <HeaderClientLink
@@ -338,9 +319,6 @@ function MobileHeader({
               icon={<Plus height={20} width={20} />}
               className="shared-header__new"
               to="/n"
-              onClick={() => {
-                gaNewChart();
-              }}
             />
             <HeaderClientLink
               label={t`Editor`}
@@ -353,9 +331,6 @@ function MobileHeader({
               to="/y"
               icon={<FolderOpen height={20} width={20} />}
               aria-current={isChartsPage ? "page" : undefined}
-              onClick={() => {
-                gaChangeTab({ action: "navigation" });
-              }}
             />
             <HeaderClientLink
               label={t`Documentation`}
@@ -363,9 +338,6 @@ function MobileHeader({
               aria-current={isDocsPage ? "page" : undefined}
               className="mobile-only"
               to="/h"
-              onClick={() => {
-                gaChangeTab({ action: "help" });
-              }}
             />
             <HeaderClientLink
               label={t`Feedback`}
@@ -373,9 +345,6 @@ function MobileHeader({
               aria-current={isFeedbackPage ? "page" : undefined}
               className="mobile-only"
               to="/o"
-              onClick={() => {
-                gaChangeTab({ action: "feedback" });
-              }}
             />
             <HeaderLink
               href="/blog/"
@@ -397,9 +366,6 @@ function MobileHeader({
               icon={<Gear height={20} width={20} />}
               aria-current={isSettingsPage ? "page" : undefined}
               to="/s"
-              onClick={() => {
-                gaChangeTab({ action: "settings" });
-              }}
             />
             {isValidCustomer ? (
               <HeaderClientLink
@@ -407,9 +373,6 @@ function MobileHeader({
                 icon={<User height={20} width={20} />}
                 aria-current={isAccountPage ? "page" : undefined}
                 to="/a"
-                onClick={() => {
-                  gaChangeTab({ action: "account" });
-                }}
               />
             ) : (
               <HeaderClientLink

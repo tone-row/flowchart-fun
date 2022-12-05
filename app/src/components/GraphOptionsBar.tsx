@@ -25,7 +25,6 @@ import Select, {
   StylesConfig,
 } from "react-select";
 
-import { gaChangeGraphOption } from "../lib/analytics";
 import { defaultSpacingFactor } from "../lib/constants";
 import { directions, layouts, SelectOption, themes } from "../lib/graphOptions";
 import { defaultGraphTheme } from "../lib/graphThemes";
@@ -62,18 +61,8 @@ const GraphOptionsBar = ({
   } = useForm();
 
   const values = watch();
-  const layout = watch("layout.name");
-  const theme = watch("theme");
   const valuesString = JSON.stringify(values);
   const { push } = useHistory();
-
-  useEffect(() => {
-    if (layout) gaChangeGraphOption({ action: "layout", label: layout });
-  }, [layout]);
-
-  useEffect(() => {
-    if (theme) gaChangeGraphOption({ action: "theme", label: theme });
-  }, [theme]);
 
   // Update graph options text if different that useForm
   useEffect(() => {

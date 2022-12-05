@@ -14,7 +14,6 @@ import React, {
 import { TriggerEvent, useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
-import { gaChangeGraphOption, gaUseGraphContextMenu } from "../lib/analytics";
 import { defaultLayout, GraphOptionsObject } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
@@ -86,8 +85,6 @@ const Graph = memo(
       update({
         hidden: { nodePositions },
       });
-
-      gaChangeGraphOption({ action: "Auto Layout", label: "TOGGLE" });
     }, [update]);
 
     const handleResize = useCallback(() => {
@@ -183,7 +180,6 @@ const Graph = memo(
 
     const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
     const handleContextMenu = (e: TriggerEvent) => {
-      gaUseGraphContextMenu({ action: "SHOW" });
       show(e);
     };
 

@@ -3,8 +3,6 @@ import { History } from "history";
 import { CSSProperties } from "react";
 import { OptionTypeBase } from "react-select";
 
-import { gaJumpToSponsorPage } from "./analytics";
-
 export interface SelectOption extends OptionTypeBase {
   value: string;
   label: () => string;
@@ -40,7 +38,6 @@ export const layouts: SelectOption[] = [
     hideIfSponsor: true,
     handleClick: (push) => {
       push("/sponsor");
-      gaJumpToSponsorPage({ action: "Get More Layouts" });
     },
     style: {
       color: "var(--color-highlightColor)",
@@ -75,7 +72,6 @@ export const themes: SelectOption[] = [
     hideIfSponsor: true,
     handleClick: (push) => {
       push("/sponsor");
-      gaJumpToSponsorPage({ action: "Get More Themes" });
     },
     style: {
       color: "var(--color-highlightColor)",

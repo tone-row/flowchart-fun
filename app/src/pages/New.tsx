@@ -5,7 +5,6 @@ import { useHistory, useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
-import { gaCreateChart } from "../lib/analytics";
 import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
@@ -29,7 +28,6 @@ export const New = memo(function New() {
     onSuccess: (response: any) => {
       queryClient.invalidateQueries(["auth", "hostedCharts"]);
       replace(`/u/${response.data[0].id}`);
-      gaCreateChart({ action: "hosted" });
     },
   });
 

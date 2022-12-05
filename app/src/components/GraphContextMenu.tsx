@@ -6,7 +6,6 @@ import { Item, Menu, Separator } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
-import { gaUseGraphContextMenu } from "../lib/analytics";
 import { useIsFirefox } from "../lib/hooks";
 import { Box, Type } from "../slang";
 import styles from "./GraphContextMenu.module.css";
@@ -27,7 +26,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Separator />
       <Item
         onClick={() => {
-          gaUseGraphContextMenu({ action: "Download PNG" });
           window.__FF_downloadPNG();
         }}
       >
@@ -37,7 +35,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       </Item>
       <Item
         onClick={() => {
-          gaUseGraphContextMenu({ action: "Download JPG" });
           window.__FF_downloadJPG();
         }}
       >
@@ -47,7 +44,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       </Item>
       <Item
         onClick={() => {
-          gaUseGraphContextMenu({ action: "Download SVG" });
           window.__FF_downloadSVG();
         }}
       >
@@ -66,7 +62,6 @@ function CopySVG() {
     "idle"
   );
   function handleClick() {
-    gaUseGraphContextMenu({ action: "Copy SVG" });
     (async () => {
       dispatch("loading");
       const svgStr = await window.__FF_getSVG();
@@ -91,7 +86,6 @@ function CopyPNG() {
     "idle"
   );
   function handleClick() {
-    gaUseGraphContextMenu({ action: "Copy PNG" });
     dispatch("loading");
     setTimeout(() => {
       window.__FF_copyPNG().then(() => {
