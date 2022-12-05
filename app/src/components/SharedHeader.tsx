@@ -173,11 +173,12 @@ export const SharedHeader = memo(function SharedHeader() {
                   aria-current={isSponsorPage ? "page" : undefined}
                   onClick={() => {
                     // track in gtm
-                    window.dataLayer.push({
-                      event: "sponsor",
-                      action: "click",
-                      label: "header",
-                    });
+                    if (window?.dataLayer)
+                      window.dataLayer.push({
+                        event: "sponsor",
+                        action: "click",
+                        label: "header",
+                      });
                   }}
                 />
               )}
@@ -382,11 +383,12 @@ function MobileHeader({
                 aria-current={isSponsorPage ? "page" : undefined}
                 onClick={() => {
                   // track event with gtm
-                  window.dataLayer.push({
-                    event: "sponsor",
-                    action: "click",
-                    label: "mobile-header",
-                  });
+                  if (window?.dataLayer)
+                    window.dataLayer.push({
+                      event: "sponsor",
+                      action: "click",
+                      label: "mobile-header",
+                    });
                 }}
               />
             )}
