@@ -58,7 +58,6 @@ importers:
       '@testing-library/react': ^11.1.0
       '@testing-library/react-hooks': ^8.0.1
       '@testing-library/user-event': ^12.1.10
-      '@tone-row/cytoscape-svg': ^1.0.2
       '@tone-row/slang': ^1.2.35
       '@tone-row/strip-comments': ^2.0.1
       '@types/benchmark': ^2.1.1
@@ -89,10 +88,11 @@ importers:
       buffer: ^6.0.3
       concurrently: ^6.0.0
       core-js: ^3.18.1
-      cytoscape: ^3.20.0
-      cytoscape-dagre: ^2.3.2
-      cytoscape-elk: ^2.0.2
+      cytoscape: ^3.23.0
+      cytoscape-dagre: ^2.5.0
+      cytoscape-elk: ^2.1.0
       cytoscape-klay: ^3.1.4
+      cytoscape-svg: ^0.4.0
       date-fns: ^2.25.0
       deepmerge: ^4.2.2
       dotenv: ^16.0.1
@@ -175,7 +175,6 @@ importers:
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/react': 11.2.7_sfoxds7t5ydpegc3knd667wn6m
       '@testing-library/user-event': 12.8.3_znccgeejomvff3jrsk3ljovfpu
-      '@tone-row/cytoscape-svg': 1.0.2_cytoscape@3.23.0
       '@tone-row/slang': 1.2.37_56jbash75ng5psbctf36wqywr4
       '@tone-row/strip-comments': 2.0.1
       '@types/react': 17.0.50
@@ -183,9 +182,10 @@ importers:
       buffer: 6.0.3
       core-js: 3.25.5
       cytoscape: 3.23.0
-      cytoscape-dagre: 2.4.0_cytoscape@3.23.0
+      cytoscape-dagre: 2.5.0_cytoscape@3.23.0
       cytoscape-elk: 2.1.0_cytoscape@3.23.0
       cytoscape-klay: 3.1.4_cytoscape@3.23.0
+      cytoscape-svg: 0.4.0_cytoscape@3.23.0
       date-fns: 2.29.3
       deepmerge: 4.2.2
       eslint: 8.24.0
@@ -4488,15 +4488,6 @@ packages:
       '@testing-library/dom': 8.18.1
     dev: false
 
-  /@tone-row/cytoscape-svg/1.0.2_cytoscape@3.23.0:
-    resolution: {integrity: sha512-mJdzejXqZ53TYEkKGpMDmn0vBmmgRYY0UH3R1vbD2ZfzsaPj664c0WHSjX3vhZu+hg/KksGXtPQFpLMDo0U8PQ==}
-    peerDependencies:
-      cytoscape: ^3.2.0
-    dependencies:
-      canvas-to-svg: 1.0.3
-      cytoscape: 3.23.0
-    dev: false
-
   /@tone-row/slang/1.2.37_56jbash75ng5psbctf36wqywr4:
     resolution: {integrity: sha512-sAb+zOdDRPn1mqorkVecqWmNS9i4UMGg3/3Wb2t65geSI9hSRBvyIoFiquhL0Myx90jnIIII4xEuDkDA1vrvKg==}
     hasBin: true
@@ -6377,10 +6368,6 @@ packages:
   /caniuse-lite/1.0.30001418:
     resolution: {integrity: sha512-oIs7+JL3K9JRQ3jPZjlH6qyYDp+nBTCais7hjh0s+fuBwufc7uZ7hPYMXrDOJhV360KGMTcczMRObk0/iMqZRg==}
 
-  /canvas-to-svg/1.0.3:
-    resolution: {integrity: sha512-qWQKPW0lRkOCClRmKtTzC5dNLtdOCzEOPYWASvW9ggkq4cRYL0o8RnC4fPc4tNE5WGm5YzJTGFztFG0JuCGXcQ==}
-    dev: false
-
   /case-sensitive-paths-webpack-plugin/2.4.0:
     resolution: {integrity: sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==}
     engines: {node: '>=4'}
@@ -7112,8 +7099,8 @@ packages:
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
 
-  /cytoscape-dagre/2.4.0_cytoscape@3.23.0:
-    resolution: {integrity: sha512-jfOtKzKduCnruBs3YMHS9kqWjZKqvp6loSJwlotPO5pcU4wLUhkx7ZBIyW3VWZXa8wfkGxv/zhWoBxWtYrUxKQ==}
+  /cytoscape-dagre/2.5.0_cytoscape@3.23.0:
+    resolution: {integrity: sha512-VG2Knemmshop4kh5fpLO27rYcyUaaDkRw+6PiX4bstpB+QFt0p2oauMrsjVbUamGWQ6YNavh7x2em2uZlzV44g==}
     peerDependencies:
       cytoscape: ^3.2.22
     dependencies:
@@ -7137,6 +7124,14 @@ packages:
     dependencies:
       cytoscape: 3.23.0
       klayjs: 0.4.1
+    dev: false
+
+  /cytoscape-svg/0.4.0_cytoscape@3.23.0:
+    resolution: {integrity: sha512-omqIzfPd1Vy9mk6lHTiR2wTbjxELxb9GXSQ2pE6W+GwAe/6/yvOUQ2h5ApFf2QhCBnpMwLkCTq5DZXxBCgUpDw==}
+    peerDependencies:
+      cytoscape: ^3.2.0
+    dependencies:
+      cytoscape: 3.23.0
     dev: false
 
   /cytoscape/3.23.0:

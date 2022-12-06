@@ -1,7 +1,7 @@
-import cytoscapeSvg from "@tone-row/cytoscape-svg";
 import { Core, CytoscapeOptions, EdgeSingular, NodeSingular } from "cytoscape";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
+import cytoscapeSvg from "cytoscape-svg";
 import React, {
   Dispatch,
   memo,
