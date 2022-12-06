@@ -29,7 +29,6 @@ import {
   Section,
   SectionTitle,
 } from "../components/Shared";
-import { gaCreateChart, gaSponsorCTA } from "../lib/analytics";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer, useIsValidSponsor } from "../lib/hooks";
@@ -83,7 +82,6 @@ function LocalCharts() {
     ({ chartTitle }: Fields) => {
       if (chartTitle) {
         push(`/${chartTitle}`);
-        gaCreateChart({ action: "local" });
       }
     },
     [push]
@@ -330,7 +328,6 @@ function HostedCharts() {
     onSuccess: (response: any) => {
       queryClient.invalidateQueries(["auth", "hostedCharts"]);
       push(`/u/${response.data[0].id}`);
-      gaCreateChart({ action: "hosted" });
     },
   });
   const { data: charts } = useHostedCharts();
@@ -741,7 +738,6 @@ function HostedChartsCallout() {
           text={t`Learn More`}
           onClick={() => {
             push("/sponsor");
-            gaSponsorCTA({ action: "from navigation" });
           }}
         />
       </Box>

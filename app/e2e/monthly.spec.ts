@@ -9,12 +9,12 @@ import {
   goToPath,
 } from "./utils";
 
-test.describe("Sign Up", () => {
+test.describe.only("Monthly Sign Up", () => {
   test.beforeEach(async ({ page }) => {
     await goToPath(page);
   });
 
-  test("monthly sign-up", async ({ page }) => {
+  test.only("Monthly Sign-up", async ({ page }) => {
     test.setTimeout(240000);
     const plan = "$3 / Month";
     await page.getByRole("link", { name: "Become a Sponsor" }).click();

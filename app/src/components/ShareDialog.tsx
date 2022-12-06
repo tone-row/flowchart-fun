@@ -11,7 +11,6 @@ import {
 } from "react";
 import { useMutation } from "react-query";
 
-import { gaExportChart } from "../lib/analytics";
 import { useTitle } from "../lib/hooks";
 import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic, queryClient, useChart } from "../lib/queries";
@@ -50,7 +49,6 @@ export default function ShareDialog() {
           <Button
             onClick={() => {
               window.__FF_downloadSVG();
-              gaExportChart({ action: "Download", label: "SVG" });
             }}
             aria-label="Download SVG"
             text="SVG"
@@ -58,7 +56,6 @@ export default function ShareDialog() {
           <Button
             onClick={() => {
               window.__FF_downloadPNG();
-              gaExportChart({ action: "Download", label: "PNG" });
             }}
             aria-label="Download PNG"
             text="PNG"
@@ -66,7 +63,6 @@ export default function ShareDialog() {
           <Button
             onClick={() => {
               window.__FF_downloadJPG();
-              gaExportChart({ action: "Download", label: "JPG" });
             }}
             aria-label="Download JPG"
             text="JPG"
@@ -138,7 +134,6 @@ function LinkCopy({
   async function copyText() {
     await navigator.clipboard.writeText(value);
     setCopied(true);
-    gaExportChart({ action: "Copy Link", label: rawTitle });
   }
   return (
     <Box gap={2}>
@@ -242,7 +237,6 @@ function Mermaid() {
             (async () => {
               await navigator.clipboard.writeText(mermaid);
               setCopied(true);
-              gaExportChart({ action: "Copy Link", label: "Mermaid" });
             })();
           }}
           className={styles.LinkCopyButton}
