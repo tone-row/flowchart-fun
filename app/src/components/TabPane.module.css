@@ -26,6 +26,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  background-color: var(--color-input);
 }
 
 .Handle svg circle {
@@ -41,9 +42,9 @@
 .Handle[data-dragging="true"] {
   background: linear-gradient(
     to bottom,
-    var(--color-background),
     var(--color-input),
-    var(--color-background)
+    var(--color-uiAccent),
+    var(--color-input)
   );
 }
 

@@ -201,7 +201,7 @@ export function useHostedCharts(iUserId?: string) {
   });
 }
 
-async function getChart(id?: string) {
+export async function getHostedChart(id?: string) {
   if (!id) return;
   if (!supabase) return;
   const { data, error } = await supabase
@@ -215,7 +215,7 @@ async function getChart(id?: string) {
 }
 
 export function useChart(id: string) {
-  return useQuery(["useChart", id], () => getChart(id), {
+  return useQuery(["useChart", id], () => getHostedChart(id), {
     enabled: Boolean(id),
     refetchOnMount: true,
     staleTime: 2000,
@@ -366,7 +366,7 @@ async function generatePublicId(): Promise<string> {
   return response.json();
 }
 
-async function getPublicChart(publicId: string) {
+export async function getPublicChart(publicId: string) {
   if (!publicId) return;
   const { data, error } = await fetch(`/api/public?id=${publicId}`).then(
     (result) => result.json()

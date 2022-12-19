@@ -22,7 +22,7 @@ const arrowColor = originalColors.black;
 const lineHeight = 1.25;
 const padding = "6px";
 
-const arrowWidth = 1;
+const arrowWidth = 0.75;
 const original: Theme = {
   value: "original",
   bg: backgroundColor,

@@ -1,0 +1,21 @@
+~~~
+style:
+  - selector: edge
+    style:
+      line-style: dashed
+  - selector: 'edge[source="#red"]'
+    style:
+      line-color: lime
+      target-arrow-color: lime
+      width: 10
+layout:
+  rankDir: LR
+~~~
+You can set all lines to be dashed
+  B
+    C
+      [#red] D
+        Or you can use the source or target or both to make some lines dashed
+        x
+        y
+        z

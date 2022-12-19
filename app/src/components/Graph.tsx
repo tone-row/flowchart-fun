@@ -2,25 +2,27 @@ import { Core, CytoscapeOptions, EdgeSingular, NodeSingular } from "cytoscape";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
+import throttle from "lodash.throttle";
 import React, {
   Dispatch,
-  memo,
   SetStateAction,
   useCallback,
-  useContext,
   useEffect,
+  useMemo,
   useRef,
 } from "react";
 import { TriggerEvent, useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
-import { defaultLayout, GraphOptionsObject } from "../lib/constants";
+import { defaultLayout } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
+import { getUserStyle, useThemeObject } from "../lib/getTheme";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
-import { HiddenGraphOptions, isError } from "../lib/helpers";
-import { useAnimationSetting } from "../lib/hooks";
+import { isError } from "../lib/helpers";
+import { getAnimationSettings } from "../lib/hooks";
 import { parseText } from "../lib/parseText";
-import { prepareLayoutForCyto } from "../lib/prepareLayoutForCyto";
+import { Doc, useDoc, useParseError } from "../lib/prepareChart";
+import { getLayout } from "../lib/prepareLayoutForCyto";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
 import { UpdateDoc } from "../lib/UpdateDoc";
@@ -28,7 +30,6 @@ import { TGetSize, useGetSize } from "../lib/useGetSize";
 import { useGraphStore } from "../lib/useGraphStore";
 import { stripComments } from "../lib/utils";
 import { Box } from "../slang";
-import { AppContext, TAppContext } from "./AppContext";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
@@ -48,160 +49,147 @@ if (!cytoscape.prototype.hasInitialised) {
   cytoscape.prototype.hasInitialised = true;
 }
 
-const Graph = memo(
-  ({
-    setHoverLineNumber,
-    shouldResize,
-    hiddenGraphOptionsText = "{}",
-    options,
-    update,
-    theme,
-    bg,
-  }: {
-    setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
-    shouldResize: number;
-    hiddenGraphOptionsText: string;
-    options: UseGraphOptionsReturn;
-    update?: UpdateDoc;
-    theme: Theme;
-    bg: string;
-  }) => {
-    const cy = useRef<undefined | Core>();
-    const errorCatcher = useRef<undefined | Core>();
-    const animate = useAnimationSetting();
-    const graphInitialized = useRef(false);
-    const { setHasError, setHasStyleError } = useContext(AppContext);
-    const layout = JSON.stringify(options.graphOptions.layout || {});
-    const userStyle = JSON.stringify(options.graphOptions.style || []);
+const shouldAnimate = getAnimationSettings();
 
-    const getSize = useGetSize(theme);
+const Graph = ({
+  setHoverLineNumber,
+  shouldResize,
+}: {
+  setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
+  shouldResize: number;
+  hiddenGraphOptionsText: string;
+  options: UseGraphOptionsReturn; // TODO: remove
+  update?: UpdateDoc; // TODO: remove
+  theme: Theme; // TODO: remove
+  bg: string; // TODO: remove
+}) => {
+  const cy = useRef<undefined | Core>();
+  const errorCatcher = useRef<undefined | Core>();
+  const graphInitialized = useRef(false);
+  const theme = useThemeObject();
+  const bg = useDoc((state) => state.meta?.background ?? theme.bg) as string;
+  const getSize = useGetSize(theme);
 
-    const isFirstRender = useRef(true);
+  const isFirstRender = useRef(true);
 
-    const handleDragFree = useCallback(() => {
-      if (!update) return;
-
-      const nodePositions = getNodePositionsFromCy();
-      update({
-        hidden: { nodePositions },
-      });
-    }, [update]);
-
-    const handleResize = useCallback(() => {
-      if (cy.current) {
-        cy.current.resize();
-        if (isFirstRender.current) {
-          cy.current.fit(undefined, 6);
-          isFirstRender.current = false;
-        } else {
-          cy.current.animate({ fit: { padding: 6 } } as any);
-        }
-      }
-    }, []);
-
-    const debouncedResize = useDebouncedCallback(handleResize, 250);
-
-    useEffect(() => {
-      window.addEventListener("resize", debouncedResize.callback);
-      return () =>
-        window.removeEventListener("resize", debouncedResize.callback);
-    }, [debouncedResize]);
-
-    useDownloadHandlers(cy, theme, bg);
-
-    // Initialize Graph
-    useEffect(() => {
-      initializeGraph({
-        errorCatcher,
-        cy,
-        setHoverLineNumber,
-      });
-      const cyc = cy.current;
-      const ecc = errorCatcher.current;
-      return () => {
-        if (cyc) cyc.destroy();
-        if (ecc) ecc.destroy();
+  const handleDragFree = useCallback(() => {
+    const nodePositions = getNodePositionsFromCy();
+    useDoc.setState((state) => {
+      return {
+        ...state,
+        meta: {
+          ...state.meta,
+          nodePositions,
+        },
       };
-    }, [setHoverLineNumber]);
+    });
+  }, []);
 
-    // bind drag-free event
-    useEffect(() => {
-      const cyCurrent = cy.current;
-      if (cyCurrent) {
-        cyCurrent.on("dragfree", handleDragFree);
+  const handleResize = useCallback(() => {
+    if (cy.current) {
+      cy.current.resize();
+      if (isFirstRender.current) {
+        cy.current.fit(undefined, 6);
+        isFirstRender.current = false;
+      } else {
+        cy.current.animate({ fit: { padding: 6 } } as any);
       }
-      return () => {
-        if (cyCurrent) {
-          cyCurrent.off("dragfree", handleDragFree);
-        }
-      };
-    }, [handleDragFree]);
+    }
+  }, []);
 
-    // Update Style
-    useEffect(() => {
-      updateStyle(cy, userStyle, errorCatcher, setHasStyleError, theme);
-    }, [theme, setHasStyleError, userStyle]);
+  const debouncedResize = useDebouncedCallback(handleResize, 250);
 
-    const updateTheGraph = useCallback(() => {
-      updateGraph({
-        cy,
-        content: options.content,
-        layoutString: layout,
-        errorCatcher,
-        setHasError,
-        graphInitialized,
-        animate,
-        getSize,
-        hiddenGraphOptionsText,
-      });
-    }, [
-      animate,
-      getSize,
-      hiddenGraphOptionsText,
-      layout,
-      options.content,
-      setHasError,
-    ]);
+  useEffect(() => {
+    window.addEventListener("resize", debouncedResize.callback);
+    return () => window.removeEventListener("resize", debouncedResize.callback);
+  }, [debouncedResize]);
 
-    // Update Graph Nodes
-    useEffect(() => {
-      updateTheGraph();
-    }, [updateTheGraph]);
+  useDownloadHandlers(cy, theme, bg);
 
-    const sponsorLayoutsLoaded = useGraphStore(
-      useCallback((store) => store.sponsorLayoutsLoaded, [])
-    );
-    // Update Graph when Sponsor Layouts Load
-    useEffect(() => {
-      if (sponsorLayoutsLoaded) {
-        updateTheGraph();
-      }
-    }, [sponsorLayoutsLoaded, updateTheGraph]);
-
-    const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
-    const handleContextMenu = (e: TriggerEvent) => {
-      show(e);
+  // Initialize Graph
+  useEffect(() => {
+    initializeGraph({
+      errorCatcher,
+      cy,
+      setHoverLineNumber,
+    });
+    const cyc = cy.current;
+    const ecc = errorCatcher.current;
+    return () => {
+      if (cyc) cyc.destroy();
+      if (ecc) ecc.destroy();
     };
+  }, [setHoverLineNumber]);
 
-    useEffect(() => {
-      handleResize();
-    }, [handleResize, shouldResize]);
+  // bind drag-free event
+  useEffect(() => {
+    const cyCurrent = cy.current;
+    if (cyCurrent) {
+      cyCurrent.on("dragfree", handleDragFree);
+    }
+    return () => {
+      if (cyCurrent) {
+        cyCurrent.off("dragfree", handleDragFree);
+      }
+    };
+  }, [handleDragFree]);
 
-    return (
-      <Box
-        className={[styles.GraphContainer, "graph"].join(" ")}
-        overflow="hidden"
-        h="100%"
-        style={{ background: bg }}
-        onContextMenu={handleContextMenu}
-      >
-        <Box id="cy" overflow="hidden" />
-        <GraphContextMenu />
-      </Box>
-    );
-  }
-);
+  // Update Style
+  // TODO: will need to re-add user style
+  // useEffect(() => {
+  //   updateStyle(cy, errorCatcher, theme);
+  // }, [theme]);
 
+  const throttleStyleUpdate = useMemo(
+    () => getStyleUpdater({ cy, errorCatcher }),
+    []
+  );
+
+  useEffect(() => {
+    throttleStyleUpdate(theme);
+  }, [throttleStyleUpdate, theme]);
+
+  const throttleUpdate = useMemo(
+    () => getGraphUpdater({ cy, errorCatcher, graphInitialized, getSize }),
+    [getSize]
+  );
+
+  useEffect(() => {
+    throttleUpdate();
+    return useDoc.subscribe(throttleUpdate);
+  }, [throttleUpdate]);
+
+  const sponsorLayoutsLoaded = useGraphStore(
+    useCallback((store) => store.sponsorLayoutsLoaded, [])
+  );
+
+  // Update Graph when Sponsor Layouts Load
+  useEffect(() => {
+    if (sponsorLayoutsLoaded) throttleUpdate();
+  }, [throttleUpdate, sponsorLayoutsLoaded]);
+
+  const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
+  const handleContextMenu = (e: TriggerEvent) => {
+    show(e);
+  };
+
+  useEffect(() => {
+    handleResize();
+  }, [handleResize, shouldResize]);
+
+  return (
+    <Box
+      className={[styles.GraphContainer, "graph"].join(" ")}
+      overflow="hidden"
+      h="100%"
+      style={{ background: bg }}
+      onContextMenu={handleContextMenu}
+    >
+      <Box id="cy" overflow="hidden" />
+      <GraphContextMenu />
+    </Box>
+  );
+};
 Graph.displayName = "Graph";
 
 export default Graph;
@@ -221,6 +209,8 @@ function initializeGraph({
       container: document.getElementById("cy"), // container to render in
       layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
       elements: [],
+      // TODO: shouldn't this load the user's style as well?
+      // TODO: not even loading the real theme... this seems sus
       style: getCytoStyle(original),
       userZoomingEnabled: true,
       userPanningEnabled: true,
@@ -275,124 +265,92 @@ function initializeGraph({
   }
 }
 
-// Update nodes & edges
-function updateGraph({
+/**
+ * Returns a debounced function that only relies
+ * on the document to update the graph
+ */
+function getGraphUpdater({
   cy,
-  content,
-  layoutString,
   errorCatcher,
-  setHasError,
   graphInitialized,
-  animate,
   getSize,
-  hiddenGraphOptionsText = "{}",
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
-  content: string;
-  layoutString: string;
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
-  setHasError: TAppContext["setHasError"];
   graphInitialized: React.MutableRefObject<boolean>;
-  animate: boolean;
   getSize: TGetSize;
-  hiddenGraphOptionsText?: string;
 }) {
-  if (cy.current) {
+  return throttle((_doc?: Doc) => {
+    if (!cy.current) return;
+    if (!errorCatcher.current) return;
+    const doc = _doc || useDoc.getState();
     let elements: cytoscape.ElementDefinition[] = [];
 
     try {
-      // Parse Hidden Graph Options
-      let hiddenGraphOptions: HiddenGraphOptions = {};
-      try {
-        hiddenGraphOptions = JSON.parse(hiddenGraphOptionsText);
-      } catch (e) {
-        console.error(e);
-      }
+      const layout = getLayout(doc);
+      elements = parseText(stripComments(doc.text), getSize);
+      console.log(elements);
+      // Test
+      errorCatcher.current.json({ elements });
+      // TODO: what happens if you add animate false and run() here?
+      errorCatcher.current.layout(layout);
 
-      const layout = prepareLayoutForCyto(
-        JSON.parse(layoutString) as GraphOptionsObject["layout"],
-        hiddenGraphOptions
-      );
-
-      // Strip Comments
-      const contentWithoutComments = stripComments(content);
-
-      // Parse
-      elements = parseText(contentWithoutComments, getSize);
-
-      // Test Error First
-      errorCatcher.current?.json({ elements });
-      errorCatcher.current?.layout({
-        ...(defaultLayout as cytoscape.LayoutOptions),
-        ...layout,
-      });
-
-      // Real
-      cy.current.json({
-        elements: elements,
-      });
-
-      if (layout?.name !== "preset") {
+      // Update
+      cy.current.json({ elements });
+      if (layout.name !== "preset") {
         cy.current
           .layout({
-            ...defaultLayout,
             ...layout,
             animate: graphInitialized.current
               ? elements.length < 200
-                ? animate
+                ? shouldAnimate
                 : false
               : false,
-            animationDuration: animate ? 333 : 0,
-          } as any)
+            animationDuration: shouldAnimate ? 333 : 0,
+          })
           .run();
-        cy.current.center();
+        cy.current.fit(); // TODO: center?
       } else {
-        cy.current
-          .layout({
-            ...layout,
-            animate: false,
-            fit: false,
-          } as any)
-          .run();
+        cy.current.layout({ ...layout, animate: false, fit: false }).run();
       }
 
       graphInitialized.current = true;
 
       // Reinitialize to avoid missing errors
-      errorCatcher.current?.destroy();
+      errorCatcher.current.destroy();
       errorCatcher.current = cytoscape();
-      setHasError(false);
+      useParseError.setState({ error: "" });
 
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
     } catch (e) {
-      errorCatcher.current?.destroy();
+      errorCatcher.current.destroy();
       errorCatcher.current = cytoscape();
       if (isError(e)) {
-        setHasError(sanitizeMessage(e.message, elements));
+        useParseError.setState({
+          errorFromStyle: sanitizeMessage(e.message, elements),
+        });
       }
     }
-  }
+  }, 333);
 }
 
-function updateStyle(
-  cy: React.MutableRefObject<cytoscape.Core | undefined>,
-  userStyleString: string,
-  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>,
-  setHasStyleError: TAppContext["setHasStyleError"],
-  graphTheme: Theme
-) {
-  if (cy.current) {
+function getStyleUpdater({
+  cy,
+  errorCatcher,
+}: {
+  cy: React.MutableRefObject<cytoscape.Core | undefined>;
+  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
+}) {
+  return throttle((theme: Theme) => {
+    if (!cy.current) return;
+    if (!errorCatcher.current) return;
     try {
-      const userStyle = JSON.parse(
-        userStyleString
-      ) as GraphOptionsObject["style"];
-
       // Prepare Styles
-      const style = getCytoStyle(graphTheme, userStyle);
+      const style = getCytoStyle(theme, getUserStyle());
 
       // Test Error First
-      errorCatcher.current?.json({ style });
+      errorCatcher.current.json({ style });
 
       // Real
       cy.current.json({
@@ -400,17 +358,19 @@ function updateStyle(
       });
 
       // Reinitialize to avoid missing errors
-      errorCatcher.current?.destroy();
+      errorCatcher.current.destroy();
       errorCatcher.current = cytoscape();
-      setHasStyleError(false);
+      useParseError.setState({ errorFromStyle: "" });
     } catch (e) {
-      errorCatcher.current?.destroy();
+      errorCatcher.current.destroy();
       errorCatcher.current = cytoscape();
       if (isError(e)) {
-        setHasStyleError(sanitizeStyleMessage(e.message));
+        useParseError.setState({
+          errorFromStyle: sanitizeStyleMessage(e.message),
+        });
       }
     }
-  }
+  }, 333);
 }
 
 function getCytoStyle(

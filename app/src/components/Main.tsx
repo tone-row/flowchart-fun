@@ -72,7 +72,6 @@ const Main = memo(
             </div>
           ) : null}
         </GraphWrapper>
-        {!isFullscreen && <MobileTabToggle />}
         <TextResizer />
       </>
     );

@@ -4,9 +4,8 @@ import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 import { AppContext } from "../components/AppContext";
 import { useChart } from "./queries";
 
-export function useAnimationSetting() {
-  const { search } = useLocation();
-  const query = new URLSearchParams(search);
+export function getAnimationSettings() {
+  const query = new URLSearchParams(window.location.search.slice(1));
   const animation = query.get("animation");
   return animation === "0" ? false : true;
 }
@@ -104,4 +103,8 @@ export function useIsEditorView() {
     path === "/:workspace" ||
     (path === "/" && isExact)
   );
+}
+
+export function useLightOrDarkMode() {
+  return useContext(AppContext).mode;
 }

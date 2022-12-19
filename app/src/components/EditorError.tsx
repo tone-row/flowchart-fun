@@ -1,16 +1,16 @@
 import { Trans } from "@lingui/macro";
 import { AnimatePresence, motion } from "framer-motion";
-import { useContext } from "react";
 import { BiErrorCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
+import { useParseError } from "../lib/prepareChart";
 import { Box, Type } from "../slang";
-import { AppContext } from "./AppContext";
 import styles from "./EditorError.module.css";
 
 export default function EditorError() {
-  const { hasError, hasStyleError } = useContext(AppContext);
-  const show = hasError || hasStyleError || false;
+  const parseError = useParseError((s) => s.error);
+  const errorFromStyle = useParseError((s) => s.errorFromStyle);
+  const show = parseError || errorFromStyle || "";
   return (
     <AnimatePresence>
       {show ? (

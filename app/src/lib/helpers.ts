@@ -20,7 +20,7 @@ export function isError(x: unknown): x is Error {
 }
 
 export function titleToLocalStorageKey(chartTitle: string) {
-  return `flowcharts.fun${chartTitle === "/" ? "" : `:${chartTitle}`}`;
+  return ["flowcharts.fun", chartTitle].filter(Boolean).join(":");
 }
 
 export const slugify = (value: string) =>

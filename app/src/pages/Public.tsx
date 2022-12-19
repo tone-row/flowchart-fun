@@ -1,5 +1,6 @@
 import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
 import { useContext, useEffect, useRef, useState } from "react";
+import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
@@ -7,6 +8,8 @@ import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
 import { useEditorOnMount } from "../lib/editorHooks";
+import { prepareChart } from "../lib/prepareChart";
+import { getHostedChart, getPublicChart } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
@@ -17,8 +20,13 @@ import { usePublicDoc } from "../lib/usePublicDoc";
 import styles from "./ReadOnly.module.css";
 
 function Public() {
-  const monaco = useMonaco();
   const { public_id } = useParams<{ public_id: string }>();
+  useQuery(["useHostedDoc", public_id], () => loadPublicDoc(public_id), {
+    enabled: typeof public_id === "string",
+    suspense: true,
+  });
+
+  const monaco = useMonaco();
   const {
     text,
     options,
@@ -96,3 +104,12 @@ function Public() {
 }
 
 export default Public;
+
+async function loadPublicDoc(id: string) {
+  const chart = await getPublicChart(id);
+  if (!chart) throw new Error("Chart not found");
+  const doc = chart.chart;
+  prepareChart(doc);
+  console.log({ doc });
+  return doc;
+}

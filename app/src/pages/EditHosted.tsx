@@ -1,7 +1,10 @@
 import Editor, { OnMount } from "@monaco-editor/react";
+import * as Tabs from "@radix-ui/react-tabs";
 import { Check, DotsThree } from "phosphor-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useMutation, useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
+import { useDebouncedCallback } from "use-debounce";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
@@ -10,10 +13,20 @@ import { EditWrapper } from "../components/EditWrapper";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
 import Spinner from "../components/Spinner";
+import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
+import { EditMetaTab } from "../components/Tabs/EditMetaTab";
+import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useIsValidSponsor } from "../lib/hooks";
-import { queryClient, useAppMode, useChart } from "../lib/queries";
+import { Doc, docToString, prepareChart, useDoc } from "../lib/prepareChart";
+import {
+  getHostedChart,
+  queryClient,
+  updateChartText,
+  useAppMode,
+  useChart,
+} from "../lib/queries";
 import {
   languageId,
   themeNameDark,
@@ -25,17 +38,32 @@ import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
 
 export default function EditHosted() {
-  const validSponsor = useIsValidSponsor();
   const { id } = useParams<{ id: string }>();
+  useQuery(["useHostedDoc", id], () => loadHostedDoc(id), {
+    enabled: !!id,
+    suspense: true,
+  });
+
+  const { mutate, isLoading } = useMutation((text: string) =>
+    updateChartText(text, id)
+  );
+  // get debounced mutate
+  const {
+    callback: debounceMutate,
+    flush,
+    pending,
+  } = useDebouncedCallback((doc: Doc) => {
+    mutate(docToString(doc));
+  }, 1000);
+  useEffect(() => useDoc.subscribe(debounceMutate), [debounceMutate]);
+
+  const text = useDoc((state) => state.text);
+
   const { data } = useChart(id);
   const {
-    flush,
     options,
     updateDoc,
     hiddenGraphOptionsText,
-    isLoading,
-    text,
-    pending,
     theme,
     bg,
     isFrozen,
@@ -71,12 +99,13 @@ export default function EditHosted() {
   useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
 
   const onChange = useCallback(
-    (value) => updateDoc({ text: value ?? "" }),
-    [updateDoc]
+    (value) => useDoc.setState({ text: value ?? "" }),
+    []
   );
 
   const { url } = useRouteMatch();
   useTrackLastChart(url);
+  const isValidSponsor = useIsValidSponsor();
 
   return (
     <EditWrapper>
@@ -91,19 +120,39 @@ export default function EditHosted() {
         fullText={fullText}
       >
         <EditorWrapper fullText={fullText}>
-          <Editor
-            value={text}
-            // @ts-ignore
-            wrapperClassName={editStyles.Editor}
-            defaultLanguage={languageId}
-            options={{
-              ...editorOptions,
-              readOnly: !validSponsor,
-            }}
-            onChange={onChange}
-            loading={loading.current}
-            onMount={onMount}
-          />
+          <Tabs.Root defaultValue="Document" className={editStyles.Tabs}>
+            <Tabs.List className={editStyles.TabsList}>
+              <Tabs.Trigger value="Document">Document</Tabs.Trigger>
+              <Tabs.Trigger value="Layout">Layout</Tabs.Trigger>
+              <Tabs.Trigger value="Style">Style</Tabs.Trigger>
+              {isValidSponsor && (
+                <Tabs.Trigger value="Advanced">Advanced</Tabs.Trigger>
+              )}
+            </Tabs.List>
+            <Tabs.Content value="Document">
+              <Editor
+                value={text}
+                // @ts-ignore
+                wrapperClassName={editStyles.Editor}
+                defaultLanguage={languageId}
+                options={editorOptions}
+                onChange={onChange}
+                loading={loading.current}
+                onMount={onMount}
+              />
+            </Tabs.Content>
+            <Tabs.Content value="Layout">
+              <EditLayoutTab />
+            </Tabs.Content>
+            <Tabs.Content value="Style">
+              <EditStyleTab />
+            </Tabs.Content>
+            {isValidSponsor && (
+              <Tabs.Content value="Advanced">
+                <EditMetaTab />
+              </Tabs.Content>
+            )}
+          </Tabs.Root>
         </EditorWrapper>
         <LoadingState isLoading={isLoading} pending={pending()} />
         <ClearTextButton
@@ -141,4 +190,12 @@ function LoadingState({
       )}
     </div>
   );
+}
+
+async function loadHostedDoc(id: string) {
+  const chart = await getHostedChart(id);
+  if (!chart) throw new Error("Chart not found");
+  const doc = chart.chart;
+  prepareChart(doc);
+  return doc;
 }

@@ -70,12 +70,7 @@ TabPane.displayName = "TabPane";
 export default TabPane;
 
 const Handle = ({ dragging = false }: { dragging: boolean }) => (
-  <Box
-    background="color-background"
-    className={styles.Handle}
-    content="center"
-    data-dragging={dragging}
-  >
+  <Box className={styles.Handle} content="center" data-dragging={dragging}>
     <DotsThreeOutlineVertical height={24} width={24} />
   </Box>
 );

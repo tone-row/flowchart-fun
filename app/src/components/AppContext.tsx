@@ -45,10 +45,6 @@ export type TAppContext = {
   shareLink: string;
   setShareLink: Dispatch<SetStateAction<string>>;
   language: string;
-  hasError: false | string;
-  setHasError: Dispatch<SetStateAction<false | string>>;
-  hasStyleError: false | string;
-  setHasStyleError: Dispatch<SetStateAction<false | string>>;
   shareModal: boolean;
   setShareModal: Dispatch<SetStateAction<boolean>>;
   mobileEditorTab: mobileEditorTab;
@@ -119,10 +115,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     window.localStorage.removeItem("flowcharts.fun:");
   }, []);
 
-  const [hasError, setHasError] = useState<TAppContext["hasError"]>(false);
-  const [hasStyleError, setHasStyleError] =
-    useState<TAppContext["hasStyleError"]>(false);
-
   const [checkedSession, setCheckedSession] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
   const sponsorLayoutsLoading = useRef(false);
@@ -176,8 +168,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         shareLink,
         setShareLink,
         updateUserSettings,
-        hasError,
-        setHasError,
         setShareModal,
         shareModal,
         mobileEditorTab,
@@ -185,8 +175,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         session,
         customer,
         customerIsLoading,
-        hasStyleError,
-        setHasStyleError,
         ...settings,
         language: settings.language ?? defaultLanguage,
         checkedSession,

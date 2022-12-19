@@ -1,0 +1,13 @@
+.tabOptionsGrid {
+  display: grid;
+}
+
+.tabOptionsGrid > * {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-inline: calc(var(--spacer-px) * 8);
+}
+
+.tabOptionsGrid > * + * {
+  border-top: 1px solid var(--color-lineColor);
+}

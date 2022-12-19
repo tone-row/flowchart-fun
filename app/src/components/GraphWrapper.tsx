@@ -27,13 +27,6 @@ export default function GraphWrapper({
   const isFullscreen = useFullscreen();
   const { path } = useRouteMatch();
   const validSponsor = useIsValidSponsor();
-  const shouldHideGraphOptions =
-    (path === "/u/:id" && !validSponsor) ||
-    path === "/c/:graphText?" ||
-    path === "/r/:graphText?";
-  const template = shouldHideGraphOptions
-    ? "minmax(0, 1fr) / minmax(0, 1fr)"
-    : "auto minmax(0, 1fr) / minmax(0, 1fr)";
 
   // TODO: investigate and fix this unknown showing variable...
   const showing = useIsEditorView();
@@ -47,14 +40,10 @@ export default function GraphWrapper({
       {isFullscreen ? (
         children
       ) : (
-        <Box template={template} className={styles.GraphWrapperInner}>
-          {shouldHideGraphOptions || !update ? null : (
-            <GraphOptionsBar
-              update={update}
-              options={options}
-              isFrozen={isFrozen}
-            />
-          )}
+        <Box
+          template={"minmax(0, 1fr) / minmax(0, 1fr)"}
+          className={styles.GraphWrapperInner}
+        >
           {children}
           <GraphFloatingMenu />
         </Box>

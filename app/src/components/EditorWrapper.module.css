@@ -1,7 +1,15 @@
 .EditorWrapper {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: calc(var(--spacer-px) * 5);
+  grid-template: auto minmax(0, 1fr) / minmax(0, 1fr);
+  width: 100%;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .EditorWrapper {
+    /* This is to avoid content going underneath the resizable handle */
+    padding-right: 5px;
+  }
 }
 
 .EditorWrapper header {
@@ -12,10 +20,25 @@
   display: flex;
   align-items: baseline;
   gap: calc(var(--spacer-px) * 5);
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+.HeaderTitle button:first-child {
+  overflow: hidden;
+  padding: 0;
+  /* width: 100%; */
+}
+
+.HeaderTitle button:first-child h1 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
 }
 
 .ShareButton {
-  padding: 7px 14px 6px 15px;
+  padding: 9px 16px 8px 17px;
   display: grid;
   grid-auto-flow: column;
   align-items: center;

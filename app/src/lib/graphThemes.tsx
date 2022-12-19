@@ -124,5 +124,7 @@ export function useGraphTheme(userTheme: GraphThemes | undefined = undefined) {
       theme = userTheme;
     }
   }
-  return useLoadedTheme(theme);
+  const t = useLoadedTheme(theme);
+  console.log({ t });
+  return { ...t };
 }
