@@ -42,8 +42,6 @@ type mobileEditorTab = "text" | "graph";
 type TAppContext = {
   updateUserSettings: (newSettings: Partial<UserSettings>) => void;
   theme: Theme;
-  shareLink: string;
-  setShareLink: Dispatch<SetStateAction<string>>;
   language: string;
   shareModal: boolean;
   setShareModal: Dispatch<SetStateAction<boolean>>;
@@ -64,7 +62,6 @@ type CustomerInfo = {
 export const AppContext = createContext({} as TAppContext);
 
 const Provider = ({ children }: { children?: ReactNode }) => {
-  const [shareLink, setShareLink] = useState("");
   const [shareModal, setShareModal] = useState(false);
   const [userSettingsString, setUserSettings] = useLocalStorage(
     LOCAL_STORAGE_SETTINGS_KEY,
@@ -165,8 +162,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     <AppContext.Provider
       value={{
         theme,
-        shareLink,
-        setShareLink,
         updateUserSettings,
         setShareModal,
         shareModal,

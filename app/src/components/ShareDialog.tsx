@@ -1,4 +1,5 @@
 import { t, Trans } from "@lingui/macro";
+import { compressToEncodedURIComponent } from "lz-string";
 import { Check, LinkSimple } from "phosphor-react";
 import {
   ReactNode,
@@ -13,6 +14,7 @@ import { useMutation } from "react-query";
 
 import { useTitle } from "../lib/hooks";
 import { toMermaidJS } from "../lib/mermaid";
+import { docToString, useDoc } from "../lib/prepareChart";
 import { makeChartPublic, queryClient, useChart } from "../lib/queries";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
@@ -23,8 +25,12 @@ import Spinner from "./Spinner";
 
 export default function ShareDialog() {
   const [_, isHosted, id] = useTitle();
-  const { shareModal, setShareModal, shareLink } = useContext(AppContext);
+  const { shareModal, setShareModal } = useContext(AppContext);
   const close = useCallback(() => setShareModal(false), [setShareModal]);
+  const docString = useDoc(docToString);
+  const shareLink = useMemo(() => {
+    return compressToEncodedURIComponent(docString);
+  }, [docString]);
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
@@ -170,6 +176,7 @@ function LinkCopy({
           pl={2}
           className={styles.LinkCopyInput}
           onFocus={copyText}
+          data-testid={`Copy ${rawTitle}`}
         />
         <Box>
           <Button

@@ -1,6 +1,5 @@
 import create from "zustand";
 
-import { themes } from "./graphOptions";
 import { useDoc } from "./prepareChart";
 import { Theme } from "./themes/constants";
 import original from "./themes/original";
@@ -18,10 +17,6 @@ export type GraphThemes =
   | "retro"
   | "futuristic"
   | "comic-book";
-
-export const publicThemes = themes
-  .filter((theme) => !theme.sponsorOnly)
-  .map((theme) => theme.value) as GraphThemes[];
 
 export const defaultGraphTheme: GraphThemes = "original";
 
