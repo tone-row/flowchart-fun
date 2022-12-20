@@ -1,5 +1,6 @@
 import * as Select from "@radix-ui/react-select";
 import { memo, ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 import { useIsValidSponsor } from "../../lib/hooks";
 import styles from "./shared.module.css";
@@ -64,3 +65,21 @@ export const TabOptionsGrid = memo(function TabOptionsGrid({
 }) {
   return <div className={styles.tabOptionsGrid}>{children}</div>;
 });
+
+export function WithLowerChild({ children }: { children: ReactNode }) {
+  return <div className={styles.withLowerChild}>{children}</div>;
+}
+
+export function LargeLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) {
+  return (
+    <Link to={href} className={styles.largeLink}>
+      {children}
+    </Link>
+  );
+}

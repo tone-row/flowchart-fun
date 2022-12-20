@@ -716,9 +716,9 @@ function HostedChartsCallout() {
     <Box gap={8} items="start">
       <Box gap={4} items="start">
         <Box gap={2}>
-          <Type size={3}>
+          <SectionTitle>
             <Trans>Hosted Charts</Trans>
-          </Type>
+          </SectionTitle>
           <Type
             className={styles.CalloutInner}
             size={-1}

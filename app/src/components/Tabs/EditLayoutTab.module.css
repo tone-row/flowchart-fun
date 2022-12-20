@@ -1,0 +1,29 @@
+.Frozen {
+  display: grid;
+  justify-content: center;
+  padding: calc(var(--spacer-px) * 8);
+  gap: calc(var(--spacer-px) * 6);
+}
+
+.Frozen h2 {
+  display: grid;
+  grid-auto-flow: column;
+  gap: calc(var(--spacer-px) * 2);
+  align-items: center;
+}
+
+.Frozen button {
+  border: 1px solid var(--color-uiAccent);
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacer-px) * 2);
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.Frozen button:hover {
+  background-color: var(--color-uiAccent);
+}

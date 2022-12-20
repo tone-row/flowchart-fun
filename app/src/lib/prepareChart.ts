@@ -13,6 +13,7 @@ local storage
 import merge from "deepmerge";
 import matter from "gray-matter";
 import create from "zustand";
+import { subscribeWithSelector } from "zustand/middleware";
 
 import {
   delimiters,
@@ -25,10 +26,12 @@ export type Doc = {
   meta: Record<string, unknown>;
 };
 
-export const useDoc = create<Doc>(() => ({
-  text: "",
-  meta: {},
-}));
+export const useDoc = create(
+  subscribeWithSelector<Doc>(() => ({
+    text: "",
+    meta: {},
+  }))
+);
 
 /**
  * The goal of this function is to remove some of the complexity around

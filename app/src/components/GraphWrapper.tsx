@@ -1,32 +1,12 @@
 import { ReactNode } from "react";
-import { useRouteMatch } from "react-router-dom";
 
-import {
-  useFullscreen,
-  useIsEditorView,
-  useIsValidSponsor,
-} from "../lib/hooks";
-import { UpdateDoc } from "../lib/UpdateDoc";
+import { useFullscreen, useIsEditorView } from "../lib/hooks";
 import { Box } from "../slang";
 import { GraphFloatingMenu } from "./GraphFloatingMenu";
-import GraphOptionsBar from "./GraphOptionsBar";
 import styles from "./GraphWrapper.module.css";
-import { UseGraphOptionsReturn } from "./useGraphOptions";
 
-export default function GraphWrapper({
-  children,
-  update,
-  options,
-  isFrozen,
-}: {
-  children: ReactNode;
-  update?: UpdateDoc;
-  options: UseGraphOptionsReturn;
-  isFrozen: boolean;
-}) {
+export default function GraphWrapper({ children }: { children: ReactNode }) {
   const isFullscreen = useFullscreen();
-  const { path } = useRouteMatch();
-  const validSponsor = useIsValidSponsor();
 
   // TODO: investigate and fix this unknown showing variable...
   const showing = useIsEditorView();

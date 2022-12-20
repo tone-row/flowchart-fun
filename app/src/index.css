@@ -42,7 +42,6 @@ html body {
 
 .monaco-editor .line-numbers {
   color: var(--color-lineNumbers) !important;
-  font-family: nm, monospace;
   font-size: 13px;
 }
 

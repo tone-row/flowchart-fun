@@ -8,15 +8,14 @@ import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { editorOptions } from "../lib/constants";
 import { useEditorOnMount } from "../lib/editorHooks";
-import { prepareChart } from "../lib/prepareChart";
-import { getHostedChart, getPublicChart } from "../lib/queries";
+import { prepareChart, useDoc } from "../lib/prepareChart";
+import { getPublicChart } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
   themeNameLight,
   useMonacoLanguage,
 } from "../lib/registerLanguage";
-import { usePublicDoc } from "../lib/usePublicDoc";
 import styles from "./ReadOnly.module.css";
 
 function Public() {
@@ -27,15 +26,6 @@ function Public() {
   });
 
   const monaco = useMonaco();
-  const {
-    text,
-    options,
-    hiddenGraphOptionsText,
-    theme,
-    bg,
-    isFrozen,
-    fullText,
-  } = usePublicDoc(public_id);
 
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
@@ -74,17 +64,10 @@ function Public() {
 
   const loading = useRef(<Loading />);
   const onMount = useEditorOnMount(editorRef, monacoRef);
+  const text = useDoc((doc) => doc.text);
 
   return (
-    <Main
-      setHoverLineNumber={setHoverLineNumber}
-      hiddenGraphOptionsText={hiddenGraphOptionsText}
-      options={options}
-      theme={theme}
-      bg={bg}
-      isFrozen={isFrozen}
-      fullText={fullText}
-    >
+    <Main setHoverLineNumber={setHoverLineNumber}>
       <Editor
         value={text}
         defaultValue={text}
@@ -110,6 +93,5 @@ async function loadPublicDoc(id: string) {
   if (!chart) throw new Error("Chart not found");
   const doc = chart.chart;
   prepareChart(doc);
-  console.log({ doc });
   return doc;
 }

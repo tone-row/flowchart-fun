@@ -3,11 +3,31 @@
 }
 
 .tabOptionsGrid > * {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: calc(var(--spacer-px) * 2);
+  padding-bottom: calc(var(--spacer-px) * 2);
   padding-inline: calc(var(--spacer-px) * 8);
 }
 
 .tabOptionsGrid > * + * {
   border-top: 1px solid var(--color-lineColor);
+}
+
+.withLowerChild {
+  display: grid;
+  gap: calc(var(--spacer-px) * 4);
+}
+
+.largeLink {
+  font-size: 24px;
+  font-weight: 900;
+  background-color: hsla(var(--color-brandHsl), 0.1);
+  padding: calc(var(--spacer-px) * 6) calc(var(--spacer-px) * 4);
+  color: hsla(var(--color-brandHsl), 1);
+  text-align: center;
+  margin-inline: calc(var(--spacer-px) * 8);
+  border-radius: 8px;
+}
+
+.largeLink:hover {
+  background-color: hsla(var(--color-brandHsl), 0.2);
 }

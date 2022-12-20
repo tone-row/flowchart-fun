@@ -25,14 +25,12 @@ import {
   queryClient,
   updateChartText,
   useAppMode,
-  useChart,
 } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useHostedDoc } from "../lib/useHostedDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
@@ -42,6 +40,7 @@ export default function EditHosted() {
   useQuery(["useHostedDoc", id], () => loadHostedDoc(id), {
     enabled: !!id,
     suspense: true,
+    staleTime: 0,
   });
 
   const { mutate, isLoading } = useMutation((text: string) =>
@@ -58,19 +57,6 @@ export default function EditHosted() {
   useEffect(() => useDoc.subscribe(debounceMutate), [debounceMutate]);
 
   const text = useDoc((state) => state.text);
-
-  const { data } = useChart(id);
-  const {
-    options,
-    updateDoc,
-    hiddenGraphOptionsText,
-    theme,
-    bg,
-    isFrozen,
-    fullText,
-  } = useHostedDoc(id, data?.chart);
-
-  const { linesOfYaml } = options;
 
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
@@ -96,7 +82,7 @@ export default function EditHosted() {
   }, [mode]);
 
   // Hover
-  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
+  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber);
 
   const onChange = useCallback(
     (value) => useDoc.setState({ text: value ?? "" }),
@@ -109,17 +95,8 @@ export default function EditHosted() {
 
   return (
     <EditWrapper>
-      <Main
-        setHoverLineNumber={setHoverLineNumber}
-        hiddenGraphOptionsText={hiddenGraphOptionsText}
-        options={options}
-        update={updateDoc}
-        theme={theme}
-        bg={bg}
-        isFrozen={isFrozen}
-        fullText={fullText}
-      >
-        <EditorWrapper fullText={fullText}>
+      <Main setHoverLineNumber={setHoverLineNumber}>
+        <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={editStyles.Tabs}>
             <Tabs.List className={editStyles.TabsList}>
               <Tabs.Trigger value="Document">Document</Tabs.Trigger>
@@ -157,7 +134,7 @@ export default function EditHosted() {
         <LoadingState isLoading={isLoading} pending={pending()} />
         <ClearTextButton
           handleClear={() => {
-            updateDoc({ text: "", hidden: {} });
+            useDoc.setState({ text: "", meta: {} });
             if (editorRef.current) {
               editorRef.current.focus();
             }

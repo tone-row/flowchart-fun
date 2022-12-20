@@ -26,7 +26,6 @@ import {
   themeNameLight,
 } from "../lib/registerLanguage";
 import { useTrackLastChart } from "../lib/useLastChart";
-import { useLocalDoc } from "../lib/useLocalDoc";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit() {
@@ -36,6 +35,7 @@ const Edit = memo(function Edit() {
   useQuery(["edit", workspace], () => loadWorkspace(workspace), {
     enabled: typeof workspace === "string",
     suspense: true,
+    staleTime: 0,
   });
 
   const store = useMemo(() => {
@@ -48,18 +48,8 @@ const Edit = memo(function Edit() {
       { trailing: true }
     );
   }, [workspace]);
-  useEffect(() => useDoc.subscribe(store), [store]);
 
-  const {
-    options,
-    updateDoc,
-    hiddenGraphOptionsText,
-    theme,
-    bg,
-    isFrozen,
-    fullText,
-  } = useLocalDoc();
-  const { linesOfYaml } = options;
+  useEffect(() => useDoc.subscribe(store), [store]);
 
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
@@ -76,7 +66,7 @@ const Edit = memo(function Edit() {
   }, [mode]);
 
   // Hover
-  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
+  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber);
 
   const onChange = useCallback(
     (value) => useDoc.setState({ text: value ?? "" }),
@@ -90,17 +80,8 @@ const Edit = memo(function Edit() {
 
   return (
     <EditWrapper>
-      <Main
-        setHoverLineNumber={setHoverLineNumber}
-        hiddenGraphOptionsText={hiddenGraphOptionsText}
-        options={options}
-        update={updateDoc}
-        theme={theme}
-        bg={bg}
-        isFrozen={isFrozen}
-        fullText={fullText}
-      >
-        <EditorWrapper fullText={fullText}>
+      <Main setHoverLineNumber={setHoverLineNumber}>
+        <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={styles.Tabs}>
             <Tabs.List className={styles.TabsList}>
               <Tabs.Trigger value="Document">Document</Tabs.Trigger>
@@ -137,7 +118,7 @@ const Edit = memo(function Edit() {
         </EditorWrapper>
         <ClearTextButton
           handleClear={() => {
-            updateDoc({ text: "", hidden: {} });
+            useDoc.setState({ text: "", meta: {} });
             if (editorRef.current) {
               editorRef.current.focus();
             }

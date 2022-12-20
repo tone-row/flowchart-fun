@@ -16,6 +16,7 @@
     "extract": "lingui extract --clean",
     "compile": "lingui compile",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
+    "check:types": "tsc --noEmit",
     "format": "prettier --write '{src,e2e}/**/*.{ts,tsx,scss,css,json}'",
     "e2e:env": "export $(cat .env.e2e | xargs)",
     "e2e": "playwright test --config=playwright.config.ts",

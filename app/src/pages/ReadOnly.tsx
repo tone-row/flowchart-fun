@@ -18,7 +18,6 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useReadOnlyDoc } from "../lib/useReadOnlyDoc";
 import styles from "./ReadOnly.module.css";
 
 function ReadOnly() {
@@ -29,9 +28,8 @@ function ReadOnly() {
   useQuery(["read", path, graphText], () => loadReadOnly(path, graphText), {
     enabled: typeof graphText === "string",
     suspense: true,
+    staleTime: 0,
   });
-  const { hiddenGraphOptionsText, options, theme, bg, isFrozen, fullText } =
-    useReadOnlyDoc();
   const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
@@ -46,23 +44,13 @@ function ReadOnly() {
     );
   }, [mode]);
 
-  const { linesOfYaml } = options;
-
-  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber + linesOfYaml);
+  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber);
   const text = useDoc((d) => d.text);
 
   return (
     <EditWrapper>
-      <Main
-        setHoverLineNumber={setHoverLineNumber}
-        hiddenGraphOptionsText={hiddenGraphOptionsText}
-        options={options}
-        theme={theme}
-        bg={bg}
-        isFrozen={isFrozen}
-        fullText={fullText}
-      >
-        <EditorWrapper fullText={fullText}>
+      <Main setHoverLineNumber={setHoverLineNumber}>
+        <EditorWrapper>
           <Editor
             value={text}
             // @ts-ignore

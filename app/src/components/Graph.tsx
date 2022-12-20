@@ -5,6 +5,7 @@ import cytoscapeSvg from "cytoscape-svg";
 import throttle from "lodash.throttle";
 import React, {
   Dispatch,
+  memo,
   SetStateAction,
   useCallback,
   useEffect,
@@ -16,16 +17,15 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { defaultLayout } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
-import { getUserStyle, useThemeObject } from "../lib/getTheme";
+import { getLayout } from "../lib/getLayout";
+import { getUserStyle } from "../lib/getTheme";
+import { useThemeStore } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
-import { getAnimationSettings } from "../lib/hooks";
 import { parseText } from "../lib/parseText";
 import { Doc, useDoc, useParseError } from "../lib/prepareChart";
-import { getLayout } from "../lib/prepareLayoutForCyto";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
-import { UpdateDoc } from "../lib/UpdateDoc";
 import { TGetSize, useGetSize } from "../lib/useGetSize";
 import { useGraphStore } from "../lib/useGraphStore";
 import { stripComments } from "../lib/utils";
@@ -34,7 +34,6 @@ import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import useDownloadHandlers from "./useDownloadHandlers";
-import { UseGraphOptionsReturn } from "./useGraphOptions";
 
 declare global {
   interface Window {
@@ -49,24 +48,20 @@ if (!cytoscape.prototype.hasInitialised) {
   cytoscape.prototype.hasInitialised = true;
 }
 
-const shouldAnimate = getAnimationSettings();
+// TODO: unset this, and try real animation setting
+const shouldAnimate = false; // getAnimationSettings();
 
-const Graph = ({
+const Graph = memo(function Graph({
   setHoverLineNumber,
   shouldResize,
 }: {
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
   shouldResize: number;
-  hiddenGraphOptionsText: string;
-  options: UseGraphOptionsReturn; // TODO: remove
-  update?: UpdateDoc; // TODO: remove
-  theme: Theme; // TODO: remove
-  bg: string; // TODO: remove
-}) => {
+}) {
   const cy = useRef<undefined | Core>();
   const errorCatcher = useRef<undefined | Core>();
   const graphInitialized = useRef(false);
-  const theme = useThemeObject();
+  const theme = useThemeStore();
   const bg = useDoc((state) => state.meta?.background ?? theme.bg) as string;
   const getSize = useGetSize(theme);
 
@@ -189,8 +184,7 @@ const Graph = ({
       <GraphContextMenu />
     </Box>
   );
-};
-Graph.displayName = "Graph";
+});
 
 export default Graph;
 
@@ -289,7 +283,6 @@ function getGraphUpdater({
     try {
       const layout = getLayout(doc);
       elements = parseText(stripComments(doc.text), getSize);
-      console.log(elements);
       // Test
       errorCatcher.current.json({ elements });
       // TODO: what happens if you add animate false and run() here?
@@ -309,7 +302,7 @@ function getGraphUpdater({
             animationDuration: shouldAnimate ? 333 : 0,
           })
           .run();
-        cy.current.fit(); // TODO: center?
+        cy.current.fit(undefined, 6); // TODO: center?
       } else {
         cy.current.layout({ ...layout, animate: false, fit: false }).run();
       }

@@ -9,13 +9,7 @@ import { CloneButton } from "./CloneButton";
 import styles from "./EditorWrapper.module.css";
 import { RenameButton } from "./RenameButton";
 
-export function EditorWrapper({
-  children,
-  fullText,
-}: {
-  children: React.ReactNode;
-  fullText: string;
-}) {
+export function EditorWrapper({ children }: { children: React.ReactNode }) {
   const [title] = useTitle();
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
@@ -23,7 +17,7 @@ export function EditorWrapper({
     <div className={styles.EditorWrapper}>
       <header>
         <div className={styles.HeaderTitle}>
-          <RenameButton fullText={fullText}>
+          <RenameButton>
             <Type
               as="h1"
               weight="400"
@@ -40,7 +34,7 @@ export function EditorWrapper({
             </Type>
           )}
           {isReadOnly ? (
-            <CloneButton fullText={fullText} />
+            <CloneButton />
           ) : (
             <button
               aria-label={t`Export`}

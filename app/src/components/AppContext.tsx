@@ -39,7 +39,7 @@ const defaultLanguage = Object.keys(languages).includes(browserLanguage)
 
 type mobileEditorTab = "text" | "graph";
 
-export type TAppContext = {
+type TAppContext = {
   updateUserSettings: (newSettings: Partial<UserSettings>) => void;
   theme: Theme;
   shareLink: string;

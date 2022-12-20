@@ -54,6 +54,7 @@ export const editorOptions: EditorProps["options"] = {
   automaticLayout: true,
   lineNumbers: "off",
   contextmenu: false,
+  fontFamily: "Ubuntu Mono, monospace",
 };
 
 export const delimiters = "~~~";

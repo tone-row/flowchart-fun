@@ -59,7 +59,7 @@ export const darkTheme: typeof colors = {
 };
 
 const config: Partial<SlangConfig> = {
-  baseFontFamily: "Helvetica, 'Helvetica Neue', sans-serif",
+  baseFontFamily: "Karla, Helvetica, 'Helvetica Neue', sans-serif",
   baseFontSizePx: 17,
   typeScaleBase: 1.25,
   baseFontLineHeight: 1.5,

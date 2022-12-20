@@ -10,6 +10,7 @@ import {
   useIsValidSponsor,
   useTitle,
 } from "../lib/hooks";
+import { docToString, useDoc } from "../lib/prepareChart";
 import { makeChart, queryClient, renameChart } from "../lib/queries";
 import { Box, Type } from "../slang";
 import { useSession } from "./AppContext";
@@ -23,13 +24,8 @@ import {
   tooltipSize,
 } from "./Shared";
 
-export function RenameButton({
-  fullText,
-  children,
-}: {
-  fullText: string;
-  children: ReactNode;
-}) {
+export function RenameButton({ children }: { children: ReactNode }) {
+  const fullText = useDoc(docToString);
   const isValidSponsor = useIsValidSponsor();
   const session = useSession();
   const [initialName, isHosted] = useTitle();
