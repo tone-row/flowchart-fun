@@ -84,7 +84,7 @@ export async function deleteCustomerByEmail(email: string) {
 }
 
 export async function changeEditorText(page: Page, text: string) {
-  await page.getByText("This app works by typing").first().click();
+  await page.locator(".view-line").first().click();
   await page
     .getByRole("textbox", {
       name: "Editor content;Press Alt+F1 for Accessibility Options.",

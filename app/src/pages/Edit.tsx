@@ -107,13 +107,15 @@ const Edit = memo(function Edit() {
             <Tabs.Content value="Document">
               <Editor
                 value={text}
-                // @ts-ignore
-                wrapperClassName={styles.Editor}
                 defaultLanguage={languageId}
                 options={editorOptions}
                 onChange={onChange}
                 loading={loading.current}
                 onMount={onMount}
+                wrapperProps={{
+                  "data-testid": "Editor",
+                  className: styles.EditorXYZ,
+                }}
               />
             </Tabs.Content>
             <Tabs.Content value="Layout">
