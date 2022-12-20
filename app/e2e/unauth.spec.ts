@@ -2,6 +2,11 @@ import { expect, Page, test } from "@playwright/test";
 
 import { BASE_URL, goToPath, goToTab } from "./utils";
 
+/*
+Run single test file
+pnpm playwright test e2e/unauth.spec.ts --headed --project=chromium
+*/
+
 // Run in parallel
 test.describe.configure({ mode: "parallel" });
 
@@ -355,47 +360,30 @@ test.describe("unauth", () => {
 
       // Resize Editor/Graph
 
+      await page.getByTestId("Editor Tab: Layout").click();
+
       // Contract Graph
-      // Click button:has-text("Contract")
-      await page.locator('button:has-text("Contract")').click();
-      await expect(page.locator("text=spacingFactor: 1")).toBeVisible();
 
       // Expand Graph
-      // Click button:has-text("Expand")
-      await page.locator('button:has-text("Expand")').click();
-      await expect(page.locator("text=spacingFactor: 1.25")).toBeVisible();
 
       // Change Graph Options Layout Direction
-      // Click form div:has-text("Top to Bottom") >> nth=4
-      await page.locator('form div:has-text("Top to Bottom")').nth(4).click();
-      // Click p:has-text("Left to Right")
-      await page.locator('p:has-text("Left to Right")').click();
+      await page
+        .locator('button[role="combobox"]:has-text("Top to Bottom")')
+        .click();
+      await page
+        .locator('div[role="option"]:has-text("Left to Right")')
+        .click();
 
       // Change Graph Options Layout
-      // Click form div:has-text("Dagre") >> nth=4
-      await page.locator('form div:has-text("Dagre")').nth(4).click();
-      // Click p:has-text("Breadthfirst")
-      await page.locator('p:has-text("Breadthfirst")').click();
-      // Click text=name: cose
-      await expect(page.locator("text=name: breadthfirst")).toBeVisible();
+      await page.locator('button[role="combobox"]:has-text("Dagre")').click();
+      await page.locator('div[role="option"]:has-text("Klay")').click();
 
       // Change Graph Options Theme
-      // Click form div:has-text("Light") >> nth=4
-      await page.locator('form div:has-text("Light")').nth(4).click();
-      // Click p:has-text("Eggs")
-      await page.locator('p:has-text("Eggs")').click();
-      // Click text=theme: eggs
-      await page.locator("text=theme: eggs").click();
+      await page.getByTestId("Editor Tab: Style").click();
+      await page.locator('button[role="combobox"]:has-text("Light")').click();
+      await page.locator('div[role="option"]:has-text("Dark")').click();
 
-      // Disable Graph Animation
-      await page.locator('[aria-label="Freeze Layout"]').click();
-      expect(
-        await page
-          .locator('[aria-label="Freeze Layout"]')
-          .getAttribute("aria-pressed")
-      ).toBe("true");
-
-      // Click #cy canvas >> nth=0
+      // Right Click on Graph & Copy SVG Code
       await page
         .locator("#cy canvas")
         .first()
@@ -408,7 +396,8 @@ test.describe("unauth", () => {
         });
       // Click text=Copy SVG Code
       await page.locator("text=Copy SVG Code").click();
-      // Click #cy canvas >> nth=0
+
+      // Right Click on Graph & Download PNG
       await page
         .locator("#cy canvas")
         .first()
@@ -427,6 +416,7 @@ test.describe("unauth", () => {
 
       expect(png.suggestedFilename()).toBe("flowchart.png");
 
+      // Right Click on Graph & Download JPG
       await page
         .locator("#cy canvas")
         .first()

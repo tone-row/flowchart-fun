@@ -16,6 +16,8 @@ test.describe("share-links", () => {
   const encoded = `BYUwNmD2AEDukCcwBMBQBeTnUG8C+GW6QA`;
 
   test("share links", async ({ page }) => {
+    await page.getByRole("link", { name: "New" }).click();
+
     // change editor text
     await changeEditorCode(page);
 

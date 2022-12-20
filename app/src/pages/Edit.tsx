@@ -86,11 +86,22 @@ const Edit = memo(function Edit() {
         <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={styles.Tabs}>
             <Tabs.List className={styles.TabsList}>
-              <Tabs.Trigger value="Document">Document</Tabs.Trigger>
-              <Tabs.Trigger value="Layout">Layout</Tabs.Trigger>
-              <Tabs.Trigger value="Style">Style</Tabs.Trigger>
+              <Tabs.Trigger value="Document" data-testid="Editor Tab: Document">
+                Document
+              </Tabs.Trigger>
+              <Tabs.Trigger value="Layout" data-testid="Editor Tab: Layout">
+                Layout
+              </Tabs.Trigger>
+              <Tabs.Trigger value="Style" data-testid="Editor Tab: Style">
+                Style
+              </Tabs.Trigger>
               {isValidSponsor && (
-                <Tabs.Trigger value="Advanced">Advanced</Tabs.Trigger>
+                <Tabs.Trigger
+                  value="Advanced"
+                  data-testid="Editor Tab: Advanced"
+                >
+                  Advanced
+                </Tabs.Trigger>
               )}
             </Tabs.List>
             <Tabs.Content value="Document">
