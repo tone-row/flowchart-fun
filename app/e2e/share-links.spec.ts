@@ -16,36 +16,43 @@ test.describe("share-links", () => {
   const encoded = `BYUwNmD2AEDukCcwBMBQBeTnUG8C+GW6QA`;
 
   test("share links", async ({ page }) => {
-    await page.getByRole("link", { name: "New" }).click();
+    try {
+      await page.getByRole("link", { name: "New" }).click();
 
-    // change editor text
-    await changeEditorCode(page);
+      // change editor text
+      await changeEditorCode(page);
 
-    await page.getByRole("button", { name: "Export" }).click();
+      await page.getByRole("button", { name: "Export" }).click();
 
-    // expect the value of input with testid 'Copy Fullscreen'
-    expect(
-      await page
-        .getByTestId("Copy Fullscreen")
-        .getAttribute("value")
-        .then((value) => value?.trim())
-    ).toBe(`${BASE_URL}/f#${encoded}`);
+      // expect the value of input with testid 'Copy Fullscreen'
+      expect(
+        await page
+          .getByTestId("Copy Fullscreen")
+          .getAttribute("value")
+          .then((value) => value?.trim())
+      ).toBe(`${BASE_URL}/f#${encoded}`);
 
-    // 'Copy Editable'
-    expect(
-      await page
-        .getByTestId("Copy Editable")
-        .getAttribute("value")
-        .then((value) => value?.trim())
-    ).toBe(`${BASE_URL}/n#${encoded}`);
+      // 'Copy Editable'
+      expect(
+        await page
+          .getByTestId("Copy Editable")
+          .getAttribute("value")
+          .then((value) => value?.trim())
+      ).toBe(`${BASE_URL}/n#${encoded}`);
 
-    // 'Copy Read-only
-    expect(
-      await page
-        .getByTestId("Copy Read-only")
-        .getAttribute("value")
-        .then((value) => value?.trim())
-    ).toBe(`${BASE_URL}/c#${encoded}`);
+      // 'Copy Read-only
+      expect(
+        await page
+          .getByTestId("Copy Read-only")
+          .getAttribute("value")
+          .then((value) => value?.trim())
+      ).toBe(`${BASE_URL}/c#${encoded}`);
+    } catch (error) {
+      console.log(error);
+      // grab screenshot
+      await page.screenshot({ path: `test-results/share-links-error.png` });
+      throw error;
+    }
   });
 });
 
