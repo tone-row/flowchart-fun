@@ -41,8 +41,10 @@ const Edit = memo(function Edit() {
   const store = useMemo(() => {
     return throttle(
       (doc: Doc) => {
+        const docString = docToString(doc);
+        if (docString === getDefaultText()) return;
         const key = titleToLocalStorageKey(workspace);
-        localStorage.setItem(key, docToString(doc));
+        localStorage.setItem(key, docString);
       },
       1000,
       { trailing: true }

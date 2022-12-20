@@ -34,8 +34,6 @@ export const defaultLayout: Required<GraphOptionsObject>["layout"] = {
 
 export const editorOptions: EditorProps["options"] = {
   minimap: { enabled: false },
-  fontSize: 16,
-  tabSize: 2,
   insertSpaces: true,
   wordBasedSuggestions: false,
   occurrencesHighlight: false,
@@ -48,13 +46,15 @@ export const editorOptions: EditorProps["options"] = {
   hideCursorInOverviewRuler: true,
   matchBrackets: "never",
   selectionHighlight: false,
-  lineHeight: 28,
+  lineHeight: 32,
   lineNumbersMinChars: 3,
   cursorWidth: 2,
   automaticLayout: true,
   lineNumbers: "off",
   contextmenu: false,
   fontFamily: "Ubuntu Mono, monospace",
+  fontSize: 18,
+  tabSize: 2,
 };
 
 export const delimiters = "~~~";

@@ -312,7 +312,7 @@ function getGraphUpdater({
       // Reinitialize to avoid missing errors
       errorCatcher.current.destroy();
       errorCatcher.current = cytoscape();
-      useParseError.setState({ error: "" });
+      useParseError.setState({ error: "", errorFromStyle: "" });
 
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
