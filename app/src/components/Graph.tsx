@@ -19,9 +19,11 @@ import { defaultLayout } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getLayout } from "../lib/getLayout";
 import { getUserStyle } from "../lib/getTheme";
+import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { useThemeStore } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
+import { getAnimationSettings } from "../lib/hooks";
 import { parseText } from "../lib/parseText";
 import { Doc, useDoc, useParseError } from "../lib/prepareChart";
 import { Theme } from "../lib/themes/constants";
@@ -49,7 +51,7 @@ if (!cytoscape.prototype.hasInitialised) {
 }
 
 // TODO: unset this, and try real animation setting
-const shouldAnimate = false; // getAnimationSettings();
+const shouldAnimate = getAnimationSettings();
 
 const Graph = memo(function Graph({
   setHoverLineNumber,
@@ -65,8 +67,6 @@ const Graph = memo(function Graph({
   const bg = useDoc((state) => state.meta?.background ?? theme.bg) as string;
   const getSize = useGetSize(theme);
 
-  const isFirstRender = useRef(true);
-
   const handleDragFree = useCallback(() => {
     const nodePositions = getNodePositionsFromCy();
     useDoc.setState((state) => {
@@ -81,15 +81,9 @@ const Graph = memo(function Graph({
   }, []);
 
   const handleResize = useCallback(() => {
-    if (cy.current) {
-      cy.current.resize();
-      if (isFirstRender.current) {
-        cy.current.fit(undefined, 6);
-        isFirstRender.current = false;
-      } else {
-        cy.current.animate({ fit: { padding: 6 } } as any);
-      }
-    }
+    if (!cy.current) return;
+    cy.current.resize();
+    cy.current.fit(undefined, DEFAULT_GRAPH_PADDING);
   }, []);
 
   const debouncedResize = useDebouncedCallback(handleResize, 250);
@@ -300,9 +294,10 @@ function getGraphUpdater({
                 : false
               : false,
             animationDuration: shouldAnimate ? 333 : 0,
+            padding: DEFAULT_GRAPH_PADDING,
           })
           .run();
-        cy.current.fit(undefined, 6); // TODO: center?
+        cy.current.fit(undefined, DEFAULT_GRAPH_PADDING);
       } else {
         cy.current.layout({ ...layout, animate: false, fit: false }).run();
       }

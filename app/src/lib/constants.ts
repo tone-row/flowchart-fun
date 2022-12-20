@@ -22,7 +22,7 @@ export type GraphOptionsObject = {
   background?: string;
 };
 
-export const defaultSpacingFactor = 1.25;
+const defaultSpacingFactor = 1.25;
 
 export const defaultLayout: Required<GraphOptionsObject>["layout"] = {
   name: "dagre",

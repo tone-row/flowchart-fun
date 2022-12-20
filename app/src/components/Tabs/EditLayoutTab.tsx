@@ -4,6 +4,7 @@ import { FaRegSnowflake } from "react-icons/fa";
 import { defaultLayout } from "../../lib/constants";
 import { getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
+import { hasOwnProperty } from "../../lib/helpers";
 import { useDoc } from "../../lib/prepareChart";
 import styles from "./EditLayoutTab.module.css";
 import {
@@ -19,18 +20,43 @@ export function EditLayoutTab() {
   const doc = useDoc();
   // the layout here is what we're rendering but not necessarily what should be stored in the doc
   const rendered = getLayout(doc);
-  const layout = (doc.meta.layout ?? {}) as any;
-  const layoutName: string = layout?.name ?? defaultLayout.name;
+  const layout = hasOwnProperty(doc.meta, "layout") ? doc.meta.layout : {};
+
+  let layoutName = defaultLayout.name as string;
+  if (
+    typeof layout === "object" &&
+    layout &&
+    hasOwnProperty(layout, "name") &&
+    typeof layout.name === "string"
+  ) {
+    layoutName = layout.name;
+  }
   const layoutNiceName =
     layouts.find((l) => l.value === layoutName)?.label() ?? "Unknown";
+
   const frozen = "positions" in rendered;
 
-  const direction = layout?.rankDir ?? defaultLayout.rankDir;
+  let direction = defaultLayout.rankDir;
+  if (
+    typeof layout === "object" &&
+    layout &&
+    hasOwnProperty(layout, "rankDir") &&
+    typeof layout.rankDir === "string"
+  ) {
+    direction = layout.rankDir;
+  }
   const directionNiceName =
     directions.find((l) => l.value === direction)?.label() ?? "Unknown";
 
-  const spacingFactor: number =
-    layout?.spacingFactor ?? defaultLayout.spacingFactor;
+  let spacingFactor = defaultLayout.spacingFactor;
+  if (
+    typeof layout === "object" &&
+    layout &&
+    hasOwnProperty(layout, "spacingFactor") &&
+    typeof layout.spacingFactor === "number"
+  ) {
+    spacingFactor = layout.spacingFactor;
+  }
 
   if (frozen) return <FrozenLayout />;
 
@@ -46,6 +72,7 @@ export function EditLayoutTab() {
               useDoc.setState((state) => {
                 return produce(state, (draft) => {
                   if (!draft.meta.layout) draft.meta.layout = {};
+                  // This any is because typing the layout object is too restrictive
                   (draft.meta.layout as any).name = name;
                   delete draft.meta.nodePositions;
                 });
@@ -63,6 +90,7 @@ export function EditLayoutTab() {
                 useDoc.setState((state) => {
                   return produce(state, (draft) => {
                     if (!draft.meta.layout) draft.meta.layout = {};
+                    // This any is because typing the layout object is too restrictive
                     (draft.meta.layout as any).rankDir = direction;
                     delete draft.meta.nodePositions;
                   });
@@ -100,6 +128,7 @@ export function EditLayoutTab() {
                 useDoc.setState((state) => {
                   return produce(state, (draft) => {
                     if (!draft.meta.layout) draft.meta.layout = {};
+                    // This any is because typing the layout object is too restrictive
                     (draft.meta.layout as any).spacingFactor = parseFloat(
                       e.target.value
                     );

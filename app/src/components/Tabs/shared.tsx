@@ -2,6 +2,7 @@ import * as Select from "@radix-ui/react-select";
 import { memo, ReactNode } from "react";
 import { Link } from "react-router-dom";
 
+import { SelectOption } from "../../lib/graphOptions";
 import { useIsValidSponsor } from "../../lib/hooks";
 import styles from "./shared.module.css";
 
@@ -9,7 +10,7 @@ export function CustomSelect({
   niceName,
   options,
   ...props
-}: { niceName: string; options: any[] } & Select.SelectProps) {
+}: { niceName: string; options: SelectOption[] } & Select.SelectProps) {
   const isValidSponsor = useIsValidSponsor();
   return (
     <Select.Root {...props}>
