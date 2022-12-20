@@ -13,14 +13,17 @@ test.describe("share-links", () => {
     await goToPath(page);
   });
 
-  const encoded = `BYUwNmD2AEDukCcwBMBQBeTnUG8C+GW6QA`;
-
   test("share links", async ({ page }) => {
     try {
       await page.getByRole("link", { name: "New" }).click();
 
-      // change editor text
-      await changeEditorText(page, "hello world");
+      // TODO: someday switch back to this when you can debug why Meta+A doesn't work
+      // const encoded = `BYUwNmD2AEDukCcwBMBQBeTnUG8C+GW6QA`;
+      // await changeEditorText(page, "hello world");
+      const encoded = `CoCwlgzgBAhgDnKB3A9gJwNbQEYE8oAuucYAdgOYBQUUAkqQCYCmpBZ5UAxmkzAU9BhQANmQyEUhEEy4BXND1YiyTarFL5+ADwIAuKNiYAzdDKGcUwlKS48+A2CJiHhagMJ3+j0aXEMwPJwEwviyEOxSMkxaMEFOLoTRBGo0ohgyBOAQ+gAUoJCwCMjoWAaaxOwAlClQANqcYQQoALZ0ACIAulDoNTR4sAz+FOpQAKQArABCtG0TbeoMUDxGTIqcEZl8vTTK6VKQuQ0QTa0zlVAA9BdQAJooslwwNjDCEJJhMuEUwkwAtD4yCzNZosAgQSgXABUlB6zVkwjYAMoQJBrHBlAAEjAAG4yIyyUgAQiggB4NwCR+5RIRdpMIrMU0MIGJQALys1mUADeAF8WWzmUA`;
+      const monacoEditor = page.locator(".monaco-editor").nth(0);
+      await monacoEditor.click();
+      await page.keyboard.type("hello world");
 
       // wait for 2 seconds
       await page.waitForTimeout(2000);
