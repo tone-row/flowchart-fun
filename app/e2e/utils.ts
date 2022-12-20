@@ -84,16 +84,8 @@ export async function deleteCustomerByEmail(email: string) {
 }
 
 export async function changeEditorText(page: Page, text: string) {
-  await page.locator(".view-line").first().click();
-
-  // Select All
-  await page.keyboard.down("Meta");
-  await page.keyboard.press("a");
-  await page.keyboard.up("Meta");
-
-  await page
-    .getByRole("textbox", {
-      name: "Editor content;Press Alt+F1 for Accessibility Options.",
-    })
-    .type(text, { delay: 100 });
+  const monacoEditor = page.locator(".monaco-editor").nth(0);
+  await monacoEditor.click();
+  await page.keyboard.press("Meta+KeyA");
+  await page.keyboard.type(text);
 }
