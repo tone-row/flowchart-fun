@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 
+import { nextFrame, sleep } from "../src/test-utils";
 import { BASE_URL, changeEditorText, goToPath } from "./utils";
 
 /*
@@ -13,6 +14,8 @@ test.describe("share-links", () => {
     await goToPath(page);
   });
 
+  // TODO: this is currently broken, because I cannot get the CI to actually
+  // clear the input
   const encoded = `BYUwNmD2AEDukCcwBMBQBeTnUG8C+GW6QA`;
 
   test("share links", async ({ page }) => {
@@ -21,6 +24,11 @@ test.describe("share-links", () => {
 
       // change editor text
       await changeEditorText(page, "hello world");
+
+      await nextFrame();
+
+      // wait 1 second
+      await sleep(1000);
 
       await page.getByRole("button", { name: "Export" }).click();
 
