@@ -1,6 +1,6 @@
 import { expect, Page, test } from "@playwright/test";
 
-import { BASE_URL, goToPath, goToTab } from "./utils";
+import { BASE_URL, changeEditorText, goToPath, goToTab } from "./utils";
 
 /*
 Run single test file
@@ -106,7 +106,7 @@ test.describe("unauth", () => {
     await page.locator('[placeholder="Enter a title"]').press("Enter");
     await expect(page).toHaveURL(`${BASE_URL}/delete-me`);
 
-    await changeEditorText(page);
+    await changeEditorText(page, "1");
 
     // Click span:has-text("Charts")
     await page.locator('span:has-text("Charts")').click();
@@ -127,7 +127,7 @@ test.describe("unauth", () => {
   });
 
   test("Create New", async ({ page }) => {
-    await changeEditorText(page);
+    await changeEditorText(page, "1");
 
     expect(new URL(page.url()).pathname).toBe("/");
 
@@ -458,20 +458,6 @@ test.describe("unauth", () => {
     }
   });
 });
-
-async function changeEditorText(page: Page) {
-  await page.getByText("This app works by typing").first().click();
-  await page
-    .getByRole("textbox", {
-      name: "Editor content;Press Alt+F1 for Accessibility Options.",
-    })
-    .press("Meta+a");
-  await page
-    .getByRole("textbox", {
-      name: "Editor content;Press Alt+F1 for Accessibility Options.",
-    })
-    .fill("1", { force: true });
-}
 
 async function openExportDialog(page: Page) {
   // Click [aria-label="Export"]

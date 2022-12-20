@@ -1,6 +1,6 @@
-import { expect, Page, test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
-import { BASE_URL, goToPath } from "./utils";
+import { BASE_URL, changeEditorText, goToPath } from "./utils";
 
 /*
 Run single test file
@@ -20,7 +20,7 @@ test.describe("share-links", () => {
       await page.getByRole("link", { name: "New" }).click();
 
       // change editor text
-      await changeEditorCode(page);
+      await changeEditorText(page, "hello world");
 
       await page.getByRole("button", { name: "Export" }).click();
 
@@ -55,19 +55,3 @@ test.describe("share-links", () => {
     }
   });
 });
-
-async function changeEditorCode(page: Page) {
-  // Click text=This app works by typing >> nth=0
-  await page.locator("text=This app works by typing").first().click();
-  // Press a with modifiers
-  await page
-    .locator(
-      '[aria-label="Editor content\\;Press Alt\\+F1 for Accessibility Options\\."]'
-    )
-    .press("Meta+a");
-  await page
-    .locator(
-      '[aria-label="Editor content\\;Press Alt\\+F1 for Accessibility Options\\."]'
-    )
-    .type("hello world");
-}

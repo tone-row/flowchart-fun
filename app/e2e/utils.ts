@@ -82,3 +82,17 @@ export async function deleteCustomerByEmail(email: string) {
     await stripe.customers.del(customer.id);
   }
 }
+
+export async function changeEditorText(page: Page, text: string) {
+  await page.getByText("This app works by typing").first().click();
+  await page
+    .getByRole("textbox", {
+      name: "Editor content;Press Alt+F1 for Accessibility Options.",
+    })
+    .press("Meta+a");
+  await page
+    .getByRole("textbox", {
+      name: "Editor content;Press Alt+F1 for Accessibility Options.",
+    })
+    .type(text, { delay: 100 });
+}
