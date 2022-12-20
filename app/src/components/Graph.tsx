@@ -11,6 +11,7 @@ import React, {
   useEffect,
   useMemo,
   useRef,
+  useState,
 } from "react";
 import { TriggerEvent, useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
@@ -60,6 +61,7 @@ const Graph = memo(function Graph({
   setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
   shouldResize: number;
 }) {
+  const [initResizeNumber] = useState(shouldResize);
   const cy = useRef<undefined | Core>();
   const errorCatcher = useRef<undefined | Core>();
   const graphInitialized = useRef(false);
@@ -81,6 +83,7 @@ const Graph = memo(function Graph({
   }, []);
 
   const handleResize = useCallback(() => {
+    console.log("resize");
     if (!cy.current) return;
     cy.current.resize();
     cy.current.fit(undefined, DEFAULT_GRAPH_PADDING);
@@ -163,8 +166,8 @@ const Graph = memo(function Graph({
   };
 
   useEffect(() => {
-    handleResize();
-  }, [handleResize, shouldResize]);
+    if (initResizeNumber !== shouldResize) handleResize();
+  }, [handleResize, initResizeNumber, shouldResize]);
 
   return (
     <Box
