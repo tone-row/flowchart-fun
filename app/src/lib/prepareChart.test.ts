@@ -103,8 +103,41 @@ longer label text
     });
   });
 
-  test("can merge a mix of both", () => {
-    expect(prepareChart(getFixture("example6"))).toEqual({});
+  test("can merge a mix of old and new", () => {
+    expect(prepareChart(getFixture("example6"))).toEqual({
+      meta: {
+        layout: {
+          name: "cose",
+          rankDir: "LR",
+        },
+        style: [
+          {
+            selector: "edge",
+            style: {
+              "line-style": "dashed",
+            },
+          },
+          {
+            selector: 'edge[source="#red"]',
+            style: {
+              "line-color": "lime",
+              "target-arrow-color": "lime",
+              width: 10,
+            },
+          },
+        ],
+        theme: "eggs",
+      },
+      text: `You can set all lines to be dashed
+  B
+    C
+      [#red] D
+        Or you can use the source or target or both to make some lines dashed
+        x
+        y
+        z
+`,
+    });
   });
 });
 

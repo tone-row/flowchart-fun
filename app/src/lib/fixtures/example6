@@ -19,3 +19,12 @@ You can set all lines to be dashed
         x
         y
         z
+=====
+{
+  "layout": {
+    "rankDir": "BT",
+    "name": "cose"
+  },
+  "theme": "eggs"
+}
+=====

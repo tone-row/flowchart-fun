@@ -50,34 +50,43 @@ export const useDoc = create(
  */
 export function prepareChart(doc: string) {
   let text = doc;
-  let meta = {};
 
+  let jsonMeta = {};
   // if the doc includes the new delimiters we can skip the migration step
   if (text.includes(newDelimiters)) {
     const parts = text.split(newDelimiters);
     text = parts[0];
     const metaStr = parts[1] || "{}";
     try {
-      meta = JSON.parse(metaStr.trim());
+      jsonMeta = JSON.parse(metaStr.trim());
     } catch (e) {
       console.log(e);
     }
-  } else {
-    let hidden = {};
-    if (text.includes(HIDDEN_GRAPH_OPTIONS_DIVIDER)) {
-      const parts = text.split(HIDDEN_GRAPH_OPTIONS_DIVIDER);
-      text = parts[0];
-      const hiddenStr = parts[1] || "{}";
-      try {
-        hidden = JSON.parse(hiddenStr.trim());
-      } catch (e) {
-        console.log(e);
-      }
+  }
+
+  let hidden = {};
+  if (text.includes(HIDDEN_GRAPH_OPTIONS_DIVIDER)) {
+    const parts = text.split(HIDDEN_GRAPH_OPTIONS_DIVIDER);
+    text = parts[0];
+    const hiddenStr = parts[1] || "{}";
+    try {
+      hidden = JSON.parse(hiddenStr.trim());
+    } catch (e) {
+      console.log(e);
     }
+  }
+
+  let parsedData = {};
+  if (text.includes(delimiters)) {
     const parsed = matter(text, { delimiters });
     text = parsed.content;
-    meta = merge(parsed.data, hidden);
+    parsedData = parsed.data;
   }
+
+  const meta = merge.all([jsonMeta, parsedData, hidden]) as Record<
+    string,
+    unknown
+  >;
 
   useDoc.setState({ text, meta });
 

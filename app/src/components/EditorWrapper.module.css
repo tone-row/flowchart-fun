@@ -21,7 +21,6 @@
   align-items: baseline;
   gap: calc(var(--spacer-px) * 5);
   width: 100%;
-  /* overflow: hidden; */
 }
 
 .HeaderTitle button:first-child {
