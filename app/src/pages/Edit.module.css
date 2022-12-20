@@ -19,8 +19,13 @@
   border-radius: 3px 3px 0 0;
 }
 
-.TabsList button[aria-selected="true"] {
+.TabsList button[aria-selected="true"],
+.TabsList button[aria-selected="true"]:hover {
   background: var(--color-lineColor);
+}
+
+.TabsList button:hover {
+  background-color: var(--color-input);
 }
 
 .TabsList button:focus {

@@ -146,16 +146,7 @@ export function useOrderHistory(customerId?: string, subscriptionId?: string) {
   );
 }
 
-export async function makeChart({
-  name,
-  user_id,
-  chart,
-}: {
-  name: string;
-  user_id: string;
-  chart?: string;
-}) {
-  if (!supabase) return;
+export function getDefaultText() {
   const defaultText = `${t`This app works by typing`}
   ${t`Indenting creates a link to the current line`}
   ${t`any text: before a colon creates a label`}
@@ -171,6 +162,20 @@ ${t`comments`}
 
 ${t`Have fun! 🎉`}
 */`;
+  return defaultText;
+}
+
+export async function makeChart({
+  name,
+  user_id,
+  chart,
+}: {
+  name: string;
+  user_id: string;
+  chart?: string;
+}) {
+  if (!supabase) return;
+  const defaultText = getDefaultText();
 
   return await supabase
     .from("user_charts")

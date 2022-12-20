@@ -19,7 +19,7 @@ import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { Doc, docToString, prepareChart, useDoc } from "../lib/prepareChart";
-import { useAppMode } from "../lib/queries";
+import { getDefaultText, useAppMode } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
@@ -139,8 +139,7 @@ async function loadWorkspace(workspace: string) {
   const key = titleToLocalStorageKey(workspace);
   let workspaceText = localStorage.getItem(key);
   if (!workspaceText) {
-    // TODO: get default text
-    workspaceText = "default???";
+    workspaceText = getDefaultText();
   }
 
   prepareChart(workspaceText);
