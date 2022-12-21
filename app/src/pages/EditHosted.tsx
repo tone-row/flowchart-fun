@@ -68,7 +68,6 @@ export default function EditHosted() {
   useEffect(() => {
     return () => {
       flush();
-      queryClient.resetQueries(["useChart", id]);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -173,6 +172,12 @@ async function loadHostedDoc(id: string) {
   const chart = await getHostedChart(id);
   if (!chart) throw new Error("Chart not found");
   const doc = chart.chart;
-  prepareChart(doc);
+  prepareChart(doc, {
+    id: chart.id,
+    title: chart.name,
+    isHosted: true,
+    isPublic: chart.is_public,
+    publicId: chart.public_id,
+  });
   return doc;
 }

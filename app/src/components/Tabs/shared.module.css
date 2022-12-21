@@ -19,13 +19,14 @@
 
 .largeLink {
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 700;
   background-color: hsla(var(--color-brandHsl), 0.1);
   padding: calc(var(--spacer-px) * 6) calc(var(--spacer-px) * 4);
   color: hsla(var(--color-brandHsl), 1);
   text-align: center;
   margin-inline: calc(var(--spacer-px) * 8);
   border-radius: 8px;
+  border: 1px solid hsla(var(--color-brandHsl), 0.2);
 }
 
 .largeLink:hover {

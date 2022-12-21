@@ -5,6 +5,7 @@ import { defaultLayout } from "../../lib/constants";
 import { getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
+import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/prepareChart";
 import styles from "./EditLayoutTab.module.css";
 import {
@@ -17,6 +18,7 @@ import {
 // directions
 
 export function EditLayoutTab() {
+  const isValidSponsor = useIsValidSponsor();
   const doc = useDoc();
   // the layout here is what we're rendering but not necessarily what should be stored in the doc
   const rendered = getLayout(doc);
@@ -140,7 +142,9 @@ export function EditLayoutTab() {
           </OptionWithLabel>
         )}
       </TabOptionsGrid>
-      <LargeLink href="/sponsor">Get More Layouts</LargeLink>
+      {!isValidSponsor && (
+        <LargeLink href="/sponsor">Get More Layouts</LargeLink>
+      )}
     </WithLowerChild>
   );
 }

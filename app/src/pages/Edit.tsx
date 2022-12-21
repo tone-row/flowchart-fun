@@ -157,6 +157,10 @@ async function loadWorkspace(workspace: string) {
     workspaceText = getDefaultText();
   }
 
-  prepareChart(workspaceText);
+  prepareChart(workspaceText, {
+    id: workspace,
+    title: workspace,
+    isHosted: false,
+  });
   return workspaceText;
 }

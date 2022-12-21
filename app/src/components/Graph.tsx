@@ -51,7 +51,6 @@ if (!cytoscape.prototype.hasInitialised) {
   cytoscape.prototype.hasInitialised = true;
 }
 
-// TODO: unset this, and try real animation setting
 const shouldAnimate = getAnimationSettings();
 
 const Graph = memo(function Graph({
@@ -83,7 +82,6 @@ const Graph = memo(function Graph({
   }, []);
 
   const handleResize = useCallback(() => {
-    console.log("resize");
     if (!cy.current) return;
     cy.current.resize();
     cy.current.fit(undefined, DEFAULT_GRAPH_PADDING);

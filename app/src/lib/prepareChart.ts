@@ -21,17 +21,36 @@ import {
   newDelimiters,
 } from "./constants";
 
+type Details = {
+  /** Represents the workspace ID if local, and the db ID if hosted */
+  id: string | number;
+  /** Workspace ID if local, Chart title if hosted */
+  title: string;
+  /** True if hosted, false if local */
+  isHosted: boolean;
+  /** Whether or not the chart has a public URL */
+  isPublic?: boolean;
+  /** The public ID for the chart */
+  publicId?: string;
+};
+
 export type Doc = {
   text: string;
   meta: Record<string, unknown>;
+  details: Details;
 };
 
-export const useDoc = create(
-  subscribeWithSelector<Doc>(() => ({
-    text: "",
-    meta: {},
-  }))
-);
+export const initialDoc = {
+  text: "",
+  meta: {},
+  details: {
+    id: "",
+    title: "",
+    isHosted: false,
+  },
+};
+
+export const useDoc = create(subscribeWithSelector<Doc>(() => initialDoc));
 
 /**
  * The goal of this function is to remove some of the complexity around
@@ -48,7 +67,7 @@ export const useDoc = create(
  * - `text` is the document without the meta section
  * - `meta` is the meta section of the document
  */
-export function prepareChart(doc: string) {
+export function prepareChart(doc: string, details: Details) {
   let text = doc;
 
   let jsonMeta = {};
@@ -88,11 +107,14 @@ export function prepareChart(doc: string) {
     unknown
   >;
 
-  useDoc.setState({ text, meta });
+  text = `${text.trim()}\n`;
+
+  useDoc.setState({ text, meta, details });
 
   return {
     text,
     meta,
+    details,
   };
 }
 
@@ -112,3 +134,14 @@ export const useParseError = create<{ error: string; errorFromStyle: string }>(
     errorFromStyle: "",
   })
 );
+
+/**
+ * Get a type-safe version of any property
+ * of the doc details
+ */
+export function useDocDetails<K extends keyof Details>(
+  prop: K,
+  fallback?: Details[K]
+) {
+  return useDoc((state) => state.details[prop] || fallback) as Details[K];
+}

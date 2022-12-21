@@ -315,7 +315,7 @@ export async function renameChart(id: number, name: string) {
   return data;
 }
 
-export async function makeChartPublic(id: string, isPublic: boolean) {
+export async function makeChartPublic(id: number, isPublic: boolean) {
   if (!supabase) return;
   const { data, error } = await supabase
     .from("user_charts")
@@ -324,10 +324,14 @@ export async function makeChartPublic(id: string, isPublic: boolean) {
 
   if (error) throw error;
   if (!data || data.length === 0) throw new Error("Invalid Chart");
+
   const { is_public, public_id } = data[0];
   if (is_public === isPublic) return;
 
-  let r;
+  const r = {
+    isPublic,
+    publicId: public_id,
+  };
 
   // Generate public id if not already set
   if (!public_id && isPublic) {
@@ -339,26 +343,28 @@ export async function makeChartPublic(id: string, isPublic: boolean) {
     };
     // If unique violation, generate a new public id
     let result;
+    let publicId = "";
     while (error?.code === "23505") {
-      const publicId = await generatePublicId();
+      publicId = await generatePublicId();
       result = await supabase
         .from("user_charts")
         .update({ public_id: publicId, is_public: isPublic })
         .eq("id", id);
       error = result.error;
     }
-
     if (error) throw error;
-    r = result?.data;
+    r.publicId = publicId;
   } else {
     // Just update is_public
     const result = await supabase
       .from("user_charts")
       .update({ is_public: isPublic })
       .eq("id", id);
+    console.log("result", result);
     if (result.error) throw result.error;
-    r = result.data;
   }
+
+  console.log({ r });
 
   return r;
 }

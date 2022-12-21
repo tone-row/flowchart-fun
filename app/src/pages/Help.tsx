@@ -112,6 +112,10 @@ async function loadHelpText() {
     workspaceText = " ";
   }
 
-  prepareChart(workspaceText);
+  prepareChart(workspaceText, {
+    id: "h",
+    title: "h",
+    isHosted: false,
+  });
   return workspaceText;
 }

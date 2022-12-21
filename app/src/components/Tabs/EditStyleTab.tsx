@@ -4,6 +4,7 @@ import throttle from "lodash.throttle";
 import { useThemeKey } from "../../lib/getTheme";
 import { themes } from "../../lib/graphOptions";
 import { useThemeStore } from "../../lib/graphThemes";
+import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/prepareChart";
 import {
   CustomSelect,
@@ -14,6 +15,7 @@ import {
 } from "./shared";
 
 export function EditStyleTab() {
+  const isValidSponsor = useIsValidSponsor();
   const themeKey = useThemeKey();
   const themeNiceName =
     themes.find((t) => t.value === themeKey)?.label() ?? "Unknown";
@@ -67,7 +69,9 @@ export function EditStyleTab() {
           )}
         </OptionWithLabel>
       </TabOptionsGrid>
-      <LargeLink href="/sponsor">Get More Themes</LargeLink>
+      {!isValidSponsor && (
+        <LargeLink href="/sponsor">Get More Themes</LargeLink>
+      )}
     </WithLowerChild>
   );
 }

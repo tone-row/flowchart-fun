@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-import { BASE_URL, changeEditorText, goToPath } from "./utils";
+import { BASE_URL, goToPath } from "./utils";
 
 /*
 Run single test file

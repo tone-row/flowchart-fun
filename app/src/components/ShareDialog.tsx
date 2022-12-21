@@ -1,4 +1,5 @@
 import { t, Trans } from "@lingui/macro";
+import produce from "immer";
 import { compressToEncodedURIComponent } from "lz-string";
 import { Check, LinkSimple } from "phosphor-react";
 import {
@@ -12,10 +13,9 @@ import {
 } from "react";
 import { useMutation } from "react-query";
 
-import { useTitle } from "../lib/hooks";
 import { toMermaidJS } from "../lib/mermaid";
-import { docToString, useDoc } from "../lib/prepareChart";
-import { makeChartPublic, queryClient, useChart } from "../lib/queries";
+import { docToString, useDoc, useDocDetails } from "../lib/prepareChart";
+import { makeChartPublic } from "../lib/queries";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
@@ -24,7 +24,7 @@ import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
 
 export default function ShareDialog() {
-  const [_, isHosted, id] = useTitle();
+  const isHosted = useDocDetails("isHosted");
   const { shareModal, setShareModal } = useContext(AppContext);
   const close = useCallback(() => setShareModal(false), [setShareModal]);
   const docString = useDoc(docToString);
@@ -75,7 +75,7 @@ export default function ShareDialog() {
           />
         </Box>
       </Column>
-      {isHosted ? <HostedOptions id={id} /> : null}
+      {isHosted ? <HostedOptions /> : null}
       <Column>
         <Title>
           <Trans>Link</Trans>
@@ -257,14 +257,25 @@ function Mermaid() {
   );
 }
 
-function HostedOptions({ id }: { id: string }) {
-  const { data: chart } = useChart(id);
+function HostedOptions() {
+  const id = useDocDetails("id");
+  if (typeof id !== "number") throw new Error("id is not a number");
+
+  const isPublic = useDocDetails("isPublic");
+  const publicId = useDocDetails("publicId");
+
   const makePublic = useMutation(
     "makeChartPublic",
     async (isPublic: boolean) => makeChartPublic(id, isPublic),
     {
-      onSuccess: () => {
-        queryClient.invalidateQueries(["useChart", id]);
+      onSuccess: (result) => {
+        if (!result) return;
+        useDoc.setState((state) => {
+          return produce(state, (draft) => {
+            draft.details.isPublic = result.isPublic;
+            draft.details.publicId = result.publicId;
+          });
+        });
       },
     }
   );
@@ -281,17 +292,19 @@ function HostedOptions({ id }: { id: string }) {
           type="checkbox"
           name="isPublic"
           id="isPublic"
-          defaultChecked={chart?.is_public}
+          defaultChecked={isPublic}
           onChange={(e) => {
             makePublic.mutate(e.target.checked);
           }}
         />
-        {makePublic.isLoading && <Spinner />}
+        {makePublic.isLoading && (
+          <Spinner r={6} s={2} c="var(--palette-purple-0)" />
+        )}
       </Box>
-      {chart?.is_public && (
+      {isPublic && (
         <Box>
           <LinkCopy
-            value={`${window.location.origin}/p/${chart.public_id}`}
+            value={`${window.location.origin}/p/${publicId}`}
             title={t`Public`}
             rawTitle="Public"
             ariaLabel="Copy Public Link"

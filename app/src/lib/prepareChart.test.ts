@@ -1,11 +1,11 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-import { prepareChart } from "./prepareChart";
+import { initialDoc, prepareChart } from "./prepareChart";
 
 describe("prepareChart", () => {
   test("can migrate old files with yaml", () => {
-    expect(prepareChart(getFixture("example1"))).toEqual({
+    expect(prepareChart(getFixture("example1"), initialDoc.details)).toEqual({
       text: `This app works by typing
   Indenting creates a link to the current line
   any text: before a colon creates a label
@@ -28,16 +28,18 @@ Have fun! 🎉
         },
         theme: "original-dark",
       },
+      details: initialDoc.details,
     });
   });
 
   test("can migrate old files with hidden options", () => {
-    expect(prepareChart(getFixture("example2"))).toEqual({
+    expect(prepareChart(getFixture("example2"), initialDoc.details)).toEqual({
       text: `long label text
   (c)
 longer label text
   (c)
-[c] the longest label text of all`,
+[c] the longest label text of all
+`,
       meta: {
         nodePositions: {
           N14e: { x: 69.45580968418729, y: 42.97973028931095 },
@@ -45,18 +47,20 @@ longer label text
           c: { x: 91.4921875, y: 138.375 },
         },
       },
+      details: initialDoc.details,
     });
   });
 
   test("can migrate old files with neither", () => {
-    expect(prepareChart(getFixture("example3"))).toEqual({
-      text: `i am but a simple file`,
+    expect(prepareChart(getFixture("example3"), initialDoc.details)).toEqual({
+      text: `i am but a simple file\n`,
       meta: {},
+      details: initialDoc.details,
     });
   });
 
   test("can migrate old file with both", () => {
-    expect(prepareChart(getFixture("example4"))).toEqual({
+    expect(prepareChart(getFixture("example4"), initialDoc.details)).toEqual({
       text: `이 앱은 타이핑으로 작동합니다
   들여쓰기는 현재 줄에 대한 링크를 생성합니다
   콜론 앞의 모든 텍스트는: 레이블을 생성합니다
@@ -87,11 +91,12 @@ longer label text
           N154: { x: 388.3411820878437, y: 404.7001951000867 },
         },
       },
+      details: initialDoc.details,
     });
   });
 
   test("can migrate new file", () => {
-    expect(prepareChart(getFixture("example5"))).toEqual({
+    expect(prepareChart(getFixture("example5"), initialDoc.details)).toEqual({
       text: `hello\n  to: the world\n`,
       meta: {
         layout: {
@@ -100,11 +105,12 @@ longer label text
         },
         theme: "eggs",
       },
+      details: initialDoc.details,
     });
   });
 
   test("can merge a mix of old and new", () => {
-    expect(prepareChart(getFixture("example6"))).toEqual({
+    expect(prepareChart(getFixture("example6"), initialDoc.details)).toEqual({
       meta: {
         layout: {
           name: "cose",
@@ -137,6 +143,21 @@ longer label text
         y
         z
 `,
+      details: initialDoc.details,
+    });
+  });
+
+  test("trims whitespace and adds one newline to text", () => {
+    expect(prepareChart(getFixture("example7"), initialDoc.details)).toEqual({
+      text: `hello\n  to the: world\n`,
+      meta: {
+        layout: {
+          name: "cose",
+          rankDir: "BT",
+        },
+        theme: "eggs",
+      },
+      details: initialDoc.details,
     });
   });
 });
