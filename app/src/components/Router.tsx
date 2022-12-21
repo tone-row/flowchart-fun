@@ -2,12 +2,10 @@ import { lazy, ReactNode } from "react";
 import { Route, RouteProps, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
-import { useIsEditorView } from "../lib/hooks";
 import { New } from "../pages/New";
 import Feedback from "./Feedback";
 import Layout from "./Layout";
 import Settings from "./Settings";
-import ShareDialog from "./ShareDialog";
 import SponsorDashboard from "./SponsorDashboard";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
