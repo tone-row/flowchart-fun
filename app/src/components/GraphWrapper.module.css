@@ -31,4 +31,5 @@
 
 .GraphWrapper[data-is-fullscreen="true"] {
   padding: 0 !important;
+  display: block;
 }

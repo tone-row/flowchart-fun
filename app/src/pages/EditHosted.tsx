@@ -31,6 +31,7 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
+import { useHoverLine } from "../lib/useHoverLine";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
@@ -58,7 +59,6 @@ export default function EditHosted() {
 
   const text = useDoc((state) => state.text);
 
-  const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
   const { data: mode } = useAppMode();
@@ -81,7 +81,8 @@ export default function EditHosted() {
   }, [mode]);
 
   // Hover
-  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber);
+  const hoverLineNumber = useHoverLine((s) => s.line);
+  useEditorHover(editorRef, hoverLineNumber);
 
   const onChange = useCallback(
     (value) => useDoc.setState({ text: value ?? "" }),
@@ -94,7 +95,7 @@ export default function EditHosted() {
 
   return (
     <EditWrapper>
-      <Main setHoverLineNumber={setHoverLineNumber}>
+      <Main>
         <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={editStyles.Tabs}>
             <Tabs.List className={editStyles.TabsList}>

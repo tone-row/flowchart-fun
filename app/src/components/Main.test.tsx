@@ -8,6 +8,6 @@ beforeAll(() => {
 
 describe("Main", () => {
   test("renders", () => {
-    render(<Main setHoverLineNumber={() => null} />);
+    render(<Main />);
   });
 });

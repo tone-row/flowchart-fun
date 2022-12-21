@@ -1,6 +1,6 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import { decompressFromEncodedURIComponent } from "lz-string";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
 
@@ -18,6 +18,7 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
+import { useHoverLine } from "../lib/useHoverLine";
 import styles from "./ReadOnly.module.css";
 
 function ReadOnly() {
@@ -30,7 +31,7 @@ function ReadOnly() {
     suspense: true,
     staleTime: 0,
   });
-  const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
+
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
   const { data: mode } = useAppMode();
@@ -44,12 +45,13 @@ function ReadOnly() {
     );
   }, [mode]);
 
-  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber);
+  const hoverLineNumber = useHoverLine((s) => s.line);
+  useEditorHover(editorRef, hoverLineNumber);
   const text = useDoc((d) => d.text);
 
   return (
     <EditWrapper>
-      <Main setHoverLineNumber={setHoverLineNumber}>
+      <Main>
         <EditorWrapper>
           <Editor
             value={text}

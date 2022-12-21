@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import original from "../lib/themes/original";
 import { render } from "../test-utils";
 import Graph from "./Graph";
-
-const setHoverLineNumber = jest.fn();
 
 beforeEach(() => {
   jest.spyOn(console, "log").mockImplementation(() => {});
@@ -13,7 +10,7 @@ beforeEach(() => {
 
 describe("<Graph/>", () => {
   it("renders without crashing", () => {
-    render(<Graph setHoverLineNumber={setHoverLineNumber} shouldResize={0} />);
+    render(<Graph shouldResize={0} />);
   });
 
   it.todo("turns off auto layout on dragging");

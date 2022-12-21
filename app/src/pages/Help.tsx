@@ -18,13 +18,13 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
+import { useHoverLine } from "../lib/useHoverLine";
 import styles from "./Edit.module.css";
 import helpStyles from "./Help.module.css";
 
 export default function Help() {
   useQuery("loadHelpText", loadHelpText, { suspense: true, staleTime: 0 });
 
-  const [hoverLineNumber, setHoverLineNumber] = useState<undefined | number>();
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const monacoRef = useRef<any>();
   const { data: mode } = useAppMode();
@@ -39,7 +39,8 @@ export default function Help() {
   }, [mode]);
 
   // Hover
-  useEditorHover(editorRef, hoverLineNumber && hoverLineNumber);
+  const hoverLineNumber = useHoverLine((s) => s.line);
+  useEditorHover(editorRef, hoverLineNumber);
 
   useEffect(() => {
     window.flowchartFunSetHelpText = (text: string) =>
@@ -58,7 +59,7 @@ export default function Help() {
 
   return (
     <EditWrapper>
-      <Main setHoverLineNumber={setHoverLineNumber}>
+      <Main>
         <div className={helpStyles.helpWrapper} data-testid="help">
           <Resizable
             defaultSize={{ width: "100%", height: "50vh" }}

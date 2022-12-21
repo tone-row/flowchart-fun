@@ -55,9 +55,9 @@ export default function Router() {
       <RouteWithWrapper path="/f/:graphText?">
         <ReadOnly />
       </RouteWithWrapper>
-      <RouteWithWrapper path="/p/:public_id">
+      <Route path="/p/:public_id">
         <Public />
-      </RouteWithWrapper>
+      </Route>
       <RouteWithWrapper path="/s">
         <Settings />
       </RouteWithWrapper>
@@ -75,15 +75,9 @@ export default function Router() {
   );
 }
 
+/** Adds the share dialog. Could probably be in a better spot */
 function RouteWrapper({ children }: { children: ReactNode }) {
-  const isEditorView = useIsEditorView();
-
-  return (
-    <>
-      <Layout>{children}</Layout>
-      {isEditorView && <ShareDialog />}
-    </>
-  );
+  return <Layout>{children}</Layout>;
 }
 
 function RouteWithWrapper({

@@ -6,6 +6,10 @@
   border-radius: 7px;
 }
 
+[data-is-fullscreen="true"] .GraphContainer {
+  border-radius: 0;
+}
+
 .GraphContainer button {
   appearance: none;
   background: none;

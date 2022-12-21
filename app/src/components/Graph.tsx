@@ -31,6 +31,7 @@ import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
 import { TGetSize, useGetSize } from "../lib/useGetSize";
 import { useGraphStore } from "../lib/useGraphStore";
+import { useHoverLine } from "../lib/useHoverLine";
 import { stripComments } from "../lib/utils";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
@@ -53,13 +54,7 @@ if (!cytoscape.prototype.hasInitialised) {
 
 const shouldAnimate = getAnimationSettings();
 
-const Graph = memo(function Graph({
-  setHoverLineNumber,
-  shouldResize,
-}: {
-  setHoverLineNumber: Dispatch<SetStateAction<number | undefined>>;
-  shouldResize: number;
-}) {
+const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const [initResizeNumber] = useState(shouldResize);
   const cy = useRef<undefined | Core>();
   const errorCatcher = useRef<undefined | Core>();
@@ -98,18 +93,11 @@ const Graph = memo(function Graph({
 
   // Initialize Graph
   useEffect(() => {
-    initializeGraph({
+    return initializeGraph({
       errorCatcher,
       cy,
-      setHoverLineNumber,
     });
-    const cyc = cy.current;
-    const ecc = errorCatcher.current;
-    return () => {
-      if (cyc) cyc.destroy();
-      if (ecc) ecc.destroy();
-    };
-  }, [setHoverLineNumber]);
+  }, []);
 
   // bind drag-free event
   useEffect(() => {
@@ -186,11 +174,9 @@ export default Graph;
 function initializeGraph({
   errorCatcher,
   cy,
-  setHoverLineNumber,
 }: {
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
-  setHoverLineNumber: React.Dispatch<React.SetStateAction<number | undefined>>;
 }) {
   try {
     errorCatcher.current = cytoscape();
@@ -205,16 +191,16 @@ function initializeGraph({
       userPanningEnabled: true,
       boxSelectionEnabled: false,
       wheelSensitivity: 0.2,
+      // autoungrabify: true,
     });
     window.__cy = cy.current;
     const cyCurrent = cy.current;
     const errorCyCurrent = errorCatcher.current;
-
     // Hover Events
     const handleMouseOut = () => {
       cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
       cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
-      setHoverLineNumber(undefined);
+      useHoverLine.setState({ line: undefined });
     };
 
     cyCurrent.on("mouseover", "node", nodeHighlight);
@@ -241,16 +227,16 @@ function initializeGraph({
   // Hover Events that Need "this"
   function nodeHighlight(this: NodeSingular) {
     this.addClass("nodeHovered");
-    setHoverLineNumber(this.data().lineNumber);
+    useHoverLine.setState({ line: this.data().lineNumber });
   }
   function edgeHighlight(this: EdgeSingular) {
     this.addClass("edgeHovered");
-    setHoverLineNumber(this.data().lineNumber);
+    useHoverLine.setState({ line: this.data().lineNumber });
   }
   function unhighlight(this: NodeSingular | EdgeSingular) {
     this.removeClass("nodeHovered");
     this.removeClass("edgeHovered");
-    setHoverLineNumber(undefined);
+    useHoverLine.setState({ line: undefined });
   }
 }
 

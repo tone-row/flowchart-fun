@@ -31,7 +31,7 @@
 
 .Handle svg circle {
   stroke-width: 10;
-  stroke: var(--color-edgeHover);
+  stroke: var(--color-lineNumbers);
 }
 
 .Handle:hover svg circle,
