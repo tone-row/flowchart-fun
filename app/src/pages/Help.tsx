@@ -1,6 +1,6 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import { Resizable } from "re-resizable";
-import { Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef } from "react";
 import { useQuery } from "react-query";
 
 import Docs from "../components/Docs";

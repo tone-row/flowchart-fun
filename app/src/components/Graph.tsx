@@ -4,9 +4,8 @@ import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
 import throttle from "lodash.throttle";
 import React, {
-  Dispatch,
   memo,
-  SetStateAction,
+  MutableRefObject,
   useCallback,
   useEffect,
   useMemo,
@@ -18,6 +17,7 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { defaultLayout } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
+import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
 import { getUserStyle } from "../lib/getTheme";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
@@ -29,7 +29,6 @@ import { parseText } from "../lib/parseText";
 import { Doc, useDoc, useParseError } from "../lib/prepareChart";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
-import { TGetSize, useGetSize } from "../lib/useGetSize";
 import { useGraphStore } from "../lib/useGraphStore";
 import { useHoverLine } from "../lib/useHoverLine";
 import { stripComments } from "../lib/utils";
@@ -61,7 +60,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const graphInitialized = useRef(false);
   const theme = useThemeStore();
   const bg = useDoc((state) => state.meta?.background ?? theme.bg) as string;
-  const getSize = useGetSize(theme);
+  const getSize = useRef<TGetSize>(getGetSize(theme));
 
   const handleDragFree = useCallback(() => {
     const nodePositions = getNodePositionsFromCy();
@@ -89,7 +88,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     return () => window.removeEventListener("resize", debouncedResize.callback);
   }, [debouncedResize]);
 
-  useDownloadHandlers(cy, theme, bg);
+  useDownloadHandlers(cy, bg);
 
   // Initialize Graph
   useEffect(() => {
@@ -112,24 +111,26 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     };
   }, [handleDragFree]);
 
-  // Update Style
-  // TODO: will need to re-add user style
-  // useEffect(() => {
-  //   updateStyle(cy, errorCatcher, theme);
-  // }, [theme]);
-
-  const throttleStyleUpdate = useMemo(
-    () => getStyleUpdater({ cy, errorCatcher }),
-    []
-  );
-
+  // Apply theme on initial load
   useEffect(() => {
-    throttleStyleUpdate(theme);
-  }, [throttleStyleUpdate, theme]);
+    getStyleUpdater({ cy, errorCatcher })(theme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Then subscribe to theme updates and update styles
+  useEffect(() => {
+    const throttleStyleUpdate = getStyleUpdater({ cy, errorCatcher });
+    return useThemeStore.subscribe((theme) => {
+      // update the ref to a getSize function used inside the layout updater
+      // this is to avoid superfluous re-renders
+      getSize.current = getGetSize(theme);
+      throttleStyleUpdate(theme);
+    });
+  }, []);
 
   const throttleUpdate = useMemo(
     () => getGraphUpdater({ cy, errorCatcher, graphInitialized, getSize }),
-    [getSize]
+    []
   );
 
   useEffect(() => {
@@ -137,11 +138,10 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     return useDoc.subscribe(throttleUpdate);
   }, [throttleUpdate]);
 
+  // Update Graph when Sponsor Layouts Load
   const sponsorLayoutsLoaded = useGraphStore(
     useCallback((store) => store.sponsorLayoutsLoaded, [])
   );
-
-  // Update Graph when Sponsor Layouts Load
   useEffect(() => {
     if (sponsorLayoutsLoaded) throttleUpdate();
   }, [throttleUpdate, sponsorLayoutsLoaded]);
@@ -157,11 +157,11 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 
   return (
     <Box
-      className={[styles.GraphContainer, "graph"].join(" ")}
-      overflow="hidden"
       h="100%"
+      overflow="hidden"
       style={{ background: bg }}
       onContextMenu={handleContextMenu}
+      className={[styles.GraphContainer, "graph"].join(" ")}
     >
       <Box id="cy" overflow="hidden" />
       <GraphContextMenu />
@@ -250,10 +250,10 @@ function getGraphUpdater({
   graphInitialized,
   getSize,
 }: {
-  cy: React.MutableRefObject<cytoscape.Core | undefined>;
-  errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
-  graphInitialized: React.MutableRefObject<boolean>;
-  getSize: TGetSize;
+  cy: MutableRefObject<cytoscape.Core | undefined>;
+  errorCatcher: MutableRefObject<cytoscape.Core | undefined>;
+  graphInitialized: MutableRefObject<boolean>;
+  getSize: MutableRefObject<TGetSize>;
 }) {
   return throttle((_doc?: Doc) => {
     if (!cy.current) return;
@@ -263,7 +263,7 @@ function getGraphUpdater({
 
     try {
       const layout = getLayout(doc);
-      elements = parseText(stripComments(doc.text), getSize);
+      elements = parseText(stripComments(doc.text), getSize.current);
       // Test
       errorCatcher.current.json({ elements });
       // TODO: what happens if you add animate false and run() here?
