@@ -719,11 +719,7 @@ function HostedChartsCallout() {
           <SectionTitle>
             <Trans>Hosted Charts</Trans>
           </SectionTitle>
-          <Type
-            className={styles.CalloutInner}
-            size={-1}
-            style={{ maxWidth: 400 }}
-          >
+          <Type className={styles.CalloutInner} style={{ maxWidth: 400 }}>
             <Trans>
               Sponsor flowchart.fun for $3 / month or $30 / year to access
               hosted flowcharts and the newest styles and features
