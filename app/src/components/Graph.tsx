@@ -258,6 +258,7 @@ function getGraphUpdater({
   return throttle((_doc?: Doc) => {
     if (!cy.current) return;
     if (!errorCatcher.current) return;
+    console.log("Updating Graph");
     const doc = _doc || useDoc.getState();
     let elements: cytoscape.ElementDefinition[] = [];
 
@@ -284,10 +285,10 @@ function getGraphUpdater({
             padding: DEFAULT_GRAPH_PADDING,
           })
           .run();
-        cy.current.fit(undefined, DEFAULT_GRAPH_PADDING);
       } else {
-        cy.current.layout({ ...layout, animate: false, fit: false }).run();
+        cy.current.layout({ ...layout, animate: false }).run();
       }
+      cy.current.fit(undefined, DEFAULT_GRAPH_PADDING);
 
       graphInitialized.current = true;
 
@@ -320,6 +321,7 @@ function getStyleUpdater({
   return throttle((theme: Theme) => {
     if (!cy.current) return;
     if (!errorCatcher.current) return;
+    console.log("updating style");
     try {
       // Prepare Styles
       const style = getCytoStyle(theme, getUserStyle());

@@ -1,5 +1,4 @@
 import { t, Trans } from "@lingui/macro";
-import * as Slider from "@radix-ui/react-slider";
 import produce from "immer";
 import { FaRegSnowflake } from "react-icons/fa";
 
