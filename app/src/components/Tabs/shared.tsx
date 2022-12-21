@@ -1,9 +1,11 @@
 import * as Select from "@radix-ui/react-select";
+import { CaretDown } from "phosphor-react";
 import { memo, ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 import { SelectOption } from "../../lib/graphOptions";
 import { useIsValidSponsor } from "../../lib/hooks";
+import { Type } from "../../slang";
 import styles from "./shared.module.css";
 
 export function CustomSelect({
@@ -14,17 +16,15 @@ export function CustomSelect({
   const isValidSponsor = useIsValidSponsor();
   return (
     <Select.Root {...props}>
-      <Select.Trigger>
-        <Select.Value>{niceName}</Select.Value>
+      <Select.Trigger className={styles.selectTrigger}>
+        <Select.Value>
+          <Type weight="700">{niceName}</Type>
+        </Select.Value>
+        <Select.Icon asChild>
+          <CaretDown size={16} weight="thin" />
+        </Select.Icon>
       </Select.Trigger>
-      <Select.Content
-        style={{
-          width: 200,
-          maxHeight: 200,
-          overflow: "auto",
-          backgroundColor: "var(--color-background)",
-        }}
-      >
+      <Select.Content className={styles.selectContent}>
         {options
           .filter((l) => {
             if (!isValidSponsor && l.sponsorOnly) return false;
@@ -49,12 +49,17 @@ export function OptionWithLabel({
 }) {
   return (
     <div
-      style={{ display: "flex", alignItems: "center", whiteSpace: "nowrap" }}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        whiteSpace: "nowrap",
+        minHeight: 50,
+      }}
     >
       <div style={{ flex: 1 }}>{children}</div>
-      <div style={{ flex: 0, marginLeft: 10, fontSize: 12, color: "gray" }}>
+      <Type size={-1} style={{ flex: 0 }} color="color-lineNumbers">
         {label}
-      </div>
+      </Type>
     </div>
   );
 }

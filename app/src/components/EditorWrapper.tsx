@@ -21,7 +21,7 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
           <RenameButton>
             <Type
               as="h1"
-              weight="400"
+              weight="700"
               className={styles.WorkspaceTitle}
               size={2}
               title={title}

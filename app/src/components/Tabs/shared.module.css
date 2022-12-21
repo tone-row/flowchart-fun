@@ -3,9 +3,10 @@
 }
 
 .tabOptionsGrid > * {
-  padding-top: calc(var(--spacer-px) * 2);
-  padding-bottom: calc(var(--spacer-px) * 2);
-  padding-inline: calc(var(--spacer-px) * 8);
+  padding-top: calc(var(--spacer-px) * 1);
+  padding-bottom: calc(var(--spacer-px) * 1);
+  padding-right: calc(var(--spacer-px) * 3);
+  padding-left: calc(var(--spacer-px) * 6);
 }
 
 .tabOptionsGrid > * + * {
@@ -31,4 +32,43 @@
 
 .largeLink:hover {
   background-color: hsla(var(--color-brandHsl), 0.2);
+}
+
+.selectTrigger {
+  display: grid;
+  grid-auto-flow: column;
+  gap: calc(var(--spacer-px) * 2);
+  align-items: center;
+  border-radius: 3px;
+  padding: calc(var(--spacer-px) * 2);
+  color: var(--color-darkGrey);
+}
+
+.selectTrigger:hover,
+.selectTrigger:focus-visible {
+  background-color: var(--color-lineColor);
+  color: var(--color-foreground);
+}
+
+.selectTrigger:focus {
+  box-shadow: none;
+}
+
+.selectContent {
+  width: 200px;
+  max-height: 200px;
+  overflow: auto;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-uiAccent);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 3px;
+}
+
+.selectContent [role="option"] {
+  padding: calc(var(--spacer-px) * 2);
+}
+
+.selectContent [role="option"]:hover {
+  background-color: var(--color-lineColor);
 }
