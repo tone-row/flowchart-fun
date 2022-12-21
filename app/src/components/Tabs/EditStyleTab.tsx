@@ -1,3 +1,4 @@
+import { t, Trans } from "@lingui/macro";
 import produce from "immer";
 import throttle from "lodash.throttle";
 
@@ -18,14 +19,14 @@ export function EditStyleTab() {
   const isValidSponsor = useIsValidSponsor();
   const themeKey = useThemeKey();
   const themeNiceName =
-    themes.find((t) => t.value === themeKey)?.label() ?? "Unknown";
+    themes.find((t) => t.value === themeKey)?.label() ?? "???";
   const theme = useThemeStore();
   const meta = useDoc((s) => s.meta);
   const background = useDoc((s) => s.meta?.background ?? theme.bg) as string;
   return (
     <WithLowerChild>
       <TabOptionsGrid>
-        <OptionWithLabel label="Theme">
+        <OptionWithLabel label={t`Theme`}>
           <CustomSelect
             niceName={themeNiceName}
             options={themes}
@@ -39,7 +40,7 @@ export function EditStyleTab() {
             }}
           />
         </OptionWithLabel>
-        <OptionWithLabel label="Background">
+        <OptionWithLabel label={t`Background`}>
           <input
             type="color"
             defaultValue={background}
@@ -70,7 +71,9 @@ export function EditStyleTab() {
         </OptionWithLabel>
       </TabOptionsGrid>
       {!isValidSponsor && (
-        <LargeLink href="/sponsor">Get More Themes</LargeLink>
+        <LargeLink href="/sponsor">
+          <Trans>Get More Themes</Trans>
+        </LargeLink>
       )}
     </WithLowerChild>
   );

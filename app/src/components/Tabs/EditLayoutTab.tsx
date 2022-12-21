@@ -1,3 +1,4 @@
+import { t, Trans } from "@lingui/macro";
 import produce from "immer";
 import { FaRegSnowflake } from "react-icons/fa";
 
@@ -34,7 +35,7 @@ export function EditLayoutTab() {
     layoutName = layout.name;
   }
   const layoutNiceName =
-    layouts.find((l) => l.value === layoutName)?.label() ?? "Unknown";
+    layouts.find((l) => l.value === layoutName)?.label() ?? "???";
 
   const frozen = "positions" in rendered;
 
@@ -48,7 +49,7 @@ export function EditLayoutTab() {
     direction = layout.rankDir;
   }
   const directionNiceName =
-    directions.find((l) => l.value === direction)?.label() ?? "Unknown";
+    directions.find((l) => l.value === direction)?.label() ?? "???";
 
   let spacingFactor = defaultLayout.spacingFactor;
   if (
@@ -65,7 +66,7 @@ export function EditLayoutTab() {
   return (
     <WithLowerChild>
       <TabOptionsGrid>
-        <OptionWithLabel label="Layout">
+        <OptionWithLabel label={t`Layout`}>
           <CustomSelect
             niceName={layoutNiceName}
             options={layouts}
@@ -83,7 +84,7 @@ export function EditLayoutTab() {
           />
         </OptionWithLabel>
         {["dagre"].includes(layoutName) && (
-          <OptionWithLabel label="Direction">
+          <OptionWithLabel label={t`Direction`}>
             <CustomSelect
               niceName={directionNiceName}
               options={directions}
@@ -102,7 +103,7 @@ export function EditLayoutTab() {
           </OptionWithLabel>
         )}
         {/* {/^elk-/.test(layoutName) && (
-        <OptionWithLabel label="Direction">
+        <OptionWithLabel label={t`Direction`}>
           <CustomSelect
             niceName={directionNiceName}
       )} */}
@@ -119,7 +120,7 @@ export function EditLayoutTab() {
           "elk-mrtree",
           "elk-stress",
         ].includes(layoutName) && (
-          <OptionWithLabel label="Spacing">
+          <OptionWithLabel label={t`Spacing`}>
             <input
               type="range"
               min={0.25}
@@ -143,7 +144,9 @@ export function EditLayoutTab() {
         )}
       </TabOptionsGrid>
       {!isValidSponsor && (
-        <LargeLink href="/sponsor">Get More Layouts</LargeLink>
+        <LargeLink href="/sponsor">
+          <Trans>Get More Layouts</Trans>
+        </LargeLink>
       )}
     </WithLowerChild>
   );
@@ -153,7 +156,9 @@ function FrozenLayout() {
   return (
     <div className={styles.Frozen}>
       <h2>
-        <span>Layout is Frozen</span>
+        <span>
+          <Trans>Layout is Frozen</Trans>
+        </span>
         <FaRegSnowflake />
       </h2>
       <button
@@ -165,7 +170,7 @@ function FrozenLayout() {
           });
         }}
       >
-        Unfreeze
+        <Trans>Unfreeze</Trans>
       </button>
     </div>
   );

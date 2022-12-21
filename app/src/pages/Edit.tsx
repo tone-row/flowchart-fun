@@ -1,7 +1,8 @@
+import { Trans } from "@lingui/macro";
 import Editor, { OnMount } from "@monaco-editor/react";
 import * as Tabs from "@radix-ui/react-tabs";
 import throttle from "lodash.throttle";
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef } from "react";
 import { useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
 
@@ -88,20 +89,20 @@ const Edit = memo(function Edit() {
           <Tabs.Root defaultValue="Document" className={styles.Tabs}>
             <Tabs.List className={styles.TabsList}>
               <Tabs.Trigger value="Document" data-testid="Editor Tab: Document">
-                Document
+                <Trans>Document</Trans>
               </Tabs.Trigger>
               <Tabs.Trigger value="Layout" data-testid="Editor Tab: Layout">
-                Layout
+                <Trans>Layout</Trans>
               </Tabs.Trigger>
               <Tabs.Trigger value="Style" data-testid="Editor Tab: Style">
-                Style
+                <Trans>Style</Trans>
               </Tabs.Trigger>
               {isValidSponsor && (
                 <Tabs.Trigger
                   value="Advanced"
                   data-testid="Editor Tab: Advanced"
                 >
-                  Advanced
+                  <Trans>Advanced</Trans>
                 </Tabs.Trigger>
               )}
             </Tabs.List>

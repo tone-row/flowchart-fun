@@ -1,7 +1,8 @@
+import { Trans } from "@lingui/macro";
 import Editor, { OnMount } from "@monaco-editor/react";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Check, DotsThree } from "phosphor-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
@@ -20,12 +21,7 @@ import { editorOptions } from "../lib/constants";
 import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
 import { useIsValidSponsor } from "../lib/hooks";
 import { Doc, docToString, prepareChart, useDoc } from "../lib/prepareChart";
-import {
-  getHostedChart,
-  queryClient,
-  updateChartText,
-  useAppMode,
-} from "../lib/queries";
+import { getHostedChart, updateChartText, useAppMode } from "../lib/queries";
 import {
   languageId,
   themeNameDark,
@@ -99,11 +95,19 @@ export default function EditHosted() {
         <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={editStyles.Tabs}>
             <Tabs.List className={editStyles.TabsList}>
-              <Tabs.Trigger value="Document">Document</Tabs.Trigger>
-              <Tabs.Trigger value="Layout">Layout</Tabs.Trigger>
-              <Tabs.Trigger value="Style">Style</Tabs.Trigger>
+              <Tabs.Trigger value="Document">
+                <Trans>Document</Trans>
+              </Tabs.Trigger>
+              <Tabs.Trigger value="Layout">
+                <Trans>Layout</Trans>
+              </Tabs.Trigger>
+              <Tabs.Trigger value="Style">
+                <Trans>Style</Trans>
+              </Tabs.Trigger>
               {isValidSponsor && (
-                <Tabs.Trigger value="Advanced">Advanced</Tabs.Trigger>
+                <Tabs.Trigger value="Advanced">
+                  <Trans>Advanced</Trans>
+                </Tabs.Trigger>
               )}
             </Tabs.List>
             <Tabs.Content value="Document">

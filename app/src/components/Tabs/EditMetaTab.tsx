@@ -1,3 +1,4 @@
+import { Trans } from "@lingui/macro";
 import Editor from "@monaco-editor/react";
 import { useEffect, useState } from "react";
 
@@ -56,7 +57,7 @@ export function EditMetaTab() {
               setLocalMeta(JSON.stringify(meta, null, 2));
             }}
           >
-            Discard
+            <Trans>Discard</Trans>
           </Button>
           <Button
             disabled={parsed === false}
@@ -69,7 +70,7 @@ export function EditMetaTab() {
               }
             }}
           >
-            Save
+            <Trans>Save</Trans>
           </Button>
         </div>
       )}
