@@ -52,7 +52,7 @@ export const editorOptions: EditorProps["options"] = {
   automaticLayout: true,
   lineNumbers: "off",
   contextmenu: false,
-  fontFamily: "Ubuntu Mono, monospace",
+  fontFamily: "monospace",
   fontSize: 18,
   tabSize: 2,
 };

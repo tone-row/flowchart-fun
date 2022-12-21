@@ -421,7 +421,7 @@ function TitleAndSummary({
     <Box gap={2}>
       <SectionTitle>{title}</SectionTitle>
       <Box>
-        <Type size={-1}>{summary}</Type>
+        <Type>{summary}</Type>
       </Box>
     </Box>
   );
