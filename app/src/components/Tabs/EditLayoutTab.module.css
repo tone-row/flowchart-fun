@@ -27,3 +27,18 @@
 .Frozen button:hover {
   background-color: var(--color-uiAccent);
 }
+
+.numberInput {
+  display: grid;
+  grid-auto-flow: column;
+  gap: calc(var(--spacer-px) * 2);
+  align-items: center;
+  border: none;
+  height: 22px;
+  width: 60px;
+  text-align: left;
+  padding-left: calc(var(--spacer-px) * 2);
+  margin-right: 2px;
+  font-weight: 700;
+  color: var(--color-darkGrey);
+}

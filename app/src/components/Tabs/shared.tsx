@@ -1,4 +1,5 @@
 import * as Select from "@radix-ui/react-select";
+import * as Slider from "@radix-ui/react-slider";
 import { CaretDown } from "phosphor-react";
 import { memo, ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -57,7 +58,11 @@ export function OptionWithLabel({
       }}
     >
       <div style={{ flex: 1 }}>{children}</div>
-      <Type size={-1} style={{ flex: 0 }} color="color-lineNumbers">
+      <Type
+        size={-1}
+        style={{ flex: 0, marginLeft: 20 }}
+        color="color-lineNumbers"
+      >
         {label}
       </Type>
     </div>
@@ -87,5 +92,16 @@ export function LargeLink({
     <Link to={href} className={styles.largeLink}>
       {children}
     </Link>
+  );
+}
+
+export function Range(props: Slider.SliderProps) {
+  return (
+    <Slider.Root {...props} className={styles.rangeRoot}>
+      <Slider.Track>
+        <Slider.Range className={styles.rangeRange} />
+      </Slider.Track>
+      <Slider.Thumb className={styles.rangeThumb} />
+    </Slider.Root>
   );
 }

@@ -1,4 +1,5 @@
 import { t, Trans } from "@lingui/macro";
+import * as Slider from "@radix-ui/react-slider";
 import produce from "immer";
 import { FaRegSnowflake } from "react-icons/fa";
 
@@ -13,10 +14,10 @@ import {
   CustomSelect,
   LargeLink,
   OptionWithLabel,
+  Range,
   TabOptionsGrid,
   WithLowerChild,
 } from "./shared";
-// directions
 
 export function EditLayoutTab() {
   const isValidSponsor = useIsValidSponsor();
@@ -121,25 +122,42 @@ export function EditLayoutTab() {
           "elk-stress",
         ].includes(layoutName) && (
           <OptionWithLabel label={t`Spacing`}>
-            <input
-              type="range"
-              min={0.25}
-              max={2}
-              step={0.01}
-              value={spacingFactor}
-              onChange={(e) => {
-                useDoc.setState((state) => {
-                  return produce(state, (draft) => {
-                    if (!draft.meta.layout) draft.meta.layout = {};
-                    // This any is because typing the layout object is too restrictive
-                    (draft.meta.layout as any).spacingFactor = parseFloat(
-                      e.target.value
-                    );
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <input
+                type="number"
+                value={spacingFactor}
+                step={0.1}
+                min={0.25}
+                className={styles.numberInput}
+                onChange={(e) => {
+                  useDoc.setState((state) => {
+                    return produce(state, (draft) => {
+                      if (!draft.meta.layout) draft.meta.layout = {};
+                      // This any is because typing the layout object is too restrictive
+                      (draft.meta.layout as any).spacingFactor = parseFloat(
+                        e.target.value
+                      );
+                    });
                   });
-                });
-              }}
-            />
-            <span>{spacingFactor}</span>
+                }}
+              />
+              <Range
+                defaultValue={[defaultLayout.spacingFactor as number]}
+                min={0.25}
+                max={2}
+                step={0.01}
+                value={[spacingFactor || 0]}
+                onValueChange={([value]) => {
+                  useDoc.setState((state) => {
+                    return produce(state, (draft) => {
+                      if (!draft.meta.layout) draft.meta.layout = {};
+                      // This any is because typing the layout object is too restrictive
+                      (draft.meta.layout as any).spacingFactor = value;
+                    });
+                  });
+                }}
+              />
+            </div>
           </OptionWithLabel>
         )}
       </TabOptionsGrid>

@@ -72,3 +72,39 @@
 .selectContent [role="option"]:hover {
   background-color: var(--color-lineColor);
 }
+
+.rangeRoot {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  --height: 22px;
+  --border-width: 1px;
+  height: var(--height);
+  display: block;
+  background-color: var(--color-lineColor);
+  border: var(--border-width) solid var(--color-uiAccent);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.rangeRange {
+  position: absolute;
+  height: 100%;
+  background-color: var(--color-uiAccent);
+}
+
+.rangeThumb {
+  width: calc(var(--height) - 2 * var(--border-width));
+  height: calc(var(--height) - 2 * var(--border-width));
+  background-color: var(--color-uiAccent);
+  display: block;
+}
+
+.rangeThumb:hover {
+  background-color: var(--color-edgeHover);
+}
+
+.rangeThumb:focus-visible {
+  background-color: var(--color-lineNumbers);
+  outline: none;
+}

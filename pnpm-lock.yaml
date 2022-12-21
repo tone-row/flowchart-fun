@@ -41,6 +41,7 @@ importers:
       '@radix-ui/react-navigation-menu': ^1.0.0
       '@radix-ui/react-radio-group': ^0.1.5
       '@radix-ui/react-select': ^1.1.2
+      '@radix-ui/react-slider': ^1.1.0
       '@radix-ui/react-tabs': ^1.0.1
       '@radix-ui/react-toggle': ^0.1.4
       '@reach/dialog': ^0.15.0
@@ -162,6 +163,7 @@ importers:
       '@radix-ui/react-navigation-menu': 1.0.0_sfoxds7t5ydpegc3knd667wn6m
       '@radix-ui/react-radio-group': 0.1.5_react@17.0.2
       '@radix-ui/react-select': 1.1.2_hiunvzosbwliizyirxfy6hjyim
+      '@radix-ui/react-slider': 1.1.0_sfoxds7t5ydpegc3knd667wn6m
       '@radix-ui/react-tabs': 1.0.1_sfoxds7t5ydpegc3knd667wn6m
       '@radix-ui/react-toggle': 0.1.4_react@17.0.2
       '@reach/dialog': 0.15.3_hiunvzosbwliizyirxfy6hjyim
@@ -3537,6 +3539,28 @@ packages:
       react-remove-scroll: 2.5.5_pxzommwrsowkd4kgag6q3sluym
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /@radix-ui/react-slider/1.1.0_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-5H/QB4xD3GF9UfoSCVLBx2JjlXamMcmTyL6gr4kkd/MiAGaYB0W7Exi4MQa0tJApBFJe+KmS5InKCI56p2kmjA==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.19.0
+      '@radix-ui/number': 1.0.0
+      '@radix-ui/primitive': 1.0.0
+      '@radix-ui/react-collection': 1.0.1_sfoxds7t5ydpegc3knd667wn6m
+      '@radix-ui/react-compose-refs': 1.0.0_react@17.0.2
+      '@radix-ui/react-context': 1.0.0_react@17.0.2
+      '@radix-ui/react-direction': 1.0.0_react@17.0.2
+      '@radix-ui/react-primitive': 1.0.1_sfoxds7t5ydpegc3knd667wn6m
+      '@radix-ui/react-use-controllable-state': 1.0.0_react@17.0.2
+      '@radix-ui/react-use-layout-effect': 1.0.0_react@17.0.2
+      '@radix-ui/react-use-previous': 1.0.0_react@17.0.2
+      '@radix-ui/react-use-size': 1.0.0_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /@radix-ui/react-slot/0.1.2_react@17.0.2:
