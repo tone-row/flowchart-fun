@@ -8,6 +8,7 @@
   align-items: center;
   grid-auto-flow: column;
   padding: 4px 10px;
+  /* background-color: var(--color-input); */
 }
 
 .shared-header nav {
@@ -40,6 +41,7 @@
   border: 2px solid transparent;
   border-color: transparent;
   justify-content: start;
+  font-size: 18px;
 }
 
 body:not([class*="disableAnimation"]) .shared-header-btn {

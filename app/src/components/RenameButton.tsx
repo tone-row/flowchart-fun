@@ -1,16 +1,14 @@
 import { t, Trans } from "@lingui/macro";
+import produce from "immer";
 import { ReactNode, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
 
 import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
-import {
-  useCurrentHostedChart,
-  useIsValidSponsor,
-  useTitle,
-} from "../lib/hooks";
-import { makeChart, queryClient, renameChart } from "../lib/queries";
+import { useIsValidSponsor } from "../lib/hooks";
+import { docToString, useDoc, useDocDetails } from "../lib/prepareChart";
+import { makeChart, renameChart } from "../lib/queries";
 import { Box, Type } from "../slang";
 import { useSession } from "./AppContext";
 import {
@@ -23,17 +21,13 @@ import {
   tooltipSize,
 } from "./Shared";
 
-export function RenameButton({
-  fullText,
-  children,
-}: {
-  fullText: string;
-  children: ReactNode;
-}) {
+export function RenameButton({ children }: { children: ReactNode }) {
+  const fullText = useDoc(docToString);
   const isValidSponsor = useIsValidSponsor();
   const session = useSession();
-  const [initialName, isHosted] = useTitle();
-  const { data } = useCurrentHostedChart();
+  const initialName = useDocDetails("title", "Untitled");
+  const isHosted = useDocDetails("isHosted");
+  const id = useDocDetails("id");
   const [dialog, setDialog] = useState(false);
   const { push } = useHistory();
   const { register, handleSubmit, watch, formState } = useForm<{
@@ -60,8 +54,8 @@ export function RenameButton({
       name: string;
       convertToHosted?: boolean;
     }) => {
-      if (isHosted && data) {
-        await renameChart(data.id, name);
+      if (isHosted && id && typeof id === "number") {
+        await renameChart(id, name);
       } else if (convertToHosted) {
         if (session?.user?.id) {
           const response = await makeChart({
@@ -86,11 +80,18 @@ export function RenameButton({
         push(`/${newSlug}`);
         window.localStorage.removeItem(oldKey);
       }
+      useDoc.setState((state) => {
+        return produce(state, (draft) => {
+          (draft.details as any).title = name;
+          if (convertToHosted) {
+            (draft.details as any).isHosted = true;
+          }
+        });
+      });
     },
     {
       onSuccess: () => {
         setDialog(false);
-        if (isHosted) queryClient.resetQueries(["useChart"]);
       },
     }
   );

@@ -15,12 +15,6 @@
   }
 }
 
-@media (min-width: 800px) {
-  .TextareaContainer {
-    border-right: solid 1px var(--color-uiAccent);
-  }
-}
-
 .Handle {
   height: 100%;
   position: relative;
@@ -30,7 +24,7 @@
 
 .Handle svg circle {
   stroke-width: 10;
-  stroke: var(--color-edgeHover);
+  stroke: var(--color-foreground);
 }
 
 .Handle:hover svg circle,
@@ -42,7 +36,7 @@
   background: linear-gradient(
     to bottom,
     var(--color-background),
-    var(--color-input),
+    var(--color-uiAccent),
     var(--color-background)
   );
 }

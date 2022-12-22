@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import { defaultFontFamily, Theme } from "./constants";
+import { Theme } from "./constants";
 
 export const originalColors = {
   black: "#000000",
@@ -15,14 +15,14 @@ export const originalColors = {
   gray: "#aaaaaa",
 };
 
-const fontFamily = defaultFontFamily;
+const fontFamily = "Karla";
 const fontSize = 10;
 const backgroundColor = originalColors.white;
 const arrowColor = originalColors.black;
 const lineHeight = 1.25;
 const padding = "6px";
 
-const arrowWidth = 1;
+const arrowWidth = 0.75;
 const original: Theme = {
   value: "original",
   bg: backgroundColor,

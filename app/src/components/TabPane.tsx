@@ -1,4 +1,4 @@
-import { DotsThreeOutlineVertical } from "phosphor-react";
+import { DotsThreeVertical } from "phosphor-react";
 import { Resizable as Reresizable } from "re-resizable";
 import { memo, ReactNode, useState } from "react";
 
@@ -70,12 +70,7 @@ TabPane.displayName = "TabPane";
 export default TabPane;
 
 const Handle = ({ dragging = false }: { dragging: boolean }) => (
-  <Box
-    background="color-background"
-    className={styles.Handle}
-    content="center"
-    data-dragging={dragging}
-  >
-    <DotsThreeOutlineVertical height={24} width={24} />
+  <Box className={styles.Handle} content="center" data-dragging={dragging}>
+    <DotsThreeVertical height={32} width={32} />
   </Box>
 );

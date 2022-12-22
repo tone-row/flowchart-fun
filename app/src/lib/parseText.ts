@@ -1,6 +1,6 @@
 import cytoscape from "cytoscape";
 
-import { TGetSize } from "./useGetSize";
+import { TGetSize } from "./getGetSize";
 import { decode } from "./utils";
 
 export function parseText(

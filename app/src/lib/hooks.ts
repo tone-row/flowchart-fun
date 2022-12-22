@@ -2,11 +2,9 @@ import { useContext, useMemo } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
-import { useChart } from "./queries";
 
-export function useAnimationSetting() {
-  const { search } = useLocation();
-  const query = new URLSearchParams(search);
+export function getAnimationSettings() {
+  const query = new URLSearchParams(window.location.search.slice(1));
   const animation = query.get("animation");
   return animation === "0" ? false : true;
 }
@@ -49,16 +47,6 @@ export function useIsValidCustomer() {
   return Boolean(customer?.subscription);
 }
 
-/** Get Chart Title for hosted or local chart */
-export function useTitle(): [string, boolean, string] {
-  const { workspace = "" } = useParams<{ workspace?: string }>();
-  const { path, params } = useRouteMatch<{ id?: string }>();
-  const id = params.id || ""; // setting fake ID for typescript
-  const { data: chart } = useChart(id);
-  if (path === "/u/:id" && chart) return [chart.name, true, id];
-  return [workspace, false, id];
-}
-
 /**
  * Return a unique ID for any chart (local or hosted)
  * Hosted charts will return their database ID
@@ -70,11 +58,6 @@ export function useChartId() {
   const id = params.id || undefined;
   if (path === "/u/:id") return id;
   return workspace;
-}
-
-export function useCurrentHostedChart() {
-  const { id } = useParams<{ id: string }>();
-  return useChart(id);
 }
 
 export function useIsHelp() {
@@ -104,4 +87,8 @@ export function useIsEditorView() {
     path === "/:workspace" ||
     (path === "/" && isExact)
   );
+}
+
+export function useLightOrDarkMode() {
+  return useContext(AppContext).mode;
 }

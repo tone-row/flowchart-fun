@@ -20,7 +20,7 @@ export function isError(x: unknown): x is Error {
 }
 
 export function titleToLocalStorageKey(chartTitle: string) {
-  return `flowcharts.fun${chartTitle === "/" ? "" : `:${chartTitle}`}`;
+  return ["flowcharts.fun", chartTitle].filter(Boolean).join(":");
 }
 
 export const slugify = (value: string) =>
@@ -76,3 +76,11 @@ export const useEffectDebugger = (
 
   useEffect(effectHook, [effectHook]);
 };
+
+export function hasOwnProperty<X extends {}, Y extends PropertyKey>(
+  obj: X,
+  prop: Y
+): obj is X & Record<Y, unknown> {
+  // eslint-disable-next-line no-prototype-builtins
+  return obj.hasOwnProperty(prop);
+}

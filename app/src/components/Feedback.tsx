@@ -8,7 +8,15 @@ import { mail } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
 import { Type } from "../slang";
 import styles from "./Feedback.module.css";
-import { Button, Input, Notice, Page, Section, Textarea } from "./Shared";
+import {
+  Button,
+  Input,
+  Notice,
+  Page,
+  Section,
+  SectionTitle,
+  Textarea,
+} from "./Shared";
 import Spinner from "./Spinner";
 
 const noPaddingBottom = { tablet: { pb: 0 } };
@@ -62,6 +70,9 @@ export default function Feedback() {
             isLoading ? styles.Submitting : "",
           ].join(" ")}
         >
+          <SectionTitle>
+            <Trans>Feedback</Trans>
+          </SectionTitle>
           <Type>
             <Trans>
               We appreciate all of your feedback, suggestions, bugs, and feature

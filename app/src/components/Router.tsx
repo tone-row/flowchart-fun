@@ -2,12 +2,10 @@ import { lazy, ReactNode } from "react";
 import { Route, RouteProps, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
-import { useIsEditorView } from "../lib/hooks";
 import { New } from "../pages/New";
 import Feedback from "./Feedback";
 import Layout from "./Layout";
 import Settings from "./Settings";
-import ShareDialog from "./ShareDialog";
 import SponsorDashboard from "./SponsorDashboard";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
@@ -55,9 +53,9 @@ export default function Router() {
       <RouteWithWrapper path="/f/:graphText?">
         <ReadOnly />
       </RouteWithWrapper>
-      <RouteWithWrapper path="/p/:public_id">
+      <Route path="/p/:public_id">
         <Public />
-      </RouteWithWrapper>
+      </Route>
       <RouteWithWrapper path="/s">
         <Settings />
       </RouteWithWrapper>
@@ -75,15 +73,9 @@ export default function Router() {
   );
 }
 
+/** Adds the share dialog. Could probably be in a better spot */
 function RouteWrapper({ children }: { children: ReactNode }) {
-  const isEditorView = useIsEditorView();
-
-  return (
-    <>
-      <Layout>{children}</Layout>
-      {isEditorView && <ShareDialog />}
-    </>
-  );
+  return <Layout>{children}</Layout>;
 }
 
 function RouteWithWrapper({

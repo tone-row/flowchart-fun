@@ -39,16 +39,10 @@ const defaultLanguage = Object.keys(languages).includes(browserLanguage)
 
 type mobileEditorTab = "text" | "graph";
 
-export type TAppContext = {
+type TAppContext = {
   updateUserSettings: (newSettings: Partial<UserSettings>) => void;
   theme: Theme;
-  shareLink: string;
-  setShareLink: Dispatch<SetStateAction<string>>;
   language: string;
-  hasError: false | string;
-  setHasError: Dispatch<SetStateAction<false | string>>;
-  hasStyleError: false | string;
-  setHasStyleError: Dispatch<SetStateAction<false | string>>;
   shareModal: boolean;
   setShareModal: Dispatch<SetStateAction<boolean>>;
   mobileEditorTab: mobileEditorTab;
@@ -68,7 +62,6 @@ type CustomerInfo = {
 export const AppContext = createContext({} as TAppContext);
 
 const Provider = ({ children }: { children?: ReactNode }) => {
-  const [shareLink, setShareLink] = useState("");
   const [shareModal, setShareModal] = useState(false);
   const [userSettingsString, setUserSettings] = useLocalStorage(
     LOCAL_STORAGE_SETTINGS_KEY,
@@ -118,10 +111,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     // two indexes aren't shown on charts page
     window.localStorage.removeItem("flowcharts.fun:");
   }, []);
-
-  const [hasError, setHasError] = useState<TAppContext["hasError"]>(false);
-  const [hasStyleError, setHasStyleError] =
-    useState<TAppContext["hasStyleError"]>(false);
 
   const [checkedSession, setCheckedSession] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
@@ -173,11 +162,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     <AppContext.Provider
       value={{
         theme,
-        shareLink,
-        setShareLink,
         updateUserSettings,
-        hasError,
-        setHasError,
         setShareModal,
         shareModal,
         mobileEditorTab,
@@ -185,8 +170,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         session,
         customer,
         customerIsLoading,
-        hasStyleError,
-        setHasStyleError,
         ...settings,
         language: settings.language ?? defaultLanguage,
         checkedSession,
