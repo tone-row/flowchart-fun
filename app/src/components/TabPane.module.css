@@ -15,23 +15,16 @@
   }
 }
 
-@media (min-width: 800px) {
-  .TextareaContainer {
-    border-right: solid 1px var(--color-uiAccent);
-  }
-}
-
 .Handle {
   height: 100%;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background-color: var(--color-input);
 }
 
 .Handle svg circle {
   stroke-width: 10;
-  stroke: var(--color-lineNumbers);
+  stroke: var(--color-foreground);
 }
 
 .Handle:hover svg circle,
@@ -42,9 +35,9 @@
 .Handle[data-dragging="true"] {
   background: linear-gradient(
     to bottom,
-    var(--color-input),
+    var(--color-background),
     var(--color-uiAccent),
-    var(--color-input)
+    var(--color-background)
   );
 }
 

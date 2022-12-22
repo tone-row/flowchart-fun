@@ -71,6 +71,6 @@ export default TabPane;
 
 const Handle = ({ dragging = false }: { dragging: boolean }) => (
   <Box className={styles.Handle} content="center" data-dragging={dragging}>
-    <DotsThreeVertical height={24} width={24} />
+    <DotsThreeVertical height={32} width={32} />
   </Box>
 );

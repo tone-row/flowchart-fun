@@ -2,6 +2,7 @@ import { Trans } from "@lingui/macro";
 import Editor from "@monaco-editor/react";
 import { useEffect, useState } from "react";
 
+import { editorOptions } from "../../lib/constants";
 import { useLightOrDarkMode } from "../../lib/hooks";
 import { useDoc } from "../../lib/prepareChart";
 import { Button } from "../Shared";
@@ -36,10 +37,7 @@ export function EditMetaTab() {
         }}
         language="json"
         theme={mode === "dark" ? "vs-dark" : "vs-light"}
-        options={{
-          minimap: { enabled: false },
-          fontSize: 16,
-        }}
+        options={editorOptions}
       />
       {localMeta !== JSON.stringify(meta, null, 2) && (
         <div

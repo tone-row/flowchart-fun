@@ -7,6 +7,7 @@ import { themes } from "../../lib/graphOptions";
 import { useThemeStore } from "../../lib/graphThemes";
 import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/prepareChart";
+import { Button } from "../Shared";
 import {
   CustomSelect,
   LargeLink,
@@ -41,33 +42,43 @@ export function EditStyleTab() {
           />
         </OptionWithLabel>
         <OptionWithLabel label={t`Background`}>
-          <input
-            type="color"
-            defaultValue={background}
-            onChange={(e) => {
-              throttleBGUpdate(e.target.value);
+          <div
+            style={{
+              display: "grid",
+              gridAutoFlow: "column",
+              justifyContent: "start",
+              gap: 10,
+              alignItems: "center",
             }}
-          />
-          {meta.background && (
-            <button
-              onClick={() => {
-                useDoc.setState((s) => {
-                  return produce(s, (draft) => {
-                    delete draft.meta?.background;
-                  });
-                });
-                // find an input[type=color] and set it to the background color
-                const colorInput = document.querySelector(
-                  "input[type=color]"
-                ) as HTMLInputElement;
-                if (colorInput) {
-                  colorInput.value = theme.bg;
-                }
+          >
+            <input
+              type="color"
+              defaultValue={background}
+              onChange={(e) => {
+                throttleBGUpdate(e.target.value);
               }}
-            >
-              Remove
-            </button>
-          )}
+            />
+            {meta.background && (
+              <Button
+                onClick={() => {
+                  useDoc.setState((s) => {
+                    return produce(s, (draft) => {
+                      delete draft.meta?.background;
+                    });
+                  });
+                  // find an input[type=color] and set it to the background color
+                  const colorInput = document.querySelector(
+                    "input[type=color]"
+                  ) as HTMLInputElement;
+                  if (colorInput) {
+                    colorInput.value = theme.bg;
+                  }
+                }}
+              >
+                Remove
+              </Button>
+            )}
+          </div>
         </OptionWithLabel>
       </TabOptionsGrid>
       {!isValidSponsor && (

@@ -10,6 +10,7 @@
   grid-auto-flow: column;
   gap: calc(var(--spacer-px) * 2);
   align-items: center;
+  font-weight: 400;
 }
 
 .Frozen button {
@@ -41,4 +42,5 @@
   margin-right: 2px;
   font-weight: 700;
   color: var(--color-darkGrey);
+  background-color: var(--color-background);
 }
