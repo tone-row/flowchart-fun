@@ -117,6 +117,7 @@
     Playbook: "प्लेबुक",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "शक्तिशाली लेआउट एल्गोरिदम जो सभी शेप और साइज़ के ग्राफ़ में क्रम लाते हैं",
+    Pricing: "मूल्य निर्धारण",
     Public: "पब्लिक",
     Random: "अनियमित",
     "Read-only": "केवल पढ़ने के लिए",

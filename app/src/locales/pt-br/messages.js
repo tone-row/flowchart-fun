@@ -116,6 +116,7 @@
     Playbook: "Cartilha",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "Poderosos algoritmos de layout que trazem ordem para gráficos de todos os formatos e tamanhos",
+    Pricing: "Preços",
     Public: "Público",
     Random: "Aleatório",
     "Read-only": "Somente leitura",

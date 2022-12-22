@@ -13,6 +13,6 @@ describe("Router", () => {
       await nextFrame();
       expect(await screen.findByText(/flowchart\.fun/)).toBeInTheDocument();
     },
-    10 * 1000
+    20 * 1000
   );
 });

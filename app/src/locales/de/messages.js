@@ -117,6 +117,7 @@
     Playbook: "Spielbuch",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "Leistungsstarke Layout-Algorithmen, die Ordnung in Diagramme aller Formen und Größen bringen",
+    Pricing: "Preisgestaltung",
     Public: "Öffentlich",
     Random: "Zufällig",
     "Read-only": "Schreibgeschützt",

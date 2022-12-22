@@ -116,6 +116,7 @@
     Playbook: "플레이북",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "온갖 크기와 모양의 그래프를 질서있게 정리하는 강력한 레이아웃 알고리즘",
+    Pricing: "가격",
     Public: "공용",
     Random: "무작위",
     "Read-only": "읽기 전용",
