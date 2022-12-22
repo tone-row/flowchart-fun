@@ -28,6 +28,7 @@ import {
 } from "../lib/registerLanguage";
 import { useHoverLine } from "../lib/useHoverLine";
 import { useTrackLastChart } from "../lib/useLastChart";
+import { Type } from "../slang";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit() {
@@ -89,20 +90,28 @@ const Edit = memo(function Edit() {
           <Tabs.Root defaultValue="Document" className={styles.Tabs}>
             <Tabs.List className={styles.TabsList}>
               <Tabs.Trigger value="Document" data-testid="Editor Tab: Document">
-                <Trans>Document</Trans>
+                <Type>
+                  <Trans>Document</Trans>
+                </Type>
               </Tabs.Trigger>
               <Tabs.Trigger value="Layout" data-testid="Editor Tab: Layout">
-                <Trans>Layout</Trans>
+                <Type>
+                  <Trans>Layout</Trans>
+                </Type>
               </Tabs.Trigger>
               <Tabs.Trigger value="Style" data-testid="Editor Tab: Style">
-                <Trans>Style</Trans>
+                <Type>
+                  <Trans>Style</Trans>
+                </Type>
               </Tabs.Trigger>
               {isValidSponsor && (
                 <Tabs.Trigger
                   value="Advanced"
                   data-testid="Editor Tab: Advanced"
                 >
-                  <Trans>Advanced</Trans>
+                  <Type>
+                    <Trans>Advanced</Trans>
+                  </Type>
                 </Tabs.Trigger>
               )}
             </Tabs.List>

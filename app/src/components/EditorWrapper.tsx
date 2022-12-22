@@ -10,6 +10,9 @@ import { CloneButton } from "./CloneButton";
 import styles from "./EditorWrapper.module.css";
 import { RenameButton } from "./RenameButton";
 
+/**
+ * Adds title and export button to the editor
+ */
 export function EditorWrapper({ children }: { children: React.ReactNode }) {
   const title = useDocDetails("title", "flowchart.fun");
   const { setShareModal } = useContext(AppContext);
@@ -21,9 +24,9 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
           <RenameButton>
             <Type
               as="h1"
-              weight="700"
+              weight="400"
               className={styles.WorkspaceTitle}
-              size={2}
+              size={3}
               title={title}
             >
               {title || "flowchart.fun"}

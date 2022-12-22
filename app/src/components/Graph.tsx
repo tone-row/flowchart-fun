@@ -258,7 +258,6 @@ function getGraphUpdater({
   return throttle((_doc?: Doc) => {
     if (!cy.current) return;
     if (!errorCatcher.current) return;
-    console.log("Updating Graph");
     const doc = _doc || useDoc.getState();
     let elements: cytoscape.ElementDefinition[] = [];
 
@@ -321,7 +320,6 @@ function getStyleUpdater({
   return throttle((theme: Theme) => {
     if (!cy.current) return;
     if (!errorCatcher.current) return;
-    console.log("updating style");
     try {
       // Prepare Styles
       const style = getCytoStyle(theme, getUserStyle());

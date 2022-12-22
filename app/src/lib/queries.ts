@@ -360,11 +360,8 @@ export async function makeChartPublic(id: number, isPublic: boolean) {
       .from("user_charts")
       .update({ is_public: isPublic })
       .eq("id", id);
-    console.log("result", result);
     if (result.error) throw result.error;
   }
-
-  console.log({ r });
 
   return r;
 }

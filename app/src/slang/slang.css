@@ -501,8 +501,8 @@ body {
 
 :where(:root) {
   --base-font-family: Karla, Helvetica, "Helvetica Neue", sans-serif;
-  --base-font-size-px: 17px;
-  --base-font-size: 17;
+  --base-font-size-px: 18px;
+  --base-font-size: 18;
   --base-font-size-mobile-px: 16px;
   --base-font-size-mobile: 16;
   --base-font-line-height: 1.5;
