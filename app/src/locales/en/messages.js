@@ -116,6 +116,7 @@
     Playbook: "Playbook",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "Powerful layout algorithms that bring order to graphs of all shapes and sizes",
+    Pricing: "Pricing",
     Public: "Public",
     Random: "Random",
     "Read-only": "Read-only",

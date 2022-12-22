@@ -30,8 +30,8 @@ msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 �
 msgid "Account"
 msgstr "계정"
 
-#: src/pages/Edit.tsx:105
-#: src/pages/EditHosted.tsx:114
+#: src/pages/Edit.tsx:113
+#: src/pages/EditHosted.tsx:109
 msgid "Advanced"
 msgstr "고급의"
 
@@ -55,13 +55,11 @@ msgstr "외관"
 msgid "Back To Editor"
 msgstr "편집기로 돌아가기"
 
-#: src/components/Tabs/EditStyleTab.tsx:43
+#: src/components/Tabs/EditStyleTab.tsx:44
 msgid "Background"
 msgstr "배경"
 
 #: src/components/Settings.tsx:135
-#: src/components/SharedHeader.tsx:171
-#: src/components/SharedHeader.tsx:381
 #: src/components/SponsorDashboard.tsx:188
 #: src/pages/Sponsor.tsx:305
 msgid "Become a Sponsor"
@@ -217,7 +215,7 @@ msgstr "삭제"
 msgid "Direction"
 msgstr "방향"
 
-#: src/components/Tabs/EditMetaTab.tsx:60
+#: src/components/Tabs/EditMetaTab.tsx:58
 msgid "Discard"
 msgstr "버리다"
 
@@ -229,8 +227,8 @@ msgstr "구독을 취소하시겠습니까?"
 msgid "Do you want to delete this?"
 msgstr "본 항목을 삭제하시겠습니까?"
 
-#: src/pages/Edit.tsx:92
-#: src/pages/EditHosted.tsx:104
+#: src/pages/Edit.tsx:94
+#: src/pages/EditHosted.tsx:99
 msgid "Document"
 msgstr "문서"
 
@@ -293,7 +291,7 @@ msgstr "제목을 입력하세요"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:41
+#: src/components/EditorWrapper.tsx:44
 #: src/components/ShareDialog.tsx:43
 #: src/components/ShareDialog.tsx:99
 msgid "Export"
@@ -317,11 +315,11 @@ msgstr "전체 화면"
 msgid "Futuristic"
 msgstr "미래 지향적"
 
-#: src/components/Tabs/EditLayoutTab.tsx:148
+#: src/components/Tabs/EditLayoutTab.tsx:165
 msgid "Get More Layouts"
 msgstr "더 많은 레이아웃을 보고 싶어요"
 
-#: src/components/Tabs/EditStyleTab.tsx:75
+#: src/components/Tabs/EditStyleTab.tsx:86
 msgid "Get More Themes"
 msgstr "더 많은 테마 받기"
 
@@ -374,16 +372,16 @@ msgid "Language"
 msgstr "언어"
 
 #: src/components/Tabs/EditLayoutTab.tsx:69
-#: src/pages/Edit.tsx:95
-#: src/pages/EditHosted.tsx:107
+#: src/pages/Edit.tsx:99
+#: src/pages/EditHosted.tsx:102
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/components/Tabs/EditLayoutTab.tsx:160
+#: src/components/Tabs/EditLayoutTab.tsx:177
 msgid "Layout is Frozen"
 msgstr "레이아웃이 고정됨"
 
-#: src/pages/Charts.tsx:738
+#: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "더 알아보기"
 
@@ -476,6 +474,11 @@ msgstr "플레이북"
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "온갖 크기와 모양의 그래프를 질서있게 정리하는 강력한 레이아웃 알고리즘"
 
+#: src/components/SharedHeader.tsx:171
+#: src/components/SharedHeader.tsx:381
+msgid "Pricing"
+msgstr "가격"
+
 #: src/components/ShareDialog.tsx:285
 #: src/components/ShareDialog.tsx:308
 #: src/pages/Charts.tsx:593
@@ -486,7 +489,7 @@ msgstr "공용"
 msgid "Random"
 msgstr "무작위"
 
-#: src/components/EditorWrapper.tsx:34
+#: src/components/EditorWrapper.tsx:37
 #: src/components/ShareDialog.tsx:92
 msgid "Read-only"
 msgstr "읽기 전용"
@@ -529,7 +532,7 @@ msgstr "오른쪽에서 왼쪽으로"
 msgid "Roadmap"
 msgstr "로드맵"
 
-#: src/components/Tabs/EditMetaTab.tsx:73
+#: src/components/Tabs/EditMetaTab.tsx:71
 msgid "Save"
 msgstr "구하다"
 
@@ -550,7 +553,7 @@ msgstr "가입"
 msgid "Spacing"
 msgstr "간격"
 
-#: src/pages/Charts.tsx:727
+#: src/pages/Charts.tsx:723
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원"
 
@@ -566,8 +569,8 @@ msgstr "시작"
 msgid "Status"
 msgstr "상태"
 
-#: src/pages/Edit.tsx:98
-#: src/pages/EditHosted.tsx:110
+#: src/pages/Edit.tsx:104
+#: src/pages/EditHosted.tsx:105
 msgid "Style"
 msgstr "스타일"
 
@@ -588,7 +591,7 @@ msgstr "구독이 종료될 예정입니다."
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
-#: src/components/Tabs/EditStyleTab.tsx:29
+#: src/components/Tabs/EditStyleTab.tsx:30
 msgid "Theme"
 msgstr "테마"
 
@@ -610,7 +613,7 @@ msgstr "위에서 아래로"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/components/Tabs/EditLayoutTab.tsx:173
+#: src/components/Tabs/EditLayoutTab.tsx:190
 msgid "Unfreeze"
 msgstr "녹이다"
 

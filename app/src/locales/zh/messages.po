@@ -30,8 +30,8 @@ msgstr "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档�
 msgid "Account"
 msgstr "帐户"
 
-#: src/pages/Edit.tsx:105
-#: src/pages/EditHosted.tsx:114
+#: src/pages/Edit.tsx:113
+#: src/pages/EditHosted.tsx:109
 msgid "Advanced"
 msgstr "先进的"
 
@@ -55,13 +55,11 @@ msgstr "外观"
 msgid "Back To Editor"
 msgstr "返回编辑器"
 
-#: src/components/Tabs/EditStyleTab.tsx:43
+#: src/components/Tabs/EditStyleTab.tsx:44
 msgid "Background"
 msgstr "背景"
 
 #: src/components/Settings.tsx:135
-#: src/components/SharedHeader.tsx:171
-#: src/components/SharedHeader.tsx:381
 #: src/components/SponsorDashboard.tsx:188
 #: src/pages/Sponsor.tsx:305
 msgid "Become a Sponsor"
@@ -217,7 +215,7 @@ msgstr "删除"
 msgid "Direction"
 msgstr "方向"
 
-#: src/components/Tabs/EditMetaTab.tsx:60
+#: src/components/Tabs/EditMetaTab.tsx:58
 msgid "Discard"
 msgstr "Discard"
 
@@ -229,8 +227,8 @@ msgstr "您要取消订阅吗？"
 msgid "Do you want to delete this?"
 msgstr "您要将其删除吗？"
 
-#: src/pages/Edit.tsx:92
-#: src/pages/EditHosted.tsx:104
+#: src/pages/Edit.tsx:94
+#: src/pages/EditHosted.tsx:99
 msgid "Document"
 msgstr "文档"
 
@@ -293,7 +291,7 @@ msgstr "输入标题"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:41
+#: src/components/EditorWrapper.tsx:44
 #: src/components/ShareDialog.tsx:43
 #: src/components/ShareDialog.tsx:99
 msgid "Export"
@@ -317,11 +315,11 @@ msgstr "全屏"
 msgid "Futuristic"
 msgstr "未来主义的"
 
-#: src/components/Tabs/EditLayoutTab.tsx:148
+#: src/components/Tabs/EditLayoutTab.tsx:165
 msgid "Get More Layouts"
 msgstr "获取更多布局"
 
-#: src/components/Tabs/EditStyleTab.tsx:75
+#: src/components/Tabs/EditStyleTab.tsx:86
 msgid "Get More Themes"
 msgstr "获取更多主题"
 
@@ -374,16 +372,16 @@ msgid "Language"
 msgstr "语言"
 
 #: src/components/Tabs/EditLayoutTab.tsx:69
-#: src/pages/Edit.tsx:95
-#: src/pages/EditHosted.tsx:107
+#: src/pages/Edit.tsx:99
+#: src/pages/EditHosted.tsx:102
 msgid "Layout"
 msgstr "布局"
 
-#: src/components/Tabs/EditLayoutTab.tsx:160
+#: src/components/Tabs/EditLayoutTab.tsx:177
 msgid "Layout is Frozen"
 msgstr "布局被冻结"
 
-#: src/pages/Charts.tsx:738
+#: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "学到更多"
 
@@ -476,6 +474,11 @@ msgstr "剧本"
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "强大的布局算法，让各种形状和大小的图形井然有序"
 
+#: src/components/SharedHeader.tsx:171
+#: src/components/SharedHeader.tsx:381
+msgid "Pricing"
+msgstr "价钱"
+
 #: src/components/ShareDialog.tsx:285
 #: src/components/ShareDialog.tsx:308
 #: src/pages/Charts.tsx:593
@@ -486,7 +489,7 @@ msgstr "公开"
 msgid "Random"
 msgstr "随机"
 
-#: src/components/EditorWrapper.tsx:34
+#: src/components/EditorWrapper.tsx:37
 #: src/components/ShareDialog.tsx:92
 msgid "Read-only"
 msgstr "只读"
@@ -529,7 +532,7 @@ msgstr "从右到左"
 msgid "Roadmap"
 msgstr "路线图"
 
-#: src/components/Tabs/EditMetaTab.tsx:73
+#: src/components/Tabs/EditMetaTab.tsx:71
 msgid "Save"
 msgstr "救球"
 
@@ -550,7 +553,7 @@ msgstr "注册"
 msgid "Spacing"
 msgstr "间距"
 
-#: src/pages/Charts.tsx:727
+#: src/pages/Charts.tsx:723
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能"
 
@@ -566,8 +569,8 @@ msgstr "开始"
 msgid "Status"
 msgstr "状态"
 
-#: src/pages/Edit.tsx:98
-#: src/pages/EditHosted.tsx:110
+#: src/pages/Edit.tsx:104
+#: src/pages/EditHosted.tsx:105
 msgid "Style"
 msgstr "风格"
 
@@ -588,7 +591,7 @@ msgstr "订阅即将到期"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/Tabs/EditStyleTab.tsx:29
+#: src/components/Tabs/EditStyleTab.tsx:30
 msgid "Theme"
 msgstr "风格"
 
@@ -610,7 +613,7 @@ msgstr "从上到下"
 msgid "Try again"
 msgstr "重试"
 
-#: src/components/Tabs/EditLayoutTab.tsx:173
+#: src/components/Tabs/EditLayoutTab.tsx:190
 msgid "Unfreeze"
 msgstr "解冻"
 

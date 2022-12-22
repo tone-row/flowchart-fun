@@ -8,12 +8,12 @@ import {
   FolderOpen,
   Gear,
   Info,
+  Lightning,
   Notebook,
   PencilLine,
   Plus,
   Question,
   Signpost,
-  Star,
   TreeStructure,
   User,
 } from "phosphor-react";
@@ -168,8 +168,8 @@ export const SharedHeader = memo(function SharedHeader() {
               ) : (
                 <HeaderClientLink
                   to="/sponsor"
-                  label={t`Become a Sponsor`}
-                  icon={<Star height={20} width={20} />}
+                  label={t`Pricing`}
+                  icon={<Lightning height={20} width={20} />}
                   aria-current={isSponsorPage ? "page" : undefined}
                   onClick={() => {
                     // track in gtm
@@ -378,8 +378,8 @@ function MobileHeader({
             ) : (
               <HeaderClientLink
                 to="/sponsor"
-                label={t`Become a Sponsor`}
-                icon={<Star height={20} width={20} />}
+                label={t`Pricing`}
+                icon={<Lightning height={20} width={20} />}
                 aria-current={isSponsorPage ? "page" : undefined}
                 onClick={() => {
                   // track event with gtm

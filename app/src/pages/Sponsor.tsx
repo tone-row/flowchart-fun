@@ -24,7 +24,7 @@ import styles from "./Sponsor.module.css";
 export default function Sponsor() {
   return (
     <Box className={styles.Page} p={5} gap={10} pt={10}>
-      <Type className={styles.PageTitle} size={1}>
+      <Type className={styles.PageTitle} size={2}>
         <Trans>
           Sponsor flowchart.fun for{" "}
           <Box as="span" className={styles.orange}>

@@ -115,6 +115,7 @@
     Playbook: "剧本",
     "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
       "强大的布局算法，让各种形状和大小的图形井然有序",
+    Pricing: "价钱",
     Public: "公开",
     Random: "随机",
     "Read-only": "只读",
