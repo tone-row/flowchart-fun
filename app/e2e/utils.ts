@@ -82,3 +82,10 @@ export async function deleteCustomerByEmail(email: string) {
     await stripe.customers.del(customer.id);
   }
 }
+
+export async function changeEditorText(page: Page, text: string) {
+  const monacoEditor = page.locator(".monaco-editor").nth(0);
+  await monacoEditor.click();
+  await page.keyboard.press("Meta+KeyA");
+  await page.keyboard.type(text);
+}

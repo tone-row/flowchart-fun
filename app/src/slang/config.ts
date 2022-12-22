@@ -36,6 +36,7 @@ export const colors = {
   darkHighlight: palette.purple[4],
   headerBtnHover: palette.purple[3],
   greenHsl: "102, 99%, 43%",
+  darkGrey: palette.black[2],
 };
 
 export const darkTheme: typeof colors = {
@@ -56,11 +57,12 @@ export const darkTheme: typeof colors = {
   darkHighlight: palette.purple[2],
   headerBtnHover: palette.purple[3],
   greenHsl: "102, 99%, 43%",
+  darkGrey: palette.white[1],
 };
 
 const config: Partial<SlangConfig> = {
-  baseFontFamily: "Helvetica, 'Helvetica Neue', sans-serif",
-  baseFontSizePx: 17,
+  baseFontFamily: "Karla, Helvetica, 'Helvetica Neue', sans-serif",
+  baseFontSizePx: 18,
   typeScaleBase: 1.25,
   baseFontLineHeight: 1.5,
   baseFontLineHeightMobile: 1.4,

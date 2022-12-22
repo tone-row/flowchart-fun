@@ -1,17 +1,14 @@
 import { t } from "@lingui/macro";
-import { History } from "history";
 import { CSSProperties } from "react";
 import { OptionTypeBase } from "react-select";
+
+export const DEFAULT_GRAPH_PADDING = 6;
 
 export interface SelectOption extends OptionTypeBase {
   value: string;
   label: () => string;
   /** Whether this option should only be presented to sponsors */
   sponsorOnly?: true;
-  /** Whether this option should only be presented to non-sponsors */
-  hideIfSponsor?: true;
-  /** Alternative on click option */
-  handleClick?: (push: History["push"]) => void;
   /** Style for this particular element */
   style?: CSSProperties;
 }
@@ -27,23 +24,10 @@ export const layouts: SelectOption[] = [
   { label: () => t`Grid`, value: "grid" },
   // Elk layouts
   { label: () => "Box", value: "elk-box", sponsorOnly: true },
-  { label: () => "Disco", value: "elk-disco", sponsorOnly: true },
   { label: () => "Force", value: "elk-force", sponsorOnly: true },
   { label: () => "Layered", value: "elk-layered", sponsorOnly: true },
   { label: () => "Tree", value: "elk-mrtree", sponsorOnly: true },
   { label: () => "Stress", value: "elk-stress", sponsorOnly: true },
-  {
-    label: () => t`Get More Layouts`,
-    value: "more",
-    hideIfSponsor: true,
-    handleClick: (push) => {
-      push("/sponsor");
-    },
-    style: {
-      color: "var(--color-highlightColor)",
-      backgroundColor: "hsla(var(--color-brandHsl), 0.2)",
-    },
-  },
 ];
 
 export const directions: SelectOption[] = [
@@ -51,6 +35,13 @@ export const directions: SelectOption[] = [
   { label: () => t`Left to Right`, value: "LR" },
   { label: () => t`Right to Left`, value: "RL" },
   { label: () => t`Bottom to Top`, value: "BT" },
+];
+
+export const elkDirections: SelectOption[] = [
+  { label: () => t`Top to Bottom`, value: "DOWN" },
+  { label: () => t`Left to Right`, value: "RIGHT" },
+  { label: () => t`Right to Left`, value: "LEFT" },
+  { label: () => t`Bottom to Top`, value: "UP" },
 ];
 
 export const themes: SelectOption[] = [
@@ -66,16 +57,4 @@ export const themes: SelectOption[] = [
   { label: () => t`Clay`, value: "clay", sponsorOnly: true },
   { label: () => t`Playbook`, value: "playbook", sponsorOnly: true },
   { label: () => t`Museum`, value: "museum", sponsorOnly: true },
-  {
-    label: () => t`Get More Themes`,
-    value: "more",
-    hideIfSponsor: true,
-    handleClick: (push) => {
-      push("/sponsor");
-    },
-    style: {
-      color: "var(--color-highlightColor)",
-      backgroundColor: "hsla(var(--color-brandHsl), 0.2)",
-    },
-  },
 ];

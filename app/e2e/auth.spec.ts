@@ -6,7 +6,6 @@ import {
   deleteCustomerByEmail,
   getTempEmail,
   getTempEmailMessage,
-  goToPath,
 } from "./utils";
 
 test.describe.configure({
@@ -30,7 +29,7 @@ test.describe("Sign Up", () => {
   test("yearly sign-up", async () => {
     test.setTimeout(240000);
     const plan = "$30 / Year";
-    await page.getByRole("link", { name: "Become a Sponsor" }).click();
+    await page.getByRole("link", { name: "Pricing" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
     await page.getByTestId("email").click();
     email = await getTempEmail();

@@ -22,7 +22,7 @@ export type GraphOptionsObject = {
   background?: string;
 };
 
-export const defaultSpacingFactor = 1.25;
+const defaultSpacingFactor = 1.25;
 
 export const defaultLayout: Required<GraphOptionsObject>["layout"] = {
   name: "dagre",
@@ -34,8 +34,6 @@ export const defaultLayout: Required<GraphOptionsObject>["layout"] = {
 
 export const editorOptions: EditorProps["options"] = {
   minimap: { enabled: false },
-  fontSize: 16,
-  tabSize: 2,
   insertSpaces: true,
   wordBasedSuggestions: false,
   occurrencesHighlight: false,
@@ -48,15 +46,19 @@ export const editorOptions: EditorProps["options"] = {
   hideCursorInOverviewRuler: true,
   matchBrackets: "never",
   selectionHighlight: false,
-  lineHeight: 28,
+  lineHeight: 32,
   lineNumbersMinChars: 3,
   cursorWidth: 2,
   automaticLayout: true,
   lineNumbers: "off",
   contextmenu: false,
+  fontFamily: "monospace",
+  fontSize: 18,
+  tabSize: 2,
 };
 
 export const delimiters = "~~~";
+export const newDelimiters = "=====";
 
 export const LOCAL_STORAGE_SETTINGS_KEY = "flowcharts.fun.user.settings";
 

@@ -21,14 +21,19 @@ msgstr "$3/월"
 msgid "$30 / Year"
 msgstr "$30/년"
 
-#: src/pages/Charts.tsx:354
+#: src/pages/Charts.tsx:351
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
 
-#: src/components/SharedHeader.tsx:179
-#: src/components/SharedHeader.tsx:398
+#: src/components/SharedHeader.tsx:163
+#: src/components/SharedHeader.tsx:373
 msgid "Account"
 msgstr "계정"
+
+#: src/pages/Edit.tsx:113
+#: src/pages/EditHosted.tsx:109
+msgid "Advanced"
+msgstr "고급의"
 
 #: src/pages/Sponsor.tsx:318
 msgid "Already a sponsor? Log in here"
@@ -38,7 +43,7 @@ msgstr "이미 후원중이신가요? 여기서 로그인하세요"
 msgid "Amount"
 msgstr "금액"
 
-#: src/components/Feedback.tsx:99
+#: src/components/Feedback.tsx:110
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접 이메일을 보내주십시오."
 
@@ -46,28 +51,31 @@ msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접
 msgid "Appearance"
 msgstr "외관"
 
-#: src/components/Feedback.tsx:118
+#: src/components/Feedback.tsx:129
 msgid "Back To Editor"
 msgstr "편집기로 돌아가기"
 
+#: src/components/Tabs/EditStyleTab.tsx:44
+msgid "Background"
+msgstr "배경"
+
 #: src/components/Settings.tsx:135
-#: src/components/SharedHeader.tsx:190
-#: src/components/SharedHeader.tsx:409
 #: src/components/SponsorDashboard.tsx:188
 #: src/pages/Sponsor.tsx:305
 msgid "Become a Sponsor"
 msgstr "스폰서 되기"
 
-#: src/components/SharedHeader.tsx:148
-#: src/components/SharedHeader.tsx:374
+#: src/components/SharedHeader.tsx:135
+#: src/components/SharedHeader.tsx:352
 msgid "Blog"
 msgstr "블로그"
 
-#: src/lib/graphOptions.ts:56
+#: src/lib/graphOptions.ts:37
+#: src/lib/graphOptions.ts:44
 msgid "Bottom to Top"
 msgstr "아래에서 위로"
 
-#: src/lib/graphOptions.ts:24
+#: src/lib/graphOptions.ts:19
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
@@ -77,9 +85,9 @@ msgstr "폭 우선"
 #: src/components/SponsorDashboard.tsx:353
 #: src/components/SponsorDashboard.tsx:365
 #: src/components/SponsorDashboard.tsx:409
-#: src/pages/Charts.tsx:245
-#: src/pages/Charts.tsx:517
-#: src/pages/Charts.tsx:567
+#: src/pages/Charts.tsx:243
+#: src/pages/Charts.tsx:514
+#: src/pages/Charts.tsx:564
 msgid "Cancel"
 msgstr "취소"
 
@@ -91,13 +99,13 @@ msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전�
 msgid "Change Email Address"
 msgstr "이메일 주소 변경"
 
-#: src/components/SharedHeader.tsx:155
-#: src/components/SharedHeader.tsx:379
+#: src/components/SharedHeader.tsx:142
+#: src/components/SharedHeader.tsx:357
 msgid "Changelog"
 msgstr "변경 로그"
 
-#: src/components/SharedHeader.tsx:85
-#: src/components/SharedHeader.tsx:344
+#: src/components/SharedHeader.tsx:81
+#: src/components/SharedHeader.tsx:331
 msgid "Charts"
 msgstr "차트"
 
@@ -106,11 +114,11 @@ msgstr "차트"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
-#: src/lib/graphOptions.ts:27
+#: src/lib/graphOptions.ts:22
 msgid "Circle"
 msgstr "원"
 
-#: src/lib/graphOptions.ts:69
+#: src/lib/graphOptions.ts:57
 msgid "Clay"
 msgstr "점토"
 
@@ -123,7 +131,7 @@ msgstr "지우다"
 msgid "Clear text?"
 msgstr "텍스트를 지우시겠습니까?"
 
-#: src/components/CloneButton.tsx:25
+#: src/components/CloneButton.tsx:27
 msgid "Clone"
 msgstr "클론"
 
@@ -131,11 +139,11 @@ msgstr "클론"
 msgid "Close"
 msgstr "닫기"
 
-#: src/lib/graphOptions.ts:68
+#: src/lib/graphOptions.ts:56
 msgid "Comic Book"
 msgstr "만화책"
 
-#: src/lib/graphOptions.ts:26
+#: src/lib/graphOptions.ts:21
 msgid "Concentric"
 msgstr "동심"
 
@@ -143,43 +151,39 @@ msgstr "동심"
 msgid "Confirm New Email"
 msgstr "새 이메일 확인"
 
-#: src/components/GraphOptionsBar.tsx:207
-msgid "Contract"
-msgstr "줄다"
-
-#: src/components/RenameButton.tsx:138
+#: src/components/RenameButton.tsx:139
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
-#: src/components/ShareDialog.tsx:180
-#: src/components/ShareDialog.tsx:181
-#: src/components/ShareDialog.tsx:246
-#: src/pages/Charts.tsx:447
-#: src/pages/Charts.tsx:518
-#: src/pages/Charts.tsx:552
+#: src/components/ShareDialog.tsx:185
+#: src/components/ShareDialog.tsx:186
+#: src/components/ShareDialog.tsx:250
+#: src/pages/Charts.tsx:444
+#: src/pages/Charts.tsx:515
+#: src/pages/Charts.tsx:549
 msgid "Copy"
 msgstr "복사"
 
-#: src/components/GraphContextMenu.tsx:105
+#: src/components/GraphContextMenu.tsx:99
 msgid "Copy PNG Image"
 msgstr "PNG 이미지 복사"
 
-#: src/components/GraphContextMenu.tsx:81
+#: src/components/GraphContextMenu.tsx:76
 msgid "Copy SVG Code"
 msgstr "SVG 코드 복사"
 
-#: src/pages/Charts.tsx:154
-#: src/pages/Charts.tsx:315
-#: src/pages/Charts.tsx:372
+#: src/pages/Charts.tsx:152
+#: src/pages/Charts.tsx:313
+#: src/pages/Charts.tsx:369
 msgid "Create"
 msgstr "만들기"
 
-#: src/lib/queries.ts:162
+#: src/lib/queries.ts:153
 #: src/lib/useDefaultDoc.ts:7
 msgid "Create a link directly using the exact label text"
 msgstr "정확한 레이블 텍스트를 사용하여 직접 링크 만들기"
 
-#: src/pages/Charts.tsx:604
+#: src/pages/Charts.tsx:601
 msgid "Created"
 msgstr "생성됨"
 
@@ -187,7 +191,7 @@ msgstr "생성됨"
 msgid "Customer Portal"
 msgstr "고객 포털"
 
-#: src/lib/graphOptions.ts:61
+#: src/lib/graphOptions.ts:49
 msgid "Dark"
 msgstr "다크"
 
@@ -200,48 +204,57 @@ msgstr "다크 모드"
 msgid "Date"
 msgstr "날짜"
 
-#: src/pages/Charts.tsx:234
-#: src/pages/Charts.tsx:239
-#: src/pages/Charts.tsx:248
-#: src/pages/Charts.tsx:568
+#: src/pages/Charts.tsx:232
+#: src/pages/Charts.tsx:237
+#: src/pages/Charts.tsx:246
+#: src/pages/Charts.tsx:565
 msgid "Delete"
 msgstr "삭제"
 
-#: src/components/GraphOptionsBar.tsx:178
+#: src/components/Tabs/EditLayoutTab.tsx:87
 msgid "Direction"
 msgstr "방향"
+
+#: src/components/Tabs/EditMetaTab.tsx:58
+msgid "Discard"
+msgstr "버리다"
 
 #: src/components/SponsorDashboard.tsx:358
 msgid "Do you want to cancel your subscription?"
 msgstr "구독을 취소하시겠습니까?"
 
-#: src/pages/Charts.tsx:561
+#: src/pages/Charts.tsx:558
 msgid "Do you want to delete this?"
 msgstr "본 항목을 삭제하시겠습니까?"
 
-#: src/components/SharedHeader.tsx:108
-#: src/components/SharedHeader.tsx:353
+#: src/pages/Edit.tsx:94
+#: src/pages/EditHosted.tsx:99
+msgid "Document"
+msgstr "문서"
+
+#: src/components/SharedHeader.tsx:101
+#: src/components/SharedHeader.tsx:337
 msgid "Documentation"
 msgstr "선적 서류 비치"
 
-#: src/components/ShareDialog.tsx:46
+#: src/components/ShareDialog.tsx:51
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/GraphContextMenu.tsx:45
+#: src/components/GraphContextMenu.tsx:42
 msgid "Download JPG"
 msgstr "JPG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:35
+#: src/components/GraphContextMenu.tsx:33
 msgid "Download PNG"
 msgstr "PNG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:55
+#: src/components/GraphContextMenu.tsx:51
 msgid "Download SVG"
 msgstr "SVG 다운로드"
 
-#: src/pages/Charts.tsx:291
-#: src/pages/Charts.tsx:503
+#: src/pages/Charts.tsx:289
+#: src/pages/Charts.tsx:500
 msgid "Duplicate"
 msgstr "복제"
 
@@ -249,47 +262,44 @@ msgstr "복제"
 msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
 msgstr "어떤 기기에서나 차트를 편집할 수 있습니다. 누구와도 공유할 수 있습니다. 한 번 차트를 배포하면 수정사항이 즉각 반영됩니다."
 
-#: src/components/ShareDialog.tsx:87
+#: src/components/ShareDialog.tsx:89
 msgid "Editable"
 msgstr "편집 가능"
 
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:77
-#: src/components/SharedHeader.tsx:338
+#: src/components/SharedHeader.tsx:73
+#: src/components/SharedHeader.tsx:325
 msgid "Editor"
 msgstr "에디터"
 
-#: src/lib/graphOptions.ts:62
+#: src/lib/graphOptions.ts:50
 msgid "Eggs"
 msgstr "달걀"
 
-#: src/components/Feedback.tsx:83
+#: src/components/Feedback.tsx:94
 #: src/components/LoginForm.tsx:53
 msgid "Email"
 msgstr "이메일"
 
-#: src/pages/Charts.tsx:146
-#: src/pages/Charts.tsx:364
-#: src/pages/Charts.tsx:509
+#: src/pages/Charts.tsx:144
+#: src/pages/Charts.tsx:361
+#: src/pages/Charts.tsx:506
 msgid "Enter a title"
 msgstr "제목을 입력하세요"
 
-#: src/lib/graphOptions.ts:63
+#: src/lib/graphOptions.ts:51
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/GraphOptionsBar.tsx:216
-msgid "Expand"
-msgstr "넓히다"
-
-#: src/components/EditorWrapper.tsx:46
-#: src/components/ShareDialog.tsx:38
-#: src/components/ShareDialog.tsx:97
+#: src/components/EditorWrapper.tsx:44
+#: src/components/ShareDialog.tsx:43
+#: src/components/ShareDialog.tsx:99
 msgid "Export"
 msgstr "내보내기"
 
-#: src/components/SharedHeader.tsx:119
-#: src/components/SharedHeader.tsx:363
+#: src/components/Feedback.tsx:74
+#: src/components/SharedHeader.tsx:109
+#: src/components/SharedHeader.tsx:344
 msgid "Feedback"
 msgstr "피드백"
 
@@ -297,28 +307,19 @@ msgstr "피드백"
 msgid "Follow Us"
 msgstr "팔로우하세요"
 
-#: src/components/FreezeLayoutToggle.tsx:34
-#: src/components/FreezeLayoutToggle.tsx:61
-msgid "Freeze Layout"
-msgstr "레이아웃 고정"
-
-#: src/components/FreezeLayoutToggle.tsx:64
-msgid "Freezing your chart allows you to customize the layout by disabling automatic layout."
-msgstr "차트를 고정하면 자동 레이아웃을 비활성화하여 레이아웃을 사용자 지정할 수 있습니다."
-
-#: src/components/ShareDialog.tsx:84
+#: src/components/ShareDialog.tsx:86
 msgid "Fullscreen"
 msgstr "전체 화면"
 
-#: src/lib/graphOptions.ts:67
+#: src/lib/graphOptions.ts:55
 msgid "Futuristic"
 msgstr "미래 지향적"
 
-#: src/lib/graphOptions.ts:38
+#: src/components/Tabs/EditLayoutTab.tsx:165
 msgid "Get More Layouts"
 msgstr "더 많은 레이아웃을 보고 싶어요"
 
-#: src/lib/graphOptions.ts:73
+#: src/components/Tabs/EditStyleTab.tsx:86
 msgid "Get More Themes"
 msgstr "더 많은 테마 받기"
 
@@ -330,16 +331,16 @@ msgstr "플로우차트에 적용할 새로운 스타일을 잠금해제하세�
 msgid "Graph"
 msgstr "그래프"
 
-#: src/lib/graphOptions.ts:29
+#: src/lib/graphOptions.ts:24
 msgid "Grid"
 msgstr "그리드"
 
-#: src/lib/queries.ts:172
+#: src/lib/queries.ts:163
 #: src/lib/useDefaultDoc.ts:17
 msgid "Have fun! 🎉"
 msgstr "즐겨보세요! 🎉"
 
-#: src/components/SharedHeader.tsx:97
+#: src/components/SharedHeader.tsx:90
 msgid "Help"
 msgstr "도움말"
 
@@ -347,22 +348,22 @@ msgstr "도움말"
 msgid "History"
 msgstr "기록"
 
-#: src/components/App.tsx:73
+#: src/components/App.tsx:70
 msgid "Home"
 msgstr "집"
 
-#: src/pages/Charts.tsx:353
-#: src/pages/Charts.tsx:723
+#: src/pages/Charts.tsx:350
+#: src/pages/Charts.tsx:720
 #: src/pages/Sponsor.tsx:43
 msgid "Hosted Charts"
 msgstr "호스트 차트"
 
-#: src/lib/queries.ts:160
+#: src/lib/queries.ts:151
 #: src/lib/useDefaultDoc.ts:5
 msgid "Indenting creates a link to the current line"
 msgstr "들여쓰기는 현재 줄에 대한 링크를 생성합니다"
 
-#: src/components/SharedHeader.tsx:137
+#: src/components/SharedHeader.tsx:124
 msgid "Info"
 msgstr "정보"
 
@@ -370,19 +371,26 @@ msgstr "정보"
 msgid "Language"
 msgstr "언어"
 
-#: src/components/GraphOptionsBar.tsx:150
+#: src/components/Tabs/EditLayoutTab.tsx:69
+#: src/pages/Edit.tsx:99
+#: src/pages/EditHosted.tsx:102
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/pages/Charts.tsx:741
+#: src/components/Tabs/EditLayoutTab.tsx:177
+msgid "Layout is Frozen"
+msgstr "레이아웃이 고정됨"
+
+#: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "더 알아보기"
 
-#: src/lib/graphOptions.ts:54
+#: src/lib/graphOptions.ts:35
+#: src/lib/graphOptions.ts:42
 msgid "Left to Right"
 msgstr "왼쪽에서 오른쪽으로"
 
-#: src/lib/graphOptions.ts:60
+#: src/lib/graphOptions.ts:48
 msgid "Light"
 msgstr "라이트"
 
@@ -391,11 +399,11 @@ msgstr "라이트"
 msgid "Light Mode"
 msgstr "라이트 모드"
 
-#: src/components/ShareDialog.tsx:79
+#: src/components/ShareDialog.tsx:81
 msgid "Link"
 msgstr "링크"
 
-#: src/pages/Charts.tsx:135
+#: src/pages/Charts.tsx:133
 msgid "Local Charts"
 msgstr "로컬 차트"
 
@@ -411,11 +419,11 @@ msgstr "<0>Tone Row</0> 제작"
 msgid "Make a Donation"
 msgstr "기부하기"
 
-#: src/components/ShareDialog.tsx:274
+#: src/components/ShareDialog.tsx:289
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
-#: src/lib/graphOptions.ts:64
+#: src/lib/graphOptions.ts:52
 msgid "Monospace"
 msgstr "Monospace"
 
@@ -427,12 +435,12 @@ msgstr "더 많은 레이아웃"
 msgid "More Themes"
 msgstr "더 많은 테마 보기"
 
-#: src/lib/graphOptions.ts:71
+#: src/lib/graphOptions.ts:59
 msgid "Museum"
 msgstr "박물관"
 
-#: src/pages/Charts.tsx:592
-#: src/pages/Charts.tsx:628
+#: src/pages/Charts.tsx:589
+#: src/pages/Charts.tsx:625
 msgid "Name"
 msgstr "이름"
 
@@ -440,8 +448,8 @@ msgstr "이름"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</0>"
 
-#: src/components/SharedHeader.tsx:66
-#: src/components/SharedHeader.tsx:329
+#: src/components/SharedHeader.tsx:65
+#: src/components/SharedHeader.tsx:319
 msgid "New"
 msgstr "신규"
 
@@ -458,7 +466,7 @@ msgstr "다음 청구 금액"
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
 
-#: src/lib/graphOptions.ts:70
+#: src/lib/graphOptions.ts:58
 msgid "Playbook"
 msgstr "플레이북"
 
@@ -466,31 +474,36 @@ msgstr "플레이북"
 msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
 msgstr "온갖 크기와 모양의 그래프를 질서있게 정리하는 강력한 레이아웃 알고리즘"
 
-#: src/components/ShareDialog.tsx:270
-#: src/components/ShareDialog.tsx:291
-#: src/pages/Charts.tsx:596
+#: src/components/SharedHeader.tsx:171
+#: src/components/SharedHeader.tsx:381
+msgid "Pricing"
+msgstr "가격"
+
+#: src/components/ShareDialog.tsx:285
+#: src/components/ShareDialog.tsx:308
+#: src/pages/Charts.tsx:593
 msgid "Public"
 msgstr "공용"
 
-#: src/lib/graphOptions.ts:28
+#: src/lib/graphOptions.ts:23
 msgid "Random"
 msgstr "무작위"
 
-#: src/components/EditorWrapper.tsx:39
-#: src/components/ShareDialog.tsx:90
+#: src/components/EditorWrapper.tsx:37
+#: src/components/ShareDialog.tsx:92
 msgid "Read-only"
 msgstr "읽기 전용"
 
-#: src/components/RenameButton.tsx:102
 #: src/components/RenameButton.tsx:103
-#: src/components/RenameButton.tsx:109
-#: src/components/RenameButton.tsx:119
-#: src/components/RenameButton.tsx:128
+#: src/components/RenameButton.tsx:104
+#: src/components/RenameButton.tsx:110
+#: src/components/RenameButton.tsx:120
+#: src/components/RenameButton.tsx:129
 msgid "Rename"
 msgstr "이름 바꾸기"
 
-#: src/pages/Charts.tsx:239
-#: src/pages/Charts.tsx:248
+#: src/pages/Charts.tsx:237
+#: src/pages/Charts.tsx:246
 msgid "Reset"
 msgstr "재설정"
 
@@ -501,7 +514,7 @@ msgstr "재설정"
 msgid "Resume Subscription"
 msgstr "구독 재개"
 
-#: src/lib/graphOptions.ts:66
+#: src/lib/graphOptions.ts:54
 msgid "Retro"
 msgstr "레트로"
 
@@ -509,17 +522,22 @@ msgstr "레트로"
 msgid "Return"
 msgstr "반품"
 
-#: src/lib/graphOptions.ts:55
+#: src/lib/graphOptions.ts:36
+#: src/lib/graphOptions.ts:43
 msgid "Right to Left"
 msgstr "오른쪽에서 왼쪽으로"
 
-#: src/components/SharedHeader.tsx:162
-#: src/components/SharedHeader.tsx:384
+#: src/components/SharedHeader.tsx:149
+#: src/components/SharedHeader.tsx:362
 msgid "Roadmap"
 msgstr "로드맵"
 
-#: src/components/SharedHeader.tsx:169
-#: src/components/SharedHeader.tsx:388
+#: src/components/Tabs/EditMetaTab.tsx:71
+msgid "Save"
+msgstr "구하다"
+
+#: src/components/SharedHeader.tsx:156
+#: src/components/SharedHeader.tsx:366
 msgid "Settings"
 msgstr "설정"
 
@@ -531,7 +549,11 @@ msgstr "로그인"
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/pages/Charts.tsx:730
+#: src/components/Tabs/EditLayoutTab.tsx:123
+msgid "Spacing"
+msgstr "간격"
+
+#: src/pages/Charts.tsx:723
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원"
 
@@ -547,8 +569,13 @@ msgstr "시작"
 msgid "Status"
 msgstr "상태"
 
-#: src/components/Feedback.tsx:95
-#: src/components/RenameButton.tsx:157
+#: src/pages/Edit.tsx:104
+#: src/pages/EditHosted.tsx:105
+msgid "Style"
+msgstr "스타일"
+
+#: src/components/Feedback.tsx:106
+#: src/components/RenameButton.tsx:158
 msgid "Submit"
 msgstr "보내다"
 
@@ -560,36 +587,41 @@ msgstr "구독"
 msgid "Subscription will end"
 msgstr "구독이 종료될 예정입니다."
 
-#: src/components/Feedback.tsx:114
+#: src/components/Feedback.tsx:125
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
-#: src/components/GraphOptionsBar.tsx:221
+#: src/components/Tabs/EditStyleTab.tsx:30
 msgid "Theme"
 msgstr "테마"
 
-#: src/pages/Charts.tsx:136
+#: src/pages/Charts.tsx:134
 msgid "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these."
 msgstr "다음의 차트는 이 장치의 이 브라우저에서만 이용하실 수 있습니다.<0/>브라우저를 정리하면 local storage 에서 다음의 차트를 삭제합니다."
 
-#: src/lib/queries.ts:159
+#: src/lib/queries.ts:150
 #: src/lib/useDefaultDoc.ts:4
 msgid "This app works by typing"
 msgstr "이 앱은 타이핑으로 작동합니다"
 
-#: src/lib/graphOptions.ts:53
+#: src/lib/graphOptions.ts:34
+#: src/lib/graphOptions.ts:41
 msgid "Top to Bottom"
 msgstr "위에서 아래로"
 
-#: src/components/App.tsx:67
+#: src/components/App.tsx:64
 msgid "Try again"
 msgstr "다시 시도하세요"
+
+#: src/components/Tabs/EditLayoutTab.tsx:190
+msgid "Unfreeze"
+msgstr "녹이다"
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Update Email"
 msgstr "이메일 업데이트"
 
-#: src/pages/Charts.tsx:600
+#: src/pages/Charts.tsx:597
 msgid "Updated"
 msgstr "업데이트됨"
 
@@ -605,7 +637,7 @@ msgstr "사용자"
 msgid "View on Github"
 msgstr "Github에서 보기"
 
-#: src/components/Feedback.tsx:66
+#: src/components/Feedback.tsx:77
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다!"
 
@@ -613,55 +645,55 @@ msgstr "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다
 msgid "We use cookies to keep you logged in."
 msgstr "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다."
 
-#: src/pages/Charts.tsx:301
+#: src/pages/Charts.tsx:299
 msgid "What would you like to name this copy?"
 msgstr "이 사본의 이름을 무엇으로 지정하시겠습니까?"
 
-#: src/components/Feedback.tsx:73
+#: src/components/Feedback.tsx:84
 msgid "What would you like to share with us?"
 msgstr "무엇을 공유하시겠습니까?"
 
 #: src/components/SponsorDashboard.tsx:191
-#: src/pages/Charts.tsx:378
+#: src/pages/Charts.tsx:375
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오."
 
-#: src/lib/queries.ts:164
+#: src/lib/queries.ts:155
 #: src/lib/useDefaultDoc.ts:9
 msgid "[custom ID] or"
 msgstr "[사용자 지정 ID] 또는"
 
-#: src/lib/queries.ts:161
+#: src/lib/queries.ts:152
 #: src/lib/useDefaultDoc.ts:6
 msgid "any text: before a colon creates a label"
 msgstr "콜론 앞의 모든 텍스트는: 레이블을 생성합니다"
 
-#: src/lib/queries.ts:165
+#: src/lib/queries.ts:156
 #: src/lib/useDefaultDoc.ts:10
 msgid "by adding an %5BID%5D and referencing that"
 msgstr "%5BID%5D를 추가하고 참조하여"
 
-#: src/lib/queries.ts:170
+#: src/lib/queries.ts:161
 #: src/lib/useDefaultDoc.ts:15
 msgid "comments"
 msgstr "댓글"
 
-#: src/lib/queries.ts:163
+#: src/lib/queries.ts:154
 #: src/lib/useDefaultDoc.ts:8
 msgid "like this: (This app works by typing)"
 msgstr "이렇게: (이 앱은 타이핑으로 작동합니다)"
 
-#: src/lib/queries.ts:166
+#: src/lib/queries.ts:157
 #: src/lib/useDefaultDoc.ts:11
 msgid "like this: (custom ID) // You can also use single-line comments"
 msgstr "이렇게: (사용자 지정 ID) // 한 줄을 사용할 수도 있습니다 댓글"
 
-#: src/lib/queries.ts:169
+#: src/lib/queries.ts:160
 #: src/lib/useDefaultDoc.ts:14
 msgid "multiline"
 msgstr "멀티라인"
 
-#: src/lib/queries.ts:168
+#: src/lib/queries.ts:159
 #: src/lib/useDefaultDoc.ts:13
 msgid "or"
 msgstr "또는"

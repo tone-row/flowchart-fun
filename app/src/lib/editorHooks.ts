@@ -43,30 +43,28 @@ export function useEditorHover(
 ) {
   const decorations = useRef<any[]>([]);
   useEffect(() => {
-    if (editorRef.current) {
-      const editor = editorRef.current;
-      if (typeof hoverLineNumber === "number") {
-        decorations.current = editor.deltaDecorations(
-          [],
-          [
-            {
-              range: {
-                startLineNumber: hoverLineNumber,
-                startColumn: 1,
-                endLineNumber: hoverLineNumber,
-                endColumn: 1,
-              },
-              options: {
-                isWholeLine: true,
-                className: "node-hover",
-              },
+    const editor = editorRef.current;
+    if (!editor) return;
+    if (typeof hoverLineNumber === "number") {
+      decorations.current = editor.deltaDecorations(
+        [],
+        [
+          {
+            range: {
+              startLineNumber: hoverLineNumber,
+              startColumn: 1,
+              endLineNumber: hoverLineNumber,
+              endColumn: 1,
             },
-          ]
-        );
-      } else {
-        decorations.current = editor.deltaDecorations(decorations.current, []);
-      }
+            options: {
+              isWholeLine: true,
+              className: "node-hover",
+            },
+          },
+        ]
+      );
+    } else {
+      decorations.current = editor.deltaDecorations(decorations.current, []);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hoverLineNumber]);
+  }, [editorRef, hoverLineNumber]);
 }

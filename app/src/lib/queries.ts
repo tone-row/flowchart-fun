@@ -146,16 +146,7 @@ export function useOrderHistory(customerId?: string, subscriptionId?: string) {
   );
 }
 
-export async function makeChart({
-  name,
-  user_id,
-  chart,
-}: {
-  name: string;
-  user_id: string;
-  chart?: string;
-}) {
-  if (!supabase) return;
+export function getDefaultText() {
   const defaultText = `${t`This app works by typing`}
   ${t`Indenting creates a link to the current line`}
   ${t`any text: before a colon creates a label`}
@@ -171,6 +162,20 @@ ${t`comments`}
 
 ${t`Have fun! 🎉`}
 */`;
+  return defaultText;
+}
+
+export async function makeChart({
+  name,
+  user_id,
+  chart,
+}: {
+  name: string;
+  user_id: string;
+  chart?: string;
+}) {
+  if (!supabase) return;
+  const defaultText = getDefaultText();
 
   return await supabase
     .from("user_charts")
@@ -201,7 +206,7 @@ export function useHostedCharts(iUserId?: string) {
   });
 }
 
-async function getChart(id?: string) {
+export async function getHostedChart(id?: string) {
   if (!id) return;
   if (!supabase) return;
   const { data, error } = await supabase
@@ -215,7 +220,7 @@ async function getChart(id?: string) {
 }
 
 export function useChart(id: string) {
-  return useQuery(["useChart", id], () => getChart(id), {
+  return useQuery(["useChart", id], () => getHostedChart(id), {
     enabled: Boolean(id),
     refetchOnMount: true,
     staleTime: 2000,
@@ -310,7 +315,7 @@ export async function renameChart(id: number, name: string) {
   return data;
 }
 
-export async function makeChartPublic(id: string, isPublic: boolean) {
+export async function makeChartPublic(id: number, isPublic: boolean) {
   if (!supabase) return;
   const { data, error } = await supabase
     .from("user_charts")
@@ -319,10 +324,14 @@ export async function makeChartPublic(id: string, isPublic: boolean) {
 
   if (error) throw error;
   if (!data || data.length === 0) throw new Error("Invalid Chart");
+
   const { is_public, public_id } = data[0];
   if (is_public === isPublic) return;
 
-  let r;
+  const r = {
+    isPublic,
+    publicId: public_id,
+  };
 
   // Generate public id if not already set
   if (!public_id && isPublic) {
@@ -334,17 +343,17 @@ export async function makeChartPublic(id: string, isPublic: boolean) {
     };
     // If unique violation, generate a new public id
     let result;
+    let publicId = "";
     while (error?.code === "23505") {
-      const publicId = await generatePublicId();
+      publicId = await generatePublicId();
       result = await supabase
         .from("user_charts")
         .update({ public_id: publicId, is_public: isPublic })
         .eq("id", id);
       error = result.error;
     }
-
     if (error) throw error;
-    r = result?.data;
+    r.publicId = publicId;
   } else {
     // Just update is_public
     const result = await supabase
@@ -352,7 +361,6 @@ export async function makeChartPublic(id: string, isPublic: boolean) {
       .update({ is_public: isPublic })
       .eq("id", id);
     if (result.error) throw result.error;
-    r = result.data;
   }
 
   return r;
@@ -366,7 +374,7 @@ async function generatePublicId(): Promise<string> {
   return response.json();
 }
 
-async function getPublicChart(publicId: string) {
+export async function getPublicChart(publicId: string) {
   if (!publicId) return;
   const { data, error } = await fetch(`/api/public?id=${publicId}`).then(
     (result) => result.json()

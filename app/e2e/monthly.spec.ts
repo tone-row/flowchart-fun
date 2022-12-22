@@ -9,15 +9,15 @@ import {
   goToPath,
 } from "./utils";
 
-test.describe.only("Monthly Sign Up", () => {
+test.describe("Monthly Sign Up", () => {
   test.beforeEach(async ({ page }) => {
     await goToPath(page);
   });
 
-  test.only("Monthly Sign-up", async ({ page }) => {
+  test("Monthly Sign-up", async ({ page }) => {
     test.setTimeout(240000);
     const plan = "$3 / Month";
-    await page.getByRole("link", { name: "Become a Sponsor" }).click();
+    await page.getByRole("link", { name: "Pricing" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
     await page.getByTestId("email").click();
     const email = await getTempEmail();

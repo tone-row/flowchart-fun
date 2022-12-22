@@ -421,7 +421,7 @@ function TitleAndSummary({
     <Box gap={2}>
       <SectionTitle>{title}</SectionTitle>
       <Box>
-        <Type size={-1}>{summary}</Type>
+        <Type>{summary}</Type>
       </Box>
     </Box>
   );
@@ -716,14 +716,10 @@ function HostedChartsCallout() {
     <Box gap={8} items="start">
       <Box gap={4} items="start">
         <Box gap={2}>
-          <Type size={3}>
+          <SectionTitle>
             <Trans>Hosted Charts</Trans>
-          </Type>
-          <Type
-            className={styles.CalloutInner}
-            size={-1}
-            style={{ maxWidth: 400 }}
-          >
+          </SectionTitle>
+          <Type className={styles.CalloutInner} style={{ maxWidth: 400 }}>
             <Trans>
               Sponsor flowchart.fun for $3 / month or $30 / year to access
               hosted flowcharts and the newest styles and features

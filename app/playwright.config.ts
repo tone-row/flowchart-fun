@@ -3,11 +3,9 @@ import { PlaywrightTestConfig } from "@playwright/test";
 const isDebug = !!process.env.DEBUG;
 
 const isCI = !!process.env.CI;
-console.log("isCI", isCI);
 
 // import .env if CI, or .env.e2e if not
 const envPath = isCI ? ".env" : ".env.e2e";
-console.log("envPath", envPath);
 
 // import dotenv
 import dotenv from "dotenv";
