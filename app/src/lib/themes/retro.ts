@@ -97,6 +97,14 @@ const retro: Theme = {
         "arrow-scale": 0.6,
       },
     },
+    {
+      selector: ":parent",
+      style: {
+        "text-valign": "top",
+        "text-halign": "center",
+        "text-margin-y": `-${padding}`,
+      },
+    },
     ...Object.entries(colors).map<Stylesheet>(([color, value]) => ({
       selector: `node.${color}`,
       style: {

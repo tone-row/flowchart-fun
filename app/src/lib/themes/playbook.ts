@@ -101,6 +101,15 @@ const playbook: Theme = {
         "ghost-opacity": 0.1,
       },
     },
+    {
+      selector: ":parent",
+      style: {
+        "text-valign": "top",
+        "text-halign": "center",
+        "text-margin-y": `-6px`,
+        "text-wrap": "none",
+      },
+    },
     ...Object.entries(playbookColors).map<Stylesheet>(([color, value]) => ({
       selector: `node.${color}`,
       style: {

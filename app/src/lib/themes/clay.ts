@@ -93,6 +93,14 @@ const clay: Theme = {
         "source-distance-from-node": "0px",
       },
     },
+    {
+      selector: ":parent",
+      style: {
+        "text-valign": "top",
+        "text-halign": "center",
+        "text-margin-y": `-${padding}`,
+      },
+    },
     ...Object.entries(clayColors).map<Stylesheet>(([color, value]) => ({
       selector: `node.${color}`,
       style: {

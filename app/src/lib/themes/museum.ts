@@ -106,6 +106,14 @@ const museum: Theme = {
         "arrow-scale": 0.75,
       },
     },
+    {
+      selector: ":parent",
+      style: {
+        "text-valign": "top",
+        "text-halign": "center",
+        "text-margin-y": `-${padding}`,
+      },
+    },
     ...Object.entries(museumColors).map<Stylesheet>(([color, value]) => ({
       selector: `node.${color}`,
       style: {
