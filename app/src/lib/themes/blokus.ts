@@ -95,6 +95,15 @@ const blokus: Theme = {
         "line-gradient-stop-positions": "0% 100%",
       },
     },
+    {
+      selector: ":parent",
+      style: {
+        "text-valign": "top",
+        "text-halign": "center",
+        "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
+      },
+    },
     ...Object.entries(blokusColors).map<Stylesheet>(([color, value]) => ({
       selector: `.${color}`,
       style: {

@@ -89,6 +89,15 @@ const original: Theme = {
         "source-distance-from-node": 0,
       },
     },
+    {
+      selector: ":parent",
+      style: {
+        "text-valign": "top",
+        "text-halign": "center",
+        "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
+      },
+    },
     ...Object.entries(originalColors).map<Stylesheet>(([color, value]) => ({
       selector: `node.${color}`,
       style: {

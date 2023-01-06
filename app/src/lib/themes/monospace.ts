@@ -95,6 +95,15 @@ const monospace: Theme = {
         "line-gradient-stop-positions": "0% 100%",
       },
     },
+    {
+      selector: ":parent",
+      style: {
+        "text-valign": "top",
+        "text-halign": "center",
+        "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
+      },
+    },
     ...Object.entries(monospaceColors).map<Stylesheet>(([color, value]) => ({
       selector: `.${color}`,
       style: {
