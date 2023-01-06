@@ -101,6 +101,7 @@ const blokus: Theme = {
         "text-valign": "top",
         "text-halign": "center",
         "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
       },
     },
     ...Object.entries(blokusColors).map<Stylesheet>(([color, value]) => ({

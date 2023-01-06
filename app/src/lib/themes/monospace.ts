@@ -101,6 +101,7 @@ const monospace: Theme = {
         "text-valign": "top",
         "text-halign": "center",
         "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
       },
     },
     ...Object.entries(monospaceColors).map<Stylesheet>(([color, value]) => ({

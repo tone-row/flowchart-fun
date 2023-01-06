@@ -99,6 +99,7 @@ const clay: Theme = {
         "text-valign": "top",
         "text-halign": "center",
         "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
       },
     },
     ...Object.entries(clayColors).map<Stylesheet>(([color, value]) => ({

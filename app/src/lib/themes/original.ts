@@ -95,6 +95,7 @@ const original: Theme = {
         "text-valign": "top",
         "text-halign": "center",
         "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
       },
     },
     ...Object.entries(originalColors).map<Stylesheet>(([color, value]) => ({

@@ -182,7 +182,6 @@ function initializeGraph({
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
 }) {
   try {
-    console.log("initializing graph");
     errorCatcher.current = cytoscape();
     cy.current = cytoscape({
       container: document.getElementById("cy"), // container to render in
@@ -266,7 +265,6 @@ function getGraphUpdater({
     if (!errorCatcher.current) return;
     const doc = _doc || useDoc.getState();
     let elements: cytoscape.ElementDefinition[] = [];
-    console.log("Updating Graph...");
 
     try {
       const layout = getLayout(doc);
@@ -330,7 +328,6 @@ function getStyleUpdater({
     if (!cy.current) return;
     if (!errorCatcher.current) return;
     try {
-      console.log("updating style");
       // Prepare Styles
       const style = getCytoStyle(theme, getUserStyle());
 

@@ -125,6 +125,7 @@ const futuristic: Theme = {
         "text-valign": "top",
         "text-halign": "center",
         "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
       },
     },
     ...Object.entries(colors).map<Stylesheet>(([color, value]) => ({

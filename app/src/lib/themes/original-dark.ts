@@ -106,6 +106,7 @@ const originalDark: Theme = {
         "text-valign": "top",
         "text-halign": "center",
         "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
       },
     },
     ...Object.entries(originalDarkColors).map<Stylesheet>(([color, value]) => ({
