@@ -100,6 +100,15 @@ const originalDark: Theme = {
         "source-distance-from-node": 2,
       },
     },
+    {
+      selector: ":parent",
+      style: {
+        "text-valign": "top",
+        "text-halign": "center",
+        "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
+      },
+    },
     ...Object.entries(originalDarkColors).map<Stylesheet>(([color, value]) => ({
       selector: `node.${color}`,
       style: {

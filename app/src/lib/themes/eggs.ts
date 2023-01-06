@@ -88,6 +88,15 @@ const eggs: Theme = {
         "edge-text-rotation": "autorotate",
       },
     },
+    {
+      selector: ":parent",
+      style: {
+        "text-valign": "top",
+        "text-halign": "center",
+        "text-margin-y": `-${padding}`,
+        "text-wrap": "none",
+      },
+    },
     ...Object.entries(eggsColors).map<Stylesheet>(([color, value]) => ({
       selector: `node.${color}`,
       style: {

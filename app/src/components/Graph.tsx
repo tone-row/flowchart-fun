@@ -25,13 +25,12 @@ import { useThemeStore } from "../lib/graphThemes";
 import { graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
 import { getAnimationSettings } from "../lib/hooks";
-import { parseText } from "../lib/parseText";
+import { Parsers, universalParse, useParser } from "../lib/parsers";
 import { Doc, useDoc, useParseError } from "../lib/prepareChart";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
 import { useGraphStore } from "../lib/useGraphStore";
 import { useHoverLine } from "../lib/useHoverLine";
-import { stripComments } from "../lib/utils";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
@@ -61,7 +60,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const theme = useThemeStore();
   const bg = useDoc((state) => state.meta?.background ?? theme.bg) as string;
   const getSize = useRef<TGetSize>(getGetSize(theme));
-
+  const parser = useParser();
   const handleDragFree = useCallback(() => {
     const nodePositions = getNodePositionsFromCy();
     useDoc.setState((state) => {
@@ -129,13 +128,17 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   }, []);
 
   const throttleUpdate = useMemo(
-    () => getGraphUpdater({ cy, errorCatcher, graphInitialized, getSize }),
-    []
+    () =>
+      getGraphUpdater({ cy, errorCatcher, graphInitialized, getSize, parser }),
+    [parser]
   );
 
   useEffect(() => {
     throttleUpdate();
-    return useDoc.subscribe(throttleUpdate);
+    const unsubscribe = useDoc.subscribe((doc) => {
+      throttleUpdate(doc);
+    });
+    return unsubscribe;
   }, [throttleUpdate]);
 
   // Update Graph when Sponsor Layouts Load
@@ -249,11 +252,13 @@ function getGraphUpdater({
   errorCatcher,
   graphInitialized,
   getSize,
+  parser,
 }: {
   cy: MutableRefObject<cytoscape.Core | undefined>;
   errorCatcher: MutableRefObject<cytoscape.Core | undefined>;
   graphInitialized: MutableRefObject<boolean>;
   getSize: MutableRefObject<TGetSize>;
+  parser: Parsers;
 }) {
   return throttle((_doc?: Doc) => {
     if (!cy.current) return;
@@ -263,7 +268,9 @@ function getGraphUpdater({
 
     try {
       const layout = getLayout(doc);
-      elements = parseText(stripComments(doc.text), getSize.current);
+
+      elements = universalParse(parser, doc.text, getSize.current);
+
       // Test
       errorCatcher.current.json({ elements });
       // TODO: what happens if you add animate false and run() here?
