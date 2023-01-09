@@ -7,6 +7,7 @@ import { getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
+import { parsers, useParser } from "../../lib/parsers";
 import { useDoc } from "../../lib/prepareChart";
 import styles from "./EditLayoutTab.module.css";
 import {
@@ -61,11 +62,29 @@ export function EditLayoutTab() {
     spacingFactor = layout.spacingFactor;
   }
 
+  const parser = useParser();
+  const parserOption = parsers.find((p) => p.value === parser);
+  if (!parserOption) throw new Error("Invalid parser");
+
   if (frozen) return <FrozenLayout />;
 
   return (
     <WithLowerChild>
       <TabOptionsGrid>
+        <OptionWithLabel label={t`Syntax`}>
+          <CustomSelect
+            niceName={parserOption.label()}
+            options={parsers}
+            value={parser}
+            onValueChange={(parser) => {
+              useDoc.setState((state) => {
+                return produce(state, (draft) => {
+                  draft.meta.parser = parser;
+                });
+              });
+            }}
+          />
+        </OptionWithLabel>
         <OptionWithLabel label={t`Layout`}>
           <CustomSelect
             niceName={layoutNiceName}
