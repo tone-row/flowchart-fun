@@ -1,16 +1,15 @@
 import { t } from "@lingui/macro";
 import { CSSProperties } from "react";
-import { OptionTypeBase } from "react-select";
 
 export const DEFAULT_GRAPH_PADDING = 6;
 
-export interface SelectOption extends OptionTypeBase {
+export interface SelectOption {
   value: string;
   label: () => string;
   /** Whether this option should only be presented to sponsors */
   sponsorOnly?: true;
   /** Style for this particular element */
-  style?: CSSProperties;
+  style?: CSSProperties; // TODO: is this still used?
 }
 
 export const layouts: SelectOption[] = [

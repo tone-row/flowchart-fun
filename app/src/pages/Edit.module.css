@@ -19,8 +19,7 @@
 }
 
 .TabsList button {
-  padding: calc(var(--spacer-px) * 2) calc(var(--spacer-px) * 3)
-    calc(var(--spacer-px) * 2 - 4px);
+  padding: calc(var(--spacer-px) * 2) calc(var(--spacer-px) * 3);
   border-radius: 3px 3px 0 0;
   border: 1px solid var(--color-uiAccent);
   border-width: 1px 1px 0 1px;

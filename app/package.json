@@ -94,7 +94,6 @@
     "react-query": "^3.26.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
-    "react-select": "^4.3.1",
     "react-use-localstorage": "^3.5.3",
     "shared": "workspace:*",
     "stripe": "^8.179.0",
