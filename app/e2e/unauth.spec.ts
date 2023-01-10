@@ -457,6 +457,25 @@ test.describe("unauth", () => {
       await page.screenshot({ path: "ERROR.png" });
     }
   });
+
+  test("Can toggle Syntax", async ({ page }) => {
+    await page.getByTestId("Editor Tab: Layout").click();
+    await page.getByRole("combobox").filter({ hasText: "v1" }).click();
+    await page
+      .getByRole("option")
+      .filter({ hasText: "graph-selector" })
+      .click();
+    await expect(
+      page.getByRole("combobox").filter({ hasText: "graph-selector" })
+    ).toBeVisible();
+    await page.getByRole("button", { name: "Export" }).click();
+    const input = page.getByTestId("Copy Fullscreen");
+    // get input value
+    const value = await input.evaluate((el) => (el as HTMLInputElement).value);
+    expect(value).toContain(
+      "CoCwlgzgBAhgDnKB3A9gJwNbQEYE8oAuucYAdgOYBQUUAkqQCYCmpBZ5UAxmkzAU9BhQANmQyEUhEEy4BXND1YiyTarFL5+ADwIAuKNiYAzdDKGcUwlKS48+A2CJiHhagMJ3+j0aXEMwPJwEwviyEOxSMkxaMEFOLoTRBGo0ohgyBOAQ+gAUoJCwCMjoWAaaxOwAlClQANqcYQQoALZ0ACIAulDoNTR4sAz+FOpQAKQArABCtG0TbeoMUDxGTIqcEZl8vTTK6VKQuQ0QTa0zlVAA9BdQAJooslwwNjDCEJJhMuEUwkwAtD4yCzNZosAgQSgXABUlB6zVkwjYAMoQJBrHBlAAEjAAG4yIyyUgAQiggB4NwCR+5RIRdKJQALz0+mUADeagARHAYGgIKtWfpWeQ0PAQL9uT8guhWZQAL50hm0oA"
+    );
+  });
 });
 
 async function openExportDialog(page: Page) {

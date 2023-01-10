@@ -2,6 +2,7 @@ import { ElementDefinition } from "cytoscape";
 import { parse, toCytoscapeElements } from "graph-selector";
 
 import { TGetSize } from "./getGetSize";
+import { SelectOption } from "./graphOptions";
 import { parseText } from "./parseText";
 import { useDoc } from "./prepareChart";
 import { stripComments } from "./utils";
@@ -48,3 +49,14 @@ export function universalParse(
       throw new Error(`Unknown parser: ${parser}`);
   }
 }
+
+export const parsers: SelectOption[] = [
+  {
+    label: () => "v1",
+    value: "v1",
+  },
+  {
+    label: () => "graph-selector",
+    value: "graph-selector",
+  },
+];
