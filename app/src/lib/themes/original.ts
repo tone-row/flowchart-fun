@@ -21,11 +21,13 @@ const backgroundColor = originalColors.white;
 const arrowColor = originalColors.black;
 const lineHeight = 1.25;
 const padding = "6px";
+const foregroundColor = originalColors.black;
 
 const arrowWidth = 0.75;
 const original: Theme = {
   value: "original",
   bg: backgroundColor,
+  fg: foregroundColor,
   font: {
     fontFamily,
     fontSize,

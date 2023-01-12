@@ -30,6 +30,7 @@ const edgeLabelBackgroundColor = backgroundColor;
 const clay: Theme = {
   value: "clay",
   bg: backgroundColor,
+  fg: nodeLabelColor,
   minWidth: 0,
   minHeight: 0,
   font: {

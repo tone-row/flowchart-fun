@@ -28,6 +28,7 @@ const arrowWidth = borderWidth;
 const originalDark: Theme = {
   value: "original-dark",
   bg: backgroundColor,
+  fg: color,
   minHeight: 4,
   minWidth: 4,
   font: {

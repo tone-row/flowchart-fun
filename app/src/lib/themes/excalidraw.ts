@@ -31,6 +31,7 @@ const excalidraw: Theme = {
   },
   value: "excalidraw",
   bg: backgroundColor,
+  fg: excalidrawColors.black,
   safeBg: backgroundColor,
   minWidth: 0,
   minHeight: 0,
