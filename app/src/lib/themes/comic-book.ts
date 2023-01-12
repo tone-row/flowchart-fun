@@ -10,7 +10,7 @@ const colors = {
   yellow: "#F6D883",
   blue: "#1f75ff",
   orange: "#EC7957",
-  purple: "#3e2bef",
+  purple: "#946ded",
   red: "#e33645",
   gray: "#cacaca",
 };
@@ -18,7 +18,7 @@ const colors = {
 const fontFamily = "Permanent Marker";
 const fontSize = 10;
 const backgroundColor = colors.white;
-const arrowColor = "#6BE8F2";
+const arrowColor = "rgb(163, 184, 186)";
 const lineHeight = 1.2;
 const padding = 5;
 const borderWidth = 1.88;
@@ -26,6 +26,7 @@ const borderWidth = 1.88;
 const comicBook: Theme = {
   value: "comic-book",
   bg: backgroundColor,
+  fg: colors.black,
   minWidth: 0,
   minHeight: 0,
   font: {
@@ -52,7 +53,6 @@ const comicBook: Theme = {
         "font-size": fontSize,
         "border-color": arrowColor,
         color: colors.black,
-        "text-justification": "left",
         "text-margin-y": -1,
         label: "data(label)",
         "text-wrap": "wrap",
@@ -74,6 +74,7 @@ const comicBook: Theme = {
         "line-color": arrowColor,
         label: "data(label)",
         color: colors.black,
+        "line-opacity": 0.5,
         "source-endpoint": "inside-to-node",
         "font-size": fontSize,
         "text-valign": "center",

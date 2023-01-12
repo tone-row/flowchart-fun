@@ -33,6 +33,7 @@ const underlayColor = borderColor;
 const museum: Theme = {
   value: "museum",
   bg: backgroundColor,
+  fg: nodeLabelColor,
   minWidth: 0,
   minHeight: 0,
   font: {

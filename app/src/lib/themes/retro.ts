@@ -29,6 +29,7 @@ const borderColor = arrowColor;
 const retro: Theme = {
   value: "retro",
   bg: backgroundColor,
+  fg: nodeLabelColor,
   minWidth: 0,
   minHeight: 0,
   font: {

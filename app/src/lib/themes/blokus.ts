@@ -26,6 +26,7 @@ const edgeWidth = 1.5;
 const blokus: Theme = {
   value: "blokus",
   bg: backgroundColor,
+  fg: textColor,
   minHeight: 0,
   minWidth: 0,
   font: {

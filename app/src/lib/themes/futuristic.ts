@@ -30,14 +30,15 @@ const colors2 = {
 const fontFamily = "Space Mono";
 const fontSize = 10;
 const backgroundColor = colors2.white;
-const arrowColor = "#EE1416";
+const arrowColor = colors.gray;
 const lineHeight = 1.2;
 const padding = "8px";
-const borderWidth = 2;
+const borderWidth = 1;
 
 const futuristic: Theme = {
   value: "futuristic",
   bg: backgroundColor,
+  fg: colors.black,
   minWidth: 0,
   minHeight: 0,
   font: {
@@ -66,10 +67,10 @@ const futuristic: Theme = {
         "font-size": fontSize,
         "border-color": arrowColor,
         color: colors.black,
-        "text-justification": "left",
+        // "text-justification": "left",
         label: "data(label)",
         "text-wrap": "wrap",
-        "text-max-width": "data(width)",
+        // "text-max-width": "data(width)",
         "text-valign": "center",
         shape: "rectangle",
         "padding-left": padding,
@@ -101,10 +102,10 @@ const futuristic: Theme = {
         "text-background-shape": "rectangle",
         "text-margin-y": -11,
         // "edge-text-rotation": "autorotate",
-        "source-distance-from-node": 13,
+        "source-distance-from-node": 0,
         "target-distance-from-node": 0,
         "target-arrow-shape": "triangle",
-        "target-arrow-color": colors.black,
+        "target-arrow-color": arrowColor,
         "target-underlay-color": "#000000",
         "target-underlay-padding": 3.5,
         "target-underlay-opacity": 1,
@@ -113,10 +114,10 @@ const futuristic: Theme = {
         "arrow-scale": 1.444,
 
         // Edge
-        "underlay-color": "#000000",
-        "underlay-padding": 3.5,
-        "underlay-opacity": 1,
-        "underlay-shape": "roundrectangle",
+        // "underlay-color": "#000000",
+        // "underlay-padding": 3.5,
+        // "underlay-opacity": 1,
+        // "underlay-shape": "roundrectangle",
       },
     },
     {

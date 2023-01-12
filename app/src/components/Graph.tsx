@@ -1,4 +1,10 @@
-import { Core, CytoscapeOptions, EdgeSingular, NodeSingular } from "cytoscape";
+import {
+  Core,
+  CytoscapeOptions,
+  EdgeSingular,
+  NodeSingular,
+  Stylesheet,
+} from "cytoscape";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
@@ -111,21 +117,29 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   }, [handleDragFree]);
 
   // Apply theme on initial load
-  useEffect(() => {
-    getStyleUpdater({ cy, errorCatcher })(theme);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   getStyleUpdater({ cy, errorCatcher, bg })(theme);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
+  const throttleStyleUpdate = useMemo(() => {
+    const updater = getStyleUpdater({ cy, errorCatcher, bg });
+    // Run it once based on the current state of the theme
+    const theme = useThemeStore.getState();
+    updater(theme);
+    return updater;
+  }, [bg]);
 
   // Then subscribe to theme updates and update styles
   useEffect(() => {
-    const throttleStyleUpdate = getStyleUpdater({ cy, errorCatcher });
     return useThemeStore.subscribe((theme) => {
+      // TODO: test that we don't have more than one listener running at a time
       // update the ref to a getSize function used inside the layout updater
       // this is to avoid superfluous re-renders
       getSize.current = getGetSize(theme);
       throttleStyleUpdate(theme);
     });
-  }, []);
+  }, [throttleStyleUpdate]);
 
   const throttleUpdate = useMemo(
     () =>
@@ -183,13 +197,14 @@ function initializeGraph({
 }) {
   try {
     errorCatcher.current = cytoscape();
+    const bg = (useDoc.getState().meta?.background as string) ?? original.bg;
     cy.current = cytoscape({
       container: document.getElementById("cy"), // container to render in
       layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
       elements: [],
       // TODO: shouldn't this load the user's style as well?
       // TODO: not even loading the real theme... this seems sus
-      style: getCytoStyle(original),
+      style: getCytoStyle(original, getUserStyle(), bg),
       userZoomingEnabled: true,
       userPanningEnabled: true,
       boxSelectionEnabled: false,
@@ -320,16 +335,18 @@ function getGraphUpdater({
 function getStyleUpdater({
   cy,
   errorCatcher,
+  bg,
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
+  bg?: string;
 }) {
   return throttle((theme: Theme) => {
     if (!cy.current) return;
     if (!errorCatcher.current) return;
     try {
       // Prepare Styles
-      const style = getCytoStyle(theme, getUserStyle());
+      const style = getCytoStyle(theme, getUserStyle(), bg);
 
       // Test Error First
       errorCatcher.current.json({ style });
@@ -355,11 +372,36 @@ function getStyleUpdater({
   }, 333);
 }
 
+/**
+ * Returns the style object to be given to cytoscape.
+ * Merges the theme style with the users style.
+ */
 function getCytoStyle(
   theme: Theme,
-  userStyle: cytoscape.Stylesheet[] = []
+  userStyle: cytoscape.Stylesheet[] = [],
+  bg?: string
 ): CytoscapeOptions["style"] {
-  return [...theme.styles, ...userStyle, ...graphUtilityClasses];
+  const bgOverrides: Stylesheet[] = [];
+  if (bg) {
+    bgOverrides.push({
+      selector: "edge",
+      style: {
+        "text-background-color": bg,
+      },
+    });
+    bgOverrides.push({
+      selector: ":parent",
+      style: {
+        color: theme.fg,
+      },
+    });
+  }
+  return [
+    ...theme.styles,
+    ...bgOverrides,
+    ...userStyle,
+    ...graphUtilityClasses,
+  ];
 }
 
 function sanitizeMessage(
