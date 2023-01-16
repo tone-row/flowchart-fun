@@ -78,9 +78,11 @@ declare global {
 </html>
 
 <style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 	:root {
 		--blue-100: #EEF0FF;
 		--blue-500: #6C7DFF;
+		--blue-500-hsl: 233deg 100% 70%;
 		--grey: #737373;
 		--border-radius: 3px;
 		--shadow-color: 233deg 30% 70%;
@@ -108,14 +110,14 @@ declare global {
 	}
 
 	html {
-		font-family: Inter, system-ui, sans-serif;
+		font-family: Karla, Inter, system-ui, sans-serif;
 		line-height: 1.5;
-		font-size: 14px;
+		font-size: 16px;
 	}
 
 	@media (min-width: 1044px) {
 		html {
-			font-size: 16px;
+			font-size: 18px;
 		}
 	}
 
@@ -140,31 +142,6 @@ declare global {
 		background-attachment: fixed, fixed, fixed;
 		background-origin: padding-box, padding-box, padding-box;
 		background-clip: border-box, border-box, border-box;
-	}
-
-	body::after {
-		content: "";
-		display: block;
-		height: 33vh;
-		background-image: linear-gradient(
-			180deg,
-			hsl(233deg 100% 97%) 0%,
-			hsl(233deg 100% 94%) 21%,
-			hsl(233deg 100% 91%) 30%,
-			hsl(234deg 100% 88%) 39%,
-			hsl(234deg 100% 86%) 46%,
-			hsl(234deg 100% 83%) 54%,
-			hsl(234deg 100% 80%) 61%,
-			hsl(234deg 100% 77%) 69%,
-			hsl(234deg 100% 74%) 79%,
-			hsl(233deg 100% 71%) 100%
-		);
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		z-index: -1;
-		opacity: 0.2;
 	}
 
 	h1 {
@@ -212,7 +189,7 @@ declare global {
 		}
 		
 		:root {
-			--total: min(max(1000px, 85%), 1400px);
+			--total: min(max(1000px, 90%), 1400px);
 		}
 		header {
 			padding-block: 40px;

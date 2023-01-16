@@ -11,7 +11,7 @@ const posts = (await Astro.glob('./post/*.mdx')).map((post) => {
 	const description = frontmatter.description;
 	const numberDate = Number(frontmatter.publishDate);
 	return { title, slug, publishDate, description, date, numberDate };
-}).sort((a, b) => a.numberDate - b.numberDate);
+}).sort((a, b) => b.numberDate - a.numberDate);
 ---
 
 <Layout title="Flowchart Fun Blog">
