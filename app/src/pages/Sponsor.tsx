@@ -93,7 +93,7 @@ export default function Sponsor() {
                 plan === "monthly" ? t`$3.00/month` : t`$30.00/year (save 20%)`
               }
               showSignUp
-              hash="#annually"
+              hash={plan === "annually" ? "#annually" : ""}
               features={[
                 t`Unlimited Local Charts`,
                 t`Export to Common Image Formats`,

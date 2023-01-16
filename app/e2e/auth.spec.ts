@@ -31,6 +31,7 @@ test.describe("Sign Up", () => {
     await page.getByRole("link", { name: "Pricing" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
     await page.getByRole("button", { name: "Annually" }).click();
+    await page.getByRole("link", { name: "Sign Up Now" }).first().click();
     await expect(page).toHaveURL(`${BASE_URL}/i#annually`);
 
     await page.getByTestId("email").click();
