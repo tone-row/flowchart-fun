@@ -93,6 +93,7 @@ export default function Sponsor() {
                 plan === "monthly" ? t`$3.00/month` : t`$30.00/year (save 20%)`
               }
               showSignUp
+              hash="#annually"
               features={[
                 t`Unlimited Local Charts`,
                 t`Export to Common Image Formats`,
@@ -168,7 +169,7 @@ export default function Sponsor() {
           </Type>
           <Box
             as={Link}
-            to="/i"
+            to={`/i${plan === "annually" ? "#annually" : ""}`}
             px={8}
             py={4}
             rad={3}
@@ -240,11 +241,13 @@ function Plan({
   price,
   features,
   showSignUp,
+  hash = "",
 }: {
   title: string;
   price?: string;
   features: string[];
   showSignUp?: boolean;
+  hash?: string;
 }) {
   return (
     <Box className={styles.plan} gap={4} items="start" rad={5} p={4}>
@@ -274,7 +277,7 @@ function Plan({
       {showSignUp && (
         <Box
           as={Link}
-          to="/i"
+          to={`/i${hash}`}
           px={4}
           py={3}
           rad={2}

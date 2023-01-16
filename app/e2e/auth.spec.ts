@@ -28,12 +28,15 @@ test.afterAll(async () => {
 test.describe("Sign Up", () => {
   test("yearly sign-up", async () => {
     test.setTimeout(240000);
-    const plan = "$30 / Year";
     await page.getByRole("link", { name: "Pricing" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
+    await page.getByRole("button", { name: "Annually" }).click();
+    await expect(page).toHaveURL(`${BASE_URL}/i#annually`);
+
     await page.getByTestId("email").click();
     email = await getTempEmail();
     await page.getByTestId("email").fill(email);
+    const plan = "$30 / Year";
     await page.getByRole("radio", { name: plan }).click();
 
     const iframe = page.frameLocator("iframe").first();

@@ -60,8 +60,13 @@ type SignUpFormData = {
 function SignUpForm() {
   const stripe = useStripe();
   const elements = useElements();
+  // check if hash === "#annually"
+  const initialAnnually = window.location.hash === "#annually";
   const { register, handleSubmit, control } = useForm<SignUpFormData>({
-    defaultValues: { subscription: "monthly", email: "" },
+    defaultValues: {
+      subscription: initialAnnually ? "yearly" : "monthly",
+      email: "",
+    },
   });
   const { theme } = useContext(AppContext);
   const [success, setSuccess] = useState(false);
