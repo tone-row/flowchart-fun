@@ -42,6 +42,7 @@ export const SharedHeader = memo(function SharedHeader() {
   const isSettingsPage = pathname === "/s";
   const isAccountPage = pathname === "/a";
   const isFeedbackPage = pathname === "/o";
+  const isLogInPage = pathname === "/l";
   const isEditor =
     !isDocsPage &&
     !isSponsorPage &&
@@ -166,21 +167,29 @@ export const SharedHeader = memo(function SharedHeader() {
                   to="/a"
                 />
               ) : (
-                <HeaderClientLink
-                  to="/sponsor"
-                  label={t`Pricing`}
-                  icon={<Lightning height={20} width={20} />}
-                  aria-current={isSponsorPage ? "page" : undefined}
-                  onClick={() => {
-                    // track in gtm
-                    if (window?.dataLayer)
-                      window.dataLayer.push({
-                        event: "sponsor",
-                        action: "click",
-                        label: "header",
-                      });
-                  }}
-                />
+                <>
+                  <HeaderClientLink
+                    to="/sponsor"
+                    label={t`Pricing`}
+                    icon={<Lightning height={20} width={20} />}
+                    aria-current={isSponsorPage ? "page" : undefined}
+                    onClick={() => {
+                      // track in gtm
+                      if (window?.dataLayer)
+                        window.dataLayer.push({
+                          event: "sponsor",
+                          action: "click",
+                          label: "header",
+                        });
+                    }}
+                  />
+                  <HeaderClientLink
+                    to="/l"
+                    label={t`Log In`}
+                    icon={<User height={20} width={20} />}
+                    aria-current={isLogInPage ? "page" : undefined}
+                  />
+                </>
               )}
             </nav>
           </NavigationMenu.List>

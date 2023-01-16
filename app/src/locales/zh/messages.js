@@ -1,7 +1,9 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "3 美元/月",
+    "$3.00/month": "$3.00/月",
     "$30 / Year": "30 美元 / 年",
+    "$30.00/year (save 20%)": "$30.00/年（节省 20%）",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。",
     Account: "帐户",
@@ -13,6 +15,7 @@
       ["0"],
       "。",
     ],
+    Annually: "每年",
     Appearance: "外观",
     "Back To Editor": "返回编辑器",
     Background: "背景",
@@ -28,6 +31,8 @@
     Charts: "图表",
     "Check your email for a link to log in. You can close this window.":
       "检查您的电子邮件以获取登录链接。您可以关闭此窗口。",
+    "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
+      "选择您的图表分享方式：完全访问权限，仅编辑，或仅浏览。决定谁能对您的工作做出更改。",
     Circle: "圆圈",
     Clay: "粘土",
     Clear: "清除",
@@ -45,7 +50,10 @@
     "Create a link directly using the exact label text":
       "使用完全一样的标签文本，直接创建链接",
     Created: "已创建",
+    "Custom Sharing Options": "自定义分享选项",
     "Customer Portal": "客户门户",
+    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
+      "使用更多布局和主题选项自定义图表的外观和观感，帮助您创建专业而闲心悦目的示意图。",
     Dark: "深色",
     "Dark Mode": "深色模式",
     Date: "日期",
@@ -61,8 +69,7 @@
     "Download PNG": "下载 PNG",
     "Download SVG": "下载 SVG",
     Duplicate: "复制",
-    "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes.":
-      "在任意设备上编辑图表；与任何人分享这些图表；仅需发布一次图表，它们会自动更新您的更改。",
+    "Dynamic Share Links": "动态分享链接",
     Editable: "可编辑",
     Editor: "编辑器",
     Eggs: "蛋",
@@ -70,14 +77,15 @@
     "Enter a title": "输入标题",
     Excalidraw: "Excalidraw",
     Export: "导出",
+    "Export to Common Image Formats": "导出为常见图片格式",
     Feedback: "反馈",
+    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
+      "Flowchart Fun 可以快速且轻松地以视觉方式传达您的流程。",
     "Follow Us": "关注我们",
     Fullscreen: "全屏",
     Futuristic: "未来主义的",
     "Get More Layouts": "获取更多布局",
     "Get More Themes": "获取更多主题",
-    "Get access to alternative styles for your flowcharts":
-      "获取流程图的替代样式",
     Graph: "图表",
     Grid: "网格",
     "Have fun! 🎉": "玩得开心！🎉",
@@ -91,19 +99,22 @@
     Language: "语言",
     Layout: "布局",
     "Layout is Frozen": "布局被冻结",
+    "Layouts and Themes": "布局和主题",
     "Learn More": "学到更多",
     "Left to Right": "从左到右",
     Light: "浅色",
     "Light Mode": "浅色模式",
     Link: "链接",
     "Local Charts": "本地的图表",
+    "Log In": "登录",
     "Log Out": "登出",
     "Made by <0>Tone Row</0>": "由 <0>Tone Row</0> 制作",
     "Make a Donation": "捐款",
     "Make publicly accessible": "设为公开访问",
     Monospace: "Monospace",
+    Monthly: "每月",
     "More Layouts": "更多布局",
-    "More Themes": "更多主题",
+    "More Themes and Fonts": "更多主题和字体",
     Museum: "博物馆",
     Name: "姓名",
     "Need Help? <0>Check out our documentation.</0>":
@@ -112,9 +123,8 @@
     "New Email": "新邮件",
     "Next charge": "下次扣费",
     "Open Customer Portal": "打开客户门户",
+    Plans: "计划",
     Playbook: "剧本",
-    "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
-      "强大的布局算法，让各种形状和大小的图形井然有序",
     Pricing: "价钱",
     Public: "公开",
     Random: "随机",
@@ -127,20 +137,27 @@
     "Right to Left": "从右到左",
     Roadmap: "路线图",
     Save: "救球",
+    "Say goodbye to tedious flowchart creation": "告别繁琐的流程图创建",
     Settings: "设置",
+    "Shape Libraries": "形状库",
+    "Share with Full Access, Edit-only, or View-only Permissions":
+      "以完全访问权限、仅编辑权限或仅查看权限共享",
     "Sign In": "登录",
     "Sign Up": "注册",
+    "Sign Up Now": "马上注册",
     Spacing: "间距",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能",
-    "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
-      "赞助 <0>$3 / 月</0> 或 <1>$30 / 年</1> 的流程图.fun 以获得访问...",
     Start: "开始",
+    "Static Share Links": "静态分享链接",
     Status: "状态",
+    "Streamline your workflow and simplify your process visualization with Flowchart Fun":
+      "使用 Flowchart Fun，简化您的工作流程和过程可视化",
     Style: "风格",
     Submit: "提交",
     Subscription: "订阅",
     "Subscription will end": "订阅即将到期",
+    Syntax: "句法",
     "Thank you for your feedback!": "感谢您的反馈!",
     Theme: "风格",
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
@@ -149,6 +166,8 @@
     "Top to Bottom": "从上到下",
     "Try again": "重试",
     Unfreeze: "解冻",
+    "Unlimited Hosted Charts": "无限托管图表",
+    "Unlimited Local Charts": "无限的本地图表",
     "Update Email": "更新电子邮件",
     Updated: "已更新",
     "Use the customer portal to change your billing information.":
@@ -161,6 +180,8 @@
       "我们使用 cookies 来让您保持登录状态。",
     "What would you like to name this copy?": "你想将这个副本命名为什么？",
     "What would you like to share with us?": "您想跟我们分享什么？",
+    "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
+      "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",
     "[custom ID] or": "[自定义 ID] 或",

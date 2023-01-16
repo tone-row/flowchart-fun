@@ -1,324 +1,312 @@
 import { t, Trans } from "@lingui/macro";
-import * as RadioGroup from "@radix-ui/react-radio-group";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { ReactNode, useContext, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { useMutation } from "react-query";
+import { Plus } from "phosphor-react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
-import { AppContext } from "../components/AppContext";
-import { LoginForm } from "../components/LoginForm";
-import {
-  Button,
-  Input,
-  Notice,
-  Section,
-  SectionTitle,
-} from "../components/Shared";
-import Spinner from "../components/Spinner";
-import { isError } from "../lib/helpers";
-import { createCustomer, createSubscription } from "../lib/queries";
-import { supabase } from "../lib/supabaseClient";
 import { Box, Type } from "../slang";
 import styles from "./Sponsor.module.css";
-
 export default function Sponsor() {
+  const [plan, setPlan] = useState<"monthly" | "annually">("monthly");
   return (
-    <Box className={styles.Page} p={5} gap={10} pt={10}>
-      <Type className={styles.PageTitle} size={2}>
-        <Trans>
-          Sponsor flowchart.fun for{" "}
-          <Box as="span" className={styles.orange}>
-            <Trans>$3 / month</Trans>
-          </Box>{" "}
-          or{" "}
-          <Box as="span" className={styles.orange}>
-            <Trans>$30 / year</Trans>
-          </Box>{" "}
-          to get access to...
-        </Trans>
-      </Type>
-      <Box gap={10}>
-        <ReasonToSubscribe
-          alt="Hosted Charts"
-          heading={<Trans>Hosted Charts</Trans>}
-          imgSrc="/images/e.png"
-        >
-          <Trans>
-            Edit your charts on any device. Share them with anyone. Publish your
-            charts once and they remain up to date with your changes.
-          </Trans>
-        </ReasonToSubscribe>
-        <ReasonToSubscribe
-          alt="More Themes"
-          heading={<Trans>More Themes</Trans>}
-          imgSrc="/images/n.png"
-        >
-          <Trans>Get access to alternative styles for your flowcharts</Trans>
-        </ReasonToSubscribe>
-        <ReasonToSubscribe
-          alt="More Layouts"
-          heading={<Trans>More Layouts</Trans>}
-          imgSrc="/images/l.png"
-        >
-          <Trans>
-            Powerful layout algorithms that bring order to graphs of all shapes
-            and sizes
-          </Trans>
-        </ReasonToSubscribe>
+    <Box content="start stretch">
+      <Box py={8} px={5} className={styles.banner}>
+        <Box className={styles.container} gap={4}>
+          <Box gap={2} className="left">
+            <Type size={2}>
+              <Trans>Say goodbye to tedious flowchart creation</Trans>
+            </Type>
+            <Type size={3}>
+              <Trans>
+                Flowchart Fun makes it quick and easy to visually communicate
+                your processes.
+              </Trans>
+            </Type>
+          </Box>
+          <div className={styles.video}>
+            <Frame2 />
+            <video autoPlay loop muted playsInline>
+              <source src="/demo.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </Box>
       </Box>
-      <Box gap={4}>
-        <LoginBlock />
-        <SponsorBlock />
+      <Box className={styles.plans} py={16} px={5}>
+        <Box className={styles.container} gap={10}>
+          <Box
+            className="plans-header"
+            flow="column"
+            content="start"
+            items="center normal"
+            gap={3}
+          >
+            <Type size={4} weight="700">
+              <Trans>Plans</Trans>
+            </Type>
+            <Box
+              rad={2}
+              flow="column"
+              gap={0.5}
+              items="start"
+              content="start"
+              className={styles.toggle}
+              p={0.5}
+            >
+              <Box
+                as="button"
+                rad={1}
+                px={3}
+                py={1}
+                onClick={() => setPlan("monthly")}
+                data-active={plan === "monthly"}
+              >
+                <Type weight="700">
+                  <Trans>Monthly</Trans>
+                </Type>
+              </Box>
+              <Box
+                as="button"
+                rad={1}
+                px={3}
+                py={1}
+                onClick={() => setPlan("annually")}
+                data-active={plan === "annually"}
+              >
+                <Type weight="700">
+                  <Trans>Annually</Trans>
+                </Type>
+              </Box>
+            </Box>
+          </Box>
+          <div className={styles.plans_content}>
+            <Plan
+              title="Free Users"
+              features={[
+                t`Unlimited Local Charts`,
+                t`Export to Common Image Formats`,
+                t`Shape Libraries`,
+                t`Static Share Links`,
+              ]}
+            />
+            <Plan
+              title="Sponsors"
+              price={
+                plan === "monthly" ? t`$3.00/month` : t`$30.00/year (save 20%)`
+              }
+              showSignUp
+              hash={plan === "annually" ? "#annually" : ""}
+              features={[
+                t`Unlimited Local Charts`,
+                t`Export to Common Image Formats`,
+                t`Shape Libraries`,
+                t`Static Share Links`,
+                t`Unlimited Hosted Charts`,
+                t`Dynamic Share Links`,
+                t`More Layouts`,
+                t`More Themes and Fonts`,
+                t`Share with Full Access, Edit-only, or View-only Permissions`,
+              ]}
+            />
+          </div>
+        </Box>
+      </Box>
+      <Box className={styles.featureBlock} px={5}>
+        <Box className={styles.text} gap={3}>
+          <Type size={3}>
+            <Trans>Unlimited Hosted Charts</Trans>
+          </Type>
+          <Type size={1}>
+            <Trans>
+              With the ability to create unlimited hosted charts, you can access
+              and work on your flowcharts from any device, anywhere.
+            </Trans>
+          </Type>
+        </Box>
+        <div className="right">
+          <img src="/images/iphone_hand.svg" alt="Hand Holding Iphone" />
+        </div>
+      </Box>
+      <Box className={styles.featureBlock} px={5}>
+        <Box className={styles.text} gap={3}>
+          <Type size={3}>
+            <Trans>Custom Sharing Options</Trans>
+          </Type>
+          <Type size={1}>
+            <Trans>
+              Choose to share your charts with full access, edit-only, or
+              view-only permissions, giving you control over who can make
+              changes to your work.
+            </Trans>
+          </Type>
+        </Box>
+        <div className="right">
+          <img src="/images/whiteboard_lady.svg" alt="Hand Holding Iphone" />
+        </div>
+      </Box>
+      <Box className={styles.featureBlock} px={5}>
+        <Box className={styles.text} gap={3}>
+          <Type size={3}>
+            <Trans>Layouts and Themes</Trans>
+          </Type>
+          <Type size={1}>
+            <Trans>
+              Customize the look and feel of your charts with more layout and
+              theme options, helping you to create professional, visually
+              appealing diagrams.
+            </Trans>
+          </Type>
+        </Box>
+        <div className="right">
+          <AnimatedStyles />
+        </div>
+      </Box>
+      <Box className={styles.footerBlock} px={5} py={20}>
+        <Box className={styles.container} gap={8} items="normal center">
+          <Type size={1}>
+            <Trans>
+              Streamline your workflow and simplify your process visualization
+              with Flowchart Fun
+            </Trans>
+          </Type>
+          <Box
+            as={Link}
+            to={`/i${plan === "annually" ? "#annually" : ""}`}
+            px={8}
+            py={4}
+            rad={3}
+            className={[styles.signUpSmall, styles.signUpLarge].join(" ")}
+          >
+            <Type size={2} weight="700">
+              <Trans>Sign Up Now</Trans>
+            </Type>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
 }
 
-type SignUpFormData = {
-  email: string;
-  subscription: "monthly" | "yearly";
-};
-
-function SignUpForm() {
-  const stripe = useStripe();
-  const elements = useElements();
-  const { register, handleSubmit, control } = useForm<SignUpFormData>({
-    defaultValues: { subscription: "monthly", email: "" },
-  });
-  const { theme } = useContext(AppContext);
-  const [success, setSuccess] = useState(false);
-  const create = useMutation(
-    "createCustomer",
-    async ({ email, subscription }: SignUpFormData) => {
-      if (!stripe || !elements || !supabase) {
-        // Stripe.js has not loaded yet. Make sure to disable
-        // form submission until Stripe.js has loaded.
-        return;
-      }
-
-      // Get a reference to a mounted CardElement. Elements knows how
-      // to find your CardElement because there can only ever be one of
-      // each type of element.
-      const cardElement = elements.getElement(CardElement);
-      if (!cardElement) throw new Error("No Card Element Found");
-
-      // Test Payment Method
-      const { error: createPaymentError, paymentMethod } =
-        await stripe.createPaymentMethod({
-          type: "card",
-          card: cardElement,
-        });
-
-      // Create Customer
-      const {
-        customer,
-        subscription: preexistingSubscription,
-        error,
-      } = await createCustomer(email);
-      if (error) throw error;
-
-      if (preexistingSubscription) {
-        throw new Error("Please try logging in.");
-      }
-
-      if (createPaymentError) throw createPaymentError;
-      if (!paymentMethod) throw new Error("No Payment Method");
-
-      // create subscription
-      const { error: createSubscriptionError } = await createSubscription({
-        customerId: customer.id,
-        paymentMethodId: paymentMethod.id,
-        subscriptionType: subscription,
-      });
-
-      if (createSubscriptionError) throw createSubscriptionError;
-
-      // Send Sign In Link
-      const { error: supabaseError } = await supabase.auth.signInWithOtp({
-        email,
-      });
-      if (supabaseError) throw supabaseError;
-    },
-    {
-      onSuccess: () => {
-        setSuccess(true);
-      },
-    }
-  );
-
-  return success ? (
-    <div>
-      <Trans>
-        Check your email for a link to log in. You can close this window.
-      </Trans>
-    </div>
-  ) : (
-    <Box
-      as="form"
-      gap={7}
-      pt={3}
-      onSubmit={handleSubmit((data) => {
-        create.mutate(data);
-      })}
-    >
-      <Input
-        className={styles.SponsorFormInput}
-        type="email"
-        data-testid="email"
-        placeholder="Email"
-        {...register("email", {
-          required: true,
-          setValueAs: (t) => t.toLowerCase(),
-        })}
-      />
-
-      <Controller
-        render={({ field }) => (
-          <RadioGroup.Root
-            value={field.value}
-            onValueChange={(value) => field.onChange(value)}
-          >
-            <Box flow="column" gap={2}>
-              {[
-                { label: t`$3 / Month`, value: "monthly" },
-                { label: t`$30 / Year`, value: "yearly" },
-              ].map((el) => (
-                <Box
-                  as={RadioGroup.Item}
-                  key={el.value}
-                  value={el.value}
-                  id={el.value}
-                  className={styles.RadioButton}
-                  p={3}
-                  rad={1}
-                >
-                  <Type as="span" size={0} weight="700">
-                    {el.label}
-                  </Type>
-                </Box>
-              ))}
-            </Box>
-          </RadioGroup.Root>
-        )}
-        name="subscription"
-        control={control}
-        defaultValue="monthly"
-      />
-      <Box
-        p={3}
-        background="palette-white-0"
-        rad={1}
-        data-testid="card-element"
-      >
-        <CardElement
-          options={{
-            style: {
-              base: {
-                color: theme.foreground,
-                backgroundColor: "#ffffff",
-                fontFamily:
-                  "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                fontSize: "16px",
-              },
-            },
-          }}
-        />
-      </Box>
-      <Box gap={2}>
-        <Button
-          type="submit"
-          text={t`Sign Up`}
-          className={styles.SignUpButton}
-          p={3}
-          typeProps={{ size: 1 }}
-        />
-        <Box template="auto / auto auto" content="normal space-between">
-          <Type size={-1} as="span">
-            *<Trans>We use cookies to keep you logged in.</Trans>
-          </Type>
-          {create.isLoading && (
-            <Spinner r={14} s={2} c="var(--palette-purple-0)" />
-          )}
-        </Box>
-      </Box>
-
-      {create.error && (
-        <Notice>
-          <span
-            dangerouslySetInnerHTML={{
-              __html: isError(create.error) ? create.error.message : "",
-            }}
+const NUM_IMGS = 6;
+function AnimatedStyles() {
+  const [activeImg, setActiveImg] = useState(0);
+  // Increment the active image on a timer, every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImg((activeImg + 1) % NUM_IMGS);
+    }, 0.333 * 4 * 1000);
+    return () => clearInterval(interval);
+  }, [activeImg]);
+  return (
+    <div className={styles.animatedStyles}>
+      <Frame />
+      <div className="images">
+        {[...Array(NUM_IMGS)].map((_, i) => (
+          <img
+            key={i}
+            src={`/images/swipe/${i + 1}.png`}
+            alt={`Theme Example ${i}`}
+            data-active={i === activeImg}
           />
-        </Notice>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const Frame = () => (
+  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1234 1138">
+    <path
+      d="M1148.47 2.02H692.918M1048.06 1135.98h180.65c1.83 0 3.29-1.79 3.29-3.98V136.898M2 1016.58V1132c0 2.21 1.48 3.98 3.291 3.98h934.552M616.202 2.02H5.308c-1.829 0-3.292 1.79-3.292 3.981v453.757"
+      stroke="#000"
+      strokeWidth={3}
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const Frame2 = () => (
+  <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 738 544">
+    <path
+      d="M686.152 2.01H414.304M626.235 541.99h107.801c1.091 0 1.964-.852 1.964-1.895V66.237M2 485.135v54.96c0 1.053.883 1.895 1.964 1.895h557.692M368.524 2.01H3.974c-1.091 0-1.964.852-1.964 1.895V219.98"
+      stroke="#000"
+      strokeWidth={3}
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+function Plan({
+  title,
+  price,
+  features,
+  showSignUp,
+  hash = "",
+}: {
+  title: string;
+  price?: string;
+  features: string[];
+  showSignUp?: boolean;
+  hash?: string;
+}) {
+  return (
+    <Box className={styles.plan} gap={4} items="start" rad={5} p={4}>
+      <div className={styles.planHeader}>
+        <Type size={2} weight="700">
+          {title}
+        </Type>
+        {price && <Price price={price} />}
+      </div>
+      <div className="plan-features">
+        {features.map((feature) => (
+          <Box
+            key={feature}
+            gap={2}
+            flow="column"
+            content="start"
+            items="start"
+          >
+            <Plus
+              style={{ marginTop: 5 }}
+              color="hsla(var(--color-brandHsl), 0.5)"
+            />
+            <Type>{feature}</Type>
+          </Box>
+        ))}
+      </div>
+      {showSignUp && (
+        <Box
+          as={Link}
+          to={`/i${hash}`}
+          px={4}
+          py={3}
+          rad={2}
+          className={styles.signUpSmall}
+        >
+          <Type weight="700">
+            <Trans>Sign Up Now</Trans>
+          </Type>
+        </Box>
       )}
     </Box>
   );
 }
 
-function ReasonToSubscribe({
-  heading,
-  children,
-  imgSrc,
-  objectFit = "cover",
-  alt,
-}: {
-  heading: ReactNode;
-  children: ReactNode;
-  imgSrc: string;
-  objectFit?: string;
-  alt: string;
-}) {
-  return (
-    <Box flow="column" gap={7} content="start" items="center">
-      <Box
-        as="img"
-        rad={3}
-        src={imgSrc}
-        alt={alt}
-        className={styles.ReasonToSubscribeImg}
-        style={{ objectFit }}
-      />
-      <Box gap={2}>
-        <Type size={3} weight="400" as="h2">
-          {heading}
-        </Type>
-        <Type size={0}>{children}</Type>
-      </Box>
-    </Box>
-  );
-}
+function Price({ price }: { price: string }) {
+  const el = useRef<HTMLSpanElement>(null);
+  // when the price changes add a class to animate the price, then remove it
+  useEffect(() => {
+    if (!el.current) return;
+    el.current.classList.add(styles.priceAnimate);
+    const timeout = setTimeout(() => {
+      el.current?.classList.remove(styles.priceAnimate);
+    }, 500);
+    return () => clearTimeout(timeout);
+  }, [price]);
 
-function SponsorBlock() {
   return (
-    <Section
-      content="start normal"
-      className={styles.SponsorBlock}
-      p={8}
-      rad={2}
-      gap={8}
-    >
-      <SectionTitle
-        color="palette-purple-0"
-        weight="700"
-        className={styles.SponsorBlockTitle}
-      >
-        <Trans>Become a Sponsor</Trans>
-      </SectionTitle>
-      <SignUpForm />
-    </Section>
-  );
-}
-
-function LoginBlock() {
-  return (
-    <Box p={8} pt={7} background="palette-white-2" rad={3}>
-      <LoginForm
-        heading={
-          <Type style={{ textAlign: "center" }} color="palette-black-0">
-            <Trans>Already a sponsor? Log in here</Trans>
-          </Type>
-        }
-      />
+    <Box as="span" className={styles.price} p={2} rad={2} ref={el}>
+      <Type size={1}>{price}</Type>
     </Box>
   );
 }
