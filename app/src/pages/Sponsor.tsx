@@ -1,3 +1,5 @@
+import { t, Trans } from "@lingui/macro";
+import { Plus } from "phosphor-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -10,10 +12,14 @@ export default function Sponsor() {
       <Box py={8} px={5} className={styles.banner}>
         <Box className={styles.container} gap={4}>
           <Box gap={2} className="left">
-            <Type size={2}>Say goodbye to tedious flowchart creation</Type>
+            <Type size={2}>
+              <Trans>Say goodbye to tedious flowchart creation</Trans>
+            </Type>
             <Type size={3}>
-              Flowchart Fun makes it quick and easy to visually communicate your
-              processes.
+              <Trans>
+                Flowchart Fun makes it quick and easy to visually communicate
+                your processes.
+              </Trans>
             </Type>
           </Box>
           <div className={styles.video}>
@@ -34,7 +40,7 @@ export default function Sponsor() {
             gap={3}
           >
             <Type size={4} weight="700">
-              Plans
+              <Trans>Plans</Trans>
             </Type>
             <Box
               rad={2}
@@ -53,7 +59,9 @@ export default function Sponsor() {
                 onClick={() => setPlan("monthly")}
                 data-active={plan === "monthly"}
               >
-                <Type weight="700">Monthly</Type>
+                <Type weight="700">
+                  <Trans>Monthly</Trans>
+                </Type>
               </Box>
               <Box
                 as="button"
@@ -63,7 +71,9 @@ export default function Sponsor() {
                 onClick={() => setPlan("annually")}
                 data-active={plan === "annually"}
               >
-                <Type weight="700">Annually</Type>
+                <Type weight="700">
+                  <Trans>Annually</Trans>
+                </Type>
               </Box>
             </Box>
           </Box>
@@ -71,29 +81,28 @@ export default function Sponsor() {
             <Plan
               title="Free Users"
               features={[
-                "Unlimited local charts",
-                "Export to common image formats",
-                "Shape libraries",
-                "Static share links",
+                t`Unlimited Local Charts`,
+                t`Export to Common Image Formats`,
+                t`Shape Libraries`,
+                t`Static Share Links`,
               ]}
             />
             <Plan
               title="Sponsors"
               price={
-                plan === "monthly" ? "$3.00/month" : "$30.00/year (save 20%)"
+                plan === "monthly" ? t`$3.00/month` : t`$30.00/year (save 20%)`
               }
               showSignUp
               features={[
-                "Unlimited local charts",
-                "Export to common image formats",
-                "Shape libraries",
-                "Static share links",
-                "Unlimited local or hosted charts",
-                "Export to additional formats (such as Mermaid)",
-                "Share with full access, edit-only, or view-only permissions",
-                "More Layouts",
-                "More Themes and fonts",
-                "Dynamic Share Links",
+                t`Unlimited Local Charts`,
+                t`Export to Common Image Formats`,
+                t`Shape Libraries`,
+                t`Static Share Links`,
+                t`Unlimited Hosted Charts`,
+                t`Dynamic Share Links`,
+                t`More Layouts`,
+                t`More Themes and Fonts`,
+                t`Share with Full Access, Edit-only, or View-only Permissions`,
               ]}
             />
           </div>
@@ -101,10 +110,14 @@ export default function Sponsor() {
       </Box>
       <Box className={styles.featureBlock} px={5}>
         <Box className={styles.text} gap={3}>
-          <Type size={3}>Unlimited Hosted Charts</Type>
+          <Type size={3}>
+            <Trans>Unlimited Hosted Charts</Trans>
+          </Type>
           <Type size={1}>
-            With the ability to create unlimited hosted charts, you can access
-            and work on your flowcharts from any device, anywhere.
+            <Trans>
+              With the ability to create unlimited hosted charts, you can access
+              and work on your flowcharts from any device, anywhere.
+            </Trans>
           </Type>
         </Box>
         <div className="right">
@@ -113,11 +126,15 @@ export default function Sponsor() {
       </Box>
       <Box className={styles.featureBlock} px={5}>
         <Box className={styles.text} gap={3}>
-          <Type size={3}>Custom Sharing Options</Type>
+          <Type size={3}>
+            <Trans>Custom Sharing Options</Trans>
+          </Type>
           <Type size={1}>
-            Choose to share your charts with full access, edit-only, or
-            view-only permissions, giving you control over who can make changes
-            to your work.
+            <Trans>
+              Choose to share your charts with full access, edit-only, or
+              view-only permissions, giving you control over who can make
+              changes to your work.
+            </Trans>
           </Type>
         </Box>
         <div className="right">
@@ -126,11 +143,15 @@ export default function Sponsor() {
       </Box>
       <Box className={styles.featureBlock} px={5}>
         <Box className={styles.text} gap={3}>
-          <Type size={3}>Layouts and Themes</Type>
+          <Type size={3}>
+            <Trans>Layouts and Themes</Trans>
+          </Type>
           <Type size={1}>
-            Customize the look and feel of your charts with more layout and
-            theme options, helping you to create professional, visually
-            appealing diagrams.
+            <Trans>
+              Customize the look and feel of your charts with more layout and
+              theme options, helping you to create professional, visually
+              appealing diagrams.
+            </Trans>
           </Type>
         </Box>
         <div className="right">
@@ -140,8 +161,10 @@ export default function Sponsor() {
       <Box className={styles.footerBlock} px={5} py={20}>
         <Box className={styles.container} gap={8} items="normal center">
           <Type size={1}>
-            Streamline your workflow and simplify your process visualization
-            with Flowchart Fun
+            <Trans>
+              Streamline your workflow and simplify your process visualization
+              with Flowchart Fun
+            </Trans>
           </Type>
           <Box
             as={Link}
@@ -152,7 +175,7 @@ export default function Sponsor() {
             className={[styles.signUpSmall, styles.signUpLarge].join(" ")}
           >
             <Type size={2} weight="700">
-              Sign Up Now
+              <Trans>Sign Up Now</Trans>
             </Type>
           </Box>
         </Box>
@@ -233,7 +256,19 @@ function Plan({
       </div>
       <div className="plan-features">
         {features.map((feature) => (
-          <Type key={feature}>{feature}</Type>
+          <Box
+            key={feature}
+            gap={2}
+            flow="column"
+            content="start"
+            items="start"
+          >
+            <Plus
+              style={{ marginTop: 5 }}
+              color="hsla(var(--color-brandHsl), 0.5)"
+            />
+            <Type>{feature}</Type>
+          </Box>
         ))}
       </div>
       {showSignUp && (
@@ -245,7 +280,9 @@ function Plan({
           rad={2}
           className={styles.signUpSmall}
         >
-          <Type weight="700">Sign Up Now</Type>
+          <Type weight="700">
+            <Trans>Sign Up Now</Trans>
+          </Type>
         </Box>
       )}
     </Box>

@@ -1,7 +1,9 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3 / Month",
+    "$3.00/month": "$3.00/month",
     "$30 / Year": "$30 / Year",
+    "$30.00/year (save 20%)": "$30.00/year (save 20%)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.",
     Account: "Account",
@@ -13,6 +15,7 @@
       ["0"],
       " directly.",
     ],
+    Annually: "Annually",
     Appearance: "Appearance",
     "Back To Editor": "Back To Editor",
     Background: "Background",
@@ -28,6 +31,8 @@
     Charts: "Charts",
     "Check your email for a link to log in. You can close this window.":
       "Check your email for a link to log in. You can close this window.",
+    "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
+      "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.",
     Circle: "Circle",
     Clay: "Clay",
     Clear: "Clear",
@@ -45,7 +50,10 @@
     "Create a link directly using the exact label text":
       "Create a link directly using the exact label text",
     Created: "Created",
+    "Custom Sharing Options": "Custom Sharing Options",
     "Customer Portal": "Customer Portal",
+    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
+      "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.",
     Dark: "Dark",
     "Dark Mode": "Dark Mode",
     Date: "Date",
@@ -62,8 +70,7 @@
     "Download PNG": "Download PNG",
     "Download SVG": "Download SVG",
     Duplicate: "Duplicate",
-    "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes.":
-      "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes.",
+    "Dynamic Share Links": "Dynamic Share Links",
     Editable: "Editable",
     Editor: "Editor",
     Eggs: "Eggs",
@@ -71,14 +78,15 @@
     "Enter a title": "Enter a title",
     Excalidraw: "Excalidraw",
     Export: "Export",
+    "Export to Common Image Formats": "Export to Common Image Formats",
     Feedback: "Feedback",
+    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
+      "Flowchart Fun makes it quick and easy to visually communicate your processes.",
     "Follow Us": "Follow Us",
     Fullscreen: "Fullscreen",
     Futuristic: "Futuristic",
     "Get More Layouts": "Get More Layouts",
     "Get More Themes": "Get More Themes",
-    "Get access to alternative styles for your flowcharts":
-      "Get access to alternative styles for your flowcharts",
     Graph: "Graph",
     Grid: "Grid",
     "Have fun! 🎉": "Have fun! 🎉",
@@ -92,19 +100,22 @@
     Language: "Language",
     Layout: "Layout",
     "Layout is Frozen": "Layout is Frozen",
+    "Layouts and Themes": "Layouts and Themes",
     "Learn More": "Learn More",
     "Left to Right": "Left to Right",
     Light: "Light",
     "Light Mode": "Light Mode",
     Link: "Link",
     "Local Charts": "Local Charts",
+    "Log In": "Log In",
     "Log Out": "Log Out",
     "Made by <0>Tone Row</0>": "Made by <0>Tone Row</0>",
     "Make a Donation": "Make a Donation",
     "Make publicly accessible": "Make publicly accessible",
     Monospace: "Monospace",
+    Monthly: "Monthly",
     "More Layouts": "More Layouts",
-    "More Themes": "More Themes",
+    "More Themes and Fonts": "More Themes and Fonts",
     Museum: "Museum",
     Name: "Name",
     "Need Help? <0>Check out our documentation.</0>":
@@ -113,9 +124,8 @@
     "New Email": "New Email",
     "Next charge": "Next charge",
     "Open Customer Portal": "Open Customer Portal",
+    Plans: "Plans",
     Playbook: "Playbook",
-    "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
-      "Powerful layout algorithms that bring order to graphs of all shapes and sizes",
     Pricing: "Pricing",
     Public: "Public",
     Random: "Random",
@@ -128,20 +138,28 @@
     "Right to Left": "Right to Left",
     Roadmap: "Roadmap",
     Save: "Save",
+    "Say goodbye to tedious flowchart creation":
+      "Say goodbye to tedious flowchart creation",
     Settings: "Settings",
+    "Shape Libraries": "Shape Libraries",
+    "Share with Full Access, Edit-only, or View-only Permissions":
+      "Share with Full Access, Edit-only, or View-only Permissions",
     "Sign In": "Sign In",
     "Sign Up": "Sign Up",
+    "Sign Up Now": "Sign Up Now",
     Spacing: "Spacing",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features",
-    "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
-      "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...",
     Start: "Start",
+    "Static Share Links": "Static Share Links",
     Status: "Status",
+    "Streamline your workflow and simplify your process visualization with Flowchart Fun":
+      "Streamline your workflow and simplify your process visualization with Flowchart Fun",
     Style: "Style",
     Submit: "Submit",
     Subscription: "Subscription",
     "Subscription will end": "Subscription will end",
+    Syntax: "Syntax",
     "Thank you for your feedback!": "Thank you for your feedback!",
     Theme: "Theme",
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
@@ -150,6 +168,8 @@
     "Top to Bottom": "Top to Bottom",
     "Try again": "Try again",
     Unfreeze: "Unfreeze",
+    "Unlimited Hosted Charts": "Unlimited Hosted Charts",
+    "Unlimited Local Charts": "Unlimited Local Charts",
     "Update Email": "Update Email",
     Updated: "Updated",
     "Use the customer portal to change your billing information.":
@@ -164,6 +184,8 @@
       "What would you like to name this copy?",
     "What would you like to share with us?":
       "What would you like to share with us?",
+    "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
+      "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
     "[custom ID] or": "[custom ID] or",
