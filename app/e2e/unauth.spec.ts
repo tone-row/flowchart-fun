@@ -21,7 +21,9 @@ test.describe("unauth", () => {
     await page.click('button:has-text("Learn More")');
 
     // Expect "Sponsor flowchart.fun" to be visible
-    await expect(page.getByText(/Sponsor flowchart.fun/i)).toBeVisible();
+    await expect(
+      page.getByText(/Say goodbye to tedious flowchart creation/i)
+    ).toBeVisible();
   });
 
   test("Create New Local Chart", async ({ page }) => {

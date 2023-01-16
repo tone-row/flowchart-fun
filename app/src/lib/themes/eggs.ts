@@ -26,6 +26,7 @@ const borderWidth = 1.5;
 const eggs: Theme = {
   value: "eggs",
   bg: backgroundColor,
+  fg: arrowColor,
   minWidth: 0,
   minHeight: 0,
   font: {

@@ -9,6 +9,8 @@ export type Theme = {
   };
   value: string;
   bg: string;
+  /** Used to override container titles */
+  fg: string;
   /** Used if regular bg can't be rendered to SVG */
   safeBg?: string;
   minWidth?: number;

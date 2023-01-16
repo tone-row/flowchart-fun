@@ -31,6 +31,7 @@ const distanceFromNode = 5;
 const playbook: Theme = {
   value: "playbook",
   bg: backgroundColor,
+  fg: nodeLabelColor,
   minWidth: 0,
   minHeight: 0,
   font: {
@@ -108,6 +109,7 @@ const playbook: Theme = {
         "text-halign": "center",
         "text-margin-y": `-6px`,
         "text-wrap": "none",
+        padding: "6px",
       },
     },
     ...Object.entries(playbookColors).map<Stylesheet>(([color, value]) => ({

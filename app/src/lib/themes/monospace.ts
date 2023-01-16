@@ -25,6 +25,7 @@ const edgeWidth = 2;
 const monospace: Theme = {
   value: "monospace",
   bg: monospaceColors.black,
+  fg: monospaceColors.blue,
   minHeight: 0,
   minWidth: 0,
   font: {

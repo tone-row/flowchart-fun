@@ -1,7 +1,9 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "3 $ / mois",
+    "$3.00/month": "3 $/mois",
     "$30 / Year": "30 $ / an",
+    "$30.00/year (save 20%)": "30,00 $/an (économisez 20 %)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Accédez à ces graphiques depuis n'importe où.<0/>Partagez ou intégrez des graphiques, qui se synchronisent au fil de vos modifications.",
     Account: "Compte",
@@ -13,6 +15,7 @@
       ["0"],
       ".",
     ],
+    Annually: "Annuellement",
     Appearance: "Thème",
     "Back To Editor": "Retour à l'éditeur",
     Background: "L'arrière plan",
@@ -28,6 +31,8 @@
     Charts: "Graphiques",
     "Check your email for a link to log in. You can close this window.":
       "Consultez votre messagerie électronique pour le lien de connexion. Vous pouvez fermer cette fenêtre.",
+    "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
+      "Optez pour le partage de vos graphiques avec des autorisations d'accès complet, de modification uniquement ou de visualisation uniquement. Vous pourrez ainsi contrôler qui peut apporter des modifications à votre travail.",
     Circle: "Cercle",
     Clay: "Argile",
     Clear: "Effacer",
@@ -45,7 +50,10 @@
     "Create a link directly using the exact label text":
       "Créer un lien directement vers une boite en utilisant le texte exact de celle-ci",
     Created: "Créé",
+    "Custom Sharing Options": "Options de partage personnalisées",
     "Customer Portal": "Portail Clients",
+    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
+      "Personnalisez l'aspect et la convivialité de vos graphiques avec plus d'options de mise en page et de thème, ce qui vous aidera à créer des diagrammes professionnels et visuellement attrayants.",
     Dark: "Sombre",
     "Dark Mode": "Mode sombre",
     Date: "Date",
@@ -62,8 +70,7 @@
     "Download PNG": "Télécharger PNG",
     "Download SVG": "Télécharger SVG",
     Duplicate: "Dupliquer",
-    "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes.":
-      "Modifiez vos graphiques sur n'importe quel appareil. Partagez-les avec tout le monde. Publiez vos graphiques une seule fois et ils demeureront à jour au fur et à mesure que vous apportez des modifications.",
+    "Dynamic Share Links": "Liens de partage dynamiques",
     Editable: "Modifiable",
     Editor: "Éditeur",
     Eggs: "Oeufs",
@@ -71,14 +78,16 @@
     "Enter a title": "Entrez un titre",
     Excalidraw: "Excalidraw",
     Export: "Exporter",
+    "Export to Common Image Formats":
+      "Exporter vers des formats d'image courants",
     Feedback: "Commentaire",
+    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
+      "Flowchart Fun accélère et facilite la communication visuelle de vos processus.",
     "Follow Us": "Suivez-nous",
     Fullscreen: "Plein écran",
     Futuristic: "Futuriste",
     "Get More Layouts": "Obtenez plus de mises en page",
     "Get More Themes": "Obtenez plus de thèmes",
-    "Get access to alternative styles for your flowcharts":
-      "Obtenez des styles alternatifs pour vos logigrammes",
     Graph: "Graphique",
     Grid: "Quadrillage",
     "Have fun! 🎉": "Amusez-vous ! 🎉",
@@ -92,19 +101,22 @@
     Language: "Langue",
     Layout: "Disposition",
     "Layout is Frozen": "La mise en page est gelée",
+    "Layouts and Themes": "Mises en page et thèmes",
     "Learn More": "En savoir plus",
     "Left to Right": "De gauche à droite",
     Light: "Lumineux",
     "Light Mode": "Mode lumineux",
     Link: "Lien",
     "Local Charts": "Graphiques locaux",
+    "Log In": "Connexion",
     "Log Out": "Déconnexion",
     "Made by <0>Tone Row</0>": "Réalisé par <0>Tone Row</0>",
     "Make a Donation": "Faire un don",
     "Make publicly accessible": "Rendre accessible au public",
     Monospace: "Monospace",
+    Monthly: "Mensuel",
     "More Layouts": "Plus de mises en page",
-    "More Themes": "Plus de thèmes",
+    "More Themes and Fonts": "Plus de thèmes et de polices",
     Museum: "Musée",
     Name: "Nom",
     "Need Help? <0>Check out our documentation.</0>":
@@ -113,9 +125,8 @@
     "New Email": "Nouveau courriel",
     "Next charge": "Prochain paiement",
     "Open Customer Portal": "Ouvrir le portail client",
+    Plans: "Des plans",
     Playbook: "Livre-jeu",
-    "Powerful layout algorithms that bring order to graphs of all shapes and sizes":
-      "Algorithmes de mise en page puissants qui mettent de l'ordre dans les graphiques de toutes formes et tailles",
     Pricing: "Tarification",
     Public: "Public",
     Random: "Aléatoire",
@@ -128,20 +139,28 @@
     "Right to Left": "De droite à gauche",
     Roadmap: "Roadmap",
     Save: "Sauver",
+    "Say goodbye to tedious flowchart creation":
+      "Dites adieu au processus pénible de création d'organigrammes",
     Settings: "Paramètres",
+    "Shape Libraries": "Bibliothèques de formes",
+    "Share with Full Access, Edit-only, or View-only Permissions":
+      "Partager avec des autorisations d'accès complet, d'édition uniquement ou d'affichage uniquement",
     "Sign In": "Connectez",
     "Sign Up": "Inscription",
+    "Sign Up Now": "S'inscrire maintenant",
     Spacing: "Espacement",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Parrainez flowchart.fun pour 3 $ / mois ou 30 $ / an pour accéder aux organigrammes hébergés et aux nouveaux styles et fonctionnalités",
-    "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to...":
-      "Parrainez flowchart.fun pour <0>3 $ / mois</0> ou <1>30 $ / an</1> pour avoir accès à...",
     Start: "Début",
+    "Static Share Links": "Liens de partage statiques",
     Status: "État",
+    "Streamline your workflow and simplify your process visualization with Flowchart Fun":
+      "Rationalisez votre flux de travail et simplifiez la visualisation de vos processus grâce à Flowchart Fun",
     Style: "Style",
     Submit: "Soumettre",
     Subscription: "Abonnement",
     "Subscription will end": "L'abonnement prendra fin",
+    Syntax: "Syntaxe",
     "Thank you for your feedback!": "Merci pour votre commentaire !",
     Theme: "Thème",
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
@@ -150,6 +169,8 @@
     "Top to Bottom": "De haut en bas",
     "Try again": "Réessayer",
     Unfreeze: "Débloquer",
+    "Unlimited Hosted Charts": "Nombre illimité de graphiques hébergés",
+    "Unlimited Local Charts": "Nombre illimité de graphiques locaux",
     "Update Email": "Mettre à jour l'e-mail",
     Updated: "Mis à jour",
     "Use the customer portal to change your billing information.":
@@ -164,6 +185,8 @@
       "Comment aimeriez-vous nommer cette copie ?",
     "What would you like to share with us?":
       "Que voudriez-vous partager avec nous ?",
+    "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
+      "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor.",
     "[custom ID] or": "[ID personnalisé] ou",

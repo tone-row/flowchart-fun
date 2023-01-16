@@ -40,8 +40,8 @@ const date = dateString(frontmatter.publishDate);
   }
 
   .content {
-    max-width: 600px;
-    margin-inline: auto;
+    /* max-width: 600px;
+    margin-inline: auto; */
   }
 
   .byline {
@@ -53,10 +53,26 @@ const date = dateString(frontmatter.publishDate);
   .content img {
     margin-inline: auto;
     display: block;
+    max-width: 100%;
+    height: auto;
   }
 
   .content a {
     color: var(--blue-500);
     text-decoration: none;
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 1rem 1.5rem;
+    background-color: hsla(var(--blue-500-hsl) / 0.05);
+    border-left: 4px solid hsla(var(--blue-500-hsl) / 0.5);
+    border-radius: 0.25rem;
+  }
+
+  .astro-code {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
   }
 </style>

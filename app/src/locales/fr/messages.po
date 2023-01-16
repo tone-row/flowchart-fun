@@ -13,20 +13,28 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Sponsor.tsx:183
+#: src/pages/SignUp.tsx:161
 msgid "$3 / Month"
 msgstr "3 $ / mois"
 
-#: src/pages/Sponsor.tsx:184
+#: src/pages/Sponsor.tsx:93
+msgid "$3.00/month"
+msgstr "3 $/mois"
+
+#: src/pages/SignUp.tsx:162
 msgid "$30 / Year"
 msgstr "30 $ / an"
+
+#: src/pages/Sponsor.tsx:93
+msgid "$30.00/year (save 20%)"
+msgstr "30,00 $/an (économisez 20 %)"
 
 #: src/pages/Charts.tsx:351
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Accédez à ces graphiques depuis n'importe où.<0/>Partagez ou intégrez des graphiques, qui se synchronisent au fil de vos modifications."
 
-#: src/components/SharedHeader.tsx:163
-#: src/components/SharedHeader.tsx:373
+#: src/components/SharedHeader.tsx:164
+#: src/components/SharedHeader.tsx:382
 msgid "Account"
 msgstr "Compte"
 
@@ -35,7 +43,7 @@ msgstr "Compte"
 msgid "Advanced"
 msgstr "Avancé"
 
-#: src/pages/Sponsor.tsx:318
+#: src/pages/LogIn.tsx:23
 msgid "Already a sponsor? Log in here"
 msgstr "Déjà parrain ? Connectez-vous ici"
 
@@ -46,6 +54,10 @@ msgstr "Montant"
 #: src/components/Feedback.tsx:110
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "Une erreur s'est produite. Essayez de l'envoyer à nouveau ou bien envoyez un e-mail à l'adresse {0}."
+
+#: src/pages/Sponsor.tsx:75
+msgid "Annually"
+msgstr "Annuellement"
 
 #: src/components/Settings.tsx:80
 msgid "Appearance"
@@ -61,21 +73,21 @@ msgstr "L'arrière plan"
 
 #: src/components/Settings.tsx:135
 #: src/components/SponsorDashboard.tsx:188
-#: src/pages/Sponsor.tsx:305
+#: src/pages/SignUp.tsx:48
 msgid "Become a Sponsor"
 msgstr "Devenir un sponsor"
 
-#: src/components/SharedHeader.tsx:135
-#: src/components/SharedHeader.tsx:352
+#: src/components/SharedHeader.tsx:136
+#: src/components/SharedHeader.tsx:361
 msgid "Blog"
 msgstr "Blog"
 
-#: src/lib/graphOptions.ts:37
-#: src/lib/graphOptions.ts:44
+#: src/lib/graphOptions.ts:36
+#: src/lib/graphOptions.ts:43
 msgid "Bottom to Top"
 msgstr "De bas en haut"
 
-#: src/lib/graphOptions.ts:19
+#: src/lib/graphOptions.ts:18
 msgid "Breadthfirst"
 msgstr "Parcours en largeur"
 
@@ -99,26 +111,30 @@ msgstr "Résilier votre abonnement. Vos graphiques hébergés seront en lecture 
 msgid "Change Email Address"
 msgstr "Changer l'adresse email"
 
-#: src/components/SharedHeader.tsx:142
-#: src/components/SharedHeader.tsx:357
+#: src/components/SharedHeader.tsx:143
+#: src/components/SharedHeader.tsx:366
 msgid "Changelog"
 msgstr "Journal des modifications"
 
-#: src/components/SharedHeader.tsx:81
-#: src/components/SharedHeader.tsx:331
+#: src/components/SharedHeader.tsx:82
+#: src/components/SharedHeader.tsx:340
 msgid "Charts"
 msgstr "Graphiques"
 
 #: src/components/LoginForm.tsx:38
-#: src/pages/Sponsor.tsx:151
+#: src/pages/SignUp.tsx:129
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Consultez votre messagerie électronique pour le lien de connexion. Vous pouvez fermer cette fenêtre."
 
-#: src/lib/graphOptions.ts:22
+#: src/pages/Sponsor.tsx:133
+msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
+msgstr "Optez pour le partage de vos graphiques avec des autorisations d'accès complet, de modification uniquement ou de visualisation uniquement. Vous pourrez ainsi contrôler qui peut apporter des modifications à votre travail."
+
+#: src/lib/graphOptions.ts:21
 msgid "Circle"
 msgstr "Cercle"
 
-#: src/lib/graphOptions.ts:57
+#: src/lib/graphOptions.ts:56
 msgid "Clay"
 msgstr "Argile"
 
@@ -139,11 +155,11 @@ msgstr "Cloner"
 msgid "Close"
 msgstr "Fermer"
 
-#: src/lib/graphOptions.ts:56
+#: src/lib/graphOptions.ts:55
 msgid "Comic Book"
 msgstr "Bande dessinée"
 
-#: src/lib/graphOptions.ts:21
+#: src/lib/graphOptions.ts:20
 msgid "Concentric"
 msgstr "Concentrique"
 
@@ -187,11 +203,19 @@ msgstr "Créer un lien directement vers une boite en utilisant le texte exact de
 msgid "Created"
 msgstr "Créé"
 
+#: src/pages/Sponsor.tsx:130
+msgid "Custom Sharing Options"
+msgstr "Options de partage personnalisées"
+
 #: src/components/SponsorDashboard.tsx:132
 msgid "Customer Portal"
 msgstr "Portail Clients"
 
-#: src/lib/graphOptions.ts:49
+#: src/pages/Sponsor.tsx:150
+msgid "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams."
+msgstr "Personnalisez l'aspect et la convivialité de vos graphiques avec plus d'options de mise en page et de thème, ce qui vous aidera à créer des diagrammes professionnels et visuellement attrayants."
+
+#: src/lib/graphOptions.ts:48
 msgid "Dark"
 msgstr "Sombre"
 
@@ -211,7 +235,7 @@ msgstr "Date"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: src/components/Tabs/EditLayoutTab.tsx:87
+#: src/components/Tabs/EditLayoutTab.tsx:106
 msgid "Direction"
 msgstr "Direction"
 
@@ -232,8 +256,8 @@ msgstr "Souhaitez-vous supprimer ceci ?"
 msgid "Document"
 msgstr "Document"
 
-#: src/components/SharedHeader.tsx:101
-#: src/components/SharedHeader.tsx:337
+#: src/components/SharedHeader.tsx:102
+#: src/components/SharedHeader.tsx:346
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -258,21 +282,21 @@ msgstr "Télécharger SVG"
 msgid "Duplicate"
 msgstr "Dupliquer"
 
-#: src/pages/Sponsor.tsx:46
-msgid "Edit your charts on any device. Share them with anyone. Publish your charts once and they remain up to date with your changes."
-msgstr "Modifiez vos graphiques sur n'importe quel appareil. Partagez-les avec tout le monde. Publiez vos graphiques une seule fois et ils demeureront à jour au fur et à mesure que vous apportez des modifications."
+#: src/pages/Sponsor.tsx:102
+msgid "Dynamic Share Links"
+msgstr "Liens de partage dynamiques"
 
 #: src/components/ShareDialog.tsx:89
 msgid "Editable"
 msgstr "Modifiable"
 
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:73
-#: src/components/SharedHeader.tsx:325
+#: src/components/SharedHeader.tsx:74
+#: src/components/SharedHeader.tsx:334
 msgid "Editor"
 msgstr "Éditeur"
 
-#: src/lib/graphOptions.ts:50
+#: src/lib/graphOptions.ts:49
 msgid "Eggs"
 msgstr "Oeufs"
 
@@ -287,7 +311,7 @@ msgstr "E-mail"
 msgid "Enter a title"
 msgstr "Entrez un titre"
 
-#: src/lib/graphOptions.ts:51
+#: src/lib/graphOptions.ts:50
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
@@ -297,11 +321,20 @@ msgstr "Excalidraw"
 msgid "Export"
 msgstr "Exporter"
 
+#: src/pages/Sponsor.tsx:85
+#: src/pages/Sponsor.tsx:98
+msgid "Export to Common Image Formats"
+msgstr "Exporter vers des formats d'image courants"
+
 #: src/components/Feedback.tsx:74
-#: src/components/SharedHeader.tsx:109
-#: src/components/SharedHeader.tsx:344
+#: src/components/SharedHeader.tsx:110
+#: src/components/SharedHeader.tsx:353
 msgid "Feedback"
 msgstr "Commentaire"
+
+#: src/pages/Sponsor.tsx:19
+msgid "Flowchart Fun makes it quick and easy to visually communicate your processes."
+msgstr "Flowchart Fun accélère et facilite la communication visuelle de vos processus."
 
 #: src/components/Settings.tsx:118
 msgid "Follow Us"
@@ -311,11 +344,11 @@ msgstr "Suivez-nous"
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#: src/lib/graphOptions.ts:55
+#: src/lib/graphOptions.ts:54
 msgid "Futuristic"
 msgstr "Futuriste"
 
-#: src/components/Tabs/EditLayoutTab.tsx:165
+#: src/components/Tabs/EditLayoutTab.tsx:184
 msgid "Get More Layouts"
 msgstr "Obtenez plus de mises en page"
 
@@ -323,15 +356,11 @@ msgstr "Obtenez plus de mises en page"
 msgid "Get More Themes"
 msgstr "Obtenez plus de thèmes"
 
-#: src/pages/Sponsor.tsx:56
-msgid "Get access to alternative styles for your flowcharts"
-msgstr "Obtenez des styles alternatifs pour vos logigrammes"
-
 #: src/components/MobileTabToggle.tsx:21
 msgid "Graph"
 msgstr "Graphique"
 
-#: src/lib/graphOptions.ts:24
+#: src/lib/graphOptions.ts:23
 msgid "Grid"
 msgstr "Quadrillage"
 
@@ -340,7 +369,7 @@ msgstr "Quadrillage"
 msgid "Have fun! 🎉"
 msgstr "Amusez-vous ! 🎉"
 
-#: src/components/SharedHeader.tsx:90
+#: src/components/SharedHeader.tsx:91
 msgid "Help"
 msgstr "Aide"
 
@@ -354,7 +383,6 @@ msgstr "Accueil"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Charts.tsx:720
-#: src/pages/Sponsor.tsx:43
 msgid "Hosted Charts"
 msgstr "Graphiques hébergés"
 
@@ -363,7 +391,7 @@ msgstr "Graphiques hébergés"
 msgid "Indenting creates a link to the current line"
 msgstr "La mise en retrait crée un lien vers la ligne courante."
 
-#: src/components/SharedHeader.tsx:124
+#: src/components/SharedHeader.tsx:125
 msgid "Info"
 msgstr "Info"
 
@@ -371,26 +399,30 @@ msgstr "Info"
 msgid "Language"
 msgstr "Langue"
 
-#: src/components/Tabs/EditLayoutTab.tsx:69
+#: src/components/Tabs/EditLayoutTab.tsx:88
 #: src/pages/Edit.tsx:99
 #: src/pages/EditHosted.tsx:102
 msgid "Layout"
 msgstr "Disposition"
 
-#: src/components/Tabs/EditLayoutTab.tsx:177
+#: src/components/Tabs/EditLayoutTab.tsx:196
 msgid "Layout is Frozen"
 msgstr "La mise en page est gelée"
+
+#: src/pages/Sponsor.tsx:147
+msgid "Layouts and Themes"
+msgstr "Mises en page et thèmes"
 
 #: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "En savoir plus"
 
-#: src/lib/graphOptions.ts:35
-#: src/lib/graphOptions.ts:42
+#: src/lib/graphOptions.ts:34
+#: src/lib/graphOptions.ts:41
 msgid "Left to Right"
 msgstr "De gauche à droite"
 
-#: src/lib/graphOptions.ts:48
+#: src/lib/graphOptions.ts:47
 msgid "Light"
 msgstr "Lumineux"
 
@@ -406,6 +438,10 @@ msgstr "Lien"
 #: src/pages/Charts.tsx:133
 msgid "Local Charts"
 msgstr "Graphiques locaux"
+
+#: src/components/SharedHeader.tsx:188
+msgid "Log In"
+msgstr "Connexion"
 
 #: src/components/SponsorDashboard.tsx:127
 msgid "Log Out"
@@ -423,19 +459,23 @@ msgstr "Faire un don"
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
-#: src/lib/graphOptions.ts:52
+#: src/lib/graphOptions.ts:51
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/pages/Sponsor.tsx:60
+#: src/pages/Sponsor.tsx:63
+msgid "Monthly"
+msgstr "Mensuel"
+
+#: src/pages/Sponsor.tsx:103
 msgid "More Layouts"
 msgstr "Plus de mises en page"
 
-#: src/pages/Sponsor.tsx:53
-msgid "More Themes"
-msgstr "Plus de thèmes"
+#: src/pages/Sponsor.tsx:104
+msgid "More Themes and Fonts"
+msgstr "Plus de thèmes et de polices"
 
-#: src/lib/graphOptions.ts:59
+#: src/lib/graphOptions.ts:58
 msgid "Museum"
 msgstr "Musée"
 
@@ -448,8 +488,8 @@ msgstr "Nom"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Besoin d'aide? <0>Consultez notre documentation.</0>"
 
-#: src/components/SharedHeader.tsx:65
-#: src/components/SharedHeader.tsx:319
+#: src/components/SharedHeader.tsx:66
+#: src/components/SharedHeader.tsx:328
 msgid "New"
 msgstr "Nouveau"
 
@@ -466,16 +506,16 @@ msgstr "Prochain paiement"
 msgid "Open Customer Portal"
 msgstr "Ouvrir le portail client"
 
-#: src/lib/graphOptions.ts:58
+#: src/pages/Sponsor.tsx:43
+msgid "Plans"
+msgstr "Des plans"
+
+#: src/lib/graphOptions.ts:57
 msgid "Playbook"
 msgstr "Livre-jeu"
 
-#: src/pages/Sponsor.tsx:63
-msgid "Powerful layout algorithms that bring order to graphs of all shapes and sizes"
-msgstr "Algorithmes de mise en page puissants qui mettent de l'ordre dans les graphiques de toutes formes et tailles"
-
-#: src/components/SharedHeader.tsx:171
-#: src/components/SharedHeader.tsx:381
+#: src/components/SharedHeader.tsx:173
+#: src/components/SharedHeader.tsx:390
 msgid "Pricing"
 msgstr "Tarification"
 
@@ -485,7 +525,7 @@ msgstr "Tarification"
 msgid "Public"
 msgstr "Public"
 
-#: src/lib/graphOptions.ts:23
+#: src/lib/graphOptions.ts:22
 msgid "Random"
 msgstr "Aléatoire"
 
@@ -514,7 +554,7 @@ msgstr "Réinitialiser"
 msgid "Resume Subscription"
 msgstr "Reprendre l'abonnement"
 
-#: src/lib/graphOptions.ts:54
+#: src/lib/graphOptions.ts:53
 msgid "Retro"
 msgstr "Rétro"
 
@@ -522,13 +562,13 @@ msgstr "Rétro"
 msgid "Return"
 msgstr "Retour"
 
-#: src/lib/graphOptions.ts:36
-#: src/lib/graphOptions.ts:43
+#: src/lib/graphOptions.ts:35
+#: src/lib/graphOptions.ts:42
 msgid "Right to Left"
 msgstr "De droite à gauche"
 
-#: src/components/SharedHeader.tsx:149
-#: src/components/SharedHeader.tsx:362
+#: src/components/SharedHeader.tsx:150
+#: src/components/SharedHeader.tsx:371
 msgid "Roadmap"
 msgstr "Roadmap"
 
@@ -536,20 +576,37 @@ msgstr "Roadmap"
 msgid "Save"
 msgstr "Sauver"
 
-#: src/components/SharedHeader.tsx:156
-#: src/components/SharedHeader.tsx:366
+#: src/pages/Sponsor.tsx:16
+msgid "Say goodbye to tedious flowchart creation"
+msgstr "Dites adieu au processus pénible de création d'organigrammes"
+
+#: src/components/SharedHeader.tsx:157
+#: src/components/SharedHeader.tsx:375
 msgid "Settings"
 msgstr "Paramètres"
+
+#: src/pages/Sponsor.tsx:86
+#: src/pages/Sponsor.tsx:99
+msgid "Shape Libraries"
+msgstr "Bibliothèques de formes"
+
+#: src/pages/Sponsor.tsx:105
+msgid "Share with Full Access, Edit-only, or View-only Permissions"
+msgstr "Partager avec des autorisations d'accès complet, d'édition uniquement ou d'affichage uniquement"
 
 #: src/components/LoginForm.tsx:61
 msgid "Sign In"
 msgstr "Connectez"
 
-#: src/pages/Sponsor.tsx:230
+#: src/pages/SignUp.tsx:208
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: src/components/Tabs/EditLayoutTab.tsx:123
+#: src/pages/Sponsor.tsx:178
+msgid "Sign Up Now"
+msgstr "S'inscrire maintenant"
+
+#: src/components/Tabs/EditLayoutTab.tsx:142
 msgid "Spacing"
 msgstr "Espacement"
 
@@ -557,17 +614,22 @@ msgstr "Espacement"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "Parrainez flowchart.fun pour 3 $ / mois ou 30 $ / an pour accéder aux organigrammes hébergés et aux nouveaux styles et fonctionnalités"
 
-#: src/pages/Sponsor.tsx:28
-msgid "Sponsor flowchart.fun for <0>$3 / month</0> or <1>$30 / year</1> to get access to..."
-msgstr "Parrainez flowchart.fun pour <0>3 $ / mois</0> ou <1>30 $ / an</1> pour avoir accès à..."
-
 #: src/components/SponsorDashboard.tsx:227
 msgid "Start"
 msgstr "Début"
 
+#: src/pages/Sponsor.tsx:87
+#: src/pages/Sponsor.tsx:100
+msgid "Static Share Links"
+msgstr "Liens de partage statiques"
+
 #: src/components/SponsorDashboard.tsx:206
 msgid "Status"
 msgstr "État"
+
+#: src/pages/Sponsor.tsx:164
+msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
+msgstr "Rationalisez votre flux de travail et simplifiez la visualisation de vos processus grâce à Flowchart Fun"
 
 #: src/pages/Edit.tsx:104
 #: src/pages/EditHosted.tsx:105
@@ -587,6 +649,10 @@ msgstr "Abonnement"
 msgid "Subscription will end"
 msgstr "L'abonnement prendra fin"
 
+#: src/components/Tabs/EditLayoutTab.tsx:74
+msgid "Syntax"
+msgstr "Syntaxe"
+
 #: src/components/Feedback.tsx:125
 msgid "Thank you for your feedback!"
 msgstr "Merci pour votre commentaire !"
@@ -604,8 +670,8 @@ msgstr "Ces graphiques sont uniquement disponibles dans le navigateur de cet app
 msgid "This app works by typing"
 msgstr "Chaque ligne creé une nouvelle boite"
 
-#: src/lib/graphOptions.ts:34
-#: src/lib/graphOptions.ts:41
+#: src/lib/graphOptions.ts:33
+#: src/lib/graphOptions.ts:40
 msgid "Top to Bottom"
 msgstr "De haut en bas"
 
@@ -613,9 +679,19 @@ msgstr "De haut en bas"
 msgid "Try again"
 msgstr "Réessayer"
 
-#: src/components/Tabs/EditLayoutTab.tsx:190
+#: src/components/Tabs/EditLayoutTab.tsx:209
 msgid "Unfreeze"
 msgstr "Débloquer"
+
+#: src/pages/Sponsor.tsx:101
+#: src/pages/Sponsor.tsx:114
+msgid "Unlimited Hosted Charts"
+msgstr "Nombre illimité de graphiques hébergés"
+
+#: src/pages/Sponsor.tsx:84
+#: src/pages/Sponsor.tsx:97
+msgid "Unlimited Local Charts"
+msgstr "Nombre illimité de graphiques locaux"
 
 #: src/components/SponsorDashboard.tsx:157
 msgid "Update Email"
@@ -641,7 +717,7 @@ msgstr "Voir sur Github"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Nous apprécions tous vos commentaires, suggestions, retours sur les bugs et demandes de fonctionnalités !"
 
-#: src/pages/Sponsor.tsx:237
+#: src/pages/SignUp.tsx:215
 msgid "We use cookies to keep you logged in."
 msgstr "Nous utilisons des cookies afin de maintenir votre connexion."
 
@@ -652,6 +728,10 @@ msgstr "Comment aimeriez-vous nommer cette copie ?"
 #: src/components/Feedback.tsx:84
 msgid "What would you like to share with us?"
 msgstr "Que voudriez-vous partager avec nous ?"
+
+#: src/pages/Sponsor.tsx:117
+msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
+msgstr "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez."
 
 #: src/components/SponsorDashboard.tsx:191
 #: src/pages/Charts.tsx:375
