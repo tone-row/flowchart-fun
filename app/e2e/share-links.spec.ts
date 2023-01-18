@@ -15,24 +15,18 @@ test.describe("share-links", () => {
 
   test("share links", async ({ page }) => {
     try {
-      await page.getByRole("link", { name: "New" }).click();
-      const encoded = `BYUwNmD2AEDukCcwBMBQBeTnUG8C+GW6QA`;
-      await page
-        .getByText("Indenting creates a link to the current line")
-        .click();
-      await page
-        .getByRole("textbox", {
-          name: "Editor content;Press Alt+F1 for Accessibility Options.",
-        })
-        .press("Meta+a");
+      await page.goto(`${BASE_URL}/n#FDC8-YG8F8w0Q`);
+      const encoded = `BYUwNmD2AEDukCcwBMBQqC8WuoN4F9NsMg`;
+
+      // wait for 2 seconds
+      await page.waitForTimeout(2000);
+
+      await page.locator(".view-line").first().click();
       await page
         .getByRole("textbox", {
           name: "Editor content;Press Alt+F1 for Accessibility Options.",
         })
         .type("hello world", { delay: 100 });
-
-      // wait for 2 seconds
-      await page.waitForTimeout(2000);
 
       await page.getByRole("button", { name: "Export" }).click();
 
