@@ -1,0 +1,21 @@
+.editorOptions {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.select {
+  padding: 4px 6px 5px;
+  border: none;
+  background-color: var(--color-nodeHover);
+  border-radius: 8px;
+}
+
+.select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.select:hover {
+  background-color: var(--color-lineColor);
+}
