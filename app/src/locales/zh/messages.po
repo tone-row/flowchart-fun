@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/SignUp.tsx:161
+#: src/pages/SignUp.tsx:166
 msgid "$3 / Month"
 msgstr "3 美元/月"
 
@@ -21,7 +21,7 @@ msgstr "3 美元/月"
 msgid "$3.00/month"
 msgstr "$3.00/月"
 
-#: src/pages/SignUp.tsx:162
+#: src/pages/SignUp.tsx:167
 msgid "$30 / Year"
 msgstr "30 美元 / 年"
 
@@ -38,7 +38,7 @@ msgstr "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档�
 msgid "Account"
 msgstr "帐户"
 
-#: src/pages/Edit.tsx:113
+#: src/pages/Edit.tsx:114
 #: src/pages/EditHosted.tsx:109
 msgid "Advanced"
 msgstr "先进的"
@@ -122,11 +122,11 @@ msgid "Charts"
 msgstr "图表"
 
 #: src/components/LoginForm.tsx:38
-#: src/pages/SignUp.tsx:129
+#: src/pages/SignUp.tsx:134
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/pages/Sponsor.tsx:133
+#: src/pages/Sponsor.tsx:134
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "选择您的图表分享方式：完全访问权限，仅编辑，或仅浏览。决定谁能对您的工作做出更改。"
 
@@ -203,7 +203,7 @@ msgstr "使用完全一样的标签文本，直接创建链接"
 msgid "Created"
 msgstr "已创建"
 
-#: src/pages/Sponsor.tsx:130
+#: src/pages/Sponsor.tsx:131
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
@@ -211,7 +211,7 @@ msgstr "自定义分享选项"
 msgid "Customer Portal"
 msgstr "客户门户"
 
-#: src/pages/Sponsor.tsx:150
+#: src/pages/Sponsor.tsx:151
 msgid "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams."
 msgstr "使用更多布局和主题选项自定义图表的外观和观感，帮助您创建专业而闲心悦目的示意图。"
 
@@ -235,7 +235,7 @@ msgstr "日期"
 msgid "Delete"
 msgstr "删除"
 
-#: src/components/Tabs/EditLayoutTab.tsx:106
+#: src/components/Tabs/EditLayoutTab.tsx:87
 msgid "Direction"
 msgstr "方向"
 
@@ -251,7 +251,7 @@ msgstr "您要取消订阅吗？"
 msgid "Do you want to delete this?"
 msgstr "您要将其删除吗？"
 
-#: src/pages/Edit.tsx:94
+#: src/pages/Edit.tsx:95
 #: src/pages/EditHosted.tsx:99
 msgid "Document"
 msgstr "文档"
@@ -282,7 +282,7 @@ msgstr "下载 SVG"
 msgid "Duplicate"
 msgstr "复制"
 
-#: src/pages/Sponsor.tsx:102
+#: src/pages/Sponsor.tsx:103
 msgid "Dynamic Share Links"
 msgstr "动态分享链接"
 
@@ -322,7 +322,7 @@ msgid "Export"
 msgstr "导出"
 
 #: src/pages/Sponsor.tsx:85
-#: src/pages/Sponsor.tsx:98
+#: src/pages/Sponsor.tsx:99
 msgid "Export to Common Image Formats"
 msgstr "导出为常见图片格式"
 
@@ -348,7 +348,7 @@ msgstr "全屏"
 msgid "Futuristic"
 msgstr "未来主义的"
 
-#: src/components/Tabs/EditLayoutTab.tsx:184
+#: src/components/Tabs/EditLayoutTab.tsx:165
 msgid "Get More Layouts"
 msgstr "获取更多布局"
 
@@ -399,17 +399,17 @@ msgstr "信息"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/Tabs/EditLayoutTab.tsx:88
-#: src/pages/Edit.tsx:99
+#: src/components/Tabs/EditLayoutTab.tsx:69
+#: src/pages/Edit.tsx:100
 #: src/pages/EditHosted.tsx:102
 msgid "Layout"
 msgstr "布局"
 
-#: src/components/Tabs/EditLayoutTab.tsx:196
+#: src/components/Tabs/EditLayoutTab.tsx:177
 msgid "Layout is Frozen"
 msgstr "布局被冻结"
 
-#: src/pages/Sponsor.tsx:147
+#: src/pages/Sponsor.tsx:148
 msgid "Layouts and Themes"
 msgstr "布局和主题"
 
@@ -467,11 +467,11 @@ msgstr "Monospace"
 msgid "Monthly"
 msgstr "每月"
 
-#: src/pages/Sponsor.tsx:103
+#: src/pages/Sponsor.tsx:104
 msgid "More Layouts"
 msgstr "更多布局"
 
-#: src/pages/Sponsor.tsx:104
+#: src/pages/Sponsor.tsx:105
 msgid "More Themes and Fonts"
 msgstr "更多主题和字体"
 
@@ -586,11 +586,11 @@ msgid "Settings"
 msgstr "设置"
 
 #: src/pages/Sponsor.tsx:86
-#: src/pages/Sponsor.tsx:99
+#: src/pages/Sponsor.tsx:100
 msgid "Shape Libraries"
 msgstr "形状库"
 
-#: src/pages/Sponsor.tsx:105
+#: src/pages/Sponsor.tsx:106
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "以完全访问权限、仅编辑权限或仅查看权限共享"
 
@@ -598,15 +598,16 @@ msgstr "以完全访问权限、仅编辑权限或仅查看权限共享"
 msgid "Sign In"
 msgstr "登录"
 
-#: src/pages/SignUp.tsx:208
+#: src/pages/SignUp.tsx:213
 msgid "Sign Up"
 msgstr "注册"
 
-#: src/pages/Sponsor.tsx:178
+#: src/pages/Sponsor.tsx:179
+#: src/pages/Sponsor.tsx:287
 msgid "Sign Up Now"
 msgstr "马上注册"
 
-#: src/components/Tabs/EditLayoutTab.tsx:142
+#: src/components/Tabs/EditLayoutTab.tsx:123
 msgid "Spacing"
 msgstr "间距"
 
@@ -619,7 +620,7 @@ msgid "Start"
 msgstr "开始"
 
 #: src/pages/Sponsor.tsx:87
-#: src/pages/Sponsor.tsx:100
+#: src/pages/Sponsor.tsx:101
 msgid "Static Share Links"
 msgstr "静态分享链接"
 
@@ -627,11 +628,11 @@ msgstr "静态分享链接"
 msgid "Status"
 msgstr "状态"
 
-#: src/pages/Sponsor.tsx:164
+#: src/pages/Sponsor.tsx:165
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "使用 Flowchart Fun，简化您的工作流程和过程可视化"
 
-#: src/pages/Edit.tsx:104
+#: src/pages/Edit.tsx:105
 #: src/pages/EditHosted.tsx:105
 msgid "Style"
 msgstr "风格"
@@ -649,7 +650,7 @@ msgstr "订阅"
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
-#: src/components/Tabs/EditLayoutTab.tsx:74
+#: src/components/EditorOptions.tsx:20
 msgid "Syntax"
 msgstr "句法"
 
@@ -679,17 +680,17 @@ msgstr "从上到下"
 msgid "Try again"
 msgstr "重试"
 
-#: src/components/Tabs/EditLayoutTab.tsx:209
+#: src/components/Tabs/EditLayoutTab.tsx:190
 msgid "Unfreeze"
 msgstr "解冻"
 
-#: src/pages/Sponsor.tsx:101
-#: src/pages/Sponsor.tsx:114
+#: src/pages/Sponsor.tsx:102
+#: src/pages/Sponsor.tsx:115
 msgid "Unlimited Hosted Charts"
 msgstr "无限托管图表"
 
 #: src/pages/Sponsor.tsx:84
-#: src/pages/Sponsor.tsx:97
+#: src/pages/Sponsor.tsx:98
 msgid "Unlimited Local Charts"
 msgstr "无限的本地图表"
 
@@ -717,7 +718,7 @@ msgstr "在 Github 上查看"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "我们感谢您的全部反馈、建议、报错和关于功能的需求！"
 
-#: src/pages/SignUp.tsx:215
+#: src/pages/SignUp.tsx:220
 msgid "We use cookies to keep you logged in."
 msgstr "我们使用 cookies 来让您保持登录状态。"
 
@@ -729,7 +730,7 @@ msgstr "你想将这个副本命名为什么？"
 msgid "What would you like to share with us?"
 msgstr "您想跟我们分享什么？"
 
-#: src/pages/Sponsor.tsx:117
+#: src/pages/Sponsor.tsx:118
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。"
 

@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/SignUp.tsx:161
+#: src/pages/SignUp.tsx:166
 msgid "$3 / Month"
 msgstr "$3 / Month"
 
@@ -21,7 +21,7 @@ msgstr "$3 / Month"
 msgid "$3.00/month"
 msgstr "$3.00/month"
 
-#: src/pages/SignUp.tsx:162
+#: src/pages/SignUp.tsx:167
 msgid "$30 / Year"
 msgstr "$30 / Year"
 
@@ -38,7 +38,7 @@ msgstr "Access these charts from anywhere.<0/>Share/embed charts that stay in sy
 msgid "Account"
 msgstr "Account"
 
-#: src/pages/Edit.tsx:113
+#: src/pages/Edit.tsx:114
 #: src/pages/EditHosted.tsx:109
 msgid "Advanced"
 msgstr "Advanced"
@@ -122,11 +122,11 @@ msgid "Charts"
 msgstr "Charts"
 
 #: src/components/LoginForm.tsx:38
-#: src/pages/SignUp.tsx:129
+#: src/pages/SignUp.tsx:134
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Check your email for a link to log in. You can close this window."
 
-#: src/pages/Sponsor.tsx:133
+#: src/pages/Sponsor.tsx:134
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 
@@ -203,7 +203,7 @@ msgstr "Create a link directly using the exact label text"
 msgid "Created"
 msgstr "Created"
 
-#: src/pages/Sponsor.tsx:130
+#: src/pages/Sponsor.tsx:131
 msgid "Custom Sharing Options"
 msgstr "Custom Sharing Options"
 
@@ -211,7 +211,7 @@ msgstr "Custom Sharing Options"
 msgid "Customer Portal"
 msgstr "Customer Portal"
 
-#: src/pages/Sponsor.tsx:150
+#: src/pages/Sponsor.tsx:151
 msgid "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams."
 msgstr "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams."
 
@@ -235,7 +235,7 @@ msgstr "Date"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/components/Tabs/EditLayoutTab.tsx:106
+#: src/components/Tabs/EditLayoutTab.tsx:87
 msgid "Direction"
 msgstr "Direction"
 
@@ -251,7 +251,7 @@ msgstr "Do you want to cancel your subscription?"
 msgid "Do you want to delete this?"
 msgstr "Do you want to delete this?"
 
-#: src/pages/Edit.tsx:94
+#: src/pages/Edit.tsx:95
 #: src/pages/EditHosted.tsx:99
 msgid "Document"
 msgstr "Document"
@@ -282,7 +282,7 @@ msgstr "Download SVG"
 msgid "Duplicate"
 msgstr "Duplicate"
 
-#: src/pages/Sponsor.tsx:102
+#: src/pages/Sponsor.tsx:103
 msgid "Dynamic Share Links"
 msgstr "Dynamic Share Links"
 
@@ -322,7 +322,7 @@ msgid "Export"
 msgstr "Export"
 
 #: src/pages/Sponsor.tsx:85
-#: src/pages/Sponsor.tsx:98
+#: src/pages/Sponsor.tsx:99
 msgid "Export to Common Image Formats"
 msgstr "Export to Common Image Formats"
 
@@ -348,7 +348,7 @@ msgstr "Fullscreen"
 msgid "Futuristic"
 msgstr "Futuristic"
 
-#: src/components/Tabs/EditLayoutTab.tsx:184
+#: src/components/Tabs/EditLayoutTab.tsx:165
 msgid "Get More Layouts"
 msgstr "Get More Layouts"
 
@@ -399,17 +399,17 @@ msgstr "Info"
 msgid "Language"
 msgstr "Language"
 
-#: src/components/Tabs/EditLayoutTab.tsx:88
-#: src/pages/Edit.tsx:99
+#: src/components/Tabs/EditLayoutTab.tsx:69
+#: src/pages/Edit.tsx:100
 #: src/pages/EditHosted.tsx:102
 msgid "Layout"
 msgstr "Layout"
 
-#: src/components/Tabs/EditLayoutTab.tsx:196
+#: src/components/Tabs/EditLayoutTab.tsx:177
 msgid "Layout is Frozen"
 msgstr "Layout is Frozen"
 
-#: src/pages/Sponsor.tsx:147
+#: src/pages/Sponsor.tsx:148
 msgid "Layouts and Themes"
 msgstr "Layouts and Themes"
 
@@ -467,11 +467,11 @@ msgstr "Monospace"
 msgid "Monthly"
 msgstr "Monthly"
 
-#: src/pages/Sponsor.tsx:103
+#: src/pages/Sponsor.tsx:104
 msgid "More Layouts"
 msgstr "More Layouts"
 
-#: src/pages/Sponsor.tsx:104
+#: src/pages/Sponsor.tsx:105
 msgid "More Themes and Fonts"
 msgstr "More Themes and Fonts"
 
@@ -586,11 +586,11 @@ msgid "Settings"
 msgstr "Settings"
 
 #: src/pages/Sponsor.tsx:86
-#: src/pages/Sponsor.tsx:99
+#: src/pages/Sponsor.tsx:100
 msgid "Shape Libraries"
 msgstr "Shape Libraries"
 
-#: src/pages/Sponsor.tsx:105
+#: src/pages/Sponsor.tsx:106
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "Share with Full Access, Edit-only, or View-only Permissions"
 
@@ -598,15 +598,16 @@ msgstr "Share with Full Access, Edit-only, or View-only Permissions"
 msgid "Sign In"
 msgstr "Sign In"
 
-#: src/pages/SignUp.tsx:208
+#: src/pages/SignUp.tsx:213
 msgid "Sign Up"
 msgstr "Sign Up"
 
-#: src/pages/Sponsor.tsx:178
+#: src/pages/Sponsor.tsx:179
+#: src/pages/Sponsor.tsx:287
 msgid "Sign Up Now"
 msgstr "Sign Up Now"
 
-#: src/components/Tabs/EditLayoutTab.tsx:142
+#: src/components/Tabs/EditLayoutTab.tsx:123
 msgid "Spacing"
 msgstr "Spacing"
 
@@ -619,7 +620,7 @@ msgid "Start"
 msgstr "Start"
 
 #: src/pages/Sponsor.tsx:87
-#: src/pages/Sponsor.tsx:100
+#: src/pages/Sponsor.tsx:101
 msgid "Static Share Links"
 msgstr "Static Share Links"
 
@@ -627,11 +628,11 @@ msgstr "Static Share Links"
 msgid "Status"
 msgstr "Status"
 
-#: src/pages/Sponsor.tsx:164
+#: src/pages/Sponsor.tsx:165
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 
-#: src/pages/Edit.tsx:104
+#: src/pages/Edit.tsx:105
 #: src/pages/EditHosted.tsx:105
 msgid "Style"
 msgstr "Style"
@@ -649,7 +650,7 @@ msgstr "Subscription"
 msgid "Subscription will end"
 msgstr "Subscription will end"
 
-#: src/components/Tabs/EditLayoutTab.tsx:74
+#: src/components/EditorOptions.tsx:20
 msgid "Syntax"
 msgstr "Syntax"
 
@@ -679,17 +680,17 @@ msgstr "Top to Bottom"
 msgid "Try again"
 msgstr "Try again"
 
-#: src/components/Tabs/EditLayoutTab.tsx:209
+#: src/components/Tabs/EditLayoutTab.tsx:190
 msgid "Unfreeze"
 msgstr "Unfreeze"
 
-#: src/pages/Sponsor.tsx:101
-#: src/pages/Sponsor.tsx:114
+#: src/pages/Sponsor.tsx:102
+#: src/pages/Sponsor.tsx:115
 msgid "Unlimited Hosted Charts"
 msgstr "Unlimited Hosted Charts"
 
 #: src/pages/Sponsor.tsx:84
-#: src/pages/Sponsor.tsx:97
+#: src/pages/Sponsor.tsx:98
 msgid "Unlimited Local Charts"
 msgstr "Unlimited Local Charts"
 
@@ -717,7 +718,7 @@ msgstr "View on Github"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 
-#: src/pages/SignUp.tsx:215
+#: src/pages/SignUp.tsx:220
 msgid "We use cookies to keep you logged in."
 msgstr "We use cookies to keep you logged in."
 
@@ -729,7 +730,7 @@ msgstr "What would you like to name this copy?"
 msgid "What would you like to share with us?"
 msgstr "What would you like to share with us?"
 
-#: src/pages/Sponsor.tsx:117
+#: src/pages/Sponsor.tsx:118
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 
