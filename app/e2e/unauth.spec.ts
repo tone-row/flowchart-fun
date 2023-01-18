@@ -461,15 +461,9 @@ test.describe("unauth", () => {
   });
 
   test("Can toggle Syntax", async ({ page }) => {
-    await page.getByTestId("Editor Tab: Layout").click();
-    await page.getByRole("combobox").filter({ hasText: "v1" }).click();
     await page
-      .getByRole("option")
-      .filter({ hasText: "graph-selector" })
-      .click();
-    await expect(
-      page.getByRole("combobox").filter({ hasText: "graph-selector" })
-    ).toBeVisible();
+      .getByRole("combobox", { name: "Syntax" })
+      .selectOption("graph-selector");
     await page.getByRole("button", { name: "Export" }).click();
     const input = page.getByTestId("Copy Fullscreen");
     // get input value
