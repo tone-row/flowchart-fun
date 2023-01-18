@@ -9,6 +9,7 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
+import { EditorOptions } from "../components/EditorOptions";
 import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Loading from "../components/Loading";
@@ -111,16 +112,18 @@ export default function EditHosted() {
               )}
             </Tabs.List>
             <Tabs.Content value="Document">
-              <Editor
-                value={text}
-                // @ts-ignore
-                wrapperClassName={editStyles.Editor}
-                defaultLanguage={languageId}
-                options={editorOptions}
-                onChange={onChange}
-                loading={loading.current}
-                onMount={onMount}
-              />
+              <EditorOptions>
+                <Editor
+                  value={text}
+                  // @ts-ignore
+                  wrapperClassName={editStyles.Editor}
+                  defaultLanguage={languageId}
+                  options={editorOptions}
+                  onChange={onChange}
+                  loading={loading.current}
+                  onMount={onMount}
+                />
+              </EditorOptions>
             </Tabs.Content>
             <Tabs.Content value="Layout">
               <EditLayoutTab />
