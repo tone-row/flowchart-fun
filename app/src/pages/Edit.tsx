@@ -8,6 +8,7 @@ import { useParams, useRouteMatch } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
+import { EditorOptions } from "../components/EditorOptions";
 import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Loading from "../components/Loading";
@@ -116,18 +117,20 @@ const Edit = memo(function Edit() {
               )}
             </Tabs.List>
             <Tabs.Content value="Document">
-              <Editor
-                value={text}
-                defaultLanguage={languageId}
-                options={editorOptions}
-                onChange={onChange}
-                loading={loading.current}
-                onMount={onMount}
-                wrapperProps={{
-                  "data-testid": "Editor",
-                  className: styles.EditorXYZ,
-                }}
-              />
+              <EditorOptions>
+                <Editor
+                  value={text}
+                  defaultLanguage={languageId}
+                  options={editorOptions}
+                  onChange={onChange}
+                  loading={loading.current}
+                  onMount={onMount}
+                  wrapperProps={{
+                    "data-testid": "Editor",
+                    className: styles.EditorXYZ,
+                  }}
+                />
+              </EditorOptions>
             </Tabs.Content>
             <Tabs.Content value="Layout">
               <EditLayoutTab />

@@ -15,18 +15,18 @@ test.describe("share-links", () => {
 
   test("share links", async ({ page }) => {
     try {
-      await page.getByRole("link", { name: "New" }).click();
-
-      // TODO: someday switch back to this when you can debug why Meta+A doesn't work
-      // const encoded = `BYUwNmD2AEDukCcwBMBQBeTnUG8C+GW6QA`;
-      // await changeEditorText(page, "hello world");
-      const encoded = `CoCwlgzgBAhgDnKB3A9gJwNbQEYE8oAuucYAdgOYBQUUAkqQCYCmpBZ5UAxmkzAU9BhQANmQyEUhEEy4BXND1YiyTarFL5+ADwIAuKNiYAzdDKGcUwlKS48+A2CJiHhagMJ3+j0aXEMwPJwEwviyEOxSMkxaMEFOLoTRBGo0ohgyBOAQ+gAUoJCwCMjoWAaaxOwAlClQANqcYQQoALZ0ACIAulDoNTR4sAz+FOpQAKQArABCtG0TbeoMUDxGTIqcEZl8vTTK6VKQuQ0QTa0zlVAA9BdQAJooslwwNjDCEJJhMuEUwkwAtD4yCzNZosAgQSgXABUlB6zVkwjYAMoQJBrHBlAAEjAAG4yIyyUgAQiggB4NwCR+5RIRdpMIrMU0MIGJRKABeNlsygAbwAvqz2SygA`;
-      const monacoEditor = page.locator(".monaco-editor").nth(0);
-      await monacoEditor.click();
-      await page.keyboard.type("hello world");
+      await page.goto(`${BASE_URL}/n#FDC8-YG8F8w0Q`);
+      const encoded = `BYUwNmD2AEDukCcwBMBQqC8WuoN4F9NsMg`;
 
       // wait for 2 seconds
       await page.waitForTimeout(2000);
+
+      await page.locator(".view-line").first().click();
+      await page
+        .getByRole("textbox", {
+          name: "Editor content;Press Alt+F1 for Accessibility Options.",
+        })
+        .type("hello world", { delay: 100 });
 
       await page.getByRole("button", { name: "Export" }).click();
 
