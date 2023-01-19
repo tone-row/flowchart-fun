@@ -15,7 +15,7 @@ export function EditorOptions({ children }: { children: ReactNode }) {
 
   return (
     <div className={styles.editorOptions}>
-      <Box p={2} flow="column" content="normal space-between">
+      <Box p={2} flow="column" content="normal space-between" pl={6}>
         {parser === "graph-selector" ? <SyntaxHelpDialog /> : <span />}
         <Box as="label" flow="column" gap={2} items="center normal">
           <Type size={-1} color="color-lineNumbers">
