@@ -15,7 +15,6 @@ test.describe("Open syntax reference", () => {
 
   test("Open syntax reference", async ({ page }) => {
     try {
-      await page.goto("http://localhost:3000/");
       await page
         .getByRole("combobox", { name: "Syntax" })
         .selectOption("graph-selector");
