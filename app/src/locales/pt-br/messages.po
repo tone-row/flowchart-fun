@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/SignUp.tsx:161
+#: src/pages/SignUp.tsx:166
 msgid "$3 / Month"
 msgstr "$ 3 / Mês"
 
@@ -21,7 +21,7 @@ msgstr "$ 3 / Mês"
 msgid "$3.00/month"
 msgstr "US$ 3,00/mês"
 
-#: src/pages/SignUp.tsx:162
+#: src/pages/SignUp.tsx:167
 msgid "$30 / Year"
 msgstr "$ 30 / ano"
 
@@ -38,8 +38,8 @@ msgstr "Acesse os diagramas de qualquer lugar.<0/>Compartilhe/incorpore diagrama
 msgid "Account"
 msgstr "Conta"
 
-#: src/pages/Edit.tsx:113
-#: src/pages/EditHosted.tsx:109
+#: src/pages/Edit.tsx:114
+#: src/pages/EditHosted.tsx:110
 msgid "Advanced"
 msgstr "Avançado"
 
@@ -62,6 +62,10 @@ msgstr "Anualmente"
 #: src/components/Settings.tsx:80
 msgid "Appearance"
 msgstr "Aparência"
+
+#: src/components/SyntaxHelpDialog.tsx:118
+msgid "Attributes"
+msgstr ""
 
 #: src/components/Feedback.tsx:129
 msgid "Back To Editor"
@@ -122,17 +126,21 @@ msgid "Charts"
 msgstr "Diagramas"
 
 #: src/components/LoginForm.tsx:38
-#: src/pages/SignUp.tsx:129
+#: src/pages/SignUp.tsx:134
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Cheque seu e-mail com um link para logar. Você pode fechar esta janela."
 
-#: src/pages/Sponsor.tsx:133
+#: src/pages/Sponsor.tsx:134
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "Opte por compartilhar os seus gráficos com acesso total, permissões somente edição ou somente visualização, dando a você controle sobre quem pode fazer alterações no seu trabalho."
 
 #: src/lib/graphOptions.ts:21
 msgid "Circle"
 msgstr "Círculo"
+
+#: src/components/SyntaxHelpDialog.tsx:109
+msgid "Classes"
+msgstr ""
 
 #: src/lib/graphOptions.ts:56
 msgid "Clay"
@@ -155,6 +163,10 @@ msgstr "Clonar"
 msgid "Close"
 msgstr "Fechar"
 
+#: src/components/SyntaxHelpDialog.tsx:251
+msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
+msgstr ""
+
 #: src/lib/graphOptions.ts:55
 msgid "Comic Book"
 msgstr "História em Quadrinhos"
@@ -166,6 +178,14 @@ msgstr "Concêntrico"
 #: src/components/SponsorDashboard.tsx:171
 msgid "Confirm New Email"
 msgstr "Confirme o novo email"
+
+#: src/components/SyntaxHelpDialog.tsx:225
+msgid "Containers"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:228
+msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
+msgstr ""
 
 #: src/components/RenameButton.tsx:139
 msgid "Convert to hosted chart?"
@@ -203,7 +223,11 @@ msgstr "Crie uma conexão direta usando exatamente o mesmo texto da etiqueta"
 msgid "Created"
 msgstr "Criado"
 
-#: src/pages/Sponsor.tsx:130
+#: src/components/SyntaxHelpDialog.tsx:132
+msgid "Creating an edge between two nodes is done by indenting the second node below the first"
+msgstr ""
+
+#: src/pages/Sponsor.tsx:131
 msgid "Custom Sharing Options"
 msgstr "Opções de Compartilhamento Personalizadas"
 
@@ -211,7 +235,7 @@ msgstr "Opções de Compartilhamento Personalizadas"
 msgid "Customer Portal"
 msgstr "Portal do cliente"
 
-#: src/pages/Sponsor.tsx:150
+#: src/pages/Sponsor.tsx:151
 msgid "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams."
 msgstr "Personalize a aparência de seus gráficos com mais opções de leiaute e tema, ajudando você a criar diagramas profissionais e visualmente atraentes."
 
@@ -235,7 +259,7 @@ msgstr "Data"
 msgid "Delete"
 msgstr "Deletar"
 
-#: src/components/Tabs/EditLayoutTab.tsx:106
+#: src/components/Tabs/EditLayoutTab.tsx:87
 msgid "Direction"
 msgstr "Direção"
 
@@ -251,8 +275,8 @@ msgstr "Você deseja cancelar sua inscrição?"
 msgid "Do you want to delete this?"
 msgstr "Você deseja deletar isso?"
 
-#: src/pages/Edit.tsx:94
-#: src/pages/EditHosted.tsx:99
+#: src/pages/Edit.tsx:95
+#: src/pages/EditHosted.tsx:100
 msgid "Document"
 msgstr "Documento"
 
@@ -277,14 +301,34 @@ msgstr "Baixar PNG"
 msgid "Download SVG"
 msgstr "Baixar SVG"
 
+#: src/components/SyntaxHelpDialog.tsx:213
+msgid "Draw an edge from multiple nodes by beginning the line with a reference"
+msgstr ""
+
 #: src/pages/Charts.tsx:289
 #: src/pages/Charts.tsx:500
 msgid "Duplicate"
 msgstr "Duplicar"
 
-#: src/pages/Sponsor.tsx:102
+#: src/pages/Sponsor.tsx:103
 msgid "Dynamic Share Links"
 msgstr "Links de compartilhamento dinâmico"
+
+#: src/components/SyntaxHelpDialog.tsx:153
+msgid "Edge ID, Classes, Attributes"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:141
+msgid "Edge Label"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:129
+msgid "Edges"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:156
+msgid "Edges can also have ID's, classes, and attributes before the label"
+msgstr ""
 
 #: src/components/ShareDialog.tsx:89
 msgid "Editable"
@@ -322,7 +366,7 @@ msgid "Export"
 msgstr "Exportar"
 
 #: src/pages/Sponsor.tsx:85
-#: src/pages/Sponsor.tsx:98
+#: src/pages/Sponsor.tsx:99
 msgid "Export to Common Image Formats"
 msgstr "Exportar para formatos de imagem comuns"
 
@@ -348,7 +392,7 @@ msgstr "Tela cheia"
 msgid "Futuristic"
 msgstr "Futurista"
 
-#: src/components/Tabs/EditLayoutTab.tsx:184
+#: src/components/Tabs/EditLayoutTab.tsx:165
 msgid "Get More Layouts"
 msgstr "Obtenha Mais Leiautes"
 
@@ -386,6 +430,10 @@ msgstr "Página inicial"
 msgid "Hosted Charts"
 msgstr "Diagramas hospedados"
 
+#: src/components/SyntaxHelpDialog.tsx:101
+msgid "ID's"
+msgstr ""
+
 #: src/lib/queries.ts:151
 #: src/lib/useDefaultDoc.ts:5
 msgid "Indenting creates a link to the current line"
@@ -399,19 +447,23 @@ msgstr "Informações"
 msgid "Language"
 msgstr "Idioma"
 
-#: src/components/Tabs/EditLayoutTab.tsx:88
-#: src/pages/Edit.tsx:99
-#: src/pages/EditHosted.tsx:102
+#: src/components/Tabs/EditLayoutTab.tsx:69
+#: src/pages/Edit.tsx:100
+#: src/pages/EditHosted.tsx:103
 msgid "Layout"
 msgstr "Layout"
 
-#: src/components/Tabs/EditLayoutTab.tsx:196
+#: src/components/Tabs/EditLayoutTab.tsx:177
 msgid "Layout is Frozen"
 msgstr "O layout está congelado"
 
-#: src/pages/Sponsor.tsx:147
+#: src/pages/Sponsor.tsx:148
 msgid "Layouts and Themes"
 msgstr "Leiautes e Temas"
+
+#: src/components/SyntaxHelpDialog.tsx:210
+msgid "Leading References"
+msgstr ""
 
 #: src/pages/Charts.tsx:734
 msgid "Learn More"
@@ -467,11 +519,11 @@ msgstr "Monospace"
 msgid "Monthly"
 msgstr "Mensalmente"
 
-#: src/pages/Sponsor.tsx:103
+#: src/pages/Sponsor.tsx:104
 msgid "More Layouts"
 msgstr "Mais Layouts"
 
-#: src/pages/Sponsor.tsx:104
+#: src/pages/Sponsor.tsx:105
 msgid "More Themes and Fonts"
 msgstr "Mais Temas e Fontes"
 
@@ -501,6 +553,22 @@ msgstr "Novo Email"
 #: src/components/SponsorDashboard.tsx:406
 msgid "Next charge"
 msgstr "Próxima cobrança"
+
+#: src/components/SyntaxHelpDialog.tsx:248
+msgid "Node Colors"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:99
+msgid "Node ID, Classes, Attributes"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:88
+msgid "Node Label"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:261
+msgid "Node Shapes"
+msgstr ""
 
 #: src/components/SponsorDashboard.tsx:149
 msgid "Open Customer Portal"
@@ -533,6 +601,38 @@ msgstr "Aleatório"
 #: src/components/ShareDialog.tsx:92
 msgid "Read-only"
 msgstr "Somente leitura"
+
+#: src/components/SyntaxHelpDialog.tsx:196
+msgid "Reference by Class"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:186
+msgid "Reference by ID"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:176
+msgid "Reference by Label"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:167
+msgid "References"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:170
+msgid "References are used to create edges between nodes that are created elsewhere in the document"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:179
+msgid "Referencing a node by its exact label"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:189
+msgid "Referencing a node by its unique ID"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:199
+msgid "Referencing multiple nodes with the same assigned class"
+msgstr ""
 
 #: src/components/RenameButton.tsx:103
 #: src/components/RenameButton.tsx:104
@@ -586,11 +686,15 @@ msgid "Settings"
 msgstr "Configurações"
 
 #: src/pages/Sponsor.tsx:86
-#: src/pages/Sponsor.tsx:99
+#: src/pages/Sponsor.tsx:100
 msgid "Shape Libraries"
 msgstr "Bibliotecas de Formas"
 
-#: src/pages/Sponsor.tsx:105
+#: src/components/SyntaxHelpDialog.tsx:266
+msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
+msgstr ""
+
+#: src/pages/Sponsor.tsx:106
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "Compartilhar com permissões de acesso total, somente edição ou somente visualização"
 
@@ -598,15 +702,20 @@ msgstr "Compartilhar com permissões de acesso total, somente edição ou soment
 msgid "Sign In"
 msgstr "Entrar"
 
-#: src/pages/SignUp.tsx:208
+#: src/pages/SignUp.tsx:213
 msgid "Sign Up"
 msgstr "Inscreva-se"
 
-#: src/pages/Sponsor.tsx:178
+#: src/pages/Sponsor.tsx:179
+#: src/pages/Sponsor.tsx:287
 msgid "Sign Up Now"
 msgstr "Cadastre-se Agora"
 
-#: src/components/Tabs/EditLayoutTab.tsx:142
+#: src/components/SyntaxHelpDialog.tsx:243
+msgid "Some classes are available to help style your flowchart"
+msgstr ""
+
+#: src/components/Tabs/EditLayoutTab.tsx:123
 msgid "Spacing"
 msgstr "Espaçamento"
 
@@ -619,7 +728,7 @@ msgid "Start"
 msgstr "Início"
 
 #: src/pages/Sponsor.tsx:87
-#: src/pages/Sponsor.tsx:100
+#: src/pages/Sponsor.tsx:101
 msgid "Static Share Links"
 msgstr "Links de compartilhamento estáticos"
 
@@ -627,14 +736,22 @@ msgstr "Links de compartilhamento estáticos"
 msgid "Status"
 msgstr "Status"
 
-#: src/pages/Sponsor.tsx:164
+#: src/components/SyntaxHelpDialog.tsx:121
+msgid "Store any data associated to a node"
+msgstr ""
+
+#: src/pages/Sponsor.tsx:165
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Agilize seu fluxo de trabalho e simplifique a visualização do processo com o Flowchart Fun"
 
-#: src/pages/Edit.tsx:104
-#: src/pages/EditHosted.tsx:105
+#: src/pages/Edit.tsx:105
+#: src/pages/EditHosted.tsx:106
 msgid "Style"
 msgstr "Estilo"
+
+#: src/components/SyntaxHelpDialog.tsx:240
+msgid "Style Classes"
+msgstr ""
 
 #: src/components/Feedback.tsx:106
 #: src/components/RenameButton.tsx:158
@@ -649,9 +766,22 @@ msgstr "Inscrição"
 msgid "Subscription will end"
 msgstr "Inscrição acabará"
 
-#: src/components/Tabs/EditLayoutTab.tsx:74
+#: src/components/EditorOptions.tsx:22
 msgid "Syntax"
 msgstr "Sintaxe"
+
+#: src/components/SyntaxHelpDialog.tsx:58
+#: src/components/SyntaxHelpDialog.tsx:74
+msgid "Syntax Reference"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:144
+msgid "Text followed by colon+space creates an edge with the text as the label"
+msgstr ""
+
+#: src/components/SyntaxHelpDialog.tsx:91
+msgid "Text on a line creates a node with the text as the label"
+msgstr ""
 
 #: src/components/Feedback.tsx:125
 msgid "Thank you for your feedback!"
@@ -679,17 +809,21 @@ msgstr "De cima para baixo"
 msgid "Try again"
 msgstr "Tente novamente"
 
-#: src/components/Tabs/EditLayoutTab.tsx:209
+#: src/components/Tabs/EditLayoutTab.tsx:190
 msgid "Unfreeze"
 msgstr "Descongelar"
 
-#: src/pages/Sponsor.tsx:101
-#: src/pages/Sponsor.tsx:114
+#: src/components/SyntaxHelpDialog.tsx:103
+msgid "Unique text value to identify a node"
+msgstr ""
+
+#: src/pages/Sponsor.tsx:102
+#: src/pages/Sponsor.tsx:115
 msgid "Unlimited Hosted Charts"
 msgstr "Gráficos Hospedados Ilimitados"
 
 #: src/pages/Sponsor.tsx:84
-#: src/pages/Sponsor.tsx:97
+#: src/pages/Sponsor.tsx:98
 msgid "Unlimited Local Charts"
 msgstr "Gráficos locais ilimitados"
 
@@ -700,6 +834,10 @@ msgstr "Atualizar e-mail"
 #: src/pages/Charts.tsx:597
 msgid "Updated"
 msgstr "Atualizado"
+
+#: src/components/SyntaxHelpDialog.tsx:112
+msgid "Use classes to group nodes"
+msgstr ""
 
 #: src/components/SponsorDashboard.tsx:135
 msgid "Use the customer portal to change your billing information."
@@ -717,7 +855,7 @@ msgstr "Visualizar no Github"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Nós agradecemos todos os seus feedbacks, sugestões, bugs, e requisições de funcionalidades!"
 
-#: src/pages/SignUp.tsx:215
+#: src/pages/SignUp.tsx:220
 msgid "We use cookies to keep you logged in."
 msgstr "Nós usamos cookies para manter você logado."
 
@@ -729,7 +867,7 @@ msgstr "Como você gostaria de chamar essa cópia?"
 msgid "What would you like to share with us?"
 msgstr "O que você deseja compartilhar com a gente?"
 
-#: src/pages/Sponsor.tsx:117
+#: src/pages/Sponsor.tsx:118
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "Com a capacidade de criar gráficos hospedados ilimitados, você pode acessar e trabalhar os seus fluxogramas de qualquer dispositivo, em qualquer lugar."
 

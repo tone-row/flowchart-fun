@@ -17,6 +17,7 @@
     ],
     Annually: "每年",
     Appearance: "外观",
+    Attributes: "Attributes",
     "Back To Editor": "返回编辑器",
     Background: "背景",
     "Become a Sponsor": "赞助我们",
@@ -34,14 +35,20 @@
     "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
       "选择您的图表分享方式：完全访问权限，仅编辑，或仅浏览。决定谁能对您的工作做出更改。",
     Circle: "圆圈",
+    Classes: "Classes",
     Clay: "粘土",
     Clear: "清除",
     "Clear text?": "清除文字？",
     Clone: "克隆",
     Close: "关闭",
+    "Colors include red, orange, yellow, blue, purple, black, white, and gray.":
+      "Colors include red, orange, yellow, blue, purple, black, white, and gray.",
     "Comic Book": "漫画书",
     Concentric: "同心",
     "Confirm New Email": "确认新电子邮件",
+    Containers: "Containers",
+    "Containers are nodes that contain other nodes. They are declared using curly braces.":
+      "Containers are nodes that contain other nodes. They are declared using curly braces.",
     "Convert to hosted chart?": "是否转换为托管图表？",
     Copy: "复制",
     "Copy PNG Image": "复制PNG图像",
@@ -50,6 +57,8 @@
     "Create a link directly using the exact label text":
       "使用完全一样的标签文本，直接创建链接",
     Created: "已创建",
+    "Creating an edge between two nodes is done by indenting the second node below the first":
+      "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "自定义分享选项",
     "Customer Portal": "客户门户",
     "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
@@ -68,8 +77,15 @@
     "Download JPG": "下载 JPG",
     "Download PNG": "下载 PNG",
     "Download SVG": "下载 SVG",
+    "Draw an edge from multiple nodes by beginning the line with a reference":
+      "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "复制",
     "Dynamic Share Links": "动态分享链接",
+    "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
+    "Edge Label": "Edge Label",
+    Edges: "Edges",
+    "Edges can also have ID's, classes, and attributes before the label":
+      "Edges can also have ID's, classes, and attributes before the label",
     Editable: "可编辑",
     Editor: "编辑器",
     Eggs: "蛋",
@@ -93,6 +109,7 @@
     History: "历史",
     Home: "主页",
     "Hosted Charts": "托管的图表",
+    "ID's": "ID's",
     "Indenting creates a link to the current line":
       "缩进可创建连接到当前行的链接",
     Info: "信息",
@@ -100,6 +117,7 @@
     Layout: "布局",
     "Layout is Frozen": "布局被冻结",
     "Layouts and Themes": "布局和主题",
+    "Leading References": "Leading References",
     "Learn More": "学到更多",
     "Left to Right": "从左到右",
     Light: "浅色",
@@ -122,6 +140,10 @@
     New: "新",
     "New Email": "新邮件",
     "Next charge": "下次扣费",
+    "Node Colors": "Node Colors",
+    "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
+    "Node Label": "Node Label",
+    "Node Shapes": "Node Shapes",
     "Open Customer Portal": "打开客户门户",
     Plans: "计划",
     Playbook: "剧本",
@@ -129,6 +151,18 @@
     Public: "公开",
     Random: "随机",
     "Read-only": "只读",
+    "Reference by Class": "Reference by Class",
+    "Reference by ID": "Reference by ID",
+    "Reference by Label": "Reference by Label",
+    References: "References",
+    "References are used to create edges between nodes that are created elsewhere in the document":
+      "References are used to create edges between nodes that are created elsewhere in the document",
+    "Referencing a node by its exact label":
+      "Referencing a node by its exact label",
+    "Referencing a node by its unique ID":
+      "Referencing a node by its unique ID",
+    "Referencing multiple nodes with the same assigned class":
+      "Referencing multiple nodes with the same assigned class",
     Rename: "重命名",
     Reset: "重置",
     "Resume Subscription": "恢复订阅",
@@ -140,24 +174,36 @@
     "Say goodbye to tedious flowchart creation": "告别繁琐的流程图创建",
     Settings: "设置",
     "Shape Libraries": "形状库",
+    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
+      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "以完全访问权限、仅编辑权限或仅查看权限共享",
     "Sign In": "登录",
     "Sign Up": "注册",
     "Sign Up Now": "马上注册",
+    "Some classes are available to help style your flowchart":
+      "Some classes are available to help style your flowchart",
     Spacing: "间距",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能",
     Start: "开始",
     "Static Share Links": "静态分享链接",
     Status: "状态",
+    "Store any data associated to a node":
+      "Store any data associated to a node",
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "使用 Flowchart Fun，简化您的工作流程和过程可视化",
     Style: "风格",
+    "Style Classes": "Style Classes",
     Submit: "提交",
     Subscription: "订阅",
     "Subscription will end": "订阅即将到期",
     Syntax: "句法",
+    "Syntax Reference": "Syntax Reference",
+    "Text followed by colon+space creates an edge with the text as the label":
+      "Text followed by colon+space creates an edge with the text as the label",
+    "Text on a line creates a node with the text as the label":
+      "Text on a line creates a node with the text as the label",
     "Thank you for your feedback!": "感谢您的反馈!",
     Theme: "风格",
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
@@ -166,10 +212,13 @@
     "Top to Bottom": "从上到下",
     "Try again": "重试",
     Unfreeze: "解冻",
+    "Unique text value to identify a node":
+      "Unique text value to identify a node",
     "Unlimited Hosted Charts": "无限托管图表",
     "Unlimited Local Charts": "无限的本地图表",
     "Update Email": "更新电子邮件",
     Updated: "已更新",
+    "Use classes to group nodes": "Use classes to group nodes",
     "Use the customer portal to change your billing information.":
       "使用客户门户更改您的账单信息。",
     User: "用户",

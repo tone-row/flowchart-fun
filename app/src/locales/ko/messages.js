@@ -18,6 +18,7 @@
     ],
     Annually: "연간",
     Appearance: "외관",
+    Attributes: "Attributes",
     "Back To Editor": "편집기로 돌아가기",
     Background: "배경",
     "Become a Sponsor": "스폰서 되기",
@@ -35,14 +36,20 @@
     "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
       "표를 전체 권한, 편집만 가능, 보기만 가능 권한 중 어떤 것으로 공유할 지 선택하여 작업물을 변경할 수 있는지 관리하세요.",
     Circle: "원",
+    Classes: "Classes",
     Clay: "점토",
     Clear: "지우다",
     "Clear text?": "텍스트를 지우시겠습니까?",
     Clone: "클론",
     Close: "닫기",
+    "Colors include red, orange, yellow, blue, purple, black, white, and gray.":
+      "Colors include red, orange, yellow, blue, purple, black, white, and gray.",
     "Comic Book": "만화책",
     Concentric: "동심",
     "Confirm New Email": "새 이메일 확인",
+    Containers: "Containers",
+    "Containers are nodes that contain other nodes. They are declared using curly braces.":
+      "Containers are nodes that contain other nodes. They are declared using curly braces.",
     "Convert to hosted chart?": "호스팅 차트로 변환하시겠습니까?",
     Copy: "복사",
     "Copy PNG Image": "PNG 이미지 복사",
@@ -51,6 +58,8 @@
     "Create a link directly using the exact label text":
       "정확한 레이블 텍스트를 사용하여 직접 링크 만들기",
     Created: "생성됨",
+    "Creating an edge between two nodes is done by indenting the second node below the first":
+      "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "커스텀 공유 옵션",
     "Customer Portal": "고객 포털",
     "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
@@ -69,8 +78,15 @@
     "Download JPG": "JPG 다운로드",
     "Download PNG": "PNG 다운로드",
     "Download SVG": "SVG 다운로드",
+    "Draw an edge from multiple nodes by beginning the line with a reference":
+      "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "복제",
     "Dynamic Share Links": "다이나믹 공유 링크",
+    "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
+    "Edge Label": "Edge Label",
+    Edges: "Edges",
+    "Edges can also have ID's, classes, and attributes before the label":
+      "Edges can also have ID's, classes, and attributes before the label",
     Editable: "편집 가능",
     Editor: "에디터",
     Eggs: "달걀",
@@ -94,6 +110,7 @@
     History: "기록",
     Home: "집",
     "Hosted Charts": "호스트 차트",
+    "ID's": "ID's",
     "Indenting creates a link to the current line":
       "들여쓰기는 현재 줄에 대한 링크를 생성합니다",
     Info: "정보",
@@ -101,6 +118,7 @@
     Layout: "레이아웃",
     "Layout is Frozen": "레이아웃이 고정됨",
     "Layouts and Themes": "레이아웃 및 테마",
+    "Leading References": "Leading References",
     "Learn More": "더 알아보기",
     "Left to Right": "왼쪽에서 오른쪽으로",
     Light: "라이트",
@@ -123,6 +141,10 @@
     New: "신규",
     "New Email": "새 이메일",
     "Next charge": "다음 청구 금액",
+    "Node Colors": "Node Colors",
+    "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
+    "Node Label": "Node Label",
+    "Node Shapes": "Node Shapes",
     "Open Customer Portal": "고객 포털 열기",
     Plans: "요금제",
     Playbook: "플레이북",
@@ -130,6 +152,18 @@
     Public: "공용",
     Random: "무작위",
     "Read-only": "읽기 전용",
+    "Reference by Class": "Reference by Class",
+    "Reference by ID": "Reference by ID",
+    "Reference by Label": "Reference by Label",
+    References: "References",
+    "References are used to create edges between nodes that are created elsewhere in the document":
+      "References are used to create edges between nodes that are created elsewhere in the document",
+    "Referencing a node by its exact label":
+      "Referencing a node by its exact label",
+    "Referencing a node by its unique ID":
+      "Referencing a node by its unique ID",
+    "Referencing multiple nodes with the same assigned class":
+      "Referencing multiple nodes with the same assigned class",
     Rename: "이름 바꾸기",
     Reset: "재설정",
     "Resume Subscription": "구독 재개",
@@ -142,24 +176,36 @@
       "더 이상 지루하게 플로 차트를 작성할 필요가 없습니다",
     Settings: "설정",
     "Shape Libraries": "셰이프 라이브러리",
+    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
+      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "완전한 접근권, 편집 전용, 또는 읽기 전용 권한으로 공유하세요",
     "Sign In": "로그인",
     "Sign Up": "가입",
     "Sign Up Now": "지금 가입하세요",
+    "Some classes are available to help style your flowchart":
+      "Some classes are available to help style your flowchart",
     Spacing: "간격",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원",
     Start: "시작",
     "Static Share Links": "스태틱 공유 링크",
     Status: "상태",
+    "Store any data associated to a node":
+      "Store any data associated to a node",
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Flowchart Fun를 통해 워크플로우를 능률화하고 프로세스 시각화를 단순화하세요",
     Style: "스타일",
+    "Style Classes": "Style Classes",
     Submit: "보내다",
     Subscription: "구독",
     "Subscription will end": "구독이 종료될 예정입니다.",
     Syntax: "문법",
+    "Syntax Reference": "Syntax Reference",
+    "Text followed by colon+space creates an edge with the text as the label":
+      "Text followed by colon+space creates an edge with the text as the label",
+    "Text on a line creates a node with the text as the label":
+      "Text on a line creates a node with the text as the label",
     "Thank you for your feedback!": "피드백을 해주셔서 감사합니다!",
     Theme: "테마",
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
@@ -168,10 +214,13 @@
     "Top to Bottom": "위에서 아래로",
     "Try again": "다시 시도하세요",
     Unfreeze: "녹이다",
+    "Unique text value to identify a node":
+      "Unique text value to identify a node",
     "Unlimited Hosted Charts": "무제한 차트 호스팅",
     "Unlimited Local Charts": "무제한 로컬 차트",
     "Update Email": "이메일 업데이트",
     Updated: "업데이트됨",
+    "Use classes to group nodes": "Use classes to group nodes",
     "Use the customer portal to change your billing information.":
       "청구 정보를 변경하려면 고객 포털을 사용하십시오.",
     User: "사용자",

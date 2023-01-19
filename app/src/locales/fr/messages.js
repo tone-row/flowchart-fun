@@ -17,6 +17,7 @@
     ],
     Annually: "Annuellement",
     Appearance: "Thème",
+    Attributes: "Attributes",
     "Back To Editor": "Retour à l'éditeur",
     Background: "L'arrière plan",
     "Become a Sponsor": "Devenir un sponsor",
@@ -34,14 +35,20 @@
     "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
       "Optez pour le partage de vos graphiques avec des autorisations d'accès complet, de modification uniquement ou de visualisation uniquement. Vous pourrez ainsi contrôler qui peut apporter des modifications à votre travail.",
     Circle: "Cercle",
+    Classes: "Classes",
     Clay: "Argile",
     Clear: "Effacer",
     "Clear text?": "Effacer le texte?",
     Clone: "Cloner",
     Close: "Fermer",
+    "Colors include red, orange, yellow, blue, purple, black, white, and gray.":
+      "Colors include red, orange, yellow, blue, purple, black, white, and gray.",
     "Comic Book": "Bande dessinée",
     Concentric: "Concentrique",
     "Confirm New Email": "Confirmer le nouveau Email",
+    Containers: "Containers",
+    "Containers are nodes that contain other nodes. They are declared using curly braces.":
+      "Containers are nodes that contain other nodes. They are declared using curly braces.",
     "Convert to hosted chart?": "Convertir en graphique hébergé ?",
     Copy: "Copier",
     "Copy PNG Image": "Copier l'image PNG",
@@ -50,6 +57,8 @@
     "Create a link directly using the exact label text":
       "Créer un lien directement vers une boite en utilisant le texte exact de celle-ci",
     Created: "Créé",
+    "Creating an edge between two nodes is done by indenting the second node below the first":
+      "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "Options de partage personnalisées",
     "Customer Portal": "Portail Clients",
     "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
@@ -69,8 +78,15 @@
     "Download JPG": "Télécharger JPG",
     "Download PNG": "Télécharger PNG",
     "Download SVG": "Télécharger SVG",
+    "Draw an edge from multiple nodes by beginning the line with a reference":
+      "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "Dupliquer",
     "Dynamic Share Links": "Liens de partage dynamiques",
+    "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
+    "Edge Label": "Edge Label",
+    Edges: "Edges",
+    "Edges can also have ID's, classes, and attributes before the label":
+      "Edges can also have ID's, classes, and attributes before the label",
     Editable: "Modifiable",
     Editor: "Éditeur",
     Eggs: "Oeufs",
@@ -95,6 +111,7 @@
     History: "Historique",
     Home: "Accueil",
     "Hosted Charts": "Graphiques hébergés",
+    "ID's": "ID's",
     "Indenting creates a link to the current line":
       "La mise en retrait crée un lien vers la ligne courante.",
     Info: "Info",
@@ -102,6 +119,7 @@
     Layout: "Disposition",
     "Layout is Frozen": "La mise en page est gelée",
     "Layouts and Themes": "Mises en page et thèmes",
+    "Leading References": "Leading References",
     "Learn More": "En savoir plus",
     "Left to Right": "De gauche à droite",
     Light: "Lumineux",
@@ -124,6 +142,10 @@
     New: "Nouveau",
     "New Email": "Nouveau courriel",
     "Next charge": "Prochain paiement",
+    "Node Colors": "Node Colors",
+    "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
+    "Node Label": "Node Label",
+    "Node Shapes": "Node Shapes",
     "Open Customer Portal": "Ouvrir le portail client",
     Plans: "Des plans",
     Playbook: "Livre-jeu",
@@ -131,6 +153,18 @@
     Public: "Public",
     Random: "Aléatoire",
     "Read-only": "Lecture seulement",
+    "Reference by Class": "Reference by Class",
+    "Reference by ID": "Reference by ID",
+    "Reference by Label": "Reference by Label",
+    References: "References",
+    "References are used to create edges between nodes that are created elsewhere in the document":
+      "References are used to create edges between nodes that are created elsewhere in the document",
+    "Referencing a node by its exact label":
+      "Referencing a node by its exact label",
+    "Referencing a node by its unique ID":
+      "Referencing a node by its unique ID",
+    "Referencing multiple nodes with the same assigned class":
+      "Referencing multiple nodes with the same assigned class",
     Rename: "Renommer",
     Reset: "Réinitialiser",
     "Resume Subscription": "Reprendre l'abonnement",
@@ -143,24 +177,36 @@
       "Dites adieu au processus pénible de création d'organigrammes",
     Settings: "Paramètres",
     "Shape Libraries": "Bibliothèques de formes",
+    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
+      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "Partager avec des autorisations d'accès complet, d'édition uniquement ou d'affichage uniquement",
     "Sign In": "Connectez",
     "Sign Up": "Inscription",
     "Sign Up Now": "S'inscrire maintenant",
+    "Some classes are available to help style your flowchart":
+      "Some classes are available to help style your flowchart",
     Spacing: "Espacement",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Parrainez flowchart.fun pour 3 $ / mois ou 30 $ / an pour accéder aux organigrammes hébergés et aux nouveaux styles et fonctionnalités",
     Start: "Début",
     "Static Share Links": "Liens de partage statiques",
     Status: "État",
+    "Store any data associated to a node":
+      "Store any data associated to a node",
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Rationalisez votre flux de travail et simplifiez la visualisation de vos processus grâce à Flowchart Fun",
     Style: "Style",
+    "Style Classes": "Style Classes",
     Submit: "Soumettre",
     Subscription: "Abonnement",
     "Subscription will end": "L'abonnement prendra fin",
     Syntax: "Syntaxe",
+    "Syntax Reference": "Syntax Reference",
+    "Text followed by colon+space creates an edge with the text as the label":
+      "Text followed by colon+space creates an edge with the text as the label",
+    "Text on a line creates a node with the text as the label":
+      "Text on a line creates a node with the text as the label",
     "Thank you for your feedback!": "Merci pour votre commentaire !",
     Theme: "Thème",
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
@@ -169,10 +215,13 @@
     "Top to Bottom": "De haut en bas",
     "Try again": "Réessayer",
     Unfreeze: "Débloquer",
+    "Unique text value to identify a node":
+      "Unique text value to identify a node",
     "Unlimited Hosted Charts": "Nombre illimité de graphiques hébergés",
     "Unlimited Local Charts": "Nombre illimité de graphiques locaux",
     "Update Email": "Mettre à jour l'e-mail",
     Updated: "Mis à jour",
+    "Use classes to group nodes": "Use classes to group nodes",
     "Use the customer portal to change your billing information.":
       "Utilisez le portail client pour modifier vos informations de facturation.",
     User: "Utilisateur",
