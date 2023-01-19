@@ -6,6 +6,7 @@ import { parsers, useParser } from "../lib/parsers";
 import { useDoc } from "../lib/prepareChart";
 import { Box, Type } from "../slang";
 import styles from "./EditorOptions.module.css";
+import { SyntaxHelpDialog } from "./SyntaxHelpDialog";
 
 export function EditorOptions({ children }: { children: ReactNode }) {
   const parser = useParser();
@@ -14,7 +15,8 @@ export function EditorOptions({ children }: { children: ReactNode }) {
 
   return (
     <div className={styles.editorOptions}>
-      <Box p={2} flow="column" content="normal end">
+      <Box p={2} flow="column" content="normal space-between">
+        {parser === "graph-selector" ? <SyntaxHelpDialog /> : <span />}
         <Box as="label" flow="column" gap={2} items="center normal">
           <Type size={-1} color="color-lineNumbers">
             <Trans>Syntax</Trans>
