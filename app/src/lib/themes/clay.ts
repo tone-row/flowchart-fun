@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const clayColors = {
   black: "#28152e",
@@ -16,7 +15,6 @@ const clayColors = {
 };
 
 const fontFamily = "Poor Story";
-const fontSize = 13;
 const backgroundColor = clayColors.gray;
 const nodeBackgroundColor = backgroundColor;
 const arrowColor = "#FCFAF1";
@@ -35,7 +33,7 @@ const clay: Theme = {
   minHeight: 0,
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     lineHeight,
     files: [{ name: fontFamily, url: "PoorStory-Regular.woff2" }],
   },
@@ -53,7 +51,6 @@ const clay: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         backgroundColor: nodeBackgroundColor,
         "border-color": arrowColor,
         color: nodeLabelColor,
@@ -78,7 +75,6 @@ const clay: Theme = {
         "line-color": arrowColor,
         label: "data(label)",
         color: arrowLabelColor,
-        "font-size": fontSize,
         "text-valign": "bottom",
         "text-wrap": "wrap",
         "font-family": fontFamily,
@@ -90,7 +86,9 @@ const clay: Theme = {
         "text-border-opacity": 1,
         "text-background-shape": "roundrectangle",
         "text-rotation": "autorotate",
+        // @ts-ignore
         "target-distance-from-node": "0px",
+        // @ts-ignore
         "source-distance-from-node": "0px",
       },
     },
@@ -99,6 +97,7 @@ const clay: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },

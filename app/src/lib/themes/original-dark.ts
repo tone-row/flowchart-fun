@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const originalDarkColors = {
   black: "#101010",
@@ -16,7 +15,6 @@ const originalDarkColors = {
 };
 
 const fontFamily = "Porpora, sans-serif";
-const fontSize = 10;
 const backgroundColor = originalDarkColors.black;
 const color = originalDarkColors.white;
 const arrowColor = color;
@@ -33,7 +31,7 @@ const originalDark: Theme = {
   minWidth: 4,
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     lineHeight,
     files: [
       {
@@ -56,7 +54,6 @@ const originalDark: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         backgroundColor: backgroundColor,
         "border-color": arrowColor,
         color: color,
@@ -78,7 +75,6 @@ const originalDark: Theme = {
       selector: "edge",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         "loop-direction": "0deg",
         "loop-sweep": "20deg",
         width: arrowWidth,
@@ -106,6 +102,7 @@ const originalDark: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },

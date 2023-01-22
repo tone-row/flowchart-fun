@@ -1,5 +1,7 @@
 import { Stylesheet } from "cytoscape";
 
+import { defaultFontSize } from "./themes/constants";
+
 export const shapes: cytoscape.Css.Node["shape"][] = [
   "rectangle",
   "roundrectangle",
@@ -37,6 +39,27 @@ const circle: Stylesheet = {
   },
 };
 
+const lineStyles: Stylesheet[] = [
+  {
+    selector: ".dashed",
+    style: {
+      "line-style": "dashed",
+    },
+  },
+  {
+    selector: ".dotted",
+    style: {
+      "line-style": "dotted",
+    },
+  },
+  {
+    selector: ".solid",
+    style: {
+      "line-style": "solid",
+    },
+  },
+];
+
 export const graphUtilityClasses: Stylesheet[] = shapes
   .map<Stylesheet>((shape) => ({
     selector: `.${shape}`,
@@ -58,4 +81,20 @@ export const graphUtilityClasses: Stylesheet[] = shapes
         opacity: 0.25,
       },
     },
-  ]);
+  ])
+  .concat(lineStyles);
+
+export const baseStyles: Stylesheet[] = [
+  {
+    selector: "node",
+    style: {
+      "font-size": defaultFontSize,
+    },
+  },
+  {
+    selector: "edge",
+    style: {
+      "font-size": defaultFontSize,
+    },
+  },
+];

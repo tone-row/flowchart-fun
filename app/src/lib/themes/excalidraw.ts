@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const excalidrawColors = {
   red: "#F84A4B",
@@ -16,7 +15,6 @@ const excalidrawColors = {
 };
 
 const fontFamily = '"Virgil"';
-const fontSize = 10;
 const backgroundColor = excalidrawColors.white;
 const arrowColor = excalidrawColors.gray;
 const lineHeight = 1.3;
@@ -25,7 +23,7 @@ const padding = "2px";
 const excalidraw: Theme = {
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     files: [{ url: "Virgil.woff2", name: "Virgil" }],
     lineHeight: lineHeight,
   },
@@ -55,7 +53,6 @@ const excalidraw: Theme = {
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
         color: excalidrawColors.black,
-        "font-size": fontSize,
         shape: "rectangle",
         backgroundColor: backgroundColor,
         "background-opacity": 0,
@@ -77,11 +74,11 @@ const excalidraw: Theme = {
         "line-style": "solid",
         label: "data(label)",
         color: excalidrawColors.black,
-        "font-size": fontSize,
         "text-wrap": "wrap",
         "font-family": fontFamily,
         "source-distance-from-node": 4,
         "target-distance-from-node": 4,
+        // @ts-ignore
         "text-rotation": "-15deg",
         "target-arrow-shape": "triangle-backcurve",
         "target-arrow-color": arrowColor,
@@ -93,6 +90,7 @@ const excalidraw: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },

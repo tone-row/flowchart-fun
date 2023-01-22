@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 export const originalColors = {
   black: "#000000",
@@ -16,7 +15,6 @@ export const originalColors = {
 };
 
 const fontFamily = "Karla";
-const fontSize = 10;
 const backgroundColor = originalColors.white;
 const arrowColor = originalColors.black;
 const lineHeight = 1.25;
@@ -30,7 +28,7 @@ const original: Theme = {
   fg: foregroundColor,
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     lineHeight,
   },
   styles: [
@@ -47,7 +45,6 @@ const original: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         backgroundColor,
         "border-color": arrowColor,
         color: arrowColor,
@@ -81,11 +78,11 @@ const original: Theme = {
         "curve-style": "bezier",
         label: "data(label)",
         color: arrowColor,
-        fontSize,
         "text-valign": "center",
         "text-wrap": "wrap",
-        fontFamily,
+        "font-family": fontFamily,
         "text-halign": "center",
+        // @ts-ignore
         "edge-text-rotation": "autorotate",
         "target-distance-from-node": 1,
         "source-distance-from-node": 0,
@@ -96,6 +93,7 @@ const original: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },

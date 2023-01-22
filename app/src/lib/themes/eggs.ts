@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const eggsColors = {
   red: "#f05935",
@@ -16,7 +15,6 @@ const eggsColors = {
 };
 
 const fontFamily = "Gaegu";
-const fontSize = 13;
 const backgroundColor = eggsColors.yellow;
 const arrowColor = eggsColors.black;
 const lineHeight = 1;
@@ -31,7 +29,7 @@ const eggs: Theme = {
   minHeight: 0,
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     lineHeight,
     files: [{ name: "Gaegu", url: "Gaegu-Regular.woff2" }],
   },
@@ -49,7 +47,6 @@ const eggs: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         backgroundColor: eggsColors.white,
         "border-color": arrowColor,
         color: arrowColor,
@@ -75,7 +72,6 @@ const eggs: Theme = {
         "line-color": arrowColor,
         label: "data(label)",
         color: arrowColor,
-        "font-size": fontSize,
         "text-valign": "bottom",
         "text-wrap": "wrap",
         "font-family": fontFamily,
@@ -86,6 +82,7 @@ const eggs: Theme = {
         "text-background-padding": "3px",
         "text-background-shape": "roundrectangle",
         "text-border-style": "solid",
+        // @ts-ignore
         "edge-text-rotation": "autorotate",
       },
     },
@@ -94,6 +91,7 @@ const eggs: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },

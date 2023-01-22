@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const colors = {
   black: "#05080C",
@@ -16,7 +15,6 @@ const colors = {
 };
 
 const fontFamily = "Permanent Marker";
-const fontSize = 10;
 const backgroundColor = colors.white;
 const arrowColor = "rgb(163, 184, 186)";
 const lineHeight = 1.2;
@@ -31,7 +29,7 @@ const comicBook: Theme = {
   minHeight: 0,
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     lineHeight,
     files: [{ name: fontFamily, url: "PermanentMarker-Regular.woff2" }],
   },
@@ -50,8 +48,6 @@ const comicBook: Theme = {
       style: {
         "background-color": colors.yellow,
         "font-family": fontFamily,
-        "font-size": fontSize,
-        "border-color": arrowColor,
         color: colors.black,
         "text-margin-y": -1,
         label: "data(label)",
@@ -59,7 +55,8 @@ const comicBook: Theme = {
         "text-max-width": "data(width)",
         "text-valign": "center",
         shape: "rectangle",
-        padding: padding,
+        // @ts-ignore
+        padding,
         "line-height": lineHeight,
         "border-style": "solid",
         "border-width": borderWidth,
@@ -69,6 +66,7 @@ const comicBook: Theme = {
     {
       selector: "edge",
       style: {
+        // @ts-ignore
         "curve-style": "straight-triangle",
         width: borderWidth * 9,
         "line-color": arrowColor,
@@ -76,29 +74,14 @@ const comicBook: Theme = {
         color: colors.black,
         "line-opacity": 0.5,
         "source-endpoint": "inside-to-node",
-        "font-size": fontSize,
         "text-valign": "center",
         "text-wrap": "wrap",
         "font-family": fontFamily,
         "text-background-opacity": 0,
-        // "text-background-color": colors.black, // "#D09A5B",
-        // "text-background-color": colors.blue, // "#D09A5B",
-        // "text-background-padding": "2px",
-        // "text-background-shape": "roundrectangle",
         "edge-text-rotation": "autorotate",
         "source-distance-from-node": 0,
         "target-distance-from-node": 0,
-        // "target-arrow-shape": "vee",
-        // "target-arrow-color": colors.blue,
-        // "source-arrow-shape": "circle",
-        // "source-arrow-color": arrowColor,
-        // "arrow-scale": 1,
         "edge-distances": "intersection",
-        // Edge
-        // "underlay-color": "#000000",
-        // "underlay-padding": 3.5,
-        // "underlay-opacity": 1,
-        // "underlay-shape": "roundrectangle",
       },
     },
     {
@@ -106,6 +89,7 @@ const comicBook: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },
