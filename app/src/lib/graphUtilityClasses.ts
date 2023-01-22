@@ -41,21 +41,69 @@ const circle: Stylesheet = {
 
 const lineStyles: Stylesheet[] = [
   {
-    selector: ".dashed",
+    selector: "edge.dashed",
     style: {
       "line-style": "dashed",
     },
   },
   {
-    selector: ".dotted",
+    selector: "edge.dotted",
     style: {
       "line-style": "dotted",
     },
   },
   {
-    selector: ".solid",
+    selector: "edge.solid",
     style: {
       "line-style": "solid",
+    },
+  },
+];
+
+const borderStyles: Stylesheet[] = [
+  {
+    selector: "node.dashed",
+    style: {
+      "border-style": "dashed",
+    },
+  },
+  {
+    selector: "node.dotted",
+    style: {
+      "border-style": "dotted",
+    },
+  },
+  {
+    selector: "node.solid",
+    style: {
+      "border-style": "solid",
+    },
+  },
+  {
+    selector: "node.double",
+    style: {
+      "border-style": "double",
+    },
+  },
+];
+
+const textSizeStyles: Stylesheet[] = [
+  {
+    selector: ".text-sm",
+    style: {
+      "font-size": defaultFontSize * 0.75,
+    },
+  },
+  {
+    selector: ".text-lg",
+    style: {
+      "font-size": defaultFontSize * 1.25,
+    },
+  },
+  {
+    selector: ".text-xl",
+    style: {
+      "font-size": defaultFontSize * 1.5,
     },
   },
 ];
@@ -82,7 +130,9 @@ export const graphUtilityClasses: Stylesheet[] = shapes
       },
     },
   ])
-  .concat(lineStyles);
+  .concat(lineStyles)
+  .concat(borderStyles)
+  .concat(textSizeStyles);
 
 export const baseStyles: Stylesheet[] = [
   {
