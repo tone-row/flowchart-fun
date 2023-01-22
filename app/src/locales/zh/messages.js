@@ -83,9 +83,12 @@
     "Dynamic Share Links": "动态分享链接",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
+    "Edge Style": "Edge Style",
     Edges: "Edges",
     "Edges can also have ID's, classes, and attributes before the label":
       "Edges can also have ID's, classes, and attributes before the label",
+    "Edges can be styled with dashed, dotted, or solid lines":
+      "Edges can be styled with dashed, dotted, or solid lines",
     Editable: "可编辑",
     Editor: "编辑器",
     Eggs: "蛋",
@@ -140,10 +143,13 @@
     New: "新",
     "New Email": "新邮件",
     "Next charge": "下次扣费",
+    "Node Border Style": "Node Border Style",
     "Node Colors": "Node Colors",
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
+    "Nodes can be styled with dashed, dotted, double, or solid borders":
+      "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "打开客户门户",
     Plans: "计划",
     Playbook: "剧本",
@@ -200,10 +206,13 @@
     "Subscription will end": "订阅即将到期",
     Syntax: "句法",
     "Syntax Reference": "Syntax Reference",
+    "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
     "Text on a line creates a node with the text as the label":
       "Text on a line creates a node with the text as the label",
+    "Text sizes include small, regular, large, and extra-large.":
+      "Text sizes include small, regular, large, and extra-large.",
     "Thank you for your feedback!": "感谢您的反馈!",
     Theme: "风格",
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":

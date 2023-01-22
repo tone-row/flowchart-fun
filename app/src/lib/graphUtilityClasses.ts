@@ -1,5 +1,6 @@
 import { Stylesheet } from "cytoscape";
 
+import { fontSizeScalars } from "./getGetSize";
 import { defaultFontSize } from "./themes/constants";
 
 export const shapes: cytoscape.Css.Node["shape"][] = [
@@ -91,19 +92,19 @@ const textSizeStyles: Stylesheet[] = [
   {
     selector: ".text-sm",
     style: {
-      "font-size": defaultFontSize * 0.75,
+      "font-size": defaultFontSize * fontSizeScalars["text-sm"],
     },
   },
   {
     selector: ".text-lg",
     style: {
-      "font-size": defaultFontSize * 1.25,
+      "font-size": defaultFontSize * fontSizeScalars["text-lg"],
     },
   },
   {
     selector: ".text-xl",
     style: {
-      "font-size": defaultFontSize * 1.5,
+      "font-size": defaultFontSize * fontSizeScalars["text-xl"],
     },
   },
 ];

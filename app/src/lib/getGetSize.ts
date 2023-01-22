@@ -2,17 +2,36 @@ import { Theme } from "./themes/constants";
 
 export type TGetSize = ReturnType<typeof getGetSize>;
 
+export const fontSizeScalars = {
+  "text-sm": 0.75,
+  "text-base": 1,
+  "text-lg": 1.5,
+  "text-xl": 2,
+};
+
 // returns getSize based on theme to determine node size
 export function getGetSize(theme: Theme) {
   return (label: string, classes: string[]) => {
     const resizer = document.getElementById("resizer");
     if (resizer) {
       const text = preventCyRenderingBugs(label);
+      const isSmall = classes.includes("text-sm");
+      const isLarge = classes.includes("text-lg");
+      const isXLarge = classes.includes("text-xl");
+      const scaleFontSize = isSmall
+        ? "text-sm"
+        : isLarge
+        ? "text-lg"
+        : isXLarge
+        ? "text-xl"
+        : "text-base";
+
       // We have to write styles imperatively otherwise we get race conditions
       const style = {
         "max-width": `${getWidth(text.length)}px`,
         "font-size": `${
-          theme.font?.fontSize ? 1.27 * theme.font.fontSize : 10
+          (theme.font?.fontSize ? 1.27 * theme.font.fontSize : 10) *
+          fontSizeScalars[scaleFontSize]
         }px`,
         "line-height": theme.font?.lineHeight,
         "font-family": theme.font?.fontFamily,
