@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const colors = {
   black: "#1D1D1B",
@@ -16,7 +15,6 @@ const colors = {
 };
 
 const fontFamily = "Josefin Sans";
-const fontSize = 10;
 const backgroundColor = "#F0DDB1";
 const nodeBackgroundColor = colors.white;
 const arrowColor = colors.black;
@@ -34,7 +32,7 @@ const retro: Theme = {
   minHeight: 0,
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     lineHeight,
     files: [{ name: fontFamily, url: "JosefinSans-Regular.woff2" }],
   },
@@ -52,7 +50,6 @@ const retro: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         backgroundColor: nodeBackgroundColor,
         "border-color": arrowColor,
         color: nodeLabelColor,
@@ -69,6 +66,7 @@ const retro: Theme = {
         "line-height": lineHeight,
         "border-style": "solid",
         "border-width": borderWidth,
+        // @ts-ignore
         "border-color": borderColor,
       },
     },
@@ -80,7 +78,6 @@ const retro: Theme = {
         "line-color": arrowColor,
         label: "data(label)",
         color: colors.white,
-        "font-size": fontSize,
         "text-valign": "bottom",
         "text-wrap": "wrap",
         "font-family": fontFamily,
@@ -88,11 +85,11 @@ const retro: Theme = {
         "text-background-color": colors.black, // "#D09A5B",
         "text-background-padding": "6",
         "text-background-shape": "roundrectangle",
+        // @ts-ignore
         "edge-text-rotation": "autorotate",
         "source-distance-from-node": 4,
         "target-distance-from-node": 0,
         "target-arrow-shape": "triangle",
-        // "source-arrow-shape": "circle",
         "target-arrow-color": arrowColor,
         "source-arrow-color": arrowColor,
         "arrow-scale": 0.6,
@@ -103,6 +100,7 @@ const retro: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },

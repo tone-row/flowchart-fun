@@ -63,7 +63,7 @@ msgstr "Annually"
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/components/SyntaxHelpDialog.tsx:118
+#: src/components/SyntaxReference.tsx:118
 msgid "Attributes"
 msgstr "Attributes"
 
@@ -138,7 +138,7 @@ msgstr "Choose to share your charts with full access, edit-only, or view-only pe
 msgid "Circle"
 msgstr "Circle"
 
-#: src/components/SyntaxHelpDialog.tsx:109
+#: src/components/SyntaxReference.tsx:109
 msgid "Classes"
 msgstr "Classes"
 
@@ -163,7 +163,7 @@ msgstr "Clone"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/SyntaxHelpDialog.tsx:251
+#: src/components/SyntaxReference.tsx:251
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 
@@ -179,11 +179,11 @@ msgstr "Concentric"
 msgid "Confirm New Email"
 msgstr "Confirm New Email"
 
-#: src/components/SyntaxHelpDialog.tsx:225
+#: src/components/SyntaxReference.tsx:225
 msgid "Containers"
 msgstr "Containers"
 
-#: src/components/SyntaxHelpDialog.tsx:228
+#: src/components/SyntaxReference.tsx:228
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "Containers are nodes that contain other nodes. They are declared using curly braces."
 
@@ -223,7 +223,7 @@ msgstr "Create a link directly using the exact label text"
 msgid "Created"
 msgstr "Created"
 
-#: src/components/SyntaxHelpDialog.tsx:132
+#: src/components/SyntaxReference.tsx:132
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Creating an edge between two nodes is done by indenting the second node below the first"
 
@@ -301,7 +301,7 @@ msgstr "Download PNG"
 msgid "Download SVG"
 msgstr "Download SVG"
 
-#: src/components/SyntaxHelpDialog.tsx:213
+#: src/components/SyntaxReference.tsx:213
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "Draw an edge from multiple nodes by beginning the line with a reference"
 
@@ -314,21 +314,29 @@ msgstr "Duplicate"
 msgid "Dynamic Share Links"
 msgstr "Dynamic Share Links"
 
-#: src/components/SyntaxHelpDialog.tsx:153
+#: src/components/SyntaxReference.tsx:153
 msgid "Edge ID, Classes, Attributes"
 msgstr "Edge ID, Classes, Attributes"
 
-#: src/components/SyntaxHelpDialog.tsx:141
+#: src/components/SyntaxReference.tsx:141
 msgid "Edge Label"
 msgstr "Edge Label"
 
-#: src/components/SyntaxHelpDialog.tsx:129
+#: src/components/SyntaxReference.tsx:291
+msgid "Edge Style"
+msgstr "Edge Style"
+
+#: src/components/SyntaxReference.tsx:129
 msgid "Edges"
 msgstr "Edges"
 
-#: src/components/SyntaxHelpDialog.tsx:156
+#: src/components/SyntaxReference.tsx:156
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "Edges can also have ID's, classes, and attributes before the label"
+
+#: src/components/SyntaxReference.tsx:294
+msgid "Edges can be styled with dashed, dotted, or solid lines"
+msgstr "Edges can be styled with dashed, dotted, or solid lines"
 
 #: src/components/ShareDialog.tsx:89
 msgid "Editable"
@@ -430,7 +438,7 @@ msgstr "Home"
 msgid "Hosted Charts"
 msgstr "Hosted Charts"
 
-#: src/components/SyntaxHelpDialog.tsx:101
+#: src/components/SyntaxReference.tsx:101
 msgid "ID's"
 msgstr "ID's"
 
@@ -461,7 +469,7 @@ msgstr "Layout is Frozen"
 msgid "Layouts and Themes"
 msgstr "Layouts and Themes"
 
-#: src/components/SyntaxHelpDialog.tsx:210
+#: src/components/SyntaxReference.tsx:210
 msgid "Leading References"
 msgstr "Leading References"
 
@@ -554,21 +562,29 @@ msgstr "New Email"
 msgid "Next charge"
 msgstr "Next charge"
 
-#: src/components/SyntaxHelpDialog.tsx:248
+#: src/components/SyntaxReference.tsx:304
+msgid "Node Border Style"
+msgstr "Node Border Style"
+
+#: src/components/SyntaxReference.tsx:248
 msgid "Node Colors"
 msgstr "Node Colors"
 
-#: src/components/SyntaxHelpDialog.tsx:99
+#: src/components/SyntaxReference.tsx:99
 msgid "Node ID, Classes, Attributes"
 msgstr "Node ID, Classes, Attributes"
 
-#: src/components/SyntaxHelpDialog.tsx:88
+#: src/components/SyntaxReference.tsx:88
 msgid "Node Label"
 msgstr "Node Label"
 
-#: src/components/SyntaxHelpDialog.tsx:261
+#: src/components/SyntaxReference.tsx:261
 msgid "Node Shapes"
 msgstr "Node Shapes"
+
+#: src/components/SyntaxReference.tsx:307
+msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
+msgstr "Nodes can be styled with dashed, dotted, double, or solid borders"
 
 #: src/components/SponsorDashboard.tsx:149
 msgid "Open Customer Portal"
@@ -602,35 +618,35 @@ msgstr "Random"
 msgid "Read-only"
 msgstr "Read-only"
 
-#: src/components/SyntaxHelpDialog.tsx:196
+#: src/components/SyntaxReference.tsx:196
 msgid "Reference by Class"
 msgstr "Reference by Class"
 
-#: src/components/SyntaxHelpDialog.tsx:186
+#: src/components/SyntaxReference.tsx:186
 msgid "Reference by ID"
 msgstr "Reference by ID"
 
-#: src/components/SyntaxHelpDialog.tsx:176
+#: src/components/SyntaxReference.tsx:176
 msgid "Reference by Label"
 msgstr "Reference by Label"
 
-#: src/components/SyntaxHelpDialog.tsx:167
+#: src/components/SyntaxReference.tsx:167
 msgid "References"
 msgstr "References"
 
-#: src/components/SyntaxHelpDialog.tsx:170
+#: src/components/SyntaxReference.tsx:170
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "References are used to create edges between nodes that are created elsewhere in the document"
 
-#: src/components/SyntaxHelpDialog.tsx:179
+#: src/components/SyntaxReference.tsx:179
 msgid "Referencing a node by its exact label"
 msgstr "Referencing a node by its exact label"
 
-#: src/components/SyntaxHelpDialog.tsx:189
+#: src/components/SyntaxReference.tsx:189
 msgid "Referencing a node by its unique ID"
 msgstr "Referencing a node by its unique ID"
 
-#: src/components/SyntaxHelpDialog.tsx:199
+#: src/components/SyntaxReference.tsx:199
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "Referencing multiple nodes with the same assigned class"
 
@@ -690,7 +706,7 @@ msgstr "Settings"
 msgid "Shape Libraries"
 msgstr "Shape Libraries"
 
-#: src/components/SyntaxHelpDialog.tsx:266
+#: src/components/SyntaxReference.tsx:264
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 
@@ -711,7 +727,7 @@ msgstr "Sign Up"
 msgid "Sign Up Now"
 msgstr "Sign Up Now"
 
-#: src/components/SyntaxHelpDialog.tsx:243
+#: src/components/SyntaxReference.tsx:243
 msgid "Some classes are available to help style your flowchart"
 msgstr "Some classes are available to help style your flowchart"
 
@@ -736,7 +752,7 @@ msgstr "Static Share Links"
 msgid "Status"
 msgstr "Status"
 
-#: src/components/SyntaxHelpDialog.tsx:121
+#: src/components/SyntaxReference.tsx:121
 msgid "Store any data associated to a node"
 msgstr "Store any data associated to a node"
 
@@ -749,7 +765,7 @@ msgstr "Streamline your workflow and simplify your process visualization with Fl
 msgid "Style"
 msgstr "Style"
 
-#: src/components/SyntaxHelpDialog.tsx:240
+#: src/components/SyntaxReference.tsx:240
 msgid "Style Classes"
 msgstr "Style Classes"
 
@@ -770,18 +786,26 @@ msgstr "Subscription will end"
 msgid "Syntax"
 msgstr "Syntax"
 
-#: src/components/SyntaxHelpDialog.tsx:58
-#: src/components/SyntaxHelpDialog.tsx:74
+#: src/components/SyntaxReference.tsx:58
+#: src/components/SyntaxReference.tsx:74
 msgid "Syntax Reference"
 msgstr "Syntax Reference"
 
-#: src/components/SyntaxHelpDialog.tsx:144
+#: src/components/SyntaxReference.tsx:278
+msgid "Text Sizes"
+msgstr "Text Sizes"
+
+#: src/components/SyntaxReference.tsx:144
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "Text followed by colon+space creates an edge with the text as the label"
 
-#: src/components/SyntaxHelpDialog.tsx:91
+#: src/components/SyntaxReference.tsx:91
 msgid "Text on a line creates a node with the text as the label"
 msgstr "Text on a line creates a node with the text as the label"
+
+#: src/components/SyntaxReference.tsx:281
+msgid "Text sizes include small, regular, large, and extra-large."
+msgstr "Text sizes include small, regular, large, and extra-large."
 
 #: src/components/Feedback.tsx:125
 msgid "Thank you for your feedback!"
@@ -813,7 +837,7 @@ msgstr "Try again"
 msgid "Unfreeze"
 msgstr "Unfreeze"
 
-#: src/components/SyntaxHelpDialog.tsx:103
+#: src/components/SyntaxReference.tsx:103
 msgid "Unique text value to identify a node"
 msgstr "Unique text value to identify a node"
 
@@ -835,7 +859,7 @@ msgstr "Update Email"
 msgid "Updated"
 msgstr "Updated"
 
-#: src/components/SyntaxHelpDialog.tsx:112
+#: src/components/SyntaxReference.tsx:112
 msgid "Use classes to group nodes"
 msgstr "Use classes to group nodes"
 

@@ -1,6 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-import { Theme } from "./constants";
+import { Stylesheet } from "cytoscape";
+
+import { defaultFontSize, Theme } from "./constants";
 
 const blokusColors = {
   red: ["#ba1700", "#d13721", "#fc5b42"],
@@ -19,7 +19,6 @@ const fontFamily = '"Space Mono", monospace';
 const lineHeight = 1.2;
 const backgroundColor = "#1b1b20";
 const darkerBackgroundColor = "#060608";
-const fontSize = 9;
 const padding = "6px";
 
 const edgeWidth = 1.5;
@@ -32,7 +31,7 @@ const blokus: Theme = {
   font: {
     fontFamily,
     lineHeight,
-    fontSize,
+    fontSize: defaultFontSize,
     files: [{ name: fontFamily, url: "SpaceMono-Regular.woff2" }],
   },
   styles: [
@@ -49,9 +48,9 @@ const blokus: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         label: "data(label)",
         color: blokusColors.black[0],
+        // @ts-ignore
         "background-fill": "linear-gradient",
         "background-gradient-stop-colors": blokusColors.white.join(" "),
         "background-gradient-direction": "to-top-right",
@@ -61,10 +60,7 @@ const blokus: Theme = {
         "text-max-width": "data(width)",
         "line-height": lineHeight,
         "text-justification": "center",
-        "padding-left": padding,
-        "padding-right": padding,
-        "padding-top": padding,
-        "padding-bottom": padding,
+        padding,
         backgroundColor: darkerBackgroundColor,
         shape: "roundrectangle",
       },
@@ -74,7 +70,6 @@ const blokus: Theme = {
       style: {
         "font-family": fontFamily,
         "curve-style": "unbundled-bezier",
-        "font-size": fontSize,
         opacity: 1,
         width: edgeWidth,
         label: "data(label)",
@@ -92,7 +87,9 @@ const blokus: Theme = {
         "text-rotation": "autorotate",
         "line-style": "solid",
         "line-fill": "linear-gradient",
+        // @ts-ignore
         "line-gradient-stop-colors": `#F4F4F5 #EEFCFC`,
+        // @ts-ignore
         "line-gradient-stop-positions": "0% 100%",
       },
     },
@@ -101,6 +98,7 @@ const blokus: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },

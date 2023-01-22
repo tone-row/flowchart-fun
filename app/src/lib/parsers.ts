@@ -33,16 +33,18 @@ export function universalParse(
 ): ElementDefinition[] {
   switch (parser) {
     case "graph-selector":
-      return toCytoscapeElements(parse(text)).map((element) => ({
-        ...element,
-        data: {
-          ...element.data,
-          ...getSize(
-            element?.data?.label,
-            (element?.data?.classes ?? "").split(" ")
-          ),
-        },
-      }));
+      return toCytoscapeElements(parse(text)).map((element) => {
+        return {
+          ...element,
+          data: {
+            ...element.data,
+            ...getSize(
+              element?.data?.label,
+              (element?.classes ?? "").split(" ")
+            ),
+          },
+        };
+      });
     case "v1":
       return parseText(stripComments(text), getSize);
     default:

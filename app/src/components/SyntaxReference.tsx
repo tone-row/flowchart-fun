@@ -4,11 +4,11 @@ import { BracketsAngle } from "phosphor-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Box, Type } from "../slang";
-import styles from "./SyntaxHelpDialog.module.css";
+import styles from "./SyntaxReference.module.css";
 
 const PAD = 4;
 
-export function SyntaxHelpDialog() {
+export function SyntaxReference() {
   const descriptionFirstTitle = useRef<HTMLHeadingElement>(null);
   const [description, setDescription] = useState<HTMLDivElement>();
   /**
@@ -258,9 +258,7 @@ export function SyntaxHelpDialog() {
                 src="9"
               />
               <h2>
-                <Trans>
-                  <Trans>Node Shapes</Trans>
-                </Trans>
+                <Trans>Node Shapes</Trans>
               </h2>
               <p>
                 <Trans>
@@ -275,6 +273,45 @@ export function SyntaxHelpDialog() {
               <CodeExample
                 code={`Hello <span data-highlight>.diamond</span>\n  World <span data-highlight>.ellipse</span>`}
                 src="10"
+              />
+              <h2>
+                <Trans>Text Sizes</Trans>
+              </h2>
+              <p>
+                <Trans>
+                  Text sizes include small, regular, large, and extra-large.
+                </Trans>
+              </p>
+              <CodeExample
+                code={`Small <span data-highlight>.text-sm</span>\n  Regular\n    Large <span data-highlight>.text-lg</span>\n      Extralarge <span data-highlight>.text-xl</span>`}
+                src="11"
+                fontSize={12}
+              />
+              <h2>
+                <Trans>Edge Style</Trans>
+              </h2>
+              <p>
+                <Trans>
+                  Edges can be styled with dashed, dotted, or solid lines
+                </Trans>
+              </p>
+              <CodeExample
+                code={`Hello\n  <span data-highlight>.dashed</span> to the: world\n    <span data-highlight>.dotted</span>: (Hello)`}
+                src="12"
+                fontSize={13}
+              />
+              <h2>
+                <Trans>Node Border Style</Trans>
+              </h2>
+              <p>
+                <Trans>
+                  Nodes can be styled with dashed, dotted, double, or solid
+                  borders
+                </Trans>
+              </p>
+              <CodeExample
+                code={`A <span data-highlight>.dashed</span>\nB <span data-highlight>.dotted</span>\nC <span data-highlight>.double</span>\nD`}
+                src="13"
               />
             </section>
           </Box>
@@ -307,12 +344,20 @@ Order of concepts:
 -  Adding nodes inside a Container
 */
 
-function CodeExample({ code = "", src }: { code?: string; src?: string }) {
+function CodeExample({
+  code = "",
+  src,
+  fontSize,
+}: {
+  code?: string;
+  src?: string;
+  fontSize?: number;
+}) {
   const imgSrc = src ? `/images/syntax/${src}.png` : "";
   return (
     <div className={styles.codeExample} data-has-image={!!imgSrc}>
       <div className={styles.codeExampleCode}>
-        <div dangerouslySetInnerHTML={{ __html: code }} />
+        <div dangerouslySetInnerHTML={{ __html: code }} style={{ fontSize }} />
       </div>
       {imgSrc && (
         <img className={styles.codeExampleImage} src={imgSrc} alt="an img" />

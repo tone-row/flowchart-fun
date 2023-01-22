@@ -84,9 +84,12 @@
     "Dynamic Share Links": "다이나믹 공유 링크",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
+    "Edge Style": "Edge Style",
     Edges: "Edges",
     "Edges can also have ID's, classes, and attributes before the label":
       "Edges can also have ID's, classes, and attributes before the label",
+    "Edges can be styled with dashed, dotted, or solid lines":
+      "Edges can be styled with dashed, dotted, or solid lines",
     Editable: "편집 가능",
     Editor: "에디터",
     Eggs: "달걀",
@@ -141,10 +144,13 @@
     New: "신규",
     "New Email": "새 이메일",
     "Next charge": "다음 청구 금액",
+    "Node Border Style": "Node Border Style",
     "Node Colors": "Node Colors",
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
+    "Nodes can be styled with dashed, dotted, double, or solid borders":
+      "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "고객 포털 열기",
     Plans: "요금제",
     Playbook: "플레이북",
@@ -202,10 +208,13 @@
     "Subscription will end": "구독이 종료될 예정입니다.",
     Syntax: "문법",
     "Syntax Reference": "Syntax Reference",
+    "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
     "Text on a line creates a node with the text as the label":
       "Text on a line creates a node with the text as the label",
+    "Text sizes include small, regular, large, and extra-large.":
+      "Text sizes include small, regular, large, and extra-large.",
     "Thank you for your feedback!": "피드백을 해주셔서 감사합니다!",
     Theme: "테마",
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":

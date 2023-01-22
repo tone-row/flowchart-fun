@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const colors = {
   black: "#05080C",
@@ -28,7 +27,6 @@ const colors2 = {
 };
 
 const fontFamily = "Space Mono";
-const fontSize = 10;
 const backgroundColor = colors2.white;
 const arrowColor = colors.gray;
 const lineHeight = 1.2;
@@ -43,7 +41,7 @@ const futuristic: Theme = {
   minHeight: 0,
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     lineHeight,
     files: [{ name: fontFamily, url: "SpaceMono-Regular.woff2" }],
   },
@@ -60,17 +58,15 @@ const futuristic: Theme = {
     {
       selector: "node",
       style: {
+        // @ts-ignore
         "background-fill": "linear-gradient",
         "background-gradient-stop-colors": `${colors.blue} ${colors2.blue}`,
         "background-gradient-direction": "to-right",
         "font-family": fontFamily,
-        "font-size": fontSize,
         "border-color": arrowColor,
         color: colors.black,
-        // "text-justification": "left",
         label: "data(label)",
         "text-wrap": "wrap",
-        // "text-max-width": "data(width)",
         "text-valign": "center",
         shape: "rectangle",
         "padding-left": padding,
@@ -80,6 +76,7 @@ const futuristic: Theme = {
         "line-height": lineHeight,
         "border-style": "solid",
         "border-width": borderWidth,
+        // @ts-ignore
         "border-color": colors.black,
       },
     },
@@ -91,33 +88,23 @@ const futuristic: Theme = {
         "line-color": arrowColor,
         label: "data(label)",
         color: colors.black,
-        "font-size": fontSize,
         "text-valign": "bottom",
         "text-wrap": "wrap",
         "font-family": fontFamily,
         "text-background-opacity": 1,
-        // "text-background-color": colors.black, // "#D09A5B",
-        "text-background-color": backgroundColor, // "#D09A5B",
+        "text-background-color": backgroundColor,
         "text-background-padding": "1",
         "text-background-shape": "rectangle",
         "text-margin-y": -11,
-        // "edge-text-rotation": "autorotate",
         "source-distance-from-node": 0,
         "target-distance-from-node": 0,
         "target-arrow-shape": "triangle",
         "target-arrow-color": arrowColor,
+        // @ts-ignore
         "target-underlay-color": "#000000",
         "target-underlay-padding": 3.5,
         "target-underlay-opacity": 1,
-        // "source-arrow-shape": "circle",
-        // "source-arrow-color": arrowColor,
         "arrow-scale": 1.444,
-
-        // Edge
-        // "underlay-color": "#000000",
-        // "underlay-padding": 3.5,
-        // "underlay-opacity": 1,
-        // "underlay-shape": "roundrectangle",
       },
     },
     {
@@ -125,28 +112,33 @@ const futuristic: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },
     },
-    ...Object.entries(colors).map<Stylesheet>(([color, value]) => ({
-      selector: `node.${color}`,
-      style: {
-        "background-color": `${value}`,
-        ...(Object.keys(colors2).includes(color)
-          ? {
-              "background-fill": "linear-gradient",
-              "background-gradient-stop-colors": `${colors[color]} ${colors2[color]}`,
-              "background-gradient-direction": "to-right",
-            }
-          : {
-              "background-color": colors[color],
-            }),
-        ...(["black"].includes(color)
-          ? { color: colors2.white }
-          : { color: colors.black }),
-      },
-    })),
+    ...Object.entries(colors).map<Stylesheet>(([color, value]) => {
+      const color1 = colors[color as keyof typeof colors];
+      const color2 = colors2[color as keyof typeof colors2];
+      return {
+        selector: `node.${color}`,
+        style: {
+          "background-color": `${value}`,
+          ...(Object.keys(colors2).includes(color)
+            ? {
+                "background-fill": "linear-gradient",
+                "background-gradient-stop-colors": `${color1} ${color2}`,
+                "background-gradient-direction": "to-right",
+              }
+            : {
+                "background-color": color1,
+              }),
+          ...(["black"].includes(color)
+            ? { color: colors2.white }
+            : { color: colors.black }),
+        },
+      };
+    }),
   ],
 };
 

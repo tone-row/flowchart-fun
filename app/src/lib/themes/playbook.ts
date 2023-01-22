@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const playbookColors = {
   black: "#000000",
@@ -16,7 +15,6 @@ const playbookColors = {
 };
 
 const fontFamily = "Karla";
-const fontSize = 10;
 const backgroundColor = playbookColors.white;
 const nodeBackgroundColor = backgroundColor;
 const edgeLabelBackgroundColor = "#EDECF9";
@@ -36,7 +34,7 @@ const playbook: Theme = {
   minHeight: 0,
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     lineHeight,
     files: [{ name: fontFamily, url: "Karla-Regular.woff2" }],
   },
@@ -54,7 +52,6 @@ const playbook: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         backgroundColor: nodeBackgroundColor,
         "border-color": arrowColor,
         color: nodeLabelColor,
@@ -80,7 +77,6 @@ const playbook: Theme = {
         "line-color": arrowColor,
         label: "data(label)",
         color: arrowLabelColor,
-        "font-size": 0.9 * fontSize,
         "text-valign": "bottom",
         "text-wrap": "wrap",
         "font-family": fontFamily,
@@ -89,6 +85,7 @@ const playbook: Theme = {
         "text-background-padding": "4.5px",
         "text-border-opacity": 1,
         "text-background-shape": "roundrectangle",
+        // @ts-ignore
         "edge-text-rotation": "autorotate",
         "source-distance-from-node": distanceFromNode,
         "target-distance-from-node": distanceFromNode,
@@ -107,6 +104,7 @@ const playbook: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-6px`,
         "text-wrap": "none",
         padding: "6px",

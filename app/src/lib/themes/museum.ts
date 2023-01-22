@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const museumColors = {
   black: "#36321F",
@@ -16,7 +15,6 @@ const museumColors = {
 };
 
 const fontFamily = "Sporting Grotesque";
-const fontSize = 10;
 const backgroundColor = museumColors.white;
 const nodeBackgroundColor = backgroundColor;
 const arrowColor = museumColors.black;
@@ -38,7 +36,7 @@ const museum: Theme = {
   minHeight: 0,
   font: {
     fontFamily,
-    fontSize,
+    fontSize: defaultFontSize,
     lineHeight,
     files: [{ name: fontFamily, url: "Sporting_Grotesque-Regular_web.woff2" }],
   },
@@ -56,7 +54,6 @@ const museum: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         backgroundColor: nodeBackgroundColor,
         "border-color": arrowColor,
         color: nodeLabelColor,
@@ -73,7 +70,9 @@ const museum: Theme = {
         "line-height": lineHeight,
         "border-style": "solid",
         "border-width": borderWidth,
+        // @ts-ignore
         "border-color": borderColor,
+        // @ts-ignore
         "underlay-color": underlayColor,
         "underlay-padding": "4px",
         "underlay-opacity": 1,
@@ -84,12 +83,12 @@ const museum: Theme = {
       selector: "edge",
       style: {
         "curve-style": "bezier",
+        // @ts-ignore
         "control-point-step-size": "60",
         width: arrowWidth,
         "line-color": arrowColor,
         label: "data(label)",
         color: arrowLabelColor,
-        "font-size": fontSize,
         "text-valign": "bottom",
         "text-wrap": "wrap",
         "font-family": fontFamily,
@@ -112,6 +111,7 @@ const museum: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },
