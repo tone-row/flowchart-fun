@@ -1,11 +1,11 @@
 import { Monaco } from "@monaco-editor/react";
-import { useEffect } from "react";
 
 import { palette } from "../slang/config";
 
 export const languageId = "flowchartfun";
 export const themeNameLight = "flowchartfun-light";
 export const themeNameDark = "flowchartfun-dark";
+import { highlight } from "graph-selector";
 import type { editor } from "monaco-editor";
 
 const lightTheme: editor.IStandaloneThemeData = {
@@ -43,7 +43,7 @@ const darkTheme: editor.IStandaloneThemeData = {
   ],
 };
 
-function registerLanguage(monaco: Monaco) {
+function registerV1Language(monaco: Monaco) {
   monaco.languages.register({ id: languageId });
 
   monaco.languages.setMonarchTokensProvider(languageId, {
@@ -69,24 +69,25 @@ function registerLanguage(monaco: Monaco) {
       ],
     },
   });
-}
 
-export function defineThemes(monaco: Monaco) {
   monaco.editor.defineTheme(themeNameLight, lightTheme);
   monaco.editor.defineTheme(themeNameDark, darkTheme);
 }
 
-export function useMonacoLanguage(monaco: any) {
-  useEffect(() => {
-    if (monaco) {
-      const isRegistered = monaco.languages
-        .getLanguages()
-        .map(({ id }: { id: string }) => id)
-        .includes(languageId);
+/** Registers language for both syntaxes with monaco */
+export function registerLanguages(monaco: Monaco | null) {
+  if (!monaco) return;
+  if (!isLangRegistered(monaco, languageId)) {
+    registerV1Language(monaco);
+  }
+  if (!isLangRegistered(monaco, highlight.languageId)) {
+    highlight.registerHighlighter(monaco);
+  }
+}
 
-      if (!isRegistered) {
-        registerLanguage(monaco);
-      }
-    }
-  }, [monaco]);
+function isLangRegistered(monaco: Monaco, languageId: string) {
+  return monaco.languages
+    .getLanguages()
+    .map(({ id }: { id: string }) => id)
+    .includes(languageId);
 }

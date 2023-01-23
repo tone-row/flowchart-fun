@@ -9,10 +9,9 @@ import {
 
 import { AppContext } from "../components/AppContext";
 import {
-  defineThemes,
+  registerLanguages,
   themeNameDark,
   themeNameLight,
-  useMonacoLanguage,
 } from "./registerLanguage";
 
 export function useEditorOnMount(
@@ -22,19 +21,15 @@ export function useEditorOnMount(
   const { mode } = useContext(AppContext);
   const monaco = useMonaco();
   // Add language
-  useMonacoLanguage(monaco);
+  registerLanguages(monaco);
 
-  return useCallback<OnMount>(
-    (editor, monaco) => {
-      editorRef.current = editor;
-      monacoRef.current = monaco;
-      defineThemes(monaco);
-      monacoRef.current?.editor.setTheme(
-        mode === "light" ? themeNameLight : themeNameDark
-      );
-    },
-    [editorRef, mode, monacoRef]
-  );
+  return useCallback<OnMount>((editor, monaco) => {
+    editorRef.current = editor;
+    monacoRef.current = monaco;
+    // monacoRef.current?.editor.setTheme(
+    //   mode === "light" ? themeNameLight : themeNameDark
+    // );
+  }, []);
 }
 
 export function useEditorHover(

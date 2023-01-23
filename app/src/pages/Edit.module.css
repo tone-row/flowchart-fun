@@ -1,7 +1,3 @@
-.EditorXYZ {
-  overflow: hidden;
-}
-
 .Tabs {
   display: grid;
   grid-template: auto minmax(0, 1fr) / minmax(0, 1fr);

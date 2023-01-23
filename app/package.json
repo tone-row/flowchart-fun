@@ -74,7 +74,7 @@
     "eslint": "^8.3.0",
     "file-saver": "^2.0.5",
     "framer-motion": "^4.1.17",
-    "graph-selector": "^0.7.0",
+    "graph-selector": "^0.7.3",
     "gray-matter": "^4.0.2",
     "immer": "^9.0.16",
     "lodash.throttle": "^4.1.1",

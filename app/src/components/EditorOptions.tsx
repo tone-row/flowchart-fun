@@ -25,6 +25,7 @@ export function EditorOptions({ children }: { children: ReactNode }) {
             as="select"
             size={-1}
             className={styles.select}
+            color="color-foreground"
             background="color-lineNumbers"
             value={parser}
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
