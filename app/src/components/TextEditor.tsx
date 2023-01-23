@@ -23,10 +23,15 @@ loader.config({
 
 type TextEditorProps = EditorProps & {
   editorRef: React.MutableRefObject<null | monaco.editor.IStandaloneCodeEditor>;
+  extendOptions?: monaco.editor.IEditorOptions;
 };
 
 /** A Monaco editor which stays in sync with the current parser */
-export function TextEditor({ editorRef, ...props }: TextEditorProps) {
+export function TextEditor({
+  editorRef,
+  extendOptions = {},
+  ...props
+}: TextEditorProps) {
   const parser = useParser();
   const languageId = useLanguageId();
   const [editorIsReady, setEditorIsReady] = useState(false);
@@ -83,7 +88,7 @@ export function TextEditor({ editorRef, ...props }: TextEditorProps) {
     <Editor
       {...props}
       defaultLanguage={languageId}
-      options={{ ...editorOptions, theme }}
+      options={{ ...editorOptions, ...extendOptions, theme }}
       loading={<Loading />}
       onMount={(editor, monaco) => {
         registerLanguages(monaco);

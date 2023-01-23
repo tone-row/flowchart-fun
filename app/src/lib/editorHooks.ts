@@ -1,36 +1,4 @@
-import { OnMount, useMonaco } from "@monaco-editor/react";
-import {
-  MutableRefObject,
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-} from "react";
-
-import { AppContext } from "../components/AppContext";
-import {
-  registerLanguages,
-  themeNameDark,
-  themeNameLight,
-} from "./registerLanguage";
-
-export function useEditorOnMount(
-  editorRef: MutableRefObject<any>,
-  monacoRef: MutableRefObject<any>
-) {
-  const { mode } = useContext(AppContext);
-  const monaco = useMonaco();
-  // Add language
-  registerLanguages(monaco);
-
-  return useCallback<OnMount>((editor, monaco) => {
-    editorRef.current = editor;
-    monacoRef.current = monaco;
-    // monacoRef.current?.editor.setTheme(
-    //   mode === "light" ? themeNameLight : themeNameDark
-    // );
-  }, []);
-}
+import { MutableRefObject, useEffect, useRef } from "react";
 
 export function useEditorHover(
   editorRef: MutableRefObject<any>,

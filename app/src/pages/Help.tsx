@@ -1,4 +1,4 @@
-import Editor, { OnMount } from "@monaco-editor/react";
+import { OnMount } from "@monaco-editor/react";
 import { Resizable } from "re-resizable";
 import { Suspense, useCallback, useEffect, useRef } from "react";
 import { useQuery } from "react-query";
@@ -8,39 +8,15 @@ import EditorError from "../components/EditorError";
 import { EditWrapper } from "../components/EditWrapper";
 import Loading from "../components/Loading";
 import Main from "../components/Main";
-import { editorOptions } from "../lib/constants";
-import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
+import { TextEditor } from "../components/TextEditor";
 import { titleToLocalStorageKey } from "../lib/helpers";
 import { prepareChart, useDoc } from "../lib/prepareChart";
-import { useAppMode } from "../lib/queries";
-import {
-  languageId,
-  themeNameDark,
-  themeNameLight,
-} from "../lib/registerLanguage";
-import { useHoverLine } from "../lib/useHoverLine";
-import styles from "./Edit.module.css";
 import helpStyles from "./Help.module.css";
 
 export default function Help() {
   useQuery("loadHelpText", loadHelpText, { suspense: true, staleTime: 0 });
 
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const monacoRef = useRef<any>();
-  const { data: mode } = useAppMode();
-  const loading = useRef(<Loading />);
-
-  const onMount = useEditorOnMount(editorRef, monacoRef);
-  useEffect(() => {
-    if (!monacoRef.current) return;
-    monacoRef.current.editor.setTheme(
-      mode === "light" ? themeNameLight : themeNameDark
-    );
-  }, [mode]);
-
-  // Hover
-  const hoverLineNumber = useHoverLine((s) => s.line);
-  useEditorHover(editorRef, hoverLineNumber);
 
   useEffect(() => {
     window.flowchartFunSetHelpText = (text: string) =>
@@ -54,7 +30,6 @@ export default function Help() {
     (value) => useDoc.setState({ text: value ?? "" }),
     []
   );
-
   const text = useDoc((s) => s.text);
 
   return (
@@ -83,16 +58,7 @@ export default function Help() {
               </div>
             </div>
           </Resizable>
-          <Editor
-            value={text}
-            // @ts-ignore
-            wrapperClassName={styles.Editor}
-            defaultLanguage={languageId}
-            options={editorOptions}
-            onChange={onChange}
-            loading={loading.current}
-            onMount={onMount}
-          />
+          <TextEditor editorRef={editorRef} value={text} onChange={onChange} />
         </div>
         <EditorError />
       </Main>
