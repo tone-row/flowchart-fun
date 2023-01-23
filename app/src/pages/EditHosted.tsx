@@ -1,5 +1,5 @@
 import { Trans } from "@lingui/macro";
-import Editor, { OnMount } from "@monaco-editor/react";
+import { OnMount } from "@monaco-editor/react";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Check, DotsThree } from "phosphor-react";
 import { useCallback, useEffect, useRef } from "react";
@@ -12,23 +12,15 @@ import EditorError from "../components/EditorError";
 import { EditorOptions } from "../components/EditorOptions";
 import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
-import Loading from "../components/Loading";
 import Main from "../components/Main";
 import Spinner from "../components/Spinner";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
-import { editorOptions } from "../lib/constants";
-import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
+import { TextEditor } from "../components/TextEditor";
 import { useIsValidSponsor } from "../lib/hooks";
 import { Doc, docToString, prepareChart, useDoc } from "../lib/prepareChart";
-import { getHostedChart, updateChartText, useAppMode } from "../lib/queries";
-import {
-  languageId,
-  themeNameDark,
-  themeNameLight,
-} from "../lib/registerLanguage";
-import { useHoverLine } from "../lib/useHoverLine";
+import { getHostedChart, updateChartText } from "../lib/queries";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
@@ -57,9 +49,6 @@ export default function EditHosted() {
   const text = useDoc((state) => state.text);
 
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const monacoRef = useRef<any>();
-  const { data: mode } = useAppMode();
-  const loading = useRef(<Loading />);
 
   // This is to make sure we update if people exit the tab quickly
   useEffect(() => {
@@ -68,18 +57,6 @@ export default function EditHosted() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const onMount = useEditorOnMount(editorRef, monacoRef);
-  useEffect(() => {
-    if (!monacoRef.current) return;
-    monacoRef.current.editor.setTheme(
-      mode === "light" ? themeNameLight : themeNameDark
-    );
-  }, [mode]);
-
-  // Hover
-  const hoverLineNumber = useHoverLine((s) => s.line);
-  useEditorHover(editorRef, hoverLineNumber);
 
   const onChange = useCallback(
     (value) => useDoc.setState({ text: value ?? "" }),
@@ -113,15 +90,10 @@ export default function EditHosted() {
             </Tabs.List>
             <Tabs.Content value="Document">
               <EditorOptions>
-                <Editor
+                <TextEditor
+                  editorRef={editorRef}
                   value={text}
-                  // @ts-ignore
-                  wrapperClassName={editStyles.Editor}
-                  defaultLanguage={languageId}
-                  options={editorOptions}
                   onChange={onChange}
-                  loading={loading.current}
-                  onMount={onMount}
                 />
               </EditorOptions>
             </Tabs.Content>

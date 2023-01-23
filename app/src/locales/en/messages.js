@@ -84,9 +84,12 @@
     "Dynamic Share Links": "Dynamic Share Links",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
+    "Edge Style": "Edge Style",
     Edges: "Edges",
     "Edges can also have ID's, classes, and attributes before the label":
       "Edges can also have ID's, classes, and attributes before the label",
+    "Edges can be styled with dashed, dotted, or solid lines":
+      "Edges can be styled with dashed, dotted, or solid lines",
     Editable: "Editable",
     Editor: "Editor",
     Eggs: "Eggs",
@@ -141,10 +144,13 @@
     New: "New",
     "New Email": "New Email",
     "Next charge": "Next charge",
+    "Node Border Style": "Node Border Style",
     "Node Colors": "Node Colors",
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
+    "Nodes can be styled with dashed, dotted, double, or solid borders":
+      "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "Open Customer Portal",
     Plans: "Plans",
     Playbook: "Playbook",
@@ -202,10 +208,13 @@
     "Subscription will end": "Subscription will end",
     Syntax: "Syntax",
     "Syntax Reference": "Syntax Reference",
+    "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
     "Text on a line creates a node with the text as the label":
       "Text on a line creates a node with the text as the label",
+    "Text sizes include small, regular, large, and extra-large.":
+      "Text sizes include small, regular, large, and extra-large.",
     "Thank you for your feedback!": "Thank you for your feedback!",
     Theme: "Theme",
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":

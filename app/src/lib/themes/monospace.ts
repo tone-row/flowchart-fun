@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Stylesheet } from "cytoscape";
 
-import { Theme } from "./constants";
+import { defaultFontSize, Theme } from "./constants";
 
 const monospaceColors = {
   red: "#ff1457",
@@ -18,7 +17,6 @@ const monospaceColors = {
 const darkBlue = "#9AADFD";
 const fontFamily = '"Fira Mono", monospace';
 const lineHeight = 1.1;
-const fontSize = 11;
 const padding = "5px";
 
 const edgeWidth = 2;
@@ -32,7 +30,7 @@ const monospace: Theme = {
     fontFamily,
     files: [{ url: "FiraMono-Regular.woff2", name: "Fira Mono" }],
     lineHeight,
-    fontSize,
+    fontSize: defaultFontSize,
   },
   styles: [
     {
@@ -48,15 +46,12 @@ const monospace: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        "font-size": fontSize,
         label: "data(label)",
         color: monospaceColors.blue,
         "text-valign": "center",
         "text-halign": "center",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
         "line-height": lineHeight,
         "text-justification": "center",
         "padding-left": padding,
@@ -75,7 +70,6 @@ const monospace: Theme = {
       style: {
         "font-family": fontFamily,
         "curve-style": "segments",
-        "font-size": fontSize,
         opacity: 1,
         width: edgeWidth,
         label: "data(label)",
@@ -92,7 +86,9 @@ const monospace: Theme = {
         "text-background-padding": "2px",
         "line-style": "solid",
         "line-fill": "linear-gradient",
+        // @ts-ignore
         "line-gradient-stop-colors": `${darkBlue} ${monospaceColors.blue}`,
+        // @ts-ignore
         "line-gradient-stop-positions": "0% 100%",
       },
     },
@@ -101,6 +97,7 @@ const monospace: Theme = {
       style: {
         "text-valign": "top",
         "text-halign": "center",
+        // @ts-ignore
         "text-margin-y": `-${padding}`,
         "text-wrap": "none",
       },

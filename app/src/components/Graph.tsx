@@ -28,7 +28,7 @@ import { getLayout } from "../lib/getLayout";
 import { getUserStyle } from "../lib/getTheme";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { useThemeStore } from "../lib/graphThemes";
-import { graphUtilityClasses } from "../lib/graphUtilityClasses";
+import { baseStyles, graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
 import { getAnimationSettings } from "../lib/hooks";
 import { Parsers, universalParse, useParser } from "../lib/parsers";
@@ -397,6 +397,7 @@ function getCytoStyle(
     });
   }
   return [
+    ...baseStyles,
     ...theme.styles,
     ...bgOverrides,
     ...userStyle,
