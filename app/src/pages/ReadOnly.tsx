@@ -1,25 +1,15 @@
-import Editor, { OnMount } from "@monaco-editor/react";
+import { OnMount } from "@monaco-editor/react";
 import { decompressFromEncodedURIComponent } from "lz-string";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
 
 import EditorError from "../components/EditorError";
 import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
-import Loading from "../components/Loading";
 import Main from "../components/Main";
-import { editorOptions } from "../lib/constants";
-import { useEditorHover, useEditorOnMount } from "../lib/editorHooks";
+import { TextEditor } from "../components/TextEditor";
 import { prepareChart, useDoc } from "../lib/prepareChart";
-import { useAppMode } from "../lib/queries";
-import {
-  languageId,
-  themeNameDark,
-  themeNameLight,
-} from "../lib/registerLanguage";
-import { useHoverLine } from "../lib/useHoverLine";
-import styles from "./ReadOnly.module.css";
 
 function ReadOnly() {
   const { path } = useRouteMatch();
@@ -33,39 +23,18 @@ function ReadOnly() {
   });
 
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const monacoRef = useRef<any>();
-  const { data: mode } = useAppMode();
-  const loading = useRef(<Loading />);
-
-  const onMount = useEditorOnMount(editorRef, monacoRef);
-  useEffect(() => {
-    if (!monacoRef.current) return;
-    monacoRef.current.editor.setTheme(
-      mode === "light" ? themeNameLight : themeNameDark
-    );
-  }, [mode]);
-
-  const hoverLineNumber = useHoverLine((s) => s.line);
-  useEditorHover(editorRef, hoverLineNumber);
   const text = useDoc((d) => d.text);
 
   return (
     <EditWrapper>
       <Main>
         <EditorWrapper>
-          <Editor
+          <TextEditor
+            editorRef={editorRef}
             value={text}
-            // @ts-ignore
-            wrapperClassName={styles.Editor}
-            defaultLanguage={languageId}
-            options={{
-              ...editorOptions,
+            extendOptions={{
               readOnly: true,
             }}
-            defaultValue={text}
-            theme={mode === "dark" ? themeNameDark : themeNameLight}
-            loading={loading.current}
-            onMount={onMount}
           />
         </EditorWrapper>
         <EditorError />

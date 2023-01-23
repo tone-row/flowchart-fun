@@ -110,7 +110,7 @@ importers:
       eslint-plugin-simple-import-sort: ^7.0.0
       file-saver: ^2.0.5
       framer-motion: ^4.1.17
-      graph-selector: ^0.7.0
+      graph-selector: ^0.7.3
       gray-matter: ^4.0.2
       history: ^5.3.0
       identity-obj-proxy: ^3.0.0
@@ -198,7 +198,7 @@ importers:
       eslint: 8.24.0
       file-saver: 2.0.5
       framer-motion: 4.1.17_sfoxds7t5ydpegc3knd667wn6m
-      graph-selector: 0.7.0
+      graph-selector: 0.7.3
       gray-matter: 4.0.3
       immer: 9.0.16
       lodash.throttle: 4.1.1
@@ -9516,8 +9516,8 @@ packages:
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
 
-  /graph-selector/0.7.0:
-    resolution: {integrity: sha512-znsdGrVBJ4OgbSJjQht45mAQiwu+7Z2OL0aVE6y9MEPVNqKSs90xpOJHZBjT2F74yVdi1CAiAnYgoWy+nb5SyA==}
+  /graph-selector/0.7.3:
+    resolution: {integrity: sha512-a/EbDV+Q9T4pjeUwiv7RwCU5hbKBJZbB+dvzF8VjX9oJ44cyPZdzSO2cI9M8pYCcoxv7P0TLH9UrRInyiLPjUw==}
     dependencies:
       '@tone-row/strip-comments': 2.0.1
     dev: false
