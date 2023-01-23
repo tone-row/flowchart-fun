@@ -1,6 +1,6 @@
-import Editor, { EditorProps, loader, Monaco } from "@monaco-editor/react";
+import Editor, { EditorProps, Monaco } from "@monaco-editor/react";
 import { highlight } from "graph-selector";
-import * as monaco from "monaco-editor";
+import { editor } from "monaco-editor";
 import { useEffect, useRef, useState } from "react";
 
 import { editorOptions } from "../lib/constants";
@@ -17,13 +17,9 @@ import { useHoverLine } from "../lib/useHoverLine";
 import Loading from "./Loading";
 import styles from "./TextEditor.module.css";
 
-loader.config({
-  monaco,
-});
-
 type TextEditorProps = EditorProps & {
-  editorRef: React.MutableRefObject<null | monaco.editor.IStandaloneCodeEditor>;
-  extendOptions?: monaco.editor.IEditorOptions;
+  editorRef: React.MutableRefObject<null | editor.IStandaloneCodeEditor>;
+  extendOptions?: editor.IEditorOptions;
 };
 
 /** A Monaco editor which stays in sync with the current parser */
