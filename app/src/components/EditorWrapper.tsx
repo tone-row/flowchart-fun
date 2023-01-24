@@ -8,6 +8,7 @@ import { Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { CloneButton } from "./CloneButton";
 import styles from "./EditorWrapper.module.css";
+import { MightLoseWarning } from "./MightLoseWarning";
 import { RenameButton } from "./RenameButton";
 
 /**
@@ -68,8 +69,4 @@ export function EditorWrapper({
       <main>{children}</main>
     </div>
   );
-}
-
-function MightLoseWarning() {
-  return <div>Oh yeah!</div>;
 }

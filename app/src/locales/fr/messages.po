@@ -38,8 +38,8 @@ msgstr "Accédez à ces graphiques depuis n'importe où.<0/>Partagez ou intégre
 msgid "Account"
 msgstr "Compte"
 
-#: src/pages/Edit.tsx:114
-#: src/pages/EditHosted.tsx:110
+#: src/pages/Edit.tsx:92
+#: src/pages/EditHosted.tsx:87
 msgid "Advanced"
 msgstr "Avancé"
 
@@ -47,7 +47,7 @@ msgstr "Avancé"
 msgid "Already a sponsor? Log in here"
 msgstr "Déjà parrain ? Connectez-vous ici"
 
-#: src/components/SponsorDashboard.tsx:283
+#: src/components/SponsorDashboard.tsx:289
 msgid "Amount"
 msgstr "Montant"
 
@@ -76,7 +76,7 @@ msgid "Background"
 msgstr "L'arrière plan"
 
 #: src/components/Settings.tsx:135
-#: src/components/SponsorDashboard.tsx:188
+#: src/components/SponsorDashboard.tsx:194
 #: src/pages/SignUp.tsx:48
 msgid "Become a Sponsor"
 msgstr "Devenir un sponsor"
@@ -96,22 +96,22 @@ msgid "Breadthfirst"
 msgstr "Parcours en largeur"
 
 #: src/components/ClearTextButton.tsx:44
-#: src/components/SponsorDashboard.tsx:253
-#: src/components/SponsorDashboard.tsx:264
-#: src/components/SponsorDashboard.tsx:353
-#: src/components/SponsorDashboard.tsx:365
-#: src/components/SponsorDashboard.tsx:409
+#: src/components/SponsorDashboard.tsx:259
+#: src/components/SponsorDashboard.tsx:270
+#: src/components/SponsorDashboard.tsx:370
+#: src/components/SponsorDashboard.tsx:382
+#: src/components/SponsorDashboard.tsx:426
 #: src/pages/Charts.tsx:243
 #: src/pages/Charts.tsx:514
 #: src/pages/Charts.tsx:564
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/components/SponsorDashboard.tsx:256
+#: src/components/SponsorDashboard.tsx:262
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Résilier votre abonnement. Vos graphiques hébergés seront en lecture seule."
 
-#: src/components/SponsorDashboard.tsx:177
+#: src/components/SponsorDashboard.tsx:183
 msgid "Change Email Address"
 msgstr "Changer l'adresse email"
 
@@ -175,7 +175,7 @@ msgstr "Bande dessinée"
 msgid "Concentric"
 msgstr "Concentrique"
 
-#: src/components/SponsorDashboard.tsx:171
+#: src/components/SponsorDashboard.tsx:177
 msgid "Confirm New Email"
 msgstr "Confirmer le nouveau Email"
 
@@ -231,7 +231,7 @@ msgstr ""
 msgid "Custom Sharing Options"
 msgstr "Options de partage personnalisées"
 
-#: src/components/SponsorDashboard.tsx:132
+#: src/components/SponsorDashboard.tsx:138
 msgid "Customer Portal"
 msgstr "Portail Clients"
 
@@ -248,7 +248,7 @@ msgstr "Sombre"
 msgid "Dark Mode"
 msgstr "Mode sombre"
 
-#: src/components/SponsorDashboard.tsx:280
+#: src/components/SponsorDashboard.tsx:286
 msgid "Date"
 msgstr "Date"
 
@@ -267,7 +267,7 @@ msgstr "Direction"
 msgid "Discard"
 msgstr "Jeter"
 
-#: src/components/SponsorDashboard.tsx:358
+#: src/components/SponsorDashboard.tsx:375
 msgid "Do you want to cancel your subscription?"
 msgstr "Souhaitez-vous résilier votre abonnement ?"
 
@@ -275,8 +275,8 @@ msgstr "Souhaitez-vous résilier votre abonnement ?"
 msgid "Do you want to delete this?"
 msgstr "Souhaitez-vous supprimer ceci ?"
 
-#: src/pages/Edit.tsx:95
-#: src/pages/EditHosted.tsx:100
+#: src/pages/Edit.tsx:73
+#: src/pages/EditHosted.tsx:77
 msgid "Document"
 msgstr "Document"
 
@@ -367,7 +367,7 @@ msgstr "Entrez un titre"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:44
+#: src/components/EditorWrapper.tsx:58
 #: src/components/ShareDialog.tsx:43
 #: src/components/ShareDialog.tsx:99
 msgid "Export"
@@ -421,11 +421,15 @@ msgstr "Quadrillage"
 msgid "Have fun! 🎉"
 msgstr "Amusez-vous ! 🎉"
 
+#: src/components/MightLoseWarning.tsx:25
+msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
+msgstr ""
+
 #: src/components/SharedHeader.tsx:91
 msgid "Help"
 msgstr "Aide"
 
-#: src/components/SponsorDashboard.tsx:270
+#: src/components/SponsorDashboard.tsx:276
 msgid "History"
 msgstr "Historique"
 
@@ -456,8 +460,8 @@ msgid "Language"
 msgstr "Langue"
 
 #: src/components/Tabs/EditLayoutTab.tsx:69
-#: src/pages/Edit.tsx:100
-#: src/pages/EditHosted.tsx:103
+#: src/pages/Edit.tsx:78
+#: src/pages/EditHosted.tsx:80
 msgid "Layout"
 msgstr "Disposition"
 
@@ -473,6 +477,7 @@ msgstr "Mises en page et thèmes"
 msgid "Leading References"
 msgstr ""
 
+#: src/components/MightLoseWarning.tsx:51
 #: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "En savoir plus"
@@ -503,7 +508,7 @@ msgstr "Graphiques locaux"
 msgid "Log In"
 msgstr "Connexion"
 
-#: src/components/SponsorDashboard.tsx:127
+#: src/components/SponsorDashboard.tsx:133
 msgid "Log Out"
 msgstr "Déconnexion"
 
@@ -553,12 +558,12 @@ msgstr "Besoin d'aide? <0>Consultez notre documentation.</0>"
 msgid "New"
 msgstr "Nouveau"
 
-#: src/components/SponsorDashboard.tsx:164
+#: src/components/SponsorDashboard.tsx:170
 msgid "New Email"
 msgstr "Nouveau courriel"
 
-#: src/components/SponsorDashboard.tsx:215
-#: src/components/SponsorDashboard.tsx:406
+#: src/components/SponsorDashboard.tsx:221
+#: src/components/SponsorDashboard.tsx:423
 msgid "Next charge"
 msgstr "Prochain paiement"
 
@@ -586,7 +591,7 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
 
-#: src/components/SponsorDashboard.tsx:149
+#: src/components/SponsorDashboard.tsx:155
 msgid "Open Customer Portal"
 msgstr "Ouvrir le portail client"
 
@@ -613,7 +618,7 @@ msgstr "Public"
 msgid "Random"
 msgstr "Aléatoire"
 
-#: src/components/EditorWrapper.tsx:37
+#: src/components/EditorWrapper.tsx:51
 #: src/components/ShareDialog.tsx:92
 msgid "Read-only"
 msgstr "Lecture seulement"
@@ -650,6 +655,10 @@ msgstr ""
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr ""
 
+#: src/components/MightLoseWarning.tsx:38
+msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
+msgstr ""
+
 #: src/components/RenameButton.tsx:103
 #: src/components/RenameButton.tsx:104
 #: src/components/RenameButton.tsx:110
@@ -663,10 +672,10 @@ msgstr "Renommer"
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: src/components/SponsorDashboard.tsx:243
-#: src/components/SponsorDashboard.tsx:400
-#: src/components/SponsorDashboard.tsx:404
-#: src/components/SponsorDashboard.tsx:413
+#: src/components/SponsorDashboard.tsx:249
+#: src/components/SponsorDashboard.tsx:417
+#: src/components/SponsorDashboard.tsx:421
+#: src/components/SponsorDashboard.tsx:430
 msgid "Resume Subscription"
 msgstr "Reprendre l'abonnement"
 
@@ -674,7 +683,7 @@ msgstr "Reprendre l'abonnement"
 msgid "Retro"
 msgstr "Rétro"
 
-#: src/components/SponsorDashboard.tsx:361
+#: src/components/SponsorDashboard.tsx:378
 msgid "Return"
 msgstr "Retour"
 
@@ -739,7 +748,7 @@ msgstr "Espacement"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "Parrainez flowchart.fun pour 3 $ / mois ou 30 $ / an pour accéder aux organigrammes hébergés et aux nouveaux styles et fonctionnalités"
 
-#: src/components/SponsorDashboard.tsx:227
+#: src/components/SponsorDashboard.tsx:233
 msgid "Start"
 msgstr "Début"
 
@@ -748,7 +757,7 @@ msgstr "Début"
 msgid "Static Share Links"
 msgstr "Liens de partage statiques"
 
-#: src/components/SponsorDashboard.tsx:206
+#: src/components/SponsorDashboard.tsx:212
 msgid "Status"
 msgstr "État"
 
@@ -760,8 +769,8 @@ msgstr ""
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Rationalisez votre flux de travail et simplifiez la visualisation de vos processus grâce à Flowchart Fun"
 
-#: src/pages/Edit.tsx:105
-#: src/pages/EditHosted.tsx:106
+#: src/pages/Edit.tsx:83
+#: src/pages/EditHosted.tsx:83
 msgid "Style"
 msgstr "Style"
 
@@ -774,11 +783,11 @@ msgstr ""
 msgid "Submit"
 msgstr "Soumettre"
 
-#: src/components/SponsorDashboard.tsx:201
+#: src/components/SponsorDashboard.tsx:207
 msgid "Subscription"
 msgstr "Abonnement"
 
-#: src/components/SponsorDashboard.tsx:238
+#: src/components/SponsorDashboard.tsx:244
 msgid "Subscription will end"
 msgstr "L'abonnement prendra fin"
 
@@ -851,7 +860,7 @@ msgstr "Nombre illimité de graphiques hébergés"
 msgid "Unlimited Local Charts"
 msgstr "Nombre illimité de graphiques locaux"
 
-#: src/components/SponsorDashboard.tsx:157
+#: src/components/SponsorDashboard.tsx:163
 msgid "Update Email"
 msgstr "Mettre à jour l'e-mail"
 
@@ -863,11 +872,11 @@ msgstr "Mis à jour"
 msgid "Use classes to group nodes"
 msgstr ""
 
-#: src/components/SponsorDashboard.tsx:135
+#: src/components/SponsorDashboard.tsx:141
 msgid "Use the customer portal to change your billing information."
 msgstr "Utilisez le portail client pour modifier vos informations de facturation."
 
-#: src/components/SponsorDashboard.tsx:122
+#: src/components/SponsorDashboard.tsx:128
 msgid "User"
 msgstr "Utilisateur"
 
@@ -895,7 +904,7 @@ msgstr "Que voudriez-vous partager avec nous ?"
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez."
 
-#: src/components/SponsorDashboard.tsx:191
+#: src/components/SponsorDashboard.tsx:197
 #: src/pages/Charts.tsx:375
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor."
