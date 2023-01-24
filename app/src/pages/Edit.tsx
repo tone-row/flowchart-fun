@@ -63,7 +63,7 @@ const Edit = memo(function Edit() {
   return (
     <EditWrapper>
       <Main>
-        <EditorWrapper>
+        <EditorWrapper showMightLoseWarning>
           <Tabs.Root defaultValue="Document" className={styles.Tabs}>
             <Tabs.List className={styles.TabsList}>
               <Tabs.Trigger value="Document" data-testid="Editor Tab: Document">
