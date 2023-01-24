@@ -1,14 +1,20 @@
 import { t, Trans } from "@lingui/macro";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { ArrowSquareOut, User } from "phosphor-react";
-import React, { ReactNode, useCallback, useContext, useState } from "react";
+import React, {
+  CSSProperties,
+  ReactNode,
+  useCallback,
+  useContext,
+  useState,
+} from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
 
 const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
-import { formatCents, formatDate, formatRelative } from "../lib/helpers";
+import { formatCents, formatDate } from "../lib/helpers";
 import {
   createSubscription,
   queryClient,
@@ -227,7 +233,7 @@ export default function SponsorDashboard() {
                   <Trans>Start</Trans>
                 </InfoHeading>
                 <InfoCell>
-                  {formatRelative(subscription.created.toString())}
+                  {formatDate(subscription.created.toString())}
                 </InfoCell>
               </Box>
             )}
@@ -288,7 +294,9 @@ export default function SponsorDashboard() {
             {invoices &&
               invoices.map((invoice) => (
                 <tr key={invoice.id}>
-                  <Td>{formatDate(invoice.created.toString())}</Td>
+                  <Td style={{ whiteSpace: "nowrap" }}>
+                    {formatDate(invoice.created.toString())}
+                  </Td>
                   <Td>{formatCents(invoice.amount_paid)}</Td>
                 </tr>
               ))}
@@ -310,11 +318,20 @@ export default function SponsorDashboard() {
 const Td = ({
   children,
   typeProps = {},
+  style = {},
 }: {
   children: ReactNode;
   typeProps?: TypeProps;
+  style?: CSSProperties;
 }) => (
-  <Box as="td" px={3} py={2} display="table-cell" className={styles.TableCell}>
+  <Box
+    as="td"
+    px={3}
+    py={2}
+    display="table-cell"
+    className={styles.TableCell}
+    style={style}
+  >
     <Type as="span" size={-1} {...typeProps}>
       {children}
     </Type>

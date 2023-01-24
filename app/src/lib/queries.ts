@@ -423,12 +423,15 @@ export function useAppMode() {
       const settings = JSON.parse(
         window.localStorage.getItem(LOCAL_STORAGE_SETTINGS_KEY) ?? "{}"
       );
-      return typeof settings.mode == null
-        ? window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light"
-        : settings.mode;
+      const mode =
+        typeof settings.mode == null
+          ? window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light"
+          : settings.mode;
+
+      return mode ?? "light";
     },
     {
       refetchOnMount: true,
