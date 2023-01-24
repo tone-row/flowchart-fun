@@ -306,10 +306,11 @@ function getGraphUpdater({
           })
           .run();
       } else {
-        cy.current.layout({ ...layout, animate: false }).run();
+        cy.current.layout({ ...layout, animate: false, fit: false }).run();
       }
-      cy.current.fit(undefined, DEFAULT_GRAPH_PADDING);
 
+      if (!graphInitialized.current)
+        cy.current.fit(undefined, DEFAULT_GRAPH_PADDING);
       graphInitialized.current = true;
 
       // Reinitialize to avoid missing errors
