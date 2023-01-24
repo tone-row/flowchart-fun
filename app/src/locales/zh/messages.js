@@ -108,6 +108,8 @@
     Graph: "图表",
     Grid: "网格",
     "Have fun! 🎉": "玩得开心！🎉",
+    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
+      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "帮助",
     History: "历史",
     Home: "主页",
@@ -169,6 +171,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
+      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     Rename: "重命名",
     Reset: "重置",
     "Resume Subscription": "恢复订阅",

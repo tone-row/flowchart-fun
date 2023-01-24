@@ -110,6 +110,8 @@
     Graph: "ग्राफ़",
     Grid: "ग्रिड",
     "Have fun! 🎉": "मज़े करो! 🎉",
+    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
+      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "मदद",
     History: "हिस्ट्री",
     Home: "होम",
@@ -171,6 +173,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
+      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     Rename: "फिर से नाम बदलें",
     Reset: "रीसेट करें",
     "Resume Subscription": "सदस्यता फिर से शुरू करें",
