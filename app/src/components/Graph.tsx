@@ -117,10 +117,9 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   }, [handleDragFree]);
 
   // Apply theme on initial load
-  // useEffect(() => {
-  //   getStyleUpdater({ cy, errorCatcher, bg })(theme);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  useEffect(() => {
+    getStyleUpdater({ cy, errorCatcher, bg })(useThemeStore.getState());
+  }, [bg]);
 
   const throttleStyleUpdate = useMemo(() => {
     const updater = getStyleUpdater({ cy, errorCatcher, bg });
