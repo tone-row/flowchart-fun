@@ -35,6 +35,7 @@ tbody .TableCell:not(:first-child) {
   .Wrapper {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
+    justify-items: start;
   }
 }
 
