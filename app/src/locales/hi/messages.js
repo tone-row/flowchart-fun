@@ -100,6 +100,7 @@
     Export: "एक्सपोर्ट करें",
     "Export to Common Image Formats": "कॉमन इमेज फॉर्मेट में एक्सपोर्ट करें",
     Feedback: "फ़ीडबैक",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Flowchart Fun आपकी विज़ुअल कम्युनिकेट प्रक्रियाओं को तीव्र और आसान बनाता है।",
     "Follow Us": "हमें फॉलो करें",
@@ -110,6 +111,8 @@
     Graph: "ग्राफ़",
     Grid: "ग्रिड",
     "Have fun! 🎉": "मज़े करो! 🎉",
+    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
+      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "मदद",
     History: "हिस्ट्री",
     Home: "होम",
@@ -171,6 +174,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
+      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     Rename: "फिर से नाम बदलें",
     Reset: "रीसेट करें",
     "Resume Subscription": "सदस्यता फिर से शुरू करें",
@@ -247,6 +252,8 @@
       "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें.",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[कस्टम ID] या",
     "any text: before a colon creates a label":
       "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है",

@@ -5,6 +5,10 @@
   max-width: 100%;
 }
 
+.EditorWrapper.mightLose {
+  grid-template-rows: auto auto minmax(0, 1fr);
+}
+
 @media screen and (min-width: 800px) {
   .EditorWrapper {
     /* This is to avoid content going underneath the resizable handle */

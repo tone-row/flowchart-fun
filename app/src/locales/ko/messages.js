@@ -99,6 +99,7 @@
     Export: "내보내기",
     "Export to Common Image Formats": "일반 이미지 포맷으로 내보내기",
     Feedback: "피드백",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Flowchart Fun을 사용하여 과정을 쉽고 빠르게 시각화적으로 소통할 수 있습니다.",
     "Follow Us": "팔로우하세요",
@@ -109,6 +110,8 @@
     Graph: "그래프",
     Grid: "그리드",
     "Have fun! 🎉": "즐겨보세요! 🎉",
+    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
+      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "도움말",
     History: "기록",
     Home: "집",
@@ -170,6 +173,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
+      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     Rename: "이름 바꾸기",
     Reset: "재설정",
     "Resume Subscription": "구독 재개",
@@ -245,6 +250,8 @@
       "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오.",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[사용자 지정 ID] 또는",
     "any text: before a colon creates a label":
       "콜론 앞의 모든 텍스트는: 레이블을 생성합니다",

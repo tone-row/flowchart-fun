@@ -38,8 +38,8 @@ msgstr "इन चार्ट को कहीं से भी एक्से
 msgid "Account"
 msgstr "खाता"
 
-#: src/pages/Edit.tsx:114
-#: src/pages/EditHosted.tsx:110
+#: src/pages/Edit.tsx:92
+#: src/pages/EditHosted.tsx:87
 msgid "Advanced"
 msgstr "विकसित"
 
@@ -47,7 +47,7 @@ msgstr "विकसित"
 msgid "Already a sponsor? Log in here"
 msgstr "पहले से ही एक स्पॉनसर हैं? यहां लॉगिन करें"
 
-#: src/components/SponsorDashboard.tsx:283
+#: src/components/SponsorDashboard.tsx:289
 msgid "Amount"
 msgstr "रकम"
 
@@ -76,7 +76,7 @@ msgid "Background"
 msgstr "पृष्ठभूमि"
 
 #: src/components/Settings.tsx:135
-#: src/components/SponsorDashboard.tsx:188
+#: src/components/SponsorDashboard.tsx:194
 #: src/pages/SignUp.tsx:48
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
@@ -96,22 +96,22 @@ msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
 #: src/components/ClearTextButton.tsx:44
-#: src/components/SponsorDashboard.tsx:253
-#: src/components/SponsorDashboard.tsx:264
-#: src/components/SponsorDashboard.tsx:353
-#: src/components/SponsorDashboard.tsx:365
-#: src/components/SponsorDashboard.tsx:409
+#: src/components/SponsorDashboard.tsx:259
+#: src/components/SponsorDashboard.tsx:270
+#: src/components/SponsorDashboard.tsx:370
+#: src/components/SponsorDashboard.tsx:382
+#: src/components/SponsorDashboard.tsx:426
 #: src/pages/Charts.tsx:243
 #: src/pages/Charts.tsx:514
 #: src/pages/Charts.tsx:564
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: src/components/SponsorDashboard.tsx:256
+#: src/components/SponsorDashboard.tsx:262
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
-#: src/components/SponsorDashboard.tsx:177
+#: src/components/SponsorDashboard.tsx:183
 msgid "Change Email Address"
 msgstr "ईमेल पता बदलें"
 
@@ -175,7 +175,7 @@ msgstr "कॉमिक बुक"
 msgid "Concentric"
 msgstr "गाढ़ा"
 
-#: src/components/SponsorDashboard.tsx:171
+#: src/components/SponsorDashboard.tsx:177
 msgid "Confirm New Email"
 msgstr "नई ईमेल की पुष्टि करें"
 
@@ -231,7 +231,7 @@ msgstr ""
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
-#: src/components/SponsorDashboard.tsx:132
+#: src/components/SponsorDashboard.tsx:138
 msgid "Customer Portal"
 msgstr "ग्राहक पोर्टल"
 
@@ -248,7 +248,7 @@ msgstr "डार्क"
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/components/SponsorDashboard.tsx:280
+#: src/components/SponsorDashboard.tsx:286
 msgid "Date"
 msgstr "तारीख़"
 
@@ -267,7 +267,7 @@ msgstr "दिशा"
 msgid "Discard"
 msgstr "रद्द करें"
 
-#: src/components/SponsorDashboard.tsx:358
+#: src/components/SponsorDashboard.tsx:375
 msgid "Do you want to cancel your subscription?"
 msgstr "क्या आप अपनी सदस्यता रद्द करना चाहते हैं?"
 
@@ -275,8 +275,8 @@ msgstr "क्या आप अपनी सदस्यता रद्द क�
 msgid "Do you want to delete this?"
 msgstr "क्या आप इसे डिलीट करना चाहते हैं?"
 
-#: src/pages/Edit.tsx:95
-#: src/pages/EditHosted.tsx:100
+#: src/pages/Edit.tsx:73
+#: src/pages/EditHosted.tsx:77
 msgid "Document"
 msgstr "दस्तावेज़"
 
@@ -367,7 +367,7 @@ msgstr "एक शीर्षक दर्ज करें"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:44
+#: src/components/EditorWrapper.tsx:58
 #: src/components/ShareDialog.tsx:43
 #: src/components/ShareDialog.tsx:99
 msgid "Export"
@@ -383,6 +383,10 @@ msgstr "कॉमन इमेज फॉर्मेट में एक्स�
 #: src/components/SharedHeader.tsx:353
 msgid "Feedback"
 msgstr "फ़ीडबैक"
+
+#: src/components/GraphFloatingMenu.tsx:46
+msgid "Fit Graph"
+msgstr ""
 
 #: src/pages/Sponsor.tsx:19
 msgid "Flowchart Fun makes it quick and easy to visually communicate your processes."
@@ -421,11 +425,15 @@ msgstr "ग्रिड"
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
+#: src/components/MightLoseWarning.tsx:25
+msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
+msgstr ""
+
 #: src/components/SharedHeader.tsx:91
 msgid "Help"
 msgstr "मदद"
 
-#: src/components/SponsorDashboard.tsx:270
+#: src/components/SponsorDashboard.tsx:276
 msgid "History"
 msgstr "हिस्ट्री"
 
@@ -456,8 +464,8 @@ msgid "Language"
 msgstr "भाषा"
 
 #: src/components/Tabs/EditLayoutTab.tsx:69
-#: src/pages/Edit.tsx:100
-#: src/pages/EditHosted.tsx:103
+#: src/pages/Edit.tsx:78
+#: src/pages/EditHosted.tsx:80
 msgid "Layout"
 msgstr "ख़ाका"
 
@@ -473,6 +481,7 @@ msgstr "लेआउट और थीम्स"
 msgid "Leading References"
 msgstr ""
 
+#: src/components/MightLoseWarning.tsx:51
 #: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "और अधिक जानें"
@@ -503,7 +512,7 @@ msgstr "लोकल चार्ट"
 msgid "Log In"
 msgstr "लॉग इन करें"
 
-#: src/components/SponsorDashboard.tsx:127
+#: src/components/SponsorDashboard.tsx:133
 msgid "Log Out"
 msgstr "लॉग आउट"
 
@@ -553,12 +562,12 @@ msgstr "मदद चाहिए? <0>हमारे दस्तावेज�
 msgid "New"
 msgstr "नया"
 
-#: src/components/SponsorDashboard.tsx:164
+#: src/components/SponsorDashboard.tsx:170
 msgid "New Email"
 msgstr "नई ईमेल"
 
-#: src/components/SponsorDashboard.tsx:215
-#: src/components/SponsorDashboard.tsx:406
+#: src/components/SponsorDashboard.tsx:221
+#: src/components/SponsorDashboard.tsx:423
 msgid "Next charge"
 msgstr "अगला चार्ज"
 
@@ -586,7 +595,7 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
 
-#: src/components/SponsorDashboard.tsx:149
+#: src/components/SponsorDashboard.tsx:155
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
@@ -613,7 +622,7 @@ msgstr "पब्लिक"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/components/EditorWrapper.tsx:37
+#: src/components/EditorWrapper.tsx:51
 #: src/components/ShareDialog.tsx:92
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
@@ -650,6 +659,10 @@ msgstr ""
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr ""
 
+#: src/components/MightLoseWarning.tsx:38
+msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
+msgstr ""
+
 #: src/components/RenameButton.tsx:103
 #: src/components/RenameButton.tsx:104
 #: src/components/RenameButton.tsx:110
@@ -663,10 +676,10 @@ msgstr "फिर से नाम बदलें"
 msgid "Reset"
 msgstr "रीसेट करें"
 
-#: src/components/SponsorDashboard.tsx:243
-#: src/components/SponsorDashboard.tsx:400
-#: src/components/SponsorDashboard.tsx:404
-#: src/components/SponsorDashboard.tsx:413
+#: src/components/SponsorDashboard.tsx:249
+#: src/components/SponsorDashboard.tsx:417
+#: src/components/SponsorDashboard.tsx:421
+#: src/components/SponsorDashboard.tsx:430
 msgid "Resume Subscription"
 msgstr "सदस्यता फिर से शुरू करें"
 
@@ -674,7 +687,7 @@ msgstr "सदस्यता फिर से शुरू करें"
 msgid "Retro"
 msgstr "रेट्रो"
 
-#: src/components/SponsorDashboard.tsx:361
+#: src/components/SponsorDashboard.tsx:378
 msgid "Return"
 msgstr "वापसी"
 
@@ -739,7 +752,7 @@ msgstr "अंतर"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "होस्ट किए गए फ़्लोचार्ट और नवीनतम शैलियों और सुविधाओं तक पहुँचने के लिए $3/माह या $30/वर्ष के लिए फ़्लोचार्ट.फ़न को प्रायोजित करें"
 
-#: src/components/SponsorDashboard.tsx:227
+#: src/components/SponsorDashboard.tsx:233
 msgid "Start"
 msgstr "शुरू"
 
@@ -748,7 +761,7 @@ msgstr "शुरू"
 msgid "Static Share Links"
 msgstr "स्टैटिक शेयर लिंक्स"
 
-#: src/components/SponsorDashboard.tsx:206
+#: src/components/SponsorDashboard.tsx:212
 msgid "Status"
 msgstr "स्टेटस"
 
@@ -760,8 +773,8 @@ msgstr ""
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन"
 
-#: src/pages/Edit.tsx:105
-#: src/pages/EditHosted.tsx:106
+#: src/pages/Edit.tsx:83
+#: src/pages/EditHosted.tsx:83
 msgid "Style"
 msgstr "शैली"
 
@@ -774,11 +787,11 @@ msgstr ""
 msgid "Submit"
 msgstr "भेजना"
 
-#: src/components/SponsorDashboard.tsx:201
+#: src/components/SponsorDashboard.tsx:207
 msgid "Subscription"
 msgstr "सदस्यता"
 
-#: src/components/SponsorDashboard.tsx:238
+#: src/components/SponsorDashboard.tsx:244
 msgid "Subscription will end"
 msgstr "सदस्यता समाप्त हो जाएगी"
 
@@ -851,7 +864,7 @@ msgstr "असीमित होस्टेड चार्ट"
 msgid "Unlimited Local Charts"
 msgstr "असीमित लोकल चार्ट"
 
-#: src/components/SponsorDashboard.tsx:157
+#: src/components/SponsorDashboard.tsx:163
 msgid "Update Email"
 msgstr "ईमेल अपडेट करें"
 
@@ -863,11 +876,11 @@ msgstr "अपडेट किया गया"
 msgid "Use classes to group nodes"
 msgstr ""
 
-#: src/components/SponsorDashboard.tsx:135
+#: src/components/SponsorDashboard.tsx:141
 msgid "Use the customer portal to change your billing information."
 msgstr "अपनी बिलिंग जानकारी बदलने के लिए ग्राहक पोर्टल का उपयोग करें।"
 
-#: src/components/SponsorDashboard.tsx:122
+#: src/components/SponsorDashboard.tsx:128
 msgid "User"
 msgstr "यूज़र"
 
@@ -895,10 +908,18 @@ msgstr "आप हमारे साथ क्या शेयर करना 
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।"
 
-#: src/components/SponsorDashboard.tsx:191
+#: src/components/SponsorDashboard.tsx:197
 #: src/pages/Charts.tsx:375
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें."
+
+#: src/components/GraphFloatingMenu.tsx:40
+msgid "Zoom In"
+msgstr ""
+
+#: src/components/GraphFloatingMenu.tsx:35
+msgid "Zoom Out"
+msgstr ""
 
 #: src/lib/queries.ts:155
 #: src/lib/useDefaultDoc.ts:9

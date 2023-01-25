@@ -98,6 +98,7 @@
     Export: "导出",
     "Export to Common Image Formats": "导出为常见图片格式",
     Feedback: "反馈",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Flowchart Fun 可以快速且轻松地以视觉方式传达您的流程。",
     "Follow Us": "关注我们",
@@ -108,6 +109,8 @@
     Graph: "图表",
     Grid: "网格",
     "Have fun! 🎉": "玩得开心！🎉",
+    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
+      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "帮助",
     History: "历史",
     Home: "主页",
@@ -169,6 +172,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
+      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     Rename: "重命名",
     Reset: "重置",
     "Resume Subscription": "恢复订阅",
@@ -242,6 +247,8 @@
       "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[自定义 ID] 或",
     "any text: before a colon creates a label":
       "任何文本：在冒号前创建一个标签",

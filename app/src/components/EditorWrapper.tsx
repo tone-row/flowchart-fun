@@ -8,17 +8,31 @@ import { Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { CloneButton } from "./CloneButton";
 import styles from "./EditorWrapper.module.css";
+import { MightLoseWarning } from "./MightLoseWarning";
 import { RenameButton } from "./RenameButton";
 
 /**
  * Adds title and export button to the editor
  */
-export function EditorWrapper({ children }: { children: React.ReactNode }) {
+export function EditorWrapper({
+  children,
+  showMightLoseWarning,
+}: {
+  children: React.ReactNode;
+  showMightLoseWarning?: boolean;
+}) {
   const title = useDocDetails("title", "flowchart.fun");
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
   return (
-    <div className={styles.EditorWrapper}>
+    <div
+      className={[
+        styles.EditorWrapper,
+        showMightLoseWarning ? styles.mightLose : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <header>
         <div className={styles.HeaderTitle}>
           <RenameButton>
@@ -51,6 +65,7 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
           )}
         </div>
       </header>
+      {showMightLoseWarning && <MightLoseWarning />}
       <main>{children}</main>
     </div>
   );

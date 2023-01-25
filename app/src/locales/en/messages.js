@@ -99,6 +99,7 @@
     Export: "Export",
     "Export to Common Image Formats": "Export to Common Image Formats",
     Feedback: "Feedback",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Flowchart Fun makes it quick and easy to visually communicate your processes.",
     "Follow Us": "Follow Us",
@@ -109,6 +110,8 @@
     Graph: "Graph",
     Grid: "Grid",
     "Have fun! 🎉": "Have fun! 🎉",
+    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
+      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "Help",
     History: "History",
     Home: "Home",
@@ -170,6 +173,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
+      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     Rename: "Rename",
     Reset: "Reset",
     "Resume Subscription": "Resume Subscription",
@@ -246,6 +251,8 @@
       "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[custom ID] or",
     "any text: before a colon creates a label":
       "any text: before a colon creates a label",

@@ -99,6 +99,7 @@
     Export: "Exportar",
     "Export to Common Image Formats": "Exportar para formatos de imagem comuns",
     Feedback: "Feedback",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "O Flowchart Fun facilita e agiliza a comunicação visual de seus processos.",
     "Follow Us": "Siga-nos",
@@ -109,6 +110,8 @@
     Graph: "Diagrama",
     Grid: "Grade",
     "Have fun! 🎉": "Divirta-se! 🎉",
+    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
+      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "Ajuda",
     History: "Histórico",
     Home: "Página inicial",
@@ -170,6 +173,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
+      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     Rename: "Renomear",
     Reset: "Resetar",
     "Resume Subscription": "Resumir inscrição",
@@ -246,6 +251,8 @@
       "Com a capacidade de criar gráficos hospedados ilimitados, você pode acessar e trabalhar os seus fluxogramas de qualquer dispositivo, em qualquer lugar.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um(a) patrocinador(a).",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[ID customizada] ou",
     "any text: before a colon creates a label":
       "qualquer texto: antes de dois pontos cria uma etiqueta",

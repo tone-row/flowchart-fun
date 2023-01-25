@@ -100,6 +100,7 @@
     "Export to Common Image Formats":
       "Exporter vers des formats d'image courants",
     Feedback: "Commentaire",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Flowchart Fun accélère et facilite la communication visuelle de vos processus.",
     "Follow Us": "Suivez-nous",
@@ -110,6 +111,8 @@
     Graph: "Graphique",
     Grid: "Quadrillage",
     "Have fun! 🎉": "Amusez-vous ! 🎉",
+    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
+      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "Aide",
     History: "Historique",
     Home: "Accueil",
@@ -171,6 +174,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
+      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     Rename: "Renommer",
     Reset: "Réinitialiser",
     "Resume Subscription": "Reprendre l'abonnement",
@@ -247,6 +252,8 @@
       "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor.",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[ID personnalisé] ou",
     "any text: before a colon creates a label":
       "n'importe quel texte : avant deux points, crée une étiquette pour le lien",
