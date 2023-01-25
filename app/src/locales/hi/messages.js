@@ -100,6 +100,7 @@
     Export: "एक्सपोर्ट करें",
     "Export to Common Image Formats": "कॉमन इमेज फॉर्मेट में एक्सपोर्ट करें",
     Feedback: "फ़ीडबैक",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Flowchart Fun आपकी विज़ुअल कम्युनिकेट प्रक्रियाओं को तीव्र और आसान बनाता है।",
     "Follow Us": "हमें फॉलो करें",
@@ -251,6 +252,8 @@
       "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें.",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[कस्टम ID] या",
     "any text: before a colon creates a label":
       "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है",

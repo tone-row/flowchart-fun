@@ -30,6 +30,7 @@ import {
 import { Link, LinkProps, useLocation } from "react-router-dom";
 
 import { useIsValidCustomer } from "../lib/hooks";
+import { track } from "../lib/track";
 import { useLastChart } from "../lib/useLastChart";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 
@@ -174,13 +175,7 @@ export const SharedHeader = memo(function SharedHeader() {
                     icon={<Lightning height={20} width={20} />}
                     aria-current={isSponsorPage ? "page" : undefined}
                     onClick={() => {
-                      // track in gtm
-                      if (window?.dataLayer)
-                        window.dataLayer.push({
-                          event: "sponsor",
-                          action: "click",
-                          label: "header",
-                        });
+                      track("sponsor", "click");
                     }}
                   />
                   <HeaderClientLink
