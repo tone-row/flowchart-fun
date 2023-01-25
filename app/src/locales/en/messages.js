@@ -99,6 +99,7 @@
     Export: "Export",
     "Export to Common Image Formats": "Export to Common Image Formats",
     Feedback: "Feedback",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Flowchart Fun makes it quick and easy to visually communicate your processes.",
     "Follow Us": "Follow Us",
@@ -250,6 +251,8 @@
       "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[custom ID] or",
     "any text: before a colon creates a label":
       "any text: before a colon creates a label",

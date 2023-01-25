@@ -99,6 +99,7 @@
     Export: "내보내기",
     "Export to Common Image Formats": "일반 이미지 포맷으로 내보내기",
     Feedback: "피드백",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Flowchart Fun을 사용하여 과정을 쉽고 빠르게 시각화적으로 소통할 수 있습니다.",
     "Follow Us": "팔로우하세요",
@@ -249,6 +250,8 @@
       "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오.",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[사용자 지정 ID] 또는",
     "any text: before a colon creates a label":
       "콜론 앞의 모든 텍스트는: 레이블을 생성합니다",

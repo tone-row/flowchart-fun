@@ -100,6 +100,7 @@
     Export: "Exportieren",
     "Export to Common Image Formats": "Exportieren Sie in gängige Bildformate",
     Feedback: "Feedback",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Mit Flowchart Fun können Sie Ihre Prozesse schnell und einfach visuell darstellen.",
     "Follow Us": "Folgen Sie uns",
@@ -250,6 +251,8 @@
       "Mit der Möglichkeit, eine unbegrenzte Anzahl gehosteter Charts zu erstellen, können Sie von jedem Gerät aus und von jedem Ort aus auf Ihre Flowcharts zugreifen und daran arbeiten.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Ihr Abonnement ist nicht mehr aktiv. Wenn Sie gehostete Diagramme erstellen und bearbeiten möchten, werden Sie Sponsor.",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[benutzerdefinierte ID] oder",
     "any text: before a colon creates a label":
       "Jeder beliebige Text: vor einem Doppelpunkt wird zu einer Beschriftung",

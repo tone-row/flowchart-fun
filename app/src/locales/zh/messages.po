@@ -384,6 +384,10 @@ msgstr "导出为常见图片格式"
 msgid "Feedback"
 msgstr "反馈"
 
+#: src/components/GraphFloatingMenu.tsx:46
+msgid "Fit Graph"
+msgstr ""
+
 #: src/pages/Sponsor.tsx:19
 msgid "Flowchart Fun makes it quick and easy to visually communicate your processes."
 msgstr "Flowchart Fun 可以快速且轻松地以视觉方式传达您的流程。"
@@ -908,6 +912,14 @@ msgstr "由于能够创建无限制的托管图表，您可以从任何设备随
 #: src/pages/Charts.tsx:375
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。"
+
+#: src/components/GraphFloatingMenu.tsx:40
+msgid "Zoom In"
+msgstr ""
+
+#: src/components/GraphFloatingMenu.tsx:35
+msgid "Zoom Out"
+msgstr ""
 
 #: src/lib/queries.ts:155
 #: src/lib/useDefaultDoc.ts:9

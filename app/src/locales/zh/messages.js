@@ -98,6 +98,7 @@
     Export: "导出",
     "Export to Common Image Formats": "导出为常见图片格式",
     Feedback: "反馈",
+    "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
       "Flowchart Fun 可以快速且轻松地以视觉方式传达您的流程。",
     "Follow Us": "关注我们",
@@ -246,6 +247,8 @@
       "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",
+    "Zoom In": "Zoom In",
+    "Zoom Out": "Zoom Out",
     "[custom ID] or": "[自定义 ID] 或",
     "any text: before a colon creates a label":
       "任何文本：在冒号前创建一个标签",

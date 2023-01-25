@@ -3,6 +3,7 @@ import * as HoverCard from "@radix-ui/react-hover-card";
 import { CircleWavyWarning } from "phosphor-react";
 import { Link } from "react-router-dom";
 
+import { track } from "../lib/track";
 import { Box, Type } from "../slang";
 import styles from "./MightLoseWarning.module.css";
 export function MightLoseWarning() {
@@ -47,6 +48,7 @@ export function MightLoseWarning() {
             color="color-highlightColor"
             as={Link}
             to="/sponsor"
+            onClick={() => track("might_lose_warning_click", "click")}
           >
             <Trans>Learn More</Trans>
           </Type>

@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { MagnifyingGlassMinus, MagnifyingGlassPlus } from "phosphor-react";
 import { useCallback } from "react";
 import { MdFitScreen } from "react-icons/md";
@@ -31,18 +32,18 @@ export function GraphFloatingMenu() {
     <div className={styles.graphFloatingMenu}>
       <CustomIconButton
         icon={<MagnifyingGlassMinus />}
-        label="Zoom Out"
+        label={t`Zoom Out`}
         onClick={zoomOut}
       />
       <CustomIconButton
         icon={<MagnifyingGlassPlus />}
-        label="Zoom In"
+        label={t`Zoom In`}
         onClick={zoomIn}
       />
       <CustomIconButton
         icon={<MdFitScreen />}
         onClick={fitGraph}
-        label="Fit Graph"
+        label={t`Fit Graph`}
       />
     </div>
   );
