@@ -10,14 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^2.0.0",
+    "@astrojs/vercel": "^3.0.0",
     "@linear/sdk": "^1.22.0",
+    "@notionhq/client": "^0.4.11",
     "@octokit/core": "^4.0.5",
-    "astro": "^1.4",
+    "astro": "^2.0.1",
     "date-fns": "^2.29.2",
-    "marked": "^4.1.0"
+    "highlight.js": "^11.7.0",
+    "marked": "^4.1.1",
+    "notion-to-md": "^2.5.5"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^0.11.1",
+    "@astrojs/mdx": "^0.15.0",
     "@astrojs/partytown": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
     "@types/marked": "^4.0.7"

@@ -1,21 +1,17 @@
 ---
+import { getPosts } from '../components/notion';
 import Layout from '../layouts/Layout.astro';
-import { dateString, niceDate } from '../components/niceData';
 
-const posts = (await Astro.glob('./post/*.mdx')).map((post) => {
-	const { frontmatter } = post;
-	const title = frontmatter.title;
-	const slug = post.url;
-	const publishDate = niceDate(frontmatter.publishDate);
-	const date = dateString(frontmatter.publishDate);
-	const description = frontmatter.description;
-	const numberDate = Number(frontmatter.publishDate);
-	return { title, slug, publishDate, description, date, numberDate };
-}).sort((a, b) => b.numberDate - a.numberDate);
+
+const posts = (await getPosts())
+				// sort by rawDate
+				.sort((a, b) => b.rawDate - a.rawDate)
+				// only show posts with status "Done"
+				.filter((post) => post.status === 'Done')
+
 ---
-
 <Layout title="Flowchart Fun Blog">
-	<main>
+  <main>
 		<header>
 			<h1>Blog</h1>
 			<p class="description">Documenting the process of developing Flowchart Fun</p>
@@ -23,7 +19,7 @@ const posts = (await Astro.glob('./post/*.mdx')).map((post) => {
 		<div class="blog-list">
 			{posts.map((post) => (
 				<article>
-					<a href={post.slug} class="blog-post">
+					<a href={"/blog/post/"+ post.slug} class="blog-post">
 						<h2>{post.title}</h2>
 						<time datetime={post.date} class="publish-date">{post.publishDate}</time>
 						<p>{post.description}</p>

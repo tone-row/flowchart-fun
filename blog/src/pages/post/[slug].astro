@@ -1,0 +1,83 @@
+---
+import {  getPostFromSlug, getPostHtmlFromId } from "../../components/notion";
+import Layout from "../../layouts/Layout.astro";
+import 'highlight.js/styles/atom-one-dark.css'
+
+const { slug = "" } = Astro.params;
+if (!slug) {
+  Astro.redirect("/404");
+}
+const {id, title, publishDate, date, description} = await getPostFromSlug(slug as string);
+if (!id) {
+  Astro.redirect("/404");
+}
+const html = await getPostHtmlFromId(id as string);
+---
+<Layout title={title}>
+  <hgroup>
+    <time datetime={date}>{publishDate}</time>
+    <h1>{title}</h1>
+    <span class="post-description">{description}</span>
+  </hgroup>
+  <div class="content">
+    <div set:html={html} />
+    <div class="byline vcard">
+      <address class="author">By <a rel="author" class="url fn n" href="https://twitter.com/tone_row_">Rob Gordon</a></address> 
+      <time datetime={date} title={publishDate}>on {publishDate}</time>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  hgroup {
+    text-align: center;
+    display: grid;
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+
+  time {
+    font-size: 0.875rem;
+    color: var(--grey);
+  }
+
+  .post-description {
+    font-size: 1.25rem;
+  }
+
+  .byline {
+    margin-top: 60px;
+  }
+</style>
+
+<style is:global>
+  code.hljs {
+    border-radius: 0.25rem;
+  }
+
+  .content img {
+    margin-inline: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .content a {
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 1rem 1.5rem;
+    background-color: hsla(var(--blue-500-hsl) / 0.05);
+    border-left: 4px solid hsla(var(--blue-500-hsl) / 0.5);
+    border-radius: 0.25rem;
+  }
+
+  .astro-code {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+</style>
