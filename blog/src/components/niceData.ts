@@ -1,13 +1,17 @@
 import { format, parse, parseISO } from "date-fns";
 
 export function niceDate(d: string) {
-  return format(parse(d, "yyyyMMdd", new Date()), "LLLL d, yyyy");
+  return format(parse(d, "yyyy-MM-dd", new Date()), "LLLL d, yyyy");
 }
 
 export function dateString(d: string) {
-  return format(parse(d, "yyyyMMdd", new Date()), "yyyy-MM-dd");
+  return format(parse(d, "yyyy-MM-dd", new Date()), "yyyy-MM-dd");
 }
 
 export function niceDateIso(d: string) {
   return format(parseISO(d), "LLLL d, yyyy");
+}
+
+export function dateAsNumber(d: string) {
+  return parseInt(format(parse(d, "yyyy-MM-dd", new Date()), "yyyyMMdd"), 10);
 }

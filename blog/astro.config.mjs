@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
+import vercel from "@astrojs/vercel/serverless";
 
 // TODO: will not work in vercel previews
 const site =
@@ -15,6 +16,8 @@ export default defineConfig({
   base: "/blog",
   outDir: "../app/build/blog",
   publicDir: "../app/build/blog",
+  output: "server",
+  adapter: vercel(),
   integrations: [
     mdx(),
     partytown({
