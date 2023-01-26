@@ -26,6 +26,7 @@ export function MightLoseSponsorTrigger() {
           background="palette-yellow-2"
           className={styles.MightLoseSponsorTrigger}
           rad={3}
+          data-testid="might-lose-sponsor-trigger"
         >
           <CircleWavyWarning size={28} />
         </Box>
