@@ -1,6 +1,5 @@
 import Stripe from "stripe";
-import { createClient } from "@supabase/supabase-js";
-import { Database } from "../app/src/types/database.types";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 
 if (
   !process.env.STRIPE_KEY ||
@@ -13,12 +12,7 @@ const stripe = new Stripe(process.env.STRIPE_KEY, {
   apiVersion: "2020-08-27",
 });
 
-const supabase = createClient<Database>(
-  process.env.REACT_APP_SUPABASE_URL,
-  process.env.DB_SECRET
-);
-
-export default async function handler(req, res) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const { oldEmail, newEmail } = req.body;
     if (!oldEmail) throw new Error("Missing email in body");
@@ -30,7 +24,7 @@ export default async function handler(req, res) {
     });
     if (!customers.length) throw new Error("Try Again Later");
 
-    let customer = customers[0].id;
+    const customer = customers[0].id;
 
     // Check if new email is already in use
     const { data: newCustomers } = await stripe.customers.list({
@@ -46,6 +40,6 @@ export default async function handler(req, res) {
 
     res.status(200).send({ success: true });
   } catch (error) {
-    return res.status("402").send({ error: error.message });
+    return res.status(402).send({ error: (error as Error).message });
   }
 }

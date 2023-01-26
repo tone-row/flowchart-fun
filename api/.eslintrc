@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  /* ignore javascript files */
+  "ignorePatterns": ["*.js"],
+  "rules": {
+    "@typescript-eslint/no-explicity-any": ["off"],
+    "@typescript-eslint/no-var-requires": ["off"]
+  }
+}

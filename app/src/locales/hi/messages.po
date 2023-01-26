@@ -33,8 +33,8 @@ msgstr "$30.00/वर्ष (20% बचाएं)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों."
 
-#: src/components/SharedHeader.tsx:164
-#: src/components/SharedHeader.tsx:382
+#: src/components/SharedHeader.tsx:171
+#: src/components/SharedHeader.tsx:395
 msgid "Account"
 msgstr "खाता"
 
@@ -81,8 +81,9 @@ msgstr "पृष्ठभूमि"
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
-#: src/components/SharedHeader.tsx:136
-#: src/components/SharedHeader.tsx:361
+#: src/components/SharedHeader.tsx:142
+#: src/components/SharedHeader.tsx:371
+#: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "ब्लॉग"
 
@@ -115,13 +116,14 @@ msgstr "अपनी सदस्यता रद्द करें. आपक�
 msgid "Change Email Address"
 msgstr "ईमेल पता बदलें"
 
-#: src/components/SharedHeader.tsx:143
-#: src/components/SharedHeader.tsx:366
+#: src/components/SharedHeader.tsx:150
+#: src/components/SharedHeader.tsx:377
+#: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "बदलाव का"
 
-#: src/components/SharedHeader.tsx:82
-#: src/components/SharedHeader.tsx:340
+#: src/components/SharedHeader.tsx:88
+#: src/components/SharedHeader.tsx:350
 msgid "Charts"
 msgstr "चार्ट"
 
@@ -280,8 +282,8 @@ msgstr "क्या आप इसे डिलीट करना चाहत�
 msgid "Document"
 msgstr "दस्तावेज़"
 
-#: src/components/SharedHeader.tsx:102
-#: src/components/SharedHeader.tsx:346
+#: src/components/SharedHeader.tsx:108
+#: src/components/SharedHeader.tsx:356
 msgid "Documentation"
 msgstr "प्रलेखन"
 
@@ -343,8 +345,8 @@ msgid "Editable"
 msgstr "संपादन योग्य"
 
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:74
-#: src/components/SharedHeader.tsx:334
+#: src/components/SharedHeader.tsx:80
+#: src/components/SharedHeader.tsx:344
 msgid "Editor"
 msgstr "संपादक"
 
@@ -379,8 +381,8 @@ msgid "Export to Common Image Formats"
 msgstr "कॉमन इमेज फॉर्मेट में एक्सपोर्ट करें"
 
 #: src/components/Feedback.tsx:74
-#: src/components/SharedHeader.tsx:110
-#: src/components/SharedHeader.tsx:353
+#: src/components/SharedHeader.tsx:116
+#: src/components/SharedHeader.tsx:363
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
@@ -425,11 +427,11 @@ msgstr "ग्रिड"
 msgid "Have fun! 🎉"
 msgstr "मज़े करो! 🎉"
 
-#: src/components/MightLoseWarning.tsx:25
+#: src/components/MightLoseWarning.tsx:26
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr ""
 
-#: src/components/SharedHeader.tsx:91
+#: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "मदद"
 
@@ -455,7 +457,7 @@ msgstr ""
 msgid "Indenting creates a link to the current line"
 msgstr "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है"
 
-#: src/components/SharedHeader.tsx:125
+#: src/components/SharedHeader.tsx:131
 msgid "Info"
 msgstr "जानकारी"
 
@@ -481,7 +483,7 @@ msgstr "लेआउट और थीम्स"
 msgid "Leading References"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:51
+#: src/components/MightLoseWarning.tsx:53
 #: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "और अधिक जानें"
@@ -508,7 +510,7 @@ msgstr "लिंक"
 msgid "Local Charts"
 msgstr "लोकल चार्ट"
 
-#: src/components/SharedHeader.tsx:188
+#: src/components/SharedHeader.tsx:189
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -557,8 +559,8 @@ msgstr "नाम"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "मदद चाहिए? <0>हमारे दस्तावेज़ देखें।</0>"
 
-#: src/components/SharedHeader.tsx:66
-#: src/components/SharedHeader.tsx:328
+#: src/components/SharedHeader.tsx:72
+#: src/components/SharedHeader.tsx:338
 msgid "New"
 msgstr "नया"
 
@@ -607,8 +609,8 @@ msgstr "प्लान"
 msgid "Playbook"
 msgstr "प्लेबुक"
 
-#: src/components/SharedHeader.tsx:173
-#: src/components/SharedHeader.tsx:390
+#: src/components/SharedHeader.tsx:180
+#: src/components/SharedHeader.tsx:403
 msgid "Pricing"
 msgstr "मूल्य निर्धारण"
 
@@ -659,7 +661,7 @@ msgstr ""
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:38
+#: src/components/MightLoseWarning.tsx:39
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 msgstr ""
 
@@ -696,8 +698,9 @@ msgstr "वापसी"
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
-#: src/components/SharedHeader.tsx:150
-#: src/components/SharedHeader.tsx:371
+#: src/components/SharedHeader.tsx:157
+#: src/components/SharedHeader.tsx:383
+#: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
 msgstr "रोडमैप"
 
@@ -709,8 +712,8 @@ msgstr "सहेजें"
 msgid "Say goodbye to tedious flowchart creation"
 msgstr "थकाने वाले फ्लोचार्ट क्रिएशन को कहें बॉय-बॉय"
 
-#: src/components/SharedHeader.tsx:157
-#: src/components/SharedHeader.tsx:375
+#: src/components/SharedHeader.tsx:164
+#: src/components/SharedHeader.tsx:388
 msgid "Settings"
 msgstr "सेटिंग"
 
@@ -742,6 +745,10 @@ msgstr "अभी साइन अप करें"
 
 #: src/components/SyntaxReference.tsx:243
 msgid "Some classes are available to help style your flowchart"
+msgstr ""
+
+#: src/components/OnlyInEnglish.tsx:23
+msgid "Sorry! This page is only available in English."
 msgstr ""
 
 #: src/components/Tabs/EditLayoutTab.tsx:123
