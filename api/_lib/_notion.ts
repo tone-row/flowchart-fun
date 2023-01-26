@@ -61,3 +61,9 @@ export async function getPostHtmlFromId(id: string) {
   const html = marked(mdString);
   return html;
 }
+
+// tonerow/Flowchart-Fun-Areas-of-Research-6797865c1d744aa0babbea7d1558e8b3
+const AREAS_OF_RESEARCH_PAGE_ID = "6797865c1d744aa0babbea7d1558e8b3";
+export async function getAreasOfResearchHtml() {
+  return await getPostHtmlFromId(AREAS_OF_RESEARCH_PAGE_ID);
+}

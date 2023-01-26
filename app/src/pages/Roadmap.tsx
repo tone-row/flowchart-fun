@@ -8,21 +8,22 @@ import { InfoHeader } from "../components/InfoHeader";
 import { Box, Type } from "../slang";
 
 export default function Roadmap() {
-  const issues = useQuery("roadmap", getRoadmap, {
+  const { data } = useQuery("roadmap", getRoadmap, {
     staleTime: Infinity,
     suspense: true,
   });
+  console.log(data?.areasOfResearch);
   return (
     <InfoContainer>
       <Box gap={16} content="start" className="slang-type size-0">
         <InfoHeader title="Roadmap" />
-        {issues.data && (
+        {data && (
           <Box as="section" gap={6}>
             <Type as="h2" size={3} color="color-highlightColor">
               Active Tasks
             </Type>
             <div className="issues post-content">
-              {issues.data.map((issue) => (
+              {data.issues.map((issue) => (
                 <div className="issue" key={issue.title}>
                   <h3>{issue.title}</h3>
                   <div
@@ -80,5 +81,8 @@ type Issue = {
 
 async function getRoadmap() {
   const roadmap = await axios.get("/api/roadmap");
-  return roadmap.data as Issue[];
+  return roadmap.data as {
+    issues: Issue[];
+    areasOfResearch: string;
+  };
 }
