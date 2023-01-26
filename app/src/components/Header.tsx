@@ -1,3 +1,5 @@
+import "./Header.css";
+
 import { t } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
@@ -34,7 +36,7 @@ import { track } from "../lib/track";
 import { useLastChart } from "../lib/useLastChart";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 
-export const SharedHeader = memo(function SharedHeader() {
+export const Header = memo(function SharedHeader() {
   const { pathname } = useLocation();
   const isDocsPage = pathname === "/h";
   const isSponsorPage = pathname === "/sponsor";
@@ -44,7 +46,7 @@ export const SharedHeader = memo(function SharedHeader() {
   const isAccountPage = pathname === "/a";
   const isFeedbackPage = pathname === "/o";
   const isLogInPage = pathname === "/l";
-  const isBlogPage = pathname === "/blog";
+  const isBlogPage = pathname.includes("/blog");
   const isChangelogPage = pathname === "/changelog";
   const isRoadmapPage = pathname === "/roadmap";
   const isInfoPage = isBlogPage || isChangelogPage || isRoadmapPage;

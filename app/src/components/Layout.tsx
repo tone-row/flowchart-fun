@@ -3,9 +3,9 @@ import { memo, ReactNode, Suspense } from "react";
 import { useFullscreen, useIsEditorView } from "../lib/hooks";
 import { Box, Type } from "../slang";
 import ColorMode from "./ColorMode";
+import { Header } from "./Header";
 import styles from "./Layout.module.css";
 import Loading from "./Loading";
-import { SharedHeader } from "./SharedHeader";
 import ShareDialog from "./ShareDialog";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
@@ -31,7 +31,7 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
             </Type>
           </Box>
         )}
-        {isFullscreen ? null : <SharedHeader />}
+        {isFullscreen ? null : <Header />}
         <Suspense fallback={<Loading />}>{children}</Suspense>
         <ColorMode />
       </Box>

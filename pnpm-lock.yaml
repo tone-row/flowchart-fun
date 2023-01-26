@@ -171,7 +171,6 @@ importers:
       react-router-dom: ^5.2.0
       react-scripts: 5.0.1
       react-use-localstorage: ^3.5.3
-      shared: workspace:*
       source-map-explorer: ^2.5.2
       stripe: ^8.179.0
       svg-parser: ^2.0.4
@@ -253,7 +252,6 @@ importers:
       react-router-dom: 5.3.4_react@17.0.2
       react-scripts: 5.0.1_qldosuwt2bsa7e3b3uscu5kdae
       react-use-localstorage: 3.5.3_react@17.0.2
-      shared: link:../shared
       stripe: 8.222.0
       svg-parser: 2.0.4
       svgo: 2.8.0
@@ -313,9 +311,6 @@ importers:
       ts-unused-exports: 7.0.3_typescript@4.8.4
       typescript: 4.8.4
       web-worker: 1.2.0
-
-  shared:
-    specifiers: {}
 
 packages:
 

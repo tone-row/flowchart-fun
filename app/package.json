@@ -98,7 +98,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "react-use-localstorage": "^3.5.3",
-    "shared": "workspace:*",
     "stripe": "^8.179.0",
     "svg-parser": "^2.0.4",
     "svgo": "^2.8.0",
