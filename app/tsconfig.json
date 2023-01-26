@@ -18,5 +18,5 @@
     "downlevelIteration": true,
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },
-  "include": ["src", "e2e", "playwright.config.ts"]
+  "include": ["src", "e2e", "playwright.config.ts", "benchmarks"]
 }

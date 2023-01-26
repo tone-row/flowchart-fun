@@ -51,7 +51,7 @@ export function getGetSize(theme: Theme) {
           (max, { width }) => (width > max ? width : max),
           0
         );
-        const finalSize: Record<string, any> = {
+        const finalSize = {
           width,
           shapeWidth: width,
           height: resizer.clientHeight,
@@ -131,7 +131,10 @@ export function getGetSize(theme: Theme) {
         return finalSize;
       }
     }
-    return undefined;
+    return {
+      width: "label",
+      height: "label",
+    };
   };
 }
 
