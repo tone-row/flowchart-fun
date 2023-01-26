@@ -2,12 +2,17 @@ import Benchmark from "benchmark";
 import { readFileSync, writeFileSync } from "fs";
 import minimist from "minimist";
 
+import { TGetSize } from "../src/lib/getGetSize";
 import { parseText } from "../src/lib/parseText";
 
 const suite = new Benchmark.Suite();
-const mockGetSize: Parameters<typeof parseText>[1] = () => ({
-  width: "label",
-  height: "label",
+const mockGetSize: TGetSize = () => ({
+  width: 0,
+  height: 0,
+  shapeWidth: 0,
+  shapeHeight: 0,
+  textMarginX: 0,
+  textMarginY: 0,
 });
 
 const oneLineText = "hello world";
