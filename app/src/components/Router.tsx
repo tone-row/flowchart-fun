@@ -21,6 +21,10 @@ const EditHosted = lazy(() => import("../pages/EditHosted"));
 const ReadOnly = lazy(() => import("../pages/ReadOnly"));
 const Charts = lazy(() => import("../pages/Charts"));
 const Sponsor = lazy(() => import("../pages/Sponsor"));
+const Blog = lazy(() => import("../pages/Blog"));
+const Post = lazy(() => import("../pages/post/Post"));
+const Changelog = lazy(() => import("../pages/Changelog"));
+const Roadmap = lazy(() => import("../pages/Roadmap"));
 
 export default function Router() {
   usePageViews();
@@ -75,6 +79,18 @@ export default function Router() {
       {/* "l" for login */}
       <RouteWithWrapper path="/l">
         <LogIn />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/changelog">
+        <Changelog />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/roadmap">
+        <Roadmap />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/blog/post/:slug">
+        <Post />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/blog">
+        <Blog />
       </RouteWithWrapper>
       <RouteWithWrapper path="/:workspace">
         <Edit />

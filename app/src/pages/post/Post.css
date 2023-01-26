@@ -1,0 +1,47 @@
+.post-content code.hljs {
+  border-radius: 0.25rem;
+}
+
+.post-content img {
+  margin-inline: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.post-content a {
+  color: hsl(var(--color-brandHsl));
+  text-decoration: none;
+}
+
+.post-content blockquote {
+  margin: 0;
+  padding: 1rem 1.5rem;
+  background-color: hsla(var(--color-brandHsl), 0.05);
+  border-left: 4px solid hsla(var(--color-brandHsl), 0.5);
+  border-radius: 0.25rem;
+}
+
+.post-content h2 {
+  margin-block-start: 1em;
+  margin-block-end: 0.83em;
+}
+
+.post-content p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.post-content pre:has(code) {
+  display: grid;
+}
+
+.post-content ul {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding-inline-start: 40px;
+}
+
+.post-header {
+  text-align: center;
+}
