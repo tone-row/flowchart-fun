@@ -6,8 +6,8 @@ import { parseText } from "../src/lib/parseText";
 
 const suite = new Benchmark.Suite();
 const mockGetSize: Parameters<typeof parseText>[1] = () => ({
-  width: 0,
-  height: 0,
+  width: "label",
+  height: "label",
 });
 
 const oneLineText = "hello world";
