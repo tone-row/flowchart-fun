@@ -1,3 +1,5 @@
+import "./Header.css";
+
 import { t } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
@@ -34,7 +36,7 @@ import { track } from "../lib/track";
 import { useLastChart } from "../lib/useLastChart";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 
-export const SharedHeader = memo(function SharedHeader() {
+export const Header = memo(function SharedHeader() {
   const { pathname } = useLocation();
   const isDocsPage = pathname === "/h";
   const isSponsorPage = pathname === "/sponsor";
@@ -44,13 +46,18 @@ export const SharedHeader = memo(function SharedHeader() {
   const isAccountPage = pathname === "/a";
   const isFeedbackPage = pathname === "/o";
   const isLogInPage = pathname === "/l";
+  const isBlogPage = pathname.includes("/blog");
+  const isChangelogPage = pathname === "/changelog";
+  const isRoadmapPage = pathname === "/roadmap";
+  const isInfoPage = isBlogPage || isChangelogPage || isRoadmapPage;
   const isEditor =
     !isDocsPage &&
     !isSponsorPage &&
     !isChartsPage &&
     !isHelpPage &&
     !isSettingsPage &&
-    !isAccountPage;
+    !isAccountPage &&
+    !isInfoPage;
   const isValidCustomer = useIsValidCustomer();
   const lastChart = useLastChart((state) => state.lastChart);
   return (
@@ -125,6 +132,7 @@ export const SharedHeader = memo(function SharedHeader() {
                   <HeaderButton
                     label={t`Info`}
                     icon={<Info height={20} width={20} />}
+                    aria-current={isInfoPage ? "page" : undefined}
                   />
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content
@@ -132,22 +140,22 @@ export const SharedHeader = memo(function SharedHeader() {
                   className="shared-header__dropdown"
                 >
                   <DropdownMenu.Item asChild>
-                    <HeaderLink
-                      href="/blog/"
+                    <HeaderClientLink
                       label={t`Blog`}
                       icon={<PencilLine height={20} width={20} />}
+                      to="/blog"
                     />
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <HeaderLink
-                      href="/blog/changelog"
+                    <HeaderClientLink
+                      to="/changelog"
                       label={t`Changelog`}
                       icon={<Notebook height={20} width={20} />}
                     />
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <HeaderLink
-                      href="/blog/roadmap"
+                    <HeaderClientLink
+                      to="/roadmap"
                       label={t`Roadmap`}
                       icon={<Signpost height={20} width={20} />}
                     />
@@ -197,6 +205,9 @@ export const SharedHeader = memo(function SharedHeader() {
         isSettingsPage={isSettingsPage}
         isAccountPage={isAccountPage}
         isFeedbackPage={isFeedbackPage}
+        isBlogPage={isBlogPage}
+        isChangelogPage={isChangelogPage}
+        isRoadmapPage={isRoadmapPage}
         isEditor={isEditor}
       />
     </>
@@ -282,6 +293,9 @@ function MobileHeader({
   isSettingsPage,
   isAccountPage,
   isFeedbackPage,
+  isBlogPage,
+  isChangelogPage,
+  isRoadmapPage,
   isEditor,
 }: {
   isDocsPage: boolean;
@@ -290,6 +304,9 @@ function MobileHeader({
   isSettingsPage: boolean;
   isAccountPage: boolean;
   isFeedbackPage: boolean;
+  isBlogPage: boolean;
+  isChangelogPage: boolean;
+  isRoadmapPage: boolean;
   isEditor: boolean;
 }) {
   const lastChart = useLastChart((s) => s.lastChart);
@@ -351,20 +368,23 @@ function MobileHeader({
               className="mobile-only"
               to="/o"
             />
-            <HeaderLink
-              href="/blog/"
+            <HeaderClientLink
+              to="/blog"
               label={t`Blog`}
               icon={<PencilLine height={20} width={20} />}
+              aria-current={isBlogPage ? "page" : undefined}
             />
-            <HeaderLink
-              href="/blog/changelog"
+            <HeaderClientLink
+              to="/changelog"
               label={t`Changelog`}
               icon={<Notebook height={20} width={20} />}
+              aria-current={isChangelogPage ? "page" : undefined}
             />
-            <HeaderLink
-              href="/blog/roadmap"
+            <HeaderClientLink
+              to="/roadmap"
               label={t`Roadmap`}
               icon={<Signpost height={20} width={20} />}
+              aria-current={isRoadmapPage ? "page" : undefined}
             />
             <HeaderClientLink
               label={t`Settings`}
