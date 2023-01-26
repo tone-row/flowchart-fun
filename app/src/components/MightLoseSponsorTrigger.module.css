@@ -1,0 +1,13 @@
+.MightLoseSponsorTrigger {
+  /* border-radius: 50%; */
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.MightLoseSponsorTrigger:focus {
+  box-shadow: none;
+}
+
+.MightLoseSponsorTrigger:hover,
+.MightLoseSponsorTrigger:focus-visible {
+  box-shadow: 0px 0px 0px 4px hsla(var(--color-yellowHsl), 0.5);
+}
