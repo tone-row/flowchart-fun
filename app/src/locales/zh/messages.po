@@ -33,8 +33,8 @@ msgstr "$30.00/年（节省 20%）"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。"
 
-#: src/components/SharedHeader.tsx:164
-#: src/components/SharedHeader.tsx:382
+#: src/components/SharedHeader.tsx:171
+#: src/components/SharedHeader.tsx:395
 msgid "Account"
 msgstr "帐户"
 
@@ -81,8 +81,9 @@ msgstr "背景"
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
-#: src/components/SharedHeader.tsx:136
-#: src/components/SharedHeader.tsx:361
+#: src/components/SharedHeader.tsx:142
+#: src/components/SharedHeader.tsx:371
+#: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "博客"
 
@@ -115,13 +116,14 @@ msgstr "取消订阅。您的托管图表将变为只读。"
 msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
-#: src/components/SharedHeader.tsx:143
-#: src/components/SharedHeader.tsx:366
+#: src/components/SharedHeader.tsx:150
+#: src/components/SharedHeader.tsx:377
+#: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "变更日志"
 
-#: src/components/SharedHeader.tsx:82
-#: src/components/SharedHeader.tsx:340
+#: src/components/SharedHeader.tsx:88
+#: src/components/SharedHeader.tsx:350
 msgid "Charts"
 msgstr "图表"
 
@@ -280,8 +282,8 @@ msgstr "您要将其删除吗？"
 msgid "Document"
 msgstr "文档"
 
-#: src/components/SharedHeader.tsx:102
-#: src/components/SharedHeader.tsx:346
+#: src/components/SharedHeader.tsx:108
+#: src/components/SharedHeader.tsx:356
 msgid "Documentation"
 msgstr "文档"
 
@@ -343,8 +345,8 @@ msgid "Editable"
 msgstr "可编辑"
 
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:74
-#: src/components/SharedHeader.tsx:334
+#: src/components/SharedHeader.tsx:80
+#: src/components/SharedHeader.tsx:344
 msgid "Editor"
 msgstr "编辑器"
 
@@ -379,8 +381,8 @@ msgid "Export to Common Image Formats"
 msgstr "导出为常见图片格式"
 
 #: src/components/Feedback.tsx:74
-#: src/components/SharedHeader.tsx:110
-#: src/components/SharedHeader.tsx:353
+#: src/components/SharedHeader.tsx:116
+#: src/components/SharedHeader.tsx:363
 msgid "Feedback"
 msgstr "反馈"
 
@@ -425,11 +427,11 @@ msgstr "网格"
 msgid "Have fun! 🎉"
 msgstr "玩得开心！🎉"
 
-#: src/components/MightLoseWarning.tsx:25
+#: src/components/MightLoseWarning.tsx:26
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr ""
 
-#: src/components/SharedHeader.tsx:91
+#: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "帮助"
 
@@ -455,7 +457,7 @@ msgstr ""
 msgid "Indenting creates a link to the current line"
 msgstr "缩进可创建连接到当前行的链接"
 
-#: src/components/SharedHeader.tsx:125
+#: src/components/SharedHeader.tsx:131
 msgid "Info"
 msgstr "信息"
 
@@ -481,7 +483,7 @@ msgstr "布局和主题"
 msgid "Leading References"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:51
+#: src/components/MightLoseWarning.tsx:53
 #: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "学到更多"
@@ -508,7 +510,7 @@ msgstr "链接"
 msgid "Local Charts"
 msgstr "本地的图表"
 
-#: src/components/SharedHeader.tsx:188
+#: src/components/SharedHeader.tsx:189
 msgid "Log In"
 msgstr "登录"
 
@@ -557,8 +559,8 @@ msgstr "姓名"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "需要帮助？<0>请查看我们的文档。</0>"
 
-#: src/components/SharedHeader.tsx:66
-#: src/components/SharedHeader.tsx:328
+#: src/components/SharedHeader.tsx:72
+#: src/components/SharedHeader.tsx:338
 msgid "New"
 msgstr "新"
 
@@ -607,8 +609,8 @@ msgstr "计划"
 msgid "Playbook"
 msgstr "剧本"
 
-#: src/components/SharedHeader.tsx:173
-#: src/components/SharedHeader.tsx:390
+#: src/components/SharedHeader.tsx:180
+#: src/components/SharedHeader.tsx:403
 msgid "Pricing"
 msgstr "价钱"
 
@@ -659,7 +661,7 @@ msgstr ""
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:38
+#: src/components/MightLoseWarning.tsx:39
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 msgstr ""
 
@@ -696,8 +698,9 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/SharedHeader.tsx:150
-#: src/components/SharedHeader.tsx:371
+#: src/components/SharedHeader.tsx:157
+#: src/components/SharedHeader.tsx:383
+#: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
 msgstr "路线图"
 
@@ -709,8 +712,8 @@ msgstr "救球"
 msgid "Say goodbye to tedious flowchart creation"
 msgstr "告别繁琐的流程图创建"
 
-#: src/components/SharedHeader.tsx:157
-#: src/components/SharedHeader.tsx:375
+#: src/components/SharedHeader.tsx:164
+#: src/components/SharedHeader.tsx:388
 msgid "Settings"
 msgstr "设置"
 
@@ -742,6 +745,10 @@ msgstr "马上注册"
 
 #: src/components/SyntaxReference.tsx:243
 msgid "Some classes are available to help style your flowchart"
+msgstr ""
+
+#: src/components/OnlyInEnglish.tsx:23
+msgid "Sorry! This page is only available in English."
 msgstr ""
 
 #: src/components/Tabs/EditLayoutTab.tsx:123

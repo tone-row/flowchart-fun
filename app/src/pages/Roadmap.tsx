@@ -1,5 +1,6 @@
 import "./post/Post.css";
 
+import { t } from "@lingui/macro";
 import axios from "axios";
 import { useQuery } from "react-query";
 
@@ -15,7 +16,7 @@ export default function Roadmap() {
   return (
     <InfoContainer>
       <Box gap={16} content="start" className="slang-type size-0">
-        <InfoHeader title="Roadmap" />
+        <InfoHeader title={t`Roadmap`} />
         {data && (
           <Box as="section" gap={6}>
             <Type as="h2" size={3} color="color-highlightColor">

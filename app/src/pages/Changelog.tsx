@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import axios from "axios";
 import { useQuery } from "react-query";
 
@@ -14,7 +15,7 @@ export default function Changelog() {
   return (
     <InfoContainer>
       <Box gap={16} className={styles.Changelog} style={{ maxWidth: 500 }}>
-        <InfoHeader title="Changelog" />
+        <InfoHeader title={t`Changelog`} />
         {releases.data && (
           <Box gap={16}>
             {releases.data.map((release) => (

@@ -194,6 +194,8 @@
     "Sign Up Now": "马上注册",
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
+    "Sorry! This page is only available in English.":
+      "Sorry! This page is only available in English.",
     Spacing: "间距",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能",

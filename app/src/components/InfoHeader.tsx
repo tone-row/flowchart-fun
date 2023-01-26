@@ -1,5 +1,6 @@
 import { Box, Type } from "../slang";
 import styles from "./InfoHeader.module.css";
+import { OnlyInEnglish } from "./OnlyInEnglish";
 
 export function InfoHeader({
   title,
@@ -9,7 +10,13 @@ export function InfoHeader({
   description?: string;
 }) {
   return (
-    <Box as="header" gap={6} items="center" className={styles.InfoHeader}>
+    <Box
+      as="header"
+      gap={6}
+      items="center"
+      content="start normal"
+      className={styles.InfoHeader}
+    >
       <Type weight="700" size={5}>
         {title}
       </Type>
@@ -18,6 +25,7 @@ export function InfoHeader({
           {description}
         </Type>
       )}
+      <OnlyInEnglish />
     </Box>
   );
 }

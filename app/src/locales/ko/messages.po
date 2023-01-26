@@ -33,8 +33,8 @@ msgstr "$30.00/년(20% 할인)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
 
-#: src/components/SharedHeader.tsx:164
-#: src/components/SharedHeader.tsx:382
+#: src/components/SharedHeader.tsx:171
+#: src/components/SharedHeader.tsx:395
 msgid "Account"
 msgstr "계정"
 
@@ -81,8 +81,9 @@ msgstr "배경"
 msgid "Become a Sponsor"
 msgstr "스폰서 되기"
 
-#: src/components/SharedHeader.tsx:136
-#: src/components/SharedHeader.tsx:361
+#: src/components/SharedHeader.tsx:142
+#: src/components/SharedHeader.tsx:371
+#: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "블로그"
 
@@ -115,13 +116,14 @@ msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전�
 msgid "Change Email Address"
 msgstr "이메일 주소 변경"
 
-#: src/components/SharedHeader.tsx:143
-#: src/components/SharedHeader.tsx:366
+#: src/components/SharedHeader.tsx:150
+#: src/components/SharedHeader.tsx:377
+#: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "변경 로그"
 
-#: src/components/SharedHeader.tsx:82
-#: src/components/SharedHeader.tsx:340
+#: src/components/SharedHeader.tsx:88
+#: src/components/SharedHeader.tsx:350
 msgid "Charts"
 msgstr "차트"
 
@@ -280,8 +282,8 @@ msgstr "본 항목을 삭제하시겠습니까?"
 msgid "Document"
 msgstr "문서"
 
-#: src/components/SharedHeader.tsx:102
-#: src/components/SharedHeader.tsx:346
+#: src/components/SharedHeader.tsx:108
+#: src/components/SharedHeader.tsx:356
 msgid "Documentation"
 msgstr "선적 서류 비치"
 
@@ -343,8 +345,8 @@ msgid "Editable"
 msgstr "편집 가능"
 
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:74
-#: src/components/SharedHeader.tsx:334
+#: src/components/SharedHeader.tsx:80
+#: src/components/SharedHeader.tsx:344
 msgid "Editor"
 msgstr "에디터"
 
@@ -379,8 +381,8 @@ msgid "Export to Common Image Formats"
 msgstr "일반 이미지 포맷으로 내보내기"
 
 #: src/components/Feedback.tsx:74
-#: src/components/SharedHeader.tsx:110
-#: src/components/SharedHeader.tsx:353
+#: src/components/SharedHeader.tsx:116
+#: src/components/SharedHeader.tsx:363
 msgid "Feedback"
 msgstr "피드백"
 
@@ -425,11 +427,11 @@ msgstr "그리드"
 msgid "Have fun! 🎉"
 msgstr "즐겨보세요! 🎉"
 
-#: src/components/MightLoseWarning.tsx:25
+#: src/components/MightLoseWarning.tsx:26
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr ""
 
-#: src/components/SharedHeader.tsx:91
+#: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "도움말"
 
@@ -455,7 +457,7 @@ msgstr ""
 msgid "Indenting creates a link to the current line"
 msgstr "들여쓰기는 현재 줄에 대한 링크를 생성합니다"
 
-#: src/components/SharedHeader.tsx:125
+#: src/components/SharedHeader.tsx:131
 msgid "Info"
 msgstr "정보"
 
@@ -481,7 +483,7 @@ msgstr "레이아웃 및 테마"
 msgid "Leading References"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:51
+#: src/components/MightLoseWarning.tsx:53
 #: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "더 알아보기"
@@ -508,7 +510,7 @@ msgstr "링크"
 msgid "Local Charts"
 msgstr "로컬 차트"
 
-#: src/components/SharedHeader.tsx:188
+#: src/components/SharedHeader.tsx:189
 msgid "Log In"
 msgstr "로그인"
 
@@ -557,8 +559,8 @@ msgstr "이름"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</0>"
 
-#: src/components/SharedHeader.tsx:66
-#: src/components/SharedHeader.tsx:328
+#: src/components/SharedHeader.tsx:72
+#: src/components/SharedHeader.tsx:338
 msgid "New"
 msgstr "신규"
 
@@ -607,8 +609,8 @@ msgstr "요금제"
 msgid "Playbook"
 msgstr "플레이북"
 
-#: src/components/SharedHeader.tsx:173
-#: src/components/SharedHeader.tsx:390
+#: src/components/SharedHeader.tsx:180
+#: src/components/SharedHeader.tsx:403
 msgid "Pricing"
 msgstr "가격"
 
@@ -659,7 +661,7 @@ msgstr ""
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:38
+#: src/components/MightLoseWarning.tsx:39
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 msgstr ""
 
@@ -696,8 +698,9 @@ msgstr "반품"
 msgid "Right to Left"
 msgstr "오른쪽에서 왼쪽으로"
 
-#: src/components/SharedHeader.tsx:150
-#: src/components/SharedHeader.tsx:371
+#: src/components/SharedHeader.tsx:157
+#: src/components/SharedHeader.tsx:383
+#: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
 msgstr "로드맵"
 
@@ -709,8 +712,8 @@ msgstr "구하다"
 msgid "Say goodbye to tedious flowchart creation"
 msgstr "더 이상 지루하게 플로 차트를 작성할 필요가 없습니다"
 
-#: src/components/SharedHeader.tsx:157
-#: src/components/SharedHeader.tsx:375
+#: src/components/SharedHeader.tsx:164
+#: src/components/SharedHeader.tsx:388
 msgid "Settings"
 msgstr "설정"
 
@@ -742,6 +745,10 @@ msgstr "지금 가입하세요"
 
 #: src/components/SyntaxReference.tsx:243
 msgid "Some classes are available to help style your flowchart"
+msgstr ""
+
+#: src/components/OnlyInEnglish.tsx:23
+msgid "Sorry! This page is only available in English."
 msgstr ""
 
 #: src/components/Tabs/EditLayoutTab.tsx:123

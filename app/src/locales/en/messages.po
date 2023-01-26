@@ -33,8 +33,8 @@ msgstr "$30.00/year (save 20%)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 
-#: src/components/SharedHeader.tsx:164
-#: src/components/SharedHeader.tsx:382
+#: src/components/SharedHeader.tsx:171
+#: src/components/SharedHeader.tsx:395
 msgid "Account"
 msgstr "Account"
 
@@ -81,8 +81,9 @@ msgstr "Background"
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
-#: src/components/SharedHeader.tsx:136
-#: src/components/SharedHeader.tsx:361
+#: src/components/SharedHeader.tsx:142
+#: src/components/SharedHeader.tsx:371
+#: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "Blog"
 
@@ -115,13 +116,14 @@ msgstr "Cancel your subscription. Your hosted charts will become read-only."
 msgid "Change Email Address"
 msgstr "Change Email Address"
 
-#: src/components/SharedHeader.tsx:143
-#: src/components/SharedHeader.tsx:366
+#: src/components/SharedHeader.tsx:150
+#: src/components/SharedHeader.tsx:377
+#: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "Changelog"
 
-#: src/components/SharedHeader.tsx:82
-#: src/components/SharedHeader.tsx:340
+#: src/components/SharedHeader.tsx:88
+#: src/components/SharedHeader.tsx:350
 msgid "Charts"
 msgstr "Charts"
 
@@ -280,8 +282,8 @@ msgstr "Do you want to delete this?"
 msgid "Document"
 msgstr "Document"
 
-#: src/components/SharedHeader.tsx:102
-#: src/components/SharedHeader.tsx:346
+#: src/components/SharedHeader.tsx:108
+#: src/components/SharedHeader.tsx:356
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -343,8 +345,8 @@ msgid "Editable"
 msgstr "Editable"
 
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:74
-#: src/components/SharedHeader.tsx:334
+#: src/components/SharedHeader.tsx:80
+#: src/components/SharedHeader.tsx:344
 msgid "Editor"
 msgstr "Editor"
 
@@ -379,8 +381,8 @@ msgid "Export to Common Image Formats"
 msgstr "Export to Common Image Formats"
 
 #: src/components/Feedback.tsx:74
-#: src/components/SharedHeader.tsx:110
-#: src/components/SharedHeader.tsx:353
+#: src/components/SharedHeader.tsx:116
+#: src/components/SharedHeader.tsx:363
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -425,11 +427,11 @@ msgstr "Grid"
 msgid "Have fun! 🎉"
 msgstr "Have fun! 🎉"
 
-#: src/components/MightLoseWarning.tsx:25
+#: src/components/MightLoseWarning.tsx:26
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 
-#: src/components/SharedHeader.tsx:91
+#: src/components/SharedHeader.tsx:97
 msgid "Help"
 msgstr "Help"
 
@@ -455,7 +457,7 @@ msgstr "ID's"
 msgid "Indenting creates a link to the current line"
 msgstr "Indenting creates a link to the current line"
 
-#: src/components/SharedHeader.tsx:125
+#: src/components/SharedHeader.tsx:131
 msgid "Info"
 msgstr "Info"
 
@@ -481,7 +483,7 @@ msgstr "Layouts and Themes"
 msgid "Leading References"
 msgstr "Leading References"
 
-#: src/components/MightLoseWarning.tsx:51
+#: src/components/MightLoseWarning.tsx:53
 #: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "Learn More"
@@ -508,7 +510,7 @@ msgstr "Link"
 msgid "Local Charts"
 msgstr "Local Charts"
 
-#: src/components/SharedHeader.tsx:188
+#: src/components/SharedHeader.tsx:189
 msgid "Log In"
 msgstr "Log In"
 
@@ -557,8 +559,8 @@ msgstr "Name"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Need Help? <0>Check out our documentation.</0>"
 
-#: src/components/SharedHeader.tsx:66
-#: src/components/SharedHeader.tsx:328
+#: src/components/SharedHeader.tsx:72
+#: src/components/SharedHeader.tsx:338
 msgid "New"
 msgstr "New"
 
@@ -607,8 +609,8 @@ msgstr "Plans"
 msgid "Playbook"
 msgstr "Playbook"
 
-#: src/components/SharedHeader.tsx:173
-#: src/components/SharedHeader.tsx:390
+#: src/components/SharedHeader.tsx:180
+#: src/components/SharedHeader.tsx:403
 msgid "Pricing"
 msgstr "Pricing"
 
@@ -659,7 +661,7 @@ msgstr "Referencing a node by its unique ID"
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "Referencing multiple nodes with the same assigned class"
 
-#: src/components/MightLoseWarning.tsx:38
+#: src/components/MightLoseWarning.tsx:39
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 msgstr "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 
@@ -696,8 +698,9 @@ msgstr "Return"
 msgid "Right to Left"
 msgstr "Right to Left"
 
-#: src/components/SharedHeader.tsx:150
-#: src/components/SharedHeader.tsx:371
+#: src/components/SharedHeader.tsx:157
+#: src/components/SharedHeader.tsx:383
+#: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
 msgstr "Roadmap"
 
@@ -709,8 +712,8 @@ msgstr "Save"
 msgid "Say goodbye to tedious flowchart creation"
 msgstr "Say goodbye to tedious flowchart creation"
 
-#: src/components/SharedHeader.tsx:157
-#: src/components/SharedHeader.tsx:375
+#: src/components/SharedHeader.tsx:164
+#: src/components/SharedHeader.tsx:388
 msgid "Settings"
 msgstr "Settings"
 
@@ -743,6 +746,10 @@ msgstr "Sign Up Now"
 #: src/components/SyntaxReference.tsx:243
 msgid "Some classes are available to help style your flowchart"
 msgstr "Some classes are available to help style your flowchart"
+
+#: src/components/OnlyInEnglish.tsx:23
+msgid "Sorry! This page is only available in English."
+msgstr "Sorry! This page is only available in English."
 
 #: src/components/Tabs/EditLayoutTab.tsx:123
 msgid "Spacing"

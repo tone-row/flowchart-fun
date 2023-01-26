@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
@@ -15,7 +16,7 @@ export default function Blog() {
     <InfoContainer>
       <Box gap={16} content="start normal">
         <InfoHeader
-          title="Blog"
+          title={t`Blog`}
           description="Documenting the process of developing Flowchart Fun"
         />
         {posts.data && (

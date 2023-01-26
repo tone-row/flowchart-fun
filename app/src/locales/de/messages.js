@@ -197,6 +197,8 @@
     "Sign Up Now": "Jetzt registrieren",
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
+    "Sorry! This page is only available in English.":
+      "Sorry! This page is only available in English.",
     Spacing: "Abstand",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Sponsern Sie flowchart.fun für 3 $ / Monat oder 30 $ / Jahr, um auf gehostete Flussdiagramme und die neuesten Stile und Funktionen zuzugreifen",
