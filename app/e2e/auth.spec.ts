@@ -123,10 +123,9 @@ test.describe("Sign Up", () => {
   test.only("can convert chart to hosted from Might Lose Trigger", async () => {
     // Create a blank local chart
     await page.goto(`${BASE_URL}/my-new-chart`);
-    // Hover [data-testid="might-lose-sponsor-trigger"]
-    await page.hover('[data-testid="might-lose-sponsor-trigger"]', {
-      timeout: 750,
-    });
+
+    // Hover [data-testid="might-lose-sponsor-trigger"] then wait for the button to appear
+    await page.getByTestId("might-lose-sponsor-trigger").hover();
 
     // waitForSelector – a button with the text Convert to hosted chart?
     await page.waitForSelector('button:has-text("Convert to hosted chart?")');
