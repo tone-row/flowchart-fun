@@ -22,7 +22,7 @@ export function MightLoseWarning() {
           flow="column"
         >
           <CircleWavyWarning size={20} />
-          <Type size={-1}>
+          <Type size={-1} className={styles.MightLoseWarningText}>
             {t`Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.`}
           </Type>
         </Box>
