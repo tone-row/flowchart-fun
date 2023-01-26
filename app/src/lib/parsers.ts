@@ -34,14 +34,24 @@ export function universalParse(
   switch (parser) {
     case "graph-selector":
       return toCytoscapeElements(parse(text)).map((element) => {
+        let size: Record<string, string | number> = {};
+        if ("w" in element.data || "h" in element.data) {
+          size = {
+            width: element.data.w || "label",
+            height: element.data.h || "label",
+          };
+        } else {
+          size = getSize(
+            element?.data?.label,
+            (element?.classes ?? "").split(" ")
+          );
+        }
+
         return {
           ...element,
           data: {
             ...element.data,
-            ...getSize(
-              element?.data?.label,
-              (element?.classes ?? "").split(" ")
-            ),
+            ...size,
           },
         };
       });

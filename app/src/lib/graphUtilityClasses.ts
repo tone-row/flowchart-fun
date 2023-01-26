@@ -149,3 +149,21 @@ export const baseStyles: Stylesheet[] = [
     },
   },
 ];
+
+/**
+ * These are styles we want to take precedence over themes, utility classes, user styles
+ */
+export const importantBaseStyles: Stylesheet[] = [
+  {
+    selector: "node[w]",
+    style: {
+      width: "data(w)",
+    },
+  },
+  {
+    selector: "node[h]",
+    style: {
+      height: "data(h)",
+    },
+  },
+];

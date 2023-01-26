@@ -1,8 +1,12 @@
 import cytoscape from "cytoscape";
+
 import { parseText } from "./parseText";
 import { encode } from "./utils";
 
-const getSize = jest.fn(() => ({ width: 0, height: 0 }));
+const getSize = jest.fn(() => ({
+  width: "label",
+  height: "label",
+}));
 
 describe("parseText", () => {
   test("should return an array of elements", () => {
@@ -26,7 +30,7 @@ describe("parseText", () => {
   });
 
   test("should create an edge between indented nodes", () => {
-    let result = parseText("a\n  b", getSize);
+    const result = parseText("a\n  b", getSize);
     expect(result.filter(edgesOnly).length).toEqual(1);
     expect(result).toContainEqual({
       data: {
@@ -169,13 +173,13 @@ describe("parseText", () => {
     let testText = `1\n[1] b\nc\n\t(1)`;
     let result = parseText(testText, getSize);
     let edges = result.filter(edgesOnly);
-    let firstEdge = edges[0].data;
-    let nodes = result.filter(nodesOnly);
+    const firstEdge = edges[0].data;
+    const nodes = result.filter(nodesOnly);
     expect(firstEdge.source).toEqual("N150");
     expect(firstEdge.target).toEqual("1");
     expect(nodes.length).toEqual(3);
     // make sure all nodes have unique ids
-    let ids = nodes.map((n) => n.data.id);
+    const ids = nodes.map((n) => n.data.id);
     expect(
       ids.every((id) => ids.filter((_id) => _id === id).length === 1)
     ).toBe(true);
