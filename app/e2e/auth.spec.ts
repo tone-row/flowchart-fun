@@ -125,10 +125,7 @@ test.describe("Sign Up", () => {
     await page.goto(`${BASE_URL}/my-new-chart`);
 
     // Hover [data-testid="might-lose-sponsor-trigger"] then wait for the button to appear
-    await page.getByTestId("might-lose-sponsor-trigger").hover();
-
-    // waitForSelector – a button with the text Convert to hosted chart?
-    await page.waitForSelector('button:has-text("Convert to hosted chart?")');
+    await page.getByTestId("might-lose-sponsor-trigger").click();
 
     // Click the Convert to hosted chart? button that appears
     await page
@@ -142,6 +139,6 @@ test.describe("Sign Up", () => {
     await page.getByRole("button", { name: "Submit" }).click();
 
     // Expect (my-new-chart) to be visible
-    await expect(page.getByText("(my-new-chart)")).toBeVisible();
+    await expect(page.getByText("my-new-chart")).toBeVisible();
   });
 });
