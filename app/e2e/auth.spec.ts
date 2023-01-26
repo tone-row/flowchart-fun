@@ -124,7 +124,12 @@ test.describe("Sign Up", () => {
     // Create a blank local chart
     await page.goto(`${BASE_URL}/my-new-chart`);
     // Hover [data-testid="might-lose-sponsor-trigger"]
-    await page.hover('[data-testid="might-lose-sponsor-trigger"]');
+    await page.hover('[data-testid="might-lose-sponsor-trigger"]', {
+      timeout: 750,
+    });
+
+    // waitForSelector – a button with the text Convert to hosted chart?
+    await page.waitForSelector('button:has-text("Convert to hosted chart?")');
 
     // Click the Convert to hosted chart? button that appears
     await page
