@@ -111,7 +111,7 @@
     Grid: "그리드",
     "Have fun! 🎉": "즐겨보세요! 🎉",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
+      "주의! 캐시를 지우기 전에 이 문서는 클라우드에 저장 되어있지 않다는 것을 기억하시기 바랍니다. ",
     Help: "도움말",
     History: "기록",
     Home: "집",
@@ -174,7 +174,7 @@
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
+      "이 문서는 이 컴퓨터에만 저장된다는 점 기억하세요. 만약 어디를 가서라도 문서를 저장하고 또 그 문서에 접속하는 방법을 찾으신다면, 무제한의 호스티드 차트와 함께 더 많은 기능을 갖춘 저희 Pro 플랜을 이용해 보세요! 한 달에 단 $3면 됩니다!",
     Rename: "이름 바꾸기",
     Reset: "재설정",
     "Resume Subscription": "구독 재개",
@@ -197,7 +197,7 @@
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
-      "Sorry! This page is only available in English.",
+      "죄송합니다! 이 페이지는 영어로만 제공됩니다.",
     Spacing: "간격",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원",
@@ -214,7 +214,7 @@
     Subscription: "구독",
     "Subscription will end": "구독이 종료될 예정입니다.",
     Syntax: "문법",
-    "Syntax Reference": "Syntax Reference",
+    "Syntax Reference": "신택스 참조",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",

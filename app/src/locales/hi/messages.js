@@ -112,7 +112,7 @@
     Grid: "ग्रिड",
     "Have fun! 🎉": "मज़े करो! 🎉",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
+      "ध्यान दें! इससे पहले कि आप अपना कैश क्लियर करें, याद रखें कि यह डॉक्यूमेंट क्लाउड में सेव नहीं किया गया है। ",
     Help: "मदद",
     History: "हिस्ट्री",
     Home: "होम",
@@ -175,7 +175,7 @@
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
+      "याद रखें कि यह डॉक्यूमेंट सिर्फ इसी कंप्यूटर पर सेव किया गया है। अगर आप ऐसा कोई तरीका जानना चाहते हैं कि आप डॉक्यूमेंट स्टोर भी करें और जहां जाएं वहां उन्हें एक्सेस भी कर सकें, तो हमारा Pro प्लैन आजमाएं जिसमें है असीमित होस्ट किए गए चार्ट और बहुत कुछ! सिर्फ $3/महीना! ",
     Rename: "फिर से नाम बदलें",
     Reset: "रीसेट करें",
     "Resume Subscription": "सदस्यता फिर से शुरू करें",
@@ -198,7 +198,7 @@
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
-      "Sorry! This page is only available in English.",
+      "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।",
     Spacing: "अंतर",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "होस्ट किए गए फ़्लोचार्ट और नवीनतम शैलियों और सुविधाओं तक पहुँचने के लिए $3/माह या $30/वर्ष के लिए फ़्लोचार्ट.फ़न को प्रायोजित करें",
@@ -215,7 +215,7 @@
     Subscription: "सदस्यता",
     "Subscription will end": "सदस्यता समाप्त हो जाएगी",
     Syntax: "सिंटेक्स",
-    "Syntax Reference": "Syntax Reference",
+    "Syntax Reference": "वाक्य-विन्यास संदर्भ",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
