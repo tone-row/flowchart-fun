@@ -22,8 +22,8 @@
 
 .HeaderTitle {
   display: flex;
-  align-items: baseline;
-  gap: calc(var(--spacer-px) * 5);
+  align-items: center;
+  gap: calc(var(--spacer-px) * 4);
   width: 100%;
 }
 
@@ -47,7 +47,6 @@
   justify-content: start;
   gap: 5px;
   color: var(--palette-white-0);
-  border-radius: 9999px;
   background-color: var(--palette-purple-0);
   line-height: 1 !important;
 }

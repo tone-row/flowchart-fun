@@ -1,12 +1,16 @@
 import { t, Trans } from "@lingui/macro";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import { CircleWavyWarning } from "phosphor-react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { track } from "../lib/track";
 import { Box, Type } from "../slang";
+import { AppContext } from "./AppContext";
 import styles from "./MightLoseWarning.module.css";
 export function MightLoseWarning() {
+  const { customerIsLoading } = useContext(AppContext);
+  if (customerIsLoading) return null;
   return (
     <HoverCard.Root>
       <HoverCard.Trigger asChild>
@@ -22,7 +26,7 @@ export function MightLoseWarning() {
           flow="column"
         >
           <CircleWavyWarning size={20} />
-          <Type size={-1}>
+          <Type size={-1} className={styles.MightLoseWarningText}>
             {t`Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.`}
           </Type>
         </Box>

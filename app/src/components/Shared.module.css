@@ -85,6 +85,10 @@ textarea:focus {
   color: inherit;
 }
 
+.CloseButton {
+  position: absolute;
+}
+
 .CloseButton svg line {
   stroke-width: 10;
   stroke: var(--color-edgeHover);
@@ -107,4 +111,9 @@ textarea:focus {
 
 button.CancelNotice[data-style="info"]:hover {
   color: var(--color-highlightColor);
+}
+
+.Dialog {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
