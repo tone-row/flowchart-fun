@@ -429,7 +429,7 @@ msgstr "즐겨보세요! 🎉"
 
 #: src/components/MightLoseWarning.tsx:26
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
-msgstr ""
+msgstr "주의! 캐시를 지우기 전에 이 문서는 클라우드에 저장 되어있지 않다는 것을 기억하시기 바랍니다. "
 
 #: src/components/SharedHeader.tsx:97
 msgid "Help"
@@ -663,7 +663,7 @@ msgstr ""
 
 #: src/components/MightLoseWarning.tsx:39
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
-msgstr ""
+msgstr "이 문서는 이 컴퓨터에만 저장된다는 점 기억하세요. 만약 어디를 가서라도 문서를 저장하고 또 그 문서에 접속하는 방법을 찾으신다면, 무제한의 호스티드 차트와 함께 더 많은 기능을 갖춘 저희 Pro 플랜을 이용해 보세요! 한 달에 단 $3면 됩니다!"
 
 #: src/components/RenameButton.tsx:103
 #: src/components/RenameButton.tsx:104
@@ -749,7 +749,7 @@ msgstr ""
 
 #: src/components/OnlyInEnglish.tsx:23
 msgid "Sorry! This page is only available in English."
-msgstr ""
+msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 
 #: src/components/Tabs/EditLayoutTab.tsx:123
 msgid "Spacing"
@@ -809,7 +809,7 @@ msgstr "문법"
 #: src/components/SyntaxReference.tsx:58
 #: src/components/SyntaxReference.tsx:74
 msgid "Syntax Reference"
-msgstr ""
+msgstr "신택스 참조"
 
 #: src/components/SyntaxReference.tsx:278
 msgid "Text Sizes"
