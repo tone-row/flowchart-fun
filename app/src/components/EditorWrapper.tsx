@@ -64,7 +64,7 @@ export function EditorWrapper({
               onClick={() => setShareModal(true)}
             >
               <Type as="span" weight="700">
-                Export
+                <Trans>Export</Trans>
               </Type>
               <Export size={20} />
             </Box>

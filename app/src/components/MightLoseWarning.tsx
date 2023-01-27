@@ -53,6 +53,7 @@ export function MightLoseWarning() {
             as={Link}
             to="/sponsor"
             onClick={() => track("might_lose_warning_click", "click")}
+            style={{ marginTop: 8 }}
           >
             <Trans>Learn More</Trans>
           </Type>

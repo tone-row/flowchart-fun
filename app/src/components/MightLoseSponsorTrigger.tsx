@@ -57,6 +57,7 @@ export function MightLoseSponsorTrigger() {
                 convertToHosted: true,
               });
             }}
+            style={{ marginTop: 8 }}
             data-testid="convert-to-hosted"
           >
             <Trans>Convert to hosted chart?</Trans>
