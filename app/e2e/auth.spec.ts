@@ -120,7 +120,7 @@ test.describe("Sign Up", () => {
     console.log("deleted stripe customer: ", email);
   });
 
-  test.only("can convert chart to hosted from Might Lose Trigger", async () => {
+  test("can convert chart to hosted from Might Lose Trigger", async () => {
     // Create a blank local chart
     await page.goto(`${BASE_URL}/my-new-chart`);
 
