@@ -149,6 +149,7 @@ export function RenameButton({ children }: { children: ReactNode }) {
               setName(e.target.value)
             }
             isLoading={rename.isLoading}
+            name="name"
           />
           <Box flow="column" content="normal space-between">
             <Button
