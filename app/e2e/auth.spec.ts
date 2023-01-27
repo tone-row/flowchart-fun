@@ -127,16 +127,14 @@ test.describe("Sign Up", () => {
     // Hover [data-testid="might-lose-sponsor-trigger"] then wait for the button to appear
     await page.getByTestId("might-lose-sponsor-trigger").click();
 
-    // Click the Convert to hosted chart? button that appears
-    await page
-      .getByRole("button", { name: "Convert to hosted chart?" })
-      .click();
-
     // Make sure the input with the label Convert to hosted chart? is checked
     await expect(page.getByLabel("Convert to hosted chart?")).toBeChecked();
 
     // Submit
     await page.getByRole("button", { name: "Submit" }).click();
+
+    // wait for navigation
+    await page.waitForNavigation();
 
     // Expect (my-new-chart) to be visible
     await expect(page.getByText("my-new-chart")).toBeVisible();

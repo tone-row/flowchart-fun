@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import * as HoverCard from "@radix-ui/react-hover-card";
+import * as Popover from "@radix-ui/react-popover";
 import { CircleWavyWarning } from "phosphor-react";
 import { useContext } from "react";
 
@@ -18,8 +18,8 @@ export function MightLoseSponsorTrigger() {
   if (!isValidSponsor) return null;
   if (!isLocal) return null;
   return (
-    <HoverCard.Root>
-      <HoverCard.Trigger asChild>
+    <Popover.Root>
+      <Popover.Trigger asChild>
         <Box
           as="button"
           p={2}
@@ -30,8 +30,13 @@ export function MightLoseSponsorTrigger() {
         >
           <CircleWavyWarning size={28} />
         </Box>
-      </HoverCard.Trigger>
-      <HoverCard.Content portalled>
+      </Popover.Trigger>
+      <Popover.Content
+        asChild
+        onOpenAutoFocus={(e) => {
+          e.preventDefault();
+        }}
+      >
         <Box
           p={4}
           background="color-background"
@@ -56,7 +61,7 @@ export function MightLoseSponsorTrigger() {
             <Trans>Convert to hosted chart?</Trans>
           </Type>
         </Box>
-      </HoverCard.Content>
-    </HoverCard.Root>
+      </Popover.Content>
+    </Popover.Root>
   );
 }
