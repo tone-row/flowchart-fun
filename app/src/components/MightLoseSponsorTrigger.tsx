@@ -57,6 +57,7 @@ export function MightLoseSponsorTrigger() {
                 convertToHosted: true,
               });
             }}
+            data-testid="convert-to-hosted"
           >
             <Trans>Convert to hosted chart?</Trans>
           </Type>

@@ -114,10 +114,6 @@ test.describe("Sign Up", () => {
 
     // expect Clone button to be present
     await expect(page.getByRole("button", { name: "Clone" })).toBeVisible();
-
-    /* This should be run in the last test */
-    await deleteCustomerByEmail(email);
-    console.log("deleted stripe customer: ", email);
   });
 
   test("can convert chart to hosted from Might Lose Trigger", async () => {
@@ -128,15 +124,18 @@ test.describe("Sign Up", () => {
     await page.getByTestId("might-lose-sponsor-trigger").click();
 
     // Make sure the input with the label Convert to hosted chart? is checked
-    await expect(page.getByLabel("Convert to hosted chart?")).toBeChecked();
+    await page.getByTestId("convert-to-hosted").click();
 
     // Submit
     await page.getByRole("button", { name: "Submit" }).click();
 
-    // wait for navigation
-    await page.waitForNavigation();
+    // expect "/u/" to be in the url
+    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
+  });
 
-    // Expect (my-new-chart) to be visible
-    await expect(page.getByText("my-new-chart")).toBeVisible();
+  test.afterAll(async () => {
+    /* This should be run in the last test */
+    await deleteCustomerByEmail(email);
+    console.log("deleted stripe customer: ", email);
   });
 });
