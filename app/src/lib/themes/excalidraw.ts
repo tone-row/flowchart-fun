@@ -1,8 +1,8 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
-const excalidrawColors = {
+const colors = {
   red: "#F84A4B",
   orange: "#FC7427",
   blue: "#4363ED",
@@ -15,8 +15,8 @@ const excalidrawColors = {
 };
 
 const fontFamily = '"Virgil"';
-const backgroundColor = excalidrawColors.white;
-const arrowColor = excalidrawColors.gray;
+const backgroundColor = colors.white;
+const arrowColor = colors.gray;
 const lineHeight = 1.3;
 const padding = "2px";
 
@@ -29,10 +29,11 @@ const excalidraw: Theme = {
   },
   value: "excalidraw",
   bg: backgroundColor,
-  fg: excalidrawColors.black,
+  fg: colors.black,
   safeBg: backgroundColor,
   minWidth: 0,
   minHeight: 0,
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -52,7 +53,7 @@ const excalidraw: Theme = {
         "text-halign": "center",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
-        color: excalidrawColors.black,
+        color: colors.black,
         shape: "rectangle",
         backgroundColor: backgroundColor,
         "background-opacity": 0,
@@ -73,7 +74,7 @@ const excalidraw: Theme = {
         "line-color": arrowColor,
         "line-style": "solid",
         label: "data(label)",
-        color: excalidrawColors.black,
+        color: colors.black,
         "text-wrap": "wrap",
         "font-family": fontFamily,
         "source-distance-from-node": 4,
@@ -95,7 +96,7 @@ const excalidraw: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(excalidrawColors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => ({
       selector: `.${color}`,
       style: {
         "background-color": `${value}`,
@@ -103,8 +104,8 @@ const excalidraw: Theme = {
         color: ["purple", "blue", "red", "green", "black", "orange"].includes(
           color
         )
-          ? excalidrawColors.white
-          : excalidrawColors.black,
+          ? colors.white
+          : colors.black,
       },
     })),
   ],

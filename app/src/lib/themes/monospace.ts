@@ -1,8 +1,8 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
-const monospaceColors = {
+const colors = {
   red: "#ff1457",
   orange: "#FC7427",
   blue: "#9CADFF",
@@ -22,8 +22,8 @@ const padding = "5px";
 const edgeWidth = 2;
 const monospace: Theme = {
   value: "monospace",
-  bg: monospaceColors.black,
-  fg: monospaceColors.blue,
+  bg: colors.black,
+  fg: colors.blue,
   minHeight: 0,
   minWidth: 0,
   font: {
@@ -32,6 +32,7 @@ const monospace: Theme = {
     lineHeight,
     fontSize: defaultFontSize,
   },
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -47,7 +48,7 @@ const monospace: Theme = {
       style: {
         "font-family": fontFamily,
         label: "data(label)",
-        color: monospaceColors.blue,
+        color: colors.blue,
         "text-valign": "center",
         "text-halign": "center",
         "text-wrap": "wrap",
@@ -58,8 +59,8 @@ const monospace: Theme = {
         "padding-right": padding,
         "padding-top": padding,
         "padding-bottom": padding,
-        backgroundColor: monospaceColors.black,
-        "border-color": monospaceColors.blue,
+        backgroundColor: colors.black,
+        "border-color": colors.blue,
         "border-width": edgeWidth,
         "border-opacity": 1,
         shape: "rectangle",
@@ -73,21 +74,21 @@ const monospace: Theme = {
         opacity: 1,
         width: edgeWidth,
         label: "data(label)",
-        color: monospaceColors.blue,
+        color: colors.blue,
         "target-arrow-shape": "triangle",
         "target-arrow-fill": "filled",
-        "target-arrow-color": monospaceColors.blue,
+        "target-arrow-color": colors.blue,
         "target-distance-from-node": 5,
         "source-distance-from-node": 5,
         "arrow-scale": 1.25,
         "text-background-shape": "roundrectangle",
-        "text-background-color": monospaceColors.black,
+        "text-background-color": colors.black,
         "text-background-opacity": 1,
         "text-background-padding": "2px",
         "line-style": "solid",
         "line-fill": "linear-gradient",
         // @ts-ignore
-        "line-gradient-stop-colors": `${darkBlue} ${monospaceColors.blue}`,
+        "line-gradient-stop-colors": `${darkBlue} ${colors.blue}`,
         // @ts-ignore
         "line-gradient-stop-positions": "0% 100%",
       },
@@ -102,11 +103,11 @@ const monospace: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(monospaceColors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => ({
       selector: `.${color}`,
       style: {
         "border-color": `${value}`,
-        color: color === "black" ? monospaceColors.white : `${value}`,
+        color: color === "black" ? colors.white : `${value}`,
       },
     })),
   ],

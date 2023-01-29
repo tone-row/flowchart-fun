@@ -1,12 +1,17 @@
 import "react-contexify/dist/ReactContexify.css";
 
 import { Trans } from "@lingui/macro";
+import { operate } from "graph-selector";
+import { Graph, Palette, X } from "phosphor-react";
 import { memo, ReactNode, useReducer } from "react";
-import { Item, Menu, Separator } from "react-contexify";
+import { Item, Menu, Separator, Submenu } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
+import { useThemeStore } from "../lib/graphThemes";
 import { useIsFirefox } from "../lib/hooks";
+import { useDoc } from "../lib/prepareChart";
+import { useContextMenuState } from "../lib/useContextMenuState";
 import { Box, Type } from "../slang";
 import styles from "./GraphContextMenu.module.css";
 import { smallIconSize } from "./Shared";
@@ -15,12 +20,21 @@ export const GRAPH_CONTEXT_MENU_ID = "graph-context-menu";
 
 export const GraphContextMenu = memo(function GraphContextMenu() {
   const isFirefox = useIsFirefox();
+  const active = useContextMenuState((state) => state.active);
   return (
     <Menu
       id={GRAPH_CONTEXT_MENU_ID}
       className={styles.GraphContextMenu}
       animation="fade"
+      onHidden={() => {
+        // reset the context menu state
+        useContextMenuState.setState({
+          active: null,
+        });
+      }}
     >
+      <NodeSubmenu />
+      {active && <Separator />}
       {!isFirefox && <CopyPNG />}
       <CopySVG />
       <Separator />
@@ -113,7 +127,71 @@ const WithIcon = memo(function WithIcon({
   return (
     <Box items="center" flow="column" content="start normal" gap={2}>
       {icon}
-      <Type size={-1}>{children}</Type>
+      <Type>{children}</Type>
     </Box>
   );
 });
+
+function NodeSubmenu() {
+  const colors = useThemeStore((theme) => theme.colors);
+  const colorNames = Object.keys(colors);
+  const active = useContextMenuState((state) => state.active);
+  if (!active || active.type !== "node") return null;
+  return (
+    <Submenu
+      label={
+        <WithIcon icon={<Graph size={smallIconSize} />}>
+          <Trans>Node</Trans>
+        </WithIcon>
+      }
+    >
+      <Submenu
+        label={
+          <WithIcon icon={<Palette size={smallIconSize} />}>
+            <Trans>Color</Trans>
+          </WithIcon>
+        }
+        className={styles.GridSubmenu}
+      >
+        {Object.entries(colors).map(([name, value]) => (
+          <Item
+            key={name}
+            onClick={() => {
+              let newText = operate(useDoc.getState().text, {
+                lineNumber: active.lineNumber,
+                operation: [
+                  "removeClassesFromNode",
+                  { classNames: colorNames },
+                ],
+              });
+              newText = operate(newText, {
+                lineNumber: active.lineNumber,
+                operation: ["addClassesToNode", { classNames: [name] }],
+              });
+              useDoc.setState({ text: newText });
+            }}
+          >
+            <Box
+              style={{ backgroundColor: value }}
+              className={styles.ColorSquare}
+            />
+          </Item>
+        ))}
+        <Item
+          key="remove-all"
+          onClick={() => {
+            const newText = operate(useDoc.getState().text, {
+              lineNumber: active.lineNumber,
+              operation: ["removeClassesFromNode", { classNames: colorNames }],
+            });
+            useDoc.setState({ text: newText });
+          }}
+        >
+          <Box className={styles.SquareButton}>
+            <X size={32} />
+          </Box>
+        </Item>
+      </Submenu>
+    </Submenu>
+  );
+}
