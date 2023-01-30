@@ -12,11 +12,12 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { TriggerEvent, useContextMenu } from "react-contexify";
+import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { defaultLayout } from "../lib/constants";
+import { ContextMenuHandler } from "../lib/ContextMenuHandler";
 import { cytoscape } from "../lib/cytoscape";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
@@ -158,9 +159,9 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   }, [throttleUpdate, sponsorLayoutsLoaded]);
 
   const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
-  const handleContextMenu = (e: TriggerEvent) => {
-    show(e);
-  };
+  const ctxMenu = useMemo(() => {
+    return new ContextMenuHandler((e) => show(e));
+  }, [show]);
 
   useEffect(() => {
     if (initResizeNumber !== shouldResize) handleResize();
@@ -171,7 +172,11 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       h="100%"
       overflow="hidden"
       style={{ background: bg }}
-      onContextMenu={handleContextMenu}
+      onContextMenu={ctxMenu.onContextMenu}
+      onTouchStart={ctxMenu.onTouchStart}
+      onTouchCancel={ctxMenu.onTouchCancel}
+      onTouchEnd={ctxMenu.onTouchEnd}
+      onTouchMove={ctxMenu.onTouchMove}
       className={[styles.GraphContainer, "graph"].join(" ")}
     >
       <Box id="cy" overflow="hidden" />
