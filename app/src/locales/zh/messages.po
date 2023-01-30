@@ -429,7 +429,7 @@ msgstr "玩得开心！🎉"
 
 #: src/components/MightLoseWarning.tsx:26
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
-msgstr ""
+msgstr "注意！在清除缓存之前，请记住此文档没有在云端保存。"
 
 #: src/components/SharedHeader.tsx:97
 msgid "Help"
@@ -663,7 +663,7 @@ msgstr ""
 
 #: src/components/MightLoseWarning.tsx:39
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
-msgstr ""
+msgstr "请记住，本文档仅保存在此电脑上，如果您希望储存文档并随时随地访问它们，那么请试试我们的高级计划，可以托管不限数量的图表，还有更多功能！仅需 $3/月！"
 
 #: src/components/RenameButton.tsx:103
 #: src/components/RenameButton.tsx:104
@@ -749,7 +749,7 @@ msgstr ""
 
 #: src/components/OnlyInEnglish.tsx:23
 msgid "Sorry! This page is only available in English."
-msgstr ""
+msgstr "抱歉！此页面只有英语版。"
 
 #: src/components/Tabs/EditLayoutTab.tsx:123
 msgid "Spacing"
@@ -809,7 +809,7 @@ msgstr "句法"
 #: src/components/SyntaxReference.tsx:58
 #: src/components/SyntaxReference.tsx:74
 msgid "Syntax Reference"
-msgstr ""
+msgstr "语法参考"
 
 #: src/components/SyntaxReference.tsx:278
 msgid "Text Sizes"

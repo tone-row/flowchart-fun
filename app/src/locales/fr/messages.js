@@ -112,7 +112,7 @@
     Grid: "Quadrillage",
     "Have fun! 🎉": "Amusez-vous ! 🎉",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
+      "Attention ! Avant de vider votre cache, n'oubliez pas que ce document n'est pas enregistré dans le cloud.",
     Help: "Aide",
     History: "Historique",
     Home: "Accueil",
@@ -175,7 +175,7 @@
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
+      "N'oubliez pas que ce document n'est enregistré que sur cet ordinateur. Si vous cherchez un moyen de stocker des documents et d'y accéder où que vous soyez, essayez notre plan Pro qui offre l’hébergement d’une quantité illimitée de graphiques, et bien d’autres avantages encore ! Pour seulement 3 $/mois !",
     Rename: "Renommer",
     Reset: "Réinitialiser",
     "Resume Subscription": "Reprendre l'abonnement",
@@ -198,7 +198,7 @@
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
-      "Sorry! This page is only available in English.",
+      "Désolé ! Cette page n'est disponible qu'en anglais.",
     Spacing: "Espacement",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Parrainez flowchart.fun pour 3 $ / mois ou 30 $ / an pour accéder aux organigrammes hébergés et aux nouveaux styles et fonctionnalités",
@@ -215,7 +215,7 @@
     Subscription: "Abonnement",
     "Subscription will end": "L'abonnement prendra fin",
     Syntax: "Syntaxe",
-    "Syntax Reference": "Syntax Reference",
+    "Syntax Reference": "Référence de syntaxe",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",

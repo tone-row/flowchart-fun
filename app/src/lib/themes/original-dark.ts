@@ -1,8 +1,8 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
-const originalDarkColors = {
+const colors = {
   black: "#101010",
   white: "#fafaf3",
   green: "#01d857",
@@ -15,8 +15,8 @@ const originalDarkColors = {
 };
 
 const fontFamily = "Porpora, sans-serif";
-const backgroundColor = originalDarkColors.black;
-const color = originalDarkColors.white;
+const backgroundColor = colors.black;
+const color = colors.white;
 const arrowColor = color;
 const lineHeight = 1.25;
 const padding = "5px";
@@ -40,6 +40,7 @@ const originalDark: Theme = {
       },
     ],
   },
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -107,15 +108,13 @@ const originalDark: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(originalDarkColors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => ({
       selector: `node.${color}`,
       style: {
         "background-color": `${value}`,
         "background-opacity": 1,
         "border-color": `${value}`,
-        color: ["blue", "black"].includes(color)
-          ? originalDarkColors.white
-          : originalDarkColors.black,
+        color: ["blue", "black"].includes(color) ? colors.white : colors.black,
       },
     })),
   ],

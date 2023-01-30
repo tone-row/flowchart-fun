@@ -37,6 +37,7 @@ export const colors = {
   headerBtnHover: palette.purple[3],
   greenHsl: "102, 99%, 43%",
   darkGrey: palette.black[2],
+  yellowHsl: "46, 100%, 78%",
 };
 
 export const darkTheme: typeof colors = {
@@ -58,6 +59,7 @@ export const darkTheme: typeof colors = {
   headerBtnHover: palette.purple[3],
   greenHsl: "102, 99%, 43%",
   darkGrey: palette.white[1],
+  yellowHsl: "46, 100%, 78%",
 };
 
 const config: Partial<SlangConfig> = {

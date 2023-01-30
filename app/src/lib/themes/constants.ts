@@ -1,4 +1,4 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 export type Theme = {
   font: {
@@ -15,7 +15,8 @@ export type Theme = {
   safeBg?: string;
   minWidth?: number;
   minHeight?: number;
-  styles: Stylesheet[];
+  colors: Record<string, string>;
+  styles: StylesheetStyle[];
 };
 
 export const defaultFontFamily =

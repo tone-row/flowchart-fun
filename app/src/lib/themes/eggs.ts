@@ -1,8 +1,8 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
-const eggsColors = {
+const colors = {
   red: "#f05935",
   orange: "#ecbb40",
   blue: "#425cde",
@@ -15,8 +15,8 @@ const eggsColors = {
 };
 
 const fontFamily = "Gaegu";
-const backgroundColor = eggsColors.yellow;
-const arrowColor = eggsColors.black;
+const backgroundColor = colors.yellow;
+const arrowColor = colors.black;
 const lineHeight = 1;
 const padding = "14px";
 const borderWidth = 1.5;
@@ -33,6 +33,7 @@ const eggs: Theme = {
     lineHeight,
     files: [{ name: "Gaegu", url: "Gaegu-Regular.woff2" }],
   },
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -47,7 +48,7 @@ const eggs: Theme = {
       selector: "node",
       style: {
         "font-family": fontFamily,
-        backgroundColor: eggsColors.white,
+        backgroundColor: colors.white,
         "border-color": arrowColor,
         color: arrowColor,
         label: "data(label)",
@@ -96,14 +97,14 @@ const eggs: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(eggsColors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => ({
       selector: `node.${color}`,
       style: {
         "background-color": `${value}`,
         "background-opacity": 1,
         color: ["purple", "blue", "red", "green", "black"].includes(color)
-          ? eggsColors.white
-          : eggsColors.black,
+          ? colors.white
+          : colors.black,
       },
     })),
   ],

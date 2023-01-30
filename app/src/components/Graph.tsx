@@ -1,10 +1,4 @@
-import {
-  Core,
-  CytoscapeOptions,
-  EdgeSingular,
-  NodeSingular,
-  Stylesheet,
-} from "cytoscape";
+import { Core, EdgeSingular, NodeSingular } from "cytoscape";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
@@ -18,9 +12,10 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { TriggerEvent, useContextMenu } from "react-contexify";
+import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
+import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { defaultLayout } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
@@ -28,13 +23,13 @@ import { getLayout } from "../lib/getLayout";
 import { getUserStyle } from "../lib/getTheme";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { useThemeStore } from "../lib/graphThemes";
-import { baseStyles, graphUtilityClasses } from "../lib/graphUtilityClasses";
 import { isError } from "../lib/helpers";
 import { getAnimationSettings } from "../lib/hooks";
 import { Parsers, universalParse, useParser } from "../lib/parsers";
 import { Doc, useDoc, useParseError } from "../lib/prepareChart";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
+import { useContextMenuState } from "../lib/useContextMenuState";
 import { useGraphStore } from "../lib/useGraphStore";
 import { useHoverLine } from "../lib/useHoverLine";
 import { Box } from "../slang";
@@ -163,9 +158,6 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   }, [throttleUpdate, sponsorLayoutsLoaded]);
 
   const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
-  const handleContextMenu = (e: TriggerEvent) => {
-    show(e);
-  };
 
   useEffect(() => {
     if (initResizeNumber !== shouldResize) handleResize();
@@ -176,7 +168,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       h="100%"
       overflow="hidden"
       style={{ background: bg }}
-      onContextMenu={handleContextMenu}
+      onContextMenu={show}
       className={[styles.GraphContainer, "graph"].join(" ")}
     >
       <Box id="cy" overflow="hidden" />
@@ -203,7 +195,7 @@ function initializeGraph({
       elements: [],
       // TODO: shouldn't this load the user's style as well?
       // TODO: not even loading the real theme... this seems sus
-      style: getCytoStyle(original, getUserStyle(), bg),
+      style: buildStylesForGraph(original, getUserStyle(), bg),
       userZoomingEnabled: true,
       userPanningEnabled: true,
       boxSelectionEnabled: false,
@@ -226,6 +218,18 @@ function initializeGraph({
     cyCurrent.on("tapstart", "edge", edgeHighlight);
     cyCurrent.on("mouseout", "node, edge", unhighlight);
     cyCurrent.on("tapend", "node, edge", unhighlight);
+    cyCurrent.on("cxttap", "node", function handleCtxTap(this: NodeSingular) {
+      const { id, lineNumber } = this.data();
+      if (id && lineNumber) {
+        useContextMenuState.setState({
+          active: {
+            type: "node",
+            id,
+            lineNumber,
+          },
+        });
+      }
+    });
     document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
 
     return () => {
@@ -346,7 +350,7 @@ function getStyleUpdater({
     if (!errorCatcher.current) return;
     try {
       // Prepare Styles
-      const style = getCytoStyle(theme, getUserStyle(), bg);
+      const style = buildStylesForGraph(theme, getUserStyle(), bg);
 
       // Test Error First
       errorCatcher.current.json({ style });
@@ -370,39 +374,6 @@ function getStyleUpdater({
       }
     }
   }, 333);
-}
-
-/**
- * Returns the style object to be given to cytoscape.
- * Merges the theme style with the users style.
- */
-function getCytoStyle(
-  theme: Theme,
-  userStyle: cytoscape.Stylesheet[] = [],
-  bg?: string
-): CytoscapeOptions["style"] {
-  const bgOverrides: Stylesheet[] = [];
-  if (bg) {
-    bgOverrides.push({
-      selector: "edge",
-      style: {
-        "text-background-color": bg,
-      },
-    });
-    bgOverrides.push({
-      selector: ":parent",
-      style: {
-        color: theme.fg,
-      },
-    });
-  }
-  return [
-    ...baseStyles,
-    ...theme.styles,
-    ...bgOverrides,
-    ...userStyle,
-    ...graphUtilityClasses,
-  ];
 }
 
 function sanitizeMessage(

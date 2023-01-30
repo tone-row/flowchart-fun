@@ -18,3 +18,9 @@
 .MightLoseWarningInner a:hover {
   text-decoration: underline;
 }
+
+.MightLoseWarningText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

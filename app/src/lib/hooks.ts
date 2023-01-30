@@ -25,6 +25,11 @@ export function useIsReadOnly() {
   );
 }
 
+export function useIsLocalChart() {
+  const { path } = useRouteMatch();
+  return useMemo(() => path === "/:workspace" || path === "/", [path]);
+}
+
 export function useIsPublicHostedCharted() {
   const { path } = useRouteMatch();
   return useMemo(() => path === "/p/:public_id", [path]);

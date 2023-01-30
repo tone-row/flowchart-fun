@@ -1,4 +1,4 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
@@ -13,6 +13,14 @@ const blokusColors = {
   gray: ["#75736d", "#878378", "#9c9687"],
   purple: ["#4d1db5", "#714bdb", "#9563ff"],
 };
+
+const colors = Object.entries(blokusColors).reduce(
+  (acc, [color, shades]) => ({
+    ...acc,
+    [color]: shades[0],
+  }),
+  {}
+);
 
 const textColor = "#FFFFFF";
 const fontFamily = '"Space Mono", monospace';
@@ -34,6 +42,7 @@ const blokus: Theme = {
     fontSize: defaultFontSize,
     files: [{ name: fontFamily, url: "SpaceMono-Regular.woff2" }],
   },
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -103,7 +112,7 @@ const blokus: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(blokusColors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(blokusColors).map<StylesheetStyle>(([color, value]) => ({
       selector: `.${color}`,
       style: {
         "background-gradient-stop-colors": `${value[0]} ${value[1]} ${value[2]}`,

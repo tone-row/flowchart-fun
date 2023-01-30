@@ -1,8 +1,8 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
-const playbookColors = {
+const colors = {
   black: "#000000",
   white: "#ffffff",
   green: "#3cae5a",
@@ -15,12 +15,12 @@ const playbookColors = {
 };
 
 const fontFamily = "Karla";
-const backgroundColor = playbookColors.white;
+const backgroundColor = colors.white;
 const nodeBackgroundColor = backgroundColor;
 const edgeLabelBackgroundColor = "#EDECF9";
-const arrowColor = playbookColors.blue;
-const nodeLabelColor = playbookColors.black;
-const arrowLabelColor = playbookColors.black;
+const arrowColor = colors.blue;
+const nodeLabelColor = colors.black;
+const arrowLabelColor = colors.black;
 const lineHeight = 1.33;
 const padding = "0px";
 const arrowWidth = 1;
@@ -38,6 +38,7 @@ const playbook: Theme = {
     lineHeight,
     files: [{ name: fontFamily, url: "Karla-Regular.woff2" }],
   },
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -110,13 +111,13 @@ const playbook: Theme = {
         padding: "6px",
       },
     },
-    ...Object.entries(playbookColors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => ({
       selector: `node.${color}`,
       style: {
         color: `${value}`,
         ...(color === "white"
           ? {
-              "background-color": playbookColors.blue,
+              "background-color": colors.blue,
             }
           : {}),
       },

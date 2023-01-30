@@ -1,7 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import produce from "immer";
-import { ReactNode, useRef, useState } from "react";
-import { useForm } from "react-hook-form";
+import { ChangeEvent, ReactNode, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
 
@@ -9,6 +8,7 @@ import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { docToString, useDoc, useDocDetails } from "../lib/prepareChart";
 import { makeChart, renameChart } from "../lib/queries";
+import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { Box, Type } from "../slang";
 import { useSession } from "./AppContext";
 import {
@@ -25,41 +25,26 @@ export function RenameButton({ children }: { children: ReactNode }) {
   const fullText = useDoc(docToString);
   const isValidSponsor = useIsValidSponsor();
   const session = useSession();
-  const initialName = useDocDetails("title", "Untitled");
+  const initialName = useDocDetails("title", "flowchart-fun");
   const isHosted = useDocDetails("isHosted");
   const id = useDocDetails("id");
-  const [dialog, setDialog] = useState(false);
   const { push } = useHistory();
-  const { register, handleSubmit, watch, formState } = useForm<{
-    name: string;
-    convertToHosted?: boolean;
-  }>({
-    defaultValues: { name: initialName, convertToHosted: false },
-    mode: "onChange",
-  });
-  const convertToHosted = watch("convertToHosted");
-  const currentName = watch("name");
-  const { ref, ...rest } = register("name", {
-    required: true,
-    minLength: 2,
-    setValueAs: (z) => (isHosted || convertToHosted ? z : slugify(z)),
-  });
+  const isOpen = useRenameDialogStore((store) => store.isOpen);
+  const convertToHosted = useRenameDialogStore(
+    (store) => store.convertToHosted
+  );
+  const [newName, setName] = useState(initialName);
+
   const inputRef = useRef<null | HTMLInputElement>(null);
   const rename = useMutation(
     "updateChartName",
-    async ({
-      name,
-      convertToHosted,
-    }: {
-      name: string;
-      convertToHosted?: boolean;
-    }) => {
+    async () => {
       if (isHosted && id && typeof id === "number") {
-        await renameChart(id, name);
+        await renameChart(id, newName);
       } else if (convertToHosted) {
         if (session?.user?.id) {
           const response = await makeChart({
-            name,
+            name: newName,
             user_id: session?.user?.id,
             chart: fullText,
           });
@@ -72,7 +57,7 @@ export function RenameButton({ children }: { children: ReactNode }) {
         }
       } else {
         const oldKey = titleToLocalStorageKey(slugify(initialName));
-        const newSlug = slugify(name);
+        const newSlug = slugify(newName);
         const newKey = titleToLocalStorageKey(newSlug);
         if (window.localStorage.getItem(newKey) !== null)
           throw new Error("Chart already exists");
@@ -91,12 +76,15 @@ export function RenameButton({ children }: { children: ReactNode }) {
     },
     {
       onSuccess: () => {
-        setDialog(false);
+        useRenameDialogStore.setState({ isOpen: false });
       },
     }
   );
   const isValid =
-    formState.isValid && (currentName !== initialName || convertToHosted);
+    newName.length > 2 &&
+    (convertToHosted ||
+      window.localStorage.getItem(titleToLocalStorageKey(newName)) === null);
+
   return (
     <>
       <Tooltip
@@ -106,7 +94,7 @@ export function RenameButton({ children }: { children: ReactNode }) {
       >
         <button
           data-rename-button
-          onClick={() => setDialog(true)}
+          onClick={() => useRenameDialogStore.setState({ isOpen: true })}
           aria-label={t`Rename`}
         >
           {children}
@@ -114,18 +102,21 @@ export function RenameButton({ children }: { children: ReactNode }) {
       </Tooltip>
       <Dialog
         dialogProps={{
-          isOpen: dialog,
-          onDismiss: () => setDialog(false),
+          isOpen,
+          onDismiss: () => useRenameDialogStore.setState({ isOpen: false }),
           initialFocusRef: inputRef,
           "aria-label": t`Rename`,
         }}
         innerBoxProps={{
           as: "form",
-          onSubmit: handleSubmit((data) => rename.mutate(data)),
+          onSubmit: (e: any) => {
+            e.preventDefault();
+            rename.mutate();
+          },
         }}
       >
         <Section>
-          <Type as="h2" weight="400">
+          <Type as="h2" size={2} weight="700" style={{ marginBottom: -8 }}>
             <Trans>Rename</Trans>
           </Type>
           {isValidSponsor && !isHosted ? (
@@ -134,26 +125,37 @@ export function RenameButton({ children }: { children: ReactNode }) {
               gap={2}
               content="normal start"
               items="center normal"
+              as="label"
             >
-              <Type size={-1}>
+              <Type>
                 <Trans>Convert to hosted chart?</Trans>
               </Type>
-              <input type="checkbox" {...register("convertToHosted")} />
+              <input
+                type="checkbox"
+                checked={convertToHosted}
+                onChange={(e) => {
+                  useRenameDialogStore.setState({
+                    convertToHosted: e.target.checked,
+                  });
+                }}
+              />
             </Box>
           ) : null}
           <Input
-            {...rest}
-            ref={(el) => {
-              ref(el);
-              inputRef.current = el;
-            }}
+            value={newName}
+            required
+            pattern=".{3,}"
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setName(e.target.value)
+            }
             isLoading={rename.isLoading}
+            name="name"
           />
           <Box flow="column" content="normal space-between">
             <Button
               type="button"
               text={`Cancel`}
-              onClick={() => setDialog(false)}
+              onClick={() => useRenameDialogStore.setState({ isOpen: false })}
             />
             <Button type="submit" text={t`Submit`} disabled={!isValid} />
           </Box>

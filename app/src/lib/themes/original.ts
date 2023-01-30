@@ -1,8 +1,8 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
-export const originalColors = {
+export const colors = {
   black: "#000000",
   white: "#ffffff",
   green: "#01d857",
@@ -15,11 +15,11 @@ export const originalColors = {
 };
 
 const fontFamily = "Karla";
-const backgroundColor = originalColors.white;
-const arrowColor = originalColors.black;
+const backgroundColor = colors.white;
+const arrowColor = colors.black;
 const lineHeight = 1.25;
 const padding = "6px";
-const foregroundColor = originalColors.black;
+const foregroundColor = colors.black;
 
 const arrowWidth = 0.75;
 const original: Theme = {
@@ -31,6 +31,7 @@ const original: Theme = {
     fontSize: defaultFontSize,
     lineHeight,
   },
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -98,15 +99,13 @@ const original: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(originalColors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => ({
       selector: `node.${color}`,
       style: {
         "background-color": `${value}`,
         "background-opacity": 1,
-        "border-color": color === "white" ? `${value}` : originalColors.black,
-        color: ["blue", "black"].includes(color)
-          ? originalColors.white
-          : originalColors.black,
+        "border-color": color === "white" ? `${value}` : colors.black,
+        color: ["blue", "black"].includes(color) ? colors.white : colors.black,
       },
     })),
   ],

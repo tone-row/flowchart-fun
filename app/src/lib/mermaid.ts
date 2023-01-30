@@ -1,6 +1,6 @@
 import { GraphOptionsObject } from "./constants";
 import { shapes } from "./graphUtilityClasses";
-import { originalColors } from "./themes/original";
+import { colors } from "./themes/original";
 import { isEdge } from "./utils";
 
 export function toMermaidJS({
@@ -101,19 +101,15 @@ function getStyle({
   backgroundColor?: string;
 }) {
   const style = [];
-  if (color && originalColors[color.slice(6) as keyof typeof originalColors]) {
-    style.push(
-      `color:${originalColors[color.slice(6) as keyof typeof originalColors]}`
-    );
+  if (color && colors[color.slice(6) as keyof typeof colors]) {
+    style.push(`color:${colors[color.slice(6) as keyof typeof colors]}`);
   }
   if (
     backgroundColor &&
-    originalColors[backgroundColor.slice(3) as keyof typeof originalColors]
+    colors[backgroundColor.slice(3) as keyof typeof colors]
   ) {
     style.push(
-      `fill:${
-        originalColors[backgroundColor.slice(3) as keyof typeof originalColors]
-      }`
+      `fill:${colors[backgroundColor.slice(3) as keyof typeof colors]}`
     );
   }
   // add initial space

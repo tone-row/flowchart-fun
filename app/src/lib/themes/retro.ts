@@ -1,4 +1,4 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
@@ -36,6 +36,7 @@ const retro: Theme = {
     lineHeight,
     files: [{ name: fontFamily, url: "JosefinSans-Regular.woff2" }],
   },
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -105,7 +106,7 @@ const retro: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(colors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => ({
       selector: `node.${color}`,
       style: {
         "background-color": `${value}`,

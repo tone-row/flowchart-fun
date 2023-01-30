@@ -111,7 +111,7 @@
     Grid: "Grade",
     "Have fun! 🎉": "Divirta-se! 🎉",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
+      "Atenção! Antes de limpar o cache, lembre-se de que este documento não está salvo na nuvem.",
     Help: "Ajuda",
     History: "Histórico",
     Home: "Página inicial",
@@ -174,7 +174,7 @@
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
+      "Lembre que este documento só será salvo neste computador. Caso queira uma maneira de armazenar documentos e acessá-los de onde quer que você esteja, experimente nosso plano Pro com hospedagem ilimitada de gráficos e muito mais! Por apenas US$ 3/mês!",
     Rename: "Renomear",
     Reset: "Resetar",
     "Resume Subscription": "Resumir inscrição",
@@ -197,7 +197,7 @@
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
-      "Sorry! This page is only available in English.",
+      "Sinto muito! Esta página só está disponível em inglês.",
     Spacing: "Espaçamento",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Patrocine flowchart.fun por US$ 3/mês ou US$30/ano para acessar fluxogramas hospedados e os mais novos estilos e recursos",
@@ -214,7 +214,7 @@
     Subscription: "Inscrição",
     "Subscription will end": "Inscrição acabará",
     Syntax: "Sintaxe",
-    "Syntax Reference": "Syntax Reference",
+    "Syntax Reference": "Referência de sintaxe",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",

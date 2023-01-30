@@ -110,7 +110,7 @@
     Grid: "网格",
     "Have fun! 🎉": "玩得开心！🎉",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
+      "注意！在清除缓存之前，请记住此文档没有在云端保存。",
     Help: "帮助",
     History: "历史",
     Home: "主页",
@@ -173,7 +173,7 @@
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
+      "请记住，本文档仅保存在此电脑上，如果您希望储存文档并随时随地访问它们，那么请试试我们的高级计划，可以托管不限数量的图表，还有更多功能！仅需 $3/月！",
     Rename: "重命名",
     Reset: "重置",
     "Resume Subscription": "恢复订阅",
@@ -195,7 +195,7 @@
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
-      "Sorry! This page is only available in English.",
+      "抱歉！此页面只有英语版。",
     Spacing: "间距",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能",
@@ -212,7 +212,7 @@
     Subscription: "订阅",
     "Subscription will end": "订阅即将到期",
     Syntax: "句法",
-    "Syntax Reference": "Syntax Reference",
+    "Syntax Reference": "语法参考",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",

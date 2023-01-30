@@ -114,7 +114,26 @@ test.describe("Sign Up", () => {
 
     // expect Clone button to be present
     await expect(page.getByRole("button", { name: "Clone" })).toBeVisible();
+  });
 
+  test("can convert chart to hosted from Might Lose Trigger", async () => {
+    // Create a blank local chart
+    await page.goto(`${BASE_URL}/my-new-chart`);
+
+    // Hover [data-testid="might-lose-sponsor-trigger"] then wait for the button to appear
+    await page.getByTestId("might-lose-sponsor-trigger").click();
+
+    // Make sure the input with the label Convert to hosted chart? is checked
+    await page.getByTestId("convert-to-hosted").click();
+
+    // Submit
+    await page.getByRole("button", { name: "Submit" }).click();
+
+    // expect "/u/" to be in the url
+    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
+  });
+
+  test.afterAll(async () => {
     /* This should be run in the last test */
     await deleteCustomerByEmail(email);
     console.log("deleted stripe customer: ", email);

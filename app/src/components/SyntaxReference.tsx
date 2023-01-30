@@ -314,6 +314,29 @@ export function SyntaxReference() {
                 src="13"
               />
             </section>
+            <section>
+              <h1>
+                <Trans>Style Attributes</Trans>
+              </h1>
+              <p>
+                <Trans>
+                  Style attributes can be used to style nodes and edges
+                </Trans>
+              </p>
+              <h2>
+                <Trans>Width and Height</Trans>
+              </h2>
+              <p>
+                <Trans>
+                  Use the attributes <code>w</code> and <code>h</code> to
+                  explicitly set the width and height of a node.
+                </Trans>
+              </p>
+              <CodeExample
+                code={`👋 <span data-highlight>[w=50]</span>\n👋 <span data-highlight>[h=50]</span>\n👋 <span data-highlight>[w=50][h=50]</span>`}
+                src="14"
+              />
+            </section>
           </Box>
           <Box
             as={Dialog.Close}
