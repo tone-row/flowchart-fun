@@ -10,6 +10,7 @@ import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import { useThemeStore } from "../lib/graphThemes";
 import { useIsFirefox } from "../lib/hooks";
+import { useParser } from "../lib/parsers";
 import { useDoc } from "../lib/prepareChart";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Box, Type } from "../slang";
@@ -20,7 +21,6 @@ export const GRAPH_CONTEXT_MENU_ID = "graph-context-menu";
 
 export const GraphContextMenu = memo(function GraphContextMenu() {
   const isFirefox = useIsFirefox();
-  const active = useContextMenuState((state) => state.active);
   return (
     <Menu
       id={GRAPH_CONTEXT_MENU_ID}
@@ -34,7 +34,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       }}
     >
       <NodeSubmenu />
-      {active && <Separator />}
       {!isFirefox && <CopyPNG />}
       <CopySVG />
       <Separator />
@@ -136,62 +135,70 @@ function NodeSubmenu() {
   const colors = useThemeStore((theme) => theme.colors);
   const colorNames = Object.keys(colors);
   const active = useContextMenuState((state) => state.active);
+  const parser = useParser();
+  if (parser !== "graph-selector") return null;
   if (!active || active.type !== "node") return null;
   return (
-    <Submenu
-      label={
-        <WithIcon icon={<Graph size={smallIconSize} />}>
-          <Trans>Node</Trans>
-        </WithIcon>
-      }
-    >
+    <>
       <Submenu
         label={
-          <WithIcon icon={<Palette size={smallIconSize} />}>
-            <Trans>Color</Trans>
+          <WithIcon icon={<Graph size={smallIconSize} />}>
+            <Trans>Node</Trans>
           </WithIcon>
         }
-        className={styles.GridSubmenu}
       >
-        {Object.entries(colors).map(([name, value]) => (
+        <Submenu
+          label={
+            <WithIcon icon={<Palette size={smallIconSize} />}>
+              <Trans>Color</Trans>
+            </WithIcon>
+          }
+          className={styles.GridSubmenu}
+        >
+          {Object.entries(colors).map(([name, value]) => (
+            <Item
+              key={name}
+              onClick={() => {
+                let newText = operate(useDoc.getState().text, {
+                  lineNumber: active.lineNumber,
+                  operation: [
+                    "removeClassesFromNode",
+                    { classNames: colorNames },
+                  ],
+                });
+                newText = operate(newText, {
+                  lineNumber: active.lineNumber,
+                  operation: ["addClassesToNode", { classNames: [name] }],
+                });
+                useDoc.setState({ text: newText });
+              }}
+            >
+              <Box
+                style={{ backgroundColor: value }}
+                className={styles.ColorSquare}
+              />
+            </Item>
+          ))}
           <Item
-            key={name}
+            key="remove-all"
             onClick={() => {
-              let newText = operate(useDoc.getState().text, {
+              const newText = operate(useDoc.getState().text, {
                 lineNumber: active.lineNumber,
                 operation: [
                   "removeClassesFromNode",
                   { classNames: colorNames },
                 ],
               });
-              newText = operate(newText, {
-                lineNumber: active.lineNumber,
-                operation: ["addClassesToNode", { classNames: [name] }],
-              });
               useDoc.setState({ text: newText });
             }}
           >
-            <Box
-              style={{ backgroundColor: value }}
-              className={styles.ColorSquare}
-            />
+            <Box className={styles.SquareButton}>
+              <X size={32} />
+            </Box>
           </Item>
-        ))}
-        <Item
-          key="remove-all"
-          onClick={() => {
-            const newText = operate(useDoc.getState().text, {
-              lineNumber: active.lineNumber,
-              operation: ["removeClassesFromNode", { classNames: colorNames }],
-            });
-            useDoc.setState({ text: newText });
-          }}
-        >
-          <Box className={styles.SquareButton}>
-            <X size={32} />
-          </Box>
-        </Item>
+        </Submenu>
       </Submenu>
-    </Submenu>
+      <Separator />
+    </>
   );
 }
