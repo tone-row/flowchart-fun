@@ -102,7 +102,6 @@
     "stripe": "^8.179.0",
     "svg-parser": "^2.0.4",
     "svgo": "^2.8.0",
-    "tinycolor2": "^1.5.2",
     "use-debounce": "^5.2.1",
     "web-vitals": "^1.0.1",
     "zustand": "^3.7.0"
@@ -150,7 +149,6 @@
     "@types/svg-parser": "^2.0.1",
     "@types/svgo": "^2.6.0",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "@types/tinycolor2": "^1.4.3",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "axios": "^0.27.2",
