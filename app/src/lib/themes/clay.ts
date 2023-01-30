@@ -1,8 +1,8 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
-const clayColors = {
+const colors = {
   black: "#28152e",
   white: "#FFFFFF",
   green: "#abb17c",
@@ -15,11 +15,11 @@ const clayColors = {
 };
 
 const fontFamily = "Poor Story";
-const backgroundColor = clayColors.gray;
+const backgroundColor = colors.gray;
 const nodeBackgroundColor = backgroundColor;
 const arrowColor = "#FCFAF1";
-const nodeLabelColor = clayColors.white;
-const arrowLabelColor = clayColors.red;
+const nodeLabelColor = colors.white;
+const arrowLabelColor = colors.red;
 const lineHeight = 1;
 const padding = "6px";
 const arrowWidth = 2;
@@ -37,6 +37,7 @@ const clay: Theme = {
     lineHeight,
     files: [{ name: fontFamily, url: "PoorStory-Regular.woff2" }],
   },
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -102,14 +103,14 @@ const clay: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(clayColors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => ({
       selector: `node.${color}`,
       style: {
         "background-color": `${value}`,
         "background-opacity": 1,
         color: ["yellow", "white", "green", "orange"].includes(color)
-          ? clayColors.black
-          : clayColors.white,
+          ? colors.black
+          : colors.white,
       },
     })),
   ],

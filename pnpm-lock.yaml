@@ -139,7 +139,7 @@ importers:
       eslint-plugin-simple-import-sort: ^7.0.0
       file-saver: ^2.0.5
       framer-motion: ^4.1.17
-      graph-selector: ^0.7.3
+      graph-selector: ^0.8.1
       gray-matter: ^4.0.2
       highlight.js: ^11.7.0
       history: ^5.3.0
@@ -230,7 +230,7 @@ importers:
       eslint: 8.24.0
       file-saver: 2.0.5
       framer-motion: 4.1.17_sfoxds7t5ydpegc3knd667wn6m
-      graph-selector: 0.7.3
+      graph-selector: 0.8.1
       gray-matter: 4.0.3
       highlight.js: 11.7.0
       immer: 9.0.16
@@ -4355,6 +4355,11 @@ packages:
 
   /@tone-row/strip-comments/2.0.1:
     resolution: {integrity: sha512-CV0hy6tVqtjsGWNVjs9MclBmfvoBsjll3Vih/6aIK+qRd3qOxVnqL05WXqTNWuEtRKat2l67e1mikplrVDFdJg==}
+    engines: {node: '>=10'}
+    dev: false
+
+  /@tone-row/strip-comments/2.0.6:
+    resolution: {integrity: sha512-Fg21Nu+RDQ4NBEYP8vJyDg5TMjdGEQQSKbW8nfipQZo/cmP6l7MFJpdIqJfLHQoRSxWqqKtkWXWiMqxcVgY4pg==}
     engines: {node: '>=10'}
     dev: false
 
@@ -8562,10 +8567,10 @@ packages:
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
 
-  /graph-selector/0.7.3:
-    resolution: {integrity: sha512-a/EbDV+Q9T4pjeUwiv7RwCU5hbKBJZbB+dvzF8VjX9oJ44cyPZdzSO2cI9M8pYCcoxv7P0TLH9UrRInyiLPjUw==}
+  /graph-selector/0.8.1:
+    resolution: {integrity: sha512-Az5qeZcCfpPkZyMpLX+ipcEhVHqA/KFW8BjHTdr4axY17XDwTfXm+ZkGEilJ4ePKv2Z2d3RBbUt4O9owF8/Bkw==}
     dependencies:
-      '@tone-row/strip-comments': 2.0.1
+      '@tone-row/strip-comments': 2.0.6
     dev: false
 
   /grapheme-splitter/1.0.4:

@@ -12,7 +12,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { TriggerEvent, useContextMenu } from "react-contexify";
+import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
@@ -29,6 +29,7 @@ import { Parsers, universalParse, useParser } from "../lib/parsers";
 import { Doc, useDoc, useParseError } from "../lib/prepareChart";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
+import { useContextMenuState } from "../lib/useContextMenuState";
 import { useGraphStore } from "../lib/useGraphStore";
 import { useHoverLine } from "../lib/useHoverLine";
 import { Box } from "../slang";
@@ -157,9 +158,6 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   }, [throttleUpdate, sponsorLayoutsLoaded]);
 
   const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
-  const handleContextMenu = (e: TriggerEvent) => {
-    show(e);
-  };
 
   useEffect(() => {
     if (initResizeNumber !== shouldResize) handleResize();
@@ -170,7 +168,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       h="100%"
       overflow="hidden"
       style={{ background: bg }}
-      onContextMenu={handleContextMenu}
+      onContextMenu={show}
       className={[styles.GraphContainer, "graph"].join(" ")}
     >
       <Box id="cy" overflow="hidden" />
@@ -220,6 +218,18 @@ function initializeGraph({
     cyCurrent.on("tapstart", "edge", edgeHighlight);
     cyCurrent.on("mouseout", "node, edge", unhighlight);
     cyCurrent.on("tapend", "node, edge", unhighlight);
+    cyCurrent.on("cxttap", "node", function handleCtxTap(this: NodeSingular) {
+      const { id, lineNumber } = this.data();
+      if (id && lineNumber) {
+        useContextMenuState.setState({
+          active: {
+            type: "node",
+            id,
+            lineNumber,
+          },
+        });
+      }
+    });
     document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
 
     return () => {

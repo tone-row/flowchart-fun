@@ -1,4 +1,4 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
@@ -45,6 +45,7 @@ const futuristic: Theme = {
     lineHeight,
     files: [{ name: fontFamily, url: "SpaceMono-Regular.woff2" }],
   },
+  colors: colors2,
   styles: [
     {
       selector: "node[label!='']",
@@ -117,7 +118,7 @@ const futuristic: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(colors).map<Stylesheet>(([color, value]) => {
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => {
       const color1 = colors[color as keyof typeof colors];
       const color2 = colors2[color as keyof typeof colors2];
       return {

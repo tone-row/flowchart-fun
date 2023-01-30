@@ -1,8 +1,8 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetStyle } from "cytoscape";
 
 import { defaultFontSize, Theme } from "./constants";
 
-const museumColors = {
+const colors = {
   black: "#36321F",
   white: "#ffffff",
   green: "#01d857",
@@ -15,9 +15,9 @@ const museumColors = {
 };
 
 const fontFamily = "Sporting Grotesque";
-const backgroundColor = museumColors.white;
+const backgroundColor = colors.white;
 const nodeBackgroundColor = backgroundColor;
-const arrowColor = museumColors.black;
+const arrowColor = colors.black;
 const nodeLabelColor = arrowColor;
 const arrowLabelColor = arrowColor;
 const lineHeight = 1.33;
@@ -40,6 +40,7 @@ const museum: Theme = {
     lineHeight,
     files: [{ name: fontFamily, url: "Sporting_Grotesque-Regular_web.woff2" }],
   },
+  colors,
   styles: [
     {
       selector: "node[label!='']",
@@ -116,7 +117,7 @@ const museum: Theme = {
         "text-wrap": "none",
       },
     },
-    ...Object.entries(museumColors).map<Stylesheet>(([color, value]) => ({
+    ...Object.entries(colors).map<StylesheetStyle>(([color, value]) => ({
       selector: `node.${color}`,
       style: {
         "underlay-color": `${value}`,
