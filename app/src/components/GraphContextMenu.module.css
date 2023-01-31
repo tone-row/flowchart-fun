@@ -40,13 +40,23 @@
 }
 
 .SquareButton,
-.ColorSquare {
+.ColorSquare,
+.ShapeSquare {
   width: 100%;
   aspect-ratio: 1;
   border-radius: 3px;
   cursor: pointer;
   transform: scale(1);
   transition: transform 0.15s ease-in-out;
+}
+
+.ShapeSquare {
+  background-image: url(/public/images/shape-sprite.svg);
+  background-size: 360px;
+  background-position-x: calc(-12px - var(--col) * 145px);
+  background-position-y: calc(-12px - var(--row) * 126.75px);
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 .GridSubmenu

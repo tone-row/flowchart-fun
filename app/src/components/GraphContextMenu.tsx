@@ -2,13 +2,14 @@ import "react-contexify/dist/ReactContexify.css";
 
 import { Trans } from "@lingui/macro";
 import { operate } from "graph-selector";
-import { Graph, Palette, X } from "phosphor-react";
-import { memo, ReactNode, useReducer } from "react";
+import { Diamond, Graph, Palette, X } from "phosphor-react";
+import { CSSProperties, memo, ReactNode, useReducer } from "react";
 import { Item, Menu, Separator, Submenu } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import { useThemeStore } from "../lib/graphThemes";
+import { shapes } from "../lib/graphUtilityClasses";
 import { useIsFirefox } from "../lib/hooks";
 import { useParser } from "../lib/parsers";
 import { useDoc } from "../lib/prepareChart";
@@ -187,6 +188,61 @@ function NodeSubmenu() {
                 operation: [
                   "removeClassesFromNode",
                   { classNames: colorNames },
+                ],
+              });
+              useDoc.setState({ text: newText });
+            }}
+          >
+            <Box className={styles.SquareButton}>
+              <X size={32} />
+            </Box>
+          </Item>
+        </Submenu>
+        <Submenu
+          label={
+            <WithIcon icon={<Diamond size={smallIconSize} />}>
+              <Trans>Shape</Trans>
+            </WithIcon>
+          }
+          className={styles.GridSubmenu}
+        >
+          {(shapes as string[]).map((shape, index) => (
+            <Item
+              key={shape}
+              onClick={() => {
+                let newText = operate(useDoc.getState().text, {
+                  lineNumber: active.lineNumber,
+                  operation: [
+                    "removeClassesFromNode",
+                    { classNames: shapes as string[] },
+                  ],
+                });
+                newText = operate(newText, {
+                  lineNumber: active.lineNumber,
+                  operation: ["addClassesToNode", { classNames: [shape] }],
+                });
+                useDoc.setState({ text: newText });
+              }}
+            >
+              <Box
+                className={styles.ShapeSquare}
+                style={
+                  {
+                    "--row": Math.floor(index / 3),
+                    "--col": index % 3,
+                  } as CSSProperties
+                }
+              />
+            </Item>
+          ))}
+          <Item
+            key="remove-all"
+            onClick={() => {
+              const newText = operate(useDoc.getState().text, {
+                lineNumber: active.lineNumber,
+                operation: [
+                  "removeClassesFromNode",
+                  { classNames: shapes as string[] },
                 ],
               });
               useDoc.setState({ text: newText });
