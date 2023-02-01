@@ -54,29 +54,35 @@ const lineStyles: Stylesheet[] = [
   },
 ];
 
-const borderStyles: Stylesheet[] = [
+export const borderStyles: Stylesheet[] = [
   {
-    selector: "node.dashed",
-    style: {
-      "border-style": "dashed",
-    },
-  },
-  {
-    selector: "node.dotted",
-    style: {
-      "border-style": "dotted",
-    },
-  },
-  {
-    selector: "node.solid",
+    selector: "node.border-solid",
     style: {
       "border-style": "solid",
     },
   },
   {
-    selector: "node.double",
+    selector: "node.border-dashed",
+    style: {
+      "border-style": "dashed",
+    },
+  },
+  {
+    selector: "node.border-dotted",
+    style: {
+      "border-style": "dotted",
+    },
+  },
+  {
+    selector: "node.border-double",
     style: {
       "border-style": "double",
+    },
+  },
+  {
+    selector: "node.border-none",
+    style: {
+      "border-width": 0,
     },
   },
 ];
