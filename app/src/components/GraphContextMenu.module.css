@@ -67,3 +67,12 @@
   transition: none;
   transform: scale(0.9);
 }
+
+.BorderItem {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 16px;
+  border-width: 0;
+  border-bottom-width: 4px;
+  border-bottom-color: black;
+}
