@@ -159,4 +159,14 @@ export const importantBaseStyles: Stylesheet[] = [
       height: "data(h)",
     },
   },
+  {
+    selector: "node[src]",
+    style: {
+      "background-image": "data(src)",
+      "background-fit": "cover",
+      "border-width": 0,
+      "text-valign": "bottom",
+      "text-margin-y": 5,
+    },
+  },
 ];

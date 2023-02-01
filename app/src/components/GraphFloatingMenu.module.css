@@ -8,6 +8,7 @@
   color: var(--color-foreground);
   border-radius: calc(var(--smallest-border-radius-px) * 1);
   font-size: 0;
+  display: flex;
 }
 
 .CustomIconButton {
@@ -21,11 +22,6 @@
 
 .CustomIconButton:active {
   background-color: var(--color-uiAccent);
-}
-
-.CustomIconButton svg {
-  width: 28px;
-  height: 28px;
 }
 
 .CustomIconButton:focus {

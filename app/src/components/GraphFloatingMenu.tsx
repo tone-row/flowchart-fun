@@ -1,9 +1,11 @@
 import { t } from "@lingui/macro";
 import { MagnifyingGlassMinus, MagnifyingGlassPlus } from "phosphor-react";
 import { useCallback } from "react";
+import { FaBomb } from "react-icons/fa";
 import { MdFitScreen } from "react-icons/md";
 
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
+import { useUnmountStore } from "../lib/useUnmountStore";
 import styles from "./GraphFloatingMenu.module.css";
 import { Tooltip } from "./Shared";
 
@@ -31,19 +33,28 @@ export function GraphFloatingMenu() {
   return (
     <div className={styles.graphFloatingMenu}>
       <CustomIconButton
-        icon={<MagnifyingGlassMinus />}
+        icon={<MagnifyingGlassMinus size={28} />}
         label={t`Zoom Out`}
         onClick={zoomOut}
       />
       <CustomIconButton
-        icon={<MagnifyingGlassPlus />}
+        icon={<MagnifyingGlassPlus size={28} />}
         label={t`Zoom In`}
         onClick={zoomIn}
       />
       <CustomIconButton
-        icon={<MdFitScreen />}
+        icon={<MdFitScreen size={28} />}
         onClick={fitGraph}
         label={t`Fit Graph`}
+      />
+      <CustomIconButton
+        icon={<FaBomb size={22} />}
+        label={t`Reset`}
+        onClick={() => {
+          useUnmountStore.setState({
+            unmount: true,
+          });
+        }}
       />
     </div>
   );

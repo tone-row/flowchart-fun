@@ -55,6 +55,14 @@
   line-height: 1.4;
 }
 
+.description p code {
+  font-size: 0.9em;
+  font-weight: 700;
+  background: var(--color-nodeHover);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
 .description h1 {
   font-size: 1.333em;
   font-weight: 700;
@@ -99,12 +107,13 @@ h2 {
   border-radius: var(--rad);
   padding: 1rem;
   display: grid;
-  place-content: center;
+  place-content: center start;
   text-align: left;
+  overflow: auto;
 }
 
 .codeExampleCode > div {
-  white-space: pre-wrap;
+  white-space: pre;
 }
 
 .codeExampleCode [data-highlight] {
