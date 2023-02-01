@@ -1,15 +1,22 @@
 import "react-contexify/dist/ReactContexify.css";
 
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import { operate } from "graph-selector";
-import { Diamond, Graph, Palette, X } from "phosphor-react";
+import {
+  CircleDashed,
+  Diamond,
+  Graph,
+  Palette,
+  TextT,
+  X,
+} from "phosphor-react";
 import { CSSProperties, memo, ReactNode, useReducer } from "react";
 import { Item, Menu, Separator, Submenu } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import { useThemeStore } from "../lib/graphThemes";
-import { shapes } from "../lib/graphUtilityClasses";
+import { borderStyles, shapes } from "../lib/graphUtilityClasses";
 import { useIsFirefox } from "../lib/hooks";
 import { useParser } from "../lib/parsers";
 import { useDoc } from "../lib/prepareChart";
@@ -132,6 +139,34 @@ const WithIcon = memo(function WithIcon({
   );
 });
 
+const sizes: {
+  label: ReactNode;
+  className?: string;
+  size: number;
+}[] = [
+  {
+    label: t`Small`,
+    className: "text-sm",
+    size: -1,
+  },
+  {
+    label: t`Medium`,
+    size: 0,
+  },
+  {
+    label: t`Large`,
+    className: "text-lg",
+    size: 1,
+  },
+  {
+    label: t`Extra Large`,
+    className: "text-xl",
+    size: 2,
+  },
+];
+
+const borders = borderStyles.map((style) => style.selector.slice(5));
+
 function NodeSubmenu() {
   const colors = useThemeStore((theme) => theme.colors);
   const colorNames = Object.keys(colors);
@@ -252,6 +287,83 @@ function NodeSubmenu() {
               <X size={32} />
             </Box>
           </Item>
+        </Submenu>
+        <Submenu
+          label={
+            <WithIcon icon={<TextT size={smallIconSize} />}>
+              <Trans>Size</Trans>
+            </WithIcon>
+          }
+        >
+          {sizes.map(({ label, className, size }, index) => (
+            <Item
+              key={index}
+              onClick={() => {
+                let newText = operate(useDoc.getState().text, {
+                  lineNumber: active.lineNumber,
+                  operation: [
+                    "removeClassesFromNode",
+                    {
+                      classNames: sizes
+                        .map((s) => s.className)
+                        .filter((c): c is string => {
+                          return !!c;
+                        }),
+                    },
+                  ],
+                });
+                if (className)
+                  newText = operate(newText, {
+                    lineNumber: active.lineNumber,
+                    operation: [
+                      "addClassesToNode",
+                      { classNames: [className] },
+                    ],
+                  });
+                useDoc.setState({ text: newText });
+              }}
+            >
+              <Type size={size}>{label}</Type>
+            </Item>
+          ))}
+        </Submenu>
+        <Submenu
+          label={
+            <WithIcon icon={<CircleDashed size={smallIconSize} />}>
+              <Trans>Border</Trans>
+            </WithIcon>
+          }
+        >
+          {borders.map((className) => (
+            <Item
+              key={className}
+              onClick={() => {
+                let newText = operate(useDoc.getState().text, {
+                  lineNumber: active.lineNumber,
+                  operation: ["removeClassesFromNode", { classNames: borders }],
+                });
+                // If the border is solid, we want to remove all borders
+                if (className !== "border-solid")
+                  newText = operate(newText, {
+                    lineNumber: active.lineNumber,
+                    operation: [
+                      "addClassesToNode",
+                      { classNames: [className] },
+                    ],
+                  });
+                useDoc.setState({ text: newText });
+              }}
+            >
+              <span
+                className={styles.BorderItem}
+                style={{
+                  borderStyle: className.slice(7),
+                  borderColor:
+                    className === "border-none" ? "transparent" : undefined,
+                }}
+              />
+            </Item>
+          ))}
         </Submenu>
       </Submenu>
       <Separator />

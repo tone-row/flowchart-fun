@@ -334,6 +334,22 @@ export function SyntaxReference() {
                 code={`👋 <span data-highlight>[w=50]</span>\n👋 <span data-highlight>[h=50]</span>\n👋 <span data-highlight>[w=50][h=50]</span>`}
                 src="14"
               />
+              <h2>
+                <Trans>Images</Trans>
+              </h2>
+              <p>
+                <Trans>
+                  Use the attribute <code>src</code> to set the image of a node.
+                  The image will be scaled to fit the node, so you may need to
+                  adjust the width and height of the node to get the desired
+                  result. Only public images (not blocked by CORS) are
+                  supported.
+                </Trans>
+              </p>
+              <CodeExample
+                code={`Flowchart Fun <span data-highlight>[src="https://flowchart.fun/apple-touch-icon.png"]</span>[w=90][h=90]`}
+                src="15"
+              />
             </section>
           </Box>
           <Box
