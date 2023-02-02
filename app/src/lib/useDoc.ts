@@ -10,18 +10,12 @@ local storage
   page load: (get the text)
 **/
 
-import merge from "deepmerge";
-import matter from "gray-matter";
 import create from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 
-import {
-  delimiters,
-  HIDDEN_GRAPH_OPTIONS_DIVIDER,
-  newDelimiters,
-} from "./constants";
+import { newDelimiters } from "./constants";
 
-type Details = {
+export type Details = {
   /** Represents the workspace ID if local, and the db ID if hosted */
   id: string | number;
   /** Workspace ID if local, Chart title if hosted */
@@ -51,69 +45,6 @@ export const initialDoc = {
 };
 
 export const useDoc = create(subscribeWithSelector<Doc>(() => initialDoc));
-
-/**
- * ### Goals
- * - store working graphs in memory regardless of whether they
- * are local or hosted. This will allow us to use the same code for both.
- *- handle the transition from embedded yaml and hidden options
- * to a single meta section (embedded JSON below the document).
- *
- * ### Terminology
- * - `document` is the complete file contents (local or hosted)
- * - `text` is the document without the meta section
- * - `meta` is the meta section of the document
- */
-export function prepareChart(doc: string, details: Details) {
-  let text = doc;
-
-  let jsonMeta = {};
-  // if the doc includes the new delimiters we can skip the migration step
-  if (text.includes(newDelimiters)) {
-    const parts = text.split(newDelimiters);
-    text = parts[0];
-    const metaStr = parts[1] || "{}";
-    try {
-      jsonMeta = JSON.parse(metaStr.trim());
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  let hidden = {};
-  if (text.includes(HIDDEN_GRAPH_OPTIONS_DIVIDER)) {
-    const parts = text.split(HIDDEN_GRAPH_OPTIONS_DIVIDER);
-    text = parts[0];
-    const hiddenStr = parts[1] || "{}";
-    try {
-      hidden = JSON.parse(hiddenStr.trim());
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  let parsedData = {};
-  if (text.includes(delimiters)) {
-    const parsed = matter(text, { delimiters });
-    text = parsed.content;
-    parsedData = parsed.data;
-  }
-
-  const meta = merge.all([jsonMeta, parsedData, hidden]) as Record<
-    string,
-    unknown
-  >;
-
-  text = `${text.trim()}\n`;
-
-  useDoc.setState({ text, meta, details });
-
-  return {
-    text,
-    meta,
-    details,
-  };
-}
 
 export function docToString(doc: Doc) {
   const { text, meta } = doc;

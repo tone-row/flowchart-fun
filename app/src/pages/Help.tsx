@@ -10,7 +10,8 @@ import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { TextEditor } from "../components/TextEditor";
 import { titleToLocalStorageKey } from "../lib/helpers";
-import { prepareChart, useDoc } from "../lib/useDoc";
+import { prepareChart } from "../lib/prepareChart/prepareChart";
+import { useDoc } from "../lib/useDoc";
 import helpStyles from "./Help.module.css";
 
 export default function Help() {

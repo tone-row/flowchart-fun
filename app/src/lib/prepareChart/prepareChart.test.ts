@@ -1,7 +1,8 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-import { initialDoc, prepareChart } from "./useDoc";
+import { initialDoc } from "../useDoc";
+import { prepareChart } from "./prepareChart";
 
 describe("prepareChart", () => {
   test("can migrate old files with yaml", () => {
@@ -160,8 +161,44 @@ longer label text
       details: initialDoc.details,
     });
   });
+
+  test("if a document has a parser it shouldn't change", () => {
+    expect(
+      prepareChart(getFixture("example8"), {
+        ...initialDoc.details,
+      })
+    ).toEqual({
+      details: {
+        id: "",
+        isHosted: false,
+        title: "",
+      },
+      meta: {
+        parser: "v1",
+      },
+      text: "old\n  [x] parser\n",
+    });
+  });
+
+  test("if a document has no parser but has default text, add v1", () => {
+    expect(
+      prepareChart(getFixture("example9"), {
+        ...initialDoc.details,
+      })
+    ).toEqual({
+      details: {
+        id: "",
+        isHosted: false,
+        title: "",
+      },
+      meta: {
+        parser: "v1",
+      },
+      text: "This app works by typing\n  Indenting creates a link to the current line\n  any text: before a colon creates a label\n",
+    });
+  });
 });
 
 function getFixture(name: string) {
-  return readFileSync(join(__dirname, "fixtures", name), "utf8");
+  return readFileSync(join(__dirname, "examples", name), "utf8");
 }

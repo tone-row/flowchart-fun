@@ -16,10 +16,11 @@ import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
+import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer, useIsValidSponsor } from "../lib/hooks";
-import { getDefaultText } from "../lib/queries";
-import { Doc, docToString, prepareChart, useDoc } from "../lib/useDoc";
+import { prepareChart } from "../lib/prepareChart/prepareChart";
+import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import { Type } from "../slang";
 import styles from "./Edit.module.css";
@@ -39,7 +40,7 @@ const Edit = memo(function Edit() {
     return throttle(
       (doc: Doc) => {
         const docString = docToString(doc);
-        if (docString === getDefaultText()) return;
+        if (docString === getDefaultChart()) return;
         const key = titleToLocalStorageKey(workspace);
         localStorage.setItem(key, docString);
       },
@@ -139,7 +140,7 @@ async function loadWorkspace(workspace: string) {
   const key = titleToLocalStorageKey(workspace);
   let workspaceText = localStorage.getItem(key);
   if (!workspaceText) {
-    workspaceText = getDefaultText();
+    workspaceText = getDefaultChart();
   }
 
   prepareChart(workspaceText, {
