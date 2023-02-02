@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-import { initialDoc, prepareChart } from "./prepareChart";
+import { initialDoc, prepareChart } from "./useDoc";
 
 describe("prepareChart", () => {
   test("can migrate old files with yaml", () => {

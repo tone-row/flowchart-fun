@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { BiErrorCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-import { useParseError } from "../lib/prepareChart";
+import { useParseError } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import styles from "./EditorError.module.css";
 

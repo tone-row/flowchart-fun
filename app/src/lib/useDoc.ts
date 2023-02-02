@@ -53,9 +53,6 @@ export const initialDoc = {
 export const useDoc = create(subscribeWithSelector<Doc>(() => initialDoc));
 
 /**
- * The goal of this function is to remove some of the complexity around
- * useLocalDoc, useHostedDoc, useParseDoc, + useUpdateGraphOptionsText.
- *
  * ### Goals
  * - store working graphs in memory regardless of whether they
  * are local or hosted. This will allow us to use the same code for both.
