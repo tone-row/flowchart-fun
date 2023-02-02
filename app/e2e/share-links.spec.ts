@@ -16,7 +16,7 @@ test.describe("share-links", () => {
   test("share links", async ({ page }) => {
     try {
       await page.goto(`${BASE_URL}/n#FDC8-YG8F8w0Q`);
-      const encoded = `BYUwNmD2AEDukCcwBMBQqC8WuoN4F9NsMg`;
+      const encoded = `BYUwNmD2AEDukCcwBMBQqC8WuoN6umgCIAHAQwQGcQEiAuYgNwEYjUBfTbDIA`;
 
       // wait for 2 seconds
       await page.waitForTimeout(2000);
