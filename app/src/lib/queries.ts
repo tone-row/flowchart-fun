@@ -6,7 +6,6 @@ import Stripe from "stripe";
 import { AppContext, UserSettings } from "../components/AppContext";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "./constants";
 import { getDefaultChart } from "./getDefaultChart";
-import { getDefaultText } from "./getDefaultText";
 import { supabase } from "./supabaseClient";
 
 export const queryClient = new QueryClient();
