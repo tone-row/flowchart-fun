@@ -1,7 +1,8 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-import { initialDoc, prepareChart } from "./prepareChart";
+import { initialDoc } from "../useDoc";
+import { prepareChart } from "./prepareChart";
 
 describe("prepareChart", () => {
   test("can migrate old files with yaml", () => {
@@ -26,6 +27,7 @@ Have fun! 🎉
         layout: {
           name: "cose",
         },
+        parser: "v1",
         theme: "original-dark",
       },
       details: initialDoc.details,
@@ -46,6 +48,7 @@ longer label text
           N150: { x: 112.02947631404595, y: 237.1117560181095 },
           c: { x: 91.4921875, y: 138.375 },
         },
+        parser: "v1",
       },
       details: initialDoc.details,
     });
@@ -54,7 +57,9 @@ longer label text
   test("can migrate old files with neither", () => {
     expect(prepareChart(getFixture("example3"), initialDoc.details)).toEqual({
       text: `i am but a simple file\n`,
-      meta: {},
+      meta: {
+        parser: "v1",
+      },
       details: initialDoc.details,
     });
   });
@@ -90,6 +95,7 @@ longer label text
           "사용자 지정 ID": { x: 303.7526207140005, y: 295.324954187848 },
           N154: { x: 388.3411820878437, y: 404.7001951000867 },
         },
+        parser: "v1",
       },
       details: initialDoc.details,
     });
@@ -104,6 +110,7 @@ longer label text
           rankDir: "BT",
         },
         theme: "eggs",
+        parser: "v1",
       },
       details: initialDoc.details,
     });
@@ -116,6 +123,7 @@ longer label text
           name: "cose",
           rankDir: "LR",
         },
+        parser: "v1",
         style: [
           {
             selector: "edge",
@@ -155,13 +163,50 @@ longer label text
           name: "cose",
           rankDir: "BT",
         },
+        parser: "v1",
         theme: "eggs",
       },
       details: initialDoc.details,
     });
   });
+
+  test("if a document has a parser it shouldn't change", () => {
+    expect(
+      prepareChart(getFixture("example8"), {
+        ...initialDoc.details,
+      })
+    ).toEqual({
+      details: {
+        id: "",
+        isHosted: false,
+        title: "",
+      },
+      meta: {
+        parser: "v1",
+      },
+      text: "old\n  [x] parser\n",
+    });
+  });
+
+  test("if a document has no parser but has default text, add v1", () => {
+    expect(
+      prepareChart(getFixture("example9"), {
+        ...initialDoc.details,
+      })
+    ).toEqual({
+      details: {
+        id: "",
+        isHosted: false,
+        title: "",
+      },
+      meta: {
+        parser: "v1",
+      },
+      text: "This app works by typing\n  Indenting creates a link to the current line\n  any text: before a colon creates a label\n",
+    });
+  });
 });
 
 function getFixture(name: string) {
-  return readFileSync(join(__dirname, "fixtures", name), "utf8");
+  return readFileSync(join(__dirname, "examples", name), "utf8");
 }

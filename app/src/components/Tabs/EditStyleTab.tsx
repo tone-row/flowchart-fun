@@ -6,7 +6,7 @@ import { useThemeKey } from "../../lib/getTheme";
 import { themes } from "../../lib/graphOptions";
 import { useThemeStore } from "../../lib/graphThemes";
 import { useIsValidSponsor } from "../../lib/hooks";
-import { useDoc } from "../../lib/prepareChart";
+import { useDoc } from "../../lib/useDoc";
 import { Button } from "../Shared";
 import {
   CustomSelect,

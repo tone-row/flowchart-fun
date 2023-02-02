@@ -4,6 +4,8 @@
     "$3.00/month": "3 $/mois",
     "$30 / Year": "30 $ / an",
     "$30.00/year (save 20%)": "30,00 $/an (économisez 20 %)",
+    "(before a colon creates a label)":
+      "(avant que deux-points ne créent une étiquette)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Accédez à ces graphiques depuis n'importe où.<0/>Partagez ou intégrez des graphiques, qui se synchronisent au fil de vos modifications.",
     Account: "Compte",
@@ -22,6 +24,7 @@
     Background: "L'arrière plan",
     "Become a Sponsor": "Devenir un sponsor",
     Blog: "Blog",
+    Border: "Border",
     "Bottom to Top": "De bas en haut",
     Breadthfirst: "Parcours en largeur",
     Cancel: "Annuler",
@@ -39,8 +42,11 @@
     Clay: "Argile",
     Clear: "Effacer",
     "Clear text?": "Effacer le texte?",
+    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
+      "Cliquez sur\\n⟨⟩ Référence de syntaxe\\npour en savoir plus .blue.border-none.roundrectangle[w=115][h=70]",
     Clone: "Cloner",
     Close: "Fermer",
+    Color: "Color",
     "Colors include red, orange, yellow, blue, purple, black, white, and gray.":
       "Colors include red, orange, yellow, blue, purple, black, white, and gray.",
     "Comic Book": "Bande dessinée",
@@ -54,8 +60,6 @@
     "Copy PNG Image": "Copier l'image PNG",
     "Copy SVG Code": "Copier le code SVG",
     Create: "Créer",
-    "Create a link directly using the exact label text":
-      "Créer un lien directement vers une boite en utilisant le texte exact de celle-ci",
     Created: "Créé",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
@@ -99,6 +103,7 @@
     Export: "Exporter",
     "Export to Common Image Formats":
       "Exporter vers des formats d'image courants",
+    "Extra Large": "Extra Large",
     Feedback: "Commentaire",
     "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
@@ -110,7 +115,6 @@
     "Get More Themes": "Obtenez plus de thèmes",
     Graph: "Graphique",
     Grid: "Quadrillage",
-    "Have fun! 🎉": "Amusez-vous ! 🎉",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
       "Attention ! Avant de vider votre cache, n'oubliez pas que ce document n'est pas enregistré dans le cloud.",
     Help: "Aide",
@@ -118,10 +122,11 @@
     Home: "Accueil",
     "Hosted Charts": "Graphiques hébergés",
     "ID's": "ID's",
-    "Indenting creates a link to the current line":
-      "La mise en retrait crée un lien vers la ligne courante.",
+    Images: "Images",
+    "Indenting creates an edge": "L'indentation crée un bord",
     Info: "Info",
     Language: "Langue",
+    Large: "Large",
     Layout: "Disposition",
     "Layout is Frozen": "La mise en page est gelée",
     "Layouts and Themes": "Mises en page et thèmes",
@@ -137,6 +142,7 @@
     "Made by <0>Tone Row</0>": "Réalisé par <0>Tone Row</0>",
     "Make a Donation": "Faire un don",
     "Make publicly accessible": "Rendre accessible au public",
+    Medium: "Medium",
     Monospace: "Monospace",
     Monthly: "Mensuel",
     "More Layouts": "Plus de mises en page",
@@ -148,6 +154,7 @@
     New: "Nouveau",
     "New Email": "Nouveau courriel",
     "Next charge": "Prochain paiement",
+    Node: "Node",
     "Node Border Style": "Node Border Style",
     "Node Colors": "Node Colors",
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
@@ -187,14 +194,17 @@
     "Say goodbye to tedious flowchart creation":
       "Dites adieu au processus pénible de création d'organigrammes",
     Settings: "Paramètres",
+    Shape: "Shape",
     "Shape Libraries": "Bibliothèques de formes",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
+    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
+      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "Partager avec des autorisations d'accès complet, d'édition uniquement ou d'affichage uniquement",
     "Sign In": "Connectez",
     "Sign Up": "Inscription",
     "Sign Up Now": "S'inscrire maintenant",
+    Size: "Size",
+    Small: "Small",
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
@@ -210,7 +220,10 @@
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Rationalisez votre flux de travail et simplifiez la visualisation de vos processus grâce à Flowchart Fun",
     Style: "Style",
+    "Style Attributes": "Style Attributes",
     "Style Classes": "Style Classes",
+    "Style attributes can be used to style nodes and edges":
+      "Style attributes can be used to style nodes and edges",
     Submit: "Soumettre",
     Subscription: "Abonnement",
     "Subscription will end": "L'abonnement prendra fin",
@@ -238,6 +251,10 @@
     "Update Email": "Mettre à jour l'e-mail",
     Updated: "Mis à jour",
     "Use classes to group nodes": "Use classes to group nodes",
+    "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.":
+      "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.",
+    "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.":
+      "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.",
     "Use the customer portal to change your billing information.":
       "Utilisez le portail client pour modifier vos informations de facturation.",
     User: "Utilisateur",
@@ -250,23 +267,16 @@
       "Comment aimeriez-vous nommer cette copie ?",
     "What would you like to share with us?":
       "Que voudriez-vous partager avec nous ?",
+    "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez.",
+    'You can also wrap text in "\\( \\)" to create an edge':
+      'Vous pouvez également envelopper le texte dans "\\( \\)" pour créer un bord',
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor.",
     "Zoom In": "Zoom In",
     "Zoom Out": "Zoom Out",
-    "[custom ID] or": "[ID personnalisé] ou",
     "any text: before a colon creates a label":
-      "n'importe quel texte : avant deux points, crée une étiquette pour le lien",
-    "by adding an %5BID%5D and referencing that":
-      "en ajoutant un %5BID%5D et en référençant celui-ci",
-    comments: "des commentaires",
-    "like this: (This app works by typing)":
-      "comme ceci : (Chaque ligne creé une nouvelle boite)",
-    "like this: (custom ID) // You can also use single-line comments":
-      "comme ceci : (ID personnalisé) // Vous pouvez également ajouter des commentaires d'une ligne,",
-    multiline: "de plusieurs lignes",
-    or: "ou",
+      "n'importe quel texte: avant que deux-points ne créent une étiquette",
   },
 };

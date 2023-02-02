@@ -1,6 +1,6 @@
 import { defaultLayout } from "./constants";
 import { getLayout } from "./getLayout";
-import { initialDoc } from "./prepareChart";
+import { initialDoc } from "./useDoc";
 
 describe("getLayout", () => {
   test("returns the default layout if nothing passed", () => {

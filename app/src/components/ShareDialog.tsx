@@ -14,8 +14,8 @@ import {
 import { useMutation } from "react-query";
 
 import { toMermaidJS } from "../lib/mermaid";
-import { docToString, useDoc, useDocDetails } from "../lib/prepareChart";
 import { makeChartPublic } from "../lib/queries";
+import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";

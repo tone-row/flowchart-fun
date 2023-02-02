@@ -57,7 +57,7 @@ describe("New Page", () => {
     // Confirm it's in local storage
     const key = helpers.titleToLocalStorageKey(tempFakeName);
     expect(global.localStorage.getItem(key)).toEqual(
-      `This app works by typing\n  Indenting creates a link to the current line\n  any text: before a colon creates a label\n  Create a link directly using the exact label text\n    like this: (This app works by typing)\n    [custom ID] or\n      by adding an %5BID%5D and referencing that\n        like this: (custom ID) // You can also use single-line comments\n/*\nor\nmultiline\ncomments\n\nHave fun! 🎉\n*/`
+      `This app works by typing\n  Indenting creates an edge\n  any text: before a colon creates a label\n    Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]\n  You can also wrap text in "\\( \\)" to create an edge\n    (before a colon creates a label)\n\n=====\n{"parser":"graph-selector"}\n=====`
     );
   });
 
@@ -80,7 +80,7 @@ describe("New Page", () => {
     // mock valid customer
     jest.spyOn(hooks, "useIsValidCustomer").mockReturnValue(true);
 
-    let makeChart = jest.spyOn(queries, "makeChart");
+    const makeChart = jest.spyOn(queries, "makeChart");
     makeChart.mockResolvedValue(fakeMakeCartResponse);
 
     // const mockMutate = jest.fn().mockResolvedValue(fakeMakeCartResponse);

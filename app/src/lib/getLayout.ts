@@ -1,6 +1,6 @@
 import { defaultLayout } from "./constants";
 import { hasOwnProperty } from "./helpers";
-import { Doc } from "./prepareChart";
+import { Doc } from "./useDoc";
 
 /**
  * Reads what's stored in the doc.meta.layout option

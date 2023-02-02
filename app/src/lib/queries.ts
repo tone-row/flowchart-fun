@@ -1,4 +1,3 @@
-import { t } from "@lingui/macro";
 import { PostgrestError } from "@supabase/supabase-js";
 import { useContext } from "react";
 import { QueryClient, useQuery } from "react-query";
@@ -6,6 +5,7 @@ import Stripe from "stripe";
 
 import { AppContext, UserSettings } from "../components/AppContext";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "./constants";
+import { getDefaultChart } from "./getDefaultChart";
 import { supabase } from "./supabaseClient";
 
 export const queryClient = new QueryClient();
@@ -146,25 +146,6 @@ export function useOrderHistory(customerId?: string, subscriptionId?: string) {
   );
 }
 
-export function getDefaultText() {
-  const defaultText = `${t`This app works by typing`}
-  ${t`Indenting creates a link to the current line`}
-  ${t`any text: before a colon creates a label`}
-  ${t`Create a link directly using the exact label text`}
-    ${t`like this: (This app works by typing)`}
-    ${t`[custom ID] or`}
-      ${t`by adding an %5BID%5D and referencing that`}
-        ${t`like this: (custom ID) // You can also use single-line comments`}
-/*
-${t`or`}
-${t`multiline`}
-${t`comments`}
-
-${t`Have fun! 🎉`}
-*/`;
-  return defaultText;
-}
-
 export async function makeChart({
   name,
   user_id,
@@ -175,7 +156,7 @@ export async function makeChart({
   chart?: string;
 }) {
   if (!supabase) return;
-  const defaultText = getDefaultText();
+  const defaultText = getDefaultChart();
 
   return await supabase
     .from("user_charts")

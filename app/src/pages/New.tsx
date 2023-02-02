@@ -5,14 +5,14 @@ import { useHistory, useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
+import { getDefaultChart } from "../lib/getDefaultChart";
 import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
-import { useDefaultDoc } from "../lib/useDefaultDoc";
 import { Type } from "../slang";
 
 export const New = memo(function New() {
-  const defaultDoc = useDefaultDoc();
+  const defaultDoc = getDefaultChart();
   const { graphText = window.location.hash.slice(1) } = useParams<{
     graphText: string;
   }>();

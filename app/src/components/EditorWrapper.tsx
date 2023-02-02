@@ -3,7 +3,7 @@ import { Export } from "phosphor-react";
 import { useContext } from "react";
 
 import { useIsReadOnly } from "../lib/hooks";
-import { useDocDetails } from "../lib/prepareChart";
+import { useDocDetails } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { CloneButton } from "./CloneButton";

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { editorOptions } from "../../lib/constants";
 import { useLightOrDarkMode } from "../../lib/hooks";
-import { useDoc } from "../../lib/prepareChart";
+import { useDoc } from "../../lib/useDoc";
 import { Button } from "../Shared";
 
 export function EditMetaTab() {

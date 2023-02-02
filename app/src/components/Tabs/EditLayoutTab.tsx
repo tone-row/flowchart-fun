@@ -7,7 +7,7 @@ import { getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
-import { useDoc } from "../../lib/prepareChart";
+import { useDoc } from "../../lib/useDoc";
 import styles from "./EditLayoutTab.module.css";
 import {
   CustomSelect,
