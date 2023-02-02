@@ -5,6 +5,7 @@ import Stripe from "stripe";
 
 import { AppContext, UserSettings } from "../components/AppContext";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "./constants";
+import { getDefaultChart } from "./getDefaultChart";
 import { getDefaultText } from "./getDefaultText";
 import { supabase } from "./supabaseClient";
 
@@ -156,7 +157,7 @@ export async function makeChart({
   chart?: string;
 }) {
   if (!supabase) return;
-  const defaultText = getDefaultText();
+  const defaultText = getDefaultChart();
 
   return await supabase
     .from("user_charts")

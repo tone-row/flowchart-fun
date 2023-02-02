@@ -2,19 +2,10 @@ import { t } from "@lingui/macro";
 
 export function getDefaultText() {
   const defaultText = `${t`This app works by typing`}
-  ${t`Indenting creates a link to the current line`}
+  ${t`Indenting creates an edge`}
   ${t`any text: before a colon creates a label`}
-  ${t`Create a link directly using the exact label text`}
-    ${t`like this: (This app works by typing)`}
-    ${t`[custom ID] or`}
-      ${t`by adding an %5BID%5D and referencing that`}
-        ${t`like this: (custom ID) // You can also use single-line comments`}
-/*
-${t`or`}
-${t`multiline`}
-${t`comments`}
-
-${t`Have fun! 🎉`}
-*/`;
+    ${t`Click on \n⟨⟩ Syntax Reference\nto learn more .blue.border-none.roundrectangle[w=100][h=70]`}
+  ${t`You can also wrap text in "\( \)" to create an edge`}
+    ${t`(before a colon creates a label)`}`;
   return defaultText;
 }
