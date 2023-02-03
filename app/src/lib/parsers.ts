@@ -4,7 +4,7 @@ import { parse, toCytoscapeElements } from "graph-selector";
 import { TGetSize } from "./getGetSize";
 import { SelectOption } from "./graphOptions";
 import { parseText } from "./parseText";
-import { useDoc } from "./prepareChart";
+import { useDoc } from "./useDoc";
 import { stripComments } from "./utils";
 
 /** Recognized names for support parsers */

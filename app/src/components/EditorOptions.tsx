@@ -3,7 +3,7 @@ import produce from "immer";
 import React, { ReactNode } from "react";
 
 import { parsers, useParser } from "../lib/parsers";
-import { useDoc } from "../lib/prepareChart";
+import { useDoc } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import styles from "./EditorOptions.module.css";
 import { SyntaxReference } from "./SyntaxReference";

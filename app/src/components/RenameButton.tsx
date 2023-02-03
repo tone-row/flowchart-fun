@@ -6,9 +6,9 @@ import { useHistory } from "react-router-dom";
 
 import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
-import { docToString, useDoc, useDocDetails } from "../lib/prepareChart";
 import { makeChart, renameChart } from "../lib/queries";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
+import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import { useSession } from "./AppContext";
 import {

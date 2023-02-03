@@ -29,17 +29,21 @@ msgstr "$ 30 / ano"
 msgid "$30.00/year (save 20%)"
 msgstr "US$ 30,00/ano (economize 20%)"
 
+#: src/lib/getDefaultText.ts:9
+msgid "(before a colon creates a label)"
+msgstr "(antes de dois pontos cria uma etiqueta)"
+
 #: src/pages/Charts.tsx:351
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Acesse os diagramas de qualquer lugar.<0/>Compartilhe/incorpore diagramas que ficam em sincronização com suas edições."
 
-#: src/components/SharedHeader.tsx:171
-#: src/components/SharedHeader.tsx:395
+#: src/components/Header.tsx:173
+#: src/components/Header.tsx:397
 msgid "Account"
 msgstr "Conta"
 
-#: src/pages/Edit.tsx:92
-#: src/pages/EditHosted.tsx:87
+#: src/pages/Edit.tsx:93
+#: src/pages/EditHosted.tsx:88
 msgid "Advanced"
 msgstr "Avançado"
 
@@ -81,11 +85,15 @@ msgstr "Fundo"
 msgid "Become a Sponsor"
 msgstr "Torne-se um(a) patrocinador(a)"
 
-#: src/components/SharedHeader.tsx:142
-#: src/components/SharedHeader.tsx:371
+#: src/components/Header.tsx:144
+#: src/components/Header.tsx:373
 #: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "Blog"
+
+#: src/components/GraphContextMenu.tsx:333
+msgid "Border"
+msgstr ""
 
 #: src/lib/graphOptions.ts:36
 #: src/lib/graphOptions.ts:43
@@ -116,14 +124,14 @@ msgstr "Cancele sua inscrição. Seus diagramas hospedados não serão modificá
 msgid "Change Email Address"
 msgstr "Mude o endereço de email"
 
-#: src/components/SharedHeader.tsx:150
-#: src/components/SharedHeader.tsx:377
+#: src/components/Header.tsx:152
+#: src/components/Header.tsx:379
 #: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "Registro de alterações"
 
-#: src/components/SharedHeader.tsx:88
-#: src/components/SharedHeader.tsx:350
+#: src/components/Header.tsx:90
+#: src/components/Header.tsx:352
 msgid "Charts"
 msgstr "Diagramas"
 
@@ -157,6 +165,10 @@ msgstr "Apagar"
 msgid "Clear text?"
 msgstr "Limpar o texto?"
 
+#: src/lib/getDefaultText.ts:7
+msgid "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]"
+msgstr "Clique em \\n⟨⟩ Referência de sintaxe\\npara saber mais .blue.border-none.ellipse[w=120][h=70]"
+
 #: src/components/CloneButton.tsx:27
 msgid "Clone"
 msgstr "Clonar"
@@ -164,6 +176,10 @@ msgstr "Clonar"
 #: src/components/Shared.tsx:170
 msgid "Close"
 msgstr "Fechar"
+
+#: src/components/GraphContextMenu.tsx:189
+msgid "Color"
+msgstr ""
 
 #: src/components/SyntaxReference.tsx:251
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
@@ -189,7 +205,8 @@ msgstr ""
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr ""
 
-#: src/components/RenameButton.tsx:139
+#: src/components/MightLoseSponsorTrigger.tsx:63
+#: src/components/RenameButton.tsx:131
 msgid "Convert to hosted chart?"
 msgstr "Converter em diagrama hospedado?"
 
@@ -202,11 +219,11 @@ msgstr "Converter em diagrama hospedado?"
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/components/GraphContextMenu.tsx:99
+#: src/components/GraphContextMenu.tsx:120
 msgid "Copy PNG Image"
 msgstr "Copiar imagem PNG"
 
-#: src/components/GraphContextMenu.tsx:76
+#: src/components/GraphContextMenu.tsx:97
 msgid "Copy SVG Code"
 msgstr "Copiar código SVG"
 
@@ -215,11 +232,6 @@ msgstr "Copiar código SVG"
 #: src/pages/Charts.tsx:369
 msgid "Create"
 msgstr "Criar"
-
-#: src/lib/queries.ts:153
-#: src/lib/useDefaultDoc.ts:7
-msgid "Create a link directly using the exact label text"
-msgstr "Crie uma conexão direta usando exatamente o mesmo texto da etiqueta"
 
 #: src/pages/Charts.tsx:601
 msgid "Created"
@@ -277,13 +289,13 @@ msgstr "Você deseja cancelar sua inscrição?"
 msgid "Do you want to delete this?"
 msgstr "Você deseja deletar isso?"
 
-#: src/pages/Edit.tsx:73
-#: src/pages/EditHosted.tsx:77
+#: src/pages/Edit.tsx:74
+#: src/pages/EditHosted.tsx:78
 msgid "Document"
 msgstr "Documento"
 
-#: src/components/SharedHeader.tsx:108
-#: src/components/SharedHeader.tsx:356
+#: src/components/Header.tsx:110
+#: src/components/Header.tsx:358
 msgid "Documentation"
 msgstr "Documentação"
 
@@ -291,15 +303,15 @@ msgstr "Documentação"
 msgid "Download"
 msgstr "Baixar"
 
-#: src/components/GraphContextMenu.tsx:42
+#: src/components/GraphContextMenu.tsx:63
 msgid "Download JPG"
 msgstr "Baixar JPG"
 
-#: src/components/GraphContextMenu.tsx:33
+#: src/components/GraphContextMenu.tsx:54
 msgid "Download PNG"
 msgstr "Baixar PNG"
 
-#: src/components/GraphContextMenu.tsx:51
+#: src/components/GraphContextMenu.tsx:72
 msgid "Download SVG"
 msgstr "Baixar SVG"
 
@@ -324,7 +336,7 @@ msgstr ""
 msgid "Edge Label"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:291
+#: src/components/SyntaxReference.tsx:289
 msgid "Edge Style"
 msgstr ""
 
@@ -336,7 +348,7 @@ msgstr ""
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:294
+#: src/components/SyntaxReference.tsx:292
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr ""
 
@@ -344,9 +356,9 @@ msgstr ""
 msgid "Editable"
 msgstr "Editável"
 
+#: src/components/Header.tsx:82
+#: src/components/Header.tsx:346
 #: src/components/MobileTabToggle.tsx:21
-#: src/components/SharedHeader.tsx:80
-#: src/components/SharedHeader.tsx:344
 msgid "Editor"
 msgstr "Editor"
 
@@ -369,7 +381,8 @@ msgstr "Insira um título"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:58
+#: src/components/EditorWrapper.tsx:62
+#: src/components/EditorWrapper.tsx:67
 #: src/components/ShareDialog.tsx:43
 #: src/components/ShareDialog.tsx:99
 msgid "Export"
@@ -380,13 +393,17 @@ msgstr "Exportar"
 msgid "Export to Common Image Formats"
 msgstr "Exportar para formatos de imagem comuns"
 
+#: src/components/GraphContextMenu.tsx:162
+msgid "Extra Large"
+msgstr ""
+
 #: src/components/Feedback.tsx:74
-#: src/components/SharedHeader.tsx:116
-#: src/components/SharedHeader.tsx:363
+#: src/components/Header.tsx:118
+#: src/components/Header.tsx:365
 msgid "Feedback"
 msgstr "Feedback"
 
-#: src/components/GraphFloatingMenu.tsx:46
+#: src/components/GraphFloatingMenu.tsx:48
 msgid "Fit Graph"
 msgstr ""
 
@@ -422,16 +439,12 @@ msgstr "Diagrama"
 msgid "Grid"
 msgstr "Grade"
 
-#: src/lib/queries.ts:163
-#: src/lib/useDefaultDoc.ts:17
-msgid "Have fun! 🎉"
-msgstr "Divirta-se! 🎉"
-
-#: src/components/MightLoseWarning.tsx:26
+#: src/components/MightLoseSponsorTrigger.tsx:48
+#: src/components/MightLoseWarning.tsx:30
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "Atenção! Antes de limpar o cache, lembre-se de que este documento não está salvo na nuvem."
 
-#: src/components/SharedHeader.tsx:97
+#: src/components/Header.tsx:99
 msgid "Help"
 msgstr "Ajuda"
 
@@ -452,12 +465,15 @@ msgstr "Diagramas hospedados"
 msgid "ID's"
 msgstr ""
 
-#: src/lib/queries.ts:151
-#: src/lib/useDefaultDoc.ts:5
-msgid "Indenting creates a link to the current line"
-msgstr "Indentando cria uma conexão para com a linha atual"
+#: src/components/SyntaxReference.tsx:338
+msgid "Images"
+msgstr ""
 
-#: src/components/SharedHeader.tsx:131
+#: src/lib/getDefaultText.ts:5
+msgid "Indenting creates an edge"
+msgstr "O recuo cria um link"
+
+#: src/components/Header.tsx:133
 msgid "Info"
 msgstr "Informações"
 
@@ -465,9 +481,13 @@ msgstr "Informações"
 msgid "Language"
 msgstr "Idioma"
 
+#: src/components/GraphContextMenu.tsx:157
+msgid "Large"
+msgstr ""
+
 #: src/components/Tabs/EditLayoutTab.tsx:69
-#: src/pages/Edit.tsx:78
-#: src/pages/EditHosted.tsx:80
+#: src/pages/Edit.tsx:79
+#: src/pages/EditHosted.tsx:81
 msgid "Layout"
 msgstr "Layout"
 
@@ -483,7 +503,7 @@ msgstr "Leiautes e Temas"
 msgid "Leading References"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:53
+#: src/components/MightLoseWarning.tsx:58
 #: src/pages/Charts.tsx:734
 msgid "Learn More"
 msgstr "Saber mais"
@@ -510,7 +530,7 @@ msgstr "Link"
 msgid "Local Charts"
 msgstr "Diagramas locais"
 
-#: src/components/SharedHeader.tsx:189
+#: src/components/Header.tsx:191
 msgid "Log In"
 msgstr "Acessar"
 
@@ -529,6 +549,10 @@ msgstr "Faça uma doação"
 #: src/components/ShareDialog.tsx:289
 msgid "Make publicly accessible"
 msgstr "Tornar publicamente acessível"
+
+#: src/components/GraphContextMenu.tsx:153
+msgid "Medium"
+msgstr ""
 
 #: src/lib/graphOptions.ts:51
 msgid "Monospace"
@@ -559,8 +583,8 @@ msgstr "Nome"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Preciso de ajuda? <0>Confira nossa documentação.</0>"
 
-#: src/components/SharedHeader.tsx:72
-#: src/components/SharedHeader.tsx:338
+#: src/components/Header.tsx:74
+#: src/components/Header.tsx:340
 msgid "New"
 msgstr "Novo"
 
@@ -573,7 +597,11 @@ msgstr "Novo Email"
 msgid "Next charge"
 msgstr "Próxima cobrança"
 
-#: src/components/SyntaxReference.tsx:304
+#: src/components/GraphContextMenu.tsx:182
+msgid "Node"
+msgstr ""
+
+#: src/components/SyntaxReference.tsx:302
 msgid "Node Border Style"
 msgstr ""
 
@@ -593,7 +621,7 @@ msgstr ""
 msgid "Node Shapes"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:307
+#: src/components/SyntaxReference.tsx:305
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
 
@@ -609,8 +637,8 @@ msgstr "Planos"
 msgid "Playbook"
 msgstr "Cartilha"
 
-#: src/components/SharedHeader.tsx:180
-#: src/components/SharedHeader.tsx:403
+#: src/components/Header.tsx:182
+#: src/components/Header.tsx:405
 msgid "Pricing"
 msgstr "Preços"
 
@@ -624,7 +652,7 @@ msgstr "Público"
 msgid "Random"
 msgstr "Aleatório"
 
-#: src/components/EditorWrapper.tsx:51
+#: src/components/EditorWrapper.tsx:53
 #: src/components/ShareDialog.tsx:92
 msgid "Read-only"
 msgstr "Somente leitura"
@@ -661,18 +689,19 @@ msgstr ""
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:39
+#: src/components/MightLoseWarning.tsx:43
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 msgstr "Lembre que este documento só será salvo neste computador. Caso queira uma maneira de armazenar documentos e acessá-los de onde quer que você esteja, experimente nosso plano Pro com hospedagem ilimitada de gráficos e muito mais! Por apenas US$ 3/mês!"
 
-#: src/components/RenameButton.tsx:103
-#: src/components/RenameButton.tsx:104
-#: src/components/RenameButton.tsx:110
+#: src/components/RenameButton.tsx:91
+#: src/components/RenameButton.tsx:92
+#: src/components/RenameButton.tsx:98
+#: src/components/RenameButton.tsx:108
 #: src/components/RenameButton.tsx:120
-#: src/components/RenameButton.tsx:129
 msgid "Rename"
 msgstr "Renomear"
 
+#: src/components/GraphFloatingMenu.tsx:52
 #: src/pages/Charts.tsx:237
 #: src/pages/Charts.tsx:246
 msgid "Reset"
@@ -698,8 +727,8 @@ msgstr "Retornar"
 msgid "Right to Left"
 msgstr "Da direita para esquerda"
 
-#: src/components/SharedHeader.tsx:157
-#: src/components/SharedHeader.tsx:383
+#: src/components/Header.tsx:159
+#: src/components/Header.tsx:385
 #: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
 msgstr "Roteiro"
@@ -712,10 +741,14 @@ msgstr "Salvar"
 msgid "Say goodbye to tedious flowchart creation"
 msgstr "Diga adeus à entediante criação de fluxogramas"
 
-#: src/components/SharedHeader.tsx:164
-#: src/components/SharedHeader.tsx:388
+#: src/components/Header.tsx:166
+#: src/components/Header.tsx:390
 msgid "Settings"
 msgstr "Configurações"
+
+#: src/components/GraphContextMenu.tsx:239
+msgid "Shape"
+msgstr ""
 
 #: src/pages/Sponsor.tsx:86
 #: src/pages/Sponsor.tsx:100
@@ -723,7 +756,7 @@ msgid "Shape Libraries"
 msgstr "Bibliotecas de Formas"
 
 #: src/components/SyntaxReference.tsx:264
-msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
+msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
 
 #: src/pages/Sponsor.tsx:106
@@ -742,6 +775,14 @@ msgstr "Inscreva-se"
 #: src/pages/Sponsor.tsx:287
 msgid "Sign Up Now"
 msgstr "Cadastre-se Agora"
+
+#: src/components/GraphContextMenu.tsx:294
+msgid "Size"
+msgstr ""
+
+#: src/components/GraphContextMenu.tsx:148
+msgid "Small"
+msgstr ""
 
 #: src/components/SyntaxReference.tsx:243
 msgid "Some classes are available to help style your flowchart"
@@ -780,17 +821,25 @@ msgstr ""
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Agilize seu fluxo de trabalho e simplifique a visualização do processo com o Flowchart Fun"
 
-#: src/pages/Edit.tsx:83
-#: src/pages/EditHosted.tsx:83
+#: src/pages/Edit.tsx:84
+#: src/pages/EditHosted.tsx:84
 msgid "Style"
 msgstr "Estilo"
+
+#: src/components/SyntaxReference.tsx:317
+msgid "Style Attributes"
+msgstr ""
 
 #: src/components/SyntaxReference.tsx:240
 msgid "Style Classes"
 msgstr ""
 
+#: src/components/SyntaxReference.tsx:320
+msgid "Style attributes can be used to style nodes and edges"
+msgstr ""
+
 #: src/components/Feedback.tsx:106
-#: src/components/RenameButton.tsx:158
+#: src/components/RenameButton.tsx:160
 msgid "Submit"
 msgstr "Enviar"
 
@@ -811,7 +860,7 @@ msgstr "Sintaxe"
 msgid "Syntax Reference"
 msgstr "Referência de sintaxe"
 
-#: src/components/SyntaxReference.tsx:278
+#: src/components/SyntaxReference.tsx:276
 msgid "Text Sizes"
 msgstr ""
 
@@ -823,7 +872,7 @@ msgstr ""
 msgid "Text on a line creates a node with the text as the label"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:281
+#: src/components/SyntaxReference.tsx:279
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr ""
 
@@ -839,8 +888,7 @@ msgstr "Tema"
 msgid "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these."
 msgstr "Estes diagramas estão apenas disponíveis nesse navegador desse dispositivo.<0/>Limpando o local storage do seu navegador, irá apagá-los."
 
-#: src/lib/queries.ts:150
-#: src/lib/useDefaultDoc.ts:4
+#: src/lib/getDefaultText.ts:4
 msgid "This app works by typing"
 msgstr "Este aplicativo funciona por digitação"
 
@@ -883,6 +931,14 @@ msgstr "Atualizado"
 msgid "Use classes to group nodes"
 msgstr ""
 
+#: src/components/SyntaxReference.tsx:341
+msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
+msgstr ""
+
+#: src/components/SyntaxReference.tsx:328
+msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
+msgstr ""
+
 #: src/components/SponsorDashboard.tsx:141
 msgid "Use the customer portal to change your billing information."
 msgstr "Use o portal do cliente para alterar suas informações de cobrança."
@@ -911,59 +967,31 @@ msgstr "Como você gostaria de chamar essa cópia?"
 msgid "What would you like to share with us?"
 msgstr "O que você deseja compartilhar com a gente?"
 
+#: src/components/SyntaxReference.tsx:325
+msgid "Width and Height"
+msgstr ""
+
 #: src/pages/Sponsor.tsx:118
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "Com a capacidade de criar gráficos hospedados ilimitados, você pode acessar e trabalhar os seus fluxogramas de qualquer dispositivo, em qualquer lugar."
+
+#: src/lib/getDefaultText.ts:8
+msgid "You can also wrap text in \"\\( \\)\" to create an edge"
+msgstr "Você também pode quebrar o texto dentro de \"\\( \\)\" para criar um link"
 
 #: src/components/SponsorDashboard.tsx:197
 #: src/pages/Charts.tsx:375
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um(a) patrocinador(a)."
 
-#: src/components/GraphFloatingMenu.tsx:40
+#: src/components/GraphFloatingMenu.tsx:42
 msgid "Zoom In"
 msgstr ""
 
-#: src/components/GraphFloatingMenu.tsx:35
+#: src/components/GraphFloatingMenu.tsx:37
 msgid "Zoom Out"
 msgstr ""
 
-#: src/lib/queries.ts:155
-#: src/lib/useDefaultDoc.ts:9
-msgid "[custom ID] or"
-msgstr "[ID customizada] ou"
-
-#: src/lib/queries.ts:152
-#: src/lib/useDefaultDoc.ts:6
+#: src/lib/getDefaultText.ts:6
 msgid "any text: before a colon creates a label"
 msgstr "qualquer texto: antes de dois pontos cria uma etiqueta"
-
-#: src/lib/queries.ts:156
-#: src/lib/useDefaultDoc.ts:10
-msgid "by adding an %5BID%5D and referencing that"
-msgstr "adicionando uma %5BID%5D e referenciando esta"
-
-#: src/lib/queries.ts:161
-#: src/lib/useDefaultDoc.ts:15
-msgid "comments"
-msgstr "comentários"
-
-#: src/lib/queries.ts:154
-#: src/lib/useDefaultDoc.ts:8
-msgid "like this: (This app works by typing)"
-msgstr "tipo assim: (Este aplicativo funciona por digitação)"
-
-#: src/lib/queries.ts:157
-#: src/lib/useDefaultDoc.ts:11
-msgid "like this: (custom ID) // You can also use single-line comments"
-msgstr "tipo assim: (ID customizada) // Você pode também usar comentários de uma linha só"
-
-#: src/lib/queries.ts:160
-#: src/lib/useDefaultDoc.ts:14
-msgid "multiline"
-msgstr "multilinha"
-
-#: src/lib/queries.ts:159
-#: src/lib/useDefaultDoc.ts:13
-msgid "or"
-msgstr "ou"

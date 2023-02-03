@@ -3,7 +3,7 @@ import { FaCopy } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 
 import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
-import { docToString, useDoc } from "../lib/prepareChart";
+import { docToString, useDoc } from "../lib/useDoc";
 import { Type } from "../slang";
 import styles from "./EditorWrapper.module.css";
 

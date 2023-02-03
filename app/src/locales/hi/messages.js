@@ -4,6 +4,7 @@
     "$3.00/month": "$3.00/महीना",
     "$30 / Year": "$30 / वर्ष",
     "$30.00/year (save 20%)": "$30.00/वर्ष (20% बचाएं)",
+    "(before a colon creates a label)": "(कॉलन से पहले एक लेबल बनाता है)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों.",
     Account: "खाता",
@@ -23,6 +24,7 @@
     Background: "पृष्ठभूमि",
     "Become a Sponsor": "एक प्रायोजक बनें",
     Blog: "ब्लॉग",
+    Border: "Border",
     "Bottom to Top": "नीचे से शीर्ष तक",
     Breadthfirst: "चौड़ाई पहले",
     Cancel: "रद्द करें",
@@ -40,8 +42,11 @@
     Clay: "मिट्टी",
     Clear: "साफ़",
     "Clear text?": "पाठ साफ़ करें?",
+    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
+      "अधिक जानने के लिए सिंटैक्स संदर्भ पर क्लिक करें .blue.border-none.roundrectangle[w=100][h=70]",
     Clone: "क्लोन करें",
     Close: "बंद करें",
+    Color: "Color",
     "Colors include red, orange, yellow, blue, purple, black, white, and gray.":
       "Colors include red, orange, yellow, blue, purple, black, white, and gray.",
     "Comic Book": "कॉमिक बुक",
@@ -55,8 +60,6 @@
     "Copy PNG Image": "PNG छवि कॉपी करें",
     "Copy SVG Code": "SVG कोड कॉपी करें",
     Create: "बनाएँ",
-    "Create a link directly using the exact label text":
-      "सही लेबल टेक्स्ट का उपयोग करके सीधे लिंक बनाएं",
     Created: "बनाया गया",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
@@ -99,6 +102,7 @@
     Excalidraw: "Excalidraw",
     Export: "एक्सपोर्ट करें",
     "Export to Common Image Formats": "कॉमन इमेज फॉर्मेट में एक्सपोर्ट करें",
+    "Extra Large": "Extra Large",
     Feedback: "फ़ीडबैक",
     "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
@@ -110,7 +114,6 @@
     "Get More Themes": "ज़्यादा थीम पाएं",
     Graph: "ग्राफ़",
     Grid: "ग्रिड",
-    "Have fun! 🎉": "मज़े करो! 🎉",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
       "ध्यान दें! इससे पहले कि आप अपना कैश क्लियर करें, याद रखें कि यह डॉक्यूमेंट क्लाउड में सेव नहीं किया गया है। ",
     Help: "मदद",
@@ -118,10 +121,11 @@
     Home: "होम",
     "Hosted Charts": "होस्ट किए गए चार्ट",
     "ID's": "ID's",
-    "Indenting creates a link to the current line":
-      "इंडेंटिंग वर्तमान लाइन का लिंक बनाता है",
+    Images: "Images",
+    "Indenting creates an edge": "इंडेंटिंग एक बढ़त बनाता है",
     Info: "जानकारी",
     Language: "भाषा",
+    Large: "Large",
     Layout: "ख़ाका",
     "Layout is Frozen": "लेआउट जम गया है",
     "Layouts and Themes": "लेआउट और थीम्स",
@@ -137,6 +141,7 @@
     "Made by <0>Tone Row</0>": "<0>Tone Row</0> द्वारा बना",
     "Make a Donation": "दान करें",
     "Make publicly accessible": "सार्वजनिक रूप से एक्सेस दें",
+    Medium: "Medium",
     Monospace: "Monospace",
     Monthly: "मासिक",
     "More Layouts": "ज़्यादा लेआउट",
@@ -148,6 +153,7 @@
     New: "नया",
     "New Email": "नई ईमेल",
     "Next charge": "अगला चार्ज",
+    Node: "Node",
     "Node Border Style": "Node Border Style",
     "Node Colors": "Node Colors",
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
@@ -187,14 +193,17 @@
     "Say goodbye to tedious flowchart creation":
       "थकाने वाले फ्लोचार्ट क्रिएशन को कहें बॉय-बॉय",
     Settings: "सेटिंग",
+    Shape: "Shape",
     "Shape Libraries": "शेप लाइब्रेरी",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
+    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
+      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "पूरे एक्सेस के साथ शेयर करें , सिर्फ एडिट करें , या व्यू ओनली की अनुमति",
     "Sign In": "साइन इन करें",
     "Sign Up": "साइन अप",
     "Sign Up Now": "अभी साइन अप करें",
+    Size: "Size",
+    Small: "Small",
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
@@ -210,7 +219,10 @@
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन",
     Style: "शैली",
+    "Style Attributes": "Style Attributes",
     "Style Classes": "Style Classes",
+    "Style attributes can be used to style nodes and edges":
+      "Style attributes can be used to style nodes and edges",
     Submit: "भेजना",
     Subscription: "सदस्यता",
     "Subscription will end": "सदस्यता समाप्त हो जाएगी",
@@ -238,6 +250,10 @@
     "Update Email": "ईमेल अपडेट करें",
     Updated: "अपडेट किया गया",
     "Use classes to group nodes": "Use classes to group nodes",
+    "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.":
+      "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.",
+    "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.":
+      "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.",
     "Use the customer portal to change your billing information.":
       "अपनी बिलिंग जानकारी बदलने के लिए ग्राहक पोर्टल का उपयोग करें।",
     User: "यूज़र",
@@ -250,23 +266,16 @@
       "क्या आप इस कॉपी को नाम देना चाहेंगे?",
     "What would you like to share with us?":
       "आप हमारे साथ क्या शेयर करना चाहेंगे?",
+    "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।",
+    'You can also wrap text in "\\( \\)" to create an edge':
+      'किनारे बनाने के लिए आप टेक्स्ट को "\\( \\)" में भी रैप कर सकते हैं',
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें.",
     "Zoom In": "Zoom In",
     "Zoom Out": "Zoom Out",
-    "[custom ID] or": "[कस्टम ID] या",
     "any text: before a colon creates a label":
       "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है",
-    "by adding an %5BID%5D and referencing that":
-      "एक %5BID%5D जोड़कर संदर्भित है और उस",
-    comments: "कमेंट को",
-    "like this: (This app works by typing)":
-      "इस तरह: (यह ऐप टाइप द्वारा काम करता है)",
-    "like this: (custom ID) // You can also use single-line comments":
-      "इस तरह: (कस्टम ID) // आप सिंगल-लाइन टिप्पणियों का भी उपयोग कर सकते हैं",
-    multiline: "एक से अधिक लाइन",
-    or: "या",
   },
 };

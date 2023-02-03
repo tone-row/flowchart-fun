@@ -5,7 +5,7 @@ import { CloneButton } from "../components/CloneButton";
 import Graph from "../components/Graph";
 import GraphWrapper from "../components/GraphWrapper";
 import styles from "../components/Main.module.css";
-import { prepareChart } from "../lib/prepareChart";
+import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { getPublicChart } from "../lib/queries";
 
 const shouldResize = 0;

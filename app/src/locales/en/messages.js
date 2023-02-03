@@ -4,6 +4,7 @@
     "$3.00/month": "$3.00/month",
     "$30 / Year": "$30 / Year",
     "$30.00/year (save 20%)": "$30.00/year (save 20%)",
+    "(before a colon creates a label)": "(before a colon creates a label)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.",
     Account: "Account",
@@ -22,6 +23,7 @@
     Background: "Background",
     "Become a Sponsor": "Become a Sponsor",
     Blog: "Blog",
+    Border: "Border",
     "Bottom to Top": "Bottom to Top",
     Breadthfirst: "Breadthfirst",
     Cancel: "Cancel",
@@ -39,8 +41,11 @@
     Clay: "Clay",
     Clear: "Clear",
     "Clear text?": "Clear text?",
+    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
+      "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]",
     Clone: "Clone",
     Close: "Close",
+    Color: "Color",
     "Colors include red, orange, yellow, blue, purple, black, white, and gray.":
       "Colors include red, orange, yellow, blue, purple, black, white, and gray.",
     "Comic Book": "Comic Book",
@@ -54,8 +59,6 @@
     "Copy PNG Image": "Copy PNG Image",
     "Copy SVG Code": "Copy SVG Code",
     Create: "Create",
-    "Create a link directly using the exact label text":
-      "Create a link directly using the exact label text",
     Created: "Created",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
@@ -98,6 +101,7 @@
     Excalidraw: "Excalidraw",
     Export: "Export",
     "Export to Common Image Formats": "Export to Common Image Formats",
+    "Extra Large": "Extra Large",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
     "Flowchart Fun makes it quick and easy to visually communicate your processes.":
@@ -109,7 +113,6 @@
     "Get More Themes": "Get More Themes",
     Graph: "Graph",
     Grid: "Grid",
-    "Have fun! 🎉": "Have fun! 🎉",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
       "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "Help",
@@ -117,10 +120,11 @@
     Home: "Home",
     "Hosted Charts": "Hosted Charts",
     "ID's": "ID's",
-    "Indenting creates a link to the current line":
-      "Indenting creates a link to the current line",
+    Images: "Images",
+    "Indenting creates an edge": "Indenting creates an edge",
     Info: "Info",
     Language: "Language",
+    Large: "Large",
     Layout: "Layout",
     "Layout is Frozen": "Layout is Frozen",
     "Layouts and Themes": "Layouts and Themes",
@@ -136,6 +140,7 @@
     "Made by <0>Tone Row</0>": "Made by <0>Tone Row</0>",
     "Make a Donation": "Make a Donation",
     "Make publicly accessible": "Make publicly accessible",
+    Medium: "Medium",
     Monospace: "Monospace",
     Monthly: "Monthly",
     "More Layouts": "More Layouts",
@@ -147,6 +152,7 @@
     New: "New",
     "New Email": "New Email",
     "Next charge": "Next charge",
+    Node: "Node",
     "Node Border Style": "Node Border Style",
     "Node Colors": "Node Colors",
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
@@ -186,14 +192,17 @@
     "Say goodbye to tedious flowchart creation":
       "Say goodbye to tedious flowchart creation",
     Settings: "Settings",
+    Shape: "Shape",
     "Shape Libraries": "Shape Libraries",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, round-triangle, round-diamond, round-pentagon, round-hexagon, round-heptagon, round-octagon, round-tag, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
+    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
+      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "Share with Full Access, Edit-only, or View-only Permissions",
     "Sign In": "Sign In",
     "Sign Up": "Sign Up",
     "Sign Up Now": "Sign Up Now",
+    Size: "Size",
+    Small: "Small",
     "Some classes are available to help style your flowchart":
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
@@ -209,7 +218,10 @@
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Streamline your workflow and simplify your process visualization with Flowchart Fun",
     Style: "Style",
+    "Style Attributes": "Style Attributes",
     "Style Classes": "Style Classes",
+    "Style attributes can be used to style nodes and edges":
+      "Style attributes can be used to style nodes and edges",
     Submit: "Submit",
     Subscription: "Subscription",
     "Subscription will end": "Subscription will end",
@@ -237,6 +249,10 @@
     "Update Email": "Update Email",
     Updated: "Updated",
     "Use classes to group nodes": "Use classes to group nodes",
+    "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.":
+      "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.",
+    "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.":
+      "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.",
     "Use the customer portal to change your billing information.":
       "Use the customer portal to change your billing information.",
     User: "User",
@@ -249,23 +265,16 @@
       "What would you like to name this copy?",
     "What would you like to share with us?":
       "What would you like to share with us?",
+    "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.",
+    'You can also wrap text in "\\( \\)" to create an edge':
+      'You can also wrap text in "\\( \\)" to create an edge',
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
     "Zoom In": "Zoom In",
     "Zoom Out": "Zoom Out",
-    "[custom ID] or": "[custom ID] or",
     "any text: before a colon creates a label":
       "any text: before a colon creates a label",
-    "by adding an %5BID%5D and referencing that":
-      "by adding an %5BID%5D and referencing that",
-    comments: "comments",
-    "like this: (This app works by typing)":
-      "like this: (This app works by typing)",
-    "like this: (custom ID) // You can also use single-line comments":
-      "like this: (custom ID) // You can also use single-line comments",
-    multiline: "multiline",
-    or: "or",
   },
 };

@@ -1,8 +1,8 @@
 import create from "zustand";
 
-import { useDoc } from "./prepareChart";
 import { Theme } from "./themes/constants";
 import original from "./themes/original";
+import { useDoc } from "./useDoc";
 
 export type GraphThemes =
   | "original"

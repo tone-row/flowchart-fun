@@ -9,7 +9,8 @@ import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
 import { TextEditor } from "../components/TextEditor";
-import { prepareChart, useDoc } from "../lib/prepareChart";
+import { prepareChart } from "../lib/prepareChart/prepareChart";
+import { useDoc } from "../lib/useDoc";
 
 function ReadOnly() {
   const { path } = useRouteMatch();

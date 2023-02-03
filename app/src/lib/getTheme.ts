@@ -1,7 +1,7 @@
 import { StylesheetStyle } from "cytoscape";
 
 import { defaultGraphTheme, GraphThemes } from "./graphThemes";
-import { useDoc } from "./prepareChart";
+import { useDoc } from "./useDoc";
 
 /**
  * Get the theme from the document metadata.
