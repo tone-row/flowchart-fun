@@ -93,3 +93,7 @@
   color: var(--color-edgeHover);
   font-weight: 700;
 }
+
+.WorkspaceTitle {
+  letter-spacing: -0.025em;
+}
