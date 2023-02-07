@@ -57,7 +57,8 @@ export const Header = memo(function SharedHeader() {
     !isHelpPage &&
     !isSettingsPage &&
     !isAccountPage &&
-    !isInfoPage;
+    !isInfoPage &&
+    !isLogInPage;
   const isValidCustomer = useIsValidCustomer();
   const lastChart = useLastChart((state) => state.lastChart);
   return (
@@ -209,6 +210,7 @@ export const Header = memo(function SharedHeader() {
         isChangelogPage={isChangelogPage}
         isRoadmapPage={isRoadmapPage}
         isEditor={isEditor}
+        isLogInPage={isLogInPage}
       />
     </>
   );
@@ -297,6 +299,7 @@ function MobileHeader({
   isChangelogPage,
   isRoadmapPage,
   isEditor,
+  isLogInPage,
 }: {
   isDocsPage: boolean;
   isSponsorPage: boolean;
@@ -308,6 +311,7 @@ function MobileHeader({
   isChangelogPage: boolean;
   isRoadmapPage: boolean;
   isEditor: boolean;
+  isLogInPage: boolean;
 }) {
   const lastChart = useLastChart((s) => s.lastChart);
   const { pathname } = useLocation();
@@ -400,21 +404,29 @@ function MobileHeader({
                 to="/a"
               />
             ) : (
-              <HeaderClientLink
-                to="/sponsor"
-                label={t`Pricing`}
-                icon={<Lightning height={20} width={20} />}
-                aria-current={isSponsorPage ? "page" : undefined}
-                onClick={() => {
-                  // track event with gtm
-                  if (window?.dataLayer)
-                    window.dataLayer.push({
-                      event: "sponsor",
-                      action: "click",
-                      label: "mobile-header",
-                    });
-                }}
-              />
+              <>
+                <HeaderClientLink
+                  to="/sponsor"
+                  label={t`Pricing`}
+                  icon={<Lightning height={20} width={20} />}
+                  aria-current={isSponsorPage ? "page" : undefined}
+                  onClick={() => {
+                    // track event with gtm
+                    if (window?.dataLayer)
+                      window.dataLayer.push({
+                        event: "sponsor",
+                        action: "click",
+                        label: "mobile-header",
+                      });
+                  }}
+                />
+                <HeaderClientLink
+                  to="/l"
+                  label={t`Log In`}
+                  icon={<User height={20} width={20} />}
+                  aria-current={isLogInPage ? "page" : undefined}
+                />
+              </>
             )}
           </Dialog.Content>
         </Dialog.Portal>
