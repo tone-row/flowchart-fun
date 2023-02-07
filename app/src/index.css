@@ -148,3 +148,7 @@ div[data-reach-tooltip] {
 .slang-type.size--1 {
   line-height: 1.6;
 }
+
+.slang-type.size--3 {
+  letter-spacing: -0.025em;
+}
