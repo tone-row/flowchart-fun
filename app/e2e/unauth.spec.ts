@@ -188,8 +188,8 @@ test.describe("unauth", () => {
     await page.locator('input[name="name"]').press("Meta+a");
     // Fill input[name="name"]
     await page.locator('input[name="name"]').fill("cool chart");
-    // Click button:has-text("Submit")
-    await page.locator('button:has-text("Submit")').click();
+    // Click button:has-text("Rename")
+    await page.locator('button:has-text("Rename")').click();
     await expect(page).toHaveURL(`${BASE_URL}/cool-chart`);
     // Click text=cool-chart
     await expect(page.locator("text=cool-chart")).toBeVisible();
