@@ -39,7 +39,7 @@ export function EditorWrapper({
           <RenameButton>
             <Type
               as="h1"
-              weight="400"
+              weight="700"
               className={styles.WorkspaceTitle}
               size={3}
               title={title}

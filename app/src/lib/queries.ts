@@ -286,6 +286,9 @@ export async function createCustomer(email: string) {
   return customerSubscriptionOrError;
 }
 
+/**
+ * Rename a hosted chart and clear the related cache
+ */
 export async function renameChart(id: number, name: string) {
   if (!supabase) return;
   const { data, error } = await supabase
@@ -293,6 +296,8 @@ export async function renameChart(id: number, name: string) {
     .update({ name })
     .eq("id", id);
   if (error) throw error;
+  // clear cache
+  queryClient.invalidateQueries(["useHostedDoc", id.toString()]);
   return data;
 }
 

@@ -126,8 +126,12 @@ test.describe("Sign Up", () => {
     // Make sure the input with the label Convert to hosted chart? is checked
     await page.getByTestId("convert-to-hosted").click();
 
-    // Submit
-    await page.getByRole("button", { name: "Submit" }).click();
+    // Add a character to make name different
+    await page.getByRole("textbox").click();
+    await page.getByRole("textbox").fill("my-new-chart-");
+
+    // Rename
+    await page.getByRole("button", { name: "Rename" }).click();
 
     // expect "/u/" to be in the url
     await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));

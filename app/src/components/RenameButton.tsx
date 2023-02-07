@@ -80,10 +80,16 @@ export function RenameButton({ children }: { children: ReactNode }) {
       },
     }
   );
-  const isValid =
-    newName.length > 2 &&
-    (convertToHosted ||
-      window.localStorage.getItem(titleToLocalStorageKey(newName)) === null);
+
+  let isValid = false;
+  const lengthMoreThanTwo = newName.length > 2;
+  if (isHosted || convertToHosted) {
+    isValid = newName !== initialName && lengthMoreThanTwo;
+  } else {
+    isValid =
+      window.localStorage.getItem(titleToLocalStorageKey(newName)) === null &&
+      lengthMoreThanTwo;
+  }
 
   return (
     <>
@@ -157,7 +163,7 @@ export function RenameButton({ children }: { children: ReactNode }) {
               text={`Cancel`}
               onClick={() => useRenameDialogStore.setState({ isOpen: false })}
             />
-            <Button type="submit" text={t`Submit`} disabled={!isValid} />
+            <Button type="submit" text={t`Rename`} disabled={!isValid} />
           </Box>
           {isError(rename.error) && <Notice>{rename.error.message}</Notice>}
         </Section>
