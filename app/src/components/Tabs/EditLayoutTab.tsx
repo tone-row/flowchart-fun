@@ -37,8 +37,7 @@ export function EditLayoutTab() {
   const layoutNiceName =
     layouts.find((l) => l.value === layoutName)?.label() ?? "???";
 
-  const frozen = useIsFrozen();
-  // "positions" in rendered;
+  const isFrozen = useIsFrozen();
 
   let direction = defaultLayout.rankDir;
   if (
@@ -62,7 +61,7 @@ export function EditLayoutTab() {
     spacingFactor = layout.spacingFactor;
   }
 
-  if (frozen) return <FrozenLayout />;
+  if (isFrozen) return <FrozenLayout />;
 
   return (
     <WithLowerChild>
