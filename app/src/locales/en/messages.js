@@ -9,7 +9,6 @@
       "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.",
     Account: "Account",
     Advanced: "Advanced",
-    "Already a sponsor? Log in here": "Already a sponsor? Log in here",
     Amount: "Amount",
     "An error occurred. Try resubmitting or email {0} directly.": [
       "An error occurred. Try resubmitting or email ",
@@ -64,8 +63,6 @@
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "Custom Sharing Options",
     "Customer Portal": "Customer Portal",
-    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
-      "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.",
     Dark: "Dark",
     "Dark Mode": "Dark Mode",
     Date: "Date",
@@ -104,8 +101,6 @@
     "Extra Large": "Extra Large",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
-    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
-      "Flowchart Fun makes it quick and easy to visually communicate your processes.",
     "Follow Us": "Follow Us",
     Fullscreen: "Fullscreen",
     Futuristic: "Futuristic",
@@ -127,7 +122,6 @@
     Large: "Large",
     Layout: "Layout",
     "Layout is Frozen": "Layout is Frozen",
-    "Layouts and Themes": "Layouts and Themes",
     "Leading References": "Leading References",
     "Learn More": "Learn More",
     "Left to Right": "Left to Right",
@@ -161,7 +155,6 @@
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "Open Customer Portal",
-    Plans: "Plans",
     Playbook: "Playbook",
     Pricing: "Pricing",
     Public: "Public",
@@ -189,8 +182,6 @@
     "Right to Left": "Right to Left",
     Roadmap: "Roadmap",
     Save: "Save",
-    "Say goodbye to tedious flowchart creation":
-      "Say goodbye to tedious flowchart creation",
     Settings: "Settings",
     Shape: "Shape",
     "Shape Libraries": "Shape Libraries",
@@ -246,6 +237,8 @@
       "Unique text value to identify a node",
     "Unlimited Hosted Charts": "Unlimited Hosted Charts",
     "Unlimited Local Charts": "Unlimited Local Charts",
+    "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.":
+      "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.",
     "Update Email": "Update Email",
     Updated: "Updated",
     "Use classes to group nodes": "Use classes to group nodes",

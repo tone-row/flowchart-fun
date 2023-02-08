@@ -94,6 +94,6 @@
   font-weight: 700;
 }
 
-.WorkspaceTitle {
-  letter-spacing: -0.025em;
+:global(.slang-type.size-3) {
+  letter-spacing: -0.00625em;
 }

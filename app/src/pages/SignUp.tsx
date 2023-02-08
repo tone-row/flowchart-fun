@@ -45,7 +45,7 @@ function SponsorBlock() {
         weight="700"
         className={styles.SponsorBlockTitle}
       >
-        <Trans>Become a Sponsor</Trans>
+        <Trans>Sign Up</Trans>
       </SectionTitle>
       <SignUpForm />
     </Section>
@@ -210,7 +210,7 @@ function SignUpForm() {
       <Box gap={2}>
         <Button
           type="submit"
-          text={t`Sign Up`}
+          text={t`Submit`}
           className={styles.SignUpButton}
           p={3}
           typeProps={{ size: 1 }}

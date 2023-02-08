@@ -36,12 +36,13 @@
   grid-auto-flow: column;
   grid-gap: 0.5rem;
   align-items: center;
-  padding: 7px 8px 6px 10px;
+  padding: 7px 8px 6px 8px;
   border-radius: var(--rad);
   border: 2px solid transparent;
   border-color: transparent;
   justify-content: start;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 body:not([class*="disableAnimation"]) .shared-header-btn {
@@ -59,7 +60,7 @@ body:not([class*="disableAnimation"]) .shared-header-btn {
 .shared-header-btn:focus-visible,
 .shared-header-btn:active,
 .shared-header-btn[aria-expanded="true"] {
-  background-color: var(--color-input);
+  background-color: var(--color-nodeHover);
 }
 
 .shared-header-btn[aria-current="page"] {

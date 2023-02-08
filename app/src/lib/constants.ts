@@ -46,14 +46,14 @@ export const editorOptions: EditorProps["options"] = {
   hideCursorInOverviewRuler: true,
   matchBrackets: "never",
   selectionHighlight: false,
-  lineHeight: 32,
   lineNumbersMinChars: 3,
   cursorWidth: 2,
   automaticLayout: true,
   lineNumbers: "off",
   contextmenu: false,
   fontFamily: "monospace",
-  fontSize: 18,
+  fontSize: 16,
+  lineHeight: 32,
   tabSize: 2,
 };
 

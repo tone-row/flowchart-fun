@@ -10,8 +10,6 @@
       "Greifen Sie von überall auf diese Diagramme zu.<0/>Teilen/Einbetten von Diagrammen, die mit Ihren Bearbeitungen synchronisiert bleiben.",
     Account: "Konto",
     Advanced: "Vorangeschritten",
-    "Already a sponsor? Log in here":
-      "Sind Sie schon ein Sponsor? Hier anmelden",
     Amount: "Betrag",
     "An error occurred. Try resubmitting or email {0} directly.": [
       "Es ist ein Fehler aufgetreten. Versuchen Sie, es erneut einzureichen oder senden Sie eine E-Mail direkt an ",
@@ -66,8 +64,6 @@
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "Benutzerdefinierte Freigabeoptionen",
     "Customer Portal": "Kundenportal",
-    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
-      "Passen Sie das Aussehen Ihrer Diagramme mit mehr Layout- und Designoptionen an, um professionelle, optisch ansprechende Diagramme zu erstellen.",
     Dark: "Dunkel",
     "Dark Mode": "Dunkelmodus",
     Date: "Datum",
@@ -106,8 +102,6 @@
     "Extra Large": "Extra Large",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
-    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
-      "Mit Flowchart Fun können Sie Ihre Prozesse schnell und einfach visuell darstellen.",
     "Follow Us": "Folgen Sie uns",
     Fullscreen: "Vollbild",
     Futuristic: "Futuristisch",
@@ -129,7 +123,6 @@
     Large: "Large",
     Layout: "Layout",
     "Layout is Frozen": "Layout ist eingefroren",
-    "Layouts and Themes": "Layouts und Themen",
     "Leading References": "Leading References",
     "Learn More": "Mehr erfahren",
     "Left to Right": "Von links nach rechts",
@@ -163,7 +156,6 @@
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "Öffnen Sie das Kundenportal",
-    Plans: "Pläne",
     Playbook: "Spielbuch",
     Pricing: "Preisgestaltung",
     Public: "Öffentlich",
@@ -191,8 +183,6 @@
     "Right to Left": "Von rechts nach links",
     Roadmap: "Fahrplan",
     Save: "Speichern",
-    "Say goodbye to tedious flowchart creation":
-      "Verabschieden Sie sich von der mühsamen Erstellung von Flussdiagrammen",
     Settings: "Einstellungen",
     Shape: "Shape",
     "Shape Libraries": "Bibliotheken anpassen",
@@ -248,6 +238,8 @@
       "Unique text value to identify a node",
     "Unlimited Hosted Charts": "Unbegrenzte Anzahl gehosteter Charts",
     "Unlimited Local Charts": "Unbegrenzte lokale Charts",
+    "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.":
+      "Schalten Sie den Workflow-Erfolg mit Flowchart Fun frei! Werden Sie ein Profi für nur 3 $/Monat oder 30 $/Jahr.",
     "Update Email": "E-Mail aktualisieren",
     Updated: "Aktualisiert",
     "Use classes to group nodes": "Use classes to group nodes",

@@ -9,7 +9,6 @@
       "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。",
     Account: "帐户",
     Advanced: "先进的",
-    "Already a sponsor? Log in here": "已经是赞助商了吗？在此登录",
     Amount: "数量",
     "An error occurred. Try resubmitting or email {0} directly.": [
       "发生了一个错误。请尝试重新提交或直接发送电子邮件至",
@@ -64,8 +63,6 @@
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "自定义分享选项",
     "Customer Portal": "客户门户",
-    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
-      "使用更多布局和主题选项自定义图表的外观和观感，帮助您创建专业而闲心悦目的示意图。",
     Dark: "深色",
     "Dark Mode": "深色模式",
     Date: "日期",
@@ -103,8 +100,6 @@
     "Extra Large": "Extra Large",
     Feedback: "反馈",
     "Fit Graph": "Fit Graph",
-    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
-      "Flowchart Fun 可以快速且轻松地以视觉方式传达您的流程。",
     "Follow Us": "关注我们",
     Fullscreen: "全屏",
     Futuristic: "未来主义的",
@@ -126,7 +121,6 @@
     Large: "Large",
     Layout: "布局",
     "Layout is Frozen": "布局被冻结",
-    "Layouts and Themes": "布局和主题",
     "Leading References": "Leading References",
     "Learn More": "学到更多",
     "Left to Right": "从左到右",
@@ -160,7 +154,6 @@
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "打开客户门户",
-    Plans: "计划",
     Playbook: "剧本",
     Pricing: "价钱",
     Public: "公开",
@@ -188,7 +181,6 @@
     "Right to Left": "从右到左",
     Roadmap: "路线图",
     Save: "救球",
-    "Say goodbye to tedious flowchart creation": "告别繁琐的流程图创建",
     Settings: "设置",
     Shape: "Shape",
     "Shape Libraries": "形状库",
@@ -244,6 +236,8 @@
       "Unique text value to identify a node",
     "Unlimited Hosted Charts": "无限托管图表",
     "Unlimited Local Charts": "无限的本地图表",
+    "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.":
+      "使用 Flowchart Fun 解锁工作流程的成功！ 成为专业人士只需 3 美元/月或 30 美元/年。",
     "Update Email": "更新电子邮件",
     Updated: "已更新",
     "Use classes to group nodes": "Use classes to group nodes",

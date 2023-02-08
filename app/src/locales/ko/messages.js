@@ -9,8 +9,6 @@
       "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요",
     Account: "계정",
     Advanced: "고급의",
-    "Already a sponsor? Log in here":
-      "이미 후원중이신가요? 여기서 로그인하세요",
     Amount: "금액",
     "An error occurred. Try resubmitting or email {0} directly.": [
       "오류가 발생하였습니다. 다시 제출하거나 ",
@@ -65,8 +63,6 @@
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "커스텀 공유 옵션",
     "Customer Portal": "고객 포털",
-    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
-      "더 많은 레이아웃 및 테마 옵션으로 차트의 모양과 느낌을 사용자의 요구대로 변경하여 전문적이면서도 시각적으로 매력적인 다이어그램을 만들 수 있습니다.",
     Dark: "다크",
     "Dark Mode": "다크 모드",
     Date: "날짜",
@@ -104,8 +100,6 @@
     "Extra Large": "Extra Large",
     Feedback: "피드백",
     "Fit Graph": "Fit Graph",
-    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
-      "Flowchart Fun을 사용하여 과정을 쉽고 빠르게 시각화적으로 소통할 수 있습니다.",
     "Follow Us": "팔로우하세요",
     Fullscreen: "전체 화면",
     Futuristic: "미래 지향적",
@@ -127,7 +121,6 @@
     Large: "Large",
     Layout: "레이아웃",
     "Layout is Frozen": "레이아웃이 고정됨",
-    "Layouts and Themes": "레이아웃 및 테마",
     "Leading References": "Leading References",
     "Learn More": "더 알아보기",
     "Left to Right": "왼쪽에서 오른쪽으로",
@@ -161,7 +154,6 @@
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "고객 포털 열기",
-    Plans: "요금제",
     Playbook: "플레이북",
     Pricing: "가격",
     Public: "공용",
@@ -189,8 +181,6 @@
     "Right to Left": "오른쪽에서 왼쪽으로",
     Roadmap: "로드맵",
     Save: "구하다",
-    "Say goodbye to tedious flowchart creation":
-      "더 이상 지루하게 플로 차트를 작성할 필요가 없습니다",
     Settings: "설정",
     Shape: "Shape",
     "Shape Libraries": "셰이프 라이브러리",
@@ -246,6 +236,8 @@
       "Unique text value to identify a node",
     "Unlimited Hosted Charts": "무제한 차트 호스팅",
     "Unlimited Local Charts": "무제한 로컬 차트",
+    "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.":
+      "Flowchart Fun으로 성공적인 워크플로를 잠금 해제하세요! $3/월 또는 $30/년에 프로가 되십시오.",
     "Update Email": "이메일 업데이트",
     Updated: "업데이트됨",
     "Use classes to group nodes": "Use classes to group nodes",

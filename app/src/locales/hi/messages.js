@@ -9,8 +9,6 @@
       "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों.",
     Account: "खाता",
     Advanced: "विकसित",
-    "Already a sponsor? Log in here":
-      "पहले से ही एक स्पॉनसर हैं? यहां लॉगिन करें",
     Amount: "रकम",
     "An error occurred. Try resubmitting or email {0} directly.": [
       "एक एरर हो गया. फिर से सबमिट करने की कोशिश करें या सीधे ",
@@ -65,8 +63,6 @@
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "कस्टम शेयरिंग विकल्प",
     "Customer Portal": "ग्राहक पोर्टल",
-    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
-      "और भी लेआउट और थीम्स ऑप्शन्स के साथ अपने चार्ट्स के लुक और फ़ील कस्टमाइज़ करें, जिससे आपको प्रोफ़ेशनल और दिखने में सुंदर डायग्राम्स बनाने में मदद मिलेगी।",
     Dark: "डार्क",
     "Dark Mode": "डार्क मोड",
     Date: "तारीख़",
@@ -105,8 +101,6 @@
     "Extra Large": "Extra Large",
     Feedback: "फ़ीडबैक",
     "Fit Graph": "Fit Graph",
-    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
-      "Flowchart Fun आपकी विज़ुअल कम्युनिकेट प्रक्रियाओं को तीव्र और आसान बनाता है।",
     "Follow Us": "हमें फॉलो करें",
     Fullscreen: "फ़ुलस्क्रीन",
     Futuristic: "भविष्य का",
@@ -128,7 +122,6 @@
     Large: "Large",
     Layout: "ख़ाका",
     "Layout is Frozen": "लेआउट जम गया है",
-    "Layouts and Themes": "लेआउट और थीम्स",
     "Leading References": "Leading References",
     "Learn More": "और अधिक जानें",
     "Left to Right": "बाएं से दाएं",
@@ -162,7 +155,6 @@
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "ग्राहक पोर्टल खोलें",
-    Plans: "प्लान",
     Playbook: "प्लेबुक",
     Pricing: "मूल्य निर्धारण",
     Public: "पब्लिक",
@@ -190,8 +182,6 @@
     "Right to Left": "दाएं से बाएं",
     Roadmap: "रोडमैप",
     Save: "सहेजें",
-    "Say goodbye to tedious flowchart creation":
-      "थकाने वाले फ्लोचार्ट क्रिएशन को कहें बॉय-बॉय",
     Settings: "सेटिंग",
     Shape: "Shape",
     "Shape Libraries": "शेप लाइब्रेरी",
@@ -247,6 +237,8 @@
       "Unique text value to identify a node",
     "Unlimited Hosted Charts": "असीमित होस्टेड चार्ट",
     "Unlimited Local Charts": "असीमित लोकल चार्ट",
+    "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.":
+      "फ़्लोचार्ट फ़न के साथ वर्कफ़्लो सफलता अनलॉक करें! केवल $3/माह या $30/वर्ष में पेशेवर बनें।",
     "Update Email": "ईमेल अपडेट करें",
     Updated: "अपडेट किया गया",
     "Use classes to group nodes": "Use classes to group nodes",
