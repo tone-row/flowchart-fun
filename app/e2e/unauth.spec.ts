@@ -15,14 +15,14 @@ test.describe("unauth", () => {
     await goToPath(page);
   });
 
-  test("View Sponsors Page", async ({ page }) => {
+  test("View Pricing Page", async ({ page }) => {
     await goToTab(page, "Charts");
 
     await page.click('button:has-text("Learn More")');
 
     // Expect "Sponsor flowchart.fun" to be visible
     await expect(
-      page.getByText(/Say goodbye to tedious flowchart creation/i)
+      page.getByText(/Unlock workflow success with Flowchart Fun/i)
     ).toBeVisible();
   });
 

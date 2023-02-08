@@ -20,7 +20,7 @@ export default function Sponsor() {
             </Type>
             <Box
               as={Link}
-              to={`/i`}
+              to={`/i${plan === "annually" ? "#annually" : ""}`}
               px={6}
               py={3}
               rad={2}
