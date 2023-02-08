@@ -28,6 +28,7 @@ type Colors =
   | "color-headerBtnHover"
   | "color-greenHsl"
   | "color-darkGrey"
+  | "color-yellowHsl"
   | "palette-white-0"
   | "palette-white-1"
   | "palette-white-2"

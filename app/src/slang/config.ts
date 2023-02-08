@@ -63,12 +63,12 @@ export const darkTheme: typeof colors = {
 };
 
 const config: Partial<SlangConfig> = {
-  baseFontFamily: "Karla, Helvetica, 'Helvetica Neue', sans-serif",
-  baseFontSizePx: 18,
-  typeScaleBase: 1.25,
-  baseFontLineHeight: 1.6,
+  baseFontFamily: "Helvetica, 'Helvetica Neue', sans-serif",
+  baseFontSizePx: 16,
+  typeScaleBase: 1.2,
+  baseFontLineHeight: 1.5,
   baseFontLineHeightMobile: 1.4,
-  inverseTypeScaleLineHeight: 0.9,
+  inverseTypeScaleLineHeight: 0.95,
   breakpoints: {
     small: 450,
     tablet: 800,
