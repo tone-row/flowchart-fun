@@ -128,7 +128,7 @@ export default function Sponsor() {
       <Box className={styles.featureBlock}>
         <Box className={styles.text} gap={3}>
           <Type size={3} weight="700">
-            <Trans>Custom Sharing</Trans>
+            <Trans>Custom Sharing Options</Trans>
           </Type>
           <Type size={1}>
             <Trans>
