@@ -22,7 +22,7 @@ test.describe("unauth", () => {
 
     // Expect "Sponsor flowchart.fun" to be visible
     await expect(
-      page.getByText(/Unlock workflow success with Flowchart Fun/i)
+      page.getByText(/Make your workflow easier with Flowchart Fun Pro/i)
     ).toBeVisible();
   });
 
