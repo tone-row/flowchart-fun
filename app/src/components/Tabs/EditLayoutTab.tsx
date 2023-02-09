@@ -161,7 +161,7 @@ export function EditLayoutTab() {
         )}
       </TabOptionsGrid>
       {!isValidSponsor && (
-        <LargeLink href="/sponsor">
+        <LargeLink href="/pricing">
           <Trans>Get More Layouts</Trans>
         </LargeLink>
       )}
