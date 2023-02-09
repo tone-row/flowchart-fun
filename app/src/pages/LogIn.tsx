@@ -3,11 +3,12 @@ import { Trans } from "@lingui/macro";
 import { LoginForm } from "../components/LoginForm";
 import { Page } from "../components/Shared";
 import { Box, Type } from "../slang";
+import styles from "./LogIn.module.css";
 
 export function LogIn() {
   return (
-    <Box>
-      <Page content="center">
+    <Box pt={20} px={8}>
+      <Page content="start stretch">
         <LoginBlock />
       </Page>
     </Box>
@@ -16,11 +17,11 @@ export function LogIn() {
 
 function LoginBlock() {
   return (
-    <Box p={8} pt={7} background="palette-white-2" rad={3}>
+    <Box p={6} pt={5} rad={3} className={styles.LogInContainer}>
       <LoginForm
         heading={
-          <Type style={{ textAlign: "center" }} color="palette-black-0">
-            <Trans>Already a sponsor? Log in here</Trans>
+          <Type size={2} weight="700">
+            <Trans>Log In</Trans>
           </Type>
         }
       />

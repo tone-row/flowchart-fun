@@ -13,21 +13,13 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/SignUp.tsx:166
+#: src/components/SignUpForm.tsx:128
 msgid "$3 / Month"
 msgstr "3 美元/月"
 
-#: src/pages/Sponsor.tsx:93
-msgid "$3.00/month"
-msgstr "$3.00/月"
-
-#: src/pages/SignUp.tsx:167
+#: src/components/SignUpForm.tsx:129
 msgid "$30 / Year"
 msgstr "30 美元 / 年"
-
-#: src/pages/Sponsor.tsx:93
-msgid "$30.00/year (save 20%)"
-msgstr "$30.00/年（节省 20%）"
 
 #: src/lib/getDefaultText.ts:9
 msgid "(before a colon creates a label)"
@@ -37,8 +29,8 @@ msgstr "(在冒号前创建一个标签)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。"
 
-#: src/components/Header.tsx:173
-#: src/components/Header.tsx:397
+#: src/components/Header.tsx:178
+#: src/components/Header.tsx:405
 msgid "Account"
 msgstr "帐户"
 
@@ -47,10 +39,6 @@ msgstr "帐户"
 msgid "Advanced"
 msgstr "先进的"
 
-#: src/pages/LogIn.tsx:23
-msgid "Already a sponsor? Log in here"
-msgstr "已经是赞助商了吗？在此登录"
-
 #: src/components/SponsorDashboard.tsx:289
 msgid "Amount"
 msgstr "数量"
@@ -58,10 +46,6 @@ msgstr "数量"
 #: src/components/Feedback.tsx:110
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件至{0}。"
-
-#: src/pages/Sponsor.tsx:75
-msgid "Annually"
-msgstr "每年"
 
 #: src/components/Settings.tsx:80
 msgid "Appearance"
@@ -81,12 +65,11 @@ msgstr "背景"
 
 #: src/components/Settings.tsx:135
 #: src/components/SponsorDashboard.tsx:194
-#: src/pages/SignUp.tsx:48
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
-#: src/components/Header.tsx:144
-#: src/components/Header.tsx:373
+#: src/components/Header.tsx:147
+#: src/components/Header.tsx:381
 #: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "博客"
@@ -112,7 +95,7 @@ msgstr "宽度优先"
 #: src/components/SponsorDashboard.tsx:426
 #: src/pages/Charts.tsx:243
 #: src/pages/Charts.tsx:514
-#: src/pages/Charts.tsx:564
+#: src/pages/Charts.tsx:568
 msgid "Cancel"
 msgstr "取消"
 
@@ -124,23 +107,23 @@ msgstr "取消订阅。您的托管图表将变为只读。"
 msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
-#: src/components/Header.tsx:152
-#: src/components/Header.tsx:379
+#: src/components/Header.tsx:157
+#: src/components/Header.tsx:387
 #: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "变更日志"
 
-#: src/components/Header.tsx:90
-#: src/components/Header.tsx:352
+#: src/components/Header.tsx:93
+#: src/components/Header.tsx:360
 msgid "Charts"
 msgstr "图表"
 
-#: src/components/LoginForm.tsx:38
-#: src/pages/SignUp.tsx:134
+#: src/components/LoginForm.tsx:36
+#: src/components/SignUpForm.tsx:96
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/pages/Sponsor.tsx:134
+#: src/pages/Sponsor.tsx:67
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "选择您的图表分享方式：完全访问权限，仅编辑，或仅浏览。决定谁能对您的工作做出更改。"
 
@@ -206,7 +189,7 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr ""
 
 #: src/components/MightLoseSponsorTrigger.tsx:63
-#: src/components/RenameButton.tsx:131
+#: src/components/RenameButton.tsx:137
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
@@ -215,7 +198,7 @@ msgstr "是否转换为托管图表？"
 #: src/components/ShareDialog.tsx:250
 #: src/pages/Charts.tsx:444
 #: src/pages/Charts.tsx:515
-#: src/pages/Charts.tsx:549
+#: src/pages/Charts.tsx:553
 msgid "Copy"
 msgstr "复制"
 
@@ -233,7 +216,7 @@ msgstr "复制 SVG 代码"
 msgid "Create"
 msgstr "创建"
 
-#: src/pages/Charts.tsx:601
+#: src/pages/Charts.tsx:605
 msgid "Created"
 msgstr "已创建"
 
@@ -241,17 +224,13 @@ msgstr "已创建"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:131
+#: src/pages/Sponsor.tsx:64
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
 #: src/components/SponsorDashboard.tsx:138
 msgid "Customer Portal"
 msgstr "客户门户"
-
-#: src/pages/Sponsor.tsx:151
-msgid "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams."
-msgstr "使用更多布局和主题选项自定义图表的外观和观感，帮助您创建专业而闲心悦目的示意图。"
 
 #: src/lib/graphOptions.ts:48
 msgid "Dark"
@@ -269,7 +248,7 @@ msgstr "日期"
 #: src/pages/Charts.tsx:232
 #: src/pages/Charts.tsx:237
 #: src/pages/Charts.tsx:246
-#: src/pages/Charts.tsx:565
+#: src/pages/Charts.tsx:569
 msgid "Delete"
 msgstr "删除"
 
@@ -285,7 +264,7 @@ msgstr "Discard"
 msgid "Do you want to cancel your subscription?"
 msgstr "您要取消订阅吗？"
 
-#: src/pages/Charts.tsx:558
+#: src/pages/Charts.tsx:562
 msgid "Do you want to delete this?"
 msgstr "您要将其删除吗？"
 
@@ -294,8 +273,8 @@ msgstr "您要将其删除吗？"
 msgid "Document"
 msgstr "文档"
 
-#: src/components/Header.tsx:110
-#: src/components/Header.tsx:358
+#: src/components/Header.tsx:113
+#: src/components/Header.tsx:366
 msgid "Documentation"
 msgstr "文档"
 
@@ -324,7 +303,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr "复制"
 
-#: src/pages/Sponsor.tsx:103
+#: src/pages/Sponsor.tsx:50
 msgid "Dynamic Share Links"
 msgstr "动态分享链接"
 
@@ -356,8 +335,8 @@ msgstr ""
 msgid "Editable"
 msgstr "可编辑"
 
-#: src/components/Header.tsx:82
-#: src/components/Header.tsx:346
+#: src/components/Header.tsx:85
+#: src/components/Header.tsx:354
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "编辑器"
@@ -367,7 +346,7 @@ msgid "Eggs"
 msgstr "蛋"
 
 #: src/components/Feedback.tsx:94
-#: src/components/LoginForm.tsx:53
+#: src/components/LoginForm.tsx:50
 msgid "Email"
 msgstr "电子邮件"
 
@@ -388,28 +367,19 @@ msgstr "Excalidraw"
 msgid "Export"
 msgstr "导出"
 
-#: src/pages/Sponsor.tsx:85
-#: src/pages/Sponsor.tsx:99
-msgid "Export to Common Image Formats"
-msgstr "导出为常见图片格式"
-
 #: src/components/GraphContextMenu.tsx:162
 msgid "Extra Large"
 msgstr ""
 
 #: src/components/Feedback.tsx:74
-#: src/components/Header.tsx:118
-#: src/components/Header.tsx:365
+#: src/components/Header.tsx:121
+#: src/components/Header.tsx:373
 msgid "Feedback"
 msgstr "反馈"
 
 #: src/components/GraphFloatingMenu.tsx:48
 msgid "Fit Graph"
 msgstr ""
-
-#: src/pages/Sponsor.tsx:19
-msgid "Flowchart Fun makes it quick and easy to visually communicate your processes."
-msgstr "Flowchart Fun 可以快速且轻松地以视觉方式传达您的流程。"
 
 #: src/components/Settings.tsx:118
 msgid "Follow Us"
@@ -444,7 +414,7 @@ msgstr "网格"
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "注意！在清除缓存之前，请记住此文档没有在云端保存。"
 
-#: src/components/Header.tsx:99
+#: src/components/Header.tsx:102
 msgid "Help"
 msgstr "帮助"
 
@@ -457,13 +427,19 @@ msgid "Home"
 msgstr "主页"
 
 #: src/pages/Charts.tsx:350
-#: src/pages/Charts.tsx:720
+#: src/pages/Charts.tsx:724
+#: src/pages/Sponsor.tsx:83
 msgid "Hosted Charts"
 msgstr "托管的图表"
 
 #: src/components/SyntaxReference.tsx:101
 msgid "ID's"
 msgstr ""
+
+#: src/pages/Sponsor.tsx:36
+#: src/pages/Sponsor.tsx:46
+msgid "Image Export"
+msgstr "图像导出"
 
 #: src/components/SyntaxReference.tsx:338
 msgid "Images"
@@ -473,7 +449,7 @@ msgstr ""
 msgid "Indenting creates an edge"
 msgstr "缩进创建链接"
 
-#: src/components/Header.tsx:133
+#: src/components/Header.tsx:136
 msgid "Info"
 msgstr "信息"
 
@@ -495,16 +471,12 @@ msgstr "布局"
 msgid "Layout is Frozen"
 msgstr "布局被冻结"
 
-#: src/pages/Sponsor.tsx:148
-msgid "Layouts and Themes"
-msgstr "布局和主题"
-
 #: src/components/SyntaxReference.tsx:210
 msgid "Leading References"
 msgstr ""
 
 #: src/components/MightLoseWarning.tsx:58
-#: src/pages/Charts.tsx:734
+#: src/pages/Charts.tsx:738
 msgid "Learn More"
 msgstr "学到更多"
 
@@ -530,7 +502,9 @@ msgstr "链接"
 msgid "Local Charts"
 msgstr "本地的图表"
 
-#: src/components/Header.tsx:191
+#: src/components/Header.tsx:196
+#: src/components/Header.tsx:429
+#: src/pages/LogIn.tsx:24
 msgid "Log In"
 msgstr "登录"
 
@@ -550,6 +524,10 @@ msgstr "捐款"
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
+#: src/pages/Sponsor.tsx:15
+msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
+msgstr "使用 Flowchart Fun Pro 让您的工作流程更轻松——现在订阅只需 3 美元/月或 30 美元/年！"
+
 #: src/components/GraphContextMenu.tsx:153
 msgid "Medium"
 msgstr ""
@@ -558,15 +536,11 @@ msgstr ""
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/pages/Sponsor.tsx:63
-msgid "Monthly"
-msgstr "每月"
-
-#: src/pages/Sponsor.tsx:104
+#: src/pages/Sponsor.tsx:51
 msgid "More Layouts"
 msgstr "更多布局"
 
-#: src/pages/Sponsor.tsx:105
+#: src/pages/Sponsor.tsx:52
 msgid "More Themes and Fonts"
 msgstr "更多主题和字体"
 
@@ -574,8 +548,8 @@ msgstr "更多主题和字体"
 msgid "Museum"
 msgstr "博物馆"
 
-#: src/pages/Charts.tsx:589
-#: src/pages/Charts.tsx:625
+#: src/pages/Charts.tsx:593
+#: src/pages/Charts.tsx:629
 msgid "Name"
 msgstr "姓名"
 
@@ -583,8 +557,8 @@ msgstr "姓名"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "需要帮助？<0>请查看我们的文档。</0>"
 
-#: src/components/Header.tsx:74
-#: src/components/Header.tsx:340
+#: src/components/Header.tsx:77
+#: src/components/Header.tsx:348
 msgid "New"
 msgstr "新"
 
@@ -629,22 +603,18 @@ msgstr ""
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
 
-#: src/pages/Sponsor.tsx:43
-msgid "Plans"
-msgstr "计划"
-
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
 msgstr "剧本"
 
-#: src/components/Header.tsx:182
-#: src/components/Header.tsx:405
+#: src/components/Header.tsx:187
+#: src/components/Header.tsx:414
 msgid "Pricing"
 msgstr "价钱"
 
 #: src/components/ShareDialog.tsx:285
 #: src/components/ShareDialog.tsx:308
-#: src/pages/Charts.tsx:593
+#: src/pages/Charts.tsx:597
 msgid "Public"
 msgstr "公开"
 
@@ -693,11 +663,12 @@ msgstr ""
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 msgstr "请记住，本文档仅保存在此电脑上，如果您希望储存文档并随时随地访问它们，那么请试试我们的高级计划，可以托管不限数量的图表，还有更多功能！仅需 $3/月！"
 
-#: src/components/RenameButton.tsx:91
-#: src/components/RenameButton.tsx:92
+#: src/components/RenameButton.tsx:97
 #: src/components/RenameButton.tsx:98
-#: src/components/RenameButton.tsx:108
-#: src/components/RenameButton.tsx:120
+#: src/components/RenameButton.tsx:104
+#: src/components/RenameButton.tsx:114
+#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:166
 msgid "Rename"
 msgstr "重命名"
 
@@ -727,8 +698,8 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/Header.tsx:159
-#: src/components/Header.tsx:385
+#: src/components/Header.tsx:164
+#: src/components/Header.tsx:393
 #: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
 msgstr "路线图"
@@ -737,12 +708,8 @@ msgstr "路线图"
 msgid "Save"
 msgstr "救球"
 
-#: src/pages/Sponsor.tsx:16
-msgid "Say goodbye to tedious flowchart creation"
-msgstr "告别繁琐的流程图创建"
-
-#: src/components/Header.tsx:166
-#: src/components/Header.tsx:390
+#: src/components/Header.tsx:171
+#: src/components/Header.tsx:398
 msgid "Settings"
 msgstr "设置"
 
@@ -750,8 +717,8 @@ msgstr "设置"
 msgid "Shape"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:86
-#: src/pages/Sponsor.tsx:100
+#: src/pages/Sponsor.tsx:37
+#: src/pages/Sponsor.tsx:47
 msgid "Shape Libraries"
 msgstr "形状库"
 
@@ -759,22 +726,17 @@ msgstr "形状库"
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
 
-#: src/pages/Sponsor.tsx:106
+#: src/pages/Sponsor.tsx:53
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "以完全访问权限、仅编辑权限或仅查看权限共享"
 
-#: src/components/LoginForm.tsx:61
+#: src/components/LoginForm.tsx:58
 msgid "Sign In"
 msgstr "登录"
 
-#: src/pages/SignUp.tsx:213
+#: src/components/SignUpForm.tsx:175
 msgid "Sign Up"
 msgstr "注册"
-
-#: src/pages/Sponsor.tsx:179
-#: src/pages/Sponsor.tsx:287
-msgid "Sign Up Now"
-msgstr "马上注册"
 
 #: src/components/GraphContextMenu.tsx:294
 msgid "Size"
@@ -796,7 +758,7 @@ msgstr "抱歉！此页面只有英语版。"
 msgid "Spacing"
 msgstr "间距"
 
-#: src/pages/Charts.tsx:723
+#: src/pages/Charts.tsx:727
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能"
 
@@ -804,8 +766,8 @@ msgstr "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访�
 msgid "Start"
 msgstr "开始"
 
-#: src/pages/Sponsor.tsx:87
-#: src/pages/Sponsor.tsx:101
+#: src/pages/Sponsor.tsx:38
+#: src/pages/Sponsor.tsx:48
 msgid "Static Share Links"
 msgstr "静态分享链接"
 
@@ -817,7 +779,7 @@ msgstr "状态"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:165
+#: src/pages/Sponsor.tsx:100
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "使用 Flowchart Fun，简化您的工作流程和过程可视化"
 
@@ -839,7 +801,6 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
-#: src/components/RenameButton.tsx:160
 msgid "Submit"
 msgstr "提交"
 
@@ -909,13 +870,12 @@ msgstr "解冻"
 msgid "Unique text value to identify a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:102
-#: src/pages/Sponsor.tsx:115
+#: src/pages/Sponsor.tsx:49
 msgid "Unlimited Hosted Charts"
 msgstr "无限托管图表"
 
-#: src/pages/Sponsor.tsx:84
-#: src/pages/Sponsor.tsx:98
+#: src/pages/Sponsor.tsx:35
+#: src/pages/Sponsor.tsx:45
 msgid "Unlimited Local Charts"
 msgstr "无限的本地图表"
 
@@ -923,7 +883,7 @@ msgstr "无限的本地图表"
 msgid "Update Email"
 msgstr "更新电子邮件"
 
-#: src/pages/Charts.tsx:597
+#: src/pages/Charts.tsx:601
 msgid "Updated"
 msgstr "已更新"
 
@@ -955,7 +915,7 @@ msgstr "在 Github 上查看"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "我们感谢您的全部反馈、建议、报错和关于功能的需求！"
 
-#: src/pages/SignUp.tsx:220
+#: src/components/SignUpForm.tsx:182
 msgid "We use cookies to keep you logged in."
 msgstr "我们使用 cookies 来让您保持登录状态。"
 
@@ -971,7 +931,7 @@ msgstr "您想跟我们分享什么？"
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:118
+#: src/pages/Sponsor.tsx:86
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。"
 

@@ -30,9 +30,6 @@ test.describe("Sign Up", () => {
     test.setTimeout(240000);
     await page.getByRole("link", { name: "Pricing" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
-    await page.getByRole("button", { name: "Annually" }).click();
-    await page.getByRole("link", { name: "Sign Up Now" }).first().click();
-    await expect(page).toHaveURL(`${BASE_URL}/i#annually`);
 
     await page.getByTestId("email").click();
     email = await getTempEmail();
@@ -126,8 +123,12 @@ test.describe("Sign Up", () => {
     // Make sure the input with the label Convert to hosted chart? is checked
     await page.getByTestId("convert-to-hosted").click();
 
-    // Submit
-    await page.getByRole("button", { name: "Submit" }).click();
+    // Add a character to make name different
+    await page.getByRole("textbox").click();
+    await page.getByRole("textbox").fill("my-new-chart-");
+
+    // Rename
+    await page.getByRole("button", { name: "Rename" }).click();
 
     // expect "/u/" to be in the url
     await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));

@@ -25,23 +25,20 @@ export function LoginForm({ heading }: { heading: ReactNode }) {
     [mutate]
   );
   return (
-    <Section as="form" onSubmit={handleSubmit(onSubmit)}>
+    <Section
+      as="form"
+      onSubmit={handleSubmit(onSubmit)}
+      at={{ tablet: { gap: 4 } }}
+    >
       {heading}
       {success ? (
-        <Box
-          background="color-nodeHover"
-          p={2}
-          rad={2}
-          style={{ textAlign: "center" }}
-        >
-          <Type size={-1}>
-            <Trans>
-              Check your email for a link to log in. You can close this window.
-            </Trans>
-          </Type>
-        </Box>
+        <Type>
+          <Trans>
+            Check your email for a link to log in. You can close this window.
+          </Trans>
+        </Type>
       ) : (
-        <Box gap={2}>
+        <Box gap={3}>
           <Box template="auto / minmax(0, 1fr) auto" gap={2}>
             <Input
               type="email"

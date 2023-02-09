@@ -1,22 +1,18 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3 / Month",
-    "$3.00/month": "$3.00/month",
     "$30 / Year": "$30 / Year",
-    "$30.00/year (save 20%)": "$30.00/year (save 20%)",
     "(before a colon creates a label)": "(before a colon creates a label)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.",
     Account: "Account",
     Advanced: "Advanced",
-    "Already a sponsor? Log in here": "Already a sponsor? Log in here",
     Amount: "Amount",
     "An error occurred. Try resubmitting or email {0} directly.": [
       "An error occurred. Try resubmitting or email ",
       ["0"],
       " directly.",
     ],
-    Annually: "Annually",
     Appearance: "Appearance",
     Attributes: "Attributes",
     "Back To Editor": "Back To Editor",
@@ -64,8 +60,6 @@
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "Custom Sharing Options",
     "Customer Portal": "Customer Portal",
-    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
-      "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.",
     Dark: "Dark",
     "Dark Mode": "Dark Mode",
     Date: "Date",
@@ -100,12 +94,9 @@
     "Enter a title": "Enter a title",
     Excalidraw: "Excalidraw",
     Export: "Export",
-    "Export to Common Image Formats": "Export to Common Image Formats",
     "Extra Large": "Extra Large",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
-    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
-      "Flowchart Fun makes it quick and easy to visually communicate your processes.",
     "Follow Us": "Follow Us",
     Fullscreen: "Fullscreen",
     Futuristic: "Futuristic",
@@ -120,6 +111,7 @@
     Home: "Home",
     "Hosted Charts": "Hosted Charts",
     "ID's": "ID's",
+    "Image Export": "Image Export",
     Images: "Images",
     "Indenting creates an edge": "Indenting creates an edge",
     Info: "Info",
@@ -127,7 +119,6 @@
     Large: "Large",
     Layout: "Layout",
     "Layout is Frozen": "Layout is Frozen",
-    "Layouts and Themes": "Layouts and Themes",
     "Leading References": "Leading References",
     "Learn More": "Learn More",
     "Left to Right": "Left to Right",
@@ -140,9 +131,10 @@
     "Made by <0>Tone Row</0>": "Made by <0>Tone Row</0>",
     "Make a Donation": "Make a Donation",
     "Make publicly accessible": "Make publicly accessible",
+    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
+      "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!",
     Medium: "Medium",
     Monospace: "Monospace",
-    Monthly: "Monthly",
     "More Layouts": "More Layouts",
     "More Themes and Fonts": "More Themes and Fonts",
     Museum: "Museum",
@@ -161,7 +153,6 @@
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "Open Customer Portal",
-    Plans: "Plans",
     Playbook: "Playbook",
     Pricing: "Pricing",
     Public: "Public",
@@ -189,8 +180,6 @@
     "Right to Left": "Right to Left",
     Roadmap: "Roadmap",
     Save: "Save",
-    "Say goodbye to tedious flowchart creation":
-      "Say goodbye to tedious flowchart creation",
     Settings: "Settings",
     Shape: "Shape",
     "Shape Libraries": "Shape Libraries",
@@ -200,7 +189,6 @@
       "Share with Full Access, Edit-only, or View-only Permissions",
     "Sign In": "Sign In",
     "Sign Up": "Sign Up",
-    "Sign Up Now": "Sign Up Now",
     Size: "Size",
     Small: "Small",
     "Some classes are available to help style your flowchart":

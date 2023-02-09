@@ -1,5 +1,10 @@
 .Page {
-  background-color: hsla(var(--color-brandHsl), 0.05);
+  /* background-color: hsla(var(--color-brandHsl), 0.05); */
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    hsla(var(--color-brandHsl), 0.25) 0%,
+    hsla(var(--color-brandHsl), 0) 50%
+  );
 }
 
 .orange {
@@ -9,9 +14,11 @@
 }
 
 .SponsorBlock {
-  background-color: var(--palette-purple-3);
+  background-color: var(--color-background);
   color: black;
-  border: 3px solid var(--palette-purple-2);
+  outline: 2px solid hsla(var(--color-brandHsl), 0.125);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .SponsorBlock ul {
@@ -20,7 +27,7 @@
 
 .SponsorFormInput {
   background-color: white;
-  border: none;
+  border: 1px solid hsla(var(--color-foregroundHsl), 0.125);
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   -webkit-font-smoothing: subpixel-antialiased !important;
@@ -77,4 +84,8 @@
   width: 170px;
   height: 170px;
   object-fit: cover;
+}
+
+:global([data-testid="card-element"]) {
+  border: 1px solid hsla(var(--color-foregroundHsl), 0.125);
 }

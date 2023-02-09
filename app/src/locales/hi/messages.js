@@ -1,23 +1,18 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3 / महीना",
-    "$3.00/month": "$3.00/महीना",
     "$30 / Year": "$30 / वर्ष",
-    "$30.00/year (save 20%)": "$30.00/वर्ष (20% बचाएं)",
     "(before a colon creates a label)": "(कॉलन से पहले एक लेबल बनाता है)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों.",
     Account: "खाता",
     Advanced: "विकसित",
-    "Already a sponsor? Log in here":
-      "पहले से ही एक स्पॉनसर हैं? यहां लॉगिन करें",
     Amount: "रकम",
     "An error occurred. Try resubmitting or email {0} directly.": [
       "एक एरर हो गया. फिर से सबमिट करने की कोशिश करें या सीधे ",
       ["0"],
       " ईमेल करें.",
     ],
-    Annually: "वार्षिक",
     Appearance: "दिखावट",
     Attributes: "Attributes",
     "Back To Editor": "संपादक पर वापस जाएं",
@@ -65,8 +60,6 @@
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "कस्टम शेयरिंग विकल्प",
     "Customer Portal": "ग्राहक पोर्टल",
-    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
-      "और भी लेआउट और थीम्स ऑप्शन्स के साथ अपने चार्ट्स के लुक और फ़ील कस्टमाइज़ करें, जिससे आपको प्रोफ़ेशनल और दिखने में सुंदर डायग्राम्स बनाने में मदद मिलेगी।",
     Dark: "डार्क",
     "Dark Mode": "डार्क मोड",
     Date: "तारीख़",
@@ -101,12 +94,9 @@
     "Enter a title": "एक शीर्षक दर्ज करें",
     Excalidraw: "Excalidraw",
     Export: "एक्सपोर्ट करें",
-    "Export to Common Image Formats": "कॉमन इमेज फॉर्मेट में एक्सपोर्ट करें",
     "Extra Large": "Extra Large",
     Feedback: "फ़ीडबैक",
     "Fit Graph": "Fit Graph",
-    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
-      "Flowchart Fun आपकी विज़ुअल कम्युनिकेट प्रक्रियाओं को तीव्र और आसान बनाता है।",
     "Follow Us": "हमें फॉलो करें",
     Fullscreen: "फ़ुलस्क्रीन",
     Futuristic: "भविष्य का",
@@ -121,6 +111,7 @@
     Home: "होम",
     "Hosted Charts": "होस्ट किए गए चार्ट",
     "ID's": "ID's",
+    "Image Export": "छवि निर्यात",
     Images: "Images",
     "Indenting creates an edge": "इंडेंटिंग एक बढ़त बनाता है",
     Info: "जानकारी",
@@ -128,7 +119,6 @@
     Large: "Large",
     Layout: "ख़ाका",
     "Layout is Frozen": "लेआउट जम गया है",
-    "Layouts and Themes": "लेआउट और थीम्स",
     "Leading References": "Leading References",
     "Learn More": "और अधिक जानें",
     "Left to Right": "बाएं से दाएं",
@@ -141,9 +131,10 @@
     "Made by <0>Tone Row</0>": "<0>Tone Row</0> द्वारा बना",
     "Make a Donation": "दान करें",
     "Make publicly accessible": "सार्वजनिक रूप से एक्सेस दें",
+    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
+      "फ़्लोचार्ट फ़न प्रो के साथ अपने कार्यप्रवाह को आसान बनाएं– केवल $3/माह या $30/वर्ष के लिए अभी सदस्यता लें!",
     Medium: "Medium",
     Monospace: "Monospace",
-    Monthly: "मासिक",
     "More Layouts": "ज़्यादा लेआउट",
     "More Themes and Fonts": "और अधिक थीम और फॉन्ट",
     Museum: "म्यूज़ियम",
@@ -162,7 +153,6 @@
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "ग्राहक पोर्टल खोलें",
-    Plans: "प्लान",
     Playbook: "प्लेबुक",
     Pricing: "मूल्य निर्धारण",
     Public: "पब्लिक",
@@ -190,8 +180,6 @@
     "Right to Left": "दाएं से बाएं",
     Roadmap: "रोडमैप",
     Save: "सहेजें",
-    "Say goodbye to tedious flowchart creation":
-      "थकाने वाले फ्लोचार्ट क्रिएशन को कहें बॉय-बॉय",
     Settings: "सेटिंग",
     Shape: "Shape",
     "Shape Libraries": "शेप लाइब्रेरी",
@@ -201,7 +189,6 @@
       "पूरे एक्सेस के साथ शेयर करें , सिर्फ एडिट करें , या व्यू ओनली की अनुमति",
     "Sign In": "साइन इन करें",
     "Sign Up": "साइन अप",
-    "Sign Up Now": "अभी साइन अप करें",
     Size: "Size",
     Small: "Small",
     "Some classes are available to help style your flowchart":

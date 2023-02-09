@@ -1,0 +1,6 @@
+.LogInContainer {
+  border: 2px solid hsla(var(--color-foregroundHsl), 7%);
+  max-width: 500px;
+  width: 100%;
+  justify-self: center;
+}

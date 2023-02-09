@@ -1,24 +1,19 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3 / Monat",
-    "$3.00/month": "3,00 $/Monat",
     "$30 / Year": "$30 / Year",
-    "$30.00/year (save 20%)": "30,00 $/Jahr (20 % sparen)",
     "(before a colon creates a label)":
       "(vor einem Doppelpunkt wird zu einer Beschriftung)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Greifen Sie von überall auf diese Diagramme zu.<0/>Teilen/Einbetten von Diagrammen, die mit Ihren Bearbeitungen synchronisiert bleiben.",
     Account: "Konto",
     Advanced: "Vorangeschritten",
-    "Already a sponsor? Log in here":
-      "Sind Sie schon ein Sponsor? Hier anmelden",
     Amount: "Betrag",
     "An error occurred. Try resubmitting or email {0} directly.": [
       "Es ist ein Fehler aufgetreten. Versuchen Sie, es erneut einzureichen oder senden Sie eine E-Mail direkt an ",
       ["0"],
       ".",
     ],
-    Annually: "Jährlich",
     Appearance: "Erscheinungsbild",
     Attributes: "Attributes",
     "Back To Editor": "Zurück zum Editor",
@@ -66,8 +61,6 @@
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "Benutzerdefinierte Freigabeoptionen",
     "Customer Portal": "Kundenportal",
-    "Customize the look and feel of your charts with more layout and theme options, helping you to create professional, visually appealing diagrams.":
-      "Passen Sie das Aussehen Ihrer Diagramme mit mehr Layout- und Designoptionen an, um professionelle, optisch ansprechende Diagramme zu erstellen.",
     Dark: "Dunkel",
     "Dark Mode": "Dunkelmodus",
     Date: "Datum",
@@ -102,12 +95,9 @@
     "Enter a title": "Titel eingeben",
     Excalidraw: "Excalidraw",
     Export: "Exportieren",
-    "Export to Common Image Formats": "Exportieren Sie in gängige Bildformate",
     "Extra Large": "Extra Large",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
-    "Flowchart Fun makes it quick and easy to visually communicate your processes.":
-      "Mit Flowchart Fun können Sie Ihre Prozesse schnell und einfach visuell darstellen.",
     "Follow Us": "Folgen Sie uns",
     Fullscreen: "Vollbild",
     Futuristic: "Futuristisch",
@@ -122,6 +112,7 @@
     Home: "Startseite",
     "Hosted Charts": "Gehostete Diagramme",
     "ID's": "ID's",
+    "Image Export": "Bildexport",
     Images: "Images",
     "Indenting creates an edge": "Durch das Einrücken entsteht eine Kante",
     Info: "Info",
@@ -129,7 +120,6 @@
     Large: "Large",
     Layout: "Layout",
     "Layout is Frozen": "Layout ist eingefroren",
-    "Layouts and Themes": "Layouts und Themen",
     "Leading References": "Leading References",
     "Learn More": "Mehr erfahren",
     "Left to Right": "Von links nach rechts",
@@ -142,9 +132,10 @@
     "Made by <0>Tone Row</0>": "Gemacht von <0>Tone Row</0>",
     "Make a Donation": "Spenden",
     "Make publicly accessible": "Öffentlich zugänglich machen",
+    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
+      "Vereinfachen Sie Ihren Arbeitsablauf mit Flowchart Fun Pro – abonnieren Sie jetzt für nur 3 $/Monat oder 30 $/Jahr!",
     Medium: "Medium",
     Monospace: "Monospace",
-    Monthly: "Monatlich",
     "More Layouts": "Weitere Layouts",
     "More Themes and Fonts": "Weitere Themen und Schriftarten",
     Museum: "Museum",
@@ -163,7 +154,6 @@
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
     "Open Customer Portal": "Öffnen Sie das Kundenportal",
-    Plans: "Pläne",
     Playbook: "Spielbuch",
     Pricing: "Preisgestaltung",
     Public: "Öffentlich",
@@ -191,8 +181,6 @@
     "Right to Left": "Von rechts nach links",
     Roadmap: "Fahrplan",
     Save: "Speichern",
-    "Say goodbye to tedious flowchart creation":
-      "Verabschieden Sie sich von der mühsamen Erstellung von Flussdiagrammen",
     Settings: "Einstellungen",
     Shape: "Shape",
     "Shape Libraries": "Bibliotheken anpassen",
@@ -202,7 +190,6 @@
       "Freigabe mit vollem Zugriff, Nur-Bearbeiten- oder Nur-Anzeigen-Berechtigung",
     "Sign In": "Einloggen",
     "Sign Up": "Registrieren",
-    "Sign Up Now": "Jetzt registrieren",
     Size: "Size",
     Small: "Small",
     "Some classes are available to help style your flowchart":

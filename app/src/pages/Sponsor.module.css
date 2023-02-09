@@ -17,19 +17,20 @@
 
 .plans_content {
   display: grid;
-  gap: calc(var(--spacer-px) * 6);
+  gap: calc(var(--spacer-px) * 8);
+  justify-content: center;
 }
 
 @media screen and (min-width: 800px) {
   .banner .container {
     text-align: left;
-    grid-template: auto / minmax(0, 1.5fr) minmax(0, 1fr);
+    grid-template: auto / minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
   }
 
   .plans_content {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 3fr);
     align-items: start;
   }
 
@@ -39,7 +40,7 @@
     align-items: center;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: "text image";
-    gap: calc(var(--spacer-px) * 6);
+    gap: calc(var(--spacer-px) * 8);
   }
 
   .featureBlock .text {
@@ -47,13 +48,13 @@
   }
 
   /* reverse direction alternating rows */
-  .featureBlock:nth-child(odd) {
+  .featureBlock:nth-child(even) {
     grid-template-areas: "image text";
   }
-}
 
-.plans {
-  background-color: hsla(var(--color-brandHsl), 0.2);
+  .planLeftRight {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
 }
 
 .planHeader {
@@ -64,8 +65,40 @@
   gap: calc(var(--spacer-px) * 2);
 }
 
+.Free {
+  background-color: hsla(var(--color-foregroundHsl), 0.05);
+  border: 2px solid hsla(var(--color-foregroundHsl), 0.1);
+  --plus-color: hsla(var(--color-foregroundHsl), 1);
+}
+.BecomeAPro {
+  position: relative;
+  border: 2px solid hsla(var(--color-brandHsl), 0.2);
+  --plus-color: hsla(var(--color-brandHsl), 1);
+}
+
+/* Mesh gradient image absolutely positioned behind the content */
+.BecomeAPro::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 0px);
+  background-image: url(/public/images/mesh-gradient.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.25;
+  border-radius: calc(var(--smallest-border-radius-px) * 2.22);
+}
+
+.BecomeAPro h2 {
+  color: hsla(var(--color-brandHsl), 1);
+}
+
 .featureBlock {
-  padding-block: calc(var(--spacer-px) * 8);
+  padding-block: calc(var(--spacer-px) * 5);
 }
 
 .featureBlock img {
@@ -74,85 +107,7 @@
 }
 
 .footerBlock {
-  background-color: hsla(var(--color-brandHsl), 0.2);
   text-align: center;
-}
-
-.signUpSmall {
-  background-color: var(--palette-purple-0);
-  border-color: var(--palette-purple-0);
-  color: white;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  user-select: none;
-}
-
-.signUpSmall:hover,
-.signUpSmall:focus {
-  background-color: #5062ed;
-  border-color: #5062ed;
-  color: white;
-}
-
-.signUpSmall:active {
-  background-color: #4354d6;
-  border-color: #4354d6;
-  color: white;
-}
-
-.toggle {
-  border: 2px solid hsla(var(--color-brandHsl), 0.5);
-}
-
-.toggle button {
-  background-color: hsla(var(--color-brandHsl), 0.2);
-  color: hsla(var(--color-brandHsl), 1);
-  transition: all 0.2s ease-in-out;
-}
-
-.toggle button:hover {
-  background-color: hsla(var(--color-brandHsl), 0.3);
-}
-
-.toggle button:focus {
-  box-shadow: none;
-}
-
-.toggle button[data-active="true"] {
-  background-color: hsla(var(--color-brandHsl), 1);
-  color: white;
-}
-
-.price {
-  font-weight: 700;
-  color: hsla(var(--color-brandHsl), 1);
-  background-color: hsla(var(--color-brandHsl), 0.2);
-}
-
-.plan {
-  border: 4px solid hsla(var(--color-brandHsl), 0.125);
-}
-
-@keyframes jiggle {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-3px);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  75% {
-    transform: translateX(3px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.priceAnimate {
-  animation: jiggle 0.333s ease-in-out;
 }
 
 .animatedStyles {
@@ -192,6 +147,14 @@
   width: 100%;
   aspect-ratio: 1468 / 1080;
   position: relative;
+  border: solid 2px hsla(var(--color-foregroundHsl), 0.1);
+  font-size: 0;
+  border-radius: calc(var(--smallest-border-radius-px) * 3);
+  overflow: hidden;
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.125) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.15) 0px 8px 16px -8px;
+  background-color: white;
 }
 
 .video svg {
@@ -207,4 +170,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.planLeftRight {
+  display: grid;
+  gap: calc(var(--spacer-px) * 4);
 }

@@ -6,58 +6,20 @@ import { Controller, useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
 import { AppContext } from "../components/AppContext";
-import {
-  Button,
-  Input,
-  Notice,
-  Page,
-  Section,
-  SectionTitle,
-} from "../components/Shared";
+import { Button, Input, Notice } from "../components/Shared";
 import Spinner from "../components/Spinner";
 import { isError } from "../lib/helpers";
 import { createCustomer, createSubscription } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box, Type } from "../slang";
-import styles from "./SignUp.module.css";
-
-export function SignUp() {
-  return (
-    <Box className={styles.Page}>
-      <Page content="center">
-        <SponsorBlock />
-      </Page>
-    </Box>
-  );
-}
-
-function SponsorBlock() {
-  return (
-    <Section
-      content="start normal"
-      className={styles.SponsorBlock}
-      p={8}
-      rad={2}
-      gap={8}
-    >
-      <SectionTitle
-        color="palette-purple-0"
-        weight="700"
-        className={styles.SponsorBlockTitle}
-      >
-        <Trans>Become a Sponsor</Trans>
-      </SectionTitle>
-      <SignUpForm />
-    </Section>
-  );
-}
+import styles from "./SignUpForm.module.css";
 
 type SignUpFormData = {
   email: string;
   subscription: "monthly" | "yearly";
 };
 
-function SignUpForm() {
+export function SignUpForm() {
   const stripe = useStripe();
   const elements = useElements();
   // check if hash === "#annually"
