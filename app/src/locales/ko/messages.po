@@ -13,21 +13,13 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/SignUp.tsx:166
+#: src/components/SignUpForm.tsx:128
 msgid "$3 / Month"
 msgstr "$3/월"
 
-#: src/pages/Sponsor.tsx:105
-msgid "$3.00/month"
-msgstr "$3.00/월"
-
-#: src/pages/SignUp.tsx:167
+#: src/components/SignUpForm.tsx:129
 msgid "$30 / Year"
 msgstr "$30/년"
-
-#: src/pages/Sponsor.tsx:106
-msgid "$30.00/year (save 20%)"
-msgstr "$30.00/년(20% 할인)"
 
 #: src/lib/getDefaultText.ts:9
 msgid "(before a colon creates a label)"
@@ -54,10 +46,6 @@ msgstr "금액"
 #: src/components/Feedback.tsx:110
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접 이메일을 보내주십시오."
-
-#: src/pages/Sponsor.tsx:98
-msgid "Annually"
-msgstr "연간"
 
 #: src/components/Settings.tsx:80
 msgid "Appearance"
@@ -131,11 +119,11 @@ msgid "Charts"
 msgstr "차트"
 
 #: src/components/LoginForm.tsx:36
-#: src/pages/SignUp.tsx:134
+#: src/components/SignUpForm.tsx:96
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
-#: src/pages/Sponsor.tsx:134
+#: src/pages/Sponsor.tsx:67
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "표를 전체 권한, 편집만 가능, 보기만 가능 권한 중 어떤 것으로 공유할 지 선택하여 작업물을 변경할 수 있는지 관리하세요."
 
@@ -236,7 +224,7 @@ msgstr "생성됨"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:131
+#: src/pages/Sponsor.tsx:64
 msgid "Custom Sharing Options"
 msgstr "커스텀 공유 옵션"
 
@@ -315,7 +303,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr "복제"
 
-#: src/pages/Sponsor.tsx:61
+#: src/pages/Sponsor.tsx:50
 msgid "Dynamic Share Links"
 msgstr "다이나믹 공유 링크"
 
@@ -379,11 +367,6 @@ msgstr "Excalidraw"
 msgid "Export"
 msgstr "내보내기"
 
-#: src/pages/Sponsor.tsx:48
-#: src/pages/Sponsor.tsx:57
-msgid "Export to Common Image Formats"
-msgstr "일반 이미지 포맷으로 내보내기"
-
 #: src/components/GraphContextMenu.tsx:162
 msgid "Extra Large"
 msgstr ""
@@ -445,13 +428,18 @@ msgstr "집"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Charts.tsx:724
-#: src/pages/Sponsor.tsx:148
+#: src/pages/Sponsor.tsx:83
 msgid "Hosted Charts"
 msgstr "호스트 차트"
 
 #: src/components/SyntaxReference.tsx:101
 msgid "ID's"
 msgstr ""
+
+#: src/pages/Sponsor.tsx:36
+#: src/pages/Sponsor.tsx:46
+msgid "Image Export"
+msgstr "이미지 내보내기"
 
 #: src/components/SyntaxReference.tsx:338
 msgid "Images"
@@ -536,6 +524,10 @@ msgstr "기부하기"
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
+#: src/pages/Sponsor.tsx:15
+msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
+msgstr "Flowchart Fun Pro로 작업 흐름을 더 쉽게 만드세요. 지금 구독을 월 $3 또는 연간 $30에 불과합니다!"
+
 #: src/components/GraphContextMenu.tsx:153
 msgid "Medium"
 msgstr ""
@@ -544,15 +536,11 @@ msgstr ""
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/pages/Sponsor.tsx:88
-msgid "Monthly"
-msgstr "월간"
-
-#: src/pages/Sponsor.tsx:62
+#: src/pages/Sponsor.tsx:51
 msgid "More Layouts"
 msgstr "더 많은 레이아웃"
 
-#: src/pages/Sponsor.tsx:63
+#: src/pages/Sponsor.tsx:52
 msgid "More Themes and Fonts"
 msgstr "더욱 많은 테마와 폰트"
 
@@ -729,8 +717,8 @@ msgstr "설정"
 msgid "Shape"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:49
-#: src/pages/Sponsor.tsx:58
+#: src/pages/Sponsor.tsx:37
+#: src/pages/Sponsor.tsx:47
 msgid "Shape Libraries"
 msgstr "셰이프 라이브러리"
 
@@ -738,7 +726,7 @@ msgstr "셰이프 라이브러리"
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
 
-#: src/pages/Sponsor.tsx:64
+#: src/pages/Sponsor.tsx:53
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "완전한 접근권, 편집 전용, 또는 읽기 전용 권한으로 공유하세요"
 
@@ -746,15 +734,9 @@ msgstr "완전한 접근권, 편집 전용, 또는 읽기 전용 권한으로 �
 msgid "Sign In"
 msgstr "로그인"
 
-#: src/pages/SignUp.tsx:48
+#: src/components/SignUpForm.tsx:175
 msgid "Sign Up"
 msgstr "가입"
-
-#: src/pages/Sponsor.tsx:30
-#: src/pages/Sponsor.tsx:119
-#: src/pages/Sponsor.tsx:178
-msgid "Sign Up Now"
-msgstr "지금 가입하세요"
 
 #: src/components/GraphContextMenu.tsx:294
 msgid "Size"
@@ -784,8 +766,8 @@ msgstr "호스트된 플로차트와 최신 스타일 및 기능에 액세스하
 msgid "Start"
 msgstr "시작"
 
-#: src/pages/Sponsor.tsx:50
-#: src/pages/Sponsor.tsx:59
+#: src/pages/Sponsor.tsx:38
+#: src/pages/Sponsor.tsx:48
 msgid "Static Share Links"
 msgstr "스태틱 공유 링크"
 
@@ -797,7 +779,7 @@ msgstr "상태"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:164
+#: src/pages/Sponsor.tsx:100
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Flowchart Fun를 통해 워크플로우를 능률화하고 프로세스 시각화를 단순화하세요"
 
@@ -819,7 +801,6 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
-#: src/pages/SignUp.tsx:213
 msgid "Submit"
 msgstr "보내다"
 
@@ -889,18 +870,14 @@ msgstr "녹이다"
 msgid "Unique text value to identify a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:60
+#: src/pages/Sponsor.tsx:49
 msgid "Unlimited Hosted Charts"
 msgstr "무제한 차트 호스팅"
 
-#: src/pages/Sponsor.tsx:47
-#: src/pages/Sponsor.tsx:56
+#: src/pages/Sponsor.tsx:35
+#: src/pages/Sponsor.tsx:45
 msgid "Unlimited Local Charts"
 msgstr "무제한 로컬 차트"
-
-#: src/pages/Sponsor.tsx:16
-msgid "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year."
-msgstr "Flowchart Fun으로 성공적인 워크플로를 잠금 해제하세요! $3/월 또는 $30/년에 프로가 되십시오."
 
 #: src/components/SponsorDashboard.tsx:163
 msgid "Update Email"
@@ -938,7 +915,7 @@ msgstr "Github에서 보기"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다!"
 
-#: src/pages/SignUp.tsx:220
+#: src/components/SignUpForm.tsx:182
 msgid "We use cookies to keep you logged in."
 msgstr "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다."
 
@@ -954,7 +931,7 @@ msgstr "무엇을 공유하시겠습니까?"
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:151
+#: src/pages/Sponsor.tsx:86
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다."
 

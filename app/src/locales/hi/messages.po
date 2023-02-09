@@ -13,21 +13,13 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/SignUp.tsx:166
+#: src/components/SignUpForm.tsx:128
 msgid "$3 / Month"
 msgstr "$3 / महीना"
 
-#: src/pages/Sponsor.tsx:105
-msgid "$3.00/month"
-msgstr "$3.00/महीना"
-
-#: src/pages/SignUp.tsx:167
+#: src/components/SignUpForm.tsx:129
 msgid "$30 / Year"
 msgstr "$30 / वर्ष"
-
-#: src/pages/Sponsor.tsx:106
-msgid "$30.00/year (save 20%)"
-msgstr "$30.00/वर्ष (20% बचाएं)"
 
 #: src/lib/getDefaultText.ts:9
 msgid "(before a colon creates a label)"
@@ -54,10 +46,6 @@ msgstr "रकम"
 #: src/components/Feedback.tsx:110
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "एक एरर हो गया. फिर से सबमिट करने की कोशिश करें या सीधे {0} ईमेल करें."
-
-#: src/pages/Sponsor.tsx:98
-msgid "Annually"
-msgstr "वार्षिक"
 
 #: src/components/Settings.tsx:80
 msgid "Appearance"
@@ -131,11 +119,11 @@ msgid "Charts"
 msgstr "चार्ट"
 
 #: src/components/LoginForm.tsx:36
-#: src/pages/SignUp.tsx:134
+#: src/components/SignUpForm.tsx:96
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
 
-#: src/pages/Sponsor.tsx:134
+#: src/pages/Sponsor.tsx:67
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "आप अपने चार्ट में  फुल एक्सेस , एडिट ओनली या केवल देखने की अनुमतियों के साथ साझा करना चुनकर यह नियंत्रित कर सकते हैं कि कौन आपके कार्य में परिवर्तन कर सकता है"
 
@@ -236,7 +224,7 @@ msgstr "बनाया गया"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:131
+#: src/pages/Sponsor.tsx:64
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
@@ -315,7 +303,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
 
-#: src/pages/Sponsor.tsx:61
+#: src/pages/Sponsor.tsx:50
 msgid "Dynamic Share Links"
 msgstr "डायनामिक शेयर लिंक्स"
 
@@ -379,11 +367,6 @@ msgstr "Excalidraw"
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
-#: src/pages/Sponsor.tsx:48
-#: src/pages/Sponsor.tsx:57
-msgid "Export to Common Image Formats"
-msgstr "कॉमन इमेज फॉर्मेट में एक्सपोर्ट करें"
-
 #: src/components/GraphContextMenu.tsx:162
 msgid "Extra Large"
 msgstr ""
@@ -445,13 +428,18 @@ msgstr "होम"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Charts.tsx:724
-#: src/pages/Sponsor.tsx:148
+#: src/pages/Sponsor.tsx:83
 msgid "Hosted Charts"
 msgstr "होस्ट किए गए चार्ट"
 
 #: src/components/SyntaxReference.tsx:101
 msgid "ID's"
 msgstr ""
+
+#: src/pages/Sponsor.tsx:36
+#: src/pages/Sponsor.tsx:46
+msgid "Image Export"
+msgstr "छवि निर्यात"
 
 #: src/components/SyntaxReference.tsx:338
 msgid "Images"
@@ -536,6 +524,10 @@ msgstr "दान करें"
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
+#: src/pages/Sponsor.tsx:15
+msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
+msgstr "फ़्लोचार्ट फ़न प्रो के साथ अपने कार्यप्रवाह को आसान बनाएं– केवल $3/माह या $30/वर्ष के लिए अभी सदस्यता लें!"
+
 #: src/components/GraphContextMenu.tsx:153
 msgid "Medium"
 msgstr ""
@@ -544,15 +536,11 @@ msgstr ""
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/pages/Sponsor.tsx:88
-msgid "Monthly"
-msgstr "मासिक"
-
-#: src/pages/Sponsor.tsx:62
+#: src/pages/Sponsor.tsx:51
 msgid "More Layouts"
 msgstr "ज़्यादा लेआउट"
 
-#: src/pages/Sponsor.tsx:63
+#: src/pages/Sponsor.tsx:52
 msgid "More Themes and Fonts"
 msgstr "और अधिक थीम और फॉन्ट"
 
@@ -729,8 +717,8 @@ msgstr "सेटिंग"
 msgid "Shape"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:49
-#: src/pages/Sponsor.tsx:58
+#: src/pages/Sponsor.tsx:37
+#: src/pages/Sponsor.tsx:47
 msgid "Shape Libraries"
 msgstr "शेप लाइब्रेरी"
 
@@ -738,7 +726,7 @@ msgstr "शेप लाइब्रेरी"
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
 
-#: src/pages/Sponsor.tsx:64
+#: src/pages/Sponsor.tsx:53
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "पूरे एक्सेस के साथ शेयर करें , सिर्फ एडिट करें , या व्यू ओनली की अनुमति"
 
@@ -746,15 +734,9 @@ msgstr "पूरे एक्सेस के साथ शेयर करे�
 msgid "Sign In"
 msgstr "साइन इन करें"
 
-#: src/pages/SignUp.tsx:48
+#: src/components/SignUpForm.tsx:175
 msgid "Sign Up"
 msgstr "साइन अप"
-
-#: src/pages/Sponsor.tsx:30
-#: src/pages/Sponsor.tsx:119
-#: src/pages/Sponsor.tsx:178
-msgid "Sign Up Now"
-msgstr "अभी साइन अप करें"
 
 #: src/components/GraphContextMenu.tsx:294
 msgid "Size"
@@ -784,8 +766,8 @@ msgstr "होस्ट किए गए फ़्लोचार्ट और �
 msgid "Start"
 msgstr "शुरू"
 
-#: src/pages/Sponsor.tsx:50
-#: src/pages/Sponsor.tsx:59
+#: src/pages/Sponsor.tsx:38
+#: src/pages/Sponsor.tsx:48
 msgid "Static Share Links"
 msgstr "स्टैटिक शेयर लिंक्स"
 
@@ -797,7 +779,7 @@ msgstr "स्टेटस"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:164
+#: src/pages/Sponsor.tsx:100
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन"
 
@@ -819,7 +801,6 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
-#: src/pages/SignUp.tsx:213
 msgid "Submit"
 msgstr "भेजना"
 
@@ -889,18 +870,14 @@ msgstr "अनफ़्रीज़"
 msgid "Unique text value to identify a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:60
+#: src/pages/Sponsor.tsx:49
 msgid "Unlimited Hosted Charts"
 msgstr "असीमित होस्टेड चार्ट"
 
-#: src/pages/Sponsor.tsx:47
-#: src/pages/Sponsor.tsx:56
+#: src/pages/Sponsor.tsx:35
+#: src/pages/Sponsor.tsx:45
 msgid "Unlimited Local Charts"
 msgstr "असीमित लोकल चार्ट"
-
-#: src/pages/Sponsor.tsx:16
-msgid "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year."
-msgstr "फ़्लोचार्ट फ़न के साथ वर्कफ़्लो सफलता अनलॉक करें! केवल $3/माह या $30/वर्ष में पेशेवर बनें।"
 
 #: src/components/SponsorDashboard.tsx:163
 msgid "Update Email"
@@ -938,7 +915,7 @@ msgstr "Github पर देखें"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "हम आपके सभी फ़ीडबैक, सुझावों, बग्स और विशेष अनुरोधों की सराहना करते हैं!"
 
-#: src/pages/SignUp.tsx:220
+#: src/components/SignUpForm.tsx:182
 msgid "We use cookies to keep you logged in."
 msgstr "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं."
 
@@ -954,7 +931,7 @@ msgstr "आप हमारे साथ क्या शेयर करना 
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:151
+#: src/pages/Sponsor.tsx:86
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।"
 

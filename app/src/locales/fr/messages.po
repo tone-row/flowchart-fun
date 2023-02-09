@@ -13,21 +13,13 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/SignUp.tsx:166
+#: src/components/SignUpForm.tsx:128
 msgid "$3 / Month"
 msgstr "3 $ / mois"
 
-#: src/pages/Sponsor.tsx:105
-msgid "$3.00/month"
-msgstr "3 $/mois"
-
-#: src/pages/SignUp.tsx:167
+#: src/components/SignUpForm.tsx:129
 msgid "$30 / Year"
 msgstr "30 $ / an"
-
-#: src/pages/Sponsor.tsx:106
-msgid "$30.00/year (save 20%)"
-msgstr "30,00 $/an (économisez 20 %)"
 
 #: src/lib/getDefaultText.ts:9
 msgid "(before a colon creates a label)"
@@ -54,10 +46,6 @@ msgstr "Montant"
 #: src/components/Feedback.tsx:110
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "Une erreur s'est produite. Essayez de l'envoyer à nouveau ou bien envoyez un e-mail à l'adresse {0}."
-
-#: src/pages/Sponsor.tsx:98
-msgid "Annually"
-msgstr "Annuellement"
 
 #: src/components/Settings.tsx:80
 msgid "Appearance"
@@ -131,11 +119,11 @@ msgid "Charts"
 msgstr "Graphiques"
 
 #: src/components/LoginForm.tsx:36
-#: src/pages/SignUp.tsx:134
+#: src/components/SignUpForm.tsx:96
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Consultez votre messagerie électronique pour le lien de connexion. Vous pouvez fermer cette fenêtre."
 
-#: src/pages/Sponsor.tsx:134
+#: src/pages/Sponsor.tsx:67
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "Optez pour le partage de vos graphiques avec des autorisations d'accès complet, de modification uniquement ou de visualisation uniquement. Vous pourrez ainsi contrôler qui peut apporter des modifications à votre travail."
 
@@ -236,7 +224,7 @@ msgstr "Créé"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:131
+#: src/pages/Sponsor.tsx:64
 msgid "Custom Sharing Options"
 msgstr "Options de partage personnalisées"
 
@@ -315,7 +303,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr "Dupliquer"
 
-#: src/pages/Sponsor.tsx:61
+#: src/pages/Sponsor.tsx:50
 msgid "Dynamic Share Links"
 msgstr "Liens de partage dynamiques"
 
@@ -379,11 +367,6 @@ msgstr "Excalidraw"
 msgid "Export"
 msgstr "Exporter"
 
-#: src/pages/Sponsor.tsx:48
-#: src/pages/Sponsor.tsx:57
-msgid "Export to Common Image Formats"
-msgstr "Exporter vers des formats d'image courants"
-
 #: src/components/GraphContextMenu.tsx:162
 msgid "Extra Large"
 msgstr ""
@@ -445,13 +428,18 @@ msgstr "Accueil"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Charts.tsx:724
-#: src/pages/Sponsor.tsx:148
+#: src/pages/Sponsor.tsx:83
 msgid "Hosted Charts"
 msgstr "Graphiques hébergés"
 
 #: src/components/SyntaxReference.tsx:101
 msgid "ID's"
 msgstr ""
+
+#: src/pages/Sponsor.tsx:36
+#: src/pages/Sponsor.tsx:46
+msgid "Image Export"
+msgstr "Exportation d'images"
 
 #: src/components/SyntaxReference.tsx:338
 msgid "Images"
@@ -536,6 +524,10 @@ msgstr "Faire un don"
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
+#: src/pages/Sponsor.tsx:15
+msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
+msgstr "Facilitez votre flux de travail avec Flowchart Fun Pro - abonnez-vous maintenant pour seulement 3 $/mois ou 30 $/an !"
+
 #: src/components/GraphContextMenu.tsx:153
 msgid "Medium"
 msgstr ""
@@ -544,15 +536,11 @@ msgstr ""
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/pages/Sponsor.tsx:88
-msgid "Monthly"
-msgstr "Mensuel"
-
-#: src/pages/Sponsor.tsx:62
+#: src/pages/Sponsor.tsx:51
 msgid "More Layouts"
 msgstr "Plus de mises en page"
 
-#: src/pages/Sponsor.tsx:63
+#: src/pages/Sponsor.tsx:52
 msgid "More Themes and Fonts"
 msgstr "Plus de thèmes et de polices"
 
@@ -729,8 +717,8 @@ msgstr "Paramètres"
 msgid "Shape"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:49
-#: src/pages/Sponsor.tsx:58
+#: src/pages/Sponsor.tsx:37
+#: src/pages/Sponsor.tsx:47
 msgid "Shape Libraries"
 msgstr "Bibliothèques de formes"
 
@@ -738,7 +726,7 @@ msgstr "Bibliothèques de formes"
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
 
-#: src/pages/Sponsor.tsx:64
+#: src/pages/Sponsor.tsx:53
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "Partager avec des autorisations d'accès complet, d'édition uniquement ou d'affichage uniquement"
 
@@ -746,15 +734,9 @@ msgstr "Partager avec des autorisations d'accès complet, d'édition uniquement 
 msgid "Sign In"
 msgstr "Connectez"
 
-#: src/pages/SignUp.tsx:48
+#: src/components/SignUpForm.tsx:175
 msgid "Sign Up"
 msgstr "Inscription"
-
-#: src/pages/Sponsor.tsx:30
-#: src/pages/Sponsor.tsx:119
-#: src/pages/Sponsor.tsx:178
-msgid "Sign Up Now"
-msgstr "S'inscrire maintenant"
 
 #: src/components/GraphContextMenu.tsx:294
 msgid "Size"
@@ -784,8 +766,8 @@ msgstr "Parrainez flowchart.fun pour 3 $ / mois ou 30 $ / an pour accéder aux o
 msgid "Start"
 msgstr "Début"
 
-#: src/pages/Sponsor.tsx:50
-#: src/pages/Sponsor.tsx:59
+#: src/pages/Sponsor.tsx:38
+#: src/pages/Sponsor.tsx:48
 msgid "Static Share Links"
 msgstr "Liens de partage statiques"
 
@@ -797,7 +779,7 @@ msgstr "État"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:164
+#: src/pages/Sponsor.tsx:100
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Rationalisez votre flux de travail et simplifiez la visualisation de vos processus grâce à Flowchart Fun"
 
@@ -819,7 +801,6 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
-#: src/pages/SignUp.tsx:213
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -889,18 +870,14 @@ msgstr "Débloquer"
 msgid "Unique text value to identify a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:60
+#: src/pages/Sponsor.tsx:49
 msgid "Unlimited Hosted Charts"
 msgstr "Nombre illimité de graphiques hébergés"
 
-#: src/pages/Sponsor.tsx:47
-#: src/pages/Sponsor.tsx:56
+#: src/pages/Sponsor.tsx:35
+#: src/pages/Sponsor.tsx:45
 msgid "Unlimited Local Charts"
 msgstr "Nombre illimité de graphiques locaux"
-
-#: src/pages/Sponsor.tsx:16
-msgid "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year."
-msgstr "Débloquez le succès du flux de travail avec Flowchart Fun ! Devenez Pro pour seulement 3 $/mois ou 30 $/an."
 
 #: src/components/SponsorDashboard.tsx:163
 msgid "Update Email"
@@ -938,7 +915,7 @@ msgstr "Voir sur Github"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "Nous apprécions tous vos commentaires, suggestions, retours sur les bugs et demandes de fonctionnalités !"
 
-#: src/pages/SignUp.tsx:220
+#: src/components/SignUpForm.tsx:182
 msgid "We use cookies to keep you logged in."
 msgstr "Nous utilisons des cookies afin de maintenir votre connexion."
 
@@ -954,7 +931,7 @@ msgstr "Que voudriez-vous partager avec nous ?"
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:151
+#: src/pages/Sponsor.tsx:86
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez."
 
