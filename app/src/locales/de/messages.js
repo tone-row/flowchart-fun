@@ -1,9 +1,7 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3 / Monat",
-    "$3.00/month": "3,00 $/Monat",
     "$30 / Year": "$30 / Year",
-    "$30.00/year (save 20%)": "30,00 $/Jahr (20 % sparen)",
     "(before a colon creates a label)":
       "(vor einem Doppelpunkt wird zu einer Beschriftung)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
@@ -16,7 +14,6 @@
       ["0"],
       ".",
     ],
-    Annually: "Jährlich",
     Appearance: "Erscheinungsbild",
     Attributes: "Attributes",
     "Back To Editor": "Zurück zum Editor",
@@ -98,7 +95,6 @@
     "Enter a title": "Titel eingeben",
     Excalidraw: "Excalidraw",
     Export: "Exportieren",
-    "Export to Common Image Formats": "Exportieren Sie in gängige Bildformate",
     "Extra Large": "Extra Large",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
@@ -116,6 +112,7 @@
     Home: "Startseite",
     "Hosted Charts": "Gehostete Diagramme",
     "ID's": "ID's",
+    "Image Export": "Bildexport",
     Images: "Images",
     "Indenting creates an edge": "Durch das Einrücken entsteht eine Kante",
     Info: "Info",
@@ -135,9 +132,10 @@
     "Made by <0>Tone Row</0>": "Gemacht von <0>Tone Row</0>",
     "Make a Donation": "Spenden",
     "Make publicly accessible": "Öffentlich zugänglich machen",
+    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
+      "Vereinfachen Sie Ihren Arbeitsablauf mit Flowchart Fun Pro – abonnieren Sie jetzt für nur 3 $/Monat oder 30 $/Jahr!",
     Medium: "Medium",
     Monospace: "Monospace",
-    Monthly: "Monatlich",
     "More Layouts": "Weitere Layouts",
     "More Themes and Fonts": "Weitere Themen und Schriftarten",
     Museum: "Museum",
@@ -192,7 +190,6 @@
       "Freigabe mit vollem Zugriff, Nur-Bearbeiten- oder Nur-Anzeigen-Berechtigung",
     "Sign In": "Einloggen",
     "Sign Up": "Registrieren",
-    "Sign Up Now": "Jetzt registrieren",
     Size: "Size",
     Small: "Small",
     "Some classes are available to help style your flowchart":
@@ -238,8 +235,6 @@
       "Unique text value to identify a node",
     "Unlimited Hosted Charts": "Unbegrenzte Anzahl gehosteter Charts",
     "Unlimited Local Charts": "Unbegrenzte lokale Charts",
-    "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.":
-      "Schalten Sie den Workflow-Erfolg mit Flowchart Fun frei! Werden Sie ein Profi für nur 3 $/Monat oder 30 $/Jahr.",
     "Update Email": "E-Mail aktualisieren",
     Updated: "Aktualisiert",
     "Use classes to group nodes": "Use classes to group nodes",

@@ -131,6 +131,18 @@ body:not([class*="disableAnimation"]) .shared-header-btn {
   .mobile-header {
     display: none;
   }
+
+  /* Hide Icons */
+  .shared-header-btn__icon {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  /* Show Icons */
+  .shared-header-btn__icon {
+    display: inline-block;
+  }
 }
 
 /* Mobile Header */

@@ -1,9 +1,7 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "3 美元/月",
-    "$3.00/month": "$3.00/月",
     "$30 / Year": "30 美元 / 年",
-    "$30.00/year (save 20%)": "$30.00/年（节省 20%）",
     "(before a colon creates a label)": "(在冒号前创建一个标签)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。",
@@ -15,7 +13,6 @@
       ["0"],
       "。",
     ],
-    Annually: "每年",
     Appearance: "外观",
     Attributes: "Attributes",
     "Back To Editor": "返回编辑器",
@@ -96,7 +93,6 @@
     "Enter a title": "输入标题",
     Excalidraw: "Excalidraw",
     Export: "导出",
-    "Export to Common Image Formats": "导出为常见图片格式",
     "Extra Large": "Extra Large",
     Feedback: "反馈",
     "Fit Graph": "Fit Graph",
@@ -114,6 +110,7 @@
     Home: "主页",
     "Hosted Charts": "托管的图表",
     "ID's": "ID's",
+    "Image Export": "图像导出",
     Images: "Images",
     "Indenting creates an edge": "缩进创建链接",
     Info: "信息",
@@ -133,9 +130,10 @@
     "Made by <0>Tone Row</0>": "由 <0>Tone Row</0> 制作",
     "Make a Donation": "捐款",
     "Make publicly accessible": "设为公开访问",
+    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
+      "使用 Flowchart Fun Pro 让您的工作流程更轻松——现在订阅只需 3 美元/月或 30 美元/年！",
     Medium: "Medium",
     Monospace: "Monospace",
-    Monthly: "每月",
     "More Layouts": "更多布局",
     "More Themes and Fonts": "更多主题和字体",
     Museum: "博物馆",
@@ -190,7 +188,6 @@
       "以完全访问权限、仅编辑权限或仅查看权限共享",
     "Sign In": "登录",
     "Sign Up": "注册",
-    "Sign Up Now": "马上注册",
     Size: "Size",
     Small: "Small",
     "Some classes are available to help style your flowchart":
@@ -236,8 +233,6 @@
       "Unique text value to identify a node",
     "Unlimited Hosted Charts": "无限托管图表",
     "Unlimited Local Charts": "无限的本地图表",
-    "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.":
-      "使用 Flowchart Fun 解锁工作流程的成功！ 成为专业人士只需 3 美元/月或 30 美元/年。",
     "Update Email": "更新电子邮件",
     Updated: "已更新",
     "Use classes to group nodes": "Use classes to group nodes",

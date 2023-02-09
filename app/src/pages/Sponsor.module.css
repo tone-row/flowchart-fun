@@ -18,6 +18,7 @@
 .plans_content {
   display: grid;
   gap: calc(var(--spacer-px) * 8);
+  justify-content: center;
 }
 
 @media screen and (min-width: 800px) {
@@ -29,7 +30,7 @@
 
   .plans_content {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 3fr);
     align-items: start;
   }
 
@@ -50,11 +51,10 @@
   .featureBlock:nth-child(even) {
     grid-template-areas: "image text";
   }
-}
 
-.plans {
-  border: 2px solid hsla(var(--color-foregroundHsl), 0.1);
-  border-width: 1px 0;
+  .planLeftRight {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
 }
 
 .planHeader {
@@ -63,6 +63,38 @@
   justify-content: start;
   grid-auto-flow: column;
   gap: calc(var(--spacer-px) * 2);
+}
+
+.Free {
+  background-color: hsla(var(--color-foregroundHsl), 0.05);
+  border: 2px solid hsla(var(--color-foregroundHsl), 0.1);
+  --plus-color: hsla(var(--color-foregroundHsl), 1);
+}
+.BecomeAPro {
+  position: relative;
+  border: 2px solid hsla(var(--color-brandHsl), 0.2);
+  --plus-color: hsla(var(--color-brandHsl), 1);
+}
+
+/* Mesh gradient image absolutely positioned behind the content */
+.BecomeAPro::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 0px);
+  background-image: url(/public/images/mesh-gradient.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.25;
+  border-radius: calc(var(--smallest-border-radius-px) * 2.22);
+}
+
+.BecomeAPro h2 {
+  color: hsla(var(--color-brandHsl), 1);
 }
 
 .featureBlock {
@@ -75,76 +107,7 @@
 }
 
 .footerBlock {
-  border-top: 1px solid hsla(var(--color-foregroundHsl), 0.1);
   text-align: center;
-}
-
-.signUpSmall {
-  background-color: var(--palette-purple-0);
-  border-color: var(--palette-purple-0);
-  color: white;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  user-select: none;
-  box-shadow: rgba(50, 50, 93, 0) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0) 0px 8px 16px -8px;
-  transform-origin: center;
-  transform: translateZ(0);
-}
-
-.signUpSmall:hover,
-.signUpSmall:focus {
-  background-color: #5062ed;
-  border-color: #5062ed;
-  color: white;
-  scale: 1.05;
-  box-shadow: rgba(50, 50, 93, 0.15) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.2) 0px 8px 16px -8px;
-}
-
-.signUpSmall:active {
-  background-color: #4354d6;
-  border-color: #4354d6;
-  color: white;
-}
-
-.toggle button:focus {
-  box-shadow: none;
-}
-
-.toggle button[data-active="true"] {
-  color: hsla(var(--color-brandHsl), 1);
-}
-
-.price {
-  /* color: hsla(var(--color-brandHsl), 1); */
-  background-color: hsla(var(--color-foregroundHsl), 0.1);
-}
-
-@keyframes jiggle {
-  0% {
-    transform: translateX(0);
-    filter: blur(1px);
-    opacity: 0.75;
-  }
-  25% {
-    transform: translateX(-3px);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  75% {
-    transform: translateX(3px);
-  }
-  100% {
-    transform: translateX(0);
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-.priceAnimate {
-  animation: jiggle 0.333s ease-in-out;
 }
 
 .animatedStyles {
@@ -184,13 +147,13 @@
   width: 100%;
   aspect-ratio: 1468 / 1080;
   position: relative;
-  outline: solid 1px hsla(var(--color-foregroundHsl), 0.125);
+  border: solid 2px hsla(var(--color-foregroundHsl), 0.1);
   font-size: 0;
-  border-radius: calc(var(--smallest-border-radius-px) * 5);
+  border-radius: calc(var(--smallest-border-radius-px) * 3);
   overflow: hidden;
   padding: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.125) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.15) 0px 8px 16px -8px;
   background-color: white;
 }
 
@@ -207,4 +170,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.planLeftRight {
+  display: grid;
+  gap: calc(var(--spacer-px) * 4);
 }

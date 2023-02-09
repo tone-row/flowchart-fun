@@ -1,9 +1,7 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3 / महीना",
-    "$3.00/month": "$3.00/महीना",
     "$30 / Year": "$30 / वर्ष",
-    "$30.00/year (save 20%)": "$30.00/वर्ष (20% बचाएं)",
     "(before a colon creates a label)": "(कॉलन से पहले एक लेबल बनाता है)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों.",
@@ -15,7 +13,6 @@
       ["0"],
       " ईमेल करें.",
     ],
-    Annually: "वार्षिक",
     Appearance: "दिखावट",
     Attributes: "Attributes",
     "Back To Editor": "संपादक पर वापस जाएं",
@@ -97,7 +94,6 @@
     "Enter a title": "एक शीर्षक दर्ज करें",
     Excalidraw: "Excalidraw",
     Export: "एक्सपोर्ट करें",
-    "Export to Common Image Formats": "कॉमन इमेज फॉर्मेट में एक्सपोर्ट करें",
     "Extra Large": "Extra Large",
     Feedback: "फ़ीडबैक",
     "Fit Graph": "Fit Graph",
@@ -115,6 +111,7 @@
     Home: "होम",
     "Hosted Charts": "होस्ट किए गए चार्ट",
     "ID's": "ID's",
+    "Image Export": "छवि निर्यात",
     Images: "Images",
     "Indenting creates an edge": "इंडेंटिंग एक बढ़त बनाता है",
     Info: "जानकारी",
@@ -134,9 +131,10 @@
     "Made by <0>Tone Row</0>": "<0>Tone Row</0> द्वारा बना",
     "Make a Donation": "दान करें",
     "Make publicly accessible": "सार्वजनिक रूप से एक्सेस दें",
+    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
+      "फ़्लोचार्ट फ़न प्रो के साथ अपने कार्यप्रवाह को आसान बनाएं– केवल $3/माह या $30/वर्ष के लिए अभी सदस्यता लें!",
     Medium: "Medium",
     Monospace: "Monospace",
-    Monthly: "मासिक",
     "More Layouts": "ज़्यादा लेआउट",
     "More Themes and Fonts": "और अधिक थीम और फॉन्ट",
     Museum: "म्यूज़ियम",
@@ -191,7 +189,6 @@
       "पूरे एक्सेस के साथ शेयर करें , सिर्फ एडिट करें , या व्यू ओनली की अनुमति",
     "Sign In": "साइन इन करें",
     "Sign Up": "साइन अप",
-    "Sign Up Now": "अभी साइन अप करें",
     Size: "Size",
     Small: "Small",
     "Some classes are available to help style your flowchart":
@@ -237,8 +234,6 @@
       "Unique text value to identify a node",
     "Unlimited Hosted Charts": "असीमित होस्टेड चार्ट",
     "Unlimited Local Charts": "असीमित लोकल चार्ट",
-    "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.":
-      "फ़्लोचार्ट फ़न के साथ वर्कफ़्लो सफलता अनलॉक करें! केवल $3/माह या $30/वर्ष में पेशेवर बनें।",
     "Update Email": "ईमेल अपडेट करें",
     Updated: "अपडेट किया गया",
     "Use classes to group nodes": "Use classes to group nodes",

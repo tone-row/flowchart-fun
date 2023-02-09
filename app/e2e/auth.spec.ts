@@ -30,9 +30,6 @@ test.describe("Sign Up", () => {
     test.setTimeout(240000);
     await page.getByRole("link", { name: "Pricing" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
-    await page.getByRole("button", { name: "Annually" }).click();
-    await page.getByRole("link", { name: "Sign Up Now" }).first().click();
-    await expect(page).toHaveURL(`${BASE_URL}/i#annually`);
 
     await page.getByTestId("email").click();
     email = await getTempEmail();
@@ -46,7 +43,7 @@ test.describe("Sign Up", () => {
     await iframe.getByPlaceholder("MM / YY").fill("04 / 24");
     await iframe.getByPlaceholder("CVC").fill("444");
     await iframe.getByPlaceholder("ZIP").fill("44444");
-    await page.getByRole("button", { name: "Submit" }).click();
+    await page.getByRole("button", { name: "Sign Up" }).click();
     await expect(
       page.getByText(
         "Check your email for a link to log in. You can close this window."

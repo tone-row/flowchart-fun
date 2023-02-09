@@ -1,9 +1,7 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3/월",
-    "$3.00/month": "$3.00/월",
     "$30 / Year": "$30/년",
-    "$30.00/year (save 20%)": "$30.00/년(20% 할인)",
     "(before a colon creates a label)": "(레이블을 생성합니다)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요",
@@ -15,7 +13,6 @@
       ["0"],
       "으로 직접 이메일을 보내주십시오.",
     ],
-    Annually: "연간",
     Appearance: "외관",
     Attributes: "Attributes",
     "Back To Editor": "편집기로 돌아가기",
@@ -96,7 +93,6 @@
     "Enter a title": "제목을 입력하세요",
     Excalidraw: "Excalidraw",
     Export: "내보내기",
-    "Export to Common Image Formats": "일반 이미지 포맷으로 내보내기",
     "Extra Large": "Extra Large",
     Feedback: "피드백",
     "Fit Graph": "Fit Graph",
@@ -114,6 +110,7 @@
     Home: "집",
     "Hosted Charts": "호스트 차트",
     "ID's": "ID's",
+    "Image Export": "이미지 내보내기",
     Images: "Images",
     "Indenting creates an edge": "들여 쓰기는 가장자리를 만듭니다",
     Info: "정보",
@@ -133,9 +130,10 @@
     "Made by <0>Tone Row</0>": "<0>Tone Row</0> 제작",
     "Make a Donation": "기부하기",
     "Make publicly accessible": "공개적으로 액세스 가능하게 만들기",
+    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
+      "Flowchart Fun Pro로 작업 흐름을 더 쉽게 만드세요. 지금 구독을 월 $3 또는 연간 $30에 불과합니다!",
     Medium: "Medium",
     Monospace: "Monospace",
-    Monthly: "월간",
     "More Layouts": "더 많은 레이아웃",
     "More Themes and Fonts": "더욱 많은 테마와 폰트",
     Museum: "박물관",
@@ -190,7 +188,6 @@
       "완전한 접근권, 편집 전용, 또는 읽기 전용 권한으로 공유하세요",
     "Sign In": "로그인",
     "Sign Up": "가입",
-    "Sign Up Now": "지금 가입하세요",
     Size: "Size",
     Small: "Small",
     "Some classes are available to help style your flowchart":
@@ -236,8 +233,6 @@
       "Unique text value to identify a node",
     "Unlimited Hosted Charts": "무제한 차트 호스팅",
     "Unlimited Local Charts": "무제한 로컬 차트",
-    "Unlock workflow success with Flowchart Fun! Become a Pro for just $3/month or $30/year.":
-      "Flowchart Fun으로 성공적인 워크플로를 잠금 해제하세요! $3/월 또는 $30/년에 프로가 되십시오.",
     "Update Email": "이메일 업데이트",
     Updated: "업데이트됨",
     "Use classes to group nodes": "Use classes to group nodes",

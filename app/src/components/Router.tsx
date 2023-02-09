@@ -4,7 +4,6 @@ import { Route, RouteProps, Switch } from "react-router-dom";
 import { usePageViews } from "../lib/analytics";
 import { LogIn } from "../pages/LogIn";
 import { New } from "../pages/New";
-import { SignUp } from "../pages/SignUp";
 import Feedback from "./Feedback";
 import Layout from "./Layout";
 import Settings from "./Settings";
@@ -71,10 +70,6 @@ export default function Router() {
       </RouteWithWrapper>
       <RouteWithWrapper path="/a">
         <SponsorDashboard />
-      </RouteWithWrapper>
-      {/* "i" for s-"i"-gn up */}
-      <RouteWithWrapper path="/i">
-        <SignUp />
       </RouteWithWrapper>
       {/* "l" for login */}
       <RouteWithWrapper path="/l">
