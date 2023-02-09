@@ -145,7 +145,7 @@ div[data-reach-tooltip] {
   }
 }
 
-.slang-type:not(.size--1):not(.size--2):not(.size--3):not(.size--4):not(.size--5):not(.size--6):not(.size--1) {
+.slang-type:not(.size-1):not(.size-2):not(.size-3):not(.size-4):not(.size-5):not(.size-6):not(.size--1) {
   letter-spacing: 0.0125em;
 }
 
