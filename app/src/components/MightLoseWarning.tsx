@@ -51,7 +51,7 @@ export function MightLoseWarning() {
             weight="700"
             color="color-highlightColor"
             as={Link}
-            to="/sponsor"
+            to="/pricing"
             onClick={() => track("might_lose_warning_click", "click")}
             style={{ marginTop: 8 }}
           >

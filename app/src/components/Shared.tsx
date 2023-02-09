@@ -117,8 +117,6 @@ export const Button = forwardRef<
 ) {
   return (
     <Box
-      p={2}
-      px={3}
       as={as}
       className={[styles.Button, className].join(" ")}
       rad={1}

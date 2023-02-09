@@ -4,8 +4,8 @@ import { ReactNode } from "react";
 
 import { SignUpForm } from "../components/SignUpForm";
 import { Box, Type } from "../slang";
-import styles from "./Sponsor.module.css";
-export default function Sponsor() {
+import styles from "./Pricing.module.css";
+export default function Pricing() {
   return (
     <Box content="start stretch">
       <Box py={8} px={5} className={styles.banner}>

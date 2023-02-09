@@ -737,7 +737,7 @@ function HostedChartsCallout() {
           typeProps={{ size: 0 }}
           text={t`Learn More`}
           onClick={() => {
-            push("/sponsor");
+            push("/pricing");
           }}
         />
       </Box>

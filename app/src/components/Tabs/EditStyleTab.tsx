@@ -82,7 +82,7 @@ export function EditStyleTab() {
         </OptionWithLabel>
       </TabOptionsGrid>
       {!isValidSponsor && (
-        <LargeLink href="/sponsor">
+        <LargeLink href="/pricing">
           <Trans>Get More Themes</Trans>
         </LargeLink>
       )}

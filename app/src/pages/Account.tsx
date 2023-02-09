@@ -14,16 +14,8 @@ import { useHistory } from "react-router-dom";
 
 const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
-import { formatCents, formatDate } from "../lib/helpers";
-import {
-  createSubscription,
-  queryClient,
-  useOrderHistory,
-} from "../lib/queries";
-import { supabase } from "../lib/supabaseClient";
-import { Box, Type, TypeProps } from "../slang";
-import { AppContext } from "./AppContext";
-import Loading from "./Loading";
+import { AppContext } from "../components/AppContext";
+import Loading from "../components/Loading";
 import {
   Button,
   Dialog,
@@ -32,11 +24,19 @@ import {
   Page,
   Section,
   SectionTitle,
-} from "./Shared";
-import Spinner from "./Spinner";
-import styles from "./SponsorDashboard.module.css";
+} from "../components/Shared";
+import Spinner from "../components/Spinner";
+import { formatCents, formatDate } from "../lib/helpers";
+import {
+  createSubscription,
+  queryClient,
+  useOrderHistory,
+} from "../lib/queries";
+import { supabase } from "../lib/supabaseClient";
+import { Box, Type, TypeProps } from "../slang";
+import styles from "./Account.module.css";
 
-export default function SponsorDashboard() {
+export default function Account() {
   const { customer, session, customerIsLoading } = useContext(AppContext);
   const [cancelModal, setCancelModal] = useState(false);
   const [resumeModal, setResumeModal] = useState(false);
@@ -132,62 +132,6 @@ export default function SponsorDashboard() {
         </Type>
         <Button self="start" onClick={signOut} text={t`Log Out`} />
       </Section>
-      {customerPortalLink && (
-        <Section>
-          <SectionTitle>
-            <Trans>Customer Portal</Trans>
-          </SectionTitle>
-          <Type size={-1}>
-            <Trans>
-              Use the customer portal to change your billing information.
-            </Trans>
-          </Type>
-          <Box
-            as="a"
-            href={customerPortalLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.CustomerPortalLink}
-            rad={1}
-          >
-            <User size={16} />
-            <span>
-              <Trans>Open Customer Portal</Trans>
-            </span>
-            <ArrowSquareOut size={16} />
-          </Box>
-        </Section>
-      )}
-      <Section>
-        <SectionTitle>
-          <Trans>Update Email</Trans>
-        </SectionTitle>
-        <Box as="form" gap={2} items="start" onSubmit={changeEmail.mutate}>
-          <Input
-            type="email"
-            name="email"
-            required
-            placeholder={t`New Email`}
-            disabled={changeEmail.isLoading}
-          />
-          <Input
-            type="email"
-            name="emailConfirm"
-            required
-            placeholder={t`Confirm New Email`}
-            disabled={changeEmail.isLoading}
-          />
-          <Button
-            type="submit"
-            self="start"
-            text={t`Change Email Address`}
-            disabled={changeEmail.isLoading}
-          />
-          {changeEmail.isError && (
-            <Notice>{(changeEmail.error as Error).message}</Notice>
-          )}
-        </Box>
-      </Section>
       {subscription?.status === "canceled" && (
         <Section>
           <SectionTitle>
@@ -251,26 +195,61 @@ export default function SponsorDashboard() {
           </Box>
         )}
       </Section>
-      {!subscription?.cancel_at_period_end &&
-        subscription?.created &&
-        subscription?.status === "active" && (
-          <Section>
-            <SectionTitle>
-              <Trans>Cancel</Trans>
-            </SectionTitle>
-            <Type>
-              <Trans>
-                Cancel your subscription. Your hosted charts will become
-                read-only.
-              </Trans>
-            </Type>
-            <Button
-              self="normal start"
-              onClick={() => setCancelModal(true)}
-              text={t`Cancel`}
-            />
-          </Section>
-        )}
+      <Section>
+        <SectionTitle>
+          <Trans>Update Email</Trans>
+        </SectionTitle>
+        <Box as="form" gap={2} items="start" onSubmit={changeEmail.mutate}>
+          <Input
+            type="email"
+            name="email"
+            required
+            placeholder={t`New Email`}
+            disabled={changeEmail.isLoading}
+          />
+          <Input
+            type="email"
+            name="emailConfirm"
+            required
+            placeholder={t`Confirm New Email`}
+            disabled={changeEmail.isLoading}
+          />
+          <Button
+            type="submit"
+            self="start"
+            text={t`Change Email Address`}
+            disabled={changeEmail.isLoading}
+          />
+          {changeEmail.isError && (
+            <Notice>{(changeEmail.error as Error).message}</Notice>
+          )}
+        </Box>
+      </Section>
+      {customerPortalLink && (
+        <Section>
+          <SectionTitle>
+            <Trans>Customer Portal</Trans>
+          </SectionTitle>
+          <Type>
+            <Trans>
+              Use the customer portal to change your billing information.
+            </Trans>
+          </Type>
+          <Button
+            as={"a"}
+            href={customerPortalLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            self="start"
+          >
+            <User size={16} />
+            <span>
+              <Trans>Open Customer Portal</Trans>
+            </span>
+            <ArrowSquareOut size={16} />
+          </Button>
+        </Section>
+      )}
       <Section>
         <SectionTitle>
           <Trans>History</Trans>
@@ -303,6 +282,26 @@ export default function SponsorDashboard() {
           </tbody>
         </Box>
       </Section>
+      {!subscription?.cancel_at_period_end &&
+        subscription?.created &&
+        subscription?.status === "active" && (
+          <Section>
+            <SectionTitle>
+              <Trans>Cancel</Trans>
+            </SectionTitle>
+            <Type>
+              <Trans>
+                Cancel your subscription. Your hosted charts will become
+                read-only.
+              </Trans>
+            </Type>
+            <Button
+              self="normal start"
+              onClick={() => setCancelModal(true)}
+              text={t`Cancel`}
+            />
+          </Section>
+        )}
       <ConfirmCancel
         isOpen={cancelModal}
         onDismiss={() => setCancelModal(false)}
