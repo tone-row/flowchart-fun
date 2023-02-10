@@ -1,7 +1,6 @@
 import { LogSnag } from "logsnag";
 
-const token = process.env.REACT_APP_LOGSNAG_TOKEN;
-if (!token) throw new Error("LogSnag token not found!");
+const token = process.env.REACT_APP_LOGSNAG_TOKEN || "";
 
 const logsnag = new LogSnag({
   token,
