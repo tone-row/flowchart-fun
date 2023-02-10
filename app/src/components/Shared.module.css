@@ -45,15 +45,16 @@ textarea:focus {
 
 .Button {
   border-radius: 0;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   background-color: var(--color-lineColor);
   color: var(--color-foreground);
   background-position: right 12px top 17px;
   background-repeat: no-repeat;
   min-width: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  --y: 8px;
+  padding: calc(var(--y) + 2px) 14px var(--y);
 }
 
 .Button:hover,

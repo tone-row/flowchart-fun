@@ -21,8 +21,8 @@ test.describe("Click Heads Up", () => {
         )
         .click();
       await page.getByRole("link", { name: "Learn More" }).click();
-      // expect to be at /sponsor
-      await expect(page).toHaveURL(`${BASE_URL}/sponsor`);
+      // expect to be at /pricing
+      await expect(page).toHaveURL(`${BASE_URL}/pricing`);
     } catch (error) {
       console.log(error);
       // grab screenshot

@@ -7,7 +7,6 @@ import { New } from "../pages/New";
 import Feedback from "./Feedback";
 import Layout from "./Layout";
 import Settings from "./Settings";
-import SponsorDashboard from "./SponsorDashboard";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
@@ -19,11 +18,12 @@ const EditHosted = lazy(() => import("../pages/EditHosted"));
 /** Read only chart, encoded in url / maybe fullscreen */
 const ReadOnly = lazy(() => import("../pages/ReadOnly"));
 const Charts = lazy(() => import("../pages/Charts"));
-const Sponsor = lazy(() => import("../pages/Sponsor"));
+const Pricing = lazy(() => import("../pages/Pricing"));
 const Blog = lazy(() => import("../pages/Blog"));
 const Post = lazy(() => import("../pages/post/Post"));
 const Changelog = lazy(() => import("../pages/Changelog"));
 const Roadmap = lazy(() => import("../pages/Roadmap"));
+const Account = lazy(() => import("../pages/Account"));
 
 export default function Router() {
   usePageViews();
@@ -32,8 +32,8 @@ export default function Router() {
       <RouteWithWrapper path="/" exact>
         <Edit />
       </RouteWithWrapper>
-      <RouteWithWrapper path="/sponsor" exact>
-        <Sponsor />
+      <RouteWithWrapper path="/pricing" exact>
+        <Pricing />
       </RouteWithWrapper>
       {/* "y" for "your charts" */}
       <RouteWithWrapper path="/y" exact>
@@ -69,7 +69,7 @@ export default function Router() {
         <Feedback />
       </RouteWithWrapper>
       <RouteWithWrapper path="/a">
-        <SponsorDashboard />
+        <Account />
       </RouteWithWrapper>
       {/* "l" for login */}
       <RouteWithWrapper path="/l">

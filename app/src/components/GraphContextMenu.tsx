@@ -18,6 +18,11 @@ import { HiOutlineClipboardCopy } from "react-icons/hi";
 import { useThemeStore } from "../lib/graphThemes";
 import { borderStyles, shapes } from "../lib/graphUtilityClasses";
 import { useIsFirefox } from "../lib/hooks";
+import {
+  track_downloadJPG,
+  track_downloadPng,
+  track_downloadSvg,
+} from "../lib/logsnag";
 import { useParser } from "../lib/parsers";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
@@ -48,6 +53,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Item
         onClick={() => {
           window.__FF_downloadPNG();
+          track_downloadPng();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
@@ -57,6 +63,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Item
         onClick={() => {
           window.__FF_downloadJPG();
+          track_downloadJPG();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
@@ -66,6 +73,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Item
         onClick={() => {
           window.__FF_downloadSVG();
+          track_downloadSvg();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>

@@ -13,6 +13,15 @@ import {
 } from "react";
 import { useMutation } from "react-query";
 
+import {
+  track_copyEditableShareLink,
+  track_copyFullscreenShareLink,
+  track_copyPublicLink,
+  track_copyReadOnlyShareLink,
+  track_downloadJPG,
+  track_downloadPng,
+  track_downloadSvg,
+} from "../lib/logsnag";
 import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic } from "../lib/queries";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
@@ -55,6 +64,7 @@ export default function ShareDialog() {
           <Button
             onClick={() => {
               window.__FF_downloadSVG();
+              track_downloadSvg();
             }}
             aria-label="Download SVG"
             text="SVG"
@@ -62,6 +72,7 @@ export default function ShareDialog() {
           <Button
             onClick={() => {
               window.__FF_downloadPNG();
+              track_downloadPng();
             }}
             aria-label="Download PNG"
             text="PNG"
@@ -69,6 +80,7 @@ export default function ShareDialog() {
           <Button
             onClick={() => {
               window.__FF_downloadJPG();
+              track_downloadJPG();
             }}
             aria-label="Download JPG"
             text="JPG"
@@ -128,7 +140,7 @@ function LinkCopy({
 }: {
   value: string;
   title: string;
-  rawTitle: string;
+  rawTitle: "Fullscreen" | "Editable" | "Read-only" | "Public";
   ariaLabel?: string;
 }) {
   const [copied, setCopied] = useState(false);
@@ -140,7 +152,22 @@ function LinkCopy({
   async function copyText() {
     await navigator.clipboard.writeText(value);
     setCopied(true);
+    switch (rawTitle) {
+      case "Fullscreen":
+        track_copyFullscreenShareLink();
+        break;
+      case "Editable":
+        track_copyEditableShareLink();
+        break;
+      case "Read-only":
+        track_copyReadOnlyShareLink();
+        break;
+      case "Public":
+        track_copyPublicLink();
+        break;
+    }
   }
+
   return (
     <Box gap={2}>
       <Type size={-1}>{title}</Type>
