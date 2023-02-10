@@ -9,7 +9,7 @@ const logsnag = new LogSnag({
 
 // write a fuction that wraps other funnctions and returns a noop if not in production
 const prodOnly = (fn: Function) => {
-  if (process.env.NODE_ENV === "production") {
+  if (process.env.REACT_APP_VERCEL_ENV === "production") {
     return fn;
   } else {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
