@@ -80,6 +80,7 @@
     "highlight.js": "^11.7.0",
     "immer": "^9.0.16",
     "lodash.throttle": "^4.1.1",
+    "logsnag": "^0.1.6",
     "lz-string": "^1.4.4",
     "make-plural": "^7.1.0",
     "marked": "^4.1.1",
