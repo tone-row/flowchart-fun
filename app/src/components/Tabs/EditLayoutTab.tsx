@@ -37,7 +37,7 @@ export function EditLayoutTab() {
   const layoutNiceName =
     layouts.find((l) => l.value === layoutName)?.label() ?? "???";
 
-  const frozen = "positions" in rendered;
+  const isFrozen = useIsFrozen();
 
   let direction = defaultLayout.rankDir;
   if (
@@ -61,7 +61,7 @@ export function EditLayoutTab() {
     spacingFactor = layout.spacingFactor;
   }
 
-  if (frozen) return <FrozenLayout />;
+  if (isFrozen) return <FrozenLayout />;
 
   return (
     <WithLowerChild>
@@ -169,6 +169,22 @@ export function EditLayoutTab() {
   );
 }
 
+export function unfreezeDoc() {
+  useDoc.setState((state) => {
+    return produce(state, (draft) => {
+      delete draft.meta.nodePositions;
+    });
+  });
+}
+
+export function useIsFrozen() {
+  const doc = useDoc();
+  const rendered = getLayout(doc);
+  const frozen = "positions" in rendered;
+
+  return frozen;
+}
+
 function FrozenLayout() {
   return (
     <div className={styles.Frozen}>
@@ -178,15 +194,7 @@ function FrozenLayout() {
         </span>
         <FaRegSnowflake />
       </h2>
-      <button
-        onClick={() => {
-          useDoc.setState((state) => {
-            return produce(state, (draft) => {
-              delete draft.meta.nodePositions;
-            });
-          });
-        }}
-      >
+      <button onClick={unfreezeDoc}>
         <Trans>Unfreeze</Trans>
       </button>
     </div>
