@@ -1,10 +1,11 @@
 import { t } from "@lingui/macro";
 import { MagnifyingGlassMinus, MagnifyingGlassPlus } from "phosphor-react";
 import { useCallback } from "react";
-import { FaBomb } from "react-icons/fa";
+import { FaBomb, FaRegSnowflake } from "react-icons/fa";
 import { MdFitScreen } from "react-icons/md";
 
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
+import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
 import { useUnmountStore } from "../lib/useUnmountStore";
 import styles from "./GraphFloatingMenu.module.css";
 import { Tooltip } from "./Shared";
@@ -29,6 +30,8 @@ export function GraphFloatingMenu() {
       renderedPosition: { x: cy.width() / 2, y: cy.height() / 2 },
     });
   }, []);
+
+  const isFrozen = useIsFrozen();
 
   return (
     <div className={styles.graphFloatingMenu}>
@@ -56,6 +59,13 @@ export function GraphFloatingMenu() {
           });
         }}
       />
+      {isFrozen ? (
+        <CustomIconButton
+          icon={<FaRegSnowflake size={22} />}
+          label={t`Unfreeze`}
+          onClick={unfreezeDoc}
+        />
+      ) : null}
     </div>
   );
 }

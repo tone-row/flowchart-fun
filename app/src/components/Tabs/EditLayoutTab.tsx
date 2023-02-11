@@ -8,6 +8,7 @@ import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
+import { unfreezeDoc, useIsFrozen } from "../../lib/useIsFrozen";
 import styles from "./EditLayoutTab.module.css";
 import {
   CustomSelect,
@@ -37,7 +38,7 @@ export function EditLayoutTab() {
   const layoutNiceName =
     layouts.find((l) => l.value === layoutName)?.label() ?? "???";
 
-  const frozen = "positions" in rendered;
+  const isFrozen = useIsFrozen();
 
   let direction = defaultLayout.rankDir;
   if (
@@ -61,7 +62,7 @@ export function EditLayoutTab() {
     spacingFactor = layout.spacingFactor;
   }
 
-  if (frozen) return <FrozenLayout />;
+  if (isFrozen) return <FrozenLayout />;
 
   return (
     <WithLowerChild>
@@ -178,15 +179,7 @@ function FrozenLayout() {
         </span>
         <FaRegSnowflake />
       </h2>
-      <button
-        onClick={() => {
-          useDoc.setState((state) => {
-            return produce(state, (draft) => {
-              delete draft.meta.nodePositions;
-            });
-          });
-        }}
-      >
+      <button onClick={unfreezeDoc}>
         <Trans>Unfreeze</Trans>
       </button>
     </div>
