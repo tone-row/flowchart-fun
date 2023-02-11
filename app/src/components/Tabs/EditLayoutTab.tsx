@@ -8,6 +8,7 @@ import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
+import { unfreezeDoc, useIsFrozen } from "../../lib/useIsFrozen";
 import styles from "./EditLayoutTab.module.css";
 import {
   CustomSelect,
@@ -167,22 +168,6 @@ export function EditLayoutTab() {
       )}
     </WithLowerChild>
   );
-}
-
-export function unfreezeDoc() {
-  useDoc.setState((state) => {
-    return produce(state, (draft) => {
-      delete draft.meta.nodePositions;
-    });
-  });
-}
-
-export function useIsFrozen() {
-  const doc = useDoc();
-  const rendered = getLayout(doc);
-  const frozen = "positions" in rendered;
-
-  return frozen;
 }
 
 function FrozenLayout() {

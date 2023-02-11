@@ -5,10 +5,10 @@ import { FaBomb, FaRegSnowflake } from "react-icons/fa";
 import { MdFitScreen } from "react-icons/md";
 
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
+import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
 import { useUnmountStore } from "../lib/useUnmountStore";
 import styles from "./GraphFloatingMenu.module.css";
 import { Tooltip } from "./Shared";
-import { unfreezeDoc, useIsFrozen } from "./Tabs/EditLayoutTab";
 
 const ZOOM_STEP = 0.5;
 
