@@ -154,6 +154,23 @@ test.describe("unauth", () => {
     ).toBeVisible();
   });
 
+  test.only("Creating a new chart from a template immediatetly creates a local chart", async ({
+    page,
+  }) => {
+    // go to url
+    await page.goto(
+      `${BASE_URL}/n#C4ewBARgpmCWB2ZgAsYBMQGMCuBbK8wAUALxllEDeRYYARAA4CGATgM5Qt0Bc9A5iyYNkAWg4AbKJlBciAX1LkSQA`
+    );
+
+    // expect "to be in the document" to be in the document
+    await expect(
+      page.locator("text=to be in the document").first()
+    ).toBeVisible();
+
+    // expect the url to contain "temp" in it
+    expect(page.url()).toContain("temp");
+  });
+
   test("View an Example", async ({ page }) => {
     // click button with text "Help"
     await page.locator('button:has-text("Help")').click();

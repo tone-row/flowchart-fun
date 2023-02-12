@@ -2,7 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { Session } from "@supabase/gotrue-js";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { Check, CircleNotch, Clock, Globe } from "phosphor-react";
+import { Check, CircleNotch, Clock, TreeStructure } from "phosphor-react";
 import {
   memo,
   ReactNode,
@@ -176,7 +176,7 @@ const New = memo(function New({
                     </span>
                   </>
                 }
-                icon={<Globe size={64} weight="thin" />}
+                icon={<TreeStructure size={64} weight="thin" />}
               />
               <TypeToggle
                 value="local"
