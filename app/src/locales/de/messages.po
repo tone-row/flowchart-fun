@@ -29,8 +29,12 @@ msgstr "(vor einem Doppelpunkt wird zu einer Beschriftung)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Greifen Sie von überall auf diese Diagramme zu.<0/>Teilen/Einbetten von Diagrammen, die mit Ihren Bearbeitungen synchronisiert bleiben."
 
-#: src/components/Header.tsx:178
-#: src/components/Header.tsx:405
+#: src/pages/New.tsx:175
+msgid "Accessible from any device"
+msgstr "Von jedem Gerät aus zugänglich"
+
+#: src/components/Header.tsx:181
+#: src/components/Header.tsx:408
 msgid "Account"
 msgstr "Konto"
 
@@ -39,7 +43,7 @@ msgstr "Konto"
 msgid "Advanced"
 msgstr "Vorangeschritten"
 
-#: src/components/SponsorDashboard.tsx:289
+#: src/pages/Account.tsx:268
 msgid "Amount"
 msgstr "Betrag"
 
@@ -64,17 +68,17 @@ msgid "Background"
 msgstr "Hintergrund"
 
 #: src/components/Settings.tsx:135
-#: src/components/SponsorDashboard.tsx:194
+#: src/pages/Account.tsx:138
 msgid "Become a Sponsor"
 msgstr "Werden Sie zum Sponsoren"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:381
+#: src/components/Header.tsx:150
+#: src/components/Header.tsx:384
 #: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "Blog"
 
-#: src/components/GraphContextMenu.tsx:333
+#: src/components/GraphContextMenu.tsx:341
 msgid "Border"
 msgstr ""
 
@@ -88,42 +92,42 @@ msgid "Breadthfirst"
 msgstr "In die Breite"
 
 #: src/components/ClearTextButton.tsx:44
-#: src/components/SponsorDashboard.tsx:259
-#: src/components/SponsorDashboard.tsx:270
-#: src/components/SponsorDashboard.tsx:370
-#: src/components/SponsorDashboard.tsx:382
-#: src/components/SponsorDashboard.tsx:426
+#: src/pages/Account.tsx:290
+#: src/pages/Account.tsx:301
+#: src/pages/Account.tsx:369
+#: src/pages/Account.tsx:381
+#: src/pages/Account.tsx:425
 #: src/pages/Charts.tsx:243
 #: src/pages/Charts.tsx:514
 #: src/pages/Charts.tsx:568
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/components/SponsorDashboard.tsx:262
+#: src/pages/Account.tsx:293
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Kündigen Sie Ihr Abonnement. Ihre gehosteten Diagramme werden schreibgeschützt."
 
-#: src/components/SponsorDashboard.tsx:183
+#: src/pages/Account.tsx:220
 msgid "Change Email Address"
 msgstr "E-Mail Adresse ändern"
 
-#: src/components/Header.tsx:157
-#: src/components/Header.tsx:387
+#: src/components/Header.tsx:160
+#: src/components/Header.tsx:390
 #: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
-#: src/components/Header.tsx:93
-#: src/components/Header.tsx:360
+#: src/components/Header.tsx:96
+#: src/components/Header.tsx:363
 msgid "Charts"
 msgstr "Diagramme"
 
-#: src/components/LoginForm.tsx:36
 #: src/components/SignUpForm.tsx:96
+#: src/pages/LogIn.tsx:36
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses Fenster schließen."
 
-#: src/pages/Sponsor.tsx:67
+#: src/pages/Pricing.tsx:67
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "Wählen Sie aus, ob Sie Ihre Charts (Diagramme) mit vollem Zugriff, nur zum Bearbeiten oder nur zum Ansehen freigeben möchten. So haben Sie die Kontrolle darüber, wer Änderungen an Ihrer Arbeit vornehmen kann."
 
@@ -156,11 +160,11 @@ msgstr "Klicken Sie auf\\n⟨⟩ Syntax-Referenz\\num mehr zu erfahren .blue.bor
 msgid "Clone"
 msgstr "Klon"
 
-#: src/components/Shared.tsx:170
+#: src/components/Shared.tsx:168
 msgid "Close"
 msgstr "Schließen"
 
-#: src/components/GraphContextMenu.tsx:189
+#: src/components/GraphContextMenu.tsx:197
 msgid "Color"
 msgstr ""
 
@@ -176,7 +180,7 @@ msgstr "Comic-Buch"
 msgid "Concentric"
 msgstr "Konzentrisch"
 
-#: src/components/SponsorDashboard.tsx:177
+#: src/pages/Account.tsx:214
 msgid "Confirm New Email"
 msgstr "Neue E-Mail bestätigen"
 
@@ -193,28 +197,33 @@ msgstr ""
 msgid "Convert to hosted chart?"
 msgstr "In gehostetes Diagramm konvertieren?"
 
-#: src/components/ShareDialog.tsx:185
-#: src/components/ShareDialog.tsx:186
-#: src/components/ShareDialog.tsx:250
+#: src/components/ShareDialog.tsx:212
+#: src/components/ShareDialog.tsx:213
+#: src/components/ShareDialog.tsx:277
 #: src/pages/Charts.tsx:444
 #: src/pages/Charts.tsx:515
 #: src/pages/Charts.tsx:553
 msgid "Copy"
 msgstr "Kopieren"
 
-#: src/components/GraphContextMenu.tsx:120
+#: src/components/GraphContextMenu.tsx:128
 msgid "Copy PNG Image"
 msgstr "PNG-Bild kopieren"
 
-#: src/components/GraphContextMenu.tsx:97
+#: src/components/GraphContextMenu.tsx:105
 msgid "Copy SVG Code"
 msgstr "Kopieren Sie den SVG-Code"
 
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
+#: src/pages/New.tsx:224
 msgid "Create"
 msgstr "Erstellen"
+
+#: src/pages/New.tsx:137
+msgid "Create a New Flowchart"
+msgstr "Erstellen Sie ein neues Diagramm"
 
 #: src/pages/Charts.tsx:605
 msgid "Created"
@@ -224,11 +233,11 @@ msgstr "Erstellt"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:64
+#: src/pages/Pricing.tsx:64
 msgid "Custom Sharing Options"
 msgstr "Benutzerdefinierte Freigabeoptionen"
 
-#: src/components/SponsorDashboard.tsx:138
+#: src/pages/Account.tsx:231
 msgid "Customer Portal"
 msgstr "Kundenportal"
 
@@ -241,7 +250,7 @@ msgstr "Dunkel"
 msgid "Dark Mode"
 msgstr "Dunkelmodus"
 
-#: src/components/SponsorDashboard.tsx:286
+#: src/pages/Account.tsx:265
 msgid "Date"
 msgstr "Datum"
 
@@ -252,7 +261,11 @@ msgstr "Datum"
 msgid "Delete"
 msgstr "Löschen"
 
-#: src/components/Tabs/EditLayoutTab.tsx:87
+#: src/pages/New.tsx:190
+msgid "Deleted when browser data is cleared"
+msgstr "Wird gelöscht, wenn Browserdaten gelöscht werden"
+
+#: src/components/Tabs/EditLayoutTab.tsx:85
 msgid "Direction"
 msgstr "Richtung"
 
@@ -260,7 +273,7 @@ msgstr "Richtung"
 msgid "Discard"
 msgstr "Verwerfen"
 
-#: src/components/SponsorDashboard.tsx:375
+#: src/pages/Account.tsx:374
 msgid "Do you want to cancel your subscription?"
 msgstr "Möchten Sie Ihr Abonnement kündigen?"
 
@@ -273,24 +286,28 @@ msgstr "Möchten Sie dies löschen?"
 msgid "Document"
 msgstr "Document"
 
-#: src/components/Header.tsx:113
-#: src/components/Header.tsx:366
+#: src/components/Header.tsx:116
+#: src/components/Header.tsx:369
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: src/components/ShareDialog.tsx:51
+#: src/pages/LogIn.tsx:66
+msgid "Don't have an account?"
+msgstr "Sie haben kein Konto?"
+
+#: src/components/ShareDialog.tsx:60
 msgid "Download"
 msgstr "Herunterladen"
 
-#: src/components/GraphContextMenu.tsx:63
+#: src/components/GraphContextMenu.tsx:70
 msgid "Download JPG"
 msgstr "JPG herunterladen"
 
-#: src/components/GraphContextMenu.tsx:54
+#: src/components/GraphContextMenu.tsx:60
 msgid "Download PNG"
 msgstr "PNG herunterladen"
 
-#: src/components/GraphContextMenu.tsx:72
+#: src/components/GraphContextMenu.tsx:80
 msgid "Download SVG"
 msgstr "SVG herunterladen"
 
@@ -303,7 +320,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr "Duplizieren"
 
-#: src/pages/Sponsor.tsx:50
+#: src/pages/Pricing.tsx:50
 msgid "Dynamic Share Links"
 msgstr "Dynamische Freigabelinks"
 
@@ -331,12 +348,12 @@ msgstr ""
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr ""
 
-#: src/components/ShareDialog.tsx:89
+#: src/components/ShareDialog.tsx:101
 msgid "Editable"
 msgstr "Editierbar"
 
-#: src/components/Header.tsx:85
-#: src/components/Header.tsx:354
+#: src/components/Header.tsx:88
+#: src/components/Header.tsx:357
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "Editor"
@@ -346,7 +363,6 @@ msgid "Eggs"
 msgstr "Eier"
 
 #: src/components/Feedback.tsx:94
-#: src/components/LoginForm.tsx:50
 msgid "Email"
 msgstr "E-Mail"
 
@@ -362,22 +378,22 @@ msgstr "Excalidraw"
 
 #: src/components/EditorWrapper.tsx:62
 #: src/components/EditorWrapper.tsx:67
-#: src/components/ShareDialog.tsx:43
-#: src/components/ShareDialog.tsx:99
+#: src/components/ShareDialog.tsx:52
+#: src/components/ShareDialog.tsx:111
 msgid "Export"
 msgstr "Exportieren"
 
-#: src/components/GraphContextMenu.tsx:162
+#: src/components/GraphContextMenu.tsx:170
 msgid "Extra Large"
 msgstr ""
 
 #: src/components/Feedback.tsx:74
-#: src/components/Header.tsx:121
-#: src/components/Header.tsx:373
+#: src/components/Header.tsx:124
+#: src/components/Header.tsx:376
 msgid "Feedback"
 msgstr "Feedback"
 
-#: src/components/GraphFloatingMenu.tsx:48
+#: src/components/GraphFloatingMenu.tsx:50
 msgid "Fit Graph"
 msgstr ""
 
@@ -385,7 +401,7 @@ msgstr ""
 msgid "Follow Us"
 msgstr "Folgen Sie uns"
 
-#: src/components/ShareDialog.tsx:86
+#: src/components/ShareDialog.tsx:98
 msgid "Fullscreen"
 msgstr "Vollbild"
 
@@ -393,7 +409,7 @@ msgstr "Vollbild"
 msgid "Futuristic"
 msgstr "Futuristisch"
 
-#: src/components/Tabs/EditLayoutTab.tsx:165
+#: src/components/Tabs/EditLayoutTab.tsx:163
 msgid "Get More Layouts"
 msgstr "Mehr Layouts erhalten"
 
@@ -414,11 +430,11 @@ msgstr "Raster"
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "Aufgepasst! Bevor Sie Ihren Cache löschen, denken Sie daran, dass dieses Dokument nicht in der Cloud gespeichert ist."
 
-#: src/components/Header.tsx:102
+#: src/components/Header.tsx:105
 msgid "Help"
 msgstr "Hilfe"
 
-#: src/components/SponsorDashboard.tsx:276
+#: src/pages/Account.tsx:255
 msgid "History"
 msgstr "Verlauf"
 
@@ -428,7 +444,7 @@ msgstr "Startseite"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Charts.tsx:724
-#: src/pages/Sponsor.tsx:83
+#: src/pages/Pricing.tsx:83
 msgid "Hosted Charts"
 msgstr "Gehostete Diagramme"
 
@@ -436,8 +452,8 @@ msgstr "Gehostete Diagramme"
 msgid "ID's"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:36
-#: src/pages/Sponsor.tsx:46
+#: src/pages/Pricing.tsx:36
+#: src/pages/Pricing.tsx:46
 msgid "Image Export"
 msgstr "Bildexport"
 
@@ -449,7 +465,7 @@ msgstr ""
 msgid "Indenting creates an edge"
 msgstr "Durch das Einrücken entsteht eine Kante"
 
-#: src/components/Header.tsx:136
+#: src/components/Header.tsx:139
 msgid "Info"
 msgstr "Info"
 
@@ -457,17 +473,17 @@ msgstr "Info"
 msgid "Language"
 msgstr "Sprache"
 
-#: src/components/GraphContextMenu.tsx:157
+#: src/components/GraphContextMenu.tsx:165
 msgid "Large"
 msgstr ""
 
-#: src/components/Tabs/EditLayoutTab.tsx:69
+#: src/components/Tabs/EditLayoutTab.tsx:67
 #: src/pages/Edit.tsx:79
 #: src/pages/EditHosted.tsx:81
 msgid "Layout"
 msgstr "Layout"
 
-#: src/components/Tabs/EditLayoutTab.tsx:177
+#: src/components/Tabs/EditLayoutTab.tsx:175
 msgid "Layout is Frozen"
 msgstr "Layout ist eingefroren"
 
@@ -494,7 +510,7 @@ msgstr "Hell"
 msgid "Light Mode"
 msgstr "Heller Modus"
 
-#: src/components/ShareDialog.tsx:81
+#: src/components/ShareDialog.tsx:93
 msgid "Link"
 msgstr "Link"
 
@@ -502,13 +518,13 @@ msgstr "Link"
 msgid "Local Charts"
 msgstr "Lokale Diagramme"
 
-#: src/components/Header.tsx:196
-#: src/components/Header.tsx:429
-#: src/pages/LogIn.tsx:24
+#: src/components/Header.tsx:199
+#: src/components/Header.tsx:432
+#: src/pages/New.tsx:204
 msgid "Log In"
 msgstr "Anmelden"
 
-#: src/components/SponsorDashboard.tsx:133
+#: src/pages/Account.tsx:133
 msgid "Log Out"
 msgstr "Abmelden"
 
@@ -520,15 +536,15 @@ msgstr "Gemacht von <0>Tone Row</0>"
 msgid "Make a Donation"
 msgstr "Spenden"
 
-#: src/components/ShareDialog.tsx:289
+#: src/components/ShareDialog.tsx:316
 msgid "Make publicly accessible"
 msgstr "Öffentlich zugänglich machen"
 
-#: src/pages/Sponsor.tsx:15
+#: src/pages/Pricing.tsx:15
 msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
 msgstr "Vereinfachen Sie Ihren Arbeitsablauf mit Flowchart Fun Pro – abonnieren Sie jetzt für nur 3 $/Monat oder 30 $/Jahr!"
 
-#: src/components/GraphContextMenu.tsx:153
+#: src/components/GraphContextMenu.tsx:161
 msgid "Medium"
 msgstr ""
 
@@ -536,11 +552,11 @@ msgstr ""
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/pages/Sponsor.tsx:51
+#: src/pages/Pricing.tsx:51
 msgid "More Layouts"
 msgstr "Weitere Layouts"
 
-#: src/pages/Sponsor.tsx:52
+#: src/pages/Pricing.tsx:52
 msgid "More Themes and Fonts"
 msgstr "Weitere Themen und Schriftarten"
 
@@ -550,6 +566,7 @@ msgstr "Museum"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
+#: src/pages/New.tsx:141
 msgid "Name"
 msgstr "Name"
 
@@ -557,21 +574,21 @@ msgstr "Name"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Brauchen Sie Hilfe? <0>Sehen Sie sich unsere Dokumentation an.</0>"
 
-#: src/components/Header.tsx:77
-#: src/components/Header.tsx:348
+#: src/components/Header.tsx:79
+#: src/components/Header.tsx:351
 msgid "New"
 msgstr "Neues"
 
-#: src/components/SponsorDashboard.tsx:170
+#: src/pages/Account.tsx:207
 msgid "New Email"
 msgstr "Neue e-mail"
 
-#: src/components/SponsorDashboard.tsx:221
-#: src/components/SponsorDashboard.tsx:423
+#: src/pages/Account.tsx:165
+#: src/pages/Account.tsx:422
 msgid "Next charge"
 msgstr "Nächste Gebühr"
 
-#: src/components/GraphContextMenu.tsx:182
+#: src/components/GraphContextMenu.tsx:190
 msgid "Node"
 msgstr ""
 
@@ -599,7 +616,7 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
 
-#: src/components/SponsorDashboard.tsx:155
+#: src/pages/Account.tsx:247
 msgid "Open Customer Portal"
 msgstr "Öffnen Sie das Kundenportal"
 
@@ -607,13 +624,13 @@ msgstr "Öffnen Sie das Kundenportal"
 msgid "Playbook"
 msgstr "Spielbuch"
 
-#: src/components/Header.tsx:187
-#: src/components/Header.tsx:414
+#: src/components/Header.tsx:190
+#: src/components/Header.tsx:417
 msgid "Pricing"
 msgstr "Preisgestaltung"
 
-#: src/components/ShareDialog.tsx:285
-#: src/components/ShareDialog.tsx:308
+#: src/components/ShareDialog.tsx:312
+#: src/components/ShareDialog.tsx:335
 #: src/pages/Charts.tsx:597
 msgid "Public"
 msgstr "Öffentlich"
@@ -623,7 +640,7 @@ msgid "Random"
 msgstr "Zufällig"
 
 #: src/components/EditorWrapper.tsx:53
-#: src/components/ShareDialog.tsx:92
+#: src/components/ShareDialog.tsx:104
 msgid "Read-only"
 msgstr "Schreibgeschützt"
 
@@ -672,16 +689,16 @@ msgstr "Denken Sie daran, dass dieses Dokument nur auf diesem Computer gespeiche
 msgid "Rename"
 msgstr "Umbenennen"
 
-#: src/components/GraphFloatingMenu.tsx:52
+#: src/components/GraphFloatingMenu.tsx:54
 #: src/pages/Charts.tsx:237
 #: src/pages/Charts.tsx:246
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: src/components/SponsorDashboard.tsx:249
-#: src/components/SponsorDashboard.tsx:417
-#: src/components/SponsorDashboard.tsx:421
-#: src/components/SponsorDashboard.tsx:430
+#: src/pages/Account.tsx:193
+#: src/pages/Account.tsx:416
+#: src/pages/Account.tsx:420
+#: src/pages/Account.tsx:429
 msgid "Resume Subscription"
 msgstr "Abonnement fortsetzen"
 
@@ -689,7 +706,7 @@ msgstr "Abonnement fortsetzen"
 msgid "Retro"
 msgstr "Retro"
 
-#: src/components/SponsorDashboard.tsx:378
+#: src/pages/Account.tsx:377
 msgid "Return"
 msgstr "Zurückkehren"
 
@@ -698,8 +715,8 @@ msgstr "Zurückkehren"
 msgid "Right to Left"
 msgstr "Von rechts nach links"
 
-#: src/components/Header.tsx:164
-#: src/components/Header.tsx:393
+#: src/components/Header.tsx:167
+#: src/components/Header.tsx:396
 #: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
 msgstr "Fahrplan"
@@ -708,17 +725,17 @@ msgstr "Fahrplan"
 msgid "Save"
 msgstr "Speichern"
 
-#: src/components/Header.tsx:171
-#: src/components/Header.tsx:398
+#: src/components/Header.tsx:174
+#: src/components/Header.tsx:401
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/components/GraphContextMenu.tsx:239
+#: src/components/GraphContextMenu.tsx:247
 msgid "Shape"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:37
-#: src/pages/Sponsor.tsx:47
+#: src/pages/Pricing.tsx:37
+#: src/pages/Pricing.tsx:47
 msgid "Shape Libraries"
 msgstr "Bibliotheken anpassen"
 
@@ -726,23 +743,20 @@ msgstr "Bibliotheken anpassen"
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
 
-#: src/pages/Sponsor.tsx:53
+#: src/pages/Pricing.tsx:53
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "Freigabe mit vollem Zugriff, Nur-Bearbeiten- oder Nur-Anzeigen-Berechtigung"
 
-#: src/components/LoginForm.tsx:58
-msgid "Sign In"
-msgstr "Einloggen"
-
 #: src/components/SignUpForm.tsx:175
+#: src/pages/LogIn.tsx:71
 msgid "Sign Up"
 msgstr "Registrieren"
 
-#: src/components/GraphContextMenu.tsx:294
+#: src/components/GraphContextMenu.tsx:302
 msgid "Size"
 msgstr ""
 
-#: src/components/GraphContextMenu.tsx:148
+#: src/components/GraphContextMenu.tsx:156
 msgid "Small"
 msgstr ""
 
@@ -754,7 +768,7 @@ msgstr ""
 msgid "Sorry! This page is only available in English."
 msgstr "Entschuldigung! Diese Seite ist nur auf Englisch verfügbar."
 
-#: src/components/Tabs/EditLayoutTab.tsx:123
+#: src/components/Tabs/EditLayoutTab.tsx:121
 msgid "Spacing"
 msgstr "Abstand"
 
@@ -762,16 +776,20 @@ msgstr "Abstand"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "Sponsern Sie flowchart.fun für 3 $ / Monat oder 30 $ / Jahr, um auf gehostete Flussdiagramme und die neuesten Stile und Funktionen zuzugreifen"
 
-#: src/components/SponsorDashboard.tsx:233
+#: src/pages/New.tsx:166
+msgid "Standard"
+msgstr "Standard"
+
+#: src/pages/Account.tsx:177
 msgid "Start"
 msgstr "Start"
 
-#: src/pages/Sponsor.tsx:38
-#: src/pages/Sponsor.tsx:48
+#: src/pages/Pricing.tsx:38
+#: src/pages/Pricing.tsx:48
 msgid "Static Share Links"
 msgstr "Statische Freigabelinks"
 
-#: src/components/SponsorDashboard.tsx:212
+#: src/pages/Account.tsx:156
 msgid "Status"
 msgstr "Status"
 
@@ -779,7 +797,15 @@ msgstr "Status"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:100
+#: src/pages/New.tsx:171
+msgid "Stored in the cloud"
+msgstr "In der Cloud gespeichert"
+
+#: src/pages/New.tsx:187
+msgid "Stored on this computer"
+msgstr "Auf diesem Computer gespeichert"
+
+#: src/pages/Pricing.tsx:100
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Optimieren Sie Ihren Arbeitsablauf und vereinfachen Sie Ihre Prozessvisualisierung mit Flowchart Fun"
 
@@ -801,14 +827,15 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
+#: src/pages/LogIn.tsx:61
 msgid "Submit"
 msgstr "Einsenden"
 
-#: src/components/SponsorDashboard.tsx:207
+#: src/pages/Account.tsx:151
 msgid "Subscription"
 msgstr "Abonnement"
 
-#: src/components/SponsorDashboard.tsx:244
+#: src/pages/Account.tsx:188
 msgid "Subscription will end"
 msgstr "Abonnement wird beendet"
 
@@ -820,6 +847,10 @@ msgstr "Syntax"
 #: src/components/SyntaxReference.tsx:74
 msgid "Syntax Reference"
 msgstr "Syntax-Referenz"
+
+#: src/pages/New.tsx:183
+msgid "Temporary"
+msgstr "Temporäres"
 
 #: src/components/SyntaxReference.tsx:276
 msgid "Text Sizes"
@@ -862,7 +893,12 @@ msgstr "Von oben nach unten"
 msgid "Try again"
 msgstr "Erneut versuchen"
 
-#: src/components/Tabs/EditLayoutTab.tsx:190
+#: src/pages/New.tsx:156
+msgid "Type"
+msgstr "Typ"
+
+#: src/components/GraphFloatingMenu.tsx:64
+#: src/components/Tabs/EditLayoutTab.tsx:180
 msgid "Unfreeze"
 msgstr "Freigeben"
 
@@ -870,16 +906,16 @@ msgstr "Freigeben"
 msgid "Unique text value to identify a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:49
+#: src/pages/Pricing.tsx:49
 msgid "Unlimited Hosted Charts"
 msgstr "Unbegrenzte Anzahl gehosteter Charts"
 
-#: src/pages/Sponsor.tsx:35
-#: src/pages/Sponsor.tsx:45
+#: src/pages/Pricing.tsx:35
+#: src/pages/Pricing.tsx:45
 msgid "Unlimited Local Charts"
 msgstr "Unbegrenzte lokale Charts"
 
-#: src/components/SponsorDashboard.tsx:163
+#: src/pages/Account.tsx:200
 msgid "Update Email"
 msgstr "E-Mail aktualisieren"
 
@@ -899,11 +935,11 @@ msgstr ""
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr ""
 
-#: src/components/SponsorDashboard.tsx:141
+#: src/pages/Account.tsx:234
 msgid "Use the customer portal to change your billing information."
 msgstr "Verwenden Sie das Kundenportal, um Ihre Rechnungsinformationen zu ändern."
 
-#: src/components/SponsorDashboard.tsx:128
+#: src/pages/Account.tsx:128
 msgid "User"
 msgstr "Benutzer"
 
@@ -931,24 +967,32 @@ msgstr "Was möchten Sie uns mitteilen?"
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:86
+#: src/pages/Pricing.tsx:86
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "Mit der Möglichkeit, eine unbegrenzte Anzahl gehosteter Charts zu erstellen, können Sie von jedem Gerät aus und von jedem Ort aus auf Ihre Flowcharts zugreifen und daran arbeiten."
+
+#: src/pages/New.tsx:212
+msgid "You already have a flowchart with this name."
+msgstr "Sie haben bereits ein Diagramm mit diesem Namen."
 
 #: src/lib/getDefaultText.ts:8
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "Sie können Text auch in \"\\( \\)\" umbrechen, um eine Kante zu erstellen"
 
-#: src/components/SponsorDashboard.tsx:197
+#: src/pages/New.tsx:202
+msgid "You must log in to create a standard flowchart."
+msgstr "Sie müssen sich anmelden, um ein Standarddiagramm zu erstellen."
+
+#: src/pages/Account.tsx:141
 #: src/pages/Charts.tsx:375
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Ihr Abonnement ist nicht mehr aktiv. Wenn Sie gehostete Diagramme erstellen und bearbeiten möchten, werden Sie Sponsor."
 
-#: src/components/GraphFloatingMenu.tsx:42
+#: src/components/GraphFloatingMenu.tsx:44
 msgid "Zoom In"
 msgstr ""
 
-#: src/components/GraphFloatingMenu.tsx:37
+#: src/components/GraphFloatingMenu.tsx:39
 msgid "Zoom Out"
 msgstr ""
 

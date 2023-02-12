@@ -5,6 +5,7 @@
     "(before a colon creates a label)": "(कॉलन से पहले एक लेबल बनाता है)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों.",
+    "Accessible from any device": "किसी भी उपकरण से पहुँचा जा सकता है",
     Account: "खाता",
     Advanced: "विकसित",
     Amount: "रकम",
@@ -55,6 +56,7 @@
     "Copy PNG Image": "PNG छवि कॉपी करें",
     "Copy SVG Code": "SVG कोड कॉपी करें",
     Create: "बनाएँ",
+    "Create a New Flowchart": "एक नया आरेख बनाएँ",
     Created: "बनाया गया",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
@@ -64,6 +66,8 @@
     "Dark Mode": "डार्क मोड",
     Date: "तारीख़",
     Delete: "हटाएँ",
+    "Deleted when browser data is cleared":
+      "ब्राउज़र डेटा साफ़ होने पर हटा दिया गया",
     Direction: "दिशा",
     Discard: "रद्द करें",
     "Do you want to cancel your subscription?":
@@ -71,6 +75,7 @@
     "Do you want to delete this?": "क्या आप इसे डिलीट करना चाहते हैं?",
     Document: "दस्तावेज़",
     Documentation: "प्रलेखन",
+    "Don't have an account?": "खाता नहीं है?",
     Download: "डाउनलोड",
     "Download JPG": "JPG डाउनलोड करें",
     "Download PNG": "PNG डाउनलोड करें",
@@ -152,6 +157,7 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
+    Normal: "सामान्य",
     "Open Customer Portal": "ग्राहक पोर्टल खोलें",
     Playbook: "प्लेबुक",
     Pricing: "मूल्य निर्धारण",
@@ -203,6 +209,8 @@
     Status: "स्टेटस",
     "Store any data associated to a node":
       "Store any data associated to a node",
+    "Stored in the cloud": "बादल में संग्रहित",
+    "Stored on this computer": "इस कंप्यूटर पर संग्रहीत",
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन",
     Style: "शैली",
@@ -215,6 +223,7 @@
     "Subscription will end": "सदस्यता समाप्त हो जाएगी",
     Syntax: "सिंटेक्स",
     "Syntax Reference": "वाक्य-विन्यास संदर्भ",
+    Temporary: "अस्थायी",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -229,6 +238,7 @@
     "This app works by typing": "यह ऐप टाइप द्वारा काम करता है",
     "Top to Bottom": "ऊपर से नीचे",
     "Try again": "फिर से कोशिश करें",
+    Type: "प्रकार",
     Unfreeze: "अनफ़्रीज़",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
@@ -256,8 +266,12 @@
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।",
+    "You already have a flowchart with this name.":
+      "आपके पास इस नाम का आरेख पहले से है।",
     'You can also wrap text in "\\( \\)" to create an edge':
       'किनारे बनाने के लिए आप टेक्स्ट को "\\( \\)" में भी रैप कर सकते हैं',
+    "You must log in to create a normal flowchart.":
+      "सामान्य आरेख बनाने के लिए आपको लॉग इन करना होगा।",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें.",
     "Zoom In": "Zoom In",

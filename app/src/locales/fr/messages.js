@@ -6,6 +6,7 @@
       "(avant que deux-points ne créent une étiquette)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Accédez à ces graphiques depuis n'importe où.<0/>Partagez ou intégrez des graphiques, qui se synchronisent au fil de vos modifications.",
+    "Accessible from any device": "Accessible depuis n'importe quel appareil",
     Account: "Compte",
     Advanced: "Avancé",
     Amount: "Montant",
@@ -56,6 +57,7 @@
     "Copy PNG Image": "Copier l'image PNG",
     "Copy SVG Code": "Copier le code SVG",
     Create: "Créer",
+    "Create a New Flowchart": "Créer un nouveau diagramme",
     Created: "Créé",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
@@ -65,6 +67,8 @@
     "Dark Mode": "Mode sombre",
     Date: "Date",
     Delete: "Supprimer",
+    "Deleted when browser data is cleared":
+      "Supprimé lorsque les données du navigateur sont effacées",
     Direction: "Direction",
     Discard: "Jeter",
     "Do you want to cancel your subscription?":
@@ -72,6 +76,7 @@
     "Do you want to delete this?": "Souhaitez-vous supprimer ceci ?",
     Document: "Document",
     Documentation: "Documentation",
+    "Don't have an account?": "Vous n'avez pas de compte ?",
     Download: "Télécharger",
     "Download JPG": "Télécharger JPG",
     "Download PNG": "Télécharger PNG",
@@ -153,6 +158,7 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
+    Normal: "Normal",
     "Open Customer Portal": "Ouvrir le portail client",
     Playbook: "Livre-jeu",
     Pricing: "Tarification",
@@ -204,6 +210,8 @@
     Status: "État",
     "Store any data associated to a node":
       "Store any data associated to a node",
+    "Stored in the cloud": "Stocké dans le cloud",
+    "Stored on this computer": "Stocké sur cet ordinateur",
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Rationalisez votre flux de travail et simplifiez la visualisation de vos processus grâce à Flowchart Fun",
     Style: "Style",
@@ -216,6 +224,7 @@
     "Subscription will end": "L'abonnement prendra fin",
     Syntax: "Syntaxe",
     "Syntax Reference": "Référence de syntaxe",
+    Temporary: "Temporaire",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -230,6 +239,7 @@
     "This app works by typing": "Chaque ligne creé une nouvelle boite",
     "Top to Bottom": "De haut en bas",
     "Try again": "Réessayer",
+    Type: "Type",
     Unfreeze: "Débloquer",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
@@ -257,8 +267,12 @@
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez.",
+    "You already have a flowchart with this name.":
+      "Vous avez déjà un diagramme avec ce nom.",
     'You can also wrap text in "\\( \\)" to create an edge':
       'Vous pouvez également envelopper le texte dans "\\( \\)" pour créer un bord',
+    "You must log in to create a normal flowchart.":
+      "Vous devez vous connecter pour créer un diagramme normal.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor.",
     "Zoom In": "Zoom In",
