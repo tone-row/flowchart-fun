@@ -15,6 +15,9 @@ test.describe("share-links", () => {
 
   test("share links", async ({ page }) => {
     try {
+      // FF bug, need a timeout
+      await page.waitForTimeout(1000);
+
       await page.goto(`${BASE_URL}/n#FDC8-YG8F8w0Q`);
       const encoded = `BYUwNmD2AEDukCcwBMBQqC8WuoN6umgCIAHAQwQGcQEiAuYgNwEYjUBfTbDIA`;
 
