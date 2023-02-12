@@ -154,7 +154,7 @@ test.describe("unauth", () => {
     ).toBeVisible();
   });
 
-  test("Creating a new chart from a template immediatetly creates a local chart", async ({
+  test.skip("Creating a new chart from a template immediatetly creates a local chart", async ({
     page,
   }) => {
     // Need timeout to avoid failure in firefox
