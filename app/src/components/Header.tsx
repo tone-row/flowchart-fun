@@ -50,6 +50,7 @@ export const Header = memo(function SharedHeader() {
   const isChangelogPage = pathname === "/changelog";
   const isRoadmapPage = pathname === "/roadmap";
   const isSignUpPage = pathname === "/i";
+  const isNewPage = pathname === "/n";
   const isInfoPage = isBlogPage || isChangelogPage || isRoadmapPage;
   const isEditor =
     !isDocsPage &&
@@ -60,7 +61,8 @@ export const Header = memo(function SharedHeader() {
     !isAccountPage &&
     !isInfoPage &&
     !isLogInPage &&
-    !isSignUpPage;
+    !isSignUpPage &&
+    !isNewPage;
   const isValidCustomer = useIsValidCustomer();
   const lastChart = useLastChart((state) => state.lastChart);
   return (
@@ -77,6 +79,7 @@ export const Header = memo(function SharedHeader() {
                   label={t`New`}
                   icon={<Plus weight="light" height={22} width={22} />}
                   className="shared-header__new"
+                  aria-current={isNewPage ? "page" : undefined}
                   to="/n"
                 />
               </NavigationMenu.Item>

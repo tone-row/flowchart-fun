@@ -3,7 +3,6 @@ import { Route, RouteProps, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
 import { LogIn } from "../pages/LogIn";
-import { New } from "../pages/New";
 import Feedback from "./Feedback";
 import Layout from "./Layout";
 import Settings from "./Settings";
@@ -24,6 +23,7 @@ const Post = lazy(() => import("../pages/post/Post"));
 const Changelog = lazy(() => import("../pages/Changelog"));
 const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
+const New = lazy(() => import("../pages/New"));
 
 export default function Router() {
   usePageViews();

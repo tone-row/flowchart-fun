@@ -14,7 +14,7 @@ import {
   render,
   screen,
 } from "../test-utils";
-import { New } from "./New";
+import New from "./New";
 const fakeName = "fake-name";
 
 describe("New Page", () => {

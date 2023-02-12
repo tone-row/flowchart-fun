@@ -3,7 +3,6 @@ import produce from "immer";
 import { FaRegSnowflake } from "react-icons/fa";
 
 import { defaultLayout } from "../../lib/constants";
-import { getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
@@ -22,8 +21,6 @@ import {
 export function EditLayoutTab() {
   const isValidSponsor = useIsValidSponsor();
   const doc = useDoc();
-  // the layout here is what we're rendering but not necessarily what should be stored in the doc
-  const rendered = getLayout(doc);
   const layout = hasOwnProperty(doc.meta, "layout") ? doc.meta.layout : {};
 
   let layoutName = defaultLayout.name as string;
