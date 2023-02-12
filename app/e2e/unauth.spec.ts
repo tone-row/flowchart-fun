@@ -154,7 +154,7 @@ test.describe("unauth", () => {
     ).toBeVisible();
   });
 
-  test.only("Creating a new chart from a template immediatetly creates a local chart", async ({
+  test("Creating a new chart from a template immediatetly creates a local chart", async ({
     page,
   }) => {
     // go to url
