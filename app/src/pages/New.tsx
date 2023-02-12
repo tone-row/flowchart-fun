@@ -102,9 +102,9 @@ const New = memo(function New({
   const createDisabled = !name || tryingToCreateRegular || alreadyUsedName;
 
   return (
-    <div className="h-full grid content-start pt-16 justify-center">
+    <div className="h-full grid content-start pt-16 md:justify-center">
       <form
-        className="grid gap-7 px-4"
+        className="grid gap-7 px-4 w-full"
         onSubmit={(e) => {
           e.preventDefault();
           if (customerIsLoading || !checkedSession) return;
@@ -146,7 +146,7 @@ const New = memo(function New({
             value={name}
             autoComplete="off"
             onChange={(e) => setName(e.target.value)}
-            className="w-full text-2xl mb-3 border-b-2 border-neutral-300 pb-1 dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700"
+            className="w-full text-2xl mb-3 border-b-2 border-neutral-300 pb-1 dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700 rounded-none"
             placeholder="Untitled"
           />
           <NameLabel name={safeName} hide={!showWarning} />
@@ -159,8 +159,9 @@ const New = memo(function New({
             value={type}
             name="type"
             onValueChange={(value) => setType(value as "regular" | "local")}
+            asChild
           >
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2 justify-center justify-self-center">
               <TypeToggle
                 value="regular"
                 title={t`Standard`}
@@ -215,7 +216,7 @@ const New = memo(function New({
         )}
         <button
           type="submit"
-          className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-8"
+          className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-8 mb-4"
           disabled={createDisabled}
         >
           {isLoading ? (
@@ -241,7 +242,7 @@ function TypeToggle({
 } & Parameters<typeof RadioGroup.Item>[0]) {
   return (
     <RadioGroup.Item {...rest} asChild>
-      <button className="bg-neutral-100 border-neutral-100 p-3 py-6 rounded grid justify-items-center content-center gap-2 dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400 max-w-[300px]">
+      <button className="bg-neutral-100 border-neutral-100 p-2 py-4 sm:p-3 sm:py-6 rounded grid justify-items-center content-center gap-2 dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400 max-w-[300px]">
         <span className="text-2xl mb-3">{title}</span>
         {icon}
         <div className="mt-5 text-center grid gap-1 justify-items-center pb-3">
