@@ -29,8 +29,12 @@ msgstr "(레이블을 생성합니다)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
 
-#: src/components/Header.tsx:178
-#: src/components/Header.tsx:405
+#: src/pages/New.tsx:128
+msgid "Accessible from any device"
+msgstr "모든 장치에서 액세스 가능"
+
+#: src/components/Header.tsx:181
+#: src/components/Header.tsx:408
 msgid "Account"
 msgstr "계정"
 
@@ -39,7 +43,7 @@ msgstr "계정"
 msgid "Advanced"
 msgstr "고급의"
 
-#: src/components/SponsorDashboard.tsx:289
+#: src/pages/Account.tsx:268
 msgid "Amount"
 msgstr "금액"
 
@@ -64,17 +68,17 @@ msgid "Background"
 msgstr "배경"
 
 #: src/components/Settings.tsx:135
-#: src/components/SponsorDashboard.tsx:194
+#: src/pages/Account.tsx:138
 msgid "Become a Sponsor"
 msgstr "스폰서 되기"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:381
+#: src/components/Header.tsx:150
+#: src/components/Header.tsx:384
 #: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "블로그"
 
-#: src/components/GraphContextMenu.tsx:333
+#: src/components/GraphContextMenu.tsx:341
 msgid "Border"
 msgstr ""
 
@@ -88,33 +92,33 @@ msgid "Breadthfirst"
 msgstr "폭 우선"
 
 #: src/components/ClearTextButton.tsx:44
-#: src/components/SponsorDashboard.tsx:259
-#: src/components/SponsorDashboard.tsx:270
-#: src/components/SponsorDashboard.tsx:370
-#: src/components/SponsorDashboard.tsx:382
-#: src/components/SponsorDashboard.tsx:426
+#: src/pages/Account.tsx:290
+#: src/pages/Account.tsx:301
+#: src/pages/Account.tsx:369
+#: src/pages/Account.tsx:381
+#: src/pages/Account.tsx:425
 #: src/pages/Charts.tsx:243
 #: src/pages/Charts.tsx:514
 #: src/pages/Charts.tsx:568
 msgid "Cancel"
 msgstr "취소"
 
-#: src/components/SponsorDashboard.tsx:262
+#: src/pages/Account.tsx:293
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다."
 
-#: src/components/SponsorDashboard.tsx:183
+#: src/pages/Account.tsx:220
 msgid "Change Email Address"
 msgstr "이메일 주소 변경"
 
-#: src/components/Header.tsx:157
-#: src/components/Header.tsx:387
+#: src/components/Header.tsx:160
+#: src/components/Header.tsx:390
 #: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "변경 로그"
 
-#: src/components/Header.tsx:93
-#: src/components/Header.tsx:360
+#: src/components/Header.tsx:96
+#: src/components/Header.tsx:363
 msgid "Charts"
 msgstr "차트"
 
@@ -123,7 +127,7 @@ msgstr "차트"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
-#: src/pages/Sponsor.tsx:67
+#: src/pages/Pricing.tsx:67
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "표를 전체 권한, 편집만 가능, 보기만 가능 권한 중 어떤 것으로 공유할 지 선택하여 작업물을 변경할 수 있는지 관리하세요."
 
@@ -156,11 +160,11 @@ msgstr "자세한 내용을 보려면 구문 참조를 클릭하십시오 .blue.
 msgid "Clone"
 msgstr "클론"
 
-#: src/components/Shared.tsx:170
+#: src/components/Shared.tsx:168
 msgid "Close"
 msgstr "닫기"
 
-#: src/components/GraphContextMenu.tsx:189
+#: src/components/GraphContextMenu.tsx:197
 msgid "Color"
 msgstr ""
 
@@ -176,7 +180,7 @@ msgstr "만화책"
 msgid "Concentric"
 msgstr "동심"
 
-#: src/components/SponsorDashboard.tsx:177
+#: src/pages/Account.tsx:214
 msgid "Confirm New Email"
 msgstr "새 이메일 확인"
 
@@ -193,28 +197,33 @@ msgstr ""
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
-#: src/components/ShareDialog.tsx:185
-#: src/components/ShareDialog.tsx:186
-#: src/components/ShareDialog.tsx:250
+#: src/components/ShareDialog.tsx:212
+#: src/components/ShareDialog.tsx:213
+#: src/components/ShareDialog.tsx:277
 #: src/pages/Charts.tsx:444
 #: src/pages/Charts.tsx:515
 #: src/pages/Charts.tsx:553
 msgid "Copy"
 msgstr "복사"
 
-#: src/components/GraphContextMenu.tsx:120
+#: src/components/GraphContextMenu.tsx:128
 msgid "Copy PNG Image"
 msgstr "PNG 이미지 복사"
 
-#: src/components/GraphContextMenu.tsx:97
+#: src/components/GraphContextMenu.tsx:105
 msgid "Copy SVG Code"
 msgstr "SVG 코드 복사"
 
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
+#: src/pages/New.tsx:177
 msgid "Create"
 msgstr "만들기"
+
+#: src/pages/New.tsx:90
+msgid "Create a New Flowchart"
+msgstr "새 다이어그램 만들기"
 
 #: src/pages/Charts.tsx:605
 msgid "Created"
@@ -224,11 +233,11 @@ msgstr "생성됨"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:64
+#: src/pages/Pricing.tsx:64
 msgid "Custom Sharing Options"
 msgstr "커스텀 공유 옵션"
 
-#: src/components/SponsorDashboard.tsx:138
+#: src/pages/Account.tsx:231
 msgid "Customer Portal"
 msgstr "고객 포털"
 
@@ -241,7 +250,7 @@ msgstr "다크"
 msgid "Dark Mode"
 msgstr "다크 모드"
 
-#: src/components/SponsorDashboard.tsx:286
+#: src/pages/Account.tsx:265
 msgid "Date"
 msgstr "날짜"
 
@@ -252,7 +261,11 @@ msgstr "날짜"
 msgid "Delete"
 msgstr "삭제"
 
-#: src/components/Tabs/EditLayoutTab.tsx:87
+#: src/pages/New.tsx:143
+msgid "Deleted when browser data is cleared"
+msgstr "브라우저 데이터가 지워지면 삭제됨"
+
+#: src/components/Tabs/EditLayoutTab.tsx:85
 msgid "Direction"
 msgstr "방향"
 
@@ -260,7 +273,7 @@ msgstr "방향"
 msgid "Discard"
 msgstr "버리다"
 
-#: src/components/SponsorDashboard.tsx:375
+#: src/pages/Account.tsx:374
 msgid "Do you want to cancel your subscription?"
 msgstr "구독을 취소하시겠습니까?"
 
@@ -273,24 +286,24 @@ msgstr "본 항목을 삭제하시겠습니까?"
 msgid "Document"
 msgstr "문서"
 
-#: src/components/Header.tsx:113
-#: src/components/Header.tsx:366
+#: src/components/Header.tsx:116
+#: src/components/Header.tsx:369
 msgid "Documentation"
 msgstr "선적 서류 비치"
 
-#: src/components/ShareDialog.tsx:51
+#: src/components/ShareDialog.tsx:60
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/GraphContextMenu.tsx:63
+#: src/components/GraphContextMenu.tsx:70
 msgid "Download JPG"
 msgstr "JPG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:54
+#: src/components/GraphContextMenu.tsx:60
 msgid "Download PNG"
 msgstr "PNG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:72
+#: src/components/GraphContextMenu.tsx:80
 msgid "Download SVG"
 msgstr "SVG 다운로드"
 
@@ -303,7 +316,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr "복제"
 
-#: src/pages/Sponsor.tsx:50
+#: src/pages/Pricing.tsx:50
 msgid "Dynamic Share Links"
 msgstr "다이나믹 공유 링크"
 
@@ -331,12 +344,12 @@ msgstr ""
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr ""
 
-#: src/components/ShareDialog.tsx:89
+#: src/components/ShareDialog.tsx:101
 msgid "Editable"
 msgstr "편집 가능"
 
-#: src/components/Header.tsx:85
-#: src/components/Header.tsx:354
+#: src/components/Header.tsx:88
+#: src/components/Header.tsx:357
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "에디터"
@@ -362,22 +375,22 @@ msgstr "Excalidraw"
 
 #: src/components/EditorWrapper.tsx:62
 #: src/components/EditorWrapper.tsx:67
-#: src/components/ShareDialog.tsx:43
-#: src/components/ShareDialog.tsx:99
+#: src/components/ShareDialog.tsx:52
+#: src/components/ShareDialog.tsx:111
 msgid "Export"
 msgstr "내보내기"
 
-#: src/components/GraphContextMenu.tsx:162
+#: src/components/GraphContextMenu.tsx:170
 msgid "Extra Large"
 msgstr ""
 
 #: src/components/Feedback.tsx:74
-#: src/components/Header.tsx:121
-#: src/components/Header.tsx:373
+#: src/components/Header.tsx:124
+#: src/components/Header.tsx:376
 msgid "Feedback"
 msgstr "피드백"
 
-#: src/components/GraphFloatingMenu.tsx:48
+#: src/components/GraphFloatingMenu.tsx:50
 msgid "Fit Graph"
 msgstr ""
 
@@ -385,7 +398,7 @@ msgstr ""
 msgid "Follow Us"
 msgstr "팔로우하세요"
 
-#: src/components/ShareDialog.tsx:86
+#: src/components/ShareDialog.tsx:98
 msgid "Fullscreen"
 msgstr "전체 화면"
 
@@ -393,7 +406,7 @@ msgstr "전체 화면"
 msgid "Futuristic"
 msgstr "미래 지향적"
 
-#: src/components/Tabs/EditLayoutTab.tsx:165
+#: src/components/Tabs/EditLayoutTab.tsx:163
 msgid "Get More Layouts"
 msgstr "더 많은 레이아웃을 보고 싶어요"
 
@@ -414,11 +427,11 @@ msgstr "그리드"
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "주의! 캐시를 지우기 전에 이 문서는 클라우드에 저장 되어있지 않다는 것을 기억하시기 바랍니다. "
 
-#: src/components/Header.tsx:102
+#: src/components/Header.tsx:105
 msgid "Help"
 msgstr "도움말"
 
-#: src/components/SponsorDashboard.tsx:276
+#: src/pages/Account.tsx:255
 msgid "History"
 msgstr "기록"
 
@@ -428,7 +441,7 @@ msgstr "집"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Charts.tsx:724
-#: src/pages/Sponsor.tsx:83
+#: src/pages/Pricing.tsx:83
 msgid "Hosted Charts"
 msgstr "호스트 차트"
 
@@ -436,8 +449,8 @@ msgstr "호스트 차트"
 msgid "ID's"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:36
-#: src/pages/Sponsor.tsx:46
+#: src/pages/Pricing.tsx:36
+#: src/pages/Pricing.tsx:46
 msgid "Image Export"
 msgstr "이미지 내보내기"
 
@@ -449,7 +462,7 @@ msgstr ""
 msgid "Indenting creates an edge"
 msgstr "들여 쓰기는 가장자리를 만듭니다"
 
-#: src/components/Header.tsx:136
+#: src/components/Header.tsx:139
 msgid "Info"
 msgstr "정보"
 
@@ -457,17 +470,17 @@ msgstr "정보"
 msgid "Language"
 msgstr "언어"
 
-#: src/components/GraphContextMenu.tsx:157
+#: src/components/GraphContextMenu.tsx:165
 msgid "Large"
 msgstr ""
 
-#: src/components/Tabs/EditLayoutTab.tsx:69
+#: src/components/Tabs/EditLayoutTab.tsx:67
 #: src/pages/Edit.tsx:79
 #: src/pages/EditHosted.tsx:81
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/components/Tabs/EditLayoutTab.tsx:177
+#: src/components/Tabs/EditLayoutTab.tsx:175
 msgid "Layout is Frozen"
 msgstr "레이아웃이 고정됨"
 
@@ -494,7 +507,7 @@ msgstr "라이트"
 msgid "Light Mode"
 msgstr "라이트 모드"
 
-#: src/components/ShareDialog.tsx:81
+#: src/components/ShareDialog.tsx:93
 msgid "Link"
 msgstr "링크"
 
@@ -502,13 +515,14 @@ msgstr "링크"
 msgid "Local Charts"
 msgstr "로컬 차트"
 
-#: src/components/Header.tsx:196
-#: src/components/Header.tsx:429
+#: src/components/Header.tsx:199
+#: src/components/Header.tsx:432
 #: src/pages/LogIn.tsx:24
+#: src/pages/New.tsx:157
 msgid "Log In"
 msgstr "로그인"
 
-#: src/components/SponsorDashboard.tsx:133
+#: src/pages/Account.tsx:133
 msgid "Log Out"
 msgstr "로그아웃"
 
@@ -520,15 +534,15 @@ msgstr "<0>Tone Row</0> 제작"
 msgid "Make a Donation"
 msgstr "기부하기"
 
-#: src/components/ShareDialog.tsx:289
+#: src/components/ShareDialog.tsx:316
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
-#: src/pages/Sponsor.tsx:15
+#: src/pages/Pricing.tsx:15
 msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
 msgstr "Flowchart Fun Pro로 작업 흐름을 더 쉽게 만드세요. 지금 구독을 월 $3 또는 연간 $30에 불과합니다!"
 
-#: src/components/GraphContextMenu.tsx:153
+#: src/components/GraphContextMenu.tsx:161
 msgid "Medium"
 msgstr ""
 
@@ -536,11 +550,11 @@ msgstr ""
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/pages/Sponsor.tsx:51
+#: src/pages/Pricing.tsx:51
 msgid "More Layouts"
 msgstr "더 많은 레이아웃"
 
-#: src/pages/Sponsor.tsx:52
+#: src/pages/Pricing.tsx:52
 msgid "More Themes and Fonts"
 msgstr "더욱 많은 테마와 폰트"
 
@@ -550,6 +564,7 @@ msgstr "박물관"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
+#: src/pages/New.tsx:94
 msgid "Name"
 msgstr "이름"
 
@@ -557,21 +572,21 @@ msgstr "이름"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</0>"
 
-#: src/components/Header.tsx:77
-#: src/components/Header.tsx:348
+#: src/components/Header.tsx:79
+#: src/components/Header.tsx:351
 msgid "New"
 msgstr "신규"
 
-#: src/components/SponsorDashboard.tsx:170
+#: src/pages/Account.tsx:207
 msgid "New Email"
 msgstr "새 이메일"
 
-#: src/components/SponsorDashboard.tsx:221
-#: src/components/SponsorDashboard.tsx:423
+#: src/pages/Account.tsx:165
+#: src/pages/Account.tsx:422
 msgid "Next charge"
 msgstr "다음 청구 금액"
 
-#: src/components/GraphContextMenu.tsx:182
+#: src/components/GraphContextMenu.tsx:190
 msgid "Node"
 msgstr ""
 
@@ -599,7 +614,11 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
 
-#: src/components/SponsorDashboard.tsx:155
+#: src/pages/New.tsx:119
+msgid "Normal"
+msgstr "일반"
+
+#: src/pages/Account.tsx:247
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
 
@@ -607,13 +626,13 @@ msgstr "고객 포털 열기"
 msgid "Playbook"
 msgstr "플레이북"
 
-#: src/components/Header.tsx:187
-#: src/components/Header.tsx:414
+#: src/components/Header.tsx:190
+#: src/components/Header.tsx:417
 msgid "Pricing"
 msgstr "가격"
 
-#: src/components/ShareDialog.tsx:285
-#: src/components/ShareDialog.tsx:308
+#: src/components/ShareDialog.tsx:312
+#: src/components/ShareDialog.tsx:335
 #: src/pages/Charts.tsx:597
 msgid "Public"
 msgstr "공용"
@@ -623,7 +642,7 @@ msgid "Random"
 msgstr "무작위"
 
 #: src/components/EditorWrapper.tsx:53
-#: src/components/ShareDialog.tsx:92
+#: src/components/ShareDialog.tsx:104
 msgid "Read-only"
 msgstr "읽기 전용"
 
@@ -672,16 +691,16 @@ msgstr "이 문서는 이 컴퓨터에만 저장된다는 점 기억하세요. �
 msgid "Rename"
 msgstr "이름 바꾸기"
 
-#: src/components/GraphFloatingMenu.tsx:52
+#: src/components/GraphFloatingMenu.tsx:54
 #: src/pages/Charts.tsx:237
 #: src/pages/Charts.tsx:246
 msgid "Reset"
 msgstr "재설정"
 
-#: src/components/SponsorDashboard.tsx:249
-#: src/components/SponsorDashboard.tsx:417
-#: src/components/SponsorDashboard.tsx:421
-#: src/components/SponsorDashboard.tsx:430
+#: src/pages/Account.tsx:193
+#: src/pages/Account.tsx:416
+#: src/pages/Account.tsx:420
+#: src/pages/Account.tsx:429
 msgid "Resume Subscription"
 msgstr "구독 재개"
 
@@ -689,7 +708,7 @@ msgstr "구독 재개"
 msgid "Retro"
 msgstr "레트로"
 
-#: src/components/SponsorDashboard.tsx:378
+#: src/pages/Account.tsx:377
 msgid "Return"
 msgstr "반품"
 
@@ -698,8 +717,8 @@ msgstr "반품"
 msgid "Right to Left"
 msgstr "오른쪽에서 왼쪽으로"
 
-#: src/components/Header.tsx:164
-#: src/components/Header.tsx:393
+#: src/components/Header.tsx:167
+#: src/components/Header.tsx:396
 #: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
 msgstr "로드맵"
@@ -708,17 +727,17 @@ msgstr "로드맵"
 msgid "Save"
 msgstr "구하다"
 
-#: src/components/Header.tsx:171
-#: src/components/Header.tsx:398
+#: src/components/Header.tsx:174
+#: src/components/Header.tsx:401
 msgid "Settings"
 msgstr "설정"
 
-#: src/components/GraphContextMenu.tsx:239
+#: src/components/GraphContextMenu.tsx:247
 msgid "Shape"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:37
-#: src/pages/Sponsor.tsx:47
+#: src/pages/Pricing.tsx:37
+#: src/pages/Pricing.tsx:47
 msgid "Shape Libraries"
 msgstr "셰이프 라이브러리"
 
@@ -726,7 +745,7 @@ msgstr "셰이프 라이브러리"
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
 
-#: src/pages/Sponsor.tsx:53
+#: src/pages/Pricing.tsx:53
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "완전한 접근권, 편집 전용, 또는 읽기 전용 권한으로 공유하세요"
 
@@ -738,11 +757,11 @@ msgstr "로그인"
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/components/GraphContextMenu.tsx:294
+#: src/components/GraphContextMenu.tsx:302
 msgid "Size"
 msgstr ""
 
-#: src/components/GraphContextMenu.tsx:148
+#: src/components/GraphContextMenu.tsx:156
 msgid "Small"
 msgstr ""
 
@@ -754,7 +773,7 @@ msgstr ""
 msgid "Sorry! This page is only available in English."
 msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 
-#: src/components/Tabs/EditLayoutTab.tsx:123
+#: src/components/Tabs/EditLayoutTab.tsx:121
 msgid "Spacing"
 msgstr "간격"
 
@@ -762,16 +781,16 @@ msgstr "간격"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원"
 
-#: src/components/SponsorDashboard.tsx:233
+#: src/pages/Account.tsx:177
 msgid "Start"
 msgstr "시작"
 
-#: src/pages/Sponsor.tsx:38
-#: src/pages/Sponsor.tsx:48
+#: src/pages/Pricing.tsx:38
+#: src/pages/Pricing.tsx:48
 msgid "Static Share Links"
 msgstr "스태틱 공유 링크"
 
-#: src/components/SponsorDashboard.tsx:212
+#: src/pages/Account.tsx:156
 msgid "Status"
 msgstr "상태"
 
@@ -779,7 +798,15 @@ msgstr "상태"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:100
+#: src/pages/New.tsx:124
+msgid "Stored in the cloud"
+msgstr "클라우드에 저장"
+
+#: src/pages/New.tsx:140
+msgid "Stored on this computer"
+msgstr "이 컴퓨터에 저장됨"
+
+#: src/pages/Pricing.tsx:100
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Flowchart Fun를 통해 워크플로우를 능률화하고 프로세스 시각화를 단순화하세요"
 
@@ -804,11 +831,11 @@ msgstr ""
 msgid "Submit"
 msgstr "보내다"
 
-#: src/components/SponsorDashboard.tsx:207
+#: src/pages/Account.tsx:151
 msgid "Subscription"
 msgstr "구독"
 
-#: src/components/SponsorDashboard.tsx:244
+#: src/pages/Account.tsx:188
 msgid "Subscription will end"
 msgstr "구독이 종료될 예정입니다."
 
@@ -820,6 +847,10 @@ msgstr "문법"
 #: src/components/SyntaxReference.tsx:74
 msgid "Syntax Reference"
 msgstr "신택스 참조"
+
+#: src/pages/New.tsx:136
+msgid "Temporary"
+msgstr "임시"
 
 #: src/components/SyntaxReference.tsx:276
 msgid "Text Sizes"
@@ -862,7 +893,12 @@ msgstr "위에서 아래로"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/components/Tabs/EditLayoutTab.tsx:190
+#: src/pages/New.tsx:109
+msgid "Type"
+msgstr "유형"
+
+#: src/components/GraphFloatingMenu.tsx:64
+#: src/components/Tabs/EditLayoutTab.tsx:180
 msgid "Unfreeze"
 msgstr "녹이다"
 
@@ -870,16 +906,16 @@ msgstr "녹이다"
 msgid "Unique text value to identify a node"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:49
+#: src/pages/Pricing.tsx:49
 msgid "Unlimited Hosted Charts"
 msgstr "무제한 차트 호스팅"
 
-#: src/pages/Sponsor.tsx:35
-#: src/pages/Sponsor.tsx:45
+#: src/pages/Pricing.tsx:35
+#: src/pages/Pricing.tsx:45
 msgid "Unlimited Local Charts"
 msgstr "무제한 로컬 차트"
 
-#: src/components/SponsorDashboard.tsx:163
+#: src/pages/Account.tsx:200
 msgid "Update Email"
 msgstr "이메일 업데이트"
 
@@ -899,11 +935,11 @@ msgstr ""
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr ""
 
-#: src/components/SponsorDashboard.tsx:141
+#: src/pages/Account.tsx:234
 msgid "Use the customer portal to change your billing information."
 msgstr "청구 정보를 변경하려면 고객 포털을 사용하십시오."
 
-#: src/components/SponsorDashboard.tsx:128
+#: src/pages/Account.tsx:128
 msgid "User"
 msgstr "사용자"
 
@@ -931,24 +967,32 @@ msgstr "무엇을 공유하시겠습니까?"
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Sponsor.tsx:86
+#: src/pages/Pricing.tsx:86
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다."
+
+#: src/pages/New.tsx:165
+msgid "You already have a flowchart with this name."
+msgstr "이 이름을 가진 다이어그램이 이미 있습니다."
 
 #: src/lib/getDefaultText.ts:8
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "텍스트를 \"\\( \\)\"로 감싸서 가장자리를 만들 수도 있습니다."
 
-#: src/components/SponsorDashboard.tsx:197
+#: src/pages/New.tsx:155
+msgid "You must log in to create a normal flowchart."
+msgstr "일반 다이어그램을 만들려면 로그인해야 합니다."
+
+#: src/pages/Account.tsx:141
 #: src/pages/Charts.tsx:375
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오."
 
-#: src/components/GraphFloatingMenu.tsx:42
+#: src/components/GraphFloatingMenu.tsx:44
 msgid "Zoom In"
 msgstr ""
 
-#: src/components/GraphFloatingMenu.tsx:37
+#: src/components/GraphFloatingMenu.tsx:39
 msgid "Zoom Out"
 msgstr ""
 

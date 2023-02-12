@@ -5,6 +5,7 @@
     "(before a colon creates a label)": "(레이블을 생성합니다)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요",
+    "Accessible from any device": "모든 장치에서 액세스 가능",
     Account: "계정",
     Advanced: "고급의",
     Amount: "금액",
@@ -55,6 +56,7 @@
     "Copy PNG Image": "PNG 이미지 복사",
     "Copy SVG Code": "SVG 코드 복사",
     Create: "만들기",
+    "Create a New Flowchart": "새 다이어그램 만들기",
     Created: "생성됨",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
@@ -64,6 +66,7 @@
     "Dark Mode": "다크 모드",
     Date: "날짜",
     Delete: "삭제",
+    "Deleted when browser data is cleared": "브라우저 데이터가 지워지면 삭제됨",
     Direction: "방향",
     Discard: "버리다",
     "Do you want to cancel your subscription?": "구독을 취소하시겠습니까?",
@@ -151,6 +154,7 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
+    Normal: "일반",
     "Open Customer Portal": "고객 포털 열기",
     Playbook: "플레이북",
     Pricing: "가격",
@@ -202,6 +206,8 @@
     Status: "상태",
     "Store any data associated to a node":
       "Store any data associated to a node",
+    "Stored in the cloud": "클라우드에 저장",
+    "Stored on this computer": "이 컴퓨터에 저장됨",
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Flowchart Fun를 통해 워크플로우를 능률화하고 프로세스 시각화를 단순화하세요",
     Style: "스타일",
@@ -214,6 +220,7 @@
     "Subscription will end": "구독이 종료될 예정입니다.",
     Syntax: "문법",
     "Syntax Reference": "신택스 참조",
+    Temporary: "임시",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -228,6 +235,7 @@
     "This app works by typing": "이 앱은 타이핑으로 작동합니다",
     "Top to Bottom": "위에서 아래로",
     "Try again": "다시 시도하세요",
+    Type: "유형",
     Unfreeze: "녹이다",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
@@ -254,8 +262,12 @@
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다.",
+    "You already have a flowchart with this name.":
+      "이 이름을 가진 다이어그램이 이미 있습니다.",
     'You can also wrap text in "\\( \\)" to create an edge':
       '텍스트를 "\\( \\)"로 감싸서 가장자리를 만들 수도 있습니다.',
+    "You must log in to create a normal flowchart.":
+      "일반 다이어그램을 만들려면 로그인해야 합니다.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오.",
     "Zoom In": "Zoom In",

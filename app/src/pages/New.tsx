@@ -119,11 +119,11 @@ const New = memo(function New() {
                 title={t`Normal`}
                 description={
                   <>
-                    <span className="text-sm flex items-center">
+                    <span className="text-sm flex items-center justify-center">
                       <Check size={16} weight="thin" className="mr-1" />
                       <Trans>Stored in the cloud</Trans>
                     </span>
-                    <span className="text-sm flex items-center">
+                    <span className="text-sm flex items-center justify-center">
                       <Check size={16} weight="thin" className="mr-1" />
                       <Trans>Accessible from any device</Trans>
                     </span>
@@ -152,7 +152,7 @@ const New = memo(function New() {
         {tryingToCreateRegular && (
           <div className="justify-items-center grid">
             <Warning>
-              <Trans>You must log in to create a regular flowchart.</Trans>{" "}
+              <Trans>You must log in to create a normal flowchart.</Trans>{" "}
               <Link className="underline" to="/l">
                 <Trans>Log In</Trans>
               </Link>
@@ -196,7 +196,7 @@ function TypeToggle({
 } & Parameters<typeof RadioGroup.Item>[0]) {
   return (
     <RadioGroup.Item {...rest} asChild>
-      <button className="bg-neutral-100 border-neutral-100 p-3 py-6 rounded grid justify-items-center content-center gap-2 dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400">
+      <button className="bg-neutral-100 border-neutral-100 p-3 py-6 rounded grid justify-items-center content-center gap-2 dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400 max-w-[300px]">
         <span className="text-2xl mb-3">{title}</span>
         {icon}
         <div className="mt-5 text-center grid gap-1 justify-items-center pb-3">

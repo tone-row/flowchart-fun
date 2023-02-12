@@ -5,6 +5,7 @@
     "(before a colon creates a label)": "(在冒号前创建一个标签)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。",
+    "Accessible from any device": "可从任何设备访问",
     Account: "帐户",
     Advanced: "先进的",
     Amount: "数量",
@@ -55,6 +56,7 @@
     "Copy PNG Image": "复制PNG图像",
     "Copy SVG Code": "复制 SVG 代码",
     Create: "创建",
+    "Create a New Flowchart": "创建新图表",
     Created: "已创建",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
@@ -64,6 +66,7 @@
     "Dark Mode": "深色模式",
     Date: "日期",
     Delete: "删除",
+    "Deleted when browser data is cleared": "清除浏览器数据时删除",
     Direction: "方向",
     Discard: "Discard",
     "Do you want to cancel your subscription?": "您要取消订阅吗？",
@@ -151,6 +154,7 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
+    Normal: "正常",
     "Open Customer Portal": "打开客户门户",
     Playbook: "剧本",
     Pricing: "价钱",
@@ -202,6 +206,8 @@
     Status: "状态",
     "Store any data associated to a node":
       "Store any data associated to a node",
+    "Stored in the cloud": "存储在云端",
+    "Stored on this computer": "保存在这台电脑上",
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "使用 Flowchart Fun，简化您的工作流程和过程可视化",
     Style: "风格",
@@ -214,6 +220,7 @@
     "Subscription will end": "订阅即将到期",
     Syntax: "句法",
     "Syntax Reference": "语法参考",
+    Temporary: "临时",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -228,6 +235,7 @@
     "This app works by typing": "这款应用的工作原理是输入",
     "Top to Bottom": "从上到下",
     "Try again": "重试",
+    Type: "类型",
     Unfreeze: "解冻",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
@@ -253,8 +261,11 @@
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。",
+    "You already have a flowchart with this name.": "您已有同名的图表。",
     'You can also wrap text in "\\( \\)" to create an edge':
       "您还可以将文本包装在\\n“\\( \\)”中以创建链接",
+    "You must log in to create a normal flowchart.":
+      "您必须登录才能创建普通图表。",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",
     "Zoom In": "Zoom In",

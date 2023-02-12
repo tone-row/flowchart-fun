@@ -6,6 +6,7 @@
       "(antes de dois pontos cria uma etiqueta)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Acesse os diagramas de qualquer lugar.<0/>Compartilhe/incorpore diagramas que ficam em sincronização com suas edições.",
+    "Accessible from any device": "Acessível de qualquer dispositivo",
     Account: "Conta",
     Advanced: "Avançado",
     Amount: "Total",
@@ -56,6 +57,7 @@
     "Copy PNG Image": "Copiar imagem PNG",
     "Copy SVG Code": "Copiar código SVG",
     Create: "Criar",
+    "Create a New Flowchart": "Criar um novo diagrama",
     Created: "Criado",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
@@ -65,6 +67,8 @@
     "Dark Mode": "Modo escuro",
     Date: "Data",
     Delete: "Deletar",
+    "Deleted when browser data is cleared":
+      "Excluído quando os dados do navegador são apagados",
     Direction: "Direção",
     Discard: "Descartar",
     "Do you want to cancel your subscription?":
@@ -153,6 +157,7 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
+    Normal: "Normal",
     "Open Customer Portal": "Abra o portal do cliente",
     Playbook: "Cartilha",
     Pricing: "Preços",
@@ -204,6 +209,8 @@
     Status: "Status",
     "Store any data associated to a node":
       "Store any data associated to a node",
+    "Stored in the cloud": "Armazenado na nuvem",
+    "Stored on this computer": "Armazenado neste computador",
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Agilize seu fluxo de trabalho e simplifique a visualização do processo com o Flowchart Fun",
     Style: "Estilo",
@@ -216,6 +223,7 @@
     "Subscription will end": "Inscrição acabará",
     Syntax: "Sintaxe",
     "Syntax Reference": "Referência de sintaxe",
+    Temporary: "Temporário",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -230,6 +238,7 @@
     "This app works by typing": "Este aplicativo funciona por digitação",
     "Top to Bottom": "De cima para baixo",
     "Try again": "Tente novamente",
+    Type: "Tipo",
     Unfreeze: "Descongelar",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
@@ -257,8 +266,12 @@
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "Com a capacidade de criar gráficos hospedados ilimitados, você pode acessar e trabalhar os seus fluxogramas de qualquer dispositivo, em qualquer lugar.",
+    "You already have a flowchart with this name.":
+      "Você já tem um diagrama com este nome.",
     'You can also wrap text in "\\( \\)" to create an edge':
       'Você também pode quebrar o texto dentro de "\\( \\)" para criar um link',
+    "You must log in to create a normal flowchart.":
+      "Você deve fazer login para criar um diagrama normal.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um(a) patrocinador(a).",
     "Zoom In": "Zoom In",

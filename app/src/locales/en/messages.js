@@ -5,6 +5,7 @@
     "(before a colon creates a label)": "(before a colon creates a label)",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.",
+    "Accessible from any device": "Accessible from any device",
     Account: "Account",
     Advanced: "Advanced",
     Amount: "Amount",
@@ -55,6 +56,7 @@
     "Copy PNG Image": "Copy PNG Image",
     "Copy SVG Code": "Copy SVG Code",
     Create: "Create",
+    "Create a New Flowchart": "Create a New Flowchart",
     Created: "Created",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
@@ -64,6 +66,8 @@
     "Dark Mode": "Dark Mode",
     Date: "Date",
     Delete: "Delete",
+    "Deleted when browser data is cleared":
+      "Deleted when browser data is cleared",
     Direction: "Direction",
     Discard: "Discard",
     "Do you want to cancel your subscription?":
@@ -152,6 +156,7 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
+    Normal: "Normal",
     "Open Customer Portal": "Open Customer Portal",
     Playbook: "Playbook",
     Pricing: "Pricing",
@@ -203,6 +208,8 @@
     Status: "Status",
     "Store any data associated to a node":
       "Store any data associated to a node",
+    "Stored in the cloud": "Stored in the cloud",
+    "Stored on this computer": "Stored on this computer",
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Streamline your workflow and simplify your process visualization with Flowchart Fun",
     Style: "Style",
@@ -215,6 +222,7 @@
     "Subscription will end": "Subscription will end",
     Syntax: "Syntax",
     "Syntax Reference": "Syntax Reference",
+    Temporary: "Temporary",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -229,6 +237,7 @@
     "This app works by typing": "This app works by typing",
     "Top to Bottom": "Top to Bottom",
     "Try again": "Try again",
+    Type: "Type",
     Unfreeze: "Unfreeze",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
@@ -256,8 +265,12 @@
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.",
+    "You already have a flowchart with this name.":
+      "You already have a flowchart with this name.",
     'You can also wrap text in "\\( \\)" to create an edge':
       'You can also wrap text in "\\( \\)" to create an edge',
+    "You must log in to create a normal flowchart.":
+      "You must log in to create a normal flowchart.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
     "Zoom In": "Zoom In",
