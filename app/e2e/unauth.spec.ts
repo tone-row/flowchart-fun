@@ -157,6 +157,10 @@ test.describe("unauth", () => {
   test("Creating a new chart from a template immediatetly creates a local chart", async ({
     page,
   }) => {
+    // Need timeout to avoid failure in firefox
+    // https://github.com/microsoft/playwright/issues/20749
+    await page.waitForTimeout(1000);
+
     // go to url
     await page.goto(
       `${BASE_URL}/n#C4ewBARgpmCWB2ZgAsYBMQGMCuBbK8wAUALxllEDeRYYARAA4CGATgM5Qt0Bc9A5iyYNkAWg4AbKJlBciAX1LkSQA`
