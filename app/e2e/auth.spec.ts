@@ -94,7 +94,7 @@ test.describe("Sign Up", () => {
     await page.getByPlaceholder("Untitled").fill("my new chart");
     await page
       .getByRole("radio", {
-        name: "Normal Stored in the cloud Accessible from any device",
+        name: "Standard Stored in the cloud Accessible from any device",
       })
       .click();
 
