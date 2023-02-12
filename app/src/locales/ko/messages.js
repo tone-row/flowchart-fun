@@ -73,6 +73,7 @@
     "Do you want to delete this?": "본 항목을 삭제하시겠습니까?",
     Document: "문서",
     Documentation: "선적 서류 비치",
+    "Don't have an account?": "계정이 없습니까?",
     Download: "다운로드",
     "Download JPG": "JPG 다운로드",
     "Download PNG": "PNG 다운로드",

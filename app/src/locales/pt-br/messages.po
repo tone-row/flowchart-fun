@@ -29,7 +29,7 @@ msgstr "(antes de dois pontos cria uma etiqueta)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Acesse os diagramas de qualquer lugar.<0/>Compartilhe/incorpore diagramas que ficam em sincronização com suas edições."
 
-#: src/pages/New.tsx:128
+#: src/pages/New.tsx:155
 msgid "Accessible from any device"
 msgstr "Acessível de qualquer dispositivo"
 
@@ -124,6 +124,7 @@ msgstr "Diagramas"
 
 #: src/components/LoginForm.tsx:36
 #: src/components/SignUpForm.tsx:96
+#: src/pages/LogIn.tsx:64
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Cheque seu e-mail com um link para logar. Você pode fechar esta janela."
 
@@ -217,11 +218,11 @@ msgstr "Copiar código SVG"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:177
+#: src/pages/New.tsx:204
 msgid "Create"
 msgstr "Criar"
 
-#: src/pages/New.tsx:90
+#: src/pages/New.tsx:117
 msgid "Create a New Flowchart"
 msgstr "Criar um novo diagrama"
 
@@ -261,7 +262,7 @@ msgstr "Data"
 msgid "Delete"
 msgstr "Deletar"
 
-#: src/pages/New.tsx:143
+#: src/pages/New.tsx:170
 msgid "Deleted when browser data is cleared"
 msgstr "Excluído quando os dados do navegador são apagados"
 
@@ -290,6 +291,10 @@ msgstr "Documento"
 #: src/components/Header.tsx:369
 msgid "Documentation"
 msgstr "Documentação"
+
+#: src/pages/LogIn.tsx:94
+msgid "Don't have an account?"
+msgstr "Não tem uma conta?"
 
 #: src/components/ShareDialog.tsx:60
 msgid "Download"
@@ -517,8 +522,8 @@ msgstr "Diagramas locais"
 
 #: src/components/Header.tsx:199
 #: src/components/Header.tsx:432
-#: src/pages/LogIn.tsx:24
-#: src/pages/New.tsx:157
+#: src/pages/LogIn.tsx:32
+#: src/pages/New.tsx:184
 msgid "Log In"
 msgstr "Acessar"
 
@@ -564,7 +569,7 @@ msgstr "Museu"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:94
+#: src/pages/New.tsx:121
 msgid "Name"
 msgstr "Nome"
 
@@ -614,7 +619,7 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
 
-#: src/pages/New.tsx:119
+#: src/pages/New.tsx:146
 msgid "Normal"
 msgstr "Normal"
 
@@ -754,6 +759,7 @@ msgid "Sign In"
 msgstr "Entrar"
 
 #: src/components/SignUpForm.tsx:175
+#: src/pages/LogIn.tsx:99
 msgid "Sign Up"
 msgstr "Inscreva-se"
 
@@ -798,11 +804,11 @@ msgstr "Status"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:124
+#: src/pages/New.tsx:151
 msgid "Stored in the cloud"
 msgstr "Armazenado na nuvem"
 
-#: src/pages/New.tsx:140
+#: src/pages/New.tsx:167
 msgid "Stored on this computer"
 msgstr "Armazenado neste computador"
 
@@ -828,6 +834,7 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
+#: src/pages/LogIn.tsx:89
 msgid "Submit"
 msgstr "Enviar"
 
@@ -848,7 +855,7 @@ msgstr "Sintaxe"
 msgid "Syntax Reference"
 msgstr "Referência de sintaxe"
 
-#: src/pages/New.tsx:136
+#: src/pages/New.tsx:163
 msgid "Temporary"
 msgstr "Temporário"
 
@@ -893,7 +900,7 @@ msgstr "De cima para baixo"
 msgid "Try again"
 msgstr "Tente novamente"
 
-#: src/pages/New.tsx:109
+#: src/pages/New.tsx:136
 msgid "Type"
 msgstr "Tipo"
 
@@ -971,7 +978,7 @@ msgstr ""
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "Com a capacidade de criar gráficos hospedados ilimitados, você pode acessar e trabalhar os seus fluxogramas de qualquer dispositivo, em qualquer lugar."
 
-#: src/pages/New.tsx:165
+#: src/pages/New.tsx:192
 msgid "You already have a flowchart with this name."
 msgstr "Você já tem um diagrama com este nome."
 
@@ -979,7 +986,7 @@ msgstr "Você já tem um diagrama com este nome."
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "Você também pode quebrar o texto dentro de \"\\( \\)\" para criar um link"
 
-#: src/pages/New.tsx:155
+#: src/pages/New.tsx:182
 msgid "You must log in to create a normal flowchart."
 msgstr "Você deve fazer login para criar um diagrama normal."
 

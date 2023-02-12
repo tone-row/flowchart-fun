@@ -2,7 +2,6 @@ import { lazy, ReactNode } from "react";
 import { Route, RouteProps, Switch } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
-import { LogIn } from "../pages/LogIn";
 import Feedback from "./Feedback";
 import Layout from "./Layout";
 import Settings from "./Settings";
@@ -24,6 +23,7 @@ const Changelog = lazy(() => import("../pages/Changelog"));
 const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
+const Login = lazy(() => import("../pages/LogIn"));
 
 export default function Router() {
   usePageViews();
@@ -73,7 +73,7 @@ export default function Router() {
       </RouteWithWrapper>
       {/* "l" for login */}
       <RouteWithWrapper path="/l">
-        <LogIn />
+        <Login />
       </RouteWithWrapper>
       <RouteWithWrapper path="/changelog">
         <Changelog />

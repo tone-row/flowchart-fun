@@ -1,5 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
+import { Session } from "@supabase/gotrue-js";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { Check, CircleNotch, Clock, Globe } from "phosphor-react";
 import {
@@ -15,24 +16,54 @@ import { Link, useHistory, useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
+import { Warning } from "../components/Warning";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 
-const New = memo(function New() {
+export default function M() {
+  const { customerIsLoading, session, checkedSession } = useContext(AppContext);
+  const validCustomer = useIsValidCustomer();
+
+  if (customerIsLoading || !checkedSession) {
+    return <Loading />;
+  }
+
+  return (
+    <New
+      customerIsLoading={customerIsLoading}
+      session={session}
+      checkedSession={checkedSession}
+      validCustomer={validCustomer}
+    />
+  );
+}
+
+const New = memo(function New({
+  customerIsLoading,
+  session,
+  checkedSession,
+  validCustomer,
+}: {
+  customerIsLoading: boolean;
+  session: Session | null;
+  checkedSession: boolean;
+  validCustomer: boolean;
+}) {
   const defaultDoc = getDefaultChart();
   const { graphText = window.location.hash.slice(1) } = useParams<{
     graphText: string;
   }>();
   const fullText = decompress(graphText) ?? defaultDoc;
   const { replace } = useHistory();
-  const { customerIsLoading, session, checkedSession } = useContext(AppContext);
-  const validCustomer = useIsValidCustomer();
+
   const userId = session?.user?.id;
 
   const [name, setName] = useState<string>("");
-  const [type, setType] = useState<"regular" | "local">("regular");
+  const [type, setType] = useState<"regular" | "local">(
+    validCustomer ? "regular" : "local"
+  );
 
   // Boilerplate to create a new chart
   const { mutate, isLoading } = useMutation("makeChart", makeChart, {
@@ -42,10 +73,6 @@ const New = memo(function New() {
       replace(`/u/${response.data[0].id}`);
     },
   });
-
-  if (customerIsLoading || !checkedSession) {
-    return <Loading />;
-  }
 
   const isTemporaryType = type === "local";
   const safeName = slugify(name.trim());
@@ -61,7 +88,7 @@ const New = memo(function New() {
   return (
     <div className="h-full grid content-start pt-16 justify-center">
       <form
-        className="grid gap-7"
+        className="grid gap-7 px-4"
         onSubmit={(e) => {
           e.preventDefault();
           if (customerIsLoading || !checkedSession) return;
@@ -113,7 +140,7 @@ const New = memo(function New() {
             name="type"
             onValueChange={(value) => setType(value as "regular" | "local")}
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-4 md:grid-cols-2">
               <TypeToggle
                 value="regular"
                 title={t`Normal`}
@@ -168,7 +195,7 @@ const New = memo(function New() {
         )}
         <button
           type="submit"
-          className="justify-self-center bg-neutral-200 rounded-lg text-2xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-8"
+          className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-8"
           disabled={createDisabled}
         >
           {isLoading ? (
@@ -181,8 +208,6 @@ const New = memo(function New() {
     </div>
   );
 });
-
-export default New;
 
 function TypeToggle({
   title,
@@ -238,12 +263,4 @@ function AutoFocusInput(
     if (ref.current) ref.current.focus();
   }, []);
   return <input ref={ref} {...props} />;
-}
-
-function Warning({ children }: { children: ReactNode }) {
-  return (
-    <div className="bg-orange-200 border-orange-400 border-l-4 p-4 rounded-lg text-sm text-neutral-900">
-      {children}
-    </div>
-  );
 }

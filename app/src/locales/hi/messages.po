@@ -29,7 +29,7 @@ msgstr "(कॉलन से पहले एक लेबल बनाता �
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों."
 
-#: src/pages/New.tsx:128
+#: src/pages/New.tsx:155
 msgid "Accessible from any device"
 msgstr "किसी भी उपकरण से पहुँचा जा सकता है"
 
@@ -124,6 +124,7 @@ msgstr "चार्ट"
 
 #: src/components/LoginForm.tsx:36
 #: src/components/SignUpForm.tsx:96
+#: src/pages/LogIn.tsx:64
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
 
@@ -217,11 +218,11 @@ msgstr "SVG कोड कॉपी करें"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:177
+#: src/pages/New.tsx:204
 msgid "Create"
 msgstr "बनाएँ"
 
-#: src/pages/New.tsx:90
+#: src/pages/New.tsx:117
 msgid "Create a New Flowchart"
 msgstr "एक नया आरेख बनाएँ"
 
@@ -261,7 +262,7 @@ msgstr "तारीख़"
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: src/pages/New.tsx:143
+#: src/pages/New.tsx:170
 msgid "Deleted when browser data is cleared"
 msgstr "ब्राउज़र डेटा साफ़ होने पर हटा दिया गया"
 
@@ -290,6 +291,10 @@ msgstr "दस्तावेज़"
 #: src/components/Header.tsx:369
 msgid "Documentation"
 msgstr "प्रलेखन"
+
+#: src/pages/LogIn.tsx:94
+msgid "Don't have an account?"
+msgstr "खाता नहीं है?"
 
 #: src/components/ShareDialog.tsx:60
 msgid "Download"
@@ -517,8 +522,8 @@ msgstr "लोकल चार्ट"
 
 #: src/components/Header.tsx:199
 #: src/components/Header.tsx:432
-#: src/pages/LogIn.tsx:24
-#: src/pages/New.tsx:157
+#: src/pages/LogIn.tsx:32
+#: src/pages/New.tsx:184
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -564,7 +569,7 @@ msgstr "म्यूज़ियम"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:94
+#: src/pages/New.tsx:121
 msgid "Name"
 msgstr "नाम"
 
@@ -614,7 +619,7 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
 
-#: src/pages/New.tsx:119
+#: src/pages/New.tsx:146
 msgid "Normal"
 msgstr "सामान्य"
 
@@ -754,6 +759,7 @@ msgid "Sign In"
 msgstr "साइन इन करें"
 
 #: src/components/SignUpForm.tsx:175
+#: src/pages/LogIn.tsx:99
 msgid "Sign Up"
 msgstr "साइन अप"
 
@@ -798,11 +804,11 @@ msgstr "स्टेटस"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:124
+#: src/pages/New.tsx:151
 msgid "Stored in the cloud"
 msgstr "बादल में संग्रहित"
 
-#: src/pages/New.tsx:140
+#: src/pages/New.tsx:167
 msgid "Stored on this computer"
 msgstr "इस कंप्यूटर पर संग्रहीत"
 
@@ -828,6 +834,7 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
+#: src/pages/LogIn.tsx:89
 msgid "Submit"
 msgstr "भेजना"
 
@@ -848,7 +855,7 @@ msgstr "सिंटेक्स"
 msgid "Syntax Reference"
 msgstr "वाक्य-विन्यास संदर्भ"
 
-#: src/pages/New.tsx:136
+#: src/pages/New.tsx:163
 msgid "Temporary"
 msgstr "अस्थायी"
 
@@ -893,7 +900,7 @@ msgstr "ऊपर से नीचे"
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
-#: src/pages/New.tsx:109
+#: src/pages/New.tsx:136
 msgid "Type"
 msgstr "प्रकार"
 
@@ -971,7 +978,7 @@ msgstr ""
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।"
 
-#: src/pages/New.tsx:165
+#: src/pages/New.tsx:192
 msgid "You already have a flowchart with this name."
 msgstr "आपके पास इस नाम का आरेख पहले से है।"
 
@@ -979,7 +986,7 @@ msgstr "आपके पास इस नाम का आरेख पहले
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "किनारे बनाने के लिए आप टेक्स्ट को \"\\( \\)\" में भी रैप कर सकते हैं"
 
-#: src/pages/New.tsx:155
+#: src/pages/New.tsx:182
 msgid "You must log in to create a normal flowchart."
 msgstr "सामान्य आरेख बनाने के लिए आपको लॉग इन करना होगा।"
 

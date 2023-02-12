@@ -75,6 +75,7 @@
     "Do you want to delete this?": "क्या आप इसे डिलीट करना चाहते हैं?",
     Document: "दस्तावेज़",
     Documentation: "प्रलेखन",
+    "Don't have an account?": "खाता नहीं है?",
     Download: "डाउनलोड",
     "Download JPG": "JPG डाउनलोड करें",
     "Download PNG": "PNG डाउनलोड करें",

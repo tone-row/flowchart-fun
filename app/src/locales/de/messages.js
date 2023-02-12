@@ -76,6 +76,7 @@
     "Do you want to delete this?": "Möchten Sie dies löschen?",
     Document: "Document",
     Documentation: "Dokumentation",
+    "Don't have an account?": "Sie haben kein Konto?",
     Download: "Herunterladen",
     "Download JPG": "JPG herunterladen",
     "Download PNG": "PNG herunterladen",

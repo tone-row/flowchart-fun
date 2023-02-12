@@ -29,7 +29,7 @@ msgstr "(레이블을 생성합니다)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
 
-#: src/pages/New.tsx:128
+#: src/pages/New.tsx:155
 msgid "Accessible from any device"
 msgstr "모든 장치에서 액세스 가능"
 
@@ -124,6 +124,7 @@ msgstr "차트"
 
 #: src/components/LoginForm.tsx:36
 #: src/components/SignUpForm.tsx:96
+#: src/pages/LogIn.tsx:64
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
@@ -217,11 +218,11 @@ msgstr "SVG 코드 복사"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:177
+#: src/pages/New.tsx:204
 msgid "Create"
 msgstr "만들기"
 
-#: src/pages/New.tsx:90
+#: src/pages/New.tsx:117
 msgid "Create a New Flowchart"
 msgstr "새 다이어그램 만들기"
 
@@ -261,7 +262,7 @@ msgstr "날짜"
 msgid "Delete"
 msgstr "삭제"
 
-#: src/pages/New.tsx:143
+#: src/pages/New.tsx:170
 msgid "Deleted when browser data is cleared"
 msgstr "브라우저 데이터가 지워지면 삭제됨"
 
@@ -290,6 +291,10 @@ msgstr "문서"
 #: src/components/Header.tsx:369
 msgid "Documentation"
 msgstr "선적 서류 비치"
+
+#: src/pages/LogIn.tsx:94
+msgid "Don't have an account?"
+msgstr "계정이 없습니까?"
 
 #: src/components/ShareDialog.tsx:60
 msgid "Download"
@@ -517,8 +522,8 @@ msgstr "로컬 차트"
 
 #: src/components/Header.tsx:199
 #: src/components/Header.tsx:432
-#: src/pages/LogIn.tsx:24
-#: src/pages/New.tsx:157
+#: src/pages/LogIn.tsx:32
+#: src/pages/New.tsx:184
 msgid "Log In"
 msgstr "로그인"
 
@@ -564,7 +569,7 @@ msgstr "박물관"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:94
+#: src/pages/New.tsx:121
 msgid "Name"
 msgstr "이름"
 
@@ -614,7 +619,7 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
 
-#: src/pages/New.tsx:119
+#: src/pages/New.tsx:146
 msgid "Normal"
 msgstr "일반"
 
@@ -754,6 +759,7 @@ msgid "Sign In"
 msgstr "로그인"
 
 #: src/components/SignUpForm.tsx:175
+#: src/pages/LogIn.tsx:99
 msgid "Sign Up"
 msgstr "가입"
 
@@ -798,11 +804,11 @@ msgstr "상태"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:124
+#: src/pages/New.tsx:151
 msgid "Stored in the cloud"
 msgstr "클라우드에 저장"
 
-#: src/pages/New.tsx:140
+#: src/pages/New.tsx:167
 msgid "Stored on this computer"
 msgstr "이 컴퓨터에 저장됨"
 
@@ -828,6 +834,7 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
+#: src/pages/LogIn.tsx:89
 msgid "Submit"
 msgstr "보내다"
 
@@ -848,7 +855,7 @@ msgstr "문법"
 msgid "Syntax Reference"
 msgstr "신택스 참조"
 
-#: src/pages/New.tsx:136
+#: src/pages/New.tsx:163
 msgid "Temporary"
 msgstr "임시"
 
@@ -893,7 +900,7 @@ msgstr "위에서 아래로"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/pages/New.tsx:109
+#: src/pages/New.tsx:136
 msgid "Type"
 msgstr "유형"
 
@@ -971,7 +978,7 @@ msgstr ""
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다."
 
-#: src/pages/New.tsx:165
+#: src/pages/New.tsx:192
 msgid "You already have a flowchart with this name."
 msgstr "이 이름을 가진 다이어그램이 이미 있습니다."
 
@@ -979,7 +986,7 @@ msgstr "이 이름을 가진 다이어그램이 이미 있습니다."
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "텍스트를 \"\\( \\)\"로 감싸서 가장자리를 만들 수도 있습니다."
 
-#: src/pages/New.tsx:155
+#: src/pages/New.tsx:182
 msgid "You must log in to create a normal flowchart."
 msgstr "일반 다이어그램을 만들려면 로그인해야 합니다."
 

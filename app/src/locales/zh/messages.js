@@ -73,6 +73,7 @@
     "Do you want to delete this?": "您要将其删除吗？",
     Document: "文档",
     Documentation: "文档",
+    "Don't have an account?": "没有帐户？",
     Download: "下载",
     "Download JPG": "下载 JPG",
     "Download PNG": "下载 PNG",
