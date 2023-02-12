@@ -29,7 +29,7 @@ msgstr "(在冒号前创建一个标签)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。"
 
-#: src/pages/New.tsx:155
+#: src/pages/New.tsx:175
 msgid "Accessible from any device"
 msgstr "可从任何设备访问"
 
@@ -122,9 +122,8 @@ msgstr "变更日志"
 msgid "Charts"
 msgstr "图表"
 
-#: src/components/LoginForm.tsx:36
 #: src/components/SignUpForm.tsx:96
-#: src/pages/LogIn.tsx:64
+#: src/pages/LogIn.tsx:36
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
@@ -218,11 +217,11 @@ msgstr "复制 SVG 代码"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:204
+#: src/pages/New.tsx:224
 msgid "Create"
 msgstr "创建"
 
-#: src/pages/New.tsx:117
+#: src/pages/New.tsx:137
 msgid "Create a New Flowchart"
 msgstr "创建新图表"
 
@@ -262,7 +261,7 @@ msgstr "日期"
 msgid "Delete"
 msgstr "删除"
 
-#: src/pages/New.tsx:170
+#: src/pages/New.tsx:190
 msgid "Deleted when browser data is cleared"
 msgstr "清除浏览器数据时删除"
 
@@ -292,7 +291,7 @@ msgstr "文档"
 msgid "Documentation"
 msgstr "文档"
 
-#: src/pages/LogIn.tsx:94
+#: src/pages/LogIn.tsx:66
 msgid "Don't have an account?"
 msgstr "没有帐户？"
 
@@ -364,7 +363,6 @@ msgid "Eggs"
 msgstr "蛋"
 
 #: src/components/Feedback.tsx:94
-#: src/components/LoginForm.tsx:50
 msgid "Email"
 msgstr "电子邮件"
 
@@ -522,8 +520,7 @@ msgstr "本地的图表"
 
 #: src/components/Header.tsx:199
 #: src/components/Header.tsx:432
-#: src/pages/LogIn.tsx:32
-#: src/pages/New.tsx:184
+#: src/pages/New.tsx:204
 msgid "Log In"
 msgstr "登录"
 
@@ -569,7 +566,7 @@ msgstr "博物馆"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:121
+#: src/pages/New.tsx:141
 msgid "Name"
 msgstr "姓名"
 
@@ -618,10 +615,6 @@ msgstr ""
 #: src/components/SyntaxReference.tsx:305
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
-
-#: src/pages/New.tsx:146
-msgid "Normal"
-msgstr "正常"
 
 #: src/pages/Account.tsx:247
 msgid "Open Customer Portal"
@@ -754,12 +747,8 @@ msgstr ""
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "以完全访问权限、仅编辑权限或仅查看权限共享"
 
-#: src/components/LoginForm.tsx:58
-msgid "Sign In"
-msgstr "登录"
-
 #: src/components/SignUpForm.tsx:175
-#: src/pages/LogIn.tsx:99
+#: src/pages/LogIn.tsx:71
 msgid "Sign Up"
 msgstr "注册"
 
@@ -787,6 +776,10 @@ msgstr "间距"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能"
 
+#: src/pages/New.tsx:166
+msgid "Standard"
+msgstr "标准"
+
 #: src/pages/Account.tsx:177
 msgid "Start"
 msgstr "开始"
@@ -804,11 +797,11 @@ msgstr "状态"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:151
+#: src/pages/New.tsx:171
 msgid "Stored in the cloud"
 msgstr "存储在云端"
 
-#: src/pages/New.tsx:167
+#: src/pages/New.tsx:187
 msgid "Stored on this computer"
 msgstr "保存在这台电脑上"
 
@@ -834,7 +827,7 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
-#: src/pages/LogIn.tsx:89
+#: src/pages/LogIn.tsx:61
 msgid "Submit"
 msgstr "提交"
 
@@ -855,7 +848,7 @@ msgstr "句法"
 msgid "Syntax Reference"
 msgstr "语法参考"
 
-#: src/pages/New.tsx:163
+#: src/pages/New.tsx:183
 msgid "Temporary"
 msgstr "临时"
 
@@ -900,7 +893,7 @@ msgstr "从上到下"
 msgid "Try again"
 msgstr "重试"
 
-#: src/pages/New.tsx:136
+#: src/pages/New.tsx:156
 msgid "Type"
 msgstr "类型"
 
@@ -978,7 +971,7 @@ msgstr ""
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。"
 
-#: src/pages/New.tsx:192
+#: src/pages/New.tsx:212
 msgid "You already have a flowchart with this name."
 msgstr "您已有同名的图表。"
 
@@ -986,9 +979,9 @@ msgstr "您已有同名的图表。"
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "您还可以将文本包装在\\n“\\( \\)”中以创建链接"
 
-#: src/pages/New.tsx:182
-msgid "You must log in to create a normal flowchart."
-msgstr "您必须登录才能创建普通图表。"
+#: src/pages/New.tsx:202
+msgid "You must log in to create a standard flowchart."
+msgstr "您必须登录才能创建标准图表。"
 
 #: src/pages/Account.tsx:141
 #: src/pages/Charts.tsx:375

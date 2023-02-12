@@ -29,7 +29,7 @@ msgstr "(avant que deux-points ne créent une étiquette)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Accédez à ces graphiques depuis n'importe où.<0/>Partagez ou intégrez des graphiques, qui se synchronisent au fil de vos modifications."
 
-#: src/pages/New.tsx:155
+#: src/pages/New.tsx:175
 msgid "Accessible from any device"
 msgstr "Accessible depuis n'importe quel appareil"
 
@@ -122,9 +122,8 @@ msgstr "Journal des modifications"
 msgid "Charts"
 msgstr "Graphiques"
 
-#: src/components/LoginForm.tsx:36
 #: src/components/SignUpForm.tsx:96
-#: src/pages/LogIn.tsx:64
+#: src/pages/LogIn.tsx:36
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Consultez votre messagerie électronique pour le lien de connexion. Vous pouvez fermer cette fenêtre."
 
@@ -218,11 +217,11 @@ msgstr "Copier le code SVG"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:204
+#: src/pages/New.tsx:224
 msgid "Create"
 msgstr "Créer"
 
-#: src/pages/New.tsx:117
+#: src/pages/New.tsx:137
 msgid "Create a New Flowchart"
 msgstr "Créer un nouveau diagramme"
 
@@ -262,7 +261,7 @@ msgstr "Date"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: src/pages/New.tsx:170
+#: src/pages/New.tsx:190
 msgid "Deleted when browser data is cleared"
 msgstr "Supprimé lorsque les données du navigateur sont effacées"
 
@@ -292,7 +291,7 @@ msgstr "Document"
 msgid "Documentation"
 msgstr "Documentation"
 
-#: src/pages/LogIn.tsx:94
+#: src/pages/LogIn.tsx:66
 msgid "Don't have an account?"
 msgstr "Vous n'avez pas de compte ?"
 
@@ -364,7 +363,6 @@ msgid "Eggs"
 msgstr "Oeufs"
 
 #: src/components/Feedback.tsx:94
-#: src/components/LoginForm.tsx:50
 msgid "Email"
 msgstr "E-mail"
 
@@ -522,8 +520,7 @@ msgstr "Graphiques locaux"
 
 #: src/components/Header.tsx:199
 #: src/components/Header.tsx:432
-#: src/pages/LogIn.tsx:32
-#: src/pages/New.tsx:184
+#: src/pages/New.tsx:204
 msgid "Log In"
 msgstr "Connexion"
 
@@ -569,7 +566,7 @@ msgstr "Musée"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:121
+#: src/pages/New.tsx:141
 msgid "Name"
 msgstr "Nom"
 
@@ -618,10 +615,6 @@ msgstr ""
 #: src/components/SyntaxReference.tsx:305
 msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgstr ""
-
-#: src/pages/New.tsx:146
-msgid "Normal"
-msgstr "Normal"
 
 #: src/pages/Account.tsx:247
 msgid "Open Customer Portal"
@@ -754,12 +747,8 @@ msgstr ""
 msgid "Share with Full Access, Edit-only, or View-only Permissions"
 msgstr "Partager avec des autorisations d'accès complet, d'édition uniquement ou d'affichage uniquement"
 
-#: src/components/LoginForm.tsx:58
-msgid "Sign In"
-msgstr "Connectez"
-
 #: src/components/SignUpForm.tsx:175
-#: src/pages/LogIn.tsx:99
+#: src/pages/LogIn.tsx:71
 msgid "Sign Up"
 msgstr "Inscription"
 
@@ -787,6 +776,10 @@ msgstr "Espacement"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "Parrainez flowchart.fun pour 3 $ / mois ou 30 $ / an pour accéder aux organigrammes hébergés et aux nouveaux styles et fonctionnalités"
 
+#: src/pages/New.tsx:166
+msgid "Standard"
+msgstr "Standard"
+
 #: src/pages/Account.tsx:177
 msgid "Start"
 msgstr "Début"
@@ -804,11 +797,11 @@ msgstr "État"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:151
+#: src/pages/New.tsx:171
 msgid "Stored in the cloud"
 msgstr "Stocké dans le cloud"
 
-#: src/pages/New.tsx:167
+#: src/pages/New.tsx:187
 msgid "Stored on this computer"
 msgstr "Stocké sur cet ordinateur"
 
@@ -834,7 +827,7 @@ msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
 #: src/components/Feedback.tsx:106
-#: src/pages/LogIn.tsx:89
+#: src/pages/LogIn.tsx:61
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -855,7 +848,7 @@ msgstr "Syntaxe"
 msgid "Syntax Reference"
 msgstr "Référence de syntaxe"
 
-#: src/pages/New.tsx:163
+#: src/pages/New.tsx:183
 msgid "Temporary"
 msgstr "Temporaire"
 
@@ -900,7 +893,7 @@ msgstr "De haut en bas"
 msgid "Try again"
 msgstr "Réessayer"
 
-#: src/pages/New.tsx:136
+#: src/pages/New.tsx:156
 msgid "Type"
 msgstr "Type"
 
@@ -978,7 +971,7 @@ msgstr ""
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez."
 
-#: src/pages/New.tsx:192
+#: src/pages/New.tsx:212
 msgid "You already have a flowchart with this name."
 msgstr "Vous avez déjà un diagramme avec ce nom."
 
@@ -986,9 +979,9 @@ msgstr "Vous avez déjà un diagramme avec ce nom."
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "Vous pouvez également envelopper le texte dans \"\\( \\)\" pour créer un bord"
 
-#: src/pages/New.tsx:182
-msgid "You must log in to create a normal flowchart."
-msgstr "Vous devez vous connecter pour créer un diagramme normal."
+#: src/pages/New.tsx:202
+msgid "You must log in to create a standard flowchart."
+msgstr "Vous devez vous connecter pour créer un diagramme standard."
 
 #: src/pages/Account.tsx:141
 #: src/pages/Charts.tsx:375

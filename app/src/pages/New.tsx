@@ -163,7 +163,7 @@ const New = memo(function New({
             <div className="grid gap-4 md:grid-cols-2">
               <TypeToggle
                 value="regular"
-                title={t`Normal`}
+                title={t`Standard`}
                 description={
                   <>
                     <span className="text-sm flex items-center justify-center">
@@ -199,7 +199,7 @@ const New = memo(function New({
         {tryingToCreateRegular && (
           <div className="justify-items-center grid">
             <Warning>
-              <Trans>You must log in to create a normal flowchart.</Trans>{" "}
+              <Trans>You must log in to create a standard flowchart.</Trans>{" "}
               <Link className="underline" to="/l">
                 <Trans>Log In</Trans>
               </Link>
