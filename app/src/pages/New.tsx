@@ -25,6 +25,23 @@ import { makeChart, queryClient } from "../lib/queries";
 export default function M() {
   const { customerIsLoading, session, checkedSession } = useContext(AppContext);
   const validCustomer = useIsValidCustomer();
+  const { graphText = window.location.hash.slice(1) } = useParams<{
+    graphText: string;
+  }>();
+  const templateText = decompress(graphText);
+
+  // If there is template text, create a temporary chart with it
+  useEffect(() => {
+    if (templateText) {
+      let i = 1;
+      while (localStorage.getItem(titleToLocalStorageKey(`temp-${i}`))) {
+        i++;
+      }
+      const title = `temp-${i}`;
+      localStorage.setItem(titleToLocalStorageKey(title), templateText);
+      window.location.replace(`/${title}`);
+    }
+  }, [templateText]);
 
   if (customerIsLoading || !checkedSession) {
     return <Loading />;
@@ -36,6 +53,7 @@ export default function M() {
       session={session}
       checkedSession={checkedSession}
       validCustomer={validCustomer}
+      templateText={templateText}
     />
   );
 }
@@ -45,17 +63,15 @@ const New = memo(function New({
   session,
   checkedSession,
   validCustomer,
+  templateText,
 }: {
   customerIsLoading: boolean;
   session: Session | null;
   checkedSession: boolean;
   validCustomer: boolean;
+  templateText: string | null;
 }) {
   const defaultDoc = getDefaultChart();
-  const { graphText = window.location.hash.slice(1) } = useParams<{
-    graphText: string;
-  }>();
-  const fullText = decompress(graphText) ?? defaultDoc;
   const { replace } = useHistory();
 
   const userId = session?.user?.id;
@@ -101,12 +117,16 @@ const New = memo(function New({
           switch (type) {
             case "regular": {
               if (!userId) return;
-              mutate({ name, user_id: userId, chart: fullText });
+              mutate({
+                name,
+                user_id: userId,
+                chart: templateText ?? defaultDoc,
+              });
               break;
             }
             case "local": {
               const newKey = titleToLocalStorageKey(safeName);
-              window.localStorage.setItem(newKey, fullText);
+              window.localStorage.setItem(newKey, templateText ?? defaultDoc);
               replace(`/${safeName}`);
               break;
             }

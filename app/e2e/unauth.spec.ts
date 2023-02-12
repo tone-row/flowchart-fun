@@ -128,16 +128,25 @@ test.describe("unauth", () => {
     await expect(page.locator("text=delete-me")).not.toBeVisible();
   });
 
-  test("Create New", async ({ page }) => {
+  test("Create a New Local Chart", async ({ page }) => {
     await changeEditorText(page, "1");
 
     expect(new URL(page.url()).pathname).toBe("/");
 
-    // Click the link with the text New
-    await page.click('a:has-text("New")');
+    await page.getByRole("link", { name: "New" }).click();
+    await page.getByPlaceholder("Untitled").click();
+    await page.getByPlaceholder("Untitled").fill("a-b-c-d-e");
 
-    // Make sure no longer on index
-    expect(new URL(page.url()).pathname).not.toBe("/");
+    await page
+      .getByRole("radio", {
+        name: "Temporary Stored on this computer Deleted when browser data is cleared",
+      })
+      .click();
+
+    await page.getByRole("button", { name: "Create" }).click();
+
+    // Make sure we're on the new chart
+    expect(new URL(page.url()).pathname).toBe("/a-b-c-d-e");
 
     // Expect text to be reset
     await expect(
