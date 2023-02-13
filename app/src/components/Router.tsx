@@ -9,8 +9,6 @@ import Settings from "./Settings";
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
 const Edit = lazy(() => import("../pages/Edit"));
-/** Interactive help, fixed name local storage chart */
-const Help = lazy(() => import("../pages/Help"));
 /** Edit hosted chart */
 const EditHosted = lazy(() => import("../pages/EditHosted"));
 /** Read only chart, encoded in url / maybe fullscreen */
@@ -38,9 +36,6 @@ export default function Router() {
       {/* "y" for "your charts" */}
       <RouteWithWrapper path="/y" exact>
         <Charts />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/h" exact>
-        <Help />
       </RouteWithWrapper>
       <RouteWithWrapper path="/n/:graphText?">
         <New />

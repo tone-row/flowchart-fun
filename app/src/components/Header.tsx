@@ -38,7 +38,6 @@ import { ReactComponent as BrandSvg } from "./brand.svg";
 
 export const Header = memo(function SharedHeader() {
   const { pathname } = useLocation();
-  const isDocsPage = pathname === "/h";
   const isSponsorPage = pathname === "/pricing";
   const isChartsPage = pathname === "/y";
   const isHelpPage = pathname === "/h" || pathname === "/o";
@@ -53,7 +52,6 @@ export const Header = memo(function SharedHeader() {
   const isNewPage = pathname === "/n";
   const isInfoPage = isBlogPage || isChangelogPage || isRoadmapPage;
   const isEditor =
-    !isDocsPage &&
     !isSponsorPage &&
     !isChartsPage &&
     !isHelpPage &&
@@ -210,7 +208,6 @@ export const Header = memo(function SharedHeader() {
         </header>
       </NavigationMenu.Root>
       <MobileHeader
-        isDocsPage={isDocsPage}
         isSponsorPage={isSponsorPage}
         isChartsPage={isChartsPage}
         isSettingsPage={isSettingsPage}
@@ -300,7 +297,6 @@ const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
 HeaderLink.displayName = "HeaderLink";
 
 function MobileHeader({
-  isDocsPage,
   isSponsorPage,
   isChartsPage,
   isSettingsPage,
@@ -312,7 +308,6 @@ function MobileHeader({
   isEditor,
   isLogInPage,
 }: {
-  isDocsPage: boolean;
   isSponsorPage: boolean;
   isChartsPage: boolean;
   isSettingsPage: boolean;
