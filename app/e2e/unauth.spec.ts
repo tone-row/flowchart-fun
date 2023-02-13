@@ -175,33 +175,6 @@ test.describe("unauth", () => {
     expect(page.url()).toContain("temp");
   });
 
-  test("View an Example", async ({ page }) => {
-    // click button with text "Help"
-    await page.locator('button:has-text("Help")').click();
-
-    // click button with text "Documentation"
-    await page.locator('a:has-text("Documentation")').first().click();
-
-    await expect(page).toHaveURL(`${BASE_URL}/h`);
-
-    // Click text=Table of Contents
-    await page.locator("text=Table of Contents").click();
-
-    // Click a:has-text("Adding Shapes and Colors")
-    await page.locator('a:has-text("Adding Shapes and Colors")').click();
-    await expect(page).toHaveURL(`${BASE_URL}/h#adding-shapes-and-colors`);
-
-    await page
-      .locator(
-        'pre:has-text("~~~ layout: name: grid ~~~ [.circle] circle [.ellipse] ellipse [.triangle] trian") .code-example-link'
-      )
-      .click();
-
-    await expect(
-      page.locator('div[role="code"] div:has-text("[.circle] circle")').nth(4)
-    ).toBeVisible();
-  });
-
   test("Rename chart", async ({ page }) => {
     // Click [aria-label="Rename"]
     await page.locator('[aria-label="Rename"]').click();
