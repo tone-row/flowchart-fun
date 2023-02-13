@@ -5,8 +5,8 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import {
-  Book,
   Chat,
+  DiscordLogo,
   FolderOpen,
   Gear,
   Info,
@@ -109,14 +109,17 @@ export const Header = memo(function SharedHeader() {
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content
                   align="start"
-                  className="shared-header__dropdown"
+                  className="shared-header__dropdown bg-neutral-50 shadow dark:bg-neutral-900"
                 >
                   <DropdownMenu.Item asChild>
-                    <HeaderClientLink
-                      label={t`Documentation`}
-                      icon={<Book weight="light" height={22} width={22} />}
-                      aria-current={isDocsPage ? "page" : undefined}
-                      to="/h"
+                    <HeaderLink
+                      label="Discord"
+                      icon={
+                        <DiscordLogo weight="light" height={22} width={22} />
+                      }
+                      href="https://discord.gg/84MxwFCf"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     />
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
@@ -143,7 +146,7 @@ export const Header = memo(function SharedHeader() {
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content
                   align="start"
-                  className="shared-header__dropdown"
+                  className="shared-header__dropdown bg-neutral-50 shadow dark:bg-neutral-900"
                 >
                   <DropdownMenu.Item asChild>
                     <HeaderClientLink
@@ -275,6 +278,7 @@ HeaderClientLink.displayName = "HeaderClientLink";
 type HeaderLinkProps = {
   label: string;
   icon: ReactNode;
+  target?: string;
 } & LinkHTMLAttributes<HTMLAnchorElement>;
 
 const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
@@ -365,12 +369,13 @@ function MobileHeader({
               icon={<FolderOpen weight="light" height={22} width={22} />}
               aria-current={isChartsPage ? "page" : undefined}
             />
-            <HeaderClientLink
-              label={t`Documentation`}
-              icon={<Book weight="light" height={22} width={22} />}
-              aria-current={isDocsPage ? "page" : undefined}
+            <HeaderLink
+              label="Discord"
+              icon={<DiscordLogo weight="light" height={22} width={22} />}
+              href="https://discord.gg/84MxwFCf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mobile-only"
-              to="/h"
             />
             <HeaderClientLink
               label={t`Feedback`}

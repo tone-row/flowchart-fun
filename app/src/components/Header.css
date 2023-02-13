@@ -79,7 +79,6 @@ body:not([class*="disableAnimation"]) .shared-header-btn {
 
 [data-radix-menu-content] {
   z-index: 100;
-  background-color: var(--color-lineColor);
   position: relative;
   border-radius: var(--rad);
   list-style: none;
