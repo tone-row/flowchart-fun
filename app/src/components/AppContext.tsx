@@ -158,6 +158,15 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   // Load hosted charts ahead of time
   useHostedCharts(session?.user?.id);
 
+  // add class "dark" to body if dark mode
+  useEffect(() => {
+    if (settings.mode === "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [settings.mode]);
+
   return (
     <AppContext.Provider
       value={{

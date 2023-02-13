@@ -89,6 +89,17 @@ test.describe("Sign Up", () => {
   test("can publish chart", async () => {
     // page
     await page.getByRole("link", { name: "New" }).click();
+
+    // Make a new hosted chart
+    await page.getByPlaceholder("Untitled").fill("my new chart");
+    await page
+      .getByRole("radio", {
+        name: "Standard Stored in the cloud Accessible from any device",
+      })
+      .click();
+
+    await page.getByRole("button", { name: "Create" }).click();
+
     // expect url to be regex BASE_URL + /u/\d+
     await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
 
@@ -96,9 +107,10 @@ test.describe("Sign Up", () => {
     await page.getByLabel("Make publicly accessible").check();
 
     // read the value from the textbox with the name 'Copy Public Link'
-    const publicLink = await page.getByRole("textbox", {
+    const publicLink = page.getByRole("textbox", {
       name: "Copy Public Link",
     });
+
     const publicLinkValue = await publicLink.getAttribute("value");
 
     if (!publicLinkValue) throw new Error("Public link value is empty");

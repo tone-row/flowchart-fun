@@ -1,12 +1,12 @@
 import { t } from "@lingui/macro";
 import { MagnifyingGlassMinus, MagnifyingGlassPlus } from "phosphor-react";
 import { useCallback } from "react";
-import { FaBomb } from "react-icons/fa";
+import { FaBomb, FaRegSnowflake } from "react-icons/fa";
 import { MdFitScreen } from "react-icons/md";
 
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
+import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
 import { useUnmountStore } from "../lib/useUnmountStore";
-import styles from "./GraphFloatingMenu.module.css";
 import { Tooltip } from "./Shared";
 
 const ZOOM_STEP = 0.5;
@@ -30,8 +30,10 @@ export function GraphFloatingMenu() {
     });
   }, []);
 
+  const isFrozen = useIsFrozen();
+
   return (
-    <div className={styles.graphFloatingMenu}>
+    <div className="absolute bottom-4 left-4 flex bg-white border border-neutral-300 shadow rounded overflow-hidden">
       <CustomIconButton
         icon={<MagnifyingGlassMinus size={28} />}
         label={t`Zoom Out`}
@@ -56,6 +58,13 @@ export function GraphFloatingMenu() {
           });
         }}
       />
+      {isFrozen ? (
+        <CustomIconButton
+          icon={<FaRegSnowflake size={22} />}
+          label={t`Unfreeze`}
+          onClick={unfreezeDoc}
+        />
+      ) : null}
     </div>
   );
 }
@@ -73,7 +82,7 @@ function CustomIconButton({ icon, label, ...props }: CustomIconButtonProps) {
   return (
     <Tooltip label={label} aria-label={label} className={`slang-type size-0`}>
       <button
-        className={styles.CustomIconButton}
+        className="w-9 h-9 grid content-center justify-center bg-white text-neutral-900 hover:bg-neutral-100 active:bg-neutral-200 focus:outline-none focus:shadow-none"
         data-testid={label}
         {...props}
       >

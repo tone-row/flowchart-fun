@@ -3,11 +3,11 @@ import produce from "immer";
 import { FaRegSnowflake } from "react-icons/fa";
 
 import { defaultLayout } from "../../lib/constants";
-import { getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
+import { unfreezeDoc, useIsFrozen } from "../../lib/useIsFrozen";
 import styles from "./EditLayoutTab.module.css";
 import {
   CustomSelect,
@@ -21,8 +21,6 @@ import {
 export function EditLayoutTab() {
   const isValidSponsor = useIsValidSponsor();
   const doc = useDoc();
-  // the layout here is what we're rendering but not necessarily what should be stored in the doc
-  const rendered = getLayout(doc);
   const layout = hasOwnProperty(doc.meta, "layout") ? doc.meta.layout : {};
 
   let layoutName = defaultLayout.name as string;
@@ -37,7 +35,7 @@ export function EditLayoutTab() {
   const layoutNiceName =
     layouts.find((l) => l.value === layoutName)?.label() ?? "???";
 
-  const frozen = "positions" in rendered;
+  const isFrozen = useIsFrozen();
 
   let direction = defaultLayout.rankDir;
   if (
@@ -61,7 +59,7 @@ export function EditLayoutTab() {
     spacingFactor = layout.spacingFactor;
   }
 
-  if (frozen) return <FrozenLayout />;
+  if (isFrozen) return <FrozenLayout />;
 
   return (
     <WithLowerChild>
@@ -178,15 +176,7 @@ function FrozenLayout() {
         </span>
         <FaRegSnowflake />
       </h2>
-      <button
-        onClick={() => {
-          useDoc.setState((state) => {
-            return produce(state, (draft) => {
-              delete draft.meta.nodePositions;
-            });
-          });
-        }}
-      >
+      <button onClick={unfreezeDoc}>
         <Trans>Unfreeze</Trans>
       </button>
     </div>

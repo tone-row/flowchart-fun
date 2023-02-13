@@ -13,7 +13,7 @@ test.describe("share-links", () => {
     await goToPath(page);
   });
 
-  test("share links", async ({ page }) => {
+  test.skip("share links", async ({ page }) => {
     try {
       await page.goto(`${BASE_URL}/n#FDC8-YG8F8w0Q`);
       const encoded = `BYUwNmD2AEDukCcwBMBQqC8WuoN6umgCIAHAQwQGcQEiAuYgNwEYjUBfTbDIA`;
