@@ -198,8 +198,8 @@ function initializeGraph({
       style: buildStylesForGraph(original, getUserStyle(), bg),
       userZoomingEnabled: true,
       userPanningEnabled: true,
-      boxSelectionEnabled: false,
       wheelSensitivity: 0.2,
+      boxSelectionEnabled: true,
       // autoungrabify: true,
     });
     window.__cy = cy.current;
