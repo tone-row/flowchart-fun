@@ -65,11 +65,6 @@ export function useChartId() {
   return workspace;
 }
 
-export function useIsHelp() {
-  const { path } = useRouteMatch();
-  return path === "/h";
-}
-
 export function useIsFirefox() {
   const ua = window.navigator.userAgent;
   return ua.includes("Firefox");
