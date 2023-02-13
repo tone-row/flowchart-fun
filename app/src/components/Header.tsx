@@ -5,8 +5,8 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import {
-  Book,
   Chat,
+  DiscordLogo,
   FolderOpen,
   Gear,
   Info,
@@ -38,7 +38,6 @@ import { ReactComponent as BrandSvg } from "./brand.svg";
 
 export const Header = memo(function SharedHeader() {
   const { pathname } = useLocation();
-  const isDocsPage = pathname === "/h";
   const isSponsorPage = pathname === "/pricing";
   const isChartsPage = pathname === "/y";
   const isHelpPage = pathname === "/h" || pathname === "/o";
@@ -53,7 +52,6 @@ export const Header = memo(function SharedHeader() {
   const isNewPage = pathname === "/n";
   const isInfoPage = isBlogPage || isChangelogPage || isRoadmapPage;
   const isEditor =
-    !isDocsPage &&
     !isSponsorPage &&
     !isChartsPage &&
     !isHelpPage &&
@@ -109,14 +107,17 @@ export const Header = memo(function SharedHeader() {
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content
                   align="start"
-                  className="shared-header__dropdown"
+                  className="shared-header__dropdown bg-neutral-50 shadow dark:bg-neutral-900"
                 >
                   <DropdownMenu.Item asChild>
-                    <HeaderClientLink
-                      label={t`Documentation`}
-                      icon={<Book weight="light" height={22} width={22} />}
-                      aria-current={isDocsPage ? "page" : undefined}
-                      to="/h"
+                    <HeaderLink
+                      label="Discord"
+                      icon={
+                        <DiscordLogo weight="light" height={22} width={22} />
+                      }
+                      href="https://discord.gg/84MxwFCf"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     />
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
@@ -143,7 +144,7 @@ export const Header = memo(function SharedHeader() {
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content
                   align="start"
-                  className="shared-header__dropdown"
+                  className="shared-header__dropdown bg-neutral-50 shadow dark:bg-neutral-900"
                 >
                   <DropdownMenu.Item asChild>
                     <HeaderClientLink
@@ -207,7 +208,6 @@ export const Header = memo(function SharedHeader() {
         </header>
       </NavigationMenu.Root>
       <MobileHeader
-        isDocsPage={isDocsPage}
         isSponsorPage={isSponsorPage}
         isChartsPage={isChartsPage}
         isSettingsPage={isSettingsPage}
@@ -275,6 +275,7 @@ HeaderClientLink.displayName = "HeaderClientLink";
 type HeaderLinkProps = {
   label: string;
   icon: ReactNode;
+  target?: string;
 } & LinkHTMLAttributes<HTMLAnchorElement>;
 
 const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
@@ -296,7 +297,6 @@ const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
 HeaderLink.displayName = "HeaderLink";
 
 function MobileHeader({
-  isDocsPage,
   isSponsorPage,
   isChartsPage,
   isSettingsPage,
@@ -308,7 +308,6 @@ function MobileHeader({
   isEditor,
   isLogInPage,
 }: {
-  isDocsPage: boolean;
   isSponsorPage: boolean;
   isChartsPage: boolean;
   isSettingsPage: boolean;
@@ -365,12 +364,13 @@ function MobileHeader({
               icon={<FolderOpen weight="light" height={22} width={22} />}
               aria-current={isChartsPage ? "page" : undefined}
             />
-            <HeaderClientLink
-              label={t`Documentation`}
-              icon={<Book weight="light" height={22} width={22} />}
-              aria-current={isDocsPage ? "page" : undefined}
+            <HeaderLink
+              label="Discord"
+              icon={<DiscordLogo weight="light" height={22} width={22} />}
+              href="https://discord.gg/84MxwFCf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mobile-only"
-              to="/h"
             />
             <HeaderClientLink
               label={t`Feedback`}

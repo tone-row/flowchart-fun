@@ -1,14 +1,12 @@
-# [Flowchart Fun](https://flowchart.fun/)
+# Flowchart Fun
 
-A webapp for generating flowcharts from text @ https://flowchart.fun
+[Flowchart Fun](https://flowchart.fun/) is a webapp for quickly generating flowcharts from text. With a fast and intuitive workflow, you can visualize your ideas and plans in minutes.
 
-![screenshot of Flowchart Fun](https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true)
+<img src="https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true" alt="screenshot" width="600" />
 
-## Summary
+## 📝 Example
 
-Flowchart Fun is a webapp for generating flowcharts from text built with React and [cytoscape.js](https://github.com/cytoscape/cytoscape.js).
-
-### Example
+For an example of how Flowchart Fun works, take the following input:
 
 ```
 Node A
@@ -17,62 +15,58 @@ Node A
     goes back to: (Node A)
 ```
 
-![example flowchart](./example1.png)
+You can generate this flowchart with just a few clicks:
 
-## Development
+<img src="./example1.png" alt="example flowchart" width="400" />
 
-### Prerequisites
+## 🛠️ Development
 
-Premium features including auth, hosted charts and permalinks are built using integrations with [Vercel Functions](https://vercel.com/docs/concepts/functions/introduction), [Supabase](https://supabase.io/), [Stripe](https://stripe.com/) and [Sendgrid](https://sendgrid.com/) so you will need accounts with each of those services.
+Flowchart Fun is built with [React](https://reactjs.org/) and [cytoscape.js](https://github.com/cytoscape/cytoscape.js).
 
-### Getting Started
+### 💡 Prerequisites
+
+If you plan on developing the premium features, you will need accounts on [Vercel](https://vercel.com/docs/concepts/functions/introduction), [Supabase](https://supabase.io/), [Stripe](https://stripe.com/) and [Sendgrid](https://sendgrid.com/).
+
+### 🚀 Getting Started
 
 1. Clone the repository
 1. Copy `.env.example` to `.env` and add env variables
 1. `pnpm install` and `vercel dev`
 
-#### To run with login features:
+#### 🔒 To run with login features:
 
 `vercel dev`
 
-#### To run without login features:
+#### ⚙️ To run without login features:
 
 `pnpm dev`
 
-### Translations
+### 🌐 Translations
 
-Flowchart Fun uses [Lingui](https://lingui.js.org/) for translations. These are the steps to follow:
+We welcome anyone interested in helping us add translations to Flowchart Fun. Translations can be added to the .po files located in /app/src/locales/[language]/messages.po. After adding translations, please run `pnpm -F app compile`. We would appreciate your help in making Flowchart Fun accessible in even more languages!
 
-1. All text that should be translated should be wrapped in `<Trans>` component or `` t` `` template string. These are imported from `@lingui/macro`.
-1. Strings are extracted with `pnpm -F app extract`. Then translations can be added to `.po` files in `/app/src/locales/[language]/messages.po`
-1. When all translations are added, run `pnpm -F app compile`.
+#### 💬 Interested in Adding a Language?
 
-### Tests
+Let us know about your plans in the [Discord](https://discord.gg/84MxwFCf), and we'd be glad to lend a helping hand.
+
+### 🧪 Tests
+
+To ensure quality and accuracy, Flowchart Fun employs [Jest](https://jestjs.io/) for unit testing and [Playwright](https://github.com/microsoft/playwright) for e2e testing.
 
 #### Unit Tests
 
-- You can run jest tests with `pnpm test`
+`pnpm -F app test`
 
 #### E2E Tests
 
-We use playwright for e2e tests. Playwright is always installed on the system so you need to globally install it at the correct version: `1.29.0`. You can find the version in the github e2e workflow file.
+`pnpm -F app e2e`
 
-1. Make sure playwright version 1.29.0 is installed globally
-1. Start the app with `vercel dev` and then run `pnpm -F app e2e` (or for `pnpm -F app e2e:debug` debugging)
-
-### Analyze the Bundle
+### 🔍 Analyzing the Bundle
 
 `pnpm -F app build && pnpm -F app analyze`
 
-## Release
+## 🤝 Contributing
 
-1. Branch from `dev` to develop a feature
-1. **Squash** and merge the feature branch into `dev`
-1. (Repeat until happy)
-1. Update version in /app/package.json and commit directly to `dev`. Push.
-1. Open PR from `dev` to `main`
-1. Merge (**do not squash!**) PR and a new github release will be created
+We welcome contributions! Please fork the `dev` branch in order to develop and test your feature.
 
-## Contributing
-
-We always welcome contributions! Before opening a pull request with a new feature, consider opening an issue or discussion to gauge support and/or confirm your implementation.
+If you have any questions, feel free to join the discussion on [Discord](https://discord.gg/84MxwFCf).
