@@ -1,6 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { Session } from "@supabase/gotrue-js";
+import { format } from "date-fns";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { Check, CircleNotch, Clock, TreeStructure } from "phosphor-react";
 import {
@@ -76,7 +77,7 @@ const New = memo(function New({
 
   const userId = session?.user?.id;
 
-  const [name, setName] = useState<string>("");
+  const [name, setName] = useState<string>(getDefaultNewTitle());
   const [type, setType] = useState<"regular" | "local">(
     validCustomer ? "regular" : "local"
   );
@@ -146,7 +147,7 @@ const New = memo(function New({
             value={name}
             autoComplete="off"
             onChange={(e) => setName(e.target.value)}
-            className="w-full text-2xl mb-3 border-b-2 border-neutral-300 pb-1 dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700 rounded-none"
+            className="w-full text-2xl mb-3 border-b-2 border-neutral-300 p-1 rounded-tr rounded-tl dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700 rounded-none focus:bg-neutral-50 dark:focus:bg-neutral-800"
             placeholder="Untitled"
           />
           <NameLabel name={safeName} hide={!showWarning} />
@@ -284,4 +285,8 @@ function AutoFocusInput(
     if (ref.current) ref.current.focus();
   }, []);
   return <input ref={ref} {...props} />;
+}
+
+function getDefaultNewTitle() {
+  return format(new Date(), "yyyy-MM-dd_HH-mm");
 }
