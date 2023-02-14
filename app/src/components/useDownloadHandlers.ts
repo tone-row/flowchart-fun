@@ -147,8 +147,8 @@ export default function useDownloadHandlers(
             img.src = window.URL.createObjectURL(pngStr);
             let w: number, h: number;
             img.onload = () => {
-              w = img.width;
-              h = img.height;
+              w = img.naturalWidth;
+              h = img.naturalHeight;
               document.body.removeChild(img);
               resolve({ w, h });
             };
