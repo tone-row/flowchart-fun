@@ -180,6 +180,17 @@ function NodeSubmenu() {
   const colorNames = Object.keys(colors);
   const active = useContextMenuState((state) => state.active);
   const parser = useParser();
+  const selected = useSelectedNodes();
+  const activeSelection = selected.length
+    ? selected.map((s) => {
+        const data = s.data();
+        return {
+          id: data.id,
+          lineNumber: data.lineNumber,
+          type: "node",
+        };
+      })
+    : [active];
   if (parser !== "graph-selector") return null;
   if (!active || active.type !== "node") return null;
   return (
@@ -203,17 +214,21 @@ function NodeSubmenu() {
             <Item
               key={name}
               onClick={() => {
-                let newText = operate(useDoc.getState().text, {
-                  lineNumber: active.lineNumber,
-                  operation: [
-                    "removeClassesFromNode",
-                    { classNames: colorNames },
-                  ],
-                });
-                newText = operate(newText, {
-                  lineNumber: active.lineNumber,
-                  operation: ["addClassesToNode", { classNames: [name] }],
-                });
+                let newText = useDoc.getState().text;
+                for (const selection of activeSelection) {
+                  if (!selection) continue;
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: [
+                      "removeClassesFromNode",
+                      { classNames: colorNames },
+                    ],
+                  });
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: ["addClassesToNode", { classNames: [name] }],
+                  });
+                }
                 useDoc.setState({ text: newText });
               }}
             >
@@ -226,13 +241,17 @@ function NodeSubmenu() {
           <Item
             key="remove-all"
             onClick={() => {
-              const newText = operate(useDoc.getState().text, {
-                lineNumber: active.lineNumber,
-                operation: [
-                  "removeClassesFromNode",
-                  { classNames: colorNames },
-                ],
-              });
+              let newText = useDoc.getState().text;
+              for (const selection of activeSelection) {
+                if (!selection) continue;
+                newText = operate(newText, {
+                  lineNumber: selection.lineNumber,
+                  operation: [
+                    "removeClassesFromNode",
+                    { classNames: colorNames },
+                  ],
+                });
+              }
               useDoc.setState({ text: newText });
             }}
           >
@@ -253,17 +272,21 @@ function NodeSubmenu() {
             <Item
               key={shape}
               onClick={() => {
-                let newText = operate(useDoc.getState().text, {
-                  lineNumber: active.lineNumber,
-                  operation: [
-                    "removeClassesFromNode",
-                    { classNames: shapes as string[] },
-                  ],
-                });
-                newText = operate(newText, {
-                  lineNumber: active.lineNumber,
-                  operation: ["addClassesToNode", { classNames: [shape] }],
-                });
+                let newText = useDoc.getState().text;
+                for (const selection of activeSelection) {
+                  if (!selection) continue;
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: [
+                      "removeClassesFromNode",
+                      { classNames: shapes as string[] },
+                    ],
+                  });
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: ["addClassesToNode", { classNames: [shape] }],
+                  });
+                }
                 useDoc.setState({ text: newText });
               }}
             >
@@ -281,13 +304,17 @@ function NodeSubmenu() {
           <Item
             key="remove-all"
             onClick={() => {
-              const newText = operate(useDoc.getState().text, {
-                lineNumber: active.lineNumber,
-                operation: [
-                  "removeClassesFromNode",
-                  { classNames: shapes as string[] },
-                ],
-              });
+              let newText = useDoc.getState().text;
+              for (const selection of activeSelection) {
+                if (!selection) continue;
+                newText = operate(newText, {
+                  lineNumber: selection.lineNumber,
+                  operation: [
+                    "removeClassesFromNode",
+                    { classNames: shapes as string[] },
+                  ],
+                });
+              }
               useDoc.setState({ text: newText });
             }}
           >
@@ -307,27 +334,31 @@ function NodeSubmenu() {
             <Item
               key={index}
               onClick={() => {
-                let newText = operate(useDoc.getState().text, {
-                  lineNumber: active.lineNumber,
-                  operation: [
-                    "removeClassesFromNode",
-                    {
-                      classNames: sizes
-                        .map((s) => s.className)
-                        .filter((c): c is string => {
-                          return !!c;
-                        }),
-                    },
-                  ],
-                });
-                if (className)
+                let newText = useDoc.getState().text;
+                for (const selection of activeSelection) {
+                  if (!selection) continue;
                   newText = operate(newText, {
-                    lineNumber: active.lineNumber,
+                    lineNumber: selection.lineNumber,
                     operation: [
-                      "addClassesToNode",
-                      { classNames: [className] },
+                      "removeClassesFromNode",
+                      {
+                        classNames: sizes
+                          .map((s) => s.className)
+                          .filter((c): c is string => {
+                            return !!c;
+                          }),
+                      },
                     ],
                   });
+                  if (className)
+                    newText = operate(newText, {
+                      lineNumber: selection.lineNumber,
+                      operation: [
+                        "addClassesToNode",
+                        { classNames: [className] },
+                      ],
+                    });
+                }
                 useDoc.setState({ text: newText });
               }}
             >
@@ -346,19 +377,26 @@ function NodeSubmenu() {
             <Item
               key={className}
               onClick={() => {
-                let newText = operate(useDoc.getState().text, {
-                  lineNumber: active.lineNumber,
-                  operation: ["removeClassesFromNode", { classNames: borders }],
-                });
-                // If the border is solid, we want to remove all borders
-                if (className !== "border-solid")
+                let newText = useDoc.getState().text;
+                for (const selection of activeSelection) {
+                  if (!selection) continue;
                   newText = operate(newText, {
-                    lineNumber: active.lineNumber,
+                    lineNumber: selection.lineNumber,
                     operation: [
-                      "addClassesToNode",
-                      { classNames: [className] },
+                      "removeClassesFromNode",
+                      { classNames: borders },
                     ],
                   });
+                  // If the border is solid, we want to remove all borders
+                  if (className !== "border-solid")
+                    newText = operate(newText, {
+                      lineNumber: selection.lineNumber,
+                      operation: [
+                        "addClassesToNode",
+                        { classNames: [className] },
+                      ],
+                    });
+                }
                 useDoc.setState({ text: newText });
               }}
             >
@@ -377,4 +415,10 @@ function NodeSubmenu() {
       <Separator />
     </>
   );
+}
+
+function useSelectedNodes() {
+  const cy = window.__cy;
+  if (!cy) return [];
+  return cy.$("node:selected");
 }

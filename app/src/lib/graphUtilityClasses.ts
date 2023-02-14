@@ -116,25 +116,20 @@ export const graphUtilityClasses: Stylesheet[] = shapes
     },
   }))
   .concat(circle)
-  .concat([
-    {
-      selector: ".edgeHovered",
-      style: {
-        "line-opacity": 0.25,
-      },
-    },
-    {
-      selector: ".nodeHovered",
-      style: {
-        opacity: 0.25,
-      },
-    },
-  ])
   .concat(lineStyles)
   .concat(borderStyles)
   .concat(textSizeStyles);
 
 export const baseStyles: Stylesheet[] = [
+  {
+    selector: ".nodeHovered, .edgeHovered, node:selected",
+    style: {
+      // @ts-ignore
+      "underlay-opacity": 0.1,
+      "underlay-color": "black",
+      "underlay-padding": "5px",
+    },
+  },
   {
     selector: "node",
     style: {
