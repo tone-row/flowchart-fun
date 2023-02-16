@@ -34,8 +34,8 @@ export default function Pricing() {
               features={[
                 t`Temporary Flowcharts`,
                 t`Image Export`,
-                t`8 Auto-Layouts`,
-                t`One-Time Share Links`,
+                `8 ${t`Auto-Layouts`}`,
+                t`One-time Share Links`,
               ]}
             />
             <Plan
@@ -44,10 +44,10 @@ export default function Pricing() {
               features={[
                 t`Everything in Free`,
                 t`Persistent Flowcharts`,
-                t`13 Auto-Layouts`,
+                `13 ${t`Auto-Layouts`}`,
                 t`Permalinks`,
                 t`Custom Sharing Options`,
-                t`Create Flowcharts from Prompts using AI`,
+                t`Create Flowcharts from a Prompt with AI`,
               ]}
               right={<SignUpForm />}
             />

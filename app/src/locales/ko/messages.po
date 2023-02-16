@@ -29,7 +29,7 @@ msgstr "(레이블을 생성합니다)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
 
-#: src/pages/New.tsx:218
+#: src/pages/New.tsx:217
 msgid "Accessible from any device"
 msgstr "모든 장치에서 액세스 가능"
 
@@ -59,6 +59,11 @@ msgstr "외관"
 msgid "Attributes"
 msgstr ""
 
+#: src/pages/Pricing.tsx:37
+#: src/pages/Pricing.tsx:47
+msgid "Auto-Layouts"
+msgstr "자동 레이아웃"
+
 #: src/components/Feedback.tsx:129
 msgid "Back To Editor"
 msgstr "편집기로 돌아가기"
@@ -72,7 +77,7 @@ msgstr "배경"
 msgid "Become a Sponsor"
 msgstr "스폰서 되기"
 
-#: src/pages/New.tsx:254
+#: src/pages/New.tsx:253
 msgid "Blank"
 msgstr ""
 
@@ -131,7 +136,7 @@ msgstr "차트"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
-#: src/pages/Pricing.tsx:67
+#: src/pages/Pricing.tsx:82
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "표를 전체 권한, 편집만 가능, 보기만 가능 권한 중 어떤 것으로 공유할 지 선택하여 작업물을 변경할 수 있는지 관리하세요."
 
@@ -221,11 +226,15 @@ msgstr "SVG 코드 복사"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:293
+#: src/pages/New.tsx:292
 msgid "Create"
 msgstr "만들기"
 
-#: src/pages/New.tsx:168
+#: src/pages/Pricing.tsx:50
+msgid "Create Flowcharts from a Prompt with AI"
+msgstr "AI 프롬프트를 사용하여 다이어그램 생성"
+
+#: src/pages/New.tsx:167
 msgid "Create a New Flowchart"
 msgstr "새 다이어그램 만들기"
 
@@ -237,7 +246,8 @@ msgstr "생성됨"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:49
+#: src/pages/Pricing.tsx:79
 msgid "Custom Sharing Options"
 msgstr "커스텀 공유 옵션"
 
@@ -265,11 +275,11 @@ msgstr "날짜"
 msgid "Delete"
 msgstr "삭제"
 
-#: src/pages/New.tsx:233
+#: src/pages/New.tsx:232
 msgid "Deleted when browser data is cleared"
 msgstr "브라우저 데이터가 지워지면 삭제됨"
 
-#: src/pages/New.tsx:412
+#: src/pages/New.tsx:411
 msgid "Describe the flowchart you wish to create"
 msgstr "만들려는 다이어그램 설명"
 
@@ -323,10 +333,6 @@ msgstr ""
 msgid "Duplicate"
 msgstr "복제"
 
-#: src/pages/Pricing.tsx:50
-msgid "Dynamic Share Links"
-msgstr "다이나믹 공유 링크"
-
 #: src/components/SyntaxReference.tsx:153
 msgid "Edge ID, Classes, Attributes"
 msgstr ""
@@ -375,6 +381,10 @@ msgstr "이메일"
 msgid "Enter a title"
 msgstr "제목을 입력하세요"
 
+#: src/pages/Pricing.tsx:45
+msgid "Everything in Free"
+msgstr "무료 플랜의 모든 것"
+
 #: src/lib/graphOptions.ts:50
 msgid "Excalidraw"
 msgstr "Excalidraw"
@@ -390,7 +400,7 @@ msgstr "내보내기"
 msgid "Extra Large"
 msgstr ""
 
-#: src/pages/New.tsx:416
+#: src/pages/New.tsx:415
 msgid "Extract"
 msgstr "발췌"
 
@@ -451,7 +461,6 @@ msgstr "집"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Charts.tsx:724
-#: src/pages/Pricing.tsx:83
 msgid "Hosted Charts"
 msgstr "호스트 차트"
 
@@ -460,7 +469,6 @@ msgid "ID's"
 msgstr ""
 
 #: src/pages/Pricing.tsx:36
-#: src/pages/Pricing.tsx:46
 msgid "Image Export"
 msgstr "이미지 내보내기"
 
@@ -476,7 +484,7 @@ msgstr "들여 쓰기는 가장자리를 만듭니다"
 msgid "Info"
 msgstr "정보"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:410
 msgid "Instruct"
 msgstr "지시하다"
 
@@ -531,7 +539,7 @@ msgstr "로컬 차트"
 
 #: src/components/Header.tsx:200
 #: src/components/Header.tsx:432
-#: src/pages/New.tsx:273
+#: src/pages/New.tsx:272
 msgid "Log In"
 msgstr "로그인"
 
@@ -559,7 +567,7 @@ msgstr "Flowchart Fun Pro로 작업 흐름을 더 쉽게 만드세요. 지금 �
 msgid "Medium"
 msgstr ""
 
-#: src/pages/New.tsx:401
+#: src/pages/New.tsx:400
 msgid "Method"
 msgstr ""
 
@@ -567,21 +575,13 @@ msgstr ""
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/pages/Pricing.tsx:51
-msgid "More Layouts"
-msgstr "더 많은 레이아웃"
-
-#: src/pages/Pricing.tsx:52
-msgid "More Themes and Fonts"
-msgstr "더욱 많은 테마와 폰트"
-
 #: src/lib/graphOptions.ts:58
 msgid "Museum"
 msgstr "박물관"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:172
+#: src/pages/New.tsx:171
 msgid "Name"
 msgstr "이름"
 
@@ -628,16 +628,29 @@ msgid "Node Shapes"
 msgstr ""
 
 #: src/components/SyntaxReference.tsx:305
-msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
+msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr ""
+
+#: src/pages/Pricing.tsx:38
+msgid "One-time Share Links"
+msgstr "일회성 공유 링크"
 
 #: src/pages/Account.tsx:247
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
 
-#: src/pages/New.tsx:417
+#: src/pages/New.tsx:416
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "순서도로 변환하려는 정보를 붙여넣기"
+
+#: src/pages/Pricing.tsx:48
+msgid "Permalinks"
+msgstr "퍼머링크"
+
+#: src/pages/Pricing.tsx:46
+#: src/pages/Pricing.tsx:61
+msgid "Persistent Flowcharts"
+msgstr "영구 다이어그램"
 
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
@@ -648,7 +661,7 @@ msgstr "플레이북"
 msgid "Pricing"
 msgstr "가격"
 
-#: src/pages/New.tsx:259
+#: src/pages/New.tsx:258
 msgid "Prompt"
 msgstr ""
 
@@ -757,18 +770,9 @@ msgstr "설정"
 msgid "Shape"
 msgstr ""
 
-#: src/pages/Pricing.tsx:37
-#: src/pages/Pricing.tsx:47
-msgid "Shape Libraries"
-msgstr "셰이프 라이브러리"
-
 #: src/components/SyntaxReference.tsx:264
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
-
-#: src/pages/Pricing.tsx:53
-msgid "Share with Full Access, Edit-only, or View-only Permissions"
-msgstr "완전한 접근권, 편집 전용, 또는 읽기 전용 권한으로 공유하세요"
 
 #: src/components/SignUpForm.tsx:175
 #: src/pages/LogIn.tsx:71
@@ -799,19 +803,14 @@ msgstr "간격"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원"
 
-#: src/pages/New.tsx:201
+#: src/pages/New.tsx:200
 msgid "Standard"
 msgstr "표준"
 
 #: src/pages/Account.tsx:177
-#: src/pages/New.tsx:244
+#: src/pages/New.tsx:243
 msgid "Start"
 msgstr "시작"
-
-#: src/pages/Pricing.tsx:38
-#: src/pages/Pricing.tsx:48
-msgid "Static Share Links"
-msgstr "스태틱 공유 링크"
 
 #: src/pages/Account.tsx:156
 msgid "Status"
@@ -821,15 +820,15 @@ msgstr "상태"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:210
+#: src/pages/New.tsx:209
 msgid "Stored in the cloud"
 msgstr "클라우드에 저장"
 
-#: src/pages/New.tsx:230
+#: src/pages/New.tsx:229
 msgid "Stored on this computer"
 msgstr "이 컴퓨터에 저장됨"
 
-#: src/pages/Pricing.tsx:100
+#: src/pages/Pricing.tsx:97
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Flowchart Fun를 통해 워크플로우를 능률화하고 프로세스 시각화를 단순화하세요"
 
@@ -872,9 +871,13 @@ msgstr "문법"
 msgid "Syntax Reference"
 msgstr "신택스 참조"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:225
 msgid "Temporary"
 msgstr "임시"
+
+#: src/pages/Pricing.tsx:35
+msgid "Temporary Flowcharts"
+msgstr "임시 다이어그램"
 
 #: src/components/SyntaxReference.tsx:276
 msgid "Text Sizes"
@@ -917,7 +920,7 @@ msgstr "위에서 아래로"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:186
 msgid "Type"
 msgstr "유형"
 
@@ -929,15 +932,6 @@ msgstr "녹이다"
 #: src/components/SyntaxReference.tsx:103
 msgid "Unique text value to identify a node"
 msgstr ""
-
-#: src/pages/Pricing.tsx:49
-msgid "Unlimited Hosted Charts"
-msgstr "무제한 차트 호스팅"
-
-#: src/pages/Pricing.tsx:35
-#: src/pages/Pricing.tsx:45
-msgid "Unlimited Local Charts"
-msgstr "무제한 로컬 차트"
 
 #: src/pages/Account.tsx:200
 msgid "Update Email"
@@ -991,11 +985,11 @@ msgstr "무엇을 공유하시겠습니까?"
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Pricing.tsx:86
+#: src/pages/Pricing.tsx:64
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다."
 
-#: src/pages/New.tsx:281
+#: src/pages/New.tsx:280
 msgid "You already have a flowchart with this name."
 msgstr "이 이름을 가진 다이어그램이 이미 있습니다."
 
@@ -1003,7 +997,7 @@ msgstr "이 이름을 가진 다이어그램이 이미 있습니다."
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "텍스트를 \"\\( \\)\"로 감싸서 가장자리를 만들 수도 있습니다."
 
-#: src/pages/New.tsx:271
+#: src/pages/New.tsx:270
 msgid "You must log in to create a standard flowchart."
 msgstr "표준 다이어그램을 만들려면 로그인해야 합니다."
 

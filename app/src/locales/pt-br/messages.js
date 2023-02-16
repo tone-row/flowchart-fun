@@ -17,6 +17,7 @@
     ],
     Appearance: "Aparência",
     Attributes: "Attributes",
+    "Auto-Layouts": "Layouts automáticos",
     "Back To Editor": "Voltar ao editor",
     Background: "Fundo",
     "Become a Sponsor": "Torne-se um(a) patrocinador(a)",
@@ -58,6 +59,8 @@
     "Copy PNG Image": "Copiar imagem PNG",
     "Copy SVG Code": "Copiar código SVG",
     Create: "Criar",
+    "Create Flowcharts from a Prompt with AI":
+      "Crie diagramas usando prompts de IA",
     "Create a New Flowchart": "Criar um novo diagrama",
     Created: "Criado",
     "Creating an edge between two nodes is done by indenting the second node below the first":
@@ -86,7 +89,6 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "Duplicar",
-    "Dynamic Share Links": "Links de compartilhamento dinâmico",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -100,6 +102,7 @@
     Eggs: "Ovos",
     Email: "E-mail",
     "Enter a title": "Insira um título",
+    "Everything in Free": "Tudo no Plano Gratuito",
     Excalidraw: "Excalidraw",
     Export: "Exportar",
     "Extra Large": "Extra Large",
@@ -146,8 +149,6 @@
     Medium: "Medium",
     Method: "Method",
     Monospace: "Monospace",
-    "More Layouts": "Mais Layouts",
-    "More Themes and Fonts": "Mais Temas e Fontes",
     Museum: "Museu",
     Name: "Nome",
     "Need Help? <0>Check out our documentation.</0>":
@@ -161,11 +162,14 @@
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
-    "Nodes can be styled with dashed, dotted, double, or solid borders":
-      "Nodes can be styled with dashed, dotted, double, or solid borders",
+    "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
+      "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
+    "One-time Share Links": "Links de compartilhamento único",
     "Open Customer Portal": "Abra o portal do cliente",
     "Paste the information you wish to convert to a flowchart":
       "Cole as informações que deseja converter em um fluxograma",
+    Permalinks: "Permalinks",
+    "Persistent Flowcharts": "Diagramas Persistentes",
     Playbook: "Cartilha",
     Pricing: "Preços",
     Prompt: "Prompt",
@@ -196,11 +200,8 @@
     Save: "Salvar",
     Settings: "Configurações",
     Shape: "Shape",
-    "Shape Libraries": "Bibliotecas de Formas",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
       "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
-    "Share with Full Access, Edit-only, or View-only Permissions":
-      "Compartilhar com permissões de acesso total, somente edição ou somente visualização",
     "Sign Up": "Inscreva-se",
     Size: "Size",
     Small: "Small",
@@ -213,7 +214,6 @@
       "Patrocine flowchart.fun por US$ 3/mês ou US$30/ano para acessar fluxogramas hospedados e os mais novos estilos e recursos",
     Standard: "Padrão",
     Start: "Início",
-    "Static Share Links": "Links de compartilhamento estáticos",
     Status: "Status",
     "Store any data associated to a node":
       "Store any data associated to a node",
@@ -232,6 +232,7 @@
     Syntax: "Sintaxe",
     "Syntax Reference": "Referência de sintaxe",
     Temporary: "Temporário",
+    "Temporary Flowcharts": "Diagramas Temporários",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -250,8 +251,6 @@
     Unfreeze: "Descongelar",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
-    "Unlimited Hosted Charts": "Gráficos Hospedados Ilimitados",
-    "Unlimited Local Charts": "Gráficos locais ilimitados",
     "Update Email": "Atualizar e-mail",
     Updated: "Atualizado",
     "Use classes to group nodes": "Use classes to group nodes",

@@ -16,6 +16,7 @@
     ],
     Appearance: "외관",
     Attributes: "Attributes",
+    "Auto-Layouts": "자동 레이아웃",
     "Back To Editor": "편집기로 돌아가기",
     Background: "배경",
     "Become a Sponsor": "스폰서 되기",
@@ -57,6 +58,8 @@
     "Copy PNG Image": "PNG 이미지 복사",
     "Copy SVG Code": "SVG 코드 복사",
     Create: "만들기",
+    "Create Flowcharts from a Prompt with AI":
+      "AI 프롬프트를 사용하여 다이어그램 생성",
     "Create a New Flowchart": "새 다이어그램 만들기",
     Created: "생성됨",
     "Creating an edge between two nodes is done by indenting the second node below the first":
@@ -82,7 +85,6 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "복제",
-    "Dynamic Share Links": "다이나믹 공유 링크",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -96,6 +98,7 @@
     Eggs: "달걀",
     Email: "이메일",
     "Enter a title": "제목을 입력하세요",
+    "Everything in Free": "무료 플랜의 모든 것",
     Excalidraw: "Excalidraw",
     Export: "내보내기",
     "Extra Large": "Extra Large",
@@ -142,8 +145,6 @@
     Medium: "Medium",
     Method: "Method",
     Monospace: "Monospace",
-    "More Layouts": "더 많은 레이아웃",
-    "More Themes and Fonts": "더욱 많은 테마와 폰트",
     Museum: "박물관",
     Name: "이름",
     "Need Help? <0>Check out our documentation.</0>":
@@ -157,11 +158,14 @@
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
-    "Nodes can be styled with dashed, dotted, double, or solid borders":
-      "Nodes can be styled with dashed, dotted, double, or solid borders",
+    "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
+      "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
+    "One-time Share Links": "일회성 공유 링크",
     "Open Customer Portal": "고객 포털 열기",
     "Paste the information you wish to convert to a flowchart":
       "순서도로 변환하려는 정보를 붙여넣기",
+    Permalinks: "퍼머링크",
+    "Persistent Flowcharts": "영구 다이어그램",
     Playbook: "플레이북",
     Pricing: "가격",
     Prompt: "Prompt",
@@ -192,11 +196,8 @@
     Save: "구하다",
     Settings: "설정",
     Shape: "Shape",
-    "Shape Libraries": "셰이프 라이브러리",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
       "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
-    "Share with Full Access, Edit-only, or View-only Permissions":
-      "완전한 접근권, 편집 전용, 또는 읽기 전용 권한으로 공유하세요",
     "Sign Up": "가입",
     Size: "Size",
     Small: "Small",
@@ -209,7 +210,6 @@
       "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원",
     Standard: "표준",
     Start: "시작",
-    "Static Share Links": "스태틱 공유 링크",
     Status: "상태",
     "Store any data associated to a node":
       "Store any data associated to a node",
@@ -228,6 +228,7 @@
     Syntax: "문법",
     "Syntax Reference": "신택스 참조",
     Temporary: "임시",
+    "Temporary Flowcharts": "임시 다이어그램",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -246,8 +247,6 @@
     Unfreeze: "녹이다",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
-    "Unlimited Hosted Charts": "무제한 차트 호스팅",
-    "Unlimited Local Charts": "무제한 로컬 차트",
     "Update Email": "이메일 업데이트",
     Updated: "업데이트됨",
     "Use classes to group nodes": "Use classes to group nodes",
