@@ -4,13 +4,11 @@ import { Session } from "@supabase/gotrue-js";
 import { format } from "date-fns";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import {
-  ChatCenteredDots,
   ChatTeardropText,
   Check,
   CircleNotch,
   Clock,
   Plus,
-  Robot,
   TreeStructure,
 } from "phosphor-react";
 import {
