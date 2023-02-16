@@ -29,11 +29,11 @@ msgstr "(before a colon creates a label)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 
-#: src/pages/New.tsx:175
+#: src/pages/New.tsx:218
 msgid "Accessible from any device"
 msgstr "Accessible from any device"
 
-#: src/components/Header.tsx:181
+#: src/components/Header.tsx:182
 #: src/components/Header.tsx:408
 msgid "Account"
 msgstr "Account"
@@ -72,13 +72,17 @@ msgstr "Background"
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
-#: src/components/Header.tsx:150
+#: src/pages/New.tsx:254
+msgid "Blank"
+msgstr "Blank"
+
+#: src/components/Header.tsx:151
 #: src/components/Header.tsx:384
 #: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "Blog"
 
-#: src/components/GraphContextMenu.tsx:341
+#: src/components/GraphContextMenu.tsx:372
 msgid "Border"
 msgstr "Border"
 
@@ -111,14 +115,14 @@ msgstr "Cancel your subscription. Your hosted charts will become read-only."
 msgid "Change Email Address"
 msgstr "Change Email Address"
 
-#: src/components/Header.tsx:160
+#: src/components/Header.tsx:161
 #: src/components/Header.tsx:390
 #: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "Changelog"
 
-#: src/components/Header.tsx:96
-#: src/components/Header.tsx:363
+#: src/components/Header.tsx:94
+#: src/components/Header.tsx:362
 msgid "Charts"
 msgstr "Charts"
 
@@ -164,7 +168,7 @@ msgstr "Clone"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/GraphContextMenu.tsx:197
+#: src/components/GraphContextMenu.tsx:208
 msgid "Color"
 msgstr "Color"
 
@@ -217,11 +221,11 @@ msgstr "Copy SVG Code"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:224
+#: src/pages/New.tsx:293
 msgid "Create"
 msgstr "Create"
 
-#: src/pages/New.tsx:137
+#: src/pages/New.tsx:168
 msgid "Create a New Flowchart"
 msgstr "Create a New Flowchart"
 
@@ -261,9 +265,13 @@ msgstr "Date"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/pages/New.tsx:190
+#: src/pages/New.tsx:233
 msgid "Deleted when browser data is cleared"
 msgstr "Deleted when browser data is cleared"
+
+#: src/pages/New.tsx:412
+msgid "Describe the flowchart you wish to create"
+msgstr "Describe the flowchart you wish to create"
 
 #: src/components/Tabs/EditLayoutTab.tsx:85
 msgid "Direction"
@@ -285,11 +293,6 @@ msgstr "Do you want to delete this?"
 #: src/pages/EditHosted.tsx:78
 msgid "Document"
 msgstr "Document"
-
-#: src/components/Header.tsx:116
-#: src/components/Header.tsx:369
-msgid "Documentation"
-msgstr "Documentation"
 
 #: src/pages/LogIn.tsx:66
 msgid "Don't have an account?"
@@ -352,8 +355,8 @@ msgstr "Edges can be styled with dashed, dotted, or solid lines"
 msgid "Editable"
 msgstr "Editable"
 
-#: src/components/Header.tsx:88
-#: src/components/Header.tsx:357
+#: src/components/Header.tsx:86
+#: src/components/Header.tsx:356
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "Editor"
@@ -387,8 +390,12 @@ msgstr "Export"
 msgid "Extra Large"
 msgstr "Extra Large"
 
+#: src/pages/New.tsx:416
+msgid "Extract"
+msgstr "Extract"
+
 #: src/components/Feedback.tsx:74
-#: src/components/Header.tsx:124
+#: src/components/Header.tsx:125
 #: src/components/Header.tsx:376
 msgid "Feedback"
 msgstr "Feedback"
@@ -430,7 +437,7 @@ msgstr "Grid"
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 
-#: src/components/Header.tsx:105
+#: src/components/Header.tsx:103
 msgid "Help"
 msgstr "Help"
 
@@ -465,9 +472,13 @@ msgstr "Images"
 msgid "Indenting creates an edge"
 msgstr "Indenting creates an edge"
 
-#: src/components/Header.tsx:139
+#: src/components/Header.tsx:140
 msgid "Info"
 msgstr "Info"
+
+#: src/pages/New.tsx:411
+msgid "Instruct"
+msgstr "Instruct"
 
 #: src/components/Settings.tsx:49
 msgid "Language"
@@ -518,9 +529,9 @@ msgstr "Link"
 msgid "Local Charts"
 msgstr "Local Charts"
 
-#: src/components/Header.tsx:199
+#: src/components/Header.tsx:200
 #: src/components/Header.tsx:432
-#: src/pages/New.tsx:204
+#: src/pages/New.tsx:273
 msgid "Log In"
 msgstr "Log In"
 
@@ -548,6 +559,10 @@ msgstr "Make your workflow easier with Flowchart Fun Pro– subscribe now for on
 msgid "Medium"
 msgstr "Medium"
 
+#: src/pages/New.tsx:401
+msgid "Method"
+msgstr "Method"
+
 #: src/lib/graphOptions.ts:51
 msgid "Monospace"
 msgstr "Monospace"
@@ -566,7 +581,7 @@ msgstr "Museum"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:141
+#: src/pages/New.tsx:172
 msgid "Name"
 msgstr "Name"
 
@@ -574,8 +589,8 @@ msgstr "Name"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "Need Help? <0>Check out our documentation.</0>"
 
-#: src/components/Header.tsx:79
-#: src/components/Header.tsx:351
+#: src/components/Header.tsx:77
+#: src/components/Header.tsx:350
 msgid "New"
 msgstr "New"
 
@@ -588,7 +603,7 @@ msgstr "New Email"
 msgid "Next charge"
 msgstr "Next charge"
 
-#: src/components/GraphContextMenu.tsx:190
+#: src/components/GraphContextMenu.tsx:201
 msgid "Node"
 msgstr "Node"
 
@@ -620,14 +635,22 @@ msgstr "Nodes can be styled with dashed, dotted, double, or solid borders"
 msgid "Open Customer Portal"
 msgstr "Open Customer Portal"
 
+#: src/pages/New.tsx:417
+msgid "Paste the information you wish to convert to a flowchart"
+msgstr "Paste the information you wish to convert to a flowchart"
+
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
 msgstr "Playbook"
 
-#: src/components/Header.tsx:190
+#: src/components/Header.tsx:191
 #: src/components/Header.tsx:417
 msgid "Pricing"
 msgstr "Pricing"
+
+#: src/pages/New.tsx:259
+msgid "Prompt"
+msgstr "Prompt"
 
 #: src/components/ShareDialog.tsx:312
 #: src/components/ShareDialog.tsx:335
@@ -715,7 +738,7 @@ msgstr "Return"
 msgid "Right to Left"
 msgstr "Right to Left"
 
-#: src/components/Header.tsx:167
+#: src/components/Header.tsx:168
 #: src/components/Header.tsx:396
 #: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
@@ -725,12 +748,12 @@ msgstr "Roadmap"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/Header.tsx:174
+#: src/components/Header.tsx:175
 #: src/components/Header.tsx:401
 msgid "Settings"
 msgstr "Settings"
 
-#: src/components/GraphContextMenu.tsx:247
+#: src/components/GraphContextMenu.tsx:266
 msgid "Shape"
 msgstr "Shape"
 
@@ -752,7 +775,7 @@ msgstr "Share with Full Access, Edit-only, or View-only Permissions"
 msgid "Sign Up"
 msgstr "Sign Up"
 
-#: src/components/GraphContextMenu.tsx:302
+#: src/components/GraphContextMenu.tsx:329
 msgid "Size"
 msgstr "Size"
 
@@ -776,11 +799,12 @@ msgstr "Spacing"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 
-#: src/pages/New.tsx:166
+#: src/pages/New.tsx:201
 msgid "Standard"
 msgstr "Standard"
 
 #: src/pages/Account.tsx:177
+#: src/pages/New.tsx:244
 msgid "Start"
 msgstr "Start"
 
@@ -797,11 +821,11 @@ msgstr "Status"
 msgid "Store any data associated to a node"
 msgstr "Store any data associated to a node"
 
-#: src/pages/New.tsx:171
+#: src/pages/New.tsx:210
 msgid "Stored in the cloud"
 msgstr "Stored in the cloud"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:230
 msgid "Stored on this computer"
 msgstr "Stored on this computer"
 
@@ -848,7 +872,7 @@ msgstr "Syntax"
 msgid "Syntax Reference"
 msgstr "Syntax Reference"
 
-#: src/pages/New.tsx:183
+#: src/pages/New.tsx:226
 msgid "Temporary"
 msgstr "Temporary"
 
@@ -893,7 +917,7 @@ msgstr "Top to Bottom"
 msgid "Try again"
 msgstr "Try again"
 
-#: src/pages/New.tsx:156
+#: src/pages/New.tsx:187
 msgid "Type"
 msgstr "Type"
 
@@ -971,7 +995,7 @@ msgstr "Width and Height"
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 
-#: src/pages/New.tsx:212
+#: src/pages/New.tsx:281
 msgid "You already have a flowchart with this name."
 msgstr "You already have a flowchart with this name."
 
@@ -979,7 +1003,7 @@ msgstr "You already have a flowchart with this name."
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "You can also wrap text in \"\\( \\)\" to create an edge"
 
-#: src/pages/New.tsx:202
+#: src/pages/New.tsx:271
 msgid "You must log in to create a standard flowchart."
 msgstr "You must log in to create a standard flowchart."
 

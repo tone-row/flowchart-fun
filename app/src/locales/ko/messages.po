@@ -29,11 +29,11 @@ msgstr "(레이블을 생성합니다)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요"
 
-#: src/pages/New.tsx:175
+#: src/pages/New.tsx:218
 msgid "Accessible from any device"
 msgstr "모든 장치에서 액세스 가능"
 
-#: src/components/Header.tsx:181
+#: src/components/Header.tsx:182
 #: src/components/Header.tsx:408
 msgid "Account"
 msgstr "계정"
@@ -72,13 +72,17 @@ msgstr "배경"
 msgid "Become a Sponsor"
 msgstr "스폰서 되기"
 
-#: src/components/Header.tsx:150
+#: src/pages/New.tsx:254
+msgid "Blank"
+msgstr ""
+
+#: src/components/Header.tsx:151
 #: src/components/Header.tsx:384
 #: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "블로그"
 
-#: src/components/GraphContextMenu.tsx:341
+#: src/components/GraphContextMenu.tsx:372
 msgid "Border"
 msgstr ""
 
@@ -111,14 +115,14 @@ msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전�
 msgid "Change Email Address"
 msgstr "이메일 주소 변경"
 
-#: src/components/Header.tsx:160
+#: src/components/Header.tsx:161
 #: src/components/Header.tsx:390
 #: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "변경 로그"
 
-#: src/components/Header.tsx:96
-#: src/components/Header.tsx:363
+#: src/components/Header.tsx:94
+#: src/components/Header.tsx:362
 msgid "Charts"
 msgstr "차트"
 
@@ -164,7 +168,7 @@ msgstr "클론"
 msgid "Close"
 msgstr "닫기"
 
-#: src/components/GraphContextMenu.tsx:197
+#: src/components/GraphContextMenu.tsx:208
 msgid "Color"
 msgstr ""
 
@@ -217,11 +221,11 @@ msgstr "SVG 코드 복사"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:224
+#: src/pages/New.tsx:293
 msgid "Create"
 msgstr "만들기"
 
-#: src/pages/New.tsx:137
+#: src/pages/New.tsx:168
 msgid "Create a New Flowchart"
 msgstr "새 다이어그램 만들기"
 
@@ -261,9 +265,13 @@ msgstr "날짜"
 msgid "Delete"
 msgstr "삭제"
 
-#: src/pages/New.tsx:190
+#: src/pages/New.tsx:233
 msgid "Deleted when browser data is cleared"
 msgstr "브라우저 데이터가 지워지면 삭제됨"
+
+#: src/pages/New.tsx:412
+msgid "Describe the flowchart you wish to create"
+msgstr "만들려는 다이어그램 설명"
 
 #: src/components/Tabs/EditLayoutTab.tsx:85
 msgid "Direction"
@@ -285,11 +293,6 @@ msgstr "본 항목을 삭제하시겠습니까?"
 #: src/pages/EditHosted.tsx:78
 msgid "Document"
 msgstr "문서"
-
-#: src/components/Header.tsx:116
-#: src/components/Header.tsx:369
-msgid "Documentation"
-msgstr "선적 서류 비치"
 
 #: src/pages/LogIn.tsx:66
 msgid "Don't have an account?"
@@ -352,8 +355,8 @@ msgstr ""
 msgid "Editable"
 msgstr "편집 가능"
 
-#: src/components/Header.tsx:88
-#: src/components/Header.tsx:357
+#: src/components/Header.tsx:86
+#: src/components/Header.tsx:356
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "에디터"
@@ -387,8 +390,12 @@ msgstr "내보내기"
 msgid "Extra Large"
 msgstr ""
 
+#: src/pages/New.tsx:416
+msgid "Extract"
+msgstr "발췌"
+
 #: src/components/Feedback.tsx:74
-#: src/components/Header.tsx:124
+#: src/components/Header.tsx:125
 #: src/components/Header.tsx:376
 msgid "Feedback"
 msgstr "피드백"
@@ -430,7 +437,7 @@ msgstr "그리드"
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "주의! 캐시를 지우기 전에 이 문서는 클라우드에 저장 되어있지 않다는 것을 기억하시기 바랍니다. "
 
-#: src/components/Header.tsx:105
+#: src/components/Header.tsx:103
 msgid "Help"
 msgstr "도움말"
 
@@ -465,9 +472,13 @@ msgstr ""
 msgid "Indenting creates an edge"
 msgstr "들여 쓰기는 가장자리를 만듭니다"
 
-#: src/components/Header.tsx:139
+#: src/components/Header.tsx:140
 msgid "Info"
 msgstr "정보"
+
+#: src/pages/New.tsx:411
+msgid "Instruct"
+msgstr "지시하다"
 
 #: src/components/Settings.tsx:49
 msgid "Language"
@@ -518,9 +529,9 @@ msgstr "링크"
 msgid "Local Charts"
 msgstr "로컬 차트"
 
-#: src/components/Header.tsx:199
+#: src/components/Header.tsx:200
 #: src/components/Header.tsx:432
-#: src/pages/New.tsx:204
+#: src/pages/New.tsx:273
 msgid "Log In"
 msgstr "로그인"
 
@@ -548,6 +559,10 @@ msgstr "Flowchart Fun Pro로 작업 흐름을 더 쉽게 만드세요. 지금 �
 msgid "Medium"
 msgstr ""
 
+#: src/pages/New.tsx:401
+msgid "Method"
+msgstr ""
+
 #: src/lib/graphOptions.ts:51
 msgid "Monospace"
 msgstr "Monospace"
@@ -566,7 +581,7 @@ msgstr "박물관"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:141
+#: src/pages/New.tsx:172
 msgid "Name"
 msgstr "이름"
 
@@ -574,8 +589,8 @@ msgstr "이름"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</0>"
 
-#: src/components/Header.tsx:79
-#: src/components/Header.tsx:351
+#: src/components/Header.tsx:77
+#: src/components/Header.tsx:350
 msgid "New"
 msgstr "신규"
 
@@ -588,7 +603,7 @@ msgstr "새 이메일"
 msgid "Next charge"
 msgstr "다음 청구 금액"
 
-#: src/components/GraphContextMenu.tsx:190
+#: src/components/GraphContextMenu.tsx:201
 msgid "Node"
 msgstr ""
 
@@ -620,14 +635,22 @@ msgstr ""
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
 
+#: src/pages/New.tsx:417
+msgid "Paste the information you wish to convert to a flowchart"
+msgstr "순서도로 변환하려는 정보를 붙여넣기"
+
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
 msgstr "플레이북"
 
-#: src/components/Header.tsx:190
+#: src/components/Header.tsx:191
 #: src/components/Header.tsx:417
 msgid "Pricing"
 msgstr "가격"
+
+#: src/pages/New.tsx:259
+msgid "Prompt"
+msgstr ""
 
 #: src/components/ShareDialog.tsx:312
 #: src/components/ShareDialog.tsx:335
@@ -715,7 +738,7 @@ msgstr "반품"
 msgid "Right to Left"
 msgstr "오른쪽에서 왼쪽으로"
 
-#: src/components/Header.tsx:167
+#: src/components/Header.tsx:168
 #: src/components/Header.tsx:396
 #: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
@@ -725,12 +748,12 @@ msgstr "로드맵"
 msgid "Save"
 msgstr "구하다"
 
-#: src/components/Header.tsx:174
+#: src/components/Header.tsx:175
 #: src/components/Header.tsx:401
 msgid "Settings"
 msgstr "설정"
 
-#: src/components/GraphContextMenu.tsx:247
+#: src/components/GraphContextMenu.tsx:266
 msgid "Shape"
 msgstr ""
 
@@ -752,7 +775,7 @@ msgstr "완전한 접근권, 편집 전용, 또는 읽기 전용 권한으로 �
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/components/GraphContextMenu.tsx:302
+#: src/components/GraphContextMenu.tsx:329
 msgid "Size"
 msgstr ""
 
@@ -776,11 +799,12 @@ msgstr "간격"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원"
 
-#: src/pages/New.tsx:166
+#: src/pages/New.tsx:201
 msgid "Standard"
 msgstr "표준"
 
 #: src/pages/Account.tsx:177
+#: src/pages/New.tsx:244
 msgid "Start"
 msgstr "시작"
 
@@ -797,11 +821,11 @@ msgstr "상태"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:171
+#: src/pages/New.tsx:210
 msgid "Stored in the cloud"
 msgstr "클라우드에 저장"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:230
 msgid "Stored on this computer"
 msgstr "이 컴퓨터에 저장됨"
 
@@ -848,7 +872,7 @@ msgstr "문법"
 msgid "Syntax Reference"
 msgstr "신택스 참조"
 
-#: src/pages/New.tsx:183
+#: src/pages/New.tsx:226
 msgid "Temporary"
 msgstr "임시"
 
@@ -893,7 +917,7 @@ msgstr "위에서 아래로"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/pages/New.tsx:156
+#: src/pages/New.tsx:187
 msgid "Type"
 msgstr "유형"
 
@@ -971,7 +995,7 @@ msgstr ""
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다."
 
-#: src/pages/New.tsx:212
+#: src/pages/New.tsx:281
 msgid "You already have a flowchart with this name."
 msgstr "이 이름을 가진 다이어그램이 이미 있습니다."
 
@@ -979,7 +1003,7 @@ msgstr "이 이름을 가진 다이어그램이 이미 있습니다."
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "텍스트를 \"\\( \\)\"로 감싸서 가장자리를 만들 수도 있습니다."
 
-#: src/pages/New.tsx:202
+#: src/pages/New.tsx:271
 msgid "You must log in to create a standard flowchart."
 msgstr "표준 다이어그램을 만들려면 로그인해야 합니다."
 

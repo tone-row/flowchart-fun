@@ -8,6 +8,7 @@ import {
   Check,
   CircleNotch,
   Clock,
+  Pencil,
   Plus,
   TreeStructure,
 } from "phosphor-react";
@@ -200,12 +201,20 @@ const New = memo(function New({
                 title={t`Standard`}
                 description={
                   <>
-                    <span className="text-sm flex items-center justify-center">
-                      <Check size={16} weight="thin" className="mr-1" />
+                    <span className="text-sm flex items-start justify-center">
+                      <Check
+                        size={16}
+                        weight="bold"
+                        className="mr-1 mt-[2px] text-green-900 opacity-50 dark:text-green-100"
+                      />
                       <Trans>Stored in the cloud</Trans>
                     </span>
-                    <span className="text-sm flex items-center justify-center">
-                      <Check size={16} weight="thin" className="mr-1" />
+                    <span className="text-sm flex items-start justify-center">
+                      <Check
+                        size={16}
+                        weight="bold"
+                        className="mr-1 mt-[2px] text-green-900 opacity-50 dark:text-green-100"
+                      />
                       <Trans>Accessible from any device</Trans>
                     </span>
                   </>
@@ -244,7 +253,7 @@ const New = memo(function New({
               <SmallTypeToggle
                 title={t`Blank`}
                 value="blank"
-                icon={<Plus size={24} weight="thin" />}
+                icon={<Pencil size={24} weight="thin" />}
               />
               <SmallTypeToggle
                 title={t`Prompt`}
@@ -400,12 +409,12 @@ function PromptSubmenu() {
           <PromptSubmenuRadioItem
             value="instruct"
             title={t`Instruct`}
-            description={t`Describe the flowchart you would like created`}
+            description={t`Describe the flowchart you wish to create`}
           />
           <PromptSubmenuRadioItem
             value="extract"
             title={t`Extract`}
-            description={t`Paste the information you would like to be visualized`}
+            description={t`Paste the information you wish to convert to a flowchart`}
           />
         </div>
       </RadioGroup.Root>
