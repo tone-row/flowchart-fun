@@ -20,6 +20,7 @@
     "Back To Editor": "Retour à l'éditeur",
     Background: "L'arrière plan",
     "Become a Sponsor": "Devenir un sponsor",
+    Blank: "Blank",
     Blog: "Blog",
     Border: "Border",
     "Bottom to Top": "De bas en haut",
@@ -69,13 +70,14 @@
     Delete: "Supprimer",
     "Deleted when browser data is cleared":
       "Supprimé lorsque les données du navigateur sont effacées",
+    "Describe the flowchart you wish to create":
+      "Décrivez le schéma que vous souhaitez créer",
     Direction: "Direction",
     Discard: "Jeter",
     "Do you want to cancel your subscription?":
       "Souhaitez-vous résilier votre abonnement ?",
     "Do you want to delete this?": "Souhaitez-vous supprimer ceci ?",
     Document: "Document",
-    Documentation: "Documentation",
     "Don't have an account?": "Vous n'avez pas de compte ?",
     Download: "Télécharger",
     "Download JPG": "Télécharger JPG",
@@ -101,6 +103,7 @@
     Excalidraw: "Excalidraw",
     Export: "Exporter",
     "Extra Large": "Extra Large",
+    Extract: "Extrait",
     Feedback: "Commentaire",
     "Fit Graph": "Fit Graph",
     "Follow Us": "Suivez-nous",
@@ -121,6 +124,7 @@
     Images: "Images",
     "Indenting creates an edge": "L'indentation crée un bord",
     Info: "Info",
+    Instruct: "Instruire",
     Language: "Langue",
     Large: "Large",
     Layout: "Disposition",
@@ -140,6 +144,7 @@
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Facilitez votre flux de travail avec Flowchart Fun Pro - abonnez-vous maintenant pour seulement 3 $/mois ou 30 $/an !",
     Medium: "Medium",
+    Method: "Method",
     Monospace: "Monospace",
     "More Layouts": "Plus de mises en page",
     "More Themes and Fonts": "Plus de thèmes et de polices",
@@ -158,10 +163,12 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
-    Normal: "Normal",
     "Open Customer Portal": "Ouvrir le portail client",
+    "Paste the information you wish to convert to a flowchart":
+      "Collez les informations que vous souhaitez convertir en organigramme",
     Playbook: "Livre-jeu",
     Pricing: "Tarification",
+    Prompt: "Prompt",
     Public: "Public",
     Random: "Aléatoire",
     "Read-only": "Lecture seulement",
@@ -194,7 +201,6 @@
       "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "Partager avec des autorisations d'accès complet, d'édition uniquement ou d'affichage uniquement",
-    "Sign In": "Connectez",
     "Sign Up": "Inscription",
     Size: "Size",
     Small: "Small",
@@ -205,6 +211,7 @@
     Spacing: "Espacement",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Parrainez flowchart.fun pour 3 $ / mois ou 30 $ / an pour accéder aux organigrammes hébergés et aux nouveaux styles et fonctionnalités",
+    Standard: "Standard",
     Start: "Début",
     "Static Share Links": "Liens de partage statiques",
     Status: "État",
@@ -271,8 +278,8 @@
       "Vous avez déjà un diagramme avec ce nom.",
     'You can also wrap text in "\\( \\)" to create an edge':
       'Vous pouvez également envelopper le texte dans "\\( \\)" pour créer un bord',
-    "You must log in to create a normal flowchart.":
-      "Vous devez vous connecter pour créer un diagramme normal.",
+    "You must log in to create a standard flowchart.":
+      "Vous devez vous connecter pour créer un diagramme standard.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor.",
     "Zoom In": "Zoom In",

@@ -29,11 +29,11 @@ msgstr "(在冒号前创建一个标签)"
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。"
 
-#: src/pages/New.tsx:175
+#: src/pages/New.tsx:218
 msgid "Accessible from any device"
 msgstr "可从任何设备访问"
 
-#: src/components/Header.tsx:181
+#: src/components/Header.tsx:182
 #: src/components/Header.tsx:408
 msgid "Account"
 msgstr "帐户"
@@ -72,13 +72,17 @@ msgstr "背景"
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
-#: src/components/Header.tsx:150
+#: src/pages/New.tsx:254
+msgid "Blank"
+msgstr ""
+
+#: src/components/Header.tsx:151
 #: src/components/Header.tsx:384
 #: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "博客"
 
-#: src/components/GraphContextMenu.tsx:341
+#: src/components/GraphContextMenu.tsx:372
 msgid "Border"
 msgstr ""
 
@@ -111,14 +115,14 @@ msgstr "取消订阅。您的托管图表将变为只读。"
 msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
-#: src/components/Header.tsx:160
+#: src/components/Header.tsx:161
 #: src/components/Header.tsx:390
 #: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "变更日志"
 
-#: src/components/Header.tsx:96
-#: src/components/Header.tsx:363
+#: src/components/Header.tsx:94
+#: src/components/Header.tsx:362
 msgid "Charts"
 msgstr "图表"
 
@@ -164,7 +168,7 @@ msgstr "克隆"
 msgid "Close"
 msgstr "关闭"
 
-#: src/components/GraphContextMenu.tsx:197
+#: src/components/GraphContextMenu.tsx:208
 msgid "Color"
 msgstr ""
 
@@ -217,11 +221,11 @@ msgstr "复制 SVG 代码"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:224
+#: src/pages/New.tsx:293
 msgid "Create"
 msgstr "创建"
 
-#: src/pages/New.tsx:137
+#: src/pages/New.tsx:168
 msgid "Create a New Flowchart"
 msgstr "创建新图表"
 
@@ -261,9 +265,13 @@ msgstr "日期"
 msgid "Delete"
 msgstr "删除"
 
-#: src/pages/New.tsx:190
+#: src/pages/New.tsx:233
 msgid "Deleted when browser data is cleared"
 msgstr "清除浏览器数据时删除"
+
+#: src/pages/New.tsx:412
+msgid "Describe the flowchart you wish to create"
+msgstr "描述您要创建的图表"
 
 #: src/components/Tabs/EditLayoutTab.tsx:85
 msgid "Direction"
@@ -284,11 +292,6 @@ msgstr "您要将其删除吗？"
 #: src/pages/Edit.tsx:74
 #: src/pages/EditHosted.tsx:78
 msgid "Document"
-msgstr "文档"
-
-#: src/components/Header.tsx:116
-#: src/components/Header.tsx:369
-msgid "Documentation"
 msgstr "文档"
 
 #: src/pages/LogIn.tsx:66
@@ -352,8 +355,8 @@ msgstr ""
 msgid "Editable"
 msgstr "可编辑"
 
-#: src/components/Header.tsx:88
-#: src/components/Header.tsx:357
+#: src/components/Header.tsx:86
+#: src/components/Header.tsx:356
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "编辑器"
@@ -387,8 +390,12 @@ msgstr "导出"
 msgid "Extra Large"
 msgstr ""
 
+#: src/pages/New.tsx:416
+msgid "Extract"
+msgstr "提取"
+
 #: src/components/Feedback.tsx:74
-#: src/components/Header.tsx:124
+#: src/components/Header.tsx:125
 #: src/components/Header.tsx:376
 msgid "Feedback"
 msgstr "反馈"
@@ -430,7 +437,7 @@ msgstr "网格"
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "注意！在清除缓存之前，请记住此文档没有在云端保存。"
 
-#: src/components/Header.tsx:105
+#: src/components/Header.tsx:103
 msgid "Help"
 msgstr "帮助"
 
@@ -465,9 +472,13 @@ msgstr ""
 msgid "Indenting creates an edge"
 msgstr "缩进创建链接"
 
-#: src/components/Header.tsx:139
+#: src/components/Header.tsx:140
 msgid "Info"
 msgstr "信息"
+
+#: src/pages/New.tsx:411
+msgid "Instruct"
+msgstr "指导"
 
 #: src/components/Settings.tsx:49
 msgid "Language"
@@ -518,9 +529,9 @@ msgstr "链接"
 msgid "Local Charts"
 msgstr "本地的图表"
 
-#: src/components/Header.tsx:199
+#: src/components/Header.tsx:200
 #: src/components/Header.tsx:432
-#: src/pages/New.tsx:204
+#: src/pages/New.tsx:273
 msgid "Log In"
 msgstr "登录"
 
@@ -548,6 +559,10 @@ msgstr "使用 Flowchart Fun Pro 让您的工作流程更轻松——现在订�
 msgid "Medium"
 msgstr ""
 
+#: src/pages/New.tsx:401
+msgid "Method"
+msgstr ""
+
 #: src/lib/graphOptions.ts:51
 msgid "Monospace"
 msgstr "Monospace"
@@ -566,7 +581,7 @@ msgstr "博物馆"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:141
+#: src/pages/New.tsx:172
 msgid "Name"
 msgstr "姓名"
 
@@ -574,8 +589,8 @@ msgstr "姓名"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "需要帮助？<0>请查看我们的文档。</0>"
 
-#: src/components/Header.tsx:79
-#: src/components/Header.tsx:351
+#: src/components/Header.tsx:77
+#: src/components/Header.tsx:350
 msgid "New"
 msgstr "新"
 
@@ -588,7 +603,7 @@ msgstr "新邮件"
 msgid "Next charge"
 msgstr "下次扣费"
 
-#: src/components/GraphContextMenu.tsx:190
+#: src/components/GraphContextMenu.tsx:201
 msgid "Node"
 msgstr ""
 
@@ -620,14 +635,22 @@ msgstr ""
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
 
+#: src/pages/New.tsx:417
+msgid "Paste the information you wish to convert to a flowchart"
+msgstr "将要转换的信息粘贴到流程图中"
+
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
 msgstr "剧本"
 
-#: src/components/Header.tsx:190
+#: src/components/Header.tsx:191
 #: src/components/Header.tsx:417
 msgid "Pricing"
 msgstr "价钱"
+
+#: src/pages/New.tsx:259
+msgid "Prompt"
+msgstr ""
 
 #: src/components/ShareDialog.tsx:312
 #: src/components/ShareDialog.tsx:335
@@ -715,7 +738,7 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/Header.tsx:167
+#: src/components/Header.tsx:168
 #: src/components/Header.tsx:396
 #: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
@@ -725,12 +748,12 @@ msgstr "路线图"
 msgid "Save"
 msgstr "救球"
 
-#: src/components/Header.tsx:174
+#: src/components/Header.tsx:175
 #: src/components/Header.tsx:401
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/GraphContextMenu.tsx:247
+#: src/components/GraphContextMenu.tsx:266
 msgid "Shape"
 msgstr ""
 
@@ -752,7 +775,7 @@ msgstr "以完全访问权限、仅编辑权限或仅查看权限共享"
 msgid "Sign Up"
 msgstr "注册"
 
-#: src/components/GraphContextMenu.tsx:302
+#: src/components/GraphContextMenu.tsx:329
 msgid "Size"
 msgstr ""
 
@@ -776,11 +799,12 @@ msgstr "间距"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能"
 
-#: src/pages/New.tsx:166
+#: src/pages/New.tsx:201
 msgid "Standard"
 msgstr "标准"
 
 #: src/pages/Account.tsx:177
+#: src/pages/New.tsx:244
 msgid "Start"
 msgstr "开始"
 
@@ -797,11 +821,11 @@ msgstr "状态"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:171
+#: src/pages/New.tsx:210
 msgid "Stored in the cloud"
 msgstr "存储在云端"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:230
 msgid "Stored on this computer"
 msgstr "保存在这台电脑上"
 
@@ -848,7 +872,7 @@ msgstr "句法"
 msgid "Syntax Reference"
 msgstr "语法参考"
 
-#: src/pages/New.tsx:183
+#: src/pages/New.tsx:226
 msgid "Temporary"
 msgstr "临时"
 
@@ -893,7 +917,7 @@ msgstr "从上到下"
 msgid "Try again"
 msgstr "重试"
 
-#: src/pages/New.tsx:156
+#: src/pages/New.tsx:187
 msgid "Type"
 msgstr "类型"
 
@@ -971,7 +995,7 @@ msgstr ""
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。"
 
-#: src/pages/New.tsx:212
+#: src/pages/New.tsx:281
 msgid "You already have a flowchart with this name."
 msgstr "您已有同名的图表。"
 
@@ -979,7 +1003,7 @@ msgstr "您已有同名的图表。"
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "您还可以将文本包装在\\n“\\( \\)”中以创建链接"
 
-#: src/pages/New.tsx:202
+#: src/pages/New.tsx:271
 msgid "You must log in to create a standard flowchart."
 msgstr "您必须登录才能创建标准图表。"
 

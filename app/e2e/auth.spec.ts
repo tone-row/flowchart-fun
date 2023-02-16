@@ -146,6 +146,36 @@ test.describe("Sign Up", () => {
     await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
   });
 
+  test("can create chart from prompt by instruction", async () => {
+    await page.getByRole("link", { name: "New" }).click();
+    await page.getByRole("radio", { name: "Prompt" }).click();
+    await page.getByTestId("instruct").click();
+    await page.getByTestId("prompt-entry-textarea").click();
+    await page
+      .getByTestId("prompt-entry-textarea")
+      .fill("the stages of the water cycle");
+    await page.getByRole("button", { name: "Create" }).click();
+    // expect url to be regex BASE_URL + /u/\d+
+    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
+      timeout: 12000,
+    });
+  });
+
+  test("can create chart from prompt by extraction", async () => {
+    await page.getByRole("link", { name: "New" }).click();
+    await page.getByRole("radio", { name: "Prompt" }).click();
+    await page.getByTestId("extract").click();
+    await page.getByTestId("prompt-entry-textarea").click();
+    await page
+      .getByTestId("prompt-entry-textarea")
+      .fill("a is greater than b but less than a");
+    await page.getByRole("button", { name: "Create" }).click();
+    // expect url to be regex BASE_URL + /u/\d+
+    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
+      timeout: 12000,
+    });
+  });
+
   test.afterAll(async () => {
     /* This should be run in the last test */
     await deleteCustomerByEmail(email);

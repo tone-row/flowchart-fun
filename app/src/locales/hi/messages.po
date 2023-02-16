@@ -29,11 +29,11 @@ msgstr "(कॉलन से पहले एक लेबल बनाता �
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों."
 
-#: src/pages/New.tsx:175
+#: src/pages/New.tsx:218
 msgid "Accessible from any device"
 msgstr "किसी भी उपकरण से पहुँचा जा सकता है"
 
-#: src/components/Header.tsx:181
+#: src/components/Header.tsx:182
 #: src/components/Header.tsx:408
 msgid "Account"
 msgstr "खाता"
@@ -72,13 +72,17 @@ msgstr "पृष्ठभूमि"
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
-#: src/components/Header.tsx:150
+#: src/pages/New.tsx:254
+msgid "Blank"
+msgstr ""
+
+#: src/components/Header.tsx:151
 #: src/components/Header.tsx:384
 #: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "ब्लॉग"
 
-#: src/components/GraphContextMenu.tsx:341
+#: src/components/GraphContextMenu.tsx:372
 msgid "Border"
 msgstr ""
 
@@ -111,14 +115,14 @@ msgstr "अपनी सदस्यता रद्द करें. आपक�
 msgid "Change Email Address"
 msgstr "ईमेल पता बदलें"
 
-#: src/components/Header.tsx:160
+#: src/components/Header.tsx:161
 #: src/components/Header.tsx:390
 #: src/pages/Changelog.tsx:18
 msgid "Changelog"
 msgstr "बदलाव का"
 
-#: src/components/Header.tsx:96
-#: src/components/Header.tsx:363
+#: src/components/Header.tsx:94
+#: src/components/Header.tsx:362
 msgid "Charts"
 msgstr "चार्ट"
 
@@ -164,7 +168,7 @@ msgstr "क्लोन करें"
 msgid "Close"
 msgstr "बंद करें"
 
-#: src/components/GraphContextMenu.tsx:197
+#: src/components/GraphContextMenu.tsx:208
 msgid "Color"
 msgstr ""
 
@@ -217,11 +221,11 @@ msgstr "SVG कोड कॉपी करें"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:224
+#: src/pages/New.tsx:293
 msgid "Create"
 msgstr "बनाएँ"
 
-#: src/pages/New.tsx:137
+#: src/pages/New.tsx:168
 msgid "Create a New Flowchart"
 msgstr "एक नया आरेख बनाएँ"
 
@@ -261,9 +265,13 @@ msgstr "तारीख़"
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: src/pages/New.tsx:190
+#: src/pages/New.tsx:233
 msgid "Deleted when browser data is cleared"
 msgstr "ब्राउज़र डेटा साफ़ होने पर हटा दिया गया"
+
+#: src/pages/New.tsx:412
+msgid "Describe the flowchart you wish to create"
+msgstr "उस आरेख का वर्णन करें जिसे आप बनाना चाहते हैं"
 
 #: src/components/Tabs/EditLayoutTab.tsx:85
 msgid "Direction"
@@ -285,11 +293,6 @@ msgstr "क्या आप इसे डिलीट करना चाहत�
 #: src/pages/EditHosted.tsx:78
 msgid "Document"
 msgstr "दस्तावेज़"
-
-#: src/components/Header.tsx:116
-#: src/components/Header.tsx:369
-msgid "Documentation"
-msgstr "प्रलेखन"
 
 #: src/pages/LogIn.tsx:66
 msgid "Don't have an account?"
@@ -352,8 +355,8 @@ msgstr ""
 msgid "Editable"
 msgstr "संपादन योग्य"
 
-#: src/components/Header.tsx:88
-#: src/components/Header.tsx:357
+#: src/components/Header.tsx:86
+#: src/components/Header.tsx:356
 #: src/components/MobileTabToggle.tsx:21
 msgid "Editor"
 msgstr "संपादक"
@@ -387,8 +390,12 @@ msgstr "एक्सपोर्ट करें"
 msgid "Extra Large"
 msgstr ""
 
+#: src/pages/New.tsx:416
+msgid "Extract"
+msgstr "निकालना"
+
 #: src/components/Feedback.tsx:74
-#: src/components/Header.tsx:124
+#: src/components/Header.tsx:125
 #: src/components/Header.tsx:376
 msgid "Feedback"
 msgstr "फ़ीडबैक"
@@ -430,7 +437,7 @@ msgstr "ग्रिड"
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "ध्यान दें! इससे पहले कि आप अपना कैश क्लियर करें, याद रखें कि यह डॉक्यूमेंट क्लाउड में सेव नहीं किया गया है। "
 
-#: src/components/Header.tsx:105
+#: src/components/Header.tsx:103
 msgid "Help"
 msgstr "मदद"
 
@@ -465,9 +472,13 @@ msgstr ""
 msgid "Indenting creates an edge"
 msgstr "इंडेंटिंग एक बढ़त बनाता है"
 
-#: src/components/Header.tsx:139
+#: src/components/Header.tsx:140
 msgid "Info"
 msgstr "जानकारी"
+
+#: src/pages/New.tsx:411
+msgid "Instruct"
+msgstr "हिदायत"
 
 #: src/components/Settings.tsx:49
 msgid "Language"
@@ -518,9 +529,9 @@ msgstr "लिंक"
 msgid "Local Charts"
 msgstr "लोकल चार्ट"
 
-#: src/components/Header.tsx:199
+#: src/components/Header.tsx:200
 #: src/components/Header.tsx:432
-#: src/pages/New.tsx:204
+#: src/pages/New.tsx:273
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -548,6 +559,10 @@ msgstr "फ़्लोचार्ट फ़न प्रो के साथ �
 msgid "Medium"
 msgstr ""
 
+#: src/pages/New.tsx:401
+msgid "Method"
+msgstr ""
+
 #: src/lib/graphOptions.ts:51
 msgid "Monospace"
 msgstr "Monospace"
@@ -566,7 +581,7 @@ msgstr "म्यूज़ियम"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:141
+#: src/pages/New.tsx:172
 msgid "Name"
 msgstr "नाम"
 
@@ -574,8 +589,8 @@ msgstr "नाम"
 msgid "Need Help? <0>Check out our documentation.</0>"
 msgstr "मदद चाहिए? <0>हमारे दस्तावेज़ देखें।</0>"
 
-#: src/components/Header.tsx:79
-#: src/components/Header.tsx:351
+#: src/components/Header.tsx:77
+#: src/components/Header.tsx:350
 msgid "New"
 msgstr "नया"
 
@@ -588,7 +603,7 @@ msgstr "नई ईमेल"
 msgid "Next charge"
 msgstr "अगला चार्ज"
 
-#: src/components/GraphContextMenu.tsx:190
+#: src/components/GraphContextMenu.tsx:201
 msgid "Node"
 msgstr ""
 
@@ -620,14 +635,22 @@ msgstr ""
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
+#: src/pages/New.tsx:417
+msgid "Paste the information you wish to convert to a flowchart"
+msgstr "उस जानकारी को पेस्ट करें जिसे आप फ़्लोचार्ट में बदलना चाहते हैं"
+
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
 msgstr "प्लेबुक"
 
-#: src/components/Header.tsx:190
+#: src/components/Header.tsx:191
 #: src/components/Header.tsx:417
 msgid "Pricing"
 msgstr "मूल्य निर्धारण"
+
+#: src/pages/New.tsx:259
+msgid "Prompt"
+msgstr ""
 
 #: src/components/ShareDialog.tsx:312
 #: src/components/ShareDialog.tsx:335
@@ -715,7 +738,7 @@ msgstr "वापसी"
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
-#: src/components/Header.tsx:167
+#: src/components/Header.tsx:168
 #: src/components/Header.tsx:396
 #: src/pages/Roadmap.tsx:19
 msgid "Roadmap"
@@ -725,12 +748,12 @@ msgstr "रोडमैप"
 msgid "Save"
 msgstr "सहेजें"
 
-#: src/components/Header.tsx:174
+#: src/components/Header.tsx:175
 #: src/components/Header.tsx:401
 msgid "Settings"
 msgstr "सेटिंग"
 
-#: src/components/GraphContextMenu.tsx:247
+#: src/components/GraphContextMenu.tsx:266
 msgid "Shape"
 msgstr ""
 
@@ -752,7 +775,7 @@ msgstr "पूरे एक्सेस के साथ शेयर करे�
 msgid "Sign Up"
 msgstr "साइन अप"
 
-#: src/components/GraphContextMenu.tsx:302
+#: src/components/GraphContextMenu.tsx:329
 msgid "Size"
 msgstr ""
 
@@ -776,11 +799,12 @@ msgstr "अंतर"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "होस्ट किए गए फ़्लोचार्ट और नवीनतम शैलियों और सुविधाओं तक पहुँचने के लिए $3/माह या $30/वर्ष के लिए फ़्लोचार्ट.फ़न को प्रायोजित करें"
 
-#: src/pages/New.tsx:166
+#: src/pages/New.tsx:201
 msgid "Standard"
 msgstr "मानक"
 
 #: src/pages/Account.tsx:177
+#: src/pages/New.tsx:244
 msgid "Start"
 msgstr "शुरू"
 
@@ -797,11 +821,11 @@ msgstr "स्टेटस"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:171
+#: src/pages/New.tsx:210
 msgid "Stored in the cloud"
 msgstr "बादल में संग्रहित"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:230
 msgid "Stored on this computer"
 msgstr "इस कंप्यूटर पर संग्रहीत"
 
@@ -848,7 +872,7 @@ msgstr "सिंटेक्स"
 msgid "Syntax Reference"
 msgstr "वाक्य-विन्यास संदर्भ"
 
-#: src/pages/New.tsx:183
+#: src/pages/New.tsx:226
 msgid "Temporary"
 msgstr "अस्थायी"
 
@@ -893,7 +917,7 @@ msgstr "ऊपर से नीचे"
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
-#: src/pages/New.tsx:156
+#: src/pages/New.tsx:187
 msgid "Type"
 msgstr "प्रकार"
 
@@ -971,7 +995,7 @@ msgstr ""
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।"
 
-#: src/pages/New.tsx:212
+#: src/pages/New.tsx:281
 msgid "You already have a flowchart with this name."
 msgstr "आपके पास इस नाम का आरेख पहले से है।"
 
@@ -979,7 +1003,7 @@ msgstr "आपके पास इस नाम का आरेख पहले
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "किनारे बनाने के लिए आप टेक्स्ट को \"\\( \\)\" में भी रैप कर सकते हैं"
 
-#: src/pages/New.tsx:202
+#: src/pages/New.tsx:271
 msgid "You must log in to create a standard flowchart."
 msgstr "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।"
 

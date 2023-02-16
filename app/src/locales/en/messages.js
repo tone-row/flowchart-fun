@@ -19,6 +19,7 @@
     "Back To Editor": "Back To Editor",
     Background: "Background",
     "Become a Sponsor": "Become a Sponsor",
+    Blank: "Blank",
     Blog: "Blog",
     Border: "Border",
     "Bottom to Top": "Bottom to Top",
@@ -68,13 +69,14 @@
     Delete: "Delete",
     "Deleted when browser data is cleared":
       "Deleted when browser data is cleared",
+    "Describe the flowchart you wish to create":
+      "Describe the flowchart you wish to create",
     Direction: "Direction",
     Discard: "Discard",
     "Do you want to cancel your subscription?":
       "Do you want to cancel your subscription?",
     "Do you want to delete this?": "Do you want to delete this?",
     Document: "Document",
-    Documentation: "Documentation",
     "Don't have an account?": "Don't have an account?",
     Download: "Download",
     "Download JPG": "Download JPG",
@@ -100,6 +102,7 @@
     Excalidraw: "Excalidraw",
     Export: "Export",
     "Extra Large": "Extra Large",
+    Extract: "Extract",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
     "Follow Us": "Follow Us",
@@ -120,6 +123,7 @@
     Images: "Images",
     "Indenting creates an edge": "Indenting creates an edge",
     Info: "Info",
+    Instruct: "Instruct",
     Language: "Language",
     Large: "Large",
     Layout: "Layout",
@@ -139,6 +143,7 @@
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!",
     Medium: "Medium",
+    Method: "Method",
     Monospace: "Monospace",
     "More Layouts": "More Layouts",
     "More Themes and Fonts": "More Themes and Fonts",
@@ -157,10 +162,12 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
-    Normal: "Normal",
     "Open Customer Portal": "Open Customer Portal",
+    "Paste the information you wish to convert to a flowchart":
+      "Paste the information you wish to convert to a flowchart",
     Playbook: "Playbook",
     Pricing: "Pricing",
+    Prompt: "Prompt",
     Public: "Public",
     Random: "Random",
     "Read-only": "Read-only",
@@ -193,7 +200,6 @@
       "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "Share with Full Access, Edit-only, or View-only Permissions",
-    "Sign In": "Sign In",
     "Sign Up": "Sign Up",
     Size: "Size",
     Small: "Small",
@@ -204,6 +210,7 @@
     Spacing: "Spacing",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features",
+    Standard: "Standard",
     Start: "Start",
     "Static Share Links": "Static Share Links",
     Status: "Status",
@@ -270,8 +277,8 @@
       "You already have a flowchart with this name.",
     'You can also wrap text in "\\( \\)" to create an edge':
       'You can also wrap text in "\\( \\)" to create an edge',
-    "You must log in to create a normal flowchart.":
-      "You must log in to create a normal flowchart.",
+    "You must log in to create a standard flowchart.":
+      "You must log in to create a standard flowchart.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
     "Zoom In": "Zoom In",

@@ -19,6 +19,7 @@
     "Back To Editor": "편집기로 돌아가기",
     Background: "배경",
     "Become a Sponsor": "스폰서 되기",
+    Blank: "Blank",
     Blog: "블로그",
     Border: "Border",
     "Bottom to Top": "아래에서 위로",
@@ -67,12 +68,12 @@
     Date: "날짜",
     Delete: "삭제",
     "Deleted when browser data is cleared": "브라우저 데이터가 지워지면 삭제됨",
+    "Describe the flowchart you wish to create": "만들려는 다이어그램 설명",
     Direction: "방향",
     Discard: "버리다",
     "Do you want to cancel your subscription?": "구독을 취소하시겠습니까?",
     "Do you want to delete this?": "본 항목을 삭제하시겠습니까?",
     Document: "문서",
-    Documentation: "선적 서류 비치",
     "Don't have an account?": "계정이 없습니까?",
     Download: "다운로드",
     "Download JPG": "JPG 다운로드",
@@ -98,6 +99,7 @@
     Excalidraw: "Excalidraw",
     Export: "내보내기",
     "Extra Large": "Extra Large",
+    Extract: "발췌",
     Feedback: "피드백",
     "Fit Graph": "Fit Graph",
     "Follow Us": "팔로우하세요",
@@ -118,6 +120,7 @@
     Images: "Images",
     "Indenting creates an edge": "들여 쓰기는 가장자리를 만듭니다",
     Info: "정보",
+    Instruct: "지시하다",
     Language: "언어",
     Large: "Large",
     Layout: "레이아웃",
@@ -137,6 +140,7 @@
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Flowchart Fun Pro로 작업 흐름을 더 쉽게 만드세요. 지금 구독을 월 $3 또는 연간 $30에 불과합니다!",
     Medium: "Medium",
+    Method: "Method",
     Monospace: "Monospace",
     "More Layouts": "더 많은 레이아웃",
     "More Themes and Fonts": "더욱 많은 테마와 폰트",
@@ -155,10 +159,12 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
-    Normal: "일반",
     "Open Customer Portal": "고객 포털 열기",
+    "Paste the information you wish to convert to a flowchart":
+      "순서도로 변환하려는 정보를 붙여넣기",
     Playbook: "플레이북",
     Pricing: "가격",
+    Prompt: "Prompt",
     Public: "공용",
     Random: "무작위",
     "Read-only": "읽기 전용",
@@ -191,7 +197,6 @@
       "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "완전한 접근권, 편집 전용, 또는 읽기 전용 권한으로 공유하세요",
-    "Sign In": "로그인",
     "Sign Up": "가입",
     Size: "Size",
     Small: "Small",
@@ -202,6 +207,7 @@
     Spacing: "간격",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원",
+    Standard: "표준",
     Start: "시작",
     "Static Share Links": "스태틱 공유 링크",
     Status: "상태",
@@ -267,8 +273,8 @@
       "이 이름을 가진 다이어그램이 이미 있습니다.",
     'You can also wrap text in "\\( \\)" to create an edge':
       '텍스트를 "\\( \\)"로 감싸서 가장자리를 만들 수도 있습니다.',
-    "You must log in to create a normal flowchart.":
-      "일반 다이어그램을 만들려면 로그인해야 합니다.",
+    "You must log in to create a standard flowchart.":
+      "표준 다이어그램을 만들려면 로그인해야 합니다.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오.",
     "Zoom In": "Zoom In",

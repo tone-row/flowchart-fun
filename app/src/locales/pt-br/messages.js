@@ -20,6 +20,7 @@
     "Back To Editor": "Voltar ao editor",
     Background: "Fundo",
     "Become a Sponsor": "Torne-se um(a) patrocinador(a)",
+    Blank: "Blank",
     Blog: "Blog",
     Border: "Border",
     "Bottom to Top": "De baixo para cima",
@@ -69,13 +70,14 @@
     Delete: "Deletar",
     "Deleted when browser data is cleared":
       "Excluído quando os dados do navegador são apagados",
+    "Describe the flowchart you wish to create":
+      "Descreva o diagrama que você deseja criar",
     Direction: "Direção",
     Discard: "Descartar",
     "Do you want to cancel your subscription?":
       "Você deseja cancelar sua inscrição?",
     "Do you want to delete this?": "Você deseja deletar isso?",
     Document: "Documento",
-    Documentation: "Documentação",
     "Don't have an account?": "Não tem uma conta?",
     Download: "Baixar",
     "Download JPG": "Baixar JPG",
@@ -101,6 +103,7 @@
     Excalidraw: "Excalidraw",
     Export: "Exportar",
     "Extra Large": "Extra Large",
+    Extract: "Extrair",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
     "Follow Us": "Siga-nos",
@@ -121,6 +124,7 @@
     Images: "Images",
     "Indenting creates an edge": "O recuo cria um link",
     Info: "Informações",
+    Instruct: "Instruir",
     Language: "Idioma",
     Large: "Large",
     Layout: "Layout",
@@ -140,6 +144,7 @@
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Facilite seu fluxo de trabalho com o Flowchart Fun Pro - assine agora por apenas US$ 3/mês ou US$ 30/ano!",
     Medium: "Medium",
+    Method: "Method",
     Monospace: "Monospace",
     "More Layouts": "Mais Layouts",
     "More Themes and Fonts": "Mais Temas e Fontes",
@@ -158,10 +163,12 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, double, or solid borders":
       "Nodes can be styled with dashed, dotted, double, or solid borders",
-    Normal: "Normal",
     "Open Customer Portal": "Abra o portal do cliente",
+    "Paste the information you wish to convert to a flowchart":
+      "Cole as informações que deseja converter em um fluxograma",
     Playbook: "Cartilha",
     Pricing: "Preços",
+    Prompt: "Prompt",
     Public: "Público",
     Random: "Aleatório",
     "Read-only": "Somente leitura",
@@ -194,7 +201,6 @@
       "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Share with Full Access, Edit-only, or View-only Permissions":
       "Compartilhar com permissões de acesso total, somente edição ou somente visualização",
-    "Sign In": "Entrar",
     "Sign Up": "Inscreva-se",
     Size: "Size",
     Small: "Small",
@@ -205,6 +211,7 @@
     Spacing: "Espaçamento",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Patrocine flowchart.fun por US$ 3/mês ou US$30/ano para acessar fluxogramas hospedados e os mais novos estilos e recursos",
+    Standard: "Padrão",
     Start: "Início",
     "Static Share Links": "Links de compartilhamento estáticos",
     Status: "Status",
@@ -271,8 +278,8 @@
       "Você já tem um diagrama com este nome.",
     'You can also wrap text in "\\( \\)" to create an edge':
       'Você também pode quebrar o texto dentro de "\\( \\)" para criar um link',
-    "You must log in to create a normal flowchart.":
-      "Você deve fazer login para criar um diagrama normal.",
+    "You must log in to create a standard flowchart.":
+      "Você deve efetuar login para criar um diagrama padrão.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um(a) patrocinador(a).",
     "Zoom In": "Zoom In",
