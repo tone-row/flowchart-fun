@@ -194,7 +194,7 @@ const New = memo(function New({
             }}
             asChild
           >
-            <div className="grid gap-4 sm:grid-cols-2 justify-center justify-self-center focus-within:ring-2 ring-neutral-200 ring-offset-2 rounded">
+            <div className="grid gap-4 sm:grid-cols-2 justify-center justify-self-center focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
               <TypeToggle
                 value="regular"
                 title={t`Standard`}
@@ -240,7 +240,7 @@ const New = memo(function New({
             onValueChange={(value) => setStart(value as "blank" | "prompt")}
             name="start"
           >
-            <div className="flex justify-start gap-3 justify-self-start focus-within:ring-2 ring-neutral-200 ring-offset-2 rounded">
+            <div className="flex justify-start gap-3 justify-self-start focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
               <SmallTypeToggle
                 title={t`Blank`}
                 value="blank"
@@ -396,7 +396,7 @@ function PromptSubmenu() {
         name="method"
         onValueChange={(value) => setMethod(value as "instruct" | "extract")}
       >
-        <div className="flex justify-start gap-3 justify-self-start focus-within:ring-2 ring-neutral-200 ring-offset-2 rounded">
+        <div className="flex justify-start gap-3 justify-self-start focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
           <PromptSubmenuRadioItem
             value="instruct"
             title={t`Instruct`}
@@ -433,8 +433,12 @@ function PromptSubmenuRadioItem({
         data-testid={rest.value}
         className="bg-neutral-100 border-neutral-100 p-4 rounded grid justify-start text-left gap-1 dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400 max-w-[300px]"
       >
-        <span className="font-bold text-neutral-700 mb-1">{title}</span>
-        <div className="text-sm text-neutral-500">{description}</div>
+        <span className="font-bold text-neutral-700 dark:text-neutral-100 mb-1">
+          {title}
+        </span>
+        <div className="text-sm text-neutral-500 dark:text-neutral-300">
+          {description}
+        </div>
       </button>
     </RadioGroup.Item>
   );
@@ -450,7 +454,7 @@ function Textarea({
   return (
     <textarea
       data-testid="prompt-entry-textarea"
-      className={`bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded p-2 text-sm text-neutral-700 dark:text-neutral-300 placeholder-neutral-500 dark:placeholder-neutral-400 ${className}`}
+      className={`bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 focus:border-neutral-400 dark:focus:border-neutral-600 rounded p-2 text-sm text-neutral-700 dark:text-neutral-300 placeholder-neutral-400 dark:placeholder-neutral-400 ${className}`}
       {...rest}
     />
   );
