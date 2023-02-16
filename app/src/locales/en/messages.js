@@ -16,6 +16,7 @@
     ],
     Appearance: "Appearance",
     Attributes: "Attributes",
+    "Auto-Layouts": "Auto-Layouts",
     "Back To Editor": "Back To Editor",
     Background: "Background",
     "Become a Sponsor": "Become a Sponsor",
@@ -57,6 +58,8 @@
     "Copy PNG Image": "Copy PNG Image",
     "Copy SVG Code": "Copy SVG Code",
     Create: "Create",
+    "Create Flowcharts from a Prompt with AI":
+      "Create Flowcharts from a Prompt with AI",
     "Create a New Flowchart": "Create a New Flowchart",
     Created: "Created",
     "Creating an edge between two nodes is done by indenting the second node below the first":
@@ -85,7 +88,6 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "Duplicate",
-    "Dynamic Share Links": "Dynamic Share Links",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -99,6 +101,7 @@
     Eggs: "Eggs",
     Email: "Email",
     "Enter a title": "Enter a title",
+    "Everything in Free": "Everything in Free",
     Excalidraw: "Excalidraw",
     Export: "Export",
     "Extra Large": "Extra Large",
@@ -145,8 +148,6 @@
     Medium: "Medium",
     Method: "Method",
     Monospace: "Monospace",
-    "More Layouts": "More Layouts",
-    "More Themes and Fonts": "More Themes and Fonts",
     Museum: "Museum",
     Name: "Name",
     "Need Help? <0>Check out our documentation.</0>":
@@ -160,11 +161,14 @@
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
-    "Nodes can be styled with dashed, dotted, double, or solid borders":
-      "Nodes can be styled with dashed, dotted, double, or solid borders",
+    "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
+      "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
+    "One-time Share Links": "One-time Share Links",
     "Open Customer Portal": "Open Customer Portal",
     "Paste the information you wish to convert to a flowchart":
       "Paste the information you wish to convert to a flowchart",
+    Permalinks: "Permalinks",
+    "Persistent Flowcharts": "Persistent Flowcharts",
     Playbook: "Playbook",
     Pricing: "Pricing",
     Prompt: "Prompt",
@@ -195,11 +199,8 @@
     Save: "Save",
     Settings: "Settings",
     Shape: "Shape",
-    "Shape Libraries": "Shape Libraries",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
       "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
-    "Share with Full Access, Edit-only, or View-only Permissions":
-      "Share with Full Access, Edit-only, or View-only Permissions",
     "Sign Up": "Sign Up",
     Size: "Size",
     Small: "Small",
@@ -212,7 +213,6 @@
       "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features",
     Standard: "Standard",
     Start: "Start",
-    "Static Share Links": "Static Share Links",
     Status: "Status",
     "Store any data associated to a node":
       "Store any data associated to a node",
@@ -231,6 +231,7 @@
     Syntax: "Syntax",
     "Syntax Reference": "Syntax Reference",
     Temporary: "Temporary",
+    "Temporary Flowcharts": "Temporary Flowcharts",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -249,8 +250,6 @@
     Unfreeze: "Unfreeze",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
-    "Unlimited Hosted Charts": "Unlimited Hosted Charts",
-    "Unlimited Local Charts": "Unlimited Local Charts",
     "Update Email": "Update Email",
     Updated: "Updated",
     "Use classes to group nodes": "Use classes to group nodes",

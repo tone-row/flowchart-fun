@@ -32,28 +32,43 @@ export default function Pricing() {
               className={styles.Free}
               title="Free"
               features={[
-                t`Unlimited Local Charts`,
+                t`Temporary Flowcharts`,
                 t`Image Export`,
-                t`Shape Libraries`,
-                t`Static Share Links`,
+                `8 ${t`Auto-Layouts`}`,
+                t`One-time Share Links`,
               ]}
             />
             <Plan
               className={styles.BecomeAPro}
               title="Flowchart Fun Pro"
               features={[
-                t`Unlimited Local Charts`,
-                t`Image Export`,
-                t`Shape Libraries`,
-                t`Static Share Links`,
-                t`Unlimited Hosted Charts`,
-                t`Dynamic Share Links`,
-                t`More Layouts`,
-                t`More Themes and Fonts`,
-                t`Share with Full Access, Edit-only, or View-only Permissions`,
+                t`Everything in Free`,
+                t`Persistent Flowcharts`,
+                `13 ${t`Auto-Layouts`}`,
+                t`Permalinks`,
+                t`Custom Sharing Options`,
+                t`Create Flowcharts from a Prompt with AI`,
               ]}
               right={<SignUpForm />}
             />
+          </div>
+        </Box>
+      </Box>
+      <Box as="section" px={4}>
+        <Box className={styles.featureBlock}>
+          <Box className={styles.text} gap={3}>
+            <Type size={3} weight="700">
+              <Trans>Persistent Flowcharts</Trans>
+            </Type>
+            <Type size={1}>
+              <Trans>
+                With the ability to create unlimited hosted charts, you can
+                access and work on your flowcharts from any device, anywhere.
+              </Trans>
+            </Type>
+          </Box>
+          <div className="right">
+            <img src="/images/iphone_hand.svg" alt="Hand Holding Iphone" />
           </div>
         </Box>
       </Box>
@@ -73,24 +88,6 @@ export default function Pricing() {
           </Box>
           <div className="right">
             <img src="/images/whiteboard_lady.svg" alt="Hand Holding Iphone" />
-          </div>
-        </Box>
-      </Box>
-      <Box as="section" px={4}>
-        <Box className={styles.featureBlock}>
-          <Box className={styles.text} gap={3}>
-            <Type size={3} weight="700">
-              <Trans>Hosted Charts</Trans>
-            </Type>
-            <Type size={1}>
-              <Trans>
-                With the ability to create unlimited hosted charts, you can
-                access and work on your flowcharts from any device, anywhere.
-              </Trans>
-            </Type>
-          </Box>
-          <div className="right">
-            <img src="/images/iphone_hand.svg" alt="Hand Holding Iphone" />
           </div>
         </Box>
       </Box>

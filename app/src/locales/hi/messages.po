@@ -29,7 +29,7 @@ msgstr "(कॉलन से पहले एक लेबल बनाता �
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
 msgstr "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों."
 
-#: src/pages/New.tsx:218
+#: src/pages/New.tsx:217
 msgid "Accessible from any device"
 msgstr "किसी भी उपकरण से पहुँचा जा सकता है"
 
@@ -59,6 +59,11 @@ msgstr "दिखावट"
 msgid "Attributes"
 msgstr ""
 
+#: src/pages/Pricing.tsx:37
+#: src/pages/Pricing.tsx:47
+msgid "Auto-Layouts"
+msgstr "ऑटो लेआउट"
+
 #: src/components/Feedback.tsx:129
 msgid "Back To Editor"
 msgstr "संपादक पर वापस जाएं"
@@ -72,7 +77,7 @@ msgstr "पृष्ठभूमि"
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
-#: src/pages/New.tsx:254
+#: src/pages/New.tsx:253
 msgid "Blank"
 msgstr ""
 
@@ -131,7 +136,7 @@ msgstr "चार्ट"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
 
-#: src/pages/Pricing.tsx:67
+#: src/pages/Pricing.tsx:82
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "आप अपने चार्ट में  फुल एक्सेस , एडिट ओनली या केवल देखने की अनुमतियों के साथ साझा करना चुनकर यह नियंत्रित कर सकते हैं कि कौन आपके कार्य में परिवर्तन कर सकता है"
 
@@ -221,11 +226,15 @@ msgstr "SVG कोड कॉपी करें"
 #: src/pages/Charts.tsx:152
 #: src/pages/Charts.tsx:313
 #: src/pages/Charts.tsx:369
-#: src/pages/New.tsx:293
+#: src/pages/New.tsx:292
 msgid "Create"
 msgstr "बनाएँ"
 
-#: src/pages/New.tsx:168
+#: src/pages/Pricing.tsx:50
+msgid "Create Flowcharts from a Prompt with AI"
+msgstr "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं"
+
+#: src/pages/New.tsx:167
 msgid "Create a New Flowchart"
 msgstr "एक नया आरेख बनाएँ"
 
@@ -237,7 +246,8 @@ msgstr "बनाया गया"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:49
+#: src/pages/Pricing.tsx:79
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
@@ -265,11 +275,11 @@ msgstr "तारीख़"
 msgid "Delete"
 msgstr "हटाएँ"
 
-#: src/pages/New.tsx:233
+#: src/pages/New.tsx:232
 msgid "Deleted when browser data is cleared"
 msgstr "ब्राउज़र डेटा साफ़ होने पर हटा दिया गया"
 
-#: src/pages/New.tsx:412
+#: src/pages/New.tsx:411
 msgid "Describe the flowchart you wish to create"
 msgstr "उस आरेख का वर्णन करें जिसे आप बनाना चाहते हैं"
 
@@ -323,10 +333,6 @@ msgstr ""
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
 
-#: src/pages/Pricing.tsx:50
-msgid "Dynamic Share Links"
-msgstr "डायनामिक शेयर लिंक्स"
-
 #: src/components/SyntaxReference.tsx:153
 msgid "Edge ID, Classes, Attributes"
 msgstr ""
@@ -375,6 +381,10 @@ msgstr "ईमेल"
 msgid "Enter a title"
 msgstr "एक शीर्षक दर्ज करें"
 
+#: src/pages/Pricing.tsx:45
+msgid "Everything in Free"
+msgstr "फ्री प्लान में सब कुछ"
+
 #: src/lib/graphOptions.ts:50
 msgid "Excalidraw"
 msgstr "Excalidraw"
@@ -390,7 +400,7 @@ msgstr "एक्सपोर्ट करें"
 msgid "Extra Large"
 msgstr ""
 
-#: src/pages/New.tsx:416
+#: src/pages/New.tsx:415
 msgid "Extract"
 msgstr "निकालना"
 
@@ -451,7 +461,6 @@ msgstr "होम"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Charts.tsx:724
-#: src/pages/Pricing.tsx:83
 msgid "Hosted Charts"
 msgstr "होस्ट किए गए चार्ट"
 
@@ -460,7 +469,6 @@ msgid "ID's"
 msgstr ""
 
 #: src/pages/Pricing.tsx:36
-#: src/pages/Pricing.tsx:46
 msgid "Image Export"
 msgstr "छवि निर्यात"
 
@@ -476,7 +484,7 @@ msgstr "इंडेंटिंग एक बढ़त बनाता है"
 msgid "Info"
 msgstr "जानकारी"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:410
 msgid "Instruct"
 msgstr "हिदायत"
 
@@ -531,7 +539,7 @@ msgstr "लोकल चार्ट"
 
 #: src/components/Header.tsx:200
 #: src/components/Header.tsx:432
-#: src/pages/New.tsx:273
+#: src/pages/New.tsx:272
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -559,7 +567,7 @@ msgstr "फ़्लोचार्ट फ़न प्रो के साथ �
 msgid "Medium"
 msgstr ""
 
-#: src/pages/New.tsx:401
+#: src/pages/New.tsx:400
 msgid "Method"
 msgstr ""
 
@@ -567,21 +575,13 @@ msgstr ""
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/pages/Pricing.tsx:51
-msgid "More Layouts"
-msgstr "ज़्यादा लेआउट"
-
-#: src/pages/Pricing.tsx:52
-msgid "More Themes and Fonts"
-msgstr "और अधिक थीम और फॉन्ट"
-
 #: src/lib/graphOptions.ts:58
 msgid "Museum"
 msgstr "म्यूज़ियम"
 
 #: src/pages/Charts.tsx:593
 #: src/pages/Charts.tsx:629
-#: src/pages/New.tsx:172
+#: src/pages/New.tsx:171
 msgid "Name"
 msgstr "नाम"
 
@@ -628,16 +628,29 @@ msgid "Node Shapes"
 msgstr ""
 
 #: src/components/SyntaxReference.tsx:305
-msgid "Nodes can be styled with dashed, dotted, double, or solid borders"
+msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr ""
+
+#: src/pages/Pricing.tsx:38
+msgid "One-time Share Links"
+msgstr "वन-टाइम शेयर लिंक"
 
 #: src/pages/Account.tsx:247
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
-#: src/pages/New.tsx:417
+#: src/pages/New.tsx:416
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "उस जानकारी को पेस्ट करें जिसे आप फ़्लोचार्ट में बदलना चाहते हैं"
+
+#: src/pages/Pricing.tsx:48
+msgid "Permalinks"
+msgstr "Permalinks"
+
+#: src/pages/Pricing.tsx:46
+#: src/pages/Pricing.tsx:61
+msgid "Persistent Flowcharts"
+msgstr "लगातार आरेख"
 
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
@@ -648,7 +661,7 @@ msgstr "प्लेबुक"
 msgid "Pricing"
 msgstr "मूल्य निर्धारण"
 
-#: src/pages/New.tsx:259
+#: src/pages/New.tsx:258
 msgid "Prompt"
 msgstr ""
 
@@ -757,18 +770,9 @@ msgstr "सेटिंग"
 msgid "Shape"
 msgstr ""
 
-#: src/pages/Pricing.tsx:37
-#: src/pages/Pricing.tsx:47
-msgid "Shape Libraries"
-msgstr "शेप लाइब्रेरी"
-
 #: src/components/SyntaxReference.tsx:264
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
-
-#: src/pages/Pricing.tsx:53
-msgid "Share with Full Access, Edit-only, or View-only Permissions"
-msgstr "पूरे एक्सेस के साथ शेयर करें , सिर्फ एडिट करें , या व्यू ओनली की अनुमति"
 
 #: src/components/SignUpForm.tsx:175
 #: src/pages/LogIn.tsx:71
@@ -799,19 +803,14 @@ msgstr "अंतर"
 msgid "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features"
 msgstr "होस्ट किए गए फ़्लोचार्ट और नवीनतम शैलियों और सुविधाओं तक पहुँचने के लिए $3/माह या $30/वर्ष के लिए फ़्लोचार्ट.फ़न को प्रायोजित करें"
 
-#: src/pages/New.tsx:201
+#: src/pages/New.tsx:200
 msgid "Standard"
 msgstr "मानक"
 
 #: src/pages/Account.tsx:177
-#: src/pages/New.tsx:244
+#: src/pages/New.tsx:243
 msgid "Start"
 msgstr "शुरू"
-
-#: src/pages/Pricing.tsx:38
-#: src/pages/Pricing.tsx:48
-msgid "Static Share Links"
-msgstr "स्टैटिक शेयर लिंक्स"
 
 #: src/pages/Account.tsx:156
 msgid "Status"
@@ -821,15 +820,15 @@ msgstr "स्टेटस"
 msgid "Store any data associated to a node"
 msgstr ""
 
-#: src/pages/New.tsx:210
+#: src/pages/New.tsx:209
 msgid "Stored in the cloud"
 msgstr "बादल में संग्रहित"
 
-#: src/pages/New.tsx:230
+#: src/pages/New.tsx:229
 msgid "Stored on this computer"
 msgstr "इस कंप्यूटर पर संग्रहीत"
 
-#: src/pages/Pricing.tsx:100
+#: src/pages/Pricing.tsx:97
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन"
 
@@ -872,9 +871,13 @@ msgstr "सिंटेक्स"
 msgid "Syntax Reference"
 msgstr "वाक्य-विन्यास संदर्भ"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:225
 msgid "Temporary"
 msgstr "अस्थायी"
+
+#: src/pages/Pricing.tsx:35
+msgid "Temporary Flowcharts"
+msgstr "अस्थायी आरेख"
 
 #: src/components/SyntaxReference.tsx:276
 msgid "Text Sizes"
@@ -917,7 +920,7 @@ msgstr "ऊपर से नीचे"
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:186
 msgid "Type"
 msgstr "प्रकार"
 
@@ -929,15 +932,6 @@ msgstr "अनफ़्रीज़"
 #: src/components/SyntaxReference.tsx:103
 msgid "Unique text value to identify a node"
 msgstr ""
-
-#: src/pages/Pricing.tsx:49
-msgid "Unlimited Hosted Charts"
-msgstr "असीमित होस्टेड चार्ट"
-
-#: src/pages/Pricing.tsx:35
-#: src/pages/Pricing.tsx:45
-msgid "Unlimited Local Charts"
-msgstr "असीमित लोकल चार्ट"
 
 #: src/pages/Account.tsx:200
 msgid "Update Email"
@@ -991,11 +985,11 @@ msgstr "आप हमारे साथ क्या शेयर करना 
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Pricing.tsx:86
+#: src/pages/Pricing.tsx:64
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।"
 
-#: src/pages/New.tsx:281
+#: src/pages/New.tsx:280
 msgid "You already have a flowchart with this name."
 msgstr "आपके पास इस नाम का आरेख पहले से है।"
 
@@ -1003,7 +997,7 @@ msgstr "आपके पास इस नाम का आरेख पहले
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "किनारे बनाने के लिए आप टेक्स्ट को \"\\( \\)\" में भी रैप कर सकते हैं"
 
-#: src/pages/New.tsx:271
+#: src/pages/New.tsx:270
 msgid "You must log in to create a standard flowchart."
 msgstr "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।"
 
