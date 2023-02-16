@@ -112,9 +112,9 @@ const New = memo(function New({
   const createDisabled = !name || tryingToCreateRegular || alreadyUsedName;
 
   return (
-    <div className="h-full grid content-start pt-16 md:justify-center">
+    <div className="h-full pt-16">
       <form
-        className="grid gap-7 px-4 w-full max-w-[580px]"
+        className="grid gap-7 px-4 w-full max-w-[580px] mx-auto"
         onSubmit={(e) => {
           e.preventDefault();
           if (customerIsLoading || !checkedSession) return;
@@ -195,7 +195,7 @@ const New = memo(function New({
             }}
             asChild
           >
-            <div className="grid gap-4 sm:grid-cols-2 justify-center justify-self-center focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
+            <div className="grid gap-4 sm:grid-cols-2 focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
               <TypeToggle
                 value="regular"
                 title={t`Standard`}
@@ -310,7 +310,7 @@ function TypeToggle({
 } & Parameters<typeof RadioGroup.Item>[0]) {
   return (
     <RadioGroup.Item {...rest} asChild>
-      <button className="bg-neutral-100 border-neutral-100 p-2 py-4 sm:p-3 sm:py-6 rounded grid justify-items-center content-center gap-2 dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400 max-w-[300px]">
+      <button className="bg-neutral-100 border-neutral-100 p-2 py-4 sm:p-3 sm:py-6 rounded grid justify-items-center content-center gap-2 dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400">
         <span className="text-2xl mb-3">{title}</span>
         {icon}
         <div className="mt-5 text-center grid gap-1 justify-items-center pb-3">
