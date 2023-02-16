@@ -146,17 +146,41 @@ export function useOrderHistory(customerId?: string, subscriptionId?: string) {
   );
 }
 
+type MakeChartArgs = {
+  name: string;
+  user_id: string;
+  chart?: string;
+} & ({} | { fromPrompt: true; prompt: string; method: "instruct" | "extract" });
+
 export async function makeChart({
   name,
   user_id,
   chart,
-}: {
-  name: string;
-  user_id: string;
-  chart?: string;
-}) {
+  ...rest
+}: MakeChartArgs) {
   if (!supabase) return;
   const defaultText = getDefaultChart();
+
+  if ("fromPrompt" in rest && rest.fromPrompt) {
+    // get supabase session
+    const { data } = await supabase.auth.getSession();
+    if (!data.session) throw new Error("No session");
+
+    const accessToken = data.session.access_token;
+
+    const response = await fetch(`/api/prompt/${rest.method}`, {
+      method: "post",
+      body: JSON.stringify({ prompt: rest.prompt }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    const result = await response.json();
+
+    if ("chart" in result) chart = result["chart"] as string;
+  }
 
   return await supabase
     .from("user_charts")

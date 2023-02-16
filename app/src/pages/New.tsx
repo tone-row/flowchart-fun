@@ -3,7 +3,16 @@ import * as RadioGroup from "@radix-ui/react-radio-group";
 import { Session } from "@supabase/gotrue-js";
 import { format } from "date-fns";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { Check, CircleNotch, Clock, TreeStructure } from "phosphor-react";
+import {
+  ChatCenteredDots,
+  ChatTeardropText,
+  Check,
+  CircleNotch,
+  Clock,
+  Plus,
+  Robot,
+  TreeStructure,
+} from "phosphor-react";
 import {
   memo,
   ReactNode,
@@ -81,6 +90,7 @@ const New = memo(function New({
   const [type, setType] = useState<"regular" | "local">(
     validCustomer ? "regular" : "local"
   );
+  const [start, setStart] = useState<"blank" | "prompt">("blank");
 
   // Boilerplate to create a new chart
   const { mutate, isLoading } = useMutation("makeChart", makeChart, {
@@ -105,7 +115,7 @@ const New = memo(function New({
   return (
     <div className="h-full grid content-start pt-16 md:justify-center">
       <form
-        className="grid gap-7 px-4 w-full"
+        className="grid gap-7 px-4 w-full max-w-[580px]"
         onSubmit={(e) => {
           e.preventDefault();
           if (customerIsLoading || !checkedSession) return;
@@ -118,11 +128,32 @@ const New = memo(function New({
           switch (type) {
             case "regular": {
               if (!userId) return;
-              mutate({
-                name,
-                user_id: userId,
-                chart: templateText ?? defaultDoc,
-              });
+
+              const chart = templateText ?? defaultDoc;
+
+              // If the user is starting with a prompt, we need to get the results
+              if (start === "prompt") {
+                const formData = new FormData(e.currentTarget);
+                const prompt = formData.get("prompt") as string;
+                const method = formData.get("method") as "instruct" | "extract";
+                if (!prompt || !method) return;
+
+                mutate({
+                  name,
+                  user_id: userId,
+                  chart,
+                  prompt,
+                  method,
+                  fromPrompt: true,
+                });
+              } else {
+                mutate({
+                  name,
+                  user_id: userId,
+                  chart,
+                });
+              }
+
               break;
             }
             case "local": {
@@ -138,31 +169,34 @@ const New = memo(function New({
           <Trans>Create a New Flowchart</Trans>
         </h3>
         <div className="grid gap-2 w-full">
-          <span className="text-neutral-500 text-sm">
+          <SmallLabel>
             <Trans>Name</Trans>
-          </span>
+          </SmallLabel>
           <AutoFocusInput
             type="text"
             name="name"
             value={name}
             autoComplete="off"
             onChange={(e) => setName(e.target.value)}
-            className="w-full text-2xl mb-3 border-b-2 border-neutral-300 p-1 rounded-tr rounded-tl dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700 rounded-none focus:bg-neutral-50 dark:focus:bg-neutral-800"
+            className="w-full text-2xl mb-2 border-b-2 border-neutral-300 p-1 rounded-tr rounded-tl dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700 rounded-none focus:bg-neutral-50 dark:focus:bg-neutral-800"
             placeholder="Untitled"
           />
           <NameLabel name={safeName} hide={!showWarning} />
         </div>
         <div className="grid gap-2 w-full">
-          <span className="text-neutral-500 text-sm">
+          <SmallLabel>
             <Trans>Type</Trans>
-          </span>
+          </SmallLabel>
           <RadioGroup.Root
             value={type}
             name="type"
-            onValueChange={(value) => setType(value as "regular" | "local")}
+            onValueChange={(value) => {
+              setType(value as "regular" | "local");
+              if (value === "local") setStart("blank");
+            }}
             asChild
           >
-            <div className="grid gap-4 sm:grid-cols-2 justify-center justify-self-center">
+            <div className="grid gap-4 sm:grid-cols-2 justify-center justify-self-center focus-within:ring-2 ring-neutral-200 ring-offset-2 rounded">
               <TypeToggle
                 value="regular"
                 title={t`Standard`}
@@ -198,6 +232,32 @@ const New = memo(function New({
             </div>
           </RadioGroup.Root>
         </div>
+        <div className="grid gap-2 w-full">
+          <SmallLabel>
+            <Trans>Start</Trans>
+          </SmallLabel>
+          <RadioGroup.Root
+            asChild
+            value={start}
+            onValueChange={(value) => setStart(value as "blank" | "prompt")}
+            name="start"
+          >
+            <div className="flex justify-start gap-3 justify-self-start focus-within:ring-2 ring-neutral-200 ring-offset-2 rounded">
+              <SmallTypeToggle
+                title={t`Blank`}
+                value="blank"
+                icon={<Plus size={24} weight="thin" />}
+              />
+              <SmallTypeToggle
+                title={t`Prompt`}
+                value="prompt"
+                icon={<ChatTeardropText size={24} weight="thin" />}
+                disabled={type !== "regular"}
+              />
+            </div>
+          </RadioGroup.Root>
+          {start === "prompt" && <PromptSubmenu />}
+        </div>
         {tryingToCreateRegular && (
           <div className="justify-items-center grid">
             <Warning>
@@ -217,7 +277,7 @@ const New = memo(function New({
         )}
         <button
           type="submit"
-          className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-8 mb-4"
+          className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-4 mb-8"
           disabled={createDisabled}
         >
           {isLoading ? (
@@ -249,6 +309,24 @@ function TypeToggle({
         <div className="mt-5 text-center grid gap-1 justify-items-center pb-3">
           {description}
         </div>
+      </button>
+    </RadioGroup.Item>
+  );
+}
+
+function SmallTypeToggle({
+  title,
+  icon,
+  ...rest
+}: {
+  title: string;
+  icon: ReactNode;
+} & Parameters<typeof RadioGroup.Item>[0]) {
+  return (
+    <RadioGroup.Item {...rest} asChild>
+      <button className="bg-neutral-100 border-neutral-100 px-6 pl-5 py-3 rounded dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400 flex gap-3 items-center disabled:opacity-50 disabled:cursor-not-allowed">
+        {icon}
+        <span className="text-xl">{title}</span>
       </button>
     </RadioGroup.Item>
   );
@@ -289,4 +367,89 @@ function AutoFocusInput(
 
 function getDefaultNewTitle() {
   return format(new Date(), "yyyy-MM-dd_HH-mm");
+}
+
+function SmallLabel({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <span className={`text-neutral-500 text-sm ${className}`}>{children}</span>
+  );
+}
+
+const placeholders: Record<"instruct" | "extract", string> = {
+  instruct: `The stages of the water cycle.`,
+  extract: `Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.`,
+};
+
+function PromptSubmenu() {
+  const [method, setMethod] = useState<"instruct" | "extract">("instruct");
+  return (
+    <>
+      <SmallLabel className="mt-3">
+        <Trans>Method</Trans>
+      </SmallLabel>
+      <RadioGroup.Root
+        value={method}
+        name="method"
+        onValueChange={(value) => setMethod(value as "instruct" | "extract")}
+      >
+        <div className="flex justify-start gap-3 justify-self-start focus-within:ring-2 ring-neutral-200 ring-offset-2 rounded">
+          <PromptSubmenuRadioItem
+            value="instruct"
+            title={t`Instruct`}
+            description={t`Describe the flowchart you would like created`}
+          />
+          <PromptSubmenuRadioItem
+            value="extract"
+            title={t`Extract`}
+            description={t`Paste the information you would like to be visualized`}
+          />
+        </div>
+      </RadioGroup.Root>
+      <Textarea
+        className="resize-none mt-2"
+        rows={6}
+        name="prompt"
+        placeholder={placeholders[method]}
+      />
+    </>
+  );
+}
+
+function PromptSubmenuRadioItem({
+  title,
+  description,
+  ...rest
+}: {
+  title: string;
+  description: ReactNode;
+} & Parameters<typeof RadioGroup.Item>[0]) {
+  return (
+    <RadioGroup.Item {...rest} asChild>
+      <button className="bg-neutral-100 border-neutral-100 p-4 rounded grid justify-start text-left gap-1 dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400 max-w-[300px]">
+        <span className="font-bold text-neutral-700 mb-1">{title}</span>
+        <div className="text-sm text-neutral-500">{description}</div>
+      </button>
+    </RadioGroup.Item>
+  );
+}
+
+function Textarea({
+  className = "",
+  ...rest
+}: React.DetailedHTMLProps<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+> & { className?: string }) {
+  return (
+    <textarea
+      className={`bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded p-2 text-sm text-neutral-700 dark:text-neutral-300 placeholder-neutral-500 dark:placeholder-neutral-400 ${className}`}
+      {...rest}
+    />
+  );
 }
