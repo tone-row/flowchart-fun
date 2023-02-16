@@ -21,6 +21,11 @@
   justify-content: center;
 }
 
+.planLeftRight {
+  display: grid;
+  gap: calc(var(--spacer-px) * 4);
+}
+
 @media screen and (min-width: 800px) {
   .banner .container {
     text-align: left;
@@ -54,6 +59,7 @@
 
   .planLeftRight {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: calc(var(--spacer-px) * 6);
   }
 }
 
@@ -170,9 +176,4 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.planLeftRight {
-  display: grid;
-  gap: calc(var(--spacer-px) * 4);
 }

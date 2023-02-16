@@ -303,12 +303,12 @@ export function SyntaxReference() {
               </h2>
               <p>
                 <Trans>
-                  Nodes can be styled with dashed, dotted, double, or solid
-                  borders
+                  Nodes can be styled with dashed, dotted, or double. Borders
+                  can also be removed with border-none.
                 </Trans>
               </p>
               <CodeExample
-                code={`A <span data-highlight>.dashed</span>\nB <span data-highlight>.dotted</span>\nC <span data-highlight>.double</span>\nD`}
+                code={`A <span data-highlight>.border-dashed</span>\nB <span data-highlight>.border-dotted</span>\nC <span data-highlight>.border-double</span>\nD <span data-highlight>.border-none</span>`}
                 src="13"
               />
             </section>

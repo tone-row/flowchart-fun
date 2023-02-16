@@ -17,9 +17,11 @@
     ],
     Appearance: "Erscheinungsbild",
     Attributes: "Attributes",
+    "Auto-Layouts": "Automatische Layouts",
     "Back To Editor": "Zurück zum Editor",
     Background: "Hintergrund",
     "Become a Sponsor": "Werden Sie zum Sponsoren",
+    Blank: "Blank",
     Blog: "Blog",
     Border: "Border",
     "Bottom to Top": "Von unten nach oben",
@@ -57,6 +59,8 @@
     "Copy PNG Image": "PNG-Bild kopieren",
     "Copy SVG Code": "Kopieren Sie den SVG-Code",
     Create: "Erstellen",
+    "Create Flowcharts from a Prompt with AI":
+      "Erstellen Sie Diagramme aus einer Eingabeaufforderung mit KI",
     "Create a New Flowchart": "Erstellen Sie ein neues Diagramm",
     Created: "Erstellt",
     "Creating an edge between two nodes is done by indenting the second node below the first":
@@ -69,13 +73,14 @@
     Delete: "Löschen",
     "Deleted when browser data is cleared":
       "Wird gelöscht, wenn Browserdaten gelöscht werden",
+    "Describe the flowchart you wish to create":
+      "Beschreiben Sie das Diagramm, das Sie erstellen möchten",
     Direction: "Richtung",
     Discard: "Verwerfen",
     "Do you want to cancel your subscription?":
       "Möchten Sie Ihr Abonnement kündigen?",
     "Do you want to delete this?": "Möchten Sie dies löschen?",
     Document: "Document",
-    Documentation: "Dokumentation",
     "Don't have an account?": "Sie haben kein Konto?",
     Download: "Herunterladen",
     "Download JPG": "JPG herunterladen",
@@ -84,7 +89,6 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "Duplizieren",
-    "Dynamic Share Links": "Dynamische Freigabelinks",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -98,9 +102,11 @@
     Eggs: "Eier",
     Email: "E-Mail",
     "Enter a title": "Titel eingeben",
+    "Everything in Free": "Alles im kostenlosen Plan",
     Excalidraw: "Excalidraw",
     Export: "Exportieren",
     "Extra Large": "Extra Large",
+    Extract: "Extrakt",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
     "Follow Us": "Folgen Sie uns",
@@ -121,6 +127,7 @@
     Images: "Images",
     "Indenting creates an edge": "Durch das Einrücken entsteht eine Kante",
     Info: "Info",
+    Instruct: "Anweisen",
     Language: "Sprache",
     Large: "Large",
     Layout: "Layout",
@@ -140,9 +147,8 @@
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Vereinfachen Sie Ihren Arbeitsablauf mit Flowchart Fun Pro – abonnieren Sie jetzt für nur 3 $/Monat oder 30 $/Jahr!",
     Medium: "Medium",
+    Method: "Method",
     Monospace: "Monospace",
-    "More Layouts": "Weitere Layouts",
-    "More Themes and Fonts": "Weitere Themen und Schriftarten",
     Museum: "Museum",
     Name: "Name",
     "Need Help? <0>Check out our documentation.</0>":
@@ -156,12 +162,17 @@
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
-    "Nodes can be styled with dashed, dotted, double, or solid borders":
-      "Nodes can be styled with dashed, dotted, double, or solid borders",
-    Normal: "Normal",
+    "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
+      "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
+    "One-time Share Links": "Einmalige Share-Links",
     "Open Customer Portal": "Öffnen Sie das Kundenportal",
+    "Paste the information you wish to convert to a flowchart":
+      "Fügen Sie die Informationen ein, die Sie in ein Flussdiagramm umwandeln möchten",
+    Permalinks: "Permalinks",
+    "Persistent Flowcharts": "Beständige Diagramme",
     Playbook: "Spielbuch",
     Pricing: "Preisgestaltung",
+    Prompt: "Prompt",
     Public: "Öffentlich",
     Random: "Zufällig",
     "Read-only": "Schreibgeschützt",
@@ -189,12 +200,8 @@
     Save: "Speichern",
     Settings: "Einstellungen",
     Shape: "Shape",
-    "Shape Libraries": "Bibliotheken anpassen",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
       "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
-    "Share with Full Access, Edit-only, or View-only Permissions":
-      "Freigabe mit vollem Zugriff, Nur-Bearbeiten- oder Nur-Anzeigen-Berechtigung",
-    "Sign In": "Einloggen",
     "Sign Up": "Registrieren",
     Size: "Size",
     Small: "Small",
@@ -205,8 +212,8 @@
     Spacing: "Abstand",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Sponsern Sie flowchart.fun für 3 $ / Monat oder 30 $ / Jahr, um auf gehostete Flussdiagramme und die neuesten Stile und Funktionen zuzugreifen",
+    Standard: "Standard",
     Start: "Start",
-    "Static Share Links": "Statische Freigabelinks",
     Status: "Status",
     "Store any data associated to a node":
       "Store any data associated to a node",
@@ -225,6 +232,7 @@
     Syntax: "Syntax",
     "Syntax Reference": "Syntax-Referenz",
     Temporary: "Temporäres",
+    "Temporary Flowcharts": "Temporäre Diagramme",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -243,8 +251,6 @@
     Unfreeze: "Freigeben",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
-    "Unlimited Hosted Charts": "Unbegrenzte Anzahl gehosteter Charts",
-    "Unlimited Local Charts": "Unbegrenzte lokale Charts",
     "Update Email": "E-Mail aktualisieren",
     Updated: "Aktualisiert",
     "Use classes to group nodes": "Use classes to group nodes",
@@ -270,8 +276,8 @@
       "Sie haben bereits ein Diagramm mit diesem Namen.",
     'You can also wrap text in "\\( \\)" to create an edge':
       'Sie können Text auch in "\\( \\)" umbrechen, um eine Kante zu erstellen',
-    "You must log in to create a normal flowchart.":
-      "Sie müssen sich anmelden, um ein normales Diagramm zu erstellen.",
+    "You must log in to create a standard flowchart.":
+      "Sie müssen sich anmelden, um ein Standarddiagramm zu erstellen.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Ihr Abonnement ist nicht mehr aktiv. Wenn Sie gehostete Diagramme erstellen und bearbeiten möchten, werden Sie Sponsor.",
     "Zoom In": "Zoom In",

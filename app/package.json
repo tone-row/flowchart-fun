@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "1.26.2",
+  "version": "1.27.0",
   "main": "module/module.js",
   "license": "MIT",
   "scripts": {
@@ -75,7 +75,7 @@
     "eslint": "^8.3.0",
     "file-saver": "^2.0.5",
     "framer-motion": "^4.1.17",
-    "graph-selector": "^0.8.2",
+    "graph-selector": "^0.8.3",
     "gray-matter": "^4.0.2",
     "highlight.js": "^11.7.0",
     "immer": "^9.0.16",

@@ -16,9 +16,11 @@
     ],
     Appearance: "外观",
     Attributes: "Attributes",
+    "Auto-Layouts": "自动布局",
     "Back To Editor": "返回编辑器",
     Background: "背景",
     "Become a Sponsor": "赞助我们",
+    Blank: "Blank",
     Blog: "博客",
     Border: "Border",
     "Bottom to Top": "从下到上",
@@ -56,6 +58,7 @@
     "Copy PNG Image": "复制PNG图像",
     "Copy SVG Code": "复制 SVG 代码",
     Create: "创建",
+    "Create Flowcharts from a Prompt with AI": "使用 AI 根据提示创建图表",
     "Create a New Flowchart": "创建新图表",
     Created: "已创建",
     "Creating an edge between two nodes is done by indenting the second node below the first":
@@ -67,12 +70,12 @@
     Date: "日期",
     Delete: "删除",
     "Deleted when browser data is cleared": "清除浏览器数据时删除",
+    "Describe the flowchart you wish to create": "描述您要创建的图表",
     Direction: "方向",
     Discard: "Discard",
     "Do you want to cancel your subscription?": "您要取消订阅吗？",
     "Do you want to delete this?": "您要将其删除吗？",
     Document: "文档",
-    Documentation: "文档",
     "Don't have an account?": "没有帐户？",
     Download: "下载",
     "Download JPG": "下载 JPG",
@@ -81,7 +84,6 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "复制",
-    "Dynamic Share Links": "动态分享链接",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -95,9 +97,11 @@
     Eggs: "蛋",
     Email: "电子邮件",
     "Enter a title": "输入标题",
+    "Everything in Free": "免费计划中的一切",
     Excalidraw: "Excalidraw",
     Export: "导出",
     "Extra Large": "Extra Large",
+    Extract: "提取",
     Feedback: "反馈",
     "Fit Graph": "Fit Graph",
     "Follow Us": "关注我们",
@@ -118,6 +122,7 @@
     Images: "Images",
     "Indenting creates an edge": "缩进创建链接",
     Info: "信息",
+    Instruct: "指导",
     Language: "语言",
     Large: "Large",
     Layout: "布局",
@@ -137,9 +142,8 @@
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "使用 Flowchart Fun Pro 让您的工作流程更轻松——现在订阅只需 3 美元/月或 30 美元/年！",
     Medium: "Medium",
+    Method: "Method",
     Monospace: "Monospace",
-    "More Layouts": "更多布局",
-    "More Themes and Fonts": "更多主题和字体",
     Museum: "博物馆",
     Name: "姓名",
     "Need Help? <0>Check out our documentation.</0>":
@@ -153,12 +157,17 @@
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
-    "Nodes can be styled with dashed, dotted, double, or solid borders":
-      "Nodes can be styled with dashed, dotted, double, or solid borders",
-    Normal: "正常",
+    "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
+      "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
+    "One-time Share Links": "一次性分享链接",
     "Open Customer Portal": "打开客户门户",
+    "Paste the information you wish to convert to a flowchart":
+      "将要转换的信息粘贴到流程图中",
+    Permalinks: "永久链接",
+    "Persistent Flowcharts": "持久图",
     Playbook: "剧本",
     Pricing: "价钱",
+    Prompt: "Prompt",
     Public: "公开",
     Random: "随机",
     "Read-only": "只读",
@@ -186,12 +195,8 @@
     Save: "救球",
     Settings: "设置",
     Shape: "Shape",
-    "Shape Libraries": "形状库",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
       "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
-    "Share with Full Access, Edit-only, or View-only Permissions":
-      "以完全访问权限、仅编辑权限或仅查看权限共享",
-    "Sign In": "登录",
     "Sign Up": "注册",
     Size: "Size",
     Small: "Small",
@@ -202,8 +207,8 @@
     Spacing: "间距",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能",
+    Standard: "标准",
     Start: "开始",
-    "Static Share Links": "静态分享链接",
     Status: "状态",
     "Store any data associated to a node":
       "Store any data associated to a node",
@@ -222,6 +227,7 @@
     Syntax: "句法",
     "Syntax Reference": "语法参考",
     Temporary: "临时",
+    "Temporary Flowcharts": "临时图表",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":
       "Text followed by colon+space creates an edge with the text as the label",
@@ -240,8 +246,6 @@
     Unfreeze: "解冻",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
-    "Unlimited Hosted Charts": "无限托管图表",
-    "Unlimited Local Charts": "无限的本地图表",
     "Update Email": "更新电子邮件",
     Updated: "已更新",
     "Use classes to group nodes": "Use classes to group nodes",
@@ -265,8 +269,8 @@
     "You already have a flowchart with this name.": "您已有同名的图表。",
     'You can also wrap text in "\\( \\)" to create an edge':
       "您还可以将文本包装在\\n“\\( \\)”中以创建链接",
-    "You must log in to create a normal flowchart.":
-      "您必须登录才能创建普通图表。",
+    "You must log in to create a standard flowchart.":
+      "您必须登录才能创建标准图表。",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",
     "Zoom In": "Zoom In",
