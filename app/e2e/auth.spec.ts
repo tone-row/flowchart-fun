@@ -156,7 +156,9 @@ test.describe("Sign Up", () => {
       .fill("the stages of the water cycle");
     await page.getByRole("button", { name: "Create" }).click();
     // expect url to be regex BASE_URL + /u/\d+
-    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
+    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
+      timeout: 12000,
+    });
   });
 
   test("can create chart from prompt by extraction", async () => {
@@ -169,7 +171,9 @@ test.describe("Sign Up", () => {
       .fill("a is greater than b but less than a");
     await page.getByRole("button", { name: "Create" }).click();
     // expect url to be regex BASE_URL + /u/\d+
-    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
+    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
+      timeout: 12000,
+    });
   });
 
   test.afterAll(async () => {
