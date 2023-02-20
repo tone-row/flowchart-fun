@@ -10,7 +10,7 @@ import { stripComments } from "./utils";
 /** Recognized names for support parsers */
 export type Parsers = "v1" | "graph-selector";
 
-const DEFAULT_PARSER = "v1";
+const DEFAULT_PARSER = "graph-selector";
 
 /**
  * A function which reads the document and
