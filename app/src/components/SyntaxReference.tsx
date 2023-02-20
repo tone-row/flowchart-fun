@@ -76,7 +76,7 @@ export function SyntaxReference() {
             </Box>
           </Box>
           <Box
-            as={Dialog.Description}
+            as={"div"}
             p={PAD}
             gap={2}
             py={3}
