@@ -82,6 +82,10 @@
   white-space: nowrap;
 }
 
+.NewChartLink {
+  display: grid;
+}
+
 .NewChartLink[aria-current="location"] {
   border-color: transparent;
   background-color: var(--color-highlightColor);

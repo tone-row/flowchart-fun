@@ -1,7 +1,5 @@
-import { Trans } from "@lingui/macro";
 import { AnimatePresence, motion } from "framer-motion";
 import { BiErrorCircle } from "react-icons/bi";
-import { Link } from "react-router-dom";
 
 import { useParseError } from "../lib/useDoc";
 import { Box, Type } from "../slang";
@@ -34,11 +32,6 @@ export default function EditorError() {
             <Box gap={1}>
               <Type size={-1} weight="700">
                 {show}
-              </Type>
-              <Type as={Link} to="/h" size={-2} style={{ lineHeight: 1 }}>
-                <Trans>
-                  Need Help? <u>Check out our documentation.</u>
-                </Trans>
               </Type>
             </Box>
           </Box>

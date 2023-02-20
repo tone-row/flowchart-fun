@@ -60,7 +60,7 @@ export default function EditHosted() {
   }, []);
 
   const onChange = useCallback(
-    (value) => useDoc.setState({ text: value ?? "" }),
+    (value) => useDoc.setState({ text: value ?? "" }, false, "EditHosted/text"),
     []
   );
 
@@ -114,7 +114,7 @@ export default function EditHosted() {
         <LoadingState isLoading={isLoading} pending={pending()} />
         <ClearTextButton
           handleClear={() => {
-            useDoc.setState({ text: "", meta: {} });
+            useDoc.setState({ text: "", meta: {} }, false, "EditHosted/clear");
             if (editorRef.current) {
               editorRef.current.focus();
             }

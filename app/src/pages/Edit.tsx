@@ -32,11 +32,11 @@ const Edit = memo(function Edit() {
 
   useQuery(["edit", workspace], () => loadWorkspace(workspace), {
     enabled: typeof workspace === "string",
-    suspense: true,
+    suspense: false,
     staleTime: 0,
   });
 
-  const store = useMemo(() => {
+  const storeDoc = useMemo(() => {
     return throttle(
       (doc: Doc) => {
         const docString = docToString(doc);
@@ -49,10 +49,10 @@ const Edit = memo(function Edit() {
     );
   }, [workspace]);
 
-  useEffect(() => useDoc.subscribe(store), [store]);
+  useEffect(() => useDoc.subscribe(storeDoc), [storeDoc]);
 
   const onChange = useCallback(
-    (value) => useDoc.setState({ text: value ?? "" }),
+    (value) => useDoc.setState({ text: value ?? "" }, false, "Edit/text"),
     []
   );
 
@@ -119,7 +119,7 @@ const Edit = memo(function Edit() {
         </EditorWrapper>
         <ClearTextButton
           handleClear={() => {
-            useDoc.setState({ text: "", meta: {} });
+            useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
             if (editorRef.current) {
               editorRef.current.focus();
             }
@@ -136,7 +136,7 @@ export default Edit;
 /**
  * Load the workspace into our zustand store
  */
-async function loadWorkspace(workspace: string) {
+function loadWorkspace(workspace: string) {
   const key = titleToLocalStorageKey(workspace);
   let workspaceText = localStorage.getItem(key);
   if (!workspaceText) {

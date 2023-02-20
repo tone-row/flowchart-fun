@@ -297,12 +297,16 @@ function HostedOptions() {
     {
       onSuccess: (result) => {
         if (!result) return;
-        useDoc.setState((state) => {
-          return produce(state, (draft) => {
-            draft.details.isPublic = result.isPublic;
-            draft.details.publicId = result.publicId;
-          });
-        });
+        useDoc.setState(
+          (state) => {
+            return produce(state, (draft) => {
+              draft.details.isPublic = result.isPublic;
+              draft.details.publicId = result.publicId;
+            });
+          },
+          false,
+          "HostedOptions/makePublic"
+        );
       },
     }
   );

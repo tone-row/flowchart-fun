@@ -10,8 +10,8 @@ local storage
   page load: (get the text)
 **/
 
-import create from "zustand";
-import { subscribeWithSelector } from "zustand/middleware";
+import { create } from "zustand";
+import { devtools, subscribeWithSelector } from "zustand/middleware";
 
 import { newDelimiters } from "./constants";
 
@@ -31,6 +31,7 @@ export type Details = {
 export type Doc = {
   text: string;
   meta: Record<string, unknown>;
+  /** Details are *not* stored in DB. They represent the chart currently being viewed. */
   details: Details;
 };
 
@@ -44,7 +45,14 @@ export const initialDoc = {
   },
 };
 
-export const useDoc = create(subscribeWithSelector<Doc>(() => initialDoc));
+export const useDoc = create(
+  devtools(
+    subscribeWithSelector<Doc>(() => initialDoc),
+    {
+      name: "useDoc",
+    }
+  )
+);
 
 export function docToString(doc: Doc) {
   const { text, meta } = doc;

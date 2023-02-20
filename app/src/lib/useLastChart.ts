@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import create from "zustand";
+import { create } from "zustand";
 
 type LastChart = {
   lastChart: string;
