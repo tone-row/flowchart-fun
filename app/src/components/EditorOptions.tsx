@@ -29,11 +29,15 @@ export function EditorOptions({ children }: { children: ReactNode }) {
             background="color-lineNumbers"
             value={parser}
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-              useDoc.setState((state) => {
-                return produce(state, (draft) => {
-                  draft.meta.parser = e.target.value;
-                });
-              });
+              useDoc.setState(
+                (state) => {
+                  return produce(state, (draft) => {
+                    draft.meta.parser = e.target.value;
+                  });
+                },
+                false,
+                "syntax"
+              );
             }}
           >
             {parsers.map((p) => (

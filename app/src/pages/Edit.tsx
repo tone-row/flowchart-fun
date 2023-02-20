@@ -52,7 +52,7 @@ const Edit = memo(function Edit() {
   useEffect(() => useDoc.subscribe(storeDoc), [storeDoc]);
 
   const onChange = useCallback(
-    (value) => useDoc.setState({ text: value ?? "" }),
+    (value) => useDoc.setState({ text: value ?? "" }, false, "Edit/text"),
     []
   );
 
@@ -119,7 +119,7 @@ const Edit = memo(function Edit() {
         </EditorWrapper>
         <ClearTextButton
           handleClear={() => {
-            useDoc.setState({ text: "", meta: {} });
+            useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
             if (editorRef.current) {
               editorRef.current.focus();
             }

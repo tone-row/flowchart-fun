@@ -62,7 +62,7 @@ export function EditMetaTab() {
             onClick={() => {
               try {
                 if (!parsed) return;
-                useDoc.setState({ meta: parsed });
+                useDoc.setState({ meta: parsed }, false, "EditMetaTab/meta");
               } catch (e) {
                 console.error(e);
               }

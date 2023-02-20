@@ -33,12 +33,12 @@ export function RenameButton({ children }: { children: ReactNode }) {
   const convertToHosted = useRenameDialogStore(
     (store) => store.convertToHosted
   );
-  const [newName, setName] = useState(initialName);
+  const [curName, setName] = useState(initialName);
 
   const inputRef = useRef<null | HTMLInputElement>(null);
   const rename = useMutation(
     "updateChartName",
-    async () => {
+    async (newName: string) => {
       if (isHosted && id && typeof id === "number") {
         await renameChart(id, newName);
       } else if (convertToHosted) {
@@ -65,14 +65,6 @@ export function RenameButton({ children }: { children: ReactNode }) {
         push(`/${newSlug}`);
         window.localStorage.removeItem(oldKey);
       }
-      useDoc.setState((state) => {
-        return produce(state, (draft) => {
-          (draft.details as any).title = name;
-          if (convertToHosted) {
-            (draft.details as any).isHosted = true;
-          }
-        });
-      });
     },
     {
       onSuccess: () => {
@@ -82,12 +74,12 @@ export function RenameButton({ children }: { children: ReactNode }) {
   );
 
   let isValid = false;
-  const lengthMoreThanTwo = newName.length > 2;
+  const lengthMoreThanTwo = curName.length > 2;
   if (isHosted || convertToHosted) {
-    isValid = newName !== initialName && lengthMoreThanTwo;
+    isValid = curName !== initialName && lengthMoreThanTwo;
   } else {
     isValid =
-      window.localStorage.getItem(titleToLocalStorageKey(newName)) === null &&
+      window.localStorage.getItem(titleToLocalStorageKey(curName)) === null &&
       lengthMoreThanTwo;
   }
 
@@ -117,7 +109,10 @@ export function RenameButton({ children }: { children: ReactNode }) {
           as: "form",
           onSubmit: (e: any) => {
             e.preventDefault();
-            rename.mutate();
+            const formData = new FormData(e.target);
+            const name = formData.get("name") as string;
+            if (!name) return;
+            rename.mutate(name);
           },
         }}
       >
@@ -148,14 +143,16 @@ export function RenameButton({ children }: { children: ReactNode }) {
             </Box>
           ) : null}
           <Input
-            value={newName}
+            // value={newName}
             required
             pattern=".{3,}"
+            defaultValue={initialName}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setName(e.target.value)
             }
             isLoading={rename.isLoading}
             name="name"
+            ref={inputRef}
           />
           <Box flow="column" content="normal space-between">
             <Button

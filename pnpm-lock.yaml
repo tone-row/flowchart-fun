@@ -194,7 +194,7 @@ importers:
       use-debounce: ^5.2.1
       web-vitals: ^1.0.1
       web-worker: ^1.2.0
-      zustand: ^3.7.0
+      zustand: ^4.3.3
     dependencies:
       '@lingui/core': 3.14.0
       '@lingui/react': 3.14.0_react@17.0.2
@@ -272,7 +272,7 @@ importers:
       svgo: 2.8.0
       use-debounce: 5.2.1_react@17.0.2
       web-vitals: 1.1.2
-      zustand: 3.7.2_react@17.0.2
+      zustand: 4.3.3_immer@9.0.16+react@17.0.2
     devDependencies:
       '@lingui/cli': 3.14.0_tm4webiq2u57mg24iaejc4km4e
       '@lingui/macro': 3.14.0_77kbcrdiyapudxn3kt35uy5344
@@ -15011,6 +15011,14 @@ packages:
       tslib: 2.4.0
     dev: false
 
+  /use-sync-external-store/1.2.0_react@17.0.2:
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 17.0.2
+    dev: false
+
   /utf-8-validate/5.0.9:
     resolution: {integrity: sha512-Yek7dAy0v3Kl0orwMlvi7TPtiCNrdfHNd7Gcc/pLq4BLXqfAmd0J7OWMizUQnTTJsyjKn02mU7anqwfmUP4J8Q==}
     engines: {node: '>=6.14.2'}
@@ -15746,14 +15754,19 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  /zustand/3.7.2_react@17.0.2:
-    resolution: {integrity: sha512-PIJDIZKtokhof+9+60cpockVOq05sJzHCriyvaLBmEJixseQ1a5Kdov6fWZfWOu5SK9c+FhH1jU0tntLxRJYMA==}
+  /zustand/4.3.3_immer@9.0.16+react@17.0.2:
+    resolution: {integrity: sha512-x2jXq8S0kfLGNwGh87nhRfEc2eZy37tSatpSoSIN+O6HIaBhgQHSONV/F9VNrNcBcKQu/E80K1DeHDYQC/zCrQ==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
+      immer: '>=9.0'
       react: '>=16.8'
     peerDependenciesMeta:
+      immer:
+        optional: true
       react:
         optional: true
     dependencies:
+      immer: 9.0.16
       react: 17.0.2
+      use-sync-external-store: 1.2.0_react@17.0.2
     dev: false

@@ -105,7 +105,7 @@
     "svgo": "^2.8.0",
     "use-debounce": "^5.2.1",
     "web-vitals": "^1.0.1",
-    "zustand": "^3.7.0"
+    "zustand": "^4.3.3"
   },
   "eslintConfig": {
     "extends": [

@@ -229,7 +229,7 @@ function NodeSubmenu() {
                     operation: ["addClassesToNode", { classNames: [name] }],
                   });
                 }
-                useDoc.setState({ text: newText });
+                useDoc.setState({ text: newText }, false, "NodeSubmenu/color");
               }}
             >
               <Box
@@ -252,7 +252,11 @@ function NodeSubmenu() {
                   ],
                 });
               }
-              useDoc.setState({ text: newText });
+              useDoc.setState(
+                { text: newText },
+                false,
+                "NodeSubmenu/color/removeAll"
+              );
             }}
           >
             <Box className={styles.SquareButton}>
@@ -287,7 +291,7 @@ function NodeSubmenu() {
                     operation: ["addClassesToNode", { classNames: [shape] }],
                   });
                 }
-                useDoc.setState({ text: newText });
+                useDoc.setState({ text: newText }, false, "NodeSubmenu/shape");
               }}
             >
               <Box
@@ -315,7 +319,11 @@ function NodeSubmenu() {
                   ],
                 });
               }
-              useDoc.setState({ text: newText });
+              useDoc.setState(
+                { text: newText },
+                false,
+                "NodeSubmenu/shape/removeAll"
+              );
             }}
           >
             <Box className={styles.SquareButton}>
@@ -359,7 +367,7 @@ function NodeSubmenu() {
                       ],
                     });
                 }
-                useDoc.setState({ text: newText });
+                useDoc.setState({ text: newText }, false, "NodeSubmenu/size");
               }}
             >
               <Type size={size}>{label}</Type>
@@ -397,7 +405,7 @@ function NodeSubmenu() {
                       ],
                     });
                 }
-                useDoc.setState({ text: newText });
+                useDoc.setState({ text: newText }, false, "NodeSubmenu/border");
               }}
             >
               <span

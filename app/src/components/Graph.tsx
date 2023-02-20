@@ -64,15 +64,19 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const parser = useParser();
   const handleDragFree = useCallback(() => {
     const nodePositions = getNodePositionsFromCy();
-    useDoc.setState((state) => {
-      return {
-        ...state,
-        meta: {
-          ...state.meta,
-          nodePositions,
-        },
-      };
-    });
+    useDoc.setState(
+      (state) => {
+        return {
+          ...state,
+          meta: {
+            ...state.meta,
+            nodePositions,
+          },
+        };
+      },
+      false,
+      "Graph/handleDragFree"
+    );
   }, []);
 
   const handleResize = useCallback(() => {
