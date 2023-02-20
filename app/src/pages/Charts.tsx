@@ -130,7 +130,7 @@ function LocalCharts() {
 
   return (
     <Section className={styles.ChartSection}>
-      <TitleAndSummary title={t`Local Charts`}>
+      <TitleAndSummary title={t`Temporary Flowcharts`}>
         <Trans>
           These charts are only available in this browser on this device.
           <br />
@@ -347,7 +347,7 @@ function HostedCharts() {
 
   return (
     <Section content="start normal" className={styles.ChartSection}>
-      <TitleAndSummary title={t`Hosted Charts`}>
+      <TitleAndSummary title={t`Persistent Flowcharts`}>
         <Trans>
           Access these charts from anywhere.
           <br />
