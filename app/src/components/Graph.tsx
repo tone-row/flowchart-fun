@@ -1,4 +1,5 @@
 import { Core, EdgeSingular, NodeSingular } from "cytoscape";
+import coseBilkent from "cytoscape-cose-bilkent";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
@@ -47,6 +48,7 @@ declare global {
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
   cytoscape.use(klay);
+  cytoscape.use(coseBilkent);
   cytoscape.use(cytoscapeSvg);
   cytoscape.prototype.hasInitialised = true;
 }
@@ -290,6 +292,7 @@ function getGraphUpdater({
 
     try {
       const layout = getLayout(doc);
+      console.log("layout", layout);
 
       elements = universalParse(parser, doc.text, getSize.current);
 
@@ -303,13 +306,13 @@ function getGraphUpdater({
       if (layout.name !== "preset") {
         cy.current
           .layout({
-            ...layout,
             animate: graphInitialized.current
               ? elements.length < 200
                 ? shouldAnimate
                 : false
               : false,
             animationDuration: shouldAnimate ? 333 : 0,
+            ...layout,
             padding: DEFAULT_GRAPH_PADDING,
           })
           .run();

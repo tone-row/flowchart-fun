@@ -131,6 +131,7 @@ importers:
       concurrently: ^6.0.0
       core-js: ^3.18.1
       cytoscape: ^3.23.0
+      cytoscape-cose-bilkent: ^4.1.0
       cytoscape-dagre: ^2.5.0
       cytoscape-elk: ^2.1.0
       cytoscape-klay: ^3.1.4
@@ -233,6 +234,7 @@ importers:
       buffer: 6.0.3
       core-js: 3.25.5
       cytoscape: 3.23.0
+      cytoscape-cose-bilkent: 4.1.0_cytoscape@3.23.0
       cytoscape-dagre: 2.5.0_cytoscape@3.23.0
       cytoscape-elk: 2.1.0_cytoscape@3.23.0
       cytoscape-klay: 3.1.4_cytoscape@3.23.0
@@ -6820,6 +6822,12 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: false
 
+  /cose-base/1.0.3:
+    resolution: {integrity: sha512-s9whTXInMSgAp/NVXVNuVxVKzGH2qck3aQlVHxDCdAEPgtMKwc4Wq6/QKhgdEdgbLSi9rBTAcPoRa6JpiG4ksg==}
+    dependencies:
+      layout-base: 1.0.2
+    dev: false
+
   /cosmiconfig/6.0.0:
     resolution: {integrity: sha512-xb3ZL6+L8b9JLLCx3ZdoZy4+2ECphCMo2PwqgP1tlfVq6M6YReyzBJtvWWtbDSpNr9hn96pkCiZqUcFEc+54Qg==}
     engines: {node: '>=8'}
@@ -7101,6 +7109,15 @@ packages:
 
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
+
+  /cytoscape-cose-bilkent/4.1.0_cytoscape@3.23.0:
+    resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
+    peerDependencies:
+      cytoscape: ^3.2.0
+    dependencies:
+      cose-base: 1.0.3
+      cytoscape: 3.23.0
+    dev: false
 
   /cytoscape-dagre/2.5.0_cytoscape@3.23.0:
     resolution: {integrity: sha512-VG2Knemmshop4kh5fpLO27rYcyUaaDkRw+6PiX4bstpB+QFt0p2oauMrsjVbUamGWQ6YNavh7x2em2uZlzV44g==}
@@ -10900,6 +10917,10 @@ packages:
     dependencies:
       package-json: 6.5.0
     dev: true
+
+  /layout-base/1.0.2:
+    resolution: {integrity: sha512-8h2oVEZNktL4BH2JCOI90iD1yXwL6iNW7KcCKT2QZgQJR2vbqDsldCTPRU9NifTCqHZci57XvQQ15YTu+sTYPg==}
+    dev: false
 
   /leven/3.1.0:
     resolution: {integrity: sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==}

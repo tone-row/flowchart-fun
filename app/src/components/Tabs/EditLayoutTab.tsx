@@ -3,6 +3,7 @@ import produce from "immer";
 import { FaRegSnowflake } from "react-icons/fa";
 
 import { defaultLayout } from "../../lib/constants";
+import { getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
@@ -22,6 +23,8 @@ export function EditLayoutTab() {
   const isValidSponsor = useIsValidSponsor();
   const doc = useDoc();
   const layout = hasOwnProperty(doc.meta, "layout") ? doc.meta.layout : {};
+  // this is the layout that's currently being rendered
+  const graphLayout = getLayout(doc);
 
   let layoutName = defaultLayout.name as string;
   if (
@@ -37,7 +40,7 @@ export function EditLayoutTab() {
 
   const isFrozen = useIsFrozen();
 
-  let direction = defaultLayout.rankDir;
+  let direction = graphLayout.rankDir;
   if (
     typeof layout === "object" &&
     layout &&
@@ -116,6 +119,7 @@ export function EditLayoutTab() {
         {[
           "dagre",
           "klay",
+          "cose",
           "breadthfirst",
           "concentric",
           "circle",
@@ -140,6 +144,7 @@ export function EditLayoutTab() {
                       return produce(state, (draft) => {
                         if (!draft.meta.layout) draft.meta.layout = {};
                         // This any is because typing the layout object is too restrictive
+
                         (draft.meta.layout as any).spacingFactor = parseFloat(
                           e.target.value
                         );

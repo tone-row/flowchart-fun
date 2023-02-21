@@ -29,7 +29,6 @@ export const defaultLayout: Required<GraphOptionsObject>["layout"] = {
   fit: true,
   animate: true,
   spacingFactor: defaultSpacingFactor,
-  rankDir: "TB",
 };
 
 export const editorOptions: EditorProps["options"] = {

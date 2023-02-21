@@ -66,6 +66,7 @@
     "buffer": "^6.0.3",
     "core-js": "^3.18.1",
     "cytoscape": "^3.23.0",
+    "cytoscape-cose-bilkent": "^4.1.0",
     "cytoscape-dagre": "^2.5.0",
     "cytoscape-elk": "^2.1.0",
     "cytoscape-klay": "^3.1.4",
