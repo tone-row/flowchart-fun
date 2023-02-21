@@ -1,4 +1,3 @@
-import { defaultLayout } from "./constants";
 import { getLayout } from "./getLayout";
 import { initialDoc } from "./useDoc";
 
@@ -6,7 +5,13 @@ describe("getLayout", () => {
   test("returns the default layout if nothing passed", () => {
     const doc = { ...initialDoc, meta: {} };
     const layout = getLayout(doc);
-    expect(layout).toEqual(defaultLayout);
+    expect(layout).toEqual({
+      name: "dagre",
+      fit: true,
+      animate: true,
+      spacingFactor: 1.25,
+      rankDir: "TB",
+    });
   });
 
   test("returns layout name", () => {

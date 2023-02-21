@@ -17,7 +17,6 @@ import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
-import { defaultLayout } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
@@ -197,7 +196,6 @@ function initializeGraph({
     const bg = (useDoc.getState().meta?.background as string) ?? original.bg;
     cy.current = cytoscape({
       container: document.getElementById("cy"), // container to render in
-      layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
       elements: [],
       // TODO: shouldn't this load the user's style as well?
       // TODO: not even loading the real theme... this seems sus

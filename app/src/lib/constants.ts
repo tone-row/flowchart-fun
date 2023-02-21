@@ -23,13 +23,6 @@ export type GraphOptionsObject = {
   background?: string;
 };
 
-export const defaultLayout: Required<GraphOptionsObject>["layout"] = {
-  name: "dagre",
-  fit: true,
-  animate: true,
-  spacingFactor: 1.25,
-};
-
 export const editorOptions: EditorProps["options"] = {
   minimap: { enabled: false },
   insertSpaces: true,

@@ -3,8 +3,7 @@ import produce from "immer";
 import { FaRegSnowflake } from "react-icons/fa";
 
 import { GraphOptionsObject } from "../../lib/constants";
-import { defaultLayout } from "../../lib/constants";
-import { getLayout } from "../../lib/getLayout";
+import { defaultLayout, getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";

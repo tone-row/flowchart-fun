@@ -1,5 +1,11 @@
-import { defaultLayout } from "./constants";
 import { Doc } from "./useDoc";
+
+export const defaultLayout: any = {
+  name: "dagre",
+  fit: true,
+  animate: true,
+  spacingFactor: 1.25,
+};
 
 // Store default settings for layouts here
 const layoutSpecificDefaults: { [key: string]: object } = {
@@ -36,8 +42,8 @@ export function getLayout(doc: Doc) {
 
   // in some cases, we need to transform the layout name
   if (layout.name.startsWith("elk-")) {
-    layout.name = "elk";
     layout.elk = { algorithm: layout.name.slice(4) };
+    layout.name = "elk";
   } else if (layout.name === "cose") {
     layout.name = "cose-bilkent";
   }
