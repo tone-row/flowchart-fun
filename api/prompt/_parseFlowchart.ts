@@ -14,9 +14,9 @@ export function parseFlowchart(text: string): Graph {
     )
       continue;
 
-    const from = line.slice(0, line.indexOf(" {"));
-    const to = line.slice(line.indexOf("} ") + 2);
-    const label = line.slice(line.indexOf(" {") + 2, line.indexOf("} "));
+    const from = line.slice(0, line.indexOf(" {")).trim();
+    const to = line.slice(line.indexOf("} ") + 2).trim();
+    const label = line.slice(line.indexOf(" {") + 2, line.indexOf("} ")).trim();
 
     if (!nodes.includes(from)) nodes.push(from);
     if (!nodes.includes(to)) nodes.push(to);

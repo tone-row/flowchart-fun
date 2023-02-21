@@ -16,7 +16,7 @@ type StoreGraph = {
  * code is only available in the share modal
  */
 export const useGraphStore = create<StoreGraph>(() => ({
-  layout: undefined,
+  layout: {},
   elements: [],
   sponsorLayoutsLoaded: false,
 }));

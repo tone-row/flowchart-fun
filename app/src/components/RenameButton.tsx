@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import { ChangeEvent, ReactNode, useRef, useState } from "react";
+import { ChangeEvent, memo, ReactNode, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
 
@@ -20,7 +20,11 @@ import {
   tooltipSize,
 } from "./Shared";
 
-export function RenameButton({ children }: { children: ReactNode }) {
+export const RenameButton = memo(function RenameButton({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const fullText = useDoc(docToString);
   const isValidSponsor = useIsValidSponsor();
   const session = useSession();
@@ -166,4 +170,4 @@ export function RenameButton({ children }: { children: ReactNode }) {
       </Dialog>
     </>
   );
-}
+});

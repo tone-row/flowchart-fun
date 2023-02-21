@@ -3,14 +3,12 @@ import "./slang/slang.css";
 import "core-js/features/object/from-entries";
 import "core-js/features/object/entries";
 
-import * as Sentry from "@sentry/react";
-import { Integrations } from "@sentry/tracing";
 import { Buffer } from "buffer";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import pkg from "../package.json";
 import App from "./components/App";
+import { initSentry } from "./lib/sentry";
 import reportWebVitals from "./reportWebVitals";
 
 // Fixes Webpack 5 Buffer polyfill issue
@@ -21,15 +19,7 @@ declare global {
 }
 window.Buffer = Buffer;
 
-Sentry.init({
-  release: `flowchartfun@${pkg.version}`,
-  dsn: "https://5c0087f5d8ae4a6ab7aa4f42eab785f1@o394152.ingest.sentry.io/5673697",
-  integrations: [new Integrations.BrowserTracing()],
-  // percentage of transactions to capture for performance monitoring.
-  tracesSampleRate: 0.25,
-  enabled: process.env.REACT_APP_SENTRY_ENABLED === "1",
-  environment: process.env.REACT_APP_SENTRY_ENVIRONMENT ?? "development",
-});
+initSentry();
 
 ReactDOM.render(
   <React.StrictMode>

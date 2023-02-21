@@ -9,4 +9,13 @@ describe("parseFlowchart", () => {
     expect(result.nodes[1].data.label).toEqual("Ocean");
     expect(result.edges[0].data.label).toEqual("heats");
   });
+
+  test("It should remove extra spaces around labels", () => {
+    const result = parseFlowchart(`People {hear about} Application
+People {research} Application
+People {try} Application
+Application {satisfies} People 
+People {use} Application`);
+    expect(result.nodes.length).toEqual(2);
+  });
 });
