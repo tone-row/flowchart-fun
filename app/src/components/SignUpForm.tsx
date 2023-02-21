@@ -10,6 +10,7 @@ import { Button, Input, Notice } from "../components/Shared";
 import Spinner from "../components/Spinner";
 import { isError } from "../lib/helpers";
 import { createCustomer, createSubscription } from "../lib/queries";
+import { logError } from "../lib/sentry";
 import { supabase } from "../lib/supabaseClient";
 import { Box, Type } from "../slang";
 import styles from "./SignUpForm.module.css";
@@ -82,11 +83,15 @@ export function SignUpForm() {
       const { error: supabaseError } = await supabase.auth.signInWithOtp({
         email,
       });
+
       if (supabaseError) throw supabaseError;
     },
     {
       onSuccess: () => {
         setSuccess(true);
+      },
+      onError: (error) => {
+        logError(error as Error);
       },
     }
   );
