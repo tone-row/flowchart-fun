@@ -70,14 +70,18 @@ export function EditLayoutTab() {
             options={layouts}
             value={layoutName}
             onValueChange={(name) => {
-              useDoc.setState((state) => {
-                return produce(state, (draft) => {
-                  if (!draft.meta.layout) draft.meta.layout = {};
-                  // This any is because typing the layout object is too restrictive
-                  (draft.meta.layout as any).name = name;
-                  delete draft.meta.nodePositions;
-                });
-              });
+              useDoc.setState(
+                (state) => {
+                  return produce(state, (draft) => {
+                    if (!draft.meta.layout) draft.meta.layout = {};
+                    // This any is because typing the layout object is too restrictive
+                    (draft.meta.layout as any).name = name;
+                    delete draft.meta.nodePositions;
+                  });
+                },
+                false,
+                "EditLayoutTab/layout"
+              );
             }}
           />
         </OptionWithLabel>
@@ -88,14 +92,18 @@ export function EditLayoutTab() {
               options={directions}
               value={direction}
               onValueChange={(direction) => {
-                useDoc.setState((state) => {
-                  return produce(state, (draft) => {
-                    if (!draft.meta.layout) draft.meta.layout = {};
-                    // This any is because typing the layout object is too restrictive
-                    (draft.meta.layout as any).rankDir = direction;
-                    delete draft.meta.nodePositions;
-                  });
-                });
+                useDoc.setState(
+                  (state) => {
+                    return produce(state, (draft) => {
+                      if (!draft.meta.layout) draft.meta.layout = {};
+                      // This any is because typing the layout object is too restrictive
+                      (draft.meta.layout as any).rankDir = direction;
+                      delete draft.meta.nodePositions;
+                    });
+                  },
+                  false,
+                  "EditLayoutTab/direction"
+                );
               }}
             />
           </OptionWithLabel>
@@ -127,15 +135,19 @@ export function EditLayoutTab() {
                 min={0.25}
                 className={styles.numberInput}
                 onChange={(e) => {
-                  useDoc.setState((state) => {
-                    return produce(state, (draft) => {
-                      if (!draft.meta.layout) draft.meta.layout = {};
-                      // This any is because typing the layout object is too restrictive
-                      (draft.meta.layout as any).spacingFactor = parseFloat(
-                        e.target.value
-                      );
-                    });
-                  });
+                  useDoc.setState(
+                    (state) => {
+                      return produce(state, (draft) => {
+                        if (!draft.meta.layout) draft.meta.layout = {};
+                        // This any is because typing the layout object is too restrictive
+                        (draft.meta.layout as any).spacingFactor = parseFloat(
+                          e.target.value
+                        );
+                      });
+                    },
+                    false,
+                    "EditLayoutTab/spacing-number"
+                  );
                 }}
               />
               <Range
@@ -145,13 +157,17 @@ export function EditLayoutTab() {
                 step={0.01}
                 value={[spacingFactor || 0]}
                 onValueChange={([value]) => {
-                  useDoc.setState((state) => {
-                    return produce(state, (draft) => {
-                      if (!draft.meta.layout) draft.meta.layout = {};
-                      // This any is because typing the layout object is too restrictive
-                      (draft.meta.layout as any).spacingFactor = value;
-                    });
-                  });
+                  useDoc.setState(
+                    (state) => {
+                      return produce(state, (draft) => {
+                        if (!draft.meta.layout) draft.meta.layout = {};
+                        // This any is because typing the layout object is too restrictive
+                        (draft.meta.layout as any).spacingFactor = value;
+                      });
+                    },
+                    false,
+                    "EditLayoutTab/spacing"
+                  );
                 }}
               />
             </div>

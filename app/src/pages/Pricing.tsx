@@ -123,7 +123,7 @@ function Plan({
       gap={4}
       p={8}
       pt={7}
-      rad={3}
+      rad={5}
       items="start"
     >
       <Type size={3} weight="700" as="h2">

@@ -100,7 +100,7 @@ export function SignUpForm() {
   ) : (
     <Box
       as="form"
-      gap={7}
+      gap={3}
       pt={3}
       onSubmit={handleSubmit((data) => {
         create.mutate(data);
@@ -123,7 +123,7 @@ export function SignUpForm() {
             value={field.value}
             onValueChange={(value) => field.onChange(value)}
           >
-            <Box flow="column" gap={2}>
+            <Box flow="column" gap={3}>
               {[
                 { label: t`$3 / Month`, value: "monthly" },
                 { label: t`$30 / Year`, value: "yearly" },
@@ -175,10 +175,10 @@ export function SignUpForm() {
           text={t`Sign Up`}
           className={styles.SignUpButton}
           p={3}
-          typeProps={{ size: 1 }}
+          typeProps={{ size: 0 }}
         />
         <Box template="auto / auto auto" content="normal space-between">
-          <Type size={-1} as="span">
+          <Type size={-1} as="span" style={{ opacity: 0.5 }}>
             *<Trans>We use cookies to keep you logged in.</Trans>
           </Type>
           {create.isLoading && (

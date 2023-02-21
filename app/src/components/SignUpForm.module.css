@@ -27,7 +27,7 @@
 
 .SponsorFormInput {
   background-color: white;
-  border: 1px solid hsla(var(--color-foregroundHsl), 0.125);
+  border: none;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   -webkit-font-smoothing: subpixel-antialiased !important;

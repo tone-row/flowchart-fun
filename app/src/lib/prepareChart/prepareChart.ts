@@ -71,7 +71,7 @@ export function prepareChart(doc: string, details: Details) {
 
   text = `${text.trim()}\n`;
 
-  useDoc.setState({ text, meta, details });
+  useDoc.setState({ text, meta, details }, false, "prepareChart");
 
   return {
     text,

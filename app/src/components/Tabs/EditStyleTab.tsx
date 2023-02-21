@@ -33,11 +33,15 @@ export function EditStyleTab() {
             options={themes}
             value={themeKey}
             onValueChange={(themeKey) => {
-              useDoc.setState((s) => {
-                return produce(s, (draft) => {
-                  draft.meta.theme = themeKey;
-                });
-              });
+              useDoc.setState(
+                (s) => {
+                  return produce(s, (draft) => {
+                    draft.meta.theme = themeKey;
+                  });
+                },
+                false,
+                "EditStyleTab/theme"
+              );
             }}
           />
         </OptionWithLabel>
@@ -61,11 +65,15 @@ export function EditStyleTab() {
             {meta.background && (
               <Button
                 onClick={() => {
-                  useDoc.setState((s) => {
-                    return produce(s, (draft) => {
-                      delete draft.meta?.background;
-                    });
-                  });
+                  useDoc.setState(
+                    (s) => {
+                      return produce(s, (draft) => {
+                        delete draft.meta?.background;
+                      });
+                    },
+                    false,
+                    "EditStyleTab/remove-bg"
+                  );
                   // find an input[type=color] and set it to the background color
                   const colorInput = document.querySelector(
                     "input[type=color]"
@@ -92,11 +100,15 @@ export function EditStyleTab() {
 
 const throttleBGUpdate = throttle(
   (bg: string) => {
-    useDoc.setState((s) => {
-      return produce(s, (draft) => {
-        draft.meta.background = bg;
-      });
-    });
+    useDoc.setState(
+      (s) => {
+        return produce(s, (draft) => {
+          draft.meta.background = bg;
+        });
+      },
+      false,
+      "EditStyleTab/bg"
+    );
   },
   75,
   {
