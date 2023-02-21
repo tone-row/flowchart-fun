@@ -2,7 +2,7 @@ import { toMermaidJS } from "./mermaid";
 
 describe("toMermaidJS", () => {
   test("should return empty string from empty string", () => {
-    expect(toMermaidJS({ layout: undefined, elements: [] })).toBe("");
+    expect(toMermaidJS({ layout: {}, elements: [] })).toBe("");
   });
 
   test("renders one object correctly", () => {

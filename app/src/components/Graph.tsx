@@ -1,4 +1,5 @@
 import { Core, EdgeSingular, NodeSingular } from "cytoscape";
+import coseBilkent from "cytoscape-cose-bilkent";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
@@ -16,7 +17,6 @@ import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
-import { defaultLayout } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
@@ -47,6 +47,7 @@ declare global {
 if (!cytoscape.prototype.hasInitialised) {
   cytoscape.use(dagre);
   cytoscape.use(klay);
+  cytoscape.use(coseBilkent);
   cytoscape.use(cytoscapeSvg);
   cytoscape.prototype.hasInitialised = true;
 }
@@ -195,7 +196,6 @@ function initializeGraph({
     const bg = (useDoc.getState().meta?.background as string) ?? original.bg;
     cy.current = cytoscape({
       container: document.getElementById("cy"), // container to render in
-      layout: { ...(defaultLayout as cytoscape.LayoutOptions) },
       elements: [],
       // TODO: shouldn't this load the user's style as well?
       // TODO: not even loading the real theme... this seems sus
@@ -290,6 +290,7 @@ function getGraphUpdater({
 
     try {
       const layout = getLayout(doc);
+      console.log("layout", layout);
 
       elements = universalParse(parser, doc.text, getSize.current);
 
@@ -303,13 +304,13 @@ function getGraphUpdater({
       if (layout.name !== "preset") {
         cy.current
           .layout({
-            ...layout,
             animate: graphInitialized.current
               ? elements.length < 200
                 ? shouldAnimate
                 : false
               : false,
             animationDuration: shouldAnimate ? 333 : 0,
+            ...layout,
             padding: DEFAULT_GRAPH_PADDING,
           })
           .run();

@@ -1,6 +1,23 @@
-import { defaultLayout } from "./constants";
-import { hasOwnProperty } from "./helpers";
 import { Doc } from "./useDoc";
+
+export const defaultLayout: any = {
+  name: "dagre",
+  fit: true,
+  animate: true,
+  spacingFactor: 1.25,
+};
+
+// Store default settings for layouts here
+const layoutSpecificDefaults: { [key: string]: object } = {
+  dagre: {
+    rankDir: "TB",
+  },
+  "cose-bilkent": {
+    randomize: false,
+    nodeDimensionsIncludeLabels: true,
+    quality: "proof",
+  },
+};
 
 /**
  * Reads what's stored in the doc.meta.layout option
@@ -9,39 +26,48 @@ import { Doc } from "./useDoc";
  */
 export function getLayout(doc: Doc) {
   const { meta } = doc;
+
   // Using any type so layout is permissive
   let layout = {} as any;
-  if (hasOwnProperty(meta, "layout") && meta.layout) {
+
+  // if layout is defined in meta, merge it with the default layout
+  if (meta?.layout && typeof meta.layout === "object") {
     layout = { ...meta.layout };
   }
-  let name = defaultLayout.name as string;
-  if (
-    hasOwnProperty(layout, "name") &&
-    layout.name &&
-    typeof layout.name === "string"
-  ) {
-    name = layout.name;
+
+  // if no layout name, use the default
+  if (!(layout?.name && typeof layout.name === "string")) {
+    layout.name = defaultLayout.name;
   }
-  if (name.startsWith("elk-")) {
+
+  // in some cases, we need to transform the layout name
+  if (layout.name.startsWith("elk-")) {
+    layout.elk = { algorithm: layout.name.slice(4) };
     layout.name = "elk";
-    layout.elk = { algorithm: name.slice(4) };
+  } else if (layout.name === "cose") {
+    layout.name = "cose-bilkent";
   }
 
-  const layoutToReturn = { ...defaultLayout, ...layout };
+  // depending on the layout, grab the layoutSpecificDefaults
+  // and merge it with the layout
+  const layoutSpecificDefault = layoutSpecificDefaults?.[layout.name] || {};
 
-  if (
-    hasOwnProperty(meta, "nodePositions") &&
-    meta.nodePositions &&
-    typeof meta.nodePositions === "object"
-  ) {
+  const layoutToReturn = {
+    ...defaultLayout,
+    ...layoutSpecificDefault,
+    ...layout,
+  };
+
+  // Apply the preset layout if nodePositions is defined
+  if (meta?.nodePositions && typeof meta.nodePositions === "object") {
     layoutToReturn.positions = { ...meta.nodePositions };
     layoutToReturn.name = "preset";
   }
 
+  // Remove spacingFactor if using preset layout
   if (layoutToReturn.name === "preset" && layoutToReturn.spacingFactor) {
     delete layoutToReturn.spacingFactor;
   }
 
-  // return layout shallow-merged with default layout
   return layoutToReturn;
 }
