@@ -13,22 +13,21 @@ type Merge<T extends object> = {
 
 type Layout = Merge<cytoscape.LayoutOptions> & {
   elk?: any;
+  rankDir?: string;
 };
 
 export type GraphOptionsObject = {
-  layout?: Partial<Layout> & { rankDir?: string };
+  layout: Partial<Layout>;
   style?: cytoscape.Stylesheet[];
   theme?: GraphThemes;
   background?: string;
 };
 
-const defaultSpacingFactor = 1.25;
-
 export const defaultLayout: Required<GraphOptionsObject>["layout"] = {
   name: "dagre",
   fit: true,
   animate: true,
-  spacingFactor: defaultSpacingFactor,
+  spacingFactor: 1.25,
 };
 
 export const editorOptions: EditorProps["options"] = {
@@ -36,7 +35,6 @@ export const editorOptions: EditorProps["options"] = {
   insertSpaces: true,
   wordBasedSuggestions: false,
   occurrencesHighlight: false,
-  // TODO: choose the correct render line highlight, used to be false
   renderLineHighlight: "none",
   scrollBeyondLastLine: false,
   overviewRulerBorder: false,

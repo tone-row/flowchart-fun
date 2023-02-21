@@ -2,6 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import produce from "immer";
 import { FaRegSnowflake } from "react-icons/fa";
 
+import { GraphOptionsObject } from "../../lib/constants";
 import { defaultLayout } from "../../lib/constants";
 import { getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
@@ -22,7 +23,9 @@ import {
 export function EditLayoutTab() {
   const isValidSponsor = useIsValidSponsor();
   const doc = useDoc();
-  const layout = hasOwnProperty(doc.meta, "layout") ? doc.meta.layout : {};
+  const layout = (
+    hasOwnProperty(doc.meta, "layout") ? doc.meta.layout : {}
+  ) as GraphOptionsObject["layout"];
   // this is the layout that's currently being rendered
   const graphLayout = getLayout(doc);
 
@@ -40,7 +43,8 @@ export function EditLayoutTab() {
 
   const isFrozen = useIsFrozen();
 
-  let direction = graphLayout.rankDir;
+  let direction = layout?.["rankDir"] ?? graphLayout.rankDir;
+
   if (
     typeof layout === "object" &&
     layout &&

@@ -57,14 +57,14 @@ export function OptionWithLabel({
         minHeight: 50,
       }}
     >
-      <div style={{ flex: 1 }}>{children}</div>
       <Type
         size={-1}
-        style={{ flex: 0, marginLeft: 20 }}
+        style={{ flex: 100, minWidth: 100, maxWidth: 100 }}
         color="color-lineNumbers"
       >
         {label}
       </Type>
+      <div style={{ flex: 1 }}>{children}</div>
     </div>
   );
 }

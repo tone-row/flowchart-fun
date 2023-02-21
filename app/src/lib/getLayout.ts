@@ -1,5 +1,4 @@
 import { defaultLayout } from "./constants";
-import { hasOwnProperty } from "./helpers";
 import { Doc } from "./useDoc";
 
 // Store default settings for layouts here
@@ -26,24 +25,20 @@ export function getLayout(doc: Doc) {
   let layout = {} as any;
 
   // if layout is defined in meta, merge it with the default layout
-  if (hasOwnProperty(meta, "layout") && meta.layout) {
+  if (meta?.layout && typeof meta.layout === "object") {
     layout = { ...meta.layout };
   }
 
-  // sanitize layout name
-  let name = defaultLayout.name as string;
-  if (
-    hasOwnProperty(layout, "name") &&
-    layout.name &&
-    typeof layout.name === "string"
-  ) {
-    name = layout.name;
+  // if no layout name, use the default
+  if (!(layout?.name && typeof layout.name === "string")) {
+    layout.name = defaultLayout.name;
   }
+
   // in some cases, we need to transform the layout name
-  if (name.startsWith("elk-")) {
+  if (layout.name.startsWith("elk-")) {
     layout.name = "elk";
-    layout.elk = { algorithm: name.slice(4) };
-  } else if (name === "cose") {
+    layout.elk = { algorithm: layout.name.slice(4) };
+  } else if (layout.name === "cose") {
     layout.name = "cose-bilkent";
   }
 
@@ -57,19 +52,16 @@ export function getLayout(doc: Doc) {
     ...layout,
   };
 
-  if (
-    hasOwnProperty(meta, "nodePositions") &&
-    meta.nodePositions &&
-    typeof meta.nodePositions === "object"
-  ) {
+  // Apply the preset layout if nodePositions is defined
+  if (meta?.nodePositions && typeof meta.nodePositions === "object") {
     layoutToReturn.positions = { ...meta.nodePositions };
     layoutToReturn.name = "preset";
   }
 
+  // Remove spacingFactor if using preset layout
   if (layoutToReturn.name === "preset" && layoutToReturn.spacingFactor) {
     delete layoutToReturn.spacingFactor;
   }
 
-  // return layout shallow-merged with default layout
   return layoutToReturn;
 }
