@@ -1,7 +1,6 @@
 import { Graph } from "graph-selector";
 
 export function parseFlowchart(text: string): Graph {
-  console.log(text);
   const lines = text.split("\n");
 
   const nodes: string[] = [];
