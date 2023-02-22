@@ -1,17 +1,15 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { validStripePrices } from "./_lib/_validStripePrices";
 import { stripe } from "./_lib/_stripe";
+import { getCustomerFromToken } from "./_lib/_helpers";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const email = req.body.email;
-  if (!email) return res.status(400).send({ error: "No email provided" });
-
+export default async function customerInfo(
+  req: VercelRequest,
+  res: VercelResponse
+) {
   try {
-    const { data: customers } = await stripe.customers.list({
-      email,
-    });
-    if (!customers.length) throw new Error("No Customer Found");
-    const customer = customers[0];
+    const token = req.headers.authorization;
+    const customer = await getCustomerFromToken(token);
 
     const { data: subscriptions } = await stripe.subscriptions.list({
       customer: customer.id,

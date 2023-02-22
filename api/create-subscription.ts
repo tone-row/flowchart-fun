@@ -7,7 +7,10 @@ const subscriptionTypes = {
   yearly: process.env.STRIPE_PRICE_ID_YEARLY,
 };
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function createSubscription(
+  req: VercelRequest,
+  res: VercelResponse
+) {
   try {
     const subscriptionType = req.body.subscriptionType ?? "monthly";
     if (!subscriptionTypeValid(subscriptionType)) {
