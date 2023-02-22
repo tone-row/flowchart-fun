@@ -54,3 +54,7 @@ export async function confirmCustomerValidFromToken(token?: string) {
 
   return true;
 }
+
+export function isError(error: unknown): error is Error {
+  return error instanceof Error;
+}

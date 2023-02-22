@@ -17,23 +17,6 @@ queryClient.setDefaultOptions({
   },
 });
 
-// Currently Unused
-async function userFeatures(): Promise<string[]> {
-  const response = await fetch("/api/feature", {
-    mode: "cors",
-    credentials: "same-origin",
-    headers: { "Content-Type": "application/json" },
-  });
-  return await response.json();
-}
-
-/**
- * Feature flags for user based on session
- */
-export function useUserFeatures() {
-  return useQuery(["auth", "userFeatures"], userFeatures);
-}
-
 export async function customerInfo(
   email: string | undefined
 ): Promise<{ customerId: string; subscription: Stripe.Subscription }> {
