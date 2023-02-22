@@ -17,22 +17,30 @@ queryClient.setDefaultOptions({
   },
 });
 
-export async function customerInfo(): Promise<{
-  customerId: string;
-  subscription: Stripe.Subscription;
-}> {
-  if (!supabase) throw new Error("No supabase");
-  const auth = await supabase.auth.getSession();
-  if (!auth.data.session) throw new Error("No session");
-  const accessToken = auth.data.session.access_token;
-  const response = await fetch("/api/customer-info", {
-    method: "post",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${accessToken}`,
-    },
-  });
-  return response.json();
+export async function customerInfo(): Promise<
+  | {
+      customerId: string;
+      subscription: Stripe.Subscription;
+    }
+  | undefined
+> {
+  try {
+    if (!supabase) throw new Error("No supabase");
+    const auth = await supabase.auth.getSession();
+    if (!auth.data.session) throw new Error("No session");
+    const accessToken = auth.data.session.access_token;
+    const response = await fetch("/api/customer-info", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    return response.json();
+  } catch (error) {
+    console.error(error);
+    return undefined;
+  }
 }
 
 /**
