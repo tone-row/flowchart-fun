@@ -14,7 +14,7 @@ const colors = {
   purple: "#6620e4  ",
 };
 
-const fontFamily = "Gaegu";
+const fontFamily = '"Gaegu"';
 const backgroundColor = colors.yellow;
 const arrowColor = colors.black;
 const lineHeight = 1;
