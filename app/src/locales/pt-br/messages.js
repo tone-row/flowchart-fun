@@ -4,6 +4,8 @@
     "$30 / Year": "$ 30 / ano",
     "(before a colon creates a label)":
       "(antes de dois pontos cria uma etiqueta)",
+    "A new version of the app is available. Please reload to update.":
+      "A new version of the app is available. Please reload to update.",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Acesse os diagramas de qualquer lugar.<0/>Compartilhe/incorpore diagramas que ficam em sincronização com suas edições.",
     "Accessible from any device": "Acessível de qualquer dispositivo",
@@ -138,7 +140,6 @@
     Light: "Claro",
     "Light Mode": "Modo claro",
     Link: "Link",
-    "Local Charts": "Diagramas locais",
     "Log In": "Acessar",
     "Log Out": "Deslogar",
     "Made by <0>Tone Row</0>": "Feito por <0>Tone Row</0>",
@@ -151,8 +152,6 @@
     Monospace: "Monospace",
     Museum: "Museu",
     Name: "Nome",
-    "Need Help? <0>Check out our documentation.</0>":
-      "Preciso de ajuda? <0>Confira nossa documentação.</0>",
     New: "Novo",
     "New Email": "Novo Email",
     "Next charge": "Próxima cobrança",
@@ -188,6 +187,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Refresh Page": "Refresh Page",
+    "Reload to Update": "Reload to Update",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
       "Lembre que este documento só será salvo neste computador. Caso queira uma maneira de armazenar documentos e acessá-los de onde quer que você esteja, experimente nosso plano Pro com hospedagem ilimitada de gráficos e muito mais! Por apenas US$ 3/mês!",
     Rename: "Renomear",

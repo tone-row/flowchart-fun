@@ -3,6 +3,8 @@
     "$3 / Month": "$3/월",
     "$30 / Year": "$30/년",
     "(before a colon creates a label)": "(레이블을 생성합니다)",
+    "A new version of the app is available. Please reload to update.":
+      "A new version of the app is available. Please reload to update.",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요",
     "Accessible from any device": "모든 장치에서 액세스 가능",
@@ -134,7 +136,6 @@
     Light: "라이트",
     "Light Mode": "라이트 모드",
     Link: "링크",
-    "Local Charts": "로컬 차트",
     "Log In": "로그인",
     "Log Out": "로그아웃",
     "Made by <0>Tone Row</0>": "<0>Tone Row</0> 제작",
@@ -147,8 +148,6 @@
     Monospace: "Monospace",
     Museum: "박물관",
     Name: "이름",
-    "Need Help? <0>Check out our documentation.</0>":
-      "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</0>",
     New: "신규",
     "New Email": "새 이메일",
     "Next charge": "다음 청구 금액",
@@ -184,6 +183,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Refresh Page": "Refresh Page",
+    "Reload to Update": "Reload to Update",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
       "이 문서는 이 컴퓨터에만 저장된다는 점 기억하세요. 만약 어디를 가서라도 문서를 저장하고 또 그 문서에 접속하는 방법을 찾으신다면, 무제한의 호스티드 차트와 함께 더 많은 기능을 갖춘 저희 Pro 플랜을 이용해 보세요! 한 달에 단 $3면 됩니다!",
     Rename: "이름 바꾸기",

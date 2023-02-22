@@ -3,6 +3,8 @@
     "$3 / Month": "$3 / Month",
     "$30 / Year": "$30 / Year",
     "(before a colon creates a label)": "(before a colon creates a label)",
+    "A new version of the app is available. Please reload to update.":
+      "A new version of the app is available. Please reload to update.",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.",
     "Accessible from any device": "Accessible from any device",
@@ -137,7 +139,6 @@
     Light: "Light",
     "Light Mode": "Light Mode",
     Link: "Link",
-    "Local Charts": "Local Charts",
     "Log In": "Log In",
     "Log Out": "Log Out",
     "Made by <0>Tone Row</0>": "Made by <0>Tone Row</0>",
@@ -150,8 +151,6 @@
     Monospace: "Monospace",
     Museum: "Museum",
     Name: "Name",
-    "Need Help? <0>Check out our documentation.</0>":
-      "Need Help? <0>Check out our documentation.</0>",
     New: "New",
     "New Email": "New Email",
     "Next charge": "Next charge",
@@ -187,6 +186,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Refresh Page": "Refresh Page",
+    "Reload to Update": "Reload to Update",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
       "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     Rename: "Rename",
