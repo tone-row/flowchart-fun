@@ -3,6 +3,8 @@
     "$3 / Month": "3 美元/月",
     "$30 / Year": "30 美元 / 年",
     "(before a colon creates a label)": "(在冒号前创建一个标签)",
+    "A new version of the app is available. Please reload to update.":
+      "A new version of the app is available. Please reload to update.",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。",
     "Accessible from any device": "可从任何设备访问",
@@ -133,7 +135,6 @@
     Light: "浅色",
     "Light Mode": "浅色模式",
     Link: "链接",
-    "Local Charts": "本地的图表",
     "Log In": "登录",
     "Log Out": "登出",
     "Made by <0>Tone Row</0>": "由 <0>Tone Row</0> 制作",
@@ -146,8 +147,6 @@
     Monospace: "Monospace",
     Museum: "博物馆",
     Name: "姓名",
-    "Need Help? <0>Check out our documentation.</0>":
-      "需要帮助？<0>请查看我们的文档。</0>",
     New: "新",
     "New Email": "新邮件",
     "Next charge": "下次扣费",
@@ -183,6 +182,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Refresh Page": "Refresh Page",
+    "Reload to Update": "Reload to Update",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
       "请记住，本文档仅保存在此电脑上，如果您希望储存文档并随时随地访问它们，那么请试试我们的高级计划，可以托管不限数量的图表，还有更多功能！仅需 $3/月！",
     Rename: "重命名",

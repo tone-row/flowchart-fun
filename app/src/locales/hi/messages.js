@@ -3,6 +3,8 @@
     "$3 / Month": "$3 / महीना",
     "$30 / Year": "$30 / वर्ष",
     "(before a colon creates a label)": "(कॉलन से पहले एक लेबल बनाता है)",
+    "A new version of the app is available. Please reload to update.":
+      "A new version of the app is available. Please reload to update.",
     "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
       "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों.",
     "Accessible from any device": "किसी भी उपकरण से पहुँचा जा सकता है",
@@ -137,7 +139,6 @@
     Light: "लाइट",
     "Light Mode": "लाइट मोड",
     Link: "लिंक",
-    "Local Charts": "लोकल चार्ट",
     "Log In": "लॉग इन करें",
     "Log Out": "लॉग आउट",
     "Made by <0>Tone Row</0>": "<0>Tone Row</0> द्वारा बना",
@@ -150,8 +151,6 @@
     Monospace: "Monospace",
     Museum: "म्यूज़ियम",
     Name: "नाम",
-    "Need Help? <0>Check out our documentation.</0>":
-      "मदद चाहिए? <0>हमारे दस्तावेज़ देखें।</0>",
     New: "नया",
     "New Email": "नई ईमेल",
     "Next charge": "अगला चार्ज",
@@ -187,6 +186,8 @@
       "Referencing a node by its unique ID",
     "Referencing multiple nodes with the same assigned class":
       "Referencing multiple nodes with the same assigned class",
+    "Refresh Page": "Refresh Page",
+    "Reload to Update": "Reload to Update",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
       "याद रखें कि यह डॉक्यूमेंट सिर्फ इसी कंप्यूटर पर सेव किया गया है। अगर आप ऐसा कोई तरीका जानना चाहते हैं कि आप डॉक्यूमेंट स्टोर भी करें और जहां जाएं वहां उन्हें एक्सेस भी कर सकें, तो हमारा Pro प्लैन आजमाएं जिसमें है असीमित होस्ट किए गए चार्ट और बहुत कुछ! सिर्फ $3/महीना! ",
     Rename: "फिर से नाम बदलें",

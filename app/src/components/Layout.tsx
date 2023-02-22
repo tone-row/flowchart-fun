@@ -7,6 +7,7 @@ import { Header } from "./Header";
 import styles from "./Layout.module.css";
 import Loading from "./Loading";
 import ShareDialog from "./ShareDialog";
+import { VersionCheck } from "./VersionCheck";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const isFullscreen = useFullscreen();
@@ -36,6 +37,7 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
         <ColorMode />
       </Box>
       {isEditorView && <ShareDialog />}
+      <VersionCheck />
     </>
   );
 });
