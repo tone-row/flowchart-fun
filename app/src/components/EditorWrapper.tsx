@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import { Export } from "phosphor-react";
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 
 import { useIsReadOnly, useIsValidCustomer } from "../lib/hooks";
 import { useDocDetails } from "../lib/useDoc";
@@ -8,6 +8,7 @@ import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { CloneButton } from "./CloneButton";
 import styles from "./EditorWrapper.module.css";
+import Loading from "./Loading";
 import { MightLoseSponsorTrigger } from "./MightLoseSponsorTrigger";
 import { MightLoseWarning } from "./MightLoseWarning";
 import { RenameButton } from "./RenameButton";
@@ -69,7 +70,9 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       {showMightLoseWarning && <MightLoseWarning />}
-      <main>{children}</main>
+      <Suspense fallback={<Loading />}>
+        <main>{children}</main>
+      </Suspense>
     </div>
   );
 }

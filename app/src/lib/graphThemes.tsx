@@ -1,7 +1,6 @@
-import { create } from "zustand";
+import { useQuery } from "react-query";
 
 import { Theme } from "./themes/constants";
-import original from "./themes/original";
 import { useDoc } from "./useDoc";
 
 export type GraphThemes =
@@ -44,12 +43,15 @@ async function loadFont(name: string, url: string, unicodeRange?: string) {
   document.fonts.add(font);
 }
 
-export const useThemeStore = create<Theme>(() => original);
-// TODO: subscribing won't load the initial theme
-useDoc.subscribe(
-  (doc) => (doc.meta?.theme ?? defaultGraphTheme) as string,
-  async (themeKey) => {
-    try {
+/**
+ * Alternative theme loader, using useQuery
+ * Suspends until theme and fonts are loaded, expects a themeKey
+ */
+export function useCurrentTheme(themeKey: string) {
+  const theme = useQuery(
+    ["theme", themeKey],
+    async () => {
+      // TODO: maybe dynamicActivate should include font loading
       const theme = await dynamicActivate(themeKey);
       if (theme.font?.files) {
         await Promise.all(
@@ -58,9 +60,32 @@ useDoc.subscribe(
           )
         );
       }
-      useThemeStore.setState(theme);
-    } catch (error) {
-      console.error(error);
+      return theme;
+    },
+    {
+      enabled: !!themeKey,
+      suspense: true,
+      // cache forever
+      staleTime: Infinity,
     }
-  }
-);
+  );
+  return theme.data;
+}
+
+/**
+ * Returns the current theme key in the doc or the default theme key
+ */
+export function useThemeKey() {
+  const themeKey = useDoc((s) => s.meta?.theme) ?? defaultGraphTheme;
+  return themeKey as GraphThemes;
+}
+
+/**
+ * Get the background color, user override, theme, or default
+ */
+export function useBackgroundColor(theme?: Theme) {
+  const bgUser = useDoc((state) => state.meta?.background);
+  const bgTheme = theme?.bg;
+  const bgDefault = "#ffffff";
+  return (bgUser ?? bgTheme ?? bgDefault) as string;
+}
