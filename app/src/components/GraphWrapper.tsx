@@ -1,9 +1,10 @@
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 
 import { useFullscreen, useIsEditorView } from "../lib/hooks";
 import { Box, BoxProps } from "../slang";
 import { GraphFloatingMenu } from "./GraphFloatingMenu";
 import styles from "./GraphWrapper.module.css";
+import Loading from "./Loading";
 import TextResizer from "./TextResizer";
 
 export default function GraphWrapper({
@@ -18,7 +19,7 @@ export default function GraphWrapper({
   // TODO: investigate and fix this unknown showing variable...
   const showing = useIsEditorView();
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Box
         data-showing={showing ? "editor" : undefined}
         className={styles.GraphWrapper}
@@ -39,6 +40,6 @@ export default function GraphWrapper({
         )}
       </Box>
       <TextResizer />
-    </>
+    </Suspense>
   );
 }

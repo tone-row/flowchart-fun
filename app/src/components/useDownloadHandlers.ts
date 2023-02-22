@@ -2,7 +2,7 @@ import { saveAs } from "file-saver";
 import { useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { useThemeStore } from "../lib/graphThemes";
+import { Theme } from "../lib/themes/constants";
 
 // padding, gets divided in half
 const PADDING = 60;
@@ -20,11 +20,11 @@ declare global {
 
 export default function useDownloadHandlers(
   cy: React.MutableRefObject<cytoscape.Core | undefined>,
-  bg: string
+  bg: string,
+  graphTheme: Theme
 ) {
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const filename = workspace || "flowchart";
-  const graphTheme = useThemeStore();
 
   useEffect(() => {
     window.__FF_getSVG = async () => {

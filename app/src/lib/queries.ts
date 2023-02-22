@@ -38,7 +38,6 @@ export async function customerInfo(): Promise<
     });
     return response.json();
   } catch (error) {
-    console.error(error);
     return undefined;
   }
 }

@@ -14,7 +14,7 @@ const colors = {
   gray: "#aaaaaa",
 };
 
-const fontFamily = "Porpora, sans-serif";
+const fontFamily = "Porpora";
 const backgroundColor = colors.black;
 const color = colors.white;
 const arrowColor = color;

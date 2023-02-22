@@ -23,7 +23,7 @@ const colors = Object.entries(blokusColors).reduce(
 );
 
 const textColor = "#FFFFFF";
-const fontFamily = '"Space Mono", monospace';
+const fontFamily = '"Space Mono"';
 const lineHeight = 1.2;
 const backgroundColor = "#1b1b20";
 const darkerBackgroundColor = "#060608";

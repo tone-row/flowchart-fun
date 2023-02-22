@@ -1,14 +1,6 @@
 import { StylesheetStyle } from "cytoscape";
 
-import { defaultGraphTheme, GraphThemes } from "./graphThemes";
 import { useDoc } from "./useDoc";
-
-/**
- * Get the theme from the document metadata.
- */
-export function useThemeKey() {
-  return (useDoc.getState().meta?.theme ?? defaultGraphTheme) as GraphThemes;
-}
 
 /**
  * Get the user style from the document metadata.

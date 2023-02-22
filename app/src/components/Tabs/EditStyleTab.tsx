@@ -2,9 +2,12 @@ import { t, Trans } from "@lingui/macro";
 import produce from "immer";
 import throttle from "lodash.throttle";
 
-import { useThemeKey } from "../../lib/getTheme";
 import { themes } from "../../lib/graphOptions";
-import { useThemeStore } from "../../lib/graphThemes";
+import {
+  useBackgroundColor,
+  useCurrentTheme,
+  useThemeKey,
+} from "../../lib/graphThemes";
 import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { Button } from "../Shared";
@@ -21,9 +24,9 @@ export function EditStyleTab() {
   const themeKey = useThemeKey();
   const themeNiceName =
     themes.find((t) => t.value === themeKey)?.label() ?? "???";
-  const theme = useThemeStore();
+  const theme = useCurrentTheme(themeKey);
   const meta = useDoc((s) => s.meta);
-  const background = useDoc((s) => s.meta?.background ?? theme.bg) as string;
+  const bg = useBackgroundColor(theme);
   return (
     <WithLowerChild>
       <TabOptionsGrid>
@@ -57,7 +60,7 @@ export function EditStyleTab() {
           >
             <input
               type="color"
-              defaultValue={background}
+              value={bg}
               onChange={(e) => {
                 throttleBGUpdate(e.target.value);
               }}
@@ -79,7 +82,7 @@ export function EditStyleTab() {
                     "input[type=color]"
                   ) as HTMLInputElement;
                   if (colorInput) {
-                    colorInput.value = theme.bg;
+                    colorInput.value = theme?.bg ?? "#ffffff";
                   }
                 }}
               >

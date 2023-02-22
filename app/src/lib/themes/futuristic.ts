@@ -68,6 +68,7 @@ const futuristic: Theme = {
         color: colors.black,
         label: "data(label)",
         "text-wrap": "wrap",
+        "text-max-width": "data(width)",
         "text-valign": "center",
         shape: "rectangle",
         "padding-left": padding,

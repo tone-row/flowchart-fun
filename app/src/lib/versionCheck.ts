@@ -44,9 +44,7 @@ export async function useCheckVersion() {
     refetchOnWindowFocus: true,
     refetchOnMount: true,
     refetchOnReconnect: true,
-    // refetchInterval: 1000 * 60 * 5, // 5 minutes
-    // for testing well refetch every 20 seconds
-    refetchInterval: 1000 * 20,
+    refetchInterval: 1000 * 60 * 1, // 1 minute
     refetchIntervalInBackground: true,
   });
 }
