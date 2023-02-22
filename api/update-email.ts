@@ -1,16 +1,5 @@
-import Stripe from "stripe";
 import { VercelRequest, VercelResponse } from "@vercel/node";
-
-if (
-  !process.env.STRIPE_KEY ||
-  !process.env.REACT_APP_SUPABASE_URL ||
-  !process.env.DB_SECRET
-)
-  throw new Error("Missing env vars");
-
-const stripe = new Stripe(process.env.STRIPE_KEY, {
-  apiVersion: "2020-08-27",
-});
+import { stripe } from "./_lib/_stripe";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {

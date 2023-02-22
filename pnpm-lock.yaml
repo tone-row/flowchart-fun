@@ -35,7 +35,7 @@ importers:
       moniker: ^0.1.2
       notion-to-md: ^2.5.5
       openai: ^3.1.0
-      stripe: ^8.222.0
+      stripe: ^11.11.0
       typescript: ^4.8.4
     dependencies:
       '@linear/sdk': 2.0.0
@@ -50,7 +50,7 @@ importers:
       moniker: 0.1.2
       notion-to-md: 2.5.5
       openai: 3.1.0
-      stripe: 8.222.0
+      stripe: 11.11.0
     devDependencies:
       '@swc/jest': 0.2.24_@swc+core@1.3.35
       '@types/jest': 29.1.2
@@ -4953,7 +4953,7 @@ packages:
   /@types/node-fetch/2.6.2:
     resolution: {integrity: sha512-DHqhlq5jeESLy19TYhLakJ07kNumXWjcDdxXsLUMJZ6ue8VZJj4kLPQVE/2mdHh3xZziNF1xppu5lwmS53HR+A==}
     dependencies:
-      '@types/node': 18.8.3
+      '@types/node': 12.20.55
       form-data: 3.0.1
     dev: false
 
@@ -14269,6 +14269,14 @@ packages:
   /strip-json-comments/3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+
+  /stripe/11.11.0:
+    resolution: {integrity: sha512-CT8TZJ+bUaMmqCOljHdKwHTWym0bscrCHrKmvK2KoTaz/9gDIzG+lXTJOFUOb3K7Jwaoaori4yEVzOgA7U46+g==}
+    engines: {node: '>=12.*'}
+    dependencies:
+      '@types/node': 12.20.55
+      qs: 6.11.0
+    dev: false
 
   /stripe/8.222.0:
     resolution: {integrity: sha512-hrA79fjmN2Eb6K3kxkDzU4ODeVGGjXQsuVaAPSUro6I9MM3X+BvIsVqdphm3BXWfimAGFvUqWtPtHy25mICY1w==}

@@ -17,43 +17,37 @@ queryClient.setDefaultOptions({
   },
 });
 
-// Currently Unused
-async function userFeatures(): Promise<string[]> {
-  const response = await fetch("/api/feature", {
-    mode: "cors",
-    credentials: "same-origin",
-    headers: { "Content-Type": "application/json" },
-  });
-  return await response.json();
-}
-
-/**
- * Feature flags for user based on session
- */
-export function useUserFeatures() {
-  return useQuery(["auth", "userFeatures"], userFeatures);
-}
-
-export async function customerInfo(
-  email: string | undefined
-): Promise<{ customerId: string; subscription: Stripe.Subscription }> {
-  if (!email) return Promise.reject(new Error("Invalid Email"));
-  const response = await fetch("/api/customer-info", {
-    method: "post",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email }),
-  });
-  return response.json();
+export async function customerInfo(): Promise<
+  | {
+      customerId: string;
+      subscription: Stripe.Subscription;
+    }
+  | undefined
+> {
+  try {
+    if (!supabase) throw new Error("No supabase");
+    const auth = await supabase.auth.getSession();
+    if (!auth.data.session) throw new Error("No session");
+    const accessToken = auth.data.session.access_token;
+    const response = await fetch("/api/customer-info", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    return response.json();
+  } catch (error) {
+    console.error(error);
+    return undefined;
+  }
 }
 
 /**
  * Useful stripe info– customer id and subscription
  */
-export function useCustomerInfo(email: string | undefined) {
-  return useQuery(["auth", "customerInfo", email], () => customerInfo(email), {
-    enabled: Boolean(email),
+export function useCustomerInfo() {
+  return useQuery(["auth", "customerInfo"], customerInfo, {
     staleTime: Infinity,
   });
 }

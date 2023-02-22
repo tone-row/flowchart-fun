@@ -1,16 +1,12 @@
 import { t, Trans } from "@lingui/macro";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import { CircleWavyWarning } from "phosphor-react";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { track } from "../lib/track";
 import { Box, Type } from "../slang";
-import { AppContext } from "./AppContext";
 import styles from "./MightLoseWarning.module.css";
 export function MightLoseWarning() {
-  const { customerIsLoading } = useContext(AppContext);
-  if (customerIsLoading) return null;
   return (
     <HoverCard.Root>
       <HoverCard.Trigger asChild>

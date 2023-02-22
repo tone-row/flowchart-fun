@@ -131,29 +131,28 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   }, [session]);
 
   useEffect(() => {
-    if (supabase) {
-      (async () => {
-        const {
-          data: { session },
-        } = await supabase.auth.getSession();
-        setSession(session);
-        setCheckedSession(true);
-        supabase.auth.onAuthStateChange((_event, session) => {
-          setSession(session);
-        });
-      })();
-    } else {
+    if (!supabase) {
       setCheckedSession(true);
+      return;
     }
+
+    (async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      setSession(session);
+      setCheckedSession(true);
+      supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session);
+      });
+    })();
   }, []);
 
   // Close Share Modal when navigating
   const { pathname } = useLocation();
   useEffect(() => setShareModal(false), [pathname]);
 
-  const { data: customer, isFetching: customerIsLoading } = useCustomerInfo(
-    session?.user?.email
-  );
+  const { data: customer, isFetching: customerIsLoading } = useCustomerInfo();
 
   // Load hosted charts ahead of time
   useHostedCharts(session?.user?.id);

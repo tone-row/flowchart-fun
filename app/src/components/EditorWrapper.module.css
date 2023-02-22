@@ -1,11 +1,12 @@
 .EditorWrapper {
   display: grid;
-  grid-template: auto minmax(0, 1fr) / minmax(0, 1fr);
   width: 100%;
   max-width: 100%;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
 }
 
-.EditorWrapper.mightLose {
+.mightLose {
   grid-template-rows: auto auto minmax(0, 1fr);
 }
 

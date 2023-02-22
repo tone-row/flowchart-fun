@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { stringify } from "graph-selector";
-import { confirmCustomerValidFromToken } from "../_lib/_helpers";
+import { confirmActiveSubscriptionFromToken } from "../_lib/_helpers";
 import { openai } from "../_lib/_openai";
 import { parseFlowchart } from "./_parseFlowchart";
 
@@ -8,7 +8,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     // grab the bearer token from the request
     const token = req.headers.authorization;
-    const isValidCustomer = confirmCustomerValidFromToken(token);
+    const isValidCustomer = confirmActiveSubscriptionFromToken(token);
     if (!isValidCustomer)
       return res.status(401).json({ error: "unauthorized" });
 
