@@ -2,7 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import { Export } from "phosphor-react";
 import { useContext } from "react";
 
-import { useIsReadOnly } from "../lib/hooks";
+import { useIsReadOnly, useIsValidCustomer } from "../lib/hooks";
 import { useDocDetails } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
@@ -15,16 +15,13 @@ import { RenameButton } from "./RenameButton";
 /**
  * Adds title and export button to the editor
  */
-export function EditorWrapper({
-  children,
-  showMightLoseWarning,
-}: {
-  children: React.ReactNode;
-  showMightLoseWarning?: boolean;
-}) {
+export function EditorWrapper({ children }: { children: React.ReactNode }) {
   const title = useDocDetails("title", "flowchart.fun");
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
+  const isValidCustomer = useIsValidCustomer();
+  const { customerIsLoading } = useContext(AppContext);
+  const showMightLoseWarning = !isValidCustomer && !customerIsLoading;
   return (
     <div
       className={[

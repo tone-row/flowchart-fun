@@ -290,8 +290,6 @@ function getGraphUpdater({
 
     try {
       const layout = getLayout(doc);
-      console.log("layout", layout);
-
       elements = universalParse(parser, doc.text, getSize.current);
 
       // Test
