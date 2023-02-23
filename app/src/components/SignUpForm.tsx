@@ -55,20 +55,20 @@ export function SignUpForm() {
           card: cardElement,
         });
 
+      if (createPaymentError) throw createPaymentError;
+      if (!paymentMethod) throw new Error("No Payment Method");
+
       // Create Customer
       const {
         customer,
         subscription: preexistingSubscription,
         error,
       } = await createCustomer(email);
-      if (error) throw error;
 
+      if (error) throw error;
       if (preexistingSubscription) {
         throw new Error("Please try logging in.");
       }
-
-      if (createPaymentError) throw createPaymentError;
-      if (!paymentMethod) throw new Error("No Payment Method");
 
       // create subscription
       const { error: createSubscriptionError } = await createSubscription({

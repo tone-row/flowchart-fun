@@ -18,7 +18,7 @@ import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidCustomer, useIsValidSponsor } from "../lib/hooks";
+import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
@@ -61,12 +61,10 @@ const Edit = memo(function Edit() {
 
   const text = useDoc((d) => d.text);
 
-  const isValidCustomer = useIsValidCustomer();
-
   return (
     <EditWrapper>
       <Main>
-        <EditorWrapper showMightLoseWarning={!isValidCustomer}>
+        <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={styles.Tabs}>
             <Tabs.List className={styles.TabsList}>
               <Tabs.Trigger value="Document" data-testid="Editor Tab: Document">

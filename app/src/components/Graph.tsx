@@ -22,7 +22,11 @@ import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
 import { getUserStyle } from "../lib/getTheme";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
-import { useThemeStore } from "../lib/graphThemes";
+import {
+  useBackgroundColor,
+  useCurrentTheme,
+  useThemeKey,
+} from "../lib/graphThemes";
 import { isError } from "../lib/helpers";
 import { getAnimationSettings } from "../lib/hooks";
 import { Parsers, universalParse, useParser } from "../lib/parsers";
@@ -59,8 +63,10 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const cy = useRef<undefined | Core>();
   const errorCatcher = useRef<undefined | Core>();
   const graphInitialized = useRef(false);
-  const theme = useThemeStore();
-  const bg = useDoc((state) => state.meta?.background ?? theme.bg) as string;
+  const themeKey = useThemeKey();
+  const theme = useCurrentTheme(themeKey) as unknown as Theme;
+  const bg = useBackgroundColor(theme);
+
   const getSize = useRef<TGetSize>(getGetSize(theme));
   const parser = useParser();
   const handleDragFree = useCallback(() => {
@@ -93,7 +99,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     return () => window.removeEventListener("resize", debouncedResize.callback);
   }, [debouncedResize]);
 
-  useDownloadHandlers(cy, bg);
+  useDownloadHandlers(cy, bg, theme);
 
   // Initialize Graph
   useEffect(() => {
@@ -116,29 +122,10 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     };
   }, [handleDragFree]);
 
-  // Apply theme on initial load
+  // Apply theme
   useEffect(() => {
-    getStyleUpdater({ cy, errorCatcher, bg })(useThemeStore.getState());
-  }, [bg]);
-
-  const throttleStyleUpdate = useMemo(() => {
-    const updater = getStyleUpdater({ cy, errorCatcher, bg });
-    // Run it once based on the current state of the theme
-    const theme = useThemeStore.getState();
-    updater(theme);
-    return updater;
-  }, [bg]);
-
-  // Then subscribe to theme updates and update styles
-  useEffect(() => {
-    return useThemeStore.subscribe((theme) => {
-      // TODO: test that we don't have more than one listener running at a time
-      // update the ref to a getSize function used inside the layout updater
-      // this is to avoid superfluous re-renders
-      getSize.current = getGetSize(theme);
-      throttleStyleUpdate(theme);
-    });
-  }, [throttleStyleUpdate]);
+    getStyleUpdater({ cy, errorCatcher, bg })(theme);
+  }, [bg, theme]);
 
   const throttleUpdate = useMemo(
     () =>
@@ -290,8 +277,6 @@ function getGraphUpdater({
 
     try {
       const layout = getLayout(doc);
-      console.log("layout", layout);
-
       elements = universalParse(parser, doc.text, getSize.current);
 
       // Test

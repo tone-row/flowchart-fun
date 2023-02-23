@@ -1,11 +1,12 @@
-import Stripe from "stripe";
-const stripe = new Stripe(process.env.STRIPE_KEY);
+import { VercelRequest, VercelResponse } from "@vercel/node";
+import { isError } from "./_lib/_helpers";
+import { stripe } from "./_lib/_stripe";
 
 /**
  * Create Customer if it doesn't exist
  * Return existing customer if it does
  */
-export default async function handler(req, res) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const { email } = req.body;
     const { data } = await stripe.customers.list({ email });
@@ -45,6 +46,10 @@ export default async function handler(req, res) {
       res.json({ customer });
     }
   } catch (error) {
-    return res.status("402").send({ error: { message: error.message } });
+    return res.status(402).send({
+      error: {
+        message: isError(error) ? error.message : "Something went wrong",
+      },
+    });
   }
 }

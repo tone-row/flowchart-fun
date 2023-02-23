@@ -15,7 +15,7 @@ import { Item, Menu, Separator, Submenu } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
-import { useThemeStore } from "../lib/graphThemes";
+import { defaultGraphTheme, useCurrentTheme } from "../lib/graphThemes";
 import { borderStyles, shapes } from "../lib/graphUtilityClasses";
 import { useIsFirefox } from "../lib/hooks";
 import {
@@ -176,7 +176,9 @@ const sizes: {
 const borders = borderStyles.map((style) => style.selector.slice(5));
 
 function NodeSubmenu() {
-  const colors = useThemeStore((theme) => theme.colors);
+  const themeKey = useDoc((doc) => doc.meta?.theme ?? defaultGraphTheme);
+  const theme = useCurrentTheme(themeKey as string);
+  const colors = theme?.colors ?? {};
   const colorNames = Object.keys(colors);
   const active = useContextMenuState((state) => state.active);
   const parser = useParser();

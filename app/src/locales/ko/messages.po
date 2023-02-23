@@ -13,17 +13,21 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/SignUpForm.tsx:128
+#: src/components/SignUpForm.tsx:133
 msgid "$3 / Month"
 msgstr "$3/월"
 
-#: src/components/SignUpForm.tsx:129
+#: src/components/SignUpForm.tsx:134
 msgid "$30 / Year"
 msgstr "$30/년"
 
 #: src/lib/getDefaultText.ts:9
 msgid "(before a colon creates a label)"
 msgstr "(레이블을 생성합니다)"
+
+#: src/components/VersionCheck.tsx:22
+msgid "A new version of the app is available. Please reload to update."
+msgstr ""
 
 #: src/pages/Charts.tsx:351
 msgid "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits."
@@ -38,7 +42,7 @@ msgstr "모든 장치에서 액세스 가능"
 msgid "Account"
 msgstr "계정"
 
-#: src/pages/Edit.tsx:93
+#: src/pages/Edit.tsx:91
 #: src/pages/EditHosted.tsx:88
 msgid "Advanced"
 msgstr "고급의"
@@ -68,7 +72,7 @@ msgstr "자동 레이아웃"
 msgid "Back To Editor"
 msgstr "편집기로 돌아가기"
 
-#: src/components/Tabs/EditStyleTab.tsx:44
+#: src/components/Tabs/EditStyleTab.tsx:48
 msgid "Background"
 msgstr "배경"
 
@@ -87,7 +91,7 @@ msgstr ""
 msgid "Blog"
 msgstr "블로그"
 
-#: src/components/GraphContextMenu.tsx:372
+#: src/components/GraphContextMenu.tsx:380
 msgid "Border"
 msgstr ""
 
@@ -131,7 +135,7 @@ msgstr "변경 로그"
 msgid "Charts"
 msgstr "차트"
 
-#: src/components/SignUpForm.tsx:96
+#: src/components/SignUpForm.tsx:101
 #: src/pages/LogIn.tsx:36
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
@@ -202,7 +206,7 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr ""
 
 #: src/components/MightLoseSponsorTrigger.tsx:63
-#: src/components/RenameButton.tsx:137
+#: src/components/RenameButton.tsx:135
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
@@ -283,7 +287,7 @@ msgstr "브라우저 데이터가 지워지면 삭제됨"
 msgid "Describe the flowchart you wish to create"
 msgstr "만들려는 다이어그램 설명"
 
-#: src/components/Tabs/EditLayoutTab.tsx:85
+#: src/components/Tabs/EditLayoutTab.tsx:95
 msgid "Direction"
 msgstr "방향"
 
@@ -299,7 +303,7 @@ msgstr "구독을 취소하시겠습니까?"
 msgid "Do you want to delete this?"
 msgstr "본 항목을 삭제하시겠습니까?"
 
-#: src/pages/Edit.tsx:74
+#: src/pages/Edit.tsx:72
 #: src/pages/EditHosted.tsx:78
 msgid "Document"
 msgstr "문서"
@@ -389,8 +393,8 @@ msgstr "무료 플랜의 모든 것"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:62
-#: src/components/EditorWrapper.tsx:67
+#: src/components/EditorWrapper.tsx:59
+#: src/components/EditorWrapper.tsx:64
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:111
 msgid "Export"
@@ -426,11 +430,11 @@ msgstr "전체 화면"
 msgid "Futuristic"
 msgstr "미래 지향적"
 
-#: src/components/Tabs/EditLayoutTab.tsx:163
+#: src/components/Tabs/EditLayoutTab.tsx:187
 msgid "Get More Layouts"
 msgstr "더 많은 레이아웃을 보고 싶어요"
 
-#: src/components/Tabs/EditStyleTab.tsx:86
+#: src/components/Tabs/EditStyleTab.tsx:94
 msgid "Get More Themes"
 msgstr "더 많은 테마 받기"
 
@@ -443,7 +447,7 @@ msgid "Grid"
 msgstr "그리드"
 
 #: src/components/MightLoseSponsorTrigger.tsx:48
-#: src/components/MightLoseWarning.tsx:30
+#: src/components/MightLoseWarning.tsx:26
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "주의! 캐시를 지우기 전에 이 문서는 클라우드에 저장 되어있지 않다는 것을 기억하시기 바랍니다. "
 
@@ -459,7 +463,6 @@ msgstr "기록"
 msgid "Home"
 msgstr "집"
 
-#: src/pages/Charts.tsx:350
 #: src/pages/Charts.tsx:724
 msgid "Hosted Charts"
 msgstr "호스트 차트"
@@ -496,13 +499,13 @@ msgstr "언어"
 msgid "Large"
 msgstr ""
 
-#: src/components/Tabs/EditLayoutTab.tsx:67
-#: src/pages/Edit.tsx:79
+#: src/components/Tabs/EditLayoutTab.tsx:73
+#: src/pages/Edit.tsx:77
 #: src/pages/EditHosted.tsx:81
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/components/Tabs/EditLayoutTab.tsx:175
+#: src/components/Tabs/EditLayoutTab.tsx:199
 msgid "Layout is Frozen"
 msgstr "레이아웃이 고정됨"
 
@@ -510,7 +513,7 @@ msgstr "레이아웃이 고정됨"
 msgid "Leading References"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:58
+#: src/components/MightLoseWarning.tsx:54
 #: src/pages/Charts.tsx:738
 msgid "Learn More"
 msgstr "더 알아보기"
@@ -533,10 +536,6 @@ msgstr "라이트 모드"
 msgid "Link"
 msgstr "링크"
 
-#: src/pages/Charts.tsx:133
-msgid "Local Charts"
-msgstr "로컬 차트"
-
 #: src/components/Header.tsx:200
 #: src/components/Header.tsx:432
 #: src/pages/New.tsx:272
@@ -555,7 +554,7 @@ msgstr "<0>Tone Row</0> 제작"
 msgid "Make a Donation"
 msgstr "기부하기"
 
-#: src/components/ShareDialog.tsx:316
+#: src/components/ShareDialog.tsx:320
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
@@ -584,10 +583,6 @@ msgstr "박물관"
 #: src/pages/New.tsx:171
 msgid "Name"
 msgstr "이름"
-
-#: src/components/EditorError.tsx:39
-msgid "Need Help? <0>Check out our documentation.</0>"
-msgstr "도움이 필요하신가요? <0>저희 문서를 확인해 보세요.</0>"
 
 #: src/components/Header.tsx:77
 #: src/components/Header.tsx:350
@@ -647,6 +642,7 @@ msgstr "순서도로 변환하려는 정보를 붙여넣기"
 msgid "Permalinks"
 msgstr "퍼머링크"
 
+#: src/pages/Charts.tsx:350
 #: src/pages/Pricing.tsx:46
 #: src/pages/Pricing.tsx:61
 msgid "Persistent Flowcharts"
@@ -665,8 +661,8 @@ msgstr "가격"
 msgid "Prompt"
 msgstr ""
 
-#: src/components/ShareDialog.tsx:312
-#: src/components/ShareDialog.tsx:335
+#: src/components/ShareDialog.tsx:316
+#: src/components/ShareDialog.tsx:339
 #: src/pages/Charts.tsx:597
 msgid "Public"
 msgstr "공용"
@@ -675,7 +671,7 @@ msgstr "공용"
 msgid "Random"
 msgstr "무작위"
 
-#: src/components/EditorWrapper.tsx:53
+#: src/components/EditorWrapper.tsx:50
 #: src/components/ShareDialog.tsx:104
 msgid "Read-only"
 msgstr "읽기 전용"
@@ -712,15 +708,23 @@ msgstr ""
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr ""
 
-#: src/components/MightLoseWarning.tsx:43
+#: src/components/VersionCheck.tsx:32
+msgid "Refresh Page"
+msgstr ""
+
+#: src/components/VersionCheck.tsx:19
+msgid "Reload to Update"
+msgstr ""
+
+#: src/components/MightLoseWarning.tsx:39
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 msgstr "이 문서는 이 컴퓨터에만 저장된다는 점 기억하세요. 만약 어디를 가서라도 문서를 저장하고 또 그 문서에 접속하는 방법을 찾으신다면, 무제한의 호스티드 차트와 함께 더 많은 기능을 갖춘 저희 Pro 플랜을 이용해 보세요! 한 달에 단 $3면 됩니다!"
 
-#: src/components/RenameButton.tsx:97
-#: src/components/RenameButton.tsx:98
-#: src/components/RenameButton.tsx:104
-#: src/components/RenameButton.tsx:114
-#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:92
+#: src/components/RenameButton.tsx:93
+#: src/components/RenameButton.tsx:99
+#: src/components/RenameButton.tsx:109
+#: src/components/RenameButton.tsx:124
 #: src/components/RenameButton.tsx:166
 msgid "Rename"
 msgstr "이름 바꾸기"
@@ -766,7 +770,7 @@ msgstr "구하다"
 msgid "Settings"
 msgstr "설정"
 
-#: src/components/GraphContextMenu.tsx:266
+#: src/components/GraphContextMenu.tsx:270
 msgid "Shape"
 msgstr ""
 
@@ -774,12 +778,12 @@ msgstr ""
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr ""
 
-#: src/components/SignUpForm.tsx:175
+#: src/components/SignUpForm.tsx:180
 #: src/pages/LogIn.tsx:71
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/components/GraphContextMenu.tsx:329
+#: src/components/GraphContextMenu.tsx:337
 msgid "Size"
 msgstr ""
 
@@ -795,7 +799,7 @@ msgstr ""
 msgid "Sorry! This page is only available in English."
 msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 
-#: src/components/Tabs/EditLayoutTab.tsx:121
+#: src/components/Tabs/EditLayoutTab.tsx:136
 msgid "Spacing"
 msgstr "간격"
 
@@ -832,7 +836,7 @@ msgstr "이 컴퓨터에 저장됨"
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Flowchart Fun를 통해 워크플로우를 능률화하고 프로세스 시각화를 단순화하세요"
 
-#: src/pages/Edit.tsx:84
+#: src/pages/Edit.tsx:82
 #: src/pages/EditHosted.tsx:84
 msgid "Style"
 msgstr "스타일"
@@ -875,6 +879,7 @@ msgstr "신택스 참조"
 msgid "Temporary"
 msgstr "임시"
 
+#: src/pages/Charts.tsx:133
 #: src/pages/Pricing.tsx:35
 msgid "Temporary Flowcharts"
 msgstr "임시 다이어그램"
@@ -925,7 +930,7 @@ msgid "Type"
 msgstr "유형"
 
 #: src/components/GraphFloatingMenu.tsx:64
-#: src/components/Tabs/EditLayoutTab.tsx:180
+#: src/components/Tabs/EditLayoutTab.tsx:204
 msgid "Unfreeze"
 msgstr "녹이다"
 
@@ -969,7 +974,7 @@ msgstr "Github에서 보기"
 msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
 msgstr "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다!"
 
-#: src/components/SignUpForm.tsx:182
+#: src/components/SignUpForm.tsx:187
 msgid "We use cookies to keep you logged in."
 msgstr "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다."
 

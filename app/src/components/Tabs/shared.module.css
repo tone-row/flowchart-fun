@@ -69,6 +69,8 @@
 
 .selectContent [role="option"] {
   padding: calc(var(--spacer-px) * 2);
+  /* prevent selection */
+  user-select: none;
 }
 
 .selectContent [role="option"]:hover {

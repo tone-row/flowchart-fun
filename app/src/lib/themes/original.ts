@@ -30,6 +30,7 @@ const original: Theme = {
     fontFamily,
     fontSize: defaultFontSize,
     lineHeight,
+    files: [{ name: fontFamily, url: "Karla-Regular.woff2" }],
   },
   colors,
   styles: [

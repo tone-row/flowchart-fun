@@ -54,7 +54,7 @@ textarea:focus {
   align-items: center;
   gap: 10px;
   --y: 8px;
-  padding: calc(var(--y) + 2px) 14px var(--y);
+  padding: calc(var(--y) + 1px) 14px var(--y);
 }
 
 .Button:hover,
