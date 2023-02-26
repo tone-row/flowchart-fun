@@ -15,6 +15,7 @@ import { devtools, subscribeWithSelector } from "zustand/middleware";
 
 import { newDelimiters } from "./constants";
 
+/** Details represent the chart currently being viewed. */
 export type Details = {
   /** Represents the workspace ID if local, and the db ID if hosted */
   id: string | number;
@@ -31,18 +32,18 @@ export type Details = {
 export type Doc = {
   text: string;
   meta: Record<string, unknown>;
-  /** Details are *not* stored in DB. They represent the chart currently being viewed. */
-  details: Details;
+};
+
+const initialDetails: Details = {
+  id: "",
+  title: "",
+  isHosted: false,
 };
 
 export const initialDoc = {
   text: "",
   meta: {},
-  details: {
-    id: "",
-    title: "",
-    isHosted: false,
-  },
+  details: initialDetails,
 };
 
 export const useDoc = create(
@@ -54,6 +55,7 @@ export const useDoc = create(
   )
 );
 
+/** Turns doc into the string we store in the database */
 export function docToString(doc: Doc) {
   const { text, meta } = doc;
   return [
@@ -72,6 +74,15 @@ export const useParseError = create<{ error: string; errorFromStyle: string }>(
 );
 
 /**
+ * Custom useDocDetails store
+ */
+export const useDocDetailsStore = create<Details>()(
+  devtools(() => initialDetails, {
+    name: "useDocDetailsStore",
+  })
+);
+
+/**
  * Get a type-safe version of any property
  * of the doc details
  */
@@ -79,5 +90,5 @@ export function useDocDetails<K extends keyof Details>(
   prop: K,
   fallback?: Details[K]
 ) {
-  return useDoc((state) => state.details[prop] || fallback) as Details[K];
+  return useDocDetailsStore((state) => state[prop] || fallback) as Details[K];
 }

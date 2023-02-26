@@ -79,6 +79,15 @@ export function TextEditor({
     monacoRef.current.editor.setModelLanguage(model, languageId);
   }, [editorIsReady, languageId]);
 
+  // TODO: Remove this
+  // Bind to realtime updates
+  // useEffect(() => {
+  //   if (!bindToRealtime) return;
+  //   if (!editorIsReady) return;
+  //   if (!editorRef.current) return;
+  //   initRealtime(editorRef.current);
+  // }, [bindToRealtime, editorIsReady, editorRef]);
+
   return (
     <Editor
       {...props}
