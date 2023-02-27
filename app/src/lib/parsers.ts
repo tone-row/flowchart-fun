@@ -1,7 +1,7 @@
 import { ElementDefinition } from "cytoscape";
 import { parse, toCytoscapeElements } from "graph-selector";
 
-import { getDoc } from "./docHelpers";
+import { getDoc, useDocMeta } from "./docHelpers";
 import { TGetSize } from "./getGetSize";
 import { SelectOption } from "./graphOptions";
 import { parseText } from "./parseText";
@@ -17,7 +17,7 @@ const DEFAULT_PARSER = "graph-selector";
  * returns the parser if it is set or the default parser
  */
 export function useParser(): Parsers {
-  const meta = getDoc().meta;
+  const meta = useDocMeta();
   const parser = meta?.parser as Parsers;
   return parser || DEFAULT_PARSER;
 }

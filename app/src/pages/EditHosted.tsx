@@ -18,7 +18,12 @@ import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
-import { getDoc, setDoc, subscribeToDoc } from "../lib/docHelpers";
+import {
+  setDoc,
+  setDocText,
+  subscribeToDoc,
+  useDocText,
+} from "../lib/docHelpers";
 import { docToString } from "../lib/docToString";
 import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
@@ -41,30 +46,30 @@ export default function EditHosted() {
     }
   );
 
-  const { mutate, isLoading } = useMutation((text: string) =>
-    updateChartText(text, id)
-  );
+  // const { mutate, isLoading } = useMutation((text: string) =>
+  //   updateChartText(text, id)
+  // );
   // get debounced mutate
-  const {
-    callback: debounceMutate,
-    flush,
-    pending,
-  } = useDebouncedCallback((doc: Doc) => {
-    mutate(docToString(doc));
-  }, 1000);
-  useEffect(() => subscribeToDoc(debounceMutate), [debounceMutate]);
+  // const {
+  //   callback: debounceMutate,
+  //   flush,
+  //   pending,
+  // } = useDebouncedCallback((doc: Doc) => {
+  //   mutate(docToString(doc));
+  // }, 1000);
+  // useEffect(() => subscribeToDoc(debounceMutate), [debounceMutate]);
 
-  const text = getDoc().text;
+  const text = useDocText();
 
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
 
   // This is to make sure we update if people exit the tab quickly
-  useEffect(() => {
-    return () => {
-      flush();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     flush();
+  //   };
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   const onChange = useCallback(
     (value) => setDoc({ text: value ?? "" }, "EditHosted/text"),
@@ -119,10 +124,10 @@ export default function EditHosted() {
             )}
           </Tabs.Root>
         </EditorWrapper>
-        <LoadingState isLoading={isLoading} pending={pending()} />
+        <LoadingState isLoading={false} pending={false} />
         <ClearTextButton
           handleClear={() => {
-            setDoc({ text: "", meta: {} }, "EditHosted/clear");
+            setDocText("", "EditHosted/clear");
             if (editorRef.current) {
               editorRef.current.focus();
             }

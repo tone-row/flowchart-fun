@@ -2,7 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import { FaRegSnowflake } from "react-icons/fa";
 
 import { GraphOptionsObject } from "../../lib/constants";
-import { getDoc, setDocImmer } from "../../lib/docHelpers";
+import { setDocImmer, useSafeDoc } from "../../lib/docHelpers";
 import { defaultLayout, getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
@@ -20,7 +20,7 @@ import {
 
 export function EditLayoutTab() {
   const isValidSponsor = useIsValidSponsor();
-  const doc = getDoc();
+  const doc = useSafeDoc();
   const layout = (
     hasOwnProperty(doc.meta, "layout") ? doc.meta.layout : {}
   ) as GraphOptionsObject["layout"];

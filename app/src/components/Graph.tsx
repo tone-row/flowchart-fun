@@ -18,7 +18,7 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { cytoscape } from "../lib/cytoscape";
-import { getDoc, setDoc, subscribeToDoc } from "../lib/docHelpers";
+import { getDoc, setDocImmer, subscribeToDoc } from "../lib/docHelpers";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
 import { getUserStyle } from "../lib/getTheme";
@@ -73,14 +73,8 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const parser = useParser();
   const handleDragFree = useCallback(() => {
     const nodePositions = getNodePositionsFromCy();
-    setDoc((state) => {
-      return {
-        ...state,
-        meta: {
-          ...state.meta,
-          nodePositions,
-        },
-      };
+    setDocImmer((draft) => {
+      draft.meta.nodePositions = nodePositions;
     }, "Graph/handleDragFree");
   }, []);
 

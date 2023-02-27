@@ -34,6 +34,18 @@ export function setupYDoc(type: "hosted", id: string) {
   useYDoc.setState({ ydoc, provider });
 }
 
+/**
+ * Returns the ydoc if it exists or false if it doesn't
+ */
+export function getSafeYDoc() {
+  const ydoc = useYDoc.getState().ydoc;
+  if (!ydoc) {
+    logError(new Error("Y.Doc not found"));
+    return false;
+  }
+  return ydoc;
+}
+
 export function initRealtime(editor: IStandAloneCodeEditor) {
   try {
     const ydoc = useYDoc.getState().ydoc;

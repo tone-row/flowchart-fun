@@ -16,7 +16,7 @@ import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
-import { getDoc, setDoc, subscribeToDoc } from "../lib/docHelpers";
+import { setDoc, subscribeToDoc, useDocText } from "../lib/docHelpers";
 import { docToString } from "../lib/docToString";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
@@ -61,7 +61,7 @@ const Edit = memo(function Edit() {
   const { url } = useRouteMatch();
   useTrackLastChart(url);
 
-  const text = getDoc().text;
+  const text = useDocText();
 
   return (
     <EditWrapper>

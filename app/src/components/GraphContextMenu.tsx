@@ -15,7 +15,7 @@ import { Item, Menu, Separator, Submenu } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
-import { getDoc, setDoc } from "../lib/docHelpers";
+import { getDoc, getDocText, setDoc, setDocText } from "../lib/docHelpers";
 import { defaultGraphTheme, useCurrentTheme } from "../lib/graphThemes";
 import { borderStyles, shapes } from "../lib/graphUtilityClasses";
 import { useIsFirefox } from "../lib/hooks";
@@ -216,7 +216,7 @@ function NodeSubmenu() {
             <Item
               key={name}
               onClick={() => {
-                let newText = getDoc().text;
+                let newText = getDocText();
                 for (const selection of activeSelection) {
                   if (!selection) continue;
                   newText = operate(newText, {
@@ -231,7 +231,7 @@ function NodeSubmenu() {
                     operation: ["addClassesToNode", { classNames: [name] }],
                   });
                 }
-                setDoc({ text: newText }, "NodeSubmenu/color");
+                setDocText(newText, "NodeSubmenu/color");
               }}
             >
               <Box
@@ -243,7 +243,7 @@ function NodeSubmenu() {
           <Item
             key="remove-all"
             onClick={() => {
-              let newText = getDoc().text;
+              let newText = getDocText();
               for (const selection of activeSelection) {
                 if (!selection) continue;
                 newText = operate(newText, {
@@ -254,7 +254,7 @@ function NodeSubmenu() {
                   ],
                 });
               }
-              setDoc({ text: newText }, "NodeSubmenu/color/removeAll");
+              setDocText(newText, "NodeSubmenu/color/removeAll");
             }}
           >
             <Box className={styles.SquareButton}>
@@ -274,7 +274,7 @@ function NodeSubmenu() {
             <Item
               key={shape}
               onClick={() => {
-                let newText = getDoc().text;
+                let newText = getDocText();
                 for (const selection of activeSelection) {
                   if (!selection) continue;
                   newText = operate(newText, {
@@ -289,7 +289,7 @@ function NodeSubmenu() {
                     operation: ["addClassesToNode", { classNames: [shape] }],
                   });
                 }
-                setDoc({ text: newText }, "NodeSubmenu/shape");
+                setDocText(newText, "NodeSubmenu/shape");
               }}
             >
               <Box
@@ -306,7 +306,7 @@ function NodeSubmenu() {
           <Item
             key="remove-all"
             onClick={() => {
-              let newText = getDoc().text;
+              let newText = getDocText();
               for (const selection of activeSelection) {
                 if (!selection) continue;
                 newText = operate(newText, {
@@ -317,7 +317,7 @@ function NodeSubmenu() {
                   ],
                 });
               }
-              setDoc({ text: newText }, "NodeSubmenu/shape/removeAll");
+              setDocText(newText, "NodeSubmenu/shape/removeAll");
             }}
           >
             <Box className={styles.SquareButton}>
@@ -336,7 +336,7 @@ function NodeSubmenu() {
             <Item
               key={index}
               onClick={() => {
-                let newText = getDoc().text;
+                let newText = getDocText();
                 for (const selection of activeSelection) {
                   if (!selection) continue;
                   newText = operate(newText, {
@@ -361,7 +361,7 @@ function NodeSubmenu() {
                       ],
                     });
                 }
-                setDoc({ text: newText }, "NodeSubmenu/size");
+                setDocText(newText, "NodeSubmenu/size");
               }}
             >
               <Type size={size}>{label}</Type>
@@ -379,7 +379,7 @@ function NodeSubmenu() {
             <Item
               key={className}
               onClick={() => {
-                let newText = getDoc().text;
+                let newText = getDocText();
                 for (const selection of activeSelection) {
                   if (!selection) continue;
                   newText = operate(newText, {
@@ -399,7 +399,7 @@ function NodeSubmenu() {
                       ],
                     });
                 }
-                setDoc({ text: newText }, "NodeSubmenu/border");
+                setDocText(newText, "NodeSubmenu/border");
               }}
             >
               <span

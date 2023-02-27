@@ -9,7 +9,7 @@ import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
 import { TextEditor } from "../components/TextEditor";
-import { getDoc } from "../lib/docHelpers";
+import { getDocText } from "../lib/docHelpers";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 
 function ReadOnly() {
@@ -24,7 +24,8 @@ function ReadOnly() {
   });
 
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const text = getDoc().text;
+  // TODO: should this be useDocText?
+  const text = getDocText();
 
   return (
     <EditWrapper>

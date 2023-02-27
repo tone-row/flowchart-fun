@@ -72,45 +72,10 @@ const server = new Hocuspocus({
       },
     }),
   ],
-
-  // async onChange(data) {
-  //   console.log("Data changed:", data);
-  // },
-
-  // async onLoadDocument({ document, documentName }) {
-  //   const [_docType, id] = documentName.split("-");
-
-  //   // If we're missing the text
-  //   if (document.isEmpty("text")) {
-  //     console.log("Loading text for", documentName);
-  //     const { data, error } = await supabase
-  //       .from("user_charts")
-  //       .select("id,name,chart,updated_at,created_at,public_id,is_public")
-  //       .eq("id", id);
-  //     if (error) throw error;
-  //     if (!data || data.length === 0) throw new Error("Invalid Chart ID");
-  //     if (data.length > 1) throw new Error("Multiple Charts Found");
-  //     const result = data[0];
-  //     console.log("result", result);
-  //   }
-
-  //   return {
-  //     id,
-  //     data: { hello: "world" },
-  //   };
-  // },
 });
 
 // … and run it!
 server.listen();
-
-/**
-
-TODO
-- ~~make sure we can request a specific document~~
-- make sure that only authenticated users can connect to documents
-
-*/
 
 /**
  *

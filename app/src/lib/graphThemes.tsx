@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 
-import { getDoc } from "./docHelpers";
+import { getDoc, useDocMeta } from "./docHelpers";
 import { Theme } from "./themes/constants";
 
 export type GraphThemes =
@@ -76,7 +76,7 @@ export function useCurrentTheme(themeKey: string) {
  * Returns the current theme key in the doc or the default theme key
  */
 export function useThemeKey() {
-  const themeKey = getDoc().meta?.theme ?? defaultGraphTheme;
+  const themeKey = useDocMeta()["theme"] ?? defaultGraphTheme;
   return themeKey as GraphThemes;
 }
 
@@ -84,7 +84,7 @@ export function useThemeKey() {
  * Get the background color, user override, theme, or default
  */
 export function useBackgroundColor(theme?: Theme) {
-  const bgUser = getDoc().meta?.background;
+  const bgUser = useDocMeta()["background"];
   const bgTheme = theme?.bg;
   const bgDefault = "#ffffff";
   return (bgUser ?? bgTheme ?? bgDefault) as string;

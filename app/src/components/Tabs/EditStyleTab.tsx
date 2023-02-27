@@ -1,7 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import throttle from "lodash.throttle";
 
-import { getDoc, setDocImmer } from "../../lib/docHelpers";
+import { getDoc, setDocImmer, useDocMeta } from "../../lib/docHelpers";
 import { themes } from "../../lib/graphOptions";
 import {
   useBackgroundColor,
@@ -24,7 +24,7 @@ export function EditStyleTab() {
   const themeNiceName =
     themes.find((t) => t.value === themeKey)?.label() ?? "???";
   const theme = useCurrentTheme(themeKey);
-  const meta = getDoc().meta;
+  const meta = useDocMeta();
   const bg = useBackgroundColor(theme);
   return (
     <WithLowerChild>
