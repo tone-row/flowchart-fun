@@ -12,32 +12,36 @@ const server = new Hocuspocus({
   extensions: [
     new Database({
       fetch: async ({ documentName }) => {
-        const [_docType, id] = documentName.split("-");
-        const { data, error } = await supabase
-          .from("user_charts")
-          .select("id,name,chart,updated_at,created_at,public_id,is_public")
-          .eq("id", id);
-        if (error) throw error;
-        if (!data || data.length === 0) throw new Error("Invalid Chart ID");
-        if (data.length > 1) throw new Error("Multiple Charts Found");
-        /** @type {string} */
-        const flowchart = data[0].chart;
-        const { text, meta } = prepareChart(flowchart);
-
         // create ydoc
         const ydoc = new Y.Doc();
-
         // create ytext
         const ytext = ydoc.getText("text");
-
-        // initialize ytext with the flowchart
-        ytext.insert(0, text);
-
         // meta
         const ymeta = ydoc.getMap("meta");
-        Object.keys(meta).forEach((key) => {
-          ymeta.set(key, meta[key]);
-        });
+        try {
+          const [_docType, id] = documentName.split("-");
+          const { data, error } = await supabase
+            .from("user_charts")
+            .select("id,name,chart,updated_at,created_at,public_id,is_public")
+            .eq("id", id);
+          if (error) throw error;
+          if (!data || data.length === 0) throw new Error("Invalid Chart ID");
+          if (data.length > 1) throw new Error("Multiple Charts Found");
+          /** @type {string} */
+          const flowchart = data[0].chart;
+          const { text, meta } = prepareChart(flowchart);
+          console.log("Loaded Chart", { text, meta });
+
+          // initialize ytext with the flowchart
+          ytext.insert(0, text);
+
+          // initialize meta
+          Object.keys(meta).forEach((key) => {
+            ymeta.set(key, meta[key]);
+          });
+        } catch (e) {
+          console.log(e);
+        }
 
         return Y.encodeStateAsUpdate(ydoc);
       },
