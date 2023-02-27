@@ -4,7 +4,7 @@ import { Database } from "@hocuspocus/extension-database";
 import * as Y from "yjs";
 import merge from "deepmerge";
 import matter from "gray-matter";
-const port = 1234 || parseInt(process.env.PORT);
+const port = process.env.PORT ? parseInt(process.env.PORT) : 1234;
 
 // Configure the server …
 const server = new Hocuspocus({
