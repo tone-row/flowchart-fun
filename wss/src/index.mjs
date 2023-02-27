@@ -76,10 +76,15 @@ const server = new Hocuspocus({
       },
     }),
   ],
+  async onConnect() {
+    console.log("Client connected");
+  },
 });
 
 // … and run it!
-server.listen();
+server.listen(async () => {
+  console.log(`Server running on port ${port}`);
+});
 
 /**
  *

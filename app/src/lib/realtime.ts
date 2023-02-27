@@ -54,40 +54,11 @@ export function initRealtime(editor: IStandAloneCodeEditor) {
 
     // Define a shared text type
     const ytext = ydoc.getText("text");
-    // Define a shared map type
-    // const ymeta = ydoc.getText("meta");
-
-    // Initialize the text if it doesn't match the current text
-    // if (ytext.toString() !== text) ytext.insert(0, text);
-    // if (ymap.toString() !== JSON.stringify(meta))
-    //   ymap.insert(0, JSON.stringify(meta));
 
     const model = editor.getModel();
     if (!model) throw new Error("Model not found");
 
     new MonacoBinding(ytext, model, new Set([editor]), provider.awareness);
-
-    // subscribe to doc meta changes and update state
-    // useDoc.subscribe(
-    //   (doc) => doc.meta,
-    //   (meta) => {
-    //     ymeta.delete(0, ymeta.length);
-    //     ymeta.insert(0, JSON.stringify(meta));
-    //   }
-    // );
-
-    // when meta changes set doc meta
-    // ymeta.observe((event) => {
-    //   try {
-    //     const str = event.target.toString();
-    //     if (str) {
-    //       const meta = JSON.parse(str);
-    //       useDoc.setState({ meta });
-    //     }
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    // });
 
     return true;
   } catch (e) {
