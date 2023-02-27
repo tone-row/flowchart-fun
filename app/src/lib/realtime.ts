@@ -21,14 +21,13 @@ export const useYDoc = create<{
 
 // Create a Yjs document
 export function setupYDoc(type: "hosted", id: string) {
+  const providerUrl = process.env.REACT_APP_WEBSOCKET_PROVIDER;
+  if (!providerUrl) throw new Error("REACT_APP_WEBSOCKET_PROVIDER not found");
+
   const ydoc = new Y.Doc();
 
   // Create a provider
-  const provider = new WebsocketProvider(
-    "ws://localhost:1234",
-    `${type}-${id}`,
-    ydoc
-  );
+  const provider = new WebsocketProvider(providerUrl, `${type}-${id}`, ydoc);
 
   // set references in store
   useYDoc.setState({ ydoc, provider });
