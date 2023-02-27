@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { BiErrorCircle } from "react-icons/bi";
 
-import { useParseError } from "../lib/useDoc";
+import { useParseError } from "../lib/useParseError";
 import { Box, Type } from "../slang";
 import styles from "./EditorError.module.css";
 

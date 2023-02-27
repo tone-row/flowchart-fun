@@ -13,8 +13,6 @@ local storage
 import { create } from "zustand";
 import { devtools, subscribeWithSelector } from "zustand/middleware";
 
-import { newDelimiters } from "./constants";
-
 /** Details represent the chart currently being viewed. */
 export type Details = {
   /** Represents the workspace ID if local, and the db ID if hosted */
@@ -55,40 +53,11 @@ export const useDoc = create(
   )
 );
 
-/** Turns doc into the string we store in the database */
-export function docToString(doc: Doc) {
-  const { text, meta } = doc;
-  return [
-    text,
-    newDelimiters,
-    JSON.stringify(meta, null, 2),
-    newDelimiters,
-  ].join("\n");
-}
-
-export const useParseError = create<{ error: string; errorFromStyle: string }>(
-  () => ({
-    error: "",
-    errorFromStyle: "",
-  })
-);
-
 /**
  * Custom useDocDetails store
  */
-export const useDocDetailsStore = create<Details>()(
+export const useDetailsStore = create<Details>()(
   devtools(() => initialDetails, {
-    name: "useDocDetailsStore",
+    name: "useDetailsStore",
   })
 );
-
-/**
- * Get a type-safe version of any property
- * of the doc details
- */
-export function useDocDetails<K extends keyof Details>(
-  prop: K,
-  fallback?: Details[K]
-) {
-  return useDocDetailsStore((state) => state[prop] || fallback) as Details[K];
-}

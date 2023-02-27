@@ -16,11 +16,13 @@ import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
+import { getDoc, setDoc, subscribeToDoc } from "../lib/docHelpers";
+import { docToString } from "../lib/docToString";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { Doc, docToString, useDoc } from "../lib/useDoc";
+import { Doc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import { Type } from "../slang";
 import styles from "./Edit.module.css";
@@ -49,17 +51,17 @@ const Edit = memo(function Edit() {
     );
   }, [workspace]);
 
-  useEffect(() => useDoc.subscribe(storeDoc), [storeDoc]);
+  useEffect(() => subscribeToDoc(storeDoc), [storeDoc]);
 
   const onChange = useCallback(
-    (value) => useDoc.setState({ text: value ?? "" }, false, "Edit/text"),
+    (value) => setDoc({ text: value ?? "" }, "Edit/text"),
     []
   );
 
   const { url } = useRouteMatch();
   useTrackLastChart(url);
 
-  const text = useDoc((d) => d.text);
+  const text = getDoc().text;
 
   return (
     <EditWrapper>
@@ -117,7 +119,7 @@ const Edit = memo(function Edit() {
         </EditorWrapper>
         <ClearTextButton
           handleClear={() => {
-            useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
+            setDoc({ text: "", meta: {} }, "Edit/clear");
             if (editorRef.current) {
               editorRef.current.focus();
             }

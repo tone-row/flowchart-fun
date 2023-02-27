@@ -1,12 +1,12 @@
 import { StylesheetStyle } from "cytoscape";
 
-import { useDoc } from "./useDoc";
+import { getDoc } from "./docHelpers";
 
 /**
  * Get the user style from the document metadata.
  */
 export function getUserStyle() {
-  return (useDoc.getState().meta?.style ?? []) as StylesheetStyle[];
+  return (getDoc().meta?.style ?? []) as StylesheetStyle[];
 }
 
 // const theme = useGraphTheme(options.graphOptions.theme);

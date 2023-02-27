@@ -13,6 +13,8 @@ import {
 } from "react";
 import { useMutation } from "react-query";
 
+import { getDoc } from "../lib/docHelpers";
+import { docToString } from "../lib/docToString";
 import { useChartId } from "../lib/hooks";
 import {
   track_copyEditableShareLink,
@@ -26,12 +28,8 @@ import {
 import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
-import {
-  docToString,
-  useDoc,
-  useDocDetails,
-  useDocDetailsStore,
-} from "../lib/useDoc";
+import { useDetails } from "../lib/useDetails";
+import { useDetailsStore } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
@@ -40,10 +38,10 @@ import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
 
 export default function ShareDialog() {
-  const isHosted = useDocDetails("isHosted");
+  const isHosted = useDetails("isHosted");
   const { shareModal, setShareModal } = useContext(AppContext);
   const close = useCallback(() => setShareModal(false), [setShareModal]);
-  const docString = useDoc(docToString);
+  const docString = docToString(getDoc());
   const shareLink = useMemo(() => {
     return compressToEncodedURIComponent(docString);
   }, [docString]);
@@ -319,11 +317,11 @@ function Mermaid() {
 }
 
 function HostedOptions() {
-  const id = useDocDetails("id");
+  const id = useDetails("id");
   if (typeof id !== "number") throw new Error("id is not a number");
 
-  const isPublic = useDocDetails("isPublic");
-  const publicId = useDocDetails("publicId");
+  const isPublic = useDetails("isPublic");
+  const publicId = useDetails("publicId");
 
   const makePublic = useMutation(
     "makeChartPublic",
@@ -331,7 +329,7 @@ function HostedOptions() {
     {
       onSuccess: (result) => {
         if (!result) return;
-        useDocDetailsStore.setState(
+        useDetailsStore.setState(
           (state) => {
             return produce(state, (draft) => {
               draft.isPublic = result.isPublic;

@@ -1,9 +1,8 @@
 import { Trans } from "@lingui/macro";
-import produce from "immer";
 import React, { ReactNode } from "react";
 
+import { setDocImmer } from "../lib/docHelpers";
 import { parsers, useParser } from "../lib/parsers";
-import { useDoc } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import styles from "./EditorOptions.module.css";
 import { SyntaxReference } from "./SyntaxReference";
@@ -29,15 +28,9 @@ export function EditorOptions({ children }: { children: ReactNode }) {
             background="color-lineNumbers"
             value={parser}
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-              useDoc.setState(
-                (state) => {
-                  return produce(state, (draft) => {
-                    draft.meta.parser = e.target.value;
-                  });
-                },
-                false,
-                "syntax"
-              );
+              setDocImmer((draft) => {
+                draft.meta.parser = e.target.value;
+              }, "syntax");
             }}
           >
             {parsers.map((p) => (

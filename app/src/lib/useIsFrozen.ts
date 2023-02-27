@@ -1,22 +1,14 @@
-import produce from "immer";
-
+import { getDoc, setDocImmer } from "./docHelpers";
 import { getLayout } from "./getLayout";
-import { useDoc } from "./useDoc";
 
 export function unfreezeDoc() {
-  useDoc.setState(
-    (state) => {
-      return produce(state, (draft) => {
-        delete draft.meta.nodePositions;
-      });
-    },
-    false,
-    "unfreezeDoc"
-  );
+  setDocImmer((draft) => {
+    delete draft.meta.nodePositions;
+  }, "unfreezeDoc");
 }
 
 export function useIsFrozen() {
-  const doc = useDoc();
+  const doc = getDoc();
   const rendered = getLayout(doc);
   const frozen = "positions" in rendered;
 

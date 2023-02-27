@@ -18,21 +18,28 @@ import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
+import { getDoc, setDoc, subscribeToDoc } from "../lib/docHelpers";
+import { docToString } from "../lib/docToString";
 import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { getHostedChart, updateChartText } from "../lib/queries";
-import { Doc, docToString, useDoc } from "../lib/useDoc";
+import { setupYDoc } from "../lib/realtime";
+import { Doc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
-  useQuery(["useHostedDoc", id], () => loadHostedDoc(id), {
-    enabled: !!id,
-    suspense: true,
-    staleTime: 0,
-  });
+  const { isSuccess } = useQuery(
+    ["useHostedDoc", id],
+    () => loadHostedDoc(id),
+    {
+      enabled: !!id,
+      suspense: true,
+      staleTime: 0,
+    }
+  );
 
   const { mutate, isLoading } = useMutation((text: string) =>
     updateChartText(text, id)
@@ -45,9 +52,9 @@ export default function EditHosted() {
   } = useDebouncedCallback((doc: Doc) => {
     mutate(docToString(doc));
   }, 1000);
-  useEffect(() => useDoc.subscribe(debounceMutate), [debounceMutate]);
+  useEffect(() => subscribeToDoc(debounceMutate), [debounceMutate]);
 
-  const text = useDoc((state) => state.text);
+  const text = getDoc().text;
 
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
 
@@ -60,7 +67,7 @@ export default function EditHosted() {
   }, []);
 
   const onChange = useCallback(
-    (value) => useDoc.setState({ text: value ?? "" }, false, "EditHosted/text"),
+    (value) => setDoc({ text: value ?? "" }, "EditHosted/text"),
     []
   );
 
@@ -95,6 +102,7 @@ export default function EditHosted() {
                   editorRef={editorRef}
                   value={text}
                   onChange={onChange}
+                  bindToRealtime={isSuccess}
                 />
               </EditorOptions>
             </Tabs.Content>
@@ -114,7 +122,7 @@ export default function EditHosted() {
         <LoadingState isLoading={isLoading} pending={pending()} />
         <ClearTextButton
           handleClear={() => {
-            useDoc.setState({ text: "", meta: {} }, false, "EditHosted/clear");
+            setDoc({ text: "", meta: {} }, "EditHosted/clear");
             if (editorRef.current) {
               editorRef.current.focus();
             }
@@ -150,6 +158,9 @@ function LoadingState({
 }
 
 async function loadHostedDoc(id: string) {
+  // we need to create the ydoc
+  setupYDoc("hosted", id);
+
   const chart = await getHostedChart(id);
   if (!chart) throw new Error("Chart not found");
   const doc = chart.chart;

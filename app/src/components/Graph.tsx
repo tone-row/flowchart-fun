@@ -18,6 +18,7 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { cytoscape } from "../lib/cytoscape";
+import { getDoc, setDoc, subscribeToDoc } from "../lib/docHelpers";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
 import { getUserStyle } from "../lib/getTheme";
@@ -33,9 +34,10 @@ import { Parsers, universalParse, useParser } from "../lib/parsers";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
 import { useContextMenuState } from "../lib/useContextMenuState";
-import { Doc, useDoc, useParseError } from "../lib/useDoc";
+import { Doc } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { useHoverLine } from "../lib/useHoverLine";
+import { useParseError } from "../lib/useParseError";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
@@ -71,19 +73,15 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const parser = useParser();
   const handleDragFree = useCallback(() => {
     const nodePositions = getNodePositionsFromCy();
-    useDoc.setState(
-      (state) => {
-        return {
-          ...state,
-          meta: {
-            ...state.meta,
-            nodePositions,
-          },
-        };
-      },
-      false,
-      "Graph/handleDragFree"
-    );
+    setDoc((state) => {
+      return {
+        ...state,
+        meta: {
+          ...state.meta,
+          nodePositions,
+        },
+      };
+    }, "Graph/handleDragFree");
   }, []);
 
   const handleResize = useCallback(() => {
@@ -135,10 +133,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 
   useEffect(() => {
     throttleUpdate();
-    const unsubscribe = useDoc.subscribe((doc) => {
-      throttleUpdate(doc);
-    });
-    return unsubscribe;
+    return subscribeToDoc(throttleUpdate);
   }, [throttleUpdate]);
 
   // Update Graph when Sponsor Layouts Load
@@ -180,7 +175,7 @@ function initializeGraph({
 }) {
   try {
     errorCatcher.current = cytoscape();
-    const bg = (useDoc.getState().meta?.background as string) ?? original.bg;
+    const bg = (getDoc().meta?.background as string) ?? original.bg;
     cy.current = cytoscape({
       container: document.getElementById("cy"), // container to render in
       elements: [],
@@ -272,7 +267,7 @@ function getGraphUpdater({
   return throttle((_doc?: Doc) => {
     if (!cy.current) return;
     if (!errorCatcher.current) return;
-    const doc = _doc || useDoc.getState();
+    const doc = _doc || getDoc();
     let elements: cytoscape.ElementDefinition[] = [];
 
     try {

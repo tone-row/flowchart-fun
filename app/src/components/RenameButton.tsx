@@ -3,11 +3,13 @@ import { ChangeEvent, memo, ReactNode, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
 
+import { getDoc } from "../lib/docHelpers";
+import { docToString } from "../lib/docToString";
 import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { makeChart, renameChart } from "../lib/queries";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
-import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
+import { useDetails } from "../lib/useDetails";
 import { Box, Type } from "../slang";
 import { useSession } from "./AppContext";
 import {
@@ -25,12 +27,12 @@ export const RenameButton = memo(function RenameButton({
 }: {
   children: ReactNode;
 }) {
-  const fullText = useDoc(docToString);
+  const fullText = docToString(getDoc());
   const isValidSponsor = useIsValidSponsor();
   const session = useSession();
-  const initialName = useDocDetails("title", "flowchart-fun");
-  const isHosted = useDocDetails("isHosted");
-  const id = useDocDetails("id");
+  const initialName = useDetails("title", "flowchart-fun");
+  const isHosted = useDetails("isHosted");
+  const id = useDetails("id");
   const { push } = useHistory();
   const isOpen = useRenameDialogStore((store) => store.isOpen);
   const convertToHosted = useRenameDialogStore(

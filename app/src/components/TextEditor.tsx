@@ -6,6 +6,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { editorOptions } from "../lib/constants";
 import { useEditorHover } from "../lib/editorHooks";
 import { useParser } from "../lib/parsers";
+import { initRealtime } from "../lib/realtime";
 import {
   languageId,
   registerLanguages,
@@ -20,12 +21,14 @@ import styles from "./TextEditor.module.css";
 type TextEditorProps = EditorProps & {
   editorRef: React.MutableRefObject<null | editor.IStandaloneCodeEditor>;
   extendOptions?: editor.IEditorOptions;
+  bindToRealtime?: boolean;
 };
 
 /** A Monaco editor which stays in sync with the current parser */
 export function TextEditor({
   editorRef,
   extendOptions = {},
+  bindToRealtime = false,
   ...props
 }: TextEditorProps) {
   const parser = useParser();
@@ -81,12 +84,12 @@ export function TextEditor({
 
   // TODO: Remove this
   // Bind to realtime updates
-  // useEffect(() => {
-  //   if (!bindToRealtime) return;
-  //   if (!editorIsReady) return;
-  //   if (!editorRef.current) return;
-  //   initRealtime(editorRef.current);
-  // }, [bindToRealtime, editorIsReady, editorRef]);
+  useEffect(() => {
+    if (!bindToRealtime) return;
+    if (!editorIsReady) return;
+    if (!editorRef.current) return;
+    initRealtime(editorRef.current);
+  }, [bindToRealtime, editorIsReady, editorRef]);
 
   return (
     <Editor

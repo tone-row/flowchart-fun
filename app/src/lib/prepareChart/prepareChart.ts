@@ -6,7 +6,8 @@ import {
   HIDDEN_GRAPH_OPTIONS_DIVIDER,
   newDelimiters,
 } from "../constants";
-import { Details, useDoc, useDocDetailsStore } from "../useDoc";
+import { setDoc } from "../docHelpers";
+import { Details, useDetailsStore } from "../useDoc";
 
 /**
  * ### Goals
@@ -71,13 +72,12 @@ export function prepareChart(doc: string, details: Details) {
 
   text = `${text.trim()}\n`;
 
-  useDoc.setState({ text, meta }, false, "prepareChart");
+  setDoc({ text, meta }, "prepareChart");
   // set the useDocDetailsStore too
-  useDocDetailsStore.setState(details, false, "prepareChart");
+  useDetailsStore.setState(details, false, "prepareChart");
 
   return {
     text,
     meta,
-    details,
   };
 }

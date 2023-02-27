@@ -9,8 +9,8 @@ import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
 import { TextEditor } from "../components/TextEditor";
+import { getDoc } from "../lib/docHelpers";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { useDoc } from "../lib/useDoc";
 
 function ReadOnly() {
   const { path } = useRouteMatch();
@@ -24,7 +24,7 @@ function ReadOnly() {
   });
 
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const text = useDoc((d) => d.text);
+  const text = getDoc().text;
 
   return (
     <EditWrapper>
