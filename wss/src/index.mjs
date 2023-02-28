@@ -4,7 +4,11 @@ import { Database } from "@hocuspocus/extension-database";
 import * as Y from "yjs";
 import merge from "deepmerge";
 import matter from "gray-matter";
-const port = process.env.PORT ? parseInt(process.env.PORT) : 1234;
+
+let port = 1234;
+if (process.env.RAILWAY_ENVIRONMENT) {
+  port = parseInt(process.env.PORT);
+}
 
 // Configure the server …
 const server = new Hocuspocus({
@@ -30,7 +34,6 @@ const server = new Hocuspocus({
           /** @type {string} */
           const flowchart = data[0].chart;
           const { text, meta } = prepareChart(flowchart);
-          console.log("Loaded Chart", { text, meta });
 
           // initialize ytext with the flowchart
           ytext.insert(0, text);
@@ -63,8 +66,6 @@ const server = new Hocuspocus({
         ymeta.forEach((value, key) => {
           meta[key] = value;
         });
-        console.log("text", text);
-        console.log("meta", meta);
 
         const chart = docToString({ text, meta });
         const { error } = await supabase

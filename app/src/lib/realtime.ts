@@ -19,10 +19,17 @@ export const useYDoc = create<{
   })
 );
 
+let timesCalled = 0;
+
 // Create a Yjs document
 export function setupYDoc(type: "hosted", id: string) {
+  console.log("setupYDoc called", timesCalled++);
   const providerUrl = process.env.REACT_APP_WEBSOCKET_PROVIDER;
   if (!providerUrl) throw new Error("REACT_APP_WEBSOCKET_PROVIDER not found");
+
+  // If the provider is already set to the correct type and id, don't do anything
+  const currentProvider = useYDoc.getState().provider;
+  if (currentProvider?.roomname === `${type}-${id}`) return;
 
   const ydoc = new Y.Doc();
 

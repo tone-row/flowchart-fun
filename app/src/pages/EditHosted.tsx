@@ -18,18 +18,11 @@ import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
-import {
-  setDoc,
-  setDocText,
-  subscribeToDoc,
-  useDocText,
-} from "../lib/docHelpers";
-import { docToString } from "../lib/docToString";
+import { setDoc, setDocText, useDocText } from "../lib/docHelpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { getHostedChart, updateChartText } from "../lib/queries";
+import { getHostedChart } from "../lib/queries";
 import { setupYDoc } from "../lib/realtime";
-import { Doc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
@@ -165,7 +158,6 @@ function LoadingState({
 async function loadHostedDoc(id: string) {
   // we need to create the ydoc
   setupYDoc("hosted", id);
-
   const chart = await getHostedChart(id);
   if (!chart) throw new Error("Chart not found");
   const doc = chart.chart;
@@ -176,5 +168,4 @@ async function loadHostedDoc(id: string) {
     isPublic: chart.is_public,
     publicId: chart.public_id,
   });
-  return doc;
 }

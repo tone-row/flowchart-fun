@@ -71,6 +71,12 @@ export function setDocImmer(cb: SetDocImmerCallback, description: string) {
     for (const [key, value] of Object.entries(newDoc.meta)) {
       meta.set(key, value);
     }
+    // delete any keys that were removed
+    for (const key of Object.keys(fullDoc.meta)) {
+      if (!(key in newDoc.meta)) {
+        meta.delete(key);
+      }
+    }
   } else {
     // mutate the zustand store
     useDoc.setState((cur) => produce(cur, cb), false, description);

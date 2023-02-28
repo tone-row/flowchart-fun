@@ -120,13 +120,13 @@ export default function ShareDialog() {
       </Column>
       {isHosted ? (
         <Column>
-          <Title>Share TODO</Title>
+          <Title>Share</Title>
           <Button
             onClick={() => {
               console.log("Share with other Rob");
               // to test if it works, first we're going to try sharing a chart we ownn
               // then we'll try sharing a chart we don't own
-              const email = "rchristopher.gordon@gmail.com";
+              const email = "camille.leblanc.murray@gmail.com";
               const flowchart_id = chartId;
               (async () => {
                 if (!supabase) return;
