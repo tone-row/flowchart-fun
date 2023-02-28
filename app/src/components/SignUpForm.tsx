@@ -164,7 +164,7 @@ export function SignUpForm() {
           options={{
             style: {
               base: {
-                color: theme.foreground,
+                color: "#222222",
                 backgroundColor: "#ffffff",
                 fontFamily:
                   "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
