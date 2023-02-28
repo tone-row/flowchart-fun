@@ -72,7 +72,7 @@ msgstr "ऑटो लेआउट"
 msgid "Back To Editor"
 msgstr "संपादक पर वापस जाएं"
 
-#: src/components/Tabs/EditStyleTab.tsx:48
+#: src/components/Tabs/EditStyleTab.tsx:51
 msgid "Background"
 msgstr "पृष्ठभूमि"
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Blog"
 msgstr "ब्लॉग"
 
-#: src/components/GraphContextMenu.tsx:380
+#: src/components/GraphContextMenu.tsx:382
 msgid "Border"
 msgstr ""
 
@@ -105,18 +105,18 @@ msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
 #: src/components/ClearTextButton.tsx:44
-#: src/pages/Account.tsx:290
-#: src/pages/Account.tsx:301
-#: src/pages/Account.tsx:369
-#: src/pages/Account.tsx:381
-#: src/pages/Account.tsx:425
+#: src/pages/Account.tsx:304
+#: src/pages/Account.tsx:315
+#: src/pages/Account.tsx:383
+#: src/pages/Account.tsx:395
+#: src/pages/Account.tsx:439
 #: src/pages/Charts.tsx:243
 #: src/pages/Charts.tsx:514
 #: src/pages/Charts.tsx:568
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: src/pages/Account.tsx:293
+#: src/pages/Account.tsx:307
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
@@ -140,7 +140,7 @@ msgstr "चार्ट"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
 
-#: src/pages/Pricing.tsx:82
+#: src/pages/Pricing.tsx:84
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "आप अपने चार्ट में  फुल एक्सेस , एडिट ओनली या केवल देखने की अनुमतियों के साथ साझा करना चुनकर यह नियंत्रित कर सकते हैं कि कौन आपके कार्य में परिवर्तन कर सकता है"
 
@@ -177,7 +177,7 @@ msgstr "क्लोन करें"
 msgid "Close"
 msgstr "बंद करें"
 
-#: src/components/GraphContextMenu.tsx:208
+#: src/components/GraphContextMenu.tsx:210
 msgid "Color"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgid "Creating an edge between two nodes is done by indenting the second node b
 msgstr ""
 
 #: src/pages/Pricing.tsx:49
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:81
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
@@ -295,7 +295,7 @@ msgstr "दिशा"
 msgid "Discard"
 msgstr "रद्द करें"
 
-#: src/pages/Account.tsx:374
+#: src/pages/Account.tsx:388
 msgid "Do you want to cancel your subscription?"
 msgstr "क्या आप अपनी सदस्यता रद्द करना चाहते हैं?"
 
@@ -393,8 +393,8 @@ msgstr "फ्री प्लान में सब कुछ"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:59
-#: src/components/EditorWrapper.tsx:64
+#: src/components/EditorWrapper.tsx:60
+#: src/components/EditorWrapper.tsx:65
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:111
 msgid "Export"
@@ -434,7 +434,7 @@ msgstr "भविष्य का"
 msgid "Get More Layouts"
 msgstr "ज़्यादा लेआउट पाएं"
 
-#: src/components/Tabs/EditStyleTab.tsx:94
+#: src/components/Tabs/EditStyleTab.tsx:97
 msgid "Get More Themes"
 msgstr "ज़्यादा थीम पाएं"
 
@@ -594,11 +594,11 @@ msgid "New Email"
 msgstr "नई ईमेल"
 
 #: src/pages/Account.tsx:165
-#: src/pages/Account.tsx:422
+#: src/pages/Account.tsx:436
 msgid "Next charge"
 msgstr "अगला चार्ज"
 
-#: src/components/GraphContextMenu.tsx:201
+#: src/components/GraphContextMenu.tsx:203
 msgid "Node"
 msgstr ""
 
@@ -626,6 +626,15 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr ""
 
+#: src/pages/Account.tsx:287
+#: src/pages/Pricing.tsx:52
+msgid "Office Hours"
+msgstr "कार्यालय अवधि"
+
+#: src/pages/Pricing.tsx:51
+msgid "One-on-One Support"
+msgstr "एक-पर-एक समर्थन"
+
 #: src/pages/Pricing.tsx:38
 msgid "One-time Share Links"
 msgstr "वन-टाइम शेयर लिंक"
@@ -644,7 +653,7 @@ msgstr "Permalinks"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Pricing.tsx:46
-#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:63
 msgid "Persistent Flowcharts"
 msgstr "लगातार आरेख"
 
@@ -671,7 +680,7 @@ msgstr "पब्लिक"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/components/EditorWrapper.tsx:50
+#: src/components/EditorWrapper.tsx:51
 #: src/components/ShareDialog.tsx:104
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
@@ -736,9 +745,9 @@ msgid "Reset"
 msgstr "रीसेट करें"
 
 #: src/pages/Account.tsx:193
-#: src/pages/Account.tsx:416
-#: src/pages/Account.tsx:420
-#: src/pages/Account.tsx:429
+#: src/pages/Account.tsx:430
+#: src/pages/Account.tsx:434
+#: src/pages/Account.tsx:443
 msgid "Resume Subscription"
 msgstr "सदस्यता फिर से शुरू करें"
 
@@ -746,7 +755,7 @@ msgstr "सदस्यता फिर से शुरू करें"
 msgid "Retro"
 msgstr "रेट्रो"
 
-#: src/pages/Account.tsx:377
+#: src/pages/Account.tsx:391
 msgid "Return"
 msgstr "वापसी"
 
@@ -770,7 +779,7 @@ msgstr "सहेजें"
 msgid "Settings"
 msgstr "सेटिंग"
 
-#: src/components/GraphContextMenu.tsx:270
+#: src/components/GraphContextMenu.tsx:272
 msgid "Shape"
 msgstr ""
 
@@ -783,7 +792,7 @@ msgstr ""
 msgid "Sign Up"
 msgstr "साइन अप"
 
-#: src/components/GraphContextMenu.tsx:337
+#: src/components/GraphContextMenu.tsx:339
 msgid "Size"
 msgstr ""
 
@@ -832,7 +841,7 @@ msgstr "बादल में संग्रहित"
 msgid "Stored on this computer"
 msgstr "इस कंप्यूटर पर संग्रहीत"
 
-#: src/pages/Pricing.tsx:97
+#: src/pages/Pricing.tsx:99
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन"
 
@@ -904,7 +913,7 @@ msgstr ""
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
-#: src/components/Tabs/EditStyleTab.tsx:30
+#: src/components/Tabs/EditStyleTab.tsx:33
 msgid "Theme"
 msgstr "शैली"
 
@@ -990,7 +999,7 @@ msgstr "आप हमारे साथ क्या शेयर करना 
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:66
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।"
 

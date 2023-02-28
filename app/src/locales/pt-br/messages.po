@@ -72,7 +72,7 @@ msgstr "Layouts automáticos"
 msgid "Back To Editor"
 msgstr "Voltar ao editor"
 
-#: src/components/Tabs/EditStyleTab.tsx:48
+#: src/components/Tabs/EditStyleTab.tsx:51
 msgid "Background"
 msgstr "Fundo"
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Blog"
 msgstr "Blog"
 
-#: src/components/GraphContextMenu.tsx:380
+#: src/components/GraphContextMenu.tsx:382
 msgid "Border"
 msgstr ""
 
@@ -105,18 +105,18 @@ msgid "Breadthfirst"
 msgstr "Por extensão"
 
 #: src/components/ClearTextButton.tsx:44
-#: src/pages/Account.tsx:290
-#: src/pages/Account.tsx:301
-#: src/pages/Account.tsx:369
-#: src/pages/Account.tsx:381
-#: src/pages/Account.tsx:425
+#: src/pages/Account.tsx:304
+#: src/pages/Account.tsx:315
+#: src/pages/Account.tsx:383
+#: src/pages/Account.tsx:395
+#: src/pages/Account.tsx:439
 #: src/pages/Charts.tsx:243
 #: src/pages/Charts.tsx:514
 #: src/pages/Charts.tsx:568
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/pages/Account.tsx:293
+#: src/pages/Account.tsx:307
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Cancele sua inscrição. Seus diagramas hospedados não serão modificáveis."
 
@@ -140,7 +140,7 @@ msgstr "Diagramas"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Cheque seu e-mail com um link para logar. Você pode fechar esta janela."
 
-#: src/pages/Pricing.tsx:82
+#: src/pages/Pricing.tsx:84
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "Opte por compartilhar os seus gráficos com acesso total, permissões somente edição ou somente visualização, dando a você controle sobre quem pode fazer alterações no seu trabalho."
 
@@ -177,7 +177,7 @@ msgstr "Clonar"
 msgid "Close"
 msgstr "Fechar"
 
-#: src/components/GraphContextMenu.tsx:208
+#: src/components/GraphContextMenu.tsx:210
 msgid "Color"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgid "Creating an edge between two nodes is done by indenting the second node b
 msgstr ""
 
 #: src/pages/Pricing.tsx:49
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:81
 msgid "Custom Sharing Options"
 msgstr "Opções de Compartilhamento Personalizadas"
 
@@ -295,7 +295,7 @@ msgstr "Direção"
 msgid "Discard"
 msgstr "Descartar"
 
-#: src/pages/Account.tsx:374
+#: src/pages/Account.tsx:388
 msgid "Do you want to cancel your subscription?"
 msgstr "Você deseja cancelar sua inscrição?"
 
@@ -393,8 +393,8 @@ msgstr "Tudo no Plano Gratuito"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:59
-#: src/components/EditorWrapper.tsx:64
+#: src/components/EditorWrapper.tsx:60
+#: src/components/EditorWrapper.tsx:65
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:111
 msgid "Export"
@@ -434,7 +434,7 @@ msgstr "Futurista"
 msgid "Get More Layouts"
 msgstr "Obtenha Mais Leiautes"
 
-#: src/components/Tabs/EditStyleTab.tsx:94
+#: src/components/Tabs/EditStyleTab.tsx:97
 msgid "Get More Themes"
 msgstr "Obtenha mais temas"
 
@@ -594,11 +594,11 @@ msgid "New Email"
 msgstr "Novo Email"
 
 #: src/pages/Account.tsx:165
-#: src/pages/Account.tsx:422
+#: src/pages/Account.tsx:436
 msgid "Next charge"
 msgstr "Próxima cobrança"
 
-#: src/components/GraphContextMenu.tsx:201
+#: src/components/GraphContextMenu.tsx:203
 msgid "Node"
 msgstr ""
 
@@ -626,6 +626,15 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr ""
 
+#: src/pages/Account.tsx:287
+#: src/pages/Pricing.tsx:52
+msgid "Office Hours"
+msgstr "Horário de trabalho"
+
+#: src/pages/Pricing.tsx:51
+msgid "One-on-One Support"
+msgstr "Suporte Individual"
+
 #: src/pages/Pricing.tsx:38
 msgid "One-time Share Links"
 msgstr "Links de compartilhamento único"
@@ -644,7 +653,7 @@ msgstr "Permalinks"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Pricing.tsx:46
-#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:63
 msgid "Persistent Flowcharts"
 msgstr "Diagramas Persistentes"
 
@@ -671,7 +680,7 @@ msgstr "Público"
 msgid "Random"
 msgstr "Aleatório"
 
-#: src/components/EditorWrapper.tsx:50
+#: src/components/EditorWrapper.tsx:51
 #: src/components/ShareDialog.tsx:104
 msgid "Read-only"
 msgstr "Somente leitura"
@@ -736,9 +745,9 @@ msgid "Reset"
 msgstr "Resetar"
 
 #: src/pages/Account.tsx:193
-#: src/pages/Account.tsx:416
-#: src/pages/Account.tsx:420
-#: src/pages/Account.tsx:429
+#: src/pages/Account.tsx:430
+#: src/pages/Account.tsx:434
+#: src/pages/Account.tsx:443
 msgid "Resume Subscription"
 msgstr "Resumir inscrição"
 
@@ -746,7 +755,7 @@ msgstr "Resumir inscrição"
 msgid "Retro"
 msgstr "Retrô"
 
-#: src/pages/Account.tsx:377
+#: src/pages/Account.tsx:391
 msgid "Return"
 msgstr "Retornar"
 
@@ -770,7 +779,7 @@ msgstr "Salvar"
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/components/GraphContextMenu.tsx:270
+#: src/components/GraphContextMenu.tsx:272
 msgid "Shape"
 msgstr ""
 
@@ -783,7 +792,7 @@ msgstr ""
 msgid "Sign Up"
 msgstr "Inscreva-se"
 
-#: src/components/GraphContextMenu.tsx:337
+#: src/components/GraphContextMenu.tsx:339
 msgid "Size"
 msgstr ""
 
@@ -832,7 +841,7 @@ msgstr "Armazenado na nuvem"
 msgid "Stored on this computer"
 msgstr "Armazenado neste computador"
 
-#: src/pages/Pricing.tsx:97
+#: src/pages/Pricing.tsx:99
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Agilize seu fluxo de trabalho e simplifique a visualização do processo com o Flowchart Fun"
 
@@ -904,7 +913,7 @@ msgstr ""
 msgid "Thank you for your feedback!"
 msgstr "Agradecimentos pelo seu feedback!"
 
-#: src/components/Tabs/EditStyleTab.tsx:30
+#: src/components/Tabs/EditStyleTab.tsx:33
 msgid "Theme"
 msgstr "Tema"
 
@@ -990,7 +999,7 @@ msgstr "O que você deseja compartilhar com a gente?"
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:66
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "Com a capacidade de criar gráficos hospedados ilimitados, você pode acessar e trabalhar os seus fluxogramas de qualquer dispositivo, em qualquer lugar."
 

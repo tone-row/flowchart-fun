@@ -72,7 +72,7 @@ msgstr "自动布局"
 msgid "Back To Editor"
 msgstr "返回编辑器"
 
-#: src/components/Tabs/EditStyleTab.tsx:48
+#: src/components/Tabs/EditStyleTab.tsx:51
 msgid "Background"
 msgstr "背景"
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Blog"
 msgstr "博客"
 
-#: src/components/GraphContextMenu.tsx:380
+#: src/components/GraphContextMenu.tsx:382
 msgid "Border"
 msgstr ""
 
@@ -105,18 +105,18 @@ msgid "Breadthfirst"
 msgstr "宽度优先"
 
 #: src/components/ClearTextButton.tsx:44
-#: src/pages/Account.tsx:290
-#: src/pages/Account.tsx:301
-#: src/pages/Account.tsx:369
-#: src/pages/Account.tsx:381
-#: src/pages/Account.tsx:425
+#: src/pages/Account.tsx:304
+#: src/pages/Account.tsx:315
+#: src/pages/Account.tsx:383
+#: src/pages/Account.tsx:395
+#: src/pages/Account.tsx:439
 #: src/pages/Charts.tsx:243
 #: src/pages/Charts.tsx:514
 #: src/pages/Charts.tsx:568
 msgid "Cancel"
 msgstr "取消"
 
-#: src/pages/Account.tsx:293
+#: src/pages/Account.tsx:307
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
 
@@ -140,7 +140,7 @@ msgstr "图表"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/pages/Pricing.tsx:82
+#: src/pages/Pricing.tsx:84
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "选择您的图表分享方式：完全访问权限，仅编辑，或仅浏览。决定谁能对您的工作做出更改。"
 
@@ -177,7 +177,7 @@ msgstr "克隆"
 msgid "Close"
 msgstr "关闭"
 
-#: src/components/GraphContextMenu.tsx:208
+#: src/components/GraphContextMenu.tsx:210
 msgid "Color"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgid "Creating an edge between two nodes is done by indenting the second node b
 msgstr ""
 
 #: src/pages/Pricing.tsx:49
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:81
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
@@ -295,7 +295,7 @@ msgstr "方向"
 msgid "Discard"
 msgstr "Discard"
 
-#: src/pages/Account.tsx:374
+#: src/pages/Account.tsx:388
 msgid "Do you want to cancel your subscription?"
 msgstr "您要取消订阅吗？"
 
@@ -393,8 +393,8 @@ msgstr "免费计划中的一切"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:59
-#: src/components/EditorWrapper.tsx:64
+#: src/components/EditorWrapper.tsx:60
+#: src/components/EditorWrapper.tsx:65
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:111
 msgid "Export"
@@ -434,7 +434,7 @@ msgstr "未来主义的"
 msgid "Get More Layouts"
 msgstr "获取更多布局"
 
-#: src/components/Tabs/EditStyleTab.tsx:94
+#: src/components/Tabs/EditStyleTab.tsx:97
 msgid "Get More Themes"
 msgstr "获取更多主题"
 
@@ -594,11 +594,11 @@ msgid "New Email"
 msgstr "新邮件"
 
 #: src/pages/Account.tsx:165
-#: src/pages/Account.tsx:422
+#: src/pages/Account.tsx:436
 msgid "Next charge"
 msgstr "下次扣费"
 
-#: src/components/GraphContextMenu.tsx:201
+#: src/components/GraphContextMenu.tsx:203
 msgid "Node"
 msgstr ""
 
@@ -626,6 +626,15 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr ""
 
+#: src/pages/Account.tsx:287
+#: src/pages/Pricing.tsx:52
+msgid "Office Hours"
+msgstr "工作时间"
+
+#: src/pages/Pricing.tsx:51
+msgid "One-on-One Support"
+msgstr "一对一支持"
+
 #: src/pages/Pricing.tsx:38
 msgid "One-time Share Links"
 msgstr "一次性分享链接"
@@ -644,7 +653,7 @@ msgstr "永久链接"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Pricing.tsx:46
-#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:63
 msgid "Persistent Flowcharts"
 msgstr "持久图"
 
@@ -671,7 +680,7 @@ msgstr "公开"
 msgid "Random"
 msgstr "随机"
 
-#: src/components/EditorWrapper.tsx:50
+#: src/components/EditorWrapper.tsx:51
 #: src/components/ShareDialog.tsx:104
 msgid "Read-only"
 msgstr "只读"
@@ -736,9 +745,9 @@ msgid "Reset"
 msgstr "重置"
 
 #: src/pages/Account.tsx:193
-#: src/pages/Account.tsx:416
-#: src/pages/Account.tsx:420
-#: src/pages/Account.tsx:429
+#: src/pages/Account.tsx:430
+#: src/pages/Account.tsx:434
+#: src/pages/Account.tsx:443
 msgid "Resume Subscription"
 msgstr "恢复订阅"
 
@@ -746,7 +755,7 @@ msgstr "恢复订阅"
 msgid "Retro"
 msgstr "复古的"
 
-#: src/pages/Account.tsx:377
+#: src/pages/Account.tsx:391
 msgid "Return"
 msgstr "返回"
 
@@ -770,7 +779,7 @@ msgstr "救球"
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/GraphContextMenu.tsx:270
+#: src/components/GraphContextMenu.tsx:272
 msgid "Shape"
 msgstr ""
 
@@ -783,7 +792,7 @@ msgstr ""
 msgid "Sign Up"
 msgstr "注册"
 
-#: src/components/GraphContextMenu.tsx:337
+#: src/components/GraphContextMenu.tsx:339
 msgid "Size"
 msgstr ""
 
@@ -832,7 +841,7 @@ msgstr "存储在云端"
 msgid "Stored on this computer"
 msgstr "保存在这台电脑上"
 
-#: src/pages/Pricing.tsx:97
+#: src/pages/Pricing.tsx:99
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "使用 Flowchart Fun，简化您的工作流程和过程可视化"
 
@@ -904,7 +913,7 @@ msgstr ""
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/Tabs/EditStyleTab.tsx:30
+#: src/components/Tabs/EditStyleTab.tsx:33
 msgid "Theme"
 msgstr "风格"
 
@@ -990,7 +999,7 @@ msgstr "您想跟我们分享什么？"
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:66
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。"
 

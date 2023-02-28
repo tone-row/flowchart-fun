@@ -159,6 +159,8 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
+    "Office Hours": "근무 시간",
+    "One-on-One Support": "일대일 지원",
     "One-time Share Links": "일회성 공유 링크",
     "Open Customer Portal": "고객 포털 열기",
     "Paste the information you wish to convert to a flowchart":
