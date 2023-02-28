@@ -118,7 +118,7 @@ export default function ShareDialog() {
         </Title>
         <Mermaid />
       </Column>
-      {isHosted ? (
+      {/* {isHosted ? (
         <Column>
           <Title>Share</Title>
           <Button
@@ -143,7 +143,7 @@ export default function ShareDialog() {
             Share with Other Rob
           </Button>
         </Column>
-      ) : null}
+      ) : null} */}
     </Dialog>
   );
 }

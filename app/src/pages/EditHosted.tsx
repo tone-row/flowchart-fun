@@ -19,7 +19,6 @@ import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
 import { setDocText, useDocText } from "../lib/docHelpers";
 import { useIsValidSponsor } from "../lib/hooks";
-import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { getHostedChart } from "../lib/queries";
 import { setupYDoc } from "../lib/realtime";
 import { useDetailsStore } from "../lib/useDoc";
@@ -89,7 +88,6 @@ export default function EditHosted() {
             )}
           </Tabs.Root>
         </EditorWrapper>
-        <LoadingState isLoading={false} pending={false} />
         <ClearTextButton
           handleClear={() => {
             setDocText("", "EditHosted/clear");
@@ -101,29 +99,6 @@ export default function EditHosted() {
         <EditorError />
       </Main>
     </EditWrapper>
-  );
-}
-
-/**
- * Shows whether the chart has synced to the server
- */
-function LoadingState({
-  pending,
-  isLoading,
-}: {
-  pending: boolean;
-  isLoading: boolean;
-}) {
-  return (
-    <div className={styles.LoadingState}>
-      {pending ? (
-        <DotsThree size={18} color="var(--palette-purple-0)" />
-      ) : isLoading ? (
-        <Spinner r={4} s={1} c="var(--palette-purple-0)" />
-      ) : (
-        <Check size={17} color="var(--palette-purple-0)" />
-      )}
-    </div>
   );
 }
 

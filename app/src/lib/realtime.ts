@@ -28,6 +28,9 @@ export function setupYDoc(type: "hosted", id: string) {
   const currentProvider = useYDoc.getState().provider;
   if (currentProvider?.roomname === `${type}-${id}`) return;
 
+  // If there is a provider, disconnect it
+  if (currentProvider) currentProvider.disconnect();
+
   const ydoc = new Y.Doc();
 
   // Create a provider

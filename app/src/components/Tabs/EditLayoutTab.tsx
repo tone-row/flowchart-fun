@@ -2,7 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import { FaRegSnowflake } from "react-icons/fa";
 
 import { GraphOptionsObject } from "../../lib/constants";
-import { setDocImmer, useSafeDoc } from "../../lib/docHelpers";
+import { setMetaImmer, useSafeDoc } from "../../lib/docHelpers";
 import { defaultLayout, getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
@@ -75,11 +75,11 @@ export function EditLayoutTab() {
             options={layouts}
             value={layoutName}
             onValueChange={(name) => {
-              setDocImmer((draft) => {
-                if (!draft.meta.layout) draft.meta.layout = {};
+              setMetaImmer((draft) => {
+                if (!draft.layout) draft.layout = {};
                 // This any is because typing the layout object is too restrictive
-                (draft.meta.layout as any).name = name;
-                delete draft.meta.nodePositions;
+                (draft.layout as any).name = name;
+                delete draft.nodePositions;
               }, "EditLayoutTab/layout");
             }}
           />
@@ -91,11 +91,11 @@ export function EditLayoutTab() {
               options={directions}
               value={direction}
               onValueChange={(direction) => {
-                setDocImmer((draft) => {
-                  if (!draft.meta.layout) draft.meta.layout = {};
+                setMetaImmer((draft) => {
+                  if (!draft.layout) draft.layout = {};
                   // This any is because typing the layout object is too restrictive
-                  (draft.meta.layout as any).rankDir = direction;
-                  delete draft.meta.nodePositions;
+                  (draft.layout as any).rankDir = direction;
+                  delete draft.nodePositions;
                 }, "EditLayoutTab/direction");
               }}
             />
@@ -129,11 +129,11 @@ export function EditLayoutTab() {
                 min={0.25}
                 className={styles.numberInput}
                 onChange={(e) => {
-                  setDocImmer((draft) => {
-                    if (!draft.meta.layout) draft.meta.layout = {};
+                  setMetaImmer((draft) => {
+                    if (!draft.layout) draft.layout = {};
                     // This any is because typing the layout object is too restrictive
 
-                    (draft.meta.layout as any).spacingFactor = parseFloat(
+                    (draft.layout as any).spacingFactor = parseFloat(
                       e.target.value
                     );
                   }, "EditLayoutTab/spacing-number");
@@ -146,10 +146,10 @@ export function EditLayoutTab() {
                 step={0.01}
                 value={[spacingFactor || 0]}
                 onValueChange={([value]) => {
-                  setDocImmer((draft) => {
-                    if (!draft.meta.layout) draft.meta.layout = {};
+                  setMetaImmer((draft) => {
+                    if (!draft.layout) draft.layout = {};
                     // This any is because typing the layout object is too restrictive
-                    (draft.meta.layout as any).spacingFactor = value;
+                    (draft.layout as any).spacingFactor = value;
                   }, "EditLayoutTab/spacing");
                 }}
               />

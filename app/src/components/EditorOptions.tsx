@@ -1,7 +1,7 @@
 import { Trans } from "@lingui/macro";
 import React, { ReactNode } from "react";
 
-import { setDocImmer } from "../lib/docHelpers";
+import { setMetaImmer } from "../lib/docHelpers";
 import { parsers, useParser } from "../lib/parsers";
 import { Box, Type } from "../slang";
 import styles from "./EditorOptions.module.css";
@@ -28,8 +28,8 @@ export function EditorOptions({ children }: { children: ReactNode }) {
             background="color-lineNumbers"
             value={parser}
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-              setDocImmer((draft) => {
-                draft.meta.parser = e.target.value;
+              setMetaImmer((draft) => {
+                draft.parser = e.target.value;
               }, "syntax");
             }}
           >

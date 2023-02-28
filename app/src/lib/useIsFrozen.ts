@@ -1,9 +1,9 @@
-import { getDoc, setDocImmer } from "./docHelpers";
+import { getDoc, setMetaImmer } from "./docHelpers";
 import { getLayout } from "./getLayout";
 
 export function unfreezeDoc() {
-  setDocImmer((draft) => {
-    delete draft.meta.nodePositions;
+  setMetaImmer((draft) => {
+    delete draft.nodePositions;
   }, "unfreezeDoc");
 }
 

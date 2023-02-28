@@ -58,37 +58,38 @@ export function setDoc(doc: Partial<Doc>, description: string) {
   }
 }
 
-type SetDocImmerCallback = (draft: WritableDraft<Doc>) => void;
-
-export function setDocImmer(cb: SetDocImmerCallback, description: string) {
+export function setMetaImmer(
+  cb: (draft: WritableDraft<Doc["meta"]>) => void,
+  description: string
+) {
   const isHosted = useDetailsStore.getState().isHosted;
-  // mutate the doc
   if (isHosted) {
     const ydoc = getSafeYDoc();
     if (!ydoc) return;
-    const text = ydoc.getText("text");
     const meta = ydoc.getMap("meta");
-    if (!text || !meta) return;
-    const fullDoc = {
-      text: text.toString(),
-      meta: meta.toJSON(),
-    };
-    const newDoc = produce(fullDoc, cb);
-    if (newDoc.text !== fullDoc.text) {
-      // Silent for now, relying on Monaco sync
-    }
-    for (const [key, value] of Object.entries(newDoc.meta)) {
-      meta.set(key, value);
-    }
-    // delete any keys that were removed
-    for (const key of Object.keys(fullDoc.meta)) {
-      if (!(key in newDoc.meta)) {
-        meta.delete(key);
+    if (!meta) return;
+    const fullMeta = meta.toJSON();
+    const newMeta = produce(fullMeta, cb);
+    ydoc.transact(() => {
+      for (const [key, value] of Object.entries(newMeta)) {
+        meta.set(key, value);
       }
-    }
+      // delete any keys that were removed
+      for (const key of Object.keys(fullMeta)) {
+        if (!(key in newMeta)) {
+          meta.delete(key);
+        }
+      }
+    });
   } else {
-    // mutate the zustand store
-    useDoc.setState((cur) => produce(cur, cb), false, description);
+    useDoc.setState(
+      (cur) => ({
+        ...cur,
+        meta: produce(cur.meta, cb),
+      }),
+      false,
+      description
+    );
   }
 }
 

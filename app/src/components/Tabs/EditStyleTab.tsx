@@ -1,7 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import throttle from "lodash.throttle";
 
-import { setDocImmer, useDocMeta } from "../../lib/docHelpers";
+import { setMetaImmer, useDocMeta } from "../../lib/docHelpers";
 import { themes } from "../../lib/graphOptions";
 import {
   useBackgroundColor,
@@ -35,8 +35,8 @@ export function EditStyleTab() {
             options={themes}
             value={themeKey}
             onValueChange={(themeKey) => {
-              setDocImmer((draft) => {
-                draft.meta.theme = themeKey;
+              setMetaImmer((draft) => {
+                draft.theme = themeKey;
               }, "EditStyleTab/theme");
             }}
           />
@@ -61,8 +61,8 @@ export function EditStyleTab() {
             {meta.background && (
               <Button
                 onClick={() => {
-                  setDocImmer((draft) => {
-                    delete draft.meta?.background;
+                  setMetaImmer((draft) => {
+                    delete draft?.background;
                   }, "EditStyleTab/remove-bg");
                   // find an input[type=color] and set it to the background color
                   const colorInput = document.querySelector(
@@ -90,8 +90,8 @@ export function EditStyleTab() {
 
 const throttleBGUpdate = throttle(
   (bg: string) => {
-    setDocImmer((draft) => {
-      draft.meta.background = bg;
+    setMetaImmer((draft) => {
+      draft.background = bg;
     }, "EditStyleTab/bg");
   },
   75,
