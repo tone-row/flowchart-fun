@@ -16,6 +16,7 @@ const server = new Hocuspocus({
   extensions: [
     new Database({
       fetch: async ({ documentName }) => {
+        console.log("fetching", documentName);
         // create ydoc
         const ydoc = new Y.Doc();
         // create ytext
@@ -35,12 +36,20 @@ const server = new Hocuspocus({
           const flowchart = data[0].chart;
           const { text, meta } = prepareChart(flowchart);
 
-          // initialize ytext with the flowchart
-          ytext.insert(0, text);
-
-          // initialize meta
-          Object.keys(meta).forEach((key) => {
-            ymeta.set(key, meta[key]);
+          ydoc.transact(() => {
+            // initialize ytext with the flowchart
+            ytext.delete(0, ytext.length);
+            ytext.insert(0, text);
+            // initialize meta
+            Object.keys(meta).forEach((key) => {
+              ymeta.set(key, meta[key]);
+            });
+            // delete any keys that are no longer in the meta
+            ymeta.forEach((value, key) => {
+              if (!meta[key]) {
+                ymeta.delete(key);
+              }
+            });
           });
         } catch (e) {
           console.log(e);
@@ -77,8 +86,13 @@ const server = new Hocuspocus({
       },
     }),
   ],
-  async onConnect() {
-    console.log("Client connected");
+  async onConnect(data) {
+    console.log(`Client connected to ${data.documentName}`);
+  },
+  async onDisconnect(data) {
+    // check how many people are still connected
+    const count = data.clientsCount;
+    console.log(`Client disconnected. ${count} clients remaining.`);
   },
 });
 
