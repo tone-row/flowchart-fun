@@ -10,7 +10,7 @@ import { logError } from "./sentry";
 
 type IStandAloneCodeEditor = Parameters<OnMount>[0];
 
-export const useYDoc = create<{
+const useYDoc = create<{
   ydoc?: Y.Doc;
   provider?: WebsocketProvider;
 }>()(

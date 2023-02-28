@@ -270,7 +270,7 @@ export function useSafeDoc(): Doc {
  * Watch "text" and "meta" ydoc props and return an updated doc
  * when they change
  */
-export function useDocUpdate(): Doc {
+function useDocUpdate(): Doc {
   const [doc, setDoc] = useState<Doc>({ text: "", meta: {} });
 
   useEffect(() => {

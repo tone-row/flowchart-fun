@@ -26,7 +26,7 @@ import { colors, darkTheme } from "../slang/config";
 type Theme = typeof colors;
 
 // Stored in localStorage
-export type UserSettings = {
+type UserSettings = {
   mode: "light" | "dark";
   language?: string;
 };
