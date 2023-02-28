@@ -16,13 +16,13 @@ import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
-import { setDoc, subscribeToDoc, useDocText } from "../lib/docHelpers";
+import { subscribeToDoc, useDocText } from "../lib/docHelpers";
 import { docToString } from "../lib/docToString";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { Doc } from "../lib/useDoc";
+import { Doc, useDetailsStore, useDoc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import { Type } from "../slang";
 import styles from "./Edit.module.css";
@@ -54,7 +54,8 @@ const Edit = memo(function Edit() {
   useEffect(() => subscribeToDoc(storeDoc), [storeDoc]);
 
   const onChange = useCallback(
-    (value) => setDoc({ text: value ?? "" }, "Edit/text"),
+    // Intentionally only using the local useDoc here
+    (value) => useDoc.setState({ text: value ?? "" }, false, "Edit/text"),
     []
   );
 
@@ -119,7 +120,7 @@ const Edit = memo(function Edit() {
         </EditorWrapper>
         <ClearTextButton
           handleClear={() => {
-            setDoc({ text: "", meta: {} }, "Edit/clear");
+            useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
             if (editorRef.current) {
               editorRef.current.focus();
             }
@@ -142,11 +143,15 @@ function loadWorkspace(workspace: string) {
   if (!workspaceText) {
     workspaceText = getDefaultChart();
   }
-
-  prepareChart(workspaceText, {
-    id: workspace,
-    title: workspace,
-    isHosted: false,
-  });
+  prepareChart(workspaceText);
+  useDetailsStore.setState(
+    {
+      id: workspace,
+      title: workspace,
+      isHosted: false,
+    },
+    false,
+    "loadWorkspace"
+  );
   return workspaceText;
 }

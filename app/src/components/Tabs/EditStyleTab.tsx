@@ -1,7 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import throttle from "lodash.throttle";
 
-import { getDoc, setDocImmer, useDocMeta } from "../../lib/docHelpers";
+import { setDocImmer, useDocMeta } from "../../lib/docHelpers";
 import { themes } from "../../lib/graphOptions";
 import {
   useBackgroundColor,

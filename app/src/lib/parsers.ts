@@ -1,7 +1,7 @@
 import { ElementDefinition } from "cytoscape";
 import { parse, toCytoscapeElements } from "graph-selector";
 
-import { getDoc, useDocMeta } from "./docHelpers";
+import { useDocMeta } from "./docHelpers";
 import { TGetSize } from "./getGetSize";
 import { SelectOption } from "./graphOptions";
 import { parseText } from "./parseText";

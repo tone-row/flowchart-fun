@@ -15,7 +15,7 @@ import { Item, Menu, Separator, Submenu } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
-import { getDoc, getDocText, setDoc, setDocText } from "../lib/docHelpers";
+import { getDoc, getDocText, setDocText } from "../lib/docHelpers";
 import { defaultGraphTheme, useCurrentTheme } from "../lib/graphThemes";
 import { borderStyles, shapes } from "../lib/graphUtilityClasses";
 import { useIsFirefox } from "../lib/hooks";

@@ -13,6 +13,9 @@ export function EditMetaTab() {
   // try to parse when changed and only allow saving if valid
   const [parsed, setParsed] = useState<false | Record<string, unknown>>(meta);
   useEffect(() => {
+    setLocalMeta(JSON.stringify(meta, null, 2));
+  }, [meta]);
+  useEffect(() => {
     try {
       const parsed = JSON.parse(localMeta);
       setParsed(parsed);

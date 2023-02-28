@@ -11,6 +11,7 @@ import Main from "../components/Main";
 import { TextEditor } from "../components/TextEditor";
 import { getDocText } from "../lib/docHelpers";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
+import { useDetailsStore } from "../lib/useDoc";
 
 function ReadOnly() {
   const { path } = useRouteMatch();
@@ -56,7 +57,8 @@ async function loadReadOnly(path: string, graphText: string) {
   const initialText = isCompressed
     ? decompressFromEncodedURIComponent(graphText) ?? ""
     : decodeURIComponent(graphText);
-  prepareChart(initialText, {
+  prepareChart(initialText);
+  useDetailsStore.setState({
     isHosted: false,
     id: "read",
     title: "read-only-flowchart",

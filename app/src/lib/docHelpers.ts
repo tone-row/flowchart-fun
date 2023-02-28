@@ -9,7 +9,6 @@ import produce from "immer";
 import { WritableDraft } from "immer/dist/internal";
 import { useEffect, useState } from "react";
 
-import { docToString } from "./docToString";
 import { getSafeYDoc } from "./realtime";
 import { Doc, useDetailsStore, useDoc } from "./useDoc";
 
@@ -23,19 +22,29 @@ export function setDoc(doc: Partial<Doc>, description: string) {
     const ydoc = getSafeYDoc();
     if (!ydoc) return;
     const { text, meta } = doc;
-    if (text) {
-      // Silent for now, relying on Monaco sync
-      // TODO: need a way to force it for things that update the text
-      // outside of Monaco
-    }
-    if (meta) {
-      const ymeta = ydoc.getMap("meta");
-      if (ymeta) {
-        for (const [key, value] of Object.entries(meta)) {
-          ymeta.set(key, value);
+    ydoc.transact(() => {
+      if (text) {
+        const ytext = ydoc.getText("text");
+        if (ytext) {
+          ytext.delete(0, ytext.length);
+          ytext.insert(0, text);
         }
       }
-    }
+      if (meta) {
+        const ymeta = ydoc.getMap("meta");
+        if (ymeta) {
+          for (const [key, value] of Object.entries(meta)) {
+            ymeta.set(key, value);
+          }
+          // delete any keys that were removed
+          for (const key of Object.keys(ymeta.toJSON())) {
+            if (!(key in meta)) {
+              ymeta.delete(key);
+            }
+          }
+        }
+      }
+    });
   } else {
     // mutate the zustand store
     useDoc.setState(
@@ -271,7 +280,7 @@ export function useSafeDoc(): Doc {
  * when they change
  */
 function useDocUpdate(): Doc {
-  const [doc, setDoc] = useState<Doc>({ text: "", meta: {} });
+  const [localDoc, setLocaldoc] = useState<Doc>({ text: "", meta: {} });
 
   useEffect(() => {
     const ydoc = getSafeYDoc();
@@ -282,7 +291,7 @@ function useDocUpdate(): Doc {
     if (!text || !meta) return;
 
     const updateHandler = () => {
-      setDoc({
+      setLocaldoc({
         text: text.toString(),
         meta: meta.toJSON(),
       });
@@ -297,5 +306,5 @@ function useDocUpdate(): Doc {
     };
   }, []);
 
-  return doc;
+  return localDoc;
 }

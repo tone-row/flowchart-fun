@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 
-import { getDoc, useDocMeta } from "./docHelpers";
+import { useDocMeta } from "./docHelpers";
 import { Theme } from "./themes/constants";
 
 export type GraphThemes =

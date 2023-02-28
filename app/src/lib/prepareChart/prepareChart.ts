@@ -7,7 +7,6 @@ import {
   newDelimiters,
 } from "../constants";
 import { setDoc } from "../docHelpers";
-import { Details, useDetailsStore } from "../useDoc";
 
 /**
  * ### Goals
@@ -22,7 +21,7 @@ import { Details, useDetailsStore } from "../useDoc";
  * - `meta` is the meta section of the document
  */
 
-export function prepareChart(doc: string, details: Details) {
+export function prepareChart(doc: string) {
   let text = doc;
 
   let jsonMeta = {};
@@ -73,8 +72,6 @@ export function prepareChart(doc: string, details: Details) {
   text = `${text.trim()}\n`;
 
   setDoc({ text, meta }, "prepareChart");
-  // set the useDocDetailsStore too
-  useDetailsStore.setState(details, false, "prepareChart");
 
   return {
     text,
