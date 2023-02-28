@@ -72,7 +72,7 @@ msgstr "자동 레이아웃"
 msgid "Back To Editor"
 msgstr "편집기로 돌아가기"
 
-#: src/components/Tabs/EditStyleTab.tsx:48
+#: src/components/Tabs/EditStyleTab.tsx:51
 msgid "Background"
 msgstr "배경"
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Blog"
 msgstr "블로그"
 
-#: src/components/GraphContextMenu.tsx:380
+#: src/components/GraphContextMenu.tsx:382
 msgid "Border"
 msgstr ""
 
@@ -105,18 +105,18 @@ msgid "Breadthfirst"
 msgstr "폭 우선"
 
 #: src/components/ClearTextButton.tsx:44
-#: src/pages/Account.tsx:290
-#: src/pages/Account.tsx:301
-#: src/pages/Account.tsx:369
-#: src/pages/Account.tsx:381
-#: src/pages/Account.tsx:425
+#: src/pages/Account.tsx:304
+#: src/pages/Account.tsx:315
+#: src/pages/Account.tsx:383
+#: src/pages/Account.tsx:395
+#: src/pages/Account.tsx:439
 #: src/pages/Charts.tsx:243
 #: src/pages/Charts.tsx:514
 #: src/pages/Charts.tsx:568
 msgid "Cancel"
 msgstr "취소"
 
-#: src/pages/Account.tsx:293
+#: src/pages/Account.tsx:307
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다."
 
@@ -140,7 +140,7 @@ msgstr "차트"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
-#: src/pages/Pricing.tsx:82
+#: src/pages/Pricing.tsx:84
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "표를 전체 권한, 편집만 가능, 보기만 가능 권한 중 어떤 것으로 공유할 지 선택하여 작업물을 변경할 수 있는지 관리하세요."
 
@@ -177,7 +177,7 @@ msgstr "클론"
 msgid "Close"
 msgstr "닫기"
 
-#: src/components/GraphContextMenu.tsx:208
+#: src/components/GraphContextMenu.tsx:210
 msgid "Color"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgid "Creating an edge between two nodes is done by indenting the second node b
 msgstr ""
 
 #: src/pages/Pricing.tsx:49
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:81
 msgid "Custom Sharing Options"
 msgstr "커스텀 공유 옵션"
 
@@ -295,7 +295,7 @@ msgstr "방향"
 msgid "Discard"
 msgstr "버리다"
 
-#: src/pages/Account.tsx:374
+#: src/pages/Account.tsx:388
 msgid "Do you want to cancel your subscription?"
 msgstr "구독을 취소하시겠습니까?"
 
@@ -393,8 +393,8 @@ msgstr "무료 플랜의 모든 것"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:59
-#: src/components/EditorWrapper.tsx:64
+#: src/components/EditorWrapper.tsx:60
+#: src/components/EditorWrapper.tsx:65
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:111
 msgid "Export"
@@ -434,7 +434,7 @@ msgstr "미래 지향적"
 msgid "Get More Layouts"
 msgstr "더 많은 레이아웃을 보고 싶어요"
 
-#: src/components/Tabs/EditStyleTab.tsx:94
+#: src/components/Tabs/EditStyleTab.tsx:97
 msgid "Get More Themes"
 msgstr "더 많은 테마 받기"
 
@@ -594,11 +594,11 @@ msgid "New Email"
 msgstr "새 이메일"
 
 #: src/pages/Account.tsx:165
-#: src/pages/Account.tsx:422
+#: src/pages/Account.tsx:436
 msgid "Next charge"
 msgstr "다음 청구 금액"
 
-#: src/components/GraphContextMenu.tsx:201
+#: src/components/GraphContextMenu.tsx:203
 msgid "Node"
 msgstr ""
 
@@ -626,6 +626,15 @@ msgstr ""
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr ""
 
+#: src/pages/Account.tsx:287
+#: src/pages/Pricing.tsx:52
+msgid "Office Hours"
+msgstr "근무 시간"
+
+#: src/pages/Pricing.tsx:51
+msgid "One-on-One Support"
+msgstr "일대일 지원"
+
 #: src/pages/Pricing.tsx:38
 msgid "One-time Share Links"
 msgstr "일회성 공유 링크"
@@ -644,7 +653,7 @@ msgstr "퍼머링크"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Pricing.tsx:46
-#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:63
 msgid "Persistent Flowcharts"
 msgstr "영구 다이어그램"
 
@@ -671,7 +680,7 @@ msgstr "공용"
 msgid "Random"
 msgstr "무작위"
 
-#: src/components/EditorWrapper.tsx:50
+#: src/components/EditorWrapper.tsx:51
 #: src/components/ShareDialog.tsx:104
 msgid "Read-only"
 msgstr "읽기 전용"
@@ -736,9 +745,9 @@ msgid "Reset"
 msgstr "재설정"
 
 #: src/pages/Account.tsx:193
-#: src/pages/Account.tsx:416
-#: src/pages/Account.tsx:420
-#: src/pages/Account.tsx:429
+#: src/pages/Account.tsx:430
+#: src/pages/Account.tsx:434
+#: src/pages/Account.tsx:443
 msgid "Resume Subscription"
 msgstr "구독 재개"
 
@@ -746,7 +755,7 @@ msgstr "구독 재개"
 msgid "Retro"
 msgstr "레트로"
 
-#: src/pages/Account.tsx:377
+#: src/pages/Account.tsx:391
 msgid "Return"
 msgstr "반품"
 
@@ -770,7 +779,7 @@ msgstr "구하다"
 msgid "Settings"
 msgstr "설정"
 
-#: src/components/GraphContextMenu.tsx:270
+#: src/components/GraphContextMenu.tsx:272
 msgid "Shape"
 msgstr ""
 
@@ -783,7 +792,7 @@ msgstr ""
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/components/GraphContextMenu.tsx:337
+#: src/components/GraphContextMenu.tsx:339
 msgid "Size"
 msgstr ""
 
@@ -832,7 +841,7 @@ msgstr "클라우드에 저장"
 msgid "Stored on this computer"
 msgstr "이 컴퓨터에 저장됨"
 
-#: src/pages/Pricing.tsx:97
+#: src/pages/Pricing.tsx:99
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Flowchart Fun를 통해 워크플로우를 능률화하고 프로세스 시각화를 단순화하세요"
 
@@ -904,7 +913,7 @@ msgstr ""
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
-#: src/components/Tabs/EditStyleTab.tsx:30
+#: src/components/Tabs/EditStyleTab.tsx:33
 msgid "Theme"
 msgstr "테마"
 
@@ -990,7 +999,7 @@ msgstr "무엇을 공유하시겠습니까?"
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:66
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다."
 

@@ -282,6 +282,20 @@ export default function Account() {
           </tbody>
         </Box>
       </Section>
+      <Section>
+        <SectionTitle>
+          <Trans>Office Hours</Trans>
+        </SectionTitle>
+        <a
+          className="flex gap-1 content-start text-blue-500 items-center"
+          href="https://calendly.com/tone-row/flowchart-fun"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Type as="span">https://calendly.com/tone-row/flowchart-fun</Type>
+          <ArrowSquareOut size={16} weight="bold" className="mt-[-3px]" />
+        </a>
+      </Section>
       {!subscription?.cancel_at_period_end &&
         subscription?.created &&
         subscription?.status === "active" && (

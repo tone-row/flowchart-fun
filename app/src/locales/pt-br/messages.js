@@ -163,6 +163,8 @@
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
+    "Office Hours": "Horário de trabalho",
+    "One-on-One Support": "Suporte Individual",
     "One-time Share Links": "Links de compartilhamento único",
     "Open Customer Portal": "Abra o portal do cliente",
     "Paste the information you wish to convert to a flowchart":
