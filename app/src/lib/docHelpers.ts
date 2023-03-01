@@ -320,6 +320,9 @@ function useDocUpdate(): Doc {
       });
     };
 
+    // Needs to be run once to set the initial value
+    updateHandler();
+
     text.observe(updateHandler);
     meta.observe(updateHandler);
 
