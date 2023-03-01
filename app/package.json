@@ -194,6 +194,9 @@
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(react-use-localstorage)).*\\.js$"
-    ]
+    ],
+    "moduleNameMapper": {
+      "monaco-editor": "<rootDir>/node_modules/@monaco-editor/react"
+    }
   }
 }

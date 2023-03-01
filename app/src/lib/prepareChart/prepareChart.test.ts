@@ -165,11 +165,6 @@ longer label text
 
   test("if a document has a parser it shouldn't change", () => {
     expect(prepareChart(getFixture("example8"))).toEqual({
-      details: {
-        id: "",
-        isHosted: false,
-        title: "",
-      },
       meta: {
         parser: "v1",
       },
@@ -179,11 +174,6 @@ longer label text
 
   test("if a document has no parser but has default text, add v1", () => {
     expect(prepareChart(getFixture("example9"))).toEqual({
-      details: {
-        id: "",
-        isHosted: false,
-        title: "",
-      },
       meta: {
         parser: "v1",
       },
