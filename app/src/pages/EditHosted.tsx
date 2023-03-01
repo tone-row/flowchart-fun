@@ -1,8 +1,7 @@
 import { Trans } from "@lingui/macro";
 import { OnMount } from "@monaco-editor/react";
 import * as Tabs from "@radix-ui/react-tabs";
-import { Check, DotsThree } from "phosphor-react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
 
@@ -12,19 +11,17 @@ import { EditorOptions } from "../components/EditorOptions";
 import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
-import Spinner from "../components/Spinner";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
-import { setDocText, useDocText } from "../lib/docHelpers";
+import { setDocText } from "../lib/docHelpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { getHostedChart } from "../lib/queries";
-import { setupYDoc } from "../lib/realtime";
+import { cleanupYDoc, setupYDoc } from "../lib/realtime";
 import { useDetailsStore } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
-import styles from "./EditHosted.module.css";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
@@ -35,10 +32,27 @@ export default function EditHosted() {
       enabled: !!id,
       suspense: true,
       staleTime: 0,
+      cacheTime: 0,
     }
   );
 
-  const text = useDocText();
+  useEffect(() => {
+    return () => {
+      // clear details
+      useDetailsStore.setState({
+        id: undefined,
+        title: "",
+        // intentionally leave isHosted in the same position
+        isHosted: true,
+        isPublic: false,
+        publicId: undefined,
+      });
+
+      // clear y doc
+      cleanupYDoc();
+    };
+  }, []);
+
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
 
   const { url } = useRouteMatch();
@@ -68,11 +82,7 @@ export default function EditHosted() {
             </Tabs.List>
             <Tabs.Content value="Document">
               <EditorOptions>
-                <TextEditor
-                  editorRef={editorRef}
-                  value={text}
-                  bindToRealtime={isSuccess}
-                />
+                <TextEditor editorRef={editorRef} bindToRealtime={isSuccess} />
               </EditorOptions>
             </Tabs.Content>
             <Tabs.Content value="Layout">
@@ -103,9 +113,6 @@ export default function EditHosted() {
 }
 
 async function loadHostedDoc(id: string) {
-  // setup y doc asap
-  setupYDoc("hosted", id);
-
   // Make sure user has access by loading here
   const chart = await getHostedChart(id);
   if (!chart) throw new Error("Chart not found");
@@ -118,4 +125,6 @@ async function loadHostedDoc(id: string) {
     isPublic: chart.is_public,
     publicId: chart.public_id,
   });
+
+  setupYDoc("hosted", id);
 }

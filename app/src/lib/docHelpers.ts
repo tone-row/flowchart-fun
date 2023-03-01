@@ -107,6 +107,7 @@ export function setDocText(text: string, description: string) {
     const ytext = ydoc.getText("text");
     if (!ytext) return;
     ydoc.transact(() => {
+      if (!ytext) return;
       ytext.delete(0, ytext.length);
       ytext.insert(0, text);
     });
@@ -124,26 +125,18 @@ export function subscribeToDoc(cb: (doc: Doc) => void) {
     const meta = ydoc.getMap("meta");
     if (!text || !meta) return;
 
-    const getFullDoc = () => {
-      return {
+    const runCallback = () =>
+      cb({
         text: text.toString(),
         meta: meta.toJSON(),
-      };
-    };
+      });
 
-    text.observe(() => {
-      cb(getFullDoc());
-    });
-    meta.observe(() => {
-      cb(getFullDoc());
-    });
+    text.observe(runCallback);
+    meta.observe(runCallback);
+
     return () => {
-      text.unobserve(() => {
-        cb(getFullDoc());
-      });
-      meta.unobserve(() => {
-        cb(getFullDoc());
-      });
+      text.unobserve(runCallback);
+      meta.unobserve(runCallback);
     };
   } else {
     // subscribe to zustand store
@@ -193,6 +186,35 @@ export function getDocText(): string {
   }
 }
 
+function getYDocText() {
+  const ydoc = getSafeYDoc();
+  if (!ydoc) return "";
+  const text = ydoc.getText("text");
+  if (!text) return "";
+  return text.toString();
+}
+
+export function useHostedText(): string {
+  const [sharedType, setSharedType] = useState(getYDocText());
+
+  useEffect(() => {
+    const ydoc = getSafeYDoc();
+    if (!ydoc) return;
+    const text = ydoc.getText("text");
+    if (!text) return;
+    setSharedType(getYDocText());
+    // subscribe to updates of the shared type
+    const updateHandler = () => setSharedType(getYDocText());
+    text.observe(updateHandler);
+    return () => {
+      text.unobserve(updateHandler);
+      setSharedType("");
+    };
+  }, []);
+
+  return sharedType;
+}
+
 export function useDocText(): string {
   const isHosted = useDetailsStore.getState().isHosted;
   if (isHosted) {
@@ -221,7 +243,7 @@ export function useDocText(): string {
   } else {
     // get the zustand store
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    return useDoc((state) => state.text);
+    return useDoc((state) => state?.text ?? "");
   }
 }
 

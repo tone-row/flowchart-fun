@@ -16,7 +16,6 @@ const server = new Hocuspocus({
   extensions: [
     new Database({
       fetch: async ({ documentName }) => {
-        console.log("fetching", documentName);
         // create ydoc
         const ydoc = new Y.Doc();
         // create ytext
@@ -24,33 +23,43 @@ const server = new Hocuspocus({
         // meta
         const ymeta = ydoc.getMap("meta");
         try {
-          const [_docType, id] = documentName.split("-");
-          const { data, error } = await supabase
-            .from("user_charts")
-            .select("id,name,chart,updated_at,created_at,public_id,is_public")
-            .eq("id", id);
-          if (error) throw error;
-          if (!data || data.length === 0) throw new Error("Invalid Chart ID");
-          if (data.length > 1) throw new Error("Multiple Charts Found");
-          /** @type {string} */
-          const flowchart = data[0].chart;
-          const { text, meta } = prepareChart(flowchart);
-
-          ydoc.transact(() => {
-            // initialize ytext with the flowchart
-            ytext.delete(0, ytext.length);
-            ytext.insert(0, text);
-            // initialize meta
-            Object.keys(meta).forEach((key) => {
-              ymeta.set(key, meta[key]);
-            });
-            // delete any keys that are no longer in the meta
-            ymeta.forEach((value, key) => {
-              if (!meta[key]) {
-                ymeta.delete(key);
-              }
-            });
+          const [docType, id] = documentName.split("_");
+          console.log({
+            docType,
+            id,
           });
+          if (docType === "hosted") {
+            console.log("Looking up hosted chart: ", id);
+            const { data, error } = await supabase
+              .from("user_charts")
+              .select("id,name,chart,updated_at,created_at,public_id,is_public")
+              .eq("id", id);
+            if (error) throw error;
+            if (!data || data.length === 0) throw new Error("Invalid Chart ID");
+            if (data.length > 1) throw new Error("Multiple Charts Found");
+            /** @type {string} */
+            const flowchart = data[0].chart;
+            const { text, meta } = prepareChart(flowchart);
+
+            ydoc.transact(() => {
+              // initialize ytext with the flowchart
+              ytext.delete(0, ytext.length);
+              ytext.insert(0, text);
+              // initialize meta
+              Object.keys(meta).forEach((key) => {
+                ymeta.set(key, meta[key]);
+              });
+              // delete any keys that are no longer in the meta
+              ymeta.forEach((value, key) => {
+                if (!meta[key]) {
+                  ymeta.delete(key);
+                }
+              });
+            });
+          } else if (docType === "public") {
+            console.log("Need to lookup public chart!");
+            // Potentially this should be outside of the database extension
+          }
         } catch (e) {
           console.log(e);
         }
@@ -58,7 +67,7 @@ const server = new Hocuspocus({
         return Y.encodeStateAsUpdate(ydoc);
       },
       store: async ({ documentName, state }) => {
-        const [_docType, id] = documentName.split("-");
+        const [_docType, id] = documentName.split("_");
 
         // get "text" string from state buffer
         const ydoc = new Y.Doc();

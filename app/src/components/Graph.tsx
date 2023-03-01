@@ -5,7 +5,6 @@ import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
 import throttle from "lodash.throttle";
 import React, {
-  memo,
   MutableRefObject,
   useCallback,
   useEffect,
@@ -60,7 +59,7 @@ if (!cytoscape.prototype.hasInitialised) {
 
 const shouldAnimate = getAnimationSettings();
 
-const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
+export default function Graph({ shouldResize }: { shouldResize: number }) {
   const [initResizeNumber] = useState(shouldResize);
   const cy = useRef<undefined | Core>();
   const errorCatcher = useRef<undefined | Core>();
@@ -156,9 +155,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       <GraphContextMenu />
     </Box>
   );
-});
-
-export default Graph;
+}
 
 function initializeGraph({
   errorCatcher,

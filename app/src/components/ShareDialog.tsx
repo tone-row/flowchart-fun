@@ -15,7 +15,6 @@ import { useMutation } from "react-query";
 
 import { getDoc } from "../lib/docHelpers";
 import { docToString } from "../lib/docToString";
-import { useChartId } from "../lib/hooks";
 import {
   track_copyEditableShareLink,
   track_copyFullscreenShareLink,
@@ -27,7 +26,6 @@ import {
 } from "../lib/logsnag";
 import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic } from "../lib/queries";
-import { supabase } from "../lib/supabaseClient";
 import { useDetails } from "../lib/useDetails";
 import { useDetailsStore } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
@@ -48,7 +46,6 @@ export default function ShareDialog() {
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
-  const chartId = useChartId();
 
   return (
     <Dialog

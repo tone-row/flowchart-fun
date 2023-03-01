@@ -20,13 +20,15 @@ const useYDoc = create<{
 );
 
 // Create a Yjs document
-export function setupYDoc(type: "hosted", id: string) {
+export function setupYDoc(type: "hosted" | "public", id: string) {
   const providerUrl = process.env.REACT_APP_WEBSOCKET_PROVIDER;
   if (!providerUrl) throw new Error("REACT_APP_WEBSOCKET_PROVIDER not found");
 
+  const roomName = `${type}_${id}`;
+
   // If the provider is already set to the correct type and id, don't do anything
   const currentProvider = useYDoc.getState().provider;
-  if (currentProvider?.roomname === `${type}-${id}`) return;
+  if (currentProvider?.roomname === roomName) return;
 
   // If there is a provider, disconnect it
   if (currentProvider) currentProvider.disconnect();
@@ -34,10 +36,17 @@ export function setupYDoc(type: "hosted", id: string) {
   const ydoc = new Y.Doc();
 
   // Create a provider
-  const provider = new WebsocketProvider(providerUrl, `${type}-${id}`, ydoc);
+  const provider = new WebsocketProvider(providerUrl, roomName, ydoc);
 
   // set references in store
   useYDoc.setState({ ydoc, provider });
+}
+
+export function cleanupYDoc() {
+  console.log("Cleanup ydoc");
+  const provider = useYDoc.getState().provider;
+  if (provider) provider.disconnect();
+  useYDoc.setState({ ydoc: undefined, provider: undefined });
 }
 
 /**
@@ -46,7 +55,6 @@ export function setupYDoc(type: "hosted", id: string) {
 export function getSafeYDoc() {
   const ydoc = useYDoc.getState().ydoc;
   if (!ydoc) {
-    logError(new Error("Y.Doc not found"));
     return false;
   }
   return ydoc;
