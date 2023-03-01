@@ -20,7 +20,7 @@ import { cytoscape } from "../lib/cytoscape";
 import { getDoc, setMetaImmer, subscribeToDoc } from "../lib/docHelpers";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
-import { getUserStyle } from "../lib/getTheme";
+import { getUserStyle, useUserStyle } from "../lib/getTheme";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import {
   useBackgroundColor,
@@ -67,6 +67,7 @@ export default function Graph({ shouldResize }: { shouldResize: number }) {
   const themeKey = useThemeKey();
   const theme = useCurrentTheme(themeKey) as unknown as Theme;
   const bg = useBackgroundColor(theme);
+  const userStyle = useUserStyle();
 
   const getSize = useRef<TGetSize>(getGetSize(theme));
   const parser = useParser();
@@ -115,8 +116,8 @@ export default function Graph({ shouldResize }: { shouldResize: number }) {
 
   // Apply theme
   useEffect(() => {
-    getStyleUpdater({ cy, errorCatcher, bg })(theme);
-  }, [bg, theme]);
+    getStyleUpdater({ cy, errorCatcher, bg, userStyle })(theme);
+  }, [bg, theme, userStyle]);
 
   const throttleUpdate = useMemo(
     () =>
@@ -316,17 +317,18 @@ function getStyleUpdater({
   cy,
   errorCatcher,
   bg,
+  userStyle = [],
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
   bg?: string;
+  userStyle: cytoscape.StylesheetStyle[];
 }) {
   return throttle((theme: Theme) => {
     if (!cy.current) return;
     if (!errorCatcher.current) return;
     try {
-      // Prepare Styles
-      const style = buildStylesForGraph(theme, getUserStyle(), bg);
+      const style = buildStylesForGraph(theme, userStyle, bg);
 
       // Test Error First
       errorCatcher.current.json({ style });
