@@ -39,6 +39,8 @@ export function universalParse(
           size = {
             width: element.data.w || "label",
             height: element.data.h || "label",
+            textMarginY: 0,
+            textMarginX: 0,
           };
         } else {
           size = getSize(
