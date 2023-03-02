@@ -47,7 +47,7 @@ We welcome anyone interested in helping us add translations to Flowchart Fun. Tr
 
 #### 💬 Interested in Adding a Language?
 
-Let us know about your plans in the [Discord](https://discord.gg/84MxwFCf), and we'd be glad to lend a helping hand.
+Let us know about your plans in the [Discord](https://discord.com/invite/wPASTQHQBf), and we'd be glad to lend a helping hand.
 
 ### 🧪 Tests
 
@@ -69,4 +69,4 @@ To ensure quality and accuracy, Flowchart Fun employs [Jest](https://jestjs.io/)
 
 We welcome contributions! Please fork the `dev` branch in order to develop and test your feature.
 
-If you have any questions, feel free to join the discussion on [Discord](https://discord.gg/84MxwFCf).
+If you have any questions, feel free to join the discussion on [Discord](https://discord.com/invite/wPASTQHQBf).
