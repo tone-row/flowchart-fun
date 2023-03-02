@@ -100,6 +100,7 @@ export function TextEditor({
       onMount={(editor, monaco) => {
         registerLanguages(monaco);
         editorRef.current = editor;
+        window.__monaco_editor = editor;
         monacoRef.current = monaco;
         // @ts-ignore
         window.monacoRef = monacoRef.current;

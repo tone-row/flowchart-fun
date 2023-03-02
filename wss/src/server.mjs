@@ -18,22 +18,43 @@ const server = new Hocuspocus({
       fetch: async ({ documentName }) => {
         // create ydoc
         const ydoc = new Y.Doc();
-        // create ytext
-        const ytext = ydoc.getText("text");
-        // meta
-        const ymeta = ydoc.getMap("meta");
+
         try {
           const [docType, id] = documentName.split("_");
-          console.log({
-            docType,
-            id,
-          });
-          if (docType === "hosted") {
-            console.log("Looking up hosted chart: ", id);
+
+          if (!id) throw new Error("Invalid Chart ID");
+
+          console.log("fetching document: ", id);
+          // check to see if this is in storage
+          const result = await supabase.storage
+            .from("documents")
+            .download(id + `?updated`);
+          if (result.data) {
+            // return result.data;
+            // this is the ydoc, return it
+            console.log("found in storage");
+            console.log(typeof result.data);
+            const arrayBuffer = await result.data.arrayBuffer();
+            const buffer = Buffer.from(arrayBuffer);
+            console.log("Return original");
+            return buffer;
+            // return result.data;
+            // return result.data.arrayBuffer();
+          } else {
+            console.log(result);
+            // need to create a ydoc and store in storage
+            // then return it
+            // create ytext
+            const ytext = ydoc.getText("text");
+
+            // meta
+            const ymeta = ydoc.getMap("meta");
+
             const { data, error } = await supabase
               .from("user_charts")
               .select("id,name,chart,updated_at,created_at,public_id,is_public")
               .eq("id", id);
+
             if (error) throw error;
             if (!data || data.length === 0) throw new Error("Invalid Chart ID");
             if (data.length > 1) throw new Error("Multiple Charts Found");
@@ -56,9 +77,16 @@ const server = new Hocuspocus({
                 }
               });
             });
-          } else if (docType === "public") {
-            console.log("Need to lookup public chart!");
-            // Potentially this should be outside of the database extension
+
+            // store the ydoc in storage
+            const ydocState = Y.encodeStateAsUpdate(ydoc);
+            const { error: storageError } = await supabase.storage
+              .from("documents")
+              .upload(id + `?updated`, ydocState, {
+                upsert: true,
+                cacheControl: "0",
+              });
+            if (storageError) throw storageError;
           }
         } catch (e) {
           console.log(e);
@@ -69,29 +97,44 @@ const server = new Hocuspocus({
       store: async ({ documentName, state }) => {
         const [_docType, id] = documentName.split("_");
 
-        // get "text" string from state buffer
-        const ydoc = new Y.Doc();
-        Y.applyUpdate(ydoc, state);
-        const ytext = ydoc.getText("text");
-        const text = ytext.toString();
+        // store the ydoc in storage
+        const updatedAt = new Date().toISOString();
+        const { error, data } = await supabase.storage
+          .from("documents")
+          .upload(id + `?updated`, state, {
+            upsert: true,
+            cacheControl: "0",
+          });
+        console.log("stored successfully");
+        console.log(data);
+        if (error) {
+          console.log(error);
+          throw error;
+        }
 
-        // get meta
-        const ymeta = ydoc.getMap("meta");
-        /**
-         * @type {object}
-         * */
-        const meta = {};
-        ymeta.forEach((value, key) => {
-          meta[key] = value;
-        });
+        // // get "text" string from state buffer
+        // const ydoc = new Y.Doc();
+        // Y.applyUpdate(ydoc, state);
+        // const ytext = ydoc.getText("text");
+        // const text = ytext.toString();
 
-        const chart = docToString({ text, meta });
-        const { error } = await supabase
-          .from("user_charts")
-          .update({ chart })
-          .eq("id", id);
-        if (error) throw error;
-        return true;
+        // // get meta
+        // const ymeta = ydoc.getMap("meta");
+        // /**
+        //  * @type {object}
+        //  * */
+        // const meta = {};
+        // ymeta.forEach((value, key) => {
+        //   meta[key] = value;
+        // });
+
+        // const chart = docToString({ text, meta });
+        // const { error } = await supabase
+        //   .from("user_charts")
+        //   .update({ chart })
+        //   .eq("id", id);
+        // if (error) throw error;
+        // return true;
       },
     }),
   ],

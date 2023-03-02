@@ -5,7 +5,9 @@ import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
 import throttle from "lodash.throttle";
 import React, {
+  Dispatch,
   MutableRefObject,
+  SetStateAction,
   useCallback,
   useEffect,
   useMemo,
@@ -30,10 +32,11 @@ import {
 import { isError } from "../lib/helpers";
 import { getAnimationSettings } from "../lib/hooks";
 import { Parsers, universalParse, useParser } from "../lib/parsers";
+import { useYDoc } from "../lib/realtime";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
 import { useContextMenuState } from "../lib/useContextMenuState";
-import { Doc } from "../lib/useDoc";
+import { Doc, useDetailsStore } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { useHoverLine } from "../lib/useHoverLine";
 import { useParseError } from "../lib/useParseError";
@@ -68,6 +71,7 @@ export default function Graph({ shouldResize }: { shouldResize: number }) {
   const theme = useCurrentTheme(themeKey) as unknown as Theme;
   const bg = useBackgroundColor(theme);
   const userStyle = useUserStyle();
+  const [graphReady, setGraphReady] = useState(false);
 
   const getSize = useRef<TGetSize>(getGetSize(theme));
   const parser = useParser();
@@ -95,6 +99,7 @@ export default function Graph({ shouldResize }: { shouldResize: number }) {
 
   // Initialize Graph
   useEffect(() => {
+    if (graphInitialized.current) return;
     return initializeGraph({
       errorCatcher,
       cy,
@@ -121,7 +126,13 @@ export default function Graph({ shouldResize }: { shouldResize: number }) {
 
   const throttleUpdate = useMemo(
     () =>
-      getGraphUpdater({ cy, errorCatcher, graphInitialized, getSize, parser }),
+      getGraphUpdater({
+        cy,
+        errorCatcher,
+        graphInitialized,
+        getSize,
+        parser,
+      }),
     [parser]
   );
 
@@ -271,14 +282,20 @@ function getGraphUpdater({
       // TODO: what happens if you add animate false and run() here?
       errorCatcher.current.layout(layout);
 
+      const isHosted = useDetailsStore.getState().isHosted;
+      const isReady = useYDoc.getState().isReady;
+      const isReadyToAnimate = !isHosted || isReady;
+
       // Update
       cy.current.json({ elements });
       if (layout.name !== "preset") {
         cy.current
           .layout({
-            animate: graphInitialized.current
-              ? elements.length < 200
-                ? shouldAnimate
+            animate: isReadyToAnimate
+              ? graphInitialized.current
+                ? elements.length < 200
+                  ? shouldAnimate
+                  : false
                 : false
               : false,
             animationDuration: shouldAnimate ? 333 : 0,
@@ -301,6 +318,8 @@ function getGraphUpdater({
 
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
+
+      //
     } catch (e) {
       errorCatcher.current.destroy();
       errorCatcher.current = cytoscape();

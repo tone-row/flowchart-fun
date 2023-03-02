@@ -10,6 +10,7 @@ import EditorError from "../components/EditorError";
 import { EditorOptions } from "../components/EditorOptions";
 import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
+import Loading from "../components/Loading";
 import Main from "../components/Main";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
@@ -18,7 +19,7 @@ import { TextEditor } from "../components/TextEditor";
 import { setDocText } from "../lib/docHelpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { getHostedChart } from "../lib/queries";
-import { cleanupYDoc, setupYDoc } from "../lib/realtime";
+import { cleanupYDoc, setupYDoc, useYDoc } from "../lib/realtime";
 import { useDetailsStore } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
@@ -59,8 +60,15 @@ export default function EditHosted() {
   useTrackLastChart(url);
   const isValidSponsor = useIsValidSponsor();
 
+  const isReady = useYDoc((state) => state.isReady);
+
   return (
     <EditWrapper>
+      {!isReady && (
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white dark:bg-gray-900 z-50 opacity-40">
+          <Loading color="color-foreground" />
+        </div>
+      )}
       <Main>
         <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={editStyles.Tabs}>

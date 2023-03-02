@@ -10,13 +10,21 @@ import { logError } from "./sentry";
 
 type IStandAloneCodeEditor = Parameters<OnMount>[0];
 
-const useYDoc = create<{
+type UseYDoc = {
   ydoc?: Y.Doc;
   provider?: WebsocketProvider;
-}>()(
-  devtools(() => ({}), {
-    name: "useYDoc",
-  })
+  isReady: boolean;
+};
+
+export const useYDoc = create<UseYDoc>()(
+  devtools<UseYDoc>(
+    () => ({
+      isReady: false,
+    }),
+    {
+      name: "useYDoc",
+    }
+  )
 );
 
 // Create a Yjs document
@@ -37,16 +45,18 @@ export function setupYDoc(type: "hosted" | "public", id: string) {
 
   // Create a provider
   const provider = new WebsocketProvider(providerUrl, roomName, ydoc);
+  provider.on("synced", (isSynced: boolean) => {
+    useYDoc.setState({ isReady: isSynced });
+  });
 
   // set references in store
   useYDoc.setState({ ydoc, provider });
 }
 
 export function cleanupYDoc() {
-  console.log("Cleanup ydoc");
   const provider = useYDoc.getState().provider;
   if (provider) provider.disconnect();
-  useYDoc.setState({ ydoc: undefined, provider: undefined });
+  useYDoc.setState({ ydoc: undefined, provider: undefined, isReady: false });
 }
 
 /**

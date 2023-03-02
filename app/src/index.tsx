@@ -15,6 +15,7 @@ import reportWebVitals from "./reportWebVitals";
 declare global {
   interface Window {
     Buffer: typeof Buffer;
+    __monaco_editor?: any;
   }
 }
 window.Buffer = Buffer;
