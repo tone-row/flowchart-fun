@@ -36,6 +36,8 @@ import { track } from "../lib/track";
 import { useLastChart } from "../lib/useLastChart";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 
+const DISCORD_URL = "https://discord.gg/wPASTQHQBf";
+
 export const Header = memo(function SharedHeader() {
   const { pathname } = useLocation();
   const isSponsorPage = pathname === "/pricing";
@@ -115,7 +117,7 @@ export const Header = memo(function SharedHeader() {
                       icon={
                         <DiscordLogo weight="light" height={22} width={22} />
                       }
-                      href="https://discord.gg/84MxwFCf"
+                      href={DISCORD_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                     />
@@ -367,7 +369,7 @@ function MobileHeader({
             <HeaderLink
               label="Discord"
               icon={<DiscordLogo weight="light" height={22} width={22} />}
-              href="https://discord.gg/84MxwFCf"
+              href={DISCORD_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mobile-only"
