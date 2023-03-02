@@ -6,7 +6,7 @@ import { prepareChart } from "./prepareChart";
 
 describe("prepareChart", () => {
   test("can migrate old files with yaml", () => {
-    expect(prepareChart(getFixture("example1"), initialDoc.details)).toEqual({
+    expect(prepareChart(getFixture("example1"))).toEqual({
       text: `This app works by typing
   Indenting creates a link to the current line
   any text: before a colon creates a label
@@ -30,12 +30,11 @@ Have fun! 🎉
         parser: "v1",
         theme: "original-dark",
       },
-      details: initialDoc.details,
     });
   });
 
   test("can migrate old files with hidden options", () => {
-    expect(prepareChart(getFixture("example2"), initialDoc.details)).toEqual({
+    expect(prepareChart(getFixture("example2"))).toEqual({
       text: `long label text
   (c)
 longer label text
@@ -50,22 +49,20 @@ longer label text
         },
         parser: "v1",
       },
-      details: initialDoc.details,
     });
   });
 
   test("can migrate old files with neither", () => {
-    expect(prepareChart(getFixture("example3"), initialDoc.details)).toEqual({
+    expect(prepareChart(getFixture("example3"))).toEqual({
       text: `i am but a simple file\n`,
       meta: {
         parser: "v1",
       },
-      details: initialDoc.details,
     });
   });
 
   test("can migrate old file with both", () => {
-    expect(prepareChart(getFixture("example4"), initialDoc.details)).toEqual({
+    expect(prepareChart(getFixture("example4"))).toEqual({
       text: `이 앱은 타이핑으로 작동합니다
   들여쓰기는 현재 줄에 대한 링크를 생성합니다
   콜론 앞의 모든 텍스트는: 레이블을 생성합니다
@@ -97,12 +94,11 @@ longer label text
         },
         parser: "v1",
       },
-      details: initialDoc.details,
     });
   });
 
   test("can migrate new file", () => {
-    expect(prepareChart(getFixture("example5"), initialDoc.details)).toEqual({
+    expect(prepareChart(getFixture("example5"))).toEqual({
       text: `hello\n  to: the world\n`,
       meta: {
         layout: {
@@ -112,12 +108,11 @@ longer label text
         theme: "eggs",
         parser: "v1",
       },
-      details: initialDoc.details,
     });
   });
 
   test("can merge a mix of old and new", () => {
-    expect(prepareChart(getFixture("example6"), initialDoc.details)).toEqual({
+    expect(prepareChart(getFixture("example6"))).toEqual({
       meta: {
         layout: {
           name: "cose",
@@ -151,12 +146,11 @@ longer label text
         y
         z
 `,
-      details: initialDoc.details,
     });
   });
 
   test("trims whitespace and adds one newline to text", () => {
-    expect(prepareChart(getFixture("example7"), initialDoc.details)).toEqual({
+    expect(prepareChart(getFixture("example7"))).toEqual({
       text: `hello\n  to the: world\n`,
       meta: {
         layout: {
@@ -166,21 +160,11 @@ longer label text
         parser: "v1",
         theme: "eggs",
       },
-      details: initialDoc.details,
     });
   });
 
   test("if a document has a parser it shouldn't change", () => {
-    expect(
-      prepareChart(getFixture("example8"), {
-        ...initialDoc.details,
-      })
-    ).toEqual({
-      details: {
-        id: "",
-        isHosted: false,
-        title: "",
-      },
+    expect(prepareChart(getFixture("example8"))).toEqual({
       meta: {
         parser: "v1",
       },
@@ -189,16 +173,7 @@ longer label text
   });
 
   test("if a document has no parser but has default text, add v1", () => {
-    expect(
-      prepareChart(getFixture("example9"), {
-        ...initialDoc.details,
-      })
-    ).toEqual({
-      details: {
-        id: "",
-        isHosted: false,
-        title: "",
-      },
+    expect(prepareChart(getFixture("example9"))).toEqual({
       meta: {
         parser: "v1",
       },

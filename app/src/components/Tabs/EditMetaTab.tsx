@@ -3,15 +3,18 @@ import Editor from "@monaco-editor/react";
 import { useEffect, useState } from "react";
 
 import { editorOptions } from "../../lib/constants";
+import { setDoc, useDocMeta } from "../../lib/docHelpers";
 import { useLightOrDarkMode } from "../../lib/hooks";
-import { useDoc } from "../../lib/useDoc";
 import { Button } from "../Shared";
 
 export function EditMetaTab() {
-  const meta = useDoc((s) => s.meta);
+  const meta = useDocMeta();
   const [localMeta, setLocalMeta] = useState(JSON.stringify(meta, null, 2));
   // try to parse when changed and only allow saving if valid
   const [parsed, setParsed] = useState<false | Record<string, unknown>>(meta);
+  useEffect(() => {
+    setLocalMeta(JSON.stringify(meta, null, 2));
+  }, [meta]);
   useEffect(() => {
     try {
       const parsed = JSON.parse(localMeta);
@@ -62,7 +65,7 @@ export function EditMetaTab() {
             onClick={() => {
               try {
                 if (!parsed) return;
-                useDoc.setState({ meta: parsed }, false, "EditMetaTab/meta");
+                setDoc({ meta: parsed }, "EditMetaTab/meta");
               } catch (e) {
                 console.error(e);
               }

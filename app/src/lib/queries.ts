@@ -226,12 +226,6 @@ export function useChart(id: string) {
   });
 }
 
-export async function updateChartText(chart: string, id?: string) {
-  if (!id) return;
-  if (!supabase) return;
-  return supabase.from("user_charts").update({ chart }).eq("id", id);
-}
-
 export async function deleteChart({ chartId }: { chartId: number }) {
   if (!supabase) return;
   const { data, error } = await supabase

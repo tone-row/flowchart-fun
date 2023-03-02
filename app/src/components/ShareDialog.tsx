@@ -13,6 +13,8 @@ import {
 } from "react";
 import { useMutation } from "react-query";
 
+import { getDoc } from "../lib/docHelpers";
+import { docToString } from "../lib/docToString";
 import {
   track_copyEditableShareLink,
   track_copyFullscreenShareLink,
@@ -24,7 +26,8 @@ import {
 } from "../lib/logsnag";
 import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic } from "../lib/queries";
-import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
+import { useDetails } from "../lib/useDetails";
+import { useDetailsStore } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
@@ -33,10 +36,10 @@ import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
 
 export default function ShareDialog() {
-  const isHosted = useDocDetails("isHosted");
+  const isHosted = useDetails("isHosted");
   const { shareModal, setShareModal } = useContext(AppContext);
   const close = useCallback(() => setShareModal(false), [setShareModal]);
-  const docString = useDoc(docToString);
+  const docString = docToString(getDoc());
   const shareLink = useMemo(() => {
     return compressToEncodedURIComponent(docString);
   }, [docString]);
@@ -112,6 +115,32 @@ export default function ShareDialog() {
         </Title>
         <Mermaid />
       </Column>
+      {/* {isHosted ? (
+        <Column>
+          <Title>Share</Title>
+          <Button
+            onClick={() => {
+              console.log("Share with other Rob");
+              // to test if it works, first we're going to try sharing a chart we ownn
+              // then we'll try sharing a chart we don't own
+              const email = "camille.leblanc.murray@gmail.com";
+              const flowchart_id = chartId;
+              (async () => {
+                if (!supabase) return;
+                const result = await supabase.from("shared_charts").insert({
+                  email,
+                  flowchart_id,
+                });
+                console.log({
+                  result,
+                });
+              })();
+            }}
+          >
+            Share with Other Rob
+          </Button>
+        </Column>
+      ) : null} */}
     </Dialog>
   );
 }
@@ -285,11 +314,11 @@ function Mermaid() {
 }
 
 function HostedOptions() {
-  const id = useDocDetails("id");
+  const id = useDetails("id");
   if (typeof id !== "number") throw new Error("id is not a number");
 
-  const isPublic = useDocDetails("isPublic");
-  const publicId = useDocDetails("publicId");
+  const isPublic = useDetails("isPublic");
+  const publicId = useDetails("publicId");
 
   const makePublic = useMutation(
     "makeChartPublic",
@@ -297,11 +326,11 @@ function HostedOptions() {
     {
       onSuccess: (result) => {
         if (!result) return;
-        useDoc.setState(
+        useDetailsStore.setState(
           (state) => {
             return produce(state, (draft) => {
-              draft.details.isPublic = result.isPublic;
-              draft.details.publicId = result.publicId;
+              draft.isPublic = result.isPublic;
+              draft.publicId = result.publicId;
             });
           },
           false,

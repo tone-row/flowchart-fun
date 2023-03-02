@@ -2,14 +2,15 @@ import { Trans } from "@lingui/macro";
 import { FaCopy } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 
+import { getDoc } from "../lib/docHelpers";
+import { docToString } from "../lib/docToString";
 import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
-import { docToString, useDoc } from "../lib/useDoc";
 import { Type } from "../slang";
 import styles from "./EditorWrapper.module.css";
 
 export function CloneButton() {
   const { push } = useHistory();
-  const fullText = useDoc((s) => docToString(s));
+  const fullText = docToString(getDoc());
   return (
     <button
       className={`${styles.ShareButton} ${styles.cloneBtn}`}

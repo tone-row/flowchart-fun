@@ -16,11 +16,13 @@ import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
+import { subscribeToDoc, useDocText } from "../lib/docHelpers";
+import { docToString } from "../lib/docToString";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { Doc, docToString, useDoc } from "../lib/useDoc";
+import { Doc, useDetailsStore, useDoc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import { Type } from "../slang";
 import styles from "./Edit.module.css";
@@ -49,9 +51,10 @@ const Edit = memo(function Edit() {
     );
   }, [workspace]);
 
-  useEffect(() => useDoc.subscribe(storeDoc), [storeDoc]);
+  useEffect(() => subscribeToDoc(storeDoc), [storeDoc]);
 
   const onChange = useCallback(
+    // Intentionally only using the local useDoc here
     (value) => useDoc.setState({ text: value ?? "" }, false, "Edit/text"),
     []
   );
@@ -59,7 +62,7 @@ const Edit = memo(function Edit() {
   const { url } = useRouteMatch();
   useTrackLastChart(url);
 
-  const text = useDoc((d) => d.text);
+  const text = useDocText();
 
   return (
     <EditWrapper>
@@ -140,11 +143,15 @@ function loadWorkspace(workspace: string) {
   if (!workspaceText) {
     workspaceText = getDefaultChart();
   }
-
-  prepareChart(workspaceText, {
-    id: workspace,
-    title: workspace,
-    isHosted: false,
-  });
+  prepareChart(workspaceText);
+  useDetailsStore.setState(
+    {
+      id: workspace,
+      title: workspace,
+      isHosted: false,
+    },
+    false,
+    "loadWorkspace"
+  );
   return workspaceText;
 }

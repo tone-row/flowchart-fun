@@ -1,75 +1,74 @@
 import { Trans } from "@lingui/macro";
 import { OnMount } from "@monaco-editor/react";
 import * as Tabs from "@radix-ui/react-tabs";
-import { Check, DotsThree } from "phosphor-react";
-import { useCallback, useEffect, useRef } from "react";
-import { useMutation, useQuery } from "react-query";
+import { useEffect, useRef } from "react";
+import { useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
-import { useDebouncedCallback } from "use-debounce";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
 import { EditorOptions } from "../components/EditorOptions";
 import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
+import Loading from "../components/Loading";
 import Main from "../components/Main";
-import Spinner from "../components/Spinner";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
+import { setDocText } from "../lib/docHelpers";
 import { useIsValidSponsor } from "../lib/hooks";
-import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { getHostedChart, updateChartText } from "../lib/queries";
-import { Doc, docToString, useDoc } from "../lib/useDoc";
+import { getHostedChart } from "../lib/queries";
+import { cleanupYDoc, setupYDoc, useYDoc } from "../lib/realtime";
+import { useDetailsStore } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
-import styles from "./EditHosted.module.css";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
-  useQuery(["useHostedDoc", id], () => loadHostedDoc(id), {
-    enabled: !!id,
-    suspense: true,
-    staleTime: 0,
-  });
-
-  const { mutate, isLoading } = useMutation((text: string) =>
-    updateChartText(text, id)
+  const { isSuccess } = useQuery(
+    ["useHostedDoc", id],
+    () => loadHostedDoc(id),
+    {
+      enabled: !!id,
+      suspense: true,
+      staleTime: 0,
+      cacheTime: 0,
+    }
   );
-  // get debounced mutate
-  const {
-    callback: debounceMutate,
-    flush,
-    pending,
-  } = useDebouncedCallback((doc: Doc) => {
-    mutate(docToString(doc));
-  }, 1000);
-  useEffect(() => useDoc.subscribe(debounceMutate), [debounceMutate]);
 
-  const text = useDoc((state) => state.text);
-
-  const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-
-  // This is to make sure we update if people exit the tab quickly
   useEffect(() => {
     return () => {
-      flush();
+      // clear details
+      useDetailsStore.setState({
+        id: undefined,
+        title: "",
+        // intentionally leave isHosted in the same position
+        isHosted: true,
+        isPublic: false,
+        publicId: undefined,
+      });
+
+      // clear y doc
+      cleanupYDoc();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onChange = useCallback(
-    (value) => useDoc.setState({ text: value ?? "" }, false, "EditHosted/text"),
-    []
-  );
+  const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
 
   const { url } = useRouteMatch();
   useTrackLastChart(url);
   const isValidSponsor = useIsValidSponsor();
 
+  const isReady = useYDoc((state) => state.isReady);
+
   return (
     <EditWrapper>
+      {!isReady && (
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white dark:bg-gray-900 z-50 opacity-40">
+          <Loading color="color-foreground" />
+        </div>
+      )}
       <Main>
         <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={editStyles.Tabs}>
@@ -91,11 +90,7 @@ export default function EditHosted() {
             </Tabs.List>
             <Tabs.Content value="Document">
               <EditorOptions>
-                <TextEditor
-                  editorRef={editorRef}
-                  value={text}
-                  onChange={onChange}
-                />
+                <TextEditor editorRef={editorRef} bindToRealtime={isSuccess} />
               </EditorOptions>
             </Tabs.Content>
             <Tabs.Content value="Layout">
@@ -111,10 +106,9 @@ export default function EditHosted() {
             )}
           </Tabs.Root>
         </EditorWrapper>
-        <LoadingState isLoading={isLoading} pending={pending()} />
         <ClearTextButton
           handleClear={() => {
-            useDoc.setState({ text: "", meta: {} }, false, "EditHosted/clear");
+            setDocText("", "EditHosted/clear");
             if (editorRef.current) {
               editorRef.current.focus();
             }
@@ -126,39 +120,19 @@ export default function EditHosted() {
   );
 }
 
-/**
- * Shows whether the chart has synced to the server
- */
-function LoadingState({
-  pending,
-  isLoading,
-}: {
-  pending: boolean;
-  isLoading: boolean;
-}) {
-  return (
-    <div className={styles.LoadingState}>
-      {pending ? (
-        <DotsThree size={18} color="var(--palette-purple-0)" />
-      ) : isLoading ? (
-        <Spinner r={4} s={1} c="var(--palette-purple-0)" />
-      ) : (
-        <Check size={17} color="var(--palette-purple-0)" />
-      )}
-    </div>
-  );
-}
-
 async function loadHostedDoc(id: string) {
+  // Make sure user has access by loading here
   const chart = await getHostedChart(id);
   if (!chart) throw new Error("Chart not found");
-  const doc = chart.chart;
-  prepareChart(doc, {
+
+  // setup details
+  useDetailsStore.setState({
     id: chart.id,
     title: chart.name,
     isHosted: true,
     isPublic: chart.is_public,
     publicId: chart.public_id,
   });
-  return doc;
+
+  setupYDoc("hosted", id);
 }

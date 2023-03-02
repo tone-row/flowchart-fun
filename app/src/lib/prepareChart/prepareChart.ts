@@ -6,7 +6,7 @@ import {
   HIDDEN_GRAPH_OPTIONS_DIVIDER,
   newDelimiters,
 } from "../constants";
-import { Details, useDoc } from "../useDoc";
+import { setDoc } from "../docHelpers";
 
 /**
  * ### Goals
@@ -21,7 +21,7 @@ import { Details, useDoc } from "../useDoc";
  * - `meta` is the meta section of the document
  */
 
-export function prepareChart(doc: string, details: Details) {
+export function prepareChart(doc: string) {
   let text = doc;
 
   let jsonMeta = {};
@@ -71,11 +71,10 @@ export function prepareChart(doc: string, details: Details) {
 
   text = `${text.trim()}\n`;
 
-  useDoc.setState({ text, meta, details }, false, "prepareChart");
+  setDoc({ text, meta }, "prepareChart");
 
   return {
     text,
     meta,
-    details,
   };
 }

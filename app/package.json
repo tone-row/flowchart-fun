@@ -54,8 +54,9 @@
     "@sentry/tracing": "^7.38.0",
     "@stripe/react-stripe-js": "^1.16.4",
     "@stripe/stripe-js": "^1.46.0",
-    "@supabase/gotrue-js": "^2",
-    "@supabase/supabase-js": "^2",
+    "@supabase/gotrue-js": "^2.12.1",
+    "@supabase/realtime-js": "^2.6.0",
+    "@supabase/supabase-js": "^2.8.0",
     "@svgr/webpack": "^6.3.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -107,6 +108,10 @@
     "svgo": "^2.8.0",
     "use-debounce": "^5.2.1",
     "web-vitals": "^1.0.1",
+    "y-monaco": "^0.1.4",
+    "y-protocols": "^1.0.5",
+    "y-websocket": "^1.4.5",
+    "yjs": "^13.5.47",
     "zustand": "^4.3.3"
   },
   "eslintConfig": {
@@ -189,6 +194,9 @@
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(react-use-localstorage)).*\\.js$"
-    ]
+    ],
+    "moduleNameMapper": {
+      "monaco-editor": "<rootDir>/node_modules/@monaco-editor/react"
+    }
   }
 }

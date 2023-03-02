@@ -1,11 +1,13 @@
 import Editor, { EditorProps, Monaco } from "@monaco-editor/react";
 import { highlight } from "graph-selector";
 import { editor } from "monaco-editor";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { editorOptions } from "../lib/constants";
 import { useEditorHover } from "../lib/editorHooks";
+import { useLightOrDarkMode } from "../lib/hooks";
 import { useParser } from "../lib/parsers";
+import { initRealtime } from "../lib/realtime";
 import {
   languageId,
   registerLanguages,
@@ -13,19 +15,20 @@ import {
   themeNameLight,
 } from "../lib/registerLanguage";
 import { useHoverLine } from "../lib/useHoverLine";
-import { AppContext } from "./AppContext";
 import Loading from "./Loading";
 import styles from "./TextEditor.module.css";
 
 type TextEditorProps = EditorProps & {
   editorRef: React.MutableRefObject<null | editor.IStandaloneCodeEditor>;
   extendOptions?: editor.IEditorOptions;
+  bindToRealtime?: boolean;
 };
 
 /** A Monaco editor which stays in sync with the current parser */
 export function TextEditor({
   editorRef,
   extendOptions = {},
+  bindToRealtime = false,
   ...props
 }: TextEditorProps) {
   const parser = useParser();
@@ -33,7 +36,7 @@ export function TextEditor({
   const [editorIsReady, setEditorIsReady] = useState(false);
 
   const monacoRef = useRef<Monaco>();
-  const { mode } = useContext(AppContext);
+  const mode = useLightOrDarkMode();
 
   useEffect(() => {
     if (!monacoRef.current) return;
@@ -79,6 +82,15 @@ export function TextEditor({
     monacoRef.current.editor.setModelLanguage(model, languageId);
   }, [editorIsReady, languageId]);
 
+  // TODO: Remove this
+  // Bind to realtime updates
+  useEffect(() => {
+    if (!bindToRealtime) return;
+    if (!editorIsReady) return;
+    if (!editorRef.current) return;
+    initRealtime(editorRef.current);
+  }, [bindToRealtime, editorIsReady, editorRef]);
+
   return (
     <Editor
       {...props}
@@ -88,6 +100,7 @@ export function TextEditor({
       onMount={(editor, monaco) => {
         registerLanguages(monaco);
         editorRef.current = editor;
+        window.__monaco_editor = editor;
         monacoRef.current = monaco;
         // @ts-ignore
         window.monacoRef = monacoRef.current;

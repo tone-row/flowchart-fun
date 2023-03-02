@@ -9,8 +9,9 @@ import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
 import { TextEditor } from "../components/TextEditor";
+import { getDocText } from "../lib/docHelpers";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { useDoc } from "../lib/useDoc";
+import { useDetailsStore } from "../lib/useDoc";
 
 function ReadOnly() {
   const { path } = useRouteMatch();
@@ -24,7 +25,8 @@ function ReadOnly() {
   });
 
   const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-  const text = useDoc((d) => d.text);
+  // TODO: should this be useDocText?
+  const text = getDocText();
 
   return (
     <EditWrapper>
@@ -55,7 +57,8 @@ async function loadReadOnly(path: string, graphText: string) {
   const initialText = isCompressed
     ? decompressFromEncodedURIComponent(graphText) ?? ""
     : decodeURIComponent(graphText);
-  prepareChart(initialText, {
+  prepareChart(initialText);
+  useDetailsStore.setState({
     isHosted: false,
     id: "read",
     title: "read-only-flowchart",

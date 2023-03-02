@@ -1,0 +1,27 @@
+{
+  "name": "wss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.mjs",
+    "start": "node src/server.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hocuspocus/extension-database": "^1.1.0",
+    "@hocuspocus/server": "^1.1.0",
+    "@hocuspocus/transformer": "^1.1.0",
+    "@supabase/supabase-js": "^2.8.0",
+    "deepmerge": "^4.2.2",
+    "gray-matter": "^4.0.2",
+    "js-base64": "^3.7.5",
+    "yjs": "^13.5.47"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

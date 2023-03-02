@@ -1,10 +1,10 @@
 import { ElementDefinition } from "cytoscape";
 import { parse, toCytoscapeElements } from "graph-selector";
 
+import { useDocMeta } from "./docHelpers";
 import { TGetSize } from "./getGetSize";
 import { SelectOption } from "./graphOptions";
 import { parseText } from "./parseText";
-import { useDoc } from "./useDoc";
 import { stripComments } from "./utils";
 
 /** Recognized names for support parsers */
@@ -17,7 +17,7 @@ const DEFAULT_PARSER = "graph-selector";
  * returns the parser if it is set or the default parser
  */
 export function useParser(): Parsers {
-  const meta = useDoc((state) => state.meta);
+  const meta = useDocMeta();
   const parser = meta?.parser as Parsers;
   return parser || DEFAULT_PARSER;
 }
@@ -39,6 +39,8 @@ export function universalParse(
           size = {
             width: element.data.w || "label",
             height: element.data.h || "label",
+            textMarginY: 0,
+            textMarginX: 0,
           };
         } else {
           size = getSize(

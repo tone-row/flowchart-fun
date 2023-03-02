@@ -1,7 +1,7 @@
 import { t, Trans } from "@lingui/macro";
-import produce from "immer";
 import throttle from "lodash.throttle";
 
+import { setMetaImmer, useDocMeta } from "../../lib/docHelpers";
 import { themes } from "../../lib/graphOptions";
 import {
   useBackgroundColor,
@@ -9,7 +9,6 @@ import {
   useThemeKey,
 } from "../../lib/graphThemes";
 import { useIsValidSponsor } from "../../lib/hooks";
-import { useDoc } from "../../lib/useDoc";
 import { Button } from "../Shared";
 import {
   CustomSelect,
@@ -25,7 +24,7 @@ export function EditStyleTab() {
   const themeNiceName =
     themes.find((t) => t.value === themeKey)?.label() ?? "???";
   const theme = useCurrentTheme(themeKey);
-  const meta = useDoc((s) => s.meta);
+  const meta = useDocMeta();
   const bg = useBackgroundColor(theme);
   return (
     <WithLowerChild>
@@ -36,15 +35,9 @@ export function EditStyleTab() {
             options={themes}
             value={themeKey}
             onValueChange={(themeKey) => {
-              useDoc.setState(
-                (s) => {
-                  return produce(s, (draft) => {
-                    draft.meta.theme = themeKey;
-                  });
-                },
-                false,
-                "EditStyleTab/theme"
-              );
+              setMetaImmer((draft) => {
+                draft.theme = themeKey;
+              }, "EditStyleTab/theme");
             }}
           />
         </OptionWithLabel>
@@ -68,15 +61,9 @@ export function EditStyleTab() {
             {meta.background && (
               <Button
                 onClick={() => {
-                  useDoc.setState(
-                    (s) => {
-                      return produce(s, (draft) => {
-                        delete draft.meta?.background;
-                      });
-                    },
-                    false,
-                    "EditStyleTab/remove-bg"
-                  );
+                  setMetaImmer((draft) => {
+                    delete draft?.background;
+                  }, "EditStyleTab/remove-bg");
                   // find an input[type=color] and set it to the background color
                   const colorInput = document.querySelector(
                     "input[type=color]"
@@ -103,15 +90,9 @@ export function EditStyleTab() {
 
 const throttleBGUpdate = throttle(
   (bg: string) => {
-    useDoc.setState(
-      (s) => {
-        return produce(s, (draft) => {
-          draft.meta.background = bg;
-        });
-      },
-      false,
-      "EditStyleTab/bg"
-    );
+    setMetaImmer((draft) => {
+      draft.background = bg;
+    }, "EditStyleTab/bg");
   },
   75,
   {

@@ -5,8 +5,9 @@ import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
 import throttle from "lodash.throttle";
 import React, {
-  memo,
+  Dispatch,
   MutableRefObject,
+  SetStateAction,
   useCallback,
   useEffect,
   useMemo,
@@ -18,9 +19,10 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { cytoscape } from "../lib/cytoscape";
+import { getDoc, setMetaImmer, subscribeToDoc } from "../lib/docHelpers";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
-import { getUserStyle } from "../lib/getTheme";
+import { getUserStyle, useUserStyle } from "../lib/getTheme";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import {
   useBackgroundColor,
@@ -30,12 +32,14 @@ import {
 import { isError } from "../lib/helpers";
 import { getAnimationSettings } from "../lib/hooks";
 import { Parsers, universalParse, useParser } from "../lib/parsers";
+import { useYDoc } from "../lib/realtime";
 import { Theme } from "../lib/themes/constants";
 import original from "../lib/themes/original";
 import { useContextMenuState } from "../lib/useContextMenuState";
-import { Doc, useDoc, useParseError } from "../lib/useDoc";
+import { Doc, useDetailsStore } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { useHoverLine } from "../lib/useHoverLine";
+import { useParseError } from "../lib/useParseError";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
@@ -58,7 +62,7 @@ if (!cytoscape.prototype.hasInitialised) {
 
 const shouldAnimate = getAnimationSettings();
 
-const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
+export default function Graph({ shouldResize }: { shouldResize: number }) {
   const [initResizeNumber] = useState(shouldResize);
   const cy = useRef<undefined | Core>();
   const errorCatcher = useRef<undefined | Core>();
@@ -66,24 +70,16 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const themeKey = useThemeKey();
   const theme = useCurrentTheme(themeKey) as unknown as Theme;
   const bg = useBackgroundColor(theme);
+  const userStyle = useUserStyle();
+  const [graphReady, setGraphReady] = useState(false);
 
   const getSize = useRef<TGetSize>(getGetSize(theme));
   const parser = useParser();
   const handleDragFree = useCallback(() => {
     const nodePositions = getNodePositionsFromCy();
-    useDoc.setState(
-      (state) => {
-        return {
-          ...state,
-          meta: {
-            ...state.meta,
-            nodePositions,
-          },
-        };
-      },
-      false,
-      "Graph/handleDragFree"
-    );
+    setMetaImmer((draft) => {
+      draft.nodePositions = nodePositions;
+    }, "Graph/handleDragFree");
   }, []);
 
   const handleResize = useCallback(() => {
@@ -103,6 +99,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 
   // Initialize Graph
   useEffect(() => {
+    if (graphInitialized.current) return;
     return initializeGraph({
       errorCatcher,
       cy,
@@ -124,21 +121,24 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 
   // Apply theme
   useEffect(() => {
-    getStyleUpdater({ cy, errorCatcher, bg })(theme);
-  }, [bg, theme]);
+    getStyleUpdater({ cy, errorCatcher, bg, userStyle })(theme);
+  }, [bg, theme, userStyle]);
 
   const throttleUpdate = useMemo(
     () =>
-      getGraphUpdater({ cy, errorCatcher, graphInitialized, getSize, parser }),
+      getGraphUpdater({
+        cy,
+        errorCatcher,
+        graphInitialized,
+        getSize,
+        parser,
+      }),
     [parser]
   );
 
   useEffect(() => {
     throttleUpdate();
-    const unsubscribe = useDoc.subscribe((doc) => {
-      throttleUpdate(doc);
-    });
-    return unsubscribe;
+    return subscribeToDoc(throttleUpdate);
   }, [throttleUpdate]);
 
   // Update Graph when Sponsor Layouts Load
@@ -167,9 +167,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       <GraphContextMenu />
     </Box>
   );
-});
-
-export default Graph;
+}
 
 function initializeGraph({
   errorCatcher,
@@ -180,7 +178,7 @@ function initializeGraph({
 }) {
   try {
     errorCatcher.current = cytoscape();
-    const bg = (useDoc.getState().meta?.background as string) ?? original.bg;
+    const bg = (getDoc().meta?.background as string) ?? original.bg;
     cy.current = cytoscape({
       container: document.getElementById("cy"), // container to render in
       elements: [],
@@ -272,7 +270,7 @@ function getGraphUpdater({
   return throttle((_doc?: Doc) => {
     if (!cy.current) return;
     if (!errorCatcher.current) return;
-    const doc = _doc || useDoc.getState();
+    const doc = _doc || getDoc();
     let elements: cytoscape.ElementDefinition[] = [];
 
     try {
@@ -284,14 +282,20 @@ function getGraphUpdater({
       // TODO: what happens if you add animate false and run() here?
       errorCatcher.current.layout(layout);
 
+      const isHosted = useDetailsStore.getState().isHosted;
+      const isReady = useYDoc.getState().isReady;
+      const isReadyToAnimate = !isHosted || isReady;
+
       // Update
       cy.current.json({ elements });
       if (layout.name !== "preset") {
         cy.current
           .layout({
-            animate: graphInitialized.current
-              ? elements.length < 200
-                ? shouldAnimate
+            animate: isReadyToAnimate
+              ? graphInitialized.current
+                ? elements.length < 200
+                  ? shouldAnimate
+                  : false
                 : false
               : false,
             animationDuration: shouldAnimate ? 333 : 0,
@@ -314,6 +318,8 @@ function getGraphUpdater({
 
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
+
+      //
     } catch (e) {
       errorCatcher.current.destroy();
       errorCatcher.current = cytoscape();
@@ -330,17 +336,18 @@ function getStyleUpdater({
   cy,
   errorCatcher,
   bg,
+  userStyle = [],
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   errorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
   bg?: string;
+  userStyle: cytoscape.StylesheetStyle[];
 }) {
   return throttle((theme: Theme) => {
     if (!cy.current) return;
     if (!errorCatcher.current) return;
     try {
-      // Prepare Styles
-      const style = buildStylesForGraph(theme, getUserStyle(), bg);
+      const style = buildStylesForGraph(theme, userStyle, bg);
 
       // Test Error First
       errorCatcher.current.json({ style });
