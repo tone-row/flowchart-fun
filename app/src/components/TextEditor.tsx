@@ -1,12 +1,11 @@
 import Editor, { EditorProps, Monaco } from "@monaco-editor/react";
 import { highlight } from "graph-selector";
 import { editor } from "monaco-editor";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import { editorOptions } from "../lib/constants";
 import { useEditorHover } from "../lib/editorHooks";
 import { useParser } from "../lib/parsers";
-import { useAppMode } from "../lib/queries";
 import {
   languageId,
   registerLanguages,
@@ -14,6 +13,7 @@ import {
   themeNameLight,
 } from "../lib/registerLanguage";
 import { useHoverLine } from "../lib/useHoverLine";
+import { AppContext } from "./AppContext";
 import Loading from "./Loading";
 import styles from "./TextEditor.module.css";
 
@@ -33,8 +33,7 @@ export function TextEditor({
   const [editorIsReady, setEditorIsReady] = useState(false);
 
   const monacoRef = useRef<Monaco>();
-
-  const { data: mode } = useAppMode();
+  const { mode } = useContext(AppContext);
 
   useEffect(() => {
     if (!monacoRef.current) return;

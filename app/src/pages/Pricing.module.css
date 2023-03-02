@@ -90,10 +90,7 @@
   left: 0;
   width: 100%;
   height: calc(100% + 0px);
-  background-image: url(/public/images/mesh-gradient.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: var(--palette-purple-2);
   z-index: -1;
   opacity: 0.75;
   border-radius: calc(var(--smallest-border-radius-px) * 5);

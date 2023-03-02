@@ -3,8 +3,7 @@ import { useContext } from "react";
 import { QueryClient, useQuery } from "react-query";
 import Stripe from "stripe";
 
-import { AppContext, UserSettings } from "../components/AppContext";
-import { LOCAL_STORAGE_SETTINGS_KEY } from "./constants";
+import { AppContext } from "../components/AppContext";
 import { getDefaultChart } from "./getDefaultChart";
 import { supabase } from "./supabaseClient";
 
@@ -17,7 +16,7 @@ queryClient.setDefaultOptions({
   },
 });
 
-export async function customerInfo(): Promise<
+async function customerInfo(): Promise<
   | {
       customerId: string;
       subscription: Stripe.Subscription;
@@ -385,63 +384,4 @@ export async function getPublicChart(publicId: string) {
   if (error) throw error;
   if (!data) throw new Error("Invalid Chart");
   return data;
-}
-
-export function usePublicChart(publicId?: string) {
-  return useQuery(
-    ["publicChart", publicId],
-    () => {
-      if (publicId) return getPublicChart(publicId);
-    },
-    {
-      enabled: Boolean(publicId),
-      refetchOnMount: true,
-      staleTime: 0,
-      suspense: true,
-    }
-  );
-}
-
-async function fetchDocs() {
-  const { data, error } = await fetch("/api/docs").then((result) =>
-    result.json()
-  );
-  if (error) throw error;
-  return data;
-}
-
-export function useDocs() {
-  return useQuery(["docs"], fetchDocs, {
-    enabled: true,
-    refetchOnMount: false,
-    staleTime: 0,
-    suspense: true,
-  });
-}
-
-export function useAppMode() {
-  return useQuery<UserSettings["mode"]>(
-    ["appMode"],
-    () => {
-      const settings = JSON.parse(
-        window.localStorage.getItem(LOCAL_STORAGE_SETTINGS_KEY) ?? "{}"
-      );
-      const mode =
-        typeof settings.mode == null
-          ? window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light"
-          : settings.mode;
-
-      return mode ?? "light";
-    },
-    {
-      refetchOnMount: true,
-      refetchOnWindowFocus: true,
-      refetchOnReconnect: true,
-      staleTime: 0,
-      suspense: true,
-    }
-  );
 }
