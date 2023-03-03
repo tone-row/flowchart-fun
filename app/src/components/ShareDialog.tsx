@@ -296,7 +296,7 @@ function PreviewImage({
       <img
         src={img.data}
         alt="Preview"
-        className="shadow-lg rounded inline-block"
+        className="shadow-lg rounded inline-block h-full"
       />
     </div>
   );
