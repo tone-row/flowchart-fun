@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 
+import { queryClient } from "./queries";
 import { Theme } from "./themes/constants";
 import { useDoc } from "./useDoc";
 
@@ -81,6 +82,29 @@ export function useThemeKey() {
 }
 
 /**
+ * one-shot get theme key
+ */
+export function getThemeKey() {
+  return (useDoc.getState().meta?.theme ?? defaultGraphTheme) as GraphThemes;
+}
+
+/**
+ * one-shot get theme, or undefined if not loaded
+ */
+export function getTheme() {
+  const themeKey = getThemeKey();
+  return queryClient.getQueryData<Theme>(["theme", themeKey]);
+}
+
+/**
+ * use theme, up to date from queryClient, but doesn't fetch
+ */
+export function useTheme() {
+  const themeKey = useThemeKey();
+  return queryClient.getQueryData<Theme>(["theme", themeKey]);
+}
+
+/**
  * Get the background color, user override, theme, or default
  */
 export function useBackgroundColor(theme?: Theme) {
@@ -88,4 +112,13 @@ export function useBackgroundColor(theme?: Theme) {
   const bgTheme = theme?.bg;
   const bgDefault = "#ffffff";
   return (bgUser ?? bgTheme ?? bgDefault) as string;
+}
+
+/**
+ * one-shot, get background color
+ */
+export function getBackgroundColor(theme: Theme) {
+  const bgTheme = theme?.bg;
+  const bgDefault = "#ffffff";
+  return (bgTheme ?? bgDefault) as string;
 }

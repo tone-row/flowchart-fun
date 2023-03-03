@@ -8,11 +8,12 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useReducer,
   useState,
 } from "react";
 import { useMutation } from "react-query";
 
+import { useBackgroundColor, useTheme } from "../lib/graphThemes";
+import { useDownloadFilename } from "../lib/hooks";
 import {
   track_copyEditableShareLink,
   track_copyFullscreenShareLink,
@@ -28,6 +29,8 @@ import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
+import { downloadJpg, downloadPng, downloadSvg, getSvg } from "./downloads";
+import Loading from "./Loading";
 import { Button, Dialog, Textarea } from "./Shared";
 import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
@@ -43,6 +46,8 @@ export default function ShareDialog() {
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
+  const theme = useTheme();
+  const filename = useDownloadFilename();
 
   return (
     <Dialog
@@ -62,8 +67,16 @@ export default function ShareDialog() {
         <Preview />
         <Box gap={2} flow="column" className={styles.DownloadButtons}>
           <Button
-            onClick={() => {
-              window.__FF_downloadSVG();
+            onClick={async () => {
+              if (!theme || !window.__cy) return;
+              const svg = await getSvg({
+                theme,
+                cy: window.__cy,
+              });
+              downloadSvg({
+                svg,
+                filename,
+              });
               track_downloadSvg();
             }}
             aria-label="Download SVG"
@@ -71,7 +84,12 @@ export default function ShareDialog() {
           />
           <Button
             onClick={() => {
-              window.__FF_downloadPNG();
+              if (!theme || !window.__cy) return;
+              downloadPng({
+                filename,
+                cy: window.__cy,
+                theme,
+              });
               track_downloadPng();
             }}
             aria-label="Download PNG"
@@ -79,7 +97,12 @@ export default function ShareDialog() {
           />
           <Button
             onClick={() => {
-              window.__FF_downloadJPG();
+              if (!theme || !window.__cy) return;
+              downloadJpg({
+                filename,
+                cy: window.__cy,
+                theme,
+              });
               track_downloadJPG();
             }}
             aria-label="Download JPG"
@@ -220,23 +243,21 @@ function LinkCopy({
 }
 
 function Preview() {
-  const [__html, set] = useReducer((_: string, x: string) => x, "");
-  const [bg, setBG] = useReducer((_: string, x: string) => x, "");
+  const theme = useTheme();
+  const bg = useBackgroundColor();
+  const [svg, set] = useState("");
   useEffect(() => {
-    // defer
-    setTimeout(() => setBG(window.__FF_getGraphThemeBG()), 0);
-    setTimeout(() => {
-      (async () => {
-        const svg = await window.__FF_getSVG();
-        set(svg);
-      })();
-    }, 0);
-  }, []);
-  if (!__html) return <>...</>;
+    (async () => {
+      if (!theme || !window.__cy) return "";
+      const svg = await getSvg({ theme, cy: window.__cy });
+      set(svg);
+    })();
+  }, [theme]);
+  if (!svg) return <Loading />;
   return (
     <Box
       className={styles.Preview}
-      dangerouslySetInnerHTML={{ __html }}
+      dangerouslySetInnerHTML={{ __html: svg }}
       p={2}
       rad={1}
       style={{ "--bg": bg }}
