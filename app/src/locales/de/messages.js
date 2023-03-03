@@ -107,6 +107,7 @@
     "Everything in Free": "Alles im kostenlosen Plan",
     Excalidraw: "Excalidraw",
     Export: "Exportieren",
+    "Export High-Resolution Images": "Hochauflösende Bilder exportieren",
     "Extra Large": "Extra Large",
     Extract: "Extrakt",
     Feedback: "Feedback",
@@ -193,6 +194,7 @@
     "Reload to Update": "Reload to Update",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
       "Denken Sie daran, dass dieses Dokument nur auf diesem Computer gespeichert wird. Wenn Sie eine Möglichkeit suchen, Dokumente zu speichern und von überall darauf zuzugreifen, dann probieren Sie unseren Pro-Plan mit unbegrenzten gehosteten Diagrammen und mehr! Für nur 3 $/Monat!",
+    "Remove Image Watermark": "Bildwasserzeichen entfernen",
     Rename: "Umbenennen",
     Reset: "Zurücksetzen",
     "Resume Subscription": "Abonnement fortsetzen",
