@@ -10,10 +10,10 @@ import {
   useMemo,
   useState,
 } from "react";
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
-import { useBackgroundColor, useTheme } from "../lib/graphThemes";
+import { useTheme } from "../lib/graphThemes";
 import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
 import {
   track_copyEditableShareLink,
@@ -66,10 +66,10 @@ export default function ShareDialog() {
       }}
     >
       <Column>
+        <PreviewImage watermark={watermark} scale={scale} />
         <Title>
           <Trans>Download</Trans>
         </Title>
-        <PreviewImage />
         <Box gap={2} flow="column" className={styles.DownloadButtons}>
           <Button
             onClick={async () => {
@@ -261,26 +261,44 @@ function LinkCopy({
   );
 }
 
-function PreviewImage() {
+function PreviewImage({
+  watermark,
+  scale,
+}: {
+  watermark?: boolean;
+  scale?: number;
+}) {
   const theme = useTheme();
-  const bg = useBackgroundColor(theme);
-  const [svg, set] = useState("");
-  useEffect(() => {
-    (async () => {
+  const img = useQuery(
+    ["previewImg"],
+    async () => {
       if (!theme || !window.__cy) return "";
-      const svg = await getSvg({ theme, cy: window.__cy });
-      set(svg);
-    })();
-  }, [theme]);
-  if (!svg) return <Loading />;
+      const { canvas } = await getCanvas({
+        type: "png",
+        cy: window.__cy,
+        theme,
+        watermark,
+        scale,
+      });
+      return canvas.toDataURL();
+    },
+    {
+      enabled: !!theme,
+      cacheTime: 0,
+      staleTime: 0,
+      refetchOnMount: true,
+    }
+  );
+
+  if (img.isLoading) return <Loading />;
   return (
-    <Box
-      className={styles.Preview}
-      dangerouslySetInnerHTML={{ __html: svg }}
-      p={2}
-      rad={1}
-      style={{ "--bg": bg }}
-    />
+    <div className="p-4 max-h-[400px] relative text-center">
+      <img
+        src={img.data}
+        alt="Preview"
+        className="shadow-lg rounded inline-block"
+      />
+    </div>
   );
 }
 
