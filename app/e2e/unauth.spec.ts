@@ -206,7 +206,7 @@ test.describe("unauth", () => {
       page.locator('[aria-label="Download SVG"]').click(),
     ]);
 
-    expect(download.suggestedFilename()).toBe("flowchart.svg");
+    expect(download.suggestedFilename()).toBe("flowchart-fun.svg");
   });
 
   test("Download PNG", async ({ page }) => {
@@ -217,7 +217,7 @@ test.describe("unauth", () => {
       page.locator('[aria-label="Download PNG"]').click(),
     ]);
 
-    expect(download.suggestedFilename()).toBe("flowchart.png");
+    expect(download.suggestedFilename()).toBe("flowchart-fun.png");
   });
 
   test("Download JPG", async ({ page }) => {
@@ -228,7 +228,7 @@ test.describe("unauth", () => {
       page.locator('[aria-label="Download JPG"]').click(),
     ]);
 
-    expect(download.suggestedFilename()).toBe("flowchart.jpg");
+    expect(download.suggestedFilename()).toBe("flowchart-fun.jpg");
   });
 
   test("Copy Fullscreen Link", async ({ page }) => {
