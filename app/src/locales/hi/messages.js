@@ -106,6 +106,7 @@
     "Everything in Free": "फ्री प्लान में सब कुछ",
     Excalidraw: "Excalidraw",
     Export: "एक्सपोर्ट करें",
+    "Export High-Resolution Images": "उच्च-रिज़ॉल्यूशन छवियां निर्यात करें",
     "Extra Large": "Extra Large",
     Extract: "निकालना",
     Feedback: "फ़ीडबैक",
@@ -192,6 +193,7 @@
     "Reload to Update": "Reload to Update",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
       "याद रखें कि यह डॉक्यूमेंट सिर्फ इसी कंप्यूटर पर सेव किया गया है। अगर आप ऐसा कोई तरीका जानना चाहते हैं कि आप डॉक्यूमेंट स्टोर भी करें और जहां जाएं वहां उन्हें एक्सेस भी कर सकें, तो हमारा Pro प्लैन आजमाएं जिसमें है असीमित होस्ट किए गए चार्ट और बहुत कुछ! सिर्फ $3/महीना! ",
+    "Remove Image Watermark": "छवि वॉटरमार्क हटाएं",
     Rename: "फिर से नाम बदलें",
     Reset: "रीसेट करें",
     "Resume Subscription": "सदस्यता फिर से शुरू करें",

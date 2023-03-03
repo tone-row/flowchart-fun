@@ -44,6 +44,8 @@ export default function Pricing() {
               features={[
                 t`Everything in Free`,
                 t`Persistent Flowcharts`,
+                t`Remove Image Watermark`,
+                t`Export High-Resolution Images`,
                 `13 ${t`Auto-Layouts`}`,
                 t`Permalinks`,
                 t`Custom Sharing Options`,

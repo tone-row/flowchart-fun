@@ -8,11 +8,13 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useReducer,
   useState,
 } from "react";
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
 
+import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
+import { useTheme } from "../lib/graphThemes";
+import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
 import {
   track_copyEditableShareLink,
   track_copyFullscreenShareLink,
@@ -28,6 +30,8 @@ import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
+import { downloadCanvas, downloadSvg, getCanvas, getSvg } from "./downloads";
+import Loading from "./Loading";
 import { Button, Dialog, Textarea } from "./Shared";
 import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
@@ -43,6 +47,12 @@ export default function ShareDialog() {
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
+  const theme = useTheme();
+  const filename = useDownloadFilename();
+
+  const isValidSponsor = useIsValidSponsor();
+  const watermark = !isValidSponsor;
+  const scale = isValidSponsor ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
 
   return (
     <Dialog
@@ -56,14 +66,22 @@ export default function ShareDialog() {
       }}
     >
       <Column>
+        <PreviewImage watermark={watermark} scale={scale} />
         <Title>
           <Trans>Download</Trans>
         </Title>
-        <Preview />
         <Box gap={2} flow="column" className={styles.DownloadButtons}>
           <Button
-            onClick={() => {
-              window.__FF_downloadSVG();
+            onClick={async () => {
+              if (!theme || !window.__cy) return;
+              const svg = await getSvg({
+                theme,
+                cy: window.__cy,
+              });
+              downloadSvg({
+                svg,
+                filename,
+              });
               track_downloadSvg();
             }}
             aria-label="Download SVG"
@@ -71,7 +89,19 @@ export default function ShareDialog() {
           />
           <Button
             onClick={() => {
-              window.__FF_downloadPNG();
+              if (!theme || !window.__cy) return;
+              getCanvas({
+                cy: window.__cy,
+                theme,
+                type: "png",
+                watermark,
+                scale,
+              }).then((canvas) =>
+                downloadCanvas({
+                  ...canvas,
+                  filename,
+                })
+              );
               track_downloadPng();
             }}
             aria-label="Download PNG"
@@ -79,7 +109,19 @@ export default function ShareDialog() {
           />
           <Button
             onClick={() => {
-              window.__FF_downloadJPG();
+              if (!theme || !window.__cy) return;
+              getCanvas({
+                cy: window.__cy,
+                theme,
+                type: "jpg",
+                watermark,
+                scale,
+              }).then((canvas) =>
+                downloadCanvas({
+                  ...canvas,
+                  filename,
+                })
+              );
               track_downloadJPG();
             }}
             aria-label="Download JPG"
@@ -219,28 +261,44 @@ function LinkCopy({
   );
 }
 
-function Preview() {
-  const [__html, set] = useReducer((_: string, x: string) => x, "");
-  const [bg, setBG] = useReducer((_: string, x: string) => x, "");
-  useEffect(() => {
-    // defer
-    setTimeout(() => setBG(window.__FF_getGraphThemeBG()), 0);
-    setTimeout(() => {
-      (async () => {
-        const svg = await window.__FF_getSVG();
-        set(svg);
-      })();
-    }, 0);
-  }, []);
-  if (!__html) return <>...</>;
+function PreviewImage({
+  watermark,
+  scale,
+}: {
+  watermark?: boolean;
+  scale?: number;
+}) {
+  const theme = useTheme();
+  const img = useQuery(
+    ["previewImg"],
+    async () => {
+      if (!theme || !window.__cy) return "";
+      const { canvas } = await getCanvas({
+        type: "png",
+        cy: window.__cy,
+        theme,
+        watermark,
+        scale,
+      });
+      return canvas.toDataURL();
+    },
+    {
+      enabled: !!theme,
+      cacheTime: 0,
+      staleTime: 0,
+      refetchOnMount: true,
+    }
+  );
+
+  if (img.isLoading) return <Loading />;
   return (
-    <Box
-      className={styles.Preview}
-      dangerouslySetInnerHTML={{ __html }}
-      p={2}
-      rad={1}
-      style={{ "--bg": bg }}
-    />
+    <div className="p-4 max-h-[400px] relative text-center">
+      <img
+        src={img.data}
+        alt="Preview"
+        className="shadow-lg rounded inline-block h-full"
+      />
+    </div>
   );
 }
 

@@ -1,11 +1,10 @@
 import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
-import { AppContext } from "../components/AppContext";
 import { Button, Input, Notice } from "../components/Shared";
 import Spinner from "../components/Spinner";
 import { isError } from "../lib/helpers";
@@ -31,7 +30,6 @@ export function SignUpForm() {
       email: "",
     },
   });
-  const { theme } = useContext(AppContext);
   const [success, setSuccess] = useState(false);
   const create = useMutation(
     "createCustomer",
