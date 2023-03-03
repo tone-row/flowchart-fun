@@ -12,8 +12,9 @@ import {
 } from "react";
 import { useMutation } from "react-query";
 
+import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import { useBackgroundColor, useTheme } from "../lib/graphThemes";
-import { useDownloadFilename } from "../lib/hooks";
+import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
 import {
   track_copyEditableShareLink,
   track_copyFullscreenShareLink,
@@ -48,6 +49,10 @@ export default function ShareDialog() {
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
   const theme = useTheme();
   const filename = useDownloadFilename();
+
+  const isValidSponsor = useIsValidSponsor();
+  const watermark = !isValidSponsor;
+  const scale = isValidSponsor ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
 
   return (
     <Dialog
@@ -89,6 +94,8 @@ export default function ShareDialog() {
                 cy: window.__cy,
                 theme,
                 type: "png",
+                watermark,
+                scale,
               }).then((canvas) =>
                 downloadCanvas({
                   ...canvas,
@@ -107,6 +114,8 @@ export default function ShareDialog() {
                 cy: window.__cy,
                 theme,
                 type: "jpg",
+                watermark,
+                scale,
               }).then((canvas) =>
                 downloadCanvas({
                   ...canvas,

@@ -1,13 +1,12 @@
 import { Core } from "cytoscape";
 import { saveAs } from "file-saver";
 
+import { UNAUTH_IMG_SCALE } from "../lib/constants";
 import { getBackgroundColor } from "../lib/graphThemes";
 import { Theme } from "../lib/themes/constants";
 
 // padding, gets divided in half
 const PADDING = 60;
-// default unauth raster image scale
-const DEFAULT_SCALE = 1.5;
 
 /**
  * Returns the SVG code for the current graph
@@ -118,7 +117,7 @@ export async function getCanvas({
   cy,
   type,
   theme,
-  scale = DEFAULT_SCALE,
+  scale = UNAUTH_IMG_SCALE,
   watermark = true,
 }: {
   cy: Core;

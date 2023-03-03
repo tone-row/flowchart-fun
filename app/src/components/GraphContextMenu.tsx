@@ -15,6 +15,7 @@ import { Item, Menu, Separator, Submenu } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
+import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import {
   defaultGraphTheme,
   getTheme,
@@ -22,7 +23,11 @@ import {
   useTheme,
 } from "../lib/graphThemes";
 import { borderStyles, shapes } from "../lib/graphUtilityClasses";
-import { useDownloadFilename, useIsFirefox } from "../lib/hooks";
+import {
+  useDownloadFilename,
+  useIsFirefox,
+  useIsValidSponsor,
+} from "../lib/hooks";
 import {
   track_downloadJPG,
   track_downloadPng,
@@ -48,6 +53,11 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
   const isFirefox = useIsFirefox();
   const filename = useDownloadFilename();
   const theme = useTheme();
+
+  const isValidSponsor = useIsValidSponsor();
+  const watermark = !isValidSponsor;
+  const scale = isValidSponsor ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
+
   return (
     <Menu
       id={GRAPH_CONTEXT_MENU_ID}
@@ -61,22 +71,27 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       }}
     >
       <NodeSubmenu />
-      {!isFirefox && <CopyPNG />}
+      {!isFirefox && <CopyPNG watermark={watermark} scale={scale} />}
       <CopySVG />
       <Separator />
       <Item
         onClick={() => {
           if (!theme || !window.__cy) return;
+          startCursorSpin();
           getCanvas({
             theme,
             cy: window.__cy,
             type: "png",
-          }).then((canvas) =>
-            downloadCanvas({
-              ...canvas,
-              filename,
-            })
-          );
+            watermark,
+            scale,
+          })
+            .then((canvas) =>
+              downloadCanvas({
+                ...canvas,
+                filename,
+              })
+            )
+            .finally(stopCursorSpin);
           track_downloadPng();
         }}
       >
@@ -87,16 +102,21 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Item
         onClick={() => {
           if (!theme || !window.__cy) return;
+          startCursorSpin();
           getCanvas({
             theme,
             cy: window.__cy,
             type: "jpg",
-          }).then((canvas) =>
-            downloadCanvas({
-              ...canvas,
-              filename,
-            })
-          );
+            watermark,
+            scale,
+          })
+            .then((canvas) =>
+              downloadCanvas({
+                ...canvas,
+                filename,
+              })
+            )
+            .finally(stopCursorSpin);
           track_downloadJPG();
         }}
       >
@@ -109,6 +129,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
           const theme = getTheme();
           const cy = window.__cy;
           if (!theme || !cy) return;
+          startCursorSpin();
           const svg = await getSvg({
             cy,
             theme,
@@ -117,7 +138,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
           downloadSvg({
             svg,
             filename,
-          });
+          }).finally(stopCursorSpin);
           track_downloadSvg();
         }}
       >
@@ -140,6 +161,7 @@ function CopySVG() {
     <Item
       onClick={async () => {
         dispatch("loading");
+        startCursorSpin();
         const theme = getTheme();
         const cy = window.__cy;
         if (theme && cy)
@@ -151,6 +173,7 @@ function CopySVG() {
             })
           );
         dispatch("success");
+        stopCursorSpin();
       }}
     >
       <WithIcon icon={<HiOutlineClipboardCopy size={smallIconSize} />}>
@@ -161,7 +184,13 @@ function CopySVG() {
   );
 }
 
-function CopyPNG() {
+function CopyPNG({
+  watermark,
+  scale,
+}: {
+  watermark?: boolean;
+  scale?: number;
+}) {
   const theme = useTheme();
 
   const [state, dispatch] = useReducer(
@@ -170,22 +199,20 @@ function CopyPNG() {
   );
   function handleClick() {
     dispatch("loading");
-    // add cursor-wait class to the body
-    document.body.classList.add("cursor-wait");
+    startCursorSpin();
     setTimeout(() => {
       if (!window.__cy || !theme) return;
       getCanvas({
         theme,
         cy: window.__cy,
         type: "png",
+        watermark,
+        scale,
       })
         .then(copyCanvas)
         .finally(() => {
           dispatch("success");
-          // remove cursor-wait class from the body
-          setTimeout(() => {
-            document.body.classList.remove("cursor-wait");
-          }, 500);
+          stopCursorSpin();
         });
     }, 0);
   }
@@ -498,4 +525,20 @@ function useSelectedNodes() {
   const cy = window.__cy;
   if (!cy) return [];
   return cy.$("node:selected");
+}
+
+/**
+ * add the cursor spin class to the body
+ */
+function startCursorSpin() {
+  document.body.classList.add("cursor-wait");
+}
+
+/**
+ * remove the cursor spin class from the body
+ */
+function stopCursorSpin() {
+  setTimeout(() => {
+    document.body.classList.remove("cursor-wait");
+  }, 500);
 }
