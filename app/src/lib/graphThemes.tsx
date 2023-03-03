@@ -118,7 +118,8 @@ export function useBackgroundColor(theme?: Theme) {
  * one-shot, get background color
  */
 export function getBackgroundColor(theme: Theme) {
+  const bgUser = useDoc.getState().meta?.background;
   const bgTheme = theme?.bg;
   const bgDefault = "#ffffff";
-  return (bgTheme ?? bgDefault) as string;
+  return (bgUser ?? bgTheme ?? bgDefault) as string;
 }

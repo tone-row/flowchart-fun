@@ -29,7 +29,7 @@ import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
-import { downloadJpg, downloadPng, downloadSvg, getSvg } from "./downloads";
+import { downloadCanvas, downloadSvg, getCanvas, getSvg } from "./downloads";
 import Loading from "./Loading";
 import { Button, Dialog, Textarea } from "./Shared";
 import styles from "./ShareDialog.module.css";
@@ -85,11 +85,16 @@ export default function ShareDialog() {
           <Button
             onClick={() => {
               if (!theme || !window.__cy) return;
-              downloadPng({
-                filename,
+              getCanvas({
                 cy: window.__cy,
                 theme,
-              });
+                type: "png",
+              }).then((canvas) =>
+                downloadCanvas({
+                  ...canvas,
+                  filename,
+                })
+              );
               track_downloadPng();
             }}
             aria-label="Download PNG"
@@ -98,11 +103,16 @@ export default function ShareDialog() {
           <Button
             onClick={() => {
               if (!theme || !window.__cy) return;
-              downloadJpg({
-                filename,
+              getCanvas({
                 cy: window.__cy,
                 theme,
-              });
+                type: "jpg",
+              }).then((canvas) =>
+                downloadCanvas({
+                  ...canvas,
+                  filename,
+                })
+              );
               track_downloadJPG();
             }}
             aria-label="Download JPG"

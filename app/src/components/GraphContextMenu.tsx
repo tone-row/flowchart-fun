@@ -33,10 +33,10 @@ import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import {
-  copyPng,
-  downloadJpg,
-  downloadPng,
+  copyCanvas,
+  downloadCanvas,
   downloadSvg,
+  getCanvas,
   getSvg,
 } from "./downloads";
 import styles from "./GraphContextMenu.module.css";
@@ -67,11 +67,16 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Item
         onClick={() => {
           if (!theme || !window.__cy) return;
-          downloadPng({
-            filename,
+          getCanvas({
             theme,
             cy: window.__cy,
-          });
+            type: "png",
+          }).then((canvas) =>
+            downloadCanvas({
+              ...canvas,
+              filename,
+            })
+          );
           track_downloadPng();
         }}
       >
@@ -82,11 +87,16 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <Item
         onClick={() => {
           if (!theme || !window.__cy) return;
-          downloadJpg({
-            filename,
+          getCanvas({
             theme,
             cy: window.__cy,
-          });
+            type: "jpg",
+          }).then((canvas) =>
+            downloadCanvas({
+              ...canvas,
+              filename,
+            })
+          );
           track_downloadJPG();
         }}
       >
@@ -160,14 +170,23 @@ function CopyPNG() {
   );
   function handleClick() {
     dispatch("loading");
+    // add cursor-wait class to the body
+    document.body.classList.add("cursor-wait");
     setTimeout(() => {
       if (!window.__cy || !theme) return;
-      copyPng({
-        cy: window.__cy,
+      getCanvas({
         theme,
-      }).then(() => {
-        dispatch("success");
-      });
+        cy: window.__cy,
+        type: "png",
+      })
+        .then(copyCanvas)
+        .finally(() => {
+          dispatch("success");
+          // remove cursor-wait class from the body
+          setTimeout(() => {
+            document.body.classList.remove("cursor-wait");
+          }, 500);
+        });
     }, 0);
   }
   return (

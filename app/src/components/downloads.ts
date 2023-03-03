@@ -6,6 +6,8 @@ import { Theme } from "../lib/themes/constants";
 
 // padding, gets divided in half
 const PADDING = 60;
+// default unauth raster image scale
+const DEFAULT_SCALE = 1.5;
 
 /**
  * Returns the SVG code for the current graph
@@ -116,18 +118,23 @@ export async function getCanvas({
   cy,
   type,
   theme,
+  scale = DEFAULT_SCALE,
+  watermark = true,
 }: {
   cy: Core;
   type: "jpg" | "png";
   theme: Theme;
+  scale?: number;
+  watermark?: boolean;
 }): Promise<{
   canvas: HTMLCanvasElement;
+  type: "jpg" | "png";
   cleanup: () => void;
-} | null> {
+}> {
   const bg = getBackgroundColor(theme);
-  const pngStr = await cy[type]({
+  const blob = await cy[type]({
     full: true,
-    scale: 3,
+    scale,
     output: "blob-promise",
     bg,
   });
@@ -136,7 +143,7 @@ export async function getCanvas({
   const { w, h } = await new Promise<{ w: number; h: number }>((resolve) => {
     try {
       const img = new Image();
-      img.src = window.URL.createObjectURL(pngStr);
+      img.src = window.URL.createObjectURL(blob);
       let w: number, h: number;
       img.onload = () => {
         w = img.naturalWidth;
@@ -157,7 +164,7 @@ export async function getCanvas({
 
   // add canvas to document and get context
   const ctx = canvas.getContext("2d");
-  if (!ctx) return null;
+  if (!ctx) throw new Error("Could not get canvas context");
 
   // draw background on canvas
   ctx.fillStyle = bg;
@@ -165,13 +172,22 @@ export async function getCanvas({
 
   // take the blob and draw it on center of canvas
   const img = new Image();
-  img.src = window.URL.createObjectURL(pngStr);
+  img.src = window.URL.createObjectURL(blob);
   return new Promise((resolve) => {
     img.onload = () => {
       ctx.drawImage(img, PADDING / 2, PADDING / 2);
       window.URL.revokeObjectURL(img.src);
+      // add watermark
+      if (watermark)
+        addWatermark({
+          ctx,
+          width: canvas.width,
+          height: canvas.height,
+          theme,
+        });
       resolve({
         canvas,
+        type,
         cleanup: () => {
           // throw away canvas
           canvas.remove();
@@ -181,26 +197,44 @@ export async function getCanvas({
   });
 }
 
-export async function downloadPng({
-  filename,
+async function addWatermark({
+  ctx,
+  width,
+  height,
   theme,
-  cy,
+}: {
+  ctx: CanvasRenderingContext2D;
+  width: number;
+  height: number;
+  theme: Theme;
+}) {
+  const foreground = theme.fg;
+  // get a size that is 3% of the canvas height
+  const heightRelativeSize = Math.floor(height * 0.03);
+  const widthRelativeSize = Math.floor(width * 0.05);
+  // take the smaller of the two
+  const size = Math.min(heightRelativeSize, widthRelativeSize);
+  ctx.font = `${Math.floor(size)}px Helvetica`;
+  ctx.fillStyle = foreground;
+  ctx.fillText("flowchart.fun", 5, height - size / 2);
+}
+
+export function downloadCanvas({
+  canvas,
+  type,
+  cleanup,
+  filename,
 }: {
   filename: string;
-  theme: Theme;
-  cy: Core;
-}) {
-  const png = await getCanvas({ cy, type: "png", theme });
-  if (!png) return;
-  const { canvas, cleanup } = png;
-  saveAs(canvas.toDataURL("image/png"), `${filename}.png`);
+} & Awaited<ReturnType<typeof getCanvas>>) {
+  const mime = type === "png" ? "image/png" : "image/jpeg";
+  saveAs(canvas.toDataURL(mime), `${filename}.${type}`);
   cleanup();
 }
 
-export async function copyPng({ theme, cy }: { theme: Theme; cy: Core }) {
-  const png = await getCanvas({ cy, type: "png", theme });
-  if (!png) return;
-  const { canvas, cleanup } = png;
+export async function copyCanvas(props: Awaited<ReturnType<typeof getCanvas>>) {
+  const { canvas, cleanup, type } = props;
+  if (type !== "png") throw new Error("Can only copy png images");
   const blob = await new Promise<Blob | null>((resolve) => {
     canvas.toBlob((blob) => resolve(blob), "image/png");
   });
@@ -211,22 +245,6 @@ export async function copyPng({ theme, cy }: { theme: Theme; cy: Core }) {
       [`image/png`]: blob,
     }),
   ]);
-}
-
-export async function downloadJpg({
-  theme,
-  cy,
-  filename,
-}: {
-  theme: Theme;
-  cy: Core;
-  filename: string;
-}) {
-  const jpg = await getCanvas({ cy, type: "jpg", theme });
-  if (!jpg) return;
-  const { canvas, cleanup } = jpg;
-  saveAs(canvas.toDataURL("image/jpeg"), `${filename}.jpg`);
-  cleanup();
 }
 
 function arrayBufferToBase64(buffer: ArrayBuffer) {
