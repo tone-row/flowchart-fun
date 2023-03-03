@@ -32,7 +32,6 @@ const circle: Stylesheet = {
     height: "data(width)",
   },
 };
-
 const lineStyles: Stylesheet[] = [
   {
     selector: "edge.dashed",
@@ -52,6 +51,37 @@ const lineStyles: Stylesheet[] = [
       "line-style": "solid",
     },
   },
+  ...(
+    [
+      "triangle",
+      "triangle-tee",
+      "circle-triangle",
+      "triangle-cross",
+      "triangle-backcurve",
+      "vee",
+      "tee",
+      "square",
+      "circle",
+      "diamond",
+      "chevron",
+      "none",
+    ] as cytoscape.Css.ArrowShape[]
+  ).reduce<Stylesheet[]>((acc, arrow) => {
+    acc.push({
+      selector: `edge.source-${arrow}`,
+      style: {
+        "source-arrow-shape": arrow,
+        "source-arrow-color": "inherit",
+      },
+    });
+    acc.push({
+      selector: `edge.target-${arrow}`,
+      style: {
+        "target-arrow-shape": arrow,
+      },
+    });
+    return acc;
+  }, []),
 ];
 
 export const borderStyles: Stylesheet[] = [
