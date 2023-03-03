@@ -77,6 +77,7 @@ const eggs: Theme = {
         "text-wrap": "wrap",
         "font-family": fontFamily,
         "target-arrow-color": arrowColor,
+        "source-arrow-color": arrowColor,
         "target-arrow-shape": "triangle",
         "text-background-opacity": 1,
         "text-background-color": backgroundColor,

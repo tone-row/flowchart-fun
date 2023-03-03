@@ -75,6 +75,7 @@ const original: Theme = {
         "text-background-padding": "3px",
         "line-color": arrowColor,
         "target-arrow-color": arrowColor,
+        "source-arrow-color": arrowColor,
         "target-arrow-shape": "triangle",
         "arrow-scale": 1,
         "curve-style": "bezier",

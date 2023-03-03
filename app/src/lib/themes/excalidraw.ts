@@ -83,6 +83,7 @@ const excalidraw: Theme = {
         "text-rotation": "-15deg",
         "target-arrow-shape": "triangle-backcurve",
         "target-arrow-color": arrowColor,
+        "source-arrow-color": arrowColor,
         "arrow-scale": 1,
       },
     },
