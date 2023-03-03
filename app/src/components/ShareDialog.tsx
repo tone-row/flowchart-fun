@@ -69,7 +69,7 @@ export default function ShareDialog() {
         <Title>
           <Trans>Download</Trans>
         </Title>
-        <Preview />
+        <PreviewImage />
         <Box gap={2} flow="column" className={styles.DownloadButtons}>
           <Button
             onClick={async () => {
@@ -261,9 +261,9 @@ function LinkCopy({
   );
 }
 
-function Preview() {
+function PreviewImage() {
   const theme = useTheme();
-  const bg = useBackgroundColor();
+  const bg = useBackgroundColor(theme);
   const [svg, set] = useState("");
   useEffect(() => {
     (async () => {
