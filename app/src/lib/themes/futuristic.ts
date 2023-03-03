@@ -102,6 +102,7 @@ const futuristic: Theme = {
         "target-distance-from-node": 0,
         "target-arrow-shape": "triangle",
         "target-arrow-color": arrowColor,
+        "source-arrow-color": arrowColor,
         // @ts-ignore
         "target-underlay-color": "#000000",
         "target-underlay-padding": 3.5,

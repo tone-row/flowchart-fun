@@ -5,6 +5,7 @@ import { operate } from "graph-selector";
 import {
   CircleDashed,
   Diamond,
+  FlowArrow,
   Graph,
   Palette,
   TextT,
@@ -71,6 +72,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       }}
     >
       <NodeSubmenu />
+      {/* <EdgeSubmenu /> */}
       {!isFirefox && <CopyPNG watermark={watermark} scale={scale} />}
       <CopySVG />
       <Separator />
@@ -270,11 +272,11 @@ const sizes: {
 const borders = borderStyles.map((style) => style.selector.slice(5));
 
 function NodeSubmenu() {
+  const active = useContextMenuState((state) => state.active);
   const themeKey = useDoc((doc) => doc.meta?.theme ?? defaultGraphTheme);
   const theme = useCurrentTheme(themeKey as string);
   const colors = theme?.colors ?? {};
   const colorNames = Object.keys(colors);
-  const active = useContextMenuState((state) => state.active);
   const parser = useParser();
   const selected = useSelectedNodes();
   const activeSelection = selected.length
@@ -541,4 +543,32 @@ function stopCursorSpin() {
   setTimeout(() => {
     document.body.classList.remove("cursor-wait");
   }, 500);
+}
+
+function EdgeSubmenu() {
+  const active = useContextMenuState((state) => state.active);
+  const selected = useSelectedNodes();
+  const activeSelection = selected.length
+    ? selected.map((s) => {
+        const data = s.data();
+        return {
+          id: data.id,
+          lineNumber: data.lineNumber,
+          type: "node",
+        };
+      })
+    : [active];
+  if (!active || active.type !== "edge") return null;
+  console.log({ activeSelection });
+  return (
+    <Submenu
+      label={
+        <WithIcon icon={<FlowArrow size={smallIconSize} />}>
+          <Trans>Edge</Trans>
+        </WithIcon>
+      }
+    >
+      <div />
+    </Submenu>
+  );
 }

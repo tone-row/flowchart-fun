@@ -86,6 +86,7 @@ const originalDark: Theme = {
         "line-color": arrowColor,
         color: arrowColor,
         "target-arrow-color": arrowColor,
+        "source-arrow-color": arrowColor,
         "target-arrow-shape": "triangle",
         "curve-style": "bezier",
         label: "data(label)",

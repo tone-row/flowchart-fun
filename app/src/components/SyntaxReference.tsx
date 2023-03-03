@@ -299,6 +299,22 @@ export function SyntaxReference() {
                 fontSize={13}
               />
               <h2>
+                <Trans>Source/Target Arrow Shape</Trans>
+              </h2>
+              <p>
+                <Trans>
+                  Choose from a variety of arrow shapes for the source and
+                  target of an edge. Shapes include triangle, triangle-tee,
+                  circle-triangle, triangle-cross, triangle-backcurve, vee, tee,
+                  square, circle, diamond, chevron, none. .
+                </Trans>
+              </p>
+              <CodeExample
+                code={`a\n<span data-highlight>.source-triangle</span>: b\n  <span data-highlight>.source-circle.target-circle</span>: c\n    <span data-highlight>.target-chevron</span>: (a)`}
+                src="16"
+                fontSize={13}
+              />
+              <h2>
                 <Trans>Node Border Style</Trans>
               </h2>
               <p>

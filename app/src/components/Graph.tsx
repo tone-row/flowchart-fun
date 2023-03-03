@@ -218,6 +218,18 @@ function initializeGraph({
         });
       }
     });
+    cyCurrent.on("cxttap", "edge", function handleCtxTap(this: EdgeSingular) {
+      const { id, lineNumber } = this.data();
+      if (id && lineNumber) {
+        useContextMenuState.setState({
+          active: {
+            type: "edge",
+            id,
+            lineNumber,
+          },
+        });
+      }
+    });
     document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
 
     return () => {
