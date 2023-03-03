@@ -53,3 +53,8 @@ export const newDelimiters = "=====";
 export const LOCAL_STORAGE_SETTINGS_KEY = "flowcharts.fun.user.settings";
 
 export const HIDDEN_GRAPH_OPTIONS_DIVIDER = "¼▓╬";
+
+// The raster image scale for a valid user
+export const AUTH_IMG_SCALE = 3;
+// default unauth raster image scale
+export const UNAUTH_IMG_SCALE = 1.5;

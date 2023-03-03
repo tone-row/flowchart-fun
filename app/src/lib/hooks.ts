@@ -2,6 +2,8 @@ import { useContext, useMemo } from "react";
 import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
+import { slugify } from "./helpers";
+import { useDocDetails } from "./useDoc";
 
 export function getAnimationSettings() {
   const query = new URLSearchParams(window.location.search.slice(1));
@@ -50,6 +52,15 @@ export function useIsValidSponsor() {
 export function useIsValidCustomer() {
   const { customer } = useContext(AppContext);
   return Boolean(customer?.subscription);
+}
+
+/**
+ * Returns the workspace title for a local chart
+ * or the chart title slugified for a hosted chart
+ */
+export function useDownloadFilename() {
+  const rawTitle = useDocDetails("title", "flowchart-fun");
+  return slugify(rawTitle);
 }
 
 /**

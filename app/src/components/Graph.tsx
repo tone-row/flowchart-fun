@@ -20,7 +20,7 @@ import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { cytoscape } from "../lib/cytoscape";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
-import { getUserStyle } from "../lib/getTheme";
+import { getUserStyle } from "../lib/getUserStyle";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import {
   useBackgroundColor,
@@ -40,7 +40,6 @@ import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
-import useDownloadHandlers from "./useDownloadHandlers";
 
 declare global {
   interface Window {
@@ -98,8 +97,6 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     window.addEventListener("resize", debouncedResize.callback);
     return () => window.removeEventListener("resize", debouncedResize.callback);
   }, [debouncedResize]);
-
-  useDownloadHandlers(cy, bg, theme);
 
   // Initialize Graph
   useEffect(() => {

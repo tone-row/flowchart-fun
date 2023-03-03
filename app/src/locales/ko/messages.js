@@ -103,6 +103,7 @@
     "Everything in Free": "무료 플랜의 모든 것",
     Excalidraw: "Excalidraw",
     Export: "내보내기",
+    "Export High-Resolution Images": "고해상도 이미지 내보내기",
     "Extra Large": "Extra Large",
     Extract: "발췌",
     Feedback: "피드백",
@@ -189,6 +190,7 @@
     "Reload to Update": "Reload to Update",
     "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
       "이 문서는 이 컴퓨터에만 저장된다는 점 기억하세요. 만약 어디를 가서라도 문서를 저장하고 또 그 문서에 접속하는 방법을 찾으신다면, 무제한의 호스티드 차트와 함께 더 많은 기능을 갖춘 저희 Pro 플랜을 이용해 보세요! 한 달에 단 $3면 됩니다!",
+    "Remove Image Watermark": "이미지 워터마크 제거",
     Rename: "이름 바꾸기",
     Reset: "재설정",
     "Resume Subscription": "구독 재개",
