@@ -15,15 +15,6 @@ import { useMutation, useQuery } from "react-query";
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import { useTheme } from "../lib/graphThemes";
 import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
-import {
-  track_copyEditableShareLink,
-  track_copyFullscreenShareLink,
-  track_copyPublicLink,
-  track_copyReadOnlyShareLink,
-  track_downloadJPG,
-  track_downloadPng,
-  track_downloadSvg,
-} from "../lib/logsnag";
 import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic } from "../lib/queries";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
@@ -87,7 +78,6 @@ export default function ShareDialog() {
                   filename,
                 })
               );
-              track_downloadPng();
             }}
             aria-label="Download PNG"
             text="PNG"
@@ -107,7 +97,6 @@ export default function ShareDialog() {
                   filename,
                 })
               );
-              track_downloadJPG();
             }}
             aria-label="Download JPG"
             text="JPG"
@@ -125,7 +114,6 @@ export default function ShareDialog() {
                   svg,
                   filename,
                 });
-                track_downloadSvg();
               }}
               aria-label="Download SVG"
               text="SVG"
@@ -198,20 +186,6 @@ function LinkCopy({
   async function copyText() {
     await navigator.clipboard.writeText(value);
     setCopied(true);
-    switch (rawTitle) {
-      case "Fullscreen":
-        track_copyFullscreenShareLink();
-        break;
-      case "Editable":
-        track_copyEditableShareLink();
-        break;
-      case "Read-only":
-        track_copyReadOnlyShareLink();
-        break;
-      case "Public":
-        track_copyPublicLink();
-        break;
-    }
   }
 
   return (

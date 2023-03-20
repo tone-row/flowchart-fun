@@ -29,11 +29,6 @@ import {
   useIsFirefox,
   useIsValidSponsor,
 } from "../lib/hooks";
-import {
-  track_downloadJPG,
-  track_downloadPng,
-  track_downloadSvg,
-} from "../lib/logsnag";
 import { useParser } from "../lib/parsers";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
@@ -93,7 +88,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
               })
             )
             .finally(stopCursorSpin);
-          track_downloadPng();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
@@ -118,7 +112,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
               })
             )
             .finally(stopCursorSpin);
-          track_downloadJPG();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
@@ -141,7 +134,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
               svg,
               filename,
             }).finally(stopCursorSpin);
-            track_downloadSvg();
           }}
         >
           <WithIcon icon={<FiDownload size={smallIconSize} />}>
