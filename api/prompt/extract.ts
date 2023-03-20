@@ -65,6 +65,22 @@ England {Wars of Scottish Independence} Scotland
 France {Hundred Years War} Scotland
 
 Information:
+Is shoe on foot?
+No: Put on shoe. Proceed to next step.
+Yes: Proceed to next step.
+Is shoe tied?
+Yes: Success!
+No: Tie Shoe. Success!
+
+Relationships:
+Is shoe on foot? {No} Put on shoe.
+Is shoe on foot? {Yes} Is shoe tied?
+Put on shoe. { } Is shoe tied?
+Is shoe tied? {Yes} Success!
+Is shoe tied? {No} Tie shoe.
+Tie shoe. { } Success!
+
+Information:
 ${prompt}
 
 Flowchart:
