@@ -46,6 +46,7 @@ export default function Pricing() {
                 t`Persistent Flowcharts`,
                 t`Remove Image Watermark`,
                 t`Export High-Resolution Images`,
+                t`Export to SVG`,
                 `13 ${t`Auto-Layouts`}`,
                 t`Permalinks`,
                 t`Custom Sharing Options`,

@@ -64,7 +64,7 @@ msgid "Attributes"
 msgstr ""
 
 #: src/pages/Pricing.tsx:37
-#: src/pages/Pricing.tsx:49
+#: src/pages/Pricing.tsx:50
 msgid "Auto-Layouts"
 msgstr "ऑटो लेआउट"
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Blog"
 msgstr "ब्लॉग"
 
-#: src/components/GraphContextMenu.tsx:476
+#: src/components/GraphContextMenu.tsx:479
 msgid "Border"
 msgstr ""
 
@@ -140,7 +140,11 @@ msgstr "चार्ट"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
 
-#: src/pages/Pricing.tsx:86
+#: src/components/SyntaxReference.tsx:305
+msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
+msgstr ""
+
+#: src/pages/Pricing.tsx:87
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "आप अपने चार्ट में  फुल एक्सेस , एडिट ओनली या केवल देखने की अनुमतियों के साथ साझा करना चुनकर यह नियंत्रित कर सकते हैं कि कौन आपके कार्य में परिवर्तन कर सकता है"
 
@@ -177,7 +181,7 @@ msgstr "क्लोन करें"
 msgid "Close"
 msgstr "बंद करें"
 
-#: src/components/GraphContextMenu.tsx:304
+#: src/components/GraphContextMenu.tsx:307
 msgid "Color"
 msgstr ""
 
@@ -205,25 +209,25 @@ msgstr ""
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr ""
 
-#: src/components/MightLoseSponsorTrigger.tsx:63
+#: src/components/MightLoseSponsorTrigger.tsx:64
 #: src/components/RenameButton.tsx:135
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
-#: src/components/ShareDialog.tsx:254
-#: src/components/ShareDialog.tsx:255
-#: src/components/ShareDialog.tsx:335
+#: src/components/ShareDialog.tsx:258
+#: src/components/ShareDialog.tsx:259
+#: src/components/ShareDialog.tsx:339
 #: src/pages/Charts.tsx:444
 #: src/pages/Charts.tsx:515
 #: src/pages/Charts.tsx:553
 msgid "Copy"
 msgstr "कॉपी करें"
 
-#: src/components/GraphContextMenu.tsx:222
+#: src/components/GraphContextMenu.tsx:225
 msgid "Copy PNG Image"
 msgstr "PNG छवि कॉपी करें"
 
-#: src/components/GraphContextMenu.tsx:180
+#: src/components/GraphContextMenu.tsx:183
 msgid "Copy SVG Code"
 msgstr "SVG कोड कॉपी करें"
 
@@ -234,7 +238,7 @@ msgstr "SVG कोड कॉपी करें"
 msgid "Create"
 msgstr "बनाएँ"
 
-#: src/pages/Pricing.tsx:52
+#: src/pages/Pricing.tsx:53
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं"
 
@@ -250,8 +254,8 @@ msgstr "बनाया गया"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Pricing.tsx:51
-#: src/pages/Pricing.tsx:83
+#: src/pages/Pricing.tsx:52
+#: src/pages/Pricing.tsx:84
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
@@ -312,19 +316,19 @@ msgstr "दस्तावेज़"
 msgid "Don't have an account?"
 msgstr "खाता नहीं है?"
 
-#: src/components/ShareDialog.tsx:71
+#: src/components/ShareDialog.tsx:72
 msgid "Download"
 msgstr "डाउनलोड"
 
-#: src/components/GraphContextMenu.tsx:124
+#: src/components/GraphContextMenu.tsx:125
 msgid "Download JPG"
 msgstr "JPG डाउनलोड करें"
 
-#: src/components/GraphContextMenu.tsx:99
+#: src/components/GraphContextMenu.tsx:100
 msgid "Download PNG"
 msgstr "PNG डाउनलोड करें"
 
-#: src/components/GraphContextMenu.tsx:146
+#: src/components/GraphContextMenu.tsx:148
 msgid "Download SVG"
 msgstr "SVG डाउनलोड करें"
 
@@ -336,6 +340,10 @@ msgstr ""
 #: src/pages/Charts.tsx:500
 msgid "Duplicate"
 msgstr "डुप्लिकेट बनाएँ"
+
+#: src/components/GraphContextMenu.tsx:568
+msgid "Edge"
+msgstr ""
 
 #: src/components/SyntaxReference.tsx:153
 msgid "Edge ID, Classes, Attributes"
@@ -361,7 +369,7 @@ msgstr ""
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr ""
 
-#: src/components/ShareDialog.tsx:143
+#: src/components/ShareDialog.tsx:147
 msgid "Editable"
 msgstr "संपादन योग्य"
 
@@ -395,8 +403,8 @@ msgstr "Excalidraw"
 
 #: src/components/EditorWrapper.tsx:60
 #: src/components/EditorWrapper.tsx:65
-#: src/components/ShareDialog.tsx:62
-#: src/components/ShareDialog.tsx:153
+#: src/components/ShareDialog.tsx:63
+#: src/components/ShareDialog.tsx:157
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
@@ -404,7 +412,11 @@ msgstr "एक्सपोर्ट करें"
 msgid "Export High-Resolution Images"
 msgstr "उच्च-रिज़ॉल्यूशन छवियां निर्यात करें"
 
-#: src/components/GraphContextMenu.tsx:264
+#: src/pages/Pricing.tsx:49
+msgid "Export to SVG"
+msgstr "SVG को निर्यात करें"
+
+#: src/components/GraphContextMenu.tsx:267
 msgid "Extra Large"
 msgstr ""
 
@@ -426,7 +438,7 @@ msgstr ""
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
-#: src/components/ShareDialog.tsx:140
+#: src/components/ShareDialog.tsx:144
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
@@ -450,7 +462,7 @@ msgstr "ग्राफ़"
 msgid "Grid"
 msgstr "ग्रिड"
 
-#: src/components/MightLoseSponsorTrigger.tsx:48
+#: src/components/MightLoseSponsorTrigger.tsx:49
 #: src/components/MightLoseWarning.tsx:26
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "ध्यान दें! इससे पहले कि आप अपना कैश क्लियर करें, याद रखें कि यह डॉक्यूमेंट क्लाउड में सेव नहीं किया गया है। "
@@ -479,7 +491,7 @@ msgstr ""
 msgid "Image Export"
 msgstr "छवि निर्यात"
 
-#: src/components/SyntaxReference.tsx:338
+#: src/components/SyntaxReference.tsx:354
 msgid "Images"
 msgstr ""
 
@@ -499,7 +511,7 @@ msgstr "हिदायत"
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/GraphContextMenu.tsx:259
+#: src/components/GraphContextMenu.tsx:262
 msgid "Large"
 msgstr ""
 
@@ -536,7 +548,7 @@ msgstr "लाइट"
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/ShareDialog.tsx:135
+#: src/components/ShareDialog.tsx:139
 msgid "Link"
 msgstr "लिंक"
 
@@ -558,7 +570,7 @@ msgstr "<0>Tone Row</0> द्वारा बना"
 msgid "Make a Donation"
 msgstr "दान करें"
 
-#: src/components/ShareDialog.tsx:378
+#: src/components/ShareDialog.tsx:382
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
@@ -566,7 +578,7 @@ msgstr "सार्वजनिक रूप से एक्सेस दे�
 msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
 msgstr "फ़्लोचार्ट फ़न प्रो के साथ अपने कार्यप्रवाह को आसान बनाएं– केवल $3/माह या $30/वर्ष के लिए अभी सदस्यता लें!"
 
-#: src/components/GraphContextMenu.tsx:255
+#: src/components/GraphContextMenu.tsx:258
 msgid "Medium"
 msgstr ""
 
@@ -602,11 +614,11 @@ msgstr "नई ईमेल"
 msgid "Next charge"
 msgstr "अगला चार्ज"
 
-#: src/components/GraphContextMenu.tsx:297
+#: src/components/GraphContextMenu.tsx:300
 msgid "Node"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:302
+#: src/components/SyntaxReference.tsx:318
 msgid "Node Border Style"
 msgstr ""
 
@@ -626,16 +638,16 @@ msgstr ""
 msgid "Node Shapes"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:305
+#: src/components/SyntaxReference.tsx:321
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr ""
 
 #: src/pages/Account.tsx:287
-#: src/pages/Pricing.tsx:54
+#: src/pages/Pricing.tsx:55
 msgid "Office Hours"
 msgstr "कार्यालय अवधि"
 
-#: src/pages/Pricing.tsx:53
+#: src/pages/Pricing.tsx:54
 msgid "One-on-One Support"
 msgstr "एक-पर-एक समर्थन"
 
@@ -651,13 +663,13 @@ msgstr "ग्राहक पोर्टल खोलें"
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "उस जानकारी को पेस्ट करें जिसे आप फ़्लोचार्ट में बदलना चाहते हैं"
 
-#: src/pages/Pricing.tsx:50
+#: src/pages/Pricing.tsx:51
 msgid "Permalinks"
 msgstr "Permalinks"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Pricing.tsx:46
-#: src/pages/Pricing.tsx:65
+#: src/pages/Pricing.tsx:66
 msgid "Persistent Flowcharts"
 msgstr "लगातार आरेख"
 
@@ -674,8 +686,8 @@ msgstr "मूल्य निर्धारण"
 msgid "Prompt"
 msgstr ""
 
-#: src/components/ShareDialog.tsx:374
-#: src/components/ShareDialog.tsx:397
+#: src/components/ShareDialog.tsx:378
+#: src/components/ShareDialog.tsx:401
 #: src/pages/Charts.tsx:597
 msgid "Public"
 msgstr "पब्लिक"
@@ -685,7 +697,7 @@ msgid "Random"
 msgstr "अनियमित"
 
 #: src/components/EditorWrapper.tsx:51
-#: src/components/ShareDialog.tsx:146
+#: src/components/ShareDialog.tsx:150
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
 
@@ -787,7 +799,7 @@ msgstr "सहेजें"
 msgid "Settings"
 msgstr "सेटिंग"
 
-#: src/components/GraphContextMenu.tsx:366
+#: src/components/GraphContextMenu.tsx:369
 msgid "Shape"
 msgstr ""
 
@@ -800,11 +812,11 @@ msgstr ""
 msgid "Sign Up"
 msgstr "साइन अप"
 
-#: src/components/GraphContextMenu.tsx:433
+#: src/components/GraphContextMenu.tsx:436
 msgid "Size"
 msgstr ""
 
-#: src/components/GraphContextMenu.tsx:250
+#: src/components/GraphContextMenu.tsx:253
 msgid "Small"
 msgstr ""
 
@@ -815,6 +827,10 @@ msgstr ""
 #: src/components/OnlyInEnglish.tsx:23
 msgid "Sorry! This page is only available in English."
 msgstr "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।"
+
+#: src/components/SyntaxReference.tsx:302
+msgid "Source/Target Arrow Shape"
+msgstr ""
 
 #: src/components/Tabs/EditLayoutTab.tsx:136
 msgid "Spacing"
@@ -849,7 +865,7 @@ msgstr "बादल में संग्रहित"
 msgid "Stored on this computer"
 msgstr "इस कंप्यूटर पर संग्रहीत"
 
-#: src/pages/Pricing.tsx:101
+#: src/pages/Pricing.tsx:102
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन"
 
@@ -858,7 +874,7 @@ msgstr "अपने वर्कफ्लो को स्ट्रीमला
 msgid "Style"
 msgstr "शैली"
 
-#: src/components/SyntaxReference.tsx:317
+#: src/components/SyntaxReference.tsx:333
 msgid "Style Attributes"
 msgstr ""
 
@@ -866,7 +882,7 @@ msgstr ""
 msgid "Style Classes"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:320
+#: src/components/SyntaxReference.tsx:336
 msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
@@ -933,6 +949,10 @@ msgstr "ये चार्ट सिर्फ़ इस ब्राउज़र �
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
+#: src/components/SvgProOnlyPopover.tsx:21
+msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
+msgstr "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।"
+
 #: src/lib/graphOptions.ts:33
 #: src/lib/graphOptions.ts:40
 msgid "Top to Bottom"
@@ -967,11 +987,11 @@ msgstr "अपडेट किया गया"
 msgid "Use classes to group nodes"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:341
+#: src/components/SyntaxReference.tsx:357
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:328
+#: src/components/SyntaxReference.tsx:344
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr ""
 
@@ -1003,11 +1023,11 @@ msgstr "क्या आप इस कॉपी को नाम देना �
 msgid "What would you like to share with us?"
 msgstr "आप हमारे साथ क्या शेयर करना चाहेंगे?"
 
-#: src/components/SyntaxReference.tsx:325
+#: src/components/SyntaxReference.tsx:341
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Pricing.tsx:68
+#: src/pages/Pricing.tsx:69
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।"
 

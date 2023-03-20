@@ -72,11 +72,6 @@ body:not([class*="disableAnimation"]) .shared-header-btn {
   font-size: 0;
 }
 
-[data-radix-popper-content-wrapper] {
-  z-index: 100 !important;
-  background-color: var(--color-background);
-}
-
 [data-radix-menu-content] {
   z-index: 100;
   position: relative;

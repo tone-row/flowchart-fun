@@ -1,6 +1,7 @@
 import { expect, Page, test } from "@playwright/test";
 import jsdom from "jsdom";
 
+import { openExportDialog } from "./openExportDialog";
 import {
   BASE_URL,
   deleteCustomerByEmail,
@@ -123,6 +124,19 @@ test.describe("Sign Up", () => {
 
     // expect Clone button to be present
     await expect(page.getByRole("button", { name: "Clone" })).toBeVisible();
+  });
+
+  test("Download SVG", async () => {
+    // Create a blank local chart
+    await page.goto(`${BASE_URL}/download-svg`);
+    await openExportDialog(page);
+    // Click [aria-label="Download SVG"]
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      page.locator('[aria-label="Download SVG"]').click(),
+    ]);
+
+    expect(download.suggestedFilename()).toBe("download-svg.svg");
   });
 
   test("can convert chart to hosted from Might Lose Trigger", async () => {

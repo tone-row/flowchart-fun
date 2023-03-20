@@ -35,6 +35,7 @@ import Loading from "./Loading";
 import { Button, Dialog, Textarea } from "./Shared";
 import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
+import { SvgProOnlyPopover } from "./SvgProOnlyPopover";
 
 export default function ShareDialog() {
   const isHosted = useDocDetails("isHosted");
@@ -71,22 +72,6 @@ export default function ShareDialog() {
           <Trans>Download</Trans>
         </Title>
         <Box gap={2} flow="column" className={styles.DownloadButtons}>
-          <Button
-            onClick={async () => {
-              if (!theme || !window.__cy) return;
-              const svg = await getSvg({
-                theme,
-                cy: window.__cy,
-              });
-              downloadSvg({
-                svg,
-                filename,
-              });
-              track_downloadSvg();
-            }}
-            aria-label="Download SVG"
-            text="SVG"
-          />
           <Button
             onClick={() => {
               if (!theme || !window.__cy) return;
@@ -127,6 +112,25 @@ export default function ShareDialog() {
             aria-label="Download JPG"
             text="JPG"
           />
+          <SvgProOnlyPopover>
+            <Button
+              disabled={!isValidSponsor}
+              onClick={async () => {
+                if (!theme || !window.__cy) return;
+                const svg = await getSvg({
+                  theme,
+                  cy: window.__cy,
+                });
+                downloadSvg({
+                  svg,
+                  filename,
+                });
+                track_downloadSvg();
+              }}
+              aria-label="Download SVG"
+              text="SVG"
+            />
+          </SvgProOnlyPopover>
         </Box>
       </Column>
       {isHosted ? <HostedOptions /> : null}

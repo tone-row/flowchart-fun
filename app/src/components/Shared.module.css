@@ -74,12 +74,12 @@ textarea:focus {
   color: var(--color-edgeHover);
   background-color: var(--color-input);
   box-shadow: none;
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .Button:disabled:hover {
-  border-color: var(--color-lineColor);
-  background-color: var(--color-background);
+  color: var(--color-edgeHover);
+  background-color: var(--color-input);
 }
 
 .ButtonType {

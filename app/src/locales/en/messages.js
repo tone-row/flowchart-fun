@@ -35,6 +35,8 @@
     Charts: "Charts",
     "Check your email for a link to log in. You can close this window.":
       "Check your email for a link to log in. You can close this window.",
+    "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
+      "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .",
     "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
       "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.",
     Circle: "Circle",
@@ -90,6 +92,7 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "Duplicate",
+    Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -107,6 +110,7 @@
     Excalidraw: "Excalidraw",
     Export: "Export",
     "Export High-Resolution Images": "Export High-Resolution Images",
+    "Export to SVG": "Export to SVG",
     "Extra Large": "Extra Large",
     Extract: "Extract",
     Feedback: "Feedback",
@@ -213,6 +217,7 @@
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
       "Sorry! This page is only available in English.",
+    "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "Spacing",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features",
@@ -249,6 +254,8 @@
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
       "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.",
     "This app works by typing": "This app works by typing",
+    "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
+      "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.",
     "Top to Bottom": "Top to Bottom",
     "Try again": "Try again",
     Type: "Type",

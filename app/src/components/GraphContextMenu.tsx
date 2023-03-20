@@ -74,8 +74,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <NodeSubmenu />
       {/* <EdgeSubmenu /> */}
       {!isFirefox && <CopyPNG watermark={watermark} scale={scale} />}
-      <CopySVG />
-      <Separator />
+      {isValidSponsor && <CopySVG />}
       <Item
         onClick={() => {
           if (!theme || !window.__cy) return;
@@ -126,28 +125,30 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
           <Trans>Download JPG</Trans>
         </WithIcon>
       </Item>
-      <Item
-        onClick={async () => {
-          const theme = getTheme();
-          const cy = window.__cy;
-          if (!theme || !cy) return;
-          startCursorSpin();
-          const svg = await getSvg({
-            cy,
-            theme,
-          });
-          if (!svg) return;
-          downloadSvg({
-            svg,
-            filename,
-          }).finally(stopCursorSpin);
-          track_downloadSvg();
-        }}
-      >
-        <WithIcon icon={<FiDownload size={smallIconSize} />}>
-          <Trans>Download SVG</Trans>
-        </WithIcon>
-      </Item>
+      {isValidSponsor && (
+        <Item
+          onClick={async () => {
+            const theme = getTheme();
+            const cy = window.__cy;
+            if (!theme || !cy) return;
+            startCursorSpin();
+            const svg = await getSvg({
+              cy,
+              theme,
+            });
+            if (!svg) return;
+            downloadSvg({
+              svg,
+              filename,
+            }).finally(stopCursorSpin);
+            track_downloadSvg();
+          }}
+        >
+          <WithIcon icon={<FiDownload size={smallIconSize} />}>
+            <Trans>Download SVG</Trans>
+          </WithIcon>
+        </Item>
+      )}
     </Menu>
   );
 });
