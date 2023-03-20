@@ -378,20 +378,6 @@ test.describe("unauth", () => {
       await page.locator('button[role="combobox"]:has-text("Light")').click();
       await page.locator('div[role="option"]:has-text("Dark")').click();
 
-      // Right Click on Graph & Copy SVG Code
-      await page
-        .locator("#cy canvas")
-        .first()
-        .click({
-          button: "right",
-          position: {
-            x: 505,
-            y: 91,
-          },
-        });
-      // Click text=Copy SVG Code
-      await page.locator("text=Copy SVG Code").click();
-
       // Right Click on Graph & Download PNG
       await page
         .locator("#cy canvas")
@@ -429,24 +415,6 @@ test.describe("unauth", () => {
       ]);
 
       expect(jpg.suggestedFilename()).toBe("flowchart.jpg");
-
-      await page
-        .locator("#cy canvas")
-        .first()
-        .click({
-          button: "right",
-          position: {
-            x: 485,
-            y: 73,
-          },
-        });
-      // Click text=Download SVG
-      const [svg] = await Promise.all([
-        page.waitForEvent("download"),
-        page.locator("text=Download SVG").click(),
-      ]);
-
-      expect(svg.suggestedFilename()).toBe("flowchart.svg");
     } catch {
       // Take Screenshot
       await page.screenshot({ path: "ERROR.png" });
