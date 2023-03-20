@@ -1,7 +1,7 @@
 import { expect, Page, test } from "@playwright/test";
 import jsdom from "jsdom";
 
-import { openExportDialog } from "./unauth.spec";
+import { openExportDialog } from "./openExportDialog";
 import {
   BASE_URL,
   deleteCustomerByEmail,

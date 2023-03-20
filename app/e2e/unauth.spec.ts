@@ -1,5 +1,6 @@
-import { expect, Page, test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
+import { openExportDialog } from "./openExportDialog";
 import { BASE_URL, changeEditorText, goToPath, goToTab } from "./utils";
 
 /*
@@ -452,10 +453,3 @@ test.describe("unauth", () => {
     }
   });
 });
-
-export async function openExportDialog(page: Page) {
-  // Click [aria-label="Export"]
-  page.locator('[aria-label="Export"]').click();
-  // Click text=Download
-  await expect(page.locator("text=Download")).toBeVisible({ timeout: 60000 });
-}
