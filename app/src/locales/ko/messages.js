@@ -35,6 +35,8 @@
     Charts: "차트",
     "Check your email for a link to log in. You can close this window.":
       "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다.",
+    "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
+      "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .",
     "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
       "표를 전체 권한, 편집만 가능, 보기만 가능 권한 중 어떤 것으로 공유할 지 선택하여 작업물을 변경할 수 있는지 관리하세요.",
     Circle: "원",
@@ -87,6 +89,7 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "복제",
+    Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -104,6 +107,7 @@
     Excalidraw: "Excalidraw",
     Export: "내보내기",
     "Export High-Resolution Images": "고해상도 이미지 내보내기",
+    "Export to SVG": "SVG로 내보내기",
     "Extra Large": "Extra Large",
     Extract: "발췌",
     Feedback: "피드백",
@@ -210,6 +214,7 @@
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
       "죄송합니다! 이 페이지는 영어로만 제공됩니다.",
+    "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "간격",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원",
@@ -246,6 +251,8 @@
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
       "다음의 차트는 이 장치의 이 브라우저에서만 이용하실 수 있습니다.<0/>브라우저를 정리하면 local storage 에서 다음의 차트를 삭제합니다.",
     "This app works by typing": "이 앱은 타이핑으로 작동합니다",
+    "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
+      "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사용자가 되어</0> 이 기능을 사용할 수 있게 하세요.",
     "Top to Bottom": "위에서 아래로",
     "Try again": "다시 시도하세요",
     Type: "유형",

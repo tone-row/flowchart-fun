@@ -29,11 +29,6 @@ import {
   useIsFirefox,
   useIsValidSponsor,
 } from "../lib/hooks";
-import {
-  track_downloadJPG,
-  track_downloadPng,
-  track_downloadSvg,
-} from "../lib/logsnag";
 import { useParser } from "../lib/parsers";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
@@ -74,8 +69,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <NodeSubmenu />
       {/* <EdgeSubmenu /> */}
       {!isFirefox && <CopyPNG watermark={watermark} scale={scale} />}
-      <CopySVG />
-      <Separator />
+      {isValidSponsor && <CopySVG />}
       <Item
         onClick={() => {
           if (!theme || !window.__cy) return;
@@ -94,7 +88,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
               })
             )
             .finally(stopCursorSpin);
-          track_downloadPng();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
@@ -119,35 +112,35 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
               })
             )
             .finally(stopCursorSpin);
-          track_downloadJPG();
         }}
       >
         <WithIcon icon={<FiDownload size={smallIconSize} />}>
           <Trans>Download JPG</Trans>
         </WithIcon>
       </Item>
-      <Item
-        onClick={async () => {
-          const theme = getTheme();
-          const cy = window.__cy;
-          if (!theme || !cy) return;
-          startCursorSpin();
-          const svg = await getSvg({
-            cy,
-            theme,
-          });
-          if (!svg) return;
-          downloadSvg({
-            svg,
-            filename,
-          }).finally(stopCursorSpin);
-          track_downloadSvg();
-        }}
-      >
-        <WithIcon icon={<FiDownload size={smallIconSize} />}>
-          <Trans>Download SVG</Trans>
-        </WithIcon>
-      </Item>
+      {isValidSponsor && (
+        <Item
+          onClick={async () => {
+            const theme = getTheme();
+            const cy = window.__cy;
+            if (!theme || !cy) return;
+            startCursorSpin();
+            const svg = await getSvg({
+              cy,
+              theme,
+            });
+            if (!svg) return;
+            downloadSvg({
+              svg,
+              filename,
+            }).finally(stopCursorSpin);
+          }}
+        >
+          <WithIcon icon={<FiDownload size={smallIconSize} />}>
+            <Trans>Download SVG</Trans>
+          </WithIcon>
+        </Item>
+      )}
     </Menu>
   );
 });

@@ -31,39 +31,41 @@ export function MightLoseSponsorTrigger() {
           <CircleWavyWarning size={28} />
         </Box>
       </Popover.Trigger>
-      <Popover.Content
-        asChild
-        onOpenAutoFocus={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <Box
-          p={4}
-          background="color-background"
-          color="color-foreground"
-          rad={2}
-          className={styles2.MightLoseWarningInner}
+      <Popover.Portal>
+        <Popover.Content
+          asChild
+          onOpenAutoFocus={(e) => {
+            e.preventDefault();
+          }}
         >
-          <Type>
-            {t`Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.`}
-          </Type>
-          <Type
-            as="button"
-            weight="700"
-            color="color-highlightColor"
-            onClick={() => {
-              useRenameDialogStore.setState({
-                isOpen: true,
-                convertToHosted: true,
-              });
-            }}
-            style={{ marginTop: 8 }}
-            data-testid="convert-to-hosted"
+          <Box
+            p={4}
+            background="color-background"
+            color="color-foreground"
+            rad={2}
+            className={styles2.MightLoseWarningInner}
           >
-            <Trans>Convert to hosted chart?</Trans>
-          </Type>
-        </Box>
-      </Popover.Content>
+            <Type>
+              {t`Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.`}
+            </Type>
+            <Type
+              as="button"
+              weight="700"
+              color="color-highlightColor"
+              onClick={() => {
+                useRenameDialogStore.setState({
+                  isOpen: true,
+                  convertToHosted: true,
+                });
+              }}
+              style={{ marginTop: 8 }}
+              data-testid="convert-to-hosted"
+            >
+              <Trans>Convert to hosted chart?</Trans>
+            </Type>
+          </Box>
+        </Popover.Content>
+      </Popover.Portal>
     </Popover.Root>
   );
 }
