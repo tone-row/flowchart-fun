@@ -35,6 +35,8 @@
     Charts: "चार्ट",
     "Check your email for a link to log in. You can close this window.":
       "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं.",
+    "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
+      "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .",
     "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
       "आप अपने चार्ट में  फुल एक्सेस , एडिट ओनली या केवल देखने की अनुमतियों के साथ साझा करना चुनकर यह नियंत्रित कर सकते हैं कि कौन आपके कार्य में परिवर्तन कर सकता है",
     Circle: "परिधि",
@@ -90,6 +92,7 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "डुप्लिकेट बनाएँ",
+    Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -107,6 +110,7 @@
     Excalidraw: "Excalidraw",
     Export: "एक्सपोर्ट करें",
     "Export High-Resolution Images": "उच्च-रिज़ॉल्यूशन छवियां निर्यात करें",
+    "Export to SVG": "SVG को निर्यात करें",
     "Extra Large": "Extra Large",
     Extract: "निकालना",
     Feedback: "फ़ीडबैक",
@@ -213,6 +217,7 @@
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
       "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।",
+    "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "अंतर",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "होस्ट किए गए फ़्लोचार्ट और नवीनतम शैलियों और सुविधाओं तक पहुँचने के लिए $3/माह या $30/वर्ष के लिए फ़्लोचार्ट.फ़न को प्रायोजित करें",
@@ -249,6 +254,8 @@
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
       "ये चार्ट सिर्फ़ इस ब्राउज़र में इस डिवाइस पर उपलब्ध हैं.<0/>ब्राउज़र क्लियर करने से local storage ये सब मिट जाएगा.",
     "This app works by typing": "यह ऐप टाइप द्वारा काम करता है",
+    "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
+      "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।",
     "Top to Bottom": "ऊपर से नीचे",
     "Try again": "फिर से कोशिश करें",
     Type: "प्रकार",

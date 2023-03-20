@@ -35,6 +35,8 @@
     Charts: "图表",
     "Check your email for a link to log in. You can close this window.":
       "检查您的电子邮件以获取登录链接。您可以关闭此窗口。",
+    "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
+      "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .",
     "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
       "选择您的图表分享方式：完全访问权限，仅编辑，或仅浏览。决定谁能对您的工作做出更改。",
     Circle: "圆圈",
@@ -86,6 +88,7 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "复制",
+    Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -103,6 +106,7 @@
     Excalidraw: "Excalidraw",
     Export: "导出",
     "Export High-Resolution Images": "导出高分辨率图像",
+    "Export to SVG": "导出为SVG",
     "Extra Large": "Extra Large",
     Extract: "提取",
     Feedback: "反馈",
@@ -209,6 +213,7 @@
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
       "抱歉！此页面只有英语版。",
+    "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "间距",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能",
@@ -245,6 +250,8 @@
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
       "这些图表仅在此设备上的此浏览器中可用。<0/>清除浏览器的 local storage 将删除这些图表。",
     "This app works by typing": "这款应用的工作原理是输入",
+    "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
+      "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。",
     "Top to Bottom": "从上到下",
     "Try again": "重试",
     Type: "类型",

@@ -64,7 +64,7 @@ msgid "Attributes"
 msgstr ""
 
 #: src/pages/Pricing.tsx:37
-#: src/pages/Pricing.tsx:49
+#: src/pages/Pricing.tsx:50
 msgid "Auto-Layouts"
 msgstr "自动布局"
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Blog"
 msgstr "博客"
 
-#: src/components/GraphContextMenu.tsx:476
+#: src/components/GraphContextMenu.tsx:479
 msgid "Border"
 msgstr ""
 
@@ -140,7 +140,11 @@ msgstr "图表"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/pages/Pricing.tsx:86
+#: src/components/SyntaxReference.tsx:305
+msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
+msgstr ""
+
+#: src/pages/Pricing.tsx:87
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "选择您的图表分享方式：完全访问权限，仅编辑，或仅浏览。决定谁能对您的工作做出更改。"
 
@@ -177,7 +181,7 @@ msgstr "克隆"
 msgid "Close"
 msgstr "关闭"
 
-#: src/components/GraphContextMenu.tsx:304
+#: src/components/GraphContextMenu.tsx:307
 msgid "Color"
 msgstr ""
 
@@ -205,25 +209,25 @@ msgstr ""
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr ""
 
-#: src/components/MightLoseSponsorTrigger.tsx:63
+#: src/components/MightLoseSponsorTrigger.tsx:64
 #: src/components/RenameButton.tsx:135
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
-#: src/components/ShareDialog.tsx:254
-#: src/components/ShareDialog.tsx:255
-#: src/components/ShareDialog.tsx:335
+#: src/components/ShareDialog.tsx:258
+#: src/components/ShareDialog.tsx:259
+#: src/components/ShareDialog.tsx:339
 #: src/pages/Charts.tsx:444
 #: src/pages/Charts.tsx:515
 #: src/pages/Charts.tsx:553
 msgid "Copy"
 msgstr "复制"
 
-#: src/components/GraphContextMenu.tsx:222
+#: src/components/GraphContextMenu.tsx:225
 msgid "Copy PNG Image"
 msgstr "复制PNG图像"
 
-#: src/components/GraphContextMenu.tsx:180
+#: src/components/GraphContextMenu.tsx:183
 msgid "Copy SVG Code"
 msgstr "复制 SVG 代码"
 
@@ -234,7 +238,7 @@ msgstr "复制 SVG 代码"
 msgid "Create"
 msgstr "创建"
 
-#: src/pages/Pricing.tsx:52
+#: src/pages/Pricing.tsx:53
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "使用 AI 根据提示创建图表"
 
@@ -250,8 +254,8 @@ msgstr "已创建"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr ""
 
-#: src/pages/Pricing.tsx:51
-#: src/pages/Pricing.tsx:83
+#: src/pages/Pricing.tsx:52
+#: src/pages/Pricing.tsx:84
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
@@ -312,19 +316,19 @@ msgstr "文档"
 msgid "Don't have an account?"
 msgstr "没有帐户？"
 
-#: src/components/ShareDialog.tsx:71
+#: src/components/ShareDialog.tsx:72
 msgid "Download"
 msgstr "下载"
 
-#: src/components/GraphContextMenu.tsx:124
+#: src/components/GraphContextMenu.tsx:125
 msgid "Download JPG"
 msgstr "下载 JPG"
 
-#: src/components/GraphContextMenu.tsx:99
+#: src/components/GraphContextMenu.tsx:100
 msgid "Download PNG"
 msgstr "下载 PNG"
 
-#: src/components/GraphContextMenu.tsx:146
+#: src/components/GraphContextMenu.tsx:148
 msgid "Download SVG"
 msgstr "下载 SVG"
 
@@ -336,6 +340,10 @@ msgstr ""
 #: src/pages/Charts.tsx:500
 msgid "Duplicate"
 msgstr "复制"
+
+#: src/components/GraphContextMenu.tsx:568
+msgid "Edge"
+msgstr ""
 
 #: src/components/SyntaxReference.tsx:153
 msgid "Edge ID, Classes, Attributes"
@@ -361,7 +369,7 @@ msgstr ""
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr ""
 
-#: src/components/ShareDialog.tsx:143
+#: src/components/ShareDialog.tsx:147
 msgid "Editable"
 msgstr "可编辑"
 
@@ -395,8 +403,8 @@ msgstr "Excalidraw"
 
 #: src/components/EditorWrapper.tsx:60
 #: src/components/EditorWrapper.tsx:65
-#: src/components/ShareDialog.tsx:62
-#: src/components/ShareDialog.tsx:153
+#: src/components/ShareDialog.tsx:63
+#: src/components/ShareDialog.tsx:157
 msgid "Export"
 msgstr "导出"
 
@@ -404,7 +412,11 @@ msgstr "导出"
 msgid "Export High-Resolution Images"
 msgstr "导出高分辨率图像"
 
-#: src/components/GraphContextMenu.tsx:264
+#: src/pages/Pricing.tsx:49
+msgid "Export to SVG"
+msgstr "导出为SVG"
+
+#: src/components/GraphContextMenu.tsx:267
 msgid "Extra Large"
 msgstr ""
 
@@ -426,7 +438,7 @@ msgstr ""
 msgid "Follow Us"
 msgstr "关注我们"
 
-#: src/components/ShareDialog.tsx:140
+#: src/components/ShareDialog.tsx:144
 msgid "Fullscreen"
 msgstr "全屏"
 
@@ -450,7 +462,7 @@ msgstr "图表"
 msgid "Grid"
 msgstr "网格"
 
-#: src/components/MightLoseSponsorTrigger.tsx:48
+#: src/components/MightLoseSponsorTrigger.tsx:49
 #: src/components/MightLoseWarning.tsx:26
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "注意！在清除缓存之前，请记住此文档没有在云端保存。"
@@ -479,7 +491,7 @@ msgstr ""
 msgid "Image Export"
 msgstr "图像导出"
 
-#: src/components/SyntaxReference.tsx:338
+#: src/components/SyntaxReference.tsx:354
 msgid "Images"
 msgstr ""
 
@@ -499,7 +511,7 @@ msgstr "指导"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/GraphContextMenu.tsx:259
+#: src/components/GraphContextMenu.tsx:262
 msgid "Large"
 msgstr ""
 
@@ -536,7 +548,7 @@ msgstr "浅色"
 msgid "Light Mode"
 msgstr "浅色模式"
 
-#: src/components/ShareDialog.tsx:135
+#: src/components/ShareDialog.tsx:139
 msgid "Link"
 msgstr "链接"
 
@@ -558,7 +570,7 @@ msgstr "由 <0>Tone Row</0> 制作"
 msgid "Make a Donation"
 msgstr "捐款"
 
-#: src/components/ShareDialog.tsx:378
+#: src/components/ShareDialog.tsx:382
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
@@ -566,7 +578,7 @@ msgstr "设为公开访问"
 msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
 msgstr "使用 Flowchart Fun Pro 让您的工作流程更轻松——现在订阅只需 3 美元/月或 30 美元/年！"
 
-#: src/components/GraphContextMenu.tsx:255
+#: src/components/GraphContextMenu.tsx:258
 msgid "Medium"
 msgstr ""
 
@@ -602,11 +614,11 @@ msgstr "新邮件"
 msgid "Next charge"
 msgstr "下次扣费"
 
-#: src/components/GraphContextMenu.tsx:297
+#: src/components/GraphContextMenu.tsx:300
 msgid "Node"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:302
+#: src/components/SyntaxReference.tsx:318
 msgid "Node Border Style"
 msgstr ""
 
@@ -626,16 +638,16 @@ msgstr ""
 msgid "Node Shapes"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:305
+#: src/components/SyntaxReference.tsx:321
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr ""
 
 #: src/pages/Account.tsx:287
-#: src/pages/Pricing.tsx:54
+#: src/pages/Pricing.tsx:55
 msgid "Office Hours"
 msgstr "工作时间"
 
-#: src/pages/Pricing.tsx:53
+#: src/pages/Pricing.tsx:54
 msgid "One-on-One Support"
 msgstr "一对一支持"
 
@@ -651,13 +663,13 @@ msgstr "打开客户门户"
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "将要转换的信息粘贴到流程图中"
 
-#: src/pages/Pricing.tsx:50
+#: src/pages/Pricing.tsx:51
 msgid "Permalinks"
 msgstr "永久链接"
 
 #: src/pages/Charts.tsx:350
 #: src/pages/Pricing.tsx:46
-#: src/pages/Pricing.tsx:65
+#: src/pages/Pricing.tsx:66
 msgid "Persistent Flowcharts"
 msgstr "持久图"
 
@@ -674,8 +686,8 @@ msgstr "价钱"
 msgid "Prompt"
 msgstr ""
 
-#: src/components/ShareDialog.tsx:374
-#: src/components/ShareDialog.tsx:397
+#: src/components/ShareDialog.tsx:378
+#: src/components/ShareDialog.tsx:401
 #: src/pages/Charts.tsx:597
 msgid "Public"
 msgstr "公开"
@@ -685,7 +697,7 @@ msgid "Random"
 msgstr "随机"
 
 #: src/components/EditorWrapper.tsx:51
-#: src/components/ShareDialog.tsx:146
+#: src/components/ShareDialog.tsx:150
 msgid "Read-only"
 msgstr "只读"
 
@@ -787,7 +799,7 @@ msgstr "救球"
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/GraphContextMenu.tsx:366
+#: src/components/GraphContextMenu.tsx:369
 msgid "Shape"
 msgstr ""
 
@@ -800,11 +812,11 @@ msgstr ""
 msgid "Sign Up"
 msgstr "注册"
 
-#: src/components/GraphContextMenu.tsx:433
+#: src/components/GraphContextMenu.tsx:436
 msgid "Size"
 msgstr ""
 
-#: src/components/GraphContextMenu.tsx:250
+#: src/components/GraphContextMenu.tsx:253
 msgid "Small"
 msgstr ""
 
@@ -815,6 +827,10 @@ msgstr ""
 #: src/components/OnlyInEnglish.tsx:23
 msgid "Sorry! This page is only available in English."
 msgstr "抱歉！此页面只有英语版。"
+
+#: src/components/SyntaxReference.tsx:302
+msgid "Source/Target Arrow Shape"
+msgstr ""
 
 #: src/components/Tabs/EditLayoutTab.tsx:136
 msgid "Spacing"
@@ -849,7 +865,7 @@ msgstr "存储在云端"
 msgid "Stored on this computer"
 msgstr "保存在这台电脑上"
 
-#: src/pages/Pricing.tsx:101
+#: src/pages/Pricing.tsx:102
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "使用 Flowchart Fun，简化您的工作流程和过程可视化"
 
@@ -858,7 +874,7 @@ msgstr "使用 Flowchart Fun，简化您的工作流程和过程可视化"
 msgid "Style"
 msgstr "风格"
 
-#: src/components/SyntaxReference.tsx:317
+#: src/components/SyntaxReference.tsx:333
 msgid "Style Attributes"
 msgstr ""
 
@@ -866,7 +882,7 @@ msgstr ""
 msgid "Style Classes"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:320
+#: src/components/SyntaxReference.tsx:336
 msgid "Style attributes can be used to style nodes and edges"
 msgstr ""
 
@@ -933,6 +949,10 @@ msgstr "这些图表仅在此设备上的此浏览器中可用。<0/>清除浏�
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
 
+#: src/components/SvgProOnlyPopover.tsx:21
+msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
+msgstr "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。"
+
 #: src/lib/graphOptions.ts:33
 #: src/lib/graphOptions.ts:40
 msgid "Top to Bottom"
@@ -967,11 +987,11 @@ msgstr "已更新"
 msgid "Use classes to group nodes"
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:341
+#: src/components/SyntaxReference.tsx:357
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr ""
 
-#: src/components/SyntaxReference.tsx:328
+#: src/components/SyntaxReference.tsx:344
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr ""
 
@@ -1003,11 +1023,11 @@ msgstr "你想将这个副本命名为什么？"
 msgid "What would you like to share with us?"
 msgstr "您想跟我们分享什么？"
 
-#: src/components/SyntaxReference.tsx:325
+#: src/components/SyntaxReference.tsx:341
 msgid "Width and Height"
 msgstr ""
 
-#: src/pages/Pricing.tsx:68
+#: src/pages/Pricing.tsx:69
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。"
 

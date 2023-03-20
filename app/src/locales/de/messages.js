@@ -36,6 +36,8 @@
     Charts: "Diagramme",
     "Check your email for a link to log in. You can close this window.":
       "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses Fenster schließen.",
+    "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
+      "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .",
     "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
       "Wählen Sie aus, ob Sie Ihre Charts (Diagramme) mit vollem Zugriff, nur zum Bearbeiten oder nur zum Ansehen freigeben möchten. So haben Sie die Kontrolle darüber, wer Änderungen an Ihrer Arbeit vornehmen kann.",
     Circle: "Kreis",
@@ -91,6 +93,7 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     Duplicate: "Duplizieren",
+    Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
     "Edge Style": "Edge Style",
@@ -108,6 +111,7 @@
     Excalidraw: "Excalidraw",
     Export: "Exportieren",
     "Export High-Resolution Images": "Hochauflösende Bilder exportieren",
+    "Export to SVG": "In SVG exportieren",
     "Extra Large": "Extra Large",
     Extract: "Extrakt",
     Feedback: "Feedback",
@@ -214,6 +218,7 @@
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
       "Entschuldigung! Diese Seite ist nur auf Englisch verfügbar.",
+    "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "Abstand",
     "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
       "Sponsern Sie flowchart.fun für 3 $ / Monat oder 30 $ / Jahr, um auf gehostete Flussdiagramme und die neuesten Stile und Funktionen zuzugreifen",
@@ -250,6 +255,8 @@
     "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
       "Diese Diagramme sind nur in diesem Browser auf diesem Gerät verfügbar.<0/>Wenn Sie Ihren Browser-local storage leeren, werden sie gelöscht.",
     "This app works by typing": "Diese App funktioniert durch Tippen",
+    "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
+      "Diese Funktion ist nur für Pro-Benutzer verfügbar. <0>Werden Sie Pro-Nutzer</0>, um es freizuschalten.",
     "Top to Bottom": "Von oben nach unten",
     "Try again": "Erneut versuchen",
     Type: "Typ",
