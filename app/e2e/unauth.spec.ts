@@ -198,17 +198,6 @@ test.describe("unauth", () => {
     await expect(page.locator("text=cool-chart")).toBeVisible();
   });
 
-  test("Download SVG", async ({ page }) => {
-    await openExportDialog(page);
-    // Click [aria-label="Download SVG"]
-    const [download] = await Promise.all([
-      page.waitForEvent("download"),
-      page.locator('[aria-label="Download SVG"]').click(),
-    ]);
-
-    expect(download.suggestedFilename()).toBe("flowchart-fun.svg");
-  });
-
   test("Download PNG", async ({ page }) => {
     await openExportDialog(page);
     // Click [aria-label="Download PNG"]
@@ -464,7 +453,7 @@ test.describe("unauth", () => {
   });
 });
 
-async function openExportDialog(page: Page) {
+export async function openExportDialog(page: Page) {
   // Click [aria-label="Export"]
   page.locator('[aria-label="Export"]').click();
   // Click text=Download

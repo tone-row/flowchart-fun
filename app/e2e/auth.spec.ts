@@ -1,6 +1,7 @@
 import { expect, Page, test } from "@playwright/test";
 import jsdom from "jsdom";
 
+import { openExportDialog } from "./unauth.spec";
 import {
   BASE_URL,
   deleteCustomerByEmail,
@@ -84,6 +85,17 @@ test.describe("Sign Up", () => {
     await expect(page.getByText("Account")).toBeVisible({ timeout: 10 * 1000 });
 
     // TODO: delete supabase user, requires updating supabase sdk
+  });
+
+  test("Download SVG", async ({ page }) => {
+    await openExportDialog(page);
+    // Click [aria-label="Download SVG"]
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      page.locator('[aria-label="Download SVG"]').click(),
+    ]);
+
+    expect(download.suggestedFilename()).toBe("flowchart-fun.svg");
   });
 
   test("can publish chart", async () => {
