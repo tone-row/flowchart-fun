@@ -81,6 +81,53 @@ Is shoe tied? {No} Tie shoe.
 Tie shoe. { } Success!
 
 Information:
+Take a jelly bean.
+If the jelly bean is red, eat it.
+If it's blue put it in Pot 1 then fry an egg and eat it.
+If it's purple put it in Pot 2.
+If your jelly bean is green stand up and clap three times.
+Take another.
+If you just put a jelly bean in Pot 1, eat it no matter what color it is.
+If you just put a jelly bean in Pot 2, swap it for the one you just put in Pot 1.
+If your jelly bean is orange, put it in Pot 3.
+Repeat until you have no jelly beans left.
+
+Relationships:
+Take a jelly bean. { } If the jelly bean is red, eat it.
+Take a jelly bean. { } If it's blue put it in Pot 1 then fry an egg and eat it.
+Take a jelly bean. { } If it's purple put it in Pot 2.
+Take a jelly bean. { } If your jelly bean is green stand up and clap three times.
+If the jelly bean is red, eat it. { } Take another.
+If it's blue put it in Pot 1 then fry an egg and eat it. { } Take another.
+If it's purple put it in Pot 2. { } Take another.
+If your jelly bean is green stand up and clap three times. { } Take another.
+Take another. { } If you just put a jelly bean in Pot 1, eat it no matter what color it is.
+Take another. { } If you just put a jelly bean in Pot 2, swap it for the one you just put in Pot 1.
+Take another. { } If your jelly bean is orange, put it in Pot 3.
+If you just put a jelly bean in Pot 1, eat it no matter what color it is. { } Repeat until you have no jelly beans left.
+If you just put a jelly bean in Pot 2, swap it for the one you just put in Pot 1. { } Repeat until you have no jelly beans left.
+If your jelly bean is orange, put it in Pot 3. { } Repeat until you have no jelly beans left.
+
+Information:
+Go to grocery store.
+Buy horseradish. If there is no horse radish, go to farm. Buy horse.
+If there are no horses on the farm. Go to market and buy seeds.
+Go back to farm. Plant crops. When crops harvest, sell crops and buy horse.
+When horse grows up, send horse to the grocery store to buy horseradish.
+If the horse succeeds, enroll the horse in college.
+If the horse fails, count your losses and remember the good times.
+
+Relationships:
+Go to grocery store. { } Buy horseradish.
+Buy horseradish. {If there is no horse radish} Go to farm. Buy horse.
+Go to farm. Buy horse. {If there are no horses on the farm} Go to market and buy seeds.
+Go to market and buy seeds. { } Go back to farm. Plant crops.
+Go back to farm. Plant crops. {When crops harvest} Sell crops and buy horse.
+Sell crops and buy horse. {When horse grows up} Send horse to the grocery store to buy horseradish.
+Send horse to the grocery store to buy horseradish. {If the horse succeeds} Enroll the horse in college.
+Send horse to the grocery store to buy horseradish. {If the horse fails} Count your losses and remember the good times.
+
+Information:
 ${prompt}
 
 Flowchart:
