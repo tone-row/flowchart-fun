@@ -160,3 +160,7 @@ div[data-reach-tooltip] {
 .slang-type.size--3 {
   letter-spacing: -0.025em;
 }
+
+.chart-link:hover .chart-link-buttons {
+  opacity: 1;
+}

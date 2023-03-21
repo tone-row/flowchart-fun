@@ -65,6 +65,7 @@ importers:
 
   app:
     specifiers:
+      '@formkit/auto-animate': 1.0.0-beta.6
       '@lingui/cli': ^3.13.2
       '@lingui/core': ^3.8.9
       '@lingui/macro': ^3.13.2
@@ -73,6 +74,7 @@ importers:
       '@notionhq/client': ^0.4.13
       '@playwright/test': 1.29.0
       '@radix-ui/react-alert-dialog': ^1.0.2
+      '@radix-ui/react-collapsible': ^1.0.2
       '@radix-ui/react-dialog': ^1.0.2
       '@radix-ui/react-dropdown-menu': ^2.0.1
       '@radix-ui/react-hover-card': ^0.1.5
@@ -198,11 +200,13 @@ importers:
       web-worker: ^1.2.0
       zustand: ^4.3.3
     dependencies:
+      '@formkit/auto-animate': 1.0.0-beta.6
       '@lingui/core': 3.14.0
       '@lingui/react': 3.14.0_react@17.0.2
       '@monaco-editor/react': 4.4.6_gnpkoj5uzrqs5wqxh42z7ffyam
       '@notionhq/client': 0.4.13
       '@radix-ui/react-alert-dialog': 1.0.2_hiunvzosbwliizyirxfy6hjyim
+      '@radix-ui/react-collapsible': 1.0.2_sfoxds7t5ydpegc3knd667wn6m
       '@radix-ui/react-dialog': 1.0.2_hiunvzosbwliizyirxfy6hjyim
       '@radix-ui/react-dropdown-menu': 2.0.1_hiunvzosbwliizyirxfy6hjyim
       '@radix-ui/react-hover-card': 0.1.5_sfoxds7t5ydpegc3knd667wn6m
@@ -1971,6 +1975,10 @@ packages:
       - '@types/react'
     dev: false
 
+  /@formkit/auto-animate/1.0.0-beta.6:
+    resolution: {integrity: sha512-PVDhLAlr+B4Xb7e+1wozBUWmXa6BFU8xUPR/W/E+TsQhPS1qkAdAsJ25keEnFrcePSnXHrOsh3tiFbEToOzV9w==}
+    dev: false
+
   /@graphql-typed-document-node/core/3.1.1_graphql@15.8.0:
     resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
     peerDependencies:
@@ -2936,6 +2944,25 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     dev: false
 
+  /@radix-ui/react-collapsible/1.0.2_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-QNiDT6Au8jUU0K1WV+HEd4loH7C5CKQjeXxskwqyiyAkyCmW7qlQM5vSSJCIoQC+OVPyhgafSmGudRP8Qm1/gA==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.19.0
+      '@radix-ui/primitive': 1.0.0
+      '@radix-ui/react-compose-refs': 1.0.0_react@17.0.2
+      '@radix-ui/react-context': 1.0.0_react@17.0.2
+      '@radix-ui/react-id': 1.0.0_react@17.0.2
+      '@radix-ui/react-presence': 1.0.0_sfoxds7t5ydpegc3knd667wn6m
+      '@radix-ui/react-primitive': 1.0.2_sfoxds7t5ydpegc3knd667wn6m
+      '@radix-ui/react-use-controllable-state': 1.0.0_react@17.0.2
+      '@radix-ui/react-use-layout-effect': 1.0.0_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
   /@radix-ui/react-collection/0.1.4_react@17.0.2:
     resolution: {integrity: sha512-3muGI15IdgaDFjOcO7xX8a35HQRBRF6LH9pS6UCeZeRmbslkVeHyJRQr2rzICBUoX7zgIA0kXyMDbpQnJGyJTA==}
     peerDependencies:
@@ -3413,6 +3440,18 @@ packages:
 
   /@radix-ui/react-primitive/1.0.1_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-fHbmislWVkZaIdeF6GZxF0A/NH/3BjrGIYj+Ae6eTmTCr7EB0RQAAVEiqsXK6p3/JcRqVSBQoceZroj30Jj3XA==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.19.0
+      '@radix-ui/react-slot': 1.0.1_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /@radix-ui/react-primitive/1.0.2_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-zY6G5Qq4R8diFPNwtyoLRZBxzu1Z+SXMlfYpChN7Dv8gvmx9X3qhDqiLWvKseKVJMuedFeU/Sa0Sy/Ia+t06Dw==}
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0

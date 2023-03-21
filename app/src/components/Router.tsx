@@ -22,6 +22,7 @@ const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
 const Login = lazy(() => import("../pages/LogIn"));
+const Charts2 = lazy(() => import("../pages/Charts2"));
 
 export default function Router() {
   usePageViews();
@@ -35,7 +36,7 @@ export default function Router() {
       </RouteWithWrapper>
       {/* "y" for "your charts" */}
       <RouteWithWrapper path="/y" exact>
-        <Charts />
+        <Charts2 />
       </RouteWithWrapper>
       <RouteWithWrapper path="/n/:graphText?">
         <New />
