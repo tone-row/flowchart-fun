@@ -268,13 +268,17 @@ const ChartLink = memo(function ChartLink({
       <div className="p-2 pr-2 flex items-center chart-link-buttons sm:opacity-0">
         <button
           className="opacity-25 sm:opacity-50 hover:opacity-100 rounded transition-opacity p-1 focus:shadow-none focus:bg-neutral-300/25"
+          aria-label={`Copy flowchart: ${title}`}
           onClick={handleCopy}
         >
           <Copy size={24} />
         </button>
         <Dialog.Root>
           <Dialog.Trigger asChild>
-            <button className="opacity-25 sm:opacity-50 hover:opacity-100 rounded transition-opacity p-1 focus:shadow-none focus:bg-neutral-300/25">
+            <button
+              className="opacity-25 sm:opacity-50 hover:opacity-100 rounded transition-opacity p-1 focus:shadow-none focus:bg-neutral-300/25"
+              aria-label={`Delete flowchart: ${title}`}
+            >
               <Trash size={24} />
             </button>
           </Dialog.Trigger>
@@ -345,7 +349,11 @@ function ProFeatureLink() {
         <span>
           <Trans>Permanent Charts are a Pro Feature</Trans>
         </span>
-        <Link to="/pricing" className="text-blue-500 dark:text-orange-500">
+        <Link
+          to="/pricing"
+          className="text-blue-500 dark:text-orange-500"
+          data-testid="to-pricing"
+        >
           <Trans>Learn about Flowchart Fun Pro</Trans>
         </Link>
       </div>
