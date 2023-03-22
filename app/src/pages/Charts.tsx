@@ -1,751 +1,362 @@
 import { t, Trans } from "@lingui/macro";
-import { formatDistanceStrict, parseISO } from "date-fns";
-import { Check, Copy, Trash } from "phosphor-react";
+import * as Collapsible from "@radix-ui/react-collapsible";
+import * as Dialog from "@radix-ui/react-dialog";
 import {
-  Dispatch,
-  Fragment,
-  memo,
-  ReactNode,
-  SetStateAction,
-  Suspense,
-  useCallback,
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
-import { useForm } from "react-hook-form";
+  Copy,
+  Folder,
+  FolderOpen,
+  Plus,
+  Sparkle,
+  Trash,
+  X,
+} from "phosphor-react";
+import { memo, ReactNode, useContext, useReducer, useState } from "react";
 import { useMutation } from "react-query";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
+import { DialogButton } from "../components/DialogButton";
 import Loading from "../components/Loading";
-import {
-  Button,
-  Dialog,
-  Input,
-  Notice,
-  Section,
-  SectionTitle,
-} from "../components/Shared";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
-import { slugify, titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidCustomer, useIsValidSponsor } from "../lib/hooks";
+import { titleToLocalStorageKey } from "../lib/helpers";
+import { useIsValidCustomer } from "../lib/hooks";
 import {
+  copyHostedChartById,
   deleteChart,
-  makeChart,
   queryClient,
-  useChart,
   useHostedCharts,
 } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
-import { Box, Type } from "../slang";
-import styles from "./Charts.module.css";
+// Keep these in sync (65px)
+const leftColumnGrid = "grid-cols-[65px_minmax(0,1fr)]";
+const leftMargin = "sm:mx-[65px]";
 
 export default function Charts() {
-  const validCustomer = useIsValidCustomer();
+  const isCustomer = useIsValidCustomer();
   const customerIsLoading = useContext(AppContext).customerIsLoading;
-  // Still checking session
-  return (
-    <Box
-      px={5}
-      py={8}
-      gap={5}
-      content="start normal"
-      className={styles.Navigation}
-    >
-      {customerIsLoading ? (
-        <Loading />
-      ) : validCustomer ? (
-        <HostedCharts />
-      ) : (
-        <HostedChartsCallout />
-      )}
-      <LocalCharts />
-    </Box>
+  // write a charts reducer where the dispatch just refetches charts
+  const [temporaryCharts, refetchTemporaryCharts] = useReducer(
+    getTemporaryCharts,
+    getTemporaryCharts()
   );
-}
-type Fields = {
-  chartTitle: string;
-};
-function LocalCharts() {
-  const { watch, register, handleSubmit } = useForm<Fields>();
-  const title = watch("chartTitle");
-  const [charts, setCharts] = useState<string[]>([]);
+  const { data: persistentCharts, isLoading } = useHostedCharts();
+  const isLoadingAnything = isLoading || customerIsLoading;
   const { push } = useHistory();
-  const { workspace = undefined } = useParams<{ workspace?: string }>();
-  const [erase, setErase] = useState("");
-  const [copy, setCopy] = useState("");
-
-  const onSubmit = useCallback(
-    ({ chartTitle }: Fields) => {
-      if (chartTitle) {
-        push(`/${chartTitle}`);
-      }
-    },
-    [push]
-  );
-
-  const handleCopy = useCallback(
-    ({ chartTitle }: { chartTitle: string }) => {
-      // copy in localStorage
-      const data = window.localStorage.getItem(titleToLocalStorageKey(copy));
-      window.localStorage.setItem(
-        titleToLocalStorageKey(chartTitle),
-        data ?? ""
-      );
-      push(`/${chartTitle}`);
-      setCopy("");
-    },
-    [copy, push]
-  );
-
-  const handleDelete = useCallback(() => {
-    // if on this path, move to index
-    if (workspace === erase && workspace !== "") {
-      push("/");
-    }
-    window.localStorage.removeItem(titleToLocalStorageKey(erase));
-    setErase("");
-  }, [erase, push, workspace]);
-
-  useEffect(() => {
-    setCharts(
-      [""]
-        .concat(
-          Object.keys(window.localStorage)
-            .filter(
-              (key) =>
-                key.indexOf("flowcharts.fun:") === 0 &&
-                key !== LOCAL_STORAGE_SETTINGS_KEY
-            )
-            .map((file) => file.split(":")[1])
-        )
-        .sort()
-    );
-  }, [erase]);
-
-  const lastChart = useLastChart((s) => s.lastChart);
-
-  return (
-    <Section className={styles.ChartSection}>
-      <TitleAndSummary title={t`Temporary Flowcharts`}>
-        <Trans>
-          These charts are only available in this browser on this device.
-          <br />
-          Clearing your browser {"local storage"} will erase these.
-        </Trans>
-      </TitleAndSummary>
-      <Section as="form" onSubmit={handleSubmit(onSubmit)}>
-        <Box gap={1}>
-          <Box template="none / 1fr auto" gap={3}>
-            <Input
-              placeholder={t`Enter a title`}
-              {...register("chartTitle", {
-                setValueAs: slugify,
-              })}
-            />
-            <Button
-              disabled={title?.length < 2 || charts.includes(title)}
-              type="submit"
-              text={t`Create`}
-            />
-          </Box>
-          <Type size={-2} color="palette-white-3">
-            flowchart.fun/{title}
-          </Type>
-        </Box>
-      </Section>
-      <Box gap={1} template="auto / minmax(0,1fr) repeat(2, 42px)">
-        <LocalChartListTitles />
-        {charts
-          ?.filter((c) => c !== "h")
-          .map((chart) => {
-            const href = `/${chart}`;
-            const isActive = lastChart === href;
-            return (
-              <Fragment key={chart}>
-                <Button
-                  as={Link}
-                  to={`/${chart}`}
-                  className={styles.NewChartLink}
-                  content="normal start"
-                  items="center stretch"
-                  gap={2}
-                  aria-current={isActive ? "location" : undefined}
-                >
-                  <Type as="span" size={-1}>
-                    {`/${chart}`}
-                  </Type>
-                </Button>
-                <Button
-                  className={styles.IconButton}
-                  onClick={() => setCopy(chart || "/")}
-                >
-                  <Copy />
-                </Button>
-                <Button
-                  aria-label={`Delete "${chart}"`}
-                  className={styles.IconButton}
-                  onClick={() => setErase(chart || "/")}
-                >
-                  <Trash />
-                </Button>
-              </Fragment>
-            );
-          })}
-      </Box>
-      <DeleteChart
-        erase={erase}
-        setErase={setErase}
-        handleDelete={handleDelete}
-      />
-      <CopyChart
-        copy={copy}
-        setCopy={setCopy}
-        charts={charts}
-        handleCopy={handleCopy}
-      />
-    </Section>
-  );
-}
-
-function DeleteChart({
-  erase,
-  setErase,
-  handleDelete,
-}: {
-  erase: string;
-  setErase: Dispatch<SetStateAction<string>>;
-  handleDelete: () => void;
-}) {
-  const handleDismiss = useCallback(() => {
-    setErase("");
-  }, [setErase]);
-
-  return (
-    <Dialog
-      dialogProps={{
-        isOpen: Boolean(erase),
-        onDismiss: handleDismiss,
-        "aria-label": t`Delete`,
-      }}
-      innerBoxProps={{ gap: 8 }}
-    >
-      <Box content="normal start" gap={2} at={{ tablet: { flow: "column" } }}>
-        <Type>{erase === "/" ? t`Reset` : t`Delete`}</Type>
-        <Type weight="700" self="normal center">
-          flowchart.fun/{erase}
-        </Type>
-      </Box>
-      <Box content="normal space-between" flow="column" gap={3}>
-        <Button onClick={handleDismiss} text={t`Cancel`} />
-        <Button
-          onClick={handleDelete}
-          text={erase === "/" ? t`Reset` : t`Delete`}
-        />
-      </Box>
-    </Dialog>
-  );
-}
-
-function CopyChart({
-  copy,
-  setCopy,
-  handleCopy,
-  charts,
-}: {
-  copy: string;
-  setCopy: Dispatch<SetStateAction<string>>;
-  handleCopy: (data: { chartTitle: string }) => void;
-  charts: string[];
-}) {
-  const inputRef = useRef<HTMLInputElement | null>(null);
-  const { register, setValue, watch, handleSubmit } = useForm({
-    defaultValues: { chartTitle: `${copy}-copy` },
-  });
-  const { ref, ...rest } = register("chartTitle", { setValueAs: slugify });
-
-  const title = watch("chartTitle");
-
-  const handleDismiss = useCallback(() => {
-    setCopy("");
-  }, [setCopy]);
-
-  useEffect(() => {
-    setValue(
-      "chartTitle",
-      [copy === "/" ? "" : copy, "copy"].filter(Boolean).join("-")
-    );
-  }, [copy, setValue]);
-
-  return (
-    <Dialog
-      dialogProps={{
-        isOpen: Boolean(copy),
-        onDismiss: handleDismiss,
-        initialFocusRef: inputRef,
-        "aria-label": t`Duplicate`,
-      }}
-      innerBoxProps={{
-        gap: 10,
-        as: "form",
-        onSubmit: handleSubmit(handleCopy),
-      }}
-    >
-      <Section>
-        <Type>
-          <Trans>What would you like to name this copy?</Trans>
-        </Type>
-        <Box template="none / minmax(0, 1fr) auto" gap={3}>
-          <Input
-            ref={(r) => {
-              inputRef.current = r;
-              ref(r);
-            }}
-            {...rest}
-            name="chartTitle"
-          />
-          <Button
-            type="submit"
-            disabled={title?.length < 2 || charts.includes(title)}
-            text={t`Create`}
-          />
-        </Box>
-      </Section>
-    </Dialog>
-  );
-}
-type CreateNewFields = {
-  name: string;
-};
-function HostedCharts() {
-  const validSponsor = useIsValidSponsor();
-  const { session } = useContext(AppContext);
-  const { push } = useHistory();
-  const { mutate, isLoading } = useMutation("makeChart", makeChart, {
-    onSuccess: (response: any) => {
+  const currentChart = useLastChart((state) => state.lastChart);
+  const handleDeleteChart = useMutation("deleteChart", deleteChart, {
+    onSuccess: (_result, args) => {
       queryClient.invalidateQueries(["auth", "hostedCharts"]);
-      push(`/u/${response.data[0].id}`);
-    },
-  });
-  const { data: charts } = useHostedCharts();
-  const { register, watch, handleSubmit } = useForm<CreateNewFields>();
-  const name = watch("name");
 
-  const onSubmit = useCallback(
-    ({ name }: CreateNewFields) => {
-      session?.user?.id && mutate({ name, user_id: session?.user?.id });
-    },
-    [mutate, session?.user?.id]
-  );
-  const [copyModal, setCopyModal] = useState<false | number>(false);
-  const [deleteModal, setDeleteModal] = useState<
-    false | { id: number; name: string }
-  >(false);
-
-  return (
-    <Section content="start normal" className={styles.ChartSection}>
-      <TitleAndSummary title={t`Persistent Flowcharts`}>
-        <Trans>
-          Access these charts from anywhere.
-          <br />
-          Share/embed charts that stay in sync with your edits.
-        </Trans>
-      </TitleAndSummary>
-      {validSponsor ? (
-        <Section as="form" onSubmit={handleSubmit(onSubmit)}>
-          <Box template="none / 1fr auto" gap={3}>
-            <Input
-              placeholder={t`Enter a title`}
-              {...register("name", { required: true })}
-              disabled={isLoading}
-              isLoading={isLoading}
-            />
-            <Button
-              disabled={!name || isLoading}
-              type="submit"
-              text={t`Create`}
-            />
-          </Box>
-        </Section>
-      ) : (
-        <Notice boxProps={{ as: Link, to: "/a" }}>
-          <Trans>
-            Your subscription is no longer active. If you want to create and
-            edit hosted charts become a sponsor.
-          </Trans>
-        </Notice>
-      )}
-      <Box
-        gap={1}
-        template={
-          validSponsor ? "auto / minmax(0, 1fr) repeat(2, 42px)" : "auto / auto"
-        }
-      >
-        <HostedChartListTitles />
-        {charts?.map((chart) => (
-          <ChartButton
-            key={chart.id}
-            chartId={chart.id}
-            chartName={chart.name}
-            setCopyModal={setCopyModal}
-            setDeleteModal={setDeleteModal}
-            is_public={chart.is_public}
-            created_at={chart.created_at}
-            updated_at={chart.updated_at}
-          />
-        ))}
-      </Box>
-      <CopyHostedChart
-        isOpen={copyModal}
-        onDismiss={() => setCopyModal(false)}
-      />
-      <DeleteHostedChart
-        isOpen={deleteModal}
-        onDismiss={() => setDeleteModal(false)}
-      />
-    </Section>
-  );
-}
-
-function TitleAndSummary({
-  title,
-  children: summary,
-}: {
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <Box gap={2}>
-      <SectionTitle>{title}</SectionTitle>
-      <Box>
-        <Type>{summary}</Type>
-      </Box>
-    </Box>
-  );
-}
-
-const f = (s: string) => formatDistanceStrict(parseISO(s), new Date());
-
-function CopyHostedChart({
-  isOpen,
-  onDismiss,
-}: {
-  isOpen: boolean | number;
-  onDismiss: () => void;
-}) {
-  return (
-    <Dialog
-      dialogProps={{
-        isOpen: typeof isOpen === "number",
-        onDismiss,
-        "aria-label": t`Copy`,
-      }}
-      innerBoxProps={{}}
-    >
-      <Suspense fallback={<Loading />}>
-        <CopyHostedChartInner isOpen={isOpen} onDismiss={onDismiss} />
-      </Suspense>
-    </Dialog>
-  );
-}
-type CopyHostedFields = {
-  name: string;
-};
-function CopyHostedChartInner({
-  isOpen,
-  onDismiss,
-}: {
-  isOpen: boolean | number;
-  onDismiss: () => void;
-}) {
-  const { register, handleSubmit, watch } = useForm<CopyHostedFields>();
-  const copyName = watch("name");
-  const { push } = useHistory();
-  const newChart = useMutation("makeChart", makeChart, {
-    onSuccess: (response: any) => {
-      queryClient.invalidateQueries(["auth", "hostedCharts"]);
-      push(`/u/${response.data[0].id}`);
-      onDismiss();
-    },
-  });
-  const { data: chart } = useChart(
-    typeof isOpen === "number" ? isOpen.toString() : ""
-  );
-  const { session } = useContext(AppContext);
-
-  function onSubmit({ name }: CopyHostedFields) {
-    if (chart && session?.user?.id) {
-      newChart.mutate({
-        name,
-        user_id: session?.user.id,
-        chart: chart.chart,
-      });
-    }
-  }
-
-  const inputRef = useRef<null | HTMLInputElement>(null);
-  const { ref, ...rest } = register("name", { required: true });
-  useLayoutEffect(() => {
-    inputRef.current && inputRef.current.focus();
-  }, []);
-
-  return newChart.isLoading || !chart ? (
-    <Loading />
-  ) : (
-    <Section as="form" onSubmit={handleSubmit(onSubmit)}>
-      <Type>
-        <Trans>Duplicate</Trans>{" "}
-        <Type color="color-highlightColor" as="span">
-          {chart.name}
-        </Type>
-      </Type>
-      <Input
-        placeholder={t`Enter a title`}
-        {...rest}
-        ref={(el) => {
-          ref(el);
-          inputRef.current = el;
-        }}
-      />
-      <Box content="normal space-between" flow="column">
-        <Button onClick={onDismiss} type="button" text={t`Cancel`} />
-        <Button disabled={!copyName} type="submit" text={t`Copy`} />
-      </Box>
-    </Section>
-  );
-}
-
-function DeleteHostedChart({
-  isOpen,
-  onDismiss,
-}: {
-  isOpen: false | { id: number; name: string };
-  onDismiss: () => void;
-}) {
-  const { handleSubmit } = useForm();
-  const deleteChatMutation = useMutation("deleteChart", deleteChart, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(["auth", "hostedCharts"]);
       // set the root chart as the active one
       useLastChart.setState({ lastChart: "" });
-      // remove the deleted chart from reactQuery
-      if (isOpen && isOpen.id)
-        queryClient.removeQueries(["useHostedDoc", isOpen.id]);
 
-      onDismiss();
+      // remove the deleted chart from reactQuery
+      queryClient.removeQueries(["useHostedDoc", args.chartId]);
+    },
+    onMutate: async (args) => {
+      // Cancel any outgoing refetches (so they don't overwrite our optimistic update)
+      await queryClient.cancelQueries(["auth", "hostedCharts"]);
+
+      const previousHostedCharts = queryClient.getQueryData([
+        "auth",
+        "hostedCharts",
+      ]);
+
+      // Optimistically update to the new value
+      queryClient.setQueryData(["auth", "hostedCharts"], (old: any) => {
+        return old.filter((chart: any) => chart.id !== args.chartId);
+      });
+
+      // Return a context object with the snapshotted value
+      return { previousHostedCharts };
+    },
+    onError: (_err, _args, context) => {
+      queryClient.setQueryData(
+        ["auth", "hostedCharts"],
+        context?.previousHostedCharts
+      );
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(["auth", "hostedCharts"]);
     },
   });
-  function onSubmit() {
-    if (isOpen !== false) {
-      deleteChatMutation.mutate({
-        chartId: isOpen.id,
-      });
+  const handleCopyPersistentChart = useMutation(
+    "copyPersistentChart",
+    copyHostedChartById,
+    {
+      onSuccess: (result) => {
+        queryClient.invalidateQueries(["auth", "hostedCharts"]);
+        if (result && result.id) push(`/u/${result.id}`);
+      },
     }
-  }
-  return (
-    <Dialog
-      dialogProps={{
-        isOpen: isOpen !== false,
-        onDismiss,
-        "aria-label": t`Copy`,
-      }}
-      innerBoxProps={{}}
-    >
-      {deleteChatMutation.isLoading ? (
-        <Loading />
-      ) : (
-        <Section as="form" onSubmit={handleSubmit(onSubmit)}>
-          <Type>
-            <Trans>Do you want to delete this?</Trans>{" "}
-            <Type color="color-highlightColor" as="span">
-              {isOpen && isOpen.name}
-            </Type>
-          </Type>
-          <Box content="normal space-between" flow="column">
-            <Button onClick={() => onDismiss()} text={t`Cancel`} />
-            <Button type="submit" text={t`Delete`} />
-          </Box>
-        </Section>
-      )}
-    </Dialog>
   );
-}
-
-function HostedChartListTitles() {
-  const validSponsor = useIsValidSponsor();
   return (
-    <>
-      <Box
-        template="auto / minmax(0,1fr) repeat(1, 110px)"
-        at={{
-          tablet: {
-            template: "auto / minmax(0,1fr) 40px repeat(2, 110px)",
-          },
-        }}
-        px={3}
-        gap={2}
-        className={styles.LinkColumnTitles}
-      >
-        <Type size={-2} as="span">
-          <Trans>Name</Trans>
-        </Type>
-        <Box display="none" at={{ tablet: { display: "block" } }}>
-          <Type size={-2}>
-            <Trans>Public</Trans>
-          </Type>
-        </Box>
-        <Type size={-2} as="span">
-          <Trans>Updated</Trans>
-        </Type>
-        <Box display="none" at={{ tablet: { display: "block" } }}>
-          <Type size={-2}>
-            <Trans>Created</Trans>
-          </Type>
-        </Box>
-      </Box>
-      {validSponsor ? (
-        <>
-          <div />
-          <div />
-        </>
-      ) : null}
-    </>
-  );
-}
-
-function LocalChartListTitles() {
-  return (
-    <>
-      <Box
-        template="auto / auto"
-        px={3}
-        gap={2}
-        className={styles.LinkColumnTitles}
-      >
-        <Type size={-2} as="span">
-          <Trans>Name</Trans>
-        </Type>
-      </Box>
-      <div />
-      <div />
-    </>
-  );
-}
-
-const ChartButton = memo(function ChartButton({
-  chartId,
-  chartName,
-  is_public,
-  updated_at,
-  created_at,
-  setCopyModal,
-  setDeleteModal,
-}: {
-  chartId: number;
-  chartName: string;
-  is_public: boolean;
-  updated_at: string;
-  created_at: string;
-  id?: string;
-  setCopyModal: any;
-  setDeleteModal: any;
-}) {
-  const validSponsor = useIsValidSponsor();
-  const lastChart = useLastChart((s) => s.lastChart);
-  const href = `/u/${chartId}`;
-  const isActive = lastChart === href;
-  return (
-    <>
-      <Button
-        as={Link}
-        to={href}
-        className={styles.NewChartLink}
-        content="normal start"
-        items="center stretch"
-        template="auto / minmax(0,1fr) repeat(1, 110px)"
-        at={{
-          tablet: {
-            template: "auto / minmax(0,1fr) 40px repeat(2, 110px)",
-          },
-        }}
-        gap={2}
-        aria-current={isActive ? "location" : undefined}
-        title={chartName}
-      >
-        <Type as="span" size={-1}>
-          {chartName}
-        </Type>
-        <Box
-          display="none"
-          at={{ tablet: { display: "block" } }}
-          self="normal end"
+    <div className="px-4 py-16 max-w-3xl w-full mx-auto grid gap-16 content-start">
+      <header className="flex items-center justify-center gap-6">
+        <h1 className="text-4xl">
+          <Trans>Your Charts</Trans>
+        </h1>
+        <DialogButton as={Link} to="/n" icon={Plus} color="inverted">
+          <Trans>New</Trans>
+        </DialogButton>
+      </header>
+      <section className="grid gap-12">
+        <LargeFolder
+          title={t`Permanent Flowcharts`}
+          description={
+            <Trans>
+              Access these charts from anywhere.
+              <br />
+              Share and embed flowcharts that stay in sync.
+            </Trans>
+          }
         >
-          {is_public ? <Check /> : <div />}
-        </Box>
-        <Type as="span" size={-2} className={styles.NewChartLinkSubtext}>
-          {f(updated_at)} ago
-        </Type>
-        <Box display="none" at={{ tablet: { display: "block" } }}>
-          <Type size={-2} className={styles.NewChartLinkSubtext}>
-            {f(created_at)} ago
-          </Type>
-        </Box>
-      </Button>
-      {validSponsor ? (
-        <>
-          <Button
-            className={styles.IconButton}
-            onClick={() => setCopyModal(chartId)}
+          {isLoadingAnything ? (
+            <div className="py-4">
+              <Loading />
+            </div>
+          ) : isCustomer ? (
+            <div>
+              {persistentCharts?.map((chart) => (
+                <ChartLink
+                  key={chart.id}
+                  title={chart.name}
+                  href={`/u/${chart.id}`}
+                  handleDelete={() => {
+                    handleDeleteChart.mutate({ chartId: chart.id });
+                  }}
+                  handleCopy={() => {
+                    handleCopyPersistentChart.mutate(chart.id as string);
+                  }}
+                  isCurrent={`/u/${chart.id}` === currentChart}
+                >
+                  <div className="flex items-center gap-4 text-xs text-foreground/50 dark:text-background/50">
+                    <span>{chart.niceCreatedDate}</span>
+                    <span>{chart.niceUpdatedDate}</span>
+                  </div>
+                </ChartLink>
+              ))}
+            </div>
+          ) : (
+            <ProFeatureLink />
+          )}
+        </LargeFolder>
+
+        <LargeFolder
+          title={t`Temporary Flowcharts`}
+          description={
+            <Trans>
+              Only available on this device.
+              <br />
+              Clearing your browser cache will erase them.
+            </Trans>
+          }
+        >
+          <div>
+            {temporaryCharts.map((chart) => (
+              <ChartLink
+                key={chart}
+                title={`/${chart}`}
+                href={`/${chart}`}
+                handleDelete={() => {
+                  deleteLocalChart(chart, currentChart || "", push);
+                  refetchTemporaryCharts();
+                }}
+                handleCopy={() => {
+                  copyLocalChart(chart, push);
+                }}
+                isCurrent={`/${chart}` === currentChart}
+              />
+            ))}
+          </div>
+        </LargeFolder>
+      </section>
+    </div>
+  );
+}
+
+const LargeFolder = memo(function LargeFolder({
+  title,
+  description = null,
+  children,
+}: {
+  title: string;
+  description: ReactNode;
+  children: ReactNode;
+}) {
+  const [isOpen, setIsOpen] = useState(true);
+  return (
+    <Collapsible.Root open={isOpen} onOpenChange={setIsOpen}>
+      <section className="grid gap-4">
+        <Collapsible.Trigger asChild>
+          <button
+            className={`grid grid-auto-cols items-center text-left w-full ${leftColumnGrid} focus:shadow-none`}
+            onClick={() => setIsOpen(!isOpen)}
           >
-            <Copy />
-          </Button>
-          <Button
-            className={styles.IconButton}
-            onClick={() => setDeleteModal({ id: chartId, name: chartName })}
-          >
-            <Trash />
-          </Button>
-        </>
-      ) : null}
-    </>
+            {isOpen ? <FolderOpen size={45} /> : <Folder size={45} />}
+            <div className="grid gap-[2px]">
+              <h2 className="text-xl font-bold">{title}</h2>
+              {description ? (
+                <div className="text-sm text-neutral-600 dark:text-neutral-400">
+                  {description}
+                </div>
+              ) : null}
+            </div>
+          </button>
+        </Collapsible.Trigger>
+        <Collapsible.Content>
+          <List>{children}</List>
+        </Collapsible.Content>
+      </section>
+    </Collapsible.Root>
   );
 });
 
-function HostedChartsCallout() {
-  const { push } = useHistory();
+const List = memo(function List({ children }: { children: ReactNode }) {
+  return <div className={`grid gap-4 ${leftMargin}`}>{children}</div>;
+});
+
+function getTemporaryCharts() {
+  return [""]
+    .concat(
+      Object.keys(window.localStorage)
+        .filter(
+          (key) =>
+            key.indexOf("flowcharts.fun:") === 0 &&
+            key !== LOCAL_STORAGE_SETTINGS_KEY
+        )
+        .map((file) => file.split(":")[1])
+    )
+    .sort();
+}
+
+const ChartLink = memo(function ChartLink({
+  title,
+  href,
+  children = null,
+  handleDelete,
+  handleCopy,
+  isCurrent = false,
+}: {
+  title: string;
+  href: string;
+  children?: ReactNode;
+  handleDelete?: () => void;
+  handleCopy?: () => void;
+  isCurrent?: boolean;
+}) {
   return (
-    <Box gap={8} items="start">
-      <Box gap={4} items="start">
-        <Box gap={2}>
-          <SectionTitle>
-            <Trans>Hosted Charts</Trans>
-          </SectionTitle>
-          <Type className={styles.CalloutInner} style={{ maxWidth: 400 }}>
-            <Trans>
-              Sponsor flowchart.fun for $3 / month or $30 / year to access
-              hosted flowcharts and the newest styles and features
-            </Trans>
-          </Type>
-        </Box>
-        <Button
-          className={styles.BlueButton}
-          p={3}
-          px={6}
-          typeProps={{ size: 0 }}
-          text={t`Learn More`}
-          onClick={() => {
-            push("/pricing");
-          }}
+    <div
+      className={`chart-link rounded grid grid-flow-col grid-cols-[minmax(0,1fr)_auto] items-center sm:-ml-3 ${
+        isCurrent
+          ? "bg-blue-50 hover:bg-blue-100 dark:bg-blue-900 dark:hover:bg-blue-800"
+          : "hover:bg-neutral-200 dark:hover:bg-neutral-900"
+      }`}
+    >
+      <Link to={href} className="p-2 pl-3">
+        <div className="grid gap-1">
+          <span
+            className={`text-lg ${
+              isCurrent ? "text-blue-600 dark:text-blue-50" : ""
+            }`}
+          >
+            {title}
+          </span>
+          {children}
+        </div>
+      </Link>
+      <div className="p-2 pr-2 flex items-center chart-link-buttons sm:opacity-0">
+        <button
+          className="opacity-25 sm:opacity-50 hover:opacity-100 rounded transition-opacity p-1 focus:shadow-none focus:bg-neutral-300/25"
+          aria-label={`Copy flowchart: ${title}`}
+          onClick={handleCopy}
+        >
+          <Copy size={24} />
+        </button>
+        <Dialog.Root>
+          <Dialog.Trigger asChild>
+            <button
+              className="opacity-25 sm:opacity-50 hover:opacity-100 rounded transition-opacity p-1 focus:shadow-none focus:bg-neutral-300/25"
+              aria-label={`Delete flowchart: ${title}`}
+            >
+              <Trash size={24} />
+            </button>
+          </Dialog.Trigger>
+          <Dialog.Portal>
+            <Dialog.Overlay className="bg-foreground/50 dark:bg-background/50 data-[state=open]:animate-overlayShow fixed inset-0" />
+            <Dialog.Content className="data-[state=open]:animate-contentShow bg-background text-foreground dark:bg-foreground dark:text-background fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[400px] translate-x-[-50%] translate-y-[-50%] rounded-lg bg-background p-4 shadow-lg focus:outline-none z-50 grid gap-3">
+              <Dialog.Title className="text-lg font-bold">
+                <Trans>Do you want to delete this?</Trans>
+              </Dialog.Title>
+              <Dialog.Description>
+                <Trans>This action cannot be undone.</Trans>
+              </Dialog.Description>
+              <div className="flex gap-2 mt-6 justify-self-end">
+                <Dialog.Close asChild>
+                  <DialogButton icon={X}>Cancel</DialogButton>
+                </Dialog.Close>
+                <Dialog.Close asChild>
+                  <DialogButton icon={Trash} color="red" onClick={handleDelete}>
+                    Delete
+                  </DialogButton>
+                </Dialog.Close>
+              </div>
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
+      </div>
+    </div>
+  );
+});
+
+function deleteLocalChart(
+  chartId: string,
+  currentChart: string,
+  push: (path: string) => void
+) {
+  // if on this path, move to index
+  if (currentChart === chartId && currentChart !== "") {
+    push("/");
+  }
+  window.localStorage.removeItem(titleToLocalStorageKey(chartId));
+}
+
+function copyLocalChart(chart: string, push: (path: string) => void) {
+  let i = 1;
+  let copy = `${chart}-${i}`;
+  while (window.localStorage.getItem(titleToLocalStorageKey(copy))) {
+    i++;
+    copy = `${chart}-${i}`;
+  }
+  // copy in localStorage
+  const data = window.localStorage.getItem(titleToLocalStorageKey(chart));
+  window.localStorage.setItem(titleToLocalStorageKey(copy), data ?? "");
+  push(`/${copy}`);
+}
+
+function ProFeatureLink() {
+  return (
+    <div
+      className={`flex items-center p-3 pt-[12px] gap-3 rounded-lg text-sm bg-neutral-200 rounded-lg dark:bg-neutral-900`}
+    >
+      <div className="w-[47px] sm:w-auto">
+        <Sparkle
+          size={30}
+          className="text-blue-500 translate-y-[-1px] dark:text-orange-500"
         />
-      </Box>
-      <img
-        src="/images/flowchart-person.svg"
-        alt="Person making a flowchart"
-        className={styles.FlowchartPerson}
-      />
-    </Box>
+      </div>
+      <div className="flex w-full flex-col items-start">
+        <span>
+          <Trans>Permanent Charts are a Pro Feature</Trans>
+        </span>
+        <Link
+          to="/pricing"
+          className="text-blue-500 dark:text-orange-500"
+          data-testid="to-pricing"
+        >
+          <Trans>Learn about Flowchart Fun Pro</Trans>
+        </Link>
+      </div>
+    </div>
   );
 }

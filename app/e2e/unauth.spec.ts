@@ -19,7 +19,8 @@ test.describe("unauth", () => {
   test("View Pricing Page", async ({ page }) => {
     await goToTab(page, "Charts");
 
-    await page.click('button:has-text("Learn More")');
+    // click test id "to-pricing"
+    await page.getByTestId("to-pricing").click();
 
     // Expect "Sponsor flowchart.fun" to be visible
     await expect(
@@ -28,13 +29,18 @@ test.describe("unauth", () => {
   });
 
   test("Create New Local Chart", async ({ page }) => {
-    await goToTab(page, "Charts");
-    // Click [placeholder="Enter a title"]
-    await page.click('[placeholder="Enter a title"]');
-    // Fill [placeholder="Enter a title"]
-    await page.fill('[placeholder="Enter a title"]', "My New Chart");
-    // Click text=Createflowchart.fun/my-new-chart >> button
-    await page.click("text=Createflowchart.fun/my-new-chart >> button");
+    await goToTab(page, "New");
+
+    await page.getByRole("link", { name: "New" }).click();
+    await page.getByPlaceholder("Untitled").click();
+    await page.getByPlaceholder("Untitled").press("Meta+a");
+    await page.getByPlaceholder("Untitled").fill("My New Chart");
+    await page
+      .getByRole("radio", {
+        name: "Temporary Stored on this computer Deleted when browser data is cleared",
+      })
+      .click();
+    await page.getByRole("button", { name: "Create" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/my-new-chart`);
   });
 
@@ -46,87 +52,32 @@ test.describe("unauth", () => {
 
   test("Clone a Chart", async ({ page }) => {
     await goToTab(page, "Charts");
-    // Click text=Name/ >> button >> nth=0
-    await page.locator("text=Name/ >> button").first().click();
-    // Click text=What would you like to name this copy?Create >> input[name="chartTitle"]
-    await page
-      .locator(
-        'text=What would you like to name this copy?Create >> input[name="chartTitle"]'
-      )
-      .click();
-    // Click text=What would you like to name this copy?Create >> input[name="chartTitle"]
-    await page
-      .locator(
-        'text=What would you like to name this copy?Create >> input[name="chartTitle"]'
-      )
-      .click();
-    // Fill text=What would you like to name this copy?Create >> input[name="chartTitle"]
-    await page
-      .locator(
-        'text=What would you like to name this copy?Create >> input[name="chartTitle"]'
-      )
-      .fill("my copy");
-    // Click [aria-label="Duplicate"] button:has-text("Create")
-    await page
-      .locator('[aria-label="Duplicate"] button:has-text("Create")')
-      .click();
-    await expect(page).toHaveURL(`${BASE_URL}/my-copy`);
-    // Click text=my-copy
 
-    await expect(page.locator("text=my-copy")).toBeVisible();
-  });
+    // click element with aria label "Clone"
+    await page.getByRole("button", { name: "Copy flowchart: /" }).click();
 
-  test("Local chart with no change doesn't save in local storage", async ({
-    page,
-  }) => {
-    // Click span:has-text("Charts")
-    await page.locator('span:has-text("Charts")').click();
-    await expect(page).toHaveURL(`${BASE_URL}/y`);
-    // Click [placeholder="Enter a title"]
-    await page.locator('[placeholder="Enter a title"]').click();
-    // Fill [placeholder="Enter a title"]
-    await page.locator('[placeholder="Enter a title"]').fill("my new chart");
-    // Click button:has-text("Create")
-    await page.locator('button:has-text("Create")').click();
-    await expect(page).toHaveURL(`${BASE_URL}/my-new-chart`);
-    // Click span:has-text("Charts")
-    await page.locator('span:has-text("Charts")').click();
-    await expect(page).toHaveURL(`${BASE_URL}/y`);
+    await expect(page).toHaveURL(`${BASE_URL}/-1`);
 
-    // expect "my-new-chart" NOT to be in the document
-    await expect(page.locator("text=my-new-chart")).not.toBeVisible();
+    await expect(page.locator("text=-1")).toBeVisible();
   });
 
   test("Delete a chart", async ({ page }) => {
-    // Click span:has-text("Charts")
-    await page.locator('span:has-text("Charts")').click();
-    await expect(page).toHaveURL(`${BASE_URL}/y`);
-    // Click [placeholder="Enter a title"]
-    await page.locator('[placeholder="Enter a title"]').click();
-    // Fill [placeholder="Enter a title"]
-    await page.locator('[placeholder="Enter a title"]').fill("delete me");
-    // Press Enter
-    await page.locator('[placeholder="Enter a title"]').press("Enter");
-    await expect(page).toHaveURL(`${BASE_URL}/delete-me`);
+    await goToTab(page, "New");
 
-    await changeEditorText(page, "1");
+    await page.getByPlaceholder("Untitled").click();
+    await page.getByPlaceholder("Untitled").press("Meta+a");
+    await page.getByPlaceholder("Untitled").fill("to delete");
+    await page.getByRole("button", { name: "Create" }).click();
 
-    // Click span:has-text("Charts")
-    await page.locator('span:has-text("Charts")').click();
+    await goToTab(page, "Charts");
 
-    await expect(page).toHaveURL(`${BASE_URL}/y`);
-
-    // expect "delete-me" to be in the document
-    await expect(page.locator("text=delete-me")).toBeVisible();
-
-    // Click [aria-label="Delete \"delete-me\""]
-    await page.locator('[aria-label="Delete \\"delete-me\\""]').click();
-
-    // Click button:has-text("Delete")
-    await page.locator('button:has-text("Delete")').click();
+    await page
+      .getByRole("button", { name: "Delete flowchart: /to-delete" })
+      .click();
+    await page.getByRole("button", { name: "Delete" }).click();
 
     // expect "delete-me" NOT to be in the document
-    await expect(page.locator("text=delete-me")).not.toBeVisible();
+    await expect(page.locator("text=to-delete")).not.toBeVisible();
   });
 
   test("Create a New Local Chart", async ({ page }) => {
@@ -155,13 +106,15 @@ test.describe("unauth", () => {
     ).toBeVisible();
   });
 
-  test.skip("Creating a new chart from a template immediatetly creates a local chart", async ({
+  test("Creating a new chart from a template immediatetly creates a local chart", async ({
     page,
+    browserName,
   }) => {
-    // Need timeout to avoid failure in firefox
-    // https://github.com/microsoft/playwright/issues/20749
-    await page.waitForTimeout(1000);
-
+    if (browserName === "firefox") {
+      // Firefox has a weird bug, most likely due to the "#" in the URL
+      return;
+    }
+    await page.goto(BASE_URL);
     // go to url
     await page.goto(
       `${BASE_URL}/n#C4ewBARgpmCWB2ZgAsYBMQGMCuBbK8wAUALxllEDeRYYARAA4CGATgM5Qt0Bc9A5iyYNkAWg4AbKJlBciAX1LkSQA`

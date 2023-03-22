@@ -330,11 +330,12 @@ export function SyntaxReference() {
             </section>
             <section>
               <h1>
-                <Trans>Style Attributes</Trans>
+                <Trans>Special Attributes</Trans>
               </h1>
               <p>
                 <Trans>
-                  Style attributes can be used to style nodes and edges
+                  Certain attributes can be used to customize the appearance or
+                  functionality of elements.
                 </Trans>
               </p>
               <h2>
@@ -365,6 +366,17 @@ export function SyntaxReference() {
               <CodeExample
                 code={`Flowchart Fun <span data-highlight>[src="https://flowchart.fun/apple-touch-icon.png"]</span>[w=90][h=90]`}
                 src="15"
+              />
+              <h2>Links</h2>
+              <p>
+                <Trans>
+                  Use the attribute <code>href</code> to set a link on a node
+                  that opens in a new tab.
+                </Trans>
+              </p>
+              <CodeExample
+                code={`Open Twitter 🐦 <span data-highlight>[href="https://twitter.com"]</span>`}
+                src="17"
               />
             </section>
           </Box>

@@ -230,6 +230,13 @@ function initializeGraph({
         });
       }
     });
+    // on node tap, if has a href, open it
+    cyCurrent.on("tap", "node", function handleTap(this: NodeSingular) {
+      const { href } = this.data();
+      if (href) {
+        window.open(href, "_blank");
+      }
+    });
     document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
 
     return () => {

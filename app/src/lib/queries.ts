@@ -1,4 +1,5 @@
 import { PostgrestError } from "@supabase/supabase-js";
+import { format, formatDistanceStrict, parseISO } from "date-fns";
 import { useContext } from "react";
 import { QueryClient, useQuery } from "react-query";
 import Stripe from "stripe";
@@ -180,6 +181,31 @@ export async function makeChart({
     .select();
 }
 
+export async function copyHostedChartById(id: string) {
+  if (!supabase) return;
+  // get current user
+  const { data: sessionData } = await supabase.auth.getSession();
+  if (!sessionData.session) throw new Error("No session");
+  const { data, error } = await supabase
+    .from("user_charts")
+    .select("name,chart")
+    .eq("id", id);
+  if (error) throw error;
+  const chart = data?.[0];
+  if (!chart) throw new Error("No chart found");
+
+  const response = await makeChart({
+    name: `Copy of ${chart.name}`,
+    user_id: sessionData.session.user.id,
+    chart: chart.chart,
+  });
+
+  if (!response) throw new Error("Unable to copy chart");
+  if (response.error) throw response.error;
+
+  return response.data[0];
+}
+
 async function userCharts() {
   if (!supabase) return;
   const { data, error } = await supabase
@@ -187,7 +213,19 @@ async function userCharts() {
     .select("id,name,created_at,updated_at,is_public")
     .order("updated_at", { ascending: false });
   if (error) throw error;
-  return data;
+  return data.map((chart) => {
+    const niceUpdatedDate = `Updated ${formatDistanceStrict(
+      parseISO(chart.updated_at),
+      new Date()
+    )}`;
+    // nice created date like "March 10th, 2004"
+    const niceCreatedDate = format(parseISO(chart.created_at), "MMMM do, yyyy");
+    return {
+      ...chart,
+      niceUpdatedDate,
+      niceCreatedDate,
+    };
+  });
 }
 
 /** We can manually pass the user id if we use this hook above the AppContext */
