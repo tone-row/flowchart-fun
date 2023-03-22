@@ -13,7 +13,6 @@ const Edit = lazy(() => import("../pages/Edit"));
 const EditHosted = lazy(() => import("../pages/EditHosted"));
 /** Read only chart, encoded in url / maybe fullscreen */
 const ReadOnly = lazy(() => import("../pages/ReadOnly"));
-const Charts = lazy(() => import("../pages/Charts"));
 const Pricing = lazy(() => import("../pages/Pricing"));
 const Blog = lazy(() => import("../pages/Blog"));
 const Post = lazy(() => import("../pages/post/Post"));
@@ -22,6 +21,7 @@ const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
 const Login = lazy(() => import("../pages/LogIn"));
+const Charts = lazy(() => import("../pages/Charts"));
 
 export default function Router() {
   usePageViews();

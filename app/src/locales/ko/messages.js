@@ -5,8 +5,8 @@
     "(before a colon creates a label)": "(레이블을 생성합니다)",
     "A new version of the app is available. Please reload to update.":
       "A new version of the app is available. Please reload to update.",
-    "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
-      "어디서든 이 차트를 이용하실 수 있습니다.<0/>편집한 내용의 동기화가 유지된 차트를 공유/삽입하세요",
+    "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
+      "어디서든 이 차트에 액세스하세요.<0/>동기화되어 유지되는 플로우차트를 공유하고 삽입하세요.",
     "Accessible from any device": "모든 장치에서 액세스 가능",
     Account: "계정",
     Advanced: "고급의",
@@ -30,6 +30,8 @@
     Cancel: "취소",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다.",
+    "Certain attributes can be used to customize the appearance or functionality of elements.":
+      "Certain attributes can be used to customize the appearance or functionality of elements.",
     "Change Email Address": "이메일 주소 변경",
     Changelog: "변경 로그",
     Charts: "차트",
@@ -65,7 +67,6 @@
     "Create Flowcharts from a Prompt with AI":
       "AI 프롬프트를 사용하여 다이어그램 생성",
     "Create a New Flowchart": "새 다이어그램 만들기",
-    Created: "생성됨",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "커스텀 공유 옵션",
@@ -73,7 +74,6 @@
     Dark: "다크",
     "Dark Mode": "다크 모드",
     Date: "날짜",
-    Delete: "삭제",
     "Deleted when browser data is cleared": "브라우저 데이터가 지워지면 삭제됨",
     "Describe the flowchart you wish to create": "만들려는 다이어그램 설명",
     Direction: "방향",
@@ -88,7 +88,6 @@
     "Download SVG": "SVG 다운로드",
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
-    Duplicate: "복제",
     Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
@@ -102,7 +101,6 @@
     Editor: "에디터",
     Eggs: "달걀",
     Email: "이메일",
-    "Enter a title": "제목을 입력하세요",
     "Everything in Free": "무료 플랜의 모든 것",
     Excalidraw: "Excalidraw",
     Export: "내보내기",
@@ -124,7 +122,6 @@
     Help: "도움말",
     History: "기록",
     Home: "집",
-    "Hosted Charts": "호스트 차트",
     "ID's": "ID's",
     "Image Export": "이미지 내보내기",
     Images: "Images",
@@ -137,6 +134,7 @@
     "Layout is Frozen": "레이아웃이 고정됨",
     "Leading References": "Leading References",
     "Learn More": "더 알아보기",
+    "Learn about Flowchart Fun Pro": "Flowchart Fun Pro에 대해 알아보기",
     "Left to Right": "왼쪽에서 오른쪽으로",
     Light: "라이트",
     "Light Mode": "라이트 모드",
@@ -167,10 +165,14 @@
     "Office Hours": "근무 시간",
     "One-on-One Support": "일대일 지원",
     "One-time Share Links": "일회성 공유 링크",
+    "Only available on this device.<0/>Clearing your browser cache will erase them.":
+      "이 기기에서만 사용 가능합니다.<0/>브라우저 캐시를 지우면 삭제됩니다.",
     "Open Customer Portal": "고객 포털 열기",
     "Paste the information you wish to convert to a flowchart":
       "순서도로 변환하려는 정보를 붙여넣기",
     Permalinks: "퍼머링크",
+    "Permanent Charts are a Pro Feature": "영구 차트는 프로 기능입니다",
+    "Permanent Flowcharts": "영구 플로우차트",
     "Persistent Flowcharts": "영구 다이어그램",
     Playbook: "플레이북",
     Pricing: "가격",
@@ -216,8 +218,7 @@
       "죄송합니다! 이 페이지는 영어로만 제공됩니다.",
     "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "간격",
-    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
-      "호스트된 플로차트와 최신 스타일 및 기능에 액세스하기 위해 월 3달러 또는 연간 30달러로 플로차트.펀 후원",
+    "Special Attributes": "Special Attributes",
     Standard: "표준",
     Start: "시작",
     Status: "상태",
@@ -228,10 +229,7 @@
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Flowchart Fun를 통해 워크플로우를 능률화하고 프로세스 시각화를 단순화하세요",
     Style: "스타일",
-    "Style Attributes": "Style Attributes",
     "Style Classes": "Style Classes",
-    "Style attributes can be used to style nodes and edges":
-      "Style attributes can be used to style nodes and edges",
     Submit: "보내다",
     Subscription: "구독",
     "Subscription will end": "구독이 종료될 예정입니다.",
@@ -248,8 +246,7 @@
       "Text sizes include small, regular, large, and extra-large.",
     "Thank you for your feedback!": "피드백을 해주셔서 감사합니다!",
     Theme: "테마",
-    "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
-      "다음의 차트는 이 장치의 이 브라우저에서만 이용하실 수 있습니다.<0/>브라우저를 정리하면 local storage 에서 다음의 차트를 삭제합니다.",
+    "This action cannot be undone.": "이 작업은 취소할 수 없습니다.",
     "This app works by typing": "이 앱은 타이핑으로 작동합니다",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사용자가 되어</0> 이 기능을 사용할 수 있게 하세요.",
@@ -260,8 +257,9 @@
     "Unique text value to identify a node":
       "Unique text value to identify a node",
     "Update Email": "이메일 업데이트",
-    Updated: "업데이트됨",
     "Use classes to group nodes": "Use classes to group nodes",
+    "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
+      "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.",
     "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.":
       "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.",
     "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.":
@@ -274,8 +272,6 @@
       "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다!",
     "We use cookies to keep you logged in.":
       "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다.",
-    "What would you like to name this copy?":
-      "이 사본의 이름을 무엇으로 지정하시겠습니까?",
     "What would you like to share with us?": "무엇을 공유하시겠습니까?",
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
@@ -286,6 +282,7 @@
       '텍스트를 "\\( \\)"로 감싸서 가장자리를 만들 수도 있습니다.',
     "You must log in to create a standard flowchart.":
       "표준 다이어그램을 만들려면 로그인해야 합니다.",
+    "Your Charts": "당신의 차트",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오.",
     "Zoom In": "Zoom In",

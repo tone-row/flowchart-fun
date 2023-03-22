@@ -99,7 +99,7 @@ export const Header = memo(function SharedHeader() {
                   aria-current={isChartsPage ? "page" : undefined}
                 />
               </NavigationMenu.Item>
-              <DropdownMenu.Root>
+              <DropdownMenu.Root modal={false}>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
                     label={t`Help`}
@@ -136,7 +136,7 @@ export const Header = memo(function SharedHeader() {
           </NavigationMenu.List>
           <NavigationMenu.List asChild>
             <nav className="shared-header__right">
-              <DropdownMenu.Root>
+              <DropdownMenu.Root modal={false}>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
                     label={t`Info`}

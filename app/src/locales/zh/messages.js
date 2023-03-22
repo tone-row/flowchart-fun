@@ -5,8 +5,8 @@
     "(before a colon creates a label)": "(在冒号前创建一个标签)",
     "A new version of the app is available. Please reload to update.":
       "A new version of the app is available. Please reload to update.",
-    "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
-      "随时随地访问这些图表。<0/>共享/嵌入与您编辑的文档保持同步的图表。",
+    "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
+      "从任何地方访问这些图表。<0/>共享并嵌入保持同步的流程图。",
     "Accessible from any device": "可从任何设备访问",
     Account: "帐户",
     Advanced: "先进的",
@@ -30,6 +30,8 @@
     Cancel: "取消",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "取消订阅。您的托管图表将变为只读。",
+    "Certain attributes can be used to customize the appearance or functionality of elements.":
+      "Certain attributes can be used to customize the appearance or functionality of elements.",
     "Change Email Address": "更改电子邮件地址",
     Changelog: "变更日志",
     Charts: "图表",
@@ -64,7 +66,6 @@
     Create: "创建",
     "Create Flowcharts from a Prompt with AI": "使用 AI 根据提示创建图表",
     "Create a New Flowchart": "创建新图表",
-    Created: "已创建",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "自定义分享选项",
@@ -72,7 +73,6 @@
     Dark: "深色",
     "Dark Mode": "深色模式",
     Date: "日期",
-    Delete: "删除",
     "Deleted when browser data is cleared": "清除浏览器数据时删除",
     "Describe the flowchart you wish to create": "描述您要创建的图表",
     Direction: "方向",
@@ -87,7 +87,6 @@
     "Download SVG": "下载 SVG",
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
-    Duplicate: "复制",
     Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
@@ -101,7 +100,6 @@
     Editor: "编辑器",
     Eggs: "蛋",
     Email: "电子邮件",
-    "Enter a title": "输入标题",
     "Everything in Free": "免费计划中的一切",
     Excalidraw: "Excalidraw",
     Export: "导出",
@@ -123,7 +121,6 @@
     Help: "帮助",
     History: "历史",
     Home: "主页",
-    "Hosted Charts": "托管的图表",
     "ID's": "ID's",
     "Image Export": "图像导出",
     Images: "Images",
@@ -136,6 +133,7 @@
     "Layout is Frozen": "布局被冻结",
     "Leading References": "Leading References",
     "Learn More": "学到更多",
+    "Learn about Flowchart Fun Pro": "了解关于Flowchart Fun Pro",
     "Left to Right": "从左到右",
     Light: "浅色",
     "Light Mode": "浅色模式",
@@ -166,10 +164,14 @@
     "Office Hours": "工作时间",
     "One-on-One Support": "一对一支持",
     "One-time Share Links": "一次性分享链接",
+    "Only available on this device.<0/>Clearing your browser cache will erase them.":
+      "仅在此设备上可用。<0/>清除浏览器缓存将抹去它们。",
     "Open Customer Portal": "打开客户门户",
     "Paste the information you wish to convert to a flowchart":
       "将要转换的信息粘贴到流程图中",
     Permalinks: "永久链接",
+    "Permanent Charts are a Pro Feature": "永久图表是专业功能",
+    "Permanent Flowcharts": "永久流程图",
     "Persistent Flowcharts": "持久图",
     Playbook: "剧本",
     Pricing: "价钱",
@@ -215,8 +217,7 @@
       "抱歉！此页面只有英语版。",
     "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "间距",
-    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
-      "以 3 美元/月或 30 美元/年的价格赞助流程图.fun，以访问托管流程图以及最新的样式和功能",
+    "Special Attributes": "Special Attributes",
     Standard: "标准",
     Start: "开始",
     Status: "状态",
@@ -227,10 +228,7 @@
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "使用 Flowchart Fun，简化您的工作流程和过程可视化",
     Style: "风格",
-    "Style Attributes": "Style Attributes",
     "Style Classes": "Style Classes",
-    "Style attributes can be used to style nodes and edges":
-      "Style attributes can be used to style nodes and edges",
     Submit: "提交",
     Subscription: "订阅",
     "Subscription will end": "订阅即将到期",
@@ -247,8 +245,7 @@
       "Text sizes include small, regular, large, and extra-large.",
     "Thank you for your feedback!": "感谢您的反馈!",
     Theme: "风格",
-    "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
-      "这些图表仅在此设备上的此浏览器中可用。<0/>清除浏览器的 local storage 将删除这些图表。",
+    "This action cannot be undone.": "此操作无法撤销。",
     "This app works by typing": "这款应用的工作原理是输入",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。",
@@ -259,8 +256,9 @@
     "Unique text value to identify a node":
       "Unique text value to identify a node",
     "Update Email": "更新电子邮件",
-    Updated: "已更新",
     "Use classes to group nodes": "Use classes to group nodes",
+    "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
+      "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.",
     "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.":
       "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.",
     "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.":
@@ -273,7 +271,6 @@
       "我们感谢您的全部反馈、建议、报错和关于功能的需求！",
     "We use cookies to keep you logged in.":
       "我们使用 cookies 来让您保持登录状态。",
-    "What would you like to name this copy?": "你想将这个副本命名为什么？",
     "What would you like to share with us?": "您想跟我们分享什么？",
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
@@ -283,6 +280,7 @@
       "您还可以将文本包装在\\n“\\( \\)”中以创建链接",
     "You must log in to create a standard flowchart.":
       "您必须登录才能创建标准图表。",
+    "Your Charts": "您的图表",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",
     "Zoom In": "Zoom In",
