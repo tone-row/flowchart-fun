@@ -5,8 +5,8 @@
     "(before a colon creates a label)": "(before a colon creates a label)",
     "A new version of the app is available. Please reload to update.":
       "A new version of the app is available. Please reload to update.",
-    "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
-      "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.",
+    "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
+      "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.",
     "Accessible from any device": "Accessible from any device",
     Account: "Account",
     Advanced: "Advanced",
@@ -30,6 +30,8 @@
     Cancel: "Cancel",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "Cancel your subscription. Your hosted charts will become read-only.",
+    "Certain attributes can be used to customize the appearance or functionality of elements.":
+      "Certain attributes can be used to customize the appearance or functionality of elements.",
     "Change Email Address": "Change Email Address",
     Changelog: "Changelog",
     Charts: "Charts",
@@ -65,7 +67,6 @@
     "Create Flowcharts from a Prompt with AI":
       "Create Flowcharts from a Prompt with AI",
     "Create a New Flowchart": "Create a New Flowchart",
-    Created: "Created",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "Custom Sharing Options",
@@ -73,7 +74,6 @@
     Dark: "Dark",
     "Dark Mode": "Dark Mode",
     Date: "Date",
-    Delete: "Delete",
     "Deleted when browser data is cleared":
       "Deleted when browser data is cleared",
     "Describe the flowchart you wish to create":
@@ -91,7 +91,6 @@
     "Download SVG": "Download SVG",
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
-    Duplicate: "Duplicate",
     Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
@@ -105,7 +104,6 @@
     Editor: "Editor",
     Eggs: "Eggs",
     Email: "Email",
-    "Enter a title": "Enter a title",
     "Everything in Free": "Everything in Free",
     Excalidraw: "Excalidraw",
     Export: "Export",
@@ -127,7 +125,6 @@
     Help: "Help",
     History: "History",
     Home: "Home",
-    "Hosted Charts": "Hosted Charts",
     "ID's": "ID's",
     "Image Export": "Image Export",
     Images: "Images",
@@ -140,6 +137,7 @@
     "Layout is Frozen": "Layout is Frozen",
     "Leading References": "Leading References",
     "Learn More": "Learn More",
+    "Learn about Flowchart Fun Pro": "Learn about Flowchart Fun Pro",
     "Left to Right": "Left to Right",
     Light: "Light",
     "Light Mode": "Light Mode",
@@ -170,10 +168,14 @@
     "Office Hours": "Office Hours",
     "One-on-One Support": "One-on-One Support",
     "One-time Share Links": "One-time Share Links",
+    "Only available on this device.<0/>Clearing your browser cache will erase them.":
+      "Only available on this device.<0/>Clearing your browser cache will erase them.",
     "Open Customer Portal": "Open Customer Portal",
     "Paste the information you wish to convert to a flowchart":
       "Paste the information you wish to convert to a flowchart",
     Permalinks: "Permalinks",
+    "Permanent Charts are a Pro Feature": "Permanent Charts are a Pro Feature",
+    "Permanent Flowcharts": "Permanent Flowcharts",
     "Persistent Flowcharts": "Persistent Flowcharts",
     Playbook: "Playbook",
     Pricing: "Pricing",
@@ -219,8 +221,7 @@
       "Sorry! This page is only available in English.",
     "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "Spacing",
-    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
-      "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features",
+    "Special Attributes": "Special Attributes",
     Standard: "Standard",
     Start: "Start",
     Status: "Status",
@@ -231,10 +232,7 @@
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Streamline your workflow and simplify your process visualization with Flowchart Fun",
     Style: "Style",
-    "Style Attributes": "Style Attributes",
     "Style Classes": "Style Classes",
-    "Style attributes can be used to style nodes and edges":
-      "Style attributes can be used to style nodes and edges",
     Submit: "Submit",
     Subscription: "Subscription",
     "Subscription will end": "Subscription will end",
@@ -251,8 +249,7 @@
       "Text sizes include small, regular, large, and extra-large.",
     "Thank you for your feedback!": "Thank you for your feedback!",
     Theme: "Theme",
-    "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
-      "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.",
+    "This action cannot be undone.": "This action cannot be undone.",
     "This app works by typing": "This app works by typing",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.",
@@ -263,8 +260,9 @@
     "Unique text value to identify a node":
       "Unique text value to identify a node",
     "Update Email": "Update Email",
-    Updated: "Updated",
     "Use classes to group nodes": "Use classes to group nodes",
+    "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
+      "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.",
     "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.":
       "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.",
     "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.":
@@ -277,8 +275,6 @@
       "We appreciate all of your feedback, suggestions, bugs, and feature requests!",
     "We use cookies to keep you logged in.":
       "We use cookies to keep you logged in.",
-    "What would you like to name this copy?":
-      "What would you like to name this copy?",
     "What would you like to share with us?":
       "What would you like to share with us?",
     "Width and Height": "Width and Height",
@@ -290,6 +286,7 @@
       'You can also wrap text in "\\( \\)" to create an edge',
     "You must log in to create a standard flowchart.":
       "You must log in to create a standard flowchart.",
+    "Your Charts": "Your Charts",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
     "Zoom In": "Zoom In",

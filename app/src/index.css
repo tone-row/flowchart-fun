@@ -161,6 +161,7 @@ div[data-reach-tooltip] {
   letter-spacing: -0.025em;
 }
 
-.chart-link:hover .chart-link-buttons {
+.chart-link:hover .chart-link-buttons,
+.chart-link:focus-within .chart-link-buttons {
   opacity: 1;
 }

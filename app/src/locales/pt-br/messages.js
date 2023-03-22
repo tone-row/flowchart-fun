@@ -6,8 +6,8 @@
       "(antes de dois pontos cria uma etiqueta)",
     "A new version of the app is available. Please reload to update.":
       "A new version of the app is available. Please reload to update.",
-    "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
-      "Acesse os diagramas de qualquer lugar.<0/>Compartilhe/incorpore diagramas que ficam em sincronização com suas edições.",
+    "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
+      "Acesse esses gráficos de qualquer lugar.<0/>Compartilhe e incorpore fluxogramas que permanecem sincronizados.",
     "Accessible from any device": "Acessível de qualquer dispositivo",
     Account: "Conta",
     Advanced: "Avançado",
@@ -31,6 +31,8 @@
     Cancel: "Cancelar",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "Cancele sua inscrição. Seus diagramas hospedados não serão modificáveis.",
+    "Certain attributes can be used to customize the appearance or functionality of elements.":
+      "Certain attributes can be used to customize the appearance or functionality of elements.",
     "Change Email Address": "Mude o endereço de email",
     Changelog: "Registro de alterações",
     Charts: "Diagramas",
@@ -66,7 +68,6 @@
     "Create Flowcharts from a Prompt with AI":
       "Crie diagramas usando prompts de IA",
     "Create a New Flowchart": "Criar um novo diagrama",
-    Created: "Criado",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "Opções de Compartilhamento Personalizadas",
@@ -74,7 +75,6 @@
     Dark: "Escuro",
     "Dark Mode": "Modo escuro",
     Date: "Data",
-    Delete: "Deletar",
     "Deleted when browser data is cleared":
       "Excluído quando os dados do navegador são apagados",
     "Describe the flowchart you wish to create":
@@ -92,7 +92,6 @@
     "Download SVG": "Baixar SVG",
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
-    Duplicate: "Duplicar",
     Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
@@ -106,7 +105,6 @@
     Editor: "Editor",
     Eggs: "Ovos",
     Email: "E-mail",
-    "Enter a title": "Insira um título",
     "Everything in Free": "Tudo no Plano Gratuito",
     Excalidraw: "Excalidraw",
     Export: "Exportar",
@@ -128,7 +126,6 @@
     Help: "Ajuda",
     History: "Histórico",
     Home: "Página inicial",
-    "Hosted Charts": "Diagramas hospedados",
     "ID's": "ID's",
     "Image Export": "Exportação de imagem",
     Images: "Images",
@@ -141,6 +138,7 @@
     "Layout is Frozen": "O layout está congelado",
     "Leading References": "Leading References",
     "Learn More": "Saber mais",
+    "Learn about Flowchart Fun Pro": "Saiba mais sobre o Flowchart Fun Pro",
     "Left to Right": "Da esquerda para direita",
     Light: "Claro",
     "Light Mode": "Modo claro",
@@ -171,10 +169,15 @@
     "Office Hours": "Horário de trabalho",
     "One-on-One Support": "Suporte Individual",
     "One-time Share Links": "Links de compartilhamento único",
+    "Only available on this device.<0/>Clearing your browser cache will erase them.":
+      "Disponível apenas neste dispositivo.<0/>Limpar o cache do navegador irá apagá-los.",
     "Open Customer Portal": "Abra o portal do cliente",
     "Paste the information you wish to convert to a flowchart":
       "Cole as informações que deseja converter em um fluxograma",
     Permalinks: "Permalinks",
+    "Permanent Charts are a Pro Feature":
+      "Gráficos permanentes são um recurso Pro",
+    "Permanent Flowcharts": "Fluxogramas Permanentes",
     "Persistent Flowcharts": "Diagramas Persistentes",
     Playbook: "Cartilha",
     Pricing: "Preços",
@@ -220,8 +223,7 @@
       "Sinto muito! Esta página só está disponível em inglês.",
     "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "Espaçamento",
-    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
-      "Patrocine flowchart.fun por US$ 3/mês ou US$30/ano para acessar fluxogramas hospedados e os mais novos estilos e recursos",
+    "Special Attributes": "Special Attributes",
     Standard: "Padrão",
     Start: "Início",
     Status: "Status",
@@ -232,10 +234,7 @@
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "Agilize seu fluxo de trabalho e simplifique a visualização do processo com o Flowchart Fun",
     Style: "Estilo",
-    "Style Attributes": "Style Attributes",
     "Style Classes": "Style Classes",
-    "Style attributes can be used to style nodes and edges":
-      "Style attributes can be used to style nodes and edges",
     Submit: "Enviar",
     Subscription: "Inscrição",
     "Subscription will end": "Inscrição acabará",
@@ -252,8 +251,7 @@
       "Text sizes include small, regular, large, and extra-large.",
     "Thank you for your feedback!": "Agradecimentos pelo seu feedback!",
     Theme: "Tema",
-    "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
-      "Estes diagramas estão apenas disponíveis nesse navegador desse dispositivo.<0/>Limpando o local storage do seu navegador, irá apagá-los.",
+    "This action cannot be undone.": "Esta ação não pode ser desfeita.",
     "This app works by typing": "Este aplicativo funciona por digitação",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "Esta funcionalidade está disponível apenas para usuários Pro. <0>Torne-se um usuário Pro</0> para desbloqueá-la.",
@@ -264,8 +262,9 @@
     "Unique text value to identify a node":
       "Unique text value to identify a node",
     "Update Email": "Atualizar e-mail",
-    Updated: "Atualizado",
     "Use classes to group nodes": "Use classes to group nodes",
+    "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
+      "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.",
     "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.":
       "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.",
     "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.":
@@ -278,8 +277,6 @@
       "Nós agradecemos todos os seus feedbacks, sugestões, bugs, e requisições de funcionalidades!",
     "We use cookies to keep you logged in.":
       "Nós usamos cookies para manter você logado.",
-    "What would you like to name this copy?":
-      "Como você gostaria de chamar essa cópia?",
     "What would you like to share with us?":
       "O que você deseja compartilhar com a gente?",
     "Width and Height": "Width and Height",
@@ -291,6 +288,7 @@
       'Você também pode quebrar o texto dentro de "\\( \\)" para criar um link',
     "You must log in to create a standard flowchart.":
       "Você deve efetuar login para criar um diagrama padrão.",
+    "Your Charts": "Seus Gráficos",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um(a) patrocinador(a).",
     "Zoom In": "Zoom In",

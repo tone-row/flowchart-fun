@@ -5,8 +5,8 @@
     "(before a colon creates a label)": "(कॉलन से पहले एक लेबल बनाता है)",
     "A new version of the app is available. Please reload to update.":
       "A new version of the app is available. Please reload to update.",
-    "Access these charts from anywhere.<0/>Share/embed charts that stay in sync with your edits.":
-      "इन चार्ट को कहीं से भी एक्सेस करें.<0/>ऐसे चार्ट शेयर करें/लगाएं जो आपके एडिट के साथ सिंक हों.",
+    "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
+      "इन चार्ट्स को कहीं से भी एक्सेस करें।<0/>सिंक्रोनाइज़्ड रहने वाले फ्लोचार्ट को साझा करें और एम्बेड करें।",
     "Accessible from any device": "किसी भी उपकरण से पहुँचा जा सकता है",
     Account: "खाता",
     Advanced: "विकसित",
@@ -30,6 +30,8 @@
     Cancel: "रद्द करें",
     "Cancel your subscription. Your hosted charts will become read-only.":
       "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे.",
+    "Certain attributes can be used to customize the appearance or functionality of elements.":
+      "Certain attributes can be used to customize the appearance or functionality of elements.",
     "Change Email Address": "ईमेल पता बदलें",
     Changelog: "बदलाव का",
     Charts: "चार्ट",
@@ -65,7 +67,6 @@
     "Create Flowcharts from a Prompt with AI":
       "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं",
     "Create a New Flowchart": "एक नया आरेख बनाएँ",
-    Created: "बनाया गया",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "कस्टम शेयरिंग विकल्प",
@@ -73,7 +74,6 @@
     Dark: "डार्क",
     "Dark Mode": "डार्क मोड",
     Date: "तारीख़",
-    Delete: "हटाएँ",
     "Deleted when browser data is cleared":
       "ब्राउज़र डेटा साफ़ होने पर हटा दिया गया",
     "Describe the flowchart you wish to create":
@@ -91,7 +91,6 @@
     "Download SVG": "SVG डाउनलोड करें",
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
-    Duplicate: "डुप्लिकेट बनाएँ",
     Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
@@ -105,7 +104,6 @@
     Editor: "संपादक",
     Eggs: "अंडे",
     Email: "ईमेल",
-    "Enter a title": "एक शीर्षक दर्ज करें",
     "Everything in Free": "फ्री प्लान में सब कुछ",
     Excalidraw: "Excalidraw",
     Export: "एक्सपोर्ट करें",
@@ -127,7 +125,6 @@
     Help: "मदद",
     History: "हिस्ट्री",
     Home: "होम",
-    "Hosted Charts": "होस्ट किए गए चार्ट",
     "ID's": "ID's",
     "Image Export": "छवि निर्यात",
     Images: "Images",
@@ -140,6 +137,7 @@
     "Layout is Frozen": "लेआउट जम गया है",
     "Leading References": "Leading References",
     "Learn More": "और अधिक जानें",
+    "Learn about Flowchart Fun Pro": "Flowchart Fun Pro के बारे में जानें",
     "Left to Right": "बाएं से दाएं",
     Light: "लाइट",
     "Light Mode": "लाइट मोड",
@@ -170,10 +168,14 @@
     "Office Hours": "कार्यालय अवधि",
     "One-on-One Support": "एक-पर-एक समर्थन",
     "One-time Share Links": "वन-टाइम शेयर लिंक",
+    "Only available on this device.<0/>Clearing your browser cache will erase them.":
+      "केवल इस उपकरण पर उपलब्ध है।<0/>अपने ब्राउज़र कैश साफ़ करने से उन्हें मिटा दिया जाएगा।",
     "Open Customer Portal": "ग्राहक पोर्टल खोलें",
     "Paste the information you wish to convert to a flowchart":
       "उस जानकारी को पेस्ट करें जिसे आप फ़्लोचार्ट में बदलना चाहते हैं",
     Permalinks: "Permalinks",
+    "Permanent Charts are a Pro Feature": "स्थायी चार्ट एक प्रो सुविधा हैं",
+    "Permanent Flowcharts": "लगातार चार्ट",
     "Persistent Flowcharts": "लगातार आरेख",
     Playbook: "प्लेबुक",
     Pricing: "मूल्य निर्धारण",
@@ -219,8 +221,7 @@
       "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।",
     "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "अंतर",
-    "Sponsor flowchart.fun for $3 / month or $30 / year to access hosted flowcharts and the newest styles and features":
-      "होस्ट किए गए फ़्लोचार्ट और नवीनतम शैलियों और सुविधाओं तक पहुँचने के लिए $3/माह या $30/वर्ष के लिए फ़्लोचार्ट.फ़न को प्रायोजित करें",
+    "Special Attributes": "Special Attributes",
     Standard: "मानक",
     Start: "शुरू",
     Status: "स्टेटस",
@@ -231,10 +232,7 @@
     "Streamline your workflow and simplify your process visualization with Flowchart Fun":
       "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन",
     Style: "शैली",
-    "Style Attributes": "Style Attributes",
     "Style Classes": "Style Classes",
-    "Style attributes can be used to style nodes and edges":
-      "Style attributes can be used to style nodes and edges",
     Submit: "भेजना",
     Subscription: "सदस्यता",
     "Subscription will end": "सदस्यता समाप्त हो जाएगी",
@@ -251,8 +249,7 @@
       "Text sizes include small, regular, large, and extra-large.",
     "Thank you for your feedback!": "आपके फ़ीडबैक के लिए धन्यवाद!",
     Theme: "शैली",
-    "These charts are only available in this browser on this device.<0/>Clearing your browser local storage will erase these.":
-      "ये चार्ट सिर्फ़ इस ब्राउज़र में इस डिवाइस पर उपलब्ध हैं.<0/>ब्राउज़र क्लियर करने से local storage ये सब मिट जाएगा.",
+    "This action cannot be undone.": "इस क्रिया को पूर्ववत नहीं किया जा सकता।",
     "This app works by typing": "यह ऐप टाइप द्वारा काम करता है",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।",
@@ -263,8 +260,9 @@
     "Unique text value to identify a node":
       "Unique text value to identify a node",
     "Update Email": "ईमेल अपडेट करें",
-    Updated: "अपडेट किया गया",
     "Use classes to group nodes": "Use classes to group nodes",
+    "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
+      "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.",
     "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.":
       "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported.",
     "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.":
@@ -277,8 +275,6 @@
       "हम आपके सभी फ़ीडबैक, सुझावों, बग्स और विशेष अनुरोधों की सराहना करते हैं!",
     "We use cookies to keep you logged in.":
       "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं.",
-    "What would you like to name this copy?":
-      "क्या आप इस कॉपी को नाम देना चाहेंगे?",
     "What would you like to share with us?":
       "आप हमारे साथ क्या शेयर करना चाहेंगे?",
     "Width and Height": "Width and Height",
@@ -290,6 +286,7 @@
       'किनारे बनाने के लिए आप टेक्स्ट को "\\( \\)" में भी रैप कर सकते हैं',
     "You must log in to create a standard flowchart.":
       "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।",
+    "Your Charts": "आपके चार्ट",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें.",
     "Zoom In": "Zoom In",
