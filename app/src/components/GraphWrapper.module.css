@@ -14,6 +14,7 @@
     background-color: var(--color-background);
     z-index: -1;
   }
+
   [data-mobile-tab="graph"] .GraphWrapper {
     z-index: 1;
   }
@@ -32,4 +33,5 @@
 .GraphWrapper[data-is-fullscreen="true"] {
   padding: 0 !important;
   display: block;
+  z-index: 1;
 }
