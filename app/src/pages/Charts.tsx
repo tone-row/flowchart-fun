@@ -27,9 +27,9 @@ import {
   useHostedCharts,
 } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
-// Keep these in sync (65px)
-const leftColumnGrid = "grid-cols-[65px_minmax(0,1fr)]";
-const leftMargin = "sm:mx-[65px]";
+// Keep these in sync (55px)
+const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
+const leftMargin = "sm:mx-[55px]";
 
 export default function Charts() {
   const isCustomer = useIsValidCustomer();
@@ -190,12 +190,16 @@ const LargeFolder = memo(function LargeFolder({
       <section className="grid gap-4">
         <Collapsible.Trigger asChild>
           <button
-            className={`grid grid-auto-cols items-center text-left w-full ${leftColumnGrid} focus:shadow-none`}
+            className={`grid grid-auto-cols items-start text-left w-full ${leftColumnGrid} focus:shadow-none`}
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <FolderOpen size={45} /> : <Folder size={45} />}
-            <div className="grid gap-[2px]">
-              <h2 className="text-xl font-bold">{title}</h2>
+            {isOpen ? (
+              <FolderOpen size={36} weight="light" />
+            ) : (
+              <Folder size={36} weight="light" />
+            )}
+            <div className="grid gap-1">
+              <h2 className="text-xl font-bold mt-[4px]">{title}</h2>
               {description ? (
                 <div className="text-sm text-neutral-600 dark:text-neutral-400">
                   {description}
@@ -247,13 +251,13 @@ const ChartLink = memo(function ChartLink({
 }) {
   return (
     <div
-      className={`chart-link rounded grid grid-flow-col grid-cols-[minmax(0,1fr)_auto] items-center sm:-ml-3 ${
+      className={`chart-link rounded grid grid-flow-col grid-cols-[minmax(0,1fr)_auto] items-center ${
         isCurrent
           ? "bg-blue-50 hover:bg-blue-100 dark:bg-blue-900 dark:hover:bg-blue-800"
           : "hover:bg-neutral-200 dark:hover:bg-neutral-900"
       }`}
     >
-      <Link to={href} className="p-2 pl-3">
+      <Link to={href} className="py-2 px-4">
         <div className="grid gap-1">
           <span
             className={`text-lg ${
@@ -271,7 +275,7 @@ const ChartLink = memo(function ChartLink({
           aria-label={`Copy flowchart: ${title}`}
           onClick={handleCopy}
         >
-          <Copy size={24} />
+          <Copy size={20} />
         </button>
         <Dialog.Root>
           <Dialog.Trigger asChild>
@@ -279,7 +283,7 @@ const ChartLink = memo(function ChartLink({
               className="opacity-25 sm:opacity-50 hover:opacity-100 rounded transition-opacity p-1 focus:shadow-none focus:bg-neutral-300/25"
               aria-label={`Delete flowchart: ${title}`}
             >
-              <Trash size={24} />
+              <Trash size={20} />
             </button>
           </Dialog.Trigger>
           <Dialog.Portal>
@@ -337,7 +341,7 @@ function copyLocalChart(chart: string, push: (path: string) => void) {
 function ProFeatureLink() {
   return (
     <div
-      className={`flex items-center p-3 pt-[12px] gap-3 rounded-lg text-sm bg-neutral-200 rounded-lg dark:bg-neutral-900`}
+      className={`flex items-center p-4 pt-[15px] gap-3 rounded-lg text-sm bg-neutral-200 rounded-lg dark:bg-neutral-900`}
     >
       <div className="w-[47px] sm:w-auto">
         <Sparkle

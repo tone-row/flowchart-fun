@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
-import { Export } from "phosphor-react";
 import { Suspense, useContext } from "react";
+import { RiShareForwardFill } from "react-icons/ri";
 
 import { useIsReadOnly, useIsValidCustomer } from "../lib/hooks";
 import { useDocDetails } from "../lib/useDoc";
@@ -64,7 +64,7 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
               <Type as="span" weight="700">
                 <Trans>Export</Trans>
               </Type>
-              <Export size={20} />
+              <RiShareForwardFill size={24} />
             </Box>
           )}
         </div>
