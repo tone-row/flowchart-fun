@@ -153,7 +153,7 @@ importers:
       eslint-plugin-simple-import-sort: ^7.0.0
       file-saver: ^2.0.5
       framer-motion: ^4.1.17
-      graph-selector: ^0.8.3
+      graph-selector: ^0.8.4
       gray-matter: ^4.0.2
       highlight.js: ^11.7.0
       history: ^5.3.0
@@ -250,7 +250,7 @@ importers:
       eslint: 8.24.0
       file-saver: 2.0.5
       framer-motion: 4.1.17_sfoxds7t5ydpegc3knd667wn6m
-      graph-selector: 0.8.3
+      graph-selector: 0.8.4
       gray-matter: 4.0.3
       highlight.js: 11.7.0
       immer: 9.0.16
@@ -8998,6 +8998,12 @@ packages:
 
   /graph-selector/0.8.3:
     resolution: {integrity: sha512-VVSujyFfg45wUohLzNNBLA/dr9R59yI68psU8/w3/dUEN1OQQ3Xh0gAk4p0KlhYcB1OyCKBCKXUwSlBxQDHf1w==}
+    dependencies:
+      '@tone-row/strip-comments': 2.0.6
+    dev: false
+
+  /graph-selector/0.8.4:
+    resolution: {integrity: sha512-oTjEPQIZQbKqP8ABUxyBxsNhZjenMsxHhyFb7j6fpomvx5nWN6UlSQSioIT1T9sHTgEABt2VCOS8wVBwifLC9w==}
     dependencies:
       '@tone-row/strip-comments': 2.0.6
     dev: false
