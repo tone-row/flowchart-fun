@@ -5,6 +5,10 @@ import { AppContext } from "../components/AppContext";
 import { slugify } from "./helpers";
 import { useDocDetails } from "./useDoc";
 
+/**
+ * Returns whether animation has been disabled
+ * via the query string ?animation=0
+ */
 export function getAnimationSettings() {
   const query = new URLSearchParams(window.location.search.slice(1));
   const animation = query.get("animation");

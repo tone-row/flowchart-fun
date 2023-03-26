@@ -3,7 +3,6 @@ import * as Tabs from "@radix-ui/react-tabs";
 import throttle from "lodash.throttle";
 import { editor } from "monaco-editor";
 import { memo, useCallback, useEffect, useMemo, useRef } from "react";
-import { useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
@@ -26,15 +25,16 @@ import { Type } from "../slang";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit() {
-  const isValidSponsor = useIsValidSponsor();
   const { workspace = "" } = useParams<{ workspace?: string }>();
   const editorRef = useRef<null | editor.IStandaloneCodeEditor>(null);
 
-  useQuery(["edit", workspace], () => loadWorkspace(workspace), {
-    enabled: typeof workspace === "string",
-    suspense: false,
-    staleTime: 0,
-  });
+  // Memoized local workspace preparation, keeps it running in-order
+  // Using react-query for this was causing it to be deferred
+  useMemo(() => {
+    return loadWorkspace(workspace);
+  }, [workspace]);
+
+  const isValidSponsor = useIsValidSponsor();
 
   const storeDoc = useMemo(() => {
     return throttle(
@@ -146,5 +146,6 @@ function loadWorkspace(workspace: string) {
     title: workspace,
     isHosted: false,
   });
+
   return workspaceText;
 }
