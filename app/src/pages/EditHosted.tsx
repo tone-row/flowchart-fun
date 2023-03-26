@@ -32,6 +32,7 @@ export default function EditHosted() {
     enabled: !!id,
     suspense: true,
     staleTime: 0,
+    cacheTime: 0,
   });
 
   const { mutate, isLoading } = useMutation((text: string) =>

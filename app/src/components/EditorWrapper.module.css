@@ -41,7 +41,7 @@
 }
 
 .ShareButton {
-  padding: 11px 16px 9px 17px;
+  padding: 10px 16px 10px 17px;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
@@ -50,10 +50,6 @@
   color: var(--palette-white-0);
   background-color: var(--palette-purple-0);
   line-height: 1 !important;
-}
-
-.ShareButton svg {
-  transform: translateY(-1px);
 }
 
 .ShareButton:focus {
