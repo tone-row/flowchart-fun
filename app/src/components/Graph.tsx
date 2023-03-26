@@ -111,6 +111,9 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       (doc) => doc,
       (doc) => {
         throttleUpdate(doc);
+      },
+      {
+        fireImmediately: true,
       }
     );
     return unsubscribe;
