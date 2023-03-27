@@ -1,7 +1,8 @@
 import { t, Trans } from "@lingui/macro";
+import { parse, toMermaid } from "graph-selector";
 import produce from "immer";
 import { compressToEncodedURIComponent } from "lz-string";
-import { Check, LinkSimple } from "phosphor-react";
+import { ArrowSquareOut, Check, LinkSimple } from "phosphor-react";
 import {
   ReactNode,
   useCallback,
@@ -15,10 +16,8 @@ import { useMutation, useQuery } from "react-query";
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import { useTheme } from "../lib/graphThemes";
 import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
-import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic } from "../lib/queries";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
-import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { downloadCanvas, downloadSvg, getCanvas, getSvg } from "./downloads";
@@ -281,41 +280,75 @@ function PreviewImage({
 }
 
 function getMermaidText() {
-  const { layout, elements } = useGraphStore.getState();
-  return toMermaidJS({ layout, elements });
+  return toMermaid(parse(useDoc.getState().text));
 }
 
 function Mermaid() {
   const [copied, setCopied] = useState(false);
-  const mermaid = useMemo(() => getMermaidText(), []);
+  const code = useMemo(() => getMermaidText(), []);
+  const [link, setLink] = useState("#");
+  useEffect(() => {
+    getMermaidLiveLink();
+
+    async function getMermaidLiveLink() {
+      const state = {
+        code,
+        mermaid: '{\n  "theme": "default"\n}',
+        autoSync: true,
+        updateDiagram: true,
+        editorMode: "code",
+      };
+      const deflate = await import("pako").then((m) => m.deflate);
+      const fromUint8Array = await import("js-base64").then(
+        (m) => m.fromUint8Array
+      );
+      const data = new TextEncoder().encode(JSON.stringify(state));
+      const compressed = deflate(data, { level: 9 });
+      const base = `https://mermaid.live/edit#pako:`;
+      setLink(base + fromUint8Array(compressed, true));
+    }
+  }, [code]);
   return (
     <>
-      <Type size={-1}>Mermaid.JS</Type>
-      <Textarea
-        value={mermaid}
-        readOnly
-        disabled
-        className={styles.CustomTextarea}
-        box={{ p: 1 }}
-        size={-2}
-        rows={Math.min(mermaid.split("\n").length, 20)}
-      />
-      <Box flow="column" items="center" content="start" gap={2}>
-        <Button
-          self="normal start"
-          onClick={() => {
-            (async () => {
-              await navigator.clipboard.writeText(mermaid);
-              setCopied(true);
-            })();
-          }}
-          className={styles.LinkCopyButton}
-          text={t`Copy`}
-          aria-label="Copy Mermaid Code"
-          py={2}
+      <h2>Mermaid</h2>
+      <div className="relative">
+        <Textarea
+          value={code}
+          readOnly
+          disabled
+          className={styles.CustomTextarea}
+          box={{ p: 1 }}
+          size={-2}
+          rows={Math.min(code.split("\n").length, 20)}
         />
-        {copied && <Check data-testid="Copied Mermaid Code" />}
-      </Box>
+        <div className="flex items-center gap-1 absolute bottom-1 right-1">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 self-end text-sm font-bold flex items-center gap-1 mr-2 mb-[1px]"
+            data-testid="Mermaid Live"
+          >
+            <ArrowSquareOut width={15} height={15} />
+            <span>mermaid.live</span>
+          </a>
+          <Button
+            self="normal start"
+            onClick={() => {
+              (async () => {
+                await navigator.clipboard.writeText(code);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 3000);
+              })();
+            }}
+            className={styles.LinkCopyButton}
+            text={t`Copy`}
+            aria-label="Copy Mermaid Code"
+            py={2}
+          />
+          {copied && <Check data-testid="Copied Mermaid Code" />}
+        </div>
+      </div>
     </>
   );
 }
