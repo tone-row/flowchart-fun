@@ -17,9 +17,9 @@ const DEFAULT_PARSER = "graph-selector";
  * returns the parser if it is set or the default parser
  */
 export function useParser(): Parsers {
-  const meta = useDoc((state) => state.meta);
-  const parser = meta?.parser as Parsers;
-  return parser || DEFAULT_PARSER;
+  return useDoc((state) => {
+    return state.meta?.parser || DEFAULT_PARSER;
+  }) as Parsers;
 }
 
 /**
