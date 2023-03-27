@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import { Edge, Graph, Node, parse, toMermaid } from "graph-selector";
+import { parse, toMermaid } from "graph-selector";
 import produce from "immer";
 import { compressToEncodedURIComponent } from "lz-string";
 import { ArrowSquareOut, Check, LinkSimple } from "phosphor-react";
@@ -16,10 +16,8 @@ import { useMutation, useQuery } from "react-query";
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import { useTheme } from "../lib/graphThemes";
 import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
-import { toMermaidJS } from "../lib/mermaid";
 import { makeChartPublic } from "../lib/queries";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
-import { useGraphStore } from "../lib/useGraphStore";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
 import { downloadCanvas, downloadSvg, getCanvas, getSvg } from "./downloads";
