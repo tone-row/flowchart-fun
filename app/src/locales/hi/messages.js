@@ -21,6 +21,7 @@
     "Auto-Layouts": "ऑटो लेआउट",
     "Back To Editor": "संपादक पर वापस जाएं",
     Background: "पृष्ठभूमि",
+    "Basic Flowchart": "Basic Flowchart",
     "Become a Sponsor": "एक प्रायोजक बनें",
     Blank: "Blank",
     Blog: "ब्लॉग",
@@ -63,6 +64,8 @@
     Copy: "कॉपी करें",
     "Copy PNG Image": "PNG छवि कॉपी करें",
     "Copy SVG Code": "SVG कोड कॉपी करें",
+    "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
+      "Copy your mermaid.js code or open it directly in the mermaid.js live editor.",
     Create: "बनाएँ",
     "Create Flowcharts from a Prompt with AI":
       "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं",
@@ -128,6 +131,10 @@
     "ID's": "ID's",
     "Image Export": "छवि निर्यात",
     Images: "Images",
+    "Import your diagram it into Microsoft Visio using one of these CSV files.":
+      "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।",
+    "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
+      "एक <0>title</0> विशेषता का उपयोग करके एक शीर्षक शामिल करें। Visio रंगीनी का उपयोग करने के लिए, निम्नलिखित में से किसी एक के बराबर एक <1>roleType</1> विशेषता जोड़ें:",
     "Indenting creates an edge": "इंडेंटिंग एक बढ़त बनाता है",
     Info: "जानकारी",
     Instruct: "हिदायत",
@@ -171,6 +178,7 @@
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
       "केवल इस उपकरण पर उपलब्ध है।<0/>अपने ब्राउज़र कैश साफ़ करने से उन्हें मिटा दिया जाएगा।",
     "Open Customer Portal": "ग्राहक पोर्टल खोलें",
+    "Organization Chart": "Organization Chart",
     "Paste the information you wish to convert to a flowchart":
       "उस जानकारी को पेस्ट करें जिसे आप फ़्लोचार्ट में बदलना चाहते हैं",
     Permalinks: "Permalinks",
@@ -253,6 +261,7 @@
     "This app works by typing": "यह ऐप टाइप द्वारा काम करता है",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।",
+    Tip: "सुझाव",
     "Top to Bottom": "ऊपर से नीचे",
     "Try again": "फिर से कोशिश करें",
     Type: "प्रकार",
@@ -269,6 +278,10 @@
       "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.",
     "Use the customer portal to change your billing information.":
       "अपनी बिलिंग जानकारी बदलने के लिए ग्राहक पोर्टल का उपयोग करें।",
+    "Use this file for org charts, hierarchies, and other organizational structures.":
+      "संगठनात्मक चार्ट, पदानुक्रमों और अन्य संगठनात्मक संरचनाओं के लिए इस फ़ाइल का उपयोग करें।",
+    "Use this file for sequences, processes, and workflows.":
+      "अनुक्रमों, प्रक्रियाओं और कार्यप्रवाहों के लिए इस फ़ाइल का उपयोग करें।",
     User: "यूज़र",
     "View on Github": "Github पर देखें",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":

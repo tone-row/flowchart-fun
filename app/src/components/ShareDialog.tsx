@@ -468,6 +468,7 @@ function VisioCSVDownload() {
             const blob = new Blob([csv], { type: "text/csv" });
             saveAs(blob, `${filename}-visio-flow.csv`);
           }}
+          testId="Visio Flowchart"
         >
           <Trans>Use this file for sequences, processes, and workflows.</Trans>
         </VisioDownloadOption>
@@ -479,6 +480,7 @@ function VisioCSVDownload() {
             const blob = new Blob([csv], { type: "text/csv" });
             saveAs(blob, `${filename}-visio-org.csv`);
           }}
+          testId="Visio Org Chart"
         >
           <Trans>
             Use this file for org charts, hierarchies, and other organizational
@@ -504,11 +506,13 @@ function VisioDownloadOption({
   children,
   imgSrc,
   handleDownload,
+  testId,
 }: {
   title: string;
   children: ReactNode;
   imgSrc: string;
   handleDownload: () => Promise<void>;
+  testId: string;
 }) {
   const [loading, setLoading] = useState(false);
   return (
@@ -517,6 +521,7 @@ function VisioDownloadOption({
       <h2 className="text font-bold">{title}</h2>
       <div className="text-xs text-neutral-500">{children}</div>
       <button
+        data-testid={testId}
         className="bg-blue-500 text-white rounded px-3 py-2 text-sm flex items-center gap-2 justify-self-end hover:bg-blue-600 active:bg-blue-700"
         onClick={() => {
           setLoading(true);
@@ -530,7 +535,7 @@ function VisioDownloadOption({
         ) : (
           <DownloadSimple width={15} height={15} />
         )}
-        Download CSV
+        {t`Download`} CSV
       </button>
     </div>
   );
