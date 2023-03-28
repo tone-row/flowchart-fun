@@ -22,6 +22,7 @@
     "Auto-Layouts": "Automatische Layouts",
     "Back To Editor": "Zurück zum Editor",
     Background: "Hintergrund",
+    "Basic Flowchart": "Basic Flowchart",
     "Become a Sponsor": "Werden Sie zum Sponsoren",
     Blank: "Blank",
     Blog: "Blog",
@@ -64,6 +65,8 @@
     Copy: "Kopieren",
     "Copy PNG Image": "PNG-Bild kopieren",
     "Copy SVG Code": "Kopieren Sie den SVG-Code",
+    "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
+      "Copy your mermaid.js code or open it directly in the mermaid.js live editor.",
     Create: "Erstellen",
     "Create Flowcharts from a Prompt with AI":
       "Erstellen Sie Diagramme aus einer Eingabeaufforderung mit KI",
@@ -129,6 +132,10 @@
     "ID's": "ID's",
     "Image Export": "Bildexport",
     Images: "Images",
+    "Import your diagram it into Microsoft Visio using one of these CSV files.":
+      "Importieren Sie Ihr Diagramm mithilfe einer dieser CSV-Dateien in Microsoft Visio.",
+    "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
+      "Fügen Sie einen Titel mit einem <0>title</0>-Attribut ein. Um die Visio-Farbgebung zu verwenden, fügen Sie ein <1>roleType</1>-Attribut gleich einem der folgenden hinzu:",
     "Indenting creates an edge": "Durch das Einrücken entsteht eine Kante",
     Info: "Info",
     Instruct: "Anweisen",
@@ -172,6 +179,7 @@
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
       "Nur auf diesem Gerät verfügbar.<0/>Wenn Sie Ihren Browser-Cache leeren, werden sie gelöscht.",
     "Open Customer Portal": "Öffnen Sie das Kundenportal",
+    "Organization Chart": "Organization Chart",
     "Paste the information you wish to convert to a flowchart":
       "Fügen Sie die Informationen ein, die Sie in ein Flussdiagramm umwandeln möchten",
     Permalinks: "Permalinks",
@@ -256,6 +264,7 @@
     "This app works by typing": "Diese App funktioniert durch Tippen",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "Diese Funktion ist nur für Pro-Benutzer verfügbar. <0>Werden Sie Pro-Nutzer</0>, um es freizuschalten.",
+    Tip: "Tipp",
     "Top to Bottom": "Von oben nach unten",
     "Try again": "Erneut versuchen",
     Type: "Typ",
@@ -272,6 +281,10 @@
       "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.",
     "Use the customer portal to change your billing information.":
       "Verwenden Sie das Kundenportal, um Ihre Rechnungsinformationen zu ändern.",
+    "Use this file for org charts, hierarchies, and other organizational structures.":
+      "Verwenden Sie diese Datei für Organigramme, Hierarchien und andere Organisationsstrukturen.",
+    "Use this file for sequences, processes, and workflows.":
+      "Verwenden Sie diese Datei für Sequenzen, Prozesse und Workflows.",
     User: "Benutzer",
     "View on Github": "Auf Github ansehen",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":

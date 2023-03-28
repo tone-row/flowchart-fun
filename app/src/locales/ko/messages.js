@@ -21,6 +21,7 @@
     "Auto-Layouts": "자동 레이아웃",
     "Back To Editor": "편집기로 돌아가기",
     Background: "배경",
+    "Basic Flowchart": "Basic Flowchart",
     "Become a Sponsor": "스폰서 되기",
     Blank: "Blank",
     Blog: "블로그",
@@ -63,6 +64,8 @@
     Copy: "복사",
     "Copy PNG Image": "PNG 이미지 복사",
     "Copy SVG Code": "SVG 코드 복사",
+    "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
+      "Copy your mermaid.js code or open it directly in the mermaid.js live editor.",
     Create: "만들기",
     "Create Flowcharts from a Prompt with AI":
       "AI 프롬프트를 사용하여 다이어그램 생성",
@@ -125,6 +128,10 @@
     "ID's": "ID's",
     "Image Export": "이미지 내보내기",
     Images: "Images",
+    "Import your diagram it into Microsoft Visio using one of these CSV files.":
+      "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다.",
+    "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
+      "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Visio 색상을 사용하려면 다음 중 하나와 같은 <1>roleType</1> 속성을 추가하십시오:",
     "Indenting creates an edge": "들여 쓰기는 가장자리를 만듭니다",
     Info: "정보",
     Instruct: "지시하다",
@@ -168,6 +175,7 @@
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
       "이 기기에서만 사용 가능합니다.<0/>브라우저 캐시를 지우면 삭제됩니다.",
     "Open Customer Portal": "고객 포털 열기",
+    "Organization Chart": "Organization Chart",
     "Paste the information you wish to convert to a flowchart":
       "순서도로 변환하려는 정보를 붙여넣기",
     Permalinks: "퍼머링크",
@@ -250,6 +258,7 @@
     "This app works by typing": "이 앱은 타이핑으로 작동합니다",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사용자가 되어</0> 이 기능을 사용할 수 있게 하세요.",
+    Tip: "팁",
     "Top to Bottom": "위에서 아래로",
     "Try again": "다시 시도하세요",
     Type: "유형",
@@ -266,6 +275,10 @@
       "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.",
     "Use the customer portal to change your billing information.":
       "청구 정보를 변경하려면 고객 포털을 사용하십시오.",
+    "Use this file for org charts, hierarchies, and other organizational structures.":
+      "조직도, 계층 구조 및 기타 조직 구조를 위해 이 파일을 사용하십시오.",
+    "Use this file for sequences, processes, and workflows.":
+      "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오.",
     User: "사용자",
     "View on Github": "Github에서 보기",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":

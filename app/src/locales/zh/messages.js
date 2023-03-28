@@ -21,6 +21,7 @@
     "Auto-Layouts": "自动布局",
     "Back To Editor": "返回编辑器",
     Background: "背景",
+    "Basic Flowchart": "Basic Flowchart",
     "Become a Sponsor": "赞助我们",
     Blank: "Blank",
     Blog: "博客",
@@ -63,6 +64,8 @@
     Copy: "复制",
     "Copy PNG Image": "复制PNG图像",
     "Copy SVG Code": "复制 SVG 代码",
+    "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
+      "Copy your mermaid.js code or open it directly in the mermaid.js live editor.",
     Create: "创建",
     "Create Flowcharts from a Prompt with AI": "使用 AI 根据提示创建图表",
     "Create a New Flowchart": "创建新图表",
@@ -124,6 +127,10 @@
     "ID's": "ID's",
     "Image Export": "图像导出",
     Images: "Images",
+    "Import your diagram it into Microsoft Visio using one of these CSV files.":
+      "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。",
+    "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
+      "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性：",
     "Indenting creates an edge": "缩进创建链接",
     Info: "信息",
     Instruct: "指导",
@@ -167,6 +174,7 @@
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
       "仅在此设备上可用。<0/>清除浏览器缓存将抹去它们。",
     "Open Customer Portal": "打开客户门户",
+    "Organization Chart": "Organization Chart",
     "Paste the information you wish to convert to a flowchart":
       "将要转换的信息粘贴到流程图中",
     Permalinks: "永久链接",
@@ -249,6 +257,7 @@
     "This app works by typing": "这款应用的工作原理是输入",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。",
+    Tip: "提示",
     "Top to Bottom": "从上到下",
     "Try again": "重试",
     Type: "类型",
@@ -265,6 +274,10 @@
       "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.",
     "Use the customer portal to change your billing information.":
       "使用客户门户更改您的账单信息。",
+    "Use this file for org charts, hierarchies, and other organizational structures.":
+      "使用此文件制作组织图、层次结构和其他组织结构。",
+    "Use this file for sequences, processes, and workflows.":
+      "使用此文件进行顺序、流程和工作流程。",
     User: "用户",
     "View on Github": "在 Github 上查看",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
