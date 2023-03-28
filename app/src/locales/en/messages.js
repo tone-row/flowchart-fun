@@ -21,6 +21,7 @@
     "Auto-Layouts": "Auto-Layouts",
     "Back To Editor": "Back To Editor",
     Background: "Background",
+    "Basic Flowchart": "Basic Flowchart",
     "Become a Sponsor": "Become a Sponsor",
     Blank: "Blank",
     Blog: "Blog",
@@ -63,6 +64,8 @@
     Copy: "Copy",
     "Copy PNG Image": "Copy PNG Image",
     "Copy SVG Code": "Copy SVG Code",
+    "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
+      "Copy your mermaid.js code or open it directly in the mermaid.js live editor.",
     Create: "Create",
     "Create Flowcharts from a Prompt with AI":
       "Create Flowcharts from a Prompt with AI",
@@ -128,6 +131,10 @@
     "ID's": "ID's",
     "Image Export": "Image Export",
     Images: "Images",
+    "Import your diagram it into Microsoft Visio using one of these CSV files.":
+      "Import your diagram it into Microsoft Visio using one of these CSV files.",
+    "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
+      "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:",
     "Indenting creates an edge": "Indenting creates an edge",
     Info: "Info",
     Instruct: "Instruct",
@@ -171,6 +178,7 @@
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
       "Only available on this device.<0/>Clearing your browser cache will erase them.",
     "Open Customer Portal": "Open Customer Portal",
+    "Organization Chart": "Organization Chart",
     "Paste the information you wish to convert to a flowchart":
       "Paste the information you wish to convert to a flowchart",
     Permalinks: "Permalinks",
@@ -253,6 +261,7 @@
     "This app works by typing": "This app works by typing",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.",
+    Tip: "Tip",
     "Top to Bottom": "Top to Bottom",
     "Try again": "Try again",
     Type: "Type",
@@ -269,6 +278,10 @@
       "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node.",
     "Use the customer portal to change your billing information.":
       "Use the customer portal to change your billing information.",
+    "Use this file for org charts, hierarchies, and other organizational structures.":
+      "Use this file for org charts, hierarchies, and other organizational structures.",
+    "Use this file for sequences, processes, and workflows.":
+      "Use this file for sequences, processes, and workflows.",
     User: "User",
     "View on Github": "View on Github",
     "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
