@@ -1,8 +1,15 @@
 import { t, Trans } from "@lingui/macro";
+import * as Tabs from "@radix-ui/react-tabs";
+import { saveAs } from "file-saver";
 import { parse, toMermaid } from "graph-selector";
 import produce from "immer";
 import { compressToEncodedURIComponent } from "lz-string";
-import { ArrowSquareOut, Check, LinkSimple } from "phosphor-react";
+import {
+  ArrowSquareOut,
+  Check,
+  DownloadSimple,
+  LinkSimple,
+} from "phosphor-react";
 import {
   ReactNode,
   useCallback,
@@ -17,6 +24,7 @@ import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import { useTheme } from "../lib/graphThemes";
 import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
 import { makeChartPublic } from "../lib/queries";
+import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import { AppContext } from "./AppContext";
@@ -143,7 +151,28 @@ export default function ShareDialog() {
         <Title>
           <Trans>Export</Trans>
         </Title>
-        <Mermaid />
+        <Tabs.Root className="grid gap-2" defaultValue="mermaid">
+          <Tabs.List className="flex gap-2 items-center">
+            <Tabs.Trigger
+              value="mermaid"
+              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100"
+            >
+              <span>Mermaid</span>
+            </Tabs.Trigger>
+            <Tabs.Trigger
+              value="visio"
+              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100"
+            >
+              <span>Visio</span>
+            </Tabs.Trigger>
+          </Tabs.List>
+          <Tabs.Content value="mermaid">
+            <Mermaid />
+          </Tabs.Content>
+          <Tabs.Content value="visio">
+            <VisioCSVDownload />
+          </Tabs.Content>
+        </Tabs.Root>
       </Column>
     </Dialog>
   );
@@ -309,8 +338,13 @@ function Mermaid() {
     }
   }, [code]);
   return (
-    <>
-      <h2>Mermaid</h2>
+    <div className="grid gap-2">
+      <p className="text-sm text-neutral-500">
+        <Trans>
+          Copy your mermaid.js code or open it directly in the mermaid.js live
+          editor.
+        </Trans>
+      </p>
       <div className="relative">
         <Textarea
           value={code}
@@ -349,7 +383,7 @@ function Mermaid() {
           {copied && <Check data-testid="Copied Mermaid Code" />}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -412,5 +446,108 @@ function HostedOptions() {
         </Box>
       )}
     </Column>
+  );
+}
+
+function VisioCSVDownload() {
+  const filename = useDownloadFilename();
+  return (
+    <div className="grid gap-2">
+      <p className="text-sm text-neutral-500">
+        <Trans>
+          Import your diagram it into Microsoft Visio using one of these CSV
+          files.
+        </Trans>
+      </p>
+      <div className="grid md:grid-cols-[repeat(2,minmax(0,300px))] gap-1 md:gap-2">
+        <VisioDownloadOption
+          imgSrc="/images/visio-flowchart.svg"
+          title={t`Basic Flowchart`}
+          handleDownload={async () => {
+            const csv = await toVisioFlowchart(parse(useDoc.getState().text));
+            const blob = new Blob([csv], { type: "text/csv" });
+            saveAs(blob, `${filename}-visio-flow.csv`);
+          }}
+        >
+          <Trans>Use this file for sequences, processes, and workflows.</Trans>
+        </VisioDownloadOption>
+        <VisioDownloadOption
+          imgSrc="/images/visio-orgchart.svg"
+          title={t`Organization Chart`}
+          handleDownload={async () => {
+            const csv = await toVisioOrgChart(parse(useDoc.getState().text));
+            const blob = new Blob([csv], { type: "text/csv" });
+            saveAs(blob, `${filename}-visio-org.csv`);
+          }}
+        >
+          <Trans>
+            Use this file for org charts, hierarchies, and other organizational
+            structures.
+          </Trans>
+          <TipChip />
+          <Trans>
+            Include a title using a <InlineCode>title</InlineCode> attribute. To
+            use Visio coloring, add a <InlineCode>roleType</InlineCode>{" "}
+            attribute equal to one of the following:
+          </Trans>{" "}
+          <span>
+            Executive, Manager, Position, Assistant, Staff, Consultant, Vacancy
+          </span>
+        </VisioDownloadOption>
+      </div>
+    </div>
+  );
+}
+
+function VisioDownloadOption({
+  title,
+  children,
+  imgSrc,
+  handleDownload,
+}: {
+  title: string;
+  children: ReactNode;
+  imgSrc: string;
+  handleDownload: () => Promise<void>;
+}) {
+  const [loading, setLoading] = useState(false);
+  return (
+    <div className="grid md:grid-rows-[auto_auto_160px_auto] gap-3 rounded-lg bg-neutral-100 p-2 justify-items-center border-neutral-300 border">
+      <img src={imgSrc} alt={title} className="rounded w-full h-auto mb-3" />
+      <h2 className="text font-bold">{title}</h2>
+      <div className="text-xs text-neutral-500">{children}</div>
+      <button
+        className="bg-blue-500 text-white rounded px-3 py-2 text-sm flex items-center gap-2 justify-self-end hover:bg-blue-600 active:bg-blue-700"
+        onClick={() => {
+          setLoading(true);
+          handleDownload().finally(() =>
+            setTimeout(() => setLoading(false), 1000)
+          );
+        }}
+      >
+        {loading ? (
+          <Spinner r={6} s={2} />
+        ) : (
+          <DownloadSimple width={15} height={15} />
+        )}
+        Download CSV
+      </button>
+    </div>
+  );
+}
+
+function TipChip() {
+  return (
+    <span className="text-neutral-800 ml-2 mr-1 align-middle font-bold">
+      <Trans>Tip</Trans>:
+    </span>
+  );
+}
+
+function InlineCode({ children }: { children: ReactNode }) {
+  return (
+    <code className="bg-neutral-300 rounded p-1 text-[10px] font-mono text-neutral-800">
+      {children}
+    </code>
   );
 }
