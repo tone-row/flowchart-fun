@@ -155,13 +155,13 @@ export default function ShareDialog() {
           <Tabs.List className="flex gap-2 items-center">
             <Tabs.Trigger
               value="mermaid"
-              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100"
+              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
             >
               <span>Mermaid</span>
             </Tabs.Trigger>
             <Tabs.Trigger
               value="visio"
-              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100"
+              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
             >
               <span>Visio</span>
             </Tabs.Trigger>
@@ -453,7 +453,7 @@ function VisioCSVDownload() {
   const filename = useDownloadFilename();
   return (
     <div className="grid gap-2">
-      <p className="text-sm text-neutral-500">
+      <p className="text-sm text-neutral-500 dark:text-neutral-400">
         <Trans>
           Import your diagram it into Microsoft Visio using one of these CSV
           files.
@@ -516,10 +516,12 @@ function VisioDownloadOption({
 }) {
   const [loading, setLoading] = useState(false);
   return (
-    <div className="grid md:grid-rows-[auto_auto_160px_auto] gap-3 rounded-lg bg-neutral-100 p-2 justify-items-center border-neutral-300 border">
+    <div className="grid md:grid-rows-[auto_auto_160px_auto] gap-3 rounded-lg bg-neutral-100 p-2 justify-items-center border-neutral-300 border dark:border-neutral-700 dark:bg-neutral-800">
       <img src={imgSrc} alt={title} className="rounded w-full h-auto mb-3" />
       <h2 className="text font-bold">{title}</h2>
-      <div className="text-xs text-neutral-500">{children}</div>
+      <div className="text-xs text-neutral-500 dark:text-neutral-400">
+        {children}
+      </div>
       <button
         data-testid={testId}
         className="bg-blue-500 text-white rounded px-3 py-2 text-sm flex items-center gap-2 justify-self-end hover:bg-blue-600 active:bg-blue-700"
@@ -543,7 +545,7 @@ function VisioDownloadOption({
 
 function TipChip() {
   return (
-    <span className="text-neutral-800 ml-2 mr-1 align-middle font-bold">
+    <span className="text-neutral-800 ml-2 mr-1 align-middle font-bold dark:text-neutral-200">
       <Trans>Tip</Trans>:
     </span>
   );
@@ -551,7 +553,7 @@ function TipChip() {
 
 function InlineCode({ children }: { children: ReactNode }) {
   return (
-    <code className="bg-neutral-300 rounded p-1 text-[10px] font-mono text-neutral-800">
+    <code className="bg-neutral-300 rounded p-1 text-[10px] font-mono text-neutral-800 dark:bg-neutral-700 dark:text-neutral-200">
       {children}
     </code>
   );
