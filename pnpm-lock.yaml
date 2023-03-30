@@ -31,6 +31,9 @@ importers:
       '@supabase/supabase-js':
         specifier: ^2
         version: 2.0.2
+      csv-parse:
+        specifier: ^5.3.6
+        version: 5.3.6
       date-fns:
         specifier: ^2.29.3
         version: 2.29.3
@@ -52,6 +55,9 @@ importers:
       openai:
         specifier: ^3.1.0
         version: 3.1.0
+      shared:
+        specifier: workspace:*
+        version: link:../shared
       stripe:
         specifier: ^11.11.0
         version: 11.11.0
@@ -125,6 +131,9 @@ importers:
       '@radix-ui/react-popover':
         specifier: ^1.0.3
         version: 1.0.3(@types/react@17.0.50)(react-dom@17.0.2)(react@17.0.2)
+      '@radix-ui/react-progress':
+        specifier: ^1.0.2
+        version: 1.0.2(react-dom@17.0.2)(react@17.0.2)
       '@radix-ui/react-radio-group':
         specifier: ^0.1.5
         version: 0.1.5(react@17.0.2)
@@ -299,6 +308,9 @@ importers:
       react-dom:
         specifier: ^17.0.1
         version: 17.0.2(react@17.0.2)
+      react-dropzone:
+        specifier: ^14.2.3
+        version: 14.2.3(react@17.0.2)
       react-ga:
         specifier: ^3.3.0
         version: 3.3.1(prop-types@15.8.1)(react@17.0.2)
@@ -323,6 +335,9 @@ importers:
       react-use-localstorage:
         specifier: ^3.5.3
         version: 3.5.3(react@17.0.2)
+      shared:
+        specifier: workspace:*
+        version: link:../shared
       stripe:
         specifier: ^8.179.0
         version: 8.222.0
@@ -507,6 +522,8 @@ importers:
       web-worker:
         specifier: ^1.2.0
         version: 1.2.0
+
+  shared: {}
 
 packages:
 
@@ -3703,6 +3720,19 @@ packages:
       react-dom: 17.0.2(react@17.0.2)
     dev: false
 
+  /@radix-ui/react-progress@1.0.2(react-dom@17.0.2)(react@17.0.2):
+    resolution: {integrity: sha512-c16RVM43ct2koRcMmPw4b47JWFNs89qe5p4Um9dwoPs0yi+d7It1MJ35EpsX+93o31Mqdwe4vQyu0SrHrygdCg==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.19.0
+      '@radix-ui/react-context': 1.0.0(react@17.0.2)
+      '@radix-ui/react-primitive': 1.0.2(react-dom@17.0.2)(react@17.0.2)
+      react: 17.0.2
+      react-dom: 17.0.2(react@17.0.2)
+    dev: false
+
   /@radix-ui/react-radio-group@0.1.5(react@17.0.2):
     resolution: {integrity: sha512-ybgHsmh/V2crKvK6xZ56dpPul7b+vyxcq7obWqHbr5W6Ca11wdm0E7lS0i/Y6pgfIKYOWIARmZYDpRMEeRCPOw==}
     peerDependencies:
@@ -6176,6 +6206,11 @@ packages:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
 
+  /attr-accept@2.2.2:
+    resolution: {integrity: sha512-7prDjvt9HmqiZ0cl5CRjtS84sEyhsHP2coDkaZKRKVfCDo9s7iw7ChVmar78Gu9pC4SoR/28wFu/G5JJhTnqEg==}
+    engines: {node: '>=4'}
+    dev: false
+
   /autoprefixer@10.4.12(postcss@8.4.17):
     resolution: {integrity: sha512-WrCGV9/b97Pa+jtwf5UGaRjgQIg7OK3D06GnoYoZNcG1Xb8Gt3EfuKjlhh9i/VtT16g6PYjZ69jdJ2g8FxSC4Q==}
     engines: {node: ^10 || ^12 || >=14}
@@ -7391,6 +7426,10 @@ packages:
 
   /csstype@3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
+
+  /csv-parse@5.3.6:
+    resolution: {integrity: sha512-WI330GjCuEioK/ii8HM2YE/eV+ynpeLvU+RXw4R8bRU8R0laK5zO3fDsc4gH8s472e3Ga38rbIjCAiQh+tEHkw==}
+    dev: false
 
   /cytoscape-cose-bilkent@4.1.0(cytoscape@3.23.0):
     resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
@@ -8834,6 +8873,13 @@ packages:
 
   /file-saver@2.0.5:
     resolution: {integrity: sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==}
+    dev: false
+
+  /file-selector@0.6.0:
+    resolution: {integrity: sha512-QlZ5yJC0VxHxQQsQhXvBaC7VRJ2uaxTf+Tfpu4Z/OcVQJVpZO+DGU0rkoVW5ce2SccxugvpBJoMvUs59iILYdw==}
+    engines: {node: '>= 12'}
+    dependencies:
+      tslib: 2.4.0
     dev: false
 
   /file-uri-to-path@1.0.0:
@@ -13394,6 +13440,18 @@ packages:
       object-assign: 4.1.1
       react: 17.0.2
       scheduler: 0.20.2
+
+  /react-dropzone@14.2.3(react@17.0.2):
+    resolution: {integrity: sha512-O3om8I+PkFKbxCukfIR3QAGftYXDZfOE2N1mr/7qebQJHs7U+/RSL/9xomJNpRg9kM5h9soQSdf0Gc7OHF5Fug==}
+    engines: {node: '>= 10.13'}
+    peerDependencies:
+      react: '>= 16.8 || 18.0.0'
+    dependencies:
+      attr-accept: 2.2.2
+      file-selector: 0.6.0
+      prop-types: 15.8.1
+      react: 17.0.2
+    dev: false
 
   /react-error-boundary@3.1.4(react@17.0.2):
     resolution: {integrity: sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==}

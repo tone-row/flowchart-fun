@@ -41,6 +41,7 @@
     "@radix-ui/react-hover-card": "^0.1.5",
     "@radix-ui/react-navigation-menu": "^1.0.0",
     "@radix-ui/react-popover": "^1.0.3",
+    "@radix-ui/react-progress": "^1.0.2",
     "@radix-ui/react-radio-group": "^0.1.5",
     "@radix-ui/react-select": "^1.1.2",
     "@radix-ui/react-slider": "^1.1.0",
@@ -99,6 +100,7 @@
     "react": "^17.0.1",
     "react-contexify": "^5.0.0",
     "react-dom": "^17.0.1",
+    "react-dropzone": "^14.2.3",
     "react-ga": "^3.3.0",
     "react-gtm-module": "^2.0.11",
     "react-hook-form": "^7.0.7",
@@ -112,7 +114,8 @@
     "svgo": "^2.8.0",
     "use-debounce": "^5.2.1",
     "web-vitals": "^1.0.1",
-    "zustand": "^4.3.3"
+    "zustand": "^4.3.3",
+    "shared": "workspace:*"
   },
   "eslintConfig": {
     "extends": [

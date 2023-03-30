@@ -27,6 +27,7 @@ import {
   useHostedCharts,
 } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
+import { Overlay } from "../ui/Dialog";
 // Keep these in sync (55px)
 const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
 const leftMargin = "sm:mx-[55px]";
@@ -287,7 +288,7 @@ const ChartLink = memo(function ChartLink({
             </button>
           </Dialog.Trigger>
           <Dialog.Portal>
-            <Dialog.Overlay className="bg-foreground/50 dark:bg-background/50 data-[state=open]:animate-overlayShow fixed inset-0" />
+            <Overlay />
             <Dialog.Content className="data-[state=open]:animate-contentShow bg-background text-foreground dark:bg-foreground dark:text-background fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[400px] translate-x-[-50%] translate-y-[-50%] rounded-lg bg-background p-4 shadow-lg focus:outline-none z-50 grid gap-3">
               <Dialog.Title className="text-lg font-bold">
                 <Trans>Do you want to delete this?</Trans>

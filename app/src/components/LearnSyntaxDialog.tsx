@@ -1,15 +1,16 @@
 import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Code, TextAlignRight } from "phosphor-react";
+import { TextAlignRight } from "phosphor-react";
 import { useEffect, useRef, useState } from "react";
 
-import { EditorActionTextButton } from "../EditorActionTextButton";
 import { Box, Type } from "../slang";
-import styles from "./SyntaxReference.module.css";
+import { Overlay } from "../ui/Dialog";
+import { EditorActionTextButton } from "../ui/EditorActionTextButton";
+import styles from "./LearnSyntaxDialog.module.css";
 
 const PAD = 4;
 
-export function SyntaxReference() {
+export function LearnSyntaxDialog() {
   const descriptionFirstTitle = useRef<HTMLHeadingElement>(null);
   const [description, setDescription] = useState<HTMLDivElement>();
   /**
@@ -52,9 +53,14 @@ export function SyntaxReference() {
         </EditorActionTextButton>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className={styles.overlay} />
+        <Overlay />
         <Box as={Dialog.Content} className={styles.content} rad={2}>
-          <Box p={PAD} pb={2} className={styles.header} id="syntax-help-header">
+          <Box
+            px={PAD}
+            py={2}
+            className={styles.header}
+            id="syntax-help-header"
+          >
             <Box
               as={Dialog.Title}
               content="normal start"

@@ -6,7 +6,8 @@ import { parsers, useParser } from "../lib/parsers";
 import { useDoc } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import styles from "./EditorOptions.module.css";
-import { SyntaxReference } from "./SyntaxReference";
+import { ImportDataDialog } from "./ImportDataDialog";
+import { LearnSyntaxDialog } from "./LearnSyntaxDialog";
 
 export function EditorOptions({ children }: { children: ReactNode }) {
   const parser = useParser();
@@ -16,12 +17,12 @@ export function EditorOptions({ children }: { children: ReactNode }) {
   return (
     <div className={styles.editorOptions}>
       <Box p={2} flow="column" content="normal space-between" pl={6}>
-        <div className="flex content-start gap-2">
+        <div className="flex content-start gap-2 items-center">
           {parser === "graph-selector" ? (
             <>
-              <SyntaxReference />
-              <span className="text-gray-500">|</span>
-              <button>Import Data</button>
+              <LearnSyntaxDialog />
+              <span className="bg-blue-300 h-4 w-px dark:bg-blue-900" />
+              <ImportDataDialog />
             </>
           ) : (
             <span />
