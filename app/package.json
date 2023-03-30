@@ -36,7 +36,7 @@
     "@notionhq/client": "^0.4.13",
     "@radix-ui/react-alert-dialog": "^1.0.2",
     "@radix-ui/react-collapsible": "^1.0.2",
-    "@radix-ui/react-dialog": "^1.0.2",
+    "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-dropdown-menu": "^2.0.1",
     "@radix-ui/react-hover-card": "^0.1.5",
     "@radix-ui/react-navigation-menu": "^1.0.0",

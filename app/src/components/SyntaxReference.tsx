@@ -1,8 +1,9 @@
 import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
-import { BracketsAngle } from "phosphor-react";
+import { Code, TextAlignRight } from "phosphor-react";
 import { useEffect, useRef, useState } from "react";
 
+import { EditorActionTextButton } from "../EditorActionTextButton";
 import { Box, Type } from "../slang";
 import styles from "./SyntaxReference.module.css";
 
@@ -45,19 +46,11 @@ export function SyntaxReference() {
 
   return (
     <Dialog.Root>
-      <Box
-        as={Dialog.Trigger}
-        content="normal start"
-        items="center normal"
-        className={styles.trigger}
-        flow="column"
-        gap={2}
-      >
-        <BracketsAngle size={18} weight="regular" />
-        <Type size={-1}>
-          <Trans>Syntax Reference</Trans>
-        </Type>
-      </Box>
+      <Dialog.Trigger asChild>
+        <EditorActionTextButton icon={TextAlignRight}>
+          <Trans>Learn Syntax</Trans>
+        </EditorActionTextButton>
+      </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay} />
         <Box as={Dialog.Content} className={styles.content} rad={2}>
@@ -69,9 +62,9 @@ export function SyntaxReference() {
               gap={3}
               flow="column"
             >
-              <BracketsAngle size={24} weight="bold" />
+              <TextAlignRight size={24} weight="bold" />
               <Type size={2}>
-                <Trans>Syntax Reference</Trans>
+                <Trans>Learn Syntax</Trans>
               </Type>
             </Box>
           </Box>

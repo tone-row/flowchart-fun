@@ -16,7 +16,17 @@ export function EditorOptions({ children }: { children: ReactNode }) {
   return (
     <div className={styles.editorOptions}>
       <Box p={2} flow="column" content="normal space-between" pl={6}>
-        {parser === "graph-selector" ? <SyntaxReference /> : <span />}
+        <div className="flex content-start gap-2">
+          {parser === "graph-selector" ? (
+            <>
+              <SyntaxReference />
+              <span className="text-gray-500">|</span>
+              <button>Import Data</button>
+            </>
+          ) : (
+            <span />
+          )}
+        </div>
         <Box as="label" flow="column" gap={2} items="center normal">
           <Type size={-1} color="color-lineNumbers">
             <Trans>Syntax</Trans>
