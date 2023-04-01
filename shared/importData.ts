@@ -14,7 +14,12 @@ export type MappingObject = {
    * @example 'empty'
    * @example { equals: 'someValue' }
    */
-  rowRepresentsEdgeWhen?: "notEmpty" | "empty" | { equals: string };
+  rowRepresentsEdgeWhen?: {
+    column: string;
+    is: "notEmpty" | "empty" | { equals: string };
+    sourceColumn: string;
+    targetColumn: string;
+  };
   /**
    * If edges are declared in the CSV, the information about the edge is stored in this object.
    */
@@ -24,11 +29,9 @@ export type MappingObject = {
     /** The delimiter used to separate multiple target nodes (optional). */
     targetDelimiter?: string;
     /**
-     * The name of the column containing the edge label(s), or 'nodeLabelColumn' to use the same value as the node label (optional).
-     * @example 'edgeLabelColumn'
-     * @example 'nodeLabelColumn'
+     * The name of the column containing the edge label(s)
      */
-    edgeLabelColumn?: string | "nodeLabelColumn";
+    edgeLabelColumn?: string;
   };
   /**
    * If edges are declared in the CSV, the information about the edge is stored in this object.
@@ -36,6 +39,8 @@ export type MappingObject = {
   inTargetNodeRow?: {
     /** The name of the column containing the source node(s). */
     sourceColumn: string;
+    /** The delimiter used to separate multiple target nodes (optional). */
+    sourceDelimiter?: string;
     /** The name of the column containing the edge label(s) (optional). */
     edgeLabelColumn?: string;
   };
