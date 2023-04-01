@@ -23,6 +23,7 @@ import { useMutation, useQuery } from "react-query";
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import { useTheme } from "../lib/graphThemes";
 import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
+import { Parsers, useParser } from "../lib/parsers";
 import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
@@ -48,7 +49,7 @@ export default function ShareDialog() {
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
   const theme = useTheme();
   const filename = useDownloadFilename();
-
+  const parser = useParser();
   const isValidSponsor = useIsValidSponsor();
   const watermark = !isValidSponsor;
   const scale = isValidSponsor ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
@@ -147,33 +148,35 @@ export default function ShareDialog() {
           />
         </Box>
       </Column>
-      <Column>
-        <Title>
-          <Trans>Export</Trans>
-        </Title>
-        <Tabs.Root className="grid gap-2" defaultValue="mermaid">
-          <Tabs.List className="flex gap-2 items-center">
-            <Tabs.Trigger
-              value="mermaid"
-              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
-            >
-              <span>Mermaid</span>
-            </Tabs.Trigger>
-            <Tabs.Trigger
-              value="visio"
-              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
-            >
-              <span>Visio</span>
-            </Tabs.Trigger>
-          </Tabs.List>
-          <Tabs.Content value="mermaid">
-            <Mermaid />
-          </Tabs.Content>
-          <Tabs.Content value="visio">
-            <VisioCSVDownload />
-          </Tabs.Content>
-        </Tabs.Root>
-      </Column>
+      {parser === "graph-selector" ? (
+        <Column>
+          <Title>
+            <Trans>Export</Trans>
+          </Title>
+          <Tabs.Root className="grid gap-2" defaultValue="mermaid">
+            <Tabs.List className="flex gap-2 items-center">
+              <Tabs.Trigger
+                value="mermaid"
+                className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
+              >
+                <span>Mermaid</span>
+              </Tabs.Trigger>
+              <Tabs.Trigger
+                value="visio"
+                className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
+              >
+                <span>Visio</span>
+              </Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content value="mermaid">
+              <Mermaid />
+            </Tabs.Content>
+            <Tabs.Content value="visio">
+              <VisioCSVDownload />
+            </Tabs.Content>
+          </Tabs.Root>
+        </Column>
+      ) : null}
     </Dialog>
   );
 }
