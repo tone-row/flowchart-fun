@@ -374,8 +374,6 @@ const MappingData = () => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        // console log all the form data
-        console.log(formState);
         onSubmit.mutate(formState);
       }}
       className="grid gap-5"

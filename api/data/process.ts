@@ -3,9 +3,9 @@ import { mapDataToGraph } from "./_mapDataToGraph";
 import { stringify } from "graph-selector";
 
 /**
- * Receives text/csv content in post request
- * Needs to parse it then console log it
- * return 200
+ * Receives mapping and data in post request
+ * Needs to convert it to a graph
+ * then stringify it
  */
 export default async function (req: VercelRequest, res: VercelResponse) {
   try {

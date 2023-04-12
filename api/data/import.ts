@@ -13,8 +13,7 @@ export const config = {
 
 /**
  * Receives text/csv content in post request
- * Needs to parse it then console log it
- * return 200
+ * Needs to parse it
  */
 export default async function (req: VercelRequest, res: VercelResponse) {
   if (req.method === "POST") {
