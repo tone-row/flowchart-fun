@@ -25,8 +25,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       return;
     }
 
-    console.log(rawBody.slice(0, 100) + "...");
-
     try {
       const records = parse(rawBody, {
         columns: true,
@@ -43,10 +41,22 @@ export default async function (req: VercelRequest, res: VercelResponse) {
         return;
       }
 
-      const columns = Object.keys(records[0]);
+      const columnNames = Object.keys(records[0]);
+
+      // for each column, create a list of unique values, alphabetized
+      const columnValues = columnNames.reduce<Record<string, any[]>>(
+        (obj, columnName) => {
+          const values = records.map((record: any) => record[columnName] ?? "");
+          const uniqueValues = [...new Set(values)];
+          uniqueValues.sort();
+          obj[columnName] = uniqueValues;
+          return obj;
+        },
+        {}
+      );
 
       // send columns back to client
-      res.status(200).json({ columns, records });
+      res.status(200).json({ columnNames, columnValues, records });
     } catch (error) {
       console.error(error);
       res.status(500).end("Internal Server Error");

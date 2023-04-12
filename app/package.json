@@ -42,8 +42,8 @@
     "@radix-ui/react-navigation-menu": "^1.0.0",
     "@radix-ui/react-popover": "^1.0.3",
     "@radix-ui/react-progress": "^1.0.2",
-    "@radix-ui/react-radio-group": "^0.1.5",
-    "@radix-ui/react-select": "^1.1.2",
+    "@radix-ui/react-radio-group": "^1.1.2",
+    "@radix-ui/react-select": "^1.2.1",
     "@radix-ui/react-slider": "^1.1.0",
     "@radix-ui/react-tabs": "^1.0.1",
     "@radix-ui/react-toggle": "^0.1.4",
@@ -109,13 +109,13 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "react-use-localstorage": "^3.5.3",
+    "shared": "workspace:*",
     "stripe": "^8.179.0",
     "svg-parser": "^2.0.4",
     "svgo": "^2.8.0",
     "use-debounce": "^5.2.1",
     "web-vitals": "^1.0.1",
-    "zustand": "^4.3.3",
-    "shared": "workspace:*"
+    "zustand": "^4.3.3"
   },
   "eslintConfig": {
     "extends": [

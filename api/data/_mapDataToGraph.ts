@@ -1,21 +1,14 @@
 import { FeatureData, Node, Edge, Graph } from "graph-selector";
-import { MappingObject } from "shared";
+import { ImportDataFormType } from "shared";
 
 /**
  * Takes Data and a mapping object and converts it into a graph which can be
  * stringified and returned to the client.
  */
-export function mapDataToGraph(data: any[], mapping: MappingObject): Graph {
-  const { inSourceNodeRow, inTargetNodeRow, rowRepresentsEdgeWhen } = mapping;
-  if (
-    [inSourceNodeRow, inTargetNodeRow, rowRepresentsEdgeWhen].filter(Boolean)
-      .length !== 1
-  ) {
-    throw new Error(
-      "If edges are declared, exactly one of 'inSourceNodeRow', 'inTargetNodeRow', or 'rowRepresentsEdgeWhen' must be defined."
-    );
-  }
-
+export function mapDataToGraph(
+  data: any[],
+  mapping: ImportDataFormType
+): Graph {
   // Create an empty list of nodes and edges
   const nodes: Node[] = [];
   const edges: Edge[] = [];
@@ -24,16 +17,19 @@ export function mapDataToGraph(data: any[], mapping: MappingObject): Graph {
   // this only changes if edges are declared
   // in separate rows because then the record may not contain a node
   let isRecordEdgeOnly: (record: any) => boolean;
-  if (rowRepresentsEdgeWhen) {
-    const { column, is } = rowRepresentsEdgeWhen;
+  if (mapping.edgesDeclared === "separateRows") {
     isRecordEdgeOnly = (record: any) => {
-      if (is === "notEmpty") {
-        return record[column] !== "";
-      } else if (is === "empty") {
-        return record[column] === "";
-      } else {
-        return record[column] === is.equals;
+      if (mapping.rowRepresentsEdgeWhenIs === "notEmpty") {
+        return record[mapping.rowRepresentsEdgeWhenColumn] !== "";
+      } else if (mapping.rowRepresentsEdgeWhenIs === "empty") {
+        return record[mapping.rowRepresentsEdgeWhenColumn] === "";
+      } else if (mapping.rowRepresentsEdgeWhenIs === "equals") {
+        return (
+          record[mapping.rowRepresentsEdgeWhenColumn] ===
+          mapping.rowRepresentsEdgeWhenValue
+        );
       }
+      return false;
     };
   } else {
     isRecordEdgeOnly = () => false;
@@ -44,8 +40,10 @@ export function mapDataToGraph(data: any[], mapping: MappingObject): Graph {
     // Extract the ID, node label, and any additional data for the node
     const id = record[mapping.idColumn];
 
+    const edgeOnly = isRecordEdgeOnly(record);
+
     // only do node stuff if this doesn't represent an edge when edges are in their own row
-    if (!isRecordEdgeOnly(record)) {
+    if (!edgeOnly) {
       const nodeLabel = mapping.nodeLabelColumn
         ? record[mapping.nodeLabelColumn]
         : "";
@@ -62,9 +60,8 @@ export function mapDataToGraph(data: any[], mapping: MappingObject): Graph {
     }
 
     // Create edge if there is an edge in this record
-    if (inSourceNodeRow) {
-      const { targetColumn, targetDelimiter, edgeLabelColumn } =
-        inSourceNodeRow;
+    if (mapping.edgesDeclared === "sourceNode") {
+      const { targetColumn, targetDelimiter, edgeLabelColumn } = mapping;
       // make sure target column isn't an empty string
       if (!targetColumn) continue;
 
@@ -103,9 +100,8 @@ export function mapDataToGraph(data: any[], mapping: MappingObject): Graph {
         };
         edges.push(edge);
       }
-    } else if (inTargetNodeRow) {
-      const { sourceColumn, sourceDelimiter, edgeLabelColumn } =
-        inTargetNodeRow;
+    } else if (mapping.edgesDeclared === "targetNode") {
+      const { sourceColumn, sourceDelimiter, edgeLabelColumn } = mapping;
       // make sure source column isn't an empty string
       if (!sourceColumn) continue;
 
@@ -144,57 +140,29 @@ export function mapDataToGraph(data: any[], mapping: MappingObject): Graph {
         };
         edges.push(edge);
       }
-    } else if (rowRepresentsEdgeWhen) {
-      continue;
+    } else if (mapping.edgesDeclared === "separateRows") {
+      if (edgeOnly) {
+        const { sourceColumn, targetColumn } = mapping;
+        const sourceId = record[sourceColumn];
+        const targetId = record[targetColumn];
+        const edgeLabel = mapping.nodeLabelColumn
+          ? record[mapping.nodeLabelColumn]
+          : "";
+        const edgeData: FeatureData = {
+          // Edge Id's can be empty, they'll be added when stringified
+          id: "",
+          classes: "",
+          label: edgeLabel,
+          // ...record,
+        };
+        const edge: Edge = {
+          source: sourceId,
+          target: targetId,
+          data: edgeData,
+        };
+        edges.push(edge);
+      }
     }
-
-    // // Determine whether the current record represents an edge
-    // let representsEdge = false;
-    // if (mapping.rowRepresentsEdgeWhen) {
-    //   const edgeColumnValue =
-    //     record[mapping.inSourceNodeRow?.edgeLabelColumn ?? ""];
-    //   if (
-    //     (mapping.rowRepresentsEdgeWhen === "notEmpty" &&
-    //       edgeColumnValue !== "") ||
-    //     (mapping.rowRepresentsEdgeWhen === "empty" &&
-    //       edgeColumnValue === "") ||
-    //     (typeof mapping.rowRepresentsEdgeWhen === "object" &&
-    //       edgeColumnValue === mapping.rowRepresentsEdgeWhen.equals)
-    //   ) {
-    //     representsEdge = true;
-    //   }
-    // }
-
-    // // If the record represents an edge, create edge objects and add them to the list of edges
-    // if (representsEdge) {
-    //   // Extract the source and target nodes for the edge
-    //   const sourceNodeId =
-    //     record[mapping.inTargetNodeRow?.sourceColumn ?? ""];
-    //   const targetNodeIds = record[
-    //     mapping.inSourceNodeRow?.targetColumn ?? ""
-    //   ].split(mapping.inSourceNodeRow?.targetDelimiter ?? ",");
-
-    //   // Extract the edge label, if specified
-    //   const edgeLabelColumn =
-    //     mapping.inSourceNodeRow?.edgeLabelColumn ?? mapping.nodeLabelColumn;
-    //   const edgeLabel = edgeLabelColumn ? record[edgeLabelColumn] : "";
-
-    //   // Create edge objects and add them to the list of edges
-    //   for (const targetNodeId of targetNodeIds) {
-    //     const edgeData: FeatureData = {
-    //       id: `${sourceNodeId}->${targetNodeId}`,
-    //       classes: "",
-    //       label: edgeLabel,
-    //       ...record,
-    //     };
-    //     const edge: Edge = {
-    //       source: sourceNodeId,
-    //       target: targetNodeId,
-    //       data: edgeData,
-    //     };
-    //     edges.push(edge);
-    //   }
-    // }
   }
 
   // Return the resulting Graph object

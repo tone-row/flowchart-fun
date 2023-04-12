@@ -1,7 +1,10 @@
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Progress from "@radix-ui/react-progress";
+import * as RadioGroup from "@radix-ui/react-radio-group";
+import * as Select from "@radix-ui/react-select";
 import {
+  CaretDown,
   CircleNotch,
   Database,
   File,
@@ -9,19 +12,31 @@ import {
   Warning,
   X,
 } from "phosphor-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useDropzone } from "react-dropzone";
+import { useMutation } from "react-query";
+import { ImportDataFormType } from "shared";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
+import { useDoc } from "../lib/useDoc";
 import { Content, Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
+import Spinner from "./Spinner";
 
 type UseImportData = {
   isProcessing: boolean;
-  step: "upload" | "processing" | "mapping" | "error";
+  step: "upload" | "processing" | "mapping" | "error" | "confirm";
   errorMessage: string;
   filename: string;
+  columnNames: string[];
+  columnValues: Record<string, any[]>;
+  /** The parsed CSV data */
+  records: Record<string, any>[];
+  processingErrorMessage?: string;
+  numNodes: number;
+  numEdges: number;
+  graphString: string;
 };
 
 const defaultImportData: UseImportData = {
@@ -29,8 +44,21 @@ const defaultImportData: UseImportData = {
   step: "upload",
   filename: "",
   errorMessage: "",
+  columnNames: [],
+  columnValues: {},
+  records: [],
+  processingErrorMessage: undefined,
+  numNodes: 0,
+  numEdges: 0,
+  graphString: "",
 };
 
+const focusStates =
+  "focus-visible:outline-none focus:shadow-none focus-visible:ring-2 focus-visible:ring-blue-200 focus-visible:z-50 focus-visible:border-transparent";
+
+/**
+ * Store the current step of the data importing process along with used data
+ */
 const useImportData = create<UseImportData>()(
   devtools((_set) => defaultImportData, {
     name: "useImportData",
@@ -61,7 +89,7 @@ export function ImportDataDialog() {
         <Overlay />
         <Content
           maxWidthClass="max-w-[600px]"
-          className="min-h-[350px] content-start"
+          className="min-h-[350px] content-start overflow-y-scroll"
         >
           <Dialog.Title className="text-2xl font-bold flex items-center">
             <Database className="mr-2" />
@@ -76,6 +104,7 @@ export function ImportDataDialog() {
               {step === "processing" && <ProcessingData />}
               {step === "mapping" && <MappingData />}
               {step === "error" && <ErrorMessage />}
+              {step === "confirm" && <ConfirmAddNodesAndEdges />}
             </div>
           </Dialog.Description>
           <Dialog.Close className="absolute top-4 right-4 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
@@ -111,7 +140,7 @@ const UploadFile = () => {
       };
       reader.onload = (e) => {
         const text = e.target?.result as string;
-        fetch("/api/import-data", {
+        fetch("/api/data/import", {
           method: "POST",
           headers: {
             "Content-Type": "text/csv",
@@ -127,12 +156,21 @@ const UploadFile = () => {
                 });
               });
             }
-            return res.json();
+            return res.json() as Promise<{
+              columnNames: string[];
+              columnValues: Record<string, any[]>;
+              records: Record<string, any>[];
+            }>;
           })
           .then((data) => {
             // TODO: set the initial form state, along with everything needed
             // to make the form operable
-            console.log(data);
+            useImportData.setState({
+              step: "mapping",
+              columnNames: data.columnNames,
+              columnValues: data.columnValues,
+              records: data.records,
+            });
           })
           .catch((err) => {
             useImportData.setState({
@@ -143,11 +181,13 @@ const UploadFile = () => {
 
         // Minimum time before transitioning, to allow for animation
         setTimeout(() => {
-          useImportData.setState({
-            filename: file.name,
-            isProcessing: true,
-            step: "processing",
-          });
+          // if the step is not already mapping well show processing screen
+          if (useImportData.getState().step !== "mapping")
+            useImportData.setState({
+              filename: file.name,
+              isProcessing: true,
+              step: "processing",
+            });
         }, 750);
       };
       reader.readAsText(file);
@@ -224,26 +264,450 @@ function ProcessingData() {
   );
 }
 
-function MappingData() {
-  return <div>hi</div>;
-}
-
 function ErrorMessage() {
   const errorMessage = useImportData((state) => state.errorMessage);
   return (
     <div className="grid gap-4">
-      <div className="bg-red-100 dark:bg-red-800 rounded-lg p-4 grid content-center justify-center">
-        <div className="flex items-center gap-2 items-center">
-          <Warning className="w-6 h-6 text-red-500 dark:text-red-400" />
-          <p className="text-red-500 dark:text-red-400">{errorMessage}</p>
-        </div>
-      </div>
+      <SmallErrorMessage>{errorMessage}</SmallErrorMessage>
+
       <button
         className="text-neutral-500 text-sm focus:shadow-none dark:text-neutral-400"
         onClick={resetForm}
       >
         <Trans>Start Over</Trans>
       </button>
+    </div>
+  );
+}
+
+function SmallErrorMessage({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="bg-red-100 dark:bg-red-800 rounded-lg p-4 grid content-center justify-center">
+      <div className="flex items-center gap-2 items-center">
+        <Warning className="w-6 h-6 text-red-500 dark:text-red-400" />
+        <p className="text-red-500 dark:text-red-400">{children}</p>
+      </div>
+    </div>
+  );
+}
+
+const MappingData = () => {
+  const columnNames = useImportData((state) => state.columnNames);
+  const columnSelectionValues = useMemo(
+    () =>
+      columnNames.map((name) => ({
+        text: name,
+        value: name,
+      })),
+    [columnNames]
+  );
+  const columnSelectionValuesWithNone = useMemo(
+    () => [
+      {
+        text: "None",
+        value: "",
+      },
+      ...columnSelectionValues,
+    ],
+    [columnSelectionValues]
+  );
+  const columnValues = useImportData((state) => state.columnValues);
+  const [formState, setFormState] = useState<ImportDataFormType>({
+    idColumn: columnNames[0],
+    nodeLabelColumn: columnNames[0],
+    edgesDeclared: "none",
+  });
+
+  const handleFormChange = (name: string, value: string) => {
+    setFormState((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const processingErrorMessage = useImportData(
+    (state) => state.processingErrorMessage
+  );
+
+  const onSubmit = useMutation(
+    "process-data",
+    async (formState: ImportDataFormType) => {
+      await fetch("/api/data/process", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          mapping: formState,
+          data: useImportData.getState().records,
+        }),
+      }).then((res) => {
+        if (res.ok) {
+          // move to the next step
+          (
+            res.json() as Promise<{
+              numNodes: number;
+              numEdges: number;
+              graphString: string;
+            }>
+          ).then((data) => {
+            // here we would set the final data and ask for confirmation
+            useImportData.setState({
+              step: "confirm",
+              numNodes: data.numNodes,
+              numEdges: data.numEdges,
+              graphString: data.graphString,
+            });
+          });
+        } else {
+          res.text().then((text) => {
+            useImportData.setState({
+              processingErrorMessage: text,
+              step: "mapping",
+            });
+          });
+        }
+      });
+    }
+  );
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        // console log all the form data
+        console.log(formState);
+        onSubmit.mutate(formState);
+      }}
+      className="grid gap-5"
+    >
+      <H2>Map Data</H2>
+      {processingErrorMessage && (
+        <SmallErrorMessage>{processingErrorMessage}</SmallErrorMessage>
+      )}
+      <Label label={`Node ID`}>
+        <StyledSelect
+          value={formState.idColumn}
+          onValueChange={(value) => handleFormChange("idColumn", value)}
+          items={columnSelectionValues}
+        />
+      </Label>
+      <Label label={`Node Label`}>
+        <StyledSelect
+          value={formState.nodeLabelColumn}
+          onValueChange={(value) => handleFormChange("nodeLabelColumn", value)}
+          items={columnSelectionValues}
+        />
+      </Label>
+      <Label
+        label={t`Edges`}
+        description={t`How are edges declared in this data?`}
+      >
+        <RadioGroup.Root
+          value={formState.edgesDeclared}
+          orientation="vertical"
+          onValueChange={(value) => {
+            handleFormChange("edgesDeclared", value);
+          }}
+        >
+          <RadioLabel
+            value="none"
+            title={t`No Edges`}
+            description={t`There are no edges in this data`}
+          />
+          <RadioLabel
+            value="sourceNode"
+            title={t`Edges in Source Node Row`}
+            description={t`Edges are declared in the same row as their source node`}
+          />
+          <RadioLabel
+            value="targetNode"
+            title={t`Edges in Target Node Row`}
+            description={t`Edges are declared in the same row as their target node`}
+          />
+          <RadioLabel
+            value="separateRows"
+            title={t`Edges in Separate Rows`}
+            description={t`Edges are declared in their own row`}
+          />
+        </RadioGroup.Root>
+      </Label>
+      {formState.edgesDeclared === "sourceNode" ? (
+        <>
+          <Label
+            label={t`Target Column`}
+            description={t`The column that contains the target node ID(s)`}
+          >
+            <StyledSelect
+              value={formState.targetColumn}
+              onValueChange={(value) => handleFormChange("targetColumn", value)}
+              items={columnSelectionValues}
+            />
+          </Label>
+          <Label
+            label={`Target Delimiter`}
+            description={t`The delimiter used to separate multiple target nodes`}
+          >
+            <input
+              type="text"
+              name="targetDelimiter"
+              value={formState.targetDelimiter ?? ""}
+              onChange={(e) => {
+                handleFormChange("targetDelimiter", e.target.value);
+              }}
+              className={`p-2 border border-neutral-300 rounded ${focusStates}`}
+            />
+          </Label>
+          <Label
+            label={`Edge Label Column`}
+            description={t`The column that contains the edge label(s)`}
+          >
+            <StyledSelect
+              value={formState.edgeLabelColumn}
+              defaultValue=""
+              onValueChange={(value) =>
+                handleFormChange("edgeLabelColumn", value)
+              }
+              items={columnSelectionValuesWithNone}
+            />
+          </Label>
+        </>
+      ) : formState.edgesDeclared === "targetNode" ? (
+        <>
+          <Label label={`Source Column`}>
+            <StyledSelect
+              value={formState.sourceColumn}
+              onValueChange={(value) => handleFormChange("sourceColumn", value)}
+              items={columnSelectionValues}
+            />
+          </Label>
+          <Label label={`Source Delimiter`}>
+            <input
+              type="text"
+              name="sourceDelimiter"
+              value={formState.sourceDelimiter ?? ""}
+              onChange={(e) => {
+                handleFormChange("sourceDelimiter", e.target.value);
+              }}
+              className={`p-2 border border-neutral-300 rounded ${focusStates}`}
+            />
+          </Label>
+          <Label label={`Edge Label Column`}>
+            <StyledSelect
+              value={formState.edgeLabelColumn}
+              defaultValue=""
+              onValueChange={(value) =>
+                handleFormChange("edgeLabelColumn", value)
+              }
+              items={columnSelectionValuesWithNone}
+            />
+          </Label>
+        </>
+      ) : formState.edgesDeclared === "separateRows" ? (
+        <>
+          <Label label={`Source Column`}>
+            <StyledSelect
+              value={formState.sourceColumn}
+              onValueChange={(value) => handleFormChange("sourceColumn", value)}
+              items={columnSelectionValues}
+            />
+          </Label>
+          <Label label={`Target Column`}>
+            <StyledSelect
+              value={formState.targetColumn}
+              onValueChange={(value) => handleFormChange("targetColumn", value)}
+              items={columnSelectionValues}
+            />
+          </Label>
+          <h2 className="mt-2 italics text-neutral-600">
+            Row Represents Edge When...
+          </h2>
+          <Label label={`Column`}>
+            <StyledSelect
+              value={formState.rowRepresentsEdgeWhenColumn}
+              onValueChange={(value) =>
+                handleFormChange("rowRepresentsEdgeWhenColumn", value)
+              }
+              items={columnSelectionValues}
+            />
+          </Label>
+          <Label label={`Is`}>
+            <StyledSelect
+              value={formState.rowRepresentsEdgeWhenIs}
+              onValueChange={(value) =>
+                handleFormChange("rowRepresentsEdgeWhenIs", value)
+              }
+              items={[
+                { text: "Empty", value: "empty" },
+                { text: "Not Empty", value: "notEmpty" },
+                { text: "Equal To", value: "equals" },
+              ]}
+            />
+          </Label>
+          {formState.rowRepresentsEdgeWhenIs === "equals" ? (
+            <Label label={`Value`}>
+              <StyledSelect
+                value={formState.rowRepresentsEdgeWhenValue}
+                onValueChange={(value) =>
+                  handleFormChange("rowRepresentsEdgeWhenValue", value)
+                }
+                items={columnValues[formState.rowRepresentsEdgeWhenColumn].map(
+                  (value) => ({ text: value, value })
+                )}
+              />
+            </Label>
+          ) : null}
+        </>
+      ) : null}
+      <button
+        type="submit"
+        className="p-4 text-center font-bold bg-blue-500 text-background rounded hover:bg-blue-600 active:bg-blue-700"
+      >
+        {onSubmit.isLoading ? (
+          <Spinner className="inline-block" c="white" r={5} />
+        ) : (
+          t`Submit`
+        )}
+      </button>
+    </form>
+  );
+};
+
+function Label({
+  children,
+  label,
+  description,
+  className = "",
+  ...props
+}: {
+  children: React.ReactNode;
+  label: string;
+  description?: string;
+} & React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>) {
+  return (
+    <div {...props} className={`grid gap-2 ${className}`}>
+      <div className="grid">
+        <LabelSpan>{label}</LabelSpan>
+        {description ? <Description>{description}</Description> : null}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function LabelSpan({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="text-base font-bold text-foreground/90">{children}</span>
+  );
+}
+
+function StyledSelect({
+  items,
+  placeholder = "Select...",
+  ...props
+}: {
+  items: {
+    value: string;
+    text: string;
+  }[];
+  placeholder?: string;
+} & Select.SelectProps) {
+  return (
+    <Select.Root {...props}>
+      <Select.Trigger
+        className={`border border-solid border-neutral-300 font-mono text-sm text-neutral-700 flex items-center gap-2 text-sm px-2 py-2 rounded hover:bg-neutral-200 ${focusStates}`}
+      >
+        <Select.Value placeholder={placeholder} />
+        <Select.Icon>
+          <CaretDown />
+        </Select.Icon>
+      </Select.Trigger>
+      <Select.Portal>
+        <Select.Content className="bg-background border border-neutral-300 shadow rounded z-50">
+          <Select.ScrollUpButton />
+          <Select.Viewport>
+            {items.map((item) => (
+              <Select.Item
+                value={item.value}
+                key={item.value}
+                className="text-sm px-2 py-2 hover:bg-neutral-200 font-mono text-sm text-neutral-700 first:rounded-t last:rounded-b"
+              >
+                <Select.ItemText className="min-w-[200px]">
+                  {item.text}
+                </Select.ItemText>
+              </Select.Item>
+            ))}
+          </Select.Viewport>
+          <Select.ScrollDownButton />
+        </Select.Content>
+      </Select.Portal>
+    </Select.Root>
+  );
+}
+
+function Description({ children }: { children: React.ReactNode }) {
+  return <p className="text-sm text-foreground/60">{children}</p>;
+}
+
+function RadioLabel({
+  title,
+  description,
+  ...props
+}: {
+  title: string;
+  description: string;
+} & RadioGroup.RadioGroupItemProps) {
+  return (
+    <RadioGroup.Item
+      className={`grid w-full p-3 pr-2 grid-flow-col gap-2 items-center grid-cols-[minmax(0,1fr)_auto] border border-t-0 border-solid border-neutral-300 first:rounded-t last:rounded-b first:border-t hover:bg-neutral-200 ${focusStates} data-[state=checked]:bg-blue-100`}
+      {...props}
+    >
+      <div className="grid gap-1 text-left">
+        <span className="text-sm">{title}</span>
+        <Description>{description}</Description>
+      </div>
+      <div className="w-6 h-6 rounded-md border border-solid border-neutral-300 grid content-center justify-center">
+        <RadioGroup.Indicator className="w-4 h-4 rounded border border-solid bg-neutral-300 data-[state=checked]:bg-blue-500" />
+      </div>
+    </RadioGroup.Item>
+  );
+}
+
+/**
+ * Ask user to confirm adding number of nodes and edges
+ */
+function ConfirmAddNodesAndEdges() {
+  const numNodes = useImportData((state) => state.numNodes);
+  const numEdges = useImportData((state) => state.numEdges);
+  const graphString = useImportData((state) => state.graphString);
+
+  return (
+    <div className="grid gap-4">
+      <p>
+        {t`You are about to add ${numNodes} nodes and ${numEdges} edges to your graph.`}
+      </p>
+      <p>{t`Would you like to continue?`}</p>
+      <div className="flex gap-2 justify-self-end">
+        <Dialog.Close asChild>
+          <button className="px-6 py-3 font-bold bg-neutral-500 text-background rounded hover:bg-neutral-600 active:bg-neutral-700">
+            {t`Cancel`}
+          </button>
+        </Dialog.Close>
+        <Dialog.Close asChild>
+          <button
+            className="px-6 py-3 font-bold bg-blue-500 text-background rounded hover:bg-blue-600 active:bg-blue-700"
+            onClick={() => {
+              useDoc.setState((state) => ({
+                text: state.text.trim()
+                  ? `${state.text}\n\n${graphString}`
+                  : graphString,
+              }));
+            }}
+          >
+            {t`Continue`}
+          </button>
+        </Dialog.Close>
+      </div>
     </div>
   );
 }

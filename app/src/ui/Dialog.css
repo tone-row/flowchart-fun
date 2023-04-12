@@ -1,0 +1,22 @@
+.dialog-content::-webkit-scrollbar {
+  @apply w-3;
+}
+.dialog-content::-webkit-scrollbar-button {
+  height: 0;
+}
+
+.dialog-content::-webkit-scrollbar-track {
+  @apply bg-neutral-200 rounded-tr-lg rounded-br-lg;
+}
+.dialog-content::-webkit-scrollbar-track-piece {
+  /* 4 */
+}
+.dialog-content::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 rounded-tr-lg rounded-br-lg;
+}
+.dialog-content::-webkit-scrollbar-corner {
+  /* 6 */
+}
+.dialog-content::-webkit-resizer {
+  /* 7 */
+}
