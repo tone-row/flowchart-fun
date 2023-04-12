@@ -15,8 +15,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       return;
     }
 
-    console.log(mapping);
-
     const graph = mapDataToGraph(data, mapping);
 
     const numNodes = graph.nodes.length;

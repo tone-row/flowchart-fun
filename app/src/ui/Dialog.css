@@ -6,13 +6,13 @@
 }
 
 .dialog-content::-webkit-scrollbar-track {
-  @apply bg-neutral-200 rounded-tr-lg rounded-br-lg;
+  @apply bg-neutral-200 rounded-tr-lg rounded-br-lg dark:bg-neutral-700;
 }
 .dialog-content::-webkit-scrollbar-track-piece {
   /* 4 */
 }
 .dialog-content::-webkit-scrollbar-thumb {
-  @apply bg-neutral-300 rounded-tr-lg rounded-br-lg;
+  @apply bg-neutral-300 rounded-tr-lg rounded-br-lg dark:bg-neutral-600;
 }
 .dialog-content::-webkit-scrollbar-corner {
   /* 6 */

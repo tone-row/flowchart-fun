@@ -54,8 +54,10 @@ const defaultImportData: UseImportData = {
 };
 
 const focusStates =
-  "focus-visible:outline-none focus:shadow-none focus-visible:ring-2 focus-visible:ring-blue-200 focus-visible:z-50 focus-visible:border-transparent";
+  "focus-visible:outline-none focus:shadow-none focus-visible:ring-2 focus-visible:ring-blue-200 focus-visible:z-50 focus-visible:border-transparent dark:focus-visible:ring-blue-700";
 
+const borderStyles = "border-neutral-300 dark:border-neutral-700";
+const inputStyles = `p-2 border ${borderStyles} rounded ${focusStates} bg-background dark:bg-foreground`;
 /**
  * Store the current step of the data importing process along with used data
  */
@@ -202,10 +204,10 @@ const UploadFile = () => {
       <H2>Upload your File</H2>
       {file ? (
         <>
-          <div className="border-2 border-solid border-blue-300 dark:border-blue-700 rounded-lg p-4 text-center cursor-pointer grid gap-2 content-center justify-center h-36 bg-blue-100 dark:bg-blue-800">
+          <div className="border-2 border-solid border-blue-300 dark:border-blue-700 rounded-lg p-4 text-center cursor-pointer grid gap-2 content-center justify-center h-36 bg-blue-100 dark:bg-blue-800/50">
             <div className="flex items-center gap-2">
-              <File className="w-10 h-10 text-blue-400 dark:text-blue-600" />
-              <span className="text-xl font-bold text-blue-500 dark:text-blue-400">
+              <File className="w-10 h-10 text-blue-400 dark:text-blue-500" />
+              <span className="text-xl font-bold text-blue-500 dark:text-blue-300">
                 {file.name}
               </span>
             </div>
@@ -220,7 +222,7 @@ const UploadFile = () => {
             value={uploadProgress}
           >
             <Progress.Indicator
-              className="w-full h-full transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)] bg-blue-500"
+              className="w-full h-full transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)] bg-blue-500 dark:bg-neutral-400"
               style={{ transform: `translateX(-${100 - uploadProgress}%)` }}
             />
           </Progress.Root>
@@ -229,7 +231,7 @@ const UploadFile = () => {
         <div
           {...getRootProps()}
           data-drag-active={isDragActive}
-          className="border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-lg p-4 text-center cursor-pointer data-[drag-active=true]:border-neutral-500 dark:data-[drag-active=true]:border-neutral-400 focus:outline-none grid gap-2 content-center justify-center h-36"
+          className={`border-2 border-dashed ${borderStyles} rounded-lg p-4 text-center cursor-pointer data-[drag-active=true]:border-neutral-500 dark:data-[drag-active=true]:border-neutral-400 focus:outline-none grid gap-2 content-center justify-center h-36`}
         >
           <input {...getInputProps()} />
           <FileCsv className="w-12 h-12 mx-auto text-neutral-400 dark:text-neutral-600" />
@@ -284,8 +286,8 @@ function SmallErrorMessage({ children }: { children: React.ReactNode }) {
   return (
     <div className="bg-red-100 dark:bg-red-800 rounded-lg p-4 grid content-center justify-center">
       <div className="flex items-center gap-2 items-center">
-        <Warning className="w-6 h-6 text-red-500 dark:text-red-400" />
-        <p className="text-red-500 dark:text-red-400">{children}</p>
+        <Warning className="w-6 h-6 text-red-500 dark:text-red-200" />
+        <p className="text-red-500 dark:text-red-200">{children}</p>
       </div>
     </div>
   );
@@ -452,7 +454,7 @@ const MappingData = () => {
               onChange={(e) => {
                 handleFormChange("targetDelimiter", e.target.value);
               }}
-              className={`p-2 border border-neutral-300 rounded ${focusStates}`}
+              className={inputStyles}
             />
           </Label>
           <Label
@@ -471,14 +473,20 @@ const MappingData = () => {
         </>
       ) : formState.edgesDeclared === "targetNode" ? (
         <>
-          <Label label={`Source Column`}>
+          <Label
+            label={t`Source Column`}
+            description={t`The column that contains the source node ID(s)`}
+          >
             <StyledSelect
               value={formState.sourceColumn}
               onValueChange={(value) => handleFormChange("sourceColumn", value)}
               items={columnSelectionValues}
             />
           </Label>
-          <Label label={`Source Delimiter`}>
+          <Label
+            label={t`Source Delimiter`}
+            description={t`The delimiter used to separate multiple source nodes`}
+          >
             <input
               type="text"
               name="sourceDelimiter"
@@ -486,7 +494,7 @@ const MappingData = () => {
               onChange={(e) => {
                 handleFormChange("sourceDelimiter", e.target.value);
               }}
-              className={`p-2 border border-neutral-300 rounded ${focusStates}`}
+              className={inputStyles}
             />
           </Label>
           <Label label={`Edge Label Column`}>
@@ -597,7 +605,9 @@ function Label({
 
 function LabelSpan({ children }: { children: React.ReactNode }) {
   return (
-    <span className="text-base font-bold text-foreground/90">{children}</span>
+    <span className="text-base font-bold text-foreground/90 dark:text-background/90">
+      {children}
+    </span>
   );
 }
 
@@ -615,7 +625,7 @@ function StyledSelect({
   return (
     <Select.Root {...props}>
       <Select.Trigger
-        className={`border border-solid border-neutral-300 font-mono text-sm text-neutral-700 flex items-center gap-2 text-sm px-2 py-2 rounded hover:bg-neutral-200 ${focusStates}`}
+        className={`border border-solid ${borderStyles} font-mono text-xs text-neutral-700 dark:text-neutral-300 flex items-center gap-2 px-2 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-800 ${focusStates}`}
       >
         <Select.Value placeholder={placeholder} />
         <Select.Icon>
@@ -623,14 +633,16 @@ function StyledSelect({
         </Select.Icon>
       </Select.Trigger>
       <Select.Portal>
-        <Select.Content className="bg-background border border-neutral-300 shadow rounded z-50">
+        <Select.Content
+          className={`bg-background dark:bg-foreground border ${borderStyles} shadow rounded z-50`}
+        >
           <Select.ScrollUpButton />
           <Select.Viewport>
             {items.map((item) => (
               <Select.Item
                 value={item.value}
                 key={item.value}
-                className="text-sm px-2 py-2 hover:bg-neutral-200 font-mono text-sm text-neutral-700 first:rounded-t last:rounded-b"
+                className="text-xs px-2 py-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 font-mono text-neutral-700 dark:text-neutral-300 first:rounded-t last:rounded-b"
               >
                 <Select.ItemText className="min-w-[200px]">
                   {item.text}
@@ -646,7 +658,11 @@ function StyledSelect({
 }
 
 function Description({ children }: { children: React.ReactNode }) {
-  return <p className="text-sm text-foreground/60">{children}</p>;
+  return (
+    <p className="text-sm text-foreground/60 dark:text-background/60">
+      {children}
+    </p>
+  );
 }
 
 function RadioLabel({
@@ -659,15 +675,17 @@ function RadioLabel({
 } & RadioGroup.RadioGroupItemProps) {
   return (
     <RadioGroup.Item
-      className={`grid w-full p-3 pr-2 grid-flow-col gap-2 items-center grid-cols-[minmax(0,1fr)_auto] border border-t-0 border-solid border-neutral-300 first:rounded-t last:rounded-b first:border-t hover:bg-neutral-200 ${focusStates} data-[state=checked]:bg-blue-100`}
+      className={`grid w-full p-3 pr-2 grid-flow-col gap-2 items-center grid-cols-[minmax(0,1fr)_auto] border border-t-0 border-solid border-neutral-300 dark:border-neutral-700 first:rounded-t last:rounded-b first:border-t hover:bg-neutral-200 dark:hover:bg-neutral-800 ${focusStates} data-[state=checked]:bg-blue-100 data-[state=checked]:dark:bg-blue-900`}
       {...props}
     >
       <div className="grid gap-1 text-left">
         <span className="text-sm">{title}</span>
         <Description>{description}</Description>
       </div>
-      <div className="w-6 h-6 rounded-md border border-solid border-neutral-300 grid content-center justify-center">
-        <RadioGroup.Indicator className="w-4 h-4 rounded border border-solid bg-neutral-300 data-[state=checked]:bg-blue-500" />
+      <div
+        className={`w-6 h-6 rounded-md border border-solid ${borderStyles} grid content-center justify-center`}
+      >
+        <RadioGroup.Indicator className="w-4 h-4 rounded bg-neutral-300 data-[state=checked]:bg-blue-500 dark:data-[state=checked]:bg-blue-400" />
       </div>
     </RadioGroup.Item>
   );
