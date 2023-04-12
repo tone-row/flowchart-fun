@@ -2,17 +2,20 @@ import { Trans } from "@lingui/macro";
 import produce from "immer";
 import React, { ReactNode } from "react";
 
+import { useIsValidSponsor } from "../lib/hooks";
 import { parsers, useParser } from "../lib/parsers";
 import { useDoc } from "../lib/useDoc";
 import { Box, Type } from "../slang";
 import styles from "./EditorOptions.module.css";
 import { ImportDataDialog } from "./ImportDataDialog";
+import { ImportDataUnauthenticatedDialog } from "./ImportDataUnauthenticatedDialog";
 import { LearnSyntaxDialog } from "./LearnSyntaxDialog";
 
 export function EditorOptions({ children }: { children: ReactNode }) {
   const parser = useParser();
   const parserOption = parsers.find((p) => p.value === parser);
   if (!parserOption) throw new Error("Invalid parser");
+  const isValidSponsor = useIsValidSponsor();
 
   return (
     <div className={styles.editorOptions}>
@@ -22,7 +25,11 @@ export function EditorOptions({ children }: { children: ReactNode }) {
             <>
               <LearnSyntaxDialog />
               <span className="bg-blue-300 h-4 w-px dark:bg-blue-900" />
-              <ImportDataDialog />
+              {isValidSponsor ? (
+                <ImportDataDialog />
+              ) : (
+                <ImportDataUnauthenticatedDialog />
+              )}
             </>
           ) : (
             <span />

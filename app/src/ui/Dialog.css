@@ -1,22 +1,22 @@
-.dialog-content::-webkit-scrollbar {
+.dialog-content-v-overflow::-webkit-scrollbar {
   @apply w-3;
 }
-.dialog-content::-webkit-scrollbar-button {
+.dialog-content-v-overflow::-webkit-scrollbar-button {
   height: 0;
 }
 
-.dialog-content::-webkit-scrollbar-track {
+.dialog-content-v-overflow::-webkit-scrollbar-track {
   @apply bg-neutral-200 rounded-tr-lg rounded-br-lg dark:bg-neutral-700;
 }
-.dialog-content::-webkit-scrollbar-track-piece {
+.dialog-content-v-overflow::-webkit-scrollbar-track-piece {
   /* 4 */
 }
-.dialog-content::-webkit-scrollbar-thumb {
+.dialog-content-v-overflow::-webkit-scrollbar-thumb {
   @apply bg-neutral-300 rounded-tr-lg rounded-br-lg dark:bg-neutral-600;
 }
-.dialog-content::-webkit-scrollbar-corner {
+.dialog-content-v-overflow::-webkit-scrollbar-corner {
   /* 6 */
 }
-.dialog-content::-webkit-resizer {
+.dialog-content-v-overflow::-webkit-resizer {
   /* 7 */
 }

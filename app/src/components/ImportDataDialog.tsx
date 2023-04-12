@@ -90,6 +90,7 @@ export function ImportDataDialog() {
       <Dialog.Portal>
         <Overlay />
         <Content
+          overflowV
           maxWidthClass="max-w-[600px]"
           className="min-h-[350px] content-start overflow-y-scroll"
         >
