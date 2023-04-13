@@ -41,7 +41,8 @@ export const editorOptions: EditorProps["options"] = {
   automaticLayout: true,
   lineNumbers: "off",
   contextmenu: false,
-  fontFamily: "monospace",
+  fontFamily:
+    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   fontSize: 16,
   lineHeight: 32,
   tabSize: 2,

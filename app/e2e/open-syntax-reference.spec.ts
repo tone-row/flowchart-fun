@@ -18,7 +18,7 @@ test.describe("Open syntax reference", () => {
       await page
         .getByRole("combobox", { name: "Syntax" })
         .selectOption("graph-selector");
-      await page.getByRole("button", { name: "Syntax Reference" }).click();
+      await page.getByRole("button", { name: "Learn Syntax" }).click();
       // expect 'Node Label' to be in the document
       await expect(
         page.getByRole("heading", { name: "Node Label" })

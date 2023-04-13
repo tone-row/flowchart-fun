@@ -47,19 +47,21 @@
     Clay: "Clay",
     Clear: "Clear",
     "Clear text?": "Clear text?",
-    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
-      "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]",
+    "Click on \\nLearn Syntax\\nto learn more":
+      "Click on \\nLearn Syntax\\nto learn more",
     Clone: "Clone",
     Close: "Close",
     Color: "Color",
     "Colors include red, orange, yellow, blue, purple, black, white, and gray.":
       "Colors include red, orange, yellow, blue, purple, black, white, and gray.",
+    Column: "Column",
     "Comic Book": "Comic Book",
     Concentric: "Concentric",
     "Confirm New Email": "Confirm New Email",
     Containers: "Containers",
     "Containers are nodes that contain other nodes. They are declared using curly braces.":
       "Containers are nodes that contain other nodes. They are declared using curly braces.",
+    Continue: "Continue",
     "Convert to hosted chart?": "Convert to hosted chart?",
     Copy: "Copy",
     "Copy PNG Image": "Copy PNG Image",
@@ -92,21 +94,36 @@
     "Download JPG": "Download JPG",
     "Download PNG": "Download PNG",
     "Download SVG": "Download SVG",
+    "Drag and drop a CSV file here, or click to select a file":
+      "Drag and drop a CSV file here, or click to select a file",
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
+    "Drop the file here ...": "Drop the file here ...",
     Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
+    "Edge Label Column": "Edge Label Column",
     "Edge Style": "Edge Style",
     Edges: "Edges",
+    "Edges are declared in the same row as their source node":
+      "Edges are declared in the same row as their source node",
+    "Edges are declared in the same row as their target node":
+      "Edges are declared in the same row as their target node",
+    "Edges are declared in their own row":
+      "Edges are declared in their own row",
     "Edges can also have ID's, classes, and attributes before the label":
       "Edges can also have ID's, classes, and attributes before the label",
     "Edges can be styled with dashed, dotted, or solid lines":
       "Edges can be styled with dashed, dotted, or solid lines",
+    "Edges in Separate Rows": "Edges in Separate Rows",
+    "Edges in Source Node Row": "Edges in Source Node Row",
+    "Edges in Target Node Row": "Edges in Target Node Row",
     Editable: "Editable",
     Editor: "Editor",
     Eggs: "Eggs",
     Email: "Email",
+    Empty: "Empty",
+    "Equal To": "Equal To",
     "Everything in Free": "Everything in Free",
     Excalidraw: "Excalidraw",
     Export: "Export",
@@ -128,22 +145,34 @@
     Help: "Help",
     History: "History",
     Home: "Home",
+    "How are edges declared in this data?":
+      "How are edges declared in this data?",
     "ID's": "ID's",
     "Image Export": "Image Export",
     Images: "Images",
+    "Import Data": "Import Data",
+    "Import data from a CSV file.": "Import data from a CSV file.",
+    "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio.":
+      "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio.",
+    "Import from Lucidchart, Visio, and other CSV files":
+      "Import from Lucidchart, Visio, and other CSV files",
     "Import your diagram it into Microsoft Visio using one of these CSV files.":
       "Import your diagram it into Microsoft Visio using one of these CSV files.",
+    "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
+      "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.",
     "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
       "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:",
     "Indenting creates an edge": "Indenting creates an edge",
     Info: "Info",
     Instruct: "Instruct",
+    Is: "Is",
     Language: "Language",
     Large: "Large",
     Layout: "Layout",
     "Layout is Frozen": "Layout is Frozen",
     "Leading References": "Leading References",
     "Learn More": "Learn More",
+    "Learn Syntax": "Learn Syntax",
     "Learn about Flowchart Fun Pro": "Learn about Flowchart Fun Pro",
     "Left to Right": "Left to Right",
     Light: "Light",
@@ -156,6 +185,7 @@
     "Make publicly accessible": "Make publicly accessible",
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!",
+    "Map Data": "Map Data",
     Medium: "Medium",
     Method: "Method",
     Monospace: "Monospace",
@@ -164,14 +194,17 @@
     New: "New",
     "New Email": "New Email",
     "Next charge": "Next charge",
+    "No Edges": "No Edges",
     Node: "Node",
     "Node Border Style": "Node Border Style",
     "Node Colors": "Node Colors",
+    "Node ID": "Node ID",
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
+    "Not Empty": "Not Empty",
     "Office Hours": "Office Hours",
     "One-on-One Support": "One-on-One Support",
     "One-time Share Links": "One-time Share Links",
@@ -187,6 +220,7 @@
     "Persistent Flowcharts": "Persistent Flowcharts",
     Playbook: "Playbook",
     Pricing: "Pricing",
+    "Processing Data": "Processing Data",
     Prompt: "Prompt",
     Public: "Public",
     Random: "Random",
@@ -227,11 +261,14 @@
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
       "Sorry! This page is only available in English.",
+    "Source Column": "Source Column",
+    "Source Delimiter": "Source Delimiter",
     "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "Spacing",
     "Special Attributes": "Special Attributes",
     Standard: "Standard",
     Start: "Start",
+    "Start Over": "Start Over",
     Status: "Status",
     "Store any data associated to a node":
       "Store any data associated to a node",
@@ -245,7 +282,8 @@
     Subscription: "Subscription",
     "Subscription will end": "Subscription will end",
     Syntax: "Syntax",
-    "Syntax Reference": "Syntax Reference",
+    "Target Column": "Target Column",
+    "Target Delimiter": "Target Delimiter",
     Temporary: "Temporary",
     "Temporary Flowcharts": "Temporary Flowcharts",
     "Text Sizes": "Text Sizes",
@@ -256,7 +294,18 @@
     "Text sizes include small, regular, large, and extra-large.":
       "Text sizes include small, regular, large, and extra-large.",
     "Thank you for your feedback!": "Thank you for your feedback!",
+    "The column that contains the edge label(s)":
+      "The column that contains the edge label(s)",
+    "The column that contains the source node ID(s)":
+      "The column that contains the source node ID(s)",
+    "The column that contains the target node ID(s)":
+      "The column that contains the target node ID(s)",
+    "The delimiter used to separate multiple source nodes":
+      "The delimiter used to separate multiple source nodes",
+    "The delimiter used to separate multiple target nodes":
+      "The delimiter used to separate multiple target nodes",
     Theme: "Theme",
+    "There are no edges in this data": "There are no edges in this data",
     "This action cannot be undone.": "This action cannot be undone.",
     "This app works by typing": "This app works by typing",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
@@ -293,8 +342,17 @@
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.",
+    "Would you like to continue?": "Would you like to continue?",
     "You already have a flowchart with this name.":
       "You already have a flowchart with this name.",
+    "You are about to add {numNodes} nodes and {numEdges} edges to your graph.":
+      [
+        "You are about to add ",
+        ["numNodes"],
+        " nodes and ",
+        ["numEdges"],
+        " edges to your graph.",
+      ],
     'You can also wrap text in "\\( \\)" to create an edge':
       'You can also wrap text in "\\( \\)" to create an edge',
     "You must log in to create a standard flowchart.":
