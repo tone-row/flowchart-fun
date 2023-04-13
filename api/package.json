@@ -16,6 +16,7 @@
     "@octokit/core": "^4.2.0",
     "@sendgrid/mail": "^7.4.6",
     "@supabase/supabase-js": "^2",
+    "csv-parse": "^5.3.6",
     "date-fns": "^2.29.3",
     "graph-selector": "^0.8.3",
     "highlight.js": "^11.7.0",
@@ -23,7 +24,8 @@
     "moniker": "^0.1.2",
     "notion-to-md": "^2.5.5",
     "openai": "^3.1.0",
-    "stripe": "^11.11.0"
+    "stripe": "^11.11.0",
+    "shared": "workspace:*"
   },
   "devDependencies": {
     "@swc/jest": "^0.2.24",

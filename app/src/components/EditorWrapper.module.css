@@ -18,7 +18,7 @@
 }
 
 .EditorWrapper header {
-  padding: calc(var(--spacer-px) * 5) 26px 0;
+  padding: calc(var(--spacer-px) * 3) 26px 0;
 }
 
 .HeaderTitle {

@@ -399,4 +399,11 @@ test.describe("unauth", () => {
     ]);
     expect(download1.suggestedFilename()).toBe("flowchart-fun-visio-org.csv");
   });
+
+  test("Can follow Import Data to pricing page", async ({ page }) => {
+    await page.getByRole("button", { name: "Import Data" }).click();
+    await page.getByRole("link", { name: "Learn More" }).click();
+    // expect to be on /pricing page
+    expect(new URL(page.url()).pathname).toBe("/pricing");
+  });
 });

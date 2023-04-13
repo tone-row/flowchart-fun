@@ -57,6 +57,5 @@ async function getPost(
 ): Promise<PostType & { htmlContent: string }> {
   const response = await axios.get(`/api/blog/post?slug=${slug}`);
   const post = response.data;
-  console.log(post);
   return post;
 }

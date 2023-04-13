@@ -126,16 +126,3 @@
   object-fit: cover;
   border-radius: var(--rad);
 }
-
-.trigger {
-  color: var(--color-highlightColor);
-}
-
-.trigger:hover,
-.trigger:focus-visible {
-  color: var(--color-darkHighlight);
-}
-
-.trigger:focus {
-  box-shadow: none;
-}
