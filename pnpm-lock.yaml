@@ -284,6 +284,9 @@ importers:
       notion-to-md:
         specifier: ^2.5.5
         version: 2.5.5
+      openai:
+        specifier: ^3.1.0
+        version: 3.1.0
       pako:
         specifier: ^2.1.0
         version: 2.1.0
