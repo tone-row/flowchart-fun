@@ -1,4 +1,4 @@
-import { t, Trans } from "@lingui/macro";
+import { Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Database, X } from "phosphor-react";
 import { Link } from "react-router-dom";
@@ -11,7 +11,7 @@ export function ImportDataUnauthenticatedDialog() {
     <Dialog.Root modal>
       <Dialog.Trigger asChild>
         <EditorActionTextButton icon={Database}>
-          Import Data
+          <Trans>Import Data</Trans>
         </EditorActionTextButton>
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -48,7 +48,7 @@ export function ImportDataUnauthenticatedDialog() {
                 to="/pricing"
                 className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4"
               >
-                Learn more
+                <Trans>Learn More</Trans>
               </Link>
             </div>
           </Dialog.Description>
