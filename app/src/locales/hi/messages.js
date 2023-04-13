@@ -47,8 +47,8 @@
     Clay: "मिट्टी",
     Clear: "साफ़",
     "Clear text?": "पाठ साफ़ करें?",
-    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
-      "अधिक जानने के लिए सिंटैक्स संदर्भ पर क्लिक करें .blue.border-none.roundrectangle[w=100][h=70]",
+    "Click on \\nLearn Syntax\\nto learn more":
+      "\\nसिंटैक्स सीखने के लिए \\nपर क्लिक करें\\n",
     Clone: "क्लोन करें",
     Close: "बंद करें",
     Color: "रंग",

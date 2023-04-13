@@ -47,8 +47,7 @@
     Clay: "粘土",
     Clear: "清除",
     "Clear text?": "清除文字？",
-    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
-      "单击语法参考以了解更多信息 .blue.border-none.roundrectangle",
+    "Click on \\nLearn Syntax\\nto learn more": "点击 \\n学习语法\\n了解更多",
     Clone: "克隆",
     Close: "关闭",
     Color: "颜色",

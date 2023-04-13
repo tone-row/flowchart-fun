@@ -48,8 +48,8 @@
     Clay: "Ton",
     Clear: "Löschen",
     "Clear text?": "Text löschen?",
-    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
-      "Klicken Sie auf\\n⟨⟩ Syntax-Referenz\\num mehr zu erfahren .blue.border-none.roundrectangle[w=100][h=70]",
+    "Click on \\nLearn Syntax\\nto learn more":
+      "Klicke auf \\nSyntax lernen\\num mehr zu erfahren.",
     Clone: "Klon",
     Close: "Schließen",
     Color: "Farbe",

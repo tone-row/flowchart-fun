@@ -47,8 +47,8 @@
     Clay: "Clay",
     Clear: "Clear",
     "Clear text?": "Clear text?",
-    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
-      "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]",
+    "Click on \\nLearn Syntax\\nto learn more":
+      "Click on \\nLearn Syntax\\nto learn more",
     Clone: "Clone",
     Close: "Close",
     Color: "Color",

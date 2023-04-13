@@ -109,7 +109,7 @@ msgid "Breadthfirst"
 msgstr "폭 우선"
 
 #: src/components/ClearTextButton.tsx:44
-#: src/components/ImportDataDialog.tsx:712
+#: src/components/ImportDataDialog.tsx:723
 #: src/pages/Account.tsx:304
 #: src/pages/Account.tsx:315
 #: src/pages/Account.tsx:383
@@ -176,8 +176,8 @@ msgid "Clear text?"
 msgstr "텍스트를 지우시겠습니까?"
 
 #: src/lib/getDefaultText.ts:7
-msgid "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]"
-msgstr "자세한 내용을 보려면 구문 참조를 클릭하십시오 .blue.border-none.ellipse[w=100][h=100]"
+msgid "Click on \\nLearn Syntax\\nto learn more"
+msgstr "\\n문법 습득\\n을 클릭하여 더 배우십시오"
 
 #: src/components/CloneButton.tsx:27
 msgid "Clone"
@@ -195,7 +195,7 @@ msgstr "색상"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "색상에는 빨강, 주황, 노랑, 파랑, 보라, 검정, 흰색, 회색이 포함됩니다."
 
-#: src/components/ImportDataDialog.tsx:531
+#: src/components/ImportDataDialog.tsx:538
 msgid "Column"
 msgstr "열"
 
@@ -219,7 +219,7 @@ msgstr "컨테이너"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "컨테이너는 다른 노드를 포함하는 노드입니다. 중괄호를 사용하여 선언됩니다."
 
-#: src/components/ImportDataDialog.tsx:726
+#: src/components/ImportDataDialog.tsx:737
 msgid "Continue"
 msgstr "계속하기"
 
@@ -334,7 +334,7 @@ msgstr "PNG 다운로드"
 msgid "Download SVG"
 msgstr "SVG 다운로드"
 
-#: src/components/ImportDataDialog.tsx:243
+#: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV 파일을 여기에 드래그 앤 드롭하거나 파일을 선택하려면 클릭하세요."
 
@@ -342,7 +342,7 @@ msgstr "CSV 파일을 여기에 드래그 앤 드롭하거나 파일을 선택�
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "참조를 시작하여 여러 노드로부터 엣지를 그립니다."
 
-#: src/components/ImportDataDialog.tsx:241
+#: src/components/ImportDataDialog.tsx:242
 msgid "Drop the file here ..."
 msgstr "파일을 여기에 드롭하세요 ..."
 
@@ -358,8 +358,8 @@ msgstr "가장자리 ID, 클래스, 속성"
 msgid "Edge Label"
 msgstr "가장자리 라벨"
 
-#: src/components/ImportDataDialog.tsx:462
-#: src/components/ImportDataDialog.tsx:501
+#: src/components/ImportDataDialog.tsx:468
+#: src/components/ImportDataDialog.tsx:508
 msgid "Edge Label Column"
 msgstr "가장자리 라벨 열"
 
@@ -367,20 +367,20 @@ msgstr "가장자리 라벨 열"
 msgid "Edge Style"
 msgstr "가장자리 스타일"
 
-#: src/components/ImportDataDialog.tsx:403
+#: src/components/ImportDataDialog.tsx:406
 #: src/components/LearnSyntaxDialog.tsx:128
 msgid "Edges"
 msgstr "가장자리"
 
-#: src/components/ImportDataDialog.tsx:421
+#: src/components/ImportDataDialog.tsx:424
 msgid "Edges are declared in the same row as their source node"
 msgstr "가장자리는 소스 노드가 있는 같은 행에 선언됩니다."
 
-#: src/components/ImportDataDialog.tsx:426
+#: src/components/ImportDataDialog.tsx:430
 msgid "Edges are declared in the same row as their target node"
 msgstr "가장자리는 목표 노드가 있는 같은 행에 선언됩니다."
 
-#: src/components/ImportDataDialog.tsx:431
+#: src/components/ImportDataDialog.tsx:435
 msgid "Edges are declared in their own row"
 msgstr "가장자리는 자신의 행에 선언됩니다."
 
@@ -392,15 +392,15 @@ msgstr "라벨 앞에 ID, 클래스 및 속성도 가질 수 있습니다."
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "가장자리는 점선, 점선 또는 실선으로 스타일이 지정될 수 있습니다."
 
-#: src/components/ImportDataDialog.tsx:430
+#: src/components/ImportDataDialog.tsx:434
 msgid "Edges in Separate Rows"
 msgstr "각 행별로 간선"
 
-#: src/components/ImportDataDialog.tsx:420
+#: src/components/ImportDataDialog.tsx:423
 msgid "Edges in Source Node Row"
 msgstr "출발 노드 행에 간선"
 
-#: src/components/ImportDataDialog.tsx:425
+#: src/components/ImportDataDialog.tsx:429
 msgid "Edges in Target Node Row"
 msgstr "도착 노드 행에 간선"
 
@@ -422,11 +422,11 @@ msgstr "달걀"
 msgid "Email"
 msgstr "이메일"
 
-#: src/components/ImportDataDialog.tsx:547
+#: src/components/ImportDataDialog.tsx:554
 msgid "Empty"
 msgstr "비어 있음"
 
-#: src/components/ImportDataDialog.tsx:549
+#: src/components/ImportDataDialog.tsx:556
 msgid "Equal To"
 msgstr "같음"
 
@@ -516,7 +516,7 @@ msgstr "기록"
 msgid "Home"
 msgstr "집"
 
-#: src/components/ImportDataDialog.tsx:404
+#: src/components/ImportDataDialog.tsx:407
 msgid "How are edges declared in this data?"
 msgstr "이 데이터에서 간선은 어떻게 선언됩니까?"
 
@@ -534,8 +534,8 @@ msgstr "이미지"
 
 #: src/components/ImportDataDialog.tsx:87
 #: src/components/ImportDataDialog.tsx:99
-#: src/components/ImportDataUnauthenticatedDialog.tsx:14
-#: src/components/ImportDataUnauthenticatedDialog.tsx:31
+#: src/components/ImportDataUnauthenticatedDialog.tsx:19
+#: src/components/ImportDataUnauthenticatedDialog.tsx:36
 msgid "Import Data"
 msgstr "데이터 가져오기"
 
@@ -543,7 +543,7 @@ msgstr "데이터 가져오기"
 msgid "Import data from a CSV file."
 msgstr "CSV 파일에서 데이터를 가져옵니다."
 
-#: src/components/ImportDataUnauthenticatedDialog.tsx:36
+#: src/components/ImportDataUnauthenticatedDialog.tsx:41
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "CSV 파일에서 데이터를 가져와 새로운 플로우 차트로 매핑합니다. 이것은 Lucidchart, Google Sheets, Visio 등의 다른 소스에서 데이터를 가져오는 데 좋은 방법입니다."
 
@@ -555,7 +555,7 @@ msgstr "Lucidchart, Visio 및 기타 CSV 파일에서 가져오기"
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다."
 
-#: src/components/ImportDataUnauthenticatedDialog.tsx:41
+#: src/components/ImportDataUnauthenticatedDialog.tsx:46
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "데이터 가져오기는 프로 기능입니다. Flowchart Fun Pro을 월 3 달러 또는 연 30 달러로 업그레이드 할 수 있습니다."
 
@@ -575,7 +575,7 @@ msgstr "정보"
 msgid "Instruct"
 msgstr "지시하다"
 
-#: src/components/ImportDataDialog.tsx:540
+#: src/components/ImportDataDialog.tsx:547
 msgid "Is"
 msgstr "있다"
 
@@ -601,7 +601,7 @@ msgstr "레이아웃이 고정됨"
 msgid "Leading References"
 msgstr "주목할만한 참고"
 
-#: src/components/ImportDataUnauthenticatedDialog.tsx:51
+#: src/components/ImportDataUnauthenticatedDialog.tsx:55
 #: src/components/MightLoseWarning.tsx:54
 msgid "Learn More"
 msgstr "더 알아보기"
@@ -659,7 +659,7 @@ msgstr "공개적으로 액세스 가능하게 만들기"
 msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
 msgstr "Flowchart Fun Pro로 작업 흐름을 더 쉽게 만드세요. 지금 구독을 월 $3 또는 연간 $30에 불과합니다!"
 
-#: src/components/ImportDataDialog.tsx:383
+#: src/components/ImportDataDialog.tsx:384
 msgid "Map Data"
 msgstr "데이터 지도"
 
@@ -698,7 +698,7 @@ msgstr "새 이메일"
 msgid "Next charge"
 msgstr "다음 청구 금액"
 
-#: src/components/ImportDataDialog.tsx:415
+#: src/components/ImportDataDialog.tsx:418
 msgid "No Edges"
 msgstr "노드 없음"
 
@@ -714,7 +714,7 @@ msgstr "노드 경계 스타일"
 msgid "Node Colors"
 msgstr "노드 색상"
 
-#: src/components/ImportDataDialog.tsx:388
+#: src/components/ImportDataDialog.tsx:389
 msgid "Node ID"
 msgstr "노드 ID"
 
@@ -722,7 +722,7 @@ msgstr "노드 ID"
 msgid "Node ID, Classes, Attributes"
 msgstr "노드 ID, 클래스, 속성"
 
-#: src/components/ImportDataDialog.tsx:395
+#: src/components/ImportDataDialog.tsx:397
 #: src/components/LearnSyntaxDialog.tsx:87
 msgid "Node Label"
 msgstr "노드 라벨"
@@ -735,7 +735,7 @@ msgstr "노드 모양"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "노드는 점선, 점점선 또는 이중선으로 스타일링할 수 있으며, border-none으로 테두리를 제거할 수 있습니다."
 
-#: src/components/ImportDataDialog.tsx:548
+#: src/components/ImportDataDialog.tsx:555
 msgid "Not Empty"
 msgstr "비어 있지 않음"
 
@@ -794,7 +794,7 @@ msgstr "플레이북"
 msgid "Pricing"
 msgstr "가격"
 
-#: src/components/ImportDataDialog.tsx:264
+#: src/components/ImportDataDialog.tsx:265
 msgid "Processing Data"
 msgstr "데이터 처리"
 
@@ -941,12 +941,12 @@ msgstr "스타일링하기 위한 몇 가지 클래스가 이용 가능합니다
 msgid "Sorry! This page is only available in English."
 msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 
-#: src/components/ImportDataDialog.tsx:478
-#: src/components/ImportDataDialog.tsx:514
+#: src/components/ImportDataDialog.tsx:485
+#: src/components/ImportDataDialog.tsx:521
 msgid "Source Column"
 msgstr "소스 열"
 
-#: src/components/ImportDataDialog.tsx:488
+#: src/components/ImportDataDialog.tsx:495
 msgid "Source Delimiter"
 msgstr "소스 구분자"
 
@@ -971,7 +971,7 @@ msgstr "표준"
 msgid "Start"
 msgstr "시작"
 
-#: src/components/ImportDataDialog.tsx:280
+#: src/components/ImportDataDialog.tsx:281
 msgid "Start Over"
 msgstr "처음부터 다시 시작하기"
 
@@ -1005,7 +1005,7 @@ msgid "Style Classes"
 msgstr "스타일 클래스"
 
 #: src/components/Feedback.tsx:106
-#: src/components/ImportDataDialog.tsx:575
+#: src/components/ImportDataDialog.tsx:583
 #: src/pages/LogIn.tsx:61
 msgid "Submit"
 msgstr "보내다"
@@ -1022,12 +1022,12 @@ msgstr "구독이 종료될 예정입니다."
 msgid "Syntax"
 msgstr "문법"
 
-#: src/components/ImportDataDialog.tsx:438
-#: src/components/ImportDataDialog.tsx:521
+#: src/components/ImportDataDialog.tsx:442
+#: src/components/ImportDataDialog.tsx:528
 msgid "Target Column"
 msgstr "대상 열"
 
-#: src/components/ImportDataDialog.tsx:448
+#: src/components/ImportDataDialog.tsx:453
 msgid "Target Delimiter"
 msgstr "대상 구분자"
 
@@ -1060,23 +1060,23 @@ msgstr "텍스트 사이즈는 작게, 일반, 크게, 그리고 엑스트라 �
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
-#: src/components/ImportDataDialog.tsx:463
+#: src/components/ImportDataDialog.tsx:469
 msgid "The column that contains the edge label(s)"
 msgstr "엣지 레이블이 포함된 열"
 
-#: src/components/ImportDataDialog.tsx:479
+#: src/components/ImportDataDialog.tsx:486
 msgid "The column that contains the source node ID(s)"
 msgstr "소스 노드 ID가 포함된 열"
 
-#: src/components/ImportDataDialog.tsx:439
+#: src/components/ImportDataDialog.tsx:443
 msgid "The column that contains the target node ID(s)"
 msgstr "타겟 노드 ID가 포함된 열"
 
-#: src/components/ImportDataDialog.tsx:489
+#: src/components/ImportDataDialog.tsx:496
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "여러 개의 소스 노드를 구분하기 위해 사용되는 구분 기호"
 
-#: src/components/ImportDataDialog.tsx:449
+#: src/components/ImportDataDialog.tsx:454
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 기호"
 
@@ -1084,7 +1084,7 @@ msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 �
 msgid "Theme"
 msgstr "테마"
 
-#: src/components/ImportDataDialog.tsx:416
+#: src/components/ImportDataDialog.tsx:419
 msgid "There are no edges in this data"
 msgstr "이 데이터에는 엣지가 없습니다."
 
@@ -1186,7 +1186,7 @@ msgstr "너비와 높이"
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다."
 
-#: src/components/ImportDataDialog.tsx:708
+#: src/components/ImportDataDialog.tsx:719
 msgid "Would you like to continue?"
 msgstr "계속하시겠습니까?"
 
@@ -1194,7 +1194,7 @@ msgstr "계속하시겠습니까?"
 msgid "You already have a flowchart with this name."
 msgstr "이 이름을 가진 다이어그램이 이미 있습니다."
 
-#: src/components/ImportDataDialog.tsx:706
+#: src/components/ImportDataDialog.tsx:717
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "그래프에 {numNodes}개의 노드와 {numEdges}개의 간선을 추가하려고 합니다."
 

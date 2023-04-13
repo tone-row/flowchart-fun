@@ -48,8 +48,8 @@
     Clay: "Argila",
     Clear: "Apagar",
     "Clear text?": "Limpar o texto?",
-    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
-      "Clique em \\n⟨⟩ Referência de sintaxe\\npara saber mais .blue.border-none.ellipse[w=120][h=70]",
+    "Click on \\nLearn Syntax\\nto learn more":
+      "Clique em \\nAprenda Sintaxe\\n para aprender mais",
     Clone: "Clonar",
     Close: "Fechar",
     Color: "Cor",

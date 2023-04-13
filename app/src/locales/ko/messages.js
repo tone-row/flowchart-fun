@@ -47,8 +47,8 @@
     Clay: "점토",
     Clear: "지우다",
     "Clear text?": "텍스트를 지우시겠습니까?",
-    "Click on \\n⟨⟩ Syntax Reference\\nto learn more .blue.border-none.roundrectangle[w=100][h=70]":
-      "자세한 내용을 보려면 구문 참조를 클릭하십시오 .blue.border-none.ellipse[w=100][h=100]",
+    "Click on \\nLearn Syntax\\nto learn more":
+      "\\n문법 습득\\n을 클릭하여 더 배우십시오",
     Clone: "클론",
     Close: "닫기",
     Color: "색상",
