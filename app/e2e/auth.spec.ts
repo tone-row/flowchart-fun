@@ -1,5 +1,6 @@
 import { expect, Page, test } from "@playwright/test";
 import jsdom from "jsdom";
+import path from "path";
 
 import { openExportDialog } from "./openExportDialog";
 import {
@@ -26,8 +27,8 @@ test.afterAll(async () => {
   await page.close();
 });
 
-test.describe("Sign Up", () => {
-  test("yearly sign-up", async () => {
+test.describe("Authenticated Tasks", () => {
+  test("Sign Up", async () => {
     test.setTimeout(240000);
     await page.getByRole("link", { name: "Pricing" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/pricing`);
@@ -188,6 +189,65 @@ test.describe("Sign Up", () => {
     await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
       timeout: 12000,
     });
+  });
+
+  test("can create chart from imported data", async () => {
+    try {
+      await page.getByRole("button", { name: "Import Data" }).click();
+
+      const filePath = path.join(
+        __dirname,
+        "../../api/data/fixtures/example-visio-process.csv"
+      );
+
+      // make the file input visible
+      // execute this code on the page: document.querySelector("[data-testid=import-data-file-uploader]").style.display = "block"
+      await page.evaluate(() => {
+        const fileInput = document.querySelector(
+          "[data-testid=import-data-file-uploader]"
+        ) as HTMLElement;
+        fileInput.style.display = "block";
+      });
+
+      // click the text "Drag and drop a CSV file here, or click to select a file"
+      // await page.getByText("Drag and drop a CSV file here").click();
+      // await page.getByTestId("import-data-file-uploader").click();
+      await page
+        .getByTestId("import-data-file-uploader")
+        .setInputFiles(filePath);
+
+      await page.getByTestId("node-label-select").press("Enter");
+      await page
+        .getByRole("option", { name: "Process Step Description" })
+        .press("Enter");
+
+      await page.getByTestId("edges-in-source-node-row").click();
+
+      await page.getByTestId("target-column-select").press("Enter");
+      await page.getByRole("option", { name: "Next Step ID" }).press("Enter");
+
+      await page.getByTestId("target-delimiter-input").fill(",");
+
+      await page.getByTestId("edge-label-column-select").press("Enter");
+      await page
+        .getByRole("option", { name: "Connector Label" })
+        .press("Enter");
+
+      // click test id "submit-button"
+      await page.getByTestId("submit-button").click();
+
+      // expect "You are about to add 9 nodes and 10 edges to your graph." to be visible
+      await expect(
+        page.getByText(
+          "You are about to add 9 nodes and 10 edges to your graph."
+        )
+      ).toBeVisible();
+
+      await page.getByRole("button", { name: "Continue" }).click();
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   });
 
   test.afterAll(async () => {

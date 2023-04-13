@@ -233,8 +233,9 @@ const UploadFile = () => {
           {...getRootProps()}
           data-drag-active={isDragActive}
           className={`border-2 border-dashed ${borderStyles} rounded-lg p-4 text-center cursor-pointer data-[drag-active=true]:border-neutral-500 dark:data-[drag-active=true]:border-neutral-400 focus:outline-none grid gap-2 content-center justify-center h-36`}
+          id="import-data-file-uploader-container"
         >
-          <input {...getInputProps()} />
+          <input data-testid="import-data-file-uploader" {...getInputProps()} />
           <FileCsv className="w-12 h-12 mx-auto text-neutral-400 dark:text-neutral-600" />
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
             {isDragActive ? (
@@ -390,6 +391,7 @@ const MappingData = () => {
           value={formState.idColumn}
           onValueChange={(value) => handleFormChange("idColumn", value)}
           items={columnSelectionValues}
+          testId="node-id-select"
         />
       </Label>
       <Label label={t`Node Label`}>
@@ -397,6 +399,7 @@ const MappingData = () => {
           value={formState.nodeLabelColumn}
           onValueChange={(value) => handleFormChange("nodeLabelColumn", value)}
           items={columnSelectionValues}
+          testId="node-label-select"
         />
       </Label>
       <Label
@@ -419,6 +422,7 @@ const MappingData = () => {
             value="sourceNode"
             title={t`Edges in Source Node Row`}
             description={t`Edges are declared in the same row as their source node`}
+            data-testid="edges-in-source-node-row"
           />
           <RadioLabel
             value="targetNode"
@@ -442,6 +446,7 @@ const MappingData = () => {
               value={formState.targetColumn}
               onValueChange={(value) => handleFormChange("targetColumn", value)}
               items={columnSelectionValues}
+              testId="target-column-select"
             />
           </Label>
           <Label
@@ -456,6 +461,7 @@ const MappingData = () => {
                 handleFormChange("targetDelimiter", e.target.value);
               }}
               className={inputStyles}
+              data-testid="target-delimiter-input"
             />
           </Label>
           <Label
@@ -469,6 +475,7 @@ const MappingData = () => {
                 handleFormChange("edgeLabelColumn", value)
               }
               items={columnSelectionValuesWithNone}
+              testId="edge-label-column-select"
             />
           </Label>
         </>
@@ -568,6 +575,7 @@ const MappingData = () => {
       <button
         type="submit"
         className="p-4 text-center font-bold bg-blue-500 text-background rounded hover:bg-blue-600 active:bg-blue-700"
+        data-testid="submit-button"
       >
         {onSubmit.isLoading ? (
           <Spinner className="inline-block" c="white" r={5} />
@@ -615,6 +623,7 @@ function LabelSpan({ children }: { children: React.ReactNode }) {
 function StyledSelect({
   items,
   placeholder = "Select...",
+  testId,
   ...props
 }: {
   items: {
@@ -622,11 +631,13 @@ function StyledSelect({
     text: string;
   }[];
   placeholder?: string;
+  testId?: string;
 } & Select.SelectProps) {
   return (
     <Select.Root {...props}>
       <Select.Trigger
         className={`border border-solid ${borderStyles} font-mono text-xs text-neutral-700 dark:text-neutral-300 flex items-center gap-2 px-2 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-800 ${focusStates}`}
+        data-testid={testId}
       >
         <Select.Value placeholder={placeholder} />
         <Select.Icon>
