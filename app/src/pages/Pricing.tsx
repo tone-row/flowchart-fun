@@ -47,6 +47,7 @@ export default function Pricing() {
                 t`Remove Image Watermark`,
                 t`Export High-Resolution Images`,
                 t`Export to SVG`,
+                t`Import from Lucidchart, Visio, and other CSV files`,
                 `13 ${t`Auto-Layouts`}`,
                 t`Permalinks`,
                 t`Custom Sharing Options`,
