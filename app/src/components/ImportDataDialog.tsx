@@ -84,7 +84,7 @@ export function ImportDataDialog() {
     >
       <Dialog.Trigger asChild>
         <EditorActionTextButton icon={Database}>
-          Import Data
+          <Trans>Import Data</Trans>
         </EditorActionTextButton>
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -96,7 +96,7 @@ export function ImportDataDialog() {
         >
           <Dialog.Title className="text-2xl font-bold flex items-center">
             <Database className="mr-2" />
-            Import Data
+            <Trans>Import Data</Trans>
           </Dialog.Title>
           <Dialog.Description asChild>
             <div className="grid gap-2">
@@ -379,18 +379,20 @@ const MappingData = () => {
       }}
       className="grid gap-5"
     >
-      <H2>Map Data</H2>
+      <H2>
+        <Trans>Map Data</Trans>
+      </H2>
       {processingErrorMessage && (
         <SmallErrorMessage>{processingErrorMessage}</SmallErrorMessage>
       )}
-      <Label label={`Node ID`}>
+      <Label label={t`Node ID`}>
         <StyledSelect
           value={formState.idColumn}
           onValueChange={(value) => handleFormChange("idColumn", value)}
           items={columnSelectionValues}
         />
       </Label>
-      <Label label={`Node Label`}>
+      <Label label={t`Node Label`}>
         <StyledSelect
           value={formState.nodeLabelColumn}
           onValueChange={(value) => handleFormChange("nodeLabelColumn", value)}
@@ -443,7 +445,7 @@ const MappingData = () => {
             />
           </Label>
           <Label
-            label={`Target Delimiter`}
+            label={t`Target Delimiter`}
             description={t`The delimiter used to separate multiple target nodes`}
           >
             <input
@@ -457,7 +459,7 @@ const MappingData = () => {
             />
           </Label>
           <Label
-            label={`Edge Label Column`}
+            label={t`Edge Label Column`}
             description={t`The column that contains the edge label(s)`}
           >
             <StyledSelect
@@ -496,7 +498,7 @@ const MappingData = () => {
               className={inputStyles}
             />
           </Label>
-          <Label label={`Edge Label Column`}>
+          <Label label={t`Edge Label Column`}>
             <StyledSelect
               value={formState.edgeLabelColumn}
               defaultValue=""
@@ -509,14 +511,14 @@ const MappingData = () => {
         </>
       ) : formState.edgesDeclared === "separateRows" ? (
         <>
-          <Label label={`Source Column`}>
+          <Label label={t`Source Column`}>
             <StyledSelect
               value={formState.sourceColumn}
               onValueChange={(value) => handleFormChange("sourceColumn", value)}
               items={columnSelectionValues}
             />
           </Label>
-          <Label label={`Target Column`}>
+          <Label label={t`Target Column`}>
             <StyledSelect
               value={formState.targetColumn}
               onValueChange={(value) => handleFormChange("targetColumn", value)}
@@ -526,7 +528,7 @@ const MappingData = () => {
           <h2 className="mt-2 italics text-neutral-600">
             Row Represents Edge When...
           </h2>
-          <Label label={`Column`}>
+          <Label label={t`Column`}>
             <StyledSelect
               value={formState.rowRepresentsEdgeWhenColumn}
               onValueChange={(value) =>
@@ -535,16 +537,16 @@ const MappingData = () => {
               items={columnSelectionValues}
             />
           </Label>
-          <Label label={`Is`}>
+          <Label label={t`Is`}>
             <StyledSelect
               value={formState.rowRepresentsEdgeWhenIs}
               onValueChange={(value) =>
                 handleFormChange("rowRepresentsEdgeWhenIs", value)
               }
               items={[
-                { text: "Empty", value: "empty" },
-                { text: "Not Empty", value: "notEmpty" },
-                { text: "Equal To", value: "equals" },
+                { text: t`Empty`, value: "empty" },
+                { text: t`Not Empty`, value: "notEmpty" },
+                { text: t`Equal To`, value: "equals" },
               ]}
             />
           </Label>
