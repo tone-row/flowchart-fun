@@ -23,7 +23,7 @@ import { useMutation, useQuery } from "react-query";
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import { useTheme } from "../lib/graphThemes";
 import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
-import { Parsers, useParser } from "../lib/parsers";
+import { useParser } from "../lib/parsers";
 import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
