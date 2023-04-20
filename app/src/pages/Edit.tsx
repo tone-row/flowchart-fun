@@ -2,7 +2,7 @@ import { Trans } from "@lingui/macro";
 import * as Tabs from "@radix-ui/react-tabs";
 import throttle from "lodash.throttle";
 import { editor } from "monaco-editor";
-import { memo, useCallback, useEffect, useMemo, useRef } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useRouteMatch } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
@@ -24,15 +24,8 @@ import { useTrackLastChart } from "../lib/useLastChart";
 import { Type } from "../slang";
 import styles from "./Edit.module.css";
 
-const Edit = memo(function Edit() {
-  const { workspace = "" } = useParams<{ workspace?: string }>();
+const Edit = memo(function Edit({ workspace }: { workspace: string }) {
   const editorRef = useRef<null | editor.IStandaloneCodeEditor>(null);
-
-  // Memoized local workspace preparation, keeps it running in-order
-  // Using react-query for this was causing it to be deferred
-  useMemo(() => {
-    return loadWorkspace(workspace);
-  }, [workspace]);
 
   const isValidSponsor = useIsValidSponsor();
 
@@ -129,7 +122,21 @@ const Edit = memo(function Edit() {
   );
 });
 
-export default Edit;
+/**
+ * This is a wrapper component that loads the workspace into our zustand store
+ */
+function EditOuter() {
+  const [loaded, setLoaded] = useState(false);
+  const { workspace = "" } = useParams<{ workspace?: string }>();
+  useEffect(() => {
+    loadWorkspace(workspace);
+    setLoaded(true);
+  }, [workspace]);
+  if (!loaded) return null;
+  return <Edit key={workspace} workspace={workspace} />;
+}
+
+export default EditOuter;
 
 /**
  * Load the workspace into our zustand store
