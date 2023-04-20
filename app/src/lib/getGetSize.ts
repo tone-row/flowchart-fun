@@ -42,7 +42,7 @@ export function getGetSize(theme: Theme) {
           .map(([key, value]) => `${key}: ${value};`)
           .join(" ")}`
       );
-      resizer.innerHTML = decodeURIComponent(text);
+      resizer.innerHTML = text;
 
       if (resizer.firstChild) {
         const range = document.createRange();
