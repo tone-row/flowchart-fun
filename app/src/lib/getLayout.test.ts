@@ -7,7 +7,6 @@ describe("getLayout", () => {
     const layout = getLayout(doc);
     expect(layout).toEqual({
       name: "dagre",
-      fit: true,
       animate: true,
       spacingFactor: 1.25,
       rankDir: "TB",
