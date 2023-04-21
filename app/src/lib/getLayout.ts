@@ -2,7 +2,7 @@ import { Doc } from "./useDoc";
 
 export const defaultLayout: any = {
   name: "dagre",
-  fit: true,
+  // fit: true,
   animate: true,
   spacingFactor: 1.25,
 };

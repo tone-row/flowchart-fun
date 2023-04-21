@@ -47,13 +47,30 @@ export function universalParse(
           );
         }
 
-        return {
+        let node = {
           ...element,
           data: {
             ...element.data,
             ...size,
           },
         };
+
+        // if class "fixed" and x & y are set, add position to node
+        if (
+          element.classes?.includes("fixed") &&
+          "x" in element.data &&
+          "y" in element.data
+        ) {
+          node = {
+            ...node,
+            position: {
+              x: element.data.x,
+              y: element.data.y,
+            },
+          };
+        }
+
+        return node;
       });
     case "v1":
       return parseText(stripComments(text), getSize);

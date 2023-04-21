@@ -3,6 +3,7 @@ import coseBilkent from "cytoscape-cose-bilkent";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
+import { operate } from "graph-selector";
 import throttle from "lodash.throttle";
 import React, {
   memo,
@@ -154,21 +155,40 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 
 export default Graph;
 
-function handleDragFree() {
-  const nodePositions = getNodePositionsFromCy();
-  useDoc.setState(
-    (state) => {
-      return {
-        ...state,
-        meta: {
-          ...state.meta,
-          nodePositions,
-        },
-      };
-    },
-    false,
-    "Graph/handleDragFree"
-  );
+function handleDragFree(event: cytoscape.EventObject) {
+  const { target } = event;
+  const position = target.position() as { x: number; y: number };
+  const lineNumber = target.data("lineNumber");
+  const text = useDoc.getState().text;
+
+  // add "fixed" class if it doesn't exist
+  let newText = operate(text, {
+    lineNumber,
+    operation: ["addClassesToNode", { classNames: ["fixed"] }],
+  });
+  // add x and y data attributes
+  newText = operate(newText, {
+    lineNumber,
+    operation: [
+      "addDataAttributeToNode",
+      { name: "x", value: round(position.x) },
+    ],
+  });
+  newText = operate(newText, {
+    lineNumber,
+    operation: [
+      "addDataAttributeToNode",
+      { name: "y", value: round(position.y) },
+    ],
+  });
+  useDoc.setState({ text: newText }, false, "Graph/handleDragFree");
+}
+
+/**
+ * This function is used to round numbers to 2 decimal places
+ */
+function round(num: number) {
+  return Math.round(num * 100) / 100;
 }
 
 /**
@@ -197,6 +217,10 @@ function useInitializeGraph({
         wheelSensitivity: 0.2,
         boxSelectionEnabled: true,
         // autoungrabify: true,
+        // DEFAULT LAYOUT MUST BE PRESET TO SUPPORT "FIXED" NODES
+        layout: {
+          name: "preset",
+        },
       });
       window.__cy = cy.current;
       const cyCurrent = cy.current;
@@ -332,14 +356,22 @@ function getGraphUpdater({
         isGraphInitialized.current &&
         elements.length < 200 &&
         isAnimationEnabled;
+      cy.current.elements;
+
       cy.current
+        .elements("*")
+        .difference(".fixed")
         .layout({
           animate: shouldAnimate,
           animationDuration: shouldAnimate ? 333 : 0,
           ...layout,
           padding: DEFAULT_GRAPH_PADDING,
+          fit: false,
         })
-        .run();
+        .run()
+        .listen("layoutstop", () => {
+          cy.current?.fit(undefined, DEFAULT_GRAPH_PADDING);
+        });
 
       // Reinitialize to avoid missing errors
       cyErrorCatcher.current.destroy();
