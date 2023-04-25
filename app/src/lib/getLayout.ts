@@ -58,10 +58,14 @@ export function getLayout(doc: Doc) {
     ...layout,
   };
 
-  // Apply the preset layout if nodePositions is defined
-  if (meta?.nodePositions && typeof meta.nodePositions === "object") {
-    layoutToReturn.positions = { ...meta.nodePositions };
+  // if isFrozen, change to preset layout
+  if (meta.isFrozen) {
     layoutToReturn.name = "preset";
+  }
+
+  // Forward nodePositions onto layout
+  if (meta.nodePositions && typeof meta.nodePositions === "object") {
+    layoutToReturn.positions = { ...meta.nodePositions };
   }
 
   // Remove spacingFactor if using preset layout
@@ -71,3 +75,17 @@ export function getLayout(doc: Doc) {
 
   return layoutToReturn;
 }
+
+/**
+ * Not all auto-layouts work when individual nodes are frozen
+ *
+ * Store the list of layout names that are valid with partially frozen nodes */
+export const validLayoutsForFixedNodes = [
+  "dagre",
+  "klay",
+  "breadthfirst",
+  "concentric",
+  "circle",
+  "grid",
+  "preset",
+];

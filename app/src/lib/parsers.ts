@@ -32,7 +32,9 @@ export function universalParse(
   getSize: TGetSize
 ): ElementDefinition[] {
   switch (parser) {
-    case "graph-selector":
+    case "graph-selector": {
+      const nodePositions = (useDoc.getState().meta?.nodePositions ??
+        {}) as Record<string, { x: number; y: number }>;
       return toCytoscapeElements(parse(text)).map((element) => {
         let size: Record<string, string | number> = {};
         if ("w" in element.data || "h" in element.data) {
@@ -56,22 +58,17 @@ export function universalParse(
         };
 
         // if class "fixed" and x & y are set, add position to node
-        if (
-          element.classes?.includes("fixed") &&
-          "x" in element.data &&
-          "y" in element.data
-        ) {
+        const id = element.data.id;
+        if (id && element.classes?.includes("fixed") && nodePositions[id]) {
           node = {
             ...node,
-            position: {
-              x: element.data.x,
-              y: element.data.y,
-            },
+            position: nodePositions[id],
           };
         }
 
         return node;
       });
+    }
     case "v1":
       return parseText(stripComments(text), getSize);
     default:

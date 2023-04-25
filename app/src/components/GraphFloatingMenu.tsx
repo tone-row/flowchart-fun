@@ -5,7 +5,7 @@ import { FaBomb, FaRegSnowflake } from "react-icons/fa";
 import { MdFitScreen } from "react-icons/md";
 
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
-import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
+import { toggleDocFrozen, useIsFrozen } from "../lib/useIsFrozen";
 import { useUnmountStore } from "../lib/useUnmountStore";
 import { Tooltip } from "./Shared";
 
@@ -58,13 +58,12 @@ export function GraphFloatingMenu() {
           });
         }}
       />
-      {isFrozen ? (
-        <CustomIconButton
-          icon={<FaRegSnowflake size={22} />}
-          label={t`Unfreeze`}
-          onClick={unfreezeDoc}
-        />
-      ) : null}
+      <CustomIconButton
+        icon={<FaRegSnowflake size={22} />}
+        label={isFrozen ? t`Unfreeze` : t`Freeze`}
+        onClick={toggleDocFrozen}
+        data-state-active={isFrozen ? true : false}
+      />
     </div>
   );
 }
@@ -82,7 +81,9 @@ function CustomIconButton({ icon, label, ...props }: CustomIconButtonProps) {
   return (
     <Tooltip label={label} aria-label={label} className={`slang-type size-0`}>
       <button
-        className="w-9 h-9 grid content-center justify-center bg-white text-neutral-900 hover:bg-neutral-100 active:bg-neutral-200 focus:outline-none focus:shadow-none"
+        className={
+          "w-9 h-9 grid content-center justify-center bg-white text-neutral-900 hover:bg-neutral-100 data-[state-active=true]:bg-neutral-200 data-[state-active=true]:hover:bg-neutral-300 active:bg-neutral-200 focus:outline-none focus:shadow-none"
+        }
         data-testid={label}
         {...props}
       >

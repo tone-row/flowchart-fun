@@ -20,7 +20,11 @@ import { useDebouncedCallback } from "use-debounce";
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { cytoscape } from "../lib/cytoscape";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
-import { getLayout } from "../lib/getLayout";
+import {
+  defaultLayout,
+  getLayout,
+  validLayoutsForFixedNodes,
+} from "../lib/getLayout";
 import { getUserStyle } from "../lib/getUserStyle";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import {
@@ -36,6 +40,7 @@ import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseError } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { useHoverLine } from "../lib/useHoverLine";
+import { getIsFrozen } from "../lib/useIsFrozen";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
@@ -159,29 +164,44 @@ function handleDragFree(event: cytoscape.EventObject) {
   const { target } = event;
   const position = target.position() as { x: number; y: number };
   const lineNumber = target.data("lineNumber");
+  const id = target.id();
   const text = useDoc.getState().text;
+  const isFrozen = getIsFrozen();
 
-  // add "fixed" class if it doesn't exist
-  let newText = operate(text, {
-    lineNumber,
-    operation: ["addClassesToNode", { classNames: ["fixed"] }],
-  });
-  // add x and y data attributes
-  newText = operate(newText, {
-    lineNumber,
-    operation: [
-      "addDataAttributeToNode",
-      { name: "x", value: round(position.x) },
-    ],
-  });
-  newText = operate(newText, {
-    lineNumber,
-    operation: [
-      "addDataAttributeToNode",
-      { name: "y", value: round(position.y) },
-    ],
-  });
-  useDoc.setState({ text: newText }, false, "Graph/handleDragFree");
+  // get the current layout name
+  const layoutName = useGraphStore.getState().layout.name ?? "";
+
+  // change layout if it's not valid with fixed nodes
+  if (!validLayoutsForFixedNodes.includes(layoutName)) return;
+
+  let newText = text;
+
+  // only add fixed class if everything isn't frozen
+  if (!isFrozen) {
+    newText = operate(text, {
+      lineNumber,
+      operation: ["addClassesToNode", { classNames: ["fixed"] }],
+    });
+  }
+
+  // update x and y in meta
+  useDoc.setState(
+    (state) => {
+      return {
+        ...state,
+        text: newText,
+        meta: {
+          ...state.meta,
+          nodePositions: {
+            ...(state.meta?.nodePositions ?? {}),
+            [id]: { x: round(position.x), y: round(position.y) },
+          },
+        },
+      };
+    },
+    false,
+    "Graph/handleDragFree"
+  );
 }
 
 /**
@@ -358,9 +378,13 @@ function getGraphUpdater({
         isAnimationEnabled;
       cy.current.elements;
 
-      cy.current
-        .elements("*")
-        .difference(".fixed")
+      // If not using a layout which supports individually frozen
+      // nodes then run the layout on all nodes
+      const selection = validLayoutsForFixedNodes.includes(layout.name)
+        ? cy.current.elements("*").difference(".fixed")
+        : cy.current;
+
+      selection
         .layout({
           animate: shouldAnimate,
           animationDuration: shouldAnimate ? 333 : 0,

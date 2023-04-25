@@ -1,5 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import produce from "immer";
+import { PushPin } from "phosphor-react";
 import { FaRegSnowflake } from "react-icons/fa";
 
 import { GraphOptionsObject } from "../../lib/constants";
@@ -8,7 +9,11 @@ import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
-import { unfreezeDoc, useIsFrozen } from "../../lib/useIsFrozen";
+import {
+  toggleDocFrozen,
+  useHasFixedNodes,
+  useIsFrozen,
+} from "../../lib/useIsFrozen";
 import styles from "./EditLayoutTab.module.css";
 import {
   CustomSelect,
@@ -41,6 +46,7 @@ export function EditLayoutTab() {
     layouts.find((l) => l.value === layoutName)?.label() ?? "???";
 
   const isFrozen = useIsFrozen();
+  const hasFixedNodes = useHasFixedNodes();
 
   let direction = layout?.["rankDir"] ?? graphLayout.rankDir;
 
@@ -65,7 +71,7 @@ export function EditLayoutTab() {
     spacingFactor = layout.spacingFactor;
   }
 
-  if (isFrozen) return <FrozenLayout />;
+  // if (isFrozen) return <FrozenLayout />;
 
   return (
     <WithLowerChild>
@@ -181,6 +187,7 @@ export function EditLayoutTab() {
             </div>
           </OptionWithLabel>
         )}
+        {hasFixedNodes && <FixedNodesWarning />}
       </TabOptionsGrid>
       {!isValidSponsor && (
         <LargeLink href="/pricing">
@@ -200,9 +207,40 @@ function FrozenLayout() {
         </span>
         <FaRegSnowflake />
       </h2>
-      <button onClick={unfreezeDoc}>
+      <button onClick={toggleDocFrozen}>
         <Trans>Unfreeze</Trans>
       </button>
+    </div>
+  );
+}
+
+function FixedNodesWarning() {
+  return (
+    <div className="bg-neutral-50">
+      <div className="p-4 px-0 grid gap-2">
+        <div className="flex gap-2 items-center">
+          <PushPin size={16} />
+          <h4 className="text-neutral-700 font-bold">Contains Fixed Nodes</h4>
+        </div>
+        <p className="text-sm text-neutral-500">
+          Your graph contains nodes with class <em>fixed</em>. Fixed nodes only
+          work correctly when using basic, deterministic layouts.{" "}
+          <button
+            className="inline underline text-neutral-800"
+            onClick={() => {
+              useDoc.setState((state) => {
+                return {
+                  ...state,
+                  text: state.text.replace(/\.fixed\b/g, ""),
+                };
+              });
+            }}
+          >
+            Remove fixed class from all nodes
+          </button>
+          .
+        </p>
+      </div>
     </div>
   );
 }
