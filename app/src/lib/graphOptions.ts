@@ -16,14 +16,13 @@ export const layouts: SelectOption[] = [
   { label: () => `Dagre`, value: "dagre" },
   { label: () => `Klay`, value: "klay" },
   { label: () => t`Breadthfirst`, value: "breadthfirst" },
-  { label: () => `CoSE`, value: "cose" },
   { label: () => t`Concentric`, value: "concentric" },
   { label: () => t`Circle`, value: "circle" },
-  { label: () => t`Random`, value: "random" },
   { label: () => t`Grid`, value: "grid" },
+  // Non-deterministic layouts
+  { label: () => `CoSE`, value: "cose" },
   // Elk layouts
   { label: () => "Box", value: "elk-box", sponsorOnly: true },
-  { label: () => "Force", value: "elk-force", sponsorOnly: true },
   { label: () => "Layered", value: "elk-layered", sponsorOnly: true },
   { label: () => "Tree", value: "elk-mrtree", sponsorOnly: true },
   { label: () => "Stress", value: "elk-stress", sponsorOnly: true },

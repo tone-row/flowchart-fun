@@ -3,6 +3,7 @@ import coseBilkent from "cytoscape-cose-bilkent";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
+import { operate } from "graph-selector";
 import throttle from "lodash.throttle";
 import React, {
   memo,
@@ -19,7 +20,11 @@ import { useDebouncedCallback } from "use-debounce";
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { cytoscape } from "../lib/cytoscape";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
-import { getLayout } from "../lib/getLayout";
+import {
+  defaultLayout,
+  getLayout,
+  validLayoutsForFixedNodes,
+} from "../lib/getLayout";
 import { getUserStyle } from "../lib/getUserStyle";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import {
@@ -35,6 +40,7 @@ import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseError } from "../lib/useDoc";
 import { useGraphStore } from "../lib/useGraphStore";
 import { useHoverLine } from "../lib/useHoverLine";
+import { getIsFrozen } from "../lib/useIsFrozen";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
@@ -154,21 +160,55 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 
 export default Graph;
 
-function handleDragFree() {
-  const nodePositions = getNodePositionsFromCy();
+function handleDragFree(event: cytoscape.EventObject) {
+  const { target } = event;
+  const position = target.position() as { x: number; y: number };
+  const lineNumber = target.data("lineNumber");
+  const id = target.id();
+  const text = useDoc.getState().text;
+  const isFrozen = getIsFrozen();
+
+  // get the current layout name
+  const layoutName = useGraphStore.getState().layout.name ?? "";
+
+  // change layout if it's not valid with fixed nodes
+  if (!validLayoutsForFixedNodes.includes(layoutName)) return;
+
+  let newText = text;
+
+  // only add fixed class if everything isn't frozen
+  if (!isFrozen) {
+    newText = operate(text, {
+      lineNumber,
+      operation: ["addClassesToNode", { classNames: ["fixed"] }],
+    });
+  }
+
+  // update x and y in meta
   useDoc.setState(
     (state) => {
       return {
         ...state,
+        text: newText,
         meta: {
           ...state.meta,
-          nodePositions,
+          nodePositions: {
+            ...(state.meta?.nodePositions ?? {}),
+            [id]: { x: round(position.x), y: round(position.y) },
+          },
         },
       };
     },
     false,
     "Graph/handleDragFree"
   );
+}
+
+/**
+ * This function is used to round numbers to 2 decimal places
+ */
+function round(num: number) {
+  return Math.round(num * 100) / 100;
 }
 
 /**
@@ -197,6 +237,10 @@ function useInitializeGraph({
         wheelSensitivity: 0.2,
         boxSelectionEnabled: true,
         // autoungrabify: true,
+        // DEFAULT LAYOUT MUST BE PRESET TO SUPPORT "FIXED" NODES
+        layout: {
+          name: "preset",
+        },
       });
       window.__cy = cy.current;
       const cyCurrent = cy.current;
@@ -332,14 +376,26 @@ function getGraphUpdater({
         isGraphInitialized.current &&
         elements.length < 200 &&
         isAnimationEnabled;
-      cy.current
+      cy.current.elements;
+
+      // If not using a layout which supports individually frozen
+      // nodes then run the layout on all nodes
+      const selection = validLayoutsForFixedNodes.includes(layout.name)
+        ? cy.current.elements("*").difference(".fixed")
+        : cy.current;
+
+      selection
         .layout({
           animate: shouldAnimate,
           animationDuration: shouldAnimate ? 333 : 0,
           ...layout,
           padding: DEFAULT_GRAPH_PADDING,
+          fit: false,
         })
-        .run();
+        .run()
+        .listen("layoutstop", () => {
+          cy.current?.fit(undefined, DEFAULT_GRAPH_PADDING);
+        });
 
       // Reinitialize to avoid missing errors
       cyErrorCatcher.current.destroy();

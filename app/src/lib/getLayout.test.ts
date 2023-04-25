@@ -7,7 +7,6 @@ describe("getLayout", () => {
     const layout = getLayout(doc);
     expect(layout).toEqual({
       name: "dagre",
-      fit: true,
       animate: true,
       spacingFactor: 1.25,
       rankDir: "TB",
@@ -30,12 +29,13 @@ describe("getLayout", () => {
     expect(layout.elk).toEqual({ algorithm: "mrtree" });
   });
 
-  test("moves nodePositions into positions and makes layout 'preset'", () => {
+  test("makes layout 'preset' if isFrozen", () => {
     const doc = {
       ...initialDoc,
       meta: {
         layout: { name: "random" },
         nodePositions: { a: { x: 1, y: 2 } },
+        isFrozen: true,
       },
     };
     const layout = getLayout(doc);
