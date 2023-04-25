@@ -71,7 +71,7 @@ export function EditLayoutTab() {
     spacingFactor = layout.spacingFactor;
   }
 
-  // if (isFrozen) return <FrozenLayout />;
+  if (isFrozen) return <FrozenLayout />;
 
   return (
     <WithLowerChild>
