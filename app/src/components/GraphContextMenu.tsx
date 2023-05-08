@@ -3,10 +3,13 @@ import "react-contexify/dist/ReactContexify.css";
 import { t, Trans } from "@lingui/macro";
 import { operate } from "graph-selector";
 import {
+  ArrowLeft,
+  ArrowRight,
   CircleDashed,
   Diamond,
   FlowArrow,
   Graph,
+  LineSegment,
   Palette,
   TextT,
   X,
@@ -23,7 +26,13 @@ import {
   useCurrentTheme,
   useTheme,
 } from "../lib/graphThemes";
-import { borderStyles, shapes } from "../lib/graphUtilityClasses";
+import {
+  borderStyles,
+  edgeLineStyles,
+  shapes,
+  sourceArrowSuffixes,
+  targetArrowSuffixes,
+} from "../lib/graphUtilityClasses";
 import {
   useDownloadFilename,
   useIsFirefox,
@@ -67,7 +76,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       }}
     >
       <NodeSubmenu />
-      {/* <EdgeSubmenu /> */}
+      <EdgeSubmenu />
       {!isFirefox && <CopyPNG watermark={watermark} scale={scale} />}
       {isValidSponsor && <CopySVG />}
       <Item
@@ -263,6 +272,7 @@ const sizes: {
 ];
 
 const borders = borderStyles.map((style) => style.selector.slice(5));
+const edges = edgeLineStyles.map((style) => style.selector.slice(5));
 
 function NodeSubmenu() {
   const active = useContextMenuState((state) => state.active);
@@ -552,16 +562,147 @@ function EdgeSubmenu() {
       })
     : [active];
   if (!active || active.type !== "edge") return null;
-  console.log({ activeSelection });
   return (
-    <Submenu
-      label={
-        <WithIcon icon={<FlowArrow size={smallIconSize} />}>
-          <Trans>Edge</Trans>
-        </WithIcon>
-      }
-    >
-      <div />
-    </Submenu>
+    <>
+      <Submenu
+        label={
+          <WithIcon icon={<FlowArrow size={smallIconSize} />}>
+            <Trans>Edge</Trans>
+          </WithIcon>
+        }
+      >
+        <Submenu
+          label={
+            <WithIcon icon={<LineSegment size={smallIconSize} />}>
+              <Trans>Border</Trans>
+            </WithIcon>
+          }
+        >
+          {edges.map((className) => (
+            <Item
+              key={className}
+              onClick={() => {
+                let newText = useDoc.getState().text;
+                for (const selection of activeSelection) {
+                  if (!selection) continue;
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: ["removeClassesFromEdge", { classNames: edges }],
+                  });
+                  // If the border is solid, we want to remove all borders
+                  if (className !== "solid")
+                    newText = operate(newText, {
+                      lineNumber: selection.lineNumber,
+                      operation: [
+                        "addClassesToEdge",
+                        { classNames: [className] },
+                      ],
+                    });
+                }
+                useDoc.setState({ text: newText }, false, "EdgeSubmenu/border");
+              }}
+            >
+              <span
+                className={styles.EdgeItem}
+                style={{
+                  borderStyle: className,
+                  borderColor:
+                    className === "border-none" ? "transparent" : undefined,
+                }}
+              />
+            </Item>
+          ))}
+        </Submenu>
+        <Submenu
+          label={
+            <WithIcon icon={<ArrowLeft size={smallIconSize} />}>
+              <Trans>Source Arrow</Trans>
+            </WithIcon>
+          }
+        >
+          {sourceArrowSuffixes.map((suffix) => (
+            <Item
+              key={suffix}
+              onClick={() => {
+                let newText = useDoc.getState().text;
+                for (const selection of activeSelection) {
+                  if (!selection) continue;
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: [
+                      "removeClassesFromEdge",
+                      { classNames: sourceArrowSuffixes },
+                    ],
+                  });
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: ["addClassesToEdge", { classNames: [suffix] }],
+                  });
+                }
+                useDoc.setState(
+                  { text: newText },
+                  false,
+                  "EdgeSubmenu/sourceArrow"
+                );
+              }}
+            >
+              <Type
+                size={16}
+                style={{
+                  textTransform: "capitalize",
+                }}
+              >
+                {suffix.slice(7).replace(/-/g, " ")}
+              </Type>
+            </Item>
+          ))}
+        </Submenu>
+        <Submenu
+          label={
+            <WithIcon icon={<ArrowRight size={smallIconSize} />}>
+              <Trans>Target Arrow</Trans>
+            </WithIcon>
+          }
+        >
+          {targetArrowSuffixes.map((suffix) => (
+            <Item
+              key={suffix}
+              onClick={() => {
+                let newText = useDoc.getState().text;
+                for (const selection of activeSelection) {
+                  if (!selection) continue;
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: [
+                      "removeClassesFromEdge",
+                      { classNames: targetArrowSuffixes },
+                    ],
+                  });
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: ["addClassesToEdge", { classNames: [suffix] }],
+                  });
+                }
+                useDoc.setState(
+                  { text: newText },
+                  false,
+                  "EdgeSubmenu/targetArrow"
+                );
+              }}
+            >
+              <Type
+                size={16}
+                style={{
+                  textTransform: "capitalize",
+                }}
+              >
+                {suffix.slice(7).replace(/-/g, " ")}
+              </Type>
+            </Item>
+          ))}
+        </Submenu>
+      </Submenu>
+      <Separator />
+    </>
   );
 }
