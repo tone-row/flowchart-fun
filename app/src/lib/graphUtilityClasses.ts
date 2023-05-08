@@ -32,7 +32,30 @@ const circle: Stylesheet = {
     height: "data(width)",
   },
 };
-const lineStyles: Stylesheet[] = [
+export const arrowSuffixes = [
+  "triangle",
+  "triangle-tee",
+  "circle-triangle",
+  "triangle-cross",
+  "triangle-backcurve",
+  "vee",
+  "tee",
+  "square",
+  "circle",
+  "diamond",
+  "chevron",
+  "none",
+];
+
+export const sourceArrowSuffixes = arrowSuffixes.map(
+  (suffix) => `source-${suffix}` as cytoscape.Css.ArrowShape
+);
+
+export const targetArrowSuffixes = arrowSuffixes.map(
+  (suffix) => `target-${suffix}` as cytoscape.Css.ArrowShape
+);
+
+export const edgeLineStyles: Stylesheet[] = [
   {
     selector: "edge.dashed",
     style: {
@@ -51,37 +74,29 @@ const lineStyles: Stylesheet[] = [
       "line-style": "solid",
     },
   },
-  ...(
-    [
-      "triangle",
-      "triangle-tee",
-      "circle-triangle",
-      "triangle-cross",
-      "triangle-backcurve",
-      "vee",
-      "tee",
-      "square",
-      "circle",
-      "diamond",
-      "chevron",
-      "none",
-    ] as cytoscape.Css.ArrowShape[]
-  ).reduce<Stylesheet[]>((acc, arrow) => {
-    acc.push({
-      selector: `edge.source-${arrow}`,
-      style: {
-        "source-arrow-shape": arrow,
-        "source-arrow-color": "inherit",
-      },
-    });
-    acc.push({
-      selector: `edge.target-${arrow}`,
-      style: {
-        "target-arrow-shape": arrow,
-      },
-    });
-    return acc;
-  }, []),
+];
+
+export const lineStyles: Stylesheet[] = [
+  ...edgeLineStyles,
+  ...(arrowSuffixes as cytoscape.Css.ArrowShape[]).reduce<Stylesheet[]>(
+    (acc, arrow) => {
+      acc.push({
+        selector: `edge.source-${arrow}`,
+        style: {
+          "source-arrow-shape": arrow,
+          "source-arrow-color": "inherit",
+        },
+      });
+      acc.push({
+        selector: `edge.target-${arrow}`,
+        style: {
+          "target-arrow-shape": arrow,
+        },
+      });
+      return acc;
+    },
+    []
+  ),
 ];
 
 export const borderStyles: Stylesheet[] = [
