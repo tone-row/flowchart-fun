@@ -94,6 +94,11 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     throttleStyle(theme);
   }, [theme, throttleStyle]);
 
+  // Update getSize when theme changes
+  useEffect(() => {
+    getSize.current = getGetSize(theme);
+  }, [theme]);
+
   const throttleUpdate = useMemo(
     () =>
       getGraphUpdater({

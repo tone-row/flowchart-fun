@@ -76,3 +76,12 @@
   border-bottom-width: 4px;
   border-bottom-color: black;
 }
+
+.EdgeItem {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 16px;
+  border-width: 0;
+  border-bottom-width: 4px;
+  border-bottom-color: black;
+}
