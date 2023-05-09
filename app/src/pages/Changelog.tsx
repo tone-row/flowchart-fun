@@ -4,8 +4,6 @@ import { useQuery } from "react-query";
 
 import { InfoContainer } from "../components/InfoContainer";
 import { InfoHeader } from "../components/InfoHeader";
-import { Box, Type } from "../slang";
-import styles from "./Changelog.module.css";
 
 export default function Changelog() {
   const releases = useQuery("changelog", getChangelog, {
@@ -13,42 +11,33 @@ export default function Changelog() {
     suspense: true,
   });
   return (
-    <InfoContainer>
-      <Box gap={16} className={styles.Changelog} style={{ maxWidth: 500 }}>
+    <InfoContainer style={{ maxWidth: 550 }}>
+      <div className="grid gap-8">
         <InfoHeader title={t`Changelog`} />
         {releases.data && (
-          <Box gap={16}>
+          <div className="grid gap-12 mt-6">
             {releases.data.map((release) => (
-              <Box as="section" key={release.id}>
-                <Box
-                  flow="column"
-                  items="baseline normal"
-                  content="normal start"
-                  gap={4}
-                >
-                  <Type as="h2" size={3}>
-                    {release.name}
-                  </Type>
-                  <Type
-                    as="time"
+              <section key={release.id} className="grid gap-3">
+                <div className="grid gap-2 justify-start">
+                  <h2 className="text-4xl font-mono">
+                    <a href={release.url}>{release.name}</a>
+                  </h2>
+                  <time
                     dateTime={release.date}
-                    color="color-lineNumbers"
+                    className="text-sm text-neutral-500"
                   >
                     {release.niceDate}
-                  </Type>
-                  <a href={release.url} className="view-on-github-btn">
-                    View on GitHub
-                  </a>
-                </Box>
+                  </time>
+                </div>
                 <div
-                  className="changelog-section-content slang-type size-0"
+                  className="post-content text-neutral-900"
                   dangerouslySetInnerHTML={{ __html: release.body }}
                 />
-              </Box>
+              </section>
             ))}
-          </Box>
+          </div>
         )}
-      </Box>
+      </div>
     </InfoContainer>
   );
 }
