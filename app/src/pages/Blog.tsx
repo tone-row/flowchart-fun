@@ -33,7 +33,7 @@ export default function Blog() {
 function Post({ post }: { post: PostType }) {
   return (
     <Link
-      className={`grid gap-6 p-5 rounded transition-all
+      className={`grid gap-6 p-2 md:p-5 rounded transition-all
       hover:bg-gradient-to-br hover:to-white hover:from-blue-100
       dark:hover:from-blue-900 dark:hover:to-neutral-800
       `}
