@@ -263,6 +263,7 @@
       "Algumas classes estão disponíveis para ajudar a estilizar seu fluxograma",
     "Sorry! This page is only available in English.":
       "Sinto muito! Esta página só está disponível em inglês.",
+    "Source Arrow": "Seta de Origem",
     "Source Column": "Coluna de Origem",
     "Source Delimiter": "Delimitador de Origem",
     "Source/Target Arrow Shape": "Forma da Seta de Origem/Destino",
@@ -284,6 +285,7 @@
     Subscription: "Inscrição",
     "Subscription will end": "Inscrição acabará",
     Syntax: "Sintaxe",
+    "Target Arrow": "Seta de Destino",
     "Target Column": "Coluna Alvo",
     "Target Delimiter": "Delimitador Alvo",
     Temporary: "Temporário",

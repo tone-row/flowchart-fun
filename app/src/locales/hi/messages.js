@@ -261,6 +261,7 @@
       "कुछ क्लास आपकी फ्लोचार्ट स्टाइल करने में मदद करने के लिए उपलब्ध हैं",
     "Sorry! This page is only available in English.":
       "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।",
+    "Source Arrow": "स्रोत तीर ",
     "Source Column": "स्रोत स्तंभ",
     "Source Delimiter": "स्रोत डिलिमिटर",
     "Source/Target Arrow Shape": "स्रोत / लक्ष्य तीर आकार",
@@ -282,6 +283,7 @@
     Subscription: "सदस्यता",
     "Subscription will end": "सदस्यता समाप्त हो जाएगी",
     Syntax: "सिंटेक्स",
+    "Target Arrow": "लक्ष्य तीर",
     "Target Column": "लक्ष्य कॉलम",
     "Target Delimiter": "लक्ष्य डेलीमीटर",
     Temporary: "अस्थायी",

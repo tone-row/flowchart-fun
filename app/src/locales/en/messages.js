@@ -261,6 +261,7 @@
       "Some classes are available to help style your flowchart",
     "Sorry! This page is only available in English.":
       "Sorry! This page is only available in English.",
+    "Source Arrow": "Source Arrow",
     "Source Column": "Source Column",
     "Source Delimiter": "Source Delimiter",
     "Source/Target Arrow Shape": "Source/Target Arrow Shape",
@@ -282,6 +283,7 @@
     Subscription: "Subscription",
     "Subscription will end": "Subscription will end",
     Syntax: "Syntax",
+    "Target Arrow": "Target Arrow",
     "Target Column": "Target Column",
     "Target Delimiter": "Target Delimiter",
     Temporary: "Temporary",

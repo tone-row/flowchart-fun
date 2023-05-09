@@ -42,7 +42,7 @@ msgstr "किसी भी उपकरण से पहुँचा जा स
 msgid "Account"
 msgstr "खाता"
 
-#: src/pages/Edit.tsx:91
+#: src/pages/Edit.tsx:84
 #: src/pages/EditHosted.tsx:89
 msgid "Advanced"
 msgstr "विकसित"
@@ -76,7 +76,7 @@ msgstr "संपादक पर वापस जाएं"
 msgid "Background"
 msgstr "पृष्ठभूमि"
 
-#: src/components/ShareDialog.tsx:465
+#: src/components/ShareDialog.tsx:468
 msgid "Basic Flowchart"
 msgstr "बेसिक फ्लोचार्ट"
 
@@ -91,11 +91,12 @@ msgstr "खाली"
 
 #: src/components/Header.tsx:153
 #: src/components/Header.tsx:386
-#: src/pages/Blog.tsx:19
+#: src/pages/Blog.tsx:18
 msgid "Blog"
 msgstr "ब्लॉग"
 
-#: src/components/GraphContextMenu.tsx:471
+#: src/components/GraphContextMenu.tsx:481
+#: src/components/GraphContextMenu.tsx:577
 msgid "Border"
 msgstr "सीमा"
 
@@ -132,7 +133,7 @@ msgstr "ईमेल पता बदलें"
 
 #: src/components/Header.tsx:163
 #: src/components/Header.tsx:392
-#: src/pages/Changelog.tsx:18
+#: src/pages/Changelog.tsx:16
 msgid "Changelog"
 msgstr "बदलाव का"
 
@@ -187,7 +188,7 @@ msgstr "क्लोन करें"
 msgid "Close"
 msgstr "बंद करें"
 
-#: src/components/GraphContextMenu.tsx:299
+#: src/components/GraphContextMenu.tsx:309
 msgid "Color"
 msgstr "रंग"
 
@@ -228,21 +229,21 @@ msgstr "जारी रखें"
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
-#: src/components/ShareDialog.tsx:260
-#: src/components/ShareDialog.tsx:261
-#: src/components/ShareDialog.tsx:379
+#: src/components/ShareDialog.tsx:263
+#: src/components/ShareDialog.tsx:264
+#: src/components/ShareDialog.tsx:382
 msgid "Copy"
 msgstr "कॉपी करें"
 
-#: src/components/GraphContextMenu.tsx:217
+#: src/components/GraphContextMenu.tsx:226
 msgid "Copy PNG Image"
 msgstr "PNG छवि कॉपी करें"
 
-#: src/components/GraphContextMenu.tsx:175
+#: src/components/GraphContextMenu.tsx:184
 msgid "Copy SVG Code"
 msgstr "SVG कोड कॉपी करें"
 
-#: src/components/ShareDialog.tsx:343
+#: src/components/ShareDialog.tsx:346
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "अपना मर्मेड.जेएस कोड कॉपी करें या मर्मेड.जेएस लाइव एडिटर में सीधे खोलें।"
 
@@ -308,7 +309,7 @@ msgstr "क्या आप अपनी सदस्यता रद्द क�
 msgid "Do you want to delete this?"
 msgstr "क्या आप इसे डिलीट करना चाहते हैं?"
 
-#: src/pages/Edit.tsx:72
+#: src/pages/Edit.tsx:65
 #: src/pages/EditHosted.tsx:79
 msgid "Document"
 msgstr "दस्तावेज़"
@@ -317,20 +318,20 @@ msgstr "दस्तावेज़"
 msgid "Don't have an account?"
 msgstr "खाता नहीं है?"
 
-#: src/components/ShareDialog.tsx:70
-#: src/components/ShareDialog.tsx:540
+#: src/components/ShareDialog.tsx:71
+#: src/components/ShareDialog.tsx:543
 msgid "Download"
 msgstr "डाउनलोड"
 
-#: src/components/GraphContextMenu.tsx:118
+#: src/components/GraphContextMenu.tsx:127
 msgid "Download JPG"
 msgstr "JPG डाउनलोड करें"
 
-#: src/components/GraphContextMenu.tsx:94
+#: src/components/GraphContextMenu.tsx:103
 msgid "Download PNG"
 msgstr "PNG डाउनलोड करें"
 
-#: src/components/GraphContextMenu.tsx:140
+#: src/components/GraphContextMenu.tsx:149
 msgid "Download SVG"
 msgstr "SVG डाउनलोड करें"
 
@@ -346,7 +347,7 @@ msgstr "एक से अधिक नोड्स से एज ड्रा �
 msgid "Drop the file here ..."
 msgstr "फाइल यहाँ ड्रॉप करें ..."
 
-#: src/components/GraphContextMenu.tsx:560
+#: src/components/GraphContextMenu.tsx:570
 msgid "Edge"
 msgstr "किनारा"
 
@@ -404,7 +405,7 @@ msgstr "स्रोत नोड पंक्ति में किन्ह�
 msgid "Edges in Target Node Row"
 msgstr "लक्ष्य नोड पंक्ति में किन्हें"
 
-#: src/components/ShareDialog.tsx:142
+#: src/components/ShareDialog.tsx:143
 msgid "Editable"
 msgstr "संपादन योग्य"
 
@@ -440,8 +441,8 @@ msgstr "Excalidraw"
 
 #: src/components/EditorWrapper.tsx:60
 #: src/components/EditorWrapper.tsx:65
-#: src/components/ShareDialog.tsx:61
-#: src/components/ShareDialog.tsx:152
+#: src/components/ShareDialog.tsx:62
+#: src/components/ShareDialog.tsx:154
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
@@ -453,7 +454,7 @@ msgstr "उच्च-रिज़ॉल्यूशन छवियां नि
 msgid "Export to SVG"
 msgstr "SVG को निर्यात करें"
 
-#: src/components/GraphContextMenu.tsx:259
+#: src/components/GraphContextMenu.tsx:268
 msgid "Extra Large"
 msgstr "अति बड़ा"
 
@@ -475,7 +476,7 @@ msgstr "फिट ग्राफ"
 msgid "Follow Us"
 msgstr "हमें फॉलो करें"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:140
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
@@ -551,7 +552,7 @@ msgstr "किसी भी CSV फ़ाइल से डेटा आयात
 msgid "Import from Lucidchart, Visio, and other CSV files"
 msgstr "लुसिडचार्ट, विसिओ और अन्य CSV फ़ाइलों से आयात करें"
 
-#: src/components/ShareDialog.tsx:457
+#: src/components/ShareDialog.tsx:460
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।"
 
@@ -559,7 +560,7 @@ msgstr "इन CSV फ़ाइलों में से एक का उप�
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "डेटा आयात एक प्रो फीचर है। आप केवल $ 3/महीने या $ 30/वर्ष के लिए फ्लोचार्ट फन प्रो में अपग्रेड कर सकते हैं।"
 
-#: src/components/ShareDialog.tsx:490
+#: src/components/ShareDialog.tsx:493
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "एक <0>title</0> विशेषता का उपयोग करके एक शीर्षक शामिल करें। Visio रंगीनी का उपयोग करने के लिए, निम्नलिखित में से किसी एक के बराबर एक <1>roleType</1> विशेषता जोड़ें:"
 
@@ -583,12 +584,12 @@ msgstr "हाँ"
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/GraphContextMenu.tsx:254
+#: src/components/GraphContextMenu.tsx:263
 msgid "Large"
 msgstr "बड़ा"
 
 #: src/components/Tabs/EditLayoutTab.tsx:73
-#: src/pages/Edit.tsx:77
+#: src/pages/Edit.tsx:70
 #: src/pages/EditHosted.tsx:82
 msgid "Layout"
 msgstr "ख़ाका"
@@ -629,7 +630,7 @@ msgstr "लाइट"
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/ShareDialog.tsx:134
+#: src/components/ShareDialog.tsx:135
 msgid "Link"
 msgstr "लिंक"
 
@@ -651,7 +652,7 @@ msgstr "<0>Tone Row</0> द्वारा बना"
 msgid "Make a Donation"
 msgstr "दान करें"
 
-#: src/components/ShareDialog.tsx:423
+#: src/components/ShareDialog.tsx:426
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
@@ -663,7 +664,7 @@ msgstr "फ़्लोचार्ट फ़न प्रो के साथ �
 msgid "Map Data"
 msgstr "डेटा मैप"
 
-#: src/components/GraphContextMenu.tsx:250
+#: src/components/GraphContextMenu.tsx:259
 msgid "Medium"
 msgstr "मध्यम"
 
@@ -702,7 +703,7 @@ msgstr "अगला चार्ज"
 msgid "No Edges"
 msgstr "कोई किनारे नहीं"
 
-#: src/components/GraphContextMenu.tsx:292
+#: src/components/GraphContextMenu.tsx:302
 msgid "Node"
 msgstr "नोड"
 
@@ -760,7 +761,7 @@ msgstr "केवल इस उपकरण पर उपलब्ध है।<
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
-#: src/components/ShareDialog.tsx:477
+#: src/components/ShareDialog.tsx:480
 msgid "Organization Chart"
 msgstr "संगठन चार्ट"
 
@@ -802,8 +803,8 @@ msgstr "डेटा प्रसंस्करण"
 msgid "Prompt"
 msgstr "प्रॉम्प्ट"
 
-#: src/components/ShareDialog.tsx:419
-#: src/components/ShareDialog.tsx:442
+#: src/components/ShareDialog.tsx:422
+#: src/components/ShareDialog.tsx:445
 msgid "Public"
 msgstr "पब्लिक"
 
@@ -812,7 +813,7 @@ msgid "Random"
 msgstr "अनियमित"
 
 #: src/components/EditorWrapper.tsx:51
-#: src/components/ShareDialog.tsx:145
+#: src/components/ShareDialog.tsx:146
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
 
@@ -899,7 +900,7 @@ msgstr "दाएं से बाएं"
 
 #: src/components/Header.tsx:170
 #: src/components/Header.tsx:398
-#: src/pages/Roadmap.tsx:19
+#: src/pages/Roadmap.tsx:16
 msgid "Roadmap"
 msgstr "रोडमैप"
 
@@ -912,7 +913,7 @@ msgstr "सहेजें"
 msgid "Settings"
 msgstr "सेटिंग"
 
-#: src/components/GraphContextMenu.tsx:361
+#: src/components/GraphContextMenu.tsx:371
 msgid "Shape"
 msgstr "आकृति"
 
@@ -925,11 +926,11 @@ msgstr "आकार शामिल हैं आयत, गोलप्रत�
 msgid "Sign Up"
 msgstr "साइन अप"
 
-#: src/components/GraphContextMenu.tsx:428
+#: src/components/GraphContextMenu.tsx:438
 msgid "Size"
 msgstr "आकार"
 
-#: src/components/GraphContextMenu.tsx:245
+#: src/components/GraphContextMenu.tsx:254
 msgid "Small"
 msgstr "छोटा"
 
@@ -940,6 +941,10 @@ msgstr "कुछ क्लास आपकी फ्लोचार्ट स�
 #: src/components/OnlyInEnglish.tsx:23
 msgid "Sorry! This page is only available in English."
 msgstr "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।"
+
+#: src/components/GraphContextMenu.tsx:619
+msgid "Source Arrow"
+msgstr "स्रोत तीर "
 
 #: src/components/ImportDataDialog.tsx:485
 #: src/components/ImportDataDialog.tsx:521
@@ -995,7 +1000,7 @@ msgstr "इस कंप्यूटर पर संग्रहीत"
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन"
 
-#: src/pages/Edit.tsx:82
+#: src/pages/Edit.tsx:75
 #: src/pages/EditHosted.tsx:85
 msgid "Style"
 msgstr "शैली"
@@ -1021,6 +1026,10 @@ msgstr "सदस्यता समाप्त हो जाएगी"
 #: src/components/EditorOptions.tsx:40
 msgid "Syntax"
 msgstr "सिंटेक्स"
+
+#: src/components/GraphContextMenu.tsx:663
+msgid "Target Arrow"
+msgstr "लक्ष्य तीर"
 
 #: src/components/ImportDataDialog.tsx:442
 #: src/components/ImportDataDialog.tsx:528
@@ -1100,7 +1109,7 @@ msgstr "यह ऐप टाइप द्वारा काम करता ह
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।"
 
-#: src/components/ShareDialog.tsx:549
+#: src/components/ShareDialog.tsx:552
 msgid "Tip"
 msgstr "सुझाव"
 
@@ -1150,11 +1159,11 @@ msgstr "नोड की विशिष्ट चौड़ाई और ऊँ�
 msgid "Use the customer portal to change your billing information."
 msgstr "अपनी बिलिंग जानकारी बदलने के लिए ग्राहक पोर्टल का उपयोग करें।"
 
-#: src/components/ShareDialog.tsx:485
+#: src/components/ShareDialog.tsx:488
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "संगठनात्मक चार्ट, पदानुक्रमों और अन्य संगठनात्मक संरचनाओं के लिए इस फ़ाइल का उपयोग करें।"
 
-#: src/components/ShareDialog.tsx:473
+#: src/components/ShareDialog.tsx:476
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "अनुक्रमों, प्रक्रियाओं और कार्यप्रवाहों के लिए इस फ़ाइल का उपयोग करें।"
 

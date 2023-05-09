@@ -255,6 +255,7 @@
       "스타일링하기 위한 몇 가지 클래스가 이용 가능합니다",
     "Sorry! This page is only available in English.":
       "죄송합니다! 이 페이지는 영어로만 제공됩니다.",
+    "Source Arrow": "소스 화살표",
     "Source Column": "소스 열",
     "Source Delimiter": "소스 구분자",
     "Source/Target Arrow Shape": "소스/대상 화살표 모양",
@@ -275,6 +276,7 @@
     Subscription: "구독",
     "Subscription will end": "구독이 종료될 예정입니다.",
     Syntax: "문법",
+    "Target Arrow": "타겟 화살표",
     "Target Column": "대상 열",
     "Target Delimiter": "대상 구분자",
     Temporary: "임시",

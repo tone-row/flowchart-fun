@@ -263,6 +263,7 @@
       "Einige Klassen stehen zur Verfügung, um Ihren Flussdiagramm zu gestalten",
     "Sorry! This page is only available in English.":
       "Entschuldigung! Diese Seite ist nur auf Englisch verfügbar.",
+    "Source Arrow": "Quellpfeil",
     "Source Column": "Quellspalte",
     "Source Delimiter": "Quell-Trennzeichen",
     "Source/Target Arrow Shape": "Quelle/Ziel-Pfeilform",
@@ -284,6 +285,7 @@
     Subscription: "Abonnement",
     "Subscription will end": "Abonnement wird beendet",
     Syntax: "Syntax",
+    "Target Arrow": "Zielpfeil",
     "Target Column": "Ziel-Spalte",
     "Target Delimiter": "Ziel-Trennzeichen",
     Temporary: "Temporäres",
