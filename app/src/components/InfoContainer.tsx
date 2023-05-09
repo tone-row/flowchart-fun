@@ -1,3 +1,5 @@
+import "../pages/post/Post.css";
+
 import { CSSProperties, ReactNode } from "react";
 
 import { Box } from "../slang";
@@ -15,9 +17,10 @@ export function InfoContainer({
       pt={16}
       pb={10}
       style={{
-        maxWidth: 800,
+        maxWidth: 760,
         marginInline: "auto",
         position: "relative",
+        width: "100%",
         ...style,
       }}
       content="start normal"

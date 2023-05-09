@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 
 import { InfoContainer } from "../components/InfoContainer";
 import { InfoHeader } from "../components/InfoHeader";
-import { Box, Type } from "../slang";
-import styles from "./Blog.module.css";
+import { Box } from "../slang";
 export default function Blog() {
   const posts = useQuery("posts", getAndPreparePosts, {
     staleTime: Infinity,
@@ -20,7 +19,7 @@ export default function Blog() {
           description="Documenting the process of developing Flowchart Fun"
         />
         {posts.data && (
-          <Box gap={12} className="posts">
+          <Box gap={8} className="posts">
             {posts.data.map((post) => (
               <Post key={post.id} post={post} />
             ))}
@@ -33,18 +32,23 @@ export default function Blog() {
 
 function Post({ post }: { post: PostType }) {
   return (
-    <Box
-      gap={2}
-      className={styles.Post}
-      as={Link}
+    <Link
+      className={`grid gap-6 p-2 md:p-5 rounded transition-all
+      hover:bg-gradient-to-br hover:to-white hover:from-blue-100
+      dark:hover:from-blue-900 dark:hover:to-neutral-800
+      `}
       to={`/blog/post/${post.slug}`}
     >
-      <Type weight="700" size={3}>
-        {post.title}
-      </Type>
-      <Type>{post.publishDate}</Type>
-      <Type color="color-lineNumbers">{post.description}</Type>
-    </Box>
+      <header className="grid gap-1">
+        <h2 className="text-3xl font-bold">{post.title}</h2>
+        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+          {post.publishDate}
+        </span>
+      </header>
+      <p className="text-neutral-700 dark:text-neutral-300">
+        {post.description}
+      </p>
+    </Link>
   );
 }
 

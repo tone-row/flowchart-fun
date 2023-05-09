@@ -42,7 +42,7 @@ msgstr "Accessible depuis n'importe quel appareil"
 msgid "Account"
 msgstr "Compte"
 
-#: src/pages/Edit.tsx:91
+#: src/pages/Edit.tsx:84
 #: src/pages/EditHosted.tsx:89
 msgid "Advanced"
 msgstr "Avancé"
@@ -76,7 +76,7 @@ msgstr "Retour à l'éditeur"
 msgid "Background"
 msgstr "L'arrière plan"
 
-#: src/components/ShareDialog.tsx:465
+#: src/components/ShareDialog.tsx:468
 msgid "Basic Flowchart"
 msgstr "Diagramme de flux de base"
 
@@ -91,11 +91,12 @@ msgstr "Vide"
 
 #: src/components/Header.tsx:153
 #: src/components/Header.tsx:386
-#: src/pages/Blog.tsx:19
+#: src/pages/Blog.tsx:18
 msgid "Blog"
 msgstr "Blog"
 
-#: src/components/GraphContextMenu.tsx:471
+#: src/components/GraphContextMenu.tsx:481
+#: src/components/GraphContextMenu.tsx:577
 msgid "Border"
 msgstr "Frontière"
 
@@ -132,7 +133,7 @@ msgstr "Changer l'adresse email"
 
 #: src/components/Header.tsx:163
 #: src/components/Header.tsx:392
-#: src/pages/Changelog.tsx:18
+#: src/pages/Changelog.tsx:16
 msgid "Changelog"
 msgstr "Journal des modifications"
 
@@ -187,7 +188,7 @@ msgstr "Cloner"
 msgid "Close"
 msgstr "Fermer"
 
-#: src/components/GraphContextMenu.tsx:299
+#: src/components/GraphContextMenu.tsx:309
 msgid "Color"
 msgstr "Couleur"
 
@@ -228,21 +229,21 @@ msgstr "Continuer"
 msgid "Convert to hosted chart?"
 msgstr "Convertir en graphique hébergé ?"
 
-#: src/components/ShareDialog.tsx:260
-#: src/components/ShareDialog.tsx:261
-#: src/components/ShareDialog.tsx:379
+#: src/components/ShareDialog.tsx:263
+#: src/components/ShareDialog.tsx:264
+#: src/components/ShareDialog.tsx:382
 msgid "Copy"
 msgstr "Copier"
 
-#: src/components/GraphContextMenu.tsx:217
+#: src/components/GraphContextMenu.tsx:226
 msgid "Copy PNG Image"
 msgstr "Copier l'image PNG"
 
-#: src/components/GraphContextMenu.tsx:175
+#: src/components/GraphContextMenu.tsx:184
 msgid "Copy SVG Code"
 msgstr "Copier le code SVG"
 
-#: src/components/ShareDialog.tsx:343
+#: src/components/ShareDialog.tsx:346
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en direct mermaid.js."
 
@@ -308,7 +309,7 @@ msgstr "Souhaitez-vous résilier votre abonnement ?"
 msgid "Do you want to delete this?"
 msgstr "Souhaitez-vous supprimer ceci ?"
 
-#: src/pages/Edit.tsx:72
+#: src/pages/Edit.tsx:65
 #: src/pages/EditHosted.tsx:79
 msgid "Document"
 msgstr "Document"
@@ -317,20 +318,20 @@ msgstr "Document"
 msgid "Don't have an account?"
 msgstr "Vous n'avez pas de compte ?"
 
-#: src/components/ShareDialog.tsx:70
-#: src/components/ShareDialog.tsx:540
+#: src/components/ShareDialog.tsx:71
+#: src/components/ShareDialog.tsx:543
 msgid "Download"
 msgstr "Télécharger"
 
-#: src/components/GraphContextMenu.tsx:118
+#: src/components/GraphContextMenu.tsx:127
 msgid "Download JPG"
 msgstr "Télécharger JPG"
 
-#: src/components/GraphContextMenu.tsx:94
+#: src/components/GraphContextMenu.tsx:103
 msgid "Download PNG"
 msgstr "Télécharger PNG"
 
-#: src/components/GraphContextMenu.tsx:140
+#: src/components/GraphContextMenu.tsx:149
 msgid "Download SVG"
 msgstr "Télécharger SVG"
 
@@ -346,7 +347,7 @@ msgstr "Dessinez une arête à partir de plusieurs nœuds en commençant la lign
 msgid "Drop the file here ..."
 msgstr "Déposez le fichier ici ..."
 
-#: src/components/GraphContextMenu.tsx:560
+#: src/components/GraphContextMenu.tsx:570
 msgid "Edge"
 msgstr "Bord"
 
@@ -404,7 +405,7 @@ msgstr "Bordures dans la Ligne du Nœud Source"
 msgid "Edges in Target Node Row"
 msgstr "Bordures dans la Ligne du Nœud Cible"
 
-#: src/components/ShareDialog.tsx:142
+#: src/components/ShareDialog.tsx:143
 msgid "Editable"
 msgstr "Modifiable"
 
@@ -440,8 +441,8 @@ msgstr "Excalidraw"
 
 #: src/components/EditorWrapper.tsx:60
 #: src/components/EditorWrapper.tsx:65
-#: src/components/ShareDialog.tsx:61
-#: src/components/ShareDialog.tsx:152
+#: src/components/ShareDialog.tsx:62
+#: src/components/ShareDialog.tsx:154
 msgid "Export"
 msgstr "Exporter"
 
@@ -453,7 +454,7 @@ msgstr "Exporter des images haute résolution"
 msgid "Export to SVG"
 msgstr "Exporter en SVG"
 
-#: src/components/GraphContextMenu.tsx:259
+#: src/components/GraphContextMenu.tsx:268
 msgid "Extra Large"
 msgstr "Extra Large"
 
@@ -475,7 +476,7 @@ msgstr "Ajuster le graphique"
 msgid "Follow Us"
 msgstr "Suivez-nous"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:140
 msgid "Fullscreen"
 msgstr "Plein écran"
 
@@ -551,7 +552,7 @@ msgstr "Importer des données à partir de n'importe quel fichier CSV et les map
 msgid "Import from Lucidchart, Visio, and other CSV files"
 msgstr "Importer à partir de Lucidchart, Visio et autres fichiers CSV"
 
-#: src/components/ShareDialog.tsx:457
+#: src/components/ShareDialog.tsx:460
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces fichiers CSV."
 
@@ -559,7 +560,7 @@ msgstr "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces f
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "L'importation de données est une fonctionnalité professionnelle. Vous pouvez passer à Flowchart Fun Pro pour seulement 3 $/mois ou 30 $/an."
 
-#: src/components/ShareDialog.tsx:490
+#: src/components/ShareDialog.tsx:493
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la coloration Visio, ajoutez un attribut <1>roleType</1> égal à l'un des éléments suivants:"
 
@@ -583,12 +584,12 @@ msgstr "Est"
 msgid "Language"
 msgstr "Langue"
 
-#: src/components/GraphContextMenu.tsx:254
+#: src/components/GraphContextMenu.tsx:263
 msgid "Large"
 msgstr "Grand"
 
 #: src/components/Tabs/EditLayoutTab.tsx:73
-#: src/pages/Edit.tsx:77
+#: src/pages/Edit.tsx:70
 #: src/pages/EditHosted.tsx:82
 msgid "Layout"
 msgstr "Disposition"
@@ -629,7 +630,7 @@ msgstr "Lumineux"
 msgid "Light Mode"
 msgstr "Mode lumineux"
 
-#: src/components/ShareDialog.tsx:134
+#: src/components/ShareDialog.tsx:135
 msgid "Link"
 msgstr "Lien"
 
@@ -651,7 +652,7 @@ msgstr "Réalisé par <0>Tone Row</0>"
 msgid "Make a Donation"
 msgstr "Faire un don"
 
-#: src/components/ShareDialog.tsx:423
+#: src/components/ShareDialog.tsx:426
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
@@ -663,7 +664,7 @@ msgstr "Facilitez votre flux de travail avec Flowchart Fun Pro - abonnez-vous ma
 msgid "Map Data"
 msgstr "Cartographier les données"
 
-#: src/components/GraphContextMenu.tsx:250
+#: src/components/GraphContextMenu.tsx:259
 msgid "Medium"
 msgstr "Moyen"
 
@@ -702,7 +703,7 @@ msgstr "Prochain paiement"
 msgid "No Edges"
 msgstr "Pas de bords"
 
-#: src/components/GraphContextMenu.tsx:292
+#: src/components/GraphContextMenu.tsx:302
 msgid "Node"
 msgstr "Nœud"
 
@@ -760,7 +761,7 @@ msgstr "Disponible uniquement sur cet appareil.<0/>La suppression de votre cache
 msgid "Open Customer Portal"
 msgstr "Ouvrir le portail client"
 
-#: src/components/ShareDialog.tsx:477
+#: src/components/ShareDialog.tsx:480
 msgid "Organization Chart"
 msgstr "Organigramme"
 
@@ -802,8 +803,8 @@ msgstr "Traitement des données"
 msgid "Prompt"
 msgstr "Invite"
 
-#: src/components/ShareDialog.tsx:419
-#: src/components/ShareDialog.tsx:442
+#: src/components/ShareDialog.tsx:422
+#: src/components/ShareDialog.tsx:445
 msgid "Public"
 msgstr "Public"
 
@@ -812,7 +813,7 @@ msgid "Random"
 msgstr "Aléatoire"
 
 #: src/components/EditorWrapper.tsx:51
-#: src/components/ShareDialog.tsx:145
+#: src/components/ShareDialog.tsx:146
 msgid "Read-only"
 msgstr "Lecture seulement"
 
@@ -899,7 +900,7 @@ msgstr "De droite à gauche"
 
 #: src/components/Header.tsx:170
 #: src/components/Header.tsx:398
-#: src/pages/Roadmap.tsx:19
+#: src/pages/Roadmap.tsx:16
 msgid "Roadmap"
 msgstr "Roadmap"
 
@@ -912,7 +913,7 @@ msgstr "Sauver"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/components/GraphContextMenu.tsx:361
+#: src/components/GraphContextMenu.tsx:371
 msgid "Shape"
 msgstr "Forme"
 
@@ -925,11 +926,11 @@ msgstr "Les formes comprennent le rectangle, le rectangle arrondi, l'ellipse, le
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: src/components/GraphContextMenu.tsx:428
+#: src/components/GraphContextMenu.tsx:438
 msgid "Size"
 msgstr "Taille"
 
-#: src/components/GraphContextMenu.tsx:245
+#: src/components/GraphContextMenu.tsx:254
 msgid "Small"
 msgstr "Petit"
 
@@ -940,6 +941,10 @@ msgstr "Certaines classes sont disponibles pour aider à styliser votre diagramm
 #: src/components/OnlyInEnglish.tsx:23
 msgid "Sorry! This page is only available in English."
 msgstr "Désolé ! Cette page n'est disponible qu'en anglais."
+
+#: src/components/GraphContextMenu.tsx:619
+msgid "Source Arrow"
+msgstr "Flèche de Source"
 
 #: src/components/ImportDataDialog.tsx:485
 #: src/components/ImportDataDialog.tsx:521
@@ -995,7 +1000,7 @@ msgstr "Stocké sur cet ordinateur"
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Rationalisez votre flux de travail et simplifiez la visualisation de vos processus grâce à Flowchart Fun"
 
-#: src/pages/Edit.tsx:82
+#: src/pages/Edit.tsx:75
 #: src/pages/EditHosted.tsx:85
 msgid "Style"
 msgstr "Style"
@@ -1021,6 +1026,10 @@ msgstr "L'abonnement prendra fin"
 #: src/components/EditorOptions.tsx:40
 msgid "Syntax"
 msgstr "Syntaxe"
+
+#: src/components/GraphContextMenu.tsx:663
+msgid "Target Arrow"
+msgstr "Flèche de Cible"
 
 #: src/components/ImportDataDialog.tsx:442
 #: src/components/ImportDataDialog.tsx:528
@@ -1100,7 +1109,7 @@ msgstr "Chaque ligne creé une nouvelle boite"
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "Cette fonctionnalité est uniquement disponible pour les utilisateurs pro. <0>Devenez un utilisateur pro</0> pour la débloquer."
 
-#: src/components/ShareDialog.tsx:549
+#: src/components/ShareDialog.tsx:552
 msgid "Tip"
 msgstr "Astuce"
 
@@ -1150,11 +1159,11 @@ msgstr "Utilisez les attributs <0>w</0> et <1>h</1> pour définir explicitement 
 msgid "Use the customer portal to change your billing information."
 msgstr "Utilisez le portail client pour modifier vos informations de facturation."
 
-#: src/components/ShareDialog.tsx:485
+#: src/components/ShareDialog.tsx:488
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "Utilisez ce fichier pour les organigrammes, les hiérarchies et autres structures organisationnelles."
 
-#: src/components/ShareDialog.tsx:473
+#: src/components/ShareDialog.tsx:476
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Utilisez ce fichier pour les séquences, les processus et les workflows."
 

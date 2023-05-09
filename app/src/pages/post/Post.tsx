@@ -1,4 +1,3 @@
-import "./Post.css";
 import "highlight.js/styles/atom-one-dark.css";
 
 import axios from "axios";
@@ -6,7 +5,6 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 
 import { InfoContainer } from "../../components/InfoContainer";
-import { Box, Type } from "../../slang";
 import { PostType } from "../Blog";
 
 export default function Post() {
@@ -17,23 +15,25 @@ export default function Post() {
   });
   if (!data) return null;
   return (
-    <InfoContainer>
-      <Box gap={12}>
-        <Box as="header" items="normal center" gap={6} className="post-header">
-          <Type color="color-lineNumbers">{data.publishDate}</Type>
-          <Type as="h1" size={4}>
-            {data.title}
-          </Type>
-          <Type as="h2" weight="400" size={1}>
+    <InfoContainer style={{ maxWidth: 700 }}>
+      <div className="grid gap-6">
+        <header className="grid gap-6">
+          <div className="grid gap-2">
+            <span className="text-neutral-500 translate-x-[2px] dark:text-neutral-400">
+              {data.publishDate}
+            </span>
+            <h1 className="text-5xl font-bold">{data.title}</h1>
+          </div>
+          <p className="text-neutral-600 text-xl dark:text-neutral-300">
             {data.description}
-          </Type>
-        </Box>
+          </p>
+        </header>
         <div
-          className="post-content slang-type size-0"
+          className="post-content"
           dangerouslySetInnerHTML={{ __html: data.htmlContent }}
         />
-        <div className="byline vcard post-content">
-          <address className="author">
+        <div className="byline vcard post-content text-sm text-neutral-500 dark:text-neutral-700">
+          <address className="author inline">
             By{" "}
             <a
               rel="author"
@@ -43,11 +43,16 @@ export default function Post() {
               Rob Gordon
             </a>
           </address>
-          <time dateTime={data.date} title={data.publishDate}>
+          &nbsp;
+          <time
+            className="inline"
+            dateTime={data.date}
+            title={data.publishDate}
+          >
             on {data.publishDate}
           </time>
         </div>
-      </Box>
+      </div>
     </InfoContainer>
   );
 }

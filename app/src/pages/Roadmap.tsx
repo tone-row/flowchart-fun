@@ -1,12 +1,9 @@
-import "./post/Post.css";
-
 import { t } from "@lingui/macro";
 import axios from "axios";
 import { useQuery } from "react-query";
 
 import { InfoContainer } from "../components/InfoContainer";
 import { InfoHeader } from "../components/InfoHeader";
-import { Box, Type } from "../slang";
 
 export default function Roadmap() {
   const { data } = useQuery("roadmap", getRoadmap, {
@@ -15,13 +12,11 @@ export default function Roadmap() {
   });
   return (
     <InfoContainer>
-      <Box gap={16} content="start" className="slang-type size-0">
+      <div className="grid gap-10">
         <InfoHeader title={t`Roadmap`} />
         {data && (
-          <Box as="section" gap={6}>
-            <Type as="h2" size={3} color="color-highlightColor">
-              Active Tasks
-            </Type>
+          <section className="grid gap-5">
+            <SectionTitle>Active Tasks</SectionTitle>
             <div className="issues post-content">
               {data.issues.map((issue) => (
                 <div className="issue" key={issue.title}>
@@ -33,20 +28,18 @@ export default function Roadmap() {
                 </div>
               ))}
             </div>
-          </Box>
+          </section>
         )}
-        <Box as="section" gap={6}>
-          <Type as="h2" size={3} color="color-highlightColor">
-            Areas of Research
-          </Type>
+        <section className="grid gap-5">
+          <SectionTitle>Areas of Research</SectionTitle>
           {data && (
             <div
               className="issues post-content"
               dangerouslySetInnerHTML={{ __html: data.areasOfResearch }}
             />
           )}
-        </Box>
-      </Box>
+        </section>
+      </div>
     </InfoContainer>
   );
 }
@@ -62,4 +55,12 @@ async function getRoadmap() {
     issues: Issue[];
     areasOfResearch: string;
   };
+}
+
+function SectionTitle({ children }: { children: string }) {
+  return (
+    <h2 className="text-4xl font-bold text-blue-400 dark:text-blue-300">
+      {children}
+    </h2>
+  );
 }

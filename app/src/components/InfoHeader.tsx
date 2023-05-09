@@ -12,7 +12,7 @@ export function InfoHeader({
   return (
     <Box
       as="header"
-      gap={6}
+      gap={4}
       items="center"
       content="start normal"
       className={styles.InfoHeader}
