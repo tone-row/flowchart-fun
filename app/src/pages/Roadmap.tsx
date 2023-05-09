@@ -4,7 +4,6 @@ import { useQuery } from "react-query";
 
 import { InfoContainer } from "../components/InfoContainer";
 import { InfoHeader } from "../components/InfoHeader";
-import { Type } from "../slang";
 
 export default function Roadmap() {
   const { data } = useQuery("roadmap", getRoadmap, {
@@ -60,7 +59,7 @@ async function getRoadmap() {
 
 function SectionTitle({ children }: { children: string }) {
   return (
-    <h2 className="text-4xl font-bold text-blue-400 dark:text-blue-100">
+    <h2 className="text-4xl font-bold text-blue-400 dark:text-blue-300">
       {children}
     </h2>
   );

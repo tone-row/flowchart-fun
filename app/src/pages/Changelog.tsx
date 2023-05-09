@@ -24,7 +24,7 @@ export default function Changelog() {
                   </h2>
                   <time
                     dateTime={release.date}
-                    className="text-sm text-neutral-500"
+                    className="text-sm text-neutral-500 dark:text-neutral-400"
                   >
                     {release.niceDate}
                   </time>

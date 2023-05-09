@@ -1,5 +1,6 @@
 .post-content {
   line-height: 1.4;
+  @apply text-neutral-800 dark:text-neutral-200;
 }
 
 .post-content code.hljs {
@@ -12,24 +13,20 @@
   max-width: 100%;
   height: auto;
   border-radius: 0.5rem;
-  box-shadow: 0 0 1px 5px hsla(0deg, 0%, 0%, 0.1);
+  box-shadow: 0 0 1px 5px hsla(0deg, 0%, 0%, 0.05);
   margin-block: 2rem;
 }
 
 .post-content a {
-  @apply text-blue-500;
+  @apply text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-500;
   text-decoration: none;
-}
-
-.post-content a:hover {
-  @apply text-blue-600;
 }
 
 .post-content blockquote {
   margin-block: 1.5rem;
   padding: 1rem 1.5rem;
-  background-color: hsla(var(--color-brandHsl), 0.05);
-  border-left: 4px solid hsla(var(--color-brandHsl), 0.5);
+  /* background-color: hsla(var(--color-brandHsl), 0.05); */
+  @apply bg-blue-200/50 dark:bg-blue-900/50 border-l-4 border-blue-500 dark:border-blue-400;
   border-radius: 0.25rem;
 }
 

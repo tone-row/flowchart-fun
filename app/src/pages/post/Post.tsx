@@ -19,18 +19,20 @@ export default function Post() {
       <div className="grid gap-6">
         <header className="grid gap-6">
           <div className="grid gap-2">
-            <span className="text-neutral-500 translate-x-[2px]">
+            <span className="text-neutral-500 translate-x-[2px] dark:text-neutral-400">
               {data.publishDate}
             </span>
             <h1 className="text-5xl font-bold">{data.title}</h1>
           </div>
-          <p className="text-neutral-600 text-xl">{data.description}</p>
+          <p className="text-neutral-600 text-xl dark:text-neutral-300">
+            {data.description}
+          </p>
         </header>
         <div
-          className="post-content text-neutral-900"
+          className="post-content"
           dangerouslySetInnerHTML={{ __html: data.htmlContent }}
         />
-        <div className="byline vcard post-content text-sm text-neutral-500">
+        <div className="byline vcard post-content text-sm text-neutral-500 dark:text-neutral-700">
           <address className="author inline">
             By{" "}
             <a
