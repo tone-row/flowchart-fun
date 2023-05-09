@@ -252,6 +252,7 @@
       "有些类可以帮助您设计流程图",
     "Sorry! This page is only available in English.":
       "抱歉！此页面只有英语版。",
+    "Source Arrow": "源箭头",
     "Source Column": "源列",
     "Source Delimiter": "源分隔符",
     "Source/Target Arrow Shape": "源/目标箭头形状",
@@ -272,6 +273,7 @@
     Subscription: "订阅",
     "Subscription will end": "订阅即将到期",
     Syntax: "句法",
+    "Target Arrow": "目标箭头",
     "Target Column": "目標欄",
     "Target Delimiter": "目標分隔符",
     Temporary: "临时",

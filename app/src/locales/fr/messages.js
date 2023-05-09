@@ -264,6 +264,7 @@
       "Certaines classes sont disponibles pour aider à styliser votre diagramme de flux",
     "Sorry! This page is only available in English.":
       "Désolé ! Cette page n'est disponible qu'en anglais.",
+    "Source Arrow": "Flèche de Source",
     "Source Column": "Colonne source",
     "Source Delimiter": "Délimiteur source",
     "Source/Target Arrow Shape": "Forme de flèche source / cible",
@@ -285,6 +286,7 @@
     Subscription: "Abonnement",
     "Subscription will end": "L'abonnement prendra fin",
     Syntax: "Syntaxe",
+    "Target Arrow": "Flèche de Cible",
     "Target Column": "Colonne cible",
     "Target Delimiter": "Délimiteur cible",
     Temporary: "Temporaire",

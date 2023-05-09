@@ -1,5 +1,5 @@
 import { Trans } from "@lingui/macro";
-import { HandWaving } from "phosphor-react";
+import { Translate } from "phosphor-react";
 
 import { Box, Type } from "../slang";
 
@@ -18,7 +18,7 @@ export function OnlyInEnglish() {
       color="palette-black-0"
       items="center"
     >
-      <HandWaving size={24} />
+      <Translate size={24} />
       <Type as="span" size={-1} color="palette-black-0">
         <Trans>Sorry! This page is only available in English.</Trans>
       </Type>
