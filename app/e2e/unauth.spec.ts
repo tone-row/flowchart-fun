@@ -247,13 +247,15 @@ test.describe("unauth", () => {
     });
   });
 
-  test("Change Language", async ({ page }) => {
+  test.only("Change Language", async ({ page }) => {
     await goToTab(page, "Settings");
     // Click [aria-label="Select Language\: Deutsch"]
     await page.locator('[aria-label="Select Language\\: Deutsch"]').click();
 
     // Expect to find a button with the text "Einstellungen"
-    await expect(page.getByText(/Einstellungen/)).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Einstellungen" })
+    ).toBeVisible();
   });
 
   test("Change Appearance", async ({ page }) => {

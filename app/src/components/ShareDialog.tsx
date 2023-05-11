@@ -412,9 +412,9 @@ function HostedOptions() {
         <Trans>Public</Trans>
       </Title>
       <Box flow="column" content="normal start" items="center stretch" gap={2}>
-        <p className="text-sm">
+        <label htmlFor="isPublic" className="text-sm">
           <Trans>Make publicly accessible</Trans>
-        </p>
+        </label>
         <input
           type="checkbox"
           name="isPublic"
