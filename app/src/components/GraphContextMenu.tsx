@@ -41,7 +41,7 @@ import {
 import { useParser } from "../lib/parsers";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import {
   copyCanvas,
   downloadCanvas,
@@ -240,7 +240,7 @@ const WithIcon = memo(function WithIcon({
   return (
     <Box items="center" flow="column" content="start normal" gap={2}>
       {icon}
-      <Type>{children}</Type>
+      <span className="text-sm">{children}</span>
     </Box>
   );
 });
@@ -471,7 +471,9 @@ function NodeSubmenu() {
                 useDoc.setState({ text: newText }, false, "NodeSubmenu/size");
               }}
             >
-              <Type size={size}>{label}</Type>
+              <span className={`text-${["sm", "md", "lg", "xl"][size + 1]}`}>
+                {label}
+              </span>
             </Item>
           ))}
         </Submenu>
@@ -646,14 +648,9 @@ function EdgeSubmenu() {
                 );
               }}
             >
-              <Type
-                size={16}
-                style={{
-                  textTransform: "capitalize",
-                }}
-              >
+              <span className="text-sm capitalize">
                 {suffix.slice(7).replace(/-/g, " ")}
-              </Type>
+              </span>
             </Item>
           ))}
         </Submenu>
@@ -690,14 +687,9 @@ function EdgeSubmenu() {
                 );
               }}
             >
-              <Type
-                size={16}
-                style={{
-                  textTransform: "capitalize",
-                }}
-              >
+              <span className="text-sm capitalize">
                 {suffix.slice(7).replace(/-/g, " ")}
-              </Type>
+              </span>
             </Item>
           ))}
         </Submenu>

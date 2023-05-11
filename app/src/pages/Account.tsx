@@ -23,7 +23,6 @@ import {
   Notice,
   Page,
   Section,
-  SectionTitle,
 } from "../components/Shared";
 import Spinner from "../components/Spinner";
 import { formatCents, formatDate } from "../lib/helpers";
@@ -34,6 +33,7 @@ import {
 } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box, Type, TypeProps } from "../slang";
+import { PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
 
 export default function Account() {
@@ -123,6 +123,9 @@ export default function Account() {
       className={styles.Wrapper}
       self="stretch center"
     >
+      <PageTitle>
+        <Trans>Account</Trans>
+      </PageTitle>
       <Section>
         <SectionTitle>
           <Trans>User</Trans>

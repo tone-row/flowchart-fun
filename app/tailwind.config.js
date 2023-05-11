@@ -109,6 +109,9 @@ module.exports = {
       screens: {
         md: "800px",
       },
+      fontFamily: {
+        sans: ["Helvetica", "sans-serif"],
+      },
     },
   },
   plugins: [],

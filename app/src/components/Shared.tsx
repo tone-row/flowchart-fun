@@ -16,20 +16,6 @@ export const smallBtnTypeSize = -1;
 export const tooltipSize = -2;
 export const smallIconSize = 18;
 
-export const SectionTitle = ({
-  children,
-  as = "h2",
-  weight = "700",
-  size = 3,
-  ...props
-}: TypeProps) => {
-  return (
-    <Type as={as} weight={weight} size={size} {...props}>
-      {children}
-    </Type>
-  );
-};
-
 export const Section = ({ as = "section", children, ...props }: BoxProps) => {
   return (
     <Box gap={2} at={{ tablet: { gap: 4 } }} as={as} {...props}>

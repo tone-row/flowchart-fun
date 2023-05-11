@@ -9,6 +9,7 @@ import { makeChart, renameChart } from "../lib/queries";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Box, Type } from "../slang";
+import { SectionTitle } from "../ui/Typography";
 import { useSession } from "./AppContext";
 import {
   Button,
@@ -120,9 +121,9 @@ export const RenameButton = memo(function RenameButton({
         }}
       >
         <Section>
-          <Type as="h2" size={2} weight="700" style={{ marginBottom: -8 }}>
+          <SectionTitle className="mb-[-8px]">
             <Trans>Rename</Trans>
-          </Type>
+          </SectionTitle>
           {isValidSponsor && !isHosted ? (
             <Box
               flow="column"
@@ -131,9 +132,9 @@ export const RenameButton = memo(function RenameButton({
               items="center normal"
               as="label"
             >
-              <Type>
+              <span className="text-base">
                 <Trans>Convert to hosted chart?</Trans>
-              </Type>
+              </span>
               <input
                 type="checkbox"
                 checked={convertToHosted}

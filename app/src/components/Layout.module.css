@@ -41,7 +41,7 @@
 }
 
 .LayoutWrapper[data-banner="true"]:not([data-fullscreen="true"]) {
-  grid-template: auto minmax(0, 1fr) / none;
+  grid-template: auto auto minmax(0, 1fr) / none;
 }
 
 .Banner {
