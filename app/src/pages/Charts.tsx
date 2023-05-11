@@ -28,6 +28,7 @@ import {
 } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
 import { Overlay } from "../ui/Dialog";
+import { Description, PageTitle, SectionTitle } from "../ui/Typography";
 // Keep these in sync (55px)
 const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
 const leftMargin = "sm:mx-[55px]";
@@ -94,9 +95,9 @@ export default function Charts() {
   return (
     <div className="px-4 py-16 max-w-3xl w-full mx-auto grid gap-16 content-start">
       <header className="flex items-center justify-center gap-6">
-        <h1 className="text-4xl">
+        <PageTitle>
           <Trans>Your Charts</Trans>
-        </h1>
+        </PageTitle>
         <DialogButton as={Link} to="/n" icon={Plus} color="inverted">
           <Trans>New</Trans>
         </DialogButton>
@@ -200,12 +201,8 @@ const LargeFolder = memo(function LargeFolder({
               <Folder size={36} weight="light" />
             )}
             <div className="grid gap-1">
-              <h2 className="text-xl font-bold mt-[4px]">{title}</h2>
-              {description ? (
-                <div className="text-sm text-neutral-600 dark:text-neutral-400">
-                  {description}
-                </div>
-              ) : null}
+              <SectionTitle className="mt-[4px]">{title}</SectionTitle>
+              {description ? <Description>{description}</Description> : null}
             </div>
           </button>
         </Collapsible.Trigger>
