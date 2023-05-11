@@ -3,8 +3,11 @@
     "$3 / Month": "$3 / Month",
     "$30 / Year": "$30 / Year",
     "(before a colon creates a label)": "(before a colon creates a label)",
+    "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
+      "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>",
     "A new version of the app is available. Please reload to update.":
       "A new version of the app is available. Please reload to update.",
+    About: "About",
     "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
       "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.",
     "Accessible from any device": "Accessible from any device",
@@ -22,6 +25,8 @@
     "Back To Editor": "Back To Editor",
     Background: "Background",
     "Basic Flowchart": "Basic Flowchart",
+    "Become a Github Sponsor": "Become a Github Sponsor",
+    "Become a Pro User": "Become a Pro User",
     "Become a Sponsor": "Become a Sponsor",
     Blank: "Blank",
     Blog: "Blog",
@@ -56,6 +61,7 @@
       "Colors include red, orange, yellow, blue, purple, black, white, and gray.",
     Column: "Column",
     "Comic Book": "Comic Book",
+    Comment: "Comment",
     Concentric: "Concentric",
     "Confirm New Email": "Confirm New Email",
     Containers: "Containers",
@@ -133,7 +139,9 @@
     Extract: "Extract",
     Feedback: "Feedback",
     "Fit Graph": "Fit Graph",
-    "Follow Us": "Follow Us",
+    "Follow Us on Twitter": "Follow Us on Twitter",
+    "Found a bug? Have a feature request? We would love to hear from you!":
+      "Found a bug? Have a feature request? We would love to hear from you!",
     Fullscreen: "Fullscreen",
     Futuristic: "Futuristic",
     "Get More Layouts": "Get More Layouts",
@@ -148,6 +156,8 @@
     "How are edges declared in this data?":
       "How are edges declared in this data?",
     "ID's": "ID's",
+    "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
+      "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project",
     "Image Export": "Image Export",
     Images: "Images",
     "Import Data": "Import Data",
@@ -180,8 +190,7 @@
     Link: "Link",
     "Log In": "Log In",
     "Log Out": "Log Out",
-    "Made by <0>Tone Row</0>": "Made by <0>Tone Row</0>",
-    "Make a Donation": "Make a Donation",
+    "Make a One-Time Donation": "Make a One-Time Donation",
     "Make publicly accessible": "Make publicly accessible",
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!",
@@ -250,6 +259,7 @@
     "Right to Left": "Right to Left",
     Roadmap: "Roadmap",
     Save: "Save",
+    "Send us Feedback": "Send us Feedback",
     Settings: "Settings",
     Shape: "Shape",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
@@ -335,12 +345,8 @@
       "Use this file for sequences, processes, and workflows.",
     User: "User",
     "View on Github": "View on Github",
-    "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
-      "We appreciate all of your feedback, suggestions, bugs, and feature requests!",
     "We use cookies to keep you logged in.":
       "We use cookies to keep you logged in.",
-    "What would you like to share with us?":
-      "What would you like to share with us?",
     "Width and Height": "Width and Height",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.",
