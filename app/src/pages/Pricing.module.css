@@ -98,6 +98,8 @@
 
 .featureBlock {
   padding-block: calc(var(--spacer-px) * 5);
+  display: grid;
+  gap: 1rem;
 }
 
 .featureBlock img {
