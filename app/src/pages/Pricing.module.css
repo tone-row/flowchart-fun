@@ -35,7 +35,7 @@
 
   .plans_content {
     display: grid;
-    grid-template-columns: minmax(0, 1.7fr) minmax(0, 3fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 3fr);
     align-items: start;
   }
 
@@ -58,7 +58,7 @@
   }
 
   .planLeftRight {
-    grid-template-columns: auto 250px;
+    grid-template-columns: auto 275px;
     gap: calc(var(--spacer-px) * 6);
     align-items: start;
   }

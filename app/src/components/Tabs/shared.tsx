@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import { SelectOption } from "../../lib/graphOptions";
 import { useIsValidSponsor } from "../../lib/hooks";
-import { Type } from "../../slang";
+import { Label } from "../../ui/Typography";
 import styles from "./shared.module.css";
 
 export function CustomSelect({
@@ -19,7 +19,7 @@ export function CustomSelect({
     <Select.Root {...props}>
       <Select.Trigger className={styles.selectTrigger}>
         <Select.Value>
-          <Type weight="700">{niceName}</Type>
+          <span className="text font-bold">{niceName}</span>
         </Select.Value>
         <Select.Icon asChild>
           <CaretDown size={16} weight="thin" />
@@ -57,13 +57,9 @@ export function OptionWithLabel({
         minHeight: 50,
       }}
     >
-      <Type
-        size={-1}
-        style={{ flex: 100, minWidth: 100, maxWidth: 100 }}
-        color="color-lineNumbers"
-      >
+      <Label className="flex-[100px] min-w-[100px] max-w-[100px]" size="xs">
         {label}
-      </Type>
+      </Label>
       <div style={{ flex: 1 }}>{children}</div>
     </div>
   );

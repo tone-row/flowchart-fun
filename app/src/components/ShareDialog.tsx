@@ -27,7 +27,8 @@ import { useParser } from "../lib/parsers";
 import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
+import { Description } from "../ui/Typography";
 import { AppContext } from "./AppContext";
 import { downloadCanvas, downloadSvg, getCanvas, getSvg } from "./downloads";
 import Loading from "./Loading";
@@ -182,11 +183,7 @@ export default function ShareDialog() {
 }
 
 function Title({ children }: { children: ReactNode }) {
-  return (
-    <Type weight="700" size={1}>
-      {children}
-    </Type>
-  );
+  return <h3 className="text-lg font-bold mb-2">{children}</h3>;
 }
 
 function Column({ children }: { children: ReactNode }) {
@@ -221,7 +218,7 @@ function LinkCopy({
 
   return (
     <Box gap={2}>
-      <Type size={-1}>{title}</Type>
+      <Description size="xs">{title}</Description>
       <Box
         template="auto / auto 1fr auto"
         items="stretch normal"
@@ -229,13 +226,10 @@ function LinkCopy({
         rad={1}
         gap={1}
       >
-        <Box
-          content="center"
-          className={styles.LinkCopyLeft}
-          self="stretch normal"
-          background={copied ? "palette-green-2" : undefined}
-          rad={2}
-          p={1}
+        <div
+          className={`grid place-items-center rounded w-8 ${
+            copied ? "bg-green-500" : "bg-neutral-300 dark:bg-neutral-700"
+          }`}
         >
           <Icon
             width={15}
@@ -243,16 +237,13 @@ function LinkCopy({
             data-testid={copied ? `Copied ${rawTitle}` : ""}
             color={copied ? "white" : "black"}
           />
-        </Box>
-        <Type
+        </div>
+        <input
           aria-label={ariaLabel}
-          size={-2}
-          as="input"
           type="text"
           value={value}
           readOnly
-          pl={2}
-          className={styles.LinkCopyInput}
+          className={`text-[12px] px-2 font-mono text-neutral-500 dark:text-neutral-400 border border-neutral-300 dark:border-neutral-700 rounded overflow-hidden bg-transparent`}
           onFocus={copyText}
           data-testid={`Copy ${rawTitle}`}
         />
@@ -422,9 +413,9 @@ function HostedOptions() {
         <Trans>Public</Trans>
       </Title>
       <Box flow="column" content="normal start" items="center stretch" gap={2}>
-        <Type as="label" htmlFor="isPublic" size={-1}>
+        <p className="text-sm">
           <Trans>Make publicly accessible</Trans>
-        </Type>
+        </p>
         <input
           type="checkbox"
           name="isPublic"
