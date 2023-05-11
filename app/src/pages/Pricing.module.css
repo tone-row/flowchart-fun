@@ -74,7 +74,7 @@
 
 .Free {
   background-color: hsla(var(--color-foregroundHsl), 0.05);
-  --plus-color: hsla(var(--color-foregroundHsl), 1);
+  --plus-color: hsla(var(--color-foregroundHsl), 0.5);
 }
 .BecomeAPro {
   position: relative;

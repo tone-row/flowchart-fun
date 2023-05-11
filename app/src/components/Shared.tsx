@@ -8,7 +8,7 @@ import VisuallyHidden from "@reach/visually-hidden";
 import { HandWaving, Warning, X } from "phosphor-react";
 import { forwardRef, ReactNode } from "react";
 
-import { Box, BoxProps, Type, TypeProps } from "../slang";
+import { Box, BoxProps } from "../slang";
 import styles from "./Shared.module.css";
 import Spinner from "./Spinner";
 
@@ -31,19 +31,20 @@ export const Page = ({ as = "div", children, ...props }: BoxProps) => {
   );
 };
 
-type InputProps = TypeProps & { isLoading?: boolean };
+type InputProps = { isLoading?: boolean } & React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ isLoading, className = "", ...props }, ref) => {
     return (
       <Box p={2} px={3} rad={1} className={[styles.Input, className].join(" ")}>
-        <Type
-          as="input"
+        <input
           autoComplete="off"
           type="text"
-          size={-1}
           ref={ref}
-          className={styles.InputText}
+          className={`${styles.InputText} text-xs`}
           {...props}
         />
         {isLoading && (
@@ -62,7 +63,10 @@ Input.displayName = "Input";
 
 export const Textarea = forwardRef<
   HTMLTextAreaElement,
-  TypeProps & { box: BoxProps }
+  { box?: BoxProps } & React.DetailedHTMLProps<
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+  >
 >(({ box = {}, ...props }, ref) => {
   const { as = "div", ...boxProps } = box;
   return (
@@ -73,14 +77,7 @@ export const Textarea = forwardRef<
       className={[styles.Input, boxProps.className ?? ""].join(" ")}
       {...boxProps}
     >
-      <Type
-        as="textarea"
-        autoComplete="off"
-        type="text"
-        ref={ref}
-        size={-1}
-        {...props}
-      />
+      <textarea autoComplete="off" ref={ref} className="text-sm" {...props} />
     </Box>
   );
 });
@@ -88,7 +85,7 @@ Textarea.displayName = "Textarea";
 
 export const Button = forwardRef<
   HTMLButtonElement,
-  BoxProps & { text?: string; typeProps?: TypeProps }
+  BoxProps & { text?: string; typeClasses?: string }
 >(function Button(
   {
     children,
@@ -96,7 +93,7 @@ export const Button = forwardRef<
     onClick,
     className = "",
     text,
-    typeProps = {},
+    typeClasses = "",
     ...props
   },
   ref
@@ -112,9 +109,7 @@ export const Button = forwardRef<
       ref={ref}
     >
       {text ? (
-        <Type className={styles.ButtonType} as="span" {...typeProps}>
-          {text}
-        </Type>
+        <span className={`${styles.ButtonType} ${typeClasses}`}>{text}</span>
       ) : (
         children
       )}
@@ -202,7 +197,7 @@ export function Notice({
       {...rest}
     >
       <Icon size={smallIconSize} />
-      <Type size={-1}>{children}</Type>
+      <span className="text-sm">{children}</span>
     </Box>
   );
 }

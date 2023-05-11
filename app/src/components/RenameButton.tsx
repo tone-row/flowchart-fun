@@ -8,7 +8,7 @@ import { useIsValidSponsor } from "../lib/hooks";
 import { makeChart, renameChart } from "../lib/queries";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import { SectionTitle } from "../ui/Typography";
 import { useSession } from "./AppContext";
 import {

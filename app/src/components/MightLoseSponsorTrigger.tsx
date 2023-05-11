@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 import { useIsLocalChart, useIsValidSponsor } from "../lib/hooks";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./MightLoseSponsorTrigger.module.css";
 import styles2 from "./MightLoseWarning.module.css";

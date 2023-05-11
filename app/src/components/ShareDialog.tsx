@@ -344,9 +344,8 @@ function Mermaid() {
           value={code}
           readOnly
           disabled
-          className={styles.CustomTextarea}
+          className={`${styles.CustomTextarea} text-xs`}
           box={{ p: 1 }}
-          size={-2}
           rows={Math.min(code.split("\n").length, 20)}
         />
         <div className="flex items-center gap-1 absolute bottom-1 right-1">
