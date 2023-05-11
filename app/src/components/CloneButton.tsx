@@ -21,7 +21,7 @@ export function CloneButton() {
       }}
     >
       <FaCopy size={20} />
-      <span className="text-lg">
+      <span className="text font-bold">
         <Trans>Clone</Trans>
       </span>
     </button>

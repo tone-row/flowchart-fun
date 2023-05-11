@@ -6,20 +6,9 @@ import { Link } from "react-router-dom";
 
 import { mail } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
-import { Type } from "../slang";
-import styles from "./Feedback.module.css";
-import {
-  Button,
-  Input,
-  Notice,
-  Page,
-  Section,
-  SectionTitle,
-  Textarea,
-} from "./Shared";
+import { Label, PageTitle, SectionTitle } from "../ui/Typography";
+import { Button, Input, Notice, Textarea } from "./Shared";
 import Spinner from "./Spinner";
-
-const noPaddingBottom = { tablet: { pb: 0 } };
 
 type FormData = { from: string; text: string };
 
@@ -49,86 +38,78 @@ export default function Feedback() {
     [send]
   );
   return (
-    <Page
-      px={4}
-      py={8}
-      at={noPaddingBottom}
-      content="start normal"
-      className={styles.FeedbackWrapper}
-      self="stretch center"
+    <div
+      className="grid gap-12 w-full max-w-[700px] mx-auto pt-16 px-4 content-start"
       data-testid="feedback"
     >
+      <header className="grid gap-4">
+        <PageTitle className="text-center">
+          <Trans>Send us Feedback</Trans>
+        </PageTitle>
+        <p className="text-center text-neutral-500 dark:text-neutral-400">
+          <Trans>
+            Found a bug? Have a feature request? We would love to hear from you!
+          </Trans>
+        </p>
+      </header>
       {success ? (
         <Success />
       ) : (
-        <Page
-          as="form"
-          pb={4}
-          onSubmit={handleSubmit(onSubmit)}
-          className={[
-            styles.FeedbackForm,
-            isLoading ? styles.Submitting : "",
-          ].join(" ")}
-        >
-          <SectionTitle>
-            <Trans>Feedback</Trans>
-          </SectionTitle>
-          <Type>
-            <Trans>
-              We appreciate all of your feedback, suggestions, bugs, and feature
-              requests!
-            </Trans>
-          </Type>
-          <Section>
-            <Type>
-              <Trans>What would you like to share with us?</Trans>
-            </Type>
-            <Textarea
-              rows={4}
-              {...register("text", { required: true })}
-              data-testid="message"
-            />
-          </Section>
-          <Section>
-            <Type>
+        <form className="grid gap-4" onSubmit={handleSubmit(onSubmit)}>
+          <section className="grid gap-2">
+            <Label>
               <Trans>Email</Trans>
-            </Type>
+            </Label>
             <Input
               type="email"
               {...register("from", { required: true })}
               data-testid="email"
             />
-          </Section>
+          </section>
+          <section className="grid gap-2">
+            <Label>
+              <Trans>Comment</Trans>
+            </Label>
+            <Textarea
+              rows={4}
+              {...register("text", { required: true })}
+              data-testid="message"
+            />
+          </section>
           <Button
             type="submit"
-            style={{ justifySelf: "start" }}
+            style={{ justifySelf: "center" }}
             disabled={!isValid}
             text={t`Submit`}
           />
           {error instanceof Error && (
-            <Notice>
-              {t`An error occurred. Try resubmitting or email ${process.env.REACT_APP_FEEDBACK_TO} directly.`}
-            </Notice>
+            <div className="justify-self-center">
+              <Notice>
+                {t`An error occurred. Try resubmitting or email ${process.env.REACT_APP_FEEDBACK_TO} directly.`}
+              </Notice>
+            </div>
           )}
-        </Page>
+        </form>
       )}
-      {isLoading && <Spinner className={styles.FeedbackLoading} />}
-    </Page>
+      {isLoading && (
+        <div className="justify-self-center">
+          <Spinner className="text-blue-400 dark:text-blue-500" />
+        </div>
+      )}
+    </div>
   );
 }
 
 function Success() {
   const lastChart = useLastChart((s) => s.lastChart);
   return (
-    <Section self="center">
-      <Type size={2}>
+    <div className="grid gap-4 bg-green-100 p-4 rounded-lg text-center">
+      <SectionTitle className="text-green-700">
         <Trans>Thank you for your feedback!</Trans>
-      </Type>
-      <Type color="color-highlightColor">
-        <Link to={lastChart}>
-          <Trans>Back To Editor</Trans>
-        </Link>
-      </Type>
-    </Section>
+      </SectionTitle>
+      <Link to={lastChart} className="underline text-sm">
+        <Trans>Back To Editor</Trans>
+      </Link>
+    </div>
   );
 }

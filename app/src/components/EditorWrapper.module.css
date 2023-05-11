@@ -88,13 +88,3 @@
 .EditorWrapper [data-rename-button]:focus {
   box-shadow: none;
 }
-
-.readOnly {
-  text-transform: uppercase;
-  color: var(--color-edgeHover);
-  font-weight: 700;
-}
-
-:global(.slang-type.size-3) {
-  letter-spacing: -0.00625em;
-}

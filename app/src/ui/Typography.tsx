@@ -45,3 +45,20 @@ export function Description({
     </p>
   );
 }
+
+export const label = "text-neutral-400 dark:text-neutral-500";
+export function Label({
+  children,
+  className = "",
+  size = "sm",
+  ...props
+}: {
+  children: ReactNode;
+  size?: Size;
+} & React.HTMLAttributes<HTMLSpanElement>) {
+  return (
+    <span className={`${label} text-${size} ${className}`} {...props}>
+      {children}
+    </span>
+  );
+}

@@ -6,7 +6,7 @@ export default function Spinner({
   className = "",
   r = 16,
   s = 3,
-  c = "var(--color-uiAccent)",
+  c = "currentColor",
 }: {
   className?: string;
   r?: number;
