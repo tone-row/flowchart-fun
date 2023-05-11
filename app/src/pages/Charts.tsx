@@ -255,10 +255,10 @@ const ChartLink = memo(function ChartLink({
           : "hover:bg-neutral-200 dark:hover:bg-neutral-900"
       }`}
     >
-      <Link to={href} className="py-2 px-4">
-        <div className="grid gap-1">
+      <Link to={href} className="py-3 px-4">
+        <div className="grid gap-2">
           <span
-            className={`text-lg ${
+            className={`text-base ${
               isCurrent ? "text-blue-600 dark:text-blue-50" : ""
             }`}
           >

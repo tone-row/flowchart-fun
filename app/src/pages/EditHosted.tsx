@@ -1,4 +1,3 @@
-import { Trans } from "@lingui/macro";
 import { OnMount } from "@monaco-editor/react";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Check, DotsThree } from "phosphor-react";
@@ -16,6 +15,7 @@ import Main from "../components/Main";
 import Spinner from "../components/Spinner";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
+import { EditorTabList } from "../components/Tabs/EditorTabList";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
 import { useIsValidSponsor } from "../lib/hooks";
@@ -74,22 +74,7 @@ export default function EditHosted() {
       <Main>
         <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={editStyles.Tabs}>
-            <Tabs.List className={editStyles.TabsList}>
-              <Tabs.Trigger value="Document">
-                <Trans>Document</Trans>
-              </Tabs.Trigger>
-              <Tabs.Trigger value="Layout">
-                <Trans>Layout</Trans>
-              </Tabs.Trigger>
-              <Tabs.Trigger value="Style">
-                <Trans>Style</Trans>
-              </Tabs.Trigger>
-              {isValidSponsor && (
-                <Tabs.Trigger value="Advanced">
-                  <Trans>Advanced</Trans>
-                </Tabs.Trigger>
-              )}
-            </Tabs.List>
+            <EditorTabList />
             <Tabs.Content value="Document">
               <EditorOptions>
                 <TextEditor
