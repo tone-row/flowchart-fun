@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { BiErrorCircle } from "react-icons/bi";
 
 import { useParseError } from "../lib/useDoc";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import styles from "./EditorError.module.css";
 
 export default function EditorError() {
@@ -30,9 +30,7 @@ export default function EditorError() {
           >
             <BiErrorCircle size={24} />
             <Box gap={1}>
-              <Type size={-1} weight="700">
-                {show}
-              </Type>
+              <span className="text-sm">{show}</span>
             </Box>
           </Box>
         </motion.div>

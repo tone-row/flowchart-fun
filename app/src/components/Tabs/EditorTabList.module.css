@@ -23,8 +23,6 @@
   @apply bg-neutral-100;
 }
 
-:global(body.dark) {
-  .btn[aria-selected="true"]:hover::after {
-    @apply bg-neutral-800;
-  }
+:global(body.dark) .btn[aria-selected="true"]:hover::after {
+  @apply bg-neutral-800;
 }
