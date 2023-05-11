@@ -4,8 +4,11 @@
     "$30 / Year": "$30 / Year",
     "(before a colon creates a label)":
       "(vor einem Doppelpunkt wird zu einer Beschriftung)",
+    "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
+      "<0>Flowchart Fun</0> ist ein Open-Source-Projekt von <1>Tone Row</1>",
     "A new version of the app is available. Please reload to update.":
       "Eine neue Version der App ist verfügbar. Bitte neu laden, um zu aktualisieren.",
+    About: "Über",
     "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
       "Greifen Sie von überall aus auf diese Diagramme zu.<0/>Teilen und betten Sie Flussdiagramme ein, die synchron bleiben.",
     "Accessible from any device": "Von jedem Gerät aus zugänglich",
@@ -23,6 +26,8 @@
     "Back To Editor": "Zurück zum Editor",
     Background: "Hintergrund",
     "Basic Flowchart": "Grundlegender Flussdiagramm",
+    "Become a Github Sponsor": "Werden Sie ein Github-Sponsor",
+    "Become a Pro User": "Werden Sie ein Pro-Benutzer",
     "Become a Sponsor": "Werden Sie zum Sponsoren",
     Blank: "Leer",
     Blog: "Blog",
@@ -57,6 +62,7 @@
       "Farben beinhalten Rot, Orange, Gelb, Blau, Violett, Schwarz, Weiß und Grau.",
     Column: "Spalte",
     "Comic Book": "Comic-Buch",
+    Comment: "Kommentar",
     Concentric: "Konzentrisch",
     "Confirm New Email": "Neue E-Mail bestätigen",
     Containers: "Behälter",
@@ -134,7 +140,9 @@
     Extract: "Extrakt",
     Feedback: "Feedback",
     "Fit Graph": "Passen Graph",
-    "Follow Us": "Folgen Sie uns",
+    "Follow Us on Twitter": "Folgen Sie uns auf Twitter",
+    "Found a bug? Have a feature request? We would love to hear from you!":
+      "Einen Fehler gefunden? Eine Funktionsanfrage? Wir würden uns freuen von Ihnen zu hören!",
     Fullscreen: "Vollbild",
     Futuristic: "Futuristisch",
     "Get More Layouts": "Mehr Layouts erhalten",
@@ -149,6 +157,8 @@
     "How are edges declared in this data?":
       "Wie werden Kanten in diesen Daten deklariert?",
     "ID's": "IDs",
+    "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
+      "Wenn Sie <0>Flowchart Fun</0> gerne verwenden, überlegen Sie bitte, das Projekt zu unterstützen.",
     "Image Export": "Bildexport",
     Images: "Bilder",
     "Import Data": "Daten importieren",
@@ -181,8 +191,7 @@
     Link: "Link",
     "Log In": "Anmelden",
     "Log Out": "Abmelden",
-    "Made by <0>Tone Row</0>": "Gemacht von <0>Tone Row</0>",
-    "Make a Donation": "Spenden",
+    "Make a One-Time Donation": "Machen Sie eine einmalige Spende",
     "Make publicly accessible": "Öffentlich zugänglich machen",
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Vereinfachen Sie Ihren Arbeitsablauf mit Flowchart Fun Pro – abonnieren Sie jetzt für nur 3 $/Monat oder 30 $/Jahr!",
@@ -252,6 +261,7 @@
     "Right to Left": "Von rechts nach links",
     Roadmap: "Fahrplan",
     Save: "Speichern",
+    "Send us Feedback": "Senden Sie uns Feedback",
     Settings: "Einstellungen",
     Shape: "Form",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
@@ -339,11 +349,8 @@
       "Verwenden Sie diese Datei für Sequenzen, Prozesse und Workflows.",
     User: "Benutzer",
     "View on Github": "Auf Github ansehen",
-    "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
-      "Wir freuen uns über Ihr Feedback, Ihre Vorschläge, Fehler und Funktionsanfragen!",
     "We use cookies to keep you logged in.":
       "Wir verwenden Cookies, um Sie eingeloggt zu halten.",
-    "What would you like to share with us?": "Was möchten Sie uns mitteilen?",
     "Width and Height": "Breite und Höhe",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "Mit der Möglichkeit, eine unbegrenzte Anzahl gehosteter Charts zu erstellen, können Sie von jedem Gerät aus und von jedem Ort aus auf Ihre Flowcharts zugreifen und daran arbeiten.",

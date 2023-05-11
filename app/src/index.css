@@ -109,11 +109,6 @@ a {
   fill: var(--color-foreground);
 }
 
-button:focus {
-  outline: none;
-  box-shadow: inset 0 0 0 3px var(--color-buttonFocus);
-}
-
 div[data-reach-dialog-content] {
   background: var(--color-background);
   color: var(--color-foreground);

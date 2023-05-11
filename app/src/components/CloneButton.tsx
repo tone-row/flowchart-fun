@@ -4,15 +4,13 @@ import { useHistory } from "react-router-dom";
 
 import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
 import { docToString, useDoc } from "../lib/useDoc";
-import { Type } from "../slang";
-import styles from "./EditorWrapper.module.css";
 
 export function CloneButton() {
   const { push } = useHistory();
   const fullText = useDoc((s) => docToString(s));
   return (
     <button
-      className={`${styles.ShareButton} ${styles.cloneBtn}`}
+      className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 flex items-center gap-2"
       onClick={() => {
         const newChartTitle = randomChartName();
         window.localStorage.setItem(
@@ -23,9 +21,9 @@ export function CloneButton() {
       }}
     >
       <FaCopy size={20} />
-      <Type as="span">
+      <span className="text font-bold">
         <Trans>Clone</Trans>
-      </Type>
+      </span>
     </button>
   );
 }

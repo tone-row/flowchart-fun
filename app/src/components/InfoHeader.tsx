@@ -1,4 +1,5 @@
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
+import { PageTitle } from "../ui/Typography";
 import styles from "./InfoHeader.module.css";
 import { OnlyInEnglish } from "./OnlyInEnglish";
 
@@ -17,13 +18,11 @@ export function InfoHeader({
       content="start normal"
       className={styles.InfoHeader}
     >
-      <Type weight="700" size={5}>
-        {title}
-      </Type>
+      <PageTitle>{title}</PageTitle>
       {description && (
-        <Type color="color-highlightColor" weight="700" size={1}>
+        <p className="text-blue-400 dark:text-blue-300 text-lg font-bold">
           {description}
-        </Type>
+        </p>
       )}
       <OnlyInEnglish />
     </Box>

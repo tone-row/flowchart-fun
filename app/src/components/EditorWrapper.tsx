@@ -4,7 +4,8 @@ import { RiShareForwardFill } from "react-icons/ri";
 
 import { useIsReadOnly, useIsValidCustomer } from "../lib/hooks";
 import { useDocDetails } from "../lib/useDoc";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
+import { PageTitle } from "../ui/Typography";
 import { AppContext } from "./AppContext";
 import { CloneButton } from "./CloneButton";
 import styles from "./EditorWrapper.module.css";
@@ -35,21 +36,13 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
       <header>
         <div className={styles.HeaderTitle}>
           <RenameButton>
-            <Type
-              as="h1"
-              weight="700"
-              className={styles.WorkspaceTitle}
-              size={3}
-              title={title}
-            >
-              {title || "flowchart.fun"}
-            </Type>
+            <PageTitle title={title}>{title || "flowchart.fun"}</PageTitle>
           </RenameButton>
           <MightLoseSponsorTrigger />
           {isReadOnly && (
-            <Type size={-1} className={styles.readOnly}>
+            <span className="text-xs text-orange-500 uppercase font-bold">
               <Trans>Read-only</Trans>
-            </Type>
+            </span>
           )}
           {isReadOnly ? (
             <CloneButton />
@@ -61,9 +54,9 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
               className={styles.ShareButton}
               onClick={() => setShareModal(true)}
             >
-              <Type as="span" weight="700">
+              <span className="text font-bold">
                 <Trans>Export</Trans>
-              </Type>
+              </span>
               <RiShareForwardFill size={24} />
             </Box>
           )}

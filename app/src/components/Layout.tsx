@@ -1,7 +1,7 @@
 import { memo, ReactNode, Suspense } from "react";
 
 import { useFullscreen, useIsEditorView } from "../lib/hooks";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import ColorMode from "./ColorMode";
 import { Header } from "./Header";
 import styles from "./Layout.module.css";
@@ -25,11 +25,11 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
       >
         {showBanner && (
           <Box className={styles.Banner} p={3}>
-            <Type size={-1}>
+            <span className="text-sm">
               {decodeURIComponent(
                 hash.slice("#message=".length).replace(/\+/g, "%20")
               )}
-            </Type>
+            </span>
           </Box>
         )}
         {isFullscreen ? null : <Header />}

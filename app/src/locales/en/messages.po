@@ -25,50 +25,58 @@ msgstr "$30 / Year"
 msgid "(before a colon creates a label)"
 msgstr "(before a colon creates a label)"
 
+#: src/components/Settings.tsx:120
+msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
+msgstr "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
+
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
 msgstr "A new version of the app is available. Please reload to update."
 
-#: src/pages/Charts.tsx:108
+#: src/components/Settings.tsx:117
+msgid "About"
+msgstr "About"
+
+#: src/pages/Charts.tsx:109
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 
-#: src/pages/New.tsx:217
+#: src/pages/New.tsx:218
 msgid "Accessible from any device"
 msgstr "Accessible from any device"
 
 #: src/components/Header.tsx:184
-#: src/components/Header.tsx:410
+#: src/components/Header.tsx:398
+#: src/pages/Account.tsx:121
 msgid "Account"
 msgstr "Account"
 
-#: src/pages/Edit.tsx:84
-#: src/pages/EditHosted.tsx:89
+#: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
 msgstr "Advanced"
 
-#: src/pages/Account.tsx:268
+#: src/pages/Account.tsx:263
 msgid "Amount"
 msgstr "Amount"
 
-#: src/components/Feedback.tsx:110
+#: src/components/Feedback.tsx:88
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "An error occurred. Try resubmitting or email {0} directly."
 
-#: src/components/Settings.tsx:80
+#: src/components/Settings.tsx:85
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/components/LearnSyntaxDialog.tsx:117
+#: src/components/LearnSyntaxDialog.tsx:118
 msgid "Attributes"
 msgstr "Attributes"
 
-#: src/pages/Pricing.tsx:37
-#: src/pages/Pricing.tsx:51
+#: src/pages/Pricing.tsx:38
+#: src/pages/Pricing.tsx:52
 msgid "Auto-Layouts"
 msgstr "Auto-Layouts"
 
-#: src/components/Feedback.tsx:129
+#: src/components/Feedback.tsx:111
 msgid "Back To Editor"
 msgstr "Back To Editor"
 
@@ -76,27 +84,34 @@ msgstr "Back To Editor"
 msgid "Background"
 msgstr "Background"
 
-#: src/components/ShareDialog.tsx:468
+#: src/components/ShareDialog.tsx:458
 msgid "Basic Flowchart"
 msgstr "Basic Flowchart"
 
-#: src/components/Settings.tsx:135
-#: src/pages/Account.tsx:138
+#: src/components/Settings.tsx:170
+msgid "Become a Github Sponsor"
+msgstr "Become a Github Sponsor"
+
+#: src/components/Settings.tsx:158
+msgid "Become a Pro User"
+msgstr "Become a Pro User"
+
+#: src/pages/Account.tsx:133
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
-#: src/pages/New.tsx:253
+#: src/pages/New.tsx:254
 msgid "Blank"
 msgstr "Blank"
 
 #: src/components/Header.tsx:153
-#: src/components/Header.tsx:386
+#: src/components/Header.tsx:374
 #: src/pages/Blog.tsx:18
 msgid "Blog"
 msgstr "Blog"
 
-#: src/components/GraphContextMenu.tsx:481
-#: src/components/GraphContextMenu.tsx:577
+#: src/components/GraphContextMenu.tsx:483
+#: src/components/GraphContextMenu.tsx:579
 msgid "Border"
 msgstr "Border"
 
@@ -111,34 +126,34 @@ msgstr "Breadthfirst"
 
 #: src/components/ClearTextButton.tsx:44
 #: src/components/ImportDataDialog.tsx:723
-#: src/pages/Account.tsx:304
-#: src/pages/Account.tsx:315
-#: src/pages/Account.tsx:383
-#: src/pages/Account.tsx:395
-#: src/pages/Account.tsx:439
+#: src/pages/Account.tsx:299
+#: src/pages/Account.tsx:310
+#: src/pages/Account.tsx:375
+#: src/pages/Account.tsx:387
+#: src/pages/Account.tsx:431
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/pages/Account.tsx:307
+#: src/pages/Account.tsx:302
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Cancel your subscription. Your hosted charts will become read-only."
 
-#: src/components/LearnSyntaxDialog.tsx:335
+#: src/components/LearnSyntaxDialog.tsx:336
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Certain attributes can be used to customize the appearance or functionality of elements."
 
-#: src/pages/Account.tsx:220
+#: src/pages/Account.tsx:215
 msgid "Change Email Address"
 msgstr "Change Email Address"
 
 #: src/components/Header.tsx:163
-#: src/components/Header.tsx:392
+#: src/components/Header.tsx:380
 #: src/pages/Changelog.tsx:16
 msgid "Changelog"
 msgstr "Changelog"
 
 #: src/components/Header.tsx:96
-#: src/components/Header.tsx:364
+#: src/components/Header.tsx:352
 msgid "Charts"
 msgstr "Charts"
 
@@ -147,11 +162,11 @@ msgstr "Charts"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Check your email for a link to log in. You can close this window."
 
-#: src/components/LearnSyntaxDialog.tsx:304
+#: src/components/LearnSyntaxDialog.tsx:305
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 
-#: src/pages/Pricing.tsx:88
+#: src/pages/Pricing.tsx:89
 msgid "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 msgstr "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work."
 
@@ -159,7 +174,7 @@ msgstr "Choose to share your charts with full access, edit-only, or view-only pe
 msgid "Circle"
 msgstr "Circle"
 
-#: src/components/LearnSyntaxDialog.tsx:108
+#: src/components/LearnSyntaxDialog.tsx:109
 msgid "Classes"
 msgstr "Classes"
 
@@ -180,11 +195,12 @@ msgstr "Clear text?"
 msgid "Click on \\nLearn Syntax\\nto learn more"
 msgstr "Click on \\nLearn Syntax\\nto learn more"
 
-#: src/components/CloneButton.tsx:27
+#: src/components/CloneButton.tsx:25
 msgid "Clone"
 msgstr "Clone"
 
-#: src/components/Shared.tsx:168
+#: src/components/LearnSyntaxDialog.tsx:391
+#: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "Close"
 
@@ -192,7 +208,7 @@ msgstr "Close"
 msgid "Color"
 msgstr "Color"
 
-#: src/components/LearnSyntaxDialog.tsx:250
+#: src/components/LearnSyntaxDialog.tsx:251
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 
@@ -204,19 +220,23 @@ msgstr "Column"
 msgid "Comic Book"
 msgstr "Comic Book"
 
+#: src/components/Feedback.tsx:71
+msgid "Comment"
+msgstr "Comment"
+
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
 msgstr "Concentric"
 
-#: src/pages/Account.tsx:214
+#: src/pages/Account.tsx:209
 msgid "Confirm New Email"
 msgstr "Confirm New Email"
 
-#: src/components/LearnSyntaxDialog.tsx:224
+#: src/components/LearnSyntaxDialog.tsx:225
 msgid "Containers"
 msgstr "Containers"
 
-#: src/components/LearnSyntaxDialog.tsx:227
+#: src/components/LearnSyntaxDialog.tsx:228
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "Containers are nodes that contain other nodes. They are declared using curly braces."
 
@@ -224,14 +244,14 @@ msgstr "Containers are nodes that contain other nodes. They are declared using c
 msgid "Continue"
 msgstr "Continue"
 
-#: src/components/MightLoseSponsorTrigger.tsx:64
-#: src/components/RenameButton.tsx:135
+#: src/components/MightLoseSponsorTrigger.tsx:61
+#: src/components/RenameButton.tsx:136
 msgid "Convert to hosted chart?"
 msgstr "Convert to hosted chart?"
 
-#: src/components/ShareDialog.tsx:263
-#: src/components/ShareDialog.tsx:264
-#: src/components/ShareDialog.tsx:382
+#: src/components/ShareDialog.tsx:254
+#: src/components/ShareDialog.tsx:255
+#: src/components/ShareDialog.tsx:372
 msgid "Copy"
 msgstr "Copy"
 
@@ -243,32 +263,32 @@ msgstr "Copy PNG Image"
 msgid "Copy SVG Code"
 msgstr "Copy SVG Code"
 
-#: src/components/ShareDialog.tsx:346
+#: src/components/ShareDialog.tsx:337
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 
-#: src/pages/New.tsx:292
+#: src/pages/New.tsx:293
 msgid "Create"
 msgstr "Create"
 
-#: src/pages/Pricing.tsx:54
+#: src/pages/Pricing.tsx:55
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "Create Flowcharts from a Prompt with AI"
 
-#: src/pages/New.tsx:167
+#: src/pages/New.tsx:168
 msgid "Create a New Flowchart"
 msgstr "Create a New Flowchart"
 
-#: src/components/LearnSyntaxDialog.tsx:131
+#: src/components/LearnSyntaxDialog.tsx:132
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Creating an edge between two nodes is done by indenting the second node below the first"
 
-#: src/pages/Pricing.tsx:53
-#: src/pages/Pricing.tsx:85
+#: src/pages/Pricing.tsx:54
+#: src/pages/Pricing.tsx:86
 msgid "Custom Sharing Options"
 msgstr "Custom Sharing Options"
 
-#: src/pages/Account.tsx:231
+#: src/pages/Account.tsx:226
 msgid "Customer Portal"
 msgstr "Customer Portal"
 
@@ -276,20 +296,20 @@ msgstr "Customer Portal"
 msgid "Dark"
 msgstr "Dark"
 
-#: src/components/Settings.tsx:104
-#: src/components/Settings.tsx:106
+#: src/components/Settings.tsx:109
+#: src/components/Settings.tsx:111
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/pages/Account.tsx:265
+#: src/pages/Account.tsx:260
 msgid "Date"
 msgstr "Date"
 
-#: src/pages/New.tsx:232
+#: src/pages/New.tsx:233
 msgid "Deleted when browser data is cleared"
 msgstr "Deleted when browser data is cleared"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:412
 msgid "Describe the flowchart you wish to create"
 msgstr "Describe the flowchart you wish to create"
 
@@ -301,16 +321,15 @@ msgstr "Direction"
 msgid "Discard"
 msgstr "Discard"
 
-#: src/pages/Account.tsx:388
+#: src/pages/Account.tsx:380
 msgid "Do you want to cancel your subscription?"
 msgstr "Do you want to cancel your subscription?"
 
-#: src/pages/Charts.tsx:294
+#: src/pages/Charts.tsx:291
 msgid "Do you want to delete this?"
 msgstr "Do you want to delete this?"
 
-#: src/pages/Edit.tsx:65
-#: src/pages/EditHosted.tsx:79
+#: src/components/Tabs/EditorTabList.tsx:21
 msgid "Document"
 msgstr "Document"
 
@@ -318,8 +337,8 @@ msgstr "Document"
 msgid "Don't have an account?"
 msgstr "Don't have an account?"
 
-#: src/components/ShareDialog.tsx:71
-#: src/components/ShareDialog.tsx:543
+#: src/components/ShareDialog.tsx:72
+#: src/components/ShareDialog.tsx:533
 msgid "Download"
 msgstr "Download"
 
@@ -339,7 +358,7 @@ msgstr "Download SVG"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "Drag and drop a CSV file here, or click to select a file"
 
-#: src/components/LearnSyntaxDialog.tsx:212
+#: src/components/LearnSyntaxDialog.tsx:213
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "Draw an edge from multiple nodes by beginning the line with a reference"
 
@@ -347,15 +366,15 @@ msgstr "Draw an edge from multiple nodes by beginning the line with a reference"
 msgid "Drop the file here ..."
 msgstr "Drop the file here ..."
 
-#: src/components/GraphContextMenu.tsx:570
+#: src/components/GraphContextMenu.tsx:572
 msgid "Edge"
 msgstr "Edge"
 
-#: src/components/LearnSyntaxDialog.tsx:152
+#: src/components/LearnSyntaxDialog.tsx:153
 msgid "Edge ID, Classes, Attributes"
 msgstr "Edge ID, Classes, Attributes"
 
-#: src/components/LearnSyntaxDialog.tsx:140
+#: src/components/LearnSyntaxDialog.tsx:141
 msgid "Edge Label"
 msgstr "Edge Label"
 
@@ -364,12 +383,12 @@ msgstr "Edge Label"
 msgid "Edge Label Column"
 msgstr "Edge Label Column"
 
-#: src/components/LearnSyntaxDialog.tsx:288
+#: src/components/LearnSyntaxDialog.tsx:289
 msgid "Edge Style"
 msgstr "Edge Style"
 
 #: src/components/ImportDataDialog.tsx:406
-#: src/components/LearnSyntaxDialog.tsx:128
+#: src/components/LearnSyntaxDialog.tsx:129
 msgid "Edges"
 msgstr "Edges"
 
@@ -385,11 +404,11 @@ msgstr "Edges are declared in the same row as their target node"
 msgid "Edges are declared in their own row"
 msgstr "Edges are declared in their own row"
 
-#: src/components/LearnSyntaxDialog.tsx:155
+#: src/components/LearnSyntaxDialog.tsx:156
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "Edges can also have ID's, classes, and attributes before the label"
 
-#: src/components/LearnSyntaxDialog.tsx:291
+#: src/components/LearnSyntaxDialog.tsx:292
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "Edges can be styled with dashed, dotted, or solid lines"
 
@@ -405,13 +424,13 @@ msgstr "Edges in Source Node Row"
 msgid "Edges in Target Node Row"
 msgstr "Edges in Target Node Row"
 
-#: src/components/ShareDialog.tsx:143
+#: src/components/ShareDialog.tsx:144
 msgid "Editable"
 msgstr "Editable"
 
 #: src/components/Header.tsx:88
-#: src/components/Header.tsx:358
-#: src/components/MobileTabToggle.tsx:21
+#: src/components/Header.tsx:346
+#: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "Editor"
 
@@ -419,7 +438,7 @@ msgstr "Editor"
 msgid "Eggs"
 msgstr "Eggs"
 
-#: src/components/Feedback.tsx:94
+#: src/components/Feedback.tsx:61
 msgid "Email"
 msgstr "Email"
 
@@ -431,7 +450,7 @@ msgstr "Empty"
 msgid "Equal To"
 msgstr "Equal To"
 
-#: src/pages/Pricing.tsx:45
+#: src/pages/Pricing.tsx:46
 msgid "Everything in Free"
 msgstr "Everything in Free"
 
@@ -439,18 +458,18 @@ msgstr "Everything in Free"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:60
-#: src/components/EditorWrapper.tsx:65
-#: src/components/ShareDialog.tsx:62
-#: src/components/ShareDialog.tsx:154
+#: src/components/EditorWrapper.tsx:53
+#: src/components/EditorWrapper.tsx:58
+#: src/components/ShareDialog.tsx:63
+#: src/components/ShareDialog.tsx:155
 msgid "Export"
 msgstr "Export"
 
-#: src/pages/Pricing.tsx:48
+#: src/pages/Pricing.tsx:49
 msgid "Export High-Resolution Images"
 msgstr "Export High-Resolution Images"
 
-#: src/pages/Pricing.tsx:49
+#: src/pages/Pricing.tsx:50
 msgid "Export to SVG"
 msgstr "Export to SVG"
 
@@ -458,13 +477,12 @@ msgstr "Export to SVG"
 msgid "Extra Large"
 msgstr "Extra Large"
 
-#: src/pages/New.tsx:415
+#: src/pages/New.tsx:416
 msgid "Extract"
 msgstr "Extract"
 
-#: src/components/Feedback.tsx:74
 #: src/components/Header.tsx:127
-#: src/components/Header.tsx:378
+#: src/components/Header.tsx:366
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -472,11 +490,15 @@ msgstr "Feedback"
 msgid "Fit Graph"
 msgstr "Fit Graph"
 
-#: src/components/Settings.tsx:118
-msgid "Follow Us"
-msgstr "Follow Us"
+#: src/components/Settings.tsx:141
+msgid "Follow Us on Twitter"
+msgstr "Follow Us on Twitter"
 
-#: src/components/ShareDialog.tsx:140
+#: src/components/Feedback.tsx:50
+msgid "Found a bug? Have a feature request? We would love to hear from you!"
+msgstr "Found a bug? Have a feature request? We would love to hear from you!"
+
+#: src/components/ShareDialog.tsx:141
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
@@ -492,7 +514,7 @@ msgstr "Get More Layouts"
 msgid "Get More Themes"
 msgstr "Get More Themes"
 
-#: src/components/MobileTabToggle.tsx:21
+#: src/components/MobileTabToggle.tsx:20
 msgid "Graph"
 msgstr "Graph"
 
@@ -509,7 +531,7 @@ msgstr "Heads up! Before you clear your cache, remember that this document isn't
 msgid "Help"
 msgstr "Help"
 
-#: src/pages/Account.tsx:255
+#: src/pages/Account.tsx:250
 msgid "History"
 msgstr "History"
 
@@ -521,15 +543,19 @@ msgstr "Home"
 msgid "How are edges declared in this data?"
 msgstr "How are edges declared in this data?"
 
-#: src/components/LearnSyntaxDialog.tsx:100
+#: src/components/LearnSyntaxDialog.tsx:101
 msgid "ID's"
 msgstr "ID's"
 
-#: src/pages/Pricing.tsx:36
+#: src/components/Settings.tsx:148
+msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
+msgstr "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
+
+#: src/pages/Pricing.tsx:37
 msgid "Image Export"
 msgstr "Image Export"
 
-#: src/components/LearnSyntaxDialog.tsx:354
+#: src/components/LearnSyntaxDialog.tsx:355
 msgid "Images"
 msgstr "Images"
 
@@ -548,11 +574,11 @@ msgstr "Import data from a CSV file."
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 
-#: src/pages/Pricing.tsx:50
+#: src/pages/Pricing.tsx:51
 msgid "Import from Lucidchart, Visio, and other CSV files"
 msgstr "Import from Lucidchart, Visio, and other CSV files"
 
-#: src/components/ShareDialog.tsx:460
+#: src/components/ShareDialog.tsx:450
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Import your diagram it into Microsoft Visio using one of these CSV files."
 
@@ -560,7 +586,7 @@ msgstr "Import your diagram it into Microsoft Visio using one of these CSV files
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 
-#: src/components/ShareDialog.tsx:493
+#: src/components/ShareDialog.tsx:483
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 
@@ -572,7 +598,7 @@ msgstr "Indenting creates an edge"
 msgid "Info"
 msgstr "Info"
 
-#: src/pages/New.tsx:410
+#: src/pages/New.tsx:411
 msgid "Instruct"
 msgstr "Instruct"
 
@@ -580,7 +606,7 @@ msgstr "Instruct"
 msgid "Is"
 msgstr "Is"
 
-#: src/components/Settings.tsx:49
+#: src/components/Settings.tsx:54
 msgid "Language"
 msgstr "Language"
 
@@ -589,8 +615,7 @@ msgid "Large"
 msgstr "Large"
 
 #: src/components/Tabs/EditLayoutTab.tsx:73
-#: src/pages/Edit.tsx:70
-#: src/pages/EditHosted.tsx:82
+#: src/components/Tabs/EditorTabList.tsx:30
 msgid "Layout"
 msgstr "Layout"
 
@@ -598,21 +623,21 @@ msgstr "Layout"
 msgid "Layout is Frozen"
 msgstr "Layout is Frozen"
 
-#: src/components/LearnSyntaxDialog.tsx:209
+#: src/components/LearnSyntaxDialog.tsx:210
 msgid "Leading References"
 msgstr "Leading References"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-#: src/components/MightLoseWarning.tsx:54
+#: src/components/MightLoseWarning.tsx:51
 msgid "Learn More"
 msgstr "Learn More"
 
-#: src/components/LearnSyntaxDialog.tsx:52
-#: src/components/LearnSyntaxDialog.tsx:73
+#: src/components/LearnSyntaxDialog.tsx:53
+#: src/components/LearnSyntaxDialog.tsx:74
 msgid "Learn Syntax"
 msgstr "Learn Syntax"
 
-#: src/pages/Charts.tsx:362
+#: src/pages/Charts.tsx:359
 msgid "Learn about Flowchart Fun Pro"
 msgstr "Learn about Flowchart Fun Pro"
 
@@ -625,38 +650,34 @@ msgstr "Left to Right"
 msgid "Light"
 msgstr "Light"
 
-#: src/components/Settings.tsx:97
-#: src/components/Settings.tsx:99
+#: src/components/Settings.tsx:102
+#: src/components/Settings.tsx:104
 msgid "Light Mode"
 msgstr "Light Mode"
 
-#: src/components/ShareDialog.tsx:135
+#: src/components/ShareDialog.tsx:136
 msgid "Link"
 msgstr "Link"
 
 #: src/components/Header.tsx:202
-#: src/components/Header.tsx:434
-#: src/pages/New.tsx:272
+#: src/components/Header.tsx:422
+#: src/pages/New.tsx:273
 msgid "Log In"
 msgstr "Log In"
 
-#: src/pages/Account.tsx:133
+#: src/pages/Account.tsx:128
 msgid "Log Out"
 msgstr "Log Out"
 
-#: src/components/Settings.tsx:112
-msgid "Made by <0>Tone Row</0>"
-msgstr "Made by <0>Tone Row</0>"
+#: src/components/Settings.tsx:164
+msgid "Make a One-Time Donation"
+msgstr "Make a One-Time Donation"
 
-#: src/components/Settings.tsx:132
-msgid "Make a Donation"
-msgstr "Make a Donation"
-
-#: src/components/ShareDialog.tsx:426
+#: src/components/ShareDialog.tsx:416
 msgid "Make publicly accessible"
 msgstr "Make publicly accessible"
 
-#: src/pages/Pricing.tsx:15
+#: src/pages/Pricing.tsx:16
 msgid "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
 msgstr "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!"
 
@@ -668,7 +689,7 @@ msgstr "Map Data"
 msgid "Medium"
 msgstr "Medium"
 
-#: src/pages/New.tsx:400
+#: src/pages/New.tsx:401
 msgid "Method"
 msgstr "Method"
 
@@ -680,22 +701,22 @@ msgstr "Monospace"
 msgid "Museum"
 msgstr "Museum"
 
-#: src/pages/New.tsx:171
+#: src/pages/New.tsx:172
 msgid "Name"
 msgstr "Name"
 
 #: src/components/Header.tsx:79
-#: src/components/Header.tsx:352
-#: src/pages/Charts.tsx:101
+#: src/components/Header.tsx:340
+#: src/pages/Charts.tsx:102
 msgid "New"
 msgstr "New"
 
-#: src/pages/Account.tsx:207
+#: src/pages/Account.tsx:202
 msgid "New Email"
 msgstr "New Email"
 
-#: src/pages/Account.tsx:165
-#: src/pages/Account.tsx:436
+#: src/pages/Account.tsx:160
+#: src/pages/Account.tsx:428
 msgid "Next charge"
 msgstr "Next charge"
 
@@ -707,11 +728,11 @@ msgstr "No Edges"
 msgid "Node"
 msgstr "Node"
 
-#: src/components/LearnSyntaxDialog.tsx:317
+#: src/components/LearnSyntaxDialog.tsx:318
 msgid "Node Border Style"
 msgstr "Node Border Style"
 
-#: src/components/LearnSyntaxDialog.tsx:247
+#: src/components/LearnSyntaxDialog.tsx:248
 msgid "Node Colors"
 msgstr "Node Colors"
 
@@ -719,20 +740,20 @@ msgstr "Node Colors"
 msgid "Node ID"
 msgstr "Node ID"
 
-#: src/components/LearnSyntaxDialog.tsx:98
+#: src/components/LearnSyntaxDialog.tsx:99
 msgid "Node ID, Classes, Attributes"
 msgstr "Node ID, Classes, Attributes"
 
 #: src/components/ImportDataDialog.tsx:397
-#: src/components/LearnSyntaxDialog.tsx:87
+#: src/components/LearnSyntaxDialog.tsx:88
 msgid "Node Label"
 msgstr "Node Label"
 
-#: src/components/LearnSyntaxDialog.tsx:260
+#: src/components/LearnSyntaxDialog.tsx:261
 msgid "Node Shapes"
 msgstr "Node Shapes"
 
-#: src/components/LearnSyntaxDialog.tsx:320
+#: src/components/LearnSyntaxDialog.tsx:321
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 
@@ -740,49 +761,49 @@ msgstr "Nodes can be styled with dashed, dotted, or double. Borders can also be 
 msgid "Not Empty"
 msgstr "Not Empty"
 
-#: src/pages/Account.tsx:287
-#: src/pages/Pricing.tsx:56
+#: src/pages/Account.tsx:282
+#: src/pages/Pricing.tsx:57
 msgid "Office Hours"
 msgstr "Office Hours"
 
-#: src/pages/Pricing.tsx:55
+#: src/pages/Pricing.tsx:56
 msgid "One-on-One Support"
 msgstr "One-on-One Support"
 
-#: src/pages/Pricing.tsx:38
+#: src/pages/Pricing.tsx:39
 msgid "One-time Share Links"
 msgstr "One-time Share Links"
 
-#: src/pages/Charts.tsx:149
+#: src/pages/Charts.tsx:150
 msgid "Only available on this device.<0/>Clearing your browser cache will erase them."
 msgstr "Only available on this device.<0/>Clearing your browser cache will erase them."
 
-#: src/pages/Account.tsx:247
+#: src/pages/Account.tsx:242
 msgid "Open Customer Portal"
 msgstr "Open Customer Portal"
 
-#: src/components/ShareDialog.tsx:480
+#: src/components/ShareDialog.tsx:470
 msgid "Organization Chart"
 msgstr "Organization Chart"
 
-#: src/pages/New.tsx:416
+#: src/pages/New.tsx:417
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "Paste the information you wish to convert to a flowchart"
 
-#: src/pages/Pricing.tsx:52
+#: src/pages/Pricing.tsx:53
 msgid "Permalinks"
 msgstr "Permalinks"
 
-#: src/pages/Charts.tsx:355
+#: src/pages/Charts.tsx:352
 msgid "Permanent Charts are a Pro Feature"
 msgstr "Permanent Charts are a Pro Feature"
 
-#: src/pages/Charts.tsx:106
+#: src/pages/Charts.tsx:107
 msgid "Permanent Flowcharts"
 msgstr "Permanent Flowcharts"
 
-#: src/pages/Pricing.tsx:46
-#: src/pages/Pricing.tsx:67
+#: src/pages/Pricing.tsx:47
+#: src/pages/Pricing.tsx:68
 msgid "Persistent Flowcharts"
 msgstr "Persistent Flowcharts"
 
@@ -791,7 +812,7 @@ msgid "Playbook"
 msgstr "Playbook"
 
 #: src/components/Header.tsx:193
-#: src/components/Header.tsx:419
+#: src/components/Header.tsx:407
 msgid "Pricing"
 msgstr "Pricing"
 
@@ -799,12 +820,12 @@ msgstr "Pricing"
 msgid "Processing Data"
 msgstr "Processing Data"
 
-#: src/pages/New.tsx:258
+#: src/pages/New.tsx:259
 msgid "Prompt"
 msgstr "Prompt"
 
-#: src/components/ShareDialog.tsx:422
-#: src/components/ShareDialog.tsx:445
+#: src/components/ShareDialog.tsx:412
+#: src/components/ShareDialog.tsx:435
 msgid "Public"
 msgstr "Public"
 
@@ -812,40 +833,40 @@ msgstr "Public"
 msgid "Random"
 msgstr "Random"
 
-#: src/components/EditorWrapper.tsx:51
-#: src/components/ShareDialog.tsx:146
+#: src/components/EditorWrapper.tsx:44
+#: src/components/ShareDialog.tsx:147
 msgid "Read-only"
 msgstr "Read-only"
 
-#: src/components/LearnSyntaxDialog.tsx:195
+#: src/components/LearnSyntaxDialog.tsx:196
 msgid "Reference by Class"
 msgstr "Reference by Class"
 
-#: src/components/LearnSyntaxDialog.tsx:185
+#: src/components/LearnSyntaxDialog.tsx:186
 msgid "Reference by ID"
 msgstr "Reference by ID"
 
-#: src/components/LearnSyntaxDialog.tsx:175
+#: src/components/LearnSyntaxDialog.tsx:176
 msgid "Reference by Label"
 msgstr "Reference by Label"
 
-#: src/components/LearnSyntaxDialog.tsx:166
+#: src/components/LearnSyntaxDialog.tsx:167
 msgid "References"
 msgstr "References"
 
-#: src/components/LearnSyntaxDialog.tsx:169
+#: src/components/LearnSyntaxDialog.tsx:170
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "References are used to create edges between nodes that are created elsewhere in the document"
 
-#: src/components/LearnSyntaxDialog.tsx:178
+#: src/components/LearnSyntaxDialog.tsx:179
 msgid "Referencing a node by its exact label"
 msgstr "Referencing a node by its exact label"
 
-#: src/components/LearnSyntaxDialog.tsx:188
+#: src/components/LearnSyntaxDialog.tsx:189
 msgid "Referencing a node by its unique ID"
 msgstr "Referencing a node by its unique ID"
 
-#: src/components/LearnSyntaxDialog.tsx:198
+#: src/components/LearnSyntaxDialog.tsx:199
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "Referencing multiple nodes with the same assigned class"
 
@@ -861,16 +882,16 @@ msgstr "Reload to Update"
 msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 msgstr "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
 
-#: src/pages/Pricing.tsx:47
+#: src/pages/Pricing.tsx:48
 msgid "Remove Image Watermark"
 msgstr "Remove Image Watermark"
 
-#: src/components/RenameButton.tsx:92
 #: src/components/RenameButton.tsx:93
-#: src/components/RenameButton.tsx:99
-#: src/components/RenameButton.tsx:109
-#: src/components/RenameButton.tsx:124
-#: src/components/RenameButton.tsx:166
+#: src/components/RenameButton.tsx:94
+#: src/components/RenameButton.tsx:100
+#: src/components/RenameButton.tsx:110
+#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:167
 msgid "Rename"
 msgstr "Rename"
 
@@ -878,10 +899,10 @@ msgstr "Rename"
 msgid "Reset"
 msgstr "Reset"
 
-#: src/pages/Account.tsx:193
-#: src/pages/Account.tsx:430
-#: src/pages/Account.tsx:434
-#: src/pages/Account.tsx:443
+#: src/pages/Account.tsx:188
+#: src/pages/Account.tsx:422
+#: src/pages/Account.tsx:426
+#: src/pages/Account.tsx:435
 msgid "Resume Subscription"
 msgstr "Resume Subscription"
 
@@ -889,7 +910,7 @@ msgstr "Resume Subscription"
 msgid "Retro"
 msgstr "Retro"
 
-#: src/pages/Account.tsx:391
+#: src/pages/Account.tsx:383
 msgid "Return"
 msgstr "Return"
 
@@ -899,7 +920,7 @@ msgid "Right to Left"
 msgstr "Right to Left"
 
 #: src/components/Header.tsx:170
-#: src/components/Header.tsx:398
+#: src/components/Header.tsx:386
 #: src/pages/Roadmap.tsx:16
 msgid "Roadmap"
 msgstr "Roadmap"
@@ -908,8 +929,13 @@ msgstr "Roadmap"
 msgid "Save"
 msgstr "Save"
 
+#: src/components/Feedback.tsx:47
+msgid "Send us Feedback"
+msgstr "Send us Feedback"
+
 #: src/components/Header.tsx:177
-#: src/components/Header.tsx:403
+#: src/components/Header.tsx:391
+#: src/components/Settings.tsx:50
 msgid "Settings"
 msgstr "Settings"
 
@@ -917,11 +943,11 @@ msgstr "Settings"
 msgid "Shape"
 msgstr "Shape"
 
-#: src/components/LearnSyntaxDialog.tsx:263
+#: src/components/LearnSyntaxDialog.tsx:264
 msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 msgstr "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
 
-#: src/components/SignUpForm.tsx:178
+#: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:71
 msgid "Sign Up"
 msgstr "Sign Up"
@@ -934,7 +960,7 @@ msgstr "Size"
 msgid "Small"
 msgstr "Small"
 
-#: src/components/LearnSyntaxDialog.tsx:242
+#: src/components/LearnSyntaxDialog.tsx:243
 msgid "Some classes are available to help style your flowchart"
 msgstr "Some classes are available to help style your flowchart"
 
@@ -942,7 +968,7 @@ msgstr "Some classes are available to help style your flowchart"
 msgid "Sorry! This page is only available in English."
 msgstr "Sorry! This page is only available in English."
 
-#: src/components/GraphContextMenu.tsx:619
+#: src/components/GraphContextMenu.tsx:621
 msgid "Source Arrow"
 msgstr "Source Arrow"
 
@@ -955,7 +981,7 @@ msgstr "Source Column"
 msgid "Source Delimiter"
 msgstr "Source Delimiter"
 
-#: src/components/LearnSyntaxDialog.tsx:301
+#: src/components/LearnSyntaxDialog.tsx:302
 msgid "Source/Target Arrow Shape"
 msgstr "Source/Target Arrow Shape"
 
@@ -963,16 +989,16 @@ msgstr "Source/Target Arrow Shape"
 msgid "Spacing"
 msgstr "Spacing"
 
-#: src/components/LearnSyntaxDialog.tsx:332
+#: src/components/LearnSyntaxDialog.tsx:333
 msgid "Special Attributes"
 msgstr "Special Attributes"
 
-#: src/pages/New.tsx:200
+#: src/pages/New.tsx:201
 msgid "Standard"
 msgstr "Standard"
 
-#: src/pages/Account.tsx:177
-#: src/pages/New.tsx:243
+#: src/pages/Account.tsx:172
+#: src/pages/New.tsx:244
 msgid "Start"
 msgstr "Start"
 
@@ -980,46 +1006,45 @@ msgstr "Start"
 msgid "Start Over"
 msgstr "Start Over"
 
-#: src/pages/Account.tsx:156
+#: src/pages/Account.tsx:151
 msgid "Status"
 msgstr "Status"
 
-#: src/components/LearnSyntaxDialog.tsx:120
+#: src/components/LearnSyntaxDialog.tsx:121
 msgid "Store any data associated to a node"
 msgstr "Store any data associated to a node"
 
-#: src/pages/New.tsx:209
+#: src/pages/New.tsx:210
 msgid "Stored in the cloud"
 msgstr "Stored in the cloud"
 
-#: src/pages/New.tsx:229
+#: src/pages/New.tsx:230
 msgid "Stored on this computer"
 msgstr "Stored on this computer"
 
-#: src/pages/Pricing.tsx:103
+#: src/pages/Pricing.tsx:104
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 msgstr "Streamline your workflow and simplify your process visualization with Flowchart Fun"
 
-#: src/pages/Edit.tsx:75
-#: src/pages/EditHosted.tsx:85
+#: src/components/Tabs/EditorTabList.tsx:39
 msgid "Style"
 msgstr "Style"
 
-#: src/components/LearnSyntaxDialog.tsx:239
+#: src/components/LearnSyntaxDialog.tsx:240
 msgid "Style Classes"
 msgstr "Style Classes"
 
-#: src/components/Feedback.tsx:106
+#: src/components/Feedback.tsx:83
 #: src/components/ImportDataDialog.tsx:583
 #: src/pages/LogIn.tsx:61
 msgid "Submit"
 msgstr "Submit"
 
-#: src/pages/Account.tsx:151
+#: src/pages/Account.tsx:146
 msgid "Subscription"
 msgstr "Subscription"
 
-#: src/pages/Account.tsx:188
+#: src/pages/Account.tsx:183
 msgid "Subscription will end"
 msgstr "Subscription will end"
 
@@ -1027,7 +1052,7 @@ msgstr "Subscription will end"
 msgid "Syntax"
 msgstr "Syntax"
 
-#: src/components/GraphContextMenu.tsx:663
+#: src/components/GraphContextMenu.tsx:660
 msgid "Target Arrow"
 msgstr "Target Arrow"
 
@@ -1040,32 +1065,32 @@ msgstr "Target Column"
 msgid "Target Delimiter"
 msgstr "Target Delimiter"
 
-#: src/pages/New.tsx:225
+#: src/pages/New.tsx:226
 msgid "Temporary"
 msgstr "Temporary"
 
-#: src/pages/Charts.tsx:147
-#: src/pages/Pricing.tsx:35
+#: src/pages/Charts.tsx:148
+#: src/pages/Pricing.tsx:36
 msgid "Temporary Flowcharts"
 msgstr "Temporary Flowcharts"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:276
 msgid "Text Sizes"
 msgstr "Text Sizes"
 
-#: src/components/LearnSyntaxDialog.tsx:143
+#: src/components/LearnSyntaxDialog.tsx:144
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "Text followed by colon+space creates an edge with the text as the label"
 
-#: src/components/LearnSyntaxDialog.tsx:90
+#: src/components/LearnSyntaxDialog.tsx:91
 msgid "Text on a line creates a node with the text as the label"
 msgstr "Text on a line creates a node with the text as the label"
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:279
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "Text sizes include small, regular, large, and extra-large."
 
-#: src/components/Feedback.tsx:125
+#: src/components/Feedback.tsx:108
 msgid "Thank you for your feedback!"
 msgstr "Thank you for your feedback!"
 
@@ -1097,7 +1122,7 @@ msgstr "Theme"
 msgid "There are no edges in this data"
 msgstr "There are no edges in this data"
 
-#: src/pages/Charts.tsx:297
+#: src/pages/Charts.tsx:294
 msgid "This action cannot be undone."
 msgstr "This action cannot be undone."
 
@@ -1109,7 +1134,7 @@ msgstr "This app works by typing"
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 
-#: src/components/ShareDialog.tsx:552
+#: src/components/ShareDialog.tsx:542
 msgid "Tip"
 msgstr "Tip"
 
@@ -1122,7 +1147,7 @@ msgstr "Top to Bottom"
 msgid "Try again"
 msgstr "Try again"
 
-#: src/pages/New.tsx:186
+#: src/pages/New.tsx:187
 msgid "Type"
 msgstr "Type"
 
@@ -1131,67 +1156,59 @@ msgstr "Type"
 msgid "Unfreeze"
 msgstr "Unfreeze"
 
-#: src/components/LearnSyntaxDialog.tsx:102
+#: src/components/LearnSyntaxDialog.tsx:103
 msgid "Unique text value to identify a node"
 msgstr "Unique text value to identify a node"
 
-#: src/pages/Account.tsx:200
+#: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "Update Email"
 
-#: src/components/LearnSyntaxDialog.tsx:111
+#: src/components/LearnSyntaxDialog.tsx:112
 msgid "Use classes to group nodes"
 msgstr "Use classes to group nodes"
 
-#: src/components/LearnSyntaxDialog.tsx:371
+#: src/components/LearnSyntaxDialog.tsx:372
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 
-#: src/components/LearnSyntaxDialog.tsx:357
+#: src/components/LearnSyntaxDialog.tsx:358
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 
-#: src/components/LearnSyntaxDialog.tsx:344
+#: src/components/LearnSyntaxDialog.tsx:345
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 
-#: src/pages/Account.tsx:234
+#: src/pages/Account.tsx:229
 msgid "Use the customer portal to change your billing information."
 msgstr "Use the customer portal to change your billing information."
 
-#: src/components/ShareDialog.tsx:488
+#: src/components/ShareDialog.tsx:478
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "Use this file for org charts, hierarchies, and other organizational structures."
 
-#: src/components/ShareDialog.tsx:476
+#: src/components/ShareDialog.tsx:466
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Use this file for sequences, processes, and workflows."
 
-#: src/pages/Account.tsx:128
+#: src/pages/Account.tsx:125
 msgid "User"
 msgstr "User"
 
-#: src/components/Settings.tsx:125
+#: src/components/Settings.tsx:135
 msgid "View on Github"
 msgstr "View on Github"
 
-#: src/components/Feedback.tsx:77
-msgid "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
-msgstr "We appreciate all of your feedback, suggestions, bugs, and feature requests!"
-
-#: src/components/SignUpForm.tsx:185
+#: src/components/SignUpForm.tsx:182
 msgid "We use cookies to keep you logged in."
 msgstr "We use cookies to keep you logged in."
 
-#: src/components/Feedback.tsx:84
-msgid "What would you like to share with us?"
-msgstr "What would you like to share with us?"
-
-#: src/components/LearnSyntaxDialog.tsx:341
+#: src/components/LearnSyntaxDialog.tsx:342
 msgid "Width and Height"
 msgstr "Width and Height"
 
-#: src/pages/Pricing.tsx:70
+#: src/pages/Pricing.tsx:71
 msgid "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 msgstr "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere."
 
@@ -1199,7 +1216,7 @@ msgstr "With the ability to create unlimited hosted charts, you can access and w
 msgid "Would you like to continue?"
 msgstr "Would you like to continue?"
 
-#: src/pages/New.tsx:280
+#: src/pages/New.tsx:281
 msgid "You already have a flowchart with this name."
 msgstr "You already have a flowchart with this name."
 
@@ -1211,15 +1228,15 @@ msgstr "You are about to add {numNodes} nodes and {numEdges} edges to your graph
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "You can also wrap text in \"\\( \\)\" to create an edge"
 
-#: src/pages/New.tsx:270
+#: src/pages/New.tsx:271
 msgid "You must log in to create a standard flowchart."
 msgstr "You must log in to create a standard flowchart."
 
-#: src/pages/Charts.tsx:98
+#: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "Your Charts"
 
-#: src/pages/Account.tsx:141
+#: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 msgstr "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
 

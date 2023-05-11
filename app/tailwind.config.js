@@ -95,6 +95,23 @@ module.exports = {
         overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         contentShow: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
       },
+      fontSize: {
+        xs: ["14px", { lineHeight: "16px" }],
+        sm: ["16px", { lineHeight: "18px" }],
+        base: ["19px", { lineHeight: "22px" }],
+        lg: ["23px", { lineHeight: "26px" }],
+        xl: ["27px", { lineHeight: "31px" }],
+        "2xl": ["33px", { lineHeight: "38px" }],
+        "3xl": ["35px", { lineHeight: "40px" }],
+        "4xl": ["40px", { lineHeight: "46px" }],
+        "5xl": ["50px", { lineHeight: "58px" }], // <- not from designs, can change
+      },
+      screens: {
+        md: "800px",
+      },
+      fontFamily: {
+        sans: ["Helvetica", "sans-serif"],
+      },
     },
   },
   plugins: [],

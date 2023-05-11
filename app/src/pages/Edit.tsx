@@ -1,4 +1,3 @@
-import { Trans } from "@lingui/macro";
 import * as Tabs from "@radix-ui/react-tabs";
 import throttle from "lodash.throttle";
 import { editor } from "monaco-editor";
@@ -13,6 +12,7 @@ import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
+import { EditorTabList } from "../components/Tabs/EditorTabList";
 import { EditStyleTab } from "../components/Tabs/EditStyleTab";
 import { TextEditor } from "../components/TextEditor";
 import { getDefaultChart } from "../lib/getDefaultChart";
@@ -21,7 +21,6 @@ import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
-import { Type } from "../slang";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit({ workspace }: { workspace: string }) {
@@ -59,33 +58,7 @@ const Edit = memo(function Edit({ workspace }: { workspace: string }) {
       <Main>
         <EditorWrapper>
           <Tabs.Root defaultValue="Document" className={styles.Tabs}>
-            <Tabs.List className={styles.TabsList}>
-              <Tabs.Trigger value="Document" data-testid="Editor Tab: Document">
-                <Type>
-                  <Trans>Document</Trans>
-                </Type>
-              </Tabs.Trigger>
-              <Tabs.Trigger value="Layout" data-testid="Editor Tab: Layout">
-                <Type>
-                  <Trans>Layout</Trans>
-                </Type>
-              </Tabs.Trigger>
-              <Tabs.Trigger value="Style" data-testid="Editor Tab: Style">
-                <Type>
-                  <Trans>Style</Trans>
-                </Type>
-              </Tabs.Trigger>
-              {isValidSponsor && (
-                <Tabs.Trigger
-                  value="Advanced"
-                  data-testid="Editor Tab: Advanced"
-                >
-                  <Type>
-                    <Trans>Advanced</Trans>
-                  </Type>
-                </Tabs.Trigger>
-              )}
-            </Tabs.List>
+            <EditorTabList />
             <Tabs.Content value="Document">
               <EditorOptions>
                 <TextEditor

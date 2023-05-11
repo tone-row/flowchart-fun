@@ -3,8 +3,11 @@
     "$3 / Month": "$3/월",
     "$30 / Year": "$30/년",
     "(before a colon creates a label)": "(레이블을 생성합니다)",
+    "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
+      "<0>Flowchart Fun</0>은 <1>Tone Row</1>가 만든 오픈 소스 프로젝트입니다.",
     "A new version of the app is available. Please reload to update.":
       "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면 다시로드하십시오.",
+    About: "소개",
     "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
       "어디서든 이 차트에 액세스하세요.<0/>동기화되어 유지되는 플로우차트를 공유하고 삽입하세요.",
     "Accessible from any device": "모든 장치에서 액세스 가능",
@@ -22,6 +25,8 @@
     "Back To Editor": "편집기로 돌아가기",
     Background: "배경",
     "Basic Flowchart": "기본 플로우 차트",
+    "Become a Github Sponsor": "깃허브 스폰서가 되기",
+    "Become a Pro User": "프로 사용자가 되기",
     "Become a Sponsor": "스폰서 되기",
     Blank: "빈칸",
     Blog: "블로그",
@@ -56,6 +61,7 @@
       "색상에는 빨강, 주황, 노랑, 파랑, 보라, 검정, 흰색, 회색이 포함됩니다.",
     Column: "열",
     "Comic Book": "만화책",
+    Comment: "댓글 달기",
     Concentric: "동심",
     "Confirm New Email": "새 이메일 확인",
     Containers: "컨테이너",
@@ -129,7 +135,9 @@
     Extract: "발췌",
     Feedback: "피드백",
     "Fit Graph": "그래프 적합",
-    "Follow Us": "팔로우하세요",
+    "Follow Us on Twitter": "트위터에서 우리를 팔로우하기",
+    "Found a bug? Have a feature request? We would love to hear from you!":
+      "버그를 발견했습니까? 기능 요청이 있습니까? 우리는 당신과의 소통을 사랑합니다!",
     Fullscreen: "전체 화면",
     Futuristic: "미래 지향적",
     "Get More Layouts": "더 많은 레이아웃을 보고 싶어요",
@@ -144,6 +152,8 @@
     "How are edges declared in this data?":
       "이 데이터에서 간선은 어떻게 선언됩니까?",
     "ID's": "식별자",
+    "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
+      "<0>Flowchart Fun</0>을 사용하는 것을 즐기고 있다면, 프로젝트를 지원해 주시기 바랍니다.",
     "Image Export": "이미지 내보내기",
     Images: "이미지",
     "Import Data": "데이터 가져오기",
@@ -176,8 +186,7 @@
     Link: "링크",
     "Log In": "로그인",
     "Log Out": "로그아웃",
-    "Made by <0>Tone Row</0>": "<0>Tone Row</0> 제작",
-    "Make a Donation": "기부하기",
+    "Make a One-Time Donation": "한 번 선물하기",
     "Make publicly accessible": "공개적으로 액세스 가능하게 만들기",
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Flowchart Fun Pro로 작업 흐름을 더 쉽게 만드세요. 지금 구독을 월 $3 또는 연간 $30에 불과합니다!",
@@ -244,6 +253,7 @@
     "Right to Left": "오른쪽에서 왼쪽으로",
     Roadmap: "로드맵",
     Save: "구하다",
+    "Send us Feedback": "우리에게 피드백 보내기",
     Settings: "설정",
     Shape: "모양 ",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
@@ -328,11 +338,8 @@
       "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오.",
     User: "사용자",
     "View on Github": "Github에서 보기",
-    "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
-      "모든 피드백, 제안, 버그 및 기능 요청에 감사드립니다!",
     "We use cookies to keep you logged in.":
       "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다.",
-    "What would you like to share with us?": "무엇을 공유하시겠습니까?",
     "Width and Height": "너비와 높이",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다.",

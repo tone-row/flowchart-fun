@@ -39,9 +39,9 @@ function Post({ post }: { post: PostType }) {
       `}
       to={`/blog/post/${post.slug}`}
     >
-      <header className="grid gap-1">
-        <h2 className="text-3xl font-bold">{post.title}</h2>
-        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+      <header className="grid gap-2">
+        <h2 className="text-2xl font-bold">{post.title}</h2>
+        <span className="text-xs text-neutral-500 dark:text-neutral-400">
           {post.publishDate}
         </span>
       </header>
