@@ -3,8 +3,11 @@
     "$3 / Month": "$3 / महीना",
     "$30 / Year": "$30 / वर्ष",
     "(before a colon creates a label)": "(कॉलन से पहले एक लेबल बनाता है)",
+    "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
+      "<0>Flowchart Fun</0> <1>Tone Row</1> द्वारा बनाई गई एक खुला स्रोत परियोजना है ",
     "A new version of the app is available. Please reload to update.":
       "एप्प का एक नया वर्जन उपलब्ध है। अपडेट करने के लिए रीलोड करें।",
+    About: "के बारे में",
     "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
       "इन चार्ट्स को कहीं से भी एक्सेस करें।<0/>सिंक्रोनाइज़्ड रहने वाले फ्लोचार्ट को साझा करें और एम्बेड करें।",
     "Accessible from any device": "किसी भी उपकरण से पहुँचा जा सकता है",
@@ -22,6 +25,8 @@
     "Back To Editor": "संपादक पर वापस जाएं",
     Background: "पृष्ठभूमि",
     "Basic Flowchart": "बेसिक फ्लोचार्ट",
+    "Become a Github Sponsor": "गिटहब स्पॉन्सर बनें",
+    "Become a Pro User": "प्रो उपयोगकर्ता बनें",
     "Become a Sponsor": "एक प्रायोजक बनें",
     Blank: "खाली",
     Blog: "ब्लॉग",
@@ -56,6 +61,7 @@
       "रंग में लाल, नारंगी, पीला, नीला, बैंगनी, काला, सफेद, और ग्रे शामिल हैं।",
     Column: "स्तंभ",
     "Comic Book": "कॉमिक बुक",
+    Comment: "टिप्पणी",
     Concentric: "गाढ़ा",
     "Confirm New Email": "नई ईमेल की पुष्टि करें",
     Containers: "कंटेनर",
@@ -133,7 +139,9 @@
     Extract: "निकालना",
     Feedback: "फ़ीडबैक",
     "Fit Graph": "फिट ग्राफ",
-    "Follow Us": "हमें फॉलो करें",
+    "Follow Us on Twitter": "हमारे साथ ट्विटर पर फॉलो करें",
+    "Found a bug? Have a feature request? We would love to hear from you!":
+      "एक बग पाया? एक सुविधा अनुरोध है? हम आपसे सुनने के लिए प्रसन्न होंगे!",
     Fullscreen: "फ़ुलस्क्रीन",
     Futuristic: "भविष्य का",
     "Get More Layouts": "ज़्यादा लेआउट पाएं",
@@ -148,6 +156,8 @@
     "How are edges declared in this data?":
       "इस डेटा में कैसे किन्हीं कड़ियाँ घोषित होती हैं?",
     "ID's": "आईडीज़",
+    "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
+      "यदि आप <0>Flowchart Fun</0> का उपयोग करना आनंदित हैं, तो कृपया परियोजना को समर्थित करने की सोच करें",
     "Image Export": "छवि निर्यात",
     Images: "छवियाँ",
     "Import Data": "डेटा आयात करें",
@@ -180,8 +190,7 @@
     Link: "लिंक",
     "Log In": "लॉग इन करें",
     "Log Out": "लॉग आउट",
-    "Made by <0>Tone Row</0>": "<0>Tone Row</0> द्वारा बना",
-    "Make a Donation": "दान करें",
+    "Make a One-Time Donation": "एक बार दान करें",
     "Make publicly accessible": "सार्वजनिक रूप से एक्सेस दें",
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "फ़्लोचार्ट फ़न प्रो के साथ अपने कार्यप्रवाह को आसान बनाएं– केवल $3/माह या $30/वर्ष के लिए अभी सदस्यता लें!",
@@ -250,6 +259,7 @@
     "Right to Left": "दाएं से बाएं",
     Roadmap: "रोडमैप",
     Save: "सहेजें",
+    "Send us Feedback": "हमें प्रतिक्रिया भेजें",
     Settings: "सेटिंग",
     Shape: "आकृति",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
@@ -336,12 +346,8 @@
       "अनुक्रमों, प्रक्रियाओं और कार्यप्रवाहों के लिए इस फ़ाइल का उपयोग करें।",
     User: "यूज़र",
     "View on Github": "Github पर देखें",
-    "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
-      "हम आपके सभी फ़ीडबैक, सुझावों, बग्स और विशेष अनुरोधों की सराहना करते हैं!",
     "We use cookies to keep you logged in.":
       "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं.",
-    "What would you like to share with us?":
-      "आप हमारे साथ क्या शेयर करना चाहेंगे?",
     "Width and Height": "चौड़ाई और ऊँचाई",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।",

@@ -1,13 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { ArrowSquareOut, User } from "phosphor-react";
-import React, {
-  CSSProperties,
-  ReactNode,
-  useCallback,
-  useContext,
-  useState,
-} from "react";
+import React, { ReactNode, useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
@@ -23,7 +17,6 @@ import {
   Notice,
   Page,
   Section,
-  SectionTitle,
 } from "../components/Shared";
 import Spinner from "../components/Spinner";
 import { formatCents, formatDate } from "../lib/helpers";
@@ -33,7 +26,8 @@ import {
   useOrderHistory,
 } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
-import { Box, Type, TypeProps } from "../slang";
+import { Box } from "../slang";
+import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
 
 export default function Account() {
@@ -123,13 +117,14 @@ export default function Account() {
       className={styles.Wrapper}
       self="stretch center"
     >
+      <PageTitle>
+        <Trans>Account</Trans>
+      </PageTitle>
       <Section>
         <SectionTitle>
           <Trans>User</Trans>
         </SectionTitle>
-        <Type size={1} color="color-lineNumbers">
-          {session?.user?.email}
-        </Type>
+        <Description>{session?.user?.email}</Description>
         <Button self="start" onClick={signOut} text={t`Log Out`} />
       </Section>
       {subscription?.status === "canceled" && (
@@ -137,12 +132,12 @@ export default function Account() {
           <SectionTitle>
             <Trans>Become a Sponsor</Trans>
           </SectionTitle>
-          <Type>
+          <p className="text-sm leading-normal">
             <Trans>
               Your subscription is no longer active. If you want to create and
               edit hosted charts become a sponsor.
             </Trans>
-          </Type>
+          </p>
           <BecomeASponsor />
         </Section>
       )}
@@ -150,38 +145,38 @@ export default function Account() {
         <SectionTitle>
           <Trans>Subscription</Trans>
         </SectionTitle>
-        <Box gap={2}>
-          <Box>
-            <InfoHeading>
+        <div className="grid gap-5">
+          <div className="grid gap-1">
+            <Label size="xs">
               <Trans>Status</Trans>
-            </InfoHeading>
-            <InfoCell>{subscription?.status}</InfoCell>
-          </Box>
+            </Label>
+            <InfoCell className="uppercase">{subscription?.status}</InfoCell>
+          </div>
           {subscription?.current_period_end &&
             !subscription?.cancel_at_period_end &&
             subscription?.status === "active" && (
-              <Box>
-                <InfoHeading>
+              <div className="grid gap-1">
+                <Label size="xs">
                   <Trans>Next charge</Trans>
-                </InfoHeading>
+                </Label>
                 <InfoCell>
                   {formatDate(subscription?.current_period_end.toString())}
                 </InfoCell>
-              </Box>
+              </div>
             )}
           {!subscription?.cancel_at_period_end &&
             subscription?.created &&
             subscription?.status === "active" && (
-              <Box>
-                <InfoHeading>
+              <div className="grid gap-1">
+                <Label size="xs">
                   <Trans>Start</Trans>
-                </InfoHeading>
+                </Label>
                 <InfoCell>
                   {formatDate(subscription.created.toString())}
                 </InfoCell>
-              </Box>
+              </div>
             )}
-        </Box>
+        </div>
         {subscription?.cancel_at_period_end && (
           <Box flow="column" content="start" gap={4}>
             <Notice>
@@ -230,11 +225,11 @@ export default function Account() {
           <SectionTitle>
             <Trans>Customer Portal</Trans>
           </SectionTitle>
-          <Type>
+          <p className="text-sm leading-normal">
             <Trans>
               Use the customer portal to change your billing information.
             </Trans>
-          </Type>
+          </p>
           <Button
             as={"a"}
             href={customerPortalLink}
@@ -261,10 +256,10 @@ export default function Account() {
           </colgroup>
           <thead>
             <tr>
-              <Td typeProps={{ size: -1 }}>
+              <Td>
                 <Trans>Date</Trans>
               </Td>
-              <Td typeProps={{ size: -1 }}>
+              <Td>
                 <Trans>Amount</Trans>
               </Td>
             </tr>
@@ -273,7 +268,7 @@ export default function Account() {
             {invoices &&
               invoices.map((invoice) => (
                 <tr key={invoice.id}>
-                  <Td style={{ whiteSpace: "nowrap" }}>
+                  <Td className="whitespace-nowrap">
                     {formatDate(invoice.created.toString())}
                   </Td>
                   <Td>{formatCents(invoice.amount_paid)}</Td>
@@ -292,7 +287,7 @@ export default function Account() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Type as="span">https://calendly.com/tone-row/flowchart-fun</Type>
+          <span>https://calendly.com/tone-row/flowchart-fun</span>
           <ArrowSquareOut size={16} weight="bold" className="mt-[-3px]" />
         </a>
       </Section>
@@ -303,12 +298,12 @@ export default function Account() {
             <SectionTitle>
               <Trans>Cancel</Trans>
             </SectionTitle>
-            <Type>
+            <p className="text-sm leading-normal">
               <Trans>
                 Cancel your subscription. Your hosted charts will become
                 read-only.
               </Trans>
-            </Type>
+            </p>
             <Button
               self="normal start"
               onClick={() => setCancelModal(true)}
@@ -330,24 +325,21 @@ export default function Account() {
 
 const Td = ({
   children,
-  typeProps = {},
-  style = {},
+  className = "",
+  typeClasses = "",
 }: {
   children: ReactNode;
-  typeProps?: TypeProps;
-  style?: CSSProperties;
+  className?: string;
+  typeClasses?: string;
 }) => (
   <Box
     as="td"
     px={3}
     py={2}
     display="table-cell"
-    className={styles.TableCell}
-    style={style}
+    className={`${styles.TableCell} ${className}`}
   >
-    <Type as="span" size={-1} {...typeProps}>
-      {children}
-    </Type>
+    <span className={`text-xs ${typeClasses}`}>{children}</span>
   </Box>
 );
 
@@ -384,9 +376,9 @@ function ConfirmCancel({
       }}
       innerBoxProps={{ gap: 6 }}
     >
-      <Type>
+      <p className="text-sm leading-normal">
         <Trans>Do you want to cancel your subscription?</Trans>
-      </Type>
+      </p>
       <Box content="normal space-between" flow="column" gap={3}>
         <Button onClick={onDismiss} disabled={loading} text={t`Return`} />
         <Button
@@ -430,11 +422,11 @@ function ConfirmResume({
       dialogProps={{ isOpen, onDismiss, "aria-label": t`Resume Subscription` }}
       innerBoxProps={{ gap: 4 }}
     >
-      <Type as="p">
+      <p className="text-sm leading-normal">
         <Trans>Resume Subscription</Trans>
         <br />
         <Trans>Next charge</Trans> {formatDate(period)}.
-      </Type>
+      </p>
       <Box content="normal space-between" flow="column" gap={3}>
         <Button onClick={onDismiss} disabled={loading} text={t`Cancel`} />
         <Button
@@ -507,14 +499,12 @@ function BecomeASponsor() {
   );
 }
 
-function InfoCell({ children }: { children: ReactNode }) {
-  return <Type className={styles.InfoCell}>{children}</Type>;
-}
-
-function InfoHeading({ children }: { children: ReactNode }) {
-  return (
-    <Type className={styles.InfoHeading} size={-1} color="color-lineNumbers">
-      {children}
-    </Type>
-  );
+function InfoCell({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <p className={`text-sm mt-1 ${className}`}>{children}</p>;
 }

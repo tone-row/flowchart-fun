@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { QueryClientProvider } from "react-query";
 
 import { queryClient } from "../lib/queries";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import Provider from "./AppContext";
 import { I18n } from "./I18n";
 import Router from "./Router";
@@ -49,12 +49,12 @@ export function ErrorFallback({ error }: { error: Error }) {
   return (
     <div className="errorWrapper">
       <Box role="alert" className="error-wrapper">
-        <Type>
+        <span className="text-4xl">
           Sorry! Something went wrong.{" "}
           <span role="img" aria-label="Sad face emoji">
             😔
           </span>
-        </Type>
+        </span>
         <div className="errorMessage">
           <pre>{error.message}</pre>
         </div>

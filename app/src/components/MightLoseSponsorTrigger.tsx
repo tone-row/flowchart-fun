@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 import { useIsLocalChart, useIsValidSponsor } from "../lib/hooks";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./MightLoseSponsorTrigger.module.css";
 import styles2 from "./MightLoseWarning.module.css";
@@ -45,24 +45,21 @@ export function MightLoseSponsorTrigger() {
             rad={2}
             className={styles2.MightLoseWarningInner}
           >
-            <Type>
+            <p className="text-sm opacity-80 leading-normal">
               {t`Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.`}
-            </Type>
-            <Type
-              as="button"
-              weight="700"
-              color="color-highlightColor"
+            </p>
+            <button
+              className="font-bold text-sm text-blue-500 hover:underline mt-6 block"
               onClick={() => {
                 useRenameDialogStore.setState({
                   isOpen: true,
                   convertToHosted: true,
                 });
               }}
-              style={{ marginTop: 8 }}
               data-testid="convert-to-hosted"
             >
               <Trans>Convert to hosted chart?</Trans>
-            </Type>
+            </button>
           </Box>
         </Popover.Content>
       </Popover.Portal>

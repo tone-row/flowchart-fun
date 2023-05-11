@@ -1,9 +1,8 @@
 import { t } from "@lingui/macro";
 import { useContext } from "react";
 
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import { AppContext } from "./AppContext";
-import { smallBtnTypeSize } from "./Shared";
 
 export default function MobileTabToggle() {
   const { toggleMobileEditorTab, mobileEditorTab } = useContext(AppContext);
@@ -17,9 +16,9 @@ export default function MobileTabToggle() {
         p={3}
         onClick={toggleMobileEditorTab}
       >
-        <Type size={smallBtnTypeSize} as="span">
+        <span className="text-xs">
           {mobileEditorTab === "graph" ? t`Editor` : t`Graph`}
-        </Type>
+        </span>
       </Box>
     </Box>
   );

@@ -2,70 +2,12 @@
   --rad: 3px;
 }
 
-.shared-header {
-  display: grid;
-  justify-content: space-between;
-  align-items: center;
-  grid-auto-flow: column;
-  padding: 4px 10px;
-  /* background-color: var(--color-input); */
-}
-
-.shared-header nav {
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: calc(var(--spacer-px) * 2);
-  align-items: center;
-}
-
 .shared-header__logo {
   font-size: 0;
 }
 
-.shared-header__logo:focus,
-.shared-header__logo:focus-visible {
-  box-shadow: none;
-}
-
 .shared-header__logo svg path {
   fill: var(--color-foreground);
-}
-
-.shared-header-btn {
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 0.5rem;
-  align-items: center;
-  padding: 7px 8px 6px 8px;
-  border-radius: var(--rad);
-  border: 2px solid transparent;
-  border-color: transparent;
-  justify-content: start;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-body:not([class*="disableAnimation"]) .shared-header-btn {
-  transition: color 100ms linear;
-}
-
-/** Undoing */
-.shared-header-btn:focus-visible,
-.shared-header-btn:focus {
-  box-shadow: none;
-  border: solid 2px transparent;
-}
-
-.shared-header-btn:hover,
-.shared-header-btn:focus-visible,
-.shared-header-btn:active,
-.shared-header-btn[aria-expanded="true"] {
-  background-color: var(--color-nodeHover);
-}
-
-.shared-header-btn[aria-current="page"] {
-  background-color: transparent;
-  color: hsla(var(--color-brandHsl), 1);
 }
 
 .shared-header-btn__icon {
@@ -80,43 +22,7 @@ body:not([class*="disableAnimation"]) .shared-header-btn {
   display: grid;
 }
 
-.shared-header__dropdown .shared-header-btn {
-  border-width: 0;
-  border-radius: 0;
-}
-
-.shared-header__dropdown .shared-header-btn:first-child {
-  border-top-left-radius: calc(var(--rad) - 2px);
-  border-top-right-radius: calc(var(--rad) - 2px);
-}
-
-.shared-header__dropdown .shared-header-btn:last-child {
-  border-bottom-left-radius: calc(var(--rad) - 2px);
-  border-bottom-right-radius: calc(var(--rad) - 2px);
-}
-
-.shared-header__dropdown .shared-header-btn:hover,
-.shared-header__dropdown .shared-header-btn:focus-visible,
-.shared-header__dropdown .shared-header-btn:active {
-  background-color: var(--color-uiAccent);
-  outline: none;
-}
-
-@media (max-width: 799px) {
-  .shared-header {
-    display: none;
-  }
-}
-
-.desktop-only {
-  display: none;
-}
-
 @media (min-width: 800px) {
-  .desktop-only {
-    display: block;
-  }
-
   .mobile-only {
     display: none;
   }

@@ -3,8 +3,11 @@
     "$3 / Month": "3 美元/月",
     "$30 / Year": "30 美元 / 年",
     "(before a colon creates a label)": "(在冒号前创建一个标签)",
+    "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
+      "<0>Flowchart Fun</0>是由<1>Tone Row</1>制作的开源项目",
     "A new version of the app is available. Please reload to update.":
       "一个新版本的应用程序可用。请重新加载以更新。",
+    About: "关于",
     "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
       "从任何地方访问这些图表。<0/>共享并嵌入保持同步的流程图。",
     "Accessible from any device": "可从任何设备访问",
@@ -22,6 +25,8 @@
     "Back To Editor": "返回编辑器",
     Background: "背景",
     "Basic Flowchart": "基本流程图",
+    "Become a Github Sponsor": "成为Github赞助商",
+    "Become a Pro User": "成为专业用户",
     "Become a Sponsor": "赞助我们",
     Blank: "空白",
     Blog: "博客",
@@ -55,6 +60,7 @@
       "颜色包括红色，橙色，黄色，蓝色，紫色，黑色，白色和灰色。",
     Column: "列",
     "Comic Book": "漫画书",
+    Comment: "评论",
     Concentric: "同心",
     "Confirm New Email": "确认新电子邮件",
     Containers: "容器",
@@ -127,7 +133,9 @@
     Extract: "提取",
     Feedback: "反馈",
     "Fit Graph": "适合图表",
-    "Follow Us": "关注我们",
+    "Follow Us on Twitter": "在Twitter上关注我们",
+    "Found a bug? Have a feature request? We would love to hear from you!":
+      "如果发现了一个 bug？有功能请求？我们很乐意听到您的意见！",
     Fullscreen: "全屏",
     Futuristic: "未来主义的",
     "Get More Layouts": "获取更多布局",
@@ -141,6 +149,8 @@
     Home: "主页",
     "How are edges declared in this data?": "在这个数据中如何声明边缘？",
     "ID's": "ID",
+    "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
+      "如果您喜欢使用<0>Flowchart Fun</0>，请考虑支持该项目",
     "Image Export": "图像导出",
     Images: "图像",
     "Import Data": "导入数据",
@@ -173,8 +183,7 @@
     Link: "链接",
     "Log In": "登录",
     "Log Out": "登出",
-    "Made by <0>Tone Row</0>": "由 <0>Tone Row</0> 制作",
-    "Make a Donation": "捐款",
+    "Make a One-Time Donation": "进行一次性捐赠",
     "Make publicly accessible": "设为公开访问",
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "使用 Flowchart Fun Pro 让您的工作流程更轻松——现在订阅只需 3 美元/月或 30 美元/年！",
@@ -241,6 +250,7 @@
     "Right to Left": "从右到左",
     Roadmap: "路线图",
     Save: "救球",
+    "Send us Feedback": "给我们反馈",
     Settings: "设置",
     Shape: "形状",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
@@ -321,11 +331,8 @@
       "使用此文件进行顺序、流程和工作流程。",
     User: "用户",
     "View on Github": "在 Github 上查看",
-    "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
-      "我们感谢您的全部反馈、建议、报错和关于功能的需求！",
     "We use cookies to keep you logged in.":
       "我们使用 cookies 来让您保持登录状态。",
-    "What would you like to share with us?": "您想跟我们分享什么？",
     "Width and Height": "宽度和高度",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。",

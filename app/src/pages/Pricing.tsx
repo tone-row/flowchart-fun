@@ -3,7 +3,8 @@ import { CheckCircle } from "phosphor-react";
 import { ReactNode } from "react";
 
 import { SignUpForm } from "../components/SignUpForm";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
+import { SectionTitle } from "../ui/Typography";
 import styles from "./Pricing.module.css";
 export default function Pricing() {
   return (
@@ -11,12 +12,12 @@ export default function Pricing() {
       <Box py={8} px={5} className={styles.banner}>
         <Box className={styles.container} gap={8}>
           <Box gap={6} className="left" items="start">
-            <Type size={4} weight="700">
+            <p className="text-4xl font-bold">
               <Trans>
                 Make your workflow easier with Flowchart Fun Pro– subscribe now
                 for only $3/month or $30/year!
               </Trans>
-            </Type>
+            </p>
           </Box>
           <div className={styles.video}>
             <video autoPlay loop muted playsInline>
@@ -63,15 +64,15 @@ export default function Pricing() {
       <Box as="section" px={4}>
         <Box className={styles.featureBlock}>
           <Box className={styles.text} gap={3}>
-            <Type size={3} weight="700">
+            <SectionTitle>
               <Trans>Persistent Flowcharts</Trans>
-            </Type>
-            <Type size={1}>
+            </SectionTitle>
+            <SubsectionDescription>
               <Trans>
                 With the ability to create unlimited hosted charts, you can
                 access and work on your flowcharts from any device, anywhere.
               </Trans>
-            </Type>
+            </SubsectionDescription>
           </Box>
           <div className="right">
             <img src="/images/iphone_hand.svg" alt="Hand Holding Iphone" />
@@ -81,16 +82,16 @@ export default function Pricing() {
       <Box as="section" px={4}>
         <Box className={styles.featureBlock}>
           <Box className={styles.text} gap={3}>
-            <Type size={3} weight="700">
+            <SectionTitle>
               <Trans>Custom Sharing Options</Trans>
-            </Type>
-            <Type size={1}>
+            </SectionTitle>
+            <SubsectionDescription>
               <Trans>
                 Choose to share your charts with full access, edit-only, or
                 view-only permissions, giving you control over who can make
                 changes to your work.
               </Trans>
-            </Type>
+            </SubsectionDescription>
           </Box>
           <div className="right">
             <img src="/images/whiteboard_lady.svg" alt="Hand Holding Iphone" />
@@ -99,12 +100,12 @@ export default function Pricing() {
       </Box>
       <Box className={styles.footerBlock} px={5} py={24}>
         <Box className={styles.container} gap={6} items="normal center">
-          <Type size={2}>
+          <p className="text-3xl font-bold">
             <Trans>
               Streamline your workflow and simplify your process visualization
               with Flowchart Fun
             </Trans>
-          </Type>
+          </p>
         </Box>
       </Box>
     </Box>
@@ -132,25 +133,21 @@ function Plan({
       rad={5}
       items="start"
     >
-      <Type size={3} weight="700" as="h2">
-        {title}
-      </Type>
+      <SectionTitle>{title}</SectionTitle>
       <div className={right ? styles.planLeftRight : ""}>
-        <div className="plan-features">
+        <div className="grid gap-1">
           {features.map((feature) => (
             <Box
               key={feature}
               gap={2}
               flow="column"
               content="start"
-              items="start"
+              items="center"
             >
-              <CheckCircle
-                style={{ marginTop: 5 }}
-                weight="bold"
-                color="var(--plus-color)"
-              />
-              <Type size={0}>{feature}</Type>
+              <CheckCircle size={24} weight="bold" color="var(--plus-color)" />
+              <span className="text-sm leading-normal opacity-80">
+                {feature}
+              </span>
             </Box>
           ))}
         </div>
@@ -158,4 +155,8 @@ function Plan({
       </div>
     </Box>
   );
+}
+
+function SubsectionDescription({ children }: { children: ReactNode }) {
+  return <p className="text-base leading-tight opacity-80">{children}</p>;
 }

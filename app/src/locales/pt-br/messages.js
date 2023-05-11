@@ -4,8 +4,11 @@
     "$30 / Year": "$ 30 / ano",
     "(before a colon creates a label)":
       "(antes de dois pontos cria uma etiqueta)",
+    "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
+      "<0>Flowchart Fun</0> é um projeto de código aberto feito por <1>Tone Row</1>",
     "A new version of the app is available. Please reload to update.":
       "Uma nova versão do aplicativo está disponível. Por favor, recarregue para atualizar.",
+    About: "Sobre",
     "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
       "Acesse esses gráficos de qualquer lugar.<0/>Compartilhe e incorpore fluxogramas que permanecem sincronizados.",
     "Accessible from any device": "Acessível de qualquer dispositivo",
@@ -23,6 +26,8 @@
     "Back To Editor": "Voltar ao editor",
     Background: "Fundo",
     "Basic Flowchart": "Fluxograma Básico",
+    "Become a Github Sponsor": "Seja um patrocinador do Github",
+    "Become a Pro User": "Se torne um usuário Pro",
     "Become a Sponsor": "Torne-se um(a) patrocinador(a)",
     Blank: "Branco",
     Blog: "Blog",
@@ -57,6 +62,7 @@
       "As cores incluem vermelho, laranja, amarelo, azul, roxo, preto, branco e cinza.",
     Column: "Coluna",
     "Comic Book": "História em Quadrinhos",
+    Comment: "Comente",
     Concentric: "Concêntrico",
     "Confirm New Email": "Confirme o novo email",
     Containers: "Recipientes",
@@ -134,7 +140,9 @@
     Extract: "Extrair",
     Feedback: "Feedback",
     "Fit Graph": "Ajustar gráfico",
-    "Follow Us": "Siga-nos",
+    "Follow Us on Twitter": "Siga-nos no Twitter",
+    "Found a bug? Have a feature request? We would love to hear from you!":
+      "Encontrou um bug? Tem uma solicitação de recurso? Adoraríamos ouvir de você!",
     Fullscreen: "Tela cheia",
     Futuristic: "Futurista",
     "Get More Layouts": "Obtenha Mais Leiautes",
@@ -149,6 +157,8 @@
     "How are edges declared in this data?":
       "Como as arestas são declaradas nestes dados?",
     "ID's": "IDs",
+    "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
+      "Se você gosta de usar <0>Flowchart Fun</0>, por favor, considere apoiar o projeto",
     "Image Export": "Exportação de imagem",
     Images: "Imagens",
     "Import Data": "Importar dados",
@@ -181,8 +191,7 @@
     Link: "Link",
     "Log In": "Acessar",
     "Log Out": "Deslogar",
-    "Made by <0>Tone Row</0>": "Feito por <0>Tone Row</0>",
-    "Make a Donation": "Faça uma doação",
+    "Make a One-Time Donation": "Faça uma Doação Única",
     "Make publicly accessible": "Tornar publicamente acessível",
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Facilite seu fluxo de trabalho com o Flowchart Fun Pro - assine agora por apenas US$ 3/mês ou US$ 30/ano!",
@@ -252,6 +261,7 @@
     "Right to Left": "Da direita para esquerda",
     Roadmap: "Roteiro",
     Save: "Salvar",
+    "Send us Feedback": "Envie-nos um Feedback",
     Settings: "Configurações",
     Shape: "Forma",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
@@ -337,12 +347,8 @@
       "Use este arquivo para sequências, processos e fluxos de trabalho.",
     User: "Usuário",
     "View on Github": "Visualizar no Github",
-    "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
-      "Nós agradecemos todos os seus feedbacks, sugestões, bugs, e requisições de funcionalidades!",
     "We use cookies to keep you logged in.":
       "Nós usamos cookies para manter você logado.",
-    "What would you like to share with us?":
-      "O que você deseja compartilhar com a gente?",
     "Width and Height": "Largura e Altura",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "Com a capacidade de criar gráficos hospedados ilimitados, você pode acessar e trabalhar os seus fluxogramas de qualquer dispositivo, em qualquer lugar.",

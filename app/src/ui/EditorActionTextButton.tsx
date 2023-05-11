@@ -18,7 +18,7 @@ export const EditorActionTextButton = forwardRef<
   return (
     <button
       ref={ref}
-      className={`text-sm text-blue-500 flex items-center gap-1 hover:text-blue-600 active:text-blue-800 focus:shadow-none dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 ${className}`}
+      className={`text-xs text-blue-500 flex items-center gap-1 hover:text-blue-600 active:text-blue-800 focus:shadow-none dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 ${className}`}
       {...props}
     >
       <Icon size={16} weight="regular" />

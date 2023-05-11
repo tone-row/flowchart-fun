@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 import { useIsValidSponsor } from "../lib/hooks";
 import { parsers, useParser } from "../lib/parsers";
 import { useDoc } from "../lib/useDoc";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import styles from "./EditorOptions.module.css";
 import { ImportDataDialog } from "./ImportDataDialog";
 import { ImportDataUnauthenticatedDialog } from "./ImportDataUnauthenticatedDialog";
@@ -36,15 +36,11 @@ export function EditorOptions({ children }: { children: ReactNode }) {
           )}
         </div>
         <Box as="label" flow="column" gap={2} items="center normal">
-          <Type size={-1} color="color-lineNumbers">
+          <span className="text-xs text-neutral-400 dark:text-neutral-500">
             <Trans>Syntax</Trans>
-          </Type>
-          <Type
-            as="select"
-            size={-1}
-            className={styles.select}
-            color="color-foreground"
-            background="color-lineNumbers"
+          </span>
+          <select
+            className="text-xs p-1 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800"
             value={parser}
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
               useDoc.setState(
@@ -63,7 +59,7 @@ export function EditorOptions({ children }: { children: ReactNode }) {
                 {p.label()}
               </option>
             ))}
-          </Type>
+          </select>
         </Box>
       </Box>
       {children}

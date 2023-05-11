@@ -35,7 +35,7 @@
 
   .plans_content {
     display: grid;
-    grid-template-columns: minmax(0, 1.7fr) minmax(0, 3fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 3fr);
     align-items: start;
   }
 
@@ -58,7 +58,7 @@
   }
 
   .planLeftRight {
-    grid-template-columns: auto 250px;
+    grid-template-columns: auto 275px;
     gap: calc(var(--spacer-px) * 6);
     align-items: start;
   }
@@ -74,7 +74,7 @@
 
 .Free {
   background-color: hsla(var(--color-foregroundHsl), 0.05);
-  --plus-color: hsla(var(--color-foregroundHsl), 1);
+  --plus-color: hsla(var(--color-foregroundHsl), 0.5);
 }
 .BecomeAPro {
   position: relative;
@@ -98,6 +98,8 @@
 
 .featureBlock {
   padding-block: calc(var(--spacer-px) * 5);
+  display: grid;
+  gap: 1rem;
 }
 
 .featureBlock img {

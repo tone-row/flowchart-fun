@@ -68,10 +68,10 @@ export const Header = memo(function SharedHeader() {
   return (
     <>
       <NavigationMenu.Root asChild>
-        <header className={`shared-header`}>
+        <header className="grid-flow-col justify-between items-center py-1 px-2 hidden md:grid">
           <NavigationMenu.List asChild>
-            <nav className="shared-header__left">
-              <span className="shared-header__logo">
+            <nav className="flex gap-1 items-center">
+              <span className="shared-header__logo mr-2">
                 <BrandSvg width={40} />
               </span>
               <NavigationMenu.Item asChild>
@@ -135,7 +135,7 @@ export const Header = memo(function SharedHeader() {
             </nav>
           </NavigationMenu.List>
           <NavigationMenu.List asChild>
-            <nav className="shared-header__right">
+            <nav className="flex items-center gap-1">
               <DropdownMenu.Root modal={false}>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
@@ -225,6 +225,9 @@ export const Header = memo(function SharedHeader() {
   );
 });
 
+const btnClasses =
+  "flex items-center gap-2 p-2 rounded hover:bg-neutral-200 text-sm aria-[current=page]:text-blue-500 dark:hover:bg-neutral-800 dark:aria-[current=page]:text-green-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-green-400";
+
 type HeaderButtonProps = {
   label: string;
   icon: ReactNode;
@@ -235,16 +238,11 @@ type HeaderButtonProps = {
 
 // forward ref
 const HeaderButton = forwardRef<HTMLButtonElement, HeaderButtonProps>(
-  ({ label: children, icon, className = "", ...props }, ref) => {
+  ({ label: children, icon, ...props }, ref) => {
     return (
-      <button
-        className={`shared-header-btn ${className}`}
-        aria-current
-        {...props}
-        ref={ref}
-      >
+      <button className={`${btnClasses}`} {...props} ref={ref}>
         <span className="shared-header-btn__icon">{icon}</span>
-        <span className="shared-header-btn__label">{children}</span>
+        <span>{children}</span>
       </button>
     );
   }
@@ -260,14 +258,9 @@ type HeaderClientLink = {
 const HeaderClientLink = forwardRef<HTMLAnchorElement, HeaderClientLink>(
   ({ label: children, icon, className = "", ...props }, ref) => {
     return (
-      <Link
-        className={`shared-header-btn ${className}`}
-        aria-current
-        {...props}
-        ref={ref}
-      >
+      <Link className={`${btnClasses} ${className}`} {...props} ref={ref}>
         <span className="shared-header-btn__icon">{icon}</span>
-        <span className="shared-header-btn__label">{children}</span>
+        <span>{children}</span>
       </Link>
     );
   }
@@ -283,14 +276,9 @@ type HeaderLinkProps = {
 const HeaderLink = forwardRef<HTMLAnchorElement, HeaderLinkProps>(
   ({ label: children, icon, className = "", ...props }, ref) => {
     return (
-      <a
-        className={`shared-header-btn ${className}`}
-        aria-current
-        {...props}
-        ref={ref}
-      >
+      <a className={`${btnClasses} ${className}`} {...props} ref={ref}>
         <span className="shared-header-btn__icon">{icon}</span>
-        <span className="shared-header-btn__label">{children}</span>
+        <span>{children}</span>
       </a>
     );
   }

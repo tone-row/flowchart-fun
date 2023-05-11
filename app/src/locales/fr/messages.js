@@ -4,8 +4,11 @@
     "$30 / Year": "30 $ / an",
     "(before a colon creates a label)":
       "(avant que deux-points ne créent une étiquette)",
+    "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
+      "<0>Flowchart Fun</0> est un projet open source réalisé par <1>Tone Row</1>",
     "A new version of the app is available. Please reload to update.":
       "Une nouvelle version de l'application est disponible. Veuillez recharger pour mettre à jour.",
+    About: "À propos",
     "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.":
       "Accédez à ces diagrammes depuis n'importe où.<0/>Partagez et intégrez des diagrammes de flux qui restent synchronisés.",
     "Accessible from any device": "Accessible depuis n'importe quel appareil",
@@ -23,6 +26,8 @@
     "Back To Editor": "Retour à l'éditeur",
     Background: "L'arrière plan",
     "Basic Flowchart": "Diagramme de flux de base",
+    "Become a Github Sponsor": "Devenez un sponsor Github",
+    "Become a Pro User": "Devenez un utilisateur Pro",
     "Become a Sponsor": "Devenir un sponsor",
     Blank: "Vide",
     Blog: "Blog",
@@ -57,6 +62,7 @@
       "Les couleurs incluent le rouge, l'orange, le jaune, le bleu, le pourpre, le noir, le blanc et le gris.",
     Column: "Colonne",
     "Comic Book": "Bande dessinée",
+    Comment: "Commenter",
     Concentric: "Concentrique",
     "Confirm New Email": "Confirmer le nouveau Email",
     Containers: "Conteneurs",
@@ -134,7 +140,9 @@
     Extract: "Extrait",
     Feedback: "Commentaire",
     "Fit Graph": "Ajuster le graphique",
-    "Follow Us": "Suivez-nous",
+    "Follow Us on Twitter": "Suivez-nous sur Twitter",
+    "Found a bug? Have a feature request? We would love to hear from you!":
+      "Vous avez trouvé un bug ? Vous souhaitez faire une demande de fonctionnalité ? Nous aimerions beaucoup vous entendre !",
     Fullscreen: "Plein écran",
     Futuristic: "Futuriste",
     "Get More Layouts": "Obtenez plus de mises en page",
@@ -149,6 +157,8 @@
     "How are edges declared in this data?":
       "Comment les bords sont-ils déclarés dans ces données?",
     "ID's": "ID",
+    "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
+      "Si vous appréciez l'utilisation de <0>Flowchart Fun</0>, veuillez envisager de soutenir le projet",
     "Image Export": "Exportation d'images",
     Images: "Images",
     "Import Data": "Importer des données",
@@ -182,8 +192,7 @@
     Link: "Lien",
     "Log In": "Connexion",
     "Log Out": "Déconnexion",
-    "Made by <0>Tone Row</0>": "Réalisé par <0>Tone Row</0>",
-    "Make a Donation": "Faire un don",
+    "Make a One-Time Donation": "Faites un don unique",
     "Make publicly accessible": "Rendre accessible au public",
     "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
       "Facilitez votre flux de travail avec Flowchart Fun Pro - abonnez-vous maintenant pour seulement 3 $/mois ou 30 $/an !",
@@ -253,6 +262,7 @@
     "Right to Left": "De droite à gauche",
     Roadmap: "Roadmap",
     Save: "Sauver",
+    "Send us Feedback": "Envoyez-nous vos commentaires",
     Settings: "Paramètres",
     Shape: "Forme",
     "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
@@ -339,12 +349,8 @@
       "Utilisez ce fichier pour les séquences, les processus et les workflows.",
     User: "Utilisateur",
     "View on Github": "Voir sur Github",
-    "We appreciate all of your feedback, suggestions, bugs, and feature requests!":
-      "Nous apprécions tous vos commentaires, suggestions, retours sur les bugs et demandes de fonctionnalités !",
     "We use cookies to keep you logged in.":
       "Nous utilisons des cookies afin de maintenir votre connexion.",
-    "What would you like to share with us?":
-      "Que voudriez-vous partager avec nous ?",
     "Width and Height": "Largeur et hauteur",
     "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
       "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez.",

@@ -11,7 +11,7 @@ import { isError } from "../lib/helpers";
 import { createCustomer, createSubscription } from "../lib/queries";
 import { logError } from "../lib/sentry";
 import { supabase } from "../lib/supabaseClient";
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import styles from "./SignUpForm.module.css";
 
 type SignUpFormData = {
@@ -140,9 +140,7 @@ export function SignUpForm() {
                   p={3}
                   rad={1}
                 >
-                  <Type as="span" size={0} weight="700">
-                    {el.label}
-                  </Type>
+                  <span className="font-bold">{el.label}</span>
                 </Box>
               ))}
             </Box>
@@ -180,14 +178,14 @@ export function SignUpForm() {
           p={3}
           typeProps={{ size: 0 }}
         />
-        <Box template="auto / auto auto" content="normal space-between">
-          <Type size={-1} as="span" style={{ opacity: 0.5 }}>
-            *<Trans>We use cookies to keep you logged in.</Trans>
-          </Type>
-          {create.isLoading && (
-            <Spinner r={14} s={2} c="var(--palette-purple-0)" />
-          )}
-        </Box>
+        <p className="opacity-40 text-xs justify-self-center">
+          *<Trans>We use cookies to keep you logged in.</Trans>
+        </p>
+        {create.isLoading && (
+          <div className="justify-self-center opacity-50">
+            <Spinner r={14} s={4} c="var(--palette-purple-0)" />
+          </div>
+        )}
       </Box>
 
       {create.error && (

@@ -29,6 +29,7 @@ import { getDefaultChart } from "../lib/getDefaultChart";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
+import { PageTitle } from "../ui/Typography";
 
 export default function M() {
   const { customerIsLoading, session, checkedSession } = useContext(AppContext);
@@ -163,9 +164,9 @@ const New = memo(function New({
           }
         }}
       >
-        <h3 className="text-3xl font-bold mb-4 flex items-center justify-center">
+        <PageTitle className="mb-4 text-center">
           <Trans>Create a New Flowchart</Trans>
-        </h3>
+        </PageTitle>
         <div className="grid gap-2 w-full">
           <SmallLabel>
             <Trans>Name</Trans>

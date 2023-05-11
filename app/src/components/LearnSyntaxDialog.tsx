@@ -3,9 +3,10 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { TextAlignRight } from "phosphor-react";
 import { useEffect, useRef, useState } from "react";
 
-import { Box, Type } from "../slang";
+import { Box } from "../slang";
 import { Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
+import { SectionTitle } from "../ui/Typography";
 import styles from "./LearnSyntaxDialog.module.css";
 
 const PAD = 4;
@@ -69,9 +70,9 @@ export function LearnSyntaxDialog() {
               flow="column"
             >
               <TextAlignRight size={24} weight="bold" />
-              <Type size={2}>
+              <SectionTitle>
                 <Trans>Learn Syntax</Trans>
-              </Type>
+              </SectionTitle>
             </Box>
           </Box>
           <Box
@@ -386,7 +387,9 @@ export function LearnSyntaxDialog() {
             className={styles.close}
             content="normal end"
           >
-            <Type size={1}>Close</Type>
+            <span className="text-base">
+              <Trans>Close</Trans>
+            </span>
           </Box>
         </Box>
       </Dialog.Portal>

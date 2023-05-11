@@ -1,11 +1,13 @@
 import { t, Trans } from "@lingui/macro";
 import { memo, useCallback, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { languages } from "../locales/i18n";
-import { Box, BoxProps, Type } from "../slang";
+import { Box, BoxProps } from "../slang";
+import { PageTitle, SectionTitle } from "../ui/Typography";
 import { AppContext } from "./AppContext";
 import styles from "./Settings.module.css";
-import { Button, Page, Section, SectionTitle } from "./Shared";
+import { Button, Page, Section } from "./Shared";
 
 const lowerLinksAt: BoxProps["at"] = {
   tablet: {
@@ -44,6 +46,9 @@ const Settings = memo(() => {
         content="start normal"
         at={{ tablet: { items: "start", content: "start", gap: 14 } }}
       >
+        <PageTitle>
+          <Trans>Settings</Trans>
+        </PageTitle>
         <Section>
           <SectionTitle>
             <Trans>Language</Trans>
@@ -108,32 +113,62 @@ const Settings = memo(() => {
           </Box>
         </Section>
         <Section className={styles.LowerLinks}>
-          <SectionTitle as="a" href="https://tone-row.com">
-            <Trans>
-              Made by <strong>Tone Row</strong>
-            </Trans>
+          <SectionTitle>
+            <Trans>About</Trans>
           </SectionTitle>
+          <p className="text-sm md:text-base leading-normal">
+            <Trans>
+              <span>Flowchart Fun</span> is an open source project made by{" "}
+              <a
+                href="https://tone-row.com"
+                className="font-bold text-blue-500"
+              >
+                Tone&nbsp;Row
+              </a>
+            </Trans>
+          </p>
           <Section at={lowerLinksAt}>
-            <Type as="a" href="https://twitter.com/tone_row_" size={-1}>
-              <Trans>Follow Us</Trans>
-            </Type>
-            <Type
-              as="a"
+            <a
               href="https://github.com/tone-row/flowchart-fun"
-              size={-1}
+              className="text-sm opacity-60 hover:opacity-100"
             >
               <Trans>View on Github</Trans>
-            </Type>
-            <Type
-              as="a"
-              href="https://opencollective.com/tone-row/donate"
-              size={-1}
+            </a>
+            <a
+              href="https://twitter.com/tone_row_"
+              className="text-sm opacity-60 hover:opacity-100"
             >
-              <Trans>Make a Donation</Trans>
-            </Type>
-            <Type as="a" href="https://github.com/sponsors/tone-row" size={-1}>
-              <Trans>Become a Sponsor</Trans>
-            </Type>
+              <Trans>Follow Us on Twitter</Trans>
+            </a>
+          </Section>
+        </Section>
+        <Section>
+          <SectionTitle>Support</SectionTitle>
+          <p className="text-sm md:text-base leading-normal">
+            <Trans>
+              If you enjoy using <span>Flowchart Fun</span>, please consider
+              supporting the project
+            </Trans>
+          </p>
+          <Section at={lowerLinksAt}>
+            <Link
+              to="/pricing"
+              className="text-sm opacity-60 hover:opacity-100"
+            >
+              <Trans>Become a Pro User</Trans>
+            </Link>
+            <a
+              href="https://opencollective.com/tone-row/donate"
+              className="text-sm opacity-60 hover:opacity-100"
+            >
+              <Trans>Make a One-Time Donation</Trans>
+            </a>
+            <a
+              href="https://github.com/sponsors/tone-row"
+              className="text-sm opacity-60 hover:opacity-100"
+            >
+              <Trans>Become a Github Sponsor</Trans>
+            </a>
           </Section>
         </Section>
       </Page>

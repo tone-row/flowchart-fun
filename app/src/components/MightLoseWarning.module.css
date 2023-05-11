@@ -9,18 +9,3 @@
   max-width: 300px;
   display: block;
 }
-
-.MightLoseWarningInner a {
-  display: block;
-  margin-top: calc(var(--spacer-px) * 2);
-}
-
-.MightLoseWarningInner a:hover {
-  text-decoration: underline;
-}
-
-.MightLoseWarningText {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
