@@ -9,6 +9,8 @@ import { Warning } from "../components/Warning";
 import { isError } from "../lib/helpers";
 import { login } from "../lib/queries";
 
+// http://localhost:3000/l?payment_intent=pi_3N70XxK9wlDh9Gkw0PrWPybD&payment_intent_client_secret=pi_3N70XxK9wlDh9Gkw0PrWPybD_secret_mcJDdazkPiXraKrYZpW34Dj3b&redirect_status=succeeded#success
+
 type Fields = {
   email: string;
 };

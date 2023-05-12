@@ -2,6 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import { CheckCircle } from "phosphor-react";
 import { ReactNode } from "react";
 
+import { PaymentStepper } from "../components/PaymentStepper";
 import { SignUpForm } from "../components/SignUpForm";
 import { Box } from "../slang";
 import { SectionTitle } from "../ui/Typography";
@@ -12,10 +13,10 @@ export default function Pricing() {
       <Box py={8} px={5} className={styles.banner}>
         <Box className={styles.container} gap={8}>
           <Box gap={6} className="left" items="start">
-            <p className="text-4xl font-bold">
+            <p className="text-3xl font-medium text-neutral-800 leading-tight">
               <Trans>
-                Make your workflow easier with Flowchart Fun Pro– subscribe now
-                for only $3/month or $30/year!
+                Unleash your creativity and streamline your workflow with
+                Flowchart Fun Pro – starting at just $3/month!
               </Trans>
             </p>
           </Box>
@@ -98,6 +99,7 @@ export default function Pricing() {
           </div>
         </Box>
       </Box>
+      <PaymentStepper />
       <Box className={styles.footerBlock} px={5} py={24}>
         <Box className={styles.container} gap={6} items="normal center">
           <p className="text-3xl font-bold">

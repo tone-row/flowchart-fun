@@ -41,6 +41,14 @@ export function useIsPublicHostedCharted() {
   return useMemo(() => path === "/p/:public_id", [path]);
 }
 
+/**
+ * Get the supabase session
+ */
+export function useSession() {
+  const { session } = useContext(AppContext);
+  return session;
+}
+
 /** Use this to determine if the sponsor is valid.
  * That means their subscription is currently active.
  * i.e. They're in good standing, etc. */
