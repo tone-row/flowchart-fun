@@ -100,6 +100,7 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "re-resizable": "^6.9.0",
     "react": "^17.0.1",
+    "react-confetti": "^6.1.0",
     "react-contexify": "^5.0.0",
     "react-dom": "^17.0.1",
     "react-dropzone": "^14.2.3",

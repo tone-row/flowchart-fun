@@ -305,6 +305,9 @@ importers:
       react:
         specifier: ^17.0.1
         version: 17.0.2
+      react-confetti:
+        specifier: ^6.1.0
+        version: 6.1.0(react@17.0.2)
       react-contexify:
         specifier: ^5.0.0
         version: 5.0.0(react-dom@17.0.2)(react@17.0.2)
@@ -13392,6 +13395,16 @@ packages:
       react: 17.0.2
     dev: false
 
+  /react-confetti@6.1.0(react@17.0.2):
+    resolution: {integrity: sha512-7Ypx4vz0+g8ECVxr88W9zhcQpbeujJAVqL14ZnXJ3I23mOI9/oBVTQ3dkJhUmB0D6XOtCZEM6N0Gm9PMngkORw==}
+    engines: {node: '>=10.18'}
+    peerDependencies:
+      react: ^16.3.0 || ^17.0.1 || ^18.0.0
+    dependencies:
+      react: 17.0.2
+      tween-functions: 1.2.0
+    dev: false
+
   /react-contexify@5.0.0(react-dom@17.0.2)(react@17.0.2):
     resolution: {integrity: sha512-2FIp7lxJ6dtfGr8EZ4uVV5p5TQjd0n2h/JU7PrejNIMiCeZWvSVPFh4lj1ZvjXosglBvP7q5JQQ8yUCdSaMSaw==}
     engines: {node: '>=10'}
@@ -15136,6 +15149,10 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 4.8.4
+
+  /tween-functions@1.2.0:
+    resolution: {integrity: sha512-PZBtLYcCLtEcjL14Fzb1gSxPBeL7nWvGhO5ZFPGqziCcr8uvHp0NDmdjBchp6KHL+tExcg0m3NISmKxhU394dA==}
+    dev: false
 
   /type-check@0.3.2:
     resolution: {integrity: sha512-ZCmOJdvOWDBYJlzAoFkC+Q0+bUyEOS1ltgp1MGU03fqHG+dbi9tBFU2Rd9QKiDZFAYrhPh2JUf7rZRIuHRKtOg==}

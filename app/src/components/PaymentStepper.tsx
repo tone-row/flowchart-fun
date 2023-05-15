@@ -1,11 +1,15 @@
 import { t, Trans } from "@lingui/macro";
 import { useStripe } from "@stripe/react-stripe-js";
-import { StripeElements } from "@stripe/stripe-js";
-import { ArrowRight, WarningCircle } from "phosphor-react";
+import {
+  StripeElements,
+  StripeElementsOptionsClientSecret,
+} from "@stripe/stripe-js";
+import { ArrowRight, RocketLaunch, WarningCircle } from "phosphor-react";
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "react-query";
 
 import { useSession } from "../lib/hooks";
+import { BlueButton } from "../ui/BlueButton";
 import Spinner from "./Spinner";
 import { Warning } from "./Warning";
 
@@ -56,7 +60,7 @@ export function PaymentStepper() {
     step = "three";
 
   return (
-    <div className="grid justify-center gap-4 pt-12 pb-16 border-y">
+    <div className="grid justify-center gap-4 pt-12 pb-16 border-t border-blue-100 shadow shadow-blue-800/10 z-10">
       {step === "one" && (
         <>
           <Title>
@@ -87,13 +91,14 @@ export function PaymentStepper() {
               }
             />
           </div>
-          <ContinueButton
+          <BlueButton
             onClick={() => setConfirmPlan(true)}
             disabled={plan === null}
+            className="mt-2 justify-self-center"
           >
             Continue
             <ArrowRight size={16} />
-          </ContinueButton>
+          </BlueButton>
         </>
       )}
       {step === "two" && (
@@ -125,7 +130,10 @@ export function PaymentStepper() {
               required
             />
           </div>
-          <ContinueButton disabled={subscriptionDetails.isLoading}>
+          <BlueButton
+            disabled={subscriptionDetails.isLoading}
+            className="mt-2 justify-self-center"
+          >
             {subscriptionDetails.isLoading ? (
               <>
                 {t`Loading`}
@@ -137,7 +145,7 @@ export function PaymentStepper() {
                 <ArrowRight size={16} />
               </>
             )}
-          </ContinueButton>
+          </BlueButton>
           {subscriptionDetails.error && (
             <div className="justify-self-center">
               <Warning>{(subscriptionDetails.error as Error).message}</Warning>
@@ -190,9 +198,16 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
 
   useEffect(() => {
     if (!stripe) return;
-    const options = {
+    const options: StripeElementsOptionsClientSecret = {
       clientSecret,
       // Fully customizable with appearance API.
+      appearance: {
+        rules: {
+          "#submit": {
+            fontWeight: "bold",
+          },
+        },
+      },
     };
 
     elements.current = stripe.elements(options);
@@ -237,13 +252,14 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
       }}
     >
       <div id="payment-element" />
-      <button
+      <BlueButton
         id="submit"
         disabled={!stripe || loading}
-        className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
+        className="mt-2 justify-self-center"
       >
-        Subscribe
-      </button>
+        <Trans>Sign Up</Trans>
+        {loading ? <Spinner r={5} s={1} /> : <RocketLaunch size={18} />}
+      </BlueButton>
       {error && (
         <Warning>
           <div className="flex items-center justify-start gap-2">
@@ -305,19 +321,5 @@ function Description({
     >
       {children}
     </p>
-  );
-}
-
-function ContinueButton({
-  children,
-  ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  return (
-    <button
-      {...props}
-      className="bg-blue-500 text-white px-6 py-3 font-bold rounded justify-self-center mt-2 flex gap-2 items-center hover:bg-blue-600 focus:outline-none disabled:opacity-50"
-    >
-      {children}
-    </button>
   );
 }

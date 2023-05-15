@@ -247,7 +247,7 @@ test.describe("unauth", () => {
     });
   });
 
-  test.only("Change Language", async ({ page }) => {
+  test("Change Language", async ({ page }) => {
     await goToTab(page, "Settings");
     // Click [aria-label="Select Language\: Deutsch"]
     await page.locator('[aria-label="Select Language\\: Deutsch"]').click();
