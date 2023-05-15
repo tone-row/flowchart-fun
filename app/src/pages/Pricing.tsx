@@ -1,11 +1,9 @@
 import { t, Trans } from "@lingui/macro";
-import { Asterisk, Check, CheckCircle } from "phosphor-react";
+import { Asterisk, Check } from "phosphor-react";
 import { ReactNode } from "react";
 
 import { PaymentStepper } from "../components/PaymentStepper";
-import { SignUpForm } from "../components/SignUpForm";
 import { Box } from "../slang";
-import { SectionTitle } from "../ui/Typography";
 import styles from "./Pricing.module.css";
 
 const features = (): {
@@ -102,23 +100,21 @@ const plans = () => [
 export default function Pricing() {
   return (
     <Box content="start stretch">
-      <Box py={8} px={5} className={styles.banner}>
-        <Box className={styles.container} gap={8}>
-          <Box gap={6} className="left" items="start">
-            <p className="text-3xl font-medium text-neutral-800 leading-tight">
-              <Trans>
-                Unleash your creativity and streamline your workflow with
-                Flowchart Fun Pro – starting at just $3/month!
-              </Trans>
-            </p>
-          </Box>
-          <div className={styles.video}>
-            <video autoPlay loop muted playsInline>
-              <source src="/demo.mp4" type="video/mp4" />
-            </video>
-          </div>
+      <div className="grid grid-cols-2 gap-8 max-w-[1000px] mx-auto items-center mt-8 mb-16">
+        <Box gap={6} className="left" items="start">
+          <p className="text-4xl font-medium text-neutral-800 leading-tight">
+            <Trans>
+              Unleash your creativity and streamline your workflow with
+              Flowchart Fun Pro – starting at just $3/month!
+            </Trans>
+          </p>
         </Box>
-      </Box>
+        <div className={`${styles.video} shadow-md border rounded-lg`}>
+          <video autoPlay loop muted playsInline>
+            <source src="/demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
       <div className={"" /* `pt-10 bg-neutral-100 pb-10` */}>
         <div className="grid gap-8 grid-cols-2 max-w-[858px] mx-auto w-full">
           {features().map((props) => (
@@ -126,7 +122,7 @@ export default function Pricing() {
           ))}
         </div>
       </div>
-      <div className="py-10 bg-blue-100 my-10 bg-gradient-to-b from-blue-100 to-blue-50">
+      <div className="py-10 bg-blue-100 mt-10 bg-gradient-to-b from-blue-100 to-blue-50">
         <div className="grid grid-flow-col justify-center gap-10 items-start">
           {plans().map((props) => (
             <Plan {...props} key={props.key} />
@@ -135,7 +131,7 @@ export default function Pricing() {
       </div>
       <PaymentStepper />
       <div
-        className={`pt-16 pb-20 text-neutral-800 bg-blue-100 ${styles.footer}`}
+        className={`pt-16 pb-20 text-neutral-800 bg-blue-50 ${styles.footer}`}
       >
         <div className="max-w-[660px] mx-auto grid justify-items-center grid gap-4">
           <img

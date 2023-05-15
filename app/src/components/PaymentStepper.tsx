@@ -56,7 +56,7 @@ export function PaymentStepper() {
     step = "three";
 
   return (
-    <div className="grid justify-center gap-4 my-6 mb-16">
+    <div className="grid justify-center gap-4 pt-12 pb-16 border-y">
       {step === "one" && (
         <>
           <Title>
