@@ -13,8 +13,6 @@ import { BlueButton } from "../ui/BlueButton";
 import { Label, PageTitle } from "../ui/Typography";
 import { ReactComponent as EmailPassword } from "./EmailPassword.svg";
 
-// http://localhost:3000/l?payment_intent=xxx&payment_intent_client_secret=xx&redirect_status=succeeded#success
-
 type Fields = {
   email: string;
 };
