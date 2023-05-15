@@ -1,11 +1,12 @@
+import { t, Trans } from "@lingui/macro";
 import { useStripe } from "@stripe/react-stripe-js";
 import { StripeElements } from "@stripe/stripe-js";
-import { WarningCircle } from "phosphor-react";
+import { ArrowRight, WarningCircle } from "phosphor-react";
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "react-query";
 
 import { useSession } from "../lib/hooks";
-import { SectionTitle } from "../ui/Typography";
+import Spinner from "./Spinner";
 import { Warning } from "./Warning";
 
 /**
@@ -55,34 +56,44 @@ export function PaymentStepper() {
     step = "three";
 
   return (
-    <div className="grid justify-center gap-4">
+    <div className="grid justify-center gap-4 my-6 mb-16">
       {step === "one" && (
         <>
-          <SectionTitle className="text-center">Choose a plan!</SectionTitle>
-          <div className="flex justify-center">
-            <button
+          <Title>
+            <Trans>Select your plan!</Trans>
+          </Title>
+          <Description>
+            {t`Choose the plan that's right for you and start creating amazing
+              flowcharts with Flowchart Fun Pro`}
+          </Description>
+          <div className="flex justify-center gap-4 mt-6">
+            <PlanButton
               aria-current={plan === "monthly" ? "true" : "false"}
               onClick={() => setPlan("monthly")}
               className="mr-2 aria-[current=true]:text-blue-500"
-            >
-              Monthly
-            </button>
-            <button
+              title={t`Monthly`}
+              price={t`$3 per month`}
+            />
+            <PlanButton
               aria-current={plan === "yearly" ? "true" : "false"}
               onClick={() => setPlan("yearly")}
               className="aria-[current=true]:text-blue-500"
-            >
-              Yearly
-            </button>
+              title={t`Yearly`}
+              price={t`$30 per year`}
+              extra={
+                <span className="text-xs text-neutral-800 p-2 justify-self-center bg-yellow-300 rounded font-bold mt-2">
+                  <Trans>Save 20% (2 months free!)</Trans>
+                </span>
+              }
+            />
           </div>
-          {plan && (
-            <button
-              onClick={() => setConfirmPlan(true)}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
-              Continue
-            </button>
-          )}
+          <ContinueButton
+            onClick={() => setConfirmPlan(true)}
+            disabled={plan === null}
+          >
+            Continue
+            <ArrowRight size={16} />
+          </ContinueButton>
         </>
       )}
       {step === "two" && (
@@ -95,33 +106,79 @@ export function PaymentStepper() {
             setEmail(email);
             setConfirmEmail(true);
           }}
-          className="grid gap-2"
+          autoComplete="false"
+          className="grid gap-4"
         >
-          <SectionTitle className="text-center">Enter your email</SectionTitle>
-          <p>Note: Make sure you use the same email you will use to log in</p>
-          <input
-            type="email"
-            name="email"
-            className="border border-gray-300 rounded px-2 py-1"
-            required
-          />
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
-            disabled={subscriptionDetails.isLoading}
-          >
-            {subscriptionDetails.isLoading ? "Loading..." : "Continue"}
-          </button>
+          <Title>
+            <Trans>Enter your email</Trans>
+          </Title>
+          <Description>{t`Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.`}</Description>
+          <div className="grid gap-2">
+            <p className={`text-[13px] justify-self-center text-neutral-600`}>
+              {t`Make sure you use the same email you will use to log in.`}
+            </p>
+            <input
+              type="email"
+              name="email"
+              className="border border-neutral-400 font-mono rounded p-4 max-w-[360px] w-full justify-self-center focus:outline-none focus:border-blue-500"
+              autoComplete="off"
+              required
+            />
+          </div>
+          <ContinueButton disabled={subscriptionDetails.isLoading}>
+            {subscriptionDetails.isLoading ? (
+              <>
+                {t`Loading`}
+                <Spinner r={5} s={1} />
+              </>
+            ) : (
+              <>
+                {t`Continue`}
+                <ArrowRight size={16} />
+              </>
+            )}
+          </ContinueButton>
           {subscriptionDetails.error && (
-            <div>{(subscriptionDetails.error as Error).message}</div>
+            <div className="justify-self-center">
+              <Warning>{(subscriptionDetails.error as Error).message}</Warning>
+            </div>
           )}
         </form>
       )}
       {step === "three" && (
-        <PaymentForm
-          clientSecret={subscriptionDetails.data?.clientSecret || ""}
-        />
+        <div className="grid gap-4">
+          <Title>Enter payment details</Title>
+          <Description className="mb-4">
+            {t`You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.`}
+          </Description>
+          <PaymentForm
+            clientSecret={subscriptionDetails.data?.clientSecret || ""}
+          />
+        </div>
       )}
     </div>
+  );
+}
+
+function PlanButton({
+  title,
+  price,
+  extra = null,
+  ...props
+}: {
+  title: string;
+  price: string;
+  extra?: React.ReactNode;
+} & React.HTMLAttributes<HTMLButtonElement>) {
+  return (
+    <button
+      {...props}
+      className="border w-[260px] border-solid p-4 py-12 grid gap-2 rounded-lg content-start border-b-4 border-neutral-700 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-600 text-neutral-800 aria-[current=true]:text-blue-600 hover:shadow-lg hover:shadow-blue-200  aria-[current=true]:hover:shadow-none"
+    >
+      <h2 className={`text-xl font-bold`}>{title}</h2>
+      <span className="text-xl">{price}</span>
+      {extra}
+    </button>
   );
 }
 
@@ -225,4 +282,42 @@ async function getSubscriptionDetails(
 
   // return the payment token
   return response;
+}
+
+function Title({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="text-center text-3xl font-bold text-neutral-800">
+      {children}
+    </h2>
+  );
+}
+
+function Description({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <p
+      className={`text-center text-neutral-600 max-w-[520px] leading-normal ${className}`}
+    >
+      {children}
+    </p>
+  );
+}
+
+function ContinueButton({
+  children,
+  ...props
+}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  return (
+    <button
+      {...props}
+      className="bg-blue-500 text-white px-6 py-3 font-bold rounded justify-self-center mt-2 flex gap-2 items-center hover:bg-blue-600 focus:outline-none disabled:opacity-50"
+    >
+      {children}
+    </button>
+  );
 }

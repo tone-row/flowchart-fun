@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import { CheckCircle } from "phosphor-react";
+import { Asterisk, Check, CheckCircle } from "phosphor-react";
 import { ReactNode } from "react";
 
 import { PaymentStepper } from "../components/PaymentStepper";
@@ -7,6 +7,98 @@ import { SignUpForm } from "../components/SignUpForm";
 import { Box } from "../slang";
 import { SectionTitle } from "../ui/Typography";
 import styles from "./Pricing.module.css";
+
+const features = (): {
+  title: string;
+  points: string[];
+  imgPath: string;
+}[] => [
+  {
+    title: t`Import from Lucidchart, Visio, and other CSV files`,
+    points: [
+      t`Easily import existing flowcharts from other software`,
+      t`Save time and streamline your workflow by importing data from other sources`,
+    ],
+    imgPath: "ArtificialIntelligence",
+  },
+  {
+    title: t`Create Flowcharts from a Prompt with AI`,
+    points: [
+      t`Use AI to create flowcharts from data sets or algorithms`,
+      t`Save time and automate certain tasks with this cutting-edge feature`,
+    ],
+    imgPath: "AI",
+  },
+  {
+    title: t`One-on-One Support`,
+    points: [
+      t`Get personalized attention and support from our expert team`,
+      t`Have complex questions or issues? We're here to help.`,
+    ],
+    imgPath: "Date",
+  },
+  {
+    title: t`Export High-Resolution Images`,
+    points: [
+      t`Create professional-quality visual aids for presentations or training materials`,
+      t`Impress your audience with high-quality images produced by Flowchart Fun`,
+    ],
+    imgPath: "Learning",
+  },
+];
+
+// const free = () => [
+//   t`Temporary Flowcharts`,
+//   t`Image Export`,
+//   `8 ${t`Auto-Layouts`}`,
+//   t`One-time Share Links`,
+// ];
+// const pro = () => [
+//   t`Everything in Free`,
+//   t`Persistent Flowcharts`,
+//   t`Remove Image Watermark`,
+//   t`Export High-Resolution Images`,
+//   t`Export to SVG`,
+//   t`Import from Lucidchart, Visio, and other CSV files`,
+//   `13 ${t`Auto-Layouts`}`,
+//   t`Permalinks`,
+//   t`Custom Sharing Options`,
+//   t`Create Flowcharts from a Prompt with AI`,
+//   t`One-on-One Support`,
+//   t`Office Hours`,
+// ];
+
+const plans = () => [
+  {
+    title: t`Free`,
+    key: "free",
+    features: [
+      t`Temporary Flowcharts`,
+      t`Image Export`,
+      `8 ${t`Auto-Layouts`}`,
+      t`One-time Share Links`,
+    ],
+  },
+  {
+    title: `Flowchart Fun Pro`,
+    key: "pro",
+    features: [
+      t`Everything in Free`,
+      t`Persistent Flowcharts`,
+      t`Remove Image Watermark`,
+      t`Export High-Resolution Images`,
+      t`Export to SVG`,
+      t`Import from Lucidchart, Visio, and other CSV files`,
+      `13 ${t`Auto-Layouts`}`,
+      t`Permalinks`,
+      t`Custom Sharing Options`,
+      t`Create Flowcharts from a Prompt with AI`,
+      t`One-on-One Support`,
+      t`Office Hours`,
+    ],
+  },
+];
+
 export default function Pricing() {
   return (
     <Box content="start stretch">
@@ -27,138 +119,88 @@ export default function Pricing() {
           </div>
         </Box>
       </Box>
-      <Box className={styles.plans} py={8} px={5}>
-        <Box className={styles.container} gap={10}>
-          <div className={styles.plans_content}>
-            <Plan
-              className={styles.Free}
-              title="Free"
-              features={[
-                t`Temporary Flowcharts`,
-                t`Image Export`,
-                `8 ${t`Auto-Layouts`}`,
-                t`One-time Share Links`,
-              ]}
-            />
-            <Plan
-              className={styles.BecomeAPro}
-              title="Flowchart Fun Pro"
-              features={[
-                t`Everything in Free`,
-                t`Persistent Flowcharts`,
-                t`Remove Image Watermark`,
-                t`Export High-Resolution Images`,
-                t`Export to SVG`,
-                t`Import from Lucidchart, Visio, and other CSV files`,
-                `13 ${t`Auto-Layouts`}`,
-                t`Permalinks`,
-                t`Custom Sharing Options`,
-                t`Create Flowcharts from a Prompt with AI`,
-                t`One-on-One Support`,
-                t`Office Hours`,
-              ]}
-              right={<SignUpForm />}
-            />
-          </div>
-        </Box>
-      </Box>
-      <Box as="section" px={4}>
-        <Box className={styles.featureBlock}>
-          <Box className={styles.text} gap={3}>
-            <SectionTitle>
-              <Trans>Persistent Flowcharts</Trans>
-            </SectionTitle>
-            <SubsectionDescription>
-              <Trans>
-                With the ability to create unlimited hosted charts, you can
-                access and work on your flowcharts from any device, anywhere.
-              </Trans>
-            </SubsectionDescription>
-          </Box>
-          <div className="right">
-            <img src="/images/iphone_hand.svg" alt="Hand Holding Iphone" />
-          </div>
-        </Box>
-      </Box>
-      <Box as="section" px={4}>
-        <Box className={styles.featureBlock}>
-          <Box className={styles.text} gap={3}>
-            <SectionTitle>
-              <Trans>Custom Sharing Options</Trans>
-            </SectionTitle>
-            <SubsectionDescription>
-              <Trans>
-                Choose to share your charts with full access, edit-only, or
-                view-only permissions, giving you control over who can make
-                changes to your work.
-              </Trans>
-            </SubsectionDescription>
-          </Box>
-          <div className="right">
-            <img src="/images/whiteboard_lady.svg" alt="Hand Holding Iphone" />
-          </div>
-        </Box>
-      </Box>
-      <PaymentStepper />
-      <Box className={styles.footerBlock} px={5} py={24}>
-        <Box className={styles.container} gap={6} items="normal center">
-          <p className="text-3xl font-bold">
-            <Trans>
-              Streamline your workflow and simplify your process visualization
-              with Flowchart Fun
-            </Trans>
-          </p>
-        </Box>
-      </Box>
-    </Box>
-  );
-}
-
-function Plan({
-  title,
-  features,
-  right,
-  className = "",
-}: {
-  title: string;
-  features: string[];
-  hash?: string;
-  right?: ReactNode;
-  className?: string;
-}) {
-  return (
-    <Box
-      className={[styles.plan, className].join(" ")}
-      gap={4}
-      p={8}
-      pt={7}
-      rad={5}
-      items="start"
-    >
-      <SectionTitle>{title}</SectionTitle>
-      <div className={right ? styles.planLeftRight : ""}>
-        <div className="grid gap-1">
-          {features.map((feature) => (
-            <Box
-              key={feature}
-              gap={2}
-              flow="column"
-              content="start"
-              items="center"
-            >
-              <CheckCircle size={24} weight="bold" color="var(--plus-color)" />
-              <span className="text-sm leading-normal opacity-80">
-                {feature}
-              </span>
-            </Box>
+      <div className={"" /* `pt-10 bg-neutral-100 pb-10` */}>
+        <div className="grid gap-8 grid-cols-2 max-w-[858px] mx-auto w-full">
+          {features().map((props) => (
+            <Feature key={props.title} {...props} />
           ))}
         </div>
-        {right}
+      </div>
+      <div className="py-10 bg-blue-100 my-10 bg-gradient-to-b from-blue-100 to-blue-50">
+        <div className="grid grid-flow-col justify-center gap-10 items-start">
+          {plans().map((props) => (
+            <Plan {...props} key={props.key} />
+          ))}
+        </div>
+      </div>
+      <PaymentStepper />
+      <div
+        className={`pt-16 pb-20 text-neutral-800 bg-blue-100 ${styles.footer}`}
+      >
+        <div className="max-w-[660px] mx-auto grid justify-items-center grid gap-4">
+          <img
+            src="/images/pricing/BlockChain.svg"
+            alt="Flowchart Fun"
+            width={120}
+          />
+          <p className="text-xl text-center font-bold leading-tight">
+            <Trans>
+              Streamline your workflow and simplify your process visualization
+              with Flowchart Fun. Subscribe now and take advantage of our
+              powerful Pro features!
+            </Trans>
+          </p>
+        </div>
       </div>
     </Box>
   );
 }
 
+function Plan({ title, features }: ReturnType<typeof plans>[0]) {
+  return (
+    <div className="grid gap-4 p-8 rounded-lg bg-white shadow-lg shadow-blue-200">
+      <h2 className="text-3xl font-bold text-neutral-800">{title}</h2>
+      <div className="grid gap-2">
+        {features.map((feature) => (
+          <div className="flex items-center gap-2 opacity-80" key={feature}>
+            <Check size={24} />
+            <span className="text-base font-medium">{feature}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function SubsectionDescription({ children }: { children: ReactNode }) {
-  return <p className="text-base leading-tight opacity-80">{children}</p>;
+  return (
+    <div className="grid items-start grid-cols-[16px_minmax(0,1fr)] gap-3 opacity-70">
+      <Asterisk className="w-[16px] mt-[4px]" />
+      <p className="text-sm leading-normal">{children}</p>
+    </div>
+  );
+}
+
+function Feature({
+  title,
+  points,
+  imgPath,
+}: ReturnType<typeof features>[number]) {
+  return (
+    <div className="px-7 py-10 rounded-lg grid justify-items-center gap-2 border">
+      <img
+        src={`images/pricing/${imgPath}.svg`}
+        alt={title}
+        className="w-[120px]"
+      />
+      <h2 className="text-xl font-bold text-neutral-800 leading-tight text-center mb-4">
+        {title}
+      </h2>
+      <div className="grid gap-3">
+        {points.map((point) => (
+          <SubsectionDescription key={point}>{point}</SubsectionDescription>
+        ))}
+      </div>
+    </div>
+  );
 }
