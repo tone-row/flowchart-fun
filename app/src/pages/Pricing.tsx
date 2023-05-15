@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 
 import { PaymentStepper } from "../components/PaymentStepper";
 import { Box } from "../slang";
+import { ReactComponent as BlockChain } from "./BlockChain.svg";
 import styles from "./Pricing.module.css";
 
 const features = (): {
@@ -45,27 +46,6 @@ const features = (): {
   },
 ];
 
-// const free = () => [
-//   t`Temporary Flowcharts`,
-//   t`Image Export`,
-//   `8 ${t`Auto-Layouts`}`,
-//   t`One-time Share Links`,
-// ];
-// const pro = () => [
-//   t`Everything in Free`,
-//   t`Persistent Flowcharts`,
-//   t`Remove Image Watermark`,
-//   t`Export High-Resolution Images`,
-//   t`Export to SVG`,
-//   t`Import from Lucidchart, Visio, and other CSV files`,
-//   `13 ${t`Auto-Layouts`}`,
-//   t`Permalinks`,
-//   t`Custom Sharing Options`,
-//   t`Create Flowcharts from a Prompt with AI`,
-//   t`One-on-One Support`,
-//   t`Office Hours`,
-// ];
-
 const plans = () => [
   {
     title: t`Free`,
@@ -100,7 +80,7 @@ const plans = () => [
 export default function Pricing() {
   return (
     <Box content="start stretch">
-      <div className="grid grid-cols-2 gap-8 max-w-[1000px] mx-auto items-center mt-8 mb-16">
+      <div className="grid grid-cols-2 gap-8 max-w-[1000px] mx-auto items-center mt-16 mb-20">
         <Box gap={6} className="left" items="start">
           <p className="text-4xl font-medium text-neutral-800 leading-tight">
             <Trans>
@@ -115,14 +95,14 @@ export default function Pricing() {
           </video>
         </div>
       </div>
-      <div className={"" /* `pt-10 bg-neutral-100 pb-10` */}>
-        <div className="grid gap-8 grid-cols-2 max-w-[858px] mx-auto w-full">
+      <div className="pb-10">
+        <div className="grid gap-8 grid-cols-2 max-w-[854px] mx-auto w-full">
           {features().map((props) => (
             <Feature key={props.title} {...props} />
           ))}
         </div>
       </div>
-      <div className="py-10 bg-blue-100 mt-10 bg-gradient-to-b from-blue-100 to-blue-50">
+      <div className="py-10 bg-blue-100 bg-gradient-to-b from-blue-100 to-blue-50">
         <div className="grid grid-flow-col justify-center gap-10 items-start">
           {plans().map((props) => (
             <Plan {...props} key={props.key} />
@@ -131,13 +111,13 @@ export default function Pricing() {
       </div>
       <PaymentStepper />
       <div
-        className={`pt-16 pb-20 text-neutral-800 bg-blue-50 ${styles.footer}`}
+        className={`pt-16 pb-20 text-neutral-800 ${styles.footer} bg-gradient-to-b from-blue-100 to-blue-50`}
       >
         <div className="max-w-[660px] mx-auto grid justify-items-center grid gap-4">
-          <img
-            src="/images/pricing/BlockChain.svg"
-            alt="Flowchart Fun"
-            width={120}
+          <BlockChain
+            className="text-neutral-900/90"
+            width={160}
+            height={160}
           />
           <p className="text-xl text-center font-bold leading-tight">
             <Trans>
@@ -155,11 +135,15 @@ export default function Pricing() {
 function Plan({ title, features }: ReturnType<typeof plans>[0]) {
   return (
     <div className="grid gap-4 p-8 rounded-lg bg-white shadow-lg shadow-blue-200">
-      <h2 className="text-3xl font-bold text-neutral-800">{title}</h2>
+      <h2 className="text-3xl font-bold text-neutral-800 mt-[-3px]">{title}</h2>
       <div className="grid gap-2">
         {features.map((feature) => (
           <div className="flex items-center gap-2 opacity-80" key={feature}>
-            <Check size={24} />
+            <Check
+              size={22}
+              className="text-green-600 translate-y-[1px]"
+              weight="bold"
+            />
             <span className="text-base font-medium">{feature}</span>
           </div>
         ))}
@@ -183,7 +167,7 @@ function Feature({
   imgPath,
 }: ReturnType<typeof features>[number]) {
   return (
-    <div className="px-7 py-10 rounded-lg grid justify-items-center gap-2 border">
+    <div className="px-7 py-10 rounded-lg grid justify-items-center gap-2 border border-neutral-400 bg-white">
       <img
         src={`images/pricing/${imgPath}.svg`}
         alt={title}

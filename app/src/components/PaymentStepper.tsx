@@ -60,7 +60,7 @@ export function PaymentStepper() {
     step = "three";
 
   return (
-    <div className="grid justify-center gap-4 pt-12 pb-16 border-t border-blue-100 shadow shadow-blue-800/10 z-10">
+    <div className="grid justify-center gap-4 pt-12 pb-16 shadow shadow-blue-800/5 z-10">
       {step === "one" && (
         <>
           <Title>
@@ -77,6 +77,7 @@ export function PaymentStepper() {
               className="mr-2 aria-[current=true]:text-blue-500"
               title={t`Monthly`}
               price={t`$3 per month`}
+              data-testid="monthly-plan-button"
             />
             <PlanButton
               aria-current={plan === "yearly" ? "true" : "false"}
@@ -84,6 +85,7 @@ export function PaymentStepper() {
               className="aria-[current=true]:text-blue-500"
               title={t`Yearly`}
               price={t`$30 per year`}
+              data-testid="yearly-plan-button"
               extra={
                 <span className="text-xs text-neutral-800 p-2 justify-self-center bg-yellow-300 rounded font-bold mt-2">
                   <Trans>Save 20% (2 months free!)</Trans>
@@ -125,6 +127,7 @@ export function PaymentStepper() {
             <input
               type="email"
               name="email"
+              data-testid="email-input"
               className="border border-neutral-400 font-mono rounded p-4 max-w-[360px] w-full justify-self-center focus:outline-none focus:border-blue-500"
               autoComplete="off"
               required
