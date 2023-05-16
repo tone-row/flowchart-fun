@@ -1,7 +1,9 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3 / महीना",
+    "$3 per month": "मासिक $3",
     "$30 / Year": "$30 / वर्ष",
+    "$30 per year": "वार्षिक $30",
     "(before a colon creates a label)": "(कॉलन से पहले एक लेबल बनाता है)",
     "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
       "<0>Flowchart Fun</0> <1>Tone Row</1> द्वारा बनाई गई एक खुला स्रोत परियोजना है ",
@@ -45,8 +47,8 @@
       "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं.",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।",
-    "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
-      "आप अपने चार्ट में  फुल एक्सेस , एडिट ओनली या केवल देखने की अनुमतियों के साथ साझा करना चुनकर यह नियंत्रित कर सकते हैं कि कौन आपके कार्य में परिवर्तन कर सकता है",
+    "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
+      "आपके लिए सही योजना चुनें और Flowchart Fun Pro के साथ अद्भुत फ्लोचार्ट बनाना शुरू करें",
     Circle: "परिधि",
     Classes: "वर्ग",
     Clay: "मिट्टी",
@@ -78,6 +80,8 @@
     "Create Flowcharts from a Prompt with AI":
       "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं",
     "Create a New Flowchart": "एक नया आरेख बनाएँ",
+    "Create professional-quality visual aids for presentations or training materials":
+      "प्रदर्शन या प्रशिक्षण सामग्री के लिए पेशेवर गुणवत्ता के दृष्टिकोण बनाएं",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "दो नोड्स के बीच एक एज बनाने के लिए दूसरा नोड पहले वाले के नीचे इंडेंट करना होता है",
     "Custom Sharing Options": "कस्टम शेयरिंग विकल्प",
@@ -105,6 +109,8 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "एक से अधिक नोड्स से एज ड्रा करने के लिए लाइन को एक संदर्भ के साथ शुरू करें",
     "Drop the file here ...": "फाइल यहाँ ड्रॉप करें ...",
+    "Easily import existing flowcharts from other software":
+      "अन्य सॉफ्टवेयर से मौजूदा फ्लोचार्ट आसानी से आयात करें",
     Edge: "किनारा",
     "Edge ID, Classes, Attributes": "किनारे आईडी, वर्ग, गुण",
     "Edge Label": "किनारे लेबल",
@@ -129,6 +135,8 @@
     Eggs: "अंडे",
     Email: "ईमेल",
     Empty: "खाली",
+    "Enter payment details": "भुगतान विवरण दर्ज करें",
+    "Enter your email": "अपना ईमेल दर्ज करें",
     "Equal To": "बराबर",
     "Everything in Free": "फ्री प्लान में सब कुछ",
     Excalidraw: "Excalidraw",
@@ -142,12 +150,17 @@
     "Follow Us on Twitter": "हमारे साथ ट्विटर पर फॉलो करें",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "एक बग पाया? एक सुविधा अनुरोध है? हम आपसे सुनने के लिए प्रसन्न होंगे!",
+    Free: "मुफ्त",
     Fullscreen: "फ़ुलस्क्रीन",
     Futuristic: "भविष्य का",
     "Get More Layouts": "ज़्यादा लेआउट पाएं",
     "Get More Themes": "ज़्यादा थीम पाएं",
+    "Get personalized attention and support from our expert team":
+      "हमारे विशेषज्ञ टीम से व्यक्तिगत ध्यान और समर्थन प्राप्त करें",
     Graph: "ग्राफ़",
     Grid: "ग्रिड",
+    "Have complex questions or issues? We're here to help.":
+      "जटिल सवाल या समस्याएं हैं? हम यहां आपकी मदद के लिए हैं।",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
       "ध्यान दें! इससे पहले कि आप अपना कैश क्लियर करें, याद रखें कि यह डॉक्यूमेंट क्लाउड में सेव नहीं किया गया है। ",
     Help: "मदद",
@@ -170,6 +183,8 @@
       "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "डेटा आयात एक प्रो फीचर है। आप केवल $ 3/महीने या $ 30/वर्ष के लिए फ्लोचार्ट फन प्रो में अपग्रेड कर सकते हैं।",
+    "Impress your audience with high-quality images produced by Flowchart Fun":
+      "फ्लोचार्ट फन द्वारा उत्पादित उच्च गुणवत्ता की छवियों से अपने दर्शकों को आकर्षित करें",
     "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
       "एक <0>title</0> विशेषता का उपयोग करके एक शीर्षक शामिल करें। Visio रंगीनी का उपयोग करने के लिए, निम्नलिखित में से किसी एक के बराबर एक <1>roleType</1> विशेषता जोड़ें:",
     "Indenting creates an edge": "इंडेंटिंग एक बढ़त बनाता है",
@@ -185,19 +200,25 @@
     "Learn Syntax": "सिंटैक्स सीखें",
     "Learn about Flowchart Fun Pro": "Flowchart Fun Pro के बारे में जानें",
     "Left to Right": "बाएं से दाएं",
+    "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.":
+      "चलो शुरू करें! अपना फ्लोचार्ट फन खाता बनाने और हमारे शक्तिशाली विशेषताओं का उपयोग शुरू करने के लिए नीचे अपना ईमेल पता दर्ज करें।",
     Light: "लाइट",
     "Light Mode": "लाइट मोड",
     Link: "लिंक",
+    Loading: "लोड हो रहा है",
     "Log In": "लॉग इन करें",
     "Log Out": "लॉग आउट",
+    "Log in to start creating flowcharts.":
+      "फ्लोचार्ट बनाने शुरू करने के लिए लॉग इन करें।",
     "Make a One-Time Donation": "एक बार दान करें",
     "Make publicly accessible": "सार्वजनिक रूप से एक्सेस दें",
-    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
-      "फ़्लोचार्ट फ़न प्रो के साथ अपने कार्यप्रवाह को आसान बनाएं– केवल $3/माह या $30/वर्ष के लिए अभी सदस्यता लें!",
+    "Make sure you use the same email you will use to log in.":
+      "उसी ईमेल का उपयोग करें जिसे आप लॉग इन करने के लिए उपयोग करेंगे।",
     "Map Data": "डेटा मैप",
     Medium: "मध्यम",
     Method: "विधि",
     Monospace: "Monospace",
+    Monthly: "मासिक",
     Museum: "म्यूज़ियम",
     Name: "नाम",
     New: "नया",
@@ -215,6 +236,8 @@
       "नोड्स को डैश्ड, डॉट्ड या डबल के साथ स्टाइल किया जा सकता है। बॉर्डर-नोन के साथ भी बॉर्डर हटाए जा सकते हैं।",
     "Not Empty": "खाली नहीं",
     "Office Hours": "कार्यालय अवधि",
+    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
+      "कुछ मिनट बाद तो देखने में नहीं आता है, वहां देखें या एक नया लिंक अनुरोध करें।",
     "One-on-One Support": "एक-पर-एक समर्थन",
     "One-time Share Links": "वन-टाइम शेयर लिंक",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -259,6 +282,12 @@
     "Right to Left": "दाएं से बाएं",
     Roadmap: "रोडमैप",
     Save: "सहेजें",
+    "Save 20% (2 months free!)": "20% बचत (2 महीने मुफ्त!)",
+    "Save time and automate certain tasks with this cutting-edge feature":
+      "इस उन्नत विशेषता के साथ समय बचाएं और कुछ कार्यों को स्वचालित करें",
+    "Save time and streamline your workflow by importing data from other sources":
+      "अन्य स्रोतों से डेटा आयात करके अपनी व्यवस्था को समय बचाएं और स्ट्रीमलाइन करें",
+    "Select your plan!": "अपना योजना चुनें!",
     "Send us Feedback": "हमें प्रतिक्रिया भेजें",
     Settings: "सेटिंग",
     Shape: "आकृति",
@@ -285,8 +314,8 @@
       "किसी नोड से संबंधित किसी भी डेटा स्टोर करें",
     "Stored in the cloud": "बादल में संग्रहित",
     "Stored on this computer": "इस कंप्यूटर पर संग्रहीत",
-    "Streamline your workflow and simplify your process visualization with Flowchart Fun":
-      "अपने वर्कफ्लो को स्ट्रीमलाइन करें और अपनी प्रक्रिया को आसान बनाएं फ्लोचार्ट फन के साथ विजुअलाइजेशन",
+    "Streamline your workflow and simplify your process visualization with Flowchart Fun. Subscribe now and take advantage of our powerful Pro features!":
+      "फ्लोचार्ट फन के साथ अपनी व्यवस्था को स्ट्रीमलाइन करें और प्रक्रिया विजुअलाइजेशन को सरल बनाएं। अब सदस्यता लें और हमारे शक्तिशाली प्रो विशेषताओं का लाभ उठाएं!",
     Style: "शैली",
     "Style Classes": "शैली क्लासेज",
     Submit: "भेजना",
@@ -329,7 +358,11 @@
     Unfreeze: "अनफ़्रीज़",
     "Unique text value to identify a node":
       "एक नोड को पहचानने के लिए अद्वितीय पाठ मूल्य",
+    "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
+      "अपनी क्रेयता को उतारें और फ्लोचार्ट फन प्रो के साथ अपनी व्यवस्था को स्ट्रीमलाइन करें – सिर्फ $ 3 / महीने से शुरू होते हुए!",
     "Update Email": "ईमेल अपडेट करें",
+    "Use AI to create flowcharts from data sets or algorithms":
+      "डेटा सेट्स या एल्गोरिदम्स से फ्लोचार्ट बनाने के लिए एआई का उपयोग करें",
     "Use classes to group nodes":
       "नोड्स को समूहों में सम्मिलित करने के लिए वर्ग उपयोग करें",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
@@ -348,10 +381,12 @@
     "View on Github": "Github पर देखें",
     "We use cookies to keep you logged in.":
       "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं.",
+    "We use magic links to log you in. Enter your email below to get started.":
+      "हम आपको लॉग इन करने के लिए जादू लिंक का उपयोग करते हैं। नीचे अपना ईमेल दर्ज करें और शुरू करें।",
+    "Welcome to Flowchart Fun Pro!": "फ्लोचार्ट फन प्रो के लिए स्वागत है!",
     "Width and Height": "चौड़ाई और ऊँचाई",
-    "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
-      "असीमित होस्टेड चार्ट बनाने की क्षमता के साथ, आप किसी भी डिवाइस पर कहीं से भी फ़्लोचार्ट तक पहुंच सकते हैं और उस पर काम कर सकते हैं।",
     "Would you like to continue?": "क्या आप जारी रखना चाहते हैं?",
+    Yearly: "वार्षिक",
     "You already have a flowchart with this name.":
       "आपके पास इस नाम का आरेख पहले से है।",
     "You are about to add {numNodes} nodes and {numEdges} edges to your graph.":
@@ -366,6 +401,8 @@
       'किनारे बनाने के लिए आप टेक्स्ट को "\\( \\)" में भी रैप कर सकते हैं',
     "You must log in to create a standard flowchart.":
       "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।",
+    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
+      "आप केवल एक और कदम दूर हैं! फ्लोचार्ट फन प्रो की पूरी क्षमता अनलॉक करने के लिए केवल एक और कदम बाकी है। नीचे अपने भुगतान विवरण दर्ज करें और आज से अद्भुत फ्लोचार्ट बनाने के लिए अपने सदस्यता पूरा करें।",
     "Your Charts": "आपके चार्ट",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें.",

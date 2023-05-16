@@ -1,7 +1,9 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3/월",
+    "$3 per month": "월 3 달러",
     "$30 / Year": "$30/년",
+    "$30 per year": "연 30 달러",
     "(before a colon creates a label)": "(레이블을 생성합니다)",
     "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
       "<0>Flowchart Fun</0>은 <1>Tone Row</1>가 만든 오픈 소스 프로젝트입니다.",
@@ -45,8 +47,8 @@
       "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다.",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "에지의 소스와 목적지를 위한 다양한 화살표 모양을 선택합니다. 모양에는 삼각형, 삼각형-티, 원-삼각형, 삼각형-가위형, 삼각형-뒤곡선, 베이, 티, 사각형, 원, 다이아몬드, 쉐브론, 없음이 포함됩니다.",
-    "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
-      "표를 전체 권한, 편집만 가능, 보기만 가능 권한 중 어떤 것으로 공유할 지 선택하여 작업물을 변경할 수 있는지 관리하세요.",
+    "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
+      "당신에게 맞는 계획을 선택하고 Flowchart Fun Pro을 사용하여 놀라운 플로우차트를 만들어보세요.",
     Circle: "원",
     Classes: "클래스",
     Clay: "점토",
@@ -78,6 +80,8 @@
     "Create Flowcharts from a Prompt with AI":
       "AI 프롬프트를 사용하여 다이어그램 생성",
     "Create a New Flowchart": "새 다이어그램 만들기",
+    "Create professional-quality visual aids for presentations or training materials":
+      "프레젠테이션 또는 교육 자료를 위한 전문 품질의 시각적 지원 작성",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "두 노드 사이에 엣지를 만드는 것은 첫 번째 노드 아래에 두 번째 노드를 들여 쓰는 것으로 합니다.",
     "Custom Sharing Options": "커스텀 공유 옵션",
@@ -102,6 +106,8 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "참조를 시작하여 여러 노드로부터 엣지를 그립니다.",
     "Drop the file here ...": "파일을 여기에 드롭하세요 ...",
+    "Easily import existing flowcharts from other software":
+      "다른 소프트웨어에서 기존 플로우 차트를 쉽게 가져오기",
     Edge: "가장자리",
     "Edge ID, Classes, Attributes": "가장자리 ID, 클래스, 속성",
     "Edge Label": "가장자리 라벨",
@@ -125,6 +131,8 @@
     Eggs: "달걀",
     Email: "이메일",
     Empty: "비어 있음",
+    "Enter payment details": "결제 세부 정보 입력",
+    "Enter your email": "이메일을 입력하세요",
     "Equal To": "같음",
     "Everything in Free": "무료 플랜의 모든 것",
     Excalidraw: "Excalidraw",
@@ -138,12 +146,17 @@
     "Follow Us on Twitter": "트위터에서 우리를 팔로우하기",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "버그를 발견했습니까? 기능 요청이 있습니까? 우리는 당신과의 소통을 사랑합니다!",
+    Free: "무료",
     Fullscreen: "전체 화면",
     Futuristic: "미래 지향적",
     "Get More Layouts": "더 많은 레이아웃을 보고 싶어요",
     "Get More Themes": "더 많은 테마 받기",
+    "Get personalized attention and support from our expert team":
+      "고급 지식과 지원을 받으세요",
     Graph: "그래프",
     Grid: "그리드",
+    "Have complex questions or issues? We're here to help.":
+      "복잡한 문제가 있나요? 여기에서 도와드리겠습니다.",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
       "주의! 캐시를 지우기 전에 이 문서는 클라우드에 저장 되어있지 않다는 것을 기억하시기 바랍니다. ",
     Help: "도움말",
@@ -166,6 +179,8 @@
       "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다.",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "데이터 가져오기는 프로 기능입니다. Flowchart Fun Pro을 월 3 달러 또는 연 30 달러로 업그레이드 할 수 있습니다.",
+    "Impress your audience with high-quality images produced by Flowchart Fun":
+      "Flowchart Fun으로 만든 고품질 이미지로 관객을 감탄시켜보세요",
     "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
       "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Visio 색상을 사용하려면 다음 중 하나와 같은 <1>roleType</1> 속성을 추가하십시오:",
     "Indenting creates an edge": "들여 쓰기는 가장자리를 만듭니다",
@@ -181,19 +196,25 @@
     "Learn Syntax": "구문 배우기",
     "Learn about Flowchart Fun Pro": "Flowchart Fun Pro에 대해 알아보기",
     "Left to Right": "왼쪽에서 오른쪽으로",
+    "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.":
+      "시작해볼까요? 아래 이메일 주소를 입력하여 Flowchart Fun 계정을 만들고 강력한 기능을 사용해보세요.",
     Light: "라이트",
     "Light Mode": "라이트 모드",
     Link: "링크",
+    Loading: "로딩",
     "Log In": "로그인",
     "Log Out": "로그아웃",
+    "Log in to start creating flowcharts.":
+      "플로우 차트를 만들기 위해 로그인하세요.",
     "Make a One-Time Donation": "한 번 선물하기",
     "Make publicly accessible": "공개적으로 액세스 가능하게 만들기",
-    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
-      "Flowchart Fun Pro로 작업 흐름을 더 쉽게 만드세요. 지금 구독을 월 $3 또는 연간 $30에 불과합니다!",
+    "Make sure you use the same email you will use to log in.":
+      "로그인할 때 사용할 같은 이메일을 사용하세요.",
     "Map Data": "데이터 지도",
     Medium: "중간",
     Method: "방법",
     Monospace: "Monospace",
+    Monthly: "월간",
     Museum: "박물관",
     Name: "이름",
     New: "신규",
@@ -211,6 +232,8 @@
       "노드는 점선, 점점선 또는 이중선으로 스타일링할 수 있으며, border-none으로 테두리를 제거할 수 있습니다.",
     "Not Empty": "비어 있지 않음",
     "Office Hours": "근무 시간",
+    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
+      "몇 분 후에도 보이지 않으면 여기를 확인하거나 새 링크를 요청하세요.",
     "One-on-One Support": "일대일 지원",
     "One-time Share Links": "일회성 공유 링크",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -253,6 +276,12 @@
     "Right to Left": "오른쪽에서 왼쪽으로",
     Roadmap: "로드맵",
     Save: "구하다",
+    "Save 20% (2 months free!)": "20% 할인 (2개월 무료!)",
+    "Save time and automate certain tasks with this cutting-edge feature":
+      "이 최신 기능으로 시간을 절약하고 일부 작업을 자동화하세요.",
+    "Save time and streamline your workflow by importing data from other sources":
+      "다른 소스에서 데이터를 가져와 작업흐름을 최적화하여 시간을 절약하세요.",
+    "Select your plan!": "귀하의 계획을 선택하세요!",
     "Send us Feedback": "우리에게 피드백 보내기",
     Settings: "설정",
     Shape: "모양 ",
@@ -278,8 +307,8 @@
     "Store any data associated to a node": "노드에 관련된 모든 데이터 저장하기",
     "Stored in the cloud": "클라우드에 저장",
     "Stored on this computer": "이 컴퓨터에 저장됨",
-    "Streamline your workflow and simplify your process visualization with Flowchart Fun":
-      "Flowchart Fun를 통해 워크플로우를 능률화하고 프로세스 시각화를 단순화하세요",
+    "Streamline your workflow and simplify your process visualization with Flowchart Fun. Subscribe now and take advantage of our powerful Pro features!":
+      "Flowchart Fun을 사용하여 작업흐름을 최적화하고 프로 기능을 이용하여 프로세스 시각화를 단순화하세요. 지금 구독하고 우리의 강력한 프로 기능을 이용하세요!",
     Style: "스타일",
     "Style Classes": "스타일 클래스",
     Submit: "보내다",
@@ -321,7 +350,11 @@
     Unfreeze: "녹이다",
     "Unique text value to identify a node":
       "노드를 식별하기 위한 고유한 텍스트 값",
+    "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
+      "Flowchart Fun Pro를 사용하여 창의력을 발휘하고 작업흐름을 최적화하세요. $3/월부터 시작합니다!",
     "Update Email": "이메일 업데이트",
+    "Use AI to create flowcharts from data sets or algorithms":
+      "데이터 집합 또는 알고리즘에서 플로우차트를 만들기 위해 AI를 사용하세요.",
     "Use classes to group nodes":
       "노드를 그룹화하기 위해 클래스를 사용하십시오.",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
@@ -340,10 +373,13 @@
     "View on Github": "Github에서 보기",
     "We use cookies to keep you logged in.":
       "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다.",
+    "We use magic links to log you in. Enter your email below to get started.":
+      "우리는 마법 링크를 사용하여 로그인합니다. 아래에 이메일을 입력하여 시작하십시오.",
+    "Welcome to Flowchart Fun Pro!":
+      "Flowchart Fun Pro에 오신 것을 환영합니다!",
     "Width and Height": "너비와 높이",
-    "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
-      "호스팅된 차트를 무제한으로 생성할 수 있는 기능을 통해, 장소와 디바이스에 무관하게 플로우차트에 접근하고 작업할 수 있습니다.",
     "Would you like to continue?": "계속하시겠습니까?",
+    Yearly: "연간",
     "You already have a flowchart with this name.":
       "이 이름을 가진 다이어그램이 이미 있습니다.",
     "You are about to add {numNodes} nodes and {numEdges} edges to your graph.":
@@ -358,6 +394,8 @@
       '텍스트를 "\\( \\)"로 감싸서 가장자리를 만들 수도 있습니다.',
     "You must log in to create a standard flowchart.":
       "표준 다이어그램을 만들려면 로그인해야 합니다.",
+    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
+      "거의 다 됐습니다! Flowchart Fun Pro의 전력을 해제하려면 한 단계 더 남았습니다. 아래에 결제 정보를 입력하여 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들어 보십시오.",
     "Your Charts": "당신의 차트",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오.",

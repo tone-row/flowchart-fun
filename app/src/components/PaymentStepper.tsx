@@ -67,8 +67,7 @@ export function PaymentStepper() {
             <Trans>Select your plan!</Trans>
           </Title>
           <Description>
-            {t`Choose the plan that's right for you and start creating amazing
-              flowcharts with Flowchart Fun Pro`}
+            {t`Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro`}
           </Description>
           <div className="grid items-center content-center justify-center gap-4 mt-6 md:grid-flow-col md:items-stretch">
             <PlanButton
