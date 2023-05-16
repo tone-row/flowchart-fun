@@ -82,7 +82,10 @@ export default function Pricing() {
     <Box content="start stretch">
       <div className="grid grid-cols-2 gap-8 max-w-[1000px] mx-auto items-center mt-16 mb-20">
         <Box gap={6} className="left" items="start">
-          <p className="text-4xl font-medium text-neutral-800 leading-tight">
+          <p
+            className="text-4xl font-medium text-neutral-800 leading-tight"
+            data-testid={`pricing-page-title`}
+          >
             <Trans>
               Unleash your creativity and streamline your workflow with
               Flowchart Fun Pro – starting at just $3/month!

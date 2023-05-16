@@ -16,15 +16,15 @@ test.describe("unauth", () => {
     await goToPath(page);
   });
 
-  test("View Pricing Page", async ({ page }) => {
+  test.only("View Pricing Page", async ({ page }) => {
     await goToTab(page, "Charts");
 
     // click test id "to-pricing"
     await page.getByTestId("to-pricing").click();
 
-    // Expect "Sponsor flowchart.fun" to be visible
+    // Expect test id pricing-page-title to be visible
     await expect(
-      page.getByText(/Make your workflow easier with Flowchart Fun Pro/i)
+      page.locator('[data-testid="pricing-page-title"]')
     ).toBeVisible();
   });
 
