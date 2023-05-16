@@ -23,7 +23,7 @@ export function WelcomeMessage() {
         <Success className="w-36 h-36" />
         <h1 className="text text-center text-lg font-bold">{t`Welcome to Flowchart Fun Pro!`}</h1>
         <p className="text-base leading-tight">
-          Log in to start creating flowcharts.
+          {t`Log in to start creating flowcharts.`}
         </p>
       </div>
       {windowSize && (

@@ -98,7 +98,7 @@ export function PaymentStepper() {
             disabled={plan === null}
             className="mt-2 justify-self-center"
           >
-            Continue
+            <Trans>Continue</Trans>
             <ArrowRight size={16} />
           </BlueButton>
         </>
@@ -158,7 +158,7 @@ export function PaymentStepper() {
       )}
       {step === "three" && (
         <div className="grid gap-4">
-          <Title>Enter payment details</Title>
+          <Title>{t`Enter payment details`}</Title>
           <Description className="mb-4">
             {t`You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.`}
           </Description>
