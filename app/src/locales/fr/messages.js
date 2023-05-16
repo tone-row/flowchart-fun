@@ -1,7 +1,9 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "3 $ / mois",
+    "$3 per month": "3 $ par mois",
     "$30 / Year": "30 $ / an",
+    "$30 per year": "30 $ par an",
     "(before a colon creates a label)":
       "(avant que deux-points ne créent une étiquette)",
     "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
@@ -46,8 +48,8 @@
       "Consultez votre messagerie électronique pour le lien de connexion. Vous pouvez fermer cette fenêtre.",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "Choisissez parmi une variété de formes de flèches pour la source et la cible d'un bord. Les formes incluent triangle, triangle-tee, cercle-triangle, triangle-croix, triangle-backcurve, vee, tee, carré, cercle, diamant, chevron, aucun.",
-    "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
-      "Optez pour le partage de vos graphiques avec des autorisations d'accès complet, de modification uniquement ou de visualisation uniquement. Vous pourrez ainsi contrôler qui peut apporter des modifications à votre travail.",
+    "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
+      "Choisissez le plan qui vous convient le mieux et commencez à créer des diagrammes incroyables avec Flowchart Fun Pro",
     Circle: "Cercle",
     Classes: "Classes",
     Clay: "Argile",
@@ -79,6 +81,8 @@
     "Create Flowcharts from a Prompt with AI":
       "Créer des diagrammes à partir d'une invite avec l'IA",
     "Create a New Flowchart": "Créer un nouveau diagramme",
+    "Create professional-quality visual aids for presentations or training materials":
+      "Créez des aides visuelles de qualité professionnelle pour des présentations ou des matériels de formation",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Créer une arête entre deux nœuds est fait en indentant le second nœud sous le premier",
     "Custom Sharing Options": "Options de partage personnalisées",
@@ -106,6 +110,8 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Dessinez une arête à partir de plusieurs nœuds en commençant la ligne par une référence",
     "Drop the file here ...": "Déposez le fichier ici ...",
+    "Easily import existing flowcharts from other software":
+      "Importez facilement des diagrammes existants à partir d'autres logiciels",
     Edge: "Bord",
     "Edge ID, Classes, Attributes": "ID Edge, Classes, Attributs",
     "Edge Label": "Étiquette Edge",
@@ -130,6 +136,8 @@
     Eggs: "Oeufs",
     Email: "E-mail",
     Empty: "Vide",
+    "Enter payment details": "Entrez les détails de paiement",
+    "Enter your email": "Entrez votre adresse e-mail ",
     "Equal To": "Égal à",
     "Everything in Free": "Tout dans le plan gratuit",
     Excalidraw: "Excalidraw",
@@ -143,12 +151,17 @@
     "Follow Us on Twitter": "Suivez-nous sur Twitter",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "Vous avez trouvé un bug ? Vous souhaitez faire une demande de fonctionnalité ? Nous aimerions beaucoup vous entendre !",
+    Free: "Gratuit ",
     Fullscreen: "Plein écran",
     Futuristic: "Futuriste",
     "Get More Layouts": "Obtenez plus de mises en page",
     "Get More Themes": "Obtenez plus de thèmes",
+    "Get personalized attention and support from our expert team":
+      "Obtenez une attention et un soutien personnalisés de notre équipe d'experts ",
     Graph: "Graphique",
     Grid: "Quadrillage",
+    "Have complex questions or issues? We're here to help.":
+      "Des questions ou des problèmes complexes ? Nous sommes là pour vous aider. ",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
       "Attention ! Avant de vider votre cache, n'oubliez pas que ce document n'est pas enregistré dans le cloud.",
     Help: "Aide",
@@ -172,6 +185,8 @@
       "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces fichiers CSV.",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "L'importation de données est une fonctionnalité professionnelle. Vous pouvez passer à Flowchart Fun Pro pour seulement 3 $/mois ou 30 $/an.",
+    "Impress your audience with high-quality images produced by Flowchart Fun":
+      "Impressionnez votre public avec des images de haute qualité produites par Flowchart Fun ",
     "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
       "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la coloration Visio, ajoutez un attribut <1>roleType</1> égal à l'un des éléments suivants:",
     "Indenting creates an edge": "L'indentation crée un bord",
@@ -187,19 +202,25 @@
     "Learn Syntax": "Apprendre la syntaxe",
     "Learn about Flowchart Fun Pro": "En savoir plus sur Flowchart Fun Pro",
     "Left to Right": "De gauche à droite",
+    "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.":
+      "Commençons ! Entrez votre adresse e-mail ci-dessous pour créer votre compte Flowchart Fun et commencez à utiliser nos fonctionnalités puissantes.",
     Light: "Lumineux",
     "Light Mode": "Mode lumineux",
     Link: "Lien",
+    Loading: "Chargement",
     "Log In": "Connexion",
     "Log Out": "Déconnexion",
+    "Log in to start creating flowcharts.":
+      "Connectez-vous pour commencer à créer des diagrammes.",
     "Make a One-Time Donation": "Faites un don unique",
     "Make publicly accessible": "Rendre accessible au public",
-    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
-      "Facilitez votre flux de travail avec Flowchart Fun Pro - abonnez-vous maintenant pour seulement 3 $/mois ou 30 $/an !",
+    "Make sure you use the same email you will use to log in.":
+      "Assurez-vous d'utiliser le même e-mail que vous utiliserez pour vous connecter.",
     "Map Data": "Cartographier les données",
     Medium: "Moyen",
     Method: "Méthode",
     Monospace: "Monospace",
+    Monthly: "Mensuel",
     Museum: "Musée",
     Name: "Nom",
     New: "Nouveau",
@@ -217,6 +238,8 @@
       "Les nœuds peuvent être stylisés avec des traits, des points ou des doubles. Les bordures peuvent également être supprimées avec border-none.",
     "Not Empty": "Pas vide",
     "Office Hours": "Heures de travail",
+    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
+      "Si vous ne le voyez pas après quelques minutes, vérifiez là ou demandez un nouveau lien.",
     "One-on-One Support": "Assistance individuelle",
     "One-time Share Links": "Liens de partage à usage unique",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -262,6 +285,12 @@
     "Right to Left": "De droite à gauche",
     Roadmap: "Roadmap",
     Save: "Sauver",
+    "Save 20% (2 months free!)": "Économisez 20% (2 mois gratuits!)",
+    "Save time and automate certain tasks with this cutting-edge feature":
+      "Économisez du temps et automatisez certaines tâches avec cette fonctionnalité de pointe",
+    "Save time and streamline your workflow by importing data from other sources":
+      "Économisez du temps et simplifiez votre flux de travail en important des données à partir d'autres sources",
+    "Select your plan!": "Sélectionnez votre plan !",
     "Send us Feedback": "Envoyez-nous vos commentaires",
     Settings: "Paramètres",
     Shape: "Forme",
@@ -288,8 +317,8 @@
       "Stocker toutes les données associées à un nœud",
     "Stored in the cloud": "Stocké dans le cloud",
     "Stored on this computer": "Stocké sur cet ordinateur",
-    "Streamline your workflow and simplify your process visualization with Flowchart Fun":
-      "Rationalisez votre flux de travail et simplifiez la visualisation de vos processus grâce à Flowchart Fun",
+    "Streamline your workflow and simplify your process visualization with Flowchart Fun. Subscribe now and take advantage of our powerful Pro features!":
+      "Simplifiez votre flux de travail et simplifiez votre visualisation de processus avec Flowchart Fun. Abonnez-vous maintenant et profitez de nos puissantes fonctionnalités Pro !",
     Style: "Style",
     "Style Classes": "Classes de style",
     Submit: "Soumettre",
@@ -332,7 +361,11 @@
     Unfreeze: "Débloquer",
     "Unique text value to identify a node":
       "Valeur de texte unique pour identifier un nœud",
+    "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
+      "Libérez votre créativité et simplifiez votre flux de travail avec Flowchart Fun Pro - à partir de seulement 3 $ / mois !",
     "Update Email": "Mettre à jour l'e-mail",
+    "Use AI to create flowcharts from data sets or algorithms":
+      "Utilisez l'IA pour créer des diagrammes à partir de jeux de données ou d'algorithmes",
     "Use classes to group nodes":
       "Utilisez des classes pour regrouper les nœuds",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
@@ -351,10 +384,12 @@
     "View on Github": "Voir sur Github",
     "We use cookies to keep you logged in.":
       "Nous utilisons des cookies afin de maintenir votre connexion.",
+    "We use magic links to log you in. Enter your email below to get started.":
+      "Nous utilisons des liens magiques pour vous connecter. Entrez votre email ci-dessous pour commencer.",
+    "Welcome to Flowchart Fun Pro!": "Bienvenue à Flowchart Fun Pro !",
     "Width and Height": "Largeur et hauteur",
-    "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
-      "Grâce à la possibilité de créer un nombre illimité de graphiques hébergés, vous pouvez accéder à vos organigrammes et y travailler depuis n'importe quel appareil, où que vous soyez.",
     "Would you like to continue?": "Voulez-vous continuer ?",
+    Yearly: "Annuellement",
     "You already have a flowchart with this name.":
       "Vous avez déjà un diagramme avec ce nom.",
     "You are about to add {numNodes} nodes and {numEdges} edges to your graph.":
@@ -369,6 +404,8 @@
       'Vous pouvez également envelopper le texte dans "\\( \\)" pour créer un bord',
     "You must log in to create a standard flowchart.":
       "Vous devez vous connecter pour créer un diagramme standard.",
+    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
+      "Vous y êtes presque ! Une dernière étape pour débloquer le plein potentiel de Flowchart Fun Pro. Entrez vos détails de paiement ci-dessous pour finaliser votre abonnement et commencer à créer des diagrammes de flux incroyables dès aujourd'hui.",
     "Your Charts": "Vos diagrammes",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor.",
