@@ -19,11 +19,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const plan = req.body.plan as "monthly" | "yearly";
   const email = req.body.email;
 
-  console.log({
-    plan,
-    email,
-  });
-
   try {
     // Get or create customer
     const { data } = await stripe.customers.list({ email });
@@ -33,8 +28,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     } else {
       customer = await stripe.customers.create({ email });
     }
-
-    console.log(customer);
 
     // Check for existing subscription
     const { data: subscriptions } = await stripe.subscriptions.list({

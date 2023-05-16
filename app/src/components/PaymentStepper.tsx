@@ -1,3 +1,4 @@
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { t, Trans } from "@lingui/macro";
 import { useStripe } from "@stripe/react-stripe-js";
 import {
@@ -40,6 +41,7 @@ export function PaymentStepper() {
       },
     }
   );
+  const [parent] = useAutoAnimate();
 
   /**
    * watch the session email and if the user is logged in auto-fill this step!
@@ -60,7 +62,10 @@ export function PaymentStepper() {
     step = "three";
 
   return (
-    <div className="grid justify-center px-4 gap-4 pt-12 pb-16 shadow shadow-blue-800/5 z-10">
+    <div
+      className="grid justify-center px-4 gap-4 pt-12 pb-16 shadow shadow-blue-800/5 z-10"
+      ref={parent}
+    >
       {step === "one" && (
         <>
           <Title>
