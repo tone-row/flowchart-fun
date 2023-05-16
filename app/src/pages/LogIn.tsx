@@ -61,7 +61,7 @@ export default function Login() {
       <div className="w-[370px] grid gap-2 content-start pt-4">
         <PageTitle>Log In</PageTitle>
         <form className="gap-2 grid" onSubmit={handleSubmit(onSubmit)}>
-          <p className="text text-lg text-neutral-700 leading-tight">
+          <p className="text text-lg text-neutral-700 leading-tight dark:text-neutral-400">
             <Trans>
               We use magic links to log you in. Enter your email below to get
               started.

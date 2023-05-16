@@ -8,7 +8,7 @@ import { ArrowRight, RocketLaunch, WarningCircle } from "phosphor-react";
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "react-query";
 
-import { useSession } from "../lib/hooks";
+import { useLightOrDarkMode, useSession } from "../lib/hooks";
 import { BlueButton } from "../ui/BlueButton";
 import Spinner from "./Spinner";
 import { Warning } from "./Warning";
@@ -87,7 +87,7 @@ export function PaymentStepper() {
               price={t`$30 per year`}
               data-testid="yearly-plan-button"
               extra={
-                <span className="text-xs text-neutral-800 p-2 justify-self-center bg-yellow-300 rounded font-bold mt-2">
+                <span className="text-xs text-neutral-800 p-2 justify-self-center bg-yellow-300 rounded font-bold mt-2 dark:bg-green-800/50 dark:text-neutral-50">
                   <Trans>Save 20% (2 months free!)</Trans>
                 </span>
               }
@@ -128,7 +128,7 @@ export function PaymentStepper() {
               type="email"
               name="email"
               data-testid="email-input"
-              className="border border-neutral-400 font-mono rounded p-4 max-w-[360px] w-full justify-self-center focus:outline-none focus:border-blue-500"
+              className="border border-neutral-400 font-mono rounded p-4 max-w-[360px] w-full justify-self-center focus:outline-none focus:border-blue-500 dark:border-neutral-700 dark:focus:border-blue-500 dark:bg-neutral-800/50 dark:text-neutral-50"
               autoComplete="off"
               required
             />
@@ -184,7 +184,7 @@ function PlanButton({
   return (
     <button
       {...props}
-      className="border w-[260px] border-solid p-4 py-12 grid gap-2 rounded-lg content-start border-b-4 border-neutral-700 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-600 text-neutral-800 aria-[current=true]:text-blue-600 hover:shadow-lg hover:shadow-blue-200  aria-[current=true]:hover:shadow-none"
+      className="border w-[260px] border-solid p-4 py-12 grid gap-2 rounded-lg content-start border-b-4 border-neutral-700 dark:border-neutral-400 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-600 aria-[current=true]:dark:border-blue-600 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-blue-600 hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-neutral-800/50 aria-[current=true]:hover:shadow-none"
     >
       <h2 className={`text-xl font-bold`}>{title}</h2>
       <span className="text-xl">{price}</span>
@@ -198,25 +198,21 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
   const elements = useRef<StripeElements | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<null | string>(null);
+  const mode = useLightOrDarkMode();
 
   useEffect(() => {
     if (!stripe) return;
     const options: StripeElementsOptionsClientSecret = {
       clientSecret,
-      // Fully customizable with appearance API.
       appearance: {
-        rules: {
-          "#submit": {
-            fontWeight: "bold",
-          },
-        },
+        theme: mode === "dark" ? "night" : undefined,
       },
     };
 
     elements.current = stripe.elements(options);
     const paymentElement = elements.current.create("payment");
     paymentElement?.mount("#payment-element");
-  }, [clientSecret, stripe]);
+  }, [clientSecret, mode, stripe]);
 
   async function signup() {
     if (!stripe || !elements.current) return;
@@ -305,7 +301,7 @@ async function getSubscriptionDetails(
 
 function Title({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-center text-3xl font-bold text-neutral-800">
+    <h2 className="text-center text-3xl font-bold text-neutral-800 dark:text-neutral-200">
       {children}
     </h2>
   );
@@ -320,7 +316,7 @@ function Description({
 }) {
   return (
     <p
-      className={`text-center text-neutral-600 max-w-[520px] leading-normal ${className}`}
+      className={`text-center text-neutral-600 dark:text-neutral-400 max-w-[520px] leading-normal ${className}`}
     >
       {children}
     </p>

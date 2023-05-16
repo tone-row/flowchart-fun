@@ -17,7 +17,7 @@ export function WelcomeMessage() {
   return (
     <>
       <div
-        className="p-8 bg-purple-50 rounded-xl flex flex-col gap-3 items-center text-purple-700 shadow shadow-neutral-800/10 border-2 border-dashed border-purple-400 mx-4"
+        className="p-8 bg-purple-50 rounded-xl flex flex-col gap-3 items-center text-purple-700 shadow shadow-neutral-800/10 border-2 border-dashed border-purple-400 mx-4 dark:bg-transparent dark:border-purple-600"
         data-testid="welcome-message"
       >
         <Success className="w-36 h-36" />

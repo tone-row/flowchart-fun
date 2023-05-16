@@ -83,7 +83,7 @@ export default function Pricing() {
       <div className="grid md:grid-cols-2 gap-8 max-w-[1000px] mx-auto items-center mt-16 mb-6 md:mb-20 px-4">
         <Box gap={6} className="left" items="start">
           <p
-            className="text-3xl md:text-4xl font-medium text-neutral-800 leading-tight"
+            className="text-3xl md:text-4xl font-medium text-neutral-800 leading-tight dark:text-neutral-100"
             data-testid={`pricing-page-title`}
           >
             <Trans>
@@ -93,9 +93,9 @@ export default function Pricing() {
           </p>
         </Box>
         <div
-          className={`${styles.video} shadow-md border border-neutral-300 rounded-lg`}
+          className={`${styles.video} shadow-md border border-neutral-300 rounded-lg dark:border-neutral-700`}
         >
-          <video autoPlay loop muted playsInline>
+          <video autoPlay loop muted playsInline className="dark:invert">
             <source src="/demo.mp4" type="video/mp4" />
           </video>
         </div>
@@ -107,7 +107,7 @@ export default function Pricing() {
           ))}
         </div>
       </div>
-      <div className="py-6 md:py-10 bg-blue-100 bg-gradient-to-b from-blue-100 to-blue-50 px-4">
+      <div className="py-6 md:py-10 bg-gradient-to-b from-blue-100 to-blue-50 px-4 dark:from-blue-600/40 dark:to-blue-600/30">
         <div className="grid md:grid-flow-col justify-center gap-6 md:gap-10 items-start">
           {plans().map((props) => (
             <Plan {...props} key={props.key} />
@@ -116,11 +116,11 @@ export default function Pricing() {
       </div>
       <PaymentStepper />
       <div
-        className={`pt-16 pb-20 px-4 text-neutral-800 ${styles.footer} bg-gradient-to-b from-blue-100 to-blue-50`}
+        className={`pt-16 pb-20 px-4 text-neutral-800 ${styles.footer} bg-gradient-to-b from-blue-100 to-blue-50 dark:from-blue-600/40 dark:to-blue-600/30 dark:text-neutral-50`}
       >
         <div className="max-w-[660px] mx-auto grid justify-items-center grid gap-4">
           <BlockChain
-            className="text-neutral-900/90"
+            className="text-neutral-900/90 dark:text-neutral-100/90"
             width={160}
             height={160}
           />
@@ -139,8 +139,8 @@ export default function Pricing() {
 
 function Plan({ title, features }: ReturnType<typeof plans>[0]) {
   return (
-    <div className="grid gap-4 p-8 rounded-lg bg-white shadow-lg shadow-blue-200">
-      <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 mt-[-3px]">
+    <div className="grid gap-4 p-8 rounded-lg bg-white shadow-lg shadow-blue-200 text-foreground dark:bg-[#0f0f0f] dark:shadow-none">
+      <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 mt-[-3px] dark:text-neutral-100">
         {title}
       </h2>
       <div className="grid gap-2">
@@ -151,7 +151,9 @@ function Plan({ title, features }: ReturnType<typeof plans>[0]) {
               className="text-green-600 translate-y-[1px]"
               weight="bold"
             />
-            <span className="text-base font-medium">{feature}</span>
+            <span className="text-base font-medium dark:text-neutral-100">
+              {feature}
+            </span>
           </div>
         ))}
       </div>
@@ -174,13 +176,15 @@ function Feature({
   imgPath,
 }: ReturnType<typeof features>[number]) {
   return (
-    <div className="px-7 py-4 md:py-10 rounded-lg grid justify-items-center gap-2 md:border border-neutral-400 bg-white">
-      <img
-        src={`images/pricing/${imgPath}.svg`}
-        alt={title}
-        className="w-[120px]"
-      />
-      <h2 className="text-xl font-bold text-neutral-800 leading-tight text-center mb-4">
+    <div className="px-7 py-4 md:py-10 rounded-lg grid justify-items-center content-center gap-2 md:border border-neutral-400 dark:border-neutral-800">
+      <div className="bg-white rounded-full w-[120px] h-[120px] mb-4">
+        <img
+          src={`images/pricing/${imgPath}.svg`}
+          alt={title}
+          className="w-[120px]"
+        />
+      </div>
+      <h2 className="text-xl font-bold text-neutral-800 leading-tight text-center mb-4 dark:text-neutral-300">
         {title}
       </h2>
       <div className="grid gap-3">
