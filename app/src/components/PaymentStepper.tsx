@@ -63,7 +63,7 @@ export function PaymentStepper() {
 
   return (
     <div
-      className="grid justify-center px-4 gap-4 pt-12 pb-16 shadow shadow-blue-800/5 z-10"
+      className="grid justify-center px-4 gap-4 pt-12 pb-16 shadow shadow-blue-800/5 z-10 overflow-hidden"
       ref={parent}
     >
       {step === "one" && (
