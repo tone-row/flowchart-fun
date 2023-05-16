@@ -174,11 +174,11 @@ importers:
         specifier: ^7.38.0
         version: 7.38.0
       '@stripe/react-stripe-js':
-        specifier: ^1.16.4
-        version: 1.16.4(@stripe/stripe-js@1.46.0)(react-dom@17.0.2)(react@17.0.2)
+        specifier: ^2.1.0
+        version: 2.1.0(@stripe/stripe-js@1.52.1)(react-dom@17.0.2)(react@17.0.2)
       '@stripe/stripe-js':
-        specifier: ^1.46.0
-        version: 1.46.0
+        specifier: ^1.52.1
+        version: 1.52.1
       '@supabase/gotrue-js':
         specifier: ^2
         version: 2.1.0
@@ -305,6 +305,9 @@ importers:
       react:
         specifier: ^17.0.1
         version: 17.0.2
+      react-confetti:
+        specifier: ^6.1.0
+        version: 6.1.0(react@17.0.2)
       react-contexify:
         specifier: ^5.0.0
         version: 5.0.0(react-dom@17.0.2)(react@17.0.2)
@@ -342,8 +345,8 @@ importers:
         specifier: workspace:*
         version: link:../shared
       stripe:
-        specifier: ^8.179.0
-        version: 8.222.0
+        specifier: ^12.5.0
+        version: 12.5.0
       svg-parser:
         specifier: ^2.0.4
         version: 2.0.4
@@ -4440,21 +4443,21 @@ packages:
       '@sinonjs/commons': 1.8.3
     dev: false
 
-  /@stripe/react-stripe-js@1.16.4(@stripe/stripe-js@1.46.0)(react-dom@17.0.2)(react@17.0.2):
-    resolution: {integrity: sha512-x+Zstd3mHctNbSATOdbA2rOVXqGhbLU1ziNgcWqYCaFXj2dPKzjkBiUJfDhoARJVXVGOts0oZ8teTkOFY/ZRzQ==}
+  /@stripe/react-stripe-js@2.1.0(@stripe/stripe-js@1.52.1)(react-dom@17.0.2)(react@17.0.2):
+    resolution: {integrity: sha512-Zb6Ycrj5QuhYkvtlvvLzo+cysUyA6wkx3zWHQ7uVnHRYRM/n1jtQD6VGBrdmptC8e8PJN6L091gBCyB5P0FqmA==}
     peerDependencies:
       '@stripe/stripe-js': ^1.44.1
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@stripe/stripe-js': 1.46.0
+      '@stripe/stripe-js': 1.52.1
       prop-types: 15.8.1
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
     dev: false
 
-  /@stripe/stripe-js@1.46.0:
-    resolution: {integrity: sha512-dkm0zCEoRLu5rTnsIgwDf/QG2DKcalOT2dk1IVgMySOHWTChLyOvQwMYhEduGgLvyYWTwNhAUV4WOLPQvjwLwA==}
+  /@stripe/stripe-js@1.52.1:
+    resolution: {integrity: sha512-fza40OPSpGQlFxc5TZWiYC/6Lk89Sep1fLuv9ss33YS6lCAF8UZbfA1E6W+lwO4c7WRKZIZumHIEbPJfP/O9uw==}
     dev: false
 
   /@supabase/functions-js@2.0.0:
@@ -5305,6 +5308,7 @@ packages:
 
   /@types/node@18.8.3:
     resolution: {integrity: sha512-0os9vz6BpGwxGe9LOhgP/ncvYN5Tx1fNcd2TM3rD/aCGBkysb+ZWpXEocG24h6ZzOi13+VB8HndAQFezsSOw1w==}
+    dev: true
 
   /@types/pako@2.0.0:
     resolution: {integrity: sha512-10+iaz93qR5WYxTo+PMifD5TSxiOtdRaxBf7INGGXMQgTCu8Z/7GYWYFUOS3q/G0nE5boj1r4FEB+WSy7s5gbA==}
@@ -13391,6 +13395,16 @@ packages:
       react: 17.0.2
     dev: false
 
+  /react-confetti@6.1.0(react@17.0.2):
+    resolution: {integrity: sha512-7Ypx4vz0+g8ECVxr88W9zhcQpbeujJAVqL14ZnXJ3I23mOI9/oBVTQ3dkJhUmB0D6XOtCZEM6N0Gm9PMngkORw==}
+    engines: {node: '>=10.18'}
+    peerDependencies:
+      react: ^16.3.0 || ^17.0.1 || ^18.0.0
+    dependencies:
+      react: 17.0.2
+      tween-functions: 1.2.0
+    dev: false
+
   /react-contexify@5.0.0(react-dom@17.0.2)(react@17.0.2):
     resolution: {integrity: sha512-2FIp7lxJ6dtfGr8EZ4uVV5p5TQjd0n2h/JU7PrejNIMiCeZWvSVPFh4lj1ZvjXosglBvP7q5JQQ8yUCdSaMSaw==}
     engines: {node: '>=10'}
@@ -14658,11 +14672,11 @@ packages:
       qs: 6.11.0
     dev: false
 
-  /stripe@8.222.0:
-    resolution: {integrity: sha512-hrA79fjmN2Eb6K3kxkDzU4ODeVGGjXQsuVaAPSUro6I9MM3X+BvIsVqdphm3BXWfimAGFvUqWtPtHy25mICY1w==}
-    engines: {node: ^8.1 || >=10.*}
+  /stripe@12.5.0:
+    resolution: {integrity: sha512-eDBh4bv+Uo+GdhjnQ246lM5KaOReoBzxFltgW0HJqco/QEAgSYxZPOpFbd5+gJnZlRqHSB5B+Zqw273SlbdPag==}
+    engines: {node: '>=12.*'}
     dependencies:
-      '@types/node': 18.8.3
+      '@types/node': 12.20.55
       qs: 6.11.0
     dev: false
 
@@ -15135,6 +15149,10 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 4.8.4
+
+  /tween-functions@1.2.0:
+    resolution: {integrity: sha512-PZBtLYcCLtEcjL14Fzb1gSxPBeL7nWvGhO5ZFPGqziCcr8uvHp0NDmdjBchp6KHL+tExcg0m3NISmKxhU394dA==}
+    dev: false
 
   /type-check@0.3.2:
     resolution: {integrity: sha512-ZCmOJdvOWDBYJlzAoFkC+Q0+bUyEOS1ltgp1MGU03fqHG+dbi9tBFU2Rd9QKiDZFAYrhPh2JUf7rZRIuHRKtOg==}

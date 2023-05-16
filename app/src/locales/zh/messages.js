@@ -1,7 +1,9 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "3 美元/月",
+    "$3 per month": "每月3美元",
     "$30 / Year": "30 美元 / 年",
+    "$30 per year": "每年30美元",
     "(before a colon creates a label)": "(在冒号前创建一个标签)",
     "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
       "<0>Flowchart Fun</0>是由<1>Tone Row</1>制作的开源项目",
@@ -45,8 +47,8 @@
       "检查您的电子邮件以获取登录链接。您可以关闭此窗口。",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "为边缘的源和目标选择各种箭头形状。形状包括三角形，三角形-T，圆形-三角形，三角形-十字，三角形-后曲线，V形，T形，正方形，圆形，菱形，雪花形，无。",
-    "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
-      "选择您的图表分享方式：完全访问权限，仅编辑，或仅浏览。决定谁能对您的工作做出更改。",
+    "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
+      "选择适合您的计划，开始使用Flowchart Fun Pro创建出色的流程图。",
     Circle: "圆圈",
     Classes: "类",
     Clay: "粘土",
@@ -76,6 +78,8 @@
     Create: "创建",
     "Create Flowcharts from a Prompt with AI": "使用 AI 根据提示创建图表",
     "Create a New Flowchart": "创建新图表",
+    "Create professional-quality visual aids for presentations or training materials":
+      "创建专业质量的演示文稿或培训材料",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "在两个节点之间创建边缘是通过将第二个节点缩进第一个节点来完成的",
     "Custom Sharing Options": "自定义分享选项",
@@ -100,6 +104,8 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "通过引用开始行从多个节点绘制边缘",
     "Drop the file here ...": "將檔案拖放到這裡...",
+    "Easily import existing flowcharts from other software":
+      "轻松从其他软件导入现有流程图",
     Edge: "邊緣",
     "Edge ID, Classes, Attributes": "邊緣ID、類別和屬性",
     "Edge Label": "邊緣標籤",
@@ -123,6 +129,8 @@
     Eggs: "蛋",
     Email: "电子邮件",
     Empty: "空",
+    "Enter payment details": "输入付款详情",
+    "Enter your email": "请输入您的电子邮件",
     "Equal To": "等于",
     "Everything in Free": "免费计划中的一切",
     Excalidraw: "Excalidraw",
@@ -136,12 +144,17 @@
     "Follow Us on Twitter": "在Twitter上关注我们",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "如果发现了一个 bug？有功能请求？我们很乐意听到您的意见！",
+    Free: "免费",
     Fullscreen: "全屏",
     Futuristic: "未来主义的",
     "Get More Layouts": "获取更多布局",
     "Get More Themes": "获取更多主题",
+    "Get personalized attention and support from our expert team":
+      "从我们的专家团队获得个性化的关注和支持",
     Graph: "图表",
     Grid: "网格",
+    "Have complex questions or issues? We're here to help.":
+      "有复杂的问题或问题吗？我们在这里帮助你。",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
       "注意！在清除缓存之前，请记住此文档没有在云端保存。",
     Help: "帮助",
@@ -163,6 +176,8 @@
       "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "匯入資料是專業功能。您可以每月以3美元或每年30美元升級至Flowchart Fun Pro。",
+    "Impress your audience with high-quality images produced by Flowchart Fun":
+      "用Flowchart Fun生成的高质量图片给你的听众留下深刻印象",
     "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
       "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性：",
     "Indenting creates an edge": "缩进创建链接",
@@ -178,19 +193,24 @@
     "Learn Syntax": "學習語法",
     "Learn about Flowchart Fun Pro": "了解关于Flowchart Fun Pro",
     "Left to Right": "从左到右",
+    "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.":
+      "让我们开始吧！在下面输入您的电子邮件地址，创建您的Flowchart Fun帐户，开始使用我们强大的功能。",
     Light: "浅色",
     "Light Mode": "浅色模式",
     Link: "链接",
+    Loading: "正在載入",
     "Log In": "登录",
     "Log Out": "登出",
+    "Log in to start creating flowcharts.": "登入以開始創建流程圖。",
     "Make a One-Time Donation": "进行一次性捐赠",
     "Make publicly accessible": "设为公开访问",
-    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
-      "使用 Flowchart Fun Pro 让您的工作流程更轻松——现在订阅只需 3 美元/月或 30 美元/年！",
+    "Make sure you use the same email you will use to log in.":
+      "確保您使用的是與登錄時相同的電子郵件。",
     "Map Data": "對應資料",
     Medium: "中等",
     Method: "方法",
     Monospace: "Monospace",
+    Monthly: "每月",
     Museum: "博物馆",
     Name: "姓名",
     New: "新",
@@ -208,6 +228,8 @@
       "节点可以使用虚线、点线或双线进行样式设置，也可以使用border-none来移除边框。",
     "Not Empty": "不为空",
     "Office Hours": "工作时间",
+    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
+      "如果幾分鐘後還沒有看到它，請檢查或請求新鏈接。",
     "One-on-One Support": "一对一支持",
     "One-time Share Links": "一次性分享链接",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -250,6 +272,12 @@
     "Right to Left": "从右到左",
     Roadmap: "路线图",
     Save: "救球",
+    "Save 20% (2 months free!)": "節省20％（兩個月免費！）",
+    "Save time and automate certain tasks with this cutting-edge feature":
+      "通過這個尖端功能節省時間並自動化某些任務",
+    "Save time and streamline your workflow by importing data from other sources":
+      "通過從其他來源導入數據來節省時間並簡化您的工作流程",
+    "Select your plan!": "選擇您的計劃！",
     "Send us Feedback": "给我们反馈",
     Settings: "设置",
     Shape: "形状",
@@ -275,8 +303,8 @@
     "Store any data associated to a node": "將任何與節點相關的資料儲存",
     "Stored in the cloud": "存储在云端",
     "Stored on this computer": "保存在这台电脑上",
-    "Streamline your workflow and simplify your process visualization with Flowchart Fun":
-      "使用 Flowchart Fun，简化您的工作流程和过程可视化",
+    "Streamline your workflow and simplify your process visualization with Flowchart Fun. Subscribe now and take advantage of our powerful Pro features!":
+      "通過Flowchart Fun簡化您的工作流程並簡化您的流程視覺化。 立即訂閱並充分利用我們強大的Pro功能！",
     Style: "风格",
     "Style Classes": "樣式類別",
     Submit: "提交",
@@ -315,7 +343,11 @@
     Type: "类型",
     Unfreeze: "解冻",
     "Unique text value to identify a node": "用于标识节点的唯一文本值",
+    "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
+      "釋放您的創意並簡化您的工作流程，從每月只需3美元開始，Flowchart Fun Pro！",
     "Update Email": "更新电子邮件",
+    "Use AI to create flowcharts from data sets or algorithms":
+      "使用AI從數據集或算法創建流程圖",
     "Use classes to group nodes": "使用类来分组节点",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
       "使用属性<0>href</0>在节点上设置一个在新标签页中打开的链接。",
@@ -333,10 +365,12 @@
     "View on Github": "在 Github 上查看",
     "We use cookies to keep you logged in.":
       "我们使用 cookies 来让您保持登录状态。",
+    "We use magic links to log you in. Enter your email below to get started.":
+      "我们使用魔术链接来登录您。请在下面输入您的电子邮件以开始。",
+    "Welcome to Flowchart Fun Pro!": "欢迎来到流程图乐趣Pro！",
     "Width and Height": "宽度和高度",
-    "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
-      "由于能够创建无限制的托管图表，您可以从任何设备随时随地访问和处理您的流程图。",
     "Would you like to continue?": "您想继续吗？",
+    Yearly: "每年",
     "You already have a flowchart with this name.": "您已有同名的图表。",
     "You are about to add {numNodes} nodes and {numEdges} edges to your graph.":
       ["您即将为您的图添加", ["numNodes"], "个节点和", ["numEdges"], "条边。"],
@@ -344,6 +378,8 @@
       "您还可以将文本包装在\\n“\\( \\)”中以创建链接",
     "You must log in to create a standard flowchart.":
       "您必须登录才能创建标准图表。",
+    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
+      "你差不多到了！只需要一步就可以解锁Flowchart Fun Pro的全部潜力。请在下面输入您的付款详细信息以完成您的订阅并开始创建令人惊叹的流程图。",
     "Your Charts": "您的图表",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",

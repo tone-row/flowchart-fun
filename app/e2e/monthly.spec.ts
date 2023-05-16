@@ -15,23 +15,45 @@ test.describe("Monthly Sign Up", () => {
   });
 
   test("Monthly Sign-up", async ({ page }) => {
+    // set timeout
     test.setTimeout(240000);
+
     await page.getByRole("link", { name: "Pricing" }).click();
     await expect(page).toHaveURL(`${BASE_URL}/pricing`);
 
-    await page.getByTestId("email").click();
-    const email = await getTempEmail();
-    await page.getByTestId("email").fill(email);
-    const plan = "$3 / Month";
-    await page.getByRole("radio", { name: plan }).click();
+    await page.getByTestId("monthly-plan-button").click();
+    await page.getByRole("button", { name: "Continue" }).click();
 
-    const iframe = page.frameLocator("iframe").first();
-    await iframe.getByPlaceholder("Card number").click();
-    await iframe.getByPlaceholder("Card number").fill("4242 4242 4242 4242");
-    await iframe.getByPlaceholder("MM / YY").fill("04 / 24");
-    await iframe.getByPlaceholder("CVC").fill("444");
-    await iframe.getByPlaceholder("ZIP").fill("44444");
+    const email = await getTempEmail();
+    await page.getByTestId("email-input").fill(email);
+    await page.getByRole("button", { name: "Continue" }).click();
+
+    const iframe = page.frameLocator(
+      'internal:attr=[title="Secure payment input frame"i]'
+    );
+
+    await iframe
+      .getByPlaceholder("1234 1234 1234 1234")
+      .fill("4242 4242 4242 4242");
+    await iframe.getByPlaceholder("MM / YY").fill("05 / 50");
+
+    await iframe.getByPlaceholder("CVC").fill("222");
+    await iframe.getByRole("combobox", { name: "Country" }).selectOption("US");
+    await iframe.getByPlaceholder("12345").fill("12345");
+
     await page.getByRole("button", { name: "Sign Up" }).click();
+
+    // expect the url to start with "/l"
+    await expect(page).toHaveURL(new RegExp(`${BASE_URL}/l`));
+
+    // expect sign up success to be on the screen
+    await page
+      .getByRole("heading", { name: "Welcome to Flowchart Fun Pro!" })
+      .click();
+
+    /* Part 2: Get Auth Email */
+    await page.getByLabel("Email").fill(email);
+    await page.getByRole("button", { name: "Submit" }).click();
     await expect(
       page.getByText(
         "Check your email for a link to log in. You can close this window."
@@ -69,12 +91,10 @@ test.describe("Monthly Sign Up", () => {
     await page.goto(link?.href as string);
 
     // expect link with "Account" to be present
-    await expect(page.getByText("Account")).toBeVisible();
+    await expect(page.getByText("Account")).toBeVisible({ timeout: 10 * 1000 });
 
     // delete customer
     await deleteCustomerByEmail(email);
     console.log("deleted stripe customer: ", email);
-
-    // TODO: delete supabase user, requires updating supabase sdk
   });
 });

@@ -1,7 +1,9 @@
 /*eslint-disable*/ module.exports = {
   messages: {
     "$3 / Month": "$3 / Month",
+    "$3 per month": "$3 per month",
     "$30 / Year": "$30 / Year",
+    "$30 per year": "$30 per year",
     "(before a colon creates a label)": "(before a colon creates a label)",
     "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
       "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>",
@@ -45,8 +47,8 @@
       "Check your email for a link to log in. You can close this window.",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .",
-    "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.":
-      "Choose to share your charts with full access, edit-only, or view-only permissions, giving you control over who can make changes to your work.",
+    "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
+      "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro",
     Circle: "Circle",
     Classes: "Classes",
     Clay: "Clay",
@@ -78,6 +80,8 @@
     "Create Flowcharts from a Prompt with AI":
       "Create Flowcharts from a Prompt with AI",
     "Create a New Flowchart": "Create a New Flowchart",
+    "Create professional-quality visual aids for presentations or training materials":
+      "Create professional-quality visual aids for presentations or training materials",
     "Creating an edge between two nodes is done by indenting the second node below the first":
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "Custom Sharing Options",
@@ -105,6 +109,8 @@
     "Draw an edge from multiple nodes by beginning the line with a reference":
       "Draw an edge from multiple nodes by beginning the line with a reference",
     "Drop the file here ...": "Drop the file here ...",
+    "Easily import existing flowcharts from other software":
+      "Easily import existing flowcharts from other software",
     Edge: "Edge",
     "Edge ID, Classes, Attributes": "Edge ID, Classes, Attributes",
     "Edge Label": "Edge Label",
@@ -129,6 +135,8 @@
     Eggs: "Eggs",
     Email: "Email",
     Empty: "Empty",
+    "Enter payment details": "Enter payment details",
+    "Enter your email": "Enter your email",
     "Equal To": "Equal To",
     "Everything in Free": "Everything in Free",
     Excalidraw: "Excalidraw",
@@ -142,12 +150,17 @@
     "Follow Us on Twitter": "Follow Us on Twitter",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "Found a bug? Have a feature request? We would love to hear from you!",
+    Free: "Free",
     Fullscreen: "Fullscreen",
     Futuristic: "Futuristic",
     "Get More Layouts": "Get More Layouts",
     "Get More Themes": "Get More Themes",
+    "Get personalized attention and support from our expert team":
+      "Get personalized attention and support from our expert team",
     Graph: "Graph",
     Grid: "Grid",
+    "Have complex questions or issues? We're here to help.":
+      "Have complex questions or issues? We're here to help.",
     "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
       "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "Help",
@@ -170,6 +183,8 @@
       "Import your diagram it into Microsoft Visio using one of these CSV files.",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.",
+    "Impress your audience with high-quality images produced by Flowchart Fun":
+      "Impress your audience with high-quality images produced by Flowchart Fun",
     "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:":
       "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:",
     "Indenting creates an edge": "Indenting creates an edge",
@@ -185,19 +200,25 @@
     "Learn Syntax": "Learn Syntax",
     "Learn about Flowchart Fun Pro": "Learn about Flowchart Fun Pro",
     "Left to Right": "Left to Right",
+    "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.":
+      "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.",
     Light: "Light",
     "Light Mode": "Light Mode",
     Link: "Link",
+    Loading: "Loading",
     "Log In": "Log In",
     "Log Out": "Log Out",
+    "Log in to start creating flowcharts.":
+      "Log in to start creating flowcharts.",
     "Make a One-Time Donation": "Make a One-Time Donation",
     "Make publicly accessible": "Make publicly accessible",
-    "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!":
-      "Make your workflow easier with Flowchart Fun Pro– subscribe now for only $3/month or $30/year!",
+    "Make sure you use the same email you will use to log in.":
+      "Make sure you use the same email you will use to log in.",
     "Map Data": "Map Data",
     Medium: "Medium",
     Method: "Method",
     Monospace: "Monospace",
+    Monthly: "Monthly",
     Museum: "Museum",
     Name: "Name",
     New: "New",
@@ -215,6 +236,8 @@
       "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
     "Not Empty": "Not Empty",
     "Office Hours": "Office Hours",
+    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
+      "If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.",
     "One-on-One Support": "One-on-One Support",
     "One-time Share Links": "One-time Share Links",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -259,6 +282,12 @@
     "Right to Left": "Right to Left",
     Roadmap: "Roadmap",
     Save: "Save",
+    "Save 20% (2 months free!)": "Save 20% (2 months free!)",
+    "Save time and automate certain tasks with this cutting-edge feature":
+      "Save time and automate certain tasks with this cutting-edge feature",
+    "Save time and streamline your workflow by importing data from other sources":
+      "Save time and streamline your workflow by importing data from other sources",
+    "Select your plan!": "Select your plan!",
     "Send us Feedback": "Send us Feedback",
     Settings: "Settings",
     Shape: "Shape",
@@ -285,8 +314,8 @@
       "Store any data associated to a node",
     "Stored in the cloud": "Stored in the cloud",
     "Stored on this computer": "Stored on this computer",
-    "Streamline your workflow and simplify your process visualization with Flowchart Fun":
-      "Streamline your workflow and simplify your process visualization with Flowchart Fun",
+    "Streamline your workflow and simplify your process visualization with Flowchart Fun. Subscribe now and take advantage of our powerful Pro features!":
+      "Streamline your workflow and simplify your process visualization with Flowchart Fun. Subscribe now and take advantage of our powerful Pro features!",
     Style: "Style",
     "Style Classes": "Style Classes",
     Submit: "Submit",
@@ -329,7 +358,11 @@
     Unfreeze: "Unfreeze",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
+    "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
+      "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!",
     "Update Email": "Update Email",
+    "Use AI to create flowcharts from data sets or algorithms":
+      "Use AI to create flowcharts from data sets or algorithms",
     "Use classes to group nodes": "Use classes to group nodes",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
       "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.",
@@ -347,10 +380,12 @@
     "View on Github": "View on Github",
     "We use cookies to keep you logged in.":
       "We use cookies to keep you logged in.",
+    "We use magic links to log you in. Enter your email below to get started.":
+      "We use magic links to log you in. Enter your email below to get started.",
+    "Welcome to Flowchart Fun Pro!": "Welcome to Flowchart Fun Pro!",
     "Width and Height": "Width and Height",
-    "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.":
-      "With the ability to create unlimited hosted charts, you can access and work on your flowcharts from any device, anywhere.",
     "Would you like to continue?": "Would you like to continue?",
+    Yearly: "Yearly",
     "You already have a flowchart with this name.":
       "You already have a flowchart with this name.",
     "You are about to add {numNodes} nodes and {numEdges} edges to your graph.":
@@ -365,6 +400,8 @@
       'You can also wrap text in "\\( \\)" to create an edge',
     "You must log in to create a standard flowchart.":
       "You must log in to create a standard flowchart.",
+    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
+      "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.",
     "Your Charts": "Your Charts",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
