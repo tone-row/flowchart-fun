@@ -56,7 +56,7 @@ export default function Login() {
   }
 
   return (
-    <div className="pt-12 grid justify-items-center content-start gap-12">
+    <div className="py-12 grid justify-items-center content-start gap-6 md:gap-12">
       {newSignUp && <WelcomeMessage />}
       <div className="w-[370px] grid gap-2 content-start pt-4">
         <PageTitle>Log In</PageTitle>

@@ -60,7 +60,7 @@ export function PaymentStepper() {
     step = "three";
 
   return (
-    <div className="grid justify-center gap-4 pt-12 pb-16 shadow shadow-blue-800/5 z-10">
+    <div className="grid justify-center px-4 gap-4 pt-12 pb-16 shadow shadow-blue-800/5 z-10">
       {step === "one" && (
         <>
           <Title>
@@ -70,7 +70,7 @@ export function PaymentStepper() {
             {t`Choose the plan that's right for you and start creating amazing
               flowcharts with Flowchart Fun Pro`}
           </Description>
-          <div className="flex justify-center gap-4 mt-6">
+          <div className="grid items-center content-center justify-center gap-4 mt-6 md:grid-flow-col md:items-stretch">
             <PlanButton
               aria-current={plan === "monthly" ? "true" : "false"}
               onClick={() => setPlan("monthly")}

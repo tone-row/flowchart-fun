@@ -79,11 +79,11 @@ const plans = () => [
 
 export default function Pricing() {
   return (
-    <Box content="start stretch">
-      <div className="grid grid-cols-2 gap-8 max-w-[1000px] mx-auto items-center mt-16 mb-20">
+    <div className="grid content-start">
+      <div className="grid md:grid-cols-2 gap-8 max-w-[1000px] mx-auto items-center mt-16 mb-6 md:mb-20 px-4">
         <Box gap={6} className="left" items="start">
           <p
-            className="text-4xl font-medium text-neutral-800 leading-tight"
+            className="text-3xl md:text-4xl font-medium text-neutral-800 leading-tight"
             data-testid={`pricing-page-title`}
           >
             <Trans>
@@ -92,21 +92,23 @@ export default function Pricing() {
             </Trans>
           </p>
         </Box>
-        <div className={`${styles.video} shadow-md border rounded-lg`}>
+        <div
+          className={`${styles.video} shadow-md border border-neutral-300 rounded-lg`}
+        >
           <video autoPlay loop muted playsInline>
             <source src="/demo.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
       <div className="pb-10">
-        <div className="grid gap-8 grid-cols-2 max-w-[854px] mx-auto w-full">
+        <div className="grid md:gap-8 md:grid-cols-2 max-w-[878px] mx-auto w-full px-4">
           {features().map((props) => (
             <Feature key={props.title} {...props} />
           ))}
         </div>
       </div>
-      <div className="py-10 bg-blue-100 bg-gradient-to-b from-blue-100 to-blue-50">
-        <div className="grid grid-flow-col justify-center gap-10 items-start">
+      <div className="py-6 md:py-10 bg-blue-100 bg-gradient-to-b from-blue-100 to-blue-50 px-4">
+        <div className="grid md:grid-flow-col justify-center gap-6 md:gap-10 items-start">
           {plans().map((props) => (
             <Plan {...props} key={props.key} />
           ))}
@@ -114,7 +116,7 @@ export default function Pricing() {
       </div>
       <PaymentStepper />
       <div
-        className={`pt-16 pb-20 text-neutral-800 ${styles.footer} bg-gradient-to-b from-blue-100 to-blue-50`}
+        className={`pt-16 pb-20 px-4 text-neutral-800 ${styles.footer} bg-gradient-to-b from-blue-100 to-blue-50`}
       >
         <div className="max-w-[660px] mx-auto grid justify-items-center grid gap-4">
           <BlockChain
@@ -122,7 +124,7 @@ export default function Pricing() {
             width={160}
             height={160}
           />
-          <p className="text-xl text-center font-bold leading-tight">
+          <p className="text-lg md:text-xl text-center font-bold leading-tight">
             <Trans>
               Streamline your workflow and simplify your process visualization
               with Flowchart Fun. Subscribe now and take advantage of our
@@ -131,14 +133,16 @@ export default function Pricing() {
           </p>
         </div>
       </div>
-    </Box>
+    </div>
   );
 }
 
 function Plan({ title, features }: ReturnType<typeof plans>[0]) {
   return (
     <div className="grid gap-4 p-8 rounded-lg bg-white shadow-lg shadow-blue-200">
-      <h2 className="text-3xl font-bold text-neutral-800 mt-[-3px]">{title}</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 mt-[-3px]">
+        {title}
+      </h2>
       <div className="grid gap-2">
         {features.map((feature) => (
           <div className="flex items-center gap-2 opacity-80" key={feature}>
@@ -170,7 +174,7 @@ function Feature({
   imgPath,
 }: ReturnType<typeof features>[number]) {
   return (
-    <div className="px-7 py-10 rounded-lg grid justify-items-center gap-2 border border-neutral-400 bg-white">
+    <div className="px-7 py-4 md:py-10 rounded-lg grid justify-items-center gap-2 md:border border-neutral-400 bg-white">
       <img
         src={`images/pricing/${imgPath}.svg`}
         alt={title}
