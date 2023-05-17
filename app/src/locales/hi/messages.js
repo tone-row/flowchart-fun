@@ -291,8 +291,6 @@
     "Send us Feedback": "हमें प्रतिक्रिया भेजें",
     Settings: "सेटिंग",
     Shape: "आकृति",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "आकार शामिल हैं आयत, गोलप्रतीत, अंगूठी, त्रिकोण, पेंटागन, हेक्सागन, हेप्टागन, आठगणी, तारा, बैरल, हीरा, वी, रोम्बोइड, बहुभुज, टैग, गोलप्रतीत आकार, कट आयत, नीचे गोलप्रतीत आकार और कोणीय हेक्सागन।",
     "Sign Up": "साइन अप",
     Size: "आकार",
     Small: "छोटा",
@@ -345,6 +343,7 @@
       "कई स्रोत नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर",
     "The delimiter used to separate multiple target nodes":
       "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर",
+    "The possible shapes are:": "संभव आकृतियाँ हैं:",
     Theme: "शैली",
     "There are no edges in this data": "इस डेटा में कोई एड्ज नहीं है",
     "This action cannot be undone.": "इस क्रिया को पूर्ववत नहीं किया जा सकता।",

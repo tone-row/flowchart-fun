@@ -237,7 +237,7 @@
     "Not Empty": "Not Empty",
     "Office Hours": "Office Hours",
     "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
-      "If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.",
+      "If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.",
     "One-on-One Support": "One-on-One Support",
     "One-time Share Links": "One-time Share Links",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -291,8 +291,6 @@
     "Send us Feedback": "Send us Feedback",
     Settings: "Settings",
     Shape: "Shape",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.",
     "Sign Up": "Sign Up",
     Size: "Size",
     Small: "Small",
@@ -345,6 +343,7 @@
       "The delimiter used to separate multiple source nodes",
     "The delimiter used to separate multiple target nodes":
       "The delimiter used to separate multiple target nodes",
+    "The possible shapes are:": "The possible shapes are:",
     Theme: "Theme",
     "There are no edges in this data": "There are no edges in this data",
     "This action cannot be undone.": "This action cannot be undone.",

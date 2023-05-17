@@ -293,8 +293,6 @@
     "Send us Feedback": "Senden Sie uns Feedback",
     Settings: "Einstellungen",
     Shape: "Form",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "Formen beinhalten Rechteck, Rundrechteck, Ellipse, Dreieck, Fünfeck, Sechseck, Siebeneck, Achteck, Stern, Fass, Diamant, V, Rhomboid, Polygon, Tag, Rund-Rechteck, Zugeschnittenes Rechteck, Rundes Rechteck unten, und konkaves Sechseck.",
     "Sign Up": "Registrieren",
     Size: "Größe",
     Small: "Klein",
@@ -347,6 +345,7 @@
       "Der Trennzeichen, das verwendet wird, um mehrere Quellknoten zu trennen",
     "The delimiter used to separate multiple target nodes":
       "Der Trennzeichen, das verwendet wird, um mehrere Zielknoten zu trennen",
+    "The possible shapes are:": "Die möglichen Formen sind:",
     Theme: "Thema",
     "There are no edges in this data": "Es gibt keine Kanten in diesen Daten",
     "This action cannot be undone.":
