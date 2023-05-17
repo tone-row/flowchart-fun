@@ -85,8 +85,8 @@ export function getGetSize(theme: Theme) {
         ) {
           finalSize.shapeWidth = finalSize.width * 1.5;
           finalSize.shapeHeight = finalSize.height * 1.5;
-          finalSize.textMarginY = 2;
-          finalSize.textMarginX = 4;
+          finalSize.textMarginY = 0;
+          finalSize.textMarginX = 0;
         } else if (
           classes.includes("pentagon") ||
           classes.includes("round-pentagon")
@@ -110,7 +110,7 @@ export function getGetSize(theme: Theme) {
         ) {
           finalSize.shapeWidth = 1.25 * finalSize.width;
         } else if (classes.includes("star")) {
-          finalSize.textMarginY = 0.125 * finalSize.height;
+          finalSize.textMarginY = 0.13 * finalSize.height;
           finalSize.shapeHeight = finalSize.shapeWidth =
             1.4 *
             (finalSize.shapeHeight > finalSize.shapeWidth
