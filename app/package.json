@@ -81,7 +81,7 @@
     "eslint": "^8.3.0",
     "file-saver": "^2.0.5",
     "framer-motion": "^4.1.17",
-    "graph-selector": "^0.9.4",
+    "graph-selector": "^0.9.6",
     "gray-matter": "^4.0.2",
     "highlight.js": "^11.7.0",
     "immer": "^9.0.16",
