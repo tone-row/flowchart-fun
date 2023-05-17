@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "$3 / Monat"
 
-#: src/components/PaymentStepper.tsx:78
+#: src/components/PaymentStepper.tsx:83
 msgid "$3 per month"
 msgstr "3 $ pro Monat"
 
@@ -25,7 +25,7 @@ msgstr "3 $ pro Monat"
 msgid "$30 / Year"
 msgstr "$30 / Year"
 
-#: src/components/PaymentStepper.tsx:86
+#: src/components/PaymentStepper.tsx:91
 msgid "$30 per year"
 msgstr "30 $ pro Jahr"
 
@@ -146,7 +146,7 @@ msgstr "Abbrechen"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Kündigen Sie Ihr Abonnement. Ihre gehosteten Diagramme werden schreibgeschützt."
 
-#: src/components/LearnSyntaxDialog.tsx:336
+#: src/components/LearnSyntaxDialog.tsx:335
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Bestimmte Attribute können verwendet werden, um das Aussehen oder die Funktionalität von Elementen anzupassen."
 
@@ -170,11 +170,11 @@ msgstr "Diagramme"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses Fenster schließen."
 
-#: src/components/LearnSyntaxDialog.tsx:305
+#: src/components/LearnSyntaxDialog.tsx:304
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Wählen Sie aus einer Vielzahl von Pfeilformen für die Quelle und das Ziel einer Kante aus. Formen beinhalten Dreieck, Dreieck-Tee, Kreis-Dreieck, Dreieck-Kreuz, Dreieck-Rückbiegung, Vee, Tee, Quadrat, Kreis, Diamant, Chevron und keine."
 
-#: src/components/PaymentStepper.tsx:70
+#: src/components/PaymentStepper.tsx:75
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "Wählen Sie den Plan, der am besten zu Ihnen passt, und starten Sie mit Flowchart Fun Pro die Erstellung beeindruckender Flussdiagramme."
 
@@ -207,7 +207,7 @@ msgstr "Klicke auf \\nSyntax lernen\\num mehr zu erfahren."
 msgid "Clone"
 msgstr "Klon"
 
-#: src/components/LearnSyntaxDialog.tsx:391
+#: src/components/LearnSyntaxDialog.tsx:390
 #: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "Schließen"
@@ -249,8 +249,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "Container sind Knoten, die andere Knoten enthalten. Sie werden mit geschweiften Klammern deklariert."
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:100
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:105
+#: src/components/PaymentStepper.tsx:151
 msgid "Continue"
 msgstr "Weiter"
 
@@ -401,7 +401,7 @@ msgstr "Kantenbeschriftung"
 msgid "Edge Label Column"
 msgstr "Spalte mit Kantenbeschriftung"
 
-#: src/components/LearnSyntaxDialog.tsx:289
+#: src/components/LearnSyntaxDialog.tsx:288
 msgid "Edge Style"
 msgstr "Kantenstil"
 
@@ -426,7 +426,7 @@ msgstr "Kanten werden in ihrer eigenen Zeile deklariert"
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "Kanten können auch ID's, Klassen und Attribute vor der Bezeichnung haben"
 
-#: src/components/LearnSyntaxDialog.tsx:292
+#: src/components/LearnSyntaxDialog.tsx:291
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "Kanten können mit gestrichelten, punktierten oder soliden Linien gestaltet werden"
 
@@ -464,11 +464,11 @@ msgstr "E-Mail"
 msgid "Empty"
 msgstr "Leer"
 
-#: src/components/PaymentStepper.tsx:160
+#: src/components/PaymentStepper.tsx:165
 msgid "Enter payment details"
 msgstr "Zahlungsdetails eingeben"
 
-#: src/components/PaymentStepper.tsx:119
+#: src/components/PaymentStepper.tsx:124
 msgid "Enter your email"
 msgstr "Geben Sie Ihre E-Mail-Adresse ein"
 
@@ -594,7 +594,7 @@ msgstr "Wenn Sie <0>Flowchart Fun</0> gerne verwenden, überlegen Sie bitte, das
 msgid "Image Export"
 msgstr "Bildexport"
 
-#: src/components/LearnSyntaxDialog.tsx:355
+#: src/components/LearnSyntaxDialog.tsx:354
 msgid "Images"
 msgstr "Bilder"
 
@@ -690,7 +690,7 @@ msgstr "Erfahren Sie mehr über Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "Von links nach rechts"
 
-#: src/components/PaymentStepper.tsx:121
+#: src/components/PaymentStepper.tsx:126
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "Los geht's! Geben Sie unten Ihre E-Mail-Adresse ein, um Ihr Flowchart Fun-Konto zu erstellen und unsere leistungsstarken Funktionen zu nutzen."
 
@@ -707,7 +707,7 @@ msgstr "Heller Modus"
 msgid "Link"
 msgstr "Link"
 
-#: src/components/PaymentStepper.tsx:141
+#: src/components/PaymentStepper.tsx:146
 msgid "Loading"
 msgstr "Laden"
 
@@ -734,7 +734,7 @@ msgstr "Machen Sie eine einmalige Spende"
 msgid "Make publicly accessible"
 msgstr "Öffentlich zugänglich machen"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:129
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Stellen Sie sicher, dass Sie die gleiche E-Mail verwenden, mit der Sie sich anmelden werden."
 
@@ -754,7 +754,7 @@ msgstr "Methode"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:77
+#: src/components/PaymentStepper.tsx:82
 msgid "Monthly"
 msgstr "Monatlich"
 
@@ -789,7 +789,7 @@ msgstr "Keine Kanten"
 msgid "Node"
 msgstr "Knoten"
 
-#: src/components/LearnSyntaxDialog.tsx:318
+#: src/components/LearnSyntaxDialog.tsx:317
 msgid "Node Border Style"
 msgstr "Knotenrahmenstil"
 
@@ -814,7 +814,7 @@ msgstr "Knotenbeschriftung"
 msgid "Node Shapes"
 msgstr "Knotenformen"
 
-#: src/components/LearnSyntaxDialog.tsx:321
+#: src/components/LearnSyntaxDialog.tsx:320
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "Knoten können mit gestrichelten, gepunkteten oder doppelten Linien gestaltet werden. Grenzen können auch mit border-none entfernt werden."
 
@@ -996,7 +996,7 @@ msgstr "Fahrplan"
 msgid "Save"
 msgstr "Speichern"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:95
 msgid "Save 20% (2 months free!)"
 msgstr "Sparen Sie 20% (2 Monate kostenlos!)"
 
@@ -1008,7 +1008,7 @@ msgstr "Sparen Sie Zeit und automatisieren Sie bestimmte Aufgaben mit dieser for
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "Sparen Sie Zeit und vereinfachen Sie Ihren Arbeitsablauf, indem Sie Daten von anderen Quellen importieren"
 
-#: src/components/PaymentStepper.tsx:67
+#: src/components/PaymentStepper.tsx:72
 msgid "Select your plan!"
 msgstr "Wählen Sie Ihren Plan aus!"
 
@@ -1026,11 +1026,7 @@ msgstr "Einstellungen"
 msgid "Shape"
 msgstr "Form"
 
-#: src/components/LearnSyntaxDialog.tsx:264
-msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
-msgstr "Formen beinhalten Rechteck, Rundrechteck, Ellipse, Dreieck, Fünfeck, Sechseck, Siebeneck, Achteck, Stern, Fass, Diamant, V, Rhomboid, Polygon, Tag, Rund-Rechteck, Zugeschnittenes Rechteck, Rundes Rechteck unten, und konkaves Sechseck."
-
-#: src/components/PaymentStepper.tsx:258
+#: src/components/PaymentStepper.tsx:263
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:96
 msgid "Sign Up"
@@ -1065,7 +1061,7 @@ msgstr "Quellspalte"
 msgid "Source Delimiter"
 msgstr "Quell-Trennzeichen"
 
-#: src/components/LearnSyntaxDialog.tsx:302
+#: src/components/LearnSyntaxDialog.tsx:301
 msgid "Source/Target Arrow Shape"
 msgstr "Quelle/Ziel-Pfeilform"
 
@@ -1073,7 +1069,7 @@ msgstr "Quelle/Ziel-Pfeilform"
 msgid "Spacing"
 msgstr "Abstand"
 
-#: src/components/LearnSyntaxDialog.tsx:333
+#: src/components/LearnSyntaxDialog.tsx:332
 msgid "Special Attributes"
 msgstr "Spezielle Attribute"
 
@@ -1158,7 +1154,7 @@ msgstr "Temporäres"
 msgid "Temporary Flowcharts"
 msgstr "Temporäre Diagramme"
 
-#: src/components/LearnSyntaxDialog.tsx:276
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Text Sizes"
 msgstr "Textgrößen"
 
@@ -1170,7 +1166,7 @@ msgstr "Text gefolgt von Doppelpunkt + Leerzeichen erstellt eine Kante mit dem T
 msgid "Text on a line creates a node with the text as the label"
 msgstr "Text in einer Zeile erstellt einen Knoten mit dem Text als Label"
 
-#: src/components/LearnSyntaxDialog.tsx:279
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "Textgrößen umfassen klein, regulär, groß und extra groß."
 
@@ -1197,6 +1193,10 @@ msgstr "Der Trennzeichen, das verwendet wird, um mehrere Quellknoten zu trennen"
 #: src/components/ImportDataDialog.tsx:454
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "Der Trennzeichen, das verwendet wird, um mehrere Zielknoten zu trennen"
+
+#: src/components/LearnSyntaxDialog.tsx:264
+msgid "The possible shapes are:"
+msgstr "Die möglichen Formen sind:"
 
 #: src/components/Tabs/EditStyleTab.tsx:33
 msgid "Theme"
@@ -1260,15 +1260,15 @@ msgstr "Verwenden Sie KI, um aus Datensätzen oder Algorithmen Flussdiagramme zu
 msgid "Use classes to group nodes"
 msgstr "Verwenden Sie Klassen, um Knoten zu gruppieren"
 
-#: src/components/LearnSyntaxDialog.tsx:372
+#: src/components/LearnSyntaxDialog.tsx:371
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "Verwenden Sie das Attribut <0>href</0>, um einem Knoten einen Link zu setzen, der in einem neuen Tab geöffnet wird."
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:357
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "Verwenden Sie das Attribut <0>src</0>, um das Bild eines Knotens zu setzen. Das Bild wird an den Knoten angepasst, sodass Sie möglicherweise die Breite und Höhe des Knotens anpassen müssen, um das gewünschte Ergebnis zu erzielen. Es werden nur öffentliche Bilder (nicht von CORS blockiert) unterstützt."
 
-#: src/components/LearnSyntaxDialog.tsx:345
+#: src/components/LearnSyntaxDialog.tsx:344
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Verwenden Sie die Attribute <0>w</0> und <1>h</1>, um die Breite und Höhe eines Knotens explizit festzulegen."
 
@@ -1304,7 +1304,7 @@ msgstr "Wir verwenden magische Links, um Sie einzuloggen. Geben Sie unten Ihre E
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "Willkommen bei Flowchart Fun Pro!"
 
-#: src/components/LearnSyntaxDialog.tsx:342
+#: src/components/LearnSyntaxDialog.tsx:341
 msgid "Width and Height"
 msgstr "Breite und Höhe"
 
@@ -1312,7 +1312,7 @@ msgstr "Breite und Höhe"
 msgid "Would you like to continue?"
 msgstr "Möchten Sie fortfahren?"
 
-#: src/components/PaymentStepper.tsx:85
+#: src/components/PaymentStepper.tsx:90
 msgid "Yearly"
 msgstr "Jährlich"
 
@@ -1332,7 +1332,7 @@ msgstr "Sie können Text auch in \"\\( \\)\" umbrechen, um eine Kante zu erstell
 msgid "You must log in to create a standard flowchart."
 msgstr "Sie müssen sich anmelden, um ein Standarddiagramm zu erstellen."
 
-#: src/components/PaymentStepper.tsx:162
+#: src/components/PaymentStepper.tsx:167
 msgid "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "Sie sind fast da! Nur noch ein Schritt, um das volle Potenzial von Flowchart Fun Pro freizuschalten. Geben Sie unten Ihre Zahlungsdaten ein, um Ihr Abonnement abzuschließen und heute mit dem Erstellen erstaunlicher Flussdiagramme zu beginnen."
 

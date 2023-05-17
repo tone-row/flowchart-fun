@@ -285,8 +285,6 @@
     "Send us Feedback": "우리에게 피드백 보내기",
     Settings: "설정",
     Shape: "모양 ",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "모양에는 사각형, 둥근 사각형, 타원, 삼각형, 오각형, 육각형, 칠각형, 팔각형, 별, 맹글라스, 다이아몬드, 바이, 롬복이, 다각형, 태그, 둥근 사각형, 컷 사각형, 바닥 둥근 사각형, 곡면 육각형이 포함됩니다.",
     "Sign Up": "가입",
     Size: "크기",
     Small: "작은",
@@ -337,6 +335,7 @@
       "여러 개의 소스 노드를 구분하기 위해 사용되는 구분 기호",
     "The delimiter used to separate multiple target nodes":
       "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 기호",
+    "The possible shapes are:": "가능한 모양은 다음과 같습니다:",
     Theme: "테마",
     "There are no edges in this data": "이 데이터에는 엣지가 없습니다.",
     "This action cannot be undone.": "이 작업은 취소할 수 없습니다.",

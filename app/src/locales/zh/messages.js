@@ -281,8 +281,6 @@
     "Send us Feedback": "给我们反馈",
     Settings: "设置",
     Shape: "形状",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "形状包括矩形、圆角矩形、椭圆形、三角形、五边形、六边形、七边形、八边形、星形、桶形、菱形、V形、菱形矩形、多边形、标签、圆角矩形、剪切矩形、底部圆角矩形和凹六边形。",
     "Sign Up": "注册",
     Size: "尺寸",
     Small: "小",
@@ -331,6 +329,7 @@
       "用于分隔多个源节点的分隔符",
     "The delimiter used to separate multiple target nodes":
       "用于分隔多个目标节点的分隔符",
+    "The possible shapes are:": "可能的形状是：",
     Theme: "风格",
     "There are no edges in this data": "此数据中没有边",
     "This action cannot be undone.": "此操作无法撤销。",

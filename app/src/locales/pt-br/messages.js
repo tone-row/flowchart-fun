@@ -293,8 +293,6 @@
     "Send us Feedback": "Envie-nos um Feedback",
     Settings: "Configurações",
     Shape: "Forma",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "As formas incluem retângulo, retângulo arredondado, elipse, triângulo, pentágono, hexágono, heptágono, octógono, estrela, barril, diamante, vee, rombo, polígono, tag, retângulo arredondado, retângulo cortado, retângulo arredondado inferior e hexágono côncavo.",
     "Sign Up": "Inscreva-se",
     Size: "Tamanho",
     Small: "Pequeno",
@@ -347,6 +345,7 @@
       "O delimitador usado para separar vários nós de origem",
     "The delimiter used to separate multiple target nodes":
       "O delimitador usado para separar vários nós de destino",
+    "The possible shapes are:": "As formas possíveis são:",
     Theme: "Tema",
     "There are no edges in this data": "Não há arestas nestes dados",
     "This action cannot be undone.": "Esta ação não pode ser desfeita.",
