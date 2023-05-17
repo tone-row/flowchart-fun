@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "$3 / महीना"
 
-#: src/components/PaymentStepper.tsx:78
+#: src/components/PaymentStepper.tsx:83
 msgid "$3 per month"
 msgstr "मासिक $3"
 
@@ -25,7 +25,7 @@ msgstr "मासिक $3"
 msgid "$30 / Year"
 msgstr "$30 / वर्ष"
 
-#: src/components/PaymentStepper.tsx:86
+#: src/components/PaymentStepper.tsx:91
 msgid "$30 per year"
 msgstr "वार्षिक $30"
 
@@ -146,7 +146,7 @@ msgstr "रद्द करें"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
-#: src/components/LearnSyntaxDialog.tsx:336
+#: src/components/LearnSyntaxDialog.tsx:335
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "कुछ गुण तत्वों की दिखता या कार्यक्षमता को अनुकूलित करने के लिए उपयोग किए जा सकते हैं।"
 
@@ -170,11 +170,11 @@ msgstr "चार्ट"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
 
-#: src/components/LearnSyntaxDialog.tsx:305
+#: src/components/LearnSyntaxDialog.tsx:304
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।"
 
-#: src/components/PaymentStepper.tsx:70
+#: src/components/PaymentStepper.tsx:75
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "आपके लिए सही योजना चुनें और Flowchart Fun Pro के साथ अद्भुत फ्लोचार्ट बनाना शुरू करें"
 
@@ -207,7 +207,7 @@ msgstr "\\nसिंटैक्स सीखने के लिए \\nपर �
 msgid "Clone"
 msgstr "क्लोन करें"
 
-#: src/components/LearnSyntaxDialog.tsx:391
+#: src/components/LearnSyntaxDialog.tsx:390
 #: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "बंद करें"
@@ -249,8 +249,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "कंटेनर उन नोड्स हैं जो अन्य नोड्स को सम्मिलित करते हैं। वे कर्ली ब्रेस का उपयोग करके घोषित किया जाता है।"
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:100
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:105
+#: src/components/PaymentStepper.tsx:151
 msgid "Continue"
 msgstr "जारी रखें"
 
@@ -401,7 +401,7 @@ msgstr "किनारे लेबल"
 msgid "Edge Label Column"
 msgstr "किनारे लेबल कॉलम"
 
-#: src/components/LearnSyntaxDialog.tsx:289
+#: src/components/LearnSyntaxDialog.tsx:288
 msgid "Edge Style"
 msgstr "किनारे शैली"
 
@@ -426,7 +426,7 @@ msgstr "किन्तुओं को अपनी खुद की पंक�
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "लेबल से पहले, किन्तुओं को आईडीज़, क्लासेज़ और गुण देने की अनुमति होती है"
 
-#: src/components/LearnSyntaxDialog.tsx:292
+#: src/components/LearnSyntaxDialog.tsx:291
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "किन्तुओं को डैश्ड, डॉटेड या सॉलिड लाइन्स के साथ स्टाइल किया जा सकता है"
 
@@ -464,11 +464,11 @@ msgstr "ईमेल"
 msgid "Empty"
 msgstr "खाली"
 
-#: src/components/PaymentStepper.tsx:160
+#: src/components/PaymentStepper.tsx:165
 msgid "Enter payment details"
 msgstr "भुगतान विवरण दर्ज करें"
 
-#: src/components/PaymentStepper.tsx:119
+#: src/components/PaymentStepper.tsx:124
 msgid "Enter your email"
 msgstr "अपना ईमेल दर्ज करें"
 
@@ -594,7 +594,7 @@ msgstr "यदि आप <0>Flowchart Fun</0> का उपयोग करन�
 msgid "Image Export"
 msgstr "छवि निर्यात"
 
-#: src/components/LearnSyntaxDialog.tsx:355
+#: src/components/LearnSyntaxDialog.tsx:354
 msgid "Images"
 msgstr "छवियाँ"
 
@@ -690,7 +690,7 @@ msgstr "Flowchart Fun Pro के बारे में जानें"
 msgid "Left to Right"
 msgstr "बाएं से दाएं"
 
-#: src/components/PaymentStepper.tsx:121
+#: src/components/PaymentStepper.tsx:126
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "चलो शुरू करें! अपना फ्लोचार्ट फन खाता बनाने और हमारे शक्तिशाली विशेषताओं का उपयोग शुरू करने के लिए नीचे अपना ईमेल पता दर्ज करें।"
 
@@ -707,7 +707,7 @@ msgstr "लाइट मोड"
 msgid "Link"
 msgstr "लिंक"
 
-#: src/components/PaymentStepper.tsx:141
+#: src/components/PaymentStepper.tsx:146
 msgid "Loading"
 msgstr "लोड हो रहा है"
 
@@ -734,7 +734,7 @@ msgstr "एक बार दान करें"
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:129
 msgid "Make sure you use the same email you will use to log in."
 msgstr "उसी ईमेल का उपयोग करें जिसे आप लॉग इन करने के लिए उपयोग करेंगे।"
 
@@ -754,7 +754,7 @@ msgstr "विधि"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:77
+#: src/components/PaymentStepper.tsx:82
 msgid "Monthly"
 msgstr "मासिक"
 
@@ -789,7 +789,7 @@ msgstr "कोई किनारे नहीं"
 msgid "Node"
 msgstr "नोड"
 
-#: src/components/LearnSyntaxDialog.tsx:318
+#: src/components/LearnSyntaxDialog.tsx:317
 msgid "Node Border Style"
 msgstr "नोड सीमा शैली"
 
@@ -814,7 +814,7 @@ msgstr "नोड लेबल"
 msgid "Node Shapes"
 msgstr "नोड आकार"
 
-#: src/components/LearnSyntaxDialog.tsx:321
+#: src/components/LearnSyntaxDialog.tsx:320
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "नोड्स को डैश्ड, डॉट्ड या डबल के साथ स्टाइल किया जा सकता है। बॉर्डर-नोन के साथ भी बॉर्डर हटाए जा सकते हैं।"
 
@@ -996,7 +996,7 @@ msgstr "रोडमैप"
 msgid "Save"
 msgstr "सहेजें"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:95
 msgid "Save 20% (2 months free!)"
 msgstr "20% बचत (2 महीने मुफ्त!)"
 
@@ -1008,7 +1008,7 @@ msgstr "इस उन्नत विशेषता के साथ समय 
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "अन्य स्रोतों से डेटा आयात करके अपनी व्यवस्था को समय बचाएं और स्ट्रीमलाइन करें"
 
-#: src/components/PaymentStepper.tsx:67
+#: src/components/PaymentStepper.tsx:72
 msgid "Select your plan!"
 msgstr "अपना योजना चुनें!"
 
@@ -1026,11 +1026,7 @@ msgstr "सेटिंग"
 msgid "Shape"
 msgstr "आकृति"
 
-#: src/components/LearnSyntaxDialog.tsx:264
-msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
-msgstr "आकार शामिल हैं आयत, गोलप्रतीत, अंगूठी, त्रिकोण, पेंटागन, हेक्सागन, हेप्टागन, आठगणी, तारा, बैरल, हीरा, वी, रोम्बोइड, बहुभुज, टैग, गोलप्रतीत आकार, कट आयत, नीचे गोलप्रतीत आकार और कोणीय हेक्सागन।"
-
-#: src/components/PaymentStepper.tsx:258
+#: src/components/PaymentStepper.tsx:263
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:96
 msgid "Sign Up"
@@ -1065,7 +1061,7 @@ msgstr "स्रोत स्तंभ"
 msgid "Source Delimiter"
 msgstr "स्रोत डिलिमिटर"
 
-#: src/components/LearnSyntaxDialog.tsx:302
+#: src/components/LearnSyntaxDialog.tsx:301
 msgid "Source/Target Arrow Shape"
 msgstr "स्रोत / लक्ष्य तीर आकार"
 
@@ -1073,7 +1069,7 @@ msgstr "स्रोत / लक्ष्य तीर आकार"
 msgid "Spacing"
 msgstr "अंतर"
 
-#: src/components/LearnSyntaxDialog.tsx:333
+#: src/components/LearnSyntaxDialog.tsx:332
 msgid "Special Attributes"
 msgstr "विशेष गुण"
 
@@ -1158,7 +1154,7 @@ msgstr "अस्थायी"
 msgid "Temporary Flowcharts"
 msgstr "अस्थायी आरेख"
 
-#: src/components/LearnSyntaxDialog.tsx:276
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Text Sizes"
 msgstr "पाठ आकार"
 
@@ -1170,7 +1166,7 @@ msgstr "स्क्लीन के बाद कोलन + स्पेस �
 msgid "Text on a line creates a node with the text as the label"
 msgstr "एक पंक्ति पर पाठ एक नोड बनाता है जिसका पाठ लेबल है"
 
-#: src/components/LearnSyntaxDialog.tsx:279
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "पाठ के आकार छोटे, सामान्य, बड़े और अतिरिक्त बड़े शामिल हैं।"
 
@@ -1197,6 +1193,10 @@ msgstr "कई स्रोत नोड्स को अलग करने क
 #: src/components/ImportDataDialog.tsx:454
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
+
+#: src/components/LearnSyntaxDialog.tsx:264
+msgid "The possible shapes are:"
+msgstr "संभव आकृतियाँ हैं:"
 
 #: src/components/Tabs/EditStyleTab.tsx:33
 msgid "Theme"
@@ -1260,15 +1260,15 @@ msgstr "डेटा सेट्स या एल्गोरिदम्स �
 msgid "Use classes to group nodes"
 msgstr "नोड्स को समूहों में सम्मिलित करने के लिए वर्ग उपयोग करें"
 
-#: src/components/LearnSyntaxDialog.tsx:372
+#: src/components/LearnSyntaxDialog.tsx:371
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "नोड पर एक लिंक सेट करने के लिए गुण <0>href</0> उपयोग करें जो एक नये टैब में खुलेगा।"
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:357
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "नोड की छवि सेट करने के लिए <0>src</0> गुण का उपयोग करें। छवि नोड के आकार में स्केल की जाएगी, इसलिए आपको आवश्यक प्रतिस्थापित करने के लिए नोड की चौड़ाई और ऊँचाई को समायोजित करना होगा। केवल सार्वजनिक छवियाँ (CORS द्वारा ब्लॉक नहीं की गई) समर्थित हैं।"
 
-#: src/components/LearnSyntaxDialog.tsx:345
+#: src/components/LearnSyntaxDialog.tsx:344
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "नोड की विशिष्ट चौड़ाई और ऊँचाई सेट करने के लिए <0>w</0> और <1>h</1> गुण का उपयोग करें।"
 
@@ -1304,7 +1304,7 @@ msgstr "हम आपको लॉग इन करने के लिए ज�
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "फ्लोचार्ट फन प्रो के लिए स्वागत है!"
 
-#: src/components/LearnSyntaxDialog.tsx:342
+#: src/components/LearnSyntaxDialog.tsx:341
 msgid "Width and Height"
 msgstr "चौड़ाई और ऊँचाई"
 
@@ -1312,7 +1312,7 @@ msgstr "चौड़ाई और ऊँचाई"
 msgid "Would you like to continue?"
 msgstr "क्या आप जारी रखना चाहते हैं?"
 
-#: src/components/PaymentStepper.tsx:85
+#: src/components/PaymentStepper.tsx:90
 msgid "Yearly"
 msgstr "वार्षिक"
 
@@ -1332,7 +1332,7 @@ msgstr "किनारे बनाने के लिए आप टेक्�
 msgid "You must log in to create a standard flowchart."
 msgstr "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।"
 
-#: src/components/PaymentStepper.tsx:162
+#: src/components/PaymentStepper.tsx:167
 msgid "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "आप केवल एक और कदम दूर हैं! फ्लोचार्ट फन प्रो की पूरी क्षमता अनलॉक करने के लिए केवल एक और कदम बाकी है। नीचे अपने भुगतान विवरण दर्ज करें और आज से अद्भुत फ्लोचार्ट बनाने के लिए अपने सदस्यता पूरा करें।"
 
