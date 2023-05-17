@@ -37,6 +37,8 @@ If you plan on developing the premium features, you will need accounts on [Verce
 
 `vercel dev`
 
+Note: You will need to create a [Vercel account](https://vercel.com/signup) and [install the CLI](https://vercel.com/download) to run the app locally. To deploy the app, you will need a Pro Vercel account because it uses more than 12 serverless functions.
+
 #### ⚙️ To run without login features:
 
 `pnpm dev`
@@ -67,6 +69,6 @@ To ensure quality and accuracy, Flowchart Fun employs [Jest](https://jestjs.io/)
 
 ## 🤝 Contributing
 
-We welcome contributions! Please fork the `dev` branch in order to develop and test your feature.
+If you're interested in contributing, we'd love to have your help with the underlying syntax parser - [Graph Selector](https://github.com/tone-row/graph-selector). Our community welcomes all contributions, big or small!
 
-If you have any questions, feel free to join the discussion on [Discord](https://discord.com/invite/wPASTQHQBf).
+To get started, please fork the dev branch and start developing and testing your feature. If you have any questions, don't hesitate to join the discussion on [Discord](https://discord.com/invite/wPASTQHQBf). We're always happy to help and answer any questions you may have.
