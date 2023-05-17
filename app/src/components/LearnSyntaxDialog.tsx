@@ -261,12 +261,11 @@ export function LearnSyntaxDialog() {
                 <Trans>Node Shapes</Trans>
               </h2>
               <p>
-                <Trans>
-                  Shapes include rectangle, roundrectangle, ellipse, triangle,
-                  pentagon, hexagon, heptagon, octagon, star, barrel, diamond,
-                  vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle,
-                  bottom-round-rectangle, and concave-hexagon.
-                </Trans>
+                {t`The possible shapes are:`} rectangle, roundrectangle,
+                ellipse, triangle, pentagon, hexagon, heptagon, octagon, star,
+                barrel, diamond, vee, rhomboid, right-rhomboid, polygon, tag,
+                round-rectangle, cut-rectangle, bottom-round-rectangle, and
+                concave-hexagon
               </p>
               <CodeExample
                 code={`Hello <span data-highlight>.diamond</span>\n  World <span data-highlight>.ellipse</span>`}

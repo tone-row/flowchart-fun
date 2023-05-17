@@ -120,7 +120,10 @@ export function getGetSize(theme: Theme) {
           finalSize.shapeWidth = finalSize.width * 2.5;
           finalSize.shapeHeight = finalSize.height * 2.5;
           finalSize.textMarginY = 0.01 * finalSize.shapeHeight;
-        } else if (classes.includes("rhomboid")) {
+        } else if (
+          classes.includes("rhomboid") ||
+          classes.includes("right-rhomboid")
+        ) {
           finalSize.shapeWidth = finalSize.width * 2;
         } else if (classes.includes("tag") || classes.includes("round-tag")) {
           finalSize.shapeWidth = finalSize.width * 1.25;
