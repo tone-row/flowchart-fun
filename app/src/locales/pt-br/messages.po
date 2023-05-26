@@ -59,6 +59,10 @@ msgstr "Acessível de qualquer dispositivo"
 msgid "Account"
 msgstr "Conta"
 
+#: src/components/PaymentStepper.tsx:165
+msgid "Activate Flowchart Fun Pro"
+msgstr "Ative o Flowchart Fun Pro"
+
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
 msgstr "Avançado"
@@ -231,6 +235,10 @@ msgstr "História em Quadrinhos"
 #: src/components/Feedback.tsx:71
 msgid "Comment"
 msgstr "Comente"
+
+#: src/components/PaymentStepper.tsx:268
+msgid "Complete Subscription"
+msgstr "Conclua a assinatura"
 
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
@@ -463,10 +471,6 @@ msgstr "E-mail"
 #: src/components/ImportDataDialog.tsx:554
 msgid "Empty"
 msgstr "Vazio"
-
-#: src/components/PaymentStepper.tsx:165
-msgid "Enter payment details"
-msgstr "Insira os detalhes de pagamento"
 
 #: src/components/PaymentStepper.tsx:124
 msgid "Enter your email"
@@ -1026,7 +1030,6 @@ msgstr "Configurações"
 msgid "Shape"
 msgstr "Forma"
 
-#: src/components/PaymentStepper.tsx:263
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:96
 msgid "Sign Up"
@@ -1248,6 +1251,10 @@ msgstr "Valor de texto único para identificar um nó"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "Libere sua criatividade e simplifique seu fluxo de trabalho com o Flowchart Fun Pro - a partir de apenas $ 3 / mês!"
 
+#: src/components/PaymentStepper.tsx:167
+msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
+msgstr "Desbloqueie o potencial total do Flowchart Fun Pro e obtenha acesso ilimitado a todos os nossos recursos avançados. Conclua sua assinatura abaixo e comece a criar fluxogramas incríveis hoje mesmo!"
+
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "Atualizar e-mail"
@@ -1332,13 +1339,13 @@ msgstr "Você também pode quebrar o texto dentro de \"\\( \\)\" para criar um l
 msgid "You must log in to create a standard flowchart."
 msgstr "Você deve efetuar login para criar um diagrama padrão."
 
-#: src/components/PaymentStepper.tsx:167
-msgid "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-msgstr "Você está quase lá! Só mais um passo para desbloquear o potencial total do Flowchart Fun Pro. Digite os detalhes de pagamento abaixo para completar sua assinatura e começar a criar fluxogramas incríveis hoje."
-
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "Seus Gráficos"
+
+#: src/components/PaymentStepper.tsx:172
+msgid "Your payment details are secure. You can cancel anytime."
+msgstr "Seus detalhes de pagamento são seguros. Você pode cancelar a qualquer momento."
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."

@@ -15,6 +15,7 @@
       "Acesse esses gráficos de qualquer lugar.<0/>Compartilhe e incorpore fluxogramas que permanecem sincronizados.",
     "Accessible from any device": "Acessível de qualquer dispositivo",
     Account: "Conta",
+    "Activate Flowchart Fun Pro": "Ative o Flowchart Fun Pro",
     Advanced: "Avançado",
     Amount: "Total",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -65,6 +66,7 @@
     Column: "Coluna",
     "Comic Book": "História em Quadrinhos",
     Comment: "Comente",
+    "Complete Subscription": "Conclua a assinatura",
     Concentric: "Concêntrico",
     "Confirm New Email": "Confirme o novo email",
     Containers: "Recipientes",
@@ -136,7 +138,6 @@
     Eggs: "Ovos",
     Email: "E-mail",
     Empty: "Vazio",
-    "Enter payment details": "Insira os detalhes de pagamento",
     "Enter your email": "Digite seu email",
     "Equal To": "Igual a",
     "Everything in Free": "Tudo no Plano Gratuito",
@@ -361,6 +362,8 @@
       "Valor de texto único para identificar um nó",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Libere sua criatividade e simplifique seu fluxo de trabalho com o Flowchart Fun Pro - a partir de apenas $ 3 / mês!",
+    "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
+      "Desbloqueie o potencial total do Flowchart Fun Pro e obtenha acesso ilimitado a todos os nossos recursos avançados. Conclua sua assinatura abaixo e comece a criar fluxogramas incríveis hoje mesmo!",
     "Update Email": "Atualizar e-mail",
     "Use AI to create flowcharts from data sets or algorithms":
       "Use IA para criar fluxogramas a partir de conjuntos de dados ou algoritmos.",
@@ -401,9 +404,9 @@
       'Você também pode quebrar o texto dentro de "\\( \\)" para criar um link',
     "You must log in to create a standard flowchart.":
       "Você deve efetuar login para criar um diagrama padrão.",
-    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
-      "Você está quase lá! Só mais um passo para desbloquear o potencial total do Flowchart Fun Pro. Digite os detalhes de pagamento abaixo para completar sua assinatura e começar a criar fluxogramas incríveis hoje.",
     "Your Charts": "Seus Gráficos",
+    "Your payment details are secure. You can cancel anytime.":
+      "Seus detalhes de pagamento são seguros. Você pode cancelar a qualquer momento.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um(a) patrocinador(a).",
     "Zoom In": "Zoom In",

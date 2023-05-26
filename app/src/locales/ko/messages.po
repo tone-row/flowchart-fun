@@ -59,6 +59,10 @@ msgstr "모든 장치에서 액세스 가능"
 msgid "Account"
 msgstr "계정"
 
+#: src/components/PaymentStepper.tsx:165
+msgid "Activate Flowchart Fun Pro"
+msgstr "Flowchart Fun Pro를 활성화하십시오"
+
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
 msgstr "고급의"
@@ -231,6 +235,10 @@ msgstr "만화책"
 #: src/components/Feedback.tsx:71
 msgid "Comment"
 msgstr "댓글 달기"
+
+#: src/components/PaymentStepper.tsx:268
+msgid "Complete Subscription"
+msgstr "구독을 완료하십시오"
 
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
@@ -463,10 +471,6 @@ msgstr "이메일"
 #: src/components/ImportDataDialog.tsx:554
 msgid "Empty"
 msgstr "비어 있음"
-
-#: src/components/PaymentStepper.tsx:165
-msgid "Enter payment details"
-msgstr "결제 세부 정보 입력"
 
 #: src/components/PaymentStepper.tsx:124
 msgid "Enter your email"
@@ -1026,7 +1030,6 @@ msgstr "설정"
 msgid "Shape"
 msgstr "모양 "
 
-#: src/components/PaymentStepper.tsx:263
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:96
 msgid "Sign Up"
@@ -1248,6 +1251,10 @@ msgstr "노드를 식별하기 위한 고유한 텍스트 값"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "Flowchart Fun Pro를 사용하여 창의력을 발휘하고 작업흐름을 최적화하세요. $3/월부터 시작합니다!"
 
+#: src/components/PaymentStepper.tsx:167
+msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
+msgstr "Flowchart Fun Pro의 전력을 잠금 해제하고 모든 고급 기능에 무한 액세스하십시오. 아래에 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들어 보십시오."
+
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "이메일 업데이트"
@@ -1332,13 +1339,13 @@ msgstr "텍스트를 \"\\( \\)\"로 감싸서 가장자리를 만들 수도 있�
 msgid "You must log in to create a standard flowchart."
 msgstr "표준 다이어그램을 만들려면 로그인해야 합니다."
 
-#: src/components/PaymentStepper.tsx:167
-msgid "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-msgstr "거의 다 됐습니다! Flowchart Fun Pro의 전력을 해제하려면 한 단계 더 남았습니다. 아래에 결제 정보를 입력하여 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들어 보십시오."
-
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "당신의 차트"
+
+#: src/components/PaymentStepper.tsx:172
+msgid "Your payment details are secure. You can cancel anytime."
+msgstr "귀하의 결제 정보는 안전합니다. 언제든지 취소할 수 있습니다."
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."

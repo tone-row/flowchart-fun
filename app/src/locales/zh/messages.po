@@ -59,6 +59,10 @@ msgstr "可从任何设备访问"
 msgid "Account"
 msgstr "帐户"
 
+#: src/components/PaymentStepper.tsx:165
+msgid "Activate Flowchart Fun Pro"
+msgstr 激活 Flowchart Fun Pro"
+
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
 msgstr "先进的"
@@ -231,6 +235,10 @@ msgstr "漫画书"
 #: src/components/Feedback.tsx:71
 msgid "Comment"
 msgstr "评论"
+
+#: src/components/PaymentStepper.tsx:268
+msgid "Complete Subscription"
+msgstr "完成订阅"
 
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
@@ -463,10 +471,6 @@ msgstr "电子邮件"
 #: src/components/ImportDataDialog.tsx:554
 msgid "Empty"
 msgstr "空"
-
-#: src/components/PaymentStepper.tsx:165
-msgid "Enter payment details"
-msgstr "输入付款详情"
 
 #: src/components/PaymentStepper.tsx:124
 msgid "Enter your email"
@@ -1026,7 +1030,6 @@ msgstr "设置"
 msgid "Shape"
 msgstr "形状"
 
-#: src/components/PaymentStepper.tsx:263
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:96
 msgid "Sign Up"
@@ -1248,6 +1251,10 @@ msgstr "用于标识节点的唯一文本值"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "釋放您的創意並簡化您的工作流程，從每月只需3美元開始，Flowchart Fun Pro！"
 
+#: src/components/PaymentStepper.tsx:167
+msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
+msgstr "解锁Flowchart Fun Pro的全部潜力，并获得对我们所有高级功能的无限访问权限。请在下面完成您的订阅，今天就开始创建令人惊叹的流程图！"
+
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "更新电子邮件"
@@ -1332,13 +1339,13 @@ msgstr "您还可以将文本包装在\\n“\\( \\)”中以创建链接"
 msgid "You must log in to create a standard flowchart."
 msgstr "您必须登录才能创建标准图表。"
 
-#: src/components/PaymentStepper.tsx:167
-msgid "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-msgstr "你差不多到了！只需要一步就可以解锁Flowchart Fun Pro的全部潜力。请在下面输入您的付款详细信息以完成您的订阅并开始创建令人惊叹的流程图。"
-
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "您的图表"
+
+#: src/components/PaymentStepper.tsx:172
+msgid "Your payment details are secure. You can cancel anytime."
+msgstr "您的付款详情是安全的。您可以随时取消。"
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
