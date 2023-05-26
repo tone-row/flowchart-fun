@@ -169,7 +169,7 @@ export function PaymentStepper() {
           <PaymentForm
             clientSecret={subscriptionDetails.data?.clientSecret || ""}
           />
-          <span className="text-xs text-neutral-500 block text-center">{t`Your payment details are secure. You can cancel anytime.`}</span>
+          <span className="text-xs text-neutral-500 dark:text-neutral-400 block text-center">{t`Your payment details are secure. You can cancel anytime.`}</span>
         </div>
       )}
     </div>
@@ -211,6 +211,10 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
       clientSecret,
       appearance: {
         theme: mode === "dark" ? "night" : undefined,
+        variables: {
+          colorPrimary: "#5c6fff",
+          colorPrimaryText: "#ffffff",
+        },
       },
     };
 
