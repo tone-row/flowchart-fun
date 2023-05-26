@@ -15,6 +15,7 @@
       "Accédez à ces diagrammes depuis n'importe où.<0/>Partagez et intégrez des diagrammes de flux qui restent synchronisés.",
     "Accessible from any device": "Accessible depuis n'importe quel appareil",
     Account: "Compte",
+    "Activate Flowchart Fun Pro": "Activer Flowchart Fun Pro",
     Advanced: "Avancé",
     Amount: "Montant",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -65,6 +66,7 @@
     Column: "Colonne",
     "Comic Book": "Bande dessinée",
     Comment: "Commenter",
+    "Complete Subscription": "Compléter l'abonnement",
     Concentric: "Concentrique",
     "Confirm New Email": "Confirmer le nouveau Email",
     Containers: "Conteneurs",
@@ -136,7 +138,6 @@
     Eggs: "Oeufs",
     Email: "E-mail",
     Empty: "Vide",
-    "Enter payment details": "Entrez les détails de paiement",
     "Enter your email": "Entrez votre adresse e-mail ",
     "Equal To": "Égal à",
     "Everything in Free": "Tout dans le plan gratuit",
@@ -294,8 +295,6 @@
     "Send us Feedback": "Envoyez-nous vos commentaires",
     Settings: "Paramètres",
     Shape: "Forme",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "Les formes comprennent le rectangle, le rectangle arrondi, l'ellipse, le triangle, le pentagone, l'hexagone, l'heptagone, l'octogone, l'étoile, le tonneau, le diamant, le V, le rhomboïde, le polygone, le tag, le rectangle arrondi, le rectangle découpé, le rectangle arrondi inférieur et l'hexagone concave.",
     "Sign Up": "Inscription",
     Size: "Taille",
     Small: "Petit",
@@ -348,6 +347,7 @@
       "Le délimiteur utilisé pour séparer plusieurs nœuds source",
     "The delimiter used to separate multiple target nodes":
       "Le délimiteur utilisé pour séparer plusieurs nœuds cibles",
+    "The possible shapes are:": "Les formes possibles sont :",
     Theme: "Thème",
     "There are no edges in this data": "Il n'y a pas d'arêtes dans ces données",
     "This action cannot be undone.": "Cette action ne peut pas être annulée.",
@@ -363,6 +363,8 @@
       "Valeur de texte unique pour identifier un nœud",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Libérez votre créativité et simplifiez votre flux de travail avec Flowchart Fun Pro - à partir de seulement 3 $ / mois !",
+    "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
+      "Débloquez le plein potentiel de Flowchart Fun Pro et obtenez un accès illimité à toutes nos fonctionnalités avancées. Complétez votre abonnement ci-dessous et commencez à créer des diagrammes de flux incroyables aujourd'hui !",
     "Update Email": "Mettre à jour l'e-mail",
     "Use AI to create flowcharts from data sets or algorithms":
       "Utilisez l'IA pour créer des diagrammes à partir de jeux de données ou d'algorithmes",
@@ -404,9 +406,9 @@
       'Vous pouvez également envelopper le texte dans "\\( \\)" pour créer un bord',
     "You must log in to create a standard flowchart.":
       "Vous devez vous connecter pour créer un diagramme standard.",
-    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
-      "Vous y êtes presque ! Une dernière étape pour débloquer le plein potentiel de Flowchart Fun Pro. Entrez vos détails de paiement ci-dessous pour finaliser votre abonnement et commencer à créer des diagrammes de flux incroyables dès aujourd'hui.",
     "Your Charts": "Vos diagrammes",
+    "Your payment details are secure. You can cancel anytime.":
+      "Vos informations de paiement sont sécurisées. Vous pouvez annuler à tout moment.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor.",
     "Zoom In": "Zoomer",

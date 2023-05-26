@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "$3/월"
 
-#: src/components/PaymentStepper.tsx:78
+#: src/components/PaymentStepper.tsx:83
 msgid "$3 per month"
 msgstr "월 3 달러"
 
@@ -25,7 +25,7 @@ msgstr "월 3 달러"
 msgid "$30 / Year"
 msgstr "$30/년"
 
-#: src/components/PaymentStepper.tsx:86
+#: src/components/PaymentStepper.tsx:91
 msgid "$30 per year"
 msgstr "연 30 달러"
 
@@ -58,6 +58,10 @@ msgstr "모든 장치에서 액세스 가능"
 #: src/pages/Account.tsx:121
 msgid "Account"
 msgstr "계정"
+
+#: src/components/PaymentStepper.tsx:165
+msgid "Activate Flowchart Fun Pro"
+msgstr "Flowchart Fun Pro를 활성화하십시오"
 
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
@@ -146,7 +150,7 @@ msgstr "취소"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:336
+#: src/components/LearnSyntaxDialog.tsx:335
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "일부 속성은 요소의 모양 또는 기능을 사용자 정의하기 위해 사용할 수 있습니다."
 
@@ -170,11 +174,11 @@ msgstr "차트"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:305
+#: src/components/LearnSyntaxDialog.tsx:304
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "에지의 소스와 목적지를 위한 다양한 화살표 모양을 선택합니다. 모양에는 삼각형, 삼각형-티, 원-삼각형, 삼각형-가위형, 삼각형-뒤곡선, 베이, 티, 사각형, 원, 다이아몬드, 쉐브론, 없음이 포함됩니다."
 
-#: src/components/PaymentStepper.tsx:70
+#: src/components/PaymentStepper.tsx:75
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "당신에게 맞는 계획을 선택하고 Flowchart Fun Pro을 사용하여 놀라운 플로우차트를 만들어보세요."
 
@@ -207,7 +211,7 @@ msgstr "\\n문법 습득\\n을 클릭하여 더 배우십시오"
 msgid "Clone"
 msgstr "클론"
 
-#: src/components/LearnSyntaxDialog.tsx:391
+#: src/components/LearnSyntaxDialog.tsx:390
 #: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "닫기"
@@ -232,6 +236,10 @@ msgstr "만화책"
 msgid "Comment"
 msgstr "댓글 달기"
 
+#: src/components/PaymentStepper.tsx:268
+msgid "Complete Subscription"
+msgstr "구독을 완료하십시오"
+
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
 msgstr "동심"
@@ -249,8 +257,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "컨테이너는 다른 노드를 포함하는 노드입니다. 중괄호를 사용하여 선언됩니다."
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:100
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:105
+#: src/components/PaymentStepper.tsx:151
 msgid "Continue"
 msgstr "계속하기"
 
@@ -401,7 +409,7 @@ msgstr "가장자리 라벨"
 msgid "Edge Label Column"
 msgstr "가장자리 라벨 열"
 
-#: src/components/LearnSyntaxDialog.tsx:289
+#: src/components/LearnSyntaxDialog.tsx:288
 msgid "Edge Style"
 msgstr "가장자리 스타일"
 
@@ -426,7 +434,7 @@ msgstr "가장자리는 자신의 행에 선언됩니다."
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "라벨 앞에 ID, 클래스 및 속성도 가질 수 있습니다."
 
-#: src/components/LearnSyntaxDialog.tsx:292
+#: src/components/LearnSyntaxDialog.tsx:291
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "가장자리는 점선, 점선 또는 실선으로 스타일이 지정될 수 있습니다."
 
@@ -464,11 +472,7 @@ msgstr "이메일"
 msgid "Empty"
 msgstr "비어 있음"
 
-#: src/components/PaymentStepper.tsx:160
-msgid "Enter payment details"
-msgstr "결제 세부 정보 입력"
-
-#: src/components/PaymentStepper.tsx:119
+#: src/components/PaymentStepper.tsx:124
 msgid "Enter your email"
 msgstr "이메일을 입력하세요"
 
@@ -594,7 +598,7 @@ msgstr "<0>Flowchart Fun</0>을 사용하는 것을 즐기고 있다면, 프로�
 msgid "Image Export"
 msgstr "이미지 내보내기"
 
-#: src/components/LearnSyntaxDialog.tsx:355
+#: src/components/LearnSyntaxDialog.tsx:354
 msgid "Images"
 msgstr "이미지"
 
@@ -690,7 +694,7 @@ msgstr "Flowchart Fun Pro에 대해 알아보기"
 msgid "Left to Right"
 msgstr "왼쪽에서 오른쪽으로"
 
-#: src/components/PaymentStepper.tsx:121
+#: src/components/PaymentStepper.tsx:126
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "시작해볼까요? 아래 이메일 주소를 입력하여 Flowchart Fun 계정을 만들고 강력한 기능을 사용해보세요."
 
@@ -707,7 +711,7 @@ msgstr "라이트 모드"
 msgid "Link"
 msgstr "링크"
 
-#: src/components/PaymentStepper.tsx:141
+#: src/components/PaymentStepper.tsx:146
 msgid "Loading"
 msgstr "로딩"
 
@@ -734,7 +738,7 @@ msgstr "한 번 선물하기"
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:129
 msgid "Make sure you use the same email you will use to log in."
 msgstr "로그인할 때 사용할 같은 이메일을 사용하세요."
 
@@ -754,7 +758,7 @@ msgstr "방법"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:77
+#: src/components/PaymentStepper.tsx:82
 msgid "Monthly"
 msgstr "월간"
 
@@ -789,7 +793,7 @@ msgstr "노드 없음"
 msgid "Node"
 msgstr "노드"
 
-#: src/components/LearnSyntaxDialog.tsx:318
+#: src/components/LearnSyntaxDialog.tsx:317
 msgid "Node Border Style"
 msgstr "노드 경계 스타일"
 
@@ -814,7 +818,7 @@ msgstr "노드 라벨"
 msgid "Node Shapes"
 msgstr "노드 모양"
 
-#: src/components/LearnSyntaxDialog.tsx:321
+#: src/components/LearnSyntaxDialog.tsx:320
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "노드는 점선, 점점선 또는 이중선으로 스타일링할 수 있으며, border-none으로 테두리를 제거할 수 있습니다."
 
@@ -996,7 +1000,7 @@ msgstr "로드맵"
 msgid "Save"
 msgstr "구하다"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:95
 msgid "Save 20% (2 months free!)"
 msgstr "20% 할인 (2개월 무료!)"
 
@@ -1008,7 +1012,7 @@ msgstr "이 최신 기능으로 시간을 절약하고 일부 작업을 자동�
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "다른 소스에서 데이터를 가져와 작업흐름을 최적화하여 시간을 절약하세요."
 
-#: src/components/PaymentStepper.tsx:67
+#: src/components/PaymentStepper.tsx:72
 msgid "Select your plan!"
 msgstr "귀하의 계획을 선택하세요!"
 
@@ -1026,11 +1030,6 @@ msgstr "설정"
 msgid "Shape"
 msgstr "모양 "
 
-#: src/components/LearnSyntaxDialog.tsx:264
-msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
-msgstr "모양에는 사각형, 둥근 사각형, 타원, 삼각형, 오각형, 육각형, 칠각형, 팔각형, 별, 맹글라스, 다이아몬드, 바이, 롬복이, 다각형, 태그, 둥근 사각형, 컷 사각형, 바닥 둥근 사각형, 곡면 육각형이 포함됩니다."
-
-#: src/components/PaymentStepper.tsx:258
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:96
 msgid "Sign Up"
@@ -1065,7 +1064,7 @@ msgstr "소스 열"
 msgid "Source Delimiter"
 msgstr "소스 구분자"
 
-#: src/components/LearnSyntaxDialog.tsx:302
+#: src/components/LearnSyntaxDialog.tsx:301
 msgid "Source/Target Arrow Shape"
 msgstr "소스/대상 화살표 모양"
 
@@ -1073,7 +1072,7 @@ msgstr "소스/대상 화살표 모양"
 msgid "Spacing"
 msgstr "간격"
 
-#: src/components/LearnSyntaxDialog.tsx:333
+#: src/components/LearnSyntaxDialog.tsx:332
 msgid "Special Attributes"
 msgstr "특별한 속성"
 
@@ -1158,7 +1157,7 @@ msgstr "임시"
 msgid "Temporary Flowcharts"
 msgstr "임시 다이어그램"
 
-#: src/components/LearnSyntaxDialog.tsx:276
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Text Sizes"
 msgstr "텍스트 크기"
 
@@ -1170,7 +1169,7 @@ msgstr "콜론 뒤에 공백이 따라오는 텍스트는 텍스트를 레이블
 msgid "Text on a line creates a node with the text as the label"
 msgstr "한 줄에 있는 텍스트는 텍스트를 레이블로 하는 노드를 만듭니다."
 
-#: src/components/LearnSyntaxDialog.tsx:279
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "텍스트 사이즈는 작게, 일반, 크게, 그리고 엑스트라 크게가 있습니다."
 
@@ -1197,6 +1196,10 @@ msgstr "여러 개의 소스 노드를 구분하기 위해 사용되는 구분 �
 #: src/components/ImportDataDialog.tsx:454
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 기호"
+
+#: src/components/LearnSyntaxDialog.tsx:264
+msgid "The possible shapes are:"
+msgstr "가능한 모양은 다음과 같습니다:"
 
 #: src/components/Tabs/EditStyleTab.tsx:33
 msgid "Theme"
@@ -1248,6 +1251,10 @@ msgstr "노드를 식별하기 위한 고유한 텍스트 값"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "Flowchart Fun Pro를 사용하여 창의력을 발휘하고 작업흐름을 최적화하세요. $3/월부터 시작합니다!"
 
+#: src/components/PaymentStepper.tsx:167
+msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
+msgstr "Flowchart Fun Pro의 전력을 잠금 해제하고 모든 고급 기능에 무한 액세스하십시오. 아래에 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들어 보십시오."
+
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "이메일 업데이트"
@@ -1260,15 +1267,15 @@ msgstr "데이터 집합 또는 알고리즘에서 플로우차트를 만들기 
 msgid "Use classes to group nodes"
 msgstr "노드를 그룹화하기 위해 클래스를 사용하십시오."
 
-#: src/components/LearnSyntaxDialog.tsx:372
+#: src/components/LearnSyntaxDialog.tsx:371
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "새 탭에서 링크를 설정하기 위해 속성 <0>href</0>을 사용하십시오."
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:357
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "노드의 이미지를 설정하려면 <0>src</0> 속성을 사용하세요. 이미지는 노드에 맞게 크기가 조정되므로 노드의 너비와 높이를 조절해야 할 수도 있습니다. CORS로 차단되지 않은 공개 이미지만 지원됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:345
+#: src/components/LearnSyntaxDialog.tsx:344
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "노드의 너비와 높이를 명시적으로 설정하려면 <0>w</0> 및 <1>h</1> 속성을 사용하세요."
 
@@ -1304,7 +1311,7 @@ msgstr "우리는 마법 링크를 사용하여 로그인합니다. 아래에 �
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "Flowchart Fun Pro에 오신 것을 환영합니다!"
 
-#: src/components/LearnSyntaxDialog.tsx:342
+#: src/components/LearnSyntaxDialog.tsx:341
 msgid "Width and Height"
 msgstr "너비와 높이"
 
@@ -1312,7 +1319,7 @@ msgstr "너비와 높이"
 msgid "Would you like to continue?"
 msgstr "계속하시겠습니까?"
 
-#: src/components/PaymentStepper.tsx:85
+#: src/components/PaymentStepper.tsx:90
 msgid "Yearly"
 msgstr "연간"
 
@@ -1332,13 +1339,13 @@ msgstr "텍스트를 \"\\( \\)\"로 감싸서 가장자리를 만들 수도 있�
 msgid "You must log in to create a standard flowchart."
 msgstr "표준 다이어그램을 만들려면 로그인해야 합니다."
 
-#: src/components/PaymentStepper.tsx:162
-msgid "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-msgstr "거의 다 됐습니다! Flowchart Fun Pro의 전력을 해제하려면 한 단계 더 남았습니다. 아래에 결제 정보를 입력하여 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들어 보십시오."
-
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "당신의 차트"
+
+#: src/components/PaymentStepper.tsx:172
+msgid "Your payment details are secure. You can cancel anytime."
+msgstr "귀하의 결제 정보는 안전합니다. 언제든지 취소할 수 있습니다."
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."

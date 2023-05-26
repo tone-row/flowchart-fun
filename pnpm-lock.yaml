@@ -216,23 +216,23 @@ importers:
         specifier: ^3.18.1
         version: 3.25.5
       cytoscape:
-        specifier: ^3.23.0
-        version: 3.23.0
+        specifier: ^3.25.0
+        version: 3.25.0
       cytoscape-cose-bilkent:
         specifier: ^4.1.0
-        version: 4.1.0(cytoscape@3.23.0)
+        version: 4.1.0(cytoscape@3.25.0)
       cytoscape-dagre:
         specifier: ^2.5.0
-        version: 2.5.0(cytoscape@3.23.0)
+        version: 2.5.0(cytoscape@3.25.0)
       cytoscape-elk:
         specifier: ^2.1.0
-        version: 2.1.0(cytoscape@3.23.0)
+        version: 2.1.0(cytoscape@3.25.0)
       cytoscape-klay:
         specifier: ^3.1.4
-        version: 3.1.4(cytoscape@3.23.0)
+        version: 3.1.4(cytoscape@3.25.0)
       cytoscape-svg:
         specifier: ^0.4.0
-        version: 0.4.0(cytoscape@3.23.0)
+        version: 0.4.0(cytoscape@3.25.0)
       date-fns:
         specifier: ^2.25.0
         version: 2.29.3
@@ -249,8 +249,8 @@ importers:
         specifier: ^4.1.17
         version: 4.1.17(react-dom@17.0.2)(react@17.0.2)
       graph-selector:
-        specifier: ^0.9.4
-        version: 0.9.4
+        specifier: ^0.9.6
+        version: 0.9.6
       gray-matter:
         specifier: ^4.0.2
         version: 4.0.3
@@ -7449,52 +7449,52 @@ packages:
     resolution: {integrity: sha512-WI330GjCuEioK/ii8HM2YE/eV+ynpeLvU+RXw4R8bRU8R0laK5zO3fDsc4gH8s472e3Ga38rbIjCAiQh+tEHkw==}
     dev: false
 
-  /cytoscape-cose-bilkent@4.1.0(cytoscape@3.23.0):
+  /cytoscape-cose-bilkent@4.1.0(cytoscape@3.25.0):
     resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
     peerDependencies:
       cytoscape: ^3.2.0
     dependencies:
       cose-base: 1.0.3
-      cytoscape: 3.23.0
+      cytoscape: 3.25.0
     dev: false
 
-  /cytoscape-dagre@2.5.0(cytoscape@3.23.0):
+  /cytoscape-dagre@2.5.0(cytoscape@3.25.0):
     resolution: {integrity: sha512-VG2Knemmshop4kh5fpLO27rYcyUaaDkRw+6PiX4bstpB+QFt0p2oauMrsjVbUamGWQ6YNavh7x2em2uZlzV44g==}
     peerDependencies:
       cytoscape: ^3.2.22
     dependencies:
-      cytoscape: 3.23.0
+      cytoscape: 3.25.0
       dagre: 0.8.5
     dev: false
 
-  /cytoscape-elk@2.1.0(cytoscape@3.23.0):
+  /cytoscape-elk@2.1.0(cytoscape@3.25.0):
     resolution: {integrity: sha512-stkKoUTNOqpyP5eMuqatK0EYir2NWGTH+XlY0rxFj0t0HiQPGI4AuSuTPaGbNM1WhVfb0tWJ5TQQ0R0qshACLw==}
     peerDependencies:
       cytoscape: ^3.2.0
     dependencies:
-      cytoscape: 3.23.0
+      cytoscape: 3.25.0
       elkjs: 0.8.2
     dev: false
 
-  /cytoscape-klay@3.1.4(cytoscape@3.23.0):
+  /cytoscape-klay@3.1.4(cytoscape@3.25.0):
     resolution: {integrity: sha512-VwPj0VR25GPfy6qXVQRi/MYlZM/zkdvRhHlgqbM//lSvstgM6fhp3ik/uM8Wr8nlhskfqz/M1fIDmR6UckbS2A==}
     peerDependencies:
       cytoscape: ^3.2.0
     dependencies:
-      cytoscape: 3.23.0
+      cytoscape: 3.25.0
       klayjs: 0.4.1
     dev: false
 
-  /cytoscape-svg@0.4.0(cytoscape@3.23.0):
+  /cytoscape-svg@0.4.0(cytoscape@3.25.0):
     resolution: {integrity: sha512-omqIzfPd1Vy9mk6lHTiR2wTbjxELxb9GXSQ2pE6W+GwAe/6/yvOUQ2h5ApFf2QhCBnpMwLkCTq5DZXxBCgUpDw==}
     peerDependencies:
       cytoscape: ^3.2.0
     dependencies:
-      cytoscape: 3.23.0
+      cytoscape: 3.25.0
     dev: false
 
-  /cytoscape@3.23.0:
-    resolution: {integrity: sha512-gRZqJj/1kiAVPkrVFvz/GccxsXhF3Qwpptl32gKKypO4IlqnKBjTOu+HbXtEggSGzC5KCaHp3/F7GgENrtsFkA==}
+  /cytoscape@3.25.0:
+    resolution: {integrity: sha512-7MW3Iz57mCUo6JQCho6CmPBCbTlJr7LzyEtIkutG255HLVd4XuBg2I9BkTZLI/e4HoaOB/BiAzXuQybQ95+r9Q==}
     engines: {node: '>=0.10'}
     dependencies:
       heap: 0.2.7
@@ -9300,8 +9300,8 @@ packages:
       '@tone-row/strip-comments': 2.0.6
     dev: false
 
-  /graph-selector@0.9.4:
-    resolution: {integrity: sha512-2/BtOy9yszG36Bsh1cKFM7Ggf2fRFbGxh0ON3196zh8Gkv0RCgzhMv4MEFrwcgw0hPNQ8k9qADDY+USOIIf1IA==}
+  /graph-selector@0.9.6:
+    resolution: {integrity: sha512-vA4AVrNjKkAnVnHA3t0bsuNkwmBNSbYHYWvfDyts0N1JrK2w5BUw/ADla9bqG1QFHZjgRMHadi+54Ek3ocRA4A==}
     dependencies:
       '@tone-row/strip-comments': 2.0.6
       html-entities: 2.3.3

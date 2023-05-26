@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "1.33.4",
+  "version": "1.33.5",
   "main": "module/module.js",
   "license": "MIT",
   "scripts": {
@@ -70,7 +70,7 @@
     "@types/react-dom": "^17.0.0",
     "buffer": "^6.0.3",
     "core-js": "^3.18.1",
-    "cytoscape": "^3.23.0",
+    "cytoscape": "^3.25.0",
     "cytoscape-cose-bilkent": "^4.1.0",
     "cytoscape-dagre": "^2.5.0",
     "cytoscape-elk": "^2.1.0",
@@ -81,7 +81,7 @@
     "eslint": "^8.3.0",
     "file-saver": "^2.0.5",
     "framer-motion": "^4.1.17",
-    "graph-selector": "^0.9.4",
+    "graph-selector": "^0.9.6",
     "gray-matter": "^4.0.2",
     "highlight.js": "^11.7.0",
     "immer": "^9.0.16",

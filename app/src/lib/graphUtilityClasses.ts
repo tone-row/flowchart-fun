@@ -17,6 +17,8 @@ export const shapes: cytoscape.Css.Node["shape"][] = [
   "diamond",
   "vee",
   "rhomboid",
+  // @ts-ignore
+  "right-rhomboid",
   "polygon",
   "tag",
   "round-rectangle",

@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "$ 3 / Mês"
 
-#: src/components/PaymentStepper.tsx:78
+#: src/components/PaymentStepper.tsx:83
 msgid "$3 per month"
 msgstr "$3 por mês"
 
@@ -25,7 +25,7 @@ msgstr "$3 por mês"
 msgid "$30 / Year"
 msgstr "$ 30 / ano"
 
-#: src/components/PaymentStepper.tsx:86
+#: src/components/PaymentStepper.tsx:91
 msgid "$30 per year"
 msgstr "$30 por ano"
 
@@ -58,6 +58,10 @@ msgstr "Acessível de qualquer dispositivo"
 #: src/pages/Account.tsx:121
 msgid "Account"
 msgstr "Conta"
+
+#: src/components/PaymentStepper.tsx:165
+msgid "Activate Flowchart Fun Pro"
+msgstr "Ative o Flowchart Fun Pro"
 
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
@@ -146,7 +150,7 @@ msgstr "Cancelar"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Cancele sua inscrição. Seus diagramas hospedados não serão modificáveis."
 
-#: src/components/LearnSyntaxDialog.tsx:336
+#: src/components/LearnSyntaxDialog.tsx:335
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Certos atributos podem ser usados para personalizar a aparência ou funcionalidade dos elementos."
 
@@ -170,11 +174,11 @@ msgstr "Diagramas"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Cheque seu e-mail com um link para logar. Você pode fechar esta janela."
 
-#: src/components/LearnSyntaxDialog.tsx:305
+#: src/components/LearnSyntaxDialog.tsx:304
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Escolha entre uma variedade de formas de seta para a origem e o destino de uma aresta. As formas incluem triângulo, triângulo-tee, triângulo-círculo, triângulo-cruz, triângulo-curva-inversa, vee, tee, quadrado, círculo, diamante, chevron e nenhum."
 
-#: src/components/PaymentStepper.tsx:70
+#: src/components/PaymentStepper.tsx:75
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "Escolha o plano certo para você e comece a criar incríveis fluxogramas com o Flowchart Fun Pro."
 
@@ -207,7 +211,7 @@ msgstr "Clique em \\nAprenda Sintaxe\\n para aprender mais"
 msgid "Clone"
 msgstr "Clonar"
 
-#: src/components/LearnSyntaxDialog.tsx:391
+#: src/components/LearnSyntaxDialog.tsx:390
 #: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "Fechar"
@@ -232,6 +236,10 @@ msgstr "História em Quadrinhos"
 msgid "Comment"
 msgstr "Comente"
 
+#: src/components/PaymentStepper.tsx:268
+msgid "Complete Subscription"
+msgstr "Conclua a assinatura"
+
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
 msgstr "Concêntrico"
@@ -249,8 +257,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "Os containers são nós que contêm outros nós. Eles são declarados usando chaves."
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:100
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:105
+#: src/components/PaymentStepper.tsx:151
 msgid "Continue"
 msgstr "Continuar"
 
@@ -401,7 +409,7 @@ msgstr "Rótulo de Borda"
 msgid "Edge Label Column"
 msgstr "Coluna de Rótulo de Borda"
 
-#: src/components/LearnSyntaxDialog.tsx:289
+#: src/components/LearnSyntaxDialog.tsx:288
 msgid "Edge Style"
 msgstr "Estilo de Borda"
 
@@ -426,7 +434,7 @@ msgstr "As bordas são declaradas em sua própria linha"
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "As bordas também podem ter ID's, classes e atributos antes da etiqueta"
 
-#: src/components/LearnSyntaxDialog.tsx:292
+#: src/components/LearnSyntaxDialog.tsx:291
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "As bordas podem ser estilizadas com linhas tracejadas, pontilhadas ou sólidas"
 
@@ -464,11 +472,7 @@ msgstr "E-mail"
 msgid "Empty"
 msgstr "Vazio"
 
-#: src/components/PaymentStepper.tsx:160
-msgid "Enter payment details"
-msgstr "Insira os detalhes de pagamento"
-
-#: src/components/PaymentStepper.tsx:119
+#: src/components/PaymentStepper.tsx:124
 msgid "Enter your email"
 msgstr "Digite seu email"
 
@@ -594,7 +598,7 @@ msgstr "Se você gosta de usar <0>Flowchart Fun</0>, por favor, considere apoiar
 msgid "Image Export"
 msgstr "Exportação de imagem"
 
-#: src/components/LearnSyntaxDialog.tsx:355
+#: src/components/LearnSyntaxDialog.tsx:354
 msgid "Images"
 msgstr "Imagens"
 
@@ -690,7 +694,7 @@ msgstr "Saiba mais sobre o Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "Da esquerda para direita"
 
-#: src/components/PaymentStepper.tsx:121
+#: src/components/PaymentStepper.tsx:126
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "Vamos começar! Digite seu endereço de email abaixo para criar sua conta no Flowchart Fun e começar a usar nossos recursos poderosos."
 
@@ -707,7 +711,7 @@ msgstr "Modo claro"
 msgid "Link"
 msgstr "Link"
 
-#: src/components/PaymentStepper.tsx:141
+#: src/components/PaymentStepper.tsx:146
 msgid "Loading"
 msgstr "Carregando"
 
@@ -734,7 +738,7 @@ msgstr "Faça uma Doação Única"
 msgid "Make publicly accessible"
 msgstr "Tornar publicamente acessível"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:129
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Certifique-se de usar o mesmo e-mail que você usará para fazer o login."
 
@@ -754,7 +758,7 @@ msgstr "Método"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:77
+#: src/components/PaymentStepper.tsx:82
 msgid "Monthly"
 msgstr "Mensal"
 
@@ -789,7 +793,7 @@ msgstr "Sem Bordas"
 msgid "Node"
 msgstr "Nó"
 
-#: src/components/LearnSyntaxDialog.tsx:318
+#: src/components/LearnSyntaxDialog.tsx:317
 msgid "Node Border Style"
 msgstr "Estilo de Borda do Nó"
 
@@ -814,7 +818,7 @@ msgstr "Rótulo do Nó"
 msgid "Node Shapes"
 msgstr "Formas do Nó"
 
-#: src/components/LearnSyntaxDialog.tsx:321
+#: src/components/LearnSyntaxDialog.tsx:320
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "Nós podem ser estilizados com traços, pontilhados ou duplos. As bordas também podem ser removidas com border-none."
 
@@ -996,7 +1000,7 @@ msgstr "Roteiro"
 msgid "Save"
 msgstr "Salvar"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:95
 msgid "Save 20% (2 months free!)"
 msgstr "Economize 20% (2 meses grátis!)"
 
@@ -1008,7 +1012,7 @@ msgstr "Economize tempo e automatize certas tarefas com essa funcionalidade de p
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "Economize tempo e simplifique seu fluxo de trabalho importando dados de outras fontes."
 
-#: src/components/PaymentStepper.tsx:67
+#: src/components/PaymentStepper.tsx:72
 msgid "Select your plan!"
 msgstr "Selecione seu plano!"
 
@@ -1026,11 +1030,6 @@ msgstr "Configurações"
 msgid "Shape"
 msgstr "Forma"
 
-#: src/components/LearnSyntaxDialog.tsx:264
-msgid "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon."
-msgstr "As formas incluem retângulo, retângulo arredondado, elipse, triângulo, pentágono, hexágono, heptágono, octógono, estrela, barril, diamante, vee, rombo, polígono, tag, retângulo arredondado, retângulo cortado, retângulo arredondado inferior e hexágono côncavo."
-
-#: src/components/PaymentStepper.tsx:258
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:96
 msgid "Sign Up"
@@ -1065,7 +1064,7 @@ msgstr "Coluna de Origem"
 msgid "Source Delimiter"
 msgstr "Delimitador de Origem"
 
-#: src/components/LearnSyntaxDialog.tsx:302
+#: src/components/LearnSyntaxDialog.tsx:301
 msgid "Source/Target Arrow Shape"
 msgstr "Forma da Seta de Origem/Destino"
 
@@ -1073,7 +1072,7 @@ msgstr "Forma da Seta de Origem/Destino"
 msgid "Spacing"
 msgstr "Espaçamento"
 
-#: src/components/LearnSyntaxDialog.tsx:333
+#: src/components/LearnSyntaxDialog.tsx:332
 msgid "Special Attributes"
 msgstr "Atributos Especiais"
 
@@ -1158,7 +1157,7 @@ msgstr "Temporário"
 msgid "Temporary Flowcharts"
 msgstr "Diagramas Temporários"
 
-#: src/components/LearnSyntaxDialog.tsx:276
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Text Sizes"
 msgstr "Tamanhos de Texto"
 
@@ -1170,7 +1169,7 @@ msgstr "Texto seguido de dois-pontos+espaço cria uma aresta com o texto como r�
 msgid "Text on a line creates a node with the text as the label"
 msgstr "Texto em uma linha cria um nó com o texto como rótulo"
 
-#: src/components/LearnSyntaxDialog.tsx:279
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "Os tamanhos de texto incluem pequeno, regular, grande e extra grande."
 
@@ -1197,6 +1196,10 @@ msgstr "O delimitador usado para separar vários nós de origem"
 #: src/components/ImportDataDialog.tsx:454
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "O delimitador usado para separar vários nós de destino"
+
+#: src/components/LearnSyntaxDialog.tsx:264
+msgid "The possible shapes are:"
+msgstr "As formas possíveis são:"
 
 #: src/components/Tabs/EditStyleTab.tsx:33
 msgid "Theme"
@@ -1248,6 +1251,10 @@ msgstr "Valor de texto único para identificar um nó"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "Libere sua criatividade e simplifique seu fluxo de trabalho com o Flowchart Fun Pro - a partir de apenas $ 3 / mês!"
 
+#: src/components/PaymentStepper.tsx:167
+msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
+msgstr "Desbloqueie o potencial total do Flowchart Fun Pro e obtenha acesso ilimitado a todos os nossos recursos avançados. Conclua sua assinatura abaixo e comece a criar fluxogramas incríveis hoje mesmo!"
+
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "Atualizar e-mail"
@@ -1260,15 +1267,15 @@ msgstr "Use IA para criar fluxogramas a partir de conjuntos de dados ou algoritm
 msgid "Use classes to group nodes"
 msgstr "Use classes para agrupar nós"
 
-#: src/components/LearnSyntaxDialog.tsx:372
+#: src/components/LearnSyntaxDialog.tsx:371
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "Use o atributo <0>href</0> para definir um link em um nó que abra em uma nova guia."
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:357
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "Use o atributo <0>src</0> para definir a imagem de um nó. A imagem será dimensionada para caber no nó, então você pode precisar ajustar a largura e altura do nó para obter o resultado desejado. Apenas imagens públicas (não bloqueadas por CORS) são suportadas."
 
-#: src/components/LearnSyntaxDialog.tsx:345
+#: src/components/LearnSyntaxDialog.tsx:344
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Use os atributos <0>w</0> e <1>h</1> para definir explicitamente a largura e altura de um nó."
 
@@ -1304,7 +1311,7 @@ msgstr "Nós usamos links mágicos para logar você. Digite seu email abaixo par
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "Bem-vindo ao Flowchart Fun Pro!"
 
-#: src/components/LearnSyntaxDialog.tsx:342
+#: src/components/LearnSyntaxDialog.tsx:341
 msgid "Width and Height"
 msgstr "Largura e Altura"
 
@@ -1312,7 +1319,7 @@ msgstr "Largura e Altura"
 msgid "Would you like to continue?"
 msgstr "Você gostaria de continuar?"
 
-#: src/components/PaymentStepper.tsx:85
+#: src/components/PaymentStepper.tsx:90
 msgid "Yearly"
 msgstr "Anualmente"
 
@@ -1332,13 +1339,13 @@ msgstr "Você também pode quebrar o texto dentro de \"\\( \\)\" para criar um l
 msgid "You must log in to create a standard flowchart."
 msgstr "Você deve efetuar login para criar um diagrama padrão."
 
-#: src/components/PaymentStepper.tsx:162
-msgid "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-msgstr "Você está quase lá! Só mais um passo para desbloquear o potencial total do Flowchart Fun Pro. Digite os detalhes de pagamento abaixo para completar sua assinatura e começar a criar fluxogramas incríveis hoje."
-
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "Seus Gráficos"
+
+#: src/components/PaymentStepper.tsx:172
+msgid "Your payment details are secure. You can cancel anytime."
+msgstr "Seus detalhes de pagamento são seguros. Você pode cancelar a qualquer momento."
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."

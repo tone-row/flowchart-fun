@@ -14,6 +14,7 @@
       "从任何地方访问这些图表。<0/>共享并嵌入保持同步的流程图。",
     "Accessible from any device": "可从任何设备访问",
     Account: "帐户",
+    "Activate Flowchart Fun Pro": "Activate Flowchart Fun Pro",
     Advanced: "先进的",
     Amount: "数量",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -63,6 +64,7 @@
     Column: "列",
     "Comic Book": "漫画书",
     Comment: "评论",
+    "Complete Subscription": "完成订阅",
     Concentric: "同心",
     "Confirm New Email": "确认新电子邮件",
     Containers: "容器",
@@ -129,7 +131,6 @@
     Eggs: "蛋",
     Email: "电子邮件",
     Empty: "空",
-    "Enter payment details": "输入付款详情",
     "Enter your email": "请输入您的电子邮件",
     "Equal To": "等于",
     "Everything in Free": "免费计划中的一切",
@@ -281,8 +282,6 @@
     "Send us Feedback": "给我们反馈",
     Settings: "设置",
     Shape: "形状",
-    "Shapes include rectangle, roundrectangle, ellipse, triangle, pentagon, hexagon, heptagon, octagon, star, barrel, diamond, vee, rhomboid, polygon, tag, round-rectangle, cut-rectangle, bottom-round-rectangle, and concave-hexagon.":
-      "形状包括矩形、圆角矩形、椭圆形、三角形、五边形、六边形、七边形、八边形、星形、桶形、菱形、V形、菱形矩形、多边形、标签、圆角矩形、剪切矩形、底部圆角矩形和凹六边形。",
     "Sign Up": "注册",
     Size: "尺寸",
     Small: "小",
@@ -331,6 +330,7 @@
       "用于分隔多个源节点的分隔符",
     "The delimiter used to separate multiple target nodes":
       "用于分隔多个目标节点的分隔符",
+    "The possible shapes are:": "可能的形状是：",
     Theme: "风格",
     "There are no edges in this data": "此数据中没有边",
     "This action cannot be undone.": "此操作无法撤销。",
@@ -345,6 +345,8 @@
     "Unique text value to identify a node": "用于标识节点的唯一文本值",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "釋放您的創意並簡化您的工作流程，從每月只需3美元開始，Flowchart Fun Pro！",
+    "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
+      "解锁Flowchart Fun Pro的全部潜力，并获得对我们所有高级功能的无限访问权限。请在下面完成您的订阅，今天就开始创建令人惊叹的流程图！",
     "Update Email": "更新电子邮件",
     "Use AI to create flowcharts from data sets or algorithms":
       "使用AI從數據集或算法創建流程圖",
@@ -378,9 +380,9 @@
       "您还可以将文本包装在\\n“\\( \\)”中以创建链接",
     "You must log in to create a standard flowchart.":
       "您必须登录才能创建标准图表。",
-    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
-      "你差不多到了！只需要一步就可以解锁Flowchart Fun Pro的全部潜力。请在下面输入您的付款详细信息以完成您的订阅并开始创建令人惊叹的流程图。",
     "Your Charts": "您的图表",
+    "Your payment details are secure. You can cancel anytime.":
+      "您的付款详情是安全的。您可以随时取消。",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",
     "Zoom In": "放大",
