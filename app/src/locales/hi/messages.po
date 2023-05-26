@@ -59,6 +59,10 @@ msgstr "किसी भी उपकरण से पहुँचा जा स
 msgid "Account"
 msgstr "खाता"
 
+#: src/components/PaymentStepper.tsx:165
+msgid "Activate Flowchart Fun Pro"
+msgstr "Flowchart Fun Pro को सक्रिय करें"
+
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
 msgstr "विकसित"
@@ -231,6 +235,10 @@ msgstr "कॉमिक बुक"
 #: src/components/Feedback.tsx:71
 msgid "Comment"
 msgstr "टिप्पणी"
+
+#: src/components/PaymentStepper.tsx:268
+msgid "Complete Subscription"
+msgstr "सदस्यता पूरी करें"
 
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
@@ -463,10 +471,6 @@ msgstr "ईमेल"
 #: src/components/ImportDataDialog.tsx:554
 msgid "Empty"
 msgstr "खाली"
-
-#: src/components/PaymentStepper.tsx:165
-msgid "Enter payment details"
-msgstr "भुगतान विवरण दर्ज करें"
 
 #: src/components/PaymentStepper.tsx:124
 msgid "Enter your email"
@@ -1026,7 +1030,6 @@ msgstr "सेटिंग"
 msgid "Shape"
 msgstr "आकृति"
 
-#: src/components/PaymentStepper.tsx:263
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:96
 msgid "Sign Up"
@@ -1248,6 +1251,10 @@ msgstr "एक नोड को पहचानने के लिए अद्
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "अपनी क्रेयता को उतारें और फ्लोचार्ट फन प्रो के साथ अपनी व्यवस्था को स्ट्रीमलाइन करें – सिर्फ $ 3 / महीने से शुरू होते हुए!"
 
+#: src/components/PaymentStepper.tsx:167
+msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
+msgstr "फ्लोचार्ट फन प्रो के पूर्ण क्षमता को अनलॉक करें और सभी उन्नत विशेषताओं का असीमित पहुंच प्राप्त करें। नीचे अपनी सदस्यता पूरी करें और आज ही अद्भुत फ्लोचार्ट बनाना शुरू करें!"
+
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "ईमेल अपडेट करें"
@@ -1332,13 +1339,13 @@ msgstr "किनारे बनाने के लिए आप टेक्�
 msgid "You must log in to create a standard flowchart."
 msgstr "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।"
 
-#: src/components/PaymentStepper.tsx:167
-msgid "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-msgstr "आप केवल एक और कदम दूर हैं! फ्लोचार्ट फन प्रो की पूरी क्षमता अनलॉक करने के लिए केवल एक और कदम बाकी है। नीचे अपने भुगतान विवरण दर्ज करें और आज से अद्भुत फ्लोचार्ट बनाने के लिए अपने सदस्यता पूरा करें।"
-
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "आपके चार्ट"
+
+#: src/components/PaymentStepper.tsx:172
+msgid "Your payment details are secure. You can cancel anytime."
+msgstr "आपकी भुगतान विवरण सुरक्षित हैं। आप किसी भी समय रद्द कर सकते हैं।"
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."

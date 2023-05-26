@@ -59,6 +59,10 @@ msgstr "Accessible from any device"
 msgid "Account"
 msgstr "Account"
 
+#: src/components/PaymentStepper.tsx:165
+msgid "Activate Flowchart Fun Pro"
+msgstr "Activate Flowchart Fun Pro"
+
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
 msgstr "Advanced"
@@ -231,6 +235,10 @@ msgstr "Comic Book"
 #: src/components/Feedback.tsx:71
 msgid "Comment"
 msgstr "Comment"
+
+#: src/components/PaymentStepper.tsx:268
+msgid "Complete Subscription"
+msgstr "Complete Subscription"
 
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
@@ -463,10 +471,6 @@ msgstr "Email"
 #: src/components/ImportDataDialog.tsx:554
 msgid "Empty"
 msgstr "Empty"
-
-#: src/components/PaymentStepper.tsx:165
-msgid "Enter payment details"
-msgstr "Enter payment details"
 
 #: src/components/PaymentStepper.tsx:124
 msgid "Enter your email"
@@ -831,8 +835,8 @@ msgstr "Office Hours"
 msgid ""
 "Once in a while the magic link will end up in your spam folder. If you\n"
 "don't see it after a few minutes, check there or request a new link."
-msgstr "If you don't see it after a few minutes, check there or request a new link."
-"If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\n"
+msgstr "If you don't see it after a few minutes, check back there or request a new link."
+"If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\n"
 "don't see it after a few minutes, check there or request a new link."
 
 #: src/pages/Pricing.tsx:32
@@ -1028,7 +1032,6 @@ msgstr "Settings"
 msgid "Shape"
 msgstr "Shape"
 
-#: src/components/PaymentStepper.tsx:263
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:96
 msgid "Sign Up"
@@ -1250,6 +1253,10 @@ msgstr "Unique text value to identify a node"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 
+#: src/components/PaymentStepper.tsx:167
+msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
+msgstr "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
+
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "Update Email"
@@ -1334,13 +1341,13 @@ msgstr "You can also wrap text in \"\\( \\)\" to create an edge"
 msgid "You must log in to create a standard flowchart."
 msgstr "You must log in to create a standard flowchart."
 
-#: src/components/PaymentStepper.tsx:167
-msgid "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-msgstr "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "Your Charts"
+
+#: src/components/PaymentStepper.tsx:172
+msgid "Your payment details are secure. You can cancel anytime."
+msgstr "Your payment details are secure. You can cancel anytime."
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."

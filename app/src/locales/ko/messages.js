@@ -14,6 +14,7 @@
       "어디서든 이 차트에 액세스하세요.<0/>동기화되어 유지되는 플로우차트를 공유하고 삽입하세요.",
     "Accessible from any device": "모든 장치에서 액세스 가능",
     Account: "계정",
+    "Activate Flowchart Fun Pro": "Flowchart Fun Pro를 활성화하십시오",
     Advanced: "고급의",
     Amount: "금액",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -64,6 +65,7 @@
     Column: "열",
     "Comic Book": "만화책",
     Comment: "댓글 달기",
+    "Complete Subscription": "구독을 완료하십시오",
     Concentric: "동심",
     "Confirm New Email": "새 이메일 확인",
     Containers: "컨테이너",
@@ -131,7 +133,6 @@
     Eggs: "달걀",
     Email: "이메일",
     Empty: "비어 있음",
-    "Enter payment details": "결제 세부 정보 입력",
     "Enter your email": "이메일을 입력하세요",
     "Equal To": "같음",
     "Everything in Free": "무료 플랜의 모든 것",
@@ -351,6 +352,8 @@
       "노드를 식별하기 위한 고유한 텍스트 값",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Flowchart Fun Pro를 사용하여 창의력을 발휘하고 작업흐름을 최적화하세요. $3/월부터 시작합니다!",
+    "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
+      "Flowchart Fun Pro의 전력을 잠금 해제하고 모든 고급 기능에 무한 액세스하십시오. 아래에 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들어 보십시오.",
     "Update Email": "이메일 업데이트",
     "Use AI to create flowcharts from data sets or algorithms":
       "데이터 집합 또는 알고리즘에서 플로우차트를 만들기 위해 AI를 사용하세요.",
@@ -393,9 +396,9 @@
       '텍스트를 "\\( \\)"로 감싸서 가장자리를 만들 수도 있습니다.',
     "You must log in to create a standard flowchart.":
       "표준 다이어그램을 만들려면 로그인해야 합니다.",
-    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
-      "거의 다 됐습니다! Flowchart Fun Pro의 전력을 해제하려면 한 단계 더 남았습니다. 아래에 결제 정보를 입력하여 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들어 보십시오.",
     "Your Charts": "당신의 차트",
+    "Your payment details are secure. You can cancel anytime.":
+      "귀하의 결제 정보는 안전합니다. 언제든지 취소할 수 있습니다.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오.",
     "Zoom In": "확대",

@@ -63,7 +63,7 @@ export function PaymentStepper() {
 
   return (
     <div
-      className="grid justify-center px-4 gap-4 pt-12 pb-16 shadow shadow-blue-800/5 z-10 overflow-hidden"
+      className="grid justify-center px-4 gap-4 pt-12 pb-16 z-10 overflow-hidden max-w-[560px] mx-auto"
       ref={parent}
     >
       {step === "one" && (
@@ -162,13 +162,14 @@ export function PaymentStepper() {
       )}
       {step === "three" && (
         <div className="grid gap-4">
-          <Title>{t`Enter payment details`}</Title>
+          <Title>{t`Activate Flowchart Fun Pro`}</Title>
           <Description className="mb-4">
-            {t`You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.`}
+            {t`Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!`}
           </Description>
           <PaymentForm
             clientSecret={subscriptionDetails.data?.clientSecret || ""}
           />
+          <span className="text-xs text-neutral-500 dark:text-neutral-400 block text-center">{t`Your payment details are secure. You can cancel anytime.`}</span>
         </div>
       )}
     </div>
@@ -210,6 +211,10 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
       clientSecret,
       appearance: {
         theme: mode === "dark" ? "night" : undefined,
+        variables: {
+          colorPrimary: "#5c6fff",
+          colorPrimaryText: "#ffffff",
+        },
       },
     };
 
@@ -258,9 +263,9 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
       <BlueButton
         id="submit"
         disabled={!stripe || loading}
-        className="mt-2 justify-self-center"
+        className="mt-5 justify-self-center"
       >
-        <Trans>Sign Up</Trans>
+        <Trans>Complete Subscription</Trans>
         {loading ? <Spinner r={5} s={1} /> : <RocketLaunch size={18} />}
       </BlueButton>
       {error && (
@@ -320,7 +325,7 @@ function Description({
 }) {
   return (
     <p
-      className={`text-center text-neutral-600 dark:text-neutral-400 max-w-[520px] leading-normal ${className}`}
+      className={`text-center text-neutral-600 dark:text-neutral-400 leading-normal ${className}`}
     >
       {children}
     </p>

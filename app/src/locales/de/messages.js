@@ -15,6 +15,7 @@
       "Greifen Sie von überall aus auf diese Diagramme zu.<0/>Teilen und betten Sie Flussdiagramme ein, die synchron bleiben.",
     "Accessible from any device": "Von jedem Gerät aus zugänglich",
     Account: "Konto",
+    "Activate Flowchart Fun Pro": "Flowchart Fun Pro aktivieren",
     Advanced: "Vorangeschritten",
     Amount: "Betrag",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -65,6 +66,7 @@
     Column: "Spalte",
     "Comic Book": "Comic-Buch",
     Comment: "Kommentar",
+    "Complete Subscription": "Abonnement abschließen",
     Concentric: "Konzentrisch",
     "Confirm New Email": "Neue E-Mail bestätigen",
     Containers: "Behälter",
@@ -136,7 +138,6 @@
     Eggs: "Eier",
     Email: "E-Mail",
     Empty: "Leer",
-    "Enter payment details": "Zahlungsdetails eingeben",
     "Enter your email": "Geben Sie Ihre E-Mail-Adresse ein",
     "Equal To": "Gleich",
     "Everything in Free": "Alles im kostenlosen Plan",
@@ -362,6 +363,8 @@
       "Einzigartiger Textwert, um einen Knoten zu identifizieren",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Entfesseln Sie Ihre Kreativität und vereinfachen Sie Ihren Arbeitsablauf mit Flowchart Fun Pro – ab nur 3 $/Monat!",
+    "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
+      "Entsperren Sie das volle Potenzial von Flowchart Fun Pro und erhalten Sie unbegrenzten Zugang zu allen erweiterten Funktionen. Schließen Sie Ihr Abonnement unten ab und beginnen Sie heute mit dem Erstellen erstaunlicher Flussdiagramme!",
     "Update Email": "E-Mail aktualisieren",
     "Use AI to create flowcharts from data sets or algorithms":
       "Verwenden Sie KI, um aus Datensätzen oder Algorithmen Flussdiagramme zu erstellen.",
@@ -403,9 +406,9 @@
       'Sie können Text auch in "\\( \\)" umbrechen, um eine Kante zu erstellen',
     "You must log in to create a standard flowchart.":
       "Sie müssen sich anmelden, um ein Standarddiagramm zu erstellen.",
-    "You're almost there! Just one more step to unlock the full potential of Flowchart Fun Pro. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
-      "Sie sind fast da! Nur noch ein Schritt, um das volle Potenzial von Flowchart Fun Pro freizuschalten. Geben Sie unten Ihre Zahlungsdaten ein, um Ihr Abonnement abzuschließen und heute mit dem Erstellen erstaunlicher Flussdiagramme zu beginnen.",
     "Your Charts": "Ihre Diagramme",
+    "Your payment details are secure. You can cancel anytime.":
+      "Ihre Zahlungsdaten sind sicher. Sie können jederzeit kündigen.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Ihr Abonnement ist nicht mehr aktiv. Wenn Sie gehostete Diagramme erstellen und bearbeiten möchten, werden Sie Sponsor.",
     "Zoom In": "Vergrößern",
