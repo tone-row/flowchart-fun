@@ -162,7 +162,6 @@ div[data-reach-tooltip] {
   opacity: 1;
 }
 
-
 /** Completely Hide Editor Actions */
 .monaco-editor .monaco-hover .hover-row.status-bar .actions {
   display: none;
