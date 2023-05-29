@@ -5,6 +5,7 @@ import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
 import { ParseError } from "graph-selector";
 import throttle from "lodash.throttle";
+import { MarkerSeverity } from "monaco-editor";
 import React, {
   memo,
   MutableRefObject,
@@ -34,7 +35,7 @@ import { Parsers, universalParse, useParser } from "../lib/parsers";
 import { Theme } from "../lib/themes/constants";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseError } from "../lib/useDoc";
-import { useEditorStore } from "../lib/useEditorStore";
+import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
@@ -347,36 +348,28 @@ function getGraphUpdater({
       cyErrorCatcher.current = cytoscape();
       useParseError.setState({ error: "", errorFromStyle: "" });
 
+      // Remove parse error markers
+      useEditorStore.setState({ markers: [] });
+      updateModelMarkers();
+
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
-
-      // Remove parse error markers
-      const monaco = useEditorStore.getState().monaco;
-      if (monaco) {
-        const model = monaco.editor.getModels()[0];
-        if (model) {
-          monaco.editor.setModelMarkers(model, "graph-selector", []);
-        }
-      }
     } catch (e) {
       // Check if it's a parse error and display it in the editor
       if (isParseError(e)) {
-        console.log(e);
-        const { editor, monaco } = useEditorStore.getState();
-        if (!editor || !monaco) return;
-        const model = editor.getModel();
-        console.log({ model });
-        if (!model) return;
-        monaco.editor.setModelMarkers(model, "graph-selector", [
-          {
-            startLineNumber: e.startLineNumber,
-            endLineNumber: e.endLineNumber,
-            startColumn: e.startColumn,
-            endColumn: e.endColumn,
-            message: e.message,
-            severity: monaco.MarkerSeverity.Error,
-          },
-        ]);
+        useEditorStore.setState({
+          markers: [
+            {
+              startLineNumber: e.startLineNumber,
+              endLineNumber: e.endLineNumber,
+              startColumn: e.startColumn,
+              endColumn: e.endColumn,
+              message: e.message,
+              severity: MarkerSeverity.Error,
+            },
+          ],
+        });
+        updateModelMarkers();
       }
 
       cyErrorCatcher.current.destroy();

@@ -161,3 +161,12 @@ div[data-reach-tooltip] {
 .chart-link:focus-within .chart-link-buttons {
   opacity: 1;
 }
+
+
+/** Completely Hide Editor Actions */
+.monaco-editor .monaco-hover .hover-row.status-bar .actions {
+  display: none;
+}
+.monaco-editor .monaco-hover .monaco-hover-content .marker.hover-contents {
+  @apply font-sans text-sm p-4 rounded !important;
+}

@@ -13,8 +13,19 @@ export const useEditorStore = create<{
   hoverLineNumber?: number;
   /** Whether or not the size of the editor is currently being dragged */
   isDragging: boolean;
+  /** The markers currently on the model */
+  markers: editor.IMarkerData[];
 }>((_set) => ({
   editor: null,
   monaco: null,
   isDragging: false,
+  markers: [],
 }));
+
+export function updateModelMarkers() {
+  const { monaco, editor, markers } = useEditorStore.getState();
+  if (!monaco || !editor) return;
+  const model = editor.getModel();
+  if (!model) return;
+  monaco.editor.setModelMarkers(model, "editor", markers);
+}

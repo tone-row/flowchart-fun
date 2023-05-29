@@ -11,7 +11,7 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useEditorStore } from "../lib/useEditorStore";
+import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
 
@@ -88,6 +88,9 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
         useEditorStore.setState({ editor, monaco });
 
         setEditorIsReady(true);
+
+        // Draw any current model markers
+        updateModelMarkers();
       }}
       wrapperProps={{
         "data-testid": "Editor",

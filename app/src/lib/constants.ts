@@ -33,6 +33,8 @@ export const editorOptions: EditorProps["options"] = {
   overviewRulerBorder: false,
   lineDecorationsWidth: "10px",
   renderValidationDecorations: "on",
+  roundedSelection: false,
+  colorDecorators: false,
   hideCursorInOverviewRuler: true,
   matchBrackets: "never",
   selectionHighlight: false,
