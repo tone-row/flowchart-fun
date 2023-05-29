@@ -249,8 +249,8 @@ importers:
         specifier: ^4.1.17
         version: 4.1.17(react-dom@17.0.2)(react@17.0.2)
       graph-selector:
-        specifier: ^0.9.6
-        version: 0.9.6
+        specifier: ^0.9.7
+        version: 0.9.7
       gray-matter:
         specifier: ^4.0.2
         version: 4.0.3
@@ -9300,8 +9300,8 @@ packages:
       '@tone-row/strip-comments': 2.0.6
     dev: false
 
-  /graph-selector@0.9.6:
-    resolution: {integrity: sha512-vA4AVrNjKkAnVnHA3t0bsuNkwmBNSbYHYWvfDyts0N1JrK2w5BUw/ADla9bqG1QFHZjgRMHadi+54Ek3ocRA4A==}
+  /graph-selector@0.9.7:
+    resolution: {integrity: sha512-kTB57t8V6BhPOQ60wacyjcJzRprebmqVHUcG1d8G4JC4OSKieG80YX5iVCDyPYj9eKJkiYc3xkqV7oL+nGGJtg==}
     dependencies:
       '@tone-row/strip-comments': 2.0.6
       html-entities: 2.3.3

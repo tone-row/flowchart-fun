@@ -3,6 +3,7 @@ import coseBilkent from "cytoscape-cose-bilkent";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
+import { ParseError } from "graph-selector";
 import throttle from "lodash.throttle";
 import React, {
   memo,
@@ -33,8 +34,8 @@ import { Parsers, universalParse, useParser } from "../lib/parsers";
 import { Theme } from "../lib/themes/constants";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseError } from "../lib/useDoc";
+import { useEditorStore } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
-import { useHoverLine } from "../lib/useHoverLine";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
@@ -206,7 +207,7 @@ function useInitializeGraph({
       const handleMouseOut = () => {
         cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
         cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
-        useHoverLine.setState({ line: undefined });
+        useEditorStore.setState({ hoverLineNumber: undefined });
       };
 
       cyCurrent.on("mouseover", "node", nodeHighlight);
@@ -270,16 +271,16 @@ function useInitializeGraph({
     // Hover Events that Need "this"
     function nodeHighlight(this: NodeSingular) {
       this.addClass("nodeHovered");
-      useHoverLine.setState({ line: this.data().lineNumber });
+      useEditorStore.setState({ hoverLineNumber: this.data().lineNumber });
     }
     function edgeHighlight(this: EdgeSingular) {
       this.addClass("edgeHovered");
-      useHoverLine.setState({ line: this.data().lineNumber });
+      useEditorStore.setState({ hoverLineNumber: this.data().lineNumber });
     }
     function unhighlight(this: NodeSingular | EdgeSingular) {
       this.removeClass("nodeHovered");
       this.removeClass("edgeHovered");
-      useHoverLine.setState({ line: undefined });
+      useEditorStore.setState({ hoverLineNumber: undefined });
     }
   }, [cy, cyErrorCatcher]);
 }
@@ -349,6 +350,11 @@ function getGraphUpdater({
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
     } catch (e) {
+      // are we getting our sexy errors here?
+      if (isParseError(e)) {
+        // display it in the editor!
+      }
+
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
       if (isError(e)) {
@@ -358,6 +364,10 @@ function getGraphUpdater({
       }
     }
   }, 333);
+}
+
+function isParseError(e: unknown): e is ParseError {
+  return e instanceof Error && e.name === "ParseError";
 }
 
 function getStyleUpdater({

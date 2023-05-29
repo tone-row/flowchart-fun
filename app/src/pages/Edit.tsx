@@ -1,7 +1,6 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import throttle from "lodash.throttle";
-import { editor } from "monaco-editor";
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { useParams, useRouteMatch } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
@@ -20,12 +19,11 @@ import { titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
+import { useEditorStore } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit({ workspace }: { workspace: string }) {
-  const editorRef = useRef<null | editor.IStandaloneCodeEditor>(null);
-
   const isValidSponsor = useIsValidSponsor();
 
   const storeDoc = useMemo(() => {
@@ -61,11 +59,7 @@ const Edit = memo(function Edit({ workspace }: { workspace: string }) {
             <EditorTabList />
             <Tabs.Content value="Document">
               <EditorOptions>
-                <TextEditor
-                  editorRef={editorRef}
-                  value={text}
-                  onChange={onChange}
-                />
+                <TextEditor value={text} onChange={onChange} />
               </EditorOptions>
             </Tabs.Content>
             <Tabs.Content value="Layout">
@@ -84,9 +78,9 @@ const Edit = memo(function Edit({ workspace }: { workspace: string }) {
         <ClearTextButton
           handleClear={() => {
             useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
-            if (editorRef.current) {
-              editorRef.current.focus();
-            }
+            const editor = useEditorStore.getState().editor;
+            if (!editor) return;
+            editor.focus();
           }}
         />
         <EditorError />

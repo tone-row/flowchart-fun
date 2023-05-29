@@ -1,10 +1,9 @@
-import Editor, { EditorProps, Monaco } from "@monaco-editor/react";
+import Editor, { EditorProps } from "@monaco-editor/react";
 import { highlight } from "graph-selector";
 import { editor } from "monaco-editor";
 import { useContext, useEffect, useRef, useState } from "react";
 
 import { editorOptions } from "../lib/constants";
-import { useEditorHover } from "../lib/editorHooks";
 import { useParser } from "../lib/parsers";
 import {
   languageId,
@@ -12,39 +11,32 @@ import {
   themeNameDark,
   themeNameLight,
 } from "../lib/registerLanguage";
-import { useHoverLine } from "../lib/useHoverLine";
+import { useEditorStore } from "../lib/useEditorStore";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
 import styles from "./TextEditor.module.css";
 
 type TextEditorProps = EditorProps & {
-  editorRef: React.MutableRefObject<null | editor.IStandaloneCodeEditor>;
   extendOptions?: editor.IEditorOptions;
 };
 
 /** A Monaco editor which stays in sync with the current parser */
-export function TextEditor({
-  editorRef,
-  extendOptions = {},
-  ...props
-}: TextEditorProps) {
+export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
   const parser = useParser();
   const languageId = useLanguageId();
   const [editorIsReady, setEditorIsReady] = useState(false);
 
-  const monacoRef = useRef<Monaco>();
   const { mode } = useContext(AppContext);
 
   useEffect(() => {
-    if (!monacoRef.current) return;
-    monacoRef.current.editor.setTheme(
-      mode === "light" ? themeNameLight : themeNameDark
-    );
+    const monaco = useEditorStore.getState().monaco;
+    if (!monaco) return;
+    monaco.editor.setTheme(mode === "light" ? themeNameLight : themeNameDark);
   }, [mode]);
 
-  // Hover
-  const hoverLineNumber = useHoverLine((s) => s.line);
-  useEditorHover(editorRef, hoverLineNumber);
+  // Setup Hover Effect
+  const hoverLineNumber = useEditorStore((s) => s.hoverLineNumber);
+  useEditorHover(hoverLineNumber);
 
   // Set the theme when the editor is ready
   const [theme, setTheme] = useState(themeNameLight);
@@ -66,17 +58,20 @@ export function TextEditor({
     }
 
     setTheme(theme);
-    monacoRef.current?.editor.setTheme(theme);
+    const monaco = useEditorStore.getState().monaco;
+    if (!monaco) return;
+    monaco.editor.setTheme(theme);
   }, [editorIsReady, mode, parser]);
 
   // Change the editor language when languageId changes
   useEffect(() => {
-    if (!editorIsReady || !monacoRef.current) return;
-    const editor = monacoRef.current.editor;
+    const monaco = useEditorStore.getState().monaco;
+    if (!editorIsReady || !monaco) return;
+    const editor = monaco.editor;
     if (!editor) return;
     const model = editor.getModels()[0];
     if (!model) return;
-    monacoRef.current.editor.setModelLanguage(model, languageId);
+    monaco.editor.setModelLanguage(model, languageId);
   }, [editorIsReady, languageId]);
 
   return (
@@ -87,10 +82,10 @@ export function TextEditor({
       loading={<Loading />}
       onMount={(editor, monaco) => {
         registerLanguages(monaco);
-        editorRef.current = editor;
-        monacoRef.current = monaco;
-        // @ts-ignore
-        window.monacoRef = monacoRef.current;
+
+        // Store the refs in client side zustand state
+        useEditorStore.setState({ editor, monaco });
+
         setEditorIsReady(true);
       }}
       wrapperProps={{
@@ -109,4 +104,35 @@ function useLanguageId() {
     case "graph-selector":
       return highlight.languageId;
   }
+}
+
+/** Keep track of decoratins on the current editor and show an indication of
+ * hovering when the hover line number changes */
+export function useEditorHover(hoverLineNumber?: number) {
+  const decorations = useRef<string[]>([]);
+  useEffect(() => {
+    const editor = useEditorStore.getState().editor;
+    if (!editor) return;
+    if (typeof hoverLineNumber === "number") {
+      decorations.current = editor.deltaDecorations(
+        [],
+        [
+          {
+            range: {
+              startLineNumber: hoverLineNumber,
+              startColumn: 1,
+              endLineNumber: hoverLineNumber,
+              endColumn: 1,
+            },
+            options: {
+              isWholeLine: true,
+              className: "node-hover",
+            },
+          },
+        ]
+      );
+    } else {
+      decorations.current = editor.deltaDecorations(decorations.current, []);
+    }
+  }, [hoverLineNumber]);
 }
