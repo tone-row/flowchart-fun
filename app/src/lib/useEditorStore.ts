@@ -11,7 +11,10 @@ export const useEditorStore = create<{
   monaco: null | typeof import("monaco-editor");
   /** The line potential line being hovered */
   hoverLineNumber?: number;
+  /** Whether or not the size of the editor is currently being dragged */
+  isDragging: boolean;
 }>((_set) => ({
   editor: null,
   monaco: null,
+  isDragging: false,
 }));

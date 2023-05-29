@@ -349,10 +349,34 @@ function getGraphUpdater({
 
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
+
+      // Remove parse error markers
+      const monaco = useEditorStore.getState().monaco;
+      if (monaco) {
+        const model = monaco.editor.getModels()[0];
+        if (model) {
+          monaco.editor.setModelMarkers(model, "graph-selector", []);
+        }
+      }
     } catch (e) {
-      // are we getting our sexy errors here?
+      // Check if it's a parse error and display it in the editor
       if (isParseError(e)) {
-        // display it in the editor!
+        console.log(e);
+        const { editor, monaco } = useEditorStore.getState();
+        if (!editor || !monaco) return;
+        const model = editor.getModel();
+        console.log({ model });
+        if (!model) return;
+        monaco.editor.setModelMarkers(model, "graph-selector", [
+          {
+            startLineNumber: e.startLineNumber,
+            endLineNumber: e.endLineNumber,
+            startColumn: e.startColumn,
+            endColumn: e.endColumn,
+            message: e.message,
+            severity: monaco.MarkerSeverity.Error,
+          },
+        ]);
       }
 
       cyErrorCatcher.current.destroy();

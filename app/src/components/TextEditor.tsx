@@ -14,7 +14,6 @@ import {
 import { useEditorStore } from "../lib/useEditorStore";
 import { AppContext } from "./AppContext";
 import Loading from "./Loading";
-import styles from "./TextEditor.module.css";
 
 type TextEditorProps = EditorProps & {
   extendOptions?: editor.IEditorOptions;
@@ -27,6 +26,8 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
   const [editorIsReady, setEditorIsReady] = useState(false);
 
   const { mode } = useContext(AppContext);
+
+  const isDragging = useEditorStore((s) => s.isDragging);
 
   useEffect(() => {
     const monaco = useEditorStore.getState().monaco;
@@ -90,7 +91,7 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
       }}
       wrapperProps={{
         "data-testid": "Editor",
-        className: styles.TextEditor,
+        className: isDragging ? "overflow-hidden" : "",
       }}
     />
   );

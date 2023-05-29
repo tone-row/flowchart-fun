@@ -32,7 +32,7 @@ export const editorOptions: EditorProps["options"] = {
   scrollBeyondLastLine: false,
   overviewRulerBorder: false,
   lineDecorationsWidth: "10px",
-  renderValidationDecorations: "off",
+  renderValidationDecorations: "on",
   hideCursorInOverviewRuler: true,
   matchBrackets: "never",
   selectionHighlight: false,

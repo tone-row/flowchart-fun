@@ -42,6 +42,7 @@ html body {
   display: block;
   position: absolute;
   top: calc(100% - 1px);
+  z-index: -1;
 }
 
 .monaco-editor .line-numbers {
