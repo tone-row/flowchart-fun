@@ -7,8 +7,8 @@
     "start": "concurrently -n 'react,slang' 'react-scripts start' 'yarn theme:watch'",
     "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/.pnpm/(?!react-use-localstorage)/\"",
-    "test:coverage": "react-scripts test --watchAll=false --transformIgnorePatterns \"node_modules/.pnpm/(?!react-use-localstorage)/\" --coverage",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "theme": "slang src/slang",
     "theme:watch": "slang src/slang -w",
@@ -201,7 +201,8 @@
       "**/?(*.)+(spec|test).[jt]s?(x)"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-use-localstorage)).*\\.js$"
+      "\"node_modules/.pnpm/(?!react-use-localstorage)/\"",
+      "\"node_modules/.pnpm/(?!(monaco-editor|monaco-editor-core)/)\""
     ]
   }
 }
