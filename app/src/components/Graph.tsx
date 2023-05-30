@@ -31,7 +31,7 @@ import {
 } from "../lib/graphThemes";
 import { isError } from "../lib/helpers";
 import { getAnimationSettings } from "../lib/hooks";
-import { Parsers, universalParse, useParser } from "../lib/parsers";
+import { getElements } from "../lib/parsers";
 import { Theme } from "../lib/themes/constants";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
@@ -68,7 +68,6 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const bg = useBackgroundColor(theme);
 
   const getSize = useRef<TGetSize>(getGetSize(theme));
-  const parser = useParser();
 
   const handleResize = useCallback(() => {
     if (!cy.current) return;
@@ -108,9 +107,8 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
         cyErrorCatcher,
         isGraphInitialized,
         getSize,
-        parser,
       }),
-    [parser]
+    []
   );
 
   useEffect(() => {
@@ -295,13 +293,11 @@ function getGraphUpdater({
   cyErrorCatcher,
   isGraphInitialized,
   getSize,
-  parser,
 }: {
   cy: MutableRefObject<cytoscape.Core | undefined>;
   cyErrorCatcher: MutableRefObject<cytoscape.Core | undefined>;
   isGraphInitialized: MutableRefObject<boolean>;
   getSize: MutableRefObject<TGetSize>;
-  parser: Parsers;
 }) {
   return throttle((_doc?: Doc) => {
     if (!cy.current) return;
@@ -311,7 +307,7 @@ function getGraphUpdater({
 
     try {
       const layout = getLayout(doc);
-      elements = universalParse(parser, doc.text, getSize.current);
+      elements = getElements(doc.text, getSize.current);
 
       // Test
       cyErrorCatcher.current.json({ elements });
