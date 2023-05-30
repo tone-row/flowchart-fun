@@ -11,7 +11,7 @@ jobs:
           node-version: 16
       - uses: pnpm/action-setup@v2.2.4
         with:
-          version: 7
+          version: 8
       - name: Install Deps
         run: pnpm install
       - name: Benchmark
