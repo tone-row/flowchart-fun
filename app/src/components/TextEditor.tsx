@@ -44,6 +44,9 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
 
         // Draw any current model markers
         updateModelMarkers();
+
+        // double set the theme
+        monaco.editor.setTheme(theme);
       }}
       wrapperProps={{
         "data-testid": "Editor",
