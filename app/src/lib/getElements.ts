@@ -2,23 +2,6 @@ import { ElementDefinition } from "cytoscape";
 import { parse, toCytoscapeElements } from "graph-selector";
 
 import { TGetSize } from "./getGetSize";
-import { SelectOption } from "./graphOptions";
-import { useDoc } from "./useDoc";
-
-/** Recognized names for support parsers */
-export type Parsers = "v1" | "graph-selector";
-
-const DEFAULT_PARSER = "graph-selector";
-
-/**
- * A function which reads the document and
- * returns the parser if it is set or the default parser
- */
-export function useParser(): Parsers {
-  return useDoc((state) => {
-    return state.meta?.parser || DEFAULT_PARSER;
-  }) as Parsers;
-}
 
 /**
  * Takes the text input and the getSize function
@@ -48,14 +31,3 @@ export function getElements(
     };
   });
 }
-
-export const parsers: SelectOption[] = [
-  {
-    label: () => "v1",
-    value: "v1",
-  },
-  {
-    label: () => "graph-selector",
-    value: "graph-selector",
-  },
-];

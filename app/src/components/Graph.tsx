@@ -20,6 +20,7 @@ import { useDebouncedCallback } from "use-debounce";
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { monacoMarkerErrorSeverity } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
+import { getElements } from "../lib/getElements";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
 import { getUserStyle } from "../lib/getUserStyle";
@@ -31,7 +32,6 @@ import {
 } from "../lib/graphThemes";
 import { isError } from "../lib/helpers";
 import { getAnimationSettings } from "../lib/hooks";
-import { getElements } from "../lib/parsers";
 import { Theme } from "../lib/themes/constants";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";

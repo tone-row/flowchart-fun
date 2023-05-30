@@ -38,7 +38,6 @@ import {
   useIsFirefox,
   useIsValidSponsor,
 } from "../lib/hooks";
-import { useParser } from "../lib/parsers";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
 import { Box } from "../slang";
@@ -280,7 +279,6 @@ function NodeSubmenu() {
   const theme = useCurrentTheme(themeKey as string);
   const colors = theme?.colors ?? {};
   const colorNames = Object.keys(colors);
-  const parser = useParser();
   const selected = useSelectedNodes();
   const activeSelection = selected.length
     ? selected.map((s) => {
@@ -292,7 +290,6 @@ function NodeSubmenu() {
         };
       })
     : [active];
-  if (parser !== "graph-selector") return null;
   if (!active || active.type !== "node") return null;
   return (
     <>
