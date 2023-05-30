@@ -119,6 +119,7 @@
     "Edge Label": "Rótulo de Borda",
     "Edge Label Column": "Coluna de Rótulo de Borda",
     "Edge Style": "Estilo de Borda",
+    "Edge missing indentation": "Recuo em falta na borda",
     Edges: "Bordas",
     "Edges are declared in the same row as their source node":
       "As bordas são declaradas na mesma linha que seu nó de origem",
@@ -173,6 +174,8 @@
     "ID's": "IDs",
     "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
       "Se você gosta de usar <0>Flowchart Fun</0>, por favor, considere apoiar o projeto",
+    "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>":
+      "Se você quiser criar uma borda, indente esta linha. Se não, escape o dois-pontos com uma barra invertida <0>\\:</0>",
     "Image Export": "Exportação de imagem",
     Images: "Imagens",
     "Import Data": "Importar dados",
@@ -221,6 +224,7 @@
     Method: "Método",
     Monospace: "Monospace",
     Monthly: "Mensal",
+    "Multiple pointers on same line": "Múltiplos ponteiros na mesma linha",
     Museum: "Museu",
     Name: "Nome",
     New: "Novo",
@@ -234,6 +238,7 @@
     "Node ID, Classes, Attributes": "ID do Nó, Classes, Atributos",
     "Node Label": "Rótulo do Nó",
     "Node Shapes": "Formas do Nó",
+    "Node and pointer on same line": "Nó e ponteiro na mesma linha",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "Nós podem ser estilizados com traços, pontilhados ou duplos. As bordas também podem ser removidas com border-none.",
     "Not Empty": "Não Vazio",
@@ -254,6 +259,7 @@
     "Permanent Flowcharts": "Fluxogramas Permanentes",
     "Persistent Flowcharts": "Diagramas Persistentes",
     Playbook: "Cartilha",
+    "Pointer and container on same line": "Ponteiro e contêiner na mesma linha",
     Pricing: "Preços",
     "Processing Data": "Processando Dados",
     Prompt: "Estímulo",
@@ -354,12 +360,25 @@
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "Esta funcionalidade está disponível apenas para usuários Pro. <0>Torne-se um usuário Pro</0> para desbloqueá-la.",
     Tip: "Dica",
+    "To fix this change one of the edge IDs":
+      "Para corrigir isso, altere um dos IDs de borda",
+    "To fix this change one of the node IDs":
+      "Para corrigir isso, altere um dos IDs de nó",
+    "To fix this move one pointer to the next line":
+      "Para corrigir isso, mova um ponteiro para a próxima linha",
+    "To fix this move the pointer to the next line":
+      "Para corrigir isso, mova o ponteiro para a próxima linha",
+    "To fix this start the container <0>&lcub;</0> on a different line":
+      "Para corrigir isso, inicie o container <0>&lcub;</0> em uma linha diferente",
     "Top to Bottom": "De cima para baixo",
     "Try again": "Tente novamente",
+    "Two edges have the same ID": "Dois bordos têm o mesmo ID",
+    "Two nodes have the same ID": "Dois nós têm o mesmo ID",
     Type: "Tipo",
     Unfreeze: "Descongelar",
     "Unique text value to identify a node":
       "Valor de texto único para identificar um nó",
+    "Unknown Parsing Error": "Erro de Análise Desconhecido",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Libere sua criatividade e simplifique seu fluxo de trabalho com o Flowchart Fun Pro - a partir de apenas $ 3 / mês!",
     "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":

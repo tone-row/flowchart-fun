@@ -1,38 +1,51 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { BiErrorCircle } from "react-icons/bi";
+import { ReactNode } from "react";
+import { SiCodereview } from "react-icons/si";
 
-import { useParseError } from "../lib/useDoc";
-import { Box } from "../slang";
-import styles from "./EditorError.module.css";
+import { getParserError, ParserErrorCode } from "../lib/parserErrors";
+import { useParseErrorStore } from "../lib/useDoc";
 
+/**
+ * Displays an error over top of the text editor.
+ */
 export default function EditorError() {
-  const parseError = useParseError((s) => s.error);
-  const errorFromStyle = useParseError((s) => s.errorFromStyle);
-  const show = parseError || errorFromStyle || "";
+  const parseError = useParseErrorStore((s) => s.error);
+  const errorFromStyle = useParseErrorStore((s) => s.errorFromStyle);
+  const parserErrorCode = useParseErrorStore((s) => s.parserErrorCode);
+  let message: ReactNode = parseError || errorFromStyle || "";
+  let description: ReactNode = "";
+  if (parserErrorCode) {
+    const parserError = getParserError(parserErrorCode as ParserErrorCode);
+    message = parserError.message;
+    description = parserError.resolution;
+  }
   return (
     <AnimatePresence>
-      {show ? (
+      {message ? (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ type: "spring", duration: 0.2 }}
+          transition={{ type: "spring", duration: 0.4 }}
         >
-          <Box
-            className={styles.EditorError}
-            flow="column"
-            columnGap={1}
-            content="center start"
-            items="center"
-            p={2}
-            rad={2}
-            background="palette-orange-0"
-          >
-            <BiErrorCircle size={24} />
-            <Box gap={1}>
-              <span className="text-sm">{show}</span>
-            </Box>
-          </Box>
+          <div className="absolute bottom-2 left-2 right-2 z-10 bg-red-200/90 p-4 rounded-lg">
+            <div className="flex gap-4 items-start">
+              <SiCodereview
+                size={29}
+                className="text-red-700 min-w-[29px] mt-[-1px]"
+              />
+              <div className="grid gap-2 editor-error">
+                <h3 className="text-sm font-bold mt-[4px] text-red-700">
+                  {message}
+                </h3>
+                {description ? (
+                  <p className="text-xs text-red-900 opacity-80 leading-normal">
+                    {description}
+                  </p>
+                ) : null}
+              </div>
+            </div>
+          </div>
         </motion.div>
       ) : null}
     </AnimatePresence>

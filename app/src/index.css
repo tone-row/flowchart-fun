@@ -42,6 +42,7 @@ html body {
   display: block;
   position: absolute;
   top: calc(100% - 1px);
+  z-index: -1;
 }
 
 .monaco-editor .line-numbers {
@@ -159,4 +160,17 @@ div[data-reach-tooltip] {
 .chart-link:hover .chart-link-buttons,
 .chart-link:focus-within .chart-link-buttons {
   opacity: 1;
+}
+
+/** Completely Hide Editor Actions */
+.monaco-editor .monaco-hover .hover-row.status-bar .actions {
+  display: none;
+}
+.monaco-editor .monaco-hover .monaco-hover-content .marker.hover-contents {
+  @apply font-sans text-sm p-4 rounded !important;
+}
+
+/** The code blocks inside the editor error description */
+.editor-error code {
+  @apply font-mono text-xs p-1 text-red-900 rounded bg-red-100 inline-block;
 }

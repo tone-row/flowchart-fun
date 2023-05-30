@@ -3,6 +3,7 @@ import coseBilkent from "cytoscape-cose-bilkent";
 import dagre from "cytoscape-dagre";
 import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
+import { ParseError } from "graph-selector";
 import throttle from "lodash.throttle";
 import React, {
   memo,
@@ -17,6 +18,7 @@ import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
+import { monacoMarkerErrorSeverity } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
@@ -32,9 +34,9 @@ import { getAnimationSettings } from "../lib/hooks";
 import { Parsers, universalParse, useParser } from "../lib/parsers";
 import { Theme } from "../lib/themes/constants";
 import { useContextMenuState } from "../lib/useContextMenuState";
-import { Doc, useDoc, useParseError } from "../lib/useDoc";
+import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
+import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
-import { useHoverLine } from "../lib/useHoverLine";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
@@ -206,7 +208,7 @@ function useInitializeGraph({
       const handleMouseOut = () => {
         cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
         cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
-        useHoverLine.setState({ line: undefined });
+        useEditorStore.setState({ hoverLineNumber: undefined });
       };
 
       cyCurrent.on("mouseover", "node", nodeHighlight);
@@ -270,16 +272,16 @@ function useInitializeGraph({
     // Hover Events that Need "this"
     function nodeHighlight(this: NodeSingular) {
       this.addClass("nodeHovered");
-      useHoverLine.setState({ line: this.data().lineNumber });
+      useEditorStore.setState({ hoverLineNumber: this.data().lineNumber });
     }
     function edgeHighlight(this: EdgeSingular) {
       this.addClass("edgeHovered");
-      useHoverLine.setState({ line: this.data().lineNumber });
+      useEditorStore.setState({ hoverLineNumber: this.data().lineNumber });
     }
     function unhighlight(this: NodeSingular | EdgeSingular) {
       this.removeClass("nodeHovered");
       this.removeClass("edgeHovered");
-      useHoverLine.setState({ line: undefined });
+      useEditorStore.setState({ hoverLineNumber: undefined });
     }
   }, [cy, cyErrorCatcher]);
 }
@@ -344,20 +346,54 @@ function getGraphUpdater({
       // Reinitialize to avoid missing errors
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
-      useParseError.setState({ error: "", errorFromStyle: "" });
+      // Reset error store
+      useParseErrorStore.setState({
+        error: "",
+        errorFromStyle: "",
+        parserErrorCode: "",
+      });
+
+      // Remove parse error markers
+      useEditorStore.setState({ markers: [] });
+      updateModelMarkers();
 
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
     } catch (e) {
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
-      if (isError(e)) {
-        useParseError.setState({
+
+      // Check if it's a parse error and display it in the editor
+      if (isParseError(e)) {
+        useEditorStore.setState({
+          markers: [
+            {
+              startLineNumber: e.startLineNumber,
+              endLineNumber: e.endLineNumber,
+              startColumn: e.startColumn,
+              endColumn: e.endColumn,
+              message: e.message,
+              severity: monacoMarkerErrorSeverity,
+            },
+          ],
+        });
+        updateModelMarkers();
+
+        // translate the error and set it in the store
+        useParseErrorStore.setState({
+          parserErrorCode: e.code,
+        });
+      } else if (isError(e)) {
+        useParseErrorStore.setState({
           errorFromStyle: sanitizeMessage(e.message, elements),
         });
       }
     }
   }, 333);
+}
+
+function isParseError(e: unknown): e is ParseError {
+  return e instanceof Error && e.name === "ParseError";
 }
 
 function getStyleUpdater({
@@ -386,12 +422,12 @@ function getStyleUpdater({
       // Reinitialize to avoid missing errors
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
-      useParseError.setState({ errorFromStyle: "" });
+      useParseErrorStore.setState({ errorFromStyle: "" });
     } catch (e) {
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
       if (isError(e)) {
-        useParseError.setState({
+        useParseErrorStore.setState({
           errorFromStyle: sanitizeStyleMessage(e.message),
         });
       }

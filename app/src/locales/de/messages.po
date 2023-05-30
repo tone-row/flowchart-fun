@@ -413,6 +413,10 @@ msgstr "Spalte mit Kantenbeschriftung"
 msgid "Edge Style"
 msgstr "Kantenstil"
 
+#: src/lib/parserErrors.tsx:19
+msgid "Edge missing indentation"
+msgstr "Kante fehlende Einrückung"
+
 #: src/components/ImportDataDialog.tsx:406
 #: src/components/LearnSyntaxDialog.tsx:129
 msgid "Edges"
@@ -594,6 +598,10 @@ msgstr "IDs"
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 msgstr "Wenn Sie <0>Flowchart Fun</0> gerne verwenden, überlegen Sie bitte, das Projekt zu unterstützen."
 
+#: src/lib/parserErrors.tsx:21
+msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
+msgstr "Wenn Sie eine Kante erstellen möchten, rücken Sie diese Zeile ein. Wenn nicht, entkomme dem Doppelpunkt mit einem Backslash <0>\\:</0>"
+
 #: src/pages/Pricing.tsx:55
 msgid "Image Export"
 msgstr "Bildexport"
@@ -762,6 +770,10 @@ msgstr "Monospace"
 msgid "Monthly"
 msgstr "Monatlich"
 
+#: src/lib/parserErrors.tsx:29
+msgid "Multiple pointers on same line"
+msgstr "Mehrere Zeiger auf derselben Zeile"
+
 #: src/lib/graphOptions.ts:58
 msgid "Museum"
 msgstr "Museum"
@@ -817,6 +829,10 @@ msgstr "Knotenbeschriftung"
 #: src/components/LearnSyntaxDialog.tsx:261
 msgid "Node Shapes"
 msgstr "Knotenformen"
+
+#: src/lib/parserErrors.tsx:44
+msgid "Node and pointer on same line"
+msgstr "Knoten und Zeiger auf derselben Zeile"
 
 #: src/components/LearnSyntaxDialog.tsx:320
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
@@ -881,6 +897,10 @@ msgstr "Beständige Diagramme"
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
 msgstr "Spielbuch"
+
+#: src/lib/parserErrors.tsx:34
+msgid "Pointer and container on same line"
+msgstr "Zeiger und Container auf derselben Zeile"
 
 #: src/components/Header.tsx:193
 #: src/components/Header.tsx:407
@@ -1225,6 +1245,26 @@ msgstr "Diese Funktion ist nur für Pro-Benutzer verfügbar. <0>Werden Sie Pro-N
 msgid "Tip"
 msgstr "Tipp"
 
+#: src/lib/parserErrors.tsx:55
+msgid "To fix this change one of the edge IDs"
+msgstr "Um dies zu beheben, ändern Sie eine der Kanten-IDs"
+
+#: src/lib/parserErrors.tsx:50
+msgid "To fix this change one of the node IDs"
+msgstr "Um das zu beheben, ändern Sie eine der Knoten-IDs"
+
+#: src/lib/parserErrors.tsx:30
+msgid "To fix this move one pointer to the next line"
+msgstr "Um das zu beheben, verschieben Sie einen Zeiger auf die nächste Zeile"
+
+#: src/lib/parserErrors.tsx:45
+msgid "To fix this move the pointer to the next line"
+msgstr "Um das zu beheben, verschieben Sie den Zeiger auf die nächste Zeile"
+
+#: src/lib/parserErrors.tsx:36
+msgid "To fix this start the container <0>&lcub;</0> on a different line"
+msgstr "Um dies zu beheben, starten Sie den Container <0>&lcub;</0> auf einer anderen Zeile."
+
 #: src/lib/graphOptions.ts:33
 #: src/lib/graphOptions.ts:40
 msgid "Top to Bottom"
@@ -1233,6 +1273,14 @@ msgstr "Von oben nach unten"
 #: src/components/App.tsx:64
 msgid "Try again"
 msgstr "Erneut versuchen"
+
+#: src/lib/parserErrors.tsx:54
+msgid "Two edges have the same ID"
+msgstr "Zwei Kanten haben die gleiche ID"
+
+#: src/lib/parserErrors.tsx:49
+msgid "Two nodes have the same ID"
+msgstr "Zwei Knoten haben die gleiche ID"
 
 #: src/pages/New.tsx:187
 msgid "Type"
@@ -1246,6 +1294,10 @@ msgstr "Freigeben"
 #: src/components/LearnSyntaxDialog.tsx:103
 msgid "Unique text value to identify a node"
 msgstr "Einzigartiger Textwert, um einen Knoten zu identifizieren"
+
+#: src/lib/parserErrors.tsx:59
+msgid "Unknown Parsing Error"
+msgstr "Unbekannter Parser-Fehler"
 
 #: src/pages/Pricing.tsx:89
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"

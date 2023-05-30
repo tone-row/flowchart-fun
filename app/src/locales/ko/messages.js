@@ -115,6 +115,7 @@
     "Edge Label": "가장자리 라벨",
     "Edge Label Column": "가장자리 라벨 열",
     "Edge Style": "가장자리 스타일",
+    "Edge missing indentation": "들여쓰기가 누락된 가장자리",
     Edges: "가장자리",
     "Edges are declared in the same row as their source node":
       "가장자리는 소스 노드가 있는 같은 행에 선언됩니다.",
@@ -168,6 +169,8 @@
     "ID's": "식별자",
     "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
       "<0>Flowchart Fun</0>을 사용하는 것을 즐기고 있다면, 프로젝트를 지원해 주시기 바랍니다.",
+    "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>":
+      "만약 가장자리를 만들려면, 이 줄을 들여쓰기하십시오. 만약 그렇지 않다면, 콜론을 백슬래시로 이스케이프하십시오 <0>\\:</0>",
     "Image Export": "이미지 내보내기",
     Images: "이미지",
     "Import Data": "데이터 가져오기",
@@ -216,6 +219,7 @@
     Method: "방법",
     Monospace: "Monospace",
     Monthly: "월간",
+    "Multiple pointers on same line": "같은 줄에 여러 포인터",
     Museum: "박물관",
     Name: "이름",
     New: "신규",
@@ -229,6 +233,7 @@
     "Node ID, Classes, Attributes": "노드 ID, 클래스, 속성",
     "Node Label": "노드 라벨",
     "Node Shapes": "노드 모양",
+    "Node and pointer on same line": "같은 줄에 노드와 포인터",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "노드는 점선, 점점선 또는 이중선으로 스타일링할 수 있으며, border-none으로 테두리를 제거할 수 있습니다.",
     "Not Empty": "비어 있지 않음",
@@ -248,6 +253,7 @@
     "Permanent Flowcharts": "영구 플로우차트",
     "Persistent Flowcharts": "영구 다이어그램",
     Playbook: "플레이북",
+    "Pointer and container on same line": "같은 줄에 포인터와 컨테이너",
     Pricing: "가격",
     "Processing Data": "데이터 처리",
     Prompt: "프롬프트",
@@ -344,12 +350,25 @@
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사용자가 되어</0> 이 기능을 사용할 수 있게 하세요.",
     Tip: "팁",
+    "To fix this change one of the edge IDs":
+      "이를 수정하려면, 가장자리 ID 중 하나를 변경하십시오.",
+    "To fix this change one of the node IDs":
+      "이것을 수정하려면 노드 ID 중 하나를 변경하십시오",
+    "To fix this move one pointer to the next line":
+      "이것을 수정하려면 포인터를 다음 줄로 이동하십시오",
+    "To fix this move the pointer to the next line":
+      "이것을 수정하려면 포인터를 다음 줄로 이동하십시오",
+    "To fix this start the container <0>&lcub;</0> on a different line":
+      "이것을 수정하려면 컨테이너 <0>&lcub;</0>을 다른 줄에 시작하십시오",
     "Top to Bottom": "위에서 아래로",
     "Try again": "다시 시도하세요",
+    "Two edges have the same ID": "두 개의 간선이 같은 ID를 가지고 있습니다",
+    "Two nodes have the same ID": "두 개의 노드가 같은 ID를 가지고 있습니다",
     Type: "유형",
     Unfreeze: "녹이다",
     "Unique text value to identify a node":
       "노드를 식별하기 위한 고유한 텍스트 값",
+    "Unknown Parsing Error": "알 수 없는 구문 분석 오류",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Flowchart Fun Pro를 사용하여 창의력을 발휘하고 작업흐름을 최적화하세요. $3/월부터 시작합니다!",
     "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":

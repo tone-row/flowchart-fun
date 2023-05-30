@@ -1,8 +1,9 @@
 import { DotsThreeVertical } from "phosphor-react";
 import { Resizable as Reresizable } from "re-resizable";
-import { memo, ReactNode, useState } from "react";
+import { memo, ReactNode } from "react";
 
 import { useIsEditorView } from "../lib/hooks";
+import { useEditorStore } from "../lib/useEditorStore";
 import { Box } from "../slang";
 import styles from "./TabPane.module.css";
 
@@ -13,7 +14,7 @@ const Resizable = ({
   children: ReactNode;
   triggerResize: () => void;
 }) => {
-  const [dragging, setDragging] = useState(false);
+  const isDragging = useEditorStore((s) => s.isDragging);
 
   return (
     <Reresizable
@@ -34,10 +35,12 @@ const Resizable = ({
         topLeft: false,
       }}
       className={styles.TextareaContainer}
-      handleComponent={{ right: <Handle dragging={dragging} /> }}
-      onResizeStart={() => setDragging(true)}
+      handleComponent={{ right: <Handle dragging={isDragging} /> }}
+      onResizeStart={() => {
+        useEditorStore.setState({ isDragging: true });
+      }}
       onResizeStop={() => {
-        setDragging(false);
+        useEditorStore.setState({ isDragging: false });
         triggerResize();
       }}
     >

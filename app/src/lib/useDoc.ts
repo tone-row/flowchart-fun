@@ -64,12 +64,18 @@ export function docToString(doc: Doc) {
   ].join("\n");
 }
 
-export const useParseError = create<{ error: string; errorFromStyle: string }>(
-  () => ({
-    error: "",
-    errorFromStyle: "",
-  })
-);
+type ParseErrorStore = {
+  error: string;
+  errorFromStyle: string;
+  /** An Error Code referencing getParserErrors */
+  parserErrorCode: string;
+};
+
+export const useParseErrorStore = create<ParseErrorStore>(() => ({
+  error: "",
+  errorFromStyle: "",
+  parserErrorCode: "",
+}));
 
 /**
  * Get a type-safe version of any property

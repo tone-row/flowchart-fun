@@ -36,10 +36,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - uses: pnpm/action-setup@v2.2.4
         with:
-          version: 7
+          version: 8
       - name: Install Playwright
         run: |
           pnpm add -g playwright@1.29.0

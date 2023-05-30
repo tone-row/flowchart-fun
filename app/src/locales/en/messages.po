@@ -413,6 +413,10 @@ msgstr "Edge Label Column"
 msgid "Edge Style"
 msgstr "Edge Style"
 
+#: src/lib/parserErrors.tsx:19
+msgid "Edge missing indentation"
+msgstr "Edge missing indentation"
+
 #: src/components/ImportDataDialog.tsx:406
 #: src/components/LearnSyntaxDialog.tsx:129
 msgid "Edges"
@@ -594,6 +598,10 @@ msgstr "ID's"
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 msgstr "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 
+#: src/lib/parserErrors.tsx:21
+msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
+msgstr "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
+
 #: src/pages/Pricing.tsx:55
 msgid "Image Export"
 msgstr "Image Export"
@@ -762,6 +770,10 @@ msgstr "Monospace"
 msgid "Monthly"
 msgstr "Monthly"
 
+#: src/lib/parserErrors.tsx:29
+msgid "Multiple pointers on same line"
+msgstr "Multiple pointers on same line"
+
 #: src/lib/graphOptions.ts:58
 msgid "Museum"
 msgstr "Museum"
@@ -818,6 +830,10 @@ msgstr "Node Label"
 msgid "Node Shapes"
 msgstr "Node Shapes"
 
+#: src/lib/parserErrors.tsx:44
+msgid "Node and pointer on same line"
+msgstr "Node and pointer on same line"
+
 #: src/components/LearnSyntaxDialog.tsx:320
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
@@ -835,8 +851,8 @@ msgstr "Office Hours"
 msgid ""
 "Once in a while the magic link will end up in your spam folder. If you\n"
 "don't see it after a few minutes, check there or request a new link."
-msgstr "If you don't see it after a few minutes, check back there or request a new link."
-"If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\n"
+msgstr ""
+"If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check back there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\n"
 "don't see it after a few minutes, check there or request a new link."
 
 #: src/pages/Pricing.tsx:32
@@ -883,6 +899,10 @@ msgstr "Persistent Flowcharts"
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
 msgstr "Playbook"
+
+#: src/lib/parserErrors.tsx:34
+msgid "Pointer and container on same line"
+msgstr "Pointer and container on same line"
 
 #: src/components/Header.tsx:193
 #: src/components/Header.tsx:407
@@ -1227,6 +1247,26 @@ msgstr "This feature is only available to pro users. <0>Become a pro user</0> to
 msgid "Tip"
 msgstr "Tip"
 
+#: src/lib/parserErrors.tsx:55
+msgid "To fix this change one of the edge IDs"
+msgstr "To fix this change one of the edge IDs"
+
+#: src/lib/parserErrors.tsx:50
+msgid "To fix this change one of the node IDs"
+msgstr "To fix this change one of the node IDs"
+
+#: src/lib/parserErrors.tsx:30
+msgid "To fix this move one pointer to the next line"
+msgstr "To fix this move one pointer to the next line"
+
+#: src/lib/parserErrors.tsx:45
+msgid "To fix this move the pointer to the next line"
+msgstr "To fix this move the pointer to the next line"
+
+#: src/lib/parserErrors.tsx:36
+msgid "To fix this start the container <0>&lcub;</0> on a different line"
+msgstr "To fix this start the container <0>&lcub;</0> on a different line"
+
 #: src/lib/graphOptions.ts:33
 #: src/lib/graphOptions.ts:40
 msgid "Top to Bottom"
@@ -1235,6 +1275,14 @@ msgstr "Top to Bottom"
 #: src/components/App.tsx:64
 msgid "Try again"
 msgstr "Try again"
+
+#: src/lib/parserErrors.tsx:54
+msgid "Two edges have the same ID"
+msgstr "Two edges have the same ID"
+
+#: src/lib/parserErrors.tsx:49
+msgid "Two nodes have the same ID"
+msgstr "Two nodes have the same ID"
 
 #: src/pages/New.tsx:187
 msgid "Type"
@@ -1248,6 +1296,10 @@ msgstr "Unfreeze"
 #: src/components/LearnSyntaxDialog.tsx:103
 msgid "Unique text value to identify a node"
 msgstr "Unique text value to identify a node"
+
+#: src/lib/parserErrors.tsx:59
+msgid "Unknown Parsing Error"
+msgstr "Unknown Parsing Error"
 
 #: src/pages/Pricing.tsx:89
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
