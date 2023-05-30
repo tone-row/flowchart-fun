@@ -37,18 +37,20 @@ export default function Login() {
 
   if (success) {
     return (
-      <div className="pt-12 grid justify-items-center content-start gap-4 w-full max-w-[370px] mx-auto">
+      <div className="pt-12 grid justify-items-center content-start gap-4 w-full max-w-[440px] mx-auto">
         <EmailPassword width={180} height={180} />
-        <p className="text text-lg leading-tight">
+        <p className="text text-lg leading-tight ml-4">
           <Trans>
             Check your email for a link to log in. You can close this window.
           </Trans>
         </p>
-        <div className="flex gap-2 items-start text-neutral-700 mt-2">
-          <HandWaving size={24} className="w-[24px] min-w-[24px]" />
-          <p className="text-xs text-neutral-700">
-            {t`Once in a while the magic link will end up in your spam folder. If you
-        don't see it after a few minutes, check there or request a new link.`}
+        <div className="text-neutral-600 ml-4">
+          <p className="text-sm text-neutral-600 leading-tight">
+            <Trans>
+              Once in a while the magic link will end up in your spam folder. If
+              you don&apos;t see it after a few minutes, check there or request
+              a new link.
+            </Trans>
           </p>
         </div>
       </div>

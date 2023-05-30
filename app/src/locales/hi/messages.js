@@ -242,8 +242,8 @@
       "नोड्स को डैश्ड, डॉट्ड या डबल के साथ स्टाइल किया जा सकता है। बॉर्डर-नोन के साथ भी बॉर्डर हटाए जा सकते हैं।",
     "Not Empty": "खाली नहीं",
     "Office Hours": "कार्यालय अवधि",
-    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
-      "कुछ मिनट बाद तो देखने में नहीं आता है, वहां देखें या एक नया लिंक अनुरोध करें।",
+    "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link.":
+      "कभी-कभी मैजिक लिंक आपके स्पैम फोल्डर में खत्म हो जाता है। अगर आप कुछ मिनट बाद उसे नहीं देख रहे हैं, तो वहां जाकर देखें या एक नया लिंक अनुरोध करें।",
     "One-on-One Support": "एक-पर-एक समर्थन",
     "One-time Share Links": "वन-टाइम शेयर लिंक",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -326,7 +326,6 @@
     Submit: "भेजना",
     Subscription: "सदस्यता",
     "Subscription will end": "सदस्यता समाप्त हो जाएगी",
-    Syntax: "सिंटेक्स",
     "Target Arrow": "लक्ष्य तीर",
     "Target Column": "लक्ष्य कॉलम",
     "Target Delimiter": "लक्ष्य डेलीमीटर",

@@ -234,8 +234,8 @@
       "节点可以使用虚线、点线或双线进行样式设置，也可以使用border-none来移除边框。",
     "Not Empty": "不为空",
     "Office Hours": "工作时间",
-    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
-      "如果幾分鐘後還沒有看到它，請檢查或請求新鏈接。",
+    "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link.":
+      "偶尔，魔法链接会被放入您的垃圾邮件文件夹。如果几分钟后仍然没有收到，请检查垃圾邮件文件夹，或者重新请求新的链接。",
     "One-on-One Support": "一对一支持",
     "One-time Share Links": "一次性分享链接",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -315,7 +315,6 @@
     Submit: "提交",
     Subscription: "订阅",
     "Subscription will end": "订阅即将到期",
-    Syntax: "句法",
     "Target Arrow": "目标箭头",
     "Target Column": "目標欄",
     "Target Delimiter": "目標分隔符",

@@ -134,6 +134,9 @@ for (const locale of locales) {
     let translations = [];
 
     while (retries > 0 && translations.length !== batch.length) {
+      console.log(
+        `Translating ${batch.length} phrases... (${retries} retries)`
+      );
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt,

@@ -243,8 +243,8 @@
       "Knoten können mit gestrichelten, gepunkteten oder doppelten Linien gestaltet werden. Grenzen können auch mit border-none entfernt werden.",
     "Not Empty": "Nicht leer",
     "Office Hours": "Geschäftszeiten",
-    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
-      "Wenn Sie es nach ein paar Minuten nicht sehen, überprüfen Sie es dort oder fordern Sie einen neuen Link an.",
+    "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link.":
+      "legentlich landet der magische Link in Ihrem Spam-Ordner. Wenn Sie ihn nach ein paar Minuten nicht sehen, überprüfen Sie dort oder fordern Sie einen neuen Link an.",
     "One-on-One Support": "One-on-One-Support",
     "One-time Share Links": "Einmalige Share-Links",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -329,7 +329,6 @@
     Submit: "Einsenden",
     Subscription: "Abonnement",
     "Subscription will end": "Abonnement wird beendet",
-    Syntax: "Syntax",
     "Target Arrow": "Zielpfeil",
     "Target Column": "Ziel-Spalte",
     "Target Delimiter": "Ziel-Trennzeichen",

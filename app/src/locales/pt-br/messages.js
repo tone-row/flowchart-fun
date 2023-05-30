@@ -243,8 +243,8 @@
       "Nós podem ser estilizados com traços, pontilhados ou duplos. As bordas também podem ser removidas com border-none.",
     "Not Empty": "Não Vazio",
     "Office Hours": "Horário de trabalho",
-    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
-      "Se não vir depois de alguns minutos, verifique aqui ou solicite um novo link.",
+    "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link.":
+      " vez em quando, o link mágico acabará em sua pasta de spam. Se você não o vir após alguns minutos, verifique lá ou solicite um novo link.",
     "One-on-One Support": "Suporte Individual",
     "One-time Share Links": "Links de compartilhamento único",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -328,7 +328,6 @@
     Submit: "Enviar",
     Subscription: "Inscrição",
     "Subscription will end": "Inscrição acabará",
-    Syntax: "Sintaxe",
     "Target Arrow": "Seta de Destino",
     "Target Column": "Coluna Alvo",
     "Target Delimiter": "Delimitador Alvo",

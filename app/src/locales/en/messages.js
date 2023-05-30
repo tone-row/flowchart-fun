@@ -242,8 +242,8 @@
       "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
     "Not Empty": "Not Empty",
     "Office Hours": "Office Hours",
-    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
-      "If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check back there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.",
+    "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link.":
+      "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link.",
     "One-on-One Support": "One-on-One Support",
     "One-time Share Links": "One-time Share Links",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -326,7 +326,6 @@
     Submit: "Submit",
     Subscription: "Subscription",
     "Subscription will end": "Subscription will end",
-    Syntax: "Syntax",
     "Target Arrow": "Target Arrow",
     "Target Column": "Target Column",
     "Target Delimiter": "Target Delimiter",

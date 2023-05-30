@@ -96,7 +96,7 @@ msgstr "편집기로 돌아가기"
 msgid "Background"
 msgstr "배경"
 
-#: src/components/ShareDialog.tsx:458
+#: src/components/ShareDialog.tsx:454
 msgid "Basic Flowchart"
 msgstr "기본 플로우 차트"
 
@@ -122,8 +122,8 @@ msgstr "빈칸"
 msgid "Blog"
 msgstr "블로그"
 
-#: src/components/GraphContextMenu.tsx:483
-#: src/components/GraphContextMenu.tsx:579
+#: src/components/GraphContextMenu.tsx:480
+#: src/components/GraphContextMenu.tsx:576
 msgid "Border"
 msgstr "경계"
 
@@ -216,7 +216,7 @@ msgstr "클론"
 msgid "Close"
 msgstr "닫기"
 
-#: src/components/GraphContextMenu.tsx:309
+#: src/components/GraphContextMenu.tsx:306
 msgid "Color"
 msgstr "색상"
 
@@ -267,21 +267,21 @@ msgstr "계속하기"
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
-#: src/components/ShareDialog.tsx:254
-#: src/components/ShareDialog.tsx:255
-#: src/components/ShareDialog.tsx:372
+#: src/components/ShareDialog.tsx:250
+#: src/components/ShareDialog.tsx:251
+#: src/components/ShareDialog.tsx:368
 msgid "Copy"
 msgstr "복사"
 
-#: src/components/GraphContextMenu.tsx:226
+#: src/components/GraphContextMenu.tsx:225
 msgid "Copy PNG Image"
 msgstr "PNG 이미지 복사"
 
-#: src/components/GraphContextMenu.tsx:184
+#: src/components/GraphContextMenu.tsx:183
 msgid "Copy SVG Code"
 msgstr "SVG 코드 복사"
 
-#: src/components/ShareDialog.tsx:337
+#: src/components/ShareDialog.tsx:333
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "mermaid.js 코드를 복사하거나 mermaid.js 라이브 편집기에서 직접 열어주세요."
 
@@ -355,24 +355,24 @@ msgstr "본 항목을 삭제하시겠습니까?"
 msgid "Document"
 msgstr "문서"
 
-#: src/pages/LogIn.tsx:91
+#: src/pages/LogIn.tsx:93
 msgid "Don't have an account?"
 msgstr "계정이 없습니까?"
 
-#: src/components/ShareDialog.tsx:72
-#: src/components/ShareDialog.tsx:533
+#: src/components/ShareDialog.tsx:70
+#: src/components/ShareDialog.tsx:529
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/GraphContextMenu.tsx:127
+#: src/components/GraphContextMenu.tsx:126
 msgid "Download JPG"
 msgstr "JPG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:103
+#: src/components/GraphContextMenu.tsx:102
 msgid "Download PNG"
 msgstr "PNG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:149
+#: src/components/GraphContextMenu.tsx:148
 msgid "Download SVG"
 msgstr "SVG 다운로드"
 
@@ -392,7 +392,7 @@ msgstr "파일을 여기에 드롭하세요 ..."
 msgid "Easily import existing flowcharts from other software"
 msgstr "다른 소프트웨어에서 기존 플로우 차트를 쉽게 가져오기"
 
-#: src/components/GraphContextMenu.tsx:572
+#: src/components/GraphContextMenu.tsx:569
 msgid "Edge"
 msgstr "가장자리"
 
@@ -454,7 +454,7 @@ msgstr "출발 노드 행에 간선"
 msgid "Edges in Target Node Row"
 msgstr "도착 노드 행에 간선"
 
-#: src/components/ShareDialog.tsx:144
+#: src/components/ShareDialog.tsx:142
 msgid "Editable"
 msgstr "편집 가능"
 
@@ -494,8 +494,8 @@ msgstr "Excalidraw"
 
 #: src/components/EditorWrapper.tsx:53
 #: src/components/EditorWrapper.tsx:58
-#: src/components/ShareDialog.tsx:63
-#: src/components/ShareDialog.tsx:155
+#: src/components/ShareDialog.tsx:61
+#: src/components/ShareDialog.tsx:152
 msgid "Export"
 msgstr "내보내기"
 
@@ -508,7 +508,7 @@ msgstr "고해상도 이미지 내보내기"
 msgid "Export to SVG"
 msgstr "SVG로 내보내기"
 
-#: src/components/GraphContextMenu.tsx:268
+#: src/components/GraphContextMenu.tsx:267
 msgid "Extra Large"
 msgstr "엄청나게 큼"
 
@@ -537,7 +537,7 @@ msgstr "버그를 발견했습니까? 기능 요청이 있습니까? 우리는 �
 msgid "Free"
 msgstr "무료"
 
-#: src/components/ShareDialog.tsx:141
+#: src/components/ShareDialog.tsx:139
 msgid "Fullscreen"
 msgstr "전체 화면"
 
@@ -630,7 +630,7 @@ msgstr "CSV 파일에서 데이터를 가져와 새로운 플로우 차트로 �
 msgid "Import from Lucidchart, Visio, and other CSV files"
 msgstr "Lucidchart, Visio 및 기타 CSV 파일에서 가져오기"
 
-#: src/components/ShareDialog.tsx:450
+#: src/components/ShareDialog.tsx:446
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다."
 
@@ -642,7 +642,7 @@ msgstr "데이터 가져오기는 프로 기능입니다. Flowchart Fun Pro을 �
 msgid "Impress your audience with high-quality images produced by Flowchart Fun"
 msgstr "Flowchart Fun으로 만든 고품질 이미지로 관객을 감탄시켜보세요"
 
-#: src/components/ShareDialog.tsx:483
+#: src/components/ShareDialog.tsx:479
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Visio 색상을 사용하려면 다음 중 하나와 같은 <1>roleType</1> 속성을 추가하십시오:"
 
@@ -666,7 +666,7 @@ msgstr "있다"
 msgid "Language"
 msgstr "언어"
 
-#: src/components/GraphContextMenu.tsx:263
+#: src/components/GraphContextMenu.tsx:262
 msgid "Large"
 msgstr "크다"
 
@@ -715,7 +715,7 @@ msgstr "라이트"
 msgid "Light Mode"
 msgstr "라이트 모드"
 
-#: src/components/ShareDialog.tsx:136
+#: src/components/ShareDialog.tsx:134
 msgid "Link"
 msgstr "링크"
 
@@ -725,7 +725,7 @@ msgstr "로딩"
 
 #: src/components/Header.tsx:202
 #: src/components/Header.tsx:422
-#: src/pages/LogIn.tsx:62
+#: src/pages/LogIn.tsx:64
 #: src/pages/New.tsx:273
 msgid "Log In"
 msgstr "로그인"
@@ -742,7 +742,7 @@ msgstr "플로우 차트를 만들기 위해 로그인하세요."
 msgid "Make a One-Time Donation"
 msgstr "한 번 선물하기"
 
-#: src/components/ShareDialog.tsx:416
+#: src/components/ShareDialog.tsx:412
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
@@ -754,7 +754,7 @@ msgstr "로그인할 때 사용할 같은 이메일을 사용하세요."
 msgid "Map Data"
 msgstr "데이터 지도"
 
-#: src/components/GraphContextMenu.tsx:259
+#: src/components/GraphContextMenu.tsx:258
 msgid "Medium"
 msgstr "중간"
 
@@ -801,7 +801,7 @@ msgstr "다음 청구 금액"
 msgid "No Edges"
 msgstr "노드 없음"
 
-#: src/components/GraphContextMenu.tsx:302
+#: src/components/GraphContextMenu.tsx:299
 msgid "Node"
 msgstr "노드"
 
@@ -847,11 +847,9 @@ msgstr "비어 있지 않음"
 msgid "Office Hours"
 msgstr "근무 시간"
 
-#: src/pages/LogIn.tsx:50
-msgid ""
-"Once in a while the magic link will end up in your spam folder. If you\n"
-"don't see it after a few minutes, check there or request a new link."
-msgstr "몇 분 후에도 보이지 않으면 여기를 확인하거나 새 링크를 요청하세요."
+#: src/pages/LogIn.tsx:49
+msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
+msgstr "가끔 마술 링크가 스팸 폴더에 도착할 수도 있습니다. 몇 분 후에도 보이지 않으면 거기를 확인하거나 새로운 링크를 요청하십시오."
 
 #: src/pages/Pricing.tsx:32
 #: src/pages/Pricing.tsx:74
@@ -870,7 +868,7 @@ msgstr "이 기기에서만 사용 가능합니다.<0/>브라우저 캐시를 �
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
 
-#: src/components/ShareDialog.tsx:470
+#: src/components/ShareDialog.tsx:466
 msgid "Organization Chart"
 msgstr "조직도"
 
@@ -915,8 +913,8 @@ msgstr "데이터 처리"
 msgid "Prompt"
 msgstr "프롬프트"
 
-#: src/components/ShareDialog.tsx:412
-#: src/components/ShareDialog.tsx:435
+#: src/components/ShareDialog.tsx:408
+#: src/components/ShareDialog.tsx:431
 msgid "Public"
 msgstr "공용"
 
@@ -925,7 +923,7 @@ msgid "Random"
 msgstr "무작위"
 
 #: src/components/EditorWrapper.tsx:44
-#: src/components/ShareDialog.tsx:147
+#: src/components/ShareDialog.tsx:145
 msgid "Read-only"
 msgstr "읽기 전용"
 
@@ -1046,20 +1044,20 @@ msgstr "우리에게 피드백 보내기"
 msgid "Settings"
 msgstr "설정"
 
-#: src/components/GraphContextMenu.tsx:371
+#: src/components/GraphContextMenu.tsx:368
 msgid "Shape"
 msgstr "모양 "
 
 #: src/components/SignUpForm.tsx:176
-#: src/pages/LogIn.tsx:96
+#: src/pages/LogIn.tsx:98
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/components/GraphContextMenu.tsx:438
+#: src/components/GraphContextMenu.tsx:435
 msgid "Size"
 msgstr "크기"
 
-#: src/components/GraphContextMenu.tsx:254
+#: src/components/GraphContextMenu.tsx:253
 msgid "Small"
 msgstr "작은"
 
@@ -1071,7 +1069,7 @@ msgstr "스타일링하기 위한 몇 가지 클래스가 이용 가능합니다
 msgid "Sorry! This page is only available in English."
 msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 
-#: src/components/GraphContextMenu.tsx:621
+#: src/components/GraphContextMenu.tsx:618
 msgid "Source Arrow"
 msgstr "소스 화살표"
 
@@ -1139,7 +1137,7 @@ msgstr "스타일 클래스"
 
 #: src/components/Feedback.tsx:83
 #: src/components/ImportDataDialog.tsx:583
-#: src/pages/LogIn.tsx:86
+#: src/pages/LogIn.tsx:88
 msgid "Submit"
 msgstr "보내다"
 
@@ -1151,11 +1149,7 @@ msgstr "구독"
 msgid "Subscription will end"
 msgstr "구독이 종료될 예정입니다."
 
-#: src/components/EditorOptions.tsx:40
-msgid "Syntax"
-msgstr "문법"
-
-#: src/components/GraphContextMenu.tsx:660
+#: src/components/GraphContextMenu.tsx:657
 msgid "Target Arrow"
 msgstr "타겟 화살표"
 
@@ -1241,7 +1235,7 @@ msgstr "이 앱은 타이핑으로 작동합니다"
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사용자가 되어</0> 이 기능을 사용할 수 있게 하세요."
 
-#: src/components/ShareDialog.tsx:542
+#: src/components/ShareDialog.tsx:538
 msgid "Tip"
 msgstr "팁"
 
@@ -1335,11 +1329,11 @@ msgstr "노드의 너비와 높이를 명시적으로 설정하려면 <0>w</0> �
 msgid "Use the customer portal to change your billing information."
 msgstr "청구 정보를 변경하려면 고객 포털을 사용하십시오."
 
-#: src/components/ShareDialog.tsx:478
+#: src/components/ShareDialog.tsx:474
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "조직도, 계층 구조 및 기타 조직 구조를 위해 이 파일을 사용하십시오."
 
-#: src/components/ShareDialog.tsx:466
+#: src/components/ShareDialog.tsx:462
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오."
 
@@ -1355,7 +1349,7 @@ msgstr "Github에서 보기"
 msgid "We use cookies to keep you logged in."
 msgstr "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다."
 
-#: src/pages/LogIn.tsx:65
+#: src/pages/LogIn.tsx:67
 msgid "We use magic links to log you in. Enter your email below to get started."
 msgstr "우리는 마법 링크를 사용하여 로그인합니다. 아래에 이메일을 입력하여 시작하십시오."
 
