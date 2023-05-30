@@ -67,13 +67,14 @@ export function docToString(doc: Doc) {
 type ParseErrorStore = {
   error: string;
   errorFromStyle: string;
-  /** Expanded Error Description */
-  errorDescription?: string;
+  /** An Error Code referencing getParserErrors */
+  parserErrorCode: string;
 };
 
 export const useParseErrorStore = create<ParseErrorStore>(() => ({
   error: "",
   errorFromStyle: "",
+  parserErrorCode: "",
 }));
 
 /**

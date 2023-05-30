@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { ReactNode } from "react";
 import { SiCodereview } from "react-icons/si";
 
+import { getParserError, ParserErrorCode } from "../lib/parserErrors";
 import { useParseErrorStore } from "../lib/useDoc";
 
 /**
@@ -9,11 +11,17 @@ import { useParseErrorStore } from "../lib/useDoc";
 export default function EditorError() {
   const parseError = useParseErrorStore((s) => s.error);
   const errorFromStyle = useParseErrorStore((s) => s.errorFromStyle);
-  const errorDescription = useParseErrorStore((s) => s.errorDescription);
-  const show = parseError || errorFromStyle || "";
+  const parserErrorCode = useParseErrorStore((s) => s.parserErrorCode);
+  let message: ReactNode = parseError || errorFromStyle || "";
+  let description: ReactNode = "";
+  if (parserErrorCode) {
+    const parserError = getParserError(parserErrorCode as ParserErrorCode);
+    message = parserError.message;
+    description = parserError.resolution;
+  }
   return (
     <AnimatePresence>
-      {show ? (
+      {message ? (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -26,13 +34,13 @@ export default function EditorError() {
                 size={29}
                 className="text-red-700 min-w-[29px] mt-[-1px]"
               />
-              <div className="grid gap-2">
+              <div className="grid gap-2 editor-error">
                 <h3 className="text-sm font-bold mt-[4px] text-red-700">
-                  {show}
+                  {message}
                 </h3>
-                {errorDescription ? (
+                {description ? (
                   <p className="text-xs text-red-900 opacity-80 leading-normal">
-                    {errorDescription}
+                    {description}
                   </p>
                 ) : null}
               </div>

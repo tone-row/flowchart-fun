@@ -346,7 +346,12 @@ function getGraphUpdater({
       // Reinitialize to avoid missing errors
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
-      useParseErrorStore.setState({ error: "", errorFromStyle: "" });
+      // Reset error store
+      useParseErrorStore.setState({
+        error: "",
+        errorFromStyle: "",
+        parserErrorCode: "",
+      });
 
       // Remove parse error markers
       useEditorStore.setState({ markers: [] });
@@ -355,6 +360,9 @@ function getGraphUpdater({
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
     } catch (e) {
+      cyErrorCatcher.current.destroy();
+      cyErrorCatcher.current = cytoscape();
+
       // Check if it's a parse error and display it in the editor
       if (isParseError(e)) {
         useEditorStore.setState({
@@ -370,11 +378,12 @@ function getGraphUpdater({
           ],
         });
         updateModelMarkers();
-      }
 
-      cyErrorCatcher.current.destroy();
-      cyErrorCatcher.current = cytoscape();
-      if (isError(e)) {
+        // translate the error and set it in the store
+        useParseErrorStore.setState({
+          parserErrorCode: e.code,
+        });
+      } else if (isError(e)) {
         useParseErrorStore.setState({
           errorFromStyle: sanitizeMessage(e.message, elements),
         });
