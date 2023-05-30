@@ -366,8 +366,8 @@
       "इसे ठीक करने के लिए प्रतीक को अगली पंक्ति पर ले जाएं",
     "To fix this move the pointer to the next line":
       "इसे ठीक करने के लिए प्रतीक को अगली पंक्ति पर ले जाएं",
-    "To fix this start the container <0>&lcub;</0> on a different line":
-      "इसे ठीक करने के लिए कंटेनर <0>&lcub;</0> को एक अलग पंक्ति पर शुरू करें",
+    "To fix this start the container <0/> on a different line":
+      "इसे ठीक करने के लिए कंटेनर <0/> को एक अलग पंक्ति पर शुरू करें",
     "Top to Bottom": "ऊपर से नीचे",
     "Try again": "फिर से कोशिश करें",
     "Two edges have the same ID": "दो किनारे उसी आईडी के हैं",
