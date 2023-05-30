@@ -358,8 +358,8 @@
       "이것을 수정하려면 포인터를 다음 줄로 이동하십시오",
     "To fix this move the pointer to the next line":
       "이것을 수정하려면 포인터를 다음 줄로 이동하십시오",
-    "To fix this start the container <0>&lcub;</0> on a different line":
-      "이것을 수정하려면 컨테이너 <0>&lcub;</0>을 다른 줄에 시작하십시오",
+    "To fix this start the container <0/> on a different line":
+      "이것을 수정하려면 컨테이너 <0/>을 다른 줄에 시작하십시오",
     "Top to Bottom": "위에서 아래로",
     "Try again": "다시 시도하세요",
     "Two edges have the same ID": "두 개의 간선이 같은 ID를 가지고 있습니다",

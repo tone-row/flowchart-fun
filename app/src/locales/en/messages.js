@@ -366,8 +366,8 @@
       "To fix this move one pointer to the next line",
     "To fix this move the pointer to the next line":
       "To fix this move the pointer to the next line",
-    "To fix this start the container <0>&lcub;</0> on a different line":
-      "To fix this start the container <0>&lcub;</0> on a different line",
+    "To fix this start the container <0/> on a different line":
+      "To fix this start the container <0/> on a different line",
     "Top to Bottom": "Top to Bottom",
     "Try again": "Try again",
     "Two edges have the same ID": "Two edges have the same ID",
