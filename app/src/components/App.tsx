@@ -34,7 +34,7 @@ export default function App() {
               <Elements stripe={stripePromise}>
                 <Suspense fallback={<Loading />}>
                   <Router />
-                  <ReactQueryDevtools />
+                  {/* <ReactQueryDevtools /> */}
                 </Suspense>
               </Elements>
             </I18n>
