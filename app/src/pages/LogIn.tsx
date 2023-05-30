@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import { CircleNotch, HandWaving } from "phosphor-react";
+import { CircleNotch } from "phosphor-react";
 import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
