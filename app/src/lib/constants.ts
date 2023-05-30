@@ -61,3 +61,6 @@ export const HIDDEN_GRAPH_OPTIONS_DIVIDER = "¼▓╬";
 export const AUTH_IMG_SCALE = 3;
 // default unauth raster image scale
 export const UNAUTH_IMG_SCALE = 1.5;
+
+// This is to avoid a monaco-editor import that breaks too many things
+export const monacoMarkerErrorSeverity = 8;

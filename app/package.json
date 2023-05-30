@@ -91,6 +91,7 @@
     "lz-string": "^1.4.4",
     "make-plural": "^7.1.0",
     "marked": "^4.1.1",
+    "monaco-editor": "^0.34.0",
     "moniker": "^0.1.2",
     "notion-to-md": "^2.5.5",
     "openai": "^3.1.0",
@@ -118,7 +119,6 @@
     "svgo": "^2.8.0",
     "use-debounce": "^5.2.1",
     "web-vitals": "^1.0.1",
-    "monaco-editor": "^0.34.0",
     "zustand": "^4.3.3"
   },
   "eslintConfig": {
@@ -186,7 +186,6 @@
     "jsdom": "^20.0.3",
     "minimist": "^1.2.5",
     "msw": "^0.36.8",
-    "node-localstorage": "^2.2.1",
     "prettier": "^2.3.1",
     "source-map-explorer": "^2.5.2",
     "tailwindcss": "^3.2.6",

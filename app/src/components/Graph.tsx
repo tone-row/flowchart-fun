@@ -5,7 +5,6 @@ import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
 import { ParseError } from "graph-selector";
 import throttle from "lodash.throttle";
-import { MarkerSeverity } from "monaco-editor";
 import React, {
   memo,
   MutableRefObject,
@@ -19,6 +18,7 @@ import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
 import { buildStylesForGraph } from "../lib/buildStylesForGraph";
+import { monacoMarkerErrorSeverity } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
@@ -365,7 +365,7 @@ function getGraphUpdater({
               startColumn: e.startColumn,
               endColumn: e.endColumn,
               message: e.message,
-              severity: MarkerSeverity.Error,
+              severity: monacoMarkerErrorSeverity,
             },
           ],
         });

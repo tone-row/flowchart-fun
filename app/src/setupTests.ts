@@ -5,8 +5,4 @@
 import "@testing-library/jest-dom";
 import "jest-canvas-mock";
 
-import { LocalStorage } from "node-localstorage";
-
-export const mockLocalStorage = new LocalStorage("./scratch");
-
-global.localStorage = mockLocalStorage;
+jest.spyOn(Storage.prototype, "setItem");
