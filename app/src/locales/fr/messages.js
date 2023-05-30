@@ -119,6 +119,7 @@
     "Edge Label": "Étiquette Edge",
     "Edge Label Column": "Colonne d'étiquette Edge",
     "Edge Style": "Style Edge",
+    "Edge missing indentation": "Indentation manquante du bord",
     Edges: "Bords",
     "Edges are declared in the same row as their source node":
       "Les bords sont déclarés dans la même ligne que leur nœud source",
@@ -173,6 +174,8 @@
     "ID's": "ID",
     "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
       "Si vous appréciez l'utilisation de <0>Flowchart Fun</0>, veuillez envisager de soutenir le projet",
+    "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>":
+      "Si vous souhaitez créer un bord, faites une indentation de cette ligne. Sinon, échappez le deux-points avec une barre oblique <0>\\:</0>",
     "Image Export": "Exportation d'images",
     Images: "Images",
     "Import Data": "Importer des données",
@@ -222,6 +225,7 @@
     Method: "Méthode",
     Monospace: "Monospace",
     Monthly: "Mensuel",
+    "Multiple pointers on same line": "Plusieurs pointeurs sur la même ligne",
     Museum: "Musée",
     Name: "Nom",
     New: "Nouveau",
@@ -235,6 +239,7 @@
     "Node ID, Classes, Attributes": "Identifiant de nœud, classes, attributs",
     "Node Label": "Étiquette de nœud",
     "Node Shapes": "Formes de nœud",
+    "Node and pointer on same line": "Nœud et pointeur sur la même ligne",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "Les nœuds peuvent être stylisés avec des traits, des points ou des doubles. Les bordures peuvent également être supprimées avec border-none.",
     "Not Empty": "Pas vide",
@@ -255,6 +260,8 @@
     "Permanent Flowcharts": "Diagrammes permanents",
     "Persistent Flowcharts": "Diagrammes persistants",
     Playbook: "Livre-jeu",
+    "Pointer and container on same line":
+      "Pointeur et conteneur sur la même ligne",
     Pricing: "Tarification",
     "Processing Data": "Traitement des données",
     Prompt: "Invite",
@@ -355,12 +362,25 @@
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "Cette fonctionnalité est uniquement disponible pour les utilisateurs pro. <0>Devenez un utilisateur pro</0> pour la débloquer.",
     Tip: "Astuce",
+    "To fix this change one of the edge IDs":
+      "Pour corriger cela, changez l'un des ID de bord",
+    "To fix this change one of the node IDs":
+      "Pour corriger ceci, changez l'un des ID de nœud",
+    "To fix this move one pointer to the next line":
+      "Pour corriger ceci, déplacez un pointeur vers la ligne suivante",
+    "To fix this move the pointer to the next line":
+      "Pour corriger ceci, déplacez le pointeur vers la ligne suivante",
+    "To fix this start the container <0>&lcub;</0> on a different line":
+      "Pour corriger cela, commencez le conteneur <0>&lcub;</0> sur une ligne différente.",
     "Top to Bottom": "De haut en bas",
     "Try again": "Réessayer",
+    "Two edges have the same ID": "Deux arêtes ont le même ID",
+    "Two nodes have the same ID": "Deux nœuds ont le même ID",
     Type: "Type",
     Unfreeze: "Débloquer",
     "Unique text value to identify a node":
       "Valeur de texte unique pour identifier un nœud",
+    "Unknown Parsing Error": "Erreur d'analyse inconnue",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Libérez votre créativité et simplifiez votre flux de travail avec Flowchart Fun Pro - à partir de seulement 3 $ / mois !",
     "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":

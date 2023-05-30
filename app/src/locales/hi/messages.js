@@ -118,6 +118,7 @@
     "Edge Label": "किनारे लेबल",
     "Edge Label Column": "किनारे लेबल कॉलम",
     "Edge Style": "किनारे शैली",
+    "Edge missing indentation": "एड्ज अंतराल गुम है",
     Edges: "किन्तुओं",
     "Edges are declared in the same row as their source node":
       "उनके स्रोत नोड के ही पंक्ति में किन्तुओं की घोषणा की जाती है",
@@ -172,6 +173,8 @@
     "ID's": "आईडीज़",
     "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
       "यदि आप <0>Flowchart Fun</0> का उपयोग करना आनंदित हैं, तो कृपया परियोजना को समर्थित करने की सोच करें",
+    "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>":
+      "यदि आप एक एड्ज बनाने के लिए मतलब है, तो इस लाइन को इंडेंट करें। यदि नहीं, तो कॉलन को बैक स्लैश के साथ भागो <0> \\: </0>",
     "Image Export": "छवि निर्यात",
     Images: "छवियाँ",
     "Import Data": "डेटा आयात करें",
@@ -220,6 +223,7 @@
     Method: "विधि",
     Monospace: "Monospace",
     Monthly: "मासिक",
+    "Multiple pointers on same line": "एक ही लाइन पर कई प्रतीक",
     Museum: "म्यूज़ियम",
     Name: "नाम",
     New: "नया",
@@ -233,6 +237,7 @@
     "Node ID, Classes, Attributes": "नोड आईडी, वर्ग, गुण",
     "Node Label": "नोड लेबल",
     "Node Shapes": "नोड आकार",
+    "Node and pointer on same line": "नोड और प्रतीक एक ही लाइन पर",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "नोड्स को डैश्ड, डॉट्ड या डबल के साथ स्टाइल किया जा सकता है। बॉर्डर-नोन के साथ भी बॉर्डर हटाए जा सकते हैं।",
     "Not Empty": "खाली नहीं",
@@ -252,6 +257,7 @@
     "Permanent Flowcharts": "लगातार चार्ट",
     "Persistent Flowcharts": "लगातार आरेख",
     Playbook: "प्लेबुक",
+    "Pointer and container on same line": "प्रतीक और कंटेनर एक ही लाइन पर",
     Pricing: "मूल्य निर्धारण",
     "Processing Data": "डेटा प्रसंस्करण",
     Prompt: "प्रॉम्प्ट",
@@ -352,12 +358,25 @@
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।",
     Tip: "सुझाव",
+    "To fix this change one of the edge IDs":
+      "इसे ठीक करने के लिए एड्ज आईडी के एक को बदलें",
+    "To fix this change one of the node IDs":
+      "इसे ठीक करने के लिए नोड आईडी के एक को बदलें",
+    "To fix this move one pointer to the next line":
+      "इसे ठीक करने के लिए प्रतीक को अगली पंक्ति पर ले जाएं",
+    "To fix this move the pointer to the next line":
+      "इसे ठीक करने के लिए प्रतीक को अगली पंक्ति पर ले जाएं",
+    "To fix this start the container <0>&lcub;</0> on a different line":
+      "इसे ठीक करने के लिए कंटेनर <0>&lcub;</0> को एक अलग पंक्ति पर शुरू करें",
     "Top to Bottom": "ऊपर से नीचे",
     "Try again": "फिर से कोशिश करें",
+    "Two edges have the same ID": "दो किनारे उसी आईडी के हैं",
+    "Two nodes have the same ID": "दो नोड उसी आईडी के हैं",
     Type: "प्रकार",
     Unfreeze: "अनफ़्रीज़",
     "Unique text value to identify a node":
       "एक नोड को पहचानने के लिए अद्वितीय पाठ मूल्य",
+    "Unknown Parsing Error": "अज्ञात पार्सिंग त्रुटि",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "अपनी क्रेयता को उतारें और फ्लोचार्ट फन प्रो के साथ अपनी व्यवस्था को स्ट्रीमलाइन करें – सिर्फ $ 3 / महीने से शुरू होते हुए!",
     "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":

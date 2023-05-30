@@ -118,6 +118,7 @@
     "Edge Label": "Edge Label",
     "Edge Label Column": "Edge Label Column",
     "Edge Style": "Edge Style",
+    "Edge missing indentation": "Edge missing indentation",
     Edges: "Edges",
     "Edges are declared in the same row as their source node":
       "Edges are declared in the same row as their source node",
@@ -172,6 +173,8 @@
     "ID's": "ID's",
     "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
       "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project",
+    "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>":
+      "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>",
     "Image Export": "Image Export",
     Images: "Images",
     "Import Data": "Import Data",
@@ -220,6 +223,7 @@
     Method: "Method",
     Monospace: "Monospace",
     Monthly: "Monthly",
+    "Multiple pointers on same line": "Multiple pointers on same line",
     Museum: "Museum",
     Name: "Name",
     New: "New",
@@ -233,12 +237,13 @@
     "Node ID, Classes, Attributes": "Node ID, Classes, Attributes",
     "Node Label": "Node Label",
     "Node Shapes": "Node Shapes",
+    "Node and pointer on same line": "Node and pointer on same line",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.",
     "Not Empty": "Not Empty",
     "Office Hours": "Office Hours",
     "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
-      "If you don't see it after a few minutes, check back there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.",
+      "If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check back there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.If you don't see it after a few minutes, check there or request a new link.Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.",
     "One-on-One Support": "One-on-One Support",
     "One-time Share Links": "One-time Share Links",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -252,6 +257,7 @@
     "Permanent Flowcharts": "Permanent Flowcharts",
     "Persistent Flowcharts": "Persistent Flowcharts",
     Playbook: "Playbook",
+    "Pointer and container on same line": "Pointer and container on same line",
     Pricing: "Pricing",
     "Processing Data": "Processing Data",
     Prompt: "Prompt",
@@ -352,12 +358,25 @@
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.",
     Tip: "Tip",
+    "To fix this change one of the edge IDs":
+      "To fix this change one of the edge IDs",
+    "To fix this change one of the node IDs":
+      "To fix this change one of the node IDs",
+    "To fix this move one pointer to the next line":
+      "To fix this move one pointer to the next line",
+    "To fix this move the pointer to the next line":
+      "To fix this move the pointer to the next line",
+    "To fix this start the container <0>&lcub;</0> on a different line":
+      "To fix this start the container <0>&lcub;</0> on a different line",
     "Top to Bottom": "Top to Bottom",
     "Try again": "Try again",
+    "Two edges have the same ID": "Two edges have the same ID",
+    "Two nodes have the same ID": "Two nodes have the same ID",
     Type: "Type",
     Unfreeze: "Unfreeze",
     "Unique text value to identify a node":
       "Unique text value to identify a node",
+    "Unknown Parsing Error": "Unknown Parsing Error",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!",
     "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":

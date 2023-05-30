@@ -29,7 +29,7 @@ export const editorOptions: EditorProps["options"] = {
   wordBasedSuggestions: false,
   occurrencesHighlight: false,
   renderLineHighlight: "none",
-  scrollBeyondLastLine: false,
+  // scrollBeyondLastLine: false,
   overviewRulerBorder: false,
   lineDecorationsWidth: "10px",
   renderValidationDecorations: "on",

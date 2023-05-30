@@ -413,6 +413,10 @@ msgstr "Coluna de Rótulo de Borda"
 msgid "Edge Style"
 msgstr "Estilo de Borda"
 
+#: src/lib/parserErrors.tsx:19
+msgid "Edge missing indentation"
+msgstr "Recuo em falta na borda"
+
 #: src/components/ImportDataDialog.tsx:406
 #: src/components/LearnSyntaxDialog.tsx:129
 msgid "Edges"
@@ -594,6 +598,10 @@ msgstr "IDs"
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 msgstr "Se você gosta de usar <0>Flowchart Fun</0>, por favor, considere apoiar o projeto"
 
+#: src/lib/parserErrors.tsx:21
+msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
+msgstr "Se você quiser criar uma borda, indente esta linha. Se não, escape o dois-pontos com uma barra invertida <0>\\:</0>"
+
 #: src/pages/Pricing.tsx:55
 msgid "Image Export"
 msgstr "Exportação de imagem"
@@ -762,6 +770,10 @@ msgstr "Monospace"
 msgid "Monthly"
 msgstr "Mensal"
 
+#: src/lib/parserErrors.tsx:29
+msgid "Multiple pointers on same line"
+msgstr "Múltiplos ponteiros na mesma linha"
+
 #: src/lib/graphOptions.ts:58
 msgid "Museum"
 msgstr "Museu"
@@ -817,6 +829,10 @@ msgstr "Rótulo do Nó"
 #: src/components/LearnSyntaxDialog.tsx:261
 msgid "Node Shapes"
 msgstr "Formas do Nó"
+
+#: src/lib/parserErrors.tsx:44
+msgid "Node and pointer on same line"
+msgstr "Nó e ponteiro na mesma linha"
 
 #: src/components/LearnSyntaxDialog.tsx:320
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
@@ -881,6 +897,10 @@ msgstr "Diagramas Persistentes"
 #: src/lib/graphOptions.ts:57
 msgid "Playbook"
 msgstr "Cartilha"
+
+#: src/lib/parserErrors.tsx:34
+msgid "Pointer and container on same line"
+msgstr "Ponteiro e contêiner na mesma linha"
 
 #: src/components/Header.tsx:193
 #: src/components/Header.tsx:407
@@ -1225,6 +1245,26 @@ msgstr "Esta funcionalidade está disponível apenas para usuários Pro. <0>Torn
 msgid "Tip"
 msgstr "Dica"
 
+#: src/lib/parserErrors.tsx:55
+msgid "To fix this change one of the edge IDs"
+msgstr "Para corrigir isso, altere um dos IDs de borda"
+
+#: src/lib/parserErrors.tsx:50
+msgid "To fix this change one of the node IDs"
+msgstr "Para corrigir isso, altere um dos IDs de nó"
+
+#: src/lib/parserErrors.tsx:30
+msgid "To fix this move one pointer to the next line"
+msgstr "Para corrigir isso, mova um ponteiro para a próxima linha"
+
+#: src/lib/parserErrors.tsx:45
+msgid "To fix this move the pointer to the next line"
+msgstr "Para corrigir isso, mova o ponteiro para a próxima linha"
+
+#: src/lib/parserErrors.tsx:36
+msgid "To fix this start the container <0>&lcub;</0> on a different line"
+msgstr "Para corrigir isso, inicie o container <0>&lcub;</0> em uma linha diferente"
+
 #: src/lib/graphOptions.ts:33
 #: src/lib/graphOptions.ts:40
 msgid "Top to Bottom"
@@ -1233,6 +1273,14 @@ msgstr "De cima para baixo"
 #: src/components/App.tsx:64
 msgid "Try again"
 msgstr "Tente novamente"
+
+#: src/lib/parserErrors.tsx:54
+msgid "Two edges have the same ID"
+msgstr "Dois bordos têm o mesmo ID"
+
+#: src/lib/parserErrors.tsx:49
+msgid "Two nodes have the same ID"
+msgstr "Dois nós têm o mesmo ID"
 
 #: src/pages/New.tsx:187
 msgid "Type"
@@ -1246,6 +1294,10 @@ msgstr "Descongelar"
 #: src/components/LearnSyntaxDialog.tsx:103
 msgid "Unique text value to identify a node"
 msgstr "Valor de texto único para identificar um nó"
+
+#: src/lib/parserErrors.tsx:59
+msgid "Unknown Parsing Error"
+msgstr "Erro de Análise Desconhecido"
 
 #: src/pages/Pricing.tsx:89
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"

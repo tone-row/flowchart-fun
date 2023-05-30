@@ -1,8 +1,0 @@
-.EditorError {
-  position: absolute;
-  bottom: 0;
-  right: var(--spacer-px);
-  left: var(--spacer-px);
-  bottom: var(--spacer-px);
-  color: black;
-}

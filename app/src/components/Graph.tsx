@@ -34,7 +34,7 @@ import { getAnimationSettings } from "../lib/hooks";
 import { Parsers, universalParse, useParser } from "../lib/parsers";
 import { Theme } from "../lib/themes/constants";
 import { useContextMenuState } from "../lib/useContextMenuState";
-import { Doc, useDoc, useParseError } from "../lib/useDoc";
+import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
 import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box } from "../slang";
@@ -346,7 +346,12 @@ function getGraphUpdater({
       // Reinitialize to avoid missing errors
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
-      useParseError.setState({ error: "", errorFromStyle: "" });
+      // Reset error store
+      useParseErrorStore.setState({
+        error: "",
+        errorFromStyle: "",
+        parserErrorCode: "",
+      });
 
       // Remove parse error markers
       useEditorStore.setState({ markers: [] });
@@ -355,6 +360,9 @@ function getGraphUpdater({
       // Update Graph Store
       useGraphStore.setState({ layout, elements });
     } catch (e) {
+      cyErrorCatcher.current.destroy();
+      cyErrorCatcher.current = cytoscape();
+
       // Check if it's a parse error and display it in the editor
       if (isParseError(e)) {
         useEditorStore.setState({
@@ -370,12 +378,13 @@ function getGraphUpdater({
           ],
         });
         updateModelMarkers();
-      }
 
-      cyErrorCatcher.current.destroy();
-      cyErrorCatcher.current = cytoscape();
-      if (isError(e)) {
-        useParseError.setState({
+        // translate the error and set it in the store
+        useParseErrorStore.setState({
+          parserErrorCode: e.code,
+        });
+      } else if (isError(e)) {
+        useParseErrorStore.setState({
           errorFromStyle: sanitizeMessage(e.message, elements),
         });
       }
@@ -413,12 +422,12 @@ function getStyleUpdater({
       // Reinitialize to avoid missing errors
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
-      useParseError.setState({ errorFromStyle: "" });
+      useParseErrorStore.setState({ errorFromStyle: "" });
     } catch (e) {
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
       if (isError(e)) {
-        useParseError.setState({
+        useParseErrorStore.setState({
           errorFromStyle: sanitizeStyleMessage(e.message),
         });
       }
