@@ -4,6 +4,9 @@ import { Configuration, OpenAIApi } from "openai";
 import path from "path";
 dotenv.config("./env");
 
+// Between Calls To Avoid Rate Limiting
+const TIMEOUT = 5000;
+
 /**
  * AUTO TRANSLATIONS
  * =================
@@ -46,6 +49,8 @@ if (LOCALE) {
 let locales = fs
   .readdirSync("./src/locales/", { withFileTypes: true })
   .filter((dirent) => dirent.isDirectory())
+  // filter out "en"
+  .filter((dirent) => dirent.name !== "en")
   .map((dirent) => dirent.name);
 
 // IF IN DEBUG MODE WE'LL ONLY RUN ONE LOCALE, LOCALE FROM ENV OR DEFAULT TO DE
@@ -139,6 +144,10 @@ for (const locale of locales) {
       });
 
       translations = response.data.choices[0].text.split("\n");
+
+      retries--;
+
+      await new Promise((resolve) => setTimeout(resolve, TIMEOUT));
     }
 
     // add the translations to the final phrases

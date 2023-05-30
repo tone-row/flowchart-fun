@@ -14,7 +14,7 @@
       "从任何地方访问这些图表。<0/>共享并嵌入保持同步的流程图。",
     "Accessible from any device": "可从任何设备访问",
     Account: "帐户",
-    "Activate Flowchart Fun Pro": "Activate Flowchart Fun Pro",
+    "Activate Flowchart Fun Pro": "激活 Flowchart Fun Pro",
     Advanced: "先进的",
     Amount: "数量",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -113,6 +113,7 @@
     "Edge Label": "邊緣標籤",
     "Edge Label Column": "邊緣標籤欄",
     "Edge Style": "邊緣樣式",
+    "Edge missing indentation": "缺少缩进的边",
     Edges: "边",
     "Edges are declared in the same row as their source node":
       "边声明在与源节点相同的行中",
@@ -165,6 +166,8 @@
     "ID's": "ID",
     "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
       "如果您喜欢使用<0>Flowchart Fun</0>，请考虑支持该项目",
+    "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>":
+      "如果你想创建一个边，缩进这一行。如果不，用反斜杠转义冒号<0>\\:</0>",
     "Image Export": "图像导出",
     Images: "图像",
     "Import Data": "导入数据",
@@ -212,6 +215,7 @@
     Method: "方法",
     Monospace: "Monospace",
     Monthly: "每月",
+    "Multiple pointers on same line": "同一行上的多个指针",
     Museum: "博物馆",
     Name: "姓名",
     New: "新",
@@ -225,6 +229,7 @@
     "Node ID, Classes, Attributes": "节点ID、类、属性",
     "Node Label": "节点标签",
     "Node Shapes": "节点形状",
+    "Node and pointer on same line": "同一行上的节点和指针",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "节点可以使用虚线、点线或双线进行样式设置，也可以使用border-none来移除边框。",
     "Not Empty": "不为空",
@@ -244,6 +249,7 @@
     "Permanent Flowcharts": "永久流程图",
     "Persistent Flowcharts": "持久图",
     Playbook: "剧本",
+    "Pointer and container on same line": "同一行上的指针和容器",
     Pricing: "价钱",
     "Processing Data": "处理数据",
     Prompt: "提示",
@@ -338,11 +344,23 @@
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。",
     Tip: "提示",
+    "To fix this change one of the edge IDs":
+      "为了修复这个，改变其中一个边的ID",
+    "To fix this change one of the node IDs": "要修复这个，更改其中一个节点ID",
+    "To fix this move one pointer to the next line":
+      "要修复这个，将指针移动到下一行",
+    "To fix this move the pointer to the next line":
+      "要修复这个，将指针移动到下一行",
+    "To fix this start the container <0>&lcub;</0> on a different line":
+      "要修复这个，将容器<0>&lcub;</0>放在另一行",
     "Top to Bottom": "从上到下",
     "Try again": "重试",
+    "Two edges have the same ID": "两个边有相同的ID",
+    "Two nodes have the same ID": "两个节点有相同的ID",
     Type: "类型",
     Unfreeze: "解冻",
     "Unique text value to identify a node": "用于标识节点的唯一文本值",
+    "Unknown Parsing Error": "未知的解析错误",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "釋放您的創意並簡化您的工作流程，從每月只需3美元開始，Flowchart Fun Pro！",
     "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":

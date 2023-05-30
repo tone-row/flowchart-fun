@@ -34,7 +34,7 @@ export function getParserError(code: ParserErrorCode): {
         message: t`Pointer and container on same line`,
         resolution: (
           <Trans>
-            To fix this start the container <code>{`{`}</code> onto a different
+            To fix this start the container <code>&lcub;</code> on a different
             line
           </Trans>
         ),

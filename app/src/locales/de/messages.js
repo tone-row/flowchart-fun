@@ -119,6 +119,7 @@
     "Edge Label": "Kantenbeschriftung",
     "Edge Label Column": "Spalte mit Kantenbeschriftung",
     "Edge Style": "Kantenstil",
+    "Edge missing indentation": "Kante fehlende Einrückung",
     Edges: "Kanten",
     "Edges are declared in the same row as their source node":
       "Kanten werden in der gleichen Zeile wie ihr Quellknoten deklariert",
@@ -173,6 +174,8 @@
     "ID's": "IDs",
     "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project":
       "Wenn Sie <0>Flowchart Fun</0> gerne verwenden, überlegen Sie bitte, das Projekt zu unterstützen.",
+    "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>":
+      "Wenn Sie eine Kante erstellen möchten, rücken Sie diese Zeile ein. Wenn nicht, entkomme dem Doppelpunkt mit einem Backslash <0>\\:</0>",
     "Image Export": "Bildexport",
     Images: "Bilder",
     "Import Data": "Daten importieren",
@@ -221,6 +224,7 @@
     Method: "Methode",
     Monospace: "Monospace",
     Monthly: "Monatlich",
+    "Multiple pointers on same line": "Mehrere Zeiger auf derselben Zeile",
     Museum: "Museum",
     Name: "Name",
     New: "Neues",
@@ -234,6 +238,7 @@
     "Node ID, Classes, Attributes": "Knoten-ID, Klassen, Attribute",
     "Node Label": "Knotenbeschriftung",
     "Node Shapes": "Knotenformen",
+    "Node and pointer on same line": "Knoten und Zeiger auf derselben Zeile",
     "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none.":
       "Knoten können mit gestrichelten, gepunkteten oder doppelten Linien gestaltet werden. Grenzen können auch mit border-none entfernt werden.",
     "Not Empty": "Nicht leer",
@@ -254,6 +259,8 @@
     "Permanent Flowcharts": "Permanente Flussdiagramme",
     "Persistent Flowcharts": "Beständige Diagramme",
     Playbook: "Spielbuch",
+    "Pointer and container on same line":
+      "Zeiger und Container auf derselben Zeile",
     Pricing: "Preisgestaltung",
     "Processing Data": "Datenverarbeitung",
     Prompt: "Aufforderung",
@@ -355,12 +362,25 @@
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "Diese Funktion ist nur für Pro-Benutzer verfügbar. <0>Werden Sie Pro-Nutzer</0>, um es freizuschalten.",
     Tip: "Tipp",
+    "To fix this change one of the edge IDs":
+      "Um dies zu beheben, ändern Sie eine der Kanten-IDs",
+    "To fix this change one of the node IDs":
+      "Um das zu beheben, ändern Sie eine der Knoten-IDs",
+    "To fix this move one pointer to the next line":
+      "Um das zu beheben, verschieben Sie einen Zeiger auf die nächste Zeile",
+    "To fix this move the pointer to the next line":
+      "Um das zu beheben, verschieben Sie den Zeiger auf die nächste Zeile",
+    "To fix this start the container <0>&lcub;</0> on a different line":
+      "Um dies zu beheben, starten Sie den Container <0>&lcub;</0> auf einer anderen Zeile.",
     "Top to Bottom": "Von oben nach unten",
     "Try again": "Erneut versuchen",
+    "Two edges have the same ID": "Zwei Kanten haben die gleiche ID",
+    "Two nodes have the same ID": "Zwei Knoten haben die gleiche ID",
     Type: "Typ",
     Unfreeze: "Freigeben",
     "Unique text value to identify a node":
       "Einzigartiger Textwert, um einen Knoten zu identifizieren",
+    "Unknown Parsing Error": "Unbekannter Parser-Fehler",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Entfesseln Sie Ihre Kreativität und vereinfachen Sie Ihren Arbeitsablauf mit Flowchart Fun Pro – ab nur 3 $/Monat!",
     "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
