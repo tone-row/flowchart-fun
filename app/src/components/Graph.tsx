@@ -5,7 +5,7 @@ import klay from "cytoscape-klay";
 import cytoscapeSvg from "cytoscape-svg";
 import { ParseError } from "graph-selector";
 import throttle from "lodash.throttle";
-import { MarkerSeverity } from "monaco-editor";
+import type { MarkerSeverity } from "monaco-editor";
 import React, {
   memo,
   MutableRefObject,

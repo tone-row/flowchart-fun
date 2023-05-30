@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 importers:
 
@@ -278,6 +282,9 @@ importers:
       marked:
         specifier: ^4.1.1
         version: 4.1.1
+      monaco-editor:
+        specifier: ^0.34.0
+        version: 0.34.0
       moniker:
         specifier: ^0.1.2
         version: 0.1.2
@@ -498,9 +505,6 @@ importers:
       minimist:
         specifier: ^1.2.5
         version: 1.2.6
-      monaco-editor:
-        specifier: ^0.34.0
-        version: 0.34.0
       msw:
         specifier: ^0.36.8
         version: 0.36.8
@@ -11685,6 +11689,7 @@ packages:
 
   /monaco-editor@0.34.0:
     resolution: {integrity: sha512-VF+S5zG8wxfinLKLrWcl4WUizMx+LeJrG4PM/M78OhcwocpV0jiyhX/pG6Q9jIOhrb/ckYi6nHnaR5OojlOZCQ==}
+    dev: false
 
   /moniker@0.1.2:
     resolution: {integrity: sha512-Uj9iV0QYr6281G+o0TvqhKwHHWB2Q/qUTT4LPQ3qDGc0r8cbMuqQjRXPZuVZ+gcL7APx+iQgE8lcfWPrj1LsLA==}

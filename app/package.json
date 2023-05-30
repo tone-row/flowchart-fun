@@ -118,6 +118,7 @@
     "svgo": "^2.8.0",
     "use-debounce": "^5.2.1",
     "web-vitals": "^1.0.1",
+    "monaco-editor": "^0.34.0",
     "zustand": "^4.3.3"
   },
   "eslintConfig": {
@@ -184,7 +185,6 @@
     "jest-canvas-mock": "^2.3.1",
     "jsdom": "^20.0.3",
     "minimist": "^1.2.5",
-    "monaco-editor": "^0.34.0",
     "msw": "^0.36.8",
     "node-localstorage": "^2.2.1",
     "prettier": "^2.3.1",
