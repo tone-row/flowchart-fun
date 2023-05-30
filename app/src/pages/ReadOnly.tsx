@@ -1,6 +1,4 @@
-import { OnMount } from "@monaco-editor/react";
 import { decompressFromEncodedURIComponent } from "lz-string";
-import { useRef } from "react";
 import { useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
 
@@ -23,7 +21,6 @@ function ReadOnly() {
     staleTime: 0,
   });
 
-  const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
   const text = useDoc((d) => d.text);
 
   return (
@@ -31,7 +28,6 @@ function ReadOnly() {
       <Main>
         <EditorWrapper>
           <TextEditor
-            editorRef={editorRef}
             value={text}
             extendOptions={{
               readOnly: true,

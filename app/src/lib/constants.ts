@@ -32,7 +32,9 @@ export const editorOptions: EditorProps["options"] = {
   scrollBeyondLastLine: false,
   overviewRulerBorder: false,
   lineDecorationsWidth: "10px",
-  renderValidationDecorations: "off",
+  renderValidationDecorations: "on",
+  roundedSelection: false,
+  colorDecorators: false,
   hideCursorInOverviewRuler: true,
   matchBrackets: "never",
   selectionHighlight: false,
@@ -59,3 +61,6 @@ export const HIDDEN_GRAPH_OPTIONS_DIVIDER = "¼▓╬";
 export const AUTH_IMG_SCALE = 3;
 // default unauth raster image scale
 export const UNAUTH_IMG_SCALE = 1.5;
+
+// This is to avoid a monaco-editor import that breaks too many things
+export const monacoMarkerErrorSeverity = 8;

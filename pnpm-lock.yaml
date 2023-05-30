@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 importers:
 
@@ -249,8 +253,8 @@ importers:
         specifier: ^4.1.17
         version: 4.1.17(react-dom@17.0.2)(react@17.0.2)
       graph-selector:
-        specifier: ^0.9.6
-        version: 0.9.6
+        specifier: ^0.9.7
+        version: 0.9.7
       gray-matter:
         specifier: ^4.0.2
         version: 4.0.3
@@ -278,6 +282,9 @@ importers:
       marked:
         specifier: ^4.1.1
         version: 4.1.1
+      monaco-editor:
+        specifier: ^0.34.0
+        version: 0.34.0
       moniker:
         specifier: ^0.1.2
         version: 0.1.2
@@ -498,15 +505,9 @@ importers:
       minimist:
         specifier: ^1.2.5
         version: 1.2.6
-      monaco-editor:
-        specifier: ^0.34.0
-        version: 0.34.0
       msw:
         specifier: ^0.36.8
         version: 0.36.8
-      node-localstorage:
-        specifier: ^2.2.1
-        version: 2.2.1
       prettier:
         specifier: ^2.3.1
         version: 2.7.1
@@ -9300,8 +9301,8 @@ packages:
       '@tone-row/strip-comments': 2.0.6
     dev: false
 
-  /graph-selector@0.9.6:
-    resolution: {integrity: sha512-vA4AVrNjKkAnVnHA3t0bsuNkwmBNSbYHYWvfDyts0N1JrK2w5BUw/ADla9bqG1QFHZjgRMHadi+54Ek3ocRA4A==}
+  /graph-selector@0.9.7:
+    resolution: {integrity: sha512-kTB57t8V6BhPOQ60wacyjcJzRprebmqVHUcG1d8G4JC4OSKieG80YX5iVCDyPYj9eKJkiYc3xkqV7oL+nGGJtg==}
     dependencies:
       '@tone-row/strip-comments': 2.0.6
       html-entities: 2.3.3
@@ -11685,6 +11686,7 @@ packages:
 
   /monaco-editor@0.34.0:
     resolution: {integrity: sha512-VF+S5zG8wxfinLKLrWcl4WUizMx+LeJrG4PM/M78OhcwocpV0jiyhX/pG6Q9jIOhrb/ckYi6nHnaR5OojlOZCQ==}
+    dev: false
 
   /moniker@0.1.2:
     resolution: {integrity: sha512-Uj9iV0QYr6281G+o0TvqhKwHHWB2Q/qUTT4LPQ3qDGc0r8cbMuqQjRXPZuVZ+gcL7APx+iQgE8lcfWPrj1LsLA==}
@@ -11814,13 +11816,6 @@ packages:
 
   /node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
-
-  /node-localstorage@2.2.1:
-    resolution: {integrity: sha512-vv8fJuOUCCvSPjDjBLlMqYMHob4aGjkmrkaE42/mZr0VT+ZAU10jRF8oTnX9+pgU9/vYJ8P7YT3Vd6ajkmzSCw==}
-    engines: {node: '>=0.12'}
-    dependencies:
-      write-file-atomic: 1.3.4
-    dev: true
 
   /node-releases@2.0.6:
     resolution: {integrity: sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==}
@@ -14372,10 +14367,6 @@ packages:
       is-fullwidth-code-point: 4.0.0
     dev: true
 
-  /slide@1.1.6:
-    resolution: {integrity: sha512-NwrtjCg+lZoqhFU8fOwl4ay2ei8PaqCBOUV3/ektPY9trO1yQ1oXEfmHAhKArUVUr/hOHvy5f6AdP17dCM0zMw==}
-    dev: true
-
   /sockjs@0.3.24:
     resolution: {integrity: sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ==}
     dependencies:
@@ -16003,14 +15994,6 @@ packages:
 
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
-
-  /write-file-atomic@1.3.4:
-    resolution: {integrity: sha512-SdrHoC/yVBPpV0Xq/mUZQIpW2sWXAShb/V4pomcJXh92RuaO+f3UTWItiR3Px+pLnV2PvC2/bfn5cwr5X6Vfxw==}
-    dependencies:
-      graceful-fs: 4.2.10
-      imurmurhash: 0.1.4
-      slide: 1.1.6
-    dev: true
 
   /write-file-atomic@3.0.3:
     resolution: {integrity: sha512-AvHcyZ5JnSfq3ioSyjrBkH9yW4m7Ayk8/9My/DD9onKeu/94fwrMocemO2QAJFAlnnDN+ZDS+ZjAR5ua1/PV/Q==}

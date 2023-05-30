@@ -1,7 +1,6 @@
-import { OnMount } from "@monaco-editor/react";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Check, DotsThree } from "phosphor-react";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
@@ -22,6 +21,7 @@ import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { getHostedChart, updateChartText } from "../lib/queries";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
+import { useEditorStore } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
@@ -50,8 +50,6 @@ export default function EditHosted() {
 
   const text = useDoc((state) => state.text);
 
-  const editorRef = useRef<null | Parameters<OnMount>[0]>(null);
-
   // This is to make sure we update if people exit the tab quickly
   useEffect(() => {
     return () => {
@@ -77,11 +75,7 @@ export default function EditHosted() {
             <EditorTabList />
             <Tabs.Content value="Document">
               <EditorOptions>
-                <TextEditor
-                  editorRef={editorRef}
-                  value={text}
-                  onChange={onChange}
-                />
+                <TextEditor value={text} onChange={onChange} />
               </EditorOptions>
             </Tabs.Content>
             <Tabs.Content value="Layout">
@@ -101,9 +95,9 @@ export default function EditHosted() {
         <ClearTextButton
           handleClear={() => {
             useDoc.setState({ text: "", meta: {} }, false, "EditHosted/clear");
-            if (editorRef.current) {
-              editorRef.current.focus();
-            }
+            const editor = useEditorStore.getState().editor;
+            if (!editor) return;
+            editor.focus();
           }}
         />
         <EditorError />
