@@ -830,7 +830,7 @@ msgstr "Étiquette de nœud"
 msgid "Node Shapes"
 msgstr "Formes de nœud"
 
-#: src/lib/parserErrors.tsx:44
+#: src/lib/parserErrors.tsx:45
 msgid "Node and pointer on same line"
 msgstr "Nœud et pointeur sur la même ligne"
 
@@ -1245,11 +1245,11 @@ msgstr "Cette fonctionnalité est uniquement disponible pour les utilisateurs pr
 msgid "Tip"
 msgstr "Astuce"
 
-#: src/lib/parserErrors.tsx:55
+#: src/lib/parserErrors.tsx:56
 msgid "To fix this change one of the edge IDs"
 msgstr "Pour corriger cela, changez l'un des ID de bord"
 
-#: src/lib/parserErrors.tsx:50
+#: src/lib/parserErrors.tsx:51
 msgid "To fix this change one of the node IDs"
 msgstr "Pour corriger ceci, changez l'un des ID de nœud"
 
@@ -1257,13 +1257,13 @@ msgstr "Pour corriger ceci, changez l'un des ID de nœud"
 msgid "To fix this move one pointer to the next line"
 msgstr "Pour corriger ceci, déplacez un pointeur vers la ligne suivante"
 
-#: src/lib/parserErrors.tsx:45
+#: src/lib/parserErrors.tsx:46
 msgid "To fix this move the pointer to the next line"
 msgstr "Pour corriger ceci, déplacez le pointeur vers la ligne suivante"
 
 #: src/lib/parserErrors.tsx:36
-msgid "To fix this start the container <0>&lcub;</0> on a different line"
-msgstr "Pour corriger cela, commencez le conteneur <0>&lcub;</0> sur une ligne différente."
+msgid "To fix this start the container <0/> on a different line"
+msgstr "Pour corriger cela, commencez le conteneur <0/> sur une ligne différente."
 
 #: src/lib/graphOptions.ts:33
 #: src/lib/graphOptions.ts:40
@@ -1274,11 +1274,11 @@ msgstr "De haut en bas"
 msgid "Try again"
 msgstr "Réessayer"
 
-#: src/lib/parserErrors.tsx:54
+#: src/lib/parserErrors.tsx:55
 msgid "Two edges have the same ID"
 msgstr "Deux arêtes ont le même ID"
 
-#: src/lib/parserErrors.tsx:49
+#: src/lib/parserErrors.tsx:50
 msgid "Two nodes have the same ID"
 msgstr "Deux nœuds ont le même ID"
 
@@ -1295,7 +1295,7 @@ msgstr "Débloquer"
 msgid "Unique text value to identify a node"
 msgstr "Valeur de texte unique pour identifier un nœud"
 
-#: src/lib/parserErrors.tsx:59
+#: src/lib/parserErrors.tsx:60
 msgid "Unknown Parsing Error"
 msgstr "Erreur d'analyse inconnue"
 

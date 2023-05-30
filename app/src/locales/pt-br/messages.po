@@ -830,7 +830,7 @@ msgstr "Rótulo do Nó"
 msgid "Node Shapes"
 msgstr "Formas do Nó"
 
-#: src/lib/parserErrors.tsx:44
+#: src/lib/parserErrors.tsx:45
 msgid "Node and pointer on same line"
 msgstr "Nó e ponteiro na mesma linha"
 
@@ -1245,11 +1245,11 @@ msgstr "Esta funcionalidade está disponível apenas para usuários Pro. <0>Torn
 msgid "Tip"
 msgstr "Dica"
 
-#: src/lib/parserErrors.tsx:55
+#: src/lib/parserErrors.tsx:56
 msgid "To fix this change one of the edge IDs"
 msgstr "Para corrigir isso, altere um dos IDs de borda"
 
-#: src/lib/parserErrors.tsx:50
+#: src/lib/parserErrors.tsx:51
 msgid "To fix this change one of the node IDs"
 msgstr "Para corrigir isso, altere um dos IDs de nó"
 
@@ -1257,13 +1257,13 @@ msgstr "Para corrigir isso, altere um dos IDs de nó"
 msgid "To fix this move one pointer to the next line"
 msgstr "Para corrigir isso, mova um ponteiro para a próxima linha"
 
-#: src/lib/parserErrors.tsx:45
+#: src/lib/parserErrors.tsx:46
 msgid "To fix this move the pointer to the next line"
 msgstr "Para corrigir isso, mova o ponteiro para a próxima linha"
 
 #: src/lib/parserErrors.tsx:36
-msgid "To fix this start the container <0>&lcub;</0> on a different line"
-msgstr "Para corrigir isso, inicie o container <0>&lcub;</0> em uma linha diferente"
+msgid "To fix this start the container <0/> on a different line"
+msgstr "Para corrigir isso, inicie o container <0/> em uma linha diferente"
 
 #: src/lib/graphOptions.ts:33
 #: src/lib/graphOptions.ts:40
@@ -1274,11 +1274,11 @@ msgstr "De cima para baixo"
 msgid "Try again"
 msgstr "Tente novamente"
 
-#: src/lib/parserErrors.tsx:54
+#: src/lib/parserErrors.tsx:55
 msgid "Two edges have the same ID"
 msgstr "Dois bordos têm o mesmo ID"
 
-#: src/lib/parserErrors.tsx:49
+#: src/lib/parserErrors.tsx:50
 msgid "Two nodes have the same ID"
 msgstr "Dois nós têm o mesmo ID"
 
@@ -1295,7 +1295,7 @@ msgstr "Descongelar"
 msgid "Unique text value to identify a node"
 msgstr "Valor de texto único para identificar um nó"
 
-#: src/lib/parserErrors.tsx:59
+#: src/lib/parserErrors.tsx:60
 msgid "Unknown Parsing Error"
 msgstr "Erro de Análise Desconhecido"
 

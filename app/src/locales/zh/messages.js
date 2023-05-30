@@ -351,8 +351,8 @@
       "要修复这个，将指针移动到下一行",
     "To fix this move the pointer to the next line":
       "要修复这个，将指针移动到下一行",
-    "To fix this start the container <0>&lcub;</0> on a different line":
-      "要修复这个，将容器<0>&lcub;</0>放在另一行",
+    "To fix this start the container <0/> on a different line":
+      "要修复这个，将容器<0/>放在另一行",
     "Top to Bottom": "从上到下",
     "Try again": "重试",
     "Two edges have the same ID": "两个边有相同的ID",

@@ -370,8 +370,8 @@
       "Pour corriger ceci, déplacez un pointeur vers la ligne suivante",
     "To fix this move the pointer to the next line":
       "Pour corriger ceci, déplacez le pointeur vers la ligne suivante",
-    "To fix this start the container <0>&lcub;</0> on a different line":
-      "Pour corriger cela, commencez le conteneur <0>&lcub;</0> sur une ligne différente.",
+    "To fix this start the container <0/> on a different line":
+      "Pour corriger cela, commencez le conteneur <0/> sur une ligne différente.",
     "Top to Bottom": "De haut en bas",
     "Try again": "Réessayer",
     "Two edges have the same ID": "Deux arêtes ont le même ID",

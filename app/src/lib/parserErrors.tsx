@@ -34,8 +34,9 @@ export function getParserError(code: ParserErrorCode): {
         message: t`Pointer and container on same line`,
         resolution: (
           <Trans>
-            To fix this start the container <code>&lcub;</code> on a different
-            line
+            To fix this start the container{" "}
+            <code dangerouslySetInnerHTML={{ __html: "&lcub;" }} /> on a
+            different line
           </Trans>
         ),
       };
