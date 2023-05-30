@@ -1,18 +1,11 @@
 import Editor, { EditorProps } from "@monaco-editor/react";
 import { highlight } from "graph-selector";
 import { editor } from "monaco-editor";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import { editorOptions } from "../lib/constants";
-import { useParser } from "../lib/parsers";
-import {
-  languageId,
-  registerLanguages,
-  themeNameDark,
-  themeNameLight,
-} from "../lib/registerLanguage";
+import { useLightOrDarkMode } from "../lib/hooks";
 import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
-import { AppContext } from "./AppContext";
 import Loading from "./Loading";
 
 type TextEditorProps = EditorProps & {
@@ -21,73 +14,33 @@ type TextEditorProps = EditorProps & {
 
 /** A Monaco editor which stays in sync with the current parser */
 export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
-  const parser = useParser();
-  const languageId = useLanguageId();
-  const [editorIsReady, setEditorIsReady] = useState(false);
-
-  const { mode } = useContext(AppContext);
+  const mode = useLightOrDarkMode();
+  const theme =
+    mode === "light" ? highlight.defaultTheme : highlight.defaultThemeDark;
 
   const isDragging = useEditorStore((s) => s.isDragging);
 
+  // Update editor theme depending on light mode or dark mode
   useEffect(() => {
     const monaco = useEditorStore.getState().monaco;
     if (!monaco) return;
-    monaco.editor.setTheme(mode === "light" ? themeNameLight : themeNameDark);
-  }, [mode]);
+    monaco.editor.setTheme(theme);
+  }, [theme]);
 
   // Setup Hover Effect
   const hoverLineNumber = useEditorStore((s) => s.hoverLineNumber);
   useEditorHover(hoverLineNumber);
 
-  // Set the theme when the editor is ready
-  const [theme, setTheme] = useState(themeNameLight);
-  useEffect(() => {
-    if (!editorIsReady) return;
-    let theme = highlight.defaultTheme;
-    if (parser === "v1") {
-      if (mode === "light") {
-        theme = themeNameLight;
-      } else {
-        theme = themeNameDark;
-      }
-    } else if (parser === "graph-selector") {
-      if (mode === "light") {
-        theme = highlight.defaultTheme;
-      } else {
-        theme = highlight.defaultThemeDark;
-      }
-    }
-
-    setTheme(theme);
-    const monaco = useEditorStore.getState().monaco;
-    if (!monaco) return;
-    monaco.editor.setTheme(theme);
-  }, [editorIsReady, mode, parser]);
-
-  // Change the editor language when languageId changes
-  useEffect(() => {
-    const monaco = useEditorStore.getState().monaco;
-    if (!editorIsReady || !monaco) return;
-    const editor = monaco.editor;
-    if (!editor) return;
-    const model = editor.getModels()[0];
-    if (!model) return;
-    monaco.editor.setModelLanguage(model, languageId);
-  }, [editorIsReady, languageId]);
-
   return (
     <Editor
       {...props}
-      defaultLanguage={languageId}
+      defaultLanguage={highlight.languageId}
       options={{ ...editorOptions, ...extendOptions, theme }}
       loading={<Loading />}
+      beforeMount={highlight.registerHighlighter}
       onMount={(editor, monaco) => {
-        registerLanguages(monaco);
-
         // Store the refs in client side zustand state
         useEditorStore.setState({ editor, monaco });
-
-        setEditorIsReady(true);
 
         // Draw any current model markers
         updateModelMarkers();
@@ -98,16 +51,6 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
       }}
     />
   );
-}
-
-function useLanguageId() {
-  const parser = useParser();
-  switch (parser) {
-    case "v1":
-      return languageId;
-    case "graph-selector":
-      return highlight.languageId;
-  }
 }
 
 /** Keep track of decoratins on the current editor and show an indication of
