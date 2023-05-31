@@ -96,7 +96,7 @@ msgstr "返回编辑器"
 msgid "Background"
 msgstr "背景"
 
-#: src/components/ShareDialog.tsx:458
+#: src/components/ShareDialog.tsx:454
 msgid "Basic Flowchart"
 msgstr "基本流程图"
 
@@ -122,8 +122,8 @@ msgstr "空白"
 msgid "Blog"
 msgstr "博客"
 
-#: src/components/GraphContextMenu.tsx:483
-#: src/components/GraphContextMenu.tsx:579
+#: src/components/GraphContextMenu.tsx:480
+#: src/components/GraphContextMenu.tsx:576
 msgid "Border"
 msgstr "边框"
 
@@ -216,7 +216,7 @@ msgstr "克隆"
 msgid "Close"
 msgstr "关闭"
 
-#: src/components/GraphContextMenu.tsx:309
+#: src/components/GraphContextMenu.tsx:306
 msgid "Color"
 msgstr "颜色"
 
@@ -267,21 +267,21 @@ msgstr "继续"
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
-#: src/components/ShareDialog.tsx:254
-#: src/components/ShareDialog.tsx:255
-#: src/components/ShareDialog.tsx:372
+#: src/components/ShareDialog.tsx:250
+#: src/components/ShareDialog.tsx:251
+#: src/components/ShareDialog.tsx:368
 msgid "Copy"
 msgstr "复制"
 
-#: src/components/GraphContextMenu.tsx:226
+#: src/components/GraphContextMenu.tsx:225
 msgid "Copy PNG Image"
 msgstr "复制PNG图像"
 
-#: src/components/GraphContextMenu.tsx:184
+#: src/components/GraphContextMenu.tsx:183
 msgid "Copy SVG Code"
 msgstr "复制 SVG 代码"
 
-#: src/components/ShareDialog.tsx:337
+#: src/components/ShareDialog.tsx:333
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。"
 
@@ -355,24 +355,24 @@ msgstr "您要将其删除吗？"
 msgid "Document"
 msgstr "文档"
 
-#: src/pages/LogIn.tsx:91
+#: src/pages/LogIn.tsx:93
 msgid "Don't have an account?"
 msgstr "没有帐户？"
 
-#: src/components/ShareDialog.tsx:72
-#: src/components/ShareDialog.tsx:533
+#: src/components/ShareDialog.tsx:70
+#: src/components/ShareDialog.tsx:529
 msgid "Download"
 msgstr "下载"
 
-#: src/components/GraphContextMenu.tsx:127
+#: src/components/GraphContextMenu.tsx:126
 msgid "Download JPG"
 msgstr "下载 JPG"
 
-#: src/components/GraphContextMenu.tsx:103
+#: src/components/GraphContextMenu.tsx:102
 msgid "Download PNG"
 msgstr "下载 PNG"
 
-#: src/components/GraphContextMenu.tsx:149
+#: src/components/GraphContextMenu.tsx:148
 msgid "Download SVG"
 msgstr "下载 SVG"
 
@@ -392,7 +392,7 @@ msgstr "將檔案拖放到這裡..."
 msgid "Easily import existing flowcharts from other software"
 msgstr "轻松从其他软件导入现有流程图"
 
-#: src/components/GraphContextMenu.tsx:572
+#: src/components/GraphContextMenu.tsx:569
 msgid "Edge"
 msgstr "邊緣"
 
@@ -454,7 +454,7 @@ msgstr "边在源节点行"
 msgid "Edges in Target Node Row"
 msgstr "边在目标节点行"
 
-#: src/components/ShareDialog.tsx:144
+#: src/components/ShareDialog.tsx:142
 msgid "Editable"
 msgstr "可编辑"
 
@@ -494,8 +494,8 @@ msgstr "Excalidraw"
 
 #: src/components/EditorWrapper.tsx:53
 #: src/components/EditorWrapper.tsx:58
-#: src/components/ShareDialog.tsx:63
-#: src/components/ShareDialog.tsx:155
+#: src/components/ShareDialog.tsx:61
+#: src/components/ShareDialog.tsx:152
 msgid "Export"
 msgstr "导出"
 
@@ -508,7 +508,7 @@ msgstr "导出高分辨率图像"
 msgid "Export to SVG"
 msgstr "导出为SVG"
 
-#: src/components/GraphContextMenu.tsx:268
+#: src/components/GraphContextMenu.tsx:267
 msgid "Extra Large"
 msgstr "超大"
 
@@ -537,7 +537,7 @@ msgstr "如果发现了一个 bug？有功能请求？我们很乐意听到您�
 msgid "Free"
 msgstr "免费"
 
-#: src/components/ShareDialog.tsx:141
+#: src/components/ShareDialog.tsx:139
 msgid "Fullscreen"
 msgstr "全屏"
 
@@ -630,7 +630,7 @@ msgstr "從任何CSV檔案匯入資料並將其映射到新的流程圖。這是
 msgid "Import from Lucidchart, Visio, and other CSV files"
 msgstr "從Lucidchart、Visio和其他CSV檔案匯入"
 
-#: src/components/ShareDialog.tsx:450
+#: src/components/ShareDialog.tsx:446
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
 
@@ -642,7 +642,7 @@ msgstr "匯入資料是專業功能。您可以每月以3美元或每年30美元
 msgid "Impress your audience with high-quality images produced by Flowchart Fun"
 msgstr "用Flowchart Fun生成的高质量图片给你的听众留下深刻印象"
 
-#: src/components/ShareDialog.tsx:483
+#: src/components/ShareDialog.tsx:479
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
@@ -666,7 +666,7 @@ msgstr "是"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/GraphContextMenu.tsx:263
+#: src/components/GraphContextMenu.tsx:262
 msgid "Large"
 msgstr "大"
 
@@ -715,7 +715,7 @@ msgstr "浅色"
 msgid "Light Mode"
 msgstr "浅色模式"
 
-#: src/components/ShareDialog.tsx:136
+#: src/components/ShareDialog.tsx:134
 msgid "Link"
 msgstr "链接"
 
@@ -725,7 +725,7 @@ msgstr "正在載入"
 
 #: src/components/Header.tsx:202
 #: src/components/Header.tsx:422
-#: src/pages/LogIn.tsx:62
+#: src/pages/LogIn.tsx:64
 #: src/pages/New.tsx:273
 msgid "Log In"
 msgstr "登录"
@@ -742,7 +742,7 @@ msgstr "登入以開始創建流程圖。"
 msgid "Make a One-Time Donation"
 msgstr "进行一次性捐赠"
 
-#: src/components/ShareDialog.tsx:416
+#: src/components/ShareDialog.tsx:412
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
@@ -754,7 +754,7 @@ msgstr "確保您使用的是與登錄時相同的電子郵件。"
 msgid "Map Data"
 msgstr "對應資料"
 
-#: src/components/GraphContextMenu.tsx:259
+#: src/components/GraphContextMenu.tsx:258
 msgid "Medium"
 msgstr "中等"
 
@@ -801,7 +801,7 @@ msgstr "下次扣费"
 msgid "No Edges"
 msgstr "沒有邊緣"
 
-#: src/components/GraphContextMenu.tsx:302
+#: src/components/GraphContextMenu.tsx:299
 msgid "Node"
 msgstr "節點"
 
@@ -847,11 +847,9 @@ msgstr "不为空"
 msgid "Office Hours"
 msgstr "工作时间"
 
-#: src/pages/LogIn.tsx:50
-msgid ""
-"Once in a while the magic link will end up in your spam folder. If you\n"
-"don't see it after a few minutes, check there or request a new link."
-msgstr "如果幾分鐘後還沒有看到它，請檢查或請求新鏈接。"
+#: src/pages/LogIn.tsx:49
+msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
+msgstr "偶尔，魔法链接会被放入您的垃圾邮件文件夹。如果几分钟后仍然没有收到，请检查垃圾邮件文件夹，或者重新请求新的链接。"
 
 #: src/pages/Pricing.tsx:32
 #: src/pages/Pricing.tsx:74
@@ -870,7 +868,7 @@ msgstr "仅在此设备上可用。<0/>清除浏览器缓存将抹去它们。"
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
 
-#: src/components/ShareDialog.tsx:470
+#: src/components/ShareDialog.tsx:466
 msgid "Organization Chart"
 msgstr "组织结构图"
 
@@ -915,8 +913,8 @@ msgstr "处理数据"
 msgid "Prompt"
 msgstr "提示"
 
-#: src/components/ShareDialog.tsx:412
-#: src/components/ShareDialog.tsx:435
+#: src/components/ShareDialog.tsx:408
+#: src/components/ShareDialog.tsx:431
 msgid "Public"
 msgstr "公开"
 
@@ -925,7 +923,7 @@ msgid "Random"
 msgstr "随机"
 
 #: src/components/EditorWrapper.tsx:44
-#: src/components/ShareDialog.tsx:147
+#: src/components/ShareDialog.tsx:145
 msgid "Read-only"
 msgstr "只读"
 
@@ -1046,20 +1044,20 @@ msgstr "给我们反馈"
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/GraphContextMenu.tsx:371
+#: src/components/GraphContextMenu.tsx:368
 msgid "Shape"
 msgstr "形状"
 
 #: src/components/SignUpForm.tsx:176
-#: src/pages/LogIn.tsx:96
+#: src/pages/LogIn.tsx:98
 msgid "Sign Up"
 msgstr "注册"
 
-#: src/components/GraphContextMenu.tsx:438
+#: src/components/GraphContextMenu.tsx:435
 msgid "Size"
 msgstr "尺寸"
 
-#: src/components/GraphContextMenu.tsx:254
+#: src/components/GraphContextMenu.tsx:253
 msgid "Small"
 msgstr "小"
 
@@ -1071,7 +1069,7 @@ msgstr "有些类可以帮助您设计流程图"
 msgid "Sorry! This page is only available in English."
 msgstr "抱歉！此页面只有英语版。"
 
-#: src/components/GraphContextMenu.tsx:621
+#: src/components/GraphContextMenu.tsx:618
 msgid "Source Arrow"
 msgstr "源箭头"
 
@@ -1139,7 +1137,7 @@ msgstr "樣式類別"
 
 #: src/components/Feedback.tsx:83
 #: src/components/ImportDataDialog.tsx:583
-#: src/pages/LogIn.tsx:86
+#: src/pages/LogIn.tsx:88
 msgid "Submit"
 msgstr "提交"
 
@@ -1151,11 +1149,7 @@ msgstr "订阅"
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
-#: src/components/EditorOptions.tsx:40
-msgid "Syntax"
-msgstr "句法"
-
-#: src/components/GraphContextMenu.tsx:660
+#: src/components/GraphContextMenu.tsx:657
 msgid "Target Arrow"
 msgstr "目标箭头"
 
@@ -1241,7 +1235,7 @@ msgstr "这款应用的工作原理是输入"
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。"
 
-#: src/components/ShareDialog.tsx:542
+#: src/components/ShareDialog.tsx:538
 msgid "Tip"
 msgstr "提示"
 
@@ -1335,11 +1329,11 @@ msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 msgid "Use the customer portal to change your billing information."
 msgstr "使用客户门户更改您的账单信息。"
 
-#: src/components/ShareDialog.tsx:478
+#: src/components/ShareDialog.tsx:474
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "使用此文件制作组织图、层次结构和其他组织结构。"
 
-#: src/components/ShareDialog.tsx:466
+#: src/components/ShareDialog.tsx:462
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "使用此文件进行顺序、流程和工作流程。"
 
@@ -1355,7 +1349,7 @@ msgstr "在 Github 上查看"
 msgid "We use cookies to keep you logged in."
 msgstr "我们使用 cookies 来让您保持登录状态。"
 
-#: src/pages/LogIn.tsx:65
+#: src/pages/LogIn.tsx:67
 msgid "We use magic links to log you in. Enter your email below to get started."
 msgstr "我们使用魔术链接来登录您。请在下面输入您的电子邮件以开始。"
 

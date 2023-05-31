@@ -61,14 +61,6 @@ export function prepareChart(doc: string, details: Details) {
     unknown
   >;
 
-  // Because the new getDefaultChart() will return with graph-selector in the meta
-  // and people have had to intentionally switch to graph selector thus far
-  // if we get to this point and DON'T have a parser in the meta, we can assume
-  // that it's the v1 parser, and we'll add it to keep compatibility
-  if (!meta.parser) {
-    meta.parser = "v1";
-  }
-
   text = `${text.trim()}\n`;
 
   useDoc.setState({ text, meta, details }, false, "prepareChart");

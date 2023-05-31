@@ -238,8 +238,8 @@
       "노드는 점선, 점점선 또는 이중선으로 스타일링할 수 있으며, border-none으로 테두리를 제거할 수 있습니다.",
     "Not Empty": "비어 있지 않음",
     "Office Hours": "근무 시간",
-    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
-      "몇 분 후에도 보이지 않으면 여기를 확인하거나 새 링크를 요청하세요.",
+    "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link.":
+      "가끔 마술 링크가 스팸 폴더에 도착할 수도 있습니다. 몇 분 후에도 보이지 않으면 거기를 확인하거나 새로운 링크를 요청하십시오.",
     "One-on-One Support": "일대일 지원",
     "One-time Share Links": "일회성 공유 링크",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -319,7 +319,6 @@
     Submit: "보내다",
     Subscription: "구독",
     "Subscription will end": "구독이 종료될 예정입니다.",
-    Syntax: "문법",
     "Target Arrow": "타겟 화살표",
     "Target Column": "대상 열",
     "Target Delimiter": "대상 구분자",

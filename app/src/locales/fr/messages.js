@@ -244,8 +244,8 @@
       "Les nœuds peuvent être stylisés avec des traits, des points ou des doubles. Les bordures peuvent également être supprimées avec border-none.",
     "Not Empty": "Pas vide",
     "Office Hours": "Heures de travail",
-    "Once in a while the magic link will end up in your spam folder. If you\ndon't see it after a few minutes, check there or request a new link.":
-      "Si vous ne le voyez pas après quelques minutes, vérifiez là ou demandez un nouveau lien.",
+    "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link.":
+      " temps en temps, le lien magique finira par atterrir dans votre dossier de pourriel. Si vous ne le voyez pas après quelques minutes, vérifiez-y ou demandez un nouveau lien.",
     "One-on-One Support": "Assistance individuelle",
     "One-time Share Links": "Liens de partage à usage unique",
     "Only available on this device.<0/>Clearing your browser cache will erase them.":
@@ -330,7 +330,6 @@
     Submit: "Soumettre",
     Subscription: "Abonnement",
     "Subscription will end": "L'abonnement prendra fin",
-    Syntax: "Syntaxe",
     "Target Arrow": "Flèche de Cible",
     "Target Column": "Colonne cible",
     "Target Delimiter": "Délimiteur cible",
