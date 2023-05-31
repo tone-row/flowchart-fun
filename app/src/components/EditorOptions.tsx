@@ -1,6 +1,4 @@
-import { Trans } from "@lingui/macro";
-import produce from "immer";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 import { useIsValidSponsor } from "../lib/hooks";
 import { Box } from "../slang";
