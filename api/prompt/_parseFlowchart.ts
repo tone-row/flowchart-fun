@@ -1,4 +1,4 @@
-import { Graph } from "graph-selector";
+import { Edge, Graph, Node } from "graph-selector";
 
 export function parseFlowchart(text: string): Graph {
   const lines = text.split("\n");
@@ -23,12 +23,39 @@ export function parseFlowchart(text: string): Graph {
     edges.push([from, to, label]);
   }
 
+  const _nodes: Node[] = [];
+  let i = 0;
+  for (const node of nodes) {
+    // check if node contains any non-standard characters
+    if (node.match(/[^a-zA-Z0-9 ]/)) {
+      _nodes.push({
+        data: { id: String.fromCharCode(97 + i++), label: node, classes: "" },
+      });
+      nodes[i] = node;
+    } else {
+      _nodes.push({ data: { id: node, label: node, classes: "" } });
+    }
+  }
+
+  // loop over edges and replace node name with "#"+id where id differs from name
+  const _edges: Edge[] = [];
+  for (const [from, to, label] of edges) {
+    const fromNode = _nodes.find((node) => node.data.label === from);
+    const toNode = _nodes.find((node) => node.data.label === to);
+    if (!fromNode || !toNode) continue;
+    let source = fromNode.data.id,
+      target = toNode.data.id;
+    if (fromNode.data.id !== from) {
+      source = "#" + fromNode.data.id;
+    }
+    if (toNode.data.id !== to) {
+      target = "#" + toNode.data.id;
+    }
+    _edges.push({ source, target, data: { id: "", classes: "", label } });
+  }
+
   return {
-    nodes: nodes.map((label) => ({ data: { id: label, classes: "", label } })),
-    edges: edges.map(([from, to, label]) => ({
-      source: from,
-      target: to,
-      data: { id: "", classes: "", label },
-    })),
+    nodes: _nodes,
+    edges: _edges,
   };
 }
