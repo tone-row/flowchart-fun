@@ -15,14 +15,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const prompt = req.body.prompt;
     if (!prompt) return res.status(400).json({ error: "no prompt provided" });
 
-    const response = await openai.createCompletion({
-      prompt: getPrompt(prompt),
-      max_tokens: 2048,
-      temperature: 0.5,
-      model: "text-davinci-003",
+    const completion = await openai.createChatCompletion({
+      model: "gpt-4",
+      messages: [
+        {
+          role: "user",
+          content: getPrompt(prompt),
+        },
+      ],
     });
 
-    const text = response.data.choices[0].text;
+    const text = completion.data.choices[0].message?.content;
     if (!text) return res.status(400).json({ error: "no text provided" });
 
     const graph = parseFlowchart(text);
@@ -48,15 +51,15 @@ Moon {orbits} Earth
 Information:
 Joseph is Richard's son. Mary is Richard's wife. Nathaniel is Joseph's auto-mechanic.
 
-Relationships:
-Richard {son} Joseph
-Richard {wife} Mary
-Joseph {auto-mechanic} Nathaniel
+Entities and Relationships:
+Joseph {son} Richard
+Mary {wife} Richard
+Nathaniel {auto-mechanic} Joseph
 
 Information:
 England fought France in the Hundred Years War. France fought England in the Anglo-French War. England fought Scotland in the War of the Roses. Scotland fought England in the Scottish-English War. England fought Scotland again during the Wars of Scottish Independence. France fought Scotland during the Hundred Years War.
 
-Relationships:
+Entities and Relationships:
 England {Hundred Years War} France
 France {Anglo-French War} England
 England {War of the Roses} Scotland
@@ -72,7 +75,7 @@ Is shoe tied?
 Yes: Success!
 No: Tie Shoe. Success!
 
-Relationships:
+Entities and Relationships:
 Is shoe on foot? {No} Put on shoe.
 Is shoe on foot? {Yes} Is shoe tied?
 Put on shoe. { } Is shoe tied?
@@ -92,7 +95,7 @@ If you just put a jelly bean in Pot 2, swap it for the one you just put in Pot 1
 If your jelly bean is orange, put it in Pot 3.
 Repeat until you have no jelly beans left.
 
-Relationships:
+Entities and Relationships:
 Take a jelly bean. { } If the jelly bean is red, eat it.
 Take a jelly bean. { } If it's blue put it in Pot 1 then fry an egg and eat it.
 Take a jelly bean. { } If it's purple put it in Pot 2.
@@ -117,7 +120,7 @@ When horse grows up, send horse to the grocery store to buy horseradish.
 If the horse succeeds, enroll the horse in college.
 If the horse fails, count your losses and remember the good times.
 
-Relationships:
+Entities and Relationships:
 Go to grocery store. { } Buy horseradish.
 Buy horseradish. {If there is no horse radish} Go to farm. Buy horse.
 Go to farm. Buy horse. {If there are no horses on the farm} Go to market and buy seeds.
@@ -130,6 +133,6 @@ Send horse to the grocery store to buy horseradish. {If the horse fails} Count y
 Information:
 ${prompt}
 
-Flowchart:
+Entities and Relationships:
 `;
 }
