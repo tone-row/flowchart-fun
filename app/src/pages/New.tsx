@@ -419,7 +419,7 @@ function PromptSubmenu() {
         </div>
       </RadioGroup.Root>
       <Textarea
-        className="resize-none mt-2"
+        className="resize-none mt-2 leading-tight"
         rows={6}
         name="prompt"
         placeholder={placeholders[method]}
@@ -445,7 +445,7 @@ function PromptSubmenuRadioItem({
         <span className="font-bold text-neutral-700 dark:text-neutral-100 mb-1">
           {title}
         </span>
-        <div className="text-sm text-neutral-500 dark:text-neutral-300">
+        <div className="text-sm text-neutral-500 dark:text-neutral-300 leading-tight">
           {description}
         </div>
       </button>
