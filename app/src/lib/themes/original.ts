@@ -18,7 +18,7 @@ const fontFamily = "Karla";
 const backgroundColor = colors.white;
 const arrowColor = colors.black;
 const lineHeight = 1.25;
-const padding = "6px";
+const padding = "16px";
 const foregroundColor = colors.black;
 
 const arrowWidth = 0.75;

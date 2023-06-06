@@ -19,7 +19,7 @@ const backgroundColor = colors.black;
 const color = colors.white;
 const arrowColor = color;
 const lineHeight = 1.25;
-const padding = "8px";
+const padding = "16px";
 
 const borderWidth = 1.111;
 const arrowWidth = borderWidth;
