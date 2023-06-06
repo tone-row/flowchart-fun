@@ -2,8 +2,8 @@
   position: absolute;
   bottom: 30px;
   left: 30px;
-  visibility: hidden;
-  z-index: -1;
+  /* visibility: hidden;
+  z-index: -1; */
   display: inline-block;
   word-break: keep-all;
   white-space: pre-wrap;
