@@ -142,7 +142,7 @@
     "@playwright/test": "1.29.0",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/css-font-loading-module": "^0.0.7",
-    "@types/cytoscape": "^3.14.12",
+    "@types/cytoscape": "^3.19.9",
     "@types/download": "^6.2.4",
     "@types/file-saver": "^2.0.1",
     "@types/jest": "^29.0.0",

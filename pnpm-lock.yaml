@@ -386,7 +386,7 @@ importers:
         specifier: ^0.0.7
         version: 0.0.7
       '@types/cytoscape':
-        specifier: ^3.14.12
+        specifier: ^3.19.9
         version: 3.19.9
       '@types/download':
         specifier: ^6.2.4

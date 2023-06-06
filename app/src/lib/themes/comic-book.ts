@@ -18,7 +18,7 @@ const fontFamily = "Permanent Marker";
 const backgroundColor = colors.white;
 const arrowColor = "rgb(163, 184, 186)";
 const lineHeight = 1.2;
-const padding = 5;
+const padding = 15;
 const borderWidth = 1.88;
 
 const comicBook: Theme = {
@@ -54,6 +54,8 @@ const comicBook: Theme = {
         label: "data(label)",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
+        width: "label",
+        height: "label",
         "text-valign": "center",
         shape: "rectangle",
         // @ts-ignore

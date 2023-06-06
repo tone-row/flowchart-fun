@@ -53,6 +53,8 @@ const original: Theme = {
         label: "data(label)",
         "text-wrap": "wrap",
         "text-max-width": `data(width)`,
+        width: "label",
+        height: "label",
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,

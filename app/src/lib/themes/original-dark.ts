@@ -19,7 +19,7 @@ const backgroundColor = colors.black;
 const color = colors.white;
 const arrowColor = color;
 const lineHeight = 1.25;
-const padding = "5px";
+const padding = "8px";
 
 const borderWidth = 1.111;
 const arrowWidth = borderWidth;
@@ -61,6 +61,8 @@ const originalDark: Theme = {
         label: "data(label)",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
+        width: "label",
+        height: "label",
         "text-valign": "center",
         "text-halign": "center",
         "border-width": borderWidth,
