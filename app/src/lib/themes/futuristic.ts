@@ -30,7 +30,7 @@ const fontFamily = "Space Mono";
 const backgroundColor = colors2.white;
 const arrowColor = colors.gray;
 const lineHeight = 1.2;
-const padding = "8px";
+const padding = "18px";
 const borderWidth = 1;
 
 const futuristic: Theme = {
@@ -69,6 +69,8 @@ const futuristic: Theme = {
         label: "data(label)",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
+        width: "label",
+        height: "label",
         "text-valign": "center",
         shape: "rectangle",
         "padding-left": padding,

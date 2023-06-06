@@ -2,6 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import { TextAlignRight } from "phosphor-react";
 import { useEffect, useRef, useState } from "react";
+import { create } from "zustand";
 
 import { Box } from "../slang";
 import { Overlay } from "../ui/Dialog";
@@ -10,6 +11,12 @@ import { SectionTitle } from "../ui/Typography";
 import styles from "./LearnSyntaxDialog.module.css";
 
 const PAD = 4;
+
+const useLearnSyntaxStore = create<{
+  scrollPosition: number;
+}>((_set) => ({
+  scrollPosition: 0,
+}));
 
 export function LearnSyntaxDialog() {
   const descriptionFirstTitle = useRef<HTMLHeadingElement>(null);
@@ -46,8 +53,27 @@ export function LearnSyntaxDialog() {
     };
   }, [description]);
 
+  /** scroll to the last position when the dialog is opened */
+  useEffect(() => {
+    const descriptionElement = description;
+    if (!descriptionElement) return;
+    const scrollPosition = useLearnSyntaxStore.getState().scrollPosition;
+    descriptionElement.scrollTo({ top: scrollPosition });
+  }, [description]);
+
   return (
-    <Dialog.Root>
+    <Dialog.Root
+      onOpenChange={(isOpen) => {
+        // when it closes, store the scroll position of the description element
+        if (!isOpen) {
+          const descriptionElement = description;
+          if (!descriptionElement) return;
+          useLearnSyntaxStore.setState({
+            scrollPosition: descriptionElement.scrollTop,
+          });
+        }
+      }}
+    >
       <Dialog.Trigger asChild>
         <EditorActionTextButton icon={TextAlignRight}>
           <Trans>Learn Syntax</Trans>

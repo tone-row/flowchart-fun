@@ -253,8 +253,8 @@ importers:
         specifier: ^4.1.17
         version: 4.1.17(react-dom@17.0.2)(react@17.0.2)
       graph-selector:
-        specifier: ^0.9.7
-        version: 0.9.7
+        specifier: ^0.9.8
+        version: 0.9.8
       gray-matter:
         specifier: ^4.0.2
         version: 4.0.3
@@ -386,7 +386,7 @@ importers:
         specifier: ^0.0.7
         version: 0.0.7
       '@types/cytoscape':
-        specifier: ^3.14.12
+        specifier: ^3.19.9
         version: 3.19.9
       '@types/download':
         specifier: ^6.2.4
@@ -9647,8 +9647,8 @@ packages:
       '@tone-row/strip-comments': 2.0.6
     dev: false
 
-  /graph-selector@0.9.7:
-    resolution: {integrity: sha512-kTB57t8V6BhPOQ60wacyjcJzRprebmqVHUcG1d8G4JC4OSKieG80YX5iVCDyPYj9eKJkiYc3xkqV7oL+nGGJtg==}
+  /graph-selector@0.9.8:
+    resolution: {integrity: sha512-7erE3BMPcbu2yMii9oq0g3KFWA6ZSb9wiYZ0xfKG7Drv4UoVy8fx96NiytvTzQ+JAqMLn8Z+QgJlbSNPrh1Z/A==}
     dependencies:
       '@tone-row/strip-comments': 2.0.6
       html-entities: 2.3.3

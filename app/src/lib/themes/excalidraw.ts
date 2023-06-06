@@ -53,6 +53,8 @@ const excalidraw: Theme = {
         "text-halign": "center",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
+        width: "label",
+        height: "label",
         color: colors.black,
         shape: "rectangle",
         backgroundColor: backgroundColor,
