@@ -162,14 +162,18 @@ export function PaymentStepper() {
       )}
       {step === "three" && (
         <div className="grid gap-4">
-          <Title>{t`Activate Flowchart Fun Pro`}</Title>
+          <Title>{t`Activate your account`}</Title>
           <Description className="mb-4">
-            {t`Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!`}
+            <Trans>
+              You&apos;re almost there! Just one more step to unlock the full
+              potential of <span>Flowchart Fun Pro</span>. Enter your payment
+              details below to complete your subscription and start creating
+              amazing flowcharts today.
+            </Trans>
           </Description>
           <PaymentForm
             clientSecret={subscriptionDetails.data?.clientSecret || ""}
           />
-          <span className="text-xs text-neutral-500 dark:text-neutral-400 block text-center">{t`Your payment details are secure. You can cancel anytime.`}</span>
         </div>
       )}
     </div>
@@ -265,7 +269,7 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
         disabled={!stripe || loading}
         className="mt-5 justify-self-center"
       >
-        <Trans>Complete Subscription</Trans>
+        <Trans>Sign Up</Trans>
         {loading ? <Spinner r={5} s={1} /> : <RocketLaunch size={18} />}
       </BlueButton>
       {error && (
