@@ -60,8 +60,8 @@ msgid "Account"
 msgstr "Compte"
 
 #: src/components/PaymentStepper.tsx:165
-msgid "Activate Flowchart Fun Pro"
-msgstr "Activer Flowchart Fun Pro"
+msgid "Activate your account"
+msgstr "Activez votre compte"
 
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
@@ -79,7 +79,7 @@ msgstr "Une erreur s'est produite. Essayez de l'envoyer à nouveau ou bien envoy
 msgid "Appearance"
 msgstr "Thème"
 
-#: src/components/LearnSyntaxDialog.tsx:118
+#: src/components/LearnSyntaxDialog.tsx:144
 msgid "Attributes"
 msgstr "Attributs"
 
@@ -150,7 +150,7 @@ msgstr "Annuler"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Résilier votre abonnement. Vos graphiques hébergés seront en lecture seule."
 
-#: src/components/LearnSyntaxDialog.tsx:335
+#: src/components/LearnSyntaxDialog.tsx:361
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Certains attributs peuvent être utilisés pour personnaliser l'apparence ou la fonctionnalité des éléments."
 
@@ -174,7 +174,7 @@ msgstr "Graphiques"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Consultez votre messagerie électronique pour le lien de connexion. Vous pouvez fermer cette fenêtre."
 
-#: src/components/LearnSyntaxDialog.tsx:304
+#: src/components/LearnSyntaxDialog.tsx:330
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Choisissez parmi une variété de formes de flèches pour la source et la cible d'un bord. Les formes incluent triangle, triangle-tee, cercle-triangle, triangle-croix, triangle-backcurve, vee, tee, carré, cercle, diamant, chevron, aucun."
 
@@ -186,7 +186,7 @@ msgstr "Choisissez le plan qui vous convient le mieux et commencez à créer des
 msgid "Circle"
 msgstr "Cercle"
 
-#: src/components/LearnSyntaxDialog.tsx:109
+#: src/components/LearnSyntaxDialog.tsx:135
 msgid "Classes"
 msgstr "Classes"
 
@@ -211,7 +211,7 @@ msgstr "Cliquez sur \\nApprendre la syntaxe\\npour en savoir plus."
 msgid "Clone"
 msgstr "Cloner"
 
-#: src/components/LearnSyntaxDialog.tsx:390
+#: src/components/LearnSyntaxDialog.tsx:416
 #: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "Fermer"
@@ -220,7 +220,7 @@ msgstr "Fermer"
 msgid "Color"
 msgstr "Couleur"
 
-#: src/components/LearnSyntaxDialog.tsx:251
+#: src/components/LearnSyntaxDialog.tsx:277
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "Les couleurs incluent le rouge, l'orange, le jaune, le bleu, le pourpre, le noir, le blanc et le gris."
 
@@ -236,10 +236,6 @@ msgstr "Bande dessinée"
 msgid "Comment"
 msgstr "Commenter"
 
-#: src/components/PaymentStepper.tsx:268
-msgid "Complete Subscription"
-msgstr "Compléter l'abonnement"
-
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
 msgstr "Concentrique"
@@ -248,11 +244,11 @@ msgstr "Concentrique"
 msgid "Confirm New Email"
 msgstr "Confirmer le nouveau Email"
 
-#: src/components/LearnSyntaxDialog.tsx:225
+#: src/components/LearnSyntaxDialog.tsx:251
 msgid "Containers"
 msgstr "Conteneurs"
 
-#: src/components/LearnSyntaxDialog.tsx:228
+#: src/components/LearnSyntaxDialog.tsx:254
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "Les conteneurs sont des nœuds qui contiennent d'autres nœuds. Ils sont déclarés à l'aide de accolades."
 
@@ -302,7 +298,7 @@ msgstr "Créer un nouveau diagramme"
 msgid "Create professional-quality visual aids for presentations or training materials"
 msgstr "Créez des aides visuelles de qualité professionnelle pour des présentations ou des matériels de formation"
 
-#: src/components/LearnSyntaxDialog.tsx:132
+#: src/components/LearnSyntaxDialog.tsx:158
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Créer une arête entre deux nœuds est fait en indentant le second nœud sous le premier"
 
@@ -380,7 +376,7 @@ msgstr "Télécharger SVG"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "Glissez-déposez un fichier CSV ici, ou cliquez pour sélectionner un fichier"
 
-#: src/components/LearnSyntaxDialog.tsx:213
+#: src/components/LearnSyntaxDialog.tsx:239
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "Dessinez une arête à partir de plusieurs nœuds en commençant la ligne par une référence"
 
@@ -396,11 +392,11 @@ msgstr "Importez facilement des diagrammes existants à partir d'autres logiciel
 msgid "Edge"
 msgstr "Bord"
 
-#: src/components/LearnSyntaxDialog.tsx:153
+#: src/components/LearnSyntaxDialog.tsx:179
 msgid "Edge ID, Classes, Attributes"
 msgstr "ID Edge, Classes, Attributs"
 
-#: src/components/LearnSyntaxDialog.tsx:141
+#: src/components/LearnSyntaxDialog.tsx:167
 msgid "Edge Label"
 msgstr "Étiquette Edge"
 
@@ -409,7 +405,7 @@ msgstr "Étiquette Edge"
 msgid "Edge Label Column"
 msgstr "Colonne d'étiquette Edge"
 
-#: src/components/LearnSyntaxDialog.tsx:288
+#: src/components/LearnSyntaxDialog.tsx:314
 msgid "Edge Style"
 msgstr "Style Edge"
 
@@ -418,7 +414,7 @@ msgid "Edge missing indentation"
 msgstr "Indentation manquante du bord"
 
 #: src/components/ImportDataDialog.tsx:406
-#: src/components/LearnSyntaxDialog.tsx:129
+#: src/components/LearnSyntaxDialog.tsx:155
 msgid "Edges"
 msgstr "Bords"
 
@@ -434,11 +430,11 @@ msgstr "Les bords sont déclarés dans la même ligne que leur nœud cible"
 msgid "Edges are declared in their own row"
 msgstr "Les bords sont déclarés dans leur propre ligne"
 
-#: src/components/LearnSyntaxDialog.tsx:156
+#: src/components/LearnSyntaxDialog.tsx:182
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "Les bords peuvent également avoir des ID, des classes et des attributs avant l'étiquette"
 
-#: src/components/LearnSyntaxDialog.tsx:291
+#: src/components/LearnSyntaxDialog.tsx:317
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "Les bords peuvent être stylisés avec des lignes en pointillés, en pointillés ou en lignes continues"
 
@@ -590,7 +586,7 @@ msgstr "Accueil"
 msgid "How are edges declared in this data?"
 msgstr "Comment les bords sont-ils déclarés dans ces données?"
 
-#: src/components/LearnSyntaxDialog.tsx:101
+#: src/components/LearnSyntaxDialog.tsx:127
 msgid "ID's"
 msgstr "ID"
 
@@ -606,7 +602,7 @@ msgstr "Si vous souhaitez créer un bord, faites une indentation de cette ligne.
 msgid "Image Export"
 msgstr "Exportation d'images"
 
-#: src/components/LearnSyntaxDialog.tsx:354
+#: src/components/LearnSyntaxDialog.tsx:380
 msgid "Images"
 msgstr "Images"
 
@@ -679,7 +675,7 @@ msgstr "Disposition"
 msgid "Layout is Frozen"
 msgstr "La mise en page est gelée"
 
-#: src/components/LearnSyntaxDialog.tsx:210
+#: src/components/LearnSyntaxDialog.tsx:236
 msgid "Leading References"
 msgstr "Principales références"
 
@@ -688,8 +684,8 @@ msgstr "Principales références"
 msgid "Learn More"
 msgstr "En savoir plus"
 
-#: src/components/LearnSyntaxDialog.tsx:53
-#: src/components/LearnSyntaxDialog.tsx:74
+#: src/components/LearnSyntaxDialog.tsx:79
+#: src/components/LearnSyntaxDialog.tsx:100
 msgid "Learn Syntax"
 msgstr "Apprendre la syntaxe"
 
@@ -805,11 +801,11 @@ msgstr "Pas de bords"
 msgid "Node"
 msgstr "Nœud"
 
-#: src/components/LearnSyntaxDialog.tsx:317
+#: src/components/LearnSyntaxDialog.tsx:343
 msgid "Node Border Style"
 msgstr "Style de bordure de nœud"
 
-#: src/components/LearnSyntaxDialog.tsx:248
+#: src/components/LearnSyntaxDialog.tsx:274
 msgid "Node Colors"
 msgstr "Couleurs de nœud"
 
@@ -817,16 +813,16 @@ msgstr "Couleurs de nœud"
 msgid "Node ID"
 msgstr "Identifiant de nœud"
 
-#: src/components/LearnSyntaxDialog.tsx:99
+#: src/components/LearnSyntaxDialog.tsx:125
 msgid "Node ID, Classes, Attributes"
 msgstr "Identifiant de nœud, classes, attributs"
 
 #: src/components/ImportDataDialog.tsx:397
-#: src/components/LearnSyntaxDialog.tsx:88
+#: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "Étiquette de nœud"
 
-#: src/components/LearnSyntaxDialog.tsx:261
+#: src/components/LearnSyntaxDialog.tsx:287
 msgid "Node Shapes"
 msgstr "Formes de nœud"
 
@@ -834,7 +830,7 @@ msgstr "Formes de nœud"
 msgid "Node and pointer on same line"
 msgstr "Nœud et pointeur sur la même ligne"
 
-#: src/components/LearnSyntaxDialog.tsx:320
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "Les nœuds peuvent être stylisés avec des traits, des points ou des doubles. Les bordures peuvent également être supprimées avec border-none."
 
@@ -927,35 +923,35 @@ msgstr "Aléatoire"
 msgid "Read-only"
 msgstr "Lecture seulement"
 
-#: src/components/LearnSyntaxDialog.tsx:196
+#: src/components/LearnSyntaxDialog.tsx:222
 msgid "Reference by Class"
 msgstr "Référence par classe"
 
-#: src/components/LearnSyntaxDialog.tsx:186
+#: src/components/LearnSyntaxDialog.tsx:212
 msgid "Reference by ID"
 msgstr "Référence par ID"
 
-#: src/components/LearnSyntaxDialog.tsx:176
+#: src/components/LearnSyntaxDialog.tsx:202
 msgid "Reference by Label"
 msgstr "Référence par étiquette"
 
-#: src/components/LearnSyntaxDialog.tsx:167
+#: src/components/LearnSyntaxDialog.tsx:193
 msgid "References"
 msgstr "Références"
 
-#: src/components/LearnSyntaxDialog.tsx:170
+#: src/components/LearnSyntaxDialog.tsx:196
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "Les références sont utilisées pour créer des arêtes entre les nœuds créés ailleurs dans le document"
 
-#: src/components/LearnSyntaxDialog.tsx:179
+#: src/components/LearnSyntaxDialog.tsx:205
 msgid "Referencing a node by its exact label"
 msgstr "Référencer un nœud par sa étiquette exacte"
 
-#: src/components/LearnSyntaxDialog.tsx:189
+#: src/components/LearnSyntaxDialog.tsx:215
 msgid "Referencing a node by its unique ID"
 msgstr "Référencer un nœud par son ID unique"
 
-#: src/components/LearnSyntaxDialog.tsx:199
+#: src/components/LearnSyntaxDialog.tsx:225
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "Référencement de multiples nœuds avec la même classe assignée"
 
@@ -1048,6 +1044,7 @@ msgstr "Paramètres"
 msgid "Shape"
 msgstr "Forme"
 
+#: src/components/PaymentStepper.tsx:272
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:98
 msgid "Sign Up"
@@ -1061,7 +1058,7 @@ msgstr "Taille"
 msgid "Small"
 msgstr "Petit"
 
-#: src/components/LearnSyntaxDialog.tsx:243
+#: src/components/LearnSyntaxDialog.tsx:269
 msgid "Some classes are available to help style your flowchart"
 msgstr "Certaines classes sont disponibles pour aider à styliser votre diagramme de flux"
 
@@ -1082,7 +1079,7 @@ msgstr "Colonne source"
 msgid "Source Delimiter"
 msgstr "Délimiteur source"
 
-#: src/components/LearnSyntaxDialog.tsx:301
+#: src/components/LearnSyntaxDialog.tsx:327
 msgid "Source/Target Arrow Shape"
 msgstr "Forme de flèche source / cible"
 
@@ -1090,7 +1087,7 @@ msgstr "Forme de flèche source / cible"
 msgid "Spacing"
 msgstr "Espacement"
 
-#: src/components/LearnSyntaxDialog.tsx:332
+#: src/components/LearnSyntaxDialog.tsx:358
 msgid "Special Attributes"
 msgstr "Attributs spéciaux"
 
@@ -1111,7 +1108,7 @@ msgstr "Recommencer"
 msgid "Status"
 msgstr "État"
 
-#: src/components/LearnSyntaxDialog.tsx:121
+#: src/components/LearnSyntaxDialog.tsx:147
 msgid "Store any data associated to a node"
 msgstr "Stocker toutes les données associées à un nœud"
 
@@ -1131,7 +1128,7 @@ msgstr "Simplifiez votre flux de travail et simplifiez votre visualisation de pr
 msgid "Style"
 msgstr "Style"
 
-#: src/components/LearnSyntaxDialog.tsx:240
+#: src/components/LearnSyntaxDialog.tsx:266
 msgid "Style Classes"
 msgstr "Classes de style"
 
@@ -1171,19 +1168,19 @@ msgstr "Temporaire"
 msgid "Temporary Flowcharts"
 msgstr "Diagrammes temporaires"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:301
 msgid "Text Sizes"
 msgstr "Tailles de texte"
 
-#: src/components/LearnSyntaxDialog.tsx:144
+#: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "Texte suivi d'un deux-points + espace crée un bord avec le texte comme étiquette"
 
-#: src/components/LearnSyntaxDialog.tsx:91
+#: src/components/LearnSyntaxDialog.tsx:117
 msgid "Text on a line creates a node with the text as the label"
 msgstr "Texte sur une ligne crée un nœud avec le texte comme étiquette"
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:304
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "Les tailles de texte comprennent petite, régulière, grande et extra-grande."
 
@@ -1211,7 +1208,7 @@ msgstr "Le délimiteur utilisé pour séparer plusieurs nœuds source"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "Le délimiteur utilisé pour séparer plusieurs nœuds cibles"
 
-#: src/components/LearnSyntaxDialog.tsx:264
+#: src/components/LearnSyntaxDialog.tsx:290
 msgid "The possible shapes are:"
 msgstr "Les formes possibles sont :"
 
@@ -1285,7 +1282,7 @@ msgstr "Type"
 msgid "Unfreeze"
 msgstr "Débloquer"
 
-#: src/components/LearnSyntaxDialog.tsx:103
+#: src/components/LearnSyntaxDialog.tsx:129
 msgid "Unique text value to identify a node"
 msgstr "Valeur de texte unique pour identifier un nœud"
 
@@ -1297,10 +1294,6 @@ msgstr "Erreur d'analyse inconnue"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "Libérez votre créativité et simplifiez votre flux de travail avec Flowchart Fun Pro - à partir de seulement 3 $ / mois !"
 
-#: src/components/PaymentStepper.tsx:167
-msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
-msgstr "Débloquez le plein potentiel de Flowchart Fun Pro et obtenez un accès illimité à toutes nos fonctionnalités avancées. Complétez votre abonnement ci-dessous et commencez à créer des diagrammes de flux incroyables aujourd'hui !"
-
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "Mettre à jour l'e-mail"
@@ -1309,19 +1302,19 @@ msgstr "Mettre à jour l'e-mail"
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "Utilisez l'IA pour créer des diagrammes à partir de jeux de données ou d'algorithmes"
 
-#: src/components/LearnSyntaxDialog.tsx:112
+#: src/components/LearnSyntaxDialog.tsx:138
 msgid "Use classes to group nodes"
 msgstr "Utilisez des classes pour regrouper les nœuds"
 
-#: src/components/LearnSyntaxDialog.tsx:371
+#: src/components/LearnSyntaxDialog.tsx:397
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "Utilisez l'attribut <0>href</0> pour créer un lien sur un nœud qui s'ouvre dans un nouvel onglet."
 
-#: src/components/LearnSyntaxDialog.tsx:357
+#: src/components/LearnSyntaxDialog.tsx:383
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "Utilisez l'attribut <0>src</0> pour définir l'image d'un nœud. L'image sera mise à l'échelle pour s'adapter au nœud, vous devrez donc peut-être ajuster la largeur et la hauteur du nœud pour obtenir le résultat souhaité. Seules les images publiques (non bloquées par CORS) sont prises en charge."
 
-#: src/components/LearnSyntaxDialog.tsx:344
+#: src/components/LearnSyntaxDialog.tsx:370
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Utilisez les attributs <0>w</0> et <1>h</1> pour définir explicitement la largeur et la hauteur d'un nœud."
 
@@ -1357,7 +1350,7 @@ msgstr "Nous utilisons des liens magiques pour vous connecter. Entrez votre emai
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "Bienvenue à Flowchart Fun Pro !"
 
-#: src/components/LearnSyntaxDialog.tsx:341
+#: src/components/LearnSyntaxDialog.tsx:367
 msgid "Width and Height"
 msgstr "Largeur et hauteur"
 
@@ -1385,13 +1378,13 @@ msgstr "Vous pouvez également envelopper le texte dans \"\\( \\)\" pour créer 
 msgid "You must log in to create a standard flowchart."
 msgstr "Vous devez vous connecter pour créer un diagramme standard."
 
+#: src/components/PaymentStepper.tsx:167
+msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
+msgstr "Vous y êtes presque ! Une dernière étape pour débloquer tout le potentiel de <0>Flowchart Fun Pro</0>. Entrez vos informations de paiement ci-dessous pour compléter votre abonnement et commencez à créer des diagrammes de flux incroyables dès aujourd'hui."
+
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "Vos diagrammes"
-
-#: src/components/PaymentStepper.tsx:172
-msgid "Your payment details are secure. You can cancel anytime."
-msgstr "Vos informations de paiement sont sécurisées. Vous pouvez annuler à tout moment."
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."

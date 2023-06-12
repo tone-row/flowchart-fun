@@ -184,7 +184,7 @@ function Feature({
           className="w-[120px]"
         />
       </div>
-      <h2 className="text-xl font-bold text-neutral-800 leading-tight text-center mb-4 dark:text-neutral-300">
+      <h2 className="text-xl font-bold text-neutral-800 leading-tight text-center mb-4 dark:text-neutral-300 text-wrap-balance">
         {title}
       </h2>
       <div className="grid gap-3">

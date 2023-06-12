@@ -60,8 +60,8 @@ msgid "Account"
 msgstr "खाता"
 
 #: src/components/PaymentStepper.tsx:165
-msgid "Activate Flowchart Fun Pro"
-msgstr "Flowchart Fun Pro को सक्रिय करें"
+msgid "Activate your account"
+msgstr "अपना खाता सक्रिय करें"
 
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
@@ -79,7 +79,7 @@ msgstr "एक एरर हो गया. फिर से सबमिट क�
 msgid "Appearance"
 msgstr "दिखावट"
 
-#: src/components/LearnSyntaxDialog.tsx:118
+#: src/components/LearnSyntaxDialog.tsx:144
 msgid "Attributes"
 msgstr "गुण"
 
@@ -150,7 +150,7 @@ msgstr "रद्द करें"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
-#: src/components/LearnSyntaxDialog.tsx:335
+#: src/components/LearnSyntaxDialog.tsx:361
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "कुछ गुण तत्वों की दिखता या कार्यक्षमता को अनुकूलित करने के लिए उपयोग किए जा सकते हैं।"
 
@@ -174,7 +174,7 @@ msgstr "चार्ट"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
 
-#: src/components/LearnSyntaxDialog.tsx:304
+#: src/components/LearnSyntaxDialog.tsx:330
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।"
 
@@ -186,7 +186,7 @@ msgstr "आपके लिए सही योजना चुनें और 
 msgid "Circle"
 msgstr "परिधि"
 
-#: src/components/LearnSyntaxDialog.tsx:109
+#: src/components/LearnSyntaxDialog.tsx:135
 msgid "Classes"
 msgstr "वर्ग"
 
@@ -211,7 +211,7 @@ msgstr "\\nसिंटैक्स सीखने के लिए \\nपर �
 msgid "Clone"
 msgstr "क्लोन करें"
 
-#: src/components/LearnSyntaxDialog.tsx:390
+#: src/components/LearnSyntaxDialog.tsx:416
 #: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "बंद करें"
@@ -220,7 +220,7 @@ msgstr "बंद करें"
 msgid "Color"
 msgstr "रंग"
 
-#: src/components/LearnSyntaxDialog.tsx:251
+#: src/components/LearnSyntaxDialog.tsx:277
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "रंग में लाल, नारंगी, पीला, नीला, बैंगनी, काला, सफेद, और ग्रे शामिल हैं।"
 
@@ -236,10 +236,6 @@ msgstr "कॉमिक बुक"
 msgid "Comment"
 msgstr "टिप्पणी"
 
-#: src/components/PaymentStepper.tsx:268
-msgid "Complete Subscription"
-msgstr "सदस्यता पूरी करें"
-
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
 msgstr "गाढ़ा"
@@ -248,11 +244,11 @@ msgstr "गाढ़ा"
 msgid "Confirm New Email"
 msgstr "नई ईमेल की पुष्टि करें"
 
-#: src/components/LearnSyntaxDialog.tsx:225
+#: src/components/LearnSyntaxDialog.tsx:251
 msgid "Containers"
 msgstr "कंटेनर"
 
-#: src/components/LearnSyntaxDialog.tsx:228
+#: src/components/LearnSyntaxDialog.tsx:254
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "कंटेनर उन नोड्स हैं जो अन्य नोड्स को सम्मिलित करते हैं। वे कर्ली ब्रेस का उपयोग करके घोषित किया जाता है।"
 
@@ -302,7 +298,7 @@ msgstr "एक नया आरेख बनाएँ"
 msgid "Create professional-quality visual aids for presentations or training materials"
 msgstr "प्रदर्शन या प्रशिक्षण सामग्री के लिए पेशेवर गुणवत्ता के दृष्टिकोण बनाएं"
 
-#: src/components/LearnSyntaxDialog.tsx:132
+#: src/components/LearnSyntaxDialog.tsx:158
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "दो नोड्स के बीच एक एज बनाने के लिए दूसरा नोड पहले वाले के नीचे इंडेंट करना होता है"
 
@@ -380,7 +376,7 @@ msgstr "SVG डाउनलोड करें"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV फ़ाइल यहां ड्रैग और ड्रॉप करें, या फ़ाइल का चयन करने के लिए क्लिक करें"
 
-#: src/components/LearnSyntaxDialog.tsx:213
+#: src/components/LearnSyntaxDialog.tsx:239
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "एक से अधिक नोड्स से एज ड्रा करने के लिए लाइन को एक संदर्भ के साथ शुरू करें"
 
@@ -396,11 +392,11 @@ msgstr "अन्य सॉफ्टवेयर से मौजूदा फ�
 msgid "Edge"
 msgstr "किनारा"
 
-#: src/components/LearnSyntaxDialog.tsx:153
+#: src/components/LearnSyntaxDialog.tsx:179
 msgid "Edge ID, Classes, Attributes"
 msgstr "किनारे आईडी, वर्ग, गुण"
 
-#: src/components/LearnSyntaxDialog.tsx:141
+#: src/components/LearnSyntaxDialog.tsx:167
 msgid "Edge Label"
 msgstr "किनारे लेबल"
 
@@ -409,7 +405,7 @@ msgstr "किनारे लेबल"
 msgid "Edge Label Column"
 msgstr "किनारे लेबल कॉलम"
 
-#: src/components/LearnSyntaxDialog.tsx:288
+#: src/components/LearnSyntaxDialog.tsx:314
 msgid "Edge Style"
 msgstr "किनारे शैली"
 
@@ -418,7 +414,7 @@ msgid "Edge missing indentation"
 msgstr "एड्ज अंतराल गुम है"
 
 #: src/components/ImportDataDialog.tsx:406
-#: src/components/LearnSyntaxDialog.tsx:129
+#: src/components/LearnSyntaxDialog.tsx:155
 msgid "Edges"
 msgstr "किन्तुओं"
 
@@ -434,11 +430,11 @@ msgstr "उनके लक्ष्य नोड के ही पंक्त�
 msgid "Edges are declared in their own row"
 msgstr "किन्तुओं को अपनी खुद की पंक्ति में घोषणा की जाती है"
 
-#: src/components/LearnSyntaxDialog.tsx:156
+#: src/components/LearnSyntaxDialog.tsx:182
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "लेबल से पहले, किन्तुओं को आईडीज़, क्लासेज़ और गुण देने की अनुमति होती है"
 
-#: src/components/LearnSyntaxDialog.tsx:291
+#: src/components/LearnSyntaxDialog.tsx:317
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "किन्तुओं को डैश्ड, डॉटेड या सॉलिड लाइन्स के साथ स्टाइल किया जा सकता है"
 
@@ -590,7 +586,7 @@ msgstr "होम"
 msgid "How are edges declared in this data?"
 msgstr "इस डेटा में कैसे किन्हीं कड़ियाँ घोषित होती हैं?"
 
-#: src/components/LearnSyntaxDialog.tsx:101
+#: src/components/LearnSyntaxDialog.tsx:127
 msgid "ID's"
 msgstr "आईडीज़"
 
@@ -606,7 +602,7 @@ msgstr "यदि आप एक एड्ज बनाने के लिए �
 msgid "Image Export"
 msgstr "छवि निर्यात"
 
-#: src/components/LearnSyntaxDialog.tsx:354
+#: src/components/LearnSyntaxDialog.tsx:380
 msgid "Images"
 msgstr "छवियाँ"
 
@@ -679,7 +675,7 @@ msgstr "ख़ाका"
 msgid "Layout is Frozen"
 msgstr "लेआउट जम गया है"
 
-#: src/components/LearnSyntaxDialog.tsx:210
+#: src/components/LearnSyntaxDialog.tsx:236
 msgid "Leading References"
 msgstr "प्रमुख संदर्भ"
 
@@ -688,8 +684,8 @@ msgstr "प्रमुख संदर्भ"
 msgid "Learn More"
 msgstr "और अधिक जानें"
 
-#: src/components/LearnSyntaxDialog.tsx:53
-#: src/components/LearnSyntaxDialog.tsx:74
+#: src/components/LearnSyntaxDialog.tsx:79
+#: src/components/LearnSyntaxDialog.tsx:100
 msgid "Learn Syntax"
 msgstr "सिंटैक्स सीखें"
 
@@ -805,11 +801,11 @@ msgstr "कोई किनारे नहीं"
 msgid "Node"
 msgstr "नोड"
 
-#: src/components/LearnSyntaxDialog.tsx:317
+#: src/components/LearnSyntaxDialog.tsx:343
 msgid "Node Border Style"
 msgstr "नोड सीमा शैली"
 
-#: src/components/LearnSyntaxDialog.tsx:248
+#: src/components/LearnSyntaxDialog.tsx:274
 msgid "Node Colors"
 msgstr "नोड रंग"
 
@@ -817,16 +813,16 @@ msgstr "नोड रंग"
 msgid "Node ID"
 msgstr "नोड आईडी"
 
-#: src/components/LearnSyntaxDialog.tsx:99
+#: src/components/LearnSyntaxDialog.tsx:125
 msgid "Node ID, Classes, Attributes"
 msgstr "नोड आईडी, वर्ग, गुण"
 
 #: src/components/ImportDataDialog.tsx:397
-#: src/components/LearnSyntaxDialog.tsx:88
+#: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "नोड लेबल"
 
-#: src/components/LearnSyntaxDialog.tsx:261
+#: src/components/LearnSyntaxDialog.tsx:287
 msgid "Node Shapes"
 msgstr "नोड आकार"
 
@@ -834,7 +830,7 @@ msgstr "नोड आकार"
 msgid "Node and pointer on same line"
 msgstr "नोड और प्रतीक एक ही लाइन पर"
 
-#: src/components/LearnSyntaxDialog.tsx:320
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "नोड्स को डैश्ड, डॉट्ड या डबल के साथ स्टाइल किया जा सकता है। बॉर्डर-नोन के साथ भी बॉर्डर हटाए जा सकते हैं।"
 
@@ -927,35 +923,35 @@ msgstr "अनियमित"
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
 
-#: src/components/LearnSyntaxDialog.tsx:196
+#: src/components/LearnSyntaxDialog.tsx:222
 msgid "Reference by Class"
 msgstr "क्लास के द्वारा संदर्भ"
 
-#: src/components/LearnSyntaxDialog.tsx:186
+#: src/components/LearnSyntaxDialog.tsx:212
 msgid "Reference by ID"
 msgstr "आईडी द्वारा संदर्भ"
 
-#: src/components/LearnSyntaxDialog.tsx:176
+#: src/components/LearnSyntaxDialog.tsx:202
 msgid "Reference by Label"
 msgstr "लेबल द्वारा संदर्भ"
 
-#: src/components/LearnSyntaxDialog.tsx:167
+#: src/components/LearnSyntaxDialog.tsx:193
 msgid "References"
 msgstr "संदर्भ"
 
-#: src/components/LearnSyntaxDialog.tsx:170
+#: src/components/LearnSyntaxDialog.tsx:196
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "संदर्भ दस्तावेज के अन्य भागों में बनाए गए नोड्स के बीच कड़ियाँ बनाने के लिए उपयोग किए जाते हैं"
 
-#: src/components/LearnSyntaxDialog.tsx:179
+#: src/components/LearnSyntaxDialog.tsx:205
 msgid "Referencing a node by its exact label"
 msgstr "सटीक लेबल द्वारा नोड का संदर्भ करना"
 
-#: src/components/LearnSyntaxDialog.tsx:189
+#: src/components/LearnSyntaxDialog.tsx:215
 msgid "Referencing a node by its unique ID"
 msgstr "अद्वितीय आईडी द्वारा नोड का संदर्भ करना"
 
-#: src/components/LearnSyntaxDialog.tsx:199
+#: src/components/LearnSyntaxDialog.tsx:225
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "एक ही निर्धारित कक्षा के साथ कई नोड का उल्लेख करना"
 
@@ -1048,6 +1044,7 @@ msgstr "सेटिंग"
 msgid "Shape"
 msgstr "आकृति"
 
+#: src/components/PaymentStepper.tsx:272
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:98
 msgid "Sign Up"
@@ -1061,7 +1058,7 @@ msgstr "आकार"
 msgid "Small"
 msgstr "छोटा"
 
-#: src/components/LearnSyntaxDialog.tsx:243
+#: src/components/LearnSyntaxDialog.tsx:269
 msgid "Some classes are available to help style your flowchart"
 msgstr "कुछ क्लास आपकी फ्लोचार्ट स्टाइल करने में मदद करने के लिए उपलब्ध हैं"
 
@@ -1082,7 +1079,7 @@ msgstr "स्रोत स्तंभ"
 msgid "Source Delimiter"
 msgstr "स्रोत डिलिमिटर"
 
-#: src/components/LearnSyntaxDialog.tsx:301
+#: src/components/LearnSyntaxDialog.tsx:327
 msgid "Source/Target Arrow Shape"
 msgstr "स्रोत / लक्ष्य तीर आकार"
 
@@ -1090,7 +1087,7 @@ msgstr "स्रोत / लक्ष्य तीर आकार"
 msgid "Spacing"
 msgstr "अंतर"
 
-#: src/components/LearnSyntaxDialog.tsx:332
+#: src/components/LearnSyntaxDialog.tsx:358
 msgid "Special Attributes"
 msgstr "विशेष गुण"
 
@@ -1111,7 +1108,7 @@ msgstr "शुरू करें"
 msgid "Status"
 msgstr "स्टेटस"
 
-#: src/components/LearnSyntaxDialog.tsx:121
+#: src/components/LearnSyntaxDialog.tsx:147
 msgid "Store any data associated to a node"
 msgstr "किसी नोड से संबंधित किसी भी डेटा स्टोर करें"
 
@@ -1131,7 +1128,7 @@ msgstr "फ्लोचार्ट फन के साथ अपनी व्�
 msgid "Style"
 msgstr "शैली"
 
-#: src/components/LearnSyntaxDialog.tsx:240
+#: src/components/LearnSyntaxDialog.tsx:266
 msgid "Style Classes"
 msgstr "शैली क्लासेज"
 
@@ -1171,19 +1168,19 @@ msgstr "अस्थायी"
 msgid "Temporary Flowcharts"
 msgstr "अस्थायी आरेख"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:301
 msgid "Text Sizes"
 msgstr "पाठ आकार"
 
-#: src/components/LearnSyntaxDialog.tsx:144
+#: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "स्क्लीन के बाद कोलन + स्पेस एक किरदार बनाता है जिसका पाठ लेबल है"
 
-#: src/components/LearnSyntaxDialog.tsx:91
+#: src/components/LearnSyntaxDialog.tsx:117
 msgid "Text on a line creates a node with the text as the label"
 msgstr "एक पंक्ति पर पाठ एक नोड बनाता है जिसका पाठ लेबल है"
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:304
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "पाठ के आकार छोटे, सामान्य, बड़े और अतिरिक्त बड़े शामिल हैं।"
 
@@ -1211,7 +1208,7 @@ msgstr "कई स्रोत नोड्स को अलग करने क
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
-#: src/components/LearnSyntaxDialog.tsx:264
+#: src/components/LearnSyntaxDialog.tsx:290
 msgid "The possible shapes are:"
 msgstr "संभव आकृतियाँ हैं:"
 
@@ -1285,7 +1282,7 @@ msgstr "प्रकार"
 msgid "Unfreeze"
 msgstr "अनफ़्रीज़"
 
-#: src/components/LearnSyntaxDialog.tsx:103
+#: src/components/LearnSyntaxDialog.tsx:129
 msgid "Unique text value to identify a node"
 msgstr "एक नोड को पहचानने के लिए अद्वितीय पाठ मूल्य"
 
@@ -1297,10 +1294,6 @@ msgstr "अज्ञात पार्सिंग त्रुटि"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "अपनी क्रेयता को उतारें और फ्लोचार्ट फन प्रो के साथ अपनी व्यवस्था को स्ट्रीमलाइन करें – सिर्फ $ 3 / महीने से शुरू होते हुए!"
 
-#: src/components/PaymentStepper.tsx:167
-msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
-msgstr "फ्लोचार्ट फन प्रो के पूर्ण क्षमता को अनलॉक करें और सभी उन्नत विशेषताओं का असीमित पहुंच प्राप्त करें। नीचे अपनी सदस्यता पूरी करें और आज ही अद्भुत फ्लोचार्ट बनाना शुरू करें!"
-
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "ईमेल अपडेट करें"
@@ -1309,19 +1302,19 @@ msgstr "ईमेल अपडेट करें"
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "डेटा सेट्स या एल्गोरिदम्स से फ्लोचार्ट बनाने के लिए एआई का उपयोग करें"
 
-#: src/components/LearnSyntaxDialog.tsx:112
+#: src/components/LearnSyntaxDialog.tsx:138
 msgid "Use classes to group nodes"
 msgstr "नोड्स को समूहों में सम्मिलित करने के लिए वर्ग उपयोग करें"
 
-#: src/components/LearnSyntaxDialog.tsx:371
+#: src/components/LearnSyntaxDialog.tsx:397
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "नोड पर एक लिंक सेट करने के लिए गुण <0>href</0> उपयोग करें जो एक नये टैब में खुलेगा।"
 
-#: src/components/LearnSyntaxDialog.tsx:357
+#: src/components/LearnSyntaxDialog.tsx:383
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "नोड की छवि सेट करने के लिए <0>src</0> गुण का उपयोग करें। छवि नोड के आकार में स्केल की जाएगी, इसलिए आपको आवश्यक प्रतिस्थापित करने के लिए नोड की चौड़ाई और ऊँचाई को समायोजित करना होगा। केवल सार्वजनिक छवियाँ (CORS द्वारा ब्लॉक नहीं की गई) समर्थित हैं।"
 
-#: src/components/LearnSyntaxDialog.tsx:344
+#: src/components/LearnSyntaxDialog.tsx:370
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "नोड की विशिष्ट चौड़ाई और ऊँचाई सेट करने के लिए <0>w</0> और <1>h</1> गुण का उपयोग करें।"
 
@@ -1357,7 +1350,7 @@ msgstr "हम आपको लॉग इन करने के लिए ज�
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "फ्लोचार्ट फन प्रो के लिए स्वागत है!"
 
-#: src/components/LearnSyntaxDialog.tsx:341
+#: src/components/LearnSyntaxDialog.tsx:367
 msgid "Width and Height"
 msgstr "चौड़ाई और ऊँचाई"
 
@@ -1385,13 +1378,13 @@ msgstr "किनारे बनाने के लिए आप टेक्�
 msgid "You must log in to create a standard flowchart."
 msgstr "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।"
 
+#: src/components/PaymentStepper.tsx:167
+msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
+msgstr "आप बस एक ही कदम दूर हैं! <0>Flowchart Fun Pro</0> की पूरी प्रत्याशित क्षमता को अनलॉक करने के लिए नीचे अपने भुगतान विवरण दर्ज करें और आज ही अद्भुत फ्लोचार्ट बनाने शुरू करें।"
+
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "आपके चार्ट"
-
-#: src/components/PaymentStepper.tsx:172
-msgid "Your payment details are secure. You can cancel anytime."
-msgstr "आपकी भुगतान विवरण सुरक्षित हैं। आप किसी भी समय रद्द कर सकते हैं।"
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
