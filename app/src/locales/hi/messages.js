@@ -14,7 +14,7 @@
       "इन चार्ट्स को कहीं से भी एक्सेस करें।<0/>सिंक्रोनाइज़्ड रहने वाले फ्लोचार्ट को साझा करें और एम्बेड करें।",
     "Accessible from any device": "किसी भी उपकरण से पहुँचा जा सकता है",
     Account: "खाता",
-    "Activate Flowchart Fun Pro": "Flowchart Fun Pro को सक्रिय करें",
+    "Activate your account": "अपना खाता सक्रिय करें",
     Advanced: "विकसित",
     Amount: "रकम",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -65,7 +65,6 @@
     Column: "स्तंभ",
     "Comic Book": "कॉमिक बुक",
     Comment: "टिप्पणी",
-    "Complete Subscription": "सदस्यता पूरी करें",
     Concentric: "गाढ़ा",
     "Confirm New Email": "नई ईमेल की पुष्टि करें",
     Containers: "कंटेनर",
@@ -378,8 +377,6 @@
     "Unknown Parsing Error": "अज्ञात पार्सिंग त्रुटि",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "अपनी क्रेयता को उतारें और फ्लोचार्ट फन प्रो के साथ अपनी व्यवस्था को स्ट्रीमलाइन करें – सिर्फ $ 3 / महीने से शुरू होते हुए!",
-    "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
-      "फ्लोचार्ट फन प्रो के पूर्ण क्षमता को अनलॉक करें और सभी उन्नत विशेषताओं का असीमित पहुंच प्राप्त करें। नीचे अपनी सदस्यता पूरी करें और आज ही अद्भुत फ्लोचार्ट बनाना शुरू करें!",
     "Update Email": "ईमेल अपडेट करें",
     "Use AI to create flowcharts from data sets or algorithms":
       "डेटा सेट्स या एल्गोरिदम्स से फ्लोचार्ट बनाने के लिए एआई का उपयोग करें",
@@ -421,9 +418,9 @@
       'किनारे बनाने के लिए आप टेक्स्ट को "\\( \\)" में भी रैप कर सकते हैं',
     "You must log in to create a standard flowchart.":
       "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।",
+    "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
+      "आप बस एक ही कदम दूर हैं! <0>Flowchart Fun Pro</0> की पूरी प्रत्याशित क्षमता को अनलॉक करने के लिए नीचे अपने भुगतान विवरण दर्ज करें और आज ही अद्भुत फ्लोचार्ट बनाने शुरू करें।",
     "Your Charts": "आपके चार्ट",
-    "Your payment details are secure. You can cancel anytime.":
-      "आपकी भुगतान विवरण सुरक्षित हैं। आप किसी भी समय रद्द कर सकते हैं।",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें.",
     "Zoom In": "ज़ूम इन करें",

@@ -174,3 +174,8 @@ div[data-reach-tooltip] {
 .editor-error code {
   @apply font-mono text-xs p-1 text-red-900 rounded bg-red-100 inline-block;
 }
+
+/** Text-wrap balance utility */
+.text-wrap-balance {
+  text-wrap: balance;
+}

@@ -60,8 +60,8 @@ msgid "Account"
 msgstr "帐户"
 
 #: src/components/PaymentStepper.tsx:165
-msgid "Activate Flowchart Fun Pro"
-msgstr "激活 Flowchart Fun Pro"
+msgid "Activate your account"
+msgstr "激活您的账户"
 
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
@@ -79,7 +79,7 @@ msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件
 msgid "Appearance"
 msgstr "外观"
 
-#: src/components/LearnSyntaxDialog.tsx:118
+#: src/components/LearnSyntaxDialog.tsx:144
 msgid "Attributes"
 msgstr "属性"
 
@@ -150,7 +150,7 @@ msgstr "取消"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
 
-#: src/components/LearnSyntaxDialog.tsx:335
+#: src/components/LearnSyntaxDialog.tsx:361
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "某些属性可用于自定义元素的外观或功能。"
 
@@ -174,7 +174,7 @@ msgstr "图表"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/components/LearnSyntaxDialog.tsx:304
+#: src/components/LearnSyntaxDialog.tsx:330
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "为边缘的源和目标选择各种箭头形状。形状包括三角形，三角形-T，圆形-三角形，三角形-十字，三角形-后曲线，V形，T形，正方形，圆形，菱形，雪花形，无。"
 
@@ -186,7 +186,7 @@ msgstr "选择适合您的计划，开始使用Flowchart Fun Pro创建出色的�
 msgid "Circle"
 msgstr "圆圈"
 
-#: src/components/LearnSyntaxDialog.tsx:109
+#: src/components/LearnSyntaxDialog.tsx:135
 msgid "Classes"
 msgstr "类"
 
@@ -211,7 +211,7 @@ msgstr "点击 \\n学习语法\\n了解更多"
 msgid "Clone"
 msgstr "克隆"
 
-#: src/components/LearnSyntaxDialog.tsx:390
+#: src/components/LearnSyntaxDialog.tsx:416
 #: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "关闭"
@@ -220,7 +220,7 @@ msgstr "关闭"
 msgid "Color"
 msgstr "颜色"
 
-#: src/components/LearnSyntaxDialog.tsx:251
+#: src/components/LearnSyntaxDialog.tsx:277
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "颜色包括红色，橙色，黄色，蓝色，紫色，黑色，白色和灰色。"
 
@@ -236,10 +236,6 @@ msgstr "漫画书"
 msgid "Comment"
 msgstr "评论"
 
-#: src/components/PaymentStepper.tsx:268
-msgid "Complete Subscription"
-msgstr "完成订阅"
-
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
 msgstr "同心"
@@ -248,11 +244,11 @@ msgstr "同心"
 msgid "Confirm New Email"
 msgstr "确认新电子邮件"
 
-#: src/components/LearnSyntaxDialog.tsx:225
+#: src/components/LearnSyntaxDialog.tsx:251
 msgid "Containers"
 msgstr "容器"
 
-#: src/components/LearnSyntaxDialog.tsx:228
+#: src/components/LearnSyntaxDialog.tsx:254
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 
@@ -302,7 +298,7 @@ msgstr "创建新图表"
 msgid "Create professional-quality visual aids for presentations or training materials"
 msgstr "创建专业质量的演示文稿或培训材料"
 
-#: src/components/LearnSyntaxDialog.tsx:132
+#: src/components/LearnSyntaxDialog.tsx:158
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "在两个节点之间创建边缘是通过将第二个节点缩进第一个节点来完成的"
 
@@ -380,7 +376,7 @@ msgstr "下载 SVG"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "将CSV文件拖放到此处，或单击以选择文件"
 
-#: src/components/LearnSyntaxDialog.tsx:213
+#: src/components/LearnSyntaxDialog.tsx:239
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "通过引用开始行从多个节点绘制边缘"
 
@@ -396,11 +392,11 @@ msgstr "轻松从其他软件导入现有流程图"
 msgid "Edge"
 msgstr "邊緣"
 
-#: src/components/LearnSyntaxDialog.tsx:153
+#: src/components/LearnSyntaxDialog.tsx:179
 msgid "Edge ID, Classes, Attributes"
 msgstr "邊緣ID、類別和屬性"
 
-#: src/components/LearnSyntaxDialog.tsx:141
+#: src/components/LearnSyntaxDialog.tsx:167
 msgid "Edge Label"
 msgstr "邊緣標籤"
 
@@ -409,7 +405,7 @@ msgstr "邊緣標籤"
 msgid "Edge Label Column"
 msgstr "邊緣標籤欄"
 
-#: src/components/LearnSyntaxDialog.tsx:288
+#: src/components/LearnSyntaxDialog.tsx:314
 msgid "Edge Style"
 msgstr "邊緣樣式"
 
@@ -418,7 +414,7 @@ msgid "Edge missing indentation"
 msgstr "缺少缩进的边"
 
 #: src/components/ImportDataDialog.tsx:406
-#: src/components/LearnSyntaxDialog.tsx:129
+#: src/components/LearnSyntaxDialog.tsx:155
 msgid "Edges"
 msgstr "边"
 
@@ -434,11 +430,11 @@ msgstr "边声明在与目标节点相同的行中"
 msgid "Edges are declared in their own row"
 msgstr "边声明在自己的行中"
 
-#: src/components/LearnSyntaxDialog.tsx:156
+#: src/components/LearnSyntaxDialog.tsx:182
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "边在标签之前可以有ID，类和属性"
 
-#: src/components/LearnSyntaxDialog.tsx:291
+#: src/components/LearnSyntaxDialog.tsx:317
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "边可以用虚线，点线或实线样式"
 
@@ -590,7 +586,7 @@ msgstr "主页"
 msgid "How are edges declared in this data?"
 msgstr "在这个数据中如何声明边缘？"
 
-#: src/components/LearnSyntaxDialog.tsx:101
+#: src/components/LearnSyntaxDialog.tsx:127
 msgid "ID's"
 msgstr "ID"
 
@@ -606,7 +602,7 @@ msgstr "如果你想创建一个边，缩进这一行。如果不，用反斜杠
 msgid "Image Export"
 msgstr "图像导出"
 
-#: src/components/LearnSyntaxDialog.tsx:354
+#: src/components/LearnSyntaxDialog.tsx:380
 msgid "Images"
 msgstr "图像"
 
@@ -679,7 +675,7 @@ msgstr "布局"
 msgid "Layout is Frozen"
 msgstr "布局被冻结"
 
-#: src/components/LearnSyntaxDialog.tsx:210
+#: src/components/LearnSyntaxDialog.tsx:236
 msgid "Leading References"
 msgstr "主要參考"
 
@@ -688,8 +684,8 @@ msgstr "主要參考"
 msgid "Learn More"
 msgstr "学到更多"
 
-#: src/components/LearnSyntaxDialog.tsx:53
-#: src/components/LearnSyntaxDialog.tsx:74
+#: src/components/LearnSyntaxDialog.tsx:79
+#: src/components/LearnSyntaxDialog.tsx:100
 msgid "Learn Syntax"
 msgstr "學習語法"
 
@@ -805,11 +801,11 @@ msgstr "沒有邊緣"
 msgid "Node"
 msgstr "節點"
 
-#: src/components/LearnSyntaxDialog.tsx:317
+#: src/components/LearnSyntaxDialog.tsx:343
 msgid "Node Border Style"
 msgstr "节点边框样式"
 
-#: src/components/LearnSyntaxDialog.tsx:248
+#: src/components/LearnSyntaxDialog.tsx:274
 msgid "Node Colors"
 msgstr "节点颜色"
 
@@ -817,16 +813,16 @@ msgstr "节点颜色"
 msgid "Node ID"
 msgstr "节点ID"
 
-#: src/components/LearnSyntaxDialog.tsx:99
+#: src/components/LearnSyntaxDialog.tsx:125
 msgid "Node ID, Classes, Attributes"
 msgstr "节点ID、类、属性"
 
 #: src/components/ImportDataDialog.tsx:397
-#: src/components/LearnSyntaxDialog.tsx:88
+#: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "节点标签"
 
-#: src/components/LearnSyntaxDialog.tsx:261
+#: src/components/LearnSyntaxDialog.tsx:287
 msgid "Node Shapes"
 msgstr "节点形状"
 
@@ -834,7 +830,7 @@ msgstr "节点形状"
 msgid "Node and pointer on same line"
 msgstr "同一行上的节点和指针"
 
-#: src/components/LearnSyntaxDialog.tsx:320
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "节点可以使用虚线、点线或双线进行样式设置，也可以使用border-none来移除边框。"
 
@@ -927,35 +923,35 @@ msgstr "随机"
 msgid "Read-only"
 msgstr "只读"
 
-#: src/components/LearnSyntaxDialog.tsx:196
+#: src/components/LearnSyntaxDialog.tsx:222
 msgid "Reference by Class"
 msgstr "按类引用"
 
-#: src/components/LearnSyntaxDialog.tsx:186
+#: src/components/LearnSyntaxDialog.tsx:212
 msgid "Reference by ID"
 msgstr "按 ID 参考"
 
-#: src/components/LearnSyntaxDialog.tsx:176
+#: src/components/LearnSyntaxDialog.tsx:202
 msgid "Reference by Label"
 msgstr "按标签参考"
 
-#: src/components/LearnSyntaxDialog.tsx:167
+#: src/components/LearnSyntaxDialog.tsx:193
 msgid "References"
 msgstr "参考"
 
-#: src/components/LearnSyntaxDialog.tsx:170
+#: src/components/LearnSyntaxDialog.tsx:196
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "参考用于在文档中其他位置创建的节点之间创建边"
 
-#: src/components/LearnSyntaxDialog.tsx:179
+#: src/components/LearnSyntaxDialog.tsx:205
 msgid "Referencing a node by its exact label"
 msgstr "通过其确切标签引用节点"
 
-#: src/components/LearnSyntaxDialog.tsx:189
+#: src/components/LearnSyntaxDialog.tsx:215
 msgid "Referencing a node by its unique ID"
 msgstr "通过其唯一ID引用节点"
 
-#: src/components/LearnSyntaxDialog.tsx:199
+#: src/components/LearnSyntaxDialog.tsx:225
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "使用相同分配的类引用多个节点"
 
@@ -1048,6 +1044,7 @@ msgstr "设置"
 msgid "Shape"
 msgstr "形状"
 
+#: src/components/PaymentStepper.tsx:272
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:98
 msgid "Sign Up"
@@ -1061,7 +1058,7 @@ msgstr "尺寸"
 msgid "Small"
 msgstr "小"
 
-#: src/components/LearnSyntaxDialog.tsx:243
+#: src/components/LearnSyntaxDialog.tsx:269
 msgid "Some classes are available to help style your flowchart"
 msgstr "有些类可以帮助您设计流程图"
 
@@ -1082,7 +1079,7 @@ msgstr "源列"
 msgid "Source Delimiter"
 msgstr "源分隔符"
 
-#: src/components/LearnSyntaxDialog.tsx:301
+#: src/components/LearnSyntaxDialog.tsx:327
 msgid "Source/Target Arrow Shape"
 msgstr "源/目标箭头形状"
 
@@ -1090,7 +1087,7 @@ msgstr "源/目标箭头形状"
 msgid "Spacing"
 msgstr "间距"
 
-#: src/components/LearnSyntaxDialog.tsx:332
+#: src/components/LearnSyntaxDialog.tsx:358
 msgid "Special Attributes"
 msgstr "特殊属性"
 
@@ -1111,7 +1108,7 @@ msgstr "重新開始"
 msgid "Status"
 msgstr "状态"
 
-#: src/components/LearnSyntaxDialog.tsx:121
+#: src/components/LearnSyntaxDialog.tsx:147
 msgid "Store any data associated to a node"
 msgstr "將任何與節點相關的資料儲存"
 
@@ -1131,7 +1128,7 @@ msgstr "通過Flowchart Fun簡化您的工作流程並簡化您的流程視覺�
 msgid "Style"
 msgstr "风格"
 
-#: src/components/LearnSyntaxDialog.tsx:240
+#: src/components/LearnSyntaxDialog.tsx:266
 msgid "Style Classes"
 msgstr "樣式類別"
 
@@ -1171,19 +1168,19 @@ msgstr "临时"
 msgid "Temporary Flowcharts"
 msgstr "临时图表"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:301
 msgid "Text Sizes"
 msgstr "文字大小"
 
-#: src/components/LearnSyntaxDialog.tsx:144
+#: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "以冒号加空格结尾的文本将创建一个边，文本作为标签"
 
-#: src/components/LearnSyntaxDialog.tsx:91
+#: src/components/LearnSyntaxDialog.tsx:117
 msgid "Text on a line creates a node with the text as the label"
 msgstr "在一行中的文本将创建一个节点，文本作为标签"
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:304
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "文本大小包括小、正常、大和超大。"
 
@@ -1211,7 +1208,7 @@ msgstr "用于分隔多个源节点的分隔符"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "用于分隔多个目标节点的分隔符"
 
-#: src/components/LearnSyntaxDialog.tsx:264
+#: src/components/LearnSyntaxDialog.tsx:290
 msgid "The possible shapes are:"
 msgstr "可能的形状是："
 
@@ -1285,7 +1282,7 @@ msgstr "类型"
 msgid "Unfreeze"
 msgstr "解冻"
 
-#: src/components/LearnSyntaxDialog.tsx:103
+#: src/components/LearnSyntaxDialog.tsx:129
 msgid "Unique text value to identify a node"
 msgstr "用于标识节点的唯一文本值"
 
@@ -1297,10 +1294,6 @@ msgstr "未知的解析错误"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "釋放您的創意並簡化您的工作流程，從每月只需3美元開始，Flowchart Fun Pro！"
 
-#: src/components/PaymentStepper.tsx:167
-msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
-msgstr "解锁Flowchart Fun Pro的全部潜力，并获得对我们所有高级功能的无限访问权限。请在下面完成您的订阅，今天就开始创建令人惊叹的流程图！"
-
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "更新电子邮件"
@@ -1309,19 +1302,19 @@ msgstr "更新电子邮件"
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "使用AI從數據集或算法創建流程圖"
 
-#: src/components/LearnSyntaxDialog.tsx:112
+#: src/components/LearnSyntaxDialog.tsx:138
 msgid "Use classes to group nodes"
 msgstr "使用类来分组节点"
 
-#: src/components/LearnSyntaxDialog.tsx:371
+#: src/components/LearnSyntaxDialog.tsx:397
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "使用属性<0>href</0>在节点上设置一个在新标签页中打开的链接。"
 
-#: src/components/LearnSyntaxDialog.tsx:357
+#: src/components/LearnSyntaxDialog.tsx:383
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "使用属性<0>src</0>来设置节点的图像，图像将被缩放以适应节点，因此您可能需要调整节点的宽度和高度以获得期望的结果。仅支持公共图像（不受CORS阻止）。"
 
-#: src/components/LearnSyntaxDialog.tsx:344
+#: src/components/LearnSyntaxDialog.tsx:370
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 
@@ -1357,7 +1350,7 @@ msgstr "我们使用魔术链接来登录您。请在下面输入您的电子邮
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "欢迎来到流程图乐趣Pro！"
 
-#: src/components/LearnSyntaxDialog.tsx:341
+#: src/components/LearnSyntaxDialog.tsx:367
 msgid "Width and Height"
 msgstr "宽度和高度"
 
@@ -1385,13 +1378,13 @@ msgstr "您还可以将文本包装在\\n“\\( \\)”中以创建链接"
 msgid "You must log in to create a standard flowchart."
 msgstr "您必须登录才能创建标准图表。"
 
+#: src/components/PaymentStepper.tsx:167
+msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
+msgstr "您已经快完成了！只需要一步就可以解锁 <0>Flowchart Fun Pro</0> 的全部功能。请在下面输入您的付款详情来完成您的订阅，并今天开始创建令人惊叹的流程图。"
+
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "您的图表"
-
-#: src/components/PaymentStepper.tsx:172
-msgid "Your payment details are secure. You can cancel anytime."
-msgstr "您的付款详情是安全的。您可以随时取消。"
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."

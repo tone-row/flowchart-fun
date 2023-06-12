@@ -14,7 +14,7 @@
       "从任何地方访问这些图表。<0/>共享并嵌入保持同步的流程图。",
     "Accessible from any device": "可从任何设备访问",
     Account: "帐户",
-    "Activate Flowchart Fun Pro": "激活 Flowchart Fun Pro",
+    "Activate your account": "激活您的账户",
     Advanced: "先进的",
     Amount: "数量",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -64,7 +64,6 @@
     Column: "列",
     "Comic Book": "漫画书",
     Comment: "评论",
-    "Complete Subscription": "完成订阅",
     Concentric: "同心",
     "Confirm New Email": "确认新电子邮件",
     Containers: "容器",
@@ -362,8 +361,6 @@
     "Unknown Parsing Error": "未知的解析错误",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "釋放您的創意並簡化您的工作流程，從每月只需3美元開始，Flowchart Fun Pro！",
-    "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
-      "解锁Flowchart Fun Pro的全部潜力，并获得对我们所有高级功能的无限访问权限。请在下面完成您的订阅，今天就开始创建令人惊叹的流程图！",
     "Update Email": "更新电子邮件",
     "Use AI to create flowcharts from data sets or algorithms":
       "使用AI從數據集或算法創建流程圖",
@@ -397,9 +394,9 @@
       "您还可以将文本包装在\\n“\\( \\)”中以创建链接",
     "You must log in to create a standard flowchart.":
       "您必须登录才能创建标准图表。",
+    "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
+      "您已经快完成了！只需要一步就可以解锁 <0>Flowchart Fun Pro</0> 的全部功能。请在下面输入您的付款详情来完成您的订阅，并今天开始创建令人惊叹的流程图。",
     "Your Charts": "您的图表",
-    "Your payment details are secure. You can cancel anytime.":
-      "您的付款详情是安全的。您可以随时取消。",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",
     "Zoom In": "放大",

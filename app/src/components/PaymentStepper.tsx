@@ -314,7 +314,7 @@ async function getSubscriptionDetails(
 
 function Title({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-center text-3xl font-bold text-neutral-800 dark:text-neutral-200">
+    <h2 className="text-center text-3xl font-bold text-neutral-800 dark:text-neutral-200 text-wrap-balance">
       {children}
     </h2>
   );

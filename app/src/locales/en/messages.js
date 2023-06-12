@@ -14,7 +14,7 @@
       "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync.",
     "Accessible from any device": "Accessible from any device",
     Account: "Account",
-    "Activate Flowchart Fun Pro": "Activate Flowchart Fun Pro",
+    "Activate your account": "Activate your account",
     Advanced: "Advanced",
     Amount: "Amount",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -65,7 +65,6 @@
     Column: "Column",
     "Comic Book": "Comic Book",
     Comment: "Comment",
-    "Complete Subscription": "Complete Subscription",
     Concentric: "Concentric",
     "Confirm New Email": "Confirm New Email",
     Containers: "Containers",
@@ -378,8 +377,6 @@
     "Unknown Parsing Error": "Unknown Parsing Error",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!",
-    "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
-      "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!",
     "Update Email": "Update Email",
     "Use AI to create flowcharts from data sets or algorithms":
       "Use AI to create flowcharts from data sets or algorithms",
@@ -420,9 +417,9 @@
       'You can also wrap text in "\\( \\)" to create an edge',
     "You must log in to create a standard flowchart.":
       "You must log in to create a standard flowchart.",
+    "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
+      "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.",
     "Your Charts": "Your Charts",
-    "Your payment details are secure. You can cancel anytime.":
-      "Your payment details are secure. You can cancel anytime.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
     "Zoom In": "Zoom In",
