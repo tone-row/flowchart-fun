@@ -151,7 +151,7 @@
     "@types/lz-string": "^1.3.34",
     "@types/marked": "^4.0.7",
     "@types/minimist": "^1.2.2",
-    "@types/node": "^12.20.55",
+    "@types/node": "^18.16.17",
     "@types/node-localstorage": "^1.3.0",
     "@types/pako": "^2.0.0",
     "@types/papaparse": "^5.3.7",
