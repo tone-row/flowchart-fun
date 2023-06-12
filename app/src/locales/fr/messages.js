@@ -15,7 +15,7 @@
       "Accédez à ces diagrammes depuis n'importe où.<0/>Partagez et intégrez des diagrammes de flux qui restent synchronisés.",
     "Accessible from any device": "Accessible depuis n'importe quel appareil",
     Account: "Compte",
-    "Activate Flowchart Fun Pro": "Activer Flowchart Fun Pro",
+    "Activate your account": "Activez votre compte",
     Advanced: "Avancé",
     Amount: "Montant",
     "An error occurred. Try resubmitting or email {0} directly.": [
@@ -66,7 +66,6 @@
     Column: "Colonne",
     "Comic Book": "Bande dessinée",
     Comment: "Commenter",
-    "Complete Subscription": "Compléter l'abonnement",
     Concentric: "Concentrique",
     "Confirm New Email": "Confirmer le nouveau Email",
     Containers: "Conteneurs",
@@ -382,8 +381,6 @@
     "Unknown Parsing Error": "Erreur d'analyse inconnue",
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Libérez votre créativité et simplifiez votre flux de travail avec Flowchart Fun Pro - à partir de seulement 3 $ / mois !",
-    "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!":
-      "Débloquez le plein potentiel de Flowchart Fun Pro et obtenez un accès illimité à toutes nos fonctionnalités avancées. Complétez votre abonnement ci-dessous et commencez à créer des diagrammes de flux incroyables aujourd'hui !",
     "Update Email": "Mettre à jour l'e-mail",
     "Use AI to create flowcharts from data sets or algorithms":
       "Utilisez l'IA pour créer des diagrammes à partir de jeux de données ou d'algorithmes",
@@ -425,9 +422,9 @@
       'Vous pouvez également envelopper le texte dans "\\( \\)" pour créer un bord',
     "You must log in to create a standard flowchart.":
       "Vous devez vous connecter pour créer un diagramme standard.",
+    "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
+      "Vous y êtes presque ! Une dernière étape pour débloquer tout le potentiel de <0>Flowchart Fun Pro</0>. Entrez vos informations de paiement ci-dessous pour compléter votre abonnement et commencez à créer des diagrammes de flux incroyables dès aujourd'hui.",
     "Your Charts": "Vos diagrammes",
-    "Your payment details are secure. You can cancel anytime.":
-      "Vos informations de paiement sont sécurisées. Vous pouvez annuler à tout moment.",
     "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
       "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor.",
     "Zoom In": "Zoomer",

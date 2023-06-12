@@ -60,8 +60,8 @@ msgid "Account"
 msgstr "계정"
 
 #: src/components/PaymentStepper.tsx:165
-msgid "Activate Flowchart Fun Pro"
-msgstr "Flowchart Fun Pro를 활성화하십시오"
+msgid "Activate your account"
+msgstr "계정을 활성화하세요"
 
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Advanced"
@@ -79,7 +79,7 @@ msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접
 msgid "Appearance"
 msgstr "외관"
 
-#: src/components/LearnSyntaxDialog.tsx:118
+#: src/components/LearnSyntaxDialog.tsx:144
 msgid "Attributes"
 msgstr "속성"
 
@@ -150,7 +150,7 @@ msgstr "취소"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:335
+#: src/components/LearnSyntaxDialog.tsx:361
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "일부 속성은 요소의 모양 또는 기능을 사용자 정의하기 위해 사용할 수 있습니다."
 
@@ -174,7 +174,7 @@ msgstr "차트"
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:304
+#: src/components/LearnSyntaxDialog.tsx:330
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "에지의 소스와 목적지를 위한 다양한 화살표 모양을 선택합니다. 모양에는 삼각형, 삼각형-티, 원-삼각형, 삼각형-가위형, 삼각형-뒤곡선, 베이, 티, 사각형, 원, 다이아몬드, 쉐브론, 없음이 포함됩니다."
 
@@ -186,7 +186,7 @@ msgstr "당신에게 맞는 계획을 선택하고 Flowchart Fun Pro을 사용�
 msgid "Circle"
 msgstr "원"
 
-#: src/components/LearnSyntaxDialog.tsx:109
+#: src/components/LearnSyntaxDialog.tsx:135
 msgid "Classes"
 msgstr "클래스"
 
@@ -211,7 +211,7 @@ msgstr "\\n문법 습득\\n을 클릭하여 더 배우십시오"
 msgid "Clone"
 msgstr "클론"
 
-#: src/components/LearnSyntaxDialog.tsx:390
+#: src/components/LearnSyntaxDialog.tsx:416
 #: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "닫기"
@@ -220,7 +220,7 @@ msgstr "닫기"
 msgid "Color"
 msgstr "색상"
 
-#: src/components/LearnSyntaxDialog.tsx:251
+#: src/components/LearnSyntaxDialog.tsx:277
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "색상에는 빨강, 주황, 노랑, 파랑, 보라, 검정, 흰색, 회색이 포함됩니다."
 
@@ -236,10 +236,6 @@ msgstr "만화책"
 msgid "Comment"
 msgstr "댓글 달기"
 
-#: src/components/PaymentStepper.tsx:268
-msgid "Complete Subscription"
-msgstr "구독을 완료하십시오"
-
 #: src/lib/graphOptions.ts:20
 msgid "Concentric"
 msgstr "동심"
@@ -248,11 +244,11 @@ msgstr "동심"
 msgid "Confirm New Email"
 msgstr "새 이메일 확인"
 
-#: src/components/LearnSyntaxDialog.tsx:225
+#: src/components/LearnSyntaxDialog.tsx:251
 msgid "Containers"
 msgstr "컨테이너"
 
-#: src/components/LearnSyntaxDialog.tsx:228
+#: src/components/LearnSyntaxDialog.tsx:254
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "컨테이너는 다른 노드를 포함하는 노드입니다. 중괄호를 사용하여 선언됩니다."
 
@@ -302,7 +298,7 @@ msgstr "새 다이어그램 만들기"
 msgid "Create professional-quality visual aids for presentations or training materials"
 msgstr "프레젠테이션 또는 교육 자료를 위한 전문 품질의 시각적 지원 작성"
 
-#: src/components/LearnSyntaxDialog.tsx:132
+#: src/components/LearnSyntaxDialog.tsx:158
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "두 노드 사이에 엣지를 만드는 것은 첫 번째 노드 아래에 두 번째 노드를 들여 쓰는 것으로 합니다."
 
@@ -380,7 +376,7 @@ msgstr "SVG 다운로드"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV 파일을 여기에 드래그 앤 드롭하거나 파일을 선택하려면 클릭하세요."
 
-#: src/components/LearnSyntaxDialog.tsx:213
+#: src/components/LearnSyntaxDialog.tsx:239
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "참조를 시작하여 여러 노드로부터 엣지를 그립니다."
 
@@ -396,11 +392,11 @@ msgstr "다른 소프트웨어에서 기존 플로우 차트를 쉽게 가져오
 msgid "Edge"
 msgstr "가장자리"
 
-#: src/components/LearnSyntaxDialog.tsx:153
+#: src/components/LearnSyntaxDialog.tsx:179
 msgid "Edge ID, Classes, Attributes"
 msgstr "가장자리 ID, 클래스, 속성"
 
-#: src/components/LearnSyntaxDialog.tsx:141
+#: src/components/LearnSyntaxDialog.tsx:167
 msgid "Edge Label"
 msgstr "가장자리 라벨"
 
@@ -409,7 +405,7 @@ msgstr "가장자리 라벨"
 msgid "Edge Label Column"
 msgstr "가장자리 라벨 열"
 
-#: src/components/LearnSyntaxDialog.tsx:288
+#: src/components/LearnSyntaxDialog.tsx:314
 msgid "Edge Style"
 msgstr "가장자리 스타일"
 
@@ -418,7 +414,7 @@ msgid "Edge missing indentation"
 msgstr "들여쓰기가 누락된 가장자리"
 
 #: src/components/ImportDataDialog.tsx:406
-#: src/components/LearnSyntaxDialog.tsx:129
+#: src/components/LearnSyntaxDialog.tsx:155
 msgid "Edges"
 msgstr "가장자리"
 
@@ -434,11 +430,11 @@ msgstr "가장자리는 목표 노드가 있는 같은 행에 선언됩니다."
 msgid "Edges are declared in their own row"
 msgstr "가장자리는 자신의 행에 선언됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:156
+#: src/components/LearnSyntaxDialog.tsx:182
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "라벨 앞에 ID, 클래스 및 속성도 가질 수 있습니다."
 
-#: src/components/LearnSyntaxDialog.tsx:291
+#: src/components/LearnSyntaxDialog.tsx:317
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "가장자리는 점선, 점선 또는 실선으로 스타일이 지정될 수 있습니다."
 
@@ -590,7 +586,7 @@ msgstr "집"
 msgid "How are edges declared in this data?"
 msgstr "이 데이터에서 간선은 어떻게 선언됩니까?"
 
-#: src/components/LearnSyntaxDialog.tsx:101
+#: src/components/LearnSyntaxDialog.tsx:127
 msgid "ID's"
 msgstr "식별자"
 
@@ -606,7 +602,7 @@ msgstr "만약 가장자리를 만들려면, 이 줄을 들여쓰기하십시오
 msgid "Image Export"
 msgstr "이미지 내보내기"
 
-#: src/components/LearnSyntaxDialog.tsx:354
+#: src/components/LearnSyntaxDialog.tsx:380
 msgid "Images"
 msgstr "이미지"
 
@@ -679,7 +675,7 @@ msgstr "레이아웃"
 msgid "Layout is Frozen"
 msgstr "레이아웃이 고정됨"
 
-#: src/components/LearnSyntaxDialog.tsx:210
+#: src/components/LearnSyntaxDialog.tsx:236
 msgid "Leading References"
 msgstr "주목할만한 참고"
 
@@ -688,8 +684,8 @@ msgstr "주목할만한 참고"
 msgid "Learn More"
 msgstr "더 알아보기"
 
-#: src/components/LearnSyntaxDialog.tsx:53
-#: src/components/LearnSyntaxDialog.tsx:74
+#: src/components/LearnSyntaxDialog.tsx:79
+#: src/components/LearnSyntaxDialog.tsx:100
 msgid "Learn Syntax"
 msgstr "구문 배우기"
 
@@ -805,11 +801,11 @@ msgstr "노드 없음"
 msgid "Node"
 msgstr "노드"
 
-#: src/components/LearnSyntaxDialog.tsx:317
+#: src/components/LearnSyntaxDialog.tsx:343
 msgid "Node Border Style"
 msgstr "노드 경계 스타일"
 
-#: src/components/LearnSyntaxDialog.tsx:248
+#: src/components/LearnSyntaxDialog.tsx:274
 msgid "Node Colors"
 msgstr "노드 색상"
 
@@ -817,16 +813,16 @@ msgstr "노드 색상"
 msgid "Node ID"
 msgstr "노드 ID"
 
-#: src/components/LearnSyntaxDialog.tsx:99
+#: src/components/LearnSyntaxDialog.tsx:125
 msgid "Node ID, Classes, Attributes"
 msgstr "노드 ID, 클래스, 속성"
 
 #: src/components/ImportDataDialog.tsx:397
-#: src/components/LearnSyntaxDialog.tsx:88
+#: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "노드 라벨"
 
-#: src/components/LearnSyntaxDialog.tsx:261
+#: src/components/LearnSyntaxDialog.tsx:287
 msgid "Node Shapes"
 msgstr "노드 모양"
 
@@ -834,7 +830,7 @@ msgstr "노드 모양"
 msgid "Node and pointer on same line"
 msgstr "같은 줄에 노드와 포인터"
 
-#: src/components/LearnSyntaxDialog.tsx:320
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "노드는 점선, 점점선 또는 이중선으로 스타일링할 수 있으며, border-none으로 테두리를 제거할 수 있습니다."
 
@@ -927,35 +923,35 @@ msgstr "무작위"
 msgid "Read-only"
 msgstr "읽기 전용"
 
-#: src/components/LearnSyntaxDialog.tsx:196
+#: src/components/LearnSyntaxDialog.tsx:222
 msgid "Reference by Class"
 msgstr "클래스로 참조"
 
-#: src/components/LearnSyntaxDialog.tsx:186
+#: src/components/LearnSyntaxDialog.tsx:212
 msgid "Reference by ID"
 msgstr "ID로 참조"
 
-#: src/components/LearnSyntaxDialog.tsx:176
+#: src/components/LearnSyntaxDialog.tsx:202
 msgid "Reference by Label"
 msgstr "레이블로 참조"
 
-#: src/components/LearnSyntaxDialog.tsx:167
+#: src/components/LearnSyntaxDialog.tsx:193
 msgid "References"
 msgstr "참조"
 
-#: src/components/LearnSyntaxDialog.tsx:170
+#: src/components/LearnSyntaxDialog.tsx:196
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "참조는 문서 내부에서 만들어진 노드 사이에 간선을 만들기 위해 사용됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:179
+#: src/components/LearnSyntaxDialog.tsx:205
 msgid "Referencing a node by its exact label"
 msgstr "정확한 레이블로 노드를 참조하기"
 
-#: src/components/LearnSyntaxDialog.tsx:189
+#: src/components/LearnSyntaxDialog.tsx:215
 msgid "Referencing a node by its unique ID"
 msgstr "고유한 ID로 노드를 참조하기"
 
-#: src/components/LearnSyntaxDialog.tsx:199
+#: src/components/LearnSyntaxDialog.tsx:225
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "동일한 할당 된 클래스로 여러 노드를 참조하기 "
 
@@ -1048,6 +1044,7 @@ msgstr "설정"
 msgid "Shape"
 msgstr "모양 "
 
+#: src/components/PaymentStepper.tsx:272
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:98
 msgid "Sign Up"
@@ -1061,7 +1058,7 @@ msgstr "크기"
 msgid "Small"
 msgstr "작은"
 
-#: src/components/LearnSyntaxDialog.tsx:243
+#: src/components/LearnSyntaxDialog.tsx:269
 msgid "Some classes are available to help style your flowchart"
 msgstr "스타일링하기 위한 몇 가지 클래스가 이용 가능합니다"
 
@@ -1082,7 +1079,7 @@ msgstr "소스 열"
 msgid "Source Delimiter"
 msgstr "소스 구분자"
 
-#: src/components/LearnSyntaxDialog.tsx:301
+#: src/components/LearnSyntaxDialog.tsx:327
 msgid "Source/Target Arrow Shape"
 msgstr "소스/대상 화살표 모양"
 
@@ -1090,7 +1087,7 @@ msgstr "소스/대상 화살표 모양"
 msgid "Spacing"
 msgstr "간격"
 
-#: src/components/LearnSyntaxDialog.tsx:332
+#: src/components/LearnSyntaxDialog.tsx:358
 msgid "Special Attributes"
 msgstr "특별한 속성"
 
@@ -1111,7 +1108,7 @@ msgstr "처음부터 다시 시작하기"
 msgid "Status"
 msgstr "상태"
 
-#: src/components/LearnSyntaxDialog.tsx:121
+#: src/components/LearnSyntaxDialog.tsx:147
 msgid "Store any data associated to a node"
 msgstr "노드에 관련된 모든 데이터 저장하기"
 
@@ -1131,7 +1128,7 @@ msgstr "Flowchart Fun을 사용하여 작업흐름을 최적화하고 프로 기
 msgid "Style"
 msgstr "스타일"
 
-#: src/components/LearnSyntaxDialog.tsx:240
+#: src/components/LearnSyntaxDialog.tsx:266
 msgid "Style Classes"
 msgstr "스타일 클래스"
 
@@ -1171,19 +1168,19 @@ msgstr "임시"
 msgid "Temporary Flowcharts"
 msgstr "임시 다이어그램"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:301
 msgid "Text Sizes"
 msgstr "텍스트 크기"
 
-#: src/components/LearnSyntaxDialog.tsx:144
+#: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "콜론 뒤에 공백이 따라오는 텍스트는 텍스트를 레이블로 하는 엣지를 만듭니다."
 
-#: src/components/LearnSyntaxDialog.tsx:91
+#: src/components/LearnSyntaxDialog.tsx:117
 msgid "Text on a line creates a node with the text as the label"
 msgstr "한 줄에 있는 텍스트는 텍스트를 레이블로 하는 노드를 만듭니다."
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:304
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "텍스트 사이즈는 작게, 일반, 크게, 그리고 엑스트라 크게가 있습니다."
 
@@ -1211,7 +1208,7 @@ msgstr "여러 개의 소스 노드를 구분하기 위해 사용되는 구분 �
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 기호"
 
-#: src/components/LearnSyntaxDialog.tsx:264
+#: src/components/LearnSyntaxDialog.tsx:290
 msgid "The possible shapes are:"
 msgstr "가능한 모양은 다음과 같습니다:"
 
@@ -1285,7 +1282,7 @@ msgstr "유형"
 msgid "Unfreeze"
 msgstr "녹이다"
 
-#: src/components/LearnSyntaxDialog.tsx:103
+#: src/components/LearnSyntaxDialog.tsx:129
 msgid "Unique text value to identify a node"
 msgstr "노드를 식별하기 위한 고유한 텍스트 값"
 
@@ -1297,10 +1294,6 @@ msgstr "알 수 없는 구문 분석 오류"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "Flowchart Fun Pro를 사용하여 창의력을 발휘하고 작업흐름을 최적화하세요. $3/월부터 시작합니다!"
 
-#: src/components/PaymentStepper.tsx:167
-msgid "Unlock the full potential of Flowchart Fun Pro and get unlimited access to all of our advanced features. Complete your subscription below and start creating amazing flowcharts today!"
-msgstr "Flowchart Fun Pro의 전력을 잠금 해제하고 모든 고급 기능에 무한 액세스하십시오. 아래에 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들어 보십시오."
-
 #: src/pages/Account.tsx:195
 msgid "Update Email"
 msgstr "이메일 업데이트"
@@ -1309,19 +1302,19 @@ msgstr "이메일 업데이트"
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "데이터 집합 또는 알고리즘에서 플로우차트를 만들기 위해 AI를 사용하세요."
 
-#: src/components/LearnSyntaxDialog.tsx:112
+#: src/components/LearnSyntaxDialog.tsx:138
 msgid "Use classes to group nodes"
 msgstr "노드를 그룹화하기 위해 클래스를 사용하십시오."
 
-#: src/components/LearnSyntaxDialog.tsx:371
+#: src/components/LearnSyntaxDialog.tsx:397
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "새 탭에서 링크를 설정하기 위해 속성 <0>href</0>을 사용하십시오."
 
-#: src/components/LearnSyntaxDialog.tsx:357
+#: src/components/LearnSyntaxDialog.tsx:383
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "노드의 이미지를 설정하려면 <0>src</0> 속성을 사용하세요. 이미지는 노드에 맞게 크기가 조정되므로 노드의 너비와 높이를 조절해야 할 수도 있습니다. CORS로 차단되지 않은 공개 이미지만 지원됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:344
+#: src/components/LearnSyntaxDialog.tsx:370
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "노드의 너비와 높이를 명시적으로 설정하려면 <0>w</0> 및 <1>h</1> 속성을 사용하세요."
 
@@ -1357,7 +1350,7 @@ msgstr "우리는 마법 링크를 사용하여 로그인합니다. 아래에 �
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "Flowchart Fun Pro에 오신 것을 환영합니다!"
 
-#: src/components/LearnSyntaxDialog.tsx:341
+#: src/components/LearnSyntaxDialog.tsx:367
 msgid "Width and Height"
 msgstr "너비와 높이"
 
@@ -1385,13 +1378,13 @@ msgstr "텍스트를 \"\\( \\)\"로 감싸서 가장자리를 만들 수도 있�
 msgid "You must log in to create a standard flowchart."
 msgstr "표준 다이어그램을 만들려면 로그인해야 합니다."
 
+#: src/components/PaymentStepper.tsx:167
+msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
+msgstr "거의 다 됐습니다! <0>Flowchart Fun Pro</0>의 전력을 풀어내는 마지막 한 단계만 남았습니다. 아래에 결제 정보를 입력하여 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들 수 있습니다."
+
 #: src/pages/Charts.tsx:99
 msgid "Your Charts"
 msgstr "당신의 차트"
-
-#: src/components/PaymentStepper.tsx:172
-msgid "Your payment details are secure. You can cancel anytime."
-msgstr "귀하의 결제 정보는 안전합니다. 언제든지 취소할 수 있습니다."
 
 #: src/pages/Account.tsx:136
 msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
