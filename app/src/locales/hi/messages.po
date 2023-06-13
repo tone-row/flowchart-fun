@@ -553,6 +553,10 @@ msgstr "ज़्यादा थीम पाएं"
 msgid "Get personalized attention and support from our expert team"
 msgstr "हमारे विशेषज्ञ टीम से व्यक्तिगत ध्यान और समर्थन प्राप्त करें"
 
+#: src/pages/New.tsx:244
+msgid "Getting Started"
+msgstr "शुरू करना"
+
 #: src/components/MobileTabToggle.tsx:20
 msgid "Graph"
 msgstr "ग्राफ़"
@@ -1096,7 +1100,6 @@ msgid "Special Attributes"
 msgstr "विशेष गुण"
 
 #: src/pages/Account.tsx:172
-#: src/pages/New.tsx:244
 msgid "Start"
 msgstr "शुरू"
 

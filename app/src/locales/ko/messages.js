@@ -154,6 +154,7 @@
     "Get More Themes": "더 많은 테마 받기",
     "Get personalized attention and support from our expert team":
       "고급 지식과 지원을 받으세요",
+    "Getting Started": "시작하기",
     Graph: "그래프",
     Grid: "그리드",
     "Have complex questions or issues? We're here to help.":

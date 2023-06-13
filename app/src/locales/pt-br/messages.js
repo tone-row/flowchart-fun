@@ -159,6 +159,7 @@
     "Get More Themes": "Obtenha mais temas",
     "Get personalized attention and support from our expert team":
       "Receba atenção e suporte personalizado de nossa equipe especializada",
+    "Getting Started": "Começando",
     Graph: "Diagrama",
     Grid: "Grade",
     "Have complex questions or issues? We're here to help.":

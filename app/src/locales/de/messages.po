@@ -553,6 +553,10 @@ msgstr "Weitere Themen erhalten"
 msgid "Get personalized attention and support from our expert team"
 msgstr "Erhalten Sie personalisierte Aufmerksamkeit und Unterstützung von unserem Experten-Team"
 
+#: src/pages/New.tsx:244
+msgid "Getting Started"
+msgstr "Erste Schritte"
+
 #: src/components/MobileTabToggle.tsx:20
 msgid "Graph"
 msgstr "Diagramm"
@@ -1096,7 +1100,6 @@ msgid "Special Attributes"
 msgstr "Spezielle Attribute"
 
 #: src/pages/Account.tsx:172
-#: src/pages/New.tsx:244
 msgid "Start"
 msgstr "Start"
 

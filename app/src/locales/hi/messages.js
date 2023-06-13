@@ -158,6 +158,7 @@
     "Get More Themes": "ज़्यादा थीम पाएं",
     "Get personalized attention and support from our expert team":
       "हमारे विशेषज्ञ टीम से व्यक्तिगत ध्यान और समर्थन प्राप्त करें",
+    "Getting Started": "शुरू करना",
     Graph: "ग्राफ़",
     Grid: "ग्रिड",
     "Have complex questions or issues? We're here to help.":

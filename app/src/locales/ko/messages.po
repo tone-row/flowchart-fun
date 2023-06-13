@@ -553,6 +553,10 @@ msgstr "더 많은 테마 받기"
 msgid "Get personalized attention and support from our expert team"
 msgstr "고급 지식과 지원을 받으세요"
 
+#: src/pages/New.tsx:244
+msgid "Getting Started"
+msgstr "시작하기"
+
 #: src/components/MobileTabToggle.tsx:20
 msgid "Graph"
 msgstr "그래프"
@@ -1096,7 +1100,6 @@ msgid "Special Attributes"
 msgstr "특별한 속성"
 
 #: src/pages/Account.tsx:172
-#: src/pages/New.tsx:244
 msgid "Start"
 msgstr "시작"
 

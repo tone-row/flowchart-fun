@@ -182,7 +182,7 @@ const New = memo(function New({
           />
           <NameLabel name={safeName} hide={!showWarning} />
         </div>
-        <div className="grid gap-2 w-full">
+        <div className="grid gap-3 w-full">
           <SmallLabel>
             <Trans>Type</Trans>
           </SmallLabel>
@@ -239,9 +239,9 @@ const New = memo(function New({
             </div>
           </RadioGroup.Root>
         </div>
-        <div className="grid gap-2 w-full">
+        <div className="grid gap-3 w-full">
           <SmallLabel>
-            <Trans>Start</Trans>
+            <Trans>Getting Started</Trans>
           </SmallLabel>
           <RadioGroup.Root
             asChild

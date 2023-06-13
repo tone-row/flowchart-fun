@@ -158,6 +158,7 @@
     "Get More Themes": "Get More Themes",
     "Get personalized attention and support from our expert team":
       "Get personalized attention and support from our expert team",
+    "Getting Started": "Getting Started",
     Graph: "Graph",
     Grid: "Grid",
     "Have complex questions or issues? We're here to help.":

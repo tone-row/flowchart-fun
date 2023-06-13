@@ -152,6 +152,7 @@
     "Get More Themes": "获取更多主题",
     "Get personalized attention and support from our expert team":
       "从我们的专家团队获得个性化的关注和支持",
+    "Getting Started": "开始",
     Graph: "图表",
     Grid: "网格",
     "Have complex questions or issues? We're here to help.":
