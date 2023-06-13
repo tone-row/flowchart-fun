@@ -2,7 +2,6 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { Session } from "@supabase/gotrue-js";
-import { format } from "date-fns";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import {
   ChatTeardropText,
@@ -27,9 +26,11 @@ import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
 import { Warning } from "../components/Warning";
 import { getDefaultChart } from "../lib/getDefaultChart";
+import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
+import { languages } from "../locales/i18n";
 import { PageTitle } from "../ui/Typography";
 
 export default function M() {
@@ -86,7 +87,10 @@ const New = memo(function New({
 
   const userId = session?.user?.id;
 
-  const [name, setName] = useState<string>(getDefaultNewTitle());
+  const language = useContext(AppContext).language;
+  const [name, setName] = useState<string>(
+    getFunFlowchartName(language as keyof typeof languages)
+  );
   const [type, setType] = useState<"regular" | "local">(
     validCustomer ? "regular" : "local"
   );
@@ -372,10 +376,6 @@ function AutoFocusInput(
     if (ref.current) ref.current.focus();
   }, []);
   return <input ref={ref} {...props} />;
-}
-
-function getDefaultNewTitle() {
-  return format(new Date(), "yyyy-MM-dd_HH-mm");
 }
 
 function SmallLabel({
