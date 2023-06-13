@@ -167,11 +167,11 @@ const New = memo(function New({
           }
         }}
       >
-        <div className="grid gap-7" ref={parent}>
+        <div className="grid gap-7 content-start" ref={parent}>
           <PageTitle className="mb-4 text-center">
             <Trans>Create a New Flowchart</Trans>
           </PageTitle>
-          <div className="grid gap-2 w-full">
+          <div className="grid gap-0 w-full content-start">
             <SmallLabel>
               <Trans>Name</Trans>
             </SmallLabel>
@@ -352,7 +352,7 @@ function SmallTypeToggle({
 function NameLabel({ name, hide }: { name: string; hide?: boolean }) {
   if (hide) return null;
   return (
-    <div className="text-neutral-400 text-xs flex items-center justify-start mt-[-6px]">
+    <div className="text-neutral-400 text-xs flex items-center justify-start">
       <span className="font-bold italic">/{name}</span>
     </div>
   );
