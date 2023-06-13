@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "3 $ / mois"
 
-#: src/components/PaymentStepper.tsx:83
+#: src/components/PaymentStepper.tsx:84
 msgid "$3 per month"
 msgstr "3 $ par mois"
 
@@ -25,7 +25,7 @@ msgstr "3 $ par mois"
 msgid "$30 / Year"
 msgstr "30 $ / an"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:92
 msgid "$30 per year"
 msgstr "30 $ par an"
 
@@ -59,7 +59,7 @@ msgstr "Accessible depuis n'importe quel appareil"
 msgid "Account"
 msgstr "Compte"
 
-#: src/components/PaymentStepper.tsx:165
+#: src/components/PaymentStepper.tsx:170
 msgid "Activate your account"
 msgstr "Activez votre compte"
 
@@ -178,7 +178,7 @@ msgstr "Consultez votre messagerie électronique pour le lien de connexion. Vous
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Choisissez parmi une variété de formes de flèches pour la source et la cible d'un bord. Les formes incluent triangle, triangle-tee, cercle-triangle, triangle-croix, triangle-backcurve, vee, tee, carré, cercle, diamant, chevron, aucun."
 
-#: src/components/PaymentStepper.tsx:75
+#: src/components/PaymentStepper.tsx:76
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "Choisissez le plan qui vous convient le mieux et commencez à créer des diagrammes incroyables avec Flowchart Fun Pro"
 
@@ -253,8 +253,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "Les conteneurs sont des nœuds qui contiennent d'autres nœuds. Ils sont déclarés à l'aide de accolades."
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:105
-#: src/components/PaymentStepper.tsx:151
+#: src/components/PaymentStepper.tsx:106
+#: src/components/PaymentStepper.tsx:154
 msgid "Continue"
 msgstr "Continuer"
 
@@ -472,7 +472,7 @@ msgstr "E-mail"
 msgid "Empty"
 msgstr "Vide"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:125
 msgid "Enter your email"
 msgstr "Entrez votre adresse e-mail "
 
@@ -698,7 +698,7 @@ msgstr "En savoir plus sur Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "De gauche à droite"
 
-#: src/components/PaymentStepper.tsx:126
+#: src/components/PaymentStepper.tsx:127
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "Commençons ! Entrez votre adresse e-mail ci-dessous pour créer votre compte Flowchart Fun et commencez à utiliser nos fonctionnalités puissantes."
 
@@ -715,7 +715,7 @@ msgstr "Mode lumineux"
 msgid "Link"
 msgstr "Lien"
 
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:149
 msgid "Loading"
 msgstr "Chargement"
 
@@ -742,7 +742,7 @@ msgstr "Faites un don unique"
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
-#: src/components/PaymentStepper.tsx:129
+#: src/components/PaymentStepper.tsx:132
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Assurez-vous d'utiliser le même e-mail que vous utiliserez pour vous connecter."
 
@@ -762,7 +762,7 @@ msgstr "Méthode"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:82
+#: src/components/PaymentStepper.tsx:83
 msgid "Monthly"
 msgstr "Mensuel"
 
@@ -883,6 +883,10 @@ msgstr "Les diagrammes permanents sont une fonctionnalité Pro"
 #: src/pages/Charts.tsx:107
 msgid "Permanent Flowcharts"
 msgstr "Diagrammes permanents"
+
+#: src/pages/New.tsx:201
+msgid "Persistent"
+msgstr "Persistant"
 
 #: src/pages/Pricing.tsx:65
 msgid "Persistent Flowcharts"
@@ -1014,7 +1018,7 @@ msgstr "Roadmap"
 msgid "Save"
 msgstr "Sauver"
 
-#: src/components/PaymentStepper.tsx:95
+#: src/components/PaymentStepper.tsx:96
 msgid "Save 20% (2 months free!)"
 msgstr "Économisez 20% (2 mois gratuits!)"
 
@@ -1026,7 +1030,7 @@ msgstr "Économisez du temps et automatisez certaines tâches avec cette fonctio
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "Économisez du temps et simplifiez votre flux de travail en important des données à partir d'autres sources"
 
-#: src/components/PaymentStepper.tsx:72
+#: src/components/PaymentStepper.tsx:73
 msgid "Select your plan!"
 msgstr "Sélectionnez votre plan !"
 
@@ -1044,7 +1048,7 @@ msgstr "Paramètres"
 msgid "Shape"
 msgstr "Forme"
 
-#: src/components/PaymentStepper.tsx:272
+#: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:98
 msgid "Sign Up"
@@ -1090,10 +1094,6 @@ msgstr "Espacement"
 #: src/components/LearnSyntaxDialog.tsx:358
 msgid "Special Attributes"
 msgstr "Attributs spéciaux"
-
-#: src/pages/New.tsx:201
-msgid "Standard"
-msgstr "Standard"
 
 #: src/pages/Account.tsx:172
 #: src/pages/New.tsx:244
@@ -1358,7 +1358,7 @@ msgstr "Largeur et hauteur"
 msgid "Would you like to continue?"
 msgstr "Voulez-vous continuer ?"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:91
 msgid "Yearly"
 msgstr "Annuellement"
 
@@ -1375,10 +1375,10 @@ msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "Vous pouvez également envelopper le texte dans \"\\( \\)\" pour créer un bord"
 
 #: src/pages/New.tsx:271
-msgid "You must log in to create a standard flowchart."
-msgstr "Vous devez vous connecter pour créer un diagramme standard."
+msgid "You must log in to create a persistent flowchart."
+msgstr "Vous devez vous connecter pour créer un diagramme de flux persistant."
 
-#: src/components/PaymentStepper.tsx:167
+#: src/components/PaymentStepper.tsx:172
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "Vous y êtes presque ! Une dernière étape pour débloquer tout le potentiel de <0>Flowchart Fun Pro</0>. Entrez vos informations de paiement ci-dessous pour compléter votre abonnement et commencez à créer des diagrammes de flux incroyables dès aujourd'hui."
 

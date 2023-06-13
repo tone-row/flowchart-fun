@@ -250,6 +250,7 @@
     Permalinks: "퍼머링크",
     "Permanent Charts are a Pro Feature": "영구 차트는 프로 기능입니다",
     "Permanent Flowcharts": "영구 플로우차트",
+    Persistent: "끈기 있는",
     "Persistent Flowcharts": "영구 다이어그램",
     Playbook: "플레이북",
     "Pointer and container on same line": "같은 줄에 포인터와 컨테이너",
@@ -304,7 +305,6 @@
     "Source/Target Arrow Shape": "소스/대상 화살표 모양",
     Spacing: "간격",
     "Special Attributes": "특별한 속성",
-    Standard: "표준",
     Start: "시작",
     "Start Over": "처음부터 다시 시작하기",
     Status: "상태",
@@ -409,8 +409,8 @@
       ],
     'You can also wrap text in "\\( \\)" to create an edge':
       '텍스트를 "\\( \\)"로 감싸서 가장자리를 만들 수도 있습니다.',
-    "You must log in to create a standard flowchart.":
-      "표준 다이어그램을 만들려면 로그인해야 합니다.",
+    "You must log in to create a persistent flowchart.":
+      "끈기 있는 플로우차트를 만들기 위해 로그인해야합니다.",
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "거의 다 됐습니다! <0>Flowchart Fun Pro</0>의 전력을 풀어내는 마지막 한 단계만 남았습니다. 아래에 결제 정보를 입력하여 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들 수 있습니다.",
     "Your Charts": "당신의 차트",

@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "$ 3 / Mês"
 
-#: src/components/PaymentStepper.tsx:83
+#: src/components/PaymentStepper.tsx:84
 msgid "$3 per month"
 msgstr "$3 por mês"
 
@@ -25,7 +25,7 @@ msgstr "$3 por mês"
 msgid "$30 / Year"
 msgstr "$ 30 / ano"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:92
 msgid "$30 per year"
 msgstr "$30 por ano"
 
@@ -59,7 +59,7 @@ msgstr "Acessível de qualquer dispositivo"
 msgid "Account"
 msgstr "Conta"
 
-#: src/components/PaymentStepper.tsx:165
+#: src/components/PaymentStepper.tsx:170
 msgid "Activate your account"
 msgstr "Ative sua conta"
 
@@ -178,7 +178,7 @@ msgstr "Cheque seu e-mail com um link para logar. Você pode fechar esta janela.
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Escolha entre uma variedade de formas de seta para a origem e o destino de uma aresta. As formas incluem triângulo, triângulo-tee, triângulo-círculo, triângulo-cruz, triângulo-curva-inversa, vee, tee, quadrado, círculo, diamante, chevron e nenhum."
 
-#: src/components/PaymentStepper.tsx:75
+#: src/components/PaymentStepper.tsx:76
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "Escolha o plano certo para você e comece a criar incríveis fluxogramas com o Flowchart Fun Pro."
 
@@ -253,8 +253,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "Os containers são nós que contêm outros nós. Eles são declarados usando chaves."
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:105
-#: src/components/PaymentStepper.tsx:151
+#: src/components/PaymentStepper.tsx:106
+#: src/components/PaymentStepper.tsx:154
 msgid "Continue"
 msgstr "Continuar"
 
@@ -472,7 +472,7 @@ msgstr "E-mail"
 msgid "Empty"
 msgstr "Vazio"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:125
 msgid "Enter your email"
 msgstr "Digite seu email"
 
@@ -698,7 +698,7 @@ msgstr "Saiba mais sobre o Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "Da esquerda para direita"
 
-#: src/components/PaymentStepper.tsx:126
+#: src/components/PaymentStepper.tsx:127
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "Vamos começar! Digite seu endereço de email abaixo para criar sua conta no Flowchart Fun e começar a usar nossos recursos poderosos."
 
@@ -715,7 +715,7 @@ msgstr "Modo claro"
 msgid "Link"
 msgstr "Link"
 
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:149
 msgid "Loading"
 msgstr "Carregando"
 
@@ -742,7 +742,7 @@ msgstr "Faça uma Doação Única"
 msgid "Make publicly accessible"
 msgstr "Tornar publicamente acessível"
 
-#: src/components/PaymentStepper.tsx:129
+#: src/components/PaymentStepper.tsx:132
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Certifique-se de usar o mesmo e-mail que você usará para fazer o login."
 
@@ -762,7 +762,7 @@ msgstr "Método"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:82
+#: src/components/PaymentStepper.tsx:83
 msgid "Monthly"
 msgstr "Mensal"
 
@@ -883,6 +883,10 @@ msgstr "Gráficos permanentes são um recurso Pro"
 #: src/pages/Charts.tsx:107
 msgid "Permanent Flowcharts"
 msgstr "Fluxogramas Permanentes"
+
+#: src/pages/New.tsx:201
+msgid "Persistent"
+msgstr "Persistente"
 
 #: src/pages/Pricing.tsx:65
 msgid "Persistent Flowcharts"
@@ -1014,7 +1018,7 @@ msgstr "Roteiro"
 msgid "Save"
 msgstr "Salvar"
 
-#: src/components/PaymentStepper.tsx:95
+#: src/components/PaymentStepper.tsx:96
 msgid "Save 20% (2 months free!)"
 msgstr "Economize 20% (2 meses grátis!)"
 
@@ -1026,7 +1030,7 @@ msgstr "Economize tempo e automatize certas tarefas com essa funcionalidade de p
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "Economize tempo e simplifique seu fluxo de trabalho importando dados de outras fontes."
 
-#: src/components/PaymentStepper.tsx:72
+#: src/components/PaymentStepper.tsx:73
 msgid "Select your plan!"
 msgstr "Selecione seu plano!"
 
@@ -1044,7 +1048,7 @@ msgstr "Configurações"
 msgid "Shape"
 msgstr "Forma"
 
-#: src/components/PaymentStepper.tsx:272
+#: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:98
 msgid "Sign Up"
@@ -1090,10 +1094,6 @@ msgstr "Espaçamento"
 #: src/components/LearnSyntaxDialog.tsx:358
 msgid "Special Attributes"
 msgstr "Atributos Especiais"
-
-#: src/pages/New.tsx:201
-msgid "Standard"
-msgstr "Padrão"
 
 #: src/pages/Account.tsx:172
 #: src/pages/New.tsx:244
@@ -1358,7 +1358,7 @@ msgstr "Largura e Altura"
 msgid "Would you like to continue?"
 msgstr "Você gostaria de continuar?"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:91
 msgid "Yearly"
 msgstr "Anualmente"
 
@@ -1375,10 +1375,10 @@ msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "Você também pode quebrar o texto dentro de \"\\( \\)\" para criar um link"
 
 #: src/pages/New.tsx:271
-msgid "You must log in to create a standard flowchart."
-msgstr "Você deve efetuar login para criar um diagrama padrão."
+msgid "You must log in to create a persistent flowchart."
+msgstr "Você deve fazer login para criar um fluxograma persistente."
 
-#: src/components/PaymentStepper.tsx:167
+#: src/components/PaymentStepper.tsx:172
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "Você está quase lá! Apenas mais um passo para destravar o potencial total do <0>Flowchart Fun Pro</0>. Insira os detalhes do pagamento abaixo para completar sua assinatura e começar a criar fluxogramas incríveis hoje."
 

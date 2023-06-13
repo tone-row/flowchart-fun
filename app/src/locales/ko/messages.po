@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "$3/월"
 
-#: src/components/PaymentStepper.tsx:83
+#: src/components/PaymentStepper.tsx:84
 msgid "$3 per month"
 msgstr "월 3 달러"
 
@@ -25,7 +25,7 @@ msgstr "월 3 달러"
 msgid "$30 / Year"
 msgstr "$30/년"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:92
 msgid "$30 per year"
 msgstr "연 30 달러"
 
@@ -59,7 +59,7 @@ msgstr "모든 장치에서 액세스 가능"
 msgid "Account"
 msgstr "계정"
 
-#: src/components/PaymentStepper.tsx:165
+#: src/components/PaymentStepper.tsx:170
 msgid "Activate your account"
 msgstr "계정을 활성화하세요"
 
@@ -178,7 +178,7 @@ msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫�
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "에지의 소스와 목적지를 위한 다양한 화살표 모양을 선택합니다. 모양에는 삼각형, 삼각형-티, 원-삼각형, 삼각형-가위형, 삼각형-뒤곡선, 베이, 티, 사각형, 원, 다이아몬드, 쉐브론, 없음이 포함됩니다."
 
-#: src/components/PaymentStepper.tsx:75
+#: src/components/PaymentStepper.tsx:76
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "당신에게 맞는 계획을 선택하고 Flowchart Fun Pro을 사용하여 놀라운 플로우차트를 만들어보세요."
 
@@ -253,8 +253,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "컨테이너는 다른 노드를 포함하는 노드입니다. 중괄호를 사용하여 선언됩니다."
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:105
-#: src/components/PaymentStepper.tsx:151
+#: src/components/PaymentStepper.tsx:106
+#: src/components/PaymentStepper.tsx:154
 msgid "Continue"
 msgstr "계속하기"
 
@@ -472,7 +472,7 @@ msgstr "이메일"
 msgid "Empty"
 msgstr "비어 있음"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:125
 msgid "Enter your email"
 msgstr "이메일을 입력하세요"
 
@@ -698,7 +698,7 @@ msgstr "Flowchart Fun Pro에 대해 알아보기"
 msgid "Left to Right"
 msgstr "왼쪽에서 오른쪽으로"
 
-#: src/components/PaymentStepper.tsx:126
+#: src/components/PaymentStepper.tsx:127
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "시작해볼까요? 아래 이메일 주소를 입력하여 Flowchart Fun 계정을 만들고 강력한 기능을 사용해보세요."
 
@@ -715,7 +715,7 @@ msgstr "라이트 모드"
 msgid "Link"
 msgstr "링크"
 
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:149
 msgid "Loading"
 msgstr "로딩"
 
@@ -742,7 +742,7 @@ msgstr "한 번 선물하기"
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
-#: src/components/PaymentStepper.tsx:129
+#: src/components/PaymentStepper.tsx:132
 msgid "Make sure you use the same email you will use to log in."
 msgstr "로그인할 때 사용할 같은 이메일을 사용하세요."
 
@@ -762,7 +762,7 @@ msgstr "방법"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:82
+#: src/components/PaymentStepper.tsx:83
 msgid "Monthly"
 msgstr "월간"
 
@@ -883,6 +883,10 @@ msgstr "영구 차트는 프로 기능입니다"
 #: src/pages/Charts.tsx:107
 msgid "Permanent Flowcharts"
 msgstr "영구 플로우차트"
+
+#: src/pages/New.tsx:201
+msgid "Persistent"
+msgstr "끈기 있는"
 
 #: src/pages/Pricing.tsx:65
 msgid "Persistent Flowcharts"
@@ -1014,7 +1018,7 @@ msgstr "로드맵"
 msgid "Save"
 msgstr "구하다"
 
-#: src/components/PaymentStepper.tsx:95
+#: src/components/PaymentStepper.tsx:96
 msgid "Save 20% (2 months free!)"
 msgstr "20% 할인 (2개월 무료!)"
 
@@ -1026,7 +1030,7 @@ msgstr "이 최신 기능으로 시간을 절약하고 일부 작업을 자동�
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "다른 소스에서 데이터를 가져와 작업흐름을 최적화하여 시간을 절약하세요."
 
-#: src/components/PaymentStepper.tsx:72
+#: src/components/PaymentStepper.tsx:73
 msgid "Select your plan!"
 msgstr "귀하의 계획을 선택하세요!"
 
@@ -1044,7 +1048,7 @@ msgstr "설정"
 msgid "Shape"
 msgstr "모양 "
 
-#: src/components/PaymentStepper.tsx:272
+#: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:98
 msgid "Sign Up"
@@ -1090,10 +1094,6 @@ msgstr "간격"
 #: src/components/LearnSyntaxDialog.tsx:358
 msgid "Special Attributes"
 msgstr "특별한 속성"
-
-#: src/pages/New.tsx:201
-msgid "Standard"
-msgstr "표준"
 
 #: src/pages/Account.tsx:172
 #: src/pages/New.tsx:244
@@ -1358,7 +1358,7 @@ msgstr "너비와 높이"
 msgid "Would you like to continue?"
 msgstr "계속하시겠습니까?"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:91
 msgid "Yearly"
 msgstr "연간"
 
@@ -1375,10 +1375,10 @@ msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "텍스트를 \"\\( \\)\"로 감싸서 가장자리를 만들 수도 있습니다."
 
 #: src/pages/New.tsx:271
-msgid "You must log in to create a standard flowchart."
-msgstr "표준 다이어그램을 만들려면 로그인해야 합니다."
+msgid "You must log in to create a persistent flowchart."
+msgstr "끈기 있는 플로우차트를 만들기 위해 로그인해야합니다."
 
-#: src/components/PaymentStepper.tsx:167
+#: src/components/PaymentStepper.tsx:172
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "거의 다 됐습니다! <0>Flowchart Fun Pro</0>의 전력을 풀어내는 마지막 한 단계만 남았습니다. 아래에 결제 정보를 입력하여 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들 수 있습니다."
 

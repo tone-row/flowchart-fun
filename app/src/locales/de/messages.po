@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "$3 / Monat"
 
-#: src/components/PaymentStepper.tsx:83
+#: src/components/PaymentStepper.tsx:84
 msgid "$3 per month"
 msgstr "3 $ pro Monat"
 
@@ -25,7 +25,7 @@ msgstr "3 $ pro Monat"
 msgid "$30 / Year"
 msgstr "$30 / Year"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:92
 msgid "$30 per year"
 msgstr "30 $ pro Jahr"
 
@@ -59,7 +59,7 @@ msgstr "Von jedem Gerät aus zugänglich"
 msgid "Account"
 msgstr "Konto"
 
-#: src/components/PaymentStepper.tsx:165
+#: src/components/PaymentStepper.tsx:170
 msgid "Activate your account"
 msgstr "Aktiviere dein Konto "
 
@@ -178,7 +178,7 @@ msgstr "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Wählen Sie aus einer Vielzahl von Pfeilformen für die Quelle und das Ziel einer Kante aus. Formen beinhalten Dreieck, Dreieck-Tee, Kreis-Dreieck, Dreieck-Kreuz, Dreieck-Rückbiegung, Vee, Tee, Quadrat, Kreis, Diamant, Chevron und keine."
 
-#: src/components/PaymentStepper.tsx:75
+#: src/components/PaymentStepper.tsx:76
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "Wählen Sie den Plan, der am besten zu Ihnen passt, und starten Sie mit Flowchart Fun Pro die Erstellung beeindruckender Flussdiagramme."
 
@@ -253,8 +253,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "Container sind Knoten, die andere Knoten enthalten. Sie werden mit geschweiften Klammern deklariert."
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:105
-#: src/components/PaymentStepper.tsx:151
+#: src/components/PaymentStepper.tsx:106
+#: src/components/PaymentStepper.tsx:154
 msgid "Continue"
 msgstr "Weiter"
 
@@ -472,7 +472,7 @@ msgstr "E-Mail"
 msgid "Empty"
 msgstr "Leer"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:125
 msgid "Enter your email"
 msgstr "Geben Sie Ihre E-Mail-Adresse ein"
 
@@ -698,7 +698,7 @@ msgstr "Erfahren Sie mehr über Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "Von links nach rechts"
 
-#: src/components/PaymentStepper.tsx:126
+#: src/components/PaymentStepper.tsx:127
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "Los geht's! Geben Sie unten Ihre E-Mail-Adresse ein, um Ihr Flowchart Fun-Konto zu erstellen und unsere leistungsstarken Funktionen zu nutzen."
 
@@ -715,7 +715,7 @@ msgstr "Heller Modus"
 msgid "Link"
 msgstr "Link"
 
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:149
 msgid "Loading"
 msgstr "Laden"
 
@@ -742,7 +742,7 @@ msgstr "Machen Sie eine einmalige Spende"
 msgid "Make publicly accessible"
 msgstr "Öffentlich zugänglich machen"
 
-#: src/components/PaymentStepper.tsx:129
+#: src/components/PaymentStepper.tsx:132
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Stellen Sie sicher, dass Sie die gleiche E-Mail verwenden, mit der Sie sich anmelden werden."
 
@@ -762,7 +762,7 @@ msgstr "Methode"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:82
+#: src/components/PaymentStepper.tsx:83
 msgid "Monthly"
 msgstr "Monatlich"
 
@@ -883,6 +883,10 @@ msgstr "Permanente Diagramme sind eine Pro-Funktion"
 #: src/pages/Charts.tsx:107
 msgid "Permanent Flowcharts"
 msgstr "Permanente Flussdiagramme"
+
+#: src/pages/New.tsx:201
+msgid "Persistent"
+msgstr "Beständig"
 
 #: src/pages/Pricing.tsx:65
 msgid "Persistent Flowcharts"
@@ -1014,7 +1018,7 @@ msgstr "Fahrplan"
 msgid "Save"
 msgstr "Speichern"
 
-#: src/components/PaymentStepper.tsx:95
+#: src/components/PaymentStepper.tsx:96
 msgid "Save 20% (2 months free!)"
 msgstr "Sparen Sie 20% (2 Monate kostenlos!)"
 
@@ -1026,7 +1030,7 @@ msgstr "Sparen Sie Zeit und automatisieren Sie bestimmte Aufgaben mit dieser for
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "Sparen Sie Zeit und vereinfachen Sie Ihren Arbeitsablauf, indem Sie Daten von anderen Quellen importieren"
 
-#: src/components/PaymentStepper.tsx:72
+#: src/components/PaymentStepper.tsx:73
 msgid "Select your plan!"
 msgstr "Wählen Sie Ihren Plan aus!"
 
@@ -1044,7 +1048,7 @@ msgstr "Einstellungen"
 msgid "Shape"
 msgstr "Form"
 
-#: src/components/PaymentStepper.tsx:272
+#: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:98
 msgid "Sign Up"
@@ -1090,10 +1094,6 @@ msgstr "Abstand"
 #: src/components/LearnSyntaxDialog.tsx:358
 msgid "Special Attributes"
 msgstr "Spezielle Attribute"
-
-#: src/pages/New.tsx:201
-msgid "Standard"
-msgstr "Standard"
 
 #: src/pages/Account.tsx:172
 #: src/pages/New.tsx:244
@@ -1358,7 +1358,7 @@ msgstr "Breite und Höhe"
 msgid "Would you like to continue?"
 msgstr "Möchten Sie fortfahren?"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:91
 msgid "Yearly"
 msgstr "Jährlich"
 
@@ -1375,10 +1375,10 @@ msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "Sie können Text auch in \"\\( \\)\" umbrechen, um eine Kante zu erstellen"
 
 #: src/pages/New.tsx:271
-msgid "You must log in to create a standard flowchart."
-msgstr "Sie müssen sich anmelden, um ein Standarddiagramm zu erstellen."
+msgid "You must log in to create a persistent flowchart."
+msgstr "Sie müssen sich anmelden, um einen beständigen Flussdiagramm zu erstellen."
 
-#: src/components/PaymentStepper.tsx:167
+#: src/components/PaymentStepper.tsx:172
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "Du bist fast da! Nur noch ein Schritt, um das volle Potenzial von <0>Flowchart Fun Pro</0> freizuschalten. Gib deine Zahlungsdetails unten ein, um dein Abonnement abzuschließen und heute mit dem Erstellen beeindruckender Flussdiagramme zu beginnen."
 

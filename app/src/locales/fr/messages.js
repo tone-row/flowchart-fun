@@ -257,6 +257,7 @@
     "Permanent Charts are a Pro Feature":
       "Les diagrammes permanents sont une fonctionnalité Pro",
     "Permanent Flowcharts": "Diagrammes permanents",
+    Persistent: "Persistant",
     "Persistent Flowcharts": "Diagrammes persistants",
     Playbook: "Livre-jeu",
     "Pointer and container on same line":
@@ -314,7 +315,6 @@
     "Source/Target Arrow Shape": "Forme de flèche source / cible",
     Spacing: "Espacement",
     "Special Attributes": "Attributs spéciaux",
-    Standard: "Standard",
     Start: "Début",
     "Start Over": "Recommencer",
     Status: "État",
@@ -420,8 +420,8 @@
       ],
     'You can also wrap text in "\\( \\)" to create an edge':
       'Vous pouvez également envelopper le texte dans "\\( \\)" pour créer un bord',
-    "You must log in to create a standard flowchart.":
-      "Vous devez vous connecter pour créer un diagramme standard.",
+    "You must log in to create a persistent flowchart.":
+      "Vous devez vous connecter pour créer un diagramme de flux persistant.",
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "Vous y êtes presque ! Une dernière étape pour débloquer tout le potentiel de <0>Flowchart Fun Pro</0>. Entrez vos informations de paiement ci-dessous pour compléter votre abonnement et commencez à créer des diagrammes de flux incroyables dès aujourd'hui.",
     "Your Charts": "Vos diagrammes",

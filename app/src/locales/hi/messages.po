@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "$3 / महीना"
 
-#: src/components/PaymentStepper.tsx:83
+#: src/components/PaymentStepper.tsx:84
 msgid "$3 per month"
 msgstr "मासिक $3"
 
@@ -25,7 +25,7 @@ msgstr "मासिक $3"
 msgid "$30 / Year"
 msgstr "$30 / वर्ष"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:92
 msgid "$30 per year"
 msgstr "वार्षिक $30"
 
@@ -59,7 +59,7 @@ msgstr "किसी भी उपकरण से पहुँचा जा स
 msgid "Account"
 msgstr "खाता"
 
-#: src/components/PaymentStepper.tsx:165
+#: src/components/PaymentStepper.tsx:170
 msgid "Activate your account"
 msgstr "अपना खाता सक्रिय करें"
 
@@ -178,7 +178,7 @@ msgstr "लॉग इन वाले लिंक के लिए अपना
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।"
 
-#: src/components/PaymentStepper.tsx:75
+#: src/components/PaymentStepper.tsx:76
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "आपके लिए सही योजना चुनें और Flowchart Fun Pro के साथ अद्भुत फ्लोचार्ट बनाना शुरू करें"
 
@@ -253,8 +253,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "कंटेनर उन नोड्स हैं जो अन्य नोड्स को सम्मिलित करते हैं। वे कर्ली ब्रेस का उपयोग करके घोषित किया जाता है।"
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:105
-#: src/components/PaymentStepper.tsx:151
+#: src/components/PaymentStepper.tsx:106
+#: src/components/PaymentStepper.tsx:154
 msgid "Continue"
 msgstr "जारी रखें"
 
@@ -472,7 +472,7 @@ msgstr "ईमेल"
 msgid "Empty"
 msgstr "खाली"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:125
 msgid "Enter your email"
 msgstr "अपना ईमेल दर्ज करें"
 
@@ -698,7 +698,7 @@ msgstr "Flowchart Fun Pro के बारे में जानें"
 msgid "Left to Right"
 msgstr "बाएं से दाएं"
 
-#: src/components/PaymentStepper.tsx:126
+#: src/components/PaymentStepper.tsx:127
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "चलो शुरू करें! अपना फ्लोचार्ट फन खाता बनाने और हमारे शक्तिशाली विशेषताओं का उपयोग शुरू करने के लिए नीचे अपना ईमेल पता दर्ज करें।"
 
@@ -715,7 +715,7 @@ msgstr "लाइट मोड"
 msgid "Link"
 msgstr "लिंक"
 
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:149
 msgid "Loading"
 msgstr "लोड हो रहा है"
 
@@ -742,7 +742,7 @@ msgstr "एक बार दान करें"
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
-#: src/components/PaymentStepper.tsx:129
+#: src/components/PaymentStepper.tsx:132
 msgid "Make sure you use the same email you will use to log in."
 msgstr "उसी ईमेल का उपयोग करें जिसे आप लॉग इन करने के लिए उपयोग करेंगे।"
 
@@ -762,7 +762,7 @@ msgstr "विधि"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:82
+#: src/components/PaymentStepper.tsx:83
 msgid "Monthly"
 msgstr "मासिक"
 
@@ -883,6 +883,10 @@ msgstr "स्थायी चार्ट एक प्रो सुविध�
 #: src/pages/Charts.tsx:107
 msgid "Permanent Flowcharts"
 msgstr "लगातार चार्ट"
+
+#: src/pages/New.tsx:201
+msgid "Persistent"
+msgstr "अविरल"
 
 #: src/pages/Pricing.tsx:65
 msgid "Persistent Flowcharts"
@@ -1014,7 +1018,7 @@ msgstr "रोडमैप"
 msgid "Save"
 msgstr "सहेजें"
 
-#: src/components/PaymentStepper.tsx:95
+#: src/components/PaymentStepper.tsx:96
 msgid "Save 20% (2 months free!)"
 msgstr "20% बचत (2 महीने मुफ्त!)"
 
@@ -1026,7 +1030,7 @@ msgstr "इस उन्नत विशेषता के साथ समय 
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "अन्य स्रोतों से डेटा आयात करके अपनी व्यवस्था को समय बचाएं और स्ट्रीमलाइन करें"
 
-#: src/components/PaymentStepper.tsx:72
+#: src/components/PaymentStepper.tsx:73
 msgid "Select your plan!"
 msgstr "अपना योजना चुनें!"
 
@@ -1044,7 +1048,7 @@ msgstr "सेटिंग"
 msgid "Shape"
 msgstr "आकृति"
 
-#: src/components/PaymentStepper.tsx:272
+#: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
 #: src/pages/LogIn.tsx:98
 msgid "Sign Up"
@@ -1090,10 +1094,6 @@ msgstr "अंतर"
 #: src/components/LearnSyntaxDialog.tsx:358
 msgid "Special Attributes"
 msgstr "विशेष गुण"
-
-#: src/pages/New.tsx:201
-msgid "Standard"
-msgstr "मानक"
 
 #: src/pages/Account.tsx:172
 #: src/pages/New.tsx:244
@@ -1358,7 +1358,7 @@ msgstr "चौड़ाई और ऊँचाई"
 msgid "Would you like to continue?"
 msgstr "क्या आप जारी रखना चाहते हैं?"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:91
 msgid "Yearly"
 msgstr "वार्षिक"
 
@@ -1375,10 +1375,10 @@ msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "किनारे बनाने के लिए आप टेक्स्ट को \"\\( \\)\" में भी रैप कर सकते हैं"
 
 #: src/pages/New.tsx:271
-msgid "You must log in to create a standard flowchart."
-msgstr "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।"
+msgid "You must log in to create a persistent flowchart."
+msgstr "आपको एक अविरल फ्लोचार्ट बनाने के लिए लॉग इन करना होगा।"
 
-#: src/components/PaymentStepper.tsx:167
+#: src/components/PaymentStepper.tsx:172
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "आप बस एक ही कदम दूर हैं! <0>Flowchart Fun Pro</0> की पूरी प्रत्याशित क्षमता को अनलॉक करने के लिए नीचे अपने भुगतान विवरण दर्ज करें और आज ही अद्भुत फ्लोचार्ट बनाने शुरू करें।"
 

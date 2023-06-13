@@ -246,6 +246,7 @@
     Permalinks: "永久链接",
     "Permanent Charts are a Pro Feature": "永久图表是专业功能",
     "Permanent Flowcharts": "永久流程图",
+    Persistent: "坚持不懈",
     "Persistent Flowcharts": "持久图",
     Playbook: "剧本",
     "Pointer and container on same line": "同一行上的指针和容器",
@@ -300,7 +301,6 @@
     "Source/Target Arrow Shape": "源/目标箭头形状",
     Spacing: "间距",
     "Special Attributes": "特殊属性",
-    Standard: "标准",
     Start: "开始",
     "Start Over": "重新開始",
     Status: "状态",
@@ -392,8 +392,8 @@
       ["您即将为您的图添加", ["numNodes"], "个节点和", ["numEdges"], "条边。"],
     'You can also wrap text in "\\( \\)" to create an edge':
       "您还可以将文本包装在\\n“\\( \\)”中以创建链接",
-    "You must log in to create a standard flowchart.":
-      "您必须登录才能创建标准图表。",
+    "You must log in to create a persistent flowchart.":
+      "您必须登录才能创建一个持久的流程图。",
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "您已经快完成了！只需要一步就可以解锁 <0>Flowchart Fun Pro</0> 的全部功能。请在下面输入您的付款详情来完成您的订阅，并今天开始创建令人惊叹的流程图。",
     "Your Charts": "您的图表",
