@@ -1,3 +1,4 @@
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { Session } from "@supabase/gotrue-js";
@@ -111,10 +112,12 @@ const New = memo(function New({
     !!window.localStorage.getItem(titleToLocalStorageKey(safeName));
   const createDisabled = !name || tryingToCreateRegular || alreadyUsedName;
 
+  const [parent] = useAutoAnimate();
+
   return (
     <div className="h-full pt-16">
       <form
-        className="grid gap-7 px-4 w-full max-w-[580px] mx-auto"
+        className="px-4 w-full max-w-[580px] mx-auto"
         onSubmit={(e) => {
           e.preventDefault();
           if (customerIsLoading || !checkedSession) return;
@@ -164,135 +167,139 @@ const New = memo(function New({
           }
         }}
       >
-        <PageTitle className="mb-4 text-center">
-          <Trans>Create a New Flowchart</Trans>
-        </PageTitle>
-        <div className="grid gap-2 w-full">
-          <SmallLabel>
-            <Trans>Name</Trans>
-          </SmallLabel>
-          <AutoFocusInput
-            type="text"
-            name="name"
-            value={name}
-            autoComplete="off"
-            onChange={(e) => setName(e.target.value)}
-            className="w-full text-2xl mb-2 border-b-2 border-neutral-300 p-1 rounded-tr rounded-tl dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700 rounded-none focus:bg-neutral-50 dark:focus:bg-neutral-800"
-            placeholder="Untitled"
-          />
-          <NameLabel name={safeName} hide={!showWarning} />
-        </div>
-        {alreadyUsedName && (
-          <div className="justify-items-center grid">
-            <Warning>
-              <Trans>You already have a flowchart with this name.</Trans>
-            </Warning>
+        <div className="grid gap-7" ref={parent}>
+          <PageTitle className="mb-4 text-center">
+            <Trans>Create a New Flowchart</Trans>
+          </PageTitle>
+          <div className="grid gap-2 w-full">
+            <SmallLabel>
+              <Trans>Name</Trans>
+            </SmallLabel>
+            <AutoFocusInput
+              type="text"
+              name="name"
+              value={name}
+              autoComplete="off"
+              onChange={(e) => setName(e.target.value)}
+              className="w-full text-2xl mb-2 border-b-2 border-neutral-300 p-1 rounded-tr rounded-tl dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700 rounded-none focus:bg-neutral-50 dark:focus:bg-neutral-800"
+              placeholder="Untitled"
+            />
+            <NameLabel name={safeName} hide={!showWarning} />
           </div>
-        )}
-        <div className="grid gap-3 w-full">
-          <SmallLabel>
-            <Trans>Type</Trans>
-          </SmallLabel>
-          <RadioGroup.Root
-            value={type}
-            name="type"
-            onValueChange={(value) => {
-              setType(value as "regular" | "local");
-              if (value === "local") setStart("blank");
-            }}
-            asChild
-          >
-            <div className="grid gap-4 sm:grid-cols-2 focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
-              <TypeToggle
-                value="regular"
-                title={t`Persistent`}
-                description={
-                  <>
-                    <span className="text-sm flex items-start justify-center">
-                      <Check
-                        size={16}
-                        weight="bold"
-                        className="mr-1 mt-[2px] text-green-900 opacity-50 dark:text-green-100"
-                      />
-                      <Trans>Stored in the cloud</Trans>
-                    </span>
-                    <span className="text-sm flex items-start justify-center">
-                      <Check
-                        size={16}
-                        weight="bold"
-                        className="mr-1 mt-[2px] text-green-900 opacity-50 dark:text-green-100"
-                      />
-                      <Trans>Accessible from any device</Trans>
-                    </span>
-                  </>
-                }
-                icon={<TreeStructure size={64} weight="thin" />}
-              />
-              <TypeToggle
-                value="local"
-                title={t`Temporary`}
-                description={
-                  <>
-                    <span className="text-sm flex items-center">
-                      <Trans>Stored on this computer</Trans>
-                    </span>
-                    <span className="text-sm flex items-center">
-                      <Trans>Deleted when browser data is cleared</Trans>
-                    </span>
-                  </>
-                }
-                icon={<Clock size={64} weight="thin" />}
-              />
+          {alreadyUsedName && (
+            <div className="justify-items-center grid">
+              <Warning>
+                <Trans>You already have a flowchart with this name.</Trans>
+              </Warning>
             </div>
-          </RadioGroup.Root>
-        </div>
-        {tryingToCreateRegular && (
-          <div className="justify-items-center grid">
-            <Warning>
-              <Trans>You must log in to create a persistent flowchart.</Trans>{" "}
-              <Link className="underline" to="/l">
-                <Trans>Log In</Trans>
-              </Link>
-            </Warning>
-          </div>
-        )}
-        <div className="grid gap-3 w-full">
-          <SmallLabel>
-            <Trans>Getting Started</Trans>
-          </SmallLabel>
-          <RadioGroup.Root
-            asChild
-            value={start}
-            onValueChange={(value) => setStart(value as "blank" | "prompt")}
-            name="start"
-          >
-            <div className="flex justify-start gap-3 justify-self-start focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
-              <SmallTypeToggle
-                title={t`Blank`}
-                value="blank"
-                icon={<Pencil size={24} weight="thin" />}
-              />
-              <SmallTypeToggle
-                title={t`Prompt`}
-                value="prompt"
-                icon={<ChatTeardropText size={24} weight="thin" />}
-                disabled={type !== "regular"}
-              />
-            </div>
-          </RadioGroup.Root>
-          {start === "prompt" && <PromptSubmenu />}
-        </div>
-        <button
-          type="submit"
-          className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-4 mb-8"
-          disabled={createDisabled}
-        >
-          {isLoading ? (
-            <CircleNotch size={24} className="animate-spin" />
-          ) : (
-            <Trans>Create</Trans>
           )}
-        </button>
+          <div className="grid gap-3 w-full">
+            <SmallLabel>
+              <Trans>Type</Trans>
+            </SmallLabel>
+            <RadioGroup.Root
+              value={type}
+              name="type"
+              onValueChange={(value) => {
+                setType(value as "regular" | "local");
+                if (value === "local") setStart("blank");
+              }}
+              asChild
+            >
+              <div className="grid gap-4 sm:grid-cols-2 focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
+                <TypeToggle
+                  value="regular"
+                  title={t`Persistent`}
+                  description={
+                    <>
+                      <span className="text-sm flex items-start justify-center">
+                        <Check
+                          size={16}
+                          weight="bold"
+                          className="mr-1 mt-[2px] text-green-900 opacity-50 dark:text-green-100"
+                        />
+                        <Trans>Stored in the cloud</Trans>
+                      </span>
+                      <span className="text-sm flex items-start justify-center">
+                        <Check
+                          size={16}
+                          weight="bold"
+                          className="mr-1 mt-[2px] text-green-900 opacity-50 dark:text-green-100"
+                        />
+                        <Trans>Accessible from any device</Trans>
+                      </span>
+                    </>
+                  }
+                  icon={<TreeStructure size={64} weight="thin" />}
+                />
+                <TypeToggle
+                  value="local"
+                  title={t`Temporary`}
+                  description={
+                    <>
+                      <span className="text-sm flex items-center">
+                        <Trans>Stored on this computer</Trans>
+                      </span>
+                      <span className="text-sm flex items-center">
+                        <Trans>Deleted when browser data is cleared</Trans>
+                      </span>
+                    </>
+                  }
+                  icon={<Clock size={64} weight="thin" />}
+                />
+              </div>
+            </RadioGroup.Root>
+          </div>
+          {tryingToCreateRegular && (
+            <div className="justify-items-center grid">
+              <Warning>
+                <Trans>You must log in to create a persistent flowchart.</Trans>{" "}
+                <Link className="underline" to="/l">
+                  <Trans>Log In</Trans>
+                </Link>
+              </Warning>
+            </div>
+          )}
+        </div>
+        <div className="grid gap-7 mt-7">
+          <div className="grid gap-3 w-full">
+            <SmallLabel>
+              <Trans>Getting Started</Trans>
+            </SmallLabel>
+            <RadioGroup.Root
+              asChild
+              value={start}
+              onValueChange={(value) => setStart(value as "blank" | "prompt")}
+              name="start"
+            >
+              <div className="flex justify-start gap-3 justify-self-start focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
+                <SmallTypeToggle
+                  title={t`Blank`}
+                  value="blank"
+                  icon={<Pencil size={24} weight="thin" />}
+                />
+                <SmallTypeToggle
+                  title={t`Prompt`}
+                  value="prompt"
+                  icon={<ChatTeardropText size={24} weight="thin" />}
+                  disabled={type !== "regular"}
+                />
+              </div>
+            </RadioGroup.Root>
+            {start === "prompt" && <PromptSubmenu />}
+          </div>
+          <button
+            type="submit"
+            className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-4 mb-8"
+            disabled={createDisabled}
+          >
+            {isLoading ? (
+              <CircleNotch size={24} className="animate-spin" />
+            ) : (
+              <Trans>Create</Trans>
+            )}
+          </button>
+        </div>
       </form>
     </div>
   );

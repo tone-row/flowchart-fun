@@ -60,10 +60,10 @@ export default function Login() {
   return (
     <div className="py-12 grid justify-items-center content-start gap-6 md:gap-12">
       {newSignUp && <WelcomeMessage />}
-      <div className="w-[370px] grid gap-2 content-start pt-4">
+      <div className="w-[370px] grid gap-3 content-start pt-4">
         <PageTitle>{t`Log In`}</PageTitle>
         <form className="gap-2 grid" onSubmit={handleSubmit(onSubmit)}>
-          <p className="text text-lg text-neutral-700 leading-tight dark:text-neutral-400">
+          <p className="text text-lg text-neutral-600 leading-normal dark:text-neutral-400">
             <Trans>
               We use magic links to log you in. Enter your email below to get
               started.
@@ -89,7 +89,7 @@ export default function Login() {
             )}
           </BlueButton>
           {isError(error) && <Warning>{error.message}</Warning>}
-          <span className="text-sm mt-3">
+          <span className="text-sm mt-5">
             {t`Don't have an account?`}
             <Link
               to="/pricing"
