@@ -102,7 +102,7 @@ const New = memo(function New({
 
   const isTemporaryType = type === "local";
   const safeName = slugify(name.trim());
-  const showWarning = isTemporaryType && safeName !== name;
+  const showWarning = isTemporaryType;
 
   const tryingToCreateRegular = type === "regular" && !validCustomer;
   const alreadyUsedName =
@@ -182,6 +182,13 @@ const New = memo(function New({
           />
           <NameLabel name={safeName} hide={!showWarning} />
         </div>
+        {alreadyUsedName && (
+          <div className="justify-items-center grid">
+            <Warning>
+              <Trans>You already have a flowchart with this name.</Trans>
+            </Warning>
+          </div>
+        )}
         <div className="grid gap-3 w-full">
           <SmallLabel>
             <Trans>Type</Trans>
@@ -239,6 +246,16 @@ const New = memo(function New({
             </div>
           </RadioGroup.Root>
         </div>
+        {tryingToCreateRegular && (
+          <div className="justify-items-center grid">
+            <Warning>
+              <Trans>You must log in to create a persistent flowchart.</Trans>{" "}
+              <Link className="underline" to="/l">
+                <Trans>Log In</Trans>
+              </Link>
+            </Warning>
+          </div>
+        )}
         <div className="grid gap-3 w-full">
           <SmallLabel>
             <Trans>Getting Started</Trans>
@@ -265,23 +282,6 @@ const New = memo(function New({
           </RadioGroup.Root>
           {start === "prompt" && <PromptSubmenu />}
         </div>
-        {tryingToCreateRegular && (
-          <div className="justify-items-center grid">
-            <Warning>
-              <Trans>You must log in to create a persistent flowchart.</Trans>{" "}
-              <Link className="underline" to="/l">
-                <Trans>Log In</Trans>
-              </Link>
-            </Warning>
-          </div>
-        )}
-        {alreadyUsedName && (
-          <div className="justify-items-center grid">
-            <Warning>
-              <Trans>You already have a flowchart with this name.</Trans>
-            </Warning>
-          </div>
-        )}
         <button
           type="submit"
           className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-4 mb-8"
@@ -343,15 +343,10 @@ function SmallTypeToggle({
  * A *note* label that tells the user what they're chart will be named
  */
 function NameLabel({ name, hide }: { name: string; hide?: boolean }) {
-  if (hide)
-    return (
-      <span className="text-neutral-400 font-bold italic text-xs mt-[-6px]">
-        &nbsp;
-      </span>
-    );
+  if (hide) return null;
   return (
     <div className="text-neutral-400 text-xs flex items-center justify-start mt-[-6px]">
-      <span className="font-bold italic">{name}</span>
+      <span className="font-bold italic">/{name}</span>
     </div>
   );
 }

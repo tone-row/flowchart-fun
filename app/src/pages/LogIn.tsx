@@ -89,13 +89,13 @@ export default function Login() {
             )}
           </BlueButton>
           {isError(error) && <Warning>{error.message}</Warning>}
-          <span className="text-xs mt-3">
+          <span className="text-sm mt-3">
             {t`Don't have an account?`}
             <Link
               to="/pricing"
               className="text-blue-500 hover:underline focus:underline ml-1"
             >
-              <Trans>Sign Up</Trans>
+              <Trans>Sign Up for $3 / Month</Trans>
             </Link>
           </span>
         </form>
