@@ -101,7 +101,7 @@ export default function Pricing() {
         </div>
       </div>
       <div className="pb-10">
-        <div className="grid md:gap-8 md:grid-cols-2 max-w-[878px] mx-auto w-full px-4">
+        <div className="grid gap-4 md:gap-8 md:grid-cols-2 max-w-[878px] mx-auto w-full px-4">
           {features().map((props) => (
             <Feature key={props.title} {...props} />
           ))}

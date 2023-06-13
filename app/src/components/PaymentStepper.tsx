@@ -199,7 +199,7 @@ function PlanButton({
   return (
     <button
       {...props}
-      className="border w-[260px] border-solid p-4 py-12 grid gap-2 rounded-lg content-start border-b-4 border-neutral-700 dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-600 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 hover:shadow-lg dark:hover:shadow-none hover:shadow-blue-200 dark:hover:shadow-neutral-800/50 aria-[current=true]:hover:shadow-none"
+      className="border w-[260px] border-solid p-4 py-12 grid gap-2 rounded-lg content-start border-b-4 border-neutral-700 dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-500 aria-[current=true]:bg-blue-50/50 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 hover:shadow-lg dark:hover:shadow-none hover:shadow-neutral-100 dark:hover:shadow-neutral-800/50 aria-[current=true]:hover:shadow-none"
     >
       <h2 className={`text-xl font-bold`}>{title}</h2>
       <span className="text-xl">{price}</span>
@@ -335,7 +335,7 @@ function Description({
 }) {
   return (
     <p
-      className={`text-center text-neutral-600 dark:text-neutral-300 leading-normal ${className}`}
+      className={`text-center text-neutral-800 dark:text-neutral-100 leading-[1.6] ${className}`}
     >
       {children}
     </p>
