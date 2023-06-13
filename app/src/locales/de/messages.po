@@ -49,7 +49,7 @@ msgstr "Über"
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "Greifen Sie von überall aus auf diese Diagramme zu.<0/>Teilen und betten Sie Flussdiagramme ein, die synchron bleiben."
 
-#: src/pages/New.tsx:218
+#: src/pages/New.tsx:225
 msgid "Accessible from any device"
 msgstr "Von jedem Gerät aus zugänglich"
 
@@ -112,7 +112,7 @@ msgstr "Werden Sie ein Pro-Benutzer"
 msgid "Become a Sponsor"
 msgstr "Werden Sie zum Sponsoren"
 
-#: src/pages/New.tsx:254
+#: src/pages/New.tsx:271
 msgid "Blank"
 msgstr "Leer"
 
@@ -323,11 +323,11 @@ msgstr "Dunkelmodus"
 msgid "Date"
 msgstr "Datum"
 
-#: src/pages/New.tsx:233
+#: src/pages/New.tsx:240
 msgid "Deleted when browser data is cleared"
 msgstr "Wird gelöscht, wenn Browserdaten gelöscht werden"
 
-#: src/pages/New.tsx:412
+#: src/pages/New.tsx:407
 msgid "Describe the flowchart you wish to create"
 msgstr "Beschreiben Sie das Diagramm, das Sie erstellen möchten"
 
@@ -508,7 +508,7 @@ msgstr "In SVG exportieren"
 msgid "Extra Large"
 msgstr "Extra groß"
 
-#: src/pages/New.tsx:416
+#: src/pages/New.tsx:411
 msgid "Extract"
 msgstr "Extrakt"
 
@@ -553,7 +553,7 @@ msgstr "Weitere Themen erhalten"
 msgid "Get personalized attention and support from our expert team"
 msgstr "Erhalten Sie personalisierte Aufmerksamkeit und Unterstützung von unserem Experten-Team"
 
-#: src/pages/New.tsx:244
+#: src/pages/New.tsx:261
 msgid "Getting Started"
 msgstr "Erste Schritte"
 
@@ -654,7 +654,7 @@ msgstr "Durch das Einrücken entsteht eine Kante"
 msgid "Info"
 msgstr "Info"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:406
 msgid "Instruct"
 msgstr "Anweisen"
 
@@ -726,7 +726,7 @@ msgstr "Laden"
 #: src/components/Header.tsx:202
 #: src/components/Header.tsx:422
 #: src/pages/LogIn.tsx:64
-#: src/pages/New.tsx:273
+#: src/pages/New.tsx:254
 msgid "Log In"
 msgstr "Anmelden"
 
@@ -758,7 +758,7 @@ msgstr "Daten abbilden"
 msgid "Medium"
 msgstr "Mittel"
 
-#: src/pages/New.tsx:401
+#: src/pages/New.tsx:396
 msgid "Method"
 msgstr "Methode"
 
@@ -872,7 +872,7 @@ msgstr "Öffnen Sie das Kundenportal"
 msgid "Organization Chart"
 msgstr "Organigramm"
 
-#: src/pages/New.tsx:417
+#: src/pages/New.tsx:412
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "Fügen Sie die Informationen ein, die Sie in ein Flussdiagramm umwandeln möchten"
 
@@ -888,7 +888,7 @@ msgstr "Permanente Diagramme sind eine Pro-Funktion"
 msgid "Permanent Flowcharts"
 msgstr "Permanente Flussdiagramme"
 
-#: src/pages/New.tsx:201
+#: src/pages/New.tsx:208
 msgid "Persistent"
 msgstr "Beständig"
 
@@ -913,7 +913,7 @@ msgstr "Preisgestaltung"
 msgid "Processing Data"
 msgstr "Datenverarbeitung"
 
-#: src/pages/New.tsx:259
+#: src/pages/New.tsx:276
 msgid "Prompt"
 msgstr "Aufforderung"
 
@@ -1054,9 +1054,12 @@ msgstr "Form"
 
 #: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
-#: src/pages/LogIn.tsx:98
 msgid "Sign Up"
 msgstr "Registrieren"
+
+#: src/pages/LogIn.tsx:98
+msgid "Sign Up Now"
+msgstr "Jetzt registrieren"
 
 #: src/components/GraphContextMenu.tsx:435
 msgid "Size"
@@ -1115,11 +1118,11 @@ msgstr "Status"
 msgid "Store any data associated to a node"
 msgstr "Speichern Sie alle Daten, die einem Knoten zugeordnet sind"
 
-#: src/pages/New.tsx:210
+#: src/pages/New.tsx:217
 msgid "Stored in the cloud"
 msgstr "In der Cloud gespeichert"
 
-#: src/pages/New.tsx:230
+#: src/pages/New.tsx:237
 msgid "Stored on this computer"
 msgstr "Auf diesem Computer gespeichert"
 
@@ -1162,7 +1165,7 @@ msgstr "Ziel-Spalte"
 msgid "Target Delimiter"
 msgstr "Ziel-Trennzeichen"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:233
 msgid "Temporary"
 msgstr "Temporäres"
 
@@ -1276,7 +1279,7 @@ msgstr "Zwei Kanten haben die gleiche ID"
 msgid "Two nodes have the same ID"
 msgstr "Zwei Knoten haben die gleiche ID"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:194
 msgid "Type"
 msgstr "Typ"
 
@@ -1365,7 +1368,7 @@ msgstr "Möchten Sie fortfahren?"
 msgid "Yearly"
 msgstr "Jährlich"
 
-#: src/pages/New.tsx:281
+#: src/pages/New.tsx:188
 msgid "You already have a flowchart with this name."
 msgstr "Sie haben bereits ein Diagramm mit diesem Namen."
 
@@ -1377,7 +1380,7 @@ msgstr "Sie sind dabei, {numNodes} Knoten und {numEdges} Kanten zu Ihrem Graphen
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "Sie können Text auch in \"\\( \\)\" umbrechen, um eine Kante zu erstellen"
 
-#: src/pages/New.tsx:271
+#: src/pages/New.tsx:252
 msgid "You must log in to create a persistent flowchart."
 msgstr "Sie müssen sich anmelden, um einen beständigen Flussdiagramm zu erstellen."
 

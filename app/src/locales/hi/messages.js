@@ -300,6 +300,7 @@
     Settings: "सेटिंग",
     Shape: "आकृति",
     "Sign Up": "साइन अप",
+    "Sign Up Now": "अभी साइन अप करें",
     Size: "आकार",
     Small: "छोटा",
     "Some classes are available to help style your flowchart":

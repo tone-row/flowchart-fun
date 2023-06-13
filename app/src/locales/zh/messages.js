@@ -290,6 +290,7 @@
     Settings: "设置",
     Shape: "形状",
     "Sign Up": "注册",
+    "Sign Up Now": "现在注册",
     Size: "尺寸",
     Small: "小",
     "Some classes are available to help style your flowchart":

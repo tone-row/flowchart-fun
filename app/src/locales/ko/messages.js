@@ -294,6 +294,7 @@
     Settings: "설정",
     Shape: "모양 ",
     "Sign Up": "가입",
+    "Sign Up Now": "지금 가입하세요",
     Size: "크기",
     Small: "작은",
     "Some classes are available to help style your flowchart":

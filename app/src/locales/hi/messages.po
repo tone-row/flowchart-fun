@@ -49,7 +49,7 @@ msgstr "के बारे में"
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "इन चार्ट्स को कहीं से भी एक्सेस करें।<0/>सिंक्रोनाइज़्ड रहने वाले फ्लोचार्ट को साझा करें और एम्बेड करें।"
 
-#: src/pages/New.tsx:218
+#: src/pages/New.tsx:225
 msgid "Accessible from any device"
 msgstr "किसी भी उपकरण से पहुँचा जा सकता है"
 
@@ -112,7 +112,7 @@ msgstr "प्रो उपयोगकर्ता बनें"
 msgid "Become a Sponsor"
 msgstr "एक प्रायोजक बनें"
 
-#: src/pages/New.tsx:254
+#: src/pages/New.tsx:271
 msgid "Blank"
 msgstr "खाली"
 
@@ -323,11 +323,11 @@ msgstr "डार्क मोड"
 msgid "Date"
 msgstr "तारीख़"
 
-#: src/pages/New.tsx:233
+#: src/pages/New.tsx:240
 msgid "Deleted when browser data is cleared"
 msgstr "ब्राउज़र डेटा साफ़ होने पर हटा दिया गया"
 
-#: src/pages/New.tsx:412
+#: src/pages/New.tsx:407
 msgid "Describe the flowchart you wish to create"
 msgstr "उस आरेख का वर्णन करें जिसे आप बनाना चाहते हैं"
 
@@ -508,7 +508,7 @@ msgstr "SVG को निर्यात करें"
 msgid "Extra Large"
 msgstr "अति बड़ा"
 
-#: src/pages/New.tsx:416
+#: src/pages/New.tsx:411
 msgid "Extract"
 msgstr "निकालना"
 
@@ -553,7 +553,7 @@ msgstr "ज़्यादा थीम पाएं"
 msgid "Get personalized attention and support from our expert team"
 msgstr "हमारे विशेषज्ञ टीम से व्यक्तिगत ध्यान और समर्थन प्राप्त करें"
 
-#: src/pages/New.tsx:244
+#: src/pages/New.tsx:261
 msgid "Getting Started"
 msgstr "शुरू करना"
 
@@ -654,7 +654,7 @@ msgstr "इंडेंटिंग एक बढ़त बनाता है"
 msgid "Info"
 msgstr "जानकारी"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:406
 msgid "Instruct"
 msgstr "हिदायत"
 
@@ -726,7 +726,7 @@ msgstr "लोड हो रहा है"
 #: src/components/Header.tsx:202
 #: src/components/Header.tsx:422
 #: src/pages/LogIn.tsx:64
-#: src/pages/New.tsx:273
+#: src/pages/New.tsx:254
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -758,7 +758,7 @@ msgstr "डेटा मैप"
 msgid "Medium"
 msgstr "मध्यम"
 
-#: src/pages/New.tsx:401
+#: src/pages/New.tsx:396
 msgid "Method"
 msgstr "विधि"
 
@@ -872,7 +872,7 @@ msgstr "ग्राहक पोर्टल खोलें"
 msgid "Organization Chart"
 msgstr "संगठन चार्ट"
 
-#: src/pages/New.tsx:417
+#: src/pages/New.tsx:412
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "उस जानकारी को पेस्ट करें जिसे आप फ़्लोचार्ट में बदलना चाहते हैं"
 
@@ -888,7 +888,7 @@ msgstr "स्थायी चार्ट एक प्रो सुविध�
 msgid "Permanent Flowcharts"
 msgstr "लगातार चार्ट"
 
-#: src/pages/New.tsx:201
+#: src/pages/New.tsx:208
 msgid "Persistent"
 msgstr "अविरल"
 
@@ -913,7 +913,7 @@ msgstr "मूल्य निर्धारण"
 msgid "Processing Data"
 msgstr "डेटा प्रसंस्करण"
 
-#: src/pages/New.tsx:259
+#: src/pages/New.tsx:276
 msgid "Prompt"
 msgstr "प्रॉम्प्ट"
 
@@ -1054,9 +1054,12 @@ msgstr "आकृति"
 
 #: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
-#: src/pages/LogIn.tsx:98
 msgid "Sign Up"
 msgstr "साइन अप"
+
+#: src/pages/LogIn.tsx:98
+msgid "Sign Up Now"
+msgstr "अभी साइन अप करें"
 
 #: src/components/GraphContextMenu.tsx:435
 msgid "Size"
@@ -1115,11 +1118,11 @@ msgstr "स्टेटस"
 msgid "Store any data associated to a node"
 msgstr "किसी नोड से संबंधित किसी भी डेटा स्टोर करें"
 
-#: src/pages/New.tsx:210
+#: src/pages/New.tsx:217
 msgid "Stored in the cloud"
 msgstr "बादल में संग्रहित"
 
-#: src/pages/New.tsx:230
+#: src/pages/New.tsx:237
 msgid "Stored on this computer"
 msgstr "इस कंप्यूटर पर संग्रहीत"
 
@@ -1162,7 +1165,7 @@ msgstr "लक्ष्य कॉलम"
 msgid "Target Delimiter"
 msgstr "लक्ष्य डेलीमीटर"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:233
 msgid "Temporary"
 msgstr "अस्थायी"
 
@@ -1276,7 +1279,7 @@ msgstr "दो किनारे उसी आईडी के हैं"
 msgid "Two nodes have the same ID"
 msgstr "दो नोड उसी आईडी के हैं"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:194
 msgid "Type"
 msgstr "प्रकार"
 
@@ -1365,7 +1368,7 @@ msgstr "क्या आप जारी रखना चाहते हैं?
 msgid "Yearly"
 msgstr "वार्षिक"
 
-#: src/pages/New.tsx:281
+#: src/pages/New.tsx:188
 msgid "You already have a flowchart with this name."
 msgstr "आपके पास इस नाम का आरेख पहले से है।"
 
@@ -1377,7 +1380,7 @@ msgstr "आप अपने ग्राफ में {numNodes} नोड्स
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "किनारे बनाने के लिए आप टेक्स्ट को \"\\( \\)\" में भी रैप कर सकते हैं"
 
-#: src/pages/New.tsx:271
+#: src/pages/New.tsx:252
 msgid "You must log in to create a persistent flowchart."
 msgstr "आपको एक अविरल फ्लोचार्ट बनाने के लिए लॉग इन करना होगा।"
 

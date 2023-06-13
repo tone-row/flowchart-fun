@@ -49,7 +49,7 @@ msgstr "关于"
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "从任何地方访问这些图表。<0/>共享并嵌入保持同步的流程图。"
 
-#: src/pages/New.tsx:218
+#: src/pages/New.tsx:225
 msgid "Accessible from any device"
 msgstr "可从任何设备访问"
 
@@ -112,7 +112,7 @@ msgstr "成为专业用户"
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
-#: src/pages/New.tsx:254
+#: src/pages/New.tsx:271
 msgid "Blank"
 msgstr "空白"
 
@@ -323,11 +323,11 @@ msgstr "深色模式"
 msgid "Date"
 msgstr "日期"
 
-#: src/pages/New.tsx:233
+#: src/pages/New.tsx:240
 msgid "Deleted when browser data is cleared"
 msgstr "清除浏览器数据时删除"
 
-#: src/pages/New.tsx:412
+#: src/pages/New.tsx:407
 msgid "Describe the flowchart you wish to create"
 msgstr "描述您要创建的图表"
 
@@ -508,7 +508,7 @@ msgstr "导出为SVG"
 msgid "Extra Large"
 msgstr "超大"
 
-#: src/pages/New.tsx:416
+#: src/pages/New.tsx:411
 msgid "Extract"
 msgstr "提取"
 
@@ -553,7 +553,7 @@ msgstr "获取更多主题"
 msgid "Get personalized attention and support from our expert team"
 msgstr "从我们的专家团队获得个性化的关注和支持"
 
-#: src/pages/New.tsx:244
+#: src/pages/New.tsx:261
 msgid "Getting Started"
 msgstr "开始"
 
@@ -654,7 +654,7 @@ msgstr "缩进创建链接"
 msgid "Info"
 msgstr "信息"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:406
 msgid "Instruct"
 msgstr "指导"
 
@@ -726,7 +726,7 @@ msgstr "正在載入"
 #: src/components/Header.tsx:202
 #: src/components/Header.tsx:422
 #: src/pages/LogIn.tsx:64
-#: src/pages/New.tsx:273
+#: src/pages/New.tsx:254
 msgid "Log In"
 msgstr "登录"
 
@@ -758,7 +758,7 @@ msgstr "對應資料"
 msgid "Medium"
 msgstr "中等"
 
-#: src/pages/New.tsx:401
+#: src/pages/New.tsx:396
 msgid "Method"
 msgstr "方法"
 
@@ -872,7 +872,7 @@ msgstr "打开客户门户"
 msgid "Organization Chart"
 msgstr "组织结构图"
 
-#: src/pages/New.tsx:417
+#: src/pages/New.tsx:412
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "将要转换的信息粘贴到流程图中"
 
@@ -888,7 +888,7 @@ msgstr "永久图表是专业功能"
 msgid "Permanent Flowcharts"
 msgstr "永久流程图"
 
-#: src/pages/New.tsx:201
+#: src/pages/New.tsx:208
 msgid "Persistent"
 msgstr "坚持不懈"
 
@@ -913,7 +913,7 @@ msgstr "价钱"
 msgid "Processing Data"
 msgstr "处理数据"
 
-#: src/pages/New.tsx:259
+#: src/pages/New.tsx:276
 msgid "Prompt"
 msgstr "提示"
 
@@ -1054,9 +1054,12 @@ msgstr "形状"
 
 #: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
-#: src/pages/LogIn.tsx:98
 msgid "Sign Up"
 msgstr "注册"
+
+#: src/pages/LogIn.tsx:98
+msgid "Sign Up Now"
+msgstr "现在注册"
 
 #: src/components/GraphContextMenu.tsx:435
 msgid "Size"
@@ -1115,11 +1118,11 @@ msgstr "状态"
 msgid "Store any data associated to a node"
 msgstr "將任何與節點相關的資料儲存"
 
-#: src/pages/New.tsx:210
+#: src/pages/New.tsx:217
 msgid "Stored in the cloud"
 msgstr "存储在云端"
 
-#: src/pages/New.tsx:230
+#: src/pages/New.tsx:237
 msgid "Stored on this computer"
 msgstr "保存在这台电脑上"
 
@@ -1162,7 +1165,7 @@ msgstr "目標欄"
 msgid "Target Delimiter"
 msgstr "目標分隔符"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:233
 msgid "Temporary"
 msgstr "临时"
 
@@ -1276,7 +1279,7 @@ msgstr "两个边有相同的ID"
 msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:194
 msgid "Type"
 msgstr "类型"
 
@@ -1365,7 +1368,7 @@ msgstr "您想继续吗？"
 msgid "Yearly"
 msgstr "每年"
 
-#: src/pages/New.tsx:281
+#: src/pages/New.tsx:188
 msgid "You already have a flowchart with this name."
 msgstr "您已有同名的图表。"
 
@@ -1377,7 +1380,7 @@ msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "您还可以将文本包装在\\n“\\( \\)”中以创建链接"
 
-#: src/pages/New.tsx:271
+#: src/pages/New.tsx:252
 msgid "You must log in to create a persistent flowchart."
 msgstr "您必须登录才能创建一个持久的流程图。"
 

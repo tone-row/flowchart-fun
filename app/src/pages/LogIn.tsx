@@ -95,7 +95,7 @@ export default function Login() {
               to="/pricing"
               className="text-blue-500 hover:underline focus:underline ml-1"
             >
-              <Trans>Sign Up for $3 / Month</Trans>
+              <Trans>Sign Up Now</Trans>
             </Link>
           </span>
         </form>

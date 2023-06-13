@@ -300,6 +300,7 @@
     Settings: "Settings",
     Shape: "Shape",
     "Sign Up": "Sign Up",
+    "Sign Up Now": "Sign Up Now",
     Size: "Size",
     Small: "Small",
     "Some classes are available to help style your flowchart":

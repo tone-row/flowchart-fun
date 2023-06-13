@@ -304,6 +304,7 @@
     Settings: "Paramètres",
     Shape: "Forme",
     "Sign Up": "Inscription",
+    "Sign Up Now": "Inscrivez-vous maintenant",
     Size: "Taille",
     Small: "Petit",
     "Some classes are available to help style your flowchart":

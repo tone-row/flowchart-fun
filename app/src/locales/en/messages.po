@@ -49,7 +49,7 @@ msgstr "About"
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 
-#: src/pages/New.tsx:218
+#: src/pages/New.tsx:225
 msgid "Accessible from any device"
 msgstr "Accessible from any device"
 
@@ -112,7 +112,7 @@ msgstr "Become a Pro User"
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
-#: src/pages/New.tsx:254
+#: src/pages/New.tsx:271
 msgid "Blank"
 msgstr "Blank"
 
@@ -323,11 +323,11 @@ msgstr "Dark Mode"
 msgid "Date"
 msgstr "Date"
 
-#: src/pages/New.tsx:233
+#: src/pages/New.tsx:240
 msgid "Deleted when browser data is cleared"
 msgstr "Deleted when browser data is cleared"
 
-#: src/pages/New.tsx:412
+#: src/pages/New.tsx:407
 msgid "Describe the flowchart you wish to create"
 msgstr "Describe the flowchart you wish to create"
 
@@ -508,7 +508,7 @@ msgstr "Export to SVG"
 msgid "Extra Large"
 msgstr "Extra Large"
 
-#: src/pages/New.tsx:416
+#: src/pages/New.tsx:411
 msgid "Extract"
 msgstr "Extract"
 
@@ -553,7 +553,7 @@ msgstr "Get More Themes"
 msgid "Get personalized attention and support from our expert team"
 msgstr "Get personalized attention and support from our expert team"
 
-#: src/pages/New.tsx:244
+#: src/pages/New.tsx:261
 msgid "Getting Started"
 msgstr "Getting Started"
 
@@ -654,7 +654,7 @@ msgstr "Indenting creates an edge"
 msgid "Info"
 msgstr "Info"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:406
 msgid "Instruct"
 msgstr "Instruct"
 
@@ -726,7 +726,7 @@ msgstr "Loading"
 #: src/components/Header.tsx:202
 #: src/components/Header.tsx:422
 #: src/pages/LogIn.tsx:64
-#: src/pages/New.tsx:273
+#: src/pages/New.tsx:254
 msgid "Log In"
 msgstr "Log In"
 
@@ -758,7 +758,7 @@ msgstr "Map Data"
 msgid "Medium"
 msgstr "Medium"
 
-#: src/pages/New.tsx:401
+#: src/pages/New.tsx:396
 msgid "Method"
 msgstr "Method"
 
@@ -872,7 +872,7 @@ msgstr "Open Customer Portal"
 msgid "Organization Chart"
 msgstr "Organization Chart"
 
-#: src/pages/New.tsx:417
+#: src/pages/New.tsx:412
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "Paste the information you wish to convert to a flowchart"
 
@@ -888,7 +888,7 @@ msgstr "Permanent Charts are a Pro Feature"
 msgid "Permanent Flowcharts"
 msgstr "Permanent Flowcharts"
 
-#: src/pages/New.tsx:201
+#: src/pages/New.tsx:208
 msgid "Persistent"
 msgstr "Persistent"
 
@@ -913,7 +913,7 @@ msgstr "Pricing"
 msgid "Processing Data"
 msgstr "Processing Data"
 
-#: src/pages/New.tsx:259
+#: src/pages/New.tsx:276
 msgid "Prompt"
 msgstr "Prompt"
 
@@ -1054,9 +1054,12 @@ msgstr "Shape"
 
 #: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
-#: src/pages/LogIn.tsx:98
 msgid "Sign Up"
 msgstr "Sign Up"
+
+#: src/pages/LogIn.tsx:98
+msgid "Sign Up Now"
+msgstr "Sign Up Now"
 
 #: src/components/GraphContextMenu.tsx:435
 msgid "Size"
@@ -1115,11 +1118,11 @@ msgstr "Status"
 msgid "Store any data associated to a node"
 msgstr "Store any data associated to a node"
 
-#: src/pages/New.tsx:210
+#: src/pages/New.tsx:217
 msgid "Stored in the cloud"
 msgstr "Stored in the cloud"
 
-#: src/pages/New.tsx:230
+#: src/pages/New.tsx:237
 msgid "Stored on this computer"
 msgstr "Stored on this computer"
 
@@ -1162,7 +1165,7 @@ msgstr "Target Column"
 msgid "Target Delimiter"
 msgstr "Target Delimiter"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:233
 msgid "Temporary"
 msgstr "Temporary"
 
@@ -1276,7 +1279,7 @@ msgstr "Two edges have the same ID"
 msgid "Two nodes have the same ID"
 msgstr "Two nodes have the same ID"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:194
 msgid "Type"
 msgstr "Type"
 
@@ -1365,7 +1368,7 @@ msgstr "Would you like to continue?"
 msgid "Yearly"
 msgstr "Yearly"
 
-#: src/pages/New.tsx:281
+#: src/pages/New.tsx:188
 msgid "You already have a flowchart with this name."
 msgstr "You already have a flowchart with this name."
 
@@ -1377,7 +1380,7 @@ msgstr "You are about to add {numNodes} nodes and {numEdges} edges to your graph
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "You can also wrap text in \"\\( \\)\" to create an edge"
 
-#: src/pages/New.tsx:271
+#: src/pages/New.tsx:252
 msgid "You must log in to create a persistent flowchart."
 msgstr "You must log in to create a persistent flowchart."
 

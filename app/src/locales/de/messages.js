@@ -303,6 +303,7 @@
     Settings: "Einstellungen",
     Shape: "Form",
     "Sign Up": "Registrieren",
+    "Sign Up Now": "Jetzt registrieren",
     Size: "Größe",
     Small: "Klein",
     "Some classes are available to help style your flowchart":
