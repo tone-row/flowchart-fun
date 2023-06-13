@@ -159,6 +159,7 @@
     "Get More Themes": "Obtenha mais temas",
     "Get personalized attention and support from our expert team":
       "Receba atenção e suporte personalizado de nossa equipe especializada",
+    "Getting Started": "Começando",
     Graph: "Diagrama",
     Grid: "Grade",
     "Have complex questions or issues? We're here to help.":
@@ -256,6 +257,7 @@
     "Permanent Charts are a Pro Feature":
       "Gráficos permanentes são um recurso Pro",
     "Permanent Flowcharts": "Fluxogramas Permanentes",
+    Persistent: "Persistente",
     "Persistent Flowcharts": "Diagramas Persistentes",
     Playbook: "Cartilha",
     "Pointer and container on same line": "Ponteiro e contêiner na mesma linha",
@@ -300,6 +302,7 @@
     Settings: "Configurações",
     Shape: "Forma",
     "Sign Up": "Inscreva-se",
+    "Sign Up Now": "Cadastre-se agora",
     Size: "Tamanho",
     Small: "Pequeno",
     "Some classes are available to help style your flowchart":
@@ -312,7 +315,6 @@
     "Source/Target Arrow Shape": "Forma da Seta de Origem/Destino",
     Spacing: "Espaçamento",
     "Special Attributes": "Atributos Especiais",
-    Standard: "Padrão",
     Start: "Início",
     "Start Over": "Recomeçar",
     Status: "Status",
@@ -417,8 +419,8 @@
       ],
     'You can also wrap text in "\\( \\)" to create an edge':
       'Você também pode quebrar o texto dentro de "\\( \\)" para criar um link',
-    "You must log in to create a standard flowchart.":
-      "Você deve efetuar login para criar um diagrama padrão.",
+    "You must log in to create a persistent flowchart.":
+      "Você deve fazer login para criar um fluxograma persistente.",
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "Você está quase lá! Apenas mais um passo para destravar o potencial total do <0>Flowchart Fun Pro</0>. Insira os detalhes do pagamento abaixo para completar sua assinatura e começar a criar fluxogramas incríveis hoje.",
     "Your Charts": "Seus Gráficos",

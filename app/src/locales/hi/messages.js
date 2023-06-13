@@ -158,6 +158,7 @@
     "Get More Themes": "ज़्यादा थीम पाएं",
     "Get personalized attention and support from our expert team":
       "हमारे विशेषज्ञ टीम से व्यक्तिगत ध्यान और समर्थन प्राप्त करें",
+    "Getting Started": "शुरू करना",
     Graph: "ग्राफ़",
     Grid: "ग्रिड",
     "Have complex questions or issues? We're here to help.":
@@ -254,6 +255,7 @@
     Permalinks: "Permalinks",
     "Permanent Charts are a Pro Feature": "स्थायी चार्ट एक प्रो सुविधा हैं",
     "Permanent Flowcharts": "लगातार चार्ट",
+    Persistent: "अविरल",
     "Persistent Flowcharts": "लगातार आरेख",
     Playbook: "प्लेबुक",
     "Pointer and container on same line": "प्रतीक और कंटेनर एक ही लाइन पर",
@@ -298,6 +300,7 @@
     Settings: "सेटिंग",
     Shape: "आकृति",
     "Sign Up": "साइन अप",
+    "Sign Up Now": "अभी साइन अप करें",
     Size: "आकार",
     Small: "छोटा",
     "Some classes are available to help style your flowchart":
@@ -310,7 +313,6 @@
     "Source/Target Arrow Shape": "स्रोत / लक्ष्य तीर आकार",
     Spacing: "अंतर",
     "Special Attributes": "विशेष गुण",
-    Standard: "मानक",
     Start: "शुरू",
     "Start Over": "शुरू करें",
     Status: "स्टेटस",
@@ -416,8 +418,8 @@
       ],
     'You can also wrap text in "\\( \\)" to create an edge':
       'किनारे बनाने के लिए आप टेक्स्ट को "\\( \\)" में भी रैप कर सकते हैं',
-    "You must log in to create a standard flowchart.":
-      "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।",
+    "You must log in to create a persistent flowchart.":
+      "आपको एक अविरल फ्लोचार्ट बनाने के लिए लॉग इन करना होगा।",
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "आप बस एक ही कदम दूर हैं! <0>Flowchart Fun Pro</0> की पूरी प्रत्याशित क्षमता को अनलॉक करने के लिए नीचे अपने भुगतान विवरण दर्ज करें और आज ही अद्भुत फ्लोचार्ट बनाने शुरू करें।",
     "Your Charts": "आपके चार्ट",

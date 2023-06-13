@@ -116,7 +116,7 @@ test.describe("Authenticated Tasks", () => {
     await page.getByPlaceholder("Untitled").fill("my new chart");
     await page
       .getByRole("radio", {
-        name: "Standard Stored in the cloud Accessible from any device",
+        name: "Persistent Stored in the cloud Accessible from any device",
       })
       .click();
 

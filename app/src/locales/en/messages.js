@@ -158,6 +158,7 @@
     "Get More Themes": "Get More Themes",
     "Get personalized attention and support from our expert team":
       "Get personalized attention and support from our expert team",
+    "Getting Started": "Getting Started",
     Graph: "Graph",
     Grid: "Grid",
     "Have complex questions or issues? We're here to help.":
@@ -254,6 +255,7 @@
     Permalinks: "Permalinks",
     "Permanent Charts are a Pro Feature": "Permanent Charts are a Pro Feature",
     "Permanent Flowcharts": "Permanent Flowcharts",
+    Persistent: "Persistent",
     "Persistent Flowcharts": "Persistent Flowcharts",
     Playbook: "Playbook",
     "Pointer and container on same line": "Pointer and container on same line",
@@ -298,6 +300,7 @@
     Settings: "Settings",
     Shape: "Shape",
     "Sign Up": "Sign Up",
+    "Sign Up Now": "Sign Up Now",
     Size: "Size",
     Small: "Small",
     "Some classes are available to help style your flowchart":
@@ -310,7 +313,6 @@
     "Source/Target Arrow Shape": "Source/Target Arrow Shape",
     Spacing: "Spacing",
     "Special Attributes": "Special Attributes",
-    Standard: "Standard",
     Start: "Start",
     "Start Over": "Start Over",
     Status: "Status",
@@ -415,8 +417,8 @@
       ],
     'You can also wrap text in "\\( \\)" to create an edge':
       'You can also wrap text in "\\( \\)" to create an edge',
-    "You must log in to create a standard flowchart.":
-      "You must log in to create a standard flowchart.",
+    "You must log in to create a persistent flowchart.":
+      "You must log in to create a persistent flowchart.",
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.",
     "Your Charts": "Your Charts",

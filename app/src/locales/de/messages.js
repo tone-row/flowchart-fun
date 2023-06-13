@@ -159,6 +159,7 @@
     "Get More Themes": "Weitere Themen erhalten",
     "Get personalized attention and support from our expert team":
       "Erhalten Sie personalisierte Aufmerksamkeit und Unterstützung von unserem Experten-Team",
+    "Getting Started": "Erste Schritte",
     Graph: "Diagramm",
     Grid: "Raster",
     "Have complex questions or issues? We're here to help.":
@@ -256,6 +257,7 @@
     "Permanent Charts are a Pro Feature":
       "Permanente Diagramme sind eine Pro-Funktion",
     "Permanent Flowcharts": "Permanente Flussdiagramme",
+    Persistent: "Beständig",
     "Persistent Flowcharts": "Beständige Diagramme",
     Playbook: "Spielbuch",
     "Pointer and container on same line":
@@ -301,6 +303,7 @@
     Settings: "Einstellungen",
     Shape: "Form",
     "Sign Up": "Registrieren",
+    "Sign Up Now": "Jetzt registrieren",
     Size: "Größe",
     Small: "Klein",
     "Some classes are available to help style your flowchart":
@@ -313,7 +316,6 @@
     "Source/Target Arrow Shape": "Quelle/Ziel-Pfeilform",
     Spacing: "Abstand",
     "Special Attributes": "Spezielle Attribute",
-    Standard: "Standard",
     Start: "Start",
     "Start Over": "Von vorne anfangen",
     Status: "Status",
@@ -420,8 +422,8 @@
       ],
     'You can also wrap text in "\\( \\)" to create an edge':
       'Sie können Text auch in "\\( \\)" umbrechen, um eine Kante zu erstellen',
-    "You must log in to create a standard flowchart.":
-      "Sie müssen sich anmelden, um ein Standarddiagramm zu erstellen.",
+    "You must log in to create a persistent flowchart.":
+      "Sie müssen sich anmelden, um einen beständigen Flussdiagramm zu erstellen.",
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "Du bist fast da! Nur noch ein Schritt, um das volle Potenzial von <0>Flowchart Fun Pro</0> freizuschalten. Gib deine Zahlungsdetails unten ein, um dein Abonnement abzuschließen und heute mit dem Erstellen beeindruckender Flussdiagramme zu beginnen.",
     "Your Charts": "Ihre Diagramme",
