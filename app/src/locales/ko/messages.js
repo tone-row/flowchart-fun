@@ -31,6 +31,8 @@
     "Become a Github Sponsor": "깃허브 스폰서가 되기",
     "Become a Pro User": "프로 사용자가 되기",
     "Become a Sponsor": "스폰서 되기",
+    "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
+      "<0>Flowchart Fun</0>이 어떻게 작동하는지를 보여주는 간단한 예제로 시작하세요.",
     Blank: "빈칸",
     Blog: "블로그",
     Border: "경계",
@@ -135,6 +137,8 @@
     Empty: "비어 있음",
     "Enter your email": "이메일을 입력하세요",
     "Equal To": "같음",
+    "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages":
+      "에세이 작성 과정 플로차트는 학생들을 초기 아이디어 생성, 개념 정리, 작성, 수정 단계를 거쳐 이끌어줍니다.",
     "Everything in Free": "무료 플랜의 모든 것",
     Excalidraw: "Excalidraw",
     Export: "내보내기",
@@ -215,6 +219,8 @@
     "Make sure you use the same email you will use to log in.":
       "로그인할 때 사용할 같은 이메일을 사용하세요.",
     "Map Data": "데이터 지도",
+    "Market understanding and competitive landscape maintenance for SaaS product development":
+      "SaaS 제품 개발에 대한 시장 이해 및 경쟁 경제동화 유지",
     Medium: "중간",
     Method: "방법",
     Monospace: "Monospace",
@@ -256,6 +262,8 @@
     Playbook: "플레이북",
     "Pointer and container on same line": "같은 줄에 포인터와 컨테이너",
     Pricing: "가격",
+    "Process for corporate social responsibility initiatives development and implementation across company operations":
+      "기업 사회적 책임 사업 개발 및 회사 운영 전반에 걸쳐 구현 프로세스",
     "Processing Data": "데이터 처리",
     Prompt: "프롬프트",
     Public: "공용",
@@ -320,6 +328,8 @@
     Submit: "보내다",
     Subscription: "구독",
     "Subscription will end": "구독이 종료될 예정입니다.",
+    "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
+      "공급망 분석 및 최적화: 비용 감소, 효율 향상 및 이해관계자 협력",
     "Target Arrow": "타겟 화살표",
     "Target Column": "대상 열",
     "Target Delimiter": "대상 구분자",
@@ -374,6 +384,8 @@
     "Update Email": "이메일 업데이트",
     "Use AI to create flowcharts from data sets or algorithms":
       "데이터 집합 또는 알고리즘에서 플로우차트를 만들기 위해 AI를 사용하세요.",
+    "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
+      "AI를 사용하여 프롬프트에세이에서 플로차트를 생성합니다. <0>자세히 알아보기</0>",
     "Use classes to group nodes":
       "노드를 그룹화하기 위해 클래스를 사용하십시오.",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
@@ -390,6 +402,8 @@
       "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오.",
     User: "사용자",
     "View on Github": "Github에서 보기",
+    "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
+      "물은 지구의 표면에서 증발하여 공기로 올라가 비로 내려오고, 그 물은 강과 호수, 바다로 흐르고 다시 증발하여 공기로 돌아가 재생됩니다.",
     "We use cookies to keep you logged in.":
       "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다.",
     "We use magic links to log you in. Enter your email below to get started.":

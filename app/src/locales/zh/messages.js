@@ -31,6 +31,8 @@
     "Become a Github Sponsor": "成为Github赞助商",
     "Become a Pro User": "成为专业用户",
     "Become a Sponsor": "赞助我们",
+    "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
+      "以一个简单的例子开始来展示<0>流程图的乐趣</0>是如何工作的。",
     Blank: "空白",
     Blog: "博客",
     Border: "边框",
@@ -133,6 +135,8 @@
     Empty: "空",
     "Enter your email": "请输入您的电子邮件",
     "Equal To": "等于",
+    "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages":
+      "文章写作流程流程图，指导学生进行头脑风暴，大纲制定，起草和修改阶段",
     "Everything in Free": "免费计划中的一切",
     Excalidraw: "Excalidraw",
     Export: "导出",
@@ -211,6 +215,8 @@
     "Make sure you use the same email you will use to log in.":
       "確保您使用的是與登錄時相同的電子郵件。",
     "Map Data": "對應資料",
+    "Market understanding and competitive landscape maintenance for SaaS product development":
+      "为SaaS产品开发提供市场理解和竞争环境维护",
     Medium: "中等",
     Method: "方法",
     Monospace: "Monospace",
@@ -252,6 +258,8 @@
     Playbook: "剧本",
     "Pointer and container on same line": "同一行上的指针和容器",
     Pricing: "价钱",
+    "Process for corporate social responsibility initiatives development and implementation across company operations":
+      "公司社会责任倡议的发展和在公司业务中的实施过程",
     "Processing Data": "处理数据",
     Prompt: "提示",
     Public: "公开",
@@ -316,6 +324,8 @@
     Submit: "提交",
     Subscription: "订阅",
     "Subscription will end": "订阅即将到期",
+    "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
+      "供应链分析和优化：成本降低，效率提高和利益相关者协作",
     "Target Arrow": "目标箭头",
     "Target Column": "目標欄",
     "Target Delimiter": "目標分隔符",
@@ -366,6 +376,8 @@
     "Update Email": "更新电子邮件",
     "Use AI to create flowcharts from data sets or algorithms":
       "使用AI從數據集或算法創建流程圖",
+    "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
+      "使用AI从提示中生成流程图。<0>了解更多</0>",
     "Use classes to group nodes": "使用类来分组节点",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
       "使用属性<0>href</0>在节点上设置一个在新标签页中打开的链接。",
@@ -381,6 +393,8 @@
       "使用此文件进行顺序、流程和工作流程。",
     User: "用户",
     "View on Github": "在 Github 上查看",
+    "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
+      "水从地球表面蒸发，升入大气中，然后以降水形式回落。这些水然后流入河流，湖泊和海洋，在那里又蒸发，重新回到大气中循环。",
     "We use cookies to keep you logged in.":
       "我们使用 cookies 来让您保持登录状态。",
     "We use magic links to log you in. Enter your email below to get started.":
