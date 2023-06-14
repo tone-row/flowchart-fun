@@ -17,7 +17,7 @@ msgstr ""
 msgid "$3 / Month"
 msgstr "3 美元/月"
 
-#: src/components/PaymentStepper.tsx:83
+#: src/components/PaymentStepper.tsx:84
 msgid "$3 per month"
 msgstr "每月3美元"
 
@@ -25,7 +25,7 @@ msgstr "每月3美元"
 msgid "$30 / Year"
 msgstr "30 美元 / 年"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:92
 msgid "$30 per year"
 msgstr "每年30美元"
 
@@ -49,7 +49,7 @@ msgstr "关于"
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "从任何地方访问这些图表。<0/>共享并嵌入保持同步的流程图。"
 
-#: src/pages/New.tsx:218
+#: src/pages/New.tsx:234
 msgid "Accessible from any device"
 msgstr "可从任何设备访问"
 
@@ -59,7 +59,7 @@ msgstr "可从任何设备访问"
 msgid "Account"
 msgstr "帐户"
 
-#: src/components/PaymentStepper.tsx:165
+#: src/components/PaymentStepper.tsx:170
 msgid "Activate your account"
 msgstr "激活您的账户"
 
@@ -112,7 +112,11 @@ msgstr "成为专业用户"
 msgid "Become a Sponsor"
 msgstr "赞助我们"
 
-#: src/pages/New.tsx:254
+#: src/pages/New.tsx:319
+msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
+msgstr "以一个简单的例子开始来展示<0>流程图的乐趣</0>是如何工作的。"
+
+#: src/pages/New.tsx:282
 msgid "Blank"
 msgstr "空白"
 
@@ -178,7 +182,7 @@ msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "为边缘的源和目标选择各种箭头形状。形状包括三角形，三角形-T，圆形-三角形，三角形-十字，三角形-后曲线，V形，T形，正方形，圆形，菱形，雪花形，无。"
 
-#: src/components/PaymentStepper.tsx:75
+#: src/components/PaymentStepper.tsx:76
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "选择适合您的计划，开始使用Flowchart Fun Pro创建出色的流程图。"
 
@@ -253,8 +257,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 
 #: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:105
-#: src/components/PaymentStepper.tsx:151
+#: src/components/PaymentStepper.tsx:106
+#: src/components/PaymentStepper.tsx:154
 msgid "Continue"
 msgstr "继续"
 
@@ -281,7 +285,7 @@ msgstr "复制 SVG 代码"
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。"
 
-#: src/pages/New.tsx:293
+#: src/pages/New.tsx:305
 msgid "Create"
 msgstr "创建"
 
@@ -290,7 +294,7 @@ msgstr "创建"
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "使用 AI 根据提示创建图表"
 
-#: src/pages/New.tsx:168
+#: src/pages/New.tsx:177
 msgid "Create a New Flowchart"
 msgstr "创建新图表"
 
@@ -323,11 +327,11 @@ msgstr "深色模式"
 msgid "Date"
 msgstr "日期"
 
-#: src/pages/New.tsx:233
+#: src/pages/New.tsx:249
 msgid "Deleted when browser data is cleared"
 msgstr "清除浏览器数据时删除"
 
-#: src/pages/New.tsx:412
+#: src/pages/New.tsx:512
 msgid "Describe the flowchart you wish to create"
 msgstr "描述您要创建的图表"
 
@@ -472,13 +476,17 @@ msgstr "电子邮件"
 msgid "Empty"
 msgstr "空"
 
-#: src/components/PaymentStepper.tsx:124
+#: src/components/PaymentStepper.tsx:125
 msgid "Enter your email"
 msgstr "请输入您的电子邮件"
 
 #: src/components/ImportDataDialog.tsx:556
 msgid "Equal To"
 msgstr "等于"
+
+#: src/pages/New.tsx:437
+msgid "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
+msgstr "文章写作流程流程图，指导学生进行头脑风暴，大纲制定，起草和修改阶段"
 
 #: src/pages/Pricing.tsx:64
 msgid "Everything in Free"
@@ -508,7 +516,7 @@ msgstr "导出为SVG"
 msgid "Extra Large"
 msgstr "超大"
 
-#: src/pages/New.tsx:416
+#: src/pages/New.tsx:516
 msgid "Extract"
 msgstr "提取"
 
@@ -552,6 +560,10 @@ msgstr "获取更多主题"
 #: src/pages/Pricing.tsx:34
 msgid "Get personalized attention and support from our expert team"
 msgstr "从我们的专家团队获得个性化的关注和支持"
+
+#: src/pages/New.tsx:272
+msgid "Getting Started"
+msgstr "开始"
 
 #: src/components/MobileTabToggle.tsx:20
 msgid "Graph"
@@ -650,7 +662,7 @@ msgstr "缩进创建链接"
 msgid "Info"
 msgstr "信息"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:511
 msgid "Instruct"
 msgstr "指导"
 
@@ -698,7 +710,7 @@ msgstr "了解关于Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "从左到右"
 
-#: src/components/PaymentStepper.tsx:126
+#: src/components/PaymentStepper.tsx:127
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "让我们开始吧！在下面输入您的电子邮件地址，创建您的Flowchart Fun帐户，开始使用我们强大的功能。"
 
@@ -715,14 +727,14 @@ msgstr "浅色模式"
 msgid "Link"
 msgstr "链接"
 
-#: src/components/PaymentStepper.tsx:146
+#: src/components/PaymentStepper.tsx:149
 msgid "Loading"
 msgstr "正在載入"
 
 #: src/components/Header.tsx:202
 #: src/components/Header.tsx:422
 #: src/pages/LogIn.tsx:64
-#: src/pages/New.tsx:273
+#: src/pages/New.tsx:263
 msgid "Log In"
 msgstr "登录"
 
@@ -742,7 +754,7 @@ msgstr "进行一次性捐赠"
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
-#: src/components/PaymentStepper.tsx:129
+#: src/components/PaymentStepper.tsx:132
 msgid "Make sure you use the same email you will use to log in."
 msgstr "確保您使用的是與登錄時相同的電子郵件。"
 
@@ -750,11 +762,15 @@ msgstr "確保您使用的是與登錄時相同的電子郵件。"
 msgid "Map Data"
 msgstr "對應資料"
 
+#: src/pages/New.tsx:431
+msgid "Market understanding and competitive landscape maintenance for SaaS product development"
+msgstr "为SaaS产品开发提供市场理解和竞争环境维护"
+
 #: src/components/GraphContextMenu.tsx:258
 msgid "Medium"
 msgstr "中等"
 
-#: src/pages/New.tsx:401
+#: src/pages/New.tsx:500
 msgid "Method"
 msgstr "方法"
 
@@ -762,7 +778,7 @@ msgstr "方法"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:82
+#: src/components/PaymentStepper.tsx:83
 msgid "Monthly"
 msgstr "每月"
 
@@ -774,7 +790,7 @@ msgstr "同一行上的多个指针"
 msgid "Museum"
 msgstr "博物馆"
 
-#: src/pages/New.tsx:172
+#: src/pages/New.tsx:181
 msgid "Name"
 msgstr "姓名"
 
@@ -868,7 +884,7 @@ msgstr "打开客户门户"
 msgid "Organization Chart"
 msgstr "组织结构图"
 
-#: src/pages/New.tsx:417
+#: src/pages/New.tsx:517
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "将要转换的信息粘贴到流程图中"
 
@@ -883,6 +899,10 @@ msgstr "永久图表是专业功能"
 #: src/pages/Charts.tsx:107
 msgid "Permanent Flowcharts"
 msgstr "永久流程图"
+
+#: src/pages/New.tsx:217
+msgid "Persistent"
+msgstr "坚持不懈"
 
 #: src/pages/Pricing.tsx:65
 msgid "Persistent Flowcharts"
@@ -901,11 +921,15 @@ msgstr "同一行上的指针和容器"
 msgid "Pricing"
 msgstr "价钱"
 
+#: src/pages/New.tsx:433
+msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
+msgstr "公司社会责任倡议的发展和在公司业务中的实施过程"
+
 #: src/components/ImportDataDialog.tsx:265
 msgid "Processing Data"
 msgstr "处理数据"
 
-#: src/pages/New.tsx:259
+#: src/pages/New.tsx:287
 msgid "Prompt"
 msgstr "提示"
 
@@ -1014,7 +1038,7 @@ msgstr "路线图"
 msgid "Save"
 msgstr "救球"
 
-#: src/components/PaymentStepper.tsx:95
+#: src/components/PaymentStepper.tsx:96
 msgid "Save 20% (2 months free!)"
 msgstr "節省20％（兩個月免費！）"
 
@@ -1026,7 +1050,7 @@ msgstr "通過這個尖端功能節省時間並自動化某些任務"
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "通過從其他來源導入數據來節省時間並簡化您的工作流程"
 
-#: src/components/PaymentStepper.tsx:72
+#: src/components/PaymentStepper.tsx:73
 msgid "Select your plan!"
 msgstr "選擇您的計劃！"
 
@@ -1044,11 +1068,14 @@ msgstr "设置"
 msgid "Shape"
 msgstr "形状"
 
-#: src/components/PaymentStepper.tsx:272
+#: src/components/PaymentStepper.tsx:278
 #: src/components/SignUpForm.tsx:176
-#: src/pages/LogIn.tsx:98
 msgid "Sign Up"
 msgstr "注册"
+
+#: src/pages/LogIn.tsx:98
+msgid "Sign Up Now"
+msgstr "现在注册"
 
 #: src/components/GraphContextMenu.tsx:435
 msgid "Size"
@@ -1091,12 +1118,7 @@ msgstr "间距"
 msgid "Special Attributes"
 msgstr "特殊属性"
 
-#: src/pages/New.tsx:201
-msgid "Standard"
-msgstr "标准"
-
 #: src/pages/Account.tsx:172
-#: src/pages/New.tsx:244
 msgid "Start"
 msgstr "开始"
 
@@ -1112,11 +1134,11 @@ msgstr "状态"
 msgid "Store any data associated to a node"
 msgstr "將任何與節點相關的資料儲存"
 
-#: src/pages/New.tsx:210
+#: src/pages/New.tsx:226
 msgid "Stored in the cloud"
 msgstr "存储在云端"
 
-#: src/pages/New.tsx:230
+#: src/pages/New.tsx:246
 msgid "Stored on this computer"
 msgstr "保存在这台电脑上"
 
@@ -1146,6 +1168,10 @@ msgstr "订阅"
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
+#: src/pages/New.tsx:435
+msgid "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
+msgstr "供应链分析和优化：成本降低，效率提高和利益相关者协作"
+
 #: src/components/GraphContextMenu.tsx:657
 msgid "Target Arrow"
 msgstr "目标箭头"
@@ -1159,7 +1185,7 @@ msgstr "目標欄"
 msgid "Target Delimiter"
 msgstr "目標分隔符"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:242
 msgid "Temporary"
 msgstr "临时"
 
@@ -1273,7 +1299,7 @@ msgstr "两个边有相同的ID"
 msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:203
 msgid "Type"
 msgstr "类型"
 
@@ -1301,6 +1327,10 @@ msgstr "更新电子邮件"
 #: src/pages/Pricing.tsx:26
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "使用AI從數據集或算法創建流程圖"
+
+#: src/pages/New.tsx:328
+msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
+msgstr "使用AI从提示中生成流程图。<0>了解更多</0>"
 
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Use classes to group nodes"
@@ -1338,6 +1368,10 @@ msgstr "用户"
 msgid "View on Github"
 msgstr "在 Github 上查看"
 
+#: src/pages/New.tsx:441
+msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
+msgstr "水从地球表面蒸发，升入大气中，然后以降水形式回落。这些水然后流入河流，湖泊和海洋，在那里又蒸发，重新回到大气中循环。"
+
 #: src/components/SignUpForm.tsx:182
 msgid "We use cookies to keep you logged in."
 msgstr "我们使用 cookies 来让您保持登录状态。"
@@ -1358,11 +1392,11 @@ msgstr "宽度和高度"
 msgid "Would you like to continue?"
 msgstr "您想继续吗？"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:91
 msgid "Yearly"
 msgstr "每年"
 
-#: src/pages/New.tsx:281
+#: src/pages/New.tsx:197
 msgid "You already have a flowchart with this name."
 msgstr "您已有同名的图表。"
 
@@ -1374,11 +1408,11 @@ msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "您还可以将文本包装在\\n“\\( \\)”中以创建链接"
 
-#: src/pages/New.tsx:271
-msgid "You must log in to create a standard flowchart."
-msgstr "您必须登录才能创建标准图表。"
+#: src/pages/New.tsx:261
+msgid "You must log in to create a persistent flowchart."
+msgstr "您必须登录才能创建一个持久的流程图。"
 
-#: src/components/PaymentStepper.tsx:167
+#: src/components/PaymentStepper.tsx:172
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "您已经快完成了！只需要一步就可以解锁 <0>Flowchart Fun Pro</0> 的全部功能。请在下面输入您的付款详情来完成您的订阅，并今天开始创建令人惊叹的流程图。"
 

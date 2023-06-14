@@ -31,6 +31,8 @@
     "Become a Github Sponsor": "गिटहब स्पॉन्सर बनें",
     "Become a Pro User": "प्रो उपयोगकर्ता बनें",
     "Become a Sponsor": "एक प्रायोजक बनें",
+    "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
+      "<0>फ्लोचार्ट फन</0> काम कैसे करता है इसके लिए एक आसान उदाहरण से शुरू करें।",
     Blank: "खाली",
     Blog: "ब्लॉग",
     Border: "सीमा",
@@ -139,6 +141,8 @@
     Empty: "खाली",
     "Enter your email": "अपना ईमेल दर्ज करें",
     "Equal To": "बराबर",
+    "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages":
+      "निबंध लेखन प्रक्रिया फ्लोचार्ट, छात्रों को ब्रैनस्टॉर्मिंग, आउटलाइनिंग, ड्राफ्टिंग और संशोधन चरणों में मार्गदर्शित करना।",
     "Everything in Free": "फ्री प्लान में सब कुछ",
     Excalidraw: "Excalidraw",
     Export: "एक्सपोर्ट करें",
@@ -158,6 +162,7 @@
     "Get More Themes": "ज़्यादा थीम पाएं",
     "Get personalized attention and support from our expert team":
       "हमारे विशेषज्ञ टीम से व्यक्तिगत ध्यान और समर्थन प्राप्त करें",
+    "Getting Started": "शुरू करना",
     Graph: "ग्राफ़",
     Grid: "ग्रिड",
     "Have complex questions or issues? We're here to help.":
@@ -218,6 +223,8 @@
     "Make sure you use the same email you will use to log in.":
       "उसी ईमेल का उपयोग करें जिसे आप लॉग इन करने के लिए उपयोग करेंगे।",
     "Map Data": "डेटा मैप",
+    "Market understanding and competitive landscape maintenance for SaaS product development":
+      "SaaS उत्पाद विकास के लिए बाजार की समझ और प्रतिस्पर्धात्मक भूमिका बनाए रखना।",
     Medium: "मध्यम",
     Method: "विधि",
     Monospace: "Monospace",
@@ -254,10 +261,13 @@
     Permalinks: "Permalinks",
     "Permanent Charts are a Pro Feature": "स्थायी चार्ट एक प्रो सुविधा हैं",
     "Permanent Flowcharts": "लगातार चार्ट",
+    Persistent: "अविरल",
     "Persistent Flowcharts": "लगातार आरेख",
     Playbook: "प्लेबुक",
     "Pointer and container on same line": "प्रतीक और कंटेनर एक ही लाइन पर",
     Pricing: "मूल्य निर्धारण",
+    "Process for corporate social responsibility initiatives development and implementation across company operations":
+      "कंपनी की सार्वजनिक दायित्व परियोजनाओं के विकास और लागू करने की प्रक्रिया।",
     "Processing Data": "डेटा प्रसंस्करण",
     Prompt: "प्रॉम्प्ट",
     Public: "पब्लिक",
@@ -298,6 +308,7 @@
     Settings: "सेटिंग",
     Shape: "आकृति",
     "Sign Up": "साइन अप",
+    "Sign Up Now": "अभी साइन अप करें",
     Size: "आकार",
     Small: "छोटा",
     "Some classes are available to help style your flowchart":
@@ -310,7 +321,6 @@
     "Source/Target Arrow Shape": "स्रोत / लक्ष्य तीर आकार",
     Spacing: "अंतर",
     "Special Attributes": "विशेष गुण",
-    Standard: "मानक",
     Start: "शुरू",
     "Start Over": "शुरू करें",
     Status: "स्टेटस",
@@ -325,6 +335,8 @@
     Submit: "भेजना",
     Subscription: "सदस्यता",
     "Subscription will end": "सदस्यता समाप्त हो जाएगी",
+    "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
+      "आपूर्ति श्रृंखला विश्लेषण और अनुकूलन: लागत कमी, कार्यक्षमता में सुधार और स्टेकहोल्डर सहयोग।",
     "Target Arrow": "लक्ष्य तीर",
     "Target Column": "लक्ष्य कॉलम",
     "Target Delimiter": "लक्ष्य डेलीमीटर",
@@ -380,6 +392,8 @@
     "Update Email": "ईमेल अपडेट करें",
     "Use AI to create flowcharts from data sets or algorithms":
       "डेटा सेट्स या एल्गोरिदम्स से फ्लोचार्ट बनाने के लिए एआई का उपयोग करें",
+    "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
+      "एक प्रॉम्प्ट से एक फ्लोचार्ट उत्पन्न करने के लिए AI का उपयोग करें। <0>और अधिक जानें</0>",
     "Use classes to group nodes":
       "नोड्स को समूहों में सम्मिलित करने के लिए वर्ग उपयोग करें",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
@@ -396,6 +410,8 @@
       "अनुक्रमों, प्रक्रियाओं और कार्यप्रवाहों के लिए इस फ़ाइल का उपयोग करें।",
     User: "यूज़र",
     "View on Github": "Github पर देखें",
+    "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
+      "पानी पृथ्वी के सतह से उष्णता होकर आत्मान में उठता है और वर्षा के रूप में फिर नीचे गिरता है। इस पानी को तब नदियों, तिब्बती तालों और महासागरों में जाता है, जहां यह फिर से उष्णता होता है और आत्मान में पुनर्स्थापित किया जाता है।",
     "We use cookies to keep you logged in.":
       "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं.",
     "We use magic links to log you in. Enter your email below to get started.":
@@ -416,8 +432,8 @@
       ],
     'You can also wrap text in "\\( \\)" to create an edge':
       'किनारे बनाने के लिए आप टेक्स्ट को "\\( \\)" में भी रैप कर सकते हैं',
-    "You must log in to create a standard flowchart.":
-      "मानक आरेख बनाने के लिए आपको लॉग इन करना होगा।",
+    "You must log in to create a persistent flowchart.":
+      "आपको एक अविरल फ्लोचार्ट बनाने के लिए लॉग इन करना होगा।",
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "आप बस एक ही कदम दूर हैं! <0>Flowchart Fun Pro</0> की पूरी प्रत्याशित क्षमता को अनलॉक करने के लिए नीचे अपने भुगतान विवरण दर्ज करें और आज ही अद्भुत फ्लोचार्ट बनाने शुरू करें।",
     "Your Charts": "आपके चार्ट",

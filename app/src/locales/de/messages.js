@@ -32,6 +32,8 @@
     "Become a Github Sponsor": "Werden Sie ein Github-Sponsor",
     "Become a Pro User": "Werden Sie ein Pro-Benutzer",
     "Become a Sponsor": "Werden Sie zum Sponsoren",
+    "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
+      "Beginnen Sie mit einem einfachen Beispiel, das zeigt, wie <0>Flowchart Fun</0> funktioniert.",
     Blank: "Leer",
     Blog: "Blog",
     Border: "Rand",
@@ -140,6 +142,8 @@
     Empty: "Leer",
     "Enter your email": "Geben Sie Ihre E-Mail-Adresse ein",
     "Equal To": "Gleich",
+    "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages":
+      "Essay-Schreibprozess-Flowchart, der Schüler durch Brainstorming, Gliederung, Entwurf und Überarbeitung führt",
     "Everything in Free": "Alles im kostenlosen Plan",
     Excalidraw: "Excalidraw",
     Export: "Exportieren",
@@ -159,6 +163,7 @@
     "Get More Themes": "Weitere Themen erhalten",
     "Get personalized attention and support from our expert team":
       "Erhalten Sie personalisierte Aufmerksamkeit und Unterstützung von unserem Experten-Team",
+    "Getting Started": "Erste Schritte",
     Graph: "Diagramm",
     Grid: "Raster",
     "Have complex questions or issues? We're here to help.":
@@ -219,6 +224,8 @@
     "Make sure you use the same email you will use to log in.":
       "Stellen Sie sicher, dass Sie die gleiche E-Mail verwenden, mit der Sie sich anmelden werden.",
     "Map Data": "Daten abbilden",
+    "Market understanding and competitive landscape maintenance for SaaS product development":
+      "Marktverständnis und Wettbewerbslandschaftspflege für die Entwicklung von SaaS-Produkten",
     Medium: "Mittel",
     Method: "Methode",
     Monospace: "Monospace",
@@ -256,11 +263,14 @@
     "Permanent Charts are a Pro Feature":
       "Permanente Diagramme sind eine Pro-Funktion",
     "Permanent Flowcharts": "Permanente Flussdiagramme",
+    Persistent: "Beständig",
     "Persistent Flowcharts": "Beständige Diagramme",
     Playbook: "Spielbuch",
     "Pointer and container on same line":
       "Zeiger und Container auf derselben Zeile",
     Pricing: "Preisgestaltung",
+    "Process for corporate social responsibility initiatives development and implementation across company operations":
+      "Prozess zur Entwicklung und Implementierung von Corporate Social Responsibility-Initiativen in Unternehmensoperationen",
     "Processing Data": "Datenverarbeitung",
     Prompt: "Aufforderung",
     Public: "Öffentlich",
@@ -301,6 +311,7 @@
     Settings: "Einstellungen",
     Shape: "Form",
     "Sign Up": "Registrieren",
+    "Sign Up Now": "Jetzt registrieren",
     Size: "Größe",
     Small: "Klein",
     "Some classes are available to help style your flowchart":
@@ -313,7 +324,6 @@
     "Source/Target Arrow Shape": "Quelle/Ziel-Pfeilform",
     Spacing: "Abstand",
     "Special Attributes": "Spezielle Attribute",
-    Standard: "Standard",
     Start: "Start",
     "Start Over": "Von vorne anfangen",
     Status: "Status",
@@ -328,6 +338,8 @@
     Submit: "Einsenden",
     Subscription: "Abonnement",
     "Subscription will end": "Abonnement wird beendet",
+    "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
+      "Supply-Chain-Analyse und -Optimierung: Kostenreduzierung, Effizienzverbesserung und Stakeholder-Kollaboration",
     "Target Arrow": "Zielpfeil",
     "Target Column": "Ziel-Spalte",
     "Target Delimiter": "Ziel-Trennzeichen",
@@ -384,6 +396,8 @@
     "Update Email": "E-Mail aktualisieren",
     "Use AI to create flowcharts from data sets or algorithms":
       "Verwenden Sie KI, um aus Datensätzen oder Algorithmen Flussdiagramme zu erstellen.",
+    "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
+      "Verwenden Sie AI, um aus einem Prompt ein Flowchart zu erstellen. <0>Erfahren Sie mehr</0>",
     "Use classes to group nodes":
       "Verwenden Sie Klassen, um Knoten zu gruppieren",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
@@ -400,6 +414,8 @@
       "Verwenden Sie diese Datei für Sequenzen, Prozesse und Workflows.",
     User: "Benutzer",
     "View on Github": "Auf Github ansehen",
+    "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
+      "Wasser verdunstet von der Erdoberfläche, steigt in die Atmosphäre auf und fällt als Niederschlag wieder herunter. Dieses Wasser fließt dann in Flüsse, Seen und Ozeane, wo es wieder verdunstet und in die Atmosphäre zurückgeführt wird.",
     "We use cookies to keep you logged in.":
       "Wir verwenden Cookies, um Sie eingeloggt zu halten.",
     "We use magic links to log you in. Enter your email below to get started.":
@@ -420,8 +436,8 @@
       ],
     'You can also wrap text in "\\( \\)" to create an edge':
       'Sie können Text auch in "\\( \\)" umbrechen, um eine Kante zu erstellen',
-    "You must log in to create a standard flowchart.":
-      "Sie müssen sich anmelden, um ein Standarddiagramm zu erstellen.",
+    "You must log in to create a persistent flowchart.":
+      "Sie müssen sich anmelden, um einen beständigen Flussdiagramm zu erstellen.",
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "Du bist fast da! Nur noch ein Schritt, um das volle Potenzial von <0>Flowchart Fun Pro</0> freizuschalten. Gib deine Zahlungsdetails unten ein, um dein Abonnement abzuschließen und heute mit dem Erstellen beeindruckender Flussdiagramme zu beginnen.",
     "Your Charts": "Ihre Diagramme",
