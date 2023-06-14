@@ -31,6 +31,8 @@
     "Become a Github Sponsor": "Become a Github Sponsor",
     "Become a Pro User": "Become a Pro User",
     "Become a Sponsor": "Become a Sponsor",
+    "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
+      "Begin with a simple example showing how <0>Flowchart Fun</0> works.",
     Blank: "Blank",
     Blog: "Blog",
     Border: "Border",
@@ -139,6 +141,8 @@
     Empty: "Empty",
     "Enter your email": "Enter your email",
     "Equal To": "Equal To",
+    "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages":
+      "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages",
     "Everything in Free": "Everything in Free",
     Excalidraw: "Excalidraw",
     Export: "Export",
@@ -219,6 +223,8 @@
     "Make sure you use the same email you will use to log in.":
       "Make sure you use the same email you will use to log in.",
     "Map Data": "Map Data",
+    "Market understanding and competitive landscape maintenance for SaaS product development":
+      "Market understanding and competitive landscape maintenance for SaaS product development",
     Medium: "Medium",
     Method: "Method",
     Monospace: "Monospace",
@@ -260,6 +266,8 @@
     Playbook: "Playbook",
     "Pointer and container on same line": "Pointer and container on same line",
     Pricing: "Pricing",
+    "Process for corporate social responsibility initiatives development and implementation across company operations":
+      "Process for corporate social responsibility initiatives development and implementation across company operations",
     "Processing Data": "Processing Data",
     Prompt: "Prompt",
     Public: "Public",
@@ -327,6 +335,8 @@
     Submit: "Submit",
     Subscription: "Subscription",
     "Subscription will end": "Subscription will end",
+    "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
+      "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration",
     "Target Arrow": "Target Arrow",
     "Target Column": "Target Column",
     "Target Delimiter": "Target Delimiter",
@@ -382,6 +392,8 @@
     "Update Email": "Update Email",
     "Use AI to create flowcharts from data sets or algorithms":
       "Use AI to create flowcharts from data sets or algorithms",
+    "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
+      "Use AI to generate a flowchart from a prompt. <0>Learn More</0>",
     "Use classes to group nodes": "Use classes to group nodes",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
       "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.",
@@ -397,6 +409,8 @@
       "Use this file for sequences, processes, and workflows.",
     User: "User",
     "View on Github": "View on Github",
+    "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
+      "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.",
     "We use cookies to keep you logged in.":
       "We use cookies to keep you logged in.",
     "We use magic links to log you in. Enter your email below to get started.":

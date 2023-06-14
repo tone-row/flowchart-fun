@@ -17,14 +17,14 @@ export default function Post() {
   return (
     <InfoContainer style={{ maxWidth: 700 }}>
       <div className="grid gap-6">
-        <header className="grid gap-6">
+        <header className="grid gap-4">
           <div className="grid gap-2">
-            <span className="text-neutral-500 translate-x-[2px] dark:text-neutral-400">
+            <span className="text-blue-500 translate-x-[2px] dark:text-purple-400 font-mono tracking-wide uppercase">
               {data.publishDate}
             </span>
-            <h1 className="text-5xl font-bold">{data.title}</h1>
+            <h1 className="text-5xl font-bold leading-tighter">{data.title}</h1>
           </div>
-          <p className="text-neutral-600 text-xl dark:text-neutral-300">
+          <p className="text-neutral-400 text-xl dark:text-neutral-300">
             {data.description}
           </p>
         </header>

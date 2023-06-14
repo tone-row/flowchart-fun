@@ -49,7 +49,7 @@ msgstr "About"
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 
-#: src/pages/New.tsx:225
+#: src/pages/New.tsx:234
 msgid "Accessible from any device"
 msgstr "Accessible from any device"
 
@@ -112,7 +112,11 @@ msgstr "Become a Pro User"
 msgid "Become a Sponsor"
 msgstr "Become a Sponsor"
 
-#: src/pages/New.tsx:271
+#: src/pages/New.tsx:319
+msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
+msgstr "Begin with a simple example showing how <0>Flowchart Fun</0> works."
+
+#: src/pages/New.tsx:282
 msgid "Blank"
 msgstr "Blank"
 
@@ -281,7 +285,7 @@ msgstr "Copy SVG Code"
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 
-#: src/pages/New.tsx:293
+#: src/pages/New.tsx:305
 msgid "Create"
 msgstr "Create"
 
@@ -290,7 +294,7 @@ msgstr "Create"
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "Create Flowcharts from a Prompt with AI"
 
-#: src/pages/New.tsx:168
+#: src/pages/New.tsx:177
 msgid "Create a New Flowchart"
 msgstr "Create a New Flowchart"
 
@@ -323,11 +327,11 @@ msgstr "Dark Mode"
 msgid "Date"
 msgstr "Date"
 
-#: src/pages/New.tsx:240
+#: src/pages/New.tsx:249
 msgid "Deleted when browser data is cleared"
 msgstr "Deleted when browser data is cleared"
 
-#: src/pages/New.tsx:407
+#: src/pages/New.tsx:512
 msgid "Describe the flowchart you wish to create"
 msgstr "Describe the flowchart you wish to create"
 
@@ -480,6 +484,10 @@ msgstr "Enter your email"
 msgid "Equal To"
 msgstr "Equal To"
 
+#: src/pages/New.tsx:437
+msgid "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
+msgstr "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
+
 #: src/pages/Pricing.tsx:64
 msgid "Everything in Free"
 msgstr "Everything in Free"
@@ -508,7 +516,7 @@ msgstr "Export to SVG"
 msgid "Extra Large"
 msgstr "Extra Large"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:516
 msgid "Extract"
 msgstr "Extract"
 
@@ -553,7 +561,7 @@ msgstr "Get More Themes"
 msgid "Get personalized attention and support from our expert team"
 msgstr "Get personalized attention and support from our expert team"
 
-#: src/pages/New.tsx:261
+#: src/pages/New.tsx:272
 msgid "Getting Started"
 msgstr "Getting Started"
 
@@ -654,7 +662,7 @@ msgstr "Indenting creates an edge"
 msgid "Info"
 msgstr "Info"
 
-#: src/pages/New.tsx:406
+#: src/pages/New.tsx:511
 msgid "Instruct"
 msgstr "Instruct"
 
@@ -726,7 +734,7 @@ msgstr "Loading"
 #: src/components/Header.tsx:202
 #: src/components/Header.tsx:422
 #: src/pages/LogIn.tsx:64
-#: src/pages/New.tsx:254
+#: src/pages/New.tsx:263
 msgid "Log In"
 msgstr "Log In"
 
@@ -754,11 +762,15 @@ msgstr "Make sure you use the same email you will use to log in."
 msgid "Map Data"
 msgstr "Map Data"
 
+#: src/pages/New.tsx:431
+msgid "Market understanding and competitive landscape maintenance for SaaS product development"
+msgstr "Market understanding and competitive landscape maintenance for SaaS product development"
+
 #: src/components/GraphContextMenu.tsx:258
 msgid "Medium"
 msgstr "Medium"
 
-#: src/pages/New.tsx:396
+#: src/pages/New.tsx:500
 msgid "Method"
 msgstr "Method"
 
@@ -778,7 +790,7 @@ msgstr "Multiple pointers on same line"
 msgid "Museum"
 msgstr "Museum"
 
-#: src/pages/New.tsx:172
+#: src/pages/New.tsx:181
 msgid "Name"
 msgstr "Name"
 
@@ -872,7 +884,7 @@ msgstr "Open Customer Portal"
 msgid "Organization Chart"
 msgstr "Organization Chart"
 
-#: src/pages/New.tsx:412
+#: src/pages/New.tsx:517
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "Paste the information you wish to convert to a flowchart"
 
@@ -888,7 +900,7 @@ msgstr "Permanent Charts are a Pro Feature"
 msgid "Permanent Flowcharts"
 msgstr "Permanent Flowcharts"
 
-#: src/pages/New.tsx:208
+#: src/pages/New.tsx:217
 msgid "Persistent"
 msgstr "Persistent"
 
@@ -909,11 +921,15 @@ msgstr "Pointer and container on same line"
 msgid "Pricing"
 msgstr "Pricing"
 
+#: src/pages/New.tsx:433
+msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
+msgstr "Process for corporate social responsibility initiatives development and implementation across company operations"
+
 #: src/components/ImportDataDialog.tsx:265
 msgid "Processing Data"
 msgstr "Processing Data"
 
-#: src/pages/New.tsx:276
+#: src/pages/New.tsx:287
 msgid "Prompt"
 msgstr "Prompt"
 
@@ -1118,11 +1134,11 @@ msgstr "Status"
 msgid "Store any data associated to a node"
 msgstr "Store any data associated to a node"
 
-#: src/pages/New.tsx:217
+#: src/pages/New.tsx:226
 msgid "Stored in the cloud"
 msgstr "Stored in the cloud"
 
-#: src/pages/New.tsx:237
+#: src/pages/New.tsx:246
 msgid "Stored on this computer"
 msgstr "Stored on this computer"
 
@@ -1152,6 +1168,10 @@ msgstr "Subscription"
 msgid "Subscription will end"
 msgstr "Subscription will end"
 
+#: src/pages/New.tsx:435
+msgid "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
+msgstr "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
+
 #: src/components/GraphContextMenu.tsx:657
 msgid "Target Arrow"
 msgstr "Target Arrow"
@@ -1165,7 +1185,7 @@ msgstr "Target Column"
 msgid "Target Delimiter"
 msgstr "Target Delimiter"
 
-#: src/pages/New.tsx:233
+#: src/pages/New.tsx:242
 msgid "Temporary"
 msgstr "Temporary"
 
@@ -1279,7 +1299,7 @@ msgstr "Two edges have the same ID"
 msgid "Two nodes have the same ID"
 msgstr "Two nodes have the same ID"
 
-#: src/pages/New.tsx:194
+#: src/pages/New.tsx:203
 msgid "Type"
 msgstr "Type"
 
@@ -1307,6 +1327,10 @@ msgstr "Update Email"
 #: src/pages/Pricing.tsx:26
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "Use AI to create flowcharts from data sets or algorithms"
+
+#: src/pages/New.tsx:328
+msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
+msgstr "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
 
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Use classes to group nodes"
@@ -1344,6 +1368,10 @@ msgstr "User"
 msgid "View on Github"
 msgstr "View on Github"
 
+#: src/pages/New.tsx:441
+msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
+msgstr "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
+
 #: src/components/SignUpForm.tsx:182
 msgid "We use cookies to keep you logged in."
 msgstr "We use cookies to keep you logged in."
@@ -1368,7 +1396,7 @@ msgstr "Would you like to continue?"
 msgid "Yearly"
 msgstr "Yearly"
 
-#: src/pages/New.tsx:188
+#: src/pages/New.tsx:197
 msgid "You already have a flowchart with this name."
 msgstr "You already have a flowchart with this name."
 
@@ -1380,7 +1408,7 @@ msgstr "You are about to add {numNodes} nodes and {numEdges} edges to your graph
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "You can also wrap text in \"\\( \\)\" to create an edge"
 
-#: src/pages/New.tsx:252
+#: src/pages/New.tsx:261
 msgid "You must log in to create a persistent flowchart."
 msgstr "You must log in to create a persistent flowchart."
 

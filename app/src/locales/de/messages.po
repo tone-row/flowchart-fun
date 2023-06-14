@@ -49,7 +49,7 @@ msgstr "Über"
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "Greifen Sie von überall aus auf diese Diagramme zu.<0/>Teilen und betten Sie Flussdiagramme ein, die synchron bleiben."
 
-#: src/pages/New.tsx:225
+#: src/pages/New.tsx:234
 msgid "Accessible from any device"
 msgstr "Von jedem Gerät aus zugänglich"
 
@@ -112,7 +112,11 @@ msgstr "Werden Sie ein Pro-Benutzer"
 msgid "Become a Sponsor"
 msgstr "Werden Sie zum Sponsoren"
 
-#: src/pages/New.tsx:271
+#: src/pages/New.tsx:319
+msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
+msgstr "Beginnen Sie mit einem einfachen Beispiel, das zeigt, wie <0>Flowchart Fun</0> funktioniert."
+
+#: src/pages/New.tsx:282
 msgid "Blank"
 msgstr "Leer"
 
@@ -281,7 +285,7 @@ msgstr "Kopieren Sie den SVG-Code"
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Kopieren Sie Ihren mermaid.js-Code oder öffnen Sie ihn direkt im mermaid.js Live-Editor."
 
-#: src/pages/New.tsx:293
+#: src/pages/New.tsx:305
 msgid "Create"
 msgstr "Erstellen"
 
@@ -290,7 +294,7 @@ msgstr "Erstellen"
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "Erstellen Sie Diagramme aus einer Eingabeaufforderung mit KI"
 
-#: src/pages/New.tsx:168
+#: src/pages/New.tsx:177
 msgid "Create a New Flowchart"
 msgstr "Erstellen Sie ein neues Diagramm"
 
@@ -323,11 +327,11 @@ msgstr "Dunkelmodus"
 msgid "Date"
 msgstr "Datum"
 
-#: src/pages/New.tsx:240
+#: src/pages/New.tsx:249
 msgid "Deleted when browser data is cleared"
 msgstr "Wird gelöscht, wenn Browserdaten gelöscht werden"
 
-#: src/pages/New.tsx:407
+#: src/pages/New.tsx:512
 msgid "Describe the flowchart you wish to create"
 msgstr "Beschreiben Sie das Diagramm, das Sie erstellen möchten"
 
@@ -480,6 +484,10 @@ msgstr "Geben Sie Ihre E-Mail-Adresse ein"
 msgid "Equal To"
 msgstr "Gleich"
 
+#: src/pages/New.tsx:437
+msgid "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
+msgstr "Essay-Schreibprozess-Flowchart, der Schüler durch Brainstorming, Gliederung, Entwurf und Überarbeitung führt"
+
 #: src/pages/Pricing.tsx:64
 msgid "Everything in Free"
 msgstr "Alles im kostenlosen Plan"
@@ -508,7 +516,7 @@ msgstr "In SVG exportieren"
 msgid "Extra Large"
 msgstr "Extra groß"
 
-#: src/pages/New.tsx:411
+#: src/pages/New.tsx:516
 msgid "Extract"
 msgstr "Extrakt"
 
@@ -553,7 +561,7 @@ msgstr "Weitere Themen erhalten"
 msgid "Get personalized attention and support from our expert team"
 msgstr "Erhalten Sie personalisierte Aufmerksamkeit und Unterstützung von unserem Experten-Team"
 
-#: src/pages/New.tsx:261
+#: src/pages/New.tsx:272
 msgid "Getting Started"
 msgstr "Erste Schritte"
 
@@ -654,7 +662,7 @@ msgstr "Durch das Einrücken entsteht eine Kante"
 msgid "Info"
 msgstr "Info"
 
-#: src/pages/New.tsx:406
+#: src/pages/New.tsx:511
 msgid "Instruct"
 msgstr "Anweisen"
 
@@ -726,7 +734,7 @@ msgstr "Laden"
 #: src/components/Header.tsx:202
 #: src/components/Header.tsx:422
 #: src/pages/LogIn.tsx:64
-#: src/pages/New.tsx:254
+#: src/pages/New.tsx:263
 msgid "Log In"
 msgstr "Anmelden"
 
@@ -754,11 +762,15 @@ msgstr "Stellen Sie sicher, dass Sie die gleiche E-Mail verwenden, mit der Sie s
 msgid "Map Data"
 msgstr "Daten abbilden"
 
+#: src/pages/New.tsx:431
+msgid "Market understanding and competitive landscape maintenance for SaaS product development"
+msgstr "Marktverständnis und Wettbewerbslandschaftspflege für die Entwicklung von SaaS-Produkten"
+
 #: src/components/GraphContextMenu.tsx:258
 msgid "Medium"
 msgstr "Mittel"
 
-#: src/pages/New.tsx:396
+#: src/pages/New.tsx:500
 msgid "Method"
 msgstr "Methode"
 
@@ -778,7 +790,7 @@ msgstr "Mehrere Zeiger auf derselben Zeile"
 msgid "Museum"
 msgstr "Museum"
 
-#: src/pages/New.tsx:172
+#: src/pages/New.tsx:181
 msgid "Name"
 msgstr "Name"
 
@@ -872,7 +884,7 @@ msgstr "Öffnen Sie das Kundenportal"
 msgid "Organization Chart"
 msgstr "Organigramm"
 
-#: src/pages/New.tsx:412
+#: src/pages/New.tsx:517
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "Fügen Sie die Informationen ein, die Sie in ein Flussdiagramm umwandeln möchten"
 
@@ -888,7 +900,7 @@ msgstr "Permanente Diagramme sind eine Pro-Funktion"
 msgid "Permanent Flowcharts"
 msgstr "Permanente Flussdiagramme"
 
-#: src/pages/New.tsx:208
+#: src/pages/New.tsx:217
 msgid "Persistent"
 msgstr "Beständig"
 
@@ -909,11 +921,15 @@ msgstr "Zeiger und Container auf derselben Zeile"
 msgid "Pricing"
 msgstr "Preisgestaltung"
 
+#: src/pages/New.tsx:433
+msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
+msgstr "Prozess zur Entwicklung und Implementierung von Corporate Social Responsibility-Initiativen in Unternehmensoperationen"
+
 #: src/components/ImportDataDialog.tsx:265
 msgid "Processing Data"
 msgstr "Datenverarbeitung"
 
-#: src/pages/New.tsx:276
+#: src/pages/New.tsx:287
 msgid "Prompt"
 msgstr "Aufforderung"
 
@@ -1118,11 +1134,11 @@ msgstr "Status"
 msgid "Store any data associated to a node"
 msgstr "Speichern Sie alle Daten, die einem Knoten zugeordnet sind"
 
-#: src/pages/New.tsx:217
+#: src/pages/New.tsx:226
 msgid "Stored in the cloud"
 msgstr "In der Cloud gespeichert"
 
-#: src/pages/New.tsx:237
+#: src/pages/New.tsx:246
 msgid "Stored on this computer"
 msgstr "Auf diesem Computer gespeichert"
 
@@ -1152,6 +1168,10 @@ msgstr "Abonnement"
 msgid "Subscription will end"
 msgstr "Abonnement wird beendet"
 
+#: src/pages/New.tsx:435
+msgid "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
+msgstr "Supply-Chain-Analyse und -Optimierung: Kostenreduzierung, Effizienzverbesserung und Stakeholder-Kollaboration"
+
 #: src/components/GraphContextMenu.tsx:657
 msgid "Target Arrow"
 msgstr "Zielpfeil"
@@ -1165,7 +1185,7 @@ msgstr "Ziel-Spalte"
 msgid "Target Delimiter"
 msgstr "Ziel-Trennzeichen"
 
-#: src/pages/New.tsx:233
+#: src/pages/New.tsx:242
 msgid "Temporary"
 msgstr "Temporäres"
 
@@ -1279,7 +1299,7 @@ msgstr "Zwei Kanten haben die gleiche ID"
 msgid "Two nodes have the same ID"
 msgstr "Zwei Knoten haben die gleiche ID"
 
-#: src/pages/New.tsx:194
+#: src/pages/New.tsx:203
 msgid "Type"
 msgstr "Typ"
 
@@ -1307,6 +1327,10 @@ msgstr "E-Mail aktualisieren"
 #: src/pages/Pricing.tsx:26
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "Verwenden Sie KI, um aus Datensätzen oder Algorithmen Flussdiagramme zu erstellen."
+
+#: src/pages/New.tsx:328
+msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
+msgstr "Verwenden Sie AI, um aus einem Prompt ein Flowchart zu erstellen. <0>Erfahren Sie mehr</0>"
 
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Use classes to group nodes"
@@ -1344,6 +1368,10 @@ msgstr "Benutzer"
 msgid "View on Github"
 msgstr "Auf Github ansehen"
 
+#: src/pages/New.tsx:441
+msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
+msgstr "Wasser verdunstet von der Erdoberfläche, steigt in die Atmosphäre auf und fällt als Niederschlag wieder herunter. Dieses Wasser fließt dann in Flüsse, Seen und Ozeane, wo es wieder verdunstet und in die Atmosphäre zurückgeführt wird."
+
 #: src/components/SignUpForm.tsx:182
 msgid "We use cookies to keep you logged in."
 msgstr "Wir verwenden Cookies, um Sie eingeloggt zu halten."
@@ -1368,7 +1396,7 @@ msgstr "Möchten Sie fortfahren?"
 msgid "Yearly"
 msgstr "Jährlich"
 
-#: src/pages/New.tsx:188
+#: src/pages/New.tsx:197
 msgid "You already have a flowchart with this name."
 msgstr "Sie haben bereits ein Diagramm mit diesem Namen."
 
@@ -1380,7 +1408,7 @@ msgstr "Sie sind dabei, {numNodes} Knoten und {numEdges} Kanten zu Ihrem Graphen
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "Sie können Text auch in \"\\( \\)\" umbrechen, um eine Kante zu erstellen"
 
-#: src/pages/New.tsx:252
+#: src/pages/New.tsx:261
 msgid "You must log in to create a persistent flowchart."
 msgstr "Sie müssen sich anmelden, um einen beständigen Flussdiagramm zu erstellen."
 

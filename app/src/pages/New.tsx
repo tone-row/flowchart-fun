@@ -12,6 +12,7 @@ import {
   TreeStructure,
 } from "phosphor-react";
 import {
+  forwardRef,
   memo,
   ReactNode,
   useContext,
@@ -290,6 +291,7 @@ const New = memo(function New({
                 />
               </div>
             </RadioGroup.Root>
+            <PromptDescription start={start} />
             {start === "prompt" && <PromptSubmenu />}
           </div>
           <button
@@ -308,6 +310,34 @@ const New = memo(function New({
     </div>
   );
 });
+
+function PromptDescription({ start }: { start: "prompt" | "blank" }) {
+  switch (start) {
+    case "blank":
+      return (
+        <span className="text-xs text-neutral-500 italic">
+          <Trans>
+            Begin with a simple example showing how <span>Flowchart Fun</span>{" "}
+            works.
+          </Trans>
+        </span>
+      );
+    case "prompt":
+      return (
+        <span className="text-xs text-neutral-500 italic">
+          <Trans>
+            Use AI to generate a flowchart from a prompt.{" "}
+            <Link
+              to="/blog/post/flowchart-fun-ai-prompt-feature-demo"
+              className="underline"
+            >
+              Learn More
+            </Link>
+          </Trans>
+        </span>
+      );
+  }
+}
 
 function TypeToggle({
   title,
@@ -395,8 +425,75 @@ const placeholders: Record<"instruct" | "extract", string> = {
   extract: `Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.`,
 };
 
+const promptExamples = {
+  instruct: [
+    () =>
+      t`Market understanding and competitive landscape maintenance for SaaS product development`,
+    () =>
+      t`Process for corporate social responsibility initiatives development and implementation across company operations`,
+    () =>
+      t`Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration`,
+    () =>
+      t`Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages`,
+  ],
+  extract: [
+    () =>
+      t`Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.`,
+  ],
+};
+
 function PromptSubmenu() {
   const [method, setMethod] = useState<"instruct" | "extract">("instruct");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [example, setExample] = useState(
+    promptExamples.instruct[
+      Math.floor(Math.random() * promptExamples.instruct.length)
+    ]()
+  );
+  const intervalRef = useRef<NodeJS.Timer | null>(null);
+
+  // Choose a random example when the method changes
+  useEffect(() => {
+    const options = promptExamples[method];
+    setExample(options[Math.floor(Math.random() * options.length)]());
+  }, [method]);
+
+  // Write the placeholder when the example changes
+  useEffect(() => {
+    if (!textareaRef.current) return;
+    const chars = example.split("");
+    let i = 0;
+    // erase the current placeholder
+    textareaRef.current.placeholder = "";
+    intervalRef.current = setInterval(() => {
+      if (!textareaRef.current) {
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        return;
+      }
+      if (i >= chars.length) {
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        return;
+      }
+      textareaRef.current.placeholder += chars[i];
+      i++;
+    }, 15);
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [example]);
+
+  // If the user focuses the textarea, set the placeholder to the complete example
+  // and clear the interval
+  useEffect(() => {
+    if (!textareaRef.current) return;
+    textareaRef.current.addEventListener("focus", () => {
+      if (!textareaRef.current) return;
+      textareaRef.current.placeholder = example;
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    });
+  }, [example]);
+
   return (
     <>
       <SmallLabel className="mt-3">
@@ -406,6 +503,7 @@ function PromptSubmenu() {
         value={method}
         name="method"
         onValueChange={(value) => setMethod(value as "instruct" | "extract")}
+        className="justify-self-start"
       >
         <div className="flex justify-start gap-3 justify-self-start focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
           <PromptSubmenuRadioItem
@@ -421,10 +519,11 @@ function PromptSubmenu() {
         </div>
       </RadioGroup.Root>
       <Textarea
-        className="resize-none mt-2 leading-tight"
+        className="resize-none mt-2 text-base font-mono"
         rows={6}
         name="prompt"
         placeholder={placeholders[method]}
+        ref={textareaRef}
       />
     </>
   );
@@ -454,19 +553,30 @@ function PromptSubmenuRadioItem({
     </RadioGroup.Item>
   );
 }
-
-function Textarea({
-  className = "",
-  ...rest
-}: React.DetailedHTMLProps<
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-  HTMLTextAreaElement
-> & { className?: string }) {
+const Textarea = forwardRef<
+  HTMLTextAreaElement,
+  React.DetailedHTMLProps<
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+  > & { className?: string }
+>(({ className = "", ...rest }, ref) => {
   return (
     <textarea
+      ref={ref}
       data-testid="prompt-entry-textarea"
-      className={`bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 focus:border-neutral-400 dark:focus:border-neutral-600 rounded p-2 text-sm text-neutral-700 dark:text-neutral-300 placeholder-neutral-400 dark:placeholder-neutral-400 ${className}`}
+      className={`focus:shadow-inner leading-[1.3] bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 focus:border-neutral-400 dark:focus:border-neutral-600 rounded p-4 text-neutral-700 dark:text-neutral-300 placeholder-neutral-400 dark:placeholder-neutral-400 ${className}`}
       {...rest}
     />
   );
-}
+});
+
+Textarea.displayName = "Textarea";
+
+/*
+
+Market understanding and competitive landscape maintenance for SaaS product development
+Process for corporate social responsibility initiatives development and implementation across company operations
+Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration
+Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages
+
+*/

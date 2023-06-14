@@ -1,6 +1,6 @@
 .post-content {
   line-height: 1.4;
-  @apply text-neutral-800 dark:text-neutral-200;
+  @apply text-neutral-700 dark:text-neutral-200 text-base leading-normal;
 }
 
 .post-content code.hljs {

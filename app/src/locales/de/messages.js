@@ -32,6 +32,8 @@
     "Become a Github Sponsor": "Werden Sie ein Github-Sponsor",
     "Become a Pro User": "Werden Sie ein Pro-Benutzer",
     "Become a Sponsor": "Werden Sie zum Sponsoren",
+    "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
+      "Beginnen Sie mit einem einfachen Beispiel, das zeigt, wie <0>Flowchart Fun</0> funktioniert.",
     Blank: "Leer",
     Blog: "Blog",
     Border: "Rand",
@@ -140,6 +142,8 @@
     Empty: "Leer",
     "Enter your email": "Geben Sie Ihre E-Mail-Adresse ein",
     "Equal To": "Gleich",
+    "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages":
+      "Essay-Schreibprozess-Flowchart, der Schüler durch Brainstorming, Gliederung, Entwurf und Überarbeitung führt",
     "Everything in Free": "Alles im kostenlosen Plan",
     Excalidraw: "Excalidraw",
     Export: "Exportieren",
@@ -220,6 +224,8 @@
     "Make sure you use the same email you will use to log in.":
       "Stellen Sie sicher, dass Sie die gleiche E-Mail verwenden, mit der Sie sich anmelden werden.",
     "Map Data": "Daten abbilden",
+    "Market understanding and competitive landscape maintenance for SaaS product development":
+      "Marktverständnis und Wettbewerbslandschaftspflege für die Entwicklung von SaaS-Produkten",
     Medium: "Mittel",
     Method: "Methode",
     Monospace: "Monospace",
@@ -263,6 +269,8 @@
     "Pointer and container on same line":
       "Zeiger und Container auf derselben Zeile",
     Pricing: "Preisgestaltung",
+    "Process for corporate social responsibility initiatives development and implementation across company operations":
+      "Prozess zur Entwicklung und Implementierung von Corporate Social Responsibility-Initiativen in Unternehmensoperationen",
     "Processing Data": "Datenverarbeitung",
     Prompt: "Aufforderung",
     Public: "Öffentlich",
@@ -330,6 +338,8 @@
     Submit: "Einsenden",
     Subscription: "Abonnement",
     "Subscription will end": "Abonnement wird beendet",
+    "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
+      "Supply-Chain-Analyse und -Optimierung: Kostenreduzierung, Effizienzverbesserung und Stakeholder-Kollaboration",
     "Target Arrow": "Zielpfeil",
     "Target Column": "Ziel-Spalte",
     "Target Delimiter": "Ziel-Trennzeichen",
@@ -386,6 +396,8 @@
     "Update Email": "E-Mail aktualisieren",
     "Use AI to create flowcharts from data sets or algorithms":
       "Verwenden Sie KI, um aus Datensätzen oder Algorithmen Flussdiagramme zu erstellen.",
+    "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
+      "Verwenden Sie AI, um aus einem Prompt ein Flowchart zu erstellen. <0>Erfahren Sie mehr</0>",
     "Use classes to group nodes":
       "Verwenden Sie Klassen, um Knoten zu gruppieren",
     "Use the attribute <0>href</0> to set a link on a node that opens in a new tab.":
@@ -402,6 +414,8 @@
       "Verwenden Sie diese Datei für Sequenzen, Prozesse und Workflows.",
     User: "Benutzer",
     "View on Github": "Auf Github ansehen",
+    "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
+      "Wasser verdunstet von der Erdoberfläche, steigt in die Atmosphäre auf und fällt als Niederschlag wieder herunter. Dieses Wasser fließt dann in Flüsse, Seen und Ozeane, wo es wieder verdunstet und in die Atmosphäre zurückgeführt wird.",
     "We use cookies to keep you logged in.":
       "Wir verwenden Cookies, um Sie eingeloggt zu halten.",
     "We use magic links to log you in. Enter your email below to get started.":
