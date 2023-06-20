@@ -18,7 +18,7 @@ const fontFamily = "Karla";
 const backgroundColor = colors.white;
 const arrowColor = colors.black;
 const lineHeight = 1.25;
-const padding = "12px";
+const padding = "6px";
 const foregroundColor = colors.black;
 
 const arrowWidth = 0.75;
@@ -53,8 +53,6 @@ const original: Theme = {
         label: "data(label)",
         "text-wrap": "wrap",
         "text-max-width": `data(width)`,
-        width: "label",
-        height: "label",
         "padding-left": padding,
         "padding-right": padding,
         "padding-top": padding,

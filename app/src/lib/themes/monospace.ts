@@ -17,7 +17,7 @@ const colors = {
 const darkBlue = "#9AADFD";
 const fontFamily = '"Fira Mono", monospace';
 const lineHeight = 1.1;
-const padding = "7px";
+const padding = "5px";
 
 const edgeWidth = 2;
 const monospace: Theme = {
@@ -53,8 +53,6 @@ const monospace: Theme = {
         "text-halign": "center",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
-        width: "label",
-        height: "label",
         "line-height": lineHeight,
         "text-justification": "center",
         "padding-left": padding,
