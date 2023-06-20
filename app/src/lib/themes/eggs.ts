@@ -54,8 +54,6 @@ const eggs: Theme = {
         label: "data(label)",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
-        width: "label",
-        height: "label",
         "text-valign": "center",
         shape: "ellipse",
         "padding-left": padding,
