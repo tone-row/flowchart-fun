@@ -27,7 +27,7 @@ const fontFamily = '"Space Mono"';
 const lineHeight = 1.2;
 const backgroundColor = "#1b1b20";
 const darkerBackgroundColor = "#060608";
-const padding = "8px";
+const padding = "6px";
 
 const edgeWidth = 1.5;
 const blokus: Theme = {
@@ -67,8 +67,6 @@ const blokus: Theme = {
         "text-halign": "center",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
-        width: "label",
-        height: "label",
         "line-height": lineHeight,
         "text-justification": "center",
         padding,

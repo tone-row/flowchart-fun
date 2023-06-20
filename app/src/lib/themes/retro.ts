@@ -20,7 +20,7 @@ const nodeBackgroundColor = colors.white;
 const arrowColor = colors.black;
 const nodeLabelColor = arrowColor;
 const lineHeight = 1.2;
-const padding = "15px";
+const padding = "8px";
 const borderWidth = 3;
 const borderColor = arrowColor;
 
@@ -58,8 +58,6 @@ const retro: Theme = {
         label: "data(label)",
         "text-wrap": "wrap",
         "text-max-width": "data(width)",
-        width: "label",
-        height: "label",
         "text-valign": "center",
         shape: "roundrectangle",
         // @ts-ignore
