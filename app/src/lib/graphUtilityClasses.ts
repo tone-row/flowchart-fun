@@ -1,6 +1,6 @@
 import { Stylesheet } from "cytoscape";
 
-import { fontSizeScalars } from "./getGetSize";
+import { fontSizeScalars } from "./getSize";
 import { defaultFontSize } from "./themes/constants";
 
 export const shapes: cytoscape.Css.Node["shape"][] = [

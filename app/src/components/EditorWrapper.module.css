@@ -4,6 +4,7 @@
   max-width: 100%;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr);
+  overflow: hidden;
 }
 
 .mightLose {
@@ -76,13 +77,6 @@
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-  color: var(--color-uiAccent);
-  text-decoration-color: var(--color-uiAccent);
-}
-
-.EditorWrapper [data-rename-button]:active {
-  color: var(--color-edgeHover);
-  text-decoration-color: var(--color-edgeHover);
 }
 
 .EditorWrapper [data-rename-button]:focus {

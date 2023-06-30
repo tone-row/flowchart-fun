@@ -1,4 +1,4 @@
-import { CytoscapeOptions, Stylesheet } from "cytoscape";
+import { Stylesheet } from "cytoscape";
 
 import { cytoscape } from "./cytoscape";
 import {
@@ -16,7 +16,7 @@ export function buildStylesForGraph(
   theme: Theme,
   userStyle: cytoscape.Stylesheet[] = [],
   bg?: string
-): CytoscapeOptions["style"] {
+): Stylesheet[] {
   const bgOverrides: Stylesheet[] = [];
   if (bg) {
     bgOverrides.push({

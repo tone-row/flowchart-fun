@@ -9,11 +9,9 @@ import {
 import { Details, useDoc } from "../useDoc";
 
 /**
- * ### Goals
- * - store working graphs in memory regardless of whether they
- * are local or hosted. This will allow us to use the same code for both.
- *- handle the transition from embedded yaml and hidden options
- * to a single meta section (embedded JSON below the document).
+ * A function which makes sure that the document loaded externally
+ * or from local storage matches the format that we expect. It parses
+ * it and puts it into a zustand store for use around the app
  *
  * ### Terminology
  * - `document` is the complete file contents (local or hosted)
@@ -65,9 +63,32 @@ export function prepareChart(doc: string, details: Details) {
 
   useDoc.setState({ text, meta, details }, false, "prepareChart");
 
+  // check for theme
+  replaceThemeWithCytoscapeStyle(meta);
+
   return {
     text,
     meta,
     details,
   };
+}
+
+async function replaceThemeWithCytoscapeStyle(meta: Record<string, unknown>) {
+  if (meta.cytoscapeStyle) return;
+  const theme = (meta.theme as string) ?? "original";
+  const { cytoscapeStyle = "", background = "" } = await import(
+    `../themes/${theme}`
+  );
+
+  // set the background if user has not set one
+  if (background && !meta.background) {
+    meta.background = background;
+  }
+
+  // set the cytoscapeStyle and remove the theme
+  if (cytoscapeStyle) {
+    meta.cytoscapeStyle = cytoscapeStyle;
+    meta.background = background;
+    delete meta.theme;
+  }
 }
