@@ -116,11 +116,25 @@ export default eggs;
 export const background = "#fffa96";
 export const cytoscapeStyle = `@import url("/fonts/GaeguRegular.css");
 
+$background: #fffa96;
+
+node {
+  font-size: 10px;
+  font-family: "Gaegu";
+  background-color: rgb(255, 253, 253);
+  border-color: rgb(53, 47, 57);
+  color: rgb(53, 47, 57);
+  label: data(label);
+  text-wrap: wrap;
+  text-max-width: data(width);
+  text-valign: center;
+  shape: ellipse;
+  padding: 14px;
+  line-height: 1;
+}
 :parent {
   shape: rectangle;
-  background-color: rgb(238, 238, 238);
   padding: 10px;
-  border-color: rgb(204, 204, 204);
   border-width: 1px;
   text-valign: top;
   text-halign: center;
@@ -182,21 +196,7 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: "Gaegu";
-  background-color: rgb(255, 253, 253);
-  border-color: rgb(53, 47, 57);
-  color: rgb(53, 47, 57);
-  label: data(label);
-  text-wrap: wrap;
-  text-max-width: data(width);
-  text-valign: center;
-  shape: ellipse;
-  padding: 14px;
-  line-height: 1;
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

@@ -126,11 +126,27 @@ export default originalDark;
 export const background = backgroundColor;
 export const cytoscapeStyle = `@import url("/fonts/Porpora.css");
 
+$background: #101010;
+
+node {
+  font-size: 10px;
+  font-family: Porpora;
+  background-color: rgb(16, 16, 16);
+  border-color: rgb(250, 250, 243);
+  color: rgb(250, 250, 243);
+  label: data(label);
+  text-wrap: wrap;
+  text-max-width: data(width);
+  text-valign: center;
+  text-halign: center;
+  border-width: 1.111px;
+  shape: rectangle;
+  padding: 5px;
+  line-height: 1.25;
+}
 :parent {
   shape: rectangle;
-  background-color: rgb(238, 238, 238);
   padding: 10px;
-  border-color: rgb(204, 204, 204);
   border-width: 1px;
   text-valign: top;
   text-halign: center;
@@ -195,23 +211,8 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: Porpora;
-  background-color: rgb(16, 16, 16);
-  border-color: rgb(250, 250, 243);
-  color: rgb(250, 250, 243);
-  label: data(label);
-  text-wrap: wrap;
-  text-max-width: data(width);
-  text-valign: center;
-  text-halign: center;
-  border-width: 1.111px;
-  shape: rectangle;
-  padding: 5px;
-  line-height: 1.25;
-}
-node[label!=""] {
+
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

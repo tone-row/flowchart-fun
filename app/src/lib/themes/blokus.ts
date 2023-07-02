@@ -126,6 +126,26 @@ export default blokus;
 export const background = "#1b1b20";
 export const cytoscapeStyle = `@import url("/fonts/SpaceMono.css");
 
+$background: #1b1b20;
+
+node {
+  font-size: 10px;
+  font-family: "Space Mono";
+  label: data(label);
+  color: #171817;
+  background-fill: linear-gradient;
+  background-gradient-stop-colors: #cdc5c5 #fdfbfb #ffffff;
+  background-gradient-direction: to-top-right;
+  text-valign: center;
+  text-halign: center;
+  text-wrap: wrap;
+  text-max-width: data(width);
+  line-height: 1.2;
+  text-justification: center;
+  padding: 6px;
+  background-color: #060608;
+  shape: roundrectangle;
+}
 :parent {
   shape: rectangle;
   background-color: #eeeeee;
@@ -194,25 +214,7 @@ node:selected {
   underlay-color: #000000;
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: "Space Mono";
-  label: data(label);
-  color: #171817;
-  background-fill: linear-gradient;
-  background-gradient-stop-colors: #cdc5c5 #fdfbfb #ffffff;
-  background-gradient-direction: to-top-right;
-  text-valign: center;
-  text-halign: center;
-  text-wrap: wrap;
-  text-max-width: data(width);
-  line-height: 1.2;
-  text-justification: center;
-  padding: 6px;
-  background-color: #060608;
-  shape: roundrectangle;
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

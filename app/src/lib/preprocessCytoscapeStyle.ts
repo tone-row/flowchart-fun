@@ -10,11 +10,13 @@ import { devtools } from "zustand/middleware";
 export const useProcessStyleStore = create<{
   styleImports: string[];
   fontData: CSSProperties;
+  variables: Record<string, string>;
 }>()(
   devtools(
     (_set) => ({
       styleImports: [],
       fontData: {},
+      variables: {},
     }),
     {
       name: "useStyleImports",
@@ -58,10 +60,13 @@ export function preprocessCytoscapeStyle(style: string) {
   // get font data
   const fontData = findFontData(style);
 
-  // set font data
-  useProcessStyleStore.setState({ fontData });
+  // process variables
+  const { updatedScss, variables } = processScss(style);
 
-  return { style, imports };
+  // set font data
+  useProcessStyleStore.setState({ fontData, variables });
+
+  return { style: updatedScss, imports, variables };
 }
 
 interface FontFaceDescriptor {
@@ -202,4 +207,39 @@ function findFontData(cssString: string) {
 
   // Return the font-related data
   return fontData;
+}
+
+/** Reads any unindented scss-style variables and replaces them throughout the rest of the css */
+function processScss(scss: string): {
+  updatedScss: string;
+  variables: { [key: string]: string };
+} {
+  // Create an object to store the variables
+  const variables: { [key: string]: string } = {};
+
+  // Split the SCSS into lines
+  const lines = scss.split("\n");
+
+  // Filter out the variable declarations and store them in the variables object
+  const updatedLines = lines.filter((line) => {
+    const match = line.match(/^\$([a-z0-9-_]+):\s*(.+);$/i);
+    if (match) {
+      variables[match[1]] = match[2];
+      return false;
+    }
+    return true;
+  });
+
+  // Replace references to the variables with their values
+  const updatedScss = updatedLines
+    .map((line) => {
+      for (const variable in variables) {
+        const regex = new RegExp(`\\$${variable}`, "g");
+        line = line.replace(regex, variables[variable]);
+      }
+      return line;
+    })
+    .join("\n");
+
+  return { updatedScss, variables };
 }

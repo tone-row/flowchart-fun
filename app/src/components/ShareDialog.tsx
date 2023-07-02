@@ -75,7 +75,6 @@ export default function ShareDialog() {
               if (!theme || !window.__cy) return;
               getCanvas({
                 cy: window.__cy,
-                theme,
                 type: "png",
                 watermark,
                 scale,
@@ -94,7 +93,6 @@ export default function ShareDialog() {
               if (!theme || !window.__cy) return;
               getCanvas({
                 cy: window.__cy,
-                theme,
                 type: "jpg",
                 watermark,
                 scale,
@@ -264,22 +262,19 @@ function PreviewImage({
   watermark?: boolean;
   scale?: number;
 }) {
-  const theme = useTheme();
   const img = useQuery(
     ["previewImg"],
     async () => {
-      if (!theme || !window.__cy) return "";
+      if (!window.__cy) return "";
       const { canvas } = await getCanvas({
         type: "png",
         cy: window.__cy,
-        theme,
         watermark,
         scale,
       });
       return canvas.toDataURL();
     },
     {
-      enabled: !!theme,
       cacheTime: 0,
       staleTime: 0,
       refetchOnMount: true,

@@ -130,17 +130,30 @@ export default playbook;
 export const background = backgroundColor;
 export const cytoscapeStyle = `@import url("/fonts/Karla.css");
 
+$background: ${backgroundColor};
+
+node {
+  font-size: 10px;
+  font-family: Karla;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(54, 52, 186);
+  color: rgb(0, 0, 0);
+  label: data(label);
+  text-wrap: wrap;
+  text-max-width: data(width);
+  text-valign: center;
+  shape: roundrectangle;
+  padding: 0px;
+  line-height: 1.33;
+}
 :parent {
   shape: rectangle;
-  background-color: rgb(238, 238, 238);
   padding: 6px;
-  border-color: rgb(204, 204, 204);
-  border-width: 1px;
+  border-color: rgb(54, 52, 186);
   text-valign: top;
   text-halign: center;
   text-margin-y: -6px;
   text-wrap: none;
-  color: rgb(0, 0, 0);
 }
 edge {
   width: 1px;
@@ -203,21 +216,7 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: Karla;
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(54, 52, 186);
-  color: rgb(0, 0, 0);
-  label: data(label);
-  text-wrap: wrap;
-  text-max-width: data(width);
-  text-valign: center;
-  shape: roundrectangle;
-  padding: 0px;
-  line-height: 1.33;
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

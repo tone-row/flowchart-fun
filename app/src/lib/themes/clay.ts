@@ -122,11 +122,25 @@ export default clay;
 export const background = "#664C4A";
 export const cytoscapeStyle = `@import url("/fonts/PoorStory.css");
 
+$background: #664C4A;
+
+node {
+  font-size: 10px;
+  font-family: Poor Story;
+  background-color: rgb(102, 76, 74);
+  border-color: rgb(252, 250, 241);
+  color: rgb(255, 255, 255);
+  label: data(label);
+  text-wrap: wrap;
+  text-max-width: data(width);
+  text-valign: center;
+  shape: ellipse;
+  padding: 6px;
+  line-height: 1;
+}
 :parent {
   shape: rectangle;
-  background-color: rgb(238, 238, 238);
   padding: 10px;
-  border-color: rgb(204, 204, 204);
   border-width: 1px;
   text-valign: top;
   text-halign: center;
@@ -189,21 +203,7 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: Poor Story;
-  background-color: rgb(102, 76, 74);
-  border-color: rgb(252, 250, 241);
-  color: rgb(255, 255, 255);
-  label: data(label);
-  text-wrap: wrap;
-  text-max-width: data(width);
-  text-valign: center;
-  shape: ellipse;
-  padding: 6px;
-  line-height: 1;
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

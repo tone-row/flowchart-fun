@@ -57,3 +57,14 @@ export const themes: SelectOption[] = [
   { label: () => t`Playbook`, value: "playbook", sponsorOnly: true },
   { label: () => t`Museum`, value: "museum", sponsorOnly: true },
 ];
+
+const validThemeValues = [
+  "original",
+  "original-dark",
+  "excalidraw",
+  "playbook",
+];
+
+export const validThemes = themes.filter((theme) =>
+  validThemeValues.includes(theme.value)
+);

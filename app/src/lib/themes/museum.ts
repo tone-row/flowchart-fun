@@ -132,17 +132,35 @@ export default museum;
 export const background = backgroundColor;
 export const cytoscapeStyle = `@import url("/fonts/SportingGrotesque.css");
 
+$background: ${backgroundColor};
+
+node {
+  font-size: 10px;
+  font-family: Sporting Grotesque;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(54, 50, 31);
+  color: rgb(54, 50, 31);
+  text-justification: center;
+  label: data(label);
+  text-wrap: wrap;
+  text-max-width: data(width);
+  text-valign: center;
+  shape: roundrectangle;
+  padding: 7px;
+  line-height: 1.33;
+  border-style: solid;
+  border-width: 3px;
+  underlay-color: rgb(54, 50, 31);
+  underlay-padding: 4px;
+  underlay-opacity: 1;
+  underlay-shape: ellipse;
+}
 :parent {
-  shape: rectangle;
-  background-color: rgb(238, 238, 238);
   padding: 10px;
-  border-color: rgb(204, 204, 204);
-  border-width: 1px;
   text-valign: top;
   text-halign: center;
-  text-margin-y: -5px;
+  text-margin-y: -8px;
   text-wrap: none;
-  color: rgb(54, 50, 31);
 }
 edge {
   width: 1.5px;
@@ -200,28 +218,7 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: Sporting Grotesque;
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(54, 50, 31);
-  color: rgb(54, 50, 31);
-  text-justification: center;
-  label: data(label);
-  text-wrap: wrap;
-  text-max-width: data(width);
-  text-valign: center;
-  shape: roundrectangle;
-  padding: 5px;
-  line-height: 1.33;
-  border-style: solid;
-  border-width: 3px;
-  underlay-color: rgb(54, 50, 31);
-  underlay-padding: 4px;
-  underlay-opacity: 1;
-  underlay-shape: ellipse;
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

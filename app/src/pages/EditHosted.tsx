@@ -81,7 +81,7 @@ export default function EditHosted() {
             <Tabs.Content value="Layout">
               <EditLayoutTab />
             </Tabs.Content>
-            <Tabs.Content value="Style">
+            <Tabs.Content value="Style" className="overflow-hidden">
               <EditStyleTab />
             </Tabs.Content>
             {isValidSponsor && (

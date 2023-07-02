@@ -83,7 +83,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
           if (!theme || !window.__cy) return;
           startCursorSpin();
           getCanvas({
-            theme,
             cy: window.__cy,
             type: "png",
             watermark,
@@ -107,7 +106,6 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
           if (!theme || !window.__cy) return;
           startCursorSpin();
           getCanvas({
-            theme,
             cy: window.__cy,
             type: "jpg",
             watermark,
@@ -206,7 +204,6 @@ function CopyPNG({
     setTimeout(() => {
       if (!window.__cy || !theme) return;
       getCanvas({
-        theme,
         cy: window.__cy,
         type: "png",
         watermark,

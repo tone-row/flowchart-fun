@@ -119,12 +119,30 @@ export default retro;
 export const background = backgroundColor;
 export const cytoscapeStyle = `@import url("/fonts/JosefinSans.css");
 
+$background: ${backgroundColor};
+$fontFamily: ${fontFamily};
+
+node {
+  font-size: 10px;
+  font-family: $fontFamily;
+  background-color: rgb(246, 247, 248);
+  border-color: rgb(29, 29, 27);
+  color: rgb(29, 29, 27);
+  text-justification: center;
+  label: data(label);
+  text-wrap: wrap;
+  text-max-width: data(width);
+  text-valign: center;
+  shape: roundrectangle;
+  padding: 8px;
+  line-height: 1.2;
+  border-style: solid;
+  border-width: 3px;
+}
 :parent {
-  shape: rectangle;
-  background-color: rgb(238, 238, 238);
+  shape: roundrectangle;
   padding: 10px;
-  border-color: rgb(204, 204, 204);
-  border-width: 1px;
+  border-width: 3px;
   text-valign: top;
   text-halign: center;
   text-margin-y: -8px;
@@ -140,7 +158,7 @@ edge {
   color: rgb(246, 247, 248);
   text-valign: bottom;
   text-wrap: wrap;
-  font-family: Josefin Sans;
+  font-family: $fontFamily;
   text-background-opacity: 1;
   text-background-color: rgb(0, 0, 0);
   text-background-padding: 6px;
@@ -185,24 +203,8 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: Josefin Sans;
-  background-color: rgb(246, 247, 248);
-  border-color: rgb(29, 29, 27);
-  color: rgb(29, 29, 27);
-  text-justification: center;
-  label: data(label);
-  text-wrap: wrap;
-  text-max-width: data(width);
-  text-valign: center;
-  shape: roundrectangle;
-  padding: 8px;
-  line-height: 1.2;
-  border-style: solid;
-  border-width: 3px;
-}
-node[label!=""] {
+
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

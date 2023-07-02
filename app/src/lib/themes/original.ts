@@ -118,20 +118,37 @@ export default original;
 export const background = backgroundColor;
 export const cytoscapeStyle = `@import url("/fonts/Karla.css");
 
+$background: #ffffff;
+$borderWidth: 0.75px;
+
+node {
+  font-size: 10px;
+  font-family: Karla;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  label: data(label);
+  text-wrap: wrap;
+  text-max-width: data(width);
+  padding: 6px;
+  text-valign: center;
+  text-halign: center;
+  border-width: $borderWidth;
+  shape: rectangle;
+  line-height: 1.25;
+}
+
 :parent {
   shape: rectangle;
-  background-color: rgb(238, 238, 238);
-  padding: 10px;
-  border-color: rgb(204, 204, 204);
-  border-width: 1px;
+  padding: 5px;
+  border-width: $borderWidth;
   text-valign: top;
   text-halign: center;
   text-margin-y: -6px;
   text-wrap: none;
-  color: rgb(0, 0, 0);
 }
 edge {
-  width: 0.75px;
+  width: $borderWidth;
   font-size: 10px;
   loop-direction: 0deg;
   loop-sweep: 20deg;
@@ -186,23 +203,7 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: Karla;
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(0, 0, 0);
-  color: rgb(0, 0, 0);
-  label: data(label);
-  text-wrap: wrap;
-  text-max-width: data(width);
-  padding: 6px;
-  text-valign: center;
-  text-halign: center;
-  border-width: 0.75px;
-  shape: rectangle;
-  line-height: 1.25;
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

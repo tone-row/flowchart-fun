@@ -118,12 +118,30 @@ export default monospace;
 export const background = colors.black;
 export const cytoscapeStyle = `@import url("/fonts/FiraMono.css");
 
+$background: ${background};
+
+node {
+  font-size: 10px;
+  font-family: "Fira Mono", monospace;
+  label: data(label);
+  color: #9cadff;
+  text-valign: center;
+  text-halign: center;
+  text-wrap: wrap;
+  text-max-width: data(width);
+  line-height: 1.1;
+  text-justification: center;
+  padding: 5px;
+  background-color: #14141c;
+  border-color: #9cadff;
+  border-width: 2px;
+  border-opacity: 1;
+  shape: rectangle;
+}
 :parent {
   shape: rectangle;
-  background-color: #eeeeee;
   padding: 10px;
-  border-color: #cccccc;
-  border-width: 1px;
+  border-width: 2px;
   text-valign: top;
   text-halign: center;
   text-margin-y: -5px;
@@ -185,25 +203,7 @@ node:selected {
   underlay-color: #000000;
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: "Fira Mono", monospace;
-  label: data(label);
-  color: #9cadff;
-  text-valign: center;
-  text-halign: center;
-  text-wrap: wrap;
-  text-max-width: data(width);
-  line-height: 1.1;
-  text-justification: center;
-  padding: 5px;
-  background-color: #14141c;
-  border-color: #9cadff;
-  border-width: 2px;
-  border-opacity: 1;
-  shape: rectangle;
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

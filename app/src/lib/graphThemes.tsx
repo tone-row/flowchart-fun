@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 
+import { useProcessStyleStore } from "./preprocessCytoscapeStyle";
 import { queryClient } from "./queries";
 import { Theme } from "./themes/constants";
 import { useDoc } from "./useDoc";
@@ -107,19 +108,11 @@ export function useTheme() {
 /**
  * Get the background color, user override, theme, or default
  */
-export function useBackgroundColor(theme?: Theme) {
-  const bgUser = useDoc((state) => state.meta?.background);
-  const bgTheme = theme?.bg;
-  const bgDefault = "#ffffff";
-  return (bgUser ?? bgTheme ?? bgDefault) as string;
+const bgDefault = "#ffffff";
+export function useBackgroundColor() {
+  return useProcessStyleStore((s) => s.variables?.background ?? bgDefault);
 }
 
-/**
- * one-shot, get background color
- */
-export function getBackgroundColor(theme: Theme) {
-  const bgUser = useDoc.getState().meta?.background;
-  const bgTheme = theme?.bg;
-  const bgDefault = "#ffffff";
-  return (bgUser ?? bgTheme ?? bgDefault) as string;
+export function getBackgroundColor() {
+  return useProcessStyleStore.getState().variables?.background ?? bgDefault;
 }

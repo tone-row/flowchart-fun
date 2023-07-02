@@ -117,11 +117,26 @@ export default excalidraw;
 export const background = "#ffffff";
 export const cytoscapeStyle = `@import url("/fonts/Virgil3YOFF.css");
 
+$background: #ffffff;
+
+node {
+  font-size: 10px;
+  font-family: "Virgil3YOFF";
+  label: data(label);
+  text-valign: center;
+  text-halign: center;
+  text-wrap: wrap;
+  text-max-width: data(width);
+  color: rgb(0, 0, 0);
+  shape: rectangle;
+  background-color: rgb(255, 255, 255);
+  background-opacity: 0;
+  padding: 2px;
+  line-height: 1.3;
+}
 :parent {
   shape: rectangle;
-  background-color: rgb(238, 238, 238);
   padding: 10px;
-  border-color: rgb(204, 204, 204);
   border-width: 1px;
   text-valign: top;
   text-halign: center;
@@ -182,22 +197,7 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  font-family: "Virgil3YOFF";
-  label: data(label);
-  text-valign: center;
-  text-halign: center;
-  text-wrap: wrap;
-  text-max-width: data(width);
-  color: rgb(0, 0, 0);
-  shape: rectangle;
-  background-color: rgb(255, 255, 255);
-  background-opacity: 0;
-  padding: 2px;
-  line-height: 1.3;
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

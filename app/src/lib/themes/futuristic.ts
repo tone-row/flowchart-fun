@@ -150,17 +150,34 @@ export default futuristic;
 export const background = backgroundColor;
 export const cytoscapeStyle = `@import url("/fonts/SpaceMono.css");
 
+$background: ${backgroundColor};
+
+node {
+  font-size: 10px;
+  background-fill: linear-gradient;
+  background-gradient-stop-colors: #2b6cf0 #52b6f6;
+  background-gradient-direction: to-right;
+  font-family: Space Mono;
+  border-color: #05080c;
+  color: #05080c;
+  label: data(label);
+  text-wrap: wrap;
+  text-max-width: data(width);
+  text-valign: center;
+  shape: rectangle;
+  padding: 8px;
+  line-height: 1.2;
+  border-style: solid;
+  border-width: 1px;
+}
 :parent {
   shape: rectangle;
-  background-color: #eeeeee;
   padding: 10px;
-  border-color: #cccccc;
-  border-width: 1px;
   text-valign: top;
   text-halign: center;
   text-margin-y: -8px;
   text-wrap: none;
-  color: #05080c;
+  background-color: $background;
 }
 edge {
   width: 1.75px;
@@ -216,25 +233,7 @@ node:selected {
   underlay-color: #000000;
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  background-fill: linear-gradient;
-  background-gradient-stop-colors: #2b6cf0 #52b6f6;
-  background-gradient-direction: to-right;
-  font-family: Space Mono;
-  border-color: #05080c;
-  color: #05080c;
-  label: data(label);
-  text-wrap: wrap;
-  text-max-width: data(width);
-  text-valign: center;
-  shape: rectangle;
-  padding: 8px;
-  line-height: 1.2;
-  border-style: solid;
-  border-width: 1px;
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

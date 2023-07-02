@@ -112,12 +112,28 @@ export default comicBook;
 export const background = "#FEFEFE";
 export const cytoscapeStyle = `@import url("/fonts/PermanentMarker.css");
 
+$background: #FEFEFE;
+
+node {
+  font-size: 10px;
+  background-color: rgb(246, 216, 131);
+  font-family: Permanent Marker;
+  color: rgb(5, 8, 12);
+  text-margin-y: -1px;
+  label: data(label);
+  text-wrap: wrap;
+  text-max-width: data(width);
+  text-valign: center;
+  shape: rectangle;
+  padding: 5px;
+  line-height: 1.2;
+  border-style: solid;
+  border-width: 1.88px;
+  border-color: rgb(5, 8, 12);
+}
 :parent {
   shape: rectangle;
-  background-color: rgb(238, 238, 238);
   padding: 10px;
-  border-color: rgb(204, 204, 204);
-  border-width: 1px;
   text-valign: top;
   text-halign: center;
   text-margin-y: -5px;
@@ -175,24 +191,7 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-node {
-  font-size: 10px;
-  background-color: rgb(246, 216, 131);
-  font-family: Permanent Marker;
-  color: rgb(5, 8, 12);
-  text-margin-y: -1px;
-  label: data(label);
-  text-wrap: wrap;
-  text-max-width: data(width);
-  text-valign: center;
-  shape: rectangle;
-  padding: 5px;
-  line-height: 1.2;
-  border-style: solid;
-  border-width: 1.88px;
-  border-color: rgb(5, 8, 12);
-}
-node[label!=""] {
+:childless[label!=""] {
   width: data(shapeWidth);
   height: data(shapeHeight);
   text-margin-y: data(textMarginY);

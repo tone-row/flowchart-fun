@@ -12,7 +12,7 @@ const PADDING = 60;
  * Returns the SVG code for the current graph
  */
 export async function getSvg({ cy, theme }: { cy: Core; theme: Theme }) {
-  const bg = getBackgroundColor(theme);
+  const bg = getBackgroundColor();
 
   try {
     // @ts-ignore
@@ -116,13 +116,11 @@ export async function downloadSvg({
 export async function getCanvas({
   cy,
   type,
-  theme,
   scale = UNAUTH_IMG_SCALE,
   watermark = true,
 }: {
   cy: Core;
   type: "jpg" | "png";
-  theme: Theme;
   scale?: number;
   watermark?: boolean;
 }): Promise<{
@@ -130,7 +128,7 @@ export async function getCanvas({
   type: "jpg" | "png";
   cleanup: () => void;
 }> {
-  const bg = getBackgroundColor(theme);
+  const bg = getBackgroundColor();
   const blob = await cy[type]({
     full: true,
     scale,
@@ -182,7 +180,6 @@ export async function getCanvas({
           ctx,
           width: canvas.width,
           height: canvas.height,
-          theme,
         });
       resolve({
         canvas,
@@ -200,21 +197,18 @@ async function addWatermark({
   ctx,
   width,
   height,
-  theme,
 }: {
   ctx: CanvasRenderingContext2D;
   width: number;
   height: number;
-  theme: Theme;
 }) {
-  const foreground = theme.fg;
   // get a size that is 3% of the canvas height
   const heightRelativeSize = Math.floor(height * 0.03);
   const widthRelativeSize = Math.floor(width * 0.05);
   // take the smaller of the two
   const size = Math.min(heightRelativeSize, widthRelativeSize);
   ctx.font = `${Math.floor(size)}px Helvetica`;
-  ctx.fillStyle = foreground;
+  ctx.fillStyle = "#000000";
   ctx.fillText("flowchart.fun", 5, height - size / 2);
 }
 
