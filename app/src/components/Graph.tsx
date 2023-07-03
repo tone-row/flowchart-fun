@@ -373,6 +373,7 @@ function getGraphUpdater({
         });
       }
     }
+    console.log("Graph Rendered");
   }, 333);
 }
 

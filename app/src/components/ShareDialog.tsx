@@ -110,9 +110,8 @@ export default function ShareDialog() {
             <Button
               disabled={!isValidSponsor}
               onClick={async () => {
-                if (!theme || !window.__cy) return;
+                if (!window.__cy) return;
                 const svg = await getSvg({
-                  theme,
                   cy: window.__cy,
                 });
                 downloadSvg({

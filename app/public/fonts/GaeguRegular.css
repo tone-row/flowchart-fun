@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Gaegu";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/Gaegu-Regular.ttf') format('truetype');
+  font-family: Gaegu;
+  src: url('/fonts/GaeguRegular.woff2') format('woff2');
 }

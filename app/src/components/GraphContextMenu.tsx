@@ -23,8 +23,8 @@ import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import {
   defaultGraphTheme,
   getTheme,
+  tmpThemeColors,
   useCurrentTheme,
-  useTheme,
 } from "../lib/graphThemes";
 import {
   borderStyles,
@@ -56,7 +56,6 @@ export const GRAPH_CONTEXT_MENU_ID = "graph-context-menu";
 export const GraphContextMenu = memo(function GraphContextMenu() {
   const isFirefox = useIsFirefox();
   const filename = useDownloadFilename();
-  const theme = useTheme();
 
   const isValidSponsor = useIsValidSponsor();
   const watermark = !isValidSponsor;
@@ -80,7 +79,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       {isValidSponsor && <CopySVG />}
       <Item
         onClick={() => {
-          if (!theme || !window.__cy) return;
+          if (!window.__cy) return;
           startCursorSpin();
           getCanvas({
             cy: window.__cy,
@@ -103,7 +102,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       </Item>
       <Item
         onClick={() => {
-          if (!theme || !window.__cy) return;
+          if (!window.__cy) return;
           startCursorSpin();
           getCanvas({
             cy: window.__cy,
@@ -127,13 +126,11 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       {isValidSponsor && (
         <Item
           onClick={async () => {
-            const theme = getTheme();
             const cy = window.__cy;
-            if (!theme || !cy) return;
+            if (!cy) return;
             startCursorSpin();
             const svg = await getSvg({
               cy,
-              theme,
             });
             if (!svg) return;
             downloadSvg({
@@ -163,14 +160,12 @@ function CopySVG() {
       onClick={async () => {
         dispatch("loading");
         startCursorSpin();
-        const theme = getTheme();
         const cy = window.__cy;
-        if (theme && cy)
+        if (cy)
           // copy to clipboard using navigator
           await navigator.clipboard.writeText(
             await getSvg({
               cy,
-              theme,
             })
           );
         dispatch("success");
@@ -192,8 +187,6 @@ function CopyPNG({
   watermark?: boolean;
   scale?: number;
 }) {
-  const theme = useTheme();
-
   const [state, dispatch] = useReducer(
     (_state: ItemState, action: ItemState) => action,
     "idle"
@@ -202,7 +195,7 @@ function CopyPNG({
     dispatch("loading");
     startCursorSpin();
     setTimeout(() => {
-      if (!window.__cy || !theme) return;
+      if (!window.__cy) return;
       getCanvas({
         cy: window.__cy,
         type: "png",
@@ -272,9 +265,7 @@ const edges = edgeLineStyles.map((style) => style.selector.slice(5));
 
 function NodeSubmenu() {
   const active = useContextMenuState((state) => state.active);
-  const themeKey = useDoc((doc) => doc.meta?.theme ?? defaultGraphTheme);
-  const theme = useCurrentTheme(themeKey as string);
-  const colors = theme?.colors ?? {};
+  const colors = tmpThemeColors;
   const colorNames = Object.keys(colors);
   const selected = useSelectedNodes();
   const activeSelection = selected.length

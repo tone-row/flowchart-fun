@@ -6,6 +6,7 @@ import {
   HIDDEN_GRAPH_OPTIONS_DIVIDER,
   newDelimiters,
 } from "../constants";
+import { preprocessCytoscapeStyle } from "../preprocessCytoscapeStyle";
 import { Details, useDoc } from "../useDoc";
 
 /**
@@ -19,7 +20,7 @@ import { Details, useDoc } from "../useDoc";
  * - `meta` is the meta section of the document
  */
 
-export function prepareChart(doc: string, details: Details) {
+export async function prepareChart(doc: string, details: Details) {
   let text = doc;
 
   let jsonMeta = {};
@@ -64,7 +65,7 @@ export function prepareChart(doc: string, details: Details) {
   useDoc.setState({ text, meta, details }, false, "prepareChart");
 
   // check for theme
-  replaceThemeWithCytoscapeStyle(meta);
+  await replaceThemeWithCytoscapeStyle(meta);
 
   return {
     text,
@@ -89,6 +90,8 @@ async function replaceThemeWithCytoscapeStyle(meta: Record<string, unknown>) {
   if (cytoscapeStyle) {
     meta.cytoscapeStyle = cytoscapeStyle;
     meta.background = background;
-    delete meta.theme;
+    preprocessCytoscapeStyle(cytoscapeStyle);
   }
+
+  delete meta.theme;
 }

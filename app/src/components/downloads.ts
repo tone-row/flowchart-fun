@@ -11,7 +11,7 @@ const PADDING = 60;
 /**
  * Returns the SVG code for the current graph
  */
-export async function getSvg({ cy, theme }: { cy: Core; theme: Theme }) {
+export async function getSvg({ cy }: { cy: Core }) {
   const bg = getBackgroundColor();
 
   try {
@@ -57,28 +57,28 @@ export async function getSvg({ cy, theme }: { cy: Core; theme: Theme }) {
     }
 
     // Add font file if necessary
-    let fontString = "";
-    const files = theme.font.files;
-    if (files) {
-      for (const { url, name } of files) {
-        if (!(url in window.__flowchartFunBase64EncodedFonts)) {
-          const fontUrl = `/fonts/${url}`;
-          const font = await fetch(fontUrl)
-            .then((res) => res.arrayBuffer())
-            .catch((e) => console.error(e));
-          if (!font) continue;
-          const base64 = arrayBufferToBase64(font);
-          window.__flowchartFunBase64EncodedFonts[url] = base64;
-        }
-        fontString += `@font-face { font-family: "${name}"; src: url(data:application/x-font-woff2;charset=utf-8;base64,${window.__flowchartFunBase64EncodedFonts[url]}) format("woff2"); }}`;
-      }
-    }
+    // let fontString = "";
+    // const files = theme.font.files;
+    // if (files) {
+    //   for (const { url, name } of files) {
+    //     if (!(url in window.__flowchartFunBase64EncodedFonts)) {
+    //       const fontUrl = `/fonts/${url}`;
+    //       const font = await fetch(fontUrl)
+    //         .then((res) => res.arrayBuffer())
+    //         .catch((e) => console.error(e));
+    //       if (!font) continue;
+    //       const base64 = arrayBufferToBase64(font);
+    //       window.__flowchartFunBase64EncodedFonts[url] = base64;
+    //     }
+    //     fontString += `@font-face { font-family: "${name}"; src: url(data:application/x-font-woff2;charset=utf-8;base64,${window.__flowchartFunBase64EncodedFonts[url]}) format("woff2"); }}`;
+    //   }
+    // }
 
-    if (fontString) {
-      const style = document.createElement("style");
-      style.innerHTML = fontString;
-      svgTag.prepend(style);
-    }
+    // if (fontString) {
+    //   const style = document.createElement("style");
+    //   style.innerHTML = fontString;
+    //   svgTag.prepend(style);
+    // }
 
     const correctedSvgStr = svgEl.documentElement.outerHTML;
     const { optimize } = await import("svgo/dist/svgo.browser");

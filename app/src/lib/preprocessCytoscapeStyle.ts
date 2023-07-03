@@ -1,7 +1,9 @@
-import { CSSProperties } from "react";
-import { useQueries } from "react-query";
+import { CSSProperties, useEffect } from "react";
+import { useQueries, useQuery } from "react-query";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
+
+import { useUnmountStore } from "./useUnmountStore";
 
 /**
  * Create a zustand store to hold imports requested by styles
@@ -13,7 +15,7 @@ export const useProcessStyleStore = create<{
   variables: Record<string, string>;
 }>()(
   devtools(
-    (_set) => ({
+    (set) => ({
       styleImports: [],
       fontData: {},
       variables: {},
@@ -28,15 +30,16 @@ export const useProcessStyleStore = create<{
  * a function which adds a style import if it isn't already in the list
  */
 export function addStyleImports(urls: string[]) {
-  useProcessStyleStore.setState(({ styleImports }) => {
-    const newImports = [...styleImports];
-    for (const url of urls) {
-      if (!newImports.includes(url)) {
-        newImports.push(url);
-      }
-    }
-    return { styleImports: newImports };
-  });
+  useProcessStyleStore.setState({ styleImports: urls });
+  // useProcessStyleStore.setState(({ styleImports }) => {
+  //   const newImports = [...styleImports];
+  //   for (const url of urls) {
+  //     if (!newImports.includes(url)) {
+  //       newImports.push(url);
+  //     }
+  //   }
+  //   return { styleImports: newImports };
+  // });
 }
 
 /**
@@ -131,19 +134,27 @@ function isCSSStyleRule(rule: CSSRule): rule is CSSStyleRule {
 /**
  * Loads fonts using the FontFace API
  */
-async function loadFonts(fonts: FontFaceInput[]): Promise<void> {
+async function loadFonts(fonts: FontFaceInput[]) {
   const fontPromises: Promise<FontFace>[] = [];
 
   for (const font of fonts) {
     const fontFace = new FontFace(font.fontFamily, font.src, font.descriptors);
-    fontPromises.push(fontFace.load());
+    fontPromises.push(
+      (async () => {
+        // Wait for the font to be loaded
+        await fontFace.load();
+        // Add the font to the document
+        document.fonts.add(fontFace);
+        return fontFace;
+      })()
+    );
   }
 
-  await Promise.all(fontPromises);
+  return Promise.all(fontPromises);
 }
 
 /**
- * Takes a CSS Url or string and loads the fonts from it
+ * Takes a CSS Url and loads the fonts from it
  */
 async function loadFontsFromCSS(url: string): Promise<void> {
   const response = await fetch(url);
@@ -157,16 +168,18 @@ async function loadFontsFromCSS(url: string): Promise<void> {
  */
 export function useCytoscapeStyleImports() {
   const { styleImports } = useProcessStyleStore();
-  return useQueries(
-    styleImports.map((url) => ({
-      queryKey: ["styleImport", url],
-      queryFn: () => loadFontsFromCSS(url),
-      enabled: !!url,
-      suspense: true,
-      cacheTime: Infinity,
-      staleTime: Infinity,
-    }))
-  );
+  return useQuery({
+    queryKey: ["importStyle", ...styleImports],
+    queryFn: async () => await Promise.all(styleImports.map(loadFontsFromCSS)),
+    suspense: true,
+    cacheTime: Infinity,
+    staleTime: Infinity,
+    onSuccess: () => {
+      useUnmountStore.setState({
+        unmount: true,
+      });
+    },
+  });
 }
 
 function findFontData(cssString: string) {
