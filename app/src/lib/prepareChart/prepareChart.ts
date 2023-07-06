@@ -77,19 +77,11 @@ export async function prepareChart(doc: string, details: Details) {
 async function replaceThemeWithCytoscapeStyle(meta: Record<string, unknown>) {
   if (meta.cytoscapeStyle) return;
   const theme = (meta.theme as string) ?? "original";
-  const { cytoscapeStyle = "", background = "" } = await import(
-    `../themes/${theme}`
-  );
-
-  // set the background if user has not set one
-  if (background && !meta.background) {
-    meta.background = background;
-  }
+  const { cytoscapeStyle = "" } = await import(`../themes/${theme}`);
 
   // set the cytoscapeStyle and remove the theme
   if (cytoscapeStyle) {
     meta.cytoscapeStyle = cytoscapeStyle;
-    meta.background = background;
     preprocessCytoscapeStyle(cytoscapeStyle);
   }
 
