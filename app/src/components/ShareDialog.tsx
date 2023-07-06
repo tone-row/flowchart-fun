@@ -21,7 +21,6 @@ import {
 import { useMutation, useQuery } from "react-query";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
-import { useTheme } from "../lib/graphThemes";
 import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
 import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
@@ -47,7 +46,6 @@ export default function ShareDialog() {
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
-  const theme = useTheme();
   const filename = useDownloadFilename();
   const isValidSponsor = useIsValidSponsor();
   const watermark = !isValidSponsor;
@@ -72,29 +70,29 @@ export default function ShareDialog() {
         <Box gap={2} flow="column" className={styles.DownloadButtons}>
           <Button
             onClick={() => {
-              if (!theme || !window.__cy) return;
+              if (!window.__cy) return;
               getCanvas({
                 cy: window.__cy,
-                theme,
                 type: "png",
                 watermark,
                 scale,
-              }).then((canvas) =>
-                downloadCanvas({
-                  ...canvas,
-                  filename,
-                })
-              );
+              })
+                .then((canvas) =>
+                  downloadCanvas({
+                    ...canvas,
+                    filename,
+                  })
+                )
+                .catch(console.error);
             }}
             aria-label="Download PNG"
             text="PNG"
           />
           <Button
             onClick={() => {
-              if (!theme || !window.__cy) return;
+              if (!window.__cy) return;
               getCanvas({
                 cy: window.__cy,
-                theme,
                 type: "jpg",
                 watermark,
                 scale,
@@ -112,9 +110,8 @@ export default function ShareDialog() {
             <Button
               disabled={!isValidSponsor}
               onClick={async () => {
-                if (!theme || !window.__cy) return;
+                if (!window.__cy) return;
                 const svg = await getSvg({
-                  theme,
                   cy: window.__cy,
                 });
                 downloadSvg({
@@ -264,22 +261,19 @@ function PreviewImage({
   watermark?: boolean;
   scale?: number;
 }) {
-  const theme = useTheme();
   const img = useQuery(
     ["previewImg"],
     async () => {
-      if (!theme || !window.__cy) return "";
+      if (!window.__cy) return "";
       const { canvas } = await getCanvas({
         type: "png",
         cy: window.__cy,
-        theme,
         watermark,
         scale,
       });
       return canvas.toDataURL();
     },
     {
-      enabled: !!theme,
       cacheTime: 0,
       staleTime: 0,
       refetchOnMount: true,

@@ -1,18 +1,16 @@
 import { ElementDefinition } from "cytoscape";
 import { parse, toCytoscapeElements } from "graph-selector";
 
-import { TGetSize } from "./getGetSize";
+import { getSize } from "./getSize";
 
 /**
  * Takes the text input and the getSize function
  * and returns the elements using the specified parser
  */
-export function getElements(
-  text: string,
-  getSize: TGetSize
-): ElementDefinition[] {
+export function getElements(text: string): ElementDefinition[] {
   return toCytoscapeElements(parse(text)).map((element) => {
-    let size: Record<string, string | number> = {};
+    let size: ReturnType<typeof getSize>;
+
     if ("w" in element.data || "h" in element.data) {
       size = {
         width: element.data.w || "label",

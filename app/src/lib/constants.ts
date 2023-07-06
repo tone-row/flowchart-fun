@@ -64,3 +64,5 @@ export const UNAUTH_IMG_SCALE = 1.5;
 
 // This is to avoid a monaco-editor import that breaks too many things
 export const monacoMarkerErrorSeverity = 8;
+
+export const DISCORD_URL = "https://discord.gg/wPASTQHQBf";

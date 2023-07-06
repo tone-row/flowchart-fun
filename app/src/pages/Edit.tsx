@@ -108,14 +108,14 @@ export default EditOuter;
 /**
  * Load the workspace into our zustand store
  */
-function loadWorkspace(workspace: string) {
+async function loadWorkspace(workspace: string) {
   const key = titleToLocalStorageKey(workspace);
   let workspaceText = localStorage.getItem(key);
   if (!workspaceText) {
     workspaceText = getDefaultChart();
   }
 
-  prepareChart(workspaceText, {
+  await prepareChart(workspaceText, {
     id: workspace,
     title: workspace,
     isHosted: false,

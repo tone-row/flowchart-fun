@@ -26,7 +26,6 @@
     Attributes: "गुण",
     "Auto-Layouts": "ऑटो लेआउट",
     "Back To Editor": "संपादक पर वापस जाएं",
-    Background: "पृष्ठभूमि",
     "Basic Flowchart": "बेसिक फ्लोचार्ट",
     "Become a Github Sponsor": "गिटहब स्पॉन्सर बनें",
     "Become a Pro User": "प्रो उपयोगकर्ता बनें",
@@ -48,6 +47,7 @@
     Charts: "चार्ट",
     "Check your email for a link to log in. You can close this window.":
       "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं.",
+    "Choose a Theme": "एक थीम चुनें",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।",
     "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
@@ -59,6 +59,7 @@
     "Clear text?": "पाठ साफ़ करें?",
     "Click on \\nLearn Syntax\\nto learn more":
       "\\nसिंटैक्स सीखने के लिए \\nपर क्लिक करें\\n",
+    "Click to preview": "पूर्वावलोकन के लिए क्लिक करें",
     Clone: "क्लोन करें",
     Close: "बंद करें",
     Color: "रंग",
@@ -89,6 +90,8 @@
       "दो नोड्स के बीच एक एज बनाने के लिए दूसरा नोड पहले वाले के नीचे इंडेंट करना होता है",
     "Custom Sharing Options": "कस्टम शेयरिंग विकल्प",
     "Customer Portal": "ग्राहक पोर्टल",
+    "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck.":
+      "नीचे दिए गए <0>Cytoscape CSS</0> को संशोधित करके अपनी थीम को अनुकूलित करें। हमारी स्टाइलिंग दस्तावेज़ की तैयारी जल्द ही होगी! इस बीच, सर्वश्रेष्ठ स्रोत <1>Cytoscape</1> दस्तावेज़ है। अगर आप संकट में पड़ जाते हैं तो डिस्कोर्ड में सवाल पूछने आएं।",
     Dark: "डार्क",
     "Dark Mode": "डार्क मोड",
     Date: "तारीख़",
@@ -159,7 +162,6 @@
     Fullscreen: "फ़ुलस्क्रीन",
     Futuristic: "भविष्य का",
     "Get More Layouts": "ज़्यादा लेआउट पाएं",
-    "Get More Themes": "ज़्यादा थीम पाएं",
     "Get personalized attention and support from our expert team":
       "हमारे विशेषज्ञ टीम से व्यक्तिगत ध्यान और समर्थन प्राप्त करें",
     "Getting Started": "शुरू करना",
@@ -213,7 +215,10 @@
     Light: "लाइट",
     "Light Mode": "लाइट मोड",
     Link: "लिंक",
+    "Load Theme": "थीम लोड करें",
     Loading: "लोड हो रहा है",
+    "Loading a theme will erase any custom styles you have applied":
+      "थीम लोड करने से आपने अपने कस्टम स्टाइल को मिटा दिया होगा",
     "Log In": "लॉग इन करें",
     "Log Out": "लॉग आउट",
     "Log in to start creating flowcharts.":
@@ -361,7 +366,7 @@
     "The delimiter used to separate multiple target nodes":
       "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर",
     "The possible shapes are:": "संभव आकृतियाँ हैं:",
-    Theme: "शैली",
+    "Theme Editor": "थीम एडिटर",
     "There are no edges in this data": "इस डेटा में कोई एड्ज नहीं है",
     "This action cannot be undone.": "इस क्रिया को पूर्ववत नहीं किया जा सकता।",
     "This app works by typing": "यह ऐप टाइप द्वारा काम करता है",

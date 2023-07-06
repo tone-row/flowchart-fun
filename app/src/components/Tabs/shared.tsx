@@ -73,8 +73,16 @@ export const TabOptionsGrid = memo(function TabOptionsGrid({
   return <div className={styles.tabOptionsGrid}>{children}</div>;
 });
 
-export function WithLowerChild({ children }: { children: ReactNode }) {
-  return <div className={styles.withLowerChild}>{children}</div>;
+export function WithLowerChild({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`${styles.withLowerChild} ${className}`}>{children}</div>
+  );
 }
 
 export function LargeLink({

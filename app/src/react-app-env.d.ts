@@ -10,3 +10,7 @@ declare module "svgo/dist/svgo.browser" {
   const optimize: (s: string, args: any) => { data: string };
   export = { optimize };
 }
+
+interface CSSStyleSheet {
+  replaceSync(reset_style: any): void;
+}

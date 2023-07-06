@@ -26,7 +26,6 @@
     Attributes: "属性",
     "Auto-Layouts": "自动布局",
     "Back To Editor": "返回编辑器",
-    Background: "背景",
     "Basic Flowchart": "基本流程图",
     "Become a Github Sponsor": "成为Github赞助商",
     "Become a Pro User": "成为专业用户",
@@ -48,6 +47,7 @@
     Charts: "图表",
     "Check your email for a link to log in. You can close this window.":
       "检查您的电子邮件以获取登录链接。您可以关闭此窗口。",
+    "Choose a Theme": "选择一个主题",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "为边缘的源和目标选择各种箭头形状。形状包括三角形，三角形-T，圆形-三角形，三角形-十字，三角形-后曲线，V形，T形，正方形，圆形，菱形，雪花形，无。",
     "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
@@ -58,6 +58,7 @@
     Clear: "清除",
     "Clear text?": "清除文字？",
     "Click on \\nLearn Syntax\\nto learn more": "点击 \\n学习语法\\n了解更多",
+    "Click to preview": "点击预览",
     Clone: "克隆",
     Close: "关闭",
     Color: "颜色",
@@ -87,6 +88,8 @@
       "在两个节点之间创建边缘是通过将第二个节点缩进第一个节点来完成的",
     "Custom Sharing Options": "自定义分享选项",
     "Customer Portal": "客户门户",
+    "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck.":
+      "通过编辑<0>Cytoscape CSS</0>来自定义主题，我们的样式文档即将推出！与此同时，最好的资源是<1>Cytoscape</1>文档。如果你遇到困难，可以在<2>Discord</2>上提问。",
     Dark: "深色",
     "Dark Mode": "深色模式",
     Date: "日期",
@@ -153,7 +156,6 @@
     Fullscreen: "全屏",
     Futuristic: "未来主义的",
     "Get More Layouts": "获取更多布局",
-    "Get More Themes": "获取更多主题",
     "Get personalized attention and support from our expert team":
       "从我们的专家团队获得个性化的关注和支持",
     "Getting Started": "开始",
@@ -206,7 +208,10 @@
     Light: "浅色",
     "Light Mode": "浅色模式",
     Link: "链接",
+    "Load Theme": "加载主题",
     Loading: "正在載入",
+    "Loading a theme will erase any custom styles you have applied":
+      "加载主题将擦除您应用的任何自定义样式",
     "Log In": "登录",
     "Log Out": "登出",
     "Log in to start creating flowcharts.": "登入以開始創建流程圖。",
@@ -347,7 +352,7 @@
     "The delimiter used to separate multiple target nodes":
       "用于分隔多个目标节点的分隔符",
     "The possible shapes are:": "可能的形状是：",
-    Theme: "风格",
+    "Theme Editor": "主题编辑器",
     "There are no edges in this data": "此数据中没有边",
     "This action cannot be undone.": "此操作无法撤销。",
     "This app works by typing": "这款应用的工作原理是输入",

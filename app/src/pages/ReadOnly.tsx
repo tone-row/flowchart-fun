@@ -51,7 +51,7 @@ async function loadReadOnly(path: string, graphText: string) {
   const initialText = isCompressed
     ? decompressFromEncodedURIComponent(graphText) ?? ""
     : decodeURIComponent(graphText);
-  prepareChart(initialText, {
+  await prepareChart(initialText, {
     isHosted: false,
     id: "read",
     title: "read-only-flowchart",
