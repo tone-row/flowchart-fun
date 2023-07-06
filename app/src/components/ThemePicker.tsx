@@ -86,7 +86,9 @@ export function ThemePicker({
             ))}
           </div>
           <p className="px-1 text-[12px] text-neutral-700 dark:text-neutral-200 mt-2 leading-normal">
-            Loading a theme will erase any custom styles you have applied
+            <Trans>
+              Loading a theme will erase any custom styles you have applied
+            </Trans>
           </p>
           <button
             disabled={!preview}
@@ -103,7 +105,7 @@ export function ThemePicker({
               }
             }}
           >
-            Load Theme
+            <Trans>Load Theme</Trans>
           </button>
         </Popover.Content>
       </Popover.Portal>

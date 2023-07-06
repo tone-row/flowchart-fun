@@ -21,7 +21,6 @@ import {
 import { useMutation, useQuery } from "react-query";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
-import { useTheme } from "../lib/graphThemes";
 import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
 import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";

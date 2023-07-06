@@ -26,7 +26,6 @@
     Attributes: "속성",
     "Auto-Layouts": "자동 레이아웃",
     "Back To Editor": "편집기로 돌아가기",
-    Background: "배경",
     "Basic Flowchart": "기본 플로우 차트",
     "Become a Github Sponsor": "깃허브 스폰서가 되기",
     "Become a Pro User": "프로 사용자가 되기",
@@ -48,6 +47,7 @@
     Charts: "차트",
     "Check your email for a link to log in. You can close this window.":
       "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다.",
+    "Choose a Theme": "테마를 선택하세요",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "에지의 소스와 목적지를 위한 다양한 화살표 모양을 선택합니다. 모양에는 삼각형, 삼각형-티, 원-삼각형, 삼각형-가위형, 삼각형-뒤곡선, 베이, 티, 사각형, 원, 다이아몬드, 쉐브론, 없음이 포함됩니다.",
     "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
@@ -59,6 +59,7 @@
     "Clear text?": "텍스트를 지우시겠습니까?",
     "Click on \\nLearn Syntax\\nto learn more":
       "\\n문법 습득\\n을 클릭하여 더 배우십시오",
+    "Click to preview": "미리보기를 클릭하세요",
     Clone: "클론",
     Close: "닫기",
     Color: "색상",
@@ -89,6 +90,8 @@
       "두 노드 사이에 엣지를 만드는 것은 첫 번째 노드 아래에 두 번째 노드를 들여 쓰는 것으로 합니다.",
     "Custom Sharing Options": "커스텀 공유 옵션",
     "Customer Portal": "고객 포털",
+    "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck.":
+      "아래의 <0>Cytoscape CSS</0>를 편집하여 테마를 사용자 정의합니다. 스타일 문서는 곧 준비될 예정입니다! 일단은 최고의 자료는 <1>Cytoscape</1> 문서입니다. 막히면 <2>Discord</2>에 문의하세요.",
     Dark: "다크",
     "Dark Mode": "다크 모드",
     Date: "날짜",
@@ -155,7 +158,6 @@
     Fullscreen: "전체 화면",
     Futuristic: "미래 지향적",
     "Get More Layouts": "더 많은 레이아웃을 보고 싶어요",
-    "Get More Themes": "더 많은 테마 받기",
     "Get personalized attention and support from our expert team":
       "고급 지식과 지원을 받으세요",
     "Getting Started": "시작하기",
@@ -209,7 +211,10 @@
     Light: "라이트",
     "Light Mode": "라이트 모드",
     Link: "링크",
+    "Load Theme": "테마 불러오기",
     Loading: "로딩",
+    "Loading a theme will erase any custom styles you have applied":
+      "테마를 불러오면 사용자 정의 스타일이 모두 사라집니다.",
     "Log In": "로그인",
     "Log Out": "로그아웃",
     "Log in to start creating flowcharts.":
@@ -353,7 +358,7 @@
     "The delimiter used to separate multiple target nodes":
       "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 기호",
     "The possible shapes are:": "가능한 모양은 다음과 같습니다:",
-    Theme: "테마",
+    "Theme Editor": "테마 편집기",
     "There are no edges in this data": "이 데이터에는 엣지가 없습니다.",
     "This action cannot be undone.": "이 작업은 취소할 수 없습니다.",
     "This app works by typing": "이 앱은 타이핑으로 작동합니다",

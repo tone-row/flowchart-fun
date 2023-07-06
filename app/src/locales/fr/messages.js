@@ -27,7 +27,6 @@
     Attributes: "Attributs",
     "Auto-Layouts": "Mises en page automatiques",
     "Back To Editor": "Retour à l'éditeur",
-    Background: "L'arrière plan",
     "Basic Flowchart": "Diagramme de flux de base",
     "Become a Github Sponsor": "Devenez un sponsor Github",
     "Become a Pro User": "Devenez un utilisateur Pro",
@@ -49,6 +48,7 @@
     Charts: "Graphiques",
     "Check your email for a link to log in. You can close this window.":
       "Consultez votre messagerie électronique pour le lien de connexion. Vous pouvez fermer cette fenêtre.",
+    "Choose a Theme": "Choisir un thème",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "Choisissez parmi une variété de formes de flèches pour la source et la cible d'un bord. Les formes incluent triangle, triangle-tee, cercle-triangle, triangle-croix, triangle-backcurve, vee, tee, carré, cercle, diamant, chevron, aucun.",
     "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
@@ -60,6 +60,7 @@
     "Clear text?": "Effacer le texte?",
     "Click on \\nLearn Syntax\\nto learn more":
       "Cliquez sur \\nApprendre la syntaxe\\npour en savoir plus.",
+    "Click to preview": "Cliquez pour prévisualiser",
     Clone: "Cloner",
     Close: "Fermer",
     Color: "Couleur",
@@ -90,6 +91,8 @@
       "Créer une arête entre deux nœuds est fait en indentant le second nœud sous le premier",
     "Custom Sharing Options": "Options de partage personnalisées",
     "Customer Portal": "Portail Clients",
+    "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck.":
+      "Personnalisez votre thème en modifiant le <0>Cytoscape CSS</0> ci-dessous. Notre documentation de mise en forme arrive bientôt ! Entre-temps, la meilleure ressource est la documentation <1>Cytoscape</1>. Venez poser des questions sur le <2>Discord</2> si vous êtes coincé.",
     Dark: "Sombre",
     "Dark Mode": "Mode sombre",
     Date: "Date",
@@ -160,7 +163,6 @@
     Fullscreen: "Plein écran",
     Futuristic: "Futuriste",
     "Get More Layouts": "Obtenez plus de mises en page",
-    "Get More Themes": "Obtenez plus de thèmes",
     "Get personalized attention and support from our expert team":
       "Obtenez une attention et un soutien personnalisés de notre équipe d'experts ",
     "Getting Started": "Commencer",
@@ -215,7 +217,10 @@
     Light: "Lumineux",
     "Light Mode": "Mode lumineux",
     Link: "Lien",
+    "Load Theme": "Charger le thème",
     Loading: "Chargement",
+    "Loading a theme will erase any custom styles you have applied":
+      "Charger un thème effacera tous les styles personnalisés que vous avez appliqués",
     "Log In": "Connexion",
     "Log Out": "Déconnexion",
     "Log in to start creating flowcharts.":
@@ -365,7 +370,7 @@
     "The delimiter used to separate multiple target nodes":
       "Le délimiteur utilisé pour séparer plusieurs nœuds cibles",
     "The possible shapes are:": "Les formes possibles sont :",
-    Theme: "Thème",
+    "Theme Editor": "Éditeur de thème",
     "There are no edges in this data": "Il n'y a pas d'arêtes dans ces données",
     "This action cannot be undone.": "Cette action ne peut pas être annulée.",
     "This app works by typing": "Chaque ligne creé une nouvelle boite",

@@ -156,9 +156,9 @@ function InfoButton() {
             <Tooltip.Arrow className="fill-neutral-100" />
             <p className="text-neutral-600 dark:text-neutral-300 text-xs leading-normal">
               <Trans>
-                Customize your theme by editing the Cytoscape CSS below. Our
-                styling documentation is coming soon! In the meantime, the best
-                resource is the{" "}
+                Customize your theme by editing the <span>Cytoscape CSS</span>{" "}
+                below. Our styling documentation is coming soon! In the
+                meantime, the best resource is the{" "}
                 <a
                   className="text-blue-600 dark:text-green-400"
                   href="https://js.cytoscape.org/#style"
