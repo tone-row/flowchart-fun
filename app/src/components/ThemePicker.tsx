@@ -58,7 +58,7 @@ export function ThemePicker({
           onOpenAutoFocus={(e) => {
             e.preventDefault();
           }}
-          className="rounded p-2 pt-4 w-[260px] bg-neutral-100 shadow-md will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade max-h-[calc(100vh_-_276px)] grid grid-rows-[auto_minmax(0,1fr)_auto] dark:bg-neutral-900"
+          className="rounded p-2 pt-4 w-[260px] bg-neutral-100 shadow-md will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade max-h-[calc(100vh_-_340px)] grid grid-rows-[auto_minmax(0,1fr)_auto] dark:bg-neutral-900"
           sideOffset={10}
           align="end"
         >

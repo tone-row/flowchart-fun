@@ -146,7 +146,7 @@ export function EditStyleTab() {
 
 function KeyboardKey({ children }: { children: string }) {
   return (
-    <kbd className="bg-neutral-200 dark:bg-neutral-700 rounded p-1 w-8 h-8 grid content-center">
+    <kbd className="bg-neutral-300 dark:bg-neutral-700 rounded p-1 w-7 h-7 grid content-center font-mono">
       {children}
     </kbd>
   );
@@ -156,7 +156,7 @@ function InfoButton() {
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
-        <Tooltip.Trigger className="bg-neutral-100 hover:bg-neutral-200 rounded p-1 cursor-pointer p-1 dark:bg-neutral-700">
+        <Tooltip.Trigger className="bg-neutral-100 hover:bg-neutral-200 rounded p-1 cursor-pointer p-1 dark:bg-neutral-800">
           <Info size={20} className="text-neutral-800 dark:text-neutral-200" />
         </Tooltip.Trigger>
         <Tooltip.Portal>

@@ -124,13 +124,14 @@ const blokus: Theme = {
 
 export default blokus;
 export const background = "#1b1b20";
-export const cytoscapeStyle = `@import url("/fonts/SpaceMono.css");
+export const cytoscapeStyle = `@import url("/fonts/SpaceMonoRegular.css");
 
 $background: #1b1b20;
+$fontFamily: Space Mono;
 
 node {
   font-size: 10px;
-  font-family: "Space Mono";
+  font-family: $fontFamily;
   label: data(label);
   color: #171817;
   background-fill: linear-gradient;
@@ -161,7 +162,7 @@ node {
 edge {
   width: 1.5px;
   font-size: 10px;
-  font-family: "Space Mono";
+  font-family: $fontFamily;
   curve-style: unbundled-bezier;
   opacity: 1;
   label: data(label);
