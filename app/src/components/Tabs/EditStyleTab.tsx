@@ -1,6 +1,8 @@
 import { Trans } from "@lingui/macro";
 import Editor from "@monaco-editor/react";
+import * as Tooltip from "@radix-ui/react-tooltip";
 import produce from "immer";
+import { Info } from "phosphor-react";
 import postcssParser from "prettier/parser-postcss";
 import prettier from "prettier/standalone";
 import { useCallback, useEffect, useState } from "react";
@@ -59,41 +61,22 @@ export function EditStyleTab() {
     };
   }, [applyStyle, style]);
   return (
-    <div className="h-full overflow-hidden grid grid-rows-[auto,minmax(0,1fr)]">
-      <div className="grid px-5 gap-1 mt-4 mb-4 content-start">
-        <div className="flex justify-between items-end">
-          <h2 className="text-lg font-bold">
-            <Trans>Theme Editor</Trans>
-          </h2>
+    <div className="h-full w-full grid grid-rows-[auto,minmax(0,1fr)]">
+      <div className="grid pl-5 pr-2 gap-1 mt-4 mb-4 content-start">
+        <div className="flex justify-between items-center">
+          <div className="flex gap-2 items-center">
+            <h2 className="text-lg font-bold">
+              <Trans>Theme Editor</Trans>
+            </h2>
+            <InfoButton />
+          </div>
           <ThemePicker applyStyle={applyStyle} />
         </div>
-        <p className="text-neutral-500 dark:text-neutral-400 text-xs leading-normal">
-          <Trans>
-            Customize your theme by editing the Cytoscape CSS below. Our styling
-            documentation is coming soon! In the meantime, the best resource is
-            the{" "}
-            <a
-              className="text-blue-600 dark:text-green-400"
-              href="https://js.cytoscape.org/#style"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Cytoscape
-            </a>{" "}
-            documentation. Come ask questions in the{" "}
-            <a
-              href={DISCORD_URL}
-              className="text-blue-600 dark:text-green-400"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Discord
-            </a>{" "}
-            if you get stuck.
-          </Trans>
-        </p>
       </div>
-      <div className="pl-6 pr-2 grid gap-2 h-full grid-rows-[minmax(0,1fr),auto]">
+      <div
+        className="pl-6 pr-2 grid gap-2 h-full grid-rows-[minmax(0,1fr),auto]"
+        id="theme-editor-wrapper"
+      >
         <Editor
           height="100%"
           width="100%"
@@ -122,6 +105,22 @@ export function EditStyleTab() {
               indentation: false,
             },
           }}
+          wrapperProps={{
+            onMouseEnter() {
+              const editor = document.querySelector(
+                "#theme-editor-wrapper section"
+              ) as HTMLElement;
+              if (!editor) return;
+              editor.dataset.hovering = "true";
+            },
+            onMouseLeave() {
+              const editor = document.querySelector(
+                "#theme-editor-wrapper section"
+              ) as HTMLElement;
+              if (!editor) return;
+              editor.dataset.hovering = "false";
+            },
+          }}
           theme={mode === "dark" ? "vs-dark" : "vs-light"}
           beforeMount={(monaco) => {
             // turn off validation
@@ -139,5 +138,50 @@ export function EditStyleTab() {
         </div>
       </div>
     </div>
+  );
+}
+
+function InfoButton() {
+  return (
+    <Tooltip.Provider>
+      <Tooltip.Root>
+        <Tooltip.Trigger className="bg-neutral-100 hover:bg-neutral-200 rounded p-1 cursor-pointer p-1">
+          <Info size={20} className="text-neutral-800" />
+        </Tooltip.Trigger>
+        <Tooltip.Portal>
+          <Tooltip.Content
+            side="bottom"
+            className="bg-neutral-100 shadow rounded w-[450px] p-4 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none"
+          >
+            <Tooltip.Arrow className="fill-neutral-100" />
+            <p className="text-neutral-600 dark:text-neutral-300 text-xs leading-normal">
+              <Trans>
+                Customize your theme by editing the Cytoscape CSS below. Our
+                styling documentation is coming soon! In the meantime, the best
+                resource is the{" "}
+                <a
+                  className="text-blue-600 dark:text-green-400"
+                  href="https://js.cytoscape.org/#style"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Cytoscape
+                </a>{" "}
+                documentation. Come ask questions in the{" "}
+                <a
+                  href={DISCORD_URL}
+                  className="text-blue-600 dark:text-green-400"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Discord
+                </a>{" "}
+                if you get stuck.
+              </Trans>
+            </p>
+          </Tooltip.Content>
+        </Tooltip.Portal>
+      </Tooltip.Root>
+    </Tooltip.Provider>
   );
 }

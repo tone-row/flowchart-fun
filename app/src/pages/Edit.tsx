@@ -65,7 +65,7 @@ const Edit = memo(function Edit({ workspace }: { workspace: string }) {
             <Tabs.Content value="Layout">
               <EditLayoutTab />
             </Tabs.Content>
-            <Tabs.Content value="Style" className="overflow-hidden">
+            <Tabs.Content value="Style">
               <EditStyleTab />
             </Tabs.Content>
             {isValidSponsor && (

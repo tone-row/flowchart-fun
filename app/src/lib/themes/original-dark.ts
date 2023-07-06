@@ -161,7 +161,7 @@ edge {
   loop-direction: 0deg;
   loop-sweep: 20deg;
   text-background-opacity: 1;
-  text-background-color: rgb(16, 16, 16);
+  text-background-color: $background;
   text-background-shape: rectangle;
   text-background-padding: 4px;
   line-color: rgb(250, 250, 243);

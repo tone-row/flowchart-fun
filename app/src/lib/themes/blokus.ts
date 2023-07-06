@@ -173,7 +173,7 @@ edge {
   target-distance-from-node: 5px;
   source-distance-from-node: 5px;
   text-background-shape: roundrectangle;
-  text-background-color: #1b1b20;
+  text-background-color: $background;
   text-background-opacity: 1;
   text-background-padding: 4px;
   text-rotation: autorotate;

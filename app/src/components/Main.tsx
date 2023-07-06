@@ -8,7 +8,6 @@ import {
 } from "react";
 
 import { useFullscreen } from "../lib/hooks";
-import { useCytoscapeStyleImports } from "../lib/preprocessCytoscapeStyle";
 import { useUnmountStore } from "../lib/useUnmountStore";
 import { CloneButton } from "./CloneButton";
 import Graph from "./Graph";

@@ -116,16 +116,28 @@ const original: Theme = {
 export default original;
 
 export const background = backgroundColor;
-export const cytoscapeStyle = `@import url("/fonts/Karla.css");
+export const cytoscapeStyle = `
+/** You can now customize themes using a variant of CSS! 
+*** We've added comments to this code to help you 
+*** understand how to customize your theme. */
 
+/** Load external fonts */
+@import url("/fonts/Karla.css");
+
+/** Use scss-style variables to share colors and other values */
+$fontFamily: Karla;
 $background: #ffffff;
 $borderWidth: 0.75px;
+$borderColor: #000000;
+$nodeBackground: #ffffff;
+$defaultShape: rectangle;
 
+/** Style all nodes and containers */
 node {
   font-size: 10px;
-  font-family: Karla;
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(0, 0, 0);
+  font-family: $fontFamily;
+  background-color: $nodeBackground;
+  border-color: $borderColor;
   color: rgb(0, 0, 0);
   label: data(label);
   text-wrap: wrap;
@@ -134,10 +146,11 @@ node {
   text-valign: center;
   text-halign: center;
   border-width: $borderWidth;
-  shape: rectangle;
+  shape: $defaultShape;
   line-height: 1.25;
 }
 
+/** Style containers */
 :parent {
   shape: rectangle;
   padding: 5px;
@@ -147,30 +160,45 @@ node {
   text-margin-y: -6px;
   text-wrap: none;
 }
+
+/** Style edges */
 edge {
   width: $borderWidth;
   font-size: 10px;
   loop-direction: 0deg;
   loop-sweep: 20deg;
   text-background-opacity: 1;
-  text-background-color: rgb(255, 255, 255);
+  text-background-color: $background;
   text-background-padding: 3px;
-  line-color: rgb(0, 0, 0);
-  target-arrow-color: rgb(0, 0, 0);
-  source-arrow-color: rgb(0, 0, 0);
+  line-color: $borderColor;
+  target-arrow-color: $borderColor;
+  source-arrow-color: $borderColor;
   target-arrow-shape: triangle;
   arrow-scale: 1;
   curve-style: bezier;
   label: data(label);
-  color: rgb(0, 0, 0);
+  color: $borderColor;
   text-valign: center;
   text-wrap: wrap;
-  font-family: Karla;
+  font-family: $fontFamily;
   text-halign: center;
   text-rotation: autorotate;
   target-distance-from-node: 1px;
   source-distance-from-node: 0px;
 }
+
+/** Style nodes */
+:childless[label!=""] {
+  width: data(shapeWidth);
+  height: data(shapeHeight);
+}
+:childless[textMarginY] {
+  text-margin-y: data(textMarginY);
+}
+:childless[textMarginX] {
+  text-margin-x: data(textMarginX);
+}
+
 :loop {
   curve-style: bezier;
 }
@@ -203,12 +231,7 @@ node:selected {
   underlay-color: rgb(0, 0, 0);
   underlay-padding: 5px;
 }
-:childless[label!=""] {
-  width: data(shapeWidth);
-  height: data(shapeHeight);
-  text-margin-y: data(textMarginY);
-  text-margin-x: data(textMarginX);
-}
+
 node.black {
   background-color: rgb(0, 0, 0);
   background-opacity: 1;

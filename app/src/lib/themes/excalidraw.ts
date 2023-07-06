@@ -163,7 +163,7 @@ edge {
   target-arrow-color: rgb(199, 206, 212);
   source-arrow-color: rgb(199, 206, 212);
   arrow-scale: 1;
-  text-background-color: rgb(255, 255, 255);
+  text-background-color: $background;
 }
 :loop {
   curve-style: bezier;

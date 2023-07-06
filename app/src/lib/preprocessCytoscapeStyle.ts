@@ -1,5 +1,5 @@
-import { CSSProperties, useEffect } from "react";
-import { useQueries, useQuery } from "react-query";
+import { CSSProperties } from "react";
+import { useQuery } from "react-query";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
@@ -15,7 +15,7 @@ export const useProcessStyleStore = create<{
   variables: Record<string, string>;
 }>()(
   devtools(
-    (set) => ({
+    (_set) => ({
       styleImports: [],
       fontData: {},
       variables: {},
@@ -25,22 +25,6 @@ export const useProcessStyleStore = create<{
     }
   )
 );
-
-/**
- * a function which adds a style import if it isn't already in the list
- */
-export function addStyleImports(urls: string[]) {
-  useProcessStyleStore.setState({ styleImports: urls });
-  // useProcessStyleStore.setState(({ styleImports }) => {
-  //   const newImports = [...styleImports];
-  //   for (const url of urls) {
-  //     if (!newImports.includes(url)) {
-  //       newImports.push(url);
-  //     }
-  //   }
-  //   return { styleImports: newImports };
-  // });
-}
 
 /**
  * Takes the users cytoscape style and pulls off any font imports
@@ -58,7 +42,7 @@ export function preprocessCytoscapeStyle(style: string) {
     match = style.match(importRegex);
   }
   // add the imports to the store
-  addStyleImports(imports);
+  useProcessStyleStore.setState({ styleImports: imports });
 
   // get font data
   const fontData = findFontData(style);

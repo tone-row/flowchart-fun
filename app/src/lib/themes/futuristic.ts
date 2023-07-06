@@ -190,7 +190,7 @@ edge {
   text-wrap: wrap;
   font-family: Space Mono;
   text-background-opacity: 1;
-  text-background-color: #fefefe;
+  text-background-color: $background;
   text-background-padding: 1px;
   text-background-shape: rectangle;
   text-margin-y: -11px;

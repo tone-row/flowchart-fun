@@ -163,7 +163,7 @@ edge {
   source-distance-from-node: 5px;
   arrow-scale: 1.25;
   text-background-shape: roundrectangle;
-  text-background-color: #14141c;
+  text-background-color: $background;
   text-background-opacity: 1;
   text-background-padding: 2px;
   line-style: solid;

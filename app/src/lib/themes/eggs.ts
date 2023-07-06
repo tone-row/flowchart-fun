@@ -117,10 +117,11 @@ export const background = "#fffa96";
 export const cytoscapeStyle = `@import url("/fonts/GaeguRegular.css");
 
 $background: #fffa96;
+$fontFamily: "Gaegu";
 
 node {
   font-size: 10px;
-  font-family: "Gaegu";
+  font-family: $fontFamily;
   background-color: rgb(255, 253, 253);
   border-color: rgb(53, 47, 57);
   color: rgb(53, 47, 57);
@@ -153,12 +154,12 @@ edge {
   color: rgb(53, 47, 57);
   text-valign: bottom;
   text-wrap: wrap;
-  font-family: "Gaegu";
+  font-family: $fontFamily;
   target-arrow-color: rgb(53, 47, 57);
   source-arrow-color: rgb(53, 47, 57);
   target-arrow-shape: triangle;
   text-background-opacity: 1;
-  text-background-color: rgb(255, 250, 150);
+  text-background-color: $background;
   text-background-padding: 3px;
   text-background-shape: roundrectangle;
   text-border-style: solid;

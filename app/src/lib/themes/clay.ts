@@ -163,7 +163,7 @@ edge {
   source-arrow-color: rgb(252, 250, 241);
   target-arrow-shape: triangle;
   text-background-opacity: 1;
-  text-background-color: rgb(102, 76, 74);
+  text-background-color: $background;
   text-background-padding: 3px;
   text-border-opacity: 1;
   text-background-shape: roundrectangle;

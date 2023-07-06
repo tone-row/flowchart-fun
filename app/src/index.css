@@ -179,3 +179,11 @@ div[data-reach-tooltip] {
 .text-wrap-balance {
   text-wrap: balance;
 }
+
+#theme-editor-wrapper > section {
+  overflow: hidden;
+}
+
+#theme-editor-wrapper > section[data-hovering="true"] {
+  overflow: visible;
+}

@@ -157,7 +157,7 @@ edge {
   source-distance-from-node: 0px;
   target-distance-from-node: 0px;
   edge-distances: intersection;
-  text-background-color: rgb(254, 254, 254);
+  text-background-color: $background;
 }
 :loop {
   curve-style: bezier;

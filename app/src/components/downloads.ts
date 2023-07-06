@@ -3,7 +3,6 @@ import { saveAs } from "file-saver";
 
 import { UNAUTH_IMG_SCALE } from "../lib/constants";
 import { getBackgroundColor } from "../lib/graphThemes";
-import { Theme } from "../lib/themes/constants";
 
 // padding, gets divided in half
 const PADDING = 60;
@@ -240,7 +239,7 @@ export async function copyCanvas(props: Awaited<ReturnType<typeof getCanvas>>) {
   ]);
 }
 
-function arrayBufferToBase64(buffer: ArrayBuffer) {
+function _arrayBufferToBase64(buffer: ArrayBuffer) {
   let binary = "";
   const bytes = new Uint8Array(buffer);
   const len = bytes.byteLength;

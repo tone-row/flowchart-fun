@@ -20,12 +20,7 @@ import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
-import {
-  defaultGraphTheme,
-  getTheme,
-  tmpThemeColors,
-  useCurrentTheme,
-} from "../lib/graphThemes";
+import { tmpThemeColors } from "../lib/graphThemes";
 import {
   borderStyles,
   edgeLineStyles,

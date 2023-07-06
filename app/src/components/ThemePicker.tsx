@@ -49,7 +49,7 @@ export function ThemePicker({
         }
       }}
     >
-      <Popover.Trigger className="text-xs p-3 pr-5 pl-4 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 flex active:opacity-90 items-center space-x-1 mb-4">
+      <Popover.Trigger className="text-xs p-3 pr-5 pl-4 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 flex active:opacity-90 items-center space-x-1">
         <PaintBrush size={16} className="mr-2" />
         <Trans>Load Theme</Trans>
       </Popover.Trigger>
@@ -58,7 +58,7 @@ export function ThemePicker({
           onOpenAutoFocus={(e) => {
             e.preventDefault();
           }}
-          className="rounded p-3 pt-4 w-[260px] bg-neutral-200 shadow-md will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade"
+          className="rounded p-2 pt-4 w-[260px] bg-neutral-100 shadow-md will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade max-h-[calc(100vh_-_276px)] grid grid-rows-[auto_minmax(0,1fr)_auto]"
           sideOffset={10}
           align="end"
         >
@@ -66,15 +66,15 @@ export function ThemePicker({
             <h3 className="text-base font-bold">
               <Trans>Choose a Theme</Trans>
             </h3>
-            <p className="text-xs text-neutral-500 dark:text-neutral-400">
+            <p className="text-[12px] text-neutral-500 dark:text-neutral-400">
               <Trans>Click to preview</Trans>
             </p>
           </div>
-          <div className="grid">
+          <div className="grid overflow-auto">
             {validThemes.map((theme) => (
               <button
                 key={theme.value}
-                className="text-left text-xs p-2 rounded w-full hover:bg-neutral-300 active:bg-neutral-300 dark:hover:bg-neutral-800 dark:active:bg-neutral-800 focus:bg-neutral-200 dark:focus:bg-neutral-800 focus:outline-none data-[active=true]:bg-neutral-300 dark:data-[active=true]:bg-neutral-800"
+                className="text-left text-xs p-2 rounded w-full hover:bg-neutral-300 active:bg-neutral-300 dark:hover:bg-neutral-800 dark:active:bg-neutral-800 focus:bg-neutral-200 dark:focus:bg-neutral-800 focus:outline-none data-[active=true]:bg-neutral-400 dark:data-[active=true]:bg-neutral-700"
                 onClick={() => {
                   setPreview(theme.value);
                   previewTheme(theme.value);
