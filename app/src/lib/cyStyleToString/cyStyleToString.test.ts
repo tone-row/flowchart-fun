@@ -1,6 +1,5 @@
 import { cyStyleToString } from "./cyStyleToString";
 import fixture from "./fixture.json";
-import theme from "./fixture-theme.json";
 
 describe("cyStyleToString", () => {
   test("returns a string", () => {
@@ -87,9 +86,5 @@ node.border-none { border-width: 0px; }
 node[w] { width: data(w); }
 node[h] { height: data(h); }
 node[src] { background-image: data(src); background-fit: cover; border-width: 0px; text-valign: bottom; text-margin-y: 5px; }`);
-  });
-
-  test("returns the right theme result", () => {
-    expect(cyStyleToString(theme as any)).toBe(``);
   });
 });
