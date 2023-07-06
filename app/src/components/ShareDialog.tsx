@@ -47,7 +47,6 @@ export default function ShareDialog() {
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
-  const theme = useTheme();
   const filename = useDownloadFilename();
   const isValidSponsor = useIsValidSponsor();
   const watermark = !isValidSponsor;
@@ -72,25 +71,27 @@ export default function ShareDialog() {
         <Box gap={2} flow="column" className={styles.DownloadButtons}>
           <Button
             onClick={() => {
-              if (!theme || !window.__cy) return;
+              if (!window.__cy) return;
               getCanvas({
                 cy: window.__cy,
                 type: "png",
                 watermark,
                 scale,
-              }).then((canvas) =>
-                downloadCanvas({
-                  ...canvas,
-                  filename,
-                })
-              );
+              })
+                .then((canvas) =>
+                  downloadCanvas({
+                    ...canvas,
+                    filename,
+                  })
+                )
+                .catch(console.error);
             }}
             aria-label="Download PNG"
             text="PNG"
           />
           <Button
             onClick={() => {
-              if (!theme || !window.__cy) return;
+              if (!window.__cy) return;
               getCanvas({
                 cy: window.__cy,
                 type: "jpg",

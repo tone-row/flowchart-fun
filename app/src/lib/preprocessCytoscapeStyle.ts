@@ -148,7 +148,7 @@ async function loadFontsFromCSS(url: string): Promise<void> {
 }
 
 /**
- * A hook which loads all the fonts from the style imports
+ * A hook which loads all the fonts from the style imports found in the theme css
  */
 export function useCytoscapeStyleImports() {
   const { styleImports } = useProcessStyleStore();

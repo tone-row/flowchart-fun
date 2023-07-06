@@ -134,7 +134,7 @@ export function EditStyleTab() {
           }}
         />
         <div className="pb-2 grid">
-          <Button onClick={() => applyStyle(style)}>Apply Style</Button>
+          <Button onClick={() => applyStyle(style)}>Apply Style (⌘+s)</Button>
         </div>
       </div>
     </div>
