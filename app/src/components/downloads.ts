@@ -3,7 +3,6 @@ import { saveAs } from "file-saver";
 
 import { UNAUTH_IMG_SCALE } from "../lib/constants";
 import { getBackgroundColor } from "../lib/graphThemes";
-import { Theme } from "../lib/themes/constants";
 
 // padding, gets divided in half
 const PADDING = 60;
@@ -11,8 +10,8 @@ const PADDING = 60;
 /**
  * Returns the SVG code for the current graph
  */
-export async function getSvg({ cy, theme }: { cy: Core; theme: Theme }) {
-  const bg = getBackgroundColor(theme);
+export async function getSvg({ cy }: { cy: Core }) {
+  const bg = getBackgroundColor();
 
   try {
     // @ts-ignore
@@ -57,28 +56,28 @@ export async function getSvg({ cy, theme }: { cy: Core; theme: Theme }) {
     }
 
     // Add font file if necessary
-    let fontString = "";
-    const files = theme.font.files;
-    if (files) {
-      for (const { url, name } of files) {
-        if (!(url in window.__flowchartFunBase64EncodedFonts)) {
-          const fontUrl = `/fonts/${url}`;
-          const font = await fetch(fontUrl)
-            .then((res) => res.arrayBuffer())
-            .catch((e) => console.error(e));
-          if (!font) continue;
-          const base64 = arrayBufferToBase64(font);
-          window.__flowchartFunBase64EncodedFonts[url] = base64;
-        }
-        fontString += `@font-face { font-family: "${name}"; src: url(data:application/x-font-woff2;charset=utf-8;base64,${window.__flowchartFunBase64EncodedFonts[url]}) format("woff2"); }}`;
-      }
-    }
+    // let fontString = "";
+    // const files = theme.font.files;
+    // if (files) {
+    //   for (const { url, name } of files) {
+    //     if (!(url in window.__flowchartFunBase64EncodedFonts)) {
+    //       const fontUrl = `/fonts/${url}`;
+    //       const font = await fetch(fontUrl)
+    //         .then((res) => res.arrayBuffer())
+    //         .catch((e) => console.error(e));
+    //       if (!font) continue;
+    //       const base64 = arrayBufferToBase64(font);
+    //       window.__flowchartFunBase64EncodedFonts[url] = base64;
+    //     }
+    //     fontString += `@font-face { font-family: "${name}"; src: url(data:application/x-font-woff2;charset=utf-8;base64,${window.__flowchartFunBase64EncodedFonts[url]}) format("woff2"); }}`;
+    //   }
+    // }
 
-    if (fontString) {
-      const style = document.createElement("style");
-      style.innerHTML = fontString;
-      svgTag.prepend(style);
-    }
+    // if (fontString) {
+    //   const style = document.createElement("style");
+    //   style.innerHTML = fontString;
+    //   svgTag.prepend(style);
+    // }
 
     const correctedSvgStr = svgEl.documentElement.outerHTML;
     const { optimize } = await import("svgo/dist/svgo.browser");
@@ -116,13 +115,11 @@ export async function downloadSvg({
 export async function getCanvas({
   cy,
   type,
-  theme,
   scale = UNAUTH_IMG_SCALE,
   watermark = true,
 }: {
   cy: Core;
   type: "jpg" | "png";
-  theme: Theme;
   scale?: number;
   watermark?: boolean;
 }): Promise<{
@@ -130,7 +127,7 @@ export async function getCanvas({
   type: "jpg" | "png";
   cleanup: () => void;
 }> {
-  const bg = getBackgroundColor(theme);
+  const bg = getBackgroundColor();
   const blob = await cy[type]({
     full: true,
     scale,
@@ -182,7 +179,6 @@ export async function getCanvas({
           ctx,
           width: canvas.width,
           height: canvas.height,
-          theme,
         });
       resolve({
         canvas,
@@ -200,21 +196,18 @@ async function addWatermark({
   ctx,
   width,
   height,
-  theme,
 }: {
   ctx: CanvasRenderingContext2D;
   width: number;
   height: number;
-  theme: Theme;
 }) {
-  const foreground = theme.fg;
   // get a size that is 3% of the canvas height
   const heightRelativeSize = Math.floor(height * 0.03);
   const widthRelativeSize = Math.floor(width * 0.05);
   // take the smaller of the two
   const size = Math.min(heightRelativeSize, widthRelativeSize);
   ctx.font = `${Math.floor(size)}px Helvetica`;
-  ctx.fillStyle = foreground;
+  ctx.fillStyle = "#000000";
   ctx.fillText("flowchart.fun", 5, height - size / 2);
 }
 
@@ -246,7 +239,7 @@ export async function copyCanvas(props: Awaited<ReturnType<typeof getCanvas>>) {
   ]);
 }
 
-function arrayBufferToBase64(buffer: ArrayBuffer) {
+function _arrayBufferToBase64(buffer: ArrayBuffer) {
   let binary = "";
   const bytes = new Uint8Array(buffer);
   const len = bytes.byteLength;

@@ -17,22 +17,19 @@ import React, {
 import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
-import { buildStylesForGraph } from "../lib/buildStylesForGraph";
 import { monacoMarkerErrorSeverity } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getElements } from "../lib/getElements";
-import { getGetSize, TGetSize } from "../lib/getGetSize";
 import { getLayout } from "../lib/getLayout";
-import { getUserStyle } from "../lib/getUserStyle";
+import { useCytoscapeStyle } from "../lib/getUserStyle";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
-import {
-  useBackgroundColor,
-  useCurrentTheme,
-  useThemeKey,
-} from "../lib/graphThemes";
+import { useBackgroundColor } from "../lib/graphThemes";
 import { isError } from "../lib/helpers";
 import { getAnimationSettings } from "../lib/hooks";
-import { Theme } from "../lib/themes/constants";
+import {
+  preprocessCytoscapeStyle,
+  useCytoscapeStyleImports,
+} from "../lib/preprocessCytoscapeStyle";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
 import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
@@ -41,7 +38,6 @@ import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
-
 declare global {
   interface Window {
     __cy?: cytoscape.Core;
@@ -59,15 +55,12 @@ if (!cytoscape.prototype.hasInitialised) {
 const isAnimationEnabled = getAnimationSettings();
 
 const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
+  useCytoscapeStyleImports();
   const [initResizeNumber] = useState(shouldResize);
   const cy = useRef<undefined | Core>();
   const cyErrorCatcher = useRef<undefined | Core>();
   const isGraphInitialized = useRef(false);
-  const themeKey = useThemeKey();
-  const theme = useCurrentTheme(themeKey) as unknown as Theme;
-  const bg = useBackgroundColor(theme);
-
-  const getSize = useRef<TGetSize>(getGetSize(theme));
+  const bg = useBackgroundColor();
 
   const handleResize = useCallback(() => {
     if (!cy.current) return;
@@ -86,19 +79,17 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   useInitializeGraph({ cy, cyErrorCatcher });
 
   const throttleStyle = useMemo(
-    () => getStyleUpdater({ cy, cyErrorCatcher, bg }),
-    [bg]
+    () => getStyleUpdater({ cy, cyErrorCatcher }),
+    []
   );
 
-  // Apply theme
-  useEffect(() => {
-    throttleStyle(theme);
-  }, [theme, throttleStyle]);
+  // Get style
+  const cytoscapeStyle = useCytoscapeStyle();
 
-  // Update getSize when theme changes
+  // Apply style
   useEffect(() => {
-    getSize.current = getGetSize(theme);
-  }, [theme]);
+    throttleStyle(cytoscapeStyle);
+  }, [cytoscapeStyle, throttleStyle]);
 
   const throttleUpdate = useMemo(
     () =>
@@ -106,7 +97,6 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
         cy,
         cyErrorCatcher,
         isGraphInitialized,
-        getSize,
       }),
     []
   );
@@ -292,12 +282,10 @@ function getGraphUpdater({
   cy,
   cyErrorCatcher,
   isGraphInitialized,
-  getSize,
 }: {
   cy: MutableRefObject<cytoscape.Core | undefined>;
   cyErrorCatcher: MutableRefObject<cytoscape.Core | undefined>;
   isGraphInitialized: MutableRefObject<boolean>;
-  getSize: MutableRefObject<TGetSize>;
 }) {
   return throttle((_doc?: Doc) => {
     if (!cy.current) return;
@@ -307,7 +295,7 @@ function getGraphUpdater({
 
     try {
       const layout = getLayout(doc);
-      elements = getElements(doc.text, getSize.current);
+      elements = getElements(doc.text);
 
       // Test
       cyErrorCatcher.current.json({ elements });
@@ -395,17 +383,14 @@ function isParseError(e: unknown): e is ParseError {
 function getStyleUpdater({
   cy,
   cyErrorCatcher,
-  bg,
 }: {
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
   cyErrorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
-  bg?: string;
 }) {
-  return throttle((theme: Theme) => {
+  return throttle(async (_style: string) => {
     if (!cy.current || !cyErrorCatcher.current) return;
     try {
-      // Prepare Styles
-      const style = buildStylesForGraph(theme, getUserStyle(), bg);
+      const { style } = preprocessCytoscapeStyle(_style);
 
       // Test Error First
       cyErrorCatcher.current.json({ style });
@@ -420,6 +405,7 @@ function getStyleUpdater({
       cyErrorCatcher.current = cytoscape();
       useParseErrorStore.setState({ errorFromStyle: "" });
     } catch (e) {
+      console.log(e);
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
       if (isError(e)) {

@@ -53,8 +53,8 @@ msgstr "Access these charts from anywhere.<0/>Share and embed flowcharts that st
 msgid "Accessible from any device"
 msgstr "Accessible from any device"
 
-#: src/components/Header.tsx:184
-#: src/components/Header.tsx:398
+#: src/components/Header.tsx:183
+#: src/components/Header.tsx:397
 #: src/pages/Account.tsx:121
 msgid "Account"
 msgstr "Account"
@@ -92,11 +92,7 @@ msgstr "Auto-Layouts"
 msgid "Back To Editor"
 msgstr "Back To Editor"
 
-#: src/components/Tabs/EditStyleTab.tsx:51
-msgid "Background"
-msgstr "Background"
-
-#: src/components/ShareDialog.tsx:454
+#: src/components/ShareDialog.tsx:448
 msgid "Basic Flowchart"
 msgstr "Basic Flowchart"
 
@@ -120,14 +116,14 @@ msgstr "Begin with a simple example showing how <0>Flowchart Fun</0> works."
 msgid "Blank"
 msgstr "Blank"
 
-#: src/components/Header.tsx:153
-#: src/components/Header.tsx:374
+#: src/components/Header.tsx:152
+#: src/components/Header.tsx:373
 #: src/pages/Blog.tsx:18
 msgid "Blog"
 msgstr "Blog"
 
-#: src/components/GraphContextMenu.tsx:480
-#: src/components/GraphContextMenu.tsx:576
+#: src/components/GraphContextMenu.tsx:463
+#: src/components/GraphContextMenu.tsx:559
 msgid "Border"
 msgstr "Border"
 
@@ -162,14 +158,14 @@ msgstr "Certain attributes can be used to customize the appearance or functional
 msgid "Change Email Address"
 msgstr "Change Email Address"
 
-#: src/components/Header.tsx:163
-#: src/components/Header.tsx:380
+#: src/components/Header.tsx:162
+#: src/components/Header.tsx:379
 #: src/pages/Changelog.tsx:16
 msgid "Changelog"
 msgstr "Changelog"
 
-#: src/components/Header.tsx:96
-#: src/components/Header.tsx:352
+#: src/components/Header.tsx:95
+#: src/components/Header.tsx:351
 msgid "Charts"
 msgstr "Charts"
 
@@ -177,6 +173,10 @@ msgstr "Charts"
 #: src/pages/LogIn.tsx:43
 msgid "Check your email for a link to log in. You can close this window."
 msgstr "Check your email for a link to log in. You can close this window."
+
+#: src/components/ThemePicker.tsx:67
+msgid "Choose a Theme"
+msgstr "Choose a Theme"
 
 #: src/components/LearnSyntaxDialog.tsx:330
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
@@ -211,6 +211,10 @@ msgstr "Clear text?"
 msgid "Click on \\nLearn Syntax\\nto learn more"
 msgstr "Click on \\nLearn Syntax\\nto learn more"
 
+#: src/components/ThemePicker.tsx:70
+msgid "Click to preview"
+msgstr "Click to preview"
+
 #: src/components/CloneButton.tsx:25
 msgid "Clone"
 msgstr "Clone"
@@ -220,7 +224,7 @@ msgstr "Clone"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/GraphContextMenu.tsx:306
+#: src/components/GraphContextMenu.tsx:289
 msgid "Color"
 msgstr "Color"
 
@@ -267,21 +271,21 @@ msgstr "Continue"
 msgid "Convert to hosted chart?"
 msgstr "Convert to hosted chart?"
 
-#: src/components/ShareDialog.tsx:250
-#: src/components/ShareDialog.tsx:251
-#: src/components/ShareDialog.tsx:368
+#: src/components/ShareDialog.tsx:247
+#: src/components/ShareDialog.tsx:248
+#: src/components/ShareDialog.tsx:362
 msgid "Copy"
 msgstr "Copy"
 
-#: src/components/GraphContextMenu.tsx:225
+#: src/components/GraphContextMenu.tsx:210
 msgid "Copy PNG Image"
 msgstr "Copy PNG Image"
 
-#: src/components/GraphContextMenu.tsx:183
+#: src/components/GraphContextMenu.tsx:171
 msgid "Copy SVG Code"
 msgstr "Copy SVG Code"
 
-#: src/components/ShareDialog.tsx:333
+#: src/components/ShareDialog.tsx:327
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 
@@ -313,6 +317,10 @@ msgstr "Custom Sharing Options"
 #: src/pages/Account.tsx:226
 msgid "Customer Portal"
 msgstr "Customer Portal"
+
+#: src/components/Tabs/EditStyleTab.tsx:158
+msgid "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck."
+msgstr "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck."
 
 #: src/lib/graphOptions.ts:48
 msgid "Dark"
@@ -359,20 +367,20 @@ msgstr "Document"
 msgid "Don't have an account?"
 msgstr "Don't have an account?"
 
-#: src/components/ShareDialog.tsx:70
-#: src/components/ShareDialog.tsx:529
+#: src/components/ShareDialog.tsx:68
+#: src/components/ShareDialog.tsx:523
 msgid "Download"
 msgstr "Download"
 
-#: src/components/GraphContextMenu.tsx:126
+#: src/components/GraphContextMenu.tsx:118
 msgid "Download JPG"
 msgstr "Download JPG"
 
-#: src/components/GraphContextMenu.tsx:102
+#: src/components/GraphContextMenu.tsx:95
 msgid "Download PNG"
 msgstr "Download PNG"
 
-#: src/components/GraphContextMenu.tsx:148
+#: src/components/GraphContextMenu.tsx:138
 msgid "Download SVG"
 msgstr "Download SVG"
 
@@ -392,7 +400,7 @@ msgstr "Drop the file here ..."
 msgid "Easily import existing flowcharts from other software"
 msgstr "Easily import existing flowcharts from other software"
 
-#: src/components/GraphContextMenu.tsx:569
+#: src/components/GraphContextMenu.tsx:552
 msgid "Edge"
 msgstr "Edge"
 
@@ -454,12 +462,12 @@ msgstr "Edges in Source Node Row"
 msgid "Edges in Target Node Row"
 msgstr "Edges in Target Node Row"
 
-#: src/components/ShareDialog.tsx:142
+#: src/components/ShareDialog.tsx:139
 msgid "Editable"
 msgstr "Editable"
 
-#: src/components/Header.tsx:88
-#: src/components/Header.tsx:346
+#: src/components/Header.tsx:87
+#: src/components/Header.tsx:345
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "Editor"
@@ -498,8 +506,8 @@ msgstr "Excalidraw"
 
 #: src/components/EditorWrapper.tsx:53
 #: src/components/EditorWrapper.tsx:58
-#: src/components/ShareDialog.tsx:61
-#: src/components/ShareDialog.tsx:152
+#: src/components/ShareDialog.tsx:59
+#: src/components/ShareDialog.tsx:149
 msgid "Export"
 msgstr "Export"
 
@@ -512,7 +520,7 @@ msgstr "Export High-Resolution Images"
 msgid "Export to SVG"
 msgstr "Export to SVG"
 
-#: src/components/GraphContextMenu.tsx:267
+#: src/components/GraphContextMenu.tsx:252
 msgid "Extra Large"
 msgstr "Extra Large"
 
@@ -520,8 +528,8 @@ msgstr "Extra Large"
 msgid "Extract"
 msgstr "Extract"
 
-#: src/components/Header.tsx:127
-#: src/components/Header.tsx:366
+#: src/components/Header.tsx:126
+#: src/components/Header.tsx:365
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -541,7 +549,7 @@ msgstr "Found a bug? Have a feature request? We would love to hear from you!"
 msgid "Free"
 msgstr "Free"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:136
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
@@ -552,10 +560,6 @@ msgstr "Futuristic"
 #: src/components/Tabs/EditLayoutTab.tsx:187
 msgid "Get More Layouts"
 msgstr "Get More Layouts"
-
-#: src/components/Tabs/EditStyleTab.tsx:97
-msgid "Get More Themes"
-msgstr "Get More Themes"
 
 #: src/pages/Pricing.tsx:34
 msgid "Get personalized attention and support from our expert team"
@@ -582,7 +586,7 @@ msgstr "Have complex questions or issues? We're here to help."
 msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 msgstr "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
 
-#: src/components/Header.tsx:105
+#: src/components/Header.tsx:104
 msgid "Help"
 msgstr "Help"
 
@@ -638,7 +642,7 @@ msgstr "Import data from any CSV file and map it to a new flowchart. This is a g
 msgid "Import from Lucidchart, Visio, and other CSV files"
 msgstr "Import from Lucidchart, Visio, and other CSV files"
 
-#: src/components/ShareDialog.tsx:446
+#: src/components/ShareDialog.tsx:440
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Import your diagram it into Microsoft Visio using one of these CSV files."
 
@@ -650,7 +654,7 @@ msgstr "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro fo
 msgid "Impress your audience with high-quality images produced by Flowchart Fun"
 msgstr "Impress your audience with high-quality images produced by Flowchart Fun"
 
-#: src/components/ShareDialog.tsx:479
+#: src/components/ShareDialog.tsx:473
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 
@@ -658,7 +662,7 @@ msgstr "Include a title using a <0>title</0> attribute. To use Visio coloring, a
 msgid "Indenting creates an edge"
 msgstr "Indenting creates an edge"
 
-#: src/components/Header.tsx:142
+#: src/components/Header.tsx:141
 msgid "Info"
 msgstr "Info"
 
@@ -674,7 +678,7 @@ msgstr "Is"
 msgid "Language"
 msgstr "Language"
 
-#: src/components/GraphContextMenu.tsx:262
+#: src/components/GraphContextMenu.tsx:247
 msgid "Large"
 msgstr "Large"
 
@@ -723,16 +727,25 @@ msgstr "Light"
 msgid "Light Mode"
 msgstr "Light Mode"
 
-#: src/components/ShareDialog.tsx:134
+#: src/components/ShareDialog.tsx:131
 msgid "Link"
 msgstr "Link"
+
+#: src/components/ThemePicker.tsx:54
+#: src/components/ThemePicker.tsx:108
+msgid "Load Theme"
+msgstr "Load Theme"
 
 #: src/components/PaymentStepper.tsx:149
 msgid "Loading"
 msgstr "Loading"
 
-#: src/components/Header.tsx:202
-#: src/components/Header.tsx:422
+#: src/components/ThemePicker.tsx:89
+msgid "Loading a theme will erase any custom styles you have applied"
+msgstr "Loading a theme will erase any custom styles you have applied"
+
+#: src/components/Header.tsx:201
+#: src/components/Header.tsx:421
 #: src/pages/LogIn.tsx:64
 #: src/pages/New.tsx:263
 msgid "Log In"
@@ -750,7 +763,7 @@ msgstr "Log in to start creating flowcharts."
 msgid "Make a One-Time Donation"
 msgstr "Make a One-Time Donation"
 
-#: src/components/ShareDialog.tsx:412
+#: src/components/ShareDialog.tsx:406
 msgid "Make publicly accessible"
 msgstr "Make publicly accessible"
 
@@ -766,7 +779,7 @@ msgstr "Map Data"
 msgid "Market understanding and competitive landscape maintenance for SaaS product development"
 msgstr "Market understanding and competitive landscape maintenance for SaaS product development"
 
-#: src/components/GraphContextMenu.tsx:258
+#: src/components/GraphContextMenu.tsx:243
 msgid "Medium"
 msgstr "Medium"
 
@@ -794,8 +807,8 @@ msgstr "Museum"
 msgid "Name"
 msgstr "Name"
 
-#: src/components/Header.tsx:79
-#: src/components/Header.tsx:340
+#: src/components/Header.tsx:78
+#: src/components/Header.tsx:339
 #: src/pages/Charts.tsx:102
 msgid "New"
 msgstr "New"
@@ -813,7 +826,7 @@ msgstr "Next charge"
 msgid "No Edges"
 msgstr "No Edges"
 
-#: src/components/GraphContextMenu.tsx:299
+#: src/components/GraphContextMenu.tsx:282
 msgid "Node"
 msgstr "Node"
 
@@ -880,7 +893,7 @@ msgstr "Only available on this device.<0/>Clearing your browser cache will erase
 msgid "Open Customer Portal"
 msgstr "Open Customer Portal"
 
-#: src/components/ShareDialog.tsx:466
+#: src/components/ShareDialog.tsx:460
 msgid "Organization Chart"
 msgstr "Organization Chart"
 
@@ -916,8 +929,8 @@ msgstr "Playbook"
 msgid "Pointer and container on same line"
 msgstr "Pointer and container on same line"
 
-#: src/components/Header.tsx:193
-#: src/components/Header.tsx:407
+#: src/components/Header.tsx:192
+#: src/components/Header.tsx:406
 msgid "Pricing"
 msgstr "Pricing"
 
@@ -933,8 +946,8 @@ msgstr "Processing Data"
 msgid "Prompt"
 msgstr "Prompt"
 
-#: src/components/ShareDialog.tsx:408
-#: src/components/ShareDialog.tsx:431
+#: src/components/ShareDialog.tsx:402
+#: src/components/ShareDialog.tsx:425
 msgid "Public"
 msgstr "Public"
 
@@ -943,7 +956,7 @@ msgid "Random"
 msgstr "Random"
 
 #: src/components/EditorWrapper.tsx:44
-#: src/components/ShareDialog.tsx:145
+#: src/components/ShareDialog.tsx:142
 msgid "Read-only"
 msgstr "Read-only"
 
@@ -1028,8 +1041,8 @@ msgstr "Return"
 msgid "Right to Left"
 msgstr "Right to Left"
 
-#: src/components/Header.tsx:170
-#: src/components/Header.tsx:386
+#: src/components/Header.tsx:169
+#: src/components/Header.tsx:385
 #: src/pages/Roadmap.tsx:16
 msgid "Roadmap"
 msgstr "Roadmap"
@@ -1058,13 +1071,13 @@ msgstr "Select your plan!"
 msgid "Send us Feedback"
 msgstr "Send us Feedback"
 
-#: src/components/Header.tsx:177
-#: src/components/Header.tsx:391
+#: src/components/Header.tsx:176
+#: src/components/Header.tsx:390
 #: src/components/Settings.tsx:50
 msgid "Settings"
 msgstr "Settings"
 
-#: src/components/GraphContextMenu.tsx:368
+#: src/components/GraphContextMenu.tsx:351
 msgid "Shape"
 msgstr "Shape"
 
@@ -1077,11 +1090,11 @@ msgstr "Sign Up"
 msgid "Sign Up Now"
 msgstr "Sign Up Now"
 
-#: src/components/GraphContextMenu.tsx:435
+#: src/components/GraphContextMenu.tsx:418
 msgid "Size"
 msgstr "Size"
 
-#: src/components/GraphContextMenu.tsx:253
+#: src/components/GraphContextMenu.tsx:238
 msgid "Small"
 msgstr "Small"
 
@@ -1093,7 +1106,7 @@ msgstr "Some classes are available to help style your flowchart"
 msgid "Sorry! This page is only available in English."
 msgstr "Sorry! This page is only available in English."
 
-#: src/components/GraphContextMenu.tsx:618
+#: src/components/GraphContextMenu.tsx:601
 msgid "Source Arrow"
 msgstr "Source Arrow"
 
@@ -1172,7 +1185,7 @@ msgstr "Subscription will end"
 msgid "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
 msgstr "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
 
-#: src/components/GraphContextMenu.tsx:657
+#: src/components/GraphContextMenu.tsx:640
 msgid "Target Arrow"
 msgstr "Target Arrow"
 
@@ -1238,9 +1251,9 @@ msgstr "The delimiter used to separate multiple target nodes"
 msgid "The possible shapes are:"
 msgstr "The possible shapes are:"
 
-#: src/components/Tabs/EditStyleTab.tsx:33
-msgid "Theme"
-msgstr "Theme"
+#: src/components/Tabs/EditStyleTab.tsx:69
+msgid "Theme Editor"
+msgstr "Theme Editor"
 
 #: src/components/ImportDataDialog.tsx:419
 msgid "There are no edges in this data"
@@ -1258,7 +1271,7 @@ msgstr "This app works by typing"
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 
-#: src/components/ShareDialog.tsx:538
+#: src/components/ShareDialog.tsx:532
 msgid "Tip"
 msgstr "Tip"
 
@@ -1352,11 +1365,11 @@ msgstr "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and
 msgid "Use the customer portal to change your billing information."
 msgstr "Use the customer portal to change your billing information."
 
-#: src/components/ShareDialog.tsx:474
+#: src/components/ShareDialog.tsx:468
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "Use this file for org charts, hierarchies, and other organizational structures."
 
-#: src/components/ShareDialog.tsx:462
+#: src/components/ShareDialog.tsx:456
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Use this file for sequences, processes, and workflows."
 

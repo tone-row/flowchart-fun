@@ -1,0 +1,2617 @@
+[
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 7, "value": ":parent" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ":parent",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "rectangle", "strValue": "rectangle" },
+      {
+        "name": "background-color",
+        "value": [238, 238, 238],
+        "pfValue": [238, 238, 238],
+        "strValue": "rgb(238,238,238)"
+      },
+      {
+        "name": "padding",
+        "value": 10,
+        "strValue": "10px",
+        "units": "px",
+        "pfValue": 10
+      },
+      {
+        "name": "border-color",
+        "value": [204, 204, 204],
+        "pfValue": [204, 204, 204],
+        "strValue": "rgb(204,204,204)"
+      },
+      {
+        "name": "border-width",
+        "value": 1,
+        "strValue": "1px",
+        "units": "px",
+        "pfValue": 1
+      }
+    ],
+    "mappedProperties": [],
+    "index": 0
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 0, "value": "edges" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "width",
+        "value": 3,
+        "strValue": "3px",
+        "units": "px",
+        "pfValue": 3
+      }
+    ],
+    "mappedProperties": [],
+    "index": 1
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 7, "value": ":loop" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ":loop",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "curve-style", "value": "bezier", "strValue": "bezier" }
+    ],
+    "mappedProperties": [],
+    "index": 2
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 7, "value": ":compound" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge:compound",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "curve-style", "value": "bezier", "strValue": "bezier" },
+      {
+        "name": "source-endpoint",
+        "value": "outside-to-line",
+        "strValue": "outside-to-line"
+      },
+      {
+        "name": "target-endpoint",
+        "value": "outside-to-line",
+        "strValue": "outside-to-line"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 3
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 7, "value": ":selected" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ":selected",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [1, 105, 217],
+        "pfValue": [1, 105, 217],
+        "strValue": "rgb(1,105,217)"
+      },
+      {
+        "name": "line-color",
+        "value": [1, 105, 217],
+        "pfValue": [1, 105, 217],
+        "strValue": "rgb(1,105,217)"
+      },
+      {
+        "name": "source-arrow-color",
+        "value": [1, 105, 217],
+        "pfValue": [1, 105, 217],
+        "strValue": "rgb(1,105,217)"
+      },
+      {
+        "name": "mid-source-arrow-color",
+        "value": [1, 105, 217],
+        "pfValue": [1, 105, 217],
+        "strValue": "rgb(1,105,217)"
+      },
+      {
+        "name": "target-arrow-color",
+        "value": [1, 105, 217],
+        "pfValue": [1, 105, 217],
+        "strValue": "rgb(1,105,217)"
+      },
+      {
+        "name": "mid-target-arrow-color",
+        "value": [1, 105, 217],
+        "pfValue": [1, 105, 217],
+        "strValue": "rgb(1,105,217)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 4
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 7, "value": ":parent" },
+          { "type": 7, "value": ":selected" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ":parent:selected",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [204, 225, 249],
+        "pfValue": [204, 225, 249],
+        "strValue": "rgb(204,225,249)"
+      },
+      {
+        "name": "border-color",
+        "value": [174, 200, 229],
+        "pfValue": [174, 200, 229],
+        "strValue": "rgb(174,200,229)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 5
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 7, "value": ":active" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ":active",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "overlay-padding",
+        "value": 10,
+        "strValue": "10px",
+        "units": "px",
+        "pfValue": 10
+      },
+      {
+        "name": "overlay-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "overlay-opacity",
+        "value": 0.25,
+        "strValue": "0.25",
+        "pfValue": 0.25
+      }
+    ],
+    "mappedProperties": [],
+    "index": 6
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "nodeHovered" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "1": {
+        "checks": [{ "type": 9, "value": "edgeHovered" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "2": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 7, "value": ":selected" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".nodeHovered, .edgeHovered, node:selected",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 3
+    },
+    "properties": [
+      {
+        "name": "underlay-opacity",
+        "value": 0.1,
+        "strValue": "0.1",
+        "pfValue": 0.1
+      },
+      {
+        "name": "underlay-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "underlay-padding",
+        "value": 5,
+        "strValue": "5px",
+        "units": "px",
+        "pfValue": 5
+      }
+    ],
+    "mappedProperties": [],
+    "index": 7
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 0, "value": "nodes" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "font-size",
+        "value": 10,
+        "strValue": "10px",
+        "units": "px",
+        "pfValue": 10
+      }
+    ],
+    "mappedProperties": [],
+    "index": 8
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 0, "value": "edges" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "font-size",
+        "value": 10,
+        "strValue": "10px",
+        "units": "px",
+        "pfValue": 10
+      }
+    ],
+    "mappedProperties": [],
+    "index": 9
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 3, "field": "label", "operator": "!=", "value": "" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node[label!='']",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "width",
+        "value": ["data(shapeWidth)", "shapeWidth"],
+        "strValue": "data(shapeWidth)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "shapeWidth"
+      },
+      {
+        "name": "height",
+        "value": ["data(shapeHeight)", "shapeHeight"],
+        "strValue": "data(shapeHeight)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "shapeHeight"
+      },
+      {
+        "name": "text-margin-y",
+        "value": ["data(textMarginY)", "textMarginY"],
+        "strValue": "data(textMarginY)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "textMarginY"
+      },
+      {
+        "name": "text-margin-x",
+        "value": ["data(textMarginX)", "textMarginX"],
+        "strValue": "data(textMarginX)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "textMarginX"
+      }
+    ],
+    "mappedProperties": [
+      {
+        "name": "width",
+        "value": ["data(shapeWidth)", "shapeWidth"],
+        "strValue": "data(shapeWidth)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "shapeWidth"
+      },
+      {
+        "name": "height",
+        "value": ["data(shapeHeight)", "shapeHeight"],
+        "strValue": "data(shapeHeight)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "shapeHeight"
+      },
+      {
+        "name": "text-margin-y",
+        "value": ["data(textMarginY)", "textMarginY"],
+        "strValue": "data(textMarginY)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "textMarginY"
+      },
+      {
+        "name": "text-margin-x",
+        "value": ["data(textMarginX)", "textMarginX"],
+        "strValue": "data(textMarginX)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "textMarginX"
+      }
+    ],
+    "index": 10
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 0, "value": "nodes" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "font-family",
+        "value": ["Karla", "Karla"],
+        "strValue": "Karla"
+      },
+      {
+        "name": "background-color",
+        "value": [255, 255, 255],
+        "pfValue": [255, 255, 255],
+        "strValue": "rgb(255,255,255)"
+      },
+      {
+        "name": "border-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "label",
+        "value": ["data(label)", "label"],
+        "strValue": "data(label)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "label"
+      },
+      { "name": "text-wrap", "value": "wrap", "strValue": "wrap" },
+      {
+        "name": "text-max-width",
+        "value": ["data(width)", "width"],
+        "strValue": "data(width)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "width"
+      },
+      {
+        "name": "padding",
+        "value": 6,
+        "strValue": "6px",
+        "units": "px",
+        "pfValue": 6
+      },
+      {
+        "name": "padding",
+        "value": 6,
+        "strValue": "6px",
+        "units": "px",
+        "pfValue": 6
+      },
+      {
+        "name": "padding",
+        "value": 6,
+        "strValue": "6px",
+        "units": "px",
+        "pfValue": 6
+      },
+      {
+        "name": "padding",
+        "value": 6,
+        "strValue": "6px",
+        "units": "px",
+        "pfValue": 6
+      },
+      { "name": "text-valign", "value": "center", "strValue": "center" },
+      { "name": "text-halign", "value": "center", "strValue": "center" },
+      {
+        "name": "border-width",
+        "value": 0.75,
+        "strValue": "0.75px",
+        "units": "px",
+        "pfValue": 0.75
+      },
+      { "name": "shape", "value": "rectangle", "strValue": "rectangle" },
+      {
+        "name": "line-height",
+        "value": 1.25,
+        "strValue": "1.25",
+        "pfValue": 1.25
+      }
+    ],
+    "mappedProperties": [
+      {
+        "name": "label",
+        "value": ["data(label)", "label"],
+        "strValue": "data(label)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "label"
+      },
+      {
+        "name": "text-max-width",
+        "value": ["data(width)", "width"],
+        "strValue": "data(width)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "width"
+      }
+    ],
+    "index": 11
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 0, "value": "edges" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "loop-direction",
+        "value": 0,
+        "strValue": "0deg",
+        "units": "deg",
+        "pfValue": 0
+      },
+      {
+        "name": "loop-sweep",
+        "value": 20,
+        "strValue": "20deg",
+        "units": "deg",
+        "pfValue": 0.3490658503988659
+      },
+      {
+        "name": "width",
+        "value": 0.75,
+        "strValue": "0.75px",
+        "units": "px",
+        "pfValue": 0.75
+      },
+      {
+        "name": "text-background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "text-background-color",
+        "value": [255, 255, 255],
+        "pfValue": [255, 255, 255],
+        "strValue": "rgb(255,255,255)"
+      },
+      {
+        "name": "text-background-padding",
+        "value": 3,
+        "strValue": "3px",
+        "units": "px",
+        "pfValue": 3
+      },
+      {
+        "name": "line-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "target-arrow-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "source-arrow-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "target-arrow-shape",
+        "value": "triangle",
+        "strValue": "triangle"
+      },
+      { "name": "arrow-scale", "value": 1, "strValue": "1", "pfValue": 1 },
+      { "name": "curve-style", "value": "bezier", "strValue": "bezier" },
+      {
+        "name": "label",
+        "value": ["data(label)", "label"],
+        "strValue": "data(label)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "label"
+      },
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      { "name": "text-valign", "value": "center", "strValue": "center" },
+      { "name": "text-wrap", "value": "wrap", "strValue": "wrap" },
+      {
+        "name": "font-family",
+        "value": ["Karla", "Karla"],
+        "strValue": "Karla"
+      },
+      { "name": "text-halign", "value": "center", "strValue": "center" },
+      {
+        "name": "text-rotation",
+        "value": "autorotate",
+        "strValue": "autorotate"
+      },
+      {
+        "name": "target-distance-from-node",
+        "value": 1,
+        "strValue": "1px",
+        "units": "px",
+        "pfValue": 1
+      },
+      {
+        "name": "source-distance-from-node",
+        "value": 0,
+        "strValue": "0px",
+        "units": "px",
+        "pfValue": 0
+      }
+    ],
+    "mappedProperties": [
+      {
+        "name": "label",
+        "value": ["data(label)", "label"],
+        "strValue": "data(label)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "label"
+      }
+    ],
+    "index": 12
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 7, "value": ":parent" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ":parent",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "text-valign", "value": "top", "strValue": "top" },
+      { "name": "text-halign", "value": "center", "strValue": "center" },
+      {
+        "name": "text-margin-y",
+        "value": -6,
+        "strValue": "-6px",
+        "units": "px",
+        "pfValue": -6
+      },
+      { "name": "text-wrap", "value": "none", "strValue": "none" }
+    ],
+    "mappedProperties": [],
+    "index": 13
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "black" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.black",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "border-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "color",
+        "value": [255, 255, 255],
+        "pfValue": [255, 255, 255],
+        "strValue": "rgb(255,255,255)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 14
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "white" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.white",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [255, 255, 255],
+        "pfValue": [255, 255, 255],
+        "strValue": "rgb(255,255,255)"
+      },
+      {
+        "name": "background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "border-color",
+        "value": [255, 255, 255],
+        "pfValue": [255, 255, 255],
+        "strValue": "rgb(255,255,255)"
+      },
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 15
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "green" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.green",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [1, 216, 87],
+        "pfValue": [1, 216, 87],
+        "strValue": "rgb(1,216,87)"
+      },
+      {
+        "name": "background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "border-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 16
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "yellow" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.yellow",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [255, 207, 13],
+        "pfValue": [255, 207, 13],
+        "strValue": "rgb(255,207,13)"
+      },
+      {
+        "name": "background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "border-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 17
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "blue" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.blue",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [97, 114, 249],
+        "pfValue": [97, 114, 249],
+        "strValue": "rgb(97,114,249)"
+      },
+      {
+        "name": "background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "border-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "color",
+        "value": [255, 255, 255],
+        "pfValue": [255, 255, 255],
+        "strValue": "rgb(255,255,255)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 18
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "orange" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.orange",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [255, 112, 68],
+        "pfValue": [255, 112, 68],
+        "strValue": "rgb(255,112,68)"
+      },
+      {
+        "name": "background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "border-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 19
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "purple" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.purple",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [164, 146, 255],
+        "pfValue": [164, 146, 255],
+        "strValue": "rgb(164,146,255)"
+      },
+      {
+        "name": "background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "border-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 20
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "red" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.red",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [250, 35, 35],
+        "pfValue": [250, 35, 35],
+        "strValue": "rgb(250,35,35)"
+      },
+      {
+        "name": "background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "border-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 21
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "gray" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.gray",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-color",
+        "value": [170, 170, 170],
+        "pfValue": [170, 170, 170],
+        "strValue": "rgb(170,170,170)"
+      },
+      {
+        "name": "background-opacity",
+        "value": 1,
+        "strValue": "1",
+        "pfValue": 1
+      },
+      {
+        "name": "border-color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      },
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 22
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 0, "value": "edges" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "text-background-color",
+        "value": [255, 255, 255],
+        "pfValue": [255, 255, 255],
+        "strValue": "rgb(255,255,255)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 23
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 7, "value": ":parent" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ":parent",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "color",
+        "value": [0, 0, 0],
+        "pfValue": [0, 0, 0],
+        "strValue": "rgb(0,0,0)"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 24
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "rectangle" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".rectangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "rectangle", "strValue": "rectangle" }
+    ],
+    "mappedProperties": [],
+    "index": 25
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "roundrectangle" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".roundrectangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "shape",
+        "value": "roundrectangle",
+        "strValue": "roundrectangle"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 26
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "ellipse" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".ellipse",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "ellipse", "strValue": "ellipse" }
+    ],
+    "mappedProperties": [],
+    "index": 27
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "triangle" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".triangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "triangle", "strValue": "triangle" }
+    ],
+    "mappedProperties": [],
+    "index": 28
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "pentagon" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".pentagon",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "pentagon", "strValue": "pentagon" }
+    ],
+    "mappedProperties": [],
+    "index": 29
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "hexagon" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".hexagon",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "hexagon", "strValue": "hexagon" }
+    ],
+    "mappedProperties": [],
+    "index": 30
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "heptagon" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".heptagon",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "heptagon", "strValue": "heptagon" }
+    ],
+    "mappedProperties": [],
+    "index": 31
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "octagon" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".octagon",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "octagon", "strValue": "octagon" }
+    ],
+    "mappedProperties": [],
+    "index": 32
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "star" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".star",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [{ "name": "shape", "value": "star", "strValue": "star" }],
+    "mappedProperties": [],
+    "index": 33
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "barrel" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".barrel",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "barrel", "strValue": "barrel" }
+    ],
+    "mappedProperties": [],
+    "index": 34
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "diamond" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".diamond",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "diamond", "strValue": "diamond" }
+    ],
+    "mappedProperties": [],
+    "index": 35
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "vee" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".vee",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [{ "name": "shape", "value": "vee", "strValue": "vee" }],
+    "mappedProperties": [],
+    "index": 36
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "rhomboid" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".rhomboid",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "rhomboid", "strValue": "rhomboid" }
+    ],
+    "mappedProperties": [],
+    "index": 37
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "right-rhomboid" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".right-rhomboid",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "shape",
+        "value": "right-rhomboid",
+        "strValue": "right-rhomboid"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 38
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "polygon" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".polygon",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "polygon", "strValue": "polygon" }
+    ],
+    "mappedProperties": [],
+    "index": 39
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "tag" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".tag",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [{ "name": "shape", "value": "tag", "strValue": "tag" }],
+    "mappedProperties": [],
+    "index": 40
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "round-rectangle" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".round-rectangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "shape",
+        "value": "round-rectangle",
+        "strValue": "round-rectangle"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 41
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "cut-rectangle" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".cut-rectangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "cut-rectangle", "strValue": "cut-rectangle" }
+    ],
+    "mappedProperties": [],
+    "index": 42
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "bottom-round-rectangle" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".bottom-round-rectangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "shape",
+        "value": "bottom-round-rectangle",
+        "strValue": "bottom-round-rectangle"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 43
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "concave-hexagon" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".concave-hexagon",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "shape",
+        "value": "concave-hexagon",
+        "strValue": "concave-hexagon"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 44
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "circle" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".circle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "shape", "value": "ellipse", "strValue": "ellipse" },
+      {
+        "name": "height",
+        "value": ["data(width)", "width"],
+        "strValue": "data(width)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "width"
+      }
+    ],
+    "mappedProperties": [
+      {
+        "name": "height",
+        "value": ["data(width)", "width"],
+        "strValue": "data(width)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "width"
+      }
+    ],
+    "index": 45
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "dashed" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.dashed",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "line-style", "value": "dashed", "strValue": "dashed" }
+    ],
+    "mappedProperties": [],
+    "index": 46
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "dotted" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.dotted",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "line-style", "value": "dotted", "strValue": "dotted" }
+    ],
+    "mappedProperties": [],
+    "index": 47
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "solid" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.solid",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "line-style", "value": "solid", "strValue": "solid" }
+    ],
+    "mappedProperties": [],
+    "index": 48
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-triangle" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-triangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "source-arrow-shape",
+        "value": "triangle",
+        "strValue": "triangle"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 49
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-triangle" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-triangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "target-arrow-shape",
+        "value": "triangle",
+        "strValue": "triangle"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 50
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-triangle-tee" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-triangle-tee",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "source-arrow-shape",
+        "value": "triangle-tee",
+        "strValue": "triangle-tee"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 51
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-triangle-tee" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-triangle-tee",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "target-arrow-shape",
+        "value": "triangle-tee",
+        "strValue": "triangle-tee"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 52
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-circle-triangle" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-circle-triangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "source-arrow-shape",
+        "value": "circle-triangle",
+        "strValue": "circle-triangle"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 53
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-circle-triangle" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-circle-triangle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "target-arrow-shape",
+        "value": "circle-triangle",
+        "strValue": "circle-triangle"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 54
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-triangle-cross" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-triangle-cross",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "source-arrow-shape",
+        "value": "triangle-cross",
+        "strValue": "triangle-cross"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 55
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-triangle-cross" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-triangle-cross",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "target-arrow-shape",
+        "value": "triangle-cross",
+        "strValue": "triangle-cross"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 56
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-triangle-backcurve" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-triangle-backcurve",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "source-arrow-shape",
+        "value": "triangle-backcurve",
+        "strValue": "triangle-backcurve"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 57
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-triangle-backcurve" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-triangle-backcurve",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "target-arrow-shape",
+        "value": "triangle-backcurve",
+        "strValue": "triangle-backcurve"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 58
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-vee" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-vee",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "source-arrow-shape", "value": "vee", "strValue": "vee" }
+    ],
+    "mappedProperties": [],
+    "index": 59
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-vee" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-vee",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "target-arrow-shape", "value": "vee", "strValue": "vee" }
+    ],
+    "mappedProperties": [],
+    "index": 60
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-tee" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-tee",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "source-arrow-shape", "value": "tee", "strValue": "tee" }
+    ],
+    "mappedProperties": [],
+    "index": 61
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-tee" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-tee",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "target-arrow-shape", "value": "tee", "strValue": "tee" }
+    ],
+    "mappedProperties": [],
+    "index": 62
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-square" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-square",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "source-arrow-shape", "value": "square", "strValue": "square" }
+    ],
+    "mappedProperties": [],
+    "index": 63
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-square" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-square",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "target-arrow-shape", "value": "square", "strValue": "square" }
+    ],
+    "mappedProperties": [],
+    "index": 64
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-circle" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-circle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "source-arrow-shape", "value": "circle", "strValue": "circle" }
+    ],
+    "mappedProperties": [],
+    "index": 65
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-circle" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-circle",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "target-arrow-shape", "value": "circle", "strValue": "circle" }
+    ],
+    "mappedProperties": [],
+    "index": 66
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-diamond" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-diamond",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "source-arrow-shape",
+        "value": "diamond",
+        "strValue": "diamond"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 67
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-diamond" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-diamond",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "target-arrow-shape",
+        "value": "diamond",
+        "strValue": "diamond"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 68
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-chevron" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-chevron",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "source-arrow-shape",
+        "value": "chevron",
+        "strValue": "chevron"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 69
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-chevron" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-chevron",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "target-arrow-shape",
+        "value": "chevron",
+        "strValue": "chevron"
+      }
+    ],
+    "mappedProperties": [],
+    "index": 70
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "source-none" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.source-none",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "source-arrow-shape", "value": "none", "strValue": "none" }
+    ],
+    "mappedProperties": [],
+    "index": 71
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "edges" },
+          { "type": 9, "value": "target-none" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "edge.target-none",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "target-arrow-shape", "value": "none", "strValue": "none" }
+    ],
+    "mappedProperties": [],
+    "index": 72
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "border-solid" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.border-solid",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "border-style", "value": "solid", "strValue": "solid" }
+    ],
+    "mappedProperties": [],
+    "index": 73
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "border-dashed" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.border-dashed",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "border-style", "value": "dashed", "strValue": "dashed" }
+    ],
+    "mappedProperties": [],
+    "index": 74
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "border-dotted" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.border-dotted",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "border-style", "value": "dotted", "strValue": "dotted" }
+    ],
+    "mappedProperties": [],
+    "index": 75
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "border-double" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.border-double",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      { "name": "border-style", "value": "double", "strValue": "double" }
+    ],
+    "mappedProperties": [],
+    "index": 76
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 9, "value": "border-none" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node.border-none",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "border-width",
+        "value": 0,
+        "strValue": "0px",
+        "units": "px",
+        "pfValue": 0
+      }
+    ],
+    "mappedProperties": [],
+    "index": 77
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "text-sm" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".text-sm",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "font-size",
+        "value": 7.5,
+        "strValue": "7.5px",
+        "units": "px",
+        "pfValue": 7.5
+      }
+    ],
+    "mappedProperties": [],
+    "index": 78
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "text-lg" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".text-lg",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "font-size",
+        "value": 15,
+        "strValue": "15px",
+        "units": "px",
+        "pfValue": 15
+      }
+    ],
+    "mappedProperties": [],
+    "index": 79
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [{ "type": 9, "value": "text-xl" }],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": ".text-xl",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "font-size",
+        "value": 20,
+        "strValue": "20px",
+        "units": "px",
+        "pfValue": 20
+      }
+    ],
+    "mappedProperties": [],
+    "index": 80
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 4, "field": "w" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node[w]",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "width",
+        "value": ["data(w)", "w"],
+        "strValue": "data(w)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "w"
+      }
+    ],
+    "mappedProperties": [
+      {
+        "name": "width",
+        "value": ["data(w)", "w"],
+        "strValue": "data(w)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "w"
+      }
+    ],
+    "index": 81
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 4, "field": "h" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node[h]",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "height",
+        "value": ["data(h)", "h"],
+        "strValue": "data(h)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "h"
+      }
+    ],
+    "mappedProperties": [
+      {
+        "name": "height",
+        "value": ["data(h)", "h"],
+        "strValue": "data(h)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "h"
+      }
+    ],
+    "index": 82
+  },
+  {
+    "selector": {
+      "0": {
+        "checks": [
+          { "type": 0, "value": "nodes" },
+          { "type": 4, "field": "src" }
+        ],
+        "edgeCount": 0,
+        "compoundCount": 0
+      },
+      "inputText": "node[src]",
+      "currentSubject": null,
+      "compoundCount": 0,
+      "edgeCount": 0,
+      "length": 1
+    },
+    "properties": [
+      {
+        "name": "background-image",
+        "value": ["data(src)", "src"],
+        "strValue": "data(src)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "src"
+      },
+      {
+        "name": "background-fit",
+        "value": ["cover"],
+        "pfValue": ["cover"],
+        "strValue": "cover",
+        "units": [null]
+      },
+      {
+        "name": "border-width",
+        "value": 0,
+        "strValue": "0px",
+        "units": "px",
+        "pfValue": 0
+      },
+      { "name": "text-valign", "value": "bottom", "strValue": "bottom" },
+      {
+        "name": "text-margin-y",
+        "value": 5,
+        "strValue": "5px",
+        "units": "px",
+        "pfValue": 5
+      }
+    ],
+    "mappedProperties": [
+      {
+        "name": "background-image",
+        "value": ["data(src)", "src"],
+        "strValue": "data(src)",
+        "mapped": {
+          "mapping": true,
+          "regex": "^data\\s*\\(\\s*([\\w\\.]+)\\s*\\)$"
+        },
+        "field": "src"
+      }
+    ],
+    "index": 83
+  }
+]

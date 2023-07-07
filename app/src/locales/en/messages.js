@@ -26,7 +26,6 @@
     Attributes: "Attributes",
     "Auto-Layouts": "Auto-Layouts",
     "Back To Editor": "Back To Editor",
-    Background: "Background",
     "Basic Flowchart": "Basic Flowchart",
     "Become a Github Sponsor": "Become a Github Sponsor",
     "Become a Pro User": "Become a Pro User",
@@ -48,6 +47,7 @@
     Charts: "Charts",
     "Check your email for a link to log in. You can close this window.":
       "Check your email for a link to log in. You can close this window.",
+    "Choose a Theme": "Choose a Theme",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .",
     "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
@@ -59,6 +59,7 @@
     "Clear text?": "Clear text?",
     "Click on \\nLearn Syntax\\nto learn more":
       "Click on \\nLearn Syntax\\nto learn more",
+    "Click to preview": "Click to preview",
     Clone: "Clone",
     Close: "Close",
     Color: "Color",
@@ -89,6 +90,8 @@
       "Creating an edge between two nodes is done by indenting the second node below the first",
     "Custom Sharing Options": "Custom Sharing Options",
     "Customer Portal": "Customer Portal",
+    "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck.":
+      "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck.",
     Dark: "Dark",
     "Dark Mode": "Dark Mode",
     Date: "Date",
@@ -159,7 +162,6 @@
     Fullscreen: "Fullscreen",
     Futuristic: "Futuristic",
     "Get More Layouts": "Get More Layouts",
-    "Get More Themes": "Get More Themes",
     "Get personalized attention and support from our expert team":
       "Get personalized attention and support from our expert team",
     "Getting Started": "Getting Started",
@@ -213,7 +215,10 @@
     Light: "Light",
     "Light Mode": "Light Mode",
     Link: "Link",
+    "Load Theme": "Load Theme",
     Loading: "Loading",
+    "Loading a theme will erase any custom styles you have applied":
+      "Loading a theme will erase any custom styles you have applied",
     "Log In": "Log In",
     "Log Out": "Log Out",
     "Log in to start creating flowcharts.":
@@ -361,7 +366,7 @@
     "The delimiter used to separate multiple target nodes":
       "The delimiter used to separate multiple target nodes",
     "The possible shapes are:": "The possible shapes are:",
-    Theme: "Theme",
+    "Theme Editor": "Theme Editor",
     "There are no edges in this data": "There are no edges in this data",
     "This action cannot be undone.": "This action cannot be undone.",
     "This app works by typing": "This app works by typing",

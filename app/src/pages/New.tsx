@@ -98,7 +98,7 @@ const New = memo(function New({
   const [start, setStart] = useState<"blank" | "prompt">("blank");
 
   // Boilerplate to create a new chart
-  const { mutate, isLoading } = useMutation("makeChart", makeChart, {
+  const makeChartMutation = useMutation("makeChart", makeChart, {
     retry: false,
     onSuccess: (response: any) => {
       queryClient.invalidateQueries(["auth", "hostedCharts"]);
@@ -145,7 +145,7 @@ const New = memo(function New({
                 const method = formData.get("method") as "instruct" | "extract";
                 if (!prompt || !method) return;
 
-                mutate({
+                makeChartMutation.mutate({
                   name,
                   user_id: userId,
                   chart,
@@ -154,7 +154,7 @@ const New = memo(function New({
                   fromPrompt: true,
                 });
               } else {
-                mutate({
+                makeChartMutation.mutate({
                   name,
                   user_id: userId,
                   chart,
@@ -299,7 +299,7 @@ const New = memo(function New({
             className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-4 mb-8"
             disabled={createDisabled}
           >
-            {isLoading ? (
+            {makeChartMutation.isLoading ? (
               <CircleNotch size={24} className="animate-spin" />
             ) : (
               <Trans>Create</Trans>

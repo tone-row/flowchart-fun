@@ -11,7 +11,7 @@ export function EditorTabList() {
   const isValidSponsor = useIsValidSponsor();
 
   return (
-    <Tabs.List className="grid grid-flow-col gap-2 border-b border-neutral-300 dark:border-neutral-600 pt-2 px-6 pb-0 justify-start">
+    <Tabs.List className="grid grid-flow-col gap-2 border-b border-neutral-300 dark:border-neutral-600 pt-2 px-5 pb-0 justify-start">
       <Tabs.Trigger
         value="Document"
         data-testid="Editor Tab: Document"

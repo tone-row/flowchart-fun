@@ -27,7 +27,6 @@
     Attributes: "Attribute",
     "Auto-Layouts": "Automatische Layouts",
     "Back To Editor": "Zurück zum Editor",
-    Background: "Hintergrund",
     "Basic Flowchart": "Grundlegender Flussdiagramm",
     "Become a Github Sponsor": "Werden Sie ein Github-Sponsor",
     "Become a Pro User": "Werden Sie ein Pro-Benutzer",
@@ -49,6 +48,7 @@
     Charts: "Diagramme",
     "Check your email for a link to log in. You can close this window.":
       "Prüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses Fenster schließen.",
+    "Choose a Theme": "Wählen Sie ein Thema",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "Wählen Sie aus einer Vielzahl von Pfeilformen für die Quelle und das Ziel einer Kante aus. Formen beinhalten Dreieck, Dreieck-Tee, Kreis-Dreieck, Dreieck-Kreuz, Dreieck-Rückbiegung, Vee, Tee, Quadrat, Kreis, Diamant, Chevron und keine.",
     "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro":
@@ -60,6 +60,7 @@
     "Clear text?": "Text löschen?",
     "Click on \\nLearn Syntax\\nto learn more":
       "Klicke auf \\nSyntax lernen\\num mehr zu erfahren.",
+    "Click to preview": "Klicken Sie zum Vorschauen",
     Clone: "Klon",
     Close: "Schließen",
     Color: "Farbe",
@@ -90,6 +91,8 @@
       "Eine Kante zwischen zwei Knoten wird erstellt, indem der zweite Knoten unter dem ersten eingerückt wird",
     "Custom Sharing Options": "Benutzerdefinierte Freigabeoptionen",
     "Customer Portal": "Kundenportal",
+    "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck.":
+      "Passen Sie Ihr Thema an, indem Sie die <0>Cytoscape CSS</0> unten bearbeiten. Unsere Styling-Dokumentation ist bald verfügbar! In der Zwischenzeit ist die beste Ressource die <1>Cytoscape</1>-Dokumentation. Stellen Sie Fragen im <2>Discord</2>, wenn Sie steckenbleiben.",
     Dark: "Dunkel",
     "Dark Mode": "Dunkelmodus",
     Date: "Datum",
@@ -160,7 +163,6 @@
     Fullscreen: "Vollbild",
     Futuristic: "Futuristisch",
     "Get More Layouts": "Mehr Layouts erhalten",
-    "Get More Themes": "Weitere Themen erhalten",
     "Get personalized attention and support from our expert team":
       "Erhalten Sie personalisierte Aufmerksamkeit und Unterstützung von unserem Experten-Team",
     "Getting Started": "Erste Schritte",
@@ -214,7 +216,10 @@
     Light: "Hell",
     "Light Mode": "Heller Modus",
     Link: "Link",
+    "Load Theme": "Thema laden",
     Loading: "Laden",
+    "Loading a theme will erase any custom styles you have applied":
+      "Das Laden eines Themas wird alle benutzerdefinierten Stile löschen, die Sie angewendet haben",
     "Log In": "Anmelden",
     "Log Out": "Abmelden",
     "Log in to start creating flowcharts.":
@@ -364,7 +369,7 @@
     "The delimiter used to separate multiple target nodes":
       "Der Trennzeichen, das verwendet wird, um mehrere Zielknoten zu trennen",
     "The possible shapes are:": "Die möglichen Formen sind:",
-    Theme: "Thema",
+    "Theme Editor": "Thema-Editor",
     "There are no edges in this data": "Es gibt keine Kanten in diesen Daten",
     "This action cannot be undone.":
       "Diese Aktion kann nicht rückgängig gemacht werden.",

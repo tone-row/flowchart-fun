@@ -31,12 +31,11 @@ import {
 } from "react";
 import { Link, LinkProps, useLocation } from "react-router-dom";
 
+import { DISCORD_URL } from "../lib/constants";
 import { useIsValidCustomer } from "../lib/hooks";
 import { track } from "../lib/track";
 import { useLastChart } from "../lib/useLastChart";
 import { ReactComponent as BrandSvg } from "./brand.svg";
-
-const DISCORD_URL = "https://discord.gg/wPASTQHQBf";
 
 export const Header = memo(function SharedHeader() {
   const { pathname } = useLocation();
