@@ -25,7 +25,7 @@ import {
   Dialog,
   Input,
   Notice,
-  Page,
+  Page2,
   Section,
 } from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
@@ -111,13 +111,7 @@ export default function Account() {
   if (customerIsLoading) return <Loading />;
 
   return (
-    <Page
-      px={4}
-      py={8}
-      content="start normal"
-      className={styles.Wrapper}
-      self="stretch center"
-    >
+    <Page2>
       <PageTitle className="text-center">
         <Trans>Account</Trans>
       </PageTitle>
@@ -328,7 +322,7 @@ export default function Account() {
         isOpen={resumeModal}
         onDismiss={() => setResumeModal(false)}
       />
-    </Page>
+    </Page2>
   );
 }
 

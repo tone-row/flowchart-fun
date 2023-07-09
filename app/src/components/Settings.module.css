@@ -53,9 +53,3 @@
   outline: none;
   color: var(--color-buttonFocus);
 }
-
-.Settings {
-  max-width: 800px;
-  width: 100%;
-  justify-self: center;
-}
