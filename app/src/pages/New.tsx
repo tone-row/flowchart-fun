@@ -6,7 +6,6 @@ import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import {
   ChatTeardropText,
   Check,
-  CircleNotch,
   Clock,
   Pencil,
   TreeStructure,
@@ -32,6 +31,7 @@ import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
+import { Button2 } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
 
 export default function M() {
@@ -294,17 +294,16 @@ const New = memo(function New({
             <PromptDescription start={start} />
             {start === "prompt" && <PromptSubmenu />}
           </div>
-          <button
+          <Button2
             type="submit"
-            className="justify-self-center bg-neutral-200 rounded-lg text-xl font-bold px-16 py-4 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-200 dark:disabled:hover:bg-neutral-800 mt-4 mb-8"
             disabled={createDisabled}
+            isLoading={makeChartMutation.isLoading}
+            color="blue"
+            size="md"
+            className="mx-auto"
           >
-            {makeChartMutation.isLoading ? (
-              <CircleNotch size={24} className="animate-spin" />
-            ) : (
-              <Trans>Create</Trans>
-            )}
-          </button>
+            <Trans>Create New Flowchart</Trans>
+          </Button2>
         </div>
       </form>
     </div>

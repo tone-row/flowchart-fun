@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { ArrowSquareOut, User } from "phosphor-react";
+import { ArrowSquareOut } from "phosphor-react";
 import React, { ReactNode, useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
@@ -19,7 +19,15 @@ import {
 } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box } from "../slang";
-import { Button, Dialog, Input, Notice, Page, Section } from "../ui/Shared";
+import {
+  Button,
+  Button2,
+  Dialog,
+  Input,
+  Notice,
+  Page,
+  Section,
+} from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
 
@@ -110,7 +118,7 @@ export default function Account() {
       className={styles.Wrapper}
       self="stretch center"
     >
-      <PageTitle>
+      <PageTitle className="text-center">
         <Trans>Account</Trans>
       </PageTitle>
       <Section>
@@ -118,7 +126,30 @@ export default function Account() {
           <Trans>User</Trans>
         </SectionTitle>
         <Description>{session?.user?.email}</Description>
-        <Button self="start" onClick={signOut} text={t`Log Out`} />
+        <Button2 onClick={signOut} className="justify-self-start">
+          <Trans>Log Out</Trans>
+        </Button2>
+      </Section>
+      <Section>
+        <SectionTitle>
+          <Trans>One-on-One Support</Trans>
+        </SectionTitle>
+        <p className="text-neutral-500 text-sm">
+          <Trans>
+            Have complex questions or issues? We&apos;re here to help.
+          </Trans>
+        </p>
+        <a
+          className="flex gap-2 text-xs text-blue-500 items-center"
+          href="https://calendly.com/tone-row/flowchart-fun"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>
+            <Trans>Book a Meeting</Trans>
+          </span>
+          <ArrowSquareOut size={16} />
+        </a>
       </Section>
       {subscription?.status === "canceled" && (
         <Section>
@@ -176,10 +207,9 @@ export default function Account() {
               <Trans>Subscription will end</Trans>{" "}
               {formatDate(subscription.current_period_end.toString())}
             </Notice>
-            <Button
-              onClick={() => setResumeModal(true)}
-              text={t`Resume Subscription`}
-            />
+            <Button2 onClick={() => setResumeModal(true)}>
+              <Trans>Resume Subscription</Trans>
+            </Button2>
           </Box>
         )}
       </Section>
@@ -202,12 +232,13 @@ export default function Account() {
             placeholder={t`Confirm New Email`}
             disabled={changeEmail.isLoading}
           />
-          <Button
+          <Button2
             type="submit"
-            self="start"
-            text={t`Change Email Address`}
             disabled={changeEmail.isLoading}
-          />
+            className="justify-self-start"
+          >
+            <Trans>Change Email Address</Trans>
+          </Button2>
           {changeEmail.isError && (
             <Notice>{(changeEmail.error as Error).message}</Notice>
           )}
@@ -218,24 +249,22 @@ export default function Account() {
           <SectionTitle>
             <Trans>Customer Portal</Trans>
           </SectionTitle>
-          <p className="text-sm leading-normal">
+          <p className="text-neutral-500 text-sm">
             <Trans>
               Use the customer portal to change your billing information.
             </Trans>
           </p>
-          <Button
-            as={"a"}
+          <a
             href={customerPortalLink}
             target="_blank"
             rel="noopener noreferrer"
-            self="start"
+            className="flex gap-2 text-xs text-blue-500"
           >
-            <User size={16} />
             <span>
               <Trans>Open Customer Portal</Trans>
             </span>
             <ArrowSquareOut size={16} />
-          </Button>
+          </a>
         </Section>
       )}
       <Section>
@@ -270,20 +299,6 @@ export default function Account() {
           </tbody>
         </Box>
       </Section>
-      <Section>
-        <SectionTitle>
-          <Trans>Office Hours</Trans>
-        </SectionTitle>
-        <a
-          className="flex gap-1 content-start text-blue-500 items-center"
-          href="https://calendly.com/tone-row/flowchart-fun"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>https://calendly.com/tone-row/flowchart-fun</span>
-          <ArrowSquareOut size={16} weight="bold" className="mt-[-3px]" />
-        </a>
-      </Section>
       {!subscription?.cancel_at_period_end &&
         subscription?.created &&
         subscription?.status === "active" && (
@@ -297,11 +312,12 @@ export default function Account() {
                 read-only.
               </Trans>
             </p>
-            <Button
-              self="normal start"
+            <Button2
               onClick={() => setCancelModal(true)}
-              text={t`Cancel`}
-            />
+              className="justify-self-start"
+            >
+              <Trans>Cancel</Trans>
+            </Button2>
           </Section>
         )}
       <ConfirmCancel
@@ -373,14 +389,18 @@ function ConfirmCancel({
         <Trans>Do you want to cancel your subscription?</Trans>
       </p>
       <Box content="normal space-between" flow="column" gap={3}>
-        <Button onClick={onDismiss} disabled={loading} text={t`Return`} />
-        <Button
+        <Button2 onClick={onDismiss} disabled={loading}>
+          <Trans>Return</Trans>
+        </Button2>
+        <Button2
           disabled={loading}
           onClick={cancelSubscription}
-          text={t`Cancel`}
-        />
+          color="red"
+          isLoading={loading}
+        >
+          <Trans>Cancel</Trans>
+        </Button2>
       </Box>
-      {loading && <Spinner />}
     </Dialog>
   );
 }
@@ -421,14 +441,18 @@ function ConfirmResume({
         <Trans>Next charge</Trans> {formatDate(period)}.
       </p>
       <Box content="normal space-between" flow="column" gap={3}>
-        <Button onClick={onDismiss} disabled={loading} text={t`Cancel`} />
-        <Button
+        <Button2 onClick={onDismiss} disabled={loading}>
+          <Trans>Cancel</Trans>
+        </Button2>
+        <Button2
           disabled={loading}
           onClick={resumeSubscription}
-          text={t`Resume Subscription`}
-        />
+          color="blue"
+          isLoading={loading}
+        >
+          <Trans>Resume Subscription</Trans>
+        </Button2>
       </Box>
-      {loading && <Spinner />}
     </Dialog>
   );
 }

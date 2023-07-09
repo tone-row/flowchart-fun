@@ -10,8 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import { useQuery } from "react-query";
 
 import { useLightOrDarkMode, useSession } from "../lib/hooks";
-import { BlueButton } from "../ui/BlueButton";
-import Spinner from "./Spinner";
+import { Button2 } from "../ui/Shared";
 import { Warning } from "./Warning";
 
 /**
@@ -98,14 +97,15 @@ export function PaymentStepper() {
                 }
               />
             </div>
-            <BlueButton
+            <Button2
               onClick={() => setConfirmPlan(true)}
               disabled={plan === null}
               className="mt-4 justify-self-center"
+              rightIcon={<ArrowRight size={16} />}
+              color="blue"
             >
               <Trans>Continue</Trans>
-              <ArrowRight size={16} />
-            </BlueButton>
+            </Button2>
           </>
         )}
         {step === "two" && (
@@ -140,22 +140,15 @@ export function PaymentStepper() {
                 required
               />
             </div>
-            <BlueButton
+            <Button2
               disabled={subscriptionDetails.isLoading}
-              className="mt-2 justify-self-center"
+              className="mt-4 justify-self-center"
+              rightIcon={<ArrowRight size={16} />}
+              color="blue"
+              isLoading={subscriptionDetails.isLoading}
             >
-              {subscriptionDetails.isLoading ? (
-                <>
-                  {t`Loading`}
-                  <Spinner r={5} s={1} />
-                </>
-              ) : (
-                <>
-                  {t`Continue`}
-                  <ArrowRight size={16} />
-                </>
-              )}
-            </BlueButton>
+              <Trans>Continue</Trans>
+            </Button2>
             {subscriptionDetails.error && (
               <div className="justify-self-center">
                 <Warning>
@@ -270,14 +263,16 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
       }}
     >
       <div id="payment-element" />
-      <BlueButton
+      <Button2
         id="submit"
         disabled={!stripe || loading}
         className="mt-5 justify-self-center"
+        color="blue"
+        rightIcon={<RocketLaunch size={16} />}
+        isLoading={loading}
       >
         <Trans>Sign Up</Trans>
-        {loading ? <Spinner r={5} s={1} /> : <RocketLaunch size={18} />}
-      </BlueButton>
+      </Button2>
       {error && (
         <Warning>
           <div className="flex items-center justify-start gap-2">

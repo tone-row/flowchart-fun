@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import { mail } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
-import { Button, Input, Notice, Textarea } from "../ui/Shared";
+import { Button2, Input, Notice, Textarea } from "../ui/Shared";
 import { Label, PageTitle, SectionTitle } from "../ui/Typography";
 import Spinner from "./Spinner";
 
@@ -76,12 +76,9 @@ export default function Feedback() {
               data-testid="message"
             />
           </section>
-          <Button
-            type="submit"
-            style={{ justifySelf: "center" }}
-            disabled={!isValid}
-            text={t`Submit`}
-          />
+          <Button2 disabled={!isValid} color="blue">
+            <Trans>Submit</Trans>
+          </Button2>
           {error instanceof Error && (
             <div className="justify-self-center">
               <Notice>

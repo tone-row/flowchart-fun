@@ -1,6 +1,8 @@
 import { t, Trans } from "@lingui/macro";
 import produce from "immer";
+import { Palette } from "phosphor-react";
 import { FaRegSnowflake } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
 
 import { GraphOptionsObject } from "../../lib/constants";
 import { defaultLayout, getLayout } from "../../lib/getLayout";
@@ -9,10 +11,10 @@ import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { unfreezeDoc, useIsFrozen } from "../../lib/useIsFrozen";
+import { Button2 } from "../../ui/Shared";
 import styles from "./EditLayoutTab.module.css";
 import {
   CustomSelect,
-  LargeLink,
   OptionWithLabel,
   Range,
   TabOptionsGrid,
@@ -64,6 +66,8 @@ export function EditLayoutTab() {
   ) {
     spacingFactor = layout.spacingFactor;
   }
+
+  const { push } = useHistory();
 
   if (isFrozen) return <FrozenLayout />;
 
@@ -183,9 +187,18 @@ export function EditLayoutTab() {
         )}
       </TabOptionsGrid>
       {!isValidSponsor && (
-        <LargeLink href="/pricing">
+        // <LargeLink href="/pricing">
+        //   <Trans>Get More Layouts</Trans>
+        // </LargeLink>
+        <Button2
+          color="blue"
+          size="md"
+          rightIcon={<Palette size={20} />}
+          className="ml-5 mr-1"
+          onClick={() => push("/pricing")}
+        >
           <Trans>Get More Layouts</Trans>
-        </LargeLink>
+        </Button2>
       )}
     </WithLowerChild>
   );

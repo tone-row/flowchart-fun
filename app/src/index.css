@@ -121,6 +121,7 @@ div[data-reach-dialog-content] {
 @media (min-width: 800px) {
   div[data-reach-dialog-content] {
     width: 60vw;
+    max-width: 600px;
     margin: 10vh auto;
   }
 }
