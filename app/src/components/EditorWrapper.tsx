@@ -1,5 +1,4 @@
-import { t, Trans } from "@lingui/macro";
-import { Share } from "phosphor-react";
+import { Trans } from "@lingui/macro";
 import { Suspense, useContext } from "react";
 import { RiShareForwardFill } from "react-icons/ri";
 

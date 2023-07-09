@@ -26,8 +26,8 @@ import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Box } from "../slang";
-import { Button, Dialog, Textarea } from "../ui/Shared";
-import { Description } from "../ui/Typography";
+import { Button2, Dialog, Textarea } from "../ui/Shared";
+import { Description, SectionTitle } from "../ui/Typography";
 import { AppContext } from "./AppContext";
 import { downloadCanvas, downloadSvg, getCanvas, getSvg } from "./downloads";
 import Loading from "./Loading";
@@ -64,11 +64,12 @@ export default function ShareDialog() {
     >
       <Column>
         <PreviewImage watermark={watermark} scale={scale} />
-        <Title>
+        <SectionTitle className="mb-1">
           <Trans>Download</Trans>
-        </Title>
-        <Box gap={2} flow="column" className={styles.DownloadButtons}>
-          <Button
+        </SectionTitle>
+        <div className="grid gap-2 grid-cols-3">
+          <Button2
+            aria-label="Download PNG"
             onClick={() => {
               if (!window.__cy) return;
               getCanvas({
@@ -85,10 +86,11 @@ export default function ShareDialog() {
                 )
                 .catch(console.error);
             }}
-            aria-label="Download PNG"
-            text="PNG"
-          />
-          <Button
+          >
+            PNG
+          </Button2>
+          <Button2
+            aria-label="Download JPG"
             onClick={() => {
               if (!window.__cy) return;
               getCanvas({
@@ -103,12 +105,13 @@ export default function ShareDialog() {
                 })
               );
             }}
-            aria-label="Download JPG"
-            text="JPG"
-          />
+          >
+            JPG
+          </Button2>
           <SvgProOnlyPopover>
-            <Button
+            <Button2
               disabled={!isValidSponsor}
+              aria-label="Download SVG"
               onClick={async () => {
                 if (!window.__cy) return;
                 const svg = await getSvg({
@@ -119,17 +122,17 @@ export default function ShareDialog() {
                   filename,
                 });
               }}
-              aria-label="Download SVG"
-              text="SVG"
-            />
+            >
+              SVG
+            </Button2>
           </SvgProOnlyPopover>
-        </Box>
+        </div>
       </Column>
       {isHosted ? <HostedOptions /> : null}
       <Column>
-        <Title>
+        <SectionTitle className="mb-1">
           <Trans>Link</Trans>
-        </Title>
+        </SectionTitle>
         <Box gap={4}>
           <LinkCopy
             value={fullscreen}
@@ -240,15 +243,9 @@ function LinkCopy({
           onFocus={copyText}
           data-testid={`Copy ${rawTitle}`}
         />
-        <Box>
-          <Button
-            onClick={copyText}
-            className={styles.LinkCopyButton}
-            text={t`Copy`}
-            aria-label={`${t`Copy`} ${title}`}
-            py={2}
-          />
-        </Box>
+        <Button2 onClick={copyText} aria-label={`${t`Copy`} ${title}`}>
+          <Trans>Copy</Trans>
+        </Button2>
       </Box>
     </Box>
   );
@@ -349,8 +346,7 @@ function Mermaid() {
             <ArrowSquareOut width={15} height={15} />
             <span>mermaid.live</span>
           </a>
-          <Button
-            self="normal start"
+          <Button2
             onClick={() => {
               (async () => {
                 await navigator.clipboard.writeText(code);
@@ -358,11 +354,10 @@ function Mermaid() {
                 setTimeout(() => setCopied(false), 3000);
               })();
             }}
-            className={styles.LinkCopyButton}
-            text={t`Copy`}
             aria-label="Copy Mermaid Code"
-            py={2}
-          />
+          >
+            <Trans>Copy</Trans>
+          </Button2>
           {copied && <Check data-testid="Copied Mermaid Code" />}
         </div>
       </div>

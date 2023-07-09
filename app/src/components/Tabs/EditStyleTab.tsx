@@ -5,13 +5,13 @@ import produce from "immer";
 import { Info } from "phosphor-react";
 import postcssParser from "prettier/parser-postcss";
 import prettier from "prettier/standalone";
-import { useCallback, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from "react";
 
 import { DISCORD_URL } from "../../lib/constants";
 import { useLightOrDarkMode } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { useUnmountStore } from "../../lib/useUnmountStore";
-import { Button } from "../../ui/Shared";
+import { Button2 } from "../../ui/Shared";
 import { ThemePicker } from "../ThemePicker";
 
 export function EditStyleTab() {
@@ -134,19 +134,28 @@ export function EditStyleTab() {
           }}
         />
         <div className="pb-2 grid">
-          <Button onClick={() => applyStyle(style)}>
-            Apply Style <KeyboardKey>⌘</KeyboardKey>
-            <KeyboardKey>S</KeyboardKey>
-          </Button>
+          <Button2
+            onClick={() => applyStyle(style)}
+            rightIcon={
+              <div className="flex gap-1">
+                <KeyboardKey>⌘</KeyboardKey>
+                <KeyboardKey>
+                  <span className="-translate-y-[1px]">s</span>
+                </KeyboardKey>
+              </div>
+            }
+          >
+            <Trans>Apply Style</Trans>
+          </Button2>
         </div>
       </div>
     </div>
   );
 }
 
-function KeyboardKey({ children }: { children: string }) {
+function KeyboardKey({ children }: { children: ReactNode }) {
   return (
-    <kbd className="bg-neutral-300 dark:bg-neutral-700 rounded p-1 w-7 h-7 grid content-center font-mono">
+    <kbd className="bg-neutral-300 dark:bg-neutral-700 rounded w-5 h-5 grid content-center font-mono text-neutral-800 dark:text-neutral-300 group-hover:bg-neutral-400">
       {children}
     </kbd>
   );

@@ -9,15 +9,7 @@ import { makeChart, renameChart } from "../lib/queries";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Box } from "../slang";
-import {
-  Button,
-  Dialog,
-  Input,
-  Notice,
-  Section,
-  Tooltip,
-  tooltipSize,
-} from "../ui/Shared";
+import { Button2, Dialog, Input, Notice, Section } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
 import { useSession } from "./AppContext";
 
@@ -153,12 +145,15 @@ export const RenameButton = memo(function RenameButton({
             ref={inputRef}
           />
           <Box flow="column" content="normal space-between">
-            <Button
+            <Button2
               type="button"
-              text={`Cancel`}
               onClick={() => useRenameDialogStore.setState({ isOpen: false })}
-            />
-            <Button type="submit" text={t`Rename`} disabled={!isValid} />
+            >
+              <Trans>Cancel</Trans>
+            </Button2>
+            <Button2 type="submit" disabled={!isValid} color="blue">
+              <Trans>Rename</Trans>
+            </Button2>
           </Box>
           {isError(rename.error) && <Notice>{rename.error.message}</Notice>}
         </Section>

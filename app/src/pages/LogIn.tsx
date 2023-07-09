@@ -1,5 +1,4 @@
 import { t, Trans } from "@lingui/macro";
-import { CircleNotch } from "phosphor-react";
 import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
@@ -9,7 +8,7 @@ import { Warning } from "../components/Warning";
 import { WelcomeMessage } from "../components/WelcomeMessage";
 import { isError } from "../lib/helpers";
 import { login } from "../lib/queries";
-import { BlueButton } from "../ui/BlueButton";
+import { Button2 } from "../ui/Shared";
 import { Label, PageTitle } from "../ui/Typography";
 import { ReactComponent as EmailPassword } from "./EmailPassword.svg";
 
@@ -81,13 +80,14 @@ export default function Login() {
               disabled={isLoading}
             />
           </label>
-          <BlueButton disabled={isLoading} className="w-full justify-center">
-            {isLoading ? (
-              <CircleNotch size={18} className="animate-spin inline-block" />
-            ) : (
-              <Trans>Submit</Trans>
-            )}
-          </BlueButton>
+          <Button2
+            disabled={isLoading}
+            className="w-full justify-center"
+            isLoading={isLoading}
+            color="blue"
+          >
+            <Trans>Submit</Trans>
+          </Button2>
           {isError(error) && <Warning>{error.message}</Warning>}
           <span className="text-sm mt-5">
             {t`Don't have an account?`}

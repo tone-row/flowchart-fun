@@ -220,6 +220,7 @@ const button2Colors = {
   zinc: "bg-zinc-500 text-white hover:bg-zinc-600 disabled:hover:bg-zinc-500 disabled:hover:text-white",
   inverted:
     "text-neutral-200 dark:text-neutral-900 bg-neutral-800 dark:bg-neutral-300 hover:bg-neutral-700 dark:hover:bg-neutral-400 disabled:hover:bg-neutral-800 disabled:hover:text-neutral-200",
+  red: "bg-red-500 text-white hover:bg-red-600 disabled:hover:bg-red-500 disabled:hover:text-white",
 };
 
 const pSize = {
@@ -255,7 +256,15 @@ export const Button2 = forwardRef<
   >
 >(
   (
-    { children, color = "default", size = "sm", leftIcon, rightIcon, ...props },
+    {
+      children,
+      color = "default",
+      size = "sm",
+      leftIcon,
+      rightIcon,
+      className = "",
+      ...props
+    },
     ref
   ) => {
     return (
@@ -263,7 +272,7 @@ export const Button2 = forwardRef<
         className={`flex items-center justify-center gap-3 ${button2Classes} ${pxButtonSize[
           size
         ](!!leftIcon, !!rightIcon)} ${button2Colors[color]}
-      ${pSize[size]}
+      ${pSize[size]} ${className}
       `}
         {...props}
         disabled={props.disabled || props.isLoading}
@@ -271,11 +280,17 @@ export const Button2 = forwardRef<
         ref={ref}
       >
         {leftIcon && (
-          <span className="group-icon-[is-loading]:opacity-0">{leftIcon}</span>
+          <span className="group-data-[is-loading=true]:opacity-0">
+            {leftIcon}
+          </span>
         )}
-        <span className="group-data-[is-loading]:opacity-0">{children}</span>{" "}
+        <span className="group-data-[is-loading=true]:opacity-0">
+          {children}
+        </span>{" "}
         {rightIcon && (
-          <span className="group-icon-[is-loading]:opacity-0">{rightIcon}</span>
+          <span className="group-data-[is-loading=true]:opacity-0">
+            {rightIcon}
+          </span>
         )}
         {props.isLoading && (
           <Spinner
@@ -311,7 +326,7 @@ export const IconButton2 = forwardRef<
       data-is-loading={props.isLoading}
       ref={ref}
     >
-      <span className="group-data-[is-loading]:opacity-0">{children}</span>
+      <span className="group-data-[is-loading=true]:opacity-0">{children}</span>
       {props.isLoading && (
         <Spinner
           r={8}
