@@ -1,3 +1,4 @@
+import { Provider as TooltipProvider } from "@radix-ui/react-tooltip";
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -33,7 +34,9 @@ export default function App() {
             <I18n>
               <Elements stripe={stripePromise}>
                 <Suspense fallback={<Loading />}>
-                  <Router />
+                  <TooltipProvider>
+                    <Router />
+                  </TooltipProvider>
                   <ReactQueryDevtools />
                 </Suspense>
               </Elements>

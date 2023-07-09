@@ -2,7 +2,6 @@ import * as Select from "@radix-ui/react-select";
 import * as Slider from "@radix-ui/react-slider";
 import { CaretDown } from "phosphor-react";
 import { memo, ReactNode } from "react";
-import { Link } from "react-router-dom";
 
 import { SelectOption } from "../../lib/graphOptions";
 import { useIsValidSponsor } from "../../lib/hooks";
@@ -82,20 +81,6 @@ export function WithLowerChild({
 }) {
   return (
     <div className={`${styles.withLowerChild} ${className}`}>{children}</div>
-  );
-}
-
-export function LargeLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: ReactNode;
-}) {
-  return (
-    <Link to={href} className={styles.largeLink}>
-      {children}
-    </Link>
   );
 }
 

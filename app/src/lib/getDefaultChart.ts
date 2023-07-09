@@ -6,7 +6,7 @@ const defaultMeta = {
 };
 
 // TODO: Should be shared with the back-end through a shared package
-export function getMetaBase() {
+function getMetaBase() {
   return `\n=====\n${JSON.stringify(defaultMeta, null, 2)}\n=====`;
 }
 
