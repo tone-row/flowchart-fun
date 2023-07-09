@@ -75,8 +75,9 @@
 .EditorWrapper [data-rename-button]:hover,
 .EditorWrapper [data-rename-button]:focus-visible {
   text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  text-decoration-color: #bbb;
 }
 
 .EditorWrapper [data-rename-button]:focus {

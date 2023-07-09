@@ -28,6 +28,7 @@ import {
 } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
 import { Overlay } from "../ui/Dialog";
+import { Button2 } from "../ui/Shared";
 import { Description, PageTitle, SectionTitle } from "../ui/Typography";
 // Keep these in sync (55px)
 const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
@@ -98,9 +99,13 @@ export default function Charts() {
         <PageTitle>
           <Trans>Your Charts</Trans>
         </PageTitle>
-        <DialogButton as={Link} to="/n" icon={Plus} color="inverted">
+        <Button2
+          leftIcon={<Plus size={16} />}
+          onClick={() => push("/n")}
+          color="blue"
+        >
           <Trans>New</Trans>
-        </DialogButton>
+        </Button2>
       </header>
       <section className="grid gap-12">
         <LargeFolder

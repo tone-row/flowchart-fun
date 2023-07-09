@@ -4,22 +4,10 @@ import { Link } from "react-router-dom";
 
 import { languages } from "../locales/i18n";
 import { Box, BoxProps } from "../slang";
+import { Button, Page, Section } from "../ui/Shared";
 import { PageTitle, SectionTitle } from "../ui/Typography";
 import { AppContext } from "./AppContext";
 import styles from "./Settings.module.css";
-import { Button, Page, Section } from "./Shared";
-
-const lowerLinksAt: BoxProps["at"] = {
-  tablet: {
-    pb: 4,
-  },
-  desktop: {
-    gap: 4,
-    flow: "column",
-    items: "end normal",
-    content: "normal start",
-  },
-};
 
 const Settings = memo(() => {
   const { updateUserSettings, mode, language } = useContext(AppContext);
@@ -127,7 +115,7 @@ const Settings = memo(() => {
               </a>
             </Trans>
           </p>
-          <Section at={lowerLinksAt}>
+          <Section>
             <a
               href="https://github.com/tone-row/flowchart-fun"
               className="text-sm opacity-60 hover:opacity-100"
@@ -150,7 +138,7 @@ const Settings = memo(() => {
               supporting the project
             </Trans>
           </p>
-          <Section at={lowerLinksAt}>
+          <Section>
             <Link
               to="/pricing"
               className="text-sm opacity-60 hover:opacity-100"

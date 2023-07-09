@@ -3,8 +3,8 @@ import { Trash } from "phosphor-react";
 import { useState } from "react";
 
 import { Box } from "../slang";
+import { Button, Dialog, smallIconSize } from "../ui/Shared";
 import styles from "./ClearTextButton.module.css";
-import { Button, Dialog, smallIconSize } from "./Shared";
 
 export function ClearTextButton({ handleClear }: { handleClear: () => void }) {
   const [dialogOpen, setDialogOpen] = useState(false);

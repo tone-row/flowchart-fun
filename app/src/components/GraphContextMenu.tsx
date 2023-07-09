@@ -36,6 +36,7 @@ import {
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
 import { Box } from "../slang";
+import { smallIconSize } from "../ui/Shared";
 import {
   copyCanvas,
   downloadCanvas,
@@ -44,7 +45,6 @@ import {
   getSvg,
 } from "./downloads";
 import styles from "./GraphContextMenu.module.css";
-import { smallIconSize } from "./Shared";
 
 export const GRAPH_CONTEXT_MENU_ID = "graph-context-menu";
 

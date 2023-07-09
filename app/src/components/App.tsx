@@ -18,9 +18,9 @@ import { t } from "@lingui/macro";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter } from "react-router-dom";
 
+import { Button } from "../ui/Shared";
 import Loading from "./Loading";
 import { pageHeight } from "./pageHeight";
-import { Button } from "./Shared";
 
 pageHeight();
 

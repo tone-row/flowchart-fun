@@ -7,7 +7,7 @@ import { MdFitScreen } from "react-icons/md";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
 import { useUnmountStore } from "../lib/useUnmountStore";
-import { Tooltip } from "./Shared";
+import { Tooltip } from "../ui/Shared";
 
 const ZOOM_STEP = 0.5;
 

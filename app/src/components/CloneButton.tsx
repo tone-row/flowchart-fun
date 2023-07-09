@@ -1,16 +1,17 @@
 import { Trans } from "@lingui/macro";
-import { FaCopy } from "react-icons/fa";
+import { CopySimple } from "phosphor-react";
 import { useHistory } from "react-router-dom";
 
 import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
 import { docToString, useDoc } from "../lib/useDoc";
+import { Button2 } from "../ui/Shared";
 
 export function CloneButton() {
   const { push } = useHistory();
   const fullText = useDoc((s) => docToString(s));
   return (
-    <button
-      className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 flex items-center gap-2"
+    <Button2
+      color="blue"
       onClick={() => {
         const newChartTitle = randomChartName();
         window.localStorage.setItem(
@@ -19,11 +20,9 @@ export function CloneButton() {
         );
         push(`/${newChartTitle}`);
       }}
+      rightIcon={<CopySimple size={16} />}
     >
-      <FaCopy size={20} />
-      <span className="text font-bold">
-        <Trans>Clone</Trans>
-      </span>
-    </button>
+      <Trans>Clone</Trans>
+    </Button2>
   );
 }
