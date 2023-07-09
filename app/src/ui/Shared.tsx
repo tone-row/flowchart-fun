@@ -26,7 +26,7 @@ export const Section = ({
   return <section className={`grid gap-4 ${className}`}>{children}</section>;
 };
 
-export const Page2 = ({
+export const Page = ({
   children,
   ...props
 }: { children?: ReactNode } & React.DetailedHTMLProps<
@@ -94,40 +94,6 @@ export const Textarea = forwardRef<
   );
 });
 Textarea.displayName = "Textarea";
-
-export const Button = forwardRef<
-  HTMLButtonElement,
-  BoxProps & { text?: string; typeClasses?: string }
->(function Button(
-  {
-    children,
-    as = "button",
-    onClick,
-    className = "",
-    text,
-    typeClasses = "",
-    ...props
-  },
-  ref
-) {
-  return (
-    <Box
-      as={as}
-      className={[styles.Button, className].join(" ")}
-      rad={1}
-      onClick={onClick}
-      content="center"
-      {...props}
-      ref={ref}
-    >
-      {text ? (
-        <span className={`${styles.ButtonType} ${typeClasses}`}>{text}</span>
-      ) : (
-        children
-      )}
-    </Box>
-  );
-});
 
 export const Dialog = ({
   dialogProps,
@@ -218,7 +184,7 @@ const button2Classes =
   "group relative rounded-md active:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed";
 const button2Colors = {
   default:
-    "bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 disabled:hover:bg-neutral-200 disabled:hover:text-neutral-700",
+    "bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 disabled:hover:bg-neutral-200 disabled:hover:text-neutral-700 dark:disabled:hover:bg-neutral-800 dark:disabled:hover:text-neutral-300",
   blue: "bg-blue-500 text-white hover:bg-blue-600 disabled:hover:bg-blue-500 disabled:hover:text-white",
   orange:
     "bg-orange-500 text-white hover:bg-orange-600 disabled:hover:bg-orange-500 disabled:hover:text-white",

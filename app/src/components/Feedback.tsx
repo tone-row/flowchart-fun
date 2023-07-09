@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import { mail } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
-import { Button2, Input, Notice, Page2, Textarea } from "../ui/Shared";
+import { Button2, Input, Notice, Page, Textarea } from "../ui/Shared";
 import { Label, PageTitle, SectionTitle } from "../ui/Typography";
 import Spinner from "./Spinner";
 
@@ -38,7 +38,7 @@ export default function Feedback() {
     [send]
   );
   return (
-    <Page2 data-testid="feedback">
+    <Page data-testid="feedback">
       <header className="grid gap-4">
         <PageTitle className="text-center">
           <Trans>Send us Feedback</Trans>
@@ -90,7 +90,7 @@ export default function Feedback() {
           <Spinner className="text-blue-400 dark:text-blue-500" />
         </div>
       )}
-    </Page2>
+    </Page>
   );
 }
 

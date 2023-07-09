@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { InfoHeader } from "../components/InfoHeader";
 import { Box } from "../slang";
-import { Page2 } from "../ui/Shared";
+import { Page } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
 export default function Blog() {
   const posts = useQuery("posts", getAndPreparePosts, {
@@ -13,7 +13,7 @@ export default function Blog() {
     suspense: true,
   });
   return (
-    <Page2>
+    <Page>
       <Box gap={16} content="start normal">
         <InfoHeader
           title={t`Blog`}
@@ -27,7 +27,7 @@ export default function Blog() {
           </Box>
         )}
       </Box>
-    </Page2>
+    </Page>
   );
 }
 

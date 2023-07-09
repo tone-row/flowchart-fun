@@ -31,7 +31,7 @@ import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
-import { Button2, Page2 } from "../ui/Shared";
+import { Button2, Page } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
 
 export default function M() {
@@ -120,7 +120,7 @@ const New = memo(function New({
   const [parent] = useAutoAnimate();
 
   return (
-    <Page2>
+    <Page>
       <form
         className="w-full"
         onSubmit={(e) => {
@@ -306,7 +306,7 @@ const New = memo(function New({
           </Button2>
         </div>
       </form>
-    </Page2>
+    </Page>
   );
 });
 

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 
 import { InfoHeader } from "../components/InfoHeader";
-import { Page2 } from "../ui/Shared";
+import { Page } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
 
 export default function Roadmap() {
@@ -12,7 +12,7 @@ export default function Roadmap() {
     suspense: true,
   });
   return (
-    <Page2>
+    <Page>
       <InfoHeader title={t`Roadmap`} />
       {data && data.issues.length > 0 && (
         <section className="grid gap-5">
@@ -39,7 +39,7 @@ export default function Roadmap() {
           />
         )}
       </section>
-    </Page2>
+    </Page>
   );
 }
 

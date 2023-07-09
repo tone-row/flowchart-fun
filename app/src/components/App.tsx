@@ -15,11 +15,12 @@ export const stripePromise = loadStripe(
   process.env.REACT_APP_STRIPE_KEY as string
 );
 
-import { t } from "@lingui/macro";
+import { Trans } from "@lingui/macro";
+import { House, Recycle } from "phosphor-react";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter } from "react-router-dom";
 
-import { Button } from "../ui/Shared";
+import { Button2 } from "../ui/Shared";
 import Loading from "./Loading";
 import { pageHeight } from "./pageHeight";
 
@@ -62,16 +63,21 @@ export function ErrorFallback({ error }: { error: Error }) {
           <pre>{error.message}</pre>
         </div>
         <Box flow="column" gap={2}>
-          <Button
+          <Button2
             onClick={() => window.location.reload()}
-            text={t`Try again`}
-          />
-          <Button
+            color="blue"
+            leftIcon={<Recycle size={16} />}
+          >
+            <Trans>Try again</Trans>
+          </Button2>
+          <Button2
             onClick={() => {
               location.href = "/";
             }}
-            text={t`Home`}
-          />
+            leftIcon={<House size={16} />}
+          >
+            <Trans>Home</Trans>
+          </Button2>
         </Box>
       </Box>
     </div>

@@ -3,7 +3,7 @@ import { Trash } from "phosphor-react";
 import { useState } from "react";
 
 import { Box } from "../slang";
-import { Button, Dialog, smallIconSize } from "../ui/Shared";
+import { Button2, Dialog, smallIconSize } from "../ui/Shared";
 import styles from "./ClearTextButton.module.css";
 
 export function ClearTextButton({ handleClear }: { handleClear: () => void }) {
@@ -33,15 +33,18 @@ export function ClearTextButton({ handleClear }: { handleClear: () => void }) {
         }}
       >
         <Trans>Clear text?</Trans>
-        <Button
+        <Button2 onClick={() => setDialogOpen(false)}>
+          <Trans>Cancel</Trans>
+        </Button2>
+        <Button2
           onClick={() => {
             handleClear();
             setDialogOpen(false);
           }}
-          className={styles.Clear}
-          text={t`Clear`}
-        />
-        <Button onClick={() => setDialogOpen(false)} text={t`Cancel`} />
+          color="red"
+        >
+          <Trans>Clear</Trans>
+        </Button2>
       </Dialog>
     </>
   );
