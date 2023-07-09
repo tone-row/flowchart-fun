@@ -10,7 +10,6 @@ const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
-import Spinner from "../components/Spinner";
 import { formatCents, formatDate } from "../lib/helpers";
 import {
   createSubscription,
@@ -19,15 +18,7 @@ import {
 } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box } from "../slang";
-import {
-  Button,
-  Button2,
-  Dialog,
-  Input,
-  Notice,
-  Page2,
-  Section,
-} from "../ui/Shared";
+import { Button2, Dialog, Input, Notice, Page, Section } from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
 
@@ -111,7 +102,7 @@ export default function Account() {
   if (customerIsLoading) return <Loading />;
 
   return (
-    <Page2>
+    <Page>
       <PageTitle className="text-center">
         <Trans>Account</Trans>
       </PageTitle>
@@ -148,12 +139,12 @@ export default function Account() {
       {subscription?.status === "canceled" && (
         <Section>
           <SectionTitle>
-            <Trans>Become a Sponsor</Trans>
+            <Trans>Upgrade to Pro</Trans>
           </SectionTitle>
           <p className="text-sm leading-normal">
             <Trans>
               Your subscription is no longer active. If you want to create and
-              edit hosted charts become a sponsor.
+              edit permanent charts upgrade to Pro.
             </Trans>
           </p>
           <BecomeASponsor />
@@ -322,7 +313,7 @@ export default function Account() {
         isOpen={resumeModal}
         onDismiss={() => setResumeModal(false)}
       />
-    </Page2>
+    </Page>
   );
 }
 
@@ -504,8 +495,9 @@ function BecomeASponsor() {
           }}
         />
       </Box>
-      <Button type="submit">Subscribe</Button>
-      {submit.isLoading ? <Spinner /> : <div />}
+      <Button2 type="submit" isLoading={submit.isLoading}>
+        <Trans>Subscribe</Trans>
+      </Button2>
     </Box>
   );
 }

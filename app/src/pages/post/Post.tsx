@@ -4,7 +4,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 
-import { Page2 } from "../../ui/Shared";
+import { Page } from "../../ui/Shared";
 import { PageTitle } from "../../ui/Typography";
 import { PostType } from "../Blog";
 
@@ -16,7 +16,7 @@ export default function Post() {
   });
   if (!data) return null;
   return (
-    <Page2>
+    <Page>
       <div className="grid gap-6">
         <header className="grid gap-4">
           <div className="grid gap-2">
@@ -54,7 +54,7 @@ export default function Post() {
           </time>
         </div>
       </div>
-    </Page2>
+    </Page>
   );
 }
 

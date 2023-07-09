@@ -43,43 +43,10 @@ textarea:focus {
   transform: translateY(-50%);
 }
 
-.Button {
-  border-radius: 0;
-  background-color: var(--color-lineColor);
-  color: var(--color-foreground);
-  background-position: right 12px top 17px;
-  background-repeat: no-repeat;
-  min-width: 100px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  --y: 8px;
-  padding: calc(var(--y) + 1px) 14px var(--y);
-}
-
-.Button:hover,
-.Button:focus,
-.Button:active {
-  background-color: var(--color-uiAccent);
-}
-
 .Input:focus-within {
   background-color: var(--color-nodeHover);
   border-color: var(--color-edgeHover);
   box-shadow: none;
-}
-
-.Button:disabled,
-.Button:disabled:active {
-  color: var(--color-edgeHover);
-  background-color: var(--color-input);
-  box-shadow: none;
-  cursor: not-allowed;
-}
-
-.Button:disabled:hover {
-  color: var(--color-edgeHover);
-  background-color: var(--color-input);
 }
 
 .ButtonType {

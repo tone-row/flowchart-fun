@@ -3,7 +3,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 
 import { InfoHeader } from "../components/InfoHeader";
-import { Page2 } from "../ui/Shared";
+import { Page } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
 
 export default function Changelog() {
@@ -12,7 +12,7 @@ export default function Changelog() {
     suspense: true,
   });
   return (
-    <Page2>
+    <Page>
       <div className="grid gap-8">
         <InfoHeader title={t`Changelog`} />
         {releases.data && (
@@ -39,7 +39,7 @@ export default function Changelog() {
           </div>
         )}
       </div>
-    </Page2>
+    </Page>
   );
 }
 
