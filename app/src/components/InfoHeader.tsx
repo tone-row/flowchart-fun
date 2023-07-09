@@ -17,7 +17,7 @@ export function InfoHeader({
         <OnlyInEnglish />
       </div>
       {description && (
-        <p className="text-blue-400 dark:text-blue-300 text-lg font-bold">
+        <p className="text-center text-neutral-500 dark:text-neutral-400">
           {description}
         </p>
       )}

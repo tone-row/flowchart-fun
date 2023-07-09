@@ -158,11 +158,6 @@ div[data-reach-tooltip] {
   letter-spacing: -0.025em;
 }
 
-.chart-link:hover .chart-link-buttons,
-.chart-link:focus-within .chart-link-buttons {
-  opacity: 1;
-}
-
 /** Completely Hide Editor Actions */
 .monaco-editor .monaco-hover .hover-row.status-bar .actions {
   display: none;
