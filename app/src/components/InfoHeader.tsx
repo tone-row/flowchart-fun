@@ -1,3 +1,5 @@
+import "../pages/post/Post.css";
+
 import { Box } from "../slang";
 import { PageTitle } from "../ui/Typography";
 import styles from "./InfoHeader.module.css";

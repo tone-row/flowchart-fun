@@ -3,16 +3,17 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 
-import { InfoContainer } from "../components/InfoContainer";
 import { InfoHeader } from "../components/InfoHeader";
 import { Box } from "../slang";
+import { Page2 } from "../ui/Shared";
+import { SectionTitle } from "../ui/Typography";
 export default function Blog() {
   const posts = useQuery("posts", getAndPreparePosts, {
     staleTime: Infinity,
     suspense: true,
   });
   return (
-    <InfoContainer>
+    <Page2>
       <Box gap={16} content="start normal">
         <InfoHeader
           title={t`Blog`}
@@ -26,24 +27,24 @@ export default function Blog() {
           </Box>
         )}
       </Box>
-    </InfoContainer>
+    </Page2>
   );
 }
 
 function Post({ post }: { post: PostType }) {
   return (
     <Link
-      className={`grid gap-6 p-2 md:p-5 rounded transition-all
+      className={`grid gap-4 p-2 md:p-5 rounded transition-all
       hover:bg-gradient-to-br hover:to-white hover:from-blue-100
       dark:hover:from-blue-900 dark:hover:to-neutral-800
       `}
       to={`/blog/post/${post.slug}`}
     >
       <header className="grid gap-2">
-        <h2 className="text-2xl font-bold">{post.title}</h2>
         <span className="text-xs text-neutral-500 dark:text-neutral-400">
           {post.publishDate}
         </span>
+        <SectionTitle>{post.title}</SectionTitle>
       </header>
       <p className="text-neutral-700 dark:text-neutral-300">
         {post.description}

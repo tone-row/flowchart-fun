@@ -34,6 +34,23 @@ export const Page = ({ as = "div", children, ...props }: BoxProps) => {
   );
 };
 
+export const Page2 = ({
+  children,
+  ...props
+}: { children?: ReactNode } & React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>) => {
+  return (
+    <div
+      className="px-4 py-8 content-start grid max-w-3xl w-full mx-auto grid gap-10"
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+
 type InputProps = { isLoading?: boolean } & React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement

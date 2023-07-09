@@ -28,7 +28,7 @@ import {
 } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
 import { Overlay } from "../ui/Dialog";
-import { Button2 } from "../ui/Shared";
+import { Button2, Page2 } from "../ui/Shared";
 import { Description, PageTitle, SectionTitle } from "../ui/Typography";
 // Keep these in sync (55px)
 const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
@@ -94,7 +94,7 @@ export default function Charts() {
     }
   );
   return (
-    <div className="px-4 py-16 max-w-3xl w-full mx-auto grid gap-16 content-start">
+    <Page2>
       <header className="flex items-center justify-center gap-6">
         <PageTitle>
           <Trans>Your Charts</Trans>
@@ -178,7 +178,7 @@ export default function Charts() {
           </div>
         </LargeFolder>
       </section>
-    </div>
+    </Page2>
   );
 }
 

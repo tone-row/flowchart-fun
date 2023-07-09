@@ -31,7 +31,7 @@ import { slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
-import { Button2 } from "../ui/Shared";
+import { Button2, Page2 } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
 
 export default function M() {
@@ -120,9 +120,9 @@ const New = memo(function New({
   const [parent] = useAutoAnimate();
 
   return (
-    <div className="h-full pt-16">
+    <Page2>
       <form
-        className="px-4 w-full max-w-[580px] mx-auto"
+        className="w-full"
         onSubmit={(e) => {
           e.preventDefault();
           if (customerIsLoading || !checkedSession) return;
@@ -306,7 +306,7 @@ const New = memo(function New({
           </Button2>
         </div>
       </form>
-    </div>
+    </Page2>
   );
 });
 
