@@ -5,13 +5,13 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
-import { Button, Input, Notice } from "../components/Shared";
 import Spinner from "../components/Spinner";
 import { isError } from "../lib/helpers";
 import { createCustomer, createSubscription } from "../lib/queries";
 import { logError } from "../lib/sentry";
 import { supabase } from "../lib/supabaseClient";
 import { Box } from "../slang";
+import { Button, Input, Notice } from "../ui/Shared";
 import styles from "./SignUpForm.module.css";
 
 type SignUpFormData = {

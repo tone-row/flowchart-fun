@@ -1,10 +1,11 @@
 import { t, Trans } from "@lingui/macro";
+import { Share } from "phosphor-react";
 import { Suspense, useContext } from "react";
 import { RiShareForwardFill } from "react-icons/ri";
 
 import { useIsReadOnly, useIsValidCustomer } from "../lib/hooks";
 import { useDocDetails } from "../lib/useDoc";
-import { Box } from "../slang";
+import { Button2 } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
 import { AppContext } from "./AppContext";
 import { CloneButton } from "./CloneButton";
@@ -36,29 +37,26 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
       <header>
         <div className={styles.HeaderTitle}>
           <RenameButton>
-            <PageTitle title={title}>{title || "flowchart.fun"}</PageTitle>
+            <PageTitle title={title} className="-translate-y-[2px]">
+              {title || "flowchart.fun"}
+            </PageTitle>
           </RenameButton>
           <MightLoseSponsorTrigger />
           {isReadOnly && (
-            <span className="text-xs text-orange-500 uppercase font-bold">
+            <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
               <Trans>Read-only</Trans>
             </span>
           )}
           {isReadOnly ? (
             <CloneButton />
           ) : (
-            <Box
-              as="button"
-              rad={3}
-              aria-label={t`Export`}
-              className={styles.ShareButton}
+            <Button2
+              color="blue"
               onClick={() => setShareModal(true)}
+              rightIcon={<RiShareForwardFill size={16} />}
             >
-              <span className="text font-bold">
-                <Trans>Export</Trans>
-              </span>
-              <RiShareForwardFill size={24} />
-            </Box>
+              <Trans>Export</Trans>
+            </Button2>
           )}
         </div>
       </header>

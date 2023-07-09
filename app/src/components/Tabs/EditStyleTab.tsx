@@ -11,7 +11,7 @@ import { DISCORD_URL } from "../../lib/constants";
 import { useLightOrDarkMode } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { useUnmountStore } from "../../lib/useUnmountStore";
-import { Button } from "../Shared";
+import { Button } from "../../ui/Shared";
 import { ThemePicker } from "../ThemePicker";
 
 export function EditStyleTab() {

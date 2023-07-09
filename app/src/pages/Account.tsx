@@ -10,14 +10,6 @@ const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
-import {
-  Button,
-  Dialog,
-  Input,
-  Notice,
-  Page,
-  Section,
-} from "../components/Shared";
 import Spinner from "../components/Spinner";
 import { formatCents, formatDate } from "../lib/helpers";
 import {
@@ -27,6 +19,7 @@ import {
 } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box } from "../slang";
+import { Button, Dialog, Input, Notice, Page, Section } from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
 

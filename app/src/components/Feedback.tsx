@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 import { mail } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
+import { Button, Input, Notice, Textarea } from "../ui/Shared";
 import { Label, PageTitle, SectionTitle } from "../ui/Typography";
-import { Button, Input, Notice, Textarea } from "./Shared";
 import Spinner from "./Spinner";
 
 type FormData = { from: string; text: string };

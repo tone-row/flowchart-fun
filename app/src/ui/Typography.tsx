@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export const pageTitle = "text-2xl md:text-3xl font-bold";
+export const pageTitle = "text-2xl md:text-3xl font-extrabold";
 export function PageTitle({
   children,
   className = "",
@@ -13,7 +13,7 @@ export function PageTitle({
   );
 }
 
-export const sectionTitle = "text-lg md:text-xl font-bold";
+export const sectionTitle = "text-lg md:text-xl font-bold pb-1 border-b";
 export function SectionTitle({
   children,
   className = "",

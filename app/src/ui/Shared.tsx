@@ -8,21 +8,24 @@ import VisuallyHidden from "@reach/visually-hidden";
 import { HandWaving, Warning, X } from "phosphor-react";
 import { forwardRef, ReactNode } from "react";
 
+import Spinner from "../components/Spinner";
 import { Box, BoxProps } from "../slang";
 import styles from "./Shared.module.css";
-import Spinner from "./Spinner";
 
 export const smallBtnTypeSize = -1;
 export const tooltipSize = -2;
 export const smallIconSize = 18;
 
-export const Section = ({ as = "section", children, ...props }: BoxProps) => {
-  return (
-    <Box gap={2} at={{ tablet: { gap: 4 } }} as={as} {...props}>
-      {children}
-    </Box>
-  );
+export const Section = ({
+  children,
+  className = "",
+}: {
+  children?: ReactNode;
+  className?: string;
+}) => {
+  return <section className={`grid gap-4 ${className}`}>{children}</section>;
 };
+
 export const Page = ({ as = "div", children, ...props }: BoxProps) => {
   return (
     <Box as={as} gap={6} at={{ tablet: { gap: 10 } }} {...props}>
@@ -201,3 +204,123 @@ export function Notice({
     </Box>
   );
 }
+
+const button2Classes =
+  "group relative rounded-md active:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed";
+const button2Colors = {
+  default:
+    "bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 disabled:hover:bg-neutral-200 disabled:hover:text-neutral-700",
+  blue: "bg-blue-500 text-white hover:bg-blue-600 disabled:hover:bg-blue-500 disabled:hover:text-white",
+  orange:
+    "bg-orange-500 text-white hover:bg-orange-600 disabled:hover:bg-orange-500 disabled:hover:text-white",
+  green:
+    "bg-green-500 text-white hover:bg-green-600 disabled:hover:bg-green-500 disabled:hover:text-white",
+  purple:
+    "bg-purple-500 text-white hover:bg-purple-600 disabled:hover:bg-purple-500 disabled:hover:text-white",
+  zinc: "bg-zinc-500 text-white hover:bg-zinc-600 disabled:hover:bg-zinc-500 disabled:hover:text-white",
+  inverted:
+    "text-neutral-200 dark:text-neutral-900 bg-neutral-800 dark:bg-neutral-300 hover:bg-neutral-700 dark:hover:bg-neutral-400 disabled:hover:bg-neutral-800 disabled:hover:text-neutral-200",
+};
+
+const pSize = {
+  xs: "p-2 text-[12px]",
+  sm: "p-3 text-xs",
+  md: "p-4 text-sm",
+  lg: "p-5 text-base",
+};
+
+const pxButtonSize = {
+  xs: (left: boolean, right: boolean) =>
+    `${left ? "pl-2" : "pl-3"} ${right ? "pr-2" : "pr-3"}`,
+  sm: (left: boolean, right: boolean) =>
+    `${left ? "pl-4" : "pl-5"} ${right ? "pr-4" : "pr-5"}`, // only the default size has a min-width
+  md: (left: boolean, right: boolean) =>
+    `${left ? "pl-5" : "pl-6"} ${right ? "pr-5" : "pr-6"}`,
+  lg: (left: boolean, right: boolean) =>
+    `${left ? "pl-6" : "pl-7"} ${right ? "pr-6" : "pr-7"}`,
+};
+
+export const Button2 = forwardRef<
+  HTMLButtonElement,
+  {
+    children?: ReactNode;
+    isLoading?: boolean;
+    leftIcon?: ReactNode;
+    rightIcon?: ReactNode;
+    color?: keyof typeof button2Colors;
+    size?: keyof typeof pSize;
+  } & React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >
+>(
+  (
+    { children, color = "default", size = "sm", leftIcon, rightIcon, ...props },
+    ref
+  ) => {
+    return (
+      <button
+        className={`flex items-center justify-center gap-3 ${button2Classes} ${pxButtonSize[
+          size
+        ](!!leftIcon, !!rightIcon)} ${button2Colors[color]}
+      ${pSize[size]}
+      `}
+        {...props}
+        disabled={props.disabled || props.isLoading}
+        data-is-loading={props.isLoading}
+        ref={ref}
+      >
+        {leftIcon && (
+          <span className="group-icon-[is-loading]:opacity-0">{leftIcon}</span>
+        )}
+        <span className="group-data-[is-loading]:opacity-0">{children}</span>{" "}
+        {rightIcon && (
+          <span className="group-icon-[is-loading]:opacity-0">{rightIcon}</span>
+        )}
+        {props.isLoading && (
+          <Spinner
+            r={8}
+            s={2}
+            className="fill-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ml-[0]"
+          />
+        )}
+      </button>
+    );
+  }
+);
+
+Button2.displayName = "Button2";
+
+export const IconButton2 = forwardRef<
+  HTMLButtonElement,
+  {
+    children?: ReactNode;
+    isLoading?: boolean;
+    color?: keyof typeof button2Colors;
+    size?: keyof typeof pSize;
+  } & React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >
+>(({ children, color = "default", size = "sm", ...props }, ref) => {
+  return (
+    <button
+      className={`${pSize[size]} ${button2Classes} ${button2Colors[color]}`}
+      {...props}
+      disabled={props.disabled || props.isLoading}
+      data-is-loading={props.isLoading}
+      ref={ref}
+    >
+      <span className="group-data-[is-loading]:opacity-0">{children}</span>
+      {props.isLoading && (
+        <Spinner
+          r={8}
+          s={2}
+          className="fill-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ml-[0]"
+        />
+      )}
+    </button>
+  );
+});
+
+IconButton2.displayName = "IconButton2";

@@ -9,8 +9,6 @@ import { makeChart, renameChart } from "../lib/queries";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Box } from "../slang";
-import { SectionTitle } from "../ui/Typography";
-import { useSession } from "./AppContext";
 import {
   Button,
   Dialog,
@@ -19,7 +17,9 @@ import {
   Section,
   Tooltip,
   tooltipSize,
-} from "./Shared";
+} from "../ui/Shared";
+import { SectionTitle } from "../ui/Typography";
+import { useSession } from "./AppContext";
 
 export const RenameButton = memo(function RenameButton({
   children,
@@ -89,19 +89,13 @@ export const RenameButton = memo(function RenameButton({
 
   return (
     <>
-      <Tooltip
-        label={t`Rename`}
+      <button
+        data-rename-button
+        onClick={() => useRenameDialogStore.setState({ isOpen: true })}
         aria-label={t`Rename`}
-        className={`slang-type size-${tooltipSize}`}
       >
-        <button
-          data-rename-button
-          onClick={() => useRenameDialogStore.setState({ isOpen: true })}
-          aria-label={t`Rename`}
-        >
-          {children}
-        </button>
-      </Tooltip>
+        {children}
+      </button>
       <Dialog
         dialogProps={{
           isOpen,
