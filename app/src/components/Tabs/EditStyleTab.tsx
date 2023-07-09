@@ -163,45 +163,43 @@ function KeyboardKey({ children }: { children: ReactNode }) {
 
 function InfoButton() {
   return (
-    <Tooltip.Provider>
-      <Tooltip.Root>
-        <Tooltip.Trigger className="bg-neutral-100 hover:bg-neutral-200 rounded p-1 cursor-pointer p-1 dark:bg-neutral-800">
-          <Info size={20} className="text-neutral-800 dark:text-neutral-200" />
-        </Tooltip.Trigger>
-        <Tooltip.Portal>
-          <Tooltip.Content
-            side="bottom"
-            className="bg-neutral-100 shadow rounded w-[450px] p-4 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none dark:bg-neutral-700"
-          >
-            <Tooltip.Arrow className="fill-neutral-100 dark:fill-neutral-700" />
-            <p className="text-neutral-600 dark:text-neutral-300 text-xs leading-normal">
-              <Trans>
-                Customize your theme by editing the <span>Cytoscape CSS</span>{" "}
-                below. Our styling documentation is coming soon! In the
-                meantime, the best resource is the{" "}
-                <a
-                  className="text-blue-600 dark:text-green-400"
-                  href="https://js.cytoscape.org/#style"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Cytoscape
-                </a>{" "}
-                documentation. Come ask questions in the{" "}
-                <a
-                  href={DISCORD_URL}
-                  className="text-blue-600 dark:text-green-400"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Discord
-                </a>{" "}
-                if you get stuck.
-              </Trans>
-            </p>
-          </Tooltip.Content>
-        </Tooltip.Portal>
-      </Tooltip.Root>
-    </Tooltip.Provider>
+    <Tooltip.Root>
+      <Tooltip.Trigger className="bg-neutral-100 hover:bg-neutral-200 rounded p-1 cursor-pointer p-1 dark:bg-neutral-800">
+        <Info size={20} className="text-neutral-800 dark:text-neutral-200" />
+      </Tooltip.Trigger>
+      <Tooltip.Portal>
+        <Tooltip.Content
+          side="bottom"
+          className="bg-neutral-100 shadow rounded w-[450px] p-4 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none dark:bg-neutral-700"
+        >
+          <Tooltip.Arrow className="fill-neutral-100 dark:fill-neutral-700" />
+          <p className="text-neutral-600 dark:text-neutral-300 text-xs leading-normal">
+            <Trans>
+              Customize your theme by editing the <span>Cytoscape CSS</span>{" "}
+              below. Our styling documentation is coming soon! In the meantime,
+              the best resource is the{" "}
+              <a
+                className="text-blue-600 dark:text-green-400"
+                href="https://js.cytoscape.org/#style"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Cytoscape
+              </a>{" "}
+              documentation. Come ask questions in the{" "}
+              <a
+                href={DISCORD_URL}
+                className="text-blue-600 dark:text-green-400"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Discord
+              </a>{" "}
+              if you get stuck.
+            </Trans>
+          </p>
+        </Tooltip.Content>
+      </Tooltip.Portal>
+    </Tooltip.Root>
   );
 }

@@ -21,7 +21,6 @@ import { monacoMarkerErrorSeverity } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getElements } from "../lib/getElements";
 import { getLayout } from "../lib/getLayout";
-import { useCytoscapeStyle } from "../lib/getUserStyle";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { useBackgroundColor } from "../lib/graphThemes";
 import { isError } from "../lib/helpers";
@@ -31,6 +30,7 @@ import {
   useCytoscapeStyleImports,
 } from "../lib/preprocessCytoscapeStyle";
 import { useContextMenuState } from "../lib/useContextMenuState";
+import { useCytoscapeStyle } from "../lib/useCytoscapeStyle";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
 import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
@@ -179,9 +179,6 @@ function useInitializeGraph({
       cy.current = cytoscape({
         container: document.getElementById("cy"), // container to render in
         elements: [],
-        // TODO: shouldn't this load the user's style as well?
-        // TODO: not even loading the real theme... this seems sus
-        // style: buildStylesForGraph(original, getUserStyle(), bg),
         userZoomingEnabled: true,
         userPanningEnabled: true,
         wheelSensitivity: 0.2,

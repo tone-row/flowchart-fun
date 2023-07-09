@@ -1,8 +1,5 @@
 import { Stylesheet } from "cytoscape";
 
-import { fontSizeScalars } from "./getSize";
-import { defaultFontSize } from "./themes/constants";
-
 export const shapes: cytoscape.Css.Node["shape"][] = [
   "rectangle",
   "roundrectangle",
@@ -27,14 +24,7 @@ export const shapes: cytoscape.Css.Node["shape"][] = [
   "concave-hexagon",
 ];
 
-const circle: Stylesheet = {
-  selector: ".circle",
-  style: {
-    shape: "ellipse",
-    height: "data(width)",
-  },
-};
-export const arrowSuffixes = [
+const arrowSuffixes = [
   "triangle",
   "triangle-tee",
   "circle-triangle",
@@ -78,29 +68,6 @@ export const edgeLineStyles: Stylesheet[] = [
   },
 ];
 
-export const lineStyles: Stylesheet[] = [
-  ...edgeLineStyles,
-  ...(arrowSuffixes as cytoscape.Css.ArrowShape[]).reduce<Stylesheet[]>(
-    (acc, arrow) => {
-      acc.push({
-        selector: `edge.source-${arrow}`,
-        style: {
-          "source-arrow-shape": arrow,
-          "source-arrow-color": "inherit",
-        },
-      });
-      acc.push({
-        selector: `edge.target-${arrow}`,
-        style: {
-          "target-arrow-shape": arrow,
-        },
-      });
-      return acc;
-    },
-    []
-  ),
-];
-
 export const borderStyles: Stylesheet[] = [
   {
     selector: "node.border-solid",
@@ -130,91 +97,6 @@ export const borderStyles: Stylesheet[] = [
     selector: "node.border-none",
     style: {
       "border-width": 0,
-    },
-  },
-];
-
-const textSizeStyles: Stylesheet[] = [
-  {
-    selector: ".text-sm",
-    style: {
-      "font-size": defaultFontSize * fontSizeScalars["text-sm"],
-    },
-  },
-  {
-    selector: ".text-lg",
-    style: {
-      "font-size": defaultFontSize * fontSizeScalars["text-lg"],
-    },
-  },
-  {
-    selector: ".text-xl",
-    style: {
-      "font-size": defaultFontSize * fontSizeScalars["text-xl"],
-    },
-  },
-];
-
-export const graphUtilityClasses: Stylesheet[] = shapes
-  .map<Stylesheet>((shape) => ({
-    selector: `.${shape}`,
-    style: {
-      shape,
-    },
-  }))
-  .concat(circle)
-  .concat(lineStyles)
-  .concat(borderStyles)
-  .concat(textSizeStyles);
-
-export const baseStyles: Stylesheet[] = [
-  {
-    selector: ".nodeHovered, .edgeHovered, node:selected",
-    style: {
-      // @ts-ignore
-      "underlay-opacity": 0.1,
-      "underlay-color": "black",
-      "underlay-padding": "5px",
-    },
-  },
-  {
-    selector: "node",
-    style: {
-      "font-size": defaultFontSize,
-    },
-  },
-  {
-    selector: "edge",
-    style: {
-      "font-size": defaultFontSize,
-    },
-  },
-];
-
-/**
- * These are styles we want to take precedence over themes, utility classes, user styles
- */
-export const importantBaseStyles: Stylesheet[] = [
-  {
-    selector: "node[w]",
-    style: {
-      width: "data(w)",
-    },
-  },
-  {
-    selector: "node[h]",
-    style: {
-      height: "data(h)",
-    },
-  },
-  {
-    selector: "node[src]",
-    style: {
-      "background-image": "data(src)",
-      "background-fit": "cover",
-      "border-width": 0,
-      "text-valign": "bottom",
-      "text-margin-y": 5,
     },
   },
 ];

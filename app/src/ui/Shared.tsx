@@ -26,14 +26,6 @@ export const Section = ({
   return <section className={`grid gap-4 ${className}`}>{children}</section>;
 };
 
-export const Page = ({ as = "div", children, ...props }: BoxProps) => {
-  return (
-    <Box as={as} gap={6} at={{ tablet: { gap: 10 } }} {...props}>
-      {children}
-    </Box>
-  );
-};
-
 export const Page2 = ({
   children,
   ...props
