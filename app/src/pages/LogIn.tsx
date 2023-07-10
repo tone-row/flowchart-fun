@@ -8,7 +8,7 @@ import { Warning } from "../components/Warning";
 import { WelcomeMessage } from "../components/WelcomeMessage";
 import { isError } from "../lib/helpers";
 import { login } from "../lib/queries";
-import { Button2 } from "../ui/Shared";
+import { Button2, Page } from "../ui/Shared";
 import { Label, PageTitle } from "../ui/Typography";
 import { ReactComponent as EmailPassword } from "./EmailPassword.svg";
 
@@ -57,12 +57,12 @@ export default function Login() {
   }
 
   return (
-    <div className="py-12 grid justify-items-center content-start gap-6 md:gap-12">
+    <Page>
       {newSignUp && <WelcomeMessage />}
-      <div className="w-[370px] grid gap-3 content-start pt-4">
-        <PageTitle>{t`Log In`}</PageTitle>
+      <div className="grid gap-3 content-start">
+        <PageTitle className="text-center">{t`Log In`}</PageTitle>
         <form className="gap-2 grid" onSubmit={handleSubmit(onSubmit)}>
-          <p className="text text-lg text-neutral-600 leading-normal dark:text-neutral-400">
+          <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400">
             <Trans>
               We use magic links to log you in. Enter your email below to get
               started.
@@ -100,6 +100,6 @@ export default function Login() {
           </span>
         </form>
       </div>
-    </div>
+    </Page>
   );
 }

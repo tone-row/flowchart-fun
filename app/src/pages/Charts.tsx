@@ -254,7 +254,7 @@ const ChartLink = memo(function ChartLink({
 }) {
   return (
     <div
-      className={`chart-link border rounded grid grid-flow-col grid-cols-[minmax(0,1fr)_auto] items-center ${
+      className={`chart-link border dark:border-neutral-700 rounded grid grid-flow-col grid-cols-[minmax(0,1fr)_auto] items-center ${
         isCurrent ? "bg-blue-50 dark:bg-blue-900" : ""
       }`}
     >

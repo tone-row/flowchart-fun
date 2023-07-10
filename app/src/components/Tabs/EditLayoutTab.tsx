@@ -11,6 +11,7 @@ import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { unfreezeDoc, useIsFrozen } from "../../lib/useIsFrozen";
+import { BasicSelect } from "../../ui/Select";
 import { Button2 } from "../../ui/Shared";
 import styles from "./EditLayoutTab.module.css";
 import {
@@ -39,8 +40,6 @@ export function EditLayoutTab() {
   ) {
     layoutName = layout.name;
   }
-  const layoutNiceName =
-    layouts.find((l) => l.value === layoutName)?.label() ?? "???";
 
   const isFrozen = useIsFrozen();
 
@@ -75,9 +74,7 @@ export function EditLayoutTab() {
     <WithLowerChild>
       <TabOptionsGrid>
         <OptionWithLabel label={t`Layout`}>
-          <CustomSelect
-            niceName={layoutNiceName}
-            options={layouts}
+          <BasicSelect
             value={layoutName}
             onValueChange={(name) => {
               useDoc.setState(
@@ -93,13 +90,19 @@ export function EditLayoutTab() {
                 "EditLayoutTab/layout"
               );
             }}
+            options={layouts.map((l) => ({
+              value: l.value,
+              label: l.label(),
+            }))}
           />
         </OptionWithLabel>
         {["dagre"].includes(layoutName) && (
           <OptionWithLabel label={t`Direction`}>
-            <CustomSelect
-              niceName={directionNiceName}
-              options={directions}
+            <BasicSelect
+              options={directions.map((d) => ({
+                value: d.value,
+                label: d.label(),
+              }))}
               value={direction}
               onValueChange={(direction) => {
                 useDoc.setState(
@@ -187,9 +190,6 @@ export function EditLayoutTab() {
         )}
       </TabOptionsGrid>
       {!isValidSponsor && (
-        // <LargeLink href="/pricing">
-        //   <Trans>Get More Layouts</Trans>
-        // </LargeLink>
         <Button2
           color="blue"
           size="md"

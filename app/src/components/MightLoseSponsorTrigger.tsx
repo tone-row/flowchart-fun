@@ -8,7 +8,6 @@ import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { Box } from "../slang";
 import { AppContext } from "./AppContext";
 import styles from "./MightLoseSponsorTrigger.module.css";
-import styles2 from "./MightLoseWarning.module.css";
 
 export function MightLoseSponsorTrigger() {
   const { customerIsLoading } = useContext(AppContext);
@@ -37,19 +36,14 @@ export function MightLoseSponsorTrigger() {
           onOpenAutoFocus={(e) => {
             e.preventDefault();
           }}
+          className="shadow-lg border rounded-lg bg-white dark:bg-gray-800 dark:text-white"
         >
-          <Box
-            p={4}
-            background="color-background"
-            color="color-foreground"
-            rad={2}
-            className={styles2.MightLoseWarningInner}
-          >
-            <p className="text-sm opacity-80 leading-normal">
+          <div className="p-4 grid gap-3 justify-items-start max-w-sm">
+            <p className="text-xs opacity-80 leading-normal">
               {t`Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.`}
             </p>
             <button
-              className="font-bold text-sm text-blue-500 hover:underline mt-6 block"
+              className="font-bold text-sm text-blue-500 hover:underline block"
               onClick={() => {
                 useRenameDialogStore.setState({
                   isOpen: true,
@@ -60,7 +54,7 @@ export function MightLoseSponsorTrigger() {
             >
               <Trans>Convert to hosted chart?</Trans>
             </button>
-          </Box>
+          </div>
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>
