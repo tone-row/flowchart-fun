@@ -1,8 +1,6 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$3 / Month": "$3/월",
     "$3 per month": "월 3 달러",
-    "$30 / Year": "$30/년",
     "$30 per year": "연 30 달러",
     "(before a colon creates a label)": "(레이블을 생성합니다)",
     "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
@@ -23,17 +21,18 @@
       "으로 직접 이메일을 보내주십시오.",
     ],
     Appearance: "외관",
+    "Apply Style": "스타일 적용",
     Attributes: "속성",
     "Auto-Layouts": "자동 레이아웃",
     "Back To Editor": "편집기로 돌아가기",
     "Basic Flowchart": "기본 플로우 차트",
     "Become a Github Sponsor": "깃허브 스폰서가 되기",
     "Become a Pro User": "프로 사용자가 되기",
-    "Become a Sponsor": "스폰서 되기",
     "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
       "<0>Flowchart Fun</0>이 어떻게 작동하는지를 보여주는 간단한 예제로 시작하세요.",
     Blank: "빈칸",
     Blog: "블로그",
+    "Book a Meeting": "미팅 예약",
     Border: "경계",
     "Bottom to Top": "아래에서 위로",
     Breadthfirst: "폭 우선",
@@ -80,9 +79,9 @@
     "Copy SVG Code": "SVG 코드 복사",
     "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
       "mermaid.js 코드를 복사하거나 mermaid.js 라이브 편집기에서 직접 열어주세요.",
-    Create: "만들기",
     "Create Flowcharts from a Prompt with AI":
       "AI 프롬프트를 사용하여 다이어그램 생성",
+    "Create New Flowchart": "새로운 플로우차트 만들기",
     "Create a New Flowchart": "새 다이어그램 만들기",
     "Create professional-quality visual aids for presentations or training materials":
       "프레젠테이션 또는 교육 자료를 위한 전문 품질의 시각적 지원 작성",
@@ -212,7 +211,6 @@
     "Light Mode": "라이트 모드",
     Link: "링크",
     "Load Theme": "테마 불러오기",
-    Loading: "로딩",
     "Loading a theme will erase any custom styles you have applied":
       "테마를 불러오면 사용자 정의 스타일이 모두 사라집니다.",
     "Log In": "로그인",
@@ -286,8 +284,6 @@
       "동일한 할당 된 클래스로 여러 노드를 참조하기 ",
     "Refresh Page": "페이지 새로 고침 ",
     "Reload to Update": "업데이트하려면 다시 로드하기 ",
-    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "이 문서는 이 컴퓨터에만 저장된다는 점 기억하세요. 만약 어디를 가서라도 문서를 저장하고 또 그 문서에 접속하는 방법을 찾으신다면, 무제한의 호스티드 차트와 함께 더 많은 기능을 갖춘 저희 Pro 플랜을 이용해 보세요! 한 달에 단 $3면 됩니다!",
     "Remove Image Watermark": "이미지 워터마크 제거",
     Rename: "이름 바꾸기",
     Reset: "재설정",
@@ -331,6 +327,7 @@
     Style: "스타일",
     "Style Classes": "스타일 클래스",
     Submit: "보내다",
+    Subscribe: "구독",
     Subscription: "구독",
     "Subscription will end": "구독이 종료될 예정입니다.",
     "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
@@ -362,6 +359,8 @@
     "There are no edges in this data": "이 데이터에는 엣지가 없습니다.",
     "This action cannot be undone.": "이 작업은 취소할 수 없습니다.",
     "This app works by typing": "이 앱은 타이핑으로 작동합니다",
+    "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!":
+      "이 문서는 이 컴퓨터에만 저장됩니다. 문서를 저장하고 어디서든 접근할 수 있는 방법이 필요하면 저희 프로 플랜을 3달러에 체험해보세요!",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사용자가 되어</0> 이 기능을 사용할 수 있게 하세요.",
     Tip: "팁",
@@ -387,6 +386,8 @@
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Flowchart Fun Pro를 사용하여 창의력을 발휘하고 작업흐름을 최적화하세요. $3/월부터 시작합니다!",
     "Update Email": "이메일 업데이트",
+    "Upgrade to Pro": "프로로 업그레이드",
+    "Upload your File": "파일을 업로드하세요.",
     "Use AI to create flowcharts from data sets or algorithms":
       "데이터 집합 또는 알고리즘에서 플로우차트를 만들기 위해 AI를 사용하세요.",
     "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
@@ -409,8 +410,6 @@
     "View on Github": "Github에서 보기",
     "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
       "물은 지구의 표면에서 증발하여 공기로 올라가 비로 내려오고, 그 물은 강과 호수, 바다로 흐르고 다시 증발하여 공기로 돌아가 재생됩니다.",
-    "We use cookies to keep you logged in.":
-      "귀하의 로그인 상태를 유지를 위해 쿠키를 사용합니다.",
     "We use magic links to log you in. Enter your email below to get started.":
       "우리는 마법 링크를 사용하여 로그인합니다. 아래에 이메일을 입력하여 시작하십시오.",
     "Welcome to Flowchart Fun Pro!":
@@ -435,8 +434,8 @@
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "거의 다 됐습니다! <0>Flowchart Fun Pro</0>의 전력을 풀어내는 마지막 한 단계만 남았습니다. 아래에 결제 정보를 입력하여 구독을 완료하고 오늘부터 놀라운 플로우 차트를 만들 수 있습니다.",
     "Your Charts": "당신의 차트",
-    "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
-      "귀하의 구독이 더 이상 활성 상태가 아닙니다. 호스트 차트를 작성 및 수정하려면 후원자가 되십시오.",
+    "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro.":
+      "귀하의 구독이 더 이상 활성화되지 않습니다. 영구 차트를 만들고 편집하려면 Pro로 업그레이드하십시오.",
     "Zoom In": "확대",
     "Zoom Out": "축소하기",
     "any text: before a colon creates a label":

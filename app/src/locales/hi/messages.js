@@ -1,8 +1,6 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$3 / Month": "$3 / महीना",
     "$3 per month": "मासिक $3",
-    "$30 / Year": "$30 / वर्ष",
     "$30 per year": "वार्षिक $30",
     "(before a colon creates a label)": "(कॉलन से पहले एक लेबल बनाता है)",
     "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
@@ -23,17 +21,18 @@
       " ईमेल करें.",
     ],
     Appearance: "दिखावट",
+    "Apply Style": "शैली लागू करें",
     Attributes: "गुण",
     "Auto-Layouts": "ऑटो लेआउट",
     "Back To Editor": "संपादक पर वापस जाएं",
     "Basic Flowchart": "बेसिक फ्लोचार्ट",
     "Become a Github Sponsor": "गिटहब स्पॉन्सर बनें",
     "Become a Pro User": "प्रो उपयोगकर्ता बनें",
-    "Become a Sponsor": "एक प्रायोजक बनें",
     "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
       "<0>फ्लोचार्ट फन</0> काम कैसे करता है इसके लिए एक आसान उदाहरण से शुरू करें।",
     Blank: "खाली",
     Blog: "ब्लॉग",
+    "Book a Meeting": "एक बैठक बुक करें",
     Border: "सीमा",
     "Bottom to Top": "नीचे से शीर्ष तक",
     Breadthfirst: "चौड़ाई पहले",
@@ -80,9 +79,9 @@
     "Copy SVG Code": "SVG कोड कॉपी करें",
     "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
       "अपना मर्मेड.जेएस कोड कॉपी करें या मर्मेड.जेएस लाइव एडिटर में सीधे खोलें।",
-    Create: "बनाएँ",
     "Create Flowcharts from a Prompt with AI":
       "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं",
+    "Create New Flowchart": "नया फ्लोचार्ट बनाएं",
     "Create a New Flowchart": "एक नया आरेख बनाएँ",
     "Create professional-quality visual aids for presentations or training materials":
       "प्रदर्शन या प्रशिक्षण सामग्री के लिए पेशेवर गुणवत्ता के दृष्टिकोण बनाएं",
@@ -216,7 +215,6 @@
     "Light Mode": "लाइट मोड",
     Link: "लिंक",
     "Load Theme": "थीम लोड करें",
-    Loading: "लोड हो रहा है",
     "Loading a theme will erase any custom styles you have applied":
       "थीम लोड करने से आपने अपने कस्टम स्टाइल को मिटा दिया होगा",
     "Log In": "लॉग इन करें",
@@ -292,8 +290,6 @@
       "एक ही निर्धारित कक्षा के साथ कई नोड का उल्लेख करना",
     "Refresh Page": "पृष्ठ को ताज़ा करें",
     "Reload to Update": "अपडेट करने के लिए रीलोड करें",
-    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "याद रखें कि यह डॉक्यूमेंट सिर्फ इसी कंप्यूटर पर सेव किया गया है। अगर आप ऐसा कोई तरीका जानना चाहते हैं कि आप डॉक्यूमेंट स्टोर भी करें और जहां जाएं वहां उन्हें एक्सेस भी कर सकें, तो हमारा Pro प्लैन आजमाएं जिसमें है असीमित होस्ट किए गए चार्ट और बहुत कुछ! सिर्फ $3/महीना! ",
     "Remove Image Watermark": "छवि वॉटरमार्क हटाएं",
     Rename: "फिर से नाम बदलें",
     Reset: "रीसेट करें",
@@ -338,6 +334,7 @@
     Style: "शैली",
     "Style Classes": "शैली क्लासेज",
     Submit: "भेजना",
+    Subscribe: "सदस्यता लें",
     Subscription: "सदस्यता",
     "Subscription will end": "सदस्यता समाप्त हो जाएगी",
     "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
@@ -370,6 +367,8 @@
     "There are no edges in this data": "इस डेटा में कोई एड्ज नहीं है",
     "This action cannot be undone.": "इस क्रिया को पूर्ववत नहीं किया जा सकता।",
     "This app works by typing": "यह ऐप टाइप द्वारा काम करता है",
+    "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!":
+      "यह दस्तावेज़ केवल इस कंप्यूटर पर सहेजी गई है। यदि आप दस्तावेज़ सहेजने और कहीं भी उपयोग करने के लिए एक तरीका चाहते हैं तो हमारे प्रो प्लान के लिए केवल $ 3 / महीने में उपयोग करें!",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।",
     Tip: "सुझाव",
@@ -395,6 +394,8 @@
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "अपनी क्रेयता को उतारें और फ्लोचार्ट फन प्रो के साथ अपनी व्यवस्था को स्ट्रीमलाइन करें – सिर्फ $ 3 / महीने से शुरू होते हुए!",
     "Update Email": "ईमेल अपडेट करें",
+    "Upgrade to Pro": "प्रो में अपग्रेड करें",
+    "Upload your File": "अपनी फाइल अपलोड करें",
     "Use AI to create flowcharts from data sets or algorithms":
       "डेटा सेट्स या एल्गोरिदम्स से फ्लोचार्ट बनाने के लिए एआई का उपयोग करें",
     "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
@@ -417,8 +418,6 @@
     "View on Github": "Github पर देखें",
     "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
       "पानी पृथ्वी के सतह से उष्णता होकर आत्मान में उठता है और वर्षा के रूप में फिर नीचे गिरता है। इस पानी को तब नदियों, तिब्बती तालों और महासागरों में जाता है, जहां यह फिर से उष्णता होता है और आत्मान में पुनर्स्थापित किया जाता है।",
-    "We use cookies to keep you logged in.":
-      "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं.",
     "We use magic links to log you in. Enter your email below to get started.":
       "हम आपको लॉग इन करने के लिए जादू लिंक का उपयोग करते हैं। नीचे अपना ईमेल दर्ज करें और शुरू करें।",
     "Welcome to Flowchart Fun Pro!": "फ्लोचार्ट फन प्रो के लिए स्वागत है!",
@@ -442,8 +441,8 @@
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "आप बस एक ही कदम दूर हैं! <0>Flowchart Fun Pro</0> की पूरी प्रत्याशित क्षमता को अनलॉक करने के लिए नीचे अपने भुगतान विवरण दर्ज करें और आज ही अद्भुत फ्लोचार्ट बनाने शुरू करें।",
     "Your Charts": "आपके चार्ट",
-    "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
-      "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें.",
+    "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro.":
+      "आपका सदस्यता अब निष्क्रिय है। यदि आप स्थायी चार्ट बनाना और संपादित करना चाहते हैं, तो प्रो अपग्रेड करें।",
     "Zoom In": "ज़ूम इन करें",
     "Zoom Out": "आउट ज़ूम करें",
     "any text: before a colon creates a label":

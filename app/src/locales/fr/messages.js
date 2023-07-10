@@ -1,8 +1,6 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$3 / Month": "3 $ / mois",
     "$3 per month": "3 $ par mois",
-    "$30 / Year": "30 $ / an",
     "$30 per year": "30 $ par an",
     "(before a colon creates a label)":
       "(avant que deux-points ne créent une étiquette)",
@@ -24,17 +22,18 @@
       ".",
     ],
     Appearance: "Thème",
+    "Apply Style": "Appliquer un style",
     Attributes: "Attributs",
     "Auto-Layouts": "Mises en page automatiques",
     "Back To Editor": "Retour à l'éditeur",
     "Basic Flowchart": "Diagramme de flux de base",
     "Become a Github Sponsor": "Devenez un sponsor Github",
     "Become a Pro User": "Devenez un utilisateur Pro",
-    "Become a Sponsor": "Devenir un sponsor",
     "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
       "Commencez par un exemple simple montrant comment <0>Flowchart Fun</0> fonctionne.",
     Blank: "Vide",
     Blog: "Blog",
+    "Book a Meeting": "Réserver une réunion",
     Border: "Frontière",
     "Bottom to Top": "De bas en haut",
     Breadthfirst: "Parcours en largeur",
@@ -81,9 +80,9 @@
     "Copy SVG Code": "Copier le code SVG",
     "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
       "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en direct mermaid.js.",
-    Create: "Créer",
     "Create Flowcharts from a Prompt with AI":
       "Créer des diagrammes à partir d'une invite avec l'IA",
+    "Create New Flowchart": "Créer un nouveau diagramme",
     "Create a New Flowchart": "Créer un nouveau diagramme",
     "Create professional-quality visual aids for presentations or training materials":
       "Créez des aides visuelles de qualité professionnelle pour des présentations ou des matériels de formation",
@@ -218,7 +217,6 @@
     "Light Mode": "Mode lumineux",
     Link: "Lien",
     "Load Theme": "Charger le thème",
-    Loading: "Chargement",
     "Loading a theme will erase any custom styles you have applied":
       "Charger un thème effacera tous les styles personnalisés que vous avez appliqués",
     "Log In": "Connexion",
@@ -296,8 +294,6 @@
       "Référencement de multiples nœuds avec la même classe assignée",
     "Refresh Page": "Rafraîchir la page",
     "Reload to Update": "Recharger pour mettre à jour",
-    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "N'oubliez pas que ce document n'est enregistré que sur cet ordinateur. Si vous cherchez un moyen de stocker des documents et d'y accéder où que vous soyez, essayez notre plan Pro qui offre l’hébergement d’une quantité illimitée de graphiques, et bien d’autres avantages encore ! Pour seulement 3 $/mois !",
     "Remove Image Watermark": "Supprimer le filigrane de l'image",
     Rename: "Renommer",
     Reset: "Réinitialiser",
@@ -342,6 +338,7 @@
     Style: "Style",
     "Style Classes": "Classes de style",
     Submit: "Soumettre",
+    Subscribe: "S'abonner",
     Subscription: "Abonnement",
     "Subscription will end": "L'abonnement prendra fin",
     "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
@@ -374,6 +371,8 @@
     "There are no edges in this data": "Il n'y a pas d'arêtes dans ces données",
     "This action cannot be undone.": "Cette action ne peut pas être annulée.",
     "This app works by typing": "Chaque ligne creé une nouvelle boite",
+    "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!":
+      "Ce document n'est sauvegardé que sur cet ordinateur. Si vous voulez un moyen de stocker des documents et de les consulter où que vous soyez, essayez notre plan Pro pour seulement 3 $/mois !",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "Cette fonctionnalité est uniquement disponible pour les utilisateurs pro. <0>Devenez un utilisateur pro</0> pour la débloquer.",
     Tip: "Astuce",
@@ -399,6 +398,8 @@
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Libérez votre créativité et simplifiez votre flux de travail avec Flowchart Fun Pro - à partir de seulement 3 $ / mois !",
     "Update Email": "Mettre à jour l'e-mail",
+    "Upgrade to Pro": "Passer à Pro",
+    "Upload your File": "Téléchargez votre fichier",
     "Use AI to create flowcharts from data sets or algorithms":
       "Utilisez l'IA pour créer des diagrammes à partir de jeux de données ou d'algorithmes",
     "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
@@ -421,8 +422,6 @@
     "View on Github": "Voir sur Github",
     "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
       "L'eau s'évapore de la surface de la Terre, monte dans l'atmosphère et retombe sous forme de précipitations. Cette eau s'écoule alors dans les rivières, les lacs et les océans, où elle s'évapore à nouveau et est recyclée dans l'atmosphère.",
-    "We use cookies to keep you logged in.":
-      "Nous utilisons des cookies afin de maintenir votre connexion.",
     "We use magic links to log you in. Enter your email below to get started.":
       "Nous utilisons des liens magiques pour vous connecter. Entrez votre email ci-dessous pour commencer.",
     "Welcome to Flowchart Fun Pro!": "Bienvenue à Flowchart Fun Pro !",
@@ -446,8 +445,8 @@
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "Vous y êtes presque ! Une dernière étape pour débloquer tout le potentiel de <0>Flowchart Fun Pro</0>. Entrez vos informations de paiement ci-dessous pour compléter votre abonnement et commencez à créer des diagrammes de flux incroyables dès aujourd'hui.",
     "Your Charts": "Vos diagrammes",
-    "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
-      "Votre abonnement n'est plus valable. Si vous souhaitez créer et modifier des graphiques hébergés, devenez sponsor.",
+    "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro.":
+      "Votre abonnement n'est plus actif. Si vous souhaitez créer et modifier des graphiques permanents, passez à Pro.",
     "Zoom In": "Zoomer",
     "Zoom Out": "Zoomer vers l'extérieur",
     "any text: before a colon creates a label":

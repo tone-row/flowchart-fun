@@ -1,8 +1,6 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$3 / Month": "3 美元/月",
     "$3 per month": "每月3美元",
-    "$30 / Year": "30 美元 / 年",
     "$30 per year": "每年30美元",
     "(before a colon creates a label)": "(在冒号前创建一个标签)",
     "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
@@ -23,17 +21,18 @@
       "。",
     ],
     Appearance: "外观",
+    "Apply Style": "应用样式",
     Attributes: "属性",
     "Auto-Layouts": "自动布局",
     "Back To Editor": "返回编辑器",
     "Basic Flowchart": "基本流程图",
     "Become a Github Sponsor": "成为Github赞助商",
     "Become a Pro User": "成为专业用户",
-    "Become a Sponsor": "赞助我们",
     "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
       "以一个简单的例子开始来展示<0>流程图的乐趣</0>是如何工作的。",
     Blank: "空白",
     Blog: "博客",
+    "Book a Meeting": "预订会议",
     Border: "边框",
     "Bottom to Top": "从下到上",
     Breadthfirst: "宽度优先",
@@ -79,8 +78,8 @@
     "Copy SVG Code": "复制 SVG 代码",
     "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
       "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。",
-    Create: "创建",
     "Create Flowcharts from a Prompt with AI": "使用 AI 根据提示创建图表",
+    "Create New Flowchart": "创建新流程图",
     "Create a New Flowchart": "创建新图表",
     "Create professional-quality visual aids for presentations or training materials":
       "创建专业质量的演示文稿或培训材料",
@@ -209,7 +208,6 @@
     "Light Mode": "浅色模式",
     Link: "链接",
     "Load Theme": "加载主题",
-    Loading: "正在載入",
     "Loading a theme will erase any custom styles you have applied":
       "加载主题将擦除您应用的任何自定义样式",
     "Log In": "登录",
@@ -282,8 +280,6 @@
       "使用相同分配的类引用多个节点",
     "Refresh Page": "刷新页面",
     "Reload to Update": "重新加载以更新",
-    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "请记住，本文档仅保存在此电脑上，如果您希望储存文档并随时随地访问它们，那么请试试我们的高级计划，可以托管不限数量的图表，还有更多功能！仅需 $3/月！",
     "Remove Image Watermark": "去除图片水印",
     Rename: "重命名",
     Reset: "重置",
@@ -327,6 +323,7 @@
     Style: "风格",
     "Style Classes": "樣式類別",
     Submit: "提交",
+    Subscribe: "订阅",
     Subscription: "订阅",
     "Subscription will end": "订阅即将到期",
     "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
@@ -356,6 +353,8 @@
     "There are no edges in this data": "此数据中没有边",
     "This action cannot be undone.": "此操作无法撤销。",
     "This app works by typing": "这款应用的工作原理是输入",
+    "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!":
+      "此文档仅保存在此计算机上。如果您想要一种存储文档并随时访问它们的方法，请尝试我们的Pro计划，每月只需3美元！",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。",
     Tip: "提示",
@@ -379,6 +378,8 @@
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "釋放您的創意並簡化您的工作流程，從每月只需3美元開始，Flowchart Fun Pro！",
     "Update Email": "更新电子邮件",
+    "Upgrade to Pro": "升级到Pro",
+    "Upload your File": "上传您的文件",
     "Use AI to create flowcharts from data sets or algorithms":
       "使用AI從數據集或算法創建流程圖",
     "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
@@ -400,8 +401,6 @@
     "View on Github": "在 Github 上查看",
     "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
       "水从地球表面蒸发，升入大气中，然后以降水形式回落。这些水然后流入河流，湖泊和海洋，在那里又蒸发，重新回到大气中循环。",
-    "We use cookies to keep you logged in.":
-      "我们使用 cookies 来让您保持登录状态。",
     "We use magic links to log you in. Enter your email below to get started.":
       "我们使用魔术链接来登录您。请在下面输入您的电子邮件以开始。",
     "Welcome to Flowchart Fun Pro!": "欢迎来到流程图乐趣Pro！",
@@ -418,8 +417,8 @@
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "您已经快完成了！只需要一步就可以解锁 <0>Flowchart Fun Pro</0> 的全部功能。请在下面输入您的付款详情来完成您的订阅，并今天开始创建令人惊叹的流程图。",
     "Your Charts": "您的图表",
-    "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
-      "您的订阅不再有效。如果您想创建和编辑托管的图表，请成为赞助人。",
+    "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro.":
+      "您的订阅已不再有效。如果您想创建和编辑永久图表，请升级到Pro。",
     "Zoom In": "放大",
     "Zoom Out": "縮小",
     "any text: before a colon creates a label":
