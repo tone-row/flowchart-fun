@@ -87,10 +87,12 @@ export function EditLayoutTab() {
                 "EditLayoutTab/layout"
               );
             }}
-            options={layouts.map((l) => ({
-              value: l.value,
-              label: l.label(),
-            }))}
+            options={layouts
+              .filter((l) => l?.sponsorOnly === undefined || isValidSponsor)
+              .map((l) => ({
+                value: l.value,
+                label: l.label(),
+              }))}
           />
         </OptionWithLabel>
         {["dagre"].includes(layoutName) && (
@@ -144,7 +146,7 @@ export function EditLayoutTab() {
                 value={spacingFactor}
                 step={0.1}
                 min={0.25}
-                className={styles.numberInput}
+                className="text-xs w-16 mr-2 pl-3"
                 onChange={(e) => {
                   useDoc.setState(
                     (state) => {
