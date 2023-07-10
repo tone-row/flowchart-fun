@@ -11,7 +11,11 @@ import { DISCORD_URL } from "../../lib/constants";
 import { useLightOrDarkMode } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { useUnmountStore } from "../../lib/useUnmountStore";
-import { Button2 } from "../../ui/Shared";
+import {
+  Button2,
+  IconOutlineButton,
+  tooltipContentProps,
+} from "../../ui/Shared";
 import { ThemePicker } from "../ThemePicker";
 
 export function EditStyleTab() {
@@ -164,16 +168,14 @@ function KeyboardKey({ children }: { children: ReactNode }) {
 function InfoButton() {
   return (
     <Tooltip.Root>
-      <Tooltip.Trigger className="bg-neutral-100 hover:bg-neutral-200 rounded p-1 cursor-pointer p-1 dark:bg-neutral-800">
-        <Info size={20} className="text-neutral-800 dark:text-neutral-200" />
+      <Tooltip.Trigger asChild>
+        <IconOutlineButton>
+          <Info size={20} />
+        </IconOutlineButton>
       </Tooltip.Trigger>
       <Tooltip.Portal>
-        <Tooltip.Content
-          side="bottom"
-          className="bg-neutral-100 shadow rounded w-[450px] p-4 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none dark:bg-neutral-700"
-        >
-          <Tooltip.Arrow className="fill-neutral-100 dark:fill-neutral-700" />
-          <p className="text-neutral-600 dark:text-neutral-300 text-xs leading-normal">
+        <Tooltip.Content {...tooltipContentProps}>
+          <p className="text-neutral-600 dark:text-neutral-300 text-xs leading-normal max-w-md">
             <Trans>
               Customize your theme by editing the <span>Cytoscape CSS</span>{" "}
               below. Our styling documentation is coming soon! In the meantime,

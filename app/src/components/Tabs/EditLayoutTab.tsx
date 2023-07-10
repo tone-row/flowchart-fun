@@ -15,7 +15,6 @@ import { BasicSelect } from "../../ui/Select";
 import { Button2 } from "../../ui/Shared";
 import styles from "./EditLayoutTab.module.css";
 import {
-  CustomSelect,
   OptionWithLabel,
   Range,
   TabOptionsGrid,
@@ -53,8 +52,6 @@ export function EditLayoutTab() {
   ) {
     direction = layout.rankDir;
   }
-  const directionNiceName =
-    directions.find((l) => l.value === direction)?.label() ?? "???";
 
   let spacingFactor = defaultLayout.spacingFactor;
   if (

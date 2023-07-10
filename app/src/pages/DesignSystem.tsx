@@ -1,11 +1,11 @@
 import { PaintBucket, PhoneCall, UserGear } from "phosphor-react";
 
-import { Button2, IconButton2 } from "../ui/Shared";
+import { Button2, IconButton2, IconOutlineButton } from "../ui/Shared";
 import { PageTitle, SectionTitle } from "../ui/Typography";
 
 export default function DesignSystem() {
   return (
-    <div className="grid gap-12 p-5 max-w-3xl mx-auto">
+    <div className="grid gap-12 p-5 max-w-3xl mx-auto content-start">
       <section className="grid gap-6">
         <PageTitle>Typography</PageTitle>
         <div className="grid gap-2">
@@ -61,6 +61,19 @@ export default function DesignSystem() {
             <Button2 size="lg">LG Button</Button2>
           </div>
           <p>Toggle Button</p>
+        </div>
+      </section>
+      <section className="grid gap-6">
+        <PageTitle>Icon Outline Buttons</PageTitle>
+        <div className="grid gap-2 justify-start justify-items-start">
+          <div className="flex content-start gap-2 items-center">
+            <Button2 color="blue" leftIcon={<PaintBucket size={16} />}>
+              Size Test
+            </Button2>
+            <IconOutlineButton>
+              <PhoneCall size={16} />
+            </IconOutlineButton>
+          </div>
         </div>
       </section>
     </div>

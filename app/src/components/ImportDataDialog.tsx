@@ -23,7 +23,6 @@ import { useDoc } from "../lib/useDoc";
 import { Content, Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
 import { Button2 } from "../ui/Shared";
-import Spinner from "./Spinner";
 
 type UseImportData = {
   isProcessing: boolean;

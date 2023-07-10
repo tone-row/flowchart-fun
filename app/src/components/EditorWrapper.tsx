@@ -2,7 +2,7 @@ import { Trans } from "@lingui/macro";
 import { Suspense, useContext } from "react";
 import { RiShareForwardFill } from "react-icons/ri";
 
-import { useIsReadOnly, useIsValidCustomer } from "../lib/hooks";
+import { useIsReadOnly } from "../lib/hooks";
 import { useDocDetails } from "../lib/useDoc";
 import { Button2 } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
@@ -21,18 +21,8 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
   const title = useDocDetails("title", "flowchart.fun");
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
-  const isValidCustomer = useIsValidCustomer();
-  const { customerIsLoading } = useContext(AppContext);
-  const showMightLoseWarning = !isValidCustomer && !customerIsLoading;
   return (
-    <div
-      className={[
-        styles.EditorWrapper,
-        showMightLoseWarning ? styles.mightLose : "",
-      ]
-        .filter(Boolean)
-        .join(" ")}
-    >
+    <div className={styles.EditorWrapper}>
       <header>
         <div className={styles.HeaderTitle}>
           <RenameButton>
@@ -41,6 +31,7 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
             </PageTitle>
           </RenameButton>
           <MightLoseSponsorTrigger />
+          <MightLoseWarning />
           {isReadOnly && (
             <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
               <Trans>Read-only</Trans>
@@ -59,7 +50,6 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
           )}
         </div>
       </header>
-      {showMightLoseWarning && <MightLoseWarning />}
       <Suspense fallback={<Loading />}>
         <main>{children}</main>
       </Suspense>

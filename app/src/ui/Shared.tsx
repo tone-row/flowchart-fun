@@ -2,6 +2,7 @@ import "@reach/dialog/styles.css";
 import "@reach/tooltip/styles.css";
 
 import { Trans } from "@lingui/macro";
+import { TooltipContentProps } from "@radix-ui/react-tooltip";
 import ReachDialog, { DialogProps } from "@reach/dialog";
 import type * as Polymorphic from "@reach/utils/polymorphic";
 import VisuallyHidden from "@reach/visually-hidden";
@@ -180,6 +181,7 @@ export function Notice({
   );
 }
 
+const focusClasses = `focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-offset-[var(--color-background)] focus-visible:ring-blue-500 focus-visible:outline-none focus-visible:ring-opacity-60`;
 const button2Classes =
   "group relative rounded-md active:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed";
 const button2Colors = {
@@ -247,7 +249,7 @@ export const Button2 = forwardRef<
         className={`flex items-center justify-center gap-3 ${button2Classes} ${pxButtonSize[
           size
         ](!!leftIcon, !!rightIcon)} ${button2Colors[color]}
-      ${pSize[size]} ${className}
+      ${pSize[size]} ${focusClasses} ${className}
       `}
         {...props}
         disabled={props.disabled || props.isLoading}
@@ -295,7 +297,7 @@ export const IconButton2 = forwardRef<
 >(({ children, color = "default", size = "sm", ...props }, ref) => {
   return (
     <button
-      className={`${pSize[size]} ${button2Classes} ${button2Colors[color]}`}
+      className={`${focusClasses} ${pSize[size]} ${button2Classes} ${button2Colors[color]}`}
       {...props}
       disabled={props.disabled || props.isLoading}
       data-is-loading={props.isLoading}
@@ -314,3 +316,35 @@ export const IconButton2 = forwardRef<
 });
 
 IconButton2.displayName = "IconButton2";
+
+/**
+ * No hover styles. This should be used as the trigger for Popovers and Tooltips.
+ */
+export const IconOutlineButton = forwardRef<
+  HTMLButtonElement,
+  {
+    children?: ReactNode;
+  } & React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >
+>(({ children, ...props }, ref) => {
+  return (
+    <button
+      className={`h-10 w-10 ${focusClasses} rounded-md grid content-center justify-center border border-solid border-neutral-400 shadow-sm text-neutral-600 dark:border-neutral-400 dark:text-neutral-300`}
+      {...props}
+      ref={ref}
+    >
+      {children}
+    </button>
+  );
+});
+
+IconOutlineButton.displayName = "IconOutlineButton";
+
+export const tooltipContentProps: TooltipContentProps = {
+  side: "bottom",
+  sideOffset: 10,
+  className:
+    "bg-background border border-neutral-400 dark:border-neutral-600 text-xs dark:bg-neutral-700 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none rounded-md px-4 py-3 leading-none shadow-sm will-change-[transform,opacity]",
+};

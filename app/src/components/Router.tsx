@@ -83,9 +83,9 @@ export default function Router() {
       <RouteWithWrapper path="/blog">
         <Blog />
       </RouteWithWrapper>
-      <Route path="/d">
+      <RouteWithWrapper path="/d">
         <DesignSystem />
-      </Route>
+      </RouteWithWrapper>
       <RouteWithWrapper path="/:workspace">
         <Edit />
       </RouteWithWrapper>

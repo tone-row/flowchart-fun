@@ -1,41 +1,28 @@
-import { t, Trans } from "@lingui/macro";
-import * as HoverCard from "@radix-ui/react-hover-card";
-import { CircleWavyWarning } from "phosphor-react";
+import { Trans } from "@lingui/macro";
+import * as Tooltip from "@radix-ui/react-tooltip";
+import { Warning } from "phosphor-react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
+import { useIsValidCustomer } from "../lib/hooks";
 import { track } from "../lib/track";
-import { Box } from "../slang";
-import styles from "./MightLoseWarning.module.css";
+import { IconOutlineButton, tooltipContentProps } from "../ui/Shared";
+import { AppContext } from "./AppContext";
 export function MightLoseWarning() {
+  const isValidCustomer = useIsValidCustomer();
+  const { customerIsLoading } = useContext(AppContext);
+  const showMightLoseWarning = !isValidCustomer && !customerIsLoading;
+  if (!showMightLoseWarning) return null;
   return (
-    <HoverCard.Root>
-      <HoverCard.Trigger asChild>
-        <Box
-          p={2}
-          pr={3}
-          background="palette-yellow-2"
-          color="palette-black-0"
-          className={`${styles.MightLoseWarning} overflow-hidden`}
-          rad={2}
-          items="center normal"
-          gap={2}
-          flow="column"
-        >
-          <CircleWavyWarning size={20} />
-          <p className="text-xs opacity-80 whitespace-nowrap text-ellipsis overflow-hidden">
-            {t`Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.`}
-          </p>
-        </Box>
-      </HoverCard.Trigger>
-      <HoverCard.Content portalled>
-        <Box
-          p={4}
-          background="color-background"
-          color="color-foreground"
-          rad={2}
-          className={styles.MightLoseWarningInner}
-        >
-          <p className="text-sm opacity-80 leading-normal">
+    <Tooltip.Root>
+      <Tooltip.TooltipTrigger asChild>
+        <IconOutlineButton>
+          <Warning size={20} />
+        </IconOutlineButton>
+      </Tooltip.TooltipTrigger>
+      <Tooltip.TooltipPortal>
+        <Tooltip.TooltipContent {...tooltipContentProps}>
+          <p className="text-xs opacity-80 leading-normal max-w-md">
             <Trans>
               Remember that this document is only saved on this computer. If you
               want a way to store documents and access them wherever you go,
@@ -44,14 +31,14 @@ export function MightLoseWarning() {
             </Trans>
           </p>
           <Link
-            className="font-bold text-sm text-blue-500 hover:underline mt-6 block"
+            className="font-bold text-xs text-blue-500 hover:underline mt-6 block"
             to="/pricing"
             onClick={() => track("might_lose_warning_click", "click")}
           >
             <Trans>Learn More</Trans>
           </Link>
-        </Box>
-      </HoverCard.Content>
-    </HoverCard.Root>
+        </Tooltip.TooltipContent>
+      </Tooltip.TooltipPortal>
+    </Tooltip.Root>
   );
 }
