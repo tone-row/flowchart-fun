@@ -36,15 +36,21 @@ export default function Login() {
 
   if (success) {
     return (
-      <div className="pt-12 grid justify-items-center content-start gap-4 w-full max-w-[440px] mx-auto">
-        <EmailPassword width={180} height={180} />
-        <p className="text text-lg leading-tight ml-4">
+      <div className="pt-12 grid justify-items-center content-start gap-4 w-full max-w-[440px] mx-auto text-center">
+        <EmailPassword
+          width={180}
+          height={180}
+          className="stroke-foreground dark:stroke-background"
+        />
+        <p className="text text-lg leading-tight ml-4 text-wrap-balance">
           <Trans>
-            Check your email for a link to log in. You can close this window.
+            Check your email for a link to log in.
+            <br />
+            You can close this window.
           </Trans>
         </p>
         <div className="text-neutral-600 ml-4">
-          <p className="text-sm text-neutral-600 leading-tight">
+          <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-6">
             <Trans>
               Once in a while the magic link will end up in your spam folder. If
               you don&apos;t see it after a few minutes, check there or request

@@ -4,6 +4,8 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "phosphor-react";
 import { forwardRef } from "react";
 
+import { focusClasses } from "./Shared";
+
 export const Overlay = forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -55,7 +57,7 @@ export const Close = forwardRef<
   <Dialog.Close
     ref={ref}
     {...props}
-    className={`absolute top-1 right-1 p-2 rounded-md bg-background/50 dark:bg-background/50 hover:bg-background/75 dark:hover:bg-background/75 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-dark focus:ring-offset-2
+    className={`absolute top-1 right-1 p-2 rounded-md focus:outline-none ${focusClasses}
     ${className}`}
   >
     <X size={16} />

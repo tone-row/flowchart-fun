@@ -30,7 +30,7 @@ export function MightLoseWarning() {
             </Trans>
           </p>
           <Link
-            className="font-bold text-xs text-blue-500 hover:underline mt-6 block"
+            className="font-bold text-xs text-blue-500 hover:underline mt-6 block dark:text-blue-400"
             to="/pricing"
             onClick={() => track("might_lose_warning_click", "click")}
           >

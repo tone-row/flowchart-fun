@@ -125,7 +125,7 @@ export function Notice({
   );
 }
 
-const focusClasses = `focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-offset-[var(--color-background)] focus-visible:ring-blue-500 focus-visible:outline-none focus-visible:ring-opacity-60`;
+export const focusClasses = `focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-offset-[var(--color-background)] focus-visible:ring-blue-500 focus-visible:outline-none focus-visible:ring-opacity-60`;
 const button2Classes =
   "group relative rounded-md active:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed";
 const button2Colors = {
@@ -297,7 +297,7 @@ export const tooltipContentProps: TooltipContentProps = {
   side: "bottom",
   sideOffset: 10,
   className:
-    "bg-background border border-neutral-400 dark:border-neutral-600 text-xs dark:bg-neutral-700 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none rounded-md px-4 py-3 leading-none shadow-sm will-change-[transform,opacity]",
+    "bg-background border border-neutral-400 dark:border-neutral-600 text-xs dark:bg-neutral-800 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none rounded-md px-4 py-3 leading-none shadow-sm will-change-[transform,opacity]",
 };
 
 const { side: _side, ...tooltipContentPropsAutoSide } = tooltipContentProps;

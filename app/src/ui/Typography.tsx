@@ -13,7 +13,8 @@ export function PageTitle({
   );
 }
 
-export const sectionTitle = "text-lg md:text-xl font-bold pb-1 border-b";
+export const sectionTitle =
+  "text-lg md:text-xl font-bold pb-1 border-b dark:border-b-neutral-800";
 export function SectionTitle({
   children,
   className = "",

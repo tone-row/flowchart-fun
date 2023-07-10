@@ -146,7 +146,7 @@ export function EditLayoutTab() {
                 value={spacingFactor}
                 step={0.1}
                 min={0.25}
-                className="text-xs w-16 mr-2 pl-3"
+                className="text-xs w-16 mr-2 pl-3 dark:bg-[var(--color-background)] dark:text-white"
                 onChange={(e) => {
                   useDoc.setState(
                     (state) => {
