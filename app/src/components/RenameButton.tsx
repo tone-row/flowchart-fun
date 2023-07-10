@@ -70,8 +70,6 @@ export const RenameButton = memo(function RenameButton({
     }
   );
 
-  console.log({ initialName, curName });
-
   let isValid = false;
   const lengthMoreThanTwo = curName.length > 2;
   if (convertToHosted) {

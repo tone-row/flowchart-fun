@@ -1,3 +1,4 @@
+import { Provider as TooltipProvider } from "@radix-ui/react-tooltip";
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
 import { Session } from "@supabase/gotrue-js";
@@ -25,7 +26,9 @@ const Wrapper: FC = ({ children }) => {
           <Sentry.ErrorBoundary fallback={ErrorFallback}>
             <I18n>
               <Elements stripe={stripePromise}>
-                <Suspense fallback={<Loading />}>{children}</Suspense>
+                <Suspense fallback={<Loading />}>
+                  <TooltipProvider>{children}</TooltipProvider>
+                </Suspense>
               </Elements>
             </I18n>
           </Sentry.ErrorBoundary>

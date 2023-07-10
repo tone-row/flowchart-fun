@@ -140,7 +140,6 @@ const UploadFile = () => {
       };
       reader.onload = (e) => {
         const text = e.target?.result as string;
-        console.log({ text });
         fetch("/api/data/import", {
           method: "POST",
           headers: {

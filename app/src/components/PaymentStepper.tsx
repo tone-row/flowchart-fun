@@ -304,8 +304,6 @@ async function getSubscriptionDetails(
     },
   }).then((res) => res.json());
 
-  console.log("response", response);
-
   // if there is an error, throw it
   if (response.error) throw new Error(response.error.message);
 
