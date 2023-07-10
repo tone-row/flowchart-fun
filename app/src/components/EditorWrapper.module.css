@@ -25,7 +25,7 @@
   width: 100%;
 }
 
-.HeaderTitle button:first-child {
+.HeaderTitle > button:first-child {
   overflow: hidden;
   padding: 0;
 }

@@ -1,4 +1,5 @@
 import { t, Trans } from "@lingui/macro";
+import * as Dialog from "@radix-ui/react-dialog";
 import { ChangeEvent, memo, ReactNode, useRef, useState } from "react";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
@@ -8,8 +9,8 @@ import { useIsValidSponsor } from "../lib/hooks";
 import { makeChart, renameChart } from "../lib/queries";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
-import { Box } from "../slang";
-import { Button2, Dialog, Input, Notice, Section } from "../ui/Shared";
+import { Close, Content, Overlay } from "../ui/Dialog";
+import { Button2, Input, Notice, Section } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
 import { useSession } from "./AppContext";
 
@@ -21,7 +22,7 @@ export const RenameButton = memo(function RenameButton({
   const fullText = useDoc(docToString);
   const isValidSponsor = useIsValidSponsor();
   const session = useSession();
-  const initialName = useDocDetails("title", "flowchart-fun");
+  const initialName = useDocDetails("title", "flowchart.fun");
   const isHosted = useDocDetails("isHosted");
   const id = useDocDetails("id");
   const { push } = useHistory();
@@ -69,95 +70,99 @@ export const RenameButton = memo(function RenameButton({
     }
   );
 
+  console.log({ initialName, curName });
+
   let isValid = false;
   const lengthMoreThanTwo = curName.length > 2;
-  if (isHosted || convertToHosted) {
-    isValid = curName !== initialName && lengthMoreThanTwo;
+  if (convertToHosted) {
+    isValid = !!curName;
   } else {
     isValid =
       window.localStorage.getItem(titleToLocalStorageKey(curName)) === null &&
-      lengthMoreThanTwo;
+      lengthMoreThanTwo &&
+      curName !== initialName;
   }
 
   return (
     <>
-      <button
-        data-rename-button
-        onClick={() => useRenameDialogStore.setState({ isOpen: true })}
-        aria-label={t`Rename`}
-      >
-        {children}
-      </button>
-      <Dialog
-        dialogProps={{
-          isOpen,
-          onDismiss: () => useRenameDialogStore.setState({ isOpen: false }),
-          initialFocusRef: inputRef,
-          "aria-label": t`Rename`,
+      <Dialog.Root
+        open={isOpen}
+        onOpenChange={(open) => {
+          useRenameDialogStore.setState({ isOpen: open });
         }}
-        innerBoxProps={{
-          as: "form",
-          onSubmit: (e: any) => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            const name = formData.get("name") as string;
-            if (!name) return;
-            rename.mutate(name);
-          },
-        }}
+        modal
       >
-        <Section>
-          <SectionTitle className="mb-[-8px]">
-            <Trans>Rename</Trans>
-          </SectionTitle>
-          {isValidSponsor && !isHosted ? (
-            <Box
-              flow="column"
-              gap={2}
-              content="normal start"
-              items="center normal"
-              as="label"
-            >
-              <span className="text-base">
-                <Trans>Convert to hosted chart?</Trans>
-              </span>
-              <input
-                type="checkbox"
-                checked={convertToHosted}
-                onChange={(e) => {
-                  useRenameDialogStore.setState({
-                    convertToHosted: e.target.checked,
-                  });
-                }}
+        <Dialog.Trigger asChild>
+          <button
+            data-rename-button
+            onClick={() => useRenameDialogStore.setState({ isOpen: true })}
+            aria-label={t`Rename`}
+          >
+            {children}
+          </button>
+        </Dialog.Trigger>
+        <Overlay />
+        <Content>
+          <Close />
+          <form
+            onSubmit={(e: any) => {
+              e.preventDefault();
+              const formData = new FormData(e.target);
+              const name = formData.get("name") as string;
+              if (!name) return;
+              rename.mutate(name);
+            }}
+          >
+            <Section>
+              <SectionTitle className="mb-[-8px]">
+                <Trans>Rename</Trans>
+              </SectionTitle>
+              {isValidSponsor && !isHosted ? (
+                <label className="flex gap-2 item-center mt-2">
+                  <span className="text-xs opacity-80">
+                    <Trans>Convert to hosted chart?</Trans>
+                  </span>
+                  <input
+                    type="checkbox"
+                    checked={convertToHosted}
+                    onChange={(e) => {
+                      useRenameDialogStore.setState({
+                        convertToHosted: e.target.checked,
+                      });
+                    }}
+                  />
+                </label>
+              ) : null}
+              <Input
+                // value={newName}
+                required
+                pattern=".{3,}"
+                defaultValue={initialName}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  setName(e.target.value)
+                }
+                isLoading={rename.isLoading}
+                name="name"
+                ref={inputRef}
               />
-            </Box>
-          ) : null}
-          <Input
-            // value={newName}
-            required
-            pattern=".{3,}"
-            defaultValue={initialName}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setName(e.target.value)
-            }
-            isLoading={rename.isLoading}
-            name="name"
-            ref={inputRef}
-          />
-          <Box flow="column" content="normal space-between">
-            <Button2
-              type="button"
-              onClick={() => useRenameDialogStore.setState({ isOpen: false })}
-            >
-              <Trans>Cancel</Trans>
-            </Button2>
-            <Button2 type="submit" disabled={!isValid} color="blue">
-              <Trans>Rename</Trans>
-            </Button2>
-          </Box>
-          {isError(rename.error) && <Notice>{rename.error.message}</Notice>}
-        </Section>
-      </Dialog>
+              <div className="flex justify-between">
+                <Button2
+                  type="button"
+                  onClick={() =>
+                    useRenameDialogStore.setState({ isOpen: false })
+                  }
+                >
+                  <Trans>Cancel</Trans>
+                </Button2>
+                <Button2 type="submit" disabled={!isValid} color="blue">
+                  <Trans>Rename</Trans>
+                </Button2>
+              </div>
+              {isError(rename.error) && <Notice>{rename.error.message}</Notice>}
+            </Section>
+          </form>
+        </Content>
+      </Dialog.Root>
     </>
   );
 });

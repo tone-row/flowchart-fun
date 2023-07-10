@@ -1,12 +1,6 @@
-import "@reach/dialog/styles.css";
-import "@reach/tooltip/styles.css";
-
-import { Trans } from "@lingui/macro";
 import { TooltipContentProps } from "@radix-ui/react-tooltip";
-import ReachDialog, { DialogProps } from "@reach/dialog";
-import type * as Polymorphic from "@reach/utils/polymorphic";
-import VisuallyHidden from "@reach/visually-hidden";
-import { HandWaving, Warning, X } from "phosphor-react";
+import * as RadixTooltip from "@radix-ui/react-tooltip";
+import { HandWaving, Warning } from "phosphor-react";
 import { forwardRef, ReactNode } from "react";
 
 import Spinner from "../components/Spinner";
@@ -95,56 +89,6 @@ export const Textarea = forwardRef<
   );
 });
 Textarea.displayName = "Textarea";
-
-export const Dialog = ({
-  dialogProps,
-  children,
-  innerBoxProps: { as = "div", ...props },
-}: {
-  dialogProps: Parameters<
-    Polymorphic.ForwardRefComponent<"div", DialogProps>
-  >[0] &
-    BoxProps;
-  children: ReactNode;
-  innerBoxProps: BoxProps;
-}) => {
-  const { className = "", ...rest } = dialogProps;
-  return (
-    <Box
-      as={ReachDialog}
-      p={2}
-      rad={2}
-      className={`${className} ${styles.Dialog}`}
-      {...rest}
-    >
-      <Box gap={0}>
-        <Box
-          as="button"
-          className={styles.CloseButton}
-          onClick={dialogProps.onDismiss}
-          self="normal end"
-        >
-          <VisuallyHidden>
-            <Trans>Close</Trans>
-          </VisuallyHidden>
-          <X size={28} aria-hidden />
-        </Box>
-        <Box
-          as={as}
-          p={5}
-          rad={1}
-          background="color-background"
-          className={styles.InnerDialog}
-          {...props}
-        >
-          {children}
-        </Box>
-      </Box>
-    </Box>
-  );
-};
-
-export { default as Tooltip } from "@reach/tooltip";
 
 type NoticeStyle = "warning" | "info";
 export function Notice({
@@ -294,26 +238,33 @@ export const IconButton2 = forwardRef<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   >
->(({ children, color = "default", size = "sm", ...props }, ref) => {
-  return (
-    <button
-      className={`${focusClasses} ${pSize[size]} ${button2Classes} ${button2Colors[color]}`}
-      {...props}
-      disabled={props.disabled || props.isLoading}
-      data-is-loading={props.isLoading}
-      ref={ref}
-    >
-      <span className="group-data-[is-loading=true]:opacity-0">{children}</span>
-      {props.isLoading && (
-        <Spinner
-          r={8}
-          s={2}
-          className="fill-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ml-[0]"
-        />
-      )}
-    </button>
-  );
-});
+>(
+  (
+    { children, color = "default", size = "sm", className = "", ...props },
+    ref
+  ) => {
+    return (
+      <button
+        className={`${focusClasses} ${pSize[size]} ${button2Classes} ${button2Colors[color]} ${className}`}
+        {...props}
+        disabled={props.disabled || props.isLoading}
+        data-is-loading={props.isLoading}
+        ref={ref}
+      >
+        <span className="group-data-[is-loading=true]:opacity-0">
+          {children}
+        </span>
+        {props.isLoading && (
+          <Spinner
+            r={8}
+            s={2}
+            className="fill-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ml-[0]"
+          />
+        )}
+      </button>
+    );
+  }
+);
 
 IconButton2.displayName = "IconButton2";
 
@@ -348,3 +299,25 @@ export const tooltipContentProps: TooltipContentProps = {
   className:
     "bg-background border border-neutral-400 dark:border-neutral-600 text-xs dark:bg-neutral-700 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none rounded-md px-4 py-3 leading-none shadow-sm will-change-[transform,opacity]",
 };
+
+const { side: _side, ...tooltipContentPropsAutoSide } = tooltipContentProps;
+
+/**
+ * Small Tooltip meant for short text.
+ */
+export function Tooltip2({
+  children,
+  content,
+}: {
+  children: ReactNode;
+  content: ReactNode;
+}) {
+  return (
+    <RadixTooltip.Root>
+      <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
+      <RadixTooltip.Content {...tooltipContentPropsAutoSide}>
+        {content}
+      </RadixTooltip.Content>
+    </RadixTooltip.Root>
+  );
+}

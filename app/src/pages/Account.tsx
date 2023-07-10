@@ -1,11 +1,11 @@
 import { t, Trans } from "@lingui/macro";
+import * as Dialog from "@radix-ui/react-dialog";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { ArrowSquareOut } from "phosphor-react";
 import React, { ReactNode, useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
-
 const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
 import { AppContext } from "../components/AppContext";
@@ -18,7 +18,8 @@ import {
 } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box } from "../slang";
-import { Button2, Dialog, Input, Notice, Page, Section } from "../ui/Shared";
+import { Content, Overlay } from "../ui/Dialog";
+import { Button2, Input, Notice, Page, Section } from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
 
@@ -192,9 +193,11 @@ export default function Account() {
               <Trans>Subscription will end</Trans>{" "}
               {formatDate(subscription.current_period_end.toString())}
             </Notice>
-            <Button2 onClick={() => setResumeModal(true)}>
-              <Trans>Resume Subscription</Trans>
-            </Button2>
+            <ConfirmResume isOpen={resumeModal} onOpenChange={setResumeModal}>
+              <Button2 onClick={() => setResumeModal(true)}>
+                <Trans>Resume Subscription</Trans>
+              </Button2>
+            </ConfirmResume>
           </Box>
         )}
       </Section>
@@ -297,22 +300,16 @@ export default function Account() {
                 read-only.
               </Trans>
             </p>
-            <Button2
-              onClick={() => setCancelModal(true)}
-              className="justify-self-start"
-            >
-              <Trans>Cancel</Trans>
-            </Button2>
+            <ConfirmCancel isOpen={cancelModal} onOpenChange={setCancelModal}>
+              <Button2
+                onClick={() => setCancelModal(true)}
+                className="justify-self-start"
+              >
+                <Trans>Cancel</Trans>
+              </Button2>
+            </ConfirmCancel>
           </Section>
         )}
-      <ConfirmCancel
-        isOpen={cancelModal}
-        onDismiss={() => setCancelModal(false)}
-      />
-      <ConfirmResume
-        isOpen={resumeModal}
-        onDismiss={() => setResumeModal(false)}
-      />
     </Page>
   );
 }
@@ -339,10 +336,12 @@ const Td = ({
 
 function ConfirmCancel({
   isOpen,
-  onDismiss,
+  onOpenChange,
+  children,
 }: {
   isOpen: boolean;
-  onDismiss: () => void;
+  onOpenChange: (open: boolean) => void;
+  children: ReactNode;
 }) {
   const [loading, setLoading] = useState(false);
   const { customer } = useContext(AppContext);
@@ -358,45 +357,43 @@ function ConfirmCancel({
       });
       queryClient.invalidateQueries(["auth", "customerInfo"]);
       setLoading(false);
-      onDismiss();
+      onOpenChange(false);
     }
   }
   return (
-    <Dialog
-      dialogProps={{
-        isOpen,
-        onDismiss,
-        "aria-label": t`Cancel`,
-      }}
-      innerBoxProps={{ gap: 6 }}
-    >
-      <p className="text-sm leading-normal">
-        <Trans>Do you want to cancel your subscription?</Trans>
-      </p>
-      <Box content="normal space-between" flow="column" gap={3}>
-        <Button2 onClick={onDismiss} disabled={loading}>
-          <Trans>Return</Trans>
-        </Button2>
-        <Button2
-          disabled={loading}
-          onClick={cancelSubscription}
-          color="red"
-          isLoading={loading}
-        >
-          <Trans>Cancel</Trans>
-        </Button2>
-      </Box>
-    </Dialog>
+    <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
+      <Dialog.Trigger asChild>{children}</Dialog.Trigger>
+      <Overlay />
+      <Content>
+        <p className="text-sm leading-normal">
+          <Trans>Do you want to cancel your subscription?</Trans>
+        </p>
+        <div className="flex justify-between mt-4">
+          <Button2 onClick={() => onOpenChange(false)} disabled={loading}>
+            <Trans>Return</Trans>
+          </Button2>
+          <Button2
+            disabled={loading}
+            onClick={cancelSubscription}
+            color="red"
+            isLoading={loading}
+          >
+            <Trans>Cancel</Trans>
+          </Button2>
+        </div>
+      </Content>
+    </Dialog.Root>
   );
 }
 
 function ConfirmResume({
   isOpen,
-  onDismiss,
+  onOpenChange,
+  children,
 }: {
   isOpen: boolean;
-
-  onDismiss: () => void;
+  onOpenChange: (open: boolean) => void;
+  children: ReactNode;
 }) {
   const [loading, setLoading] = useState(false);
   const { customer } = useContext(AppContext);
@@ -413,32 +410,37 @@ function ConfirmResume({
     });
     queryClient.invalidateQueries(["auth", "customerInfo"]);
     setLoading(false);
-    onDismiss();
+    onOpenChange(false);
   }
   return (
-    <Dialog
-      dialogProps={{ isOpen, onDismiss, "aria-label": t`Resume Subscription` }}
-      innerBoxProps={{ gap: 4 }}
+    <Dialog.Root
+      aria-label={t`Resume Subscription`}
+      open={isOpen}
+      onOpenChange={onOpenChange}
     >
-      <p className="text-sm leading-normal">
-        <Trans>Resume Subscription</Trans>
-        <br />
-        <Trans>Next charge</Trans> {formatDate(period)}.
-      </p>
-      <Box content="normal space-between" flow="column" gap={3}>
-        <Button2 onClick={onDismiss} disabled={loading}>
-          <Trans>Cancel</Trans>
-        </Button2>
-        <Button2
-          disabled={loading}
-          onClick={resumeSubscription}
-          color="blue"
-          isLoading={loading}
-        >
+      <Dialog.Trigger>{children}</Dialog.Trigger>
+      <Overlay />
+      <Content>
+        <p className="text-sm leading-normal">
           <Trans>Resume Subscription</Trans>
-        </Button2>
-      </Box>
-    </Dialog>
+          <br />
+          <Trans>Next charge</Trans> {formatDate(period)}.
+        </p>
+        <Box content="normal space-between" flow="column" gap={3}>
+          <Button2 onClick={() => onOpenChange(false)} disabled={loading}>
+            <Trans>Cancel</Trans>
+          </Button2>
+          <Button2
+            disabled={loading}
+            onClick={resumeSubscription}
+            color="blue"
+            isLoading={loading}
+          >
+            <Trans>Resume Subscription</Trans>
+          </Button2>
+        </Box>
+      </Content>
+    </Dialog.Root>
   );
 }
 

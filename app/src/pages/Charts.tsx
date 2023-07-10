@@ -15,7 +15,6 @@ import { useMutation } from "react-query";
 import { Link, useHistory } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
-import { DialogButton } from "../components/DialogButton";
 import Loading from "../components/Loading";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { titleToLocalStorageKey } from "../lib/helpers";
@@ -298,12 +297,16 @@ const ChartLink = memo(function ChartLink({
               </Dialog.Description>
               <div className="flex gap-2 mt-6 justify-self-end">
                 <Dialog.Close asChild>
-                  <DialogButton icon={X}>Cancel</DialogButton>
+                  <Button2 leftIcon={<X size={16} />}>Cancel</Button2>
                 </Dialog.Close>
                 <Dialog.Close asChild>
-                  <DialogButton icon={Trash} color="red" onClick={handleDelete}>
+                  <Button2
+                    leftIcon={<Trash size={16} />}
+                    color="red"
+                    onClick={handleDelete}
+                  >
                     Delete
-                  </DialogButton>
+                  </Button2>
                 </Dialog.Close>
               </div>
             </Dialog.Content>

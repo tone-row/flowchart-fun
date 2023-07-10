@@ -1,44 +1,8 @@
-import * as Select from "@radix-ui/react-select";
 import * as Slider from "@radix-ui/react-slider";
-import { CaretDown } from "phosphor-react";
 import { memo, ReactNode } from "react";
 
-import { SelectOption } from "../../lib/graphOptions";
-import { useIsValidSponsor } from "../../lib/hooks";
 import { Label } from "../../ui/Typography";
 import styles from "./shared.module.css";
-
-export function CustomSelect({
-  niceName,
-  options,
-  ...props
-}: { niceName: string; options: SelectOption[] } & Select.SelectProps) {
-  const isValidSponsor = useIsValidSponsor();
-  return (
-    <Select.Root {...props}>
-      <Select.Trigger className={styles.selectTrigger}>
-        <Select.Value>
-          <span className="text font-bold">{niceName}</span>
-        </Select.Value>
-        <Select.Icon asChild>
-          <CaretDown size={16} weight="thin" />
-        </Select.Icon>
-      </Select.Trigger>
-      <Select.Content className={styles.selectContent}>
-        {options
-          .filter((l) => {
-            if (!isValidSponsor && l.sponsorOnly) return false;
-            return true;
-          })
-          .map((layout) => (
-            <Select.Item key={layout.value} value={layout.value}>
-              {layout.label()}
-            </Select.Item>
-          ))}
-      </Select.Content>
-    </Select.Root>
-  );
-}
 
 export function OptionWithLabel({
   children,

@@ -10,7 +10,6 @@ import {
   File,
   FileCsv,
   Warning,
-  X,
 } from "phosphor-react";
 import { useMemo, useState } from "react";
 import { useDropzone } from "react-dropzone";
@@ -20,7 +19,7 @@ import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
 import { useDoc } from "../lib/useDoc";
-import { Content, Overlay } from "../ui/Dialog";
+import { Close, Content, Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
 import { Button2 } from "../ui/Shared";
 
@@ -92,8 +91,9 @@ export function ImportDataDialog() {
         <Content
           overflowV
           maxWidthClass="max-w-[600px]"
-          className="min-h-[350px] content-start overflow-y-scroll"
+          className="content-start overflow-y-auto"
         >
+          <Close />
           <Dialog.Title className="text-2xl font-bold flex items-center">
             <Database className="mr-2" />
             <Trans>Import Data</Trans>
@@ -110,9 +110,6 @@ export function ImportDataDialog() {
               {step === "confirm" && <ConfirmAddNodesAndEdges />}
             </div>
           </Dialog.Description>
-          <Dialog.Close className="absolute top-4 right-4 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
-            <X />
-          </Dialog.Close>
         </Content>
       </Dialog.Portal>
     </Dialog.Root>

@@ -13,6 +13,7 @@ import Loading from "./Loading";
 import { MightLoseSponsorTrigger } from "./MightLoseSponsorTrigger";
 import { MightLoseWarning } from "./MightLoseWarning";
 import { RenameButton } from "./RenameButton";
+import ShareDialog from "./ShareDialog";
 
 /**
  * Adds title and export button to the editor
@@ -21,13 +22,14 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
   const title = useDocDetails("title", "flowchart.fun");
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
+  const pageTitle = title || "flowchart.fun";
   return (
     <div className={styles.EditorWrapper}>
       <header>
         <div className={styles.HeaderTitle}>
-          <RenameButton>
+          <RenameButton key={pageTitle}>
             <PageTitle title={title} className="-translate-y-[2px]">
-              {title || "flowchart.fun"}
+              {pageTitle}
             </PageTitle>
           </RenameButton>
           <MightLoseSponsorTrigger />
@@ -40,13 +42,15 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
           {isReadOnly ? (
             <CloneButton />
           ) : (
-            <Button2
-              color="blue"
-              onClick={() => setShareModal(true)}
-              rightIcon={<RiShareForwardFill size={16} />}
-            >
-              <Trans>Export</Trans>
-            </Button2>
+            <ShareDialog>
+              <Button2
+                color="blue"
+                onClick={() => setShareModal(true)}
+                rightIcon={<RiShareForwardFill size={16} />}
+              >
+                <Trans>Export</Trans>
+              </Button2>
+            </ShareDialog>
           )}
         </div>
       </header>

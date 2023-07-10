@@ -24,10 +24,9 @@ export function MightLoseWarning() {
         <Tooltip.TooltipContent {...tooltipContentProps}>
           <p className="text-xs opacity-80 leading-normal max-w-md">
             <Trans>
-              Remember that this document is only saved on this computer. If you
-              want a way to store documents and access them wherever you go,
-              then try our Pro plan with unlimited hosted charts, and more! For
-              only $3/month!
+              This document is only saved on this computer. If you want a way to
+              store documents and access them wherever you go try our Pro plan
+              for only $3/month!
             </Trans>
           </p>
           <Link

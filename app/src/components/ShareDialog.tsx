@@ -1,4 +1,5 @@
 import { t, Trans } from "@lingui/macro";
+import * as Dialog from "@radix-ui/react-dialog";
 import * as Tabs from "@radix-ui/react-tabs";
 import { saveAs } from "file-saver";
 import { parse, toMermaid } from "graph-selector";
@@ -10,14 +11,7 @@ import {
   DownloadSimple,
   LinkSimple,
 } from "phosphor-react";
-import {
-  ReactNode,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { ReactNode, useContext, useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
@@ -26,7 +20,8 @@ import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Box } from "../slang";
-import { Button2, Dialog, Textarea } from "../ui/Shared";
+import { Close, Content, Overlay } from "../ui/Dialog";
+import { Button2, Textarea } from "../ui/Shared";
 import { Description, SectionTitle } from "../ui/Typography";
 import { AppContext } from "./AppContext";
 import { downloadCanvas, downloadSvg, getCanvas, getSvg } from "./downloads";
@@ -35,10 +30,9 @@ import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
 import { SvgProOnlyPopover } from "./SvgProOnlyPopover";
 
-export default function ShareDialog() {
+export default function ShareDialog({ children }: { children?: ReactNode }) {
   const isHosted = useDocDetails("isHosted");
   const { shareModal, setShareModal } = useContext(AppContext);
-  const close = useCallback(() => setShareModal(false), [setShareModal]);
   const docString = useDoc(docToString);
   const shareLink = useMemo(() => {
     return compressToEncodedURIComponent(docString);
@@ -52,129 +46,133 @@ export default function ShareDialog() {
   const scale = isValidSponsor ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
 
   return (
-    <Dialog
-      dialogProps={{
-        isOpen: shareModal,
-        onDismiss: close,
-        "aria-label": t`Export`,
-      }}
-      innerBoxProps={{
-        gap: 6,
-      }}
+    <Dialog.Root
+      open={shareModal}
+      onOpenChange={setShareModal}
+      aria-label={t`Export`}
     >
-      <Column>
-        <PreviewImage watermark={watermark} scale={scale} />
-        <SectionTitle className="mb-1">
-          <Trans>Download</Trans>
-        </SectionTitle>
-        <div className="grid gap-2 grid-cols-3">
-          <Button2
-            aria-label="Download PNG"
-            onClick={() => {
-              if (!window.__cy) return;
-              getCanvas({
-                cy: window.__cy,
-                type: "png",
-                watermark,
-                scale,
-              })
-                .then((canvas) =>
+      <Dialog.Trigger asChild>{children}</Dialog.Trigger>
+      <Overlay />
+      <Content maxWidthClass="max-w-[600px] w-full" overflowV>
+        <Close />
+        <Column>
+          <PreviewImage watermark={watermark} scale={scale} />
+          <SectionTitle className="mb-1">
+            <Trans>Download</Trans>
+          </SectionTitle>
+          <div className="grid gap-2 grid-cols-3">
+            <Button2
+              aria-label="Download PNG"
+              onClick={() => {
+                if (!window.__cy) return;
+                getCanvas({
+                  cy: window.__cy,
+                  type: "png",
+                  watermark,
+                  scale,
+                })
+                  .then((canvas) =>
+                    downloadCanvas({
+                      ...canvas,
+                      filename,
+                    })
+                  )
+                  .catch(console.error);
+              }}
+            >
+              PNG
+            </Button2>
+            <Button2
+              aria-label="Download JPG"
+              onClick={() => {
+                if (!window.__cy) return;
+                getCanvas({
+                  cy: window.__cy,
+                  type: "jpg",
+                  watermark,
+                  scale,
+                }).then((canvas) =>
                   downloadCanvas({
                     ...canvas,
                     filename,
                   })
-                )
-                .catch(console.error);
-            }}
-          >
-            PNG
-          </Button2>
-          <Button2
-            aria-label="Download JPG"
-            onClick={() => {
-              if (!window.__cy) return;
-              getCanvas({
-                cy: window.__cy,
-                type: "jpg",
-                watermark,
-                scale,
-              }).then((canvas) =>
-                downloadCanvas({
-                  ...canvas,
-                  filename,
-                })
-              );
-            }}
-          >
-            JPG
-          </Button2>
-          <SvgProOnlyPopover>
-            <Button2
-              disabled={!isValidSponsor}
-              aria-label="Download SVG"
-              onClick={async () => {
-                if (!window.__cy) return;
-                const svg = await getSvg({
-                  cy: window.__cy,
-                });
-                downloadSvg({
-                  svg,
-                  filename,
-                });
+                );
               }}
             >
-              SVG
+              JPG
             </Button2>
-          </SvgProOnlyPopover>
-        </div>
-      </Column>
-      {isHosted ? <HostedOptions /> : null}
-      <Column>
-        <SectionTitle className="mb-1">
-          <Trans>Link</Trans>
-        </SectionTitle>
-        <Box gap={4}>
-          <LinkCopy
-            value={fullscreen}
-            title={t`Fullscreen`}
-            rawTitle="Fullscreen"
-          />
-          <LinkCopy value={editable} title={t`Editable`} rawTitle="Editable" />
-          <LinkCopy
-            value={readOnly}
-            title={t`Read-only`}
-            rawTitle="Read-only"
-          />
-        </Box>
-      </Column>
-      <Column>
-        <Title>
-          <Trans>Export</Trans>
-        </Title>
-        <Tabs.Root className="grid gap-2" defaultValue="mermaid">
-          <Tabs.List className="flex gap-2 items-center">
-            <Tabs.Trigger
-              value="mermaid"
-              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
-            >
-              <span>Mermaid</span>
-            </Tabs.Trigger>
-            <Tabs.Trigger
-              value="visio"
-              className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
-            >
-              <span>Visio</span>
-            </Tabs.Trigger>
-          </Tabs.List>
-          <Tabs.Content value="mermaid">
-            <Mermaid />
-          </Tabs.Content>
-          <Tabs.Content value="visio">
-            <VisioCSVDownload />
-          </Tabs.Content>
-        </Tabs.Root>
-      </Column>
-    </Dialog>
+            <SvgProOnlyPopover>
+              <Button2
+                disabled={!isValidSponsor}
+                aria-label="Download SVG"
+                onClick={async () => {
+                  if (!window.__cy) return;
+                  const svg = await getSvg({
+                    cy: window.__cy,
+                  });
+                  downloadSvg({
+                    svg,
+                    filename,
+                  });
+                }}
+              >
+                SVG
+              </Button2>
+            </SvgProOnlyPopover>
+          </div>
+        </Column>
+        {isHosted ? <HostedOptions /> : null}
+        <Column>
+          <SectionTitle className="mb-1">
+            <Trans>Link</Trans>
+          </SectionTitle>
+          <Box gap={4}>
+            <LinkCopy
+              value={fullscreen}
+              title={t`Fullscreen`}
+              rawTitle="Fullscreen"
+            />
+            <LinkCopy
+              value={editable}
+              title={t`Editable`}
+              rawTitle="Editable"
+            />
+            <LinkCopy
+              value={readOnly}
+              title={t`Read-only`}
+              rawTitle="Read-only"
+            />
+          </Box>
+        </Column>
+        <Column>
+          <Title>
+            <Trans>Export</Trans>
+          </Title>
+          <Tabs.Root className="grid gap-2" defaultValue="mermaid">
+            <Tabs.List className="flex gap-2 items-center">
+              <Tabs.Trigger
+                value="mermaid"
+                className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
+              >
+                <span>Mermaid</span>
+              </Tabs.Trigger>
+              <Tabs.Trigger
+                value="visio"
+                className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
+              >
+                <span>Visio</span>
+              </Tabs.Trigger>
+            </Tabs.List>
+            <Tabs.Content value="mermaid">
+              <Mermaid />
+            </Tabs.Content>
+            <Tabs.Content value="visio">
+              <VisioCSVDownload />
+            </Tabs.Content>
+          </Tabs.Root>
+        </Column>
+      </Content>
+    </Dialog.Root>
   );
 }
 
@@ -279,7 +277,7 @@ function PreviewImage({
 
   if (img.isLoading) return <Loading />;
   return (
-    <div className="p-4 max-h-[400px] relative text-center">
+    <div className="m-4 max-h-[400px] relative text-center">
       <img
         src={img.data}
         alt="Preview"
@@ -500,23 +498,21 @@ function VisioDownloadOption({
       <div className="text-xs text-neutral-500 dark:text-neutral-400">
         {children}
       </div>
-      <button
+      <Button2
         data-testid={testId}
-        className="bg-blue-500 text-white rounded px-3 py-2 text-sm flex items-center gap-2 justify-self-end hover:bg-blue-600 active:bg-blue-700"
+        color="blue"
+        className="w-full"
         onClick={() => {
           setLoading(true);
           handleDownload().finally(() =>
             setTimeout(() => setLoading(false), 1000)
           );
         }}
+        isLoading={loading}
+        leftIcon={<DownloadSimple size={16} />}
       >
-        {loading ? (
-          <Spinner r={6} s={2} />
-        ) : (
-          <DownloadSimple width={15} height={15} />
-        )}
         {t`Download`} CSV
-      </button>
+      </Button2>
     </div>
   );
 }
