@@ -41,7 +41,7 @@ export default function Feedback() {
     <Page data-testid="feedback">
       <header className="grid gap-4">
         <PageTitle className="text-center">
-          <Trans>Send us Feedback</Trans>
+          <Trans>Feedback</Trans>
         </PageTitle>
         <p className="text-center text-neutral-500 dark:text-neutral-400">
           <Trans>
