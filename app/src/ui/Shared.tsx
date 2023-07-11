@@ -229,17 +229,20 @@ export const Button2 = forwardRef<
 
 Button2.displayName = "Button2";
 
+export type IconButton2Props = {
+  children?: ReactNode;
+  isLoading?: boolean;
+  color?: keyof typeof button2Colors;
+  size?: keyof typeof pSize;
+};
+
 export const IconButton2 = forwardRef<
   HTMLButtonElement,
-  {
-    children?: ReactNode;
-    isLoading?: boolean;
-    color?: keyof typeof button2Colors;
-    size?: keyof typeof pSize;
-  } & React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >
+  IconButton2Props &
+    React.DetailedHTMLProps<
+      React.ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    >
 >(
   (
     { children, color = "default", size = "sm", className = "", ...props },

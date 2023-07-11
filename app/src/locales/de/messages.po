@@ -169,7 +169,7 @@ msgstr "Diagramme"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "Überprüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses Fenster schließen."
 
-#: src/components/ThemePicker.tsx:67
+#: src/components/ThemePicker.tsx:68
 msgid "Choose a Theme"
 msgstr "Wählen Sie ein Thema"
 
@@ -205,7 +205,7 @@ msgstr "Text löschen?"
 msgid "Click on \\nLearn Syntax\\nto learn more"
 msgstr "Klicke auf \\nSyntax lernen\\num mehr zu erfahren."
 
-#: src/components/ThemePicker.tsx:70
+#: src/components/ThemePicker.tsx:71
 msgid "Click to preview"
 msgstr "Klicken Sie zum Vorschauen"
 
@@ -523,12 +523,13 @@ msgstr "Extra groß"
 msgid "Extract"
 msgstr "Extrakt"
 
+#: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:126
 #: src/components/Header.tsx:365
 msgid "Feedback"
 msgstr "Feedback"
 
-#: src/components/GraphFloatingMenu.tsx:50
+#: src/components/GraphFloatingMenu.tsx:55
 msgid "Fit Graph"
 msgstr "Passen Graph"
 
@@ -722,12 +723,12 @@ msgstr "Heller Modus"
 msgid "Link"
 msgstr "Link"
 
-#: src/components/ThemePicker.tsx:54
-#: src/components/ThemePicker.tsx:108
+#: src/components/ThemePicker.tsx:55
+#: src/components/ThemePicker.tsx:109
 msgid "Load Theme"
 msgstr "Thema laden"
 
-#: src/components/ThemePicker.tsx:89
+#: src/components/ThemePicker.tsx:90
 msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "Das Laden eines Themas wird alle benutzerdefinierten Stile löschen, die Sie angewendet haben"
 
@@ -997,7 +998,7 @@ msgstr "Bildwasserzeichen entfernen"
 msgid "Rename"
 msgstr "Umbenennen"
 
-#: src/components/GraphFloatingMenu.tsx:54
+#: src/components/GraphFloatingMenu.tsx:59
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -1047,9 +1048,9 @@ msgstr "Sparen Sie Zeit und vereinfachen Sie Ihren Arbeitsablauf, indem Sie Date
 msgid "Select your plan!"
 msgstr "Wählen Sie Ihren Plan aus!"
 
-#: src/components/Feedback.tsx:44
-msgid "Send us Feedback"
-msgstr "Senden Sie uns Feedback"
+#: src/components/GraphFloatingMenu.tsx:78
+msgid "Send Feedback"
+msgstr "Feedback senden"
 
 #: src/components/Header.tsx:176
 #: src/components/Header.tsx:390
@@ -1307,7 +1308,7 @@ msgstr "Zwei Knoten haben die gleiche ID"
 msgid "Type"
 msgstr "Typ"
 
-#: src/components/GraphFloatingMenu.tsx:64
+#: src/components/GraphFloatingMenu.tsx:69
 #: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "Freigeben"
@@ -1432,11 +1433,11 @@ msgstr "Ihre Diagramme"
 msgid "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro."
 msgstr "Ihr Abonnement ist nicht mehr aktiv. Wenn Sie dauerhafte Diagramme erstellen und bearbeiten möchten, upgraden Sie auf Pro."
 
-#: src/components/GraphFloatingMenu.tsx:44
+#: src/components/GraphFloatingMenu.tsx:52
 msgid "Zoom In"
 msgstr "Vergrößern"
 
-#: src/components/GraphFloatingMenu.tsx:39
+#: src/components/GraphFloatingMenu.tsx:49
 msgid "Zoom Out"
 msgstr "Verkleinern"
 

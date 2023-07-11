@@ -41,6 +41,7 @@ export function preprocessCytoscapeStyle(style: string) {
     // find the next import
     match = style.match(importRegex);
   }
+
   // add the imports to the store
   useProcessStyleStore.setState({ styleImports: imports });
 
@@ -68,6 +69,7 @@ interface FontFaceInput {
 
 /**
  * Reads a CSS string and parses the font-face rules in it
+ * for loading with the FontFace API
  */
 function parseFontFaces(cssString: string): FontFaceInput[] {
   const styleSheet = new CSSStyleSheet();
@@ -79,7 +81,9 @@ function parseFontFaces(cssString: string): FontFaceInput[] {
     if (rule.constructor.name === "CSSFontFaceRule") {
       if (!isCSSStyleRule(rule)) continue;
       const fontFace: FontFaceInput = {
-        fontFamily: rule.style.getPropertyValue("font-family"),
+        fontFamily: sanitizeFontFamily(
+          rule.style.getPropertyValue("font-family")
+        ),
         src: rule.style.getPropertyValue("src"),
         descriptors: {},
       };
@@ -196,14 +200,37 @@ function findFontData(cssString: string) {
   };
 
   // delete any properties that are empty strings
-  for (const key in fontData) {
-    if (fontData[key as keyof typeof fontData] === "") {
-      delete fontData[key as keyof typeof fontData];
+  for (const fontDataKey in fontData) {
+    const value = fontData[fontDataKey as keyof typeof fontData];
+
+    // sanitize the font family
+    if (fontDataKey === "fontFamily") {
+      fontData[fontDataKey as keyof typeof fontData] =
+        sanitizeFontFamily(value);
+    }
+
+    if (value === "") {
+      delete fontData[fontDataKey as keyof typeof fontData];
     }
   }
 
   // Return the font-related data
   return fontData;
+}
+
+/**
+ * Font Family names are often quoted or even quoted and escaped
+ * so we need to remove all of that when we load the font into the
+ * document and when we extract the font data for use in our
+ * resizer
+ */
+function sanitizeFontFamily(fontFamily: string) {
+  // if there is no single or double quote in the string, return it as is
+  if (!/["']/.test(fontFamily)) return fontFamily;
+
+  // Sometimes font fontFamily is quoted like "\"Gloria Hallelujah\""
+  // make sure we have an unquoted string
+  return JSON.parse(fontFamily).replace(/"/g, "");
 }
 
 /** Reads any unindented scss-style variables and replaces them throughout the rest of the css */

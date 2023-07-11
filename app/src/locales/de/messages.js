@@ -308,7 +308,7 @@
     "Save time and streamline your workflow by importing data from other sources":
       "Sparen Sie Zeit und vereinfachen Sie Ihren Arbeitsablauf, indem Sie Daten von anderen Quellen importieren",
     "Select your plan!": "Wählen Sie Ihren Plan aus!",
-    "Send us Feedback": "Senden Sie uns Feedback",
+    "Send Feedback": "Feedback senden",
     Settings: "Einstellungen",
     Shape: "Form",
     "Sign Up": "Registrieren",

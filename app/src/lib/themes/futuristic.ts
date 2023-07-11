@@ -148,7 +148,7 @@ const futuristic: Theme = {
 export default futuristic;
 
 export const background = backgroundColor;
-export const cytoscapeStyle = `@import url("/fonts/SpaceMono.css");
+export const cytoscapeStyle = `@import url("/fonts/SpaceMonoRegular.css");
 
 $background: ${backgroundColor};
 
