@@ -1,3 +1,4 @@
+import cx from "classnames";
 import { ReactNode } from "react";
 
 export const pageTitle = "text-2xl md:text-3xl font-extrabold";
@@ -13,15 +14,23 @@ export function PageTitle({
   );
 }
 
-export const sectionTitle =
-  "text-lg md:text-xl font-bold pb-1 border-b dark:border-b-neutral-800";
+export const sectionTitle = "text-lg md:text-xl font-bold";
 export function SectionTitle({
   children,
   className = "",
+  isUnderline = true,
   ...props
-}: { children: ReactNode } & React.HTMLAttributes<HTMLHeadingElement>) {
+}: {
+  children: ReactNode;
+  isUnderline?: boolean;
+} & React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2 className={`${sectionTitle} ${className}`} {...props}>
+    <h2
+      className={cx(`${sectionTitle} ${className}`, {
+        "pb-1 border-b dark:border-b-neutral-800": isUnderline,
+      })}
+      {...props}
+    >
       {children}
     </h2>
   );

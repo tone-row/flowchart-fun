@@ -1,6 +1,6 @@
 import { Trans } from "@lingui/macro";
 import Editor from "@monaco-editor/react";
-import * as Tooltip from "@radix-ui/react-tooltip";
+import * as Popover from "@radix-ui/react-popover";
 import produce from "immer";
 import { Info } from "phosphor-react";
 import postcssParser from "prettier/parser-postcss";
@@ -11,11 +11,7 @@ import { DISCORD_URL } from "../../lib/constants";
 import { useLightOrDarkMode } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { useUnmountStore } from "../../lib/useUnmountStore";
-import {
-  Button2,
-  IconOutlineButton,
-  tooltipContentProps,
-} from "../../ui/Shared";
+import { Button2, IconButton2, popoverContentProps } from "../../ui/Shared";
 import { ThemePicker } from "../ThemePicker";
 
 export function EditStyleTab() {
@@ -167,14 +163,14 @@ function KeyboardKey({ children }: { children: ReactNode }) {
 
 function InfoButton() {
   return (
-    <Tooltip.Root>
-      <Tooltip.Trigger asChild>
-        <IconOutlineButton>
-          <Info size={20} />
-        </IconOutlineButton>
-      </Tooltip.Trigger>
-      <Tooltip.Portal>
-        <Tooltip.Content {...tooltipContentProps}>
+    <Popover.Root>
+      <Popover.Trigger asChild>
+        <IconButton2>
+          <Info size={16} />
+        </IconButton2>
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content {...popoverContentProps}>
           <p className="text-neutral-600 dark:text-neutral-300 text-xs leading-normal max-w-md">
             <Trans>
               Customize your theme by editing the <span>Cytoscape CSS</span>{" "}
@@ -200,8 +196,8 @@ function InfoButton() {
               if you get stuck.
             </Trans>
           </p>
-        </Tooltip.Content>
-      </Tooltip.Portal>
-    </Tooltip.Root>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
 }

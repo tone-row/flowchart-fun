@@ -1,25 +1,25 @@
 import { Trans } from "@lingui/macro";
-import * as Tooltip from "@radix-ui/react-tooltip";
+import * as Popover from "@radix-ui/react-popover";
 import { Translate } from "phosphor-react";
 
-import { IconOutlineButton, tooltipContentProps } from "../ui/Shared";
+import { IconButton2, popoverContentProps } from "../ui/Shared";
 
 /**
  * A warning message that a particular page is only available in English.
  */
 export function OnlyInEnglish() {
   return (
-    <Tooltip.Root>
-      <Tooltip.TooltipTrigger asChild>
-        <IconOutlineButton>
-          <Translate size={20} />
-        </IconOutlineButton>
-      </Tooltip.TooltipTrigger>
-      <Tooltip.TooltipPortal>
-        <Tooltip.TooltipContent {...tooltipContentProps}>
+    <Popover.Root>
+      <Popover.Trigger asChild>
+        <IconButton2>
+          <Translate size={16} />
+        </IconButton2>
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content {...popoverContentProps}>
           <Trans>Sorry! This page is only available in English.</Trans>
-        </Tooltip.TooltipContent>
-      </Tooltip.TooltipPortal>
-    </Tooltip.Root>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
 }

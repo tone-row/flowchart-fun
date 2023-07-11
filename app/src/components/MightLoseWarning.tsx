@@ -1,12 +1,12 @@
 import { Trans } from "@lingui/macro";
-import * as Tooltip from "@radix-ui/react-tooltip";
+import * as Popover from "@radix-ui/react-popover";
 import { Warning } from "phosphor-react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { useIsValidCustomer } from "../lib/hooks";
 import { track } from "../lib/track";
-import { IconOutlineButton, tooltipContentProps } from "../ui/Shared";
+import { IconButton2, popoverContentProps } from "../ui/Shared";
 import { AppContext } from "./AppContext";
 export function MightLoseWarning() {
   const isValidCustomer = useIsValidCustomer();
@@ -14,14 +14,14 @@ export function MightLoseWarning() {
   const showMightLoseWarning = !isValidCustomer && !customerIsLoading;
   if (!showMightLoseWarning) return null;
   return (
-    <Tooltip.Root>
-      <Tooltip.TooltipTrigger asChild>
-        <IconOutlineButton>
-          <Warning size={20} />
-        </IconOutlineButton>
-      </Tooltip.TooltipTrigger>
-      <Tooltip.TooltipPortal>
-        <Tooltip.TooltipContent {...tooltipContentProps}>
+    <Popover.Root>
+      <Popover.Trigger asChild>
+        <IconButton2>
+          <Warning size={16} />
+        </IconButton2>
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content {...popoverContentProps}>
           <p className="text-xs opacity-80 leading-normal max-w-md">
             <Trans>
               This document is only saved on this computer. If you want a way to
@@ -36,8 +36,8 @@ export function MightLoseWarning() {
           >
             <Trans>Learn More</Trans>
           </Link>
-        </Tooltip.TooltipContent>
-      </Tooltip.TooltipPortal>
-    </Tooltip.Root>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
 }

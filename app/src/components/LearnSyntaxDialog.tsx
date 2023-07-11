@@ -89,14 +89,14 @@ export function LearnSyntaxDialog() {
             id="syntax-help-header"
           >
             <Box
-              as={Dialog.Title}
+              as={"header"}
               content="normal start"
               items="center normal"
               gap={3}
               flow="column"
             >
               <TextAlignRight size={24} weight="bold" />
-              <SectionTitle>
+              <SectionTitle isUnderline={false}>
                 <Trans>Learn Syntax</Trans>
               </SectionTitle>
             </Box>

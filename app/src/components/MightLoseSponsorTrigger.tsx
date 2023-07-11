@@ -1,11 +1,11 @@
 import { t, Trans } from "@lingui/macro";
-import * as Tooltip from "@radix-ui/react-tooltip";
+import * as Popover from "@radix-ui/react-popover";
 import { Warning } from "phosphor-react";
 import { useContext } from "react";
 
 import { useIsLocalChart, useIsValidSponsor } from "../lib/hooks";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
-import { IconOutlineButton, tooltipContentProps } from "../ui/Shared";
+import { IconButton2, popoverContentProps } from "../ui/Shared";
 import { AppContext } from "./AppContext";
 
 export function MightLoseSponsorTrigger() {
@@ -16,17 +16,17 @@ export function MightLoseSponsorTrigger() {
   if (!isValidSponsor) return null;
   if (!isLocal) return null;
   return (
-    <Tooltip.Root>
-      <Tooltip.TooltipTrigger asChild>
-        <IconOutlineButton>
-          <Warning size={20} />
-        </IconOutlineButton>
-      </Tooltip.TooltipTrigger>
-      <Tooltip.TooltipPortal>
-        <Tooltip.TooltipContent {...tooltipContentProps}>
+    <Popover.Root>
+      <Popover.Trigger asChild>
+        <IconButton2>
+          <Warning size={16} />
+        </IconButton2>
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content {...popoverContentProps}>
           <div className="grid gap-3 justify-items-start max-w-sm">
             <p className="text-xs opacity-80 leading-normal">
-              {t`Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.`}
+              {t`This is a temporary chart, it will be deleted when you clear your browser cache.`}
             </p>
             <button
               className="font-bold text-xs text-blue-500 hover:underline block"
@@ -38,11 +38,11 @@ export function MightLoseSponsorTrigger() {
               }}
               data-testid="convert-to-hosted"
             >
-              <Trans>Convert to hosted chart?</Trans>
+              <Trans>Convert this to a hosted chart?</Trans>
             </button>
           </div>
-        </Tooltip.TooltipContent>
-      </Tooltip.TooltipPortal>
-    </Tooltip.Root>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
 }

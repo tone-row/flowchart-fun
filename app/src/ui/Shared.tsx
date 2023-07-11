@@ -1,3 +1,4 @@
+import { PopoverContentProps } from "@radix-ui/react-popover";
 import { TooltipContentProps } from "@radix-ui/react-tooltip";
 import * as RadixTooltip from "@radix-ui/react-tooltip";
 import { HandWaving, Warning } from "phosphor-react";
@@ -183,6 +184,7 @@ export const Button2 = forwardRef<
       size = "sm",
       leftIcon,
       rightIcon,
+      isLoading,
       className = "",
       ...props
     },
@@ -196,8 +198,8 @@ export const Button2 = forwardRef<
       ${pSize[size]} ${focusClasses} ${className}
       `}
         {...props}
-        disabled={props.disabled || props.isLoading}
-        data-is-loading={props.isLoading}
+        disabled={props.disabled || isLoading}
+        data-is-loading={isLoading}
         ref={ref}
       >
         {leftIcon && (
@@ -213,7 +215,7 @@ export const Button2 = forwardRef<
             {rightIcon}
           </span>
         )}
-        {props.isLoading && (
+        {isLoading && (
           <Spinner
             r={8}
             s={2}
@@ -293,11 +295,13 @@ export const IconOutlineButton = forwardRef<
 
 IconOutlineButton.displayName = "IconOutlineButton";
 
+const tooltipPopoverContentShared =
+  "bg-background border border-neutral-400 dark:border-neutral-600 text-xs dark:bg-neutral-800 rounded-md px-4 py-3 leading-none shadow-sm";
+
 export const tooltipContentProps: TooltipContentProps = {
   side: "bottom",
   sideOffset: 10,
-  className:
-    "bg-background border border-neutral-400 dark:border-neutral-600 text-xs dark:bg-neutral-800 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none rounded-md px-4 py-3 leading-none shadow-sm will-change-[transform,opacity]",
+  className: `${tooltipPopoverContentShared} data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none will-change-[transform,opacity]`,
 };
 
 const { side: _side, ...tooltipContentPropsAutoSide } = tooltipContentProps;
@@ -321,3 +325,9 @@ export function Tooltip2({
     </RadixTooltip.Root>
   );
 }
+
+export const popoverContentClasses = `${tooltipPopoverContentShared} will-change-[transform,opacity] z-50 data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade`;
+export const popoverContentProps: PopoverContentProps = {
+  sideOffset: 10,
+  className: popoverContentClasses,
+};
