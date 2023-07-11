@@ -1,6 +1,6 @@
 .post-content {
   line-height: 1.4;
-  @apply text-neutral-700 dark:text-neutral-200 text-base leading-normal;
+  @apply text-neutral-700 dark:text-neutral-200 text-sm leading-normal;
 }
 
 .post-content code.hljs {
@@ -39,7 +39,8 @@
 .post-content h3 {
   margin-block-start: 1.5em;
   margin-block-end: 0.83em;
-  @apply text-xl font-bold;
+  text-wrap: balance;
+  @apply text-lg font-semibold text-foreground dark:text-background leading-8;
 }
 
 .post-content h2:first-child,

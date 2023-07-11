@@ -3,7 +3,7 @@ import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import { FiRefreshCw } from "react-icons/fi";
 
 import { useCheckVersion, useVersionCheck } from "../lib/versionCheck";
-import { Button } from "./Shared";
+import { Button2 } from "../ui/Shared";
 
 /** Polls the current app version from the API and opens a reload modal if it changes */
 export function VersionCheck() {
@@ -23,14 +23,15 @@ export function VersionCheck() {
               A new version of the app is available. Please reload to update.
             </Trans>
           </AlertDialog.Description>
-          <Button
-            as={AlertDialog.Action}
-            onClick={() => window.location.reload()}
-            className="mt-2"
-          >
-            <FiRefreshCw />
-            <Trans>Refresh Page</Trans>
-          </Button>
+          <AlertDialog.Action asChild>
+            <Button2
+              onClick={() => window.location.reload()}
+              className="mt-2"
+              rightIcon={<FiRefreshCw size={16} />}
+            >
+              <Trans>Refresh Page</Trans>
+            </Button2>
+          </AlertDialog.Action>
         </AlertDialog.Content>
       </AlertDialog.Portal>
     </AlertDialog.Root>

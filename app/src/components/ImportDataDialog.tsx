@@ -10,7 +10,6 @@ import {
   File,
   FileCsv,
   Warning,
-  X,
 } from "phosphor-react";
 import { useMemo, useState } from "react";
 import { useDropzone } from "react-dropzone";
@@ -20,9 +19,9 @@ import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
 import { useDoc } from "../lib/useDoc";
-import { Content, Overlay } from "../ui/Dialog";
+import { Close, Content, Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
-import Spinner from "./Spinner";
+import { Button2 } from "../ui/Shared";
 
 type UseImportData = {
   isProcessing: boolean;
@@ -92,8 +91,9 @@ export function ImportDataDialog() {
         <Content
           overflowV
           maxWidthClass="max-w-[600px]"
-          className="min-h-[350px] content-start overflow-y-scroll"
+          className="content-start overflow-y-auto"
         >
+          <Close />
           <Dialog.Title className="text-2xl font-bold flex items-center">
             <Database className="mr-2" />
             <Trans>Import Data</Trans>
@@ -110,9 +110,6 @@ export function ImportDataDialog() {
               {step === "confirm" && <ConfirmAddNodesAndEdges />}
             </div>
           </Dialog.Description>
-          <Dialog.Close className="absolute top-4 right-4 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
-            <X />
-          </Dialog.Close>
         </Content>
       </Dialog.Portal>
     </Dialog.Root>
@@ -146,18 +143,20 @@ const UploadFile = () => {
         fetch("/api/data/import", {
           method: "POST",
           headers: {
-            "Content-Type": "text/csv",
+            "Content-Type": "application/json",
           },
-          body: text,
+          body: JSON.stringify({ text }),
         })
           .then((res) => {
             if (!res.ok) {
               res.text().then((text) => {
+                console.log({ text });
                 useImportData.setState({
                   errorMessage: text,
                   step: "error",
                 });
               });
+              throw new Error("Response Not OK");
             }
             return res.json() as Promise<{
               columnNames: string[];
@@ -185,7 +184,11 @@ const UploadFile = () => {
         // Minimum time before transitioning, to allow for animation
         setTimeout(() => {
           // if the step is not already mapping well show processing screen
-          if (useImportData.getState().step !== "mapping")
+          // and the step is not an error
+          if (
+            useImportData.getState().step !== "mapping" &&
+            useImportData.getState().step !== "error"
+          )
             useImportData.setState({
               filename: file.name,
               isProcessing: true,
@@ -202,7 +205,9 @@ const UploadFile = () => {
 
   return (
     <>
-      <H2>Upload your File</H2>
+      <H2>
+        <Trans>Upload your File</Trans>
+      </H2>
       {file ? (
         <>
           <div className="border-2 border-solid border-blue-300 dark:border-blue-700 rounded-lg p-4 text-center cursor-pointer grid gap-2 content-center justify-center h-36 bg-blue-100 dark:bg-blue-800/50">
@@ -273,13 +278,9 @@ function ErrorMessage() {
   return (
     <div className="grid gap-4">
       <SmallErrorMessage>{errorMessage}</SmallErrorMessage>
-
-      <button
-        className="text-neutral-500 text-sm focus:shadow-none dark:text-neutral-400"
-        onClick={resetForm}
-      >
+      <Button2 onClick={resetForm}>
         <Trans>Start Over</Trans>
-      </button>
+      </Button2>
     </div>
   );
 }
@@ -572,17 +573,14 @@ const MappingData = () => {
           ) : null}
         </>
       ) : null}
-      <button
+      <Button2
         type="submit"
-        className="p-4 text-center font-bold bg-blue-500 text-background rounded hover:bg-blue-600 active:bg-blue-700"
         data-testid="submit-button"
+        color="blue"
+        isLoading={onSubmit.isLoading}
       >
-        {onSubmit.isLoading ? (
-          <Spinner className="inline-block" c="white" r={5} />
-        ) : (
-          t`Submit`
-        )}
-      </button>
+        <Trans>Submit</Trans>
+      </Button2>
     </form>
   );
 };
@@ -719,13 +717,10 @@ function ConfirmAddNodesAndEdges() {
       <p>{t`Would you like to continue?`}</p>
       <div className="flex gap-2 justify-self-end">
         <Dialog.Close asChild>
-          <button className="px-6 py-3 font-bold bg-neutral-500 text-background rounded hover:bg-neutral-600 active:bg-neutral-700">
-            {t`Cancel`}
-          </button>
+          <Button2>{t`Cancel`}</Button2>
         </Dialog.Close>
         <Dialog.Close asChild>
-          <button
-            className="px-6 py-3 font-bold bg-blue-500 text-background rounded hover:bg-blue-600 active:bg-blue-700"
+          <Button2
             onClick={() => {
               useDoc.setState((state) => ({
                 text: state.text.trim()
@@ -733,9 +728,10 @@ function ConfirmAddNodesAndEdges() {
                   : graphString,
               }));
             }}
+            color="blue"
           >
             {t`Continue`}
-          </button>
+          </Button2>
         </Dialog.Close>
       </div>
     </div>

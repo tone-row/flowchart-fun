@@ -4,7 +4,8 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 
-import { InfoContainer } from "../../components/InfoContainer";
+import { Page } from "../../ui/Shared";
+import { PageTitle } from "../../ui/Typography";
 import { PostType } from "../Blog";
 
 export default function Post() {
@@ -15,16 +16,16 @@ export default function Post() {
   });
   if (!data) return null;
   return (
-    <InfoContainer style={{ maxWidth: 700 }}>
+    <Page>
       <div className="grid gap-6">
         <header className="grid gap-4">
           <div className="grid gap-2">
-            <span className="text-blue-500 translate-x-[2px] dark:text-purple-400 font-mono tracking-wide uppercase">
+            <span className="text-blue-500 translate-x-[2px] dark:text-purple-400 tracking-wide uppercase">
               {data.publishDate}
             </span>
-            <h1 className="text-5xl font-bold leading-tighter">{data.title}</h1>
+            <PageTitle>{data.title}</PageTitle>
           </div>
-          <p className="text-neutral-400 text-xl dark:text-neutral-300">
+          <p className="text-neutral-400 text-lg dark:text-neutral-300">
             {data.description}
           </p>
         </header>
@@ -53,7 +54,7 @@ export default function Post() {
           </time>
         </div>
       </div>
-    </InfoContainer>
+    </Page>
   );
 }
 

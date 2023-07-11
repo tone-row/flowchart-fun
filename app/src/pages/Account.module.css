@@ -25,14 +25,3 @@ tbody .TableCell:not(:first-child) {
 .InfoCell::first-letter {
   text-transform: capitalize;
 }
-
-.Wrapper {
-  max-width: 800px;
-  width: 100%;
-}
-
-.Wrapper h2 {
-  /* add a light border underneath */
-  border-bottom: 1px solid var(--color-uiAccent);
-  padding-bottom: 0.5rem;
-}

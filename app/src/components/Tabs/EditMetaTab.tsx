@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { editorOptions } from "../../lib/constants";
 import { useLightOrDarkMode } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
-import { Button } from "../Shared";
+import { Button2 } from "../../ui/Shared";
 
 export function EditMetaTab() {
   const meta = useDoc((s) => s.meta);
@@ -50,15 +50,16 @@ export function EditMetaTab() {
             gap: 10,
           }}
         >
-          <Button
+          <Button2
             onClick={() => {
               setLocalMeta(JSON.stringify(meta, null, 2));
             }}
           >
             <Trans>Discard</Trans>
-          </Button>
-          <Button
+          </Button2>
+          <Button2
             disabled={parsed === false}
+            color="blue"
             onClick={() => {
               try {
                 if (!parsed) return;
@@ -69,7 +70,7 @@ export function EditMetaTab() {
             }}
           >
             <Trans>Save</Trans>
-          </Button>
+          </Button2>
         </div>
       )}
     </div>

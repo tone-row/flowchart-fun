@@ -1,27 +1,25 @@
 import { Trans } from "@lingui/macro";
+import * as Popover from "@radix-ui/react-popover";
 import { Translate } from "phosphor-react";
 
-import { Box } from "../slang";
+import { IconButton2, popoverContentProps } from "../ui/Shared";
 
 /**
  * A warning message that a particular page is only available in English.
  */
 export function OnlyInEnglish() {
   return (
-    <Box
-      p={2}
-      px={3}
-      rad={2}
-      background="palette-yellow-2"
-      flow="column"
-      gap={2}
-      color="palette-black-0"
-      items="center"
-    >
-      <Translate size={24} />
-      <span className="text-xs text-black">
-        <Trans>Sorry! This page is only available in English.</Trans>
-      </span>
-    </Box>
+    <Popover.Root>
+      <Popover.Trigger asChild>
+        <IconButton2>
+          <Translate size={16} />
+        </IconButton2>
+      </Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content {...popoverContentProps}>
+          <Trans>Sorry! This page is only available in English.</Trans>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
 }

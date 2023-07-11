@@ -7,10 +7,6 @@
   overflow: hidden;
 }
 
-.mightLose {
-  grid-template-rows: auto auto minmax(0, 1fr);
-}
-
 @media screen and (min-width: 800px) {
   .EditorWrapper {
     /* This is to avoid content going underneath the resizable handle */
@@ -29,7 +25,7 @@
   width: 100%;
 }
 
-.HeaderTitle button:first-child {
+.HeaderTitle > button:first-child {
   overflow: hidden;
   padding: 0;
 }
@@ -75,8 +71,9 @@
 .EditorWrapper [data-rename-button]:hover,
 .EditorWrapper [data-rename-button]:focus-visible {
   text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  text-decoration-color: #bbb;
 }
 
 .EditorWrapper [data-rename-button]:focus {

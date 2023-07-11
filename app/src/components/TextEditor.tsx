@@ -58,7 +58,7 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
 
 /** Keep track of decoratins on the current editor and show an indication of
  * hovering when the hover line number changes */
-export function useEditorHover(hoverLineNumber?: number) {
+function useEditorHover(hoverLineNumber?: number) {
   const decorations = useRef<string[]>([]);
   useEffect(() => {
     const editor = useEditorStore.getState().editor;

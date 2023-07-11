@@ -36,10 +36,6 @@ export function randomChartName() {
   return name;
 }
 
-export type HiddenGraphOptions = {
-  nodePositions?: { [key: string]: { x: number; y: number } };
-};
-
 const usePrevious = (value: any, initialValue: any) => {
   const ref = useRef(initialValue);
   useEffect(() => {

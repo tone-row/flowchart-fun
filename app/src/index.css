@@ -121,6 +121,7 @@ div[data-reach-dialog-content] {
 @media (min-width: 800px) {
   div[data-reach-dialog-content] {
     width: 60vw;
+    max-width: 600px;
     margin: 10vh auto;
   }
 }
@@ -155,11 +156,6 @@ div[data-reach-tooltip] {
 
 .slang-type.size--3 {
   letter-spacing: -0.025em;
-}
-
-.chart-link:hover .chart-link-buttons,
-.chart-link:focus-within .chart-link-buttons {
-  opacity: 1;
 }
 
 /** Completely Hide Editor Actions */

@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "1.36.0",
+  "version": "1.37.0",
   "main": "module/module.js",
   "license": "MIT",
   "scripts": {
@@ -46,10 +46,6 @@
     "@radix-ui/react-tabs": "^1.0.1",
     "@radix-ui/react-toggle": "^0.1.4",
     "@radix-ui/react-tooltip": "^1.0.6",
-    "@reach/dialog": "^0.15.0",
-    "@reach/tooltip": "^0.16.0",
-    "@reach/utils": "^0.16.0",
-    "@reach/visually-hidden": "^0.16.0",
     "@react-hook/throttle": "^2.2.0",
     "@sendgrid/mail": "^7.4.6",
     "@sentry/react": "^7.38.0",
@@ -67,6 +63,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "buffer": "^6.0.3",
+    "classnames": "^2.3.2",
     "core-js": "^3.18.1",
     "cytoscape": "^3.25.0",
     "cytoscape-cose-bilkent": "^4.1.0",
