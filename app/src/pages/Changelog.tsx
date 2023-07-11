@@ -2,8 +2,9 @@ import { t } from "@lingui/macro";
 import axios from "axios";
 import { useQuery } from "react-query";
 
-import { InfoContainer } from "../components/InfoContainer";
 import { InfoHeader } from "../components/InfoHeader";
+import { Page } from "../ui/Shared";
+import { SectionTitle } from "../ui/Typography";
 
 export default function Changelog() {
   const releases = useQuery("changelog", getChangelog, {
@@ -11,23 +12,23 @@ export default function Changelog() {
     suspense: true,
   });
   return (
-    <InfoContainer style={{ maxWidth: 550 }}>
+    <Page>
       <div className="grid gap-8">
         <InfoHeader title={t`Changelog`} />
         {releases.data && (
           <div className="grid gap-12 mt-6">
             {releases.data.map((release) => (
               <section key={release.id} className="grid gap-3">
-                <div className="grid gap-2 justify-start">
-                  <h2 className="text-4xl font-mono">
-                    <a href={release.url}>{release.name}</a>
-                  </h2>
+                <div className="grid gap-2">
                   <time
                     dateTime={release.date}
-                    className="text-sm text-neutral-500 dark:text-neutral-400"
+                    className="text-xs text-neutral-500 dark:text-neutral-400"
                   >
                     {release.niceDate}
                   </time>
+                  <SectionTitle>
+                    <a href={release.url}>{release.name}</a>
+                  </SectionTitle>
                 </div>
                 <div
                   className="post-content text-neutral-900"
@@ -38,7 +39,7 @@ export default function Changelog() {
           </div>
         )}
       </div>
-    </InfoContainer>
+    </Page>
   );
 }
 

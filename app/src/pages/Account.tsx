@@ -1,24 +1,15 @@
 import { t, Trans } from "@lingui/macro";
+import * as Dialog from "@radix-ui/react-dialog";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { ArrowSquareOut, User } from "phosphor-react";
+import { ArrowSquareOut } from "phosphor-react";
 import React, { ReactNode, useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
-
 const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
-import {
-  Button,
-  Dialog,
-  Input,
-  Notice,
-  Page,
-  Section,
-} from "../components/Shared";
-import Spinner from "../components/Spinner";
 import { formatCents, formatDate } from "../lib/helpers";
 import {
   createSubscription,
@@ -27,6 +18,8 @@ import {
 } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box } from "../slang";
+import { Content, Overlay } from "../ui/Dialog";
+import { Button2, Input, Notice, Page, Section } from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
 
@@ -110,14 +103,8 @@ export default function Account() {
   if (customerIsLoading) return <Loading />;
 
   return (
-    <Page
-      px={4}
-      py={8}
-      content="start normal"
-      className={styles.Wrapper}
-      self="stretch center"
-    >
-      <PageTitle>
+    <Page>
+      <PageTitle className="text-center">
         <Trans>Account</Trans>
       </PageTitle>
       <Section>
@@ -125,17 +112,40 @@ export default function Account() {
           <Trans>User</Trans>
         </SectionTitle>
         <Description>{session?.user?.email}</Description>
-        <Button self="start" onClick={signOut} text={t`Log Out`} />
+        <Button2 onClick={signOut} className="justify-self-start">
+          <Trans>Log Out</Trans>
+        </Button2>
+      </Section>
+      <Section>
+        <SectionTitle>
+          <Trans>One-on-One Support</Trans>
+        </SectionTitle>
+        <p className="text-neutral-500 text-sm">
+          <Trans>
+            Have complex questions or issues? We&apos;re here to help.
+          </Trans>
+        </p>
+        <a
+          className="flex gap-2 text-xs text-blue-500 items-center"
+          href="https://calendly.com/tone-row/flowchart-fun"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>
+            <Trans>Book a Meeting</Trans>
+          </span>
+          <ArrowSquareOut size={16} />
+        </a>
       </Section>
       {subscription?.status === "canceled" && (
         <Section>
           <SectionTitle>
-            <Trans>Become a Sponsor</Trans>
+            <Trans>Upgrade to Pro</Trans>
           </SectionTitle>
           <p className="text-sm leading-normal">
             <Trans>
               Your subscription is no longer active. If you want to create and
-              edit hosted charts become a sponsor.
+              edit permanent charts upgrade to Pro.
             </Trans>
           </p>
           <BecomeASponsor />
@@ -183,10 +193,11 @@ export default function Account() {
               <Trans>Subscription will end</Trans>{" "}
               {formatDate(subscription.current_period_end.toString())}
             </Notice>
-            <Button
-              onClick={() => setResumeModal(true)}
-              text={t`Resume Subscription`}
-            />
+            <ConfirmResume isOpen={resumeModal} onOpenChange={setResumeModal}>
+              <Button2 onClick={() => setResumeModal(true)}>
+                <Trans>Resume Subscription</Trans>
+              </Button2>
+            </ConfirmResume>
           </Box>
         )}
       </Section>
@@ -209,12 +220,13 @@ export default function Account() {
             placeholder={t`Confirm New Email`}
             disabled={changeEmail.isLoading}
           />
-          <Button
+          <Button2
             type="submit"
-            self="start"
-            text={t`Change Email Address`}
             disabled={changeEmail.isLoading}
-          />
+            className="justify-self-start"
+          >
+            <Trans>Change Email Address</Trans>
+          </Button2>
           {changeEmail.isError && (
             <Notice>{(changeEmail.error as Error).message}</Notice>
           )}
@@ -225,24 +237,22 @@ export default function Account() {
           <SectionTitle>
             <Trans>Customer Portal</Trans>
           </SectionTitle>
-          <p className="text-sm leading-normal">
+          <p className="text-neutral-500 text-sm">
             <Trans>
               Use the customer portal to change your billing information.
             </Trans>
           </p>
-          <Button
-            as={"a"}
+          <a
             href={customerPortalLink}
             target="_blank"
             rel="noopener noreferrer"
-            self="start"
+            className="flex gap-2 text-xs text-blue-500"
           >
-            <User size={16} />
             <span>
               <Trans>Open Customer Portal</Trans>
             </span>
             <ArrowSquareOut size={16} />
-          </Button>
+          </a>
         </Section>
       )}
       <Section>
@@ -277,20 +287,6 @@ export default function Account() {
           </tbody>
         </Box>
       </Section>
-      <Section>
-        <SectionTitle>
-          <Trans>Office Hours</Trans>
-        </SectionTitle>
-        <a
-          className="flex gap-1 content-start text-blue-500 items-center"
-          href="https://calendly.com/tone-row/flowchart-fun"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>https://calendly.com/tone-row/flowchart-fun</span>
-          <ArrowSquareOut size={16} weight="bold" className="mt-[-3px]" />
-        </a>
-      </Section>
       {!subscription?.cancel_at_period_end &&
         subscription?.created &&
         subscription?.status === "active" && (
@@ -304,21 +300,16 @@ export default function Account() {
                 read-only.
               </Trans>
             </p>
-            <Button
-              self="normal start"
-              onClick={() => setCancelModal(true)}
-              text={t`Cancel`}
-            />
+            <ConfirmCancel isOpen={cancelModal} onOpenChange={setCancelModal}>
+              <Button2
+                onClick={() => setCancelModal(true)}
+                className="justify-self-start"
+              >
+                <Trans>Cancel</Trans>
+              </Button2>
+            </ConfirmCancel>
           </Section>
         )}
-      <ConfirmCancel
-        isOpen={cancelModal}
-        onDismiss={() => setCancelModal(false)}
-      />
-      <ConfirmResume
-        isOpen={resumeModal}
-        onDismiss={() => setResumeModal(false)}
-      />
     </Page>
   );
 }
@@ -345,10 +336,12 @@ const Td = ({
 
 function ConfirmCancel({
   isOpen,
-  onDismiss,
+  onOpenChange,
+  children,
 }: {
   isOpen: boolean;
-  onDismiss: () => void;
+  onOpenChange: (open: boolean) => void;
+  children: ReactNode;
 }) {
   const [loading, setLoading] = useState(false);
   const { customer } = useContext(AppContext);
@@ -364,41 +357,43 @@ function ConfirmCancel({
       });
       queryClient.invalidateQueries(["auth", "customerInfo"]);
       setLoading(false);
-      onDismiss();
+      onOpenChange(false);
     }
   }
   return (
-    <Dialog
-      dialogProps={{
-        isOpen,
-        onDismiss,
-        "aria-label": t`Cancel`,
-      }}
-      innerBoxProps={{ gap: 6 }}
-    >
-      <p className="text-sm leading-normal">
-        <Trans>Do you want to cancel your subscription?</Trans>
-      </p>
-      <Box content="normal space-between" flow="column" gap={3}>
-        <Button onClick={onDismiss} disabled={loading} text={t`Return`} />
-        <Button
-          disabled={loading}
-          onClick={cancelSubscription}
-          text={t`Cancel`}
-        />
-      </Box>
-      {loading && <Spinner />}
-    </Dialog>
+    <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
+      <Dialog.Trigger asChild>{children}</Dialog.Trigger>
+      <Overlay />
+      <Content>
+        <p className="text-sm leading-normal">
+          <Trans>Do you want to cancel your subscription?</Trans>
+        </p>
+        <div className="flex justify-between mt-4">
+          <Button2 onClick={() => onOpenChange(false)} disabled={loading}>
+            <Trans>Return</Trans>
+          </Button2>
+          <Button2
+            disabled={loading}
+            onClick={cancelSubscription}
+            color="red"
+            isLoading={loading}
+          >
+            <Trans>Cancel</Trans>
+          </Button2>
+        </div>
+      </Content>
+    </Dialog.Root>
   );
 }
 
 function ConfirmResume({
   isOpen,
-  onDismiss,
+  onOpenChange,
+  children,
 }: {
   isOpen: boolean;
-
-  onDismiss: () => void;
+  onOpenChange: (open: boolean) => void;
+  children: ReactNode;
 }) {
   const [loading, setLoading] = useState(false);
   const { customer } = useContext(AppContext);
@@ -415,28 +410,37 @@ function ConfirmResume({
     });
     queryClient.invalidateQueries(["auth", "customerInfo"]);
     setLoading(false);
-    onDismiss();
+    onOpenChange(false);
   }
   return (
-    <Dialog
-      dialogProps={{ isOpen, onDismiss, "aria-label": t`Resume Subscription` }}
-      innerBoxProps={{ gap: 4 }}
+    <Dialog.Root
+      aria-label={t`Resume Subscription`}
+      open={isOpen}
+      onOpenChange={onOpenChange}
     >
-      <p className="text-sm leading-normal">
-        <Trans>Resume Subscription</Trans>
-        <br />
-        <Trans>Next charge</Trans> {formatDate(period)}.
-      </p>
-      <Box content="normal space-between" flow="column" gap={3}>
-        <Button onClick={onDismiss} disabled={loading} text={t`Cancel`} />
-        <Button
-          disabled={loading}
-          onClick={resumeSubscription}
-          text={t`Resume Subscription`}
-        />
-      </Box>
-      {loading && <Spinner />}
-    </Dialog>
+      <Dialog.Trigger>{children}</Dialog.Trigger>
+      <Overlay />
+      <Content>
+        <p className="text-sm leading-normal">
+          <Trans>Resume Subscription</Trans>
+          <br />
+          <Trans>Next charge</Trans> {formatDate(period)}.
+        </p>
+        <Box content="normal space-between" flow="column" gap={3}>
+          <Button2 onClick={() => onOpenChange(false)} disabled={loading}>
+            <Trans>Cancel</Trans>
+          </Button2>
+          <Button2
+            disabled={loading}
+            onClick={resumeSubscription}
+            color="blue"
+            isLoading={loading}
+          >
+            <Trans>Resume Subscription</Trans>
+          </Button2>
+        </Box>
+      </Content>
+    </Dialog.Root>
   );
 }
 
@@ -493,8 +497,9 @@ function BecomeASponsor() {
           }}
         />
       </Box>
-      <Button type="submit">Subscribe</Button>
-      {submit.isLoading ? <Spinner /> : <div />}
+      <Button2 type="submit" isLoading={submit.isLoading}>
+        <Trans>Subscribe</Trans>
+      </Button2>
     </Box>
   );
 }

@@ -13,19 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/SignUpForm.tsx:131
-msgid "$3 / Month"
-msgstr "$3 / महीना"
-
-#: src/components/PaymentStepper.tsx:84
+#: src/components/PaymentStepper.tsx:83
 msgid "$3 per month"
 msgstr "मासिक $3"
 
-#: src/components/SignUpForm.tsx:132
-msgid "$30 / Year"
-msgstr "$30 / वर्ष"
-
-#: src/components/PaymentStepper.tsx:92
+#: src/components/PaymentStepper.tsx:91
 msgid "$30 per year"
 msgstr "वार्षिक $30"
 
@@ -33,7 +25,7 @@ msgstr "वार्षिक $30"
 msgid "(before a colon creates a label)"
 msgstr "(कॉलन से पहले एक लेबल बनाता है)"
 
-#: src/components/Settings.tsx:120
+#: src/components/Settings.tsx:107
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0> <1>Tone Row</1> द्वारा बनाई गई एक खुला स्रोत परियोजना है "
 
@@ -41,11 +33,11 @@ msgstr "<0>Flowchart Fun</0> <1>Tone Row</1> द्वारा बनाई ग
 msgid "A new version of the app is available. Please reload to update."
 msgstr "एप्प का एक नया वर्जन उपलब्ध है। अपडेट करने के लिए रीलोड करें।"
 
-#: src/components/Settings.tsx:117
+#: src/components/Settings.tsx:104
 msgid "About"
 msgstr "के बारे में"
 
-#: src/pages/Charts.tsx:109
+#: src/pages/Charts.tsx:113
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "इन चार्ट्स को कहीं से भी एक्सेस करें।<0/>सिंक्रोनाइज़्ड रहने वाले फ्लोचार्ट को साझा करें और एम्बेड करें।"
 
@@ -55,11 +47,11 @@ msgstr "किसी भी उपकरण से पहुँचा जा स
 
 #: src/components/Header.tsx:183
 #: src/components/Header.tsx:397
-#: src/pages/Account.tsx:121
+#: src/pages/Account.tsx:108
 msgid "Account"
 msgstr "खाता"
 
-#: src/components/PaymentStepper.tsx:170
+#: src/components/PaymentStepper.tsx:163
 msgid "Activate your account"
 msgstr "अपना खाता सक्रिय करें"
 
@@ -67,17 +59,21 @@ msgstr "अपना खाता सक्रिय करें"
 msgid "Advanced"
 msgstr "विकसित"
 
-#: src/pages/Account.tsx:263
+#: src/pages/Account.tsx:273
 msgid "Amount"
 msgstr "रकम"
 
-#: src/components/Feedback.tsx:88
+#: src/components/Feedback.tsx:82
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "एक एरर हो गया. फिर से सबमिट करने की कोशिश करें या सीधे {0} ईमेल करें."
 
-#: src/components/Settings.tsx:85
+#: src/components/Settings.tsx:70
 msgid "Appearance"
 msgstr "दिखावट"
+
+#: src/components/Tabs/EditStyleTab.tsx:148
+msgid "Apply Style"
+msgstr "शैली लागू करें"
 
 #: src/components/LearnSyntaxDialog.tsx:144
 msgid "Attributes"
@@ -88,27 +84,23 @@ msgstr "गुण"
 msgid "Auto-Layouts"
 msgstr "ऑटो लेआउट"
 
-#: src/components/Feedback.tsx:111
+#: src/components/Feedback.tsx:105
 msgid "Back To Editor"
 msgstr "संपादक पर वापस जाएं"
 
-#: src/components/ShareDialog.tsx:448
+#: src/components/ShareDialog.tsx:441
 msgid "Basic Flowchart"
 msgstr "बेसिक फ्लोचार्ट"
 
-#: src/components/Settings.tsx:170
+#: src/components/Settings.tsx:151
 msgid "Become a Github Sponsor"
 msgstr "गिटहब स्पॉन्सर बनें"
 
-#: src/components/Settings.tsx:158
+#: src/components/Settings.tsx:139
 msgid "Become a Pro User"
 msgstr "प्रो उपयोगकर्ता बनें"
 
-#: src/pages/Account.tsx:133
-msgid "Become a Sponsor"
-msgstr "एक प्रायोजक बनें"
-
-#: src/pages/New.tsx:319
+#: src/pages/New.tsx:318
 msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
 msgstr "<0>फ्लोचार्ट फन</0> काम कैसे करता है इसके लिए एक आसान उदाहरण से शुरू करें।"
 
@@ -118,9 +110,13 @@ msgstr "खाली"
 
 #: src/components/Header.tsx:152
 #: src/components/Header.tsx:373
-#: src/pages/Blog.tsx:18
+#: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "ब्लॉग"
+
+#: src/pages/Account.tsx:135
+msgid "Book a Meeting"
+msgstr "एक बैठक बुक करें"
 
 #: src/components/GraphContextMenu.tsx:463
 #: src/components/GraphContextMenu.tsx:559
@@ -136,17 +132,17 @@ msgstr "नीचे से शीर्ष तक"
 msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
-#: src/components/ClearTextButton.tsx:44
-#: src/components/ImportDataDialog.tsx:723
-#: src/pages/Account.tsx:299
-#: src/pages/Account.tsx:310
-#: src/pages/Account.tsx:375
-#: src/pages/Account.tsx:387
+#: src/components/ClearTextButton.tsx:26
+#: src/components/ImportDataDialog.tsx:720
+#: src/components/RenameButton.tsx:153
+#: src/pages/Account.tsx:295
+#: src/pages/Account.tsx:308
+#: src/pages/Account.tsx:381
 #: src/pages/Account.tsx:431
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: src/pages/Account.tsx:302
+#: src/pages/Account.tsx:298
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
@@ -154,13 +150,13 @@ msgstr "अपनी सदस्यता रद्द करें. आपक�
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "कुछ गुण तत्वों की दिखता या कार्यक्षमता को अनुकूलित करने के लिए उपयोग किए जा सकते हैं।"
 
-#: src/pages/Account.tsx:215
+#: src/pages/Account.tsx:228
 msgid "Change Email Address"
 msgstr "ईमेल पता बदलें"
 
 #: src/components/Header.tsx:162
 #: src/components/Header.tsx:379
-#: src/pages/Changelog.tsx:16
+#: src/pages/Changelog.tsx:17
 msgid "Changelog"
 msgstr "बदलाव का"
 
@@ -169,10 +165,9 @@ msgstr "बदलाव का"
 msgid "Charts"
 msgstr "चार्ट"
 
-#: src/components/SignUpForm.tsx:99
-#: src/pages/LogIn.tsx:43
-msgid "Check your email for a link to log in. You can close this window."
-msgstr "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं."
+#: src/pages/LogIn.tsx:46
+msgid "Check your email for a link to log in.<0/>You can close this window."
+msgstr "लॉग इन करने के लिए अपने ईमेल की जाँच करें। आप इस विंडो को बंद कर सकते हैं।"
 
 #: src/components/ThemePicker.tsx:67
 msgid "Choose a Theme"
@@ -182,7 +177,7 @@ msgstr "एक थीम चुनें"
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।"
 
-#: src/components/PaymentStepper.tsx:76
+#: src/components/PaymentStepper.tsx:75
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "आपके लिए सही योजना चुनें और Flowchart Fun Pro के साथ अद्भुत फ्लोचार्ट बनाना शुरू करें"
 
@@ -198,12 +193,11 @@ msgstr "वर्ग"
 msgid "Clay"
 msgstr "मिट्टी"
 
-#: src/components/ClearTextButton.tsx:42
+#: src/components/ClearTextButton.tsx:35
 msgid "Clear"
 msgstr "साफ़"
 
-#: src/components/ClearTextButton.tsx:32
-#: src/components/ClearTextButton.tsx:35
+#: src/components/ClearTextButton.tsx:22
 msgid "Clear text?"
 msgstr "पाठ साफ़ करें?"
 
@@ -220,7 +214,6 @@ msgid "Clone"
 msgstr "क्लोन करें"
 
 #: src/components/LearnSyntaxDialog.tsx:416
-#: src/components/Shared.tsx:149
 msgid "Close"
 msgstr "बंद करें"
 
@@ -232,7 +225,7 @@ msgstr "रंग"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "रंग में लाल, नारंगी, पीला, नीला, बैंगनी, काला, सफेद, और ग्रे शामिल हैं।"
 
-#: src/components/ImportDataDialog.tsx:538
+#: src/components/ImportDataDialog.tsx:539
 msgid "Column"
 msgstr "स्तंभ"
 
@@ -240,7 +233,7 @@ msgstr "स्तंभ"
 msgid "Comic Book"
 msgstr "कॉमिक बुक"
 
-#: src/components/Feedback.tsx:71
+#: src/components/Feedback.tsx:68
 msgid "Comment"
 msgstr "टिप्पणी"
 
@@ -248,7 +241,7 @@ msgstr "टिप्पणी"
 msgid "Concentric"
 msgstr "गाढ़ा"
 
-#: src/pages/Account.tsx:209
+#: src/pages/Account.tsx:220
 msgid "Confirm New Email"
 msgstr "नई ईमेल की पुष्टि करें"
 
@@ -260,20 +253,23 @@ msgstr "कंटेनर"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "कंटेनर उन नोड्स हैं जो अन्य नोड्स को सम्मिलित करते हैं। वे कर्ली ब्रेस का उपयोग करके घोषित किया जाता है।"
 
-#: src/components/ImportDataDialog.tsx:737
-#: src/components/PaymentStepper.tsx:106
-#: src/components/PaymentStepper.tsx:154
+#: src/components/ImportDataDialog.tsx:733
+#: src/components/PaymentStepper.tsx:107
+#: src/components/PaymentStepper.tsx:150
 msgid "Continue"
 msgstr "जारी रखें"
 
-#: src/components/MightLoseSponsorTrigger.tsx:61
-#: src/components/RenameButton.tsx:136
+#: src/components/MightLoseSponsorTrigger.tsx:41
+msgid "Convert this to a hosted chart?"
+msgstr "यह एक होस्ट की गई चार्ट में परिवर्तित करें?"
+
+#: src/components/RenameButton.tsx:121
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
-#: src/components/ShareDialog.tsx:247
-#: src/components/ShareDialog.tsx:248
-#: src/components/ShareDialog.tsx:362
+#: src/components/ShareDialog.tsx:244
+#: src/components/ShareDialog.tsx:245
+#: src/components/ShareDialog.tsx:357
 msgid "Copy"
 msgstr "कॉपी करें"
 
@@ -285,18 +281,18 @@ msgstr "PNG छवि कॉपी करें"
 msgid "Copy SVG Code"
 msgstr "SVG कोड कॉपी करें"
 
-#: src/components/ShareDialog.tsx:327
+#: src/components/ShareDialog.tsx:322
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "अपना मर्मेड.जेएस कोड कॉपी करें या मर्मेड.जेएस लाइव एडिटर में सीधे खोलें।"
-
-#: src/pages/New.tsx:305
-msgid "Create"
-msgstr "बनाएँ"
 
 #: src/pages/Pricing.tsx:24
 #: src/pages/Pricing.tsx:73
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं"
+
+#: src/pages/New.tsx:305
+msgid "Create New Flowchart"
+msgstr "नया फ्लोचार्ट बनाएं"
 
 #: src/pages/New.tsx:177
 msgid "Create a New Flowchart"
@@ -314,11 +310,11 @@ msgstr "दो नोड्स के बीच एक एज बनाने �
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
-#: src/pages/Account.tsx:226
+#: src/pages/Account.tsx:238
 msgid "Customer Portal"
 msgstr "ग्राहक पोर्टल"
 
-#: src/components/Tabs/EditStyleTab.tsx:158
+#: src/components/Tabs/EditStyleTab.tsx:175
 msgid "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck."
 msgstr "नीचे दिए गए <0>Cytoscape CSS</0> को संशोधित करके अपनी थीम को अनुकूलित करें। हमारी स्टाइलिंग दस्तावेज़ की तैयारी जल्द ही होगी! इस बीच, सर्वश्रेष्ठ स्रोत <1>Cytoscape</1> दस्तावेज़ है। अगर आप संकट में पड़ जाते हैं तो डिस्कोर्ड में सवाल पूछने आएं।"
 
@@ -326,12 +322,12 @@ msgstr "नीचे दिए गए <0>Cytoscape CSS</0> को संशो�
 msgid "Dark"
 msgstr "डार्क"
 
-#: src/components/Settings.tsx:109
-#: src/components/Settings.tsx:111
+#: src/components/Settings.tsx:95
+#: src/components/Settings.tsx:98
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/pages/Account.tsx:260
+#: src/pages/Account.tsx:270
 msgid "Date"
 msgstr "तारीख़"
 
@@ -339,11 +335,11 @@ msgstr "तारीख़"
 msgid "Deleted when browser data is cleared"
 msgstr "ब्राउज़र डेटा साफ़ होने पर हटा दिया गया"
 
-#: src/pages/New.tsx:512
+#: src/pages/New.tsx:511
 msgid "Describe the flowchart you wish to create"
 msgstr "उस आरेख का वर्णन करें जिसे आप बनाना चाहते हैं"
 
-#: src/components/Tabs/EditLayoutTab.tsx:95
+#: src/components/Tabs/EditLayoutTab.tsx:99
 msgid "Direction"
 msgstr "दिशा"
 
@@ -351,11 +347,11 @@ msgstr "दिशा"
 msgid "Discard"
 msgstr "रद्द करें"
 
-#: src/pages/Account.tsx:380
+#: src/pages/Account.tsx:369
 msgid "Do you want to cancel your subscription?"
 msgstr "क्या आप अपनी सदस्यता रद्द करना चाहते हैं?"
 
-#: src/pages/Charts.tsx:291
+#: src/pages/Charts.tsx:293
 msgid "Do you want to delete this?"
 msgstr "क्या आप इसे डिलीट करना चाहते हैं?"
 
@@ -363,12 +359,12 @@ msgstr "क्या आप इसे डिलीट करना चाहत�
 msgid "Document"
 msgstr "दस्तावेज़"
 
-#: src/pages/LogIn.tsx:93
+#: src/pages/LogIn.tsx:99
 msgid "Don't have an account?"
 msgstr "खाता नहीं है?"
 
-#: src/components/ShareDialog.tsx:68
-#: src/components/ShareDialog.tsx:523
+#: src/components/ShareDialog.tsx:61
+#: src/components/ShareDialog.tsx:514
 msgid "Download"
 msgstr "डाउनलोड"
 
@@ -384,7 +380,7 @@ msgstr "PNG डाउनलोड करें"
 msgid "Download SVG"
 msgstr "SVG डाउनलोड करें"
 
-#: src/components/ImportDataDialog.tsx:244
+#: src/components/ImportDataDialog.tsx:249
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV फ़ाइल यहां ड्रैग और ड्रॉप करें, या फ़ाइल का चयन करने के लिए क्लिक करें"
 
@@ -392,7 +388,7 @@ msgstr "CSV फ़ाइल यहां ड्रैग और ड्रॉप 
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "एक से अधिक नोड्स से एज ड्रा करने के लिए लाइन को एक संदर्भ के साथ शुरू करें"
 
-#: src/components/ImportDataDialog.tsx:242
+#: src/components/ImportDataDialog.tsx:247
 msgid "Drop the file here ..."
 msgstr "फाइल यहाँ ड्रॉप करें ..."
 
@@ -412,8 +408,8 @@ msgstr "किनारे आईडी, वर्ग, गुण"
 msgid "Edge Label"
 msgstr "किनारे लेबल"
 
-#: src/components/ImportDataDialog.tsx:468
-#: src/components/ImportDataDialog.tsx:508
+#: src/components/ImportDataDialog.tsx:469
+#: src/components/ImportDataDialog.tsx:509
 msgid "Edge Label Column"
 msgstr "किनारे लेबल कॉलम"
 
@@ -425,20 +421,20 @@ msgstr "किनारे शैली"
 msgid "Edge missing indentation"
 msgstr "एड्ज अंतराल गुम है"
 
-#: src/components/ImportDataDialog.tsx:406
+#: src/components/ImportDataDialog.tsx:407
 #: src/components/LearnSyntaxDialog.tsx:155
 msgid "Edges"
 msgstr "किन्तुओं"
 
-#: src/components/ImportDataDialog.tsx:424
+#: src/components/ImportDataDialog.tsx:425
 msgid "Edges are declared in the same row as their source node"
 msgstr "उनके स्रोत नोड के ही पंक्ति में किन्तुओं की घोषणा की जाती है"
 
-#: src/components/ImportDataDialog.tsx:430
+#: src/components/ImportDataDialog.tsx:431
 msgid "Edges are declared in the same row as their target node"
 msgstr "उनके लक्ष्य नोड के ही पंक्ति में किन्तुओं की घोषणा की जाती है"
 
-#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:436
 msgid "Edges are declared in their own row"
 msgstr "किन्तुओं को अपनी खुद की पंक्ति में घोषणा की जाती है"
 
@@ -450,19 +446,19 @@ msgstr "लेबल से पहले, किन्तुओं को आई
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "किन्तुओं को डैश्ड, डॉटेड या सॉलिड लाइन्स के साथ स्टाइल किया जा सकता है"
 
-#: src/components/ImportDataDialog.tsx:434
+#: src/components/ImportDataDialog.tsx:435
 msgid "Edges in Separate Rows"
 msgstr "अलग पंक्तियों में किन्हें"
 
-#: src/components/ImportDataDialog.tsx:423
+#: src/components/ImportDataDialog.tsx:424
 msgid "Edges in Source Node Row"
 msgstr "स्रोत नोड पंक्ति में किन्हें"
 
-#: src/components/ImportDataDialog.tsx:429
+#: src/components/ImportDataDialog.tsx:430
 msgid "Edges in Target Node Row"
 msgstr "लक्ष्य नोड पंक्ति में किन्हें"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:137
 msgid "Editable"
 msgstr "संपादन योग्य"
 
@@ -476,11 +472,11 @@ msgstr "संपादक"
 msgid "Eggs"
 msgstr "अंडे"
 
-#: src/components/Feedback.tsx:61
+#: src/components/Feedback.tsx:58
 msgid "Email"
 msgstr "ईमेल"
 
-#: src/components/ImportDataDialog.tsx:554
+#: src/components/ImportDataDialog.tsx:555
 msgid "Empty"
 msgstr "खाली"
 
@@ -488,11 +484,11 @@ msgstr "खाली"
 msgid "Enter your email"
 msgstr "अपना ईमेल दर्ज करें"
 
-#: src/components/ImportDataDialog.tsx:556
+#: src/components/ImportDataDialog.tsx:557
 msgid "Equal To"
 msgstr "बराबर"
 
-#: src/pages/New.tsx:437
+#: src/pages/New.tsx:436
 msgid "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
 msgstr "निबंध लेखन प्रक्रिया फ्लोचार्ट, छात्रों को ब्रैनस्टॉर्मिंग, आउटलाइनिंग, ड्राफ्टिंग और संशोधन चरणों में मार्गदर्शित करना।"
 
@@ -504,9 +500,8 @@ msgstr "फ्री प्लान में सब कुछ"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:53
-#: src/components/EditorWrapper.tsx:58
-#: src/components/ShareDialog.tsx:59
+#: src/components/EditorWrapper.tsx:51
+#: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:149
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
@@ -524,7 +519,7 @@ msgstr "SVG को निर्यात करें"
 msgid "Extra Large"
 msgstr "अति बड़ा"
 
-#: src/pages/New.tsx:516
+#: src/pages/New.tsx:515
 msgid "Extract"
 msgstr "निकालना"
 
@@ -537,11 +532,11 @@ msgstr "फ़ीडबैक"
 msgid "Fit Graph"
 msgstr "फिट ग्राफ"
 
-#: src/components/Settings.tsx:141
+#: src/components/Settings.tsx:125
 msgid "Follow Us on Twitter"
 msgstr "हमारे साथ ट्विटर पर फॉलो करें"
 
-#: src/components/Feedback.tsx:50
+#: src/components/Feedback.tsx:47
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "एक बग पाया? एक सुविधा अनुरोध है? हम आपसे सुनने के लिए प्रसन्न होंगे!"
 
@@ -549,7 +544,7 @@ msgstr "एक बग पाया? एक सुविधा अनुरोध
 msgid "Free"
 msgstr "मुफ्त"
 
-#: src/components/ShareDialog.tsx:136
+#: src/components/ShareDialog.tsx:132
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
@@ -557,7 +552,7 @@ msgstr "फ़ुलस्क्रीन"
 msgid "Futuristic"
 msgstr "भविष्य का"
 
-#: src/components/Tabs/EditLayoutTab.tsx:187
+#: src/components/Tabs/EditLayoutTab.tsx:199
 msgid "Get More Layouts"
 msgstr "ज़्यादा लेआउट पाएं"
 
@@ -577,28 +572,24 @@ msgstr "ग्राफ़"
 msgid "Grid"
 msgstr "ग्रिड"
 
+#: src/pages/Account.tsx:124
 #: src/pages/Pricing.tsx:35
 msgid "Have complex questions or issues? We're here to help."
 msgstr "जटिल सवाल या समस्याएं हैं? हम यहां आपकी मदद के लिए हैं।"
-
-#: src/components/MightLoseSponsorTrigger.tsx:49
-#: src/components/MightLoseWarning.tsx:26
-msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
-msgstr "ध्यान दें! इससे पहले कि आप अपना कैश क्लियर करें, याद रखें कि यह डॉक्यूमेंट क्लाउड में सेव नहीं किया गया है। "
 
 #: src/components/Header.tsx:104
 msgid "Help"
 msgstr "मदद"
 
-#: src/pages/Account.tsx:250
+#: src/pages/Account.tsx:260
 msgid "History"
 msgstr "हिस्ट्री"
 
-#: src/components/App.tsx:70
+#: src/components/App.tsx:79
 msgid "Home"
 msgstr "होम"
 
-#: src/components/ImportDataDialog.tsx:407
+#: src/components/ImportDataDialog.tsx:408
 msgid "How are edges declared in this data?"
 msgstr "इस डेटा में कैसे किन्हीं कड़ियाँ घोषित होती हैं?"
 
@@ -606,7 +597,7 @@ msgstr "इस डेटा में कैसे किन्हीं कड�
 msgid "ID's"
 msgstr "आईडीज़"
 
-#: src/components/Settings.tsx:148
+#: src/components/Settings.tsx:132
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 msgstr "यदि आप <0>Flowchart Fun</0> का उपयोग करना आनंदित हैं, तो कृपया परियोजना को समर्थित करने की सोच करें"
 
@@ -622,10 +613,10 @@ msgstr "छवि निर्यात"
 msgid "Images"
 msgstr "छवियाँ"
 
-#: src/components/ImportDataDialog.tsx:87
+#: src/components/ImportDataDialog.tsx:86
 #: src/components/ImportDataDialog.tsx:99
-#: src/components/ImportDataUnauthenticatedDialog.tsx:19
-#: src/components/ImportDataUnauthenticatedDialog.tsx:36
+#: src/components/ImportDataUnauthenticatedDialog.tsx:21
+#: src/components/ImportDataUnauthenticatedDialog.tsx:38
 msgid "Import Data"
 msgstr "डेटा आयात करें"
 
@@ -633,7 +624,7 @@ msgstr "डेटा आयात करें"
 msgid "Import data from a CSV file."
 msgstr "CSV फ़ाइल से डेटा आयात करें।"
 
-#: src/components/ImportDataUnauthenticatedDialog.tsx:41
+#: src/components/ImportDataUnauthenticatedDialog.tsx:43
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "किसी भी CSV फ़ाइल से डेटा आयात करें और इसे एक नए प्रक्रिया चार्ट में मैप करें। यह अन्य स्रोतों जैसे लुसिडचार्ट, गूगल शीट्स और विसिओ से डेटा आयात करने के लिए एक अच्छा तरीका है।"
 
@@ -642,11 +633,11 @@ msgstr "किसी भी CSV फ़ाइल से डेटा आयात
 msgid "Import from Lucidchart, Visio, and other CSV files"
 msgstr "लुसिडचार्ट, विसिओ और अन्य CSV फ़ाइलों से आयात करें"
 
-#: src/components/ShareDialog.tsx:440
+#: src/components/ShareDialog.tsx:433
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।"
 
-#: src/components/ImportDataUnauthenticatedDialog.tsx:46
+#: src/components/ImportDataUnauthenticatedDialog.tsx:48
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "डेटा आयात एक प्रो फीचर है। आप केवल $ 3/महीने या $ 30/वर्ष के लिए फ्लोचार्ट फन प्रो में अपग्रेड कर सकते हैं।"
 
@@ -654,7 +645,7 @@ msgstr "डेटा आयात एक प्रो फीचर है। आ
 msgid "Impress your audience with high-quality images produced by Flowchart Fun"
 msgstr "फ्लोचार्ट फन द्वारा उत्पादित उच्च गुणवत्ता की छवियों से अपने दर्शकों को आकर्षित करें"
 
-#: src/components/ShareDialog.tsx:473
+#: src/components/ShareDialog.tsx:466
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "एक <0>title</0> विशेषता का उपयोग करके एक शीर्षक शामिल करें। Visio रंगीनी का उपयोग करने के लिए, निम्नलिखित में से किसी एक के बराबर एक <1>roleType</1> विशेषता जोड़ें:"
 
@@ -666,15 +657,15 @@ msgstr "इंडेंटिंग एक बढ़त बनाता है"
 msgid "Info"
 msgstr "जानकारी"
 
-#: src/pages/New.tsx:511
+#: src/pages/New.tsx:510
 msgid "Instruct"
 msgstr "हिदायत"
 
-#: src/components/ImportDataDialog.tsx:547
+#: src/components/ImportDataDialog.tsx:548
 msgid "Is"
 msgstr "हाँ"
 
-#: src/components/Settings.tsx:54
+#: src/components/Settings.tsx:38
 msgid "Language"
 msgstr "भाषा"
 
@@ -687,7 +678,7 @@ msgstr "बड़ा"
 msgid "Layout"
 msgstr "ख़ाका"
 
-#: src/components/Tabs/EditLayoutTab.tsx:199
+#: src/components/Tabs/EditLayoutTab.tsx:211
 msgid "Layout is Frozen"
 msgstr "लेआउट जम गया है"
 
@@ -695,8 +686,8 @@ msgstr "लेआउट जम गया है"
 msgid "Leading References"
 msgstr "प्रमुख संदर्भ"
 
-#: src/components/ImportDataUnauthenticatedDialog.tsx:55
-#: src/components/MightLoseWarning.tsx:51
+#: src/components/ImportDataUnauthenticatedDialog.tsx:60
+#: src/components/MightLoseWarning.tsx:37
 msgid "Learn More"
 msgstr "और अधिक जानें"
 
@@ -705,7 +696,7 @@ msgstr "और अधिक जानें"
 msgid "Learn Syntax"
 msgstr "सिंटैक्स सीखें"
 
-#: src/pages/Charts.tsx:359
+#: src/pages/Charts.tsx:365
 msgid "Learn about Flowchart Fun Pro"
 msgstr "Flowchart Fun Pro के बारे में जानें"
 
@@ -722,12 +713,12 @@ msgstr "चलो शुरू करें! अपना फ्लोचार�
 msgid "Light"
 msgstr "लाइट"
 
-#: src/components/Settings.tsx:102
-#: src/components/Settings.tsx:104
+#: src/components/Settings.tsx:87
+#: src/components/Settings.tsx:90
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/ShareDialog.tsx:131
+#: src/components/ShareDialog.tsx:127
 msgid "Link"
 msgstr "लिंक"
 
@@ -736,22 +727,18 @@ msgstr "लिंक"
 msgid "Load Theme"
 msgstr "थीम लोड करें"
 
-#: src/components/PaymentStepper.tsx:149
-msgid "Loading"
-msgstr "लोड हो रहा है"
-
 #: src/components/ThemePicker.tsx:89
 msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "थीम लोड करने से आपने अपने कस्टम स्टाइल को मिटा दिया होगा"
 
 #: src/components/Header.tsx:201
 #: src/components/Header.tsx:421
-#: src/pages/LogIn.tsx:64
+#: src/pages/LogIn.tsx:69
 #: src/pages/New.tsx:263
 msgid "Log In"
 msgstr "लॉग इन करें"
 
-#: src/pages/Account.tsx:128
+#: src/pages/Account.tsx:116
 msgid "Log Out"
 msgstr "लॉग आउट"
 
@@ -759,11 +746,11 @@ msgstr "लॉग आउट"
 msgid "Log in to start creating flowcharts."
 msgstr "फ्लोचार्ट बनाने शुरू करने के लिए लॉग इन करें।"
 
-#: src/components/Settings.tsx:164
+#: src/components/Settings.tsx:145
 msgid "Make a One-Time Donation"
 msgstr "एक बार दान करें"
 
-#: src/components/ShareDialog.tsx:406
+#: src/components/ShareDialog.tsx:399
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
@@ -771,11 +758,11 @@ msgstr "सार्वजनिक रूप से एक्सेस दे�
 msgid "Make sure you use the same email you will use to log in."
 msgstr "उसी ईमेल का उपयोग करें जिसे आप लॉग इन करने के लिए उपयोग करेंगे।"
 
-#: src/components/ImportDataDialog.tsx:384
+#: src/components/ImportDataDialog.tsx:385
 msgid "Map Data"
 msgstr "डेटा मैप"
 
-#: src/pages/New.tsx:431
+#: src/pages/New.tsx:430
 msgid "Market understanding and competitive landscape maintenance for SaaS product development"
 msgstr "SaaS उत्पाद विकास के लिए बाजार की समझ और प्रतिस्पर्धात्मक भूमिका बनाए रखना।"
 
@@ -783,7 +770,7 @@ msgstr "SaaS उत्पाद विकास के लिए बाजार
 msgid "Medium"
 msgstr "मध्यम"
 
-#: src/pages/New.tsx:500
+#: src/pages/New.tsx:499
 msgid "Method"
 msgstr "विधि"
 
@@ -791,7 +778,7 @@ msgstr "विधि"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:83
+#: src/components/PaymentStepper.tsx:82
 msgid "Monthly"
 msgstr "मासिक"
 
@@ -809,20 +796,20 @@ msgstr "नाम"
 
 #: src/components/Header.tsx:78
 #: src/components/Header.tsx:339
-#: src/pages/Charts.tsx:102
+#: src/pages/Charts.tsx:106
 msgid "New"
 msgstr "नया"
 
-#: src/pages/Account.tsx:202
+#: src/pages/Account.tsx:213
 msgid "New Email"
 msgstr "नई ईमेल"
 
-#: src/pages/Account.tsx:160
-#: src/pages/Account.tsx:428
+#: src/pages/Account.tsx:170
+#: src/pages/Account.tsx:427
 msgid "Next charge"
 msgstr "अगला चार्ज"
 
-#: src/components/ImportDataDialog.tsx:418
+#: src/components/ImportDataDialog.tsx:419
 msgid "No Edges"
 msgstr "कोई किनारे नहीं"
 
@@ -838,7 +825,7 @@ msgstr "नोड सीमा शैली"
 msgid "Node Colors"
 msgstr "नोड रंग"
 
-#: src/components/ImportDataDialog.tsx:389
+#: src/components/ImportDataDialog.tsx:390
 msgid "Node ID"
 msgstr "नोड आईडी"
 
@@ -846,7 +833,7 @@ msgstr "नोड आईडी"
 msgid "Node ID, Classes, Attributes"
 msgstr "नोड आईडी, वर्ग, गुण"
 
-#: src/components/ImportDataDialog.tsx:397
+#: src/components/ImportDataDialog.tsx:398
 #: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "नोड लेबल"
@@ -863,19 +850,19 @@ msgstr "नोड और प्रतीक एक ही लाइन पर"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "नोड्स को डैश्ड, डॉट्ड या डबल के साथ स्टाइल किया जा सकता है। बॉर्डर-नोन के साथ भी बॉर्डर हटाए जा सकते हैं।"
 
-#: src/components/ImportDataDialog.tsx:555
+#: src/components/ImportDataDialog.tsx:556
 msgid "Not Empty"
 msgstr "खाली नहीं"
 
-#: src/pages/Account.tsx:282
 #: src/pages/Pricing.tsx:75
 msgid "Office Hours"
 msgstr "कार्यालय अवधि"
 
-#: src/pages/LogIn.tsx:49
+#: src/pages/LogIn.tsx:54
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "कभी-कभी मैजिक लिंक आपके स्पैम फोल्डर में खत्म हो जाता है। अगर आप कुछ मिनट बाद उसे नहीं देख रहे हैं, तो वहां जाकर देखें या एक नया लिंक अनुरोध करें।"
 
+#: src/pages/Account.tsx:121
 #: src/pages/Pricing.tsx:32
 #: src/pages/Pricing.tsx:74
 msgid "One-on-One Support"
@@ -885,19 +872,19 @@ msgstr "एक-पर-एक समर्थन"
 msgid "One-time Share Links"
 msgstr "वन-टाइम शेयर लिंक"
 
-#: src/pages/Charts.tsx:150
+#: src/pages/Charts.tsx:154
 msgid "Only available on this device.<0/>Clearing your browser cache will erase them."
 msgstr "केवल इस उपकरण पर उपलब्ध है।<0/>अपने ब्राउज़र कैश साफ़ करने से उन्हें मिटा दिया जाएगा।"
 
-#: src/pages/Account.tsx:242
+#: src/pages/Account.tsx:252
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
-#: src/components/ShareDialog.tsx:460
+#: src/components/ShareDialog.tsx:453
 msgid "Organization Chart"
 msgstr "संगठन चार्ट"
 
-#: src/pages/New.tsx:517
+#: src/pages/New.tsx:516
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "उस जानकारी को पेस्ट करें जिसे आप फ़्लोचार्ट में बदलना चाहते हैं"
 
@@ -905,11 +892,11 @@ msgstr "उस जानकारी को पेस्ट करें जि�
 msgid "Permalinks"
 msgstr "Permalinks"
 
-#: src/pages/Charts.tsx:352
+#: src/pages/Charts.tsx:358
 msgid "Permanent Charts are a Pro Feature"
 msgstr "स्थायी चार्ट एक प्रो सुविधा हैं"
 
-#: src/pages/Charts.tsx:107
+#: src/pages/Charts.tsx:111
 msgid "Permanent Flowcharts"
 msgstr "लगातार चार्ट"
 
@@ -934,11 +921,11 @@ msgstr "प्रतीक और कंटेनर एक ही लाइन 
 msgid "Pricing"
 msgstr "मूल्य निर्धारण"
 
-#: src/pages/New.tsx:433
+#: src/pages/New.tsx:432
 msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
 msgstr "कंपनी की सार्वजनिक दायित्व परियोजनाओं के विकास और लागू करने की प्रक्रिया।"
 
-#: src/components/ImportDataDialog.tsx:265
+#: src/components/ImportDataDialog.tsx:270
 msgid "Processing Data"
 msgstr "डेटा प्रसंस्करण"
 
@@ -946,8 +933,8 @@ msgstr "डेटा प्रसंस्करण"
 msgid "Prompt"
 msgstr "प्रॉम्प्ट"
 
-#: src/components/ShareDialog.tsx:402
-#: src/components/ShareDialog.tsx:425
+#: src/components/ShareDialog.tsx:395
+#: src/components/ShareDialog.tsx:418
 msgid "Public"
 msgstr "पब्लिक"
 
@@ -955,7 +942,7 @@ msgstr "पब्लिक"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/components/EditorWrapper.tsx:44
+#: src/components/EditorWrapper.tsx:39
 #: src/components/ShareDialog.tsx:142
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
@@ -1000,20 +987,13 @@ msgstr "पृष्ठ को ताज़ा करें"
 msgid "Reload to Update"
 msgstr "अपडेट करने के लिए रीलोड करें"
 
-#: src/components/MightLoseWarning.tsx:39
-msgid "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!"
-msgstr "याद रखें कि यह डॉक्यूमेंट सिर्फ इसी कंप्यूटर पर सेव किया गया है। अगर आप ऐसा कोई तरीका जानना चाहते हैं कि आप डॉक्यूमेंट स्टोर भी करें और जहां जाएं वहां उन्हें एक्सेस भी कर सकें, तो हमारा Pro प्लैन आजमाएं जिसमें है असीमित होस्ट किए गए चार्ट और बहुत कुछ! सिर्फ $3/महीना! "
-
 #: src/pages/Pricing.tsx:66
 msgid "Remove Image Watermark"
 msgstr "छवि वॉटरमार्क हटाएं"
 
-#: src/components/RenameButton.tsx:93
-#: src/components/RenameButton.tsx:94
-#: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:110
-#: src/components/RenameButton.tsx:125
-#: src/components/RenameButton.tsx:167
+#: src/components/RenameButton.tsx:97
+#: src/components/RenameButton.tsx:116
+#: src/components/RenameButton.tsx:156
 msgid "Rename"
 msgstr "फिर से नाम बदलें"
 
@@ -1021,10 +1001,10 @@ msgstr "फिर से नाम बदलें"
 msgid "Reset"
 msgstr "रीसेट करें"
 
-#: src/pages/Account.tsx:188
-#: src/pages/Account.tsx:422
-#: src/pages/Account.tsx:426
-#: src/pages/Account.tsx:435
+#: src/pages/Account.tsx:198
+#: src/pages/Account.tsx:417
+#: src/pages/Account.tsx:425
+#: src/pages/Account.tsx:439
 msgid "Resume Subscription"
 msgstr "सदस्यता फिर से शुरू करें"
 
@@ -1032,7 +1012,7 @@ msgstr "सदस्यता फिर से शुरू करें"
 msgid "Retro"
 msgstr "रेट्रो"
 
-#: src/pages/Account.tsx:383
+#: src/pages/Account.tsx:373
 msgid "Return"
 msgstr "वापसी"
 
@@ -1047,11 +1027,11 @@ msgstr "दाएं से बाएं"
 msgid "Roadmap"
 msgstr "रोडमैप"
 
-#: src/components/Tabs/EditMetaTab.tsx:71
+#: src/components/Tabs/EditMetaTab.tsx:72
 msgid "Save"
 msgstr "सहेजें"
 
-#: src/components/PaymentStepper.tsx:96
+#: src/components/PaymentStepper.tsx:95
 msgid "Save 20% (2 months free!)"
 msgstr "20% बचत (2 महीने मुफ्त!)"
 
@@ -1063,17 +1043,17 @@ msgstr "इस उन्नत विशेषता के साथ समय 
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "अन्य स्रोतों से डेटा आयात करके अपनी व्यवस्था को समय बचाएं और स्ट्रीमलाइन करें"
 
-#: src/components/PaymentStepper.tsx:73
+#: src/components/PaymentStepper.tsx:72
 msgid "Select your plan!"
 msgstr "अपना योजना चुनें!"
 
-#: src/components/Feedback.tsx:47
+#: src/components/Feedback.tsx:44
 msgid "Send us Feedback"
 msgstr "हमें प्रतिक्रिया भेजें"
 
 #: src/components/Header.tsx:176
 #: src/components/Header.tsx:390
-#: src/components/Settings.tsx:50
+#: src/components/Settings.tsx:34
 msgid "Settings"
 msgstr "सेटिंग"
 
@@ -1081,12 +1061,11 @@ msgstr "सेटिंग"
 msgid "Shape"
 msgstr "आकृति"
 
-#: src/components/PaymentStepper.tsx:278
-#: src/components/SignUpForm.tsx:176
+#: src/components/PaymentStepper.tsx:274
 msgid "Sign Up"
 msgstr "साइन अप"
 
-#: src/pages/LogIn.tsx:98
+#: src/pages/LogIn.tsx:104
 msgid "Sign Up Now"
 msgstr "अभी साइन अप करें"
 
@@ -1102,7 +1081,7 @@ msgstr "छोटा"
 msgid "Some classes are available to help style your flowchart"
 msgstr "कुछ क्लास आपकी फ्लोचार्ट स्टाइल करने में मदद करने के लिए उपलब्ध हैं"
 
-#: src/components/OnlyInEnglish.tsx:23
+#: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
 msgstr "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।"
 
@@ -1110,12 +1089,12 @@ msgstr "माफ़ करें! यह पेज केवल अंग्र
 msgid "Source Arrow"
 msgstr "स्रोत तीर "
 
-#: src/components/ImportDataDialog.tsx:485
-#: src/components/ImportDataDialog.tsx:521
+#: src/components/ImportDataDialog.tsx:486
+#: src/components/ImportDataDialog.tsx:522
 msgid "Source Column"
 msgstr "स्रोत स्तंभ"
 
-#: src/components/ImportDataDialog.tsx:495
+#: src/components/ImportDataDialog.tsx:496
 msgid "Source Delimiter"
 msgstr "स्रोत डिलिमिटर"
 
@@ -1123,7 +1102,7 @@ msgstr "स्रोत डिलिमिटर"
 msgid "Source/Target Arrow Shape"
 msgstr "स्रोत / लक्ष्य तीर आकार"
 
-#: src/components/Tabs/EditLayoutTab.tsx:136
+#: src/components/Tabs/EditLayoutTab.tsx:142
 msgid "Spacing"
 msgstr "अंतर"
 
@@ -1131,15 +1110,15 @@ msgstr "अंतर"
 msgid "Special Attributes"
 msgstr "विशेष गुण"
 
-#: src/pages/Account.tsx:172
+#: src/pages/Account.tsx:182
 msgid "Start"
 msgstr "शुरू"
 
-#: src/components/ImportDataDialog.tsx:281
+#: src/components/ImportDataDialog.tsx:282
 msgid "Start Over"
 msgstr "शुरू करें"
 
-#: src/pages/Account.tsx:151
+#: src/pages/Account.tsx:161
 msgid "Status"
 msgstr "स्टेटस"
 
@@ -1167,21 +1146,25 @@ msgstr "शैली"
 msgid "Style Classes"
 msgstr "शैली क्लासेज"
 
-#: src/components/Feedback.tsx:83
-#: src/components/ImportDataDialog.tsx:583
-#: src/pages/LogIn.tsx:88
+#: src/components/Feedback.tsx:77
+#: src/components/ImportDataDialog.tsx:582
+#: src/pages/LogIn.tsx:95
 msgid "Submit"
 msgstr "भेजना"
 
-#: src/pages/Account.tsx:146
+#: src/pages/Account.tsx:501
+msgid "Subscribe"
+msgstr "सदस्यता लें"
+
+#: src/pages/Account.tsx:156
 msgid "Subscription"
 msgstr "सदस्यता"
 
-#: src/pages/Account.tsx:183
+#: src/pages/Account.tsx:193
 msgid "Subscription will end"
 msgstr "सदस्यता समाप्त हो जाएगी"
 
-#: src/pages/New.tsx:435
+#: src/pages/New.tsx:434
 msgid "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
 msgstr "आपूर्ति श्रृंखला विश्लेषण और अनुकूलन: लागत कमी, कार्यक्षमता में सुधार और स्टेकहोल्डर सहयोग।"
 
@@ -1189,12 +1172,12 @@ msgstr "आपूर्ति श्रृंखला विश्लेषण 
 msgid "Target Arrow"
 msgstr "लक्ष्य तीर"
 
-#: src/components/ImportDataDialog.tsx:442
-#: src/components/ImportDataDialog.tsx:528
+#: src/components/ImportDataDialog.tsx:443
+#: src/components/ImportDataDialog.tsx:529
 msgid "Target Column"
 msgstr "लक्ष्य कॉलम"
 
-#: src/components/ImportDataDialog.tsx:453
+#: src/components/ImportDataDialog.tsx:454
 msgid "Target Delimiter"
 msgstr "लक्ष्य डेलीमीटर"
 
@@ -1202,7 +1185,7 @@ msgstr "लक्ष्य डेलीमीटर"
 msgid "Temporary"
 msgstr "अस्थायी"
 
-#: src/pages/Charts.tsx:148
+#: src/pages/Charts.tsx:152
 #: src/pages/Pricing.tsx:54
 msgid "Temporary Flowcharts"
 msgstr "अस्थायी आरेख"
@@ -1223,27 +1206,27 @@ msgstr "एक पंक्ति पर पाठ एक नोड बनात
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "पाठ के आकार छोटे, सामान्य, बड़े और अतिरिक्त बड़े शामिल हैं।"
 
-#: src/components/Feedback.tsx:108
+#: src/components/Feedback.tsx:102
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
-#: src/components/ImportDataDialog.tsx:469
+#: src/components/ImportDataDialog.tsx:470
 msgid "The column that contains the edge label(s)"
 msgstr "कॉलम जो एड्ज लेबल (ओं) को शामिल करता है"
 
-#: src/components/ImportDataDialog.tsx:486
+#: src/components/ImportDataDialog.tsx:487
 msgid "The column that contains the source node ID(s)"
 msgstr "कॉलम जो स्रोत नोड आईडी (ओं) को शामिल करता है"
 
-#: src/components/ImportDataDialog.tsx:443
+#: src/components/ImportDataDialog.tsx:444
 msgid "The column that contains the target node ID(s)"
 msgstr "कॉलम जो लक्ष्य नोड आईडी (ओं) को शामिल करता है"
 
-#: src/components/ImportDataDialog.tsx:496
+#: src/components/ImportDataDialog.tsx:497
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "कई स्रोत नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
-#: src/components/ImportDataDialog.tsx:454
+#: src/components/ImportDataDialog.tsx:455
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
@@ -1255,11 +1238,11 @@ msgstr "संभव आकृतियाँ हैं:"
 msgid "Theme Editor"
 msgstr "थीम एडिटर"
 
-#: src/components/ImportDataDialog.tsx:419
+#: src/components/ImportDataDialog.tsx:420
 msgid "There are no edges in this data"
 msgstr "इस डेटा में कोई एड्ज नहीं है"
 
-#: src/pages/Charts.tsx:294
+#: src/pages/Charts.tsx:296
 msgid "This action cannot be undone."
 msgstr "इस क्रिया को पूर्ववत नहीं किया जा सकता।"
 
@@ -1267,11 +1250,19 @@ msgstr "इस क्रिया को पूर्ववत नहीं क�
 msgid "This app works by typing"
 msgstr "यह ऐप टाइप द्वारा काम करता है"
 
+#: src/components/MightLoseWarning.tsx:26
+msgid "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!"
+msgstr "यह दस्तावेज़ केवल इस कंप्यूटर पर सहेजी गई है। यदि आप दस्तावेज़ सहेजने और कहीं भी उपयोग करने के लिए एक तरीका चाहते हैं तो हमारे प्रो प्लान के लिए केवल $ 3 / महीने में उपयोग करें!"
+
 #: src/components/SvgProOnlyPopover.tsx:21
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।"
 
-#: src/components/ShareDialog.tsx:532
+#: src/components/MightLoseSponsorTrigger.tsx:29
+msgid "This is a temporary chart, it will be deleted when you clear your browser cache."
+msgstr "यह एक अस्थायी चार्ट है, जब आप अपने ब्राउज़र कैश को साफ़ करेंगे तो यह हटा दिया जाएगा।"
+
+#: src/components/ShareDialog.tsx:523
 msgid "Tip"
 msgstr "सुझाव"
 
@@ -1300,7 +1291,7 @@ msgstr "इसे ठीक करने के लिए कंटेनर <0/
 msgid "Top to Bottom"
 msgstr "ऊपर से नीचे"
 
-#: src/components/App.tsx:64
+#: src/components/App.tsx:71
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
@@ -1317,7 +1308,7 @@ msgid "Type"
 msgstr "प्रकार"
 
 #: src/components/GraphFloatingMenu.tsx:64
-#: src/components/Tabs/EditLayoutTab.tsx:204
+#: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "अनफ़्रीज़"
 
@@ -1333,15 +1324,23 @@ msgstr "अज्ञात पार्सिंग त्रुटि"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "अपनी क्रेयता को उतारें और फ्लोचार्ट फन प्रो के साथ अपनी व्यवस्था को स्ट्रीमलाइन करें – सिर्फ $ 3 / महीने से शुरू होते हुए!"
 
-#: src/pages/Account.tsx:195
+#: src/pages/Account.tsx:206
 msgid "Update Email"
 msgstr "ईमेल अपडेट करें"
+
+#: src/pages/Account.tsx:143
+msgid "Upgrade to Pro"
+msgstr "प्रो में अपग्रेड करें"
+
+#: src/components/ImportDataDialog.tsx:209
+msgid "Upload your File"
+msgstr "अपनी फाइल अपलोड करें"
 
 #: src/pages/Pricing.tsx:26
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "डेटा सेट्स या एल्गोरिदम्स से फ्लोचार्ट बनाने के लिए एआई का उपयोग करें"
 
-#: src/pages/New.tsx:328
+#: src/pages/New.tsx:327
 msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
 msgstr "एक प्रॉम्प्ट से एक फ्लोचार्ट उत्पन्न करने के लिए AI का उपयोग करें। <0>और अधिक जानें</0>"
 
@@ -1361,35 +1360,31 @@ msgstr "नोड की छवि सेट करने के लिए <0>sr
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "नोड की विशिष्ट चौड़ाई और ऊँचाई सेट करने के लिए <0>w</0> और <1>h</1> गुण का उपयोग करें।"
 
-#: src/pages/Account.tsx:229
+#: src/pages/Account.tsx:241
 msgid "Use the customer portal to change your billing information."
 msgstr "अपनी बिलिंग जानकारी बदलने के लिए ग्राहक पोर्टल का उपयोग करें।"
 
-#: src/components/ShareDialog.tsx:468
+#: src/components/ShareDialog.tsx:461
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "संगठनात्मक चार्ट, पदानुक्रमों और अन्य संगठनात्मक संरचनाओं के लिए इस फ़ाइल का उपयोग करें।"
 
-#: src/components/ShareDialog.tsx:456
+#: src/components/ShareDialog.tsx:449
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "अनुक्रमों, प्रक्रियाओं और कार्यप्रवाहों के लिए इस फ़ाइल का उपयोग करें।"
 
-#: src/pages/Account.tsx:125
+#: src/pages/Account.tsx:112
 msgid "User"
 msgstr "यूज़र"
 
-#: src/components/Settings.tsx:135
+#: src/components/Settings.tsx:119
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/pages/New.tsx:441
+#: src/pages/New.tsx:440
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "पानी पृथ्वी के सतह से उष्णता होकर आत्मान में उठता है और वर्षा के रूप में फिर नीचे गिरता है। इस पानी को तब नदियों, तिब्बती तालों और महासागरों में जाता है, जहां यह फिर से उष्णता होता है और आत्मान में पुनर्स्थापित किया जाता है।"
 
-#: src/components/SignUpForm.tsx:182
-msgid "We use cookies to keep you logged in."
-msgstr "हम आपको लॉग इन रखने के लिए कुकीज़ का इस्तेमाल करते हैं."
-
-#: src/pages/LogIn.tsx:67
+#: src/pages/LogIn.tsx:72
 msgid "We use magic links to log you in. Enter your email below to get started."
 msgstr "हम आपको लॉग इन करने के लिए जादू लिंक का उपयोग करते हैं। नीचे अपना ईमेल दर्ज करें और शुरू करें।"
 
@@ -1401,11 +1396,11 @@ msgstr "फ्लोचार्ट फन प्रो के लिए स्�
 msgid "Width and Height"
 msgstr "चौड़ाई और ऊँचाई"
 
-#: src/components/ImportDataDialog.tsx:719
+#: src/components/ImportDataDialog.tsx:717
 msgid "Would you like to continue?"
 msgstr "क्या आप जारी रखना चाहते हैं?"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:90
 msgid "Yearly"
 msgstr "वार्षिक"
 
@@ -1413,7 +1408,7 @@ msgstr "वार्षिक"
 msgid "You already have a flowchart with this name."
 msgstr "आपके पास इस नाम का आरेख पहले से है।"
 
-#: src/components/ImportDataDialog.tsx:717
+#: src/components/ImportDataDialog.tsx:715
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "आप अपने ग्राफ में {numNodes} नोड्स और {numEdges} एड्ज़ जोड़ने वाले हैं।"
 
@@ -1425,7 +1420,7 @@ msgstr "किनारे बनाने के लिए आप टेक्�
 msgid "You must log in to create a persistent flowchart."
 msgstr "आपको एक अविरल फ्लोचार्ट बनाने के लिए लॉग इन करना होगा।"
 
-#: src/components/PaymentStepper.tsx:172
+#: src/components/PaymentStepper.tsx:165
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "आप बस एक ही कदम दूर हैं! <0>Flowchart Fun Pro</0> की पूरी प्रत्याशित क्षमता को अनलॉक करने के लिए नीचे अपने भुगतान विवरण दर्ज करें और आज ही अद्भुत फ्लोचार्ट बनाने शुरू करें।"
 
@@ -1433,9 +1428,9 @@ msgstr "आप बस एक ही कदम दूर हैं! <0>Flowchart 
 msgid "Your Charts"
 msgstr "आपके चार्ट"
 
-#: src/pages/Account.tsx:136
-msgid "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor."
-msgstr "आपकी सदस्यता अब एक्टिव नहीं है. अगर आप होस्टेड चार्ट बनाना और एडिट करना चाहते हैं तो स्पॉन्सर बनें."
+#: src/pages/Account.tsx:146
+msgid "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro."
+msgstr "आपका सदस्यता अब निष्क्रिय है। यदि आप स्थायी चार्ट बनाना और संपादित करना चाहते हैं, तो प्रो अपग्रेड करें।"
 
 #: src/components/GraphFloatingMenu.tsx:44
 msgid "Zoom In"

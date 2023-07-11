@@ -5,20 +5,13 @@ import { parse } from "csv-parse/sync";
 // @ts-ignore
 import type { Readable } from "node:stream";
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
 /**
  * Receives text/csv content in post request
  * Needs to parse it
  */
 export default async function (req: VercelRequest, res: VercelResponse) {
   if (req.method === "POST") {
-    const buf = await buffer(req);
-    const rawBody = buf.toString("utf8");
+    const rawBody = req.body?.text;
     if (!rawBody) {
       res.status(400).end("Bad Request");
       return;
@@ -64,12 +57,4 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     res.setHeader("Allow", "POST");
     res.status(405).end("Method Not Allowed");
   }
-}
-
-async function buffer(readable: Readable) {
-  const chunks = [];
-  for await (const chunk of readable) {
-    chunks.push(typeof chunk === "string" ? Buffer.from(chunk) : chunk);
-  }
-  return Buffer.concat(chunks);
 }

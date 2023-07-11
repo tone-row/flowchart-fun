@@ -1,5 +1,5 @@
 import { useContext, useMemo } from "react";
-import { useLocation, useParams, useRouteMatch } from "react-router-dom";
+import { useLocation, useRouteMatch } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import { slugify } from "./helpers";
@@ -73,19 +73,6 @@ export function useIsValidCustomer() {
 export function useDownloadFilename() {
   const rawTitle = useDocDetails("title", "flowchart-fun");
   return slugify(rawTitle);
-}
-
-/**
- * Return a unique ID for any chart (local or hosted)
- * Hosted charts will return their database ID
- * Local charts will return their workspace name
- */
-export function useChartId() {
-  const { workspace = "_index" } = useParams<{ workspace?: string }>();
-  const { path, params } = useRouteMatch<{ id?: string }>();
-  const id = params.id || undefined;
-  if (path === "/u/:id") return id;
-  return workspace;
 }
 
 export function useIsFirefox() {

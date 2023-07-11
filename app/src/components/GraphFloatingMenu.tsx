@@ -7,7 +7,7 @@ import { MdFitScreen } from "react-icons/md";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
 import { useUnmountStore } from "../lib/useUnmountStore";
-import { Tooltip } from "./Shared";
+import { Tooltip2 } from "../ui/Shared";
 
 const ZOOM_STEP = 0.5;
 
@@ -80,7 +80,7 @@ type CustomIconButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
 };
 function CustomIconButton({ icon, label, ...props }: CustomIconButtonProps) {
   return (
-    <Tooltip label={label} aria-label={label} className={`slang-type size-0`}>
+    <Tooltip2 content={label} aria-label={label}>
       <button
         className="w-9 h-9 grid content-center justify-center bg-white text-neutral-900 hover:bg-neutral-100 active:bg-neutral-200 focus:outline-none focus:shadow-none"
         data-testid={label}
@@ -88,6 +88,6 @@ function CustomIconButton({ icon, label, ...props }: CustomIconButtonProps) {
       >
         {icon}
       </button>
-    </Tooltip>
+    </Tooltip2>
   );
 }

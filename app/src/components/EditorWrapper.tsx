@@ -1,10 +1,10 @@
-import { t, Trans } from "@lingui/macro";
+import { Trans } from "@lingui/macro";
 import { Suspense, useContext } from "react";
 import { RiShareForwardFill } from "react-icons/ri";
 
-import { useIsReadOnly, useIsValidCustomer } from "../lib/hooks";
+import { useIsReadOnly } from "../lib/hooks";
 import { useDocDetails } from "../lib/useDoc";
-import { Box } from "../slang";
+import { Button2 } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
 import { AppContext } from "./AppContext";
 import { CloneButton } from "./CloneButton";
@@ -13,6 +13,7 @@ import Loading from "./Loading";
 import { MightLoseSponsorTrigger } from "./MightLoseSponsorTrigger";
 import { MightLoseWarning } from "./MightLoseWarning";
 import { RenameButton } from "./RenameButton";
+import ShareDialog from "./ShareDialog";
 
 /**
  * Adds title and export button to the editor
@@ -21,48 +22,38 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
   const title = useDocDetails("title", "flowchart.fun");
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
-  const isValidCustomer = useIsValidCustomer();
-  const { customerIsLoading } = useContext(AppContext);
-  const showMightLoseWarning = !isValidCustomer && !customerIsLoading;
+  const pageTitle = title || "flowchart.fun";
   return (
-    <div
-      className={[
-        styles.EditorWrapper,
-        showMightLoseWarning ? styles.mightLose : "",
-      ]
-        .filter(Boolean)
-        .join(" ")}
-    >
+    <div className={styles.EditorWrapper}>
       <header>
         <div className={styles.HeaderTitle}>
-          <RenameButton>
-            <PageTitle title={title}>{title || "flowchart.fun"}</PageTitle>
+          <RenameButton key={pageTitle}>
+            <PageTitle title={title} className="-translate-y-[2px]">
+              {pageTitle}
+            </PageTitle>
           </RenameButton>
           <MightLoseSponsorTrigger />
+          <MightLoseWarning />
           {isReadOnly && (
-            <span className="text-xs text-orange-500 uppercase font-bold">
+            <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
               <Trans>Read-only</Trans>
             </span>
           )}
           {isReadOnly ? (
             <CloneButton />
           ) : (
-            <Box
-              as="button"
-              rad={3}
-              aria-label={t`Export`}
-              className={styles.ShareButton}
-              onClick={() => setShareModal(true)}
-            >
-              <span className="text font-bold">
+            <ShareDialog>
+              <Button2
+                color="blue"
+                onClick={() => setShareModal(true)}
+                rightIcon={<RiShareForwardFill size={16} />}
+              >
                 <Trans>Export</Trans>
-              </span>
-              <RiShareForwardFill size={24} />
-            </Box>
+              </Button2>
+            </ShareDialog>
           )}
         </div>
       </header>
-      {showMightLoseWarning && <MightLoseWarning />}
       <Suspense fallback={<Loading />}>
         <main>{children}</main>
       </Suspense>

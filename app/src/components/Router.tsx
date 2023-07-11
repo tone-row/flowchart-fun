@@ -22,6 +22,7 @@ const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
 const Login = lazy(() => import("../pages/LogIn"));
 const Charts = lazy(() => import("../pages/Charts"));
+const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 
 export default function Router() {
   usePageViews();
@@ -81,6 +82,9 @@ export default function Router() {
       </RouteWithWrapper>
       <RouteWithWrapper path="/blog">
         <Blog />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/d">
+        <DesignSystem />
       </RouteWithWrapper>
       <RouteWithWrapper path="/:workspace">
         <Edit />

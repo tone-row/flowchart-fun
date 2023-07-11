@@ -1,8 +1,6 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$3 / Month": "$ 3 / Mês",
     "$3 per month": "$3 por mês",
-    "$30 / Year": "$ 30 / ano",
     "$30 per year": "$30 por ano",
     "(before a colon creates a label)":
       "(antes de dois pontos cria uma etiqueta)",
@@ -24,17 +22,18 @@
       ".",
     ],
     Appearance: "Aparência",
+    "Apply Style": "Aplicar Estilo",
     Attributes: "Atributos",
     "Auto-Layouts": "Layouts automáticos",
     "Back To Editor": "Voltar ao editor",
     "Basic Flowchart": "Fluxograma Básico",
     "Become a Github Sponsor": "Seja um patrocinador do Github",
     "Become a Pro User": "Se torne um usuário Pro",
-    "Become a Sponsor": "Torne-se um(a) patrocinador(a)",
     "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
       "Comece com um exemplo simples mostrando como o <0>Flowchart Fun</0> funciona.",
     Blank: "Branco",
     Blog: "Blog",
+    "Book a Meeting": "Reserve uma Reunião",
     Border: "Borda",
     "Bottom to Top": "De baixo para cima",
     Breadthfirst: "Por extensão",
@@ -46,8 +45,8 @@
     "Change Email Address": "Mude o endereço de email",
     Changelog: "Registro de alterações",
     Charts: "Diagramas",
-    "Check your email for a link to log in. You can close this window.":
-      "Cheque seu e-mail com um link para logar. Você pode fechar esta janela.",
+    "Check your email for a link to log in.<0/>You can close this window.":
+      "Verifique seu e-mail para um link para fazer login. Você pode fechar esta janela.",
     "Choose a Theme": "Escolha um Tema",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "Escolha entre uma variedade de formas de seta para a origem e o destino de uma aresta. As formas incluem triângulo, triângulo-tee, triângulo-círculo, triângulo-cruz, triângulo-curva-inversa, vee, tee, quadrado, círculo, diamante, chevron e nenhum.",
@@ -75,15 +74,17 @@
     "Containers are nodes that contain other nodes. They are declared using curly braces.":
       "Os containers são nós que contêm outros nós. Eles são declarados usando chaves.",
     Continue: "Continuar",
+    "Convert this to a hosted chart?":
+      "Converter isso para um gráfico hospedado?",
     "Convert to hosted chart?": "Converter em diagrama hospedado?",
     Copy: "Copiar",
     "Copy PNG Image": "Copiar imagem PNG",
     "Copy SVG Code": "Copiar código SVG",
     "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
       "Copie seu código mermaid.js ou abra diretamente no editor ao vivo mermaid.js.",
-    Create: "Criar",
     "Create Flowcharts from a Prompt with AI":
       "Crie diagramas usando prompts de IA",
+    "Create New Flowchart": "Criar Novo Fluxograma",
     "Create a New Flowchart": "Criar um novo diagrama",
     "Create professional-quality visual aids for presentations or training materials":
       "Crie recursos visuais de qualidade profissional para apresentações ou materiais de treinamento",
@@ -170,8 +171,6 @@
     Grid: "Grade",
     "Have complex questions or issues? We're here to help.":
       "Tem questões ou problemas complexos? Estamos aqui para ajudar.",
-    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "Atenção! Antes de limpar o cache, lembre-se de que este documento não está salvo na nuvem.",
     Help: "Ajuda",
     History: "Histórico",
     Home: "Página inicial",
@@ -217,7 +216,6 @@
     "Light Mode": "Modo claro",
     Link: "Link",
     "Load Theme": "Carregar Tema",
-    Loading: "Carregando",
     "Loading a theme will erase any custom styles you have applied":
       "Carregar um tema apagará quaisquer estilos personalizados que você tenha aplicado",
     "Log In": "Acessar",
@@ -294,8 +292,6 @@
       "Referenciando vários nós com a mesma classe atribuída",
     "Refresh Page": "Atualizar Página",
     "Reload to Update": "Recarregar para Atualizar",
-    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "Lembre que este documento só será salvo neste computador. Caso queira uma maneira de armazenar documentos e acessá-los de onde quer que você esteja, experimente nosso plano Pro com hospedagem ilimitada de gráficos e muito mais! Por apenas US$ 3/mês!",
     "Remove Image Watermark": "Remover marca d'água da imagem",
     Rename: "Renomear",
     Reset: "Resetar",
@@ -340,6 +336,7 @@
     Style: "Estilo",
     "Style Classes": "Classes de Estilo",
     Submit: "Enviar",
+    Subscribe: "Inscrever-se",
     Subscription: "Inscrição",
     "Subscription will end": "Inscrição acabará",
     "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
@@ -372,8 +369,12 @@
     "There are no edges in this data": "Não há arestas nestes dados",
     "This action cannot be undone.": "Esta ação não pode ser desfeita.",
     "This app works by typing": "Este aplicativo funciona por digitação",
+    "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!":
+      "Este documento é salvo apenas neste computador. Se você quiser uma maneira de armazenar documentos e acessá-los de qualquer lugar, experimente nosso plano Pro por apenas US$ 3/mês!",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "Esta funcionalidade está disponível apenas para usuários Pro. <0>Torne-se um usuário Pro</0> para desbloqueá-la.",
+    "This is a temporary chart, it will be deleted when you clear your browser cache.":
+      "Este é um gráfico temporário, ele será excluído quando você limpar o cache do seu navegador.",
     Tip: "Dica",
     "To fix this change one of the edge IDs":
       "Para corrigir isso, altere um dos IDs de borda",
@@ -397,6 +398,8 @@
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Libere sua criatividade e simplifique seu fluxo de trabalho com o Flowchart Fun Pro - a partir de apenas $ 3 / mês!",
     "Update Email": "Atualizar e-mail",
+    "Upgrade to Pro": "Atualizar para Pro",
+    "Upload your File": "Faça o upload do seu arquivo",
     "Use AI to create flowcharts from data sets or algorithms":
       "Use IA para criar fluxogramas a partir de conjuntos de dados ou algoritmos.",
     "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
@@ -418,8 +421,6 @@
     "View on Github": "Visualizar no Github",
     "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
       "água evapora da superfície da Terra, sobe para a atmosfera e volta como precipitação. Esta água então corre para rios, lagos e oceanos, onde novamente evapora e é reciclada de volta para a atmosfera.",
-    "We use cookies to keep you logged in.":
-      "Nós usamos cookies para manter você logado.",
     "We use magic links to log you in. Enter your email below to get started.":
       "Nós usamos links mágicos para logar você. Digite seu email abaixo para começar.",
     "Welcome to Flowchart Fun Pro!": "Bem-vindo ao Flowchart Fun Pro!",
@@ -443,8 +444,8 @@
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "Você está quase lá! Apenas mais um passo para destravar o potencial total do <0>Flowchart Fun Pro</0>. Insira os detalhes do pagamento abaixo para completar sua assinatura e começar a criar fluxogramas incríveis hoje.",
     "Your Charts": "Seus Gráficos",
-    "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
-      "Sua inscrição não está mais ativa. Se você quer criar e editar seus diagramas hospedados torne-se um(a) patrocinador(a).",
+    "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro.":
+      "Sua assinatura não está mais ativa. Se você deseja criar e editar gráficos permanentes, atualize para o Pro.",
     "Zoom In": "Zoom In",
     "Zoom Out": "Diminuir o zoom",
     "any text: before a colon creates a label":

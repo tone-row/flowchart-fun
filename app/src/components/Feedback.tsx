@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 import { mail } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
+import { Button2, Input, Notice, Page, Textarea } from "../ui/Shared";
 import { Label, PageTitle, SectionTitle } from "../ui/Typography";
-import { Button, Input, Notice, Textarea } from "./Shared";
 import Spinner from "./Spinner";
 
 type FormData = { from: string; text: string };
@@ -38,10 +38,7 @@ export default function Feedback() {
     [send]
   );
   return (
-    <div
-      className="grid gap-12 w-full max-w-[700px] mx-auto pt-16 px-4 content-start"
-      data-testid="feedback"
-    >
+    <Page data-testid="feedback">
       <header className="grid gap-4">
         <PageTitle className="text-center">
           <Trans>Send us Feedback</Trans>
@@ -76,12 +73,9 @@ export default function Feedback() {
               data-testid="message"
             />
           </section>
-          <Button
-            type="submit"
-            style={{ justifySelf: "center" }}
-            disabled={!isValid}
-            text={t`Submit`}
-          />
+          <Button2 disabled={!isValid} color="blue">
+            <Trans>Submit</Trans>
+          </Button2>
           {error instanceof Error && (
             <div className="justify-self-center">
               <Notice>
@@ -96,7 +90,7 @@ export default function Feedback() {
           <Spinner className="text-blue-400 dark:text-blue-500" />
         </div>
       )}
-    </div>
+    </Page>
   );
 }
 

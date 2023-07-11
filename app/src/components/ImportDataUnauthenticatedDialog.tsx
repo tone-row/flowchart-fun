@@ -2,16 +2,18 @@ import { Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Database, X } from "phosphor-react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import { Content, Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
+import { Button2 } from "../ui/Shared";
 
 export function ImportDataUnauthenticatedDialog() {
   useEffect(() => {
     // preload /images/import-data.png
     new Image().src = "/images/import-data.png";
   }, []);
+  const { push } = useHistory();
   return (
     <Dialog.Root modal>
       <Dialog.Trigger asChild>
@@ -37,7 +39,7 @@ export function ImportDataUnauthenticatedDialog() {
           </Dialog.Title>
           <Dialog.Description asChild>
             <div className="grid gap-3 p-8 pt-4 text-left">
-              <p className="leading-5 text-sm text-neutral-500 dark:text-neutral-400">
+              <p className="leading-5 text-xs text-neutral-500 dark:text-neutral-400">
                 <Trans>
                   Import data from any CSV file and map it to a new flowchart.
                   This is a great way to import data from other sources like
@@ -48,12 +50,15 @@ export function ImportDataUnauthenticatedDialog() {
                   Fun Pro for just $3/month or $30/year.
                 </Trans>
               </p>
-              <Link
-                to="/pricing"
-                className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4"
+              <Button2
+                color="blue"
+                className="mt-4"
+                onClick={() => {
+                  push("/pricing");
+                }}
               >
                 <Trans>Learn More</Trans>
-              </Link>
+              </Button2>
             </div>
           </Dialog.Description>
           <Dialog.Close className="absolute top-4 right-4 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">

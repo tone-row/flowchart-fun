@@ -43,7 +43,7 @@ export const elkDirections: SelectOption[] = [
   { label: () => t`Bottom to Top`, value: "UP" },
 ];
 
-export const themes: SelectOption[] = [
+const themes: SelectOption[] = [
   { label: () => t`Light`, value: "original" },
   { label: () => t`Dark`, value: "original-dark" },
   { label: () => t`Eggs`, value: "eggs" },

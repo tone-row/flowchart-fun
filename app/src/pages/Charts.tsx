@@ -15,7 +15,6 @@ import { useMutation } from "react-query";
 import { Link, useHistory } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
-import { DialogButton } from "../components/DialogButton";
 import Loading from "../components/Loading";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { titleToLocalStorageKey } from "../lib/helpers";
@@ -28,10 +27,11 @@ import {
 } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
 import { Overlay } from "../ui/Dialog";
+import { Button2, Page } from "../ui/Shared";
 import { Description, PageTitle, SectionTitle } from "../ui/Typography";
 // Keep these in sync (55px)
 const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
-const leftMargin = "sm:mx-[55px]";
+const leftMargin = "sm:ml-[55px]";
 
 export default function Charts() {
   const isCustomer = useIsValidCustomer();
@@ -93,14 +93,18 @@ export default function Charts() {
     }
   );
   return (
-    <div className="px-4 py-16 max-w-3xl w-full mx-auto grid gap-16 content-start">
+    <Page>
       <header className="flex items-center justify-center gap-6">
         <PageTitle>
           <Trans>Your Charts</Trans>
         </PageTitle>
-        <DialogButton as={Link} to="/n" icon={Plus} color="inverted">
+        <Button2
+          leftIcon={<Plus size={16} />}
+          onClick={() => push("/n")}
+          color="blue"
+        >
           <Trans>New</Trans>
-        </DialogButton>
+        </Button2>
       </header>
       <section className="grid gap-12">
         <LargeFolder
@@ -118,7 +122,7 @@ export default function Charts() {
               <Loading />
             </div>
           ) : isCustomer ? (
-            <div>
+            <div className="grid gap-1">
               {persistentCharts?.map((chart) => (
                 <ChartLink
                   key={chart.id}
@@ -154,7 +158,7 @@ export default function Charts() {
             </Trans>
           }
         >
-          <div>
+          <div className="grid gap-1">
             {temporaryCharts.map((chart) => (
               <ChartLink
                 key={chart}
@@ -173,7 +177,7 @@ export default function Charts() {
           </div>
         </LargeFolder>
       </section>
-    </div>
+    </Page>
   );
 }
 
@@ -189,7 +193,7 @@ const LargeFolder = memo(function LargeFolder({
   const [isOpen, setIsOpen] = useState(true);
   return (
     <Collapsible.Root open={isOpen} onOpenChange={setIsOpen}>
-      <section className="grid gap-4">
+      <section className="grid gap-4 md:-ml-[55px]">
         <Collapsible.Trigger asChild>
           <button
             className={`grid grid-auto-cols items-start text-left w-full ${leftColumnGrid} focus:shadow-none`}
@@ -249,10 +253,8 @@ const ChartLink = memo(function ChartLink({
 }) {
   return (
     <div
-      className={`chart-link rounded grid grid-flow-col grid-cols-[minmax(0,1fr)_auto] items-center ${
-        isCurrent
-          ? "bg-blue-50 hover:bg-blue-100 dark:bg-blue-900 dark:hover:bg-blue-800"
-          : "hover:bg-neutral-200 dark:hover:bg-neutral-900"
+      className={`chart-link border dark:border-neutral-700 rounded grid grid-flow-col grid-cols-[minmax(0,1fr)_auto] items-center ${
+        isCurrent ? "bg-blue-50 dark:bg-blue-900" : ""
       }`}
     >
       <Link to={href} className="py-3 px-4">
@@ -267,7 +269,7 @@ const ChartLink = memo(function ChartLink({
           {children}
         </div>
       </Link>
-      <div className="p-2 pr-2 flex items-center chart-link-buttons sm:opacity-0">
+      <div className="p-2 pr-2 flex items-center">
         <button
           className="opacity-25 sm:opacity-50 hover:opacity-100 rounded transition-opacity p-1 focus:shadow-none focus:bg-neutral-300/25"
           aria-label={`Copy flowchart: ${title}`}
@@ -295,12 +297,16 @@ const ChartLink = memo(function ChartLink({
               </Dialog.Description>
               <div className="flex gap-2 mt-6 justify-self-end">
                 <Dialog.Close asChild>
-                  <DialogButton icon={X}>Cancel</DialogButton>
+                  <Button2 leftIcon={<X size={16} />}>Cancel</Button2>
                 </Dialog.Close>
                 <Dialog.Close asChild>
-                  <DialogButton icon={Trash} color="red" onClick={handleDelete}>
+                  <Button2
+                    leftIcon={<Trash size={16} />}
+                    color="red"
+                    onClick={handleDelete}
+                  >
                     Delete
-                  </DialogButton>
+                  </Button2>
                 </Dialog.Close>
               </div>
             </Dialog.Content>

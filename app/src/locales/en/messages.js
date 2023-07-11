@@ -1,8 +1,6 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    "$3 / Month": "$3 / Month",
     "$3 per month": "$3 per month",
-    "$30 / Year": "$30 / Year",
     "$30 per year": "$30 per year",
     "(before a colon creates a label)": "(before a colon creates a label)",
     "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>":
@@ -23,17 +21,18 @@
       " directly.",
     ],
     Appearance: "Appearance",
+    "Apply Style": "Apply Style",
     Attributes: "Attributes",
     "Auto-Layouts": "Auto-Layouts",
     "Back To Editor": "Back To Editor",
     "Basic Flowchart": "Basic Flowchart",
     "Become a Github Sponsor": "Become a Github Sponsor",
     "Become a Pro User": "Become a Pro User",
-    "Become a Sponsor": "Become a Sponsor",
     "Begin with a simple example showing how <0>Flowchart Fun</0> works.":
       "Begin with a simple example showing how <0>Flowchart Fun</0> works.",
     Blank: "Blank",
     Blog: "Blog",
+    "Book a Meeting": "Book a Meeting",
     Border: "Border",
     "Bottom to Top": "Bottom to Top",
     Breadthfirst: "Breadthfirst",
@@ -45,8 +44,8 @@
     "Change Email Address": "Change Email Address",
     Changelog: "Changelog",
     Charts: "Charts",
-    "Check your email for a link to log in. You can close this window.":
-      "Check your email for a link to log in. You can close this window.",
+    "Check your email for a link to log in.<0/>You can close this window.":
+      "Check your email for a link to log in.<0/>You can close this window.",
     "Choose a Theme": "Choose a Theme",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .",
@@ -74,15 +73,16 @@
     "Containers are nodes that contain other nodes. They are declared using curly braces.":
       "Containers are nodes that contain other nodes. They are declared using curly braces.",
     Continue: "Continue",
+    "Convert this to a hosted chart?": "Convert this to a hosted chart?",
     "Convert to hosted chart?": "Convert to hosted chart?",
     Copy: "Copy",
     "Copy PNG Image": "Copy PNG Image",
     "Copy SVG Code": "Copy SVG Code",
     "Copy your mermaid.js code or open it directly in the mermaid.js live editor.":
       "Copy your mermaid.js code or open it directly in the mermaid.js live editor.",
-    Create: "Create",
     "Create Flowcharts from a Prompt with AI":
       "Create Flowcharts from a Prompt with AI",
+    "Create New Flowchart": "Create New Flowchart",
     "Create a New Flowchart": "Create a New Flowchart",
     "Create professional-quality visual aids for presentations or training materials":
       "Create professional-quality visual aids for presentations or training materials",
@@ -169,8 +169,6 @@
     Grid: "Grid",
     "Have complex questions or issues? We're here to help.":
       "Have complex questions or issues? We're here to help.",
-    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "Help",
     History: "History",
     Home: "Home",
@@ -216,7 +214,6 @@
     "Light Mode": "Light Mode",
     Link: "Link",
     "Load Theme": "Load Theme",
-    Loading: "Loading",
     "Loading a theme will erase any custom styles you have applied":
       "Loading a theme will erase any custom styles you have applied",
     "Log In": "Log In",
@@ -292,8 +289,6 @@
       "Referencing multiple nodes with the same assigned class",
     "Refresh Page": "Refresh Page",
     "Reload to Update": "Reload to Update",
-    "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!":
-      "Remember that this document is only saved on this computer. If you want a way to store documents and access them wherever you go, then try our Pro plan with unlimited hosted charts, and more! For only $3/month!",
     "Remove Image Watermark": "Remove Image Watermark",
     Rename: "Rename",
     Reset: "Reset",
@@ -338,6 +333,7 @@
     Style: "Style",
     "Style Classes": "Style Classes",
     Submit: "Submit",
+    Subscribe: "Subscribe",
     Subscription: "Subscription",
     "Subscription will end": "Subscription will end",
     "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration":
@@ -370,8 +366,12 @@
     "There are no edges in this data": "There are no edges in this data",
     "This action cannot be undone.": "This action cannot be undone.",
     "This app works by typing": "This app works by typing",
+    "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!":
+      "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.",
+    "This is a temporary chart, it will be deleted when you clear your browser cache.":
+      "This is a temporary chart, it will be deleted when you clear your browser cache.",
     Tip: "Tip",
     "To fix this change one of the edge IDs":
       "To fix this change one of the edge IDs",
@@ -395,6 +395,8 @@
     "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!":
       "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!",
     "Update Email": "Update Email",
+    "Upgrade to Pro": "Upgrade to Pro",
+    "Upload your File": "Upload your File",
     "Use AI to create flowcharts from data sets or algorithms":
       "Use AI to create flowcharts from data sets or algorithms",
     "Use AI to generate a flowchart from a prompt. <0>Learn More</0>":
@@ -416,8 +418,6 @@
     "View on Github": "View on Github",
     "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.":
       "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.",
-    "We use cookies to keep you logged in.":
-      "We use cookies to keep you logged in.",
     "We use magic links to log you in. Enter your email below to get started.":
       "We use magic links to log you in. Enter your email below to get started.",
     "Welcome to Flowchart Fun Pro!": "Welcome to Flowchart Fun Pro!",
@@ -441,8 +441,8 @@
     "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.":
       "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today.",
     "Your Charts": "Your Charts",
-    "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.":
-      "Your subscription is no longer active. If you want to create and edit hosted charts become a sponsor.",
+    "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro.":
+      "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro.",
     "Zoom In": "Zoom In",
     "Zoom Out": "Zoom Out",
     "any text: before a colon creates a label":

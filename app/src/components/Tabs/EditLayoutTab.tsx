@@ -1,6 +1,8 @@
 import { t, Trans } from "@lingui/macro";
 import produce from "immer";
+import { Palette } from "phosphor-react";
 import { FaRegSnowflake } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
 
 import { GraphOptionsObject } from "../../lib/constants";
 import { defaultLayout, getLayout } from "../../lib/getLayout";
@@ -9,10 +11,10 @@ import { hasOwnProperty } from "../../lib/helpers";
 import { useIsValidSponsor } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { unfreezeDoc, useIsFrozen } from "../../lib/useIsFrozen";
+import { BasicSelect } from "../../ui/Select";
+import { Button2 } from "../../ui/Shared";
 import styles from "./EditLayoutTab.module.css";
 import {
-  CustomSelect,
-  LargeLink,
   OptionWithLabel,
   Range,
   TabOptionsGrid,
@@ -37,8 +39,6 @@ export function EditLayoutTab() {
   ) {
     layoutName = layout.name;
   }
-  const layoutNiceName =
-    layouts.find((l) => l.value === layoutName)?.label() ?? "???";
 
   const isFrozen = useIsFrozen();
 
@@ -52,8 +52,6 @@ export function EditLayoutTab() {
   ) {
     direction = layout.rankDir;
   }
-  const directionNiceName =
-    directions.find((l) => l.value === direction)?.label() ?? "???";
 
   let spacingFactor = defaultLayout.spacingFactor;
   if (
@@ -65,15 +63,15 @@ export function EditLayoutTab() {
     spacingFactor = layout.spacingFactor;
   }
 
+  const { push } = useHistory();
+
   if (isFrozen) return <FrozenLayout />;
 
   return (
     <WithLowerChild>
       <TabOptionsGrid>
         <OptionWithLabel label={t`Layout`}>
-          <CustomSelect
-            niceName={layoutNiceName}
-            options={layouts}
+          <BasicSelect
             value={layoutName}
             onValueChange={(name) => {
               useDoc.setState(
@@ -89,13 +87,21 @@ export function EditLayoutTab() {
                 "EditLayoutTab/layout"
               );
             }}
+            options={layouts
+              .filter((l) => l?.sponsorOnly === undefined || isValidSponsor)
+              .map((l) => ({
+                value: l.value,
+                label: l.label(),
+              }))}
           />
         </OptionWithLabel>
         {["dagre"].includes(layoutName) && (
           <OptionWithLabel label={t`Direction`}>
-            <CustomSelect
-              niceName={directionNiceName}
-              options={directions}
+            <BasicSelect
+              options={directions.map((d) => ({
+                value: d.value,
+                label: d.label(),
+              }))}
               value={direction}
               onValueChange={(direction) => {
                 useDoc.setState(
@@ -140,7 +146,7 @@ export function EditLayoutTab() {
                 value={spacingFactor}
                 step={0.1}
                 min={0.25}
-                className={styles.numberInput}
+                className="text-xs w-16 mr-2 pl-3 dark:bg-[var(--color-background)] dark:text-white"
                 onChange={(e) => {
                   useDoc.setState(
                     (state) => {
@@ -183,9 +189,15 @@ export function EditLayoutTab() {
         )}
       </TabOptionsGrid>
       {!isValidSponsor && (
-        <LargeLink href="/pricing">
+        <Button2
+          color="blue"
+          size="md"
+          rightIcon={<Palette size={20} />}
+          className="ml-5 mr-1"
+          onClick={() => push("/pricing")}
+        >
           <Trans>Get More Layouts</Trans>
-        </LargeLink>
+        </Button2>
       )}
     </WithLowerChild>
   );

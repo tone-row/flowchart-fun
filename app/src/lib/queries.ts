@@ -254,16 +254,6 @@ export async function getHostedChart(id?: string) {
   return data[0];
 }
 
-export function useChart(id: string) {
-  return useQuery(["useChart", id], () => getHostedChart(id), {
-    enabled: Boolean(id),
-    refetchOnMount: true,
-    staleTime: 2000,
-    cacheTime: 2000,
-    suspense: true,
-  });
-}
-
 export async function updateChartText(chart: string, id?: string) {
   if (!id) return;
   if (!supabase) return;
@@ -323,21 +313,6 @@ export function createSubscription({
         return error;
       })
   );
-}
-
-export async function createCustomer(email: string) {
-  const response = await fetch("/api/create-customer", {
-    method: "post",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-    }),
-  });
-  if (!response.ok) throw new Error("Unable to connect");
-  const customerSubscriptionOrError = await response.json();
-  return customerSubscriptionOrError;
 }
 
 /**

@@ -1,6 +1,6 @@
-import { Box } from "../slang";
+import "../pages/post/Post.css";
+
 import { PageTitle } from "../ui/Typography";
-import styles from "./InfoHeader.module.css";
 import { OnlyInEnglish } from "./OnlyInEnglish";
 
 export function InfoHeader({
@@ -11,20 +11,16 @@ export function InfoHeader({
   description?: string;
 }) {
   return (
-    <Box
-      as="header"
-      gap={4}
-      items="center"
-      content="start normal"
-      className={styles.InfoHeader}
-    >
-      <PageTitle>{title}</PageTitle>
+    <header className="grid gap-4 text-center">
+      <div className="flex gap-3 items-center justify-center">
+        <PageTitle>{title}</PageTitle>
+        <OnlyInEnglish />
+      </div>
       {description && (
-        <p className="text-blue-400 dark:text-blue-300 text-lg font-bold">
+        <p className="text-center text-neutral-500 dark:text-neutral-400">
           {description}
         </p>
       )}
-      <OnlyInEnglish />
-    </Box>
+    </header>
   );
 }
