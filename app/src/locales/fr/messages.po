@@ -169,7 +169,7 @@ msgstr "Graphiques"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "Vérifiez votre e-mail pour un lien de connexion. Vous pouvez fermer cette fenêtre."
 
-#: src/components/ThemePicker.tsx:67
+#: src/components/ThemePicker.tsx:68
 msgid "Choose a Theme"
 msgstr "Choisir un thème"
 
@@ -205,7 +205,7 @@ msgstr "Effacer le texte?"
 msgid "Click on \\nLearn Syntax\\nto learn more"
 msgstr "Cliquez sur \\nApprendre la syntaxe\\npour en savoir plus."
 
-#: src/components/ThemePicker.tsx:70
+#: src/components/ThemePicker.tsx:71
 msgid "Click to preview"
 msgstr "Cliquez pour prévisualiser"
 
@@ -523,12 +523,13 @@ msgstr "Extra Large"
 msgid "Extract"
 msgstr "Extrait"
 
+#: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:126
 #: src/components/Header.tsx:365
 msgid "Feedback"
 msgstr "Commentaire"
 
-#: src/components/GraphFloatingMenu.tsx:50
+#: src/components/GraphFloatingMenu.tsx:55
 msgid "Fit Graph"
 msgstr "Ajuster le graphique"
 
@@ -722,12 +723,12 @@ msgstr "Mode lumineux"
 msgid "Link"
 msgstr "Lien"
 
-#: src/components/ThemePicker.tsx:54
-#: src/components/ThemePicker.tsx:108
+#: src/components/ThemePicker.tsx:55
+#: src/components/ThemePicker.tsx:109
 msgid "Load Theme"
 msgstr "Charger le thème"
 
-#: src/components/ThemePicker.tsx:89
+#: src/components/ThemePicker.tsx:90
 msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "Charger un thème effacera tous les styles personnalisés que vous avez appliqués"
 
@@ -997,7 +998,7 @@ msgstr "Supprimer le filigrane de l'image"
 msgid "Rename"
 msgstr "Renommer"
 
-#: src/components/GraphFloatingMenu.tsx:54
+#: src/components/GraphFloatingMenu.tsx:59
 msgid "Reset"
 msgstr "Réinitialiser"
 
@@ -1047,9 +1048,9 @@ msgstr "Économisez du temps et simplifiez votre flux de travail en important de
 msgid "Select your plan!"
 msgstr "Sélectionnez votre plan !"
 
-#: src/components/Feedback.tsx:44
-msgid "Send us Feedback"
-msgstr "Envoyez-nous vos commentaires"
+#: src/components/GraphFloatingMenu.tsx:78
+msgid "Send Feedback"
+msgstr "Envoyer des commentaires"
 
 #: src/components/Header.tsx:176
 #: src/components/Header.tsx:390
@@ -1307,7 +1308,7 @@ msgstr "Deux nœuds ont le même ID"
 msgid "Type"
 msgstr "Type"
 
-#: src/components/GraphFloatingMenu.tsx:64
+#: src/components/GraphFloatingMenu.tsx:69
 #: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "Débloquer"
@@ -1432,11 +1433,11 @@ msgstr "Vos diagrammes"
 msgid "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro."
 msgstr "Votre abonnement n'est plus actif. Si vous souhaitez créer et modifier des graphiques permanents, passez à Pro."
 
-#: src/components/GraphFloatingMenu.tsx:44
+#: src/components/GraphFloatingMenu.tsx:52
 msgid "Zoom In"
 msgstr "Zoomer"
 
-#: src/components/GraphFloatingMenu.tsx:39
+#: src/components/GraphFloatingMenu.tsx:49
 msgid "Zoom Out"
 msgstr "Zoomer vers l'extérieur"
 

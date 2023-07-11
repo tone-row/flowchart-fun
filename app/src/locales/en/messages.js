@@ -304,7 +304,7 @@
     "Save time and streamline your workflow by importing data from other sources":
       "Save time and streamline your workflow by importing data from other sources",
     "Select your plan!": "Select your plan!",
-    "Send us Feedback": "Send us Feedback",
+    "Send Feedback": "Send Feedback",
     Settings: "Settings",
     Shape: "Shape",
     "Sign Up": "Sign Up",

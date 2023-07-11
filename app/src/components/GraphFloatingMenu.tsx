@@ -1,17 +1,7 @@
 import { t, Trans } from "@lingui/macro";
-import {
-  ArrowsClockwise,
-  Chat,
-  MagnifyingGlassMinus,
-  MagnifyingGlassPlus,
-  Minus,
-  PaperPlaneTilt,
-  Plus,
-  SquareLogo,
-} from "phosphor-react";
+import { ArrowsClockwise, Minus, Plus, Square } from "phosphor-react";
 import { ReactNode, useCallback } from "react";
 import { FaRegSnowflake } from "react-icons/fa";
-import { MdFitScreen } from "react-icons/md";
 import { useHistory } from "react-router-dom";
 
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
@@ -53,7 +43,7 @@ export function GraphFloatingMenu() {
         <Plus size={16} />
       </CustomIconButton>
       <CustomIconButton onClick={fitGraph} label={t`Fit Graph`}>
-        <SquareLogo size={16} />
+        <Square size={16} />
       </CustomIconButton>
       <CustomIconButton
         label={t`Reset`}

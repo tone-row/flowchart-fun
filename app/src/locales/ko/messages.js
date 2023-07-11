@@ -298,7 +298,7 @@
     "Save time and streamline your workflow by importing data from other sources":
       "다른 소스에서 데이터를 가져와 작업흐름을 최적화하여 시간을 절약하세요.",
     "Select your plan!": "귀하의 계획을 선택하세요!",
-    "Send us Feedback": "우리에게 피드백 보내기",
+    "Send Feedback": "피드백 보내기",
     Settings: "설정",
     Shape: "모양 ",
     "Sign Up": "가입",

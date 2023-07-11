@@ -305,7 +305,7 @@
     "Save time and streamline your workflow by importing data from other sources":
       "अन्य स्रोतों से डेटा आयात करके अपनी व्यवस्था को समय बचाएं और स्ट्रीमलाइन करें",
     "Select your plan!": "अपना योजना चुनें!",
-    "Send us Feedback": "हमें प्रतिक्रिया भेजें",
+    "Send Feedback": "प्रतिक्रिया भेजें",
     Settings: "सेटिंग",
     Shape: "आकृति",
     "Sign Up": "साइन अप",

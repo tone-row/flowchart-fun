@@ -169,7 +169,7 @@ msgstr "चार्ट"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "लॉग इन करने के लिए अपने ईमेल की जाँच करें। आप इस विंडो को बंद कर सकते हैं।"
 
-#: src/components/ThemePicker.tsx:67
+#: src/components/ThemePicker.tsx:68
 msgid "Choose a Theme"
 msgstr "एक थीम चुनें"
 
@@ -205,7 +205,7 @@ msgstr "पाठ साफ़ करें?"
 msgid "Click on \\nLearn Syntax\\nto learn more"
 msgstr "\\nसिंटैक्स सीखने के लिए \\nपर क्लिक करें\\n"
 
-#: src/components/ThemePicker.tsx:70
+#: src/components/ThemePicker.tsx:71
 msgid "Click to preview"
 msgstr "पूर्वावलोकन के लिए क्लिक करें"
 
@@ -523,12 +523,13 @@ msgstr "अति बड़ा"
 msgid "Extract"
 msgstr "निकालना"
 
+#: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:126
 #: src/components/Header.tsx:365
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
-#: src/components/GraphFloatingMenu.tsx:50
+#: src/components/GraphFloatingMenu.tsx:55
 msgid "Fit Graph"
 msgstr "फिट ग्राफ"
 
@@ -722,12 +723,12 @@ msgstr "लाइट मोड"
 msgid "Link"
 msgstr "लिंक"
 
-#: src/components/ThemePicker.tsx:54
-#: src/components/ThemePicker.tsx:108
+#: src/components/ThemePicker.tsx:55
+#: src/components/ThemePicker.tsx:109
 msgid "Load Theme"
 msgstr "थीम लोड करें"
 
-#: src/components/ThemePicker.tsx:89
+#: src/components/ThemePicker.tsx:90
 msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "थीम लोड करने से आपने अपने कस्टम स्टाइल को मिटा दिया होगा"
 
@@ -997,7 +998,7 @@ msgstr "छवि वॉटरमार्क हटाएं"
 msgid "Rename"
 msgstr "फिर से नाम बदलें"
 
-#: src/components/GraphFloatingMenu.tsx:54
+#: src/components/GraphFloatingMenu.tsx:59
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -1047,9 +1048,9 @@ msgstr "अन्य स्रोतों से डेटा आयात क�
 msgid "Select your plan!"
 msgstr "अपना योजना चुनें!"
 
-#: src/components/Feedback.tsx:44
-msgid "Send us Feedback"
-msgstr "हमें प्रतिक्रिया भेजें"
+#: src/components/GraphFloatingMenu.tsx:78
+msgid "Send Feedback"
+msgstr "प्रतिक्रिया भेजें"
 
 #: src/components/Header.tsx:176
 #: src/components/Header.tsx:390
@@ -1307,7 +1308,7 @@ msgstr "दो नोड उसी आईडी के हैं"
 msgid "Type"
 msgstr "प्रकार"
 
-#: src/components/GraphFloatingMenu.tsx:64
+#: src/components/GraphFloatingMenu.tsx:69
 #: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "अनफ़्रीज़"
@@ -1432,11 +1433,11 @@ msgstr "आपके चार्ट"
 msgid "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro."
 msgstr "आपका सदस्यता अब निष्क्रिय है। यदि आप स्थायी चार्ट बनाना और संपादित करना चाहते हैं, तो प्रो अपग्रेड करें।"
 
-#: src/components/GraphFloatingMenu.tsx:44
+#: src/components/GraphFloatingMenu.tsx:52
 msgid "Zoom In"
 msgstr "ज़ूम इन करें"
 
-#: src/components/GraphFloatingMenu.tsx:39
+#: src/components/GraphFloatingMenu.tsx:49
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 
