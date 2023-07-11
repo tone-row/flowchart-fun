@@ -6,6 +6,7 @@ import { useQuery } from "react-query";
 import { create } from "zustand";
 
 import { validThemes } from "../lib/graphOptions";
+import { Button2 } from "../ui/Shared";
 
 export const usePreviewTheme = create<{ cytoscapeStyle?: string }>(
   (_set) => ({})
@@ -85,14 +86,14 @@ export function ThemePicker({
               </button>
             ))}
           </div>
-          <p className="px-1 text-[12px] text-neutral-700 dark:text-neutral-200 mt-2 leading-normal">
+          <p className="px-1 text-[12px] text-neutral-700 dark:text-neutral-200 my-2 leading-normal">
             <Trans>
               Loading a theme will erase any custom styles you have applied
             </Trans>
           </p>
-          <button
+          <Button2
             disabled={!preview}
-            className="text-sm font-bold p-3 rounded w-full mt-2 bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+            color="blue"
             onClick={() => {
               const cytoscapeStyle = usePreviewTheme.getState().cytoscapeStyle;
               setIsOpen(false);
@@ -106,7 +107,7 @@ export function ThemePicker({
             }}
           >
             <Trans>Load Theme</Trans>
-          </button>
+          </Button2>
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>
