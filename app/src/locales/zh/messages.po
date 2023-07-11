@@ -169,7 +169,7 @@ msgstr "图表"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/components/ThemePicker.tsx:67
+#: src/components/ThemePicker.tsx:68
 msgid "Choose a Theme"
 msgstr "选择一个主题"
 
@@ -205,7 +205,7 @@ msgstr "清除文字？"
 msgid "Click on \\nLearn Syntax\\nto learn more"
 msgstr "点击 \\n学习语法\\n了解更多"
 
-#: src/components/ThemePicker.tsx:70
+#: src/components/ThemePicker.tsx:71
 msgid "Click to preview"
 msgstr "点击预览"
 
@@ -523,12 +523,13 @@ msgstr "超大"
 msgid "Extract"
 msgstr "提取"
 
+#: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:126
 #: src/components/Header.tsx:365
 msgid "Feedback"
 msgstr "反馈"
 
-#: src/components/GraphFloatingMenu.tsx:50
+#: src/components/GraphFloatingMenu.tsx:55
 msgid "Fit Graph"
 msgstr "适合图表"
 
@@ -722,12 +723,12 @@ msgstr "浅色模式"
 msgid "Link"
 msgstr "链接"
 
-#: src/components/ThemePicker.tsx:54
-#: src/components/ThemePicker.tsx:108
+#: src/components/ThemePicker.tsx:55
+#: src/components/ThemePicker.tsx:109
 msgid "Load Theme"
 msgstr "加载主题"
 
-#: src/components/ThemePicker.tsx:89
+#: src/components/ThemePicker.tsx:90
 msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "加载主题将擦除您应用的任何自定义样式"
 
@@ -997,7 +998,7 @@ msgstr "去除图片水印"
 msgid "Rename"
 msgstr "重命名"
 
-#: src/components/GraphFloatingMenu.tsx:54
+#: src/components/GraphFloatingMenu.tsx:59
 msgid "Reset"
 msgstr "重置"
 
@@ -1047,9 +1048,9 @@ msgstr "通過從其他來源導入數據來節省時間並簡化您的工作流
 msgid "Select your plan!"
 msgstr "選擇您的計劃！"
 
-#: src/components/Feedback.tsx:44
-msgid "Send us Feedback"
-msgstr "给我们反馈"
+#: src/components/GraphFloatingMenu.tsx:78
+msgid "Send Feedback"
+msgstr "发送反馈"
 
 #: src/components/Header.tsx:176
 #: src/components/Header.tsx:390
@@ -1307,7 +1308,7 @@ msgstr "两个节点有相同的ID"
 msgid "Type"
 msgstr "类型"
 
-#: src/components/GraphFloatingMenu.tsx:64
+#: src/components/GraphFloatingMenu.tsx:69
 #: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "解冻"
@@ -1432,11 +1433,11 @@ msgstr "您的图表"
 msgid "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro."
 msgstr "您的订阅已不再有效。如果您想创建和编辑永久图表，请升级到Pro。"
 
-#: src/components/GraphFloatingMenu.tsx:44
+#: src/components/GraphFloatingMenu.tsx:52
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/components/GraphFloatingMenu.tsx:39
+#: src/components/GraphFloatingMenu.tsx:49
 msgid "Zoom Out"
 msgstr "縮小"
 

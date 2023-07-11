@@ -294,7 +294,7 @@
     "Save time and streamline your workflow by importing data from other sources":
       "通過從其他來源導入數據來節省時間並簡化您的工作流程",
     "Select your plan!": "選擇您的計劃！",
-    "Send us Feedback": "给我们反馈",
+    "Send Feedback": "发送反馈",
     Settings: "设置",
     Shape: "形状",
     "Sign Up": "注册",
