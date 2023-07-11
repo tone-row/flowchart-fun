@@ -71,7 +71,7 @@ msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접
 msgid "Appearance"
 msgstr "외관"
 
-#: src/components/Tabs/EditStyleTab.tsx:152
+#: src/components/Tabs/EditStyleTab.tsx:148
 msgid "Apply Style"
 msgstr "스타일 적용"
 
@@ -133,8 +133,8 @@ msgid "Breadthfirst"
 msgstr "폭 우선"
 
 #: src/components/ClearTextButton.tsx:26
-#: src/components/ImportDataDialog.tsx:721
-#: src/components/RenameButton.tsx:155
+#: src/components/ImportDataDialog.tsx:720
+#: src/components/RenameButton.tsx:153
 #: src/pages/Account.tsx:295
 #: src/pages/Account.tsx:308
 #: src/pages/Account.tsx:381
@@ -165,9 +165,9 @@ msgstr "변경 로그"
 msgid "Charts"
 msgstr "차트"
 
-#: src/pages/LogIn.tsx:42
-msgid "Check your email for a link to log in. You can close this window."
-msgstr "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다."
+#: src/pages/LogIn.tsx:46
+msgid "Check your email for a link to log in.<0/>You can close this window."
+msgstr "로그인할 링크가 들어있는 이메일을 확인하세요. 이 창은 닫을 수 있습니다."
 
 #: src/components/ThemePicker.tsx:67
 msgid "Choose a Theme"
@@ -225,7 +225,7 @@ msgstr "색상"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "색상에는 빨강, 주황, 노랑, 파랑, 보라, 검정, 흰색, 회색이 포함됩니다."
 
-#: src/components/ImportDataDialog.tsx:540
+#: src/components/ImportDataDialog.tsx:539
 msgid "Column"
 msgstr "열"
 
@@ -253,14 +253,17 @@ msgstr "컨테이너"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "컨테이너는 다른 노드를 포함하는 노드입니다. 중괄호를 사용하여 선언됩니다."
 
-#: src/components/ImportDataDialog.tsx:734
+#: src/components/ImportDataDialog.tsx:733
 #: src/components/PaymentStepper.tsx:107
 #: src/components/PaymentStepper.tsx:150
 msgid "Continue"
 msgstr "계속하기"
 
 #: src/components/MightLoseSponsorTrigger.tsx:41
-#: src/components/RenameButton.tsx:123
+msgid "Convert this to a hosted chart?"
+msgstr "이것을 호스팅 된 차트로 변환할까요?"
+
+#: src/components/RenameButton.tsx:121
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
@@ -311,7 +314,7 @@ msgstr "커스텀 공유 옵션"
 msgid "Customer Portal"
 msgstr "고객 포털"
 
-#: src/components/Tabs/EditStyleTab.tsx:179
+#: src/components/Tabs/EditStyleTab.tsx:175
 msgid "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck."
 msgstr "아래의 <0>Cytoscape CSS</0>를 편집하여 테마를 사용자 정의합니다. 스타일 문서는 곧 준비될 예정입니다! 일단은 최고의 자료는 <1>Cytoscape</1> 문서입니다. 막히면 <2>Discord</2>에 문의하세요."
 
@@ -336,7 +339,7 @@ msgstr "브라우저 데이터가 지워지면 삭제됨"
 msgid "Describe the flowchart you wish to create"
 msgstr "만들려는 다이어그램 설명"
 
-#: src/components/Tabs/EditLayoutTab.tsx:97
+#: src/components/Tabs/EditLayoutTab.tsx:99
 msgid "Direction"
 msgstr "방향"
 
@@ -356,7 +359,7 @@ msgstr "본 항목을 삭제하시겠습니까?"
 msgid "Document"
 msgstr "문서"
 
-#: src/pages/LogIn.tsx:93
+#: src/pages/LogIn.tsx:99
 msgid "Don't have an account?"
 msgstr "계정이 없습니까?"
 
@@ -377,7 +380,7 @@ msgstr "PNG 다운로드"
 msgid "Download SVG"
 msgstr "SVG 다운로드"
 
-#: src/components/ImportDataDialog.tsx:250
+#: src/components/ImportDataDialog.tsx:249
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV 파일을 여기에 드래그 앤 드롭하거나 파일을 선택하려면 클릭하세요."
 
@@ -385,7 +388,7 @@ msgstr "CSV 파일을 여기에 드래그 앤 드롭하거나 파일을 선택�
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "참조를 시작하여 여러 노드로부터 엣지를 그립니다."
 
-#: src/components/ImportDataDialog.tsx:248
+#: src/components/ImportDataDialog.tsx:247
 msgid "Drop the file here ..."
 msgstr "파일을 여기에 드롭하세요 ..."
 
@@ -405,8 +408,8 @@ msgstr "가장자리 ID, 클래스, 속성"
 msgid "Edge Label"
 msgstr "가장자리 라벨"
 
-#: src/components/ImportDataDialog.tsx:470
-#: src/components/ImportDataDialog.tsx:510
+#: src/components/ImportDataDialog.tsx:469
+#: src/components/ImportDataDialog.tsx:509
 msgid "Edge Label Column"
 msgstr "가장자리 라벨 열"
 
@@ -418,20 +421,20 @@ msgstr "가장자리 스타일"
 msgid "Edge missing indentation"
 msgstr "들여쓰기가 누락된 가장자리"
 
-#: src/components/ImportDataDialog.tsx:408
+#: src/components/ImportDataDialog.tsx:407
 #: src/components/LearnSyntaxDialog.tsx:155
 msgid "Edges"
 msgstr "가장자리"
 
-#: src/components/ImportDataDialog.tsx:426
+#: src/components/ImportDataDialog.tsx:425
 msgid "Edges are declared in the same row as their source node"
 msgstr "가장자리는 소스 노드가 있는 같은 행에 선언됩니다."
 
-#: src/components/ImportDataDialog.tsx:432
+#: src/components/ImportDataDialog.tsx:431
 msgid "Edges are declared in the same row as their target node"
 msgstr "가장자리는 목표 노드가 있는 같은 행에 선언됩니다."
 
-#: src/components/ImportDataDialog.tsx:437
+#: src/components/ImportDataDialog.tsx:436
 msgid "Edges are declared in their own row"
 msgstr "가장자리는 자신의 행에 선언됩니다."
 
@@ -443,15 +446,15 @@ msgstr "라벨 앞에 ID, 클래스 및 속성도 가질 수 있습니다."
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "가장자리는 점선, 점선 또는 실선으로 스타일이 지정될 수 있습니다."
 
-#: src/components/ImportDataDialog.tsx:436
+#: src/components/ImportDataDialog.tsx:435
 msgid "Edges in Separate Rows"
 msgstr "각 행별로 간선"
 
-#: src/components/ImportDataDialog.tsx:425
+#: src/components/ImportDataDialog.tsx:424
 msgid "Edges in Source Node Row"
 msgstr "출발 노드 행에 간선"
 
-#: src/components/ImportDataDialog.tsx:431
+#: src/components/ImportDataDialog.tsx:430
 msgid "Edges in Target Node Row"
 msgstr "도착 노드 행에 간선"
 
@@ -473,7 +476,7 @@ msgstr "달걀"
 msgid "Email"
 msgstr "이메일"
 
-#: src/components/ImportDataDialog.tsx:556
+#: src/components/ImportDataDialog.tsx:555
 msgid "Empty"
 msgstr "비어 있음"
 
@@ -481,7 +484,7 @@ msgstr "비어 있음"
 msgid "Enter your email"
 msgstr "이메일을 입력하세요"
 
-#: src/components/ImportDataDialog.tsx:558
+#: src/components/ImportDataDialog.tsx:557
 msgid "Equal To"
 msgstr "같음"
 
@@ -549,7 +552,7 @@ msgstr "전체 화면"
 msgid "Futuristic"
 msgstr "미래 지향적"
 
-#: src/components/Tabs/EditLayoutTab.tsx:197
+#: src/components/Tabs/EditLayoutTab.tsx:199
 msgid "Get More Layouts"
 msgstr "더 많은 레이아웃을 보고 싶어요"
 
@@ -574,10 +577,6 @@ msgstr "그리드"
 msgid "Have complex questions or issues? We're here to help."
 msgstr "복잡한 문제가 있나요? 여기에서 도와드리겠습니다."
 
-#: src/components/MightLoseSponsorTrigger.tsx:29
-msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
-msgstr "주의! 캐시를 지우기 전에 이 문서는 클라우드에 저장 되어있지 않다는 것을 기억하시기 바랍니다. "
-
 #: src/components/Header.tsx:104
 msgid "Help"
 msgstr "도움말"
@@ -590,7 +589,7 @@ msgstr "기록"
 msgid "Home"
 msgstr "집"
 
-#: src/components/ImportDataDialog.tsx:409
+#: src/components/ImportDataDialog.tsx:408
 msgid "How are edges declared in this data?"
 msgstr "이 데이터에서 간선은 어떻게 선언됩니까?"
 
@@ -662,7 +661,7 @@ msgstr "정보"
 msgid "Instruct"
 msgstr "지시하다"
 
-#: src/components/ImportDataDialog.tsx:549
+#: src/components/ImportDataDialog.tsx:548
 msgid "Is"
 msgstr "있다"
 
@@ -679,7 +678,7 @@ msgstr "크다"
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/components/Tabs/EditLayoutTab.tsx:209
+#: src/components/Tabs/EditLayoutTab.tsx:211
 msgid "Layout is Frozen"
 msgstr "레이아웃이 고정됨"
 
@@ -734,7 +733,7 @@ msgstr "테마를 불러오면 사용자 정의 스타일이 모두 사라집니
 
 #: src/components/Header.tsx:201
 #: src/components/Header.tsx:421
-#: src/pages/LogIn.tsx:63
+#: src/pages/LogIn.tsx:69
 #: src/pages/New.tsx:263
 msgid "Log In"
 msgstr "로그인"
@@ -759,7 +758,7 @@ msgstr "공개적으로 액세스 가능하게 만들기"
 msgid "Make sure you use the same email you will use to log in."
 msgstr "로그인할 때 사용할 같은 이메일을 사용하세요."
 
-#: src/components/ImportDataDialog.tsx:386
+#: src/components/ImportDataDialog.tsx:385
 msgid "Map Data"
 msgstr "데이터 지도"
 
@@ -810,7 +809,7 @@ msgstr "새 이메일"
 msgid "Next charge"
 msgstr "다음 청구 금액"
 
-#: src/components/ImportDataDialog.tsx:420
+#: src/components/ImportDataDialog.tsx:419
 msgid "No Edges"
 msgstr "노드 없음"
 
@@ -826,7 +825,7 @@ msgstr "노드 경계 스타일"
 msgid "Node Colors"
 msgstr "노드 색상"
 
-#: src/components/ImportDataDialog.tsx:391
+#: src/components/ImportDataDialog.tsx:390
 msgid "Node ID"
 msgstr "노드 ID"
 
@@ -834,7 +833,7 @@ msgstr "노드 ID"
 msgid "Node ID, Classes, Attributes"
 msgstr "노드 ID, 클래스, 속성"
 
-#: src/components/ImportDataDialog.tsx:399
+#: src/components/ImportDataDialog.tsx:398
 #: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "노드 라벨"
@@ -851,7 +850,7 @@ msgstr "같은 줄에 노드와 포인터"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "노드는 점선, 점점선 또는 이중선으로 스타일링할 수 있으며, border-none으로 테두리를 제거할 수 있습니다."
 
-#: src/components/ImportDataDialog.tsx:557
+#: src/components/ImportDataDialog.tsx:556
 msgid "Not Empty"
 msgstr "비어 있지 않음"
 
@@ -859,7 +858,7 @@ msgstr "비어 있지 않음"
 msgid "Office Hours"
 msgstr "근무 시간"
 
-#: src/pages/LogIn.tsx:48
+#: src/pages/LogIn.tsx:54
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "가끔 마술 링크가 스팸 폴더에 도착할 수도 있습니다. 몇 분 후에도 보이지 않으면 거기를 확인하거나 새로운 링크를 요청하십시오."
 
@@ -926,7 +925,7 @@ msgstr "가격"
 msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
 msgstr "기업 사회적 책임 사업 개발 및 회사 운영 전반에 걸쳐 구현 프로세스"
 
-#: src/components/ImportDataDialog.tsx:271
+#: src/components/ImportDataDialog.tsx:270
 msgid "Processing Data"
 msgstr "데이터 처리"
 
@@ -992,9 +991,9 @@ msgstr "업데이트하려면 다시 로드하기 "
 msgid "Remove Image Watermark"
 msgstr "이미지 워터마크 제거"
 
-#: src/components/RenameButton.tsx:99
-#: src/components/RenameButton.tsx:118
-#: src/components/RenameButton.tsx:158
+#: src/components/RenameButton.tsx:97
+#: src/components/RenameButton.tsx:116
+#: src/components/RenameButton.tsx:156
 msgid "Rename"
 msgstr "이름 바꾸기"
 
@@ -1066,7 +1065,7 @@ msgstr "모양 "
 msgid "Sign Up"
 msgstr "가입"
 
-#: src/pages/LogIn.tsx:98
+#: src/pages/LogIn.tsx:104
 msgid "Sign Up Now"
 msgstr "지금 가입하세요"
 
@@ -1090,12 +1089,12 @@ msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 msgid "Source Arrow"
 msgstr "소스 화살표"
 
-#: src/components/ImportDataDialog.tsx:487
-#: src/components/ImportDataDialog.tsx:523
+#: src/components/ImportDataDialog.tsx:486
+#: src/components/ImportDataDialog.tsx:522
 msgid "Source Column"
 msgstr "소스 열"
 
-#: src/components/ImportDataDialog.tsx:497
+#: src/components/ImportDataDialog.tsx:496
 msgid "Source Delimiter"
 msgstr "소스 구분자"
 
@@ -1103,7 +1102,7 @@ msgstr "소스 구분자"
 msgid "Source/Target Arrow Shape"
 msgstr "소스/대상 화살표 모양"
 
-#: src/components/Tabs/EditLayoutTab.tsx:140
+#: src/components/Tabs/EditLayoutTab.tsx:142
 msgid "Spacing"
 msgstr "간격"
 
@@ -1115,7 +1114,7 @@ msgstr "특별한 속성"
 msgid "Start"
 msgstr "시작"
 
-#: src/components/ImportDataDialog.tsx:283
+#: src/components/ImportDataDialog.tsx:282
 msgid "Start Over"
 msgstr "처음부터 다시 시작하기"
 
@@ -1148,8 +1147,8 @@ msgid "Style Classes"
 msgstr "스타일 클래스"
 
 #: src/components/Feedback.tsx:77
-#: src/components/ImportDataDialog.tsx:583
-#: src/pages/LogIn.tsx:89
+#: src/components/ImportDataDialog.tsx:582
+#: src/pages/LogIn.tsx:95
 msgid "Submit"
 msgstr "보내다"
 
@@ -1173,12 +1172,12 @@ msgstr "공급망 분석 및 최적화: 비용 감소, 효율 향상 및 이해�
 msgid "Target Arrow"
 msgstr "타겟 화살표"
 
-#: src/components/ImportDataDialog.tsx:444
-#: src/components/ImportDataDialog.tsx:530
+#: src/components/ImportDataDialog.tsx:443
+#: src/components/ImportDataDialog.tsx:529
 msgid "Target Column"
 msgstr "대상 열"
 
-#: src/components/ImportDataDialog.tsx:455
+#: src/components/ImportDataDialog.tsx:454
 msgid "Target Delimiter"
 msgstr "대상 구분자"
 
@@ -1211,23 +1210,23 @@ msgstr "텍스트 사이즈는 작게, 일반, 크게, 그리고 엑스트라 �
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
-#: src/components/ImportDataDialog.tsx:471
+#: src/components/ImportDataDialog.tsx:470
 msgid "The column that contains the edge label(s)"
 msgstr "엣지 레이블이 포함된 열"
 
-#: src/components/ImportDataDialog.tsx:488
+#: src/components/ImportDataDialog.tsx:487
 msgid "The column that contains the source node ID(s)"
 msgstr "소스 노드 ID가 포함된 열"
 
-#: src/components/ImportDataDialog.tsx:445
+#: src/components/ImportDataDialog.tsx:444
 msgid "The column that contains the target node ID(s)"
 msgstr "타겟 노드 ID가 포함된 열"
 
-#: src/components/ImportDataDialog.tsx:498
+#: src/components/ImportDataDialog.tsx:497
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "여러 개의 소스 노드를 구분하기 위해 사용되는 구분 기호"
 
-#: src/components/ImportDataDialog.tsx:456
+#: src/components/ImportDataDialog.tsx:455
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 기호"
 
@@ -1235,11 +1234,11 @@ msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 �
 msgid "The possible shapes are:"
 msgstr "가능한 모양은 다음과 같습니다:"
 
-#: src/components/Tabs/EditStyleTab.tsx:73
+#: src/components/Tabs/EditStyleTab.tsx:69
 msgid "Theme Editor"
 msgstr "테마 편집기"
 
-#: src/components/ImportDataDialog.tsx:421
+#: src/components/ImportDataDialog.tsx:420
 msgid "There are no edges in this data"
 msgstr "이 데이터에는 엣지가 없습니다."
 
@@ -1258,6 +1257,10 @@ msgstr "이 문서는 이 컴퓨터에만 저장됩니다. 문서를 저장하�
 #: src/components/SvgProOnlyPopover.tsx:21
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사용자가 되어</0> 이 기능을 사용할 수 있게 하세요."
+
+#: src/components/MightLoseSponsorTrigger.tsx:29
+msgid "This is a temporary chart, it will be deleted when you clear your browser cache."
+msgstr "이것은 임시 차트로, 브라우저 캐시를 지우면 삭제됩니다."
 
 #: src/components/ShareDialog.tsx:523
 msgid "Tip"
@@ -1305,7 +1308,7 @@ msgid "Type"
 msgstr "유형"
 
 #: src/components/GraphFloatingMenu.tsx:64
-#: src/components/Tabs/EditLayoutTab.tsx:214
+#: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "녹이다"
 
@@ -1329,7 +1332,7 @@ msgstr "이메일 업데이트"
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
-#: src/components/ImportDataDialog.tsx:210
+#: src/components/ImportDataDialog.tsx:209
 msgid "Upload your File"
 msgstr "파일을 업로드하세요."
 
@@ -1381,7 +1384,7 @@ msgstr "Github에서 보기"
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "물은 지구의 표면에서 증발하여 공기로 올라가 비로 내려오고, 그 물은 강과 호수, 바다로 흐르고 다시 증발하여 공기로 돌아가 재생됩니다."
 
-#: src/pages/LogIn.tsx:66
+#: src/pages/LogIn.tsx:72
 msgid "We use magic links to log you in. Enter your email below to get started."
 msgstr "우리는 마법 링크를 사용하여 로그인합니다. 아래에 이메일을 입력하여 시작하십시오."
 
@@ -1393,7 +1396,7 @@ msgstr "Flowchart Fun Pro에 오신 것을 환영합니다!"
 msgid "Width and Height"
 msgstr "너비와 높이"
 
-#: src/components/ImportDataDialog.tsx:718
+#: src/components/ImportDataDialog.tsx:717
 msgid "Would you like to continue?"
 msgstr "계속하시겠습니까?"
 
@@ -1405,7 +1408,7 @@ msgstr "연간"
 msgid "You already have a flowchart with this name."
 msgstr "이 이름을 가진 다이어그램이 이미 있습니다."
 
-#: src/components/ImportDataDialog.tsx:716
+#: src/components/ImportDataDialog.tsx:715
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "그래프에 {numNodes}개의 노드와 {numEdges}개의 간선을 추가하려고 합니다."
 

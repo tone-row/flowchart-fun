@@ -44,7 +44,7 @@
     "Change Email Address": "更改电子邮件地址",
     Changelog: "变更日志",
     Charts: "图表",
-    "Check your email for a link to log in. You can close this window.":
+    "Check your email for a link to log in.<0/>You can close this window.":
       "检查您的电子邮件以获取登录链接。您可以关闭此窗口。",
     "Choose a Theme": "选择一个主题",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
@@ -72,6 +72,7 @@
     "Containers are nodes that contain other nodes. They are declared using curly braces.":
       "容器是包含其他节点的节点。它们使用大括号声明。",
     Continue: "继续",
+    "Convert this to a hosted chart?": "将此转换为托管图表？",
     "Convert to hosted chart?": "是否转换为托管图表？",
     Copy: "复制",
     "Copy PNG Image": "复制PNG图像",
@@ -162,8 +163,6 @@
     Grid: "网格",
     "Have complex questions or issues? We're here to help.":
       "有复杂的问题或问题吗？我们在这里帮助你。",
-    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "注意！在清除缓存之前，请记住此文档没有在云端保存。",
     Help: "帮助",
     History: "历史",
     Home: "主页",
@@ -357,6 +356,8 @@
       "此文档仅保存在此计算机上。如果您想要一种存储文档并随时访问它们的方法，请尝试我们的Pro计划，每月只需3美元！",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。",
+    "This is a temporary chart, it will be deleted when you clear your browser cache.":
+      "这是一个临时图表，当您清除浏览器缓存时将被删除。",
     Tip: "提示",
     "To fix this change one of the edge IDs":
       "为了修复这个，改变其中一个边的ID",

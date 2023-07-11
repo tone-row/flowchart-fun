@@ -44,8 +44,8 @@
     "Change Email Address": "이메일 주소 변경",
     Changelog: "변경 로그",
     Charts: "차트",
-    "Check your email for a link to log in. You can close this window.":
-      "이메일에서 로그인 링크를 확인하십시오. 이 창을 닫아도 됩니다.",
+    "Check your email for a link to log in.<0/>You can close this window.":
+      "로그인할 링크가 들어있는 이메일을 확인하세요. 이 창은 닫을 수 있습니다.",
     "Choose a Theme": "테마를 선택하세요",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "에지의 소스와 목적지를 위한 다양한 화살표 모양을 선택합니다. 모양에는 삼각형, 삼각형-티, 원-삼각형, 삼각형-가위형, 삼각형-뒤곡선, 베이, 티, 사각형, 원, 다이아몬드, 쉐브론, 없음이 포함됩니다.",
@@ -73,6 +73,7 @@
     "Containers are nodes that contain other nodes. They are declared using curly braces.":
       "컨테이너는 다른 노드를 포함하는 노드입니다. 중괄호를 사용하여 선언됩니다.",
     Continue: "계속하기",
+    "Convert this to a hosted chart?": "이것을 호스팅 된 차트로 변환할까요?",
     "Convert to hosted chart?": "호스팅 차트로 변환하시겠습니까?",
     Copy: "복사",
     "Copy PNG Image": "PNG 이미지 복사",
@@ -164,8 +165,6 @@
     Grid: "그리드",
     "Have complex questions or issues? We're here to help.":
       "복잡한 문제가 있나요? 여기에서 도와드리겠습니다.",
-    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "주의! 캐시를 지우기 전에 이 문서는 클라우드에 저장 되어있지 않다는 것을 기억하시기 바랍니다. ",
     Help: "도움말",
     History: "기록",
     Home: "집",
@@ -363,6 +362,8 @@
       "이 문서는 이 컴퓨터에만 저장됩니다. 문서를 저장하고 어디서든 접근할 수 있는 방법이 필요하면 저희 프로 플랜을 3달러에 체험해보세요!",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사용자가 되어</0> 이 기능을 사용할 수 있게 하세요.",
+    "This is a temporary chart, it will be deleted when you clear your browser cache.":
+      "이것은 임시 차트로, 브라우저 캐시를 지우면 삭제됩니다.",
     Tip: "팁",
     "To fix this change one of the edge IDs":
       "이를 수정하려면, 가장자리 ID 중 하나를 변경하십시오.",

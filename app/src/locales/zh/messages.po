@@ -71,7 +71,7 @@ msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件
 msgid "Appearance"
 msgstr "外观"
 
-#: src/components/Tabs/EditStyleTab.tsx:152
+#: src/components/Tabs/EditStyleTab.tsx:148
 msgid "Apply Style"
 msgstr "应用样式"
 
@@ -133,8 +133,8 @@ msgid "Breadthfirst"
 msgstr "宽度优先"
 
 #: src/components/ClearTextButton.tsx:26
-#: src/components/ImportDataDialog.tsx:721
-#: src/components/RenameButton.tsx:155
+#: src/components/ImportDataDialog.tsx:720
+#: src/components/RenameButton.tsx:153
 #: src/pages/Account.tsx:295
 #: src/pages/Account.tsx:308
 #: src/pages/Account.tsx:381
@@ -165,8 +165,8 @@ msgstr "变更日志"
 msgid "Charts"
 msgstr "图表"
 
-#: src/pages/LogIn.tsx:42
-msgid "Check your email for a link to log in. You can close this window."
+#: src/pages/LogIn.tsx:46
+msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
 #: src/components/ThemePicker.tsx:67
@@ -225,7 +225,7 @@ msgstr "颜色"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "颜色包括红色，橙色，黄色，蓝色，紫色，黑色，白色和灰色。"
 
-#: src/components/ImportDataDialog.tsx:540
+#: src/components/ImportDataDialog.tsx:539
 msgid "Column"
 msgstr "列"
 
@@ -253,14 +253,17 @@ msgstr "容器"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 
-#: src/components/ImportDataDialog.tsx:734
+#: src/components/ImportDataDialog.tsx:733
 #: src/components/PaymentStepper.tsx:107
 #: src/components/PaymentStepper.tsx:150
 msgid "Continue"
 msgstr "继续"
 
 #: src/components/MightLoseSponsorTrigger.tsx:41
-#: src/components/RenameButton.tsx:123
+msgid "Convert this to a hosted chart?"
+msgstr "将此转换为托管图表？"
+
+#: src/components/RenameButton.tsx:121
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
@@ -311,7 +314,7 @@ msgstr "自定义分享选项"
 msgid "Customer Portal"
 msgstr "客户门户"
 
-#: src/components/Tabs/EditStyleTab.tsx:179
+#: src/components/Tabs/EditStyleTab.tsx:175
 msgid "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck."
 msgstr "通过编辑<0>Cytoscape CSS</0>来自定义主题，我们的样式文档即将推出！与此同时，最好的资源是<1>Cytoscape</1>文档。如果你遇到困难，可以在<2>Discord</2>上提问。"
 
@@ -336,7 +339,7 @@ msgstr "清除浏览器数据时删除"
 msgid "Describe the flowchart you wish to create"
 msgstr "描述您要创建的图表"
 
-#: src/components/Tabs/EditLayoutTab.tsx:97
+#: src/components/Tabs/EditLayoutTab.tsx:99
 msgid "Direction"
 msgstr "方向"
 
@@ -356,7 +359,7 @@ msgstr "您要将其删除吗？"
 msgid "Document"
 msgstr "文档"
 
-#: src/pages/LogIn.tsx:93
+#: src/pages/LogIn.tsx:99
 msgid "Don't have an account?"
 msgstr "没有帐户？"
 
@@ -377,7 +380,7 @@ msgstr "下载 PNG"
 msgid "Download SVG"
 msgstr "下载 SVG"
 
-#: src/components/ImportDataDialog.tsx:250
+#: src/components/ImportDataDialog.tsx:249
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "将CSV文件拖放到此处，或单击以选择文件"
 
@@ -385,7 +388,7 @@ msgstr "将CSV文件拖放到此处，或单击以选择文件"
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "通过引用开始行从多个节点绘制边缘"
 
-#: src/components/ImportDataDialog.tsx:248
+#: src/components/ImportDataDialog.tsx:247
 msgid "Drop the file here ..."
 msgstr "將檔案拖放到這裡..."
 
@@ -405,8 +408,8 @@ msgstr "邊緣ID、類別和屬性"
 msgid "Edge Label"
 msgstr "邊緣標籤"
 
-#: src/components/ImportDataDialog.tsx:470
-#: src/components/ImportDataDialog.tsx:510
+#: src/components/ImportDataDialog.tsx:469
+#: src/components/ImportDataDialog.tsx:509
 msgid "Edge Label Column"
 msgstr "邊緣標籤欄"
 
@@ -418,20 +421,20 @@ msgstr "邊緣樣式"
 msgid "Edge missing indentation"
 msgstr "缺少缩进的边"
 
-#: src/components/ImportDataDialog.tsx:408
+#: src/components/ImportDataDialog.tsx:407
 #: src/components/LearnSyntaxDialog.tsx:155
 msgid "Edges"
 msgstr "边"
 
-#: src/components/ImportDataDialog.tsx:426
+#: src/components/ImportDataDialog.tsx:425
 msgid "Edges are declared in the same row as their source node"
 msgstr "边声明在与源节点相同的行中"
 
-#: src/components/ImportDataDialog.tsx:432
+#: src/components/ImportDataDialog.tsx:431
 msgid "Edges are declared in the same row as their target node"
 msgstr "边声明在与目标节点相同的行中"
 
-#: src/components/ImportDataDialog.tsx:437
+#: src/components/ImportDataDialog.tsx:436
 msgid "Edges are declared in their own row"
 msgstr "边声明在自己的行中"
 
@@ -443,15 +446,15 @@ msgstr "边在标签之前可以有ID，类和属性"
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "边可以用虚线，点线或实线样式"
 
-#: src/components/ImportDataDialog.tsx:436
+#: src/components/ImportDataDialog.tsx:435
 msgid "Edges in Separate Rows"
 msgstr "边在单独的行"
 
-#: src/components/ImportDataDialog.tsx:425
+#: src/components/ImportDataDialog.tsx:424
 msgid "Edges in Source Node Row"
 msgstr "边在源节点行"
 
-#: src/components/ImportDataDialog.tsx:431
+#: src/components/ImportDataDialog.tsx:430
 msgid "Edges in Target Node Row"
 msgstr "边在目标节点行"
 
@@ -473,7 +476,7 @@ msgstr "蛋"
 msgid "Email"
 msgstr "电子邮件"
 
-#: src/components/ImportDataDialog.tsx:556
+#: src/components/ImportDataDialog.tsx:555
 msgid "Empty"
 msgstr "空"
 
@@ -481,7 +484,7 @@ msgstr "空"
 msgid "Enter your email"
 msgstr "请输入您的电子邮件"
 
-#: src/components/ImportDataDialog.tsx:558
+#: src/components/ImportDataDialog.tsx:557
 msgid "Equal To"
 msgstr "等于"
 
@@ -549,7 +552,7 @@ msgstr "全屏"
 msgid "Futuristic"
 msgstr "未来主义的"
 
-#: src/components/Tabs/EditLayoutTab.tsx:197
+#: src/components/Tabs/EditLayoutTab.tsx:199
 msgid "Get More Layouts"
 msgstr "获取更多布局"
 
@@ -574,10 +577,6 @@ msgstr "网格"
 msgid "Have complex questions or issues? We're here to help."
 msgstr "有复杂的问题或问题吗？我们在这里帮助你。"
 
-#: src/components/MightLoseSponsorTrigger.tsx:29
-msgid "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud."
-msgstr "注意！在清除缓存之前，请记住此文档没有在云端保存。"
-
 #: src/components/Header.tsx:104
 msgid "Help"
 msgstr "帮助"
@@ -590,7 +589,7 @@ msgstr "历史"
 msgid "Home"
 msgstr "主页"
 
-#: src/components/ImportDataDialog.tsx:409
+#: src/components/ImportDataDialog.tsx:408
 msgid "How are edges declared in this data?"
 msgstr "在这个数据中如何声明边缘？"
 
@@ -662,7 +661,7 @@ msgstr "信息"
 msgid "Instruct"
 msgstr "指导"
 
-#: src/components/ImportDataDialog.tsx:549
+#: src/components/ImportDataDialog.tsx:548
 msgid "Is"
 msgstr "是"
 
@@ -679,7 +678,7 @@ msgstr "大"
 msgid "Layout"
 msgstr "布局"
 
-#: src/components/Tabs/EditLayoutTab.tsx:209
+#: src/components/Tabs/EditLayoutTab.tsx:211
 msgid "Layout is Frozen"
 msgstr "布局被冻结"
 
@@ -734,7 +733,7 @@ msgstr "加载主题将擦除您应用的任何自定义样式"
 
 #: src/components/Header.tsx:201
 #: src/components/Header.tsx:421
-#: src/pages/LogIn.tsx:63
+#: src/pages/LogIn.tsx:69
 #: src/pages/New.tsx:263
 msgid "Log In"
 msgstr "登录"
@@ -759,7 +758,7 @@ msgstr "设为公开访问"
 msgid "Make sure you use the same email you will use to log in."
 msgstr "確保您使用的是與登錄時相同的電子郵件。"
 
-#: src/components/ImportDataDialog.tsx:386
+#: src/components/ImportDataDialog.tsx:385
 msgid "Map Data"
 msgstr "對應資料"
 
@@ -810,7 +809,7 @@ msgstr "新邮件"
 msgid "Next charge"
 msgstr "下次扣费"
 
-#: src/components/ImportDataDialog.tsx:420
+#: src/components/ImportDataDialog.tsx:419
 msgid "No Edges"
 msgstr "沒有邊緣"
 
@@ -826,7 +825,7 @@ msgstr "节点边框样式"
 msgid "Node Colors"
 msgstr "节点颜色"
 
-#: src/components/ImportDataDialog.tsx:391
+#: src/components/ImportDataDialog.tsx:390
 msgid "Node ID"
 msgstr "节点ID"
 
@@ -834,7 +833,7 @@ msgstr "节点ID"
 msgid "Node ID, Classes, Attributes"
 msgstr "节点ID、类、属性"
 
-#: src/components/ImportDataDialog.tsx:399
+#: src/components/ImportDataDialog.tsx:398
 #: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "节点标签"
@@ -851,7 +850,7 @@ msgstr "同一行上的节点和指针"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "节点可以使用虚线、点线或双线进行样式设置，也可以使用border-none来移除边框。"
 
-#: src/components/ImportDataDialog.tsx:557
+#: src/components/ImportDataDialog.tsx:556
 msgid "Not Empty"
 msgstr "不为空"
 
@@ -859,7 +858,7 @@ msgstr "不为空"
 msgid "Office Hours"
 msgstr "工作时间"
 
-#: src/pages/LogIn.tsx:48
+#: src/pages/LogIn.tsx:54
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "偶尔，魔法链接会被放入您的垃圾邮件文件夹。如果几分钟后仍然没有收到，请检查垃圾邮件文件夹，或者重新请求新的链接。"
 
@@ -926,7 +925,7 @@ msgstr "价钱"
 msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
 msgstr "公司社会责任倡议的发展和在公司业务中的实施过程"
 
-#: src/components/ImportDataDialog.tsx:271
+#: src/components/ImportDataDialog.tsx:270
 msgid "Processing Data"
 msgstr "处理数据"
 
@@ -992,9 +991,9 @@ msgstr "重新加载以更新"
 msgid "Remove Image Watermark"
 msgstr "去除图片水印"
 
-#: src/components/RenameButton.tsx:99
-#: src/components/RenameButton.tsx:118
-#: src/components/RenameButton.tsx:158
+#: src/components/RenameButton.tsx:97
+#: src/components/RenameButton.tsx:116
+#: src/components/RenameButton.tsx:156
 msgid "Rename"
 msgstr "重命名"
 
@@ -1066,7 +1065,7 @@ msgstr "形状"
 msgid "Sign Up"
 msgstr "注册"
 
-#: src/pages/LogIn.tsx:98
+#: src/pages/LogIn.tsx:104
 msgid "Sign Up Now"
 msgstr "现在注册"
 
@@ -1090,12 +1089,12 @@ msgstr "抱歉！此页面只有英语版。"
 msgid "Source Arrow"
 msgstr "源箭头"
 
-#: src/components/ImportDataDialog.tsx:487
-#: src/components/ImportDataDialog.tsx:523
+#: src/components/ImportDataDialog.tsx:486
+#: src/components/ImportDataDialog.tsx:522
 msgid "Source Column"
 msgstr "源列"
 
-#: src/components/ImportDataDialog.tsx:497
+#: src/components/ImportDataDialog.tsx:496
 msgid "Source Delimiter"
 msgstr "源分隔符"
 
@@ -1103,7 +1102,7 @@ msgstr "源分隔符"
 msgid "Source/Target Arrow Shape"
 msgstr "源/目标箭头形状"
 
-#: src/components/Tabs/EditLayoutTab.tsx:140
+#: src/components/Tabs/EditLayoutTab.tsx:142
 msgid "Spacing"
 msgstr "间距"
 
@@ -1115,7 +1114,7 @@ msgstr "特殊属性"
 msgid "Start"
 msgstr "开始"
 
-#: src/components/ImportDataDialog.tsx:283
+#: src/components/ImportDataDialog.tsx:282
 msgid "Start Over"
 msgstr "重新開始"
 
@@ -1148,8 +1147,8 @@ msgid "Style Classes"
 msgstr "樣式類別"
 
 #: src/components/Feedback.tsx:77
-#: src/components/ImportDataDialog.tsx:583
-#: src/pages/LogIn.tsx:89
+#: src/components/ImportDataDialog.tsx:582
+#: src/pages/LogIn.tsx:95
 msgid "Submit"
 msgstr "提交"
 
@@ -1173,12 +1172,12 @@ msgstr "供应链分析和优化：成本降低，效率提高和利益相关者
 msgid "Target Arrow"
 msgstr "目标箭头"
 
-#: src/components/ImportDataDialog.tsx:444
-#: src/components/ImportDataDialog.tsx:530
+#: src/components/ImportDataDialog.tsx:443
+#: src/components/ImportDataDialog.tsx:529
 msgid "Target Column"
 msgstr "目標欄"
 
-#: src/components/ImportDataDialog.tsx:455
+#: src/components/ImportDataDialog.tsx:454
 msgid "Target Delimiter"
 msgstr "目標分隔符"
 
@@ -1211,23 +1210,23 @@ msgstr "文本大小包括小、正常、大和超大。"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/ImportDataDialog.tsx:471
+#: src/components/ImportDataDialog.tsx:470
 msgid "The column that contains the edge label(s)"
 msgstr "包含边标签的列"
 
-#: src/components/ImportDataDialog.tsx:488
+#: src/components/ImportDataDialog.tsx:487
 msgid "The column that contains the source node ID(s)"
 msgstr "包含源节点ID的列"
 
-#: src/components/ImportDataDialog.tsx:445
+#: src/components/ImportDataDialog.tsx:444
 msgid "The column that contains the target node ID(s)"
 msgstr "包含目标节点ID的列"
 
-#: src/components/ImportDataDialog.tsx:498
+#: src/components/ImportDataDialog.tsx:497
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "用于分隔多个源节点的分隔符"
 
-#: src/components/ImportDataDialog.tsx:456
+#: src/components/ImportDataDialog.tsx:455
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "用于分隔多个目标节点的分隔符"
 
@@ -1235,11 +1234,11 @@ msgstr "用于分隔多个目标节点的分隔符"
 msgid "The possible shapes are:"
 msgstr "可能的形状是："
 
-#: src/components/Tabs/EditStyleTab.tsx:73
+#: src/components/Tabs/EditStyleTab.tsx:69
 msgid "Theme Editor"
 msgstr "主题编辑器"
 
-#: src/components/ImportDataDialog.tsx:421
+#: src/components/ImportDataDialog.tsx:420
 msgid "There are no edges in this data"
 msgstr "此数据中没有边"
 
@@ -1258,6 +1257,10 @@ msgstr "此文档仅保存在此计算机上。如果您想要一种存储文档
 #: src/components/SvgProOnlyPopover.tsx:21
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。"
+
+#: src/components/MightLoseSponsorTrigger.tsx:29
+msgid "This is a temporary chart, it will be deleted when you clear your browser cache."
+msgstr "这是一个临时图表，当您清除浏览器缓存时将被删除。"
 
 #: src/components/ShareDialog.tsx:523
 msgid "Tip"
@@ -1305,7 +1308,7 @@ msgid "Type"
 msgstr "类型"
 
 #: src/components/GraphFloatingMenu.tsx:64
-#: src/components/Tabs/EditLayoutTab.tsx:214
+#: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "解冻"
 
@@ -1329,7 +1332,7 @@ msgstr "更新电子邮件"
 msgid "Upgrade to Pro"
 msgstr "升级到Pro"
 
-#: src/components/ImportDataDialog.tsx:210
+#: src/components/ImportDataDialog.tsx:209
 msgid "Upload your File"
 msgstr "上传您的文件"
 
@@ -1381,7 +1384,7 @@ msgstr "在 Github 上查看"
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "水从地球表面蒸发，升入大气中，然后以降水形式回落。这些水然后流入河流，湖泊和海洋，在那里又蒸发，重新回到大气中循环。"
 
-#: src/pages/LogIn.tsx:66
+#: src/pages/LogIn.tsx:72
 msgid "We use magic links to log you in. Enter your email below to get started."
 msgstr "我们使用魔术链接来登录您。请在下面输入您的电子邮件以开始。"
 
@@ -1393,7 +1396,7 @@ msgstr "欢迎来到流程图乐趣Pro！"
 msgid "Width and Height"
 msgstr "宽度和高度"
 
-#: src/components/ImportDataDialog.tsx:718
+#: src/components/ImportDataDialog.tsx:717
 msgid "Would you like to continue?"
 msgstr "您想继续吗？"
 
@@ -1405,7 +1408,7 @@ msgstr "每年"
 msgid "You already have a flowchart with this name."
 msgstr "您已有同名的图表。"
 
-#: src/components/ImportDataDialog.tsx:716
+#: src/components/ImportDataDialog.tsx:715
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 

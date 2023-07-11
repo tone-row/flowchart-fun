@@ -44,8 +44,8 @@
     "Change Email Address": "Change Email Address",
     Changelog: "Changelog",
     Charts: "Charts",
-    "Check your email for a link to log in. You can close this window.":
-      "Check your email for a link to log in. You can close this window.",
+    "Check your email for a link to log in.<0/>You can close this window.":
+      "Check your email for a link to log in.<0/>You can close this window.",
     "Choose a Theme": "Choose a Theme",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .",
@@ -73,6 +73,7 @@
     "Containers are nodes that contain other nodes. They are declared using curly braces.":
       "Containers are nodes that contain other nodes. They are declared using curly braces.",
     Continue: "Continue",
+    "Convert this to a hosted chart?": "Convert this to a hosted chart?",
     "Convert to hosted chart?": "Convert to hosted chart?",
     Copy: "Copy",
     "Copy PNG Image": "Copy PNG Image",
@@ -168,8 +169,6 @@
     Grid: "Grid",
     "Have complex questions or issues? We're here to help.":
       "Have complex questions or issues? We're here to help.",
-    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.",
     Help: "Help",
     History: "History",
     Home: "Home",
@@ -371,6 +370,8 @@
       "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.",
+    "This is a temporary chart, it will be deleted when you clear your browser cache.":
+      "This is a temporary chart, it will be deleted when you clear your browser cache.",
     Tip: "Tip",
     "To fix this change one of the edge IDs":
       "To fix this change one of the edge IDs",

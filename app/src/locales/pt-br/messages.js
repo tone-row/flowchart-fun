@@ -45,8 +45,8 @@
     "Change Email Address": "Mude o endereço de email",
     Changelog: "Registro de alterações",
     Charts: "Diagramas",
-    "Check your email for a link to log in. You can close this window.":
-      "Cheque seu e-mail com um link para logar. Você pode fechar esta janela.",
+    "Check your email for a link to log in.<0/>You can close this window.":
+      "Verifique seu e-mail para um link para fazer login. Você pode fechar esta janela.",
     "Choose a Theme": "Escolha um Tema",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "Escolha entre uma variedade de formas de seta para a origem e o destino de uma aresta. As formas incluem triângulo, triângulo-tee, triângulo-círculo, triângulo-cruz, triângulo-curva-inversa, vee, tee, quadrado, círculo, diamante, chevron e nenhum.",
@@ -74,6 +74,8 @@
     "Containers are nodes that contain other nodes. They are declared using curly braces.":
       "Os containers são nós que contêm outros nós. Eles são declarados usando chaves.",
     Continue: "Continuar",
+    "Convert this to a hosted chart?":
+      "Converter isso para um gráfico hospedado?",
     "Convert to hosted chart?": "Converter em diagrama hospedado?",
     Copy: "Copiar",
     "Copy PNG Image": "Copiar imagem PNG",
@@ -169,8 +171,6 @@
     Grid: "Grade",
     "Have complex questions or issues? We're here to help.":
       "Tem questões ou problemas complexos? Estamos aqui para ajudar.",
-    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "Atenção! Antes de limpar o cache, lembre-se de que este documento não está salvo na nuvem.",
     Help: "Ajuda",
     History: "Histórico",
     Home: "Página inicial",
@@ -373,6 +373,8 @@
       "Este documento é salvo apenas neste computador. Se você quiser uma maneira de armazenar documentos e acessá-los de qualquer lugar, experimente nosso plano Pro por apenas US$ 3/mês!",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "Esta funcionalidade está disponível apenas para usuários Pro. <0>Torne-se um usuário Pro</0> para desbloqueá-la.",
+    "This is a temporary chart, it will be deleted when you clear your browser cache.":
+      "Este é um gráfico temporário, ele será excluído quando você limpar o cache do seu navegador.",
     Tip: "Dica",
     "To fix this change one of the edge IDs":
       "Para corrigir isso, altere um dos IDs de borda",

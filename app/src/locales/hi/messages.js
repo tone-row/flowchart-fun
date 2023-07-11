@@ -44,8 +44,8 @@
     "Change Email Address": "ईमेल पता बदलें",
     Changelog: "बदलाव का",
     Charts: "चार्ट",
-    "Check your email for a link to log in. You can close this window.":
-      "लॉग इन वाले लिंक के लिए अपना ईमेल देखें. आप इस विंडो को बंद कर सकते हैं.",
+    "Check your email for a link to log in.<0/>You can close this window.":
+      "लॉग इन करने के लिए अपने ईमेल की जाँच करें। आप इस विंडो को बंद कर सकते हैं।",
     "Choose a Theme": "एक थीम चुनें",
     "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. .":
       "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।",
@@ -73,6 +73,8 @@
     "Containers are nodes that contain other nodes. They are declared using curly braces.":
       "कंटेनर उन नोड्स हैं जो अन्य नोड्स को सम्मिलित करते हैं। वे कर्ली ब्रेस का उपयोग करके घोषित किया जाता है।",
     Continue: "जारी रखें",
+    "Convert this to a hosted chart?":
+      "यह एक होस्ट की गई चार्ट में परिवर्तित करें?",
     "Convert to hosted chart?": "होस्टेड चार्ट में कनवर्ट करें?",
     Copy: "कॉपी करें",
     "Copy PNG Image": "PNG छवि कॉपी करें",
@@ -168,8 +170,6 @@
     Grid: "ग्रिड",
     "Have complex questions or issues? We're here to help.":
       "जटिल सवाल या समस्याएं हैं? हम यहां आपकी मदद के लिए हैं।",
-    "Heads up! Before you clear your cache, remember that this document isn't saved in the cloud.":
-      "ध्यान दें! इससे पहले कि आप अपना कैश क्लियर करें, याद रखें कि यह डॉक्यूमेंट क्लाउड में सेव नहीं किया गया है। ",
     Help: "मदद",
     History: "हिस्ट्री",
     Home: "होम",
@@ -371,6 +371,8 @@
       "यह दस्तावेज़ केवल इस कंप्यूटर पर सहेजी गई है। यदि आप दस्तावेज़ सहेजने और कहीं भी उपयोग करने के लिए एक तरीका चाहते हैं तो हमारे प्रो प्लान के लिए केवल $ 3 / महीने में उपयोग करें!",
     "This feature is only available to pro users. <0>Become a pro user</0> to unlock it.":
       "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।",
+    "This is a temporary chart, it will be deleted when you clear your browser cache.":
+      "यह एक अस्थायी चार्ट है, जब आप अपने ब्राउज़र कैश को साफ़ करेंगे तो यह हटा दिया जाएगा।",
     Tip: "सुझाव",
     "To fix this change one of the edge IDs":
       "इसे ठीक करने के लिए एड्ज आईडी के एक को बदलें",
