@@ -1,4 +1,4 @@
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import * as Popover from "@radix-ui/react-popover";
 import { Warning } from "phosphor-react";
 import { useContext } from "react";
@@ -16,7 +16,7 @@ export function MightLoseWarning() {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <IconButton2>
+        <IconButton2 aria-label={t`Temporary Flowchart Warning`}>
           <Warning size={16} />
         </IconButton2>
       </Popover.Trigger>

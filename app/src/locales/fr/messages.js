@@ -347,6 +347,8 @@
     "Target Column": "Colonne cible",
     "Target Delimiter": "Délimiteur cible",
     Temporary: "Temporaire",
+    "Temporary Flowchart Warning":
+      "Avertissement de diagramme de flux temporaire",
     "Temporary Flowcharts": "Diagrammes temporaires",
     "Text Sizes": "Tailles de texte",
     "Text followed by colon+space creates an edge with the text as the label":

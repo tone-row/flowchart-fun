@@ -1,6 +1,6 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import throttle from "lodash.throttle";
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { lazy, memo, useCallback, useEffect, useMemo, useState } from "react";
 import { useParams, useRouteMatch } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
@@ -12,7 +12,8 @@ import Main from "../components/Main";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
-import { EditStyleTab } from "../components/Tabs/EditStyleTab";
+const EditStyleTab = lazy(() => import("../components/Tabs/EditStyleTab"));
+
 import { TextEditor } from "../components/TextEditor";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";

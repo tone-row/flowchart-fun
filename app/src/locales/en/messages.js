@@ -343,6 +343,7 @@
     "Target Column": "Target Column",
     "Target Delimiter": "Target Delimiter",
     Temporary: "Temporary",
+    "Temporary Flowchart Warning": "Temporary Flowchart Warning",
     "Temporary Flowcharts": "Temporary Flowcharts",
     "Text Sizes": "Text Sizes",
     "Text followed by colon+space creates an edge with the text as the label":

@@ -133,7 +133,7 @@ msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
 #: src/components/ClearTextButton.tsx:26
-#: src/components/ImportDataDialog.tsx:720
+#: src/components/ImportDataDialog.tsx:719
 #: src/components/RenameButton.tsx:153
 #: src/pages/Account.tsx:295
 #: src/pages/Account.tsx:308
@@ -225,7 +225,7 @@ msgstr "रंग"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "रंग में लाल, नारंगी, पीला, नीला, बैंगनी, काला, सफेद, और ग्रे शामिल हैं।"
 
-#: src/components/ImportDataDialog.tsx:539
+#: src/components/ImportDataDialog.tsx:538
 msgid "Column"
 msgstr "स्तंभ"
 
@@ -253,7 +253,7 @@ msgstr "कंटेनर"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "कंटेनर उन नोड्स हैं जो अन्य नोड्स को सम्मिलित करते हैं। वे कर्ली ब्रेस का उपयोग करके घोषित किया जाता है।"
 
-#: src/components/ImportDataDialog.tsx:733
+#: src/components/ImportDataDialog.tsx:732
 #: src/components/PaymentStepper.tsx:107
 #: src/components/PaymentStepper.tsx:150
 msgid "Continue"
@@ -380,7 +380,7 @@ msgstr "PNG डाउनलोड करें"
 msgid "Download SVG"
 msgstr "SVG डाउनलोड करें"
 
-#: src/components/ImportDataDialog.tsx:249
+#: src/components/ImportDataDialog.tsx:248
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV फ़ाइल यहां ड्रैग और ड्रॉप करें, या फ़ाइल का चयन करने के लिए क्लिक करें"
 
@@ -388,7 +388,7 @@ msgstr "CSV फ़ाइल यहां ड्रैग और ड्रॉप 
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "एक से अधिक नोड्स से एज ड्रा करने के लिए लाइन को एक संदर्भ के साथ शुरू करें"
 
-#: src/components/ImportDataDialog.tsx:247
+#: src/components/ImportDataDialog.tsx:246
 msgid "Drop the file here ..."
 msgstr "फाइल यहाँ ड्रॉप करें ..."
 
@@ -408,8 +408,8 @@ msgstr "किनारे आईडी, वर्ग, गुण"
 msgid "Edge Label"
 msgstr "किनारे लेबल"
 
-#: src/components/ImportDataDialog.tsx:469
-#: src/components/ImportDataDialog.tsx:509
+#: src/components/ImportDataDialog.tsx:468
+#: src/components/ImportDataDialog.tsx:508
 msgid "Edge Label Column"
 msgstr "किनारे लेबल कॉलम"
 
@@ -421,20 +421,20 @@ msgstr "किनारे शैली"
 msgid "Edge missing indentation"
 msgstr "एड्ज अंतराल गुम है"
 
-#: src/components/ImportDataDialog.tsx:407
+#: src/components/ImportDataDialog.tsx:406
 #: src/components/LearnSyntaxDialog.tsx:155
 msgid "Edges"
 msgstr "किन्तुओं"
 
-#: src/components/ImportDataDialog.tsx:425
+#: src/components/ImportDataDialog.tsx:424
 msgid "Edges are declared in the same row as their source node"
 msgstr "उनके स्रोत नोड के ही पंक्ति में किन्तुओं की घोषणा की जाती है"
 
-#: src/components/ImportDataDialog.tsx:431
+#: src/components/ImportDataDialog.tsx:430
 msgid "Edges are declared in the same row as their target node"
 msgstr "उनके लक्ष्य नोड के ही पंक्ति में किन्तुओं की घोषणा की जाती है"
 
-#: src/components/ImportDataDialog.tsx:436
+#: src/components/ImportDataDialog.tsx:435
 msgid "Edges are declared in their own row"
 msgstr "किन्तुओं को अपनी खुद की पंक्ति में घोषणा की जाती है"
 
@@ -446,15 +446,15 @@ msgstr "लेबल से पहले, किन्तुओं को आई
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "किन्तुओं को डैश्ड, डॉटेड या सॉलिड लाइन्स के साथ स्टाइल किया जा सकता है"
 
-#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:434
 msgid "Edges in Separate Rows"
 msgstr "अलग पंक्तियों में किन्हें"
 
-#: src/components/ImportDataDialog.tsx:424
+#: src/components/ImportDataDialog.tsx:423
 msgid "Edges in Source Node Row"
 msgstr "स्रोत नोड पंक्ति में किन्हें"
 
-#: src/components/ImportDataDialog.tsx:430
+#: src/components/ImportDataDialog.tsx:429
 msgid "Edges in Target Node Row"
 msgstr "लक्ष्य नोड पंक्ति में किन्हें"
 
@@ -476,7 +476,7 @@ msgstr "अंडे"
 msgid "Email"
 msgstr "ईमेल"
 
-#: src/components/ImportDataDialog.tsx:555
+#: src/components/ImportDataDialog.tsx:554
 msgid "Empty"
 msgstr "खाली"
 
@@ -484,7 +484,7 @@ msgstr "खाली"
 msgid "Enter your email"
 msgstr "अपना ईमेल दर्ज करें"
 
-#: src/components/ImportDataDialog.tsx:557
+#: src/components/ImportDataDialog.tsx:556
 msgid "Equal To"
 msgstr "बराबर"
 
@@ -586,7 +586,7 @@ msgstr "हिस्ट्री"
 msgid "Home"
 msgstr "होम"
 
-#: src/components/ImportDataDialog.tsx:408
+#: src/components/ImportDataDialog.tsx:407
 msgid "How are edges declared in this data?"
 msgstr "इस डेटा में कैसे किन्हीं कड़ियाँ घोषित होती हैं?"
 
@@ -612,8 +612,8 @@ msgstr "छवियाँ"
 
 #: src/components/ImportDataDialog.tsx:86
 #: src/components/ImportDataDialog.tsx:99
-#: src/components/ImportDataUnauthenticatedDialog.tsx:21
-#: src/components/ImportDataUnauthenticatedDialog.tsx:38
+#: src/components/ImportDataUnauthenticatedDialog.tsx:28
+#: src/components/ImportDataUnauthenticatedDialog.tsx:45
 msgid "Import Data"
 msgstr "डेटा आयात करें"
 
@@ -621,7 +621,7 @@ msgstr "डेटा आयात करें"
 msgid "Import data from a CSV file."
 msgstr "CSV फ़ाइल से डेटा आयात करें।"
 
-#: src/components/ImportDataUnauthenticatedDialog.tsx:43
+#: src/components/ImportDataUnauthenticatedDialog.tsx:50
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "किसी भी CSV फ़ाइल से डेटा आयात करें और इसे एक नए प्रक्रिया चार्ट में मैप करें। यह अन्य स्रोतों जैसे लुसिडचार्ट, गूगल शीट्स और विसिओ से डेटा आयात करने के लिए एक अच्छा तरीका है।"
 
@@ -634,7 +634,7 @@ msgstr "लुसिडचार्ट, विसिओ और अन्य CSV 
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।"
 
-#: src/components/ImportDataUnauthenticatedDialog.tsx:48
+#: src/components/ImportDataUnauthenticatedDialog.tsx:55
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "डेटा आयात एक प्रो फीचर है। आप केवल $ 3/महीने या $ 30/वर्ष के लिए फ्लोचार्ट फन प्रो में अपग्रेड कर सकते हैं।"
 
@@ -658,7 +658,7 @@ msgstr "जानकारी"
 msgid "Instruct"
 msgstr "हिदायत"
 
-#: src/components/ImportDataDialog.tsx:548
+#: src/components/ImportDataDialog.tsx:547
 msgid "Is"
 msgstr "हाँ"
 
@@ -675,7 +675,8 @@ msgstr "बड़ा"
 msgid "Layout"
 msgstr "ख़ाका"
 
-#: src/components/GraphFloatingMenu.tsx:82
+#: src/components/GraphFloatingMenu.tsx:83
+#: src/components/GraphFloatingMenu.tsx:85
 msgid "Layout Frozen"
 msgstr "लेआउट फ्रोज़न"
 
@@ -687,7 +688,7 @@ msgstr "लेआउट जम गया है"
 msgid "Leading References"
 msgstr "प्रमुख संदर्भ"
 
-#: src/components/ImportDataUnauthenticatedDialog.tsx:60
+#: src/components/ImportDataUnauthenticatedDialog.tsx:67
 #: src/components/MightLoseWarning.tsx:37
 msgid "Learn More"
 msgstr "और अधिक जानें"
@@ -733,6 +734,7 @@ msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "थीम लोड करने से आपने अपने कस्टम स्टाइल को मिटा दिया होगा"
 
 #: src/components/GraphFloatingMenu.tsx:68
+#: src/components/GraphFloatingMenu.tsx:70
 msgid "Lock Zoom to Graph"
 msgstr "ग्राफ पर जूम लॉक करें"
 
@@ -763,7 +765,7 @@ msgstr "सार्वजनिक रूप से एक्सेस दे�
 msgid "Make sure you use the same email you will use to log in."
 msgstr "उसी ईमेल का उपयोग करें जिसे आप लॉग इन करने के लिए उपयोग करेंगे।"
 
-#: src/components/ImportDataDialog.tsx:385
+#: src/components/ImportDataDialog.tsx:384
 msgid "Map Data"
 msgstr "डेटा मैप"
 
@@ -814,7 +816,7 @@ msgstr "नई ईमेल"
 msgid "Next charge"
 msgstr "अगला चार्ज"
 
-#: src/components/ImportDataDialog.tsx:419
+#: src/components/ImportDataDialog.tsx:418
 msgid "No Edges"
 msgstr "कोई किनारे नहीं"
 
@@ -830,7 +832,7 @@ msgstr "नोड सीमा शैली"
 msgid "Node Colors"
 msgstr "नोड रंग"
 
-#: src/components/ImportDataDialog.tsx:390
+#: src/components/ImportDataDialog.tsx:389
 msgid "Node ID"
 msgstr "नोड आईडी"
 
@@ -838,7 +840,7 @@ msgstr "नोड आईडी"
 msgid "Node ID, Classes, Attributes"
 msgstr "नोड आईडी, वर्ग, गुण"
 
-#: src/components/ImportDataDialog.tsx:398
+#: src/components/ImportDataDialog.tsx:397
 #: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "नोड लेबल"
@@ -855,7 +857,7 @@ msgstr "नोड और प्रतीक एक ही लाइन पर"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
 msgstr "नोड्स को डैश्ड, डॉट्ड या डबल के साथ स्टाइल किया जा सकता है। बॉर्डर-नोन के साथ भी बॉर्डर हटाए जा सकते हैं।"
 
-#: src/components/ImportDataDialog.tsx:556
+#: src/components/ImportDataDialog.tsx:555
 msgid "Not Empty"
 msgstr "खाली नहीं"
 
@@ -930,7 +932,7 @@ msgstr "मूल्य निर्धारण"
 msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
 msgstr "कंपनी की सार्वजनिक दायित्व परियोजनाओं के विकास और लागू करने की प्रक्रिया।"
 
-#: src/components/ImportDataDialog.tsx:270
+#: src/components/ImportDataDialog.tsx:269
 msgid "Processing Data"
 msgstr "डेटा प्रसंस्करण"
 
@@ -1002,7 +1004,8 @@ msgstr "छवि वॉटरमार्क हटाएं"
 msgid "Rename"
 msgstr "फिर से नाम बदलें"
 
-#: src/components/GraphFloatingMenu.tsx:43
+#: src/components/GraphFloatingMenu.tsx:42
+#: src/components/GraphFloatingMenu.tsx:45
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -1052,7 +1055,7 @@ msgstr "अन्य स्रोतों से डेटा आयात क�
 msgid "Select your plan!"
 msgstr "अपना योजना चुनें!"
 
-#: src/components/GraphFloatingMenu.tsx:99
+#: src/components/GraphFloatingMenu.tsx:101
 msgid "Send Feedback"
 msgstr "प्रतिक्रिया भेजें"
 
@@ -1094,12 +1097,12 @@ msgstr "माफ़ करें! यह पेज केवल अंग्र
 msgid "Source Arrow"
 msgstr "स्रोत तीर "
 
-#: src/components/ImportDataDialog.tsx:486
-#: src/components/ImportDataDialog.tsx:522
+#: src/components/ImportDataDialog.tsx:485
+#: src/components/ImportDataDialog.tsx:521
 msgid "Source Column"
 msgstr "स्रोत स्तंभ"
 
-#: src/components/ImportDataDialog.tsx:496
+#: src/components/ImportDataDialog.tsx:495
 msgid "Source Delimiter"
 msgstr "स्रोत डिलिमिटर"
 
@@ -1119,7 +1122,7 @@ msgstr "विशेष गुण"
 msgid "Start"
 msgstr "शुरू"
 
-#: src/components/ImportDataDialog.tsx:282
+#: src/components/ImportDataDialog.tsx:281
 msgid "Start Over"
 msgstr "शुरू करें"
 
@@ -1152,7 +1155,7 @@ msgid "Style Classes"
 msgstr "शैली क्लासेज"
 
 #: src/components/Feedback.tsx:77
-#: src/components/ImportDataDialog.tsx:582
+#: src/components/ImportDataDialog.tsx:581
 #: src/pages/LogIn.tsx:95
 msgid "Submit"
 msgstr "भेजना"
@@ -1177,18 +1180,23 @@ msgstr "आपूर्ति श्रृंखला विश्लेषण 
 msgid "Target Arrow"
 msgstr "लक्ष्य तीर"
 
-#: src/components/ImportDataDialog.tsx:443
-#: src/components/ImportDataDialog.tsx:529
+#: src/components/ImportDataDialog.tsx:442
+#: src/components/ImportDataDialog.tsx:528
 msgid "Target Column"
 msgstr "लक्ष्य कॉलम"
 
-#: src/components/ImportDataDialog.tsx:454
+#: src/components/ImportDataDialog.tsx:453
 msgid "Target Delimiter"
 msgstr "लक्ष्य डेलीमीटर"
 
 #: src/pages/New.tsx:242
 msgid "Temporary"
 msgstr "अस्थायी"
+
+#: src/components/MightLoseSponsorTrigger.tsx:21
+#: src/components/MightLoseWarning.tsx:19
+msgid "Temporary Flowchart Warning"
+msgstr "अस्थायी पारिस्थितिकी चेतावनी"
 
 #: src/pages/Charts.tsx:152
 #: src/pages/Pricing.tsx:54
@@ -1215,23 +1223,23 @@ msgstr "पाठ के आकार छोटे, सामान्य, ब�
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
-#: src/components/ImportDataDialog.tsx:470
+#: src/components/ImportDataDialog.tsx:469
 msgid "The column that contains the edge label(s)"
 msgstr "कॉलम जो एड्ज लेबल (ओं) को शामिल करता है"
 
-#: src/components/ImportDataDialog.tsx:487
+#: src/components/ImportDataDialog.tsx:486
 msgid "The column that contains the source node ID(s)"
 msgstr "कॉलम जो स्रोत नोड आईडी (ओं) को शामिल करता है"
 
-#: src/components/ImportDataDialog.tsx:444
+#: src/components/ImportDataDialog.tsx:443
 msgid "The column that contains the target node ID(s)"
 msgstr "कॉलम जो लक्ष्य नोड आईडी (ओं) को शामिल करता है"
 
-#: src/components/ImportDataDialog.tsx:497
+#: src/components/ImportDataDialog.tsx:496
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "कई स्रोत नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
-#: src/components/ImportDataDialog.tsx:455
+#: src/components/ImportDataDialog.tsx:454
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
@@ -1243,7 +1251,7 @@ msgstr "संभव आकृतियाँ हैं:"
 msgid "Theme Editor"
 msgstr "थीम एडिटर"
 
-#: src/components/ImportDataDialog.tsx:420
+#: src/components/ImportDataDialog.tsx:419
 msgid "There are no edges in this data"
 msgstr "इस डेटा में कोई एड्ज नहीं है"
 
@@ -1336,7 +1344,7 @@ msgstr "ईमेल अपडेट करें"
 msgid "Upgrade to Pro"
 msgstr "प्रो में अपग्रेड करें"
 
-#: src/components/ImportDataDialog.tsx:209
+#: src/components/ImportDataDialog.tsx:208
 msgid "Upload your File"
 msgstr "अपनी फाइल अपलोड करें"
 
@@ -1400,7 +1408,7 @@ msgstr "फ्लोचार्ट फन प्रो के लिए स्�
 msgid "Width and Height"
 msgstr "चौड़ाई और ऊँचाई"
 
-#: src/components/ImportDataDialog.tsx:717
+#: src/components/ImportDataDialog.tsx:716
 msgid "Would you like to continue?"
 msgstr "क्या आप जारी रखना चाहते हैं?"
 
@@ -1412,7 +1420,7 @@ msgstr "वार्षिक"
 msgid "You already have a flowchart with this name."
 msgstr "आपके पास इस नाम का आरेख पहले से है।"
 
-#: src/components/ImportDataDialog.tsx:715
+#: src/components/ImportDataDialog.tsx:714
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "आप अपने ग्राफ में {numNodes} नोड्स और {numEdges} एड्ज़ जोड़ने वाले हैं।"
 
@@ -1437,10 +1445,12 @@ msgid "Your subscription is no longer active. If you want to create and edit per
 msgstr "आपका सदस्यता अब निष्क्रिय है। यदि आप स्थायी चार्ट बनाना और संपादित करना चाहते हैं, तो प्रो अपग्रेड करें।"
 
 #: src/components/GraphFloatingMenu.tsx:58
+#: src/components/GraphFloatingMenu.tsx:59
 msgid "Zoom In"
 msgstr "ज़ूम इन करें"
 
 #: src/components/GraphFloatingMenu.tsx:63
+#: src/components/GraphFloatingMenu.tsx:64
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 

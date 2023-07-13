@@ -347,6 +347,7 @@
     "Target Column": "Ziel-Spalte",
     "Target Delimiter": "Ziel-Trennzeichen",
     Temporary: "Temporäres",
+    "Temporary Flowchart Warning": "Vorübergehende Flussdiagramm Warnung",
     "Temporary Flowcharts": "Temporäre Diagramme",
     "Text Sizes": "Textgrößen",
     "Text followed by colon+space creates an edge with the text as the label":

@@ -344,6 +344,7 @@
     "Target Column": "लक्ष्य कॉलम",
     "Target Delimiter": "लक्ष्य डेलीमीटर",
     Temporary: "अस्थायी",
+    "Temporary Flowchart Warning": "अस्थायी पारिस्थितिकी चेतावनी",
     "Temporary Flowcharts": "अस्थायी आरेख",
     "Text Sizes": "पाठ आकार",
     "Text followed by colon+space creates an edge with the text as the label":
