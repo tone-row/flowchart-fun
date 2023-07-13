@@ -18,7 +18,7 @@ export function MightLoseSponsorTrigger() {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <IconButton2>
+        <IconButton2 aria-label={t`Temporary Flowchart Warning`}>
           <Warning size={16} />
         </IconButton2>
       </Popover.Trigger>

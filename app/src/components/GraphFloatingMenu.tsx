@@ -42,6 +42,7 @@ export function GraphFloatingMenu() {
       <Tooltip2 content={t`Reset`}>
         <IconButton2
           size="xs"
+          aria-label={t`Reset`}
           onClick={() => {
             useUnmountStore.setState({
               unmount: true,
@@ -55,17 +56,18 @@ export function GraphFloatingMenu() {
         </IconButton2>
       </Tooltip2>
       <Tooltip2 content={t`Zoom In`}>
-        <IconButton2 size="xs" onClick={zoomIn}>
+        <IconButton2 size="xs" onClick={zoomIn} aria-label={t`Zoom In`}>
           <Plus size={16} />
         </IconButton2>
       </Tooltip2>
       <Tooltip2 content={t`Zoom Out`}>
-        <IconButton2 size="xs" onClick={zoomOut}>
+        <IconButton2 size="xs" onClick={zoomOut} aria-label={t`Zoom Out`}>
           <Minus size={16} />
         </IconButton2>
       </Tooltip2>
       <Tooltip2 content={t`Lock Zoom to Graph`}>
         <IconToggleButton
+          aria-label={t`Lock Zoom to Graph`}
           size="xs"
           pressed={autoFit}
           onPressedChange={(pressed) => {
@@ -80,6 +82,7 @@ export function GraphFloatingMenu() {
       </Tooltip2>
       <Tooltip2 content={t`Layout Frozen`}>
         <IconToggleButton
+          aria-label={t`Layout Frozen`}
           size="xs"
           pressed={isFrozen}
           onPressedChange={(pressed) => {
