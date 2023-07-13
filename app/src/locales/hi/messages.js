@@ -155,7 +155,6 @@
     "Extra Large": "अति बड़ा",
     Extract: "निकालना",
     Feedback: "फ़ीडबैक",
-    "Fit Graph": "फिट ग्राफ",
     "Follow Us on Twitter": "हमारे साथ ट्विटर पर फॉलो करें",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "एक बग पाया? एक सुविधा अनुरोध है? हम आपसे सुनने के लिए प्रसन्न होंगे!",
@@ -203,6 +202,7 @@
     Language: "भाषा",
     Large: "बड़ा",
     Layout: "ख़ाका",
+    "Layout Frozen": "लेआउट फ्रोज़न",
     "Layout is Frozen": "लेआउट जम गया है",
     "Leading References": "प्रमुख संदर्भ",
     "Learn More": "और अधिक जानें",
@@ -217,6 +217,7 @@
     "Load Theme": "थीम लोड करें",
     "Loading a theme will erase any custom styles you have applied":
       "थीम लोड करने से आपने अपने कस्टम स्टाइल को मिटा दिया होगा",
+    "Lock Zoom to Graph": "ग्राफ पर जूम लॉक करें",
     "Log In": "लॉग इन करें",
     "Log Out": "लॉग आउट",
     "Log in to start creating flowcharts.":

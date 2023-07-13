@@ -529,10 +529,6 @@ msgstr "발췌"
 msgid "Feedback"
 msgstr "피드백"
 
-#: src/components/GraphFloatingMenu.tsx:55
-msgid "Fit Graph"
-msgstr "그래프 적합"
-
 #: src/components/Settings.tsx:125
 msgid "Follow Us on Twitter"
 msgstr "트위터에서 우리를 팔로우하기"
@@ -679,6 +675,10 @@ msgstr "크다"
 msgid "Layout"
 msgstr "레이아웃"
 
+#: src/components/GraphFloatingMenu.tsx:82
+msgid "Layout Frozen"
+msgstr "레이아웃 동결"
+
 #: src/components/Tabs/EditLayoutTab.tsx:211
 msgid "Layout is Frozen"
 msgstr "레이아웃이 고정됨"
@@ -731,6 +731,10 @@ msgstr "테마 불러오기"
 #: src/components/ThemePicker.tsx:90
 msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "테마를 불러오면 사용자 정의 스타일이 모두 사라집니다."
+
+#: src/components/GraphFloatingMenu.tsx:68
+msgid "Lock Zoom to Graph"
+msgstr "그래프에 룩 줌을 고정하다"
 
 #: src/components/Header.tsx:201
 #: src/components/Header.tsx:421
@@ -998,7 +1002,7 @@ msgstr "이미지 워터마크 제거"
 msgid "Rename"
 msgstr "이름 바꾸기"
 
-#: src/components/GraphFloatingMenu.tsx:59
+#: src/components/GraphFloatingMenu.tsx:43
 msgid "Reset"
 msgstr "재설정"
 
@@ -1048,7 +1052,7 @@ msgstr "다른 소스에서 데이터를 가져와 작업흐름을 최적화하�
 msgid "Select your plan!"
 msgstr "귀하의 계획을 선택하세요!"
 
-#: src/components/GraphFloatingMenu.tsx:78
+#: src/components/GraphFloatingMenu.tsx:99
 msgid "Send Feedback"
 msgstr "피드백 보내기"
 
@@ -1308,7 +1312,6 @@ msgstr "두 개의 노드가 같은 ID를 가지고 있습니다"
 msgid "Type"
 msgstr "유형"
 
-#: src/components/GraphFloatingMenu.tsx:69
 #: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "녹이다"
@@ -1433,11 +1436,11 @@ msgstr "당신의 차트"
 msgid "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro."
 msgstr "귀하의 구독이 더 이상 활성화되지 않습니다. 영구 차트를 만들고 편집하려면 Pro로 업그레이드하십시오."
 
-#: src/components/GraphFloatingMenu.tsx:52
+#: src/components/GraphFloatingMenu.tsx:58
 msgid "Zoom In"
 msgstr "확대"
 
-#: src/components/GraphFloatingMenu.tsx:49
+#: src/components/GraphFloatingMenu.tsx:63
 msgid "Zoom Out"
 msgstr "축소하기"
 

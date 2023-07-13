@@ -65,7 +65,7 @@ export function GraphFloatingMenu() {
           <Minus size={16} />
         </IconButton2>
       </Tooltip2>
-      <Tooltip2 content={t`Auto-Fit Graph`}>
+      <Tooltip2 content={t`Lock Zoom to Graph`}>
         <IconToggleButton
           size="xs"
           pressed={autoFit}

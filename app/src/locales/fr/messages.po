@@ -529,10 +529,6 @@ msgstr "Extrait"
 msgid "Feedback"
 msgstr "Commentaire"
 
-#: src/components/GraphFloatingMenu.tsx:55
-msgid "Fit Graph"
-msgstr "Ajuster le graphique"
-
 #: src/components/Settings.tsx:125
 msgid "Follow Us on Twitter"
 msgstr "Suivez-nous sur Twitter"
@@ -679,6 +675,10 @@ msgstr "Grand"
 msgid "Layout"
 msgstr "Disposition"
 
+#: src/components/GraphFloatingMenu.tsx:82
+msgid "Layout Frozen"
+msgstr "Mise en page gelée"
+
 #: src/components/Tabs/EditLayoutTab.tsx:211
 msgid "Layout is Frozen"
 msgstr "La mise en page est gelée"
@@ -731,6 +731,10 @@ msgstr "Charger le thème"
 #: src/components/ThemePicker.tsx:90
 msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "Charger un thème effacera tous les styles personnalisés que vous avez appliqués"
+
+#: src/components/GraphFloatingMenu.tsx:68
+msgid "Lock Zoom to Graph"
+msgstr "Verrouiller le Zoom sur le Graphique"
 
 #: src/components/Header.tsx:201
 #: src/components/Header.tsx:421
@@ -998,7 +1002,7 @@ msgstr "Supprimer le filigrane de l'image"
 msgid "Rename"
 msgstr "Renommer"
 
-#: src/components/GraphFloatingMenu.tsx:59
+#: src/components/GraphFloatingMenu.tsx:43
 msgid "Reset"
 msgstr "Réinitialiser"
 
@@ -1048,7 +1052,7 @@ msgstr "Économisez du temps et simplifiez votre flux de travail en important de
 msgid "Select your plan!"
 msgstr "Sélectionnez votre plan !"
 
-#: src/components/GraphFloatingMenu.tsx:78
+#: src/components/GraphFloatingMenu.tsx:99
 msgid "Send Feedback"
 msgstr "Envoyer des commentaires"
 
@@ -1308,7 +1312,6 @@ msgstr "Deux nœuds ont le même ID"
 msgid "Type"
 msgstr "Type"
 
-#: src/components/GraphFloatingMenu.tsx:69
 #: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "Débloquer"
@@ -1433,11 +1436,11 @@ msgstr "Vos diagrammes"
 msgid "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro."
 msgstr "Votre abonnement n'est plus actif. Si vous souhaitez créer et modifier des graphiques permanents, passez à Pro."
 
-#: src/components/GraphFloatingMenu.tsx:52
+#: src/components/GraphFloatingMenu.tsx:58
 msgid "Zoom In"
 msgstr "Zoomer"
 
-#: src/components/GraphFloatingMenu.tsx:49
+#: src/components/GraphFloatingMenu.tsx:63
 msgid "Zoom Out"
 msgstr "Zoomer vers l'extérieur"
 
