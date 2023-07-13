@@ -14,7 +14,7 @@ import { useUnmountStore } from "../../lib/useUnmountStore";
 import { Button2, IconButton2, popoverContentProps } from "../../ui/Shared";
 import { ThemePicker } from "../ThemePicker";
 
-export function EditStyleTab() {
+export default function EditStyleTab() {
   const meta = useDoc((s) => s.meta);
   const [style, setStyle] = useState<string>(
     (meta.cytoscapeStyle as string) ?? ""

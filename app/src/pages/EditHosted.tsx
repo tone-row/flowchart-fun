@@ -1,6 +1,6 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { Check, DotsThree } from "phosphor-react";
-import { useCallback, useEffect } from "react";
+import { lazy, useCallback, useEffect } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useParams, useRouteMatch } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
@@ -15,7 +15,7 @@ import Spinner from "../components/Spinner";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
-import { EditStyleTab } from "../components/Tabs/EditStyleTab";
+const EditStyleTab = lazy(() => import("../components/Tabs/EditStyleTab"));
 import { TextEditor } from "../components/TextEditor";
 import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";

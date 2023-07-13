@@ -2,6 +2,7 @@ import { Core } from "cytoscape";
 import { saveAs } from "file-saver";
 
 import { UNAUTH_IMG_SCALE } from "../lib/constants";
+import { cytoscape } from "../lib/cytoscape";
 import { getBackgroundColor } from "../lib/graphThemes";
 
 // padding, gets divided in half
@@ -12,6 +13,13 @@ const PADDING = 60;
  */
 export async function getSvg({ cy }: { cy: Core }) {
   const bg = getBackgroundColor();
+
+  // check if cy has loaded the svg plugin
+  // @ts-ignore
+  if (!cy.svg) {
+    const cytoscapeSvg = await import("cytoscape-svg");
+    cytoscape.use(cytoscapeSvg.default);
+  }
 
   try {
     // @ts-ignore

@@ -10,8 +10,15 @@ import { Button2 } from "../ui/Shared";
 
 export function ImportDataUnauthenticatedDialog() {
   useEffect(() => {
-    // preload /images/import-data.png
-    new Image().src = "/images/import-data.png";
+    // check if requestIdleCallback is supported
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(() => {
+        // preload /images/import-data.png when the network is idle
+        new Image().src = "/images/import-data.png";
+      });
+    } else {
+      // don't preload image
+    }
   }, []);
   const { push } = useHistory();
   return (
