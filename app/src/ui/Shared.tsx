@@ -1,6 +1,8 @@
 import { PopoverContentProps } from "@radix-ui/react-popover";
+import * as Toggle from "@radix-ui/react-toggle";
 import { TooltipContentProps } from "@radix-ui/react-tooltip";
 import * as RadixTooltip from "@radix-ui/react-tooltip";
+import cx from "classnames";
 import { HandWaving, Warning } from "phosphor-react";
 import { forwardRef, ReactNode } from "react";
 
@@ -272,6 +274,32 @@ export const IconButton2 = forwardRef<
 );
 
 IconButton2.displayName = "IconButton2";
+
+type IconToggleButtonProps = {
+  size?: keyof typeof pSize;
+};
+export const IconToggleButton = forwardRef<
+  HTMLButtonElement,
+  Toggle.ToggleProps & IconToggleButtonProps
+>(({ children, size = "sm", className = "", ...props }, ref) => {
+  return (
+    <Toggle.Root
+      {...props}
+      className={cx(
+        className,
+        pSize[size],
+        "rounded-md grid content-center justify-center",
+        "text-neutral-500 hover:text-neutral-600 hover:bg-neutral-100 aria-pressed:text-neutral-700 aria-pressed:bg-neutral-200",
+        "dark:text-neutral-400 dark:hover:text-neutral-300 dark:hover:bg-neutral-700 dark:aria-pressed:text-neutral-200 dark:aria-pressed:bg-neutral-800"
+      )}
+      ref={ref}
+    >
+      {children}
+    </Toggle.Root>
+  );
+});
+
+IconToggleButton.displayName = "IconToggleButton";
 
 /**
  * No hover styles. This should be used as the trigger for Popovers and Tooltips.

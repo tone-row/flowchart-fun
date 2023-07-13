@@ -156,7 +156,6 @@
     "Extra Large": "Extra groß",
     Extract: "Extrakt",
     Feedback: "Feedback",
-    "Fit Graph": "Passen Graph",
     "Follow Us on Twitter": "Folgen Sie uns auf Twitter",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "Einen Fehler gefunden? Eine Funktionsanfrage? Wir würden uns freuen von Ihnen zu hören!",
@@ -204,6 +203,7 @@
     Language: "Sprache",
     Large: "Groß",
     Layout: "Layout",
+    "Layout Frozen": "Layout eingefroren",
     "Layout is Frozen": "Layout ist eingefroren",
     "Leading References": "Führende Referenzen",
     "Learn More": "Mehr erfahren",
@@ -218,6 +218,7 @@
     "Load Theme": "Thema laden",
     "Loading a theme will erase any custom styles you have applied":
       "Das Laden eines Themas wird alle benutzerdefinierten Stile löschen, die Sie angewendet haben",
+    "Lock Zoom to Graph": "Zoom an Graph anpassen",
     "Log In": "Anmelden",
     "Log Out": "Abmelden",
     "Log in to start creating flowcharts.":

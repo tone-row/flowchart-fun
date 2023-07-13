@@ -148,7 +148,6 @@
     "Extra Large": "超大",
     Extract: "提取",
     Feedback: "反馈",
-    "Fit Graph": "适合图表",
     "Follow Us on Twitter": "在Twitter上关注我们",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "如果发现了一个 bug？有功能请求？我们很乐意听到您的意见！",
@@ -195,6 +194,7 @@
     Language: "语言",
     Large: "大",
     Layout: "布局",
+    "Layout Frozen": "布局已冻结",
     "Layout is Frozen": "布局被冻结",
     "Leading References": "主要參考",
     "Learn More": "学到更多",
@@ -209,6 +209,7 @@
     "Load Theme": "加载主题",
     "Loading a theme will erase any custom styles you have applied":
       "加载主题将擦除您应用的任何自定义样式",
+    "Lock Zoom to Graph": "锁定缩放到图表",
     "Log In": "登录",
     "Log Out": "登出",
     "Log in to start creating flowcharts.": "登入以開始創建流程圖。",

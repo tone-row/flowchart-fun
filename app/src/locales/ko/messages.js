@@ -150,7 +150,6 @@
     "Extra Large": "엄청나게 큼",
     Extract: "발췌",
     Feedback: "피드백",
-    "Fit Graph": "그래프 적합",
     "Follow Us on Twitter": "트위터에서 우리를 팔로우하기",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "버그를 발견했습니까? 기능 요청이 있습니까? 우리는 당신과의 소통을 사랑합니다!",
@@ -198,6 +197,7 @@
     Language: "언어",
     Large: "크다",
     Layout: "레이아웃",
+    "Layout Frozen": "레이아웃 동결",
     "Layout is Frozen": "레이아웃이 고정됨",
     "Leading References": "주목할만한 참고",
     "Learn More": "더 알아보기",
@@ -212,6 +212,7 @@
     "Load Theme": "테마 불러오기",
     "Loading a theme will erase any custom styles you have applied":
       "테마를 불러오면 사용자 정의 스타일이 모두 사라집니다.",
+    "Lock Zoom to Graph": "그래프에 룩 줌을 고정하다",
     "Log In": "로그인",
     "Log Out": "로그아웃",
     "Log in to start creating flowcharts.":

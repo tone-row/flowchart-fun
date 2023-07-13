@@ -529,10 +529,6 @@ msgstr "提取"
 msgid "Feedback"
 msgstr "反馈"
 
-#: src/components/GraphFloatingMenu.tsx:55
-msgid "Fit Graph"
-msgstr "适合图表"
-
 #: src/components/Settings.tsx:125
 msgid "Follow Us on Twitter"
 msgstr "在Twitter上关注我们"
@@ -679,6 +675,10 @@ msgstr "大"
 msgid "Layout"
 msgstr "布局"
 
+#: src/components/GraphFloatingMenu.tsx:82
+msgid "Layout Frozen"
+msgstr "布局已冻结"
+
 #: src/components/Tabs/EditLayoutTab.tsx:211
 msgid "Layout is Frozen"
 msgstr "布局被冻结"
@@ -731,6 +731,10 @@ msgstr "加载主题"
 #: src/components/ThemePicker.tsx:90
 msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "加载主题将擦除您应用的任何自定义样式"
+
+#: src/components/GraphFloatingMenu.tsx:68
+msgid "Lock Zoom to Graph"
+msgstr "锁定缩放到图表"
 
 #: src/components/Header.tsx:201
 #: src/components/Header.tsx:421
@@ -998,7 +1002,7 @@ msgstr "去除图片水印"
 msgid "Rename"
 msgstr "重命名"
 
-#: src/components/GraphFloatingMenu.tsx:59
+#: src/components/GraphFloatingMenu.tsx:43
 msgid "Reset"
 msgstr "重置"
 
@@ -1048,7 +1052,7 @@ msgstr "通過從其他來源導入數據來節省時間並簡化您的工作流
 msgid "Select your plan!"
 msgstr "選擇您的計劃！"
 
-#: src/components/GraphFloatingMenu.tsx:78
+#: src/components/GraphFloatingMenu.tsx:99
 msgid "Send Feedback"
 msgstr "发送反馈"
 
@@ -1308,7 +1312,6 @@ msgstr "两个节点有相同的ID"
 msgid "Type"
 msgstr "类型"
 
-#: src/components/GraphFloatingMenu.tsx:69
 #: src/components/Tabs/EditLayoutTab.tsx:216
 msgid "Unfreeze"
 msgstr "解冻"
@@ -1433,11 +1436,11 @@ msgstr "您的图表"
 msgid "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro."
 msgstr "您的订阅已不再有效。如果您想创建和编辑永久图表，请升级到Pro。"
 
-#: src/components/GraphFloatingMenu.tsx:52
+#: src/components/GraphFloatingMenu.tsx:58
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/components/GraphFloatingMenu.tsx:49
+#: src/components/GraphFloatingMenu.tsx:63
 msgid "Zoom Out"
 msgstr "縮小"
 
