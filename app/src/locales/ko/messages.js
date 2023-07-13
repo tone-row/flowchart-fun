@@ -336,6 +336,7 @@
     "Target Column": "대상 열",
     "Target Delimiter": "대상 구분자",
     Temporary: "임시",
+    "Temporary Flowchart Warning": "임시 흐름도 경고",
     "Temporary Flowcharts": "임시 다이어그램",
     "Text Sizes": "텍스트 크기",
     "Text followed by colon+space creates an edge with the text as the label":
