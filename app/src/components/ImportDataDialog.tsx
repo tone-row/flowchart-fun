@@ -150,7 +150,6 @@ const UploadFile = () => {
           .then((res) => {
             if (!res.ok) {
               res.text().then((text) => {
-                console.log({ text });
                 useImportData.setState({
                   errorMessage: text,
                   step: "error",

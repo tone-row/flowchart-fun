@@ -32,7 +32,6 @@ export function GraphFloatingMenu() {
   }, []);
 
   const isFrozen = useIsFrozen();
-  console.log({ isFrozen });
 
   const { push } = useHistory();
 
