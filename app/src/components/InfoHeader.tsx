@@ -1,5 +1,3 @@
-import "../pages/post/Post.css";
-
 import { PageTitle } from "../ui/Typography";
 import { OnlyInEnglish } from "./OnlyInEnglish";
 
