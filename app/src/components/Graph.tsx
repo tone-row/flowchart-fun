@@ -236,6 +236,11 @@ function useInitializeGraph({
 
       cyCurrent.on("dragfree", handleDragFree);
 
+      // on zoom
+      cyCurrent.on("scrollzoom", () => {
+        useGraphStore.setState({ autoFit: false });
+      });
+
       document
         .getElementById("cy")
         ?.addEventListener("mouseout", handleMouseOut);
@@ -311,15 +316,21 @@ function getGraphUpdater({
       // Update
       cy.current.json({ elements });
 
+      // Determine whether to animate
       const shouldAnimate =
         isGraphInitialized.current &&
         elements.length < 200 &&
         isAnimationEnabled;
+
+      // Determine whether to fit
+      const autoFit = useGraphStore.getState().autoFit;
+
       cy.current
         .layout({
           animate: shouldAnimate,
           animationDuration: shouldAnimate ? 333 : 0,
           ...layout,
+          fit: autoFit,
           padding: DEFAULT_GRAPH_PADDING,
         })
         .run();
