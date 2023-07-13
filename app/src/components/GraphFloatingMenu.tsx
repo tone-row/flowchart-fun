@@ -1,13 +1,14 @@
 import { t, Trans } from "@lingui/macro";
-import { ArrowsClockwise, Minus, Plus, Square } from "phosphor-react";
-import { ReactNode, useCallback } from "react";
+import { ArrowsClockwise, MagnifyingGlass, Minus, Plus } from "phosphor-react";
+import { useCallback } from "react";
 import { FaRegSnowflake } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
+import { useGraphStore } from "../lib/useGraphStore";
 import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
 import { useUnmountStore } from "../lib/useUnmountStore";
-import { IconButton2, Tooltip2 } from "../ui/Shared";
+import { IconButton2, IconToggleButton, Tooltip2 } from "../ui/Shared";
 
 const ZOOM_STEP = 0.5;
 
@@ -31,36 +32,66 @@ export function GraphFloatingMenu() {
   }, []);
 
   const isFrozen = useIsFrozen();
+  console.log({ isFrozen });
 
   const { push } = useHistory();
 
+  const autoFit = useGraphStore((s) => s.autoFit);
+
   return (
     <div className="absolute bottom-4 right-4 flex bg-white border border-neutral-300 shadow-sm rounded-lg overflow-hidden gap-1 p-1 items-center dark:bg-neutral-600 dark:border-neutral-600">
-      <CustomIconButton label={t`Zoom Out`} onClick={zoomOut}>
-        <Minus size={16} />
-      </CustomIconButton>
-      <CustomIconButton label={t`Zoom In`} onClick={zoomIn}>
-        <Plus size={16} />
-      </CustomIconButton>
-      <CustomIconButton onClick={fitGraph} label={t`Fit Graph`}>
-        <Square size={16} />
-      </CustomIconButton>
-      <CustomIconButton
-        label={t`Reset`}
-        onClick={() => {
-          useUnmountStore.setState({
-            unmount: true,
-          });
-        }}
-      >
-        <ArrowsClockwise size={16} />
-      </CustomIconButton>
-      {isFrozen ? (
-        <CustomIconButton label={t`Unfreeze`} onClick={unfreezeDoc}>
+      <Tooltip2 content={t`Reset`}>
+        <IconButton2
+          size="xs"
+          onClick={() => {
+            useUnmountStore.setState({
+              unmount: true,
+            });
+            useGraphStore.setState({
+              autoFit: true,
+            });
+          }}
+        >
+          <ArrowsClockwise size={16} />
+        </IconButton2>
+      </Tooltip2>
+      <Tooltip2 content={t`Zoom In`}>
+        <IconButton2 size="xs" onClick={zoomIn}>
+          <Plus size={16} />
+        </IconButton2>
+      </Tooltip2>
+      <Tooltip2 content={t`Zoom Out`}>
+        <IconButton2 size="xs" onClick={zoomOut}>
+          <Minus size={16} />
+        </IconButton2>
+      </Tooltip2>
+      <Tooltip2 content={t`Lock Zoom to Graph`}>
+        <IconToggleButton
+          size="xs"
+          pressed={autoFit}
+          onPressedChange={(pressed) => {
+            if (pressed && window.__cy) {
+              window.__cy.fit(undefined, DEFAULT_GRAPH_PADDING);
+            }
+            useGraphStore.setState({ autoFit: pressed });
+          }}
+        >
+          <MagnifyingGlass size={16} />
+        </IconToggleButton>
+      </Tooltip2>
+      <Tooltip2 content={t`Layout Frozen`}>
+        <IconToggleButton
+          size="xs"
+          pressed={isFrozen}
+          onPressedChange={(pressed) => {
+            if (!pressed) {
+              unfreezeDoc();
+            }
+          }}
+        >
           <FaRegSnowflake size={16} />
-        </CustomIconButton>
-      ) : null}
-
+        </IconToggleButton>
+      </Tooltip2>
       <button
         onClick={() => push("/o")}
         className="text-[12px] text-neutral-500 hover:text-neutral-600 cursor-pointer font-bold ml-4 px-2 flex gap-1 hover:scale-105 transition-transform dark:text-neutral-300 dark:hover:text-neutral-200"
@@ -68,28 +99,5 @@ export function GraphFloatingMenu() {
         <Trans>Send Feedback</Trans>
       </button>
     </div>
-  );
-}
-
-function fitGraph() {
-  if (!window.__cy) return;
-  window.__cy.fit(undefined, DEFAULT_GRAPH_PADDING);
-}
-
-function CustomIconButton({
-  label,
-  children,
-  onClick,
-}: {
-  label: string;
-  children: ReactNode;
-  onClick?: () => void;
-}) {
-  return (
-    <Tooltip2 content={label}>
-      <IconButton2 size="xs" onClick={onClick}>
-        {children}
-      </IconButton2>
-    </Tooltip2>
   );
 }

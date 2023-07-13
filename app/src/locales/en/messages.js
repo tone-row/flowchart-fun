@@ -154,7 +154,6 @@
     "Extra Large": "Extra Large",
     Extract: "Extract",
     Feedback: "Feedback",
-    "Fit Graph": "Fit Graph",
     "Follow Us on Twitter": "Follow Us on Twitter",
     "Found a bug? Have a feature request? We would love to hear from you!":
       "Found a bug? Have a feature request? We would love to hear from you!",
@@ -202,6 +201,7 @@
     Language: "Language",
     Large: "Large",
     Layout: "Layout",
+    "Layout Frozen": "Layout Frozen",
     "Layout is Frozen": "Layout is Frozen",
     "Leading References": "Leading References",
     "Learn More": "Learn More",
@@ -216,6 +216,7 @@
     "Load Theme": "Load Theme",
     "Loading a theme will erase any custom styles you have applied":
       "Loading a theme will erase any custom styles you have applied",
+    "Lock Zoom to Graph": "Lock Zoom to Graph",
     "Log In": "Log In",
     "Log Out": "Log Out",
     "Log in to start creating flowcharts.":
