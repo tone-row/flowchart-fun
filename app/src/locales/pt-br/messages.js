@@ -346,6 +346,7 @@
     "Target Column": "Coluna Alvo",
     "Target Delimiter": "Delimitador Alvo",
     Temporary: "Temporário",
+    "Temporary Flowchart Warning": "Aviso de Fluxograma Temporário",
     "Temporary Flowcharts": "Diagramas Temporários",
     "Text Sizes": "Tamanhos de Texto",
     "Text followed by colon+space creates an edge with the text as the label":

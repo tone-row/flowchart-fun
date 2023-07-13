@@ -332,6 +332,7 @@
     "Target Column": "目標欄",
     "Target Delimiter": "目標分隔符",
     Temporary: "临时",
+    "Temporary Flowchart Warning": "暂时流程图警告",
     "Temporary Flowcharts": "临时图表",
     "Text Sizes": "文字大小",
     "Text followed by colon+space creates an edge with the text as the label":
