@@ -51,10 +51,10 @@
 }
 
 .ShapeSquare {
-  background-image: url(/public/images/shape-sprite.svg);
-  background-size: 360px;
-  background-position-x: calc(-12px - var(--col) * 145px);
-  background-position-y: calc(-12px - var(--row) * 126.75px);
+  background-image: url(/public/images/shape-sprite-2.svg);
+  background-size: 170px;
+  background-position-x: calc(-6px - var(--col) * 55.8px);
+  background-position-y: calc(-5px - var(--row) * 56.5px);
   border-radius: 3px;
   overflow: hidden;
 }

@@ -23,7 +23,7 @@ export default function Post() {
             <span className="text-blue-500 translate-x-[2px] dark:text-purple-400 tracking-wide uppercase">
               {data.publishDate}
             </span>
-            <PageTitle>{data.title}</PageTitle>
+            <PageTitle className="text-wrap-balance">{data.title}</PageTitle>
           </div>
           <p className="text-neutral-400 text-lg dark:text-neutral-300">
             {data.description}
