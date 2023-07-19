@@ -22,6 +22,7 @@ const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
 const Login = lazy(() => import("../pages/LogIn"));
+const Login2 = lazy(() => import("../pages/LogIn2"));
 const Charts = lazy(() => import("../pages/Charts"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
@@ -33,6 +34,9 @@ export default function Router() {
     <Switch>
       <RouteWithWrapper path="/" exact>
         <Edit />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/login" exact>
+        <Login2 />
       </RouteWithWrapper>
       <RouteWithWrapper path="/pricing" exact>
         <Pricing />

@@ -380,7 +380,7 @@ function HostedOptions() {
           (state) => {
             return produce(state, (draft) => {
               draft.details.isPublic = result.isPublic;
-              draft.details.publicId = result.publicId;
+              if (result.publicId) draft.details.publicId = result.publicId;
             });
           },
           false,

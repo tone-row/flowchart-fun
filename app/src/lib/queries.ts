@@ -181,7 +181,7 @@ export async function makeChart({
     .select();
 }
 
-export async function copyHostedChartById(id: string) {
+export async function copyHostedChartById(id: number) {
   if (!supabase) return;
   // get current user
   const { data: sessionData } = await supabase.auth.getSession();

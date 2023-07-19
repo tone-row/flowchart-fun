@@ -132,7 +132,7 @@ export default function Charts() {
                     handleDeleteChart.mutate({ chartId: chart.id });
                   }}
                   handleCopy={() => {
-                    handleCopyPersistentChart.mutate(chart.id as string);
+                    handleCopyPersistentChart.mutate(chart.id);
                   }}
                   isCurrent={`/u/${chart.id}` === currentChart}
                 >
