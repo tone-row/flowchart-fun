@@ -336,16 +336,16 @@ function MobileHeader({
           />
           <Dialog.Content className="mobile-header__content">
             <HeaderClientLink
-              label={t`New`}
-              icon={<Plus weight="light" height={22} width={22} />}
-              className="shared-header__new"
-              to="/n"
-            />
-            <HeaderClientLink
               label={t`Editor`}
               icon={<TreeStructure weight="light" height={22} width={22} />}
               aria-current={isEditor ? "page" : undefined}
               to={lastChart}
+            />
+            <HeaderClientLink
+              label={t`New`}
+              icon={<Plus weight="light" height={22} width={22} />}
+              className="shared-header__new"
+              to="/n"
             />
             <HeaderClientLink
               label={t`Charts`}
