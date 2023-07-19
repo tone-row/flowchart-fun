@@ -138,7 +138,7 @@ async function loadHostedDoc(id: string) {
     title: chart.name,
     isHosted: true,
     isPublic: chart.is_public,
-    publicId: chart.public_id,
+    publicId: chart.public_id ?? undefined,
   });
   return doc;
 }
