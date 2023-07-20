@@ -1,13 +1,13 @@
 import { Trans } from "@lingui/macro";
 import { CopySimple } from "phosphor-react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { randomChartName, titleToLocalStorageKey } from "../lib/helpers";
 import { docToString, useDoc } from "../lib/useDoc";
 import { Button2 } from "../ui/Shared";
 
 export function CloneButton() {
-  const { push } = useHistory();
+  const navigate = useNavigate();
   const fullText = useDoc((s) => docToString(s));
   return (
     <Button2
@@ -18,7 +18,7 @@ export function CloneButton() {
           titleToLocalStorageKey(newChartTitle),
           fullText ?? ""
         );
-        push(`/${newChartTitle}`);
+        navigate(`/${newChartTitle}`);
       }}
       rightIcon={<CopySimple size={16} />}
     >

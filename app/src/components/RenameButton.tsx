@@ -2,7 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ChangeEvent, memo, ReactNode, useRef, useState } from "react";
 import { useMutation } from "react-query";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
 import { useIsValidSponsor } from "../lib/hooks";
@@ -25,7 +25,7 @@ export const RenameButton = memo(function RenameButton({
   const initialName = useDocDetails("title", "flowchart.fun");
   const isHosted = useDocDetails("isHosted");
   const id = useDocDetails("id");
-  const { push } = useHistory();
+  const navigate = useNavigate();
   const isOpen = useRenameDialogStore((store) => store.isOpen);
   const convertToHosted = useRenameDialogStore(
     (store) => store.convertToHosted
@@ -50,7 +50,7 @@ export const RenameButton = memo(function RenameButton({
           if (!charts) throw new Error("Could not create hosted chart");
           const chart = charts[0];
           if (!chart) throw new Error("Could not create hosted chart");
-          push(`/u/${chart.id}`);
+          navigate(`/u/${chart.id}`);
         }
       } else {
         const oldKey = titleToLocalStorageKey(slugify(initialName));
@@ -59,7 +59,7 @@ export const RenameButton = memo(function RenameButton({
         if (window.localStorage.getItem(newKey) !== null)
           throw new Error("Chart already exists");
         window.localStorage.setItem(newKey, fullText);
-        push(`/${newSlug}`);
+        navigate(`/${newSlug}`);
         window.localStorage.removeItem(oldKey);
       }
     },

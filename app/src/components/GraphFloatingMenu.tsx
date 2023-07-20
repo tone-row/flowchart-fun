@@ -2,7 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import { ArrowsClockwise, MagnifyingGlass, Minus, Plus } from "phosphor-react";
 import { useCallback } from "react";
 import { FaRegSnowflake } from "react-icons/fa";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { useGraphStore } from "../lib/useGraphStore";
@@ -33,7 +33,7 @@ export function GraphFloatingMenu() {
 
   const isFrozen = useIsFrozen();
 
-  const { push } = useHistory();
+  const navigate = useNavigate();
 
   const autoFit = useGraphStore((s) => s.autoFit);
 
@@ -95,7 +95,7 @@ export function GraphFloatingMenu() {
         </IconToggleButton>
       </Tooltip2>
       <button
-        onClick={() => push("/o")}
+        onClick={() => navigate("/o")}
         className="text-[12px] text-neutral-500 hover:text-neutral-600 cursor-pointer font-bold ml-4 px-2 flex gap-1 hover:scale-105 transition-transform dark:text-neutral-300 dark:hover:text-neutral-200"
       >
         <Trans>Send Feedback</Trans>

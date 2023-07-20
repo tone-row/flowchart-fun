@@ -1,5 +1,5 @@
 import { useContext, useMemo } from "react";
-import { useLocation, useRouteMatch } from "react-router-dom";
+import { useLocation, useParams, useRouteMatch } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import { slugify } from "./helpers";
@@ -88,14 +88,15 @@ export function useIsFirefox() {
  * It's used to alter CSS with data-showing
  */
 export function useIsEditorView() {
-  const { path, isExact } = useRouteMatch();
+  const pathname = useLocation().pathname;
+  const params = useParams();
+
   return (
-    path === "/u/:id" ||
-    path === "/c/:graphText?" ||
-    path === "/r/:graphText?" ||
-    path === "/h" ||
-    path === "/:workspace" ||
-    (path === "/" && isExact)
+    pathname === "/" ||
+    // works for hosted and local charts
+    ["id", "workspace"].some((k) => k in params) ||
+    // works for read-only charts that aren't fullscreen
+    ["/c/", "/r/"].some((k) => pathname.startsWith(k))
   );
 }
 
