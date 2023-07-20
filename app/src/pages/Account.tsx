@@ -5,7 +5,7 @@ import { ArrowSquareOut } from "phosphor-react";
 import React, { ReactNode, useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
 import { AppContext } from "../components/AppContext";
@@ -27,16 +27,16 @@ export default function Account() {
   const { customer, session, customerIsLoading } = useContext(AppContext);
   const [cancelModal, setCancelModal] = useState(false);
   const [resumeModal, setResumeModal] = useState(false);
-  const { push } = useHistory();
+  const navigate = useNavigate();
   const signOut = useCallback(() => {
     (async () => {
       if (!supabase) return;
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
       queryClient.removeQueries(["auth"]);
-      push("/");
+      navigate("/");
     })();
-  }, [push]);
+  }, [navigate]);
   const { data: invoices = [] } = useOrderHistory(
     customer?.customerId,
     customer?.subscription?.id

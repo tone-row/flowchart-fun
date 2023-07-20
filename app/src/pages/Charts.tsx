@@ -12,7 +12,7 @@ import {
 } from "phosphor-react";
 import { memo, ReactNode, useContext, useReducer, useState } from "react";
 import { useMutation } from "react-query";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
@@ -43,7 +43,7 @@ export default function Charts() {
   );
   const { data: persistentCharts, isLoading } = useHostedCharts();
   const isLoadingAnything = isLoading || customerIsLoading;
-  const { push } = useHistory();
+  const navigate = useNavigate();
   const currentChart = useLastChart((state) => state.lastChart);
   const handleDeleteChart = useMutation("deleteChart", deleteChart, {
     onSuccess: (_result, args) => {
@@ -169,7 +169,7 @@ export default function Charts() {
                   refetchTemporaryCharts();
                 }}
                 handleCopy={() => {
-                  copyLocalChart(chart, push);
+                  copyLocalChart(chart, navigate);
                 }}
                 isCurrent={`/${chart}` === currentChart}
               />

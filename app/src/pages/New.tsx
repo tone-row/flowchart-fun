@@ -20,7 +20,7 @@ import {
   useState,
 } from "react";
 import { useMutation } from "react-query";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
@@ -84,7 +84,7 @@ const New = memo(function New({
   templateText: string | null;
 }) {
   const defaultDoc = getDefaultChart();
-  const { replace } = useHistory();
+  const navigate = useNavigate();
 
   const userId = session?.user?.id;
 
@@ -102,7 +102,9 @@ const New = memo(function New({
     retry: false,
     onSuccess: (response: any) => {
       queryClient.invalidateQueries(["auth", "hostedCharts"]);
-      replace(`/u/${response.data[0].id}`);
+      navigate(`/u/${response.data[0].id}`, {
+        replace: true,
+      });
     },
   });
 
@@ -166,7 +168,9 @@ const New = memo(function New({
             case "local": {
               const newKey = titleToLocalStorageKey(safeName);
               window.localStorage.setItem(newKey, templateText ?? defaultDoc);
-              replace(`/${safeName}`);
+              navigate(`/${safeName}`, {
+                replace: true,
+              });
               break;
             }
           }
