@@ -463,7 +463,7 @@ msgid "Editable"
 msgstr "可编辑"
 
 #: src/components/Header.tsx:87
-#: src/components/Header.tsx:345
+#: src/components/Header.tsx:339
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "编辑器"
@@ -634,6 +634,10 @@ msgstr "從Lucidchart、Visio和其他CSV檔案匯入"
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
 
+#: src/components/Layout.tsx:73
+msgid "Important Changes are Coming to Flowchart Fun."
+msgstr "流程图乐趣将迎来重要变化。"
+
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "匯入資料是專業功能。您可以每月以3美元或每年30美元升級至Flowchart Fun Pro。"
@@ -689,6 +693,7 @@ msgid "Leading References"
 msgstr "主要參考"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:67
+#: src/components/Layout.tsx:75
 #: src/components/MightLoseWarning.tsx:37
 msgid "Learn More"
 msgstr "学到更多"
@@ -802,7 +807,7 @@ msgid "Name"
 msgstr "姓名"
 
 #: src/components/Header.tsx:78
-#: src/components/Header.tsx:339
+#: src/components/Header.tsx:345
 #: src/pages/Charts.tsx:106
 msgid "New"
 msgstr "新"

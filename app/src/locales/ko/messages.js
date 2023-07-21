@@ -184,6 +184,8 @@
       "Lucidchart, Visio 및 기타 CSV 파일에서 가져오기",
     "Import your diagram it into Microsoft Visio using one of these CSV files.":
       "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다.",
+    "Important Changes are Coming to Flowchart Fun.":
+      "Flowchart Fun에는 중요한 변화가 오고 있습니다.",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "데이터 가져오기는 프로 기능입니다. Flowchart Fun Pro을 월 3 달러 또는 연 30 달러로 업그레이드 할 수 있습니다.",
     "Impress your audience with high-quality images produced by Flowchart Fun":

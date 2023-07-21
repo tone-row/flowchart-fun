@@ -189,6 +189,8 @@
       "लुसिडचार्ट, विसिओ और अन्य CSV फ़ाइलों से आयात करें",
     "Import your diagram it into Microsoft Visio using one of these CSV files.":
       "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।",
+    "Important Changes are Coming to Flowchart Fun.":
+      "फ्लोचार्ट फन के लिए महत्वपूर्ण बदलाव आ रहे हैं।",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "डेटा आयात एक प्रो फीचर है। आप केवल $ 3/महीने या $ 30/वर्ष के लिए फ्लोचार्ट फन प्रो में अपग्रेड कर सकते हैं।",
     "Impress your audience with high-quality images produced by Flowchart Fun":

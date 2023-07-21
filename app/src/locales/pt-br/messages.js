@@ -190,6 +190,8 @@
       "Importar do Lucidchart, do Visio e de outros arquivos CSV",
     "Import your diagram it into Microsoft Visio using one of these CSV files.":
       "Importe seu diagrama para o Microsoft Visio usando um desses arquivos CSV.",
+    "Important Changes are Coming to Flowchart Fun.":
+      "Mudanças importantes estão chegando ao Flowchart Fun.",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "Importar dados é um recurso avançado. Você pode atualizar para o Flowchart Fun Pro por apenas US $ 3/mês ou US $ 30/ano.",
     "Impress your audience with high-quality images produced by Flowchart Fun":
