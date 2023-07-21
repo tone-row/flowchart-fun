@@ -181,6 +181,8 @@
       "從Lucidchart、Visio和其他CSV檔案匯入",
     "Import your diagram it into Microsoft Visio using one of these CSV files.":
       "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。",
+    "Important Changes are Coming to Flowchart Fun.":
+      "流程图乐趣将迎来重要变化。",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "匯入資料是專業功能。您可以每月以3美元或每年30美元升級至Flowchart Fun Pro。",
     "Impress your audience with high-quality images produced by Flowchart Fun":

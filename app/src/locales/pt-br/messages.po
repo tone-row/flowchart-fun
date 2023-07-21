@@ -463,7 +463,7 @@ msgid "Editable"
 msgstr "Editável"
 
 #: src/components/Header.tsx:87
-#: src/components/Header.tsx:345
+#: src/components/Header.tsx:339
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "Editor"
@@ -634,6 +634,10 @@ msgstr "Importar do Lucidchart, do Visio e de outros arquivos CSV"
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Importe seu diagrama para o Microsoft Visio usando um desses arquivos CSV."
 
+#: src/components/Layout.tsx:73
+msgid "Important Changes are Coming to Flowchart Fun."
+msgstr "Mudanças importantes estão chegando ao Flowchart Fun."
+
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "Importar dados é um recurso avançado. Você pode atualizar para o Flowchart Fun Pro por apenas US $ 3/mês ou US $ 30/ano."
@@ -689,6 +693,7 @@ msgid "Leading References"
 msgstr "Principais Referências"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:67
+#: src/components/Layout.tsx:75
 #: src/components/MightLoseWarning.tsx:37
 msgid "Learn More"
 msgstr "Saber mais"
@@ -802,7 +807,7 @@ msgid "Name"
 msgstr "Nome"
 
 #: src/components/Header.tsx:78
-#: src/components/Header.tsx:339
+#: src/components/Header.tsx:345
 #: src/pages/Charts.tsx:106
 msgid "New"
 msgstr "Novo"
