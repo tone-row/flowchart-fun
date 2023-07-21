@@ -188,6 +188,8 @@
       "Import from Lucidchart, Visio, and other CSV files",
     "Import your diagram it into Microsoft Visio using one of these CSV files.":
       "Import your diagram it into Microsoft Visio using one of these CSV files.",
+    "Important Changes are Coming to Flowchart Fun.":
+      "Important Changes are Coming to Flowchart Fun.",
     "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.":
       "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year.",
     "Impress your audience with high-quality images produced by Flowchart Fun":
