@@ -22,7 +22,7 @@
     "e2e": "playwright test --config=playwright.config.ts",
     "e2e:debug": "DEBUG=1 pnpm run e2e --workers 1",
     "e2e:generate": "npx playwright codegen localhost:3000",
-    "generate:types": "export $(cat .env.local | xargs) && supabase gen types typescript --db-url \"${DB_URL}\" > src/types/database.types.ts",
+    "generate:types": "export $(cat .env.local | xargs) && supabase gen types typescript --project-id \"${PROJECT_ID}\" > src/types/database.types.ts",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "autotranslations": "node scripts/autotranslations.mjs"
   },
@@ -52,14 +52,8 @@
     "@sentry/tracing": "^7.38.0",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.52.1",
-    "@supabase/auth-ui-react": "^0.4.2",
-    "@supabase/auth-ui-shared": "^0.1.6",
-    "@supabase/gotrue-js": "^2",
-    "@supabase/supabase-js": "^2.26.0",
+    "@supabase/supabase-js": "^2.29.0",
     "@svgr/webpack": "^6.3.1",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "@tone-row/slang": "^1.2.35",
     "@tone-row/strip-comments": "^2.0.1",
     "buffer": "^6.0.3",
@@ -75,7 +69,7 @@
     "deepmerge": "^4.2.2",
     "eslint": "^8.3.0",
     "file-saver": "^2.0.5",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^10.13.1",
     "graph-selector": "^0.9.10",
     "gray-matter": "^4.0.2",
     "highlight.js": "^11.7.0",
@@ -83,7 +77,6 @@
     "js-base64": "^3.7.5",
     "js-cookie": "^3.0.5",
     "lodash.throttle": "^4.1.1",
-    "logsnag": "^0.1.6",
     "lz-string": "^1.4.4",
     "make-plural": "^7.1.0",
     "marked": "^4.1.1",
@@ -137,10 +130,12 @@
     ]
   },
   "devDependencies": {
-    "@lingui/cli": "^3.13.2",
+    "@lingui/cli": "^4.3.0",
     "@lingui/macro": "^3.13.2",
     "@playwright/test": "1.29.0",
-    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/css-font-loading-module": "^0.0.7",
     "@types/cytoscape": "^3.19.9",
     "@types/download": "^6.2.4",
@@ -183,12 +178,14 @@
     "jest-canvas-mock": "^2.3.1",
     "jsdom": "^20.0.3",
     "minimist": "^1.2.5",
-    "msw": "^0.36.8",
+    "msw": "^1.2.3",
+    "react@latest": "link:@@testing-library/react@latest",
     "source-map-explorer": "^2.5.2",
+    "supabase": "^1.82.1",
     "tailwindcss": "^3.2.6",
     "ts-node": "^10.9.1",
     "ts-unused-exports": "^7.0.3",
-    "typescript": "^4.8.4",
+    "typescript": "^5.1.6",
     "web-worker": "^1.2.0"
   },
   "jest": {
@@ -200,5 +197,10 @@
       "\"node_modules/.pnpm/(?!react-use-localstorage)/\"",
       "\"node_modules/.pnpm/(?!(monaco-editor|monaco-editor-core)/)\""
     ]
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": "^5.57.1",
+    "fork-ts-checker-webpack-plugin": "^6.5.3",
+    "typescript": "^5.0.3"
   }
 }

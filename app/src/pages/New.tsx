@@ -1,7 +1,7 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
-import { Session } from "@supabase/gotrue-js";
+import { Session } from "@supabase/supabase-js";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import {
   ChatTeardropText,

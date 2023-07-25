@@ -25,23 +25,27 @@ describe("Feedback", () => {
   });
 
   test("can fill and submit form", async () => {
+    const user = userEvent.setup();
     render(<Feedback />);
-    const textarea = await screen.findByTestId("message");
+
+    const emailInput = screen.getByTestId("email");
+    expect(emailInput).toBeInTheDocument();
+    await user.type(emailInput, "test@test.com");
+
+    const textarea = screen.getByTestId("message");
     expect(textarea).toBeInTheDocument();
-    userEvent.type(textarea, "Howdy Partner");
+    await user.type(textarea, "This is some feedback");
 
-    const email = await screen.findByTestId("email");
-    expect(email).toBeInTheDocument();
-    userEvent.type(email, "test@test.com");
-
-    userEvent.click(screen.getByText(/Submit/gi));
+    const submitButton = screen.getByText(/Submit/i);
+    user.click(submitButton);
 
     expect(
-      await screen.findByText(/Thank you for your feedback!/gi)
+      await screen.findByText(/Thank you for your feedback/i)
     ).toBeInTheDocument();
   });
 
   test("handles email sending error", async () => {
+    const user = userEvent.setup();
     server.use(
       rest.post("/api/mail", (req, res, ctx) => {
         return res(ctx.json({ success: false }));
@@ -50,9 +54,9 @@ describe("Feedback", () => {
 
     render(<Feedback />);
     const textarea = await screen.findByTestId("message");
-    userEvent.type(textarea, "Howdy Partner");
-    userEvent.type(screen.getByTestId("email"), "test@test.com");
-    userEvent.click(screen.getByText(/Submit/gi));
+    await user.type(textarea, "Howdy Partner");
+    await user.type(screen.getByTestId("email"), "test@test.com");
+    userEvent.click(screen.getByText(/Submit/i));
 
     expect(await screen.findByText(/An error occurred/)).toBeInTheDocument();
   });
