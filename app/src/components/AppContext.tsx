@@ -1,4 +1,4 @@
-import { Session } from "@supabase/gotrue-js";
+import { Session } from "@supabase/supabase-js";
 import {
   createContext,
   Dispatch,
@@ -136,16 +136,14 @@ const Provider = ({ children }: { children?: ReactNode }) => {
       return;
     }
 
-    (async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      setSession(session);
+    supabase.auth.getSession().then((sessionResponse) => {
+      setSession(sessionResponse.data.session);
       setCheckedSession(true);
-      supabase.auth.onAuthStateChange((_event, session) => {
-        setSession(session);
-      });
-    })();
+    });
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
   }, []);
 
   // Close Share Modal when navigating

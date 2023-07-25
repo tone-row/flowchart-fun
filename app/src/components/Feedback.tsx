@@ -52,7 +52,11 @@ export default function Feedback() {
       {success ? (
         <Success />
       ) : (
-        <form className="grid gap-4" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          data-testid="feedback-form"
+          className="grid gap-4"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <section className="grid gap-2">
             <Label>
               <Trans>Email</Trans>
@@ -97,8 +101,8 @@ export default function Feedback() {
 function Success() {
   const lastChart = useLastChart((s) => s.lastChart);
   return (
-    <div className="grid gap-4 bg-green-100 p-4 rounded-lg text-center">
-      <SectionTitle className="text-green-700">
+    <div className="grid gap-4 text-center border rounded p-4 border-neutral-400 max-w-4xl mx-auto">
+      <SectionTitle isUnderline={false}>
         <Trans>Thank you for your feedback!</Trans>
       </SectionTitle>
       <Link to={lastChart} className="underline text-sm">

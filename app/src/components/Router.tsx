@@ -21,7 +21,6 @@ const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
 const Login = lazy(() => import("../pages/LogIn"));
-const Login2 = lazy(() => import("../pages/LogIn2"));
 const Charts = lazy(() => import("../pages/Charts"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 
@@ -31,7 +30,6 @@ export default function Router() {
     <Routes>
       <Route path="/" element={<Wrapper />}>
         <Route index element={<Edit />} />
-        <Route path="/login" element={<Login2 />} />
         <Route path="/pricing" element={<Pricing />} />
         {/* "y" for "your charts" */}
         <Route path="/y" element={<Charts />} />
