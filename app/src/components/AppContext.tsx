@@ -8,7 +8,6 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from "react";
 import { useLocation } from "react-router-dom";
@@ -16,10 +15,8 @@ import useLocalStorage from "react-use-localstorage";
 import Stripe from "stripe";
 
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
-import { loadSponsorOnlyLayouts } from "../lib/cytoscape";
 import { useCustomerInfo, useHostedCharts } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
-import { useGraphStore } from "../lib/useGraphStore";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
 
@@ -114,21 +111,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
 
   const [checkedSession, setCheckedSession] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
-  const sponsorLayoutsLoading = useRef(false);
-
-  /* Load Sponsor-only layouts when logged in */
-  useEffect(() => {
-    // If not logged in, return
-    if (!session) return;
-    // If already loaded, return
-    if (useGraphStore.getState().sponsorLayoutsLoaded) return;
-    // If in the process of loading, return
-    if (sponsorLayoutsLoading.current) return;
-    sponsorLayoutsLoading.current = true;
-    loadSponsorOnlyLayouts().then(() => {
-      useGraphStore.setState({ sponsorLayoutsLoaded: true });
-    });
-  }, [session]);
 
   useEffect(() => {
     if (!supabase) {
