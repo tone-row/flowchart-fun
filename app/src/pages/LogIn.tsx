@@ -1,13 +1,14 @@
 import { t, Trans } from "@lingui/macro";
+import { Envelope, GithubLogo, GoogleLogo } from "phosphor-react";
 import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { Link } from "react-router-dom";
 
 import { Warning } from "../components/Warning";
 import { WelcomeMessage } from "../components/WelcomeMessage";
 import { isError } from "../lib/helpers";
 import { login } from "../lib/queries";
+import { supabase } from "../lib/supabaseClient";
 import { Button2, Page } from "../ui/Shared";
 import { Label, PageTitle } from "../ui/Typography";
 import { ReactComponent as EmailPassword } from "./EmailPassword.svg";
@@ -63,49 +64,64 @@ export default function Login() {
   }
 
   return (
-    <Page>
+    <Page size="sm">
       {newSignUp && <WelcomeMessage />}
-      <div className="grid gap-3 content-start">
-        <PageTitle className="text-center">{t`Log In`}</PageTitle>
-        <form className="gap-2 grid" onSubmit={handleSubmit(onSubmit)}>
-          <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400">
-            <Trans>
-              We use magic links to log you in. Enter your email below to get
-              started.
-            </Trans>
-          </p>
-          <label className="grid mt-4">
-            <Label size="xs">Email</Label>
-            <input
-              className="p-4 mt-1 border bg-background dark:bg-[#0f0f0f] border-gray-300 rounded hover:border-gray-400 focus:outline-none focus:ring focus:ring-neutral-400 focus:ring-opacity-25 focus:ring-offset-1 dark:text-neutral-50"
-              autoComplete="off"
-              {...register("email", {
-                required: true,
-                setValueAs: (t) => t.toLowerCase(),
-              })}
-              disabled={isLoading}
-            />
-          </label>
-          <Button2
-            disabled={isLoading}
-            className="w-full justify-center"
-            isLoading={isLoading}
-            color="blue"
-          >
-            <Trans>Submit</Trans>
-          </Button2>
-          {isError(error) && <Warning>{error.message}</Warning>}
-          <span className="text-sm mt-5">
-            {t`Don't have an account?`}
-            <Link
-              to="/pricing"
-              className="text-blue-500 hover:underline focus:underline ml-1"
-            >
-              <Trans>Sign Up Now</Trans>
-            </Link>
-          </span>
-        </form>
+      <PageTitle className="text-center mb-6">{t`Sign In`}</PageTitle>
+      <Button2
+        leftIcon={<GoogleLogo size={24} />}
+        onClick={() => {
+          supabase?.auth.signInWithOAuth({
+            provider: "google",
+          });
+        }}
+      >
+        Sign in with Google
+      </Button2>
+      <Button2
+        leftIcon={<GithubLogo size={24} />}
+        onClick={() => {
+          supabase?.auth.signInWithOAuth({
+            provider: "github",
+          });
+        }}
+      >
+        Sign in with GitHub
+      </Button2>
+      <div className="relative my-12">
+        <hr />
+        <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 bg-background dark:bg-[#0f0f0f] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2">
+          <Trans>or</Trans>
+        </p>
       </div>
+      <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 mb-3">
+        <Trans>
+          Enter your email address and we&apos;ll send you a magic link to sign
+          in.
+        </Trans>
+      </p>
+      <form className="gap-2 grid" onSubmit={handleSubmit(onSubmit)}>
+        <label className="grid mt-4">
+          <Label size="xs">Email</Label>
+          <input
+            className="p-4 mt-1 border bg-background dark:bg-[#0f0f0f] border-gray-300 rounded hover:border-gray-400 focus:outline-none focus:ring focus:ring-neutral-400 focus:ring-opacity-25 focus:ring-offset-1 dark:text-neutral-50"
+            autoComplete="off"
+            {...register("email", {
+              required: true,
+              setValueAs: (t) => t.toLowerCase(),
+            })}
+            disabled={isLoading}
+          />
+        </label>
+        <Button2
+          disabled={isLoading}
+          className="w-full justify-center"
+          isLoading={isLoading}
+          leftIcon={<Envelope size={24} />}
+        >
+          <Trans>Request Magic Link</Trans>
+        </Button2>
+        {isError(error) && <Warning>{error.message}</Warning>}
+      </form>
     </Page>
   );
 }

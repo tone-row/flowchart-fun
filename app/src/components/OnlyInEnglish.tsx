@@ -11,7 +11,7 @@ export function OnlyInEnglish() {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <IconButton2>
+        <IconButton2 size="xs">
           <Translate size={16} />
         </IconButton2>
       </Popover.Trigger>

@@ -3,6 +3,7 @@ import * as Toggle from "@radix-ui/react-toggle";
 import { TooltipContentProps } from "@radix-ui/react-tooltip";
 import * as RadixTooltip from "@radix-ui/react-tooltip";
 import cx from "classnames";
+import classNames from "classnames";
 import { HandWaving, Warning } from "phosphor-react";
 import { forwardRef, ReactNode } from "react";
 
@@ -26,14 +27,21 @@ export const Section = ({
 
 export const Page = ({
   children,
+  size = "md",
   ...props
-}: { children?: ReactNode } & React.DetailedHTMLProps<
+}: { children?: ReactNode; size?: "sm" | "md" } & React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 >) => {
   return (
     <div
-      className="px-4 py-8 content-start grid max-w-3xl w-full mx-auto grid gap-10"
+      className={classNames(
+        "px-4 py-16 content-start grid w-full mx-auto grid",
+        {
+          "max-w-xl gap-2": size === "sm",
+          "max-w-3xl gap-10": size === "md",
+        }
+      )}
       {...props}
     >
       {children}
@@ -148,10 +156,10 @@ const button2Colors = {
 };
 
 const pSize = {
-  xs: "p-2 text-[12px]",
-  sm: "p-3 text-xs",
-  md: "p-4 text-sm",
-  lg: "p-5 text-base",
+  xs: "p-3 text-[12px]",
+  sm: "p-4 text-sm",
+  md: "p-5 text-sm",
+  lg: "p-6 text-base",
 };
 
 const pxButtonSize = {
