@@ -15,11 +15,18 @@ import { VersionCheck } from "./VersionCheck";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const isFullscreen = useFullscreen();
-  const [showBanner, message, messageType] = getShowBannerAndMessage();
-  const [showImportantMessage, setShowImportantMessage] = useState(
+  let [showBanner, message, messageType] = getShowBannerAndMessage();
+  let [showImportantMessage, setShowImportantMessage] = useState(
     Cookies.get("ff_viewed_important_message") !== "true"
   );
   const isEditorView = useIsEditorView();
+
+  // fullscreen disables banners
+  if (isFullscreen) {
+    showBanner = false;
+    showImportantMessage = false;
+  }
+
   return (
     <>
       <Box
