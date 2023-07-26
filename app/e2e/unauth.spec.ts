@@ -16,18 +16,6 @@ test.describe("unauth", () => {
     await goToPath(page);
   });
 
-  test.only("View Pricing Page", async ({ page }) => {
-    await goToTab(page, "Charts");
-
-    // click test id "to-pricing"
-    await page.getByTestId("to-pricing").click();
-
-    // Expect test id pricing-page-title to be visible
-    await expect(
-      page.locator('[data-testid="pricing-page-title"]')
-    ).toBeVisible();
-  });
-
   test("Create New Local Chart", async ({ page }) => {
     await goToTab(page, "New");
 
