@@ -1,6 +1,13 @@
 import { t, Trans } from "@lingui/macro";
 import { Envelope, GithubLogo, GoogleLogo, Lock } from "phosphor-react";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import {
+  ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
@@ -80,13 +87,13 @@ export default function Login() {
           height={180}
           className="stroke-foreground dark:stroke-background"
         />
-        <p className="text text-lg leading-tight ml-4 text-wrap-balance">
+        <P>
           <Trans>
             Check your email for a link to log in.
             <br />
             You can close this window.
           </Trans>
-        </p>
+        </P>
         <div className="text-neutral-600 ml-4">
           <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-6">
             <Trans>
@@ -132,8 +139,6 @@ export default function Login() {
         Sign in with GitHub
       </Button2>
       <Or />
-      <UserPass redirectUrl={redirectUrl} />
-      <Or />
       <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 mb-3">
         <Trans>
           Enter your email address and we&apos;ll send you a magic link to sign
@@ -163,6 +168,8 @@ export default function Login() {
         </Button2>
         {isError(error) && <Warning>{error.message}</Warning>}
       </form>
+      <Or />
+      <UserPass redirectUrl={redirectUrl} />
     </Page>
   );
 }
@@ -205,6 +212,7 @@ function Or() {
 }
 
 function UserPass({ redirectUrl }: { redirectUrl: string }) {
+  const [method, setMethod] = useState<"Sign In" | "Sign Up">("Sign In");
   const formRef = useRef<HTMLFormElement>(null);
   const signInMutation = useMutation<
     string,
@@ -213,41 +221,35 @@ function UserPass({ redirectUrl }: { redirectUrl: string }) {
   >(
     async ({ email, password }) => {
       if (!supabase) throw new Error("No supabase client");
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-      if (error) {
-        if (error.message === "Invalid login credentials") {
-          // try sign up
-          const { error: signUpError, data } = await supabase.auth.signUp({
-            email,
-            password,
-            options: {
-              emailRedirectTo: redirectUrl,
-            },
-          });
-          if (data.user) {
-            // was successfull
-            // set message to check email
-            return t`Confirm your email address to sign in.`;
-          } else {
-            throw signUpError;
-          }
-        } else {
-          throw error;
-        }
-      }
 
-      // Returns empty string if login was successful for existing user
-      return "";
+      if (method === "Sign Up") {
+        // try sign up
+        const { error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            emailRedirectTo: redirectUrl,
+          },
+        });
+        if (error) throw error;
+        return t`Confirm your email address to sign in.`;
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+        if (error) throw error;
+
+        // Returns empty string if login was successful for existing user
+        return "";
+      }
     },
     {
       onSuccess: (result) => {
         // reset form
         formRef.current?.reset();
 
-        // if no message, redirect
+        // if no message, redirect (Although this will be caught by root component and redirect first)
         if (!result) {
           window.location.href = redirectUrl;
         }
@@ -269,41 +271,64 @@ function UserPass({ redirectUrl }: { redirectUrl: string }) {
     [signInMutation]
   );
   return (
-    <form className="gap-2 grid" onSubmit={handleSubmit} ref={formRef}>
-      <InputWithLabel
-        label={t`Email`}
-        inputProps={{
-          autoComplete: "email",
-          name: "email",
-          required: true,
-          type: "email",
-          disabled: signInMutation.isLoading,
-        }}
-      />
-      <InputWithLabel
-        label={t`Password`}
-        inputProps={{
-          autoComplete: "current-password",
-          name: "password",
-          required: true,
-          type: "password",
-          pattern: ".{6,}",
-          disabled: signInMutation.isLoading,
-        }}
-      />
-      <Button2
-        type="submit"
-        className="w-full justify-center"
-        isLoading={signInMutation.isLoading}
-        leftIcon={<Lock size={24} />}
-        data-testid="sign-in-email-pass"
-      >
-        <Trans>Sign In</Trans>
-      </Button2>
-      {signInMutation.isError && (
-        <Warning>{signInMutation.error.message}</Warning>
-      )}
-    </form>
+    <>
+      <P>
+        <span className="text-[12px] font-mono inline-block mr-2 -translate-y-px text-blue-500">
+          <Trans>Choose</Trans>:{" "}
+        </span>
+        <button
+          className="p-[2px] border-b border-neutral-400 border-solid border-0 opacity-30 data-[active=true]:opacity-100"
+          data-active={method === "Sign In"}
+          onClick={() => setMethod("Sign In")}
+        >
+          Sign In
+        </button>{" "}
+        /{" "}
+        <button
+          data-active={method === "Sign Up"}
+          className="p-[2px] border-b border-neutral-400 border-solid border-0 opacity-30 data-[active=true]:opacity-100"
+          onClick={() => setMethod("Sign Up")}
+        >
+          Sign Up
+        </button>{" "}
+        with email and password
+      </P>
+      <form className="gap-2 grid" onSubmit={handleSubmit} ref={formRef}>
+        <InputWithLabel
+          label={t`Email`}
+          inputProps={{
+            autoComplete: "email",
+            name: "email",
+            required: true,
+            type: "email",
+            disabled: signInMutation.isLoading,
+          }}
+        />
+        <InputWithLabel
+          label={t`Password`}
+          inputProps={{
+            autoComplete: "current-password",
+            name: "password",
+            required: true,
+            type: "password",
+            pattern: ".{6,}",
+            disabled: signInMutation.isLoading,
+          }}
+        />
+        <Button2
+          type="submit"
+          className="w-full justify-center"
+          isLoading={signInMutation.isLoading}
+          leftIcon={<Lock size={24} />}
+          data-testid="sign-in-email-pass"
+        >
+          <Trans>Sign In</Trans>
+        </Button2>
+        {signInMutation.isError && (
+          <Warning>{signInMutation.error.message}</Warning>
+        )}
+      </form>
+    </>
   );
 }
 
@@ -323,5 +348,13 @@ function InputWithLabel({
       placeholder={label}
       {...inputProps}
     />
+  );
+}
+
+function P({ children }: { children: ReactNode }) {
+  return (
+    <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 mb-3">
+      {children}
+    </p>
   );
 }
