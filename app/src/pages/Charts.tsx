@@ -88,7 +88,7 @@ export default function Charts() {
     {
       onSuccess: (result) => {
         queryClient.invalidateQueries(["auth", "hostedCharts"]);
-        if (result && result.id) push(`/u/${result.id}`);
+        if (result && result.id) navigate(`/u/${result.id}`);
       },
     }
   );
@@ -100,7 +100,7 @@ export default function Charts() {
         </PageTitle>
         <Button2
           leftIcon={<Plus size={16} />}
-          onClick={() => push("/n")}
+          onClick={() => navigate("/n")}
           color="blue"
         >
           <Trans>New</Trans>
@@ -165,7 +165,7 @@ export default function Charts() {
                 title={`/${chart}`}
                 href={`/${chart}`}
                 handleDelete={() => {
-                  deleteLocalChart(chart, currentChart || "", push);
+                  deleteLocalChart(chart, currentChart || "", navigate);
                   refetchTemporaryCharts();
                 }}
                 handleCopy={() => {
@@ -320,16 +320,16 @@ const ChartLink = memo(function ChartLink({
 function deleteLocalChart(
   chartId: string,
   currentChart: string,
-  push: (path: string) => void
+  navigate: (path: string) => void
 ) {
   // if on this path, move to index
   if (currentChart === chartId && currentChart !== "") {
-    push("/");
+    navigate("/");
   }
   window.localStorage.removeItem(titleToLocalStorageKey(chartId));
 }
 
-function copyLocalChart(chart: string, push: (path: string) => void) {
+function copyLocalChart(chart: string, navigate: (path: string) => void) {
   let i = 1;
   let copy = `${chart}-${i}`;
   while (window.localStorage.getItem(titleToLocalStorageKey(copy))) {
@@ -339,7 +339,7 @@ function copyLocalChart(chart: string, push: (path: string) => void) {
   // copy in localStorage
   const data = window.localStorage.getItem(titleToLocalStorageKey(chart));
   window.localStorage.setItem(titleToLocalStorageKey(copy), data ?? "");
-  push(`/${copy}`);
+  navigate(`/${copy}`);
 }
 
 function ProFeatureLink() {

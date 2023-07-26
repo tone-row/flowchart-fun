@@ -143,7 +143,10 @@ type MakeChartArgs = {
   name: string;
   user_id: string;
   chart?: string;
-} & ({} | { fromPrompt: true; prompt: string; method: "instruct" | "extract" });
+} & (
+  | { fromPrompt: true; prompt: string; method: "instruct" | "extract" }
+  | { fromPrompt?: never; prompt?: never; method?: never }
+);
 
 export async function makeChart({
   name,
