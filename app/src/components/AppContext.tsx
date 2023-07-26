@@ -113,21 +113,24 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
-    if (!supabase) {
-      setCheckedSession(true);
-      return;
-    }
+    requestAnimationFrame(() => {
+      if (!supabase) {
+        setCheckedSession(true);
+        return;
+      }
 
-    (async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      setSession(session);
-      setCheckedSession(true);
-      supabase.auth.onAuthStateChange((_event, session) => {
+      (async () => {
+        const {
+          data: { session },
+        } = await supabase.auth.getSession();
+        console.log("Resolve session");
         setSession(session);
-      });
-    })();
+        setCheckedSession(true);
+        supabase.auth.onAuthStateChange((_event, session) => {
+          setSession(session);
+        });
+      })();
+    });
   }, []);
 
   // Close Share Modal when navigating
