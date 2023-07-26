@@ -156,10 +156,10 @@ const button2Colors = {
 };
 
 const pSize = {
-  xs: "p-3 text-[12px]",
-  sm: "p-4 text-sm",
-  md: "p-5 text-sm",
-  lg: "p-6 text-base",
+  xs: "p-2 text-[12px]",
+  sm: "p-3 text-sm",
+  md: "p-4 text-sm",
+  lg: "p-5 text-base",
 };
 
 const pxButtonSize = {
