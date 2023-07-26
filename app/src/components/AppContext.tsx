@@ -16,9 +16,9 @@ import Stripe from "stripe";
 
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { useCustomerInfo, useHostedCharts } from "../lib/queries";
-import { supabase } from "../lib/supabaseClient";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
+import { initSupabase } from "../lib/supabaseClient";
 
 type Theme = typeof colors;
 
@@ -113,19 +113,17 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
-    if (!supabase) {
-      setCheckedSession(true);
-      return;
+    const supabase = initSupabase();
+    if (supabase) {
+      supabase.auth.getSession().then((sessionResponse) => {
+        setSession(sessionResponse.data.session);
+      });
+
+      supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session);
+      });
     }
-
-    supabase.auth.getSession().then((sessionResponse) => {
-      setSession(sessionResponse.data.session);
-      setCheckedSession(true);
-    });
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
+    setCheckedSession(true);
   }, []);
 
   // Close Share Modal when navigating
