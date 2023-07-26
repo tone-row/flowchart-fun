@@ -64,6 +64,11 @@ export function useIsValidCustomer() {
   return Boolean(customer?.subscription);
 }
 
+export function useIsLoggedIn() {
+  const { session } = useContext(AppContext);
+  return Boolean(session);
+}
+
 /**
  * Returns the workspace title for a local chart
  * or the chart title slugified for a hosted chart
