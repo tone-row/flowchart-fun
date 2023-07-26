@@ -26,16 +26,6 @@ export function titleToLocalStorageKey(chartTitle: string) {
 export const slugify = (value: string) =>
   value.replace(/[^a-z0-9]/gi, "-").toLocaleLowerCase();
 
-/** Returns a chart name not being used in local storage */
-const getName = () => (Math.random() + 1).toString(36).substring(7);
-export function randomChartName() {
-  let name = getName();
-  while (localStorage.getItem(titleToLocalStorageKey(name))) {
-    name = getName();
-  }
-  return name;
-}
-
 const usePrevious = (value: any, initialValue: any) => {
   const ref = useRef(initialValue);
   useEffect(() => {

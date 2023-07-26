@@ -5,6 +5,8 @@ import { usePageViews } from "../lib/analytics";
 import Feedback from "./Feedback";
 import Layout from "./Layout";
 import Settings from "./Settings";
+import { AuthWall } from "./AuthWall";
+import Login from "../pages/LogIn";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
@@ -20,7 +22,6 @@ const Changelog = lazy(() => import("../pages/Changelog"));
 const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
-const Login = lazy(() => import("../pages/LogIn"));
 const Charts = lazy(() => import("../pages/Charts"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 
@@ -32,8 +33,22 @@ export default function Router() {
         <Route index element={<Edit />} />
         <Route path="/pricing" element={<Pricing />} />
         {/* "y" for "your charts" */}
-        <Route path="/y" element={<Charts />} />
-        <Route path="/n/:graphText?" element={<New />} />
+        <Route
+          path="/y"
+          element={
+            <AuthWall>
+              <Charts />
+            </AuthWall>
+          }
+        />
+        <Route
+          path="/n/:graphText?"
+          element={
+            <AuthWall>
+              <New />
+            </AuthWall>
+          }
+        />
         <Route path="/u/:id" element={<EditHosted />} />
         <Route path="/r/:graphText?" element={<ReadOnly />} />
         {/* c for "compressed" */}
@@ -50,7 +65,14 @@ export default function Router() {
         <Route path="/blog/post/:slug" element={<Post />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/d" element={<DesignSystem />} />
-        <Route path="/:workspace" element={<Edit />} />
+        <Route
+          path="/:workspace"
+          element={
+            <AuthWall>
+              <Edit />
+            </AuthWall>
+          }
+        />
       </Route>
     </Routes>
   );
