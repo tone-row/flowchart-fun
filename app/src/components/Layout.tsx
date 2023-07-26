@@ -1,7 +1,7 @@
 import { Trans } from "@lingui/macro";
 import cx from "classnames";
 import Cookies from "js-cookie";
-import { ArrowRight } from "phosphor-react";
+import { ArrowRight, X } from "phosphor-react";
 import { memo, ReactNode, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -31,13 +31,15 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
       >
         {showBanner ? (
           <div
-            className={cx("flex items-center w-full", {
+            className={cx("flex justify-center items-center w-full gap-2", {
               "bg-red-100 text-red-700": messageType === "error",
               "bg-blue-100 text-blue-700": messageType === "info",
             })}
           >
-            <span className="text-sm w-full text-center p-4">{message}</span>
-            <button>X</button>
+            <span className="text-sm text-center py-4">{message}</span>
+            <Link to="/">
+              <X size={24} />
+            </Link>
           </div>
         ) : null}
         {showImportantMessage && (
