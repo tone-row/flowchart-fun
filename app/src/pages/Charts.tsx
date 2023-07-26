@@ -353,7 +353,7 @@ function ProFeatureLink() {
           className="text-blue-500 translate-y-[-1px] dark:text-orange-500"
         />
       </div>
-      <div className="flex w-full flex-col items-start">
+      <div className="grid w-full gap-1 items-start">
         <span>
           <Trans>Permanent Charts are a Pro Feature</Trans>
         </span>

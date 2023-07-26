@@ -13,12 +13,18 @@ import { Label, PageTitle } from "../ui/Typography";
 import { ReactComponent as EmailPassword } from "./EmailPassword.svg";
 import { Link } from "react-router-dom";
 import { AuthOtpResponse } from "@supabase/supabase-js";
-
+import { useLocation } from "react-router-dom";
 type Fields = {
   email: string;
 };
 
 export default function Login() {
+  // check for auth wall warning
+  const { search } = useLocation();
+  const [showAuthWallWarning, redirectUrl] =
+    checkForAuthWallWarningAndRedirect(search);
+
+  // check and see if there is
   const { register, handleSubmit } = useForm<Fields>();
   const [success, setSuccess] = useState(false);
   const { mutate, isLoading, error } = useMutation<
@@ -30,6 +36,9 @@ export default function Login() {
       if (!supabase) throw new Error("No supabase client");
       return supabase.auth.signInWithOtp({
         email,
+        options: {
+          emailRedirectTo: redirectUrl,
+        },
       });
     },
     {
@@ -78,6 +87,7 @@ export default function Login() {
 
   return (
     <Page size="sm">
+      {showAuthWallWarning && <AuthWallWarning />}
       {newSignUp && <WelcomeMessage />}
       <PageTitle className="text-center mb-6">{t`Sign In`}</PageTitle>
       <Button2
@@ -85,6 +95,9 @@ export default function Login() {
         onClick={() => {
           supabase?.auth.signInWithOAuth({
             provider: "google",
+            options: {
+              redirectTo: redirectUrl,
+            },
           });
         }}
       >
@@ -95,6 +108,9 @@ export default function Login() {
         onClick={() => {
           supabase?.auth.signInWithOAuth({
             provider: "github",
+            options: {
+              redirectTo: redirectUrl,
+            },
           });
         }}
       >
@@ -102,7 +118,7 @@ export default function Login() {
       </Button2>
       <div className="relative my-12">
         <hr />
-        <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 bg-background dark:bg-[#0f0f0f] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2">
+        <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 bg-background dark:bg-[#0f0f0f] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 -mt-px">
           <Trans>or</Trans>
         </p>
       </div>
@@ -141,13 +157,26 @@ export default function Login() {
 
 function AuthWallWarning() {
   return (
-    <div>
-      <p>You need to log in to access this page.</p>
-      <p>
-        <Link to="/blog/post/important-changes-coming">
-          Learn more about the important changes coming.
-        </Link>
+    <div className="bg-yellow-100 text-yellow-900 p-4 text-center text-md grid gap-2 mb-6 leading-normal rounded-lg">
+      <p className="font-bold">
+        <Trans>You need to log in to access this page.</Trans>
+      </p>
+      <p className="text-wrap-balance">
+        <Trans>
+          To learn more about why we require you to log in, please read{" "}
+          <Link to="/blog/post/important-changes-coming" className="underline">
+            this blog post
+          </Link>
+          .
+        </Trans>
       </p>
     </div>
   );
+}
+
+function checkForAuthWallWarningAndRedirect(search: string): [boolean, string] {
+  const params = new URLSearchParams(search);
+  const showAuthWallWarning = params.get("showAuthWallWarning") === "true";
+  const redirectUrl = decodeURIComponent(params.get("redirectUrl") || "/"); // default to home page
+  return [showAuthWallWarning, redirectUrl];
 }
