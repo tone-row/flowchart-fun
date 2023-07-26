@@ -14,6 +14,7 @@ let supabase: SupabaseClient | null = null;
 export { supabase };
 
 export function initSupabase() {
+  console.log("init supabase 2");
   if (!supabaseUrl || !supabaseAnonKey) {
     return null;
   }
