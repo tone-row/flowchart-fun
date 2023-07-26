@@ -1,13 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import { Envelope, GithubLogo, GoogleLogo, Lock } from "phosphor-react";
-import {
-  ReactNode,
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
@@ -15,7 +8,7 @@ import { Warning } from "../components/Warning";
 import { WelcomeMessage } from "../components/WelcomeMessage";
 import { isError } from "../lib/helpers";
 import { supabase } from "../lib/supabaseClient";
-import { Button2, Page } from "../ui/Shared";
+import { Button2, InputWithLabel, P, Page } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
 import { ReactComponent as EmailPassword } from "./EmailPassword.svg";
 import { Link, useNavigate } from "react-router-dom";
@@ -224,13 +217,14 @@ function UserPass({ redirectUrl }: { redirectUrl: string }) {
 
       if (method === "Sign Up") {
         // try sign up
-        const { error } = await supabase.auth.signUp({
+        const { error, data } = await supabase.auth.signUp({
           email,
           password,
           options: {
             emailRedirectTo: redirectUrl,
           },
         });
+        console.log(data);
         if (error) throw error;
         return t`Confirm your email address to sign in.`;
       } else {
@@ -327,34 +321,13 @@ function UserPass({ redirectUrl }: { redirectUrl: string }) {
         {signInMutation.isError && (
           <Warning>{signInMutation.error.message}</Warning>
         )}
+        {signInMutation.data && <Warning>{signInMutation.data}</Warning>}
       </form>
+      <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 mb-3 text-xs">
+        <Link to="/forgot-password">
+          <Trans>Forgot your password?</Trans>
+        </Link>
+      </p>
     </>
-  );
-}
-
-function InputWithLabel({
-  label,
-  inputProps,
-}: {
-  label: string;
-  inputProps: React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >;
-}) {
-  return (
-    <input
-      className="p-4 mt-1 border bg-background dark:bg-[#0f0f0f] border-gray-300 rounded-lg hover:border-gray-400 focus:outline-none focus:ring focus:ring-neutral-400 focus:ring-opacity-25 focus:ring-offset-1 dark:text-neutral-50"
-      placeholder={label}
-      {...inputProps}
-    />
-  );
-}
-
-function P({ children }: { children: ReactNode }) {
-  return (
-    <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 mb-3">
-      {children}
-    </p>
   );
 }

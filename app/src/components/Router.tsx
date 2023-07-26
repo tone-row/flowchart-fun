@@ -7,6 +7,7 @@ import Layout from "./Layout";
 import Settings from "./Settings";
 import { AuthWall } from "./AuthWall";
 import Login from "../pages/LogIn";
+import ResetPassword from "../pages/ResetPassword";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
@@ -23,6 +24,7 @@ const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
 const Charts = lazy(() => import("../pages/Charts"));
+const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 
 export default function Router() {
@@ -65,6 +67,8 @@ export default function Router() {
         <Route path="/blog/post/:slug" element={<Post />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/d" element={<DesignSystem />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route
           path="/:workspace"
           element={

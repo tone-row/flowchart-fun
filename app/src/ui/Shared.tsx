@@ -370,3 +370,41 @@ export const popoverContentProps: PopoverContentProps = {
   sideOffset: 10,
   className: popoverContentClasses,
 };
+
+export function InputWithLabel({
+  label,
+  inputProps,
+}: {
+  label: string;
+  inputProps: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
+}) {
+  return (
+    <input
+      className="p-4 mt-1 border bg-background dark:bg-[#0f0f0f] border-gray-300 rounded-lg hover:border-gray-400 focus:outline-none focus:ring focus:ring-neutral-400 focus:ring-opacity-25 focus:ring-offset-1 dark:text-neutral-50"
+      placeholder={label}
+      {...inputProps}
+    />
+  );
+}
+
+export function P({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <p
+      className={cx(
+        "text-center text-neutral-500 leading-normal dark:text-neutral-400 mb-3",
+        className
+      )}
+    >
+      {children}
+    </p>
+  );
+}
