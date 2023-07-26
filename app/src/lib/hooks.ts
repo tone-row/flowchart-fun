@@ -50,9 +50,10 @@ export function useSession() {
 /** Use this to determine if the sponsor is valid.
  * That means their subscription is currently active.
  * i.e. They're in good standing, etc. */
-export function useIsValidSponsor() {
+export function useIsProUser() {
   const { customer } = useContext(AppContext);
-  return Boolean(customer?.subscription?.status === "active");
+  const status = customer?.subscription?.status;
+  return Boolean(status === "active");
 }
 
 /**

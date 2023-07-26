@@ -19,7 +19,7 @@ const EditStyleTab = lazy(() => import("../components/Tabs/EditStyleTab"));
 import { OnChange } from "@monaco-editor/react";
 
 import { TextEditor } from "../components/TextEditor";
-import { useIsValidSponsor } from "../lib/hooks";
+import { useIsProUser } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { getHostedChart, updateChartText } from "../lib/queries";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
@@ -67,7 +67,7 @@ export default function EditHosted() {
 
   const url = useLocation().pathname;
   useTrackLastChart(url);
-  const isValidSponsor = useIsValidSponsor();
+  const isProUser = useIsProUser();
 
   return (
     <EditWrapper>
@@ -86,7 +86,7 @@ export default function EditHosted() {
             <Tabs.Content value="Style">
               <EditStyleTab />
             </Tabs.Content>
-            {isValidSponsor && (
+            {isProUser && (
               <Tabs.Content value="Advanced">
                 <EditMetaTab />
               </Tabs.Content>

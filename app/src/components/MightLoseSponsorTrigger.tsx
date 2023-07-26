@@ -3,17 +3,17 @@ import * as Popover from "@radix-ui/react-popover";
 import { Warning } from "phosphor-react";
 import { useContext } from "react";
 
-import { useIsLocalChart, useIsValidSponsor } from "../lib/hooks";
+import { useIsLocalChart, useIsProUser } from "../lib/hooks";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { IconButton2, popoverContentProps } from "../ui/Shared";
 import { AppContext } from "./AppContext";
 
 export function MightLoseSponsorTrigger() {
   const { customerIsLoading } = useContext(AppContext);
-  const isValidSponsor = useIsValidSponsor();
+  const isProUser = useIsProUser();
   const isLocal = useIsLocalChart();
   if (customerIsLoading) return null;
-  if (!isValidSponsor) return null;
+  if (!isProUser) return null;
   if (!isLocal) return null;
   return (
     <Popover.Root>
