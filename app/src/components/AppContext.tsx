@@ -113,6 +113,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
+    console.log("init supabase 1");
     const supabase = initSupabase();
     if (supabase) {
       supabase.auth.getSession().then((sessionResponse) => {
