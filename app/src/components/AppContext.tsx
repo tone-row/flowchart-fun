@@ -116,13 +116,20 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     const supabase = initSupabase();
     if (supabase) {
       (async () => {
-        const response = await supabase.auth.getSession();
-        setSession(response.data.session);
-        setCheckedSession(true);
+        try {
+          const { data, error } = await supabase.auth.getSession();
+          if (error) {
+            console.error(error);
+          }
+          setSession(data.session);
+          setCheckedSession(true);
 
-        supabase.auth.onAuthStateChange((_event, session) => {
-          setSession(session);
-        });
+          supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session);
+          });
+        } catch (e) {
+          console.error(e);
+        }
       })();
     } else {
       setCheckedSession(true);
