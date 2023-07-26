@@ -350,8 +350,8 @@ importers:
         specifier: ^3.13.2
         version: 3.14.0(@lingui/core@3.14.0)(@lingui/react@3.14.0)(babel-plugin-macros@3.1.0)(typescript@5.1.6)
       '@playwright/test':
-        specifier: 1.29.0
-        version: 1.29.0
+        specifier: 1.36.2
+        version: 1.36.2
       '@testing-library/jest-dom':
         specifier: ^5.17.0
         version: 5.17.0
@@ -4462,13 +4462,15 @@ packages:
     resolution: {integrity: sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==}
     dev: true
 
-  /@playwright/test@1.29.0:
-    resolution: {integrity: sha512-gp5PVBenxTJsm2bATWDNc2CCnrL5OaA/MXQdJwwkGQtqTjmY+ZOqAdLqo49O9MLTDh2vYh+tHWDnmFsILnWaeA==}
-    engines: {node: '>=14'}
+  /@playwright/test@1.36.2:
+    resolution: {integrity: sha512-2rVZeyPRjxfPH6J0oGJqE8YxiM1IBRyM8hyrXYK7eSiAqmbNhxwcLa7dZ7fy9Kj26V7FYia5fh9XJRq4Dqme+g==}
+    engines: {node: '>=16'}
     hasBin: true
     dependencies:
       '@types/node': 18.16.17
-      playwright-core: 1.29.0
+      playwright-core: 1.36.2
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /@pmmmwh/react-refresh-webpack-plugin@0.5.7(react-refresh@0.11.0)(webpack-dev-server@4.11.1)(webpack@5.74.0):
@@ -13518,9 +13520,9 @@ packages:
     dependencies:
       find-up: 3.0.0
 
-  /playwright-core@1.29.0:
-    resolution: {integrity: sha512-pboOm1m0RD6z1GtwAbEH60PYRfF87vKdzOSRw2RyO0Y0a7utrMyWN2Au1ojGvQr4umuBMODkKTv607YIRypDSQ==}
-    engines: {node: '>=14'}
+  /playwright-core@1.36.2:
+    resolution: {integrity: sha512-sQYZt31dwkqxOrP7xy2ggDfEzUxM1lodjhsQ3NMMv5uGTRDsLxU0e4xf4wwMkF2gplIxf17QMBCodSFgm6bFVQ==}
+    engines: {node: '>=16'}
     hasBin: true
     dev: true
 

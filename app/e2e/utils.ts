@@ -1,5 +1,4 @@
 import { Page } from "@playwright/test";
-import { createClient } from "@supabase/supabase-js";
 import axios from "axios";
 import crypto from "crypto";
 import Stripe from "stripe";
@@ -10,19 +9,9 @@ if (!rapidAPIKey) throw new Error("RAPID_API_KEY not set");
 const stripeKey = process.env.STRIPE_KEY_TEST_ENV;
 if (!stripeKey) throw new Error("STRIPE_KEY_TEST_ENV not set");
 
-// SUPABASE_TEST_URL
-const supabaseTestUrl = process.env.SUPABASE_TEST_URL;
-if (!supabaseTestUrl) throw new Error("SUPABASE_TEST_URL not set");
-
-// SUPABASE_TEST_ANON_KEY
-const supabaseTestAnonKey = process.env.SUPABASE_TEST_ANON_KEY;
-if (!supabaseTestAnonKey) throw new Error("SUPABASE_TEST_ANON_KEY not set");
-
 const stripe = new Stripe(stripeKey, {
   apiVersion: "2022-11-15",
 });
-
-const _supabase = createClient(supabaseTestUrl, supabaseTestAnonKey);
 
 export const BASE_URL = process.env.E2E_START_URL ?? "http://localhost:3000";
 const EMAIL_DOMAINS_LIST: string[] = [];

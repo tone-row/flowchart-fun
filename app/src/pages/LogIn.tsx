@@ -146,6 +146,7 @@ export default function Login() {
           className="w-full justify-center"
           isLoading={isLoading}
           leftIcon={<Envelope size={24} />}
+          data-testid="request-magic-link"
         >
           <Trans>Request Magic Link</Trans>
         </Button2>
