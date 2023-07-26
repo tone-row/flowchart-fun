@@ -60,7 +60,6 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
         <Suspense fallback={<Loading />}>{children}</Suspense>
         <ColorMode />
       </Box>
-      {/* {isEditorView && <ShareDialog />} */}
       <VersionCheck />
     </>
   );
