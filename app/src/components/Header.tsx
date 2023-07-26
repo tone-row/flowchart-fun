@@ -32,7 +32,7 @@ import {
 import { Link, LinkProps, useLocation } from "react-router-dom";
 
 import { DISCORD_URL } from "../lib/constants";
-import { useIsLoggedIn, useIsValidCustomer } from "../lib/hooks";
+import { useIsLoggedIn, useIsProUser } from "../lib/hooks";
 import { track } from "../lib/track";
 import { useLastChart } from "../lib/useLastChart";
 import { ReactComponent as BrandSvg } from "./brand.svg";
@@ -62,8 +62,8 @@ export const Header = memo(function SharedHeader() {
     !isLogInPage &&
     !isSignUpPage &&
     !isNewPage;
-  const isValidCustomer = useIsValidCustomer();
   const isLoggedIn = useIsLoggedIn();
+  const isProUser = useIsProUser();
   const lastChart = useLastChart((state) => state.lastChart);
   return (
     <>
@@ -179,7 +179,7 @@ export const Header = memo(function SharedHeader() {
                 aria-current={isSettingsPage ? "page" : undefined}
                 to="/s"
               />
-              {!isValidCustomer ? (
+              {!isProUser ? (
                 <HeaderClientLink
                   to="/pricing"
                   label={t`Pricing`}
@@ -312,7 +312,7 @@ function MobileHeader({
   const lastChart = useLastChart((s) => s.lastChart);
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
-  const isValidCustomer = useIsValidCustomer();
+  const isProUser = useIsProUser();
   const isLoggedIn = useIsLoggedIn();
 
   useEffect(() => {
@@ -394,7 +394,7 @@ function MobileHeader({
               aria-current={isSettingsPage ? "page" : undefined}
               to="/s"
             />
-            {!isValidCustomer ? (
+            {!isProUser ? (
               <HeaderClientLink
                 to="/pricing"
                 label={t`Pricing`}

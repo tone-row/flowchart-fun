@@ -19,7 +19,7 @@ import { OnChange } from "@monaco-editor/react";
 import { TextEditor } from "../components/TextEditor";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidSponsor } from "../lib/hooks";
+import { useIsProUser } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useEditorStore } from "../lib/useEditorStore";
@@ -27,7 +27,7 @@ import { useTrackLastChart } from "../lib/useLastChart";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit({ workspace }: { workspace: string }) {
-  const isValidSponsor = useIsValidSponsor();
+  const isValidSponsor = useIsProUser();
 
   const storeDoc = useMemo(() => {
     return throttle(
