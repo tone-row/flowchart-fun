@@ -8,6 +8,7 @@ import {
   deleteCustomerByEmail,
   getTempEmail,
   getTempEmailMessage,
+  goToTab,
 } from "./utils";
 
 test.describe.configure({
@@ -106,6 +107,18 @@ test.describe("Authenticated Tasks", () => {
 
     // expect link with "Account" to be present
     await expect(page.getByText("Account")).toBeVisible({ timeout: 10 * 1000 });
+  });
+
+  test("View Pricing Page", async ({ page }) => {
+    await goToTab(page, "Charts");
+
+    // click test id "to-pricing"
+    await page.getByTestId("to-pricing").click();
+
+    // Expect test id pricing-page-title to be visible
+    await expect(
+      page.locator('[data-testid="pricing-page-title"]')
+    ).toBeVisible();
   });
 
   test("can publish chart", async () => {
