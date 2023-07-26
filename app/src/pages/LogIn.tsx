@@ -7,11 +7,12 @@ import { useMutation } from "react-query";
 import { Warning } from "../components/Warning";
 import { WelcomeMessage } from "../components/WelcomeMessage";
 import { isError } from "../lib/helpers";
-import { login } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Button2, Page } from "../ui/Shared";
 import { Label, PageTitle } from "../ui/Typography";
 import { ReactComponent as EmailPassword } from "./EmailPassword.svg";
+import { Link } from "react-router-dom";
+import { AuthOtpResponse } from "@supabase/supabase-js";
 
 type Fields = {
   email: string;
@@ -20,13 +21,25 @@ type Fields = {
 export default function Login() {
   const { register, handleSubmit } = useForm<Fields>();
   const [success, setSuccess] = useState(false);
-  const { mutate, isLoading, error } = useMutation(login, {
-    onSuccess: () => setSuccess(true),
-  });
+  const { mutate, isLoading, error } = useMutation<
+    AuthOtpResponse,
+    Record<string, never>,
+    { email: string }
+  >(
+    async ({ email }) => {
+      if (!supabase) throw new Error("No supabase client");
+      return supabase.auth.signInWithOtp({
+        email,
+      });
+    },
+    {
+      onSuccess: () => setSuccess(true),
+    }
+  );
 
   const onSubmit = useCallback(
     ({ email }: Fields) => {
-      mutate(email);
+      mutate({ email });
     },
     [mutate]
   );
@@ -123,5 +136,18 @@ export default function Login() {
         {isError(error) && <Warning>{error.message}</Warning>}
       </form>
     </Page>
+  );
+}
+
+function AuthWallWarning() {
+  return (
+    <div>
+      <p>You need to log in to access this page.</p>
+      <p>
+        <Link to="/blog/post/important-changes-coming">
+          Learn more about the important changes coming.
+        </Link>
+      </p>
+    </div>
   );
 }
