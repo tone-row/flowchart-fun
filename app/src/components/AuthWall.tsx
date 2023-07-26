@@ -18,9 +18,9 @@ export function AuthWall({ children }: { children: ReactNode }) {
       const params = new URLSearchParams();
       // show auth wall at top of page
       params.set("showAuthWallWarning", "true");
+
       // full redirect including hash and search params
-      const redirectUrl = new URL(window.location.href);
-      params.set("redirectUrl", redirectUrl.toString());
+      params.set("redirectUrl", getAuthSafeUrl());
 
       // go to login page with params
       const fullPath = `/l?${params.toString()}`;
@@ -47,4 +47,23 @@ function Loading() {
       <Spinner className="text-blue-500" />
     </div>
   );
+}
+
+/**
+ * Takes the current url
+ * If the pathname is "/n"
+ * and there is a hash
+ * It moves the hash to the pathname "/n/:hash"
+ * Otherwise it returns the current url
+ *
+ * This is needed because logging in will wipe the hash (access_token)
+ * so we can't rely on it for generating templates
+ */
+function getAuthSafeUrl() {
+  const url = new URL(window.location.href);
+  if (url.pathname === "/n" && url.hash) {
+    url.pathname = `/n/${url.hash.slice(1)}`;
+    url.hash = "";
+  }
+  return url.toString();
 }
