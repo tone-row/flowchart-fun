@@ -123,7 +123,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         const {
           data: { session },
         } = await supabase.auth.getSession();
-        console.log("Resolve session");
         setSession(session);
         setCheckedSession(true);
         supabase.auth.onAuthStateChange((_event, session) => {
