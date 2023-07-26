@@ -3,7 +3,7 @@ export type Json =
   | number
   | boolean
   | null
-  | { [key: string]: Json }
+  | { [key: string]: Json | undefined }
   | Json[];
 
 export interface Database {
@@ -11,55 +11,71 @@ export interface Database {
     Tables: {
       profiles: {
         Row: {
-          id: string;
-          updated_at: string | null;
           customer_id: string;
+          id: string;
           subscription_id: string;
+          updated_at: string | null;
         };
         Insert: {
-          id: string;
-          updated_at?: string | null;
           customer_id: string;
+          id: string;
           subscription_id: string;
+          updated_at?: string | null;
         };
         Update: {
-          id?: string;
-          updated_at?: string | null;
           customer_id?: string;
+          id?: string;
           subscription_id?: string;
+          updated_at?: string | null;
         };
+        Relationships: [
+          {
+            foreignKeyName: "profiles_id_fkey";
+            columns: ["id"];
+            referencedRelation: "users";
+            referencedColumns: ["id"];
+          }
+        ];
       };
       user_charts: {
         Row: {
-          id: number;
-          created_at: string;
-          user_id: string;
           chart: string;
-          updated_at: string;
-          name: string;
+          created_at: string;
+          id: number;
           is_public: boolean;
+          name: string;
           public_id: string | null;
+          updated_at: string;
+          user_id: string;
         };
         Insert: {
-          id?: number;
-          created_at?: string;
-          user_id: string;
           chart: string;
-          updated_at?: string;
-          name: string;
+          created_at?: string;
+          id?: number;
           is_public?: boolean;
+          name: string;
           public_id?: string | null;
+          updated_at?: string;
+          user_id: string;
         };
         Update: {
-          id?: number;
-          created_at?: string;
-          user_id?: string;
           chart?: string;
-          updated_at?: string;
-          name?: string;
+          created_at?: string;
+          id?: number;
           is_public?: boolean;
+          name?: string;
           public_id?: string | null;
+          updated_at?: string;
+          user_id?: string;
         };
+        Relationships: [
+          {
+            foreignKeyName: "user_charts_user_id_fkey";
+            columns: ["user_id"];
+            referencedRelation: "users";
+            referencedColumns: ["id"];
+          }
+        ];
       };
     };
     Views: {
@@ -69,6 +85,9 @@ export interface Database {
       [_ in never]: never;
     };
     Enums: {
+      [_ in never]: never;
+    };
+    CompositeTypes: {
       [_ in never]: never;
     };
   };

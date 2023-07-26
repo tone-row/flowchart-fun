@@ -2,7 +2,7 @@ import { Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Database, X } from "phosphor-react";
 import { useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Content, Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
@@ -20,7 +20,7 @@ export function ImportDataUnauthenticatedDialog() {
       // don't preload image
     }
   }, []);
-  const { push } = useHistory();
+  const navigate = useNavigate();
   return (
     <Dialog.Root modal>
       <Dialog.Trigger asChild>
@@ -61,7 +61,7 @@ export function ImportDataUnauthenticatedDialog() {
                 color="blue"
                 className="mt-4"
                 onClick={() => {
-                  push("/pricing");
+                  navigate("/pricing");
                 }}
               >
                 <Trans>Learn More</Trans>

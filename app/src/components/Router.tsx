@@ -1,5 +1,5 @@
-import { lazy, ReactNode } from "react";
-import { Route, RouteProps, Switch } from "react-router-dom";
+import { lazy } from "react";
+import { Outlet, Route, Routes } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
 import Feedback from "./Feedback";
@@ -27,86 +27,39 @@ const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 export default function Router() {
   usePageViews();
   return (
-    <Switch>
-      <RouteWithWrapper path="/" exact>
-        <Edit />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/pricing" exact>
-        <Pricing />
-      </RouteWithWrapper>
-      {/* "y" for "your charts" */}
-      <RouteWithWrapper path="/y" exact>
-        <Charts />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/n/:graphText?">
-        <New />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/u/:id">
-        <EditHosted />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/r/:graphText?">
-        <ReadOnly />
-      </RouteWithWrapper>
-      {/* c for "compressed" */}
-      <RouteWithWrapper path="/c/:graphText?">
-        <ReadOnly />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/f/:graphText?">
-        <ReadOnly />
-      </RouteWithWrapper>
-      <Route path="/p/:public_id">
-        <Public />
+    <Routes>
+      <Route path="/" element={<Wrapper />}>
+        <Route index element={<Edit />} />
+        <Route path="/pricing" element={<Pricing />} />
+        {/* "y" for "your charts" */}
+        <Route path="/y" element={<Charts />} />
+        <Route path="/n/:graphText?" element={<New />} />
+        <Route path="/u/:id" element={<EditHosted />} />
+        <Route path="/r/:graphText?" element={<ReadOnly />} />
+        {/* c for "compressed" */}
+        <Route path="/c/:graphText?" element={<ReadOnly />} />
+        <Route path="/f/:graphText?" element={<ReadOnly />} />
+        <Route path="/p/:public_id" element={<Public />} />
+        <Route path="/s" element={<Settings />} />
+        {/* "o" for no reason at all */}
+        <Route path="/o" element={<Feedback />} />
+        <Route path="/a" element={<Account />} />
+        <Route path="/l" element={<Login />} />
+        <Route path="/changelog" element={<Changelog />} />
+        <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/blog/post/:slug" element={<Post />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/d" element={<DesignSystem />} />
+        <Route path="/:workspace" element={<Edit />} />
       </Route>
-      <RouteWithWrapper path="/s">
-        <Settings />
-      </RouteWithWrapper>
-      {/* "o" for no reason at all */}
-      <RouteWithWrapper path="/o">
-        <Feedback />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/a">
-        <Account />
-      </RouteWithWrapper>
-      {/* "l" for login */}
-      <RouteWithWrapper path="/l">
-        <Login />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/changelog">
-        <Changelog />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/roadmap">
-        <Roadmap />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/blog/post/:slug">
-        <Post />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/blog">
-        <Blog />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/d">
-        <DesignSystem />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/:workspace">
-        <Edit />
-      </RouteWithWrapper>
-    </Switch>
+    </Routes>
   );
 }
 
-/** Adds the share dialog. Could probably be in a better spot */
-function RouteWrapper({ children }: { children: ReactNode }) {
-  return <Layout>{children}</Layout>;
-}
-
-function RouteWithWrapper({
-  children,
-  ...rest
-}: {
-  children: ReactNode;
-} & RouteProps) {
+function Wrapper() {
   return (
-    <Route {...rest}>
-      <RouteWrapper>{children}</RouteWrapper>
-    </Route>
+    <Layout>
+      <Outlet />
+    </Layout>
   );
 }

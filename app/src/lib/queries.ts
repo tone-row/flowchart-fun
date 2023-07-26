@@ -143,7 +143,10 @@ type MakeChartArgs = {
   name: string;
   user_id: string;
   chart?: string;
-} & ({} | { fromPrompt: true; prompt: string; method: "instruct" | "extract" });
+} & (
+  | { fromPrompt: true; prompt: string; method: "instruct" | "extract" }
+  | { fromPrompt?: never; prompt?: never; method?: never }
+);
 
 export async function makeChart({
   name,
@@ -181,7 +184,7 @@ export async function makeChart({
     .select();
 }
 
-export async function copyHostedChartById(id: string) {
+export async function copyHostedChartById(id: number) {
   if (!supabase) return;
   // get current user
   const { data: sessionData } = await supabase.auth.getSession();

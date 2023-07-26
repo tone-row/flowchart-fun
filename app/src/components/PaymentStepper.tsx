@@ -149,13 +149,13 @@ export function PaymentStepper() {
             >
               <Trans>Continue</Trans>
             </Button2>
-            {subscriptionDetails.error && (
+            {subscriptionDetails.error ? (
               <div className="justify-self-center">
                 <Warning>
                   {(subscriptionDetails.error as Error).message}
                 </Warning>
               </div>
-            )}
+            ) : null}
           </form>
         )}
         {step === "three" && (

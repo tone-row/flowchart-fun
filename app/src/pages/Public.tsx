@@ -12,10 +12,17 @@ const shouldResize = 0;
 
 function Public() {
   const { public_id } = useParams<{ public_id: string }>();
-  useQuery(["useHostedDoc", public_id], () => loadPublicDoc(public_id), {
-    enabled: typeof public_id === "string",
-    suspense: true,
-  });
+  useQuery(
+    ["useHostedDoc", public_id],
+    () => {
+      if (!public_id) return Promise.resolve();
+      return loadPublicDoc(public_id);
+    },
+    {
+      enabled: typeof public_id === "string",
+      suspense: true,
+    }
+  );
   return (
     <GraphWrapper boxProps={{ style: { height: "100%" } }}>
       <Graph shouldResize={shouldResize} />

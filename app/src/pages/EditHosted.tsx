@@ -2,7 +2,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { Check, DotsThree } from "phosphor-react";
 import { lazy, useCallback, useEffect } from "react";
 import { useMutation, useQuery } from "react-query";
-import { useParams, useRouteMatch } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
 
 import { ClearTextButton } from "../components/ClearTextButton";
@@ -16,6 +16,8 @@ import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 const EditStyleTab = lazy(() => import("../components/Tabs/EditStyleTab"));
+import { OnChange } from "@monaco-editor/react";
+
 import { TextEditor } from "../components/TextEditor";
 import { useIsValidSponsor } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
@@ -28,7 +30,7 @@ import styles from "./EditHosted.module.css";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
-  useQuery(["useHostedDoc", id], () => loadHostedDoc(id), {
+  useQuery(["useHostedDoc", id], () => loadHostedDoc(id ?? ""), {
     enabled: !!id,
     suspense: true,
     staleTime: 0,
@@ -58,12 +60,12 @@ export default function EditHosted() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onChange = useCallback(
+  const onChange = useCallback<OnChange>(
     (value) => useDoc.setState({ text: value ?? "" }, false, "EditHosted/text"),
     []
   );
 
-  const { url } = useRouteMatch();
+  const url = useLocation().pathname;
   useTrackLastChart(url);
   const isValidSponsor = useIsValidSponsor();
 
@@ -138,7 +140,7 @@ async function loadHostedDoc(id: string) {
     title: chart.name,
     isHosted: true,
     isPublic: chart.is_public,
-    publicId: chart.public_id,
+    publicId: chart.public_id ?? undefined,
   });
   return doc;
 }
