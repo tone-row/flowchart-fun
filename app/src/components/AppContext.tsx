@@ -18,7 +18,7 @@ import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { useCustomerInfo, useHostedCharts } from "../lib/queries";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
-import { initSupabase } from "../lib/supabaseClient";
+import { supabase } from "../lib/supabaseClient";
 
 type Theme = typeof colors;
 
@@ -113,27 +113,21 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
-    const supabase = initSupabase();
-    if (supabase) {
-      (async () => {
-        try {
-          const { data, error } = await supabase.auth.getSession();
-          if (error) {
-            console.error(error);
-          }
-          setSession(data.session);
-          setCheckedSession(true);
-
-          supabase.auth.onAuthStateChange((_event, session) => {
-            setSession(session);
-          });
-        } catch (e) {
-          console.error(e);
-        }
-      })();
-    } else {
+    if (!supabase) {
       setCheckedSession(true);
+      return;
     }
+
+    (async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      setSession(session);
+      setCheckedSession(true);
+      supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session);
+      });
+    })();
   }, []);
 
   // Close Share Modal when navigating
