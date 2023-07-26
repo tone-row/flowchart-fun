@@ -102,14 +102,6 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     return unsubscribe;
   }, [throttleUpdate]);
 
-  // Update Graph when Sponsor Layouts Load
-  const sponsorLayoutsLoaded = useGraphStore(
-    useCallback((store) => store.sponsorLayoutsLoaded, [])
-  );
-  useEffect(() => {
-    if (sponsorLayoutsLoaded) throttleUpdate();
-  }, [throttleUpdate, sponsorLayoutsLoaded]);
-
   const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
 
   useEffect(() => {

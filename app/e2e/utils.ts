@@ -19,7 +19,7 @@ const supabaseTestAnonKey = process.env.SUPABASE_TEST_ANON_KEY;
 if (!supabaseTestAnonKey) throw new Error("SUPABASE_TEST_ANON_KEY not set");
 
 const stripe = new Stripe(stripeKey, {
-  apiVersion: "2020-08-27",
+  apiVersion: "2022-11-15",
 });
 
 const _supabase = createClient(supabaseTestUrl, supabaseTestAnonKey);

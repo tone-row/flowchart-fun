@@ -16,7 +16,7 @@
     "extract": "lingui extract --clean",
     "compile": "lingui compile",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
-    "check:types": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --write '{src,e2e}/**/*.{ts,tsx,scss,css,json}'",
     "e2e:env": "export $(cat .env.e2e | xargs)",
     "e2e": "playwright test --config=playwright.config.ts",
@@ -80,7 +80,7 @@
     "lz-string": "^1.4.4",
     "make-plural": "^7.1.0",
     "marked": "^4.1.1",
-    "monaco-editor": "^0.40.0",
+    "monaco-editor": "0.33.0",
     "moniker": "^0.1.2",
     "notion-to-md": "^2.5.5",
     "openai": "^3.2.1",
@@ -160,8 +160,8 @@
     "@types/svg-parser": "^2.0.1",
     "@types/svgo": "^2.6.0",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "@typescript-eslint/eslint-plugin": "^5",
-    "@typescript-eslint/parser": "^5",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "axios": "^0.27.2",
     "concurrently": "^6.0.0",
     "dotenv": "^16.0.1",
@@ -172,6 +172,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "history": "^5.3.0",
     "identity-obj-proxy": "^3.0.0",
@@ -199,8 +200,6 @@
     ]
   },
   "overrides": {
-    "@typescript-eslint/typescript-estree": "^5.57.1",
-    "fork-ts-checker-webpack-plugin": "^6.5.3",
-    "typescript": "^5.0.3"
+    "fork-ts-checker-webpack-plugin": "^6.5.3"
   }
 }

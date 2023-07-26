@@ -59,30 +59,31 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
 /** Keep track of decoratins on the current editor and show an indication of
  * hovering when the hover line number changes */
 function useEditorHover(hoverLineNumber?: number) {
-  const decorations = useRef<editor.IEditorDecorationsCollection>();
+  const decorations = useRef<string[]>([]);
   useEffect(() => {
     const editor = useEditorStore.getState().editor;
     if (!editor) return;
     if (typeof hoverLineNumber === "number") {
-      const d = editor.createDecorationsCollection([
-        {
-          range: {
-            startLineNumber: hoverLineNumber,
-            startColumn: 1,
-            endLineNumber: hoverLineNumber,
-            endColumn: 1,
+      decorations.current = editor.deltaDecorations(
+        [],
+        [
+          {
+            range: {
+              startLineNumber: hoverLineNumber,
+              startColumn: 1,
+              endLineNumber: hoverLineNumber,
+              endColumn: 1,
+            },
+            options: {
+              isWholeLine: true,
+              className: "node-hover",
+            },
           },
-          options: {
-            isWholeLine: true,
-            className: "node-hover",
-          },
-        },
-      ]);
-      decorations.current = d;
+        ]
+      );
     }
-
     return () => {
-      decorations.current?.clear();
+      decorations.current = editor.deltaDecorations(decorations.current, []);
     };
   }, [hoverLineNumber]);
 }

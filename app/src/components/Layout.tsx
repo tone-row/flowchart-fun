@@ -1,4 +1,5 @@
 import { Trans } from "@lingui/macro";
+import cx from "classnames";
 import Cookies from "js-cookie";
 import { ArrowRight } from "phosphor-react";
 import { memo, ReactNode, Suspense, useState } from "react";
@@ -14,8 +15,7 @@ import { VersionCheck } from "./VersionCheck";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const isFullscreen = useFullscreen();
-  const hash = window.location.hash;
-  const showBanner = hash.startsWith("#message=");
+  const [showBanner, message, messageType] = getShowBannerAndMessage();
   const [showImportantMessage, setShowImportantMessage] = useState(
     Cookies.get("ff_viewed_important_message") !== "true"
   );
@@ -30,13 +30,15 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
         data-banner={showBanner || showImportantMessage}
       >
         {showBanner ? (
-          <Box className={styles.Banner} p={3}>
-            <span className="text-sm">
-              {decodeURIComponent(
-                hash.slice("#message=".length).replace(/\+/g, "%20")
-              )}
-            </span>
-          </Box>
+          <div
+            className={cx("flex items-center w-full", {
+              "bg-red-100 text-red-700": messageType === "error",
+              "bg-blue-100 text-blue-700": messageType === "info",
+            })}
+          >
+            <span className="text-sm w-full text-center p-4">{message}</span>
+            <button>X</button>
+          </div>
         ) : null}
         {showImportantMessage && (
           <ImportantChanges
@@ -78,4 +80,23 @@ function ImportantChanges({ closeBanner }: { closeBanner: () => void }) {
       </span>
     </Link>
   );
+}
+
+// ?error=server_error&error_description=Multiple+accounts+with+the+same+email+address+in+the+same+linking+domain+detected%3A+default
+
+function getShowBannerAndMessage(): [boolean, string, "error" | "info"] {
+  const hash = window.location.hash;
+  if (hash.startsWith("#message=")) {
+    return [true, decodeURIComponent(hash.slice("#message=".length)), "info"];
+  }
+  const search = window.location.search;
+  if (search.startsWith("?error=")) {
+    const params = new URLSearchParams(search);
+    const error = params.get("error");
+    const errorDescription = params.get("error_description");
+    if (error && errorDescription) {
+      return [true, errorDescription, "error"];
+    }
+  }
+  return [false, "", "info"];
 }
