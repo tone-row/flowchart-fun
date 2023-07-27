@@ -18,9 +18,6 @@ let email = "";
 
 let page: Page;
 
-// Skipping Pro Tests
-test.skip(() => true, "Temporarily Skip Pro Tests");
-
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
   await page.goto(BASE_URL);
