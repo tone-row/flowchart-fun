@@ -130,7 +130,7 @@
     ]
   },
   "devDependencies": {
-    "@lingui/cli": "^4.3.0",
+    "@lingui/cli": "^3.17.2",
     "@lingui/macro": "^3.13.2",
     "@playwright/test": "1.36.2",
     "@testing-library/jest-dom": "^5.17.0",
