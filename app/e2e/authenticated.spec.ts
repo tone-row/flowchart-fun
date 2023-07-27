@@ -150,10 +150,7 @@ test("Delete a chart", async ({ page }) => {
 
 test("Create new chart from a template", async ({ page, browserName }) => {
   // Firefox has a weird bug, most likely due to the "#" in the URL
-  if (browserName === "firefox") return;
-
-  // Start with your charts page so we're already logged in
-  await page.goto(`${BASE_URL}/y`);
+  test.skip(browserName === "firefox", "Firefox has a weird bug");
 
   // Go to url
   await page.goto(
