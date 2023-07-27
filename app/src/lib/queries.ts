@@ -17,10 +17,14 @@ queryClient.setDefaultOptions({
   },
 });
 
+/**
+ * Returns the customer id and subscription
+ * for the logged in user
+ */
 async function customerInfo(): Promise<
   | {
       customerId: string;
-      subscription: Stripe.Subscription;
+      subscription?: Stripe.Subscription;
     }
   | undefined
 > {

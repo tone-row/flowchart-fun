@@ -331,10 +331,11 @@ function deleteLocalChart(
 
 function copyLocalChart(chart: string, navigate: (path: string) => void) {
   let i = 1;
-  let copy = `${chart}-${i}`;
+  let name = chart || "Untitled";
+  let copy = `${name}-${i}`;
   while (window.localStorage.getItem(titleToLocalStorageKey(copy))) {
     i++;
-    copy = `${chart}-${i}`;
+    copy = `${name}-${i}`;
   }
   // copy in localStorage
   const data = window.localStorage.getItem(titleToLocalStorageKey(chart));

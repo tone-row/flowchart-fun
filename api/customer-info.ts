@@ -16,15 +16,15 @@ export default async function customerInfo(
       status: "all",
     });
 
-    const subscription = subscriptions.length ? subscriptions[0] : undefined;
-    const priceId = subscription?.items.data[0].plan.id;
+    // find the first valid subscription
+    const validSubscriptions = subscriptions.filter((subscription) => {
+      const priceId = subscription.items.data[0].plan.id;
+      return validStripePrices.includes(priceId);
+    });
 
-    if (!subscription || !priceId) throw new Error("No Subscription Found");
-
-    // make sure priceId is valid
-    if (!validStripePrices.includes(priceId)) {
-      throw new Error("Invalid Subscription");
-    }
+    const subscription = validSubscriptions.length
+      ? validSubscriptions[0]
+      : undefined;
 
     res.json({ customerId: customer.id, subscription });
   } catch (error) {

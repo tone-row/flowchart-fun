@@ -18,8 +18,8 @@ let email = "";
 
 let page: Page;
 
-// Skipping Pro Tests
-test.skip(() => true, "Temporarily Skip Pro Tests");
+// temporarily skip these tests, out of rapidapi quota
+test.skip(() => true, "Exceeded RapidAPI quota");
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();

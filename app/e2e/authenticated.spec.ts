@@ -119,7 +119,7 @@ test("Clone a Chart", async ({ page }) => {
   // click element with aria label "Clone"
   await page.getByRole("button", { name: "Copy flowchart: /" }).click();
 
-  await expect(page).toHaveURL(`${BASE_URL}/-1`);
+  await expect(page).toHaveURL(`${BASE_URL}/Untitled-1`);
 
   await expect(page.locator("text=-1")).toBeVisible();
 });
