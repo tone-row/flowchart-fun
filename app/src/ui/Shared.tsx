@@ -28,8 +28,13 @@ export const Section = ({
 export const Page = ({
   children,
   size = "md",
+  className = "",
   ...props
-}: { children?: ReactNode; size?: "sm" | "md" } & React.DetailedHTMLProps<
+}: {
+  children?: ReactNode;
+  size?: "sm" | "md";
+  className?: string;
+} & React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 >) => {
@@ -40,7 +45,8 @@ export const Page = ({
         {
           "max-w-xl gap-2": size === "sm",
           "max-w-3xl gap-10": size === "md",
-        }
+        },
+        className
       )}
       {...props}
     >

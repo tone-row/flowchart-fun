@@ -12,13 +12,20 @@ import { useQuery } from "react-query";
 import { useLightOrDarkMode, useSession } from "../lib/hooks";
 import { Button2 } from "../ui/Shared";
 import { Warning } from "./Warning";
+import cx from "classnames";
 
 /**
  * This component allows the user to select a plan,
  * enter their email if they are not logged in,
  * and enter their payment information.
  */
-export function PaymentStepper() {
+export function PaymentStepper({
+  noWrapper = false,
+  hideTitle = false,
+}: {
+  noWrapper?: boolean;
+  hideTitle?: boolean;
+}) {
   const session = useSession();
   const sessionEmail = session?.user?.email;
   const [plan, setPlan] = useState<null | "yearly" | "monthly">(() => {
@@ -55,25 +62,39 @@ export function PaymentStepper() {
   let step = "one";
   if (confirmPlan) step = "two";
   if (
+    confirmPlan &&
     subscriptionDetails.data?.subscriptionId &&
     subscriptionDetails.data?.clientSecret
   )
     step = "three";
 
   return (
-    <div className="pt-12 pb-16 z-10 dark:bg-gradient-to-t dark:from-blue-600/0 dark:to-blue-700/30">
+    <div
+      className={cx(
+        "z-10 dark:bg-gradient-to-t dark:from-blue-600/0 dark:to-blue-700/30",
+        {
+          "pt-12 pb-16": !noWrapper,
+        }
+      )}
+    >
       <div
-        className="overflow-hidden max-w-[560px] mx-auto grid justify-center px-4 gap-4"
+        className={cx("overflow-hidden grid justify-center px-4 gap-4", {
+          "max-w-[560px] mx-auto": !noWrapper,
+        })}
         ref={parent}
       >
         {step === "one" && (
           <>
-            <Title>
-              <Trans>Select your plan!</Trans>
-            </Title>
-            <Description>
-              {t`Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro`}
-            </Description>
+            {!hideTitle && (
+              <>
+                <Title>
+                  <Trans>Select your plan!</Trans>
+                </Title>
+                <Description>
+                  {t`Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro`}
+                </Description>
+              </>
+            )}
             <div className="grid items-center content-center justify-center gap-4 mt-6 md:grid-flow-col md:items-stretch">
               <PlanButton
                 aria-current={plan === "monthly" ? "true" : "false"}
@@ -121,10 +142,14 @@ export function PaymentStepper() {
             autoComplete="false"
             className="grid gap-4"
           >
-            <Title>
-              <Trans>Enter your email</Trans>
-            </Title>
-            <Description>{t`Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.`}</Description>
+            {!hideTitle && (
+              <>
+                <Title>
+                  <Trans>Enter your email</Trans>
+                </Title>
+                <Description>{t`Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.`}</Description>
+              </>
+            )}
             <div className="grid gap-2">
               <p
                 className={`text-[13px] justify-self-center text-neutral-600 dark:text-neutral-400`}
