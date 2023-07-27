@@ -148,16 +148,14 @@ test("Delete a chart", async ({ page }) => {
   await expect(page.locator("text=to-delete")).not.toBeVisible();
 });
 
-test("Creating a new chart from a template immediatetly creates a local chart", async ({
-  page,
-  browserName,
-}) => {
-  if (browserName === "firefox") {
-    // Firefox has a weird bug, most likely due to the "#" in the URL
-    return;
-  }
-  await page.goto(BASE_URL);
-  // go to url
+test("Create new chart from a template", async ({ page, browserName }) => {
+  // Firefox has a weird bug, most likely due to the "#" in the URL
+  if (browserName === "firefox") return;
+
+  // Start with your charts page so we're already logged in
+  await page.goto(`${BASE_URL}/y`);
+
+  // Go to url
   await page.goto(
     `${BASE_URL}/n#C4ewBARgpmCWB2ZgAsYBMQGMCuBbK8wAUALxllEDeRYYARAA4CGATgM5Qt0Bc9A5iyYNkAWg4AbKJlBciAX1LkSQA`
   );
