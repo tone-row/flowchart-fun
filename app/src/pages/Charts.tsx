@@ -18,7 +18,7 @@ import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidCustomer } from "../lib/hooks";
+import { useIsProUser } from "../lib/hooks";
 import {
   copyHostedChartById,
   deleteChart,
@@ -34,7 +34,7 @@ const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
 const leftMargin = "sm:ml-[55px]";
 
 export default function Charts() {
-  const isCustomer = useIsValidCustomer();
+  const isProUser = useIsProUser();
   const customerIsLoading = useContext(AppContext).customerIsLoading;
   // write a charts reducer where the dispatch just refetches charts
   const [temporaryCharts, refetchTemporaryCharts] = useReducer(
@@ -121,7 +121,7 @@ export default function Charts() {
             <div className="py-4">
               <Loading />
             </div>
-          ) : isCustomer ? (
+          ) : isProUser ? (
             <div className="grid gap-1">
               {persistentCharts?.map((chart) => (
                 <ChartLink

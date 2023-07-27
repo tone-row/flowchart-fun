@@ -295,6 +295,8 @@ function UserPass({ redirectUrl }: { redirectUrl: string }) {
             name: "email",
             required: true,
             type: "email",
+            // @ts-ignore
+            ["data-testid"]: "sign-in-email",
             disabled: signInMutation.isLoading,
           }}
         />
@@ -306,6 +308,8 @@ function UserPass({ redirectUrl }: { redirectUrl: string }) {
             required: true,
             type: "password",
             pattern: ".{6,}",
+            // @ts-ignore
+            ["data-testid"]: "sign-in-password",
             disabled: signInMutation.isLoading,
           }}
         />

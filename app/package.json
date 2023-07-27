@@ -20,7 +20,7 @@
     "format": "prettier --write '{src,e2e}/**/*.{ts,tsx,scss,css,json}'",
     "e2e:env": "export $(cat .env.e2e | xargs)",
     "e2e": "playwright test --config=playwright.config.ts",
-    "e2e:debug": "export $(cat .env.local | xargs) && DEBUG=1 pnpm run e2e --workers 1 --ui",
+    "e2e:debug": "DEBUG=1 pnpm run e2e --workers 1 --ui",
     "e2e:generate": "npx playwright codegen localhost:3000",
     "generate:types": "export $(cat .env.local | xargs) && supabase gen types typescript --project-id \"${PROJECT_ID}\" > src/types/database.types.ts",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
