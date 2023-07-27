@@ -22,7 +22,7 @@ const config: PlaywrightTestConfig = {
       height: 1080,
     },
     // Development
-    headless: isDebug ? false : true,
+    // headless: isDebug ? false : true,
     launchOptions: {
       slowMo: isDebug ? 500 : 0,
     },

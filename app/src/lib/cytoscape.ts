@@ -1,13 +1,15 @@
 import cytoscape from "cytoscape";
+import coseBilkent from "cytoscape-cose-bilkent";
+import dagre from "cytoscape-dagre";
+import elk from "cytoscape-elk";
+import klay from "cytoscape-klay";
 
-/* Going to load more layouts from the get-go if the user is logged in */
-
-let loaded = false;
-export async function loadSponsorOnlyLayouts() {
-  if (loaded) return;
-  loaded = true;
-  const elk = await import("cytoscape-elk");
-  cytoscape.use(elk.default);
+if (!cytoscape.prototype.hasInitialised) {
+  cytoscape.use(dagre);
+  cytoscape.use(klay);
+  cytoscape.use(coseBilkent);
+  cytoscape.use(elk);
+  cytoscape.prototype.hasInitialised = true;
 }
 
 export { cytoscape };

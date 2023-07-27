@@ -1,11 +1,12 @@
 import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { ArrowSquareOut } from "phosphor-react";
+import { ArrowSquareOut, Info } from "phosphor-react";
 import React, { ReactNode, useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
 import { AppContext } from "../components/AppContext";
@@ -22,21 +23,22 @@ import { Content, Overlay } from "../ui/Dialog";
 import { Button2, Input, Notice, Page, Section } from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
+import { useIsProUser } from "../lib/hooks";
 
 export default function Account() {
   const { customer, session, customerIsLoading } = useContext(AppContext);
   const [cancelModal, setCancelModal] = useState(false);
   const [resumeModal, setResumeModal] = useState(false);
-  const { push } = useHistory();
+  const navigate = useNavigate();
   const signOut = useCallback(() => {
     (async () => {
       if (!supabase) return;
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
       queryClient.removeQueries(["auth"]);
-      push("/");
+      navigate("/");
     })();
-  }, [push]);
+  }, [navigate]);
   const { data: invoices = [] } = useOrderHistory(
     customer?.customerId,
     customer?.subscription?.id
@@ -100,6 +102,8 @@ export default function Account() {
     })();
   });
 
+  const isProUser = useIsProUser();
+
   if (customerIsLoading) return <Loading />;
 
   return (
@@ -116,27 +120,29 @@ export default function Account() {
           <Trans>Log Out</Trans>
         </Button2>
       </Section>
-      <Section>
-        <SectionTitle>
-          <Trans>One-on-One Support</Trans>
-        </SectionTitle>
-        <p className="text-neutral-500 text-sm">
-          <Trans>
-            Have complex questions or issues? We&apos;re here to help.
-          </Trans>
-        </p>
-        <a
-          className="flex gap-2 text-xs text-blue-500 items-center"
-          href="https://calendly.com/tone-row/flowchart-fun"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>
-            <Trans>Book a Meeting</Trans>
-          </span>
-          <ArrowSquareOut size={16} />
-        </a>
-      </Section>
+      {isProUser ? (
+        <Section>
+          <SectionTitle>
+            <Trans>One-on-One Support</Trans>
+          </SectionTitle>
+          <p className="text-neutral-500 text-sm">
+            <Trans>
+              Have complex questions or issues? We&apos;re here to help.
+            </Trans>
+          </p>
+          <a
+            className="flex gap-2 text-xs text-blue-500 items-center"
+            href="https://calendly.com/tone-row/flowchart-fun"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <Trans>Book a Meeting</Trans>
+            </span>
+            <ArrowSquareOut size={16} />
+          </a>
+        </Section>
+      ) : null}
       {subscription?.status === "canceled" && (
         <Section>
           <SectionTitle>
@@ -151,56 +157,60 @@ export default function Account() {
           <BecomeASponsor />
         </Section>
       )}
-      <Section>
-        <SectionTitle>
-          <Trans>Subscription</Trans>
-        </SectionTitle>
-        <div className="grid gap-5">
-          <div className="grid gap-1">
-            <Label size="xs">
-              <Trans>Status</Trans>
-            </Label>
-            <InfoCell className="uppercase">{subscription?.status}</InfoCell>
+      {isProUser ? (
+        <Section>
+          <SectionTitle>
+            <Trans>Subscription</Trans>
+          </SectionTitle>
+          <div className="grid gap-5">
+            <div className="grid gap-1">
+              <Label size="xs">
+                <Trans>Status</Trans>
+              </Label>
+              <InfoCell className="uppercase">{subscription?.status}</InfoCell>
+            </div>
+            {subscription?.current_period_end &&
+              !subscription?.cancel_at_period_end &&
+              subscription?.status === "active" && (
+                <div className="grid gap-1">
+                  <Label size="xs">
+                    <Trans>Next charge</Trans>
+                  </Label>
+                  <InfoCell>
+                    {formatDate(subscription?.current_period_end.toString())}
+                  </InfoCell>
+                </div>
+              )}
+            {!subscription?.cancel_at_period_end &&
+              subscription?.created &&
+              subscription?.status === "active" && (
+                <div className="grid gap-1">
+                  <Label size="xs">
+                    <Trans>Start</Trans>
+                  </Label>
+                  <InfoCell>
+                    {formatDate(subscription.created.toString())}
+                  </InfoCell>
+                </div>
+              )}
           </div>
-          {subscription?.current_period_end &&
-            !subscription?.cancel_at_period_end &&
-            subscription?.status === "active" && (
-              <div className="grid gap-1">
-                <Label size="xs">
-                  <Trans>Next charge</Trans>
-                </Label>
-                <InfoCell>
-                  {formatDate(subscription?.current_period_end.toString())}
-                </InfoCell>
-              </div>
-            )}
-          {!subscription?.cancel_at_period_end &&
-            subscription?.created &&
-            subscription?.status === "active" && (
-              <div className="grid gap-1">
-                <Label size="xs">
-                  <Trans>Start</Trans>
-                </Label>
-                <InfoCell>
-                  {formatDate(subscription.created.toString())}
-                </InfoCell>
-              </div>
-            )}
-        </div>
-        {subscription?.cancel_at_period_end && (
-          <Box flow="column" content="start" gap={4}>
-            <Notice>
-              <Trans>Subscription will end</Trans>{" "}
-              {formatDate(subscription.current_period_end.toString())}
-            </Notice>
-            <ConfirmResume isOpen={resumeModal} onOpenChange={setResumeModal}>
-              <Button2 onClick={() => setResumeModal(true)}>
-                <Trans>Resume Subscription</Trans>
-              </Button2>
-            </ConfirmResume>
-          </Box>
-        )}
-      </Section>
+          {subscription?.cancel_at_period_end && (
+            <Box flow="column" content="start" gap={4}>
+              <Notice>
+                <Trans>Subscription will end</Trans>{" "}
+                {formatDate(subscription.current_period_end.toString())}
+              </Notice>
+              <ConfirmResume isOpen={resumeModal} onOpenChange={setResumeModal}>
+                <Button2 onClick={() => setResumeModal(true)}>
+                  <Trans>Resume Subscription</Trans>
+                </Button2>
+              </ConfirmResume>
+            </Box>
+          )}
+        </Section>
+      ) : (
+        <SubscriptionOptions />
+      )}
       <Section>
         <SectionTitle>
           <Trans>Update Email</Trans>
@@ -232,7 +242,7 @@ export default function Account() {
           )}
         </Box>
       </Section>
-      {customerPortalLink && (
+      {isProUser && customerPortalLink ? (
         <Section>
           <SectionTitle>
             <Trans>Customer Portal</Trans>
@@ -254,39 +264,41 @@ export default function Account() {
             <ArrowSquareOut size={16} />
           </a>
         </Section>
-      )}
-      <Section>
-        <SectionTitle>
-          <Trans>History</Trans>
-        </SectionTitle>
-        <Box as="table" className={styles.InvoicesTable} rad={1}>
-          <colgroup>
-            <col width="50%" />
-            <col width="50%" />
-          </colgroup>
-          <thead>
-            <tr>
-              <Td>
-                <Trans>Date</Trans>
-              </Td>
-              <Td>
-                <Trans>Amount</Trans>
-              </Td>
-            </tr>
-          </thead>
-          <tbody>
-            {invoices &&
-              invoices.map((invoice) => (
-                <tr key={invoice.id}>
-                  <Td className="whitespace-nowrap">
-                    {formatDate(invoice.created.toString())}
-                  </Td>
-                  <Td>{formatCents(invoice.amount_paid)}</Td>
-                </tr>
-              ))}
-          </tbody>
-        </Box>
-      </Section>
+      ) : null}
+      {isProUser ? (
+        <Section>
+          <SectionTitle>
+            <Trans>History</Trans>
+          </SectionTitle>
+          <Box as="table" className={styles.InvoicesTable} rad={1}>
+            <colgroup>
+              <col width="50%" />
+              <col width="50%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <Td>
+                  <Trans>Date</Trans>
+                </Td>
+                <Td>
+                  <Trans>Amount</Trans>
+                </Td>
+              </tr>
+            </thead>
+            <tbody>
+              {invoices &&
+                invoices.map((invoice) => (
+                  <tr key={invoice.id}>
+                    <Td className="whitespace-nowrap">
+                      {formatDate(invoice.created.toString())}
+                    </Td>
+                    <Td>{formatCents(invoice.amount_paid)}</Td>
+                  </tr>
+                ))}
+            </tbody>
+          </Box>
+        </Section>
+      ) : null}
       {!subscription?.cancel_at_period_end &&
         subscription?.created &&
         subscription?.status === "active" && (
@@ -512,4 +524,46 @@ function InfoCell({
   className?: string;
 }) {
   return <p className={`text-sm mt-1 ${className}`}>{children}</p>;
+}
+
+/**
+ * Upgrade to Pro
+ * A friendly notice that the user should upgrade to a subscription.
+ * That they will need one after August 28th. That they can learn more
+ * from our blog post. To learn more about Pro Features on our pricing page.
+ */
+function SubscriptionOptions() {
+  return (
+    <Section>
+      <SectionTitle>Subscription</SectionTitle>
+      <div className="grid gap-4">
+        <Trans>
+          <p className="text-sm leading-normal">
+            You currently have a free account.
+            <br />
+            <Link to="/pricing" className="text-blue-500">
+              Learn about our Pro Features and subscribe on our pricing page
+            </Link>
+            .
+          </p>
+        </Trans>
+        <div className="flex items-center gap-2 text-blue-500 bg-blue-100 p-4 rounded-md border-l-4 border-blue-500">
+          <Info size={24} />
+          <Trans>
+            <p className="text-sm leading-normal">
+              Starting August 28th you will need a subscription to create and
+              edit charts.{" "}
+              <Link
+                to="/blog/post/important-changes-coming"
+                className="underline"
+              >
+                Learn more
+              </Link>
+              .
+            </p>
+          </Trans>
+        </div>
+      </div>
+    </Section>
+  );
 }

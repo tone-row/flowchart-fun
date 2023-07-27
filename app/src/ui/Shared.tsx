@@ -3,6 +3,7 @@ import * as Toggle from "@radix-ui/react-toggle";
 import { TooltipContentProps } from "@radix-ui/react-tooltip";
 import * as RadixTooltip from "@radix-ui/react-tooltip";
 import cx from "classnames";
+import classNames from "classnames";
 import { HandWaving, Warning } from "phosphor-react";
 import { forwardRef, ReactNode } from "react";
 
@@ -26,14 +27,27 @@ export const Section = ({
 
 export const Page = ({
   children,
+  size = "md",
+  className = "",
   ...props
-}: { children?: ReactNode } & React.DetailedHTMLProps<
+}: {
+  children?: ReactNode;
+  size?: "sm" | "md";
+  className?: string;
+} & React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 >) => {
   return (
     <div
-      className="px-4 py-8 content-start grid max-w-3xl w-full mx-auto grid gap-10"
+      className={classNames(
+        "px-4 py-16 content-start grid w-full mx-auto grid",
+        {
+          "max-w-xl gap-2": size === "sm",
+          "max-w-3xl gap-10": size === "md",
+        },
+        className
+      )}
       {...props}
     >
       {children}
@@ -149,7 +163,7 @@ const button2Colors = {
 
 const pSize = {
   xs: "p-2 text-[12px]",
-  sm: "p-3 text-xs",
+  sm: "p-3 text-sm",
   md: "p-4 text-sm",
   lg: "p-5 text-base",
 };
@@ -362,3 +376,41 @@ export const popoverContentProps: PopoverContentProps = {
   sideOffset: 10,
   className: popoverContentClasses,
 };
+
+export function InputWithLabel({
+  label,
+  inputProps,
+}: {
+  label: string;
+  inputProps: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
+}) {
+  return (
+    <input
+      className="p-4 mt-1 border bg-background dark:bg-[#0f0f0f] border-gray-300 rounded-lg hover:border-gray-400 focus:outline-none focus:ring focus:ring-neutral-400 focus:ring-opacity-25 focus:ring-offset-1 dark:text-neutral-50"
+      placeholder={label}
+      {...inputProps}
+    />
+  );
+}
+
+export function P({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <p
+      className={cx(
+        "text-center text-neutral-500 leading-normal dark:text-neutral-400 mb-3",
+        className
+      )}
+    >
+      {children}
+    </p>
+  );
+}

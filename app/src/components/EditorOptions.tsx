@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { useIsValidSponsor } from "../lib/hooks";
+import { useIsProUser } from "../lib/hooks";
 import { Box } from "../slang";
 import styles from "./EditorOptions.module.css";
 import { ImportDataDialog } from "./ImportDataDialog";
@@ -8,7 +8,7 @@ import { ImportDataUnauthenticatedDialog } from "./ImportDataUnauthenticatedDial
 import { LearnSyntaxDialog } from "./LearnSyntaxDialog";
 
 export function EditorOptions({ children }: { children: ReactNode }) {
-  const isValidSponsor = useIsValidSponsor();
+  const isProUser = useIsProUser();
 
   return (
     <div className={styles.editorOptions}>
@@ -16,7 +16,7 @@ export function EditorOptions({ children }: { children: ReactNode }) {
         <div className="flex content-start gap-2 items-center">
           <LearnSyntaxDialog />
           <span className="bg-blue-300 h-4 w-px dark:bg-blue-900" />
-          {isValidSponsor ? (
+          {isProUser ? (
             <ImportDataDialog />
           ) : (
             <ImportDataUnauthenticatedDialog />

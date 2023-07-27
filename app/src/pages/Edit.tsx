@@ -1,7 +1,7 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import throttle from "lodash.throttle";
 import { lazy, memo, useCallback, useEffect, useMemo, useState } from "react";
-import { useParams, useRouteMatch } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
@@ -14,10 +14,12 @@ import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 const EditStyleTab = lazy(() => import("../components/Tabs/EditStyleTab"));
 
+import { OnChange } from "@monaco-editor/react";
+
 import { TextEditor } from "../components/TextEditor";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidSponsor } from "../lib/hooks";
+import { useIsProUser } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useEditorStore } from "../lib/useEditorStore";
@@ -25,7 +27,7 @@ import { useTrackLastChart } from "../lib/useLastChart";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit({ workspace }: { workspace: string }) {
-  const isValidSponsor = useIsValidSponsor();
+  const isValidSponsor = useIsProUser();
 
   const storeDoc = useMemo(() => {
     return throttle(
@@ -42,12 +44,12 @@ const Edit = memo(function Edit({ workspace }: { workspace: string }) {
 
   useEffect(() => useDoc.subscribe(storeDoc), [storeDoc]);
 
-  const onChange = useCallback(
+  const onChange = useCallback<OnChange>(
     (value) => useDoc.setState({ text: value ?? "" }, false, "Edit/text"),
     []
   );
 
-  const { url } = useRouteMatch();
+  const url = useLocation().pathname;
   useTrackLastChart(url);
 
   const text = useDoc((d) => d.text);

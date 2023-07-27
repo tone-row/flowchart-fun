@@ -121,7 +121,7 @@ for (const locale of locales) {
 
   // while there are still phrases to translate
   while (phrases.length > 0) {
-    // pop off the first 6 phrases
+    /** pop off the first 6 phrases  */
     const batch = phrases.splice(0, 6);
 
     const prompt = `Translate phrases from en to ${locale}\n\nEN\n${batch
@@ -130,7 +130,8 @@ for (const locale of locales) {
 
     // we will retry up to 3 times to get the right number of translations
     let retries = 3;
-    // @type {string[]}
+
+    /** @type {string[]}  */
     let translations = [];
 
     while (retries > 0 && translations.length !== batch.length) {
@@ -155,10 +156,18 @@ for (const locale of locales) {
 
     // add the translations to the final phrases
     finalPhrases = finalPhrases.concat(
-      batch.map((phrase, index) => ({
-        ...phrase,
-        translation: translations[index].slice(2),
-      }))
+      batch.map((phrase, index) => {
+        if (translations[index]) {
+          return {
+            ...phrase,
+            translation: translations[index].slice(2),
+          };
+        }
+        console.log(
+          `Inspect this phrase: ${phrase.text}\nin this language: ${locale}`
+        );
+        return phrase;
+      })
     );
 
     console.log(`${finalPhrases.length}/${totalPhrases} translated.`);

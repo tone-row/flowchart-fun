@@ -15,12 +15,17 @@ test.describe("Click Heads Up", () => {
 
   test("Click Heads Up", async ({ page }) => {
     try {
+      // click the aria-label "Temporary Flowchart Warning"
       await page
-        .getByText(
-          "Heads up! Before you clear your cache, remember that this document isn't saved i"
-        )
+        .getByRole("button", { name: "Temporary Flowchart Warning" })
         .click();
-      await page.getByRole("link", { name: "Learn More" }).click();
+
+      // expect "This document is only saved on this computer" to be visible
+      await expect(page.locator("text=document is only saved")).toBeVisible();
+
+      // click testid might-lose-warning-learn-more
+      await page.getByTestId("might-lose-warning-learn-more").click();
+
       // expect to be at /pricing
       await expect(page).toHaveURL(`${BASE_URL}/pricing`);
     } catch (error) {

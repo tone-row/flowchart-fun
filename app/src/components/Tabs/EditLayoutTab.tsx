@@ -2,13 +2,13 @@ import { t, Trans } from "@lingui/macro";
 import produce from "immer";
 import { Palette } from "phosphor-react";
 import { FaRegSnowflake } from "react-icons/fa";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { GraphOptionsObject } from "../../lib/constants";
 import { defaultLayout, getLayout } from "../../lib/getLayout";
 import { directions, layouts } from "../../lib/graphOptions";
 import { hasOwnProperty } from "../../lib/helpers";
-import { useIsValidSponsor } from "../../lib/hooks";
+import { useIsProUser } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { unfreezeDoc, useIsFrozen } from "../../lib/useIsFrozen";
 import { BasicSelect } from "../../ui/Select";
@@ -22,7 +22,7 @@ import {
 } from "./shared";
 
 export function EditLayoutTab() {
-  const isValidSponsor = useIsValidSponsor();
+  const isProUser = useIsProUser();
   const doc = useDoc();
   const layout = (
     hasOwnProperty(doc.meta, "layout") ? doc.meta.layout : {}
@@ -63,7 +63,7 @@ export function EditLayoutTab() {
     spacingFactor = layout.spacingFactor;
   }
 
-  const { push } = useHistory();
+  const navigate = useNavigate();
 
   if (isFrozen) return <FrozenLayout />;
 
@@ -88,7 +88,7 @@ export function EditLayoutTab() {
               );
             }}
             options={layouts
-              .filter((l) => l?.sponsorOnly === undefined || isValidSponsor)
+              .filter((l) => l?.sponsorOnly === undefined || isProUser)
               .map((l) => ({
                 value: l.value,
                 label: l.label(),
@@ -188,13 +188,13 @@ export function EditLayoutTab() {
           </OptionWithLabel>
         )}
       </TabOptionsGrid>
-      {!isValidSponsor && (
+      {!isProUser && (
         <Button2
           color="blue"
           size="md"
           rightIcon={<Palette size={20} />}
           className="ml-5 mr-1"
-          onClick={() => push("/pricing")}
+          onClick={() => navigate("/pricing")}
         >
           <Trans>Get More Layouts</Trans>
         </Button2>

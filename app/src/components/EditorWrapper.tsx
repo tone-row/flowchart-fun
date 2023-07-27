@@ -47,6 +47,7 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
                 color="blue"
                 onClick={() => setShareModal(true)}
                 rightIcon={<RiShareForwardFill size={16} />}
+                aria-label="Export"
               >
                 <Trans>Export</Trans>
               </Button2>

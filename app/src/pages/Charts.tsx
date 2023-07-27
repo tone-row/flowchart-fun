@@ -12,13 +12,13 @@ import {
 } from "phosphor-react";
 import { memo, ReactNode, useContext, useReducer, useState } from "react";
 import { useMutation } from "react-query";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
 import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidCustomer } from "../lib/hooks";
+import { useIsProUser } from "../lib/hooks";
 import {
   copyHostedChartById,
   deleteChart,
@@ -34,7 +34,7 @@ const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
 const leftMargin = "sm:ml-[55px]";
 
 export default function Charts() {
-  const isCustomer = useIsValidCustomer();
+  const isProUser = useIsProUser();
   const customerIsLoading = useContext(AppContext).customerIsLoading;
   // write a charts reducer where the dispatch just refetches charts
   const [temporaryCharts, refetchTemporaryCharts] = useReducer(
@@ -43,7 +43,7 @@ export default function Charts() {
   );
   const { data: persistentCharts, isLoading } = useHostedCharts();
   const isLoadingAnything = isLoading || customerIsLoading;
-  const { push } = useHistory();
+  const navigate = useNavigate();
   const currentChart = useLastChart((state) => state.lastChart);
   const handleDeleteChart = useMutation("deleteChart", deleteChart, {
     onSuccess: (_result, args) => {
@@ -88,7 +88,7 @@ export default function Charts() {
     {
       onSuccess: (result) => {
         queryClient.invalidateQueries(["auth", "hostedCharts"]);
-        if (result && result.id) push(`/u/${result.id}`);
+        if (result && result.id) navigate(`/u/${result.id}`);
       },
     }
   );
@@ -100,7 +100,7 @@ export default function Charts() {
         </PageTitle>
         <Button2
           leftIcon={<Plus size={16} />}
-          onClick={() => push("/n")}
+          onClick={() => navigate("/n")}
           color="blue"
         >
           <Trans>New</Trans>
@@ -121,7 +121,7 @@ export default function Charts() {
             <div className="py-4">
               <Loading />
             </div>
-          ) : isCustomer ? (
+          ) : isProUser ? (
             <div className="grid gap-1">
               {persistentCharts?.map((chart) => (
                 <ChartLink
@@ -132,7 +132,7 @@ export default function Charts() {
                     handleDeleteChart.mutate({ chartId: chart.id });
                   }}
                   handleCopy={() => {
-                    handleCopyPersistentChart.mutate(chart.id as string);
+                    handleCopyPersistentChart.mutate(chart.id);
                   }}
                   isCurrent={`/u/${chart.id}` === currentChart}
                 >
@@ -165,11 +165,11 @@ export default function Charts() {
                 title={`/${chart}`}
                 href={`/${chart}`}
                 handleDelete={() => {
-                  deleteLocalChart(chart, currentChart || "", push);
+                  deleteLocalChart(chart, currentChart || "", navigate);
                   refetchTemporaryCharts();
                 }}
                 handleCopy={() => {
-                  copyLocalChart(chart, push);
+                  copyLocalChart(chart, navigate);
                 }}
                 isCurrent={`/${chart}` === currentChart}
               />
@@ -320,26 +320,27 @@ const ChartLink = memo(function ChartLink({
 function deleteLocalChart(
   chartId: string,
   currentChart: string,
-  push: (path: string) => void
+  navigate: (path: string) => void
 ) {
   // if on this path, move to index
   if (currentChart === chartId && currentChart !== "") {
-    push("/");
+    navigate("/");
   }
   window.localStorage.removeItem(titleToLocalStorageKey(chartId));
 }
 
-function copyLocalChart(chart: string, push: (path: string) => void) {
+function copyLocalChart(chart: string, navigate: (path: string) => void) {
   let i = 1;
-  let copy = `${chart}-${i}`;
+  let name = chart || "Untitled";
+  let copy = `${name}-${i}`;
   while (window.localStorage.getItem(titleToLocalStorageKey(copy))) {
     i++;
-    copy = `${chart}-${i}`;
+    copy = `${name}-${i}`;
   }
   // copy in localStorage
   const data = window.localStorage.getItem(titleToLocalStorageKey(chart));
   window.localStorage.setItem(titleToLocalStorageKey(copy), data ?? "");
-  push(`/${copy}`);
+  navigate(`/${copy}`);
 }
 
 function ProFeatureLink() {
@@ -353,7 +354,7 @@ function ProFeatureLink() {
           className="text-blue-500 translate-y-[-1px] dark:text-orange-500"
         />
       </div>
-      <div className="flex w-full flex-col items-start">
+      <div className="grid w-full gap-1 items-start">
         <span>
           <Trans>Permanent Charts are a Pro Feature</Trans>
         </span>

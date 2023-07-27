@@ -1,11 +1,13 @@
-import { lazy, ReactNode } from "react";
-import { Route, RouteProps, Switch } from "react-router-dom";
+import { lazy } from "react";
+import { Outlet, Route, Routes } from "react-router-dom";
 
 import { usePageViews } from "../lib/analytics";
 import Feedback from "./Feedback";
 import Layout from "./Layout";
 import Settings from "./Settings";
-
+import { AuthWall } from "./AuthWall";
+import Login from "../pages/LogIn";
+import ResetPassword from "../pages/ResetPassword";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
@@ -21,8 +23,8 @@ const Changelog = lazy(() => import("../pages/Changelog"));
 const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
-const Login = lazy(() => import("../pages/LogIn"));
 const Charts = lazy(() => import("../pages/Charts"));
+const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
@@ -30,92 +32,64 @@ const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
 export default function Router() {
   usePageViews();
   return (
-    <Switch>
-      <RouteWithWrapper path="/" exact>
-        <Edit />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/pricing" exact>
-        <Pricing />
-      </RouteWithWrapper>
-      {/* "y" for "your charts" */}
-      <RouteWithWrapper path="/y" exact>
-        <Charts />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/n/:graphText?">
-        <New />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/u/:id">
-        <EditHosted />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/r/:graphText?">
-        <ReadOnly />
-      </RouteWithWrapper>
-      {/* c for "compressed" */}
-      <RouteWithWrapper path="/c/:graphText?">
-        <ReadOnly />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/f/:graphText?">
-        <ReadOnly />
-      </RouteWithWrapper>
-      <Route path="/p/:public_id">
-        <Public />
+    <Routes>
+      <Route path="/" element={<Wrapper />}>
+        <Route index element={<Edit />} />
+        <Route path="/pricing" element={<Pricing />} />
+        {/* "y" for "your charts" */}
+        <Route
+          path="/y"
+          element={
+            <AuthWall>
+              <Charts />
+            </AuthWall>
+          }
+        />
+        <Route
+          path="/n/:graphText?"
+          element={
+            <AuthWall>
+              <New />
+            </AuthWall>
+          }
+        />
+        <Route path="/u/:id" element={<EditHosted />} />
+        <Route path="/r/:graphText?" element={<ReadOnly />} />
+        {/* c for "compressed" */}
+        <Route path="/c/:graphText?" element={<ReadOnly />} />
+        <Route path="/f/:graphText?" element={<ReadOnly />} />
+        <Route path="/p/:public_id" element={<Public />} />
+        <Route path="/s" element={<Settings />} />
+        {/* "o" for no reason at all */}
+        <Route path="/o" element={<Feedback />} />
+        <Route path="/a" element={<Account />} />
+        <Route path="/l" element={<Login />} />
+        <Route path="/changelog" element={<Changelog />} />
+        <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/blog/post/:slug" element={<Post />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/d" element={<DesignSystem />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route
+          path="/:workspace"
+          element={
+            <AuthWall>
+              <Edit />
+            </AuthWall>
+          }
+        />
       </Route>
-      <RouteWithWrapper path="/s">
-        <Settings />
-      </RouteWithWrapper>
-      {/* "o" for no reason at all */}
-      <RouteWithWrapper path="/o">
-        <Feedback />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/a">
-        <Account />
-      </RouteWithWrapper>
-      {/* "l" for login */}
-      <RouteWithWrapper path="/l">
-        <Login />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/changelog">
-        <Changelog />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/roadmap">
-        <Roadmap />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/blog/post/:slug">
-        <Post />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/blog">
-        <Blog />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/d">
-        <DesignSystem />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/privacy-policy">
-        <PrivacyPolicy />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/cookie-policy">
-        <CookiePolicy />
-      </RouteWithWrapper>
-      <RouteWithWrapper path="/:workspace">
-        <Edit />
-      </RouteWithWrapper>
-    </Switch>
+    </Routes>
   );
 }
 
-/** Adds the share dialog. Could probably be in a better spot */
-function RouteWrapper({ children }: { children: ReactNode }) {
-  return <Layout>{children}</Layout>;
-}
-
-function RouteWithWrapper({
-  children,
-  ...rest
-}: {
-  children: ReactNode;
-} & RouteProps) {
+function Wrapper() {
   return (
-    <Route {...rest}>
-      <RouteWrapper>{children}</RouteWrapper>
-    </Route>
+    <Layout>
+      <Outlet />
+    </Layout>
   );
 }
