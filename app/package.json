@@ -52,7 +52,7 @@
     "@sentry/tracing": "^7.38.0",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.52.1",
-    "@supabase/supabase-js": "^2.29.0",
+    "@supabase/supabase-js": "^2.31.0",
     "@svgr/webpack": "^6.3.1",
     "@tone-row/slang": "^1.2.35",
     "@tone-row/strip-comments": "^2.0.1",
