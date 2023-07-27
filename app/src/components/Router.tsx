@@ -71,6 +71,8 @@ export default function Router() {
         <Route path="/d" element={<DesignSystem />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route
           path="/:workspace"
           element={
