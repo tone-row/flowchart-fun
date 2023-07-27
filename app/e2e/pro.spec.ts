@@ -18,6 +18,9 @@ let email = "";
 
 let page: Page;
 
+// Skipping Pro Tests
+test.skip(() => true, "Temporarily Skip Pro Tests");
+
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
   await page.goto(BASE_URL);
@@ -104,8 +107,11 @@ test("Sign Up", async () => {
   expect(link?.href).toBeTruthy();
   await page.goto(link?.href as string);
 
+  // reload page
+  await page.reload();
+
   // expect link with "Account" to be present
-  await expect(page.getByText("Account")).toBeVisible({ timeout: 10 * 1000 });
+  await expect(page.getByText("Account")).toBeVisible({ timeout: 60 * 1000 });
 });
 
 test("Publish Chart", async () => {

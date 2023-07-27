@@ -219,14 +219,13 @@ function UserPass({ redirectUrl }: { redirectUrl: string }) {
 
       if (method === "Sign Up") {
         // try sign up
-        const { error, data } = await supabase.auth.signUp({
+        const { error } = await supabase.auth.signUp({
           email,
           password,
           options: {
             emailRedirectTo: redirectUrl,
           },
         });
-        console.log(data);
         if (error) throw error;
         return t`Confirm your email address to sign in.`;
       } else {
@@ -241,14 +240,11 @@ function UserPass({ redirectUrl }: { redirectUrl: string }) {
       }
     },
     {
-      onSuccess: (result) => {
+      onSuccess: () => {
         // reset form
         formRef.current?.reset();
 
-        // if no message, redirect (Although this will be caught by root component and redirect first)
-        if (!result) {
-          window.location.href = redirectUrl;
-        }
+        // if no message, this will be redirected by root
       },
     }
   );
