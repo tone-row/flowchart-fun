@@ -106,7 +106,10 @@ test("Create New Local Chart", async ({ page }) => {
 
 test("Go to Charts Page", async ({ page }) => {
   await goToTab(page, "Charts");
-  await page.click('a:has-text("/")');
+
+  // click the link with text "/"
+  await page.getByRole("link", { name: "/" }).click();
+
   await expect(page).toHaveURL(`${BASE_URL}/`);
 });
 
