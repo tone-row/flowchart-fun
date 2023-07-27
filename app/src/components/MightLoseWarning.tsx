@@ -3,11 +3,13 @@ import * as Popover from "@radix-ui/react-popover";
 import { Warning } from "phosphor-react";
 import { Link } from "react-router-dom";
 
-import { useIsLocalChart } from "../lib/hooks";
+import { useIsLocalChart, useIsProUser } from "../lib/hooks";
 import { track } from "../lib/track";
 import { IconButton2, popoverContentProps } from "../ui/Shared";
 export function MightLoseWarning() {
   const isLocalChart = useIsLocalChart();
+  const isProUser = useIsProUser();
+  if (isProUser) return null;
   if (!isLocalChart) return null;
   return (
     <Popover.Root>
