@@ -2,7 +2,7 @@ import { Trans } from "@lingui/macro";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import { ReactNode } from "react";
 
-import { useIsValidSponsor } from "../lib/hooks";
+import { useIsProUser } from "../lib/hooks";
 
 /**
  * Returns no wrapper if valid sponsor, otherwise wraps children in a popover
@@ -10,8 +10,8 @@ import { useIsValidSponsor } from "../lib/hooks";
  * sponsor page.
  */
 export function SvgProOnlyPopover({ children }: { children: ReactNode }) {
-  const isValidSponsor = useIsValidSponsor();
-  if (isValidSponsor) return <>{children}</>;
+  const isProUser = useIsProUser();
+  if (isProUser) return <>{children}</>;
   return (
     <HoverCard.Root>
       <HoverCard.Trigger asChild>{children}</HoverCard.Trigger>

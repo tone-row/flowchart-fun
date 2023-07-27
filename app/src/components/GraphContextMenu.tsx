@@ -28,11 +28,7 @@ import {
   sourceArrowSuffixes,
   targetArrowSuffixes,
 } from "../lib/graphUtilityClasses";
-import {
-  useDownloadFilename,
-  useIsFirefox,
-  useIsValidSponsor,
-} from "../lib/hooks";
+import { useDownloadFilename, useIsFirefox, useIsProUser } from "../lib/hooks";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
 import { Box } from "../slang";
@@ -52,9 +48,9 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
   const isFirefox = useIsFirefox();
   const filename = useDownloadFilename();
 
-  const isValidSponsor = useIsValidSponsor();
-  const watermark = !isValidSponsor;
-  const scale = isValidSponsor ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
+  const isProUser = useIsProUser();
+  const watermark = !isProUser;
+  const scale = isProUser ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
 
   return (
     <Menu
@@ -71,7 +67,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <NodeSubmenu />
       <EdgeSubmenu />
       {!isFirefox && <CopyPNG watermark={watermark} scale={scale} />}
-      {isValidSponsor && <CopySVG />}
+      {isProUser && <CopySVG />}
       <Item
         onClick={() => {
           if (!window.__cy) return;
@@ -118,7 +114,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
           <Trans>Download JPG</Trans>
         </WithIcon>
       </Item>
-      {isValidSponsor && (
+      {isProUser && (
         <Item
           onClick={async () => {
             const cy = window.__cy;

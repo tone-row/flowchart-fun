@@ -32,7 +32,7 @@ import {
 import { Link, LinkProps, useLocation } from "react-router-dom";
 
 import { DISCORD_URL } from "../lib/constants";
-import { useIsValidCustomer } from "../lib/hooks";
+import { useIsLoggedIn, useIsProUser } from "../lib/hooks";
 import { track } from "../lib/track";
 import { useLastChart } from "../lib/useLastChart";
 import { ReactComponent as BrandSvg } from "./brand.svg";
@@ -62,7 +62,8 @@ export const Header = memo(function SharedHeader() {
     !isLogInPage &&
     !isSignUpPage &&
     !isNewPage;
-  const isValidCustomer = useIsValidCustomer();
+  const isLoggedIn = useIsLoggedIn();
+  const isProUser = useIsProUser();
   const lastChart = useLastChart((state) => state.lastChart);
   return (
     <>
@@ -178,7 +179,18 @@ export const Header = memo(function SharedHeader() {
                 aria-current={isSettingsPage ? "page" : undefined}
                 to="/s"
               />
-              {isValidCustomer ? (
+              {!isProUser ? (
+                <HeaderClientLink
+                  to="/pricing"
+                  label={t`Pricing`}
+                  icon={<Lightning weight="light" height={22} width={22} />}
+                  aria-current={isSponsorPage ? "page" : undefined}
+                  onClick={() => {
+                    track("sponsor", "click");
+                  }}
+                />
+              ) : null}
+              {isLoggedIn ? (
                 <HeaderClientLink
                   label={t`Account`}
                   icon={<User weight="light" height={22} width={22} />}
@@ -186,23 +198,12 @@ export const Header = memo(function SharedHeader() {
                   to="/a"
                 />
               ) : (
-                <>
-                  <HeaderClientLink
-                    to="/pricing"
-                    label={t`Pricing`}
-                    icon={<Lightning weight="light" height={22} width={22} />}
-                    aria-current={isSponsorPage ? "page" : undefined}
-                    onClick={() => {
-                      track("sponsor", "click");
-                    }}
-                  />
-                  <HeaderClientLink
-                    to="/l"
-                    label={t`Log In`}
-                    icon={<User weight="light" height={22} width={22} />}
-                    aria-current={isLogInPage ? "page" : undefined}
-                  />
-                </>
+                <HeaderClientLink
+                  to="/l"
+                  label={t`Log In`}
+                  icon={<User weight="light" height={22} width={22} />}
+                  aria-current={isLogInPage ? "page" : undefined}
+                />
               )}
             </nav>
           </NavigationMenu.List>
@@ -311,7 +312,8 @@ function MobileHeader({
   const lastChart = useLastChart((s) => s.lastChart);
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
-  const isValidCustomer = useIsValidCustomer();
+  const isProUser = useIsProUser();
+  const isLoggedIn = useIsLoggedIn();
 
   useEffect(() => {
     setOpen(false);
@@ -392,7 +394,24 @@ function MobileHeader({
               aria-current={isSettingsPage ? "page" : undefined}
               to="/s"
             />
-            {isValidCustomer ? (
+            {!isProUser ? (
+              <HeaderClientLink
+                to="/pricing"
+                label={t`Pricing`}
+                icon={<Lightning weight="light" height={22} width={22} />}
+                aria-current={isSponsorPage ? "page" : undefined}
+                onClick={() => {
+                  // track event with gtm
+                  if (window?.dataLayer)
+                    window.dataLayer.push({
+                      event: "sponsor",
+                      action: "click",
+                      label: "mobile-header",
+                    });
+                }}
+              />
+            ) : null}
+            {isLoggedIn ? (
               <HeaderClientLink
                 label={t`Account`}
                 icon={<User weight="light" height={22} width={22} />}
@@ -400,29 +419,12 @@ function MobileHeader({
                 to="/a"
               />
             ) : (
-              <>
-                <HeaderClientLink
-                  to="/pricing"
-                  label={t`Pricing`}
-                  icon={<Lightning weight="light" height={22} width={22} />}
-                  aria-current={isSponsorPage ? "page" : undefined}
-                  onClick={() => {
-                    // track event with gtm
-                    if (window?.dataLayer)
-                      window.dataLayer.push({
-                        event: "sponsor",
-                        action: "click",
-                        label: "mobile-header",
-                      });
-                  }}
-                />
-                <HeaderClientLink
-                  to="/l"
-                  label={t`Log In`}
-                  icon={<User weight="light" height={22} width={22} />}
-                  aria-current={isLogInPage ? "page" : undefined}
-                />
-              </>
+              <HeaderClientLink
+                to="/l"
+                label={t`Log In`}
+                icon={<User weight="light" height={22} width={22} />}
+                aria-current={isLogInPage ? "page" : undefined}
+              />
             )}
           </Dialog.Content>
         </Dialog.Portal>

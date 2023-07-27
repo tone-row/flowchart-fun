@@ -1,7 +1,4 @@
 import { Core, EdgeSingular, NodeSingular } from "cytoscape";
-import coseBilkent from "cytoscape-cose-bilkent";
-import dagre from "cytoscape-dagre";
-import klay from "cytoscape-klay";
 import { ParseError } from "graph-selector";
 import throttle from "lodash.throttle";
 import React, {
@@ -41,13 +38,6 @@ declare global {
   interface Window {
     __cy?: cytoscape.Core;
   }
-}
-
-if (!cytoscape.prototype.hasInitialised) {
-  cytoscape.use(dagre);
-  cytoscape.use(klay);
-  cytoscape.use(coseBilkent);
-  cytoscape.prototype.hasInitialised = true;
 }
 
 const isAnimationEnabled = getAnimationSettings();
@@ -111,14 +101,6 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     );
     return unsubscribe;
   }, [throttleUpdate]);
-
-  // Update Graph when Sponsor Layouts Load
-  const sponsorLayoutsLoaded = useGraphStore(
-    useCallback((store) => store.sponsorLayoutsLoaded, [])
-  );
-  useEffect(() => {
-    if (sponsorLayoutsLoaded) throttleUpdate();
-  }, [throttleUpdate, sponsorLayoutsLoaded]);
 
   const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
 

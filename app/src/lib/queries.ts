@@ -17,10 +17,14 @@ queryClient.setDefaultOptions({
   },
 });
 
+/**
+ * Returns the customer id and subscription
+ * for the logged in user
+ */
 async function customerInfo(): Promise<
   | {
       customerId: string;
-      subscription: Stripe.Subscription;
+      subscription?: Stripe.Subscription;
     }
   | undefined
 > {
@@ -73,35 +77,6 @@ export async function mail(email: {
   return result;
 }
 
-/**
- * Validate user before sending sign in link
- */
-export async function login(email: string): Promise<boolean> {
-  if (!supabase) return false;
-  const response = await fetch("/api/validate", {
-    method: "post",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-    }),
-  });
-  let result;
-  try {
-    result = await response.json();
-  } catch (e) {
-    console.log(e);
-  }
-  if (result?.error) throw result.error;
-  if (!response.ok) throw new Error("Unable to connect");
-  const { error: supabaseErr } = await supabase.auth.signInWithOtp({
-    email,
-  });
-  if (supabaseErr) throw supabaseErr;
-  return true;
-}
-
 async function orderHistory(
   customerId?: string,
   subscriptionId?: string
@@ -143,7 +118,10 @@ type MakeChartArgs = {
   name: string;
   user_id: string;
   chart?: string;
-} & ({} | { fromPrompt: true; prompt: string; method: "instruct" | "extract" });
+} & (
+  | { fromPrompt: true; prompt: string; method: "instruct" | "extract" }
+  | { fromPrompt?: never; prompt?: never; method?: never }
+);
 
 export async function makeChart({
   name,
@@ -181,7 +159,7 @@ export async function makeChart({
     .select();
 }
 
-export async function copyHostedChartById(id: string) {
+export async function copyHostedChartById(id: number) {
   if (!supabase) return;
   // get current user
   const { data: sessionData } = await supabase.auth.getSession();

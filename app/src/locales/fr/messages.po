@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/PaymentStepper.tsx:83
+#: src/components/PaymentStepper.tsx:104
 msgid "$3 per month"
 msgstr "3 $ par mois"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:112
 msgid "$30 per year"
 msgstr "30 $ par an"
 
@@ -28,6 +28,18 @@ msgstr "(avant que deux-points ne créent une étiquette)"
 #: src/components/Settings.tsx:107
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0> est un projet open source réalisé par <1>Tone Row</1>"
+
+#: src/pages/LogIn.tsx:275
+msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
+msgstr "<0>Se connecter</0> / <1>S'inscrire</1> avec email et mot de passe"
+
+#: src/pages/Account.tsx:552
+msgid "<0>Starting August 28th you will need a subscription to create and edit charts. <1>Learn more</1>.</0>"
+msgstr "<0>À partir du 28 août, vous aurez besoin d'un abonnement pour créer et modifier des graphiques. <1>En savoir plus</1>.</0>"
+
+#: src/pages/Account.tsx:540
+msgid "<0>You currently have a free account.<1/><2>Learn about our Pro Features and subscribe on our pricing page</2>.</0>"
+msgstr "<0>Vous avez actuellement un compte gratuit.<1/><2>Apprenez-en plus sur nos fonctionnalités Pro et abonnez-vous sur notre page tarifaire</2>.</0>"
 
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
@@ -41,17 +53,17 @@ msgstr "À propos"
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "Accédez à ces diagrammes depuis n'importe où.<0/>Partagez et intégrez des diagrammes de flux qui restent synchronisés."
 
-#: src/pages/New.tsx:234
+#: src/pages/New.tsx:238
 msgid "Accessible from any device"
 msgstr "Accessible depuis n'importe quel appareil"
 
-#: src/components/Header.tsx:183
-#: src/components/Header.tsx:397
-#: src/pages/Account.tsx:108
+#: src/components/Header.tsx:195
+#: src/components/Header.tsx:416
+#: src/pages/Account.tsx:112
 msgid "Account"
 msgstr "Compte"
 
-#: src/components/PaymentStepper.tsx:163
+#: src/components/PaymentStepper.tsx:188
 msgid "Activate your account"
 msgstr "Activez votre compte"
 
@@ -59,11 +71,11 @@ msgstr "Activez votre compte"
 msgid "Advanced"
 msgstr "Avancé"
 
-#: src/pages/Account.tsx:273
+#: src/pages/Account.tsx:284
 msgid "Amount"
 msgstr "Montant"
 
-#: src/components/Feedback.tsx:82
+#: src/components/Feedback.tsx:86
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "Une erreur s'est produite. Essayez de l'envoyer à nouveau ou bien envoyez un e-mail à l'adresse {0}."
 
@@ -84,7 +96,7 @@ msgstr "Attributs"
 msgid "Auto-Layouts"
 msgstr "Mises en page automatiques"
 
-#: src/components/Feedback.tsx:105
+#: src/components/Feedback.tsx:109
 msgid "Back To Editor"
 msgstr "Retour à l'éditeur"
 
@@ -100,26 +112,26 @@ msgstr "Devenez un sponsor Github"
 msgid "Become a Pro User"
 msgstr "Devenez un utilisateur Pro"
 
-#: src/pages/New.tsx:318
+#: src/pages/New.tsx:322
 msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
 msgstr "Commencez par un exemple simple montrant comment <0>Flowchart Fun</0> fonctionne."
 
-#: src/pages/New.tsx:282
+#: src/pages/New.tsx:286
 msgid "Blank"
 msgstr "Vide"
 
-#: src/components/Header.tsx:152
-#: src/components/Header.tsx:373
+#: src/components/Header.tsx:153
+#: src/components/Header.tsx:375
 #: src/pages/Blog.tsx:19
 msgid "Blog"
 msgstr "Blog"
 
-#: src/pages/Account.tsx:135
+#: src/pages/Account.tsx:140
 msgid "Book a Meeting"
 msgstr "Réserver une réunion"
 
-#: src/components/GraphContextMenu.tsx:463
-#: src/components/GraphContextMenu.tsx:559
+#: src/components/GraphContextMenu.tsx:459
+#: src/components/GraphContextMenu.tsx:555
 msgid "Border"
 msgstr "Frontière"
 
@@ -135,14 +147,14 @@ msgstr "Parcours en largeur"
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:719
 #: src/components/RenameButton.tsx:153
-#: src/pages/Account.tsx:295
-#: src/pages/Account.tsx:308
-#: src/pages/Account.tsx:381
-#: src/pages/Account.tsx:431
+#: src/pages/Account.tsx:307
+#: src/pages/Account.tsx:320
+#: src/pages/Account.tsx:393
+#: src/pages/Account.tsx:443
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/pages/Account.tsx:298
+#: src/pages/Account.tsx:310
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Résilier votre abonnement. Vos graphiques hébergés seront en lecture seule."
 
@@ -150,24 +162,28 @@ msgstr "Résilier votre abonnement. Vos graphiques hébergés seront en lecture 
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Certains attributs peuvent être utilisés pour personnaliser l'apparence ou la fonctionnalité des éléments."
 
-#: src/pages/Account.tsx:228
+#: src/pages/Account.tsx:238
 msgid "Change Email Address"
 msgstr "Changer l'adresse email"
 
-#: src/components/Header.tsx:162
-#: src/components/Header.tsx:379
+#: src/components/Header.tsx:163
+#: src/components/Header.tsx:381
 #: src/pages/Changelog.tsx:17
 msgid "Changelog"
 msgstr "Journal des modifications"
 
-#: src/components/Header.tsx:95
-#: src/components/Header.tsx:351
+#: src/components/Header.tsx:96
+#: src/components/Header.tsx:353
 msgid "Charts"
 msgstr "Graphiques"
 
-#: src/pages/LogIn.tsx:46
+#: src/pages/LogIn.tsx:84
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "Vérifiez votre e-mail pour un lien de connexion. Vous pouvez fermer cette fenêtre."
+
+#: src/pages/LogIn.tsx:273
+msgid "Choose"
+msgstr "Choisir"
 
 #: src/components/ThemePicker.tsx:68
 msgid "Choose a Theme"
@@ -177,7 +193,7 @@ msgstr "Choisir un thème"
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Choisissez parmi une variété de formes de flèches pour la source et la cible d'un bord. Les formes incluent triangle, triangle-tee, cercle-triangle, triangle-croix, triangle-backcurve, vee, tee, carré, cercle, diamant, chevron, aucun."
 
-#: src/components/PaymentStepper.tsx:75
+#: src/components/PaymentStepper.tsx:94
 msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
 msgstr "Choisissez le plan qui vous convient le mieux et commencez à créer des diagrammes incroyables avec Flowchart Fun Pro"
 
@@ -209,7 +225,7 @@ msgstr "Cliquez sur \\nApprendre la syntaxe\\npour en savoir plus."
 msgid "Click to preview"
 msgstr "Cliquez pour prévisualiser"
 
-#: src/components/CloneButton.tsx:25
+#: src/components/CloneButton.tsx:32
 msgid "Clone"
 msgstr "Cloner"
 
@@ -217,7 +233,7 @@ msgstr "Cloner"
 msgid "Close"
 msgstr "Fermer"
 
-#: src/components/GraphContextMenu.tsx:289
+#: src/components/GraphContextMenu.tsx:285
 msgid "Color"
 msgstr "Couleur"
 
@@ -233,7 +249,7 @@ msgstr "Colonne"
 msgid "Comic Book"
 msgstr "Bande dessinée"
 
-#: src/components/Feedback.tsx:68
+#: src/components/Feedback.tsx:72
 msgid "Comment"
 msgstr "Commenter"
 
@@ -241,9 +257,14 @@ msgstr "Commenter"
 msgid "Concentric"
 msgstr "Concentrique"
 
-#: src/pages/Account.tsx:220
+#: src/pages/Account.tsx:230
 msgid "Confirm New Email"
 msgstr "Confirmer le nouveau Email"
+
+#: src/pages/LogIn.tsx:234
+#: src/pages/LogIn.tsx:234
+msgid "Confirm your email address to sign in."
+msgstr "Confirmez votre adresse e-mail pour vous connecter."
 
 #: src/components/LearnSyntaxDialog.tsx:251
 msgid "Containers"
@@ -254,8 +275,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "Les conteneurs sont des nœuds qui contiennent d'autres nœuds. Ils sont déclarés à l'aide de accolades."
 
 #: src/components/ImportDataDialog.tsx:732
-#: src/components/PaymentStepper.tsx:107
-#: src/components/PaymentStepper.tsx:150
+#: src/components/PaymentStepper.tsx:128
+#: src/components/PaymentStepper.tsx:175
 msgid "Continue"
 msgstr "Continuer"
 
@@ -273,11 +294,11 @@ msgstr "Convertir en graphique hébergé ?"
 msgid "Copy"
 msgstr "Copier"
 
-#: src/components/GraphContextMenu.tsx:210
+#: src/components/GraphContextMenu.tsx:206
 msgid "Copy PNG Image"
 msgstr "Copier l'image PNG"
 
-#: src/components/GraphContextMenu.tsx:171
+#: src/components/GraphContextMenu.tsx:167
 msgid "Copy SVG Code"
 msgstr "Copier le code SVG"
 
@@ -290,11 +311,11 @@ msgstr "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "Créer des diagrammes à partir d'une invite avec l'IA"
 
-#: src/pages/New.tsx:305
+#: src/pages/New.tsx:309
 msgid "Create New Flowchart"
 msgstr "Créer un nouveau diagramme"
 
-#: src/pages/New.tsx:177
+#: src/pages/New.tsx:181
 msgid "Create a New Flowchart"
 msgstr "Créer un nouveau diagramme"
 
@@ -310,7 +331,7 @@ msgstr "Créer une arête entre deux nœuds est fait en indentant le second nœu
 msgid "Custom Sharing Options"
 msgstr "Options de partage personnalisées"
 
-#: src/pages/Account.tsx:238
+#: src/pages/Account.tsx:248
 msgid "Customer Portal"
 msgstr "Portail Clients"
 
@@ -327,15 +348,15 @@ msgstr "Sombre"
 msgid "Dark Mode"
 msgstr "Mode sombre"
 
-#: src/pages/Account.tsx:270
+#: src/pages/Account.tsx:281
 msgid "Date"
 msgstr "Date"
 
-#: src/pages/New.tsx:249
+#: src/pages/New.tsx:253
 msgid "Deleted when browser data is cleared"
 msgstr "Supprimé lorsque les données du navigateur sont effacées"
 
-#: src/pages/New.tsx:511
+#: src/pages/New.tsx:515
 msgid "Describe the flowchart you wish to create"
 msgstr "Décrivez le schéma que vous souhaitez créer"
 
@@ -347,7 +368,7 @@ msgstr "Direction"
 msgid "Discard"
 msgstr "Jeter"
 
-#: src/pages/Account.tsx:369
+#: src/pages/Account.tsx:381
 msgid "Do you want to cancel your subscription?"
 msgstr "Souhaitez-vous résilier votre abonnement ?"
 
@@ -359,24 +380,20 @@ msgstr "Souhaitez-vous supprimer ceci ?"
 msgid "Document"
 msgstr "Document"
 
-#: src/pages/LogIn.tsx:99
-msgid "Don't have an account?"
-msgstr "Vous n'avez pas de compte ?"
-
 #: src/components/ShareDialog.tsx:61
 #: src/components/ShareDialog.tsx:514
 msgid "Download"
 msgstr "Télécharger"
 
-#: src/components/GraphContextMenu.tsx:118
+#: src/components/GraphContextMenu.tsx:114
 msgid "Download JPG"
 msgstr "Télécharger JPG"
 
-#: src/components/GraphContextMenu.tsx:95
+#: src/components/GraphContextMenu.tsx:91
 msgid "Download PNG"
 msgstr "Télécharger PNG"
 
-#: src/components/GraphContextMenu.tsx:138
+#: src/components/GraphContextMenu.tsx:134
 msgid "Download SVG"
 msgstr "Télécharger SVG"
 
@@ -396,7 +413,7 @@ msgstr "Déposez le fichier ici ..."
 msgid "Easily import existing flowcharts from other software"
 msgstr "Importez facilement des diagrammes existants à partir d'autres logiciels"
 
-#: src/components/GraphContextMenu.tsx:552
+#: src/components/GraphContextMenu.tsx:548
 msgid "Edge"
 msgstr "Bord"
 
@@ -462,8 +479,8 @@ msgstr "Bordures dans la Ligne du Nœud Cible"
 msgid "Editable"
 msgstr "Modifiable"
 
-#: src/components/Header.tsx:87
-#: src/components/Header.tsx:339
+#: src/components/Header.tsx:88
+#: src/components/Header.tsx:341
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "Éditeur"
@@ -472,7 +489,11 @@ msgstr "Éditeur"
 msgid "Eggs"
 msgstr "Oeufs"
 
-#: src/components/Feedback.tsx:58
+#: src/components/Feedback.tsx:62
+#: src/pages/ForgotPassword.tsx:53
+#: src/pages/ForgotPassword.tsx:57
+#: src/pages/LogIn.tsx:147
+#: src/pages/LogIn.tsx:296
 msgid "Email"
 msgstr "E-mail"
 
@@ -480,15 +501,23 @@ msgstr "E-mail"
 msgid "Empty"
 msgstr "Vide"
 
-#: src/components/PaymentStepper.tsx:125
+#: src/components/PaymentStepper.tsx:148
 msgid "Enter your email"
 msgstr "Entrez votre adresse e-mail "
+
+#: src/pages/LogIn.tsx:140
+msgid "Enter your email address and we'll send you a magic link to sign in."
+msgstr "Entrez votre adresse e-mail et nous vous enverrons un lien magique pour vous connecter."
+
+#: src/pages/ForgotPassword.tsx:37
+msgid "Enter your email address below and we'll send you a link to reset your password."
+msgstr "Entrez votre adresse e-mail ci-dessous et nous vous enverrons un lien pour réinitialiser votre mot de passe."
 
 #: src/components/ImportDataDialog.tsx:556
 msgid "Equal To"
 msgstr "Égal à"
 
-#: src/pages/New.tsx:436
+#: src/pages/New.tsx:440
 msgid "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
 msgstr "Diagramme de flux de l'écriture d'essai, guidant les étudiants à travers la réflexion, le schématisme, le brouillon et les étapes de révision"
 
@@ -500,7 +529,7 @@ msgstr "Tout dans le plan gratuit"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:51
+#: src/components/EditorWrapper.tsx:52
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:149
 msgid "Export"
@@ -515,23 +544,27 @@ msgstr "Exporter des images haute résolution"
 msgid "Export to SVG"
 msgstr "Exporter en SVG"
 
-#: src/components/GraphContextMenu.tsx:252
+#: src/components/GraphContextMenu.tsx:248
 msgid "Extra Large"
 msgstr "Extra Large"
 
-#: src/pages/New.tsx:515
+#: src/pages/New.tsx:519
 msgid "Extract"
 msgstr "Extrait"
 
 #: src/components/Feedback.tsx:44
-#: src/components/Header.tsx:126
-#: src/components/Header.tsx:365
+#: src/components/Header.tsx:127
+#: src/components/Header.tsx:367
 msgid "Feedback"
 msgstr "Commentaire"
 
 #: src/components/Settings.tsx:125
 msgid "Follow Us on Twitter"
 msgstr "Suivez-nous sur Twitter"
+
+#: src/pages/LogIn.tsx:336
+msgid "Forgot your password?"
+msgstr "Mot de passe oublié ?"
 
 #: src/components/Feedback.tsx:47
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
@@ -557,7 +590,7 @@ msgstr "Obtenez plus de mises en page"
 msgid "Get personalized attention and support from our expert team"
 msgstr "Obtenez une attention et un soutien personnalisés de notre équipe d'experts "
 
-#: src/pages/New.tsx:272
+#: src/pages/New.tsx:276
 msgid "Getting Started"
 msgstr "Commencer"
 
@@ -569,16 +602,16 @@ msgstr "Graphique"
 msgid "Grid"
 msgstr "Quadrillage"
 
-#: src/pages/Account.tsx:124
+#: src/pages/Account.tsx:129
 #: src/pages/Pricing.tsx:35
 msgid "Have complex questions or issues? We're here to help."
 msgstr "Des questions ou des problèmes complexes ? Nous sommes là pour vous aider. "
 
-#: src/components/Header.tsx:104
+#: src/components/Header.tsx:105
 msgid "Help"
 msgstr "Aide"
 
-#: src/pages/Account.tsx:260
+#: src/pages/Account.tsx:271
 msgid "History"
 msgstr "Historique"
 
@@ -593,6 +626,10 @@ msgstr "Comment les bords sont-ils déclarés dans ces données?"
 #: src/components/LearnSyntaxDialog.tsx:127
 msgid "ID's"
 msgstr "ID"
+
+#: src/pages/ForgotPassword.tsx:70
+msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
+msgstr "Si un compte avec cet e-mail existe, nous vous avons envoyé un e-mail avec des instructions sur la façon de réinitialiser votre mot de passe."
 
 #: src/components/Settings.tsx:132
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
@@ -634,7 +671,7 @@ msgstr "Importer à partir de Lucidchart, Visio et autres fichiers CSV"
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces fichiers CSV."
 
-#: src/components/Layout.tsx:73
+#: src/components/Layout.tsx:83
 msgid "Important Changes are Coming to Flowchart Fun."
 msgstr "Des changements importants arrivent à Flowchart Fun."
 
@@ -654,11 +691,11 @@ msgstr "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la
 msgid "Indenting creates an edge"
 msgstr "L'indentation crée un bord"
 
-#: src/components/Header.tsx:141
+#: src/components/Header.tsx:142
 msgid "Info"
 msgstr "Info"
 
-#: src/pages/New.tsx:510
+#: src/pages/New.tsx:514
 msgid "Instruct"
 msgstr "Instruire"
 
@@ -670,7 +707,7 @@ msgstr "Est"
 msgid "Language"
 msgstr "Langue"
 
-#: src/components/GraphContextMenu.tsx:247
+#: src/components/GraphContextMenu.tsx:243
 msgid "Large"
 msgstr "Grand"
 
@@ -679,8 +716,8 @@ msgstr "Grand"
 msgid "Layout"
 msgstr "Disposition"
 
-#: src/components/GraphFloatingMenu.tsx:83
-#: src/components/GraphFloatingMenu.tsx:85
+#: src/components/GraphFloatingMenu.tsx:93
+#: src/components/GraphFloatingMenu.tsx:95
 msgid "Layout Frozen"
 msgstr "Mise en page gelée"
 
@@ -693,8 +730,8 @@ msgid "Leading References"
 msgstr "Principales références"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:67
-#: src/components/Layout.tsx:75
-#: src/components/MightLoseWarning.tsx:37
+#: src/components/Layout.tsx:85
+#: src/components/MightLoseWarning.tsx:34
 msgid "Learn More"
 msgstr "En savoir plus"
 
@@ -712,7 +749,7 @@ msgstr "En savoir plus sur Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "De gauche à droite"
 
-#: src/components/PaymentStepper.tsx:127
+#: src/components/PaymentStepper.tsx:150
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "Commençons ! Entrez votre adresse e-mail ci-dessous pour créer votre compte Flowchart Fun et commencez à utiliser nos fonctionnalités puissantes."
 
@@ -738,19 +775,18 @@ msgstr "Charger le thème"
 msgid "Loading a theme will erase any custom styles you have applied"
 msgstr "Charger un thème effacera tous les styles personnalisés que vous avez appliqués"
 
-#: src/components/GraphFloatingMenu.tsx:68
-#: src/components/GraphFloatingMenu.tsx:70
+#: src/components/GraphFloatingMenu.tsx:78
+#: src/components/GraphFloatingMenu.tsx:80
 msgid "Lock Zoom to Graph"
 msgstr "Verrouiller le Zoom sur le Graphique"
 
-#: src/components/Header.tsx:201
-#: src/components/Header.tsx:421
-#: src/pages/LogIn.tsx:69
-#: src/pages/New.tsx:263
+#: src/components/Header.tsx:203
+#: src/components/Header.tsx:424
+#: src/pages/New.tsx:267
 msgid "Log In"
 msgstr "Connexion"
 
-#: src/pages/Account.tsx:116
+#: src/pages/Account.tsx:120
 msgid "Log Out"
 msgstr "Déconnexion"
 
@@ -766,7 +802,7 @@ msgstr "Faites un don unique"
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
-#: src/components/PaymentStepper.tsx:132
+#: src/components/PaymentStepper.tsx:157
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Assurez-vous d'utiliser le même e-mail que vous utiliserez pour vous connecter."
 
@@ -774,15 +810,15 @@ msgstr "Assurez-vous d'utiliser le même e-mail que vous utiliserez pour vous co
 msgid "Map Data"
 msgstr "Cartographier les données"
 
-#: src/pages/New.tsx:430
+#: src/pages/New.tsx:434
 msgid "Market understanding and competitive landscape maintenance for SaaS product development"
 msgstr "Comprendre le marché et maintenir le paysage concurrentiel pour le développement de produits SaaS"
 
-#: src/components/GraphContextMenu.tsx:243
+#: src/components/GraphContextMenu.tsx:239
 msgid "Medium"
 msgstr "Moyen"
 
-#: src/pages/New.tsx:499
+#: src/pages/New.tsx:503
 msgid "Method"
 msgstr "Méthode"
 
@@ -790,7 +826,7 @@ msgstr "Méthode"
 msgid "Monospace"
 msgstr "Monospace"
 
-#: src/components/PaymentStepper.tsx:82
+#: src/components/PaymentStepper.tsx:103
 msgid "Monthly"
 msgstr "Mensuel"
 
@@ -802,22 +838,22 @@ msgstr "Plusieurs pointeurs sur la même ligne"
 msgid "Museum"
 msgstr "Musée"
 
-#: src/pages/New.tsx:181
+#: src/pages/New.tsx:185
 msgid "Name"
 msgstr "Nom"
 
-#: src/components/Header.tsx:78
-#: src/components/Header.tsx:345
+#: src/components/Header.tsx:79
+#: src/components/Header.tsx:347
 #: src/pages/Charts.tsx:106
 msgid "New"
 msgstr "Nouveau"
 
-#: src/pages/Account.tsx:213
+#: src/pages/Account.tsx:223
 msgid "New Email"
 msgstr "Nouveau courriel"
 
-#: src/pages/Account.tsx:170
-#: src/pages/Account.tsx:427
+#: src/pages/Account.tsx:177
+#: src/pages/Account.tsx:439
 msgid "Next charge"
 msgstr "Prochain paiement"
 
@@ -825,7 +861,7 @@ msgstr "Prochain paiement"
 msgid "No Edges"
 msgstr "Pas de bords"
 
-#: src/components/GraphContextMenu.tsx:282
+#: src/components/GraphContextMenu.tsx:278
 msgid "Node"
 msgstr "Nœud"
 
@@ -870,11 +906,11 @@ msgstr "Pas vide"
 msgid "Office Hours"
 msgstr "Heures de travail"
 
-#: src/pages/LogIn.tsx:54
+#: src/pages/LogIn.tsx:92
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr " temps en temps, le lien magique finira par atterrir dans votre dossier de pourriel. Si vous ne le voyez pas après quelques minutes, vérifiez-y ou demandez un nouveau lien."
 
-#: src/pages/Account.tsx:121
+#: src/pages/Account.tsx:126
 #: src/pages/Pricing.tsx:32
 #: src/pages/Pricing.tsx:74
 msgid "One-on-One Support"
@@ -888,7 +924,7 @@ msgstr "Liens de partage à usage unique"
 msgid "Only available on this device.<0/>Clearing your browser cache will erase them."
 msgstr "Disponible uniquement sur cet appareil.<0/>La suppression de votre cache de navigateur les effacera."
 
-#: src/pages/Account.tsx:252
+#: src/pages/Account.tsx:262
 msgid "Open Customer Portal"
 msgstr "Ouvrir le portail client"
 
@@ -896,7 +932,11 @@ msgstr "Ouvrir le portail client"
 msgid "Organization Chart"
 msgstr "Organigramme"
 
-#: src/pages/New.tsx:516
+#: src/pages/LogIn.tsx:308
+msgid "Password"
+msgstr "Mot de passe "
+
+#: src/pages/New.tsx:520
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "Collez les informations que vous souhaitez convertir en organigramme"
 
@@ -912,7 +952,7 @@ msgstr "Les diagrammes permanents sont une fonctionnalité Pro"
 msgid "Permanent Flowcharts"
 msgstr "Diagrammes permanents"
 
-#: src/pages/New.tsx:217
+#: src/pages/New.tsx:221
 msgid "Persistent"
 msgstr "Persistant"
 
@@ -928,12 +968,12 @@ msgstr "Livre-jeu"
 msgid "Pointer and container on same line"
 msgstr "Pointeur et conteneur sur la même ligne"
 
-#: src/components/Header.tsx:192
-#: src/components/Header.tsx:406
+#: src/components/Header.tsx:185
+#: src/components/Header.tsx:400
 msgid "Pricing"
 msgstr "Tarification"
 
-#: src/pages/New.tsx:432
+#: src/pages/New.tsx:436
 msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
 msgstr "Processus de développement et d'implémentation d'initiatives de responsabilité sociale des entreprises dans l'ensemble des opérations de l'entreprise"
 
@@ -941,7 +981,7 @@ msgstr "Processus de développement et d'implémentation d'initiatives de respon
 msgid "Processing Data"
 msgstr "Traitement des données"
 
-#: src/pages/New.tsx:287
+#: src/pages/New.tsx:291
 msgid "Prompt"
 msgstr "Invite"
 
@@ -1009,15 +1049,27 @@ msgstr "Supprimer le filigrane de l'image"
 msgid "Rename"
 msgstr "Renommer"
 
+#: src/pages/LogIn.tsx:166
+msgid "Request Magic Link"
+msgstr "Demandez un lien magique"
+
+#: src/pages/ForgotPassword.tsx:62
+msgid "Request Password Reset"
+msgstr "Demandez une réinitialisation du mot de passe "
+
 #: src/components/GraphFloatingMenu.tsx:42
 #: src/components/GraphFloatingMenu.tsx:45
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: src/pages/Account.tsx:198
-#: src/pages/Account.tsx:417
-#: src/pages/Account.tsx:425
-#: src/pages/Account.tsx:439
+#: src/pages/ForgotPassword.tsx:34
+msgid "Reset Password"
+msgstr "Réinitialiser le mot de passe"
+
+#: src/pages/Account.tsx:205
+#: src/pages/Account.tsx:429
+#: src/pages/Account.tsx:437
+#: src/pages/Account.tsx:451
 msgid "Resume Subscription"
 msgstr "Reprendre l'abonnement"
 
@@ -1025,7 +1077,7 @@ msgstr "Reprendre l'abonnement"
 msgid "Retro"
 msgstr "Rétro"
 
-#: src/pages/Account.tsx:373
+#: src/pages/Account.tsx:385
 msgid "Return"
 msgstr "Retour"
 
@@ -1034,8 +1086,8 @@ msgstr "Retour"
 msgid "Right to Left"
 msgstr "De droite à gauche"
 
-#: src/components/Header.tsx:169
-#: src/components/Header.tsx:385
+#: src/components/Header.tsx:170
+#: src/components/Header.tsx:387
 #: src/pages/Roadmap.tsx:16
 msgid "Roadmap"
 msgstr "Roadmap"
@@ -1044,7 +1096,7 @@ msgstr "Roadmap"
 msgid "Save"
 msgstr "Sauver"
 
-#: src/components/PaymentStepper.tsx:95
+#: src/components/PaymentStepper.tsx:116
 msgid "Save 20% (2 months free!)"
 msgstr "Économisez 20% (2 mois gratuits!)"
 
@@ -1056,37 +1108,46 @@ msgstr "Économisez du temps et automatisez certaines tâches avec cette fonctio
 msgid "Save time and streamline your workflow by importing data from other sources"
 msgstr "Économisez du temps et simplifiez votre flux de travail en important des données à partir d'autres sources"
 
-#: src/components/PaymentStepper.tsx:72
+#: src/components/PaymentStepper.tsx:91
 msgid "Select your plan!"
 msgstr "Sélectionnez votre plan !"
 
-#: src/components/GraphFloatingMenu.tsx:101
+#: src/components/GraphFloatingMenu.tsx:111
 msgid "Send Feedback"
 msgstr "Envoyer des commentaires"
 
-#: src/components/Header.tsx:176
-#: src/components/Header.tsx:390
+#: src/components/Header.tsx:177
+#: src/components/Header.tsx:392
 #: src/components/Settings.tsx:34
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/components/GraphContextMenu.tsx:351
+#: src/components/GraphContextMenu.tsx:347
 msgid "Shape"
 msgstr "Forme"
 
-#: src/components/PaymentStepper.tsx:274
+#: src/pages/LogIn.tsx:107
+#: src/pages/LogIn.tsx:327
+msgid "Sign In"
+msgstr "Se connecter "
+
+#: src/components/PaymentStepper.tsx:299
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: src/pages/LogIn.tsx:104
-msgid "Sign Up Now"
-msgstr "Inscrivez-vous maintenant"
+#: src/pages/LogIn.tsx:134
+msgid "Sign in with <0>GitHub</0>"
+msgstr "Se connecter avec <0>GitHub</0>"
 
-#: src/components/GraphContextMenu.tsx:418
+#: src/pages/LogIn.tsx:119
+msgid "Sign in with <0>Google</0>"
+msgstr "Se connecter avec <0>Google</0>"
+
+#: src/components/GraphContextMenu.tsx:414
 msgid "Size"
 msgstr "Taille"
 
-#: src/components/GraphContextMenu.tsx:238
+#: src/components/GraphContextMenu.tsx:234
 msgid "Small"
 msgstr "Petit"
 
@@ -1098,7 +1159,7 @@ msgstr "Certaines classes sont disponibles pour aider à styliser votre diagramm
 msgid "Sorry! This page is only available in English."
 msgstr "Désolé ! Cette page n'est disponible qu'en anglais."
 
-#: src/components/GraphContextMenu.tsx:601
+#: src/components/GraphContextMenu.tsx:597
 msgid "Source Arrow"
 msgstr "Flèche de Source"
 
@@ -1123,7 +1184,7 @@ msgstr "Espacement"
 msgid "Special Attributes"
 msgstr "Attributs spéciaux"
 
-#: src/pages/Account.tsx:182
+#: src/pages/Account.tsx:189
 msgid "Start"
 msgstr "Début"
 
@@ -1131,7 +1192,7 @@ msgstr "Début"
 msgid "Start Over"
 msgstr "Recommencer"
 
-#: src/pages/Account.tsx:161
+#: src/pages/Account.tsx:168
 msgid "Status"
 msgstr "État"
 
@@ -1139,11 +1200,11 @@ msgstr "État"
 msgid "Store any data associated to a node"
 msgstr "Stocker toutes les données associées à un nœud"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:230
 msgid "Stored in the cloud"
 msgstr "Stocké dans le cloud"
 
-#: src/pages/New.tsx:246
+#: src/pages/New.tsx:250
 msgid "Stored on this computer"
 msgstr "Stocké sur cet ordinateur"
 
@@ -1159,29 +1220,28 @@ msgstr "Style"
 msgid "Style Classes"
 msgstr "Classes de style"
 
-#: src/components/Feedback.tsx:77
+#: src/components/Feedback.tsx:81
 #: src/components/ImportDataDialog.tsx:581
-#: src/pages/LogIn.tsx:95
 msgid "Submit"
 msgstr "Soumettre"
 
-#: src/pages/Account.tsx:501
+#: src/pages/Account.tsx:513
 msgid "Subscribe"
 msgstr "S'abonner"
 
-#: src/pages/Account.tsx:156
+#: src/pages/Account.tsx:163
 msgid "Subscription"
 msgstr "Abonnement"
 
-#: src/pages/Account.tsx:193
+#: src/pages/Account.tsx:200
 msgid "Subscription will end"
 msgstr "L'abonnement prendra fin"
 
-#: src/pages/New.tsx:434
+#: src/pages/New.tsx:438
 msgid "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
 msgstr "Analyse et optimisation de la chaîne d'approvisionnement : réduction des coûts, amélioration de l'efficacité et collaboration des parties prenantes"
 
-#: src/components/GraphContextMenu.tsx:640
+#: src/components/GraphContextMenu.tsx:636
 msgid "Target Arrow"
 msgstr "Flèche de Cible"
 
@@ -1194,12 +1254,12 @@ msgstr "Colonne cible"
 msgid "Target Delimiter"
 msgstr "Délimiteur cible"
 
-#: src/pages/New.tsx:242
+#: src/pages/New.tsx:246
 msgid "Temporary"
 msgstr "Temporaire"
 
 #: src/components/MightLoseSponsorTrigger.tsx:21
-#: src/components/MightLoseWarning.tsx:19
+#: src/components/MightLoseWarning.tsx:15
 msgid "Temporary Flowchart Warning"
 msgstr "Avertissement de diagramme de flux temporaire"
 
@@ -1224,7 +1284,7 @@ msgstr "Texte sur une ligne crée un nœud avec le texte comme étiquette"
 msgid "Text sizes include small, regular, large, and extra-large."
 msgstr "Les tailles de texte comprennent petite, régulière, grande et extra-grande."
 
-#: src/components/Feedback.tsx:102
+#: src/components/Feedback.tsx:106
 msgid "Thank you for your feedback!"
 msgstr "Merci pour votre commentaire !"
 
@@ -1268,7 +1328,7 @@ msgstr "Cette action ne peut pas être annulée."
 msgid "This app works by typing"
 msgstr "Chaque ligne creé une nouvelle boite"
 
-#: src/components/MightLoseWarning.tsx:26
+#: src/components/MightLoseWarning.tsx:22
 msgid "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!"
 msgstr "Ce document n'est sauvegardé que sur cet ordinateur. Si vous voulez un moyen de stocker des documents et de les consulter où que vous soyez, essayez notre plan Pro pour seulement 3 $/mois !"
 
@@ -1304,6 +1364,10 @@ msgstr "Pour corriger ceci, déplacez le pointeur vers la ligne suivante"
 msgid "To fix this start the container <0/> on a different line"
 msgstr "Pour corriger cela, commencez le conteneur <0/> sur une ligne différente."
 
+#: src/pages/LogIn.tsx:183
+msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
+msgstr "Pour en savoir plus sur la raison pour laquelle nous vous demandons de vous connecter, veuillez lire <0>ce message de blog</0>."
+
 #: src/lib/graphOptions.ts:33
 #: src/lib/graphOptions.ts:40
 msgid "Top to Bottom"
@@ -1321,7 +1385,7 @@ msgstr "Deux arêtes ont le même ID"
 msgid "Two nodes have the same ID"
 msgstr "Deux nœuds ont le même ID"
 
-#: src/pages/New.tsx:203
+#: src/pages/New.tsx:207
 msgid "Type"
 msgstr "Type"
 
@@ -1341,11 +1405,11 @@ msgstr "Erreur d'analyse inconnue"
 msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
 msgstr "Libérez votre créativité et simplifiez votre flux de travail avec Flowchart Fun Pro - à partir de seulement 3 $ / mois !"
 
-#: src/pages/Account.tsx:206
+#: src/pages/Account.tsx:216
 msgid "Update Email"
 msgstr "Mettre à jour l'e-mail"
 
-#: src/pages/Account.tsx:143
+#: src/pages/Account.tsx:149
 msgid "Upgrade to Pro"
 msgstr "Passer à Pro"
 
@@ -1357,7 +1421,7 @@ msgstr "Téléchargez votre fichier"
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "Utilisez l'IA pour créer des diagrammes à partir de jeux de données ou d'algorithmes"
 
-#: src/pages/New.tsx:327
+#: src/pages/New.tsx:331
 msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
 msgstr "Utilisez l'IA pour générer un diagramme de flux à partir d'une invite. <0>En savoir plus</0>"
 
@@ -1377,7 +1441,7 @@ msgstr "Utilisez l'attribut <0>src</0> pour définir l'image d'un nœud. L'image
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Utilisez les attributs <0>w</0> et <1>h</1> pour définir explicitement la largeur et la hauteur d'un nœud."
 
-#: src/pages/Account.tsx:241
+#: src/pages/Account.tsx:251
 msgid "Use the customer portal to change your billing information."
 msgstr "Utilisez le portail client pour modifier vos informations de facturation."
 
@@ -1389,7 +1453,7 @@ msgstr "Utilisez ce fichier pour les organigrammes, les hiérarchies et autres s
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Utilisez ce fichier pour les séquences, les processus et les workflows."
 
-#: src/pages/Account.tsx:112
+#: src/pages/Account.tsx:116
 msgid "User"
 msgstr "Utilisateur"
 
@@ -1397,13 +1461,9 @@ msgstr "Utilisateur"
 msgid "View on Github"
 msgstr "Voir sur Github"
 
-#: src/pages/New.tsx:440
+#: src/pages/New.tsx:444
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "L'eau s'évapore de la surface de la Terre, monte dans l'atmosphère et retombe sous forme de précipitations. Cette eau s'écoule alors dans les rivières, les lacs et les océans, où elle s'évapore à nouveau et est recyclée dans l'atmosphère."
-
-#: src/pages/LogIn.tsx:72
-msgid "We use magic links to log you in. Enter your email below to get started."
-msgstr "Nous utilisons des liens magiques pour vous connecter. Entrez votre email ci-dessous pour commencer."
 
 #: src/components/WelcomeMessage.tsx:24
 msgid "Welcome to Flowchart Fun Pro!"
@@ -1417,11 +1477,11 @@ msgstr "Largeur et hauteur"
 msgid "Would you like to continue?"
 msgstr "Voulez-vous continuer ?"
 
-#: src/components/PaymentStepper.tsx:90
+#: src/components/PaymentStepper.tsx:111
 msgid "Yearly"
 msgstr "Annuellement"
 
-#: src/pages/New.tsx:197
+#: src/pages/New.tsx:201
 msgid "You already have a flowchart with this name."
 msgstr "Vous avez déjà un diagramme avec ce nom."
 
@@ -1433,11 +1493,15 @@ msgstr "Vous êtes sur le point d'ajouter {numNodes} nœuds et {numEdges} arête
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "Vous pouvez également envelopper le texte dans \"\\( \\)\" pour créer un bord"
 
-#: src/pages/New.tsx:261
+#: src/pages/New.tsx:265
 msgid "You must log in to create a persistent flowchart."
 msgstr "Vous devez vous connecter pour créer un diagramme de flux persistant."
 
-#: src/components/PaymentStepper.tsx:165
+#: src/pages/LogIn.tsx:180
+msgid "You need to log in to access this page."
+msgstr "Vous devez vous connecter pour accéder à cette page."
+
+#: src/components/PaymentStepper.tsx:190
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "Vous y êtes presque ! Une dernière étape pour débloquer tout le potentiel de <0>Flowchart Fun Pro</0>. Entrez vos informations de paiement ci-dessous pour compléter votre abonnement et commencez à créer des diagrammes de flux incroyables dès aujourd'hui."
 
@@ -1445,20 +1509,24 @@ msgstr "Vous y êtes presque ! Une dernière étape pour débloquer tout le pote
 msgid "Your Charts"
 msgstr "Vos diagrammes"
 
-#: src/pages/Account.tsx:146
+#: src/pages/Account.tsx:152
 msgid "Your subscription is no longer active. If you want to create and edit permanent charts upgrade to Pro."
 msgstr "Votre abonnement n'est plus actif. Si vous souhaitez créer et modifier des graphiques permanents, passez à Pro."
 
 #: src/components/GraphFloatingMenu.tsx:58
-#: src/components/GraphFloatingMenu.tsx:59
+#: src/components/GraphFloatingMenu.tsx:62
 msgid "Zoom In"
 msgstr "Zoomer"
 
-#: src/components/GraphFloatingMenu.tsx:63
-#: src/components/GraphFloatingMenu.tsx:64
+#: src/components/GraphFloatingMenu.tsx:68
+#: src/components/GraphFloatingMenu.tsx:72
 msgid "Zoom Out"
 msgstr "Zoomer vers l'extérieur"
 
 #: src/lib/getDefaultText.ts:6
 msgid "any text: before a colon creates a label"
 msgstr "n'importe quel texte: avant que deux-points ne créent une étiquette"
+
+#: src/pages/LogIn.tsx:207
+msgid "or"
+msgstr "ou"

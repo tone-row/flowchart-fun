@@ -1,18 +1,16 @@
 import { t, Trans } from "@lingui/macro";
 import * as Popover from "@radix-ui/react-popover";
 import { Warning } from "phosphor-react";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { useIsValidCustomer } from "../lib/hooks";
+import { useIsLocalChart, useIsProUser } from "../lib/hooks";
 import { track } from "../lib/track";
 import { IconButton2, popoverContentProps } from "../ui/Shared";
-import { AppContext } from "./AppContext";
 export function MightLoseWarning() {
-  const isValidCustomer = useIsValidCustomer();
-  const { customerIsLoading } = useContext(AppContext);
-  const showMightLoseWarning = !isValidCustomer && !customerIsLoading;
-  if (!showMightLoseWarning) return null;
+  const isLocalChart = useIsLocalChart();
+  const isProUser = useIsProUser();
+  if (isProUser) return null;
+  if (!isLocalChart) return null;
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
@@ -32,6 +30,7 @@ export function MightLoseWarning() {
           <Link
             className="font-bold text-xs text-blue-500 hover:underline mt-6 block dark:text-blue-400"
             to="/pricing"
+            data-testid="might-lose-warning-learn-more"
             onClick={() => track("might_lose_warning_click", "click")}
           >
             <Trans>Learn More</Trans>

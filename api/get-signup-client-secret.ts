@@ -36,8 +36,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // If they already have a subscription in validStripePrices, return error
     if (
-      subscriptions.some((sub) =>
-        validStripePrices.includes(sub.items.data[0].price.id)
+      subscriptions.some(
+        (sub) =>
+          validStripePrices.includes(sub.items.data[0].price.id) &&
+          sub.status !== "incomplete"
       )
     ) {
       return res.status(402).json({

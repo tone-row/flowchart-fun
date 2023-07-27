@@ -1,6 +1,7 @@
 import { Trans } from "@lingui/macro";
+import cx from "classnames";
 import Cookies from "js-cookie";
-import { ArrowRight } from "phosphor-react";
+import { ArrowRight, X } from "phosphor-react";
 import { memo, ReactNode, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -14,12 +15,18 @@ import { VersionCheck } from "./VersionCheck";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const isFullscreen = useFullscreen();
-  const hash = window.location.hash;
-  const showBanner = hash.startsWith("#message=");
-  const [showImportantMessage, setShowImportantMessage] = useState(
+  let [showBanner, message, messageType] = getShowBannerAndMessage();
+  let [showImportantMessage, setShowImportantMessage] = useState(
     Cookies.get("ff_viewed_important_message") !== "true"
   );
   const isEditorView = useIsEditorView();
+
+  // fullscreen disables banners
+  if (isFullscreen) {
+    showBanner = false;
+    showImportantMessage = false;
+  }
+
   return (
     <>
       <Box
@@ -30,13 +37,17 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
         data-banner={showBanner || showImportantMessage}
       >
         {showBanner ? (
-          <Box className={styles.Banner} p={3}>
-            <span className="text-sm">
-              {decodeURIComponent(
-                hash.slice("#message=".length).replace(/\+/g, "%20")
-              )}
-            </span>
-          </Box>
+          <div
+            className={cx("flex justify-center items-center w-full gap-2", {
+              "bg-red-100 text-red-700": messageType === "error",
+              "bg-blue-100 text-blue-700": messageType === "info",
+            })}
+          >
+            <span className="text-sm text-center py-4">{message}</span>
+            <Link to="/">
+              <X size={24} />
+            </Link>
+          </div>
         ) : null}
         {showImportantMessage && (
           <ImportantChanges
@@ -49,7 +60,6 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
         <Suspense fallback={<Loading />}>{children}</Suspense>
         <ColorMode />
       </Box>
-      {/* {isEditorView && <ShareDialog />} */}
       <VersionCheck />
     </>
   );
@@ -78,4 +88,23 @@ function ImportantChanges({ closeBanner }: { closeBanner: () => void }) {
       </span>
     </Link>
   );
+}
+
+// ?error=server_error&error_description=Multiple+accounts+with+the+same+email+address+in+the+same+linking+domain+detected%3A+default
+
+function getShowBannerAndMessage(): [boolean, string, "error" | "info"] {
+  const hash = window.location.hash;
+  if (hash.startsWith("#message=")) {
+    return [true, decodeURIComponent(hash.slice("#message=".length)), "info"];
+  }
+  const search = window.location.search;
+  if (search.startsWith("?error=")) {
+    const params = new URLSearchParams(search);
+    const error = params.get("error");
+    const errorDescription = params.get("error_description");
+    if (error && errorDescription) {
+      return [true, errorDescription, "error"];
+    }
+  }
+  return [false, "", "info"];
 }

@@ -1,5 +1,5 @@
 import { useContext, useMemo } from "react";
-import { useLocation, useRouteMatch } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import { slugify } from "./helpers";
@@ -16,29 +16,31 @@ export function getAnimationSettings() {
 }
 
 export function useFullscreen() {
+  const params = useParams();
   const { pathname } = useLocation();
-  const { path } = useRouteMatch();
-  return pathname === "/f" || path === "/p/:public_id";
+  return pathname === "/f" || "public_id" in params;
 }
 
 export function useIsReadOnly() {
-  const { path } = useRouteMatch();
+  const { pathname } = useLocation();
+  const params = useParams();
   return (
-    path === "/p/:public_id" ||
-    path === "/f" ||
-    path === "/c/:graphText?" ||
-    path === "/r/:graphText?"
+    "public_id" in params || ["/f", "/c", "/r"].some((k) => k === pathname)
   );
 }
 
 export function useIsLocalChart() {
-  const { path } = useRouteMatch();
-  return useMemo(() => path === "/:workspace" || path === "/", [path]);
+  const { pathname } = useLocation();
+  const params = useParams();
+  return useMemo(
+    () => pathname === "/" || "workspace" in params,
+    [params, pathname]
+  );
 }
 
 export function useIsPublicHostedCharted() {
-  const { path } = useRouteMatch();
-  return useMemo(() => path === "/p/:public_id", [path]);
+  const params = useParams();
+  return useMemo(() => "public_id" in params, [params]);
 }
 
 /**
@@ -52,9 +54,10 @@ export function useSession() {
 /** Use this to determine if the sponsor is valid.
  * That means their subscription is currently active.
  * i.e. They're in good standing, etc. */
-export function useIsValidSponsor() {
+export function useIsProUser() {
   const { customer } = useContext(AppContext);
-  return Boolean(customer?.subscription?.status === "active");
+  const status = customer?.subscription?.status;
+  return Boolean(status === "active");
 }
 
 /**
@@ -64,6 +67,11 @@ export function useIsValidSponsor() {
 export function useIsValidCustomer() {
   const { customer } = useContext(AppContext);
   return Boolean(customer?.subscription);
+}
+
+export function useIsLoggedIn() {
+  const { session } = useContext(AppContext);
+  return Boolean(session);
 }
 
 /**
@@ -88,14 +96,14 @@ export function useIsFirefox() {
  * It's used to alter CSS with data-showing
  */
 export function useIsEditorView() {
-  const { path, isExact } = useRouteMatch();
+  const pathname = useLocation().pathname;
+  const params = useParams();
+
   return (
-    path === "/u/:id" ||
-    path === "/c/:graphText?" ||
-    path === "/r/:graphText?" ||
-    path === "/h" ||
-    path === "/:workspace" ||
-    (path === "/" && isExact)
+    // works for hosted and local charts
+    ["id", "workspace"].some((k) => k in params) ||
+    // works for read-only charts that aren't fullscreen
+    ["/c", "/r", "/"].some((k) => pathname === k)
   );
 }
 

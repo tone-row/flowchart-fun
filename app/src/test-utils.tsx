@@ -1,14 +1,12 @@
 import { Provider as TooltipProvider } from "@radix-ui/react-tooltip";
 import * as Sentry from "@sentry/react";
 import { Elements } from "@stripe/react-stripe-js";
-import { Session } from "@supabase/gotrue-js";
-import { render, RenderOptions } from "@testing-library/react";
-import { renderHook } from "@testing-library/react-hooks";
-import { createMemoryHistory } from "history";
-import { FC, ReactElement, Suspense } from "react";
+import { Session } from "@supabase/supabase-js";
+import { render, renderHook, RenderOptions } from "@testing-library/react";
+import { ReactElement, ReactNode, Suspense } from "react";
 import { act } from "react-dom/test-utils";
 import { QueryClientProvider } from "react-query";
-import { Router } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 
 import { ErrorFallback, stripePromise } from "./components/App";
 import Provider from "./components/AppContext";
@@ -16,11 +14,9 @@ import { I18n } from "./components/I18n";
 import Loading from "./components/Loading";
 import { queryClient } from "./lib/queries";
 
-export const history = createMemoryHistory();
-
-const Wrapper: FC = ({ children }) => {
+const Wrapper = ({ children }: { children: ReactNode }) => {
   return (
-    <Router history={history as any}>
+    <MemoryRouter initialEntries={["/"]}>
       <QueryClientProvider client={queryClient}>
         <Provider>
           <Sentry.ErrorBoundary fallback={ErrorFallback}>
@@ -34,7 +30,7 @@ const Wrapper: FC = ({ children }) => {
           </Sentry.ErrorBoundary>
         </Provider>
       </QueryClientProvider>
-    </Router>
+    </MemoryRouter>
   );
 };
 
@@ -57,7 +53,7 @@ export function flushMicrotasks() {
 // Wait for all requestAnimationFrame() callbacks
 export function nextFrame() {
   return act(
-    () => new Promise((resolve) => requestAnimationFrame(() => resolve()))
+    () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
   );
 }
 

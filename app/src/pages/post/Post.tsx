@@ -10,10 +10,18 @@ import { PostType } from "../Blog";
 
 export default function Post() {
   const { slug } = useParams<{ slug: string }>();
-  const { data } = useQuery(["post", slug], () => getPost(slug), {
-    suspense: true,
-    staleTime: Infinity,
-  });
+  const { data } = useQuery(
+    ["post", slug],
+    () => {
+      if (!slug) return;
+      return getPost(slug);
+    },
+    {
+      suspense: true,
+      staleTime: Infinity,
+      enabled: !!slug,
+    }
+  );
   if (!data) return null;
   return (
     <Page>

@@ -15,7 +15,7 @@ import { ReactNode, useContext, useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
-import { useDownloadFilename, useIsValidSponsor } from "../lib/hooks";
+import { useDownloadFilename, useIsProUser } from "../lib/hooks";
 import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
@@ -41,9 +41,9 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
   const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
   const filename = useDownloadFilename();
-  const isValidSponsor = useIsValidSponsor();
-  const watermark = !isValidSponsor;
-  const scale = isValidSponsor ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
+  const isProUser = useIsProUser();
+  const watermark = !isProUser;
+  const scale = isProUser ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
 
   return (
     <Dialog.Root
@@ -103,7 +103,7 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
             </Button2>
             <SvgProOnlyPopover>
               <Button2
-                disabled={!isValidSponsor}
+                disabled={!isProUser}
                 aria-label="Download SVG"
                 onClick={async () => {
                   if (!window.__cy) return;
@@ -380,7 +380,7 @@ function HostedOptions() {
           (state) => {
             return produce(state, (draft) => {
               draft.details.isPublic = result.isPublic;
-              draft.details.publicId = result.publicId;
+              if (result.publicId) draft.details.publicId = result.publicId;
             });
           },
           false,

@@ -17,7 +17,6 @@ test.describe("Graph Floating Menu", () => {
     try {
       await page.getByTestId("Zoom Out").click();
       await page.getByTestId("Zoom In").click();
-      await page.getByTestId("Fit Graph").click();
     } catch (error) {
       console.log(error);
       // grab screenshot

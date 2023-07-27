@@ -26,16 +26,6 @@ export function titleToLocalStorageKey(chartTitle: string) {
 export const slugify = (value: string) =>
   value.replace(/[^a-z0-9]/gi, "-").toLocaleLowerCase();
 
-/** Returns a chart name not being used in local storage */
-const getName = () => (Math.random() + 1).toString(36).substring(7);
-export function randomChartName() {
-  let name = getName();
-  while (localStorage.getItem(titleToLocalStorageKey(name))) {
-    name = getName();
-  }
-  return name;
-}
-
 const usePrevious = (value: any, initialValue: any) => {
   const ref = useRef(initialValue);
   useEffect(() => {
@@ -73,10 +63,10 @@ export const useEffectDebugger = (
   useEffect(effectHook, [effectHook]);
 };
 
-export function hasOwnProperty<X extends {}, Y extends PropertyKey>(
-  obj: X,
-  prop: Y
-): obj is X & Record<Y, unknown> {
+export function hasOwnProperty<
+  X extends Record<string, unknown>,
+  Y extends PropertyKey
+>(obj: X, prop: Y): obj is X & Record<Y, unknown> {
   // eslint-disable-next-line no-prototype-builtins
   return obj.hasOwnProperty(prop);
 }

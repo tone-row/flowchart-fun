@@ -114,16 +114,28 @@ const Settings = memo(() => {
         <Section>
           <a
             href="https://github.com/tone-row/flowchart-fun"
-            className="text-sm opacity-60 hover:opacity-100"
+            className="text-xs opacity-60 hover:opacity-100"
           >
             <Trans>View on Github</Trans>
           </a>
           <a
             href="https://twitter.com/tone_row_"
-            className="text-sm opacity-60 hover:opacity-100"
+            className="text-xs opacity-60 hover:opacity-100"
           >
             <Trans>Follow Us on Twitter</Trans>
           </a>
+          <Link
+            to="/privacy-policy"
+            className="text-xs opacity-60 hover:opacity-100"
+          >
+            <Trans>Privacy Policy</Trans>
+          </Link>
+          <Link
+            to="/cookie-policy"
+            className="text-xs opacity-60 hover:opacity-100"
+          >
+            <Trans>Cookie Policy</Trans>
+          </Link>
         </Section>
       </Section>
       <Section>
@@ -135,18 +147,18 @@ const Settings = memo(() => {
           </Trans>
         </p>
         <Section>
-          <Link to="/pricing" className="text-sm opacity-60 hover:opacity-100">
+          <Link to="/pricing" className="text-xs opacity-60 hover:opacity-100">
             <Trans>Become a Pro User</Trans>
           </Link>
           <a
             href="https://opencollective.com/tone-row/donate"
-            className="text-sm opacity-60 hover:opacity-100"
+            className="text-xs opacity-60 hover:opacity-100"
           >
             <Trans>Make a One-Time Donation</Trans>
           </a>
           <a
             href="https://github.com/sponsors/tone-row"
-            className="text-sm opacity-60 hover:opacity-100"
+            className="text-xs opacity-60 hover:opacity-100"
           >
             <Trans>Become a Github Sponsor</Trans>
           </a>

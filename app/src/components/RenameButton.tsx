@@ -2,10 +2,10 @@ import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ChangeEvent, memo, ReactNode, useRef, useState } from "react";
 import { useMutation } from "react-query";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidSponsor } from "../lib/hooks";
+import { useIsProUser } from "../lib/hooks";
 import { makeChart, renameChart } from "../lib/queries";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
@@ -20,12 +20,12 @@ export const RenameButton = memo(function RenameButton({
   children: ReactNode;
 }) {
   const fullText = useDoc(docToString);
-  const isValidSponsor = useIsValidSponsor();
+  const isProUser = useIsProUser();
   const session = useSession();
   const initialName = useDocDetails("title", "flowchart.fun");
   const isHosted = useDocDetails("isHosted");
   const id = useDocDetails("id");
-  const { push } = useHistory();
+  const navigate = useNavigate();
   const isOpen = useRenameDialogStore((store) => store.isOpen);
   const convertToHosted = useRenameDialogStore(
     (store) => store.convertToHosted
@@ -50,7 +50,7 @@ export const RenameButton = memo(function RenameButton({
           if (!charts) throw new Error("Could not create hosted chart");
           const chart = charts[0];
           if (!chart) throw new Error("Could not create hosted chart");
-          push(`/u/${chart.id}`);
+          navigate(`/u/${chart.id}`);
         }
       } else {
         const oldKey = titleToLocalStorageKey(slugify(initialName));
@@ -59,7 +59,7 @@ export const RenameButton = memo(function RenameButton({
         if (window.localStorage.getItem(newKey) !== null)
           throw new Error("Chart already exists");
         window.localStorage.setItem(newKey, fullText);
-        push(`/${newSlug}`);
+        navigate(`/${newSlug}`);
         window.localStorage.removeItem(oldKey);
       }
     },
@@ -115,7 +115,7 @@ export const RenameButton = memo(function RenameButton({
               <SectionTitle className="mb-[-8px]">
                 <Trans>Rename</Trans>
               </SectionTitle>
-              {isValidSponsor && !isHosted ? (
+              {isProUser && !isHosted ? (
                 <label className="flex gap-2 item-center mt-2">
                   <span className="text-xs opacity-80">
                     <Trans>Convert to hosted chart?</Trans>

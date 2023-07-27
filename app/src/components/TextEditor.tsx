@@ -81,8 +81,9 @@ function useEditorHover(hoverLineNumber?: number) {
           },
         ]
       );
-    } else {
-      decorations.current = editor.deltaDecorations(decorations.current, []);
     }
+    return () => {
+      decorations.current = editor.deltaDecorations(decorations.current, []);
+    };
   }, [hoverLineNumber]);
 }
