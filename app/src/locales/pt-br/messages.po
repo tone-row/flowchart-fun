@@ -29,6 +29,10 @@ msgstr "(antes de dois pontos cria uma etiqueta)"
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0> é um projeto de código aberto feito por <1>Tone Row</1>"
 
+#: src/pages/LogIn.tsx:275
+msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
+msgstr "<0>Entrar</0> / <1>Cadastrar</1> com e-mail e senha"
+
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
 msgstr "Uma nova versão do aplicativo está disponível. Por favor, recarregue para atualizar."
@@ -169,7 +173,7 @@ msgstr "Diagramas"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "Verifique seu e-mail para um link para fazer login. Você pode fechar esta janela."
 
-#: src/pages/LogIn.tsx:269
+#: src/pages/LogIn.tsx:273
 msgid "Choose"
 msgstr "Escolha"
 
@@ -249,8 +253,8 @@ msgstr "Concêntrico"
 msgid "Confirm New Email"
 msgstr "Confirme o novo email"
 
-#: src/pages/LogIn.tsx:230
-#: src/pages/LogIn.tsx:230
+#: src/pages/LogIn.tsx:234
+#: src/pages/LogIn.tsx:234
 msgid "Confirm your email address to sign in."
 msgstr "Confirme seu endereço de e-mail para fazer login."
 
@@ -480,8 +484,8 @@ msgstr "Ovos"
 #: src/components/Feedback.tsx:62
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
-#: src/pages/LogIn.tsx:143
-#: src/pages/LogIn.tsx:290
+#: src/pages/LogIn.tsx:147
+#: src/pages/LogIn.tsx:296
 msgid "Email"
 msgstr "E-mail"
 
@@ -493,7 +497,7 @@ msgstr "Vazio"
 msgid "Enter your email"
 msgstr "Digite seu email"
 
-#: src/pages/LogIn.tsx:136
+#: src/pages/LogIn.tsx:140
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "Digite seu endereço de e-mail e enviaremos um link mágico para fazer login."
 
@@ -550,7 +554,7 @@ msgstr "Feedback"
 msgid "Follow Us on Twitter"
 msgstr "Siga-nos no Twitter"
 
-#: src/pages/LogIn.tsx:330
+#: src/pages/LogIn.tsx:336
 msgid "Forgot your password?"
 msgstr "Esqueceu sua senha?"
 
@@ -920,7 +924,7 @@ msgstr "Abra o portal do cliente"
 msgid "Organization Chart"
 msgstr "Gráfico de Organização"
 
-#: src/pages/LogIn.tsx:302
+#: src/pages/LogIn.tsx:308
 msgid "Password"
 msgstr "Senha"
 
@@ -1037,7 +1041,7 @@ msgstr "Remover marca d'água da imagem"
 msgid "Rename"
 msgstr "Renomear"
 
-#: src/pages/LogIn.tsx:162
+#: src/pages/LogIn.tsx:166
 msgid "Request Magic Link"
 msgstr "Solicitar Link Mágico"
 
@@ -1115,13 +1119,21 @@ msgid "Shape"
 msgstr "Forma"
 
 #: src/pages/LogIn.tsx:107
-#: src/pages/LogIn.tsx:321
+#: src/pages/LogIn.tsx:327
 msgid "Sign In"
 msgstr "Entrar"
 
 #: src/components/PaymentStepper.tsx:274
 msgid "Sign Up"
 msgstr "Inscreva-se"
+
+#: src/pages/LogIn.tsx:134
+msgid "Sign in with <0>GitHub</0>"
+msgstr "Entrar com <0>GitHub</0>"
+
+#: src/pages/LogIn.tsx:119
+msgid "Sign in with <0>Google</0>"
+msgstr "Entrar com <0>Google</0>"
 
 #: src/components/GraphContextMenu.tsx:414
 msgid "Size"
@@ -1344,7 +1356,7 @@ msgstr "Para corrigir isso, mova o ponteiro para a próxima linha"
 msgid "To fix this start the container <0/> on a different line"
 msgstr "Para corrigir isso, inicie o container <0/> em uma linha diferente"
 
-#: src/pages/LogIn.tsx:179
+#: src/pages/LogIn.tsx:183
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "Para saber mais sobre por que precisamos que você faça login, leia <0>este post no blog</0>."
 
@@ -1477,7 +1489,7 @@ msgstr "Você também pode quebrar o texto dentro de \"\\( \\)\" para criar um l
 msgid "You must log in to create a persistent flowchart."
 msgstr "Você deve fazer login para criar um fluxograma persistente."
 
-#: src/pages/LogIn.tsx:176
+#: src/pages/LogIn.tsx:180
 msgid "You need to log in to access this page."
 msgstr "Você precisa fazer login para acessar esta página."
 
@@ -1507,6 +1519,6 @@ msgstr "Diminuir o zoom"
 msgid "any text: before a colon creates a label"
 msgstr "qualquer texto: antes de dois pontos cria uma etiqueta"
 
-#: src/pages/LogIn.tsx:203
+#: src/pages/LogIn.tsx:207
 msgid "or"
 msgstr "ou"

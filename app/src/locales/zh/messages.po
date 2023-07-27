@@ -29,6 +29,10 @@ msgstr "(在冒号前创建一个标签)"
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0>是由<1>Tone Row</1>制作的开源项目"
 
+#: src/pages/LogIn.tsx:275
+msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
+msgstr "<0>登录</0> / <1>注册</1> 使用电子邮件和密码"
+
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
 msgstr "一个新版本的应用程序可用。请重新加载以更新。"
@@ -169,7 +173,7 @@ msgstr "图表"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/pages/LogIn.tsx:269
+#: src/pages/LogIn.tsx:273
 msgid "Choose"
 msgstr "選擇"
 
@@ -249,8 +253,8 @@ msgstr "同心"
 msgid "Confirm New Email"
 msgstr "确认新电子邮件"
 
-#: src/pages/LogIn.tsx:230
-#: src/pages/LogIn.tsx:230
+#: src/pages/LogIn.tsx:234
+#: src/pages/LogIn.tsx:234
 msgid "Confirm your email address to sign in."
 msgstr "確認您的電子郵件地址以登入。"
 
@@ -480,8 +484,8 @@ msgstr "蛋"
 #: src/components/Feedback.tsx:62
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
-#: src/pages/LogIn.tsx:143
-#: src/pages/LogIn.tsx:290
+#: src/pages/LogIn.tsx:147
+#: src/pages/LogIn.tsx:296
 msgid "Email"
 msgstr "电子邮件"
 
@@ -493,7 +497,7 @@ msgstr "空"
 msgid "Enter your email"
 msgstr "请输入您的电子邮件"
 
-#: src/pages/LogIn.tsx:136
+#: src/pages/LogIn.tsx:140
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "輸入您的電子郵件地址，我們將發送給您一個魔法鏈接以登入。"
 
@@ -550,7 +554,7 @@ msgstr "反馈"
 msgid "Follow Us on Twitter"
 msgstr "在Twitter上关注我们"
 
-#: src/pages/LogIn.tsx:330
+#: src/pages/LogIn.tsx:336
 msgid "Forgot your password?"
 msgstr "忘記密碼了？"
 
@@ -920,7 +924,7 @@ msgstr "打开客户门户"
 msgid "Organization Chart"
 msgstr "组织结构图"
 
-#: src/pages/LogIn.tsx:302
+#: src/pages/LogIn.tsx:308
 msgid "Password"
 msgstr "密碼"
 
@@ -1037,7 +1041,7 @@ msgstr "去除图片水印"
 msgid "Rename"
 msgstr "重命名"
 
-#: src/pages/LogIn.tsx:162
+#: src/pages/LogIn.tsx:166
 msgid "Request Magic Link"
 msgstr "請求魔法鏈接"
 
@@ -1115,13 +1119,21 @@ msgid "Shape"
 msgstr "形状"
 
 #: src/pages/LogIn.tsx:107
-#: src/pages/LogIn.tsx:321
+#: src/pages/LogIn.tsx:327
 msgid "Sign In"
 msgstr "登錄"
 
 #: src/components/PaymentStepper.tsx:274
 msgid "Sign Up"
 msgstr "注册"
+
+#: src/pages/LogIn.tsx:134
+msgid "Sign in with <0>GitHub</0>"
+msgstr "使用<0>GitHub</0>登录"
+
+#: src/pages/LogIn.tsx:119
+msgid "Sign in with <0>Google</0>"
+msgstr "使用<0>Google</0>登录"
 
 #: src/components/GraphContextMenu.tsx:414
 msgid "Size"
@@ -1344,7 +1356,7 @@ msgstr "要修复这个，将指针移动到下一行"
 msgid "To fix this start the container <0/> on a different line"
 msgstr "要修复这个，将容器<0/>放在另一行"
 
-#: src/pages/LogIn.tsx:179
+#: src/pages/LogIn.tsx:183
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "要了解更多關於我們為什麼要求您登錄的原因，請閱讀<0>這篇博客文章</0>。"
 
@@ -1477,7 +1489,7 @@ msgstr "您还可以将文本包装在\\n“\\( \\)”中以创建链接"
 msgid "You must log in to create a persistent flowchart."
 msgstr "您必须登录才能创建一个持久的流程图。"
 
-#: src/pages/LogIn.tsx:176
+#: src/pages/LogIn.tsx:180
 msgid "You need to log in to access this page."
 msgstr "您需要登录才能访问此页面。"
 
@@ -1507,6 +1519,6 @@ msgstr "縮小"
 msgid "any text: before a colon creates a label"
 msgstr "任何文本： 在冒号前创建一个标签"
 
-#: src/pages/LogIn.tsx:203
+#: src/pages/LogIn.tsx:207
 msgid "or"
 msgstr "或"

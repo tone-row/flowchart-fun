@@ -29,6 +29,10 @@ msgstr "(कॉलन से पहले एक लेबल बनाता �
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0> <1>Tone Row</1> द्वारा बनाई गई एक खुला स्रोत परियोजना है "
 
+#: src/pages/LogIn.tsx:275
+msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
+msgstr "<0>साइन इन</0> / <1>साइन अप</1> ईमेल और पासवर्ड के साथ"
+
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
 msgstr "एप्प का एक नया वर्जन उपलब्ध है। अपडेट करने के लिए रीलोड करें।"
@@ -169,7 +173,7 @@ msgstr "चार्ट"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "लॉग इन करने के लिए अपने ईमेल की जाँच करें। आप इस विंडो को बंद कर सकते हैं।"
 
-#: src/pages/LogIn.tsx:269
+#: src/pages/LogIn.tsx:273
 msgid "Choose"
 msgstr "चुनें"
 
@@ -249,8 +253,8 @@ msgstr "गाढ़ा"
 msgid "Confirm New Email"
 msgstr "नई ईमेल की पुष्टि करें"
 
-#: src/pages/LogIn.tsx:230
-#: src/pages/LogIn.tsx:230
+#: src/pages/LogIn.tsx:234
+#: src/pages/LogIn.tsx:234
 msgid "Confirm your email address to sign in."
 msgstr "साइन इन करने के लिए अपना ईमेल पता पुष्टि करें।"
 
@@ -480,8 +484,8 @@ msgstr "अंडे"
 #: src/components/Feedback.tsx:62
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
-#: src/pages/LogIn.tsx:143
-#: src/pages/LogIn.tsx:290
+#: src/pages/LogIn.tsx:147
+#: src/pages/LogIn.tsx:296
 msgid "Email"
 msgstr "ईमेल"
 
@@ -493,7 +497,7 @@ msgstr "खाली"
 msgid "Enter your email"
 msgstr "अपना ईमेल दर्ज करें"
 
-#: src/pages/LogIn.tsx:136
+#: src/pages/LogIn.tsx:140
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "अपना ईमेल पता दर्ज करें और हम आपको साइन इन करने के लिए एक जादूगरी लिंक भेजेंगे।"
 
@@ -550,7 +554,7 @@ msgstr "फ़ीडबैक"
 msgid "Follow Us on Twitter"
 msgstr "हमारे साथ ट्विटर पर फॉलो करें"
 
-#: src/pages/LogIn.tsx:330
+#: src/pages/LogIn.tsx:336
 msgid "Forgot your password?"
 msgstr "अपना पासवर्ड भूल गए?"
 
@@ -920,7 +924,7 @@ msgstr "ग्राहक पोर्टल खोलें"
 msgid "Organization Chart"
 msgstr "संगठन चार्ट"
 
-#: src/pages/LogIn.tsx:302
+#: src/pages/LogIn.tsx:308
 msgid "Password"
 msgstr "पासवर्ड"
 
@@ -1037,7 +1041,7 @@ msgstr "छवि वॉटरमार्क हटाएं"
 msgid "Rename"
 msgstr "फिर से नाम बदलें"
 
-#: src/pages/LogIn.tsx:162
+#: src/pages/LogIn.tsx:166
 msgid "Request Magic Link"
 msgstr "अनुरोध जादू लिंक"
 
@@ -1115,13 +1119,21 @@ msgid "Shape"
 msgstr "आकृति"
 
 #: src/pages/LogIn.tsx:107
-#: src/pages/LogIn.tsx:321
+#: src/pages/LogIn.tsx:327
 msgid "Sign In"
 msgstr "साइन इन करें"
 
 #: src/components/PaymentStepper.tsx:274
 msgid "Sign Up"
 msgstr "साइन अप"
+
+#: src/pages/LogIn.tsx:134
+msgid "Sign in with <0>GitHub</0>"
+msgstr "<0>GitHub</0> के साथ साइन इन करें"
+
+#: src/pages/LogIn.tsx:119
+msgid "Sign in with <0>Google</0>"
+msgstr "<0>Google</0> के साथ साइन इन करें"
 
 #: src/components/GraphContextMenu.tsx:414
 msgid "Size"
@@ -1344,7 +1356,7 @@ msgstr "इसे ठीक करने के लिए प्रतीक क
 msgid "To fix this start the container <0/> on a different line"
 msgstr "इसे ठीक करने के लिए कंटेनर <0/> को एक अलग पंक्ति पर शुरू करें"
 
-#: src/pages/LogIn.tsx:179
+#: src/pages/LogIn.tsx:183
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "हमें आपको लॉगिन करने के लिए आवश्यक क्यों है, कृपया <0>यह ब्लॉग पोस्ट</0> पढ़ें।"
 
@@ -1477,7 +1489,7 @@ msgstr "किनारे बनाने के लिए आप टेक्�
 msgid "You must log in to create a persistent flowchart."
 msgstr "आपको एक अविरल फ्लोचार्ट बनाने के लिए लॉग इन करना होगा।"
 
-#: src/pages/LogIn.tsx:176
+#: src/pages/LogIn.tsx:180
 msgid "You need to log in to access this page."
 msgstr "इस पृष्ठ तक पहुँचने के लिए आपको लॉग इन करना होगा।"
 
@@ -1507,6 +1519,6 @@ msgstr "आउट ज़ूम करें"
 msgid "any text: before a colon creates a label"
 msgstr "कोई भी टेक्स्ट: कॉलन से पहले एक लेबल बनाता है"
 
-#: src/pages/LogIn.tsx:203
+#: src/pages/LogIn.tsx:207
 msgid "or"
 msgstr "या"

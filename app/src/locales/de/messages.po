@@ -29,6 +29,10 @@ msgstr "(vor einem Doppelpunkt wird zu einer Beschriftung)"
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0> ist ein Open-Source-Projekt von <1>Tone Row</1>"
 
+#: src/pages/LogIn.tsx:275
+msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
+msgstr "<0>Anmelden</0> / <1>Registrieren</1> mit E-Mail und Passwort"
+
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
 msgstr "Eine neue Version der App ist verfügbar. Bitte neu laden, um zu aktualisieren."
@@ -169,7 +173,7 @@ msgstr "Diagramme"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "Überprüfen Sie Ihre E-Mail auf einen Link zum Einloggen. Sie können dieses Fenster schließen."
 
-#: src/pages/LogIn.tsx:269
+#: src/pages/LogIn.tsx:273
 msgid "Choose"
 msgstr "Wählen"
 
@@ -249,8 +253,8 @@ msgstr "Konzentrisch"
 msgid "Confirm New Email"
 msgstr "Neue E-Mail bestätigen"
 
-#: src/pages/LogIn.tsx:230
-#: src/pages/LogIn.tsx:230
+#: src/pages/LogIn.tsx:234
+#: src/pages/LogIn.tsx:234
 msgid "Confirm your email address to sign in."
 msgstr "Bestätigen Sie Ihre E-Mail-Adresse, um sich anzumelden."
 
@@ -480,8 +484,8 @@ msgstr "Eier"
 #: src/components/Feedback.tsx:62
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
-#: src/pages/LogIn.tsx:143
-#: src/pages/LogIn.tsx:290
+#: src/pages/LogIn.tsx:147
+#: src/pages/LogIn.tsx:296
 msgid "Email"
 msgstr "E-Mail"
 
@@ -493,7 +497,7 @@ msgstr "Leer"
 msgid "Enter your email"
 msgstr "Geben Sie Ihre E-Mail-Adresse ein"
 
-#: src/pages/LogIn.tsx:136
+#: src/pages/LogIn.tsx:140
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "Geben Sie Ihre E-Mail-Adresse ein, und wir senden Ihnen einen magischen Link, um sich anzumelden."
 
@@ -550,7 +554,7 @@ msgstr "Feedback"
 msgid "Follow Us on Twitter"
 msgstr "Folgen Sie uns auf Twitter"
 
-#: src/pages/LogIn.tsx:330
+#: src/pages/LogIn.tsx:336
 msgid "Forgot your password?"
 msgstr "Haben Sie Ihr Passwort vergessen?"
 
@@ -920,7 +924,7 @@ msgstr "Öffnen Sie das Kundenportal"
 msgid "Organization Chart"
 msgstr "Organigramm"
 
-#: src/pages/LogIn.tsx:302
+#: src/pages/LogIn.tsx:308
 msgid "Password"
 msgstr "Passwort"
 
@@ -1037,7 +1041,7 @@ msgstr "Bildwasserzeichen entfernen"
 msgid "Rename"
 msgstr "Umbenennen"
 
-#: src/pages/LogIn.tsx:162
+#: src/pages/LogIn.tsx:166
 msgid "Request Magic Link"
 msgstr "Magic-Link anfordern"
 
@@ -1115,13 +1119,21 @@ msgid "Shape"
 msgstr "Form"
 
 #: src/pages/LogIn.tsx:107
-#: src/pages/LogIn.tsx:321
+#: src/pages/LogIn.tsx:327
 msgid "Sign In"
 msgstr "Anmelden"
 
 #: src/components/PaymentStepper.tsx:274
 msgid "Sign Up"
 msgstr "Registrieren"
+
+#: src/pages/LogIn.tsx:134
+msgid "Sign in with <0>GitHub</0>"
+msgstr "Anmelden mit <0>GitHub</0>"
+
+#: src/pages/LogIn.tsx:119
+msgid "Sign in with <0>Google</0>"
+msgstr "Anmelden mit <0>Google</0>"
 
 #: src/components/GraphContextMenu.tsx:414
 msgid "Size"
@@ -1344,7 +1356,7 @@ msgstr "Um das zu beheben, verschieben Sie den Zeiger auf die nächste Zeile"
 msgid "To fix this start the container <0/> on a different line"
 msgstr "Um dies zu beheben, starten Sie den Container <0/> auf einer anderen Zeile."
 
-#: src/pages/LogIn.tsx:179
+#: src/pages/LogIn.tsx:183
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "Um mehr darüber zu erfahren, warum wir Sie zum Anmelden auffordern, lesen Sie bitte <0>diesen Blog-Beitrag</0>."
 
@@ -1477,7 +1489,7 @@ msgstr "Sie können Text auch in \"\\( \\)\" umbrechen, um eine Kante zu erstell
 msgid "You must log in to create a persistent flowchart."
 msgstr "Sie müssen sich anmelden, um einen beständigen Flussdiagramm zu erstellen."
 
-#: src/pages/LogIn.tsx:176
+#: src/pages/LogIn.tsx:180
 msgid "You need to log in to access this page."
 msgstr "Sie müssen sich anmelden, um auf diese Seite zuzugreifen."
 
@@ -1507,6 +1519,6 @@ msgstr "Verkleinern"
 msgid "any text: before a colon creates a label"
 msgstr "Jeder beliebige Text: vor einem Doppelpunkt wird zu einer Beschriftung"
 
-#: src/pages/LogIn.tsx:203
+#: src/pages/LogIn.tsx:207
 msgid "or"
 msgstr "oder"

@@ -116,7 +116,9 @@ export default function Login() {
           });
         }}
       >
-        Sign in with Google
+        <Trans>
+          Sign in with <span>Google</span>
+        </Trans>
       </Button2>
       <Button2
         leftIcon={<GithubLogo size={24} />}
@@ -129,7 +131,9 @@ export default function Login() {
           });
         }}
       >
-        Sign in with GitHub
+        <Trans>
+          Sign in with <span>GitHub</span>
+        </Trans>
       </Button2>
       <Or />
       <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 mb-3">
@@ -269,22 +273,24 @@ function UserPass({ redirectUrl }: { redirectUrl: string }) {
         <span className="text-[12px] font-mono inline-block mr-2 -translate-y-px text-blue-500">
           <Trans>Choose</Trans>:{" "}
         </span>
-        <button
-          className="p-[2px] border-b border-neutral-400 border-solid border-0 opacity-30 data-[active=true]:opacity-100"
-          data-active={method === "Sign In"}
-          onClick={() => setMethod("Sign In")}
-        >
-          Sign In
-        </button>{" "}
-        /{" "}
-        <button
-          data-active={method === "Sign Up"}
-          className="p-[2px] border-b border-neutral-400 border-solid border-0 opacity-30 data-[active=true]:opacity-100"
-          onClick={() => setMethod("Sign Up")}
-        >
-          Sign Up
-        </button>{" "}
-        with email and password
+        <Trans>
+          <button
+            className="p-[2px] border-b border-neutral-400 border-solid border-0 opacity-30 data-[active=true]:opacity-100"
+            data-active={method === "Sign In"}
+            onClick={() => setMethod("Sign In")}
+          >
+            Sign In
+          </button>{" "}
+          /{" "}
+          <button
+            data-active={method === "Sign Up"}
+            className="p-[2px] border-b border-neutral-400 border-solid border-0 opacity-30 data-[active=true]:opacity-100"
+            onClick={() => setMethod("Sign Up")}
+          >
+            Sign Up
+          </button>{" "}
+          with email and password
+        </Trans>
       </P>
       <form className="gap-2 grid" onSubmit={handleSubmit} ref={formRef}>
         <InputWithLabel

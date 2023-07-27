@@ -29,6 +29,10 @@ msgstr "(레이블을 생성합니다)"
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0>은 <1>Tone Row</1>가 만든 오픈 소스 프로젝트입니다."
 
+#: src/pages/LogIn.tsx:275
+msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
+msgstr "<0>로그인</0> / <1>회원가입</1> 이메일과 비밀번호로"
+
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
 msgstr "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면 다시로드하십시오."
@@ -169,7 +173,7 @@ msgstr "차트"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "로그인할 링크가 들어있는 이메일을 확인하세요. 이 창은 닫을 수 있습니다."
 
-#: src/pages/LogIn.tsx:269
+#: src/pages/LogIn.tsx:273
 msgid "Choose"
 msgstr "선택하세요"
 
@@ -249,8 +253,8 @@ msgstr "동심"
 msgid "Confirm New Email"
 msgstr "새 이메일 확인"
 
-#: src/pages/LogIn.tsx:230
-#: src/pages/LogIn.tsx:230
+#: src/pages/LogIn.tsx:234
+#: src/pages/LogIn.tsx:234
 msgid "Confirm your email address to sign in."
 msgstr "로그인하려면 이메일 주소를 확인하세요."
 
@@ -480,8 +484,8 @@ msgstr "달걀"
 #: src/components/Feedback.tsx:62
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
-#: src/pages/LogIn.tsx:143
-#: src/pages/LogIn.tsx:290
+#: src/pages/LogIn.tsx:147
+#: src/pages/LogIn.tsx:296
 msgid "Email"
 msgstr "이메일"
 
@@ -493,7 +497,7 @@ msgstr "비어 있음"
 msgid "Enter your email"
 msgstr "이메일을 입력하세요"
 
-#: src/pages/LogIn.tsx:136
+#: src/pages/LogIn.tsx:140
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "이메일 주소를 입력하면 자동으로 로그인할 수 있는 링크를 보내드립니다."
 
@@ -550,7 +554,7 @@ msgstr "피드백"
 msgid "Follow Us on Twitter"
 msgstr "트위터에서 우리를 팔로우하기"
 
-#: src/pages/LogIn.tsx:330
+#: src/pages/LogIn.tsx:336
 msgid "Forgot your password?"
 msgstr "비밀번호를 잊으셨나요?"
 
@@ -920,7 +924,7 @@ msgstr "고객 포털 열기"
 msgid "Organization Chart"
 msgstr "조직도"
 
-#: src/pages/LogIn.tsx:302
+#: src/pages/LogIn.tsx:308
 msgid "Password"
 msgstr "비밀번호"
 
@@ -1037,7 +1041,7 @@ msgstr "이미지 워터마크 제거"
 msgid "Rename"
 msgstr "이름 바꾸기"
 
-#: src/pages/LogIn.tsx:162
+#: src/pages/LogIn.tsx:166
 msgid "Request Magic Link"
 msgstr "마법 링크 요청"
 
@@ -1115,13 +1119,21 @@ msgid "Shape"
 msgstr "모양 "
 
 #: src/pages/LogIn.tsx:107
-#: src/pages/LogIn.tsx:321
+#: src/pages/LogIn.tsx:327
 msgid "Sign In"
 msgstr "로그인"
 
 #: src/components/PaymentStepper.tsx:274
 msgid "Sign Up"
 msgstr "가입"
+
+#: src/pages/LogIn.tsx:134
+msgid "Sign in with <0>GitHub</0>"
+msgstr "<0>GitHub</0>으로 로그인"
+
+#: src/pages/LogIn.tsx:119
+msgid "Sign in with <0>Google</0>"
+msgstr "<0>Google</0>으로 로그인"
 
 #: src/components/GraphContextMenu.tsx:414
 msgid "Size"
@@ -1344,7 +1356,7 @@ msgstr "이것을 수정하려면 포인터를 다음 줄로 이동하십시오"
 msgid "To fix this start the container <0/> on a different line"
 msgstr "이것을 수정하려면 컨테이너 <0/>을 다른 줄에 시작하십시오"
 
-#: src/pages/LogIn.tsx:179
+#: src/pages/LogIn.tsx:183
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "왜 로그인을 해야하는지 자세히 알아보려면 <0>이 블로그 글</0>을 읽어보세요."
 
@@ -1477,7 +1489,7 @@ msgstr "텍스트를 \"\\( \\)\"로 감싸서 가장자리를 만들 수도 있�
 msgid "You must log in to create a persistent flowchart."
 msgstr "끈기 있는 플로우차트를 만들기 위해 로그인해야합니다."
 
-#: src/pages/LogIn.tsx:176
+#: src/pages/LogIn.tsx:180
 msgid "You need to log in to access this page."
 msgstr "페이지에 접근하려면 로그인해야합니다."
 
@@ -1507,6 +1519,6 @@ msgstr "축소하기"
 msgid "any text: before a colon creates a label"
 msgstr "콜론 앞의 모든 텍스트는: 레이블을 생성합니다"
 
-#: src/pages/LogIn.tsx:203
+#: src/pages/LogIn.tsx:207
 msgid "or"
 msgstr "또는"
