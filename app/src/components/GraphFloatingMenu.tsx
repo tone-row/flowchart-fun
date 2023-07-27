@@ -56,12 +56,22 @@ export function GraphFloatingMenu() {
         </IconButton2>
       </Tooltip2>
       <Tooltip2 content={t`Zoom In`}>
-        <IconButton2 size="xs" onClick={zoomIn} aria-label={t`Zoom In`}>
+        <IconButton2
+          size="xs"
+          onClick={zoomIn}
+          aria-label={t`Zoom In`}
+          data-testid="Zoom Out"
+        >
           <Plus size={16} />
         </IconButton2>
       </Tooltip2>
       <Tooltip2 content={t`Zoom Out`}>
-        <IconButton2 size="xs" onClick={zoomOut} aria-label={t`Zoom Out`}>
+        <IconButton2
+          size="xs"
+          onClick={zoomOut}
+          aria-label={t`Zoom Out`}
+          data-testid="Zoom In"
+        >
           <Minus size={16} />
         </IconButton2>
       </Tooltip2>

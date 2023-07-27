@@ -31,7 +31,11 @@ export function useIsReadOnly() {
 
 export function useIsLocalChart() {
   const { pathname } = useLocation();
-  return useMemo(() => pathname === "/", [pathname]);
+  const params = useParams();
+  return useMemo(
+    () => pathname === "/" || "workspace" in params,
+    [params, pathname]
+  );
 }
 
 export function useIsPublicHostedCharted() {
