@@ -5,6 +5,7 @@ import { usePageViews } from "../lib/analytics";
 import Feedback from "./Feedback";
 import Layout from "./Layout";
 import Settings from "./Settings";
+
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
@@ -23,6 +24,8 @@ const New = lazy(() => import("../pages/New"));
 const Login = lazy(() => import("../pages/LogIn"));
 const Charts = lazy(() => import("../pages/Charts"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
+const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
+const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
 
 export default function Router() {
   usePageViews();
@@ -85,6 +88,12 @@ export default function Router() {
       </RouteWithWrapper>
       <RouteWithWrapper path="/d">
         <DesignSystem />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/privacy-policy">
+        <PrivacyPolicy />
+      </RouteWithWrapper>
+      <RouteWithWrapper path="/cookie-policy">
+        <CookiePolicy />
       </RouteWithWrapper>
       <RouteWithWrapper path="/:workspace">
         <Edit />
