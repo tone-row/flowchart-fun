@@ -65,7 +65,9 @@ test("Sign Up", async () => {
     .click();
 
   /* Part 2: Get Auth Email */
-  await page.getByLabel("Email").fill(email);
+  // fill in testid sign-in-magic-email with email
+  await page.getByTestId("sign-in-magic-email").fill(email);
+
   // get button with test id "request-magic-link"
   await page.getByTestId("request-magic-link").click();
   await expect(

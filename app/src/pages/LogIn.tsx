@@ -144,6 +144,8 @@ export default function Login() {
           inputProps={{
             autoComplete: "off",
             disabled: isLoading,
+            // @ts-ignore
+            ["data-testid"]: "sign-in-magic-email",
             ...register("email", {
               required: true,
               setValueAs: (t) => t.toLowerCase(),
