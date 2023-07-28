@@ -441,7 +441,8 @@ function VisioCSVDownload() {
           title={t`Basic Flowchart`}
           handleDownload={async () => {
             const csv = await toVisioFlowchart(parse(useDoc.getState().text));
-            const blob = new Blob([csv], { type: "text/csv" });
+            const bom = new Uint8Array([0xef, 0xbb, 0xbf]);
+            const blob = new Blob([bom, csv], { type: "text/csv" });
             saveAs(blob, `${filename}-visio-flow.csv`);
           }}
           testId="Visio Flowchart"
@@ -453,7 +454,8 @@ function VisioCSVDownload() {
           title={t`Organization Chart`}
           handleDownload={async () => {
             const csv = await toVisioOrgChart(parse(useDoc.getState().text));
-            const blob = new Blob([csv], { type: "text/csv" });
+            const bom = new Uint8Array([0xef, 0xbb, 0xbf]);
+            const blob = new Blob([bom, csv], { type: "text/csv" });
             saveAs(blob, `${filename}-visio-org.csv`);
           }}
           testId="Visio Org Chart"
