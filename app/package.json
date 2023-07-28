@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "1.38.0",
+  "version": "1.38.1",
   "main": "module/module.js",
   "license": "MIT",
   "scripts": {
@@ -58,6 +58,7 @@
     "@tone-row/strip-comments": "^2.0.1",
     "buffer": "^6.0.3",
     "classnames": "^2.3.2",
+    "construct-style-sheets-polyfill": "^3.1.0",
     "core-js": "^3.18.1",
     "cytoscape": "^3.25.0",
     "cytoscape-cose-bilkent": "^4.1.0",
