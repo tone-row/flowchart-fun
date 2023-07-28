@@ -186,6 +186,9 @@ importers:
       classnames:
         specifier: ^2.3.2
         version: 2.3.2
+      construct-style-sheets-polyfill:
+        specifier: ^3.1.0
+        version: 3.1.0
       core-js:
         specifier: ^3.18.1
         version: 3.25.5
@@ -3285,6 +3288,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -8118,6 +8122,10 @@ packages:
   /connect-history-api-fallback@2.0.0:
     resolution: {integrity: sha512-U73+6lQFmfiNPrYbXqr6kZ1i1wiRqXnp2nhMsINseWXO8lDau0LGEffJ8kQi4EjLZympVgRdvqjAgiZ1tgzDDA==}
     engines: {node: '>=0.8'}
+    dev: false
+
+  /construct-style-sheets-polyfill@3.1.0:
+    resolution: {integrity: sha512-HBLKP0chz8BAY6rBdzda11c3wAZeCZ+kIG4weVC2NM3AXzxx09nhe8t0SQNdloAvg5GLuHwq/0SPOOSPvtCcKw==}
     dev: false
 
   /content-disposition@0.5.4:

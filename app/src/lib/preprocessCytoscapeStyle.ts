@@ -5,6 +5,11 @@ import { devtools } from "zustand/middleware";
 
 import { useUnmountStore } from "./useUnmountStore";
 
+// Dynamically import the polyfill if needed
+if (typeof window.CSSStyleSheet === "undefined") {
+  import("construct-style-sheets-polyfill");
+}
+
 /**
  * Create a zustand store to hold imports requested by styles
  * and any other artifacts of processing styles
