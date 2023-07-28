@@ -14,7 +14,7 @@
     "@notionhq/client": "^0.4.13",
     "@octokit/core": "^4.2.0",
     "@sendgrid/mail": "^7.4.6",
-    "@supabase/supabase-js": "^2.24.0",
+    "@supabase/supabase-js": "^2.31.0",
     "csv-parse": "^5.3.6",
     "date-fns": "^2.29.3",
     "graph-selector": "^0.8.3",

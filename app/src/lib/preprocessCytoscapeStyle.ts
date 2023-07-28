@@ -5,6 +5,15 @@ import { devtools } from "zustand/middleware";
 
 import { useUnmountStore } from "./useUnmountStore";
 
+(async () => {
+  try {
+    new CSSStyleSheet();
+  } catch (err) {
+    await import("construct-style-sheets-polyfill");
+    console.log("CSSStyleSheet polyfill loaded");
+  }
+})();
+
 /**
  * Create a zustand store to hold imports requested by styles
  * and any other artifacts of processing styles
