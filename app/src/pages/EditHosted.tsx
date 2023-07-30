@@ -77,7 +77,13 @@ export default function EditHosted() {
             <EditorTabList />
             <Tabs.Content value="Document">
               <EditorOptions>
-                <TextEditor value={text} onChange={onChange} />
+                <TextEditor
+                  value={text}
+                  onChange={onChange}
+                  extendOptions={{
+                    readOnly: !isProUser,
+                  }}
+                />
               </EditorOptions>
             </Tabs.Content>
             <Tabs.Content value="Layout">

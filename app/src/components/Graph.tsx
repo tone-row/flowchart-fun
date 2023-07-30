@@ -20,7 +20,7 @@ import { getLayout } from "../lib/getLayout";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { useBackgroundColor } from "../lib/graphThemes";
 import { isError } from "../lib/helpers";
-import { getAnimationSettings } from "../lib/hooks";
+import { getAnimationSettings, useCanEdit } from "../lib/hooks";
 import {
   preprocessCytoscapeStyle,
   useCytoscapeStyleImports,
@@ -63,8 +63,10 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     return () => window.removeEventListener("resize", debouncedResize.callback);
   }, [debouncedResize]);
 
+  const canEdit = useCanEdit();
+
   // Initialize Graph
-  useInitializeGraph({ cy, cyErrorCatcher });
+  useInitializeGraph({ cy, cyErrorCatcher, canEdit });
 
   const throttleStyle = useMemo(
     () => getStyleUpdater({ cy, cyErrorCatcher }),
@@ -148,9 +150,11 @@ function handleDragFree() {
 function useInitializeGraph({
   cyErrorCatcher,
   cy,
+  canEdit,
 }: {
   cyErrorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
+  canEdit: boolean;
 }) {
   useEffect(() => {
     try {
@@ -163,7 +167,8 @@ function useInitializeGraph({
         userPanningEnabled: true,
         wheelSensitivity: 0.2,
         boxSelectionEnabled: true,
-        // autoungrabify: true,
+        autounselectify: !canEdit,
+        autoungrabify: !canEdit,
       });
       window.__cy = cy.current;
       const cyCurrent = cy.current;
@@ -253,7 +258,7 @@ function useInitializeGraph({
       this.removeClass("edgeHovered");
       useEditorStore.setState({ hoverLineNumber: undefined });
     }
-  }, [cy, cyErrorCatcher]);
+  }, [canEdit, cy, cyErrorCatcher]);
 }
 
 /**
