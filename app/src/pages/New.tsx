@@ -28,11 +28,12 @@ import { Warning } from "../components/Warning";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidCustomer } from "../lib/hooks";
+import { useIsProUser, useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
 import { Button2, Page } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
+import { usePaywallModalStore } from "../components/PaywallModal";
 
 export default function M() {
   const { customerIsLoading, session, checkedSession } = useContext(AppContext);
@@ -120,6 +121,7 @@ const New = memo(function New({
   const createDisabled = !name || tryingToCreateRegular || alreadyUsedName;
 
   const [parent] = useAutoAnimate();
+  const isProUser = useIsProUser();
 
   return (
     <Page>
@@ -128,6 +130,14 @@ const New = memo(function New({
         onSubmit={(e) => {
           e.preventDefault();
           if (customerIsLoading || !checkedSession) return;
+          if (!isProUser) {
+            usePaywallModalStore.setState({
+              open: true,
+              title: t`Get Unlimited Flowcharts`,
+              content: t`Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year.`,
+            });
+            return;
+          }
 
           const formData = new FormData(e.currentTarget);
           const type = formData.get("type") as "regular" | "local";
