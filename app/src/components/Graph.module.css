@@ -3,7 +3,6 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border-radius: 7px;
 }
 
 [data-is-fullscreen="true"] .GraphContainer {
