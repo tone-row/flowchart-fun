@@ -13,13 +13,11 @@ import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
 import Spinner from "../components/Spinner";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
-import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 const EditStyleTab = lazy(() => import("../components/Tabs/EditStyleTab"));
 import { OnChange } from "@monaco-editor/react";
 
 import { TextEditor } from "../components/TextEditor";
-import { useIsProUser } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { getHostedChart, updateChartText } from "../lib/queries";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
@@ -67,7 +65,6 @@ export default function EditHosted() {
 
   const url = useLocation().pathname;
   useTrackLastChart(url);
-  const isProUser = useIsProUser();
 
   return (
     <EditWrapper>
@@ -86,11 +83,6 @@ export default function EditHosted() {
             <Tabs.Content value="Style">
               <EditStyleTab />
             </Tabs.Content>
-            {isProUser && (
-              <Tabs.Content value="Advanced">
-                <EditMetaTab />
-              </Tabs.Content>
-            )}
           </Tabs.Root>
         </EditorWrapper>
         <LoadingState isLoading={isLoading} pending={pending()} />

@@ -27,7 +27,7 @@
 }
 
 .GraphWrapperInner {
-  height: 100%;
+  @apply h-full p-1 rounded-lg;
 }
 
 .GraphWrapper[data-is-fullscreen="true"] {

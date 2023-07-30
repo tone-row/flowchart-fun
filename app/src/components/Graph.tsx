@@ -34,6 +34,7 @@ import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
+import classNames from "classnames";
 declare global {
   interface Window {
     __cy?: cytoscape.Core;
@@ -114,7 +115,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       overflow="hidden"
       style={{ background: bg }}
       onContextMenu={show}
-      className={[styles.GraphContainer, "graph"].join(" ")}
+      className={classNames(styles.GraphContainer, "graph rounded")}
     >
       <Box id="cy" overflow="hidden" />
       <GraphContextMenu />
