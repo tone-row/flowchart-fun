@@ -1,9 +1,7 @@
 import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { ArrowSquareOut, Info } from "phosphor-react";
 import React, { ReactNode, useCallback, useContext, useState } from "react";
-import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -12,11 +10,7 @@ const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
 import { formatCents, formatDate } from "../lib/helpers";
-import {
-  createSubscription,
-  queryClient,
-  useOrderHistory,
-} from "../lib/queries";
+import { queryClient, useOrderHistory } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box } from "../slang";
 import { Content, Overlay } from "../ui/Dialog";
@@ -143,20 +137,6 @@ export default function Account() {
           </a>
         </Section>
       ) : null}
-      {subscription?.status === "canceled" && (
-        <Section>
-          <SectionTitle>
-            <Trans>Upgrade to Pro</Trans>
-          </SectionTitle>
-          <p className="text-sm leading-normal">
-            <Trans>
-              Your subscription is no longer active. If you want to create and
-              edit permanent charts upgrade to Pro.
-            </Trans>
-          </p>
-          <BecomeASponsor />
-        </Section>
-      )}
       {isProUser ? (
         <Section>
           <SectionTitle>
@@ -453,66 +433,6 @@ function ConfirmResume({
         </Box>
       </Content>
     </Dialog.Root>
-  );
-}
-
-function BecomeASponsor() {
-  const stripe = useStripe();
-  const elements = useElements();
-  const { customer, theme } = useContext(AppContext);
-  const { handleSubmit } = useForm();
-  const submit = useMutation("becomeASponsor", async () => {
-    if (!stripe || !elements || !customer?.customerId) {
-      // Stripe.js has not loaded yet. Make sure to disable
-      // form submission until Stripe.js has loaded.
-      return;
-    }
-    const cardElement = elements.getElement(CardElement);
-    if (!cardElement) throw new Error("No Card Element Found");
-
-    const { error: createPaymentError, paymentMethod } =
-      await stripe.createPaymentMethod({
-        type: "card",
-        card: cardElement,
-      });
-    if (createPaymentError) throw createPaymentError;
-    if (!paymentMethod) throw new Error("No Payment Method");
-    const { error: createSubscriptionError } = await createSubscription({
-      customerId: customer.customerId,
-      paymentMethodId: paymentMethod.id,
-      subscriptionType: "monthly", // Need to fix this
-    });
-    if (createSubscriptionError) throw createSubscriptionError;
-    queryClient.resetQueries(["auth"]);
-  });
-  return (
-    <Box
-      as="form"
-      onSubmit={handleSubmit(() => submit.mutate())}
-      template="none / minmax(0, 1fr) auto auto"
-      content="normal start"
-      flow="column"
-      gap={2}
-    >
-      <Box p={2} px={3} rad={1} className={styles.CardEl}>
-        <CardElement
-          options={{
-            style: {
-              base: {
-                color: theme.foreground,
-                backgroundColor: theme.background,
-                fontFamily:
-                  "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                fontSize: "16px",
-              },
-            },
-          }}
-        />
-      </Box>
-      <Button2 type="submit" isLoading={submit.isLoading}>
-        <Trans>Subscribe</Trans>
-      </Button2>
-    </Box>
   );
 }
 
