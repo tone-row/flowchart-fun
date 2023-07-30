@@ -8,7 +8,7 @@ import prettier from "prettier/standalone";
 import { ReactNode, useCallback, useEffect, useState } from "react";
 
 import { DISCORD_URL } from "../../lib/constants";
-import { useLightOrDarkMode } from "../../lib/hooks";
+import { useCanEdit, useLightOrDarkMode } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { useUnmountStore } from "../../lib/useUnmountStore";
 import { Button2, IconButton2, popoverContentProps } from "../../ui/Shared";
@@ -60,6 +60,7 @@ export default function EditStyleTab() {
       document.removeEventListener("keydown", handleKeydown);
     };
   }, [applyStyle, style]);
+  const canEdit = useCanEdit();
   return (
     <div className="h-full w-full grid grid-rows-[auto,minmax(0,1fr)]">
       <div className="grid pl-5 pr-2 gap-1 mt-4 mb-4 content-start">
@@ -104,6 +105,7 @@ export default function EditStyleTab() {
             guides: {
               indentation: false,
             },
+            readOnly: !canEdit,
           }}
           wrapperProps={{
             onMouseEnter() {

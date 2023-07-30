@@ -110,3 +110,14 @@ export function useIsEditorView() {
 export function useLightOrDarkMode() {
   return useContext(AppContext).mode;
 }
+
+/**
+ * Used all throughout the Edit page to determine if the user is allowed to update the graph.
+ */
+export function useCanEdit() {
+  // you can edit if you're on the index page (scratch pad) or you are a pro user
+  // this may need to be tweaked when sharing charts becomes a thing
+  const isLocalChart = useIsLocalChart();
+  const isProUser = useIsProUser();
+  return isLocalChart || isProUser;
+}

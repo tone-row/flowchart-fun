@@ -123,30 +123,31 @@ export default function Charts() {
             <div className="py-4">
               <Loading />
             </div>
-          ) : isProUser ? (
-            <div className="grid gap-1">
-              {persistentCharts?.map((chart) => (
-                <ChartLink
-                  key={chart.id}
-                  title={chart.name}
-                  href={`/u/${chart.id}`}
-                  handleDelete={() => {
-                    handleDeleteChart.mutate({ chartId: chart.id });
-                  }}
-                  handleCopy={() => {
-                    handleCopyPersistentChart.mutate(chart.id);
-                  }}
-                  isCurrent={`/u/${chart.id}` === currentChart}
-                >
-                  <div className="flex items-center gap-4 text-xs text-foreground/50 dark:text-background/50">
-                    <span>{chart.niceCreatedDate}</span>
-                    <span>{chart.niceUpdatedDate}</span>
-                  </div>
-                </ChartLink>
-              ))}
-            </div>
           ) : (
-            <ProFeatureLink />
+            <>
+              {!isProUser ? <ProFeatureLink /> : null}
+              <div className="grid gap-1">
+                {persistentCharts?.map((chart) => (
+                  <ChartLink
+                    key={chart.id}
+                    title={chart.name}
+                    href={`/u/${chart.id}`}
+                    handleDelete={() => {
+                      handleDeleteChart.mutate({ chartId: chart.id });
+                    }}
+                    handleCopy={() => {
+                      handleCopyPersistentChart.mutate(chart.id);
+                    }}
+                    isCurrent={`/u/${chart.id}` === currentChart}
+                  >
+                    <div className="flex items-center gap-4 text-xs text-foreground/50 dark:text-background/50">
+                      <span>{chart.niceCreatedDate}</span>
+                      <span>{chart.niceUpdatedDate}</span>
+                    </div>
+                  </ChartLink>
+                ))}
+              </div>
+            </>
           )}
         </LargeFolder>
 
