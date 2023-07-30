@@ -54,7 +54,7 @@ export function MigrateTempFlowchartsModal({
             Start Migration
           </Button2>
           <p className="mt-4 text-center font-mono text-neutral-600 text-xs">
-            Migrated {migrated} of {numCharts} flowcharts
+            {migrated} / {numCharts}
           </p>
           <Progress.Root
             className="relative overflow-hidden rounded-full w-full h-2 bg-neutral-300 dark:bg-neutral-700"
