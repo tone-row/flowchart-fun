@@ -106,6 +106,10 @@ module.exports = {
           from: { opacity: 0, transform: "translateX(2px)" },
           to: { opacity: 1, transform: "translateX(0)" },
         },
+        pulse: {
+          "0%, 100%": { opacity: 1 },
+          "50%": { opacity: 0.5 },
+        },
       },
       animation: {
         overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
@@ -117,6 +121,7 @@ module.exports = {
           "slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideLeftAndFade:
           "slideLeftAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        pulse: "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       fontSize: {
         xs: ["14px", { lineHeight: "16px" }],

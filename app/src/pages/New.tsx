@@ -28,7 +28,7 @@ import { Warning } from "../components/Warning";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
-import { useIsValidCustomer } from "../lib/hooks";
+import { useIsProUser, useIsValidCustomer } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
 import { Button2, Page } from "../ui/Shared";
@@ -120,6 +120,8 @@ const New = memo(function New({
   const createDisabled = !name || tryingToCreateRegular || alreadyUsedName;
 
   const [parent] = useAutoAnimate();
+
+  const isProUser = useIsProUser();
 
   return (
     <Page>
@@ -218,7 +220,7 @@ const New = memo(function New({
               <div className="grid gap-4 sm:grid-cols-2 focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
                 <TypeToggle
                   value="regular"
-                  title={t`Persistent`}
+                  title={t`Permanent`}
                   description={
                     <>
                       <span className="text-sm flex items-start justify-center">
@@ -244,6 +246,7 @@ const New = memo(function New({
                 <TypeToggle
                   value="local"
                   title={t`Temporary`}
+                  disabled={isProUser}
                   description={
                     <>
                       <span className="text-sm flex items-center">
@@ -354,7 +357,7 @@ function TypeToggle({
 } & Parameters<typeof RadioGroup.Item>[0]) {
   return (
     <RadioGroup.Item {...rest} asChild>
-      <button className="bg-neutral-100 border-neutral-100 p-2 py-4 sm:p-3 sm:py-6 rounded grid justify-items-center content-center gap-2 dark:bg-neutral-700 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-600 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-800 dark:data-[state=checked]:border-neutral-500 dark:hover:border-neutral-400">
+      <button className="bg-neutral-100 border-neutral-100 p-2 py-4 sm:p-3 sm:py-6 rounded grid justify-items-center content-center gap-2 dark:bg-neutral-700 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-600 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-800 dark:data-[state=checked]:border-neutral-500 dark:hover:border-neutral-400 disabled:cursor-not-allowed disabled:opacity-50">
         <span className="text-2xl mb-3">{title}</span>
         {icon}
         <div className="mt-5 text-center grid gap-2 justify-items-center pb-3">
