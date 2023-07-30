@@ -296,7 +296,7 @@ msgstr "यह एक होस्ट की गई चार्ट में �
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
-#: src/pages/Charts.tsx:383
+#: src/pages/Charts.tsx:385
 msgid "Convert your temporary charts to permanent charts with one click by subscribing to <0>Flowchart Fun Pro</0> before August 28th."
 msgstr "<0>फ्लोचार्ट फन प्रो</0> सदस्यता लेने से एक क्लिक से अपने अस्थायी चार्ट्स को स्थायी चार्ट्स में रूपांतरित करें।"
 
@@ -1155,7 +1155,7 @@ msgstr "आकृति"
 msgid "Sign In"
 msgstr "साइन इन करें"
 
-#: src/components/PaymentStepper.tsx:299
+#: src/components/PaymentStepper.tsx:302
 msgid "Sign Up"
 msgstr "साइन अप"
 
@@ -1211,6 +1211,10 @@ msgstr "विशेष गुण"
 #: src/pages/Account.tsx:189
 msgid "Start"
 msgstr "शुरू"
+
+#: src/components/MigrateTempFlowchartsModal.tsx:54
+msgid "Start Migration"
+msgstr "स्थानांतरण शुरू करें"
 
 #: src/components/ImportDataDialog.tsx:281
 msgid "Start Over"

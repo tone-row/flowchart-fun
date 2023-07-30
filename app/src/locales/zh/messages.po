@@ -296,7 +296,7 @@ msgstr "将此转换为托管图表？"
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
-#: src/pages/Charts.tsx:383
+#: src/pages/Charts.tsx:385
 msgid "Convert your temporary charts to permanent charts with one click by subscribing to <0>Flowchart Fun Pro</0> before August 28th."
 msgstr "在8月28日之前订阅<0>Flowchart Fun Pro</0>，可以一键将临时图表转换为永久图表。"
 
@@ -1155,7 +1155,7 @@ msgstr "形状"
 msgid "Sign In"
 msgstr "登錄"
 
-#: src/components/PaymentStepper.tsx:299
+#: src/components/PaymentStepper.tsx:302
 msgid "Sign Up"
 msgstr "注册"
 
@@ -1211,6 +1211,10 @@ msgstr "特殊属性"
 #: src/pages/Account.tsx:189
 msgid "Start"
 msgstr "开始"
+
+#: src/components/MigrateTempFlowchartsModal.tsx:54
+msgid "Start Migration"
+msgstr "开始迁移"
 
 #: src/components/ImportDataDialog.tsx:281
 msgid "Start Over"

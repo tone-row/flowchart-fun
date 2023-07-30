@@ -33,11 +33,11 @@ export function MigrateTempFlowchartsModal({
             <Trans>Migrate Flowcharts</Trans>
           </Dialog.Title>
           <Trans>
-            <p className="leading-6 text-neutral-600">
+            <p className="leading-6 text-neutral-600 dark:text-neutral-400">
               Click the button below to migrate all of your temporary flowcharts
               into hosted ones.
             </p>
-            <p className="leading-6 text-neutral-600">
+            <p className="leading-6 text-neutral-600 dark:text-neutral-400">
               Do not close this window. The page will refresh when the migration
               is complete.
             </p>
@@ -51,9 +51,9 @@ export function MigrateTempFlowchartsModal({
               migrateTemporaryFlowcharts(setMigrated, userId);
             }}
           >
-            Start Migration
+            <Trans>Start Migration</Trans>
           </Button2>
-          <p className="mt-4 text-center font-mono text-neutral-600 text-xs">
+          <p className="mt-4 text-center font-mono text-neutral-600 dark:text-neutral-400 text-xs">
             {migrated} / {numCharts}
           </p>
           <Progress.Root

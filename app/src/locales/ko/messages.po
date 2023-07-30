@@ -296,7 +296,7 @@ msgstr "이것을 호스팅 된 차트로 변환할까요?"
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
-#: src/pages/Charts.tsx:383
+#: src/pages/Charts.tsx:385
 msgid "Convert your temporary charts to permanent charts with one click by subscribing to <0>Flowchart Fun Pro</0> before August 28th."
 msgstr "8월 28일 전에 <0>플로우차트 펀 프로</0>에 가입하여 한 번의 클릭으로 임시 차트를 영구적인 차트로 변환하세요."
 
@@ -1155,7 +1155,7 @@ msgstr "모양 "
 msgid "Sign In"
 msgstr "로그인"
 
-#: src/components/PaymentStepper.tsx:299
+#: src/components/PaymentStepper.tsx:302
 msgid "Sign Up"
 msgstr "가입"
 
@@ -1211,6 +1211,10 @@ msgstr "특별한 속성"
 #: src/pages/Account.tsx:189
 msgid "Start"
 msgstr "시작"
+
+#: src/components/MigrateTempFlowchartsModal.tsx:54
+msgid "Start Migration"
+msgstr "이전 시작"
 
 #: src/components/ImportDataDialog.tsx:281
 msgid "Start Over"

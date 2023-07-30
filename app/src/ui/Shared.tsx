@@ -208,7 +208,7 @@ export const Button2 = forwardRef<
   ) => {
     return (
       <button
-        className={`flex items-center justify-center gap-3 ${button2Classes} ${pxButtonSize[
+        className={`flex items-center justify-center gap-3 whitespace-nowrap ${button2Classes} ${pxButtonSize[
           size
         ](!!leftIcon, !!rightIcon)} ${button2Colors[color]}
       ${pSize[size]} ${focusClasses} ${className}
