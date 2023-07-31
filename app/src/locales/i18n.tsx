@@ -6,4 +6,5 @@ export const languages = {
   ko: "한국어",
   "pt-br": "Português",
   zh: "中文",
+  es: "Español",
 };
