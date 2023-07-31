@@ -17,12 +17,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (!date) throw new Error("No date");
 
-    let sanitizedDate = dateString(date);
-    let publishDate = niceDate(date);
-    let rawDate = dateAsNumber(date);
+    const sanitizedDate = dateString(date);
+    const publishDate = niceDate(date);
+    const rawDate = dateAsNumber(date);
 
     return { id, rawDate, date: sanitizedDate, publishDate, ...props };
   });
+
+  // Cache for 1 week, stale-while-revalidate
+  res.setHeader("Cache-Control", "s-maxage=1, stale-while-revalidate");
 
   res.json(posts);
 }
