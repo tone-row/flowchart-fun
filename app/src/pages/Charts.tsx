@@ -375,7 +375,9 @@ function TemporaryFlowchartRemovalWarning() {
           {isProUser ? (
             <Trans>
               <MigrateTempFlowchartsModal>
-                <span className="underline underline-offset-2">Click here</span>
+                <span className="underline underline-offset-2 text-foreground">
+                  Click here
+                </span>
               </MigrateTempFlowchartsModal>{" "}
               to migrate your temporary flowcharts to permanent charts.
             </Trans>

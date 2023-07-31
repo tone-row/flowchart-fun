@@ -232,6 +232,7 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<null | string>(null);
   const mode = useLightOrDarkMode();
+  const session = useSession();
 
   useEffect(() => {
     if (!stripe) return;
@@ -256,7 +257,9 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
 
     setLoading(true);
 
-    const returnUrl = `${window.location.origin}/l#success`;
+    const returnUrl = session
+      ? `${window.location.origin}/`
+      : `${window.location.origin}/l#success`;
 
     const { error } = await stripe.confirmPayment({
       //`Elements` instance that was used to create the Payment Element

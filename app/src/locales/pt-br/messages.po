@@ -296,7 +296,7 @@ msgstr "Converter isso para um gráfico hospedado?"
 msgid "Convert to hosted chart?"
 msgstr "Converter em diagrama hospedado?"
 
-#: src/pages/Charts.tsx:383
+#: src/pages/Charts.tsx:385
 msgid "Convert your temporary charts to permanent charts with one click by subscribing to <0>Flowchart Fun Pro</0> before August 28th."
 msgstr "Converta seus gráficos temporários para gráficos permanentes com um clique, assinando o <0>Flowchart Fun Pro</0> antes do dia 28 de agosto."
 
@@ -1155,7 +1155,7 @@ msgstr "Forma"
 msgid "Sign In"
 msgstr "Entrar"
 
-#: src/components/PaymentStepper.tsx:299
+#: src/components/PaymentStepper.tsx:302
 msgid "Sign Up"
 msgstr "Inscreva-se"
 
@@ -1211,6 +1211,10 @@ msgstr "Atributos Especiais"
 #: src/pages/Account.tsx:189
 msgid "Start"
 msgstr "Início"
+
+#: src/components/MigrateTempFlowchartsModal.tsx:54
+msgid "Start Migration"
+msgstr "Iniciar Migração"
 
 #: src/components/ImportDataDialog.tsx:281
 msgid "Start Over"
