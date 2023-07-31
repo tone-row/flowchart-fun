@@ -10,7 +10,6 @@ import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
-import { EditMetaTab } from "../components/Tabs/EditMetaTab";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 const EditStyleTab = lazy(() => import("../components/Tabs/EditStyleTab"));
 
@@ -19,7 +18,6 @@ import { OnChange } from "@monaco-editor/react";
 import { TextEditor } from "../components/TextEditor";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
-import { useIsProUser } from "../lib/hooks";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useEditorStore } from "../lib/useEditorStore";
@@ -27,8 +25,6 @@ import { useTrackLastChart } from "../lib/useLastChart";
 import styles from "./Edit.module.css";
 
 const Edit = memo(function Edit({ workspace }: { workspace: string }) {
-  const isValidSponsor = useIsProUser();
-
   const storeDoc = useMemo(() => {
     return throttle(
       (doc: Doc) => {
@@ -71,11 +67,6 @@ const Edit = memo(function Edit({ workspace }: { workspace: string }) {
             <Tabs.Content value="Style">
               <EditStyleTab />
             </Tabs.Content>
-            {isValidSponsor && (
-              <Tabs.Content value="Advanced">
-                <EditMetaTab />
-              </Tabs.Content>
-            )}
           </Tabs.Root>
         </EditorWrapper>
         <ClearTextButton

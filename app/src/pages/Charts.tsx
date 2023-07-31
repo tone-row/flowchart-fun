@@ -16,7 +16,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
-import { LOCAL_STORAGE_SETTINGS_KEY } from "../lib/constants";
 import { titleToLocalStorageKey } from "../lib/helpers";
 import { useIsProUser } from "../lib/hooks";
 import {
@@ -29,6 +28,8 @@ import { useLastChart } from "../lib/useLastChart";
 import { Overlay } from "../ui/Dialog";
 import { Button2, Page } from "../ui/Shared";
 import { Description, PageTitle, SectionTitle } from "../ui/Typography";
+import { MigrateTempFlowchartsModal } from "../components/MigrateTempFlowchartsModal";
+import { getTemporaryCharts } from "../lib/getTemporaryCharts";
 // Keep these in sync (55px)
 const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
 const leftMargin = "sm:ml-[55px]";
@@ -106,6 +107,7 @@ export default function Charts() {
           <Trans>New</Trans>
         </Button2>
       </header>
+      <TemporaryFlowchartRemovalWarning />
       <section className="grid gap-12">
         <LargeFolder
           title={t`Permanent Flowcharts`}
@@ -222,20 +224,6 @@ const List = memo(function List({ children }: { children: ReactNode }) {
   return <div className={`grid gap-4 ${leftMargin}`}>{children}</div>;
 });
 
-function getTemporaryCharts() {
-  return [""]
-    .concat(
-      Object.keys(window.localStorage)
-        .filter(
-          (key) =>
-            key.indexOf("flowcharts.fun:") === 0 &&
-            key !== LOCAL_STORAGE_SETTINGS_KEY
-        )
-        .map((file) => file.split(":")[1])
-    )
-    .sort();
-}
-
 const ChartLink = memo(function ChartLink({
   title,
   href,
@@ -346,15 +334,15 @@ function copyLocalChart(chart: string, navigate: (path: string) => void) {
 function ProFeatureLink() {
   return (
     <div
-      className={`flex items-center p-4 pt-[15px] gap-3 rounded-lg text-sm bg-neutral-200 rounded-lg dark:bg-neutral-900`}
+      className={`flex items-center p-4 pt-[15px] gap-5 rounded-lg text-sm bg-neutral-100 rounded-lg dark:bg-neutral-900`}
     >
       <div className="w-[47px] sm:w-auto">
         <Sparkle
           size={30}
-          className="text-blue-500 translate-y-[-1px] dark:text-orange-500"
+          className="translate-y-[-1px] text-foreground dark:text-background"
         />
       </div>
-      <div className="grid w-full gap-1 items-start">
+      <div className="grid w-full gap-2 items-start">
         <span>
           <Trans>Permanent Charts are a Pro Feature</Trans>
         </span>
@@ -365,6 +353,45 @@ function ProFeatureLink() {
         >
           <Trans>Learn about Flowchart Fun Pro</Trans>
         </Link>
+      </div>
+    </div>
+  );
+}
+
+function TemporaryFlowchartRemovalWarning() {
+  const isProUser = useIsProUser();
+  const [numTemporaryCharts] = useState(
+    getTemporaryCharts().filter(Boolean).length
+  );
+  if (numTemporaryCharts === 0) return null;
+  return (
+    <div className="flex items-center gap-4 bg-yellow-100 rounded-lg p-4 text-foreground">
+      <img src="/images/pricing/Investment.svg" alt="" className="w-24 h-24" />
+      <div className="grid gap-3">
+        <h2 className="text-sm font-bold">
+          <Trans>Temporary Flowcharts are going away soon!</Trans>
+        </h2>
+        <p className="text-sm leading-6 text-wrap-balance">
+          {isProUser ? (
+            <Trans>
+              <MigrateTempFlowchartsModal>
+                <span className="underline underline-offset-2 text-foreground">
+                  Click here
+                </span>
+              </MigrateTempFlowchartsModal>{" "}
+              to migrate your temporary flowcharts to permanent charts.
+            </Trans>
+          ) : (
+            <Trans>
+              Convert your temporary charts to permanent charts with one click
+              by subscribing to{" "}
+              <Link to="/pricing" className="underline underline-offset-2">
+                Flowchart Fun Pro
+              </Link>{" "}
+              before August 28th.
+            </Trans>
+          )}
+        </p>
       </div>
     </div>
   );

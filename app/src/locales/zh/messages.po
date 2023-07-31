@@ -25,6 +25,14 @@ msgstr "每年30美元"
 msgid "(before a colon creates a label)"
 msgstr "(在冒号前创建一个标签)"
 
+#: src/pages/Charts.tsx:376
+msgid "<0><1>Click here</1></0> to migrate your temporary flowcharts to permanent charts."
+msgstr "<0><1>点击这里</1></0>将您的临时流程图迁移到永久图表。"
+
+#: src/components/MigrateTempFlowchartsModal.tsx:35
+msgid "<0>Click the button below to migrate all of your temporary flowcharts into hosted ones.</0><1>Do not close this window. The page will refresh when the migration is complete.</1>"
+msgstr "<0>点击下面的按钮将所有临时流程图迁移到托管图表。</0><1>请勿关闭此窗口。迁移完成后页面将刷新。</1>"
+
 #: src/components/Settings.tsx:107
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0>是由<1>Tone Row</1>制作的开源项目"
@@ -49,11 +57,11 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 msgid "About"
 msgstr "关于"
 
-#: src/pages/Charts.tsx:113
+#: src/pages/Charts.tsx:115
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "从任何地方访问这些图表。<0/>共享并嵌入保持同步的流程图。"
 
-#: src/pages/New.tsx:238
+#: src/pages/New.tsx:240
 msgid "Accessible from any device"
 msgstr "可从任何设备访问"
 
@@ -104,19 +112,19 @@ msgstr "返回编辑器"
 msgid "Basic Flowchart"
 msgstr "基本流程图"
 
-#: src/components/Settings.tsx:151
+#: src/components/Settings.tsx:163
 msgid "Become a Github Sponsor"
 msgstr "成为Github赞助商"
 
-#: src/components/Settings.tsx:139
+#: src/components/Settings.tsx:151
 msgid "Become a Pro User"
 msgstr "成为专业用户"
 
-#: src/pages/New.tsx:322
+#: src/pages/New.tsx:325
 msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
 msgstr "以一个简单的例子开始来展示<0>流程图的乐趣</0>是如何工作的。"
 
-#: src/pages/New.tsx:286
+#: src/pages/New.tsx:289
 msgid "Blank"
 msgstr "空白"
 
@@ -288,6 +296,14 @@ msgstr "将此转换为托管图表？"
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
+#: src/pages/Charts.tsx:385
+msgid "Convert your temporary charts to permanent charts with one click by subscribing to <0>Flowchart Fun Pro</0> before August 28th."
+msgstr "在8月28日之前订阅<0>Flowchart Fun Pro</0>，可以一键将临时图表转换为永久图表。"
+
+#: src/components/Settings.tsx:137
+msgid "Cookie Policy"
+msgstr "Cookie政策"
+
 #: src/components/ShareDialog.tsx:244
 #: src/components/ShareDialog.tsx:245
 #: src/components/ShareDialog.tsx:357
@@ -311,11 +327,11 @@ msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打�
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "使用 AI 根据提示创建图表"
 
-#: src/pages/New.tsx:309
+#: src/pages/New.tsx:312
 msgid "Create New Flowchart"
 msgstr "创建新流程图"
 
-#: src/pages/New.tsx:181
+#: src/pages/New.tsx:183
 msgid "Create a New Flowchart"
 msgstr "创建新图表"
 
@@ -352,11 +368,11 @@ msgstr "深色模式"
 msgid "Date"
 msgstr "日期"
 
-#: src/pages/New.tsx:253
+#: src/pages/New.tsx:256
 msgid "Deleted when browser data is cleared"
 msgstr "清除浏览器数据时删除"
 
-#: src/pages/New.tsx:515
+#: src/pages/New.tsx:518
 msgid "Describe the flowchart you wish to create"
 msgstr "描述您要创建的图表"
 
@@ -372,7 +388,7 @@ msgstr "Discard"
 msgid "Do you want to cancel your subscription?"
 msgstr "您要取消订阅吗？"
 
-#: src/pages/Charts.tsx:293
+#: src/pages/Charts.tsx:281
 msgid "Do you want to delete this?"
 msgstr "您要将其删除吗？"
 
@@ -381,7 +397,7 @@ msgid "Document"
 msgstr "文档"
 
 #: src/components/ShareDialog.tsx:61
-#: src/components/ShareDialog.tsx:514
+#: src/components/ShareDialog.tsx:516
 msgid "Download"
 msgstr "下载"
 
@@ -517,7 +533,7 @@ msgstr "在下面輸入您的電子郵件地址，我們將發送給您一個重
 msgid "Equal To"
 msgstr "等于"
 
-#: src/pages/New.tsx:440
+#: src/pages/New.tsx:443
 msgid "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
 msgstr "文章写作流程流程图，指导学生进行头脑风暴，大纲制定，起草和修改阶段"
 
@@ -548,7 +564,7 @@ msgstr "导出为SVG"
 msgid "Extra Large"
 msgstr "超大"
 
-#: src/pages/New.tsx:519
+#: src/pages/New.tsx:522
 msgid "Extract"
 msgstr "提取"
 
@@ -590,7 +606,7 @@ msgstr "获取更多布局"
 msgid "Get personalized attention and support from our expert team"
 msgstr "从我们的专家团队获得个性化的关注和支持"
 
-#: src/pages/New.tsx:276
+#: src/pages/New.tsx:279
 msgid "Getting Started"
 msgstr "开始"
 
@@ -631,7 +647,7 @@ msgstr "ID"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "如果該電子郵件存在該帳戶，我們已經發送給您一封電子郵件，其中包含如何重置您的密碼的說明。"
 
-#: src/components/Settings.tsx:132
+#: src/components/Settings.tsx:144
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 msgstr "如果您喜欢使用<0>Flowchart Fun</0>，请考虑支持该项目"
 
@@ -683,7 +699,7 @@ msgstr "匯入資料是專業功能。您可以每月以3美元或每年30美元
 msgid "Impress your audience with high-quality images produced by Flowchart Fun"
 msgstr "用Flowchart Fun生成的高质量图片给你的听众留下深刻印象"
 
-#: src/components/ShareDialog.tsx:466
+#: src/components/ShareDialog.tsx:468
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
@@ -695,7 +711,7 @@ msgstr "缩进创建链接"
 msgid "Info"
 msgstr "信息"
 
-#: src/pages/New.tsx:514
+#: src/pages/New.tsx:517
 msgid "Instruct"
 msgstr "指导"
 
@@ -731,7 +747,7 @@ msgstr "主要參考"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:67
 #: src/components/Layout.tsx:85
-#: src/components/MightLoseWarning.tsx:34
+#: src/components/MightLoseWarning.tsx:36
 msgid "Learn More"
 msgstr "学到更多"
 
@@ -740,7 +756,7 @@ msgstr "学到更多"
 msgid "Learn Syntax"
 msgstr "學習語法"
 
-#: src/pages/Charts.tsx:365
+#: src/pages/Charts.tsx:354
 msgid "Learn about Flowchart Fun Pro"
 msgstr "了解关于Flowchart Fun Pro"
 
@@ -782,7 +798,7 @@ msgstr "锁定缩放到图表"
 
 #: src/components/Header.tsx:203
 #: src/components/Header.tsx:424
-#: src/pages/New.tsx:267
+#: src/pages/New.tsx:270
 msgid "Log In"
 msgstr "登录"
 
@@ -794,7 +810,7 @@ msgstr "登出"
 msgid "Log in to start creating flowcharts."
 msgstr "登入以開始創建流程圖。"
 
-#: src/components/Settings.tsx:145
+#: src/components/Settings.tsx:157
 msgid "Make a One-Time Donation"
 msgstr "进行一次性捐赠"
 
@@ -810,7 +826,7 @@ msgstr "確保您使用的是與登錄時相同的電子郵件。"
 msgid "Map Data"
 msgstr "對應資料"
 
-#: src/pages/New.tsx:434
+#: src/pages/New.tsx:437
 msgid "Market understanding and competitive landscape maintenance for SaaS product development"
 msgstr "为SaaS产品开发提供市场理解和竞争环境维护"
 
@@ -818,9 +834,13 @@ msgstr "为SaaS产品开发提供市场理解和竞争环境维护"
 msgid "Medium"
 msgstr "中等"
 
-#: src/pages/New.tsx:503
+#: src/pages/New.tsx:506
 msgid "Method"
 msgstr "方法"
+
+#: src/components/MigrateTempFlowchartsModal.tsx:33
+msgid "Migrate Flowcharts"
+msgstr "迁移流程图"
 
 #: src/lib/graphOptions.ts:51
 msgid "Monospace"
@@ -838,13 +858,13 @@ msgstr "同一行上的多个指针"
 msgid "Museum"
 msgstr "博物馆"
 
-#: src/pages/New.tsx:185
+#: src/pages/New.tsx:187
 msgid "Name"
 msgstr "姓名"
 
 #: src/components/Header.tsx:79
 #: src/components/Header.tsx:347
-#: src/pages/Charts.tsx:106
+#: src/pages/Charts.tsx:107
 msgid "New"
 msgstr "新"
 
@@ -920,7 +940,7 @@ msgstr "一对一支持"
 msgid "One-time Share Links"
 msgstr "一次性分享链接"
 
-#: src/pages/Charts.tsx:154
+#: src/pages/Charts.tsx:156
 msgid "Only available on this device.<0/>Clearing your browser cache will erase them."
 msgstr "仅在此设备上可用。<0/>清除浏览器缓存将抹去它们。"
 
@@ -928,7 +948,7 @@ msgstr "仅在此设备上可用。<0/>清除浏览器缓存将抹去它们。"
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
 
-#: src/components/ShareDialog.tsx:453
+#: src/components/ShareDialog.tsx:454
 msgid "Organization Chart"
 msgstr "组织结构图"
 
@@ -936,7 +956,7 @@ msgstr "组织结构图"
 msgid "Password"
 msgstr "密碼"
 
-#: src/pages/New.tsx:520
+#: src/pages/New.tsx:523
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "将要转换的信息粘贴到流程图中"
 
@@ -944,17 +964,17 @@ msgstr "将要转换的信息粘贴到流程图中"
 msgid "Permalinks"
 msgstr "永久链接"
 
-#: src/pages/Charts.tsx:358
+#: src/pages/New.tsx:223
+msgid "Permanent"
+msgstr "永久"
+
+#: src/pages/Charts.tsx:347
 msgid "Permanent Charts are a Pro Feature"
 msgstr "永久图表是专业功能"
 
-#: src/pages/Charts.tsx:111
+#: src/pages/Charts.tsx:113
 msgid "Permanent Flowcharts"
 msgstr "永久流程图"
-
-#: src/pages/New.tsx:221
-msgid "Persistent"
-msgstr "坚持不懈"
 
 #: src/pages/Pricing.tsx:65
 msgid "Persistent Flowcharts"
@@ -973,7 +993,11 @@ msgstr "同一行上的指针和容器"
 msgid "Pricing"
 msgstr "价钱"
 
-#: src/pages/New.tsx:436
+#: src/components/Settings.tsx:131
+msgid "Privacy Policy"
+msgstr "隱私政策"
+
+#: src/pages/New.tsx:439
 msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
 msgstr "公司社会责任倡议的发展和在公司业务中的实施过程"
 
@@ -981,7 +1005,7 @@ msgstr "公司社会责任倡议的发展和在公司业务中的实施过程"
 msgid "Processing Data"
 msgstr "处理数据"
 
-#: src/pages/New.tsx:291
+#: src/pages/New.tsx:294
 msgid "Prompt"
 msgstr "提示"
 
@@ -1131,7 +1155,7 @@ msgstr "形状"
 msgid "Sign In"
 msgstr "登錄"
 
-#: src/components/PaymentStepper.tsx:299
+#: src/components/PaymentStepper.tsx:302
 msgid "Sign Up"
 msgstr "注册"
 
@@ -1188,6 +1212,10 @@ msgstr "特殊属性"
 msgid "Start"
 msgstr "开始"
 
+#: src/components/MigrateTempFlowchartsModal.tsx:54
+msgid "Start Migration"
+msgstr "开始迁移"
+
 #: src/components/ImportDataDialog.tsx:281
 msgid "Start Over"
 msgstr "重新開始"
@@ -1200,11 +1228,11 @@ msgstr "状态"
 msgid "Store any data associated to a node"
 msgstr "將任何與節點相關的資料儲存"
 
-#: src/pages/New.tsx:230
+#: src/pages/New.tsx:232
 msgid "Stored in the cloud"
 msgstr "存储在云端"
 
-#: src/pages/New.tsx:250
+#: src/pages/New.tsx:253
 msgid "Stored on this computer"
 msgstr "保存在这台电脑上"
 
@@ -1237,7 +1265,7 @@ msgstr "订阅"
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
-#: src/pages/New.tsx:438
+#: src/pages/New.tsx:441
 msgid "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
 msgstr "供应链分析和优化：成本降低，效率提高和利益相关者协作"
 
@@ -1254,19 +1282,23 @@ msgstr "目標欄"
 msgid "Target Delimiter"
 msgstr "目標分隔符"
 
-#: src/pages/New.tsx:246
+#: src/pages/New.tsx:248
 msgid "Temporary"
 msgstr "临时"
 
 #: src/components/MightLoseSponsorTrigger.tsx:21
-#: src/components/MightLoseWarning.tsx:15
+#: src/components/MightLoseWarning.tsx:17
 msgid "Temporary Flowchart Warning"
 msgstr "暂时流程图警告"
 
-#: src/pages/Charts.tsx:152
+#: src/pages/Charts.tsx:154
 #: src/pages/Pricing.tsx:54
 msgid "Temporary Flowcharts"
 msgstr "临时图表"
+
+#: src/pages/Charts.tsx:372
+msgid "Temporary Flowcharts are going away soon!"
+msgstr "暫時流程圖很快就會消失！"
 
 #: src/components/LearnSyntaxDialog.tsx:301
 msgid "Text Sizes"
@@ -1320,7 +1352,7 @@ msgstr "主题编辑器"
 msgid "There are no edges in this data"
 msgstr "此数据中没有边"
 
-#: src/pages/Charts.tsx:296
+#: src/pages/Charts.tsx:284
 msgid "This action cannot be undone."
 msgstr "此操作无法撤销。"
 
@@ -1328,7 +1360,7 @@ msgstr "此操作无法撤销。"
 msgid "This app works by typing"
 msgstr "这款应用的工作原理是输入"
 
-#: src/components/MightLoseWarning.tsx:22
+#: src/components/MightLoseWarning.tsx:24
 msgid "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!"
 msgstr "此文档仅保存在此计算机上。如果您想要一种存储文档并随时访问它们的方法，请尝试我们的Pro计划，每月只需3美元！"
 
@@ -1340,7 +1372,7 @@ msgstr "只有专业用户才能使用此功能。 <0>成为专业用户</0>解�
 msgid "This is a temporary chart, it will be deleted when you clear your browser cache."
 msgstr "这是一个临时图表，当您清除浏览器缓存时将被删除。"
 
-#: src/components/ShareDialog.tsx:523
+#: src/components/ShareDialog.tsx:525
 msgid "Tip"
 msgstr "提示"
 
@@ -1385,7 +1417,7 @@ msgstr "两个边有相同的ID"
 msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
-#: src/pages/New.tsx:207
+#: src/pages/New.tsx:209
 msgid "Type"
 msgstr "类型"
 
@@ -1421,7 +1453,7 @@ msgstr "上传您的文件"
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "使用AI從數據集或算法創建流程圖"
 
-#: src/pages/New.tsx:331
+#: src/pages/New.tsx:334
 msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
 msgstr "使用AI从提示中生成流程图。<0>了解更多</0>"
 
@@ -1445,11 +1477,11 @@ msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 msgid "Use the customer portal to change your billing information."
 msgstr "使用客户门户更改您的账单信息。"
 
-#: src/components/ShareDialog.tsx:461
+#: src/components/ShareDialog.tsx:463
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "使用此文件制作组织图、层次结构和其他组织结构。"
 
-#: src/components/ShareDialog.tsx:449
+#: src/components/ShareDialog.tsx:450
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "使用此文件进行顺序、流程和工作流程。"
 
@@ -1461,7 +1493,7 @@ msgstr "用户"
 msgid "View on Github"
 msgstr "在 Github 上查看"
 
-#: src/pages/New.tsx:444
+#: src/pages/New.tsx:447
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "水从地球表面蒸发，升入大气中，然后以降水形式回落。这些水然后流入河流，湖泊和海洋，在那里又蒸发，重新回到大气中循环。"
 
@@ -1481,7 +1513,7 @@ msgstr "您想继续吗？"
 msgid "Yearly"
 msgstr "每年"
 
-#: src/pages/New.tsx:201
+#: src/pages/New.tsx:203
 msgid "You already have a flowchart with this name."
 msgstr "您已有同名的图表。"
 
@@ -1493,7 +1525,7 @@ msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "您还可以将文本包装在\\n“\\( \\)”中以创建链接"
 
-#: src/pages/New.tsx:265
+#: src/pages/New.tsx:268
 msgid "You must log in to create a persistent flowchart."
 msgstr "您必须登录才能创建一个持久的流程图。"
 
@@ -1505,7 +1537,7 @@ msgstr "您需要登录才能访问此页面。"
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "您已经快完成了！只需要一步就可以解锁 <0>Flowchart Fun Pro</0> 的全部功能。请在下面输入您的付款详情来完成您的订阅，并今天开始创建令人惊叹的流程图。"
 
-#: src/pages/Charts.tsx:99
+#: src/pages/Charts.tsx:100
 msgid "Your Charts"
 msgstr "您的图表"
 

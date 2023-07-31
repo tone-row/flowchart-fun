@@ -6,6 +6,7 @@ import { GraphFloatingMenu } from "./GraphFloatingMenu";
 import styles from "./GraphWrapper.module.css";
 import Loading from "./Loading";
 import TextResizer from "./TextResizer";
+import classNames from "classnames";
 
 export default function GraphWrapper({
   children,
@@ -32,7 +33,10 @@ export default function GraphWrapper({
         ) : (
           <Box
             template={"minmax(0, 1fr) / minmax(0, 1fr)"}
-            className={styles.GraphWrapperInner}
+            className={classNames(
+              styles.GraphWrapperInner,
+              "border dark:border-neutral-600 border-solid"
+            )}
           >
             {children}
             <GraphFloatingMenu />
