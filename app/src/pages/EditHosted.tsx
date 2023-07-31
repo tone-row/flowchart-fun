@@ -26,6 +26,7 @@ import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
 import EditStyleTab from "../components/Tabs/EditStyleTab";
+import { useIsProUser } from "../lib/hooks";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
@@ -66,6 +67,7 @@ export default function EditHosted() {
 
   const url = useLocation().pathname;
   useTrackLastChart(url);
+  const isProUser = useIsProUser();
 
   const selectedTab = useTabsStore((s) => s.selectedTab);
   useEffect(() => {
