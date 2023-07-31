@@ -1,15 +1,12 @@
 import { Trans } from "@lingui/macro";
 import * as Tabs from "@radix-ui/react-tabs";
 
-import { useIsProUser } from "../../lib/hooks";
 import styles from "./EditorTabList.module.css";
 
 const btnDark =
   "dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-800";
 
 export function EditorTabList() {
-  const isProUser = useIsProUser();
-
   return (
     <Tabs.List className="grid grid-flow-col gap-2 border-b border-neutral-300 dark:border-neutral-600 pt-2 px-5 pb-0 justify-start">
       <Tabs.Trigger
@@ -39,17 +36,6 @@ export function EditorTabList() {
           <Trans>Style</Trans>
         </span>
       </Tabs.Trigger>
-      {isProUser && (
-        <Tabs.Trigger
-          value="Advanced"
-          data-testid="Editor Tab: Advanced"
-          className={`${styles.btn} ${btnDark}`}
-        >
-          <span className="text-sm">
-            <Trans>Advanced</Trans>
-          </span>
-        </Tabs.Trigger>
-      )}
     </Tabs.List>
   );
 }
