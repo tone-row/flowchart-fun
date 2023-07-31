@@ -16,7 +16,7 @@ export default function Blog() {
   return (
     <>
       <Helmet>
-        <title>Flowchart Fun - Blog</title>
+        <title>Flowchart Fun Blog</title>
         <meta
           name="description"
           content="Documenting the process of developing Flowchart Fun"
