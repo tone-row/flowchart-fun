@@ -28,7 +28,7 @@ import { Warning } from "../components/Warning";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { slugify, titleToLocalStorageKey } from "../lib/helpers";
-import { useIsProUser, useIsValidCustomer } from "../lib/hooks";
+import { useIsProUser } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
 import { Button2, Page } from "../ui/Shared";
@@ -36,7 +36,7 @@ import { PageTitle } from "../ui/Typography";
 
 export default function M() {
   const { customerIsLoading, session, checkedSession } = useContext(AppContext);
-  const validCustomer = useIsValidCustomer();
+  const isProUser = useIsProUser();
   const { graphText = window.location.hash.slice(1) } = useParams<{
     graphText: string;
   }>();
@@ -64,7 +64,7 @@ export default function M() {
       customerIsLoading={customerIsLoading}
       session={session}
       checkedSession={checkedSession}
-      validCustomer={validCustomer}
+      isProUser={isProUser}
       templateText={templateText}
     />
   );
@@ -74,13 +74,13 @@ const New = memo(function New({
   customerIsLoading,
   session,
   checkedSession,
-  validCustomer,
+  isProUser,
   templateText,
 }: {
   customerIsLoading: boolean;
   session: Session | null;
   checkedSession: boolean;
-  validCustomer: boolean;
+  isProUser: boolean;
   templateText: string | null;
 }) {
   const defaultDoc = getDefaultChart();
@@ -93,7 +93,7 @@ const New = memo(function New({
     getFunFlowchartName(language as keyof typeof languages)
   );
   const [type, setType] = useState<"regular" | "local">(
-    validCustomer ? "regular" : "local"
+    isProUser ? "regular" : "local"
   );
   const [start, setStart] = useState<"blank" | "prompt">("blank");
 
@@ -112,16 +112,14 @@ const New = memo(function New({
   const safeName = slugify(name.trim());
   const showWarning = isTemporaryType;
 
-  const tryingToCreateRegular = type === "regular" && !validCustomer;
+  const tryingToCreatePermanent = type === "regular" && !isProUser;
   const alreadyUsedName =
     type === "local" &&
     !!safeName &&
     !!window.localStorage.getItem(titleToLocalStorageKey(safeName));
-  const createDisabled = !name || tryingToCreateRegular || alreadyUsedName;
+  const createDisabled = !name || tryingToCreatePermanent || alreadyUsedName;
 
   const [parent] = useAutoAnimate();
-
-  const isProUser = useIsProUser();
 
   return (
     <Page>
@@ -262,12 +260,17 @@ const New = memo(function New({
               </div>
             </RadioGroup.Root>
           </div>
-          {tryingToCreateRegular && (
+          {tryingToCreatePermanent && (
             <div className="justify-items-center grid">
               <Warning>
-                <Trans>You must log in to create a persistent flowchart.</Trans>{" "}
-                <Link className="underline" to="/l">
-                  <Trans>Log In</Trans>
+                <Link to="/pricing">
+                  <Trans>
+                    You can create unlimited permanent flowcharts with{" "}
+                    <span className="underline underline-offset-2">
+                      Flowchart Fun Pro
+                    </span>
+                    .
+                  </Trans>
                 </Link>
               </Warning>
             </div>
