@@ -28,9 +28,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (!("properties" in post)) throw new Error("No properties");
   const { properties = {}, id } = post;
   const { date, ...props } = getNestedProperties(properties);
-  let publishDate = niceDate(date);
+  const publishDate = niceDate(date);
 
   const htmlContent = await getPostHtmlFromId(id);
+
+  // cache
+  res.setHeader("Cache-Control", "s-maxage=1, stale-while-revalidate");
 
   res.json({ id, htmlContent, publishDate, ...props });
 }
