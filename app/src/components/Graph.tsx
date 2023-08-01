@@ -173,6 +173,14 @@ function useInitializeGraph({
       const cyCurrent = cy.current;
       const errorCyCurrent = cyErrorCatcher.current;
 
+      // Turn on grid guide
+      // @ts-ignore
+      cy.current.gridGuide({
+        snapToGridDuringDrag: true,
+        gridSpacing: 10,
+        resize: true,
+      });
+
       // Hover Events
       const handleMouseOut = () => {
         cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
