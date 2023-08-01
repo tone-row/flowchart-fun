@@ -22,12 +22,17 @@ export const useProcessStyleStore = create<{
   styleImports: string[];
   fontData: CSSProperties;
   variables: Record<string, string>;
+  /**
+   * Dynamic Classes that can be added to childless nodes, found in stylesheet
+   */
+  dynamicClassesChildless: string[];
 }>()(
   devtools(
     (_set) => ({
       styleImports: [],
       fontData: {},
       variables: {},
+      dynamicClassesChildless: [],
     }),
     {
       name: "useStyleImports",
@@ -51,6 +56,15 @@ export function preprocessCytoscapeStyle(style: string) {
     match = style.match(importRegex);
   }
 
+  const dynamicClassRegex = /:childless\.(?<class>[a-zA-Z][\w-]*_[\w-]+)/gm;
+  const dynamicClassesChildless = [];
+  let dynamicClassMatch = dynamicClassRegex.exec(style);
+  while (dynamicClassMatch) {
+    if (dynamicClassMatch.groups?.class)
+      dynamicClassesChildless.push(dynamicClassMatch.groups?.class);
+    dynamicClassMatch = dynamicClassRegex.exec(style);
+  }
+
   // add the imports to the store
   useProcessStyleStore.setState({ styleImports: imports });
 
@@ -61,7 +75,11 @@ export function preprocessCytoscapeStyle(style: string) {
   const { updatedScss, variables } = processScss(style);
 
   // set font data
-  useProcessStyleStore.setState({ fontData, variables });
+  useProcessStyleStore.setState({
+    fontData,
+    variables,
+    dynamicClassesChildless,
+  });
 
   return { style: updatedScss, imports, variables };
 }
