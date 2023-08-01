@@ -22,12 +22,27 @@ export const useProcessStyleStore = create<{
   styleImports: string[];
   fontData: CSSProperties;
   variables: Record<string, string>;
+  /**
+   * Dynamic Classes that can be added to childless nodes, found in stylesheet
+   */
+  dynamicClassesChildless: string[];
+  /**
+   * Dyanmic classes for edges
+   */
+  dynamicClassesEdges: string[];
+  /**
+   * Dynamic classes for parent nodes
+   */
+  dynamicClassesParent: string[];
 }>()(
   devtools(
     (_set) => ({
       styleImports: [],
       fontData: {},
       variables: {},
+      dynamicClassesChildless: [],
+      dynamicClassesEdges: [],
+      dynamicClassesParent: [],
     }),
     {
       name: "useStyleImports",
@@ -51,6 +66,33 @@ export function preprocessCytoscapeStyle(style: string) {
     match = style.match(importRegex);
   }
 
+  const dynamicClassRegex = /^:childless\.(?<class>[a-zA-Z][\w-]*_[\w-]+)/gm;
+  const dynamicClassesChildless = [];
+  let dynamicClassMatch = dynamicClassRegex.exec(style);
+  while (dynamicClassMatch) {
+    if (dynamicClassMatch.groups?.class)
+      dynamicClassesChildless.push(dynamicClassMatch.groups?.class);
+    dynamicClassMatch = dynamicClassRegex.exec(style);
+  }
+
+  const dynamicClassRegexEdges = /^edge\.(?<class>[a-zA-Z][\w-]*_[\w-]+)/gm;
+  const dynamicClassesEdges = [];
+  let dynamicClassMatchEdges = dynamicClassRegexEdges.exec(style);
+  while (dynamicClassMatchEdges) {
+    if (dynamicClassMatchEdges.groups?.class)
+      dynamicClassesEdges.push(dynamicClassMatchEdges.groups?.class);
+    dynamicClassMatchEdges = dynamicClassRegexEdges.exec(style);
+  }
+
+  const dynamicClassRegexParent = /^:parent\.(?<class>[a-zA-Z][\w-]*_[\w-]+)/gm;
+  const dynamicClassesParent = [];
+  let dynamicClassMatchParent = dynamicClassRegexParent.exec(style);
+  while (dynamicClassMatchParent) {
+    if (dynamicClassMatchParent.groups?.class)
+      dynamicClassesParent.push(dynamicClassMatchParent.groups?.class);
+    dynamicClassMatchParent = dynamicClassRegexParent.exec(style);
+  }
+
   // add the imports to the store
   useProcessStyleStore.setState({ styleImports: imports });
 
@@ -61,7 +103,13 @@ export function preprocessCytoscapeStyle(style: string) {
   const { updatedScss, variables } = processScss(style);
 
   // set font data
-  useProcessStyleStore.setState({ fontData, variables });
+  useProcessStyleStore.setState({
+    fontData,
+    variables,
+    dynamicClassesChildless,
+    dynamicClassesEdges,
+    dynamicClassesParent,
+  });
 
   return { style: updatedScss, imports, variables };
 }
