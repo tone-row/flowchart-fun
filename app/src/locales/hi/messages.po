@@ -61,7 +61,7 @@ msgstr "के बारे में"
 msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
 msgstr "इन चार्ट्स को कहीं से भी एक्सेस करें।<0/>सिंक्रोनाइज़्ड रहने वाले फ्लोचार्ट को साझा करें और एम्बेड करें।"
 
-#: src/pages/New.tsx:240
+#: src/pages/New.tsx:238
 msgid "Accessible from any device"
 msgstr "किसी भी उपकरण से पहुँचा जा सकता है"
 
@@ -74,10 +74,6 @@ msgstr "खाता"
 #: src/components/PaymentStepper.tsx:188
 msgid "Activate your account"
 msgstr "अपना खाता सक्रिय करें"
-
-#: src/components/Tabs/EditorTabList.tsx:49
-msgid "Advanced"
-msgstr "विकसित"
 
 #: src/pages/Account.tsx:284
 msgid "Amount"
@@ -120,17 +116,17 @@ msgstr "गिटहब स्पॉन्सर बनें"
 msgid "Become a Pro User"
 msgstr "प्रो उपयोगकर्ता बनें"
 
-#: src/pages/New.tsx:325
+#: src/pages/New.tsx:328
 msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
 msgstr "<0>फ्लोचार्ट फन</0> काम कैसे करता है इसके लिए एक आसान उदाहरण से शुरू करें।"
 
-#: src/pages/New.tsx:289
+#: src/pages/New.tsx:292
 msgid "Blank"
 msgstr "खाली"
 
 #: src/components/Header.tsx:153
 #: src/components/Header.tsx:375
-#: src/pages/Blog.tsx:19
+#: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "ब्लॉग"
 
@@ -176,7 +172,7 @@ msgstr "ईमेल पता बदलें"
 
 #: src/components/Header.tsx:163
 #: src/components/Header.tsx:381
-#: src/pages/Changelog.tsx:17
+#: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "बदलाव का"
 
@@ -327,11 +323,11 @@ msgstr "अपना मर्मेड.जेएस कोड कॉपी क�
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं"
 
-#: src/pages/New.tsx:312
+#: src/pages/New.tsx:315
 msgid "Create New Flowchart"
 msgstr "नया फ्लोचार्ट बनाएं"
 
-#: src/pages/New.tsx:183
+#: src/pages/New.tsx:181
 msgid "Create a New Flowchart"
 msgstr "एक नया आरेख बनाएँ"
 
@@ -368,11 +364,11 @@ msgstr "डार्क मोड"
 msgid "Date"
 msgstr "तारीख़"
 
-#: src/pages/New.tsx:256
+#: src/pages/New.tsx:254
 msgid "Deleted when browser data is cleared"
 msgstr "ब्राउज़र डेटा साफ़ होने पर हटा दिया गया"
 
-#: src/pages/New.tsx:518
+#: src/pages/New.tsx:521
 msgid "Describe the flowchart you wish to create"
 msgstr "उस आरेख का वर्णन करें जिसे आप बनाना चाहते हैं"
 
@@ -392,7 +388,7 @@ msgstr "क्या आप अपनी सदस्यता रद्द क�
 msgid "Do you want to delete this?"
 msgstr "क्या आप इसे डिलीट करना चाहते हैं?"
 
-#: src/components/Tabs/EditorTabList.tsx:21
+#: src/components/Tabs/EditorTabList.tsx:18
 msgid "Document"
 msgstr "दस्तावेज़"
 
@@ -533,7 +529,7 @@ msgstr "नीचे अपना ईमेल पता दर्ज करे�
 msgid "Equal To"
 msgstr "बराबर"
 
-#: src/pages/New.tsx:443
+#: src/pages/New.tsx:446
 msgid "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
 msgstr "निबंध लेखन प्रक्रिया फ्लोचार्ट, छात्रों को ब्रैनस्टॉर्मिंग, आउटलाइनिंग, ड्राफ्टिंग और संशोधन चरणों में मार्गदर्शित करना।"
 
@@ -564,7 +560,7 @@ msgstr "SVG को निर्यात करें"
 msgid "Extra Large"
 msgstr "अति बड़ा"
 
-#: src/pages/New.tsx:522
+#: src/pages/New.tsx:525
 msgid "Extract"
 msgstr "निकालना"
 
@@ -606,7 +602,7 @@ msgstr "ज़्यादा लेआउट पाएं"
 msgid "Get personalized attention and support from our expert team"
 msgstr "हमारे विशेषज्ञ टीम से व्यक्तिगत ध्यान और समर्थन प्राप्त करें"
 
-#: src/pages/New.tsx:279
+#: src/pages/New.tsx:282
 msgid "Getting Started"
 msgstr "शुरू करना"
 
@@ -711,7 +707,7 @@ msgstr "इंडेंटिंग एक बढ़त बनाता है"
 msgid "Info"
 msgstr "जानकारी"
 
-#: src/pages/New.tsx:517
+#: src/pages/New.tsx:520
 msgid "Instruct"
 msgstr "हिदायत"
 
@@ -728,7 +724,7 @@ msgid "Large"
 msgstr "बड़ा"
 
 #: src/components/Tabs/EditLayoutTab.tsx:73
-#: src/components/Tabs/EditorTabList.tsx:30
+#: src/components/Tabs/EditorTabList.tsx:27
 msgid "Layout"
 msgstr "ख़ाका"
 
@@ -798,7 +794,6 @@ msgstr "ग्राफ पर जूम लॉक करें"
 
 #: src/components/Header.tsx:203
 #: src/components/Header.tsx:424
-#: src/pages/New.tsx:270
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -826,7 +821,7 @@ msgstr "उसी ईमेल का उपयोग करें जिसे 
 msgid "Map Data"
 msgstr "डेटा मैप"
 
-#: src/pages/New.tsx:437
+#: src/pages/New.tsx:440
 msgid "Market understanding and competitive landscape maintenance for SaaS product development"
 msgstr "SaaS उत्पाद विकास के लिए बाजार की समझ और प्रतिस्पर्धात्मक भूमिका बनाए रखना।"
 
@@ -834,7 +829,7 @@ msgstr "SaaS उत्पाद विकास के लिए बाजार
 msgid "Medium"
 msgstr "मध्यम"
 
-#: src/pages/New.tsx:506
+#: src/pages/New.tsx:509
 msgid "Method"
 msgstr "विधि"
 
@@ -858,7 +853,7 @@ msgstr "एक ही लाइन पर कई प्रतीक"
 msgid "Museum"
 msgstr "म्यूज़ियम"
 
-#: src/pages/New.tsx:187
+#: src/pages/New.tsx:185
 msgid "Name"
 msgstr "नाम"
 
@@ -956,7 +951,7 @@ msgstr "संगठन चार्ट"
 msgid "Password"
 msgstr "पासवर्ड"
 
-#: src/pages/New.tsx:523
+#: src/pages/New.tsx:526
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "उस जानकारी को पेस्ट करें जिसे आप फ़्लोचार्ट में बदलना चाहते हैं"
 
@@ -964,7 +959,7 @@ msgstr "उस जानकारी को पेस्ट करें जि�
 msgid "Permalinks"
 msgstr "Permalinks"
 
-#: src/pages/New.tsx:223
+#: src/pages/New.tsx:221
 msgid "Permanent"
 msgstr "स्थायी"
 
@@ -997,7 +992,7 @@ msgstr "मूल्य निर्धारण"
 msgid "Privacy Policy"
 msgstr "गोपनीयता नीति "
 
-#: src/pages/New.tsx:439
+#: src/pages/New.tsx:442
 msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
 msgstr "कंपनी की सार्वजनिक दायित्व परियोजनाओं के विकास और लागू करने की प्रक्रिया।"
 
@@ -1005,7 +1000,7 @@ msgstr "कंपनी की सार्वजनिक दायित्व
 msgid "Processing Data"
 msgstr "डेटा प्रसंस्करण"
 
-#: src/pages/New.tsx:294
+#: src/pages/New.tsx:297
 msgid "Prompt"
 msgstr "प्रॉम्प्ट"
 
@@ -1112,7 +1107,7 @@ msgstr "दाएं से बाएं"
 
 #: src/components/Header.tsx:170
 #: src/components/Header.tsx:387
-#: src/pages/Roadmap.tsx:16
+#: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "रोडमैप"
 
@@ -1228,11 +1223,11 @@ msgstr "स्टेटस"
 msgid "Store any data associated to a node"
 msgstr "किसी नोड से संबंधित किसी भी डेटा स्टोर करें"
 
-#: src/pages/New.tsx:232
+#: src/pages/New.tsx:230
 msgid "Stored in the cloud"
 msgstr "बादल में संग्रहित"
 
-#: src/pages/New.tsx:253
+#: src/pages/New.tsx:251
 msgid "Stored on this computer"
 msgstr "इस कंप्यूटर पर संग्रहीत"
 
@@ -1240,7 +1235,7 @@ msgstr "इस कंप्यूटर पर संग्रहीत"
 msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun. Subscribe now and take advantage of our powerful Pro features!"
 msgstr "फ्लोचार्ट फन के साथ अपनी व्यवस्था को स्ट्रीमलाइन करें और प्रक्रिया विजुअलाइजेशन को सरल बनाएं। अब सदस्यता लें और हमारे शक्तिशाली प्रो विशेषताओं का लाभ उठाएं!"
 
-#: src/components/Tabs/EditorTabList.tsx:39
+#: src/components/Tabs/EditorTabList.tsx:36
 msgid "Style"
 msgstr "शैली"
 
@@ -1265,7 +1260,7 @@ msgstr "सदस्यता"
 msgid "Subscription will end"
 msgstr "सदस्यता समाप्त हो जाएगी"
 
-#: src/pages/New.tsx:441
+#: src/pages/New.tsx:444
 msgid "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
 msgstr "आपूर्ति श्रृंखला विश्लेषण और अनुकूलन: लागत कमी, कार्यक्षमता में सुधार और स्टेकहोल्डर सहयोग।"
 
@@ -1282,7 +1277,7 @@ msgstr "लक्ष्य कॉलम"
 msgid "Target Delimiter"
 msgstr "लक्ष्य डेलीमीटर"
 
-#: src/pages/New.tsx:248
+#: src/pages/New.tsx:246
 msgid "Temporary"
 msgstr "अस्थायी"
 
@@ -1417,7 +1412,7 @@ msgstr "दो किनारे उसी आईडी के हैं"
 msgid "Two nodes have the same ID"
 msgstr "दो नोड उसी आईडी के हैं"
 
-#: src/pages/New.tsx:209
+#: src/pages/New.tsx:207
 msgid "Type"
 msgstr "प्रकार"
 
@@ -1453,7 +1448,7 @@ msgstr "अपनी फाइल अपलोड करें"
 msgid "Use AI to create flowcharts from data sets or algorithms"
 msgstr "डेटा सेट्स या एल्गोरिदम्स से फ्लोचार्ट बनाने के लिए एआई का उपयोग करें"
 
-#: src/pages/New.tsx:334
+#: src/pages/New.tsx:337
 msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
 msgstr "एक प्रॉम्प्ट से एक फ्लोचार्ट उत्पन्न करने के लिए AI का उपयोग करें। <0>और अधिक जानें</0>"
 
@@ -1493,7 +1488,7 @@ msgstr "यूज़र"
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/pages/New.tsx:447
+#: src/pages/New.tsx:450
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "पानी पृथ्वी के सतह से उष्णता होकर आत्मान में उठता है और वर्षा के रूप में फिर नीचे गिरता है। इस पानी को तब नदियों, तिब्बती तालों और महासागरों में जाता है, जहां यह फिर से उष्णता होता है और आत्मान में पुनर्स्थापित किया जाता है।"
 
@@ -1513,7 +1508,7 @@ msgstr "क्या आप जारी रखना चाहते हैं?
 msgid "Yearly"
 msgstr "वार्षिक"
 
-#: src/pages/New.tsx:203
+#: src/pages/New.tsx:201
 msgid "You already have a flowchart with this name."
 msgstr "आपके पास इस नाम का आरेख पहले से है।"
 
@@ -1525,9 +1520,9 @@ msgstr "आप अपने ग्राफ में {numNodes} नोड्स
 msgid "You can also wrap text in \"\\( \\)\" to create an edge"
 msgstr "किनारे बनाने के लिए आप टेक्स्ट को \"\\( \\)\" में भी रैप कर सकते हैं"
 
-#: src/pages/New.tsx:268
-msgid "You must log in to create a persistent flowchart."
-msgstr "आपको एक अविरल फ्लोचार्ट बनाने के लिए लॉग इन करना होगा।"
+#: src/pages/New.tsx:267
+msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
+msgstr "<0>Flowchart Fun Pro</0> के साथ आप असीमित स्थायी फ्लोचार्ट बना सकते हैं।"
 
 #: src/pages/LogIn.tsx:180
 msgid "You need to log in to access this page."

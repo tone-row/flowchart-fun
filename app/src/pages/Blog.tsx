@@ -2,6 +2,7 @@ import { t } from "@lingui/macro";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import { InfoHeader } from "../components/InfoHeader";
 import { Box } from "../slang";
@@ -13,21 +14,30 @@ export default function Blog() {
     suspense: true,
   });
   return (
-    <Page>
-      <Box gap={16} content="start normal">
-        <InfoHeader
-          title={t`Blog`}
-          description="Documenting the process of developing Flowchart Fun"
+    <>
+      <Helmet>
+        <title>Flowchart Fun Blog</title>
+        <meta
+          name="description"
+          content="Documenting the process of developing Flowchart Fun"
         />
-        {posts.data && (
-          <Box gap={8} className="posts">
-            {posts.data.map((post) => (
-              <Post key={post.id} post={post} />
-            ))}
-          </Box>
-        )}
-      </Box>
-    </Page>
+      </Helmet>
+      <Page>
+        <Box gap={16} content="start normal">
+          <InfoHeader
+            title={t`Blog`}
+            description="Documenting the process of developing Flowchart Fun"
+          />
+          {posts.data && (
+            <Box gap={8} className="posts">
+              {posts.data.map((post) => (
+                <Post key={post.id} post={post} />
+              ))}
+            </Box>
+          )}
+        </Box>
+      </Page>
+    </>
   );
 }
 
