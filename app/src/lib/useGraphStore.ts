@@ -10,6 +10,11 @@ type StoreGraph = {
   // related to the graph component
   /** Whether or not to fit the graph within bounds on render */
   autoFit: boolean;
+
+  /** View on the graph when auto-fit is false */
+  zoom?: number;
+  /** Pan on the graph when auto-fit is false */
+  pan?: cytoscape.Position;
 };
 
 /**

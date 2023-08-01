@@ -156,6 +156,7 @@ function useInitializeGraph({
   useEffect(() => {
     try {
       cyErrorCatcher.current = cytoscape();
+
       // const bg = (useDoc.getState().meta?.background as string) ?? original.bg;
       cy.current = cytoscape({
         container: document.getElementById("cy"), // container to render in
@@ -165,6 +166,8 @@ function useInitializeGraph({
         wheelSensitivity: 0.2,
         boxSelectionEnabled: true,
         // autoungrabify: true,
+        zoom: useGraphStore.getState().zoom,
+        pan: useGraphStore.getState().pan,
       });
       window.__cy = cy.current;
       const cyCurrent = cy.current;
@@ -220,6 +223,15 @@ function useInitializeGraph({
       // on zoom
       cyCurrent.on("scrollzoom", () => {
         useGraphStore.setState({ autoFit: false });
+      });
+
+      // whenever the viewport is changed at all
+      cyCurrent.on("viewport", (e) => {
+        if (!useGraphStore.getState().autoFit) {
+          const zoom = e.target.zoom();
+          const pan = e.target.pan();
+          useGraphStore.setState({ zoom, pan });
+        }
       });
 
       document

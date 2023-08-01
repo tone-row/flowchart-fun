@@ -8,6 +8,7 @@ import { Button2, Page, Section } from "../ui/Shared";
 import { PageTitle, SectionTitle } from "../ui/Typography";
 import { AppContext } from "./AppContext";
 import styles from "./Settings.module.css";
+import { DISCORD_URL } from "../lib/constants";
 
 const Settings = memo(() => {
   const { updateUserSettings, mode, language } = useContext(AppContext);
@@ -112,6 +113,12 @@ const Settings = memo(() => {
           </Trans>
         </p>
         <Section>
+          <a
+            href={DISCORD_URL}
+            className="text-xs opacity-60 hover:opacity-100"
+          >
+            Discord
+          </a>
           <a
             href="https://github.com/tone-row/flowchart-fun"
             className="text-xs opacity-60 hover:opacity-100"
