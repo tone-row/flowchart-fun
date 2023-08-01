@@ -99,9 +99,6 @@ test("Change Appearance", async ({ page }) => {
 });
 
 test("Submit Feedback", async ({ page }) => {
-  // click button with text "Help"
-  await page.locator('button:has-text("Help")').click();
-
   // click button with text "Feedback"
   await page.locator('a:has-text("Feedback")').first().click();
 
