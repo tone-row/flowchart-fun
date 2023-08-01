@@ -14,7 +14,6 @@ import {
   Notebook,
   PencilLine,
   Plus,
-  Question,
   Signpost,
   TreeStructure,
   User,
@@ -41,7 +40,6 @@ export const Header = memo(function SharedHeader() {
   const { pathname } = useLocation();
   const isSponsorPage = pathname === "/pricing";
   const isChartsPage = pathname === "/y";
-  const isHelpPage = pathname === "/h" || pathname === "/o";
   const isSettingsPage = pathname === "/s";
   const isAccountPage = pathname === "/a";
   const isFeedbackPage = pathname === "/o";
@@ -55,7 +53,7 @@ export const Header = memo(function SharedHeader() {
   const isEditor =
     !isSponsorPage &&
     !isChartsPage &&
-    !isHelpPage &&
+    !isFeedbackPage &&
     !isSettingsPage &&
     !isAccountPage &&
     !isInfoPage &&
@@ -99,39 +97,14 @@ export const Header = memo(function SharedHeader() {
                   aria-current={isChartsPage ? "page" : undefined}
                 />
               </NavigationMenu.Item>
-              <DropdownMenu.Root modal={false}>
-                <DropdownMenu.Trigger asChild>
-                  <HeaderButton
-                    label={t`Help`}
-                    aria-current={isHelpPage ? "page" : undefined}
-                    icon={<Question weight="light" height={22} width={22} />}
-                  />
-                </DropdownMenu.Trigger>
-                <DropdownMenu.Content
-                  align="start"
-                  className="shared-header__dropdown bg-neutral-50 shadow dark:bg-neutral-900"
-                >
-                  <DropdownMenu.Item asChild>
-                    <HeaderLink
-                      label="Discord"
-                      icon={
-                        <DiscordLogo weight="light" height={22} width={22} />
-                      }
-                      href={DISCORD_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    />
-                  </DropdownMenu.Item>
-                  <DropdownMenu.Item asChild>
-                    <HeaderClientLink
-                      label={t`Feedback`}
-                      icon={<Chat weight="light" height={22} width={22} />}
-                      aria-current={isFeedbackPage ? "page" : undefined}
-                      to="/o"
-                    />
-                  </DropdownMenu.Item>
-                </DropdownMenu.Content>
-              </DropdownMenu.Root>
+              <NavigationMenu.Item asChild>
+                <HeaderClientLink
+                  label={t`Feedback`}
+                  icon={<Chat weight="light" height={22} width={22} />}
+                  aria-current={isFeedbackPage ? "page" : undefined}
+                  to="/o"
+                />
+              </NavigationMenu.Item>
             </nav>
           </NavigationMenu.List>
           <NavigationMenu.List asChild>

@@ -38,7 +38,7 @@ export default function Feedback() {
     [send]
   );
   return (
-    <Page data-testid="feedback">
+    <Page data-testid="feedback" size="sm" className="gap-8">
       <header className="grid gap-4">
         <PageTitle className="text-center">
           <Trans>Feedback</Trans>
@@ -77,7 +77,7 @@ export default function Feedback() {
               data-testid="message"
             />
           </section>
-          <Button2 disabled={!isValid} color="blue">
+          <Button2 disabled={!isValid} color="blue" size="md">
             <Trans>Submit</Trans>
           </Button2>
           {error instanceof Error && (
