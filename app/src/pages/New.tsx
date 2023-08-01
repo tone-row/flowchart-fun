@@ -121,7 +121,6 @@ const New = memo(function New({
   const createDisabled = !name || tryingToCreatePermanent || alreadyUsedName;
 
   const [parent] = useAutoAnimate();
-  const isProUser = useIsProUser();
 
   return (
     <Page>
