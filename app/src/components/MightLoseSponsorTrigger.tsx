@@ -17,7 +17,7 @@ export function MightLoseSponsorTrigger() {
   if (!isLocal) return null;
   return (
     <Popover.Root>
-      <Popover.Trigger asChild>
+      <Popover.Trigger asChild data-testid="might-lose-sponsor-trigger">
         <IconButton2 aria-label={t`Temporary Flowchart Warning`}>
           <Warning size={16} />
         </IconButton2>

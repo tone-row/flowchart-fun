@@ -167,7 +167,7 @@ test("Convert chart to hosted from Might Lose Trigger", async () => {
   // Create a blank local chart
   await page.goto(`${BASE_URL}/my-new-chart`);
 
-  // Hover [data-testid="might-lose-sponsor-trigger"] then wait for the button to appear
+  // Click the might-lose trigger
   await page.getByTestId("might-lose-sponsor-trigger").click();
 
   // Make sure the input with the label Convert to hosted chart? is checked
