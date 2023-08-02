@@ -119,7 +119,7 @@ test("Publish Chart", async () => {
   await page.getByPlaceholder("Untitled").fill("my new chart");
   await page
     .getByRole("radio", {
-      name: "Persistent Stored in the cloud Accessible from any device",
+      name: "Permanent Stored in the cloud Accessible from any device",
     })
     .click();
 
