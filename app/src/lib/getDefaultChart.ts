@@ -1,4 +1,4 @@
-import { cytoscapeStyle } from "../lib/themes/original";
+import { cytoscapeStyle } from "../lib/themes/august2023";
 import { getDefaultText } from "./getDefaultText";
 
 const defaultMeta = {
