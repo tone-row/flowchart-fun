@@ -152,7 +152,7 @@ test("Publish Chart", async () => {
 
 test("Download SVG", async () => {
   // Create a blank local chart
-  await page.goto(`${BASE_URL}/download-svg`);
+  await page.goto(`${BASE_URL}/the-file-name`);
   await openExportDialog(page);
   // Click [aria-label="Download SVG"]
   const [download] = await Promise.all([
@@ -160,7 +160,7 @@ test("Download SVG", async () => {
     page.locator('[aria-label="Download SVG"]').click(),
   ]);
 
-  expect(download.suggestedFilename()).toBe("download-svg.svg");
+  expect(download.suggestedFilename()).toBe("the-file-name.svg");
 });
 
 test("Convert chart to hosted from Might Lose Trigger", async () => {
