@@ -7,6 +7,21 @@ import { Box } from "../slang";
 import { ReactComponent as BlockChain } from "./BlockChain.svg";
 import styles from "./Pricing.module.css";
 
+import { PostHogProvider } from "posthog-js/react";
+import posthog from "posthog-js";
+
+const posthogToken = process.env.REACT_APP_PUBLIC_POSTHOG_KEY;
+const posthogApiHost = process.env.REACT_APP_PUBLIC_POSTHOG_HOST;
+if (posthogToken && posthogApiHost) {
+  posthog.init(posthogToken, {
+    api_host: posthogApiHost,
+  });
+}
+
+const options = {
+  api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
+};
+
 const features = (): {
   title: string;
   points: string[];
@@ -77,7 +92,7 @@ const plans = () => [
   },
 ];
 
-export default function Pricing() {
+function Pricing() {
   return (
     <div className="grid content-start">
       <div className="grid md:grid-cols-2 gap-8 max-w-[1000px] mx-auto items-center mt-16 mb-6 md:mb-20 px-4">
@@ -134,6 +149,14 @@ export default function Pricing() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PricingProvider() {
+  return (
+    <PostHogProvider apiKey={posthogToken} options={options}>
+      <Pricing />
+    </PostHogProvider>
   );
 }
 
