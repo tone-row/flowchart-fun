@@ -17,6 +17,7 @@ import {
   Signpost,
   TreeStructure,
   User,
+  Lock,
 } from "phosphor-react";
 import {
   ButtonHTMLAttributes,
@@ -49,6 +50,7 @@ export const Header = memo(function SharedHeader() {
   const isRoadmapPage = pathname === "/roadmap";
   const isSignUpPage = pathname === "/i";
   const isNewPage = pathname === "/n";
+  const isPrivacyPolicyPage = pathname === "/privacy-policy";
   const isInfoPage = isBlogPage || isChangelogPage || isRoadmapPage;
   const isEditor =
     !isSponsorPage &&
@@ -124,6 +126,7 @@ export const Header = memo(function SharedHeader() {
                   <DropdownMenu.Item asChild>
                     <HeaderClientLink
                       label={t`Blog`}
+                      aria-current={isBlogPage ? "page" : undefined}
                       icon={
                         <PencilLine weight="light" height={22} width={22} />
                       }
@@ -134,6 +137,7 @@ export const Header = memo(function SharedHeader() {
                     <HeaderClientLink
                       to="/changelog"
                       label={t`Changelog`}
+                      aria-current={isChangelogPage ? "page" : undefined}
                       icon={<Notebook weight="light" height={22} width={22} />}
                     />
                   </DropdownMenu.Item>
@@ -141,7 +145,16 @@ export const Header = memo(function SharedHeader() {
                     <HeaderClientLink
                       to="/roadmap"
                       label={t`Roadmap`}
+                      aria-current={isRoadmapPage ? "page" : undefined}
                       icon={<Signpost weight="light" height={22} width={22} />}
+                    />
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item asChild>
+                    <HeaderClientLink
+                      to="/privacy-policy"
+                      label={t`Privacy Policy`}
+                      aria-current={isPrivacyPolicyPage ? "page" : undefined}
+                      icon={<Lock weight="light" height={22} width={22} />}
                     />
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
@@ -193,6 +206,7 @@ export const Header = memo(function SharedHeader() {
         isRoadmapPage={isRoadmapPage}
         isEditor={isEditor}
         isLogInPage={isLogInPage}
+        isPrivacyPolicyPage={isPrivacyPolicyPage}
       />
     </>
   );
@@ -270,6 +284,7 @@ function MobileHeader({
   isRoadmapPage,
   isEditor,
   isLogInPage,
+  isPrivacyPolicyPage,
 }: {
   isSponsorPage: boolean;
   isChartsPage: boolean;
@@ -281,6 +296,7 @@ function MobileHeader({
   isRoadmapPage: boolean;
   isEditor: boolean;
   isLogInPage: boolean;
+  isPrivacyPolicyPage: boolean;
 }) {
   const lastChart = useLastChart((s) => s.lastChart);
   const { pathname } = useLocation();
@@ -399,6 +415,13 @@ function MobileHeader({
                 aria-current={isLogInPage ? "page" : undefined}
               />
             )}
+            <HeaderClientLink
+              label={t`Privacy Policy`}
+              icon={<Lock weight="light" height={22} width={22} />}
+              aria-current={isPrivacyPolicyPage ? "page" : undefined}
+              className="mobile-only"
+              to="/privacy-policy"
+            />
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>

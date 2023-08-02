@@ -77,7 +77,13 @@ export async function prepareChart(doc: string, details: Details) {
 async function replaceThemeWithCytoscapeStyle(meta: Record<string, unknown>) {
   if (meta.cytoscapeStyle) return;
   const theme = (meta.theme as string) ?? "original";
-  const { cytoscapeStyle = "" } = await import(`../themes/${theme}`);
+  // if you can't find the old theme, then use the default
+  let cytoscapeStyle = "";
+  try {
+    cytoscapeStyle = (await import(`../themes/${theme}`)).cytoscapeStyle;
+  } catch (e) {
+    cytoscapeStyle = (await import(`../themes/original`)).cytoscapeStyle;
+  }
 
   // set the cytoscapeStyle and remove the theme
   if (cytoscapeStyle) {

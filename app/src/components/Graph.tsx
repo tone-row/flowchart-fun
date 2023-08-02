@@ -175,11 +175,12 @@ function useInitializeGraph({
 
       // Turn on grid guide
       // @ts-ignore
-      cy.current.gridGuide({
-        snapToGridDuringDrag: true,
-        gridSpacing: 10,
-        resize: true,
-      });
+      // cy.current.gridGuide({
+      //   snapToGridDuringDrag: true,
+      //   snapToGridOnRelease: false,
+      //   gridSpacing: 10,
+      //   resize: true,
+      // });
 
       // Hover Events
       const handleMouseOut = () => {

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 import { create } from "zustand";
 
-import { validThemes } from "../lib/graphOptions";
+import { themes } from "../lib/graphOptions";
 import { Button2 } from "../ui/Shared";
 
 export const usePreviewTheme = create<{ cytoscapeStyle?: string }>(
@@ -72,7 +72,7 @@ export function ThemePicker({
             </p>
           </div>
           <div className="grid overflow-auto">
-            {validThemes.map((theme) => (
+            {themes.map((theme) => (
               <button
                 key={theme.value}
                 className="text-left text-xs p-2 rounded w-full hover:bg-neutral-300 active:bg-neutral-300 dark:hover:bg-neutral-800 dark:active:bg-neutral-800 focus:bg-neutral-200 dark:focus:bg-neutral-800 focus:outline-none data-[active=true]:bg-neutral-400 dark:data-[active=true]:bg-neutral-700"

@@ -18,9 +18,6 @@ let email = "";
 
 let page: Page;
 
-// temporarily skip these tests, out of rapidapi quota
-test.skip(() => true, "Exceeded RapidAPI quota");
-
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
   await page.goto(BASE_URL);
@@ -122,7 +119,7 @@ test("Publish Chart", async () => {
   await page.getByPlaceholder("Untitled").fill("my new chart");
   await page
     .getByRole("radio", {
-      name: "Persistent Stored in the cloud Accessible from any device",
+      name: "Permanent Stored in the cloud Accessible from any device",
     })
     .click();
 
@@ -155,7 +152,7 @@ test("Publish Chart", async () => {
 
 test("Download SVG", async () => {
   // Create a blank local chart
-  await page.goto(`${BASE_URL}/download-svg`);
+  await page.goto(`${BASE_URL}/the-file-name`);
   await openExportDialog(page);
   // Click [aria-label="Download SVG"]
   const [download] = await Promise.all([
@@ -163,14 +160,14 @@ test("Download SVG", async () => {
     page.locator('[aria-label="Download SVG"]').click(),
   ]);
 
-  expect(download.suggestedFilename()).toBe("download-svg.svg");
+  expect(download.suggestedFilename()).toBe("the-file-name.svg");
 });
 
 test("Convert chart to hosted from Might Lose Trigger", async () => {
   // Create a blank local chart
   await page.goto(`${BASE_URL}/my-new-chart`);
 
-  // Hover [data-testid="might-lose-sponsor-trigger"] then wait for the button to appear
+  // Click the might-lose trigger
   await page.getByTestId("might-lose-sponsor-trigger").click();
 
   // Make sure the input with the label Convert to hosted chart? is checked

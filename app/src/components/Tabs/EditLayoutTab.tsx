@@ -87,12 +87,10 @@ export function EditLayoutTab() {
                 "EditLayoutTab/layout"
               );
             }}
-            options={layouts
-              .filter((l) => l?.sponsorOnly === undefined || isProUser)
-              .map((l) => ({
-                value: l.value,
-                label: l.label(),
-              }))}
+            options={layouts.map((l) => ({
+              value: l.value,
+              label: l.label(),
+            }))}
           />
         </OptionWithLabel>
         {["dagre"].includes(layoutName) && (
