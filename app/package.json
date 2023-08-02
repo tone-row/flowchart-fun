@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "1.39.2",
+  "version": "1.39.3",
   "main": "module/module.js",
   "license": "MIT",
   "scripts": {
@@ -64,6 +64,7 @@
     "cytoscape-cose-bilkent": "^4.1.0",
     "cytoscape-dagre": "^2.5.0",
     "cytoscape-elk": "^2.1.0",
+    "cytoscape-grid-guide": "^2.3.3",
     "cytoscape-klay": "^3.1.4",
     "cytoscape-svg": "^0.4.0",
     "date-fns": "^2.25.0",

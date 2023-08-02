@@ -1,8 +1,6 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-import { cytoscapeStyle as clayStyle } from "../themes/clay";
-import { cytoscapeStyle as eggsStyle } from "../themes/eggs";
 import { cytoscapeStyle as style } from "../themes/original";
 import { cytoscapeStyle as darkStyle } from "../themes/original-dark";
 import { initialDoc } from "../useDoc";
@@ -97,7 +95,7 @@ longer label text
         layout: {
           name: "cose",
         },
-        cytoscapeStyle: clayStyle,
+        cytoscapeStyle: darkStyle,
         nodePositions: {
           N14e: { x: 260.27143997679184, y: 182.9157088415619 },
           N14f: { x: 67.24466938513544, y: 237.52532493169429 },
@@ -121,7 +119,7 @@ longer label text
           name: "cose",
           rankDir: "BT",
         },
-        cytoscapeStyle: eggsStyle,
+        cytoscapeStyle: style,
       },
       details: initialDoc.details,
     });
@@ -152,7 +150,7 @@ longer label text
             },
           },
         ],
-        cytoscapeStyle: eggsStyle,
+        cytoscapeStyle: style,
       },
       text: `You can set all lines to be dashed
   B
@@ -177,7 +175,7 @@ longer label text
           name: "cose",
           rankDir: "BT",
         },
-        cytoscapeStyle: eggsStyle,
+        cytoscapeStyle: darkStyle,
       },
       details: initialDoc.details,
     });

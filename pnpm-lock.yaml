@@ -204,6 +204,9 @@ importers:
       cytoscape-elk:
         specifier: ^2.1.0
         version: 2.1.0(cytoscape@3.25.0)
+      cytoscape-grid-guide:
+        specifier: ^2.3.3
+        version: 2.3.3(cytoscape@3.25.0)
       cytoscape-klay:
         specifier: ^3.1.4
         version: 3.1.4(cytoscape@3.25.0)
@@ -8515,6 +8518,15 @@ packages:
       elkjs: 0.8.2
     dev: false
 
+  /cytoscape-grid-guide@2.3.3(cytoscape@3.25.0):
+    resolution: {integrity: sha512-7EuqZgOYJY+8K9a9Tm1aFydzyA0dvZ3OLQ8ACEEuE1VgxuGala82bHfyR7B5e8kLeOloX/r4YAPoK8mYkPYcFg==}
+    peerDependencies:
+      cytoscape: ^3.3.0
+    dependencies:
+      cytoscape: 3.25.0
+      functional-red-black-tree: 1.0.1
+    dev: false
+
   /cytoscape-klay@3.1.4(cytoscape@3.25.0):
     resolution: {integrity: sha512-VwPj0VR25GPfy6qXVQRi/MYlZM/zkdvRhHlgqbM//lSvstgM6fhp3ik/uM8Wr8nlhskfqz/M1fIDmR6UckbS2A==}
     peerDependencies:
@@ -10229,6 +10241,10 @@ packages:
       define-properties: 1.1.4
       es-abstract: 1.20.4
       functions-have-names: 1.2.3
+
+  /functional-red-black-tree@1.0.1:
+    resolution: {integrity: sha512-dsKNQNdj6xA3T+QlADDA7mOSlX0qiMINjn0cgr+eGHGsbSHzTabcIogz2+p/iqP1Xs6EP/sS2SbqH+brGTbq0g==}
+    dev: false
 
   /functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}

@@ -1,7 +1,7 @@
 ~~~
 layout:
   name: cose
-theme: clay
+theme: original-dark
 ~~~
 이 앱은 타이핑으로 작동합니다
   들여쓰기는 현재 줄에 대한 링크를 생성합니다

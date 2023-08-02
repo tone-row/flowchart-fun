@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import { Envelope, GithubLogo, GoogleLogo, Lock } from "phosphor-react";
+import { Envelope, GithubLogo, Lock } from "phosphor-react";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
@@ -16,6 +16,7 @@ import { AuthOtpResponse } from "@supabase/supabase-js";
 import { useLocation } from "react-router-dom";
 import { useIsLoggedIn } from "../lib/hooks";
 import { AppContext } from "../components/AppContext";
+import GoogleSVG from "../components/GoogleSVG";
 
 type Fields = {
   email: string;
@@ -106,7 +107,8 @@ export default function Login() {
       {newSignUp && <WelcomeMessage />}
       <PageTitle className="text-center mb-6">{t`Sign In`}</PageTitle>
       <Button2
-        leftIcon={<GoogleLogo size={24} />}
+        leftIcon={<GoogleSVG />}
+        className="!bg-white border-solid border border-neutral-400 py-0 !gap-1 hover:!bg-neutral-100 !text-black"
         onClick={() => {
           supabase?.auth.signInWithOAuth({
             provider: "google",

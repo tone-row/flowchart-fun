@@ -3,31 +3,21 @@ import "react-contexify/dist/ReactContexify.css";
 import { t, Trans } from "@lingui/macro";
 import { operate } from "graph-selector";
 import {
-  ArrowLeft,
-  ArrowRight,
   CircleDashed,
   Diamond,
-  FlowArrow,
   Graph,
-  LineSegment,
   Palette,
   TextT,
   X,
 } from "phosphor-react";
-import { CSSProperties, memo, ReactNode, useReducer } from "react";
+import { CSSProperties, memo, ReactNode, useMemo, useReducer } from "react";
 import { Item, Menu, Separator, Submenu } from "react-contexify";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import { tmpThemeColors } from "../lib/graphThemes";
-import {
-  borderStyles,
-  edgeLineStyles,
-  shapes,
-  sourceArrowSuffixes,
-  targetArrowSuffixes,
-} from "../lib/graphUtilityClasses";
+import { borderStyles, shapes } from "../lib/graphUtilityClasses";
 import { useDownloadFilename, useIsFirefox, useIsProUser } from "../lib/hooks";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
@@ -41,6 +31,7 @@ import {
   getSvg,
 } from "./downloads";
 import styles from "./GraphContextMenu.module.css";
+import { useProcessStyleStore } from "../lib/preprocessCytoscapeStyle";
 
 export const GRAPH_CONTEXT_MENU_ID = "graph-context-menu";
 
@@ -252,256 +243,13 @@ const sizes: {
 ];
 
 const borders = borderStyles.map((style) => style.selector.slice(5));
-const edges = edgeLineStyles.map((style) => style.selector.slice(5));
 
 function NodeSubmenu() {
   const active = useContextMenuState((state) => state.active);
-  const colors = tmpThemeColors;
-  const colorNames = Object.keys(colors);
-  const selected = useSelectedNodes();
-  const activeSelection = selected.length
-    ? selected.map((s) => {
-        const data = s.data();
-        return {
-          id: data.id,
-          lineNumber: data.lineNumber,
-          type: "node",
-        };
-      })
-    : [active];
-  if (!active || active.type !== "node") return null;
-  return (
-    <>
-      <Submenu
-        label={
-          <WithIcon icon={<Graph size={smallIconSize} />}>
-            <Trans>Node</Trans>
-          </WithIcon>
-        }
-      >
-        <Submenu
-          label={
-            <WithIcon icon={<Palette size={smallIconSize} />}>
-              <Trans>Color</Trans>
-            </WithIcon>
-          }
-          className={styles.GridSubmenu}
-        >
-          {Object.entries(colors).map(([name, value]) => (
-            <Item
-              key={name}
-              onClick={() => {
-                let newText = useDoc.getState().text;
-                for (const selection of activeSelection) {
-                  if (!selection) continue;
-                  newText = operate(newText, {
-                    lineNumber: selection.lineNumber,
-                    operation: [
-                      "removeClassesFromNode",
-                      { classNames: colorNames },
-                    ],
-                  });
-                  newText = operate(newText, {
-                    lineNumber: selection.lineNumber,
-                    operation: ["addClassesToNode", { classNames: [name] }],
-                  });
-                }
-                useDoc.setState({ text: newText }, false, "NodeSubmenu/color");
-              }}
-            >
-              <Box
-                style={{ backgroundColor: value }}
-                className={styles.ColorSquare}
-              />
-            </Item>
-          ))}
-          <Item
-            key="remove-all"
-            onClick={() => {
-              let newText = useDoc.getState().text;
-              for (const selection of activeSelection) {
-                if (!selection) continue;
-                newText = operate(newText, {
-                  lineNumber: selection.lineNumber,
-                  operation: [
-                    "removeClassesFromNode",
-                    { classNames: colorNames },
-                  ],
-                });
-              }
-              useDoc.setState(
-                { text: newText },
-                false,
-                "NodeSubmenu/color/removeAll"
-              );
-            }}
-          >
-            <Box className={styles.SquareButton}>
-              <X size={32} />
-            </Box>
-          </Item>
-        </Submenu>
-        <Submenu
-          label={
-            <WithIcon icon={<Diamond size={smallIconSize} />}>
-              <Trans>Shape</Trans>
-            </WithIcon>
-          }
-          className={styles.GridSubmenu}
-        >
-          {(shapes as string[]).map((shape, index) => (
-            <Item
-              key={shape}
-              onClick={() => {
-                let newText = useDoc.getState().text;
-                for (const selection of activeSelection) {
-                  if (!selection) continue;
-                  newText = operate(newText, {
-                    lineNumber: selection.lineNumber,
-                    operation: [
-                      "removeClassesFromNode",
-                      { classNames: shapes as string[] },
-                    ],
-                  });
-                  newText = operate(newText, {
-                    lineNumber: selection.lineNumber,
-                    operation: ["addClassesToNode", { classNames: [shape] }],
-                  });
-                }
-                useDoc.setState({ text: newText }, false, "NodeSubmenu/shape");
-              }}
-            >
-              <Box
-                className={styles.ShapeSquare}
-                style={
-                  {
-                    "--row": Math.floor(index / 3),
-                    "--col": index % 3,
-                  } as CSSProperties
-                }
-              />
-            </Item>
-          ))}
-          <Item
-            key="remove-all"
-            onClick={() => {
-              let newText = useDoc.getState().text;
-              for (const selection of activeSelection) {
-                if (!selection) continue;
-                newText = operate(newText, {
-                  lineNumber: selection.lineNumber,
-                  operation: [
-                    "removeClassesFromNode",
-                    { classNames: shapes as string[] },
-                  ],
-                });
-              }
-              useDoc.setState(
-                { text: newText },
-                false,
-                "NodeSubmenu/shape/removeAll"
-              );
-            }}
-          >
-            <Box className={styles.SquareButton}>
-              <X size={32} />
-            </Box>
-          </Item>
-        </Submenu>
-        <Submenu
-          label={
-            <WithIcon icon={<TextT size={smallIconSize} />}>
-              <Trans>Size</Trans>
-            </WithIcon>
-          }
-        >
-          {sizes.map(({ label, className, size }, index) => (
-            <Item
-              key={index}
-              onClick={() => {
-                let newText = useDoc.getState().text;
-                for (const selection of activeSelection) {
-                  if (!selection) continue;
-                  newText = operate(newText, {
-                    lineNumber: selection.lineNumber,
-                    operation: [
-                      "removeClassesFromNode",
-                      {
-                        classNames: sizes
-                          .map((s) => s.className)
-                          .filter((c): c is string => {
-                            return !!c;
-                          }),
-                      },
-                    ],
-                  });
-                  if (className)
-                    newText = operate(newText, {
-                      lineNumber: selection.lineNumber,
-                      operation: [
-                        "addClassesToNode",
-                        { classNames: [className] },
-                      ],
-                    });
-                }
-                useDoc.setState({ text: newText }, false, "NodeSubmenu/size");
-              }}
-            >
-              <span className={`text-${["sm", "md", "lg", "xl"][size + 1]}`}>
-                {label}
-              </span>
-            </Item>
-          ))}
-        </Submenu>
-        <Submenu
-          label={
-            <WithIcon icon={<CircleDashed size={smallIconSize} />}>
-              <Trans>Border</Trans>
-            </WithIcon>
-          }
-        >
-          {borders.map((className) => (
-            <Item
-              key={className}
-              onClick={() => {
-                let newText = useDoc.getState().text;
-                for (const selection of activeSelection) {
-                  if (!selection) continue;
-                  newText = operate(newText, {
-                    lineNumber: selection.lineNumber,
-                    operation: [
-                      "removeClassesFromNode",
-                      { classNames: borders },
-                    ],
-                  });
-                  // If the border is solid, we want to remove all borders
-                  if (className !== "border-solid")
-                    newText = operate(newText, {
-                      lineNumber: selection.lineNumber,
-                      operation: [
-                        "addClassesToNode",
-                        { classNames: [className] },
-                      ],
-                    });
-                }
-                useDoc.setState({ text: newText }, false, "NodeSubmenu/border");
-              }}
-            >
-              <span
-                className={styles.BorderItem}
-                style={{
-                  borderStyle: className.slice(7),
-                  borderColor:
-                    className === "border-none" ? "transparent" : undefined,
-                }}
-              />
-            </Item>
-          ))}
-        </Submenu>
-      </Submenu>
-      <Separator />
-    </>
-  );
+  // make sure cy node is not parent
+  const isParent = window.__cy?.$(`#${active?.id}`)?.isParent();
+  if (isParent) return <ParentSubmenu />;
+  return <ChildlessSubmenu />;
 }
 
 function useSelectedNodes() {
@@ -538,138 +286,441 @@ function EdgeSubmenu() {
           type: "node",
         };
       })
-    : [active];
-  if (!active || active.type !== "edge") return null;
+    : active
+    ? [active]
+    : [];
+  const dynamicClassesEdges = useProcessStyleStore(
+    (state) => state.dynamicClassesEdges
+  );
+  const dynamicClasses = useMemo<Record<
+    string,
+    Record<string, string>
+  > | null>(() => {
+    return convertDynamicClasses(dynamicClassesEdges);
+  }, [dynamicClassesEdges]);
+  if (!active || active.type !== "edge" || !dynamicClasses) return null;
   return (
-    <>
+    <DynamicClassesMenu
+      dynamicClasses={dynamicClasses}
+      activeSelection={activeSelection}
+      type="edge"
+    />
+  );
+}
+
+/**
+ * This is the node selector from before dynamic classes were added.
+ */
+export function LegacyNodeSelect({
+  activeSelection,
+}: {
+  activeSelection: { id: any; lineNumber: any; type: string }[];
+}) {
+  const colors = tmpThemeColors;
+  const colorNames = Object.keys(colors);
+  return (
+    <Submenu
+      label={
+        <WithIcon icon={<Graph size={smallIconSize} />}>
+          <Trans>Node</Trans>
+        </WithIcon>
+      }
+    >
       <Submenu
         label={
-          <WithIcon icon={<FlowArrow size={smallIconSize} />}>
-            <Trans>Edge</Trans>
+          <WithIcon icon={<Palette size={smallIconSize} />}>
+            <Trans>Color</Trans>
+          </WithIcon>
+        }
+        className={styles.GridSubmenu}
+      >
+        {Object.entries(colors).map(([name, value]) => (
+          <Item
+            key={name}
+            onClick={() => {
+              let newText = useDoc.getState().text;
+              for (const selection of activeSelection) {
+                if (!selection) continue;
+                newText = operate(newText, {
+                  lineNumber: selection.lineNumber,
+                  operation: [
+                    "removeClassesFromNode",
+                    { classNames: colorNames },
+                  ],
+                });
+                newText = operate(newText, {
+                  lineNumber: selection.lineNumber,
+                  operation: ["addClassesToNode", { classNames: [name] }],
+                });
+              }
+              useDoc.setState({ text: newText }, false, "NodeSubmenu/color");
+            }}
+          >
+            <Box
+              style={{ backgroundColor: value }}
+              className={styles.ColorSquare}
+            />
+          </Item>
+        ))}
+        <Item
+          key="remove-all"
+          onClick={() => {
+            let newText = useDoc.getState().text;
+            for (const selection of activeSelection) {
+              if (!selection) continue;
+              newText = operate(newText, {
+                lineNumber: selection.lineNumber,
+                operation: [
+                  "removeClassesFromNode",
+                  { classNames: colorNames },
+                ],
+              });
+            }
+            useDoc.setState(
+              { text: newText },
+              false,
+              "NodeSubmenu/color/removeAll"
+            );
+          }}
+        >
+          <Box className={styles.SquareButton}>
+            <X size={32} />
+          </Box>
+        </Item>
+      </Submenu>
+      <Submenu
+        label={
+          <WithIcon icon={<Diamond size={smallIconSize} />}>
+            <Trans>Shape</Trans>
+          </WithIcon>
+        }
+        className={styles.GridSubmenu}
+      >
+        {(shapes as string[]).map((shape, index) => (
+          <Item
+            key={shape}
+            onClick={() => {
+              let newText = useDoc.getState().text;
+              for (const selection of activeSelection) {
+                if (!selection) continue;
+                newText = operate(newText, {
+                  lineNumber: selection.lineNumber,
+                  operation: [
+                    "removeClassesFromNode",
+                    { classNames: shapes as string[] },
+                  ],
+                });
+                newText = operate(newText, {
+                  lineNumber: selection.lineNumber,
+                  operation: ["addClassesToNode", { classNames: [shape] }],
+                });
+              }
+              useDoc.setState({ text: newText }, false, "NodeSubmenu/shape");
+            }}
+          >
+            <Box
+              className={styles.ShapeSquare}
+              style={
+                {
+                  "--row": Math.floor(index / 3),
+                  "--col": index % 3,
+                } as CSSProperties
+              }
+            />
+          </Item>
+        ))}
+        <Item
+          key="remove-all"
+          onClick={() => {
+            let newText = useDoc.getState().text;
+            for (const selection of activeSelection) {
+              if (!selection) continue;
+              newText = operate(newText, {
+                lineNumber: selection.lineNumber,
+                operation: [
+                  "removeClassesFromNode",
+                  { classNames: shapes as string[] },
+                ],
+              });
+            }
+            useDoc.setState(
+              { text: newText },
+              false,
+              "NodeSubmenu/shape/removeAll"
+            );
+          }}
+        >
+          <Box className={styles.SquareButton}>
+            <X size={32} />
+          </Box>
+        </Item>
+      </Submenu>
+      <Submenu
+        label={
+          <WithIcon icon={<TextT size={smallIconSize} />}>
+            <Trans>Size</Trans>
           </WithIcon>
         }
       >
+        {sizes.map(({ label, className, size }, index) => (
+          <Item
+            key={index}
+            onClick={() => {
+              let newText = useDoc.getState().text;
+              for (const selection of activeSelection) {
+                if (!selection) continue;
+                newText = operate(newText, {
+                  lineNumber: selection.lineNumber,
+                  operation: [
+                    "removeClassesFromNode",
+                    {
+                      classNames: sizes
+                        .map((s) => s.className)
+                        .filter((c): c is string => {
+                          return !!c;
+                        }),
+                    },
+                  ],
+                });
+                if (className)
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: [
+                      "addClassesToNode",
+                      { classNames: [className] },
+                    ],
+                  });
+              }
+              useDoc.setState({ text: newText }, false, "NodeSubmenu/size");
+            }}
+          >
+            <span className={`text-${["sm", "md", "lg", "xl"][size + 1]}`}>
+              {label}
+            </span>
+          </Item>
+        ))}
+      </Submenu>
+      <Submenu
+        label={
+          <WithIcon icon={<CircleDashed size={smallIconSize} />}>
+            <Trans>Border</Trans>
+          </WithIcon>
+        }
+      >
+        {borders.map((className) => (
+          <Item
+            key={className}
+            onClick={() => {
+              let newText = useDoc.getState().text;
+              for (const selection of activeSelection) {
+                if (!selection) continue;
+                newText = operate(newText, {
+                  lineNumber: selection.lineNumber,
+                  operation: ["removeClassesFromNode", { classNames: borders }],
+                });
+                // If the border is solid, we want to remove all borders
+                if (className !== "border-solid")
+                  newText = operate(newText, {
+                    lineNumber: selection.lineNumber,
+                    operation: [
+                      "addClassesToNode",
+                      { classNames: [className] },
+                    ],
+                  });
+              }
+              useDoc.setState({ text: newText }, false, "NodeSubmenu/border");
+            }}
+          >
+            <span
+              className={styles.BorderItem}
+              style={{
+                borderStyle: className.slice(7),
+                borderColor:
+                  className === "border-none" ? "transparent" : undefined,
+              }}
+            />
+          </Item>
+        ))}
+      </Submenu>
+    </Submenu>
+  );
+}
+
+function convertDynamicClasses(dynamicClassesChildless: string[]) {
+  if (!dynamicClassesChildless || !dynamicClassesChildless.length) return null;
+  let classes: Record<string, Record<string, string>> = {};
+
+  for (const className of dynamicClassesChildless) {
+    const [name, option] = className.split("_");
+    if (!classes[name]) classes[name] = {};
+    classes[name][option] = className;
+  }
+
+  return classes;
+}
+
+function DynamicClassesMenu({
+  dynamicClasses,
+  activeSelection,
+  type,
+}: {
+  dynamicClasses: Record<string, Record<string, string>>;
+  activeSelection: { id: any; lineNumber: any; type: string }[];
+  type: "node" | "edge";
+}) {
+  return (
+    <>
+      {Object.entries(dynamicClasses).map(([name, options]) => (
         <Submenu
+          key={name}
           label={
-            <WithIcon icon={<LineSegment size={smallIconSize} />}>
-              <Trans>Border</Trans>
-            </WithIcon>
+            <span className="text-sm capitalize">
+              {name.replace(/-/g, " ")}
+            </span>
           }
         >
-          {edges.map((className) => (
+          {Object.entries(options).map(([option, className]) => (
             <Item
               key={className}
               onClick={() => {
                 let newText = useDoc.getState().text;
                 for (const selection of activeSelection) {
                   if (!selection) continue;
-                  newText = operate(newText, {
-                    lineNumber: selection.lineNumber,
-                    operation: ["removeClassesFromEdge", { classNames: edges }],
-                  });
-                  // If the border is solid, we want to remove all borders
-                  if (className !== "solid")
-                    newText = operate(newText, {
-                      lineNumber: selection.lineNumber,
-                      operation: [
-                        "addClassesToEdge",
-                        { classNames: [className] },
-                      ],
-                    });
-                }
-                useDoc.setState({ text: newText }, false, "EdgeSubmenu/border");
-              }}
-            >
-              <span
-                className={styles.EdgeItem}
-                style={{
-                  borderStyle: className,
-                  borderColor:
-                    className === "border-none" ? "transparent" : undefined,
-                }}
-              />
-            </Item>
-          ))}
-        </Submenu>
-        <Submenu
-          label={
-            <WithIcon icon={<ArrowLeft size={smallIconSize} />}>
-              <Trans>Source Arrow</Trans>
-            </WithIcon>
-          }
-        >
-          {sourceArrowSuffixes.map((suffix) => (
-            <Item
-              key={suffix}
-              onClick={() => {
-                let newText = useDoc.getState().text;
-                for (const selection of activeSelection) {
-                  if (!selection) continue;
+
+                  // get classnames to remove
+                  const classNamesToRemove = Object.values(options).filter(
+                    (c) => c !== className
+                  );
+
                   newText = operate(newText, {
                     lineNumber: selection.lineNumber,
                     operation: [
-                      "removeClassesFromEdge",
-                      { classNames: sourceArrowSuffixes },
+                      type === "node"
+                        ? "removeClassesFromNode"
+                        : "removeClassesFromEdge",
+                      { classNames: classNamesToRemove },
                     ],
                   });
                   newText = operate(newText, {
                     lineNumber: selection.lineNumber,
-                    operation: ["addClassesToEdge", { classNames: [suffix] }],
+                    operation: [
+                      type === "node" ? "addClassesToNode" : "addClassesToEdge",
+                      { classNames: [className] },
+                    ],
                   });
                 }
                 useDoc.setState(
                   { text: newText },
                   false,
-                  "EdgeSubmenu/sourceArrow"
+                  "NodeSubmenu/dynamic"
                 );
               }}
             >
-              <span className="text-sm capitalize">
-                {suffix.slice(7).replace(/-/g, " ")}
-              </span>
+              <span className="text-sm capitalize">{option}</span>
             </Item>
           ))}
+          {/** Item to remove all */}
+          <Item
+            onClick={() => {
+              let newText = useDoc.getState().text;
+              for (const selection of activeSelection) {
+                if (!selection) continue;
+                newText = operate(newText, {
+                  lineNumber: selection.lineNumber,
+                  operation: [
+                    type === "node"
+                      ? "removeClassesFromNode"
+                      : "removeClassesFromEdge",
+                    { classNames: Object.values(options) },
+                  ],
+                });
+              }
+              useDoc.setState({ text: newText }, false, "NodeSubmenu/dynamic");
+            }}
+          >
+            <X size={smallIconSize} className="mx-auto" />
+          </Item>
         </Submenu>
-        <Submenu
-          label={
-            <WithIcon icon={<ArrowRight size={smallIconSize} />}>
-              <Trans>Target Arrow</Trans>
-            </WithIcon>
-          }
-        >
-          {targetArrowSuffixes.map((suffix) => (
-            <Item
-              key={suffix}
-              onClick={() => {
-                let newText = useDoc.getState().text;
-                for (const selection of activeSelection) {
-                  if (!selection) continue;
-                  newText = operate(newText, {
-                    lineNumber: selection.lineNumber,
-                    operation: [
-                      "removeClassesFromEdge",
-                      { classNames: targetArrowSuffixes },
-                    ],
-                  });
-                  newText = operate(newText, {
-                    lineNumber: selection.lineNumber,
-                    operation: ["addClassesToEdge", { classNames: [suffix] }],
-                  });
-                }
-                useDoc.setState(
-                  { text: newText },
-                  false,
-                  "EdgeSubmenu/targetArrow"
-                );
-              }}
-            >
-              <span className="text-sm capitalize">
-                {suffix.slice(7).replace(/-/g, " ")}
-              </span>
-            </Item>
-          ))}
-        </Submenu>
-      </Submenu>
+      ))}
+    </>
+  );
+}
+
+function ChildlessSubmenu() {
+  const active = useContextMenuState((state) => state.active);
+  const selected = useSelectedNodes();
+  const activeSelection = selected.length
+    ? selected.map((s) => {
+        const data = s.data();
+        return {
+          id: data.id,
+          lineNumber: data.lineNumber,
+          type: "node",
+        };
+      })
+    : active
+    ? [active]
+    : [];
+  const dynamicClassesChildless = useProcessStyleStore(
+    (state) => state.dynamicClassesChildless
+  );
+  /** Read classes into a format we can build a submenu out of */
+  const dynamicClasses = useMemo<Record<
+    string,
+    Record<string, string>
+  > | null>(() => {
+    return convertDynamicClasses(dynamicClassesChildless);
+  }, [dynamicClassesChildless]);
+  if (!active || active.type !== "node") return null;
+  return (
+    <>
+      {dynamicClasses ? (
+        <DynamicClassesMenu
+          dynamicClasses={dynamicClasses}
+          activeSelection={activeSelection}
+          type="node"
+        />
+      ) : (
+        <LegacyNodeSelect activeSelection={activeSelection} />
+      )}
+      <Separator />
+    </>
+  );
+}
+
+function ParentSubmenu() {
+  const active = useContextMenuState((state) => state.active);
+  const selected = useSelectedNodes();
+  const activeSelection = selected.length
+    ? selected.map((s) => {
+        const data = s.data();
+        return {
+          id: data.id,
+          lineNumber: data.lineNumber,
+          type: "node",
+        };
+      })
+    : active
+    ? [active]
+    : [];
+  const dynamicClassesParent = useProcessStyleStore(
+    (state) => state.dynamicClassesParent
+  );
+  /** Read classes into a format we can build a submenu out of */
+  const dynamicClasses = useMemo<Record<
+    string,
+    Record<string, string>
+  > | null>(() => {
+    return convertDynamicClasses(dynamicClassesParent);
+  }, [dynamicClassesParent]);
+  if (!active || active.type !== "node" || !dynamicClasses) return null;
+  return (
+    <>
+      <DynamicClassesMenu
+        dynamicClasses={dynamicClasses}
+        activeSelection={activeSelection}
+        type="node"
+      />
       <Separator />
     </>
   );
