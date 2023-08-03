@@ -13,13 +13,21 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/PaymentStepper.tsx:104
+#: src/components/PaymentStepper.tsx:97
 msgid "$3 per month"
 msgstr "每月3美元"
 
-#: src/components/PaymentStepper.tsx:112
+#: src/components/PaymentStepper.tsx:106
 msgid "$30 per year"
 msgstr "每年30美元"
+
+#: src/pages/Pricing.tsx:63
+msgid "1 Temporary Flowchart"
+msgstr "1 临时流程图"
+
+#: src/components/PaymentStepper.tsx:110
+msgid "2 Months Free"
+msgstr "2 个月免费"
 
 #: src/pages/Charts.tsx:376
 msgid "<0><1>Click here</1></0> to migrate your temporary flowcharts to permanent charts."
@@ -33,7 +41,7 @@ msgstr "<0>点击下面的按钮将所有临时流程图迁移到托管图表。
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0>是由<1>Tone Row</1>制作的开源项目"
 
-#: src/pages/LogIn.tsx:275
+#: src/pages/LogIn.tsx:277
 msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
 msgstr "<0>登录</0> / <1>注册</1> 使用电子邮件和密码"
 
@@ -61,13 +69,13 @@ msgstr "从任何地方访问这些图表。<0/>共享并嵌入保持同步的�
 msgid "Accessible from any device"
 msgstr "可从任何设备访问"
 
-#: src/components/Header.tsx:168
-#: src/components/Header.tsx:389
+#: src/components/Header.tsx:181
+#: src/components/Header.tsx:405
 #: src/pages/Account.tsx:112
 msgid "Account"
 msgstr "帐户"
 
-#: src/components/PaymentStepper.tsx:188
+#: src/components/PaymentStepper.tsx:178
 msgid "Activate your account"
 msgstr "激活您的账户"
 
@@ -91,10 +99,9 @@ msgstr "应用样式"
 msgid "Attributes"
 msgstr "属性"
 
-#: src/pages/Pricing.tsx:56
-#: src/pages/Pricing.tsx:70
-msgid "Auto-Layouts"
-msgstr "自动布局"
+#: src/lib/graphOptions.ts:45
+msgid "August 2023"
+msgstr "2023 年 8 月"
 
 #: src/components/Feedback.tsx:109
 msgid "Back To Editor"
@@ -116,6 +123,10 @@ msgstr "成为专业用户"
 msgid "Begin Typing"
 msgstr "开始输入"
 
+#: src/pages/Pricing.tsx:38
+msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
+msgstr "以客戶服務流程圖為例，Flowchart Fun將為您創建一個流程圖！"
+
 #: src/pages/New.tsx:328
 msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
 msgstr "以一个简单的例子开始来展示<0>流程图的乐趣</0>是如何工作的。"
@@ -124,8 +135,8 @@ msgstr "以一个简单的例子开始来展示<0>流程图的乐趣</0>是如�
 msgid "Blank"
 msgstr "空白"
 
-#: src/components/Header.tsx:126
-#: src/components/Header.tsx:348
+#: src/components/Header.tsx:128
+#: src/components/Header.tsx:364
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "博客"
@@ -138,12 +149,12 @@ msgstr "预订会议"
 msgid "Border"
 msgstr "边框"
 
-#: src/lib/graphOptions.ts:36
-#: src/lib/graphOptions.ts:43
+#: src/lib/graphOptions.ts:34
+#: src/lib/graphOptions.ts:41
 msgid "Bottom to Top"
 msgstr "从下到上"
 
-#: src/lib/graphOptions.ts:18
+#: src/lib/graphOptions.ts:16
 msgid "Breadthfirst"
 msgstr "宽度优先"
 
@@ -169,22 +180,22 @@ msgstr "某些属性可用于自定义元素的外观或功能。"
 msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
-#: src/components/Header.tsx:136
-#: src/components/Header.tsx:354
+#: src/components/Header.tsx:139
+#: src/components/Header.tsx:370
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "变更日志"
 
-#: src/components/Header.tsx:94
-#: src/components/Header.tsx:326
+#: src/components/Header.tsx:96
+#: src/components/Header.tsx:342
 msgid "Charts"
 msgstr "图表"
 
-#: src/pages/LogIn.tsx:84
+#: src/pages/LogIn.tsx:85
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/pages/LogIn.tsx:273
+#: src/pages/LogIn.tsx:275
 msgid "Choose"
 msgstr "選擇"
 
@@ -196,21 +207,13 @@ msgstr "选择一个主题"
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "为边缘的源和目标选择各种箭头形状。形状包括三角形，三角形-T，圆形-三角形，三角形-十字，三角形-后曲线，V形，T形，正方形，圆形，菱形，雪花形，无。"
 
-#: src/components/PaymentStepper.tsx:94
-msgid "Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro"
-msgstr "选择适合您的计划，开始使用Flowchart Fun Pro创建出色的流程图。"
-
-#: src/lib/graphOptions.ts:21
+#: src/lib/graphOptions.ts:19
 msgid "Circle"
 msgstr "圆圈"
 
 #: src/components/LearnSyntaxDialog.tsx:135
 msgid "Classes"
 msgstr "类"
-
-#: src/lib/graphOptions.ts:56
-msgid "Clay"
-msgstr "粘土"
 
 #: src/components/ClearTextButton.tsx:35
 msgid "Clear"
@@ -244,15 +247,11 @@ msgstr "颜色包括红色，橙色，黄色，蓝色，紫色，黑色，白色
 msgid "Column"
 msgstr "列"
 
-#: src/lib/graphOptions.ts:55
-msgid "Comic Book"
-msgstr "漫画书"
-
 #: src/components/Feedback.tsx:72
 msgid "Comment"
 msgstr "评论"
 
-#: src/lib/graphOptions.ts:20
+#: src/lib/graphOptions.ts:18
 msgid "Concentric"
 msgstr "同心"
 
@@ -260,8 +259,8 @@ msgstr "同心"
 msgid "Confirm New Email"
 msgstr "确认新电子邮件"
 
-#: src/pages/LogIn.tsx:234
-#: src/pages/LogIn.tsx:234
+#: src/pages/LogIn.tsx:236
+#: src/pages/LogIn.tsx:236
 msgid "Confirm your email address to sign in."
 msgstr "確認您的電子郵件地址以登入。"
 
@@ -278,8 +277,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 
 #: src/components/ImportDataDialog.tsx:732
-#: src/components/PaymentStepper.tsx:128
-#: src/components/PaymentStepper.tsx:175
+#: src/components/PaymentStepper.tsx:122
+#: src/components/PaymentStepper.tsx:165
 msgid "Continue"
 msgstr "继续"
 
@@ -317,8 +316,7 @@ msgstr "复制 SVG 代码"
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。"
 
-#: src/pages/Pricing.tsx:24
-#: src/pages/Pricing.tsx:73
+#: src/pages/Pricing.tsx:78
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "使用 AI 根据提示创建图表"
 
@@ -330,15 +328,19 @@ msgstr "创建新流程图"
 msgid "Create a New Flowchart"
 msgstr "创建新图表"
 
-#: src/pages/Pricing.tsx:42
-msgid "Create professional-quality visual aids for presentations or training materials"
-msgstr "创建专业质量的演示文稿或培训材料"
+#: src/pages/Pricing.tsx:104
+msgid "Create unlimited diagrams for just $3/month!"
+msgstr "仅需每月 3 美元，即可创建无限数量的图表！"
+
+#: src/pages/Pricing.tsx:36
+msgid "Create with AI"
+msgstr "由人工智能创建"
 
 #: src/components/LearnSyntaxDialog.tsx:158
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "在两个节点之间创建边缘是通过将第二个节点缩进第一个节点来完成的"
 
-#: src/pages/Pricing.tsx:72
+#: src/pages/Pricing.tsx:77
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
@@ -350,7 +352,7 @@ msgstr "客户门户"
 msgid "Customize your theme by editing the <0>Cytoscape CSS</0> below. Our styling documentation is coming soon! In the meantime, the best resource is the <1>Cytoscape</1> documentation. Come ask questions in the <2>Discord</2> if you get stuck."
 msgstr "通过编辑<0>Cytoscape CSS</0>来自定义主题，我们的样式文档即将推出！与此同时，最好的资源是<1>Cytoscape</1>文档。如果你遇到困难，可以在<2>Discord</2>上提问。"
 
-#: src/lib/graphOptions.ts:48
+#: src/lib/graphOptions.ts:47
 msgid "Dark"
 msgstr "深色"
 
@@ -358,6 +360,10 @@ msgstr "深色"
 #: src/components/Settings.tsx:99
 msgid "Dark Mode"
 msgstr "深色模式"
+
+#: src/pages/Pricing.tsx:76
+msgid "Data Import"
+msgstr "数据导入"
 
 #: src/pages/Account.tsx:281
 msgid "Date"
@@ -371,7 +377,11 @@ msgstr "清除浏览器数据时删除"
 msgid "Describe the flowchart you wish to create"
 msgstr "描述您要创建的图表"
 
-#: src/components/Tabs/EditLayoutTab.tsx:99
+#: src/pages/Pricing.tsx:43
+msgid "Direct from your Data"
+msgstr "直接从您的数据"
+
+#: src/components/Tabs/EditLayoutTab.tsx:97
 msgid "Direction"
 msgstr "方向"
 
@@ -412,6 +422,10 @@ msgstr "下载 SVG"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "将CSV文件拖放到此处，或单击以选择文件"
 
+#: src/pages/Pricing.tsx:143
+msgid "Drag-and-drop can be a drag"
+msgstr "拖放可能会很麻烦"
+
 #: src/components/LearnSyntaxDialog.tsx:239
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "通过引用开始行从多个节点绘制边缘"
@@ -419,10 +433,6 @@ msgstr "通过引用开始行从多个节点绘制边缘"
 #: src/components/ImportDataDialog.tsx:246
 msgid "Drop the file here ..."
 msgstr "將檔案拖放到這裡..."
-
-#: src/pages/Pricing.tsx:18
-msgid "Easily import existing flowcharts from other software"
-msgstr "轻松从其他软件导入现有流程图"
 
 #: src/components/LearnSyntaxDialog.tsx:179
 msgid "Edge ID, Classes, Attributes"
@@ -486,21 +496,17 @@ msgstr "边在目标节点行"
 msgid "Editable"
 msgstr "可编辑"
 
-#: src/components/Header.tsx:86
-#: src/components/Header.tsx:314
+#: src/components/Header.tsx:88
+#: src/components/Header.tsx:330
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "编辑器"
 
-#: src/lib/graphOptions.ts:49
-msgid "Eggs"
-msgstr "蛋"
-
 #: src/components/Feedback.tsx:62
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
-#: src/pages/LogIn.tsx:147
-#: src/pages/LogIn.tsx:296
+#: src/pages/LogIn.tsx:149
+#: src/pages/LogIn.tsx:298
 msgid "Email"
 msgstr "电子邮件"
 
@@ -508,11 +514,11 @@ msgstr "电子邮件"
 msgid "Empty"
 msgstr "空"
 
-#: src/components/PaymentStepper.tsx:148
+#: src/components/PaymentStepper.tsx:140
 msgid "Enter your email"
 msgstr "请输入您的电子邮件"
 
-#: src/pages/LogIn.tsx:140
+#: src/pages/LogIn.tsx:142
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "輸入您的電子郵件地址，我們將發送給您一個魔法鏈接以登入。"
 
@@ -528,11 +534,7 @@ msgstr "等于"
 msgid "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
 msgstr "文章写作流程流程图，指导学生进行头脑风暴，大纲制定，起草和修改阶段"
 
-#: src/pages/Pricing.tsx:64
-msgid "Everything in Free"
-msgstr "免费计划中的一切"
-
-#: src/lib/graphOptions.ts:50
+#: src/lib/graphOptions.ts:48
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
@@ -542,14 +544,9 @@ msgstr "Excalidraw"
 msgid "Export"
 msgstr "导出"
 
-#: src/pages/Pricing.tsx:40
-#: src/pages/Pricing.tsx:67
-msgid "Export High-Resolution Images"
-msgstr "导出高分辨率图像"
-
-#: src/pages/Pricing.tsx:68
-msgid "Export to SVG"
-msgstr "导出为SVG"
+#: src/pages/Pricing.tsx:52
+msgid "Export professional-quality flowcharts without watermarks to use in your presentations and documents"
+msgstr "导出无水印的专业质量流程图，用于您的演示文稿和文档"
 
 #: src/components/GraphContextMenu.tsx:239
 msgid "Extra Large"
@@ -560,16 +557,20 @@ msgid "Extract"
 msgstr "提取"
 
 #: src/components/Feedback.tsx:44
-#: src/components/Header.tsx:102
-#: src/components/Header.tsx:340
+#: src/components/Header.tsx:104
+#: src/components/Header.tsx:356
 msgid "Feedback"
 msgstr "反馈"
+
+#: src/pages/Pricing.tsx:31
+msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
+msgstr "Flowchart Fun Pro允许您创建、存储和分发任意数量的流程图。"
 
 #: src/components/Settings.tsx:132
 msgid "Follow Us on Twitter"
 msgstr "在Twitter上关注我们"
 
-#: src/pages/LogIn.tsx:336
+#: src/pages/LogIn.tsx:338
 msgid "Forgot your password?"
 msgstr "忘記密碼了？"
 
@@ -577,7 +578,7 @@ msgstr "忘記密碼了？"
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "如果发现了一个 bug？有功能请求？我们很乐意听到您的意见！"
 
-#: src/pages/Pricing.tsx:51
+#: src/pages/Pricing.tsx:60
 msgid "Free"
 msgstr "免费"
 
@@ -585,17 +586,9 @@ msgstr "免费"
 msgid "Fullscreen"
 msgstr "全屏"
 
-#: src/lib/graphOptions.ts:54
-msgid "Futuristic"
-msgstr "未来主义的"
-
-#: src/components/Tabs/EditLayoutTab.tsx:199
+#: src/components/Tabs/EditLayoutTab.tsx:197
 msgid "Get More Layouts"
 msgstr "获取更多布局"
-
-#: src/pages/Pricing.tsx:34
-msgid "Get personalized attention and support from our expert team"
-msgstr "从我们的专家团队获得个性化的关注和支持"
 
 #: src/pages/New.tsx:282
 msgid "Getting Started"
@@ -605,12 +598,11 @@ msgstr "开始"
 msgid "Graph"
 msgstr "图表"
 
-#: src/lib/graphOptions.ts:23
+#: src/lib/graphOptions.ts:21
 msgid "Grid"
 msgstr "网格"
 
 #: src/pages/Account.tsx:129
-#: src/pages/Pricing.tsx:35
 msgid "Have complex questions or issues? We're here to help."
 msgstr "有复杂的问题或问题吗？我们在这里帮助你。"
 
@@ -642,10 +634,6 @@ msgstr "如果您喜欢使用<0>Flowchart Fun</0>，请考虑支持该项目"
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "如果你想创建一个边，缩进这一行。如果不，用反斜杠转义冒号<0>\\:</0>"
 
-#: src/pages/Pricing.tsx:55
-msgid "Image Export"
-msgstr "图像导出"
-
 #: src/components/LearnSyntaxDialog.tsx:380
 msgid "Images"
 msgstr "图像"
@@ -665,11 +653,6 @@ msgstr "从CSV文件导入数据。"
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "從任何CSV檔案匯入資料並將其映射到新的流程圖。這是從Lucidchart、Google Sheets和Visio等其他來源匯入資料的一個很棒的方法。"
 
-#: src/pages/Pricing.tsx:16
-#: src/pages/Pricing.tsx:69
-msgid "Import from Lucidchart, Visio, and other CSV files"
-msgstr "從Lucidchart、Visio和其他CSV檔案匯入"
-
 #: src/components/ShareDialog.tsx:433
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
@@ -682,15 +665,11 @@ msgstr "流程图乐趣将迎来重要变化。"
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "匯入資料是專業功能。您可以每月以3美元或每年30美元升級至Flowchart Fun Pro。"
 
-#: src/pages/Pricing.tsx:43
-msgid "Impress your audience with high-quality images produced by Flowchart Fun"
-msgstr "用Flowchart Fun生成的高质量图片给你的听众留下深刻印象"
-
 #: src/components/ShareDialog.tsx:468
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
-#: src/components/Header.tsx:115
+#: src/components/Header.tsx:117
 msgid "Info"
 msgstr "信息"
 
@@ -720,7 +699,7 @@ msgstr "布局"
 msgid "Layout Frozen"
 msgstr "布局已冻结"
 
-#: src/components/Tabs/EditLayoutTab.tsx:211
+#: src/components/Tabs/EditLayoutTab.tsx:209
 msgid "Layout is Frozen"
 msgstr "布局被冻结"
 
@@ -743,16 +722,16 @@ msgstr "學習語法"
 msgid "Learn about Flowchart Fun Pro"
 msgstr "了解关于Flowchart Fun Pro"
 
-#: src/lib/graphOptions.ts:34
-#: src/lib/graphOptions.ts:41
+#: src/lib/graphOptions.ts:32
+#: src/lib/graphOptions.ts:39
 msgid "Left to Right"
 msgstr "从左到右"
 
-#: src/components/PaymentStepper.tsx:150
+#: src/components/PaymentStepper.tsx:142
 msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
 msgstr "让我们开始吧！在下面输入您的电子邮件地址，创建您的Flowchart Fun帐户，开始使用我们强大的功能。"
 
-#: src/lib/graphOptions.ts:47
+#: src/lib/graphOptions.ts:46
 msgid "Light"
 msgstr "浅色"
 
@@ -779,8 +758,8 @@ msgstr "加载主题将擦除您应用的任何自定义样式"
 msgid "Lock Zoom to Graph"
 msgstr "锁定缩放到图表"
 
-#: src/components/Header.tsx:176
-#: src/components/Header.tsx:397
+#: src/components/Header.tsx:189
+#: src/components/Header.tsx:413
 msgid "Log In"
 msgstr "登录"
 
@@ -800,7 +779,7 @@ msgstr "进行一次性捐赠"
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
-#: src/components/PaymentStepper.tsx:157
+#: src/components/PaymentStepper.tsx:147
 msgid "Make sure you use the same email you will use to log in."
 msgstr "確保您使用的是與登錄時相同的電子郵件。"
 
@@ -824,11 +803,7 @@ msgstr "方法"
 msgid "Migrate Flowcharts"
 msgstr "迁移流程图"
 
-#: src/lib/graphOptions.ts:51
-msgid "Monospace"
-msgstr "Monospace"
-
-#: src/components/PaymentStepper.tsx:103
+#: src/components/PaymentStepper.tsx:96
 msgid "Monthly"
 msgstr "每月"
 
@@ -836,16 +811,12 @@ msgstr "每月"
 msgid "Multiple pointers on same line"
 msgstr "同一行上的多个指针"
 
-#: src/lib/graphOptions.ts:58
-msgid "Museum"
-msgstr "博物馆"
-
 #: src/pages/New.tsx:185
 msgid "Name"
 msgstr "姓名"
 
-#: src/components/Header.tsx:77
-#: src/components/Header.tsx:320
+#: src/components/Header.tsx:79
+#: src/components/Header.tsx:336
 #: src/pages/Charts.tsx:107
 msgid "New"
 msgstr "新"
@@ -862,6 +833,14 @@ msgstr "下次扣费"
 #: src/components/ImportDataDialog.tsx:418
 msgid "No Edges"
 msgstr "沒有邊緣"
+
+#: src/pages/Pricing.tsx:75
+msgid "No Watermark!"
+msgstr "无水印！"
+
+#: src/pages/Pricing.tsx:50
+msgid "No Watermarks"
+msgstr "无水印"
 
 #: src/lib/getDefaultText.ts:8
 msgid "No: Option B"
@@ -912,23 +891,18 @@ msgstr "不为空"
 msgid "Now erase the text and try it yourself!"
 msgstr "现在擦除文本，自己试一试！"
 
-#: src/pages/Pricing.tsx:75
+#: src/pages/Pricing.tsx:80
 msgid "Office Hours"
 msgstr "工作时间"
 
-#: src/pages/LogIn.tsx:92
+#: src/pages/LogIn.tsx:93
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "偶尔，魔法链接会被放入您的垃圾邮件文件夹。如果几分钟后仍然没有收到，请检查垃圾邮件文件夹，或者重新请求新的链接。"
 
 #: src/pages/Account.tsx:126
-#: src/pages/Pricing.tsx:32
-#: src/pages/Pricing.tsx:74
+#: src/pages/Pricing.tsx:79
 msgid "One-on-One Support"
 msgstr "一对一支持"
-
-#: src/pages/Pricing.tsx:57
-msgid "One-time Share Links"
-msgstr "一次性分享链接"
 
 #: src/pages/Charts.tsx:156
 msgid "Only available on this device.<0/>Clearing your browser cache will erase them."
@@ -942,17 +916,21 @@ msgstr "打开客户门户"
 msgid "Organization Chart"
 msgstr "组织结构图"
 
-#: src/pages/LogIn.tsx:308
+#: src/pages/Pricing.tsx:64
+msgid "PNG & JPG Exports"
+msgstr "PNG和JPG输出"
+
+#: src/pages/Pricing.tsx:74
+msgid "PNG, JPG, and SVG Exports"
+msgstr "PNG，JPG和SVG输出"
+
+#: src/pages/LogIn.tsx:310
 msgid "Password"
 msgstr "密碼"
 
 #: src/pages/New.tsx:526
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "将要转换的信息粘贴到流程图中"
-
-#: src/pages/Pricing.tsx:71
-msgid "Permalinks"
-msgstr "永久链接"
 
 #: src/pages/New.tsx:221
 msgid "Permanent"
@@ -966,11 +944,7 @@ msgstr "永久图表是专业功能"
 msgid "Permanent Flowcharts"
 msgstr "永久流程图"
 
-#: src/pages/Pricing.tsx:65
-msgid "Persistent Flowcharts"
-msgstr "持久图"
-
-#: src/lib/graphOptions.ts:57
+#: src/lib/graphOptions.ts:49
 msgid "Playbook"
 msgstr "剧本"
 
@@ -978,11 +952,13 @@ msgstr "剧本"
 msgid "Pointer and container on same line"
 msgstr "同一行上的指针和容器"
 
-#: src/components/Header.tsx:158
-#: src/components/Header.tsx:373
+#: src/components/Header.tsx:171
+#: src/components/Header.tsx:389
 msgid "Pricing"
 msgstr "价钱"
 
+#: src/components/Header.tsx:155
+#: src/components/Header.tsx:419
 #: src/components/Settings.tsx:138
 msgid "Privacy Policy"
 msgstr "隱私政策"
@@ -995,6 +971,10 @@ msgstr "公司社会责任倡议的发展和在公司业务中的实施过程"
 msgid "Processing Data"
 msgstr "处理数据"
 
+#: src/pages/Pricing.tsx:45
+msgid "Produce flowcharts directly from your data. Import from Lucidchart, Visio, and other CSV files."
+msgstr "直接从您的数据生成流程图。 从Lucidchart，Visio和其他CSV文件导入。"
+
 #: src/pages/New.tsx:297
 msgid "Prompt"
 msgstr "提示"
@@ -1004,7 +984,7 @@ msgstr "提示"
 msgid "Public"
 msgstr "公开"
 
-#: src/lib/graphOptions.ts:22
+#: src/lib/graphOptions.ts:20
 msgid "Random"
 msgstr "随机"
 
@@ -1012,6 +992,10 @@ msgstr "随机"
 #: src/components/ShareDialog.tsx:142
 msgid "Read-only"
 msgstr "只读"
+
+#: src/components/PaymentStepper.tsx:84
+msgid "Ready to Map Your Ideas?<0/>Pick Your <1>Flowchart Fun Pro</1> Plan"
+msgstr "准备好把你的想法映射出来了吗？选择你的<1>流程图乐趣专业</1>计划"
 
 #: src/components/LearnSyntaxDialog.tsx:222
 msgid "Reference by Class"
@@ -1053,17 +1037,13 @@ msgstr "刷新页面"
 msgid "Reload to Update"
 msgstr "重新加载以更新"
 
-#: src/pages/Pricing.tsx:66
-msgid "Remove Image Watermark"
-msgstr "去除图片水印"
-
 #: src/components/RenameButton.tsx:97
 #: src/components/RenameButton.tsx:116
 #: src/components/RenameButton.tsx:156
 msgid "Rename"
 msgstr "重命名"
 
-#: src/pages/LogIn.tsx:166
+#: src/pages/LogIn.tsx:168
 msgid "Request Magic Link"
 msgstr "請求魔法鏈接"
 
@@ -1087,21 +1067,17 @@ msgstr "重置密碼"
 msgid "Resume Subscription"
 msgstr "恢复订阅"
 
-#: src/lib/graphOptions.ts:53
-msgid "Retro"
-msgstr "复古的"
-
 #: src/pages/Account.tsx:385
 msgid "Return"
 msgstr "返回"
 
-#: src/lib/graphOptions.ts:35
-#: src/lib/graphOptions.ts:42
+#: src/lib/graphOptions.ts:33
+#: src/lib/graphOptions.ts:40
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/Header.tsx:143
-#: src/components/Header.tsx:360
+#: src/components/Header.tsx:147
+#: src/components/Header.tsx:376
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "路线图"
@@ -1110,28 +1086,12 @@ msgstr "路线图"
 msgid "Save"
 msgstr "救球"
 
-#: src/components/PaymentStepper.tsx:116
-msgid "Save 20% (2 months free!)"
-msgstr "節省20％（兩個月免費！）"
-
-#: src/pages/Pricing.tsx:27
-msgid "Save time and automate certain tasks with this cutting-edge feature"
-msgstr "通過這個尖端功能節省時間並自動化某些任務"
-
-#: src/pages/Pricing.tsx:19
-msgid "Save time and streamline your workflow by importing data from other sources"
-msgstr "通過從其他來源導入數據來節省時間並簡化您的工作流程"
-
-#: src/components/PaymentStepper.tsx:91
-msgid "Select your plan!"
-msgstr "選擇您的計劃！"
-
 #: src/components/GraphFloatingMenu.tsx:111
 msgid "Send Feedback"
 msgstr "发送反馈"
 
-#: src/components/Header.tsx:150
-#: src/components/Header.tsx:365
+#: src/components/Header.tsx:163
+#: src/components/Header.tsx:381
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "设置"
@@ -1140,20 +1100,20 @@ msgstr "设置"
 msgid "Shape"
 msgstr "形状"
 
-#: src/pages/LogIn.tsx:107
-#: src/pages/LogIn.tsx:327
+#: src/pages/LogIn.tsx:108
+#: src/pages/LogIn.tsx:329
 msgid "Sign In"
 msgstr "登錄"
 
-#: src/components/PaymentStepper.tsx:302
+#: src/components/PaymentStepper.tsx:292
 msgid "Sign Up"
 msgstr "注册"
 
-#: src/pages/LogIn.tsx:134
+#: src/pages/LogIn.tsx:136
 msgid "Sign in with <0>GitHub</0>"
 msgstr "使用<0>GitHub</0>登录"
 
-#: src/pages/LogIn.tsx:119
+#: src/pages/LogIn.tsx:121
 msgid "Sign in with <0>Google</0>"
 msgstr "使用<0>Google</0>登录"
 
@@ -1186,7 +1146,7 @@ msgstr "源分隔符"
 msgid "Source/Target Arrow Shape"
 msgstr "源/目标箭头形状"
 
-#: src/components/Tabs/EditLayoutTab.tsx:142
+#: src/components/Tabs/EditLayoutTab.tsx:140
 msgid "Spacing"
 msgstr "间距"
 
@@ -1221,10 +1181,6 @@ msgstr "存储在云端"
 #: src/pages/New.tsx:251
 msgid "Stored on this computer"
 msgstr "保存在这台电脑上"
-
-#: src/pages/Pricing.tsx:128
-msgid "Streamline your workflow and simplify your process visualization with Flowchart Fun. Subscribe now and take advantage of our powerful Pro features!"
-msgstr "通過Flowchart Fun簡化您的工作流程並簡化您的流程視覺化。 立即訂閱並充分利用我們強大的Pro功能！"
 
 #: src/components/Tabs/EditorTabList.tsx:36
 msgid "Style"
@@ -1274,7 +1230,6 @@ msgid "Temporary Flowchart Warning"
 msgstr "暂时流程图警告"
 
 #: src/pages/Charts.tsx:154
-#: src/pages/Pricing.tsx:54
 msgid "Temporary Flowcharts"
 msgstr "临时图表"
 
@@ -1374,12 +1329,12 @@ msgstr "要修复这个，将指针移动到下一行"
 msgid "To fix this start the container <0/> on a different line"
 msgstr "要修复这个，将容器<0/>放在另一行"
 
-#: src/pages/LogIn.tsx:183
+#: src/pages/LogIn.tsx:185
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "要了解更多關於我們為什麼要求您登錄的原因，請閱讀<0>這篇博客文章</0>。"
 
-#: src/lib/graphOptions.ts:33
-#: src/lib/graphOptions.ts:40
+#: src/lib/graphOptions.ts:31
+#: src/lib/graphOptions.ts:38
 msgid "Top to Bottom"
 msgstr "从上到下"
 
@@ -1399,7 +1354,7 @@ msgstr "两个节点有相同的ID"
 msgid "Type"
 msgstr "类型"
 
-#: src/components/Tabs/EditLayoutTab.tsx:216
+#: src/components/Tabs/EditLayoutTab.tsx:214
 msgid "Unfreeze"
 msgstr "解冻"
 
@@ -1411,9 +1366,13 @@ msgstr "用于标识节点的唯一文本值"
 msgid "Unknown Parsing Error"
 msgstr "未知的解析错误"
 
-#: src/pages/Pricing.tsx:89
-msgid "Unleash your creativity and streamline your workflow with Flowchart Fun Pro – starting at just $3/month!"
-msgstr "釋放您的創意並簡化您的工作流程，從每月只需3美元開始，Flowchart Fun Pro！"
+#: src/pages/Pricing.tsx:29
+msgid "Unlimited Flowcharts"
+msgstr "无限流程图"
+
+#: src/pages/Pricing.tsx:73
+msgid "Unlimited Permanent Flowcharts"
+msgstr "无限永久流程图"
 
 #: src/pages/Account.tsx:216
 msgid "Update Email"
@@ -1426,10 +1385,6 @@ msgstr "升级到Pro"
 #: src/components/ImportDataDialog.tsx:208
 msgid "Upload your File"
 msgstr "上传您的文件"
-
-#: src/pages/Pricing.tsx:26
-msgid "Use AI to create flowcharts from data sets or algorithms"
-msgstr "使用AI從數據集或算法創建流程圖"
 
 #: src/pages/New.tsx:337
 msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
@@ -1475,9 +1430,21 @@ msgstr "用户"
 msgid "View on Github"
 msgstr "在 Github 上查看"
 
+#: src/pages/Pricing.tsx:95
+msgid "Visualize Your Ideas in a Flash with <0>Flowchart Fun Pro<1/></0>"
+msgstr "用<0>Flowchart Fun Pro<1/></0>快速可视化你的想法"
+
+#: src/pages/Pricing.tsx:127
+msgid "Visualize your ideas— <0>instantly</0>."
+msgstr "<0>立即</0>可视化你的想法"
+
 #: src/pages/New.tsx:450
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "水从地球表面蒸发，升入大气中，然后以降水形式回落。这些水然后流入河流，湖泊和海洋，在那里又蒸发，重新回到大气中循环。"
+
+#: src/pages/Pricing.tsx:65
+msgid "Watermarked Images"
+msgstr "水印图像"
 
 #: src/components/WelcomeMessage.tsx:24
 msgid "Welcome to Flowchart Fun Pro!"
@@ -1491,7 +1458,7 @@ msgstr "宽度和高度"
 msgid "Would you like to continue?"
 msgstr "您想继续吗？"
 
-#: src/components/PaymentStepper.tsx:111
+#: src/components/PaymentStepper.tsx:105
 msgid "Yearly"
 msgstr "每年"
 
@@ -1511,11 +1478,11 @@ msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "你可以使用<0>Flowchart Fun Pro</0>创建无限的永久流程图。"
 
-#: src/pages/LogIn.tsx:180
+#: src/pages/LogIn.tsx:182
 msgid "You need to log in to access this page."
 msgstr "您需要登录才能访问此页面。"
 
-#: src/components/PaymentStepper.tsx:190
+#: src/components/PaymentStepper.tsx:180
 msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
 msgstr "您已经快完成了！只需要一步就可以解锁 <0>Flowchart Fun Pro</0> 的全部功能。请在下面输入您的付款详情来完成您的订阅，并今天开始创建令人惊叹的流程图。"
 
@@ -1537,6 +1504,6 @@ msgstr "放大"
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/pages/LogIn.tsx:207
+#: src/pages/LogIn.tsx:209
 msgid "or"
 msgstr "或"

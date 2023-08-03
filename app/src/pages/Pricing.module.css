@@ -169,10 +169,8 @@
   object-fit: cover;
 }
 
-:global(body:not(.dark)) {
-  .footer {
-    background-image: url(/public/images/pricing-bg.svg);
-    background-size: cover;
-    background-position: top center;
-  }
+:global(body:not(.dark)) .footer {
+  background-image: url(/public/images/pricing-bg.svg);
+  background-size: cover;
+  background-position: top center;
 }

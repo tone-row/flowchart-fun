@@ -104,7 +104,7 @@ const Settings = memo(() => {
         <SectionTitle>
           <Trans>About</Trans>
         </SectionTitle>
-        <p className="text-sm md:text-base leading-normal">
+        <p className="text-sm md:text-base md:leading-normal">
           <Trans>
             <span>Flowchart Fun</span> is an open source project made by{" "}
             <a href="https://tone-row.com" className="font-bold text-blue-500">
@@ -147,7 +147,7 @@ const Settings = memo(() => {
       </Section>
       <Section>
         <SectionTitle>Support</SectionTitle>
-        <p className="text-sm md:text-base leading-normal">
+        <p className="text-sm md:text-base md:leading-normal">
           <Trans>
             If you enjoy using <span>Flowchart Fun</span>, please consider
             supporting the project

@@ -84,7 +84,7 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
               <Trans>
                 Ready to Map Your Ideas?
                 <br />
-                Pick Your Flowchart Fun Pro Plan
+                Pick Your <span>Flowchart Fun Pro</span> Plan
               </Trans>
             </Title>
             <div className="grid items-center content-center justify-center gap-6 mt-6 md:grid-flow-col md:items-stretch">

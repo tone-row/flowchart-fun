@@ -35,7 +35,7 @@ const features = (): {
   {
     title: t`Create with AI`,
     points: [
-      t`Begin with a prompt like "Customer Support Flowchart" and Flowchart Fun will create a flowchart for you!`,
+      t`Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!`,
     ],
     imgPath: "AI",
   },
@@ -94,7 +94,7 @@ function Pricing() {
           >
             <Trans>
               Visualize Your Ideas in a Flash with{" "}
-              <span className="relative whitespace-nowrap text-white inline-block mt-2 mx-7">
+              <span className="relative whitespace-nowrap text-white inline-block my-2 mx-7">
                 Flowchart Fun Pro
                 <Splotch />
               </span>
@@ -140,12 +140,10 @@ function Pricing() {
       <div className={`${styles.footer} py-20 dark:bg-blue-600/0`}>
         <h3 className="mt-6 text-xl max-w-3xl mx-auto text-center leading-[1.5] text-wrap-balance text-blue-500">
           <Foo />
-          <Trans>
-            Drag-and-drop can be a drag
-            <span className="font-bold mt-1 block">
-              Subscribe to Pro and flowchart the fun way!
-            </span>
-          </Trans>
+          <Trans>Drag-and-drop can be a drag</Trans>
+          <span className="font-bold mt-1 block">
+            Subscribe to Pro and flowchart the fun way!
+          </span>
         </h3>
       </div>
     </div>
