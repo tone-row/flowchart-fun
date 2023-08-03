@@ -109,6 +109,17 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     if (initResizeNumber !== shouldResize) handleResize();
   }, [handleResize, initResizeNumber, shouldResize]);
 
+  // On unmount reset graph store
+  useEffect(() => {
+    return () => {
+      useGraphStore.setState({
+        autoFit: true,
+        zoom: undefined,
+        pan: undefined,
+      });
+    };
+  }, []);
+
   return (
     <Box
       h="100%"
