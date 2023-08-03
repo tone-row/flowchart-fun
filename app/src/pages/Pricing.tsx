@@ -100,7 +100,7 @@ function Pricing() {
               </span>
             </Trans>
           </p>
-          <p className="text-xl text-neutral-600 text-wrap-balance leading-9">
+          <p className="text-xl text-neutral-600 dark:text-neutral-400 text-wrap-balance leading-9">
             <Trans>Create unlimited diagrams for just $3/month!</Trans>
           </p>
         </div>
@@ -115,21 +115,21 @@ function Pricing() {
           </video>
         </div>
       </div>
-      <div className="pt-6 pb-12 bg-gradient-to-b from-transparent to-blue-50">
+      <div className="pt-6 pb-12 bg-gradient-to-b from-transparent to-blue-50 dark:to-neutral-900">
         <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4 max-w-[870px] xl:max-w-[1400px] mx-auto w-full px-4">
           {features().map((props) => (
             <Feature key={props.title} {...props} />
           ))}
         </div>
       </div>
-      <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-3xl md:text-4xl text-center text-white p-8 font-bold">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-800/50 dark:to-blue-900/50 text-3xl md:text-4xl text-center text-white p-8 font-bold">
         <p>
           <Trans>
             Visualize your ideas— <em className="text-shadow">instantly</em>.
           </Trans>
         </p>
       </div>
-      <div className="py-6 md:pt-16 bg-gradient-to-b from-blue-100 to-white px-4 dark:from-blue-600/0 dark:to-blue-700/30">
+      <div className="py-6 md:pt-16 bg-gradient-to-b from-blue-100 to-white px-4 dark:from-blue-600/0 dark:to-blue-800/30">
         <div className="grid md:grid-flow-col justify-center gap-6 md:gap-10 items-start">
           {plans().map((props) => (
             <Plan {...props} key={props.key} />
@@ -137,7 +137,7 @@ function Pricing() {
         </div>
       </div>
       <PaymentStepper />
-      <div className={`${styles.footer} py-20`}>
+      <div className={`${styles.footer} py-20 dark:bg-blue-600/0`}>
         <h3 className="mt-6 text-xl max-w-3xl mx-auto text-center leading-[1.5] text-wrap-balance text-blue-500">
           <Foo />
           <Trans>
@@ -211,8 +211,8 @@ function Feature({
   imgPath,
 }: ReturnType<typeof features>[number]) {
   return (
-    <div className="px-6 rounded grid grid-rows-[125px_auto_120px] justify-items-center content-center dark:bg-gradient-to-br dark:from-neutral-800 dark:to-neutral-900 dark:text-neutral-50 lg:px-2">
-      <div className="dark:bg-neutral-900">
+    <div className="px-6 rounded grid grid-rows-[125px_auto_120px] justify-items-center content-center dark:text-neutral-50 lg:px-2">
+      <div>
         <img
           src={`images/pricing/${imgPath}.svg`}
           alt={title}
@@ -246,7 +246,6 @@ function Splotch() {
           }
         </style>
       </defs>
-      <path fill="#fff" d="M0 0h493.34v93.168H0z" />
       <g strokeLinecap="round">
         <path
           fill="#606ef6"

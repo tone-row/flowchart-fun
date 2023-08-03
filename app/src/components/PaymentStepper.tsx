@@ -66,7 +66,7 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
   return (
     <div
       className={cx(
-        "z-10 dark:bg-gradient-to-t dark:from-blue-600/0 dark:to-blue-700/30",
+        "z-10 dark:bg-gradient-to-t dark:from-blue-600/0 dark:to-blue-800/30 overflow-hidden",
         {
           "pt-12 pb-16": !noWrapper,
         }
