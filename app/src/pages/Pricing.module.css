@@ -147,7 +147,7 @@
 .video {
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 1468 / 1080;
+  aspect-ratio: 1430 / 1080;
   position: relative;
   font-size: 0;
   overflow: hidden;
@@ -167,4 +167,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+:global(body:not(.dark)) .footer {
+  background-image: url(/public/images/pricing-bg.svg);
+  background-size: cover;
+  background-position: top center;
 }

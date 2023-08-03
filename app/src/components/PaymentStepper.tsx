@@ -19,17 +19,12 @@ import cx from "classnames";
  * enter their email if they are not logged in,
  * and enter their payment information.
  */
-export function PaymentStepper({
-  noWrapper = false,
-  hideTitle = false,
-}: {
-  noWrapper?: boolean;
-  hideTitle?: boolean;
-}) {
+export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
   const session = useSession();
   const sessionEmail = session?.user?.email;
   const [plan, setPlan] = useState<null | "yearly" | "monthly">(() => {
-    return window.location.hash === "#annually" ? "yearly" : "monthly";
+    // return window.location.hash === "#annually" ? "yearly" : "monthly";
+    return "yearly";
   });
   const [confirmPlan, setConfirmPlan] = useState(false);
 
@@ -71,33 +66,31 @@ export function PaymentStepper({
   return (
     <div
       className={cx(
-        "z-10 dark:bg-gradient-to-t dark:from-blue-600/0 dark:to-blue-700/30",
+        "z-10 dark:bg-gradient-to-t dark:from-blue-600/0 dark:to-blue-800/30 overflow-hidden",
         {
           "pt-12 pb-16": !noWrapper,
         }
       )}
     >
       <div
-        className={cx("overflow-hidden grid justify-center px-4 gap-4", {
+        className={cx("grid justify-center px-4 gap-6", {
           "max-w-[560px] mx-auto": !noWrapper,
         })}
         ref={parent}
       >
         {step === "one" && (
           <>
-            {!hideTitle && (
-              <>
-                <Title>
-                  <Trans>Select your plan!</Trans>
-                </Title>
-                <Description>
-                  {t`Choose the plan that's right for you and start creating amazing flowcharts with Flowchart Fun Pro`}
-                </Description>
-              </>
-            )}
-            <div className="grid items-center content-center justify-center gap-4 mt-6 md:grid-flow-col md:items-stretch">
+            <Title>
+              <Trans>
+                Ready to Map Your Ideas?
+                <br />
+                Pick Your <span>Flowchart Fun Pro</span> Plan
+              </Trans>
+            </Title>
+            <div className="grid items-center content-center justify-center gap-6 mt-6 md:grid-flow-col md:items-stretch">
               <PlanButton
                 aria-current={plan === "monthly" ? "true" : "false"}
+                aria-pressed={plan === "monthly" ? "true" : "false"}
                 onClick={() => setPlan("monthly")}
                 className="mr-2 aria-[current=true]:text-blue-500"
                 title={t`Monthly`}
@@ -106,14 +99,15 @@ export function PaymentStepper({
               />
               <PlanButton
                 aria-current={plan === "yearly" ? "true" : "false"}
+                aria-pressed={plan === "yearly" ? "true" : "false"}
                 onClick={() => setPlan("yearly")}
                 className="aria-[current=true]:text-blue-500"
                 title={t`Yearly`}
                 price={t`$30 per year`}
                 data-testid="yearly-plan-button"
                 extra={
-                  <span className="text-xs text-neutral-800 p-2 justify-self-center bg-yellow-300 rounded font-bold mt-2">
-                    <Trans>Save 20% (2 months free!)</Trans>
+                  <span className="text-xs uppercase bg-neutral-900 py-3 px-4 text-yellow-300 rounded font-bold absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[22px] transform whitespace-nowrap transition-transform group-aria-pressed:scale-[1.1] group-aria-pressed:translate-y-[18px] group-aria-pressed:rotate-[3deg]">
+                    <Trans>2 Months Free</Trans>
                   </span>
                 }
               />
@@ -121,7 +115,7 @@ export function PaymentStepper({
             <Button2
               onClick={() => setConfirmPlan(true)}
               disabled={plan === null}
-              className="mt-4 justify-self-center"
+              className="mt-12 justify-self-center"
               rightIcon={<ArrowRight size={16} />}
               color="blue"
             >
@@ -142,14 +136,10 @@ export function PaymentStepper({
             autoComplete="false"
             className="grid gap-4"
           >
-            {!hideTitle && (
-              <>
-                <Title>
-                  <Trans>Enter your email</Trans>
-                </Title>
-                <Description>{t`Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.`}</Description>
-              </>
-            )}
+            <Title>
+              <Trans>Enter your email</Trans>
+            </Title>
+            <Description>{t`Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features.`}</Description>
             <div className="grid gap-2">
               <p
                 className={`text-[13px] justify-self-center text-neutral-600 dark:text-neutral-400`}
@@ -217,9 +207,9 @@ function PlanButton({
   return (
     <button
       {...props}
-      className="border w-[260px] border-solid p-4 py-12 grid gap-2 rounded-lg content-start border-b-4 border-neutral-700 dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-500 aria-[current=true]:bg-blue-50/50 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 hover:shadow-lg dark:hover:shadow-none hover:shadow-neutral-100 dark:hover:shadow-neutral-800/50 aria-[current=true]:hover:shadow-none"
+      className="group border w-[260px] border-solid p-4 py-16 grid gap-3 rounded-xl content-start border-2 border-neutral-600 dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-400 aria-[current=true]:bg-blue-50 aria-[current=true]:shadow-md aria-[current=true]:shadow-blue-600/20 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 relative"
     >
-      <h2 className={`text-xl font-bold`}>{title}</h2>
+      <h2 className={`text-xl font-bold -mt-1`}>{title}</h2>
       <span className="text-xl">{price}</span>
       {extra}
     </button>
@@ -341,7 +331,7 @@ async function getSubscriptionDetails(
 
 function Title({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-center text-4xl font-bold text-neutral-800 dark:text-neutral-100 text-wrap-balance">
+    <h2 className="text-center text-2xl font-bold text-neutral-800 dark:text-neutral-100 text-wrap-balance leading-normal">
       {children}
     </h2>
   );
