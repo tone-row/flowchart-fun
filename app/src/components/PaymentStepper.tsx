@@ -90,6 +90,7 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
             <div className="grid items-center content-center justify-center gap-6 mt-6 md:grid-flow-col md:items-stretch">
               <PlanButton
                 aria-current={plan === "monthly" ? "true" : "false"}
+                aria-pressed={plan === "monthly" ? "true" : "false"}
                 onClick={() => setPlan("monthly")}
                 className="mr-2 aria-[current=true]:text-blue-500"
                 title={t`Monthly`}
@@ -98,13 +99,14 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
               />
               <PlanButton
                 aria-current={plan === "yearly" ? "true" : "false"}
+                aria-pressed={plan === "yearly" ? "true" : "false"}
                 onClick={() => setPlan("yearly")}
                 className="aria-[current=true]:text-blue-500"
                 title={t`Yearly`}
                 price={t`$30 per year`}
                 data-testid="yearly-plan-button"
                 extra={
-                  <span className="text-xs uppercase bg-neutral-900 py-3 px-4 text-yellow-300 rounded font-bold absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[22px] transform whitespace-nowrap">
+                  <span className="text-xs uppercase bg-neutral-900 py-3 px-4 text-yellow-300 rounded font-bold absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[22px] transform whitespace-nowrap transition-transform group-aria-pressed:scale-[1.1] group-aria-pressed:translate-y-[18px] group-aria-pressed:rotate-[3deg]">
                     <Trans>2 Months Free</Trans>
                   </span>
                 }
@@ -205,7 +207,7 @@ function PlanButton({
   return (
     <button
       {...props}
-      className="border w-[260px] border-solid p-4 py-16 grid gap-3 rounded-xl content-start border-2 border-neutral-600 dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-400 aria-[current=true]:bg-blue-50 aria-[current=true]:shadow-md aria-[current=true]:shadow-blue-600/20 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 relative"
+      className="group border w-[260px] border-solid p-4 py-16 grid gap-3 rounded-xl content-start border-2 border-neutral-600 dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-400 aria-[current=true]:bg-blue-50 aria-[current=true]:shadow-md aria-[current=true]:shadow-blue-600/20 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 relative"
     >
       <h2 className={`text-xl font-bold -mt-1`}>{title}</h2>
       <span className="text-xl">{price}</span>

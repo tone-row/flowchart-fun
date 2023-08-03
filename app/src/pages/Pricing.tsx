@@ -86,7 +86,7 @@ const plans = () => [
 function Pricing() {
   return (
     <div className="grid content-start">
-      <div className="grid md:grid-cols-2 gap-12 max-w-[1000px] mx-auto items-center mt-16 mb-6 md:mb-12 px-4">
+      <div className="grid md:grid-cols-2 gap-12 max-w-[1100px] mx-auto items-center mt-16 mb-6 md:mb-12 px-4">
         <div className="left grid gap-6 text-center">
           <p
             className="text-wrap-balance font-bold text-4xl leading-tight"
@@ -115,21 +115,21 @@ function Pricing() {
           </video>
         </div>
       </div>
-      <div className="pt-3 pb-12 bg-gradient-to-b from-transparent to-blue-50">
-        <div className="grid gap-4 md:grid-cols-2 max-w-[870px] mx-auto w-full px-4">
+      <div className="pt-6 pb-12 bg-gradient-to-b from-transparent to-blue-50">
+        <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4 max-w-[870px] xl:max-w-[1400px] mx-auto w-full px-4">
           {features().map((props) => (
             <Feature key={props.title} {...props} />
           ))}
         </div>
       </div>
-      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-4xl text-center text-white p-8 font-bold">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-3xl md:text-4xl text-center text-white p-8 font-bold">
         <p>
           <Trans>
             Visualize your ideas— <em className="text-shadow">instantly</em>.
           </Trans>
         </p>
       </div>
-      <div className="py-6 md:pt-20 bg-gradient-to-b from-blue-100 to-white px-4 dark:from-blue-600/0 dark:to-blue-700/30">
+      <div className="py-6 md:pt-16 bg-gradient-to-b from-blue-100 to-white px-4 dark:from-blue-600/0 dark:to-blue-700/30">
         <div className="grid md:grid-flow-col justify-center gap-6 md:gap-10 items-start">
           {plans().map((props) => (
             <Plan {...props} key={props.key} />
@@ -138,10 +138,10 @@ function Pricing() {
       </div>
       <PaymentStepper />
       <div className={`${styles.footer} py-20`}>
-        <h3 className="mt-6 text-xl max-w-3xl mx-auto text-center leading-[1.5] text-wrap-balance">
+        <h3 className="mt-6 text-xl max-w-3xl mx-auto text-center leading-[1.5] text-wrap-balance text-blue-500">
+          <Foo />
           <Trans>
             Drag-and-drop can be a drag
-            <Foo />
             <span className="font-bold mt-1 block">
               Subscribe to Pro and flowchart the fun way!
             </span>
@@ -162,7 +162,7 @@ export default function PricingProvider() {
 
 function Plan({ title, features, isPro }: ReturnType<typeof plans>[0]) {
   return (
-    <div className="grid gap-4 p-8 rounded-lg bg-white shadow-lg shadow-blue-200 text-foreground dark:shadow-none dark:bg-transparent">
+    <div className="grid gap-4 px-8 py-10 rounded-lg bg-white shadow-md shadow-blue-800/10 text-foreground dark:shadow-none dark:bg-transparent">
       <h2 className="text-2xl md:text-3xl font-bold md:text-center md:mb-3 text-neutral-800 mt-[-3px] dark:text-neutral-50">
         {title}
       </h2>
@@ -211,7 +211,7 @@ function Feature({
   imgPath,
 }: ReturnType<typeof features>[number]) {
   return (
-    <div className="px-6 rounded grid grid-rows-[125px_auto_120px] justify-items-center content-center dark:bg-gradient-to-br dark:from-neutral-800 dark:to-neutral-900 dark:text-neutral-50">
+    <div className="px-6 rounded grid grid-rows-[125px_auto_120px] justify-items-center content-center dark:bg-gradient-to-br dark:from-neutral-800 dark:to-neutral-900 dark:text-neutral-50 lg:px-2">
       <div className="dark:bg-neutral-900">
         <img
           src={`images/pricing/${imgPath}.svg`}
