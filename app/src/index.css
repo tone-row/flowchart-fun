@@ -183,3 +183,7 @@ div[data-reach-tooltip] {
 #theme-editor-wrapper > section[data-hovering="true"] {
   overflow: visible;
 }
+
+.text-shadow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.125);
+}
