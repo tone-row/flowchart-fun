@@ -23,8 +23,7 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
   const session = useSession();
   const sessionEmail = session?.user?.email;
   const [plan, setPlan] = useState<null | "yearly" | "monthly">(() => {
-    // return window.location.hash === "#annually" ? "yearly" : "monthly";
-    return "yearly";
+    return window.location.hash === "#annually" ? "yearly" : null;
   });
   const [confirmPlan, setConfirmPlan] = useState(false);
 
@@ -89,7 +88,12 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
               <PlanButton
                 aria-current={plan === "monthly" ? "true" : "false"}
                 aria-pressed={plan === "monthly" ? "true" : "false"}
-                onClick={() => setPlan("monthly")}
+                onClick={() => {
+                  setPlan("monthly");
+                  setTimeout(() => {
+                    setConfirmPlan(true);
+                  }, 600);
+                }}
                 className="mr-2 aria-[current=true]:text-blue-500"
                 title={t`Monthly`}
                 price={t`$3 per month`}
@@ -98,7 +102,12 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
               <PlanButton
                 aria-current={plan === "yearly" ? "true" : "false"}
                 aria-pressed={plan === "yearly" ? "true" : "false"}
-                onClick={() => setPlan("yearly")}
+                onClick={() => {
+                  setPlan("yearly");
+                  setTimeout(() => {
+                    setConfirmPlan(true);
+                  }, 600);
+                }}
                 className="aria-[current=true]:text-blue-500"
                 title={t`Yearly`}
                 price={t`$30 per year`}
@@ -110,7 +119,7 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
                 }
               />
             </div>
-            <Button2
+            {/* <Button2
               onClick={() => setConfirmPlan(true)}
               disabled={plan === null}
               className="mt-12 justify-self-center"
@@ -118,7 +127,7 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
               color="blue"
             >
               <Trans>Continue</Trans>
-            </Button2>
+            </Button2> */}
           </>
         )}
         {step === "two" && (
@@ -205,7 +214,7 @@ function PlanButton({
   return (
     <button
       {...props}
-      className="group border w-[260px] border-solid p-4 py-16 grid gap-3 rounded-xl content-start border-2 border-neutral-600 dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-400 aria-[current=true]:bg-blue-50 aria-[current=true]:shadow-md aria-[current=true]:shadow-blue-600/20 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 relative"
+      className="group border w-[260px] border-solid p-4 py-16 grid gap-3 rounded-xl content-start border-2 border-neutral-600 dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none hover:scale-[1.025] aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-400 aria-[current=true]:bg-blue-50 aria-[current=true]:shadow-md aria-[current=true]:shadow-blue-600/20 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 relative"
     >
       <h2 className={`text-xl font-bold -mt-1`}>{title}</h2>
       <span className="text-xl">{price}</span>
@@ -329,7 +338,7 @@ async function getSubscriptionDetails(
 
 function Title({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-center text-lg sm:text-xl md:text-2xl font-bold text-neutral-800 dark:text-neutral-100 text-wrap-balance leading-normal">
+    <h2 className="text-center text-lg sm:text-xl md:text-2xl font-bold text-neutral-800 dark:text-neutral-100 text-wrap-balance leading-tight">
       {children}
     </h2>
   );
