@@ -82,9 +82,7 @@ export function PaymentStepper({ noWrapper = false }: { noWrapper?: boolean }) {
           <>
             <Title>
               <Trans>
-                Ready to Map Your Ideas?
-                <br />
-                Pick Your <span>Flowchart Fun Pro</span> Plan
+                Choose Your <span>Flowchart Fun Pro</span> Plan
               </Trans>
             </Title>
             <div className="grid items-center content-center justify-center gap-6 mt-6 md:grid-flow-col md:items-stretch">
@@ -331,7 +329,7 @@ async function getSubscriptionDetails(
 
 function Title({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-center text-2xl font-bold text-neutral-800 dark:text-neutral-100 text-wrap-balance leading-normal">
+    <h2 className="text-center text-lg sm:text-xl md:text-2xl font-bold text-neutral-800 dark:text-neutral-100 text-wrap-balance leading-normal">
       {children}
     </h2>
   );
