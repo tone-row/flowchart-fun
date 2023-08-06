@@ -13,19 +13,19 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/PaymentStepper.tsx:97
+#: src/components/PaymentStepper.tsx:81
 msgid "$3 per month"
 msgstr "3 $ par mois"
 
-#: src/components/PaymentStepper.tsx:106
+#: src/components/PaymentStepper.tsx:92
 msgid "$30 per year"
 msgstr "30 $ par an"
 
-#: src/pages/Pricing.tsx:63
+#: src/pages/Pricing.tsx:64
 msgid "1 Temporary Flowchart"
 msgstr "1 Organigramme temporaire"
 
-#: src/components/PaymentStepper.tsx:110
+#: src/components/PaymentStepper.tsx:96
 msgid "2 Months Free"
 msgstr "2 Mois gratuits"
 
@@ -75,8 +75,8 @@ msgstr "Accessible depuis n'importe quel appareil"
 msgid "Account"
 msgstr "Compte"
 
-#: src/components/PaymentStepper.tsx:178
-msgid "Activate your account"
+#: src/components/PaymentStepper.tsx:161
+msgid "Activate your Account"
 msgstr "Activez votre compte"
 
 #: src/pages/Account.tsx:284
@@ -123,7 +123,7 @@ msgstr "Devenez un utilisateur Pro"
 msgid "Begin Typing"
 msgstr "Commencez à taper"
 
-#: src/pages/Pricing.tsx:38
+#: src/pages/Pricing.tsx:39
 msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
 msgstr "Commencez par une invite comme le diagramme de flux de support client et Flowchart Fun créera un diagramme de flux pour vous !"
 
@@ -198,6 +198,10 @@ msgstr "Vérifiez votre e-mail pour un lien de connexion. Vous pouvez fermer cet
 #: src/pages/LogIn.tsx:275
 msgid "Choose"
 msgstr "Choisir"
+
+#: src/components/PaymentStepper.tsx:70
+msgid "Choose a Plan"
+msgstr "Choisissez un plan"
 
 #: src/components/ThemePicker.tsx:68
 msgid "Choose a Theme"
@@ -277,8 +281,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "Les conteneurs sont des nœuds qui contiennent d'autres nœuds. Ils sont déclarés à l'aide de accolades."
 
 #: src/components/ImportDataDialog.tsx:732
-#: src/components/PaymentStepper.tsx:122
-#: src/components/PaymentStepper.tsx:165
+#: src/components/PaymentStepper.tsx:108
+#: src/components/PaymentStepper.tsx:148
 msgid "Continue"
 msgstr "Continuer"
 
@@ -316,7 +320,7 @@ msgstr "Copier le code SVG"
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en direct mermaid.js."
 
-#: src/pages/Pricing.tsx:78
+#: src/pages/Pricing.tsx:79
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "Créer des diagrammes à partir d'une invite avec l'IA"
 
@@ -332,7 +336,7 @@ msgstr "Créer un nouveau diagramme"
 msgid "Create unlimited diagrams for just $3/month!"
 msgstr "Créez des diagrammes illimités pour seulement 3 $ par mois !"
 
-#: src/pages/Pricing.tsx:36
+#: src/pages/Pricing.tsx:37
 msgid "Create with AI"
 msgstr "Créez avec l'intelligence artificielle"
 
@@ -340,7 +344,7 @@ msgstr "Créez avec l'intelligence artificielle"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Créer une arête entre deux nœuds est fait en indentant le second nœud sous le premier"
 
-#: src/pages/Pricing.tsx:77
+#: src/pages/Pricing.tsx:78
 msgid "Custom Sharing Options"
 msgstr "Options de partage personnalisées"
 
@@ -361,7 +365,7 @@ msgstr "Sombre"
 msgid "Dark Mode"
 msgstr "Mode sombre"
 
-#: src/pages/Pricing.tsx:76
+#: src/pages/Pricing.tsx:77
 msgid "Data Import"
 msgstr "Importation de données"
 
@@ -377,7 +381,7 @@ msgstr "Supprimé lorsque les données du navigateur sont effacées"
 msgid "Describe the flowchart you wish to create"
 msgstr "Décrivez le schéma que vous souhaitez créer"
 
-#: src/pages/Pricing.tsx:43
+#: src/pages/Pricing.tsx:44
 msgid "Direct from your Data"
 msgstr "Directement à partir de vos données"
 
@@ -421,10 +425,6 @@ msgstr "Télécharger SVG"
 #: src/components/ImportDataDialog.tsx:248
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "Glissez-déposez un fichier CSV ici, ou cliquez pour sélectionner un fichier"
-
-#: src/pages/Pricing.tsx:143
-msgid "Drag-and-drop can be a drag"
-msgstr "Faire glisser-déposer peut être ennuyeux"
 
 #: src/components/LearnSyntaxDialog.tsx:239
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
@@ -514,7 +514,7 @@ msgstr "E-mail"
 msgid "Empty"
 msgstr "Vide"
 
-#: src/components/PaymentStepper.tsx:140
+#: src/components/PaymentStepper.tsx:126
 msgid "Enter your email"
 msgstr "Entrez votre adresse e-mail "
 
@@ -544,7 +544,7 @@ msgstr "Excalidraw"
 msgid "Export"
 msgstr "Exporter"
 
-#: src/pages/Pricing.tsx:52
+#: src/pages/Pricing.tsx:53
 msgid "Export professional-quality flowcharts without watermarks to use in your presentations and documents"
 msgstr "Exportez des diagrammes de flux de qualité professionnelle sans filigrane à utiliser dans vos présentations et documents"
 
@@ -562,7 +562,7 @@ msgstr "Extrait"
 msgid "Feedback"
 msgstr "Commentaire"
 
-#: src/pages/Pricing.tsx:31
+#: src/pages/Pricing.tsx:32
 msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
 msgstr "Flowchart Fun Pro vous permet de créer, stocker et distribuer autant de diagrammes de flux que vous le souhaitez."
 
@@ -578,7 +578,7 @@ msgstr "Mot de passe oublié ?"
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "Vous avez trouvé un bug ? Vous souhaitez faire une demande de fonctionnalité ? Nous aimerions beaucoup vous entendre !"
 
-#: src/pages/Pricing.tsx:60
+#: src/pages/Pricing.tsx:61
 msgid "Free"
 msgstr "Gratuit "
 
@@ -727,10 +727,6 @@ msgstr "En savoir plus sur Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "De gauche à droite"
 
-#: src/components/PaymentStepper.tsx:142
-msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
-msgstr "Commençons ! Entrez votre adresse e-mail ci-dessous pour créer votre compte Flowchart Fun et commencez à utiliser nos fonctionnalités puissantes."
-
 #: src/lib/graphOptions.ts:46
 msgid "Light"
 msgstr "Lumineux"
@@ -779,7 +775,7 @@ msgstr "Faites un don unique"
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
-#: src/components/PaymentStepper.tsx:147
+#: src/components/PaymentStepper.tsx:130
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Assurez-vous d'utiliser le même e-mail que vous utiliserez pour vous connecter."
 
@@ -803,7 +799,7 @@ msgstr "Méthode"
 msgid "Migrate Flowcharts"
 msgstr "Migrer les diagrammes"
 
-#: src/components/PaymentStepper.tsx:96
+#: src/components/PaymentStepper.tsx:80
 msgid "Monthly"
 msgstr "Mensuel"
 
@@ -834,11 +830,11 @@ msgstr "Prochain paiement"
 msgid "No Edges"
 msgstr "Pas de bords"
 
-#: src/pages/Pricing.tsx:75
+#: src/pages/Pricing.tsx:76
 msgid "No Watermark!"
 msgstr "Pas de filigrane !"
 
-#: src/pages/Pricing.tsx:50
+#: src/pages/Pricing.tsx:51
 msgid "No Watermarks"
 msgstr "Pas de filigranes"
 
@@ -891,7 +887,7 @@ msgstr "Pas vide"
 msgid "Now erase the text and try it yourself!"
 msgstr "Maintenant, effacez le texte et essayez par vous-même !"
 
-#: src/pages/Pricing.tsx:80
+#: src/pages/Pricing.tsx:81
 msgid "Office Hours"
 msgstr "Heures de travail"
 
@@ -900,7 +896,7 @@ msgid "Once in a while the magic link will end up in your spam folder. If you do
 msgstr " temps en temps, le lien magique finira par atterrir dans votre dossier de pourriel. Si vous ne le voyez pas après quelques minutes, vérifiez-y ou demandez un nouveau lien."
 
 #: src/pages/Account.tsx:126
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:80
 msgid "One-on-One Support"
 msgstr "Assistance individuelle"
 
@@ -916,11 +912,11 @@ msgstr "Ouvrir le portail client"
 msgid "Organization Chart"
 msgstr "Organigramme"
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:65
 msgid "PNG & JPG Exports"
 msgstr "Exports PNG et JPG"
 
-#: src/pages/Pricing.tsx:74
+#: src/pages/Pricing.tsx:75
 msgid "PNG, JPG, and SVG Exports"
 msgstr "Exports PNG, JPG et SVG"
 
@@ -971,7 +967,7 @@ msgstr "Processus de développement et d'implémentation d'initiatives de respon
 msgid "Processing Data"
 msgstr "Traitement des données"
 
-#: src/pages/Pricing.tsx:45
+#: src/pages/Pricing.tsx:46
 msgid "Produce flowcharts directly from your data. Import from Lucidchart, Visio, and other CSV files."
 msgstr "Produisez des diagrammes directement à partir de vos données. Importer des fichiers Lucidchart, Visio et CSV."
 
@@ -992,10 +988,6 @@ msgstr "Aléatoire"
 #: src/components/ShareDialog.tsx:142
 msgid "Read-only"
 msgstr "Lecture seulement"
-
-#: src/components/PaymentStepper.tsx:84
-msgid "Ready to Map Your Ideas?<0/>Pick Your <1>Flowchart Fun Pro</1> Plan"
-msgstr "Prêt à cartographier vos idées ? Choisissez votre plan Pro Fun Flowchart."
 
 #: src/components/LearnSyntaxDialog.tsx:222
 msgid "Reference by Class"
@@ -1105,7 +1097,7 @@ msgstr "Forme"
 msgid "Sign In"
 msgstr "Se connecter "
 
-#: src/components/PaymentStepper.tsx:292
+#: src/components/PaymentStepper.tsx:267
 msgid "Sign Up"
 msgstr "Inscription"
 
@@ -1366,11 +1358,11 @@ msgstr "Valeur de texte unique pour identifier un nœud"
 msgid "Unknown Parsing Error"
 msgstr "Erreur d'analyse inconnue"
 
-#: src/pages/Pricing.tsx:29
+#: src/pages/Pricing.tsx:30
 msgid "Unlimited Flowcharts"
 msgstr "Diagrammes illimités"
 
-#: src/pages/Pricing.tsx:73
+#: src/pages/Pricing.tsx:74
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Flux de diagrammes permanents illimités"
 
@@ -1430,19 +1422,15 @@ msgstr "Utilisateur"
 msgid "View on Github"
 msgstr "Voir sur Github"
 
-#: src/pages/Pricing.tsx:95
-msgid "Visualize Your Ideas in a Flash with <0>Flowchart Fun Pro<1/></0>"
-msgstr "Visualisez vos idées en un éclair avec <0>Flowchart Fun Pro<1/></0>"
-
-#: src/pages/Pricing.tsx:127
-msgid "Visualize your ideas— <0>instantly</0>."
-msgstr "Visualisez vos idées <0>instantanément</0>."
+#: src/pages/Pricing.tsx:96
+msgid "Visualize Your Ideas in a Flash with <0>Flowchart Fun Pro</0>"
+msgstr "Visualisez vos idées en un éclair avec <0>Flowchart Fun Pro</0>"
 
 #: src/pages/New.tsx:450
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "L'eau s'évapore de la surface de la Terre, monte dans l'atmosphère et retombe sous forme de précipitations. Cette eau s'écoule alors dans les rivières, les lacs et les océans, où elle s'évapore à nouveau et est recyclée dans l'atmosphère."
 
-#: src/pages/Pricing.tsx:65
+#: src/pages/Pricing.tsx:66
 msgid "Watermarked Images"
 msgstr "Images filigranées"
 
@@ -1458,7 +1446,7 @@ msgstr "Largeur et hauteur"
 msgid "Would you like to continue?"
 msgstr "Voulez-vous continuer ?"
 
-#: src/components/PaymentStepper.tsx:105
+#: src/components/PaymentStepper.tsx:91
 msgid "Yearly"
 msgstr "Annuellement"
 
@@ -1481,10 +1469,6 @@ msgstr "Vous pouvez créer des diagrammes de flux illimités et permanents avec 
 #: src/pages/LogIn.tsx:182
 msgid "You need to log in to access this page."
 msgstr "Vous devez vous connecter pour accéder à cette page."
-
-#: src/components/PaymentStepper.tsx:180
-msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-msgstr "Vous y êtes presque ! Une dernière étape pour débloquer tout le potentiel de <0>Flowchart Fun Pro</0>. Entrez vos informations de paiement ci-dessous pour compléter votre abonnement et commencez à créer des diagrammes de flux incroyables dès aujourd'hui."
 
 #: src/pages/Charts.tsx:100
 msgid "Your Charts"

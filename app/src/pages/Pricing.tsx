@@ -167,7 +167,8 @@ function Plan({ title, features, isPro }: ReturnType<typeof plans>[0]) {
       className={classNames(
         "grid gap-4 text-foreground dark:bg-transparent pl-8 py-4",
         {
-          "lg:border-l-2 border-neutral-200 md:pl-16": isPro,
+          "lg:border-l-2 border-neutral-200 dark:border-neutral-800 md:pl-16":
+            isPro,
           "hidden lg:block": !isPro,
         }
       )}
