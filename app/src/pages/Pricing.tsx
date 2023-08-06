@@ -2,11 +2,12 @@ import { t, Trans } from "@lingui/macro";
 import { Check, Minus } from "phosphor-react";
 import { ReactNode } from "react";
 
-import { PaymentStepper } from "../components/PaymentStepper";
 import styles from "./Pricing.module.css";
 
 import { PostHogProvider } from "posthog-js/react";
 import posthog from "posthog-js";
+import classNames from "classnames";
+import { PaymentStepper } from "../components/PaymentStepper";
 
 const posthogToken = process.env.REACT_APP_PUBLIC_POSTHOG_KEY;
 const posthogApiHost = process.env.REACT_APP_PUBLIC_POSTHOG_HOST;
@@ -99,12 +100,12 @@ function Pricing() {
               </span>
             </Trans>
           </p>
-          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 text-wrap-balance leading-8 sm:leading-9">
+          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
             <Trans>Create unlimited diagrams for just $3/month!</Trans>
           </p>
         </div>
         <div
-          className={`${styles.video} shadow border border-neutral-300 rounded-lg dark:border-neutral-700 dark:border-0 dark:shadow-none bg-black`}
+          className={`${styles.video} shadow-lg border border-neutral-300 rounded-lg dark:border-neutral-700 dark:border-0 dark:shadow-none bg-black`}
         >
           <video autoPlay loop muted playsInline>
             <source
@@ -114,29 +115,32 @@ function Pricing() {
           </video>
         </div>
       </div>
-      <div className="pt-6 pb-12 bg-gradient-to-b from-transparent to-blue-50 dark:to-neutral-900">
-        <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4 max-w-[870px] xl:max-w-[1400px] mx-auto w-full px-4">
+      <div className="pt-12 pb-6 bg-neutral-100">
+        <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4 max-w-[870px] xl:max-w-[1250px] mx-auto w-full px-4">
           {features().map((props) => (
             <Feature key={props.title} {...props} />
           ))}
         </div>
       </div>
-      <div className="bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-800/50 dark:to-blue-900/50 text-3xl md:text-4xl text-center text-white p-8 font-bold">
-        <p>
-          <Trans>
-            Visualize your ideas— <em className="text-shadow">instantly</em>.
-          </Trans>
-        </p>
-      </div>
-      <div className="py-6 md:pt-16 bg-gradient-to-b from-blue-100 to-white px-4 dark:from-blue-600/0 dark:to-blue-800/30">
-        <div className="grid md:grid-flow-col justify-center gap-6 md:gap-10 items-start">
+      <div className="py-6 md:py-8 md:pb-16 px-4">
+        <div className="grid md:grid-cols-[auto_minmax(0,1fr)] lg:grid-cols-[auto_auto_minmax(0,1fr)] gap-6 md:gap-8 items-start justify-center md:justify-start w-full max-w-5xl md:max-w-[1200px] mx-auto">
           {plans().map((props) => (
             <Plan {...props} key={props.key} />
           ))}
+          <PaymentStepper />
         </div>
       </div>
-      <PaymentStepper />
-      <div className={`${styles.footer} py-20 dark:bg-blue-600/0`}>
+      <div className="bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-800/50 dark:to-blue-900/50 text-lg md:text-2xl text-center text-white p-8 font-bold">
+        <p>
+          {/* <Trans>
+            Visualize your ideas— <em className="text-shadow">instantly</em>.
+          </Trans> */}
+          <span className="font-bold mt-1 block">
+            Subscribe to Pro and flowchart the fun way!
+          </span>
+        </p>
+      </div>
+      {/* <div className={`${styles.footer} py-20 dark:bg-blue-600/0`}>
         <h3 className="mt-6 text-xl max-w-3xl mx-auto text-center leading-[1.5] text-wrap-balance text-blue-500">
           <Foo />
           <Trans>Drag-and-drop can be a drag</Trans>
@@ -144,7 +148,7 @@ function Pricing() {
             Subscribe to Pro and flowchart the fun way!
           </span>
         </h3>
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -159,14 +163,29 @@ export default function PricingProvider() {
 
 function Plan({ title, features, isPro }: ReturnType<typeof plans>[0]) {
   return (
-    <div className="grid gap-4 px-8 py-10 rounded-lg bg-white shadow-md shadow-blue-800/10 text-foreground dark:shadow-none dark:bg-transparent">
-      <h2 className="text-lg sm:text-2xl md:text-3xl font-bold md:text-center md:mb-3 text-neutral-800 mt-[-3px] dark:text-neutral-50">
+    <div
+      className={classNames(
+        "grid gap-4 text-foreground dark:bg-transparent pl-8 py-4",
+        {
+          "lg:border-l-2 border-neutral-200 md:pl-16": isPro,
+          "hidden lg:block": !isPro,
+        }
+      )}
+    >
+      <h2
+        className={classNames(
+          "text-lg sm:text-xl md:text-2xl md:mb-3 mt-[-3px] dark:text-neutral-50",
+          {
+            "font-bold text-blue-600": isPro,
+          }
+        )}
+      >
         {title}
       </h2>
       <div className="grid gap-2">
         {features.map((feature) => (
           <div
-            className="flex items-center gap-2 opacity-80 dark:opacity-90"
+            className="flex items-center gap-2 opacity-80 dark:opacity-90 -ml-8"
             key={feature}
           >
             {isPro ? (
@@ -214,7 +233,7 @@ function Feature({
           className="h-[125px] w-[125px] dark:invert"
         />
       </div>
-      <h2 className="text-2xl text-neutral-800 leading-[1.3] my-4 text-center dark:text-neutral-100 text-wrap-balance">
+      <h2 className="text-xl text-neutral-800 leading-[1.3] my-4 text-center dark:text-neutral-100 text-wrap-balance">
         {title}
       </h2>
       <div className="grid gap-3">
@@ -224,8 +243,4 @@ function Feature({
       </div>
     </div>
   );
-}
-
-function Foo() {
-  return <span className="block">¯\_(ツ)_/¯</span>;
 }
