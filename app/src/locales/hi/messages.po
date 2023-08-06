@@ -13,19 +13,19 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/PaymentStepper.tsx:97
+#: src/components/PaymentStepper.tsx:81
 msgid "$3 per month"
 msgstr "मासिक $3"
 
-#: src/components/PaymentStepper.tsx:106
+#: src/components/PaymentStepper.tsx:92
 msgid "$30 per year"
 msgstr "वार्षिक $30"
 
-#: src/pages/Pricing.tsx:63
+#: src/pages/Pricing.tsx:64
 msgid "1 Temporary Flowchart"
 msgstr "1 अस्थायी पारिस्थितिकी चार्ट"
 
-#: src/components/PaymentStepper.tsx:110
+#: src/components/PaymentStepper.tsx:96
 msgid "2 Months Free"
 msgstr "2 महीने मुफ्त"
 
@@ -75,8 +75,8 @@ msgstr "किसी भी उपकरण से पहुँचा जा स
 msgid "Account"
 msgstr "खाता"
 
-#: src/components/PaymentStepper.tsx:178
-msgid "Activate your account"
+#: src/components/PaymentStepper.tsx:161
+msgid "Activate your Account"
 msgstr "अपना खाता सक्रिय करें"
 
 #: src/pages/Account.tsx:284
@@ -123,7 +123,7 @@ msgstr "प्रो उपयोगकर्ता बनें"
 msgid "Begin Typing"
 msgstr "टाइपिंग शुरू करें"
 
-#: src/pages/Pricing.tsx:38
+#: src/pages/Pricing.tsx:39
 msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
 msgstr "ग्राहक समर्थन प्रॉम्प्ट जैसी एक प्रॉम्प्ट के साथ शुरू करें और Flowchart Fun आपके लिए एक फ्लोचार्ट बना देगा!"
 
@@ -198,6 +198,10 @@ msgstr "लॉग इन करने के लिए अपने ईमेल
 #: src/pages/LogIn.tsx:275
 msgid "Choose"
 msgstr "चुनें"
+
+#: src/components/PaymentStepper.tsx:70
+msgid "Choose a Plan"
+msgstr "एक योजना चुनें"
 
 #: src/components/ThemePicker.tsx:68
 msgid "Choose a Theme"
@@ -277,8 +281,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "कंटेनर उन नोड्स हैं जो अन्य नोड्स को सम्मिलित करते हैं। वे कर्ली ब्रेस का उपयोग करके घोषित किया जाता है।"
 
 #: src/components/ImportDataDialog.tsx:732
-#: src/components/PaymentStepper.tsx:122
-#: src/components/PaymentStepper.tsx:165
+#: src/components/PaymentStepper.tsx:108
+#: src/components/PaymentStepper.tsx:148
 msgid "Continue"
 msgstr "जारी रखें"
 
@@ -316,7 +320,7 @@ msgstr "SVG कोड कॉपी करें"
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "अपना मर्मेड.जेएस कोड कॉपी करें या मर्मेड.जेएस लाइव एडिटर में सीधे खोलें।"
 
-#: src/pages/Pricing.tsx:78
+#: src/pages/Pricing.tsx:79
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं"
 
@@ -332,7 +336,7 @@ msgstr "एक नया आरेख बनाएँ"
 msgid "Create unlimited diagrams for just $3/month!"
 msgstr "केवल 3 डॉलर महीने में असीमित डायग्राम बनाएं!"
 
-#: src/pages/Pricing.tsx:36
+#: src/pages/Pricing.tsx:37
 msgid "Create with AI"
 msgstr "एआई के साथ बनाएं"
 
@@ -340,7 +344,7 @@ msgstr "एआई के साथ बनाएं"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "दो नोड्स के बीच एक एज बनाने के लिए दूसरा नोड पहले वाले के नीचे इंडेंट करना होता है"
 
-#: src/pages/Pricing.tsx:77
+#: src/pages/Pricing.tsx:78
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
@@ -361,7 +365,7 @@ msgstr "डार्क"
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/pages/Pricing.tsx:76
+#: src/pages/Pricing.tsx:77
 msgid "Data Import"
 msgstr "डेटा आयात"
 
@@ -377,7 +381,7 @@ msgstr "ब्राउज़र डेटा साफ़ होने पर �
 msgid "Describe the flowchart you wish to create"
 msgstr "उस आरेख का वर्णन करें जिसे आप बनाना चाहते हैं"
 
-#: src/pages/Pricing.tsx:43
+#: src/pages/Pricing.tsx:44
 msgid "Direct from your Data"
 msgstr "अपने डेटा से सीधे"
 
@@ -421,10 +425,6 @@ msgstr "SVG डाउनलोड करें"
 #: src/components/ImportDataDialog.tsx:248
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV फ़ाइल यहां ड्रैग और ड्रॉप करें, या फ़ाइल का चयन करने के लिए क्लिक करें"
-
-#: src/pages/Pricing.tsx:143
-msgid "Drag-and-drop can be a drag"
-msgstr "ड्रैग और ड्रॉप को ड्रैग बना सकता है"
 
 #: src/components/LearnSyntaxDialog.tsx:239
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
@@ -514,7 +514,7 @@ msgstr "ईमेल"
 msgid "Empty"
 msgstr "खाली"
 
-#: src/components/PaymentStepper.tsx:140
+#: src/components/PaymentStepper.tsx:126
 msgid "Enter your email"
 msgstr "अपना ईमेल दर्ज करें"
 
@@ -544,7 +544,7 @@ msgstr "Excalidraw"
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
-#: src/pages/Pricing.tsx:52
+#: src/pages/Pricing.tsx:53
 msgid "Export professional-quality flowcharts without watermarks to use in your presentations and documents"
 msgstr "प्रेजेंटेशन और दस्तावेजों में उपयोग करने के लिए वाटरमार्क के बिना व्यावसायिक गुणवत्ता के निर्यात करें"
 
@@ -562,7 +562,7 @@ msgstr "निकालना"
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
-#: src/pages/Pricing.tsx:31
+#: src/pages/Pricing.tsx:32
 msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
 msgstr "Flowchart Fun Pro आपको अपनी आवश्यकताओं के लिए जितने भी फ्लोचार्ट बनाएँ, स्टोर और वितरित करने की अनुमति देता है।"
 
@@ -578,7 +578,7 @@ msgstr "अपना पासवर्ड भूल गए?"
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "एक बग पाया? एक सुविधा अनुरोध है? हम आपसे सुनने के लिए प्रसन्न होंगे!"
 
-#: src/pages/Pricing.tsx:60
+#: src/pages/Pricing.tsx:61
 msgid "Free"
 msgstr "मुफ्त"
 
@@ -727,10 +727,6 @@ msgstr "Flowchart Fun Pro के बारे में जानें"
 msgid "Left to Right"
 msgstr "बाएं से दाएं"
 
-#: src/components/PaymentStepper.tsx:142
-msgid "Let's get started! Enter your email address below to create your Flowchart Fun account and start using our powerful features."
-msgstr "चलो शुरू करें! अपना फ्लोचार्ट फन खाता बनाने और हमारे शक्तिशाली विशेषताओं का उपयोग शुरू करने के लिए नीचे अपना ईमेल पता दर्ज करें।"
-
 #: src/lib/graphOptions.ts:46
 msgid "Light"
 msgstr "लाइट"
@@ -779,7 +775,7 @@ msgstr "एक बार दान करें"
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
-#: src/components/PaymentStepper.tsx:147
+#: src/components/PaymentStepper.tsx:130
 msgid "Make sure you use the same email you will use to log in."
 msgstr "उसी ईमेल का उपयोग करें जिसे आप लॉग इन करने के लिए उपयोग करेंगे।"
 
@@ -803,7 +799,7 @@ msgstr "विधि"
 msgid "Migrate Flowcharts"
 msgstr "प्रिंट चार्ट को स्थानांतरित करें"
 
-#: src/components/PaymentStepper.tsx:96
+#: src/components/PaymentStepper.tsx:80
 msgid "Monthly"
 msgstr "मासिक"
 
@@ -834,11 +830,11 @@ msgstr "अगला चार्ज"
 msgid "No Edges"
 msgstr "कोई किनारे नहीं"
 
-#: src/pages/Pricing.tsx:75
+#: src/pages/Pricing.tsx:76
 msgid "No Watermark!"
 msgstr "कोई वाटरमार्क नहीं!"
 
-#: src/pages/Pricing.tsx:50
+#: src/pages/Pricing.tsx:51
 msgid "No Watermarks"
 msgstr "कोई वाटरमार्क नहीं"
 
@@ -891,7 +887,7 @@ msgstr "खाली नहीं"
 msgid "Now erase the text and try it yourself!"
 msgstr "अब पाठ हटाएं और खुद से यह कोशिश करें!"
 
-#: src/pages/Pricing.tsx:80
+#: src/pages/Pricing.tsx:81
 msgid "Office Hours"
 msgstr "कार्यालय अवधि"
 
@@ -900,7 +896,7 @@ msgid "Once in a while the magic link will end up in your spam folder. If you do
 msgstr "कभी-कभी मैजिक लिंक आपके स्पैम फोल्डर में खत्म हो जाता है। अगर आप कुछ मिनट बाद उसे नहीं देख रहे हैं, तो वहां जाकर देखें या एक नया लिंक अनुरोध करें।"
 
 #: src/pages/Account.tsx:126
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:80
 msgid "One-on-One Support"
 msgstr "एक-पर-एक समर्थन"
 
@@ -916,11 +912,11 @@ msgstr "ग्राहक पोर्टल खोलें"
 msgid "Organization Chart"
 msgstr "संगठन चार्ट"
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:65
 msgid "PNG & JPG Exports"
 msgstr "PNG और JPG एक्सपोर्ट"
 
-#: src/pages/Pricing.tsx:74
+#: src/pages/Pricing.tsx:75
 msgid "PNG, JPG, and SVG Exports"
 msgstr "PNG, JPG और SVG एक्सपोर्ट"
 
@@ -971,7 +967,7 @@ msgstr "कंपनी की सार्वजनिक दायित्व
 msgid "Processing Data"
 msgstr "डेटा प्रसंस्करण"
 
-#: src/pages/Pricing.tsx:45
+#: src/pages/Pricing.tsx:46
 msgid "Produce flowcharts directly from your data. Import from Lucidchart, Visio, and other CSV files."
 msgstr "अपने डेटा से सीधे फ्लोचार्ट उत्पन्न करें। Lucidchart, Visio और अन्य CSV फ़ाइलों से आयात करें।"
 
@@ -992,10 +988,6 @@ msgstr "अनियमित"
 #: src/components/ShareDialog.tsx:142
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
-
-#: src/components/PaymentStepper.tsx:84
-msgid "Ready to Map Your Ideas?<0/>Pick Your <1>Flowchart Fun Pro</1> Plan"
-msgstr "अपने विचारों को नक्शा बनाने के लिए तैयार? <0/> अपनी <1> फ्लोचार्ट मजेदार प्रो प्लान </1> का चयन करें"
 
 #: src/components/LearnSyntaxDialog.tsx:222
 msgid "Reference by Class"
@@ -1105,7 +1097,7 @@ msgstr "आकृति"
 msgid "Sign In"
 msgstr "साइन इन करें"
 
-#: src/components/PaymentStepper.tsx:292
+#: src/components/PaymentStepper.tsx:267
 msgid "Sign Up"
 msgstr "साइन अप"
 
@@ -1366,11 +1358,11 @@ msgstr "एक नोड को पहचानने के लिए अद्
 msgid "Unknown Parsing Error"
 msgstr "अज्ञात पार्सिंग त्रुटि"
 
-#: src/pages/Pricing.tsx:29
+#: src/pages/Pricing.tsx:30
 msgid "Unlimited Flowcharts"
 msgstr "असीमित फ्लोचार्ट"
 
-#: src/pages/Pricing.tsx:73
+#: src/pages/Pricing.tsx:74
 msgid "Unlimited Permanent Flowcharts"
 msgstr "असीमित स्थायी प्रवाहगतीं "
 
@@ -1430,19 +1422,15 @@ msgstr "यूज़र"
 msgid "View on Github"
 msgstr "Github पर देखें"
 
-#: src/pages/Pricing.tsx:95
-msgid "Visualize Your Ideas in a Flash with <0>Flowchart Fun Pro<1/></0>"
-msgstr "अपने विचारों को <0>Flowchart Fun Pro<1/></0> में दर्शाएं "
-
-#: src/pages/Pricing.tsx:127
-msgid "Visualize your ideas— <0>instantly</0>."
-msgstr "अपने विचारों को <0> तुरंत </0> दर्शाएं "
+#: src/pages/Pricing.tsx:96
+msgid "Visualize Your Ideas in a Flash with <0>Flowchart Fun Pro</0>"
+msgstr "<0>फ्लोचार्ट फन प्रो</0> से अपने विचारों को त्वरित देखें"
 
 #: src/pages/New.tsx:450
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "पानी पृथ्वी के सतह से उष्णता होकर आत्मान में उठता है और वर्षा के रूप में फिर नीचे गिरता है। इस पानी को तब नदियों, तिब्बती तालों और महासागरों में जाता है, जहां यह फिर से उष्णता होता है और आत्मान में पुनर्स्थापित किया जाता है।"
 
-#: src/pages/Pricing.tsx:65
+#: src/pages/Pricing.tsx:66
 msgid "Watermarked Images"
 msgstr "वॉटरमार्क्ड छवियां"
 
@@ -1458,7 +1446,7 @@ msgstr "चौड़ाई और ऊँचाई"
 msgid "Would you like to continue?"
 msgstr "क्या आप जारी रखना चाहते हैं?"
 
-#: src/components/PaymentStepper.tsx:105
+#: src/components/PaymentStepper.tsx:91
 msgid "Yearly"
 msgstr "वार्षिक"
 
@@ -1481,10 +1469,6 @@ msgstr "<0>Flowchart Fun Pro</0> के साथ आप असीमित स�
 #: src/pages/LogIn.tsx:182
 msgid "You need to log in to access this page."
 msgstr "इस पृष्ठ तक पहुँचने के लिए आपको लॉग इन करना होगा।"
-
-#: src/components/PaymentStepper.tsx:180
-msgid "You're almost there! Just one more step to unlock the full potential of <0>Flowchart Fun Pro</0>. Enter your payment details below to complete your subscription and start creating amazing flowcharts today."
-msgstr "आप बस एक ही कदम दूर हैं! <0>Flowchart Fun Pro</0> की पूरी प्रत्याशित क्षमता को अनलॉक करने के लिए नीचे अपने भुगतान विवरण दर्ज करें और आज ही अद्भुत फ्लोचार्ट बनाने शुरू करें।"
 
 #: src/pages/Charts.tsx:100
 msgid "Your Charts"

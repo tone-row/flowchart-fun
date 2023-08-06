@@ -73,18 +73,18 @@ function ImportantChanges({ closeBanner }: { closeBanner: () => void }) {
   return (
     <Link
       to="/blog/post/important-changes-coming"
-      className="bg-blue-100 text-blue-700 p-4 text-center text-md"
+      className="bg-blue-100 text-blue-700 p-4 sm:text-center text-sm md:text-md leading-normal"
       onClick={() => {
         Cookies.set("ff_viewed_important_message", "true");
         closeBanner();
       }}
     >
-      <span className="inline-flex gap-2 items-center">
-        <Trans>Important Changes are Coming to Flowchart Fun.</Trans>
+      <span className="md:inline-flex gap-2 items-center">
+        <Trans>Important Changes are Coming to Flowchart Fun.</Trans>{" "}
         <span className="font-bold">
           <Trans>Learn More</Trans>
         </span>
-        <ArrowRight size={24} />
+        <ArrowRight size={24} className="hidden sm:block" />
       </span>
     </Link>
   );
