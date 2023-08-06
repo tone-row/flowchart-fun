@@ -115,7 +115,7 @@ function Pricing() {
           </video>
         </div>
       </div>
-      <div className="pt-12 pb-6 bg-neutral-100">
+      <div className="pt-12 pb-6 bg-neutral-100 dark:bg-blue-900/50">
         <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4 max-w-[870px] xl:max-w-[1250px] mx-auto w-full px-4">
           {features().map((props) => (
             <Feature key={props.title} {...props} />
