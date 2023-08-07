@@ -1,28 +1,17 @@
 .btn {
-  @apply hover:bg-neutral-100;
-  @apply relative py-2 px-4 rounded-t-md border-b-0 border border-solid border-neutral-300 aria-[selected=true]:border-b-0;
-  @apply dark:hover:bg-neutral-800;
+  @apply text-neutral-500 relative py-3 px-1 rounded-t-md aria-[selected=true]:text-blue-500;
+  @apply dark:hover:bg-neutral-800 text-sm;
 }
 
-.btn[aria-selected="true"] {
-  box-shadow: inset 0 -1px 0px 0px var(--color-foreground);
+.TabsList {
+  position: relative;
 }
 
-.btn[aria-selected="true"]::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: var(--color-background);
-}
-
-.btn[aria-selected="true"]:hover::after {
-  @apply bg-neutral-100;
-}
-
-:global(body.dark) .btn[aria-selected="true"]:hover::after {
-  @apply bg-neutral-800;
+.TabsList::after {
+  content: " ";
+  height: 2px;
+  @apply absolute bottom-0 right-0 bg-blue-500;
+  left: var(--tab-offset-left);
+  width: var(--tab-offset-width);
+  transition: left 0.2s ease-in-out, width 0.2s ease-in-out;
 }

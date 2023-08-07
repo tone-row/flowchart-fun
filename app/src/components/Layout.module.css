@@ -41,7 +41,9 @@
 }
 
 .LayoutWrapper[data-banner="true"]:not([data-fullscreen="true"]) {
-  grid-template: auto auto minmax(0, 1fr) / none;
+  /* grid-template: auto auto minmax(0, 1fr) / none; */
+  /* sm:grid-rows-[auto_auto_minmax(0,1fr)] */
+  @apply grid-rows-[auto_minmax(0,1fr)] sm:grid-rows-[auto_auto_minmax(0,1fr)] grid-cols-[auto];
 }
 
 .Banner {
