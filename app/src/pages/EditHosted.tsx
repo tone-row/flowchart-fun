@@ -1,6 +1,6 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { Check, DotsThree } from "phosphor-react";
-import { lazy, useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useLocation, useParams } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
@@ -14,7 +14,6 @@ import Main from "../components/Main";
 import Spinner from "../components/Spinner";
 import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
-const EditStyleTab = lazy(() => import("../components/Tabs/EditStyleTab"));
 import { OnChange } from "@monaco-editor/react";
 
 import { TextEditor } from "../components/TextEditor";
@@ -25,6 +24,8 @@ import { useEditorStore } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
 import editStyles from "./Edit.module.css";
 import styles from "./EditHosted.module.css";
+import { useTabsStore } from "../lib/useTabsStore";
+import EditStyleTab from "../components/Tabs/EditStyleTab";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
@@ -66,11 +67,24 @@ export default function EditHosted() {
   const url = useLocation().pathname;
   useTrackLastChart(url);
 
+  const selectedTab = useTabsStore((s) => s.selectedTab);
+  useEffect(() => {
+    return () => {
+      useTabsStore.setState({ selectedTab: "Document" });
+    };
+  }, []);
+
   return (
     <EditWrapper>
       <Main>
         <EditorWrapper>
-          <Tabs.Root defaultValue="Document" className={editStyles.Tabs}>
+          <Tabs.Root
+            value={selectedTab}
+            onValueChange={(selectedTab) => {
+              useTabsStore.setState({ selectedTab });
+            }}
+            className={editStyles.Tabs}
+          >
             <EditorTabList />
             <Tabs.Content value="Document">
               <EditorOptions>
