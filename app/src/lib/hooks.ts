@@ -61,6 +61,15 @@ export function useIsProUser() {
 }
 
 /**
+ * Use this to determine if they were a pro user
+ */
+export function useWasProUser() {
+  const { customer } = useContext(AppContext);
+  const status = customer?.subscription?.status;
+  return status && ["canceled", "past_due", "unpaid"].includes(status);
+}
+
+/**
  * Use this to determine if they are auth'd
  * Even if their payment is past due, they're still logged in.
  */
