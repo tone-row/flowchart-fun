@@ -69,8 +69,8 @@ msgstr "इन चार्ट्स को कहीं से भी एक्
 msgid "Accessible from any device"
 msgstr "किसी भी उपकरण से पहुँचा जा सकता है"
 
-#: src/components/Header.tsx:181
-#: src/components/Header.tsx:405
+#: src/components/Header.tsx:182
+#: src/components/Header.tsx:406
 #: src/pages/Account.tsx:116
 msgid "Account"
 msgstr "खाता"
@@ -135,8 +135,8 @@ msgstr "<0>फ्लोचार्ट फन</0> काम कैसे कर�
 msgid "Blank"
 msgstr "खाली"
 
-#: src/components/Header.tsx:128
-#: src/components/Header.tsx:364
+#: src/components/Header.tsx:140
+#: src/components/Header.tsx:365
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "ब्लॉग"
@@ -180,14 +180,14 @@ msgstr "कुछ गुण तत्वों की दिखता या क
 msgid "Change Email Address"
 msgstr "ईमेल पता बदलें"
 
-#: src/components/Header.tsx:139
-#: src/components/Header.tsx:370
+#: src/components/Header.tsx:151
+#: src/components/Header.tsx:371
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "बदलाव का"
 
 #: src/components/Header.tsx:96
-#: src/components/Header.tsx:342
+#: src/components/Header.tsx:343
 msgid "Charts"
 msgstr "चार्ट"
 
@@ -498,7 +498,7 @@ msgid "Editable"
 msgstr "संपादन योग्य"
 
 #: src/components/Header.tsx:88
-#: src/components/Header.tsx:330
+#: src/components/Header.tsx:331
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "संपादक"
@@ -559,7 +559,7 @@ msgstr "निकालना"
 
 #: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:104
-#: src/components/Header.tsx:356
+#: src/components/Header.tsx:357
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
@@ -670,7 +670,7 @@ msgstr "डेटा आयात एक प्रो फीचर है। आ
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "एक <0>title</0> विशेषता का उपयोग करके एक शीर्षक शामिल करें। Visio रंगीनी का उपयोग करने के लिए, निम्नलिखित में से किसी एक के बराबर एक <1>roleType</1> विशेषता जोड़ें:"
 
-#: src/components/Header.tsx:117
+#: src/components/Header.tsx:129
 msgid "Info"
 msgstr "जानकारी"
 
@@ -757,8 +757,8 @@ msgstr "थीम लोड करने से आपने अपने कस
 msgid "Lock Zoom to Graph"
 msgstr "ग्राफ पर जूम लॉक करें"
 
-#: src/components/Header.tsx:189
-#: src/components/Header.tsx:413
+#: src/components/Header.tsx:190
+#: src/components/Header.tsx:414
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -819,7 +819,7 @@ msgid "Name"
 msgstr "नाम"
 
 #: src/components/Header.tsx:79
-#: src/components/Header.tsx:336
+#: src/components/Header.tsx:337
 #: src/pages/Charts.tsx:111
 msgid "New"
 msgstr "नया"
@@ -963,13 +963,8 @@ msgstr "प्लेबुक"
 msgid "Pointer and container on same line"
 msgstr "प्रतीक और कंटेनर एक ही लाइन पर"
 
-#: src/components/Header.tsx:171
-#: src/components/Header.tsx:389
-msgid "Pricing"
-msgstr "मूल्य निर्धारण"
-
-#: src/components/Header.tsx:155
-#: src/components/Header.tsx:419
+#: src/components/Header.tsx:167
+#: src/components/Header.tsx:420
 #: src/components/Settings.tsx:138
 msgid "Privacy Policy"
 msgstr "गोपनीयता नीति "
@@ -1083,8 +1078,8 @@ msgstr "वापसी"
 msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:376
+#: src/components/Header.tsx:159
+#: src/components/Header.tsx:377
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "रोडमैप"
@@ -1097,8 +1092,8 @@ msgstr "सहेजें"
 msgid "Send Feedback"
 msgstr "प्रतिक्रिया भेजें"
 
-#: src/components/Header.tsx:163
-#: src/components/Header.tsx:381
+#: src/components/Header.tsx:175
+#: src/components/Header.tsx:382
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "सेटिंग"
@@ -1389,6 +1384,11 @@ msgstr "अवैतनिक"
 #: src/pages/Account.tsx:206
 msgid "Update Email"
 msgstr "ईमेल अपडेट करें"
+
+#: src/components/Header.tsx:117
+#: src/components/Header.tsx:390
+msgid "Upgrade to Pro"
+msgstr "प्रो को अपग्रेड करें"
 
 #: src/components/ImportDataDialog.tsx:208
 msgid "Upload your File"
