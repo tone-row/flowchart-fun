@@ -12,6 +12,7 @@ import { Header } from "./Header";
 import styles from "./Layout.module.css";
 import Loading from "./Loading";
 import { VersionCheck } from "./VersionCheck";
+import { PaywallModal } from "./PaywallModal";
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const isFullscreen = useFullscreen();
@@ -61,6 +62,7 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
         <ColorMode />
       </Box>
       <VersionCheck />
+      <PaywallModal />
     </>
   );
 });

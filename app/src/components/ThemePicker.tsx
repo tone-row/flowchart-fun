@@ -7,6 +7,7 @@ import { create } from "zustand";
 
 import { themes } from "../lib/graphOptions";
 import { Button2 } from "../ui/Shared";
+import { useCanEdit } from "../lib/hooks";
 
 export const usePreviewTheme = create<{ cytoscapeStyle?: string }>(
   (_set) => ({})
@@ -34,6 +35,7 @@ export function ThemePicker({
       },
     }
   );
+  const canEdit = useCanEdit();
   return (
     <Popover.Root
       modal
@@ -50,7 +52,10 @@ export function ThemePicker({
         }
       }}
     >
-      <Popover.Trigger className="text-xs p-3 pr-5 pl-4 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 flex active:opacity-90 items-center space-x-1">
+      <Popover.Trigger
+        className="text-xs p-3 pr-5 pl-4 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 flex active:opacity-90 items-center space-x-1"
+        disabled={!canEdit}
+      >
         <PaintBrush size={16} className="mr-2" />
         <Trans>Load Theme</Trans>
       </Popover.Trigger>

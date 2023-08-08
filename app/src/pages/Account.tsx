@@ -1,9 +1,13 @@
 import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { ArrowSquareOut, Info } from "phosphor-react";
-import React, { ReactNode, useCallback, useContext, useState } from "react";
-import { useForm } from "react-hook-form";
+import { ArrowSquareOut, Info, Warning } from "phosphor-react";
+import React, {
+  ReactNode,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from "react";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -12,18 +16,18 @@ const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
 import { formatCents, formatDate } from "../lib/helpers";
-import {
-  createSubscription,
-  queryClient,
-  useOrderHistory,
-} from "../lib/queries";
+import { queryClient, useOrderHistory } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box } from "../slang";
 import { Content, Overlay } from "../ui/Dialog";
 import { Button2, Input, Notice, Page, Section } from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
-import { useIsProUser } from "../lib/hooks";
+import {
+  useIsProUser,
+  useSubscriptionStatusDisplay,
+  useCanSalvageSubscription,
+} from "../lib/hooks";
 
 export default function Account() {
   const { customer, session, customerIsLoading } = useContext(AppContext);
@@ -143,20 +147,6 @@ export default function Account() {
           </a>
         </Section>
       ) : null}
-      {subscription?.status === "canceled" && (
-        <Section>
-          <SectionTitle>
-            <Trans>Upgrade to Pro</Trans>
-          </SectionTitle>
-          <p className="text-sm leading-normal">
-            <Trans>
-              Your subscription is no longer active. If you want to create and
-              edit permanent charts upgrade to Pro.
-            </Trans>
-          </p>
-          <BecomeASponsor />
-        </Section>
-      )}
       {isProUser ? (
         <Section>
           <SectionTitle>
@@ -195,7 +185,7 @@ export default function Account() {
               )}
           </div>
           {subscription?.cancel_at_period_end && (
-            <Box flow="column" content="start" gap={4}>
+            <div className="flex gap-4 justify-start items-center">
               <Notice>
                 <Trans>Subscription will end</Trans>{" "}
                 {formatDate(subscription.current_period_end.toString())}
@@ -205,7 +195,7 @@ export default function Account() {
                   <Trans>Resume Subscription</Trans>
                 </Button2>
               </ConfirmResume>
-            </Box>
+            </div>
           )}
         </Section>
       ) : (
@@ -456,66 +446,6 @@ function ConfirmResume({
   );
 }
 
-function BecomeASponsor() {
-  const stripe = useStripe();
-  const elements = useElements();
-  const { customer, theme } = useContext(AppContext);
-  const { handleSubmit } = useForm();
-  const submit = useMutation("becomeASponsor", async () => {
-    if (!stripe || !elements || !customer?.customerId) {
-      // Stripe.js has not loaded yet. Make sure to disable
-      // form submission until Stripe.js has loaded.
-      return;
-    }
-    const cardElement = elements.getElement(CardElement);
-    if (!cardElement) throw new Error("No Card Element Found");
-
-    const { error: createPaymentError, paymentMethod } =
-      await stripe.createPaymentMethod({
-        type: "card",
-        card: cardElement,
-      });
-    if (createPaymentError) throw createPaymentError;
-    if (!paymentMethod) throw new Error("No Payment Method");
-    const { error: createSubscriptionError } = await createSubscription({
-      customerId: customer.customerId,
-      paymentMethodId: paymentMethod.id,
-      subscriptionType: "monthly", // Need to fix this
-    });
-    if (createSubscriptionError) throw createSubscriptionError;
-    queryClient.resetQueries(["auth"]);
-  });
-  return (
-    <Box
-      as="form"
-      onSubmit={handleSubmit(() => submit.mutate())}
-      template="none / minmax(0, 1fr) auto auto"
-      content="normal start"
-      flow="column"
-      gap={2}
-    >
-      <Box p={2} px={3} rad={1} className={styles.CardEl}>
-        <CardElement
-          options={{
-            style: {
-              base: {
-                color: theme.foreground,
-                backgroundColor: theme.background,
-                fontFamily:
-                  "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                fontSize: "16px",
-              },
-            },
-          }}
-        />
-      </Box>
-      <Button2 type="submit" isLoading={submit.isLoading}>
-        <Trans>Subscribe</Trans>
-      </Button2>
-    </Box>
-  );
-}
-
 function InfoCell({
   children,
   className = "",
@@ -533,36 +463,99 @@ function InfoCell({
  * from our blog post. To learn more about Pro Features on our pricing page.
  */
 function SubscriptionOptions() {
+  const canSalvageSubscription = useCanSalvageSubscription();
+  const statusDisplay = useSubscriptionStatusDisplay();
+  const returnUrl = useMemo(() => window.location.href, []);
+  const customerId = useContext(AppContext).customer?.customerId;
+  const manageBillingMutation = useMutation(
+    async () => {
+      // Post to /api/create-customer-portal-session
+      const response = await fetch("/api/create-customer-portal-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ customerId, returnUrl }),
+      });
+
+      const { url } = await response.json();
+
+      return url;
+    },
+    {
+      onSuccess: (url) => {
+        // Redirect to the url
+        window.location.href = url;
+      },
+    }
+  );
+
   return (
     <Section>
       <SectionTitle>Subscription</SectionTitle>
       <div className="grid gap-4">
-        <Trans>
-          <p className="text-sm leading-normal">
-            You currently have a free account.
-            <br />
-            <Link to="/pricing" className="text-blue-500">
-              Learn about our Pro Features and subscribe on our pricing page
-            </Link>
-            .
-          </p>
-        </Trans>
-        <div className="flex items-center gap-2 text-blue-500 bg-blue-100 p-4 rounded-md border-l-4 border-blue-500">
-          <Info size={24} />
-          <Trans>
-            <p className="text-sm leading-normal">
-              Starting August 28th you will need a subscription to create and
-              edit charts.{" "}
-              <Link
-                to="/blog/post/important-changes-coming"
-                className="underline"
-              >
-                Learn more
-              </Link>
-              .
+        {canSalvageSubscription ? (
+          <div className="grid gap-4 justify-start justify-items-start">
+            <p className="flex items-center gap-2">
+              <Warning className="w-5 h-5" />
+              <span>
+                <Trans>
+                  Your subscription is{" "}
+                  <span className="lowercase">{statusDisplay}</span>.
+                </Trans>
+              </span>
             </p>
-          </Trans>
-        </div>
+            <form method="POST" action="/api/create-customer-portal-session">
+              <Button2
+                color="blue"
+                onClick={() => {
+                  manageBillingMutation.mutate();
+                }}
+                isLoading={manageBillingMutation.isLoading}
+              >
+                <Trans>Manage Billing</Trans>
+              </Button2>
+            </form>
+            <p>
+              <Trans>
+                Or, you can{" "}
+                <Link to="/pricing" className="underline underline-offset-2">
+                  create a new subscription
+                </Link>
+                .
+              </Trans>
+            </p>
+          </div>
+        ) : (
+          <>
+            <Trans>
+              <p className="text-sm leading-normal">
+                You currently have a free account.
+                <br />
+                <Link to="/pricing" className="text-blue-500">
+                  Learn about our Pro Features and subscribe on our pricing page
+                </Link>
+                .
+              </p>
+            </Trans>
+            <div className="flex items-center gap-2 text-blue-500 bg-blue-100 p-4 rounded-md border-l-4 border-blue-500">
+              <Info size={24} />
+              <Trans>
+                <p className="text-sm leading-normal">
+                  Starting August 28th you will need a subscription to create
+                  and edit charts.{" "}
+                  <Link
+                    to="/blog/post/important-changes-coming"
+                    className="underline"
+                  >
+                    Learn more
+                  </Link>
+                  .
+                </p>
+              </Trans>
+            </div>
+          </>
+        )}
       </div>
     </Section>
   );
