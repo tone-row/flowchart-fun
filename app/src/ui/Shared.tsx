@@ -111,34 +111,25 @@ type NoticeStyle = "warning" | "info";
 export function Notice({
   children,
   style = "warning",
-  boxProps = {},
 }: {
   children: ReactNode;
   style?: NoticeStyle;
-  boxProps?: BoxProps;
 }) {
   const Icon = style === "warning" ? Warning : HandWaving;
-  const { as = "div", ...rest } = boxProps;
   return (
-    <Box
+    <div
       data-style={style}
-      p={2}
-      px={3}
-      pr={4}
-      rad={1}
-      self="normal start"
-      flow="column"
-      content="start"
-      items="center stretch"
-      gap={2}
-      className={styles.CancelNotice}
-      color="palette-black-0"
-      as={as}
-      {...rest}
+      className={cx(
+        "py-3 pl-2 pr-4 flex items-center gap-2 rounded-md text-sm",
+        {
+          "bg-yellow-100 text-yellow-700": style === "warning",
+          "bg-blue-100 text-blue-700": style === "info",
+        }
+      )}
     >
       <Icon size={smallIconSize} />
       <span className="text-sm">{children}</span>
-    </Box>
+    </div>
   );
 }
 

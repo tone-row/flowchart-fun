@@ -9,6 +9,7 @@ import {
   Sparkle,
   Trash,
   X,
+  Prohibit,
 } from "phosphor-react";
 import { memo, ReactNode, useContext, useReducer, useState } from "react";
 import { useMutation } from "react-query";
@@ -93,6 +94,9 @@ export default function Charts() {
       },
     }
   );
+
+  const notProButHasCharts =
+    !isProUser && persistentCharts && persistentCharts?.length > 0;
   return (
     <Page>
       <header className="flex items-center justify-center gap-6">
@@ -123,30 +127,35 @@ export default function Charts() {
             <div className="py-4">
               <Loading />
             </div>
-          ) : isProUser ? (
-            <div className="grid gap-1">
-              {persistentCharts?.map((chart) => (
-                <ChartLink
-                  key={chart.id}
-                  title={chart.name}
-                  href={`/u/${chart.id}`}
-                  handleDelete={() => {
-                    handleDeleteChart.mutate({ chartId: chart.id });
-                  }}
-                  handleCopy={() => {
-                    handleCopyPersistentChart.mutate(chart.id);
-                  }}
-                  isCurrent={`/u/${chart.id}` === currentChart}
-                >
-                  <div className="flex items-center gap-4 text-xs text-foreground/50 dark:text-background/50">
-                    <span>{chart.niceCreatedDate}</span>
-                    <span>{chart.niceUpdatedDate}</span>
-                  </div>
-                </ChartLink>
-              ))}
-            </div>
           ) : (
-            <ProFeatureLink />
+            <>
+              {notProButHasCharts ? (
+                <InactiveAccount />
+              ) : !isProUser ? (
+                <ProFeatureLink />
+              ) : null}
+              <div className="grid gap-1">
+                {persistentCharts?.map((chart) => (
+                  <ChartLink
+                    key={chart.id}
+                    title={chart.name}
+                    href={`/u/${chart.id}`}
+                    handleDelete={() => {
+                      handleDeleteChart.mutate({ chartId: chart.id });
+                    }}
+                    handleCopy={() => {
+                      handleCopyPersistentChart.mutate(chart.id);
+                    }}
+                    isCurrent={`/u/${chart.id}` === currentChart}
+                  >
+                    <div className="flex items-center gap-4 text-xs text-foreground/50 dark:text-background/50">
+                      <span>{chart.niceCreatedDate}</span>
+                      <span>{chart.niceUpdatedDate}</span>
+                    </div>
+                  </ChartLink>
+                ))}
+              </div>
+            </>
           )}
         </LargeFolder>
 
@@ -353,6 +362,38 @@ function ProFeatureLink() {
         >
           <Trans>Learn about Flowchart Fun Pro</Trans>
         </Link>
+      </div>
+    </div>
+  );
+}
+
+function InactiveAccount() {
+  return (
+    <div
+      className={`flex items-center p-4 pt-[15px] gap-5 rounded-lg text-sm text-red-900 bg-red-200/90 rounded-lg`}
+    >
+      <div className="w-[47px] sm:w-auto">
+        <Prohibit size={30} className="translate-y-[-1px] text-red-900" />
+      </div>
+      <div className="grid w-full gap-2 items-start leading-normal">
+        <span>
+          <Trans>
+            Your charts are read-only because your account is no longer active.
+            Visit your{" "}
+            <Link to="/a" className="underline underline-offset-2">
+              account
+            </Link>{" "}
+            page to learn more. You can{" "}
+            <Link
+              to="/pricing"
+              className="underline underline-offset-2"
+              data-testid="to-pricing"
+            >
+              upgrade to pro
+            </Link>{" "}
+            to regain editing access to your charts
+          </Trans>
+        </span>
       </div>
     </div>
   );

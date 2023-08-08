@@ -4,6 +4,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { AppContext } from "../components/AppContext";
 import { slugify } from "./helpers";
 import { useDocDetails } from "./useDoc";
+import { t } from "@lingui/macro";
 
 /**
  * Returns whether animation has been disabled
@@ -61,6 +62,28 @@ export function useIsProUser() {
 }
 
 /**
+ * Use this to determine if they were a pro user.
+ * Specifically, if their subscription is canceled, past due, or unpaid.
+ */
+export function useCanSalvageSubscription() {
+  const { customer } = useContext(AppContext);
+  const status = customer?.subscription?.status;
+  return status && ["past_due", "unpaid"].includes(status);
+}
+
+export function useSubscriptionStatusDisplay() {
+  const { customer } = useContext(AppContext);
+  switch (customer?.subscription?.status) {
+    case "past_due":
+      return t`Past Due`;
+    case "unpaid":
+      return t`Unpaid`;
+    default:
+      return t`Unknown`;
+  }
+}
+
+/**
  * Use this to determine if they are auth'd
  * Even if their payment is past due, they're still logged in.
  */
@@ -109,4 +132,15 @@ export function useIsEditorView() {
 
 export function useLightOrDarkMode() {
   return useContext(AppContext).mode;
+}
+
+/**
+ * Used all throughout the Edit page to determine if the user is allowed to update the graph.
+ */
+export function useCanEdit() {
+  // you can edit if you're on the index page (scratch pad) or you are a pro user
+  // this may need to be tweaked when sharing charts becomes a thing
+  const isLocalChart = useIsLocalChart();
+  const isProUser = useIsProUser();
+  return isLocalChart || isProUser;
 }
