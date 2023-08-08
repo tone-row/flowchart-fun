@@ -10,7 +10,6 @@ import {
   FolderOpen,
   Gear,
   Info,
-  Lightning,
   Notebook,
   PencilLine,
   Plus,
@@ -18,6 +17,7 @@ import {
   TreeStructure,
   User,
   Lock,
+  RocketLaunch,
 } from "phosphor-react";
 import {
   ButtonHTMLAttributes,
@@ -111,6 +111,18 @@ export const Header = memo(function SharedHeader() {
           </NavigationMenu.List>
           <NavigationMenu.List asChild>
             <nav className="flex items-center gap-1">
+              {!isProUser ? (
+                <HeaderClientLink
+                  to="/pricing"
+                  label={t`Upgrade to Pro`}
+                  className="!text-purple-600 hover:!bg-purple-50/50 !pl-3 !pr-4 aria-[current=page]:bg-purple-50/50 dark:!text-purple-300 dark:hover:!bg-purple-500/20 dark:aria-[current=page]:!bg-purple-500/20"
+                  icon={<RocketLaunch weight="light" height={22} width={22} />}
+                  aria-current={isSponsorPage ? "page" : undefined}
+                  onClick={() => {
+                    track("sponsor", "click");
+                  }}
+                />
+              ) : null}
               <DropdownMenu.Root modal={false}>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
@@ -165,17 +177,6 @@ export const Header = memo(function SharedHeader() {
                 aria-current={isSettingsPage ? "page" : undefined}
                 to="/s"
               />
-              {!isProUser ? (
-                <HeaderClientLink
-                  to="/pricing"
-                  label={t`Pricing`}
-                  icon={<Lightning weight="light" height={22} width={22} />}
-                  aria-current={isSponsorPage ? "page" : undefined}
-                  onClick={() => {
-                    track("sponsor", "click");
-                  }}
-                />
-              ) : null}
               {isLoggedIn ? (
                 <HeaderClientLink
                   label={t`Account`}
@@ -386,8 +387,8 @@ function MobileHeader({
             {!isProUser ? (
               <HeaderClientLink
                 to="/pricing"
-                label={t`Pricing`}
-                icon={<Lightning weight="light" height={22} width={22} />}
+                label={t`Upgrade to Pro`}
+                icon={<RocketLaunch weight="light" height={22} width={22} />}
                 aria-current={isSponsorPage ? "page" : undefined}
                 onClick={() => {
                   // track event with gtm

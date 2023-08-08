@@ -69,8 +69,8 @@ msgstr "Acesse esses gráficos de qualquer lugar.<0/>Compartilhe e incorpore flu
 msgid "Accessible from any device"
 msgstr "Acessível de qualquer dispositivo"
 
-#: src/components/Header.tsx:181
-#: src/components/Header.tsx:405
+#: src/components/Header.tsx:182
+#: src/components/Header.tsx:406
 #: src/pages/Account.tsx:116
 msgid "Account"
 msgstr "Conta"
@@ -135,8 +135,8 @@ msgstr "Comece com um exemplo simples mostrando como o <0>Flowchart Fun</0> func
 msgid "Blank"
 msgstr "Branco"
 
-#: src/components/Header.tsx:128
-#: src/components/Header.tsx:364
+#: src/components/Header.tsx:140
+#: src/components/Header.tsx:365
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "Blog"
@@ -180,14 +180,14 @@ msgstr "Certos atributos podem ser usados para personalizar a aparência ou func
 msgid "Change Email Address"
 msgstr "Mude o endereço de email"
 
-#: src/components/Header.tsx:139
-#: src/components/Header.tsx:370
+#: src/components/Header.tsx:151
+#: src/components/Header.tsx:371
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "Registro de alterações"
 
 #: src/components/Header.tsx:96
-#: src/components/Header.tsx:342
+#: src/components/Header.tsx:343
 msgid "Charts"
 msgstr "Diagramas"
 
@@ -498,7 +498,7 @@ msgid "Editable"
 msgstr "Editável"
 
 #: src/components/Header.tsx:88
-#: src/components/Header.tsx:330
+#: src/components/Header.tsx:331
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "Editor"
@@ -559,7 +559,7 @@ msgstr "Extrair"
 
 #: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:104
-#: src/components/Header.tsx:356
+#: src/components/Header.tsx:357
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -670,7 +670,7 @@ msgstr "Importar dados é um recurso avançado. Você pode atualizar para o Flow
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Inclua um título usando um atributo <0>title</0>. Para usar a coloração do Visio, adicione um atributo <1>roleType</1> igual a uma das seguintes opções:"
 
-#: src/components/Header.tsx:117
+#: src/components/Header.tsx:129
 msgid "Info"
 msgstr "Informações"
 
@@ -757,8 +757,8 @@ msgstr "Carregar um tema apagará quaisquer estilos personalizados que você ten
 msgid "Lock Zoom to Graph"
 msgstr "Bloquear Zoom para o Gráfico"
 
-#: src/components/Header.tsx:189
-#: src/components/Header.tsx:413
+#: src/components/Header.tsx:190
+#: src/components/Header.tsx:414
 msgid "Log In"
 msgstr "Acessar"
 
@@ -819,7 +819,7 @@ msgid "Name"
 msgstr "Nome"
 
 #: src/components/Header.tsx:79
-#: src/components/Header.tsx:336
+#: src/components/Header.tsx:337
 #: src/pages/Charts.tsx:111
 msgid "New"
 msgstr "Novo"
@@ -963,13 +963,8 @@ msgstr "Cartilha"
 msgid "Pointer and container on same line"
 msgstr "Ponteiro e contêiner na mesma linha"
 
-#: src/components/Header.tsx:171
-#: src/components/Header.tsx:389
-msgid "Pricing"
-msgstr "Preços"
-
-#: src/components/Header.tsx:155
-#: src/components/Header.tsx:419
+#: src/components/Header.tsx:167
+#: src/components/Header.tsx:420
 #: src/components/Settings.tsx:138
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
@@ -1083,8 +1078,8 @@ msgstr "Retornar"
 msgid "Right to Left"
 msgstr "Da direita para esquerda"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:376
+#: src/components/Header.tsx:159
+#: src/components/Header.tsx:377
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "Roteiro"
@@ -1097,8 +1092,8 @@ msgstr "Salvar"
 msgid "Send Feedback"
 msgstr "Enviar Feedback"
 
-#: src/components/Header.tsx:163
-#: src/components/Header.tsx:381
+#: src/components/Header.tsx:175
+#: src/components/Header.tsx:382
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "Configurações"
@@ -1389,6 +1384,11 @@ msgstr "Não pago"
 #: src/pages/Account.tsx:206
 msgid "Update Email"
 msgstr "Atualizar e-mail"
+
+#: src/components/Header.tsx:117
+#: src/components/Header.tsx:390
+msgid "Upgrade to Pro"
+msgstr "Atualize para Pro"
 
 #: src/components/ImportDataDialog.tsx:208
 msgid "Upload your File"

@@ -69,8 +69,8 @@ msgstr "Accédez à ces diagrammes depuis n'importe où.<0/>Partagez et intégre
 msgid "Accessible from any device"
 msgstr "Accessible depuis n'importe quel appareil"
 
-#: src/components/Header.tsx:181
-#: src/components/Header.tsx:405
+#: src/components/Header.tsx:182
+#: src/components/Header.tsx:406
 #: src/pages/Account.tsx:116
 msgid "Account"
 msgstr "Compte"
@@ -135,8 +135,8 @@ msgstr "Commencez par un exemple simple montrant comment <0>Flowchart Fun</0> fo
 msgid "Blank"
 msgstr "Vide"
 
-#: src/components/Header.tsx:128
-#: src/components/Header.tsx:364
+#: src/components/Header.tsx:140
+#: src/components/Header.tsx:365
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "Blog"
@@ -180,14 +180,14 @@ msgstr "Certains attributs peuvent être utilisés pour personnaliser l'apparenc
 msgid "Change Email Address"
 msgstr "Changer l'adresse email"
 
-#: src/components/Header.tsx:139
-#: src/components/Header.tsx:370
+#: src/components/Header.tsx:151
+#: src/components/Header.tsx:371
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "Journal des modifications"
 
 #: src/components/Header.tsx:96
-#: src/components/Header.tsx:342
+#: src/components/Header.tsx:343
 msgid "Charts"
 msgstr "Graphiques"
 
@@ -498,7 +498,7 @@ msgid "Editable"
 msgstr "Modifiable"
 
 #: src/components/Header.tsx:88
-#: src/components/Header.tsx:330
+#: src/components/Header.tsx:331
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "Éditeur"
@@ -559,7 +559,7 @@ msgstr "Extrait"
 
 #: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:104
-#: src/components/Header.tsx:356
+#: src/components/Header.tsx:357
 msgid "Feedback"
 msgstr "Commentaire"
 
@@ -670,7 +670,7 @@ msgstr "L'importation de données est une fonctionnalité professionnelle. Vous 
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la coloration Visio, ajoutez un attribut <1>roleType</1> égal à l'un des éléments suivants:"
 
-#: src/components/Header.tsx:117
+#: src/components/Header.tsx:129
 msgid "Info"
 msgstr "Info"
 
@@ -757,8 +757,8 @@ msgstr "Charger un thème effacera tous les styles personnalisés que vous avez 
 msgid "Lock Zoom to Graph"
 msgstr "Verrouiller le Zoom sur le Graphique"
 
-#: src/components/Header.tsx:189
-#: src/components/Header.tsx:413
+#: src/components/Header.tsx:190
+#: src/components/Header.tsx:414
 msgid "Log In"
 msgstr "Connexion"
 
@@ -819,7 +819,7 @@ msgid "Name"
 msgstr "Nom"
 
 #: src/components/Header.tsx:79
-#: src/components/Header.tsx:336
+#: src/components/Header.tsx:337
 #: src/pages/Charts.tsx:111
 msgid "New"
 msgstr "Nouveau"
@@ -963,13 +963,8 @@ msgstr "Livre-jeu"
 msgid "Pointer and container on same line"
 msgstr "Pointeur et conteneur sur la même ligne"
 
-#: src/components/Header.tsx:171
-#: src/components/Header.tsx:389
-msgid "Pricing"
-msgstr "Tarification"
-
-#: src/components/Header.tsx:155
-#: src/components/Header.tsx:419
+#: src/components/Header.tsx:167
+#: src/components/Header.tsx:420
 #: src/components/Settings.tsx:138
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
@@ -1083,8 +1078,8 @@ msgstr "Retour"
 msgid "Right to Left"
 msgstr "De droite à gauche"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:376
+#: src/components/Header.tsx:159
+#: src/components/Header.tsx:377
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "Roadmap"
@@ -1097,8 +1092,8 @@ msgstr "Sauver"
 msgid "Send Feedback"
 msgstr "Envoyer des commentaires"
 
-#: src/components/Header.tsx:163
-#: src/components/Header.tsx:381
+#: src/components/Header.tsx:175
+#: src/components/Header.tsx:382
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "Paramètres"
@@ -1389,6 +1384,11 @@ msgstr "Impayé"
 #: src/pages/Account.tsx:206
 msgid "Update Email"
 msgstr "Mettre à jour l'e-mail"
+
+#: src/components/Header.tsx:117
+#: src/components/Header.tsx:390
+msgid "Upgrade to Pro"
+msgstr "Mettez à niveau vers Pro"
 
 #: src/components/ImportDataDialog.tsx:208
 msgid "Upload your File"
