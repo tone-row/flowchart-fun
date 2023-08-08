@@ -1,7 +1,13 @@
 import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
-import { ArrowSquareOut, Info } from "phosphor-react";
-import React, { ReactNode, useCallback, useContext, useState } from "react";
+import { ArrowSquareOut, Info, Warning } from "phosphor-react";
+import React, {
+  ReactNode,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from "react";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -17,7 +23,11 @@ import { Content, Overlay } from "../ui/Dialog";
 import { Button2, Input, Notice, Page, Section } from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
-import { useIsProUser } from "../lib/hooks";
+import {
+  useIsProUser,
+  useSubscriptionStatusDisplay,
+  useCanSalvageSubscription,
+} from "../lib/hooks";
 
 export default function Account() {
   const { customer, session, customerIsLoading } = useContext(AppContext);
@@ -175,7 +185,7 @@ export default function Account() {
               )}
           </div>
           {subscription?.cancel_at_period_end && (
-            <Box flow="column" content="start" gap={4}>
+            <div className="flex gap-4 justify-start items-center">
               <Notice>
                 <Trans>Subscription will end</Trans>{" "}
                 {formatDate(subscription.current_period_end.toString())}
@@ -185,7 +195,7 @@ export default function Account() {
                   <Trans>Resume Subscription</Trans>
                 </Button2>
               </ConfirmResume>
-            </Box>
+            </div>
           )}
         </Section>
       ) : (
@@ -453,36 +463,99 @@ function InfoCell({
  * from our blog post. To learn more about Pro Features on our pricing page.
  */
 function SubscriptionOptions() {
+  const canSalvageSubscription = useCanSalvageSubscription();
+  const statusDisplay = useSubscriptionStatusDisplay();
+  const returnUrl = useMemo(() => window.location.href, []);
+  const customerId = useContext(AppContext).customer?.customerId;
+  const manageBillingMutation = useMutation(
+    async () => {
+      // Post to /api/create-customer-portal-session
+      const response = await fetch("/api/create-customer-portal-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ customerId, returnUrl }),
+      });
+
+      const { url } = await response.json();
+
+      return url;
+    },
+    {
+      onSuccess: (url) => {
+        // Redirect to the url
+        window.location.href = url;
+      },
+    }
+  );
+
   return (
     <Section>
       <SectionTitle>Subscription</SectionTitle>
       <div className="grid gap-4">
-        <Trans>
-          <p className="text-sm leading-normal">
-            You currently have a free account.
-            <br />
-            <Link to="/pricing" className="text-blue-500">
-              Learn about our Pro Features and subscribe on our pricing page
-            </Link>
-            .
-          </p>
-        </Trans>
-        <div className="flex items-center gap-2 text-blue-500 bg-blue-100 p-4 rounded-md border-l-4 border-blue-500">
-          <Info size={24} />
-          <Trans>
-            <p className="text-sm leading-normal">
-              Starting August 28th you will need a subscription to create and
-              edit charts.{" "}
-              <Link
-                to="/blog/post/important-changes-coming"
-                className="underline"
-              >
-                Learn more
-              </Link>
-              .
+        {canSalvageSubscription ? (
+          <div className="grid gap-4 justify-start justify-items-start">
+            <p className="flex items-center gap-2">
+              <Warning className="w-5 h-5" />
+              <span>
+                <Trans>
+                  Your subscription is{" "}
+                  <span className="lowercase">{statusDisplay}</span>.
+                </Trans>
+              </span>
             </p>
-          </Trans>
-        </div>
+            <form method="POST" action="/api/create-customer-portal-session">
+              <Button2
+                color="blue"
+                onClick={() => {
+                  manageBillingMutation.mutate();
+                }}
+                isLoading={manageBillingMutation.isLoading}
+              >
+                <Trans>Manage Billing</Trans>
+              </Button2>
+            </form>
+            <p>
+              <Trans>
+                Or, you can{" "}
+                <Link to="/pricing" className="underline underline-offset-2">
+                  create a new subscription
+                </Link>
+                .
+              </Trans>
+            </p>
+          </div>
+        ) : (
+          <>
+            <Trans>
+              <p className="text-sm leading-normal">
+                You currently have a free account.
+                <br />
+                <Link to="/pricing" className="text-blue-500">
+                  Learn about our Pro Features and subscribe on our pricing page
+                </Link>
+                .
+              </p>
+            </Trans>
+            <div className="flex items-center gap-2 text-blue-500 bg-blue-100 p-4 rounded-md border-l-4 border-blue-500">
+              <Info size={24} />
+              <Trans>
+                <p className="text-sm leading-normal">
+                  Starting August 28th you will need a subscription to create
+                  and edit charts.{" "}
+                  <Link
+                    to="/blog/post/important-changes-coming"
+                    className="underline"
+                  >
+                    Learn more
+                  </Link>
+                  .
+                </p>
+              </Trans>
+            </div>
+          </>
+        )}
       </div>
     </Section>
   );

@@ -4,6 +4,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { AppContext } from "../components/AppContext";
 import { slugify } from "./helpers";
 import { useDocDetails } from "./useDoc";
+import { t } from "@lingui/macro";
 
 /**
  * Returns whether animation has been disabled
@@ -61,12 +62,25 @@ export function useIsProUser() {
 }
 
 /**
- * Use this to determine if they were a pro user
+ * Use this to determine if they were a pro user.
+ * Specifically, if their subscription is canceled, past due, or unpaid.
  */
-export function useWasProUser() {
+export function useCanSalvageSubscription() {
   const { customer } = useContext(AppContext);
   const status = customer?.subscription?.status;
-  return status && ["canceled", "past_due", "unpaid"].includes(status);
+  return status && ["past_due", "unpaid"].includes(status);
+}
+
+export function useSubscriptionStatusDisplay() {
+  const { customer } = useContext(AppContext);
+  switch (customer?.subscription?.status) {
+    case "past_due":
+      return t`Past Due`;
+    case "unpaid":
+      return t`Unpaid`;
+    default:
+      return t`Unknown`;
+  }
 }
 
 /**
