@@ -384,7 +384,11 @@ function InactiveAccount() {
               account
             </Link>{" "}
             page to learn more. You can{" "}
-            <Link to="/pricing" className="underline underline-offset-2">
+            <Link
+              to="/pricing"
+              className="underline underline-offset-2"
+              data-testid="to-pricing"
+            >
               upgrade to pro
             </Link>{" "}
             to regain editing access to your charts

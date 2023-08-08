@@ -13,7 +13,6 @@ dotenv.config({ path: envPath });
 
 const config: PlaywrightTestConfig = {
   testDir: "e2e",
-  workers: 6,
   timeout: 120000,
   use: {
     acceptDownloads: true,
@@ -27,6 +26,7 @@ const config: PlaywrightTestConfig = {
       slowMo: isDebug ? 500 : 0,
     },
   },
+  maxFailures: 3,
   projects: isDebug
     ? [
         {
