@@ -14,6 +14,7 @@ dotenv.config({ path: envPath });
 const config: PlaywrightTestConfig = {
   testDir: "e2e",
   timeout: 120000,
+  workers: 12,
   use: {
     acceptDownloads: true,
     viewport: {
