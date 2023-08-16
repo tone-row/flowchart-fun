@@ -172,7 +172,7 @@ msgstr "取消"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
 
-#: src/components/LearnSyntaxDialog.tsx:361
+#: src/components/LearnSyntaxDialog.tsx:349
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "某些属性可用于自定义元素的外观或功能。"
 
@@ -207,7 +207,7 @@ msgstr "选择一个计划"
 msgid "Choose a Theme"
 msgstr "选择一个主题"
 
-#: src/components/LearnSyntaxDialog.tsx:330
+#: src/components/LearnSyntaxDialog.tsx:318
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "为边缘的源和目标选择各种箭头形状。形状包括三角形，三角形-T，圆形-三角形，三角形-十字，三角形-后曲线，V形，T形，正方形，圆形，菱形，雪花形，无。"
 
@@ -235,7 +235,7 @@ msgstr "点击预览"
 msgid "Clone"
 msgstr "克隆"
 
-#: src/components/LearnSyntaxDialog.tsx:416
+#: src/components/LearnSyntaxDialog.tsx:404
 msgid "Close"
 msgstr "关闭"
 
@@ -243,7 +243,7 @@ msgstr "关闭"
 msgid "Color"
 msgstr "颜色"
 
-#: src/components/LearnSyntaxDialog.tsx:277
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "颜色包括红色，橙色，黄色，蓝色，紫色，黑色，白色和灰色。"
 
@@ -448,7 +448,7 @@ msgstr "邊緣標籤"
 msgid "Edge Label Column"
 msgstr "邊緣標籤欄"
 
-#: src/components/LearnSyntaxDialog.tsx:314
+#: src/components/LearnSyntaxDialog.tsx:302
 msgid "Edge Style"
 msgstr "邊緣樣式"
 
@@ -477,7 +477,7 @@ msgstr "边声明在自己的行中"
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "边在标签之前可以有ID，类和属性"
 
-#: src/components/LearnSyntaxDialog.tsx:317
+#: src/components/LearnSyntaxDialog.tsx:305
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "边可以用虚线，点线或实线样式"
 
@@ -635,7 +635,7 @@ msgstr "如果您喜欢使用<0>Flowchart Fun</0>，请考虑支持该项目"
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "如果你想创建一个边，缩进这一行。如果不，用反斜杠转义冒号<0>\\:</0>"
 
-#: src/components/LearnSyntaxDialog.tsx:380
+#: src/components/LearnSyntaxDialog.tsx:368
 msgid "Images"
 msgstr "图像"
 
@@ -853,11 +853,11 @@ msgstr "不：选项B"
 msgid "Node"
 msgstr "節點"
 
-#: src/components/LearnSyntaxDialog.tsx:343
+#: src/components/LearnSyntaxDialog.tsx:331
 msgid "Node Border Style"
 msgstr "节点边框样式"
 
-#: src/components/LearnSyntaxDialog.tsx:274
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Node Colors"
 msgstr "节点颜色"
 
@@ -874,7 +874,7 @@ msgstr "节点ID、类、属性"
 msgid "Node Label"
 msgstr "节点标签"
 
-#: src/components/LearnSyntaxDialog.tsx:287
+#: src/components/LearnSyntaxDialog.tsx:288
 msgid "Node Shapes"
 msgstr "节点形状"
 
@@ -882,9 +882,9 @@ msgstr "节点形状"
 msgid "Node and pointer on same line"
 msgstr "同一行上的节点和指针"
 
-#: src/components/LearnSyntaxDialog.tsx:346
-msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
-msgstr "节点可以使用虚线、点线或双线进行样式设置，也可以使用border-none来移除边框。"
+#: src/components/LearnSyntaxDialog.tsx:334
+msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
+msgstr "节点可以使用虚线、点线或双线样式。边框也可以使用 border_none 来移除。"
 
 #: src/components/ImportDataDialog.tsx:555
 msgid "Not Empty"
@@ -1127,10 +1127,6 @@ msgstr "尺寸"
 msgid "Small"
 msgstr "小"
 
-#: src/components/LearnSyntaxDialog.tsx:269
-msgid "Some classes are available to help style your flowchart"
-msgstr "有些类可以帮助您设计流程图"
-
 #: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
 msgstr "抱歉！此页面只有英语版。"
@@ -1144,7 +1140,7 @@ msgstr "源列"
 msgid "Source Delimiter"
 msgstr "源分隔符"
 
-#: src/components/LearnSyntaxDialog.tsx:327
+#: src/components/LearnSyntaxDialog.tsx:315
 msgid "Source/Target Arrow Shape"
 msgstr "源/目标箭头形状"
 
@@ -1152,7 +1148,7 @@ msgstr "源/目标箭头形状"
 msgid "Spacing"
 msgstr "间距"
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Special Attributes"
 msgstr "特殊属性"
 
@@ -1236,10 +1232,6 @@ msgstr "临时图表"
 msgid "Temporary Flowcharts are going away soon!"
 msgstr "暫時流程圖很快就會消失！"
 
-#: src/components/LearnSyntaxDialog.tsx:301
-msgid "Text Sizes"
-msgstr "文字大小"
-
 #: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "以冒号加空格结尾的文本将创建一个边，文本作为标签"
@@ -1248,13 +1240,13 @@ msgstr "以冒号加空格结尾的文本将创建一个边，文本作为标签
 msgid "Text on a line creates a node with the text as the label"
 msgstr "在一行中的文本将创建一个节点，文本作为标签"
 
-#: src/components/LearnSyntaxDialog.tsx:304
-msgid "Text sizes include small, regular, large, and extra-large."
-msgstr "文本大小包括小、正常、大和超大。"
-
 #: src/components/Feedback.tsx:106
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
+
+#: src/components/LearnSyntaxDialog.tsx:269
+msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
+msgstr "更改样式的最佳方式是右键单击节点或边缘，然后选择所需的样式。"
 
 #: src/components/ImportDataDialog.tsx:469
 msgid "The column that contains the edge label(s)"
@@ -1276,7 +1268,7 @@ msgstr "用于分隔多个源节点的分隔符"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "用于分隔多个目标节点的分隔符"
 
-#: src/components/LearnSyntaxDialog.tsx:290
+#: src/components/LearnSyntaxDialog.tsx:291
 msgid "The possible shapes are:"
 msgstr "可能的形状是："
 
@@ -1406,15 +1398,15 @@ msgstr "使用ID连接"
 msgid "Use classes to group nodes"
 msgstr "使用类来分组节点"
 
-#: src/components/LearnSyntaxDialog.tsx:397
+#: src/components/LearnSyntaxDialog.tsx:385
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "使用属性<0>href</0>在节点上设置一个在新标签页中打开的链接。"
 
-#: src/components/LearnSyntaxDialog.tsx:383
+#: src/components/LearnSyntaxDialog.tsx:371
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "使用属性<0>src</0>来设置节点的图像，图像将被缩放以适应节点，因此您可能需要调整节点的宽度和高度以获得期望的结果。仅支持公共图像（不受CORS阻止）。"
 
-#: src/components/LearnSyntaxDialog.tsx:370
+#: src/components/LearnSyntaxDialog.tsx:358
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 
@@ -1454,7 +1446,7 @@ msgstr "水印图像"
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "欢迎来到流程图乐趣Pro！"
 
-#: src/components/LearnSyntaxDialog.tsx:367
+#: src/components/LearnSyntaxDialog.tsx:355
 msgid "Width and Height"
 msgstr "宽度和高度"
 
