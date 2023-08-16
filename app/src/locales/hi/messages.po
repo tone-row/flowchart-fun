@@ -172,7 +172,7 @@ msgstr "रद्द करें"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
 
-#: src/components/LearnSyntaxDialog.tsx:361
+#: src/components/LearnSyntaxDialog.tsx:349
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "कुछ गुण तत्वों की दिखता या कार्यक्षमता को अनुकूलित करने के लिए उपयोग किए जा सकते हैं।"
 
@@ -207,7 +207,7 @@ msgstr "एक योजना चुनें"
 msgid "Choose a Theme"
 msgstr "एक थीम चुनें"
 
-#: src/components/LearnSyntaxDialog.tsx:330
+#: src/components/LearnSyntaxDialog.tsx:318
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।"
 
@@ -235,7 +235,7 @@ msgstr "पूर्वावलोकन के लिए क्लिक क�
 msgid "Clone"
 msgstr "क्लोन करें"
 
-#: src/components/LearnSyntaxDialog.tsx:416
+#: src/components/LearnSyntaxDialog.tsx:404
 msgid "Close"
 msgstr "बंद करें"
 
@@ -243,7 +243,7 @@ msgstr "बंद करें"
 msgid "Color"
 msgstr "रंग"
 
-#: src/components/LearnSyntaxDialog.tsx:277
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "रंग में लाल, नारंगी, पीला, नीला, बैंगनी, काला, सफेद, और ग्रे शामिल हैं।"
 
@@ -448,7 +448,7 @@ msgstr "किनारे लेबल"
 msgid "Edge Label Column"
 msgstr "किनारे लेबल कॉलम"
 
-#: src/components/LearnSyntaxDialog.tsx:314
+#: src/components/LearnSyntaxDialog.tsx:302
 msgid "Edge Style"
 msgstr "किनारे शैली"
 
@@ -477,7 +477,7 @@ msgstr "किन्तुओं को अपनी खुद की पंक�
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "लेबल से पहले, किन्तुओं को आईडीज़, क्लासेज़ और गुण देने की अनुमति होती है"
 
-#: src/components/LearnSyntaxDialog.tsx:317
+#: src/components/LearnSyntaxDialog.tsx:305
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "किन्तुओं को डैश्ड, डॉटेड या सॉलिड लाइन्स के साथ स्टाइल किया जा सकता है"
 
@@ -635,7 +635,7 @@ msgstr "यदि आप <0>Flowchart Fun</0> का उपयोग करन�
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "यदि आप एक एड्ज बनाने के लिए मतलब है, तो इस लाइन को इंडेंट करें। यदि नहीं, तो कॉलन को बैक स्लैश के साथ भागो <0> \\: </0>"
 
-#: src/components/LearnSyntaxDialog.tsx:380
+#: src/components/LearnSyntaxDialog.tsx:368
 msgid "Images"
 msgstr "छवियाँ"
 
@@ -853,11 +853,11 @@ msgstr "नहीं: विकल्प B"
 msgid "Node"
 msgstr "नोड"
 
-#: src/components/LearnSyntaxDialog.tsx:343
+#: src/components/LearnSyntaxDialog.tsx:331
 msgid "Node Border Style"
 msgstr "नोड सीमा शैली"
 
-#: src/components/LearnSyntaxDialog.tsx:274
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Node Colors"
 msgstr "नोड रंग"
 
@@ -874,7 +874,7 @@ msgstr "नोड आईडी, वर्ग, गुण"
 msgid "Node Label"
 msgstr "नोड लेबल"
 
-#: src/components/LearnSyntaxDialog.tsx:287
+#: src/components/LearnSyntaxDialog.tsx:288
 msgid "Node Shapes"
 msgstr "नोड आकार"
 
@@ -882,9 +882,9 @@ msgstr "नोड आकार"
 msgid "Node and pointer on same line"
 msgstr "नोड और प्रतीक एक ही लाइन पर"
 
-#: src/components/LearnSyntaxDialog.tsx:346
-msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
-msgstr "नोड्स को डैश्ड, डॉट्ड या डबल के साथ स्टाइल किया जा सकता है। बॉर्डर-नोन के साथ भी बॉर्डर हटाए जा सकते हैं।"
+#: src/components/LearnSyntaxDialog.tsx:334
+msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
+msgstr "नोड्स को डैश्ड, डॉट्ड, या डबल के साथ शैलीयित किया जा सकता है। सीमाओं को बॉर्डर_नोन के साथ हटाया जा सकता है।"
 
 #: src/components/ImportDataDialog.tsx:555
 msgid "Not Empty"
@@ -1127,10 +1127,6 @@ msgstr "आकार"
 msgid "Small"
 msgstr "छोटा"
 
-#: src/components/LearnSyntaxDialog.tsx:269
-msgid "Some classes are available to help style your flowchart"
-msgstr "कुछ क्लास आपकी फ्लोचार्ट स्टाइल करने में मदद करने के लिए उपलब्ध हैं"
-
 #: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
 msgstr "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।"
@@ -1144,7 +1140,7 @@ msgstr "स्रोत स्तंभ"
 msgid "Source Delimiter"
 msgstr "स्रोत डिलिमिटर"
 
-#: src/components/LearnSyntaxDialog.tsx:327
+#: src/components/LearnSyntaxDialog.tsx:315
 msgid "Source/Target Arrow Shape"
 msgstr "स्रोत / लक्ष्य तीर आकार"
 
@@ -1152,7 +1148,7 @@ msgstr "स्रोत / लक्ष्य तीर आकार"
 msgid "Spacing"
 msgstr "अंतर"
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Special Attributes"
 msgstr "विशेष गुण"
 
@@ -1236,10 +1232,6 @@ msgstr "अस्थायी आरेख"
 msgid "Temporary Flowcharts are going away soon!"
 msgstr "अस्थायी पारिस्थितिकी जल्द ही गयी जा रही हैं!"
 
-#: src/components/LearnSyntaxDialog.tsx:301
-msgid "Text Sizes"
-msgstr "पाठ आकार"
-
 #: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "स्क्लीन के बाद कोलन + स्पेस एक किरदार बनाता है जिसका पाठ लेबल है"
@@ -1248,13 +1240,13 @@ msgstr "स्क्लीन के बाद कोलन + स्पेस �
 msgid "Text on a line creates a node with the text as the label"
 msgstr "एक पंक्ति पर पाठ एक नोड बनाता है जिसका पाठ लेबल है"
 
-#: src/components/LearnSyntaxDialog.tsx:304
-msgid "Text sizes include small, regular, large, and extra-large."
-msgstr "पाठ के आकार छोटे, सामान्य, बड़े और अतिरिक्त बड़े शामिल हैं।"
-
 #: src/components/Feedback.tsx:106
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
+
+#: src/components/LearnSyntaxDialog.tsx:269
+msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
+msgstr "शैलीयित करने के लिए सर्वश्रेष्ठ तरीका नोड या एड्ज पर राइट-क्लिक करके आपके द्वारा चाहिए शैली का चयन करना है।"
 
 #: src/components/ImportDataDialog.tsx:469
 msgid "The column that contains the edge label(s)"
@@ -1276,7 +1268,7 @@ msgstr "कई स्रोत नोड्स को अलग करने क
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
-#: src/components/LearnSyntaxDialog.tsx:290
+#: src/components/LearnSyntaxDialog.tsx:291
 msgid "The possible shapes are:"
 msgstr "संभव आकृतियाँ हैं:"
 
@@ -1406,15 +1398,15 @@ msgstr "कनेक्ट करने के लिए एक ID उपयो�
 msgid "Use classes to group nodes"
 msgstr "नोड्स को समूहों में सम्मिलित करने के लिए वर्ग उपयोग करें"
 
-#: src/components/LearnSyntaxDialog.tsx:397
+#: src/components/LearnSyntaxDialog.tsx:385
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "नोड पर एक लिंक सेट करने के लिए गुण <0>href</0> उपयोग करें जो एक नये टैब में खुलेगा।"
 
-#: src/components/LearnSyntaxDialog.tsx:383
+#: src/components/LearnSyntaxDialog.tsx:371
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "नोड की छवि सेट करने के लिए <0>src</0> गुण का उपयोग करें। छवि नोड के आकार में स्केल की जाएगी, इसलिए आपको आवश्यक प्रतिस्थापित करने के लिए नोड की चौड़ाई और ऊँचाई को समायोजित करना होगा। केवल सार्वजनिक छवियाँ (CORS द्वारा ब्लॉक नहीं की गई) समर्थित हैं।"
 
-#: src/components/LearnSyntaxDialog.tsx:370
+#: src/components/LearnSyntaxDialog.tsx:358
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "नोड की विशिष्ट चौड़ाई और ऊँचाई सेट करने के लिए <0>w</0> और <1>h</1> गुण का उपयोग करें।"
 
@@ -1454,7 +1446,7 @@ msgstr "वॉटरमार्क्ड छवियां"
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "फ्लोचार्ट फन प्रो के लिए स्वागत है!"
 
-#: src/components/LearnSyntaxDialog.tsx:367
+#: src/components/LearnSyntaxDialog.tsx:355
 msgid "Width and Height"
 msgstr "चौड़ाई और ऊँचाई"
 

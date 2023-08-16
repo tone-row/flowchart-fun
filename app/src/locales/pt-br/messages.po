@@ -172,7 +172,7 @@ msgstr "Cancelar"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Cancele sua inscrição. Seus diagramas hospedados não serão modificáveis."
 
-#: src/components/LearnSyntaxDialog.tsx:361
+#: src/components/LearnSyntaxDialog.tsx:349
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Certos atributos podem ser usados para personalizar a aparência ou funcionalidade dos elementos."
 
@@ -207,7 +207,7 @@ msgstr "Escolha um Plano"
 msgid "Choose a Theme"
 msgstr "Escolha um Tema"
 
-#: src/components/LearnSyntaxDialog.tsx:330
+#: src/components/LearnSyntaxDialog.tsx:318
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Escolha entre uma variedade de formas de seta para a origem e o destino de uma aresta. As formas incluem triângulo, triângulo-tee, triângulo-círculo, triângulo-cruz, triângulo-curva-inversa, vee, tee, quadrado, círculo, diamante, chevron e nenhum."
 
@@ -235,7 +235,7 @@ msgstr "Clique para pré-visualizar"
 msgid "Clone"
 msgstr "Clonar"
 
-#: src/components/LearnSyntaxDialog.tsx:416
+#: src/components/LearnSyntaxDialog.tsx:404
 msgid "Close"
 msgstr "Fechar"
 
@@ -243,7 +243,7 @@ msgstr "Fechar"
 msgid "Color"
 msgstr "Cor"
 
-#: src/components/LearnSyntaxDialog.tsx:277
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "As cores incluem vermelho, laranja, amarelo, azul, roxo, preto, branco e cinza."
 
@@ -448,7 +448,7 @@ msgstr "Rótulo de Borda"
 msgid "Edge Label Column"
 msgstr "Coluna de Rótulo de Borda"
 
-#: src/components/LearnSyntaxDialog.tsx:314
+#: src/components/LearnSyntaxDialog.tsx:302
 msgid "Edge Style"
 msgstr "Estilo de Borda"
 
@@ -477,7 +477,7 @@ msgstr "As bordas são declaradas em sua própria linha"
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "As bordas também podem ter ID's, classes e atributos antes da etiqueta"
 
-#: src/components/LearnSyntaxDialog.tsx:317
+#: src/components/LearnSyntaxDialog.tsx:305
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "As bordas podem ser estilizadas com linhas tracejadas, pontilhadas ou sólidas"
 
@@ -635,7 +635,7 @@ msgstr "Se você gosta de usar <0>Flowchart Fun</0>, por favor, considere apoiar
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "Se você quiser criar uma borda, indente esta linha. Se não, escape o dois-pontos com uma barra invertida <0>\\:</0>"
 
-#: src/components/LearnSyntaxDialog.tsx:380
+#: src/components/LearnSyntaxDialog.tsx:368
 msgid "Images"
 msgstr "Imagens"
 
@@ -853,11 +853,11 @@ msgstr "Não: Opção B"
 msgid "Node"
 msgstr "Nó"
 
-#: src/components/LearnSyntaxDialog.tsx:343
+#: src/components/LearnSyntaxDialog.tsx:331
 msgid "Node Border Style"
 msgstr "Estilo de Borda do Nó"
 
-#: src/components/LearnSyntaxDialog.tsx:274
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Node Colors"
 msgstr "Cores do Nó"
 
@@ -874,7 +874,7 @@ msgstr "ID do Nó, Classes, Atributos"
 msgid "Node Label"
 msgstr "Rótulo do Nó"
 
-#: src/components/LearnSyntaxDialog.tsx:287
+#: src/components/LearnSyntaxDialog.tsx:288
 msgid "Node Shapes"
 msgstr "Formas do Nó"
 
@@ -882,9 +882,9 @@ msgstr "Formas do Nó"
 msgid "Node and pointer on same line"
 msgstr "Nó e ponteiro na mesma linha"
 
-#: src/components/LearnSyntaxDialog.tsx:346
-msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border-none."
-msgstr "Nós podem ser estilizados com traços, pontilhados ou duplos. As bordas também podem ser removidas com border-none."
+#: src/components/LearnSyntaxDialog.tsx:334
+msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
+msgstr "Nós podem ser estilizados com traços, pontos ou duplos. Bordas também podem ser removidas com border_none."
 
 #: src/components/ImportDataDialog.tsx:555
 msgid "Not Empty"
@@ -1127,10 +1127,6 @@ msgstr "Tamanho"
 msgid "Small"
 msgstr "Pequeno"
 
-#: src/components/LearnSyntaxDialog.tsx:269
-msgid "Some classes are available to help style your flowchart"
-msgstr "Algumas classes estão disponíveis para ajudar a estilizar seu fluxograma"
-
 #: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
 msgstr "Sinto muito! Esta página só está disponível em inglês."
@@ -1144,7 +1140,7 @@ msgstr "Coluna de Origem"
 msgid "Source Delimiter"
 msgstr "Delimitador de Origem"
 
-#: src/components/LearnSyntaxDialog.tsx:327
+#: src/components/LearnSyntaxDialog.tsx:315
 msgid "Source/Target Arrow Shape"
 msgstr "Forma da Seta de Origem/Destino"
 
@@ -1152,7 +1148,7 @@ msgstr "Forma da Seta de Origem/Destino"
 msgid "Spacing"
 msgstr "Espaçamento"
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Special Attributes"
 msgstr "Atributos Especiais"
 
@@ -1236,10 +1232,6 @@ msgstr "Diagramas Temporários"
 msgid "Temporary Flowcharts are going away soon!"
 msgstr "Fluxogramas temporários estão indo embora em breve!"
 
-#: src/components/LearnSyntaxDialog.tsx:301
-msgid "Text Sizes"
-msgstr "Tamanhos de Texto"
-
 #: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "Texto seguido de dois-pontos+espaço cria uma aresta com o texto como rótulo"
@@ -1248,13 +1240,13 @@ msgstr "Texto seguido de dois-pontos+espaço cria uma aresta com o texto como r�
 msgid "Text on a line creates a node with the text as the label"
 msgstr "Texto em uma linha cria um nó com o texto como rótulo"
 
-#: src/components/LearnSyntaxDialog.tsx:304
-msgid "Text sizes include small, regular, large, and extra-large."
-msgstr "Os tamanhos de texto incluem pequeno, regular, grande e extra grande."
-
 #: src/components/Feedback.tsx:106
 msgid "Thank you for your feedback!"
 msgstr "Agradecimentos pelo seu feedback!"
+
+#: src/components/LearnSyntaxDialog.tsx:269
+msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
+msgstr "A melhor maneira de mudar os estilos é clicar com o botão direito do mouse em um nó ou borda e selecionar o estilo desejado."
 
 #: src/components/ImportDataDialog.tsx:469
 msgid "The column that contains the edge label(s)"
@@ -1276,7 +1268,7 @@ msgstr "O delimitador usado para separar vários nós de origem"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "O delimitador usado para separar vários nós de destino"
 
-#: src/components/LearnSyntaxDialog.tsx:290
+#: src/components/LearnSyntaxDialog.tsx:291
 msgid "The possible shapes are:"
 msgstr "As formas possíveis são:"
 
@@ -1406,15 +1398,15 @@ msgstr "Use um ID para conectar"
 msgid "Use classes to group nodes"
 msgstr "Use classes para agrupar nós"
 
-#: src/components/LearnSyntaxDialog.tsx:397
+#: src/components/LearnSyntaxDialog.tsx:385
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "Use o atributo <0>href</0> para definir um link em um nó que abra em uma nova guia."
 
-#: src/components/LearnSyntaxDialog.tsx:383
+#: src/components/LearnSyntaxDialog.tsx:371
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "Use o atributo <0>src</0> para definir a imagem de um nó. A imagem será dimensionada para caber no nó, então você pode precisar ajustar a largura e altura do nó para obter o resultado desejado. Apenas imagens públicas (não bloqueadas por CORS) são suportadas."
 
-#: src/components/LearnSyntaxDialog.tsx:370
+#: src/components/LearnSyntaxDialog.tsx:358
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Use os atributos <0>w</0> e <1>h</1> para definir explicitamente a largura e altura de um nó."
 
@@ -1454,7 +1446,7 @@ msgstr "Imagens Marcadas com Água"
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "Bem-vindo ao Flowchart Fun Pro!"
 
-#: src/components/LearnSyntaxDialog.tsx:367
+#: src/components/LearnSyntaxDialog.tsx:355
 msgid "Width and Height"
 msgstr "Largura e Altura"
 
