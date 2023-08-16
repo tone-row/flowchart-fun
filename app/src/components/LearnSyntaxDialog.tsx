@@ -147,7 +147,7 @@ export function LearnSyntaxDialog() {
                 <Trans>Store any data associated to a node</Trans>
               </p>
               <CodeExample
-                code={`Hello #x.blue<span data-highlight>[letters=5]</span>\nWorld #y.red<span data-highlight>[letters=5]</span>`}
+                code={`Hello #x.color_blue<span data-highlight>[letters=5]</span>\nWorld #y.color_red<span data-highlight>[letters=5]</span>`}
               />
             </section>
             <section>
@@ -267,7 +267,8 @@ export function LearnSyntaxDialog() {
               </h1>
               <p>
                 <Trans>
-                  Some classes are available to help style your flowchart
+                  The best way to change styles is to right-click on a node or
+                  an edge and select the style you want.
                 </Trans>
               </p>
               <h2>
@@ -280,7 +281,7 @@ export function LearnSyntaxDialog() {
                 </Trans>
               </p>
               <CodeExample
-                code={`Hello <span data-highlight>.red</span>\n  World <span data-highlight>.blue</span>`}
+                code={`Hello <span data-highlight>.color_red</span>\n  World <span data-highlight>.color_blue</span>`}
                 src="9"
               />
               <h2>
@@ -294,21 +295,8 @@ export function LearnSyntaxDialog() {
                 concave-hexagon
               </p>
               <CodeExample
-                code={`Hello <span data-highlight>.diamond</span>\n  World <span data-highlight>.ellipse</span>`}
+                code={`Hello <span data-highlight>.shape_diamond</span>\n  World <span data-highlight>.shape_ellipse</span>`}
                 src="10"
-              />
-              <h2>
-                <Trans>Text Sizes</Trans>
-              </h2>
-              <p>
-                <Trans>
-                  Text sizes include small, regular, large, and extra-large.
-                </Trans>
-              </p>
-              <CodeExample
-                code={`Small <span data-highlight>.text-sm</span>\n  Regular\n    Large <span data-highlight>.text-lg</span>\n      Extralarge <span data-highlight>.text-xl</span>`}
-                src="11"
-                fontSize={12}
               />
               <h2>
                 <Trans>Edge Style</Trans>
@@ -319,7 +307,7 @@ export function LearnSyntaxDialog() {
                 </Trans>
               </p>
               <CodeExample
-                code={`Hello\n  <span data-highlight>.dashed</span> to the: world\n    <span data-highlight>.dotted</span>: (Hello)`}
+                code={`Hello\n  <span data-highlight>.line_dashed</span> to the: world\n    <span data-highlight>.line_dotted</span>: (Hello)`}
                 src="12"
                 fontSize={13}
               />
@@ -345,11 +333,11 @@ export function LearnSyntaxDialog() {
               <p>
                 <Trans>
                   Nodes can be styled with dashed, dotted, or double. Borders
-                  can also be removed with border-none.
+                  can also be removed with border_none.
                 </Trans>
               </p>
               <CodeExample
-                code={`A <span data-highlight>.border-dashed</span>\nB <span data-highlight>.border-dotted</span>\nC <span data-highlight>.border-double</span>\nD <span data-highlight>.border-none</span>`}
+                code={`A <span data-highlight>.border_dashed</span>\nB <span data-highlight>.border_dotted</span>\nC <span data-highlight>.border_double</span>\nD <span data-highlight>.border_none</span>`}
                 src="13"
               />
             </section>
