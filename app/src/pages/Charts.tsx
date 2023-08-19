@@ -1,23 +1,21 @@
-import { t, Trans } from "@lingui/macro";
-import * as Collapsible from "@radix-ui/react-collapsible";
+import { Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
   Copy,
-  Folder,
-  FolderOpen,
   Plus,
   Sparkle,
   Trash,
   X,
   Prohibit,
+  ArrowRight,
 } from "phosphor-react";
-import { memo, ReactNode, useContext, useReducer, useState } from "react";
+import { memo, ReactNode, useContext, useState } from "react";
 import { useMutation } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
+import * as Popover from "@radix-ui/react-popover";
 
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
-import { titleToLocalStorageKey } from "../lib/helpers";
 import { useIsProUser } from "../lib/hooks";
 import {
   copyHostedChartById,
@@ -27,22 +25,14 @@ import {
 } from "../lib/queries";
 import { useLastChart } from "../lib/useLastChart";
 import { Overlay } from "../ui/Dialog";
-import { Button2, Page } from "../ui/Shared";
-import { Description, PageTitle, SectionTitle } from "../ui/Typography";
+import { Button2, Page, popoverContentProps } from "../ui/Shared";
+import { PageTitle } from "../ui/Typography";
 import { MigrateTempFlowchartsModal } from "../components/MigrateTempFlowchartsModal";
 import { getTemporaryCharts } from "../lib/getTemporaryCharts";
-// Keep these in sync (55px)
-const leftColumnGrid = "grid-cols-[55px_minmax(0,1fr)]";
-const leftMargin = "sm:ml-[55px]";
 
 export default function Charts() {
   const isProUser = useIsProUser();
   const customerIsLoading = useContext(AppContext).customerIsLoading;
-  // write a charts reducer where the dispatch just refetches charts
-  const [temporaryCharts, refetchTemporaryCharts] = useReducer(
-    getTemporaryCharts,
-    getTemporaryCharts()
-  );
   const { data: persistentCharts, isLoading } = useHostedCharts();
   const isLoadingAnything = isLoading || customerIsLoading;
   const navigate = useNavigate();
@@ -99,139 +89,61 @@ export default function Charts() {
     !isProUser && persistentCharts && persistentCharts?.length > 0;
   return (
     <Page>
-      <header className="flex items-center justify-center gap-6">
-        <PageTitle>
-          <Trans>Your Charts</Trans>
-        </PageTitle>
-        <Button2
-          leftIcon={<Plus size={16} />}
-          onClick={() => navigate("/n")}
-          color="blue"
-        >
-          <Trans>New</Trans>
-        </Button2>
+      <header className="grid md:grid-flow-col md:justify-between items-end">
+        <div className="flex items-center justify-center gap-6">
+          <PageTitle>
+            <Trans>Your Charts</Trans>
+          </PageTitle>
+          <Button2
+            leftIcon={<Plus size={16} />}
+            onClick={() => navigate("/n")}
+            color="blue"
+          >
+            <Trans>New</Trans>
+          </Button2>
+        </div>
+        <SandboxLink />
       </header>
       <TemporaryFlowchartRemovalWarning />
-      <section className="grid gap-12">
-        <LargeFolder
-          title={t`Permanent Flowcharts`}
-          description={
-            <Trans>
-              Access these charts from anywhere.
-              <br />
-              Share and embed flowcharts that stay in sync.
-            </Trans>
-          }
-        >
-          {isLoadingAnything ? (
-            <div className="py-4">
-              <Loading />
-            </div>
-          ) : (
-            <>
-              {notProButHasCharts ? (
-                <InactiveAccount />
-              ) : !isProUser ? (
-                <ProFeatureLink />
-              ) : null}
-              <div className="grid gap-1">
-                {persistentCharts?.map((chart) => (
-                  <ChartLink
-                    key={chart.id}
-                    title={chart.name}
-                    href={`/u/${chart.id}`}
-                    handleDelete={() => {
-                      handleDeleteChart.mutate({ chartId: chart.id });
-                    }}
-                    handleCopy={() => {
-                      handleCopyPersistentChart.mutate(chart.id);
-                    }}
-                    isCurrent={`/u/${chart.id}` === currentChart}
-                  >
-                    <div className="flex items-center gap-4 text-xs text-foreground/50 dark:text-background/50">
-                      <span>{chart.niceCreatedDate}</span>
-                      <span>{chart.niceUpdatedDate}</span>
-                    </div>
-                  </ChartLink>
-                ))}
-              </div>
-            </>
-          )}
-        </LargeFolder>
-
-        <LargeFolder
-          title={t`Temporary Flowcharts`}
-          description={
-            <Trans>
-              Only available on this device.
-              <br />
-              Clearing your browser cache will erase them.
-            </Trans>
-          }
-        >
-          <div className="grid gap-1">
-            {temporaryCharts.map((chart) => (
-              <ChartLink
-                key={chart}
-                title={`/${chart}`}
-                href={`/${chart}`}
-                handleDelete={() => {
-                  deleteLocalChart(chart, currentChart || "", navigate);
-                  refetchTemporaryCharts();
-                }}
-                handleCopy={() => {
-                  copyLocalChart(chart, navigate);
-                }}
-                isCurrent={`/${chart}` === currentChart}
-              />
-            ))}
+      <div className="grid gap-1">
+        {isLoadingAnything ? (
+          <div className="py-4">
+            <Loading />
           </div>
-        </LargeFolder>
-      </section>
+        ) : (
+          <>
+            {notProButHasCharts ? (
+              <InactiveAccount />
+            ) : !isProUser ? (
+              <ProFeatureLink />
+            ) : null}
+            <div className="grid gap-1">
+              {persistentCharts?.map((chart) => (
+                <ChartLink
+                  key={chart.id}
+                  title={chart.name}
+                  href={`/u/${chart.id}`}
+                  handleDelete={() => {
+                    handleDeleteChart.mutate({ chartId: chart.id });
+                  }}
+                  handleCopy={() => {
+                    handleCopyPersistentChart.mutate(chart.id);
+                  }}
+                  isCurrent={`/u/${chart.id}` === currentChart}
+                >
+                  <div className="flex items-center gap-4 text-xs text-foreground/50 dark:text-background/50">
+                    <span>{chart.niceCreatedDate}</span>
+                    <span>{chart.niceUpdatedDate}</span>
+                  </div>
+                </ChartLink>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
     </Page>
   );
 }
-
-const LargeFolder = memo(function LargeFolder({
-  title,
-  description = null,
-  children,
-}: {
-  title: string;
-  description: ReactNode;
-  children: ReactNode;
-}) {
-  const [isOpen, setIsOpen] = useState(true);
-  return (
-    <Collapsible.Root open={isOpen} onOpenChange={setIsOpen}>
-      <section className="grid gap-4 md:-ml-[55px]">
-        <Collapsible.Trigger asChild>
-          <button
-            className={`grid grid-auto-cols items-start text-left w-full ${leftColumnGrid} focus:shadow-none`}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? (
-              <FolderOpen size={36} weight="light" />
-            ) : (
-              <Folder size={36} weight="light" />
-            )}
-            <div className="grid gap-1">
-              <SectionTitle className="mt-[4px]">{title}</SectionTitle>
-              {description ? <Description>{description}</Description> : null}
-            </div>
-          </button>
-        </Collapsible.Trigger>
-        <Collapsible.Content>
-          <List>{children}</List>
-        </Collapsible.Content>
-      </section>
-    </Collapsible.Root>
-  );
-});
-
-const List = memo(function List({ children }: { children: ReactNode }) {
-  return <div className={`grid gap-4 ${leftMargin}`}>{children}</div>;
-});
 
 const ChartLink = memo(function ChartLink({
   title,
@@ -314,32 +226,6 @@ const ChartLink = memo(function ChartLink({
   );
 });
 
-function deleteLocalChart(
-  chartId: string,
-  currentChart: string,
-  navigate: (path: string) => void
-) {
-  // if on this path, move to index
-  if (currentChart === chartId && currentChart !== "") {
-    navigate("/");
-  }
-  window.localStorage.removeItem(titleToLocalStorageKey(chartId));
-}
-
-function copyLocalChart(chart: string, navigate: (path: string) => void) {
-  let i = 1;
-  let name = chart || "Untitled";
-  let copy = `${name}-${i}`;
-  while (window.localStorage.getItem(titleToLocalStorageKey(copy))) {
-    i++;
-    copy = `${name}-${i}`;
-  }
-  // copy in localStorage
-  const data = window.localStorage.getItem(titleToLocalStorageKey(chart));
-  window.localStorage.setItem(titleToLocalStorageKey(copy), data ?? "");
-  navigate(`/${copy}`);
-}
-
 function ProFeatureLink() {
   return (
     <div
@@ -370,7 +256,7 @@ function ProFeatureLink() {
 function InactiveAccount() {
   return (
     <div
-      className={`flex items-center p-4 pt-[15px] gap-5 rounded-lg text-sm text-red-900 bg-red-200/90 rounded-lg`}
+      className={`flex items-center p-4 pt-[15px] gap-5 rounded-lg text-sm text-red-900 bg-red-200/90 rounded-lg border-red-700 border-l-4`}
     >
       <div className="w-[47px] sm:w-auto">
         <Prohibit size={30} className="translate-y-[-1px] text-red-900" />
@@ -434,6 +320,34 @@ function TemporaryFlowchartRemovalWarning() {
           )}
         </p>
       </div>
+    </div>
+  );
+}
+
+function SandboxLink() {
+  return (
+    <div className="grid gap-1">
+      <Link
+        to="/"
+        className="text-purple-500 dark:text-purple-300 flex whitespace-nowrap items-center"
+      >
+        <Trans>Open your Sandbox</Trans> <ArrowRight className="ml-2" />
+      </Link>
+      <Popover.Root>
+        <Popover.Trigger asChild>
+          <button className="text-xs text-neutral-400 hover:underline">
+            <Trans>What's this?</Trans>
+          </button>
+        </Popover.Trigger>
+        <Popover.Content {...popoverContentProps}>
+          <p className="text-xs max-w-[210px] leading-normal text-neutral-700 dark:text-neutral-300">
+            <Trans>
+              Your Sandbox is a risk-free space to freely experiment with our
+              flowchart tools, resetting every day for a fresh start.
+            </Trans>
+          </p>
+        </Popover.Content>
+      </Popover.Root>
     </div>
   );
 }
