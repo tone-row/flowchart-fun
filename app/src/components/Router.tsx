@@ -28,6 +28,7 @@ const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
+import Page404 from "../pages/404";
 
 export default function Router() {
   usePageViews();
@@ -73,14 +74,7 @@ export default function Router() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
-        <Route
-          path="/:workspace"
-          element={
-            <AuthWall>
-              <Edit />
-            </AuthWall>
-          }
-        />
+        <Route path="*" element={<Page404 />} />
       </Route>
     </Routes>
   );
