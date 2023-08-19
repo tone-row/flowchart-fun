@@ -3,13 +3,7 @@ import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { Session } from "@supabase/supabase-js";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import {
-  ChatTeardropText,
-  Check,
-  Clock,
-  Pencil,
-  TreeStructure,
-} from "phosphor-react";
+import { Pencil, Robot, Rocket } from "phosphor-react";
 import {
   forwardRef,
   memo,
@@ -27,7 +21,7 @@ import Loading from "../components/Loading";
 import { Warning } from "../components/Warning";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
-import { slugify, titleToLocalStorageKey } from "../lib/helpers";
+import { titleToLocalStorageKey } from "../lib/helpers";
 import { useIsProUser } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
@@ -92,9 +86,7 @@ const New = memo(function New({
   const [name, setName] = useState<string>(
     getFunFlowchartName(language as keyof typeof languages)
   );
-  const [type, setType] = useState<"regular" | "local">(
-    isProUser ? "regular" : "local"
-  );
+  const type = "regular";
   const [start, setStart] = useState<"blank" | "prompt">("blank");
 
   // Boilerplate to create a new chart
@@ -108,16 +100,8 @@ const New = memo(function New({
     },
   });
 
-  const isTemporaryType = type === "local";
-  const safeName = slugify(name.trim());
-  const showWarning = isTemporaryType;
-
-  const tryingToCreatePermanent = type === "regular" && !isProUser;
-  const alreadyUsedName =
-    type === "local" &&
-    !!safeName &&
-    !!window.localStorage.getItem(titleToLocalStorageKey(safeName));
-  const createDisabled = !name || tryingToCreatePermanent || alreadyUsedName;
+  const notAllowed = !isProUser;
+  const createDisabled = !name || notAllowed;
 
   const [parent] = useAutoAnimate();
 
@@ -145,45 +129,31 @@ const New = memo(function New({
 
           if (!name || !type) return;
 
-          switch (type) {
-            case "regular": {
-              if (!userId) return;
+          if (!userId) return;
 
-              const chart = templateText ?? defaultDoc;
+          const chart = templateText ?? defaultDoc;
 
-              // If the user is starting with a prompt, we need to get the results
-              if (start === "prompt") {
-                const formData = new FormData(e.currentTarget);
-                const prompt = formData.get("prompt") as string;
-                const method = formData.get("method") as "instruct" | "extract";
-                if (!prompt || !method) return;
+          // If the user is starting with a prompt, we need to get the results
+          if (start === "prompt") {
+            const formData = new FormData(e.currentTarget);
+            const prompt = formData.get("prompt") as string;
+            const method = formData.get("method") as "instruct" | "extract";
+            if (!prompt || !method) return;
 
-                makeChartMutation.mutate({
-                  name,
-                  user_id: userId,
-                  chart,
-                  prompt,
-                  method,
-                  fromPrompt: true,
-                });
-              } else {
-                makeChartMutation.mutate({
-                  name,
-                  user_id: userId,
-                  chart,
-                });
-              }
-
-              break;
-            }
-            case "local": {
-              const newKey = titleToLocalStorageKey(safeName);
-              window.localStorage.setItem(newKey, templateText ?? defaultDoc);
-              navigate(`/${safeName}`, {
-                replace: true,
-              });
-              break;
-            }
+            makeChartMutation.mutate({
+              name,
+              user_id: userId,
+              chart,
+              prompt,
+              method,
+              fromPrompt: true,
+            });
+          } else {
+            makeChartMutation.mutate({
+              name,
+              user_id: userId,
+              chart,
+            });
           }
         }}
       >
@@ -204,88 +174,7 @@ const New = memo(function New({
               className="w-full text-2xl mb-2 border-b-2 border-neutral-300 p-1 rounded-tr rounded-tl dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700 rounded-none focus:bg-neutral-50 dark:focus:bg-neutral-800"
               placeholder="Untitled"
             />
-            <NameLabel name={safeName} hide={!showWarning} />
           </div>
-          {alreadyUsedName && (
-            <div className="justify-items-center grid">
-              <Warning>
-                <Trans>You already have a flowchart with this name.</Trans>
-              </Warning>
-            </div>
-          )}
-          <div className="grid gap-3 w-full">
-            <SmallLabel>
-              <Trans>Type</Trans>
-            </SmallLabel>
-            <RadioGroup.Root
-              value={type}
-              name="type"
-              onValueChange={(value) => {
-                setType(value as "regular" | "local");
-                if (value === "local") setStart("blank");
-              }}
-              asChild
-            >
-              <div className="grid gap-4 sm:grid-cols-2 focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
-                <TypeToggle
-                  value="regular"
-                  title={t`Permanent`}
-                  description={
-                    <>
-                      <span className="text-sm flex items-start justify-center">
-                        <Check
-                          size={16}
-                          weight="bold"
-                          className="mr-1 mt-[2px] text-green-900 opacity-50 dark:text-green-100"
-                        />
-                        <Trans>Stored in the cloud</Trans>
-                      </span>
-                      <span className="text-sm flex items-start justify-center">
-                        <Check
-                          size={16}
-                          weight="bold"
-                          className="mr-1 mt-[2px] text-green-900 opacity-50 dark:text-green-100"
-                        />
-                        <Trans>Accessible from any device</Trans>
-                      </span>
-                    </>
-                  }
-                  icon={<TreeStructure size={64} weight="thin" />}
-                />
-                <TypeToggle
-                  value="local"
-                  title={t`Temporary`}
-                  disabled={isProUser}
-                  description={
-                    <>
-                      <span className="text-sm flex items-center">
-                        <Trans>Stored on this computer</Trans>
-                      </span>
-                      <span className="text-sm flex items-center">
-                        <Trans>Deleted when browser data is cleared</Trans>
-                      </span>
-                    </>
-                  }
-                  icon={<Clock size={64} weight="thin" />}
-                />
-              </div>
-            </RadioGroup.Root>
-          </div>
-          {tryingToCreatePermanent && (
-            <div className="justify-items-center grid">
-              <Warning>
-                <Link to="/pricing">
-                  <Trans>
-                    You can create unlimited permanent flowcharts with{" "}
-                    <span className="underline underline-offset-2">
-                      Flowchart Fun Pro
-                    </span>
-                    .
-                  </Trans>
-                </Link>
-              </Warning>
-            </div>
-          )}
         </div>
         <div className="grid gap-7 mt-7">
           <div className="grid gap-3 w-full">
@@ -302,12 +191,12 @@ const New = memo(function New({
                 <SmallTypeToggle
                   title={t`Blank`}
                   value="blank"
-                  icon={<Pencil size={24} weight="thin" />}
+                  icon={<Pencil size={24} />}
                 />
                 <SmallTypeToggle
-                  title={t`Prompt`}
+                  title={t`AI Prompt`}
                   value="prompt"
-                  icon={<ChatTeardropText size={24} weight="thin" />}
+                  icon={<Robot size={24} />}
                   disabled={type !== "regular"}
                 />
               </div>
@@ -315,6 +204,24 @@ const New = memo(function New({
             <PromptDescription start={start} />
             {start === "prompt" && <PromptSubmenu />}
           </div>
+          {notAllowed && (
+            <div className="justify-items-center grid">
+              <Warning>
+                <Link to="/pricing" className="flex items-center">
+                  <Rocket size={24} className="mr-2" />
+                  <p>
+                    <Trans>
+                      You can create unlimited permanent flowcharts with{" "}
+                      <span className="underline underline-offset-2">
+                        Flowchart Fun Pro
+                      </span>
+                      .
+                    </Trans>
+                  </p>
+                </Link>
+              </Warning>
+            </div>
+          )}
           <Button2
             type="submit"
             disabled={createDisabled}
@@ -359,29 +266,6 @@ function PromptDescription({ start }: { start: "prompt" | "blank" }) {
   }
 }
 
-function TypeToggle({
-  title,
-  description,
-  icon,
-  ...rest
-}: {
-  title: string;
-  description: ReactNode;
-  icon: ReactNode;
-} & Parameters<typeof RadioGroup.Item>[0]) {
-  return (
-    <RadioGroup.Item {...rest} asChild>
-      <button className="bg-neutral-100 border-neutral-100 p-2 py-4 sm:p-3 sm:py-6 rounded grid justify-items-center content-center gap-2 dark:bg-neutral-700 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-600 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-800 dark:data-[state=checked]:border-neutral-500 dark:hover:border-neutral-400 disabled:cursor-not-allowed disabled:opacity-50">
-        <span className="text-2xl mb-3">{title}</span>
-        {icon}
-        <div className="mt-5 text-center grid gap-2 justify-items-center pb-3">
-          {description}
-        </div>
-      </button>
-    </RadioGroup.Item>
-  );
-}
-
 function SmallTypeToggle({
   title,
   icon,
@@ -397,18 +281,6 @@ function SmallTypeToggle({
         <span className="text-xl">{title}</span>
       </button>
     </RadioGroup.Item>
-  );
-}
-
-/**
- * A *note* label that tells the user what they're chart will be named
- */
-function NameLabel({ name, hide }: { name: string; hide?: boolean }) {
-  if (hide) return null;
-  return (
-    <div className="text-neutral-400 text-xs flex items-center justify-start">
-      <span className="font-bold italic">/{name}</span>
-    </div>
   );
 }
 
@@ -447,14 +319,11 @@ const placeholders: Record<"instruct" | "extract", string> = {
 
 const promptExamples = {
   instruct: [
+    () => t`Keeping track of who's who in the market for our software product`,
     () =>
-      t`Market understanding and competitive landscape maintenance for SaaS product development`,
+      t`Making our supply chain better: cutting costs, working faster, and getting everyone involved`,
     () =>
-      t`Process for corporate social responsibility initiatives development and implementation across company operations`,
-    () =>
-      t`Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration`,
-    () =>
-      t`Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages`,
+      t`A step-by-step guide for students on how to write an essay, from thinking of ideas to making final edits`,
   ],
   extract: [
     () =>
@@ -539,7 +408,7 @@ function PromptSubmenu() {
         </div>
       </RadioGroup.Root>
       <Textarea
-        className="resize-none mt-2 text-base font-mono"
+        className="resize-none mt-2 text-sm leading-normal"
         rows={6}
         name="prompt"
         placeholder={placeholders[method]}
