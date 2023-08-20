@@ -11,7 +11,7 @@ import ResetPassword from "../pages/ResetPassword";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
-const Edit = lazy(() => import("../pages/Edit"));
+const Sandbox = lazy(() => import("../pages/Sandbox"));
 /** Edit hosted chart */
 const EditHosted = lazy(() => import("../pages/EditHosted"));
 /** Read only chart, encoded in url / maybe fullscreen */
@@ -35,7 +35,7 @@ export default function Router() {
   return (
     <Routes>
       <Route path="/" element={<Wrapper />}>
-        <Route index element={<Edit />} />
+        <Route index element={<Sandbox />} />
         <Route path="/pricing" element={<Pricing />} />
         {/* "y" for "your charts" */}
         <Route

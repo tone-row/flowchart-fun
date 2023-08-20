@@ -15,29 +15,28 @@ import { EditorTabList } from "../components/Tabs/EditorTabList";
 import { OnChange } from "@monaco-editor/react";
 
 import { TextEditor } from "../components/TextEditor";
-import { getDefaultChart } from "../lib/getDefaultChart";
+import { getDefaultChart, getDefaultLocalChart } from "../lib/getDefaultChart";
 import { titleToLocalStorageKey } from "../lib/helpers";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useEditorStore } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
-import styles from "./Edit.module.css";
+import styles from "./Sandbox.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
 import EditStyleTab from "../components/Tabs/EditStyleTab";
+import { newDelimiters, SANDBOX_STORAGE_KEY } from "../lib/constants";
 
-const Edit = memo(function Edit({ workspace }: { workspace: string }) {
+const Sandbox = memo(function Edit() {
   const storeDoc = useMemo(() => {
     return throttle(
       (doc: Doc) => {
         const docString = docToString(doc);
-        if (docString === getDefaultChart()) return;
-        const key = titleToLocalStorageKey(workspace);
-        localStorage.setItem(key, docString);
+        localStorage.setItem(SANDBOX_STORAGE_KEY, docString);
       },
       1000,
       { trailing: true }
     );
-  }, [workspace]);
+  }, []);
 
   useEffect(() => useDoc.subscribe(storeDoc), [storeDoc]);
 
@@ -107,7 +106,7 @@ function EditOuter() {
     setLoaded(true);
   }, [workspace]);
   if (!loaded) return null;
-  return <Edit key={workspace} workspace={workspace} />;
+  return <Sandbox />;
 }
 
 export default EditOuter;
@@ -116,12 +115,22 @@ export default EditOuter;
  * Load the workspace into our zustand store
  */
 async function loadWorkspace(workspace: string) {
-  const key = titleToLocalStorageKey(workspace);
-  let workspaceText = localStorage.getItem(key);
+  let workspaceText = localStorage.getItem(SANDBOX_STORAGE_KEY);
+
+  // If nothing in storage, create a new chart
   if (!workspaceText) {
-    workspaceText = getDefaultChart();
+    workspaceText = getDefaultLocalChart();
   }
 
+  // Check the expires time
+  const isValid = getExpiresAt(workspaceText);
+  if (!isValid) {
+    workspaceText = getDefaultLocalChart();
+  }
+
+  console.log("Loading workspace", workspace, workspaceText);
+
+  // Prepare the chart
   await prepareChart(workspaceText, {
     id: workspace,
     title: workspace,
@@ -129,4 +138,24 @@ async function loadWorkspace(workspace: string) {
   });
 
   return workspaceText;
+}
+
+/**
+ * Checks the expiry time in the metadata of the document
+ *
+ * Returns true if valid, and false if expired or anything else is wrong
+ */
+function getExpiresAt(documentStr: string) {
+  const parts = documentStr.split(newDelimiters);
+  const metaStr = parts[1];
+  if (!metaStr) return false;
+  try {
+    const meta = JSON.parse(metaStr);
+    if (!meta?.expires) return false;
+    const expires = new Date(meta.expires);
+    if (expires < new Date()) return false;
+    return expires;
+  } catch (e) {
+    return false;
+  }
 }
