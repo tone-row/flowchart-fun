@@ -15,8 +15,7 @@ import { EditorTabList } from "../components/Tabs/EditorTabList";
 import { OnChange } from "@monaco-editor/react";
 
 import { TextEditor } from "../components/TextEditor";
-import { getDefaultChart, getDefaultLocalChart } from "../lib/getDefaultChart";
-import { titleToLocalStorageKey } from "../lib/helpers";
+import { getDefaultLocalChart } from "../lib/getDefaultChart";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useEditorStore } from "../lib/useEditorStore";
@@ -127,8 +126,6 @@ async function loadWorkspace(workspace: string) {
   if (!isValid) {
     workspaceText = getDefaultLocalChart();
   }
-
-  console.log("Loading workspace", workspace, workspaceText);
 
   // Prepare the chart
   await prepareChart(workspaceText, {

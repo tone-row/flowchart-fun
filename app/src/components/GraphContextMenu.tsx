@@ -311,7 +311,7 @@ function EdgeSubmenu() {
 /**
  * This is the node selector from before dynamic classes were added.
  */
-export function LegacyNodeSelect({
+function LegacyNodeSelect({
   activeSelection,
 }: {
   activeSelection: { id: any; lineNumber: any; type: string }[];

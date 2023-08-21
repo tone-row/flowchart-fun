@@ -6,7 +6,7 @@ import { Button2 } from "../ui/Shared";
 import { useNavigate } from "react-router-dom";
 import { create } from "zustand";
 
-export const usePaywallModalStore = create<{
+const usePaywallModalStore = create<{
   open: boolean;
   title: string;
   content: string;
