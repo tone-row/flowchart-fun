@@ -4,17 +4,7 @@ import { X } from "phosphor-react";
 import { Trans } from "@lingui/macro";
 import { Button2 } from "../ui/Shared";
 import { useNavigate } from "react-router-dom";
-import { create } from "zustand";
-
-const usePaywallModalStore = create<{
-  open: boolean;
-  title: string;
-  content: string;
-}>((_set) => ({
-  open: false,
-  title: "",
-  content: "",
-}));
+import { usePaywallModalStore } from "../lib/usePaywallModalStore";
 
 export function PaywallModal() {
   const navigate = useNavigate();

@@ -1,6 +1,5 @@
 import { Trans } from "@lingui/macro";
 import { Suspense, useContext } from "react";
-import { RiShareForwardFill } from "react-icons/ri";
 
 import { useIsReadOnly } from "../lib/hooks";
 import { useDocDetails } from "../lib/useDoc";
@@ -14,6 +13,8 @@ import { MightLoseSponsorTrigger } from "./MightLoseSponsorTrigger";
 import { MightLoseWarning } from "./MightLoseWarning";
 import { RenameButton } from "./RenameButton";
 import ShareDialog from "./ShareDialog";
+import { FloppyDisk, Share } from "phosphor-react";
+import classNames from "classnames";
 
 /**
  * Adds title and export button to the editor
@@ -25,35 +26,43 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
   const pageTitle = title || "flowchart.fun";
   return (
     <div className={styles.EditorWrapper}>
-      <header>
-        <div className={styles.HeaderTitle}>
-          <RenameButton key={pageTitle}>
-            <PageTitle title={title} className="-translate-y-[2px]">
-              {pageTitle}
-            </PageTitle>
-          </RenameButton>
-          <MightLoseSponsorTrigger />
-          <MightLoseWarning />
-          {isReadOnly && (
-            <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
-              <Trans>Read-only</Trans>
-            </span>
-          )}
-          {isReadOnly ? (
-            <CloneButton />
-          ) : (
+      <header
+        className={classNames(styles.HeaderTitle, "flex items-center gap-2")}
+      >
+        <RenameButton key={pageTitle}>
+          <PageTitle title={title} className="-translate-y-[2px]">
+            {pageTitle}
+          </PageTitle>
+        </RenameButton>
+        <MightLoseSponsorTrigger />
+        <MightLoseWarning />
+        {isReadOnly && (
+          <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
+            <Trans>Read-only</Trans>
+          </span>
+        )}
+        {isReadOnly ? (
+          <CloneButton />
+        ) : (
+          <>
+            <Button2
+              color="purple"
+              leftIcon={<FloppyDisk className="w-4 h-4" />}
+            >
+              <Trans>Save</Trans>
+            </Button2>
             <ShareDialog>
               <Button2
                 color="blue"
                 onClick={() => setShareModal(true)}
-                rightIcon={<RiShareForwardFill size={16} />}
+                leftIcon={<Share className="w-4 h-4" />}
                 aria-label="Export"
               >
-                <Trans>Export</Trans>
+                <Trans>Share</Trans>
               </Button2>
             </ShareDialog>
-          )}
-        </div>
+          </>
+        )}
       </header>
       <Suspense fallback={<Loading />}>
         <main>{children}</main>

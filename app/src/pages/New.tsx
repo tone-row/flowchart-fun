@@ -27,6 +27,7 @@ import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
 import { Button2, Page } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
+import { usePaywallModalStore } from "../lib/usePaywallModalStore";
 
 export default function M() {
   const { customerIsLoading, session, checkedSession } = useContext(AppContext);
@@ -100,8 +101,11 @@ const New = memo(function New({
     },
   });
 
-  const notAllowed = !isProUser;
-  const createDisabled = !name || notAllowed;
+  /**
+   * We only disable the create button if there is no title,
+   * but we leave it enabled to the paywall if the user is not pro
+   */
+  const createDisabled = !name;
 
   const [parent] = useAutoAnimate();
 
@@ -115,14 +119,14 @@ const New = memo(function New({
           /**
            * Uncomment this when we want to show the paywall modal
            */
-          // if (!isProUser) {
-          //   usePaywallModalStore.setState({
-          //     open: true,
-          //     title: t`Get Unlimited Flowcharts`,
-          //     content: t`Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year.`,
-          //   });
-          //   return;
-          // }
+          if (!isProUser) {
+            usePaywallModalStore.setState({
+              open: true,
+              title: t`Get Unlimited Flowcharts`,
+              content: t`Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year.`,
+            });
+            return;
+          }
 
           const formData = new FormData(e.currentTarget);
           const type = formData.get("type") as "regular" | "local";
@@ -204,7 +208,7 @@ const New = memo(function New({
             <PromptDescription start={start} />
             {start === "prompt" && <PromptSubmenu />}
           </div>
-          {notAllowed && (
+          {!isProUser && (
             <div className="justify-items-center grid">
               <Warning>
                 <Link to="/pricing" className="flex items-center">
