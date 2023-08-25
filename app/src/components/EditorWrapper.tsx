@@ -120,8 +120,8 @@ function CannotSaveButton() {
       leftIcon={<FloppyDisk className="w-4 h-4" />}
       onClick={() => {
         showPaywall({
-          title: createUnlimitedTitle,
-          content: createUnlimitedContent,
+          title: createUnlimitedTitle(),
+          content: createUnlimitedContent(),
         });
       }}
     >

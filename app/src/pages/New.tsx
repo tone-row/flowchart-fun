@@ -122,8 +122,8 @@ const New = memo(function New({
            */
           if (!isProUser) {
             showPaywall({
-              title: createUnlimitedTitle,
-              content: createUnlimitedContent,
+              title: createUnlimitedTitle(),
+              content: createUnlimitedContent(),
             });
             return;
           }
