@@ -39,7 +39,7 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
   }, [docString]);
   const fullscreen = `${new URL(window.location.href).origin}/f#${shareLink}`;
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
-  const editable = `${new URL(window.location.href).origin}/n#${shareLink}`;
+  const editable = `${new URL(window.location.href).origin}/#load:${shareLink}`;
   const filename = useDownloadFilename();
   const isProUser = useIsProUser();
   const watermark = !isProUser;

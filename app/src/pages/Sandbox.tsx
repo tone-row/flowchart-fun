@@ -1,7 +1,7 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import throttle from "lodash.throttle";
 import { memo, useCallback, useEffect, useMemo, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
@@ -26,6 +26,7 @@ import EditStyleTab from "../components/Tabs/EditStyleTab";
 import { newDelimiters, SANDBOX_STORAGE_KEY } from "../lib/constants";
 import { SandboxWarning } from "../components/SandboxWarning";
 import { useSandboxWarning } from "../lib/useSandboxWarning";
+import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 
 const Sandbox = memo(function Edit() {
   // Wait 1 minute and trigger a sandbox modal overtop of the editor
@@ -110,6 +111,7 @@ const Sandbox = memo(function Edit() {
         </Main>
       </EditWrapper>
       <SandboxWarning />
+      <LoadFromHashDialog />
     </>
   );
 });
@@ -119,11 +121,10 @@ const Sandbox = memo(function Edit() {
  */
 function EditOuter() {
   const [loaded, setLoaded] = useState(false);
-  const { workspace = "" } = useParams<{ workspace?: string }>();
   useEffect(() => {
-    loadWorkspace(workspace);
+    loadWorkspace();
     setLoaded(true);
-  }, [workspace]);
+  }, []);
   if (!loaded) return null;
   return <Sandbox />;
 }
@@ -133,7 +134,7 @@ export default EditOuter;
 /**
  * Load the workspace into our zustand store
  */
-async function loadWorkspace(workspace: string) {
+async function loadWorkspace() {
   let workspaceText = localStorage.getItem(SANDBOX_STORAGE_KEY);
 
   // If nothing in storage, create a new chart
@@ -149,8 +150,8 @@ async function loadWorkspace(workspace: string) {
 
   // Prepare the chart
   await prepareChart(workspaceText, {
-    id: workspace,
-    title: workspace,
+    id: "",
+    title: "",
     isHosted: false,
   });
 
