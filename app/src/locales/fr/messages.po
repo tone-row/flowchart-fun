@@ -22,16 +22,12 @@ msgid "$30 per year"
 msgstr "30 $ par an"
 
 #: src/pages/Pricing.tsx:64
-msgid "1 Temporary Flowchart"
-msgstr "1 Organigramme temporaire"
+msgid "1 Sandbox Flowchart"
+msgstr "1 Diagramme de sable"
 
 #: src/components/PaymentStepper.tsx:96
 msgid "2 Months Free"
 msgstr "2 Mois gratuits"
-
-#: src/pages/Charts.tsx:417
-msgid "<0><1>Click here</1></0> to migrate your temporary flowcharts to permanent charts."
-msgstr "<0><1>Cliquez ici</1></0> pour migrer vos diagrammes temporaires vers des diagrammes permanents."
 
 #: src/components/MigrateTempFlowchartsModal.tsx:35
 msgid "<0>Click the button below to migrate all of your temporary flowcharts into hosted ones.</0><1>Do not close this window. The page will refresh when the migration is complete.</1>"
@@ -57,17 +53,17 @@ msgstr "<0>Vous avez actuellement un compte gratuit.<1/><2>Apprenez-en plus sur 
 msgid "A new version of the app is available. Please reload to update."
 msgstr "Une nouvelle version de l'application est disponible. Veuillez recharger pour mettre à jour."
 
+#: src/pages/New.tsx:327
+msgid "A step-by-step guide for students on how to write an essay, from thinking of ideas to making final edits"
+msgstr "Un guide étape par étape pour les étudiants sur la façon d'écrire une dissertation, de penser à des idées à apporter des modifications finales"
+
+#: src/pages/New.tsx:198
+msgid "AI Prompt"
+msgstr "AI Prompt"
+
 #: src/components/Settings.tsx:105
 msgid "About"
 msgstr "À propos"
-
-#: src/pages/Charts.tsx:119
-msgid "Access these charts from anywhere.<0/>Share and embed flowcharts that stay in sync."
-msgstr "Accédez à ces diagrammes depuis n'importe où.<0/>Partagez et intégrez des diagrammes de flux qui restent synchronisés."
-
-#: src/pages/New.tsx:249
-msgid "Accessible from any device"
-msgstr "Accessible depuis n'importe quel appareil"
 
 #: src/components/Header.tsx:182
 #: src/components/Header.tsx:406
@@ -107,7 +103,7 @@ msgstr "Août 2023"
 msgid "Back To Editor"
 msgstr "Retour à l'éditeur"
 
-#: src/components/ShareDialog.tsx:441
+#: src/components/ShareDialog.tsx:443
 msgid "Basic Flowchart"
 msgstr "Diagramme de flux de base"
 
@@ -127,11 +123,11 @@ msgstr "Commencez à taper"
 msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
 msgstr "Commencez par une invite comme le diagramme de flux de support client et Flowchart Fun créera un diagramme de flux pour vous !"
 
-#: src/pages/New.tsx:339
+#: src/pages/New.tsx:247
 msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
 msgstr "Commencez par un exemple simple montrant comment <0>Flowchart Fun</0> fonctionne."
 
-#: src/pages/New.tsx:303
+#: src/pages/New.tsx:193
 msgid "Blank"
 msgstr "Vide"
 
@@ -160,7 +156,7 @@ msgstr "Parcours en largeur"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:719
-#: src/components/RenameButton.tsx:153
+#: src/components/RenameButton.tsx:156
 #: src/pages/Account.tsx:297
 #: src/pages/Account.tsx:310
 #: src/pages/Account.tsx:383
@@ -231,7 +227,7 @@ msgstr "Effacer le texte?"
 msgid "Click to preview"
 msgstr "Cliquez pour prévisualiser"
 
-#: src/components/CloneButton.tsx:32
+#: src/components/CloneButton.tsx:45
 msgid "Clone"
 msgstr "Cloner"
 
@@ -268,6 +264,10 @@ msgstr "Confirmer le nouveau Email"
 msgid "Confirm your email address to sign in."
 msgstr "Confirmez votre adresse e-mail pour vous connecter."
 
+#: src/components/SandboxWarning.tsx:61
+msgid "Consider upgrading today and unlock the full potential of our app!"
+msgstr "Pensez à mettre à niveau aujourd'hui et débloquez le plein potentiel de notre application !"
+
 #: src/lib/getDefaultText.ts:5
 msgid "Consider: Adding a Label"
 msgstr "Considérez : Ajouter une étiquette"
@@ -286,25 +286,17 @@ msgstr "Les conteneurs sont des nœuds qui contiennent d'autres nœuds. Ils sont
 msgid "Continue"
 msgstr "Continuer"
 
-#: src/components/MightLoseSponsorTrigger.tsx:41
-msgid "Convert this to a hosted chart?"
-msgstr "Convertir ceci en graphique hébergé?"
-
-#: src/components/RenameButton.tsx:121
+#: src/components/RenameButton.tsx:124
 msgid "Convert to hosted chart?"
 msgstr "Convertir en graphique hébergé ?"
-
-#: src/pages/Charts.tsx:426
-msgid "Convert your temporary charts to permanent charts with one click by subscribing to <0>Flowchart Fun Pro</0> before August 28th."
-msgstr "Convertissez vos diagrammes temporaires en diagrammes permanents en un clic en vous abonnant à <0>Flowchart Fun Pro</0> avant le 28 août."
 
 #: src/components/Settings.tsx:144
 msgid "Cookie Policy"
 msgstr "Politique de cookies"
 
-#: src/components/ShareDialog.tsx:244
-#: src/components/ShareDialog.tsx:245
-#: src/components/ShareDialog.tsx:357
+#: src/components/ShareDialog.tsx:246
+#: src/components/ShareDialog.tsx:247
+#: src/components/ShareDialog.tsx:359
 msgid "Copy"
 msgstr "Copier"
 
@@ -316,7 +308,7 @@ msgstr "Copier l'image PNG"
 msgid "Copy SVG Code"
 msgstr "Copier le code SVG"
 
-#: src/components/ShareDialog.tsx:322
+#: src/components/ShareDialog.tsx:324
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en direct mermaid.js."
 
@@ -324,11 +316,15 @@ msgstr "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "Créer des diagrammes à partir d'une invite avec l'IA"
 
-#: src/pages/New.tsx:326
+#: src/pages/New.tsx:234
 msgid "Create New Flowchart"
 msgstr "Créer un nouveau diagramme"
 
-#: src/pages/New.tsx:192
+#: src/lib/paywallCopy.ts:3
+msgid "Create Unlimited Flowcharts"
+msgstr "Créer des diagrammes illimités"
+
+#: src/pages/New.tsx:163
 msgid "Create a New Flowchart"
 msgstr "Créer un nouveau diagramme"
 
@@ -373,11 +369,7 @@ msgstr "Importation de données"
 msgid "Date"
 msgstr "Date"
 
-#: src/pages/New.tsx:265
-msgid "Deleted when browser data is cleared"
-msgstr "Supprimé lorsque les données du navigateur sont effacées"
-
-#: src/pages/New.tsx:532
+#: src/pages/New.tsx:402
 msgid "Describe the flowchart you wish to create"
 msgstr "Décrivez le schéma que vous souhaitez créer"
 
@@ -389,15 +381,11 @@ msgstr "Directement à partir de vos données"
 msgid "Direction"
 msgstr "Direction"
 
-#: src/components/Tabs/EditMetaTab.tsx:58
-msgid "Discard"
-msgstr "Jeter"
-
 #: src/pages/Account.tsx:371
 msgid "Do you want to cancel your subscription?"
 msgstr "Souhaitez-vous résilier votre abonnement ?"
 
-#: src/pages/Charts.tsx:290
+#: src/pages/Charts.tsx:199
 msgid "Do you want to delete this?"
 msgstr "Souhaitez-vous supprimer ceci ?"
 
@@ -407,7 +395,7 @@ msgid "Document"
 msgstr "Document"
 
 #: src/components/ShareDialog.tsx:61
-#: src/components/ShareDialog.tsx:516
+#: src/components/ShareDialog.tsx:518
 msgid "Download"
 msgstr "Télécharger"
 
@@ -493,7 +481,7 @@ msgstr "Bordures dans la Ligne du Nœud Source"
 msgid "Edges in Target Node Row"
 msgstr "Bordures dans la Ligne du Nœud Cible"
 
-#: src/components/ShareDialog.tsx:137
+#: src/components/ShareDialog.tsx:138
 msgid "Editable"
 msgstr "Modifiable"
 
@@ -531,17 +519,12 @@ msgstr "Entrez votre adresse e-mail ci-dessous et nous vous enverrons un lien po
 msgid "Equal To"
 msgstr "Égal à"
 
-#: src/pages/New.tsx:457
-msgid "Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages"
-msgstr "Diagramme de flux de l'écriture d'essai, guidant les étudiants à travers la réflexion, le schématisme, le brouillon et les étapes de révision"
-
 #: src/lib/graphOptions.ts:48
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/EditorWrapper.tsx:52
 #: src/components/ShareDialog.tsx:52
-#: src/components/ShareDialog.tsx:149
+#: src/components/ShareDialog.tsx:151
 msgid "Export"
 msgstr "Exporter"
 
@@ -553,7 +536,7 @@ msgstr "Exportez des diagrammes de flux de qualité professionnelle sans filigra
 msgid "Extra Large"
 msgstr "Extra Large"
 
-#: src/pages/New.tsx:536
+#: src/pages/New.tsx:406
 msgid "Extract"
 msgstr "Extrait"
 
@@ -566,6 +549,10 @@ msgstr "Commentaire"
 #: src/pages/Pricing.tsx:32
 msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
 msgstr "Flowchart Fun Pro vous permet de créer, stocker et distribuer autant de diagrammes de flux que vous le souhaitez."
+
+#: src/lib/paywallCopy.ts:4
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
+msgstr "Flowchart Fun Pro vous offre des diagrammes illimités, des collaborateurs illimités et un stockage illimité pour seulement 3 $ / mois ou 30 $ / an."
 
 #: src/components/Settings.tsx:132
 msgid "Follow Us on Twitter"
@@ -583,7 +570,7 @@ msgstr "Vous avez trouvé un bug ? Vous souhaitez faire une demande de fonctionn
 msgid "Free"
 msgstr "Gratuit "
 
-#: src/components/ShareDialog.tsx:132
+#: src/components/ShareDialog.tsx:133
 msgid "Fullscreen"
 msgstr "Plein écran"
 
@@ -591,9 +578,17 @@ msgstr "Plein écran"
 msgid "Get More Layouts"
 msgstr "Obtenez plus de mises en page"
 
-#: src/pages/New.tsx:293
+#: src/pages/New.tsx:183
 msgid "Getting Started"
 msgstr "Commencer"
+
+#: src/pages/404.tsx:12
+msgid "Go back home"
+msgstr "Retournez à la maison"
+
+#: src/pages/Charts.tsx:292
+msgid "Go to your Sandbox"
+msgstr "Allez à votre bac à sable"
 
 #: src/components/MobileTabToggle.tsx:20
 msgid "Graph"
@@ -654,19 +649,15 @@ msgstr "Importer des données à partir d'un fichier CSV."
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "Importer des données à partir de n'importe quel fichier CSV et les mapper à un nouveau diagramme. C'est une excellente façon d'importer des données à partir d'autres sources telles que Lucidchart, Google Sheets et Visio."
 
-#: src/components/ShareDialog.tsx:433
+#: src/components/ShareDialog.tsx:435
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces fichiers CSV."
-
-#: src/components/Layout.tsx:85
-msgid "Important Changes are Coming to Flowchart Fun."
-msgstr "Des changements importants arrivent à Flowchart Fun."
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "L'importation de données est une fonctionnalité professionnelle. Vous pouvez passer à Flowchart Fun Pro pour seulement 3 $/mois ou 30 $/an."
 
-#: src/components/ShareDialog.tsx:468
+#: src/components/ShareDialog.tsx:470
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la coloration Visio, ajoutez un attribut <1>roleType</1> égal à l'un des éléments suivants:"
 
@@ -674,13 +665,17 @@ msgstr "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la
 msgid "Info"
 msgstr "Info"
 
-#: src/pages/New.tsx:531
+#: src/pages/New.tsx:401
 msgid "Instruct"
 msgstr "Instruire"
 
 #: src/components/ImportDataDialog.tsx:547
 msgid "Is"
 msgstr "Est"
+
+#: src/pages/New.tsx:323
+msgid "Keeping track of who's who in the market for our software product"
+msgstr "Suivre qui est qui sur le marché pour notre produit logiciel"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -710,9 +705,7 @@ msgid "Leading References"
 msgstr "Principales références"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:67
-#: src/components/Layout.tsx:87
-#: src/components/MightLoseWarning.tsx:36
-#: src/components/PaywallModal.tsx:60
+#: src/components/PaywallModal.tsx:52
 msgid "Learn More"
 msgstr "En savoir plus"
 
@@ -721,7 +714,7 @@ msgstr "En savoir plus"
 msgid "Learn Syntax"
 msgstr "Apprendre la syntaxe"
 
-#: src/pages/Charts.tsx:363
+#: src/pages/Charts.tsx:246
 msgid "Learn about Flowchart Fun Pro"
 msgstr "En savoir plus sur Flowchart Fun Pro"
 
@@ -739,7 +732,7 @@ msgstr "Lumineux"
 msgid "Light Mode"
 msgstr "Mode lumineux"
 
-#: src/components/ShareDialog.tsx:127
+#: src/components/ShareDialog.tsx:128
 msgid "Link"
 msgstr "Lien"
 
@@ -747,6 +740,10 @@ msgstr "Lien"
 #: src/components/ThemePicker.tsx:114
 msgid "Load Theme"
 msgstr "Charger le thème"
+
+#: src/components/LoadFromHashDialog.tsx:36
+msgid "Load from link?"
+msgstr "Charger à partir du lien?"
 
 #: src/components/ThemePicker.tsx:95
 msgid "Loading a theme will erase any custom styles you have applied"
@@ -766,6 +763,10 @@ msgstr "Connexion"
 msgid "Log Out"
 msgstr "Déconnexion"
 
+#: src/components/EditorWrapper.tsx:111
+msgid "Log in to Save"
+msgstr "Connectez-vous pour enregistrer"
+
 #: src/components/WelcomeMessage.tsx:26
 msgid "Log in to start creating flowcharts."
 msgstr "Connectez-vous pour commencer à créer des diagrammes."
@@ -774,13 +775,17 @@ msgstr "Connectez-vous pour commencer à créer des diagrammes."
 msgid "Make a One-Time Donation"
 msgstr "Faites un don unique"
 
-#: src/components/ShareDialog.tsx:399
+#: src/components/ShareDialog.tsx:401
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
 #: src/components/PaymentStepper.tsx:130
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Assurez-vous d'utiliser le même e-mail que vous utiliserez pour vous connecter."
+
+#: src/pages/New.tsx:325
+msgid "Making our supply chain better: cutting costs, working faster, and getting everyone involved"
+msgstr "Améliorer notre chaîne d'approvisionnement: réduire les coûts, travailler plus rapidement et impliquer tout le monde"
 
 #: src/pages/Account.tsx:516
 msgid "Manage Billing"
@@ -790,15 +795,11 @@ msgstr "Gérer la facturation"
 msgid "Map Data"
 msgstr "Cartographier les données"
 
-#: src/pages/New.tsx:451
-msgid "Market understanding and competitive landscape maintenance for SaaS product development"
-msgstr "Comprendre le marché et maintenir le paysage concurrentiel pour le développement de produits SaaS"
-
 #: src/components/GraphContextMenu.tsx:230
 msgid "Medium"
 msgstr "Moyen"
 
-#: src/pages/New.tsx:520
+#: src/pages/New.tsx:390
 msgid "Method"
 msgstr "Méthode"
 
@@ -814,13 +815,13 @@ msgstr "Mensuel"
 msgid "Multiple pointers on same line"
 msgstr "Plusieurs pointeurs sur la même ligne"
 
-#: src/pages/New.tsx:196
+#: src/pages/New.tsx:167
 msgid "Name"
 msgstr "Nom"
 
 #: src/components/Header.tsx:79
 #: src/components/Header.tsx:337
-#: src/pages/Charts.tsx:111
+#: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "Nouveau"
 
@@ -907,10 +908,6 @@ msgstr " temps en temps, le lien magique finira par atterrir dans votre dossier 
 msgid "One-on-One Support"
 msgstr "Assistance individuelle"
 
-#: src/pages/Charts.tsx:165
-msgid "Only available on this device.<0/>Clearing your browser cache will erase them."
-msgstr "Disponible uniquement sur cet appareil.<0/>La suppression de votre cache de navigateur les effacera."
-
 #: src/pages/Account.tsx:252
 msgid "Open Customer Portal"
 msgstr "Ouvrir le portail client"
@@ -919,7 +916,7 @@ msgstr "Ouvrir le portail client"
 msgid "Or, you can <0>create a new subscription</0>."
 msgstr "Ou, vous pouvez <0>créer une nouvelle souscription</0>."
 
-#: src/components/ShareDialog.tsx:454
+#: src/components/ShareDialog.tsx:456
 msgid "Organization Chart"
 msgstr "Organigramme"
 
@@ -931,6 +928,10 @@ msgstr "Exports PNG et JPG"
 msgid "PNG, JPG, and SVG Exports"
 msgstr "Exports PNG, JPG et SVG"
 
+#: src/pages/404.tsx:9
+msgid "Page not found"
+msgstr "Page non trouvée"
+
 #: src/pages/LogIn.tsx:310
 msgid "Password"
 msgstr "Mot de passe "
@@ -939,21 +940,13 @@ msgstr "Mot de passe "
 msgid "Past Due"
 msgstr "En retard"
 
-#: src/pages/New.tsx:537
+#: src/pages/New.tsx:407
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "Collez les informations que vous souhaitez convertir en organigramme"
 
-#: src/pages/New.tsx:232
-msgid "Permanent"
-msgstr "Permanente"
-
-#: src/pages/Charts.tsx:356
+#: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "Les diagrammes permanents sont une fonctionnalité Pro"
-
-#: src/pages/Charts.tsx:117
-msgid "Permanent Flowcharts"
-msgstr "Diagrammes permanents"
 
 #: src/lib/graphOptions.ts:49
 msgid "Playbook"
@@ -969,10 +962,6 @@ msgstr "Pointeur et conteneur sur la même ligne"
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
 
-#: src/pages/New.tsx:453
-msgid "Process for corporate social responsibility initiatives development and implementation across company operations"
-msgstr "Processus de développement et d'implémentation d'initiatives de responsabilité sociale des entreprises dans l'ensemble des opérations de l'entreprise"
-
 #: src/components/ImportDataDialog.tsx:269
 msgid "Processing Data"
 msgstr "Traitement des données"
@@ -981,12 +970,8 @@ msgstr "Traitement des données"
 msgid "Produce flowcharts directly from your data. Import from Lucidchart, Visio, and other CSV files."
 msgstr "Produisez des diagrammes directement à partir de vos données. Importer des fichiers Lucidchart, Visio et CSV."
 
-#: src/pages/New.tsx:308
-msgid "Prompt"
-msgstr "Invite"
-
-#: src/components/ShareDialog.tsx:395
-#: src/components/ShareDialog.tsx:418
+#: src/components/ShareDialog.tsx:397
+#: src/components/ShareDialog.tsx:420
 msgid "Public"
 msgstr "Public"
 
@@ -994,8 +979,8 @@ msgstr "Public"
 msgid "Random"
 msgstr "Aléatoire"
 
-#: src/components/EditorWrapper.tsx:39
-#: src/components/ShareDialog.tsx:142
+#: src/components/EditorWrapper.tsx:60
+#: src/components/ShareDialog.tsx:143
 msgid "Read-only"
 msgstr "Lecture seulement"
 
@@ -1039,9 +1024,9 @@ msgstr "Rafraîchir la page"
 msgid "Reload to Update"
 msgstr "Recharger pour mettre à jour"
 
-#: src/components/RenameButton.tsx:97
-#: src/components/RenameButton.tsx:116
-#: src/components/RenameButton.tsx:156
+#: src/components/RenameButton.tsx:100
+#: src/components/RenameButton.tsx:119
+#: src/components/RenameButton.tsx:159
 msgid "Rename"
 msgstr "Renommer"
 
@@ -1084,7 +1069,8 @@ msgstr "De droite à gauche"
 msgid "Roadmap"
 msgstr "Roadmap"
 
-#: src/components/Tabs/EditMetaTab.tsx:72
+#: src/components/EditorWrapper.tsx:128
+#: src/components/EditorWrapper.tsx:163
 msgid "Save"
 msgstr "Sauver"
 
@@ -1101,6 +1087,10 @@ msgstr "Paramètres"
 #: src/components/GraphContextMenu.tsx:394
 msgid "Shape"
 msgstr "Forme"
+
+#: src/components/EditorWrapper.tsx:74
+msgid "Share"
+msgstr "Partager"
 
 #: src/pages/LogIn.tsx:108
 #: src/pages/LogIn.tsx:329
@@ -1172,14 +1162,6 @@ msgstr "État"
 msgid "Store any data associated to a node"
 msgstr "Stocker toutes les données associées à un nœud"
 
-#: src/pages/New.tsx:241
-msgid "Stored in the cloud"
-msgstr "Stocké dans le cloud"
-
-#: src/pages/New.tsx:262
-msgid "Stored on this computer"
-msgstr "Stocké sur cet ordinateur"
-
 #: src/components/Tabs/EditorTabList.tsx:68
 #: src/components/Tabs/EditorTabList.tsx:69
 msgid "Style"
@@ -1202,10 +1184,6 @@ msgstr "Abonnement"
 msgid "Subscription will end"
 msgstr "L'abonnement prendra fin"
 
-#: src/pages/New.tsx:455
-msgid "Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration"
-msgstr "Analyse et optimisation de la chaîne d'approvisionnement : réduction des coûts, amélioration de l'efficacité et collaboration des parties prenantes"
-
 #: src/components/ImportDataDialog.tsx:442
 #: src/components/ImportDataDialog.tsx:528
 msgid "Target Column"
@@ -1214,23 +1192,6 @@ msgstr "Colonne cible"
 #: src/components/ImportDataDialog.tsx:453
 msgid "Target Delimiter"
 msgstr "Délimiteur cible"
-
-#: src/pages/New.tsx:257
-msgid "Temporary"
-msgstr "Temporaire"
-
-#: src/components/MightLoseSponsorTrigger.tsx:21
-#: src/components/MightLoseWarning.tsx:17
-msgid "Temporary Flowchart Warning"
-msgstr "Avertissement de diagramme de flux temporaire"
-
-#: src/pages/Charts.tsx:163
-msgid "Temporary Flowcharts"
-msgstr "Diagrammes temporaires"
-
-#: src/pages/Charts.tsx:413
-msgid "Temporary Flowcharts are going away soon!"
-msgstr "Les diagrammes de flux temporaires s'en vont bientôt !"
 
 #: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
@@ -1280,23 +1241,19 @@ msgstr "Éditeur de thème"
 msgid "There are no edges in this data"
 msgstr "Il n'y a pas d'arêtes dans ces données"
 
-#: src/pages/Charts.tsx:293
+#: src/pages/Charts.tsx:202
 msgid "This action cannot be undone."
 msgstr "Cette action ne peut pas être annulée."
-
-#: src/components/MightLoseWarning.tsx:24
-msgid "This document is only saved on this computer. If you want a way to store documents and access them wherever you go try our Pro plan for only $3/month!"
-msgstr "Ce document n'est sauvegardé que sur cet ordinateur. Si vous voulez un moyen de stocker des documents et de les consulter où que vous soyez, essayez notre plan Pro pour seulement 3 $/mois !"
 
 #: src/components/SvgProOnlyPopover.tsx:21
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "Cette fonctionnalité est uniquement disponible pour les utilisateurs pro. <0>Devenez un utilisateur pro</0> pour la débloquer."
 
-#: src/components/MightLoseSponsorTrigger.tsx:29
-msgid "This is a temporary chart, it will be deleted when you clear your browser cache."
-msgstr "Il s'agit d'un graphique temporaire, il sera supprimé lorsque vous effacerez le cache de votre navigateur."
+#: src/components/LoadFromHashDialog.tsx:41
+msgid "This will replace your current sandbox."
+msgstr "Cela remplacera votre bac à sable actuel."
 
-#: src/components/ShareDialog.tsx:525
+#: src/components/ShareDialog.tsx:527
 msgid "Tip"
 msgstr "Astuce"
 
@@ -1341,10 +1298,6 @@ msgstr "Deux arêtes ont le même ID"
 msgid "Two nodes have the same ID"
 msgstr "Deux nœuds ont le même ID"
 
-#: src/pages/New.tsx:218
-msgid "Type"
-msgstr "Type"
-
 #: src/components/Tabs/EditLayoutTab.tsx:219
 msgid "Unfreeze"
 msgstr "Débloquer"
@@ -1386,7 +1339,7 @@ msgstr "Mettez à niveau vers Pro"
 msgid "Upload your File"
 msgstr "Téléchargez votre fichier"
 
-#: src/pages/New.tsx:348
+#: src/pages/New.tsx:256
 msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
 msgstr "Utilisez l'IA pour générer un diagramme de flux à partir d'une invite. <0>En savoir plus</0>"
 
@@ -1414,11 +1367,11 @@ msgstr "Utilisez les attributs <0>w</0> et <1>h</1> pour définir explicitement 
 msgid "Use the customer portal to change your billing information."
 msgstr "Utilisez le portail client pour modifier vos informations de facturation."
 
-#: src/components/ShareDialog.tsx:463
+#: src/components/ShareDialog.tsx:465
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "Utilisez ce fichier pour les organigrammes, les hiérarchies et autres structures organisationnelles."
 
-#: src/components/ShareDialog.tsx:450
+#: src/components/ShareDialog.tsx:452
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Utilisez ce fichier pour les séquences, les processus et les workflows."
 
@@ -1434,7 +1387,11 @@ msgstr "Voir sur Github"
 msgid "Visualize Your Ideas in a Flash with <0>Flowchart Fun Pro</0>"
 msgstr "Visualisez vos idées en un éclair avec <0>Flowchart Fun Pro</0>"
 
-#: src/pages/New.tsx:461
+#: src/components/SandboxWarning.tsx:54
+msgid "Want to keep your flowcharts? Upgrade to our Pro account. With Pro, you can save unlimited flowcharts and never lose your creativity."
+msgstr "Voulez-vous conserver vos diagrammes? Passez à notre compte Pro. Avec Pro, vous pouvez enregistrer des diagrammes illimités et ne jamais perdre votre créativité."
+
+#: src/pages/New.tsx:331
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "L'eau s'évapore de la surface de la Terre, monte dans l'atmosphère et retombe sous forme de précipitations. Cette eau s'écoule alors dans les rivières, les lacs et les océans, où elle s'évapore à nouveau et est recyclée dans l'atmosphère."
 
@@ -1445,6 +1402,14 @@ msgstr "Images filigranées"
 #: src/components/WelcomeMessage.tsx:24
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "Bienvenue à Flowchart Fun Pro !"
+
+#: src/components/SandboxWarning.tsx:44
+msgid "Welcome to Your Sandbox"
+msgstr "Bienvenue dans votre bac à sable"
+
+#: src/pages/Charts.tsx:297
+msgid "What's this?"
+msgstr "Qu'est-ce que c'est?"
 
 #: src/components/LearnSyntaxDialog.tsx:355
 msgid "Width and Height"
@@ -1462,15 +1427,11 @@ msgstr "Annuellement"
 msgid "Yes: Option A"
 msgstr "Oui : Option A"
 
-#: src/pages/New.tsx:212
-msgid "You already have a flowchart with this name."
-msgstr "Vous avez déjà un diagramme avec ce nom."
-
 #: src/components/ImportDataDialog.tsx:714
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Vous êtes sur le point d'ajouter {numNodes} nœuds et {numEdges} arêtes à votre graphe."
 
-#: src/pages/New.tsx:278
+#: src/pages/New.tsx:214
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "Vous pouvez créer des diagrammes de flux illimités et permanents avec <0>Flowchart Fun Pro</0>."
 
@@ -1478,11 +1439,19 @@ msgstr "Vous pouvez créer des diagrammes de flux illimités et permanents avec 
 msgid "You need to log in to access this page."
 msgstr "Vous devez vous connecter pour accéder à cette page."
 
-#: src/pages/Charts.tsx:104
+#: src/components/SandboxWarning.tsx:47
+msgid "You're currently creating in your Sandbox, a space for free experimentation. Remember, it resets daily, so your current work won't be saved tomorrow."
+msgstr "Vous créez actuellement dans votre bac à sable, un espace pour les expérimentations libres. N'oubliez pas, il se réinitialise chaque jour, donc votre travail actuel ne sera pas sauvegardé demain."
+
+#: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "Vos diagrammes"
 
-#: src/pages/Charts.tsx:380
+#: src/pages/Charts.tsx:302
+msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."
+msgstr "Votre bac à sable est un espace pour expérimenter librement avec nos outils de diagramme, se réinitialisant chaque jour pour un nouveau départ."
+
+#: src/pages/Charts.tsx:263
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more. You can <1>upgrade to pro</1> to regain editing access to your charts"
 msgstr "Vos graphiques sont en lecture seule car votre compte n'est plus actif. Visitez votre page <0>compte</0> pour en savoir plus. Vous pouvez <1>passer à la version pro</1> pour récupérer l'accès à l'édition de vos graphiques."
 

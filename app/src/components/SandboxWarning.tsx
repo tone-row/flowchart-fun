@@ -5,6 +5,7 @@ import { useDoc } from "../lib/useDoc";
 import produce from "immer";
 import { Link } from "react-router-dom";
 import { Button2 } from "../ui/Shared";
+import { Trans } from "@lingui/macro";
 
 /**
  * A modal window that appears for people working in the sandbox after 1 minute.
@@ -40,19 +41,26 @@ export function SandboxWarning() {
           maxWidthClass="max-w-xl w-[calc(100%-3rem)]"
         >
           <h2 className="font-bold text-lg leading-normal text-center">
-            Welcome to Your Sandbox
+            <Trans>Welcome to Your Sandbox</Trans>
           </h2>
           <P>
-            You're currently creating in your Sandbox, a space for free
-            experimentation. Remember, it resets daily, so your current work
-            won't be saved tomorrow.
+            <Trans>
+              You're currently creating in your Sandbox, a space for free
+              experimentation. Remember, it resets daily, so your current work
+              won't be saved tomorrow.
+            </Trans>
           </P>
           <P>
-            Want to keep your flowcharts? Upgrade to our Pro account. With Pro,
-            you can save unlimited flowcharts and never lose your creativity.
+            <Trans>
+              Want to keep your flowcharts? Upgrade to our Pro account. With
+              Pro, you can save unlimited flowcharts and never lose your
+              creativity.
+            </Trans>
           </P>
           <P>
-            Consider upgrading today and unlock the full potential of our app!
+            <Trans>
+              Consider upgrading today and unlock the full potential of our app!
+            </Trans>
           </P>
           <Button2 color="blue" size="sm" className="mt-3">
             <Link to="/pricing">View Pricing</Link>
