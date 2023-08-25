@@ -27,11 +27,15 @@ import { newDelimiters, SANDBOX_STORAGE_KEY } from "../lib/constants";
 import { SandboxWarning } from "../components/SandboxWarning";
 import { useSandboxWarning } from "../lib/useSandboxWarning";
 import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
+import { useIsProUser } from "../lib/hooks";
 
 const Sandbox = memo(function Edit() {
+  const isProUser = useIsProUser();
   // Wait 1 minute and trigger a sandbox modal overtop of the editor
   // if it's never been triggered before for this particular chart
   useEffect(() => {
+    if (isProUser) return;
+
     // If it's already been displayed for this chart, bail
     if (useDoc.getState().meta?.hasSeenSandboxWarning) return;
 
@@ -42,7 +46,7 @@ const Sandbox = memo(function Edit() {
     return () => {
       clearTimeout(t);
     };
-  }, []);
+  }, [isProUser]);
 
   const storeDoc = useMemo(() => {
     return throttle(
