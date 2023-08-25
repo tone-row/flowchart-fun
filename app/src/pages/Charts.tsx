@@ -9,7 +9,7 @@ import {
   Prohibit,
   ArrowRight,
 } from "phosphor-react";
-import { memo, ReactNode, useContext, useState } from "react";
+import { memo, ReactNode, useContext } from "react";
 import { useMutation } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import * as Popover from "@radix-ui/react-popover";
@@ -27,8 +27,6 @@ import { useLastChart } from "../lib/useLastChart";
 import { Overlay } from "../ui/Dialog";
 import { Button2, Page, popoverContentProps } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
-import { MigrateTempFlowchartsModal } from "../components/MigrateTempFlowchartsModal";
-import { getTemporaryCharts } from "../lib/getTemporaryCharts";
 
 export default function Charts() {
   const isProUser = useIsProUser();
@@ -104,7 +102,6 @@ export default function Charts() {
         </div>
         <SandboxLink />
       </header>
-      <TemporaryFlowchartRemovalWarning />
       <div className="grid gap-1">
         {isLoadingAnything ? (
           <div className="py-4">
@@ -285,45 +282,6 @@ function InactiveAccount() {
   );
 }
 
-function TemporaryFlowchartRemovalWarning() {
-  const isProUser = useIsProUser();
-  const [numTemporaryCharts] = useState(
-    getTemporaryCharts().filter(Boolean).length
-  );
-  if (numTemporaryCharts === 0) return null;
-  return (
-    <div className="flex items-center gap-4 bg-yellow-100 rounded-lg p-4 text-foreground">
-      <img src="/images/pricing/Investment.svg" alt="" className="w-24 h-24" />
-      <div className="grid gap-3">
-        <h2 className="text-sm font-bold">
-          <Trans>Temporary Flowcharts are going away soon!</Trans>
-        </h2>
-        <p className="text-sm leading-6 text-wrap-balance">
-          {isProUser ? (
-            <Trans>
-              <MigrateTempFlowchartsModal>
-                <span className="underline underline-offset-2 text-foreground">
-                  Click here
-                </span>
-              </MigrateTempFlowchartsModal>{" "}
-              to migrate your temporary flowcharts to permanent charts.
-            </Trans>
-          ) : (
-            <Trans>
-              Convert your temporary charts to permanent charts with one click
-              by subscribing to{" "}
-              <Link to="/pricing" className="underline underline-offset-2">
-                Flowchart Fun Pro
-              </Link>{" "}
-              before August 28th.
-            </Trans>
-          )}
-        </p>
-      </div>
-    </div>
-  );
-}
-
 function SandboxLink() {
   return (
     <div className="grid gap-1">
@@ -331,7 +289,7 @@ function SandboxLink() {
         to="/"
         className="text-purple-500 dark:text-purple-300 flex whitespace-nowrap items-center"
       >
-        <Trans>Open your Sandbox</Trans> <ArrowRight className="ml-2" />
+        <Trans>Go to your Sandbox</Trans> <ArrowRight className="ml-2" />
       </Link>
       <Popover.Root>
         <Popover.Trigger asChild>
@@ -342,8 +300,8 @@ function SandboxLink() {
         <Popover.Content {...popoverContentProps}>
           <p className="text-xs max-w-[210px] leading-normal text-neutral-700 dark:text-neutral-300">
             <Trans>
-              Your Sandbox is a risk-free space to freely experiment with our
-              flowchart tools, resetting every day for a fresh start.
+              Your Sandbox is a space to freely experiment with our flowchart
+              tools, resetting every day for a fresh start.
             </Trans>
           </p>
         </Popover.Content>

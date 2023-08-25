@@ -24,8 +24,25 @@ import styles from "./Sandbox.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
 import EditStyleTab from "../components/Tabs/EditStyleTab";
 import { newDelimiters, SANDBOX_STORAGE_KEY } from "../lib/constants";
+import { SandboxWarning } from "../components/SandboxWarning";
+import { useSandboxWarning } from "../lib/useSandboxWarning";
 
 const Sandbox = memo(function Edit() {
+  // Wait 1 minute and trigger a sandbox modal overtop of the editor
+  // if it's never been triggered before for this particular chart
+  useEffect(() => {
+    // If it's already been displayed for this chart, bail
+    if (useDoc.getState().meta?.hasSeenSandboxWarning) return;
+
+    let t = setTimeout(() => {
+      useSandboxWarning.setState({ isOpen: true });
+    }, 1000 * 60);
+
+    return () => {
+      clearTimeout(t);
+    };
+  }, []);
+
   const storeDoc = useMemo(() => {
     return throttle(
       (doc: Doc) => {
@@ -56,41 +73,44 @@ const Sandbox = memo(function Edit() {
   }, []);
 
   return (
-    <EditWrapper>
-      <Main>
-        <EditorWrapper>
-          <Tabs.Root
-            value={selectedTab}
-            className={styles.Tabs}
-            onValueChange={(selectedTab) =>
-              useTabsStore.setState({ selectedTab })
-            }
-          >
-            <EditorTabList />
-            <Tabs.Content value="Document">
-              <EditorOptions>
-                <TextEditor value={text} onChange={onChange} />
-              </EditorOptions>
-            </Tabs.Content>
-            <Tabs.Content value="Layout">
-              <EditLayoutTab />
-            </Tabs.Content>
-            <Tabs.Content value="Style">
-              <EditStyleTab />
-            </Tabs.Content>
-          </Tabs.Root>
-        </EditorWrapper>
-        <ClearTextButton
-          handleClear={() => {
-            useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
-            const editor = useEditorStore.getState().editor;
-            if (!editor) return;
-            editor.focus();
-          }}
-        />
-        <EditorError />
-      </Main>
-    </EditWrapper>
+    <>
+      <EditWrapper>
+        <Main>
+          <EditorWrapper>
+            <Tabs.Root
+              value={selectedTab}
+              className={styles.Tabs}
+              onValueChange={(selectedTab) =>
+                useTabsStore.setState({ selectedTab })
+              }
+            >
+              <EditorTabList />
+              <Tabs.Content value="Document">
+                <EditorOptions>
+                  <TextEditor value={text} onChange={onChange} />
+                </EditorOptions>
+              </Tabs.Content>
+              <Tabs.Content value="Layout">
+                <EditLayoutTab />
+              </Tabs.Content>
+              <Tabs.Content value="Style">
+                <EditStyleTab />
+              </Tabs.Content>
+            </Tabs.Root>
+          </EditorWrapper>
+          <ClearTextButton
+            handleClear={() => {
+              useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
+              const editor = useEditorStore.getState().editor;
+              if (!editor) return;
+              editor.focus();
+            }}
+          />
+          <EditorError />
+        </Main>
+      </EditWrapper>
+      <SandboxWarning />
+    </>
   );
 });
 

@@ -1,7 +1,6 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
-import { Session } from "@supabase/supabase-js";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
 import { Pencil, Robot, Rocket } from "phosphor-react";
 import {
@@ -22,15 +21,19 @@ import { Warning } from "../components/Warning";
 import { getDefaultChart } from "../lib/getDefaultChart";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { titleToLocalStorageKey } from "../lib/helpers";
-import { useIsProUser } from "../lib/hooks";
+import { useIsProUser, useUserId } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
 import { Button2, Page } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
-import { usePaywallModalStore } from "../lib/usePaywallModalStore";
+import { showPaywall } from "../lib/usePaywallModalStore";
+import {
+  createUnlimitedContent,
+  createUnlimitedTitle,
+} from "../lib/paywallCopy";
 
 export default function M() {
-  const { customerIsLoading, session, checkedSession } = useContext(AppContext);
+  const { customerIsLoading, checkedSession } = useContext(AppContext);
   const isProUser = useIsProUser();
   const { graphText = window.location.hash.slice(1) } = useParams<{
     graphText: string;
@@ -57,7 +60,6 @@ export default function M() {
   return (
     <New
       customerIsLoading={customerIsLoading}
-      session={session}
       checkedSession={checkedSession}
       isProUser={isProUser}
       templateText={templateText}
@@ -67,13 +69,12 @@ export default function M() {
 
 const New = memo(function New({
   customerIsLoading,
-  session,
   checkedSession,
   isProUser,
   templateText,
 }: {
   customerIsLoading: boolean;
-  session: Session | null;
+
   checkedSession: boolean;
   isProUser: boolean;
   templateText: string | null;
@@ -81,7 +82,7 @@ const New = memo(function New({
   const defaultDoc = getDefaultChart();
   const navigate = useNavigate();
 
-  const userId = session?.user?.id;
+  const userId = useUserId();
 
   const language = useContext(AppContext).language;
   const [name, setName] = useState<string>(
@@ -120,18 +121,14 @@ const New = memo(function New({
            * Uncomment this when we want to show the paywall modal
            */
           if (!isProUser) {
-            usePaywallModalStore.setState({
-              open: true,
-              title: t`Get Unlimited Flowcharts`,
-              content: t`Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year.`,
+            showPaywall({
+              title: createUnlimitedTitle,
+              content: createUnlimitedContent,
             });
             return;
           }
 
-          const formData = new FormData(e.currentTarget);
-          const type = formData.get("type") as "regular" | "local";
-
-          if (!name || !type) return;
+          if (!name) return;
 
           if (!userId) return;
 

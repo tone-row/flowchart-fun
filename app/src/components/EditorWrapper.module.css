@@ -14,9 +14,9 @@
   }
 }
 
-.EditorWrapper header {
+/* .EditorWrapper header {
   padding: calc(var(--spacer-px) * 3) 26px 0;
-}
+} */
 
 /* .HeaderTitle > button:first-child {
   overflow: hidden;

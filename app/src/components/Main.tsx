@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 
-import { useFullscreen } from "../lib/hooks";
+import { useFullscreen, useIsProUser } from "../lib/hooks";
 import { useUnmountStore } from "../lib/useUnmountStore";
 import { CloneButton } from "./CloneButton";
 import Graph from "./Graph";
@@ -36,6 +36,7 @@ const Main = memo(({ children }: MainProps) => {
       }, 100);
     }
   }, [unmount]);
+  const isProUser = useIsProUser();
   return (
     <>
       {isFullscreen ? null : (
@@ -45,7 +46,7 @@ const Main = memo(({ children }: MainProps) => {
       )}
       <GraphWrapper>
         {unmount ? <Loading /> : <Graph shouldResize={shouldResize} />}
-        {isFullscreen ? (
+        {isFullscreen && isProUser ? (
           <div className={styles.CopyButtonWrapper}>
             <CloneButton />
           </div>
