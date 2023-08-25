@@ -122,28 +122,30 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
           </div>
         </Column>
         {isHosted ? <HostedOptions /> : null}
-        <Column>
-          <SectionTitle className="mb-1">
-            <Trans>Link</Trans>
-          </SectionTitle>
-          <Box gap={4}>
-            <LinkCopy
-              value={fullscreen}
-              title={t`Fullscreen`}
-              rawTitle="Fullscreen"
-            />
-            <LinkCopy
-              value={editable}
-              title={t`Editable`}
-              rawTitle="Editable"
-            />
-            <LinkCopy
-              value={readOnly}
-              title={t`Read-only`}
-              rawTitle="Read-only"
-            />
-          </Box>
-        </Column>
+        {isProUser && (
+          <Column>
+            <SectionTitle className="mb-1">
+              <Trans>Link</Trans>
+            </SectionTitle>
+            <Box gap={4}>
+              <LinkCopy
+                value={fullscreen}
+                title={t`Fullscreen`}
+                rawTitle="Fullscreen"
+              />
+              <LinkCopy
+                value={editable}
+                title={t`Editable`}
+                rawTitle="Editable"
+              />
+              <LinkCopy
+                value={readOnly}
+                title={t`Read-only`}
+                rawTitle="Read-only"
+              />
+            </Box>
+          </Column>
+        )}
         <Column>
           <Title>
             <Trans>Export</Trans>
