@@ -54,7 +54,10 @@ export function PaywallModal() {
               </Dialog.Close>
             </div>
           </Dialog.Description>
-          <Dialog.Close className="absolute top-4 right-4 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
+          <Dialog.Close
+            data-testid="close-dialog"
+            className="absolute top-4 right-4 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300"
+          >
             <X />
           </Dialog.Close>
         </Content>

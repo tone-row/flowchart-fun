@@ -78,3 +78,11 @@ export async function changeEditorText(page: Page, text: string) {
   await page.keyboard.press("Meta+KeyA");
   await page.keyboard.type(text);
 }
+
+const TESTING_EMAIL = process.env.TESTING_EMAIL as string;
+const TESTING_PASSWORD = process.env.TESTING_PASS as string;
+if (!TESTING_EMAIL || !TESTING_PASSWORD) {
+  throw new Error("Must set TESTING_EMAIL and TESTING_PASS");
+}
+
+export { TESTING_EMAIL, TESTING_PASSWORD };

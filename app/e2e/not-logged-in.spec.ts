@@ -1,11 +1,11 @@
 import { test, expect } from "@playwright/test";
 import { BASE_URL } from "./utils";
 
-/* Everything the user can do when not logged in */
-
 test.beforeEach(async ({ page }) => {
   await page.goto(BASE_URL);
 });
+
+/* Everything the user can do when not logged in */
 
 test("can do things when not logged in", async ({ page }) => {
   await expect(

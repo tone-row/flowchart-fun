@@ -538,22 +538,6 @@ function SubscriptionOptions() {
                 .
               </p>
             </Trans>
-            <div className="flex items-center gap-2 text-blue-500 bg-blue-100 p-4 rounded-md border-l-4 border-blue-500">
-              <Info size={24} />
-              <Trans>
-                <p className="text-sm leading-normal">
-                  Starting August 28th you will need a subscription to create
-                  and edit charts.{" "}
-                  <Link
-                    to="/blog/post/important-changes-coming"
-                    className="underline"
-                  >
-                    Learn more
-                  </Link>
-                  .
-                </p>
-              </Trans>
-            </div>
           </>
         )}
       </div>
