@@ -62,7 +62,14 @@ export function SandboxWarning() {
               Consider upgrading today and unlock the full potential of our app!
             </Trans>
           </P>
-          <Button2 color="blue" size="sm" className="mt-3">
+          <Button2
+            color="blue"
+            size="sm"
+            className="mt-3"
+            onClick={() => {
+              useSandboxWarning.setState({ isOpen: false });
+            }}
+          >
             <Link to="/pricing">View Pricing</Link>
           </Button2>
         </Content>
@@ -72,5 +79,9 @@ export function SandboxWarning() {
 }
 
 function P({ children }: { children: React.ReactNode }) {
-  return <p className="text-neutral-700 leading-normal text-sm">{children}</p>;
+  return (
+    <p className="text-neutral-700 dark:text-neutral-300 leading-normal text-sm">
+      {children}
+    </p>
+  );
 }

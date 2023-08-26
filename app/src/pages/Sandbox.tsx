@@ -40,7 +40,28 @@ const Sandbox = memo(function Edit() {
     if (useDoc.getState().meta?.hasSeenSandboxWarning) return;
 
     let t = setTimeout(() => {
-      useSandboxWarning.setState({ isOpen: true });
+      // Check if there is a div with a role="dialog" and if so, create
+      // a mutation observer to watch for it to be removed
+      // and show the dialog when it's removed
+      const dialog = document.querySelector('[role="dialog"]');
+      if (dialog) {
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.removedNodes.length > 0) {
+              setTimeout(() => {
+                useSandboxWarning.setState({ isOpen: true });
+              }, 1000);
+              observer.disconnect();
+            }
+          });
+        });
+        observer.observe(dialog.parentNode!, {
+          childList: true,
+          attributeFilter: ["role"],
+        });
+      } else {
+        useSandboxWarning.setState({ isOpen: true });
+      }
     }, 1000 * 60);
 
     return () => {

@@ -59,6 +59,7 @@ export const Close = forwardRef<
     {...props}
     className={`absolute top-1 right-1 p-2 rounded-md focus:outline-none ${focusClasses}
     ${className}`}
+    data-testid="close-button"
   >
     <X size={16} />
   </Dialog.Close>
