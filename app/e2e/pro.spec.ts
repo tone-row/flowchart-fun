@@ -12,6 +12,8 @@ test.describe.configure({
   mode: "serial",
 });
 
+test.skip(({ browserName }) => browserName !== "chromium", "Chromium only!");
+
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
   await page.goto(BASE_URL);

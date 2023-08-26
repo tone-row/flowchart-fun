@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { BASE_URL } from "./utils";
+import { BASE_URL, changeEditorText } from "./utils";
 
 test.beforeEach(async ({ page }) => {
   await page.goto(BASE_URL);
@@ -13,19 +13,7 @@ test("can do things when not logged in", async ({ page }) => {
   ).toBeVisible();
 
   // change text in editor
-  await page.getByText("Begin Typing").click();
-  await page
-    .getByLabel("Editor content;Press Alt+F1 for Accessibility Options.")
-    .press("Meta+a");
-  await page
-    .getByLabel("Editor content;Press Alt+F1 for Accessibility Options.")
-    .fill("Hello\n");
-  await page
-    .getByLabel("Editor content;Press Alt+F1 for Accessibility Options.")
-    .press("Tab");
-  await page
-    .getByLabel("Editor content;Press Alt+F1 for Accessibility Options.")
-    .fill("Hello\n  World");
+  await changeEditorText(page, "Hello\n  World");
 
   // Play with layout
   await page.getByTestId("Editor Tab: Layout").click();
