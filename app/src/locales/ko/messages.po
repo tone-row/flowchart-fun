@@ -41,10 +41,6 @@ msgstr "<0>Flowchart Fun</0>은 <1>Tone Row</1>가 만든 오픈 소스 프로�
 msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
 msgstr "<0>로그인</0> / <1>회원가입</1> 이메일과 비밀번호로"
 
-#: src/pages/Account.tsx:543
-msgid "<0>Starting August 28th you will need a subscription to create and edit charts. <1>Learn more</1>.</0>"
-msgstr "<0>8월 28일부터 차트를 만들고 편집하기 위해 구독이 필요합니다. <1>자세히 알아보기</1>.</0>"
-
 #: src/pages/Account.tsx:531
 msgid "<0>You currently have a free account.<1/><2>Learn about our Pro Features and subscribe on our pricing page</2>.</0>"
 msgstr "<0>현재 당신은 무료 계정을 가지고 있습니다. <1/><2>프로 기능에 대해 알아보고 우리 가격 페이지에서 구독하세요</2>.</0>"
@@ -550,7 +546,7 @@ msgstr "피드백"
 msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
 msgstr "플로우 차트 펀 프로는 필요한 만큼 많은 플로우 차트를 만들고 저장하고 배포할 수 있습니다."
 
-#: src/lib/paywallCopy.ts:4
+#: src/lib/paywallCopy.ts:5
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
 msgstr "Flowchart Fun Pro은 무제한 플로차트, 무제한 협력자 및 무제한 저장 공간을 제공하며 월 3 달러 또는 연간 30 달러로 제공됩니다."
 

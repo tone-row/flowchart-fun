@@ -41,10 +41,6 @@ msgstr "<0>Flowchart Fun</0>是由<1>Tone Row</1>制作的开源项目"
 msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
 msgstr "<0>登录</0> / <1>注册</1> 使用电子邮件和密码"
 
-#: src/pages/Account.tsx:543
-msgid "<0>Starting August 28th you will need a subscription to create and edit charts. <1>Learn more</1>.</0>"
-msgstr "<0>从8月28日开始，您需要订阅才能创建和编辑图表。<1>了解更多</1>。</0>"
-
 #: src/pages/Account.tsx:531
 msgid "<0>You currently have a free account.<1/><2>Learn about our Pro Features and subscribe on our pricing page</2>.</0>"
 msgstr "<0>您目前拥有免费帐户。<1/><2>了解我们的Pro功能，并在我们的定价页面上订阅</2>。</0>"
@@ -550,7 +546,7 @@ msgstr "反馈"
 msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
 msgstr "Flowchart Fun Pro允许您创建、存储和分发任意数量的流程图。"
 
-#: src/lib/paywallCopy.ts:4
+#: src/lib/paywallCopy.ts:5
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
 msgstr "Flowchart Fun Pro 为您提供无限流程图，无限合作者和无限存储，每月只需 3 美元或每年 30 美元。"
 
