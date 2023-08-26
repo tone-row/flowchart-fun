@@ -12,6 +12,16 @@ test("can do things when not logged in", async ({ page }) => {
     page.getByRole("heading", { name: "flowchart.fun" })
   ).toBeVisible();
 
+  // Open mermaid.live
+  await page.getByLabel("Export").click();
+  const page1Promise = page.waitForEvent("popup");
+  await page.getByTestId("Mermaid Live").click();
+  const page1 = await page1Promise;
+  expect(page1.url()).toBe(
+    "https://mermaid.live/edit#pako:eNpdkUFrwzAMhf-KpnN7aEsp5DBo10th6w7bDmPewYuV1JDIwVHoQul_n6hjNnYwyN97Es_WBcvgCAusmnAuTzaKYSO8-DC4o9ozvI6d59rg540vlW-dUwIWHu0XNVlZqfLciQ8M24mVgZlKUeGtJ7AMhz1IgIeEc-P6t3GX2UbZMZyBotVOOemhb9ERDiSO4AXGMMSemuoutyxgPgeDOrz3jqJBvd8DL1PsJL5Tn_kqhb5dppx_nceQjesU8r9xKpNngzNsKbbWO_3Ji2HQEZq6JYOFlo4qOzT6YsNXtdpBwsvIJRYSB5rh0DkrtPe2jrbNkJyXEJ_Scm47uv4ASGaNww"
+  );
+  await page.click('[data-testid="close-button"]');
+
   // change text in editor
   await changeEditorText(page, "Hello\n  World");
 
@@ -29,14 +39,6 @@ test("can do things when not logged in", async ({ page }) => {
   const downloadPromise = page.waitForEvent("download");
   await page.getByLabel("Download PNG").click();
   const _download = await downloadPromise;
-  const page1Promise = page.waitForEvent("popup");
-
-  // Open mermaid.live
-  await page.getByTestId("Mermaid Live").click();
-  const page1 = await page1Promise;
-  expect(page1.url()).toBe(
-    "https://mermaid.live/edit#pako:eNo1zrEKwzAMBNBfMZqTIRkzdOrQpVOHDlUHYSuNwbaKkCkl5N9rUrIdj-O4FbwEhgnmJB-_kBoWtDI8EC6ckiA8dxgb3EVTOGBwfX9yZYQOMmumGNrIisU5BFs4M8LUYuCZajIELFurUjW5fYuHybRyB_UdyPgc6aWUD-QQTfT6_7Xf2355ejiC"
-  );
 
   // Download CSV
   await page.getByRole("tab", { name: "Visio" }).click();
