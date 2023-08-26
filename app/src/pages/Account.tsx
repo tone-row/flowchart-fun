@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
-import { ArrowSquareOut, Info, Warning } from "phosphor-react";
+import { ArrowSquareOut, Warning } from "phosphor-react";
 import React, {
   ReactNode,
   useCallback,
