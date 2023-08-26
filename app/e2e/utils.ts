@@ -72,11 +72,15 @@ export async function deleteCustomerByEmail(email: string) {
   }
 }
 
+const delay = 50;
+
 export async function changeEditorText(page: Page, text: string) {
   const monacoEditor = page.locator(".monaco-editor").nth(0);
   await monacoEditor.click();
-  await page.keyboard.press("Meta+KeyA");
-  await page.keyboard.type(text);
+  await page.keyboard.press("Meta+KeyA", { delay });
+  // delete the selected text
+  await page.keyboard.press("Backspace", { delay });
+  await page.keyboard.type(text, { delay });
 }
 
 const TESTING_EMAIL = process.env.TESTING_EMAIL as string;
