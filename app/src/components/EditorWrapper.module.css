@@ -14,21 +14,14 @@
   }
 }
 
-.EditorWrapper header {
+/* .EditorWrapper header {
   padding: calc(var(--spacer-px) * 3) 26px 0;
-}
+} */
 
-.HeaderTitle {
-  display: flex;
-  align-items: center;
-  gap: calc(var(--spacer-px) * 4);
-  width: 100%;
-}
-
-.HeaderTitle > button:first-child {
+/* .HeaderTitle > button:first-child {
   overflow: hidden;
   padding: 0;
-}
+} */
 
 .HeaderTitle button:first-child h1 {
   text-overflow: ellipsis;

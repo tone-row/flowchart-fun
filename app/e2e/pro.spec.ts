@@ -2,24 +2,17 @@ import { expect, Page, test } from "@playwright/test";
 import jsdom from "jsdom";
 import path from "path";
 
-import { openExportDialog } from "./openExportDialog";
-import {
-  BASE_URL,
-  deleteCustomerByEmail,
-  getTempEmail,
-  getTempEmailMessage,
-} from "./utils";
+import { BASE_URL, getTempEmail, getTempEmailMessage } from "./utils";
+
+let page: Page;
+let email = "";
+let publicLinkValue: string | null = "";
 
 test.describe.configure({
   mode: "serial",
 });
 
-let email = "";
-
-let page: Page;
-
-// temporarily skip these tests, out of rapidapi quota
-test.skip(() => true, "Exceeded RapidAPI quota");
+test.skip(({ browserName }) => browserName !== "chromium", "Chromium only!");
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
@@ -34,7 +27,7 @@ test("Sign Up", async () => {
   // set timeout
   test.setTimeout(240000);
 
-  await page.getByRole("link", { name: "Pricing" }).click();
+  await page.getByRole("link", { name: "Upgrade to Pro" }).click();
   await expect(page).toHaveURL(`${BASE_URL}/pricing`);
 
   await page.getByTestId("yearly-plan-button").click();
@@ -114,23 +107,22 @@ test("Sign Up", async () => {
   await expect(page.getByText("Account")).toBeVisible({ timeout: 60 * 1000 });
 });
 
-test("Publish Chart", async () => {
-  // page
+test("Create new chart", async () => {
   await page.getByRole("link", { name: "New" }).click();
-
-  // Make a new hosted chart
   await page.getByPlaceholder("Untitled").fill("my new chart");
-  await page
-    .getByRole("radio", {
-      name: "Permanent Stored in the cloud Accessible from any device",
-    })
-    .click();
-
-  await page.getByRole("button", { name: "Create" }).click();
-
+  await page.getByRole("button", { name: "Create New Flowchart" }).click();
   // expect url to be regex BASE_URL + /u/\d+
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
+});
 
+test("Rename Chart", async () => {
+  await page.getByLabel("Rename").click();
+  await page.getByRole("textbox").fill("to publish");
+  await page.getByRole("button", { name: "Rename" }).click();
+  await expect(page.getByLabel("Rename")).toHaveText("to publish");
+});
+
+test("Publish Chart", async () => {
   await page.getByRole("button", { name: "Export" }).click();
   await page.getByLabel("Make publicly accessible").check();
 
@@ -139,9 +131,13 @@ test("Publish Chart", async () => {
     name: "Copy Public Link",
   });
 
-  const publicLinkValue = await publicLink.getAttribute("value");
+  publicLinkValue = await publicLink.getAttribute("value");
 
-  if (!publicLinkValue) throw new Error("Public link value is empty");
+  expect(publicLinkValue).toBeTruthy();
+});
+
+test("Clone from Public Link", async () => {
+  if (!publicLinkValue) throw new Error("publicLinkValue is not set");
 
   // navigate to public url
   await page.goto(publicLinkValue);
@@ -149,39 +145,47 @@ test("Publish Chart", async () => {
   // expect url to be regex BASE_URL + /p/\w+-\w+-\w+
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/p/\\w+-\\w+-\\w+`));
 
-  // expect Clone button to be present
-  await expect(page.getByRole("button", { name: "Clone" })).toBeVisible();
+  // Click Clone
+  const page1Promise = page.waitForEvent("popup");
+  await page.getByRole("button", { name: "Clone" }).click();
+  const page1 = await page1Promise;
+
+  // expect url to be regex BASE_URL + /u/\d+
+  await expect(page1).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
+
+  // Close page1
+  await page1.close();
+});
+
+test("Open Chart From Charts Page", async () => {
+  await page.goto(BASE_URL);
+  await page.getByRole("link", { name: "Charts" }).click();
+  await page.getByRole("link", { name: /to publish.*/gi }).click();
 });
 
 test("Download SVG", async () => {
-  // Create a blank local chart
-  await page.goto(`${BASE_URL}/the-file-name`);
-  await openExportDialog(page);
-  // Click [aria-label="Download SVG"]
-  const [download] = await Promise.all([
-    page.waitForEvent("download"),
-    page.locator('[aria-label="Download SVG"]').click(),
-  ]);
+  await page.getByLabel("Export").click();
 
-  expect(download.suggestedFilename()).toBe("the-file-name.svg");
+  // Click [aria-label="Download SVG"]
+  const download1Promise = page.waitForEvent("download");
+  await page.getByLabel("Download SVG").click();
+  const _download1 = await download1Promise;
+
+  await page.getByTestId("close-button").click();
 });
 
-test("Convert chart to hosted from Might Lose Trigger", async () => {
-  // Create a blank local chart
-  await page.goto(`${BASE_URL}/my-new-chart`);
+test("Go to Sandbox. Save Sandbox Chart", async () => {
+  await page.goto(BASE_URL);
 
-  // Click the might-lose trigger
-  await page.getByTestId("might-lose-sponsor-trigger").click();
+  // Wait for the upgrade to pro to disappear, so we know customer has loaded
+  await page
+    .getByRole("link", { name: "Upgrade to Pro" })
+    .waitFor({ state: "detached" });
 
-  // Make sure the input with the label Convert to hosted chart? is checked
-  await page.getByTestId("convert-to-hosted").click();
-
-  // Add a character to make name different
-  await page.getByRole("textbox").click();
-  await page.getByRole("textbox").fill("my-new-chart-");
-
-  // Rename
-  await page.getByRole("button", { name: "Rename" }).click();
+  await page.getByRole("button", { name: "Save" }).click();
+  await page.getByLabel("Title").click();
+  await page.getByLabel("Title").fill("my saved chart");
+  await page.getByRole("button", { name: "Save" }).click();
 
   // expect "/u/" to be in the url
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
@@ -189,7 +193,8 @@ test("Convert chart to hosted from Might Lose Trigger", async () => {
 
 test("Create chart from prompt by instruction", async () => {
   await page.getByRole("link", { name: "New" }).click();
-  await page.getByRole("radio", { name: "Prompt" }).click();
+  await page.getByRole("radio", { name: "AI Prompt" }).click();
+
   await page.getByTestId("instruct").click();
   await page.getByTestId("prompt-entry-textarea").click();
   await page
@@ -204,7 +209,8 @@ test("Create chart from prompt by instruction", async () => {
 
 test("Create chart from prompt by extraction", async () => {
   await page.getByRole("link", { name: "New" }).click();
-  await page.getByRole("radio", { name: "Prompt" }).click();
+  await page.getByRole("radio", { name: "AI Prompt" }).click();
+
   await page.getByTestId("extract").click();
   await page.getByTestId("prompt-entry-textarea").click();
   await page
@@ -219,6 +225,9 @@ test("Create chart from prompt by extraction", async () => {
 
 test("Create chart from imported data", async () => {
   try {
+    await page.getByRole("link", { name: "New" }).click();
+    await page.getByRole("button", { name: "Create New Flowchart" }).click();
+    await page.waitForURL(new RegExp(`${BASE_URL}/u/\\d+`));
     await page.getByRole("button", { name: "Import Data" }).click();
 
     const filePath = path.join(
@@ -268,10 +277,4 @@ test("Create chart from imported data", async () => {
     console.error(error);
     throw error;
   }
-});
-
-test.afterAll(async () => {
-  /* This should be run in the last test */
-  await deleteCustomerByEmail(email);
-  console.log("deleted stripe customer: ", email);
 });

@@ -14,6 +14,9 @@ import { Button2, Input, Notice, Section } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
 import { useSession } from "./AppContext";
 
+/**
+ * On the sandbox, the rename button just returns the children
+ */
 export const RenameButton = memo(function RenameButton({
   children,
 }: {

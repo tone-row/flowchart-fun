@@ -11,7 +11,7 @@ import ResetPassword from "../pages/ResetPassword";
 /** Public view of hosted chart (permalink), readonly */
 const Public = lazy(() => import("../pages/Public"));
 /** Edit charts in local storage */
-const Edit = lazy(() => import("../pages/Edit"));
+const Sandbox = lazy(() => import("../pages/Sandbox"));
 /** Edit hosted chart */
 const EditHosted = lazy(() => import("../pages/EditHosted"));
 /** Read only chart, encoded in url / maybe fullscreen */
@@ -28,13 +28,14 @@ const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
+import Page404 from "../pages/404";
 
 export default function Router() {
   usePageViews();
   return (
     <Routes>
       <Route path="/" element={<Wrapper />}>
-        <Route index element={<Edit />} />
+        <Route index element={<Sandbox />} />
         <Route path="/pricing" element={<Pricing />} />
         {/* "y" for "your charts" */}
         <Route
@@ -73,14 +74,7 @@ export default function Router() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
-        <Route
-          path="/:workspace"
-          element={
-            <AuthWall>
-              <Edit />
-            </AuthWall>
-          }
-        />
+        <Route path="*" element={<Page404 />} />
       </Route>
     </Routes>
   );

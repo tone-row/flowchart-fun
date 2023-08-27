@@ -1,8 +1,6 @@
-import { Trans } from "@lingui/macro";
 import cx from "classnames";
-import Cookies from "js-cookie";
-import { ArrowRight, X } from "phosphor-react";
-import { memo, ReactNode, Suspense, useState } from "react";
+import { X } from "phosphor-react";
+import { memo, ReactNode, Suspense } from "react";
 import { Link } from "react-router-dom";
 
 import { useFullscreen, useIsEditorView } from "../lib/hooks";
@@ -17,15 +15,11 @@ import { PaywallModal } from "./PaywallModal";
 const Layout = memo(({ children }: { children: ReactNode }) => {
   const isFullscreen = useFullscreen();
   let [showBanner, message, messageType] = getShowBannerAndMessage();
-  let [showImportantMessage, setShowImportantMessage] = useState(
-    Cookies.get("ff_viewed_important_message") !== "true"
-  );
   const isEditorView = useIsEditorView();
 
   // fullscreen disables banners
   if (isFullscreen) {
     showBanner = false;
-    showImportantMessage = false;
   }
 
   return (
@@ -35,7 +29,7 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
         className={styles.LayoutWrapper}
         data-showing={isEditorView ? "editor" : undefined}
         data-fullscreen={isFullscreen}
-        data-banner={showBanner || showImportantMessage}
+        data-banner={showBanner}
       >
         {showBanner ? (
           <div
@@ -50,13 +44,6 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
             </Link>
           </div>
         ) : null}
-        {showImportantMessage && (
-          <ImportantChanges
-            closeBanner={() => {
-              setShowImportantMessage(false);
-            }}
-          />
-        )}
         {isFullscreen ? null : <Header />}
         <Suspense fallback={<Loading />}>{children}</Suspense>
         <ColorMode />
@@ -70,27 +57,6 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
 Layout.displayName = "Layout";
 
 export default Layout;
-
-function ImportantChanges({ closeBanner }: { closeBanner: () => void }) {
-  return (
-    <Link
-      to="/blog/post/important-changes-coming"
-      className="bg-blue-100 text-blue-700 p-4 sm:text-center text-sm md:text-md leading-normal"
-      onClick={() => {
-        Cookies.set("ff_viewed_important_message", "true");
-        closeBanner();
-      }}
-    >
-      <span className="md:inline-flex gap-2 items-center">
-        <Trans>Important Changes are Coming to Flowchart Fun.</Trans>{" "}
-        <span className="font-bold">
-          <Trans>Learn More</Trans>
-        </span>
-        <ArrowRight size={24} className="hidden sm:block" />
-      </span>
-    </Link>
-  );
-}
 
 // ?error=server_error&error_description=Multiple+accounts+with+the+same+email+address+in+the+same+linking+domain+detected%3A+default
 

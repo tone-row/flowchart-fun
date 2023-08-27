@@ -54,6 +54,7 @@ export const delimiters = "~~~";
 export const newDelimiters = "=====";
 
 export const LOCAL_STORAGE_SETTINGS_KEY = "flowcharts.fun.user.settings";
+export const SANDBOX_STORAGE_KEY = "flowcharts.fun.sandbox";
 
 export const HIDDEN_GRAPH_OPTIONS_DIVIDER = "¼▓╬";
 

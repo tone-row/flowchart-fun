@@ -22,7 +22,7 @@ import { getHostedChart, updateChartText } from "../lib/queries";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useEditorStore } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
-import editStyles from "./Edit.module.css";
+import sandboxStyles from "./Sandbox.module.css";
 import styles from "./EditHosted.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
 import EditStyleTab from "../components/Tabs/EditStyleTab";
@@ -85,7 +85,7 @@ export default function EditHosted() {
             onValueChange={(selectedTab) => {
               useTabsStore.setState({ selectedTab });
             }}
-            className={editStyles.Tabs}
+            className={sandboxStyles.Tabs}
           >
             <EditorTabList />
             <Tabs.Content value="Document">
