@@ -14,7 +14,7 @@ export function EditorTabList() {
   const tabsListRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({
     offsetLeft: 20,
-    offsetWidth: 83,
+    offsetWidth: 91,
   });
   useEffect(() => {
     if (!tabsListRef.current) return;

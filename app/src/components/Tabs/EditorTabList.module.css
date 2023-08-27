@@ -1,5 +1,5 @@
 .btn {
-  @apply text-neutral-500 relative py-3 px-1 rounded-t-md aria-[selected=true]:text-blue-500;
+  @apply text-neutral-500 relative py-3 px-2 rounded-t-md aria-[selected=true]:text-blue-500;
   @apply dark:hover:bg-neutral-800 text-sm;
 }
 

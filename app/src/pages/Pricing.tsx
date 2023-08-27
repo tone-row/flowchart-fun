@@ -61,7 +61,7 @@ const plans = () => [
     title: t`Free`,
     key: "free",
     features: [
-      t`1 Temporary Flowchart`,
+      t`1 Sandbox Flowchart`,
       t`PNG & JPG Exports`,
       t`Watermarked Images`,
     ],

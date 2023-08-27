@@ -139,8 +139,22 @@ export function useLightOrDarkMode() {
  */
 export function useCanEdit() {
   // you can edit if you're on the index page (scratch pad) or you are a pro user
+  // and you're not on a readonly, public, or fullscreen chart
   // this may need to be tweaked when sharing charts becomes a thing
   const isLocalChart = useIsLocalChart();
-  const isProUser = useIsProUser();
-  return isLocalChart || isProUser;
+
+  const location = useLocation();
+  const isHosted = location.pathname.startsWith("/u");
+
+  /** We want to assume that if the user is on a hosted chart page that they can edit */
+
+  return isLocalChart || isHosted;
+}
+
+/**
+ * Returns the user's id if available
+ */
+export function useUserId() {
+  const session = useSession();
+  return session?.user?.id;
 }
