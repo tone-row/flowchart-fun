@@ -28,6 +28,7 @@ import {
   useSubscriptionStatusDisplay,
   useCanSalvageSubscription,
 } from "../lib/hooks";
+import { sendLoopsEvent } from "../lib/sendLoopsEvent";
 
 export default function Account() {
   const { customer, session, customerIsLoading } = useContext(AppContext);
@@ -346,8 +347,11 @@ function ConfirmCancel({
   children: ReactNode;
 }) {
   const [loading, setLoading] = useState(false);
-  const { customer } = useContext(AppContext);
+  const { customer, session } = useContext(AppContext);
+  const email = session?.user?.email;
+
   async function cancelSubscription() {
+    if (!email) return;
     if (customer?.subscription) {
       setLoading(true);
       await fetch("/api/cancel-subscription", {
@@ -361,6 +365,7 @@ function ConfirmCancel({
       setLoading(false);
       onOpenChange(false);
     }
+    sendLoopsEvent({ email, eventName: "cancel_subscription" });
   }
   return (
     <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>

@@ -12,6 +12,7 @@ import { useQuery } from "react-query";
 import { useLightOrDarkMode, useSession } from "../lib/hooks";
 import { Button2 } from "../ui/Shared";
 import { Warning } from "./Warning";
+import { sendLoopsEvent } from "../lib/sendLoopsEvent";
 
 /**
  * This component allows the user to select a plan,
@@ -160,6 +161,7 @@ export function PaymentStepper() {
           <div className="grid gap-4">
             <Title>{t`Activate your Account`}</Title>
             <PaymentForm
+              email={email}
               clientSecret={subscriptionDetails.data?.clientSecret || ""}
             />
           </div>
@@ -191,7 +193,13 @@ function PlanButton({
   );
 }
 
-function PaymentForm({ clientSecret }: { clientSecret: string }) {
+function PaymentForm({
+  clientSecret,
+  email,
+}: {
+  clientSecret: string;
+  email: string;
+}) {
   const stripe = useStripe();
   const elements = useRef<StripeElements | null>(null);
   const [loading, setLoading] = useState(false);
@@ -225,6 +233,12 @@ function PaymentForm({ clientSecret }: { clientSecret: string }) {
     const returnUrl = session
       ? `${window.location.origin}/`
       : `${window.location.origin}/l#success`;
+
+    // send loops event
+    sendLoopsEvent({
+      email,
+      eventName: "new_subscriber",
+    });
 
     const { error } = await stripe.confirmPayment({
       //`Elements` instance that was used to create the Payment Element
