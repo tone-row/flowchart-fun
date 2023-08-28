@@ -1381,7 +1381,7 @@ msgstr "Ver en Github "
 
 #: src/pages/Pricing.tsx:96
 msgid "Visualize Your Ideas in a Flash with <0>Flowchart Fun Pro</0>"
-msgstr "Visualice sus Ideas de Inmediato con <0>Flujograma Fun Pro</0>"
+msgstr "Visualice sus Ideas de Inmediato con <0>Flowchart Fun Pro</0>"
 
 #: src/components/SandboxWarning.tsx:54
 msgid "Want to keep your flowcharts? Upgrade to our Pro account. With Pro, you can save unlimited flowcharts and never lose your creativity."
