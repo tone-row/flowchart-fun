@@ -121,6 +121,7 @@ type MakeChartArgs = {
 } & (
   | { fromPrompt: true; prompt: string; method: "instruct" | "extract" }
   | { fromPrompt?: never; prompt?: never; method?: never }
+  | { template: string; fromPrompt?: never; prompt?: never; method?: never }
 );
 
 export async function makeChart({
@@ -151,6 +152,14 @@ export async function makeChart({
     const result = await response.json();
 
     if ("chart" in result) chart = result["chart"] as string;
+  } else if ("template" in rest) {
+    // get template here
+    try {
+      const template = await import(`./templates/${rest.template}-template.ts`);
+      chart = template.default;
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return await supabase

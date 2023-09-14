@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/PaymentStepper.tsx:81
+#: src/components/PaymentStepper.tsx:82
 msgid "$3 per month"
 msgstr "$3 por mes"
 
-#: src/components/PaymentStepper.tsx:92
+#: src/components/PaymentStepper.tsx:93
 msgid "$30 per year"
 msgstr "$30 por año"
 
@@ -25,7 +25,7 @@ msgstr "$30 por año"
 msgid "1 Sandbox Flowchart"
 msgstr "1 Diagrama de flujo de la caja de arena"
 
-#: src/components/PaymentStepper.tsx:96
+#: src/components/PaymentStepper.tsx:97
 msgid "2 Months Free"
 msgstr "2 Meses gratis"
 
@@ -41,7 +41,7 @@ msgstr "<0>Flowchart Fun</0> es un proyecto de código abierto hecho por <1>Tone
 msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
 msgstr "<0>Iniciar sesión</0> / <1>Registrarse</1> con correo electrónico y contraseña"
 
-#: src/pages/Account.tsx:531
+#: src/pages/Account.tsx:536
 msgid "<0>You currently have a free account.<1/><2>Learn about our Pro Features and subscribe on our pricing page</2>.</0>"
 msgstr "<0>Actualmente tiene una cuenta gratuita. <1/><2>Conozca nuestras características Pro y suscríbase en nuestra página de precios</2>.</0>"
 
@@ -49,11 +49,11 @@ msgstr "<0>Actualmente tiene una cuenta gratuita. <1/><2>Conozca nuestras caract
 msgid "A new version of the app is available. Please reload to update."
 msgstr "Una nueva versión de la aplicación está disponible. Por favor, recargue para actualizar."
 
-#: src/pages/New.tsx:327
+#: src/pages/New.tsx:437
 msgid "A step-by-step guide for students on how to write an essay, from thinking of ideas to making final edits"
 msgstr "Una guía paso a paso para estudiantes sobre cómo escribir un ensayo, desde pensar en ideas hasta realizar ediciones finales"
 
-#: src/pages/New.tsx:198
+#: src/pages/New.tsx:213
 msgid "AI Prompt"
 msgstr "Solicitud de IA"
 
@@ -63,15 +63,15 @@ msgstr "Acerca de"
 
 #: src/components/Header.tsx:182
 #: src/components/Header.tsx:406
-#: src/pages/Account.tsx:116
+#: src/pages/Account.tsx:117
 msgid "Account"
 msgstr "Cuenta"
 
-#: src/components/PaymentStepper.tsx:161
+#: src/components/PaymentStepper.tsx:162
 msgid "Activate your Account"
 msgstr "Active su Cuenta"
 
-#: src/pages/Account.tsx:274
+#: src/pages/Account.tsx:275
 msgid "Amount"
 msgstr "Cantidad"
 
@@ -119,11 +119,11 @@ msgstr "Comienza a escribir"
 msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
 msgstr "¡Comience con una solicitud como Diagrama de flujo de soporte al cliente y Flowchart Fun creará un diagrama de flujo para usted!"
 
-#: src/pages/New.tsx:247
+#: src/pages/New.tsx:351
 msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
 msgstr "Comienza con un ejemplo sencillo mostrando cómo funciona <0>Flowchart Fun</0>."
 
-#: src/pages/New.tsx:193
+#: src/pages/New.tsx:203
 msgid "Blank"
 msgstr "En blanco"
 
@@ -133,7 +133,7 @@ msgstr "En blanco"
 msgid "Blog"
 msgstr "Blog"
 
-#: src/pages/Account.tsx:144
+#: src/pages/Account.tsx:145
 msgid "Book a Meeting"
 msgstr "Reserva una reunión"
 
@@ -153,14 +153,14 @@ msgstr "Primero en amplitud"
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:719
 #: src/components/RenameButton.tsx:156
-#: src/pages/Account.tsx:297
-#: src/pages/Account.tsx:310
-#: src/pages/Account.tsx:383
-#: src/pages/Account.tsx:433
+#: src/pages/Account.tsx:298
+#: src/pages/Account.tsx:311
+#: src/pages/Account.tsx:388
+#: src/pages/Account.tsx:438
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/pages/Account.tsx:300
+#: src/pages/Account.tsx:301
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Cancele su suscripción. Sus gráficos alojados se convertirán en solo lectura."
 
@@ -168,7 +168,7 @@ msgstr "Cancele su suscripción. Sus gráficos alojados se convertirán en solo 
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Ciertos atributos se pueden usar para personalizar la apariencia o la funcionalidad de los elementos."
 
-#: src/pages/Account.tsx:228
+#: src/pages/Account.tsx:229
 msgid "Change Email Address"
 msgstr "Cambiar dirección de correo electrónico"
 
@@ -191,13 +191,17 @@ msgstr "Revise su correo electrónico para obtener un enlace para iniciar sesió
 msgid "Choose"
 msgstr "Seleccionar"
 
-#: src/components/PaymentStepper.tsx:70
+#: src/components/PaymentStepper.tsx:71
 msgid "Choose a Plan"
 msgstr "Elija un Plan"
 
 #: src/components/ThemePicker.tsx:73
 msgid "Choose a Theme"
 msgstr "Seleccione un tema"
+
+#: src/pages/New.tsx:360
+msgid "Choose a template to get started."
+msgstr "Elija una plantilla para comenzar."
 
 #: src/components/LearnSyntaxDialog.tsx:318
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
@@ -251,7 +255,7 @@ msgstr "Comentario"
 msgid "Concentric"
 msgstr "Concéntrico"
 
-#: src/pages/Account.tsx:220
+#: src/pages/Account.tsx:221
 msgid "Confirm New Email"
 msgstr "Confirmar nuevo correo electrónico"
 
@@ -277,8 +281,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "Los contenedores son nodos que contienen otros nodos. Se declaran usando llaves."
 
 #: src/components/ImportDataDialog.tsx:732
-#: src/components/PaymentStepper.tsx:108
-#: src/components/PaymentStepper.tsx:148
+#: src/components/PaymentStepper.tsx:109
+#: src/components/PaymentStepper.tsx:149
 msgid "Continue"
 msgstr "Continuar"
 
@@ -312,7 +316,7 @@ msgstr "Copia tu código mermaid.js o abrilo directamente en el editor en vivo d
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "Cree diagramas de flujo desde una solicitud con IA"
 
-#: src/pages/New.tsx:234
+#: src/pages/New.tsx:255
 msgid "Create New Flowchart"
 msgstr "Crear un nuevo diagrama de flujo"
 
@@ -320,7 +324,7 @@ msgstr "Crear un nuevo diagrama de flujo"
 msgid "Create Unlimited Flowcharts"
 msgstr "Crear diagramas de flujo ilimitados"
 
-#: src/pages/New.tsx:163
+#: src/pages/New.tsx:173
 msgid "Create a New Flowchart"
 msgstr "Crear un nuevo diagrama de flujo"
 
@@ -340,7 +344,7 @@ msgstr "Crear un borde entre dos nodos se realiza al sangrar el segundo nodo deb
 msgid "Custom Sharing Options"
 msgstr "Opciones de compartición personalizadas"
 
-#: src/pages/Account.tsx:238
+#: src/pages/Account.tsx:239
 msgid "Customer Portal"
 msgstr "Portal del cliente"
 
@@ -361,11 +365,11 @@ msgstr "Modo oscuro"
 msgid "Data Import"
 msgstr "Importación de datos"
 
-#: src/pages/Account.tsx:271
+#: src/pages/Account.tsx:272
 msgid "Date"
 msgstr "Fecha"
 
-#: src/pages/New.tsx:402
+#: src/pages/New.tsx:512
 msgid "Describe the flowchart you wish to create"
 msgstr "Describa el flujograma que desea crear"
 
@@ -377,7 +381,7 @@ msgstr "Directamente desde tus datos"
 msgid "Direction"
 msgstr "Dirección"
 
-#: src/pages/Account.tsx:371
+#: src/pages/Account.tsx:376
 msgid "Do you want to cancel your subscription?"
 msgstr "¿Quieres cancelar tu suscripción?"
 
@@ -499,7 +503,7 @@ msgstr "Correo electrónico"
 msgid "Empty"
 msgstr "Vacío"
 
-#: src/components/PaymentStepper.tsx:126
+#: src/components/PaymentStepper.tsx:127
 msgid "Enter your email"
 msgstr "Introduzca su correo electrónico"
 
@@ -532,7 +536,7 @@ msgstr "Exporta flujogramas de calidad profesional sin marcas de agua para usar 
 msgid "Extra Large"
 msgstr "Extra Grande"
 
-#: src/pages/New.tsx:406
+#: src/pages/New.tsx:516
 msgid "Extract"
 msgstr "Extraer"
 
@@ -574,7 +578,7 @@ msgstr "Pantalla completa"
 msgid "Get More Layouts"
 msgstr "Obtén más diseños"
 
-#: src/pages/New.tsx:183
+#: src/pages/New.tsx:193
 msgid "Getting Started"
 msgstr "Comenzando"
 
@@ -594,11 +598,11 @@ msgstr "Gráfico"
 msgid "Grid"
 msgstr "Cuadrícula"
 
-#: src/pages/Account.tsx:133
+#: src/pages/Account.tsx:134
 msgid "Have complex questions or issues? We're here to help."
 msgstr "¿Tiene preguntas o problemas complejos? Estamos aquí para ayudar."
 
-#: src/pages/Account.tsx:261
+#: src/pages/Account.tsx:262
 msgid "History"
 msgstr "Historia"
 
@@ -661,7 +665,7 @@ msgstr "Incluye un título usando un atributo <0>title</0>. Para usar el color d
 msgid "Info"
 msgstr "Información"
 
-#: src/pages/New.tsx:401
+#: src/pages/New.tsx:511
 msgid "Instruct"
 msgstr "Instruir"
 
@@ -669,7 +673,7 @@ msgstr "Instruir"
 msgid "Is"
 msgstr "Es"
 
-#: src/pages/New.tsx:323
+#: src/pages/New.tsx:433
 msgid "Keeping track of who's who in the market for our software product"
 msgstr "Manteniendo el control de quién es quién en el mercado para nuestro producto de software"
 
@@ -755,7 +759,7 @@ msgstr "Bloquear Zoom al gráfico"
 msgid "Log In"
 msgstr "Iniciar sesión"
 
-#: src/pages/Account.tsx:124
+#: src/pages/Account.tsx:125
 msgid "Log Out"
 msgstr "Cerrar sesión"
 
@@ -767,6 +771,10 @@ msgstr "Inicia sesión para guardar"
 msgid "Log in to start creating flowcharts."
 msgstr "Inicie sesión para comenzar a crear diagramas de flujo."
 
+#: src/pages/New.tsx:331
+msgid "Looking for a different template? <0>Let us know</0>"
+msgstr "¿Buscando una plantilla diferente? <0>Háganos saber</0>"
+
 #: src/components/Settings.tsx:164
 msgid "Make a One-Time Donation"
 msgstr "Realizar una donación única"
@@ -775,15 +783,15 @@ msgstr "Realizar una donación única"
 msgid "Make publicly accessible"
 msgstr "Hacerlo accesible al público"
 
-#: src/components/PaymentStepper.tsx:130
+#: src/components/PaymentStepper.tsx:131
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Asegúrate de usar el mismo correo electrónico que usarás para iniciar sesión."
 
-#: src/pages/New.tsx:325
+#: src/pages/New.tsx:435
 msgid "Making our supply chain better: cutting costs, working faster, and getting everyone involved"
 msgstr "Mejorando nuestra cadena de suministro: reduciendo costos, trabajando más rápido y involucrando a todos"
 
-#: src/pages/Account.tsx:516
+#: src/pages/Account.tsx:521
 msgid "Manage Billing"
 msgstr "Administrar facturación"
 
@@ -795,7 +803,7 @@ msgstr "Datos de mapa"
 msgid "Medium"
 msgstr "Medio"
 
-#: src/pages/New.tsx:390
+#: src/pages/New.tsx:500
 msgid "Method"
 msgstr "Método"
 
@@ -803,7 +811,7 @@ msgstr "Método"
 msgid "Migrate Flowcharts"
 msgstr "Flujo de migración"
 
-#: src/components/PaymentStepper.tsx:80
+#: src/components/PaymentStepper.tsx:81
 msgid "Monthly"
 msgstr "Mensual"
 
@@ -811,7 +819,7 @@ msgstr "Mensual"
 msgid "Multiple pointers on same line"
 msgstr "Múltiples punteros en la misma línea"
 
-#: src/pages/New.tsx:167
+#: src/pages/New.tsx:177
 msgid "Name"
 msgstr "Nombre"
 
@@ -821,12 +829,12 @@ msgstr "Nombre"
 msgid "New"
 msgstr "Nuevo"
 
-#: src/pages/Account.tsx:213
+#: src/pages/Account.tsx:214
 msgid "New Email"
 msgstr "Nuevo Correo Electrónico"
 
-#: src/pages/Account.tsx:167
-#: src/pages/Account.tsx:429
+#: src/pages/Account.tsx:168
+#: src/pages/Account.tsx:434
 msgid "Next charge"
 msgstr "Próximo cargo"
 
@@ -899,16 +907,16 @@ msgstr "Horas de oficina "
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "De vez en cuando, el enlace mágico acabará en tu carpeta de spam. Si no lo ves después de unos minutos, busca allí o solicita un nuevo enlace. "
 
-#: src/pages/Account.tsx:130
+#: src/pages/Account.tsx:131
 #: src/pages/Pricing.tsx:80
 msgid "One-on-One Support"
 msgstr "Soporte individual"
 
-#: src/pages/Account.tsx:252
+#: src/pages/Account.tsx:253
 msgid "Open Customer Portal"
 msgstr "Abrir portal de clientes"
 
-#: src/pages/Account.tsx:520
+#: src/pages/Account.tsx:525
 msgid "Or, you can <0>create a new subscription</0>."
 msgstr "O, puedes <0>crear una nueva suscripción</0>."
 
@@ -936,7 +944,7 @@ msgstr "Contraseña"
 msgid "Past Due"
 msgstr "Vencido"
 
-#: src/pages/New.tsx:407
+#: src/pages/New.tsx:517
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "Pegue la información que desea convertir a un diagrama de flujo"
 
@@ -1043,14 +1051,14 @@ msgstr "Restablecer"
 msgid "Reset Password"
 msgstr "Restablecer la contraseña"
 
-#: src/pages/Account.tsx:195
-#: src/pages/Account.tsx:419
-#: src/pages/Account.tsx:427
-#: src/pages/Account.tsx:441
+#: src/pages/Account.tsx:196
+#: src/pages/Account.tsx:424
+#: src/pages/Account.tsx:432
+#: src/pages/Account.tsx:446
 msgid "Resume Subscription"
 msgstr "Reanudar la suscripción"
 
-#: src/pages/Account.tsx:375
+#: src/pages/Account.tsx:380
 msgid "Return"
 msgstr "Devolver"
 
@@ -1093,7 +1101,7 @@ msgstr "Compartir"
 msgid "Sign In"
 msgstr "Iniciar sesión"
 
-#: src/components/PaymentStepper.tsx:267
+#: src/components/PaymentStepper.tsx:281
 msgid "Sign Up"
 msgstr "Registrarse"
 
@@ -1112,6 +1120,10 @@ msgstr "Tamaño"
 #: src/components/GraphContextMenu.tsx:225
 msgid "Small"
 msgstr "Pequeño"
+
+#: src/pages/New.tsx:285
+msgid "Software Flowchart"
+msgstr "Diagrama de flujo de software"
 
 #: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
@@ -1138,7 +1150,7 @@ msgstr "Espaciado"
 msgid "Special Attributes"
 msgstr "Atributos Especiales"
 
-#: src/pages/Account.tsx:179
+#: src/pages/Account.tsx:180
 msgid "Start"
 msgstr "Comienzo"
 
@@ -1150,7 +1162,7 @@ msgstr "Comienzo de Migración"
 msgid "Start Over"
 msgstr "Empezar de nuevo"
 
-#: src/pages/Account.tsx:158
+#: src/pages/Account.tsx:159
 msgid "Status"
 msgstr "Estado"
 
@@ -1172,11 +1184,11 @@ msgstr "Clases de Estilo"
 msgid "Submit"
 msgstr "Enviar"
 
-#: src/pages/Account.tsx:153
+#: src/pages/Account.tsx:154
 msgid "Subscription"
 msgstr "Suscripción"
 
-#: src/pages/Account.tsx:190
+#: src/pages/Account.tsx:191
 msgid "Subscription will end"
 msgstr "La suscripción finalizará"
 
@@ -1188,6 +1200,10 @@ msgstr "Columna objetivo"
 #: src/components/ImportDataDialog.tsx:453
 msgid "Target Delimiter"
 msgstr "Delimitador objetivo"
+
+#: src/pages/New.tsx:208
+msgid "Template"
+msgstr "Plantilla"
 
 #: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
@@ -1322,7 +1338,7 @@ msgstr "Flujo de gráficos permanentes ilimitados"
 msgid "Unpaid"
 msgstr "Impago"
 
-#: src/pages/Account.tsx:206
+#: src/pages/Account.tsx:207
 msgid "Update Email"
 msgstr "Actualizar correo electrónico"
 
@@ -1335,7 +1351,7 @@ msgstr "Actualizar a Pro"
 msgid "Upload your File"
 msgstr "Subir tu archivo"
 
-#: src/pages/New.tsx:256
+#: src/pages/New.tsx:366
 msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
 msgstr "Usar IA para generar un diagrama de flujo a partir de una solicitud. <0>Aprende más</0>"
 
@@ -1359,7 +1375,7 @@ msgstr "Utilice el atributo <0>src</0> para establecer la imagen de un nodo. La 
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Utilice los atributos <0>w</0> y <1>h</1> para establecer explícitamente el ancho y la altura de un nodo."
 
-#: src/pages/Account.tsx:241
+#: src/pages/Account.tsx:242
 msgid "Use the customer portal to change your billing information."
 msgstr "Utilice el portal de clientes para cambiar su información de facturación."
 
@@ -1371,7 +1387,7 @@ msgstr "Utilice este archivo para diagramas de organización, jerarquías y otra
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Utilice este archivo para secuencias, procesos y flujos de trabajo."
 
-#: src/pages/Account.tsx:120
+#: src/pages/Account.tsx:121
 msgid "User"
 msgstr "Usuario "
 
@@ -1387,7 +1403,7 @@ msgstr "Visualice sus Ideas de Inmediato con <0>Flowchart Fun Pro</0>"
 msgid "Want to keep your flowcharts? Upgrade to our Pro account. With Pro, you can save unlimited flowcharts and never lose your creativity."
 msgstr "¿Quieres guardar tus diagramas de flujo? Actualiza a nuestra cuenta Pro. Con Pro, puedes guardar diagramas de flujo ilimitados y nunca perder tu creatividad."
 
-#: src/pages/New.tsx:331
+#: src/pages/New.tsx:441
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "El agua evapora desde la superficie de la Tierra, se eleva a la atmósfera y cae de nuevo como precipitación. Luego, este agua se desvía a ríos, lagos y océanos, donde vuelve a evaporarse y se recicla de nuevo a la atmósfera."
 
@@ -1415,7 +1431,7 @@ msgstr "Ancho y Alto"
 msgid "Would you like to continue?"
 msgstr "¿Te gustaría continuar?"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:92
 msgid "Yearly"
 msgstr "Anualmente"
 
@@ -1427,7 +1443,7 @@ msgstr "Sí: Opción A"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Estás a punto de agregar {numNodes} nodos y {numEdges} bordes a tu gráfico."
 
-#: src/pages/New.tsx:214
+#: src/pages/New.tsx:235
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "Puede crear diagramas de flujo ilimitados y permanentes con <0>Flowchart Fun Pro</0>."
 
@@ -1451,7 +1467,7 @@ msgstr "Su Sandbox es un espacio para experimentar libremente con nuestras herra
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more. You can <1>upgrade to pro</1> to regain editing access to your charts"
 msgstr "Tus gráficos son de solo lectura porque tu cuenta ya no está activa. Visita la página de tu <0>cuenta</0> para obtener más información. Puedes <1>actualizar a Pro</1> para recuperar el acceso de edición a tus gráficos."
 
-#: src/pages/Account.tsx:502
+#: src/pages/Account.tsx:507
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "Su suscripción es <0>{statusDisplay}</0>."
 
