@@ -2,7 +2,7 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { t, Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { Pencil, Robot, Rocket } from "phosphor-react";
+import { NoteBlank, Presentation, Robot, Rocket } from "phosphor-react";
 import {
   forwardRef,
   memo,
@@ -89,7 +89,10 @@ const New = memo(function New({
     getFunFlowchartName(language as keyof typeof languages)
   );
   const type = "regular";
-  const [start, setStart] = useState<"blank" | "prompt">("blank");
+  const [start, setStart] = useState<"blank" | "template" | "prompt">("blank");
+
+  // Template
+  const [template, setTemplate] = useState<string | null>(null);
 
   // Boilerplate to create a new chart
   const makeChartMutation = useMutation("makeChart", makeChart, {
@@ -149,6 +152,13 @@ const New = memo(function New({
               method,
               fromPrompt: true,
             });
+          } else if (start === "template") {
+            if (!template) return;
+            makeChartMutation.mutate({
+              name,
+              user_id: userId,
+              template,
+            });
           } else {
             makeChartMutation.mutate({
               name,
@@ -188,11 +198,16 @@ const New = memo(function New({
               onValueChange={(value) => setStart(value as "blank" | "prompt")}
               name="start"
             >
-              <div className="flex justify-start gap-3 justify-self-start focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
+              <div className="grid w-full sm:flex gap-3">
                 <SmallTypeToggle
                   title={t`Blank`}
                   value="blank"
-                  icon={<Pencil size={24} />}
+                  icon={<NoteBlank size={24} />}
+                />
+                <SmallTypeToggle
+                  title={t`Template`}
+                  value="template"
+                  icon={<Presentation size={24} />}
                 />
                 <SmallTypeToggle
                   title={t`AI Prompt`}
@@ -204,6 +219,12 @@ const New = memo(function New({
             </RadioGroup.Root>
             <PromptDescription start={start} />
             {start === "prompt" && <PromptSubmenu />}
+            {start === "template" && (
+              <TemplateSelection
+                setTemplate={setTemplate}
+                template={template}
+              />
+            )}
           </div>
           {!isProUser && (
             <div className="justify-items-center grid">
@@ -239,7 +260,90 @@ const New = memo(function New({
   );
 });
 
-function PromptDescription({ start }: { start: "prompt" | "blank" }) {
+const templates: {
+  key: string;
+  img: string;
+  bgColor: string;
+  title: () => string;
+}[] = [
+  {
+    key: "flowchart",
+    img: "template4.png",
+    bgColor: "#F2F2F2",
+    title: () => `Flowchart`,
+  },
+  {
+    key: "org-chart",
+    img: "template5.png",
+    bgColor: "#F1F8FE",
+    title: () => `Org Chart`,
+  },
+  {
+    key: "code-flow",
+    img: "template6.png",
+    bgColor: "#FFFFFF",
+    title: () => t`Software Flowchart`,
+  },
+  {
+    key: "mindmap",
+    img: "mindmap.png",
+    bgColor: "#FFFFFF",
+    title: () => `Mind Map`,
+  },
+];
+
+function TemplateSelection({
+  template,
+  setTemplate,
+}: {
+  template: string | null;
+  setTemplate: (template: string) => void;
+}) {
+  return (
+    <>
+      <RadioGroup.Root
+        className="grid gap-3 sm:grid-cols-2 mt-2"
+        value={template ?? undefined}
+        onValueChange={(value) => setTemplate(value)}
+      >
+        {templates.map((template, index) => (
+          <RadioGroup.Item value={template.key} key={template.key} asChild>
+            <button className="grid border rounded-lg overflow-hidden border-solid border-neutral-300 data-[state=checked]:shadow data-[state=checked]:border-neutral-400 group">
+              <div
+                className="p-2"
+                style={{ backgroundColor: template.bgColor }}
+              >
+                <img
+                  key={template.img}
+                  src={`/templates/${template.img}`}
+                  className="rounded w-full h-[350px] object-contain object-center"
+                  alt={`Template ${index}`}
+                />
+              </div>
+              <div className="text-sm p-4 border-t group-data-[state=checked]:border-neutral-400 group-data-[state=checked]:bg-neutral-100 group-data-[state=checked]:font-bold">
+                {template.title()}
+              </div>
+            </button>
+          </RadioGroup.Item>
+        ))}
+      </RadioGroup.Root>
+      <p className="text-xs text-neutral-500 italic justify-self-center">
+        <Trans>
+          Looking for a different template?{" "}
+          <Link to="/o" className="underline">
+            Let us know
+          </Link>
+        </Trans>
+      </p>
+    </>
+  );
+}
+
+function PromptDescription({
+  start,
+}: {
+  start: "prompt" | "blank" | "template";
+}) {
   switch (start) {
     case "blank":
       return (
@@ -248,6 +352,12 @@ function PromptDescription({ start }: { start: "prompt" | "blank" }) {
             Begin with a simple example showing how <span>Flowchart Fun</span>{" "}
             works.
           </Trans>
+        </span>
+      );
+    case "template":
+      return (
+        <span className="text-xs text-neutral-500 italic">
+          <Trans>Choose a template to get started.</Trans>
         </span>
       );
     case "prompt":
@@ -279,7 +389,7 @@ function SmallTypeToggle({
     <RadioGroup.Item {...rest} asChild>
       <button className="bg-neutral-100 border-neutral-100 px-6 pl-5 py-3 rounded dark:bg-neutral-700 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-600 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-800 dark:data-[state=checked]:border-neutral-500 dark:hover:border-neutral-400 flex gap-3 items-center disabled:opacity-50 disabled:cursor-not-allowed">
         {icon}
-        <span className="text-xl">{title}</span>
+        <span className="text-lg">{title}</span>
       </button>
     </RadioGroup.Item>
   );
