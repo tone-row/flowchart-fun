@@ -308,7 +308,7 @@ function TemplateSelection({
       >
         {templates.map((template, index) => (
           <RadioGroup.Item value={template.key} key={template.key} asChild>
-            <button className="grid border rounded-lg overflow-hidden border-solid border-neutral-300 data-[state=checked]:shadow data-[state=checked]:border-neutral-400 group">
+            <button className="grid border rounded-lg overflow-hidden border-solid border-neutral-300 data-[state=checked]:shadow data-[state=checked]:border-neutral-400 group dark:border-neutral-700">
               <div
                 className="p-2"
                 style={{ backgroundColor: template.bgColor }}
@@ -320,7 +320,7 @@ function TemplateSelection({
                   alt={`Template ${index}`}
                 />
               </div>
-              <div className="text-sm p-4 border-t group-data-[state=checked]:border-neutral-400 group-data-[state=checked]:bg-neutral-100 group-data-[state=checked]:font-bold">
+              <div className="text-sm p-4 border-t group-data-[state=checked]:border-neutral-400 group-data-[state=checked]:bg-neutral-100 dark:group-data-[state=checked]:bg-blue-500 group-data-[state=checked]:font-bold dark:border-neutral-700">
                 {template.title()}
               </div>
             </button>
