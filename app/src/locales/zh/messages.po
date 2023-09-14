@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/PaymentStepper.tsx:81
+#: src/components/PaymentStepper.tsx:82
 msgid "$3 per month"
 msgstr "每月3美元"
 
-#: src/components/PaymentStepper.tsx:92
+#: src/components/PaymentStepper.tsx:93
 msgid "$30 per year"
 msgstr "每年30美元"
 
@@ -25,7 +25,7 @@ msgstr "每年30美元"
 msgid "1 Sandbox Flowchart"
 msgstr "1 沙盒流程图"
 
-#: src/components/PaymentStepper.tsx:96
+#: src/components/PaymentStepper.tsx:97
 msgid "2 Months Free"
 msgstr "2 个月免费"
 
@@ -41,7 +41,7 @@ msgstr "<0>Flowchart Fun</0>是由<1>Tone Row</1>制作的开源项目"
 msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
 msgstr "<0>登录</0> / <1>注册</1> 使用电子邮件和密码"
 
-#: src/pages/Account.tsx:531
+#: src/pages/Account.tsx:536
 msgid "<0>You currently have a free account.<1/><2>Learn about our Pro Features and subscribe on our pricing page</2>.</0>"
 msgstr "<0>您目前拥有免费帐户。<1/><2>了解我们的Pro功能，并在我们的定价页面上订阅</2>。</0>"
 
@@ -49,11 +49,11 @@ msgstr "<0>您目前拥有免费帐户。<1/><2>了解我们的Pro功能，并�
 msgid "A new version of the app is available. Please reload to update."
 msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 
-#: src/pages/New.tsx:327
+#: src/pages/New.tsx:437
 msgid "A step-by-step guide for students on how to write an essay, from thinking of ideas to making final edits"
 msgstr "学生们如何写一篇文章的一步一步指南，从思考想法到最后编辑"
 
-#: src/pages/New.tsx:198
+#: src/pages/New.tsx:213
 msgid "AI Prompt"
 msgstr "AI 提示"
 
@@ -63,15 +63,15 @@ msgstr "关于"
 
 #: src/components/Header.tsx:182
 #: src/components/Header.tsx:406
-#: src/pages/Account.tsx:116
+#: src/pages/Account.tsx:117
 msgid "Account"
 msgstr "帐户"
 
-#: src/components/PaymentStepper.tsx:161
+#: src/components/PaymentStepper.tsx:162
 msgid "Activate your Account"
 msgstr "激活您的账户"
 
-#: src/pages/Account.tsx:274
+#: src/pages/Account.tsx:275
 msgid "Amount"
 msgstr "数量"
 
@@ -119,11 +119,11 @@ msgstr "开始输入"
 msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
 msgstr "以客戶服務流程圖為例，Flowchart Fun將為您創建一個流程圖！"
 
-#: src/pages/New.tsx:247
+#: src/pages/New.tsx:351
 msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
 msgstr "以一个简单的例子开始来展示<0>流程图的乐趣</0>是如何工作的。"
 
-#: src/pages/New.tsx:193
+#: src/pages/New.tsx:203
 msgid "Blank"
 msgstr "空白"
 
@@ -133,7 +133,7 @@ msgstr "空白"
 msgid "Blog"
 msgstr "博客"
 
-#: src/pages/Account.tsx:144
+#: src/pages/Account.tsx:145
 msgid "Book a Meeting"
 msgstr "预订会议"
 
@@ -153,14 +153,14 @@ msgstr "宽度优先"
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:719
 #: src/components/RenameButton.tsx:156
-#: src/pages/Account.tsx:297
-#: src/pages/Account.tsx:310
-#: src/pages/Account.tsx:383
-#: src/pages/Account.tsx:433
+#: src/pages/Account.tsx:298
+#: src/pages/Account.tsx:311
+#: src/pages/Account.tsx:388
+#: src/pages/Account.tsx:438
 msgid "Cancel"
 msgstr "取消"
 
-#: src/pages/Account.tsx:300
+#: src/pages/Account.tsx:301
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
 
@@ -168,7 +168,7 @@ msgstr "取消订阅。您的托管图表将变为只读。"
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "某些属性可用于自定义元素的外观或功能。"
 
-#: src/pages/Account.tsx:228
+#: src/pages/Account.tsx:229
 msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
@@ -191,13 +191,17 @@ msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口
 msgid "Choose"
 msgstr "選擇"
 
-#: src/components/PaymentStepper.tsx:70
+#: src/components/PaymentStepper.tsx:71
 msgid "Choose a Plan"
 msgstr "选择一个计划"
 
 #: src/components/ThemePicker.tsx:73
 msgid "Choose a Theme"
 msgstr "选择一个主题"
+
+#: src/pages/New.tsx:360
+msgid "Choose a template to get started."
+msgstr "选择一个模板开始。"
 
 #: src/components/LearnSyntaxDialog.tsx:318
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
@@ -251,7 +255,7 @@ msgstr "评论"
 msgid "Concentric"
 msgstr "同心"
 
-#: src/pages/Account.tsx:220
+#: src/pages/Account.tsx:221
 msgid "Confirm New Email"
 msgstr "确认新电子邮件"
 
@@ -277,8 +281,8 @@ msgid "Containers are nodes that contain other nodes. They are declared using cu
 msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 
 #: src/components/ImportDataDialog.tsx:732
-#: src/components/PaymentStepper.tsx:108
-#: src/components/PaymentStepper.tsx:148
+#: src/components/PaymentStepper.tsx:109
+#: src/components/PaymentStepper.tsx:149
 msgid "Continue"
 msgstr "继续"
 
@@ -312,7 +316,7 @@ msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打�
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "使用 AI 根据提示创建图表"
 
-#: src/pages/New.tsx:234
+#: src/pages/New.tsx:255
 msgid "Create New Flowchart"
 msgstr "创建新流程图"
 
@@ -320,7 +324,7 @@ msgstr "创建新流程图"
 msgid "Create Unlimited Flowcharts"
 msgstr "创建无限流程图"
 
-#: src/pages/New.tsx:163
+#: src/pages/New.tsx:173
 msgid "Create a New Flowchart"
 msgstr "创建新图表"
 
@@ -340,7 +344,7 @@ msgstr "在两个节点之间创建边缘是通过将第二个节点缩进第一
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
-#: src/pages/Account.tsx:238
+#: src/pages/Account.tsx:239
 msgid "Customer Portal"
 msgstr "客户门户"
 
@@ -361,11 +365,11 @@ msgstr "深色模式"
 msgid "Data Import"
 msgstr "数据导入"
 
-#: src/pages/Account.tsx:271
+#: src/pages/Account.tsx:272
 msgid "Date"
 msgstr "日期"
 
-#: src/pages/New.tsx:402
+#: src/pages/New.tsx:512
 msgid "Describe the flowchart you wish to create"
 msgstr "描述您要创建的图表"
 
@@ -377,7 +381,7 @@ msgstr "直接从您的数据"
 msgid "Direction"
 msgstr "方向"
 
-#: src/pages/Account.tsx:371
+#: src/pages/Account.tsx:376
 msgid "Do you want to cancel your subscription?"
 msgstr "您要取消订阅吗？"
 
@@ -499,7 +503,7 @@ msgstr "电子邮件"
 msgid "Empty"
 msgstr "空"
 
-#: src/components/PaymentStepper.tsx:126
+#: src/components/PaymentStepper.tsx:127
 msgid "Enter your email"
 msgstr "请输入您的电子邮件"
 
@@ -532,7 +536,7 @@ msgstr "导出无水印的专业质量流程图，用于您的演示文稿和文
 msgid "Extra Large"
 msgstr "超大"
 
-#: src/pages/New.tsx:406
+#: src/pages/New.tsx:516
 msgid "Extract"
 msgstr "提取"
 
@@ -574,7 +578,7 @@ msgstr "全屏"
 msgid "Get More Layouts"
 msgstr "获取更多布局"
 
-#: src/pages/New.tsx:183
+#: src/pages/New.tsx:193
 msgid "Getting Started"
 msgstr "开始"
 
@@ -594,11 +598,11 @@ msgstr "图表"
 msgid "Grid"
 msgstr "网格"
 
-#: src/pages/Account.tsx:133
+#: src/pages/Account.tsx:134
 msgid "Have complex questions or issues? We're here to help."
 msgstr "有复杂的问题或问题吗？我们在这里帮助你。"
 
-#: src/pages/Account.tsx:261
+#: src/pages/Account.tsx:262
 msgid "History"
 msgstr "历史"
 
@@ -661,7 +665,7 @@ msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添�
 msgid "Info"
 msgstr "信息"
 
-#: src/pages/New.tsx:401
+#: src/pages/New.tsx:511
 msgid "Instruct"
 msgstr "指导"
 
@@ -669,7 +673,7 @@ msgstr "指导"
 msgid "Is"
 msgstr "是"
 
-#: src/pages/New.tsx:323
+#: src/pages/New.tsx:433
 msgid "Keeping track of who's who in the market for our software product"
 msgstr "跟踪软件产品市场上谁是谁"
 
@@ -755,7 +759,7 @@ msgstr "锁定缩放到图表"
 msgid "Log In"
 msgstr "登录"
 
-#: src/pages/Account.tsx:124
+#: src/pages/Account.tsx:125
 msgid "Log Out"
 msgstr "登出"
 
@@ -767,6 +771,10 @@ msgstr "登录以保存"
 msgid "Log in to start creating flowcharts."
 msgstr "登入以開始創建流程圖。"
 
+#: src/pages/New.tsx:331
+msgid "Looking for a different template? <0>Let us know</0>"
+msgstr "想要不同的模板？<0>让我们知道</0>"
+
 #: src/components/Settings.tsx:164
 msgid "Make a One-Time Donation"
 msgstr "进行一次性捐赠"
@@ -775,15 +783,15 @@ msgstr "进行一次性捐赠"
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
-#: src/components/PaymentStepper.tsx:130
+#: src/components/PaymentStepper.tsx:131
 msgid "Make sure you use the same email you will use to log in."
 msgstr "確保您使用的是與登錄時相同的電子郵件。"
 
-#: src/pages/New.tsx:325
+#: src/pages/New.tsx:435
 msgid "Making our supply chain better: cutting costs, working faster, and getting everyone involved"
 msgstr "改善我们的供应链：降低成本，更快地工作，让每个人都参与"
 
-#: src/pages/Account.tsx:516
+#: src/pages/Account.tsx:521
 msgid "Manage Billing"
 msgstr "付款管理"
 
@@ -795,7 +803,7 @@ msgstr "對應資料"
 msgid "Medium"
 msgstr "中等"
 
-#: src/pages/New.tsx:390
+#: src/pages/New.tsx:500
 msgid "Method"
 msgstr "方法"
 
@@ -803,7 +811,7 @@ msgstr "方法"
 msgid "Migrate Flowcharts"
 msgstr "迁移流程图"
 
-#: src/components/PaymentStepper.tsx:80
+#: src/components/PaymentStepper.tsx:81
 msgid "Monthly"
 msgstr "每月"
 
@@ -811,7 +819,7 @@ msgstr "每月"
 msgid "Multiple pointers on same line"
 msgstr "同一行上的多个指针"
 
-#: src/pages/New.tsx:167
+#: src/pages/New.tsx:177
 msgid "Name"
 msgstr "姓名"
 
@@ -821,12 +829,12 @@ msgstr "姓名"
 msgid "New"
 msgstr "新"
 
-#: src/pages/Account.tsx:213
+#: src/pages/Account.tsx:214
 msgid "New Email"
 msgstr "新邮件"
 
-#: src/pages/Account.tsx:167
-#: src/pages/Account.tsx:429
+#: src/pages/Account.tsx:168
+#: src/pages/Account.tsx:434
 msgid "Next charge"
 msgstr "下次扣费"
 
@@ -899,16 +907,16 @@ msgstr "工作时间"
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "偶尔，魔法链接会被放入您的垃圾邮件文件夹。如果几分钟后仍然没有收到，请检查垃圾邮件文件夹，或者重新请求新的链接。"
 
-#: src/pages/Account.tsx:130
+#: src/pages/Account.tsx:131
 #: src/pages/Pricing.tsx:80
 msgid "One-on-One Support"
 msgstr "一对一支持"
 
-#: src/pages/Account.tsx:252
+#: src/pages/Account.tsx:253
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
 
-#: src/pages/Account.tsx:520
+#: src/pages/Account.tsx:525
 msgid "Or, you can <0>create a new subscription</0>."
 msgstr "或者，您可以<0>创建一个新的订阅</0>。"
 
@@ -936,7 +944,7 @@ msgstr "密碼"
 msgid "Past Due"
 msgstr "过期"
 
-#: src/pages/New.tsx:407
+#: src/pages/New.tsx:517
 msgid "Paste the information you wish to convert to a flowchart"
 msgstr "将要转换的信息粘贴到流程图中"
 
@@ -1043,14 +1051,14 @@ msgstr "重置"
 msgid "Reset Password"
 msgstr "重置密碼"
 
-#: src/pages/Account.tsx:195
-#: src/pages/Account.tsx:419
-#: src/pages/Account.tsx:427
-#: src/pages/Account.tsx:441
+#: src/pages/Account.tsx:196
+#: src/pages/Account.tsx:424
+#: src/pages/Account.tsx:432
+#: src/pages/Account.tsx:446
 msgid "Resume Subscription"
 msgstr "恢复订阅"
 
-#: src/pages/Account.tsx:375
+#: src/pages/Account.tsx:380
 msgid "Return"
 msgstr "返回"
 
@@ -1093,7 +1101,7 @@ msgstr "分享"
 msgid "Sign In"
 msgstr "登錄"
 
-#: src/components/PaymentStepper.tsx:267
+#: src/components/PaymentStepper.tsx:281
 msgid "Sign Up"
 msgstr "注册"
 
@@ -1112,6 +1120,10 @@ msgstr "尺寸"
 #: src/components/GraphContextMenu.tsx:225
 msgid "Small"
 msgstr "小"
+
+#: src/pages/New.tsx:285
+msgid "Software Flowchart"
+msgstr "软件流程图"
 
 #: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
@@ -1138,7 +1150,7 @@ msgstr "间距"
 msgid "Special Attributes"
 msgstr "特殊属性"
 
-#: src/pages/Account.tsx:179
+#: src/pages/Account.tsx:180
 msgid "Start"
 msgstr "开始"
 
@@ -1150,7 +1162,7 @@ msgstr "开始迁移"
 msgid "Start Over"
 msgstr "重新開始"
 
-#: src/pages/Account.tsx:158
+#: src/pages/Account.tsx:159
 msgid "Status"
 msgstr "状态"
 
@@ -1172,11 +1184,11 @@ msgstr "樣式類別"
 msgid "Submit"
 msgstr "提交"
 
-#: src/pages/Account.tsx:153
+#: src/pages/Account.tsx:154
 msgid "Subscription"
 msgstr "订阅"
 
-#: src/pages/Account.tsx:190
+#: src/pages/Account.tsx:191
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
@@ -1188,6 +1200,10 @@ msgstr "目標欄"
 #: src/components/ImportDataDialog.tsx:453
 msgid "Target Delimiter"
 msgstr "目標分隔符"
+
+#: src/pages/New.tsx:208
+msgid "Template"
+msgstr "模板"
 
 #: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
@@ -1322,7 +1338,7 @@ msgstr "无限永久流程图"
 msgid "Unpaid"
 msgstr "未付"
 
-#: src/pages/Account.tsx:206
+#: src/pages/Account.tsx:207
 msgid "Update Email"
 msgstr "更新电子邮件"
 
@@ -1335,7 +1351,7 @@ msgstr "升級到專業版"
 msgid "Upload your File"
 msgstr "上传您的文件"
 
-#: src/pages/New.tsx:256
+#: src/pages/New.tsx:366
 msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
 msgstr "使用AI从提示中生成流程图。<0>了解更多</0>"
 
@@ -1359,7 +1375,7 @@ msgstr "使用属性<0>src</0>来设置节点的图像，图像将被缩放以�
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 
-#: src/pages/Account.tsx:241
+#: src/pages/Account.tsx:242
 msgid "Use the customer portal to change your billing information."
 msgstr "使用客户门户更改您的账单信息。"
 
@@ -1371,7 +1387,7 @@ msgstr "使用此文件制作组织图、层次结构和其他组织结构。"
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "使用此文件进行顺序、流程和工作流程。"
 
-#: src/pages/Account.tsx:120
+#: src/pages/Account.tsx:121
 msgid "User"
 msgstr "用户"
 
@@ -1387,7 +1403,7 @@ msgstr "用<0>Flowchart Fun Pro</0>快速可视化您的想法"
 msgid "Want to keep your flowcharts? Upgrade to our Pro account. With Pro, you can save unlimited flowcharts and never lose your creativity."
 msgstr "想保留您的流程图吗？升级到我们的专业账户。有了专业账户，您可以保存无限的流程图，永远不会失去您的创造力。"
 
-#: src/pages/New.tsx:331
+#: src/pages/New.tsx:441
 msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
 msgstr "水从地球表面蒸发，升入大气中，然后以降水形式回落。这些水然后流入河流，湖泊和海洋，在那里又蒸发，重新回到大气中循环。"
 
@@ -1415,7 +1431,7 @@ msgstr "宽度和高度"
 msgid "Would you like to continue?"
 msgstr "您想继续吗？"
 
-#: src/components/PaymentStepper.tsx:91
+#: src/components/PaymentStepper.tsx:92
 msgid "Yearly"
 msgstr "每年"
 
@@ -1427,7 +1443,7 @@ msgstr "是：选项A"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 
-#: src/pages/New.tsx:214
+#: src/pages/New.tsx:235
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "你可以使用<0>Flowchart Fun Pro</0>创建无限的永久流程图。"
 
@@ -1451,7 +1467,7 @@ msgstr "你的沙盒是一个可以自由尝试我们的流程图工具的空间
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more. You can <1>upgrade to pro</1> to regain editing access to your charts"
 msgstr "您的图表是只读的，因为您的帐户不再有效。访问您的<0>帐户</0>页面了解更多信息。您可以<1>升级为专业版</1>以重新获得对您图表的编辑访问权限"
 
-#: src/pages/Account.tsx:502
+#: src/pages/Account.tsx:507
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "您的訂閱狀態為<0>{statusDisplay}</0>。"
 
