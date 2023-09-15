@@ -22,6 +22,13 @@ export default async function customerInfo(
       return validStripePrices.includes(priceId);
     });
 
+    // Sort active subscriptions to the top
+    validSubscriptions.sort((a, b) => {
+      if (a.status === "active") return -1;
+      if (b.status === "active") return 1;
+      return 0;
+    });
+
     const subscription = validSubscriptions.length
       ? validSubscriptions[0]
       : undefined;
