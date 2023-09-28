@@ -100,7 +100,7 @@ export default function EditStyleTab() {
             overviewRulerBorder: false,
             hideCursorInOverviewRuler: true,
             renderLineHighlight: "none",
-            renderFinalNewline: false,
+            renderFinalNewline: "off",
             fontSize: 14,
             guides: {
               indentation: false,

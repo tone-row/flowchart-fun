@@ -31,6 +31,7 @@ import {
   createUnlimitedContent,
   createUnlimitedTitle,
 } from "../lib/paywallCopy";
+import { templates } from "../lib/templates";
 
 export default function M() {
   const { customerIsLoading, checkedSession } = useContext(AppContext);
@@ -259,38 +260,6 @@ const New = memo(function New({
     </Page>
   );
 });
-
-const templates: {
-  key: string;
-  img: string;
-  bgColor: string;
-  title: () => string;
-}[] = [
-  {
-    key: "flowchart",
-    img: "template4.png",
-    bgColor: "#F2F2F2",
-    title: () => `Flowchart`,
-  },
-  {
-    key: "org-chart",
-    img: "template5.png",
-    bgColor: "#F1F8FE",
-    title: () => `Org Chart`,
-  },
-  {
-    key: "code-flow",
-    img: "template6.png",
-    bgColor: "#FFFFFF",
-    title: () => t`Software Flowchart`,
-  },
-  {
-    key: "mindmap",
-    img: "mindmap.png",
-    bgColor: "#FFFFFF",
-    title: () => `Mind Map`,
-  },
-];
 
 function TemplateSelection({
   template,
