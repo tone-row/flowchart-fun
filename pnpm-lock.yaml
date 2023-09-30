@@ -207,6 +207,9 @@ importers:
       cytoscape-elk:
         specifier: ^2.1.0
         version: 2.1.0(cytoscape@3.26.0)
+      cytoscape-fcose:
+        specifier: ^2.2.0
+        version: 2.2.0(cytoscape@3.26.0)
       cytoscape-grid-guide:
         specifier: ^2.3.3
         version: 2.3.3(cytoscape@3.26.0)
@@ -382,6 +385,9 @@ importers:
       '@types/cytoscape':
         specifier: ^3.19.11
         version: 3.19.11
+      '@types/cytoscape-fcose':
+        specifier: ^2.2.2
+        version: 2.2.2
       '@types/download':
         specifier: ^6.2.4
         version: 6.2.4
@@ -6352,6 +6358,12 @@ packages:
     resolution: {integrity: sha512-nl09VhutdjINdWyXxHWN/w9zlNCfr60JUqJbd24YXUuCwgeL0TpFSdElCwb6cxfB6ybE19Gjj4g0jsgkXxKv1Q==}
     dev: true
 
+  /@types/cytoscape-fcose@2.2.2:
+    resolution: {integrity: sha512-C576Xjaga9/he4Isef5HiBbN8KWZRWRh1V2fvFsKezmwhPlE6op25CtX5xYgSq0CO45j/FyNmRwlEritT93bOA==}
+    dependencies:
+      '@types/cytoscape': 3.19.11
+    dev: true
+
   /@types/cytoscape@3.19.11:
     resolution: {integrity: sha512-ny4i4BOoZxdc9DrSa9RrasXHPRFgt0PeINgj/CegzKu7CJO+UQP0KnjebYJ+KoLymyUbCX86vmqz5B3LK10w5Q==}
 
@@ -8719,6 +8731,12 @@ packages:
       layout-base: 1.0.2
     dev: false
 
+  /cose-base@2.2.0:
+    resolution: {integrity: sha512-AzlgcsCbUMymkADOJtQm3wO9S3ltPfYOFD5033keQn9NJzIbtnZj+UdBJe7DYml/8TdbtHJW3j58SOnKhWY/5g==}
+    dependencies:
+      layout-base: 2.0.1
+    dev: false
+
   /cosmiconfig-typescript-loader@4.4.0(@types/node@18.16.17)(cosmiconfig@8.2.0)(ts-node@10.9.1)(typescript@5.2.2):
     resolution: {integrity: sha512-BabizFdC3wBHhbI4kJh0VkQP9GkBfoHPydD0COMce1nJ1kJAB3F2TmJ/I7diULBKtmEWSwEbuN/KDtgnmUUVmw==}
     engines: {node: '>=v14.21.3'}
@@ -9060,6 +9078,15 @@ packages:
     dependencies:
       cytoscape: 3.26.0
       elkjs: 0.8.2
+    dev: false
+
+  /cytoscape-fcose@2.2.0(cytoscape@3.26.0):
+    resolution: {integrity: sha512-ki1/VuRIHFCzxWNrsshHYPs6L7TvLu3DL+TyIGEsRcvVERmxokbf5Gdk7mFxZnTdiGtnA4cfSmjZJMviqSuZrQ==}
+    peerDependencies:
+      cytoscape: ^3.2.0
+    dependencies:
+      cose-base: 2.2.0
+      cytoscape: 3.26.0
     dev: false
 
   /cytoscape-grid-guide@2.3.3(cytoscape@3.26.0):
@@ -13163,6 +13190,10 @@ packages:
 
   /layout-base@1.0.2:
     resolution: {integrity: sha512-8h2oVEZNktL4BH2JCOI90iD1yXwL6iNW7KcCKT2QZgQJR2vbqDsldCTPRU9NifTCqHZci57XvQQ15YTu+sTYPg==}
+    dev: false
+
+  /layout-base@2.0.1:
+    resolution: {integrity: sha512-dp3s92+uNI1hWIpPGH3jK2kxE2lMjdXdr+DH8ynZHpd6PUlH6x6cbuXnoMmiNumznqaNO31xu9e79F0uuZ0JFg==}
     dev: false
 
   /leven@3.1.0:

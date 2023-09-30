@@ -16,7 +16,6 @@ export const templates: {
     bgColor: "#FFFFFF",
     title: () => `Default`,
     promptType: "flowchart",
-    accentClasses: ["color_blue", "color_green"],
   },
   {
     key: "flowchart",
@@ -24,13 +23,15 @@ export const templates: {
     bgColor: "#F1F3F5",
     title: () => `Flowchart`,
     promptType: "flowchart",
+    accentClasses: ["color_blue", "color_green"],
   },
   {
     key: "mindmap",
-    img: "mindmap.png",
+    img: "template13.png",
     bgColor: "#FFFFFF",
     title: () => `Mind Map`,
     promptType: "knowledge",
+    accentClasses: ["size_lg", "color_blue", "color_green", "color_orange"],
   },
   {
     key: "org-chart",
@@ -38,6 +39,7 @@ export const templates: {
     bgColor: "#FFFFFF",
     title: () => t`Organization Chart`,
     promptType: "flowchart",
+    accentClasses: ["color_blue", "color_orange"],
   },
   {
     key: "code-flow",
@@ -45,12 +47,21 @@ export const templates: {
     bgColor: "#FFFFFF",
     title: () => t`Process`,
     promptType: "flowchart",
+    accentClasses: ["color_blue", "color_green", "color_purple"],
   },
   {
     key: "knowledge-graph",
     img: "template10.png",
     bgColor: "#EFEFEF",
     title: () => t`Knowledge Graph`,
-    promptType: "flowchart",
+    promptType: "knowledge",
+    accentClasses: [
+      "color_blue",
+      "color_green",
+      "color_orange",
+      "color_purple",
+      "color_grey",
+      "border_dashed",
+    ],
   },
 ];

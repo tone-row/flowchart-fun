@@ -14,9 +14,6 @@ const handler: VercelApiHandler = async (req, res) => {
     return;
   }
 
-  console.log("subject: ", subject);
-  console.log("Prompt Type: ", promptType);
-
   const text = await completionFunctions[promptType](subject, accentClasses);
 
   res.status(200).json({
@@ -161,9 +158,22 @@ async function getFlowchartCompletion(
 
   return graphStr;
 }
-async function getKnowledgeCompletion(subject: string) {
+async function getKnowledgeCompletion(
+  subject: string,
+  accentClasses: string[]
+) {
   const temperature = 0.2;
-  const prompt = `Use the following classes extremely sparingly on nodes, only when it helps with readability: color_red, color_orange, color_green, color_purple, color_grey, shape_ellipse. Build a detailed knowledge graph that helps me understand the following: \n`;
+
+  let prompt = ``;
+
+  // Add accent classes if passed
+  if (accentClasses.length > 0) {
+    prompt += `Use the following classes extremely sparingly on nodes, only when it helps with readability: ${accentClasses.join(
+      ", "
+    )}. `;
+  }
+  prompt += `Build a detailed knowledge graph that helps me understand the following: \n`;
+
   const output: Schema = {
     type: "object",
     properties: {

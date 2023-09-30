@@ -1,19 +1,21 @@
-const content = `Database
-Fetch Blog API .color_blue
-  (#display)
-Post Comments API .color_green
+const content = `
+Database
+  Fetch Blog API .color_blue
+    (#display)
+  Post Comments API .color_green
 
 DisplayBlog\\(\\) #display.color_purple
-(User)
-useEffect\\(\\) #effect
-DisplayComments\\(\\) .color_purple
   (User)
+useEffect\\(\\) #effect
+  DisplayComments\\(\\) .color_purple
+    (User)
 Post Comment UI .color_purple
-POST
-  (Post Comments API)
+  POST
+    (Post Comments API)
 
 User
-(Post Comment UI)
+  (Post Comment UI)
+
 `;
 
 const template = `=====
