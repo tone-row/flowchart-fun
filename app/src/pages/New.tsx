@@ -1,7 +1,7 @@
 import { Article, MagicWand, Plus, Rocket } from "phosphor-react";
 import { Button2, Input, Textarea } from "../ui/Shared";
 import { templates } from "../lib/templates/templates";
-import { Trans } from "@lingui/macro";
+import { Trans, t } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useCallback, useContext, useState } from "react";
@@ -155,11 +155,10 @@ export default function New2() {
       onSubmit={handleSubmit}
     >
       <h1 className="text-2xl font-bold md:mt-10 text-center">
-        Create a New Chart
+        <Trans>Create a New Chart</Trans>
       </h1>
-      <Section title="Name Chart">
+      <Section title={t`Name Chart`}>
         <Input
-          placeholder="My Project"
           className="py-3"
           name="name"
           required
@@ -168,7 +167,7 @@ export default function New2() {
           disabled={createChartMutation.isLoading}
         />
       </Section>
-      <Section title="Choose Template">
+      <Section title={t`Choose Template`}>
         <RadioGroup.Root asChild name="template" defaultValue="default">
           <div
             className="grid gap-x-2 gap-y-6 sm:grid-cols-2 md:grid-cols-3"
@@ -208,13 +207,13 @@ export default function New2() {
           </div>
         </RadioGroup.Root>
       </Section>
-      <Section title="Set Content">
+      <Section title={t`Set Content`}>
         <Tabs.Root defaultValue="default">
           <Tabs.List asChild>
             <div className="flex">
               <Trigger value="default" disabled={createChartMutation.isLoading}>
                 <Article size={16} />
-                <Trans>Default Content</Trans>
+                <Trans>Use Default Content</Trans>
               </Trigger>
               <Trigger value="ai" disabled={createChartMutation.isLoading}>
                 <MagicWand size={16} />
@@ -224,8 +223,10 @@ export default function New2() {
           </Tabs.List>
           <Tabs.Content value="ai" className="pt-4 grid gap-2">
             <p className="text-neutral-700 leading-6 text-xs dark:text-neutral-300">
-              Enter a prompt or information you would like to create a chart
-              from. Click here to learn more about how this works.
+              <Trans>
+                Enter a prompt or information you would like to create a chart
+                from.
+              </Trans>
             </p>
             <Textarea
               className="h-[120px]"
@@ -260,12 +261,14 @@ export default function New2() {
           type="submit"
           isLoading={createChartMutation.isLoading}
         >
-          Create
+          <Trans>Create</Trans>
         </Button2>
         {isAI && (
           <p className="text-neutral-700 leading-6 text-xs dark:text-neutral-300">
-            This may take between 30 seconds and 2 minutes depending on the
-            length of your prompt.
+            <Trans>
+              This may take between 30 seconds and 2 minutes depending on the
+              length of your input.
+            </Trans>
           </p>
         )}
       </div>

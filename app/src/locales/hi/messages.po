@@ -49,14 +49,6 @@ msgstr "<0>आपके पास वर्तमान में एक मु�
 msgid "A new version of the app is available. Please reload to update."
 msgstr "एप्प का एक नया वर्जन उपलब्ध है। अपडेट करने के लिए रीलोड करें।"
 
-#: src/pages/New.tsx:437
-msgid "A step-by-step guide for students on how to write an essay, from thinking of ideas to making final edits"
-msgstr "छात्रों को निर्देशित करने के लिए एक निबंध लिखने की एक चरण द्वारा चरण गाइड, विचारों को विचारण से अंतिम संपादन तक"
-
-#: src/pages/New.tsx:213
-msgid "AI Prompt"
-msgstr "ई प्रॉम्प्ट"
-
 #: src/components/Settings.tsx:105
 msgid "About"
 msgstr "के बारे में"
@@ -118,14 +110,6 @@ msgstr "टाइपिंग शुरू करें"
 #: src/pages/Pricing.tsx:39
 msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
 msgstr "ग्राहक समर्थन प्रॉम्प्ट जैसी एक प्रॉम्प्ट के साथ शुरू करें और Flowchart Fun आपके लिए एक फ्लोचार्ट बना देगा!"
-
-#: src/pages/New.tsx:351
-msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
-msgstr "<0>फ्लोचार्ट फन</0> काम कैसे करता है इसके लिए एक आसान उदाहरण से शुरू करें।"
-
-#: src/pages/New.tsx:203
-msgid "Blank"
-msgstr "खाली"
 
 #: src/components/Header.tsx:140
 #: src/components/Header.tsx:365
@@ -191,6 +175,10 @@ msgstr "लॉग इन करने के लिए अपने ईमेल
 msgid "Choose"
 msgstr "चुनें"
 
+#: src/pages/New.tsx:170
+msgid "Choose Template"
+msgstr "टेम्पलेट चुनें"
+
 #: src/components/PaymentStepper.tsx:71
 msgid "Choose a Plan"
 msgstr "एक योजना चुनें"
@@ -198,10 +186,6 @@ msgstr "एक योजना चुनें"
 #: src/components/ThemePicker.tsx:73
 msgid "Choose a Theme"
 msgstr "एक थीम चुनें"
-
-#: src/pages/New.tsx:360
-msgid "Choose a template to get started."
-msgstr "शुरू करने के लिए एक टेम्पलेट चुनें।"
 
 #: src/components/LearnSyntaxDialog.tsx:318
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
@@ -312,21 +296,21 @@ msgstr "SVG कोड कॉपी करें"
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "अपना मर्मेड.जेएस कोड कॉपी करें या मर्मेड.जेएस लाइव एडिटर में सीधे खोलें।"
 
+#: src/pages/New.tsx:264
+msgid "Create"
+msgstr "बनाएं"
+
 #: src/pages/Pricing.tsx:79
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "एआई के साथ प्रॉम्प्ट से डायग्राम बनाएं"
-
-#: src/pages/New.tsx:255
-msgid "Create New Flowchart"
-msgstr "नया फ्लोचार्ट बनाएं"
 
 #: src/lib/paywallCopy.ts:3
 msgid "Create Unlimited Flowcharts"
 msgstr "असीमित पारितकथाओं बनाएं"
 
-#: src/pages/New.tsx:173
-msgid "Create a New Flowchart"
-msgstr "एक नया आरेख बनाएँ"
+#: src/pages/New.tsx:158
+msgid "Create a New Chart"
+msgstr "एक नया चार्ट बनाएं"
 
 #: src/pages/Pricing.tsx:104
 msgid "Create unlimited diagrams for just $3/month!"
@@ -368,10 +352,6 @@ msgstr "डेटा आयात"
 #: src/pages/Account.tsx:272
 msgid "Date"
 msgstr "तारीख़"
-
-#: src/pages/New.tsx:512
-msgid "Describe the flowchart you wish to create"
-msgstr "उस आरेख का वर्णन करें जिसे आप बनाना चाहते हैं"
 
 #: src/pages/Pricing.tsx:44
 msgid "Direct from your Data"
@@ -503,6 +483,10 @@ msgstr "ईमेल"
 msgid "Empty"
 msgstr "खाली"
 
+#: src/pages/New.tsx:226
+msgid "Enter a prompt or information you would like to create a chart from."
+msgstr "एक प्रॉम्प्ट या जानकारी दर्ज करें जिससे आप एक चार्ट बना सकें।"
+
 #: src/components/PaymentStepper.tsx:127
 msgid "Enter your email"
 msgstr "अपना ईमेल दर्ज करें"
@@ -535,10 +519,6 @@ msgstr "प्रेजेंटेशन और दस्तावेजों 
 #: src/components/GraphContextMenu.tsx:239
 msgid "Extra Large"
 msgstr "अति बड़ा"
-
-#: src/pages/New.tsx:516
-msgid "Extract"
-msgstr "निकालना"
 
 #: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:104
@@ -577,10 +557,6 @@ msgstr "फ़ुलस्क्रीन"
 #: src/components/Tabs/EditLayoutTab.tsx:202
 msgid "Get More Layouts"
 msgstr "ज़्यादा लेआउट पाएं"
-
-#: src/pages/New.tsx:193
-msgid "Getting Started"
-msgstr "शुरू करना"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -665,17 +641,13 @@ msgstr "एक <0>title</0> विशेषता का उपयोग कर�
 msgid "Info"
 msgstr "जानकारी"
 
-#: src/pages/New.tsx:511
-msgid "Instruct"
-msgstr "हिदायत"
-
 #: src/components/ImportDataDialog.tsx:547
 msgid "Is"
 msgstr "हाँ"
 
-#: src/pages/New.tsx:433
-msgid "Keeping track of who's who in the market for our software product"
-msgstr "हमारे सॉफ्टवेयर उत्पाद के लिए बाजार में कौन है कौन की ट्रैकिंग करना"
+#: src/lib/templates/templates.ts:56
+msgid "Knowledge Graph"
+msgstr "ज्ञान ग्राफ"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -771,10 +743,6 @@ msgstr "सेव में लॉग इन करें"
 msgid "Log in to start creating flowcharts."
 msgstr "फ्लोचार्ट बनाने शुरू करने के लिए लॉग इन करें।"
 
-#: src/pages/New.tsx:331
-msgid "Looking for a different template? <0>Let us know</0>"
-msgstr "कोई अलग टेम्पलेट खोज रहे हैं? <0>हमें बताएं</0>"
-
 #: src/components/Settings.tsx:164
 msgid "Make a One-Time Donation"
 msgstr "एक बार दान करें"
@@ -786,10 +754,6 @@ msgstr "सार्वजनिक रूप से एक्सेस दे�
 #: src/components/PaymentStepper.tsx:131
 msgid "Make sure you use the same email you will use to log in."
 msgstr "उसी ईमेल का उपयोग करें जिसे आप लॉग इन करने के लिए उपयोग करेंगे।"
-
-#: src/pages/New.tsx:435
-msgid "Making our supply chain better: cutting costs, working faster, and getting everyone involved"
-msgstr "हमारी आपूर्ति श्रृंखला को बेहतर बनाना: लागत कम करना, तेजी से काम करना और सभी को शामिल करना"
 
 #: src/pages/Account.tsx:521
 msgid "Manage Billing"
@@ -803,10 +767,6 @@ msgstr "डेटा मैप"
 msgid "Medium"
 msgstr "मध्यम"
 
-#: src/pages/New.tsx:500
-msgid "Method"
-msgstr "विधि"
-
 #: src/components/MigrateTempFlowchartsModal.tsx:33
 msgid "Migrate Flowcharts"
 msgstr "प्रिंट चार्ट को स्थानांतरित करें"
@@ -819,9 +779,9 @@ msgstr "मासिक"
 msgid "Multiple pointers on same line"
 msgstr "एक ही लाइन पर कई प्रतीक"
 
-#: src/pages/New.tsx:177
-msgid "Name"
-msgstr "नाम"
+#: src/pages/New.tsx:160
+msgid "Name Chart"
+msgstr "चार्ट का नाम"
 
 #: src/components/Header.tsx:79
 #: src/components/Header.tsx:337
@@ -921,6 +881,7 @@ msgid "Or, you can <0>create a new subscription</0>."
 msgstr "या फिर, आप <0>एक नया सदस्यता बना सकते हैं</0>।"
 
 #: src/components/ShareDialog.tsx:456
+#: src/lib/templates/templates.ts:40
 msgid "Organization Chart"
 msgstr "संगठन चार्ट"
 
@@ -944,10 +905,6 @@ msgstr "पासवर्ड"
 msgid "Past Due"
 msgstr "पिछले दौरान"
 
-#: src/pages/New.tsx:517
-msgid "Paste the information you wish to convert to a flowchart"
-msgstr "उस जानकारी को पेस्ट करें जिसे आप फ़्लोचार्ट में बदलना चाहते हैं"
-
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "स्थायी चार्ट एक प्रो सुविधा हैं"
@@ -965,6 +922,10 @@ msgstr "प्रतीक और कंटेनर एक ही लाइन 
 #: src/components/Settings.tsx:138
 msgid "Privacy Policy"
 msgstr "गोपनीयता नीति "
+
+#: src/lib/templates/templates.ts:48
+msgid "Process Diagram"
+msgstr "प्रक्रिया आरेख"
 
 #: src/components/ImportDataDialog.tsx:269
 msgid "Processing Data"
@@ -1082,6 +1043,10 @@ msgstr "सहेजें"
 msgid "Send Feedback"
 msgstr "प्रतिक्रिया भेजें"
 
+#: src/pages/New.tsx:210
+msgid "Set Content"
+msgstr "सामग्री सेट करें"
+
 #: src/components/Header.tsx:175
 #: src/components/Header.tsx:382
 #: src/components/Settings.tsx:35
@@ -1120,10 +1085,6 @@ msgstr "आकार"
 #: src/components/GraphContextMenu.tsx:225
 msgid "Small"
 msgstr "छोटा"
-
-#: src/pages/New.tsx:285
-msgid "Software Flowchart"
-msgstr "सॉफ्टवेयर फ्लोचार्ट"
 
 #: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
@@ -1201,10 +1162,6 @@ msgstr "लक्ष्य कॉलम"
 msgid "Target Delimiter"
 msgstr "लक्ष्य डेलीमीटर"
 
-#: src/pages/New.tsx:208
-msgid "Template"
-msgstr "टेम्पलेट"
-
 #: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "स्क्लीन के बाद कोलन + स्पेस एक किरदार बनाता है जिसका पाठ लेबल है"
@@ -1260,6 +1217,10 @@ msgstr "इस क्रिया को पूर्ववत नहीं क�
 #: src/components/SvgProOnlyPopover.tsx:21
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।"
+
+#: src/pages/New.tsx:268
+msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
+msgstr "आपके इनपुट की लंबाई के आधार पर, यह 30 सेकंड से 2 मिनट तक लग सकता है।"
 
 #: src/components/LoadFromHashDialog.tsx:41
 msgid "This will replace your current sandbox."
@@ -1351,9 +1312,13 @@ msgstr "प्रो को अपग्रेड करें"
 msgid "Upload your File"
 msgstr "अपनी फाइल अपलोड करें"
 
-#: src/pages/New.tsx:366
-msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
-msgstr "एक प्रॉम्प्ट से एक फ्लोचार्ट उत्पन्न करने के लिए AI का उपयोग करें। <0>और अधिक जानें</0>"
+#: src/pages/New.tsx:220
+msgid "Use AI"
+msgstr "AI का उपयोग करें"
+
+#: src/pages/New.tsx:216
+msgid "Use Default Content"
+msgstr "डिफ़ॉल्ट सामग्री का उपयोग करें"
 
 #: src/lib/getDefaultText.ts:7
 msgid "Use an ID to Connect"
@@ -1403,10 +1368,6 @@ msgstr "<0>फ्लोचार्ट फन प्रो</0> से अपन�
 msgid "Want to keep your flowcharts? Upgrade to our Pro account. With Pro, you can save unlimited flowcharts and never lose your creativity."
 msgstr "क्या आप अपने फ्लोचार्ट रखना चाहते हैं? हमारे प्रो अकाउंट में अपग्रेड करें। प्रो के साथ, आप असीमित फ्लोचार्ट सेव कर सकते हैं और अपनी रचनात्मकता को कभी नहीं खोएंगे।"
 
-#: src/pages/New.tsx:441
-msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
-msgstr "पानी पृथ्वी के सतह से उष्णता होकर आत्मान में उठता है और वर्षा के रूप में फिर नीचे गिरता है। इस पानी को तब नदियों, तिब्बती तालों और महासागरों में जाता है, जहां यह फिर से उष्णता होता है और आत्मान में पुनर्स्थापित किया जाता है।"
-
 #: src/pages/Pricing.tsx:66
 msgid "Watermarked Images"
 msgstr "वॉटरमार्क्ड छवियां"
@@ -1443,7 +1404,7 @@ msgstr "हाँ: विकल्प A"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "आप अपने ग्राफ में {numNodes} नोड्स और {numEdges} एड्ज़ जोड़ने वाले हैं।"
 
-#: src/pages/New.tsx:235
+#: src/pages/New.tsx:246
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "<0>Flowchart Fun Pro</0> के साथ आप असीमित स्थायी फ्लोचार्ट बना सकते हैं।"
 
