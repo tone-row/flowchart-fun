@@ -27,7 +27,7 @@ export const templates: {
   },
   {
     key: "mindmap",
-    img: "template13.png",
+    img: "template16.png",
     bgColor: "#FFFFFF",
     title: () => `Mind Map`,
     promptType: "knowledge",
@@ -43,9 +43,9 @@ export const templates: {
   },
   {
     key: "code-flow",
-    img: "template6.png",
+    img: "template14.png",
     bgColor: "#FFFFFF",
-    title: () => t`Process`,
+    title: () => t`Process Diagram`,
     promptType: "flowchart",
     accentClasses: ["color_blue", "color_green", "color_purple"],
   },

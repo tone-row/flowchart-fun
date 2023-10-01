@@ -31,7 +31,7 @@ import {
   createUnlimitedContent,
   createUnlimitedTitle,
 } from "../lib/paywallCopy";
-import { templates } from "../lib/templates";
+import { templates } from "../lib/templates/templates";
 
 export default function M() {
   const { customerIsLoading, checkedSession } = useContext(AppContext);
@@ -121,9 +121,6 @@ const New = memo(function New({
         onSubmit={(e) => {
           e.preventDefault();
           if (customerIsLoading || !checkedSession) return;
-          /**
-           * Uncomment this when we want to show the paywall modal
-           */
           if (!isProUser) {
             showPaywall({
               title: createUnlimitedTitle(),

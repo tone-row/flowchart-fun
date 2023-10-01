@@ -1,6 +1,6 @@
-import { Article, MagicWand, Plus } from "phosphor-react";
+import { Article, MagicWand, Plus, Rocket } from "phosphor-react";
 import { Button2, Input, Textarea } from "../ui/Shared";
-import { templates } from "../lib/templates";
+import { templates } from "../lib/templates/templates";
 import { Trans } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import * as Tabs from "@radix-ui/react-tabs";
@@ -11,8 +11,15 @@ import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { useMutation } from "react-query";
 import { supabase } from "../lib/supabaseClient";
 import { getDefaultChart } from "../lib/getDefaultChart";
-import { useUserId } from "../lib/hooks";
-import { useNavigate } from "react-router-dom";
+import { useIsProUser, useUserId } from "../lib/hooks";
+import { Link, useNavigate } from "react-router-dom";
+import { sample } from "../lib/sample";
+import { showPaywall } from "../lib/usePaywallModalStore";
+import {
+  createUnlimitedContent,
+  createUnlimitedTitle,
+} from "../lib/paywallCopy";
+import { Warning } from "../components/Warning";
 
 type CreateChartOptions = {
   name: string;
@@ -59,6 +66,11 @@ export default function New2() {
       // Prompts
       if (options.subject) {
         setIsAI(true);
+        // Scroll to End of Page
+        requestAnimationFrame(() =>
+          window.scrollTo(0, document.body.scrollHeight)
+        );
+        const startTime = performance.now();
         const response = await fetch("/api/prompt/text", {
           method: "POST",
           body: JSON.stringify({
@@ -71,9 +83,17 @@ export default function New2() {
             Authorization: `Bearer ${data.session.access_token}`,
           },
         }).then((res) => res.json());
+        const endTime = performance.now();
+        const elapsedTime = endTime - startTime;
         // TO DO: Show Error Here
         if (response.text) {
           content = response.text;
+          sample({
+            template,
+            subject: options.subject,
+            runningTime: elapsedTime,
+            result: response.text,
+          });
         }
       }
 
@@ -95,9 +115,17 @@ export default function New2() {
     }
   );
 
+  const isProUser = useIsProUser();
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
+      if (!isProUser) {
+        showPaywall({
+          title: createUnlimitedTitle(),
+          content: createUnlimitedContent(),
+        });
+        return;
+      }
       const data = new FormData(e.currentTarget);
       const name = data.get("name")?.toString();
       const template = data.get("template")?.toString();
@@ -116,10 +144,11 @@ export default function New2() {
 
       createChartMutation.mutate(options);
     },
-    [createChartMutation]
+    [createChartMutation, isProUser]
   );
 
   const language = useContext(AppContext).language;
+
   return (
     <form
       className="max-w-4xl mx-auto py-6 pt-10 px-4 w-full grid gap-12 content-start"
@@ -155,7 +184,7 @@ export default function New2() {
                 <button className="grid gap-2 group focus:outline-foreground/10 focus:outline-2 outline-offset-4 rounded-md">
                   {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
                   <div
-                    className="p-2 h-[283px] rounded-sm border border-foreground/10 opacity-70 hover:opacity-100 group-data-[state=checked]:opacity-100 group-data-[state=checked]:border-foreground/30 overflow-hidden group-data-[state=checked]:shadow-sm"
+                    className="p-1 h-[283px] rounded-sm border border-foreground/10 opacity-70 hover:opacity-100 group-data-[state=checked]:opacity-100 group-data-[state=checked]:border-foreground/30 overflow-hidden group-data-[state=checked]:shadow-sm"
                     style={{ backgroundColor: template.bgColor }}
                   >
                     <img
@@ -163,6 +192,8 @@ export default function New2() {
                       src={`/templates/${template.img}`}
                       className="rounded w-full h-full object-contain object-center"
                       alt={template.key}
+                      height={273}
+                      width={273}
                     />
                   </div>
                   <div className="flex gap-2 items-center justify-center">
@@ -205,6 +236,24 @@ export default function New2() {
         </Tabs.Root>
       </Section>
       <div className="grid justify-center justify-items-center gap-2">
+        {!isProUser && (
+          <div className="justify-items-center grid">
+            <Warning>
+              <Link to="/pricing" className="flex items-center">
+                <Rocket size={24} className="mr-2" />
+                <p>
+                  <Trans>
+                    You can create unlimited permanent flowcharts with{" "}
+                    <span className="underline underline-offset-2">
+                      Flowchart Fun Pro
+                    </span>
+                    .
+                  </Trans>
+                </p>
+              </Link>
+            </Warning>
+          </div>
+        )}
         <Button2
           color="blue"
           leftIcon={<Plus size={16} />}
