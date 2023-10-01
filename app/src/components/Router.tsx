@@ -23,7 +23,6 @@ const Changelog = lazy(() => import("../pages/Changelog"));
 const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
-const New2 = lazy(() => import("../pages/New2"));
 const Charts = lazy(() => import("../pages/Charts"));
 const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
@@ -48,18 +47,10 @@ export default function Router() {
           }
         />
         <Route
-          path="/n/:graphText?"
-          element={
-            <AuthWall>
-              <New />
-            </AuthWall>
-          }
-        />
-        <Route
           path="/new"
           element={
             <AuthWall>
-              <New2 />
+              <New />
             </AuthWall>
           }
         />
