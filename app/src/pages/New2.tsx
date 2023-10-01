@@ -35,9 +35,12 @@ export default function New2() {
       const { data } = await supabase.auth.getSession();
       if (!data.session) throw new Error("No Session");
 
-      let template,
-        content,
-        accentClasses = [] as string[];
+      // Get Template
+      const templateData = templates.find((t) => t.key === options.template);
+      if (!templateData) throw new Error("No Template");
+
+      let template = "",
+        content = "";
 
       // Get Template
       if (options.template === "default") {
@@ -51,7 +54,6 @@ export default function New2() {
         );
         content = importTemplate.content;
         template = importTemplate.template;
-        accentClasses = importTemplate.accentClasses;
       }
 
       // Prompts
@@ -62,7 +64,7 @@ export default function New2() {
           body: JSON.stringify({
             promptType: options.promptType,
             subject: options.subject,
-            accentClasses,
+            accentClasses: templateData.accentClasses,
           }),
           headers: {
             "Content-Type": "application/json",
