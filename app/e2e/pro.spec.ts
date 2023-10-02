@@ -109,8 +109,8 @@ test("Sign Up", async () => {
 
 test("Create new chart", async () => {
   await page.getByRole("link", { name: "New" }).click();
-  await page.getByPlaceholder("Untitled").fill("my new chart");
-  await page.getByRole("button", { name: "Create New Flowchart" }).click();
+  await page.getByLabel("Name Chart").fill("my new chart");
+  await page.getByRole("button", { name: "Create" }).click();
   // expect url to be regex BASE_URL + /u/\d+
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
 });
@@ -191,42 +191,24 @@ test("Go to Sandbox. Save Sandbox Chart", async () => {
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
 });
 
-test("Create chart from prompt by instruction", async () => {
+test("Create chart from ai", async () => {
   await page.getByRole("link", { name: "New" }).click();
-  await page.getByRole("radio", { name: "AI Prompt" }).click();
-
-  await page.getByTestId("instruct").click();
-  await page.getByTestId("prompt-entry-textarea").click();
+  await page.getByTestId("Use AI").click();
+  await page.locator('textarea[name="subject"]').click();
   await page
-    .getByTestId("prompt-entry-textarea")
+    .locator('textarea[name="subject"]')
     .fill("the stages of the water cycle");
   await page.getByRole("button", { name: "Create" }).click();
   // expect url to be regex BASE_URL + /u/\d+
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
-    timeout: 12000,
-  });
-});
-
-test("Create chart from prompt by extraction", async () => {
-  await page.getByRole("link", { name: "New" }).click();
-  await page.getByRole("radio", { name: "AI Prompt" }).click();
-
-  await page.getByTestId("extract").click();
-  await page.getByTestId("prompt-entry-textarea").click();
-  await page
-    .getByTestId("prompt-entry-textarea")
-    .fill("a is greater than b but less than a");
-  await page.getByRole("button", { name: "Create" }).click();
-  // expect url to be regex BASE_URL + /u/\d+
-  await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
-    timeout: 12000,
+    timeout: 1000 * 60 * 4,
   });
 });
 
 test("Create chart from imported data", async () => {
   try {
     await page.getByRole("link", { name: "New" }).click();
-    await page.getByRole("button", { name: "Create New Flowchart" }).click();
+    await page.getByRole("button", { name: "Create" }).click();
     await page.waitForURL(new RegExp(`${BASE_URL}/u/\\d+`));
     await page.getByRole("button", { name: "Import Data" }).click();
 

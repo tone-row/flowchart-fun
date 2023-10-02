@@ -17,9 +17,9 @@ test.beforeEach(async ({ page }) => {
 test("can do things when logged in", async ({ page }) => {
   await page.getByRole("link", { name: "New" }).click();
   await expect(
-    page.getByRole("heading", { name: "Create a New Flowchart" })
+    page.getByRole("heading", { name: "Create a New Chart" })
   ).toBeVisible();
-  await page.getByRole("button", { name: "Create New Flowchart" }).click();
+  await page.getByRole("button", { name: "Create" }).click();
   await expect(
     page.getByRole("heading", { name: "Create Unlimited Flowcharts" })
   ).toBeVisible();

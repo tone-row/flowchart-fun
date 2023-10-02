@@ -319,6 +319,15 @@ function getGraphUpdater({
 
       // Test
       cyErrorCatcher.current.json({ elements });
+
+      // Very specific bug wrt to cose layouts
+      // If it's the first render, randomize cannot be false
+      // Because the graph has no positions yet
+      if (!isGraphInitialized.current && layout.name === "fcose") {
+        console.log("randomize");
+        layout.randomize = true;
+      }
+
       cyErrorCatcher.current.layout(layout);
 
       // Set up a listener to mark the graph as initialized after the first layout run

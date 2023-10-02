@@ -17,6 +17,10 @@ const layoutSpecificDefaults: { [key: string]: object } = {
     nodeDimensionsIncludeLabels: true,
     quality: "proof",
   },
+  fcose: {
+    randomize: false,
+    quality: "proof",
+  },
 };
 
 /**
@@ -45,7 +49,7 @@ export function getLayout(doc: Doc) {
     layout.elk = { algorithm: layout.name.slice(4) };
     layout.name = "elk";
   } else if (layout.name === "cose") {
-    layout.name = "cose-bilkent";
+    layout.name = "fcose";
   }
 
   // depending on the layout, grab the layoutSpecificDefaults

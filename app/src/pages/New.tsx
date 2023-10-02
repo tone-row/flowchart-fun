@@ -1,582 +1,306 @@
-import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { t, Trans } from "@lingui/macro";
+import { Article, MagicWand, Plus, Rocket } from "phosphor-react";
+import { Button2, Input, Textarea } from "../ui/Shared";
+import { templates } from "../lib/templates/templates";
+import { Trans, t } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
-import { decompressFromEncodedURIComponent as decompress } from "lz-string";
-import { NoteBlank, Presentation, Robot, Rocket } from "phosphor-react";
-import {
-  forwardRef,
-  memo,
-  ReactNode,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { useMutation } from "react-query";
-import { Link, useNavigate, useParams } from "react-router-dom";
-
+import * as Tabs from "@radix-ui/react-tabs";
+import { useCallback, useContext, useState } from "react";
 import { AppContext } from "../components/AppContext";
-import Loading from "../components/Loading";
-import { Warning } from "../components/Warning";
-import { getDefaultChart } from "../lib/getDefaultChart";
-import { getFunFlowchartName } from "../lib/getFunFlowchartName";
-import { titleToLocalStorageKey } from "../lib/helpers";
-import { useIsProUser, useUserId } from "../lib/hooks";
-import { makeChart, queryClient } from "../lib/queries";
 import { languages } from "../locales/i18n";
-import { Button2, Page } from "../ui/Shared";
-import { PageTitle } from "../ui/Typography";
+import { getFunFlowchartName } from "../lib/getFunFlowchartName";
+import { useMutation } from "react-query";
+import { supabase } from "../lib/supabaseClient";
+import { getDefaultChart } from "../lib/getDefaultChart";
+import { useIsProUser, useUserId } from "../lib/hooks";
+import { Link, useNavigate } from "react-router-dom";
+import { sample } from "../lib/sample";
 import { showPaywall } from "../lib/usePaywallModalStore";
 import {
   createUnlimitedContent,
   createUnlimitedTitle,
 } from "../lib/paywallCopy";
+import { Warning } from "../components/Warning";
 
-export default function M() {
-  const { customerIsLoading, checkedSession } = useContext(AppContext);
-  const isProUser = useIsProUser();
-  const { graphText = window.location.hash.slice(1) } = useParams<{
-    graphText: string;
-  }>();
-  const templateText = decompress(graphText);
+type CreateChartOptions = {
+  name: string;
+  template: string;
+  promptType: string;
+  subject?: string;
+};
 
-  // If there is template text, create a temporary chart with it
-  useEffect(() => {
-    if (templateText) {
-      let i = 1;
-      while (localStorage.getItem(titleToLocalStorageKey(`temp-${i}`))) {
-        i++;
-      }
-      const title = `temp-${i}`;
-      localStorage.setItem(titleToLocalStorageKey(title), templateText);
-      window.location.replace(`/${title}`);
-    }
-  }, [templateText]);
-
-  if (customerIsLoading || !checkedSession) {
-    return <Loading />;
-  }
-
-  return (
-    <New
-      customerIsLoading={customerIsLoading}
-      checkedSession={checkedSession}
-      isProUser={isProUser}
-      templateText={templateText}
-    />
-  );
-}
-
-const New = memo(function New({
-  customerIsLoading,
-  checkedSession,
-  isProUser,
-  templateText,
-}: {
-  customerIsLoading: boolean;
-
-  checkedSession: boolean;
-  isProUser: boolean;
-  templateText: string | null;
-}) {
-  const defaultDoc = getDefaultChart();
-  const navigate = useNavigate();
-
+export default function New2() {
+  // Whether we're using AI to generate the chart
+  const [isAI, setIsAI] = useState(false);
   const userId = useUserId();
+  const navigate = useNavigate();
+  const createChartMutation = useMutation(
+    async (options: CreateChartOptions) => {
+      if (!userId) throw new Error("No user id");
+
+      // Get Session Token
+      if (!supabase) throw new Error("No supabase");
+      const { data } = await supabase.auth.getSession();
+      if (!data.session) throw new Error("No Session");
+
+      // Get Template
+      const templateData = templates.find((t) => t.key === options.template);
+      if (!templateData) throw new Error("No Template");
+
+      let template = "",
+        content = "";
+
+      // Get Template
+      if (options.template === "default") {
+        const chart = getDefaultChart();
+        const parts = chart.split("=====");
+        content = parts[0];
+        template = `=====${template}=====`;
+      } else {
+        const importTemplate = await import(
+          `../lib/templates/${options.template}-template.ts`
+        );
+        content = importTemplate.content;
+        template = importTemplate.template;
+      }
+
+      // Prompts
+      if (options.subject) {
+        setIsAI(true);
+        // Scroll to End of Page
+        requestAnimationFrame(() =>
+          window.scrollTo(0, document.body.scrollHeight)
+        );
+        const startTime = performance.now();
+        const response = await fetch("/api/prompt/text", {
+          method: "POST",
+          body: JSON.stringify({
+            promptType: options.promptType,
+            subject: options.subject,
+            accentClasses: templateData.accentClasses,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${data.session.access_token}`,
+          },
+        }).then((res) => res.json());
+        const endTime = performance.now();
+        const elapsedTime = endTime - startTime;
+        // TO DO: Show Error Here
+        if (response.text) {
+          content = response.text;
+          sample({
+            template,
+            subject: options.subject,
+            runningTime: elapsedTime,
+            result: response.text,
+          });
+        }
+      }
+
+      const chart = `${content}\n${template}`;
+
+      return supabase
+        .from("user_charts")
+        .insert({ name: options.name, chart: chart, user_id: userId })
+        .select();
+    },
+    {
+      onSettled: () => {
+        setIsAI(false);
+      },
+      onSuccess: (response: any) => {
+        const chartId = response.data[0]?.id;
+        if (chartId) navigate(`/u/${chartId}`);
+      },
+    }
+  );
+
+  const isProUser = useIsProUser();
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (!isProUser) {
+        showPaywall({
+          title: createUnlimitedTitle(),
+          content: createUnlimitedContent(),
+        });
+        return;
+      }
+      const data = new FormData(e.currentTarget);
+      const name = data.get("name")?.toString();
+      const template = data.get("template")?.toString();
+      const subject = data.get("subject")?.toString();
+      if (!name || !template) return;
+
+      const templateObj = templates.find((t) => t.key === template);
+      if (!templateObj) return;
+
+      const options: CreateChartOptions = {
+        name,
+        template,
+        promptType: templateObj.promptType,
+        subject,
+      };
+
+      createChartMutation.mutate(options);
+    },
+    [createChartMutation, isProUser]
+  );
 
   const language = useContext(AppContext).language;
-  const [name, setName] = useState<string>(
-    getFunFlowchartName(language as keyof typeof languages)
-  );
-  const type = "regular";
-  const [start, setStart] = useState<"blank" | "template" | "prompt">("blank");
-
-  // Template
-  const [template, setTemplate] = useState<string | null>(null);
-
-  // Boilerplate to create a new chart
-  const makeChartMutation = useMutation("makeChart", makeChart, {
-    retry: false,
-    onSuccess: (response: any) => {
-      queryClient.invalidateQueries(["auth", "hostedCharts"]);
-      navigate(`/u/${response.data[0].id}`, {
-        replace: true,
-      });
-    },
-  });
-
-  /**
-   * We only disable the create button if there is no title,
-   * but we leave it enabled to the paywall if the user is not pro
-   */
-  const createDisabled = !name;
-
-  const [parent] = useAutoAnimate();
 
   return (
-    <Page>
-      <form
-        className="w-full"
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (customerIsLoading || !checkedSession) return;
-          /**
-           * Uncomment this when we want to show the paywall modal
-           */
-          if (!isProUser) {
-            showPaywall({
-              title: createUnlimitedTitle(),
-              content: createUnlimitedContent(),
-            });
-            return;
-          }
-
-          if (!name) return;
-
-          if (!userId) return;
-
-          const chart = templateText ?? defaultDoc;
-
-          // If the user is starting with a prompt, we need to get the results
-          if (start === "prompt") {
-            const formData = new FormData(e.currentTarget);
-            const prompt = formData.get("prompt") as string;
-            const method = formData.get("method") as "instruct" | "extract";
-            if (!prompt || !method) return;
-
-            makeChartMutation.mutate({
-              name,
-              user_id: userId,
-              chart,
-              prompt,
-              method,
-              fromPrompt: true,
-            });
-          } else if (start === "template") {
-            if (!template) return;
-            makeChartMutation.mutate({
-              name,
-              user_id: userId,
-              template,
-            });
-          } else {
-            makeChartMutation.mutate({
-              name,
-              user_id: userId,
-              chart,
-            });
-          }
-        }}
-      >
-        <div className="grid gap-7 content-start" ref={parent}>
-          <PageTitle className="mb-4 text-center">
-            <Trans>Create a New Flowchart</Trans>
-          </PageTitle>
-          <div className="grid gap-0 w-full content-start">
-            <SmallLabel>
-              <Trans>Name</Trans>
-            </SmallLabel>
-            <AutoFocusInput
-              type="text"
-              name="name"
-              value={name}
-              autoComplete="off"
-              onChange={(e) => setName(e.target.value)}
-              className="w-full text-2xl mb-2 border-b-2 border-neutral-300 p-1 rounded-tr rounded-tl dark:border-neutral-700 dark:bg-[var(--color-background)] focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-400 placeholder-neutral-400 dark:placeholder-neutral-400 focus:placeholder-neutral-200 dark:focus:placeholder-neutral-700 rounded-none focus:bg-neutral-50 dark:focus:bg-neutral-800"
-              placeholder="Untitled"
-            />
-          </div>
-        </div>
-        <div className="grid gap-7 mt-7">
-          <div className="grid gap-3 w-full">
-            <SmallLabel>
-              <Trans>Getting Started</Trans>
-            </SmallLabel>
-            <RadioGroup.Root
-              asChild
-              value={start}
-              onValueChange={(value) => setStart(value as "blank" | "prompt")}
-              name="start"
-            >
-              <div className="grid w-full sm:flex gap-3">
-                <SmallTypeToggle
-                  title={t`Blank`}
-                  value="blank"
-                  icon={<NoteBlank size={24} />}
-                />
-                <SmallTypeToggle
-                  title={t`Template`}
-                  value="template"
-                  icon={<Presentation size={24} />}
-                />
-                <SmallTypeToggle
-                  title={t`AI Prompt`}
-                  value="prompt"
-                  icon={<Robot size={24} />}
-                  disabled={type !== "regular"}
-                />
-              </div>
-            </RadioGroup.Root>
-            <PromptDescription start={start} />
-            {start === "prompt" && <PromptSubmenu />}
-            {start === "template" && (
-              <TemplateSelection
-                setTemplate={setTemplate}
-                template={template}
-              />
-            )}
-          </div>
-          {!isProUser && (
-            <div className="justify-items-center grid">
-              <Warning>
-                <Link to="/pricing" className="flex items-center">
-                  <Rocket size={24} className="mr-2" />
-                  <p>
-                    <Trans>
-                      You can create unlimited permanent flowcharts with{" "}
-                      <span className="underline underline-offset-2">
-                        Flowchart Fun Pro
-                      </span>
-                      .
-                    </Trans>
-                  </p>
-                </Link>
-              </Warning>
-            </div>
-          )}
-          <Button2
-            type="submit"
-            disabled={createDisabled}
-            isLoading={makeChartMutation.isLoading}
-            color="blue"
-            size="md"
-            className="mx-auto"
+    <form
+      className="max-w-4xl mx-auto py-6 pt-10 px-4 w-full grid gap-12 content-start"
+      onSubmit={handleSubmit}
+    >
+      <h1 className="text-2xl font-bold md:mt-10 text-center">
+        <Trans>Create a New Chart</Trans>
+      </h1>
+      <Section title={t`Name Chart`}>
+        <Input
+          className="py-3"
+          name="name"
+          required
+          defaultValue={getFunFlowchartName(language as keyof typeof languages)}
+          data-1p-ignore
+          disabled={createChartMutation.isLoading}
+          aria-label={t`Name Chart`}
+        />
+      </Section>
+      <Section title={t`Choose Template`}>
+        <RadioGroup.Root asChild name="template" defaultValue="default">
+          <div
+            className="grid gap-x-2 gap-y-6 sm:grid-cols-2 md:grid-cols-3"
+            aria-label="Templates"
           >
-            <Trans>Create New Flowchart</Trans>
-          </Button2>
-        </div>
-      </form>
-    </Page>
-  );
-});
-
-const templates: {
-  key: string;
-  img: string;
-  bgColor: string;
-  title: () => string;
-}[] = [
-  {
-    key: "flowchart",
-    img: "template4.png",
-    bgColor: "#F2F2F2",
-    title: () => `Flowchart`,
-  },
-  {
-    key: "org-chart",
-    img: "template5.png",
-    bgColor: "#F1F8FE",
-    title: () => `Org Chart`,
-  },
-  {
-    key: "code-flow",
-    img: "template6.png",
-    bgColor: "#FFFFFF",
-    title: () => t`Software Flowchart`,
-  },
-  {
-    key: "mindmap",
-    img: "mindmap.png",
-    bgColor: "#FFFFFF",
-    title: () => `Mind Map`,
-  },
-];
-
-function TemplateSelection({
-  template,
-  setTemplate,
-}: {
-  template: string | null;
-  setTemplate: (template: string) => void;
-}) {
-  return (
-    <>
-      <RadioGroup.Root
-        className="grid gap-3 sm:grid-cols-2 mt-2"
-        value={template ?? undefined}
-        onValueChange={(value) => setTemplate(value)}
-      >
-        {templates.map((template, index) => (
-          <RadioGroup.Item value={template.key} key={template.key} asChild>
-            <button className="grid border rounded-lg overflow-hidden border-solid border-neutral-300 data-[state=checked]:shadow data-[state=checked]:border-neutral-400 group dark:border-neutral-700">
-              <div
-                className="p-2"
-                style={{ backgroundColor: template.bgColor }}
+            {templates.map((template) => (
+              <RadioGroup.Item
+                key={template.key}
+                value={template.key}
+                asChild
+                disabled={createChartMutation.isLoading}
               >
-                <img
-                  key={template.img}
-                  src={`/templates/${template.img}`}
-                  className="rounded w-full h-[350px] object-contain object-center"
-                  alt={`Template ${index}`}
-                />
-              </div>
-              <div className="text-sm p-4 border-t group-data-[state=checked]:border-neutral-400 group-data-[state=checked]:bg-neutral-100 dark:group-data-[state=checked]:bg-blue-500 group-data-[state=checked]:font-bold dark:border-neutral-700">
-                {template.title()}
-              </div>
-            </button>
-          </RadioGroup.Item>
-        ))}
-      </RadioGroup.Root>
-      <p className="text-xs text-neutral-500 italic justify-self-center">
-        <Trans>
-          Looking for a different template?{" "}
-          <Link to="/o" className="underline">
-            Let us know
-          </Link>
-        </Trans>
-      </p>
-    </>
+                <button className="grid gap-2 group focus:outline-foreground/10 focus:outline-2 outline-offset-4 rounded-md">
+                  {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+                  <div
+                    className="p-1 h-[283px] rounded-sm border border-foreground/10 opacity-70 hover:opacity-100 group-data-[state=checked]:opacity-100 group-data-[state=checked]:border-foreground/30 overflow-hidden group-data-[state=checked]:shadow-sm"
+                    style={{ backgroundColor: template.bgColor }}
+                  >
+                    <img
+                      key={template.img}
+                      src={`/templates/${template.img}`}
+                      className="rounded w-full h-full object-contain object-center"
+                      alt={template.key}
+                      height={273}
+                      width={273}
+                    />
+                  </div>
+                  <div className="flex gap-2 items-center justify-center">
+                    <span className="w-3 h-3 rounded-full border border-foreground/60 group-data-[state=checked]:border-foreground group-data-[state=checked]:bg-foreground dark:group-data-[state=checked]:bg-white dark:group-data-[state=checked]:border-white dark:border-background/50" />
+                    <h2 className="text-center text-sm text-foreground/60 group-data-[state=checked]:text-foreground dark:text-background/60 dark:group-data-[state=checked]:text-white">
+                      {template.title()}
+                    </h2>
+                  </div>
+                </button>
+              </RadioGroup.Item>
+            ))}
+          </div>
+        </RadioGroup.Root>
+      </Section>
+      <Section title={t`Set Content`}>
+        <Tabs.Root defaultValue="default">
+          <Tabs.List asChild>
+            <div className="flex">
+              <Trigger value="default" disabled={createChartMutation.isLoading}>
+                <Article size={16} />
+                <Trans>Use Default Content</Trans>
+              </Trigger>
+              <Trigger
+                value="ai"
+                disabled={createChartMutation.isLoading}
+                data-testid="Use AI"
+              >
+                <MagicWand size={16} />
+                <Trans>Use AI</Trans>
+              </Trigger>
+            </div>
+          </Tabs.List>
+          <Tabs.Content value="ai" className="pt-4 grid gap-2">
+            <p className="text-neutral-700 leading-6 text-xs dark:text-neutral-300">
+              <Trans>
+                Enter a prompt or information you would like to create a chart
+                from.
+              </Trans>
+            </p>
+            <Textarea
+              className="h-[120px]"
+              name="subject"
+              disabled={createChartMutation.isLoading}
+            />
+          </Tabs.Content>
+        </Tabs.Root>
+      </Section>
+      <div className="grid justify-center justify-items-center gap-2">
+        {!isProUser && (
+          <div className="justify-items-center grid">
+            <Warning>
+              <Link to="/pricing" className="flex items-center">
+                <Rocket size={24} className="mr-2" />
+                <p>
+                  <Trans>
+                    You can create unlimited permanent flowcharts with{" "}
+                    <span className="underline underline-offset-2">
+                      Flowchart Fun Pro
+                    </span>
+                    .
+                  </Trans>
+                </p>
+              </Link>
+            </Warning>
+          </div>
+        )}
+        <Button2
+          color="blue"
+          leftIcon={<Plus size={16} />}
+          type="submit"
+          isLoading={createChartMutation.isLoading}
+        >
+          <Trans>Create</Trans>
+        </Button2>
+        {isAI && (
+          <p className="text-neutral-700 leading-6 text-xs dark:text-neutral-300">
+            <Trans>
+              This may take between 30 seconds and 2 minutes depending on the
+              length of your input.
+            </Trans>
+          </p>
+        )}
+      </div>
+    </form>
   );
 }
 
-function PromptDescription({
-  start,
-}: {
-  start: "prompt" | "blank" | "template";
-}) {
-  switch (start) {
-    case "blank":
-      return (
-        <span className="text-xs text-neutral-500 italic">
-          <Trans>
-            Begin with a simple example showing how <span>Flowchart Fun</span>{" "}
-            works.
-          </Trans>
-        </span>
-      );
-    case "template":
-      return (
-        <span className="text-xs text-neutral-500 italic">
-          <Trans>Choose a template to get started.</Trans>
-        </span>
-      );
-    case "prompt":
-      return (
-        <span className="text-xs text-neutral-500 italic">
-          <Trans>
-            Use AI to generate a flowchart from a prompt.{" "}
-            <Link
-              to="/blog/post/flowchart-fun-ai-prompt-feature-demo"
-              className="underline"
-            >
-              Learn More
-            </Link>
-          </Trans>
-        </span>
-      );
-  }
-}
-
-function SmallTypeToggle({
-  title,
-  icon,
-  ...rest
-}: {
-  title: string;
-  icon: ReactNode;
-} & Parameters<typeof RadioGroup.Item>[0]) {
+function Trigger(props: Parameters<typeof Tabs.Trigger>[0]) {
   return (
-    <RadioGroup.Item {...rest} asChild>
-      <button className="bg-neutral-100 border-neutral-100 px-6 pl-5 py-3 rounded dark:bg-neutral-700 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-600 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-800 dark:data-[state=checked]:border-neutral-500 dark:hover:border-neutral-400 flex gap-3 items-center disabled:opacity-50 disabled:cursor-not-allowed">
-        {icon}
-        <span className="text-lg">{title}</span>
-      </button>
-    </RadioGroup.Item>
-  );
-}
-
-/**
- * A component that autofocuses it's first input on mount
- */
-function AutoFocusInput(
-  props: React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >
-) {
-  const ref = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    if (ref.current) ref.current.focus();
-  }, []);
-  return <input ref={ref} {...props} />;
-}
-
-function SmallLabel({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <span className={`text-neutral-500 text-sm ${className}`}>{children}</span>
-  );
-}
-
-const placeholders: Record<"instruct" | "extract", string> = {
-  instruct: `The stages of the water cycle.`,
-  extract: `Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.`,
-};
-
-const promptExamples = {
-  instruct: [
-    () => t`Keeping track of who's who in the market for our software product`,
-    () =>
-      t`Making our supply chain better: cutting costs, working faster, and getting everyone involved`,
-    () =>
-      t`A step-by-step guide for students on how to write an essay, from thinking of ideas to making final edits`,
-  ],
-  extract: [
-    () =>
-      t`Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere.`,
-  ],
-};
-
-function PromptSubmenu() {
-  const [method, setMethod] = useState<"instruct" | "extract">("instruct");
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const [example, setExample] = useState(
-    promptExamples.instruct[
-      Math.floor(Math.random() * promptExamples.instruct.length)
-    ]()
-  );
-  const intervalRef = useRef<NodeJS.Timer | null>(null);
-
-  // Choose a random example when the method changes
-  useEffect(() => {
-    const options = promptExamples[method];
-    setExample(options[Math.floor(Math.random() * options.length)]());
-  }, [method]);
-
-  // Write the placeholder when the example changes
-  useEffect(() => {
-    if (!textareaRef.current) return;
-    const chars = example.split("");
-    let i = 0;
-    // erase the current placeholder
-    textareaRef.current.placeholder = "";
-    intervalRef.current = setInterval(() => {
-      if (!textareaRef.current) {
-        if (intervalRef.current) clearInterval(intervalRef.current);
-        return;
-      }
-      if (i >= chars.length) {
-        if (intervalRef.current) clearInterval(intervalRef.current);
-        return;
-      }
-      textareaRef.current.placeholder += chars[i];
-      i++;
-    }, 15);
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [example]);
-
-  // If the user focuses the textarea, set the placeholder to the complete example
-  // and clear the interval
-  useEffect(() => {
-    if (!textareaRef.current) return;
-    textareaRef.current.addEventListener("focus", () => {
-      if (!textareaRef.current) return;
-      textareaRef.current.placeholder = example;
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    });
-  }, [example]);
-
-  return (
-    <>
-      <SmallLabel className="mt-3">
-        <Trans>Method</Trans>
-      </SmallLabel>
-      <RadioGroup.Root
-        value={method}
-        name="method"
-        onValueChange={(value) => setMethod(value as "instruct" | "extract")}
-        className="justify-self-start"
-      >
-        <div className="flex justify-start gap-3 justify-self-start focus-within:ring-4 ring-neutral-200 dark:ring-neutral-800 rounded">
-          <PromptSubmenuRadioItem
-            value="instruct"
-            title={t`Instruct`}
-            description={t`Describe the flowchart you wish to create`}
-          />
-          <PromptSubmenuRadioItem
-            value="extract"
-            title={t`Extract`}
-            description={t`Paste the information you wish to convert to a flowchart`}
-          />
-        </div>
-      </RadioGroup.Root>
-      <Textarea
-        className="resize-none mt-2 text-sm leading-normal"
-        rows={6}
-        name="prompt"
-        placeholder={placeholders[method]}
-        ref={textareaRef}
-      />
-    </>
-  );
-}
-
-function PromptSubmenuRadioItem({
-  title,
-  description,
-  ...rest
-}: {
-  title: string;
-  description: ReactNode;
-} & Parameters<typeof RadioGroup.Item>[0]) {
-  return (
-    <RadioGroup.Item {...rest} asChild>
-      <button
-        data-testid={rest.value}
-        className="bg-neutral-100 border-neutral-100 p-4 rounded grid justify-start text-left gap-1 dark:bg-neutral-800 data-[state=checked]:bg-neutral-200 dark:data-[state=checked]:bg-neutral-700 data-[state=checked]:border-neutral-400 border-solid border border-b-2 transition duration-200 ease-in-out outline-none focus:shadow-none focus:outline-none hover:border-neutral-200 dark:border-neutral-700 dark:data-[state=checked]:border-neutral-400 dark:hover:border-neutral-400 max-w-[300px]"
-      >
-        <span className="font-bold text-neutral-700 dark:text-neutral-100 mb-1">
-          {title}
-        </span>
-        <div className="text-sm text-neutral-500 dark:text-neutral-300 leading-tight">
-          {description}
-        </div>
-      </button>
-    </RadioGroup.Item>
-  );
-}
-const Textarea = forwardRef<
-  HTMLTextAreaElement,
-  React.DetailedHTMLProps<
-    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-    HTMLTextAreaElement
-  > & { className?: string }
->(({ className = "", ...rest }, ref) => {
-  return (
-    <textarea
-      ref={ref}
-      data-testid="prompt-entry-textarea"
-      className={`focus:shadow-inner leading-[1.3] bg-neutral-100 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 focus:border-neutral-400 dark:focus:border-neutral-600 rounded p-4 text-neutral-700 dark:text-neutral-300 placeholder-neutral-400 dark:placeholder-neutral-400 ${className}`}
-      {...rest}
+    <Tabs.Trigger
+      className="pb-3 px-2 rounded-md rounded-none border-0 border-b-2 border-solid border-b-foreground/10 data-[state=active]:border-foreground text-foreground/40 data-[state=active]:text-foreground dark:border-b-neutral-800 dark:text-background/40 dark:data-[state=active]:text-white dark:data-[state=active]:border-white flex items-center gap-2"
+      {...props}
     />
   );
-});
+}
 
-Textarea.displayName = "Textarea";
-
-/*
-
-Market understanding and competitive landscape maintenance for SaaS product development
-Process for corporate social responsibility initiatives development and implementation across company operations
-Supply chain analysis and optimization: cost reduction, efficiency improvement, and stakeholder collaboration
-Essay writing process flowchart, guiding students through brainstorming, outlining, drafting, and revising stages
-
-*/
+function Section({
+  children,
+  title,
+}: {
+  children: React.ReactNode;
+  title: string;
+}) {
+  return (
+    <section className="grid gap-4">
+      <h1 className="text-xl">{title}</h1>
+      {children}
+    </section>
+  );
+}
