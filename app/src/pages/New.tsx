@@ -165,6 +165,7 @@ export default function New2() {
           defaultValue={getFunFlowchartName(language as keyof typeof languages)}
           data-1p-ignore
           disabled={createChartMutation.isLoading}
+          aria-label={t`Name Chart`}
         />
       </Section>
       <Section title={t`Choose Template`}>

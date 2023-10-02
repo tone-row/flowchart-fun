@@ -109,8 +109,8 @@ test("Sign Up", async () => {
 
 test("Create new chart", async () => {
   await page.getByRole("link", { name: "New" }).click();
-  await page.getByPlaceholder("Untitled").fill("my new chart");
-  await page.getByRole("button", { name: "Create New Flowchart" }).click();
+  await page.getByLabel("Name Chart").fill("my new chart");
+  await page.getByRole("button", { name: "Create" }).click();
   // expect url to be regex BASE_URL + /u/\d+
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
 });
