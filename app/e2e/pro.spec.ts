@@ -208,7 +208,7 @@ test("Create chart from ai", async () => {
 test("Create chart from imported data", async () => {
   try {
     await page.getByRole("link", { name: "New" }).click();
-    await page.getByRole("button", { name: "Create New Flowchart" }).click();
+    await page.getByRole("button", { name: "Create" }).click();
     await page.waitForURL(new RegExp(`${BASE_URL}/u/\\d+`));
     await page.getByRole("button", { name: "Import Data" }).click();
 
