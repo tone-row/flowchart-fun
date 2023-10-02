@@ -7,7 +7,6 @@ body:not([class*="disableAnimation"]) .Button {
 
 .Input {
   position: relative;
-  border-radius: 0;
   border: 1px solid var(--color-uiAccent);
   background-color: var(--color-input);
   color: var(--color-uiAccent);

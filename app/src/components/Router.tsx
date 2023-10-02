@@ -47,7 +47,7 @@ export default function Router() {
           }
         />
         <Route
-          path="/n/:graphText?"
+          path="/new"
           element={
             <AuthWall>
               <New />

@@ -63,7 +63,7 @@ type InputProps = { isLoading?: boolean } & React.DetailedHTMLProps<
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ isLoading, className = "", ...props }, ref) => {
     return (
-      <Box p={2} px={3} rad={1} className={[styles.Input, className].join(" ")}>
+      <div className={classNames("p-2 px-3 rounded", styles.Input, className)}>
         <input
           autoComplete="off"
           type="text"
@@ -79,7 +79,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             c="var(--color-uiAccent)"
           />
         )}
-      </Box>
+      </div>
     );
   }
 );

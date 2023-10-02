@@ -1,10 +1,8 @@
-import { Configuration, OpenAIApi } from "openai";
+import { OpenAI } from "openai";
 
 const apiKey = process.env.OPENAI_SECRET;
 if (!apiKey) throw new Error("No OpenAI API key provided");
 
-const configuration = new Configuration({
+export const openai = new OpenAI({
   apiKey,
 });
-
-export const openai = new OpenAIApi(configuration);

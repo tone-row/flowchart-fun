@@ -49,7 +49,7 @@ export const Header = memo(function SharedHeader() {
   const isChangelogPage = pathname === "/changelog";
   const isRoadmapPage = pathname === "/roadmap";
   const isSignUpPage = pathname === "/i";
-  const isNewPage = pathname === "/n";
+  const isNewPage = pathname === "/new";
   const isPrivacyPolicyPage = pathname === "/privacy-policy";
   const isInfoPage = isBlogPage || isChangelogPage || isRoadmapPage;
   const isEditor =
@@ -80,7 +80,7 @@ export const Header = memo(function SharedHeader() {
                   icon={<Plus weight="light" height={22} width={22} />}
                   className="shared-header__new"
                   aria-current={isNewPage ? "page" : undefined}
-                  to="/n"
+                  to="/new"
                 />
               </NavigationMenu.Item>
               <NavigationMenu.Item asChild>
@@ -337,7 +337,7 @@ function MobileHeader({
               label={t`New`}
               icon={<Plus weight="light" height={22} width={22} />}
               className="shared-header__new"
-              to="/n"
+              to="/new"
             />
             <HeaderClientLink
               label={t`Charts`}

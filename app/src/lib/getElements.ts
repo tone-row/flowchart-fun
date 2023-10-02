@@ -21,7 +21,12 @@ export function getElements(text: string): ElementDefinition[] {
         height: element.data.h || "label",
       };
     } else {
-      size = getSize(element?.data?.label, (element?.classes ?? "").split(" "));
+      const classes = element.classes
+        ? Array.isArray(element.classes)
+          ? element.classes
+          : element.classes.split(" ")
+        : [];
+      size = getSize(element?.data?.label, classes);
     }
 
     // get in-degree and out-degree

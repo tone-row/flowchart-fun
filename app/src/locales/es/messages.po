@@ -49,14 +49,6 @@ msgstr "<0>Actualmente tiene una cuenta gratuita. <1/><2>Conozca nuestras caract
 msgid "A new version of the app is available. Please reload to update."
 msgstr "Una nueva versión de la aplicación está disponible. Por favor, recargue para actualizar."
 
-#: src/pages/New.tsx:437
-msgid "A step-by-step guide for students on how to write an essay, from thinking of ideas to making final edits"
-msgstr "Una guía paso a paso para estudiantes sobre cómo escribir un ensayo, desde pensar en ideas hasta realizar ediciones finales"
-
-#: src/pages/New.tsx:213
-msgid "AI Prompt"
-msgstr "Solicitud de IA"
-
 #: src/components/Settings.tsx:105
 msgid "About"
 msgstr "Acerca de"
@@ -118,14 +110,6 @@ msgstr "Comienza a escribir"
 #: src/pages/Pricing.tsx:39
 msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
 msgstr "¡Comience con una solicitud como Diagrama de flujo de soporte al cliente y Flowchart Fun creará un diagrama de flujo para usted!"
-
-#: src/pages/New.tsx:351
-msgid "Begin with a simple example showing how <0>Flowchart Fun</0> works."
-msgstr "Comienza con un ejemplo sencillo mostrando cómo funciona <0>Flowchart Fun</0>."
-
-#: src/pages/New.tsx:203
-msgid "Blank"
-msgstr "En blanco"
 
 #: src/components/Header.tsx:140
 #: src/components/Header.tsx:365
@@ -191,6 +175,10 @@ msgstr "Revise su correo electrónico para obtener un enlace para iniciar sesió
 msgid "Choose"
 msgstr "Seleccionar"
 
+#: src/pages/New.tsx:170
+msgid "Choose Template"
+msgstr "Elige plantilla"
+
 #: src/components/PaymentStepper.tsx:71
 msgid "Choose a Plan"
 msgstr "Elija un Plan"
@@ -198,10 +186,6 @@ msgstr "Elija un Plan"
 #: src/components/ThemePicker.tsx:73
 msgid "Choose a Theme"
 msgstr "Seleccione un tema"
-
-#: src/pages/New.tsx:360
-msgid "Choose a template to get started."
-msgstr "Elija una plantilla para comenzar."
 
 #: src/components/LearnSyntaxDialog.tsx:318
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
@@ -312,21 +296,21 @@ msgstr "Copiar código SVG"
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copia tu código mermaid.js o abrilo directamente en el editor en vivo de mermaid.js."
 
+#: src/pages/New.tsx:264
+msgid "Create"
+msgstr "Crear"
+
 #: src/pages/Pricing.tsx:79
 msgid "Create Flowcharts from a Prompt with AI"
 msgstr "Cree diagramas de flujo desde una solicitud con IA"
-
-#: src/pages/New.tsx:255
-msgid "Create New Flowchart"
-msgstr "Crear un nuevo diagrama de flujo"
 
 #: src/lib/paywallCopy.ts:3
 msgid "Create Unlimited Flowcharts"
 msgstr "Crear diagramas de flujo ilimitados"
 
-#: src/pages/New.tsx:173
-msgid "Create a New Flowchart"
-msgstr "Crear un nuevo diagrama de flujo"
+#: src/pages/New.tsx:158
+msgid "Create a New Chart"
+msgstr "Crea un nuevo gráfico"
 
 #: src/pages/Pricing.tsx:104
 msgid "Create unlimited diagrams for just $3/month!"
@@ -368,10 +352,6 @@ msgstr "Importación de datos"
 #: src/pages/Account.tsx:272
 msgid "Date"
 msgstr "Fecha"
-
-#: src/pages/New.tsx:512
-msgid "Describe the flowchart you wish to create"
-msgstr "Describa el flujograma que desea crear"
 
 #: src/pages/Pricing.tsx:44
 msgid "Direct from your Data"
@@ -503,6 +483,10 @@ msgstr "Correo electrónico"
 msgid "Empty"
 msgstr "Vacío"
 
+#: src/pages/New.tsx:226
+msgid "Enter a prompt or information you would like to create a chart from."
+msgstr "Introduce una solicitud o información de la que desea crear un gráfico."
+
 #: src/components/PaymentStepper.tsx:127
 msgid "Enter your email"
 msgstr "Introduzca su correo electrónico"
@@ -535,10 +519,6 @@ msgstr "Exporta flujogramas de calidad profesional sin marcas de agua para usar 
 #: src/components/GraphContextMenu.tsx:239
 msgid "Extra Large"
 msgstr "Extra Grande"
-
-#: src/pages/New.tsx:516
-msgid "Extract"
-msgstr "Extraer"
 
 #: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:104
@@ -577,10 +557,6 @@ msgstr "Pantalla completa"
 #: src/components/Tabs/EditLayoutTab.tsx:202
 msgid "Get More Layouts"
 msgstr "Obtén más diseños"
-
-#: src/pages/New.tsx:193
-msgid "Getting Started"
-msgstr "Comenzando"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -665,17 +641,13 @@ msgstr "Incluye un título usando un atributo <0>title</0>. Para usar el color d
 msgid "Info"
 msgstr "Información"
 
-#: src/pages/New.tsx:511
-msgid "Instruct"
-msgstr "Instruir"
-
 #: src/components/ImportDataDialog.tsx:547
 msgid "Is"
 msgstr "Es"
 
-#: src/pages/New.tsx:433
-msgid "Keeping track of who's who in the market for our software product"
-msgstr "Manteniendo el control de quién es quién en el mercado para nuestro producto de software"
+#: src/lib/templates/templates.ts:56
+msgid "Knowledge Graph"
+msgstr "Gráfico de conocimiento"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -771,10 +743,6 @@ msgstr "Inicia sesión para guardar"
 msgid "Log in to start creating flowcharts."
 msgstr "Inicie sesión para comenzar a crear diagramas de flujo."
 
-#: src/pages/New.tsx:331
-msgid "Looking for a different template? <0>Let us know</0>"
-msgstr "¿Buscando una plantilla diferente? <0>Háganos saber</0>"
-
 #: src/components/Settings.tsx:164
 msgid "Make a One-Time Donation"
 msgstr "Realizar una donación única"
@@ -786,10 +754,6 @@ msgstr "Hacerlo accesible al público"
 #: src/components/PaymentStepper.tsx:131
 msgid "Make sure you use the same email you will use to log in."
 msgstr "Asegúrate de usar el mismo correo electrónico que usarás para iniciar sesión."
-
-#: src/pages/New.tsx:435
-msgid "Making our supply chain better: cutting costs, working faster, and getting everyone involved"
-msgstr "Mejorando nuestra cadena de suministro: reduciendo costos, trabajando más rápido y involucrando a todos"
 
 #: src/pages/Account.tsx:521
 msgid "Manage Billing"
@@ -803,10 +767,6 @@ msgstr "Datos de mapa"
 msgid "Medium"
 msgstr "Medio"
 
-#: src/pages/New.tsx:500
-msgid "Method"
-msgstr "Método"
-
 #: src/components/MigrateTempFlowchartsModal.tsx:33
 msgid "Migrate Flowcharts"
 msgstr "Flujo de migración"
@@ -819,9 +779,9 @@ msgstr "Mensual"
 msgid "Multiple pointers on same line"
 msgstr "Múltiples punteros en la misma línea"
 
-#: src/pages/New.tsx:177
-msgid "Name"
-msgstr "Nombre"
+#: src/pages/New.tsx:160
+msgid "Name Chart"
+msgstr "Nombre del gráfico"
 
 #: src/components/Header.tsx:79
 #: src/components/Header.tsx:337
@@ -921,6 +881,7 @@ msgid "Or, you can <0>create a new subscription</0>."
 msgstr "O, puedes <0>crear una nueva suscripción</0>."
 
 #: src/components/ShareDialog.tsx:456
+#: src/lib/templates/templates.ts:40
 msgid "Organization Chart"
 msgstr "Organigrama"
 
@@ -944,10 +905,6 @@ msgstr "Contraseña"
 msgid "Past Due"
 msgstr "Vencido"
 
-#: src/pages/New.tsx:517
-msgid "Paste the information you wish to convert to a flowchart"
-msgstr "Pegue la información que desea convertir a un diagrama de flujo"
-
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "Los gráficos permanentes son una característica Pro"
@@ -965,6 +922,10 @@ msgstr "Puntero y contenedor en la misma línea"
 #: src/components/Settings.tsx:138
 msgid "Privacy Policy"
 msgstr "Política de privacidad"
+
+#: src/lib/templates/templates.ts:48
+msgid "Process Diagram"
+msgstr "Diagrama de proceso"
 
 #: src/components/ImportDataDialog.tsx:269
 msgid "Processing Data"
@@ -1082,6 +1043,10 @@ msgstr "Guardar"
 msgid "Send Feedback"
 msgstr "Enviar comentarios"
 
+#: src/pages/New.tsx:210
+msgid "Set Content"
+msgstr "Establecer contenido"
+
 #: src/components/Header.tsx:175
 #: src/components/Header.tsx:382
 #: src/components/Settings.tsx:35
@@ -1120,10 +1085,6 @@ msgstr "Tamaño"
 #: src/components/GraphContextMenu.tsx:225
 msgid "Small"
 msgstr "Pequeño"
-
-#: src/pages/New.tsx:285
-msgid "Software Flowchart"
-msgstr "Diagrama de flujo de software"
 
 #: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
@@ -1201,10 +1162,6 @@ msgstr "Columna objetivo"
 msgid "Target Delimiter"
 msgstr "Delimitador objetivo"
 
-#: src/pages/New.tsx:208
-msgid "Template"
-msgstr "Plantilla"
-
 #: src/components/LearnSyntaxDialog.tsx:170
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "El texto seguido de dos puntos y un espacio crea un borde con el texto como etiqueta"
@@ -1260,6 +1217,10 @@ msgstr "Esta acción no se puede deshacer."
 #: src/components/SvgProOnlyPopover.tsx:21
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "Esta característica solo está disponible para usuarios profesionales. <0>Conviértete en un usuario profesional</0> para desbloquearla."
+
+#: src/pages/New.tsx:268
+msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
+msgstr "Esto puede tardar entre 30 segundos y 2 minutos dependiendo de la longitud de su entrada."
 
 #: src/components/LoadFromHashDialog.tsx:41
 msgid "This will replace your current sandbox."
@@ -1351,9 +1312,13 @@ msgstr "Actualizar a Pro"
 msgid "Upload your File"
 msgstr "Subir tu archivo"
 
-#: src/pages/New.tsx:366
-msgid "Use AI to generate a flowchart from a prompt. <0>Learn More</0>"
-msgstr "Usar IA para generar un diagrama de flujo a partir de una solicitud. <0>Aprende más</0>"
+#: src/pages/New.tsx:220
+msgid "Use AI"
+msgstr "Usar IA"
+
+#: src/pages/New.tsx:216
+msgid "Use Default Content"
+msgstr "Usar contenido predeterminado"
 
 #: src/lib/getDefaultText.ts:7
 msgid "Use an ID to Connect"
@@ -1403,10 +1368,6 @@ msgstr "Visualice sus Ideas de Inmediato con <0>Flowchart Fun Pro</0>"
 msgid "Want to keep your flowcharts? Upgrade to our Pro account. With Pro, you can save unlimited flowcharts and never lose your creativity."
 msgstr "¿Quieres guardar tus diagramas de flujo? Actualiza a nuestra cuenta Pro. Con Pro, puedes guardar diagramas de flujo ilimitados y nunca perder tu creatividad."
 
-#: src/pages/New.tsx:441
-msgid "Water evaporates from the Earth's surface, rises into the atmosphere and falls back down as precipitation. This water then runs off into rivers, lakes and oceans, where it again evaporates and is recycled back into the atmosphere."
-msgstr "El agua evapora desde la superficie de la Tierra, se eleva a la atmósfera y cae de nuevo como precipitación. Luego, este agua se desvía a ríos, lagos y océanos, donde vuelve a evaporarse y se recicla de nuevo a la atmósfera."
-
 #: src/pages/Pricing.tsx:66
 msgid "Watermarked Images"
 msgstr "Imágenes con marca de agua"
@@ -1443,7 +1404,7 @@ msgstr "Sí: Opción A"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Estás a punto de agregar {numNodes} nodos y {numEdges} bordes a tu gráfico."
 
-#: src/pages/New.tsx:235
+#: src/pages/New.tsx:246
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "Puede crear diagramas de flujo ilimitados y permanentes con <0>Flowchart Fun Pro</0>."
 
