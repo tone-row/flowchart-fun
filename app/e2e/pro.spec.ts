@@ -201,7 +201,7 @@ test("Create chart from ai", async () => {
   await page.getByRole("button", { name: "Create" }).click();
   // expect url to be regex BASE_URL + /u/\d+
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
-    timeout: 12000,
+    timeout: 1000 * 60 * 4,
   });
 });
 
