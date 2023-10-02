@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pnpm lint-staged && pnpm -F app typecheck
+pnpm lint-staged && pnpm -F app check
