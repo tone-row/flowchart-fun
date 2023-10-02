@@ -216,7 +216,11 @@ export default function New2() {
                 <Article size={16} />
                 <Trans>Use Default Content</Trans>
               </Trigger>
-              <Trigger value="ai" disabled={createChartMutation.isLoading}>
+              <Trigger
+                value="ai"
+                disabled={createChartMutation.isLoading}
+                data-testid="Use AI"
+              >
                 <MagicWand size={16} />
                 <Trans>Use AI</Trans>
               </Trigger>
