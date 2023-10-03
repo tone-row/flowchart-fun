@@ -35,8 +35,8 @@ export const templates: {
   },
   {
     key: "org-chart",
-    img: "template8.png",
-    bgColor: "#FFFFFF",
+    img: "template17.png",
+    bgColor: "#fefdf9",
     title: () => t`Organization Chart`,
     promptType: "flowchart",
     accentClasses: ["color_blue", "color_orange"],
