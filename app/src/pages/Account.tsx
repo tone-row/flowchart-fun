@@ -16,11 +16,11 @@ const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 import { AppContext } from "../components/AppContext";
 import Loading from "../components/Loading";
 import { formatCents, formatDate } from "../lib/helpers";
-import { queryClient, useOrderHistory } from "../lib/queries";
+import { mail, queryClient, useOrderHistory } from "../lib/queries";
 import { supabase } from "../lib/supabaseClient";
 import { Box } from "../slang";
 import { Content, Overlay } from "../ui/Dialog";
-import { Button2, Input, Notice, Page, Section } from "../ui/Shared";
+import { Button2, Input, Notice, Page, Section, Textarea } from "../ui/Shared";
 import { Description, Label, PageTitle, SectionTitle } from "../ui/Typography";
 import styles from "./Account.module.css";
 import {
@@ -28,7 +28,6 @@ import {
   useSubscriptionStatusDisplay,
   useCanSalvageSubscription,
 } from "../lib/hooks";
-import { sendLoopsEvent } from "../lib/sendLoopsEvent";
 
 export default function Account() {
   const { customer, session, customerIsLoading } = useContext(AppContext);
@@ -365,22 +364,40 @@ function ConfirmCancel({
       setLoading(false);
       onOpenChange(false);
     }
-    sendLoopsEvent({ email, eventName: "cancel_subscription" });
+    mail({
+      from: email,
+      to: process.env.REACT_APP_FEEDBACK_TO as string,
+      subject: "Flowchart Fun Cancel Subscription",
+      text: "Reason for canceling: " + reason,
+    });
   }
+
+  const [reason, setReason] = useState("");
   return (
     <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Overlay />
-      <Content>
-        <p className="text-sm leading-normal">
-          <Trans>Do you want to cancel your subscription?</Trans>
+      <Content maxWidthClass="max-w-[500px]">
+        <h2 className="text-lg font-bold">Cancel Subscription</h2>
+        <p className="text-xs leading-normal">
+          <Trans>
+            We're sorry to hear that you're considering canceling your
+            subscription. Please let us know why you're canceling so we can
+            improve our service. Thank you!
+          </Trans>
         </p>
+        <Textarea
+          placeholder={t`Product is too expensive...`}
+          value={reason}
+          onChange={(e) => setReason(e.target.value)}
+          className="p-1 h-[160px]"
+        />
         <div className="flex justify-between mt-4">
           <Button2 onClick={() => onOpenChange(false)} disabled={loading}>
             <Trans>Return</Trans>
           </Button2>
           <Button2
-            disabled={loading}
+            disabled={loading || !reason}
             onClick={cancelSubscription}
             color="red"
             isLoading={loading}
