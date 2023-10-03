@@ -109,7 +109,7 @@ function Pricing() {
         >
           <video autoPlay loop muted playsInline>
             <source
-              src="https://res.cloudinary.com/tone-row/video/upload/v1691082804/yostpfwi8j2ft1legmss.mp4"
+              src="https://res.cloudinary.com/tone-row/video/upload/v1696355335/duovvvtaihm85nx5kwlq.mp4"
               type="video/mp4"
             />
           </video>
