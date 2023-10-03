@@ -29,9 +29,11 @@ const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
 import Page404 from "../pages/404";
+import { useSupportLegacyNRoute } from "../lib/useSupportLegacyNRoute";
 
 export default function Router() {
   usePageViews();
+  useSupportLegacyNRoute();
   return (
     <Routes>
       <Route path="/" element={<Wrapper />}>

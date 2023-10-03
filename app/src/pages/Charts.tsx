@@ -94,7 +94,7 @@ export default function Charts() {
           </PageTitle>
           <Button2
             leftIcon={<Plus size={16} />}
-            onClick={() => navigate("/n")}
+            onClick={() => navigate("/new")}
             color="blue"
           >
             <Trans>New</Trans>
