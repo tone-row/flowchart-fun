@@ -59,5 +59,5 @@ async function loadReadOnly(path: string, graphText: string) {
 }
 
 function isCompressed(pathname: string) {
-  return ["/c", "/f", "/n"].some((p) => pathname === p);
+  return ["/c", "/f", "/n", "/new"].some((p) => pathname === p);
 }
