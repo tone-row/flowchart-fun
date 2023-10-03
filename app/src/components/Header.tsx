@@ -76,19 +76,19 @@ export const Header = memo(function SharedHeader() {
               </span>
               <NavigationMenu.Item asChild>
                 <HeaderClientLink
+                  label={t`Editor`}
+                  icon={<TreeStructure weight="light" height={22} width={22} />}
+                  aria-current={isEditor ? "page" : undefined}
+                  to={lastChart}
+                />
+              </NavigationMenu.Item>
+              <NavigationMenu.Item asChild>
+                <HeaderClientLink
                   label={t`New`}
                   icon={<Plus weight="light" height={22} width={22} />}
                   className="shared-header__new"
                   aria-current={isNewPage ? "page" : undefined}
                   to="/new"
-                />
-              </NavigationMenu.Item>
-              <NavigationMenu.Item asChild>
-                <HeaderClientLink
-                  label={t`Editor`}
-                  icon={<TreeStructure weight="light" height={22} width={22} />}
-                  aria-current={isEditor ? "page" : undefined}
-                  to={lastChart}
                 />
               </NavigationMenu.Item>
               <NavigationMenu.Item asChild>

@@ -324,7 +324,6 @@ function getGraphUpdater({
       // If it's the first render, randomize cannot be false
       // Because the graph has no positions yet
       if (!isGraphInitialized.current && layout.name === "fcose") {
-        console.log("randomize");
         layout.randomize = true;
       }
 

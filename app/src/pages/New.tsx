@@ -54,7 +54,7 @@ export default function New2() {
         const chart = getDefaultChart();
         const parts = chart.split("=====");
         content = parts[0];
-        template = `=====${template}=====`;
+        template = `=====${parts[1]}=====`;
       } else {
         const importTemplate = await import(
           `../lib/templates/${options.template}-template.ts`
