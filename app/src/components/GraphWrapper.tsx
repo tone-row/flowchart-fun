@@ -25,7 +25,6 @@ export default function GraphWrapper({
         data-showing={showing ? "editor" : undefined}
         className={styles.GraphWrapper}
         data-is-fullscreen={isFullscreen}
-        at={isFullscreen ? undefined : { tablet: { pr: 2, pb: 2 } }}
         {...boxProps}
       >
         {isFullscreen ? (
@@ -33,10 +32,7 @@ export default function GraphWrapper({
         ) : (
           <Box
             template={"minmax(0, 1fr) / minmax(0, 1fr)"}
-            className={classNames(
-              styles.GraphWrapperInner,
-              "border dark:border-neutral-600 border-solid"
-            )}
+            className={classNames(styles.GraphWrapperInner)}
           >
             {children}
             <GraphFloatingMenu />

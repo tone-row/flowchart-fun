@@ -40,11 +40,11 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
       <header
         className={classNames(
           styles.HeaderTitle,
-          "flex items-center gap-2 justify-between pl-6 pr-2 pt-2"
+          "flex items-center gap-2 justify-between pl-6 pr-2"
         )}
       >
         {isSandbox ? (
-          <FlowchartTitle title={title} className="-translate-y-[2px]">
+          <FlowchartTitle title={title} className="-translate-y-[2px] mt-2">
             {pageTitle}
           </FlowchartTitle>
         ) : (

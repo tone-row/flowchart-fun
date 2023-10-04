@@ -3,7 +3,7 @@ import { memo, ReactNode } from "react";
 
 import { useIsEditorView } from "../lib/hooks";
 import { useEditorStore } from "../lib/useEditorStore";
-import { PiArrowsOutLineHorizontalBold } from "react-icons/pi";
+import { PiArrowsOutLineHorizontal } from "react-icons/pi";
 import styles from "./TabPane.module.css";
 import classNames from "classnames";
 
@@ -78,11 +78,19 @@ export default TabPane;
 
 const Handle = ({ dragging = false }: { dragging: boolean }) => (
   <div
-    className="hidden md:block w-0 h-full translate-x-[5px] relative z-[12]"
+    className="hidden md:block w-px bg-neutral-200 dark:bg-foreground h-full translate-x-[5px] relative z-[12]"
     data-dragging={dragging}
   >
-    <button className="absolute top-1/2 left-0 -translate-x-1/2 p-1 rounded bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-700 dark:hover:bg-neutral-600 cursor-col-resize">
-      <PiArrowsOutLineHorizontalBold className="w-4 h-4 text-neutral-500" />
+    <button
+      className={classNames(
+        "absolute top-1/2 left-0 -translate-x-1/2 p-1 rounded bg-background border border-solid border-neutral-300 hover:bg-neutral-300 text-neutral-500 hover:text-neutral-600 dark:bg-neutral-700 dark:hover:bg-neutral-600 cursor-col-resize dark:border-neutral-700 dark:bg-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-500 dark:hover:border-neutral-500",
+        {
+          "text-neutral-600 bg-neutral-300 dark:bg-neutral-500 dark:border-neutral-500 dark:!text-neutral-200":
+            dragging,
+        }
+      )}
+    >
+      <PiArrowsOutLineHorizontal className="w-4 h-4" />
     </button>
   </div>
 );
