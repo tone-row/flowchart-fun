@@ -167,7 +167,7 @@ export function LoadTemplateDialog() {
                   <button
                     key={template.key}
                     onClick={() => setTemplate(template.key)}
-                    className="rounded overflow-hidden md:h-[280px]"
+                    className="rounded overflow-hidden md:h-[280px] shadow-sm p-2"
                     style={{ backgroundColor: template.bgColor }}
                   >
                     <img

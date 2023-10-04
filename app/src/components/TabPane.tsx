@@ -1,11 +1,11 @@
-import { DotsThreeVertical } from "phosphor-react";
 import { Resizable as Reresizable } from "re-resizable";
 import { memo, ReactNode } from "react";
 
 import { useIsEditorView } from "../lib/hooks";
 import { useEditorStore } from "../lib/useEditorStore";
-import { Box } from "../slang";
+import { PiArrowsOutLineHorizontalBold } from "react-icons/pi";
 import styles from "./TabPane.module.css";
+import classNames from "classnames";
 
 const Resizable = ({
   children,
@@ -60,9 +60,13 @@ const TabPane = memo(
     const showing = useIsEditorView();
     return (
       <Resizable triggerResize={triggerResize}>
-        <Box h="100%" overflow={!showing ? "auto" : undefined}>
+        <div
+          className={classNames("grid h-full", {
+            "overflow-auto": !showing,
+          })}
+        >
           {children}
-        </Box>
+        </div>
       </Resizable>
     );
   }
@@ -73,7 +77,12 @@ TabPane.displayName = "TabPane";
 export default TabPane;
 
 const Handle = ({ dragging = false }: { dragging: boolean }) => (
-  <Box className={styles.Handle} content="center" data-dragging={dragging}>
-    <DotsThreeVertical height={32} width={32} />
-  </Box>
+  <div
+    className="hidden md:block w-0 h-full translate-x-[5px] relative z-[12]"
+    data-dragging={dragging}
+  >
+    <button className="absolute top-1/2 left-0 -translate-x-1/2 p-1 rounded bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-700 dark:hover:bg-neutral-600 cursor-col-resize">
+      <PiArrowsOutLineHorizontalBold className="w-4 h-4 text-neutral-500" />
+    </button>
+  </div>
 );

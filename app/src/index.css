@@ -187,3 +187,12 @@ div[data-reach-tooltip] {
 .text-shadow {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.125);
 }
+
+/**
+Hide the monaco editor slider
+**/
+main .monaco-editor {
+  --vscode-scrollbarSlider-background: transparent;
+  --vscode-scrollbarSlider-hoverBackground: transparent;
+  --vscode-scrollbarSlider-activeBackground: transparent;
+}

@@ -22,7 +22,6 @@
 @media (min-width: 800px) {
   .GraphWrapper {
     display: block !important;
-    padding-left: 4px; /* This is for the resize handle */
   }
 }
 
