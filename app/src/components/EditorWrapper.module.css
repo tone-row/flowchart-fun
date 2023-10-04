@@ -7,22 +7,6 @@
   overflow: hidden;
 }
 
-@media screen and (min-width: 800px) {
-  .EditorWrapper {
-    /* This is to avoid content going underneath the resizable handle */
-    padding-right: 5px;
-  }
-}
-
-/* .EditorWrapper header {
-  padding: calc(var(--spacer-px) * 3) 26px 0;
-} */
-
-/* .HeaderTitle > button:first-child {
-  overflow: hidden;
-  padding: 0;
-} */
-
 .HeaderTitle button:first-child h1 {
   text-overflow: ellipsis;
   white-space: nowrap;

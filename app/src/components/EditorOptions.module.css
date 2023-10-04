@@ -1,5 +1,0 @@
-.editorOptions {
-  display: grid;
-  height: 100%;
-  grid-template-rows: auto minmax(0, 1fr);
-}

@@ -128,7 +128,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       overflow="hidden"
       style={{ background: bg }}
       onContextMenu={show}
-      className={classNames(styles.GraphContainer, "graph rounded")}
+      className={classNames(styles.GraphContainer, "graph")}
     >
       <Box id="cy" overflow="hidden" />
       <GraphContextMenu />
