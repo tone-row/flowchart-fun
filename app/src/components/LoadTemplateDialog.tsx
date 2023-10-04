@@ -141,7 +141,7 @@ export function LoadTemplateDialog() {
                       {content ? (
                         <>
                           <WarningCircle size={16} className="shrink-0" />
-                          This will replace the current content.
+                          <Trans>This will replace the current content.</Trans>
                         </>
                       ) : (
                         <>&nbsp;</>
@@ -153,7 +153,7 @@ export function LoadTemplateDialog() {
                       onClick={load}
                       className="mt-2"
                     >
-                      Load
+                      <Trans>Load</Trans>
                     </Button2>
                   </div>
                 </div>
