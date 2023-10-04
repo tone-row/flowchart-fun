@@ -2,11 +2,11 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Close, Content, Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
 import {
-  ArrowLineLeft,
   FolderOpen,
   Check,
   WarningCircle,
   Folder,
+  ArrowLeft,
 } from "phosphor-react";
 import { Trans } from "@lingui/macro";
 import { templates } from "../lib/templates/templates";
@@ -89,7 +89,7 @@ export function LoadTemplateDialog() {
         <Content
           overflowV
           maxWidthClass="max-w-[880px]"
-          className="overflow-y-auto max-h-[calc(100vh-2rem)] h-[576px] grid-rows-[auto_minmax(0,1fr)]"
+          className="overflow-y-auto max-h-[calc(100vh-2rem)] h-[650px] grid-rows-[auto_minmax(0,1fr)]"
         >
           <Close />
           <Dialog.Title className="text-xl font-bold flex items-center">
@@ -103,12 +103,12 @@ export function LoadTemplateDialog() {
                   onClick={() => {
                     setTemplate(null);
                   }}
-                  className="flex items-center text-sm text-foreground/70 hover:text-foreground/100 focus:outline-foreground/10 focus:outline-2 outline-offset-4 rounded-md"
+                  className="flex items-center text-sm text-foreground/70 hover:text-foreground/100 dark:text-white/80 dark:hover:text-white"
                 >
-                  <ArrowLineLeft className="mr-2" />
+                  <ArrowLeft className="mr-2" />
                   <Trans>Back</Trans>
                 </button>
-                <div className="grid grid-cols-[2fr,1fr] gap-6">
+                <div className="grid sm:grid-cols-[2fr,1fr] gap-6">
                   <div
                     className="h-full w-full overflow-hidden p-4 rounded-lg shadow-md"
                     style={{
@@ -160,29 +160,22 @@ export function LoadTemplateDialog() {
               </div>
             ) : (
               <div
-                className="grid gap-2 sm:grid-cols-2 md:grid-cols-3"
+                className="grid gap-3 grid-cols-2 md:grid-cols-3"
                 aria-label="Templates"
               >
                 {templates.map((template) => (
                   <button
                     key={template.key}
-                    className="relative grid gap-2 group focus:outline-foreground/10 focus:outline-2 outline-offset-4 rounded-md"
                     onClick={() => setTemplate(template.key)}
+                    className="rounded overflow-hidden md:h-[280px]"
+                    style={{ backgroundColor: template.bgColor }}
                   >
-                    {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-                    <div
-                      className="p-1 h-[246px] rounded-sm border border-foreground/10 opacity-70 hover:opacity-100 group-data-[state=checked]:opacity-100 group-data-[state=checked]:border-foreground/30 overflow-hidden group-data-[state=checked]:shadow-sm"
-                      style={{ backgroundColor: template.bgColor }}
-                    >
-                      <img
-                        key={template.img}
-                        src={`/templates/${template.img}`}
-                        className="rounded w-full h-full object-contain object-center"
-                        alt={template.key}
-                        height={273}
-                        width={273}
-                      />
-                    </div>
+                    <img
+                      key={template.img}
+                      src={`/templates/${template.img}`}
+                      className="rounded-lg object-contain object-center aspect-square"
+                      alt={template.key}
+                    />
                   </button>
                 ))}
               </div>
