@@ -24,6 +24,7 @@ edge {
   text-background-padding: 5;
   font-family: $fontFamily;
   font-size: 14;
+  text-wrap: wrap;
 }
 
 :childless[shapeWidth] {
