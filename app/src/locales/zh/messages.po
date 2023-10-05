@@ -53,8 +53,8 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 msgid "About"
 msgstr "关于"
 
-#: src/components/Header.tsx:182
-#: src/components/Header.tsx:406
+#: src/components/Header.tsx:181
+#: src/components/Header.tsx:405
 #: src/pages/Account.tsx:116
 msgid "Account"
 msgstr "帐户"
@@ -115,8 +115,8 @@ msgstr "开始输入"
 msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
 msgstr "以客戶服務流程圖為例，Flowchart Fun將為您創建一個流程圖！"
 
-#: src/components/Header.tsx:140
-#: src/components/Header.tsx:365
+#: src/components/Header.tsx:139
+#: src/components/Header.tsx:364
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "博客"
@@ -160,14 +160,14 @@ msgstr "某些属性可用于自定义元素的外观或功能。"
 msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
-#: src/components/Header.tsx:151
-#: src/components/Header.tsx:371
+#: src/components/Header.tsx:150
+#: src/components/Header.tsx:370
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "变更日志"
 
 #: src/components/Header.tsx:96
-#: src/components/Header.tsx:343
+#: src/components/Header.tsx:342
 msgid "Charts"
 msgstr "图表"
 
@@ -466,7 +466,7 @@ msgid "Editable"
 msgstr "可编辑"
 
 #: src/components/Header.tsx:79
-#: src/components/Header.tsx:331
+#: src/components/Header.tsx:330
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "编辑器"
@@ -522,7 +522,7 @@ msgstr "超大"
 
 #: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:104
-#: src/components/Header.tsx:357
+#: src/components/Header.tsx:356
 msgid "Feedback"
 msgstr "反馈"
 
@@ -637,7 +637,7 @@ msgstr "匯入資料是專業功能。您可以每月以3美元或每年30美元
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
-#: src/components/Header.tsx:129
+#: src/components/Header.tsx:128
 msgid "Info"
 msgstr "信息"
 
@@ -738,8 +738,8 @@ msgstr "加载主题将擦除您应用的任何自定义样式"
 msgid "Lock Zoom to Graph"
 msgstr "锁定缩放到图表"
 
-#: src/components/Header.tsx:190
-#: src/components/Header.tsx:414
+#: src/components/Header.tsx:189
+#: src/components/Header.tsx:413
 msgid "Log In"
 msgstr "登录"
 
@@ -797,7 +797,7 @@ msgid "Name Chart"
 msgstr "命名图表"
 
 #: src/components/Header.tsx:87
-#: src/components/Header.tsx:337
+#: src/components/Header.tsx:336
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "新"
@@ -930,8 +930,8 @@ msgstr "剧本"
 msgid "Pointer and container on same line"
 msgstr "同一行上的指针和容器"
 
-#: src/components/Header.tsx:167
-#: src/components/Header.tsx:420
+#: src/components/Header.tsx:166
+#: src/components/Header.tsx:419
 #: src/components/Settings.tsx:138
 msgid "Privacy Policy"
 msgstr "隱私政策"
@@ -1045,8 +1045,8 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/Header.tsx:159
-#: src/components/Header.tsx:377
+#: src/components/Header.tsx:158
+#: src/components/Header.tsx:376
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "路线图"
@@ -1064,8 +1064,8 @@ msgstr "发送反馈"
 msgid "Set Content"
 msgstr "设置内容"
 
-#: src/components/Header.tsx:175
-#: src/components/Header.tsx:382
+#: src/components/Header.tsx:174
+#: src/components/Header.tsx:381
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "设置"
@@ -1329,8 +1329,7 @@ msgstr "未付"
 msgid "Update Email"
 msgstr "更新电子邮件"
 
-#: src/components/Header.tsx:117
-#: src/components/Header.tsx:390
+#: src/components/Header.tsx:389
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
