@@ -43,8 +43,8 @@ export const templates: {
   },
   {
     key: "code-flow",
-    img: "template14.png",
-    bgColor: "#FFFFFF",
+    img: "template18.png",
+    bgColor: "#F8F8F8",
     title: () => t`Process Diagram`,
     promptType: "flowchart",
     accentClasses: ["color_blue", "color_green", "color_purple"],

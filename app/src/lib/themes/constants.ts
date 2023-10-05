@@ -19,7 +19,4 @@ export type Theme = {
   styles: StylesheetStyle[];
 };
 
-export const defaultFontFamily =
-  "Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol";
-
 export const defaultFontSize = 10;

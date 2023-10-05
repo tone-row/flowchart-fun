@@ -175,7 +175,15 @@ function InfoButton() {
         <Popover.Content {...popoverContentProps}>
           <p className="text-neutral-600 dark:text-neutral-300 text-xs leading-normal max-w-md">
             <Trans>
-              Customize your theme by editing the <span>Cytoscape CSS</span>{" "}
+              Customize your theme by editing the{" "}
+              <a
+                className="text-blue-600 dark:text-green-400"
+                href="https://js.cytoscape.org/#style"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Cytoscape CSS
+              </a>{" "}
               below. Our styling documentation is coming soon! In the meantime,
               the best resource is the{" "}
               <a
