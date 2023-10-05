@@ -22,12 +22,11 @@
 @media (min-width: 800px) {
   .GraphWrapper {
     display: block !important;
-    padding-left: 4px; /* This is for the resize handle */
   }
 }
 
 .GraphWrapperInner {
-  @apply h-full p-1 rounded-lg;
+  @apply h-full;
 }
 
 .GraphWrapper[data-is-fullscreen="true"] {

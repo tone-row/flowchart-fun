@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -186,4 +188,13 @@ div[data-reach-tooltip] {
 
 .text-shadow {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.125);
+}
+
+/**
+Hide the monaco editor slider
+**/
+main .monaco-editor {
+  --vscode-scrollbarSlider-background: transparent;
+  --vscode-scrollbarSlider-hoverBackground: transparent;
+  --vscode-scrollbarSlider-activeBackground: transparent;
 }

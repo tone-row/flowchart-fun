@@ -7,6 +7,7 @@ import {
   CaretDown,
   CircleNotch,
   Database,
+  DownloadSimple,
   File,
   FileCsv,
   Warning,
@@ -82,7 +83,7 @@ export function ImportDataDialog() {
       }}
     >
       <Dialog.Trigger asChild>
-        <EditorActionTextButton icon={Database}>
+        <EditorActionTextButton icon={DownloadSimple}>
           <Trans>Import Data</Trans>
         </EditorActionTextButton>
       </Dialog.Trigger>

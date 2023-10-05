@@ -44,7 +44,7 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
         )}
       >
         {isSandbox ? (
-          <FlowchartTitle title={title} className="-translate-y-[2px]">
+          <FlowchartTitle title={title} className="-translate-y-[2px] mt-2">
             {pageTitle}
           </FlowchartTitle>
         ) : (
@@ -204,7 +204,7 @@ function FlowchartTitle({
 }: { children: React.ReactNode } & React.HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h1
-      className={classNames("text-xl md:text-2xl font-extrabold", className)}
+      className={classNames("text-xl md:text-2xl font-bold", className)}
       {...props}
     >
       {children}

@@ -27,7 +27,7 @@ test("Sign Up", async () => {
   // set timeout
   test.setTimeout(240000);
 
-  await page.getByRole("link", { name: "Upgrade to Pro" }).click();
+  await page.getByRole("link", { name: "Flowchart Fun Pro" }).click();
   await expect(page).toHaveURL(`${BASE_URL}/pricing`);
 
   await page.getByTestId("yearly-plan-button").click();

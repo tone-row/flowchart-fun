@@ -13,7 +13,7 @@ export const Overlay = forwardRef<
   <Dialog.Overlay
     ref={ref}
     {...props}
-    className={`bg-foreground/50 dark:bg-background/50 data-[state=open]:animate-overlayShow z-10 fixed inset-0 ${className}`}
+    className={`bg-foreground/50 dark:bg-background/50 data-[state=open]:animate-overlayShow z-[15] fixed inset-0 ${className}`}
   />
 ));
 Overlay.displayName = "Dialog.Overlay";

@@ -138,7 +138,7 @@ module.exports = {
         md: "800px",
       },
       fontFamily: {
-        sans: ["Helvetica", "sans-serif"],
+        sans: ["IBM Plex Sans", "sans-serif"],
       },
     },
   },
