@@ -2,5 +2,4 @@
   display: grid;
   grid-template: auto minmax(0, 1fr) / minmax(0, 1fr);
   height: 100%;
-  padding-top: calc(var(--spacer-px) * 2);
 }

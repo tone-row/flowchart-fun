@@ -69,6 +69,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           type="text"
           ref={ref}
           className={`${styles.InputText} text-xs`}
+          data-1p-ignore
           {...props}
         />
         {isLoading && (
