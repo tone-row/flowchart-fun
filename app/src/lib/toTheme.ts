@@ -1,4 +1,4 @@
-type LayoutName =
+export type LayoutName =
   | "dagre"
   | "klay"
   | "breadthfirst"
@@ -10,8 +10,11 @@ type LayoutName =
   | "stress"
   | "radial";
 
-type FFTheme = {
+export type LayoutDirection = "TB" | "LR" | "RL" | "BT";
+
+export type FFTheme = {
   layoutName: LayoutName;
+  layoutDirection: LayoutDirection;
 };
 
 /**

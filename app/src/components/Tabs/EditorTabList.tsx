@@ -69,6 +69,15 @@ export function EditorTabList() {
           <Trans>Style</Trans>
         </span>
       </Tabs.Trigger>
+      <Tabs.Trigger
+        value="Theme"
+        data-testid="Editor Tab: Theme"
+        className={`${styles.btn} ${btnDark}`}
+      >
+        <span className="text-sm" data-text={t`Theme`}>
+          <Trans>Theme</Trans>
+        </span>
+      </Tabs.Trigger>
     </Tabs.List>
   );
 }

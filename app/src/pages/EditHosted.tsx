@@ -27,6 +27,7 @@ import styles from "./EditHosted.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
 import EditStyleTab from "../components/Tabs/EditStyleTab";
 import { useIsProUser } from "../lib/hooks";
+import { ThemeTab } from "../components/Tabs/ThemeTab";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
@@ -104,6 +105,9 @@ export default function EditHosted() {
             </Tabs.Content>
             <Tabs.Content value="Style">
               <EditStyleTab />
+            </Tabs.Content>
+            <Tabs.Content value="Theme">
+              <ThemeTab />
             </Tabs.Content>
           </Tabs.Root>
         </EditorWrapper>

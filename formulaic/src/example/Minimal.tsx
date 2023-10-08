@@ -1,4 +1,4 @@
-import { Control, createControls } from "../form";
+import { Control, createControls } from "../formulaic";
 import { ReactNode, useMemo, useState } from "react";
 
 type BaseProps = {

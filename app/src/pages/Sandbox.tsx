@@ -28,6 +28,7 @@ import { SandboxWarning } from "../components/SandboxWarning";
 import { useSandboxWarning } from "../lib/useSandboxWarning";
 import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { useIsProUser } from "../lib/hooks";
+import { ThemeTab } from "../components/Tabs/ThemeTab";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -121,6 +122,9 @@ const Sandbox = memo(function Edit() {
               </Tabs.Content>
               <Tabs.Content value="Style">
                 <EditStyleTab />
+              </Tabs.Content>
+              <Tabs.Content value="Theme">
+                <ThemeTab />
               </Tabs.Content>
             </Tabs.Root>
           </EditorWrapper>

@@ -11,14 +11,16 @@
     "noUncheckedIndexedAccess": true,
 
     "jsx": "react-jsx",
+    "jsxFactory": "",
+    "jsxFragmentFactory": "",
 
     "moduleResolution": "Bundler",
     "module": "ESNext",
     "noEmit": true,
 
-    "lib": ["es2022", "dom", "dom.iterable"]
+    "lib": ["es2022", "dom", "dom.iterable"],
 
-    // "declaration": true
+    "declaration": true
     // "composite": true,
     // "sourceMap": true,
     // "declarationMap": true
