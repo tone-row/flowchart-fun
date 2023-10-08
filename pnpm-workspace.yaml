@@ -2,5 +2,6 @@ packages:
   - "app"
   - "api"
   - "shared"
+  - "form"
   # exclude packages that are inside test directories
   - "!**/test/**"
