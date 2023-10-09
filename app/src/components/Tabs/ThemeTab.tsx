@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { createControls, Control } from "formulaic";
 import { FFTheme, LayoutDirection, LayoutName } from "../../lib/toTheme";
 import { useTmpThemeState } from "./useTmpThemeState";
@@ -15,6 +13,7 @@ const select: Control<
       onChange={(e) => {
         onValueChange(e.target.value);
       }}
+      className="p-4 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     >
       {options.map((option) => (
         <option value={option.value}>{option.label}</option>
@@ -75,8 +74,10 @@ const Form = createForm<FFTheme>({
 export function ThemeTab() {
   const data = useTmpThemeState();
   return (
-    <div className="h-full w-full">
-      <Form data={data} />
+    <div className="h-full w-full p-4">
+      <form className="grid gap-1">
+        <Form data={data} />
+      </form>
     </div>
   );
 }
