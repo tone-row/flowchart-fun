@@ -1,4 +1,4 @@
-import { FFTheme } from "../toTheme";
+import { FFTheme } from "../FFTheme";
 
 export const theme: FFTheme = {
   background: "#FFFFFF",

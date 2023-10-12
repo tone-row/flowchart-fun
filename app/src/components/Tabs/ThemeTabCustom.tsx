@@ -1,7 +1,8 @@
 import { Editor } from "@monaco-editor/react";
 import { useCanEdit, useLightOrDarkMode } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
-import { FFTheme, updateThemeEditor } from "../../lib/toTheme";
+import { updateThemeEditor } from "../../lib/toTheme";
+import { FFTheme } from "../../lib/FFTheme";
 
 export function ThemeTabCustom() {
   const canEdit = useCanEdit();

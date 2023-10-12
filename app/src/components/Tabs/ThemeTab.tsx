@@ -1,14 +1,13 @@
 import { createControls, Control } from "formulaic";
+import { updateThemeEditor, useThemeEditor } from "../../lib/toTheme";
 import {
   FFTheme,
-  Direction,
-  LayoutName,
-  updateThemeEditor,
-  useThemeEditor,
   Shape,
   CurveStyle,
   ArrowShape,
-} from "../../lib/toTheme";
+  Direction,
+  LayoutName,
+} from "../../lib/FFTheme";
 import { ReactNode } from "react";
 import * as Slider from "@radix-ui/react-slider";
 import classNames from "classnames";
