@@ -21,6 +21,7 @@ import {
   text,
   fontpicker,
 } from "./ThemeTabComponents";
+import { Trans } from "@lingui/macro";
 
 const createForm = createControls({
   select,
@@ -480,6 +481,11 @@ export function ThemeTab() {
 
   return (
     <div className="h-full w-full p-4 overflow-auto">
+      <p className="text-xs text-neutral-600 mb-6 bg-neutral-100 p-4">
+        <Trans>
+          Use these settings to adapt the look and behavior of your flowcharts
+        </Trans>
+      </p>
       <form className="grid gap-8 pb-10">
         <Form data={data} />
       </form>

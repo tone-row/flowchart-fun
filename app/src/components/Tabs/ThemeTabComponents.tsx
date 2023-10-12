@@ -3,6 +3,7 @@ import { Control } from "formulaic";
 import * as Popover from "@radix-ui/react-popover";
 import { ReactNode, useState } from "react";
 import { fonts } from "../../lib/fonts";
+import { Trans } from "@lingui/macro";
 
 type BaseProps = {
   id: string;
@@ -125,7 +126,20 @@ export const fontpicker: Control<string, BaseProps> = (
   value,
   onValueChange
 ) => {
-  return <Fontpicker value={value} onValueChange={onValueChange} />;
+  const isKnownFont = fonts.some((font) => font.name === value);
+  return (
+    <>
+      <Fontpicker value={value} onValueChange={onValueChange} />
+      {!isKnownFont ? (
+        <span className="text-xs text-neutral-500 -mt-1 text-center">
+          <Trans>
+            When using a custom font make sure to add the import to your custom
+            CSS.
+          </Trans>
+        </span>
+      ) : null}
+    </>
+  );
 };
 
 function Fontpicker({
@@ -150,16 +164,12 @@ function Fontpicker({
         onChange={(e) => {
           onValueChange(e.target.value);
         }}
-      />
-      <Popover.Root
-        open={open}
-        modal={false}
-        onOpenChange={(open) => {
-          // if (!open) {
-          //   setOpen(open);
-          // }
+        // on escape key, close the popover
+        onKeyDown={(e) => {
+          if (e.key === "Escape") setOpen(false);
         }}
-      >
+      />
+      <Popover.Root open={open} modal={false}>
         <Popover.Trigger className="w-full h-0" />
         <Popover.Content
           onOpenAutoFocus={(event) => event.preventDefault()}
