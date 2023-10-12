@@ -315,9 +315,7 @@ function getGraphUpdater({
       const { layout, style: _style } = toTheme(themeEditor);
 
       const { style } = preprocessCytoscapeStyle(_style);
-      console.log(style);
 
-      // const layout = getLayout(doc);
       elements = getElements(doc.text);
 
       // Test
@@ -329,6 +327,17 @@ function getGraphUpdater({
       if (layout.name === "fcose") {
         // @ts-ignore
         layout.randomize = !isGraphInitialized.current;
+      }
+
+      // Finally we get rid of layouts when user has dragged
+      // Apply the preset layout if nodePositions is defined
+      const nodePositions = doc.meta?.nodePositions;
+      if (typeof nodePositions === "object") {
+        // @ts-ignore
+        layout.positions = { ...nodePositions };
+        layout.name = "preset";
+        // @ts-ignore
+        delete layout.spacingFactor;
       }
 
       cyErrorCatcher.current.layout(layout);

@@ -1,4 +1,4 @@
-import { createControls, Control } from "formulaic";
+import { createControls } from "formulaic";
 import { updateThemeEditor, useThemeEditor } from "../../lib/toTheme";
 import {
   FFTheme,
@@ -9,117 +9,11 @@ import {
   LayoutName,
 } from "../../lib/FFTheme";
 import { ReactNode } from "react";
-import * as Slider from "@radix-ui/react-slider";
+
 import classNames from "classnames";
 import { ThemeTabCustom } from "./ThemeTabCustom";
 import { theme as defaultTheme } from "../../lib/templates/default-template";
-
-type BaseProps = {
-  id: string;
-  title: string;
-};
-
-const select: Control<
-  string,
-  BaseProps & { options: { value: string; label: string }[] }
-> = (value, onValueChange, { id, options }) => {
-  return (
-    <select
-      key={id}
-      id={id}
-      value={value}
-      onChange={(e) => {
-        onValueChange(e.target.value);
-      }}
-      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-    >
-      {options.map((option) => (
-        <option value={option.value}>{option.label}</option>
-      ))}
-    </select>
-  );
-};
-
-const range: Control<
-  number,
-  BaseProps & { min: number; max: number; step: number }
-> = (value, onValueChange, { id, min, max, step, title }) => {
-  return (
-    <Slider.Root
-      key={id}
-      id={id}
-      name={id}
-      className="relative flex items-center select-none touch-none w-full h-6"
-      value={[value]}
-      max={max}
-      min={min}
-      step={step}
-      onValueChange={([value]) => {
-        onValueChange(value);
-      }}
-    >
-      <Slider.Track className="w-full h-1 bg-gray-200 rounded-full relative grow">
-        <Slider.Range className="absolute h-full bg-blue-500 rounded-full" />
-      </Slider.Track>
-      <Slider.Thumb
-        className="block w-4 h-4 bg-blue-500 rounded-full shadow-md"
-        aria-label={title}
-      />
-    </Slider.Root>
-  );
-};
-
-const text: Control<string, BaseProps> = (value, onValueChange, { id }) => {
-  return (
-    <input
-      key={id}
-      type="text"
-      id={id}
-      value={value}
-      onChange={(e) => {
-        onValueChange(e.target.value);
-      }}
-      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-    />
-  );
-};
-
-const color: Control<string, BaseProps> = (value, onValueChange, { id }) => {
-  return (
-    <div className="flex items-center gap-2">
-      <input
-        key={id}
-        type="color"
-        id={id}
-        value={value}
-        onChange={(e) => {
-          onValueChange(e.target.value);
-        }}
-        className="h-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-      />
-      <span className="font-mono text-neutral-500">{value}</span>
-    </div>
-  );
-};
-
-const checkbox: Control<boolean, BaseProps> = (
-  value,
-  onValueChange,
-  { id }
-) => {
-  return (
-    <input
-      key={id}
-      type="checkbox"
-      id={id}
-      checked={value}
-      onChange={(e) => {
-        onValueChange(e.target.checked);
-      }}
-      className="h-6 w-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-    />
-  );
-};
+import { checkbox, color, range, select, text } from "./ThemeTabComponents";
 
 const createForm = createControls({
   select,
@@ -133,6 +27,7 @@ const Form = createForm<FFTheme>({
   wrapEach({ children, field, data }) {
     return (
       <div
+        key={field.id}
         className={classNames("grid", {
           "gap-1": field.control === "range",
           "gap-2": field.control !== "range",
@@ -155,7 +50,11 @@ const Form = createForm<FFTheme>({
   elements: [
     {
       wrapper({ children }) {
-        return <Section title="General">{children}</Section>;
+        return (
+          <Section title="General" key="general">
+            {children}
+          </Section>
+        );
       },
       elements: [
         {
@@ -184,7 +83,11 @@ const Form = createForm<FFTheme>({
     },
     {
       wrapper({ children }) {
-        return <Section title="Layout">{children}</Section>;
+        return (
+          <Section title="Layout" key="layout">
+            {children}
+          </Section>
+        );
       },
       elements: [
         {
@@ -215,9 +118,7 @@ const Form = createForm<FFTheme>({
           id: "klayDirection",
           control: "select",
           hidden(data) {
-            return !["dagre", "klay", "layered", "mrtree"].includes(
-              data.layoutName
-            );
+            return !["dagre", "klay", "layered"].includes(data.layoutName);
           },
           value(data) {
             return data.direction ?? "UNDEFINED";
@@ -250,7 +151,11 @@ const Form = createForm<FFTheme>({
     },
     {
       wrapper({ children }) {
-        return <Section title="Nodes">{children}</Section>;
+        return (
+          <Section title="Nodes" key="nodes">
+            {children}
+          </Section>
+        );
       },
       elements: [
         {
@@ -379,7 +284,11 @@ const Form = createForm<FFTheme>({
     },
     {
       wrapper({ children }) {
-        return <Section title="Edges">{children}</Section>;
+        return (
+          <Section title="Edges" key="edges">
+            {children}
+          </Section>
+        );
       },
       elements: [
         {
@@ -424,7 +333,11 @@ const Form = createForm<FFTheme>({
         },
         {
           wrapper({ children }) {
-            return <div className="grid grid-cols-2 gap-3">{children}</div>;
+            return (
+              <div className="grid grid-cols-2 gap-3" key="arrow">
+                {children}
+              </div>
+            );
           },
           elements: [
             {
@@ -542,10 +455,14 @@ const Form = createForm<FFTheme>({
     },
     {
       wrapper({ children }) {
-        return <Section title="Custom">{children}</Section>;
+        return (
+          <Section title="Custom" key="custom">
+            {children}
+          </Section>
+        );
       },
       wrapEach: false,
-      elements: [<ThemeTabCustom />],
+      elements: [<ThemeTabCustom key="custom-code" />],
     },
   ],
 });

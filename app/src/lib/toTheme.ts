@@ -30,7 +30,7 @@ export const defaultTheme: FFTheme = {
 };
 
 /**
- * Takes some input and returns a cytoscape layout and style object
+ * Takes an FFTheme and returns cytoscape layout and style
  */
 export function toTheme(theme: FFTheme) {
   const layout: cytoscape.LayoutOptions = {
@@ -70,8 +70,6 @@ export function toTheme(theme: FFTheme) {
 
   // // @ts-ignore
   // layout.elk["elk.layered.nodePlacement.bk.fixedAlignment"] = "BALANCED";
-  // // @ts-ignore
-  // layout.elk["elk.contentAlignment"] = "INTERACTIVE";
 
   const node = {
     shape: theme.shape,
