@@ -49,11 +49,14 @@ export function LoadTemplateDialog() {
       const templateContent = importTemplate.content;
       const theme: FFTheme | undefined = importTemplate.theme;
 
-      const { text, details } = useDoc.getState();
+      const { text, meta, details } = useDoc.getState();
 
       const nextContent = content ? templateContent : text;
 
-      prepareChart(`${nextContent}`, details);
+      prepareChart(
+        `${nextContent}\n=====${JSON.stringify(meta)}=====`,
+        details
+      );
       // set the theme
       if (theme) updateThemeEditor(theme);
 

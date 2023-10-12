@@ -1,6 +1,6 @@
 import { getDefaultText } from "./getDefaultText";
-import { addDays } from "date-fns";
 import { theme } from "./templates/default-template";
+import { getExpirationDate } from "./getExpirationDate";
 
 const defaultMeta = {
   themeEditor: theme,
@@ -21,7 +21,7 @@ export function getDefaultChart() {
 export function getDefaultLocalChart() {
   const meta = {
     ...defaultMeta,
-    expires: addDays(new Date(), 1).toISOString(),
+    expires: getExpirationDate(),
   };
   return `${getDefaultText()}\n=====\n${JSON.stringify(meta, null, 2)}\n=====`;
 }
