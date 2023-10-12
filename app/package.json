@@ -24,7 +24,8 @@
     "e2e:generate": "npx playwright codegen localhost:3000",
     "generate:types": "export $(cat .env.local | xargs) && supabase gen types typescript --project-id \"${PROJECT_ID}\" > src/types/database.types.ts",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "autotranslations": "node scripts/autotranslations.mjs"
+    "autotranslations": "node scripts/autotranslations.mjs",
+    "theme:schema:generate": "pnpx ts-json-schema-generator --path 'src/lib/FFTheme.ts' --type 'FFTheme' -f tsconfig.json --strict-tuples -o src/lib/FFTheme.schema.json --minify"
   },
   "dependencies": {
     "@formkit/auto-animate": "1.0.0-beta.6",
