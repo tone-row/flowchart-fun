@@ -236,7 +236,7 @@ function hexToRgb(hex: string) {
 }
 
 // https://github.com/gion/is-dark-color/blob/master/src/isDarkColor.js
-function isDarkColor(
+function _isDarkColor(
   hexColor: string,
   options?: { override?: { [key: string]: boolean } }
 ) {

@@ -14,7 +14,6 @@ import * as Checkbox from "@radix-ui/react-checkbox";
 import { useCallback, useState } from "react";
 import { Button2 } from "../ui/Shared";
 import classNames from "classnames";
-import { getDefaultChart } from "../lib/getDefaultChart";
 import { useDoc } from "../lib/useDoc";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { useUnmountStore } from "../lib/useUnmountStore";
@@ -43,28 +42,18 @@ export function LoadTemplateDialog() {
   const load = useCallback(() => {
     (async () => {
       if (!template || !templateData) return;
-      let templateContent: string,
-        nextLayout: string,
-        theme: FFTheme | undefined;
-      if (template === "default") {
-        const chart = getDefaultChart();
-        const parts = chart.split("=====");
-        templateContent = parts[0];
-        nextLayout = `=====${parts[1]}=====`;
-      } else {
-        const importTemplate = await import(
-          `../lib/templates/${template}-template.ts`
-        );
-        templateContent = importTemplate.content;
-        nextLayout = importTemplate.template;
-        theme = importTemplate.theme;
-      }
+
+      const importTemplate = await import(
+        `../lib/templates/${template}-template.ts`
+      );
+      const templateContent = importTemplate.content;
+      const theme: FFTheme | undefined = importTemplate.theme;
 
       const { text, details } = useDoc.getState();
 
       const nextContent = content ? templateContent : text;
 
-      prepareChart(`${nextContent}\n${nextLayout}`, details);
+      prepareChart(`${nextContent}`, details);
       // set the theme
       if (theme) updateThemeEditor(theme);
 

@@ -419,43 +419,6 @@ function isParseError(e: unknown): e is ParseError {
   return e instanceof Error && e.name === "ParseError";
 }
 
-function getStyleUpdater({
-  cy,
-  cyErrorCatcher,
-}: {
-  cy: React.MutableRefObject<cytoscape.Core | undefined>;
-  cyErrorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
-}) {
-  return throttle(async (_style: string) => {
-    if (!cy.current || !cyErrorCatcher.current) return;
-    try {
-      const { style } = preprocessCytoscapeStyle(_style);
-
-      // Test Error First
-      cyErrorCatcher.current.json({ style });
-
-      // Real
-      cy.current.json({
-        style,
-      });
-
-      // Reinitialize to avoid missing errors
-      cyErrorCatcher.current.destroy();
-      cyErrorCatcher.current = cytoscape();
-      useParseErrorStore.setState({ errorFromStyle: "" });
-    } catch (e) {
-      console.log(e);
-      cyErrorCatcher.current.destroy();
-      cyErrorCatcher.current = cytoscape();
-      if (isError(e)) {
-        useParseErrorStore.setState({
-          errorFromStyle: sanitizeStyleMessage(e.message),
-        });
-      }
-    }
-  }, 333);
-}
-
 function sanitizeMessage(
   message: string,
   elements: cytoscape.ElementDefinition[]
@@ -475,10 +438,3 @@ function sanitizeMessage(
 
 const edgeSource =
   /Can not create edge `(?<edge>[^`]+)` with nonexistant source `(?<source>[^`]+)`/gm;
-
-function sanitizeStyleMessage(message: string) {
-  if (/userStyle is not iterable/gi.test(message)) {
-    return "Style object invalid";
-  }
-  return message;
-}
