@@ -13,7 +13,14 @@ import { ReactNode } from "react";
 import classNames from "classnames";
 import { ThemeTabCustom } from "./ThemeTabCustom";
 import { theme as defaultTheme } from "../../lib/templates/default-template";
-import { checkbox, color, range, select, text } from "./ThemeTabComponents";
+import {
+  checkbox,
+  color,
+  range,
+  select,
+  text,
+  fontpicker,
+} from "./ThemeTabComponents";
 
 const createForm = createControls({
   select,
@@ -21,6 +28,7 @@ const createForm = createControls({
   text,
   color,
   checkbox,
+  fontpicker,
 });
 
 const Form = createForm<FFTheme>({
@@ -71,7 +79,7 @@ const Form = createForm<FFTheme>({
         {
           title: "Font",
           id: "fontFamily",
-          control: "text",
+          control: "fontpicker",
           value(data) {
             return data.fontFamily ?? defaultTheme.fontFamily;
           },

@@ -165,7 +165,6 @@
     "@types/react-gtm-module": "^2.0.1",
     "@types/react-helmet": "^6.1.6",
     "@types/react-router-dom": "^5.1.7",
-    "@types/react-select": "^4.0.17",
     "@types/strip-comments": "^2.0.0",
     "@types/svg-parser": "^2.0.1",
     "@types/svgo": "^2.6.0",

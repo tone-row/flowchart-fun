@@ -1,6 +1,7 @@
 import cytoscape from "cytoscape";
 import { Doc, useDoc } from "./useDoc";
 import { Direction, FFTheme, LayoutDirection } from "./FFTheme";
+import { fonts } from "./fonts";
 
 export const defaultTheme: FFTheme = {
   layoutName: "dagre",
@@ -129,7 +130,7 @@ export function toTheme(theme: FFTheme) {
     }
   }
 
-  const style: cytoscape.StylesheetCSS[] = [
+  const elementStyles: cytoscape.StylesheetCSS[] = [
     {
       selector: ":childless",
       css: node as any,
@@ -162,9 +163,17 @@ export function toTheme(theme: FFTheme) {
     },
   ];
 
+  const style = [styleToString(elementStyles), theme.custom];
+
+  // Add font style
+  let knownFont = fonts.find((f) => f.name === theme.fontFamily);
+  if (knownFont) {
+    style.unshift(knownFont.importSnippet);
+  }
+
   return {
     layout,
-    style: styleToString(style) + "\n" + theme.custom,
+    style: style.join("\n"),
   };
 }
 

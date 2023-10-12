@@ -1,5 +1,8 @@
 import * as Slider from "@radix-ui/react-slider";
 import { Control } from "formulaic";
+import * as Popover from "@radix-ui/react-popover";
+import { ReactNode, useState } from "react";
+import { fonts } from "../../lib/fonts";
 
 type BaseProps = {
   id: string;
@@ -117,3 +120,85 @@ export const checkbox: Control<boolean, BaseProps> = (
     />
   );
 };
+
+export const fontpicker: Control<string, BaseProps> = (
+  value,
+  onValueChange
+) => {
+  return <Fontpicker value={value} onValueChange={onValueChange} />;
+};
+
+function Fontpicker({
+  value,
+  onValueChange,
+}: {
+  value: string;
+  onValueChange: (value: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [hovering, setHovering] = useState(false);
+  return (
+    <>
+      <input
+        placeholder="system-ui"
+        className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        onFocus={() => setOpen(true)}
+        onBlur={() => {
+          if (!hovering) setOpen(false);
+        }}
+        value={value}
+        onChange={(e) => {
+          onValueChange(e.target.value);
+        }}
+      />
+      <Popover.Root
+        open={open}
+        modal={false}
+        onOpenChange={(open) => {
+          // if (!open) {
+          //   setOpen(open);
+          // }
+        }}
+      >
+        <Popover.Trigger className="w-full h-0" />
+        <Popover.Content
+          onOpenAutoFocus={(event) => event.preventDefault()}
+          className="grid bg-white z-10 rounded shadow-lg w-full border border-gray-200 overflow-hidden p-1"
+          onMouseEnter={() => setHovering(true)}
+          onMouseLeave={() => setHovering(false)}
+          side="bottom"
+          align="start"
+        >
+          {fonts.map((font) => (
+            <FontpickerButton
+              key={font.name}
+              onClick={() => {
+                onValueChange(font.name);
+                setOpen(false);
+              }}
+            >
+              {font.name}
+            </FontpickerButton>
+          ))}
+        </Popover.Content>
+      </Popover.Root>
+    </>
+  );
+}
+
+function FontpickerButton({
+  children,
+  onClick,
+}: {
+  children: ReactNode;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      className="w-full p-2 hover:bg-gray-100 text-left text-sm"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}

@@ -451,9 +451,6 @@ importers:
       '@types/react-router-dom':
         specifier: ^5.1.7
         version: 5.3.3
-      '@types/react-select':
-        specifier: ^4.0.17
-        version: 4.0.18
       '@types/strip-comments':
         specifier: ^2.0.0
         version: 2.0.1
@@ -3573,10 +3570,6 @@ packages:
       '@edge-runtime/primitives': 3.0.3
     dev: true
 
-  /@emotion/hash@0.9.0:
-    resolution: {integrity: sha512-14FtKiHhy2QoPIzdTcvh//8OyBlknNs2nXRwIhG904opCby3l+9Xaf/wuPvICBF0rc1ZCNBd3nKe9cd2mecVkQ==}
-    dev: true
-
   /@emotion/is-prop-valid@0.8.8:
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
     requiresBuild: true
@@ -3590,28 +3583,6 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
-
-  /@emotion/memoize@0.8.0:
-    resolution: {integrity: sha512-G/YwXTkv7Den9mXDO7AhLWkE3q+I92B+VqAE+dYG4NGPaHZGvt3G8Q0p9vmE+sq7rTGphUbAvmQ9YpbfMQGGlA==}
-    dev: true
-
-  /@emotion/serialize@1.1.0:
-    resolution: {integrity: sha512-F1ZZZW51T/fx+wKbVlwsfchr5q97iW8brAnXmsskz4d0hVB4O3M/SiA3SaeH06x02lSNzkkQv+n3AX3kCXKSFA==}
-    dependencies:
-      '@emotion/hash': 0.9.0
-      '@emotion/memoize': 0.8.0
-      '@emotion/unitless': 0.8.0
-      '@emotion/utils': 1.2.0
-      csstype: 3.1.1
-    dev: true
-
-  /@emotion/unitless@0.8.0:
-    resolution: {integrity: sha512-VINS5vEYAscRl2ZUDiT3uMPlrFQupiKgHz5AA4bCH1miKBg4qtwkim1qPmJj/4WG6TreYMY111rEFsjupcOKHw==}
-    dev: true
-
-  /@emotion/utils@1.2.0:
-    resolution: {integrity: sha512-sn3WH53Kzpw8oQ5mgMmIzzyAaH2ZqFEbozVVBSYp538E06OSE6ytOp7pRAjNQR+Q/orwqdQYJSe2m3hCOeznkw==}
-    dev: true
 
   /@endemolshinegroup/cosmiconfig-typescript-loader@3.0.2(cosmiconfig@7.0.1)(typescript@5.2.2):
     resolution: {integrity: sha512-QRVtqJuS1mcT56oHpVegkKBlgtWjXw/gHNWO3eL9oyB5Sc7HBoc2OLG/nYpVfT/Jejvo3NUrD0Udk7XgoyDKkA==}
@@ -8400,21 +8371,6 @@ packages:
     resolution: {integrity: sha512-Fv/5kb2STAEMT3wHzdKQK2z8xKq38EDIGVrutYLmQVVLe+4orDFquU52hQrULnEHinMKv9FSA6lf9+uNT1ITtA==}
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 18.2.15
-    dev: true
-
-  /@types/react-select@4.0.18:
-    resolution: {integrity: sha512-uCPRMPshd96BwHuT7oCrFduiv5d6km3VwmtW7rVl9g4XetS3VoJ9nZo540LiwtQgaFcW96POwaxQDZDAyYaepg==}
-    dependencies:
-      '@emotion/serialize': 1.1.0
-      '@types/react': 18.2.15
-      '@types/react-dom': 18.2.7
-      '@types/react-transition-group': 4.4.5
-    dev: true
-
-  /@types/react-transition-group@4.4.5:
-    resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}
-    dependencies:
       '@types/react': 18.2.15
     dev: true
 
