@@ -1,7 +1,5 @@
 import * as Slider from "@radix-ui/react-slider";
 import { Control } from "formulaic";
-import * as Select from "@radix-ui/react-select";
-import { CaretDown } from "phosphor-react";
 
 type BaseProps = {
   id: string;
@@ -13,45 +11,21 @@ export const select: Control<
   BaseProps & { options: { value: string; label: string }[] }
 > = (value, onValueChange, { id, options }) => {
   return (
-    <>
-      <select
-        key={id}
-        id={id}
-        value={value}
-        onChange={(e) => {
-          onValueChange(e.target.value);
-        }}
-        className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-      >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-      <Select.Root>
-        <Select.Trigger className="p-3 pl-4 border-solid border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm flex justify-between items-center">
-          <Select.Value />
-          <Select.Icon>
-            <CaretDown />
-          </Select.Icon>
-        </Select.Trigger>
-        <Select.Content
-          className="border-solid border border-gray-300 rounded-md shadow-sm bg-white"
-          position="item-aligned"
-        >
-          <Select.Item value="1" className="p-3">
-            <Select.ItemText>One</Select.ItemText>
-          </Select.Item>
-          <Select.Item value="2" className="p-3">
-            <Select.ItemText>Two</Select.ItemText>
-          </Select.Item>
-          <Select.Item value="3" className="p-3">
-            <Select.ItemText>Three</Select.ItemText>
-          </Select.Item>
-        </Select.Content>
-      </Select.Root>
-    </>
+    <select
+      key={id}
+      id={id}
+      value={value}
+      onChange={(e) => {
+        onValueChange(e.target.value);
+      }}
+      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    >
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </select>
   );
 };
 
