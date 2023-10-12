@@ -16,9 +16,7 @@ import { useDebouncedCallback } from "use-debounce";
 import { monacoMarkerErrorSeverity } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getElements } from "../lib/getElements";
-import { getLayout } from "../lib/getLayout";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
-import { useBackgroundColor } from "../lib/graphThemes";
 import { isError } from "../lib/helpers";
 import { getAnimationSettings, useCanEdit } from "../lib/hooks";
 import {
@@ -26,7 +24,6 @@ import {
   useCytoscapeStyleImports,
 } from "../lib/preprocessCytoscapeStyle";
 import { useContextMenuState } from "../lib/useContextMenuState";
-import { useCytoscapeStyle } from "../lib/useCytoscapeStyle";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
 import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
@@ -35,6 +32,7 @@ import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import classNames from "classnames";
+import { getThemeEditor, toTheme, useBackground } from "../lib/toTheme";
 declare global {
   interface Window {
     __cy?: cytoscape.Core;
@@ -49,7 +47,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const cy = useRef<undefined | Core>();
   const cyErrorCatcher = useRef<undefined | Core>();
   const isGraphInitialized = useRef(false);
-  const bg = useBackgroundColor();
+  const bg = useBackground();
 
   const handleResize = useCallback(() => {
     if (!cy.current) return;
@@ -69,18 +67,18 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   // Initialize Graph
   useInitializeGraph({ cy, cyErrorCatcher, canEdit });
 
-  const throttleStyle = useMemo(
-    () => getStyleUpdater({ cy, cyErrorCatcher }),
-    []
-  );
+  // const throttleStyle = useMemo(
+  //   () => getStyleUpdater({ cy, cyErrorCatcher }),
+  //   []
+  // );
 
-  // Get style
-  const cytoscapeStyle = useCytoscapeStyle();
+  // // Get style
+  // const cytoscapeStyle = useCytoscapeStyle();
 
-  // Apply style
-  useEffect(() => {
-    throttleStyle(cytoscapeStyle);
-  }, [cytoscapeStyle, throttleStyle]);
+  // // Apply style
+  // useEffect(() => {
+  //   throttleStyle(cytoscapeStyle);
+  // }, [cytoscapeStyle, throttleStyle]);
 
   const throttleUpdate = useMemo(
     () =>
@@ -307,24 +305,29 @@ function getGraphUpdater({
   cyErrorCatcher: MutableRefObject<cytoscape.Core | undefined>;
   isGraphInitialized: MutableRefObject<boolean>;
 }) {
-  return throttle((_doc?: Doc) => {
+  return throttle((doc: Doc = useDoc.getState()) => {
     if (!cy.current) return;
     if (!cyErrorCatcher.current) return;
-    const doc = _doc || useDoc.getState();
     let elements: cytoscape.ElementDefinition[] = [];
 
     try {
-      const layout = getLayout(doc);
+      const themeEditor = getThemeEditor(doc);
+      const { layout, style: _style } = toTheme(themeEditor);
+
+      const { style } = preprocessCytoscapeStyle(_style);
+
+      // const layout = getLayout(doc);
       elements = getElements(doc.text);
 
       // Test
-      cyErrorCatcher.current.json({ elements });
+      cyErrorCatcher.current.json({ elements, layout, style });
 
       // Very specific bug wrt to cose layouts
       // If it's the first render, randomize cannot be false
       // Because the graph has no positions yet
-      if (!isGraphInitialized.current && layout.name === "fcose") {
-        layout.randomize = true;
+      if (layout.name === "fcose") {
+        // @ts-ignore
+        layout.randomize = !isGraphInitialized.current;
       }
 
       cyErrorCatcher.current.layout(layout);
@@ -340,7 +343,7 @@ function getGraphUpdater({
       }
 
       // Update
-      cy.current.json({ elements });
+      cy.current.json({ elements, style });
 
       // Determine whether to animate
       const shouldAnimate =
@@ -356,6 +359,7 @@ function getGraphUpdater({
           animate: shouldAnimate,
           animationDuration: shouldAnimate ? 333 : 0,
           ...layout,
+          // @ts-ignore
           fit: autoFit,
           padding: DEFAULT_GRAPH_PADDING,
         })
@@ -407,7 +411,7 @@ function getGraphUpdater({
         });
       }
     }
-  }, 333);
+  }, 100);
 }
 
 function isParseError(e: unknown): e is ParseError {

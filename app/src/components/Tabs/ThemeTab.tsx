@@ -1,19 +1,38 @@
 import { createControls, Control } from "formulaic";
-import { FFTheme, LayoutDirection, LayoutName } from "../../lib/toTheme";
-import { useTmpThemeState } from "./useTmpThemeState";
+import {
+  FFTheme,
+  Direction,
+  LayoutName,
+  updateThemeEditor,
+  useThemeEditor,
+  Shape,
+  CurveStyle,
+  ArrowShape,
+} from "../../lib/toTheme";
+import { ReactNode } from "react";
+import * as Slider from "@radix-ui/react-slider";
+import classNames from "classnames";
+import { ThemeTabCustom } from "./ThemeTabCustom";
+import { theme as defaultTheme } from "../../lib/templates/default-template";
+
+type BaseProps = {
+  id: string;
+  title: string;
+};
 
 const select: Control<
   string,
-  { id: string; options: { value: string; label: string }[] }
+  BaseProps & { options: { value: string; label: string }[] }
 > = (value, onValueChange, { id, options }) => {
   return (
     <select
+      key={id}
       id={id}
       value={value}
       onChange={(e) => {
         onValueChange(e.target.value);
       }}
-      className="p-4 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     >
       {options.map((option) => (
         <option value={option.value}>{option.label}</option>
@@ -22,62 +41,535 @@ const select: Control<
   );
 };
 
+const range: Control<
+  number,
+  BaseProps & { min: number; max: number; step: number }
+> = (value, onValueChange, { id, min, max, step, title }) => {
+  return (
+    <Slider.Root
+      key={id}
+      id={id}
+      name={id}
+      className="relative flex items-center select-none touch-none w-full h-6"
+      value={[value]}
+      max={max}
+      min={min}
+      step={step}
+      onValueChange={([value]) => {
+        onValueChange(value);
+      }}
+    >
+      <Slider.Track className="w-full h-1 bg-gray-200 rounded-full relative grow">
+        <Slider.Range className="absolute h-full bg-blue-500 rounded-full" />
+      </Slider.Track>
+      <Slider.Thumb
+        className="block w-4 h-4 bg-blue-500 rounded-full shadow-md"
+        aria-label={title}
+      />
+    </Slider.Root>
+  );
+};
+
+const text: Control<string, BaseProps> = (value, onValueChange, { id }) => {
+  return (
+    <input
+      key={id}
+      type="text"
+      id={id}
+      value={value}
+      onChange={(e) => {
+        onValueChange(e.target.value);
+      }}
+      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    />
+  );
+};
+
+const color: Control<string, BaseProps> = (value, onValueChange, { id }) => {
+  return (
+    <div className="flex items-center gap-2">
+      <input
+        key={id}
+        type="color"
+        id={id}
+        value={value}
+        onChange={(e) => {
+          onValueChange(e.target.value);
+        }}
+        className="h-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      />
+      <span className="font-mono text-neutral-500">{value}</span>
+    </div>
+  );
+};
+
+const checkbox: Control<boolean, BaseProps> = (
+  value,
+  onValueChange,
+  { id }
+) => {
+  return (
+    <input
+      key={id}
+      type="checkbox"
+      id={id}
+      checked={value}
+      onChange={(e) => {
+        onValueChange(e.target.checked);
+      }}
+      className="h-6 w-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    />
+  );
+};
+
 const createForm = createControls({
   select,
+  range,
+  text,
+  color,
+  checkbox,
 });
 
 const Form = createForm<FFTheme>({
+  wrapEach({ children, field, data }) {
+    return (
+      <div
+        className={classNames("grid", {
+          "gap-1": field.control === "range",
+          "gap-2": field.control !== "range",
+        })}
+      >
+        <div className="flex justify-between items-end">
+          <label htmlFor={field.id} className="text-xs text-neutral-500">
+            {field.title}
+          </label>
+          {field.control === "range" && (
+            <span className="font-mono text-neutral-500/50 text-[12px]">
+              {field.value(data)}
+            </span>
+          )}
+        </div>
+        {children}
+      </div>
+    );
+  },
   elements: [
     {
-      id: "layoutName",
-      control: "select",
-      value(data) {
-        return data.layoutName;
+      wrapper({ children }) {
+        return <Section title="General">{children}</Section>;
       },
-      onChange(value) {
-        useTmpThemeState.setState({ layoutName: value as LayoutName });
-      },
-      options: [
-        { value: "dagre", label: "Dagre" },
-        { value: "klay", label: "Klay" },
-        { value: "breadthfirst", label: "Breadthfirst" },
-        { value: "cose", label: "Cose" },
-        { value: "concentric", label: "Concentric" },
-        { value: "circle", label: "Circle" },
-        { value: "layered", label: "Layered" },
-        { value: "tree", label: "Tree" },
-        { value: "stress", label: "Stress" },
-        { value: "radial", label: "Radial" },
+      elements: [
+        {
+          title: "Background",
+          id: "background",
+          control: "color",
+          value(data) {
+            return data.background ?? defaultTheme.background;
+          },
+          onChange(value) {
+            updateThemeEditor({ background: value });
+          },
+        },
+        {
+          title: "Font",
+          id: "fontFamily",
+          control: "text",
+          value(data) {
+            return data.fontFamily ?? defaultTheme.fontFamily;
+          },
+          onChange(value) {
+            updateThemeEditor({ fontFamily: value });
+          },
+        },
       ],
     },
     {
-      id: "layoutDirection",
-      control: "select",
-      value(data) {
-        return data.layoutDirection;
+      wrapper({ children }) {
+        return <Section title="Layout">{children}</Section>;
       },
-      onChange(value) {
-        useTmpThemeState.setState({
-          layoutDirection: value as LayoutDirection,
-        });
-      },
-      options: [
-        { label: `Top to Bottom`, value: "TB" },
-        { label: `Left to Right`, value: "LR" },
-        { label: `Right to Left`, value: "RL" },
-        { label: `Bottom to Top`, value: "BT" },
+      elements: [
+        {
+          id: "layoutName",
+          title: "Algorithm",
+          control: "select",
+          value(data) {
+            return data.layoutName;
+          },
+          onChange(value) {
+            updateThemeEditor({ layoutName: value as LayoutName });
+          },
+          options: [
+            { value: "dagre", label: "Dagre" },
+            { value: "klay", label: "Klay" },
+            { value: "layered", label: "Layered" },
+            { value: "mrtree", label: "Tree" },
+            { value: "stress", label: "Stress" },
+            { value: "radial", label: "Radial" },
+            { value: "cose", label: "Cose" },
+            { value: "breadthfirst", label: "Breadthfirst" },
+            { value: "concentric", label: "Concentric" },
+            { value: "circle", label: "Circle" },
+          ],
+        },
+        {
+          title: "Direction",
+          id: "klayDirection",
+          control: "select",
+          hidden(data) {
+            return !["dagre", "klay", "layered", "mrtree"].includes(
+              data.layoutName
+            );
+          },
+          value(data) {
+            return data.direction ?? "UNDEFINED";
+          },
+          onChange(value) {
+            updateThemeEditor({ direction: value as Direction });
+          },
+          options: [
+            { label: "Right", value: "RIGHT" },
+            { label: "Left", value: "LEFT" },
+            { label: "Down", value: "DOWN" },
+            { label: "Up", value: "UP" },
+          ],
+        },
+        {
+          title: "Spacing",
+          id: "spacingFactor",
+          control: "range",
+          value(data) {
+            return data.spacingFactor ?? defaultTheme.spacingFactor;
+          },
+          onChange(value) {
+            updateThemeEditor({ spacingFactor: value });
+          },
+          min: 0,
+          max: 10,
+          step: 0.05,
+        },
       ],
+    },
+    {
+      wrapper({ children }) {
+        return <Section title="Nodes">{children}</Section>;
+      },
+      elements: [
+        {
+          title: "Shape",
+          id: "shape",
+          control: "select",
+          value(data) {
+            return data.shape ?? defaultTheme.shape;
+          },
+          onChange(value) {
+            updateThemeEditor({ shape: value as Shape });
+          },
+          options: [
+            { label: "Rectangle", value: "rectangle" },
+            { label: "Round Rectangle", value: "roundrectangle" },
+            { label: "Ellipse", value: "ellipse" },
+          ],
+        },
+        {
+          title: "Background",
+          id: "nodeBackground",
+          control: "color",
+          value(data) {
+            return data.nodeBackground ?? defaultTheme.nodeBackground;
+          },
+          onChange(value) {
+            updateThemeEditor({ nodeBackground: value });
+          },
+        },
+        {
+          title: "Text Color",
+          id: "nodeForeground",
+          control: "color",
+          value(data) {
+            return data.nodeForeground ?? defaultTheme.nodeForeground;
+          },
+          onChange(value) {
+            updateThemeEditor({ nodeForeground: value });
+          },
+        },
+        {
+          title: "Padding",
+          id: "padding",
+          control: "range",
+          value(data) {
+            return data.padding ?? defaultTheme.padding;
+          },
+          onChange(value) {
+            updateThemeEditor({ padding: value });
+          },
+          min: 0,
+          max: 100,
+          step: 1,
+        },
+        {
+          title: "Border Width",
+          id: "borderWidth",
+          control: "range",
+          value(data) {
+            return data.borderWidth ?? defaultTheme.borderWidth;
+          },
+          onChange(value) {
+            updateThemeEditor({ borderWidth: value });
+          },
+          min: 0,
+          max: 10,
+          step: 1,
+        },
+        {
+          title: "Border Color",
+          id: "borderColor",
+          control: "color",
+          hidden(data) {
+            return data.borderWidth === 0;
+          },
+          value(data) {
+            return data.borderColor ?? defaultTheme.borderColor;
+          },
+          onChange(value) {
+            updateThemeEditor({ borderColor: value });
+          },
+        },
+        {
+          title: "Text Max Width",
+          id: "textMaxWidth",
+          control: "range",
+          value(data) {
+            return data.textMaxWidth ?? defaultTheme.textMaxWidth;
+          },
+          onChange(value) {
+            updateThemeEditor({ textMaxWidth: value });
+          },
+          min: 0,
+          max: 1000,
+          step: 1,
+        },
+        {
+          title: "Line Height",
+          id: "lineHeight",
+          control: "range",
+          value(data) {
+            return data.lineHeight ?? defaultTheme.lineHeight;
+          },
+          onChange(value) {
+            updateThemeEditor({ lineHeight: value });
+          },
+          min: 0.8,
+          max: 3,
+          step: 0.1,
+        },
+        {
+          title: "Text Margin Y",
+          id: "textMarginY",
+          control: "range",
+          value(data) {
+            return data.textMarginY ?? defaultTheme.textMarginY;
+          },
+          onChange(value) {
+            updateThemeEditor({ textMarginY: value });
+          },
+          min: -6,
+          max: 6,
+          step: 0.25,
+        },
+      ],
+    },
+    {
+      wrapper({ children }) {
+        return <Section title="Edges">{children}</Section>;
+      },
+      elements: [
+        {
+          title: "Curve Style",
+          id: "curveStyle",
+          control: "select",
+          value(data) {
+            return data.curveStyle ?? defaultTheme.curveStyle;
+          },
+          onChange(value) {
+            updateThemeEditor({ curveStyle: value as CurveStyle });
+          },
+          options: [
+            { label: "Bezier", value: "bezier" },
+            { label: "Taxi", value: "taxi" },
+          ],
+        },
+        {
+          title: "Edge Width",
+          id: "edgeWidth",
+          control: "range",
+          value(data) {
+            return data.edgeWidth ?? defaultTheme.edgeWidth;
+          },
+          onChange(value) {
+            updateThemeEditor({ edgeWidth: value });
+          },
+          min: 1,
+          max: 10,
+          step: 1,
+        },
+        {
+          title: "Color",
+          id: "edgeColor",
+          control: "color",
+          value(data) {
+            return data.edgeColor ?? defaultTheme.edgeColor;
+          },
+          onChange(value) {
+            updateThemeEditor({ edgeColor: value });
+          },
+        },
+        {
+          wrapper({ children }) {
+            return <div className="grid grid-cols-2 gap-3">{children}</div>;
+          },
+          elements: [
+            {
+              title: "Source Arrow Shape",
+              id: "sourceArrowShape",
+              control: "select",
+              value(data) {
+                return data.sourceArrowShape ?? defaultTheme.sourceArrowShape;
+              },
+              onChange(value) {
+                updateThemeEditor({ sourceArrowShape: value as ArrowShape });
+              },
+              options: [
+                { value: "none", label: "None" },
+                { value: "triangle", label: "Triangle" },
+                { value: "vee", label: "Vee" },
+                { value: "triangle-backcurve", label: "Triangle-backcurve" },
+                { value: "circle", label: "Circle" },
+              ],
+            },
+            {
+              title: "Target Arrow Shape",
+              id: "targetArrowShape",
+              control: "select",
+              value(data) {
+                return data.targetArrowShape ?? defaultTheme.targetArrowShape;
+              },
+              onChange(value) {
+                updateThemeEditor({ targetArrowShape: value as ArrowShape });
+              },
+              options: [
+                { value: "none", label: "None" },
+                { value: "triangle", label: "Triangle" },
+                { value: "vee", label: "Vee" },
+                { value: "triangle-backcurve", label: "Triangle-backcurve" },
+                { value: "circle", label: "Circle" },
+              ],
+            },
+            {
+              title: "Source Distance From Node",
+              id: "sourceDistanceFromNode",
+              control: "range",
+              value(data) {
+                return (
+                  data.sourceDistanceFromNode ??
+                  defaultTheme.sourceDistanceFromNode
+                );
+              },
+              onChange(value) {
+                updateThemeEditor({ sourceDistanceFromNode: value });
+              },
+              min: 0,
+              max: 15,
+              step: 1,
+            },
+            {
+              title: "Target Distance From Node",
+              id: "targetDistanceFromNode",
+              control: "range",
+              value(data) {
+                return (
+                  data.targetDistanceFromNode ??
+                  defaultTheme.targetDistanceFromNode
+                );
+              },
+              onChange(value) {
+                updateThemeEditor({ targetDistanceFromNode: value });
+              },
+              min: 0,
+              max: 15,
+              step: 1,
+            },
+          ],
+        },
+        {
+          title: "Arrow Scale",
+          id: "arrowScale",
+          control: "range",
+          value(data) {
+            return data.arrowScale ?? defaultTheme.arrowScale;
+          },
+          onChange(value) {
+            updateThemeEditor({ arrowScale: value });
+          },
+          min: 0,
+          max: 3,
+          step: 0.025,
+        },
+        {
+          title: "Edge Text Size",
+          id: "edgeTextSize",
+          control: "range",
+          value(data) {
+            return data.edgeTextSize ?? defaultTheme.edgeTextSize;
+          },
+          onChange(value) {
+            updateThemeEditor({ edgeTextSize: value });
+          },
+          min: 0.5,
+          max: 1,
+          step: 0.01,
+        },
+        {
+          title: "Rotate Label",
+          id: "rotateEdgeLabel",
+          control: "checkbox",
+          value(data) {
+            return data.rotateEdgeLabel ?? defaultTheme.rotateEdgeLabel;
+          },
+          onChange(value) {
+            updateThemeEditor({ rotateEdgeLabel: value });
+          },
+        },
+      ],
+    },
+    {
+      wrapper({ children }) {
+        return <Section title="Custom">{children}</Section>;
+      },
+      wrapEach: false,
+      elements: [<ThemeTabCustom />],
     },
   ],
 });
 
 export function ThemeTab() {
-  const data = useTmpThemeState();
+  const data = useThemeEditor();
+
   return (
-    <div className="h-full w-full p-4">
-      <form className="grid gap-1">
+    <div className="h-full w-full p-4 overflow-auto">
+      <form className="grid gap-8 pb-10">
         <Form data={data} />
       </form>
     </div>
+  );
+}
+
+function Section({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <>
+      <h2 className="font-bold text-blue-600 text-base -mb-8 ml-3">{title}</h2>
+      <div className="border border-blue-100 rounded-xl relative w-full overflow-hidden">
+        <div className="grid gap-4 p-4 content-start">{children}</div>
+      </div>
+    </>
   );
 }

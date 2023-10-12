@@ -1,9 +1,11 @@
 import { cytoscapeStyle } from "../lib/themes/august2023";
 import { getDefaultText } from "./getDefaultText";
 import { addDays } from "date-fns";
+import { theme } from "./templates/default-template";
 
 const defaultMeta = {
   cytoscapeStyle,
+  themeEditor: theme,
 };
 
 // TODO: Should be shared with the back-end through a shared package

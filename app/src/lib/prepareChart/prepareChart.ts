@@ -55,10 +55,7 @@ export async function prepareChart(doc: string, details: Details) {
     parsedData = parsed.data;
   }
 
-  const meta = merge.all([jsonMeta, parsedData, hidden]) as Record<
-    string,
-    unknown
-  >;
+  const meta = merge.all([jsonMeta, parsedData, hidden]) as Record<string, any>;
 
   text = `${text.trim()}\n`;
 
@@ -66,6 +63,11 @@ export async function prepareChart(doc: string, details: Details) {
 
   // check for theme
   await replaceThemeWithCytoscapeStyle(meta);
+
+  // process style
+  if (meta.cytoscapeStyle) {
+    preprocessCytoscapeStyle(meta.cytoscapeStyle);
+  }
 
   return {
     text,
@@ -88,7 +90,6 @@ async function replaceThemeWithCytoscapeStyle(meta: Record<string, unknown>) {
   // set the cytoscapeStyle and remove the theme
   if (cytoscapeStyle) {
     meta.cytoscapeStyle = cytoscapeStyle;
-    preprocessCytoscapeStyle(cytoscapeStyle);
   }
 
   delete meta.theme;
