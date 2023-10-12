@@ -1,3 +1,12 @@
+/**
+ * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * !!!!!!!!!!!! NOTICE !!!!!!!!!!!!!!!!
+ * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *
+ * If you change this file, you need to run `pnpm -F app theme:schema:generate` to update the
+ * json schema file in `app/src/lib/FFTheme.schema.json`.
+ */
+
 export type LayoutName =
   | "dagre"
   | "klay"

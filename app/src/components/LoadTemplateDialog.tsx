@@ -18,6 +18,8 @@ import { getDefaultChart } from "../lib/getDefaultChart";
 import { useDoc } from "../lib/useDoc";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { useUnmountStore } from "../lib/useUnmountStore";
+import { FFTheme } from "../lib/FFTheme";
+import { updateThemeEditor } from "../lib/toTheme";
 
 export function LoadTemplateDialog() {
   const [open, setOpen] = useState(false);
@@ -41,7 +43,9 @@ export function LoadTemplateDialog() {
   const load = useCallback(() => {
     (async () => {
       if (!template || !templateData) return;
-      let templateContent: string, nextLayout: string;
+      let templateContent: string,
+        nextLayout: string,
+        theme: FFTheme | undefined;
       if (template === "default") {
         const chart = getDefaultChart();
         const parts = chart.split("=====");
@@ -53,6 +57,7 @@ export function LoadTemplateDialog() {
         );
         templateContent = importTemplate.content;
         nextLayout = importTemplate.template;
+        theme = importTemplate.theme;
       }
 
       const { text, details } = useDoc.getState();
@@ -60,6 +65,9 @@ export function LoadTemplateDialog() {
       const nextContent = content ? templateContent : text;
 
       prepareChart(`${nextContent}\n${nextLayout}`, details);
+      // set the theme
+      if (theme) updateThemeEditor(theme);
+
       reset();
       setOpen(false);
       requestAnimationFrame(() => {

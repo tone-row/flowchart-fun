@@ -166,7 +166,7 @@ export function toTheme(theme: FFTheme) {
 
   return {
     layout,
-    style: styleToString(style) + theme.custom,
+    style: styleToString(style) + "\n" + theme.custom,
   };
 }
 
