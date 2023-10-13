@@ -18,7 +18,6 @@ import { useDoc } from "../lib/useDoc";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { useUnmountStore } from "../lib/useUnmountStore";
 import { FFTheme } from "../lib/FFTheme";
-import { updateThemeEditor } from "../lib/toTheme";
 
 export function LoadTemplateDialog() {
   const [open, setOpen] = useState(false);
