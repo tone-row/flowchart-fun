@@ -11,7 +11,7 @@ export function EditorOptions({ children }: { children: ReactNode }) {
 
   return (
     <div className="grid h-full grid-rows-[auto_minmax(0,1fr)]">
-      <div className="pl-5 py-3 flex gap-2 items-center border-y border-blue-200 bg-blue-50 dark:bg-blue-900/30 dark:border-y-0">
+      <div className="pl-5 py-3 flex gap-2 items-center bg-blue-50 dark:bg-blue-900/30">
         <div className="flex content-start gap-4 items-center">
           <LoadTemplateDialog />
           {isProUser ? (

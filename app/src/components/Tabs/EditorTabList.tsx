@@ -32,7 +32,7 @@ export function EditorTabList() {
   return (
     <Tabs.List
       className={classNames(
-        "grid grid-flow-col gap-4 px-5 pb-0 justify-start",
+        "grid grid-flow-col gap-4 px-5 pb-0 justify-start border-b border-blue-100",
         styles.TabsList
       )}
       ref={tabsListRef}
