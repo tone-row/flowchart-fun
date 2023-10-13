@@ -27,7 +27,7 @@ export const templates: {
   },
   {
     key: "mindmap",
-    img: "template16.png",
+    img: "template19.png",
     bgColor: "#FFFFFF",
     title: () => `Mind Map`,
     promptType: "knowledge",

@@ -8,7 +8,6 @@ import {
 } from "../constants";
 import { getStyleStringFromMeta, preprocessStyle } from "../preprocessStyle";
 import { Details, useDoc } from "../useDoc";
-import { toTheme } from "../toTheme";
 import { cytoscapeStyle, theme } from "../templates/default-template";
 import { FFTheme } from "../FFTheme";
 
@@ -87,6 +86,9 @@ export async function prepareChart(doc: string, details: Details) {
     if (name) (meta.themeEditor as FFTheme).layoutName = name;
 
     (meta.themeEditor as FFTheme).spacingFactor = spacingFactor;
+
+    // Delete the old layout
+    delete meta.layout;
   }
 
   // pre-process style to load classes and font imports

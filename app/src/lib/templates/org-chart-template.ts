@@ -30,7 +30,7 @@ export const theme: FFTheme = {
   edgeTextSize: 1,
   edgeWidth: 1,
   useFixedHeight: false,
-  fixedHeight: 0,
+  fixedHeight: 60,
   sourceArrowShape: "none",
   targetArrowShape: "none",
   edgeColor: "#2a2a26",
@@ -44,4 +44,4 @@ export const theme: FFTheme = {
 };
 
 export const cytoscapeStyle =
-  "$background: #fefdf9;\n$color: #2a2a26;\n$red: #f1bfb8;\n$orange: #ff8e16;\n$yellow: #f8edba;\n$green: #b1d1d3;\n$blue: #c1e1f8;\n$pink: #e9b5da;\n$purple: #d0a9e1;\n$grey: #cacaca;\n\n:childless {\n  font-weight: 300;\n}\n\n:childless.color_red {\n  background-color: $red;\n  border-color: #be8179;\n}\n:childless.color_yellow {\n  background-color: $yellow;\n  border-color: #c8bd84;\n}\n:childless.color_green {\n  background-color: $green;\n  border-color: #7ea9a5;\n}\n:childless.color_blue {\n  background-color: $blue;\n  border-color: #89add1;\n}\n:childless.color_purple {\n  background-color: $purple;\n  border-color: #aa82ba;\n}\n:childless.color_pink {\n  background-color: $pink;\n  border-color: #a585b1;\n}\n\n:childless.size_lg {\n  font-size: 24;\n  padding: 18;\n  width: 250;\n  text-max-width: 218;\n  text-margin-y: 2;\n}\n\n:parent {\n  padding: 10;\n  border-style: solid;\n  border-width: 2;\n  border-color: $color;\n  background-color: $background;\n  text-valign: top;\n  label: data(label);\n  color: $color;\n  font-size: 19.5px;\n  text-margin-y: -5;\n}\n\n:parent.color_white {\n  background-color: white;\n}\n:parent.color_grey {\n  background-color: $grey;\n}\n";
+  "$red: #f1bfb8;\n$orange: #ff8e16;\n$yellow: #f8edba;\n$green: #b1d1d3;\n$blue: #c1e1f8;\n$pink: #e9b5da;\n$purple: #d0a9e1;\n$grey: #cacaca;\n\n:childless {\n  font-weight: 300;\n}\n\n:childless.color_red {\n  background-color: $red;\n  border-color: #be8179;\n}\n:childless.color_yellow {\n  background-color: $yellow;\n  border-color: #c8bd84;\n}\n:childless.color_green {\n  background-color: $green;\n  border-color: #7ea9a5;\n}\n:childless.color_blue {\n  background-color: $blue;\n  border-color: #89add1;\n}\n:childless.color_purple {\n  background-color: $purple;\n  border-color: #aa82ba;\n}\n:childless.color_pink {\n  background-color: $pink;\n  border-color: #a585b1;\n}\n\n:childless.size_lg {\n  font-size: 24;\n  padding: 18;\n  width: 250;\n  text-max-width: 218;\n  text-margin-y: 2;\n}";

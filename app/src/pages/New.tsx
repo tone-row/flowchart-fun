@@ -52,6 +52,7 @@ export default function New2() {
       );
       let content: string = importTemplate.content;
       const theme: FFTheme = importTemplate.theme;
+      const cytoscapeStyle = importTemplate.cytoscapeStyle ?? "";
 
       // Prompts
       if (options.subject) {
@@ -89,6 +90,7 @@ export default function New2() {
 
       const chart = `${content}\n=====${JSON.stringify({
         themeEditor: theme,
+        cytoscapeStyle,
       })}=====`;
 
       return supabase
