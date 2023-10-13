@@ -38,6 +38,10 @@ export const smartShapes: {
   { coreShape: "ellipse", className: "circle" },
   { coreShape: "star", className: "star" },
   { coreShape: "diamond", className: "diamond" },
+  { coreShape: "pentagon", className: "pentagon" },
+  { coreShape: "hexagon", className: "hexagon" },
+  { coreShape: "heptagon", className: "heptagon" },
+  { coreShape: "octagon", className: "octagon" },
 ];
 
 /**
