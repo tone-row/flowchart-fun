@@ -23,6 +23,8 @@ export const theme: FFTheme = {
   fontFamily: "Inclusive Sans",
   curveStyle: "bezier",
   textMarginY: 0,
+  useFixedHeight: false,
+  fixedHeight: 0,
   borderWidth: 0,
   edgeTextSize: 0.88,
   edgeWidth: 2,

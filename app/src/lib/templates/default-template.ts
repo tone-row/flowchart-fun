@@ -24,6 +24,8 @@ export const theme: FFTheme = {
   textMaxWidth: 150,
   lineHeight: 1.4,
   textMarginY: 0,
+  useFixedHeight: false,
+  fixedHeight: 0,
   curveStyle: "bezier",
   edgeWidth: 1,
   edgeColor: "#000000",

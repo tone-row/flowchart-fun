@@ -53,6 +53,15 @@ export type FFTheme = {
   borderColor: string;
   nodeBackground: string;
   nodeForeground: string;
+  /**
+   * Whether the node's height should be fixed. Creates a more aesthetically pleasing graph
+   * in some cases.
+   */
+  useFixedHeight: boolean;
+  /**
+   * The height of the node when `useFixedHeight` is true. Ideal range is between 75 - 250.
+   */
+  fixedHeight: number;
   // Text size on edge labels relative to node
   edgeTextSize: number;
   edgeWidth: number;

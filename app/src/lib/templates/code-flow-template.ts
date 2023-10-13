@@ -34,6 +34,8 @@ export const theme: FFTheme = {
   lineHeight: 1.4,
   nodeBackground: "#6f7280",
   nodeForeground: "white",
+  useFixedHeight: false,
+  fixedHeight: 0,
   padding: 24,
   rotateEdgeLabel: false,
   shape: "roundrectangle",

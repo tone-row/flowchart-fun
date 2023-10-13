@@ -10,7 +10,6 @@ import { languages } from "../locales/i18n";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { useMutation } from "react-query";
 import { supabase } from "../lib/supabaseClient";
-import { getDefaultChart } from "../lib/getDefaultChart";
 import { useIsProUser, useUserId } from "../lib/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import { sample } from "../lib/sample";
@@ -21,7 +20,6 @@ import {
 } from "../lib/paywallCopy";
 import { Warning } from "../components/Warning";
 import { FFTheme } from "../lib/FFTheme";
-import { defaultTheme } from "../lib/toTheme";
 
 type CreateChartOptions = {
   name: string;

@@ -29,6 +29,8 @@ export const theme: FFTheme = {
   textMarginY: 0,
   borderWidth: 0,
   edgeTextSize: 0.88,
+  useFixedHeight: false,
+  fixedHeight: 0,
   edgeWidth: 2,
   sourceArrowShape: "none",
   targetArrowShape: "vee",

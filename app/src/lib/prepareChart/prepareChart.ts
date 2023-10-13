@@ -8,6 +8,7 @@ import {
 } from "../constants";
 import { preprocessCytoscapeStyle } from "../preprocessCytoscapeStyle";
 import { Details, useDoc } from "../useDoc";
+import { toTheme } from "../toTheme";
 
 /**
  * A function which makes sure that the document loaded externally
@@ -67,6 +68,11 @@ export async function prepareChart(doc: string, details: Details) {
   // process style
   if (meta.cytoscapeStyle) {
     preprocessCytoscapeStyle(meta.cytoscapeStyle);
+  }
+
+  // process theme into dynamic classes
+  if (meta.themeEditor) {
+    preprocessCytoscapeStyle(toTheme(meta.themeEditor).style);
   }
 
   return {

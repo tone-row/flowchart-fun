@@ -27,6 +27,8 @@ export const theme: FFTheme = {
   edgeWidth: 1.5,
   fontFamily: "Kalam",
   layoutName: "cose",
+  useFixedHeight: false,
+  fixedHeight: 0,
   lineHeight: 1.2,
   nodeBackground: "white",
   nodeForeground: "#314137",

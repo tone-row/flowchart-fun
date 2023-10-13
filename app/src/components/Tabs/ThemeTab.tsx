@@ -290,6 +290,34 @@ const Form = createForm<FFTheme>({
           max: 6,
           step: 0.25,
         },
+        {
+          title: "Fix Height",
+          id: "useFixedHeight",
+          control: "checkbox",
+          value(data) {
+            return data.useFixedHeight ?? defaultTheme.useFixedHeight;
+          },
+          onChange(value) {
+            updateThemeEditor({ useFixedHeight: value });
+          },
+        },
+        {
+          title: "Height",
+          id: "fixedHeight",
+          control: "range",
+          hidden(data) {
+            return !data.useFixedHeight;
+          },
+          value(data) {
+            return data.fixedHeight ?? defaultTheme.fixedHeight;
+          },
+          onChange(value) {
+            updateThemeEditor({ fixedHeight: value });
+          },
+          min: 50,
+          max: 200,
+          step: 1,
+        },
       ],
     },
     {

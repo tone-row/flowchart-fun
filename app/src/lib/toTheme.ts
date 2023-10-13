@@ -4,36 +4,11 @@ import { Direction, FFTheme, LayoutDirection } from "./FFTheme";
 import { fonts } from "./fonts";
 import {
   childlessShapeClasses,
+  createSmartShapeClasses,
   edgeStyleClasses,
   nodeBorderClasses,
 } from "./graphUtilityClasses";
-
-export const defaultTheme: FFTheme = {
-  layoutName: "dagre",
-  direction: "RIGHT",
-  spacingFactor: 1.5,
-  lineHeight: 1.2,
-  shape: "rectangle",
-  background: "#F6F6F6",
-  textMaxWidth: 130,
-  padding: 16,
-  fontFamily: "IBM Plex Sans",
-  curveStyle: "bezier",
-  textMarginY: 0,
-  borderWidth: 2,
-  edgeTextSize: 0.75,
-  edgeWidth: 2,
-  sourceArrowShape: "none",
-  targetArrowShape: "triangle",
-  edgeColor: "#000000",
-  borderColor: "#000000",
-  nodeBackground: "#ffffff",
-  nodeForeground: "#31405b",
-  sourceDistanceFromNode: 0,
-  targetDistanceFromNode: 0,
-  arrowScale: 1,
-  rotateEdgeLabel: false,
-};
+import { theme as defaultTheme } from "./templates/default-template";
 
 /**
  * Takes an FFTheme and returns cytoscape layout and style
@@ -74,8 +49,12 @@ export function toTheme(theme: FFTheme) {
   // @ts-ignore
   layout.spacingFactor = theme.spacingFactor;
 
-  // // @ts-ignore
-  // layout.elk["elk.layered.nodePlacement.bk.fixedAlignment"] = "BALANCED";
+  if (theme.layoutName === "layered") {
+    // @ts-ignore
+    layout.elk["elk.layered.nodePlacement.bk.fixedAlignment"] = "BALANCED";
+  }
+
+  const width = theme.textMaxWidth + theme.padding * 2;
 
   const node = {
     shape: theme.shape,
@@ -84,7 +63,7 @@ export function toTheme(theme: FFTheme) {
     "text-halign": "center",
     "text-wrap": "wrap",
     "text-max-width": theme.textMaxWidth + "px",
-    width: theme.textMaxWidth + theme.padding * 2,
+    width,
     height: "label",
     padding: theme.padding,
     "line-height": theme.lineHeight,
@@ -96,6 +75,11 @@ export function toTheme(theme: FFTheme) {
     textMarginY: theme.textMarginY,
     fontSize: 16,
   };
+
+  if (theme.useFixedHeight) {
+    // @ts-ignore
+    node.height = theme.fixedHeight;
+  }
 
   const edge = {
     "curve-style": theme.curveStyle,
@@ -170,6 +154,7 @@ export function toTheme(theme: FFTheme) {
     ...nodeBorderClasses,
     ...edgeStyleClasses,
     ...childlessShapeClasses,
+    ...createSmartShapeClasses(width),
   ];
 
   const style = [styleToString(elementStyles), theme.custom];

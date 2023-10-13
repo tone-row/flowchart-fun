@@ -24,6 +24,37 @@ export const shapes: cytoscape.Css.Node["shape"][] = [
   "concave-hexagon",
 ];
 
+/**
+ * These shapes are given the same height as width keeping a 1:1 aspect ratio.
+ *
+ * In some cases we change the class name because it makes more sense (square, circle)
+ */
+export const smartShapes: {
+  coreShape: string;
+  className: string;
+}[] = [
+  { coreShape: "rectangle", className: "square" },
+  { coreShape: "roundrectangle", className: "roundsquare" },
+  { coreShape: "ellipse", className: "circle" },
+  { coreShape: "star", className: "star" },
+  { coreShape: "diamond", className: "diamond" },
+];
+
+/**
+ * Given the current width we can build these classes, which set a height
+ * and the shape.
+ */
+export function createSmartShapeClasses(width: number): StylesheetCSS[] {
+  return smartShapes.map(({ coreShape, className }) => ({
+    selector: `:childless.shape_${className}`,
+    css: {
+      shape: coreShape,
+      width: width,
+      height: width,
+    },
+  }));
+}
+
 export const childlessShapeClasses: StylesheetCSS[] = shapes.map((shape) => ({
   selector: `:childless.shape_${shape}`,
   css: {
