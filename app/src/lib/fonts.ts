@@ -20,8 +20,6 @@ export const fonts: {
     importSnippet:
       "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');",
   },
-  // { name: "REM", importSnippet: "" },
-  // { name: "General Sans", importSnippet: "" },
   {
     name: "Inclusive Sans",
     importSnippet:
@@ -35,7 +33,7 @@ export const fonts: {
   {
     name: "Onest",
     importSnippet:
-      "@import url('https://fonts.googleapis.com/css2?family=Onest&display=swap');",
+      "@import url('https://fonts.googleapis.com/css2?family=Onest:wght@300;400&display=swap');",
   },
   {
     name: "Overpass",

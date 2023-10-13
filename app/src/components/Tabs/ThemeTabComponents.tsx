@@ -114,7 +114,7 @@ export const color: Control<string, BaseProps> = (
 ) => {
   const disabled = globals?.canEdit === false;
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 justify-between">
       <input
         key={id}
         type="color"
@@ -126,7 +126,9 @@ export const color: Control<string, BaseProps> = (
         }}
         className="h-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
       />
-      <span className="font-mono text-neutral-500">{value}</span>
+      <span className="font-mono text-neutral-500/50 text-[12px]">
+        {value.toUpperCase()}
+      </span>
     </div>
   );
 };

@@ -104,12 +104,6 @@ export function GraphFloatingMenu() {
           <FaRegSnowflake size={16} />
         </IconToggleButton>
       </Tooltip2>
-      <button
-        onClick={() => navigate("/o")}
-        className="text-[12px] text-neutral-500 hover:text-neutral-600 cursor-pointer font-bold ml-4 px-2 flex gap-1 hover:scale-105 transition-transform dark:text-neutral-300 dark:hover:text-neutral-200"
-      >
-        <Trans>Send Feedback</Trans>
-      </button>
     </div>
   );
 }

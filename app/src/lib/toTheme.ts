@@ -103,6 +103,20 @@ export function toTheme(theme: FFTheme) {
     "text-rotation": theme.rotateEdgeLabel ? "autorotate" : "none",
   };
 
+  const parent = {
+    padding: 10,
+    "border-style": "solid",
+    "border-width": theme.edgeWidth,
+    "border-color": theme.edgeColor,
+    "background-color": theme.background,
+    "text-valign": "top",
+    "font-family": JSON.stringify(theme.fontFamily),
+    label: "data(label)",
+    color: theme.nodeForeground,
+    "font-size": 24,
+    "text-margin-y": -5,
+  };
+
   // taxi-direction
   if (theme.curveStyle === "taxi") {
     if (isHierarchical(theme.layoutName)) {
@@ -127,6 +141,10 @@ export function toTheme(theme: FFTheme) {
     {
       selector: "edge",
       css: edge as any,
+    },
+    {
+      selector: ":parent",
+      css: parent as any,
     },
     {
       selector: ":active",
@@ -157,7 +175,14 @@ export function toTheme(theme: FFTheme) {
     ...createSmartShapeClasses(width),
   ];
 
-  const style = [styleToString(elementStyles), theme.custom];
+  const variables = [
+    `$width: ${width}px;\n${
+      theme.fixedHeight ? "$height: " + theme.fixedHeight + "px;\n" : ""
+    }`,
+    `$background: ${theme.background};`,
+  ].join("\n");
+
+  const style = [variables, styleToString(elementStyles), theme.custom];
 
   // Add font style
   let knownFont = fonts.find((f) => f.name === theme.fontFamily);

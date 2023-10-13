@@ -40,7 +40,7 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
       <header
         className={classNames(
           styles.HeaderTitle,
-          "flex items-start gap-2 justify-between p-2 pl-6"
+          "flex items-start gap-2 justify-between p-2 pl-6 pt-6"
         )}
       >
         {isSandbox ? (
@@ -201,7 +201,7 @@ function FlowchartTitle({
   return (
     <h1
       className={classNames(
-        "text-xl md:text-2xl font-bold -translate-y-[2px] mt-4",
+        "text-xl md:text-2xl font-bold -translate-y-[2px]",
         className
       )}
       {...props}
