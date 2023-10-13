@@ -1,8 +1,7 @@
-import { t, Trans } from "@lingui/macro";
+import { t } from "@lingui/macro";
 import { ArrowsClockwise, MagnifyingGlass, Minus, Plus } from "phosphor-react";
 import { useCallback } from "react";
 import { FaRegSnowflake } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { useGraphStore } from "../lib/useGraphStore";
@@ -32,9 +31,6 @@ export function GraphFloatingMenu() {
   }, []);
 
   const isFrozen = useIsFrozen();
-
-  const navigate = useNavigate();
-
   const autoFit = useGraphStore((s) => s.autoFit);
 
   return (

@@ -312,10 +312,19 @@ function getGraphUpdater({
 
     try {
       const themeEditor = getThemeEditor(doc);
-      const { layout, style: _style } = toTheme(themeEditor);
-      console.log(_style);
+      const { layout, style: themeStyle } = toTheme(themeEditor);
 
-      const { style } = preprocessCytoscapeStyle(_style);
+      // Eventually, this will become cytoscape again...
+      const customCss = themeEditor.custom ?? "";
+
+      // Whether or not to only use the custom css
+      const customCssOnly = (doc.meta?.customCssOnly as boolean) ?? false;
+
+      const { style } = preprocessCytoscapeStyle(
+        customCssOnly ? customCss : [themeStyle, customCss].join("\n")
+      );
+
+      console.log(style);
 
       elements = getElements(doc.text);
 

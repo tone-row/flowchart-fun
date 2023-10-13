@@ -181,6 +181,7 @@ longer label text
     });
   });
 
+  // outdated, force parser update
   test("if a document has a parser it shouldn't change", async () => {
     expect(
       await prepareChart(getFixture("example8"), {
@@ -199,6 +200,13 @@ longer label text
       text: "old\n  [x] parser\n",
     });
   });
+
+  test.todo(
+    "if chart has cytoscapeStyle, move it to themeEditor.custom, drop-in default FFTheme, but turn on customCssOnly theme editor flag"
+  );
+  test.todo(
+    "if chart has 'theme' key, upgrade to themeEditor, replace with default template"
+  );
 });
 
 function getFixture(name: string) {

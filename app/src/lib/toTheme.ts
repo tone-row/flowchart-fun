@@ -182,7 +182,7 @@ export function toTheme(theme: FFTheme) {
     `$background: ${theme.background};`,
   ].join("\n");
 
-  const style = [variables, styleToString(elementStyles), theme.custom];
+  const style = [variables, styleToString(elementStyles)];
 
   // Add font style
   let knownFont = fonts.find((f) => f.name === theme.fontFamily);

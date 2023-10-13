@@ -19,10 +19,10 @@ import {
   select,
   text,
   fontpicker,
-  CustomCSSEditor,
+  customCss,
 } from "./ThemeTabComponents";
-import { Trans } from "@lingui/macro";
 import { useCanEdit } from "../../lib/hooks";
+import { useDoc } from "../../lib/useDoc";
 
 const createForm = createControls({
   select,
@@ -31,9 +31,13 @@ const createForm = createControls({
   color,
   checkbox,
   fontpicker,
+  customCss,
 });
 
-const Form = createForm<FFTheme>({
+const Form = createForm<{
+  theme: FFTheme;
+  customCssOnly: boolean;
+}>({
   wrapEach({ children, field, data }) {
     return (
       <div
@@ -72,7 +76,7 @@ const Form = createForm<FFTheme>({
           id: "background",
           control: "color",
           value(data) {
-            return data.background ?? defaultTheme.background;
+            return data.theme.background ?? defaultTheme.background;
           },
           onChange(value) {
             updateThemeEditor({ background: value });
@@ -83,7 +87,7 @@ const Form = createForm<FFTheme>({
           id: "fontFamily",
           control: "fontpicker",
           value(data) {
-            return data.fontFamily ?? defaultTheme.fontFamily;
+            return data.theme.fontFamily ?? defaultTheme.fontFamily;
           },
           onChange(value) {
             updateThemeEditor({ fontFamily: value });
@@ -105,7 +109,7 @@ const Form = createForm<FFTheme>({
           title: "Algorithm",
           control: "select",
           value(data) {
-            return data.layoutName;
+            return data.theme.layoutName;
           },
           onChange(value) {
             updateThemeEditor({ layoutName: value as LayoutName });
@@ -128,10 +132,12 @@ const Form = createForm<FFTheme>({
           id: "klayDirection",
           control: "select",
           hidden(data) {
-            return !["dagre", "klay", "layered"].includes(data.layoutName);
+            return !["dagre", "klay", "layered"].includes(
+              data.theme.layoutName
+            );
           },
           value(data) {
-            return data.direction ?? "UNDEFINED";
+            return data.theme.direction ?? "UNDEFINED";
           },
           onChange(value) {
             updateThemeEditor({ direction: value as Direction });
@@ -148,7 +154,7 @@ const Form = createForm<FFTheme>({
           id: "spacingFactor",
           control: "range",
           value(data) {
-            return data.spacingFactor ?? defaultTheme.spacingFactor;
+            return data.theme.spacingFactor ?? defaultTheme.spacingFactor;
           },
           onChange(value) {
             updateThemeEditor({ spacingFactor: value });
@@ -173,7 +179,7 @@ const Form = createForm<FFTheme>({
           id: "shape",
           control: "select",
           value(data) {
-            return data.shape ?? defaultTheme.shape;
+            return data.theme.shape ?? defaultTheme.shape;
           },
           onChange(value) {
             updateThemeEditor({ shape: value as Shape });
@@ -189,7 +195,7 @@ const Form = createForm<FFTheme>({
           id: "nodeBackground",
           control: "color",
           value(data) {
-            return data.nodeBackground ?? defaultTheme.nodeBackground;
+            return data.theme.nodeBackground ?? defaultTheme.nodeBackground;
           },
           onChange(value) {
             updateThemeEditor({ nodeBackground: value });
@@ -200,7 +206,7 @@ const Form = createForm<FFTheme>({
           id: "nodeForeground",
           control: "color",
           value(data) {
-            return data.nodeForeground ?? defaultTheme.nodeForeground;
+            return data.theme.nodeForeground ?? defaultTheme.nodeForeground;
           },
           onChange(value) {
             updateThemeEditor({ nodeForeground: value });
@@ -211,7 +217,7 @@ const Form = createForm<FFTheme>({
           id: "padding",
           control: "range",
           value(data) {
-            return data.padding ?? defaultTheme.padding;
+            return data.theme.padding ?? defaultTheme.padding;
           },
           onChange(value) {
             updateThemeEditor({ padding: value });
@@ -225,7 +231,7 @@ const Form = createForm<FFTheme>({
           id: "borderWidth",
           control: "range",
           value(data) {
-            return data.borderWidth ?? defaultTheme.borderWidth;
+            return data.theme.borderWidth ?? defaultTheme.borderWidth;
           },
           onChange(value) {
             updateThemeEditor({ borderWidth: value });
@@ -239,7 +245,7 @@ const Form = createForm<FFTheme>({
           id: "borderColor",
           control: "color",
           value(data) {
-            return data.borderColor ?? defaultTheme.borderColor;
+            return data.theme.borderColor ?? defaultTheme.borderColor;
           },
           onChange(value) {
             updateThemeEditor({ borderColor: value });
@@ -250,7 +256,7 @@ const Form = createForm<FFTheme>({
           id: "textMaxWidth",
           control: "range",
           value(data) {
-            return data.textMaxWidth ?? defaultTheme.textMaxWidth;
+            return data.theme.textMaxWidth ?? defaultTheme.textMaxWidth;
           },
           onChange(value) {
             updateThemeEditor({ textMaxWidth: value });
@@ -264,7 +270,7 @@ const Form = createForm<FFTheme>({
           id: "lineHeight",
           control: "range",
           value(data) {
-            return data.lineHeight ?? defaultTheme.lineHeight;
+            return data.theme.lineHeight ?? defaultTheme.lineHeight;
           },
           onChange(value) {
             updateThemeEditor({ lineHeight: value });
@@ -278,7 +284,7 @@ const Form = createForm<FFTheme>({
           id: "textMarginY",
           control: "range",
           value(data) {
-            return data.textMarginY ?? defaultTheme.textMarginY;
+            return data.theme.textMarginY ?? defaultTheme.textMarginY;
           },
           onChange(value) {
             updateThemeEditor({ textMarginY: value });
@@ -292,7 +298,7 @@ const Form = createForm<FFTheme>({
           id: "useFixedHeight",
           control: "checkbox",
           value(data) {
-            return data.useFixedHeight ?? defaultTheme.useFixedHeight;
+            return data.theme.useFixedHeight ?? defaultTheme.useFixedHeight;
           },
           onChange(value) {
             updateThemeEditor({ useFixedHeight: value });
@@ -303,10 +309,10 @@ const Form = createForm<FFTheme>({
           id: "fixedHeight",
           control: "range",
           hidden(data) {
-            return !data.useFixedHeight;
+            return !data.theme.useFixedHeight;
           },
           value(data) {
-            return data.fixedHeight ?? defaultTheme.fixedHeight;
+            return data.theme.fixedHeight ?? defaultTheme.fixedHeight;
           },
           onChange(value) {
             updateThemeEditor({ fixedHeight: value });
@@ -331,7 +337,7 @@ const Form = createForm<FFTheme>({
           id: "curveStyle",
           control: "select",
           value(data) {
-            return data.curveStyle ?? defaultTheme.curveStyle;
+            return data.theme.curveStyle ?? defaultTheme.curveStyle;
           },
           onChange(value) {
             updateThemeEditor({ curveStyle: value as CurveStyle });
@@ -346,7 +352,7 @@ const Form = createForm<FFTheme>({
           id: "edgeWidth",
           control: "range",
           value(data) {
-            return data.edgeWidth ?? defaultTheme.edgeWidth;
+            return data.theme.edgeWidth ?? defaultTheme.edgeWidth;
           },
           onChange(value) {
             updateThemeEditor({ edgeWidth: value });
@@ -360,7 +366,7 @@ const Form = createForm<FFTheme>({
           id: "edgeColor",
           control: "color",
           value(data) {
-            return data.edgeColor ?? defaultTheme.edgeColor;
+            return data.theme.edgeColor ?? defaultTheme.edgeColor;
           },
           onChange(value) {
             updateThemeEditor({ edgeColor: value });
@@ -380,7 +386,9 @@ const Form = createForm<FFTheme>({
               id: "sourceArrowShape",
               control: "select",
               value(data) {
-                return data.sourceArrowShape ?? defaultTheme.sourceArrowShape;
+                return (
+                  data.theme.sourceArrowShape ?? defaultTheme.sourceArrowShape
+                );
               },
               onChange(value) {
                 updateThemeEditor({ sourceArrowShape: value as ArrowShape });
@@ -398,7 +406,9 @@ const Form = createForm<FFTheme>({
               id: "targetArrowShape",
               control: "select",
               value(data) {
-                return data.targetArrowShape ?? defaultTheme.targetArrowShape;
+                return (
+                  data.theme.targetArrowShape ?? defaultTheme.targetArrowShape
+                );
               },
               onChange(value) {
                 updateThemeEditor({ targetArrowShape: value as ArrowShape });
@@ -417,7 +427,7 @@ const Form = createForm<FFTheme>({
               control: "range",
               value(data) {
                 return (
-                  data.sourceDistanceFromNode ??
+                  data.theme.sourceDistanceFromNode ??
                   defaultTheme.sourceDistanceFromNode
                 );
               },
@@ -434,7 +444,7 @@ const Form = createForm<FFTheme>({
               control: "range",
               value(data) {
                 return (
-                  data.targetDistanceFromNode ??
+                  data.theme.targetDistanceFromNode ??
                   defaultTheme.targetDistanceFromNode
                 );
               },
@@ -452,7 +462,7 @@ const Form = createForm<FFTheme>({
           id: "arrowScale",
           control: "range",
           value(data) {
-            return data.arrowScale ?? defaultTheme.arrowScale;
+            return data.theme.arrowScale ?? defaultTheme.arrowScale;
           },
           onChange(value) {
             updateThemeEditor({ arrowScale: value });
@@ -466,7 +476,7 @@ const Form = createForm<FFTheme>({
           id: "edgeTextSize",
           control: "range",
           value(data) {
-            return data.edgeTextSize ?? defaultTheme.edgeTextSize;
+            return data.theme.edgeTextSize ?? defaultTheme.edgeTextSize;
           },
           onChange(value) {
             updateThemeEditor({ edgeTextSize: value });
@@ -480,7 +490,7 @@ const Form = createForm<FFTheme>({
           id: "rotateEdgeLabel",
           control: "checkbox",
           value(data) {
-            return data.rotateEdgeLabel ?? defaultTheme.rotateEdgeLabel;
+            return data.theme.rotateEdgeLabel ?? defaultTheme.rotateEdgeLabel;
           },
           onChange(value) {
             updateThemeEditor({ rotateEdgeLabel: value });
@@ -491,29 +501,58 @@ const Form = createForm<FFTheme>({
     {
       wrapper({ children }) {
         return (
-          <Section title="Custom" key="custom">
+          <Section title="Advanced" key="custom">
             {children}
           </Section>
         );
       },
-      wrapEach: false,
-      elements: [<CustomCSSEditor key="custom-code" />],
+      // wrapEach: false,
+      elements: [
+        {
+          title: "Custom CSS",
+          id: "customCss",
+          control: "customCss",
+          value(data) {
+            return data.theme.custom ?? "";
+          },
+          onChange(value) {
+            updateThemeEditor({ custom: value });
+          },
+        },
+        {
+          title: "Use Custom CSS Only",
+          id: "customCssOnly",
+          control: "checkbox",
+          value(data) {
+            return data.customCssOnly;
+          },
+          onChange(value) {
+            useDoc.setState((state) => ({
+              meta: {
+                ...state.meta,
+                customCssOnly: value,
+              },
+            }));
+          },
+        },
+      ],
     },
   ],
 });
 
 export function ThemeTab() {
-  const data = useThemeEditor();
+  const theme = useThemeEditor();
   const canEdit = useCanEdit();
+  const customCssOnly = useDoc(
+    (state) => (state.meta?.customCssOnly as boolean) ?? false
+  );
   return (
     <div className="h-full w-full p-4 overflow-auto">
       <p className="text-xs text-neutral-600 mb-6 bg-neutral-100 p-4">
-        <Trans>
-          Use these settings to adapt the look and behavior of your flowcharts
-        </Trans>
+        Use these settings to adapt the look and behavior of your flowcharts
       </p>
       <form className="grid gap-8 pb-10">
-        <Form data={data} globals={{ canEdit }} />
+        <Form data={{ theme, customCssOnly }} globals={{ canEdit }} />
       </form>
     </div>
   );

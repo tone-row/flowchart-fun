@@ -3,13 +3,9 @@ import { Control } from "formulaic";
 import * as Popover from "@radix-ui/react-popover";
 import { ReactNode, useState } from "react";
 import { fonts } from "../../lib/fonts";
-import { Trans } from "@lingui/macro";
 import classNames from "classnames";
 import { Editor } from "@monaco-editor/react";
 import { useCanEdit, useLightOrDarkMode } from "../../lib/hooks";
-import { useDoc } from "../../lib/useDoc";
-import { updateThemeEditor } from "../../lib/toTheme";
-import { FFTheme } from "../../lib/FFTheme";
 
 type BaseProps = {
   id: string;
@@ -172,10 +168,8 @@ export const fontpicker: Control<string, BaseProps> = (
       />
       {!isKnownFont ? (
         <span className="text-xs text-neutral-500 -mt-1 text-center">
-          <Trans>
-            When using a custom font make sure to add the import to your custom
-            CSS.
-          </Trans>
+          When using a custom font make sure to add the import to your custom
+          CSS.
         </span>
       ) : null}
     </>
@@ -256,19 +250,42 @@ function FontpickerButton({
   );
 }
 
-export function CustomCSSEditor() {
-  const canEdit = useCanEdit();
-  const custom = useDoc((s) => (s.meta?.themeEditor as FFTheme).custom) ?? "";
+export const customCss: Control<string, BaseProps> = (
+  value,
+  onValueChange,
+  { id },
+  globals
+) => {
+  const disabled = globals?.canEdit === false;
+  return (
+    <CustomCSSEditor
+      key={id}
+      value={value}
+      onValueChange={onValueChange}
+      disabled={disabled}
+    />
+  );
+};
+
+function CustomCSSEditor({
+  value,
+  onValueChange,
+  disabled,
+}: {
+  value: string;
+  onValueChange: (value: string) => void;
+  disabled: boolean;
+}) {
   const mode = useLightOrDarkMode();
   return (
-    <div>
+    <div className="theme-editor-monaco bg-neutral-50">
       <Editor
         height={300}
         width="100%"
         defaultLanguage="scss"
-        value={custom}
+        value={value}
         onChange={(value) => {
-          updateThemeEditor({ custom: value ?? "" });
+          onValueChange(value ?? "");
         }}
         options={{
           minimap: { enabled: false },
@@ -289,7 +306,7 @@ export function CustomCSSEditor() {
           guides: {
             indentation: false,
           },
-          readOnly: !canEdit,
+          readOnly: disabled,
         }}
         wrapperProps={{
           onMouseEnter() {

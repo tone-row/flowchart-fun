@@ -31,8 +31,8 @@ export default function App() {
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <Provider>
-          <Sentry.ErrorBoundary fallback={ErrorFallback}>
-            <I18n>
+          <I18n>
+            <Sentry.ErrorBoundary fallback={ErrorFallback}>
               <Elements stripe={stripePromise}>
                 <Suspense fallback={<Loading />}>
                   <TooltipProvider>
@@ -41,8 +41,8 @@ export default function App() {
                   <ReactQueryDevtools />
                 </Suspense>
               </Elements>
-            </I18n>
-          </Sentry.ErrorBoundary>
+            </Sentry.ErrorBoundary>
+          </I18n>
         </Provider>
       </QueryClientProvider>
     </BrowserRouter>
