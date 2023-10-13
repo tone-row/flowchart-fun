@@ -5,7 +5,7 @@ import { ReactNode, useState } from "react";
 import { fonts } from "../../lib/fonts";
 import classNames from "classnames";
 import { Editor } from "@monaco-editor/react";
-import { useCanEdit, useLightOrDarkMode } from "../../lib/hooks";
+import { useLightOrDarkMode } from "../../lib/hooks";
 
 type BaseProps = {
   id: string;
