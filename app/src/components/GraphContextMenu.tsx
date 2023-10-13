@@ -17,7 +17,7 @@ import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import { tmpThemeColors } from "../lib/graphThemes";
-import { borderStyles, shapes } from "../lib/graphUtilityClasses";
+import { nodeBorderClasses, shapes } from "../lib/graphUtilityClasses";
 import { useDownloadFilename, useIsFirefox, useIsProUser } from "../lib/hooks";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
@@ -242,7 +242,7 @@ const sizes: {
   },
 ];
 
-const borders = borderStyles.map((style) => style.selector.slice(5));
+const borders = nodeBorderClasses.map((style) => style.selector.slice(5));
 
 function NodeSubmenu() {
   const active = useContextMenuState((state) => state.active);
@@ -661,9 +661,11 @@ function ChildlessSubmenu() {
     : active
     ? [active]
     : [];
+
   const dynamicClassesChildless = useProcessStyleStore(
     (state) => state.dynamicClassesChildless
   );
+
   /** Read classes into a format we can build a submenu out of */
   const dynamicClasses = useMemo<Record<
     string,

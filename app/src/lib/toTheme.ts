@@ -2,6 +2,11 @@ import cytoscape from "cytoscape";
 import { Doc, useDoc } from "./useDoc";
 import { Direction, FFTheme, LayoutDirection } from "./FFTheme";
 import { fonts } from "./fonts";
+import {
+  childlessShapeClasses,
+  edgeStyleClasses,
+  nodeBorderClasses,
+} from "./graphUtilityClasses";
 
 export const defaultTheme: FFTheme = {
   layoutName: "dagre",
@@ -154,6 +159,7 @@ export function toTheme(theme: FFTheme) {
     },
     {
       selector: "core",
+      // @ts-ignore
       css: {
         "selection-box-color": theme.edgeColor,
         "selection-box-opacity": 0.25,
@@ -161,6 +167,9 @@ export function toTheme(theme: FFTheme) {
         "active-bg-opacity": 0,
       },
     },
+    ...nodeBorderClasses,
+    ...edgeStyleClasses,
+    ...childlessShapeClasses,
   ];
 
   const style = [styleToString(elementStyles), theme.custom];

@@ -4,6 +4,12 @@ import * as Popover from "@radix-ui/react-popover";
 import { ReactNode, useState } from "react";
 import { fonts } from "../../lib/fonts";
 import { Trans } from "@lingui/macro";
+import classNames from "classnames";
+import { Editor } from "@monaco-editor/react";
+import { useCanEdit, useLightOrDarkMode } from "../../lib/hooks";
+import { useDoc } from "../../lib/useDoc";
+import { updateThemeEditor } from "../../lib/toTheme";
+import { FFTheme } from "../../lib/FFTheme";
 
 type BaseProps = {
   id: string;
@@ -13,16 +19,18 @@ type BaseProps = {
 export const select: Control<
   string,
   BaseProps & { options: { value: string; label: string }[] }
-> = (value, onValueChange, { id, options }) => {
+> = (value, onValueChange, { id, options }, globals) => {
+  const disabled = globals?.canEdit === false;
   return (
     <select
       key={id}
       id={id}
       value={value}
+      disabled={disabled}
       onChange={(e) => {
         onValueChange(e.target.value);
       }}
-      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
@@ -36,13 +44,15 @@ export const select: Control<
 export const range: Control<
   number,
   BaseProps & { min: number; max: number; step: number }
-> = (value, onValueChange, { id, min, max, step, title }) => {
+> = (value, onValueChange, { id, min, max, step, title }, globals) => {
+  const disabled = globals?.canEdit === false;
   return (
     <Slider.Root
       key={id}
       id={id}
       name={id}
-      className="relative flex items-center select-none touch-none w-full h-6"
+      disabled={disabled}
+      className="relative flex items-center select-none touch-none w-full h-6 group"
       value={[value]}
       max={max}
       min={min}
@@ -51,11 +61,23 @@ export const range: Control<
         onValueChange(value);
       }}
     >
-      <Slider.Track className="w-full h-1 bg-gray-200 rounded-full relative grow">
+      <Slider.Track
+        className={classNames(
+          "w-full h-1 bg-gray-200 rounded-full relative grow",
+          {
+            "opacity-50": disabled,
+          }
+        )}
+      >
         <Slider.Range className="absolute h-full bg-blue-500 rounded-full" />
       </Slider.Track>
       <Slider.Thumb
-        className="block w-4 h-4 bg-blue-500 rounded-full shadow-md"
+        className={classNames(
+          "block w-4 h-4 bg-blue-500 rounded-full shadow-md",
+          {
+            "opacity-50": disabled,
+          }
+        )}
         aria-label={title}
       />
     </Slider.Root>
@@ -65,18 +87,21 @@ export const range: Control<
 export const text: Control<string, BaseProps> = (
   value,
   onValueChange,
-  { id }
+  { id },
+  globals
 ) => {
+  const disabled = globals?.canEdit === false;
   return (
     <input
       key={id}
       type="text"
       id={id}
       value={value}
+      disabled={disabled}
       onChange={(e) => {
         onValueChange(e.target.value);
       }}
-      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
     />
   );
 };
@@ -84,8 +109,10 @@ export const text: Control<string, BaseProps> = (
 export const color: Control<string, BaseProps> = (
   value,
   onValueChange,
-  { id }
+  { id },
+  globals
 ) => {
+  const disabled = globals?.canEdit === false;
   return (
     <div className="flex items-center gap-2">
       <input
@@ -93,10 +120,11 @@ export const color: Control<string, BaseProps> = (
         type="color"
         id={id}
         value={value}
+        disabled={disabled}
         onChange={(e) => {
           onValueChange(e.target.value);
         }}
-        className="h-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        className="h-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
       />
       <span className="font-mono text-neutral-500">{value}</span>
     </div>
@@ -106,30 +134,40 @@ export const color: Control<string, BaseProps> = (
 export const checkbox: Control<boolean, BaseProps> = (
   value,
   onValueChange,
-  { id }
+  { id },
+  globals
 ) => {
+  const disabled = globals?.canEdit === false;
   return (
     <input
       key={id}
       type="checkbox"
       id={id}
       checked={value}
+      disabled={disabled}
       onChange={(e) => {
         onValueChange(e.target.checked);
       }}
-      className="h-6 w-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      className="h-6 w-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
     />
   );
 };
 
 export const fontpicker: Control<string, BaseProps> = (
   value,
-  onValueChange
+  onValueChange,
+  _options,
+  globals
 ) => {
   const isKnownFont = fonts.some((font) => font.name === value);
+  const disabled = globals?.canEdit === false;
   return (
     <>
-      <Fontpicker value={value} onValueChange={onValueChange} />
+      <Fontpicker
+        value={value}
+        onValueChange={onValueChange}
+        disabled={disabled}
+      />
       {!isKnownFont ? (
         <span className="text-xs text-neutral-500 -mt-1 text-center">
           <Trans>
@@ -145,9 +183,11 @@ export const fontpicker: Control<string, BaseProps> = (
 function Fontpicker({
   value,
   onValueChange,
+  disabled,
 }: {
   value: string;
   onValueChange: (value: string) => void;
+  disabled: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -155,7 +195,8 @@ function Fontpicker({
     <>
       <input
         placeholder="system-ui"
-        className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        disabled={disabled}
+        className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
         onFocus={() => setOpen(true)}
         onBlur={() => {
           if (!hovering) setOpen(false);
@@ -210,5 +251,72 @@ function FontpickerButton({
     >
       {children}
     </button>
+  );
+}
+
+export function CustomCSSEditor() {
+  const canEdit = useCanEdit();
+  const custom = useDoc((s) => (s.meta?.themeEditor as FFTheme).custom) ?? "";
+  const mode = useLightOrDarkMode();
+  return (
+    <div>
+      <Editor
+        height={300}
+        width="100%"
+        defaultLanguage="scss"
+        value={custom}
+        onChange={(value) => {
+          updateThemeEditor({ custom: value ?? "" });
+        }}
+        options={{
+          minimap: { enabled: false },
+          lineNumbers: "off",
+          lineDecorationsWidth: 0,
+          lineNumbersMinChars: 0,
+          glyphMargin: false,
+          folding: false,
+          scrollBeyondLastLine: false,
+          wordWrap: "on",
+          wrappingIndent: "indent",
+          wrappingStrategy: "advanced",
+          overviewRulerBorder: false,
+          hideCursorInOverviewRuler: true,
+          renderLineHighlight: "none",
+          renderFinalNewline: "off",
+          fontSize: 14,
+          guides: {
+            indentation: false,
+          },
+          readOnly: !canEdit,
+        }}
+        wrapperProps={{
+          onMouseEnter() {
+            const editor = document.querySelector(
+              "#theme-editor-wrapper section"
+            ) as HTMLElement;
+            if (!editor) return;
+            editor.dataset.hovering = "true";
+          },
+          onMouseLeave() {
+            const editor = document.querySelector(
+              "#theme-editor-wrapper section"
+            ) as HTMLElement;
+            if (!editor) return;
+            editor.dataset.hovering = "false";
+          },
+        }}
+        theme={mode === "dark" ? "vs-dark" : "vs-light"}
+        beforeMount={(monaco) => {
+          // turn off validation
+          monaco.languages.css.scssDefaults.setOptions({
+            validate: false,
+            lint: {
+              unknownProperties: "ignore",
+              unknownVendorSpecificProperties: "ignore",
+            },
+          });
+        }}
+      />
+    </div>
   );
 }

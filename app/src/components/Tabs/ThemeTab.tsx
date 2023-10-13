@@ -11,7 +11,6 @@ import {
 import { ReactNode } from "react";
 
 import classNames from "classnames";
-import { ThemeTabCustom } from "./ThemeTabCustom";
 import { theme as defaultTheme } from "../../lib/templates/default-template";
 import {
   checkbox,
@@ -20,8 +19,10 @@ import {
   select,
   text,
   fontpicker,
+  CustomCSSEditor,
 } from "./ThemeTabComponents";
 import { Trans } from "@lingui/macro";
+import { useCanEdit } from "../../lib/hooks";
 
 const createForm = createControls({
   select,
@@ -471,14 +472,14 @@ const Form = createForm<FFTheme>({
         );
       },
       wrapEach: false,
-      elements: [<ThemeTabCustom key="custom-code" />],
+      elements: [<CustomCSSEditor key="custom-code" />],
     },
   ],
 });
 
 export function ThemeTab() {
   const data = useThemeEditor();
-
+  const canEdit = useCanEdit();
   return (
     <div className="h-full w-full p-4 overflow-auto">
       <p className="text-xs text-neutral-600 mb-6 bg-neutral-100 p-4">
@@ -487,7 +488,7 @@ export function ThemeTab() {
         </Trans>
       </p>
       <form className="grid gap-8 pb-10">
-        <Form data={data} />
+        <Form data={data} globals={{ canEdit }} />
       </form>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Stylesheet } from "cytoscape";
+import { StylesheetCSS } from "cytoscape";
 
 export const shapes: cytoscape.Css.Node["shape"][] = [
   "rectangle",
@@ -24,6 +24,13 @@ export const shapes: cytoscape.Css.Node["shape"][] = [
   "concave-hexagon",
 ];
 
+export const childlessShapeClasses: StylesheetCSS[] = shapes.map((shape) => ({
+  selector: `:childless.shape_${shape}`,
+  css: {
+    shape,
+  },
+}));
+
 const arrowSuffixes = [
   "triangle",
   "triangle-tee",
@@ -47,55 +54,55 @@ export const targetArrowSuffixes = arrowSuffixes.map(
   (suffix) => `target-${suffix}` as cytoscape.Css.ArrowShape
 );
 
-export const edgeLineStyles: Stylesheet[] = [
+export const edgeStyleClasses: StylesheetCSS[] = [
   {
-    selector: "edge.dashed",
-    style: {
+    selector: "edge.border_dashed",
+    css: {
       "line-style": "dashed",
     },
   },
   {
-    selector: "edge.dotted",
-    style: {
+    selector: "edge.border_dotted",
+    css: {
       "line-style": "dotted",
     },
   },
   {
-    selector: "edge.solid",
-    style: {
+    selector: "edge.border_solid",
+    css: {
       "line-style": "solid",
     },
   },
 ];
 
-export const borderStyles: Stylesheet[] = [
+export const nodeBorderClasses: StylesheetCSS[] = [
   {
-    selector: "node.border-solid",
-    style: {
+    selector: ":childless.border_solid",
+    css: {
       "border-style": "solid",
     },
   },
   {
-    selector: "node.border-dashed",
-    style: {
+    selector: ":childless.border_dashed",
+    css: {
       "border-style": "dashed",
     },
   },
   {
-    selector: "node.border-dotted",
-    style: {
+    selector: ":childless.border_dotted",
+    css: {
       "border-style": "dotted",
     },
   },
   {
-    selector: "node.border-double",
-    style: {
+    selector: ":childless.border_double",
+    css: {
       "border-style": "double",
     },
   },
   {
-    selector: "node.border-none",
-    style: {
+    selector: ":childless.border_none",
+    css: {
       "border-width": 0,
     },
   },

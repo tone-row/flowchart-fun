@@ -10,7 +10,8 @@ import type { ReactNode } from "react";
 export type Control<Value, Options extends { id: string } = { id: string }> = (
   value: Value,
   onValueChange: (value: Value) => void,
-  options: Options
+  options: Options,
+  globals?: any
 ) => JSX.Element;
 
 export type ControlsMap<Controls> = {
@@ -100,7 +101,8 @@ export function createControls<
     function renderElementsRecursive(
       data: Data,
       elements: Sections<Controls_, Data>["elements"],
-      parentWrapEach?: Sections<Controls_, Data>["wrapEach"]
+      parentWrapEach?: Sections<Controls_, Data>["wrapEach"],
+      globals?: any
     ): ReactNode {
       return elements.map((element) => {
         if (!element) return null;
@@ -121,10 +123,15 @@ export function createControls<
 
           return wrapper
             ? wrapper({
-                children: renderElementsRecursive(data, elements, wrapEach),
+                children: renderElementsRecursive(
+                  data,
+                  elements,
+                  wrapEach,
+                  globals
+                ),
                 data,
               })
-            : renderElementsRecursive(data, elements, wrapEach);
+            : renderElementsRecursive(data, elements, wrapEach, globals);
         } else if (typeof element === "object" && "control" in element) {
           // If it's a field, render the control.
           const { control, value, onChange, hidden, ...options } = element;
@@ -148,11 +155,11 @@ export function createControls<
           // Wrap the control if necessary.
           const wrapped = parentWrapEach
             ? parentWrapEach({
-                children: controller(value(data), onChange, options),
+                children: controller(value(data), onChange, options, globals),
                 data,
                 field: element,
               })
-            : controller(value(data), onChange, options);
+            : controller(value(data), onChange, options, globals);
 
           // Wrap the control in a label if necessary.
           return wrapped;
@@ -163,15 +170,12 @@ export function createControls<
       });
     }
 
-    return function Form({ data }: { data: Data }) {
-      return (
-        <>
-          {renderElementsRecursive(
-            data,
-            Array.isArray(elements) ? elements : [elements],
-            Array.isArray(elements) ? undefined : elements.wrapEach
-          )}
-        </>
+    return function Form({ data, globals }: { data: Data; globals?: any }) {
+      return renderElementsRecursive(
+        data,
+        Array.isArray(elements) ? elements : [elements],
+        Array.isArray(elements) ? undefined : elements.wrapEach,
+        globals
       );
     };
   };

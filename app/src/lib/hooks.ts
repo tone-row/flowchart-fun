@@ -138,6 +138,8 @@ export function useLightOrDarkMode() {
  * Used all throughout the Edit page to determine if the user is allowed to update the graph.
  */
 export function useCanEdit() {
+  const isProUser = useIsProUser();
+
   // you can edit if you're on the index page (scratch pad) or you are a pro user
   // and you're not on a readonly, public, or fullscreen chart
   // this may need to be tweaked when sharing charts becomes a thing
@@ -148,7 +150,7 @@ export function useCanEdit() {
 
   /** We want to assume that if the user is on a hosted chart page that they can edit */
 
-  return isLocalChart || isHosted;
+  return isLocalChart || (isHosted && isProUser);
 }
 
 /**

@@ -313,6 +313,7 @@ function getGraphUpdater({
     try {
       const themeEditor = getThemeEditor(doc);
       const { layout, style: _style } = toTheme(themeEditor);
+      console.log(_style);
 
       const { style } = preprocessCytoscapeStyle(_style);
 
