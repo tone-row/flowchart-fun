@@ -1,4 +1,4 @@
-import { useProcessStyleStore } from "./preprocessCytoscapeStyle";
+import { useProcessStyleStore } from "./preprocessStyle";
 
 export type GraphThemes =
   | "original"

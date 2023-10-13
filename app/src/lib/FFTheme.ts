@@ -77,6 +77,4 @@ export type FFTheme = {
   targetDistanceFromNode: number;
   arrowScale: number;
   rotateEdgeLabel: boolean;
-  // Advanced Style String
-  custom?: string;
 };

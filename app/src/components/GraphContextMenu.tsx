@@ -31,7 +31,7 @@ import {
   getSvg,
 } from "./downloads";
 import styles from "./GraphContextMenu.module.css";
-import { useProcessStyleStore } from "../lib/preprocessCytoscapeStyle";
+import { useProcessStyleStore } from "../lib/preprocessStyle";
 
 export const GRAPH_CONTEXT_MENU_ID = "graph-context-menu";
 

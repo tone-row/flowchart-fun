@@ -47,18 +47,23 @@ export function LoadTemplateDialog() {
         `../lib/templates/${template}-template.ts`
       );
       const templateContent = importTemplate.content;
-      const theme: FFTheme | undefined = importTemplate.theme;
+      const theme: FFTheme = importTemplate.theme;
+      const cytoscapeStyle: string = importTemplate.cytoscapeStyle ?? "";
 
-      const { text, meta, details } = useDoc.getState();
+      const { text, meta: _meta, details } = useDoc.getState();
 
       const nextContent = content ? templateContent : text;
+
+      const meta = {
+        ..._meta,
+        cytoscapeStyle,
+        themeEditor: theme,
+      };
 
       prepareChart(
         `${nextContent}\n=====${JSON.stringify(meta)}=====`,
         details
       );
-      // set the theme
-      if (theme) updateThemeEditor(theme);
 
       reset();
       setOpen(false);

@@ -278,7 +278,10 @@ function CustomCSSEditor({
 }) {
   const mode = useLightOrDarkMode();
   return (
-    <div className="theme-editor-monaco bg-neutral-50">
+    <div
+      className="theme-editor-monaco bg-neutral-50"
+      id="theme-editor-wrapper"
+    >
       <Editor
         height={300}
         width="100%"

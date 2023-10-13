@@ -42,6 +42,7 @@ export const theme: FFTheme = {
   targetDistanceFromNode: 7,
   textMarginY: 2,
   textMaxWidth: 100,
-  custom:
-    "$background: white;\n$color: #314137;\n$green: #ddff75;\n$blue: #bde2ff;\n$orange: #ffe253;\n$pink: #ffb6bc;\n$grey: #f2f0ea;\n$borderWidth: 1.5;\n\n:childless.size_lg {\n  font-size: 30;\n  width: 150;\n  line-height: 1;\n  text-max-width: 130;\n}\n\n:childless.color_orange {\n  background-color: $orange;\n}\n:childless.color_green {\n  background-color: $green;\n}\n:childless.color_pink {\n  background-color: $pink;\n}\n:childless.color_grey {\n  background-color: $grey;\n}\n:childless.color_blue {\n  background-color: $blue;\n}\n\n:parent {\n  padding: 10;\n  border-style: solid;\n  border-width: 2;\n  border-color: $color;\n  background-color: $background;\n  text-valign: top;\n  label: data(label);\n  color: $color;\n  font-size: 19.5px;\n  text-margin-y: -5;\n}\n\n:parent.color_white {\n  background-color: white;\n}\n:parent.color_grey {\n  background-color: $grey;\n}\n",
 };
+
+export const cytoscapeStyle =
+  "$background: white;\n$color: #314137;\n$green: #ddff75;\n$blue: #bde2ff;\n$orange: #ffe253;\n$pink: #ffb6bc;\n$grey: #f2f0ea;\n$borderWidth: 1.5;\n\n:childless.size_lg {\n  font-size: 30;\n  width: 150;\n  line-height: 1;\n  text-max-width: 130;\n}\n\n:childless.color_orange {\n  background-color: $orange;\n}\n:childless.color_green {\n  background-color: $green;\n}\n:childless.color_pink {\n  background-color: $pink;\n}\n:childless.color_grey {\n  background-color: $grey;\n}\n:childless.color_blue {\n  background-color: $blue;\n}\n\n:parent {\n  padding: 10;\n  border-style: solid;\n  border-width: 2;\n  border-color: $color;\n  background-color: $background;\n  text-valign: top;\n  label: data(label);\n  color: $color;\n  font-size: 19.5px;\n  text-margin-y: -5;\n}\n\n:parent.color_white {\n  background-color: white;\n}\n:parent.color_grey {\n  background-color: $grey;\n}\n";

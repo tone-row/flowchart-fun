@@ -20,9 +20,9 @@ import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { isError } from "../lib/helpers";
 import { getAnimationSettings, useCanEdit } from "../lib/hooks";
 import {
-  preprocessCytoscapeStyle,
+  preprocessStyle,
   useCytoscapeStyleImports,
-} from "../lib/preprocessCytoscapeStyle";
+} from "../lib/preprocessStyle";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
 import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
@@ -315,12 +315,12 @@ function getGraphUpdater({
       const { layout, style: themeStyle } = toTheme(themeEditor);
 
       // Eventually, this will become cytoscape again...
-      const customCss = themeEditor.custom ?? "";
+      const customCss = (doc.meta.cytoscapeStyle as string) ?? "";
 
       // Whether or not to only use the custom css
       const customCssOnly = (doc.meta?.customCssOnly as boolean) ?? false;
 
-      const { style } = preprocessCytoscapeStyle(
+      const { style } = preprocessStyle(
         customCssOnly ? customCss : [themeStyle, customCss].join("\n")
       );
 

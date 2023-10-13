@@ -37,6 +37,7 @@ const createForm = createControls({
 const Form = createForm<{
   theme: FFTheme;
   customCssOnly: boolean;
+  cytoscapeStyle: string;
 }>({
   wrapEach({ children, field, data }) {
     return (
@@ -513,10 +514,15 @@ const Form = createForm<{
           id: "customCss",
           control: "customCss",
           value(data) {
-            return data.theme.custom ?? "";
+            return data.cytoscapeStyle ?? "";
           },
           onChange(value) {
-            updateThemeEditor({ custom: value });
+            useDoc.setState((state) => ({
+              meta: {
+                ...state.meta,
+                cytoscapeStyle: value,
+              },
+            }));
           },
         },
         {
@@ -546,13 +552,19 @@ export function ThemeTab() {
   const customCssOnly = useDoc(
     (state) => (state.meta?.customCssOnly as boolean) ?? false
   );
+  const cytoscapeStyle = useDoc(
+    (state) => (state.meta.cytoscapeStyle as string) ?? ""
+  );
   return (
     <div className="h-full w-full p-4 overflow-auto">
       <p className="text-xs text-neutral-600 mb-6 bg-neutral-100 p-4">
         Use these settings to adapt the look and behavior of your flowcharts
       </p>
       <form className="grid gap-8 pb-10">
-        <Form data={{ theme, customCssOnly }} globals={{ canEdit }} />
+        <Form
+          data={{ theme, customCssOnly, cytoscapeStyle }}
+          globals={{ canEdit }}
+        />
       </form>
     </div>
   );

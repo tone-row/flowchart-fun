@@ -38,6 +38,7 @@ export const theme: FFTheme = {
   targetDistanceFromNode: 4,
   arrowScale: 1.25,
   rotateEdgeLabel: true,
-  custom:
-    "$background: rgb(239, 239, 239);\n$color: #314137;\n$green: #75ed99;\n$red: #f88373;\n$orange: #ffb566;\n$purple: #a7a3fa;\n$grey: #d3cec8;\n\n:childless {\n  font-weight: 500;\n}\n\n:childless.color_red {\n  background-color: $red;\n}\n:childless.color_orange {\n  background-color: $orange;\n}\n:childless.color_green {\n  background-color: $green;\n}\n:childless.color_purple {\n  background-color: $purple;\n}\n:childless.color_grey {\n  background-color: $grey;\n}\n\n:parent {\n  padding: 10;\n  border-style: solid;\n  border-width: 2;\n  border-color: $color;\n  background-color: $background;\n  text-valign: top;\n  font-family: $fontFamily;\n  label: data(label);\n  color: $color;\n  font-size: 19.5px;\n  text-margin-y: -5;\n}\n\n:parent.color_white {\n  background-color: white;\n}\n:parent.color_grey {\n  background-color: $grey;\n}\n'",
 };
+
+export const cytoscapeStyle =
+  "$background: rgb(239, 239, 239);\n$color: #314137;\n$green: #75ed99;\n$red: #f88373;\n$orange: #ffb566;\n$purple: #a7a3fa;\n$grey: #d3cec8;\n\n:childless {\n  font-weight: 500;\n}\n\n:childless.color_red {\n  background-color: $red;\n}\n:childless.color_orange {\n  background-color: $orange;\n}\n:childless.color_green {\n  background-color: $green;\n}\n:childless.color_purple {\n  background-color: $purple;\n}\n:childless.color_grey {\n  background-color: $grey;\n}\n\n:parent {\n  padding: 10;\n  border-style: solid;\n  border-width: 2;\n  border-color: $color;\n  background-color: $background;\n  text-valign: top;\n  font-family: $fontFamily;\n  label: data(label);\n  color: $color;\n  font-size: 19.5px;\n  text-margin-y: -5;\n}\n\n:parent.color_white {\n  background-color: white;\n}\n:parent.color_grey {\n  background-color: $grey;\n}\n'";
