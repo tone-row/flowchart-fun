@@ -52,4 +52,9 @@ export const fonts: {
     importSnippet:
       "@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');",
   },
+  {
+    name: "REM",
+    importSnippet:
+      "@import url('https://fonts.googleapis.com/css2?family=REM:wght@400;500&display=swap');",
+  },
 ];

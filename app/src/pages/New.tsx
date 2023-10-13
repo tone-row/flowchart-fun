@@ -20,6 +20,8 @@ import {
   createUnlimitedTitle,
 } from "../lib/paywallCopy";
 import { Warning } from "../components/Warning";
+import { FFTheme } from "../lib/FFTheme";
+import { defaultTheme } from "../lib/toTheme";
 
 type CreateChartOptions = {
   name: string;
@@ -46,22 +48,12 @@ export default function New2() {
       const templateData = templates.find((t) => t.key === options.template);
       if (!templateData) throw new Error("No Template");
 
-      let template = "",
-        content = "";
-
       // Get Template
-      if (options.template === "default") {
-        const chart = getDefaultChart();
-        const parts = chart.split("=====");
-        content = parts[0];
-        template = `=====${parts[1]}=====`;
-      } else {
-        const importTemplate = await import(
-          `../lib/templates/${options.template}-template.ts`
-        );
-        content = importTemplate.content;
-        template = importTemplate.template;
-      }
+      const importTemplate = await import(
+        `../lib/templates/${options.template}-template.ts`
+      );
+      let content: string = importTemplate.content;
+      const theme: FFTheme = importTemplate.theme;
 
       // Prompts
       if (options.subject) {
@@ -89,7 +81,7 @@ export default function New2() {
         if (response.text) {
           content = response.text;
           sample({
-            template,
+            template: options.template,
             subject: options.subject,
             runningTime: elapsedTime,
             result: response.text,
@@ -97,7 +89,9 @@ export default function New2() {
         }
       }
 
-      const chart = `${content}\n${template}`;
+      const chart = `${content}\n=====${JSON.stringify({
+        themeEditor: theme,
+      })}=====`;
 
       return supabase
         .from("user_charts")

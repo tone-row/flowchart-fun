@@ -38,7 +38,7 @@ export function GraphFloatingMenu() {
   const autoFit = useGraphStore((s) => s.autoFit);
 
   return (
-    <div className="absolute bottom-4 right-4 flex bg-white border border-neutral-300 shadow-sm rounded overflow-hidden gap-1 p-1 items-center dark:bg-neutral-600 dark:border-neutral-600">
+    <div className="absolute bottom-4 right-4 flex bg-white shadow-md rounded-lg overflow-hidden gap-1 p-1 items-center dark:bg-neutral-600">
       <Tooltip2 content={t`Reset`}>
         <IconButton2
           size="xs"
