@@ -27,6 +27,8 @@ export type Shape = "rectangle" | "roundrectangle" | "ellipse";
 
 export type CurveStyle = "bezier" | "taxi";
 
+export type Border = "none" | "solid" | "dashed" | "dotted" | "double";
+
 export type ArrowShape =
   | "none"
   | "triangle"
@@ -49,6 +51,9 @@ export type FFTheme = {
   padding: number;
   curveStyle: CurveStyle;
   textMarginY: number;
+  /**
+   * The width of the border used on nodes.
+   */
   borderWidth: number;
   borderColor: string;
   nodeBackground: string;

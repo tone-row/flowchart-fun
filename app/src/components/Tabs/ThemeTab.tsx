@@ -238,9 +238,6 @@ const Form = createForm<FFTheme>({
           title: "Border Color",
           id: "borderColor",
           control: "color",
-          hidden(data) {
-            return data.borderWidth === 0;
-          },
           value(data) {
             return data.borderColor ?? defaultTheme.borderColor;
           },

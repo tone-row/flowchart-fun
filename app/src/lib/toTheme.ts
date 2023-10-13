@@ -4,9 +4,9 @@ import { Direction, FFTheme, LayoutDirection } from "./FFTheme";
 import { fonts } from "./fonts";
 import {
   childlessShapeClasses,
+  createSmartChildlessBorderClasses,
   createSmartShapeClasses,
   edgeStyleClasses,
-  nodeBorderClasses,
 } from "./graphUtilityClasses";
 import { theme as defaultTheme } from "./templates/default-template";
 
@@ -151,9 +151,9 @@ export function toTheme(theme: FFTheme) {
         "active-bg-opacity": 0,
       },
     },
-    ...nodeBorderClasses,
     ...edgeStyleClasses,
     ...childlessShapeClasses,
+    ...createSmartChildlessBorderClasses(theme.borderWidth || theme.edgeWidth),
     ...createSmartShapeClasses(width),
   ];
 

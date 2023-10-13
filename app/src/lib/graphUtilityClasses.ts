@@ -106,6 +106,24 @@ export const edgeStyleClasses: StylesheetCSS[] = [
   },
 ];
 
+const borders = ["none", "solid", "dashed", "dotted", "double"];
+
+/**
+ * When default nodes have no border width, we need a given width
+ * to know what to set the border width to.
+ */
+export function createSmartChildlessBorderClasses(
+  width: number
+): StylesheetCSS[] {
+  return borders.map((border) => ({
+    selector: `:childless.border_${border}`,
+    css: {
+      "border-width": width,
+      "border-style": border as any,
+    },
+  }));
+}
+
 export const nodeBorderClasses: StylesheetCSS[] = [
   {
     selector: ":childless.border_solid",
