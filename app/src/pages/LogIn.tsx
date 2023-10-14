@@ -15,7 +15,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthOtpResponse } from "@supabase/supabase-js";
 import { useLocation } from "react-router-dom";
 import { useIsLoggedIn } from "../lib/hooks";
-import { AppContext } from "../components/AppContext";
+import { AppContext } from "../components/AppContextProvider";
 import GoogleSVG from "../components/GoogleSVG";
 
 type Fields = {

@@ -6,7 +6,6 @@ import React, {
   MutableRefObject,
   useCallback,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
@@ -33,6 +32,7 @@ import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import classNames from "classnames";
 import { getThemeEditor, toTheme, useBackground } from "../lib/toTheme";
+import equal from "fast-deep-equal";
 declare global {
   interface Window {
     __cy?: cytoscape.Core;
@@ -46,7 +46,9 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   const [initResizeNumber] = useState(shouldResize);
   const cy = useRef<undefined | Core>();
   const cyErrorCatcher = useRef<undefined | Core>();
-  const isGraphInitialized = useRef(false);
+
+  // Sometimes we want to do things only on the first render
+  const isFirstRender = useRef(true);
   const bg = useBackground();
 
   const handleResize = useCallback(() => {
@@ -62,46 +64,34 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
     return () => window.removeEventListener("resize", debouncedResize.callback);
   }, [debouncedResize]);
 
-  const canEdit = useCanEdit();
-
-  // Initialize Graph
-  useInitializeGraph({ cy, cyErrorCatcher, canEdit });
-
-  // const throttleStyle = useMemo(
-  //   () => getStyleUpdater({ cy, cyErrorCatcher }),
-  //   []
-  // );
-
-  // // Get style
-  // const cytoscapeStyle = useCytoscapeStyle();
-
-  // // Apply style
-  // useEffect(() => {
-  //   throttleStyle(cytoscapeStyle);
-  // }, [cytoscapeStyle, throttleStyle]);
-
-  const throttleUpdate = useMemo(
-    () =>
-      getGraphUpdater({
-        cy,
-        cyErrorCatcher,
-        isGraphInitialized,
-      }),
-    []
-  );
-
+  // Initialize Graph and Subscribe to doc for updates
   useEffect(() => {
-    const unsubscribe = useDoc.subscribe(
-      (doc) => doc,
-      (doc) => {
-        throttleUpdate(doc);
-      },
-      {
-        fireImmediately: true,
-      }
-    );
-    return unsubscribe;
-  }, [throttleUpdate]);
+    const destroy = initializeGraph({ cy, cyErrorCatcher });
+    const update = getGraphUpdater({
+      cy,
+      cyErrorCatcher,
+      isFirstRender,
+    });
+    isFirstRender.current = true;
+    const unsubscribe = useDoc.subscribe((doc) => doc, update, {
+      fireImmediately: true,
+      equalityFn: equal,
+    });
+    return () => {
+      unsubscribe();
+      if (destroy) destroy();
+    };
+  }, []);
+
+  // If we find out canEdit === false
+  // then we set autoungrabify to true
+  const canEdit = useCanEdit();
+  useEffect(() => {
+    if (cy.current && !canEdit) {
+      cy.current.autoungrabify(true);
+      cy.current.autounselectify(true);
+    }
+  }, [canEdit]);
 
   const { show } = useContextMenu({ id: GRAPH_CONTEXT_MENU_ID });
 
@@ -153,143 +143,131 @@ function handleDragFree() {
   );
 }
 
-/**
- * This function sets up cytoscape and initializes the graph
- * but it doesn't set
- */
-function useInitializeGraph({
-  cyErrorCatcher,
+function initializeGraph({
   cy,
-  canEdit,
+  cyErrorCatcher,
 }: {
-  cyErrorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
   cy: React.MutableRefObject<cytoscape.Core | undefined>;
-  canEdit: boolean;
+  cyErrorCatcher: React.MutableRefObject<cytoscape.Core | undefined>;
 }) {
-  useEffect(() => {
-    try {
-      cyErrorCatcher.current = cytoscape();
+  try {
+    cyErrorCatcher.current = cytoscape();
 
-      // const bg = (useDoc.getState().meta?.background as string) ?? original.bg;
-      cy.current = cytoscape({
-        container: document.getElementById("cy"), // container to render in
-        elements: [],
-        userZoomingEnabled: true,
-        userPanningEnabled: true,
-        wheelSensitivity: 0.2,
-        boxSelectionEnabled: true,
-        zoom: useGraphStore.getState().zoom,
-        pan: useGraphStore.getState().pan,
-        autounselectify: !canEdit,
-        autoungrabify: !canEdit,
-      });
-      window.__cy = cy.current;
-      const cyCurrent = cy.current;
-      const errorCyCurrent = cyErrorCatcher.current;
+    // const bg = (useDoc.getState().meta?.background as string) ?? original.bg;
+    cy.current = cytoscape({
+      container: document.getElementById("cy"), // container to render in
+      elements: [],
+      userZoomingEnabled: true,
+      userPanningEnabled: true,
+      wheelSensitivity: 0.2,
+      boxSelectionEnabled: true,
+      zoom: useGraphStore.getState().zoom,
+      pan: useGraphStore.getState().pan,
+    });
+    window.__cy = cy.current;
+    const cyCurrent = cy.current;
+    const errorCyCurrent = cyErrorCatcher.current;
 
-      // Turn on grid guide
-      // @ts-ignore
-      // cy.current.gridGuide({
-      //   snapToGridDuringDrag: true,
-      //   snapToGridOnRelease: false,
-      //   gridSpacing: 10,
-      //   resize: true,
-      // });
+    // Turn on grid guide
+    // @ts-ignore
+    // cy.current.gridGuide({
+    //   snapToGridDuringDrag: true,
+    //   snapToGridOnRelease: false,
+    //   gridSpacing: 10,
+    //   resize: true,
+    // });
 
-      // Hover Events
-      const handleMouseOut = () => {
-        cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
-        cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
-        useEditorStore.setState({ hoverLineNumber: undefined });
-      };
+    // Hover Events
+    const handleMouseOut = () => {
+      cyCurrent.$(".nodeHovered").removeClass("nodeHovered");
+      cyCurrent.$(".edgeHovered").removeClass("edgeHovered");
+      useEditorStore.setState({ hoverLineNumber: undefined });
+    };
 
-      cyCurrent.on("mouseover", "node", nodeHighlight);
-      cyCurrent.on("mouseover", "edge", edgeHighlight);
-      cyCurrent.on("tapstart", "node", nodeHighlight);
-      cyCurrent.on("tapstart", "edge", edgeHighlight);
-      cyCurrent.on("mouseout", "node, edge", unhighlight);
-      cyCurrent.on("tapend", "node, edge", unhighlight);
-      cyCurrent.on("cxttap", "node", function handleCtxTap(this: NodeSingular) {
-        const { id, lineNumber } = this.data();
-        if (id && lineNumber) {
-          useContextMenuState.setState({
-            active: {
-              type: "node",
-              id,
-              lineNumber,
-            },
-          });
-        }
-      });
-      cyCurrent.on("cxttap", "edge", function handleCtxTap(this: EdgeSingular) {
-        const { id, lineNumber } = this.data();
-        if (id && lineNumber) {
-          useContextMenuState.setState({
-            active: {
-              type: "edge",
-              id,
-              lineNumber,
-            },
-          });
-        }
-      });
-      // on node tap, if has a href, open it
-      cyCurrent.on("tap", "node", function handleTap(this: NodeSingular) {
-        const { href } = this.data();
-        if (href) {
-          window.open(href, "_blank");
-        }
-      });
+    cyCurrent.on("mouseover", "node", nodeHighlight);
+    cyCurrent.on("mouseover", "edge", edgeHighlight);
+    cyCurrent.on("tapstart", "node", nodeHighlight);
+    cyCurrent.on("tapstart", "edge", edgeHighlight);
+    cyCurrent.on("mouseout", "node, edge", unhighlight);
+    cyCurrent.on("tapend", "node, edge", unhighlight);
+    cyCurrent.on("cxttap", "node", function handleCtxTap(this: NodeSingular) {
+      const { id, lineNumber } = this.data();
+      if (id && lineNumber) {
+        useContextMenuState.setState({
+          active: {
+            type: "node",
+            id,
+            lineNumber,
+          },
+        });
+      }
+    });
+    cyCurrent.on("cxttap", "edge", function handleCtxTap(this: EdgeSingular) {
+      const { id, lineNumber } = this.data();
+      if (id && lineNumber) {
+        useContextMenuState.setState({
+          active: {
+            type: "edge",
+            id,
+            lineNumber,
+          },
+        });
+      }
+    });
+    // on node tap, if has a href, open it
+    cyCurrent.on("tap", "node", function handleTap(this: NodeSingular) {
+      const { href } = this.data();
+      if (href) {
+        window.open(href, "_blank");
+      }
+    });
 
-      cyCurrent.on("dragfree", handleDragFree);
+    cyCurrent.on("dragfree", handleDragFree);
 
-      // on zoom
-      cyCurrent.on("scrollzoom", () => {
-        useGraphStore.setState({ autoFit: false });
-      });
+    // on zoom
+    cyCurrent.on("scrollzoom", () => {
+      useGraphStore.setState({ autoFit: false });
+    });
 
-      // whenever the viewport is changed at all
-      cyCurrent.on("viewport", (e) => {
-        if (!useGraphStore.getState().autoFit) {
-          const zoom = e.target.zoom();
-          const pan = e.target.pan();
-          useGraphStore.setState({ zoom, pan });
-        }
-      });
+    // whenever the viewport is changed at all
+    cyCurrent.on("viewport", (e) => {
+      if (!useGraphStore.getState().autoFit) {
+        const zoom = e.target.zoom();
+        const pan = e.target.pan();
+        useGraphStore.setState({ zoom, pan });
+      }
+    });
 
+    document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
+
+    return () => {
+      cyCurrent.destroy();
+      errorCyCurrent.destroy();
+      cy.current = undefined;
+      cyErrorCatcher.current = undefined;
+      delete window.__cy;
       document
         .getElementById("cy")
-        ?.addEventListener("mouseout", handleMouseOut);
+        ?.removeEventListener("mouseout", handleMouseOut);
+    };
+  } catch (e) {
+    console.error(e);
+  }
 
-      return () => {
-        cyCurrent.destroy();
-        errorCyCurrent.destroy();
-        cy.current = undefined;
-        cyErrorCatcher.current = undefined;
-        delete window.__cy;
-        document
-          .getElementById("cy")
-          ?.removeEventListener("mouseout", handleMouseOut);
-      };
-    } catch (e) {
-      console.error(e);
-    }
-
-    // Hover Events that Need "this"
-    function nodeHighlight(this: NodeSingular) {
-      this.addClass("nodeHovered");
-      useEditorStore.setState({ hoverLineNumber: this.data().lineNumber });
-    }
-    function edgeHighlight(this: EdgeSingular) {
-      this.addClass("edgeHovered");
-      useEditorStore.setState({ hoverLineNumber: this.data().lineNumber });
-    }
-    function unhighlight(this: NodeSingular | EdgeSingular) {
-      this.removeClass("nodeHovered");
-      this.removeClass("edgeHovered");
-      useEditorStore.setState({ hoverLineNumber: undefined });
-    }
-  }, [canEdit, cy, cyErrorCatcher]);
+  // Hover Events that Need "this"
+  function nodeHighlight(this: NodeSingular) {
+    this.addClass("nodeHovered");
+    useEditorStore.setState({ hoverLineNumber: this.data().lineNumber });
+  }
+  function edgeHighlight(this: EdgeSingular) {
+    this.addClass("edgeHovered");
+    useEditorStore.setState({ hoverLineNumber: this.data().lineNumber });
+  }
+  function unhighlight(this: NodeSingular | EdgeSingular) {
+    this.removeClass("nodeHovered");
+    this.removeClass("edgeHovered");
+    useEditorStore.setState({ hoverLineNumber: undefined });
+  }
 }
 
 /**
@@ -299,13 +277,13 @@ function useInitializeGraph({
 function getGraphUpdater({
   cy,
   cyErrorCatcher,
-  isGraphInitialized,
+  isFirstRender,
 }: {
   cy: MutableRefObject<cytoscape.Core | undefined>;
   cyErrorCatcher: MutableRefObject<cytoscape.Core | undefined>;
-  isGraphInitialized: MutableRefObject<boolean>;
+  isFirstRender: MutableRefObject<boolean>;
 }) {
-  return throttle((doc: Doc = useDoc.getState()) => {
+  return throttle((doc: Doc) => {
     if (!cy.current) return;
     if (!cyErrorCatcher.current) return;
     let elements: cytoscape.ElementDefinition[] = [];
@@ -324,8 +302,6 @@ function getGraphUpdater({
         customCssOnly ? customCss : [themeStyle, customCss].join("\n")
       );
 
-      console.log(style);
-
       elements = getElements(doc.text);
 
       // Test
@@ -334,9 +310,11 @@ function getGraphUpdater({
       // Very specific bug wrt to cose layouts
       // If it's the first render, randomize cannot be false
       // Because the graph has no positions yet
-      if (layout.name === "fcose") {
+      if (layout.name === "fcose" && isFirstRender.current) {
         // @ts-ignore
-        layout.randomize = !isGraphInitialized.current;
+        layout.randomize = true;
+        // @ts-ignore
+        layout.quality = "proof";
       }
 
       // Finally we get rid of layouts when user has dragged
@@ -353,10 +331,10 @@ function getGraphUpdater({
       cyErrorCatcher.current.layout(layout);
 
       // Set up a listener to mark the graph as initialized after the first layout run
-      if (!isGraphInitialized.current) {
+      if (isFirstRender.current) {
         cy.current.fit(undefined, DEFAULT_GRAPH_PADDING);
         const onLayoutReady = () => {
-          isGraphInitialized.current = true;
+          isFirstRender.current = false;
           cy.current?.off("layoutstop", onLayoutReady);
         };
         cy.current.on("layoutstop", onLayoutReady);
@@ -367,9 +345,7 @@ function getGraphUpdater({
 
       // Determine whether to animate
       const shouldAnimate =
-        isGraphInitialized.current &&
-        elements.length < 200 &&
-        isAnimationEnabled;
+        !isFirstRender.current && elements.length < 200 && isAnimationEnabled;
 
       // Determine whether to fit
       const autoFit = useGraphStore.getState().autoFit;

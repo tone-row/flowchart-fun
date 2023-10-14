@@ -5,7 +5,7 @@ import { useIsLoggedIn, useIsProUser, useIsReadOnly } from "../lib/hooks";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Button2, Input } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 import { CloneButton } from "./CloneButton";
 import styles from "./EditorWrapper.module.css";
 import Loading from "./Loading";

@@ -9,7 +9,7 @@ import { QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 
 import { ErrorFallback, stripePromise } from "./components/App";
-import Provider from "./components/AppContext";
+import Provider from "./components/AppContextProvider";
 import { I18n } from "./components/I18n";
 import Loading from "./components/Loading";
 import { queryClient } from "./lib/queries";

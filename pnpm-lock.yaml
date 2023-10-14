@@ -234,6 +234,9 @@ importers:
       eslint:
         specifier: ^8.50.0
         version: 8.50.0
+      fast-deep-equal:
+        specifier: ^3.1.3
+        version: 3.1.3
       file-saver:
         specifier: ^2.0.5
         version: 2.0.5

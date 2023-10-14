@@ -1,7 +1,7 @@
 import { useContext, useMemo } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
-import { AppContext } from "../components/AppContext";
+import { AppContext } from "../components/AppContextProvider";
 import { slugify } from "./helpers";
 import { useDocDetails } from "./useDoc";
 import { t } from "@lingui/macro";
@@ -54,10 +54,14 @@ export function useSession() {
 
 /** Use this to determine if the sponsor is valid.
  * That means their subscription is currently active.
- * i.e. They're in good standing, etc. */
+ * i.e. They're in good standing, etc.
+ *
+ * Should be undefined until the customer is loaded.
+ * */
 export function useIsProUser() {
-  const { customer } = useContext(AppContext);
+  const { customer, customerIsLoading } = useContext(AppContext);
   const status = customer?.subscription?.status;
+  if (customerIsLoading) return undefined;
   return Boolean(status === "active");
 }
 
@@ -135,7 +139,10 @@ export function useLightOrDarkMode() {
 }
 
 /**
- * Used all throughout the Edit page to determine if the user is allowed to update the graph.
+ * Used all throughout the Edit page to determine if
+ * the user is allowed to update the graph.
+ *
+ * If on a hosted chart — returns undefined until the user's session is loaded.
  */
 export function useCanEdit() {
   const isProUser = useIsProUser();
@@ -148,9 +155,9 @@ export function useCanEdit() {
   const location = useLocation();
   const isHosted = location.pathname.startsWith("/u");
 
-  /** We want to assume that if the user is on a hosted chart page that they can edit */
-
-  return isLocalChart || (isHosted && isProUser);
+  if (isLocalChart) return true;
+  if (isHosted) return isProUser;
+  return false;
 }
 
 /**

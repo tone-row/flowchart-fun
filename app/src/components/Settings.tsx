@@ -6,7 +6,7 @@ import { languages } from "../locales/i18n";
 import { Box } from "../slang";
 import { Button2, Page, Section } from "../ui/Shared";
 import { PageTitle, SectionTitle } from "../ui/Typography";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 import styles from "./Settings.module.css";
 import { DISCORD_URL } from "../lib/constants";
 

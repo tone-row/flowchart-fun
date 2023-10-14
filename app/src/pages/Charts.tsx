@@ -14,7 +14,7 @@ import { useMutation } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import * as Popover from "@radix-ui/react-popover";
 
-import { AppContext } from "../components/AppContext";
+import { AppContext } from "../components/AppContextProvider";
 import Loading from "../components/Loading";
 import { useIsProUser } from "../lib/hooks";
 import {

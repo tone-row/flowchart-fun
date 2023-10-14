@@ -5,7 +5,7 @@ import { Trans, t } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useCallback, useContext, useState } from "react";
-import { AppContext } from "../components/AppContext";
+import { AppContext } from "../components/AppContextProvider";
 import { languages } from "../locales/i18n";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { useMutation } from "react-query";

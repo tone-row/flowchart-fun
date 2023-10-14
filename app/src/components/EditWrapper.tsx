@@ -2,7 +2,7 @@ import { ReactNode, useContext } from "react";
 
 import { useFullscreen } from "../lib/hooks";
 import { Box } from "../slang";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 import styles from "./EditWrapper.module.css";
 import MobileTabToggle from "./MobileTabToggle";
 /**

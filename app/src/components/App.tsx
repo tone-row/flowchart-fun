@@ -7,7 +7,7 @@ import { QueryClientProvider } from "react-query";
 
 import { queryClient } from "../lib/queries";
 import { Box } from "../slang";
-import Provider from "./AppContext";
+import Provider from "./AppContextProvider";
 import { I18n } from "./I18n";
 import Router from "./Router";
 

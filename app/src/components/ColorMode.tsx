@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { createPortal } from "react-dom";
 
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 
 // Writes current theme color css props onto body
 export default function ColorMode() {
