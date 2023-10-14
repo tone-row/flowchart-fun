@@ -62,7 +62,7 @@ export const range: Control<
     >
       <Slider.Track
         className={classNames(
-          "w-full h-1 bg-gray-200 rounded-full relative grow",
+          "w-full h-1 bg-gray-200 rounded-full relative grow dark:bg-neutral-700",
           {
             "opacity-50": disabled,
           }
