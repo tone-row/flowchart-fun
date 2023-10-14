@@ -310,11 +310,16 @@ function getGraphUpdater({
       // Very specific bug wrt to cose layouts
       // If it's the first render, randomize cannot be false
       // Because the graph has no positions yet
-      if (layout.name === "fcose" && isFirstRender.current) {
-        // @ts-ignore
-        layout.randomize = true;
-        // @ts-ignore
-        layout.quality = "proof";
+      if (layout.name === "fcose") {
+        if (isFirstRender.current) {
+          // @ts-ignore
+          layout.randomize = true;
+          // @ts-ignore
+          layout.quality = "proof";
+        } else {
+          // @ts-ignore
+          layout.randomize = false;
+        }
       }
 
       // Finally we get rid of layouts when user has dragged

@@ -23,6 +23,7 @@ import {
 } from "./ThemeTabComponents";
 import { useCanEdit } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
+import { Warning } from "../Warning";
 
 const createForm = createControls({
   select,
@@ -66,39 +67,6 @@ const Form = createForm<{
     {
       wrapper({ children }) {
         return (
-          <Section title="General" key="general">
-            {children}
-          </Section>
-        );
-      },
-      elements: [
-        {
-          title: "Background",
-          id: "background",
-          control: "color",
-          value(data) {
-            return data.theme.background ?? defaultTheme.background;
-          },
-          onChange(value) {
-            updateThemeEditor({ background: value });
-          },
-        },
-        {
-          title: "Font",
-          id: "fontFamily",
-          control: "fontpicker",
-          value(data) {
-            return data.theme.fontFamily ?? defaultTheme.fontFamily;
-          },
-          onChange(value) {
-            updateThemeEditor({ fontFamily: value });
-          },
-        },
-      ],
-    },
-    {
-      wrapper({ children }) {
-        return (
           <Section title="Layout" key="layout">
             {children}
           </Section>
@@ -122,7 +90,7 @@ const Form = createForm<{
             { value: "mrtree", label: "Tree" },
             { value: "stress", label: "Stress" },
             { value: "radial", label: "Radial" },
-            { value: "cose", label: "Cose" },
+            { value: "cose", label: "CoSE" },
             { value: "breadthfirst", label: "Breadthfirst" },
             { value: "concentric", label: "Concentric" },
             { value: "circle", label: "Circle" },
@@ -163,6 +131,39 @@ const Form = createForm<{
           min: 0,
           max: 10,
           step: 0.05,
+        },
+      ],
+    },
+    {
+      wrapper({ children }) {
+        return (
+          <Section title="General" key="general">
+            {children}
+          </Section>
+        );
+      },
+      elements: [
+        {
+          title: "Background",
+          id: "background",
+          control: "color",
+          value(data) {
+            return data.theme.background ?? defaultTheme.background;
+          },
+          onChange(value) {
+            updateThemeEditor({ background: value });
+          },
+        },
+        {
+          title: "Font",
+          id: "fontFamily",
+          control: "fontpicker",
+          value(data) {
+            return data.theme.fontFamily ?? defaultTheme.fontFamily;
+          },
+          onChange(value) {
+            updateThemeEditor({ fontFamily: value });
+          },
         },
       ],
     },
@@ -557,9 +558,21 @@ export function ThemeTab() {
   );
   return (
     <div className="h-full w-full p-4 overflow-auto">
-      <p className="text-xs text-neutral-600 mb-6 bg-neutral-100 p-4">
-        Use these settings to adapt the look and behavior of your flowcharts
-      </p>
+      <div className="mb-6 grid gap-2">
+        <p className="text-xs text-neutral-600 bg-neutral-200 p-4 rounded">
+          Use these settings to adapt the look and behavior of your flowcharts
+        </p>
+        {customCssOnly && (
+          <Warning>
+            <p className="text-xs">
+              <a className="underline font-bold" href="#customCssOnly">
+                Custom CSS Only
+              </a>{" "}
+              is enabled. Only the Layout and Advanced settings will be applied.
+            </p>
+          </Warning>
+        )}
+      </div>
       <form className="grid gap-8 pb-10">
         <Form
           data={{ theme, customCssOnly, cytoscapeStyle }}

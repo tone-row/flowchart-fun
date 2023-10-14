@@ -287,7 +287,7 @@ function SandboxLink() {
     <div className="grid gap-1">
       <Link
         to="/"
-        className="text-purple-500 dark:text-purple-300 flex whitespace-nowrap items-center"
+        className="text-blue-500 font-bold dark:text-blue-300 flex whitespace-nowrap items-center"
       >
         <Trans>Go to your Sandbox</Trans> <ArrowRight className="ml-2" />
       </Link>
