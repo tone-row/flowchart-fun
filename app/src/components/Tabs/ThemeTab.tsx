@@ -568,9 +568,9 @@ export function ThemeTab() {
     (state) => (state.meta.cytoscapeStyle as string) ?? ""
   );
   return (
-    <div className="h-full w-full p-4 overflow-auto">
+    <div className="h-full w-full p-4 overflow-auto theme-tab">
       <div className="mb-6 grid gap-2">
-        <p className="text-xs text-neutral-600 bg-neutral-200 p-4 rounded">
+        <p className="text-xs text-neutral-600 ml-3 dark:text-neutral-400">
           <Trans>
             Use these settings to adapt the look and behavior of your flowcharts
           </Trans>
@@ -602,8 +602,10 @@ export function ThemeTab() {
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <>
-      <h2 className="font-bold text-blue-600 text-base -mb-8 ml-3">{title}</h2>
-      <div className="border border-blue-100 rounded-xl relative w-full overflow-hidden">
+      <h2 className="font-bold text-blue-600 text-base -mb-8 ml-3 dark:text-blue-400">
+        {title}
+      </h2>
+      <div className="border border-blue-100 dark:border-neutral-800 rounded-xl relative w-full overflow-hidden">
         <div className="grid gap-4 p-4 content-start">{children}</div>
       </div>
     </>

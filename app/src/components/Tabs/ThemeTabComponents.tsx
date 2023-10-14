@@ -6,6 +6,9 @@ import { fonts } from "../../lib/fonts";
 import classNames from "classnames";
 import { Editor } from "@monaco-editor/react";
 import { useLightOrDarkMode } from "../../lib/hooks";
+import { HexColorPicker, HexColorInput } from "react-colorful";
+import * as Checkbox from "@radix-ui/react-checkbox";
+import { Check } from "phosphor-react";
 
 type BaseProps = {
   id: string;
@@ -26,7 +29,7 @@ export const select: Control<
       onChange={(e) => {
         onValueChange(e.target.value);
       }}
-      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
+      className="p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200"
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
@@ -110,21 +113,31 @@ export const color: Control<string, BaseProps> = (
 ) => {
   const disabled = globals?.canEdit === false;
   return (
-    <div className="flex items-center gap-2 justify-between">
-      <input
-        key={id}
-        type="color"
-        id={id}
-        value={value}
-        disabled={disabled}
-        onChange={(e) => {
-          onValueChange(e.target.value);
-        }}
-        className="h-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
+    <div className="flex items-center gap-2 justify-between" key={id}>
+      <Popover.Root modal={true}>
+        <Popover.Trigger
+          id={id}
+          className="rounded-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 p-1 border border-solid border-gray-300 dark:border-neutral-700"
+          disabled={disabled}
+        >
+          <div
+            style={{ backgroundColor: value }}
+            className="h-6 w-6 rounded-full"
+          />
+        </Popover.Trigger>
+        <Popover.Content
+          className="shadow-lg overflow-hidden z-10"
+          side="bottom"
+          align="start"
+        >
+          <HexColorPicker color={value} onChange={onValueChange} />
+        </Popover.Content>
+      </Popover.Root>
+      <HexColorInput
+        color={value}
+        onChange={onValueChange}
+        className="font-mono text-neutral-500/50 text-[12px] w-[52px] disabled:opacity-50 bg-transparent uppercase text-right focus:outline-none focus:bg-neutral-100 p-1 -mr-1 rounded dark:focus:bg-neutral-900 leading-[1]"
       />
-      <span className="font-mono text-neutral-500/50 text-[12px]">
-        {value.toUpperCase()}
-      </span>
     </div>
   );
 };
@@ -137,17 +150,20 @@ export const checkbox: Control<boolean, BaseProps> = (
 ) => {
   const disabled = globals?.canEdit === false;
   return (
-    <input
+    <Checkbox.Root
       key={id}
-      type="checkbox"
       id={id}
-      checked={value}
       disabled={disabled}
-      onChange={(e) => {
-        onValueChange(e.target.checked);
+      checked={value}
+      onCheckedChange={(checked) => {
+        onValueChange(!!checked);
       }}
-      className="h-6 w-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
-    />
+      className="h-6 w-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 flex items-center justify-center"
+    >
+      <Checkbox.Indicator>
+        <Check size={16} />
+      </Checkbox.Indicator>
+    </Checkbox.Root>
   );
 };
 
@@ -192,7 +208,7 @@ function Fontpicker({
       <input
         placeholder="system-ui"
         disabled={disabled}
-        className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
+        className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200"
         onFocus={() => setOpen(true)}
         onBlur={() => {
           if (!hovering) setOpen(false);
@@ -210,7 +226,7 @@ function Fontpicker({
         <Popover.Trigger className="w-full h-0" />
         <Popover.Content
           onOpenAutoFocus={(event) => event.preventDefault()}
-          className="grid bg-white z-10 rounded shadow-lg w-full border border-gray-200 overflow-hidden p-1"
+          className="grid bg-white z-10 rounded shadow-lg w-full border border-gray-200 overflow-hidden p-1 dark:bg-neutral-800 dark:border-neutral-700"
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
           side="bottom"
@@ -242,7 +258,7 @@ function FontpickerButton({
 }) {
   return (
     <button
-      className="w-full p-2 hover:bg-gray-100 text-left text-sm"
+      className="w-full p-2 hover:bg-gray-100 text-left text-sm dark:hover:bg-neutral-700"
       onClick={onClick}
     >
       {children}
@@ -279,7 +295,7 @@ function CustomCSSEditor({
   const mode = useLightOrDarkMode();
   return (
     <div
-      className="theme-editor-monaco bg-neutral-50"
+      className="theme-editor-monaco bg-neutral-50 dark:bg-neutral-900"
       id="theme-editor-wrapper"
     >
       <Editor

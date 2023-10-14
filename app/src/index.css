@@ -209,3 +209,26 @@ main .monaco-editor {
   --vscode-editorMarkerNavigation-background: transparent;
   --vscode-input-background: transparent;
 }
+
+.theme-tab::-webkit-scrollbar {
+  @apply w-2;
+}
+.theme-tab::-webkit-scrollbar-button {
+  height: 0;
+}
+
+.theme-tab::-webkit-scrollbar-track {
+  @apply bg-neutral-200 rounded-tr-lg rounded-br-lg dark:bg-neutral-900;
+}
+.theme-tab::-webkit-scrollbar-track-piece {
+  /* 4 */
+}
+.theme-tab::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-800;
+}
+.theme-tab::-webkit-scrollbar-corner {
+  /* 6 */
+}
+.theme-tab::-webkit-resizer {
+  /* 7 */
+}
