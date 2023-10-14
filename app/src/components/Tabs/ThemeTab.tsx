@@ -24,6 +24,17 @@ import {
 import { useCanEdit } from "../../lib/hooks";
 import { useDoc } from "../../lib/useDoc";
 import { Warning } from "../Warning";
+import { Trans, t } from "@lingui/macro";
+import {
+  ArrowsOutLineVertical,
+  ArrowsOutSimple,
+  Article,
+  Circle,
+  Graph,
+  LineSegment,
+  SquareLogo,
+  TextAa,
+} from "phosphor-react";
 
 const createForm = createControls({
   select,
@@ -51,7 +62,7 @@ const Form = createForm<{
       >
         <div className="flex justify-between items-end">
           <label htmlFor={field.id} className="text-xs text-neutral-500">
-            {field.title}
+            {field.title()}
           </label>
           {field.control === "range" && (
             <span className="font-mono text-neutral-500/50 text-[12px]">
@@ -67,7 +78,7 @@ const Form = createForm<{
     {
       wrapper({ children }) {
         return (
-          <Section title="Layout" key="layout">
+          <Section title={t`Layout`} key="layout">
             {children}
           </Section>
         );
@@ -75,7 +86,7 @@ const Form = createForm<{
       elements: [
         {
           id: "layoutName",
-          title: "Algorithm",
+          title: () => <Graph className="w-5 h-5" />,
           control: "select",
           value(data) {
             return data.theme.layoutName;
@@ -97,7 +108,7 @@ const Form = createForm<{
           ],
         },
         {
-          title: "Direction",
+          title: () => t`Direction`,
           id: "klayDirection",
           control: "select",
           hidden(data) {
@@ -119,7 +130,7 @@ const Form = createForm<{
           ],
         },
         {
-          title: "Spacing",
+          title: () => <ArrowsOutSimple className="w-5 h-5" />,
           id: "spacingFactor",
           control: "range",
           value(data) {
@@ -137,14 +148,14 @@ const Form = createForm<{
     {
       wrapper({ children }) {
         return (
-          <Section title="General" key="general">
+          <Section title={t`General`} key="general">
             {children}
           </Section>
         );
       },
       elements: [
         {
-          title: "Background",
+          title: () => t`Background Color`,
           id: "background",
           control: "color",
           value(data) {
@@ -155,7 +166,7 @@ const Form = createForm<{
           },
         },
         {
-          title: "Font",
+          title: () => <TextAa className="w-5 h-5" />,
           id: "fontFamily",
           control: "fontpicker",
           value(data) {
@@ -170,14 +181,14 @@ const Form = createForm<{
     {
       wrapper({ children }) {
         return (
-          <Section title="Nodes" key="nodes">
+          <Section title={t`Nodes`} key="nodes">
             {children}
           </Section>
         );
       },
       elements: [
         {
-          title: "Shape",
+          title: () => <Circle className="w-5 h-5" />,
           id: "shape",
           control: "select",
           value(data) {
@@ -193,7 +204,7 @@ const Form = createForm<{
           ],
         },
         {
-          title: "Background",
+          title: () => t`Background Color`,
           id: "nodeBackground",
           control: "color",
           value(data) {
@@ -204,7 +215,7 @@ const Form = createForm<{
           },
         },
         {
-          title: "Text Color",
+          title: () => t`Text Color`,
           id: "nodeForeground",
           control: "color",
           value(data) {
@@ -215,7 +226,7 @@ const Form = createForm<{
           },
         },
         {
-          title: "Padding",
+          title: () => <SquareLogo className="w-5 h-5" />,
           id: "padding",
           control: "range",
           value(data) {
@@ -229,7 +240,7 @@ const Form = createForm<{
           step: 1,
         },
         {
-          title: "Border Width",
+          title: () => t`Border Width`,
           id: "borderWidth",
           control: "range",
           value(data) {
@@ -243,7 +254,7 @@ const Form = createForm<{
           step: 1,
         },
         {
-          title: "Border Color",
+          title: () => t`Border Color`,
           id: "borderColor",
           control: "color",
           value(data) {
@@ -254,7 +265,7 @@ const Form = createForm<{
           },
         },
         {
-          title: "Text Max Width",
+          title: () => <Article className="w-5 h-5" />,
           id: "textMaxWidth",
           control: "range",
           value(data) {
@@ -268,7 +279,7 @@ const Form = createForm<{
           step: 1,
         },
         {
-          title: "Line Height",
+          title: () => t`Text Leading`,
           id: "lineHeight",
           control: "range",
           value(data) {
@@ -282,7 +293,7 @@ const Form = createForm<{
           step: 0.1,
         },
         {
-          title: "Text Margin Y",
+          title: () => t`Text Vertical Offset`,
           id: "textMarginY",
           control: "range",
           value(data) {
@@ -296,7 +307,7 @@ const Form = createForm<{
           step: 0.25,
         },
         {
-          title: "Fix Height",
+          title: () => t`Set Fixed Node Height`,
           id: "useFixedHeight",
           control: "checkbox",
           value(data) {
@@ -307,7 +318,7 @@ const Form = createForm<{
           },
         },
         {
-          title: "Height",
+          title: () => <ArrowsOutLineVertical className="w-5 h-5" />,
           id: "fixedHeight",
           control: "range",
           hidden(data) {
@@ -328,14 +339,14 @@ const Form = createForm<{
     {
       wrapper({ children }) {
         return (
-          <Section title="Edges" key="edges">
+          <Section title={t`Edges`} key="edges">
             {children}
           </Section>
         );
       },
       elements: [
         {
-          title: "Curve Style",
+          title: () => <LineSegment className="w-5 h-5" />,
           id: "curveStyle",
           control: "select",
           value(data) {
@@ -350,7 +361,7 @@ const Form = createForm<{
           ],
         },
         {
-          title: "Edge Width",
+          title: () => t`Width`,
           id: "edgeWidth",
           control: "range",
           value(data) {
@@ -364,7 +375,7 @@ const Form = createForm<{
           step: 1,
         },
         {
-          title: "Color",
+          title: () => t`Color`,
           id: "edgeColor",
           control: "color",
           value(data) {
@@ -384,7 +395,7 @@ const Form = createForm<{
           },
           elements: [
             {
-              title: "Source Arrow Shape",
+              title: () => t`Source Arrow Shape`,
               id: "sourceArrowShape",
               control: "select",
               value(data) {
@@ -404,7 +415,7 @@ const Form = createForm<{
               ],
             },
             {
-              title: "Target Arrow Shape",
+              title: () => t`Target Arrow Shape`,
               id: "targetArrowShape",
               control: "select",
               value(data) {
@@ -424,7 +435,7 @@ const Form = createForm<{
               ],
             },
             {
-              title: "Source Distance From Node",
+              title: () => t`Source Distance From Node`,
               id: "sourceDistanceFromNode",
               control: "range",
               value(data) {
@@ -441,7 +452,7 @@ const Form = createForm<{
               step: 1,
             },
             {
-              title: "Target Distance From Node",
+              title: () => t`Target Distance From Node`,
               id: "targetDistanceFromNode",
               control: "range",
               value(data) {
@@ -460,7 +471,7 @@ const Form = createForm<{
           ],
         },
         {
-          title: "Arrow Scale",
+          title: () => t`Arrow Size`,
           id: "arrowScale",
           control: "range",
           value(data) {
@@ -474,7 +485,7 @@ const Form = createForm<{
           step: 0.025,
         },
         {
-          title: "Edge Text Size",
+          title: () => t`Edge Text Size`,
           id: "edgeTextSize",
           control: "range",
           value(data) {
@@ -488,7 +499,7 @@ const Form = createForm<{
           step: 0.01,
         },
         {
-          title: "Rotate Label",
+          title: () => t`Rotate Label`,
           id: "rotateEdgeLabel",
           control: "checkbox",
           value(data) {
@@ -503,7 +514,7 @@ const Form = createForm<{
     {
       wrapper({ children }) {
         return (
-          <Section title="Advanced" key="custom">
+          <Section title={t`Advanced`} key="custom">
             {children}
           </Section>
         );
@@ -511,7 +522,7 @@ const Form = createForm<{
       // wrapEach: false,
       elements: [
         {
-          title: "Custom CSS",
+          title: () => t`Custom CSS`,
           id: "customCss",
           control: "customCss",
           value(data) {
@@ -527,7 +538,7 @@ const Form = createForm<{
           },
         },
         {
-          title: "Use Custom CSS Only",
+          title: () => t`Use Custom CSS Only`,
           id: "customCssOnly",
           control: "checkbox",
           value(data) {
@@ -560,15 +571,20 @@ export function ThemeTab() {
     <div className="h-full w-full p-4 overflow-auto">
       <div className="mb-6 grid gap-2">
         <p className="text-xs text-neutral-600 bg-neutral-200 p-4 rounded">
-          Use these settings to adapt the look and behavior of your flowcharts
+          <Trans>
+            Use these settings to adapt the look and behavior of your flowcharts
+          </Trans>
         </p>
         {customCssOnly && (
           <Warning>
             <p className="text-xs">
-              <a className="underline font-bold" href="#customCssOnly">
-                Custom CSS Only
-              </a>{" "}
-              is enabled. Only the Layout and Advanced settings will be applied.
+              <Trans>
+                <a className="underline font-bold" href="#customCssOnly">
+                  Custom CSS Only
+                </a>{" "}
+                is enabled. Only the Layout and Advanced settings will be
+                applied.
+              </Trans>
             </p>
           </Warning>
         )}

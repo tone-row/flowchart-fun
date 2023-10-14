@@ -9,7 +9,7 @@ import { useLightOrDarkMode } from "../../lib/hooks";
 
 type BaseProps = {
   id: string;
-  title: string;
+  title: () => ReactNode;
 };
 
 export const select: Control<
@@ -74,7 +74,7 @@ export const range: Control<
             "opacity-50": disabled,
           }
         )}
-        aria-label={title}
+        aria-label={title() as string}
       />
     </Slider.Root>
   );
