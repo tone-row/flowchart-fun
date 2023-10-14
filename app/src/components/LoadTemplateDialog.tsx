@@ -16,7 +16,7 @@ import { Button2 } from "../ui/Shared";
 import classNames from "classnames";
 import { useDoc } from "../lib/useDoc";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { useUnmountStore } from "../lib/useUnmountStore";
+import { mountGraph, unmountGraph } from "../lib/useUnmountStore";
 import { FFTheme } from "../lib/FFTheme";
 
 export function LoadTemplateDialog() {
@@ -59,17 +59,21 @@ export function LoadTemplateDialog() {
         themeEditor: theme,
       };
 
-      prepareChart(
-        `${nextContent}\n=====${JSON.stringify(meta)}=====`,
-        details
-      );
-
       reset();
       setOpen(false);
+
+      unmountGraph();
+      // The reason this is done is because the unmounting
+      // of the graph happens effectually, i.e. not immediately
+      // and when an elk layout is run, but the graph is no longer
+      // there we get an error, this ensures the graph is actually
+      // unmounted, therefore the layout doesn't begin to run
       requestAnimationFrame(() => {
-        useUnmountStore.setState({
-          unmount: true,
-        });
+        prepareChart(
+          `${nextContent}\n=====${JSON.stringify(meta)}=====`,
+          details
+        );
+        mountGraph();
       });
     })();
   }, [template, templateData, content, reset]);

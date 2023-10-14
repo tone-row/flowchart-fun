@@ -1,9 +1,10 @@
 import { getDefaultText } from "./getDefaultText";
-import { theme } from "./templates/default-template";
+import { theme, cytoscapeStyle } from "./templates/default-template";
 import { getExpirationDate } from "./getExpirationDate";
 
 const defaultMeta = {
   themeEditor: theme,
+  cytoscapeStyle,
 };
 
 // TODO: Should be shared with the back-end through a shared package

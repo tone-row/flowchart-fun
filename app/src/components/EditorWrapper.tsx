@@ -40,7 +40,7 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
       <header
         className={classNames(
           styles.HeaderTitle,
-          "flex items-start gap-2 justify-between p-2 pl-6 pt-6"
+          "flex items-start gap-2 justify-between p-2 pl-6 pt-6 flex-wrap"
         )}
       >
         {isSandbox ? (

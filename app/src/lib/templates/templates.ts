@@ -51,7 +51,7 @@ export const templates: {
   },
   {
     key: "knowledge-graph",
-    img: "template10.png",
+    img: "template20.png",
     bgColor: "#EFEFEF",
     title: () => t`Knowledge Graph`,
     promptType: "knowledge",

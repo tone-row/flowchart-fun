@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
-import { useUnmountStore } from "./useUnmountStore";
+import { resetGraph } from "./useUnmountStore";
 import { FFTheme } from "./FFTheme";
 import { toTheme } from "./toTheme";
 
@@ -221,11 +221,7 @@ export function useCytoscapeStyleImports() {
     suspense: true,
     cacheTime: Infinity,
     staleTime: Infinity,
-    onSuccess: () => {
-      useUnmountStore.setState({
-        unmount: true,
-      });
-    },
+    onSuccess: resetGraph,
   });
 }
 

@@ -6,7 +6,7 @@ import { FaRegSnowflake } from "react-icons/fa";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { useGraphStore } from "../lib/useGraphStore";
 import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
-import { useUnmountStore } from "../lib/useUnmountStore";
+import { resetGraph } from "../lib/useUnmountStore";
 import { IconButton2, IconToggleButton, Tooltip2 } from "../ui/Shared";
 
 const ZOOM_STEP = 0.5;
@@ -40,11 +40,10 @@ export function GraphFloatingMenu() {
           size="xs"
           aria-label={t`Reset`}
           onClick={() => {
-            useUnmountStore.setState({
-              unmount: true,
-            });
-            useGraphStore.setState({
-              autoFit: true,
+            resetGraph().then(() => {
+              useGraphStore.setState({
+                autoFit: true,
+              });
             });
           }}
         >
