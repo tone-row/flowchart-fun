@@ -56,9 +56,8 @@ test("Sign Up", async () => {
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/l`));
 
   // expect sign up success to be on the screen
-  await page
-    .getByRole("heading", { name: "Welcome to Flowchart Fun Pro!" })
-    .click();
+  // make sure test id welcome-message is visible
+  await expect(page.getByTestId("welcome-message")).toBeVisible();
 
   /* Part 2: Get Auth Email */
   // fill in testid sign-in-magic-email with email
