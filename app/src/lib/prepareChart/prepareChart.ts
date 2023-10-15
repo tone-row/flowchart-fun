@@ -12,14 +12,16 @@ import { cytoscapeStyle, theme } from "../templates/default-template";
 import { FFTheme } from "../FFTheme";
 
 /**
- * A function which makes sure that the document loaded externally
- * or from local storage matches the format that we expect. It parses
- * it and puts it into a zustand store for use around the app
+ * Ensures the document loaded externally or from local storage
+ * matches the format that we expect. It parses it and puts it
+ * into a zustand store for use around the app
  *
  * ### Terminology
  * - `document` is the complete file contents (local or hosted)
  * - `text` is the document without the meta section
  * - `meta` is the meta section of the document
+ * - `details` is an added section, stored on the client that contains
+ *   information about this document
  */
 
 export async function prepareChart(doc: string, details: Details) {
@@ -90,6 +92,9 @@ export async function prepareChart(doc: string, details: Details) {
     // Delete the old layout
     delete meta.layout;
   }
+
+  // delete the parser if it exists
+  if (meta.parser) delete meta.parser;
 
   // pre-process style to load classes and font imports
   preprocessStyle(getStyleStringFromMeta(meta));

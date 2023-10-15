@@ -218,7 +218,7 @@ main .monaco-editor {
 }
 
 .theme-tab::-webkit-scrollbar-track {
-  @apply bg-neutral-200 rounded-tr-lg rounded-br-lg dark:bg-neutral-900;
+  @apply bg-neutral-200 dark:bg-neutral-900;
 }
 .theme-tab::-webkit-scrollbar-track-piece {
   /* 4 */

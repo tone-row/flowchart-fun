@@ -3,14 +3,14 @@ import { join } from "path";
 
 import { cytoscapeStyle as style } from "../themes/original";
 import { cytoscapeStyle as darkStyle } from "../themes/original-dark";
+import { theme, cytoscapeStyle } from "../templates/default-template";
 import { initialDoc } from "../useDoc";
 import { prepareChart } from "./prepareChart";
 
 describe("prepareChart", () => {
-  test("can migrate old files with yaml", async () => {
-    expect(
-      await prepareChart(getFixture("example1"), initialDoc.details)
-    ).toEqual({
+  test("migrate from yaml headers", async () => {
+    const example = getFixture("example1");
+    expect(await prepareChart(example, initialDoc.details)).toEqual({
       text: `This app works by typing
   Indenting creates a link to the current line
   any text: before a colon creates a label
@@ -28,16 +28,15 @@ Have fun! 🎉
 */
 `,
       meta: {
-        layout: {
-          name: "cose",
-        },
-        cytoscapeStyle: darkStyle,
+        cytoscapeStyle,
+        theme: "original-dark",
+        themeEditor: { ...theme, layoutName: "cose" },
       },
       details: initialDoc.details,
     });
   });
 
-  test("can migrate old files with hidden options", async () => {
+  test("migrate from hidden options - ¼▓╬", async () => {
     expect(
       await prepareChart(getFixture("example2"), initialDoc.details)
     ).toEqual({
@@ -53,28 +52,29 @@ longer label text
           N150: { x: 112.02947631404595, y: 237.1117560181095 },
           c: { x: 91.4921875, y: 138.375 },
         },
-        cytoscapeStyle: style,
+        cytoscapeStyle,
+        themeEditor: theme,
       },
       details: initialDoc.details,
     });
   });
 
-  test("can migrate old files with neither", async () => {
+  test("migrate from nothing", async () => {
     expect(
       await prepareChart(getFixture("example3"), initialDoc.details)
     ).toEqual({
       text: `i am but a simple file\n`,
       meta: {
-        cytoscapeStyle: style,
+        cytoscapeStyle,
+        themeEditor: theme,
       },
       details: initialDoc.details,
     });
   });
 
-  test("can migrate old file with both", async () => {
-    expect(
-      await prepareChart(getFixture("example4"), initialDoc.details)
-    ).toEqual({
+  test("migrate old file with both", async () => {
+    const example = getFixture("example4");
+    expect(await prepareChart(example, initialDoc.details)).toEqual({
       text: `이 앱은 타이핑으로 작동합니다
   들여쓰기는 현재 줄에 대한 링크를 생성합니다
   콜론 앞의 모든 텍스트는: 레이블을 생성합니다
@@ -92,10 +92,9 @@ longer label text
 */
 `,
       meta: {
-        layout: {
-          name: "cose",
-        },
-        cytoscapeStyle: darkStyle,
+        themeEditor: { ...theme, layoutName: "cose" },
+        theme: "original-dark",
+        cytoscapeStyle,
         nodePositions: {
           N14e: { x: 260.27143997679184, y: 182.9157088415619 },
           N14f: { x: 67.24466938513544, y: 237.52532493169429 },
@@ -115,11 +114,9 @@ longer label text
     ).toEqual({
       text: `hello\n  to: the world\n`,
       meta: {
-        layout: {
-          name: "cose",
-          rankDir: "BT",
-        },
-        cytoscapeStyle: style,
+        theme: "eggs",
+        themeEditor: { ...theme, layoutName: "cose" },
+        cytoscapeStyle,
       },
       details: initialDoc.details,
     });
@@ -130,10 +127,6 @@ longer label text
       await prepareChart(getFixture("example6"), initialDoc.details)
     ).toEqual({
       meta: {
-        layout: {
-          name: "cose",
-          rankDir: "LR",
-        },
         style: [
           {
             selector: "edge",
@@ -150,7 +143,9 @@ longer label text
             },
           },
         ],
-        cytoscapeStyle: style,
+        theme: "eggs",
+        themeEditor: { ...theme, layoutName: "cose" },
+        cytoscapeStyle,
       },
       text: `You can set all lines to be dashed
   B
@@ -171,18 +166,15 @@ longer label text
     ).toEqual({
       text: `hello\n  to the: world\n`,
       meta: {
-        layout: {
-          name: "cose",
-          rankDir: "BT",
-        },
-        cytoscapeStyle: darkStyle,
+        cytoscapeStyle,
+        theme: "original-dark",
+        themeEditor: { ...theme, layoutName: "cose" },
       },
       details: initialDoc.details,
     });
   });
 
-  // outdated, force parser update
-  test("if a document has a parser it shouldn't change", async () => {
+  test("deletes parser", async () => {
     expect(
       await prepareChart(getFixture("example8"), {
         ...initialDoc.details,
@@ -194,19 +186,21 @@ longer label text
         title: "",
       },
       meta: {
-        parser: "v1",
-        cytoscapeStyle: style,
+        cytoscapeStyle,
+        themeEditor: theme,
       },
       text: "old\n  [x] parser\n",
     });
   });
 
-  test.todo(
-    "if chart has cytoscapeStyle, move it to themeEditor.custom, drop-in default FFTheme, but turn on customCssOnly theme editor flag"
-  );
-  test.todo(
-    "if chart has 'theme' key, upgrade to themeEditor, replace with default template"
-  );
+  test("if 'theme' key, leave in place, but add default themeEditor", async () => {
+    const result = await prepareChart(
+      `hello\n\n=====\n{"theme": "eggs"}\n=====`,
+      initialDoc.details
+    );
+    expect(result.meta.themeEditor).not.toBeUndefined();
+    expect(result.meta.themeEditor).toEqual(theme);
+  });
 });
 
 function getFixture(name: string) {
