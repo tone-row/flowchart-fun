@@ -245,8 +245,8 @@ test("Create chart from imported data", async () => {
     await page.getByTestId("edge-label-column-select").press("Enter");
     await page.getByRole("option", { name: "Connector Label" }).press("Enter");
 
-    // click test id "submit-button"
-    await page.getByTestId("submit-button").click();
+    // click test id "import-submit-button"
+    await page.getByTestId("import-submit-button").click({ force: true });
 
     // expect "You are about to add 9 nodes and 10 edges to your graph." to be visible
     await expect(

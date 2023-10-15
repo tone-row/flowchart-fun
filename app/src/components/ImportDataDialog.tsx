@@ -575,7 +575,7 @@ const MappingData = () => {
       ) : null}
       <Button2
         type="submit"
-        data-testid="submit-button"
+        data-testid="import-submit-button"
         color="blue"
         isLoading={onSubmit.isLoading}
       >
