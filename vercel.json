@@ -1,5 +1,5 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "rewrites": [{ "source": "/(.*)", "destination": "/$1" }],
   "crons": [
     {
       "path": "/api/cron/deleteDevUsers",
