@@ -19,15 +19,15 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
     <MemoryRouter initialEntries={["/"]}>
       <QueryClientProvider client={queryClient}>
         <Provider>
-          <Sentry.ErrorBoundary fallback={ErrorFallback}>
-            <I18n>
+          <I18n>
+            <Sentry.ErrorBoundary fallback={ErrorFallback}>
               <Elements stripe={stripePromise}>
                 <Suspense fallback={<Loading />}>
                   <TooltipProvider>{children}</TooltipProvider>
                 </Suspense>
               </Elements>
-            </I18n>
-          </Sentry.ErrorBoundary>
+            </Sentry.ErrorBoundary>
+          </I18n>
         </Provider>
       </QueryClientProvider>
     </MemoryRouter>
