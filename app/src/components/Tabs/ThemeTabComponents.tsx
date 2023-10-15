@@ -13,17 +13,19 @@ import { Check } from "phosphor-react";
 type BaseProps = {
   id: string;
   title: () => ReactNode;
+  label: string;
 };
 
 export const select: Control<
   string,
   BaseProps & { options: { value: string; label: string }[] }
-> = (value, onValueChange, { id, options }, globals) => {
+> = (value, onValueChange, { id, options, label }, globals) => {
   const disabled = globals?.canEdit === false;
   return (
     <select
       key={id}
       id={id}
+      aria-label={label}
       value={value}
       disabled={disabled}
       onChange={(e) => {
@@ -43,7 +45,7 @@ export const select: Control<
 export const range: Control<
   number,
   BaseProps & { min: number; max: number; step: number }
-> = (value, onValueChange, { id, min, max, step, title }, globals) => {
+> = (value, onValueChange, { id, min, max, step, label }, globals) => {
   const disabled = globals?.canEdit === false;
   return (
     <Slider.Root
@@ -77,7 +79,7 @@ export const range: Control<
             "opacity-50": disabled,
           }
         )}
-        aria-label={title() as string}
+        aria-label={label}
       />
     </Slider.Root>
   );
@@ -86,7 +88,7 @@ export const range: Control<
 export const text: Control<string, BaseProps> = (
   value,
   onValueChange,
-  { id },
+  { id, label },
   globals
 ) => {
   const disabled = globals?.canEdit === false;
@@ -97,6 +99,7 @@ export const text: Control<string, BaseProps> = (
       id={id}
       value={value}
       disabled={disabled}
+      aria-label={label}
       onChange={(e) => {
         onValueChange(e.target.value);
       }}
@@ -108,7 +111,7 @@ export const text: Control<string, BaseProps> = (
 export const color: Control<string, BaseProps> = (
   value,
   onValueChange,
-  { id },
+  { id, label },
   globals
 ) => {
   const disabled = globals?.canEdit === false;
@@ -136,6 +139,7 @@ export const color: Control<string, BaseProps> = (
       <HexColorInput
         color={value}
         onChange={onValueChange}
+        aria-label={label}
         className="font-mono text-neutral-500/50 text-[12px] w-[52px] disabled:opacity-50 bg-transparent uppercase text-right focus:outline-none focus:bg-neutral-100 p-1 -mr-1 rounded dark:focus:bg-neutral-900 leading-[1]"
       />
     </div>
@@ -145,7 +149,7 @@ export const color: Control<string, BaseProps> = (
 export const checkbox: Control<boolean, BaseProps> = (
   value,
   onValueChange,
-  { id },
+  { id, label },
   globals
 ) => {
   const disabled = globals?.canEdit === false;
@@ -154,6 +158,7 @@ export const checkbox: Control<boolean, BaseProps> = (
       key={id}
       id={id}
       disabled={disabled}
+      aria-label={label}
       checked={value}
       onCheckedChange={(checked) => {
         onValueChange(!!checked);
@@ -170,7 +175,7 @@ export const checkbox: Control<boolean, BaseProps> = (
 export const fontpicker: Control<string, BaseProps> = (
   value,
   onValueChange,
-  _options,
+  { label },
   globals
 ) => {
   const isKnownFont = fonts.some((font) => font.name === value);
@@ -181,6 +186,7 @@ export const fontpicker: Control<string, BaseProps> = (
         value={value}
         onValueChange={onValueChange}
         disabled={disabled}
+        label={label}
       />
       {!isKnownFont ? (
         <span className="text-xs text-neutral-500 -mt-1 text-center">
@@ -196,10 +202,12 @@ function Fontpicker({
   value,
   onValueChange,
   disabled,
+  label,
 }: {
   value: string;
   onValueChange: (value: string) => void;
   disabled: boolean;
+  label: string;
 }) {
   const [open, setOpen] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -208,6 +216,7 @@ function Fontpicker({
       <input
         placeholder="system-ui"
         disabled={disabled}
+        aria-label={label}
         className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200"
         onFocus={() => setOpen(true)}
         onBlur={() => {
@@ -269,7 +278,7 @@ function FontpickerButton({
 export const customCss: Control<string, BaseProps> = (
   value,
   onValueChange,
-  { id },
+  { id, label },
   globals
 ) => {
   const disabled = globals?.canEdit === false;
@@ -279,6 +288,7 @@ export const customCss: Control<string, BaseProps> = (
       value={value}
       onValueChange={onValueChange}
       disabled={disabled}
+      label={label}
     />
   );
 };
@@ -287,10 +297,12 @@ function CustomCSSEditor({
   value,
   onValueChange,
   disabled,
+  label,
 }: {
   value: string;
   onValueChange: (value: string) => void;
   disabled: boolean;
+  label: string;
 }) {
   const mode = useLightOrDarkMode();
   return (
@@ -328,6 +340,7 @@ function CustomCSSEditor({
           readOnly: disabled,
         }}
         wrapperProps={{
+          "aria-label": label,
           onMouseEnter() {
             const editor = document.querySelector(
               "#theme-editor-wrapper section"

@@ -87,6 +87,7 @@ const Form = createForm<{
         {
           id: "layoutName",
           title: () => <Graph className="w-5 h-5" />,
+          label: t`Layout`,
           control: "select",
           value(data) {
             return data.theme.layoutName;
@@ -110,6 +111,7 @@ const Form = createForm<{
         {
           title: () => t`Direction`,
           id: "klayDirection",
+          label: t`Direction`,
           control: "select",
           hidden(data) {
             return !["dagre", "klay", "layered"].includes(
@@ -132,6 +134,7 @@ const Form = createForm<{
         {
           title: () => <ArrowsOutSimple className="w-5 h-5" />,
           id: "spacingFactor",
+          label: t`Spacing`,
           control: "range",
           value(data) {
             return data.theme.spacingFactor ?? defaultTheme.spacingFactor;
@@ -156,6 +159,7 @@ const Form = createForm<{
       elements: [
         {
           title: () => t`Background Color`,
+          label: t`Background Color`,
           id: "background",
           control: "color",
           value(data) {
@@ -167,6 +171,7 @@ const Form = createForm<{
         },
         {
           title: () => <TextAa className="w-5 h-5" />,
+          label: t`Font Family`,
           id: "fontFamily",
           control: "fontpicker",
           value(data) {
@@ -190,6 +195,7 @@ const Form = createForm<{
         {
           title: () => <Circle className="w-5 h-5" />,
           id: "shape",
+          label: t`Node Shape`,
           control: "select",
           value(data) {
             return data.theme.shape ?? defaultTheme.shape;
@@ -207,6 +213,7 @@ const Form = createForm<{
           title: () => t`Background Color`,
           id: "nodeBackground",
           control: "color",
+          label: t`Background Color`,
           value(data) {
             return data.theme.nodeBackground ?? defaultTheme.nodeBackground;
           },
@@ -217,6 +224,7 @@ const Form = createForm<{
         {
           title: () => t`Text Color`,
           id: "nodeForeground",
+          label: t`Text Color`,
           control: "color",
           value(data) {
             return data.theme.nodeForeground ?? defaultTheme.nodeForeground;
@@ -227,6 +235,7 @@ const Form = createForm<{
         },
         {
           title: () => <SquareLogo className="w-5 h-5" />,
+          label: t`Padding`,
           id: "padding",
           control: "range",
           value(data) {
@@ -240,6 +249,7 @@ const Form = createForm<{
           step: 1,
         },
         {
+          label: t`Border Width`,
           title: () => t`Border Width`,
           id: "borderWidth",
           control: "range",
@@ -254,6 +264,7 @@ const Form = createForm<{
           step: 1,
         },
         {
+          label: t`Border Color`,
           title: () => t`Border Color`,
           id: "borderColor",
           control: "color",
@@ -265,6 +276,7 @@ const Form = createForm<{
           },
         },
         {
+          label: t`Text Max Width`,
           title: () => <Article className="w-5 h-5" />,
           id: "textMaxWidth",
           control: "range",
@@ -279,6 +291,7 @@ const Form = createForm<{
           step: 1,
         },
         {
+          label: t`Text Leading`,
           title: () => t`Text Leading`,
           id: "lineHeight",
           control: "range",
@@ -293,6 +306,7 @@ const Form = createForm<{
           step: 0.1,
         },
         {
+          label: t`Text Vertical Offset`,
           title: () => t`Text Vertical Offset`,
           id: "textMarginY",
           control: "range",
@@ -307,6 +321,7 @@ const Form = createForm<{
           step: 0.25,
         },
         {
+          label: t`Text Horizontal Offset`,
           title: () => t`Set Fixed Node Height`,
           id: "useFixedHeight",
           control: "checkbox",
@@ -318,6 +333,7 @@ const Form = createForm<{
           },
         },
         {
+          label: t`Fixed Node Height`,
           title: () => <ArrowsOutLineVertical className="w-5 h-5" />,
           id: "fixedHeight",
           control: "range",
@@ -346,6 +362,7 @@ const Form = createForm<{
       },
       elements: [
         {
+          label: t`Curve Style`,
           title: () => <LineSegment className="w-5 h-5" />,
           id: "curveStyle",
           control: "select",
@@ -361,6 +378,7 @@ const Form = createForm<{
           ],
         },
         {
+          label: t`Width`,
           title: () => t`Width`,
           id: "edgeWidth",
           control: "range",
@@ -375,6 +393,7 @@ const Form = createForm<{
           step: 1,
         },
         {
+          label: t`Color`,
           title: () => t`Color`,
           id: "edgeColor",
           control: "color",
@@ -395,6 +414,7 @@ const Form = createForm<{
           },
           elements: [
             {
+              label: t`Source Arrow Shape`,
               title: () => t`Source Arrow Shape`,
               id: "sourceArrowShape",
               control: "select",
@@ -415,6 +435,7 @@ const Form = createForm<{
               ],
             },
             {
+              label: t`Target Arrow Shape`,
               title: () => t`Target Arrow Shape`,
               id: "targetArrowShape",
               control: "select",
@@ -435,6 +456,7 @@ const Form = createForm<{
               ],
             },
             {
+              label: t`Source Distance From Node`,
               title: () => t`Source Distance From Node`,
               id: "sourceDistanceFromNode",
               control: "range",
@@ -452,6 +474,7 @@ const Form = createForm<{
               step: 1,
             },
             {
+              label: t`Target Distance From Node`,
               title: () => t`Target Distance From Node`,
               id: "targetDistanceFromNode",
               control: "range",
@@ -471,6 +494,7 @@ const Form = createForm<{
           ],
         },
         {
+          label: t`Arrow Size`,
           title: () => t`Arrow Size`,
           id: "arrowScale",
           control: "range",
@@ -485,6 +509,7 @@ const Form = createForm<{
           step: 0.025,
         },
         {
+          label: t`Edge Text Size`,
           title: () => t`Edge Text Size`,
           id: "edgeTextSize",
           control: "range",
@@ -499,6 +524,7 @@ const Form = createForm<{
           step: 0.01,
         },
         {
+          label: t`Rotate Label`,
           title: () => t`Rotate Label`,
           id: "rotateEdgeLabel",
           control: "checkbox",
@@ -522,6 +548,7 @@ const Form = createForm<{
       // wrapEach: false,
       elements: [
         {
+          label: t`Custom CSS`,
           title: () => t`Custom CSS`,
           id: "customCss",
           control: "customCss",
@@ -538,6 +565,7 @@ const Form = createForm<{
           },
         },
         {
+          label: t`Use Custom CSS Only`,
           title: () => t`Use Custom CSS Only`,
           id: "customCssOnly",
           control: "checkbox",

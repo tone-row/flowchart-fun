@@ -33,7 +33,7 @@ msgstr "2 个月免费"
 msgid "<0>Click the button below to migrate all of your temporary flowcharts into hosted ones.</0><1>Do not close this window. The page will refresh when the migration is complete.</1>"
 msgstr "<0>点击下面的按钮将所有临时流程图迁移到托管图表。</0><1>请勿关闭此窗口。迁移完成后页面将刷新。</1>"
 
-#: src/components/Tabs/ThemeTab.tsx:581
+#: src/components/Tabs/ThemeTab.tsx:609
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>仅启用自定义CSS</0>。仅应用布局和高级设置。"
 
@@ -67,7 +67,7 @@ msgstr "帐户"
 msgid "Activate your Account"
 msgstr "激活您的账户"
 
-#: src/components/Tabs/ThemeTab.tsx:517
+#: src/components/Tabs/ThemeTab.tsx:543
 msgid "Advanced"
 msgstr "高级"
 
@@ -83,7 +83,8 @@ msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件
 msgid "Appearance"
 msgstr "外观"
 
-#: src/components/Tabs/ThemeTab.tsx:474
+#: src/components/Tabs/ThemeTab.tsx:497
+#: src/components/Tabs/ThemeTab.tsx:498
 msgid "Arrow Size"
 msgstr "箭头大小"
 
@@ -103,8 +104,10 @@ msgstr "返回"
 msgid "Back To Editor"
 msgstr "返回编辑器"
 
-#: src/components/Tabs/ThemeTab.tsx:158
-#: src/components/Tabs/ThemeTab.tsx:207
+#: src/components/Tabs/ThemeTab.tsx:161
+#: src/components/Tabs/ThemeTab.tsx:162
+#: src/components/Tabs/ThemeTab.tsx:213
+#: src/components/Tabs/ThemeTab.tsx:216
 msgid "Background Color"
 msgstr "背景颜色"
 
@@ -138,11 +141,13 @@ msgstr "博客"
 msgid "Book a Meeting"
 msgstr "预订会议"
 
-#: src/components/Tabs/ThemeTab.tsx:257
+#: src/components/Tabs/ThemeTab.tsx:267
+#: src/components/Tabs/ThemeTab.tsx:268
 msgid "Border Color"
 msgstr "边框颜色"
 
-#: src/components/Tabs/ThemeTab.tsx:243
+#: src/components/Tabs/ThemeTab.tsx:252
+#: src/components/Tabs/ThemeTab.tsx:253
 msgid "Border Width"
 msgstr "边框宽度"
 
@@ -232,7 +237,8 @@ msgstr "克隆"
 msgid "Close"
 msgstr "关闭"
 
-#: src/components/Tabs/ThemeTab.tsx:378
+#: src/components/Tabs/ThemeTab.tsx:396
+#: src/components/Tabs/ThemeTab.tsx:397
 msgid "Color"
 msgstr "颜色"
 
@@ -337,7 +343,12 @@ msgstr "由人工智能创建"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "在两个节点之间创建边缘是通过将第二个节点缩进第一个节点来完成的"
 
-#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:365
+msgid "Curve Style"
+msgstr "曲线样式"
+
+#: src/components/Tabs/ThemeTab.tsx:551
+#: src/components/Tabs/ThemeTab.tsx:552
 msgid "Custom CSS"
 msgstr "自定义CSS"
 
@@ -370,7 +381,8 @@ msgstr "日期"
 msgid "Direct from your Data"
 msgstr "直接从您的数据"
 
-#: src/components/Tabs/ThemeTab.tsx:111
+#: src/components/Tabs/ThemeTab.tsx:112
+#: src/components/Tabs/ThemeTab.tsx:114
 msgid "Direction"
 msgstr "方向"
 
@@ -429,7 +441,8 @@ msgstr "邊緣標籤欄"
 msgid "Edge Style"
 msgstr "邊緣樣式"
 
-#: src/components/Tabs/ThemeTab.tsx:488
+#: src/components/Tabs/ThemeTab.tsx:512
+#: src/components/Tabs/ThemeTab.tsx:513
 msgid "Edge Text Size"
 msgstr "边缘文本大小"
 
@@ -439,7 +452,7 @@ msgstr "缺少缩进的边"
 
 #: src/components/ImportDataDialog.tsx:407
 #: src/components/LearnSyntaxDialog.tsx:155
-#: src/components/Tabs/ThemeTab.tsx:342
+#: src/components/Tabs/ThemeTab.tsx:358
 msgid "Edges"
 msgstr "边"
 
@@ -536,6 +549,10 @@ msgstr "导出无水印的专业质量流程图，用于您的演示文稿和文
 msgid "Feedback"
 msgstr "反馈"
 
+#: src/components/Tabs/ThemeTab.tsx:336
+msgid "Fixed Node Height"
+msgstr "固定节点高度"
+
 #: src/pages/Pricing.tsx:32
 msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
 msgstr "Flowchart Fun Pro允许您创建、存储和分发任意数量的流程图。"
@@ -547,6 +564,10 @@ msgstr "Flowchart Fun Pro 为您提供无限流程图，无限合作者和无限
 #: src/components/Settings.tsx:132
 msgid "Follow Us on Twitter"
 msgstr "在Twitter上关注我们"
+
+#: src/components/Tabs/ThemeTab.tsx:174
+msgid "Font Family"
+msgstr "字体系列"
 
 #: src/pages/LogIn.tsx:338
 msgid "Forgot your password?"
@@ -564,7 +585,7 @@ msgstr "免费"
 msgid "Fullscreen"
 msgstr "全屏"
 
-#: src/components/Tabs/ThemeTab.tsx:151
+#: src/components/Tabs/ThemeTab.tsx:154
 msgid "General"
 msgstr "一般"
 
@@ -664,6 +685,7 @@ msgid "Language"
 msgstr "语言"
 
 #: src/components/Tabs/ThemeTab.tsx:81
+#: src/components/Tabs/ThemeTab.tsx:90
 msgid "Layout"
 msgstr "布局"
 
@@ -835,6 +857,10 @@ msgstr "节点ID、类、属性"
 msgid "Node Label"
 msgstr "节点标签"
 
+#: src/components/Tabs/ThemeTab.tsx:198
+msgid "Node Shape"
+msgstr "节点形状"
+
 #: src/components/LearnSyntaxDialog.tsx:288
 msgid "Node Shapes"
 msgstr "节点形状"
@@ -843,7 +869,7 @@ msgstr "节点形状"
 msgid "Node and pointer on same line"
 msgstr "同一行上的节点和指针"
 
-#: src/components/Tabs/ThemeTab.tsx:184
+#: src/components/Tabs/ThemeTab.tsx:189
 msgid "Nodes"
 msgstr "节点"
 
@@ -892,6 +918,10 @@ msgstr "PNG和JPG输出"
 #: src/pages/Pricing.tsx:75
 msgid "PNG, JPG, and SVG Exports"
 msgstr "PNG，JPG和SVG输出"
+
+#: src/components/Tabs/ThemeTab.tsx:238
+msgid "Padding"
+msgstr "填充"
 
 #: src/pages/404.tsx:9
 msgid "Page not found"
@@ -1038,7 +1068,8 @@ msgstr "从右到左"
 msgid "Roadmap"
 msgstr "路线图"
 
-#: src/components/Tabs/ThemeTab.tsx:502
+#: src/components/Tabs/ThemeTab.tsx:527
+#: src/components/Tabs/ThemeTab.tsx:528
 msgid "Rotate Label"
 msgstr "旋转标签"
 
@@ -1051,7 +1082,7 @@ msgstr "救球"
 msgid "Set Content"
 msgstr "设置内容"
 
-#: src/components/Tabs/ThemeTab.tsx:310
+#: src/components/Tabs/ThemeTab.tsx:325
 msgid "Set Fixed Node Height"
 msgstr "设置固定节点高度"
 
@@ -1086,7 +1117,8 @@ msgstr "使用<0>Google</0>登录"
 msgid "Sorry! This page is only available in English."
 msgstr "抱歉！此页面只有英语版。"
 
-#: src/components/Tabs/ThemeTab.tsx:398
+#: src/components/Tabs/ThemeTab.tsx:417
+#: src/components/Tabs/ThemeTab.tsx:418
 msgid "Source Arrow Shape"
 msgstr "源箭头形状"
 
@@ -1099,13 +1131,18 @@ msgstr "源列"
 msgid "Source Delimiter"
 msgstr "源分隔符"
 
-#: src/components/Tabs/ThemeTab.tsx:438
+#: src/components/Tabs/ThemeTab.tsx:459
+#: src/components/Tabs/ThemeTab.tsx:460
 msgid "Source Distance From Node"
 msgstr "源节点距离"
 
 #: src/components/LearnSyntaxDialog.tsx:315
 msgid "Source/Target Arrow Shape"
 msgstr "源/目标箭头形状"
+
+#: src/components/Tabs/ThemeTab.tsx:137
+msgid "Spacing"
+msgstr "间距"
 
 #: src/components/LearnSyntaxDialog.tsx:346
 msgid "Special Attributes"
@@ -1148,7 +1185,8 @@ msgstr "订阅"
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
-#: src/components/Tabs/ThemeTab.tsx:418
+#: src/components/Tabs/ThemeTab.tsx:438
+#: src/components/Tabs/ThemeTab.tsx:439
 msgid "Target Arrow Shape"
 msgstr "目标箭头形状"
 
@@ -1161,7 +1199,8 @@ msgstr "目標欄"
 msgid "Target Delimiter"
 msgstr "目標分隔符"
 
-#: src/components/Tabs/ThemeTab.tsx:455
+#: src/components/Tabs/ThemeTab.tsx:477
+#: src/components/Tabs/ThemeTab.tsx:478
 msgid "Target Distance From Node"
 msgstr "目標距離節點"
 
@@ -1170,15 +1209,26 @@ msgstr "目標距離節點"
 msgid "Templates"
 msgstr "範本"
 
-#: src/components/Tabs/ThemeTab.tsx:218
+#: src/components/Tabs/ThemeTab.tsx:225
+#: src/components/Tabs/ThemeTab.tsx:227
 msgid "Text Color"
 msgstr "文字顏色"
 
-#: src/components/Tabs/ThemeTab.tsx:282
+#: src/components/Tabs/ThemeTab.tsx:324
+msgid "Text Horizontal Offset"
+msgstr "文本水平偏移"
+
+#: src/components/Tabs/ThemeTab.tsx:294
+#: src/components/Tabs/ThemeTab.tsx:295
 msgid "Text Leading"
 msgstr "文字行距"
 
-#: src/components/Tabs/ThemeTab.tsx:296
+#: src/components/Tabs/ThemeTab.tsx:279
+msgid "Text Max Width"
+msgstr "文本最大宽度"
+
+#: src/components/Tabs/ThemeTab.tsx:309
+#: src/components/Tabs/ThemeTab.tsx:310
 msgid "Text Vertical Offset"
 msgstr "文字垂直偏移"
 
@@ -1336,7 +1386,8 @@ msgstr "上传您的文件"
 msgid "Use AI"
 msgstr "使用AI"
 
-#: src/components/Tabs/ThemeTab.tsx:541
+#: src/components/Tabs/ThemeTab.tsx:568
+#: src/components/Tabs/ThemeTab.tsx:569
 msgid "Use Custom CSS Only"
 msgstr "僅使用自定義CSS"
 
@@ -1368,7 +1419,7 @@ msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 msgid "Use the customer portal to change your billing information."
 msgstr "使用客户门户更改您的账单信息。"
 
-#: src/components/Tabs/ThemeTab.tsx:574
+#: src/components/Tabs/ThemeTab.tsx:602
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "使用这些设置来调整流程图的外观和行为"
 
@@ -1416,7 +1467,8 @@ msgstr "欢迎来到您的沙盒"
 msgid "What's this?"
 msgstr "这是什么？"
 
-#: src/components/Tabs/ThemeTab.tsx:364
+#: src/components/Tabs/ThemeTab.tsx:381
+#: src/components/Tabs/ThemeTab.tsx:382
 msgid "Width"
 msgstr "宽度"
 
