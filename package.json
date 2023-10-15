@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "app:lint:format": "pnpm -F app lint:fix && pnpm -F app format",
     "test": "pnpm -F api check && pnpm -F app test",
-    "build": "pnpm -F app build"
+    "build": "pnpm -F formulaic build && pnpm -F app build"
   },
   "devDependencies": {
     "husky": "^8.0.1",
