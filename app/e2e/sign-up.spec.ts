@@ -10,7 +10,7 @@ test.describe.configure({
   mode: "serial",
 });
 
-test.skip(({ browserName }) => browserName !== "chromium", "Chromium only!");
+test.skip(({ browserName }) => browserName !== "chromium", "Chrome Only");
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();

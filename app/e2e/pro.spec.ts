@@ -1,9 +1,17 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, Page } from "@playwright/test";
 import { BASE_URL, TESTING_EMAIL_PRO, TESTING_PASS_PRO } from "./utils";
 import path from "path";
 
+let page: Page;
+test.describe.configure({
+  mode: "serial",
+});
+
+test.skip(({ browserName }) => browserName !== "chromium", "Chrome Only");
+
 /* Log In */
-test.beforeEach(async ({ page }) => {
+test.beforeAll(async ({ browser }) => {
+  page = await browser.newPage();
   await page.goto(BASE_URL);
   await page.getByRole("link", { name: "Log In" }).click();
   await page.getByTestId("sign-in-email").click();
@@ -16,7 +24,7 @@ test.beforeEach(async ({ page }) => {
   await page.getByTestId("pro-link").waitFor({ state: "detached" });
 });
 
-test("Create new chart", async ({ page }) => {
+test("Create new chart", async () => {
   await page.getByRole("link", { name: "New" }).click();
   await page.getByLabel("Name Chart").fill("my new chart");
   await page.getByRole("button", { name: "Create" }).click();
@@ -24,14 +32,14 @@ test("Create new chart", async ({ page }) => {
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
 });
 
-test("Rename Chart", async ({ page }) => {
+test("Rename Chart", async () => {
   await page.getByLabel("Rename").click();
   await page.getByRole("textbox").fill("to publish");
   await page.getByRole("button", { name: "Rename" }).click();
   await expect(page.getByLabel("Rename")).toHaveText("to publish");
 });
 
-test("Publish Chart & Clone from Public", async ({ page }) => {
+test("Publish Chart & Clone from Public", async () => {
   let publicLinkValue: string | null = "";
   await page.getByRole("button", { name: "Export" }).click();
   await page.getByLabel("Make publicly accessible").check();
@@ -65,13 +73,13 @@ test("Publish Chart & Clone from Public", async ({ page }) => {
   await page1.close();
 });
 
-test("Open Chart From Charts Page", async ({ page }) => {
+test("Open Chart From Charts Page", async () => {
   await page.goto(BASE_URL);
   await page.getByRole("link", { name: "Charts" }).click();
   await page.getByRole("link", { name: /to publish.*/gi }).click();
 });
 
-test("Download SVG", async ({ page }) => {
+test("Download SVG", async () => {
   await page.getByLabel("Export").click();
 
   // Click [aria-label="Download SVG"]
@@ -82,7 +90,7 @@ test("Download SVG", async ({ page }) => {
   await page.getByTestId("close-button").click();
 });
 
-test("Go to Sandbox. Save Sandbox Chart", async ({ page }) => {
+test("Go to Sandbox. Save Sandbox Chart", async () => {
   await page.goto(BASE_URL);
 
   // wait for the test-id "pro-link" to disappear
@@ -97,7 +105,7 @@ test("Go to Sandbox. Save Sandbox Chart", async ({ page }) => {
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
 });
 
-test("Create chart from ai", async ({ page }) => {
+test("Create chart from AI", async () => {
   await page.getByRole("link", { name: "New" }).click();
   await page.getByTestId("Use AI").click();
   await page.locator('textarea[name="subject"]').click();
@@ -111,7 +119,7 @@ test("Create chart from ai", async ({ page }) => {
   });
 });
 
-test("Create chart from imported data", async ({ page }) => {
+test("Create chart from imported data", async () => {
   try {
     await page.getByRole("link", { name: "New" }).click();
     await page.getByRole("button", { name: "Create" }).click();
