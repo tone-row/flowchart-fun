@@ -6,18 +6,22 @@ import {
   HIDDEN_GRAPH_OPTIONS_DIVIDER,
   newDelimiters,
 } from "../constants";
-import { preprocessCytoscapeStyle } from "../preprocessCytoscapeStyle";
+import { getStyleStringFromMeta, preprocessStyle } from "../preprocessStyle";
 import { Details, useDoc } from "../useDoc";
+import { cytoscapeStyle, theme } from "../templates/default-template";
+import { FFTheme } from "../FFTheme";
 
 /**
- * A function which makes sure that the document loaded externally
- * or from local storage matches the format that we expect. It parses
- * it and puts it into a zustand store for use around the app
+ * Ensures the document loaded externally or from local storage
+ * matches the format that we expect. It parses it and puts it
+ * into a zustand store for use around the app
  *
  * ### Terminology
  * - `document` is the complete file contents (local or hosted)
  * - `text` is the document without the meta section
  * - `meta` is the meta section of the document
+ * - `details` is an added section, stored on the client that contains
+ *   information about this document
  */
 
 export async function prepareChart(doc: string, details: Details) {
@@ -55,41 +59,51 @@ export async function prepareChart(doc: string, details: Details) {
     parsedData = parsed.data;
   }
 
-  const meta = merge.all([jsonMeta, parsedData, hidden]) as Record<
-    string,
-    unknown
-  >;
+  const meta = merge.all([jsonMeta, parsedData, hidden]) as Record<string, any>;
 
   text = `${text.trim()}\n`;
 
-  useDoc.setState({ text, meta, details }, false, "prepareChart");
+  // If cytoscapeStyle is not defined, and themeEditor is not defined
+  // load the default theme
+  if (
+    typeof meta.cytoscapeStyle === "undefined" &&
+    typeof meta.themeEditor === "undefined"
+  ) {
+    meta.themeEditor = theme;
+    meta.cytoscapeStyle = cytoscapeStyle;
+  } else if (typeof meta.themeEditor === "undefined") {
+    // or if there is cytoscapeStyle but no themeEditor, then
+    // set the default theme but disable it
+    meta.themeEditor = theme;
+    meta.customCssOnly = true;
+  }
 
-  // check for theme
-  await replaceThemeWithCytoscapeStyle(meta);
+  // If an old layout is defined, migrate it into the themeEditor
+  if (typeof meta.layout !== "undefined") {
+    let { name = "", spacingFactor = theme.spacingFactor } = meta.layout;
+    if (name.startsWith("elk-")) {
+      name = name.slice(4);
+    }
+
+    if (name) (meta.themeEditor as FFTheme).layoutName = name;
+
+    (meta.themeEditor as FFTheme).spacingFactor = spacingFactor;
+
+    // Delete the old layout
+    delete meta.layout;
+  }
+
+  // delete the parser if it exists
+  if (meta.parser) delete meta.parser;
+
+  // pre-process style to load classes and font imports
+  preprocessStyle(getStyleStringFromMeta(meta));
+
+  useDoc.setState({ text, meta, details }, false, "prepareChart");
 
   return {
     text,
     meta,
     details,
   };
-}
-
-async function replaceThemeWithCytoscapeStyle(meta: Record<string, unknown>) {
-  if (meta.cytoscapeStyle) return;
-  const theme = (meta.theme as string) ?? "original";
-  // if you can't find the old theme, then use the default
-  let cytoscapeStyle = "";
-  try {
-    cytoscapeStyle = (await import(`../themes/${theme}`)).cytoscapeStyle;
-  } catch (e) {
-    cytoscapeStyle = (await import(`../themes/original`)).cytoscapeStyle;
-  }
-
-  // set the cytoscapeStyle and remove the theme
-  if (cytoscapeStyle) {
-    meta.cytoscapeStyle = cytoscapeStyle;
-    preprocessCytoscapeStyle(cytoscapeStyle);
-  }
-
-  delete meta.theme;
 }

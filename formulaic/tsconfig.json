@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+
+    "jsx": "react-jsx",
+    "jsxFactory": "",
+    "jsxFragmentFactory": "",
+
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "noEmit": true,
+
+    "lib": ["es2022", "dom", "dom.iterable"],
+
+    "declaration": true
+    // "composite": true,
+    // "sourceMap": true,
+    // "declarationMap": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "dist"]
+}

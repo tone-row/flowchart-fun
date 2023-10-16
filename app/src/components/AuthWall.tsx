@@ -1,6 +1,6 @@
 import { ReactNode, Suspense, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 import Spinner from "./Spinner";
 
 /**

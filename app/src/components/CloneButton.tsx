@@ -3,7 +3,7 @@ import { Trans } from "@lingui/macro";
 import { docToString, useDoc } from "../lib/useDoc";
 import { Button2 } from "../ui/Shared";
 import { useContext } from "react";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { languages } from "../locales/i18n";
 import { useUserId } from "../lib/hooks";

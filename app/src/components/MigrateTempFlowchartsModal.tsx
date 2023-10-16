@@ -7,7 +7,7 @@ import { ReactNode, useState } from "react";
 import * as Progress from "@radix-ui/react-progress";
 import { makeChart } from "../lib/queries";
 import { titleToLocalStorageKey } from "../lib/helpers";
-import { useSession } from "./AppContext";
+import { useSession } from "./AppContextProvider";
 import { getDefaultChart } from "../lib/getDefaultChart";
 
 /**

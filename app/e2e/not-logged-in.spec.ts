@@ -25,14 +25,11 @@ test("can do things when not logged in", async ({ page }) => {
   // change text in editor
   await changeEditorText(page, "Hello\n  World");
 
-  // Play with layout
-  await page.getByTestId("Editor Tab: Layout").click();
-  await page
-    .locator('button[role="combobox"]:has-text("Top to Bottom")')
-    .click();
-  await page.locator('div[role="option"]:has-text("Left to Right")').click();
-  await page.locator('button[role="combobox"]:has-text("Dagre")').click();
-  await page.locator('div[role="option"]:has-text("Klay")').click();
+  // Play with Theme Editor
+  await page.getByTestId("Editor Tab: Theme").click();
+  await page.getByLabel("Layout", { exact: true }).selectOption("klay");
+  await page.getByLabel("Direction").selectOption("RIGHT");
+  await page.getByLabel("Spacing").click();
 
   // Download PNG
   await page.getByLabel("Export").click();

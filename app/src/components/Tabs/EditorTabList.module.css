@@ -9,9 +9,13 @@
 
 .TabsList::after {
   content: " ";
-  height: 2px;
+  height: 3px;
   @apply absolute bottom-0 right-0 bg-blue-500;
   left: var(--tab-offset-left);
   width: var(--tab-offset-width);
   transition: left 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+
+:global(body.dark) .TabsList::after {
+  @apply bg-blue-300;
 }

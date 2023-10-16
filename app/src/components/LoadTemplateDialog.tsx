@@ -14,10 +14,10 @@ import * as Checkbox from "@radix-ui/react-checkbox";
 import { useCallback, useState } from "react";
 import { Button2 } from "../ui/Shared";
 import classNames from "classnames";
-import { getDefaultChart } from "../lib/getDefaultChart";
 import { useDoc } from "../lib/useDoc";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { useUnmountStore } from "../lib/useUnmountStore";
+import { mountGraph, unmountGraph } from "../lib/useUnmountStore";
+import { FFTheme } from "../lib/FFTheme";
 
 export function LoadTemplateDialog() {
   const [open, setOpen] = useState(false);
@@ -41,31 +41,39 @@ export function LoadTemplateDialog() {
   const load = useCallback(() => {
     (async () => {
       if (!template || !templateData) return;
-      let templateContent: string, nextLayout: string;
-      if (template === "default") {
-        const chart = getDefaultChart();
-        const parts = chart.split("=====");
-        templateContent = parts[0];
-        nextLayout = `=====${parts[1]}=====`;
-      } else {
-        const importTemplate = await import(
-          `../lib/templates/${template}-template.ts`
-        );
-        templateContent = importTemplate.content;
-        nextLayout = importTemplate.template;
-      }
 
-      const { text, details } = useDoc.getState();
+      const importTemplate = await import(
+        `../lib/templates/${template}-template.ts`
+      );
+      const templateContent = importTemplate.content;
+      const theme: FFTheme = importTemplate.theme;
+      const cytoscapeStyle: string = importTemplate.cytoscapeStyle ?? "";
+
+      const { text, meta: _meta, details } = useDoc.getState();
 
       const nextContent = content ? templateContent : text;
 
-      prepareChart(`${nextContent}\n${nextLayout}`, details);
+      const meta = {
+        ..._meta,
+        cytoscapeStyle,
+        themeEditor: theme,
+      };
+
       reset();
       setOpen(false);
+
+      unmountGraph();
+      // The reason this is done is because the unmounting
+      // of the graph happens effectually, i.e. not immediately
+      // and when an elk layout is run, but the graph is no longer
+      // there we get an error, this ensures the graph is actually
+      // unmounted, therefore the layout doesn't begin to run
       requestAnimationFrame(() => {
-        useUnmountStore.setState({
-          unmount: true,
-        });
+        prepareChart(
+          `${nextContent}\n=====${JSON.stringify(meta)}=====`,
+          details
+        );
+        mountGraph();
       });
     })();
   }, [template, templateData, content, reset]);

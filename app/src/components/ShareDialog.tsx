@@ -23,7 +23,7 @@ import { Box } from "../slang";
 import { Close, Content, Overlay } from "../ui/Dialog";
 import { Button2, Textarea } from "../ui/Shared";
 import { Description, SectionTitle } from "../ui/Typography";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 import { downloadCanvas, downloadSvg, getCanvas, getSvg } from "./downloads";
 import Loading from "./Loading";
 import styles from "./ShareDialog.module.css";

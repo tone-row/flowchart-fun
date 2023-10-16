@@ -12,7 +12,7 @@ import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Close, Content, Overlay } from "../ui/Dialog";
 import { Button2, Input, Notice, Section } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
-import { useSession } from "./AppContext";
+import { useSession } from "./AppContextProvider";
 
 /**
  * On the sandbox, the rename button just returns the children

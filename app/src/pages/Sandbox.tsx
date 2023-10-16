@@ -9,7 +9,6 @@ import { EditorOptions } from "../components/EditorOptions";
 import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
-import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 
 import { OnChange } from "@monaco-editor/react";
@@ -22,12 +21,12 @@ import { useEditorStore } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
 import styles from "./Sandbox.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
-import EditStyleTab from "../components/Tabs/EditStyleTab";
 import { newDelimiters, SANDBOX_STORAGE_KEY } from "../lib/constants";
 import { SandboxWarning } from "../components/SandboxWarning";
 import { useSandboxWarning } from "../lib/useSandboxWarning";
 import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { useIsProUser } from "../lib/hooks";
+import { ThemeTab } from "../components/Tabs/ThemeTab";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -116,11 +115,8 @@ const Sandbox = memo(function Edit() {
                   <TextEditor value={text} onChange={onChange} />
                 </EditorOptions>
               </Tabs.Content>
-              <Tabs.Content value="Layout">
-                <EditLayoutTab />
-              </Tabs.Content>
-              <Tabs.Content value="Style">
-                <EditStyleTab />
+              <Tabs.Content value="Theme">
+                <ThemeTab />
               </Tabs.Content>
             </Tabs.Root>
           </EditorWrapper>

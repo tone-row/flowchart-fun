@@ -2,7 +2,7 @@ import { t } from "@lingui/macro";
 import { useContext } from "react";
 
 import { Box } from "../slang";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 
 export default function MobileTabToggle() {
   const { toggleMobileEditorTab, mobileEditorTab } = useContext(AppContext);

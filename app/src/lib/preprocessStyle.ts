@@ -3,7 +3,9 @@ import { useQuery } from "react-query";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
-import { useUnmountStore } from "./useUnmountStore";
+import { resetGraph } from "./useUnmountStore";
+import { FFTheme } from "./FFTheme";
+import { toTheme } from "./toTheme";
 
 (async () => {
   try {
@@ -51,10 +53,10 @@ export const useProcessStyleStore = create<{
 );
 
 /**
- * Takes the users cytoscape style and pulls off any font imports
+ * Takes the styles and pulls off any font imports
  * and makes sure they are enqued to load, before the style hits cytoscape
  */
-export function preprocessCytoscapeStyle(style: string) {
+export function preprocessStyle(style: string) {
   const importRegex = /@import\s+url\(['"]([^'"]+)['"]\);/;
   const imports = [];
   let match = style.match(importRegex);
@@ -219,11 +221,7 @@ export function useCytoscapeStyleImports() {
     suspense: true,
     cacheTime: Infinity,
     staleTime: Infinity,
-    onSuccess: () => {
-      useUnmountStore.setState({
-        unmount: true,
-      });
-    },
+    onSuccess: resetGraph,
   });
 }
 
@@ -323,4 +321,21 @@ function processScss(scss: string): {
     .join("\n");
 
   return { updatedScss, variables };
+}
+
+/**
+ * This function looks at the customCssOnly property
+ * and concatenates the themeEditor and cytoscapeStyle
+ * if it's false or returns the cytoscapeStyle if it's true
+ */
+export function getStyleStringFromMeta(meta: any) {
+  const customCssOnly: boolean = meta?.customCssOnly ?? false;
+  const cytoscapeStyle: string = meta?.cytoscapeStyle ?? "";
+  const themeEditor: FFTheme = meta?.themeEditor ?? "";
+
+  if (customCssOnly) {
+    return cytoscapeStyle;
+  } else {
+    return `${toTheme(themeEditor).style}\n${cytoscapeStyle}`;
+  }
 }

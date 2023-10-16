@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 
 const btnDark =
-  "dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-800";
+  "dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:aria-[selected=true]:text-blue-300";
 
 export function EditorTabList() {
   const selectedTab = useTabsStore((s) => s.selectedTab);
@@ -32,7 +32,7 @@ export function EditorTabList() {
   return (
     <Tabs.List
       className={classNames(
-        "grid grid-flow-col gap-4 border-b border-neutral-200 dark:border-neutral-600 px-5 pb-0 justify-start",
+        "grid grid-flow-col gap-4 px-5 pb-0 justify-start border-b border-blue-100 dark:border-blue-200/20",
         styles.TabsList
       )}
       ref={tabsListRef}
@@ -52,21 +52,12 @@ export function EditorTabList() {
         </span>
       </Tabs.Trigger>
       <Tabs.Trigger
-        value="Layout"
-        data-testid="Editor Tab: Layout"
+        value="Theme"
+        data-testid="Editor Tab: Theme"
         className={`${styles.btn} ${btnDark}`}
       >
-        <span className="text-sm" data-text={t`Layout`}>
-          <Trans>Layout</Trans>
-        </span>
-      </Tabs.Trigger>
-      <Tabs.Trigger
-        value="Style"
-        data-testid="Editor Tab: Style"
-        className={`${styles.btn} ${btnDark}`}
-      >
-        <span className="text-sm" data-text={t`Style`}>
-          <Trans>Style</Trans>
+        <span className="text-sm" data-text={t`Theme`}>
+          <Trans>Theme</Trans>
         </span>
       </Tabs.Trigger>
     </Tabs.List>
