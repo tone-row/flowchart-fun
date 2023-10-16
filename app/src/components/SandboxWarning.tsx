@@ -38,28 +38,22 @@ export function SandboxWarning() {
         <Overlay />
         <Content
           className="grid gap-5 p-5 md:p-8"
-          maxWidthClass="max-w-xl w-[calc(100%-3rem)]"
+          maxWidthClass="max-w-lg w-[calc(100%-3rem)]"
         >
-          <h2 className="font-bold text-lg leading-normal text-center">
-            <Trans>Welcome to Your Sandbox</Trans>
+          <h2 className="font-bold text-xl leading-normal text-center">
+            👋 <Trans>Don't lose your work!</Trans>
           </h2>
           <P>
             <Trans>
-              You're currently creating in your Sandbox, a space for free
-              experimentation. Remember, it resets daily, so your current work
-              won't be saved tomorrow.
+              You're currently working in your sandbox. Remember, it resets
+              daily, so your current work won't be saved tomorrow.
             </Trans>
           </P>
           <P>
             <Trans>
-              Want to keep your flowcharts? Upgrade to our Pro account. With
-              Pro, you can save unlimited flowcharts and never lose your
-              creativity.
-            </Trans>
-          </P>
-          <P>
-            <Trans>
-              Consider upgrading today and unlock the full potential of our app!
+              Want to keep your flowcharts? Upgrade to our Pro account for only
+              $3/month. With Pro, you can save unlimited flowcharts and never
+              lose your creativity.
             </Trans>
           </P>
           <Button2
@@ -70,7 +64,7 @@ export function SandboxWarning() {
               useSandboxWarning.setState({ isOpen: false });
             }}
           >
-            <Link to="/pricing">View Pricing</Link>
+            <Link to="/pricing">Learn More</Link>
           </Button2>
         </Content>
       </Dialog.Portal>
