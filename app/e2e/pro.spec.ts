@@ -76,7 +76,10 @@ test("Publish Chart & Clone from Public", async () => {
 test("Open Chart From Charts Page", async () => {
   await page.goto(BASE_URL);
   await page.getByRole("link", { name: "Charts" }).click();
-  await page.getByRole("link", { name: /to publish.*/gi }).click();
+  await page
+    .getByRole("link", { name: /to publish.*/gi })
+    .first()
+    .click();
 });
 
 test("Download SVG", async () => {
