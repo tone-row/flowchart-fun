@@ -69,6 +69,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           type="text"
           ref={ref}
           className={`${styles.InputText} text-xs`}
+          data-1p-ignore
           {...props}
         />
         {isLoading && (
@@ -154,7 +155,7 @@ const button2Colors = {
 
 const pSize = {
   xs: "p-2 text-[12px]",
-  sm: "p-3 text-sm",
+  sm: "p-2 py-3 text-sm",
   md: "p-4 text-sm",
   lg: "p-5 text-base",
 };

@@ -25,14 +25,11 @@ test("can do things when not logged in", async ({ page }) => {
   // change text in editor
   await changeEditorText(page, "Hello\n  World");
 
-  // Play with layout
-  await page.getByTestId("Editor Tab: Layout").click();
-  await page
-    .locator('button[role="combobox"]:has-text("Top to Bottom")')
-    .click();
-  await page.locator('div[role="option"]:has-text("Left to Right")').click();
-  await page.locator('button[role="combobox"]:has-text("Dagre")').click();
-  await page.locator('div[role="option"]:has-text("Klay")').click();
+  // Play with Theme Editor
+  await page.getByTestId("Editor Tab: Theme").click();
+  await page.getByLabel("Layout", { exact: true }).selectOption("klay");
+  await page.getByLabel("Direction").selectOption("RIGHT");
+  await page.getByLabel("Spacing").click();
 
   // Download PNG
   await page.getByLabel("Export").click();
@@ -63,10 +60,11 @@ test("can do things when not logged in", async ({ page }) => {
   await page.click('[data-testid="close-dialog"]');
 
   // Expect sandbox window to show (about 1 minute wait time)
-  await expect(
-    page.getByRole("heading", { name: "Welcome to Your Sandbox" })
-  ).toBeVisible({ timeout: 60000 });
-  await page.getByRole("button", { name: "View Pricing" }).click();
+  await expect(page.getByTestId("sandbox-warning")).toBeVisible({
+    timeout: 60000,
+  });
+  // Click on test id sandbox-warning-learn-more
+  await page.getByTestId("sandbox-warning-learn-more").click();
   await page.waitForURL("**/pricing");
 
   // Go back

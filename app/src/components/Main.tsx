@@ -1,11 +1,4 @@
-import {
-  memo,
-  ReactNode,
-  Suspense,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
+import { memo, ReactNode, Suspense, useCallback, useState } from "react";
 
 import { useFullscreen, useIsProUser } from "../lib/hooks";
 import { useUnmountStore } from "../lib/useUnmountStore";
@@ -26,16 +19,6 @@ const Main = memo(({ children }: MainProps) => {
   const trigger = useCallback(() => triggerResize((n) => n + 1), []);
   const isFullscreen = useFullscreen();
   const unmount = useUnmountStore((state) => state.unmount);
-  useEffect(() => {
-    if (unmount) {
-      // Defer
-      setTimeout(() => {
-        useUnmountStore.setState({
-          unmount: false,
-        });
-      }, 100);
-    }
-  }, [unmount]);
   const isProUser = useIsProUser();
   return (
     <>

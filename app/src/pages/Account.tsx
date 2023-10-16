@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 const customerPortalLink = process.env.REACT_APP_STRIPE_CUSTOMER_PORTAL ?? "";
 
-import { AppContext } from "../components/AppContext";
+import { AppContext } from "../components/AppContextProvider";
 import Loading from "../components/Loading";
 import { formatCents, formatDate } from "../lib/helpers";
 import { mail, queryClient, useOrderHistory } from "../lib/queries";

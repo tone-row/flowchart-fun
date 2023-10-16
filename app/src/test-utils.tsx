@@ -9,7 +9,7 @@ import { QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 
 import { ErrorFallback, stripePromise } from "./components/App";
-import Provider from "./components/AppContext";
+import Provider from "./components/AppContextProvider";
 import { I18n } from "./components/I18n";
 import Loading from "./components/Loading";
 import { queryClient } from "./lib/queries";
@@ -19,15 +19,15 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
     <MemoryRouter initialEntries={["/"]}>
       <QueryClientProvider client={queryClient}>
         <Provider>
-          <Sentry.ErrorBoundary fallback={ErrorFallback}>
-            <I18n>
+          <I18n>
+            <Sentry.ErrorBoundary fallback={ErrorFallback}>
               <Elements stripe={stripePromise}>
                 <Suspense fallback={<Loading />}>
                   <TooltipProvider>{children}</TooltipProvider>
                 </Suspense>
               </Elements>
-            </I18n>
-          </Sentry.ErrorBoundary>
+            </Sentry.ErrorBoundary>
+          </I18n>
         </Provider>
       </QueryClientProvider>
     </MemoryRouter>

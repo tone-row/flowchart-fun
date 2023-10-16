@@ -14,7 +14,7 @@ i18n.loadLocaleData("hi", { plurals: hi });
 i18n.loadLocaleData("pt-br", { plurals: pt });
 i18n.loadLocaleData("es", { plurals: es });
 
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 
 i18n.load({ en: enMessages });
 i18n.activate("en");

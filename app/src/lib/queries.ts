@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { QueryClient, useQuery } from "react-query";
 import Stripe from "stripe";
 
-import { AppContext } from "../components/AppContext";
+import { AppContext } from "../components/AppContextProvider";
 import { getDefaultChart } from "./getDefaultChart";
 import { supabase } from "./supabaseClient";
 

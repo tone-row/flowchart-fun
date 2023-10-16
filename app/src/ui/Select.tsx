@@ -22,8 +22,8 @@ export const BasicSelect = ({
           <CaretDown />
         </Select.Icon>
       </Select.Trigger>
-      <Select.Portal className="z-100">
-        <Select.Content className="overflow-hidden bg-background rounded-md shadow-lg border dark:border-neutral-700 dark:bg-[var(--color-background)]">
+      <Select.Portal>
+        <Select.Content className="z-100 overflow-hidden bg-background rounded-md shadow-lg border dark:border-neutral-700 dark:bg-[var(--color-background)]">
           <Select.ScrollUpButton className="flex items-center justify-center h-[25px] cursor-default bg-background text-neutral-800 dark:bg-[var(--color-background)] dark:text-neutral-500">
             <CaretUp />
           </Select.ScrollUpButton>

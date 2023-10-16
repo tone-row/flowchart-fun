@@ -1,4 +1,4 @@
-import { useProcessStyleStore } from "../lib/preprocessCytoscapeStyle";
+import { useProcessStyleStore } from "../lib/preprocessStyle";
 import styles from "./TextResizer.module.css";
 
 export default function TextResizer() {

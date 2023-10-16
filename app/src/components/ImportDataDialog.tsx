@@ -2,9 +2,8 @@ import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Progress from "@radix-ui/react-progress";
 import * as RadioGroup from "@radix-ui/react-radio-group";
-import * as Select from "@radix-ui/react-select";
+
 import {
-  CaretDown,
   CircleNotch,
   Database,
   DownloadSimple,
@@ -388,17 +387,17 @@ const MappingData = () => {
         <SmallErrorMessage>{processingErrorMessage}</SmallErrorMessage>
       )}
       <Label label={t`Node ID`}>
-        <StyledSelect
+        <RegularSelect
           value={formState.idColumn}
-          onValueChange={(value) => handleFormChange("idColumn", value)}
+          onChange={(e) => handleFormChange("idColumn", e.target.value)}
           items={columnSelectionValues}
           testId="node-id-select"
         />
       </Label>
       <Label label={t`Node Label`}>
-        <StyledSelect
+        <RegularSelect
           value={formState.nodeLabelColumn}
-          onValueChange={(value) => handleFormChange("nodeLabelColumn", value)}
+          onChange={(e) => handleFormChange("nodeLabelColumn", e.target.value)}
           items={columnSelectionValues}
           testId="node-label-select"
         />
@@ -443,9 +442,9 @@ const MappingData = () => {
             label={t`Target Column`}
             description={t`The column that contains the target node ID(s)`}
           >
-            <StyledSelect
+            <RegularSelect
               value={formState.targetColumn}
-              onValueChange={(value) => handleFormChange("targetColumn", value)}
+              onChange={(e) => handleFormChange("targetColumn", e.target.value)}
               items={columnSelectionValues}
               testId="target-column-select"
             />
@@ -469,11 +468,11 @@ const MappingData = () => {
             label={t`Edge Label Column`}
             description={t`The column that contains the edge label(s)`}
           >
-            <StyledSelect
+            <RegularSelect
               value={formState.edgeLabelColumn}
               defaultValue=""
-              onValueChange={(value) =>
-                handleFormChange("edgeLabelColumn", value)
+              onChange={(e) =>
+                handleFormChange("edgeLabelColumn", e.target.value)
               }
               items={columnSelectionValuesWithNone}
               testId="edge-label-column-select"
@@ -486,9 +485,9 @@ const MappingData = () => {
             label={t`Source Column`}
             description={t`The column that contains the source node ID(s)`}
           >
-            <StyledSelect
+            <RegularSelect
               value={formState.sourceColumn}
-              onValueChange={(value) => handleFormChange("sourceColumn", value)}
+              onChange={(e) => handleFormChange("sourceColumn", e.target.value)}
               items={columnSelectionValues}
             />
           </Label>
@@ -507,11 +506,11 @@ const MappingData = () => {
             />
           </Label>
           <Label label={t`Edge Label Column`}>
-            <StyledSelect
+            <RegularSelect
               value={formState.edgeLabelColumn}
               defaultValue=""
-              onValueChange={(value) =>
-                handleFormChange("edgeLabelColumn", value)
+              onChange={(e) =>
+                handleFormChange("edgeLabelColumn", e.target.value)
               }
               items={columnSelectionValuesWithNone}
             />
@@ -520,16 +519,16 @@ const MappingData = () => {
       ) : formState.edgesDeclared === "separateRows" ? (
         <>
           <Label label={t`Source Column`}>
-            <StyledSelect
+            <RegularSelect
               value={formState.sourceColumn}
-              onValueChange={(value) => handleFormChange("sourceColumn", value)}
+              onChange={(e) => handleFormChange("sourceColumn", e.target.value)}
               items={columnSelectionValues}
             />
           </Label>
           <Label label={t`Target Column`}>
-            <StyledSelect
+            <RegularSelect
               value={formState.targetColumn}
-              onValueChange={(value) => handleFormChange("targetColumn", value)}
+              onChange={(e) => handleFormChange("targetColumn", e.target.value)}
               items={columnSelectionValues}
             />
           </Label>
@@ -537,19 +536,19 @@ const MappingData = () => {
             Row Represents Edge When...
           </h2>
           <Label label={t`Column`}>
-            <StyledSelect
+            <RegularSelect
               value={formState.rowRepresentsEdgeWhenColumn}
-              onValueChange={(value) =>
-                handleFormChange("rowRepresentsEdgeWhenColumn", value)
+              onChange={(e) =>
+                handleFormChange("rowRepresentsEdgeWhenColumn", e.target.value)
               }
               items={columnSelectionValues}
             />
           </Label>
           <Label label={t`Is`}>
-            <StyledSelect
+            <RegularSelect
               value={formState.rowRepresentsEdgeWhenIs}
-              onValueChange={(value) =>
-                handleFormChange("rowRepresentsEdgeWhenIs", value)
+              onChange={(e) =>
+                handleFormChange("rowRepresentsEdgeWhenIs", e.target.value)
               }
               items={[
                 { text: t`Empty`, value: "empty" },
@@ -560,10 +559,10 @@ const MappingData = () => {
           </Label>
           {formState.rowRepresentsEdgeWhenIs === "equals" ? (
             <Label label={`Value`}>
-              <StyledSelect
+              <RegularSelect
                 value={formState.rowRepresentsEdgeWhenValue}
-                onValueChange={(value) =>
-                  handleFormChange("rowRepresentsEdgeWhenValue", value)
+                onChange={(e) =>
+                  handleFormChange("rowRepresentsEdgeWhenValue", e.target.value)
                 }
                 items={columnValues[formState.rowRepresentsEdgeWhenColumn].map(
                   (value) => ({ text: value, value })
@@ -575,7 +574,7 @@ const MappingData = () => {
       ) : null}
       <Button2
         type="submit"
-        data-testid="submit-button"
+        data-testid="import-submit-button"
         color="blue"
         isLoading={onSubmit.isLoading}
       >
@@ -618,9 +617,9 @@ function LabelSpan({ children }: { children: React.ReactNode }) {
   );
 }
 
-function StyledSelect({
+function RegularSelect({
   items,
-  placeholder = "Select...",
+  placeholder,
   testId,
   ...props
 }: {
@@ -630,40 +629,23 @@ function StyledSelect({
   }[];
   placeholder?: string;
   testId?: string;
-} & Select.SelectProps) {
+} & React.DetailedHTMLProps<
+  React.SelectHTMLAttributes<HTMLSelectElement>,
+  HTMLSelectElement
+>) {
   return (
-    <Select.Root {...props}>
-      <Select.Trigger
-        className={`border border-solid ${borderStyles} font-mono text-xs text-neutral-700 dark:text-neutral-300 flex items-center gap-2 px-2 py-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-800 ${focusStates}`}
-        data-testid={testId}
-      >
-        <Select.Value placeholder={placeholder} />
-        <Select.Icon>
-          <CaretDown />
-        </Select.Icon>
-      </Select.Trigger>
-      <Select.Portal>
-        <Select.Content
-          className={`bg-background dark:bg-foreground border ${borderStyles} shadow rounded z-50`}
-        >
-          <Select.ScrollUpButton />
-          <Select.Viewport>
-            {items.map((item) => (
-              <Select.Item
-                value={item.value}
-                key={item.value}
-                className="text-xs px-2 py-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 font-mono text-neutral-700 dark:text-neutral-300 first:rounded-t last:rounded-b"
-              >
-                <Select.ItemText className="min-w-[200px]">
-                  {item.text}
-                </Select.ItemText>
-              </Select.Item>
-            ))}
-          </Select.Viewport>
-          <Select.ScrollDownButton />
-        </Select.Content>
-      </Select.Portal>
-    </Select.Root>
+    <select
+      className={`p-2 border ${borderStyles} rounded ${focusStates} bg-background dark:bg-foreground`}
+      data-testid={testId}
+      {...props}
+    >
+      {placeholder ? <option value="">{placeholder}</option> : null}
+      {items.map((item) => (
+        <option value={item.value} key={item.value}>
+          {item.text}
+        </option>
+      ))}
+    </select>
   );
 }
 

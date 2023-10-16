@@ -14,7 +14,7 @@ import { useMutation } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import * as Popover from "@radix-ui/react-popover";
 
-import { AppContext } from "../components/AppContext";
+import { AppContext } from "../components/AppContextProvider";
 import Loading from "../components/Loading";
 import { useIsProUser } from "../lib/hooks";
 import {
@@ -287,7 +287,7 @@ function SandboxLink() {
     <div className="grid gap-1">
       <Link
         to="/"
-        className="text-purple-500 dark:text-purple-300 flex whitespace-nowrap items-center"
+        className="text-blue-500 font-bold dark:text-blue-300 flex whitespace-nowrap items-center"
       >
         <Trans>Go to your Sandbox</Trans> <ArrowRight className="ml-2" />
       </Link>

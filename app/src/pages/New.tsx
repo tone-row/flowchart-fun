@@ -5,12 +5,11 @@ import { Trans, t } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useCallback, useContext, useState } from "react";
-import { AppContext } from "../components/AppContext";
+import { AppContext } from "../components/AppContextProvider";
 import { languages } from "../locales/i18n";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { useMutation } from "react-query";
 import { supabase } from "../lib/supabaseClient";
-import { getDefaultChart } from "../lib/getDefaultChart";
 import { useIsProUser, useUserId } from "../lib/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import { sample } from "../lib/sample";
@@ -20,6 +19,7 @@ import {
   createUnlimitedTitle,
 } from "../lib/paywallCopy";
 import { Warning } from "../components/Warning";
+import { FFTheme } from "../lib/FFTheme";
 
 type CreateChartOptions = {
   name: string;
@@ -46,22 +46,13 @@ export default function New2() {
       const templateData = templates.find((t) => t.key === options.template);
       if (!templateData) throw new Error("No Template");
 
-      let template = "",
-        content = "";
-
       // Get Template
-      if (options.template === "default") {
-        const chart = getDefaultChart();
-        const parts = chart.split("=====");
-        content = parts[0];
-        template = `=====${parts[1]}=====`;
-      } else {
-        const importTemplate = await import(
-          `../lib/templates/${options.template}-template.ts`
-        );
-        content = importTemplate.content;
-        template = importTemplate.template;
-      }
+      const importTemplate = await import(
+        `../lib/templates/${options.template}-template.ts`
+      );
+      let content: string = importTemplate.content;
+      const theme: FFTheme = importTemplate.theme;
+      const cytoscapeStyle = importTemplate.cytoscapeStyle ?? "";
 
       // Prompts
       if (options.subject) {
@@ -89,7 +80,7 @@ export default function New2() {
         if (response.text) {
           content = response.text;
           sample({
-            template,
+            template: options.template,
             subject: options.subject,
             runningTime: elapsedTime,
             result: response.text,
@@ -97,7 +88,10 @@ export default function New2() {
         }
       }
 
-      const chart = `${content}\n${template}`;
+      const chart = `${content}\n=====${JSON.stringify({
+        themeEditor: theme,
+        cytoscapeStyle,
+      })}=====`;
 
       return supabase
         .from("user_charts")

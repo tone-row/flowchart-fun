@@ -33,6 +33,8 @@ jobs:
           echo STRIPE_KEY_TEST_ENV=${{ secrets.STRIPE_KEY_TEST_ENV }} >> app/.env
           echo TESTING_EMAIL=${{ secrets.TESTING_EMAIL }} >> app/.env
           echo TESTING_PASS=${{ secrets.TESTING_PASS }} >> app/.env
+          echo TESTING_EMAIL_PRO=${{ secrets.TESTING_EMAIL_PRO }} >> app/.env
+          echo TESTING_PASS_PRO=${{ secrets.TESTING_PASS_PRO }} >> app/.env
       - name: Setup Node
         uses: actions/setup-node@v3
         with:

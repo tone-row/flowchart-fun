@@ -1,7 +1,6 @@
 import produce from "immer";
 
-import { getLayout } from "./getLayout";
-import { useDoc } from "./useDoc";
+import { Doc, useDoc } from "./useDoc";
 
 export function unfreezeDoc() {
   useDoc.setState(
@@ -17,8 +16,9 @@ export function unfreezeDoc() {
 
 export function useIsFrozen() {
   const doc = useDoc();
-  const rendered = getLayout(doc);
-  const frozen = "positions" in rendered;
+  return isFrozen(doc);
+}
 
-  return frozen;
+function isFrozen(doc: Doc) {
+  return doc.meta?.nodePositions !== undefined;
 }

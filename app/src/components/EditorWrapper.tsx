@@ -5,7 +5,7 @@ import { useIsLoggedIn, useIsProUser, useIsReadOnly } from "../lib/hooks";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Button2, Input } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./AppContextProvider";
 import { CloneButton } from "./CloneButton";
 import styles from "./EditorWrapper.module.css";
 import Loading from "./Loading";
@@ -40,18 +40,14 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
       <header
         className={classNames(
           styles.HeaderTitle,
-          "flex items-center gap-2 justify-between pl-6 pr-2 pt-2"
+          "flex items-start gap-2 justify-between p-2 pl-6 pt-6 flex-wrap"
         )}
       >
         {isSandbox ? (
-          <FlowchartTitle title={title} className="-translate-y-[2px] mt-2">
-            {pageTitle}
-          </FlowchartTitle>
+          <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
         ) : (
           <RenameButton key={pageTitle}>
-            <FlowchartTitle title={title} className="-translate-y-[2px]">
-              {pageTitle}
-            </FlowchartTitle>
+            <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
           </RenameButton>
         )}
         <div className="flex items-center gap-2">
@@ -204,7 +200,10 @@ function FlowchartTitle({
 }: { children: React.ReactNode } & React.HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h1
-      className={classNames("text-xl md:text-2xl font-bold", className)}
+      className={classNames(
+        "text-xl md:text-2xl font-bold -translate-y-[2px]",
+        className
+      )}
       {...props}
     >
       {children}

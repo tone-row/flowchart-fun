@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "definitions": {
+    "ArrowShape": {
+      "enum": ["none", "triangle", "vee", "triangle-backcurve", "circle"],
+      "type": "string"
+    },
+    "CurveStyle": { "enum": ["bezier", "taxi"], "type": "string" },
+    "Direction": { "enum": ["RIGHT", "LEFT", "DOWN", "UP"], "type": "string" },
+    "LayoutName": {
+      "enum": [
+        "dagre",
+        "klay",
+        "breadthfirst",
+        "cose",
+        "concentric",
+        "circle",
+        "layered",
+        "mrtree",
+        "stress",
+        "radial"
+      ],
+      "type": "string"
+    },
+    "Shape": {
+      "enum": ["rectangle", "roundrectangle", "ellipse"],
+      "type": "string"
+    }
+  },
+  "properties": {
+    "arrowScale": { "type": "number" },
+    "background": { "type": "string" },
+    "borderColor": { "type": "string" },
+    "borderWidth": { "type": "number" },
+    "curveStyle": { "$ref": "#/definitions/CurveStyle" },
+    "custom": { "type": "string" },
+    "direction": { "$ref": "#/definitions/Direction" },
+    "edgeColor": { "type": "string" },
+    "edgeTextSize": { "type": "number" },
+    "edgeWidth": { "type": "number" },
+    "fontFamily": { "type": "string" },
+    "layoutName": { "$ref": "#/definitions/LayoutName" },
+    "lineHeight": { "type": "number" },
+    "nodeBackground": { "type": "string" },
+    "nodeForeground": { "type": "string" },
+    "padding": { "type": "number" },
+    "rotateEdgeLabel": { "type": "boolean" },
+    "shape": { "$ref": "#/definitions/Shape" },
+    "sourceArrowShape": { "$ref": "#/definitions/ArrowShape" },
+    "sourceDistanceFromNode": { "type": "number" },
+    "spacingFactor": { "type": "number" },
+    "targetArrowShape": { "$ref": "#/definitions/ArrowShape" },
+    "targetDistanceFromNode": { "type": "number" },
+    "textMarginY": { "type": "number" },
+    "textMaxWidth": { "type": "number" }
+  },
+  "required": [
+    "fontFamily",
+    "background",
+    "lineHeight",
+    "layoutName",
+    "direction",
+    "spacingFactor",
+    "shape",
+    "textMaxWidth",
+    "padding",
+    "curveStyle",
+    "textMarginY",
+    "borderWidth",
+    "borderColor",
+    "nodeBackground",
+    "nodeForeground",
+    "edgeTextSize",
+    "edgeWidth",
+    "sourceArrowShape",
+    "targetArrowShape",
+    "edgeColor",
+    "sourceDistanceFromNode",
+    "targetDistanceFromNode",
+    "arrowScale",
+    "rotateEdgeLabel"
+  ],
+  "type": "object"
+}

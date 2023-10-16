@@ -1,5 +1,5 @@
 import { t, Trans } from "@lingui/macro";
-import { Check, Minus } from "phosphor-react";
+import { Check } from "phosphor-react";
 import { ReactNode } from "react";
 
 import styles from "./Pricing.module.css";
@@ -61,9 +61,11 @@ const plans = () => [
     title: t`Free`,
     key: "free",
     features: [
-      t`1 Sandbox Flowchart`,
-      t`PNG & JPG Exports`,
-      t`Watermarked Images`,
+      t`1 Temporary Flowchart`,
+      t`Theme Editor`,
+      t`Export to PNG & JPG`,
+      t`Rapid Templates`,
+      t`Watermarks`,
     ],
     isPro: false,
   },
@@ -72,12 +74,14 @@ const plans = () => [
     key: "pro",
     features: [
       t`Unlimited Permanent Flowcharts`,
-      t`PNG, JPG, and SVG Exports`,
-      t`No Watermark!`,
-      t`Data Import`,
+      t`Theme Editor`,
+      t`Export to PNG, JPG, and SVG`,
+      t`Rapid Templates`,
+      t`No Watermarks!`,
+      t`Import from Visio, Lucidchart, and CSV`,
+      t`Create Flowcharts using AI`,
       t`Custom Sharing Options`,
-      t`Create Flowcharts from a Prompt with AI`,
-      t`One-on-One Support`,
+      t`One on One Support`,
       t`Office Hours`,
     ],
     isPro: true,
@@ -94,13 +98,10 @@ function Pricing() {
             data-testid={`pricing-page-title`}
           >
             <Trans>
-              Visualize Your Ideas in a Flash with{" "}
-              <span className="relative whitespace-nowrap text-blue-600">
-                Flowchart Fun Pro
-              </span>
+              Transform Your Ideas into Professional Diagrams in Seconds
             </Trans>
           </p>
-          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
+          <p className="text-base md:text-lg text-neutral-500 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
             <Trans>Create unlimited diagrams for just $3/month!</Trans>
           </p>
         </div>
@@ -115,7 +116,7 @@ function Pricing() {
           </video>
         </div>
       </div>
-      <div className="pt-12 pb-6 bg-neutral-100 dark:bg-blue-900/50">
+      <div className="pt-12 pb-6 bg-gradient-to-b from-blue-500/0 to-blue-500/10 dark:bg-blue-900/10">
         <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4 max-w-[870px] xl:max-w-[1250px] mx-auto w-full px-4">
           {features().map((props) => (
             <Feature key={props.title} {...props} />
@@ -140,15 +141,6 @@ function Pricing() {
           </span>
         </p>
       </div>
-      {/* <div className={`${styles.footer} py-20 dark:bg-blue-600/0`}>
-        <h3 className="mt-6 text-xl max-w-3xl mx-auto text-center leading-[1.5] text-wrap-balance text-blue-500">
-          <Foo />
-          <Trans>Drag-and-drop can be a drag</Trans>
-          <span className="font-bold mt-1 block">
-            Subscribe to Pro and flowchart the fun way!
-          </span>
-        </h3>
-      </div> */}
     </div>
   );
 }
@@ -164,21 +156,16 @@ export default function PricingProvider() {
 function Plan({ title, features, isPro }: ReturnType<typeof plans>[0]) {
   return (
     <div
-      className={classNames(
-        "grid gap-4 text-foreground dark:bg-transparent pl-8 py-4",
-        {
-          "lg:border-l-2 border-neutral-200 dark:border-neutral-800 md:pl-16":
-            isPro,
-          "hidden lg:block": !isPro,
-        }
-      )}
+      className={classNames("grid gap-2 dark:bg-transparent pl-8 py-4", {
+        "lg:border-l-2 border-neutral-200 dark:border-neutral-800 md:pl-16":
+          isPro,
+        "hidden lg:grid": !isPro,
+        "text-blue-600 dark:text-white": isPro,
+      })}
     >
       <h2
         className={classNames(
-          "text-lg sm:text-xl md:text-2xl md:mb-3 mt-[-3px] dark:text-neutral-50",
-          {
-            "font-bold text-blue-600": isPro,
-          }
+          "text-lg sm:text-xl md:text-2xl md:mb-3 mt-[-3px]"
         )}
       >
         {title}
@@ -186,21 +173,21 @@ function Plan({ title, features, isPro }: ReturnType<typeof plans>[0]) {
       <div className="grid gap-2">
         {features.map((feature) => (
           <div
-            className="flex items-center gap-2 opacity-80 dark:opacity-90 -ml-8"
+            className="flex items-center gap-2 opacity-80 dark:opacity-90"
             key={feature}
           >
             {isPro ? (
-              <Check
-                className="text-green-600 translate-y-[1px] w-4 h-4 flex-shrink-0 sm:w-6 sm:h-6"
-                weight="bold"
-              />
+              <div className="w-6 h-6 flex-shrink-0 bg-blue-100 rounded flex items-center justify-center dark:bg-blue-500/20">
+                <Check className="text-blue-600" weight="bold" />
+              </div>
             ) : (
-              <Minus
-                className="text-yellow-500 translate-y-[1px] w-4 h-4 flex-shrink-0 sm:w-6 sm:h-6"
-                weight="bold"
-              />
+              <Check className="text-blue-600" weight="bold" />
             )}
-            <span className="text-xs sm:text-base font-medium dark:text-neutral-50">
+            <span
+              className={classNames("text-xs sm:text-base font-medium", {
+                "text-blue-700 dark:text-white !font-bold": isPro,
+              })}
+            >
               {feature}
             </span>
           </div>
@@ -234,7 +221,7 @@ function Feature({
           className="h-[125px] w-[125px] dark:invert"
         />
       </div>
-      <h2 className="text-xl text-neutral-800 leading-[1.3] my-4 text-center dark:text-neutral-100 text-wrap-balance">
+      <h2 className="text-lg font-bold text-neutral-800 leading-[1.3] my-4 text-center dark:text-neutral-100 text-wrap-balance">
         {title}
       </h2>
       <div className="grid gap-3">

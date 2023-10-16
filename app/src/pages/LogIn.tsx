@@ -15,7 +15,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthOtpResponse } from "@supabase/supabase-js";
 import { useLocation } from "react-router-dom";
 import { useIsLoggedIn } from "../lib/hooks";
-import { AppContext } from "../components/AppContext";
+import { AppContext } from "../components/AppContextProvider";
 import GoogleSVG from "../components/GoogleSVG";
 
 type Fields = {
@@ -108,7 +108,7 @@ export default function Login() {
       <PageTitle className="text-center mb-6">{t`Sign In`}</PageTitle>
       <Button2
         leftIcon={<GoogleSVG />}
-        className="!bg-white border-solid border border-neutral-400 py-0 !gap-1 hover:!bg-neutral-100 !text-black"
+        className="!bg-white border-solid border border-neutral-400 !py-0 !gap-1 hover:!bg-neutral-100 !text-black"
         onClick={() => {
           supabase?.auth.signInWithOAuth({
             provider: "google",
@@ -124,6 +124,7 @@ export default function Login() {
       </Button2>
       <Button2
         leftIcon={<GithubLogo size={24} />}
+        color="inverted"
         onClick={() => {
           supabase?.auth.signInWithOAuth({
             provider: "github",
@@ -203,9 +204,9 @@ function checkForAuthWallWarningAndRedirect(search: string): [boolean, string] {
 
 function Or() {
   return (
-    <div className="relative my-8">
-      <hr />
-      <p className="text-center text-neutral-500 leading-normal dark:text-neutral-400 bg-background dark:bg-[#0f0f0f] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 -mt-px">
+    <div className="relative my-10">
+      <hr className="max-w-[80px] mx-auto" />
+      <p className="text-xs text-center text-neutral-400 leading-normal dark:text-neutral-400 bg-white dark:bg-[#0f0f0f] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 -mt-px">
         <Trans>or</Trans>
       </p>
     </div>

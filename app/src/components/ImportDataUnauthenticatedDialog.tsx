@@ -40,7 +40,7 @@ export function ImportDataUnauthenticatedDialog() {
             alt="Importing Data from Lucidchart, Google Sheets, and Visio"
             className="rounded-t-lg max-h-[300px] w-full object-cover object-center"
           />
-          <Dialog.Title className="text-lg font-bold inline-flex items-center text-blue-500 bg-background dark:bg-foreground rounded-lg px-4 pl-3 py-3 justify-center mx-auto -mt-6 relative">
+          <Dialog.Title className="text-lg font-bold inline-flex items-center text-blue-500 bg-background dark:bg-foreground rounded-lg px-4 pl-3 py-3 justify-center mx-auto -mt-6 relative dark:text-white">
             <Database className="mr-2 w-6 h-6" />
             <Trans>Import Data</Trans>
           </Dialog.Title>

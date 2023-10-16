@@ -68,7 +68,7 @@ export const Header = memo(function SharedHeader() {
   return (
     <>
       <NavigationMenu.Root asChild>
-        <header className="grid-flow-col justify-between items-center py-1 px-2 hidden md:grid border-b border-neutral-200 dark:border-neutral-800">
+        <header className="grid-flow-col justify-between items-center py-1 px-2 hidden md:grid border-b-2 border-neutral-200 dark:border-neutral-800">
           <NavigationMenu.List asChild>
             <nav className="flex gap-1 items-center">
               <span className="shared-header__logo mr-2">
@@ -111,17 +111,6 @@ export const Header = memo(function SharedHeader() {
           </NavigationMenu.List>
           <NavigationMenu.List asChild>
             <nav className="flex items-center gap-1">
-              {!isProUser ? (
-                <HeaderClientLink
-                  to="/pricing"
-                  label={"Flowchart Fun Pro"}
-                  icon={<RocketLaunch weight="light" height={16} width={16} />}
-                  aria-current={isSponsorPage ? "page" : undefined}
-                  onClick={() => {
-                    track("sponsor", "click");
-                  }}
-                />
-              ) : null}
               <DropdownMenu.Root modal={false}>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
@@ -191,6 +180,19 @@ export const Header = memo(function SharedHeader() {
                   aria-current={isLogInPage ? "page" : undefined}
                 />
               )}
+              {!isProUser ? (
+                <Link
+                  to="/pricing"
+                  data-testid="pro-link"
+                  aria-current={isSponsorPage ? "page" : undefined}
+                  className="font-bold text-white px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 hover:to-blue-700 lg:ml-4"
+                  onClick={() => {
+                    track("sponsor", "click");
+                  }}
+                >
+                  Try Flowchart Fun Pro
+                </Link>
+              ) : null}
             </nav>
           </NavigationMenu.List>
         </header>
@@ -239,14 +241,14 @@ HeaderButton.displayName = "HeaderButton";
 
 type HeaderClientLink = {
   label: string;
-  icon: ReactNode;
+  icon?: ReactNode;
 } & LinkProps;
 
 const HeaderClientLink = forwardRef<HTMLAnchorElement, HeaderClientLink>(
   ({ label: children, icon, className = "", ...props }, ref) => {
     return (
       <Link className={`${btnClasses} ${className}`} {...props} ref={ref}>
-        <span className="shared-header-btn__icon">{icon}</span>
+        {icon && <span className="shared-header-btn__icon">{icon}</span>}
         <span>{children}</span>
       </Link>
     );

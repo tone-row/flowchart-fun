@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  width: max-content;
+  margin-inline: auto;
+  margin-block: 1rem;
+  display: grid;
+  gap: 1rem;
+}

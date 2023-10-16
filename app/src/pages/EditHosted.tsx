@@ -12,7 +12,6 @@ import { EditorWrapper } from "../components/EditorWrapper";
 import { EditWrapper } from "../components/EditWrapper";
 import Main from "../components/Main";
 import Spinner from "../components/Spinner";
-import { EditLayoutTab } from "../components/Tabs/EditLayoutTab";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 import { OnChange } from "@monaco-editor/react";
 
@@ -25,8 +24,8 @@ import { useTrackLastChart } from "../lib/useLastChart";
 import sandboxStyles from "./Sandbox.module.css";
 import styles from "./EditHosted.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
-import EditStyleTab from "../components/Tabs/EditStyleTab";
 import { useIsProUser } from "../lib/hooks";
+import { ThemeTab } from "../components/Tabs/ThemeTab";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
@@ -99,11 +98,8 @@ export default function EditHosted() {
                 />
               </EditorOptions>
             </Tabs.Content>
-            <Tabs.Content value="Layout">
-              <EditLayoutTab />
-            </Tabs.Content>
-            <Tabs.Content value="Style">
-              <EditStyleTab />
+            <Tabs.Content value="Theme">
+              <ThemeTab />
             </Tabs.Content>
           </Tabs.Root>
         </EditorWrapper>
