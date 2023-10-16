@@ -94,7 +94,7 @@ export function PaymentStepper() {
                 data-testid="yearly-plan-button"
                 extra={
                   <span className="!text-[14px] uppercase bg-yellow-300 py-2 px-3 text-neutral-900 rounded font-bold absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[22px] transform whitespace-nowrap transition-transform group-aria-pressed:scale-[1.1] group-aria-pressed:translate-y-[18px] group-aria-pressed:rotate-[3deg]">
-                    <Trans>2 Months Free</Trans>
+                    <Trans>Save 16%</Trans>
                   </span>
                 }
               />
@@ -102,7 +102,7 @@ export function PaymentStepper() {
             <Button2
               onClick={() => setConfirmPlan(true)}
               disabled={plan === null}
-              className="mt-8"
+              className="mt-8 disabled:opacity-100 !py-4 font-bold"
               rightIcon={<ArrowRight size={16} />}
               color="blue"
             >
@@ -141,7 +141,7 @@ export function PaymentStepper() {
             </div>
             <Button2
               disabled={subscriptionDetails.isLoading}
-              className="mt-4"
+              className="mt-4 font-bold !py-4"
               rightIcon={<ArrowRight size={16} />}
               color="blue"
               isLoading={subscriptionDetails.isLoading}
@@ -184,7 +184,7 @@ function PlanButton({
   return (
     <button
       {...props}
-      className="group border w-full shadow-sm border-solid border-neutral-300 p-4 py-6 grid gap-1 rounded-xl content-start dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none hover:scale-[1.025] aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-400 aria-[current=true]:bg-blue-50 aria-[current=true]:shadow-md aria-[current=true]:shadow-blue-600/20 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 relative"
+      className="group border w-full shadow-sm border-solid border-neutral-300 p-4 py-6 grid gap-2 rounded-xl content-start dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none hover:scale-[1.025] aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-400 aria-[current=true]:bg-blue-50 aria-[current=true]:shadow-md aria-[current=true]:shadow-blue-600/20 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 relative"
     >
       <h2 className={`text-base font-bold -mt-1`}>{title}</h2>
       <span className="text-base">{price}</span>
@@ -320,7 +320,7 @@ async function getSubscriptionDetails(
 
 function Title({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-base font-bold text-neutral-600 dark:text-neutral-100 text-wrap-balance leading-tight flex items-center justify-center gap-4">
+    <h2 className="text-lg dark:text-neutral-100 text-wrap-balance leading-tight flex items-center justify-center gap-4">
       {children}
     </h2>
   );
