@@ -60,10 +60,11 @@ test("can do things when not logged in", async ({ page }) => {
   await page.click('[data-testid="close-dialog"]');
 
   // Expect sandbox window to show (about 1 minute wait time)
-  await expect(
-    page.getByRole("heading", { name: "Welcome to Your Sandbox" })
-  ).toBeVisible({ timeout: 60000 });
-  await page.getByRole("button", { name: "View Pricing" }).click();
+  await expect(page.getByTestId("sandbox-warning")).toBeVisible({
+    timeout: 60000,
+  });
+  // Click on test id sandbox-warning-learn-more
+  await page.getByTestId("sandbox-warning-learn-more").click();
   await page.waitForURL("**/pricing");
 
   // Go back

@@ -22,12 +22,8 @@ msgid "$30 per year"
 msgstr "30 $ par an"
 
 #: src/pages/Pricing.tsx:64
-msgid "1 Sandbox Flowchart"
-msgstr "1 Diagramme de sable"
-
-#: src/components/PaymentStepper.tsx:97
-msgid "2 Months Free"
-msgstr "2 Mois gratuits"
+msgid "1 Temporary Flowchart"
+msgstr "1 Organigramme temporaire"
 
 #: src/components/MigrateTempFlowchartsModal.tsx:35
 msgid "<0>Click the button below to migrate all of your temporary flowcharts into hosted ones.</0><1>Do not close this window. The page will refresh when the migration is complete.</1>"
@@ -41,7 +37,7 @@ msgstr "<0>Seul le CSS personnalisé</0> est activé. Seuls les paramètres de m
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0> est un projet open source réalisé par <1>Tone Row</1>"
 
-#: src/pages/LogIn.tsx:277
+#: src/pages/LogIn.tsx:278
 msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
 msgstr "<0>Se connecter</0> / <1>S'inscrire</1> avec email et mot de passe"
 
@@ -57,8 +53,8 @@ msgstr "Une nouvelle version de l'application est disponible. Veuillez recharger
 msgid "About"
 msgstr "À propos"
 
-#: src/components/Header.tsx:181
-#: src/components/Header.tsx:405
+#: src/components/Header.tsx:170
+#: src/components/Header.tsx:407
 #: src/pages/Account.tsx:116
 msgid "Account"
 msgstr "Compte"
@@ -131,8 +127,8 @@ msgstr "Commencez à taper"
 msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
 msgstr "Commencez par une invite comme le diagramme de flux de support client et Flowchart Fun créera un diagramme de flux pour vous !"
 
-#: src/components/Header.tsx:139
-#: src/components/Header.tsx:364
+#: src/components/Header.tsx:128
+#: src/components/Header.tsx:366
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "Blog"
@@ -161,7 +157,7 @@ msgid "Breadthfirst"
 msgstr "Parcours en largeur"
 
 #: src/components/ClearTextButton.tsx:26
-#: src/components/ImportDataDialog.tsx:720
+#: src/components/ImportDataDialog.tsx:702
 #: src/components/RenameButton.tsx:156
 #: src/pages/Account.tsx:297
 #: src/pages/Account.tsx:310
@@ -182,14 +178,14 @@ msgstr "Certains attributs peuvent être utilisés pour personnaliser l'apparenc
 msgid "Change Email Address"
 msgstr "Changer l'adresse email"
 
-#: src/components/Header.tsx:150
-#: src/components/Header.tsx:370
+#: src/components/Header.tsx:139
+#: src/components/Header.tsx:372
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "Journal des modifications"
 
 #: src/components/Header.tsx:96
-#: src/components/Header.tsx:342
+#: src/components/Header.tsx:344
 msgid "Charts"
 msgstr "Graphiques"
 
@@ -197,7 +193,7 @@ msgstr "Graphiques"
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "Vérifiez votre e-mail pour un lien de connexion. Vous pouvez fermer cette fenêtre."
 
-#: src/pages/LogIn.tsx:275
+#: src/pages/LogIn.tsx:276
 msgid "Choose"
 msgstr "Choisir"
 
@@ -246,7 +242,7 @@ msgstr "Couleur"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "Les couleurs incluent le rouge, l'orange, le jaune, le bleu, le pourpre, le noir, le blanc et le gris."
 
-#: src/components/ImportDataDialog.tsx:539
+#: src/components/ImportDataDialog.tsx:538
 msgid "Column"
 msgstr "Colonne"
 
@@ -262,14 +258,10 @@ msgstr "Concentrique"
 msgid "Confirm New Email"
 msgstr "Confirmer le nouveau Email"
 
-#: src/pages/LogIn.tsx:236
-#: src/pages/LogIn.tsx:236
+#: src/pages/LogIn.tsx:237
+#: src/pages/LogIn.tsx:237
 msgid "Confirm your email address to sign in."
 msgstr "Confirmez votre adresse e-mail pour vous connecter."
-
-#: src/components/SandboxWarning.tsx:61
-msgid "Consider upgrading today and unlock the full potential of our app!"
-msgstr "Pensez à mettre à niveau aujourd'hui et débloquez le plein potentiel de notre application !"
 
 #: src/lib/getDefaultText.ts:5
 msgid "Consider: Adding a Label"
@@ -283,7 +275,7 @@ msgstr "Conteneurs"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "Les conteneurs sont des nœuds qui contiennent d'autres nœuds. Ils sont déclarés à l'aide de accolades."
 
-#: src/components/ImportDataDialog.tsx:733
+#: src/components/ImportDataDialog.tsx:715
 #: src/components/PaymentStepper.tsx:109
 #: src/components/PaymentStepper.tsx:149
 msgid "Continue"
@@ -319,9 +311,9 @@ msgstr "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en
 msgid "Create"
 msgstr "Créer"
 
-#: src/pages/Pricing.tsx:79
-msgid "Create Flowcharts from a Prompt with AI"
-msgstr "Créer des diagrammes à partir d'une invite avec l'IA"
+#: src/pages/Pricing.tsx:82
+msgid "Create Flowcharts using AI"
+msgstr "Créer des organigrammes à l'aide de l'IA"
 
 #: src/lib/paywallCopy.ts:3
 msgid "Create Unlimited Flowcharts"
@@ -331,7 +323,7 @@ msgstr "Créer des diagrammes illimités"
 msgid "Create a New Chart"
 msgstr "Créer un nouveau graphique"
 
-#: src/pages/Pricing.tsx:104
+#: src/pages/Pricing.tsx:105
 msgid "Create unlimited diagrams for just $3/month!"
 msgstr "Créez des diagrammes illimités pour seulement 3 $ par mois !"
 
@@ -352,7 +344,7 @@ msgstr "Style de courbe"
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
 
-#: src/pages/Pricing.tsx:78
+#: src/pages/Pricing.tsx:83
 msgid "Custom Sharing Options"
 msgstr "Options de partage personnalisées"
 
@@ -368,10 +360,6 @@ msgstr "Sombre"
 #: src/components/Settings.tsx:99
 msgid "Dark Mode"
 msgstr "Mode sombre"
-
-#: src/pages/Pricing.tsx:77
-msgid "Data Import"
-msgstr "Importation de données"
 
 #: src/pages/Account.tsx:271
 msgid "Date"
@@ -395,6 +383,10 @@ msgstr "Souhaitez-vous supprimer ceci ?"
 msgid "Document"
 msgstr "Document"
 
+#: src/components/SandboxWarning.tsx:45
+msgid "Don't lose your work!"
+msgstr "Ne perdez pas votre travail !"
+
 #: src/components/ShareDialog.tsx:61
 #: src/components/ShareDialog.tsx:518
 msgid "Download"
@@ -412,7 +404,7 @@ msgstr "Télécharger PNG"
 msgid "Download SVG"
 msgstr "Télécharger SVG"
 
-#: src/components/ImportDataDialog.tsx:249
+#: src/components/ImportDataDialog.tsx:248
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "Glissez-déposez un fichier CSV ici, ou cliquez pour sélectionner un fichier"
 
@@ -420,7 +412,7 @@ msgstr "Glissez-déposez un fichier CSV ici, ou cliquez pour sélectionner un fi
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "Dessinez une arête à partir de plusieurs nœuds en commençant la ligne par une référence"
 
-#: src/components/ImportDataDialog.tsx:247
+#: src/components/ImportDataDialog.tsx:246
 msgid "Drop the file here ..."
 msgstr "Déposez le fichier ici ..."
 
@@ -432,8 +424,8 @@ msgstr "ID Edge, Classes, Attributs"
 msgid "Edge Label"
 msgstr "Étiquette Edge"
 
-#: src/components/ImportDataDialog.tsx:469
-#: src/components/ImportDataDialog.tsx:509
+#: src/components/ImportDataDialog.tsx:468
+#: src/components/ImportDataDialog.tsx:508
 msgid "Edge Label Column"
 msgstr "Colonne d'étiquette Edge"
 
@@ -450,21 +442,21 @@ msgstr "Taille du texte de bord"
 msgid "Edge missing indentation"
 msgstr "Indentation manquante du bord"
 
-#: src/components/ImportDataDialog.tsx:407
+#: src/components/ImportDataDialog.tsx:406
 #: src/components/LearnSyntaxDialog.tsx:155
 #: src/components/Tabs/ThemeTab.tsx:358
 msgid "Edges"
 msgstr "Bords"
 
-#: src/components/ImportDataDialog.tsx:425
+#: src/components/ImportDataDialog.tsx:424
 msgid "Edges are declared in the same row as their source node"
 msgstr "Les bords sont déclarés dans la même ligne que leur nœud source"
 
-#: src/components/ImportDataDialog.tsx:431
+#: src/components/ImportDataDialog.tsx:430
 msgid "Edges are declared in the same row as their target node"
 msgstr "Les bords sont déclarés dans la même ligne que leur nœud cible"
 
-#: src/components/ImportDataDialog.tsx:436
+#: src/components/ImportDataDialog.tsx:435
 msgid "Edges are declared in their own row"
 msgstr "Les bords sont déclarés dans leur propre ligne"
 
@@ -476,15 +468,15 @@ msgstr "Les bords peuvent également avoir des ID, des classes et des attributs 
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "Les bords peuvent être stylisés avec des lignes en pointillés, en pointillés ou en lignes continues"
 
-#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:434
 msgid "Edges in Separate Rows"
 msgstr "Bordures en Rangs Séparés"
 
-#: src/components/ImportDataDialog.tsx:424
+#: src/components/ImportDataDialog.tsx:423
 msgid "Edges in Source Node Row"
 msgstr "Bordures dans la Ligne du Nœud Source"
 
-#: src/components/ImportDataDialog.tsx:430
+#: src/components/ImportDataDialog.tsx:429
 msgid "Edges in Target Node Row"
 msgstr "Bordures dans la Ligne du Nœud Cible"
 
@@ -493,7 +485,7 @@ msgid "Editable"
 msgstr "Modifiable"
 
 #: src/components/Header.tsx:79
-#: src/components/Header.tsx:330
+#: src/components/Header.tsx:332
 #: src/components/MobileTabToggle.tsx:20
 msgid "Editor"
 msgstr "Éditeur"
@@ -501,12 +493,12 @@ msgstr "Éditeur"
 #: src/components/Feedback.tsx:62
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
-#: src/pages/LogIn.tsx:149
-#: src/pages/LogIn.tsx:298
+#: src/pages/LogIn.tsx:150
+#: src/pages/LogIn.tsx:299
 msgid "Email"
 msgstr "E-mail"
 
-#: src/components/ImportDataDialog.tsx:555
+#: src/components/ImportDataDialog.tsx:554
 msgid "Empty"
 msgstr "Vide"
 
@@ -518,7 +510,7 @@ msgstr "Entrez une invite ou des informations que vous souhaitez utiliser pour c
 msgid "Enter your email"
 msgstr "Entrez votre adresse e-mail "
 
-#: src/pages/LogIn.tsx:142
+#: src/pages/LogIn.tsx:143
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "Entrez votre adresse e-mail et nous vous enverrons un lien magique pour vous connecter."
 
@@ -526,7 +518,7 @@ msgstr "Entrez votre adresse e-mail et nous vous enverrons un lien magique pour 
 msgid "Enter your email address below and we'll send you a link to reset your password."
 msgstr "Entrez votre adresse e-mail ci-dessous et nous vous enverrons un lien pour réinitialiser votre mot de passe."
 
-#: src/components/ImportDataDialog.tsx:557
+#: src/components/ImportDataDialog.tsx:556
 msgid "Equal To"
 msgstr "Égal à"
 
@@ -543,9 +535,17 @@ msgstr "Exporter"
 msgid "Export professional-quality flowcharts without watermarks to use in your presentations and documents"
 msgstr "Exportez des diagrammes de flux de qualité professionnelle sans filigrane à utiliser dans vos présentations et documents"
 
+#: src/pages/Pricing.tsx:66
+msgid "Export to PNG & JPG"
+msgstr "Exporter en PNG et JPG"
+
+#: src/pages/Pricing.tsx:78
+msgid "Export to PNG, JPG, and SVG"
+msgstr "Exporter en PNG, JPG et SVG"
+
 #: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:104
-#: src/components/Header.tsx:356
+#: src/components/Header.tsx:358
 msgid "Feedback"
 msgstr "Commentaire"
 
@@ -569,7 +569,7 @@ msgstr "Suivez-nous sur Twitter"
 msgid "Font Family"
 msgstr "Famille de polices"
 
-#: src/pages/LogIn.tsx:338
+#: src/pages/LogIn.tsx:339
 msgid "Forgot your password?"
 msgstr "Mot de passe oublié ?"
 
@@ -617,7 +617,7 @@ msgstr "Historique"
 msgid "Home"
 msgstr "Accueil"
 
-#: src/components/ImportDataDialog.tsx:408
+#: src/components/ImportDataDialog.tsx:407
 msgid "How are edges declared in this data?"
 msgstr "Comment les bords sont-ils déclarés dans ces données?"
 
@@ -641,20 +641,24 @@ msgstr "Si vous souhaitez créer un bord, faites une indentation de cette ligne.
 msgid "Images"
 msgstr "Images"
 
-#: src/components/ImportDataDialog.tsx:87
-#: src/components/ImportDataDialog.tsx:100
+#: src/components/ImportDataDialog.tsx:86
+#: src/components/ImportDataDialog.tsx:99
 #: src/components/ImportDataUnauthenticatedDialog.tsx:28
 #: src/components/ImportDataUnauthenticatedDialog.tsx:45
 msgid "Import Data"
 msgstr "Importer des données"
 
-#: src/components/ImportDataDialog.tsx:105
+#: src/components/ImportDataDialog.tsx:104
 msgid "Import data from a CSV file."
 msgstr "Importer des données à partir d'un fichier CSV."
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:50
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "Importer des données à partir de n'importe quel fichier CSV et les mapper à un nouveau diagramme. C'est une excellente façon d'importer des données à partir d'autres sources telles que Lucidchart, Google Sheets et Visio."
+
+#: src/pages/Pricing.tsx:81
+msgid "Import from Visio, Lucidchart, and CSV"
+msgstr "Importer à partir de Visio, Lucidchart et CSV"
 
 #: src/components/ShareDialog.tsx:435
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
@@ -668,11 +672,11 @@ msgstr "L'importation de données est une fonctionnalité professionnelle. Vous 
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la coloration Visio, ajoutez un attribut <1>roleType</1> égal à l'un des éléments suivants:"
 
-#: src/components/Header.tsx:128
+#: src/components/Header.tsx:117
 msgid "Info"
 msgstr "Info"
 
-#: src/components/ImportDataDialog.tsx:548
+#: src/components/ImportDataDialog.tsx:547
 msgid "Is"
 msgstr "Est"
 
@@ -751,8 +755,8 @@ msgstr "Charger la mise en page et les styles"
 msgid "Lock Zoom to Graph"
 msgstr "Verrouiller le Zoom sur le Graphique"
 
-#: src/components/Header.tsx:189
-#: src/components/Header.tsx:413
+#: src/components/Header.tsx:178
+#: src/components/Header.tsx:415
 msgid "Log In"
 msgstr "Connexion"
 
@@ -784,7 +788,7 @@ msgstr "Assurez-vous d'utiliser le même e-mail que vous utiliserez pour vous co
 msgid "Manage Billing"
 msgstr "Gérer la facturation"
 
-#: src/components/ImportDataDialog.tsx:385
+#: src/components/ImportDataDialog.tsx:384
 msgid "Map Data"
 msgstr "Cartographier les données"
 
@@ -806,7 +810,7 @@ msgid "Name Chart"
 msgstr "Nommer le graphique"
 
 #: src/components/Header.tsx:87
-#: src/components/Header.tsx:336
+#: src/components/Header.tsx:338
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "Nouveau"
@@ -820,17 +824,17 @@ msgstr "Nouveau courriel"
 msgid "Next charge"
 msgstr "Prochain paiement"
 
-#: src/components/ImportDataDialog.tsx:419
+#: src/components/ImportDataDialog.tsx:418
 msgid "No Edges"
 msgstr "Pas de bords"
-
-#: src/pages/Pricing.tsx:76
-msgid "No Watermark!"
-msgstr "Pas de filigrane !"
 
 #: src/pages/Pricing.tsx:51
 msgid "No Watermarks"
 msgstr "Pas de filigranes"
+
+#: src/pages/Pricing.tsx:80
+msgid "No Watermarks!"
+msgstr "Pas de filigranes !"
 
 #: src/lib/getDefaultText.ts:8
 msgid "No: Option B"
@@ -844,7 +848,7 @@ msgstr "Style de bordure de nœud"
 msgid "Node Colors"
 msgstr "Couleurs de nœud"
 
-#: src/components/ImportDataDialog.tsx:390
+#: src/components/ImportDataDialog.tsx:389
 msgid "Node ID"
 msgstr "Identifiant de nœud"
 
@@ -852,7 +856,7 @@ msgstr "Identifiant de nœud"
 msgid "Node ID, Classes, Attributes"
 msgstr "Identifiant de nœud, classes, attributs"
 
-#: src/components/ImportDataDialog.tsx:398
+#: src/components/ImportDataDialog.tsx:397
 #: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "Étiquette de nœud"
@@ -877,7 +881,7 @@ msgstr "Nœuds"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "Les nœuds peuvent être stylisés avec des traits, des points ou des doubles. Les bordures peuvent également être supprimées avec border_none."
 
-#: src/components/ImportDataDialog.tsx:556
+#: src/components/ImportDataDialog.tsx:555
 msgid "Not Empty"
 msgstr "Pas vide"
 
@@ -885,7 +889,7 @@ msgstr "Pas vide"
 msgid "Now erase the text and try it yourself!"
 msgstr "Maintenant, effacez le texte et essayez par vous-même !"
 
-#: src/pages/Pricing.tsx:81
+#: src/pages/Pricing.tsx:85
 msgid "Office Hours"
 msgstr "Heures de travail"
 
@@ -893,8 +897,11 @@ msgstr "Heures de travail"
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr " temps en temps, le lien magique finira par atterrir dans votre dossier de pourriel. Si vous ne le voyez pas après quelques minutes, vérifiez-y ou demandez un nouveau lien."
 
+#: src/pages/Pricing.tsx:84
+msgid "One on One Support"
+msgstr "Un à un support"
+
 #: src/pages/Account.tsx:130
-#: src/pages/Pricing.tsx:80
 msgid "One-on-One Support"
 msgstr "Assistance individuelle"
 
@@ -911,14 +918,6 @@ msgstr "Ou, vous pouvez <0>créer une nouvelle souscription</0>."
 msgid "Organization Chart"
 msgstr "Organigramme"
 
-#: src/pages/Pricing.tsx:65
-msgid "PNG & JPG Exports"
-msgstr "Exports PNG et JPG"
-
-#: src/pages/Pricing.tsx:75
-msgid "PNG, JPG, and SVG Exports"
-msgstr "Exports PNG, JPG et SVG"
-
 #: src/components/Tabs/ThemeTab.tsx:238
 msgid "Padding"
 msgstr "Rembourrage"
@@ -927,7 +926,7 @@ msgstr "Rembourrage"
 msgid "Page not found"
 msgstr "Page non trouvée"
 
-#: src/pages/LogIn.tsx:310
+#: src/pages/LogIn.tsx:311
 msgid "Password"
 msgstr "Mot de passe "
 
@@ -947,8 +946,8 @@ msgstr "Livre-jeu"
 msgid "Pointer and container on same line"
 msgstr "Pointeur et conteneur sur la même ligne"
 
-#: src/components/Header.tsx:166
-#: src/components/Header.tsx:419
+#: src/components/Header.tsx:155
+#: src/components/Header.tsx:421
 #: src/components/Settings.tsx:138
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
@@ -957,7 +956,7 @@ msgstr "Politique de confidentialité"
 msgid "Process Diagram"
 msgstr "Diagramme de processus"
 
-#: src/components/ImportDataDialog.tsx:270
+#: src/components/ImportDataDialog.tsx:269
 msgid "Processing Data"
 msgstr "Traitement des données"
 
@@ -977,6 +976,11 @@ msgstr "Public"
 #: src/lib/graphOptions.ts:20
 msgid "Random"
 msgstr "Aléatoire"
+
+#: src/pages/Pricing.tsx:67
+#: src/pages/Pricing.tsx:79
+msgid "Rapid Templates"
+msgstr "Modèles rapides"
 
 #: src/components/EditorWrapper.tsx:56
 #: src/components/ShareDialog.tsx:143
@@ -1029,7 +1033,7 @@ msgstr "Recharger pour mettre à jour"
 msgid "Rename"
 msgstr "Renommer"
 
-#: src/pages/LogIn.tsx:168
+#: src/pages/LogIn.tsx:169
 msgid "Request Magic Link"
 msgstr "Demandez un lien magique"
 
@@ -1062,8 +1066,8 @@ msgstr "Retour"
 msgid "Right to Left"
 msgstr "De droite à gauche"
 
-#: src/components/Header.tsx:158
-#: src/components/Header.tsx:376
+#: src/components/Header.tsx:147
+#: src/components/Header.tsx:378
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "Roadmap"
@@ -1078,6 +1082,10 @@ msgstr "Faire pivoter l'étiquette"
 msgid "Save"
 msgstr "Sauver"
 
+#: src/components/PaymentStepper.tsx:97
+msgid "Save 16%"
+msgstr "Économisez 16%"
+
 #: src/pages/New.tsx:205
 msgid "Set Content"
 msgstr "Définir le contenu"
@@ -1086,8 +1094,8 @@ msgstr "Définir le contenu"
 msgid "Set Fixed Node Height"
 msgstr "Définir une hauteur de nœud fixe"
 
-#: src/components/Header.tsx:174
-#: src/components/Header.tsx:381
+#: src/components/Header.tsx:163
+#: src/components/Header.tsx:383
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "Paramètres"
@@ -1097,7 +1105,7 @@ msgid "Share"
 msgstr "Partager"
 
 #: src/pages/LogIn.tsx:108
-#: src/pages/LogIn.tsx:329
+#: src/pages/LogIn.tsx:330
 msgid "Sign In"
 msgstr "Se connecter "
 
@@ -1105,7 +1113,7 @@ msgstr "Se connecter "
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: src/pages/LogIn.tsx:136
+#: src/pages/LogIn.tsx:137
 msgid "Sign in with <0>GitHub</0>"
 msgstr "Se connecter avec <0>GitHub</0>"
 
@@ -1122,12 +1130,12 @@ msgstr "Désolé ! Cette page n'est disponible qu'en anglais."
 msgid "Source Arrow Shape"
 msgstr "Forme de la flèche source"
 
-#: src/components/ImportDataDialog.tsx:486
-#: src/components/ImportDataDialog.tsx:522
+#: src/components/ImportDataDialog.tsx:485
+#: src/components/ImportDataDialog.tsx:521
 msgid "Source Column"
 msgstr "Colonne source"
 
-#: src/components/ImportDataDialog.tsx:496
+#: src/components/ImportDataDialog.tsx:495
 msgid "Source Delimiter"
 msgstr "Délimiteur source"
 
@@ -1156,7 +1164,7 @@ msgstr "Début"
 msgid "Start Migration"
 msgstr "Démarrer la migration"
 
-#: src/components/ImportDataDialog.tsx:282
+#: src/components/ImportDataDialog.tsx:281
 msgid "Start Over"
 msgstr "Recommencer"
 
@@ -1173,7 +1181,7 @@ msgid "Style Classes"
 msgstr "Classes de style"
 
 #: src/components/Feedback.tsx:81
-#: src/components/ImportDataDialog.tsx:582
+#: src/components/ImportDataDialog.tsx:581
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -1190,12 +1198,12 @@ msgstr "L'abonnement prendra fin"
 msgid "Target Arrow Shape"
 msgstr "Forme de la flèche cible"
 
-#: src/components/ImportDataDialog.tsx:443
-#: src/components/ImportDataDialog.tsx:529
+#: src/components/ImportDataDialog.tsx:442
+#: src/components/ImportDataDialog.tsx:528
 msgid "Target Column"
 msgstr "Colonne cible"
 
-#: src/components/ImportDataDialog.tsx:454
+#: src/components/ImportDataDialog.tsx:453
 msgid "Target Delimiter"
 msgstr "Délimiteur cible"
 
@@ -1248,23 +1256,23 @@ msgstr "Merci pour votre commentaire !"
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "La meilleure façon de changer les styles est de cliquer avec le bouton droit sur un nœud ou une arête et de sélectionner le style souhaité."
 
-#: src/components/ImportDataDialog.tsx:470
+#: src/components/ImportDataDialog.tsx:469
 msgid "The column that contains the edge label(s)"
 msgstr "La colonne qui contient les étiquettes de bord"
 
-#: src/components/ImportDataDialog.tsx:487
+#: src/components/ImportDataDialog.tsx:486
 msgid "The column that contains the source node ID(s)"
 msgstr "La colonne qui contient les ID de nœud source"
 
-#: src/components/ImportDataDialog.tsx:444
+#: src/components/ImportDataDialog.tsx:443
 msgid "The column that contains the target node ID(s)"
 msgstr "La colonne qui contient les ID de nœud cible"
 
-#: src/components/ImportDataDialog.tsx:497
+#: src/components/ImportDataDialog.tsx:496
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "Le délimiteur utilisé pour séparer plusieurs nœuds source"
 
-#: src/components/ImportDataDialog.tsx:455
+#: src/components/ImportDataDialog.tsx:454
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "Le délimiteur utilisé pour séparer plusieurs nœuds cibles"
 
@@ -1277,7 +1285,12 @@ msgstr "Les formes possibles sont :"
 msgid "Theme"
 msgstr "Thème"
 
-#: src/components/ImportDataDialog.tsx:420
+#: src/pages/Pricing.tsx:65
+#: src/pages/Pricing.tsx:77
+msgid "Theme Editor"
+msgstr "Éditeur de thème"
+
+#: src/components/ImportDataDialog.tsx:419
 msgid "There are no edges in this data"
 msgstr "Il n'y a pas d'arêtes dans ces données"
 
@@ -1325,7 +1338,7 @@ msgstr "Pour corriger ceci, déplacez le pointeur vers la ligne suivante"
 msgid "To fix this start the container <0/> on a different line"
 msgstr "Pour corriger cela, commencez le conteneur <0/> sur une ligne différente."
 
-#: src/pages/LogIn.tsx:185
+#: src/pages/LogIn.tsx:186
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "Pour en savoir plus sur la raison pour laquelle nous vous demandons de vous connecter, veuillez lire <0>ce message de blog</0>."
 
@@ -1333,6 +1346,10 @@ msgstr "Pour en savoir plus sur la raison pour laquelle nous vous demandons de v
 #: src/lib/graphOptions.ts:38
 msgid "Top to Bottom"
 msgstr "De haut en bas"
+
+#: src/pages/Pricing.tsx:100
+msgid "Transform Your Ideas into Professional Diagrams in Seconds"
+msgstr "Transformez vos idées en diagrammes professionnels en quelques secondes"
 
 #: src/components/App.tsx:71
 msgid "Try again"
@@ -1362,7 +1379,7 @@ msgstr "Erreur d'analyse inconnue"
 msgid "Unlimited Flowcharts"
 msgstr "Diagrammes illimités"
 
-#: src/pages/Pricing.tsx:74
+#: src/pages/Pricing.tsx:76
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Flux de diagrammes permanents illimités"
 
@@ -1374,11 +1391,11 @@ msgstr "Impayé"
 msgid "Update Email"
 msgstr "Mettre à jour l'e-mail"
 
-#: src/components/Header.tsx:389
+#: src/components/Header.tsx:391
 msgid "Upgrade to Pro"
 msgstr "Mettez à niveau vers Pro"
 
-#: src/components/ImportDataDialog.tsx:209
+#: src/components/ImportDataDialog.tsx:208
 msgid "Upload your File"
 msgstr "Téléchargez votre fichier"
 
@@ -1439,17 +1456,13 @@ msgstr "Utilisateur"
 msgid "View on Github"
 msgstr "Voir sur Github"
 
-#: src/pages/Pricing.tsx:96
-msgid "Visualize Your Ideas in a Flash with <0>Flowchart Fun Pro</0>"
-msgstr "Visualisez vos idées en un éclair avec <0>Flowchart Fun Pro</0>"
-
 #: src/components/SandboxWarning.tsx:54
-msgid "Want to keep your flowcharts? Upgrade to our Pro account. With Pro, you can save unlimited flowcharts and never lose your creativity."
-msgstr "Voulez-vous conserver vos diagrammes? Passez à notre compte Pro. Avec Pro, vous pouvez enregistrer des diagrammes illimités et ne jamais perdre votre créativité."
+msgid "Want to keep your flowcharts? Upgrade to our Pro account for only $3/month. With Pro, you can save unlimited flowcharts and never lose your creativity."
+msgstr "Voulez-vous conserver vos diagrammes ? Mettez à niveau votre compte Pro pour seulement 3 $ par mois. Avec Pro, vous pouvez enregistrer des diagrammes illimités et ne jamais perdre votre créativité."
 
-#: src/pages/Pricing.tsx:66
-msgid "Watermarked Images"
-msgstr "Images filigranées"
+#: src/pages/Pricing.tsx:68
+msgid "Watermarks"
+msgstr "Filigranes"
 
 #: src/pages/Account.tsx:383
 msgid "We're sorry to hear that you're considering canceling your subscription. Please let us know why you're canceling so we can improve our service. Thank you!"
@@ -1458,10 +1471,6 @@ msgstr "Nous sommes désolés d'apprendre que vous envisagez d'annuler votre abo
 #: src/components/WelcomeMessage.tsx:24
 msgid "Welcome to Flowchart Fun Pro!"
 msgstr "Bienvenue à Flowchart Fun Pro !"
-
-#: src/components/SandboxWarning.tsx:44
-msgid "Welcome to Your Sandbox"
-msgstr "Bienvenue dans votre bac à sable"
 
 #: src/pages/Charts.tsx:297
 msgid "What's this?"
@@ -1476,7 +1485,7 @@ msgstr "Largeur"
 msgid "Width and Height"
 msgstr "Largeur et hauteur"
 
-#: src/components/ImportDataDialog.tsx:717
+#: src/components/ImportDataDialog.tsx:699
 msgid "Would you like to continue?"
 msgstr "Voulez-vous continuer ?"
 
@@ -1488,7 +1497,7 @@ msgstr "Annuellement"
 msgid "Yes: Option A"
 msgstr "Oui : Option A"
 
-#: src/components/ImportDataDialog.tsx:715
+#: src/components/ImportDataDialog.tsx:697
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Vous êtes sur le point d'ajouter {numNodes} nœuds et {numEdges} arêtes à votre graphe."
 
@@ -1496,13 +1505,13 @@ msgstr "Vous êtes sur le point d'ajouter {numNodes} nœuds et {numEdges} arête
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "Vous pouvez créer des diagrammes de flux illimités et permanents avec <0>Flowchart Fun Pro</0>."
 
-#: src/pages/LogIn.tsx:182
+#: src/pages/LogIn.tsx:183
 msgid "You need to log in to access this page."
 msgstr "Vous devez vous connecter pour accéder à cette page."
 
-#: src/components/SandboxWarning.tsx:47
-msgid "You're currently creating in your Sandbox, a space for free experimentation. Remember, it resets daily, so your current work won't be saved tomorrow."
-msgstr "Vous créez actuellement dans votre bac à sable, un espace pour les expérimentations libres. N'oubliez pas, il se réinitialise chaque jour, donc votre travail actuel ne sera pas sauvegardé demain."
+#: src/components/SandboxWarning.tsx:48
+msgid "You're currently working in your sandbox. Remember, it resets daily, so your current work won't be saved tomorrow."
+msgstr "Vous travaillez actuellement dans votre bac à sable. Rappelez-vous, il se réinitialise chaque jour, donc votre travail actuel ne sera pas sauvegardé demain."
 
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
@@ -1530,6 +1539,6 @@ msgstr "Zoomer"
 msgid "Zoom Out"
 msgstr "Zoomer vers l'extérieur"
 
-#: src/pages/LogIn.tsx:209
+#: src/pages/LogIn.tsx:210
 msgid "or"
 msgstr "ou"

@@ -39,6 +39,7 @@ export function SandboxWarning() {
         <Content
           className="grid gap-5 p-5 md:p-8"
           maxWidthClass="max-w-lg w-[calc(100%-3rem)]"
+          data-testid="sandbox-warning"
         >
           <h2 className="font-bold text-xl leading-normal text-center">
             👋 <Trans>Don't lose your work!</Trans>
@@ -60,6 +61,7 @@ export function SandboxWarning() {
             color="blue"
             size="sm"
             className="mt-3"
+            data-testid="sandbox-warning-learn-more"
             onClick={() => {
               useSandboxWarning.setState({ isOpen: false });
             }}

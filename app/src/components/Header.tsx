@@ -1,6 +1,6 @@
 import "./Header.css";
 
-import { Trans, t } from "@lingui/macro";
+import { t } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
@@ -190,9 +190,7 @@ export const Header = memo(function SharedHeader() {
                     track("sponsor", "click");
                   }}
                 >
-                  <Trans>
-                    Try <span>Flowchart Fun Pro</span>
-                  </Trans>
+                  Try Flowchart Fun Pro
                 </Link>
               ) : null}
             </nav>
