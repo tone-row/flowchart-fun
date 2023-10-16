@@ -2,3 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 
 pnpm lint-staged && pnpm -F app check
+
+# Unstage vercel.json
+git reset HEAD vercel.json

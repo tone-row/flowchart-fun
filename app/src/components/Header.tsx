@@ -115,6 +115,7 @@ export const Header = memo(function SharedHeader() {
                 <HeaderClientLink
                   to="/pricing"
                   label={"Flowchart Fun Pro"}
+                  data-testid="pro-link"
                   icon={<RocketLaunch weight="light" height={16} width={16} />}
                   aria-current={isSponsorPage ? "page" : undefined}
                   onClick={() => {
