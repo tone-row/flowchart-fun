@@ -56,12 +56,7 @@ export const useDoc = create(
 
 export function docToString(doc: Doc) {
   const { text, meta } = doc;
-  return [
-    text,
-    newDelimiters,
-    JSON.stringify(meta, null, 2),
-    newDelimiters,
-  ].join("\n");
+  return [text, newDelimiters, JSON.stringify(meta), newDelimiters].join("\n");
 }
 
 type ParseErrorStore = {

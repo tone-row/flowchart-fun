@@ -66,10 +66,13 @@ export function LoadFromHashDialog() {
                       2
                     )}\n=====`;
                     localStorage.setItem(SANDBOX_STORAGE_KEY, final);
-                    prepareChart(final, {
-                      id: "",
-                      title: "",
-                      isHosted: false,
+                    prepareChart({
+                      doc: final,
+                      details: {
+                        id: "",
+                        title: "",
+                        isHosted: false,
+                      },
                     });
                   } catch (error) {
                     console.error(error);

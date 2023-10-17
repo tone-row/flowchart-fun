@@ -232,3 +232,13 @@ main .monaco-editor {
 .theme-tab::-webkit-resizer {
   /* 7 */
 }
+
+.import-file-textarea::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  @apply bg-gradient-to-b from-transparent to-white;
+}

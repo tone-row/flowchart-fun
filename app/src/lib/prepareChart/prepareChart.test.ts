@@ -10,7 +10,9 @@ import { prepareChart } from "./prepareChart";
 describe("prepareChart", () => {
   test("migrate from yaml headers", async () => {
     const example = getFixture("example1");
-    expect(await prepareChart(example, initialDoc.details)).toEqual({
+    expect(
+      await prepareChart({ doc: example, details: initialDoc.details })
+    ).toEqual({
       text: `This app works by typing
   Indenting creates a link to the current line
   any text: before a colon creates a label
@@ -38,7 +40,10 @@ Have fun! 🎉
 
   test("migrate from hidden options - ¼▓╬", async () => {
     expect(
-      await prepareChart(getFixture("example2"), initialDoc.details)
+      await prepareChart({
+        doc: getFixture("example2"),
+        details: initialDoc.details,
+      })
     ).toEqual({
       text: `long label text
   (c)
@@ -61,7 +66,10 @@ longer label text
 
   test("migrate from nothing", async () => {
     expect(
-      await prepareChart(getFixture("example3"), initialDoc.details)
+      await prepareChart({
+        doc: getFixture("example3"),
+        details: initialDoc.details,
+      })
     ).toEqual({
       text: `i am but a simple file\n`,
       meta: {
@@ -74,7 +82,9 @@ longer label text
 
   test("migrate old file with both", async () => {
     const example = getFixture("example4");
-    expect(await prepareChart(example, initialDoc.details)).toEqual({
+    expect(
+      await prepareChart({ doc: example, details: initialDoc.details })
+    ).toEqual({
       text: `이 앱은 타이핑으로 작동합니다
   들여쓰기는 현재 줄에 대한 링크를 생성합니다
   콜론 앞의 모든 텍스트는: 레이블을 생성합니다
@@ -110,7 +120,10 @@ longer label text
 
   test("can migrate new file", async () => {
     expect(
-      await prepareChart(getFixture("example5"), initialDoc.details)
+      await prepareChart({
+        doc: getFixture("example5"),
+        details: initialDoc.details,
+      })
     ).toEqual({
       text: `hello\n  to: the world\n`,
       meta: {
@@ -124,7 +137,10 @@ longer label text
 
   test("can merge a mix of old and new", async () => {
     expect(
-      await prepareChart(getFixture("example6"), initialDoc.details)
+      await prepareChart({
+        doc: getFixture("example6"),
+        details: initialDoc.details,
+      })
     ).toEqual({
       meta: {
         style: [
@@ -162,7 +178,10 @@ longer label text
 
   test("trims whitespace and adds one newline to text", async () => {
     expect(
-      await prepareChart(getFixture("example7"), initialDoc.details)
+      await prepareChart({
+        doc: getFixture("example7"),
+        details: initialDoc.details,
+      })
     ).toEqual({
       text: `hello\n  to the: world\n`,
       meta: {
@@ -176,8 +195,11 @@ longer label text
 
   test("deletes parser", async () => {
     expect(
-      await prepareChart(getFixture("example8"), {
-        ...initialDoc.details,
+      await prepareChart({
+        doc: getFixture("example8"),
+        details: {
+          ...initialDoc.details,
+        },
       })
     ).toEqual({
       details: {
@@ -194,10 +216,10 @@ longer label text
   });
 
   test("if 'theme' key, leave in place, but add default themeEditor", async () => {
-    const result = await prepareChart(
-      `hello\n\n=====\n{"theme": "eggs"}\n=====`,
-      initialDoc.details
-    );
+    const result = await prepareChart({
+      doc: `hello\n\n=====\n{"theme": "eggs"}\n=====`,
+      details: initialDoc.details,
+    });
     expect(result.meta.themeEditor).not.toBeUndefined();
     expect(result.meta.themeEditor).toEqual(theme);
   });

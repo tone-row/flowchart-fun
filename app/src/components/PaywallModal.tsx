@@ -11,6 +11,7 @@ export function PaywallModal() {
   const open = usePaywallModalStore((s) => s.open);
   const title = usePaywallModalStore((s) => s.title);
   const content = usePaywallModalStore((s) => s.content);
+  const movieUrl = usePaywallModalStore((s) => s.movieUrl);
   return (
     <Dialog.Root
       modal
@@ -26,13 +27,26 @@ export function PaywallModal() {
           className="content-start text-center"
           noPadding
         >
-          <img
-            src="/images/paywall.png"
-            alt="Importing Data from Lucidchart, Google Sheets, and Visio"
-            className="rounded-t-lg max-h-[300px] w-full object-cover object-center"
-            width={520}
-            height={300}
-          />
+          {movieUrl ? (
+            <video
+              className="rounded-t-lg max-h-[300px] w-full object-cover object-center bg-neutral-100"
+              width={520}
+              height={300}
+              autoPlay
+              loop
+              muted
+              playsInline
+              src={movieUrl}
+            />
+          ) : (
+            <img
+              src="/images/paywall.png"
+              alt="Importing Data from Lucidchart, Google Sheets, and Visio"
+              className="rounded-t-lg max-h-[300px] w-full object-cover object-center"
+              width={520}
+              height={300}
+            />
+          )}
           <Dialog.Title className="text-lg font-bold inline-flex items-center text-blue-500 bg-background dark:bg-foreground rounded-lg px-4 pl-3 py-3 justify-center mx-auto -mt-6 relative">
             {title}
           </Dialog.Title>
