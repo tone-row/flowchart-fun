@@ -21,7 +21,7 @@ msgstr "मासिक $3"
 msgid "$30 per year"
 msgstr "वार्षिक $30"
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:60
 msgid "1 Temporary Flowchart"
 msgstr "1 अस्थायी फ्लोचार्ट"
 
@@ -29,11 +29,11 @@ msgstr "1 अस्थायी फ्लोचार्ट"
 msgid "<0>Click the button below to migrate all of your temporary flowcharts into hosted ones.</0><1>Do not close this window. The page will refresh when the migration is complete.</1>"
 msgstr "<0>नीचे दिए गए बटन पर क्लिक करें ताकि आपके सभी अस्थायी प्रिंट चार्ट होस्ट किए गए में स्थानांतरित कर सकें।</0><1>यह विंडो बंद न करें। स्थानांतरण पूरा होने के बाद पृष्ठ ताज़ा हो जाएगा।</1>"
 
-#: src/components/Tabs/ThemeTab.tsx:609
+#: src/components/Tabs/ThemeTab.tsx:607
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>कस्टम CSS केवल</0> सक्षम है। केवल लेआउट और एडवांस्ड सेटिंग्स लागू की जाएगी।"
 
-#: src/components/Settings.tsx:108
+#: src/components/Settings.tsx:95
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0> <1>Tone Row</1> द्वारा बनाई गई एक खुला स्रोत परियोजना है "
 
@@ -49,7 +49,11 @@ msgstr "<0>आपके पास वर्तमान में एक मु�
 msgid "A new version of the app is available. Please reload to update."
 msgstr "एप्प का एक नया वर्जन उपलब्ध है। अपडेट करने के लिए रीलोड करें।"
 
-#: src/components/Settings.tsx:105
+#: src/pages/Pricing.tsx:37
+msgid "AI Ready"
+msgstr "आई तैयार"
+
+#: src/components/Settings.tsx:92
 msgid "About"
 msgstr "के बारे में"
 
@@ -63,7 +67,7 @@ msgstr "खाता"
 msgid "Activate your Account"
 msgstr "अपना खाता सक्रिय करें"
 
-#: src/components/Tabs/ThemeTab.tsx:543
+#: src/components/Tabs/ThemeTab.tsx:541
 msgid "Advanced"
 msgstr "उन्नत"
 
@@ -75,12 +79,12 @@ msgstr "रकम"
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "एक एरर हो गया. फिर से सबमिट करने की कोशिश करें या सीधे {0} ईमेल करें."
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:58
 msgid "Appearance"
 msgstr "दिखावट"
 
-#: src/components/Tabs/ThemeTab.tsx:497
-#: src/components/Tabs/ThemeTab.tsx:498
+#: src/components/Tabs/ThemeTab.tsx:495
+#: src/components/Tabs/ThemeTab.tsx:496
 msgid "Arrow Size"
 msgstr "तीर आकार"
 
@@ -100,10 +104,10 @@ msgstr "वापस"
 msgid "Back To Editor"
 msgstr "संपादक पर वापस जाएं"
 
-#: src/components/Tabs/ThemeTab.tsx:161
-#: src/components/Tabs/ThemeTab.tsx:162
-#: src/components/Tabs/ThemeTab.tsx:213
-#: src/components/Tabs/ThemeTab.tsx:216
+#: src/components/Tabs/ThemeTab.tsx:159
+#: src/components/Tabs/ThemeTab.tsx:160
+#: src/components/Tabs/ThemeTab.tsx:211
+#: src/components/Tabs/ThemeTab.tsx:214
 msgid "Background Color"
 msgstr "पृष्ठभूमि रंग"
 
@@ -111,21 +115,17 @@ msgstr "पृष्ठभूमि रंग"
 msgid "Basic Flowchart"
 msgstr "बेसिक फ्लोचार्ट"
 
-#: src/components/Settings.tsx:170
+#: src/components/Settings.tsx:157
 msgid "Become a Github Sponsor"
 msgstr "गिटहब स्पॉन्सर बनें"
 
-#: src/components/Settings.tsx:158
+#: src/components/Settings.tsx:145
 msgid "Become a Pro User"
 msgstr "प्रो उपयोगकर्ता बनें"
 
 #: src/lib/getDefaultText.ts:4
 msgid "Begin Typing"
 msgstr "टाइपिंग शुरू करें"
-
-#: src/pages/Pricing.tsx:39
-msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
-msgstr "ग्राहक समर्थन प्रॉम्प्ट जैसी एक प्रॉम्प्ट के साथ शुरू करें और Flowchart Fun आपके लिए एक फ्लोचार्ट बना देगा!"
 
 #: src/components/Header.tsx:128
 #: src/components/Header.tsx:366
@@ -137,13 +137,13 @@ msgstr "ब्लॉग"
 msgid "Book a Meeting"
 msgstr "एक बैठक बुक करें"
 
-#: src/components/Tabs/ThemeTab.tsx:267
-#: src/components/Tabs/ThemeTab.tsx:268
+#: src/components/Tabs/ThemeTab.tsx:265
+#: src/components/Tabs/ThemeTab.tsx:266
 msgid "Border Color"
 msgstr "सीमा रंग"
 
-#: src/components/Tabs/ThemeTab.tsx:252
-#: src/components/Tabs/ThemeTab.tsx:253
+#: src/components/Tabs/ThemeTab.tsx:250
+#: src/components/Tabs/ThemeTab.tsx:251
 msgid "Border Width"
 msgstr "सीमा चौड़ाई"
 
@@ -157,7 +157,7 @@ msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
 #: src/components/ClearTextButton.tsx:26
-#: src/components/ImportDataDialog.tsx:702
+#: src/components/ImportDataDialog.tsx:695
 #: src/components/RenameButton.tsx:156
 #: src/pages/Account.tsx:297
 #: src/pages/Account.tsx:310
@@ -233,8 +233,8 @@ msgstr "क्लोन करें"
 msgid "Close"
 msgstr "बंद करें"
 
-#: src/components/Tabs/ThemeTab.tsx:396
-#: src/components/Tabs/ThemeTab.tsx:397
+#: src/components/Tabs/ThemeTab.tsx:394
+#: src/components/Tabs/ThemeTab.tsx:395
 msgid "Color"
 msgstr "रंग"
 
@@ -242,7 +242,7 @@ msgstr "रंग"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "रंग में लाल, नारंगी, पीला, नीला, बैंगनी, काला, सफेद, और ग्रे शामिल हैं।"
 
-#: src/components/ImportDataDialog.tsx:538
+#: src/components/ImportDataDialog.tsx:531
 msgid "Column"
 msgstr "स्तंभ"
 
@@ -275,7 +275,7 @@ msgstr "कंटेनर"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "कंटेनर उन नोड्स हैं जो अन्य नोड्स को सम्मिलित करते हैं। वे कर्ली ब्रेस का उपयोग करके घोषित किया जाता है।"
 
-#: src/components/ImportDataDialog.tsx:715
+#: src/components/ImportDataDialog.tsx:708
 #: src/components/PaymentStepper.tsx:109
 #: src/components/PaymentStepper.tsx:149
 msgid "Continue"
@@ -285,7 +285,7 @@ msgstr "जारी रखें"
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
-#: src/components/Settings.tsx:144
+#: src/components/Settings.tsx:131
 msgid "Cookie Policy"
 msgstr "कुकी नीति"
 
@@ -311,7 +311,7 @@ msgstr "अपना मर्मेड.जेएस कोड कॉपी क�
 msgid "Create"
 msgstr "बनाएं"
 
-#: src/pages/Pricing.tsx:82
+#: src/pages/Pricing.tsx:79
 msgid "Create Flowcharts using AI"
 msgstr "एआई का उपयोग करके फ्लोचार्ट बनाएं"
 
@@ -323,28 +323,28 @@ msgstr "असीमित पारितकथाओं बनाएं"
 msgid "Create a New Chart"
 msgstr "एक नया चार्ट बनाएं"
 
-#: src/pages/Pricing.tsx:105
+#: src/pages/Pricing.tsx:102
 msgid "Create unlimited diagrams for just $3/month!"
 msgstr "केवल 3 डॉलर महीने में असीमित डायग्राम बनाएं!"
 
-#: src/pages/Pricing.tsx:37
-msgid "Create with AI"
-msgstr "एआई के साथ बनाएं"
+#: src/pages/Pricing.tsx:32
+msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
+msgstr "आकार में असीमित फ्लोचार्ट को क्लाउड में संग्रहीत करें - किसी भी जगह से उपलब्ध!"
 
 #: src/components/LearnSyntaxDialog.tsx:158
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "दो नोड्स के बीच एक एज बनाने के लिए दूसरा नोड पहले वाले के नीचे इंडेंट करना होता है"
 
-#: src/components/Tabs/ThemeTab.tsx:365
+#: src/components/Tabs/ThemeTab.tsx:363
 msgid "Curve Style"
 msgstr "वक्र शैली"
 
-#: src/components/Tabs/ThemeTab.tsx:551
-#: src/components/Tabs/ThemeTab.tsx:552
+#: src/components/Tabs/ThemeTab.tsx:549
+#: src/components/Tabs/ThemeTab.tsx:550
 msgid "Custom CSS"
 msgstr "कस्टम CSS"
 
-#: src/pages/Pricing.tsx:83
+#: src/pages/Pricing.tsx:80
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
@@ -356,8 +356,8 @@ msgstr "ग्राहक पोर्टल"
 msgid "Dark"
 msgstr "डार्क"
 
-#: src/components/Settings.tsx:96
-#: src/components/Settings.tsx:99
+#: src/components/Settings.tsx:83
+#: src/components/Settings.tsx:86
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
@@ -365,12 +365,12 @@ msgstr "डार्क मोड"
 msgid "Date"
 msgstr "तारीख़"
 
-#: src/pages/Pricing.tsx:44
-msgid "Direct from your Data"
-msgstr "अपने डेटा से सीधे"
+#: src/pages/Pricing.tsx:42
+msgid "Direct from Data"
+msgstr "डेटा से सीधा"
 
+#: src/components/Tabs/ThemeTab.tsx:110
 #: src/components/Tabs/ThemeTab.tsx:112
-#: src/components/Tabs/ThemeTab.tsx:114
 msgid "Direction"
 msgstr "दिशा"
 
@@ -404,7 +404,7 @@ msgstr "PNG डाउनलोड करें"
 msgid "Download SVG"
 msgstr "SVG डाउनलोड करें"
 
-#: src/components/ImportDataDialog.tsx:248
+#: src/components/ImportDataDialog.tsx:241
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV फ़ाइल यहां ड्रैग और ड्रॉप करें, या फ़ाइल का चयन करने के लिए क्लिक करें"
 
@@ -412,7 +412,7 @@ msgstr "CSV फ़ाइल यहां ड्रैग और ड्रॉप 
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "एक से अधिक नोड्स से एज ड्रा करने के लिए लाइन को एक संदर्भ के साथ शुरू करें"
 
-#: src/components/ImportDataDialog.tsx:246
+#: src/components/ImportDataDialog.tsx:239
 msgid "Drop the file here ..."
 msgstr "फाइल यहाँ ड्रॉप करें ..."
 
@@ -424,8 +424,8 @@ msgstr "किनारे आईडी, वर्ग, गुण"
 msgid "Edge Label"
 msgstr "किनारे लेबल"
 
-#: src/components/ImportDataDialog.tsx:468
-#: src/components/ImportDataDialog.tsx:508
+#: src/components/ImportDataDialog.tsx:461
+#: src/components/ImportDataDialog.tsx:501
 msgid "Edge Label Column"
 msgstr "किनारे लेबल कॉलम"
 
@@ -433,8 +433,8 @@ msgstr "किनारे लेबल कॉलम"
 msgid "Edge Style"
 msgstr "किनारे शैली"
 
-#: src/components/Tabs/ThemeTab.tsx:512
-#: src/components/Tabs/ThemeTab.tsx:513
+#: src/components/Tabs/ThemeTab.tsx:510
+#: src/components/Tabs/ThemeTab.tsx:511
 msgid "Edge Text Size"
 msgstr "एड्ज टेक्स्ट आकार"
 
@@ -442,21 +442,21 @@ msgstr "एड्ज टेक्स्ट आकार"
 msgid "Edge missing indentation"
 msgstr "एड्ज अंतराल गुम है"
 
-#: src/components/ImportDataDialog.tsx:406
+#: src/components/ImportDataDialog.tsx:399
 #: src/components/LearnSyntaxDialog.tsx:155
-#: src/components/Tabs/ThemeTab.tsx:358
+#: src/components/Tabs/ThemeTab.tsx:356
 msgid "Edges"
 msgstr "किन्तुओं"
 
-#: src/components/ImportDataDialog.tsx:424
+#: src/components/ImportDataDialog.tsx:417
 msgid "Edges are declared in the same row as their source node"
 msgstr "उनके स्रोत नोड के ही पंक्ति में किन्तुओं की घोषणा की जाती है"
 
-#: src/components/ImportDataDialog.tsx:430
+#: src/components/ImportDataDialog.tsx:423
 msgid "Edges are declared in the same row as their target node"
 msgstr "उनके लक्ष्य नोड के ही पंक्ति में किन्तुओं की घोषणा की जाती है"
 
-#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:428
 msgid "Edges are declared in their own row"
 msgstr "किन्तुओं को अपनी खुद की पंक्ति में घोषणा की जाती है"
 
@@ -468,15 +468,15 @@ msgstr "लेबल से पहले, किन्तुओं को आई
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "किन्तुओं को डैश्ड, डॉटेड या सॉलिड लाइन्स के साथ स्टाइल किया जा सकता है"
 
-#: src/components/ImportDataDialog.tsx:434
+#: src/components/ImportDataDialog.tsx:427
 msgid "Edges in Separate Rows"
 msgstr "अलग पंक्तियों में किन्हें"
 
-#: src/components/ImportDataDialog.tsx:423
+#: src/components/ImportDataDialog.tsx:416
 msgid "Edges in Source Node Row"
 msgstr "स्रोत नोड पंक्ति में किन्हें"
 
-#: src/components/ImportDataDialog.tsx:429
+#: src/components/ImportDataDialog.tsx:422
 msgid "Edges in Target Node Row"
 msgstr "लक्ष्य नोड पंक्ति में किन्हें"
 
@@ -498,7 +498,7 @@ msgstr "संपादक"
 msgid "Email"
 msgstr "ईमेल"
 
-#: src/components/ImportDataDialog.tsx:554
+#: src/components/ImportDataDialog.tsx:547
 msgid "Empty"
 msgstr "खाली"
 
@@ -518,7 +518,7 @@ msgstr "अपना ईमेल पता दर्ज करें और ह
 msgid "Enter your email address below and we'll send you a link to reset your password."
 msgstr "नीचे अपना ईमेल पता दर्ज करें और हम आपको अपना पासवर्ड रीसेट करने के लिए एक लिंक भेजेंगे।"
 
-#: src/components/ImportDataDialog.tsx:556
+#: src/components/ImportDataDialog.tsx:549
 msgid "Equal To"
 msgstr "बराबर"
 
@@ -526,20 +526,20 @@ msgstr "बराबर"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
+#: src/components/LoadFileButton.tsx:76
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
+msgstr "अपने फ्लोचार्ट में स्थानीय फ़ाइलों को डायरेक्टली लोड करने की क्षमता और सुरक्षा का अनुभव करें। फ्लोचार्ट फन प्रो के साथ इस विशेष प्रो फीचर और अधिक को अनलॉक करें, जो केवल 3/महीने या 30/वर्ष के लिए उपलब्ध है।"
+
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:151
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
-#: src/pages/Pricing.tsx:53
-msgid "Export professional-quality flowcharts without watermarks to use in your presentations and documents"
-msgstr "प्रेजेंटेशन और दस्तावेजों में उपयोग करने के लिए वाटरमार्क के बिना व्यावसायिक गुणवत्ता के निर्यात करें"
-
-#: src/pages/Pricing.tsx:66
+#: src/pages/Pricing.tsx:62
 msgid "Export to PNG & JPG"
 msgstr "PNG और JPG में निर्यात करें"
 
-#: src/pages/Pricing.tsx:78
+#: src/pages/Pricing.tsx:75
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG और SVG में निर्यात करें"
 
@@ -549,23 +549,19 @@ msgstr "PNG, JPG और SVG में निर्यात करें"
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
-#: src/components/Tabs/ThemeTab.tsx:336
+#: src/components/Tabs/ThemeTab.tsx:334
 msgid "Fixed Node Height"
 msgstr "निर्धारित नोड ऊंचाई"
-
-#: src/pages/Pricing.tsx:32
-msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
-msgstr "Flowchart Fun Pro आपको अपनी आवश्यकताओं के लिए जितने भी फ्लोचार्ट बनाएँ, स्टोर और वितरित करने की अनुमति देता है।"
 
 #: src/lib/paywallCopy.ts:5
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
 msgstr "फ्लोचार्ट फन प्रो आपको असीमित पारितकथाओं, असीमित सहयोगियों और मात्र $ 3 / महीने या $ 30 / साल के लिए असीमित स्टोरेज प्रदान करता है।"
 
-#: src/components/Settings.tsx:132
+#: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
 msgstr "हमारे साथ ट्विटर पर फॉलो करें"
 
-#: src/components/Tabs/ThemeTab.tsx:174
+#: src/components/Tabs/ThemeTab.tsx:172
 msgid "Font Family"
 msgstr "फॉन्ट परिवार"
 
@@ -577,7 +573,7 @@ msgstr "अपना पासवर्ड भूल गए?"
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "एक बग पाया? एक सुविधा अनुरोध है? हम आपसे सुनने के लिए प्रसन्न होंगे!"
 
-#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:57
 msgid "Free"
 msgstr "मुफ्त"
 
@@ -585,7 +581,7 @@ msgstr "मुफ्त"
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
-#: src/components/Tabs/ThemeTab.tsx:154
+#: src/components/Tabs/ThemeTab.tsx:152
 msgid "General"
 msgstr "सामान्य"
 
@@ -617,9 +613,13 @@ msgstr "हिस्ट्री"
 msgid "Home"
 msgstr "होम"
 
-#: src/components/ImportDataDialog.tsx:407
+#: src/components/ImportDataDialog.tsx:400
 msgid "How are edges declared in this data?"
 msgstr "इस डेटा में कैसे किन्हीं कड़ियाँ घोषित होती हैं?"
+
+#: src/components/EditorWrapper.tsx:154
+msgid "How would you like to save your chart?"
+msgstr "आप अपने चार्ट को कैसे सहेजना चाहेंगे?"
 
 #: src/components/LearnSyntaxDialog.tsx:127
 msgid "ID's"
@@ -629,7 +629,7 @@ msgstr "आईडीज़"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "अगर उस ईमेल के साथ एक खाता मौजूद है, तो हमने आपको पासवर्ड रीसेट करने के लिए निर्देशों के साथ एक ईमेल भेजा है।"
 
-#: src/components/Settings.tsx:151
+#: src/components/Settings.tsx:138
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 msgstr "यदि आप <0>Flowchart Fun</0> का उपयोग करना आनंदित हैं, तो कृपया परियोजना को समर्थित करने की सोच करें"
 
@@ -641,14 +641,14 @@ msgstr "यदि आप एक एड्ज बनाने के लिए �
 msgid "Images"
 msgstr "छवियाँ"
 
-#: src/components/ImportDataDialog.tsx:86
-#: src/components/ImportDataDialog.tsx:99
+#: src/components/ImportDataDialog.tsx:79
+#: src/components/ImportDataDialog.tsx:92
 #: src/components/ImportDataUnauthenticatedDialog.tsx:28
 #: src/components/ImportDataUnauthenticatedDialog.tsx:45
 msgid "Import Data"
 msgstr "डेटा आयात करें"
 
-#: src/components/ImportDataDialog.tsx:104
+#: src/components/ImportDataDialog.tsx:97
 msgid "Import data from a CSV file."
 msgstr "CSV फ़ाइल से डेटा आयात करें।"
 
@@ -656,7 +656,11 @@ msgstr "CSV फ़ाइल से डेटा आयात करें।"
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "किसी भी CSV फ़ाइल से डेटा आयात करें और इसे एक नए प्रक्रिया चार्ट में मैप करें। यह अन्य स्रोतों जैसे लुसिडचार्ट, गूगल शीट्स और विसिओ से डेटा आयात करने के लिए एक अच्छा तरीका है।"
 
-#: src/pages/Pricing.tsx:81
+#: src/pages/Pricing.tsx:43
+msgid "Import from Lucidchart, Visio, and other CSV files."
+msgstr "Lucidchart, Visio और अन्य CSV फ़ाइलों से आयात करें।"
+
+#: src/pages/Pricing.tsx:78
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Visio, Lucidchart और CSV से आयात करें"
 
@@ -676,7 +680,7 @@ msgstr "एक <0>title</0> विशेषता का उपयोग कर�
 msgid "Info"
 msgstr "जानकारी"
 
-#: src/components/ImportDataDialog.tsx:547
+#: src/components/ImportDataDialog.tsx:540
 msgid "Is"
 msgstr "हाँ"
 
@@ -688,8 +692,8 @@ msgstr "ज्ञान ग्राफ"
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/Tabs/ThemeTab.tsx:81
-#: src/components/Tabs/ThemeTab.tsx:90
+#: src/components/Tabs/ThemeTab.tsx:79
+#: src/components/Tabs/ThemeTab.tsx:88
 msgid "Layout"
 msgstr "रूपरेखा"
 
@@ -703,7 +707,7 @@ msgid "Leading References"
 msgstr "प्रमुख संदर्भ"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:67
-#: src/components/PaywallModal.tsx:52
+#: src/components/PaywallModal.tsx:66
 msgid "Learn More"
 msgstr "और अधिक जानें"
 
@@ -725,8 +729,8 @@ msgstr "बाएं से दाएं"
 msgid "Light"
 msgstr "लाइट"
 
-#: src/components/Settings.tsx:88
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:75
+#: src/components/Settings.tsx:78
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
@@ -737,6 +741,18 @@ msgstr "लिंक"
 #: src/components/LoadTemplateDialog.tsx:164
 msgid "Load"
 msgstr "लोड"
+
+#: src/components/LoadFileButton.tsx:99
+msgid "Load Chart"
+msgstr "चार्ट लोड करें"
+
+#: src/components/LoadFileButton.tsx:91
+msgid "Load File"
+msgstr "फ़ाइल लोड करें"
+
+#: src/components/LoadFileButton.tsx:75
+msgid "Load Files"
+msgstr "फ़ाइलें लोड करें"
 
 #: src/components/LoadTemplateDialog.tsx:138
 msgid "Load default content"
@@ -749,6 +765,10 @@ msgstr "लिंक से लोड करें?"
 #: src/components/LoadTemplateDialog.tsx:135
 msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
+
+#: src/pages/Pricing.tsx:73
+msgid "Local File Support"
+msgstr "स्थानीय फ़ाइल समर्थन"
 
 #: src/components/GraphFloatingMenu.tsx:73
 #: src/components/GraphFloatingMenu.tsx:75
@@ -764,7 +784,7 @@ msgstr "लॉग इन करें"
 msgid "Log Out"
 msgstr "लॉग आउट"
 
-#: src/components/EditorWrapper.tsx:107
+#: src/components/EditorWrapper.tsx:105
 msgid "Log in to Save"
 msgstr "सेव में लॉग इन करें"
 
@@ -772,7 +792,7 @@ msgstr "सेव में लॉग इन करें"
 msgid "Log in to start creating flowcharts."
 msgstr "फ्लोचार्ट बनाने शुरू करने के लिए लॉग इन करें।"
 
-#: src/components/Settings.tsx:164
+#: src/components/Settings.tsx:151
 msgid "Make a One-Time Donation"
 msgstr "एक बार दान करें"
 
@@ -788,7 +808,7 @@ msgstr "उसी ईमेल का उपयोग करें जिसे 
 msgid "Manage Billing"
 msgstr "बिलिंग प्रबंधित करें"
 
-#: src/components/ImportDataDialog.tsx:384
+#: src/components/ImportDataDialog.tsx:377
 msgid "Map Data"
 msgstr "डेटा मैप"
 
@@ -809,6 +829,10 @@ msgstr "एक ही लाइन पर कई प्रतीक"
 msgid "Name Chart"
 msgstr "चार्ट का नाम"
 
+#: src/components/EditorWrapper.tsx:226
+msgid "Name your chart"
+msgstr "अपने चार्ट को नाम दें"
+
 #: src/components/Header.tsx:87
 #: src/components/Header.tsx:338
 #: src/pages/Charts.tsx:100
@@ -824,15 +848,11 @@ msgstr "नई ईमेल"
 msgid "Next charge"
 msgstr "अगला चार्ज"
 
-#: src/components/ImportDataDialog.tsx:418
+#: src/components/ImportDataDialog.tsx:411
 msgid "No Edges"
 msgstr "कोई किनारे नहीं"
 
-#: src/pages/Pricing.tsx:51
-msgid "No Watermarks"
-msgstr "कोई वाटरमार्क नहीं"
-
-#: src/pages/Pricing.tsx:80
+#: src/pages/Pricing.tsx:77
 msgid "No Watermarks!"
 msgstr "कोई वॉटरमार्क्स नहीं!"
 
@@ -848,7 +868,7 @@ msgstr "नोड सीमा शैली"
 msgid "Node Colors"
 msgstr "नोड रंग"
 
-#: src/components/ImportDataDialog.tsx:389
+#: src/components/ImportDataDialog.tsx:382
 msgid "Node ID"
 msgstr "नोड आईडी"
 
@@ -856,12 +876,13 @@ msgstr "नोड आईडी"
 msgid "Node ID, Classes, Attributes"
 msgstr "नोड आईडी, वर्ग, गुण"
 
-#: src/components/ImportDataDialog.tsx:397
+#: src/components/ImportDataDialog.tsx:390
 #: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "नोड लेबल"
 
-#: src/components/Tabs/ThemeTab.tsx:198
+#: src/components/Tabs/ThemeTab.tsx:194
+#: src/components/Tabs/ThemeTab.tsx:196
 msgid "Node Shape"
 msgstr "नोड आकार"
 
@@ -873,7 +894,7 @@ msgstr "नोड आकार"
 msgid "Node and pointer on same line"
 msgstr "नोड और प्रतीक एक ही लाइन पर"
 
-#: src/components/Tabs/ThemeTab.tsx:189
+#: src/components/Tabs/ThemeTab.tsx:187
 msgid "Nodes"
 msgstr "नोड्स"
 
@@ -881,7 +902,7 @@ msgstr "नोड्स"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "नोड्स को डैश्ड, डॉट्ड, या डबल के साथ शैलीयित किया जा सकता है। सीमाओं को बॉर्डर_नोन के साथ हटाया जा सकता है।"
 
-#: src/components/ImportDataDialog.tsx:555
+#: src/components/ImportDataDialog.tsx:548
 msgid "Not Empty"
 msgstr "खाली नहीं"
 
@@ -889,7 +910,7 @@ msgstr "खाली नहीं"
 msgid "Now erase the text and try it yourself!"
 msgstr "अब पाठ हटाएं और खुद से यह कोशिश करें!"
 
-#: src/pages/Pricing.tsx:85
+#: src/pages/Pricing.tsx:82
 msgid "Office Hours"
 msgstr "कार्यालय अवधि"
 
@@ -897,7 +918,7 @@ msgstr "कार्यालय अवधि"
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "कभी-कभी मैजिक लिंक आपके स्पैम फोल्डर में खत्म हो जाता है। अगर आप कुछ मिनट बाद उसे नहीं देख रहे हैं, तो वहां जाकर देखें या एक नया लिंक अनुरोध करें।"
 
-#: src/pages/Pricing.tsx:84
+#: src/pages/Pricing.tsx:81
 msgid "One on One Support"
 msgstr "एक प्रति एक समर्थन"
 
@@ -918,7 +939,8 @@ msgstr "या फिर, आप <0>एक नया सदस्यता ब�
 msgid "Organization Chart"
 msgstr "संगठन चार्ट"
 
-#: src/components/Tabs/ThemeTab.tsx:238
+#: src/components/Tabs/ThemeTab.tsx:235
+#: src/components/Tabs/ThemeTab.tsx:236
 msgid "Padding"
 msgstr "पैडिंग"
 
@@ -948,7 +970,7 @@ msgstr "प्रतीक और कंटेनर एक ही लाइन 
 
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:421
-#: src/components/Settings.tsx:138
+#: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "गोपनीयता नीति "
 
@@ -956,13 +978,9 @@ msgstr "गोपनीयता नीति "
 msgid "Process Diagram"
 msgstr "प्रक्रिया आरेख"
 
-#: src/components/ImportDataDialog.tsx:269
+#: src/components/ImportDataDialog.tsx:262
 msgid "Processing Data"
 msgstr "डेटा प्रसंस्करण"
-
-#: src/pages/Pricing.tsx:46
-msgid "Produce flowcharts directly from your data. Import from Lucidchart, Visio, and other CSV files."
-msgstr "अपने डेटा से सीधे फ्लोचार्ट उत्पन्न करें। Lucidchart, Visio और अन्य CSV फ़ाइलों से आयात करें।"
 
 #: src/pages/Account.tsx:390
 msgid "Product is too expensive..."
@@ -977,12 +995,12 @@ msgstr "पब्लिक"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/pages/Pricing.tsx:67
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:63
+#: src/pages/Pricing.tsx:76
 msgid "Rapid Templates"
 msgstr "त्वरित टेम्पलेट्स"
 
-#: src/components/EditorWrapper.tsx:56
+#: src/components/EditorWrapper.tsx:55
 #: src/components/ShareDialog.tsx:143
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
@@ -1072,13 +1090,12 @@ msgstr "दाएं से बाएं"
 msgid "Roadmap"
 msgstr "रोडमैप"
 
-#: src/components/Tabs/ThemeTab.tsx:527
-#: src/components/Tabs/ThemeTab.tsx:528
+#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:526
 msgid "Rotate Label"
 msgstr "लेबल को घुमाएँ"
 
-#: src/components/EditorWrapper.tsx:124
-#: src/components/EditorWrapper.tsx:159
+#: src/components/EditorWrapper.tsx:121
 msgid "Save"
 msgstr "सहेजें"
 
@@ -1086,11 +1103,27 @@ msgstr "सहेजें"
 msgid "Save 16%"
 msgstr "16% बचाएं"
 
+#: src/pages/Pricing.tsx:49
+msgid "Save and load local files. Perfect for managing work-related documents offline."
+msgstr "स्थानीय फ़ाइलों को सेव और लोड करें। काम संबंधी दस्तावेज़ों को ऑफ़लाइन प्रबंधित करने के लिए आदर्श।"
+
+#: src/pages/Pricing.tsx:38
+msgid "Save time by creating flowcharts using AI."
+msgstr "AI का उपयोग करके फ्लोचार्ट बनाकर समय बचाएं।"
+
+#: src/components/EditorWrapper.tsx:162
+msgid "Save to Cloud"
+msgstr "क्लौड में सेव करें"
+
+#: src/components/EditorWrapper.tsx:178
+msgid "Save to File"
+msgstr "फाइल में सेव करें"
+
 #: src/pages/New.tsx:205
 msgid "Set Content"
 msgstr "सामग्री सेट करें"
 
-#: src/components/Tabs/ThemeTab.tsx:325
+#: src/components/Tabs/ThemeTab.tsx:323
 msgid "Set Fixed Node Height"
 msgstr "नोड ऊंचाई को सेट करें"
 
@@ -1100,7 +1133,7 @@ msgstr "नोड ऊंचाई को सेट करें"
 msgid "Settings"
 msgstr "सेटिंग"
 
-#: src/components/EditorWrapper.tsx:70
+#: src/components/EditorWrapper.tsx:69
 msgid "Share"
 msgstr "साझा करें"
 
@@ -1125,22 +1158,22 @@ msgstr "<0>Google</0> के साथ साइन इन करें"
 msgid "Sorry! This page is only available in English."
 msgstr "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।"
 
-#: src/components/Tabs/ThemeTab.tsx:417
-#: src/components/Tabs/ThemeTab.tsx:418
+#: src/components/Tabs/ThemeTab.tsx:415
+#: src/components/Tabs/ThemeTab.tsx:416
 msgid "Source Arrow Shape"
 msgstr "स्रोत तीर आकार"
 
-#: src/components/ImportDataDialog.tsx:485
-#: src/components/ImportDataDialog.tsx:521
+#: src/components/ImportDataDialog.tsx:478
+#: src/components/ImportDataDialog.tsx:514
 msgid "Source Column"
 msgstr "स्रोत स्तंभ"
 
-#: src/components/ImportDataDialog.tsx:495
+#: src/components/ImportDataDialog.tsx:488
 msgid "Source Delimiter"
 msgstr "स्रोत डिलिमिटर"
 
-#: src/components/Tabs/ThemeTab.tsx:459
-#: src/components/Tabs/ThemeTab.tsx:460
+#: src/components/Tabs/ThemeTab.tsx:457
+#: src/components/Tabs/ThemeTab.tsx:458
 msgid "Source Distance From Node"
 msgstr "नोड से स्रोत दूरी"
 
@@ -1148,7 +1181,7 @@ msgstr "नोड से स्रोत दूरी"
 msgid "Source/Target Arrow Shape"
 msgstr "स्रोत / लक्ष्य तीर आकार"
 
-#: src/components/Tabs/ThemeTab.tsx:137
+#: src/components/Tabs/ThemeTab.tsx:135
 msgid "Spacing"
 msgstr "अंतराल"
 
@@ -1164,7 +1197,7 @@ msgstr "शुरू"
 msgid "Start Migration"
 msgstr "स्थानांतरण शुरू करें"
 
-#: src/components/ImportDataDialog.tsx:281
+#: src/components/ImportDataDialog.tsx:274
 msgid "Start Over"
 msgstr "शुरू करें"
 
@@ -1181,7 +1214,7 @@ msgid "Style Classes"
 msgstr "शैली क्लासेज"
 
 #: src/components/Feedback.tsx:81
-#: src/components/ImportDataDialog.tsx:581
+#: src/components/ImportDataDialog.tsx:574
 msgid "Submit"
 msgstr "भेजना"
 
@@ -1193,22 +1226,22 @@ msgstr "सदस्यता"
 msgid "Subscription will end"
 msgstr "सदस्यता समाप्त हो जाएगी"
 
-#: src/components/Tabs/ThemeTab.tsx:438
-#: src/components/Tabs/ThemeTab.tsx:439
+#: src/components/Tabs/ThemeTab.tsx:436
+#: src/components/Tabs/ThemeTab.tsx:437
 msgid "Target Arrow Shape"
 msgstr "लक्ष्य तीर आकार"
 
-#: src/components/ImportDataDialog.tsx:442
-#: src/components/ImportDataDialog.tsx:528
+#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:521
 msgid "Target Column"
 msgstr "लक्ष्य कॉलम"
 
-#: src/components/ImportDataDialog.tsx:453
+#: src/components/ImportDataDialog.tsx:446
 msgid "Target Delimiter"
 msgstr "लक्ष्य डेलीमीटर"
 
-#: src/components/Tabs/ThemeTab.tsx:477
-#: src/components/Tabs/ThemeTab.tsx:478
+#: src/components/Tabs/ThemeTab.tsx:475
+#: src/components/Tabs/ThemeTab.tsx:476
 msgid "Target Distance From Node"
 msgstr "नोड से लक्ष्य दूरी"
 
@@ -1217,26 +1250,26 @@ msgstr "नोड से लक्ष्य दूरी"
 msgid "Templates"
 msgstr "टेम्पलेट्स"
 
+#: src/components/Tabs/ThemeTab.tsx:223
 #: src/components/Tabs/ThemeTab.tsx:225
-#: src/components/Tabs/ThemeTab.tsx:227
 msgid "Text Color"
 msgstr "पाठ रंग"
 
-#: src/components/Tabs/ThemeTab.tsx:324
+#: src/components/Tabs/ThemeTab.tsx:322
 msgid "Text Horizontal Offset"
 msgstr "टेक्स्ट की क्षैतिज ओफसेट"
 
-#: src/components/Tabs/ThemeTab.tsx:294
-#: src/components/Tabs/ThemeTab.tsx:295
+#: src/components/Tabs/ThemeTab.tsx:292
+#: src/components/Tabs/ThemeTab.tsx:293
 msgid "Text Leading"
 msgstr "पाठ प्रमुख"
 
-#: src/components/Tabs/ThemeTab.tsx:279
+#: src/components/Tabs/ThemeTab.tsx:277
 msgid "Text Max Width"
 msgstr "टेक्स्ट की अधिकतम चौड़ाई"
 
-#: src/components/Tabs/ThemeTab.tsx:309
-#: src/components/Tabs/ThemeTab.tsx:310
+#: src/components/Tabs/ThemeTab.tsx:307
+#: src/components/Tabs/ThemeTab.tsx:308
 msgid "Text Vertical Offset"
 msgstr "पाठ लंबाई ऑफसेट"
 
@@ -1256,23 +1289,23 @@ msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "शैलीयित करने के लिए सर्वश्रेष्ठ तरीका नोड या एड्ज पर राइट-क्लिक करके आपके द्वारा चाहिए शैली का चयन करना है।"
 
-#: src/components/ImportDataDialog.tsx:469
+#: src/components/ImportDataDialog.tsx:462
 msgid "The column that contains the edge label(s)"
 msgstr "कॉलम जो एड्ज लेबल (ओं) को शामिल करता है"
 
-#: src/components/ImportDataDialog.tsx:486
+#: src/components/ImportDataDialog.tsx:479
 msgid "The column that contains the source node ID(s)"
 msgstr "कॉलम जो स्रोत नोड आईडी (ओं) को शामिल करता है"
 
-#: src/components/ImportDataDialog.tsx:443
+#: src/components/ImportDataDialog.tsx:436
 msgid "The column that contains the target node ID(s)"
 msgstr "कॉलम जो लक्ष्य नोड आईडी (ओं) को शामिल करता है"
 
-#: src/components/ImportDataDialog.tsx:496
+#: src/components/ImportDataDialog.tsx:489
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "कई स्रोत नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
-#: src/components/ImportDataDialog.tsx:454
+#: src/components/ImportDataDialog.tsx:447
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
@@ -1285,12 +1318,12 @@ msgstr "संभव आकृतियाँ हैं:"
 msgid "Theme"
 msgstr "थीम"
 
-#: src/pages/Pricing.tsx:65
-#: src/pages/Pricing.tsx:77
+#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:74
 msgid "Theme Editor"
 msgstr "थीम संपादक"
 
-#: src/components/ImportDataDialog.tsx:419
+#: src/components/ImportDataDialog.tsx:412
 msgid "There are no edges in this data"
 msgstr "इस डेटा में कोई एड्ज नहीं है"
 
@@ -1347,7 +1380,7 @@ msgstr "हमें आपको लॉगिन करने के लिए 
 msgid "Top to Bottom"
 msgstr "ऊपर से नीचे"
 
-#: src/pages/Pricing.tsx:100
+#: src/pages/Pricing.tsx:97
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को सेकंड में प्रोफेशनल डायरेक्टरी में रूपांतरित करें"
 
@@ -1379,7 +1412,7 @@ msgstr "अज्ञात पार्सिंग त्रुटि"
 msgid "Unlimited Flowcharts"
 msgstr "असीमित फ्लोचार्ट"
 
-#: src/pages/Pricing.tsx:76
+#: src/pages/Pricing.tsx:72
 msgid "Unlimited Permanent Flowcharts"
 msgstr "असीमित स्थायी प्रवाहगतीं "
 
@@ -1395,7 +1428,7 @@ msgstr "ईमेल अपडेट करें"
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
 
-#: src/components/ImportDataDialog.tsx:208
+#: src/components/ImportDataDialog.tsx:201
 msgid "Upload your File"
 msgstr "अपनी फाइल अपलोड करें"
 
@@ -1403,8 +1436,8 @@ msgstr "अपनी फाइल अपलोड करें"
 msgid "Use AI"
 msgstr "AI का उपयोग करें"
 
-#: src/components/Tabs/ThemeTab.tsx:568
-#: src/components/Tabs/ThemeTab.tsx:569
+#: src/components/Tabs/ThemeTab.tsx:566
+#: src/components/Tabs/ThemeTab.tsx:567
 msgid "Use Custom CSS Only"
 msgstr "केवल कस्टम CSS का उपयोग करें"
 
@@ -1436,7 +1469,7 @@ msgstr "नोड की विशिष्ट चौड़ाई और ऊँ�
 msgid "Use the customer portal to change your billing information."
 msgstr "अपनी बिलिंग जानकारी बदलने के लिए ग्राहक पोर्टल का उपयोग करें।"
 
-#: src/components/Tabs/ThemeTab.tsx:602
+#: src/components/Tabs/ThemeTab.tsx:600
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "अपने फ्लोचार्ट की दिखता और व्यवहार को अनुकूलित करने के लिए इन सेटिंग्स का उपयोग करें"
 
@@ -1452,7 +1485,7 @@ msgstr "अनुक्रमों, प्रक्रियाओं और �
 msgid "User"
 msgstr "यूज़र"
 
-#: src/components/Settings.tsx:126
+#: src/components/Settings.tsx:113
 msgid "View on Github"
 msgstr "Github पर देखें"
 
@@ -1460,7 +1493,7 @@ msgstr "Github पर देखें"
 msgid "Want to keep your flowcharts? Upgrade to our Pro account for only $3/month. With Pro, you can save unlimited flowcharts and never lose your creativity."
 msgstr "अपने फ्लोचार्ट्स को रखना चाहते हैं? हमारे प्रो खाते के लिए केवल 3 $ / महीने में अपग्रेड करें। प्रो से, आप असीमित फ्लोचार्ट्स को सहेज सकते हैं और अपने क्रीएटिविटी को कभी नहीं खोएंगे।"
 
-#: src/pages/Pricing.tsx:68
+#: src/pages/Pricing.tsx:64
 msgid "Watermarks"
 msgstr "वॉटरमार्क"
 
@@ -1476,8 +1509,8 @@ msgstr "फ्लोचार्ट फन प्रो के लिए स्�
 msgid "What's this?"
 msgstr "यह क्या है?"
 
-#: src/components/Tabs/ThemeTab.tsx:381
-#: src/components/Tabs/ThemeTab.tsx:382
+#: src/components/Tabs/ThemeTab.tsx:379
+#: src/components/Tabs/ThemeTab.tsx:380
 msgid "Width"
 msgstr "चौड़ाई"
 
@@ -1485,7 +1518,11 @@ msgstr "चौड़ाई"
 msgid "Width and Height"
 msgstr "चौड़ाई और ऊँचाई"
 
-#: src/components/ImportDataDialog.tsx:699
+#: src/pages/Pricing.tsx:47
+msgid "Work with Local Files"
+msgstr "स्थानीय फ़ाइलों के साथ काम करें"
+
+#: src/components/ImportDataDialog.tsx:692
 msgid "Would you like to continue?"
 msgstr "क्या आप जारी रखना चाहते हैं?"
 
@@ -1497,7 +1534,7 @@ msgstr "वार्षिक"
 msgid "Yes: Option A"
 msgstr "हाँ: विकल्प A"
 
-#: src/components/ImportDataDialog.tsx:697
+#: src/components/ImportDataDialog.tsx:690
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "आप अपने ग्राफ में {numNodes} नोड्स और {numEdges} एड्ज़ जोड़ने वाले हैं।"
 

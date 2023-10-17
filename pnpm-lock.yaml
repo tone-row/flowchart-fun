@@ -247,8 +247,8 @@ importers:
         specifier: ^10.13.1
         version: 10.13.1(react-dom@18.2.0)(react@18.2.0)
       graph-selector:
-        specifier: ^0.9.11
-        version: 0.9.11
+        specifier: ^0.9.12
+        version: 0.9.12
       gray-matter:
         specifier: ^4.0.2
         version: 4.0.3
@@ -7928,6 +7928,11 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /@tone-row/strip-comments@2.0.6:
+    resolution: {integrity: sha512-Fg21Nu+RDQ4NBEYP8vJyDg5TMjdGEQQSKbW8nfipQZo/cmP6l7MFJpdIqJfLHQoRSxWqqKtkWXWiMqxcVgY4pg==}
+    engines: {node: '>=10'}
+    dev: false
+
   /@tootallnate/once@1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
@@ -13153,6 +13158,16 @@ packages:
   /graph-selector@0.9.11:
     resolution: {integrity: sha512-1p+52G0088zMIkjDG3CujVvNbgYEx2xy6RaQWIPTVdsp1s+Ed0rLnJ17jOWW5uxZnEJ1Uh7LEBGiuB9g4jrvTA==}
     dependencies:
+      '@types/cytoscape': 3.19.11
+      html-entities: 2.4.0
+      monaco-editor: 0.43.0
+      strip-comments: 2.0.1
+    dev: false
+
+  /graph-selector@0.9.12:
+    resolution: {integrity: sha512-2TqVOdNPjbbFWbpGw4/xD7JmsBr4Z6xrbGr4n+wRqu3R+DaxnKkmJqSXBJihSUBhyfZPE0lLFJ2kOUnuygb2nQ==}
+    dependencies:
+      '@tone-row/strip-comments': 2.0.6
       '@types/cytoscape': 3.19.11
       html-entities: 2.4.0
       monaco-editor: 0.43.0

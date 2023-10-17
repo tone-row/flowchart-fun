@@ -100,8 +100,10 @@ test("Go to Sandbox. Save Sandbox Chart", async () => {
   await page.getByTestId("pro-link").waitFor({ state: "detached" });
 
   await page.getByRole("button", { name: "Save" }).click();
-  await page.getByLabel("Title").click();
-  await page.getByLabel("Title").fill("my saved chart");
+
+  await page.getByRole("button", { name: "Save to Cloud" }).click();
+  await page.getByLabel("Name your chart").click();
+  await page.getByLabel("Name your chart").fill("my saved chart");
   await page.getByRole("button", { name: "Save" }).click();
 
   // expect "/u/" to be in the url
@@ -169,4 +171,20 @@ test("Create chart from imported data", async () => {
     console.error(error);
     throw error;
   }
+});
+
+test("Can load a file", async () => {
+  await page.goto(BASE_URL);
+
+  // wait for the test-id "pro-link" to disappear
+  await page.getByTestId("pro-link").waitFor({ state: "detached" });
+
+  const filePath = path.join(__dirname, "../../api/data/fixtures/simple.txt");
+
+  await page.getByTestId("load-file-input").setInputFiles(filePath);
+
+  // wait for the load-file-modal test-id to be visible
+  await page.getByTestId("load-file-modal").waitFor({ state: "visible" });
+
+  await page.getByTestId("load-file-confirm").click();
 });

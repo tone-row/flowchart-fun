@@ -69,10 +69,10 @@ export function LoadTemplateDialog() {
       // there we get an error, this ensures the graph is actually
       // unmounted, therefore the layout doesn't begin to run
       requestAnimationFrame(() => {
-        prepareChart(
-          `${nextContent}\n=====${JSON.stringify(meta)}=====`,
-          details
-        );
+        prepareChart({
+          doc: `${nextContent}\n=====${JSON.stringify(meta)}=====`,
+          details,
+        });
         mountGraph();
       });
     })();
