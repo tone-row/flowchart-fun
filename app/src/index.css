@@ -240,5 +240,5 @@ main .monaco-editor {
   width: 100%;
   height: 50px;
   left: 0;
-  @apply bg-gradient-to-b from-transparent to-white;
+  @apply bg-gradient-to-b from-transparent to-white dark:to-neutral-900;
 }

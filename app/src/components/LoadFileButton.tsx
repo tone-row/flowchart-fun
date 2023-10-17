@@ -82,10 +82,10 @@ export function LoadFileButton() {
               <h2 className="text-lg text-wrap-balance leading-[1.3] font-bold">
                 <Trans>Load Chart</Trans>
               </h2>
-              <p className="text-neutral-600 leading-normal mb-2">
+              <p className="text-neutral-600 dark:text-neutral-400 leading-normal mb-2">
                 Do you want to replace your sandbox with this chart?
               </p>
-              <div className="w-full h-32 overflow-hidden whitespace-pre-wrap break-words bg-neutral-200 rounded-md p-2 font-mono leading-normal text-[12px] relative import-file-textarea select-none">
+              <div className="w-full h-32 overflow-hidden whitespace-pre-wrap break-words bg-neutral-200 dark:bg-neutral-800 rounded-md p-2 font-mono leading-normal text-[12px] relative import-file-textarea select-none">
                 {chart?.text}
               </div>
               <Button2
