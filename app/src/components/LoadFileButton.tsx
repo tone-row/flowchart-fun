@@ -19,8 +19,50 @@ export function LoadFileButton() {
 
   return (
     <>
+      <input
+        type="file"
+        accept=".txt"
+        data-testid="load-file-input"
+        className="sr-only"
+        onChange={(event) => {
+          const file = (event.target as HTMLInputElement).files?.[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = async (event) => {
+            const result = event.target?.result as string;
+            try {
+              prepareChart({
+                doc: result,
+                set: false,
+                details: {
+                  id: "",
+                  title: "",
+                  isHosted: false,
+                },
+              })
+                .then((chart) => {
+                  console.log({ chart });
+                  if (chart) {
+                    setChart(chart);
+                    setDoc(result);
+                    setOpen(true);
+                  } else {
+                    setOpen(false);
+                  }
+                })
+                .catch((error) => {
+                  console.error(error);
+                });
+            } catch (error) {
+              console.error(error);
+            }
+          };
+          reader.readAsText(file);
+        }}
+      />
       <EditorActionTextButton
         icon={FileArrowUp}
+        data-testid="load-file-button"
         onClick={() => {
           if (!isProUser) {
             showPaywall({
@@ -31,45 +73,13 @@ export function LoadFileButton() {
             });
             return;
           }
-          const input = document.createElement("input");
-          input.type = "file";
-          input.accept = ".txt";
-          input.onchange = (event) => {
-            const file = (event.target as HTMLInputElement).files?.[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = async (event) => {
-              const result = event.target?.result as string;
-              try {
-                prepareChart({
-                  doc: result,
-                  set: false,
-                  details: {
-                    id: "",
-                    title: "",
-                    isHosted: false,
-                  },
-                })
-                  .then((chart) => {
-                    console.log({ chart });
-                    if (chart) {
-                      setChart(chart);
-                      setDoc(result);
-                      setOpen(true);
-                    } else {
-                      setOpen(false);
-                    }
-                  })
-                  .catch((error) => {
-                    console.error(error);
-                  });
-              } catch (error) {
-                console.error(error);
-              }
-            };
-            reader.readAsText(file);
-          };
-          input.click();
+
+          const input = document.querySelector(
+            'input[data-testid="load-file-input"]'
+          ) as HTMLInputElement;
+          if (input) {
+            input.click();
+          }
         }}
       >
         <Trans>Load File</Trans>
@@ -78,7 +88,7 @@ export function LoadFileButton() {
         <Overlay />
         <Content>
           <Dialog.Description asChild>
-            <div className="grid gap-2">
+            <div className="grid gap-2" data-testid="load-file-modal">
               <h2 className="text-lg text-wrap-balance leading-[1.3] font-bold">
                 <Trans>Load Chart</Trans>
               </h2>
@@ -91,6 +101,7 @@ export function LoadFileButton() {
               <Button2
                 color="blue"
                 leftIcon={<FileArrowUp className="w-5 h-5" />}
+                data-testid="load-file-confirm"
                 onClick={() => {
                   // navigate to the sandbox
                   if (!chart) return;
