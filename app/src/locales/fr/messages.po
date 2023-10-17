@@ -157,7 +157,7 @@ msgid "Breadthfirst"
 msgstr "Parcours en largeur"
 
 #: src/components/ClearTextButton.tsx:26
-#: src/components/ImportDataDialog.tsx:702
+#: src/components/ImportDataDialog.tsx:695
 #: src/components/RenameButton.tsx:156
 #: src/pages/Account.tsx:297
 #: src/pages/Account.tsx:310
@@ -242,7 +242,7 @@ msgstr "Couleur"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "Les couleurs incluent le rouge, l'orange, le jaune, le bleu, le pourpre, le noir, le blanc et le gris."
 
-#: src/components/ImportDataDialog.tsx:538
+#: src/components/ImportDataDialog.tsx:531
 msgid "Column"
 msgstr "Colonne"
 
@@ -275,7 +275,7 @@ msgstr "Conteneurs"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "Les conteneurs sont des nœuds qui contiennent d'autres nœuds. Ils sont déclarés à l'aide de accolades."
 
-#: src/components/ImportDataDialog.tsx:715
+#: src/components/ImportDataDialog.tsx:708
 #: src/components/PaymentStepper.tsx:109
 #: src/components/PaymentStepper.tsx:149
 msgid "Continue"
@@ -404,7 +404,7 @@ msgstr "Télécharger PNG"
 msgid "Download SVG"
 msgstr "Télécharger SVG"
 
-#: src/components/ImportDataDialog.tsx:248
+#: src/components/ImportDataDialog.tsx:241
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "Glissez-déposez un fichier CSV ici, ou cliquez pour sélectionner un fichier"
 
@@ -412,7 +412,7 @@ msgstr "Glissez-déposez un fichier CSV ici, ou cliquez pour sélectionner un fi
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "Dessinez une arête à partir de plusieurs nœuds en commençant la ligne par une référence"
 
-#: src/components/ImportDataDialog.tsx:246
+#: src/components/ImportDataDialog.tsx:239
 msgid "Drop the file here ..."
 msgstr "Déposez le fichier ici ..."
 
@@ -424,8 +424,8 @@ msgstr "ID Edge, Classes, Attributs"
 msgid "Edge Label"
 msgstr "Étiquette Edge"
 
-#: src/components/ImportDataDialog.tsx:468
-#: src/components/ImportDataDialog.tsx:508
+#: src/components/ImportDataDialog.tsx:461
+#: src/components/ImportDataDialog.tsx:501
 msgid "Edge Label Column"
 msgstr "Colonne d'étiquette Edge"
 
@@ -442,21 +442,21 @@ msgstr "Taille du texte de bord"
 msgid "Edge missing indentation"
 msgstr "Indentation manquante du bord"
 
-#: src/components/ImportDataDialog.tsx:406
+#: src/components/ImportDataDialog.tsx:399
 #: src/components/LearnSyntaxDialog.tsx:155
 #: src/components/Tabs/ThemeTab.tsx:358
 msgid "Edges"
 msgstr "Bords"
 
-#: src/components/ImportDataDialog.tsx:424
+#: src/components/ImportDataDialog.tsx:417
 msgid "Edges are declared in the same row as their source node"
 msgstr "Les bords sont déclarés dans la même ligne que leur nœud source"
 
-#: src/components/ImportDataDialog.tsx:430
+#: src/components/ImportDataDialog.tsx:423
 msgid "Edges are declared in the same row as their target node"
 msgstr "Les bords sont déclarés dans la même ligne que leur nœud cible"
 
-#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:428
 msgid "Edges are declared in their own row"
 msgstr "Les bords sont déclarés dans leur propre ligne"
 
@@ -468,15 +468,15 @@ msgstr "Les bords peuvent également avoir des ID, des classes et des attributs 
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "Les bords peuvent être stylisés avec des lignes en pointillés, en pointillés ou en lignes continues"
 
-#: src/components/ImportDataDialog.tsx:434
+#: src/components/ImportDataDialog.tsx:427
 msgid "Edges in Separate Rows"
 msgstr "Bordures en Rangs Séparés"
 
-#: src/components/ImportDataDialog.tsx:423
+#: src/components/ImportDataDialog.tsx:416
 msgid "Edges in Source Node Row"
 msgstr "Bordures dans la Ligne du Nœud Source"
 
-#: src/components/ImportDataDialog.tsx:429
+#: src/components/ImportDataDialog.tsx:422
 msgid "Edges in Target Node Row"
 msgstr "Bordures dans la Ligne du Nœud Cible"
 
@@ -498,7 +498,7 @@ msgstr "Éditeur"
 msgid "Email"
 msgstr "E-mail"
 
-#: src/components/ImportDataDialog.tsx:554
+#: src/components/ImportDataDialog.tsx:547
 msgid "Empty"
 msgstr "Vide"
 
@@ -518,13 +518,17 @@ msgstr "Entrez votre adresse e-mail et nous vous enverrons un lien magique pour 
 msgid "Enter your email address below and we'll send you a link to reset your password."
 msgstr "Entrez votre adresse e-mail ci-dessous et nous vous enverrons un lien pour réinitialiser votre mot de passe."
 
-#: src/components/ImportDataDialog.tsx:556
+#: src/components/ImportDataDialog.tsx:549
 msgid "Equal To"
 msgstr "Égal à"
 
 #: src/lib/graphOptions.ts:48
 msgid "Excalidraw"
 msgstr "Excalidraw"
+
+#: src/components/LoadFileButton.tsx:28
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
+msgstr "Expérimentez l'efficacité et la sécurité du chargement de fichiers locaux directement dans votre organigramme, parfait pour gérer les documents liés au travail hors ligne. Débloquez cette fonctionnalité exclusive Pro et plus encore avec Flowchart Fun Pro, disponible pour seulement 3 $ / mois ou 30 $ / an."
 
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:151
@@ -617,9 +621,13 @@ msgstr "Historique"
 msgid "Home"
 msgstr "Accueil"
 
-#: src/components/ImportDataDialog.tsx:407
+#: src/components/ImportDataDialog.tsx:400
 msgid "How are edges declared in this data?"
 msgstr "Comment les bords sont-ils déclarés dans ces données?"
+
+#: src/components/EditorWrapper.tsx:154
+msgid "How would you like to save your chart?"
+msgstr "Comment souhaitez-vous enregistrer votre graphique?"
 
 #: src/components/LearnSyntaxDialog.tsx:127
 msgid "ID's"
@@ -641,14 +649,14 @@ msgstr "Si vous souhaitez créer un bord, faites une indentation de cette ligne.
 msgid "Images"
 msgstr "Images"
 
-#: src/components/ImportDataDialog.tsx:86
-#: src/components/ImportDataDialog.tsx:99
+#: src/components/ImportDataDialog.tsx:79
+#: src/components/ImportDataDialog.tsx:92
 #: src/components/ImportDataUnauthenticatedDialog.tsx:28
 #: src/components/ImportDataUnauthenticatedDialog.tsx:45
 msgid "Import Data"
 msgstr "Importer des données"
 
-#: src/components/ImportDataDialog.tsx:104
+#: src/components/ImportDataDialog.tsx:97
 msgid "Import data from a CSV file."
 msgstr "Importer des données à partir d'un fichier CSV."
 
@@ -676,7 +684,7 @@ msgstr "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la
 msgid "Info"
 msgstr "Info"
 
-#: src/components/ImportDataDialog.tsx:547
+#: src/components/ImportDataDialog.tsx:540
 msgid "Is"
 msgstr "Est"
 
@@ -703,7 +711,7 @@ msgid "Leading References"
 msgstr "Principales références"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:67
-#: src/components/PaywallModal.tsx:52
+#: src/components/PaywallModal.tsx:66
 msgid "Learn More"
 msgstr "En savoir plus"
 
@@ -738,6 +746,18 @@ msgstr "Lien"
 msgid "Load"
 msgstr "Charger"
 
+#: src/components/LoadFileButton.tsx:83
+msgid "Load Chart"
+msgstr "Charger le graphique"
+
+#: src/components/LoadFileButton.tsx:75
+msgid "Load File"
+msgstr "Charger le fichier"
+
+#: src/components/LoadFileButton.tsx:27
+msgid "Load Files"
+msgstr "Charger des fichiers"
+
 #: src/components/LoadTemplateDialog.tsx:138
 msgid "Load default content"
 msgstr "Charger le contenu par défaut"
@@ -764,7 +784,7 @@ msgstr "Connexion"
 msgid "Log Out"
 msgstr "Déconnexion"
 
-#: src/components/EditorWrapper.tsx:107
+#: src/components/EditorWrapper.tsx:105
 msgid "Log in to Save"
 msgstr "Connectez-vous pour enregistrer"
 
@@ -788,7 +808,7 @@ msgstr "Assurez-vous d'utiliser le même e-mail que vous utiliserez pour vous co
 msgid "Manage Billing"
 msgstr "Gérer la facturation"
 
-#: src/components/ImportDataDialog.tsx:384
+#: src/components/ImportDataDialog.tsx:377
 msgid "Map Data"
 msgstr "Cartographier les données"
 
@@ -809,6 +829,10 @@ msgstr "Plusieurs pointeurs sur la même ligne"
 msgid "Name Chart"
 msgstr "Nommer le graphique"
 
+#: src/components/EditorWrapper.tsx:226
+msgid "Name your chart"
+msgstr "Nommez votre graphique"
+
 #: src/components/Header.tsx:87
 #: src/components/Header.tsx:338
 #: src/pages/Charts.tsx:100
@@ -824,7 +848,7 @@ msgstr "Nouveau courriel"
 msgid "Next charge"
 msgstr "Prochain paiement"
 
-#: src/components/ImportDataDialog.tsx:418
+#: src/components/ImportDataDialog.tsx:411
 msgid "No Edges"
 msgstr "Pas de bords"
 
@@ -848,7 +872,7 @@ msgstr "Style de bordure de nœud"
 msgid "Node Colors"
 msgstr "Couleurs de nœud"
 
-#: src/components/ImportDataDialog.tsx:389
+#: src/components/ImportDataDialog.tsx:382
 msgid "Node ID"
 msgstr "Identifiant de nœud"
 
@@ -856,7 +880,7 @@ msgstr "Identifiant de nœud"
 msgid "Node ID, Classes, Attributes"
 msgstr "Identifiant de nœud, classes, attributs"
 
-#: src/components/ImportDataDialog.tsx:397
+#: src/components/ImportDataDialog.tsx:390
 #: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "Étiquette de nœud"
@@ -881,7 +905,7 @@ msgstr "Nœuds"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "Les nœuds peuvent être stylisés avec des traits, des points ou des doubles. Les bordures peuvent également être supprimées avec border_none."
 
-#: src/components/ImportDataDialog.tsx:555
+#: src/components/ImportDataDialog.tsx:548
 msgid "Not Empty"
 msgstr "Pas vide"
 
@@ -956,7 +980,7 @@ msgstr "Politique de confidentialité"
 msgid "Process Diagram"
 msgstr "Diagramme de processus"
 
-#: src/components/ImportDataDialog.tsx:269
+#: src/components/ImportDataDialog.tsx:262
 msgid "Processing Data"
 msgstr "Traitement des données"
 
@@ -982,7 +1006,7 @@ msgstr "Aléatoire"
 msgid "Rapid Templates"
 msgstr "Modèles rapides"
 
-#: src/components/EditorWrapper.tsx:56
+#: src/components/EditorWrapper.tsx:55
 #: src/components/ShareDialog.tsx:143
 msgid "Read-only"
 msgstr "Lecture seulement"
@@ -1077,14 +1101,21 @@ msgstr "Roadmap"
 msgid "Rotate Label"
 msgstr "Faire pivoter l'étiquette"
 
-#: src/components/EditorWrapper.tsx:124
-#: src/components/EditorWrapper.tsx:159
+#: src/components/EditorWrapper.tsx:121
 msgid "Save"
 msgstr "Sauver"
 
 #: src/components/PaymentStepper.tsx:97
 msgid "Save 16%"
 msgstr "Économisez 16%"
+
+#: src/components/EditorWrapper.tsx:162
+msgid "Save to Cloud"
+msgstr "Enregistrer dans le Cloud"
+
+#: src/components/EditorWrapper.tsx:178
+msgid "Save to File"
+msgstr "Enregistrer dans un fichier"
 
 #: src/pages/New.tsx:205
 msgid "Set Content"
@@ -1100,7 +1131,7 @@ msgstr "Définir une hauteur de nœud fixe"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/components/EditorWrapper.tsx:70
+#: src/components/EditorWrapper.tsx:69
 msgid "Share"
 msgstr "Partager"
 
@@ -1130,12 +1161,12 @@ msgstr "Désolé ! Cette page n'est disponible qu'en anglais."
 msgid "Source Arrow Shape"
 msgstr "Forme de la flèche source"
 
-#: src/components/ImportDataDialog.tsx:485
-#: src/components/ImportDataDialog.tsx:521
+#: src/components/ImportDataDialog.tsx:478
+#: src/components/ImportDataDialog.tsx:514
 msgid "Source Column"
 msgstr "Colonne source"
 
-#: src/components/ImportDataDialog.tsx:495
+#: src/components/ImportDataDialog.tsx:488
 msgid "Source Delimiter"
 msgstr "Délimiteur source"
 
@@ -1164,7 +1195,7 @@ msgstr "Début"
 msgid "Start Migration"
 msgstr "Démarrer la migration"
 
-#: src/components/ImportDataDialog.tsx:281
+#: src/components/ImportDataDialog.tsx:274
 msgid "Start Over"
 msgstr "Recommencer"
 
@@ -1181,7 +1212,7 @@ msgid "Style Classes"
 msgstr "Classes de style"
 
 #: src/components/Feedback.tsx:81
-#: src/components/ImportDataDialog.tsx:581
+#: src/components/ImportDataDialog.tsx:574
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -1198,12 +1229,12 @@ msgstr "L'abonnement prendra fin"
 msgid "Target Arrow Shape"
 msgstr "Forme de la flèche cible"
 
-#: src/components/ImportDataDialog.tsx:442
-#: src/components/ImportDataDialog.tsx:528
+#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:521
 msgid "Target Column"
 msgstr "Colonne cible"
 
-#: src/components/ImportDataDialog.tsx:453
+#: src/components/ImportDataDialog.tsx:446
 msgid "Target Delimiter"
 msgstr "Délimiteur cible"
 
@@ -1256,23 +1287,23 @@ msgstr "Merci pour votre commentaire !"
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "La meilleure façon de changer les styles est de cliquer avec le bouton droit sur un nœud ou une arête et de sélectionner le style souhaité."
 
-#: src/components/ImportDataDialog.tsx:469
+#: src/components/ImportDataDialog.tsx:462
 msgid "The column that contains the edge label(s)"
 msgstr "La colonne qui contient les étiquettes de bord"
 
-#: src/components/ImportDataDialog.tsx:486
+#: src/components/ImportDataDialog.tsx:479
 msgid "The column that contains the source node ID(s)"
 msgstr "La colonne qui contient les ID de nœud source"
 
-#: src/components/ImportDataDialog.tsx:443
+#: src/components/ImportDataDialog.tsx:436
 msgid "The column that contains the target node ID(s)"
 msgstr "La colonne qui contient les ID de nœud cible"
 
-#: src/components/ImportDataDialog.tsx:496
+#: src/components/ImportDataDialog.tsx:489
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "Le délimiteur utilisé pour séparer plusieurs nœuds source"
 
-#: src/components/ImportDataDialog.tsx:454
+#: src/components/ImportDataDialog.tsx:447
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "Le délimiteur utilisé pour séparer plusieurs nœuds cibles"
 
@@ -1290,7 +1321,7 @@ msgstr "Thème"
 msgid "Theme Editor"
 msgstr "Éditeur de thème"
 
-#: src/components/ImportDataDialog.tsx:419
+#: src/components/ImportDataDialog.tsx:412
 msgid "There are no edges in this data"
 msgstr "Il n'y a pas d'arêtes dans ces données"
 
@@ -1395,7 +1426,7 @@ msgstr "Mettre à jour l'e-mail"
 msgid "Upgrade to Pro"
 msgstr "Mettez à niveau vers Pro"
 
-#: src/components/ImportDataDialog.tsx:208
+#: src/components/ImportDataDialog.tsx:201
 msgid "Upload your File"
 msgstr "Téléchargez votre fichier"
 
@@ -1485,7 +1516,7 @@ msgstr "Largeur"
 msgid "Width and Height"
 msgstr "Largeur et hauteur"
 
-#: src/components/ImportDataDialog.tsx:699
+#: src/components/ImportDataDialog.tsx:692
 msgid "Would you like to continue?"
 msgstr "Voulez-vous continuer ?"
 
@@ -1497,7 +1528,7 @@ msgstr "Annuellement"
 msgid "Yes: Option A"
 msgstr "Oui : Option A"
 
-#: src/components/ImportDataDialog.tsx:697
+#: src/components/ImportDataDialog.tsx:690
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Vous êtes sur le point d'ajouter {numNodes} nœuds et {numEdges} arêtes à votre graphe."
 

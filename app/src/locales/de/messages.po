@@ -157,7 +157,7 @@ msgid "Breadthfirst"
 msgstr "In die Breite"
 
 #: src/components/ClearTextButton.tsx:26
-#: src/components/ImportDataDialog.tsx:702
+#: src/components/ImportDataDialog.tsx:695
 #: src/components/RenameButton.tsx:156
 #: src/pages/Account.tsx:297
 #: src/pages/Account.tsx:310
@@ -242,7 +242,7 @@ msgstr "Farbe"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "Farben beinhalten Rot, Orange, Gelb, Blau, Violett, Schwarz, Weiß und Grau."
 
-#: src/components/ImportDataDialog.tsx:538
+#: src/components/ImportDataDialog.tsx:531
 msgid "Column"
 msgstr "Spalte"
 
@@ -275,7 +275,7 @@ msgstr "Behälter"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "Container sind Knoten, die andere Knoten enthalten. Sie werden mit geschweiften Klammern deklariert."
 
-#: src/components/ImportDataDialog.tsx:715
+#: src/components/ImportDataDialog.tsx:708
 #: src/components/PaymentStepper.tsx:109
 #: src/components/PaymentStepper.tsx:149
 msgid "Continue"
@@ -404,7 +404,7 @@ msgstr "PNG herunterladen"
 msgid "Download SVG"
 msgstr "SVG herunterladen"
 
-#: src/components/ImportDataDialog.tsx:248
+#: src/components/ImportDataDialog.tsx:241
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "Ziehen Sie eine CSV-Datei hierher oder klicken Sie, um eine Datei auszuwählen"
 
@@ -412,7 +412,7 @@ msgstr "Ziehen Sie eine CSV-Datei hierher oder klicken Sie, um eine Datei auszuw
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "Zeichnen Sie eine Kante von mehreren Knoten, indem Sie die Zeile mit einer Referenz beginnen."
 
-#: src/components/ImportDataDialog.tsx:246
+#: src/components/ImportDataDialog.tsx:239
 msgid "Drop the file here ..."
 msgstr "Datei hier ablegen ..."
 
@@ -424,8 +424,8 @@ msgstr "Kante-ID, Klassen, Attribute"
 msgid "Edge Label"
 msgstr "Kantenbeschriftung"
 
-#: src/components/ImportDataDialog.tsx:468
-#: src/components/ImportDataDialog.tsx:508
+#: src/components/ImportDataDialog.tsx:461
+#: src/components/ImportDataDialog.tsx:501
 msgid "Edge Label Column"
 msgstr "Spalte mit Kantenbeschriftung"
 
@@ -442,21 +442,21 @@ msgstr "Kanten Textgröße"
 msgid "Edge missing indentation"
 msgstr "Kante fehlende Einrückung"
 
-#: src/components/ImportDataDialog.tsx:406
+#: src/components/ImportDataDialog.tsx:399
 #: src/components/LearnSyntaxDialog.tsx:155
 #: src/components/Tabs/ThemeTab.tsx:358
 msgid "Edges"
 msgstr "Kanten"
 
-#: src/components/ImportDataDialog.tsx:424
+#: src/components/ImportDataDialog.tsx:417
 msgid "Edges are declared in the same row as their source node"
 msgstr "Kanten werden in der gleichen Zeile wie ihr Quellknoten deklariert"
 
-#: src/components/ImportDataDialog.tsx:430
+#: src/components/ImportDataDialog.tsx:423
 msgid "Edges are declared in the same row as their target node"
 msgstr "Kanten werden in der gleichen Zeile wie ihr Zielknoten deklariert"
 
-#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:428
 msgid "Edges are declared in their own row"
 msgstr "Kanten werden in ihrer eigenen Zeile deklariert"
 
@@ -468,15 +468,15 @@ msgstr "Kanten können auch ID's, Klassen und Attribute vor der Bezeichnung habe
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "Kanten können mit gestrichelten, punktierten oder soliden Linien gestaltet werden"
 
-#: src/components/ImportDataDialog.tsx:434
+#: src/components/ImportDataDialog.tsx:427
 msgid "Edges in Separate Rows"
 msgstr "Kanten in separaten Zeilen"
 
-#: src/components/ImportDataDialog.tsx:423
+#: src/components/ImportDataDialog.tsx:416
 msgid "Edges in Source Node Row"
 msgstr "Kanten in Quellknotenzeile"
 
-#: src/components/ImportDataDialog.tsx:429
+#: src/components/ImportDataDialog.tsx:422
 msgid "Edges in Target Node Row"
 msgstr "Kanten in Zielknotenzeile"
 
@@ -498,7 +498,7 @@ msgstr "Editor"
 msgid "Email"
 msgstr "E-Mail"
 
-#: src/components/ImportDataDialog.tsx:554
+#: src/components/ImportDataDialog.tsx:547
 msgid "Empty"
 msgstr "Leer"
 
@@ -518,13 +518,17 @@ msgstr "Geben Sie Ihre E-Mail-Adresse ein, und wir senden Ihnen einen magischen 
 msgid "Enter your email address below and we'll send you a link to reset your password."
 msgstr "Geben Sie unten Ihre E-Mail-Adresse ein, und wir senden Ihnen einen Link, um Ihr Passwort zurückzusetzen."
 
-#: src/components/ImportDataDialog.tsx:556
+#: src/components/ImportDataDialog.tsx:549
 msgid "Equal To"
 msgstr "Gleich"
 
 #: src/lib/graphOptions.ts:48
 msgid "Excalidraw"
 msgstr "Excalidraw"
+
+#: src/components/LoadFileButton.tsx:28
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
+msgstr "Erleben Sie die Effizienz und Sicherheit beim Laden lokaler Dateien direkt in Ihren Flussdiagramm, perfekt für das Verwalten arbeitsbezogener Dokumente offline. Entsperren Sie dieses exklusive Pro-Feature und mehr mit Flowchart Fun Pro, erhältlich für nur 3 $/Monat oder 30 $/Jahr."
 
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:151
@@ -617,9 +621,13 @@ msgstr "Verlauf"
 msgid "Home"
 msgstr "Startseite"
 
-#: src/components/ImportDataDialog.tsx:407
+#: src/components/ImportDataDialog.tsx:400
 msgid "How are edges declared in this data?"
 msgstr "Wie werden Kanten in diesen Daten deklariert?"
+
+#: src/components/EditorWrapper.tsx:154
+msgid "How would you like to save your chart?"
+msgstr "Wie möchten Sie Ihren Chart speichern?"
 
 #: src/components/LearnSyntaxDialog.tsx:127
 msgid "ID's"
@@ -641,14 +649,14 @@ msgstr "Wenn Sie eine Kante erstellen möchten, rücken Sie diese Zeile ein. Wen
 msgid "Images"
 msgstr "Bilder"
 
-#: src/components/ImportDataDialog.tsx:86
-#: src/components/ImportDataDialog.tsx:99
+#: src/components/ImportDataDialog.tsx:79
+#: src/components/ImportDataDialog.tsx:92
 #: src/components/ImportDataUnauthenticatedDialog.tsx:28
 #: src/components/ImportDataUnauthenticatedDialog.tsx:45
 msgid "Import Data"
 msgstr "Daten importieren"
 
-#: src/components/ImportDataDialog.tsx:104
+#: src/components/ImportDataDialog.tsx:97
 msgid "Import data from a CSV file."
 msgstr "Daten aus einer CSV-Datei importieren."
 
@@ -676,7 +684,7 @@ msgstr "Fügen Sie einen Titel mit einem <0>title</0>-Attribut ein. Um die Visio
 msgid "Info"
 msgstr "Info"
 
-#: src/components/ImportDataDialog.tsx:547
+#: src/components/ImportDataDialog.tsx:540
 msgid "Is"
 msgstr "Ist"
 
@@ -703,7 +711,7 @@ msgid "Leading References"
 msgstr "Führende Referenzen"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:67
-#: src/components/PaywallModal.tsx:52
+#: src/components/PaywallModal.tsx:66
 msgid "Learn More"
 msgstr "Mehr erfahren"
 
@@ -738,6 +746,18 @@ msgstr "Link"
 msgid "Load"
 msgstr "Laden"
 
+#: src/components/LoadFileButton.tsx:83
+msgid "Load Chart"
+msgstr "Chart laden"
+
+#: src/components/LoadFileButton.tsx:75
+msgid "Load File"
+msgstr "Datei laden"
+
+#: src/components/LoadFileButton.tsx:27
+msgid "Load Files"
+msgstr "Dateien laden"
+
 #: src/components/LoadTemplateDialog.tsx:138
 msgid "Load default content"
 msgstr "Standardinhalt laden"
@@ -764,7 +784,7 @@ msgstr "Anmelden"
 msgid "Log Out"
 msgstr "Abmelden"
 
-#: src/components/EditorWrapper.tsx:107
+#: src/components/EditorWrapper.tsx:105
 msgid "Log in to Save"
 msgstr "Einloggen, um zu speichern"
 
@@ -788,7 +808,7 @@ msgstr "Stellen Sie sicher, dass Sie die gleiche E-Mail verwenden, mit der Sie s
 msgid "Manage Billing"
 msgstr "Abrechnung verwalten"
 
-#: src/components/ImportDataDialog.tsx:384
+#: src/components/ImportDataDialog.tsx:377
 msgid "Map Data"
 msgstr "Daten abbilden"
 
@@ -809,6 +829,10 @@ msgstr "Mehrere Zeiger auf derselben Zeile"
 msgid "Name Chart"
 msgstr "Diagramm benennen"
 
+#: src/components/EditorWrapper.tsx:226
+msgid "Name your chart"
+msgstr "Benennen Sie Ihren Chart"
+
 #: src/components/Header.tsx:87
 #: src/components/Header.tsx:338
 #: src/pages/Charts.tsx:100
@@ -824,7 +848,7 @@ msgstr "Neue e-mail"
 msgid "Next charge"
 msgstr "Nächste Gebühr"
 
-#: src/components/ImportDataDialog.tsx:418
+#: src/components/ImportDataDialog.tsx:411
 msgid "No Edges"
 msgstr "Keine Kanten"
 
@@ -848,7 +872,7 @@ msgstr "Knotenrahmenstil"
 msgid "Node Colors"
 msgstr "Knotenfarben"
 
-#: src/components/ImportDataDialog.tsx:389
+#: src/components/ImportDataDialog.tsx:382
 msgid "Node ID"
 msgstr "Knoten-ID"
 
@@ -856,7 +880,7 @@ msgstr "Knoten-ID"
 msgid "Node ID, Classes, Attributes"
 msgstr "Knoten-ID, Klassen, Attribute"
 
-#: src/components/ImportDataDialog.tsx:397
+#: src/components/ImportDataDialog.tsx:390
 #: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "Knotenbeschriftung"
@@ -881,7 +905,7 @@ msgstr "Knoten"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "Knoten können mit gestrichelt, punktiert oder doppelt gestaltet werden. Grenzen können auch mit border_none entfernt werden."
 
-#: src/components/ImportDataDialog.tsx:555
+#: src/components/ImportDataDialog.tsx:548
 msgid "Not Empty"
 msgstr "Nicht leer"
 
@@ -956,7 +980,7 @@ msgstr "Datenschutzerklärung"
 msgid "Process Diagram"
 msgstr "Prozessdiagramm"
 
-#: src/components/ImportDataDialog.tsx:269
+#: src/components/ImportDataDialog.tsx:262
 msgid "Processing Data"
 msgstr "Datenverarbeitung"
 
@@ -982,7 +1006,7 @@ msgstr "Zufällig"
 msgid "Rapid Templates"
 msgstr "Schnelle Vorlagen"
 
-#: src/components/EditorWrapper.tsx:56
+#: src/components/EditorWrapper.tsx:55
 #: src/components/ShareDialog.tsx:143
 msgid "Read-only"
 msgstr "Schreibgeschützt"
@@ -1077,14 +1101,21 @@ msgstr "Fahrplan"
 msgid "Rotate Label"
 msgstr "Label drehen"
 
-#: src/components/EditorWrapper.tsx:124
-#: src/components/EditorWrapper.tsx:159
+#: src/components/EditorWrapper.tsx:121
 msgid "Save"
 msgstr "Speichern"
 
 #: src/components/PaymentStepper.tsx:97
 msgid "Save 16%"
 msgstr "Sparen Sie 16%"
+
+#: src/components/EditorWrapper.tsx:162
+msgid "Save to Cloud"
+msgstr "In die Cloud speichern"
+
+#: src/components/EditorWrapper.tsx:178
+msgid "Save to File"
+msgstr "In Datei speichern"
 
 #: src/pages/New.tsx:205
 msgid "Set Content"
@@ -1100,7 +1131,7 @@ msgstr "Fester Knotenhöhe festlegen"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/components/EditorWrapper.tsx:70
+#: src/components/EditorWrapper.tsx:69
 msgid "Share"
 msgstr "Teilen"
 
@@ -1130,12 +1161,12 @@ msgstr "Entschuldigung! Diese Seite ist nur auf Englisch verfügbar."
 msgid "Source Arrow Shape"
 msgstr "Pfeilform der Quelle"
 
-#: src/components/ImportDataDialog.tsx:485
-#: src/components/ImportDataDialog.tsx:521
+#: src/components/ImportDataDialog.tsx:478
+#: src/components/ImportDataDialog.tsx:514
 msgid "Source Column"
 msgstr "Quellspalte"
 
-#: src/components/ImportDataDialog.tsx:495
+#: src/components/ImportDataDialog.tsx:488
 msgid "Source Delimiter"
 msgstr "Quell-Trennzeichen"
 
@@ -1164,7 +1195,7 @@ msgstr "Start"
 msgid "Start Migration"
 msgstr "Migration starten"
 
-#: src/components/ImportDataDialog.tsx:281
+#: src/components/ImportDataDialog.tsx:274
 msgid "Start Over"
 msgstr "Von vorne anfangen"
 
@@ -1181,7 +1212,7 @@ msgid "Style Classes"
 msgstr "Stil-Klassen"
 
 #: src/components/Feedback.tsx:81
-#: src/components/ImportDataDialog.tsx:581
+#: src/components/ImportDataDialog.tsx:574
 msgid "Submit"
 msgstr "Einsenden"
 
@@ -1198,12 +1229,12 @@ msgstr "Abonnement wird beendet"
 msgid "Target Arrow Shape"
 msgstr "Pfeilform des Ziels"
 
-#: src/components/ImportDataDialog.tsx:442
-#: src/components/ImportDataDialog.tsx:528
+#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:521
 msgid "Target Column"
 msgstr "Ziel-Spalte"
 
-#: src/components/ImportDataDialog.tsx:453
+#: src/components/ImportDataDialog.tsx:446
 msgid "Target Delimiter"
 msgstr "Ziel-Trennzeichen"
 
@@ -1256,23 +1287,23 @@ msgstr "Danke für Ihr Feedback!"
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "Der beste Weg, um Stile zu ändern, besteht darin, mit der rechten Maustaste auf einen Knoten oder eine Kante zu klicken und den gewünschten Stil auszuwählen."
 
-#: src/components/ImportDataDialog.tsx:469
+#: src/components/ImportDataDialog.tsx:462
 msgid "The column that contains the edge label(s)"
 msgstr "Die Spalte, die die Kantenbeschriftung(en) enthält"
 
-#: src/components/ImportDataDialog.tsx:486
+#: src/components/ImportDataDialog.tsx:479
 msgid "The column that contains the source node ID(s)"
 msgstr "Die Spalte, die die Quellknoten-ID(en) enthält"
 
-#: src/components/ImportDataDialog.tsx:443
+#: src/components/ImportDataDialog.tsx:436
 msgid "The column that contains the target node ID(s)"
 msgstr "Die Spalte, die die Zielknoten-ID(en) enthält"
 
-#: src/components/ImportDataDialog.tsx:496
+#: src/components/ImportDataDialog.tsx:489
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "Der Trennzeichen, das verwendet wird, um mehrere Quellknoten zu trennen"
 
-#: src/components/ImportDataDialog.tsx:454
+#: src/components/ImportDataDialog.tsx:447
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "Der Trennzeichen, das verwendet wird, um mehrere Zielknoten zu trennen"
 
@@ -1290,7 +1321,7 @@ msgstr "Thema "
 msgid "Theme Editor"
 msgstr "Themen-Editor"
 
-#: src/components/ImportDataDialog.tsx:419
+#: src/components/ImportDataDialog.tsx:412
 msgid "There are no edges in this data"
 msgstr "Es gibt keine Kanten in diesen Daten"
 
@@ -1395,7 +1426,7 @@ msgstr "E-Mail aktualisieren"
 msgid "Upgrade to Pro"
 msgstr "Auf Pro upgraden"
 
-#: src/components/ImportDataDialog.tsx:208
+#: src/components/ImportDataDialog.tsx:201
 msgid "Upload your File"
 msgstr "Laden Sie Ihre Datei hoch"
 
@@ -1485,7 +1516,7 @@ msgstr "Breite"
 msgid "Width and Height"
 msgstr "Breite und Höhe"
 
-#: src/components/ImportDataDialog.tsx:699
+#: src/components/ImportDataDialog.tsx:692
 msgid "Would you like to continue?"
 msgstr "Möchten Sie fortfahren?"
 
@@ -1497,7 +1528,7 @@ msgstr "Jährlich"
 msgid "Yes: Option A"
 msgstr "Ja: Option A"
 
-#: src/components/ImportDataDialog.tsx:697
+#: src/components/ImportDataDialog.tsx:690
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Sie sind dabei, {numNodes} Knoten und {numEdges} Kanten zu Ihrem Graphen hinzuzufügen."
 
