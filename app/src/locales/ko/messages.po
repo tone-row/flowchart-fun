@@ -29,11 +29,11 @@ msgstr "1 임시 플로차트"
 msgid "<0>Click the button below to migrate all of your temporary flowcharts into hosted ones.</0><1>Do not close this window. The page will refresh when the migration is complete.</1>"
 msgstr "<0>아래 버튼을 클릭하여 모든 임시 플로우차트를 호스팅하는 것으로 이전하세요.</0><1>이 창을 닫지 마십시오. 이전이 완료되면 페이지가 새로 고칩니다.</1>"
 
-#: src/components/Tabs/ThemeTab.tsx:609
+#: src/components/Tabs/ThemeTab.tsx:607
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>사용자 정의 CSS만</0>이 활성화되었습니다. 레이아웃과 고급 설정만 적용됩니다."
 
-#: src/components/Settings.tsx:108
+#: src/components/Settings.tsx:95
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0>은 <1>Tone Row</1>가 만든 오픈 소스 프로젝트입니다."
 
@@ -49,7 +49,7 @@ msgstr "<0>현재 당신은 무료 계정을 가지고 있습니다. <1/><2>프�
 msgid "A new version of the app is available. Please reload to update."
 msgstr "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면 다시로드하십시오."
 
-#: src/components/Settings.tsx:105
+#: src/components/Settings.tsx:92
 msgid "About"
 msgstr "소개"
 
@@ -63,7 +63,7 @@ msgstr "계정"
 msgid "Activate your Account"
 msgstr "계정을 활성화하세요 "
 
-#: src/components/Tabs/ThemeTab.tsx:543
+#: src/components/Tabs/ThemeTab.tsx:541
 msgid "Advanced"
 msgstr "고급"
 
@@ -75,12 +75,12 @@ msgstr "금액"
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접 이메일을 보내주십시오."
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:58
 msgid "Appearance"
 msgstr "외관"
 
-#: src/components/Tabs/ThemeTab.tsx:497
-#: src/components/Tabs/ThemeTab.tsx:498
+#: src/components/Tabs/ThemeTab.tsx:495
+#: src/components/Tabs/ThemeTab.tsx:496
 msgid "Arrow Size"
 msgstr "화살표 크기"
 
@@ -100,10 +100,10 @@ msgstr "뒤로"
 msgid "Back To Editor"
 msgstr "편집기로 돌아가기"
 
-#: src/components/Tabs/ThemeTab.tsx:161
-#: src/components/Tabs/ThemeTab.tsx:162
-#: src/components/Tabs/ThemeTab.tsx:213
-#: src/components/Tabs/ThemeTab.tsx:216
+#: src/components/Tabs/ThemeTab.tsx:159
+#: src/components/Tabs/ThemeTab.tsx:160
+#: src/components/Tabs/ThemeTab.tsx:211
+#: src/components/Tabs/ThemeTab.tsx:214
 msgid "Background Color"
 msgstr "배경색"
 
@@ -111,11 +111,11 @@ msgstr "배경색"
 msgid "Basic Flowchart"
 msgstr "기본 플로우 차트"
 
-#: src/components/Settings.tsx:170
+#: src/components/Settings.tsx:157
 msgid "Become a Github Sponsor"
 msgstr "깃허브 스폰서가 되기"
 
-#: src/components/Settings.tsx:158
+#: src/components/Settings.tsx:145
 msgid "Become a Pro User"
 msgstr "프로 사용자가 되기"
 
@@ -137,13 +137,13 @@ msgstr "블로그"
 msgid "Book a Meeting"
 msgstr "미팅 예약"
 
-#: src/components/Tabs/ThemeTab.tsx:267
-#: src/components/Tabs/ThemeTab.tsx:268
+#: src/components/Tabs/ThemeTab.tsx:265
+#: src/components/Tabs/ThemeTab.tsx:266
 msgid "Border Color"
 msgstr "테두리 색"
 
-#: src/components/Tabs/ThemeTab.tsx:252
-#: src/components/Tabs/ThemeTab.tsx:253
+#: src/components/Tabs/ThemeTab.tsx:250
+#: src/components/Tabs/ThemeTab.tsx:251
 msgid "Border Width"
 msgstr "테두리 너비"
 
@@ -233,8 +233,8 @@ msgstr "클론"
 msgid "Close"
 msgstr "닫기"
 
-#: src/components/Tabs/ThemeTab.tsx:396
-#: src/components/Tabs/ThemeTab.tsx:397
+#: src/components/Tabs/ThemeTab.tsx:394
+#: src/components/Tabs/ThemeTab.tsx:395
 msgid "Color"
 msgstr "색상"
 
@@ -285,7 +285,7 @@ msgstr "계속하기"
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
-#: src/components/Settings.tsx:144
+#: src/components/Settings.tsx:131
 msgid "Cookie Policy"
 msgstr "쿠키 정책"
 
@@ -335,12 +335,12 @@ msgstr "AI로 만들기"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "두 노드 사이에 엣지를 만드는 것은 첫 번째 노드 아래에 두 번째 노드를 들여 쓰는 것으로 합니다."
 
-#: src/components/Tabs/ThemeTab.tsx:365
+#: src/components/Tabs/ThemeTab.tsx:363
 msgid "Curve Style"
 msgstr "곡선 스타일"
 
-#: src/components/Tabs/ThemeTab.tsx:551
-#: src/components/Tabs/ThemeTab.tsx:552
+#: src/components/Tabs/ThemeTab.tsx:549
+#: src/components/Tabs/ThemeTab.tsx:550
 msgid "Custom CSS"
 msgstr "사용자 정의 CSS"
 
@@ -356,8 +356,8 @@ msgstr "고객 포털"
 msgid "Dark"
 msgstr "다크"
 
-#: src/components/Settings.tsx:96
-#: src/components/Settings.tsx:99
+#: src/components/Settings.tsx:83
+#: src/components/Settings.tsx:86
 msgid "Dark Mode"
 msgstr "다크 모드"
 
@@ -369,8 +369,8 @@ msgstr "날짜"
 msgid "Direct from your Data"
 msgstr "당신의 데이터에서 직접"
 
+#: src/components/Tabs/ThemeTab.tsx:110
 #: src/components/Tabs/ThemeTab.tsx:112
-#: src/components/Tabs/ThemeTab.tsx:114
 msgid "Direction"
 msgstr "방향"
 
@@ -433,8 +433,8 @@ msgstr "가장자리 라벨 열"
 msgid "Edge Style"
 msgstr "가장자리 스타일"
 
-#: src/components/Tabs/ThemeTab.tsx:512
-#: src/components/Tabs/ThemeTab.tsx:513
+#: src/components/Tabs/ThemeTab.tsx:510
+#: src/components/Tabs/ThemeTab.tsx:511
 msgid "Edge Text Size"
 msgstr "가장자리 텍스트 크기"
 
@@ -444,7 +444,7 @@ msgstr "들여쓰기가 누락된 가장자리"
 
 #: src/components/ImportDataDialog.tsx:399
 #: src/components/LearnSyntaxDialog.tsx:155
-#: src/components/Tabs/ThemeTab.tsx:358
+#: src/components/Tabs/ThemeTab.tsx:356
 msgid "Edges"
 msgstr "가장자리"
 
@@ -553,7 +553,7 @@ msgstr "PNG, JPG 및 SVG로 내보내기"
 msgid "Feedback"
 msgstr "피드백"
 
-#: src/components/Tabs/ThemeTab.tsx:336
+#: src/components/Tabs/ThemeTab.tsx:334
 msgid "Fixed Node Height"
 msgstr "고정된 노드 높이"
 
@@ -565,11 +565,11 @@ msgstr "플로우 차트 펀 프로는 필요한 만큼 많은 플로우 차트�
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
 msgstr "Flowchart Fun Pro은 무제한 플로차트, 무제한 협력자 및 무제한 저장 공간을 제공하며 월 3 달러 또는 연간 30 달러로 제공됩니다."
 
-#: src/components/Settings.tsx:132
+#: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
 msgstr "트위터에서 우리를 팔로우하기"
 
-#: src/components/Tabs/ThemeTab.tsx:174
+#: src/components/Tabs/ThemeTab.tsx:172
 msgid "Font Family"
 msgstr "글꼴 가족"
 
@@ -589,7 +589,7 @@ msgstr "무료"
 msgid "Fullscreen"
 msgstr "전체 화면"
 
-#: src/components/Tabs/ThemeTab.tsx:154
+#: src/components/Tabs/ThemeTab.tsx:152
 msgid "General"
 msgstr "일반"
 
@@ -637,7 +637,7 @@ msgstr "식별자"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "해당 이메일로 계정이 있다면 비밀번호 재설정을 위한 안내를 포함한 이메일을 보내드립니다."
 
-#: src/components/Settings.tsx:151
+#: src/components/Settings.tsx:138
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 msgstr "<0>Flowchart Fun</0>을 사용하는 것을 즐기고 있다면, 프로젝트를 지원해 주시기 바랍니다."
 
@@ -696,8 +696,8 @@ msgstr "지식 그래프"
 msgid "Language"
 msgstr "언어"
 
-#: src/components/Tabs/ThemeTab.tsx:81
-#: src/components/Tabs/ThemeTab.tsx:90
+#: src/components/Tabs/ThemeTab.tsx:79
+#: src/components/Tabs/ThemeTab.tsx:88
 msgid "Layout"
 msgstr "레이아웃"
 
@@ -733,8 +733,8 @@ msgstr "왼쪽에서 오른쪽으로"
 msgid "Light"
 msgstr "라이트"
 
-#: src/components/Settings.tsx:88
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:75
+#: src/components/Settings.tsx:78
 msgid "Light Mode"
 msgstr "라이트 모드"
 
@@ -792,7 +792,7 @@ msgstr "로그인하여 저장하기"
 msgid "Log in to start creating flowcharts."
 msgstr "플로우 차트를 만들기 위해 로그인하세요."
 
-#: src/components/Settings.tsx:164
+#: src/components/Settings.tsx:151
 msgid "Make a One-Time Donation"
 msgstr "한 번 선물하기"
 
@@ -885,7 +885,8 @@ msgstr "노드 ID, 클래스, 속성"
 msgid "Node Label"
 msgstr "노드 라벨"
 
-#: src/components/Tabs/ThemeTab.tsx:198
+#: src/components/Tabs/ThemeTab.tsx:194
+#: src/components/Tabs/ThemeTab.tsx:196
 msgid "Node Shape"
 msgstr "노드 모양"
 
@@ -897,7 +898,7 @@ msgstr "노드 모양"
 msgid "Node and pointer on same line"
 msgstr "같은 줄에 노드와 포인터"
 
-#: src/components/Tabs/ThemeTab.tsx:189
+#: src/components/Tabs/ThemeTab.tsx:187
 msgid "Nodes"
 msgstr "노드"
 
@@ -942,7 +943,8 @@ msgstr "또는 <0>새로운 구독을 만들 수도 있습니다.</0>"
 msgid "Organization Chart"
 msgstr "조직도"
 
-#: src/components/Tabs/ThemeTab.tsx:238
+#: src/components/Tabs/ThemeTab.tsx:235
+#: src/components/Tabs/ThemeTab.tsx:236
 msgid "Padding"
 msgstr "채우기"
 
@@ -972,7 +974,7 @@ msgstr "같은 줄에 포인터와 컨테이너"
 
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:421
-#: src/components/Settings.tsx:138
+#: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "개인정보보호정책"
 
@@ -1096,8 +1098,8 @@ msgstr "오른쪽에서 왼쪽으로"
 msgid "Roadmap"
 msgstr "로드맵"
 
-#: src/components/Tabs/ThemeTab.tsx:527
-#: src/components/Tabs/ThemeTab.tsx:528
+#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:526
 msgid "Rotate Label"
 msgstr "라벨 회전"
 
@@ -1121,7 +1123,7 @@ msgstr "파일에 저장하기"
 msgid "Set Content"
 msgstr "콘텐츠 설정"
 
-#: src/components/Tabs/ThemeTab.tsx:325
+#: src/components/Tabs/ThemeTab.tsx:323
 msgid "Set Fixed Node Height"
 msgstr "고정 노드 높이 설정"
 
@@ -1156,8 +1158,8 @@ msgstr "<0>Google</0>으로 로그인"
 msgid "Sorry! This page is only available in English."
 msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 
-#: src/components/Tabs/ThemeTab.tsx:417
-#: src/components/Tabs/ThemeTab.tsx:418
+#: src/components/Tabs/ThemeTab.tsx:415
+#: src/components/Tabs/ThemeTab.tsx:416
 msgid "Source Arrow Shape"
 msgstr "소스 화살표 모양"
 
@@ -1170,8 +1172,8 @@ msgstr "소스 열"
 msgid "Source Delimiter"
 msgstr "소스 구분자"
 
-#: src/components/Tabs/ThemeTab.tsx:459
-#: src/components/Tabs/ThemeTab.tsx:460
+#: src/components/Tabs/ThemeTab.tsx:457
+#: src/components/Tabs/ThemeTab.tsx:458
 msgid "Source Distance From Node"
 msgstr "노드에서 소스 거리"
 
@@ -1179,7 +1181,7 @@ msgstr "노드에서 소스 거리"
 msgid "Source/Target Arrow Shape"
 msgstr "소스/대상 화살표 모양"
 
-#: src/components/Tabs/ThemeTab.tsx:137
+#: src/components/Tabs/ThemeTab.tsx:135
 msgid "Spacing"
 msgstr "간격"
 
@@ -1224,8 +1226,8 @@ msgstr "구독"
 msgid "Subscription will end"
 msgstr "구독이 종료될 예정입니다."
 
-#: src/components/Tabs/ThemeTab.tsx:438
-#: src/components/Tabs/ThemeTab.tsx:439
+#: src/components/Tabs/ThemeTab.tsx:436
+#: src/components/Tabs/ThemeTab.tsx:437
 msgid "Target Arrow Shape"
 msgstr "대상 화살표 모양"
 
@@ -1238,8 +1240,8 @@ msgstr "대상 열"
 msgid "Target Delimiter"
 msgstr "대상 구분자"
 
-#: src/components/Tabs/ThemeTab.tsx:477
-#: src/components/Tabs/ThemeTab.tsx:478
+#: src/components/Tabs/ThemeTab.tsx:475
+#: src/components/Tabs/ThemeTab.tsx:476
 msgid "Target Distance From Node"
 msgstr "노드로부터의 목표 거리"
 
@@ -1248,26 +1250,26 @@ msgstr "노드로부터의 목표 거리"
 msgid "Templates"
 msgstr "템플릿"
 
+#: src/components/Tabs/ThemeTab.tsx:223
 #: src/components/Tabs/ThemeTab.tsx:225
-#: src/components/Tabs/ThemeTab.tsx:227
 msgid "Text Color"
 msgstr "텍스트 색상"
 
-#: src/components/Tabs/ThemeTab.tsx:324
+#: src/components/Tabs/ThemeTab.tsx:322
 msgid "Text Horizontal Offset"
 msgstr "텍스트 수평 오프셋"
 
-#: src/components/Tabs/ThemeTab.tsx:294
-#: src/components/Tabs/ThemeTab.tsx:295
+#: src/components/Tabs/ThemeTab.tsx:292
+#: src/components/Tabs/ThemeTab.tsx:293
 msgid "Text Leading"
 msgstr "텍스트 리딩"
 
-#: src/components/Tabs/ThemeTab.tsx:279
+#: src/components/Tabs/ThemeTab.tsx:277
 msgid "Text Max Width"
 msgstr "텍스트 최대 너비"
 
-#: src/components/Tabs/ThemeTab.tsx:309
-#: src/components/Tabs/ThemeTab.tsx:310
+#: src/components/Tabs/ThemeTab.tsx:307
+#: src/components/Tabs/ThemeTab.tsx:308
 msgid "Text Vertical Offset"
 msgstr "텍스트 수직 오프셋"
 
@@ -1434,8 +1436,8 @@ msgstr "파일을 업로드하세요."
 msgid "Use AI"
 msgstr "AI 사용"
 
-#: src/components/Tabs/ThemeTab.tsx:568
-#: src/components/Tabs/ThemeTab.tsx:569
+#: src/components/Tabs/ThemeTab.tsx:566
+#: src/components/Tabs/ThemeTab.tsx:567
 msgid "Use Custom CSS Only"
 msgstr "사용자 정의 CSS만 사용"
 
@@ -1467,7 +1469,7 @@ msgstr "노드의 너비와 높이를 명시적으로 설정하려면 <0>w</0> �
 msgid "Use the customer portal to change your billing information."
 msgstr "청구 정보를 변경하려면 고객 포털을 사용하십시오."
 
-#: src/components/Tabs/ThemeTab.tsx:602
+#: src/components/Tabs/ThemeTab.tsx:600
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "이 설정을 사용하여 흐름 도표의 모양과 동작을 조정하십시오"
 
@@ -1483,7 +1485,7 @@ msgstr "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사�
 msgid "User"
 msgstr "사용자"
 
-#: src/components/Settings.tsx:126
+#: src/components/Settings.tsx:113
 msgid "View on Github"
 msgstr "Github에서 보기"
 
@@ -1507,8 +1509,8 @@ msgstr "Flowchart Fun Pro에 오신 것을 환영합니다!"
 msgid "What's this?"
 msgstr "이것이 무엇인가요?"
 
-#: src/components/Tabs/ThemeTab.tsx:381
-#: src/components/Tabs/ThemeTab.tsx:382
+#: src/components/Tabs/ThemeTab.tsx:379
+#: src/components/Tabs/ThemeTab.tsx:380
 msgid "Width"
 msgstr "너비"
 

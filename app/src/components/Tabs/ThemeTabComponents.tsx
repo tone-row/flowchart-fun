@@ -163,7 +163,7 @@ export const checkbox: Control<boolean, BaseProps> = (
       onCheckedChange={(checked) => {
         onValueChange(!!checked);
       }}
-      className="h-6 w-6 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 flex items-center justify-center"
+      className="h-6 w-6 border border-solid border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 flex items-center justify-center"
     >
       <Checkbox.Indicator>
         <Check size={16} />
@@ -240,6 +240,7 @@ function Fontpicker({
           onMouseLeave={() => setHovering(false)}
           side="bottom"
           align="start"
+          avoidCollisions={false}
         >
           {fonts.map((font) => (
             <FontpickerButton

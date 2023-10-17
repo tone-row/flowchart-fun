@@ -29,11 +29,11 @@ msgstr "1 Fluxograma Temporário"
 msgid "<0>Click the button below to migrate all of your temporary flowcharts into hosted ones.</0><1>Do not close this window. The page will refresh when the migration is complete.</1>"
 msgstr "<0>Clique no botão abaixo para migrar todos os seus fluxogramas temporários para hospedados.</0><1>Não feche esta janela. A página será atualizada quando a migração estiver concluída.</1>"
 
-#: src/components/Tabs/ThemeTab.tsx:609
+#: src/components/Tabs/ThemeTab.tsx:607
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>Somente CSS Personalizado</0> está habilitado. Somente as configurações de Layout e Avançadas serão aplicadas."
 
-#: src/components/Settings.tsx:108
+#: src/components/Settings.tsx:95
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0> é um projeto de código aberto feito por <1>Tone Row</1>"
 
@@ -49,7 +49,7 @@ msgstr "<0>Você atualmente tem uma conta gratuita. <1/><2>Saiba mais sobre noss
 msgid "A new version of the app is available. Please reload to update."
 msgstr "Uma nova versão do aplicativo está disponível. Por favor, recarregue para atualizar."
 
-#: src/components/Settings.tsx:105
+#: src/components/Settings.tsx:92
 msgid "About"
 msgstr "Sobre"
 
@@ -63,7 +63,7 @@ msgstr "Conta"
 msgid "Activate your Account"
 msgstr "Ative sua Conta"
 
-#: src/components/Tabs/ThemeTab.tsx:543
+#: src/components/Tabs/ThemeTab.tsx:541
 msgid "Advanced"
 msgstr "Avançado"
 
@@ -75,12 +75,12 @@ msgstr "Total"
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "Ocorreu um erro. Tente reenviar ou envie um e-mail direto para {0}."
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:58
 msgid "Appearance"
 msgstr "Aparência"
 
-#: src/components/Tabs/ThemeTab.tsx:497
-#: src/components/Tabs/ThemeTab.tsx:498
+#: src/components/Tabs/ThemeTab.tsx:495
+#: src/components/Tabs/ThemeTab.tsx:496
 msgid "Arrow Size"
 msgstr "Tamanho da Seta"
 
@@ -100,10 +100,10 @@ msgstr "Voltar"
 msgid "Back To Editor"
 msgstr "Voltar ao editor"
 
-#: src/components/Tabs/ThemeTab.tsx:161
-#: src/components/Tabs/ThemeTab.tsx:162
-#: src/components/Tabs/ThemeTab.tsx:213
-#: src/components/Tabs/ThemeTab.tsx:216
+#: src/components/Tabs/ThemeTab.tsx:159
+#: src/components/Tabs/ThemeTab.tsx:160
+#: src/components/Tabs/ThemeTab.tsx:211
+#: src/components/Tabs/ThemeTab.tsx:214
 msgid "Background Color"
 msgstr "Cor de Fundo"
 
@@ -111,11 +111,11 @@ msgstr "Cor de Fundo"
 msgid "Basic Flowchart"
 msgstr "Fluxograma Básico"
 
-#: src/components/Settings.tsx:170
+#: src/components/Settings.tsx:157
 msgid "Become a Github Sponsor"
 msgstr "Seja um patrocinador do Github"
 
-#: src/components/Settings.tsx:158
+#: src/components/Settings.tsx:145
 msgid "Become a Pro User"
 msgstr "Se torne um usuário Pro"
 
@@ -137,13 +137,13 @@ msgstr "Blog"
 msgid "Book a Meeting"
 msgstr "Reserve uma Reunião"
 
-#: src/components/Tabs/ThemeTab.tsx:267
-#: src/components/Tabs/ThemeTab.tsx:268
+#: src/components/Tabs/ThemeTab.tsx:265
+#: src/components/Tabs/ThemeTab.tsx:266
 msgid "Border Color"
 msgstr "Cor da Borda"
 
-#: src/components/Tabs/ThemeTab.tsx:252
-#: src/components/Tabs/ThemeTab.tsx:253
+#: src/components/Tabs/ThemeTab.tsx:250
+#: src/components/Tabs/ThemeTab.tsx:251
 msgid "Border Width"
 msgstr "Largura da Borda"
 
@@ -233,8 +233,8 @@ msgstr "Clonar"
 msgid "Close"
 msgstr "Fechar"
 
-#: src/components/Tabs/ThemeTab.tsx:396
-#: src/components/Tabs/ThemeTab.tsx:397
+#: src/components/Tabs/ThemeTab.tsx:394
+#: src/components/Tabs/ThemeTab.tsx:395
 msgid "Color"
 msgstr "Cor"
 
@@ -285,7 +285,7 @@ msgstr "Continuar"
 msgid "Convert to hosted chart?"
 msgstr "Converter em diagrama hospedado?"
 
-#: src/components/Settings.tsx:144
+#: src/components/Settings.tsx:131
 msgid "Cookie Policy"
 msgstr "Política de Cookies"
 
@@ -335,12 +335,12 @@ msgstr "Crie com IA"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Criar uma aresta entre dois nós é feito indentando o segundo nó abaixo do primeiro"
 
-#: src/components/Tabs/ThemeTab.tsx:365
+#: src/components/Tabs/ThemeTab.tsx:363
 msgid "Curve Style"
 msgstr "Estilo de Curva"
 
-#: src/components/Tabs/ThemeTab.tsx:551
-#: src/components/Tabs/ThemeTab.tsx:552
+#: src/components/Tabs/ThemeTab.tsx:549
+#: src/components/Tabs/ThemeTab.tsx:550
 msgid "Custom CSS"
 msgstr "CSS Personalizado"
 
@@ -356,8 +356,8 @@ msgstr "Portal do cliente"
 msgid "Dark"
 msgstr "Escuro"
 
-#: src/components/Settings.tsx:96
-#: src/components/Settings.tsx:99
+#: src/components/Settings.tsx:83
+#: src/components/Settings.tsx:86
 msgid "Dark Mode"
 msgstr "Modo escuro"
 
@@ -369,8 +369,8 @@ msgstr "Data"
 msgid "Direct from your Data"
 msgstr "Direto dos seus Dados"
 
+#: src/components/Tabs/ThemeTab.tsx:110
 #: src/components/Tabs/ThemeTab.tsx:112
-#: src/components/Tabs/ThemeTab.tsx:114
 msgid "Direction"
 msgstr "Direção"
 
@@ -433,8 +433,8 @@ msgstr "Coluna de Rótulo de Borda"
 msgid "Edge Style"
 msgstr "Estilo de Borda"
 
-#: src/components/Tabs/ThemeTab.tsx:512
-#: src/components/Tabs/ThemeTab.tsx:513
+#: src/components/Tabs/ThemeTab.tsx:510
+#: src/components/Tabs/ThemeTab.tsx:511
 msgid "Edge Text Size"
 msgstr "Tamanho do Texto da Borda"
 
@@ -444,7 +444,7 @@ msgstr "Recuo em falta na borda"
 
 #: src/components/ImportDataDialog.tsx:399
 #: src/components/LearnSyntaxDialog.tsx:155
-#: src/components/Tabs/ThemeTab.tsx:358
+#: src/components/Tabs/ThemeTab.tsx:356
 msgid "Edges"
 msgstr "Bordas"
 
@@ -553,7 +553,7 @@ msgstr "Exportar para PNG, JPG e SVG"
 msgid "Feedback"
 msgstr "Feedback"
 
-#: src/components/Tabs/ThemeTab.tsx:336
+#: src/components/Tabs/ThemeTab.tsx:334
 msgid "Fixed Node Height"
 msgstr "Altura do Nó Fixa"
 
@@ -565,11 +565,11 @@ msgstr "O Flowchart Fun Pro permite que você crie, armazene e distribua quantos
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
 msgstr "O Flowchart Fun Pro oferece fluxogramas ilimitados, colaboradores ilimitados e armazenamento ilimitado por apenas US $ 3 / mês ou US $ 30 / ano."
 
-#: src/components/Settings.tsx:132
+#: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
 msgstr "Siga-nos no Twitter"
 
-#: src/components/Tabs/ThemeTab.tsx:174
+#: src/components/Tabs/ThemeTab.tsx:172
 msgid "Font Family"
 msgstr "Família de Fontes"
 
@@ -589,7 +589,7 @@ msgstr "Grátis "
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
-#: src/components/Tabs/ThemeTab.tsx:154
+#: src/components/Tabs/ThemeTab.tsx:152
 msgid "General"
 msgstr "Geral"
 
@@ -637,7 +637,7 @@ msgstr "IDs"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "Se uma conta com esse e-mail existir, enviamos um e-mail com instruções sobre como redefinir sua senha."
 
-#: src/components/Settings.tsx:151
+#: src/components/Settings.tsx:138
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 msgstr "Se você gosta de usar <0>Flowchart Fun</0>, por favor, considere apoiar o projeto"
 
@@ -696,8 +696,8 @@ msgstr "Grafo de Conhecimento"
 msgid "Language"
 msgstr "Idioma"
 
-#: src/components/Tabs/ThemeTab.tsx:81
-#: src/components/Tabs/ThemeTab.tsx:90
+#: src/components/Tabs/ThemeTab.tsx:79
+#: src/components/Tabs/ThemeTab.tsx:88
 msgid "Layout"
 msgstr "Layout"
 
@@ -733,8 +733,8 @@ msgstr "Da esquerda para direita"
 msgid "Light"
 msgstr "Claro"
 
-#: src/components/Settings.tsx:88
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:75
+#: src/components/Settings.tsx:78
 msgid "Light Mode"
 msgstr "Modo claro"
 
@@ -792,7 +792,7 @@ msgstr "Faça login para salvar"
 msgid "Log in to start creating flowcharts."
 msgstr "Faça o login para começar a criar fluxogramas."
 
-#: src/components/Settings.tsx:164
+#: src/components/Settings.tsx:151
 msgid "Make a One-Time Donation"
 msgstr "Faça uma Doação Única"
 
@@ -885,7 +885,8 @@ msgstr "ID do Nó, Classes, Atributos"
 msgid "Node Label"
 msgstr "Rótulo do Nó"
 
-#: src/components/Tabs/ThemeTab.tsx:198
+#: src/components/Tabs/ThemeTab.tsx:194
+#: src/components/Tabs/ThemeTab.tsx:196
 msgid "Node Shape"
 msgstr "Forma do Nó"
 
@@ -897,7 +898,7 @@ msgstr "Formas do Nó"
 msgid "Node and pointer on same line"
 msgstr "Nó e ponteiro na mesma linha"
 
-#: src/components/Tabs/ThemeTab.tsx:189
+#: src/components/Tabs/ThemeTab.tsx:187
 msgid "Nodes"
 msgstr "Nós"
 
@@ -942,7 +943,8 @@ msgstr "Ou, você pode <0>criar uma nova assinatura</0>."
 msgid "Organization Chart"
 msgstr "Gráfico de Organização"
 
-#: src/components/Tabs/ThemeTab.tsx:238
+#: src/components/Tabs/ThemeTab.tsx:235
+#: src/components/Tabs/ThemeTab.tsx:236
 msgid "Padding"
 msgstr "Espaçamento"
 
@@ -972,7 +974,7 @@ msgstr "Ponteiro e contêiner na mesma linha"
 
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:421
-#: src/components/Settings.tsx:138
+#: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
@@ -1096,8 +1098,8 @@ msgstr "Da direita para esquerda"
 msgid "Roadmap"
 msgstr "Roteiro"
 
-#: src/components/Tabs/ThemeTab.tsx:527
-#: src/components/Tabs/ThemeTab.tsx:528
+#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:526
 msgid "Rotate Label"
 msgstr "Rotular Rotação"
 
@@ -1121,7 +1123,7 @@ msgstr "Salvar para Arquivo"
 msgid "Set Content"
 msgstr "Definir conteúdo"
 
-#: src/components/Tabs/ThemeTab.tsx:325
+#: src/components/Tabs/ThemeTab.tsx:323
 msgid "Set Fixed Node Height"
 msgstr "Definir Altura Fixa do Nó"
 
@@ -1156,8 +1158,8 @@ msgstr "Entrar com <0>Google</0>"
 msgid "Sorry! This page is only available in English."
 msgstr "Sinto muito! Esta página só está disponível em inglês."
 
-#: src/components/Tabs/ThemeTab.tsx:417
-#: src/components/Tabs/ThemeTab.tsx:418
+#: src/components/Tabs/ThemeTab.tsx:415
+#: src/components/Tabs/ThemeTab.tsx:416
 msgid "Source Arrow Shape"
 msgstr "Forma da Seta de Origem"
 
@@ -1170,8 +1172,8 @@ msgstr "Coluna de Origem"
 msgid "Source Delimiter"
 msgstr "Delimitador de Origem"
 
-#: src/components/Tabs/ThemeTab.tsx:459
-#: src/components/Tabs/ThemeTab.tsx:460
+#: src/components/Tabs/ThemeTab.tsx:457
+#: src/components/Tabs/ThemeTab.tsx:458
 msgid "Source Distance From Node"
 msgstr "Distância da Origem ao Nó"
 
@@ -1179,7 +1181,7 @@ msgstr "Distância da Origem ao Nó"
 msgid "Source/Target Arrow Shape"
 msgstr "Forma da Seta de Origem/Destino"
 
-#: src/components/Tabs/ThemeTab.tsx:137
+#: src/components/Tabs/ThemeTab.tsx:135
 msgid "Spacing"
 msgstr "Espaçamento"
 
@@ -1224,8 +1226,8 @@ msgstr "Inscrição"
 msgid "Subscription will end"
 msgstr "Inscrição acabará"
 
-#: src/components/Tabs/ThemeTab.tsx:438
-#: src/components/Tabs/ThemeTab.tsx:439
+#: src/components/Tabs/ThemeTab.tsx:436
+#: src/components/Tabs/ThemeTab.tsx:437
 msgid "Target Arrow Shape"
 msgstr "Forma da Seta de Destino"
 
@@ -1238,8 +1240,8 @@ msgstr "Coluna Alvo"
 msgid "Target Delimiter"
 msgstr "Delimitador Alvo"
 
-#: src/components/Tabs/ThemeTab.tsx:477
-#: src/components/Tabs/ThemeTab.tsx:478
+#: src/components/Tabs/ThemeTab.tsx:475
+#: src/components/Tabs/ThemeTab.tsx:476
 msgid "Target Distance From Node"
 msgstr "Distância-alvo do Nó"
 
@@ -1248,26 +1250,26 @@ msgstr "Distância-alvo do Nó"
 msgid "Templates"
 msgstr "Modelos"
 
+#: src/components/Tabs/ThemeTab.tsx:223
 #: src/components/Tabs/ThemeTab.tsx:225
-#: src/components/Tabs/ThemeTab.tsx:227
 msgid "Text Color"
 msgstr "Cor do Texto"
 
-#: src/components/Tabs/ThemeTab.tsx:324
+#: src/components/Tabs/ThemeTab.tsx:322
 msgid "Text Horizontal Offset"
 msgstr "Deslocamento Horizontal do Texto"
 
-#: src/components/Tabs/ThemeTab.tsx:294
-#: src/components/Tabs/ThemeTab.tsx:295
+#: src/components/Tabs/ThemeTab.tsx:292
+#: src/components/Tabs/ThemeTab.tsx:293
 msgid "Text Leading"
 msgstr "Texto Principal"
 
-#: src/components/Tabs/ThemeTab.tsx:279
+#: src/components/Tabs/ThemeTab.tsx:277
 msgid "Text Max Width"
 msgstr "Largura Máxima do Texto"
 
-#: src/components/Tabs/ThemeTab.tsx:309
-#: src/components/Tabs/ThemeTab.tsx:310
+#: src/components/Tabs/ThemeTab.tsx:307
+#: src/components/Tabs/ThemeTab.tsx:308
 msgid "Text Vertical Offset"
 msgstr "Deslocamento Vertical do Texto"
 
@@ -1434,8 +1436,8 @@ msgstr "Faça o upload do seu arquivo"
 msgid "Use AI"
 msgstr "Usar IA"
 
-#: src/components/Tabs/ThemeTab.tsx:568
-#: src/components/Tabs/ThemeTab.tsx:569
+#: src/components/Tabs/ThemeTab.tsx:566
+#: src/components/Tabs/ThemeTab.tsx:567
 msgid "Use Custom CSS Only"
 msgstr "Usar Somente CSS Personalizado"
 
@@ -1467,7 +1469,7 @@ msgstr "Use os atributos <0>w</0> e <1>h</1> para definir explicitamente a largu
 msgid "Use the customer portal to change your billing information."
 msgstr "Use o portal do cliente para alterar suas informações de cobrança."
 
-#: src/components/Tabs/ThemeTab.tsx:602
+#: src/components/Tabs/ThemeTab.tsx:600
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Use essas configurações para adaptar a aparência e o comportamento de seus fluxogramas"
 
@@ -1483,7 +1485,7 @@ msgstr "Use este arquivo para sequências, processos e fluxos de trabalho."
 msgid "User"
 msgstr "Usuário"
 
-#: src/components/Settings.tsx:126
+#: src/components/Settings.tsx:113
 msgid "View on Github"
 msgstr "Visualizar no Github"
 
@@ -1507,8 +1509,8 @@ msgstr "Bem-vindo ao Flowchart Fun Pro!"
 msgid "What's this?"
 msgstr "O que é isso?"
 
-#: src/components/Tabs/ThemeTab.tsx:381
-#: src/components/Tabs/ThemeTab.tsx:382
+#: src/components/Tabs/ThemeTab.tsx:379
+#: src/components/Tabs/ThemeTab.tsx:380
 msgid "Width"
 msgstr "Largura"
 
