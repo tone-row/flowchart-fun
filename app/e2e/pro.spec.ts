@@ -100,8 +100,10 @@ test("Go to Sandbox. Save Sandbox Chart", async () => {
   await page.getByTestId("pro-link").waitFor({ state: "detached" });
 
   await page.getByRole("button", { name: "Save" }).click();
-  await page.getByLabel("Title").click();
-  await page.getByLabel("Title").fill("my saved chart");
+
+  await page.getByRole("button", { name: "Save to Cloud" }).click();
+  await page.getByLabel("Name your chart").click();
+  await page.getByLabel("Name your chart").fill("my saved chart");
   await page.getByRole("button", { name: "Save" }).click();
 
   // expect "/u/" to be in the url
