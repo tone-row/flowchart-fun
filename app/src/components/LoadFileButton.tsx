@@ -8,6 +8,8 @@ import { Content, Overlay } from "../ui/Dialog";
 import { Button2 } from "../ui/Shared";
 import { useIsProUser } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
+import { getExpirationDate } from "../lib/getExpirationDate";
+import { docToString } from "../lib/useDoc";
 
 export function LoadFileButton() {
   const [open, setOpen] = useState(false);
@@ -43,8 +45,12 @@ export function LoadFileButton() {
                 .then((chart) => {
                   console.log({ chart });
                   if (chart) {
+                    // build a chart with a normal expiry date
+                    const { text, details, ...rest } = chart;
+                    const meta = { ...rest.meta, expires: getExpirationDate() };
+                    const doc = docToString({ text, meta, details });
                     setChart(chart);
-                    setDoc(result);
+                    setDoc(doc);
                     setOpen(true);
                   } else {
                     setOpen(false);
@@ -92,7 +98,7 @@ export function LoadFileButton() {
               <h2 className="text-lg text-wrap-balance leading-[1.3] font-bold">
                 <Trans>Load Chart</Trans>
               </h2>
-              <p className="text-neutral-600 dark:text-neutral-400 leading-normal mb-2">
+              <p className="text-neutral-600 dark:text-neutral-400 leading-normal mb-2 text-wrap-balance">
                 Do you want to replace your sandbox with this chart?
               </p>
               <div className="w-full h-32 overflow-hidden whitespace-pre-wrap break-words bg-neutral-200 dark:bg-neutral-800 rounded-md p-2 font-mono leading-normal text-[12px] relative import-file-textarea select-none">
