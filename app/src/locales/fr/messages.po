@@ -21,7 +21,7 @@ msgstr "3 $ par mois"
 msgid "$30 per year"
 msgstr "30 $ par an"
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:60
 msgid "1 Temporary Flowchart"
 msgstr "1 Organigramme temporaire"
 
@@ -48,6 +48,10 @@ msgstr "<0>Vous avez actuellement un compte gratuit.<1/><2>Apprenez-en plus sur 
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
 msgstr "Une nouvelle version de l'application est disponible. Veuillez recharger pour mettre à jour."
+
+#: src/pages/Pricing.tsx:37
+msgid "AI Ready"
+msgstr "IA prêt"
 
 #: src/components/Settings.tsx:92
 msgid "About"
@@ -122,10 +126,6 @@ msgstr "Devenez un utilisateur Pro"
 #: src/lib/getDefaultText.ts:4
 msgid "Begin Typing"
 msgstr "Commencez à taper"
-
-#: src/pages/Pricing.tsx:39
-msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
-msgstr "Commencez par une invite comme le diagramme de flux de support client et Flowchart Fun créera un diagramme de flux pour vous !"
 
 #: src/components/Header.tsx:128
 #: src/components/Header.tsx:366
@@ -311,7 +311,7 @@ msgstr "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en
 msgid "Create"
 msgstr "Créer"
 
-#: src/pages/Pricing.tsx:82
+#: src/pages/Pricing.tsx:79
 msgid "Create Flowcharts using AI"
 msgstr "Créer des organigrammes à l'aide de l'IA"
 
@@ -323,13 +323,13 @@ msgstr "Créer des diagrammes illimités"
 msgid "Create a New Chart"
 msgstr "Créer un nouveau graphique"
 
-#: src/pages/Pricing.tsx:105
+#: src/pages/Pricing.tsx:102
 msgid "Create unlimited diagrams for just $3/month!"
 msgstr "Créez des diagrammes illimités pour seulement 3 $ par mois !"
 
-#: src/pages/Pricing.tsx:37
-msgid "Create with AI"
-msgstr "Créez avec l'intelligence artificielle"
+#: src/pages/Pricing.tsx:32
+msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
+msgstr "Créez des diagrammes de flux illimités stockés dans le cloud, accessibles partout !"
 
 #: src/components/LearnSyntaxDialog.tsx:158
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
@@ -344,7 +344,7 @@ msgstr "Style de courbe"
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
 
-#: src/pages/Pricing.tsx:83
+#: src/pages/Pricing.tsx:80
 msgid "Custom Sharing Options"
 msgstr "Options de partage personnalisées"
 
@@ -365,9 +365,9 @@ msgstr "Mode sombre"
 msgid "Date"
 msgstr "Date"
 
-#: src/pages/Pricing.tsx:44
-msgid "Direct from your Data"
-msgstr "Directement à partir de vos données"
+#: src/pages/Pricing.tsx:42
+msgid "Direct from Data"
+msgstr "Directement à partir des données"
 
 #: src/components/Tabs/ThemeTab.tsx:110
 #: src/components/Tabs/ThemeTab.tsx:112
@@ -526,7 +526,7 @@ msgstr "Égal à"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/LoadFileButton.tsx:28
+#: src/components/LoadFileButton.tsx:76
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
 msgstr "Expérimentez l'efficacité et la sécurité du chargement de fichiers locaux directement dans votre organigramme, parfait pour gérer les documents liés au travail hors ligne. Débloquez cette fonctionnalité exclusive Pro et plus encore avec Flowchart Fun Pro, disponible pour seulement 3 $ / mois ou 30 $ / an."
 
@@ -535,15 +535,11 @@ msgstr "Expérimentez l'efficacité et la sécurité du chargement de fichiers l
 msgid "Export"
 msgstr "Exporter"
 
-#: src/pages/Pricing.tsx:53
-msgid "Export professional-quality flowcharts without watermarks to use in your presentations and documents"
-msgstr "Exportez des diagrammes de flux de qualité professionnelle sans filigrane à utiliser dans vos présentations et documents"
-
-#: src/pages/Pricing.tsx:66
+#: src/pages/Pricing.tsx:62
 msgid "Export to PNG & JPG"
 msgstr "Exporter en PNG et JPG"
 
-#: src/pages/Pricing.tsx:78
+#: src/pages/Pricing.tsx:75
 msgid "Export to PNG, JPG, and SVG"
 msgstr "Exporter en PNG, JPG et SVG"
 
@@ -556,10 +552,6 @@ msgstr "Commentaire"
 #: src/components/Tabs/ThemeTab.tsx:334
 msgid "Fixed Node Height"
 msgstr "Hauteur de nœud fixe"
-
-#: src/pages/Pricing.tsx:32
-msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
-msgstr "Flowchart Fun Pro vous permet de créer, stocker et distribuer autant de diagrammes de flux que vous le souhaitez."
 
 #: src/lib/paywallCopy.ts:5
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
@@ -581,7 +573,7 @@ msgstr "Mot de passe oublié ?"
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "Vous avez trouvé un bug ? Vous souhaitez faire une demande de fonctionnalité ? Nous aimerions beaucoup vous entendre !"
 
-#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:57
 msgid "Free"
 msgstr "Gratuit "
 
@@ -664,7 +656,11 @@ msgstr "Importer des données à partir d'un fichier CSV."
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "Importer des données à partir de n'importe quel fichier CSV et les mapper à un nouveau diagramme. C'est une excellente façon d'importer des données à partir d'autres sources telles que Lucidchart, Google Sheets et Visio."
 
-#: src/pages/Pricing.tsx:81
+#: src/pages/Pricing.tsx:43
+msgid "Import from Lucidchart, Visio, and other CSV files."
+msgstr "Importer à partir de Lucidchart, Visio et autres fichiers CSV."
+
+#: src/pages/Pricing.tsx:78
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Importer à partir de Visio, Lucidchart et CSV"
 
@@ -746,15 +742,15 @@ msgstr "Lien"
 msgid "Load"
 msgstr "Charger"
 
-#: src/components/LoadFileButton.tsx:83
+#: src/components/LoadFileButton.tsx:99
 msgid "Load Chart"
 msgstr "Charger le graphique"
 
-#: src/components/LoadFileButton.tsx:75
+#: src/components/LoadFileButton.tsx:91
 msgid "Load File"
 msgstr "Charger le fichier"
 
-#: src/components/LoadFileButton.tsx:27
+#: src/components/LoadFileButton.tsx:75
 msgid "Load Files"
 msgstr "Charger des fichiers"
 
@@ -769,6 +765,10 @@ msgstr "Charger à partir du lien?"
 #: src/components/LoadTemplateDialog.tsx:135
 msgid "Load layout and styles"
 msgstr "Charger la mise en page et les styles"
+
+#: src/pages/Pricing.tsx:73
+msgid "Local File Support"
+msgstr "Support de fichier local"
 
 #: src/components/GraphFloatingMenu.tsx:73
 #: src/components/GraphFloatingMenu.tsx:75
@@ -852,11 +852,7 @@ msgstr "Prochain paiement"
 msgid "No Edges"
 msgstr "Pas de bords"
 
-#: src/pages/Pricing.tsx:51
-msgid "No Watermarks"
-msgstr "Pas de filigranes"
-
-#: src/pages/Pricing.tsx:80
+#: src/pages/Pricing.tsx:77
 msgid "No Watermarks!"
 msgstr "Pas de filigranes !"
 
@@ -914,7 +910,7 @@ msgstr "Pas vide"
 msgid "Now erase the text and try it yourself!"
 msgstr "Maintenant, effacez le texte et essayez par vous-même !"
 
-#: src/pages/Pricing.tsx:85
+#: src/pages/Pricing.tsx:82
 msgid "Office Hours"
 msgstr "Heures de travail"
 
@@ -922,7 +918,7 @@ msgstr "Heures de travail"
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr " temps en temps, le lien magique finira par atterrir dans votre dossier de pourriel. Si vous ne le voyez pas après quelques minutes, vérifiez-y ou demandez un nouveau lien."
 
-#: src/pages/Pricing.tsx:84
+#: src/pages/Pricing.tsx:81
 msgid "One on One Support"
 msgstr "Un à un support"
 
@@ -986,10 +982,6 @@ msgstr "Diagramme de processus"
 msgid "Processing Data"
 msgstr "Traitement des données"
 
-#: src/pages/Pricing.tsx:46
-msgid "Produce flowcharts directly from your data. Import from Lucidchart, Visio, and other CSV files."
-msgstr "Produisez des diagrammes directement à partir de vos données. Importer des fichiers Lucidchart, Visio et CSV."
-
 #: src/pages/Account.tsx:390
 msgid "Product is too expensive..."
 msgstr "Le produit est trop cher..."
@@ -1003,8 +995,8 @@ msgstr "Public"
 msgid "Random"
 msgstr "Aléatoire"
 
-#: src/pages/Pricing.tsx:67
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:63
+#: src/pages/Pricing.tsx:76
 msgid "Rapid Templates"
 msgstr "Modèles rapides"
 
@@ -1110,6 +1102,14 @@ msgstr "Sauver"
 #: src/components/PaymentStepper.tsx:97
 msgid "Save 16%"
 msgstr "Économisez 16%"
+
+#: src/pages/Pricing.tsx:49
+msgid "Save and load local files. Perfect for managing work-related documents offline."
+msgstr "Enregistrez et chargez des fichiers locaux. Parfait pour gérer les documents liés au travail hors ligne."
+
+#: src/pages/Pricing.tsx:38
+msgid "Save time by creating flowcharts using AI."
+msgstr "Économisez du temps en créant des diagrammes de flux à l'aide de l'IA."
 
 #: src/components/EditorWrapper.tsx:162
 msgid "Save to Cloud"
@@ -1318,8 +1318,8 @@ msgstr "Les formes possibles sont :"
 msgid "Theme"
 msgstr "Thème"
 
-#: src/pages/Pricing.tsx:65
-#: src/pages/Pricing.tsx:77
+#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:74
 msgid "Theme Editor"
 msgstr "Éditeur de thème"
 
@@ -1380,7 +1380,7 @@ msgstr "Pour en savoir plus sur la raison pour laquelle nous vous demandons de v
 msgid "Top to Bottom"
 msgstr "De haut en bas"
 
-#: src/pages/Pricing.tsx:100
+#: src/pages/Pricing.tsx:97
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "Transformez vos idées en diagrammes professionnels en quelques secondes"
 
@@ -1412,7 +1412,7 @@ msgstr "Erreur d'analyse inconnue"
 msgid "Unlimited Flowcharts"
 msgstr "Diagrammes illimités"
 
-#: src/pages/Pricing.tsx:76
+#: src/pages/Pricing.tsx:72
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Flux de diagrammes permanents illimités"
 
@@ -1493,7 +1493,7 @@ msgstr "Voir sur Github"
 msgid "Want to keep your flowcharts? Upgrade to our Pro account for only $3/month. With Pro, you can save unlimited flowcharts and never lose your creativity."
 msgstr "Voulez-vous conserver vos diagrammes ? Mettez à niveau votre compte Pro pour seulement 3 $ par mois. Avec Pro, vous pouvez enregistrer des diagrammes illimités et ne jamais perdre votre créativité."
 
-#: src/pages/Pricing.tsx:68
+#: src/pages/Pricing.tsx:64
 msgid "Watermarks"
 msgstr "Filigranes"
 
@@ -1517,6 +1517,10 @@ msgstr "Largeur"
 #: src/components/LearnSyntaxDialog.tsx:355
 msgid "Width and Height"
 msgstr "Largeur et hauteur"
+
+#: src/pages/Pricing.tsx:47
+msgid "Work with Local Files"
+msgstr "Travaillez avec des fichiers locaux."
 
 #: src/components/ImportDataDialog.tsx:692
 msgid "Would you like to continue?"

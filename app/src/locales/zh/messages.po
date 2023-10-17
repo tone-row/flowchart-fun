@@ -21,7 +21,7 @@ msgstr "每月3美元"
 msgid "$30 per year"
 msgstr "每年30美元"
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:60
 msgid "1 Temporary Flowchart"
 msgstr "1 临时流程图"
 
@@ -48,6 +48,10 @@ msgstr "<0>您目前拥有免费帐户。<1/><2>了解我们的Pro功能，并�
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
 msgstr "一个新版本的应用程序可用。请重新加载以更新。"
+
+#: src/pages/Pricing.tsx:37
+msgid "AI Ready"
+msgstr "AI准备就绪"
 
 #: src/components/Settings.tsx:92
 msgid "About"
@@ -122,10 +126,6 @@ msgstr "成为专业用户"
 #: src/lib/getDefaultText.ts:4
 msgid "Begin Typing"
 msgstr "开始输入"
-
-#: src/pages/Pricing.tsx:39
-msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
-msgstr "以客戶服務流程圖為例，Flowchart Fun將為您創建一個流程圖！"
 
 #: src/components/Header.tsx:128
 #: src/components/Header.tsx:366
@@ -311,7 +311,7 @@ msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打�
 msgid "Create"
 msgstr "创建"
 
-#: src/pages/Pricing.tsx:82
+#: src/pages/Pricing.tsx:79
 msgid "Create Flowcharts using AI"
 msgstr "使用AI创建流程图"
 
@@ -323,13 +323,13 @@ msgstr "创建无限流程图"
 msgid "Create a New Chart"
 msgstr "创建新图表"
 
-#: src/pages/Pricing.tsx:105
+#: src/pages/Pricing.tsx:102
 msgid "Create unlimited diagrams for just $3/month!"
 msgstr "仅需每月 3 美元，即可创建无限数量的图表！"
 
-#: src/pages/Pricing.tsx:37
-msgid "Create with AI"
-msgstr "由人工智能创建"
+#: src/pages/Pricing.tsx:32
+msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
+msgstr "在云中存储无限流程图- 随时随地可访问！"
 
 #: src/components/LearnSyntaxDialog.tsx:158
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
@@ -344,7 +344,7 @@ msgstr "曲线样式"
 msgid "Custom CSS"
 msgstr "自定义CSS"
 
-#: src/pages/Pricing.tsx:83
+#: src/pages/Pricing.tsx:80
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
@@ -365,9 +365,9 @@ msgstr "深色模式"
 msgid "Date"
 msgstr "日期"
 
-#: src/pages/Pricing.tsx:44
-msgid "Direct from your Data"
-msgstr "直接从您的数据"
+#: src/pages/Pricing.tsx:42
+msgid "Direct from Data"
+msgstr "直接从数据"
 
 #: src/components/Tabs/ThemeTab.tsx:110
 #: src/components/Tabs/ThemeTab.tsx:112
@@ -526,7 +526,7 @@ msgstr "等于"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/components/LoadFileButton.tsx:28
+#: src/components/LoadFileButton.tsx:76
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
 msgstr "将本地文件直接加载到流程图中，可以体验到高效与安全的功能，非常适合管理工作文档离线操作。解锁本独家Pro功能及更多，只需每月$3或每年$30，就能使用Flowchart Fun Pro。"
 
@@ -535,15 +535,11 @@ msgstr "将本地文件直接加载到流程图中，可以体验到高效与安
 msgid "Export"
 msgstr "导出"
 
-#: src/pages/Pricing.tsx:53
-msgid "Export professional-quality flowcharts without watermarks to use in your presentations and documents"
-msgstr "导出无水印的专业质量流程图，用于您的演示文稿和文档"
-
-#: src/pages/Pricing.tsx:66
+#: src/pages/Pricing.tsx:62
 msgid "Export to PNG & JPG"
 msgstr "导出为PNG和JPG"
 
-#: src/pages/Pricing.tsx:78
+#: src/pages/Pricing.tsx:75
 msgid "Export to PNG, JPG, and SVG"
 msgstr "导出为PNG，JPG和SVG"
 
@@ -556,10 +552,6 @@ msgstr "反馈"
 #: src/components/Tabs/ThemeTab.tsx:334
 msgid "Fixed Node Height"
 msgstr "固定节点高度"
-
-#: src/pages/Pricing.tsx:32
-msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
-msgstr "Flowchart Fun Pro允许您创建、存储和分发任意数量的流程图。"
 
 #: src/lib/paywallCopy.ts:5
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
@@ -581,7 +573,7 @@ msgstr "忘記密碼了？"
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "如果发现了一个 bug？有功能请求？我们很乐意听到您的意见！"
 
-#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:57
 msgid "Free"
 msgstr "免费"
 
@@ -664,7 +656,11 @@ msgstr "从CSV文件导入数据。"
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "從任何CSV檔案匯入資料並將其映射到新的流程圖。這是從Lucidchart、Google Sheets和Visio等其他來源匯入資料的一個很棒的方法。"
 
-#: src/pages/Pricing.tsx:81
+#: src/pages/Pricing.tsx:43
+msgid "Import from Lucidchart, Visio, and other CSV files."
+msgstr "从Lucidchart，Visio和其他CSV文件导入。"
+
+#: src/pages/Pricing.tsx:78
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "从Visio，Lucidchart和CSV导入"
 
@@ -746,15 +742,15 @@ msgstr "链接"
 msgid "Load"
 msgstr "載入"
 
-#: src/components/LoadFileButton.tsx:83
+#: src/components/LoadFileButton.tsx:99
 msgid "Load Chart"
 msgstr "加载流程图"
 
-#: src/components/LoadFileButton.tsx:75
+#: src/components/LoadFileButton.tsx:91
 msgid "Load File"
 msgstr "加载文件"
 
-#: src/components/LoadFileButton.tsx:27
+#: src/components/LoadFileButton.tsx:75
 msgid "Load Files"
 msgstr "加载多个文件"
 
@@ -769,6 +765,10 @@ msgstr "从链接加载？"
 #: src/components/LoadTemplateDialog.tsx:135
 msgid "Load layout and styles"
 msgstr "載入版面和樣式"
+
+#: src/pages/Pricing.tsx:73
+msgid "Local File Support"
+msgstr "本地文件支持"
 
 #: src/components/GraphFloatingMenu.tsx:73
 #: src/components/GraphFloatingMenu.tsx:75
@@ -852,11 +852,7 @@ msgstr "下次扣费"
 msgid "No Edges"
 msgstr "沒有邊緣"
 
-#: src/pages/Pricing.tsx:51
-msgid "No Watermarks"
-msgstr "无水印"
-
-#: src/pages/Pricing.tsx:80
+#: src/pages/Pricing.tsx:77
 msgid "No Watermarks!"
 msgstr "无水印！"
 
@@ -914,7 +910,7 @@ msgstr "不为空"
 msgid "Now erase the text and try it yourself!"
 msgstr "现在擦除文本，自己试一试！"
 
-#: src/pages/Pricing.tsx:85
+#: src/pages/Pricing.tsx:82
 msgid "Office Hours"
 msgstr "工作时间"
 
@@ -922,7 +918,7 @@ msgstr "工作时间"
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "偶尔，魔法链接会被放入您的垃圾邮件文件夹。如果几分钟后仍然没有收到，请检查垃圾邮件文件夹，或者重新请求新的链接。"
 
-#: src/pages/Pricing.tsx:84
+#: src/pages/Pricing.tsx:81
 msgid "One on One Support"
 msgstr "一对一支持"
 
@@ -986,10 +982,6 @@ msgstr "流程图"
 msgid "Processing Data"
 msgstr "处理数据"
 
-#: src/pages/Pricing.tsx:46
-msgid "Produce flowcharts directly from your data. Import from Lucidchart, Visio, and other CSV files."
-msgstr "直接从您的数据生成流程图。 从Lucidchart，Visio和其他CSV文件导入。"
-
 #: src/pages/Account.tsx:390
 msgid "Product is too expensive..."
 msgstr "产品太贵了..."
@@ -1003,8 +995,8 @@ msgstr "公开"
 msgid "Random"
 msgstr "随机"
 
-#: src/pages/Pricing.tsx:67
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:63
+#: src/pages/Pricing.tsx:76
 msgid "Rapid Templates"
 msgstr "快速模板"
 
@@ -1110,6 +1102,14 @@ msgstr "救球"
 #: src/components/PaymentStepper.tsx:97
 msgid "Save 16%"
 msgstr "节省16％"
+
+#: src/pages/Pricing.tsx:49
+msgid "Save and load local files. Perfect for managing work-related documents offline."
+msgstr "保存和加载本地文件。完美地管理离线工作文件。"
+
+#: src/pages/Pricing.tsx:38
+msgid "Save time by creating flowcharts using AI."
+msgstr "使用AI创建流程图可以节省时间。"
 
 #: src/components/EditorWrapper.tsx:162
 msgid "Save to Cloud"
@@ -1318,8 +1318,8 @@ msgstr "可能的形状是："
 msgid "Theme"
 msgstr "主題"
 
-#: src/pages/Pricing.tsx:65
-#: src/pages/Pricing.tsx:77
+#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:74
 msgid "Theme Editor"
 msgstr "主题编辑器"
 
@@ -1380,7 +1380,7 @@ msgstr "要了解更多關於我們為什麼要求您登錄的原因，請閱讀
 msgid "Top to Bottom"
 msgstr "从上到下"
 
-#: src/pages/Pricing.tsx:100
+#: src/pages/Pricing.tsx:97
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "秒转换您的想法成专业图表"
 
@@ -1412,7 +1412,7 @@ msgstr "未知的解析错误"
 msgid "Unlimited Flowcharts"
 msgstr "无限流程图"
 
-#: src/pages/Pricing.tsx:76
+#: src/pages/Pricing.tsx:72
 msgid "Unlimited Permanent Flowcharts"
 msgstr "无限永久流程图"
 
@@ -1493,7 +1493,7 @@ msgstr "在 Github 上查看"
 msgid "Want to keep your flowcharts? Upgrade to our Pro account for only $3/month. With Pro, you can save unlimited flowcharts and never lose your creativity."
 msgstr "想要保留你的流程图吗？只需每月$3即可升级到我们的Pro账户。有了Pro，你可以保存无限的流程图，永远不会失去你的创造力。"
 
-#: src/pages/Pricing.tsx:68
+#: src/pages/Pricing.tsx:64
 msgid "Watermarks"
 msgstr "水印"
 
@@ -1517,6 +1517,10 @@ msgstr "宽度"
 #: src/components/LearnSyntaxDialog.tsx:355
 msgid "Width and Height"
 msgstr "宽度和高度"
+
+#: src/pages/Pricing.tsx:47
+msgid "Work with Local Files"
+msgstr "与本地文件一起工作"
 
 #: src/components/ImportDataDialog.tsx:692
 msgid "Would you like to continue?"
