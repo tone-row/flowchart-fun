@@ -29,30 +29,26 @@ const features = (): {
   {
     title: t`Unlimited Flowcharts`,
     points: [
-      t`Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need.`,
+      t`Create unlimited flowcharts stored in the cloud– accessible anywhere!`,
     ],
     imgPath: "launch",
   },
   {
-    title: t`Create with AI`,
-    points: [
-      t`Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!`,
-    ],
+    title: t`AI Ready`,
+    points: [t`Save time by creating flowcharts using AI.`],
     imgPath: "AI",
   },
   {
-    title: t`Direct from your Data`,
-    points: [
-      t`Produce flowcharts directly from your data. Import from Lucidchart, Visio, and other CSV files.`,
-    ],
-    imgPath: "ArtificialIntelligence",
+    title: t`Direct from Data`,
+    points: [t`Import from Lucidchart, Visio, and other CSV files.`],
+    imgPath: "Performance-Chart",
   },
   {
-    title: t`No Watermarks`,
+    title: t`Work with Local Files`,
     points: [
-      t`Export professional-quality flowcharts without watermarks to use in your presentations and documents`,
+      t`Save and load local files. Perfect for managing work-related documents offline.`,
     ],
-    imgPath: "Congratulations",
+    imgPath: "Code-Script",
   },
 ];
 
@@ -74,6 +70,7 @@ const plans = () => [
     key: "pro",
     features: [
       t`Unlimited Permanent Flowcharts`,
+      t`Local File Support`,
       t`Theme Editor`,
       t`Export to PNG, JPG, and SVG`,
       t`Rapid Templates`,
