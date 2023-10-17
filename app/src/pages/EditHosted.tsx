@@ -145,12 +145,15 @@ async function loadHostedDoc(id: string) {
   const chart = await getHostedChart(id);
   if (!chart) throw new Error("Chart not found");
   const doc = chart.chart;
-  await prepareChart(doc, {
-    id: chart.id,
-    title: chart.name,
-    isHosted: true,
-    isPublic: chart.is_public,
-    publicId: chart.public_id ?? undefined,
+  await prepareChart({
+    doc,
+    details: {
+      id: chart.id,
+      title: chart.name,
+      isHosted: true,
+      isPublic: chart.is_public,
+      publicId: chart.public_id ?? undefined,
+    },
   });
   return doc;
 }

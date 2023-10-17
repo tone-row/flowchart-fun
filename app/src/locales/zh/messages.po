@@ -21,7 +21,7 @@ msgstr "每月3美元"
 msgid "$30 per year"
 msgstr "每年30美元"
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:60
 msgid "1 Temporary Flowchart"
 msgstr "1 临时流程图"
 
@@ -29,11 +29,11 @@ msgstr "1 临时流程图"
 msgid "<0>Click the button below to migrate all of your temporary flowcharts into hosted ones.</0><1>Do not close this window. The page will refresh when the migration is complete.</1>"
 msgstr "<0>点击下面的按钮将所有临时流程图迁移到托管图表。</0><1>请勿关闭此窗口。迁移完成后页面将刷新。</1>"
 
-#: src/components/Tabs/ThemeTab.tsx:609
+#: src/components/Tabs/ThemeTab.tsx:607
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>仅启用自定义CSS</0>。仅应用布局和高级设置。"
 
-#: src/components/Settings.tsx:108
+#: src/components/Settings.tsx:95
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0>是由<1>Tone Row</1>制作的开源项目"
 
@@ -49,7 +49,11 @@ msgstr "<0>您目前拥有免费帐户。<1/><2>了解我们的Pro功能，并�
 msgid "A new version of the app is available. Please reload to update."
 msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 
-#: src/components/Settings.tsx:105
+#: src/pages/Pricing.tsx:37
+msgid "AI Ready"
+msgstr "AI准备就绪"
+
+#: src/components/Settings.tsx:92
 msgid "About"
 msgstr "关于"
 
@@ -63,7 +67,7 @@ msgstr "帐户"
 msgid "Activate your Account"
 msgstr "激活您的账户"
 
-#: src/components/Tabs/ThemeTab.tsx:543
+#: src/components/Tabs/ThemeTab.tsx:541
 msgid "Advanced"
 msgstr "高级"
 
@@ -75,12 +79,12 @@ msgstr "数量"
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件至{0}。"
 
-#: src/components/Settings.tsx:71
+#: src/components/Settings.tsx:58
 msgid "Appearance"
 msgstr "外观"
 
-#: src/components/Tabs/ThemeTab.tsx:497
-#: src/components/Tabs/ThemeTab.tsx:498
+#: src/components/Tabs/ThemeTab.tsx:495
+#: src/components/Tabs/ThemeTab.tsx:496
 msgid "Arrow Size"
 msgstr "箭头大小"
 
@@ -100,10 +104,10 @@ msgstr "返回"
 msgid "Back To Editor"
 msgstr "返回编辑器"
 
-#: src/components/Tabs/ThemeTab.tsx:161
-#: src/components/Tabs/ThemeTab.tsx:162
-#: src/components/Tabs/ThemeTab.tsx:213
-#: src/components/Tabs/ThemeTab.tsx:216
+#: src/components/Tabs/ThemeTab.tsx:159
+#: src/components/Tabs/ThemeTab.tsx:160
+#: src/components/Tabs/ThemeTab.tsx:211
+#: src/components/Tabs/ThemeTab.tsx:214
 msgid "Background Color"
 msgstr "背景颜色"
 
@@ -111,21 +115,17 @@ msgstr "背景颜色"
 msgid "Basic Flowchart"
 msgstr "基本流程图"
 
-#: src/components/Settings.tsx:170
+#: src/components/Settings.tsx:157
 msgid "Become a Github Sponsor"
 msgstr "成为Github赞助商"
 
-#: src/components/Settings.tsx:158
+#: src/components/Settings.tsx:145
 msgid "Become a Pro User"
 msgstr "成为专业用户"
 
 #: src/lib/getDefaultText.ts:4
 msgid "Begin Typing"
 msgstr "开始输入"
-
-#: src/pages/Pricing.tsx:39
-msgid "Begin with a prompt like Customer Support Flowchart and Flowchart Fun will create a flowchart for you!"
-msgstr "以客戶服務流程圖為例，Flowchart Fun將為您創建一個流程圖！"
 
 #: src/components/Header.tsx:128
 #: src/components/Header.tsx:366
@@ -137,13 +137,13 @@ msgstr "博客"
 msgid "Book a Meeting"
 msgstr "预订会议"
 
-#: src/components/Tabs/ThemeTab.tsx:267
-#: src/components/Tabs/ThemeTab.tsx:268
+#: src/components/Tabs/ThemeTab.tsx:265
+#: src/components/Tabs/ThemeTab.tsx:266
 msgid "Border Color"
 msgstr "边框颜色"
 
-#: src/components/Tabs/ThemeTab.tsx:252
-#: src/components/Tabs/ThemeTab.tsx:253
+#: src/components/Tabs/ThemeTab.tsx:250
+#: src/components/Tabs/ThemeTab.tsx:251
 msgid "Border Width"
 msgstr "边框宽度"
 
@@ -157,7 +157,7 @@ msgid "Breadthfirst"
 msgstr "宽度优先"
 
 #: src/components/ClearTextButton.tsx:26
-#: src/components/ImportDataDialog.tsx:702
+#: src/components/ImportDataDialog.tsx:695
 #: src/components/RenameButton.tsx:156
 #: src/pages/Account.tsx:297
 #: src/pages/Account.tsx:310
@@ -233,8 +233,8 @@ msgstr "克隆"
 msgid "Close"
 msgstr "关闭"
 
-#: src/components/Tabs/ThemeTab.tsx:396
-#: src/components/Tabs/ThemeTab.tsx:397
+#: src/components/Tabs/ThemeTab.tsx:394
+#: src/components/Tabs/ThemeTab.tsx:395
 msgid "Color"
 msgstr "颜色"
 
@@ -242,7 +242,7 @@ msgstr "颜色"
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "颜色包括红色，橙色，黄色，蓝色，紫色，黑色，白色和灰色。"
 
-#: src/components/ImportDataDialog.tsx:538
+#: src/components/ImportDataDialog.tsx:531
 msgid "Column"
 msgstr "列"
 
@@ -275,7 +275,7 @@ msgstr "容器"
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 
-#: src/components/ImportDataDialog.tsx:715
+#: src/components/ImportDataDialog.tsx:708
 #: src/components/PaymentStepper.tsx:109
 #: src/components/PaymentStepper.tsx:149
 msgid "Continue"
@@ -285,7 +285,7 @@ msgstr "继续"
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
-#: src/components/Settings.tsx:144
+#: src/components/Settings.tsx:131
 msgid "Cookie Policy"
 msgstr "Cookie政策"
 
@@ -311,7 +311,7 @@ msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打�
 msgid "Create"
 msgstr "创建"
 
-#: src/pages/Pricing.tsx:82
+#: src/pages/Pricing.tsx:79
 msgid "Create Flowcharts using AI"
 msgstr "使用AI创建流程图"
 
@@ -323,28 +323,28 @@ msgstr "创建无限流程图"
 msgid "Create a New Chart"
 msgstr "创建新图表"
 
-#: src/pages/Pricing.tsx:105
+#: src/pages/Pricing.tsx:102
 msgid "Create unlimited diagrams for just $3/month!"
 msgstr "仅需每月 3 美元，即可创建无限数量的图表！"
 
-#: src/pages/Pricing.tsx:37
-msgid "Create with AI"
-msgstr "由人工智能创建"
+#: src/pages/Pricing.tsx:32
+msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
+msgstr "在云中存储无限流程图- 随时随地可访问！"
 
 #: src/components/LearnSyntaxDialog.tsx:158
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "在两个节点之间创建边缘是通过将第二个节点缩进第一个节点来完成的"
 
-#: src/components/Tabs/ThemeTab.tsx:365
+#: src/components/Tabs/ThemeTab.tsx:363
 msgid "Curve Style"
 msgstr "曲线样式"
 
-#: src/components/Tabs/ThemeTab.tsx:551
-#: src/components/Tabs/ThemeTab.tsx:552
+#: src/components/Tabs/ThemeTab.tsx:549
+#: src/components/Tabs/ThemeTab.tsx:550
 msgid "Custom CSS"
 msgstr "自定义CSS"
 
-#: src/pages/Pricing.tsx:83
+#: src/pages/Pricing.tsx:80
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
@@ -356,8 +356,8 @@ msgstr "客户门户"
 msgid "Dark"
 msgstr "深色"
 
-#: src/components/Settings.tsx:96
-#: src/components/Settings.tsx:99
+#: src/components/Settings.tsx:83
+#: src/components/Settings.tsx:86
 msgid "Dark Mode"
 msgstr "深色模式"
 
@@ -365,12 +365,12 @@ msgstr "深色模式"
 msgid "Date"
 msgstr "日期"
 
-#: src/pages/Pricing.tsx:44
-msgid "Direct from your Data"
-msgstr "直接从您的数据"
+#: src/pages/Pricing.tsx:42
+msgid "Direct from Data"
+msgstr "直接从数据"
 
+#: src/components/Tabs/ThemeTab.tsx:110
 #: src/components/Tabs/ThemeTab.tsx:112
-#: src/components/Tabs/ThemeTab.tsx:114
 msgid "Direction"
 msgstr "方向"
 
@@ -404,7 +404,7 @@ msgstr "下载 PNG"
 msgid "Download SVG"
 msgstr "下载 SVG"
 
-#: src/components/ImportDataDialog.tsx:248
+#: src/components/ImportDataDialog.tsx:241
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "将CSV文件拖放到此处，或单击以选择文件"
 
@@ -412,7 +412,7 @@ msgstr "将CSV文件拖放到此处，或单击以选择文件"
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "通过引用开始行从多个节点绘制边缘"
 
-#: src/components/ImportDataDialog.tsx:246
+#: src/components/ImportDataDialog.tsx:239
 msgid "Drop the file here ..."
 msgstr "將檔案拖放到這裡..."
 
@@ -424,8 +424,8 @@ msgstr "邊緣ID、類別和屬性"
 msgid "Edge Label"
 msgstr "邊緣標籤"
 
-#: src/components/ImportDataDialog.tsx:468
-#: src/components/ImportDataDialog.tsx:508
+#: src/components/ImportDataDialog.tsx:461
+#: src/components/ImportDataDialog.tsx:501
 msgid "Edge Label Column"
 msgstr "邊緣標籤欄"
 
@@ -433,8 +433,8 @@ msgstr "邊緣標籤欄"
 msgid "Edge Style"
 msgstr "邊緣樣式"
 
-#: src/components/Tabs/ThemeTab.tsx:512
-#: src/components/Tabs/ThemeTab.tsx:513
+#: src/components/Tabs/ThemeTab.tsx:510
+#: src/components/Tabs/ThemeTab.tsx:511
 msgid "Edge Text Size"
 msgstr "边缘文本大小"
 
@@ -442,21 +442,21 @@ msgstr "边缘文本大小"
 msgid "Edge missing indentation"
 msgstr "缺少缩进的边"
 
-#: src/components/ImportDataDialog.tsx:406
+#: src/components/ImportDataDialog.tsx:399
 #: src/components/LearnSyntaxDialog.tsx:155
-#: src/components/Tabs/ThemeTab.tsx:358
+#: src/components/Tabs/ThemeTab.tsx:356
 msgid "Edges"
 msgstr "边"
 
-#: src/components/ImportDataDialog.tsx:424
+#: src/components/ImportDataDialog.tsx:417
 msgid "Edges are declared in the same row as their source node"
 msgstr "边声明在与源节点相同的行中"
 
-#: src/components/ImportDataDialog.tsx:430
+#: src/components/ImportDataDialog.tsx:423
 msgid "Edges are declared in the same row as their target node"
 msgstr "边声明在与目标节点相同的行中"
 
-#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:428
 msgid "Edges are declared in their own row"
 msgstr "边声明在自己的行中"
 
@@ -468,15 +468,15 @@ msgstr "边在标签之前可以有ID，类和属性"
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "边可以用虚线，点线或实线样式"
 
-#: src/components/ImportDataDialog.tsx:434
+#: src/components/ImportDataDialog.tsx:427
 msgid "Edges in Separate Rows"
 msgstr "边在单独的行"
 
-#: src/components/ImportDataDialog.tsx:423
+#: src/components/ImportDataDialog.tsx:416
 msgid "Edges in Source Node Row"
 msgstr "边在源节点行"
 
-#: src/components/ImportDataDialog.tsx:429
+#: src/components/ImportDataDialog.tsx:422
 msgid "Edges in Target Node Row"
 msgstr "边在目标节点行"
 
@@ -498,7 +498,7 @@ msgstr "编辑器"
 msgid "Email"
 msgstr "电子邮件"
 
-#: src/components/ImportDataDialog.tsx:554
+#: src/components/ImportDataDialog.tsx:547
 msgid "Empty"
 msgstr "空"
 
@@ -518,7 +518,7 @@ msgstr "輸入您的電子郵件地址，我們將發送給您一個魔法鏈接
 msgid "Enter your email address below and we'll send you a link to reset your password."
 msgstr "在下面輸入您的電子郵件地址，我們將發送給您一個重置密碼的鏈接。"
 
-#: src/components/ImportDataDialog.tsx:556
+#: src/components/ImportDataDialog.tsx:549
 msgid "Equal To"
 msgstr "等于"
 
@@ -526,20 +526,20 @@ msgstr "等于"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
+#: src/components/LoadFileButton.tsx:76
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
+msgstr "将本地文件直接加载到流程图中，可以体验到高效与安全的功能，非常适合管理工作文档离线操作。解锁本独家Pro功能及更多，只需每月$3或每年$30，就能使用Flowchart Fun Pro。"
+
 #: src/components/ShareDialog.tsx:52
 #: src/components/ShareDialog.tsx:151
 msgid "Export"
 msgstr "导出"
 
-#: src/pages/Pricing.tsx:53
-msgid "Export professional-quality flowcharts without watermarks to use in your presentations and documents"
-msgstr "导出无水印的专业质量流程图，用于您的演示文稿和文档"
-
-#: src/pages/Pricing.tsx:66
+#: src/pages/Pricing.tsx:62
 msgid "Export to PNG & JPG"
 msgstr "导出为PNG和JPG"
 
-#: src/pages/Pricing.tsx:78
+#: src/pages/Pricing.tsx:75
 msgid "Export to PNG, JPG, and SVG"
 msgstr "导出为PNG，JPG和SVG"
 
@@ -549,23 +549,19 @@ msgstr "导出为PNG，JPG和SVG"
 msgid "Feedback"
 msgstr "反馈"
 
-#: src/components/Tabs/ThemeTab.tsx:336
+#: src/components/Tabs/ThemeTab.tsx:334
 msgid "Fixed Node Height"
 msgstr "固定节点高度"
-
-#: src/pages/Pricing.tsx:32
-msgid "Flowchart Fun Pro allows you to create, store, and distribute as many flowcharts as you need."
-msgstr "Flowchart Fun Pro允许您创建、存储和分发任意数量的流程图。"
 
 #: src/lib/paywallCopy.ts:5
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
 msgstr "Flowchart Fun Pro 为您提供无限流程图，无限合作者和无限存储，每月只需 3 美元或每年 30 美元。"
 
-#: src/components/Settings.tsx:132
+#: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
 msgstr "在Twitter上关注我们"
 
-#: src/components/Tabs/ThemeTab.tsx:174
+#: src/components/Tabs/ThemeTab.tsx:172
 msgid "Font Family"
 msgstr "字体系列"
 
@@ -577,7 +573,7 @@ msgstr "忘記密碼了？"
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "如果发现了一个 bug？有功能请求？我们很乐意听到您的意见！"
 
-#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:57
 msgid "Free"
 msgstr "免费"
 
@@ -585,7 +581,7 @@ msgstr "免费"
 msgid "Fullscreen"
 msgstr "全屏"
 
-#: src/components/Tabs/ThemeTab.tsx:154
+#: src/components/Tabs/ThemeTab.tsx:152
 msgid "General"
 msgstr "一般"
 
@@ -617,9 +613,13 @@ msgstr "历史"
 msgid "Home"
 msgstr "主页"
 
-#: src/components/ImportDataDialog.tsx:407
+#: src/components/ImportDataDialog.tsx:400
 msgid "How are edges declared in this data?"
 msgstr "在这个数据中如何声明边缘？"
+
+#: src/components/EditorWrapper.tsx:154
+msgid "How would you like to save your chart?"
+msgstr "您想如何保存您的流程图？"
 
 #: src/components/LearnSyntaxDialog.tsx:127
 msgid "ID's"
@@ -629,7 +629,7 @@ msgstr "ID"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "如果該電子郵件存在該帳戶，我們已經發送給您一封電子郵件，其中包含如何重置您的密碼的說明。"
 
-#: src/components/Settings.tsx:151
+#: src/components/Settings.tsx:138
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
 msgstr "如果您喜欢使用<0>Flowchart Fun</0>，请考虑支持该项目"
 
@@ -641,14 +641,14 @@ msgstr "如果你想创建一个边，缩进这一行。如果不，用反斜杠
 msgid "Images"
 msgstr "图像"
 
-#: src/components/ImportDataDialog.tsx:86
-#: src/components/ImportDataDialog.tsx:99
+#: src/components/ImportDataDialog.tsx:79
+#: src/components/ImportDataDialog.tsx:92
 #: src/components/ImportDataUnauthenticatedDialog.tsx:28
 #: src/components/ImportDataUnauthenticatedDialog.tsx:45
 msgid "Import Data"
 msgstr "导入数据"
 
-#: src/components/ImportDataDialog.tsx:104
+#: src/components/ImportDataDialog.tsx:97
 msgid "Import data from a CSV file."
 msgstr "从CSV文件导入数据。"
 
@@ -656,7 +656,11 @@ msgstr "从CSV文件导入数据。"
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "從任何CSV檔案匯入資料並將其映射到新的流程圖。這是從Lucidchart、Google Sheets和Visio等其他來源匯入資料的一個很棒的方法。"
 
-#: src/pages/Pricing.tsx:81
+#: src/pages/Pricing.tsx:43
+msgid "Import from Lucidchart, Visio, and other CSV files."
+msgstr "从Lucidchart，Visio和其他CSV文件导入。"
+
+#: src/pages/Pricing.tsx:78
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "从Visio，Lucidchart和CSV导入"
 
@@ -676,7 +680,7 @@ msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添�
 msgid "Info"
 msgstr "信息"
 
-#: src/components/ImportDataDialog.tsx:547
+#: src/components/ImportDataDialog.tsx:540
 msgid "Is"
 msgstr "是"
 
@@ -688,8 +692,8 @@ msgstr "知识图谱"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/Tabs/ThemeTab.tsx:81
-#: src/components/Tabs/ThemeTab.tsx:90
+#: src/components/Tabs/ThemeTab.tsx:79
+#: src/components/Tabs/ThemeTab.tsx:88
 msgid "Layout"
 msgstr "布局"
 
@@ -703,7 +707,7 @@ msgid "Leading References"
 msgstr "主要參考"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:67
-#: src/components/PaywallModal.tsx:52
+#: src/components/PaywallModal.tsx:66
 msgid "Learn More"
 msgstr "学到更多"
 
@@ -725,8 +729,8 @@ msgstr "从左到右"
 msgid "Light"
 msgstr "浅色"
 
-#: src/components/Settings.tsx:88
-#: src/components/Settings.tsx:91
+#: src/components/Settings.tsx:75
+#: src/components/Settings.tsx:78
 msgid "Light Mode"
 msgstr "浅色模式"
 
@@ -737,6 +741,18 @@ msgstr "链接"
 #: src/components/LoadTemplateDialog.tsx:164
 msgid "Load"
 msgstr "載入"
+
+#: src/components/LoadFileButton.tsx:99
+msgid "Load Chart"
+msgstr "加载流程图"
+
+#: src/components/LoadFileButton.tsx:91
+msgid "Load File"
+msgstr "加载文件"
+
+#: src/components/LoadFileButton.tsx:75
+msgid "Load Files"
+msgstr "加载多个文件"
 
 #: src/components/LoadTemplateDialog.tsx:138
 msgid "Load default content"
@@ -749,6 +765,10 @@ msgstr "从链接加载？"
 #: src/components/LoadTemplateDialog.tsx:135
 msgid "Load layout and styles"
 msgstr "載入版面和樣式"
+
+#: src/pages/Pricing.tsx:73
+msgid "Local File Support"
+msgstr "本地文件支持"
 
 #: src/components/GraphFloatingMenu.tsx:73
 #: src/components/GraphFloatingMenu.tsx:75
@@ -764,7 +784,7 @@ msgstr "登录"
 msgid "Log Out"
 msgstr "登出"
 
-#: src/components/EditorWrapper.tsx:107
+#: src/components/EditorWrapper.tsx:105
 msgid "Log in to Save"
 msgstr "登录以保存"
 
@@ -772,7 +792,7 @@ msgstr "登录以保存"
 msgid "Log in to start creating flowcharts."
 msgstr "登入以開始創建流程圖。"
 
-#: src/components/Settings.tsx:164
+#: src/components/Settings.tsx:151
 msgid "Make a One-Time Donation"
 msgstr "进行一次性捐赠"
 
@@ -788,7 +808,7 @@ msgstr "確保您使用的是與登錄時相同的電子郵件。"
 msgid "Manage Billing"
 msgstr "付款管理"
 
-#: src/components/ImportDataDialog.tsx:384
+#: src/components/ImportDataDialog.tsx:377
 msgid "Map Data"
 msgstr "對應資料"
 
@@ -809,6 +829,10 @@ msgstr "同一行上的多个指针"
 msgid "Name Chart"
 msgstr "命名图表"
 
+#: src/components/EditorWrapper.tsx:226
+msgid "Name your chart"
+msgstr "为您的流程图命名"
+
 #: src/components/Header.tsx:87
 #: src/components/Header.tsx:338
 #: src/pages/Charts.tsx:100
@@ -824,15 +848,11 @@ msgstr "新邮件"
 msgid "Next charge"
 msgstr "下次扣费"
 
-#: src/components/ImportDataDialog.tsx:418
+#: src/components/ImportDataDialog.tsx:411
 msgid "No Edges"
 msgstr "沒有邊緣"
 
-#: src/pages/Pricing.tsx:51
-msgid "No Watermarks"
-msgstr "无水印"
-
-#: src/pages/Pricing.tsx:80
+#: src/pages/Pricing.tsx:77
 msgid "No Watermarks!"
 msgstr "无水印！"
 
@@ -848,7 +868,7 @@ msgstr "节点边框样式"
 msgid "Node Colors"
 msgstr "节点颜色"
 
-#: src/components/ImportDataDialog.tsx:389
+#: src/components/ImportDataDialog.tsx:382
 msgid "Node ID"
 msgstr "节点ID"
 
@@ -856,12 +876,13 @@ msgstr "节点ID"
 msgid "Node ID, Classes, Attributes"
 msgstr "节点ID、类、属性"
 
-#: src/components/ImportDataDialog.tsx:397
+#: src/components/ImportDataDialog.tsx:390
 #: src/components/LearnSyntaxDialog.tsx:114
 msgid "Node Label"
 msgstr "节点标签"
 
-#: src/components/Tabs/ThemeTab.tsx:198
+#: src/components/Tabs/ThemeTab.tsx:194
+#: src/components/Tabs/ThemeTab.tsx:196
 msgid "Node Shape"
 msgstr "节点形状"
 
@@ -873,7 +894,7 @@ msgstr "节点形状"
 msgid "Node and pointer on same line"
 msgstr "同一行上的节点和指针"
 
-#: src/components/Tabs/ThemeTab.tsx:189
+#: src/components/Tabs/ThemeTab.tsx:187
 msgid "Nodes"
 msgstr "节点"
 
@@ -881,7 +902,7 @@ msgstr "节点"
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "节点可以使用虚线、点线或双线样式。边框也可以使用 border_none 来移除。"
 
-#: src/components/ImportDataDialog.tsx:555
+#: src/components/ImportDataDialog.tsx:548
 msgid "Not Empty"
 msgstr "不为空"
 
@@ -889,7 +910,7 @@ msgstr "不为空"
 msgid "Now erase the text and try it yourself!"
 msgstr "现在擦除文本，自己试一试！"
 
-#: src/pages/Pricing.tsx:85
+#: src/pages/Pricing.tsx:82
 msgid "Office Hours"
 msgstr "工作时间"
 
@@ -897,7 +918,7 @@ msgstr "工作时间"
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "偶尔，魔法链接会被放入您的垃圾邮件文件夹。如果几分钟后仍然没有收到，请检查垃圾邮件文件夹，或者重新请求新的链接。"
 
-#: src/pages/Pricing.tsx:84
+#: src/pages/Pricing.tsx:81
 msgid "One on One Support"
 msgstr "一对一支持"
 
@@ -918,7 +939,8 @@ msgstr "或者，您可以<0>创建一个新的订阅</0>。"
 msgid "Organization Chart"
 msgstr "组织结构图"
 
-#: src/components/Tabs/ThemeTab.tsx:238
+#: src/components/Tabs/ThemeTab.tsx:235
+#: src/components/Tabs/ThemeTab.tsx:236
 msgid "Padding"
 msgstr "填充"
 
@@ -948,7 +970,7 @@ msgstr "同一行上的指针和容器"
 
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:421
-#: src/components/Settings.tsx:138
+#: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "隱私政策"
 
@@ -956,13 +978,9 @@ msgstr "隱私政策"
 msgid "Process Diagram"
 msgstr "流程图"
 
-#: src/components/ImportDataDialog.tsx:269
+#: src/components/ImportDataDialog.tsx:262
 msgid "Processing Data"
 msgstr "处理数据"
-
-#: src/pages/Pricing.tsx:46
-msgid "Produce flowcharts directly from your data. Import from Lucidchart, Visio, and other CSV files."
-msgstr "直接从您的数据生成流程图。 从Lucidchart，Visio和其他CSV文件导入。"
 
 #: src/pages/Account.tsx:390
 msgid "Product is too expensive..."
@@ -977,12 +995,12 @@ msgstr "公开"
 msgid "Random"
 msgstr "随机"
 
-#: src/pages/Pricing.tsx:67
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:63
+#: src/pages/Pricing.tsx:76
 msgid "Rapid Templates"
 msgstr "快速模板"
 
-#: src/components/EditorWrapper.tsx:56
+#: src/components/EditorWrapper.tsx:55
 #: src/components/ShareDialog.tsx:143
 msgid "Read-only"
 msgstr "只读"
@@ -1072,13 +1090,12 @@ msgstr "从右到左"
 msgid "Roadmap"
 msgstr "路线图"
 
-#: src/components/Tabs/ThemeTab.tsx:527
-#: src/components/Tabs/ThemeTab.tsx:528
+#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:526
 msgid "Rotate Label"
 msgstr "旋转标签"
 
-#: src/components/EditorWrapper.tsx:124
-#: src/components/EditorWrapper.tsx:159
+#: src/components/EditorWrapper.tsx:121
 msgid "Save"
 msgstr "救球"
 
@@ -1086,11 +1103,27 @@ msgstr "救球"
 msgid "Save 16%"
 msgstr "节省16％"
 
+#: src/pages/Pricing.tsx:49
+msgid "Save and load local files. Perfect for managing work-related documents offline."
+msgstr "保存和加载本地文件。完美地管理离线工作文件。"
+
+#: src/pages/Pricing.tsx:38
+msgid "Save time by creating flowcharts using AI."
+msgstr "使用AI创建流程图可以节省时间。"
+
+#: src/components/EditorWrapper.tsx:162
+msgid "Save to Cloud"
+msgstr "保存到云"
+
+#: src/components/EditorWrapper.tsx:178
+msgid "Save to File"
+msgstr "保存到文件"
+
 #: src/pages/New.tsx:205
 msgid "Set Content"
 msgstr "设置内容"
 
-#: src/components/Tabs/ThemeTab.tsx:325
+#: src/components/Tabs/ThemeTab.tsx:323
 msgid "Set Fixed Node Height"
 msgstr "设置固定节点高度"
 
@@ -1100,7 +1133,7 @@ msgstr "设置固定节点高度"
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/EditorWrapper.tsx:70
+#: src/components/EditorWrapper.tsx:69
 msgid "Share"
 msgstr "分享"
 
@@ -1125,22 +1158,22 @@ msgstr "使用<0>Google</0>登录"
 msgid "Sorry! This page is only available in English."
 msgstr "抱歉！此页面只有英语版。"
 
-#: src/components/Tabs/ThemeTab.tsx:417
-#: src/components/Tabs/ThemeTab.tsx:418
+#: src/components/Tabs/ThemeTab.tsx:415
+#: src/components/Tabs/ThemeTab.tsx:416
 msgid "Source Arrow Shape"
 msgstr "源箭头形状"
 
-#: src/components/ImportDataDialog.tsx:485
-#: src/components/ImportDataDialog.tsx:521
+#: src/components/ImportDataDialog.tsx:478
+#: src/components/ImportDataDialog.tsx:514
 msgid "Source Column"
 msgstr "源列"
 
-#: src/components/ImportDataDialog.tsx:495
+#: src/components/ImportDataDialog.tsx:488
 msgid "Source Delimiter"
 msgstr "源分隔符"
 
-#: src/components/Tabs/ThemeTab.tsx:459
-#: src/components/Tabs/ThemeTab.tsx:460
+#: src/components/Tabs/ThemeTab.tsx:457
+#: src/components/Tabs/ThemeTab.tsx:458
 msgid "Source Distance From Node"
 msgstr "源节点距离"
 
@@ -1148,7 +1181,7 @@ msgstr "源节点距离"
 msgid "Source/Target Arrow Shape"
 msgstr "源/目标箭头形状"
 
-#: src/components/Tabs/ThemeTab.tsx:137
+#: src/components/Tabs/ThemeTab.tsx:135
 msgid "Spacing"
 msgstr "间距"
 
@@ -1164,7 +1197,7 @@ msgstr "开始"
 msgid "Start Migration"
 msgstr "开始迁移"
 
-#: src/components/ImportDataDialog.tsx:281
+#: src/components/ImportDataDialog.tsx:274
 msgid "Start Over"
 msgstr "重新開始"
 
@@ -1181,7 +1214,7 @@ msgid "Style Classes"
 msgstr "樣式類別"
 
 #: src/components/Feedback.tsx:81
-#: src/components/ImportDataDialog.tsx:581
+#: src/components/ImportDataDialog.tsx:574
 msgid "Submit"
 msgstr "提交"
 
@@ -1193,22 +1226,22 @@ msgstr "订阅"
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
-#: src/components/Tabs/ThemeTab.tsx:438
-#: src/components/Tabs/ThemeTab.tsx:439
+#: src/components/Tabs/ThemeTab.tsx:436
+#: src/components/Tabs/ThemeTab.tsx:437
 msgid "Target Arrow Shape"
 msgstr "目标箭头形状"
 
-#: src/components/ImportDataDialog.tsx:442
-#: src/components/ImportDataDialog.tsx:528
+#: src/components/ImportDataDialog.tsx:435
+#: src/components/ImportDataDialog.tsx:521
 msgid "Target Column"
 msgstr "目標欄"
 
-#: src/components/ImportDataDialog.tsx:453
+#: src/components/ImportDataDialog.tsx:446
 msgid "Target Delimiter"
 msgstr "目標分隔符"
 
-#: src/components/Tabs/ThemeTab.tsx:477
-#: src/components/Tabs/ThemeTab.tsx:478
+#: src/components/Tabs/ThemeTab.tsx:475
+#: src/components/Tabs/ThemeTab.tsx:476
 msgid "Target Distance From Node"
 msgstr "目標距離節點"
 
@@ -1217,26 +1250,26 @@ msgstr "目標距離節點"
 msgid "Templates"
 msgstr "範本"
 
+#: src/components/Tabs/ThemeTab.tsx:223
 #: src/components/Tabs/ThemeTab.tsx:225
-#: src/components/Tabs/ThemeTab.tsx:227
 msgid "Text Color"
 msgstr "文字顏色"
 
-#: src/components/Tabs/ThemeTab.tsx:324
+#: src/components/Tabs/ThemeTab.tsx:322
 msgid "Text Horizontal Offset"
 msgstr "文本水平偏移"
 
-#: src/components/Tabs/ThemeTab.tsx:294
-#: src/components/Tabs/ThemeTab.tsx:295
+#: src/components/Tabs/ThemeTab.tsx:292
+#: src/components/Tabs/ThemeTab.tsx:293
 msgid "Text Leading"
 msgstr "文字行距"
 
-#: src/components/Tabs/ThemeTab.tsx:279
+#: src/components/Tabs/ThemeTab.tsx:277
 msgid "Text Max Width"
 msgstr "文本最大宽度"
 
-#: src/components/Tabs/ThemeTab.tsx:309
-#: src/components/Tabs/ThemeTab.tsx:310
+#: src/components/Tabs/ThemeTab.tsx:307
+#: src/components/Tabs/ThemeTab.tsx:308
 msgid "Text Vertical Offset"
 msgstr "文字垂直偏移"
 
@@ -1256,23 +1289,23 @@ msgstr "感谢您的反馈!"
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "更改样式的最佳方式是右键单击节点或边缘，然后选择所需的样式。"
 
-#: src/components/ImportDataDialog.tsx:469
+#: src/components/ImportDataDialog.tsx:462
 msgid "The column that contains the edge label(s)"
 msgstr "包含边标签的列"
 
-#: src/components/ImportDataDialog.tsx:486
+#: src/components/ImportDataDialog.tsx:479
 msgid "The column that contains the source node ID(s)"
 msgstr "包含源节点ID的列"
 
-#: src/components/ImportDataDialog.tsx:443
+#: src/components/ImportDataDialog.tsx:436
 msgid "The column that contains the target node ID(s)"
 msgstr "包含目标节点ID的列"
 
-#: src/components/ImportDataDialog.tsx:496
+#: src/components/ImportDataDialog.tsx:489
 msgid "The delimiter used to separate multiple source nodes"
 msgstr "用于分隔多个源节点的分隔符"
 
-#: src/components/ImportDataDialog.tsx:454
+#: src/components/ImportDataDialog.tsx:447
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "用于分隔多个目标节点的分隔符"
 
@@ -1285,12 +1318,12 @@ msgstr "可能的形状是："
 msgid "Theme"
 msgstr "主題"
 
-#: src/pages/Pricing.tsx:65
-#: src/pages/Pricing.tsx:77
+#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:74
 msgid "Theme Editor"
 msgstr "主题编辑器"
 
-#: src/components/ImportDataDialog.tsx:419
+#: src/components/ImportDataDialog.tsx:412
 msgid "There are no edges in this data"
 msgstr "此数据中没有边"
 
@@ -1347,7 +1380,7 @@ msgstr "要了解更多關於我們為什麼要求您登錄的原因，請閱讀
 msgid "Top to Bottom"
 msgstr "从上到下"
 
-#: src/pages/Pricing.tsx:100
+#: src/pages/Pricing.tsx:97
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "秒转换您的想法成专业图表"
 
@@ -1379,7 +1412,7 @@ msgstr "未知的解析错误"
 msgid "Unlimited Flowcharts"
 msgstr "无限流程图"
 
-#: src/pages/Pricing.tsx:76
+#: src/pages/Pricing.tsx:72
 msgid "Unlimited Permanent Flowcharts"
 msgstr "无限永久流程图"
 
@@ -1395,7 +1428,7 @@ msgstr "更新电子邮件"
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
-#: src/components/ImportDataDialog.tsx:208
+#: src/components/ImportDataDialog.tsx:201
 msgid "Upload your File"
 msgstr "上传您的文件"
 
@@ -1403,8 +1436,8 @@ msgstr "上传您的文件"
 msgid "Use AI"
 msgstr "使用AI"
 
-#: src/components/Tabs/ThemeTab.tsx:568
-#: src/components/Tabs/ThemeTab.tsx:569
+#: src/components/Tabs/ThemeTab.tsx:566
+#: src/components/Tabs/ThemeTab.tsx:567
 msgid "Use Custom CSS Only"
 msgstr "僅使用自定義CSS"
 
@@ -1436,7 +1469,7 @@ msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 msgid "Use the customer portal to change your billing information."
 msgstr "使用客户门户更改您的账单信息。"
 
-#: src/components/Tabs/ThemeTab.tsx:602
+#: src/components/Tabs/ThemeTab.tsx:600
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "使用这些设置来调整流程图的外观和行为"
 
@@ -1452,7 +1485,7 @@ msgstr "使用此文件进行顺序、流程和工作流程。"
 msgid "User"
 msgstr "用户"
 
-#: src/components/Settings.tsx:126
+#: src/components/Settings.tsx:113
 msgid "View on Github"
 msgstr "在 Github 上查看"
 
@@ -1460,7 +1493,7 @@ msgstr "在 Github 上查看"
 msgid "Want to keep your flowcharts? Upgrade to our Pro account for only $3/month. With Pro, you can save unlimited flowcharts and never lose your creativity."
 msgstr "想要保留你的流程图吗？只需每月$3即可升级到我们的Pro账户。有了Pro，你可以保存无限的流程图，永远不会失去你的创造力。"
 
-#: src/pages/Pricing.tsx:68
+#: src/pages/Pricing.tsx:64
 msgid "Watermarks"
 msgstr "水印"
 
@@ -1476,8 +1509,8 @@ msgstr "欢迎来到流程图乐趣Pro！"
 msgid "What's this?"
 msgstr "这是什么？"
 
-#: src/components/Tabs/ThemeTab.tsx:381
-#: src/components/Tabs/ThemeTab.tsx:382
+#: src/components/Tabs/ThemeTab.tsx:379
+#: src/components/Tabs/ThemeTab.tsx:380
 msgid "Width"
 msgstr "宽度"
 
@@ -1485,7 +1518,11 @@ msgstr "宽度"
 msgid "Width and Height"
 msgstr "宽度和高度"
 
-#: src/components/ImportDataDialog.tsx:699
+#: src/pages/Pricing.tsx:47
+msgid "Work with Local Files"
+msgstr "与本地文件一起工作"
+
+#: src/components/ImportDataDialog.tsx:692
 msgid "Would you like to continue?"
 msgstr "您想继续吗？"
 
@@ -1497,7 +1534,7 @@ msgstr "每年"
 msgid "Yes: Option A"
 msgstr "是：选项A"
 
-#: src/components/ImportDataDialog.tsx:697
+#: src/components/ImportDataDialog.tsx:690
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 

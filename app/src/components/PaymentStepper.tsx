@@ -102,7 +102,7 @@ export function PaymentStepper() {
             <Button2
               onClick={() => setConfirmPlan(true)}
               disabled={plan === null}
-              className="mt-8 disabled:opacity-100 !py-4 font-bold"
+              className="mt-8 disabled:!opacity-100 !py-4 font-bold"
               rightIcon={<ArrowRight size={16} />}
               color="blue"
             >

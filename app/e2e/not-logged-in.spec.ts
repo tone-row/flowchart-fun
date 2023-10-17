@@ -113,3 +113,12 @@ test("cannot do things when not logged in", async ({ page }) => {
 
   await expect(page.getByRole("heading", { name: "Sign In" })).toBeVisible();
 });
+
+test("Cannot load a file", async ({ page }) => {
+  // click on file
+  await page.goto(BASE_URL);
+  await page.getByTestId("load-file-button").click();
+  await page.getByRole("button", { name: "Learn More" }).click();
+  // expect to be at /pricing
+  await page.waitForURL("**/pricing");
+});

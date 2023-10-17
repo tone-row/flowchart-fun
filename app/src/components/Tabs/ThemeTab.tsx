@@ -29,10 +29,8 @@ import {
   ArrowsOutLineVertical,
   ArrowsOutSimple,
   Article,
-  Circle,
   Graph,
   LineSegment,
-  SquareLogo,
   TextAa,
 } from "phosphor-react";
 
@@ -193,7 +191,7 @@ const Form = createForm<{
       },
       elements: [
         {
-          title: () => <Circle className="w-5 h-5" />,
+          title: () => t`Node Shape`,
           id: "shape",
           label: t`Node Shape`,
           control: "select",
@@ -234,7 +232,7 @@ const Form = createForm<{
           },
         },
         {
-          title: () => <SquareLogo className="w-5 h-5" />,
+          title: () => t`Padding`,
           label: t`Padding`,
           id: "padding",
           control: "range",

@@ -63,7 +63,7 @@ type InputProps = { isLoading?: boolean } & React.DetailedHTMLProps<
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ isLoading, className = "", ...props }, ref) => {
     return (
-      <div className={classNames("p-2 px-3 rounded", styles.Input, className)}>
+      <div className={classNames("p-3 rounded", styles.Input, className)}>
         <input
           autoComplete="off"
           type="text"
@@ -200,7 +200,7 @@ export const Button2 = forwardRef<
   ) => {
     return (
       <button
-        className={`flex items-center justify-center gap-3 whitespace-nowrap ${button2Classes} ${pxButtonSize[
+        className={`flex font-bold items-center justify-center gap-3 whitespace-nowrap ${button2Classes} ${pxButtonSize[
           size
         ](!!leftIcon, !!rightIcon)} ${button2Colors[color]}
       ${pSize[size]} ${focusClasses} ${className}

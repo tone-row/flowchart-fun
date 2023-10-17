@@ -170,10 +170,13 @@ async function loadWorkspace() {
   }
 
   // Prepare the chart
-  await prepareChart(workspaceText, {
-    id: "",
-    title: "",
-    isHosted: false,
+  await prepareChart({
+    doc: workspaceText,
+    details: {
+      id: "",
+      title: "",
+      isHosted: false,
+    },
   });
 
   return workspaceText;

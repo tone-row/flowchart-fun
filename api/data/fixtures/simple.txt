@@ -1,0 +1,13 @@
+Begin Typing
+  Consider: Adding a Label
+    Yes: Option A
+      Use an ID to Connect #connect
+    No: Option B
+      (#connect)
+        Now erase the text and try it yourself!
+      wow that's amazing
+        pretty cool!
+
+=====
+{"themeEditor":{"background":"#c8e0ff","fontFamily":"Nanum Pen Script","layoutName":"dagre","direction":"DOWN","spacingFactor":1,"shape":"roundrectangle","nodeBackground":"#ffffff","nodeForeground":"#000000","padding":0,"borderWidth":0,"borderColor":"#31405b","textMaxWidth":150,"lineHeight":1,"textMarginY":1.25,"useFixedHeight":true,"fixedHeight":55,"curveStyle":"taxi","edgeWidth":1,"edgeColor":"#000000","sourceArrowShape":"none","targetArrowShape":"triangle","sourceDistanceFromNode":0,"targetDistanceFromNode":0,"arrowScale":1,"edgeTextSize":0.875,"rotateEdgeLabel":false},"cytoscapeStyle":""}
+=====

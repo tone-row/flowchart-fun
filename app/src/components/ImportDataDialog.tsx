@@ -3,14 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as Progress from "@radix-ui/react-progress";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 
-import {
-  CircleNotch,
-  Database,
-  DownloadSimple,
-  File,
-  FileCsv,
-  Warning,
-} from "phosphor-react";
+import { CircleNotch, Database, File, FileCsv, Warning } from "phosphor-react";
 import { useMemo, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useMutation } from "react-query";
@@ -82,7 +75,7 @@ export function ImportDataDialog() {
       }}
     >
       <Dialog.Trigger asChild>
-        <EditorActionTextButton icon={DownloadSimple}>
+        <EditorActionTextButton icon={Database}>
           <Trans>Import Data</Trans>
         </EditorActionTextButton>
       </Dialog.Trigger>

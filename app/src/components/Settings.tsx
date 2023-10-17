@@ -38,20 +38,7 @@ const Settings = memo(() => {
         <SectionTitle>
           <Trans>Language</Trans>
         </SectionTitle>
-        <Box
-          className={styles.ButtonGroupTwoLines}
-          gap={1}
-          at={{
-            small: {
-              template: "auto / repeat(2, minmax(0, 1fr))",
-            },
-            tablet: {
-              items: "normal stretch",
-              template: "auto / repeat(4, 150px)",
-              gap: 1,
-            },
-          }}
-        >
+        <div className="grid gap-1 sm:grid-cols-2 md:grid-cols-4">
           {Object.keys(languages).map((locale) => (
             <GroupButton
               key={locale}
@@ -64,7 +51,7 @@ const Settings = memo(() => {
               {languages[locale as keyof typeof languages]}
             </GroupButton>
           ))}
-        </Box>
+        </div>
       </Section>
       <Section>
         <SectionTitle>

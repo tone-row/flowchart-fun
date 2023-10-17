@@ -24,7 +24,15 @@ import { FFTheme } from "../FFTheme";
  *   information about this document
  */
 
-export async function prepareChart(doc: string, details: Details) {
+export async function prepareChart({
+  doc,
+  details,
+  set = true,
+}: {
+  doc: string;
+  details: Details;
+  set?: boolean;
+}) {
   let text = doc;
 
   let jsonMeta = {};
@@ -33,11 +41,7 @@ export async function prepareChart(doc: string, details: Details) {
     const parts = text.split(newDelimiters);
     text = parts[0];
     const metaStr = parts[1] || "{}";
-    try {
-      jsonMeta = JSON.parse(metaStr.trim());
-    } catch (e) {
-      console.log(e);
-    }
+    jsonMeta = JSON.parse(metaStr.trim());
   }
 
   let hidden = {};
@@ -45,11 +49,7 @@ export async function prepareChart(doc: string, details: Details) {
     const parts = text.split(HIDDEN_GRAPH_OPTIONS_DIVIDER);
     text = parts[0];
     const hiddenStr = parts[1] || "{}";
-    try {
-      hidden = JSON.parse(hiddenStr.trim());
-    } catch (e) {
-      console.log(e);
-    }
+    hidden = JSON.parse(hiddenStr.trim());
   }
 
   let parsedData = {};
@@ -95,6 +95,9 @@ export async function prepareChart(doc: string, details: Details) {
 
   // delete the parser if it exists
   if (meta.parser) delete meta.parser;
+
+  // Bail out early if we just wanted to parse it
+  if (!set) return { text, meta, details };
 
   // pre-process style to load classes and font imports
   preprocessStyle(getStyleStringFromMeta(meta));

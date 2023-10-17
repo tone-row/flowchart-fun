@@ -4,6 +4,7 @@ export const usePaywallModalStore = create<{
   open: boolean;
   title: string;
   content: string;
+  movieUrl?: string;
 }>((_set) => ({
   open: false,
   title: "",
@@ -20,20 +21,27 @@ const paywallImageUrl = "/images/paywall.png";
 export function showPaywall({
   title,
   content,
+  movieUrl,
 }: {
   title: string;
   content: string;
+  movieUrl?: string;
 }) {
-  // Pre-load the paywall image
-  const img = new Image();
-  img.onload = open;
-  img.src = paywallImageUrl;
+  if (!movieUrl) {
+    // Pre-load the paywall image
+    const img = new Image();
+    img.onload = open;
+    img.src = paywallImageUrl;
+  } else {
+    open();
+  }
 
   function open() {
     usePaywallModalStore.setState({
       open: true,
       title,
       content,
+      movieUrl,
     });
   }
 }

@@ -1,17 +1,15 @@
 import { Trans } from "@lingui/macro";
-import { Suspense, useContext } from "react";
-
+import { Suspense, useContext, useEffect, useRef, useState } from "react";
 import { useIsLoggedIn, useIsProUser, useIsReadOnly } from "../lib/hooks";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Button2, Input } from "../ui/Shared";
-import { SectionTitle } from "../ui/Typography";
 import { AppContext } from "./AppContextProvider";
 import { CloneButton } from "./CloneButton";
 import styles from "./EditorWrapper.module.css";
 import Loading from "./Loading";
 import { RenameButton } from "./RenameButton";
 import ShareDialog from "./ShareDialog";
-import { FloppyDisk, Share } from "phosphor-react";
+import { Cloud, DownloadSimple, Export, File } from "phosphor-react";
 import classNames from "classnames";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -23,6 +21,7 @@ import {
 } from "../lib/paywallCopy";
 import { useMutation } from "react-query";
 import { makeChart } from "../lib/queries";
+import { saveAs } from "file-saver";
 
 /**
  * Adds title and export button to the editor
@@ -64,7 +63,7 @@ export function EditorWrapper({ children }: { children: React.ReactNode }) {
                 <Button2
                   color="blue"
                   onClick={() => setShareModal(true)}
-                  leftIcon={<Share className="w-4 h-4" />}
+                  leftIcon={<Export weight="bold" className="w-5 h-5" />}
                   aria-label="Export"
                 >
                   <Trans>Share</Trans>
@@ -99,7 +98,6 @@ function LogInToSaveButton() {
   const navigate = useNavigate();
   return (
     <Button2
-      color="zinc"
       onClick={() => {
         navigate("/l");
       }}
@@ -112,8 +110,7 @@ function LogInToSaveButton() {
 function CannotSaveButton() {
   return (
     <Button2
-      color="purple"
-      leftIcon={<FloppyDisk className="w-4 h-4" />}
+      leftIcon={<DownloadSimple weight="bold" className="w-5 h-5" />}
       onClick={() => {
         showPaywall({
           title: createUnlimitedTitle(),
@@ -126,6 +123,72 @@ function CannotSaveButton() {
   );
 }
 function CanSaveButton() {
+  const [open, setOpen] = useState(false);
+  const [createType, setCreateType] = useState<"cloud" | "file" | null>(null);
+
+  return (
+    <Dialog.Root
+      open={open}
+      onOpenChange={(open) => {
+        if (!open) setCreateType(null);
+        setOpen(open);
+      }}
+    >
+      <Dialog.Trigger asChild>
+        <Button2
+          leftIcon={<DownloadSimple weight="bold" className="w-5 h-5" />}
+          onClick={() => {
+            setOpen(true);
+          }}
+        >
+          Save
+        </Button2>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Overlay />
+        <Content>
+          <Dialog.Description asChild>
+            {createType === null ? (
+              <div className="grid gap-2">
+                <p className="text-center text-lg mb-2 text-wrap-balance leading-[1.3]">
+                  <Trans>How would you like to save your chart?</Trans>
+                </p>
+                <Button2
+                  leftIcon={<Cloud weight="bold" className="w-5 h-5" />}
+                  onClick={() => {
+                    setCreateType("cloud");
+                  }}
+                >
+                  <Trans>Save to Cloud</Trans>
+                </Button2>
+                <Button2
+                  leftIcon={<File weight="bold" className="w-5 h-5" />}
+                  onClick={() => {
+                    setOpen(false);
+                    setTimeout(() => {
+                      saveAs(
+                        new Blob([docToString(useDoc.getState())], {
+                          type: "text/plain;charset=utf-8",
+                        }),
+                        "flowchart.fun.txt"
+                      );
+                    }, 100);
+                  }}
+                >
+                  <Trans>Save to File</Trans>
+                </Button2>
+              </div>
+            ) : (
+              <SaveForm />
+            )}
+          </Dialog.Description>
+        </Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
+}
+
+function SaveForm() {
   const { session } = useContext(AppContext);
   const userId = session?.user?.id;
   const fullText = useDoc(docToString);
@@ -144,52 +207,40 @@ function CanSaveButton() {
     if (!chart) throw new Error("Could not create hosted chart");
     navigate(`/u/${chart.id}`);
   });
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
   return (
-    <Dialog.Root>
-      <Dialog.Trigger asChild>
-        <Button2 color="purple" leftIcon={<FloppyDisk className="w-4 h-4" />}>
-          Save
-        </Button2>
-      </Dialog.Trigger>
-      <Dialog.Portal>
-        <Overlay />
-        <Content>
-          <Dialog.Title className="mb-4">
-            <SectionTitle isUnderline={false}>
-              <Trans>Save</Trans>
-            </SectionTitle>
-          </Dialog.Title>
-          <Dialog.Description>
-            <form
-              className="grid gap-2"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const data = new FormData(e.target as HTMLFormElement);
-                const title = data.get("title") as string;
-                createChartMutation.mutate(title);
-              }}
-            >
-              <label className="grid gap-2" htmlFor="title">
-                <span>Title</span>
-                <Input
-                  name="title"
-                  id="title"
-                  required
-                  disabled={createChartMutation.isLoading}
-                />
-              </label>
-              <Button2
-                color="purple"
-                leftIcon={<FloppyDisk className="w-4 h-4" />}
-                isLoading={createChartMutation.isLoading}
-              >
-                Save
-              </Button2>
-            </form>
-          </Dialog.Description>
-        </Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+    <form
+      className="grid gap-2"
+      onSubmit={(e) => {
+        e.preventDefault();
+        const data = new FormData(e.target as HTMLFormElement);
+        const title = data.get("title") as string;
+        createChartMutation.mutate(title);
+      }}
+    >
+      <label className="grid gap-2" htmlFor="title">
+        <p className="text-lg text-center mb-1 text-wrap-balance leading-[1.3]">
+          <Trans>Name your chart</Trans>
+        </p>
+        <Input
+          name="title"
+          id="title"
+          required
+          ref={inputRef}
+          disabled={createChartMutation.isLoading}
+        />
+      </label>
+      <Button2
+        color="blue"
+        leftIcon={<DownloadSimple className="w-5 h-5" />}
+        isLoading={createChartMutation.isLoading}
+      >
+        Save
+      </Button2>
+    </form>
   );
 }
 
