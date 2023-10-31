@@ -1,9 +1,7 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { parse } from "csv-parse/sync";
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import type { Readable } from "node:stream";
+export const maxDuration = 60; // 1 minutes
 
 /**
  * Receives text/csv content in post request
