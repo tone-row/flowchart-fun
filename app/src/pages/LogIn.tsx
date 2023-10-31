@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
 import { Warning } from "../components/Warning";
-import { WelcomeMessage } from "../components/WelcomeMessage";
 import { isError } from "../lib/helpers";
 import { supabase } from "../lib/supabaseClient";
 import { Button2, InputWithLabel, P, Page } from "../ui/Shared";
@@ -69,10 +68,6 @@ export default function Login() {
     [mutate]
   );
 
-  const [newSignUp] = useState(() => {
-    return window.location.hash === "#success";
-  });
-
   if (success) {
     return (
       <div className="pt-12 grid justify-items-center content-start gap-4 w-full max-w-[440px] mx-auto text-center">
@@ -104,7 +99,6 @@ export default function Login() {
   return (
     <Page size="sm">
       {showAuthWallWarning && <AuthWallWarning />}
-      {newSignUp && <WelcomeMessage />}
       <PageTitle className="text-center mb-6">{t`Sign In`}</PageTitle>
       <Button2
         leftIcon={<GoogleSVG />}

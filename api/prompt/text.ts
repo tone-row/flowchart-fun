@@ -5,6 +5,8 @@ import { stringify } from "graph-selector";
 
 type PromptType = "knowledge" | "flowchart";
 
+export const maxDuration = 60 * 5; // 5 minutes
+
 const handler: VercelApiHandler = async (req, res) => {
   const { subject, promptType, accentClasses = [] } = req.body;
   if (!subject || !promptType || !isPromptType(promptType)) {
