@@ -8,6 +8,7 @@ import { PostHogProvider } from "posthog-js/react";
 import posthog from "posthog-js";
 import classNames from "classnames";
 import { PaymentStepper } from "../components/PaymentStepper";
+import { Checkout } from "../components/Checkout";
 
 const posthogToken = process.env.REACT_APP_PUBLIC_POSTHOG_KEY;
 const posthogApiHost = process.env.REACT_APP_PUBLIC_POSTHOG_HOST;
@@ -125,7 +126,7 @@ function Pricing() {
           {plans().map((props) => (
             <Plan {...props} key={props.key} />
           ))}
-          <PaymentStepper />
+          <Checkout />
         </div>
       </div>
       <div className="bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-800/50 dark:to-blue-900/50 text-lg md:text-2xl text-center text-white p-8 font-bold">

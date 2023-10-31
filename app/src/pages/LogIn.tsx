@@ -196,6 +196,7 @@ function AuthWallWarning() {
 }
 
 function checkForAuthWallWarningAndRedirect(search: string): [boolean, string] {
+  debugger;
   const params = new URLSearchParams(search);
   const showAuthWallWarning = params.get("showAuthWallWarning") === "true";
   const redirectUrl = decodeURIComponent(params.get("redirectUrl") || "/"); // default to home page

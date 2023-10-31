@@ -13,6 +13,8 @@ import { useLightOrDarkMode, useSession } from "../lib/hooks";
 import { Button2 } from "../ui/Shared";
 import { Warning } from "./Warning";
 import { sendLoopsEvent } from "../lib/sendLoopsEvent";
+import { PlanButton } from "./PlanButton";
+import { PaymentStepperTitle } from "./PaymentStepperTitle";
 
 /**
  * This component allows the user to select a plan,
@@ -67,9 +69,9 @@ export function PaymentStepper() {
       <div className={"grid gap-6 max-w-3xl mx-auto"} ref={parent}>
         {step === "one" && (
           <div className="h-full grid gap-4">
-            <Title>
+            <PaymentStepperTitle>
               <Trans>Choose a Plan</Trans>
-            </Title>
+            </PaymentStepperTitle>
             <div className="w-full grid grid-rows-2 gap-2">
               <PlanButton
                 aria-current={plan === "monthly" ? "true" : "false"}
@@ -123,9 +125,9 @@ export function PaymentStepper() {
             autoComplete="false"
             className="grid gap-4"
           >
-            <Title>
+            <PaymentStepperTitle>
               <Trans>Enter your email</Trans>
-            </Title>
+            </PaymentStepperTitle>
             <div className="grid gap-4">
               <Description>
                 {t`Make sure you use the same email you will use to log in.`}
@@ -159,7 +161,7 @@ export function PaymentStepper() {
         )}
         {step === "three" && (
           <div className="grid gap-4">
-            <Title>{t`Activate your Account`}</Title>
+            <PaymentStepperTitle>{t`Activate your Account`}</PaymentStepperTitle>
             <PaymentForm
               email={email}
               clientSecret={subscriptionDetails.data?.clientSecret || ""}
@@ -168,28 +170,6 @@ export function PaymentStepper() {
         )}
       </div>
     </div>
-  );
-}
-
-function PlanButton({
-  title,
-  price,
-  extra = null,
-  ...props
-}: {
-  title: string;
-  price: string;
-  extra?: React.ReactNode;
-} & React.HTMLAttributes<HTMLButtonElement>) {
-  return (
-    <button
-      {...props}
-      className="group border w-full shadow-sm border-solid border-neutral-300 p-4 py-6 grid gap-2 rounded-xl content-start dark:border-0 dark:border-neutral-800 dark:bg-neutral-800/90 focus:outline-none hover:scale-[1.025] aria-[current=true]:scale-105 transition-transform aria-[current=true]:border-blue-400 aria-[current=true]:bg-blue-50 aria-[current=true]:shadow-md aria-[current=true]:shadow-blue-600/20 aria-[current=true]:dark:border-blue-300 aria-[current=true]:dark:bg-gradient-to-b aria-[current=true]:dark:from-blue-500 aria-[current=true]:dark:to-blue-700 text-neutral-800 dark:text-neutral-300 aria-[current=true]:text-blue-600 aria-[current=true]:dark:text-neutral-100 relative"
-    >
-      <h2 className={`text-base font-bold -mt-1`}>{title}</h2>
-      <span className="text-base">{price}</span>
-      {extra}
-    </button>
   );
 }
 
@@ -316,14 +296,6 @@ async function getSubscriptionDetails(
 
   // return the payment token
   return response;
-}
-
-function Title({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="text-lg dark:text-neutral-100 text-wrap-balance leading-tight flex items-center justify-center gap-4">
-      {children}
-    </h2>
-  );
 }
 
 function Description({
