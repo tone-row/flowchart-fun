@@ -101,7 +101,7 @@ export function Checkout() {
     <div className="relative h-full">
       <div
         className={classNames(
-          "grid content-center h-full rounded-xl p-8 pb-16 bg-gradient-to-br from-neutral-50 to-neutral-300/50 shadow-inner",
+          "grid content-center h-full rounded-xl p-8 pb-16 bg-gradient-to-br from-neutral-50 to-neutral-300/50 shadow-inner dark:to-blue-900/50 dark:from-blue-900/0",
           {
             "opacity-60 pointer-events-none cursor-loading":
               createCheckoutSession.isLoading,
