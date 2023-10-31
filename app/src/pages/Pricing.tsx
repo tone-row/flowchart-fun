@@ -7,7 +7,6 @@ import styles from "./Pricing.module.css";
 import { PostHogProvider } from "posthog-js/react";
 import posthog from "posthog-js";
 import classNames from "classnames";
-import { PaymentStepper } from "../components/PaymentStepper";
 import { Checkout } from "../components/Checkout";
 
 const posthogToken = process.env.REACT_APP_PUBLIC_POSTHOG_KEY;
