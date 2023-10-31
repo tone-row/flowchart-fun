@@ -51,6 +51,7 @@ export const Header = memo(function SharedHeader() {
   const isSignUpPage = pathname === "/i";
   const isNewPage = pathname === "/new";
   const isPrivacyPolicyPage = pathname === "/privacy-policy";
+  const isSuccessPage = pathname === "/success";
   const isInfoPage = isBlogPage || isChangelogPage || isRoadmapPage;
   const isEditor =
     !isSponsorPage &&
@@ -61,7 +62,8 @@ export const Header = memo(function SharedHeader() {
     !isInfoPage &&
     !isLogInPage &&
     !isSignUpPage &&
-    !isNewPage;
+    !isNewPage &&
+    !isSuccessPage;
   const isLoggedIn = useIsLoggedIn();
   const isProUser = useIsProUser();
   const lastChart = useLastChart((state) => state.lastChart);

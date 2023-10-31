@@ -70,3 +70,16 @@ export async function confirmActiveSubscriptionFromToken(token?: string) {
 export function isError(error: unknown): error is Error {
   return error instanceof Error;
 }
+
+/**
+ * Returns the correct base url depending on the environment
+ */
+export function getBaseUrl() {
+  if (process.env.VERCEL_ENV === "production") {
+    return "https://flowchart.fun";
+  } else if (process.env.VERCEL_ENV === "preview") {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+
+  return "http://localhost:3000";
+}
