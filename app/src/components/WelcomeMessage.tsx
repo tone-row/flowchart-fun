@@ -1,6 +1,4 @@
 import { t } from "@lingui/macro";
-import { lazy, Suspense, useEffect, useState } from "react";
-const Confetti = lazy(() => import("react-confetti"));
 
 import { ReactComponent as Success } from "./Success.svg";
 
@@ -10,10 +8,6 @@ import { ReactComponent as Success } from "./Success.svg";
  * after first signing up
  */
 export function WelcomeMessage() {
-  const [windowSize, setWindowSize] = useState<[number, number] | null>(null);
-  useEffect(() => {
-    setWindowSize([window.innerWidth, window.innerHeight]);
-  }, []);
   return (
     <>
       <div
@@ -26,16 +20,6 @@ export function WelcomeMessage() {
           {t`Log in to start creating flowcharts.`}
         </p>
       </div>
-      {windowSize && (
-        <Suspense fallback={null}>
-          <Confetti
-            width={windowSize[0]}
-            height={windowSize[1]}
-            numberOfPieces={50}
-            colors={["#e9efff", "#7f96ff", "#ffe590", "#e3ffdc", "#8252eb"]}
-          />
-        </Suspense>
-      )}
     </>
   );
 }

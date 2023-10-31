@@ -28,6 +28,7 @@ const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
+const Success = lazy(() => import("../pages/Success"));
 import Page404 from "../pages/404";
 import { useSupportLegacyNRoute } from "../lib/useSupportLegacyNRoute";
 
@@ -76,6 +77,7 @@ export default function Router() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/success" element={<Success />} />
         <Route path="*" element={<Page404 />} />
       </Route>
     </Routes>
