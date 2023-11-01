@@ -4,11 +4,22 @@ import { FileCsv, FloppyDisk, MagicWand, TreeStructure } from "phosphor-react";
 import classNames from "classnames";
 import { Trans, t } from "@lingui/macro";
 import { Link, useNavigate } from "react-router-dom";
+import { useSession } from "../lib/hooks";
+import { loopsNewSubscriber } from "../lib/sendLoopsEvent";
 const Confetti = lazy(() => import("react-confetti"));
 
 export default function Success() {
   const [windowSize, setWindowSize] = useState<[number, number] | null>(null);
   const [numPieces, setNumPieces] = useState(200);
+  const session = useSession();
+
+  // Wait until the email is present then send welcome email
+  useEffect(() => {
+    if (session?.user?.email) {
+      loopsNewSubscriber(session.user.email);
+    }
+  }, [session?.user?.email]);
+
   useEffect(() => {
     setWindowSize([window.innerWidth, window.innerHeight]);
     // reduce the num pieces by 50 every 2 seconds
