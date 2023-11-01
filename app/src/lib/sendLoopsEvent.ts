@@ -9,3 +9,10 @@ export function sendLoopsEvent(body: { email: string; eventName: string }) {
     body: JSON.stringify(body),
   });
 }
+
+export function loopsNewSubscriber(email: string) {
+  sendLoopsEvent({
+    email,
+    eventName: "new_subscriber",
+  });
+}
