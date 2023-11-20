@@ -107,7 +107,7 @@ msgstr "संपादक पर वापस जाएं"
 msgid "Background Color"
 msgstr "पृष्ठभूमि रंग"
 
-#: src/components/ShareDialog.tsx:443
+#: src/components/ShareDialog.tsx:495
 msgid "Basic Flowchart"
 msgstr "बेसिक फ्लोचार्ट"
 
@@ -283,9 +283,9 @@ msgstr "होस्टेड चार्ट में कनवर्ट क�
 msgid "Cookie Policy"
 msgstr "कुकी नीति"
 
-#: src/components/ShareDialog.tsx:246
-#: src/components/ShareDialog.tsx:247
-#: src/components/ShareDialog.tsx:359
+#: src/components/ShareDialog.tsx:257
+#: src/components/ShareDialog.tsx:258
+#: src/components/ShareDialog.tsx:370
 msgid "Copy"
 msgstr "कॉपी करें"
 
@@ -297,7 +297,11 @@ msgstr "PNG छवि कॉपी करें"
 msgid "Copy SVG Code"
 msgstr "SVG कोड कॉपी करें"
 
-#: src/components/ShareDialog.tsx:324
+#: src/components/ShareDialog.tsx:388
+msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
+msgstr "अपने Excalidraw कोड को कॉपी करें और <0>excalidraw.com</0> में पेस्ट करें ताकि आप संपादित कर सकें। यह सुविधा प्रयोगात्मक है और सभी आरेखों के साथ काम नहीं कर सकती। यदि आपको कोई बग मिलता है, तो <1>हमें जानकारी दें।</1>"
+
+#: src/components/ShareDialog.tsx:335
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "अपना मर्मेड.जेएस कोड कॉपी करें या मर्मेड.जेएस लाइव एडिटर में सीधे खोलें।"
 
@@ -325,7 +329,7 @@ msgstr "केवल 3 डॉलर महीने में असीमित
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
 msgstr "आकार में असीमित फ्लोचार्ट को क्लाउड में संग्रहीत करें - किसी भी जगह से उपलब्ध!"
 
-#: src/pages/Success.tsx:43
+#: src/pages/Success.tsx:54
 msgid "Create with AI"
 msgstr "AI के साथ बनाएं"
 
@@ -385,8 +389,8 @@ msgstr "दस्तावेज़"
 msgid "Don't lose your work!"
 msgstr "अपना काम न गंवाएं!"
 
-#: src/components/ShareDialog.tsx:61
-#: src/components/ShareDialog.tsx:518
+#: src/components/ShareDialog.tsx:63
+#: src/components/ShareDialog.tsx:570
 msgid "Download"
 msgstr "डाउनलोड"
 
@@ -478,7 +482,7 @@ msgstr "स्रोत नोड पंक्ति में किन्ह�
 msgid "Edges in Target Node Row"
 msgstr "लक्ष्य नोड पंक्ति में किन्हें"
 
-#: src/components/ShareDialog.tsx:138
+#: src/components/ShareDialog.tsx:140
 msgid "Editable"
 msgstr "संपादन योग्य"
 
@@ -524,8 +528,8 @@ msgstr "Excalidraw"
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
 msgstr "अपने फ्लोचार्ट में स्थानीय फ़ाइलों को डायरेक्टली लोड करने की क्षमता और सुरक्षा का अनुभव करें। फ्लोचार्ट फन प्रो के साथ इस विशेष प्रो फीचर और अधिक को अनलॉक करें, जो केवल 3/महीने या 30/वर्ष के लिए उपलब्ध है।"
 
-#: src/components/ShareDialog.tsx:52
-#: src/components/ShareDialog.tsx:151
+#: src/components/ShareDialog.tsx:54
+#: src/components/ShareDialog.tsx:153
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
@@ -543,7 +547,7 @@ msgstr "PNG, JPG और SVG में निर्यात करें"
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
-#: src/pages/Success.tsx:55
+#: src/pages/Success.tsx:66
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "किसी भी चिंता के लिए हमसे फीडबैक पेज के माध्यम से संपर्क करने के लिए स्वतंत्रता से अन्वेषण करें और प्रवेश करें।"
 
@@ -575,7 +579,7 @@ msgstr "एक बग पाया? एक सुविधा अनुरोध
 msgid "Free"
 msgstr "मुफ्त"
 
-#: src/components/ShareDialog.tsx:133
+#: src/components/ShareDialog.tsx:135
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
@@ -587,7 +591,7 @@ msgstr "सामान्य"
 msgid "Go back home"
 msgstr "घर वापस जाओ"
 
-#: src/pages/Success.tsx:70
+#: src/pages/Success.tsx:81
 msgid "Go to the Editor"
 msgstr "संपादक पर जाएं"
 
@@ -607,7 +611,7 @@ msgstr "ग्रिड"
 msgid "Have complex questions or issues? We're here to help."
 msgstr "जटिल सवाल या समस्याएं हैं? हम यहां आपकी मदद के लिए हैं।"
 
-#: src/pages/Success.tsx:34
+#: src/pages/Success.tsx:45
 msgid "Here are some Pro features you can now enjoy."
 msgstr "यहाँ आपको कुछ प्रो फीचर आनंद लेने को मिल रहे हैं।"
 
@@ -662,7 +666,7 @@ msgstr "CSV फ़ाइल से डेटा आयात करें।"
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "किसी भी CSV फ़ाइल से डेटा आयात करें और इसे एक नए प्रक्रिया चार्ट में मैप करें। यह अन्य स्रोतों जैसे लुसिडचार्ट, गूगल शीट्स और विसिओ से डेटा आयात करने के लिए एक अच्छा तरीका है।"
 
-#: src/pages/Success.tsx:48
+#: src/pages/Success.tsx:59
 msgid "Import from CSV"
 msgstr "CSV से आयात करें"
 
@@ -674,7 +678,7 @@ msgstr "Lucidchart, Visio और अन्य CSV फ़ाइलों से �
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Visio, Lucidchart और CSV से आयात करें"
 
-#: src/components/ShareDialog.tsx:435
+#: src/components/ShareDialog.tsx:487
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।"
 
@@ -682,7 +686,7 @@ msgstr "इन CSV फ़ाइलों में से एक का उप�
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "डेटा आयात एक प्रो फीचर है। आप केवल $ 3/महीने या $ 30/वर्ष के लिए फ्लोचार्ट फन प्रो में अपग्रेड कर सकते हैं।"
 
-#: src/components/ShareDialog.tsx:470
+#: src/components/ShareDialog.tsx:522
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "एक <0>title</0> विशेषता का उपयोग करके एक शीर्षक शामिल करें। Visio रंगीनी का उपयोग करने के लिए, निम्नलिखित में से किसी एक के बराबर एक <1>roleType</1> विशेषता जोड़ें:"
 
@@ -744,7 +748,7 @@ msgstr "लाइट"
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/ShareDialog.tsx:128
+#: src/components/ShareDialog.tsx:130
 msgid "Link"
 msgstr "लिंक"
 
@@ -802,7 +806,7 @@ msgstr "सेव में लॉग इन करें"
 msgid "Make a One-Time Donation"
 msgstr "एक बार दान करें"
 
-#: src/components/ShareDialog.tsx:401
+#: src/components/ShareDialog.tsx:453
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
@@ -932,7 +936,7 @@ msgstr "ग्राहक पोर्टल खोलें"
 msgid "Or, you can <0>create a new subscription</0>."
 msgstr "या फिर, आप <0>एक नया सदस्यता बना सकते हैं</0>।"
 
-#: src/components/ShareDialog.tsx:456
+#: src/components/ShareDialog.tsx:508
 #: src/lib/templates/templates.ts:40
 msgid "Organization Chart"
 msgstr "संगठन चार्ट"
@@ -984,8 +988,8 @@ msgstr "डेटा प्रसंस्करण"
 msgid "Product is too expensive..."
 msgstr "उत्पाद बहुत महंगा है ..."
 
-#: src/components/ShareDialog.tsx:397
-#: src/components/ShareDialog.tsx:420
+#: src/components/ShareDialog.tsx:449
+#: src/components/ShareDialog.tsx:472
 msgid "Public"
 msgstr "पब्लिक"
 
@@ -999,7 +1003,7 @@ msgid "Rapid Templates"
 msgstr "त्वरित टेम्पलेट्स"
 
 #: src/components/EditorWrapper.tsx:55
-#: src/components/ShareDialog.tsx:143
+#: src/components/ShareDialog.tsx:145
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
 
@@ -1113,7 +1117,7 @@ msgstr "क्लौड में सेव करें"
 msgid "Save to File"
 msgstr "फाइल में सेव करें"
 
-#: src/pages/Success.tsx:38
+#: src/pages/Success.tsx:49
 msgid "Save your Work"
 msgstr "अपनी कार्यवाही सुरक्षित करें"
 
@@ -1212,7 +1216,7 @@ msgstr "भेजना"
 msgid "Subscription"
 msgstr "सदस्यता"
 
-#: src/pages/Success.tsx:30
+#: src/pages/Success.tsx:41
 msgid "Subscription Successful!"
 msgstr "सदस्यता सफल हुआ!"
 
@@ -1341,7 +1345,7 @@ msgstr "यह वर्तमान सामग्री को बदल द�
 msgid "This will replace your current sandbox."
 msgstr "यह आपके वर्तमान सैंडबॉक्स को बदल देगा।"
 
-#: src/components/ShareDialog.tsx:527
+#: src/components/ShareDialog.tsx:579
 msgid "Tip"
 msgstr "सुझाव"
 
@@ -1467,11 +1471,11 @@ msgstr "अपनी बिलिंग जानकारी बदलने �
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "अपने फ्लोचार्ट की दिखता और व्यवहार को अनुकूलित करने के लिए इन सेटिंग्स का उपयोग करें"
 
-#: src/components/ShareDialog.tsx:465
+#: src/components/ShareDialog.tsx:517
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "संगठनात्मक चार्ट, पदानुक्रमों और अन्य संगठनात्मक संरचनाओं के लिए इस फ़ाइल का उपयोग करें।"
 
-#: src/components/ShareDialog.tsx:452
+#: src/components/ShareDialog.tsx:504
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "अनुक्रमों, प्रक्रियाओं और कार्यप्रवाहों के लिए इस फ़ाइल का उपयोग करें।"
 
