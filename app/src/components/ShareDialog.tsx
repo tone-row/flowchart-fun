@@ -29,6 +29,8 @@ import Loading from "./Loading";
 import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
 import { SvgProOnlyPopover } from "./SvgProOnlyPopover";
+import { toExcalidraw } from "../lib/toExcalidraw";
+import { Link } from "react-router-dom";
 
 export default function ShareDialog({ children }: { children?: ReactNode }) {
   const isHosted = useDocDetails("isHosted");
@@ -164,12 +166,21 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
               >
                 <span>Visio</span>
               </Tabs.Trigger>
+              <Tabs.Trigger
+                value="excalidraw"
+                className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
+              >
+                <span>Excalidraw</span>
+              </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content value="mermaid">
               <Mermaid />
             </Tabs.Content>
             <Tabs.Content value="visio">
               <VisioCSVDownload />
+            </Tabs.Content>
+            <Tabs.Content value="excalidraw">
+              <Excalidraw />
             </Tabs.Content>
           </Tabs.Root>
         </Column>
@@ -361,6 +372,52 @@ function Mermaid() {
           {copied && <Check data-testid="Copied Mermaid Code" />}
         </div>
       </div>
+    </div>
+  );
+}
+
+function Excalidraw() {
+  const [copied, setCopied] = useState(false);
+  // set copied back to false after 3 seconds
+  useEffect(() => {
+    if (copied) setTimeout(() => setCopied(false), 3000);
+  }, [copied]);
+  return (
+    <div className="grid gap-2">
+      <img
+        src="/images/export-to-excalidraw.gif"
+        alt="Excalidraw"
+        className="rounded w-full h-auto mb-3"
+      />
+      <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-normal">
+        <Trans>
+          Copy your Excalidraw code and paste it into{" "}
+          <a
+            href="https://excalidraw.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 dark:text-blue-300"
+          >
+            excalidraw.com
+          </a>{" "}
+          to edit. This feature is experimental and may not work with all
+          diagrams. If you find a bug, please{" "}
+          <Link to="/o" className="text-blue-500 dark:text-blue-300">
+            let us know
+          </Link>
+          .
+        </Trans>
+      </p>
+      <Button2
+        color="blue"
+        onClick={() => {
+          navigator.clipboard.writeText(toExcalidraw());
+          setCopied(true);
+        }}
+        rightIcon={copied ? <Check weight="bold" /> : null}
+      >
+        Copy to Excalidraw
+      </Button2>
     </div>
   );
 }

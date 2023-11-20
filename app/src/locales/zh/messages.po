@@ -107,7 +107,7 @@ msgstr "返回编辑器"
 msgid "Background Color"
 msgstr "背景颜色"
 
-#: src/components/ShareDialog.tsx:443
+#: src/components/ShareDialog.tsx:495
 msgid "Basic Flowchart"
 msgstr "基本流程图"
 
@@ -283,9 +283,9 @@ msgstr "是否转换为托管图表？"
 msgid "Cookie Policy"
 msgstr "Cookie政策"
 
-#: src/components/ShareDialog.tsx:246
-#: src/components/ShareDialog.tsx:247
-#: src/components/ShareDialog.tsx:359
+#: src/components/ShareDialog.tsx:257
+#: src/components/ShareDialog.tsx:258
+#: src/components/ShareDialog.tsx:370
 msgid "Copy"
 msgstr "复制"
 
@@ -297,7 +297,11 @@ msgstr "复制PNG图像"
 msgid "Copy SVG Code"
 msgstr "复制 SVG 代码"
 
-#: src/components/ShareDialog.tsx:324
+#: src/components/ShareDialog.tsx:388
+msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
+msgstr "将你的 Excalidraw 代码复制并粘贴到<0>excalidraw.com</0>以进行编辑。此功能为实验性质，可能无法与所有图表一起使用。如果您发现错误，请<1>告诉我们</1>。"
+
+#: src/components/ShareDialog.tsx:335
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。"
 
@@ -325,7 +329,7 @@ msgstr "仅需每月 3 美元，即可创建无限数量的图表！"
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
 msgstr "在云中存储无限流程图- 随时随地可访问！"
 
-#: src/pages/Success.tsx:43
+#: src/pages/Success.tsx:54
 msgid "Create with AI"
 msgstr "通過AI創建"
 
@@ -385,8 +389,8 @@ msgstr "文档"
 msgid "Don't lose your work!"
 msgstr "不要丢失你的工作！"
 
-#: src/components/ShareDialog.tsx:61
-#: src/components/ShareDialog.tsx:518
+#: src/components/ShareDialog.tsx:63
+#: src/components/ShareDialog.tsx:570
 msgid "Download"
 msgstr "下载"
 
@@ -478,7 +482,7 @@ msgstr "边在源节点行"
 msgid "Edges in Target Node Row"
 msgstr "边在目标节点行"
 
-#: src/components/ShareDialog.tsx:138
+#: src/components/ShareDialog.tsx:140
 msgid "Editable"
 msgstr "可编辑"
 
@@ -524,8 +528,8 @@ msgstr "Excalidraw"
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
 msgstr "将本地文件直接加载到流程图中，可以体验到高效与安全的功能，非常适合管理工作文档离线操作。解锁本独家Pro功能及更多，只需每月$3或每年$30，就能使用Flowchart Fun Pro。"
 
-#: src/components/ShareDialog.tsx:52
-#: src/components/ShareDialog.tsx:151
+#: src/components/ShareDialog.tsx:54
+#: src/components/ShareDialog.tsx:153
 msgid "Export"
 msgstr "导出"
 
@@ -543,7 +547,7 @@ msgstr "导出为PNG，JPG和SVG"
 msgid "Feedback"
 msgstr "反馈"
 
-#: src/pages/Success.tsx:55
+#: src/pages/Success.tsx:66
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "如果您有任何問題，請隨意探索並通過<0>反饋</0>頁面與我們聯繫。"
 
@@ -575,7 +579,7 @@ msgstr "如果发现了一个 bug？有功能请求？我们很乐意听到您�
 msgid "Free"
 msgstr "免费"
 
-#: src/components/ShareDialog.tsx:133
+#: src/components/ShareDialog.tsx:135
 msgid "Fullscreen"
 msgstr "全屏"
 
@@ -587,7 +591,7 @@ msgstr "一般"
 msgid "Go back home"
 msgstr "回家"
 
-#: src/pages/Success.tsx:70
+#: src/pages/Success.tsx:81
 msgid "Go to the Editor"
 msgstr "前往編輯器"
 
@@ -607,7 +611,7 @@ msgstr "网格"
 msgid "Have complex questions or issues? We're here to help."
 msgstr "有复杂的问题或问题吗？我们在这里帮助你。"
 
-#: src/pages/Success.tsx:34
+#: src/pages/Success.tsx:45
 msgid "Here are some Pro features you can now enjoy."
 msgstr "現在您可以享受以下專業功能。"
 
@@ -662,7 +666,7 @@ msgstr "从CSV文件导入数据。"
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "從任何CSV檔案匯入資料並將其映射到新的流程圖。這是從Lucidchart、Google Sheets和Visio等其他來源匯入資料的一個很棒的方法。"
 
-#: src/pages/Success.tsx:48
+#: src/pages/Success.tsx:59
 msgid "Import from CSV"
 msgstr "從CSV導入"
 
@@ -674,7 +678,7 @@ msgstr "从Lucidchart，Visio和其他CSV文件导入。"
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "从Visio，Lucidchart和CSV导入"
 
-#: src/components/ShareDialog.tsx:435
+#: src/components/ShareDialog.tsx:487
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
 
@@ -682,7 +686,7 @@ msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "匯入資料是專業功能。您可以每月以3美元或每年30美元升級至Flowchart Fun Pro。"
 
-#: src/components/ShareDialog.tsx:470
+#: src/components/ShareDialog.tsx:522
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
@@ -744,7 +748,7 @@ msgstr "浅色"
 msgid "Light Mode"
 msgstr "浅色模式"
 
-#: src/components/ShareDialog.tsx:128
+#: src/components/ShareDialog.tsx:130
 msgid "Link"
 msgstr "链接"
 
@@ -802,7 +806,7 @@ msgstr "登录以保存"
 msgid "Make a One-Time Donation"
 msgstr "进行一次性捐赠"
 
-#: src/components/ShareDialog.tsx:401
+#: src/components/ShareDialog.tsx:453
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
@@ -932,7 +936,7 @@ msgstr "打开客户门户"
 msgid "Or, you can <0>create a new subscription</0>."
 msgstr "或者，您可以<0>创建一个新的订阅</0>。"
 
-#: src/components/ShareDialog.tsx:456
+#: src/components/ShareDialog.tsx:508
 #: src/lib/templates/templates.ts:40
 msgid "Organization Chart"
 msgstr "组织结构图"
@@ -984,8 +988,8 @@ msgstr "处理数据"
 msgid "Product is too expensive..."
 msgstr "产品太贵了..."
 
-#: src/components/ShareDialog.tsx:397
-#: src/components/ShareDialog.tsx:420
+#: src/components/ShareDialog.tsx:449
+#: src/components/ShareDialog.tsx:472
 msgid "Public"
 msgstr "公开"
 
@@ -999,7 +1003,7 @@ msgid "Rapid Templates"
 msgstr "快速模板"
 
 #: src/components/EditorWrapper.tsx:55
-#: src/components/ShareDialog.tsx:143
+#: src/components/ShareDialog.tsx:145
 msgid "Read-only"
 msgstr "只读"
 
@@ -1113,7 +1117,7 @@ msgstr "保存到云"
 msgid "Save to File"
 msgstr "保存到文件"
 
-#: src/pages/Success.tsx:38
+#: src/pages/Success.tsx:49
 msgid "Save your Work"
 msgstr "保存您的工作"
 
@@ -1212,7 +1216,7 @@ msgstr "提交"
 msgid "Subscription"
 msgstr "订阅"
 
-#: src/pages/Success.tsx:30
+#: src/pages/Success.tsx:41
 msgid "Subscription Successful!"
 msgstr "訂閱成功！"
 
@@ -1341,7 +1345,7 @@ msgstr "這將取代目前的內容。"
 msgid "This will replace your current sandbox."
 msgstr "这将替换您当前的沙盒。"
 
-#: src/components/ShareDialog.tsx:527
+#: src/components/ShareDialog.tsx:579
 msgid "Tip"
 msgstr "提示"
 
@@ -1467,11 +1471,11 @@ msgstr "使用客户门户更改您的账单信息。"
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "使用这些设置来调整流程图的外观和行为"
 
-#: src/components/ShareDialog.tsx:465
+#: src/components/ShareDialog.tsx:517
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "使用此文件制作组织图、层次结构和其他组织结构。"
 
-#: src/components/ShareDialog.tsx:452
+#: src/components/ShareDialog.tsx:504
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "使用此文件进行顺序、流程和工作流程。"
 
