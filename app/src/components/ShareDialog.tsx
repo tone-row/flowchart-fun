@@ -384,6 +384,11 @@ function Excalidraw() {
   }, [copied]);
   return (
     <div className="grid gap-2">
+      <img
+        src="/images/export-to-excalidraw.gif"
+        alt="Excalidraw"
+        className="rounded w-full h-auto mb-3"
+      />
       <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-normal">
         <Trans>
           Copy your Excalidraw code and paste it into{" "}
