@@ -5,5 +5,10 @@
       "path": "/api/cron/deleteDevUsers",
       "schedule": "0 4 * * *"
     }
-  ]
+  ],
+  "functions": {
+    "api/**/*": {
+      "maxDuration": 300
+    }
+  }
 }
