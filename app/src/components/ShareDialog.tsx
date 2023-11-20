@@ -30,6 +30,7 @@ import styles from "./ShareDialog.module.css";
 import Spinner from "./Spinner";
 import { SvgProOnlyPopover } from "./SvgProOnlyPopover";
 import { toExcalidraw } from "../lib/toExcalidraw";
+import { Link } from "react-router-dom";
 
 export default function ShareDialog({ children }: { children?: ReactNode }) {
   const isHosted = useDocDetails("isHosted");
@@ -383,19 +384,23 @@ function Excalidraw() {
   }, [copied]);
   return (
     <div className="grid gap-2">
-      <p className="text-sm text-neutral-500 leading-normal">
+      <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-normal">
         <Trans>
           Copy your Excalidraw code and paste it into{" "}
           <a
             href="https://excalidraw.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500"
+            className="text-blue-500 dark:text-blue-300"
           >
             excalidraw.com
           </a>{" "}
           to edit. This feature is experimental and may not work with all
-          diagrams.
+          diagrams. If you find a bug, please{" "}
+          <Link to="/o" className="text-blue-500 dark:text-blue-300">
+            let us know
+          </Link>
+          .
         </Trans>
       </p>
       <Button2
