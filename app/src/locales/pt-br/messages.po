@@ -107,7 +107,7 @@ msgstr "Voltar ao editor"
 msgid "Background Color"
 msgstr "Cor de Fundo"
 
-#: src/components/ShareDialog.tsx:495
+#: src/components/ShareDialog.tsx:511
 msgid "Basic Flowchart"
 msgstr "Fluxograma Básico"
 
@@ -184,6 +184,10 @@ msgstr "Registro de alterações"
 #: src/components/Header.tsx:346
 msgid "Charts"
 msgstr "Diagramas"
+
+#: src/components/ShareDialog.tsx:498
+msgid "Check out the guide:"
+msgstr "Confira o guia:"
 
 #: src/pages/LogIn.tsx:80
 msgid "Check your email for a link to log in.<0/>You can close this window."
@@ -297,7 +301,7 @@ msgstr "Copiar imagem PNG"
 msgid "Copy SVG Code"
 msgstr "Copiar código SVG"
 
-#: src/components/ShareDialog.tsx:388
+#: src/components/ShareDialog.tsx:393
 msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
 msgstr "Copie o seu código Excalidraw e cole-o em <0>excalidraw.com</0> para editar. Esta funcionalidade é experimental e pode não funcionar com todos os diagramas. Se você encontrar um bug, por favor <1>deixe-nos saber</1>."
 
@@ -390,7 +394,7 @@ msgid "Don't lose your work!"
 msgstr "Não perca o seu trabalho!"
 
 #: src/components/ShareDialog.tsx:63
-#: src/components/ShareDialog.tsx:570
+#: src/components/ShareDialog.tsx:586
 msgid "Download"
 msgstr "Baixar"
 
@@ -678,7 +682,7 @@ msgstr "Importe do Lucidchart, Visio e outros arquivos CSV."
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Importar de Visio, Lucidchart e CSV"
 
-#: src/components/ShareDialog.tsx:487
+#: src/components/ShareDialog.tsx:492
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Importe seu diagrama para o Microsoft Visio usando um desses arquivos CSV."
 
@@ -686,7 +690,7 @@ msgstr "Importe seu diagrama para o Microsoft Visio usando um desses arquivos CS
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "Importar dados é um recurso avançado. Você pode atualizar para o Flowchart Fun Pro por apenas US $ 3/mês ou US $ 30/ano."
 
-#: src/components/ShareDialog.tsx:522
+#: src/components/ShareDialog.tsx:538
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Inclua um título usando um atributo <0>title</0>. Para usar a coloração do Visio, adicione um atributo <1>roleType</1> igual a uma das seguintes opções:"
 
@@ -806,7 +810,7 @@ msgstr "Faça login para salvar"
 msgid "Make a One-Time Donation"
 msgstr "Faça uma Doação Única"
 
-#: src/components/ShareDialog.tsx:453
+#: src/components/ShareDialog.tsx:458
 msgid "Make publicly accessible"
 msgstr "Tornar publicamente acessível"
 
@@ -936,7 +940,7 @@ msgstr "Abra o portal do cliente"
 msgid "Or, you can <0>create a new subscription</0>."
 msgstr "Ou, você pode <0>criar uma nova assinatura</0>."
 
-#: src/components/ShareDialog.tsx:508
+#: src/components/ShareDialog.tsx:524
 #: src/lib/templates/templates.ts:40
 msgid "Organization Chart"
 msgstr "Gráfico de Organização"
@@ -988,8 +992,8 @@ msgstr "Processando Dados"
 msgid "Product is too expensive..."
 msgstr "O produto é muito caro..."
 
-#: src/components/ShareDialog.tsx:449
-#: src/components/ShareDialog.tsx:472
+#: src/components/ShareDialog.tsx:454
+#: src/components/ShareDialog.tsx:477
 msgid "Public"
 msgstr "Público"
 
@@ -1345,7 +1349,7 @@ msgstr "Isso substituirá o conteúdo atual."
 msgid "This will replace your current sandbox."
 msgstr "Isso substituirá sua sandbox atual."
 
-#: src/components/ShareDialog.tsx:579
+#: src/components/ShareDialog.tsx:595
 msgid "Tip"
 msgstr "Dica"
 
@@ -1471,11 +1475,11 @@ msgstr "Use o portal do cliente para alterar suas informações de cobrança."
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Use essas configurações para adaptar a aparência e o comportamento de seus fluxogramas"
 
-#: src/components/ShareDialog.tsx:517
+#: src/components/ShareDialog.tsx:533
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "Use este arquivo para organogramas, hierarquias e outras estruturas organizacionais."
 
-#: src/components/ShareDialog.tsx:504
+#: src/components/ShareDialog.tsx:520
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Use este arquivo para sequências, processos e fluxos de trabalho."
 
