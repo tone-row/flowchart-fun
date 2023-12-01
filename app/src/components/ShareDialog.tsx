@@ -488,11 +488,22 @@ function VisioCSVDownload() {
   const filename = useDownloadFilename();
   return (
     <div className="grid gap-2">
-      <p className="text-sm text-neutral-500 dark:text-neutral-400">
+      <p className="text-sm text-neutral-600 dark:text-neutral-400">
         <Trans>
           Import your diagram it into Microsoft Visio using one of these CSV
           files.
         </Trans>
+      </p>
+      <p className="text-sm text-neutral-600 dark:text-neutral-400">
+        <Trans>Check out the guide:</Trans>{" "}
+        <a
+          href="https://flowchart.fun/blog/post/export-to-microsoft-visio"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 dark:text-blue-300 font-bold"
+        >
+          How to Export Your Flowchart Fun Diagrams to Visio
+        </a>
       </p>
       <div className="grid md:grid-cols-[repeat(2,minmax(0,300px))] gap-1 md:gap-2">
         <VisioDownloadOption

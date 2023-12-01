@@ -107,7 +107,7 @@ msgstr "편집기로 돌아가기"
 msgid "Background Color"
 msgstr "배경색"
 
-#: src/components/ShareDialog.tsx:495
+#: src/components/ShareDialog.tsx:511
 msgid "Basic Flowchart"
 msgstr "기본 플로우 차트"
 
@@ -184,6 +184,10 @@ msgstr "변경 로그"
 #: src/components/Header.tsx:346
 msgid "Charts"
 msgstr "차트"
+
+#: src/components/ShareDialog.tsx:498
+msgid "Check out the guide:"
+msgstr "가이드를 확인하세요:"
 
 #: src/pages/LogIn.tsx:80
 msgid "Check your email for a link to log in.<0/>You can close this window."
@@ -297,7 +301,7 @@ msgstr "PNG 이미지 복사"
 msgid "Copy SVG Code"
 msgstr "SVG 코드 복사"
 
-#: src/components/ShareDialog.tsx:388
+#: src/components/ShareDialog.tsx:393
 msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
 msgstr "Excalidraw 코드를 복사해서 <0>excalidraw.com</0>에 붙여넣어서 편집하세요. 이 기능은 실험적이며 모든 다이어그램과 작동하지 않을 수 있습니다. 버그를 발견하면 <1>알려주세요</1>."
 
@@ -390,7 +394,7 @@ msgid "Don't lose your work!"
 msgstr "작업을 잃어버리지 마세요!"
 
 #: src/components/ShareDialog.tsx:63
-#: src/components/ShareDialog.tsx:570
+#: src/components/ShareDialog.tsx:586
 msgid "Download"
 msgstr "다운로드"
 
@@ -678,7 +682,7 @@ msgstr "Lucidchart, Visio 및 기타 CSV 파일로부터 가져오기."
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Visio, Lucidchart 및 CSV에서 가져오기"
 
-#: src/components/ShareDialog.tsx:487
+#: src/components/ShareDialog.tsx:492
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다."
 
@@ -686,7 +690,7 @@ msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Micro
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "데이터 가져오기는 프로 기능입니다. Flowchart Fun Pro을 월 3 달러 또는 연 30 달러로 업그레이드 할 수 있습니다."
 
-#: src/components/ShareDialog.tsx:522
+#: src/components/ShareDialog.tsx:538
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Visio 색상을 사용하려면 다음 중 하나와 같은 <1>roleType</1> 속성을 추가하십시오:"
 
@@ -806,7 +810,7 @@ msgstr "로그인하여 저장하기"
 msgid "Make a One-Time Donation"
 msgstr "한 번 선물하기"
 
-#: src/components/ShareDialog.tsx:453
+#: src/components/ShareDialog.tsx:458
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
@@ -936,7 +940,7 @@ msgstr "고객 포털 열기"
 msgid "Or, you can <0>create a new subscription</0>."
 msgstr "또는 <0>새로운 구독을 만들 수도 있습니다.</0>"
 
-#: src/components/ShareDialog.tsx:508
+#: src/components/ShareDialog.tsx:524
 #: src/lib/templates/templates.ts:40
 msgid "Organization Chart"
 msgstr "조직도"
@@ -988,8 +992,8 @@ msgstr "데이터 처리"
 msgid "Product is too expensive..."
 msgstr "제품이 너무 비싸요..."
 
-#: src/components/ShareDialog.tsx:449
-#: src/components/ShareDialog.tsx:472
+#: src/components/ShareDialog.tsx:454
+#: src/components/ShareDialog.tsx:477
 msgid "Public"
 msgstr "공용"
 
@@ -1345,7 +1349,7 @@ msgstr "이것은 현재 내용을 대체합니다."
 msgid "This will replace your current sandbox."
 msgstr "이것은 현재 샌드 박스를 대체합니다."
 
-#: src/components/ShareDialog.tsx:579
+#: src/components/ShareDialog.tsx:595
 msgid "Tip"
 msgstr "팁"
 
@@ -1471,11 +1475,11 @@ msgstr "청구 정보를 변경하려면 고객 포털을 사용하십시오."
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "이 설정을 사용하여 흐름 도표의 모양과 동작을 조정하십시오"
 
-#: src/components/ShareDialog.tsx:517
+#: src/components/ShareDialog.tsx:533
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "조직도, 계층 구조 및 기타 조직 구조를 위해 이 파일을 사용하십시오."
 
-#: src/components/ShareDialog.tsx:504
+#: src/components/ShareDialog.tsx:520
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오."
 
