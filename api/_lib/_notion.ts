@@ -88,7 +88,7 @@ export async function getAreasOfResearchHtml() {
 Takes a block in the format
 {
     type: 'video',
-    parent: '[image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a265786d-536c-4941-ae56-0ccd9fd531c8/7b8ed0d9-2c58-498d-adc6-ff19e0a5b7f5/Untitled.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231201T201105Z&X-Amz-Expires=3600&X-Amz-Signature=3f9df89d9982ec9135e374f09c45b18ed7991b8dddd9ee636cbbadbf1bf12688&X-Amz-SignedHeaders=host&x-id=GetObject)',
+    parent: '[image](url)',
     children: []
   }
 
