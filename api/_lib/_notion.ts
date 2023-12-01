@@ -56,7 +56,22 @@ marked.setOptions({
 });
 
 export async function getPostHtmlFromId(id: string) {
-  const mdblocks = await n2m.pageToMarkdown(id);
+  let mdblocks = await n2m.pageToMarkdown(id);
+  // convert video blocks to HTML
+  mdblocks = mdblocks.map((block) => {
+    if (block.type === "video") {
+      const videoHtml = videoBlockToHtml(block);
+      if (videoHtml) {
+        return {
+          type: "html",
+          parent: videoHtml,
+          children: [],
+        };
+      }
+    }
+    return block;
+  });
+
   const mdString = n2m.toMarkdownString(mdblocks);
   const html = marked(mdString);
   return html;
@@ -66,4 +81,24 @@ export async function getPostHtmlFromId(id: string) {
 const AREAS_OF_RESEARCH_PAGE_ID = "6797865c1d744aa0babbea7d1558e8b3";
 export async function getAreasOfResearchHtml() {
   return await getPostHtmlFromId(AREAS_OF_RESEARCH_PAGE_ID);
+}
+
+/**
+
+Takes a block in the format
+{
+    type: 'video',
+    parent: '[image](url)',
+    children: []
+  }
+
+  and returns an HTML <video /> element with audio muted and autoplay, looping enabled
+
+ */
+function videoBlockToHtml(block: any) {
+  const markdown = block.parent;
+  const url = markdown.match(/\(([^)]+)\)/)[1];
+  if (url) return `<video src="${url}" muted autoplay loop></video>`;
+
+  return null;
 }
