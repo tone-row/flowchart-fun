@@ -56,7 +56,22 @@ marked.setOptions({
 });
 
 export async function getPostHtmlFromId(id: string) {
-  const mdblocks = await n2m.pageToMarkdown(id);
+  let mdblocks = await n2m.pageToMarkdown(id);
+  // convert video blocks to HTML
+  mdblocks = mdblocks.map((block) => {
+    if (block.type === "video") {
+      const videoHtml = videoBlockToHtml(block);
+      if (videoHtml) {
+        return {
+          type: "html",
+          parent: videoHtml,
+          children: [],
+        };
+      }
+    }
+    return block;
+  });
+
   const mdString = n2m.toMarkdownString(mdblocks);
   const html = marked(mdString);
   return html;
@@ -66,4 +81,24 @@ export async function getPostHtmlFromId(id: string) {
 const AREAS_OF_RESEARCH_PAGE_ID = "6797865c1d744aa0babbea7d1558e8b3";
 export async function getAreasOfResearchHtml() {
   return await getPostHtmlFromId(AREAS_OF_RESEARCH_PAGE_ID);
+}
+
+/**
+
+Takes a block in the format
+{
+    type: 'video',
+    parent: '[image](https://prod-files-secure.s3.us-west-2.amazonaws.com/a265786d-536c-4941-ae56-0ccd9fd531c8/7b8ed0d9-2c58-498d-adc6-ff19e0a5b7f5/Untitled.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231201T201105Z&X-Amz-Expires=3600&X-Amz-Signature=3f9df89d9982ec9135e374f09c45b18ed7991b8dddd9ee636cbbadbf1bf12688&X-Amz-SignedHeaders=host&x-id=GetObject)',
+    children: []
+  }
+
+  and returns an HTML <video /> element with audio muted and autoplay, looping enabled
+
+ */
+function videoBlockToHtml(block: any) {
+  const markdown = block.parent;
+  const url = markdown.match(/\(([^)]+)\)/)[1];
+  if (url) return `<video src="${url}" muted autoplay loop></video>`;
+
+  return null;
 }
