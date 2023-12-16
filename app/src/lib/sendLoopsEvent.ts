@@ -3,7 +3,7 @@
 const sentEvents = new Set<string>();
 
 export function sendLoopsEvent(body: { email: string; eventName: string }) {
-  if (process.env.REACT_APP_VERCEL_ENV !== "production") {
+  if (!process.env?.REACT_APP_SEND_LOOPS_EVENTS) {
     console.log("Not sending loops event in dev mode");
     return;
   }
