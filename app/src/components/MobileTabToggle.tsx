@@ -1,11 +1,11 @@
 import { t } from "@lingui/macro";
-import { useContext } from "react";
 
 import { Box } from "../slang";
-import { AppContext } from "./AppContextProvider";
+import { useMobileStore } from "../lib/useMobileStore";
 
 export default function MobileTabToggle() {
-  const { toggleMobileEditorTab, mobileEditorTab } = useContext(AppContext);
+  const tab = useMobileStore((state) => state.tab);
+  const toggleTab = useMobileStore((state) => state.toggleTab);
   return (
     <Box p={1} at={{ tablet: { display: "none" } }}>
       <Box
@@ -14,10 +14,10 @@ export default function MobileTabToggle() {
         color="palette-white-0"
         rad={1}
         p={3}
-        onClick={toggleMobileEditorTab}
+        onClick={toggleTab}
       >
         <span className="text-xs">
-          {mobileEditorTab === "graph" ? t`Editor` : t`Graph`}
+          {tab === "graph" ? t`Editor` : t`Graph`}
         </span>
       </Box>
     </Box>

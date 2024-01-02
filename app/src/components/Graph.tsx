@@ -24,7 +24,11 @@ import {
 } from "../lib/preprocessStyle";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
-import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
+import {
+  moveCursorToLine,
+  updateModelMarkers,
+  useEditorStore,
+} from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
@@ -221,6 +225,16 @@ function initializeGraph({
         window.open(href, "_blank");
       }
     });
+
+    // on double click, focus the line number in the editor
+    cyCurrent.on(
+      "dblclick",
+      "node, edge",
+      function handleDblClick(this: NodeSingular | EdgeSingular) {
+        const { lineNumber } = this.data();
+        moveCursorToLine(lineNumber);
+      }
+    );
 
     cyCurrent.on("dragfree", handleDragFree);
 
