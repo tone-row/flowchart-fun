@@ -1,5 +1,6 @@
 import type { editor } from "monaco-editor";
 import { create } from "zustand";
+import { useMobileStore } from "./useMobileStore";
 
 /**
  * Stores client-side state related to the editor.
@@ -34,8 +35,19 @@ export function updateModelMarkers() {
  * Focuses the editor. Then moves the cursor to the given line.
  */
 export function moveCursorToLine(line: number) {
-  const { editor } = useEditorStore.getState();
-  if (!editor) return;
-  editor.focus();
-  editor.setPosition({ lineNumber: line, column: Infinity });
+  // We toggle the tab just in case we're in mobile view
+  const { tab, toggleTab } = useMobileStore.getState();
+  if (tab === "graph") {
+    toggleTab();
+    requestAnimationFrame(focus);
+  } else {
+    focus();
+  }
+
+  function focus() {
+    const { editor } = useEditorStore.getState();
+    if (!editor) return;
+    editor.focus();
+    editor.setPosition({ lineNumber: line, column: Infinity });
+  }
 }
