@@ -29,3 +29,13 @@ export function updateModelMarkers() {
   if (!model) return;
   monaco.editor.setModelMarkers(model, "editor", markers);
 }
+
+/**
+ * Focuses the editor. Then moves the cursor to the given line.
+ */
+export function moveCursorToLine(line: number) {
+  const { editor } = useEditorStore.getState();
+  if (!editor) return;
+  editor.focus();
+  editor.setPosition({ lineNumber: line, column: Infinity });
+}
