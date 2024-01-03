@@ -50,7 +50,7 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
       }}
       wrapperProps={{
         "data-testid": "Editor",
-        className: isDragging ? "overflow-hidden" : "",
+        className: "bg-white " + (isDragging ? "overflow-hidden" : ""),
       }}
     />
   );

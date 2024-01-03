@@ -4,8 +4,8 @@ import { useLocation, useParams } from "react-router-dom";
 
 import EditorError from "../components/EditorError";
 import { EditorWrapper } from "../components/EditorWrapper";
-import { EditWrapper } from "../components/EditWrapper";
-import Main from "../components/Main";
+import { WithMobileTabToggle } from "../components/WithMobileTabToggle";
+import WithGraph from "../components/WithGraph";
 import { TextEditor } from "../components/TextEditor";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { useDoc } from "../lib/useDoc";
@@ -28,8 +28,8 @@ function ReadOnly() {
   const text = useDoc((d) => d.text);
 
   return (
-    <EditWrapper>
-      <Main>
+    <WithMobileTabToggle>
+      <WithGraph>
         <EditorWrapper>
           <TextEditor
             value={text}
@@ -39,8 +39,8 @@ function ReadOnly() {
           />
         </EditorWrapper>
         <EditorError />
-      </Main>
-    </EditWrapper>
+      </WithGraph>
+    </WithMobileTabToggle>
   );
 }
 

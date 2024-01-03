@@ -9,8 +9,8 @@ import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
 import { EditorOptions } from "../components/EditorOptions";
 import { EditorWrapper } from "../components/EditorWrapper";
-import { EditWrapper } from "../components/EditWrapper";
-import Main from "../components/Main";
+import { WithMobileTabToggle } from "../components/WithMobileTabToggle";
+import WithGraph from "../components/WithGraph";
 import Spinner from "../components/Spinner";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 import { OnChange } from "@monaco-editor/react";
@@ -76,8 +76,8 @@ export default function EditHosted() {
   }, []);
 
   return (
-    <EditWrapper>
-      <Main>
+    <WithMobileTabToggle>
+      <WithGraph>
         <EditorWrapper>
           <Tabs.Root
             value={selectedTab}
@@ -113,8 +113,8 @@ export default function EditHosted() {
           }}
         />
         <EditorError />
-      </Main>
-    </EditWrapper>
+      </WithGraph>
+    </WithMobileTabToggle>
   );
 }
 

@@ -27,56 +27,61 @@ import { saveAs } from "file-saver";
  * Adds title and export button to the editor
  */
 export function EditorWrapper({ children }: { children: React.ReactNode }) {
+  return (
+    <div className={styles.EditorWrapper}>
+      <FlowchartHeader />
+      <Suspense fallback={<Loading />}>
+        <main>{children}</main>
+      </Suspense>
+    </div>
+  );
+}
+
+export function FlowchartHeader() {
   const title = useDocDetails("title", "flowchart.fun");
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
   const isPro = useIsProUser();
   const pageTitle = title || "flowchart.fun";
   const isSandbox = useLocation().pathname === "/";
-
   return (
-    <div className={styles.EditorWrapper}>
-      <header
-        className={classNames(
-          styles.HeaderTitle,
-          "flex items-start gap-2 justify-between p-2 pl-6 pt-6 flex-wrap"
-        )}
-      >
-        {isSandbox ? (
+    <header
+      className={classNames(
+        styles.HeaderTitle,
+        "flex items-start gap-2 justify-between pb-2 flex-wrap"
+      )}
+    >
+      {isSandbox ? (
+        <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
+      ) : (
+        <RenameButton key={pageTitle}>
           <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
-        ) : (
-          <RenameButton key={pageTitle}>
-            <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
-          </RenameButton>
+        </RenameButton>
+      )}
+      <div className="flex items-center gap-2">
+        {isReadOnly && (
+          <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
+            <Trans>Read-only</Trans>
+          </span>
         )}
-        <div className="flex items-center gap-2">
-          {isReadOnly && (
-            <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
-              <Trans>Read-only</Trans>
-            </span>
-          )}
-          {isReadOnly && isPro ? <CloneButton /> : null}
-          {!isReadOnly ? (
-            <>
-              {isSandbox ? <SaveButton /> : null}
-              <ShareDialog>
-                <Button2
-                  color="blue"
-                  onClick={() => setShareModal(true)}
-                  leftIcon={<Export weight="bold" className="w-5 h-5" />}
-                  aria-label="Export"
-                >
-                  <Trans>Share</Trans>
-                </Button2>
-              </ShareDialog>
-            </>
-          ) : null}
-        </div>
-      </header>
-      <Suspense fallback={<Loading />}>
-        <main>{children}</main>
-      </Suspense>
-    </div>
+        {isReadOnly && isPro ? <CloneButton /> : null}
+        {!isReadOnly ? (
+          <>
+            {isSandbox ? <SaveButton /> : null}
+            <ShareDialog>
+              <Button2
+                color="blue"
+                onClick={() => setShareModal(true)}
+                leftIcon={<Export weight="bold" className="w-5 h-5" />}
+                aria-label="Export"
+              >
+                <Trans>Share</Trans>
+              </Button2>
+            </ShareDialog>
+          </>
+        ) : null}
+      </div>
+    </header>
   );
 }
 
@@ -137,6 +142,7 @@ function CanSaveButton() {
       <Dialog.Trigger asChild>
         <Button2
           leftIcon={<DownloadSimple weight="bold" className="w-5 h-5" />}
+          color="zinc"
           onClick={() => {
             setOpen(true);
           }}

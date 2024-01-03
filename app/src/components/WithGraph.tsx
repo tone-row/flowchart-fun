@@ -6,7 +6,7 @@ import { CloneButton } from "./CloneButton";
 import Graph from "./Graph";
 import GraphWrapper from "./GraphWrapper";
 import Loading from "./Loading";
-import styles from "./Main.module.css";
+import styles from "./WithGraph.module.css";
 import TabPane from "./TabPane";
 
 type MainProps = {
@@ -14,14 +14,14 @@ type MainProps = {
 };
 
 /** The left/right column wrapper. Also controls when things should be fullscreen. */
-const Main = memo(({ children }: MainProps) => {
+const WithGraph = memo(({ children }: MainProps) => {
   const [shouldResize, triggerResize] = useState(0);
   const trigger = useCallback(() => triggerResize((n) => n + 1), []);
   const isFullscreen = useFullscreen();
   const unmount = useUnmountStore((state) => state.unmount);
   const isProUser = useIsProUser();
   return (
-    <>
+    <div className="flex shadow-xl">
       {isFullscreen ? null : (
         <TabPane triggerResize={trigger}>
           <Suspense fallback={<Loading />}>{children}</Suspense>
@@ -35,10 +35,10 @@ const Main = memo(({ children }: MainProps) => {
           </div>
         ) : null}
       </GraphWrapper>
-    </>
+    </div>
   );
 });
 
-Main.displayName = "Main";
+WithGraph.displayName = "Main";
 
-export default Main;
+export default WithGraph;

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { CloneButton } from "../components/CloneButton";
 import Graph from "../components/Graph";
 import GraphWrapper from "../components/GraphWrapper";
-import styles from "../components/Main.module.css";
+import styles from "../components/WithGraph.module.css";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { getPublicChart } from "../lib/queries";
 

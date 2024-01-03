@@ -5,10 +5,10 @@ import { useLocation } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
-import { EditorOptions } from "../components/EditorOptions";
-import { EditorWrapper } from "../components/EditorWrapper";
-import { EditWrapper } from "../components/EditWrapper";
-import Main from "../components/Main";
+import { EditorOptions, EditorOptionsInner } from "../components/EditorOptions";
+import { EditorWrapper, FlowchartHeader } from "../components/EditorWrapper";
+import { WithMobileTabToggle } from "../components/WithMobileTabToggle";
+import WithGraph from "../components/WithGraph";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 
 import { OnChange } from "@monaco-editor/react";
@@ -27,6 +27,7 @@ import { useSandboxWarning } from "../lib/useSandboxWarning";
 import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
+import { FlowchartLayout } from "../components/FlowchartLayout";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -98,42 +99,63 @@ const Sandbox = memo(function Edit() {
   }, []);
 
   return (
-    <>
-      <EditWrapper>
-        <Main>
-          <EditorWrapper>
-            <Tabs.Root
-              value={selectedTab}
-              className={styles.Tabs}
-              onValueChange={(selectedTab) =>
-                useTabsStore.setState({ selectedTab })
-              }
-            >
-              <EditorTabList />
-              <Tabs.Content value="Document">
-                <EditorOptions>
-                  <TextEditor value={text} onChange={onChange} />
-                </EditorOptions>
-              </Tabs.Content>
-              <Tabs.Content value="Theme">
-                <ThemeTab />
-              </Tabs.Content>
-            </Tabs.Root>
-          </EditorWrapper>
-          <ClearTextButton
-            handleClear={() => {
-              useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
-              const editor = useEditorStore.getState().editor;
-              if (!editor) return;
-              editor.focus();
-            }}
-          />
-          <EditorError />
-        </Main>
-      </EditWrapper>
-      <SandboxWarning />
-      <LoadFromHashDialog />
-    </>
+    <FlowchartLayout>
+      <FlowchartHeader />
+      <Tabs.Root
+        value={selectedTab}
+        className={styles.Tabs}
+        onValueChange={(selectedTab) => useTabsStore.setState({ selectedTab })}
+      >
+        <div className="flex justify-start items-end gap-4">
+          <EditorTabList />
+          <EditorOptionsInner />
+        </div>
+        <WithGraph>
+          <Tabs.Content value="Document">
+            <TextEditor value={text} onChange={onChange} />
+          </Tabs.Content>
+          <Tabs.Content value="Theme">
+            <ThemeTab />
+          </Tabs.Content>
+        </WithGraph>
+      </Tabs.Root>
+    </FlowchartLayout>
+    // <>
+    //   <WithMobileTabToggle>
+    //     <Main>
+    //       <EditorWrapper>
+    //         <Tabs.Root
+    //           value={selectedTab}
+    //           className={styles.Tabs}
+    //           onValueChange={(selectedTab) =>
+    //             useTabsStore.setState({ selectedTab })
+    //           }
+    //         >
+    //           <EditorTabList />
+    //           <Tabs.Content value="Document">
+    //             <EditorOptions>
+    //               <TextEditor value={text} onChange={onChange} />
+    //             </EditorOptions>
+    //           </Tabs.Content>
+    //           <Tabs.Content value="Theme">
+    //             <ThemeTab />
+    //           </Tabs.Content>
+    //         </Tabs.Root>
+    //       </EditorWrapper>
+    //       <ClearTextButton
+    //         handleClear={() => {
+    //           useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
+    //           const editor = useEditorStore.getState().editor;
+    //           if (!editor) return;
+    //           editor.focus();
+    //         }}
+    //       />
+    //       <EditorError />
+    //     </Main>
+    //   </WithMobileTabToggle>
+    //   <SandboxWarning />
+    //   <LoadFromHashDialog />
+    // </>
   );
 });
 
