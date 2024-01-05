@@ -111,7 +111,7 @@ const Sandbox = memo(function Edit() {
           <EditorOptionsInner />
         </div>
         <WithGraph>
-          <Tabs.Content value="Document">
+          <Tabs.Content value="Document" className="overflow-hidden">
             <TextEditor value={text} onChange={onChange} />
           </Tabs.Content>
           <Tabs.Content value="Theme">
