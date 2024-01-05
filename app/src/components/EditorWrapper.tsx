@@ -48,7 +48,7 @@ export function FlowchartHeader() {
     <header
       className={classNames(
         styles.HeaderTitle,
-        "flex items-start gap-2 justify-between pb-2 flex-wrap"
+        "flex items-center gap-2 justify-between flex-wrap p-4 md:p-2"
       )}
     >
       {isSandbox ? (
@@ -260,7 +260,7 @@ function FlowchartTitle({
   return (
     <h1
       className={classNames(
-        "text-xl md:text-2xl font-bold -translate-y-[2px]",
+        "text-lg sm:text-xl md:text-2xl font-bold -translate-y-[2px]",
         className
       )}
       {...props}

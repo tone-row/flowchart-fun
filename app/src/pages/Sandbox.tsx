@@ -28,6 +28,8 @@ import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
+import MobileTabToggle from "../components/MobileTabToggle";
+import { toEditorTabOnMobile } from "../lib/useMobileStore";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -104,9 +106,11 @@ const Sandbox = memo(function Edit() {
       <Tabs.Root
         value={selectedTab}
         className={styles.Tabs}
-        onValueChange={(selectedTab) => useTabsStore.setState({ selectedTab })}
+        onValueChange={(selectedTab: any) => {
+          useTabsStore.setState({ selectedTab });
+        }}
       >
-        <div className="flex justify-start items-end gap-4">
+        <div className="flex justify-between md:justify-start items-end gap-4">
           <EditorTabList />
           <EditorOptionsInner />
         </div>

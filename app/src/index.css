@@ -242,3 +242,7 @@ main .monaco-editor {
   left: 0;
   @apply bg-gradient-to-b from-transparent to-white dark:to-neutral-900;
 }
+
+[data-radix-popper-content-wrapper] {
+  @apply !z-10;
+}

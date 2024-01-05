@@ -15,7 +15,7 @@
     z-index: -1;
   }
 
-  [data-mobile-tab="graph"] .GraphWrapper {
+  [data-selected-tab="Graph"] .GraphWrapper {
     z-index: 1;
   }
 }

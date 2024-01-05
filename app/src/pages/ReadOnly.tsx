@@ -3,12 +3,13 @@ import { useQuery } from "react-query";
 import { useLocation, useParams } from "react-router-dom";
 
 import EditorError from "../components/EditorError";
-import { EditorWrapper } from "../components/EditorWrapper";
+import { EditorWrapper, FlowchartHeader } from "../components/EditorWrapper";
 import { WithMobileTabToggle } from "../components/WithMobileTabToggle";
 import WithGraph from "../components/WithGraph";
 import { TextEditor } from "../components/TextEditor";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { useDoc } from "../lib/useDoc";
+import { FlowchartLayout } from "../components/FlowchartLayout";
 
 function ReadOnly() {
   const { pathname } = useLocation();
@@ -28,19 +29,17 @@ function ReadOnly() {
   const text = useDoc((d) => d.text);
 
   return (
-    <WithMobileTabToggle>
+    <FlowchartLayout>
+      <FlowchartHeader />
       <WithGraph>
-        <EditorWrapper>
-          <TextEditor
-            value={text}
-            extendOptions={{
-              readOnly: true,
-            }}
-          />
-        </EditorWrapper>
-        <EditorError />
+        <TextEditor
+          value={text}
+          extendOptions={{
+            readOnly: true,
+          }}
+        />
       </WithGraph>
-    </WithMobileTabToggle>
+    </FlowchartLayout>
   );
 }
 

@@ -4,9 +4,9 @@ import { useRef } from "react";
 import classNames from "classnames";
 
 const btn =
-  "bg-white text-neutral-700 px-6 py-3 text-[18px] opacity-50 font-bold aria-[selected=false]:hover:opacity-80";
+  "bg-white text-neutral-700 px-4 py-2.5 md:px-6 md:py-3 text-[18px] opacity-50 font-bold aria-[selected=false]:hover:opacity-80";
 const selected =
-  "aria-[selected=true]:opacity-100 aria-[selected=true]:shadow-xl";
+  "aria-[selected=true]:opacity-100 aria-[selected=true]:shadow-xl data-[is-selected=true]:opacity-100 data-[is-selected=true]:shadow-xl";
 
 export function EditorTabList() {
   const tabsListRef = useRef<HTMLDivElement>(null);
@@ -32,6 +32,15 @@ export function EditorTabList() {
       >
         <span data-text={t`Theme`}>
           <Trans>Theme</Trans>
+        </span>
+      </Tabs.Trigger>
+      <Tabs.Trigger
+        value="Graph"
+        data-testid="Editor Tab: Graph"
+        className={classNames(btn, selected, "md:hidden")}
+      >
+        <span data-text={t`Theme`}>
+          <Trans>Graph</Trans>
         </span>
       </Tabs.Trigger>
     </Tabs.List>

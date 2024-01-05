@@ -8,6 +8,8 @@ import GraphWrapper from "./GraphWrapper";
 import Loading from "./Loading";
 import styles from "./WithGraph.module.css";
 import TabPane from "./TabPane";
+import { useMobileStore } from "../lib/useMobileStore";
+import { useTabsStore } from "../lib/useTabsStore";
 
 type MainProps = {
   children?: ReactNode;
@@ -20,8 +22,15 @@ const WithGraph = memo(({ children }: MainProps) => {
   const isFullscreen = useFullscreen();
   const unmount = useUnmountStore((state) => state.unmount);
   const isProUser = useIsProUser();
+  const tab = useMobileStore((state) => state.tab);
+  const selectedTab = useTabsStore((state) => state.selectedTab);
+
   return (
-    <div className="flex shadow-xl">
+    <div
+      className="grid grid-rows-[[main]_minmax(0,1fr)_auto] grid-cols-[[main]_minmax(0,1fr)] md:flex md:shadow-xl"
+      data-mobile-tab={tab}
+      data-selected-tab={selectedTab}
+    >
       {isFullscreen ? null : (
         <TabPane triggerResize={trigger}>
           <Suspense fallback={<Loading />}>{children}</Suspense>
