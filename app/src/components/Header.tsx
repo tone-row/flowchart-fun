@@ -73,9 +73,9 @@ export const Header = memo(function SharedHeader() {
         <header className="grid-flow-col justify-between items-center px-2 py-1 hidden md:grid bg-[#f6f5f6] dark:bg-[#0c0c0c]">
           <NavigationMenu.List asChild>
             <nav className="flex gap-1 items-center">
-              <span className="shared-header__logo mr-2">
+              <Link to="/" className="shared-header__logo mr-2">
                 <BrandSvg width={40} />
-              </span>
+              </Link>
               <NavigationMenu.Item asChild>
                 <HeaderClientLink
                   label={t`Editor`}
