@@ -9,7 +9,6 @@ import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
 import { Actions } from "../components/Actions";
 import { FlowchartHeader } from "../components/FlowchartHeader";
-import { WithMobileTabToggle } from "../components/WithMobileTabToggle";
 import WithGraph from "../components/WithGraph";
 import Spinner from "../components/Spinner";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
@@ -27,7 +26,6 @@ import { useTabsStore } from "../lib/useTabsStore";
 import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
-import { toEditorTabOnMobile } from "../lib/useMobileStore";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
@@ -104,48 +102,23 @@ export default function EditHosted() {
           <Tabs.Content value="Theme" className="overflow-hidden">
             <ThemeTab />
           </Tabs.Content>
+          <LoadingState isLoading={isLoading} pending={pending()} />
+          <ClearTextButton
+            handleClear={() => {
+              useDoc.setState(
+                { text: "", meta: {} },
+                false,
+                "EditHosted/clear"
+              );
+              const editor = useEditorStore.getState().editor;
+              if (!editor) return;
+              editor.focus();
+            }}
+          />
+          <EditorError />
         </WithGraph>
       </Tabs.Root>
     </FlowchartLayout>
-    // <WithMobileTabToggle>
-    //   <WithGraph>
-    //     <EditorWrapper>
-    //       <Tabs.Root
-    //         value={selectedTab}
-    //         onValueChange={(selectedTab) => {
-    //           useTabsStore.setState({ selectedTab });
-    //         }}
-    //         className={sandboxStyles.Tabs}
-    //       >
-    //         <EditorTabList />
-    //         <Tabs.Content value="Document">
-    //           <EditorOptions>
-    //             <TextEditor
-    //               value={text}
-    //               onChange={onChange}
-    //               extendOptions={{
-    //                 readOnly: !isProUser,
-    //               }}
-    //             />
-    //           </EditorOptions>
-    //         </Tabs.Content>
-    //         <Tabs.Content value="Theme">
-    //           <ThemeTab />
-    //         </Tabs.Content>
-    //       </Tabs.Root>
-    //     </EditorWrapper>
-    //     <LoadingState isLoading={isLoading} pending={pending()} />
-    //     <ClearTextButton
-    //       handleClear={() => {
-    //         useDoc.setState({ text: "", meta: {} }, false, "EditHosted/clear");
-    //         const editor = useEditorStore.getState().editor;
-    //         if (!editor) return;
-    //         editor.focus();
-    //       }}
-    //     />
-    //     <EditorError />
-    //   </WithGraph>
-    // </WithMobileTabToggle>
   );
 }
 

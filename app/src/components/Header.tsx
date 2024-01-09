@@ -70,7 +70,7 @@ export const Header = memo(function SharedHeader() {
   return (
     <>
       <NavigationMenu.Root asChild>
-        <header className="grid-flow-col justify-between items-center px-2 py-1 hidden md:grid bg-[#f2f1f1] dark:bg-[#0c0c0c]">
+        <header className="grid-flow-col justify-between items-center px-2 py-1 hidden md:grid bg-[#f6f5f6] dark:bg-[#0c0c0c]">
           <NavigationMenu.List asChild>
             <nav className="flex gap-1 items-center">
               <span className="shared-header__logo mr-2">
@@ -185,7 +185,7 @@ export const Header = memo(function SharedHeader() {
                   to="/pricing"
                   data-testid="pro-link"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="font-bold text-[15px] rounded-lg py-1.5 ml-2 px-3 bg-purple-100 text-purple-500 hover:bg-purple-200 hover:text-purple-600 dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
+                  className="font-bold text-[15px] rounded-xl py-2 ml-2 px-4 bg-purple-100 text-purple-500 hover:bg-purple-200 hover:text-purple-600 dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
                   onClick={() => {
                     track("sponsor", "click");
                   }}
