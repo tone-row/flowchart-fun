@@ -6,7 +6,6 @@ import * as Tabs from "@radix-ui/react-tabs";
 
 import EditorError from "../components/EditorError";
 import { FlowchartHeader } from "../components/FlowchartHeader";
-import { WithMobileTabToggle } from "../components/WithMobileTabToggle";
 import WithGraph from "../components/WithGraph";
 import { TextEditor } from "../components/TextEditor";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
@@ -61,6 +60,7 @@ function ReadOnly() {
               }}
             />
           </Tabs.Content>
+          <EditorError />
         </WithGraph>
       </Tabs.Root>
     </FlowchartLayout>

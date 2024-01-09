@@ -7,7 +7,6 @@ import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
 import { Actions } from "../components/Actions";
 import { FlowchartHeader } from "../components/FlowchartHeader";
-import { WithMobileTabToggle } from "../components/WithMobileTabToggle";
 import WithGraph from "../components/WithGraph";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 
@@ -17,7 +16,6 @@ import { TextEditor } from "../components/TextEditor";
 import { getDefaultLocalChart } from "../lib/getDefaultChart";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
-import { useEditorStore } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
 import styles from "./Sandbox.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
@@ -28,8 +26,7 @@ import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
-import MobileTabToggle from "../components/MobileTabToggle";
-import { toEditorTabOnMobile } from "../lib/useMobileStore";
+import { useEditorStore } from "../lib/useEditorStore";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -101,29 +98,42 @@ const Sandbox = memo(function Edit() {
   }, []);
 
   return (
-    <FlowchartLayout>
-      <FlowchartHeader />
-      <Tabs.Root
-        value={selectedTab}
-        className={styles.Tabs}
-        onValueChange={(selectedTab: any) => {
-          useTabsStore.setState({ selectedTab });
-        }}
-      >
-        <div className="flex justify-between md:justify-start items-end gap-4">
-          <EditorTabList />
-          <Actions />
-        </div>
-        <WithGraph>
-          <Tabs.Content value="Document" className="overflow-hidden">
-            <TextEditor value={text} onChange={onChange} />
-          </Tabs.Content>
-          <Tabs.Content value="Theme" className="overflow-hidden">
-            <ThemeTab />
-          </Tabs.Content>
-        </WithGraph>
-      </Tabs.Root>
-    </FlowchartLayout>
+    <>
+      <FlowchartLayout>
+        <FlowchartHeader />
+        <Tabs.Root
+          value={selectedTab}
+          className={styles.Tabs}
+          onValueChange={(selectedTab: any) => {
+            useTabsStore.setState({ selectedTab });
+          }}
+        >
+          <div className="flex justify-between md:justify-start items-end gap-4">
+            <EditorTabList />
+            <Actions />
+          </div>
+          <WithGraph>
+            <Tabs.Content value="Document" className="overflow-hidden">
+              <TextEditor value={text} onChange={onChange} />
+            </Tabs.Content>
+            <Tabs.Content value="Theme" className="overflow-hidden">
+              <ThemeTab />
+            </Tabs.Content>
+            <ClearTextButton
+              handleClear={() => {
+                useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
+                const editor = useEditorStore.getState().editor;
+                if (!editor) return;
+                editor.focus();
+              }}
+            />
+            <EditorError />
+          </WithGraph>
+        </Tabs.Root>
+      </FlowchartLayout>
+      <SandboxWarning />
+      <LoadFromHashDialog />
+    </>
     // <>
     //   <WithMobileTabToggle>
     //     <Main>
@@ -157,8 +167,6 @@ const Sandbox = memo(function Edit() {
     //       <EditorError />
     //     </Main>
     //   </WithMobileTabToggle>
-    //   <SandboxWarning />
-    //   <LoadFromHashDialog />
     // </>
   );
 });
