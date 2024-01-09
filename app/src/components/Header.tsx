@@ -70,7 +70,7 @@ export const Header = memo(function SharedHeader() {
   return (
     <>
       <NavigationMenu.Root asChild>
-        <header className="grid-flow-col justify-between items-center px-2 py-1 hidden md:grid bg-[#f2f1f1]">
+        <header className="grid-flow-col justify-between items-center px-2 py-1 hidden md:grid bg-[#f2f1f1] dark:bg-[#0c0c0c]">
           <NavigationMenu.List asChild>
             <nav className="flex gap-1 items-center">
               <span className="shared-header__logo mr-2">
@@ -185,7 +185,7 @@ export const Header = memo(function SharedHeader() {
                   to="/pricing"
                   data-testid="pro-link"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="font-bold text-[15px] rounded-lg py-1.5 ml-2 px-3 bg-purple-100 text-purple-500 hover:bg-purple-200 hover:text-purple-600 dark:bg-purple-900 dark:text-purple-400 dark:hover:bg-purple-800 dark:hover:text-purple-300"
+                  className="font-bold text-[15px] rounded-lg py-1.5 ml-2 px-3 bg-purple-100 text-purple-500 hover:bg-purple-200 hover:text-purple-600 dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
                   onClick={() => {
                     track("sponsor", "click");
                   }}
@@ -215,7 +215,7 @@ export const Header = memo(function SharedHeader() {
 });
 
 const btnClasses =
-  "flex items-center gap-1 p-2 rounded text-[15px] text-neutral-700 hover:text-foreground hover:bg-white/40 dark:hover:bg-neutral-800 dark:aria-[current=page]:text-green-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-green-400";
+  "flex items-center gap-1 p-2 rounded text-[15px] text-neutral-700 hover:text-foreground hover:bg-white/40 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:aria-[current=page]:text-green-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-green-400";
 
 type HeaderButtonProps = {
   label: string;

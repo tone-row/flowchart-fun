@@ -1,12 +1,11 @@
 import { Trans } from "@lingui/macro";
-import { Suspense, useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useIsLoggedIn, useIsProUser, useIsReadOnly } from "../lib/hooks";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Button2, Input } from "../ui/Shared";
 import { AppContext } from "./AppContextProvider";
 import { CloneButton } from "./CloneButton";
-import styles from "./EditorWrapper.module.css";
-import Loading from "./Loading";
+import styles from "./FlowchartHeader.module.css";
 import { RenameButton } from "./RenameButton";
 import ShareDialog from "./ShareDialog";
 import { Cloud, DownloadSimple, Export, File } from "phosphor-react";
@@ -22,20 +21,6 @@ import {
 import { useMutation } from "react-query";
 import { makeChart } from "../lib/queries";
 import { saveAs } from "file-saver";
-
-/**
- * Adds title and export button to the editor
- */
-export function EditorWrapper({ children }: { children: React.ReactNode }) {
-  return (
-    <div className={styles.EditorWrapper}>
-      <FlowchartHeader />
-      <Suspense fallback={<Loading />}>
-        <main>{children}</main>
-      </Suspense>
-    </div>
-  );
-}
 
 export function FlowchartHeader() {
   const title = useDocDetails("title", "flowchart.fun");

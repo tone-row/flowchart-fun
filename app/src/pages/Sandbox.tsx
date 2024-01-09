@@ -5,8 +5,8 @@ import { useLocation } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
-import { EditorOptions, EditorOptionsInner } from "../components/EditorOptions";
-import { EditorWrapper, FlowchartHeader } from "../components/EditorWrapper";
+import { Actions } from "../components/Actions";
+import { FlowchartHeader } from "../components/FlowchartHeader";
 import { WithMobileTabToggle } from "../components/WithMobileTabToggle";
 import WithGraph from "../components/WithGraph";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
@@ -112,7 +112,7 @@ const Sandbox = memo(function Edit() {
       >
         <div className="flex justify-between md:justify-start items-end gap-4">
           <EditorTabList />
-          <EditorOptionsInner />
+          <Actions />
         </div>
         <WithGraph>
           <Tabs.Content value="Document" className="overflow-hidden">

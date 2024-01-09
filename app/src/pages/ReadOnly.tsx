@@ -1,15 +1,20 @@
 import { decompressFromEncodedURIComponent } from "lz-string";
 import { useQuery } from "react-query";
 import { useLocation, useParams } from "react-router-dom";
+import styles from "./Sandbox.module.css";
+import * as Tabs from "@radix-ui/react-tabs";
 
 import EditorError from "../components/EditorError";
-import { EditorWrapper, FlowchartHeader } from "../components/EditorWrapper";
+import { FlowchartHeader } from "../components/FlowchartHeader";
 import { WithMobileTabToggle } from "../components/WithMobileTabToggle";
 import WithGraph from "../components/WithGraph";
 import { TextEditor } from "../components/TextEditor";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { useDoc } from "../lib/useDoc";
 import { FlowchartLayout } from "../components/FlowchartLayout";
+import { useTabsStore } from "../lib/useTabsStore";
+import { useEffect } from "react";
+import { EditorTabList } from "../components/Tabs/EditorTabList";
 
 function ReadOnly() {
   const { pathname } = useLocation();
@@ -27,18 +32,37 @@ function ReadOnly() {
   );
 
   const text = useDoc((d) => d.text);
+  const selectedTab = useTabsStore((s) => s.selectedTab);
+  useEffect(() => {
+    return () => {
+      useTabsStore.setState({ selectedTab: "Document" });
+    };
+  }, []);
 
   return (
     <FlowchartLayout>
       <FlowchartHeader />
-      <WithGraph>
-        <TextEditor
-          value={text}
-          extendOptions={{
-            readOnly: true,
-          }}
-        />
-      </WithGraph>
+      <Tabs.Root
+        value={selectedTab}
+        className={styles.Tabs}
+        onValueChange={(selectedTab: any) => {
+          useTabsStore.setState({ selectedTab });
+        }}
+      >
+        <div className="flex justify-between md:justify-start items-end gap-4">
+          <EditorTabList />
+        </div>
+        <WithGraph>
+          <Tabs.Content value="Document" className="overflow-hidden">
+            <TextEditor
+              value={text}
+              extendOptions={{
+                readOnly: true,
+              }}
+            />
+          </Tabs.Content>
+        </WithGraph>
+      </Tabs.Root>
     </FlowchartLayout>
   );
 }

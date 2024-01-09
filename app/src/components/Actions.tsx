@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useIsProUser } from "../lib/hooks";
 import { ImportDataDialog } from "./ImportDataDialog";
@@ -10,16 +10,7 @@ import { useLocation } from "react-router-dom";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Sliders } from "phosphor-react";
 
-export function EditorOptions({ children }: { children: ReactNode }) {
-  return (
-    <div className="grid h-full grid-rows-[auto_minmax(0,1fr)]">
-      <EditorOptionsInner />
-      {children}
-    </div>
-  );
-}
-
-export function EditorOptionsInner() {
+export function Actions() {
   const isProUser = useIsProUser();
   const isSandbox = useLocation().pathname === "/";
   const [open, setOpen] = useState(false);
