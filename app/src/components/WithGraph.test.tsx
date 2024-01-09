@@ -1,5 +1,5 @@
 import { render } from "../test-utils";
-import Main from "./Main";
+import WithGraph from "./WithGraph";
 
 beforeAll(() => {
   jest.spyOn(console, "warn");
@@ -8,6 +8,6 @@ beforeAll(() => {
 
 describe("Main", () => {
   test("renders", () => {
-    render(<Main />);
+    render(<WithGraph />);
   });
 });

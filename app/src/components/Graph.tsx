@@ -91,9 +91,13 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   // then we set autoungrabify to true
   const canEdit = useCanEdit();
   useEffect(() => {
-    if (cy.current && !canEdit) {
+    if (!cy.current) return;
+    if (!canEdit) {
       cy.current.autoungrabify(true);
       cy.current.autounselectify(true);
+    } else {
+      cy.current.autoungrabify(false);
+      cy.current.autounselectify(false);
     }
   }, [canEdit]);
 

@@ -25,3 +25,17 @@ export const useMobileStore = create<MobileStore>()(
     }
   )
 );
+
+/**
+ * turn the mobile tab to editor if it's on graph
+ */
+export function toEditorTabOnMobile() {
+  useMobileStore.setState({ tab: "text" });
+}
+
+/**
+ * turn the mobile tab to graph if it's on editor
+ */
+export function toGraphTabOnMobile() {
+  useMobileStore.setState({ tab: "graph" });
+}

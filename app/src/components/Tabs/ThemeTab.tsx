@@ -594,7 +594,7 @@ export function ThemeTab() {
     (state) => (state.meta.cytoscapeStyle as string) ?? ""
   );
   return (
-    <div className="h-full w-full p-4 overflow-auto theme-tab">
+    <div className="h-full w-full p-4 overflow-auto theme-tab bg-white dark:bg-neutral-900">
       <div className="mb-6 grid gap-2">
         <p className="text-xs text-neutral-600 ml-3 dark:text-neutral-400">
           <Trans>
