@@ -69,7 +69,7 @@ function ReadOnly() {
 
 export default ReadOnly;
 
-async function loadReadOnly(path: string, graphText: string) {
+export async function loadReadOnly(path: string, graphText: string) {
   const initialText = isCompressed(path)
     ? decompressFromEncodedURIComponent(graphText) ?? ""
     : decodeURIComponent(graphText);

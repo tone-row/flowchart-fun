@@ -31,6 +31,7 @@ const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
 const Success = lazy(() => import("../pages/Success"));
 import Page404 from "../pages/404";
 import { useSupportLegacyNRoute } from "../lib/useSupportLegacyNRoute";
+const Fullscreen = lazy(() => import("../pages/Fullscreen"));
 
 export default function Router() {
   usePageViews();
@@ -61,7 +62,7 @@ export default function Router() {
         <Route path="/r/:graphText?" element={<ReadOnly />} />
         {/* c for "compressed" */}
         <Route path="/c/:graphText?" element={<ReadOnly />} />
-        <Route path="/f/:graphText?" element={<ReadOnly />} />
+        <Route path="/f/:graphText?" element={<Fullscreen />} />
         <Route path="/p/:public_id" element={<Public />} />
         <Route path="/s" element={<Settings />} />
         {/* "o" for no reason at all */}

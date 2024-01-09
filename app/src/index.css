@@ -246,22 +246,3 @@ main .monaco-editor {
 [data-radix-popper-content-wrapper] {
   @apply !z-10;
 }
-
-body {
-  background-blend-mode: soft-light;
-  background-color: #0000;
-  background-image: radial-gradient(circle at 50% 23%, #f6f6f680, #f6f6f680 14%),
-    conic-gradient(
-      at 0 100%,
-      #faf2f580,
-      #faf2f580 30deg,
-      #f4e9ff80 60deg,
-      #ecebf880 90deg
-    );
-  background-position: 0 0;
-  background-repeat: repeat, repeat;
-  background-size: 100% 100%;
-  background-attachment: scroll, scroll;
-  background-origin: padding-box, padding-box;
-  background-clip: border-box, border-box;
-}
