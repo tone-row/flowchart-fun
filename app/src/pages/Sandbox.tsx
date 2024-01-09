@@ -5,10 +5,9 @@ import { useLocation } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
-import { EditorOptions } from "../components/EditorOptions";
-import { EditorWrapper } from "../components/EditorWrapper";
-import { EditWrapper } from "../components/EditWrapper";
-import Main from "../components/Main";
+import { Actions } from "../components/Actions";
+import { FlowchartHeader } from "../components/FlowchartHeader";
+import WithGraph from "../components/WithGraph";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 
 import { OnChange } from "@monaco-editor/react";
@@ -17,7 +16,6 @@ import { TextEditor } from "../components/TextEditor";
 import { getDefaultLocalChart } from "../lib/getDefaultChart";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
-import { useEditorStore } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
 import styles from "./Sandbox.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
@@ -27,6 +25,8 @@ import { useSandboxWarning } from "../lib/useSandboxWarning";
 import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
+import { FlowchartLayout } from "../components/FlowchartLayout";
+import { useEditorStore } from "../lib/useEditorStore";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -99,41 +99,75 @@ const Sandbox = memo(function Edit() {
 
   return (
     <>
-      <EditWrapper>
-        <Main>
-          <EditorWrapper>
-            <Tabs.Root
-              value={selectedTab}
-              className={styles.Tabs}
-              onValueChange={(selectedTab) =>
-                useTabsStore.setState({ selectedTab })
-              }
-            >
-              <EditorTabList />
-              <Tabs.Content value="Document">
-                <EditorOptions>
-                  <TextEditor value={text} onChange={onChange} />
-                </EditorOptions>
-              </Tabs.Content>
-              <Tabs.Content value="Theme">
-                <ThemeTab />
-              </Tabs.Content>
-            </Tabs.Root>
-          </EditorWrapper>
-          <ClearTextButton
-            handleClear={() => {
-              useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
-              const editor = useEditorStore.getState().editor;
-              if (!editor) return;
-              editor.focus();
-            }}
-          />
-          <EditorError />
-        </Main>
-      </EditWrapper>
+      <FlowchartLayout>
+        <FlowchartHeader />
+        <Tabs.Root
+          value={selectedTab}
+          className={styles.Tabs}
+          onValueChange={(selectedTab: any) => {
+            useTabsStore.setState({ selectedTab });
+          }}
+        >
+          <div className="flex justify-between md:justify-start items-end gap-4">
+            <EditorTabList />
+            <Actions />
+          </div>
+          <WithGraph>
+            <Tabs.Content value="Document" className="overflow-hidden">
+              <TextEditor value={text} onChange={onChange} />
+            </Tabs.Content>
+            <Tabs.Content value="Theme" className="overflow-hidden">
+              <ThemeTab />
+            </Tabs.Content>
+            <ClearTextButton
+              handleClear={() => {
+                useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
+                const editor = useEditorStore.getState().editor;
+                if (!editor) return;
+                editor.focus();
+              }}
+            />
+            <EditorError />
+          </WithGraph>
+        </Tabs.Root>
+      </FlowchartLayout>
       <SandboxWarning />
       <LoadFromHashDialog />
     </>
+    // <>
+    //   <WithMobileTabToggle>
+    //     <Main>
+    //       <EditorWrapper>
+    //         <Tabs.Root
+    //           value={selectedTab}
+    //           className={styles.Tabs}
+    //           onValueChange={(selectedTab) =>
+    //             useTabsStore.setState({ selectedTab })
+    //           }
+    //         >
+    //           <EditorTabList />
+    //           <Tabs.Content value="Document">
+    //             <EditorOptions>
+    //               <TextEditor value={text} onChange={onChange} />
+    //             </EditorOptions>
+    //           </Tabs.Content>
+    //           <Tabs.Content value="Theme">
+    //             <ThemeTab />
+    //           </Tabs.Content>
+    //         </Tabs.Root>
+    //       </EditorWrapper>
+    //       <ClearTextButton
+    //         handleClear={() => {
+    //           useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
+    //           const editor = useEditorStore.getState().editor;
+    //           if (!editor) return;
+    //           editor.focus();
+    //         }}
+    //       />
+    //       <EditorError />
+    //     </Main>
+    //   </WithMobileTabToggle>
+    // </>
   );
 });
 

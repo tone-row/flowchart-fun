@@ -80,7 +80,6 @@ export function LoadTemplateDialog() {
 
   return (
     <Dialog.Root
-      modal
       open={open}
       onOpenChange={(open) => {
         if (!open) reset();

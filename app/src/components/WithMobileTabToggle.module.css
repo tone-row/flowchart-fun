@@ -1,12 +1,12 @@
 @media (max-width: 799px) {
-  .EditWrapper {
+  .WithMobileTabToggle {
     max-height: 100%;
     overflow: hidden;
   }
 }
 
 @media (min-width: 800px) {
-  .EditWrapper {
+  .WithMobileTabToggle {
     display: flex;
   }
 }

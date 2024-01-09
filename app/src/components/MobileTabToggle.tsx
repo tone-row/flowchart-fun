@@ -1,25 +1,16 @@
 import { t } from "@lingui/macro";
-import { useContext } from "react";
 
-import { Box } from "../slang";
-import { AppContext } from "./AppContextProvider";
+import { useMobileStore } from "../lib/useMobileStore";
+import { Button2 } from "../ui/Shared";
 
 export default function MobileTabToggle() {
-  const { toggleMobileEditorTab, mobileEditorTab } = useContext(AppContext);
+  const tab = useMobileStore((state) => state.tab);
+  const toggleTab = useMobileStore((state) => state.toggleTab);
   return (
-    <Box p={1} at={{ tablet: { display: "none" } }}>
-      <Box
-        as="button"
-        background="palette-purple-0"
-        color="palette-white-0"
-        rad={1}
-        p={3}
-        onClick={toggleMobileEditorTab}
-      >
-        <span className="text-xs">
-          {mobileEditorTab === "graph" ? t`Editor` : t`Graph`}
-        </span>
-      </Box>
-    </Box>
+    <div className="md:hidden grid">
+      <Button2 onClick={toggleTab} className="rounded-none" color="inverted">
+        Go To {tab === "graph" ? t`Editor` : t`Graph`}
+      </Button2>
+    </div>
   );
 }

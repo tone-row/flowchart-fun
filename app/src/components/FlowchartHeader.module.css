@@ -1,0 +1,6 @@
+.HeaderTitle button:first-child h1 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+}

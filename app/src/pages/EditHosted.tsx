@@ -7,10 +7,9 @@ import { useDebouncedCallback } from "use-debounce";
 
 import { ClearTextButton } from "../components/ClearTextButton";
 import EditorError from "../components/EditorError";
-import { EditorOptions } from "../components/EditorOptions";
-import { EditorWrapper } from "../components/EditorWrapper";
-import { EditWrapper } from "../components/EditWrapper";
-import Main from "../components/Main";
+import { Actions } from "../components/Actions";
+import { FlowchartHeader } from "../components/FlowchartHeader";
+import WithGraph from "../components/WithGraph";
 import Spinner from "../components/Spinner";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 import { OnChange } from "@monaco-editor/react";
@@ -26,6 +25,7 @@ import styles from "./EditHosted.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
 import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
+import { FlowchartLayout } from "../components/FlowchartLayout";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
@@ -76,45 +76,49 @@ export default function EditHosted() {
   }, []);
 
   return (
-    <EditWrapper>
-      <Main>
-        <EditorWrapper>
-          <Tabs.Root
-            value={selectedTab}
-            onValueChange={(selectedTab) => {
-              useTabsStore.setState({ selectedTab });
+    <FlowchartLayout>
+      <FlowchartHeader />
+      <Tabs.Root
+        value={selectedTab}
+        onValueChange={(selectedTab: any) => {
+          useTabsStore.setState({ selectedTab });
+        }}
+        className={sandboxStyles.Tabs}
+      >
+        <div className="flex justify-start items-end gap-4">
+          <EditorTabList />
+          <Actions />
+        </div>
+        <WithGraph>
+          <Tabs.Content value="Document" className="overflow-hidden">
+            <TextEditor
+              value={text}
+              onChange={onChange}
+              extendOptions={{
+                readOnly: !isProUser,
+              }}
+            />
+          </Tabs.Content>
+          <Tabs.Content value="Theme" className="overflow-hidden">
+            <ThemeTab />
+          </Tabs.Content>
+          <LoadingState isLoading={isLoading} pending={pending()} />
+          <ClearTextButton
+            handleClear={() => {
+              useDoc.setState(
+                { text: "", meta: {} },
+                false,
+                "EditHosted/clear"
+              );
+              const editor = useEditorStore.getState().editor;
+              if (!editor) return;
+              editor.focus();
             }}
-            className={sandboxStyles.Tabs}
-          >
-            <EditorTabList />
-            <Tabs.Content value="Document">
-              <EditorOptions>
-                <TextEditor
-                  value={text}
-                  onChange={onChange}
-                  extendOptions={{
-                    readOnly: !isProUser,
-                  }}
-                />
-              </EditorOptions>
-            </Tabs.Content>
-            <Tabs.Content value="Theme">
-              <ThemeTab />
-            </Tabs.Content>
-          </Tabs.Root>
-        </EditorWrapper>
-        <LoadingState isLoading={isLoading} pending={pending()} />
-        <ClearTextButton
-          handleClear={() => {
-            useDoc.setState({ text: "", meta: {} }, false, "EditHosted/clear");
-            const editor = useEditorStore.getState().editor;
-            if (!editor) return;
-            editor.focus();
-          }}
-        />
-        <EditorError />
-      </Main>
-    </EditWrapper>
+          />
+          <EditorError />
+        </WithGraph>
+      </Tabs.Root>
+    </FlowchartLayout>
   );
 }
 

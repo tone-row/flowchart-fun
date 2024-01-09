@@ -6,11 +6,12 @@ import { useContext } from "react";
 import { AppContext } from "./AppContextProvider";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { languages } from "../locales/i18n";
-import { useUserId } from "../lib/hooks";
+import { useIsProUser, useUserId } from "../lib/hooks";
 import { makeChart, queryClient } from "../lib/queries";
 import { useMutation } from "react-query";
 
 export function CloneButton() {
+  const isProUser = useIsProUser();
   const language = useContext(AppContext).language;
   const userId = useUserId();
   const makeChartMutation = useMutation(
@@ -34,6 +35,7 @@ export function CloneButton() {
       },
     }
   );
+  if (!isProUser) return null;
   return (
     <Button2
       color="blue"

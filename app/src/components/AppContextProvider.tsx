@@ -34,16 +34,12 @@ const defaultLanguage = Object.keys(languages).includes(browserLanguage)
   ? browserLanguage
   : "en";
 
-type mobileEditorTab = "text" | "graph";
-
 type TAppContext = {
   updateUserSettings: (newSettings: Partial<UserSettings>) => void;
   theme: Theme;
   language: string;
   shareModal: boolean;
   setShareModal: Dispatch<SetStateAction<boolean>>;
-  mobileEditorTab: mobileEditorTab;
-  toggleMobileEditorTab: () => void;
   session: Session | null;
   customer?: CustomerInfo;
   customerIsLoading: boolean;
@@ -63,15 +59,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [userSettingsString, setUserSettings] = useLocalStorage(
     LOCAL_STORAGE_SETTINGS_KEY,
     "{}"
-  );
-  const [mobileEditorTab, setMobileEditorTab] =
-    useState<mobileEditorTab>("text");
-  const toggleMobileEditorTab = useCallback(
-    () =>
-      setMobileEditorTab((currentTab) =>
-        currentTab === "text" ? "graph" : "text"
-      ),
-    []
   );
 
   const { settings, theme } = useMemo<{
@@ -157,8 +144,6 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         updateUserSettings,
         setShareModal,
         shareModal,
-        mobileEditorTab,
-        toggleMobileEditorTab,
         session,
         customer,
         customerIsLoading,

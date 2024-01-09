@@ -24,7 +24,11 @@ import {
 } from "../lib/preprocessStyle";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
-import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
+import {
+  moveCursorToLine,
+  updateModelMarkers,
+  useEditorStore,
+} from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
@@ -87,9 +91,13 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   // then we set autoungrabify to true
   const canEdit = useCanEdit();
   useEffect(() => {
-    if (cy.current && !canEdit) {
+    if (!cy.current) return;
+    if (!canEdit) {
       cy.current.autoungrabify(true);
       cy.current.autounselectify(true);
+    } else {
+      cy.current.autoungrabify(false);
+      cy.current.autounselectify(false);
     }
   }, [canEdit]);
 
@@ -221,6 +229,16 @@ function initializeGraph({
         window.open(href, "_blank");
       }
     });
+
+    // on double click, focus the line number in the editor
+    cyCurrent.on(
+      "dblclick",
+      "node, edge",
+      function handleDblClick(this: NodeSingular | EdgeSingular) {
+        const { lineNumber } = this.data();
+        moveCursorToLine(lineNumber);
+      }
+    );
 
     cyCurrent.on("dragfree", handleDragFree);
 
