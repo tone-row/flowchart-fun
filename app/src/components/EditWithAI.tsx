@@ -125,23 +125,25 @@ export function EditWithAI() {
         <Popover.Trigger asChild>
           <Button2
             leftIcon={
-              <MagicWand className="group-hover-tilt-shaking" size={18} />
+              <MagicWand className="group-hover-tilt-shaking -mr-1" size={18} />
             }
-            color="zinc"
+            color="purple"
             size="sm"
             rounded
-            className="aria-[expanded=true]:bg-zinc-700"
+            className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4"
             isLoading={isLoading}
           >
-            <Trans>Edit with AI</Trans>
+            <span className="text-[15px]">
+              <Trans>Edit with AI</Trans>
+            </span>
           </Button2>
         </Popover.Trigger>
         <Popover.Portal>
           <Popover.Content
-            side="top"
+            side="bottom"
             sideOffset={10}
             align="center"
-            className="w-[300px] bg-white rounded shadow border p-2"
+            className="w-[300px] bg-white rounded shadow border p-2 !z-[100] animate-slideDownAndFade"
           >
             <form className="grid gap-2" onSubmit={handleSubmit} ref={formRef}>
               <div className="relative">

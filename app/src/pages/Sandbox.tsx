@@ -116,7 +116,7 @@ const Sandbox = memo(function Edit() {
           <WithGraph>
             <Tabs.Content value="Document" className="overflow-hidden relative">
               <TextEditor value={text} onChange={onChange} />
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <div className="absolute top-2 right-2 z-[100] drop-shadow-lg">
                 <EditWithAI />
               </div>
             </Tabs.Content>
