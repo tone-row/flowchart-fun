@@ -1,5 +1,5 @@
-import { MagicWand, Microphone, Robot } from "phosphor-react";
-import { Button2, IconButton2 } from "../ui/Shared";
+import { MagicWand, Robot } from "phosphor-react";
+import { Button2 } from "../ui/Shared";
 import * as Popover from "@radix-ui/react-popover";
 import { Trans, t } from "@lingui/macro";
 import { useCallback, useRef, useState } from "react";
@@ -7,6 +7,7 @@ import { useDoc } from "../lib/useDoc";
 import { parse, stringify, Graph as GSGraph } from "graph-selector";
 import { useMutation } from "react-query";
 import * as Toast from "@radix-ui/react-toast";
+import { Microphone } from "./Microphone";
 
 // The Graph type we send to AI is slightly different from internal representation
 type GraphForAI = {
@@ -24,7 +25,8 @@ type GraphForAI = {
 export function EditWithAI() {
   const [message, setMessage] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const { mutate: edit, isLoading } = useMutation({
+  const [transcriptionLoading, setTranscriptionLoading] = useState(false);
+  const { mutate: edit, isLoading: editIsLoading } = useMutation({
     mutationFn: async (body: { prompt: string; graph: GraphForAI }) => {
       // /api/prompt/edit
       const response = await fetch("/api/prompt/edit", {
@@ -35,6 +37,7 @@ export function EditWithAI() {
         },
       });
       const data = await response.json();
+
       return data as {
         message: string;
         toolCalls: {
@@ -43,7 +46,6 @@ export function EditWithAI() {
         }[];
       };
     },
-    onMutate: () => setIsOpen(false),
     onSuccess(data) {
       if (data.message) {
         setMessage(data.message);
@@ -59,14 +61,14 @@ export function EditWithAI() {
         }
       }
     },
+    onSettled() {
+      setTranscriptionLoading(false);
+    },
   });
-  const handleSubmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
 
-      const formData = new FormData(e.currentTarget);
-      const prompt = formData.get("prompt") as string;
-      if (!prompt) return;
+  const submitPrompt = useCallback(
+    (prompt: string) => {
+      setIsOpen(false);
 
       const text = useDoc.getState().text;
       const _graph = parse(text);
@@ -117,7 +119,27 @@ export function EditWithAI() {
     [edit]
   );
 
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+
+      const formData = new FormData(e.currentTarget);
+      const prompt = formData.get("prompt") as string;
+      if (!prompt) return;
+
+      submitPrompt(prompt);
+    },
+    [submitPrompt]
+  );
+
+  const handleSend = useCallback(() => {
+    setTranscriptionLoading(true);
+    setIsOpen(false);
+  }, []);
+
   const formRef = useRef<HTMLFormElement>(null);
+
+  const isLoading = editIsLoading || transcriptionLoading;
 
   return (
     <>
@@ -142,13 +164,13 @@ export function EditWithAI() {
           <Popover.Content
             side="bottom"
             sideOffset={10}
-            align="center"
-            className="w-[300px] bg-white rounded shadow border p-2 !z-[100] animate-slideDownAndFade"
+            align="end"
+            className="w-[300px] bg-white rounded shadow border border-purple-300 p-2 !z-[100] animate-slideDownAndFade"
           >
             <form className="grid gap-2" onSubmit={handleSubmit} ref={formRef}>
               <div className="relative">
                 <textarea
-                  placeholder={t`Write your prompt here or press and hold the button to speak...`}
+                  placeholder={t`Write your prompt here or click to enable the microphone, then press and hold to record.`}
                   className="text-xs w-full resize-none h-24 p-2 leading-normal"
                   name="prompt"
                   required
@@ -162,13 +184,10 @@ export function EditWithAI() {
                     }
                   }}
                 />
-                <IconButton2
-                  size="xs"
-                  className="!absolute bottom-0 right-0"
-                  type="button"
-                >
-                  <Microphone size={16} />
-                </IconButton2>
+                <Microphone
+                  onTranscription={submitPrompt}
+                  onSend={handleSend}
+                />
               </div>
               <Button2 size="sm" color="purple">
                 <Trans>Submit</Trans>
