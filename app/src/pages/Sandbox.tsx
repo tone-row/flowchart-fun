@@ -27,6 +27,7 @@ import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";
+import { EditWithAIButton } from "../components/EditWithAIButton";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -113,8 +114,11 @@ const Sandbox = memo(function Edit() {
             <Actions />
           </div>
           <WithGraph>
-            <Tabs.Content value="Document" className="overflow-hidden">
+            <Tabs.Content value="Document" className="overflow-hidden relative">
               <TextEditor value={text} onChange={onChange} />
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                <EditWithAIButton />
+              </div>
             </Tabs.Content>
             <Tabs.Content value="Theme" className="overflow-hidden">
               <ThemeTab />
