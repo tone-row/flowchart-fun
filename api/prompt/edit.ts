@@ -26,7 +26,7 @@ const handler: VercelApiHandler = async (req, res) => {
   }
 
   const result = await llmMany(
-    `You are an AI flowchart assistant. Help the create a flowchart or diagram. Here is the current state of the flowchart:
+    `You are a one-shot AI flowchart assistant. Help the user with a flowchart or diagram. Here is the current state of the flowchart:
 ${JSON.stringify(graph, null, 2)}
 
 Here is the user's message:

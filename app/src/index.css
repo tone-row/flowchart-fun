@@ -268,3 +268,23 @@ main .monaco-editor {
 .group:hover .group-hover-tilt-shaking {
   animation: tilt-shaking 0.25s ease-in-out 2;
 }
+
+.ToastRoot[data-swipe="move"] {
+  transform: translateX(var(--radix-toast-swipe-move-x));
+}
+.ToastRoot[data-swipe="cancel"] {
+  transform: translateX(0);
+  transition: transform 200ms ease-out;
+}
+.ToastRoot[data-swipe="end"] {
+  animation: slideRight 100ms ease-out;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(var(--radix-toast-swipe-end-x));
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

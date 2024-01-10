@@ -1,4 +1,4 @@
-import { MagicWand, Microphone } from "phosphor-react";
+import { MagicWand, Microphone, Robot } from "phosphor-react";
 import { Button2, IconButton2 } from "../ui/Shared";
 import * as Popover from "@radix-ui/react-popover";
 import { Trans, t } from "@lingui/macro";
@@ -6,6 +6,7 @@ import { useCallback, useRef, useState } from "react";
 import { useDoc } from "../lib/useDoc";
 import { parse, stringify, Graph as GSGraph } from "graph-selector";
 import { useMutation } from "react-query";
+import * as Toast from "@radix-ui/react-toast";
 
 // The Graph type we send to AI is slightly different from internal representation
 type GraphForAI = {
@@ -21,6 +22,7 @@ type GraphForAI = {
 };
 
 export function EditWithAI() {
+  const [message, setMessage] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const { mutate: edit, isLoading } = useMutation({
     mutationFn: async (body: { prompt: string; graph: GraphForAI }) => {
@@ -44,7 +46,7 @@ export function EditWithAI() {
     onMutate: () => setIsOpen(false),
     onSuccess(data) {
       if (data.message) {
-        window.alert(data.message);
+        setMessage(data.message);
       }
 
       for (const { name, args } of data.toolCalls) {
@@ -118,56 +120,78 @@ export function EditWithAI() {
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
-    <Popover.Root open={isOpen} onOpenChange={setIsOpen}>
-      <Popover.Trigger asChild>
-        <Button2
-          leftIcon={
-            <MagicWand className="group-hover-tilt-shaking" size={18} />
-          }
-          color="zinc"
-          size="sm"
-          rounded
-          className="aria-[expanded=true]:bg-zinc-700"
-          isLoading={isLoading}
-        >
-          <Trans>Edit with AI</Trans>
-        </Button2>
-      </Popover.Trigger>
-      <Popover.Portal>
-        <Popover.Content
-          side="top"
-          sideOffset={10}
-          align="center"
-          className="w-[300px] bg-white rounded shadow border p-2"
-        >
-          <form className="grid gap-2" onSubmit={handleSubmit} ref={formRef}>
-            <div className="relative">
-              <textarea
-                placeholder={t`Write your prompt here or press and hold the button to speak...`}
-                className="text-xs w-full resize-none h-24 p-2 leading-normal"
-                name="prompt"
-                required
-                onKeyDown={(e) => {
-                  if (!formRef.current) return;
+    <>
+      <Popover.Root open={isOpen} onOpenChange={setIsOpen}>
+        <Popover.Trigger asChild>
+          <Button2
+            leftIcon={
+              <MagicWand className="group-hover-tilt-shaking" size={18} />
+            }
+            color="zinc"
+            size="sm"
+            rounded
+            className="aria-[expanded=true]:bg-zinc-700"
+            isLoading={isLoading}
+          >
+            <Trans>Edit with AI</Trans>
+          </Button2>
+        </Popover.Trigger>
+        <Popover.Portal>
+          <Popover.Content
+            side="top"
+            sideOffset={10}
+            align="center"
+            className="w-[300px] bg-white rounded shadow border p-2"
+          >
+            <form className="grid gap-2" onSubmit={handleSubmit} ref={formRef}>
+              <div className="relative">
+                <textarea
+                  placeholder={t`Write your prompt here or press and hold the button to speak...`}
+                  className="text-xs w-full resize-none h-24 p-2 leading-normal"
+                  name="prompt"
+                  required
+                  onKeyDown={(e) => {
+                    if (!formRef.current) return;
 
-                  // submit form on Enter
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    formRef.current.requestSubmit();
-                  }
-                }}
-              />
-              <IconButton2 size="xs" className="!absolute bottom-0 right-0">
-                <Microphone size={16} />
-              </IconButton2>
-            </div>
-            <Button2 size="sm" color="purple">
-              <Trans>Submit</Trans>
-            </Button2>
-          </form>
-        </Popover.Content>
-      </Popover.Portal>
-    </Popover.Root>
+                    // submit form on Enter
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      formRef.current.requestSubmit();
+                    }
+                  }}
+                />
+                <IconButton2
+                  size="xs"
+                  className="!absolute bottom-0 right-0"
+                  type="button"
+                >
+                  <Microphone size={16} />
+                </IconButton2>
+              </div>
+              <Button2 size="sm" color="purple">
+                <Trans>Submit</Trans>
+              </Button2>
+            </form>
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
+      <Toast.Root
+        type="foreground"
+        duration={generateDuration(message ?? "")}
+        className="ToastRoot bg-zinc-300 text-zinc-700 border-b-2 border-r-2 border-zinc-500 rounded-md shadow p-4 grid [grid-template-areas:_'title_action'_'description_action'] grid-cols-[auto_max-content] gap-x-4 items-center data-[state=open]:animate-slideIn data-[state=closed]:animate-hide data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-[transform_200ms_ease-out] data-[swipe=end]:animate-swipeOut"
+        open={message !== null}
+        onOpenChange={(open) => {
+          if (!open) setMessage(null);
+        }}
+      >
+        <Toast.Description>
+          <div className="flex text-xs items-center gap-3">
+            <Robot size={24} />
+            <p className="leading-normal">{message}</p>
+          </div>
+        </Toast.Description>
+      </Toast.Root>
+    </>
   );
 }
 
@@ -197,4 +221,15 @@ function toGraphSelector(graph: GraphForAI) {
   };
 
   return stringify(g, { compact: true });
+}
+
+/**
+ * Pick a reading duration in milliseconds based on the length of the text.
+ */
+function generateDuration(text: string) {
+  const words = text.split(/\s+/).length;
+  const wordsPerMinute = 200;
+  const minutes = words / wordsPerMinute;
+  const duration = minutes * 60 * 1000;
+  return Math.max(duration, 4000);
 }
