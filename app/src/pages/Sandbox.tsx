@@ -27,7 +27,7 @@ import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";
-import { EditWithAIButton } from "../components/EditWithAIButton";
+import { EditWithAI } from "../components/EditWithAI";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -117,7 +117,7 @@ const Sandbox = memo(function Edit() {
             <Tabs.Content value="Document" className="overflow-hidden relative">
               <TextEditor value={text} onChange={onChange} />
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                <EditWithAIButton />
+                <EditWithAI />
               </div>
             </Tabs.Content>
             <Tabs.Content value="Theme" className="overflow-hidden">
@@ -138,40 +138,6 @@ const Sandbox = memo(function Edit() {
       <SandboxWarning />
       <LoadFromHashDialog />
     </>
-    // <>
-    //   <WithMobileTabToggle>
-    //     <Main>
-    //       <EditorWrapper>
-    //         <Tabs.Root
-    //           value={selectedTab}
-    //           className={styles.Tabs}
-    //           onValueChange={(selectedTab) =>
-    //             useTabsStore.setState({ selectedTab })
-    //           }
-    //         >
-    //           <EditorTabList />
-    //           <Tabs.Content value="Document">
-    //             <EditorOptions>
-    //               <TextEditor value={text} onChange={onChange} />
-    //             </EditorOptions>
-    //           </Tabs.Content>
-    //           <Tabs.Content value="Theme">
-    //             <ThemeTab />
-    //           </Tabs.Content>
-    //         </Tabs.Root>
-    //       </EditorWrapper>
-    //       <ClearTextButton
-    //         handleClear={() => {
-    //           useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
-    //           const editor = useEditorStore.getState().editor;
-    //           if (!editor) return;
-    //           editor.focus();
-    //         }}
-    //       />
-    //       <EditorError />
-    //     </Main>
-    //   </WithMobileTabToggle>
-    // </>
   );
 });
 

@@ -42,8 +42,8 @@ importers:
         specifier: ^2.29.3
         version: 2.29.3
       graph-selector:
-        specifier: ^0.9.11
-        version: 0.9.11
+        specifier: ^0.10.0
+        version: 0.10.0
       highlight.js:
         specifier: ^11.8.0
         version: 11.8.0
@@ -57,14 +57,20 @@ importers:
         specifier: ^2.5.5
         version: 2.5.5
       openai:
-        specifier: ^4.10.0
-        version: 4.10.0
+        specifier: ^4.24.2
+        version: 4.24.2
       shared:
         specifier: workspace:*
         version: link:../shared
       stripe:
         specifier: ^11.11.0
         version: 11.11.0
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
+      zod-to-json-schema:
+        specifier: ^3.22.3
+        version: 3.22.3(zod@3.22.4)
     devDependencies:
       '@swc/jest':
         specifier: ^0.2.24
@@ -247,8 +253,8 @@ importers:
         specifier: ^10.13.1
         version: 10.13.1(react-dom@18.2.0)(react@18.2.0)
       graph-selector:
-        specifier: ^0.9.12
-        version: 0.9.12
+        specifier: ^0.10.0
+        version: 0.10.0
       gray-matter:
         specifier: ^4.0.2
         version: 4.0.3
@@ -13155,17 +13161,8 @@ packages:
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  /graph-selector@0.9.11:
-    resolution: {integrity: sha512-1p+52G0088zMIkjDG3CujVvNbgYEx2xy6RaQWIPTVdsp1s+Ed0rLnJ17jOWW5uxZnEJ1Uh7LEBGiuB9g4jrvTA==}
-    dependencies:
-      '@types/cytoscape': 3.19.11
-      html-entities: 2.4.0
-      monaco-editor: 0.43.0
-      strip-comments: 2.0.1
-    dev: false
-
-  /graph-selector@0.9.12:
-    resolution: {integrity: sha512-2TqVOdNPjbbFWbpGw4/xD7JmsBr4Z6xrbGr4n+wRqu3R+DaxnKkmJqSXBJihSUBhyfZPE0lLFJ2kOUnuygb2nQ==}
+  /graph-selector@0.10.0:
+    resolution: {integrity: sha512-V809ZMkpSi60gMQhgGVz/f1R2Ww0K6NiZ/g1SzZjA1Voqm5+XyXy8ZfVIAHBt9Lw4HCHc06aUDVWrFt6WEWEvg==}
     dependencies:
       '@tone-row/strip-comments': 2.0.6
       '@types/cytoscape': 3.19.11
@@ -16377,8 +16374,8 @@ packages:
       - debug
     dev: false
 
-  /openai@4.10.0:
-    resolution: {integrity: sha512-II4b5/7qzwYkqA9MSjgqdofCc798EW+dtF2h6qNaVLet+qO7FShAJTWnoyzb50J4ZH1rPxRFAsmDLIhY3PT6DQ==}
+  /openai@4.24.2:
+    resolution: {integrity: sha512-Np5zFPAYsBRmsfgPS8cMM25r1wVO5NCTdmeoYDNEUhJn/rw6jNXU0CFSFwhbWsjIkYhdv31pPIzQ0xChHCvltQ==}
     hasBin: true
     dependencies:
       '@types/node': 18.16.17
@@ -16389,6 +16386,7 @@ packages:
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
       node-fetch: 2.7.0
+      web-streams-polyfill: 3.2.1
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -20339,7 +20337,6 @@ packages:
   /web-streams-polyfill@3.2.1:
     resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
     engines: {node: '>= 8'}
-    dev: true
 
   /web-streams-polyfill@4.0.0-beta.3:
     resolution: {integrity: sha512-QW95TCTaHmsYfHDybGMwO5IJIM93I/6vTRk+daHTWFPhwh+C8Cg7j7XyKrwrj8Ib6vYXe0ocYNrmzY4xAAN6ug==}
@@ -21006,6 +21003,18 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
     dev: true
+
+  /zod-to-json-schema@3.22.3(zod@3.22.4):
+    resolution: {integrity: sha512-9isG8SqRe07p+Aio2ruBZmLm2Q6Sq4EqmXOiNpDxp+7f0LV6Q/LX65fs5Nn+FV/CzfF3NLBoksXbS2jNYIfpKw==}
+    peerDependencies:
+      zod: ^3.22.4
+    dependencies:
+      zod: 3.22.4
+    dev: false
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false
 
   /zustand@4.3.3(immer@9.0.16)(react@18.2.0):
     resolution: {integrity: sha512-x2jXq8S0kfLGNwGh87nhRfEc2eZy37tSatpSoSIN+O6HIaBhgQHSONV/F9VNrNcBcKQu/E80K1DeHDYQC/zCrQ==}
