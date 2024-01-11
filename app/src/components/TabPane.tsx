@@ -78,7 +78,7 @@ export default TabPane;
 
 const Handle = ({ dragging = false }: { dragging: boolean }) => (
   <div
-    className="hidden md:block w-1.5 bg-[#f6f5f6] dark:bg-[#0c0c0c] h-full  translate-x-[5px] relative z-[12]"
+    className="hidden md:block w-1.5 bg-[#f6f5f6] dark:bg-[#0c0c0c] h-full  translate-x-[5px] relative z-[9]"
     data-dragging={dragging}
   >
     <button

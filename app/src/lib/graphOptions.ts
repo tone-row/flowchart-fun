@@ -1,7 +1,7 @@
 import { t } from "@lingui/macro";
 import { CSSProperties } from "react";
 
-export const DEFAULT_GRAPH_PADDING = 6;
+export const DEFAULT_GRAPH_PADDING = 20;
 
 export interface SelectOption {
   value: string;

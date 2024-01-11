@@ -41,7 +41,7 @@ export const Page = ({
   return (
     <div
       className={classNames(
-        "px-4 py-16 content-start grid w-full mx-auto grid",
+        "px-4 py-16 content-start w-full mx-auto grid",
         {
           "max-w-xl gap-2": size === "sm",
           "max-w-3xl gap-10": size === "md",
@@ -180,6 +180,7 @@ export const Button2 = forwardRef<
     rightIcon?: ReactNode;
     color?: keyof typeof button2Colors;
     size?: keyof typeof pSize;
+    rounded?: boolean;
   } & React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
@@ -194,6 +195,7 @@ export const Button2 = forwardRef<
       rightIcon,
       isLoading,
       className = "",
+      rounded,
       ...props
     },
     ref
@@ -203,7 +205,9 @@ export const Button2 = forwardRef<
         className={`flex font-bold items-center justify-center gap-3 whitespace-nowrap ${button2Classes} ${pxButtonSize[
           size
         ](!!leftIcon, !!rightIcon)} ${button2Colors[color]}
-      ${pSize[size]} ${focusClasses} ${className}
+      ${pSize[size]} ${focusClasses} ${
+          rounded ? "!rounded-full" : ""
+        } ${className}
       `}
         {...props}
         disabled={props.disabled || isLoading}
