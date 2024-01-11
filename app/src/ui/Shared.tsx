@@ -41,7 +41,7 @@ export const Page = ({
   return (
     <div
       className={classNames(
-        "px-4 py-16 content-start grid w-full mx-auto grid",
+        "px-4 py-16 content-start w-full mx-auto grid",
         {
           "max-w-xl gap-2": size === "sm",
           "max-w-3xl gap-10": size === "md",

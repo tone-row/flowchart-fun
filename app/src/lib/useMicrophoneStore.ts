@@ -6,7 +6,7 @@ type MicrophoneStore = {
   data: Blob[];
 };
 
-export const useMicrophoneStore = create<MicrophoneStore>((set) => ({
+export const useMicrophoneStore = create<MicrophoneStore>((_set) => ({
   isMicOn: false,
   isRecording: false,
   mediaRecorder: null,
