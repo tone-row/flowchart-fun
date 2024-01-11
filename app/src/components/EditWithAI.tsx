@@ -8,6 +8,8 @@ import { parse, stringify, Graph as GSGraph } from "graph-selector";
 import { useMutation } from "react-query";
 import * as Toast from "@radix-ui/react-toast";
 import { Microphone } from "./Microphone";
+import { useIsProUser } from "../lib/hooks";
+import { showPaywall } from "../lib/usePaywallModalStore";
 
 // The Graph type we send to AI is slightly different from internal representation
 type GraphForAI = {
@@ -22,10 +24,15 @@ type GraphForAI = {
   }[];
 };
 
+const title = t`AI-Powered Diagramming`;
+const content = t`With Flowchart Fun's Pro version, you can tap into AI to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $3/month, get the ease of accessible AI editing to enhance your flowcharting experience.`;
+
 export function EditWithAI() {
   const [message, setMessage] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [transcriptionLoading, setTranscriptionLoading] = useState(false);
+  const isProUser = useIsProUser();
+
   const { mutate: edit, isLoading: editIsLoading } = useMutation({
     mutationFn: async (body: { prompt: string; graph: GraphForAI }) => {
       // /api/prompt/edit
@@ -68,6 +75,15 @@ export function EditWithAI() {
 
   const submitPrompt = useCallback(
     (prompt: string) => {
+      if (!isProUser) {
+        showPaywall({
+          title,
+          content,
+          imgUrl: "/images/ai-edit.png",
+        });
+        return;
+      }
+
       setIsOpen(false);
 
       const text = useDoc.getState().text;
@@ -116,7 +132,7 @@ export function EditWithAI() {
 
       edit({ prompt, graph });
     },
-    [edit]
+    [edit, isProUser]
   );
 
   const handleSubmit = useCallback(
@@ -133,9 +149,18 @@ export function EditWithAI() {
   );
 
   const handleSend = useCallback(() => {
-    setTranscriptionLoading(true);
-    setIsOpen(false);
-  }, []);
+    if (isProUser) {
+      setTranscriptionLoading(true);
+      setIsOpen(false);
+    } else {
+      showPaywall({
+        title,
+        content,
+        imgUrl: "/images/ai-edit.png",
+      });
+      return;
+    }
+  }, [isProUser]);
 
   const formRef = useRef<HTMLFormElement>(null);
 
