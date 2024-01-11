@@ -139,7 +139,7 @@ for (const locale of locales) {
         `Translating ${batch.length} phrases... (${retries} retries)`
       );
       const response = await openai.createCompletion({
-        model: "text-davinci-003",
+        model: "gpt-3.5-turbo-instruct",
         prompt,
         max_tokens: 2048,
         temperature: 0.5,
