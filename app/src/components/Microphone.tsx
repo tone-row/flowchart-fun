@@ -23,10 +23,19 @@ export function Microphone({
   const isRecording = useMicrophoneStore((s) => s.isRecording);
 
   const handleFinishRecording = useCallback(() => {
-    onSend();
     const audioBlob = new Blob(useMicrophoneStore.getState().data, {
       type: "audio/mp4",
     });
+
+    // Get length in milliseconds
+    const lengthInMS = audioBlob.size / audioBlob.type.length;
+
+    // Don't send if the recording is too short
+    if (lengthInMS < 2500) {
+      return;
+    }
+
+    onSend();
 
     // Base64 encode the blob
     let audioUrl = "";
