@@ -190,13 +190,13 @@ export function EditWithAI() {
             side="bottom"
             sideOffset={10}
             align="end"
-            className="w-[300px] bg-white rounded shadow border border-purple-300 p-2 !z-[100] animate-slideDownAndFade"
+            className="w-[300px] bg-white rounded shadow border border-purple-300 p-2 !z-[100] animate-slideDownAndFade dark:bg-neutral-300 dark:text-neutral-800 dark:border-neutral-300"
           >
             <form className="grid gap-2" onSubmit={handleSubmit} ref={formRef}>
               <div className="relative">
                 <textarea
                   placeholder={t`Write your prompt here or click to enable the microphone, then press and hold to record.`}
-                  className="text-xs w-full resize-none h-24 p-2 leading-normal"
+                  className="text-xs w-full resize-none h-24 p-2 leading-normal dark:bg-neutral-300"
                   name="prompt"
                   required
                   onKeyDown={(e) => {
