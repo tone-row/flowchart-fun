@@ -288,3 +288,53 @@ main .monaco-editor {
     transform: translateX(100%);
   }
 }
+
+.checkout-wrapper {
+  background-blend-mode: normal;
+  background: radial-gradient(circle, #8252eb, #8252eb 20%, #baabf2 120%) 0 0/100%
+    100%;
+}
+
+/**
+* Add 3d effect to the product video based on mouse cursor location using CSS
+and --mouse-x
+--mouse-y custom properties
+*/
+.pricing-video {
+  transform: perspective(400px) rotateY(calc(var(--mouse-x) * 1deg))
+    rotateX(calc(var(--mouse-y) * -1deg));
+  transition: transform 0.1s ease-out;
+}
+
+.feature::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+
+  background-blend-mode: darken;
+  background-color: #0000;
+  background-image: radial-gradient(
+      circle at 50% 125%,
+      #baabf2,
+      #baabf2 0%,
+      #fff 21%
+    ),
+    radial-gradient(circle at 50% 125%, #baabf2, #baabf2 0%, #fff 49%);
+  background-position: 0 0;
+  background-repeat: repeat, repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
+
+  @apply transition-opacity duration-[400ms];
+}
+
+.feature:hover::after {
+  opacity: 1;
+}

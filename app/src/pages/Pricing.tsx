@@ -21,32 +21,36 @@ const options = {
   api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
 };
 
-const features = (): {
+export const features = (): {
   title: string;
   points: string[];
   imgPath: string;
 }[] => [
   {
-    title: t`Unlimited Flowcharts`,
+    title: t`Create Unlimited Flowcharts`,
     points: [
       t`Create unlimited flowcharts stored in the cloud– accessible anywhere!`,
     ],
     imgPath: "launch",
   },
   {
-    title: t`AI Ready`,
-    points: [t`Save time by creating flowcharts using AI.`],
+    title: t`Save Time with AI & Dictation`,
+    points: [
+      t`Together, speech-to-text and AI make creating diagrams a breeze!`,
+    ],
     imgPath: "AI",
   },
   {
-    title: t`Direct from Data`,
-    points: [t`Import from Lucidchart, Visio, and other CSV files.`],
+    title: t`Use External Data`,
+    points: [
+      t`Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!`,
+    ],
     imgPath: "Performance-Chart",
   },
   {
-    title: t`Work with Local Files`,
+    title: t`Keep Things Private`,
     points: [
-      t`Save and load local files. Perfect for managing work-related documents offline.`,
+      t`With the pro version you can save and load local files. It's perfect for managing work-related documents offline.`,
     ],
     imgPath: "Code-Script",
   },
