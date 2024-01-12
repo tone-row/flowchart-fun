@@ -125,7 +125,7 @@ export default function Pricing2() {
   }, []);
   return (
     <div>
-      <header className="bg-[#f6f5f6] bg-gradient-to-b from-[#f6f5f6] to-purple-500/50 pt-12">
+      <header className="bg-[#f6f5f6] dark:bg-[#0c0c0c] bg-gradient-to-b from-[#f6f5f6] to-purple-500/50 pt-12 dark:to-purple-900/50 dark:from-[#0c0c0c]">
         <Container className="text-center grid gap-8">
           <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold !leading-tight">
             Transform your Ideas into Professional Diagrams in Seconds
@@ -152,11 +152,6 @@ export default function Pricing2() {
           </div>
         </Container>
       </header>
-      {/* <Container className="pt-20">
-        <p className="text-lg md:text-xl text-purple-500 font-bold dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight text-center">
-          Get full access to all features for just $3/month!
-        </p>
-      </Container> */}
       <div className="max-w-6xl mx-auto py-12 mt-12 grid gap-12 px-4 md:px-8">
         <div>
           <SectionTitle>Highlights</SectionTitle>
@@ -164,10 +159,10 @@ export default function Pricing2() {
             {features().map((feature) => (
               <div
                 key={feature.title}
-                className="feature group relative overflow-hidden p-6 rounded-xl bg-neutral-100 border border-neutral-400/50 aspect-[2.5] flex items-center justify-center hover:bg-white/50 transition-colors"
+                className="feature group relative overflow-hidden p-6 rounded-xl bg-neutral-100 border border-neutral-400/50 aspect-[2.5] flex items-center justify-center hover:bg-white/50 transition-colors dark:bg-neutral-900/60 dark:border-neutral-700 dark:hover:bg-purple-900/60 dark:border-none"
               >
                 <div className="grid gap-3 group-hover:-translate-y-6 transition-transform z-10">
-                  <h3 className="text-center text-lg md:text-xl font-bold text-foreground dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
+                  <h3 className="text-center text-lg md:text-xl font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-hover:text-white">
                     {feature.title}
                   </h3>
                   {feature.points.map((point) => (
@@ -211,14 +206,22 @@ export default function Pricing2() {
                       <Check
                         size={24}
                         weight="bold"
-                        className="text-green-600"
+                        className="text-green-600 dark:text-green-500"
                       />
                     ) : (
-                      <X size={24} weight="bold" className="text-red-300" />
+                      <X
+                        size={24}
+                        weight="bold"
+                        className="text-red-300 dark:text-red-600/50"
+                      />
                     )}
                   </Cell>
                   <Cell center available>
-                    <Check size={24} weight="bold" className="text-green-600" />
+                    <Check
+                      size={24}
+                      weight="bold"
+                      className="text-green-600 dark:text-green-500"
+                    />
                   </Cell>
                 </Fragment>
               );
@@ -247,7 +250,7 @@ export default function Pricing2() {
 
 function ColumnHeader({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-neutral-100 border-neutral-400/50 border-l text-center text-lg font-bold text-neutral-600 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight px-4 py-2">
+    <div className="bg-neutral-100 border-neutral-400/50 border-l text-center text-lg font-bold text-neutral-600 text-wrap-balance leading-normal md:leading-tight px-4 py-2 dark:bg-transparent dark:text-white">
       {children}
     </div>
   );
@@ -269,8 +272,8 @@ function Cell({
         {
           "flex items-center justify-center border-l": center,
           "px-4 pr-10": !center,
-          "bg-green-100": available,
-          "bg-red-50": available === false,
+          "bg-green-100 dark:bg-green-500/10": available,
+          "bg-red-50 dark:bg-red-600/5": available === false,
         }
       )}
     >

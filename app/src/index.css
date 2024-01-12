@@ -338,3 +338,21 @@ and --mouse-x
 .feature:hover::after {
   opacity: 1;
 }
+
+body.dark .feature::after {
+  background-blend-mode: screen;
+  background-color: #0000;
+  background-image: radial-gradient(
+      circle at 50% 125%,
+      #baabf2,
+      #baabf2 0%,
+      #000 21%
+    ),
+    radial-gradient(circle at 50% 125%, #baabf2, #baabf2 0%, #000 49%);
+  background-position: 0 0;
+  background-repeat: repeat, repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
+}
