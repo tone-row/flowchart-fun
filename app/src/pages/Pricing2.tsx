@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { features } from "./Pricing";
-import { t } from "@lingui/macro";
+import { Trans, t } from "@lingui/macro";
 import { CSSProperties, Fragment, useEffect, useRef } from "react";
 import {
   ChartBar,
@@ -128,10 +128,12 @@ export default function Pricing2() {
       <header className="bg-[#f6f5f6] dark:bg-[#0c0c0c] bg-gradient-to-b from-[#f6f5f6] to-purple-500/50 pt-12 dark:to-purple-900/50 dark:from-[#0c0c0c]">
         <Container className="text-center grid gap-8">
           <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold !leading-tight">
-            Transform your Ideas into Professional Diagrams in Seconds
+            <Trans>
+              Transform your Ideas into Professional Diagrams in Seconds
+            </Trans>
           </h1>
-          <p className="text-lg md:text-xl text-purple-500 font-bold dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight text-center -mt-2 mb-2">
-            Complete access to all features for just $3/month!
+          <p className="text-lg md:text-xl text-purple-500 font-bold text-wrap-balance leading-normal md:leading-tight text-center -mt-2 mb-2 dark:text-purple-100/70 dark:font-normal">
+            <Trans>Complete access to all features for just $3/month!</Trans>
           </p>
           <div
             ref={videoRef}
@@ -184,7 +186,9 @@ export default function Pricing2() {
           </div>
         </div>
         <div className="md:w-max mx-auto">
-          <SectionTitle>What's Included</SectionTitle>
+          <SectionTitle>
+            <Trans>What's Included</Trans>
+          </SectionTitle>
           <div className="border-neutral-400/50 grid grid-cols-[minmax(0,1fr)_auto_auto] rounded-xl border shadow overflow-hidden">
             <span>&nbsp;</span>
             <ColumnHeader>Free</ColumnHeader>
@@ -241,7 +245,7 @@ export default function Pricing2() {
       </div>
       <div className="bg-purple-700 text-white">
         <p className="text-center text-lg font-bold py-8 cursor-pointer">
-          Subscribe to Pro and flowchart the fun way!
+          <Trans>Subscribe to Pro and flowchart the fun way!</Trans>
         </p>
       </div>
     </div>
