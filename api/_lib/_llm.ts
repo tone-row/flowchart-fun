@@ -17,6 +17,10 @@ export async function llmMany<T extends Record<string, ZodObject<any>>>(
     const completion = await openai.chat.completions.create({
       messages: [
         {
+          role: "system",
+          content: `You are a helpful AI flowchart wizard. Create or update a flowchart for the user according the given message. Always respond with a complete and correct flowchart. If the user requests an entirely new flowchart, ignore the curren state and start from scratch.`,
+        },
+        {
           role: "user",
           content,
         },
