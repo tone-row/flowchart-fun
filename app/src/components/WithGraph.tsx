@@ -27,7 +27,7 @@ const WithGraph = memo(({ children }: MainProps) => {
 
   return (
     <div
-      className="grid grid-rows-[[main]_minmax(0,1fr)_auto] grid-cols-[[main]_minmax(0,1fr)] md:flex md:shadow-xl"
+      className="relative grid grid-rows-[[main]_minmax(0,1fr)_auto] grid-cols-[[main]_minmax(0,1fr)] md:flex md:shadow-xl"
       data-mobile-tab={tab}
       data-selected-tab={selectedTab}
     >

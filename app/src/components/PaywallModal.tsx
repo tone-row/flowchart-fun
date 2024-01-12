@@ -12,6 +12,7 @@ export function PaywallModal() {
   const title = usePaywallModalStore((s) => s.title);
   const content = usePaywallModalStore((s) => s.content);
   const movieUrl = usePaywallModalStore((s) => s.movieUrl);
+  const imgUrl = usePaywallModalStore((s) => s.imgUrl);
   return (
     <Dialog.Root
       modal
@@ -40,7 +41,7 @@ export function PaywallModal() {
             />
           ) : (
             <img
-              src="/images/paywall.png"
+              src={imgUrl}
               alt="Importing Data from Lucidchart, Google Sheets, and Visio"
               className="rounded-t-lg max-h-[300px] w-full object-cover object-center"
               width={520}
@@ -52,7 +53,7 @@ export function PaywallModal() {
           </Dialog.Title>
           <Dialog.Description asChild>
             <div className="grid gap-3 p-8 pt-2 text-left">
-              <p className="leading-6 text-sm text-neutral-500 dark:text-neutral-400">
+              <p className="leading-6 text-sm text-neutral-600 dark:text-neutral-400">
                 {content}
               </p>
               <Dialog.Close asChild>

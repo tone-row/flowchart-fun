@@ -16,7 +16,8 @@ const Sandbox = lazy(() => import("../pages/Sandbox"));
 const EditHosted = lazy(() => import("../pages/EditHosted"));
 /** Read only chart, encoded in url / maybe fullscreen */
 const ReadOnly = lazy(() => import("../pages/ReadOnly"));
-const Pricing = lazy(() => import("../pages/Pricing"));
+// const Pricing = lazy(() => import("../pages/Pricing"));
+const Pricing2 = lazy(() => import("../pages/Pricing2"));
 const Blog = lazy(() => import("../pages/Blog"));
 const Post = lazy(() => import("../pages/post/Post"));
 const Changelog = lazy(() => import("../pages/Changelog"));
@@ -40,7 +41,7 @@ export default function Router() {
     <Routes>
       <Route path="/" element={<Wrapper />}>
         <Route index element={<Sandbox />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/pricing" element={<Pricing2 />} />
         {/* "y" for "your charts" */}
         <Route
           path="/y"

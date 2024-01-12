@@ -14,7 +14,7 @@ export function VersionCheck() {
     <AlertDialog.Root open={showModal}>
       <AlertDialog.Portal>
         <AlertDialog.Overlay className="bg-foreground dark:bg-background opacity-50 data-[state=open]:animate-overlayShow fixed inset-0" />
-        <AlertDialog.Content className="data-[state=open]:animate-contentShow bg-background text-foreground dark:bg-foreground dark:text-background fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded bg-background p-4 shadow-lg focus:outline-none z-50 grid gap-4 justify-items-center">
+        <AlertDialog.Content className="data-[state=open]:animate-contentShow text-foreground dark:bg-foreground dark:text-background fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded bg-background p-4 shadow-lg focus:outline-none z-50 grid gap-4 justify-items-center">
           <AlertDialog.Title className="text-2xl font-bold text-center">
             <Trans>Reload to Update</Trans>
           </AlertDialog.Title>

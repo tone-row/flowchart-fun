@@ -38,8 +38,8 @@ export default function GraphWrapper({
             <GraphFloatingMenu />
           </Box>
         )}
+        <TextResizer />
       </Box>
-      <TextResizer />
     </Suspense>
   );
 }
