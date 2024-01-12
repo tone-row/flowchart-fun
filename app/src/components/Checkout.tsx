@@ -89,15 +89,23 @@ export function Checkout({
   if (isProUser) {
     return (
       <div className="w-full h-full flex items-center justify-center">
-        <p className="text-xl text-center text-wrap-balance leading-normal">
+        <p
+          className={classNames(
+            "text-xl text-center text-wrap-balance leading-normal",
+            {
+              "text-white": pricing2,
+            }
+          )}
+        >
           <Trans>
             You're already a Pro User!
             <br />
-            Have questions or feature requests?{" "}
+            Have questions or feature requests?
+            <br />
             <Link
               to="/o"
-              className={classNames("underline hover:text-blue-500 font-bold", {
-                "text-white hover:text-white": pricing2,
+              className={classNames("hover:text-blue-500", {
+                "hover:text-white": pricing2,
               })}
             >
               Let Us Know

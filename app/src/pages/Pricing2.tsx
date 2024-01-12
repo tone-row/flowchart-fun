@@ -127,15 +127,15 @@ export default function Pricing2() {
     <div>
       <header className="bg-[#f6f5f6] bg-gradient-to-b from-[#f6f5f6] to-purple-500/50 pt-12">
         <Container className="text-center grid gap-8">
-          <h1 className="text-3xl md:text-5xl text-wrap-balance font-bold !leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold !leading-tight">
             Transform your Ideas into Professional Diagrams in Seconds
           </h1>
-          <p className="text-lg md:text-xl text-purple-500 font-bold dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight text-center -mt-2">
+          <p className="text-lg md:text-xl text-purple-500 font-bold dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight text-center -mt-2 mb-2">
             Complete access to all features for just $3/month!
           </p>
           <div
             ref={videoRef}
-            className="pricing-video max-w-xl mx-auto rounded-2xl drop-shadow-xl shadow-neutral-900/50 overflow-hidden -mb-12"
+            className="pricing-video max-w-xl w-full mx-auto rounded-2xl drop-shadow-xl shadow-neutral-900/50 overflow-hidden -mb-12"
             style={
               {
                 "--mouse-x": 0,
@@ -157,17 +157,17 @@ export default function Pricing2() {
           Get full access to all features for just $3/month!
         </p>
       </Container> */}
-      <div className="max-w-6xl mx-auto py-12 mt-12 grid gap-12">
+      <div className="max-w-6xl mx-auto py-12 mt-12 grid gap-12 px-4 md:px-8">
         <div>
           <SectionTitle>Highlights</SectionTitle>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {features().map((feature) => (
               <div
                 key={feature.title}
                 className="feature group relative overflow-hidden p-6 rounded-xl bg-neutral-100 border border-neutral-400/50 aspect-[2.5] flex items-center justify-center hover:bg-white/50 transition-colors"
               >
-                <div className="grid gap-3 group-hover:-translate-y-6 transition-transform">
-                  <h3 className="text-center text-xl font-bold text-foreground dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
+                <div className="grid gap-3 group-hover:-translate-y-6 transition-transform z-10">
+                  <h3 className="text-center text-lg md:text-xl font-bold text-foreground dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
                     {feature.title}
                   </h3>
                   {feature.points.map((point) => (
@@ -188,7 +188,7 @@ export default function Pricing2() {
             ))}
           </div>
         </div>
-        <div className="w-max mx-auto">
+        <div className="md:w-max mx-auto">
           <SectionTitle>What's Included</SectionTitle>
           <div className="border-neutral-400/50 grid grid-cols-[minmax(0,1fr)_auto_auto] rounded-xl border shadow overflow-hidden">
             <span>&nbsp;</span>
@@ -199,7 +199,11 @@ export default function Pricing2() {
               return (
                 <Fragment key={i}>
                   <Cell>
-                    <Icon size={24} weight="bold" className="inline mr-2" />
+                    <Icon
+                      size={24}
+                      weight="bold"
+                      className="mr-2 hidden sm:inline"
+                    />
                     {row.text}
                   </Cell>
                   <Cell center available={row.free}>
@@ -222,7 +226,7 @@ export default function Pricing2() {
           </div>
         </div>
       </div>
-      <div className="checkout-wrapper py-12 relative overflow-hidden">
+      <div className="checkout-wrapper py-12 relative overflow-hidden px-4 md:px-8">
         <div className="max-w-xl mx-auto relative z-10">
           <Checkout pricing2 />
         </div>
@@ -261,11 +265,11 @@ function Cell({
   return (
     <div
       className={classNames(
-        "border-neutral-400/50 border-t border-neutral-200 py-4",
+        "text-sm sm:text-base border-neutral-400/50 border-t border-neutral-200 py-2 sm:py-4",
         {
           "flex items-center justify-center border-l": center,
           "px-4 pr-10": !center,
-          "bg-green-50": available,
+          "bg-green-100": available,
           "bg-red-50": available === false,
         }
       )}
@@ -273,7 +277,7 @@ function Cell({
       {center ? (
         children
       ) : (
-        <p className="text-base md:text-lg text-neutral-500 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
+        <p className="text-sm sm:text-base md:text-lg text-neutral-500 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
           {children}
         </p>
       )}
