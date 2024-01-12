@@ -9,7 +9,14 @@ import { PlanButton } from "./PlanButton";
 import { PaymentStepperTitle } from "./PaymentStepperTitle";
 import classNames from "classnames";
 
-export function Checkout() {
+export function Checkout({
+  pricing2,
+}: {
+  /**
+   * Is this the updated pricing page?
+   */
+  pricing2?: boolean;
+}) {
   const session = useSession();
   const sessionEmail = session?.user?.email;
   const { checkedSession, customerIsLoading } = useContext(AppContext);
@@ -56,16 +63,15 @@ export function Checkout() {
       <div className="w-full h-full flex items-center justify-center">
         <div className="grid justify-center justify-items-center">
           <p className="text-lg text-wrap-balance text-center leading-normal">
-            <Trans>
-              You must{" "}
-              <Link
-                to={`/l?${searchParams.toString()}`}
-                className="font-bold underline hover:text-blue-500"
-              >
-                log in
-              </Link>{" "}
-              before you can upgrade to Pro.
-            </Trans>
+            <Link
+              to={`/l?${searchParams.toString()}`}
+              className={classNames("font-bold hover:text-blue-500", {
+                "text-white hover:text-white text-xl hover:scale-105 transition-transform":
+                  pricing2,
+              })}
+            >
+              <Trans>Log in to upgrade your account</Trans>
+            </Link>
           </p>
         </div>
       </div>
@@ -83,12 +89,25 @@ export function Checkout() {
   if (isProUser) {
     return (
       <div className="w-full h-full flex items-center justify-center">
-        <p className="text-xl text-center text-wrap-balance leading-normal">
+        <p
+          className={classNames(
+            "text-xl text-center text-wrap-balance leading-normal",
+            {
+              "text-white": pricing2,
+            }
+          )}
+        >
           <Trans>
             You're already a Pro User!
             <br />
-            Have questions or feature requests?{" "}
-            <Link to="/o" className="underline hover:text-blue-500 font-bold">
+            Have questions or feature requests?
+            <br />
+            <Link
+              to="/o"
+              className={classNames("hover:text-blue-500", {
+                "hover:text-white": pricing2,
+              })}
+            >
               Let Us Know
             </Link>
           </Trans>
@@ -101,10 +120,11 @@ export function Checkout() {
     <div className="relative h-full">
       <div
         className={classNames(
-          "grid content-center h-full rounded-xl p-8 pb-16 bg-gradient-to-br from-neutral-50 to-neutral-300/50 shadow-inner dark:to-blue-900/50 dark:from-blue-900/0",
+          "grid content-center h-full rounded-xl p-8 pb-16 bg-neutral-50 border dark:to-blue-900/50 dark:from-blue-900/0",
           {
             "opacity-60 pointer-events-none cursor-loading":
               createCheckoutSession.isLoading,
+            "dark:bg-neutral-900 dark:border-none": pricing2,
           }
         )}
       >
