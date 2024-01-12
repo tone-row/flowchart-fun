@@ -295,6 +295,24 @@ main .monaco-editor {
     100%;
 }
 
+body.dark .checkout-wrapper {
+  background-blend-mode: normal;
+  background-color: #0000;
+  background-image: radial-gradient(
+      circle,
+      #8252eb8a,
+      #8252eb8a 0%,
+      #44108a5e 63%
+    ),
+    conic-gradient(at 0 100%, #000, #000 30deg);
+  background-position: 0 0;
+  background-repeat: repeat, repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
+}
+
 /**
 * Add 3d effect to the product video based on mouse cursor location using CSS
 and --mouse-x

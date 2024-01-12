@@ -124,6 +124,7 @@ export function Checkout({
           {
             "opacity-60 pointer-events-none cursor-loading":
               createCheckoutSession.isLoading,
+            "dark:bg-neutral-900 dark:border-none": pricing2,
           }
         )}
       >
