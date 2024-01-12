@@ -135,6 +135,7 @@ export function EditWithAI() {
     [edit, isProUser]
   );
 
+  const [txtPrompt, setTxtPrompt] = useState("");
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -177,7 +178,7 @@ export function EditWithAI() {
             color="purple"
             size="sm"
             rounded
-            className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4"
+            className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
             isLoading={isLoading}
           >
             <span className="text-[15px]">
@@ -191,6 +192,17 @@ export function EditWithAI() {
             sideOffset={10}
             align="end"
             className="w-[300px] bg-white rounded shadow border border-purple-300 p-2 !z-[100] animate-slideDownAndFade dark:bg-neutral-300 dark:text-neutral-800 dark:border-neutral-300"
+            onOpenAutoFocus={(e) => {
+              e.preventDefault();
+              if (!formRef.current) return;
+
+              // highlight the contexts of the textarea inside the form
+              const textarea = formRef.current.querySelector("textarea");
+              if (!textarea) return;
+
+              textarea.focus();
+              textarea.select();
+            }}
           >
             <form className="grid gap-2" onSubmit={handleSubmit} ref={formRef}>
               <div className="relative">
@@ -199,6 +211,8 @@ export function EditWithAI() {
                   className="text-xs w-full resize-none h-24 p-2 leading-normal dark:bg-neutral-300"
                   name="prompt"
                   required
+                  value={txtPrompt}
+                  onChange={(e) => setTxtPrompt(e.target.value)}
                   onKeyDown={(e) => {
                     if (!formRef.current) return;
 
@@ -232,7 +246,7 @@ export function EditWithAI() {
       >
         <Toast.Description>
           <div className="flex text-xs items-center gap-3">
-            <Robot size={24} />
+            <Robot size={24} className="shrink-0" />
             <p className="leading-normal">{message}</p>
           </div>
         </Toast.Description>
