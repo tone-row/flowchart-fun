@@ -137,7 +137,7 @@ export default function Pricing2() {
           </p>
           <div
             ref={videoRef}
-            className="pricing-video max-w-xl w-full mx-auto rounded-2xl drop-shadow-xl shadow-neutral-900/50 overflow-hidden -mb-12"
+            className="pricing-video text-[0] bg-white max-w-xl w-full mx-auto rounded-2xl drop-shadow-xl shadow-neutral-900/50 overflow-hidden -mb-12 aspect-[1.3]"
             style={
               {
                 "--mouse-x": 0,
@@ -163,14 +163,14 @@ export default function Pricing2() {
                 key={feature.title}
                 className="feature group relative overflow-hidden p-6 rounded-xl bg-neutral-100 border border-neutral-400/50 aspect-[2.5] flex items-center justify-center hover:bg-white/50 transition-colors dark:bg-neutral-900/60 dark:border-neutral-700 dark:hover:bg-purple-900/60 dark:border-none"
               >
-                <div className="grid gap-3 group-hover:-translate-y-6 transition-transform z-10">
-                  <h3 className="text-center text-lg md:text-xl font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-hover:text-white">
+                <div className="grid gap-1 sm:gap-3 sm:group-hover:-translate-y-6 transition-transform z-10">
+                  <h3 className="text-center text-[18px] sm:text-lg lg:text-xl font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-hover:text-white">
                     {feature.title}
                   </h3>
                   {feature.points.map((point) => (
                     <p
                       key={point}
-                      className="text-center text-base text-neutral-500 dark:text-neutral-400 text-wrap-balance !leading-normal"
+                      className="text-center text-sm lg:text-base text-neutral-500 dark:text-neutral-400 text-wrap-balance !leading-normal"
                     >
                       {point}
                     </p>
@@ -179,7 +179,7 @@ export default function Pricing2() {
                 <img
                   src={`images/pricing/${feature.imgPath}.svg`}
                   alt={feature.title}
-                  className="h-[125px] w-[125px] absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 opacity-5 blur-[2px] group-hover:opacity-100 group-hover:blur-0 group-hover:bottom-[-40px] transition-all duration-[400ms]"
+                  className="h-[125px] w-[125px] absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 opacity-5 blur-[2px] sm:group-hover:opacity-100 group-hover:blur-0 group-hover:bottom-[-40px] transition-all duration-[400ms]"
                 />
               </div>
             ))}
@@ -239,7 +239,7 @@ export default function Pricing2() {
         </div>
         <img
           src="/images/arrows-purple.svg"
-          className="absolute top-0 left-0 w-full object-cover object-center opacity-20"
+          className="absolute top-0 left-0 w-full object-cover object-center opacity-40 sm:opacity-20"
           alt=""
         />
       </div>
