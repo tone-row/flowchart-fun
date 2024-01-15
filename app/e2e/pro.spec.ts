@@ -166,7 +166,7 @@ test("Create chart from imported data", async () => {
       page.getByText("You are about to add 9 nodes and 10 edges to your graph.")
     ).toBeVisible();
 
-    await page.getByRole("button", { name: "Continue" }).click();
+    await page.getByTestId("import-confirm-button").click();
   } catch (error) {
     console.error(error);
     throw error;

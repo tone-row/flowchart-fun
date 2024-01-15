@@ -704,6 +704,7 @@ function ConfirmAddNodesAndEdges() {
               }));
             }}
             color="blue"
+            data-testid="import-confirm-button"
           >
             {t`Continue`}
           </Button2>

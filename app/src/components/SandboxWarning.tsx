@@ -42,23 +42,23 @@ export function SandboxWarning() {
           data-testid="sandbox-warning"
         >
           <h2 className="font-bold text-xl leading-normal text-center">
-            👋 <Trans>Don't lose your work!</Trans>
+            <Trans>Your Work is Important</Trans>
           </h2>
           <P>
             <Trans>
-              You're currently working in your sandbox. Remember, it resets
-              daily, so your current work won't be saved tomorrow.
+              This is your sandbox. It's a great place for experimentation, but{" "}
+              <u className="underline-offset-2">it resets daily</u>.
             </Trans>
           </P>
           <P>
             <Trans>
-              Want to keep your flowcharts? Upgrade to our Pro account for only
-              $3/month. With Pro, you can save unlimited flowcharts and never
-              lose your creativity.
+              You can save unlimited flowcharts in the cloud or to your
+              computer, as well as get access to features like AI Editing and
+              Data Imports for less than the price of a cup of coffee.
             </Trans>
           </P>
           <Button2
-            color="blue"
+            color="purple"
             size="sm"
             className="mt-3"
             data-testid="sandbox-warning-learn-more"
@@ -66,7 +66,9 @@ export function SandboxWarning() {
               useSandboxWarning.setState({ isOpen: false });
             }}
           >
-            <Link to="/pricing">Learn More</Link>
+            <Link to="/pricing">
+              Learn about <span>Flowchart Fun Pro</span>
+            </Link>
           </Button2>
         </Content>
       </Dialog.Portal>

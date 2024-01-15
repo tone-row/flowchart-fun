@@ -185,7 +185,7 @@ export const Header = memo(function SharedHeader() {
                   to="/pricing"
                   data-testid="pro-link"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="font-bold text-[15px] rounded-xl py-2 ml-2 px-4 bg-purple-100 text-purple-500 hover:bg-purple-200 hover:text-purple-600 dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
+                  className="font-bold rounded-md py-2 ml-2 px-4 bg-gradient-to-t from-purple-600 to-purple-500 text-white hover:to-purple-400 dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
                   onClick={() => {
                     track("sponsor", "click");
                   }}

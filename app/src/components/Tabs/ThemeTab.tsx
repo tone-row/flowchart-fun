@@ -27,12 +27,12 @@ import { Warning } from "../Warning";
 import { Trans, t } from "@lingui/macro";
 import {
   ArrowsOutLineVertical,
-  ArrowsOutSimple,
   Article,
   Graph,
   LineSegment,
   TextAa,
 } from "phosphor-react";
+import { useGraphStore } from "../../lib/useGraphStore";
 
 const createForm = createControls({
   select,
@@ -91,6 +91,8 @@ const Form = createForm<{
             return data.theme.layoutName;
           },
           onChange(value) {
+            // reset zoom here
+            useGraphStore.setState({ autoFit: true });
             updateThemeEditor({ layoutName: value as LayoutName });
           },
           options: [
@@ -120,6 +122,7 @@ const Form = createForm<{
             return data.theme.direction ?? "UNDEFINED";
           },
           onChange(value) {
+            useGraphStore.setState({ autoFit: true });
             updateThemeEditor({ direction: value as Direction });
           },
           options: [
@@ -130,7 +133,7 @@ const Form = createForm<{
           ],
         },
         {
-          title: () => <ArrowsOutSimple className="w-5 h-5" />,
+          title: () => t`Spacing`,
           id: "spacingFactor",
           label: t`Spacing`,
           control: "range",
