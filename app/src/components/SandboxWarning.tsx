@@ -67,7 +67,9 @@ export function SandboxWarning() {
             }}
           >
             <Link to="/pricing">
-              Learn about <span>Flowchart Fun Pro</span>
+              <Trans>
+                Learn about <span>Flowchart Fun Pro</span>
+              </Trans>
             </Link>
           </Button2>
         </Content>
