@@ -18,6 +18,15 @@ import { useDoc } from "../lib/useDoc";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { mountGraph, unmountGraph } from "../lib/useUnmountStore";
 import { FFTheme } from "../lib/FFTheme";
+import { getDefaultText } from "../lib/getDefaultText";
+
+/**
+ * We want to load template content if the user has no content
+ */
+function getContentInitialValue() {
+  const text = useDoc.getState().text;
+  return text.trim() === "" || text === getDefaultText();
+}
 
 export function LoadTemplateDialog() {
   const [open, setOpen] = useState(false);
@@ -26,7 +35,7 @@ export function LoadTemplateDialog() {
   >(null);
   const templateData = templates.find((t) => t.key === template);
   const [layout, setLayout] = useState(true);
-  const [content, setContent] = useState(false);
+  const [content, setContent] = useState(getContentInitialValue);
   const disabled = !layout && !content;
 
   /**
@@ -35,7 +44,7 @@ export function LoadTemplateDialog() {
   const reset = useCallback(() => {
     setTemplate(null);
     setLayout(true);
-    setContent(false);
+    setContent(getContentInitialValue);
   }, []);
 
   const load = useCallback(() => {
@@ -84,6 +93,7 @@ export function LoadTemplateDialog() {
       onOpenChange={(open) => {
         if (!open) reset();
         setOpen(open);
+        setContent(getContentInitialValue);
       }}
     >
       <Dialog.Trigger asChild>

@@ -27,28 +27,32 @@ import { pageHeight } from "./pageHeight";
 
 pageHeight();
 
+import { PosthogWrapper } from "./PosthogWrapper";
+
 export default function App() {
   return (
     <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <Provider>
-          <I18n>
-            <Sentry.ErrorBoundary fallback={ErrorFallback}>
-              <Elements stripe={stripePromise}>
-                <Suspense fallback={<Loading />}>
-                  <Toast.Provider swipeDirection="right">
-                    <TooltipProvider>
-                      <Router />
-                      <Toast.Viewport className="[--viewport-padding:_25px] fixed bottom-0 right-0 flex flex-col p-[var(--viewport-padding)] gap-[10px] w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none" />
-                    </TooltipProvider>
-                  </Toast.Provider>
-                  <ReactQueryDevtools />
-                </Suspense>
-              </Elements>
-            </Sentry.ErrorBoundary>
-          </I18n>
-        </Provider>
-      </QueryClientProvider>
+      <PosthogWrapper>
+        <QueryClientProvider client={queryClient}>
+          <Provider>
+            <I18n>
+              <Sentry.ErrorBoundary fallback={ErrorFallback}>
+                <Elements stripe={stripePromise}>
+                  <Suspense fallback={<Loading />}>
+                    <Toast.Provider swipeDirection="right">
+                      <TooltipProvider>
+                        <Router />
+                        <Toast.Viewport className="[--viewport-padding:_25px] fixed bottom-0 right-0 flex flex-col p-[var(--viewport-padding)] gap-[10px] w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none" />
+                      </TooltipProvider>
+                    </Toast.Provider>
+                    <ReactQueryDevtools />
+                  </Suspense>
+                </Elements>
+              </Sentry.ErrorBoundary>
+            </I18n>
+          </Provider>
+        </QueryClientProvider>
+      </PosthogWrapper>
     </BrowserRouter>
   );
 }

@@ -4,22 +4,8 @@ import { ReactNode } from "react";
 
 import styles from "./Pricing.module.css";
 
-import { PostHogProvider } from "posthog-js/react";
-import posthog from "posthog-js";
 import classNames from "classnames";
 import { Checkout } from "../components/Checkout";
-
-const posthogToken = process.env.REACT_APP_PUBLIC_POSTHOG_KEY;
-const posthogApiHost = process.env.REACT_APP_PUBLIC_POSTHOG_HOST;
-if (posthogToken && posthogApiHost) {
-  posthog.init(posthogToken, {
-    api_host: posthogApiHost,
-  });
-}
-
-const options = {
-  api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
-};
 
 export const features = (): {
   title: string;
@@ -89,7 +75,7 @@ const plans = () => [
   },
 ];
 
-function Pricing() {
+export default function Pricing() {
   return (
     <div className="grid content-start">
       <div className="grid md:grid-cols-2 gap-12 max-w-[1100px] mx-auto items-center mt-16 mb-6 md:mb-12 px-4">
@@ -143,14 +129,6 @@ function Pricing() {
         </p>
       </div>
     </div>
-  );
-}
-
-export default function PricingProvider() {
-  return (
-    <PostHogProvider apiKey={posthogToken} options={options}>
-      <Pricing />
-    </PostHogProvider>
   );
 }
 
