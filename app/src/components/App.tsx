@@ -34,6 +34,8 @@ import { PostHogConfig } from "posthog-js";
 
 pageHeight();
 
+import "./PosthogWrapper";
+
 export default function App() {
   return (
     <BrowserRouter>
