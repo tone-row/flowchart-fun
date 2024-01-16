@@ -29,6 +29,8 @@ export type UserSettings = {
   language?: string;
 };
 
+const isProd = process.env.REACT_APP_VERCEL_ENV === "production";
+
 // Get default languages
 const browserLanguage = navigator.language.slice(0, 2);
 const defaultLanguage = Object.keys(languages).includes(browserLanguage)
@@ -123,14 +125,14 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   // Accurate Page Views
   const posthog = usePostHog();
   useEffect(() => {
-    if (!posthog) return;
+    if (!posthog || !isProd) return;
     posthog.capture("$pageview");
   }, [posthog, pathname]);
 
   // ID
   const email = session?.user?.email ?? "";
   useEffect(() => {
-    if (!posthog || !email) return;
+    if (!posthog || !email || !isProd) return;
     posthog.identify(email);
   }, [posthog, email]);
 
@@ -153,7 +155,7 @@ const Provider = ({ children }: { children?: ReactNode }) => {
           setSession(session);
 
           // Reset PostHog if we're logged out
-          if (posthog && !session) {
+          if (posthog && !session && isProd) {
             posthog.reset();
           }
         });

@@ -10,12 +10,6 @@ import { Box } from "../slang";
 import Provider from "./AppContextProvider";
 import { I18n } from "./I18n";
 import Router from "./Router";
-import { PostHogProvider } from "posthog-js/react";
-
-const options: Partial<PostHogConfig> = {
-  api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
-  persistence: "localStorage",
-};
 
 export const stripePromise = loadStripe(
   process.env.REACT_APP_STRIPE_KEY as string
@@ -30,19 +24,15 @@ import * as Toast from "@radix-ui/react-toast";
 import { Button2 } from "../ui/Shared";
 import Loading from "./Loading";
 import { pageHeight } from "./pageHeight";
-import { PostHogConfig } from "posthog-js";
 
 pageHeight();
 
-import "./PosthogWrapper";
+import { PosthogWrapper } from "./PosthogWrapper";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <PostHogProvider
-        apiKey={process.env.REACT_APP_PUBLIC_POSTHOG_KEY}
-        options={options}
-      >
+      <PosthogWrapper>
         <QueryClientProvider client={queryClient}>
           <Provider>
             <I18n>
@@ -62,7 +52,7 @@ export default function App() {
             </I18n>
           </Provider>
         </QueryClientProvider>
-      </PostHogProvider>
+      </PosthogWrapper>
     </BrowserRouter>
   );
 }
