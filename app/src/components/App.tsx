@@ -10,6 +10,12 @@ import { Box } from "../slang";
 import Provider from "./AppContextProvider";
 import { I18n } from "./I18n";
 import Router from "./Router";
+import { PostHogProvider } from "posthog-js/react";
+
+const options: Partial<PostHogConfig> = {
+  api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
+  persistence: "localStorage",
+};
 
 export const stripePromise = loadStripe(
   process.env.REACT_APP_STRIPE_KEY as string
@@ -24,31 +30,37 @@ import * as Toast from "@radix-ui/react-toast";
 import { Button2 } from "../ui/Shared";
 import Loading from "./Loading";
 import { pageHeight } from "./pageHeight";
+import { PostHogConfig } from "posthog-js";
 
 pageHeight();
 
 export default function App() {
   return (
     <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <Provider>
-          <I18n>
-            <Sentry.ErrorBoundary fallback={ErrorFallback}>
-              <Elements stripe={stripePromise}>
-                <Suspense fallback={<Loading />}>
-                  <Toast.Provider swipeDirection="right">
-                    <TooltipProvider>
-                      <Router />
-                      <Toast.Viewport className="[--viewport-padding:_25px] fixed bottom-0 right-0 flex flex-col p-[var(--viewport-padding)] gap-[10px] w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none" />
-                    </TooltipProvider>
-                  </Toast.Provider>
-                  <ReactQueryDevtools />
-                </Suspense>
-              </Elements>
-            </Sentry.ErrorBoundary>
-          </I18n>
-        </Provider>
-      </QueryClientProvider>
+      <PostHogProvider
+        apiKey={process.env.REACT_APP_PUBLIC_POSTHOG_KEY}
+        options={options}
+      >
+        <QueryClientProvider client={queryClient}>
+          <Provider>
+            <I18n>
+              <Sentry.ErrorBoundary fallback={ErrorFallback}>
+                <Elements stripe={stripePromise}>
+                  <Suspense fallback={<Loading />}>
+                    <Toast.Provider swipeDirection="right">
+                      <TooltipProvider>
+                        <Router />
+                        <Toast.Viewport className="[--viewport-padding:_25px] fixed bottom-0 right-0 flex flex-col p-[var(--viewport-padding)] gap-[10px] w-[390px] max-w-[100vw] m-0 list-none z-[2147483647] outline-none" />
+                      </TooltipProvider>
+                    </Toast.Provider>
+                    <ReactQueryDevtools />
+                  </Suspense>
+                </Elements>
+              </Sentry.ErrorBoundary>
+            </I18n>
+          </Provider>
+        </QueryClientProvider>
+      </PostHogProvider>
     </BrowserRouter>
   );
 }

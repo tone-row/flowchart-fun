@@ -19,6 +19,7 @@ import { useCustomerInfo, useHostedCharts } from "../lib/queries";
 import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
 import { supabase } from "../lib/supabaseClient";
+import { usePostHog } from "posthog-js/react";
 
 type Theme = typeof colors;
 
@@ -99,29 +100,11 @@ const Provider = ({ children }: { children?: ReactNode }) => {
   const [checkedSession, setCheckedSession] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
 
-  useEffect(() => {
-    requestAnimationFrame(() => {
-      if (!supabase) {
-        setCheckedSession(true);
-        return;
-      }
-
-      (async () => {
-        const {
-          data: { session },
-        } = await supabase.auth.getSession();
-        setSession(session);
-        setCheckedSession(true);
-        supabase.auth.onAuthStateChange((_event, session) => {
-          setSession(session);
-        });
-      })();
-    });
-  }, []);
-
   // Close Share Modal when navigating
   const { pathname } = useLocation();
-  useEffect(() => setShareModal(false), [pathname]);
+  useEffect(() => {
+    setShareModal(false);
+  }, [pathname]);
 
   const { data: customer, isFetching: customerIsLoading } = useCustomerInfo();
 
@@ -136,6 +119,47 @@ const Provider = ({ children }: { children?: ReactNode }) => {
       document.body.classList.remove("dark");
     }
   }, [settings.mode]);
+
+  // Accurate Page Views
+  const posthog = usePostHog();
+  useEffect(() => {
+    if (!posthog) return;
+    posthog.capture("$pageview");
+  }, [posthog, pathname]);
+
+  // ID
+  const email = session?.user?.email ?? "";
+  useEffect(() => {
+    if (!posthog || !email) return;
+    posthog.identify(email);
+  }, [posthog, email]);
+
+  // Get Session
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      // If we're not logged in, don't bother checking
+      if (!supabase) {
+        setCheckedSession(true);
+        return;
+      }
+
+      (async () => {
+        const {
+          data: { session },
+        } = await supabase.auth.getSession();
+        setSession(session);
+        setCheckedSession(true);
+        supabase.auth.onAuthStateChange((_event, session) => {
+          setSession(session);
+
+          // Reset PostHog if we're logged out
+          if (posthog && !session) {
+            posthog.reset();
+          }
+        });
+      })();
+    });
+  }, [posthog]);
 
   return (
     <AppContext.Provider
