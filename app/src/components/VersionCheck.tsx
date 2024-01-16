@@ -8,8 +8,7 @@ import { Button2 } from "../ui/Shared";
 /** Polls the current app version from the API and opens a reload modal if it changes */
 export function VersionCheck() {
   useCheckVersion();
-  // const showModal = useVersionCheck((state) => state.showModal);
-  const showModal = true;
+  const showModal = useVersionCheck((state) => state.showModal);
   if (!showModal) return null;
   return (
     <AlertDialog.Root open={showModal}>
