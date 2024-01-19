@@ -32,6 +32,9 @@ const handler: VercelApiHandler = async (req, res) => {
       customer_email: email,
       success_url: `${getBaseUrl()}/success`,
       cancel_url: `${getBaseUrl()}/pricing`,
+      subscription_data: {
+        trial_period_days: 2,
+      },
     });
 
     res.json({ url: session.url });
