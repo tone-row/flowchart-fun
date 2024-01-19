@@ -13,19 +13,19 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Checkout.tsx:139
+#: src/components/Checkout.tsx:142
 msgid "$3 / month"
 msgstr "मासिक $3"
 
-#: src/components/Checkout.tsx:146
+#: src/components/Checkout.tsx:149
 msgid "$30 / year"
 msgstr "वार्षिक $30"
 
-#: src/pages/Pricing.tsx:64
+#: src/pages/Pricing.tsx:50
 msgid "1 Temporary Flowchart"
 msgstr "1 अस्थायी फ्लोचार्ट"
 
-#: src/components/Checkout.tsx:150
+#: src/components/Checkout.tsx:153
 msgid "16% Less"
 msgstr "16% कम"
 
@@ -100,7 +100,7 @@ msgstr "गुण"
 msgid "August 2023"
 msgstr "2023 अगस्त"
 
-#: src/components/LoadTemplateDialog.tsx:116
+#: src/components/LoadTemplateDialog.tsx:126
 msgid "Back"
 msgstr "वापस"
 
@@ -325,12 +325,12 @@ msgstr "अपना मर्मेड.जेएस कोड कॉपी क�
 msgid "Create"
 msgstr "बनाएं"
 
-#: src/pages/Pricing.tsx:83
+#: src/pages/Pricing.tsx:69
 msgid "Create Flowcharts using AI"
 msgstr "एआई का उपयोग करके फ्लोचार्ट बनाएं"
 
 #: src/lib/paywallCopy.ts:3
-#: src/pages/Pricing.tsx:30
+#: src/pages/Pricing.tsx:16
 msgid "Create Unlimited Flowcharts"
 msgstr "असीमित पारितकथाओं बनाएं"
 
@@ -338,11 +338,11 @@ msgstr "असीमित पारितकथाओं बनाएं"
 msgid "Create a New Chart"
 msgstr "एक नया चार्ट बनाएं"
 
-#: src/pages/Pricing.tsx:106
+#: src/pages/Pricing.tsx:92
 msgid "Create unlimited diagrams for just $3/month!"
 msgstr "केवल 3 डॉलर महीने में असीमित डायग्राम बनाएं!"
 
-#: src/pages/Pricing.tsx:32
+#: src/pages/Pricing.tsx:18
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
 msgstr "आकार में असीमित फ्लोचार्ट को क्लाउड में संग्रहीत करें - किसी भी जगह से उपलब्ध!"
 
@@ -363,7 +363,7 @@ msgstr "वक्र शैली"
 msgid "Custom CSS"
 msgstr "कस्टम CSS"
 
-#: src/pages/Pricing.tsx:84
+#: src/pages/Pricing.tsx:70
 #: src/pages/Pricing2.tsx:77
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
@@ -559,11 +559,11 @@ msgstr "अपने फ्लोचार्ट में स्थानीय
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
-#: src/pages/Pricing.tsx:66
+#: src/pages/Pricing.tsx:52
 msgid "Export to PNG & JPG"
 msgstr "PNG और JPG में निर्यात करें"
 
-#: src/pages/Pricing.tsx:79
+#: src/pages/Pricing.tsx:65
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG और SVG में निर्यात करें"
 
@@ -601,7 +601,7 @@ msgstr "अपना पासवर्ड भूल गए?"
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "एक बग पाया? एक सुविधा अनुरोध है? हम आपसे सुनने के लिए प्रसन्न होंगे!"
 
-#: src/pages/Pricing.tsx:61
+#: src/pages/Pricing.tsx:47
 msgid "Free"
 msgstr "मुफ्त"
 
@@ -646,7 +646,7 @@ msgstr "यहाँ आपको कुछ प्रो फीचर आनं�
 msgid "History"
 msgstr "हिस्ट्री"
 
-#: src/components/App.tsx:83
+#: src/components/App.tsx:87
 msgid "Home"
 msgstr "होम"
 
@@ -697,7 +697,7 @@ msgstr "किसी भी CSV फ़ाइल से डेटा आयात
 msgid "Import from CSV"
 msgstr "CSV से आयात करें"
 
-#: src/pages/Pricing.tsx:82
+#: src/pages/Pricing.tsx:68
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Visio, Lucidchart और CSV से आयात करें"
 
@@ -721,7 +721,7 @@ msgstr "जानकारी"
 msgid "Is"
 msgstr "हाँ"
 
-#: src/pages/Pricing.tsx:51
+#: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "चीजों को निजी रखें"
 
@@ -783,7 +783,7 @@ msgstr "लाइट मोड"
 msgid "Link"
 msgstr "लिंक"
 
-#: src/components/LoadTemplateDialog.tsx:163
+#: src/components/LoadTemplateDialog.tsx:173
 msgid "Load"
 msgstr "लोड"
 
@@ -799,7 +799,7 @@ msgstr "फ़ाइल लोड करें"
 msgid "Load Files"
 msgstr "फ़ाइलें लोड करें"
 
-#: src/components/LoadTemplateDialog.tsx:137
+#: src/components/LoadTemplateDialog.tsx:147
 msgid "Load default content"
 msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 
@@ -807,11 +807,11 @@ msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 msgid "Load from link?"
 msgstr "लिंक से लोड करें?"
 
-#: src/components/LoadTemplateDialog.tsx:134
+#: src/components/LoadTemplateDialog.tsx:144
 msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
 
-#: src/pages/Pricing.tsx:77
+#: src/pages/Pricing.tsx:63
 #: src/pages/Pricing2.tsx:59
 msgid "Local File Support"
 msgstr "स्थानीय फ़ाइल समर्थन"
@@ -854,7 +854,7 @@ msgstr "बिलिंग प्रबंधित करें"
 msgid "Map Data"
 msgstr "डेटा मैप"
 
-#: src/components/Checkout.tsx:138
+#: src/components/Checkout.tsx:141
 msgid "Monthly"
 msgstr "मासिक"
 
@@ -890,7 +890,7 @@ msgstr "अगला चार्ज"
 msgid "No Edges"
 msgstr "कोई किनारे नहीं"
 
-#: src/pages/Pricing.tsx:81
+#: src/pages/Pricing.tsx:67
 msgid "No Watermarks!"
 msgstr "कोई वॉटरमार्क्स नहीं!"
 
@@ -948,7 +948,7 @@ msgstr "खाली नहीं"
 msgid "Now erase the text and try it yourself!"
 msgstr "अब पाठ हटाएं और खुद से यह कोशिश करें!"
 
-#: src/pages/Pricing.tsx:86
+#: src/pages/Pricing.tsx:72
 msgid "Office Hours"
 msgstr "कार्यालय अवधि"
 
@@ -956,7 +956,7 @@ msgstr "कार्यालय अवधि"
 msgid "Once in a while the magic link will end up in your spam folder. If you don't see it after a few minutes, check there or request a new link."
 msgstr "कभी-कभी मैजिक लिंक आपके स्पैम फोल्डर में खत्म हो जाता है। अगर आप कुछ मिनट बाद उसे नहीं देख रहे हैं, तो वहां जाकर देखें या एक नया लिंक अनुरोध करें।"
 
-#: src/pages/Pricing.tsx:85
+#: src/pages/Pricing.tsx:71
 msgid "One on One Support"
 msgstr "एक प्रति एक समर्थन"
 
@@ -1041,8 +1041,8 @@ msgstr "अनियमित"
 msgid "Rapid Deployment Templates"
 msgstr "त्वरित डिप्लॉयमेंट टेम्पलेट्स"
 
-#: src/pages/Pricing.tsx:67
-#: src/pages/Pricing.tsx:80
+#: src/pages/Pricing.tsx:53
+#: src/pages/Pricing.tsx:66
 msgid "Rapid Templates"
 msgstr "त्वरित टेम्पलेट्स"
 
@@ -1145,7 +1145,7 @@ msgstr "लेबल को घुमाएँ"
 msgid "Save"
 msgstr "सहेजें"
 
-#: src/pages/Pricing.tsx:37
+#: src/pages/Pricing.tsx:23
 msgid "Save Time with AI & Dictation"
 msgstr "AI और बोलने के साथ समय बचाएं"
 
@@ -1289,8 +1289,8 @@ msgstr "लक्ष्य डेलीमीटर"
 msgid "Target Distance From Node"
 msgstr "नोड से लक्ष्य दूरी"
 
-#: src/components/LoadTemplateDialog.tsx:91
-#: src/components/LoadTemplateDialog.tsx:104
+#: src/components/LoadTemplateDialog.tsx:101
+#: src/components/LoadTemplateDialog.tsx:114
 msgid "Templates"
 msgstr "टेम्पलेट्स"
 
@@ -1367,8 +1367,8 @@ msgstr "थीम"
 msgid "Theme Customization Editor"
 msgstr "थीम कस्टमाइज़ेशन संपादक"
 
-#: src/pages/Pricing.tsx:65
-#: src/pages/Pricing.tsx:78
+#: src/pages/Pricing.tsx:51
+#: src/pages/Pricing.tsx:64
 msgid "Theme Editor"
 msgstr "थीम संपादक"
 
@@ -1392,7 +1392,7 @@ msgstr "यह आपका सैंडबॉक्स है। यह प्�
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "आपके इनपुट की लंबाई के आधार पर, यह 30 सेकंड से 2 मिनट तक लग सकता है।"
 
-#: src/components/LoadTemplateDialog.tsx:151
+#: src/components/LoadTemplateDialog.tsx:161
 msgid "This will replace the current content."
 msgstr "यह वर्तमान सामग्री को बदल देगा।"
 
@@ -1428,7 +1428,7 @@ msgstr "इसे ठीक करने के लिए कंटेनर <0/
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "हमें आपको लॉगिन करने के लिए आवश्यक क्यों है, कृपया <0>यह ब्लॉग पोस्ट</0> पढ़ें।"
 
-#: src/pages/Pricing.tsx:39
+#: src/pages/Pricing.tsx:25
 msgid "Together, speech-to-text and AI make creating diagrams a breeze!"
 msgstr "साथ में, भाषण से लिखना और AI आसान बनाते हैं डायग्राम बनाने को!"
 
@@ -1437,7 +1437,7 @@ msgstr "साथ में, भाषण से लिखना और AI आ�
 msgid "Top to Bottom"
 msgstr "ऊपर से नीचे"
 
-#: src/pages/Pricing.tsx:101
+#: src/pages/Pricing.tsx:87
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को सेकंड में प्रोफेशनल डायरेक्टरी में रूपांतरित करें"
 
@@ -1445,9 +1445,17 @@ msgstr "अपने विचारों को सेकंड में प�
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को पेशेवर डायग्राम में बदलें सेकंडों में"
 
-#: src/components/App.tsx:75
+#: src/components/Header.tsx:193
+msgid "Try Pro for Free"
+msgstr "मुफ्त के लिए प्रो ट्राय करें"
+
+#: src/components/App.tsx:79
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
+
+#: src/components/Checkout.tsx:135
+msgid "Try it for free for two days. Cancel anytime."
+msgstr "दो दिन के लिए इसे मुफ्त में ट्राय करें। कभी भी रद्द कर सकते हैं।"
 
 #: src/lib/parserErrors.tsx:55
 msgid "Two edges have the same ID"
@@ -1469,7 +1477,7 @@ msgstr "अज्ञात"
 msgid "Unknown Parsing Error"
 msgstr "अज्ञात पार्सिंग त्रुटि"
 
-#: src/pages/Pricing.tsx:76
+#: src/pages/Pricing.tsx:62
 #: src/pages/Pricing2.tsx:41
 msgid "Unlimited Permanent Flowcharts"
 msgstr "असीमित स्थायी प्रवाहगतीं "
@@ -1503,11 +1511,11 @@ msgstr "केवल कस्टम CSS का उपयोग करें"
 msgid "Use Default Content"
 msgstr "डिफ़ॉल्ट सामग्री का उपयोग करें"
 
-#: src/pages/Pricing.tsx:44
+#: src/pages/Pricing.tsx:30
 msgid "Use External Data"
 msgstr "बाहरी डेटा का उपयोग करें"
 
-#: src/pages/Pricing.tsx:46
+#: src/pages/Pricing.tsx:32
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
 msgstr "क्या आप Lucidchart या Visio का उपयोग करते हैं? CSV आयात किसी भी स्रोत से डेटा प्राप्त करने को आसान बनाता है!"
 
@@ -1563,7 +1571,7 @@ msgstr "आवाज़ से डायग्राम बनाना"
 msgid "Watermark-Free Diagrams"
 msgstr "वॉटरमार्क-मुक्त आरेख"
 
-#: src/pages/Pricing.tsx:68
+#: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "वॉटरमार्क"
 
@@ -1592,7 +1600,7 @@ msgstr "चौड़ाई और ऊँचाई"
 msgid "With Flowchart Fun's Pro version, you can tap into AI to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $3/month, get the ease of accessible AI editing to enhance your flowcharting experience."
 msgstr "फ्लोचार्ट फन के प्रो संस्करण के साथ, आप आर्थिक दृष्टिकोण से अपने फ्लोचार्ट विवरणों को तेजी से बढ़ा सकते हैं, जो गतिशील आरेखण बनाने के लिए आदर्श है। $3/माह के लिए, आसान एआई संपादन की सुविधा प्राप्त करें और अपने फ्लोचार्टिंग अनुभव को बेहतर बनाएं।"
 
-#: src/pages/Pricing.tsx:53
+#: src/pages/Pricing.tsx:39
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
 msgstr "प्रो संस्करण के साथ आप स्थानीय फ़ाइलों को सहेज और लोड कर सकते हैं। यह ऑफ़लाइन काम से जुड़े दस्तावेज़ों को प्रबंधित करने के लिए उपयुक्त है।"
 
@@ -1604,7 +1612,7 @@ msgstr "क्या आप जारी रखना चाहते हैं?
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "अपना प्रॉम्प्ट यहां लिखें या माइक्रोफोन को सक्षम करने के लिए क्लिक करें, फिर रिकॉर्ड करने के लिए दबाएं और रखें।"
 
-#: src/components/Checkout.tsx:145
+#: src/components/Checkout.tsx:148
 msgid "Yearly"
 msgstr "वार्षिक"
 
