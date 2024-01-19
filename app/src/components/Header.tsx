@@ -1,6 +1,6 @@
 import "./Header.css";
 
-import { t } from "@lingui/macro";
+import { Trans, t } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
@@ -185,12 +185,12 @@ export const Header = memo(function SharedHeader() {
                   to="/pricing"
                   data-testid="pro-link"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="font-bold rounded-md py-2 ml-2 px-4 bg-gradient-to-t from-purple-600 to-purple-500 text-white hover:to-purple-400 dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
+                  className="font-bold rounded-md py-2 ml-2 px-4 bg-gradient-to-t from-purple-700 to-purple-400 hover:to-purple-300 text-white dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
                   onClick={() => {
                     track("sponsor", "click");
                   }}
                 >
-                  Try Flowchart Fun Pro
+                  <Trans>Try Pro for Free</Trans>
                 </Link>
               ) : null}
             </nav>
