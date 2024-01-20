@@ -128,9 +128,12 @@ export function Checkout({
           }
         )}
       >
-        <PaymentStepperTitle className="mb-6">
+        <PaymentStepperTitle className="mb-2">
           <Trans>Choose a Plan</Trans>
         </PaymentStepperTitle>
+        <p className="text-center mb-4">
+          <Trans>Try it for free for two days. Cancel anytime.</Trans>
+        </p>
         <div className="w-full grid gap-2 h-full content-center">
           <PlanButton
             onClick={() => createCheckoutSession.mutate("monthly")}
