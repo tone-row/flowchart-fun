@@ -125,14 +125,20 @@ export default function Pricing2() {
   }, []);
   return (
     <div>
-      <header className="bg-[#f6f5f6] dark:bg-[#0c0c0c] bg-gradient-to-b from-[#f6f5f6] to-purple-500/50 pt-12 dark:to-purple-900/50 dark:from-[#0c0c0c]">
-        <Container className="text-center grid gap-8">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold !leading-tight">
+      <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-white to-purple-500/50 pt-12 dark:to-purple-900/50 dark:from-[#0c0c0c] border-b-2 border-b-purple-400/70 dark:border-purple-900/40">
+        <img
+          src="/images/arrows-purple.svg"
+          className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-5 dark:opacity-50"
+          alt=""
+        />
+        <Container className="text-center grid relative">
+          <span className="font-bold sm:text-lg mb-3">Flowchart Fun PRO</span>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold !leading-tight mb-8">
             <Trans>
               Transform your Ideas into Professional Diagrams in Seconds
             </Trans>
           </h1>
-          <p className="text-lg md:text-xl text-purple-500 font-bold text-wrap-balance leading-normal md:leading-tight text-center -mt-2 mb-2 dark:text-purple-100/70 dark:font-normal">
+          <p className="text-lg md:text-xl text-purple-500 font-bold text-wrap-balance leading-normal md:leading-tight text-center -mt-2 mb-10 dark:text-purple-100/70 dark:font-normal">
             <Trans>Complete access to all features for just $3/month!</Trans>
           </p>
           <div
@@ -154,42 +160,51 @@ export default function Pricing2() {
           </div>
         </Container>
       </header>
-      <div className="max-w-6xl mx-auto py-12 mt-12 grid gap-12 px-4 md:px-8">
-        <div>
-          <SectionTitle>Highlights</SectionTitle>
-          <div className="grid md:grid-cols-2 gap-4">
-            {features().map((feature) => (
-              <div
-                key={feature.title}
-                className="feature group relative overflow-hidden p-6 rounded-xl bg-neutral-100 border border-neutral-400/50 aspect-[2.5] flex items-center justify-center hover:bg-white/50 transition-colors dark:bg-neutral-900/60 dark:border-neutral-700 dark:hover:bg-purple-900/60 dark:border-none"
-              >
-                <div className="grid gap-1 sm:gap-3 sm:group-hover:-translate-y-6 transition-transform z-10">
-                  <h3 className="text-center text-[18px] sm:text-lg lg:text-xl font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-hover:text-white">
-                    {feature.title}
-                  </h3>
-                  {feature.points.map((point) => (
-                    <p
-                      key={point}
-                      className="text-center text-sm lg:text-base text-neutral-500 dark:text-neutral-400 text-wrap-balance !leading-normal"
-                    >
-                      {point}
-                    </p>
-                  ))}
+      <div className="pricing-highlights pt-12">
+        <div className="max-w-6xl mx-auto py-12 grid gap-12 px-4 md:px-8">
+          <div>
+            <SectionTitle>Highlights</SectionTitle>
+            <div className="grid md:grid-cols-2 gap-4">
+              {features().map((feature) => (
+                <div
+                  key={feature.title}
+                  className="feature group relative overflow-hidden p-6 rounded-xl bg-neutral-100 border border-neutral-400/50 aspect-[2.5] flex items-center justify-center hover:bg-white hover:shadow-sm transition-colors dark:bg-neutral-900 dark:border-none dark:hover:bg-neutral-800"
+                  style={
+                    {
+                      "--accent-color": "#fafa00",
+                    } as CSSProperties
+                  }
+                >
+                  <div className="grid gap-1 sm:gap-3 sm:group-hover:-translate-y-6 transition-transform z-10">
+                    <h3 className="text-center text-[18px] sm:text-lg lg:text-xl font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-hover:text-white">
+                      {feature.title}
+                    </h3>
+                    {feature.points.map((point) => (
+                      <p
+                        key={point}
+                        className="text-center text-sm lg:text-base text-neutral-500 dark:text-neutral-400 text-wrap-balance !leading-normal"
+                      >
+                        {point}
+                      </p>
+                    ))}
+                  </div>
+                  <img
+                    src={`images/pricing/${feature.imgPath}.svg`}
+                    alt={feature.title}
+                    className="pricing-feature-img h-[125px] w-[125px] dark:invert absolute bottom-[-50px] left-1/2 opacity-5 blur-[2px] sm:group-hover:opacity-100 group-hover:blur-0 group-hover:bottom-[-40px] transition-all duration-[400ms]"
+                  />
                 </div>
-                <img
-                  src={`images/pricing/${feature.imgPath}.svg`}
-                  alt={feature.title}
-                  className="h-[125px] w-[125px] absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 opacity-5 blur-[2px] sm:group-hover:opacity-100 group-hover:blur-0 group-hover:bottom-[-40px] transition-all duration-[400ms]"
-                />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+      </div>
+      <div className="whats-included py-12 px-4 md:px-8">
         <div className="md:w-max mx-auto">
           <SectionTitle>
             <Trans>What's Included</Trans>
           </SectionTitle>
-          <div className="border-neutral-400/50 grid grid-cols-[minmax(0,1fr)_auto_auto] rounded-xl border shadow overflow-hidden">
+          <div className="border-neutral-400/50 grid grid-cols-[minmax(0,1fr)_auto_auto] rounded-xl border shadow overflow-hidden bg-white dark:bg-neutral-900">
             <span>&nbsp;</span>
             <ColumnHeader>Free</ColumnHeader>
             <ColumnHeader>Pro</ColumnHeader>
@@ -272,7 +287,7 @@ function Cell({
   return (
     <div
       className={classNames(
-        "text-sm sm:text-base border-neutral-400/50 border-t border-neutral-200 py-2 sm:py-4",
+        "text-sm sm:text-base border-neutral-400/50 border-t border-neutral-200 py-2 sm:py-4 ",
         {
           "flex items-center justify-center border-l": center,
           "px-4 pr-10": !center,
@@ -312,5 +327,9 @@ function Container({
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-xl font-bold text-purple-500 mb-4">{children}</h2>;
+  return (
+    <h2 className="text-xl font-bold text-purple-500 mb-4 dark:text-purple-400">
+      {children}
+    </h2>
+  );
 }

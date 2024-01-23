@@ -315,6 +315,19 @@ and --mouse-x
   transition: transform 0.1s ease-out;
 }
 
+.feature:nth-child(1) {
+  --hover-accent: theme("colors.purple.300");
+}
+.feature:nth-child(2) {
+  --hover-accent: theme("colors.green.300");
+}
+.feature:nth-child(3) {
+  --hover-accent: theme("colors.orange.300");
+}
+.feature:nth-child(4) {
+  --hover-accent: theme("colors.blue.300");
+}
+
 .feature::after {
   content: " ";
   position: absolute;
@@ -323,17 +336,21 @@ and --mouse-x
   right: 0;
   bottom: 0;
   opacity: 0;
-  z-index: -1;
-
+  mix-blend-mode: multiply;
   background-blend-mode: darken;
   background-color: #0000;
   background-image: radial-gradient(
       circle at 50% 125%,
-      #baabf2,
-      #baabf2 0%,
+      var(--hover-accent),
+      var(--hover-accent) 0%,
       #fff 21%
     ),
-    radial-gradient(circle at 50% 125%, #baabf2, #baabf2 0%, #fff 49%);
+    radial-gradient(
+      circle at 50% 125%,
+      var(--hover-accent),
+      var(--hover-accent) 0%,
+      #fff 49%
+    );
   background-position: 0 0;
   background-repeat: repeat, repeat;
   background-size: 100% 100%;
@@ -348,7 +365,7 @@ and --mouse-x
   opacity: 1;
 }
 
-body.dark .feature::after {
+/* body.dark .feature::after {
   background-blend-mode: screen;
   background-color: #0000;
   background-image: radial-gradient(
@@ -364,4 +381,58 @@ body.dark .feature::after {
   background-attachment: scroll, scroll;
   background-origin: padding-box, padding-box;
   background-clip: border-box, border-box;
+} */
+
+.pricing-feature-img {
+  transform: translateX(-50%) translateZ(0px);
+}
+
+.pricing-highlights {
+  background-blend-mode: normal;
+  background-color: #0000;
+  background-image: linear-gradient(#ffffff80, #ffffff80 0%, #fff 100%),
+    repeating-linear-gradient(
+      100deg,
+      #f6f6f600,
+      #f6f6f600 32px,
+      #e3dff3 32px 33px
+    ),
+    repeating-linear-gradient(
+      10deg,
+      #f6f6f600,
+      #f6f6f600 32px,
+      #e3dff3 32px 33px
+    ),
+    linear-gradient(90deg, #f5f4f91f, #f5f4f91f 30px);
+  background-position: 0 0;
+  background-repeat: repeat, repeat, repeat, repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll, scroll, scroll, scroll;
+  background-origin: padding-box, padding-box, padding-box, padding-box;
+  background-clip: border-box, border-box, border-box, border-box;
+}
+
+body.dark .pricing-highlights {
+  background-blend-mode: normal;
+  background-color: #0000;
+  background-image: linear-gradient(#0f0f0f00, #0f0f0f00 0%, #0f0f0f 100%),
+    repeating-linear-gradient(
+      100deg,
+      #0f0f0f00,
+      #0f0f0f00 32px,
+      #5312ab75 32px 33px
+    ),
+    repeating-linear-gradient(
+      10deg,
+      #f6f6f600,
+      #f6f6f600 32px,
+      #5312ab75 32px 33px
+    ),
+    linear-gradient(90deg, #0f0f0f, #0f0f0f 30px);
+  background-position: 0 0;
+  background-repeat: repeat, repeat, repeat, repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll, scroll, scroll, scroll;
+  background-origin: padding-box, padding-box, padding-box, padding-box;
+  background-clip: border-box, border-box, border-box, border-box;
 }

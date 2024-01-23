@@ -1,13 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Close, Content, Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
-import {
-  FolderOpen,
-  Check,
-  WarningCircle,
-  Folder,
-  ArrowLeft,
-} from "phosphor-react";
+import { FolderOpen, Check, WarningCircle, ArrowLeft } from "phosphor-react";
 import { Trans } from "@lingui/macro";
 import { templates } from "../lib/templates/templates";
 import * as Checkbox from "@radix-ui/react-checkbox";
@@ -97,8 +91,8 @@ export function LoadTemplateDialog() {
       }}
     >
       <Dialog.Trigger asChild>
-        <EditorActionTextButton icon={open ? FolderOpen : Folder}>
-          <Trans>Templates</Trans>
+        <EditorActionTextButton icon={FolderOpen}>
+          <Trans>Load Template</Trans>
         </EditorActionTextButton>
       </Dialog.Trigger>
       <Dialog.Portal>
