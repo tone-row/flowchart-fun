@@ -102,7 +102,7 @@ export default function Login() {
       <PageTitle className="text-center mb-6">{t`Sign In`}</PageTitle>
       <Button2
         leftIcon={<GoogleSVG />}
-        className="!bg-white border-solid border border-neutral-400 !py-0 !gap-1 hover:!bg-neutral-100 !text-black"
+        className="!bg-white border-solid border dark:border-none border-neutral-400 !py-0 !gap-1 hover:!bg-neutral-100 !text-black"
         onClick={() => {
           supabase?.auth.signInWithOAuth({
             provider: "google",
@@ -119,6 +119,7 @@ export default function Login() {
       <Button2
         leftIcon={<GithubLogo size={24} />}
         color="inverted"
+        className="!bg-white border-solid border dark:border-none border-neutral-400 hover:!bg-neutral-100 !text-black"
         onClick={() => {
           supabase?.auth.signInWithOAuth({
             provider: "github",

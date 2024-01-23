@@ -5,6 +5,7 @@ import { X } from "phosphor-react";
 import { forwardRef } from "react";
 
 import { focusClasses } from "./Shared";
+import { globalZ } from "../lib/globalZ";
 
 export const Overlay = forwardRef<
   HTMLDivElement,
@@ -41,9 +42,9 @@ export const Content = forwardRef<
       {...props}
       className={`${
         overflowV ? "dialog-content-v-overflow overflow-auto " : ""
-      }data-[state=open]:animate-contentShow bg-background text-foreground dark:bg-foreground dark:text-background fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] ${maxWidthClass} translate-x-[-50%] translate-y-[-50%] rounded-lg bg-background shadow-lg focus:outline-none z-50 ${
-        noPadding ? "" : "p-4 grid gap-3"
-      } ${className}`}
+      }data-[state=open]:animate-contentShow bg-background text-foreground dark:bg-foreground dark:text-background fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] ${maxWidthClass} translate-x-[-50%] translate-y-[-50%] rounded-lg bg-background shadow-lg focus:outline-none ${
+        globalZ.defaultDialog
+      } ${noPadding ? "" : "p-4 grid gap-3"} ${className}`}
     />
   )
 );

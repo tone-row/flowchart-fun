@@ -9,6 +9,8 @@ import { Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
 import { SectionTitle } from "../ui/Typography";
 import styles from "./LearnSyntaxDialog.module.css";
+import { globalZ } from "../lib/globalZ";
+import classNames from "classnames";
 
 const PAD = 4;
 
@@ -81,7 +83,11 @@ export function LearnSyntaxDialog() {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Overlay />
-        <Box as={Dialog.Content} className={styles.content} rad={2}>
+        <Box
+          as={Dialog.Content}
+          className={classNames(styles.content, globalZ.defaultDialog)}
+          rad={2}
+        >
           <Box
             px={PAD}
             py={2}

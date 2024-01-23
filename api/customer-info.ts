@@ -16,8 +16,6 @@ export default async function customerInfo(
       status: "all",
     });
 
-    console.log("subscriptions", subscriptions);
-
     // find the first valid subscription
     const validSubscriptions = subscriptions.filter((subscription) => {
       const priceId = subscription.items.data[0].plan.id;

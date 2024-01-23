@@ -37,7 +37,7 @@ msgstr "<0>仅启用自定义CSS</0>。仅应用布局和高级设置。"
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgstr "<0>Flowchart Fun</0>是由<1>Tone Row</1>制作的开源项目"
 
-#: src/pages/LogIn.tsx:272
+#: src/pages/LogIn.tsx:273
 msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
 msgstr "<0>登录</0> / <1>注册</1> 使用电子邮件和密码"
 
@@ -49,7 +49,7 @@ msgstr "<0>您目前拥有免费帐户。<1/><2>了解我们的Pro功能，并�
 msgid "A new version of the app is available. Please reload to update."
 msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 
-#: src/components/EditWithAI.tsx:27
+#: src/components/EditWithAI.tsx:29
 msgid "AI-Powered Diagramming"
 msgstr "AI驱动的图表绘制"
 
@@ -61,8 +61,8 @@ msgstr "AI驱动的流程图创建"
 msgid "About"
 msgstr "关于"
 
-#: src/components/Header.tsx:170
-#: src/components/Header.tsx:407
+#: src/components/Header.tsx:173
+#: src/components/Header.tsx:410
 #: src/pages/Account.tsx:116
 msgid "Account"
 msgstr "帐户"
@@ -92,7 +92,7 @@ msgstr "外观"
 msgid "Arrow Size"
 msgstr "箭头大小"
 
-#: src/components/LearnSyntaxDialog.tsx:144
+#: src/components/LearnSyntaxDialog.tsx:150
 msgid "Attributes"
 msgstr "属性"
 
@@ -100,7 +100,7 @@ msgstr "属性"
 msgid "August 2023"
 msgstr "2023 年 8 月"
 
-#: src/components/LoadTemplateDialog.tsx:126
+#: src/components/LoadTemplateDialog.tsx:120
 msgid "Back"
 msgstr "返回"
 
@@ -131,8 +131,8 @@ msgstr "成为专业用户"
 msgid "Begin Typing"
 msgstr "开始输入"
 
-#: src/components/Header.tsx:130
-#: src/components/Header.tsx:366
+#: src/components/Header.tsx:133
+#: src/components/Header.tsx:369
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "博客"
@@ -174,7 +174,7 @@ msgstr "取消"
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
 
-#: src/components/LearnSyntaxDialog.tsx:349
+#: src/components/LearnSyntaxDialog.tsx:355
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "某些属性可用于自定义元素的外观或功能。"
 
@@ -182,14 +182,14 @@ msgstr "某些属性可用于自定义元素的外观或功能。"
 msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
-#: src/components/Header.tsx:139
-#: src/components/Header.tsx:372
+#: src/components/Header.tsx:142
+#: src/components/Header.tsx:375
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "变更日志"
 
-#: src/components/Header.tsx:98
-#: src/components/Header.tsx:344
+#: src/components/Header.tsx:101
+#: src/components/Header.tsx:347
 msgid "Charts"
 msgstr "图表"
 
@@ -201,7 +201,7 @@ msgstr "查看指南："
 msgid "Check your email for a link to log in.<0/>You can close this window."
 msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口。"
 
-#: src/pages/LogIn.tsx:270
+#: src/pages/LogIn.tsx:271
 msgid "Choose"
 msgstr "選擇"
 
@@ -213,7 +213,7 @@ msgstr "选择模板"
 msgid "Choose a Plan"
 msgstr "选择一个计划"
 
-#: src/components/LearnSyntaxDialog.tsx:318
+#: src/components/LearnSyntaxDialog.tsx:324
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "为边缘的源和目标选择各种箭头形状。形状包括三角形，三角形-T，圆形-三角形，三角形-十字，三角形-后曲线，V形，T形，正方形，圆形，菱形，雪花形，无。"
 
@@ -221,7 +221,7 @@ msgstr "为边缘的源和目标选择各种箭头形状。形状包括三角形
 msgid "Circle"
 msgstr "圆圈"
 
-#: src/components/LearnSyntaxDialog.tsx:135
+#: src/components/LearnSyntaxDialog.tsx:141
 msgid "Classes"
 msgstr "类"
 
@@ -237,7 +237,7 @@ msgstr "清除文字？"
 msgid "Clone"
 msgstr "克隆"
 
-#: src/components/LearnSyntaxDialog.tsx:404
+#: src/components/LearnSyntaxDialog.tsx:410
 msgid "Close"
 msgstr "关闭"
 
@@ -246,7 +246,7 @@ msgstr "关闭"
 msgid "Color"
 msgstr "颜色"
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:284
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "颜色包括红色，橙色，黄色，蓝色，紫色，黑色，白色和灰色。"
 
@@ -258,7 +258,7 @@ msgstr "列"
 msgid "Comment"
 msgstr "评论"
 
-#: src/pages/Pricing2.tsx:136
+#: src/pages/Pricing2.tsx:142
 msgid "Complete access to all features for just $3/month!"
 msgstr "仅需每月$3即可完全访问所有功能！"
 
@@ -270,8 +270,8 @@ msgstr "同心"
 msgid "Confirm New Email"
 msgstr "确认新电子邮件"
 
-#: src/pages/LogIn.tsx:231
-#: src/pages/LogIn.tsx:231
+#: src/pages/LogIn.tsx:232
+#: src/pages/LogIn.tsx:232
 msgid "Confirm your email address to sign in."
 msgstr "確認您的電子郵件地址以登入。"
 
@@ -279,11 +279,11 @@ msgstr "確認您的電子郵件地址以登入。"
 msgid "Consider: Adding a Label"
 msgstr "考虑：添加标签"
 
-#: src/components/LearnSyntaxDialog.tsx:251
+#: src/components/LearnSyntaxDialog.tsx:257
 msgid "Containers"
 msgstr "容器"
 
-#: src/components/LearnSyntaxDialog.tsx:254
+#: src/components/LearnSyntaxDialog.tsx:260
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 
@@ -350,7 +350,7 @@ msgstr "在云中存储无限流程图- 随时随地可访问！"
 msgid "Create with AI"
 msgstr "通過AI創建"
 
-#: src/components/LearnSyntaxDialog.tsx:158
+#: src/components/LearnSyntaxDialog.tsx:164
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "在两个节点之间创建边缘是通过将第二个节点缩进第一个节点来完成的"
 
@@ -428,7 +428,7 @@ msgstr "下载 SVG"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "将CSV文件拖放到此处，或单击以选择文件"
 
-#: src/components/LearnSyntaxDialog.tsx:239
+#: src/components/LearnSyntaxDialog.tsx:245
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "通过引用开始行从多个节点绘制边缘"
 
@@ -436,11 +436,11 @@ msgstr "通过引用开始行从多个节点绘制边缘"
 msgid "Drop the file here ..."
 msgstr "將檔案拖放到這裡..."
 
-#: src/components/LearnSyntaxDialog.tsx:179
+#: src/components/LearnSyntaxDialog.tsx:185
 msgid "Edge ID, Classes, Attributes"
 msgstr "邊緣ID、類別和屬性"
 
-#: src/components/LearnSyntaxDialog.tsx:167
+#: src/components/LearnSyntaxDialog.tsx:173
 msgid "Edge Label"
 msgstr "邊緣標籤"
 
@@ -449,7 +449,7 @@ msgstr "邊緣標籤"
 msgid "Edge Label Column"
 msgstr "邊緣標籤欄"
 
-#: src/components/LearnSyntaxDialog.tsx:302
+#: src/components/LearnSyntaxDialog.tsx:308
 msgid "Edge Style"
 msgstr "邊緣樣式"
 
@@ -463,7 +463,7 @@ msgid "Edge missing indentation"
 msgstr "缺少缩进的边"
 
 #: src/components/ImportDataDialog.tsx:399
-#: src/components/LearnSyntaxDialog.tsx:155
+#: src/components/LearnSyntaxDialog.tsx:161
 #: src/components/Tabs/ThemeTab.tsx:359
 msgid "Edges"
 msgstr "边"
@@ -480,11 +480,11 @@ msgstr "边声明在与目标节点相同的行中"
 msgid "Edges are declared in their own row"
 msgstr "边声明在自己的行中"
 
-#: src/components/LearnSyntaxDialog.tsx:182
+#: src/components/LearnSyntaxDialog.tsx:188
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "边在标签之前可以有ID，类和属性"
 
-#: src/components/LearnSyntaxDialog.tsx:305
+#: src/components/LearnSyntaxDialog.tsx:311
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "边可以用虚线，点线或实线样式"
 
@@ -500,7 +500,7 @@ msgstr "边在源节点行"
 msgid "Edges in Target Node Row"
 msgstr "边在目标节点行"
 
-#: src/components/EditWithAI.tsx:185
+#: src/components/EditWithAI.tsx:196
 msgid "Edit with AI"
 msgstr "利用AI进行编辑"
 
@@ -508,8 +508,8 @@ msgstr "利用AI进行编辑"
 msgid "Editable"
 msgstr "可编辑"
 
-#: src/components/Header.tsx:81
-#: src/components/Header.tsx:332
+#: src/components/Header.tsx:84
+#: src/components/Header.tsx:335
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "编辑器"
@@ -517,8 +517,8 @@ msgstr "编辑器"
 #: src/components/Feedback.tsx:62
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
-#: src/pages/LogIn.tsx:144
-#: src/pages/LogIn.tsx:293
+#: src/pages/LogIn.tsx:145
+#: src/pages/LogIn.tsx:294
 msgid "Email"
 msgstr "电子邮件"
 
@@ -530,7 +530,7 @@ msgstr "空"
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "输入您要创建图表所需的提示或信息。"
 
-#: src/pages/LogIn.tsx:137
+#: src/pages/LogIn.tsx:138
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "輸入您的電子郵件地址，我們將發送給您一個魔法鏈接以登入。"
 
@@ -568,8 +568,8 @@ msgid "Export to PNG, JPG, and SVG"
 msgstr "导出为PNG，JPG和SVG"
 
 #: src/components/Feedback.tsx:44
-#: src/components/Header.tsx:106
-#: src/components/Header.tsx:358
+#: src/components/Header.tsx:109
+#: src/components/Header.tsx:361
 msgid "Feedback"
 msgstr "反馈"
 
@@ -593,7 +593,7 @@ msgstr "在Twitter上关注我们"
 msgid "Font Family"
 msgstr "字体系列"
 
-#: src/pages/LogIn.tsx:333
+#: src/pages/LogIn.tsx:334
 msgid "Forgot your password?"
 msgstr "忘記密碼了？"
 
@@ -658,7 +658,7 @@ msgstr "在这个数据中如何声明边缘？"
 msgid "How would you like to save your chart?"
 msgstr "您想如何保存您的流程图？"
 
-#: src/components/LearnSyntaxDialog.tsx:127
+#: src/components/LearnSyntaxDialog.tsx:133
 msgid "ID's"
 msgstr "ID"
 
@@ -674,7 +674,7 @@ msgstr "如果您喜欢使用<0>Flowchart Fun</0>，请考虑支持该项目"
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "如果你想创建一个边，缩进这一行。如果不，用反斜杠转义冒号<0>\\:</0>"
 
-#: src/components/LearnSyntaxDialog.tsx:368
+#: src/components/LearnSyntaxDialog.tsx:374
 msgid "Images"
 msgstr "图像"
 
@@ -713,7 +713,7 @@ msgstr "匯入資料是專業功能。您可以每月以3美元或每年30美元
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
-#: src/components/Header.tsx:119
+#: src/components/Header.tsx:122
 msgid "Info"
 msgstr "信息"
 
@@ -743,7 +743,7 @@ msgstr "布局"
 msgid "Layout Frozen"
 msgstr "布局已冻结"
 
-#: src/components/LearnSyntaxDialog.tsx:236
+#: src/components/LearnSyntaxDialog.tsx:242
 msgid "Leading References"
 msgstr "主要參考"
 
@@ -752,8 +752,8 @@ msgstr "主要參考"
 msgid "Learn More"
 msgstr "学到更多"
 
-#: src/components/LearnSyntaxDialog.tsx:79
-#: src/components/LearnSyntaxDialog.tsx:100
+#: src/components/LearnSyntaxDialog.tsx:81
+#: src/components/LearnSyntaxDialog.tsx:106
 msgid "Learn Syntax"
 msgstr "學習語法"
 
@@ -783,7 +783,7 @@ msgstr "浅色模式"
 msgid "Link"
 msgstr "链接"
 
-#: src/components/LoadTemplateDialog.tsx:173
+#: src/components/LoadTemplateDialog.tsx:167
 msgid "Load"
 msgstr "載入"
 
@@ -799,7 +799,11 @@ msgstr "加载文件"
 msgid "Load Files"
 msgstr "加载多个文件"
 
-#: src/components/LoadTemplateDialog.tsx:147
+#: src/components/LoadTemplateDialog.tsx:95
+msgid "Load Template"
+msgstr "加载模板"
+
+#: src/components/LoadTemplateDialog.tsx:141
 msgid "Load default content"
 msgstr "載入預設內容"
 
@@ -807,7 +811,7 @@ msgstr "載入預設內容"
 msgid "Load from link?"
 msgstr "从链接加载？"
 
-#: src/components/LoadTemplateDialog.tsx:144
+#: src/components/LoadTemplateDialog.tsx:138
 msgid "Load layout and styles"
 msgstr "載入版面和樣式"
 
@@ -821,8 +825,8 @@ msgstr "本地文件支持"
 msgid "Lock Zoom to Graph"
 msgstr "锁定缩放到图表"
 
-#: src/components/Header.tsx:178
-#: src/components/Header.tsx:415
+#: src/components/Header.tsx:181
+#: src/components/Header.tsx:418
 msgid "Log In"
 msgstr "登录"
 
@@ -871,8 +875,8 @@ msgstr "命名图表"
 msgid "Name your chart"
 msgstr "为您的流程图命名"
 
-#: src/components/Header.tsx:89
-#: src/components/Header.tsx:338
+#: src/components/Header.tsx:92
+#: src/components/Header.tsx:341
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "新"
@@ -898,11 +902,11 @@ msgstr "无水印！"
 msgid "No: Option B"
 msgstr "不：选项B"
 
-#: src/components/LearnSyntaxDialog.tsx:331
+#: src/components/LearnSyntaxDialog.tsx:337
 msgid "Node Border Style"
 msgstr "节点边框样式"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:281
 msgid "Node Colors"
 msgstr "节点颜色"
 
@@ -910,12 +914,12 @@ msgstr "节点颜色"
 msgid "Node ID"
 msgstr "节点ID"
 
-#: src/components/LearnSyntaxDialog.tsx:125
+#: src/components/LearnSyntaxDialog.tsx:131
 msgid "Node ID, Classes, Attributes"
 msgstr "节点ID、类、属性"
 
 #: src/components/ImportDataDialog.tsx:390
-#: src/components/LearnSyntaxDialog.tsx:114
+#: src/components/LearnSyntaxDialog.tsx:120
 msgid "Node Label"
 msgstr "节点标签"
 
@@ -924,7 +928,7 @@ msgstr "节点标签"
 msgid "Node Shape"
 msgstr "节点形状"
 
-#: src/components/LearnSyntaxDialog.tsx:288
+#: src/components/LearnSyntaxDialog.tsx:294
 msgid "Node Shapes"
 msgstr "节点形状"
 
@@ -936,7 +940,7 @@ msgstr "同一行上的节点和指针"
 msgid "Nodes"
 msgstr "节点"
 
-#: src/components/LearnSyntaxDialog.tsx:334
+#: src/components/LearnSyntaxDialog.tsx:340
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "节点可以使用虚线、点线或双线样式。边框也可以使用 border_none 来移除。"
 
@@ -986,7 +990,7 @@ msgstr "填充"
 msgid "Page not found"
 msgstr "找不到页面"
 
-#: src/pages/LogIn.tsx:305
+#: src/pages/LogIn.tsx:306
 msgid "Password"
 msgstr "密碼"
 
@@ -1010,8 +1014,8 @@ msgstr "同一行上的指针和容器"
 msgid "Priority One-on-One Support"
 msgstr "优先一对一支持"
 
-#: src/components/Header.tsx:155
-#: src/components/Header.tsx:421
+#: src/components/Header.tsx:158
+#: src/components/Header.tsx:424
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "隱私政策"
@@ -1051,35 +1055,35 @@ msgstr "快速模板"
 msgid "Read-only"
 msgstr "只读"
 
-#: src/components/LearnSyntaxDialog.tsx:222
+#: src/components/LearnSyntaxDialog.tsx:228
 msgid "Reference by Class"
 msgstr "按类引用"
 
-#: src/components/LearnSyntaxDialog.tsx:212
+#: src/components/LearnSyntaxDialog.tsx:218
 msgid "Reference by ID"
 msgstr "按 ID 参考"
 
-#: src/components/LearnSyntaxDialog.tsx:202
+#: src/components/LearnSyntaxDialog.tsx:208
 msgid "Reference by Label"
 msgstr "按标签参考"
 
-#: src/components/LearnSyntaxDialog.tsx:193
+#: src/components/LearnSyntaxDialog.tsx:199
 msgid "References"
 msgstr "参考"
 
-#: src/components/LearnSyntaxDialog.tsx:196
+#: src/components/LearnSyntaxDialog.tsx:202
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "参考用于在文档中其他位置创建的节点之间创建边"
 
-#: src/components/LearnSyntaxDialog.tsx:205
+#: src/components/LearnSyntaxDialog.tsx:211
 msgid "Referencing a node by its exact label"
 msgstr "通过其确切标签引用节点"
 
-#: src/components/LearnSyntaxDialog.tsx:215
+#: src/components/LearnSyntaxDialog.tsx:221
 msgid "Referencing a node by its unique ID"
 msgstr "通过其唯一ID引用节点"
 
-#: src/components/LearnSyntaxDialog.tsx:225
+#: src/components/LearnSyntaxDialog.tsx:231
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "使用相同分配的类引用多个节点"
 
@@ -1097,7 +1101,7 @@ msgstr "重新加载以更新"
 msgid "Rename"
 msgstr "重命名"
 
-#: src/pages/LogIn.tsx:163
+#: src/pages/LogIn.tsx:164
 msgid "Request Magic Link"
 msgstr "請求魔法鏈接"
 
@@ -1130,8 +1134,8 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:378
+#: src/components/Header.tsx:150
+#: src/components/Header.tsx:381
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "路线图"
@@ -1169,8 +1173,8 @@ msgstr "设置内容"
 msgid "Set Fixed Node Height"
 msgstr "设置固定节点高度"
 
-#: src/components/Header.tsx:163
-#: src/components/Header.tsx:383
+#: src/components/Header.tsx:166
+#: src/components/Header.tsx:386
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "设置"
@@ -1180,11 +1184,11 @@ msgid "Share"
 msgstr "分享"
 
 #: src/pages/LogIn.tsx:102
-#: src/pages/LogIn.tsx:324
+#: src/pages/LogIn.tsx:325
 msgid "Sign In"
 msgstr "登錄"
 
-#: src/pages/LogIn.tsx:131
+#: src/pages/LogIn.tsx:132
 msgid "Sign in with <0>GitHub</0>"
 msgstr "使用<0>GitHub</0>登录"
 
@@ -1215,7 +1219,7 @@ msgstr "源分隔符"
 msgid "Source Distance From Node"
 msgstr "源节点距离"
 
-#: src/components/LearnSyntaxDialog.tsx:315
+#: src/components/LearnSyntaxDialog.tsx:321
 msgid "Source/Target Arrow Shape"
 msgstr "源/目标箭头形状"
 
@@ -1224,7 +1228,7 @@ msgstr "源/目标箭头形状"
 msgid "Spacing"
 msgstr "间距"
 
-#: src/components/LearnSyntaxDialog.tsx:346
+#: src/components/LearnSyntaxDialog.tsx:352
 msgid "Special Attributes"
 msgstr "特殊属性"
 
@@ -1240,21 +1244,21 @@ msgstr "重新開始"
 msgid "Status"
 msgstr "状态"
 
-#: src/components/LearnSyntaxDialog.tsx:147
+#: src/components/LearnSyntaxDialog.tsx:153
 msgid "Store any data associated to a node"
 msgstr "將任何與節點相關的資料儲存"
 
-#: src/components/LearnSyntaxDialog.tsx:266
+#: src/components/LearnSyntaxDialog.tsx:272
 msgid "Style Classes"
 msgstr "樣式類別"
 
-#: src/components/EditWithAI.tsx:232
+#: src/components/EditWithAI.tsx:244
 #: src/components/Feedback.tsx:81
 #: src/components/ImportDataDialog.tsx:574
 msgid "Submit"
 msgstr "提交"
 
-#: src/pages/Pricing2.tsx:248
+#: src/pages/Pricing2.tsx:263
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "订阅专业版，以有趣的方式制作流程图！"
 
@@ -1289,8 +1293,7 @@ msgstr "目標分隔符"
 msgid "Target Distance From Node"
 msgstr "目標距離節點"
 
-#: src/components/LoadTemplateDialog.tsx:101
-#: src/components/LoadTemplateDialog.tsx:114
+#: src/components/LoadTemplateDialog.tsx:108
 msgid "Templates"
 msgstr "範本"
 
@@ -1317,11 +1320,11 @@ msgstr "文本最大宽度"
 msgid "Text Vertical Offset"
 msgstr "文字垂直偏移"
 
-#: src/components/LearnSyntaxDialog.tsx:170
+#: src/components/LearnSyntaxDialog.tsx:176
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "以冒号加空格结尾的文本将创建一个边，文本作为标签"
 
-#: src/components/LearnSyntaxDialog.tsx:117
+#: src/components/LearnSyntaxDialog.tsx:123
 msgid "Text on a line creates a node with the text as the label"
 msgstr "在一行中的文本将创建一个节点，文本作为标签"
 
@@ -1329,7 +1332,7 @@ msgstr "在一行中的文本将创建一个节点，文本作为标签"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/LearnSyntaxDialog.tsx:269
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "更改样式的最佳方式是右键单击节点或边缘，然后选择所需的样式。"
 
@@ -1353,7 +1356,7 @@ msgstr "用于分隔多个源节点的分隔符"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "用于分隔多个目标节点的分隔符"
 
-#: src/components/LearnSyntaxDialog.tsx:291
+#: src/components/LearnSyntaxDialog.tsx:297
 msgid "The possible shapes are:"
 msgstr "可能的形状是："
 
@@ -1392,7 +1395,7 @@ msgstr "这是你的沙盒。这是一个很好的实验场所，但<0>它每天
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "这可能需要30秒到2分钟的时间，取决于您输入的长度。"
 
-#: src/components/LoadTemplateDialog.tsx:161
+#: src/components/LoadTemplateDialog.tsx:155
 msgid "This will replace the current content."
 msgstr "這將取代目前的內容。"
 
@@ -1424,7 +1427,7 @@ msgstr "要修复这个，将指针移动到下一行"
 msgid "To fix this start the container <0/> on a different line"
 msgstr "要修复这个，将容器<0/>放在另一行"
 
-#: src/pages/LogIn.tsx:180
+#: src/pages/LogIn.tsx:181
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "要了解更多關於我們為什麼要求您登錄的原因，請閱讀<0>這篇博客文章</0>。"
 
@@ -1441,11 +1444,11 @@ msgstr "从上到下"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "秒转换您的想法成专业图表"
 
-#: src/pages/Pricing2.tsx:131
+#: src/pages/Pricing2.tsx:137
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "在几秒钟内将您的想法转变为专业图表"
 
-#: src/components/Header.tsx:193
+#: src/components/Header.tsx:196
 msgid "Try Pro for Free"
 msgstr "免费试用专业版"
 
@@ -1465,7 +1468,7 @@ msgstr "两个边有相同的ID"
 msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
-#: src/components/LearnSyntaxDialog.tsx:129
+#: src/components/LearnSyntaxDialog.tsx:135
 msgid "Unique text value to identify a node"
 msgstr "用于标识节点的唯一文本值"
 
@@ -1490,7 +1493,7 @@ msgstr "未付"
 msgid "Update Email"
 msgstr "更新电子邮件"
 
-#: src/components/Header.tsx:391
+#: src/components/Header.tsx:394
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
@@ -1523,19 +1526,19 @@ msgstr "使用Lucidchart或Visio？CSV导入使从任何来源获取数据变得
 msgid "Use an ID to Connect"
 msgstr "使用ID连接"
 
-#: src/components/LearnSyntaxDialog.tsx:138
+#: src/components/LearnSyntaxDialog.tsx:144
 msgid "Use classes to group nodes"
 msgstr "使用类来分组节点"
 
-#: src/components/LearnSyntaxDialog.tsx:385
+#: src/components/LearnSyntaxDialog.tsx:391
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "使用属性<0>href</0>在节点上设置一个在新标签页中打开的链接。"
 
-#: src/components/LearnSyntaxDialog.tsx:371
+#: src/components/LearnSyntaxDialog.tsx:377
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "使用属性<0>src</0>来设置节点的图像，图像将被缩放以适应节点，因此您可能需要调整节点的宽度和高度以获得期望的结果。仅支持公共图像（不受CORS阻止）。"
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:364
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 
@@ -1579,7 +1582,7 @@ msgstr "水印"
 msgid "We're sorry to hear that you're considering canceling your subscription. Please let us know why you're canceling so we can improve our service. Thank you!"
 msgstr "我们很抱歉听到您考虑取消订阅。请告诉我们您取消的原因，以便我们可以改善我们的服务。谢谢！"
 
-#: src/pages/Pricing2.tsx:190
+#: src/pages/Pricing2.tsx:205
 msgid "What's Included"
 msgstr "包括什么"
 
@@ -1592,11 +1595,11 @@ msgstr "这是什么？"
 msgid "Width"
 msgstr "宽度"
 
-#: src/components/LearnSyntaxDialog.tsx:355
+#: src/components/LearnSyntaxDialog.tsx:361
 msgid "Width and Height"
 msgstr "宽度和高度"
 
-#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:30
 msgid "With Flowchart Fun's Pro version, you can tap into AI to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $3/month, get the ease of accessible AI editing to enhance your flowcharting experience."
 msgstr "通过Flowchart Fun的专业版，您可以利用AI快速完善流程图细节，非常适合在移动中创建图表。每月3美元，即可获得便捷的AI编辑功能，提升您的流程图体验。"
 
@@ -1608,7 +1611,7 @@ msgstr "使用专业版，您可以保存和加载本地文件。这对于离线
 msgid "Would you like to continue?"
 msgstr "您想继续吗？"
 
-#: src/components/EditWithAI.tsx:210
+#: src/components/EditWithAI.tsx:222
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "在此处输入您的提示，或点击启用麦克风，然后按住录制。"
 
@@ -1632,7 +1635,7 @@ msgstr "你可以使用<0>Flowchart Fun Pro</0>创建无限的永久流程图。
 msgid "You can save unlimited flowcharts in the cloud or to your computer, as well as get access to features like AI Editing and Data Imports for less than the price of a cup of coffee."
 msgstr "你可以在云端或电脑上保存无限数量的流程图，还可以以比一杯咖啡更低的价格获得AI编辑和数据导入等功能。"
 
-#: src/pages/LogIn.tsx:177
+#: src/pages/LogIn.tsx:178
 msgid "You need to log in to access this page."
 msgstr "您需要登录才能访问此页面。"
 
@@ -1670,6 +1673,6 @@ msgstr "放大"
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/pages/LogIn.tsx:204
+#: src/pages/LogIn.tsx:205
 msgid "or"
 msgstr "或"

@@ -9,6 +9,8 @@ import { LoadFileButton } from "./LoadFileButton";
 import { useLocation } from "react-router-dom";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Sliders } from "phosphor-react";
+import classNames from "classnames";
+import { globalZ } from "../lib/globalZ";
 
 export function Actions() {
   const isProUser = useIsProUser();
@@ -47,7 +49,10 @@ export function Actions() {
         </DropdownMenu.Trigger>
         <DropdownMenu.Content
           align="end"
-          className="min-w-[220px] bg-white rounded-md shadow-xl select-none p-2"
+          className={classNames(
+            "min-w-[220px] bg-white rounded-md shadow-xl select-none p-2",
+            globalZ.actionDropdownMobile
+          )}
           id="editor-options"
         >
           <LoadTemplateDialog />

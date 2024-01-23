@@ -6,9 +6,9 @@
   font-size: 0;
 }
 
-.shared-header__logo svg path {
-  fill: var(--color-foreground);
-}
+/* .shared-header__logo svg path {
+  fill: var(--color-background);
+} */
 
 .shared-header-btn__icon {
   font-size: 0;
