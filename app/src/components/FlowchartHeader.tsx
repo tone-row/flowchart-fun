@@ -89,7 +89,7 @@ function LogInToSaveButton() {
   return (
     <Button2
       leftIcon={<DownloadSimple weight="bold" className="w-5 h-5" />}
-      color="zinc"
+      color="default"
       onClick={() => {
         navigate("/l");
       }}

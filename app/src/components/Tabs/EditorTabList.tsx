@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { useIsReadOnly } from "../../lib/hooks";
 
 const btn =
-  "bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 px-4 py-2.5 md:px-6 md:py-3 text-[18px] opacity-50 font-bold aria-[selected=false]:hover:opacity-80";
+  "bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 px-4 py-2.5 md:px-6 md:py-3 text-[18px] opacity-50 font-bold";
 const selected =
   "aria-[selected=true]:opacity-100 aria-[selected=true]:shadow-xl data-[is-selected=true]:opacity-100 data-[is-selected=true]:shadow-xl";
 

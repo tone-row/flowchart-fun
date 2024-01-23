@@ -10,6 +10,8 @@ import * as Toast from "@radix-ui/react-toast";
 import { Microphone } from "./Microphone";
 import { useIsProUser } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
+import classNames from "classnames";
+import { globalZ } from "../lib/globalZ";
 
 // The Graph type we send to AI is slightly different from internal representation
 type GraphForAI = {
@@ -170,28 +172,38 @@ export function EditWithAI() {
   return (
     <>
       <Popover.Root open={isOpen} onOpenChange={setIsOpen}>
-        <Popover.Trigger asChild>
-          <Button2
-            leftIcon={
-              <MagicWand className="group-hover-tilt-shaking -mr-1" size={18} />
-            }
-            color="purple"
-            size="sm"
-            rounded
-            className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
-            isLoading={isLoading}
-          >
-            <span className="text-[15px]">
-              <Trans>Edit with AI</Trans>
-            </span>
-          </Button2>
-        </Popover.Trigger>
+        <div
+          className={classNames(
+            "absolute top-2 right-2 drop-shadow-lg",
+            globalZ.editWithAiButton
+          )}
+        >
+          <Popover.Trigger asChild>
+            <Button2
+              leftIcon={
+                <MagicWand
+                  className="group-hover-tilt-shaking md:-mr-1 -mr-4"
+                  size={18}
+                />
+              }
+              color="purple"
+              size="sm"
+              rounded
+              className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
+              isLoading={isLoading}
+            >
+              <span className="text-[15px] hidden md:inline">
+                <Trans>Edit with AI</Trans>
+              </span>
+            </Button2>
+          </Popover.Trigger>
+        </div>
         <Popover.Portal>
           <Popover.Content
             side="bottom"
             sideOffset={10}
             align="end"
-            className="w-[300px] bg-white rounded shadow border border-purple-300 p-2 !z-[100] animate-slideDownAndFade dark:bg-neutral-300 dark:text-neutral-800 dark:border-neutral-300"
+            className="w-[300px] bg-white rounded-xl shadow border border-purple-300 p-2 !z-[100] animate-slideDownAndFade dark:bg-neutral-200 dark:text-neutral-800 dark:border-neutral-300"
             onOpenAutoFocus={(e) => {
               e.preventDefault();
               if (!formRef.current) return;
@@ -208,7 +220,7 @@ export function EditWithAI() {
               <div className="relative">
                 <textarea
                   placeholder={t`Write your prompt here or click to enable the microphone, then press and hold to record.`}
-                  className="text-xs w-full resize-none h-24 p-2 leading-normal dark:bg-neutral-300"
+                  className="text-xs w-full resize-none h-24 p-2 leading-normal dark:bg-neutral-200"
                   name="prompt"
                   required
                   value={txtPrompt}

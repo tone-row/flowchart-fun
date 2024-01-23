@@ -14,7 +14,6 @@
   transform: translate(-50%, 0);
   background: var(--color-background);
   color: var(--color-foreground);
-  z-index: 1;
   width: calc(100% - 2rem);
   max-width: 500px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
@@ -22,7 +21,6 @@
   overflow: hidden;
   max-height: calc(100vh - 20%);
   grid-template-rows: auto minmax(0, 1fr) auto;
-  z-index: 51;
 }
 
 .close {
