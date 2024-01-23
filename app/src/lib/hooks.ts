@@ -62,7 +62,7 @@ export function useIsProUser() {
   const { customer, customerIsLoading } = useContext(AppContext);
   const status = customer?.subscription?.status;
   if (customerIsLoading) return undefined;
-  return Boolean(status === "active");
+  return Boolean(status && ["trialing", "active"].includes(status));
 }
 
 /**

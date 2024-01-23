@@ -54,8 +54,8 @@ export async function confirmActiveSubscriptionFromToken(token?: string) {
     if (subscriptions.data.length === 0)
       throw new Error("No subscriptions found");
 
-    const hasActiveSubscription = subscriptions.data.some(
-      (subscription) => subscription.status === "active"
+    const hasActiveSubscription = subscriptions.data.some((subscription) =>
+      ["active", "trialing"].includes(subscription.status)
     );
 
     if (!hasActiveSubscription)
