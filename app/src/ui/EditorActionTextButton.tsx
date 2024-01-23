@@ -18,7 +18,7 @@ export const EditorActionTextButton = forwardRef<
   return (
     <button
       ref={ref}
-      className={`px-2 py-1.5 text-left font-bold text-[14px] text-foreground/50 rounded-md flex items-center gap-2 hover:bg-white/50 dark:hover:bg-white/10 dark:hover:text-white hover:text-blue-500 active:text-blue-800 focus:shadow-none dark:text-green-300 dark:active:text-green-200 ${className}`}
+      className={`px-2 py-1.5 text-left font-bold text-[14px] text-foreground/50 rounded-md flex items-center gap-2 hover:bg-white dark:hover:bg-white/10 dark:hover:text-white hover:text-foreground focus:shadow-none dark:text-white dark:active:text-green-200 ${className}`}
       {...props}
     >
       <Icon size={20} className="hidden lg:block" />

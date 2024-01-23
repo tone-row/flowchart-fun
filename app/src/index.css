@@ -220,17 +220,8 @@ main .monaco-editor {
 .theme-tab::-webkit-scrollbar-track {
   @apply bg-neutral-200 dark:bg-neutral-900;
 }
-.theme-tab::-webkit-scrollbar-track-piece {
-  /* 4 */
-}
 .theme-tab::-webkit-scrollbar-thumb {
   @apply bg-neutral-300 dark:bg-neutral-800;
-}
-.theme-tab::-webkit-scrollbar-corner {
-  /* 6 */
-}
-.theme-tab::-webkit-resizer {
-  /* 7 */
 }
 
 .import-file-textarea::after {
@@ -244,7 +235,7 @@ main .monaco-editor {
 }
 
 [data-radix-popper-content-wrapper] {
-  @apply !z-10;
+  @apply z-10;
 }
 
 @keyframes tilt-shaking {

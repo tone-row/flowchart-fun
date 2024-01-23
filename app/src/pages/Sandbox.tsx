@@ -116,9 +116,6 @@ const Sandbox = memo(function Edit() {
           <WithGraph>
             <Tabs.Content value="Document" className="overflow-hidden relative">
               <TextEditor value={text} onChange={onChange} />
-              <div className="absolute top-2 right-2 z-[40] drop-shadow-lg hidden md:block">
-                <EditWithAI />
-              </div>
             </Tabs.Content>
             <Tabs.Content value="Theme" className="overflow-hidden">
               <ThemeTab />
@@ -132,9 +129,7 @@ const Sandbox = memo(function Edit() {
               }}
             />
             <EditorError />
-            <div className="absolute top-2 right-2 z-[40] drop-shadow-lg md:hidden">
-              <EditWithAI />
-            </div>
+            <EditWithAI />
           </WithGraph>
         </Tabs.Root>
       </FlowchartLayout>

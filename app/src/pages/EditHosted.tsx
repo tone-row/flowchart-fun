@@ -99,9 +99,6 @@ export default function EditHosted() {
                 readOnly: !isProUser,
               }}
             />
-            <div className="absolute top-2 right-2 z-[40] drop-shadow-lg hidden md:block">
-              <EditWithAI />
-            </div>
           </Tabs.Content>
           <Tabs.Content value="Theme" className="overflow-hidden">
             <ThemeTab />
@@ -120,9 +117,7 @@ export default function EditHosted() {
             }}
           />
           <EditorError />
-          <div className="absolute top-2 right-2 z-[40] drop-shadow-lg md:hidden">
-            <EditWithAI />
-          </div>
+          <EditWithAI />
         </WithGraph>
       </Tabs.Root>
     </FlowchartLayout>

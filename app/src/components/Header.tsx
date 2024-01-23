@@ -70,16 +70,19 @@ export const Header = memo(function SharedHeader() {
   return (
     <>
       <NavigationMenu.Root asChild>
-        <header className="grid-flow-col justify-between items-center px-2 py-1 hidden md:grid bg-[#f6f5f6] dark:bg-[#0c0c0c]">
+        <header className="grid-flow-col justify-between hidden md:grid bg-[var(--color-foreground)] dark:bg-[var(--color-background)]">
           <NavigationMenu.List asChild>
-            <nav className="flex gap-1 items-center">
-              <Link to="/" className="shared-header__logo mr-2">
-                <BrandSvg width={40} />
+            <nav className="flex items-center">
+              <Link
+                to="/"
+                className="shared-header__logo w-16 flex justify-center"
+              >
+                <BrandSvg width={36} className="fill-background" />
               </Link>
               <NavigationMenu.Item asChild>
                 <HeaderClientLink
                   label={t`Editor`}
-                  icon={<TreeStructure height={20} width={20} />}
+                  icon={<TreeStructure height={16} width={16} weight="fill" />}
                   aria-current={isEditor ? "page" : undefined}
                   to={lastChart}
                 />
@@ -87,7 +90,7 @@ export const Header = memo(function SharedHeader() {
               <NavigationMenu.Item asChild>
                 <HeaderClientLink
                   label={t`New`}
-                  icon={<Plus height={20} width={20} />}
+                  icon={<Plus height={16} width={16} weight="fill" />}
                   className="shared-header__new"
                   aria-current={isNewPage ? "page" : undefined}
                   to="/new"
@@ -97,14 +100,14 @@ export const Header = memo(function SharedHeader() {
                 <HeaderClientLink
                   label={t`Charts`}
                   to="/y"
-                  icon={<Folder height={20} width={20} />}
+                  icon={<Folder height={16} width={16} weight="fill" />}
                   aria-current={isChartsPage ? "page" : undefined}
                 />
               </NavigationMenu.Item>
               <NavigationMenu.Item asChild>
                 <HeaderClientLink
                   label={t`Feedback`}
-                  icon={<Chat height={20} width={20} />}
+                  icon={<Chat height={16} width={16} weight="fill" />}
                   aria-current={isFeedbackPage ? "page" : undefined}
                   to="/o"
                 />
@@ -112,24 +115,24 @@ export const Header = memo(function SharedHeader() {
             </nav>
           </NavigationMenu.List>
           <NavigationMenu.List asChild>
-            <nav className="flex items-center gap-1">
+            <nav className="flex">
               <DropdownMenu.Root modal={false}>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
                     label={t`Info`}
-                    icon={<Info height={20} width={20} />}
+                    icon={<Info height={16} width={16} weight="fill" />}
                     aria-current={isInfoPage ? "page" : undefined}
                   />
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content
                   align="start"
-                  className="shared-header__dropdown bg-neutral-50 shadow dark:bg-neutral-900"
+                  className="shared-header__dropdown bg-[var(--color-foreground)] dark:bg-[var(--color-background)] shadow dark:bg-neutral-900"
                 >
                   <DropdownMenu.Item asChild>
                     <HeaderClientLink
                       label={t`Blog`}
                       aria-current={isBlogPage ? "page" : undefined}
-                      icon={<PencilLine height={20} width={20} />}
+                      icon={<PencilLine height={16} width={16} weight="fill" />}
                       to="/blog"
                     />
                   </DropdownMenu.Item>
@@ -138,7 +141,7 @@ export const Header = memo(function SharedHeader() {
                       to="/changelog"
                       label={t`Changelog`}
                       aria-current={isChangelogPage ? "page" : undefined}
-                      icon={<Notebook height={20} width={20} />}
+                      icon={<Notebook height={16} width={16} weight="fill" />}
                     />
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
@@ -146,7 +149,7 @@ export const Header = memo(function SharedHeader() {
                       to="/roadmap"
                       label={t`Roadmap`}
                       aria-current={isRoadmapPage ? "page" : undefined}
-                      icon={<Signpost height={20} width={20} />}
+                      icon={<Signpost height={16} width={16} weight="fill" />}
                     />
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
@@ -154,21 +157,21 @@ export const Header = memo(function SharedHeader() {
                       to="/privacy-policy"
                       label={t`Privacy Policy`}
                       aria-current={isPrivacyPolicyPage ? "page" : undefined}
-                      icon={<Lock height={20} width={20} />}
+                      icon={<Lock height={16} width={16} weight="fill" />}
                     />
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
               </DropdownMenu.Root>
               <HeaderClientLink
                 label={t`Settings`}
-                icon={<Gear height={20} width={20} />}
+                icon={<Gear height={16} width={16} weight="fill" />}
                 aria-current={isSettingsPage ? "page" : undefined}
                 to="/s"
               />
               {isLoggedIn ? (
                 <HeaderClientLink
                   label={t`Account`}
-                  icon={<User height={20} width={20} />}
+                  icon={<User height={16} width={16} weight="fill" />}
                   aria-current={isAccountPage ? "page" : undefined}
                   to="/a"
                 />
@@ -176,7 +179,7 @@ export const Header = memo(function SharedHeader() {
                 <HeaderClientLink
                   to="/l"
                   label={t`Log In`}
-                  icon={<User height={20} width={20} />}
+                  icon={<User height={16} width={16} weight="fill" />}
                   aria-current={isLogInPage ? "page" : undefined}
                 />
               )}
@@ -185,7 +188,7 @@ export const Header = memo(function SharedHeader() {
                   to="/pricing"
                   data-testid="pro-link"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="font-bold rounded-md py-2 ml-2 px-4 bg-gradient-to-t from-purple-700 to-purple-400 hover:to-purple-300 text-white dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
+                  className="font-bold px-4 flex items-center bg-gradient-to-t from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-600 text-white dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
                   onClick={() => {
                     track("sponsor", "click");
                   }}
@@ -215,7 +218,7 @@ export const Header = memo(function SharedHeader() {
 });
 
 const btnClasses =
-  "flex items-center gap-1 p-2 rounded text-[15px] text-neutral-700 hover:text-foreground hover:bg-white/40 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:aria-[current=page]:text-green-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-green-400";
+  "flex items-center gap-1 p-2.5 px-3.5 text-[16px] md:text-white hover:bg-white/10 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:aria-[current=page]:text-green-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-green-400";
 
 type HeaderButtonProps = {
   label: string;
@@ -330,25 +333,25 @@ function MobileHeader({
           <Dialog.Content className="mobile-header__content">
             <HeaderClientLink
               label={t`Editor`}
-              icon={<TreeStructure height={20} width={20} />}
+              icon={<TreeStructure height={16} width={16} weight="fill" />}
               aria-current={isEditor ? "page" : undefined}
               to={lastChart}
             />
             <HeaderClientLink
               label={t`New`}
-              icon={<Plus height={20} width={20} />}
+              icon={<Plus height={16} width={16} weight="fill" />}
               className="shared-header__new"
               to="/new"
             />
             <HeaderClientLink
               label={t`Charts`}
               to="/y"
-              icon={<Folder height={20} width={20} />}
+              icon={<Folder height={16} width={16} weight="fill" />}
               aria-current={isChartsPage ? "page" : undefined}
             />
             <HeaderLink
               label="Discord"
-              icon={<DiscordLogo height={20} width={20} />}
+              icon={<DiscordLogo height={16} width={16} weight="fill" />}
               href={DISCORD_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -356,7 +359,7 @@ function MobileHeader({
             />
             <HeaderClientLink
               label={t`Feedback`}
-              icon={<Chat height={20} width={20} />}
+              icon={<Chat height={16} width={16} weight="fill" />}
               aria-current={isFeedbackPage ? "page" : undefined}
               className="mobile-only"
               to="/o"
@@ -364,24 +367,24 @@ function MobileHeader({
             <HeaderClientLink
               to="/blog"
               label={t`Blog`}
-              icon={<PencilLine height={20} width={20} />}
+              icon={<PencilLine height={16} width={16} weight="fill" />}
               aria-current={isBlogPage ? "page" : undefined}
             />
             <HeaderClientLink
               to="/changelog"
               label={t`Changelog`}
-              icon={<Notebook height={20} width={20} />}
+              icon={<Notebook height={16} width={16} weight="fill" />}
               aria-current={isChangelogPage ? "page" : undefined}
             />
             <HeaderClientLink
               to="/roadmap"
               label={t`Roadmap`}
-              icon={<Signpost height={20} width={20} />}
+              icon={<Signpost height={16} width={16} weight="fill" />}
               aria-current={isRoadmapPage ? "page" : undefined}
             />
             <HeaderClientLink
               label={t`Settings`}
-              icon={<Gear height={20} width={20} />}
+              icon={<Gear height={16} width={16} weight="fill" />}
               aria-current={isSettingsPage ? "page" : undefined}
               to="/s"
             />
@@ -389,7 +392,7 @@ function MobileHeader({
               <HeaderClientLink
                 to="/pricing"
                 label={t`Upgrade to Pro`}
-                icon={<RocketLaunch height={20} width={20} />}
+                icon={<RocketLaunch height={16} width={16} weight="fill" />}
                 aria-current={isSponsorPage ? "page" : undefined}
                 onClick={() => {
                   // track event with gtm
@@ -405,7 +408,7 @@ function MobileHeader({
             {isLoggedIn ? (
               <HeaderClientLink
                 label={t`Account`}
-                icon={<User height={20} width={20} />}
+                icon={<User height={16} width={16} weight="fill" />}
                 aria-current={isAccountPage ? "page" : undefined}
                 to="/a"
               />
@@ -413,13 +416,13 @@ function MobileHeader({
               <HeaderClientLink
                 to="/l"
                 label={t`Log In`}
-                icon={<User height={20} width={20} />}
+                icon={<User height={16} width={16} weight="fill" />}
                 aria-current={isLogInPage ? "page" : undefined}
               />
             )}
             <HeaderClientLink
               label={t`Privacy Policy`}
-              icon={<Lock height={20} width={20} />}
+              icon={<Lock height={16} width={16} weight="fill" />}
               aria-current={isPrivacyPolicyPage ? "page" : undefined}
               className="mobile-only"
               to="/privacy-policy"
