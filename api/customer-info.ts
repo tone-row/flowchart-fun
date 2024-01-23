@@ -16,6 +16,8 @@ export default async function customerInfo(
       status: "all",
     });
 
+    console.log("subscriptions", subscriptions);
+
     // find the first valid subscription
     const validSubscriptions = subscriptions.filter((subscription) => {
       const priceId = subscription.items.data[0].plan.id;
@@ -24,8 +26,8 @@ export default async function customerInfo(
 
     // Sort active subscriptions to the top
     validSubscriptions.sort((a, b) => {
-      if (a.status === "active") return -1;
-      if (b.status === "active") return 1;
+      if (["trialing", "active"].includes(a.status)) return -1;
+      if (["trialing", "active"].includes(b.status)) return 1;
       return 0;
     });
 
