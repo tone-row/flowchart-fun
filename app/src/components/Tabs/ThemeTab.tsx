@@ -1,13 +1,12 @@
 import { createControls } from "formulaic";
-import { updateThemeEditor, useThemeEditor } from "../../lib/toTheme";
-import {
+import type {
   FFTheme,
   Shape,
   CurveStyle,
   ArrowShape,
   Direction,
   LayoutName,
-} from "../../lib/FFTheme";
+} from "shared";
 import { ReactNode } from "react";
 
 import classNames from "classnames";
@@ -33,6 +32,7 @@ import {
   TextAa,
 } from "phosphor-react";
 import { useGraphStore } from "../../lib/useGraphStore";
+import { updateThemeEditor, useThemeEditor } from "../../lib/toThemeDynamic";
 
 const createForm = createControls({
   select,

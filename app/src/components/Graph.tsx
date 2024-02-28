@@ -35,8 +35,9 @@ import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import classNames from "classnames";
-import { getThemeEditor, toTheme, useBackground } from "../lib/toTheme";
+import { getThemeEditor, toTheme } from "../lib/toTheme";
 import equal from "fast-deep-equal";
+import { useBackground } from "../lib/toThemeDynamic";
 declare global {
   interface Window {
     __cy?: cytoscape.Core;

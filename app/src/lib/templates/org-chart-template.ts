@@ -1,4 +1,4 @@
-import { FFTheme } from "../FFTheme";
+import type { FFTheme } from "shared";
 
 export const content = `
 Saraswati Sharma .size_lg.color_pink

@@ -4,7 +4,7 @@ import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
 import { resetGraph } from "./useUnmountStore";
-import { FFTheme } from "./FFTheme";
+import type { FFTheme } from "shared";
 import { toTheme } from "./toTheme";
 
 (async () => {

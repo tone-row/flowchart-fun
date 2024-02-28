@@ -9,7 +9,7 @@ import {
 import { getStyleStringFromMeta, preprocessStyle } from "../preprocessStyle";
 import { Details, useDoc } from "../useDoc";
 import { cytoscapeStyle, theme } from "../templates/default-template";
-import { FFTheme } from "../FFTheme";
+import type { FFTheme } from "shared";
 
 /**
  * Ensures the document loaded externally or from local storage
