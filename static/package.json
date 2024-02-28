@@ -23,6 +23,7 @@
     "@sparticuz/chromium-min": "119.0.0",
     "cytoscape": "^3.26.0",
     "cytoscape-dagre": "^2.5.0",
-    "puppeteer-core": "21.5.1"
+    "puppeteer-core": "21.5.1",
+    "shared": "workspace:*"
   }
 }

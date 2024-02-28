@@ -631,6 +631,9 @@ importers:
       puppeteer-core:
         specifier: 21.5.1
         version: 21.5.1
+      shared:
+        specifier: workspace:*
+        version: link:../shared
     devDependencies:
       '@types/cytoscape':
         specifier: ^3.19.11

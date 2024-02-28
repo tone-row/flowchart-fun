@@ -23,6 +23,20 @@ export async function getPng({ elements }: { elements: ElementDefinition[] }) {
     window.cy.json({ elements });
     window.cy.layout({ name: "grid" }).run();
 
+    // const themeEditor = getThemeEditor(doc);
+    // const { layout, style: themeStyle } = toTheme(themeEditor);
+    // const { style } = preprocessStyle(
+    //   customCssOnly ? customCss : [themeStyle, customCss].join("\n")
+    // );
+    // window.cy
+    //     .layout({
+    //       ...layout,
+    //       // @ts-ignore
+    //       fit: true,
+    //       padding: 20,
+    //     })
+    //     .run();
+
     // json stringify the elements, and write them to a fixed position
     // div on the page so we can read them out in the next step
     const elementsDiv = document.createElement("div");
