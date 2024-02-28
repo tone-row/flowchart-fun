@@ -1,0 +1,28 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "chromium:install": "pnpm dlx @puppeteer/browsers install chromium@latest --path $(pwd)/tmp/chromium; echo 'Now run `sudo chmod -R 755 $(pwd)/tmp/chromium`'",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cytoscape": "^3.19.11",
+    "@types/cytoscape-dagre": "^2.3.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vite-plugin-singlefile": "^2.0.0"
+  },
+  "dependencies": {
+    "@sparticuz/chromium-min": "119.0.0",
+    "cytoscape": "^3.26.0",
+    "cytoscape-dagre": "^2.5.0",
+    "puppeteer-core": "21.5.1"
+  }
+}
