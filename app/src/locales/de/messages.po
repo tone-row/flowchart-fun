@@ -115,7 +115,7 @@ msgstr "Zurück zum Editor"
 msgid "Background Color"
 msgstr "Hintergrundfarbe"
 
-#: src/components/ShareDialog.tsx:511
+#: src/components/ShareDialog.tsx:522
 msgid "Basic Flowchart"
 msgstr "Grundlegender Flussdiagramm"
 
@@ -193,7 +193,7 @@ msgstr "Änderungsprotokoll"
 msgid "Charts"
 msgstr "Diagramme"
 
-#: src/components/ShareDialog.tsx:498
+#: src/components/ShareDialog.tsx:509
 msgid "Check out the guide:"
 msgstr "Schau dir die Anleitung an:"
 
@@ -299,9 +299,9 @@ msgstr "In gehostetes Diagramm konvertieren?"
 msgid "Cookie Policy"
 msgstr "Cookie-Richtlinie"
 
-#: src/components/ShareDialog.tsx:257
-#: src/components/ShareDialog.tsx:258
-#: src/components/ShareDialog.tsx:370
+#: src/components/ShareDialog.tsx:268
+#: src/components/ShareDialog.tsx:269
+#: src/components/ShareDialog.tsx:381
 msgid "Copy"
 msgstr "Kopieren"
 
@@ -313,11 +313,11 @@ msgstr "PNG-Bild kopieren"
 msgid "Copy SVG Code"
 msgstr "Kopieren Sie den SVG-Code"
 
-#: src/components/ShareDialog.tsx:393
+#: src/components/ShareDialog.tsx:404
 msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
 msgstr "Kopiere deinen Excalidraw-Code und füge ihn in <0>excalidraw.com</0> ein, um ihn zu bearbeiten. Diese Funktion ist experimentell und funktioniert möglicherweise nicht mit allen Diagrammen. Wenn du einen Fehler findest, <1>lass es uns wissen</1>."
 
-#: src/components/ShareDialog.tsx:335
+#: src/components/ShareDialog.tsx:346
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Kopieren Sie Ihren mermaid.js-Code oder öffnen Sie ihn direkt im mermaid.js Live-Editor."
 
@@ -407,8 +407,8 @@ msgstr "Möchten Sie dies löschen?"
 msgid "Document"
 msgstr "Document"
 
-#: src/components/ShareDialog.tsx:63
-#: src/components/ShareDialog.tsx:586
+#: src/components/ShareDialog.tsx:65
+#: src/components/ShareDialog.tsx:597
 msgid "Download"
 msgstr "Herunterladen"
 
@@ -504,7 +504,7 @@ msgstr "Kanten in Zielknotenzeile"
 msgid "Edit with AI"
 msgstr "Mit KI bearbeiten"
 
-#: src/components/ShareDialog.tsx:140
+#: src/components/ShareDialog.tsx:142
 msgid "Editable"
 msgstr "Editierbar"
 
@@ -554,8 +554,8 @@ msgstr "Exklusive Bürozeiten"
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
 msgstr "Erleben Sie die Effizienz und Sicherheit beim Laden lokaler Dateien direkt in Ihren Flussdiagramm, perfekt für das Verwalten arbeitsbezogener Dokumente offline. Entsperren Sie dieses exklusive Pro-Feature und mehr mit Flowchart Fun Pro, erhältlich für nur 3 $/Monat oder 30 $/Jahr."
 
-#: src/components/ShareDialog.tsx:54
-#: src/components/ShareDialog.tsx:153
+#: src/components/ShareDialog.tsx:56
+#: src/components/ShareDialog.tsx:155
 msgid "Export"
 msgstr "Exportieren"
 
@@ -605,7 +605,7 @@ msgstr "Einen Fehler gefunden? Eine Funktionsanfrage? Wir würden uns freuen von
 msgid "Free"
 msgstr "Kostenlos"
 
-#: src/components/ShareDialog.tsx:135
+#: src/components/ShareDialog.tsx:137
 msgid "Fullscreen"
 msgstr "Vollbild"
 
@@ -701,7 +701,7 @@ msgstr "Importieren Sie aus CSV"
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Importieren Sie von Visio, Lucidchart und CSV"
 
-#: src/components/ShareDialog.tsx:492
+#: src/components/ShareDialog.tsx:503
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Importieren Sie Ihr Diagramm mithilfe einer dieser CSV-Dateien in Microsoft Visio."
 
@@ -709,7 +709,7 @@ msgstr "Importieren Sie Ihr Diagramm mithilfe einer dieser CSV-Dateien in Micros
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "Der Datenimport ist eine Profifunktion. Sie können für nur 3 USD pro Monat oder 30 USD pro Jahr auf Flowchart Fun Pro upgraden."
 
-#: src/components/ShareDialog.tsx:538
+#: src/components/ShareDialog.tsx:549
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Fügen Sie einen Titel mit einem <0>title</0>-Attribut ein. Um die Visio-Farbgebung zu verwenden, fügen Sie ein <1>roleType</1>-Attribut gleich einem der folgenden hinzu:"
 
@@ -720,6 +720,10 @@ msgstr "Info"
 #: src/components/ImportDataDialog.tsx:540
 msgid "Is"
 msgstr "Ist"
+
+#: src/components/ShareDialog.tsx:625
+msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
+msgstr "JSON Canvas ist eine JSON-Repräsentation Ihres Diagramms, die von <0>Obsidian</0> Canvas und anderen Anwendungen verwendet wird."
 
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
@@ -779,7 +783,7 @@ msgstr "Hell"
 msgid "Light Mode"
 msgstr "Heller Modus"
 
-#: src/components/ShareDialog.tsx:130
+#: src/components/ShareDialog.tsx:132
 msgid "Link"
 msgstr "Link"
 
@@ -846,7 +850,7 @@ msgstr "Melde dich an, um dein Konto zu aktualisieren"
 msgid "Make a One-Time Donation"
 msgstr "Machen Sie eine einmalige Spende"
 
-#: src/components/ShareDialog.tsx:458
+#: src/components/ShareDialog.tsx:469
 msgid "Make publicly accessible"
 msgstr "Öffentlich zugänglich machen"
 
@@ -976,7 +980,7 @@ msgstr "Öffnen Sie das Kundenportal"
 msgid "Or, you can <0>create a new subscription</0>."
 msgstr "Oder Sie können ein neues Abonnement erstellen."
 
-#: src/components/ShareDialog.tsx:524
+#: src/components/ShareDialog.tsx:535
 #: src/lib/templates/templates.ts:40
 msgid "Organization Chart"
 msgstr "Organigramm"
@@ -1032,8 +1036,8 @@ msgstr "Datenverarbeitung"
 msgid "Product is too expensive..."
 msgstr "Das Produkt ist zu teuer..."
 
-#: src/components/ShareDialog.tsx:454
-#: src/components/ShareDialog.tsx:477
+#: src/components/ShareDialog.tsx:465
+#: src/components/ShareDialog.tsx:488
 msgid "Public"
 msgstr "Öffentlich"
 
@@ -1051,7 +1055,7 @@ msgid "Rapid Templates"
 msgstr "Schnelle Vorlagen"
 
 #: src/components/FlowchartHeader.tsx:49
-#: src/components/ShareDialog.tsx:145
+#: src/components/ShareDialog.tsx:147
 msgid "Read-only"
 msgstr "Schreibgeschützt"
 
@@ -1403,7 +1407,7 @@ msgstr "Dies ersetzt den aktuellen Inhalt."
 msgid "This will replace your current sandbox."
 msgstr "Dies ersetzt deine aktuelle Sandbox."
 
-#: src/components/ShareDialog.tsx:595
+#: src/components/ShareDialog.tsx:606
 msgid "Tip"
 msgstr "Tipp"
 
@@ -1550,11 +1554,11 @@ msgstr "Verwenden Sie das Kundenportal, um Ihre Rechnungsinformationen zu änder
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Verwenden Sie diese Einstellungen, um das Aussehen und Verhalten Ihrer Flussdiagramme anzupassen"
 
-#: src/components/ShareDialog.tsx:533
+#: src/components/ShareDialog.tsx:544
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "Verwenden Sie diese Datei für Organigramme, Hierarchien und andere Organisationsstrukturen."
 
-#: src/components/ShareDialog.tsx:520
+#: src/components/ShareDialog.tsx:531
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Verwenden Sie diese Datei für Sequenzen, Prozesse und Workflows."
 
