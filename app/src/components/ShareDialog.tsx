@@ -31,6 +31,8 @@ import Spinner from "./Spinner";
 import { SvgProOnlyPopover } from "./SvgProOnlyPopover";
 import { toExcalidraw } from "../lib/toExcalidraw";
 import { Link } from "react-router-dom";
+import { toJSONCanvas } from "../lib/toJSONCanvas";
+import { slugify } from "../lib/helpers";
 
 export default function ShareDialog({ children }: { children?: ReactNode }) {
   const isHosted = useDocDetails("isHosted");
@@ -172,6 +174,12 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
               >
                 <span>Excalidraw</span>
               </Tabs.Trigger>
+              <Tabs.Trigger
+                value="json"
+                className="font-bold text-sm p-2 rounded data-[state=active]:bg-neutral-300 hover:bg-neutral-100 dark:data-[state=active]:bg-neutral-700 dark:hover:bg-neutral-800"
+              >
+                <span>JSON Canvas / Obsidian</span>
+              </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content value="mermaid">
               <Mermaid />
@@ -181,6 +189,9 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
             </Tabs.Content>
             <Tabs.Content value="excalidraw">
               <Excalidraw />
+            </Tabs.Content>
+            <Tabs.Content value="json">
+              <JSONCanvasShare />
             </Tabs.Content>
           </Tabs.Root>
         </Column>
@@ -602,5 +613,43 @@ function InlineCode({ children }: { children: ReactNode }) {
     <code className="bg-neutral-300 rounded p-1 text-[10px] font-mono text-neutral-800 dark:bg-neutral-700 dark:text-neutral-200">
       {children}
     </code>
+  );
+}
+
+function JSONCanvasShare() {
+  const title = useDocDetails("title", "flowchart.fun");
+
+  return (
+    <div className="grid gap-2">
+      <p className="leading-normal">
+        <Trans>
+          JSON Canvas is a JSON representation of your diagram used by{" "}
+          <a
+            href="https://obsidian.md/"
+            target="_blank"
+            className="text-blue-500 dark:text-blue-300 font-bold"
+          >
+            Obsidian
+          </a>{" "}
+          Canvas and other applications.
+        </Trans>
+      </p>
+      <Button2
+        color="blue"
+        onClick={() => {
+          if (!window.__cy) return;
+          const jsonCanvas = toJSONCanvas(window.__cy);
+          const blob = new Blob([JSON.stringify(jsonCanvas, null, 2)], {
+            type: "text/plain;charset=utf-8",
+          });
+          saveAs(blob, `${slugify(title)}.canvas`);
+        }}
+        className="w-full text-left text-neutral-500 dark:text-neutral-400 p-2 rounded border border-neutral-300 dark:border-neutral-700"
+        aria-label="Copy JSON Canvas"
+        leftIcon={<DownloadSimple size={16} />}
+      >
+        Download JSON Canvas
+      </Button2>
+    </div>
   );
 }
