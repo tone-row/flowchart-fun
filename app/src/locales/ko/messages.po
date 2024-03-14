@@ -115,7 +115,7 @@ msgstr "편집기로 돌아가기"
 msgid "Background Color"
 msgstr "배경색"
 
-#: src/components/ShareDialog.tsx:511
+#: src/components/ShareDialog.tsx:522
 msgid "Basic Flowchart"
 msgstr "기본 플로우 차트"
 
@@ -193,7 +193,7 @@ msgstr "변경 로그"
 msgid "Charts"
 msgstr "차트"
 
-#: src/components/ShareDialog.tsx:498
+#: src/components/ShareDialog.tsx:509
 msgid "Check out the guide:"
 msgstr "가이드를 확인하세요:"
 
@@ -299,9 +299,9 @@ msgstr "호스팅 차트로 변환하시겠습니까?"
 msgid "Cookie Policy"
 msgstr "쿠키 정책"
 
-#: src/components/ShareDialog.tsx:257
-#: src/components/ShareDialog.tsx:258
-#: src/components/ShareDialog.tsx:370
+#: src/components/ShareDialog.tsx:268
+#: src/components/ShareDialog.tsx:269
+#: src/components/ShareDialog.tsx:381
 msgid "Copy"
 msgstr "복사"
 
@@ -313,11 +313,11 @@ msgstr "PNG 이미지 복사"
 msgid "Copy SVG Code"
 msgstr "SVG 코드 복사"
 
-#: src/components/ShareDialog.tsx:393
+#: src/components/ShareDialog.tsx:404
 msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
 msgstr "Excalidraw 코드를 복사해서 <0>excalidraw.com</0>에 붙여넣어서 편집하세요. 이 기능은 실험적이며 모든 다이어그램과 작동하지 않을 수 있습니다. 버그를 발견하면 <1>알려주세요</1>."
 
-#: src/components/ShareDialog.tsx:335
+#: src/components/ShareDialog.tsx:346
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "mermaid.js 코드를 복사하거나 mermaid.js 라이브 편집기에서 직접 열어주세요."
 
@@ -407,8 +407,8 @@ msgstr "본 항목을 삭제하시겠습니까?"
 msgid "Document"
 msgstr "문서"
 
-#: src/components/ShareDialog.tsx:63
-#: src/components/ShareDialog.tsx:586
+#: src/components/ShareDialog.tsx:65
+#: src/components/ShareDialog.tsx:597
 msgid "Download"
 msgstr "다운로드"
 
@@ -504,7 +504,7 @@ msgstr "도착 노드 행에 간선"
 msgid "Edit with AI"
 msgstr "AI로 편집하기"
 
-#: src/components/ShareDialog.tsx:140
+#: src/components/ShareDialog.tsx:142
 msgid "Editable"
 msgstr "편집 가능"
 
@@ -554,8 +554,8 @@ msgstr "독점 오피스 시간"
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
 msgstr "로컬 파일을 흐름도에 직접 로드하여 효율과 보안을 체험하십시오. 이 고급 Pro 기능 및 Flowchart Fun Pro의 다른 기능은 매월 3 달러 또는 연간 30 달러로 사용할 수 있습니다."
 
-#: src/components/ShareDialog.tsx:54
-#: src/components/ShareDialog.tsx:153
+#: src/components/ShareDialog.tsx:56
+#: src/components/ShareDialog.tsx:155
 msgid "Export"
 msgstr "내보내기"
 
@@ -605,7 +605,7 @@ msgstr "버그를 발견했습니까? 기능 요청이 있습니까? 우리는 �
 msgid "Free"
 msgstr "무료"
 
-#: src/components/ShareDialog.tsx:135
+#: src/components/ShareDialog.tsx:137
 msgid "Fullscreen"
 msgstr "전체 화면"
 
@@ -701,7 +701,7 @@ msgstr "CSV로 가져오기"
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Visio, Lucidchart 및 CSV에서 가져오기"
 
-#: src/components/ShareDialog.tsx:492
+#: src/components/ShareDialog.tsx:503
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다."
 
@@ -709,7 +709,7 @@ msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Micro
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
 msgstr "데이터 가져오기는 프로 기능입니다. Flowchart Fun Pro을 월 3 달러 또는 연 30 달러로 업그레이드 할 수 있습니다."
 
-#: src/components/ShareDialog.tsx:538
+#: src/components/ShareDialog.tsx:549
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Visio 색상을 사용하려면 다음 중 하나와 같은 <1>roleType</1> 속성을 추가하십시오:"
 
@@ -720,6 +720,10 @@ msgstr "정보"
 #: src/components/ImportDataDialog.tsx:540
 msgid "Is"
 msgstr "있다"
+
+#: src/components/ShareDialog.tsx:625
+msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
+msgstr "JSON 캔버스는 <0>Obsidian</0> 캔버스 및 다른 응용 프로그램에서 사용되는 다이어그램의 JSON 표현입니다."
 
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
@@ -779,7 +783,7 @@ msgstr "라이트"
 msgid "Light Mode"
 msgstr "라이트 모드"
 
-#: src/components/ShareDialog.tsx:130
+#: src/components/ShareDialog.tsx:132
 msgid "Link"
 msgstr "링크"
 
@@ -846,7 +850,7 @@ msgstr "계정 업그레이드를 위해 로그인"
 msgid "Make a One-Time Donation"
 msgstr "한 번 선물하기"
 
-#: src/components/ShareDialog.tsx:458
+#: src/components/ShareDialog.tsx:469
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
@@ -976,7 +980,7 @@ msgstr "고객 포털 열기"
 msgid "Or, you can <0>create a new subscription</0>."
 msgstr "또는 <0>새로운 구독을 만들 수도 있습니다.</0>"
 
-#: src/components/ShareDialog.tsx:524
+#: src/components/ShareDialog.tsx:535
 #: src/lib/templates/templates.ts:40
 msgid "Organization Chart"
 msgstr "조직도"
@@ -1032,8 +1036,8 @@ msgstr "데이터 처리"
 msgid "Product is too expensive..."
 msgstr "제품이 너무 비싸요..."
 
-#: src/components/ShareDialog.tsx:454
-#: src/components/ShareDialog.tsx:477
+#: src/components/ShareDialog.tsx:465
+#: src/components/ShareDialog.tsx:488
 msgid "Public"
 msgstr "공용"
 
@@ -1051,7 +1055,7 @@ msgid "Rapid Templates"
 msgstr "급변화 템플릿"
 
 #: src/components/FlowchartHeader.tsx:49
-#: src/components/ShareDialog.tsx:145
+#: src/components/ShareDialog.tsx:147
 msgid "Read-only"
 msgstr "읽기 전용"
 
@@ -1403,7 +1407,7 @@ msgstr "이것은 현재 내용을 대체합니다."
 msgid "This will replace your current sandbox."
 msgstr "이것은 현재 샌드 박스를 대체합니다."
 
-#: src/components/ShareDialog.tsx:595
+#: src/components/ShareDialog.tsx:606
 msgid "Tip"
 msgstr "팁"
 
@@ -1550,11 +1554,11 @@ msgstr "청구 정보를 변경하려면 고객 포털을 사용하십시오."
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "이 설정을 사용하여 흐름 도표의 모양과 동작을 조정하십시오"
 
-#: src/components/ShareDialog.tsx:533
+#: src/components/ShareDialog.tsx:544
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "조직도, 계층 구조 및 기타 조직 구조를 위해 이 파일을 사용하십시오."
 
-#: src/components/ShareDialog.tsx:520
+#: src/components/ShareDialog.tsx:531
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오."
 
