@@ -12,7 +12,7 @@ export const templates: {
 }[] = [
   {
     key: "default",
-    img: "template9.png",
+    img: "template21.png",
     bgColor: "#FFFFFF",
     title: () => `Default`,
     promptType: "flowchart",
