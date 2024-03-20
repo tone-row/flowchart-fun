@@ -19,7 +19,7 @@ import {
   createUnlimitedTitle,
 } from "../lib/paywallCopy";
 import { Warning } from "../components/Warning";
-import { FFTheme } from "../lib/FFTheme";
+import type { FFTheme } from "shared";
 
 type CreateChartOptions = {
   name: string;

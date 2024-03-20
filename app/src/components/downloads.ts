@@ -3,7 +3,7 @@ import { saveAs } from "file-saver";
 
 import { UNAUTH_IMG_SCALE } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
-import { getBackground } from "../lib/toTheme";
+import { getBackground } from "../lib/toThemeDynamic";
 
 // padding, gets divided in half
 const PADDING = 60;

@@ -30,7 +30,8 @@
     "shared": "workspace:*",
     "stripe": "^11.11.0",
     "zod": "^3.22.4",
-    "zod-to-json-schema": "^3.22.3"
+    "zod-to-json-schema": "^3.22.3",
+    "static": "workspace:*"
   },
   "devDependencies": {
     "@swc/jest": "^0.2.24",

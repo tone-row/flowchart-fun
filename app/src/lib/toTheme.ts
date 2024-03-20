@@ -1,6 +1,6 @@
 import cytoscape from "cytoscape";
-import { Doc, useDoc } from "./useDoc";
-import { Direction, FFTheme, LayoutDirection } from "./FFTheme";
+import type { Doc } from "./useDoc";
+import type { Direction, FFTheme, LayoutDirection } from "shared";
 import { fonts } from "./fonts";
 import {
   childlessShapeClasses,
@@ -198,33 +198,6 @@ export function toTheme(theme: FFTheme) {
 
 export function getThemeEditor(doc: Doc) {
   return (doc.meta?.themeEditor as FFTheme) || defaultTheme;
-}
-
-export function useThemeEditor() {
-  return useDoc(
-    (state) => (state.meta?.themeEditor as FFTheme) || defaultTheme
-  );
-}
-
-export function useBackground() {
-  return useThemeEditor().background;
-}
-
-export function getBackground() {
-  return getThemeEditor(useDoc.getState()).background;
-}
-
-export function updateThemeEditor(theme: Partial<FFTheme>) {
-  useDoc.setState((doc) => ({
-    ...doc,
-    meta: {
-      ...doc.meta,
-      themeEditor: {
-        ...getThemeEditor(doc),
-        ...theme,
-      },
-    },
-  }));
 }
 
 function isHierarchical(layoutName: string) {

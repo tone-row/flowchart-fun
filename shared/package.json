@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "main": "index.ts",
   "types": "index.ts",
+  "scripts": {
+    "schema:generate": "pnpx ts-json-schema-generator --path 'src/FFTheme.ts' --type 'FFTheme' -f tsconfig.json --strict-tuples -o src/FFTheme.schema.json --minify --no-top-ref"
+  },
   "devDependencies": {
     "typescript": "^5.2.2"
   }

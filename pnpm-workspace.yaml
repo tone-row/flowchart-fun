@@ -3,5 +3,6 @@ packages:
   - "api"
   - "shared"
   - "formulaic"
+  - "static"
   # exclude packages that are inside test directories
   - "!**/test/**"

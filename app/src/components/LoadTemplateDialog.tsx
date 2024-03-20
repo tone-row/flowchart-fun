@@ -11,7 +11,7 @@ import classNames from "classnames";
 import { useDoc } from "../lib/useDoc";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { mountGraph, unmountGraph } from "../lib/useUnmountStore";
-import { FFTheme } from "../lib/FFTheme";
+import type { FFTheme } from "shared";
 import { getDefaultText } from "../lib/getDefaultText";
 
 /**
