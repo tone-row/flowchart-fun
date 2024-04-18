@@ -258,7 +258,7 @@ msgstr "स्तंभ"
 msgid "Comment"
 msgstr "टिप्पणी"
 
-#: src/pages/Pricing2.tsx:142
+#: src/pages/Pricing2.tsx:193
 msgid "Complete access to all features for just $3/month!"
 msgstr "सिर्फ $3/महीने में सभी सुविधाओं का पूरा पहुंच!"
 
@@ -1262,7 +1262,7 @@ msgstr "शैली क्लासेज"
 msgid "Submit"
 msgstr "भेजना"
 
-#: src/pages/Pricing2.tsx:263
+#: src/pages/Pricing2.tsx:341
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "प्रो की सदस्यता लें और मजेदार तरीके से फ्लोचार्ट करें!"
 
@@ -1448,9 +1448,13 @@ msgstr "ऊपर से नीचे"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को सेकंड में प्रोफेशनल डायरेक्टरी में रूपांतरित करें"
 
-#: src/pages/Pricing2.tsx:137
+#: src/pages/Pricing2.tsx:188
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को पेशेवर डायग्राम में बदलें सेकंडों में"
+
+#: src/pages/Pricing2.tsx:256
+msgid "Trusted by over 100,000 users across businesses and universities"
+msgstr "व्यापार और विश्वविद्यालयों में 100,000 से अधिक उपयोगकर्ताओं द्वारा विश्वसनीय"
 
 #: src/components/Header.tsx:196
 msgid "Try Pro for Free"
@@ -1586,7 +1590,7 @@ msgstr "वॉटरमार्क"
 msgid "We're sorry to hear that you're considering canceling your subscription. Please let us know why you're canceling so we can improve our service. Thank you!"
 msgstr "हमें खेद है कि आप अपने सदस्यता रद्द करने के बारे में सोच रहे हैं। कृपया हमें बताएं कि आप क्यों रद्द कर रहे हैं ताकि हम अपनी सेवा में सुधार कर सकें। धन्यवाद!"
 
-#: src/pages/Pricing2.tsx:205
+#: src/pages/Pricing2.tsx:283
 msgid "What's Included"
 msgstr "क्या शामिल है"
 

@@ -258,7 +258,7 @@ msgstr "列"
 msgid "Comment"
 msgstr "评论"
 
-#: src/pages/Pricing2.tsx:142
+#: src/pages/Pricing2.tsx:193
 msgid "Complete access to all features for just $3/month!"
 msgstr "仅需每月$3即可完全访问所有功能！"
 
@@ -1262,7 +1262,7 @@ msgstr "樣式類別"
 msgid "Submit"
 msgstr "提交"
 
-#: src/pages/Pricing2.tsx:263
+#: src/pages/Pricing2.tsx:341
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "订阅专业版，以有趣的方式制作流程图！"
 
@@ -1448,9 +1448,13 @@ msgstr "从上到下"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "秒转换您的想法成专业图表"
 
-#: src/pages/Pricing2.tsx:137
+#: src/pages/Pricing2.tsx:188
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "在几秒钟内将您的想法转变为专业图表"
+
+#: src/pages/Pricing2.tsx:256
+msgid "Trusted by over 100,000 users across businesses and universities"
+msgstr "受到超过10万家企业和大学用户的信任"
 
 #: src/components/Header.tsx:196
 msgid "Try Pro for Free"
@@ -1586,7 +1590,7 @@ msgstr "水印"
 msgid "We're sorry to hear that you're considering canceling your subscription. Please let us know why you're canceling so we can improve our service. Thank you!"
 msgstr "我们很抱歉听到您考虑取消订阅。请告诉我们您取消的原因，以便我们可以改善我们的服务。谢谢！"
 
-#: src/pages/Pricing2.tsx:205
+#: src/pages/Pricing2.tsx:283
 msgid "What's Included"
 msgstr "包括什么"
 
