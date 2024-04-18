@@ -258,7 +258,7 @@ msgstr "열"
 msgid "Comment"
 msgstr "댓글 달기"
 
-#: src/pages/Pricing2.tsx:142
+#: src/pages/Pricing2.tsx:193
 msgid "Complete access to all features for just $3/month!"
 msgstr "매월 단지 $3로 모든 기능에 완전한 액세스!"
 
@@ -1262,7 +1262,7 @@ msgstr "스타일 클래스"
 msgid "Submit"
 msgstr "보내다"
 
-#: src/pages/Pricing2.tsx:263
+#: src/pages/Pricing2.tsx:341
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "프로를 구독하고 재미있게 플로우차트 작성하기!"
 
@@ -1448,9 +1448,13 @@ msgstr "위에서 아래로"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 
-#: src/pages/Pricing2.tsx:137
+#: src/pages/Pricing2.tsx:188
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "아이디어를 몇 초만에 전문적인 다이어그램으로 변환하세요."
+
+#: src/pages/Pricing2.tsx:256
+msgid "Trusted by over 100,000 users across businesses and universities"
+msgstr "비즈니스와 대학에서 10만 명 이상의 사용자에게 신뢰받는 서비스입니다."
 
 #: src/components/Header.tsx:196
 msgid "Try Pro for Free"
@@ -1586,7 +1590,7 @@ msgstr "물감"
 msgid "We're sorry to hear that you're considering canceling your subscription. Please let us know why you're canceling so we can improve our service. Thank you!"
 msgstr "우리는 귀하가 구독을 취소하는 것을 듣고 죄송합니다. 왜 취소하려고 하는지 알려주시면 우리 서비스를 개선할 수 있습니다. 감사합니다!"
 
-#: src/pages/Pricing2.tsx:205
+#: src/pages/Pricing2.tsx:283
 msgid "What's Included"
 msgstr "포함된 내용"
 
