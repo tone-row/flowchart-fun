@@ -258,7 +258,7 @@ msgstr "Columna"
 msgid "Comment"
 msgstr "Comentario"
 
-#: src/pages/Pricing2.tsx:142
+#: src/pages/Pricing2.tsx:193
 msgid "Complete access to all features for just $3/month!"
 msgstr "Acceso completo a todas las funciones por solo $3 al mes"
 
@@ -1262,7 +1262,7 @@ msgstr "Clases de Estilo"
 msgid "Submit"
 msgstr "Enviar"
 
-#: src/pages/Pricing2.tsx:263
+#: src/pages/Pricing2.tsx:341
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "Suscríbete a Pro y crea diagramas de flujo de manera divertida!"
 
@@ -1448,9 +1448,13 @@ msgstr "De arriba a abajo"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "Transforma tus ideas en diagramas profesionales en segundos"
 
-#: src/pages/Pricing2.tsx:137
+#: src/pages/Pricing2.tsx:188
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "Transforma tus Ideas en Diagramas Profesionales en Segundos"
+
+#: src/pages/Pricing2.tsx:256
+msgid "Trusted by over 100,000 users across businesses and universities"
+msgstr "Confiado por más de 100.000 usuarios en empresas y universidades"
 
 #: src/components/Header.tsx:196
 msgid "Try Pro for Free"
@@ -1586,7 +1590,7 @@ msgstr "Marcas de agua"
 msgid "We're sorry to hear that you're considering canceling your subscription. Please let us know why you're canceling so we can improve our service. Thank you!"
 msgstr "Lamentamos saber que está considerando cancelar su suscripción. Por favor, háganos saber por qué está cancelando para que podamos mejorar nuestro servicio. ¡Gracias!"
 
-#: src/pages/Pricing2.tsx:205
+#: src/pages/Pricing2.tsx:283
 msgid "What's Included"
 msgstr "¿Qué está incluido?"
 
