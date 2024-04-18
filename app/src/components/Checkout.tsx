@@ -131,7 +131,7 @@ export function Checkout({
         <PaymentStepperTitle className="mb-2">
           <Trans>Choose a Plan</Trans>
         </PaymentStepperTitle>
-        <p className="text-center mb-4">
+        <p className="text-center mb-4 underline underline-offset-2">
           <Trans>Try it for free for two days. Cancel anytime.</Trans>
         </p>
         <div className="w-full grid gap-2 h-full content-center">

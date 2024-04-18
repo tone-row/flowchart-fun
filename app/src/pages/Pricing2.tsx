@@ -93,6 +93,57 @@ const pricingRows = () => [
   },
 ];
 
+const companies: { svg: string; name: string; className?: string }[] = [
+  {
+    svg: "bytedance.svg",
+    name: "Bytedance",
+    className: "h-8 w-auto shrink-0 dark:invert",
+  },
+  {
+    svg: "boston-dynamics.svg",
+    name: "Boston Dynamics",
+    className: "h-14 w-auto shrink-0",
+  },
+  {
+    svg: "bbva.svg",
+    name: "BBVA",
+  },
+  {
+    svg: "razer.svg",
+    name: "Razer",
+    className: "h-16 w-auto shrink-0",
+  },
+  {
+    svg: "ucsd.svg",
+    name: "UC San Diego",
+    className: "h-9 w-auto shrink-0 dark:filter dark:brightness-[2]",
+  },
+  {
+    svg: "utexas.svg",
+    name: "University of Texas",
+  },
+  {
+    svg: "sas-upenn.svg",
+    name: "SAS UPenn",
+    className: "h-14 w-auto shrink-0 dark:invert",
+  },
+  {
+    svg: "technologico-de-monterrey.svg",
+    name: "Tecnológico de Monterrey",
+    className: "h-12 w-auto shrink-0 dark:invert",
+  },
+  {
+    svg: "ualaska.svg",
+    name: "University of Alaska",
+    className: "h-[90px] w-auto shrink-0 dark:invert",
+  },
+  {
+    svg: "beijing-jiaotong.svg",
+    name: "Beijing Jiaotong University",
+    className: "h-[90px] w-auto shrink-0",
+  },
+];
+
 export default function Pricing2() {
   const videoRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -198,6 +249,33 @@ export default function Pricing2() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="trusted">
+        <Container className="py-12">
+          <SectionTitle className="text-center sm:mb-8">
+            <Trans>
+              Trusted by over 100,000 users across businesses and universities
+            </Trans>
+          </SectionTitle>
+          <div className="flex items-center gap-4 sm:gap-x-12 sm:gap-y-8 flex-wrap justify-center">
+            {companies.map((company) => (
+              <div
+                key={company.name}
+                className="flex items-center justify-center"
+              >
+                <img
+                  src={`/images/company_logos/${company.svg}`}
+                  alt={company.name}
+                  className={
+                    company.className
+                      ? company.className
+                      : "h-12 w-auto shrink-0"
+                  }
+                />
+              </div>
+            ))}
+          </div>
+        </Container>
       </div>
       <div className="whats-included py-12 px-4 md:px-8">
         <div className="md:w-max mx-auto">
@@ -326,9 +404,17 @@ function Container({
   );
 }
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
+function SectionTitle({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <h2 className="text-xl font-bold text-purple-500 mb-4 dark:text-purple-400">
+    <h2
+      className={`text-xl font-bold text-purple-500 mb-4 dark:text-purple-400 ${className}`}
+    >
       {children}
     </h2>
   );
