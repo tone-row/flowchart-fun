@@ -133,16 +133,16 @@ const companies: { svg: string; name: string; className?: string }[] = [
     name: "Tecnológico de Monterrey",
     className: "h-12 w-auto shrink-0 dark:invert",
   },
-  {
-    svg: "ualaska.svg",
-    name: "University of Alaska",
-    className: "h-[90px] w-auto shrink-0 dark:invert",
-  },
-  {
-    svg: "beijing-jiaotong.svg",
-    name: "Beijing Jiaotong University",
-    className: "h-[90px] w-auto shrink-0",
-  },
+  // {
+  //   svg: "ualaska.svg",
+  //   name: "University of Alaska",
+  //   className: "h-[90px] w-auto shrink-0 dark:invert",
+  // },
+  // {
+  //   svg: "beijing-jiaotong.svg",
+  //   name: "Beijing Jiaotong University",
+  //   className: "h-[90px] w-auto shrink-0",
+  // },
 ];
 
 export default function Pricing2() {
