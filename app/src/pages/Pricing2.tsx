@@ -102,16 +102,17 @@ const companies: { svg: string; name: string; className?: string }[] = [
   {
     svg: "boston-dynamics.svg",
     name: "Boston Dynamics",
-    className: "h-14 w-auto shrink-0",
+    className: "h-[55px] w-auto shrink-0",
   },
   {
     svg: "bbva.svg",
     name: "BBVA",
+    className: "h-8 w-auto shrink-0",
   },
   {
     svg: "razer.svg",
     name: "Razer",
-    className: "h-16 w-auto shrink-0",
+    className: "h-[55px] w-auto shrink-0",
   },
   {
     svg: "ucsd.svg",
@@ -125,7 +126,7 @@ const companies: { svg: string; name: string; className?: string }[] = [
   {
     svg: "sas-upenn.svg",
     name: "SAS UPenn",
-    className: "h-14 w-auto shrink-0 dark:invert",
+    className: "h-[50px] w-auto shrink-0 dark:invert",
   },
   {
     svg: "technologico-de-monterrey.svg",
