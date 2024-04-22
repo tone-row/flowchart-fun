@@ -13,6 +13,7 @@ export function PaywallModal() {
   const content = usePaywallModalStore((s) => s.content);
   const movieUrl = usePaywallModalStore((s) => s.movieUrl);
   const imgUrl = usePaywallModalStore((s) => s.imgUrl);
+  const toPricingCode = usePaywallModalStore((s) => s.toPricingCode);
   return (
     <Dialog.Root
       modal
@@ -60,6 +61,7 @@ export function PaywallModal() {
                 <Button2
                   color="blue"
                   className="mt-4"
+                  data-to-pricing={toPricingCode}
                   onClick={() => {
                     navigate("/pricing");
                   }}

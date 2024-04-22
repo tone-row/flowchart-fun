@@ -76,6 +76,7 @@ export function LoadFileButton() {
               content: t`Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year.`,
               movieUrl:
                 "https://res.cloudinary.com/tone-row/video/upload/v1697510980/b6u3smok1vc2jqb56tb1.mp4",
+              toPricingCode: "Local Files",
             });
             return;
           }

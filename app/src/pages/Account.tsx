@@ -541,7 +541,11 @@ function SubscriptionOptions() {
             <p>
               <Trans>
                 Or, you can{" "}
-                <Link to="/pricing" className="underline underline-offset-2">
+                <Link
+                  to="/pricing"
+                  className="underline underline-offset-2"
+                  data-to-pricing="Account Page: Create a new subscription"
+                >
                   create a new subscription
                 </Link>
                 .
@@ -554,7 +558,11 @@ function SubscriptionOptions() {
               <p className="text-sm leading-normal">
                 You currently have a free account.
                 <br />
-                <Link to="/pricing" className="text-blue-500">
+                <Link
+                  to="/pricing"
+                  className="text-blue-500"
+                  data-to-pricing="Account Page: Learn"
+                >
                   Learn about our Pro Features and subscribe on our pricing page
                 </Link>
                 .
