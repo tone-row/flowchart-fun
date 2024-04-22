@@ -338,6 +338,9 @@ function getGraphUpdater({
         }
       }
 
+      // @ts-ignore
+      layout.animate = false;
+
       // Finally we get rid of layouts when user has dragged
       // Apply the preset layout if nodePositions is defined
       const nodePositions = doc.meta?.nodePositions;
