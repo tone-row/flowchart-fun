@@ -20,7 +20,11 @@ export function SvgProOnlyPopover({ children }: { children: ReactNode }) {
           <p className="text-gray-800 dark:text-gray-100 text-sm">
             <Trans>
               This feature is only available to pro users.{" "}
-              <a href="/pricing" className="text-blue-500 hover:underline">
+              <a
+                href="/pricing"
+                data-to-pricing="SVG Pro Only Popover"
+                className="text-blue-500 hover:underline"
+              >
                 Become a pro user
               </a>{" "}
               to unlock it.

@@ -107,6 +107,7 @@ function CannotSaveButton() {
         showPaywall({
           title: createUnlimitedTitle(),
           content: createUnlimitedContent(),
+          toPricingCode: "Unlimited Charts",
         });
       }}
     >

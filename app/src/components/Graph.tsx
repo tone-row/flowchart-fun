@@ -17,7 +17,7 @@ import { cytoscape } from "../lib/cytoscape";
 import { getElements } from "../lib/getElements";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { isError } from "../lib/helpers";
-import { getAnimationSettings, useCanEdit } from "../lib/hooks";
+import { useCanEdit } from "../lib/hooks";
 import {
   preprocessStyle,
   useCytoscapeStyleImports,
@@ -42,8 +42,6 @@ declare global {
     __cy?: cytoscape.Core;
   }
 }
-
-const isAnimationEnabled = getAnimationSettings();
 
 const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
   useCytoscapeStyleImports();
@@ -340,6 +338,9 @@ function getGraphUpdater({
         }
       }
 
+      // @ts-ignore
+      layout.animate = false;
+
       // Finally we get rid of layouts when user has dragged
       // Apply the preset layout if nodePositions is defined
       const nodePositions = doc.meta?.nodePositions;
@@ -366,17 +367,11 @@ function getGraphUpdater({
       // Update
       cy.current.json({ elements, style });
 
-      // Determine whether to animate
-      const shouldAnimate =
-        !isFirstRender.current && elements.length < 200 && isAnimationEnabled;
-
       // Determine whether to fit
       const autoFit = useGraphStore.getState().autoFit;
 
       cy.current
         .layout({
-          animate: shouldAnimate,
-          animationDuration: shouldAnimate ? 333 : 0,
           ...layout,
           // @ts-ignore
           fit: autoFit,

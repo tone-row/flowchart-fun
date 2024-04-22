@@ -6,16 +6,6 @@ import { slugify } from "./helpers";
 import { useDocDetails } from "./useDoc";
 import { t } from "@lingui/macro";
 
-/**
- * Returns whether animation has been disabled
- * via the query string ?animation=0
- */
-export function getAnimationSettings() {
-  const query = new URLSearchParams(window.location.search.slice(1));
-  const animation = query.get("animation");
-  return animation === "0" ? false : true;
-}
-
 export function useFullscreen() {
   const params = useParams();
   const { pathname } = useLocation();

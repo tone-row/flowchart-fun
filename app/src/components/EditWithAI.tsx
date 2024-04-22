@@ -82,6 +82,7 @@ export function EditWithAI() {
           title,
           content,
           imgUrl: "/images/ai-edit.png",
+          toPricingCode: "EditWithAI",
         });
         return;
       }
@@ -160,6 +161,7 @@ export function EditWithAI() {
         title,
         content,
         imgUrl: "/images/ai-edit.png",
+        toPricingCode: "EditWithAI",
       });
       return;
     }
