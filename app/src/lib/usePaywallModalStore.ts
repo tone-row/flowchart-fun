@@ -1,15 +1,22 @@
 import { create } from "zustand";
 
-export const usePaywallModalStore = create<{
+type PaywallModalStore = {
   open: boolean;
   title: string;
   content: string;
   movieUrl?: string;
   imgUrl?: string;
-}>((_set) => ({
+  /**
+   * This is a unique code that will be used to track the user's journey
+   */
+  toPricingCode: string;
+};
+
+export const usePaywallModalStore = create<PaywallModalStore>((_set) => ({
   open: false,
   title: "",
   content: "",
+  toPricingCode: "Unknown",
 }));
 
 const paywallImageUrl = "/images/paywall.png";
@@ -24,12 +31,9 @@ export function showPaywall({
   content,
   movieUrl,
   imgUrl = paywallImageUrl,
-}: {
-  title: string;
-  content: string;
-  movieUrl?: string;
-  imgUrl?: string;
-}) {
+  toPricingCode,
+}: Omit<PaywallModalStore, "open">) {
+  // If there is no movie URL, we will preload the image
   if (!movieUrl) {
     // Pre-load the paywall image
     const img = new Image();
@@ -46,6 +50,7 @@ export function showPaywall({
       content,
       movieUrl,
       imgUrl,
+      toPricingCode,
     });
   }
 }

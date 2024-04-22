@@ -117,6 +117,7 @@ export default function New2() {
         showPaywall({
           title: createUnlimitedTitle(),
           content: createUnlimitedContent(),
+          toPricingCode: "New",
         });
         return;
       }
@@ -239,7 +240,11 @@ export default function New2() {
         {!isProUser && (
           <div className="justify-items-center grid">
             <Warning>
-              <Link to="/pricing" className="flex items-center">
+              <Link
+                to="/pricing"
+                className="flex items-center"
+                data-to-pricing="New Page: Create Chart"
+              >
                 <Rocket size={24} className="mr-2" />
                 <p>
                   <Trans>

@@ -62,6 +62,7 @@ export function SandboxWarning() {
             size="sm"
             className="mt-3"
             data-testid="sandbox-warning-learn-more"
+            data-to-pricing="Sandbox Warning"
             onClick={() => {
               useSandboxWarning.setState({ isOpen: false });
             }}

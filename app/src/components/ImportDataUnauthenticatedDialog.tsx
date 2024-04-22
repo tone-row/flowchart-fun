@@ -60,6 +60,7 @@ export function ImportDataUnauthenticatedDialog() {
               <Button2
                 color="blue"
                 className="mt-4"
+                data-to-pricing="Import Data"
                 onClick={() => {
                   navigate("/pricing");
                 }}

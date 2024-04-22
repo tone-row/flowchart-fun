@@ -194,7 +194,7 @@ const ChartLink = memo(function ChartLink({
           </Dialog.Trigger>
           <Dialog.Portal>
             <Overlay />
-            <Dialog.Content className="data-[state=open]:animate-contentShow bg-background text-foreground dark:bg-foreground dark:text-background fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[400px] translate-x-[-50%] translate-y-[-50%] rounded-lg bg-background p-4 shadow-lg focus:outline-none z-50 grid gap-3">
+            <Dialog.Content className="data-[state=open]:animate-contentShow text-foreground dark:bg-foreground dark:text-background fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[400px] translate-x-[-50%] translate-y-[-50%] rounded-lg bg-background p-4 shadow-lg focus:outline-none z-50 grid gap-3">
               <Dialog.Title className="text-lg font-bold">
                 <Trans>Do you want to delete this?</Trans>
               </Dialog.Title>
@@ -226,7 +226,7 @@ const ChartLink = memo(function ChartLink({
 function ProFeatureLink() {
   return (
     <div
-      className={`flex items-center p-4 pt-[15px] gap-5 rounded-lg text-sm bg-neutral-100 rounded-lg dark:bg-neutral-900`}
+      className={`flex items-center p-4 pt-[15px] gap-5 text-sm bg-neutral-100 rounded-lg dark:bg-neutral-900`}
     >
       <div className="w-[47px] sm:w-auto">
         <Sparkle
@@ -242,6 +242,7 @@ function ProFeatureLink() {
           to="/pricing"
           className="text-blue-500 dark:text-orange-500"
           data-testid="to-pricing"
+          data-to-pricing="Charts Page: Permanent Charts"
         >
           <Trans>Learn about Flowchart Fun Pro</Trans>
         </Link>
@@ -253,7 +254,7 @@ function ProFeatureLink() {
 function InactiveAccount() {
   return (
     <div
-      className={`flex items-center p-4 pt-[15px] gap-5 rounded-lg text-sm text-red-900 bg-red-200/90 rounded-lg border-red-700 border-l-4`}
+      className={`flex items-center p-4 pt-[15px] gap-5 text-sm text-red-900 bg-red-200/90 rounded-lg border-red-700 border-l-4`}
     >
       <div className="w-[47px] sm:w-auto">
         <Prohibit size={30} className="translate-y-[-1px] text-red-900" />
@@ -271,6 +272,7 @@ function InactiveAccount() {
               to="/pricing"
               className="underline underline-offset-2"
               data-testid="to-pricing"
+              data-to-pricing="Charts Page: Inactive Account"
             >
               upgrade to pro
             </Link>{" "}

@@ -187,6 +187,7 @@ export const Header = memo(function SharedHeader() {
                 <Link
                   to="/pricing"
                   data-testid="pro-link"
+                  data-to-pricing="Navigation Button"
                   aria-current={isSponsorPage ? "page" : undefined}
                   className="font-bold px-4 flex items-center bg-gradient-to-t from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-600 text-white dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
                   onClick={() => {
@@ -394,6 +395,7 @@ function MobileHeader({
                 label={t`Upgrade to Pro`}
                 icon={<RocketLaunch height={16} width={16} weight="fill" />}
                 aria-current={isSponsorPage ? "page" : undefined}
+                data-to-pricing="Mobile Header"
                 onClick={() => {
                   // track event with gtm
                   if (window?.dataLayer)
