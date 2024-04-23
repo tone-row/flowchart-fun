@@ -8,7 +8,7 @@ import { CloneButton } from "./CloneButton";
 import styles from "./FlowchartHeader.module.css";
 import { RenameButton } from "./RenameButton";
 import ShareDialog from "./ShareDialog";
-import { Cloud, DownloadSimple, Export, File } from "phosphor-react";
+import { Cloud, FloppyDisk, Export, File } from "phosphor-react";
 import classNames from "classnames";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -59,6 +59,7 @@ export function FlowchartHeader() {
                 onClick={() => setShareModal(true)}
                 leftIcon={<Export weight="bold" className="w-5 h-5" />}
                 aria-label="Export"
+                data-session-activity="Share Chart"
               >
                 <Trans>Share</Trans>
               </Button2>
@@ -88,8 +89,9 @@ function LogInToSaveButton() {
   const navigate = useNavigate();
   return (
     <Button2
-      leftIcon={<DownloadSimple weight="bold" className="w-5 h-5" />}
+      leftIcon={<FloppyDisk weight="bold" className="w-5 h-5" />}
       color="default"
+      data-session-activity="Save Chart: Log in"
       onClick={() => {
         navigate("/l");
       }}
@@ -102,7 +104,8 @@ function LogInToSaveButton() {
 function CannotSaveButton() {
   return (
     <Button2
-      leftIcon={<DownloadSimple weight="bold" className="w-5 h-5" />}
+      leftIcon={<FloppyDisk weight="bold" className="w-5 h-5" />}
+      data-session-activity="Save Chart: Upgrade"
       onClick={() => {
         showPaywall({
           title: createUnlimitedTitle(),
@@ -129,8 +132,9 @@ function CanSaveButton() {
     >
       <Dialog.Trigger asChild>
         <Button2
-          leftIcon={<DownloadSimple weight="bold" className="w-5 h-5" />}
+          leftIcon={<FloppyDisk weight="bold" className="w-5 h-5" />}
           color="zinc"
+          data-session-activity="Save Chart"
           onClick={() => {
             setOpen(true);
           }}
@@ -149,6 +153,7 @@ function CanSaveButton() {
                 </p>
                 <Button2
                   leftIcon={<Cloud weight="bold" className="w-5 h-5" />}
+                  data-session-activity="Save Chart: Cloud"
                   onClick={() => {
                     setCreateType("cloud");
                   }}
@@ -157,6 +162,7 @@ function CanSaveButton() {
                 </Button2>
                 <Button2
                   leftIcon={<File weight="bold" className="w-5 h-5" />}
+                  data-session-activity="Save Chart: File"
                   onClick={() => {
                     setOpen(false);
                     setTimeout(() => {
@@ -229,7 +235,7 @@ function SaveForm() {
       </label>
       <Button2
         color="blue"
-        leftIcon={<DownloadSimple className="w-5 h-5" />}
+        leftIcon={<FloppyDisk className="w-5 h-5" />}
         isLoading={createChartMutation.isLoading}
       >
         Save

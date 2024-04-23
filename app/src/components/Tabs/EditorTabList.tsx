@@ -22,6 +22,7 @@ export function EditorTabList() {
         value="Document"
         data-testid="Editor Tab: Document"
         className={classNames(btn, selected)}
+        data-session-activity="Edit Document"
       >
         <span data-text={t`Document`}>
           <Trans>Document</Trans>
@@ -32,6 +33,7 @@ export function EditorTabList() {
           value="Theme"
           data-testid="Editor Tab: Theme"
           className={classNames(btn, selected)}
+          data-session-activity="Edit Theme"
         >
           <span data-text={t`Theme`}>
             <Trans>Theme</Trans>
@@ -42,6 +44,7 @@ export function EditorTabList() {
         value="Graph"
         data-testid="Editor Tab: Graph"
         className={classNames(btn, selected, "md:hidden")}
+        data-session-activity="Edit Graph"
       >
         <span data-text={t`Theme`}>
           <Trans>Graph</Trans>
