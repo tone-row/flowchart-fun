@@ -192,6 +192,7 @@ export function EditWithAI() {
               size="sm"
               rounded
               className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
+              data-session-activity="Edit with AI: Open"
               isLoading={isLoading}
             >
               <span className="text-[15px] hidden md:inline">
@@ -242,7 +243,11 @@ export function EditWithAI() {
                   onSend={handleSend}
                 />
               </div>
-              <Button2 size="sm" color="purple">
+              <Button2
+                size="sm"
+                color="purple"
+                data-session-activity="Edit with AI: Submit"
+              >
                 <Trans>Submit</Trans>
               </Button2>
             </form>

@@ -57,7 +57,11 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
     >
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Overlay />
-      <Content maxWidthClass="max-w-[600px] w-full" overflowV>
+      <Content
+        maxWidthClass="max-w-[600px] w-full"
+        overflowV
+        data-location="Share Dialog"
+      >
         <Close />
         <Column>
           <PreviewImage watermark={watermark} scale={scale} />
@@ -67,6 +71,7 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
           <div className="grid gap-2 grid-cols-3">
             <Button2
               aria-label="Download PNG"
+              data-session-activity="Download PNG"
               onClick={() => {
                 if (!window.__cy) return;
                 getCanvas({
@@ -88,6 +93,7 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
             </Button2>
             <Button2
               aria-label="Download JPG"
+              data-session-activity="Download JPG"
               onClick={() => {
                 if (!window.__cy) return;
                 getCanvas({
@@ -109,6 +115,7 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
               <Button2
                 disabled={!isProUser}
                 aria-label="Download SVG"
+                data-session-activity="Download SVG"
                 onClick={async () => {
                   if (!window.__cy) return;
                   const svg = await getSvg({
@@ -265,7 +272,11 @@ function LinkCopy({
           onFocus={copyText}
           data-testid={`Copy ${rawTitle}`}
         />
-        <Button2 onClick={copyText} aria-label={`${t`Copy`} ${title}`}>
+        <Button2
+          onClick={copyText}
+          aria-label={`${t`Copy`} ${title}`}
+          data-session-activity={`Copy ${title}`}
+        >
           <Trans>Copy</Trans>
         </Button2>
       </Box>
@@ -364,11 +375,13 @@ function Mermaid() {
             rel="noopener noreferrer"
             className="text-blue-500 self-end text-sm font-bold flex items-center gap-1 mr-2 mb-[1px]"
             data-testid="Mermaid Live"
+            data-session-activity="Mermaid Live"
           >
             <ArrowSquareOut width={15} height={15} />
             <span>mermaid.live</span>
           </a>
           <Button2
+            data-session-activity="Copy Mermaid Code"
             onClick={() => {
               (async () => {
                 await navigator.clipboard.writeText(code);
@@ -421,6 +434,7 @@ function Excalidraw() {
       </p>
       <Button2
         color="blue"
+        data-session-activity="Copy Excalidraw"
         onClick={() => {
           navigator.clipboard.writeText(toExcalidraw());
           setCopied(true);
@@ -473,6 +487,7 @@ function HostedOptions() {
           name="isPublic"
           id="isPublic"
           defaultChecked={isPublic}
+          data-session-activity="Toggle Make Public"
           onChange={(e) => {
             makePublic.mutate(e.target.checked);
           }}
@@ -520,6 +535,7 @@ function VisioCSVDownload() {
         <VisioDownloadOption
           imgSrc="/images/visio-flowchart.svg"
           title={t`Basic Flowchart`}
+          rawTitle="Basic Flowchart"
           handleDownload={async () => {
             const csv = await toVisioFlowchart(parse(useDoc.getState().text));
             const bom = new Uint8Array([0xef, 0xbb, 0xbf]);
@@ -533,6 +549,7 @@ function VisioCSVDownload() {
         <VisioDownloadOption
           imgSrc="/images/visio-orgchart.svg"
           title={t`Organization Chart`}
+          rawTitle="Organization Chart"
           handleDownload={async () => {
             const csv = await toVisioOrgChart(parse(useDoc.getState().text));
             const bom = new Uint8Array([0xef, 0xbb, 0xbf]);
@@ -562,12 +579,14 @@ function VisioCSVDownload() {
 
 function VisioDownloadOption({
   title,
+  rawTitle,
   children,
   imgSrc,
   handleDownload,
   testId,
 }: {
   title: string;
+  rawTitle: string;
   children: ReactNode;
   imgSrc: string;
   handleDownload: () => Promise<void>;
@@ -585,6 +604,7 @@ function VisioDownloadOption({
         data-testid={testId}
         color="blue"
         className="w-full"
+        data-session-activity={`Download Visio ${rawTitle}`}
         onClick={() => {
           setLoading(true);
           handleDownload().finally(() =>
@@ -636,6 +656,7 @@ function JSONCanvasShare() {
       </p>
       <Button2
         color="blue"
+        data-session-activity="Download JSON Canvas"
         onClick={() => {
           if (!window.__cy) return;
           const jsonCanvas = toJSONCanvas(window.__cy);

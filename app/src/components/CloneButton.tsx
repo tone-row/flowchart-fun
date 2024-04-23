@@ -43,6 +43,7 @@ export function CloneButton() {
       onClick={() => {
         makeChartMutation.mutate();
       }}
+      data-session-activity="Clone Chart"
     >
       <Trans>Clone</Trans>
     </Button2>
