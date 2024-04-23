@@ -75,7 +75,10 @@ export function ImportDataDialog() {
       }}
     >
       <Dialog.Trigger asChild>
-        <EditorActionTextButton icon={Database}>
+        <EditorActionTextButton
+          icon={Database}
+          data-session-activity="Import Data"
+        >
           <Trans>Import Data</Trans>
         </EditorActionTextButton>
       </Dialog.Trigger>

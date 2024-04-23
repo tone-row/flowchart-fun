@@ -1,5 +1,6 @@
 import { BracketsAngle } from "phosphor-react";
 import { forwardRef, ReactNode } from "react";
+import { IconType } from "react-icons/lib";
 
 /**
  * A button that can be used to open the syntax reference.
@@ -8,7 +9,7 @@ import { forwardRef, ReactNode } from "react";
 export const EditorActionTextButton = forwardRef<
   HTMLButtonElement,
   {
-    icon: typeof BracketsAngle;
+    icon: typeof BracketsAngle | IconType;
     children: ReactNode;
   } & React.ButtonHTMLAttributes<HTMLButtonElement>
 >(function EditorActionTextButton(

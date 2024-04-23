@@ -98,6 +98,7 @@ export const RenameButton = memo(function RenameButton({
             data-rename-button
             onClick={() => useRenameDialogStore.setState({ isOpen: true })}
             aria-label={t`Rename`}
+            data-session-activity="Rename Chart"
           >
             {children}
           </button>
