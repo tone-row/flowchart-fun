@@ -1,4 +1,4 @@
-import { FileArrowUp } from "phosphor-react";
+import { PiFolderOpenDuotone } from "react-icons/pi";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
 import { Trans, t } from "@lingui/macro";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
@@ -67,8 +67,9 @@ export function LoadFileButton() {
         }}
       />
       <EditorActionTextButton
-        icon={FileArrowUp}
+        icon={PiFolderOpenDuotone}
         data-testid="load-file-button"
+        data-session-activity="Load File"
         onClick={() => {
           if (!isProUser) {
             showPaywall({
@@ -107,7 +108,7 @@ export function LoadFileButton() {
               </div>
               <Button2
                 color="blue"
-                leftIcon={<FileArrowUp className="w-5 h-5" />}
+                leftIcon={<PiFolderOpenDuotone className="w-5 h-5" />}
                 data-testid="load-file-confirm"
                 onClick={() => {
                   // navigate to the sandbox

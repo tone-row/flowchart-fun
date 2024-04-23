@@ -1,7 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Close, Content, Overlay } from "../ui/Dialog";
 import { EditorActionTextButton } from "../ui/EditorActionTextButton";
-import { FolderOpen, Check, WarningCircle, ArrowLeft } from "phosphor-react";
+import { Check, WarningCircle, ArrowLeft } from "phosphor-react";
+import { PiShapesDuotone } from "react-icons/pi";
 import { Trans } from "@lingui/macro";
 import { templates } from "../lib/templates/templates";
 import * as Checkbox from "@radix-ui/react-checkbox";
@@ -91,7 +92,10 @@ export function LoadTemplateDialog() {
       }}
     >
       <Dialog.Trigger asChild>
-        <EditorActionTextButton icon={FolderOpen}>
+        <EditorActionTextButton
+          icon={PiShapesDuotone}
+          data-session-activity="Load Template: Open Dialog"
+        >
           <Trans>Load Template</Trans>
         </EditorActionTextButton>
       </Dialog.Trigger>
@@ -104,7 +108,7 @@ export function LoadTemplateDialog() {
         >
           <Close />
           <Dialog.Title className="text-xl font-bold flex items-center">
-            <FolderOpen className="mr-2" />
+            <PiShapesDuotone className="mr-2" />
             <Trans>Templates</Trans>
           </Dialog.Title>
           <Dialog.Description asChild>
@@ -163,6 +167,8 @@ export function LoadTemplateDialog() {
                       disabled={disabled}
                       onClick={load}
                       className="mt-2"
+                      data-session-activity="Load Template: Load"
+                      data-template={templateData.key}
                     >
                       <Trans>Load</Trans>
                     </Button2>

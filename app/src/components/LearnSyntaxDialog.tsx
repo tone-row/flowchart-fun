@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
-import { TextAlignRight } from "phosphor-react";
+import { PiNotebookDuotone } from "react-icons/pi";
 import { useEffect, useRef, useState } from "react";
 import { create } from "zustand";
 
@@ -77,7 +77,10 @@ export function LearnSyntaxDialog() {
       }}
     >
       <Dialog.Trigger asChild>
-        <EditorActionTextButton icon={TextAlignRight}>
+        <EditorActionTextButton
+          icon={PiNotebookDuotone}
+          data-session-activity="Learn Syntax"
+        >
           <Trans>Learn Syntax</Trans>
         </EditorActionTextButton>
       </Dialog.Trigger>
@@ -101,7 +104,7 @@ export function LearnSyntaxDialog() {
               gap={3}
               flow="column"
             >
-              <TextAlignRight size={24} weight="bold" />
+              <PiNotebookDuotone size={24} />
               <SectionTitle isUnderline={false}>
                 <Trans>Learn Syntax</Trans>
               </SectionTitle>
