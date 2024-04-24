@@ -21,6 +21,7 @@ import {
 } from "phosphor-react";
 import { Checkout } from "../components/Checkout";
 import throttle from "lodash.throttle";
+import { Link } from "react-router-dom";
 
 const pricingRows = () => [
   { text: t`Daily Sandbox Editor`, free: true, pro: true, icon: Eraser },
@@ -48,6 +49,7 @@ const pricingRows = () => [
     free: false,
     pro: true,
     icon: LightbulbFilament,
+    link: "/blog/post/ai-flowchart-generator",
   },
   {
     text: t`Voice-to-Diagram Dictation`,
@@ -292,12 +294,28 @@ export default function Pricing2() {
               return (
                 <Fragment key={i}>
                   <Cell>
-                    <Icon
-                      size={24}
-                      weight="bold"
-                      className="mr-2 hidden sm:inline"
-                    />
-                    {row.text}
+                    {row.link ? (
+                      <Link
+                        to={row.link}
+                        className="flex items-center hover:text-purple-500"
+                      >
+                        <Icon
+                          size={24}
+                          weight="bold"
+                          className="mr-3 hidden sm:inline -mt-[2px]"
+                        />
+                        {row.text}
+                      </Link>
+                    ) : (
+                      <>
+                        <Icon
+                          size={24}
+                          weight="bold"
+                          className="mr-3 hidden sm:inline -mt-[2px]"
+                        />
+                        {row.text}
+                      </>
+                    )}
                   </Cell>
                   <Cell center available={row.free}>
                     {row.free ? (
