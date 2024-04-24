@@ -32,13 +32,11 @@ export default function Post() {
       </Helmet>
       <Page>
         <div className="grid gap-6">
-          <header className="grid gap-4">
-            <div className="grid gap-2">
-              <span className="text-blue-500 translate-x-[2px] dark:text-purple-400 tracking-wide uppercase">
-                {data.publishDate}
-              </span>
-              <PageTitle className="text-wrap-balance">{data.title}</PageTitle>
-            </div>
+          <header className="grid gap-4 text-center">
+            <span className="text-neutral-400 translate-x-[2px] dark:text-neutral-400 tracking-wide uppercase font-bold text-lg">
+              {data.publishDate}
+            </span>
+            <PageTitle className="text-wrap-balance">{data.title}</PageTitle>
             <p className="text-neutral-400 text-lg dark:text-neutral-300">
               {data.description}
             </p>
