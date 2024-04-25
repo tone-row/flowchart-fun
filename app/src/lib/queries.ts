@@ -258,50 +258,6 @@ export async function deleteChart({ chartId }: { chartId: number }) {
   return data;
 }
 
-export function createSubscription({
-  customerId,
-  paymentMethodId,
-  subscriptionType,
-}: {
-  customerId: string;
-  paymentMethodId: string;
-  subscriptionType: "monthly" | "yearly";
-}) {
-  return (
-    fetch("/api/create-subscription", {
-      method: "post",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        customerId,
-        paymentMethodId,
-        subscriptionType,
-      }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      // If the card is declined, display an error to the user.
-      .then((result) => {
-        if (result.error) {
-          // The card had an error when trying to attach it to a customer.
-          throw result;
-        }
-        return result;
-      })
-      .then((result) => {
-        return {
-          paymentMethodId: paymentMethodId,
-          subscription: result,
-        };
-      })
-      .catch((error) => {
-        return error;
-      })
-  );
-}
-
 /**
  * Rename a hosted chart and clear the related cache
  */

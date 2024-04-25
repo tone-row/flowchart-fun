@@ -1,12 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AppContext, useSession } from "./AppContextProvider";
 import { useIsProUser } from "../lib/hooks";
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 import { useMutation } from "react-query";
 import { Trans, t } from "@lingui/macro";
-import { PlanButton } from "./PlanButton";
-import { PaymentStepperTitle } from "./PaymentStepperTitle";
+// import { PlanButton } from "./PlanButton";
+// import { PaymentStepperTitle } from "./PaymentStepperTitle";
 import classNames from "classnames";
 
 export function Checkout({
@@ -21,6 +21,7 @@ export function Checkout({
   const sessionEmail = session?.user?.email;
   const { checkedSession, customerIsLoading } = useContext(AppContext);
   const isProUser = useIsProUser();
+  const [plan, setPlan] = useState<"monthly" | "yearly">("yearly");
   const createCheckoutSession = useMutation(
     async (plan: "monthly" | "yearly") => {
       const response = await fetch("/api/create-checkout-session", {
@@ -117,48 +118,93 @@ export function Checkout({
   }
 
   return (
-    <div className="relative h-full">
-      <div
-        className={classNames(
-          "grid content-center h-full rounded-xl p-8 pb-16 bg-neutral-50 border dark:to-blue-900/50 dark:from-blue-900/0",
-          {
-            "opacity-60 pointer-events-none cursor-loading":
-              createCheckoutSession.isLoading,
-            "dark:bg-neutral-900 dark:border-none": pricing2,
-          }
-        )}
-      >
-        <PaymentStepperTitle className="mb-2">
-          <Trans>Choose a Plan</Trans>
-        </PaymentStepperTitle>
-        <p className="text-center mb-4 underline underline-offset-2">
-          <Trans>Try it for free for two days. Cancel anytime.</Trans>
-        </p>
-        <div className="w-full grid gap-2 h-full content-center">
-          <PlanButton
-            onClick={() => createCheckoutSession.mutate("monthly")}
-            className="mr-2 aria-[current=true]:text-blue-500"
-            title={t`Monthly`}
-            price={t`$3 / month`}
-            data-testid="monthly-plan-button"
-          />
-          <PlanButton
-            onClick={() => createCheckoutSession.mutate("yearly")}
-            className="aria-[current=true]:text-blue-500"
-            title={t`Yearly`}
-            price={t`$30 / year`}
-            data-testid="yearly-plan-button"
-            extra={
-              <span className="!text-[14px] uppercase bg-yellow-300 py-2 px-3 text-neutral-900 rounded font-bold absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[22px] transform whitespace-nowrap transition-transform group-aria-pressed:scale-[1.1] group-aria-pressed:translate-y-[18px] group-aria-pressed:rotate-[3deg]">
-                <Trans>16% Less</Trans>
-              </span>
-            }
-          />
-        </div>
+    <div>
+      <h2 className="text-white text-4xl font-bold text-center mb-2">
+        <Trans>Choose a Plan</Trans>
+      </h2>
+      <p className="text-white text-[24px] text-center mb-8">
+        <Trans>Try it for free for two days. Cancel anytime.</Trans>
+      </p>
+      <div className="grid sm:grid-cols-2 gap-3 mb-8">
+        <PlanButton
+          onClick={() => {
+            setPlan("yearly");
+          }}
+          planTitle={t`Yearly`}
+          description={t`Billed annually at $24`}
+          data-testid="yearly-plan-button"
+          monthlyPrice="2"
+          aria-current={plan === "yearly"}
+          data-session-activity="Choose Yearly Plan"
+          save
+        />
+        <PlanButton
+          onClick={() => {
+            setPlan("monthly");
+          }}
+          planTitle={t`Monthly`}
+          description={t`Billed monthly at $6`}
+          data-testid="monthly-plan-button"
+          monthlyPrice="6"
+          aria-current={plan === "monthly"}
+          data-session-activity="Choose Monthly Plan"
+        />
       </div>
-      {createCheckoutSession.isLoading ? (
-        <Spinner className="text-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-      ) : null}
+      <div className="px-[48px]">
+        <button
+          className={classNames(
+            "w-full bg-[#FFCD1F] text-black rounded-3xl text-[20px] font-bold py-5 shadow-sm hover:bg-[#FFD63F] hover:shadow",
+            {
+              "animate-pulse": createCheckoutSession.isLoading,
+            }
+          )}
+          data-session-activity="Start Free Trial"
+          onClick={() => {
+            createCheckoutSession.mutate(plan);
+          }}
+        >
+          <Trans>Start free trial</Trans>
+        </button>
+      </div>
     </div>
+  );
+}
+
+type PlanButtonProps = {
+  planTitle: string;
+  description: string;
+  monthlyPrice: string;
+  save?: boolean;
+} & React.ComponentProps<"button">;
+
+function PlanButton({
+  planTitle,
+  description,
+  monthlyPrice,
+  save,
+  ...props
+}: PlanButtonProps) {
+  return (
+    <button
+      className="plan-button group w-full bg-white text-black rounded-3xl p-4 sm:py-5 sm:px-6 sm:h-[210px] grid content-start border-[4px] border-solid border-purple-700 relative aria-[current=true]:border-purple-700 transition-all aria-[current=false]:hover:opacity-100 opacity-80 aria-[current=true]:opacity-100"
+      {...props}
+    >
+      <span className="text-lg font-bold justify-self-start mb-2 sm:mb-6">
+        {planTitle}
+      </span>
+      <div className="flex items-baseline justify-center gap-2 mb-7">
+        <span className="text-5xl font-extrabold">${monthlyPrice}</span>
+        <span className="text-2xl font-bold -translate-y-[4px] -mr-px">/</span>
+        <span className="text-xl font-bold">
+          <Trans>month</Trans>
+        </span>
+      </div>
+      <span className="opacity-50 text-[15px]">{description}</span>
+      {save ? (
+        <span className="absolute top-0 right-0 bg-purple-700 text-white font-bold pb-[14px] pt-[8px] pl-[17px] pr-[9px] rounded-tr-2xl rounded-bl-3xl -mr-px">
+          Save 60%
+        </span>
+      ) : null}
+    </button>
   );
 }

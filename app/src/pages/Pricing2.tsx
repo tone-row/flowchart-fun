@@ -182,6 +182,7 @@ export default function Pricing2() {
       <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-white to-purple-500/50 pt-12 dark:to-purple-900/50 dark:from-[#0c0c0c] border-b-2 border-b-purple-400/70 dark:border-purple-900/40">
         <img
           src="/images/arrows-purple.svg"
+          draggable="false"
           className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-5 dark:opacity-50"
           alt=""
         />
@@ -345,11 +346,12 @@ export default function Pricing2() {
           </div>
         </div>
       </div>
-      <div className="checkout-wrapper py-12 relative overflow-hidden px-4 md:px-8">
-        <div className="max-w-xl mx-auto relative z-10">
+      <div className="checkout-wrapper py-14 relative overflow-hidden px-4 md:px-8">
+        <div className="max-w-2xl mx-auto relative z-10">
           <Checkout pricing2 />
         </div>
         <img
+          draggable="false"
           src="/images/arrows-purple.svg"
           className="absolute top-0 left-0 w-full object-cover object-center opacity-40 sm:opacity-20"
           alt=""
