@@ -436,3 +436,14 @@ body.dark .pricing-highlights {
   background-origin: padding-box, padding-box, padding-box, padding-box;
   background-clip: border-box, border-box, border-box, border-box;
 }
+
+/** Hack to prevent text from shifting when transitioning scale */
+.plan-button {
+  transform: scale(0.94) translateZ(0);
+  transition: all 290ms ease-in-out;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.plan-button[aria-current="true"] {
+  transform: scale(1) translateZ(0);
+}

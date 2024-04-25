@@ -346,7 +346,7 @@ export default function Pricing2() {
         </div>
       </div>
       <div className="checkout-wrapper py-12 relative overflow-hidden px-4 md:px-8">
-        <div className="max-w-xl mx-auto relative z-10">
+        <div className="max-w-2xl mx-auto relative z-10">
           <Checkout pricing2 />
         </div>
         <img
