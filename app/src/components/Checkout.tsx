@@ -125,17 +125,7 @@ export function Checkout({
       <p className="text-white text-[24px] text-center mb-8">
         <Trans>Try it for free for two days. Cancel anytime.</Trans>
       </p>
-      <div className="grid grid-cols-2 gap-4 mb-8">
-        <PlanButton
-          onClick={() => {
-            setPlan("monthly");
-          }}
-          planTitle={t`Monthly`}
-          description={t`Billed monthly at $6`}
-          data-testid="monthly-plan-button"
-          monthlyPrice={6}
-          aria-current={plan === "monthly"}
-        />
+      <div className="grid sm:grid-cols-2 gap-3 mb-8">
         <PlanButton
           onClick={() => {
             setPlan("yearly");
@@ -143,9 +133,21 @@ export function Checkout({
           planTitle={t`Yearly`}
           description={t`Billed annually at $24`}
           data-testid="yearly-plan-button"
-          monthlyPrice={2}
+          monthlyPrice="2"
           aria-current={plan === "yearly"}
+          data-session-activity="Choose Yearly Plan"
           save
+        />
+        <PlanButton
+          onClick={() => {
+            setPlan("monthly");
+          }}
+          planTitle={t`Monthly`}
+          description={t`Billed monthly at $6`}
+          data-testid="monthly-plan-button"
+          monthlyPrice="6"
+          aria-current={plan === "monthly"}
+          data-session-activity="Choose Monthly Plan"
         />
       </div>
       <div className="px-[48px]">
@@ -156,11 +158,12 @@ export function Checkout({
               "animate-pulse": createCheckoutSession.isLoading,
             }
           )}
+          data-session-activity="Start Free Trial"
           onClick={() => {
             createCheckoutSession.mutate(plan);
           }}
         >
-          Start free trial
+          <Trans>Start free trial</Trans>
         </button>
       </div>
     </div>
@@ -170,7 +173,7 @@ export function Checkout({
 type PlanButtonProps = {
   planTitle: string;
   description: string;
-  monthlyPrice: number;
+  monthlyPrice: string;
   save?: boolean;
 } & React.ComponentProps<"button">;
 
@@ -183,10 +186,10 @@ function PlanButton({
 }: PlanButtonProps) {
   return (
     <button
-      className="plan-button group w-full bg-white text-black rounded-3xl py-5 px-6 h-[210px] grid content-start border-[5px] border-solid border-purple-700 relative aria-[current=true]:border-purple-700 transition-all aria-[current=false]:hover:opacity-100 opacity-80 aria-[current=true]:opacity-100"
+      className="plan-button group w-full bg-white text-black rounded-3xl p-4 sm:py-5 sm:px-6 sm:h-[210px] grid content-start border-[4px] border-solid border-purple-700 relative aria-[current=true]:border-purple-700 transition-all aria-[current=false]:hover:opacity-100 opacity-80 aria-[current=true]:opacity-100"
       {...props}
     >
-      <span className="text-lg font-bold justify-self-start mb-6">
+      <span className="text-lg font-bold justify-self-start mb-2 sm:mb-6">
         {planTitle}
       </span>
       <div className="flex items-baseline justify-center gap-2 mb-7">
