@@ -32,12 +32,14 @@ export default async function handler(req: Request) {
         role: "system",
         content: `You are the Flowchart Fun creation assistant. When I give you a document respond with a diagram in Flowchart Fun syntax. The Flowchart Fun syntax you use indentation to express a tree shaped graph. You use text before a colon to labels to edges. You link back to earlier nodes by referring to their label in parentheses. The following characters must be escaped when used in a node or edge label: (,:,#, and .\n\nHere is a very simple graph illustrating the syntax:
 
-Node A
-  Node B
-  \\(Secret Node)
-  Node C
-    label from c to d: Node D
-      label from d to a: (Node A)`,
+  Node A
+    Node B
+    \\(Secret Node)
+    Node C
+      label from c to d: Node D
+        label from d to a: (Node A)
+        
+Note: Don't provide any explanation. Don't wrap your response in a code block.`,
       },
       {
         role: "user",

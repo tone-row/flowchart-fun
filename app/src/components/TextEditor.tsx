@@ -7,6 +7,8 @@ import { editorOptions } from "../lib/constants";
 import { useLightOrDarkMode } from "../lib/hooks";
 import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import Loading from "./Loading";
+import { usePromptStore } from "../lib/usePromptStore";
+import classNames from "classnames";
 
 type TextEditorProps = EditorProps & {
   extendOptions?: editor.IEditorOptions;
@@ -30,6 +32,9 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
   // Setup Hover Effect
   const hoverLineNumber = useEditorStore((s) => s.hoverLineNumber);
   useEditorHover(hoverLineNumber);
+
+  // Is converted flowchart text being written to the editor?
+  const convertIsRunning = usePromptStore((s) => s.convertIsRunning);
 
   return (
     <Editor
@@ -68,9 +73,10 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
       }}
       wrapperProps={{
         "data-testid": "Editor",
-        className:
-          "bg-white dark:bg-neutral-900 " +
-          (isDragging ? "overflow-hidden" : ""),
+        className: classNames("bg-white dark:bg-neutral-900", {
+          "overflow-hidden": isDragging,
+          "cursor-wait pointer-events-none opacity-50": convertIsRunning,
+        }),
       }}
     />
   );

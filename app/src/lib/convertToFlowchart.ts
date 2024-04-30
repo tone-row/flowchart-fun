@@ -2,6 +2,9 @@ import { useEditorStore } from "./useEditorStore";
 import { lockZoomToGraph } from "./useGraphStore";
 
 export async function convertToFlowchart(prompt: string) {
+  // store the accumulated text
+  let accumulated = "";
+
   return new Promise<void>((resolve, reject) => {
     fetch("/api/prompt/convert", {
       method: "POST",
@@ -21,13 +24,28 @@ export async function convertToFlowchart(prompt: string) {
             throw new Error("Editor not found");
           }
 
-          // Clear the editor content by setting an empty value
-          editor.getModel()?.setValue("");
+          // Call pushUndoStop before starting the streaming process to mark the beginning of the operation
+          editor.pushUndoStop();
+
+          // Get the current model
+          const model = editor.getModel();
+
+          if (model) {
+            // Clear the editor content using the executeEdits API
+            model.pushEditOperations(
+              [],
+              [
+                {
+                  range: model.getFullModelRange(),
+                  text: "",
+                },
+              ],
+              () => null
+            );
+          }
 
           // Lock the zoom to the graph
           lockZoomToGraph();
-
-          let accumulated = "";
 
           const processText = ({
             done,
@@ -55,10 +73,20 @@ export async function convertToFlowchart(prompt: string) {
                 // parse it as a string
                 const parsed = JSON.parse(data);
 
-                // Append the new chunk to the editor content
+                // Append the new chunk to the editor content using executeEdits API
                 if (model) {
                   accumulated += parsed;
-                  model.setValue(accumulated);
+
+                  model.pushEditOperations(
+                    [],
+                    [
+                      {
+                        range: model.getFullModelRange(),
+                        text: accumulated,
+                      },
+                    ],
+                    () => null
+                  );
                 }
               } catch (error) {
                 console.error("Failed to parse event:", error);
@@ -74,6 +102,9 @@ export async function convertToFlowchart(prompt: string) {
             .read()
             .then(processText)
             .finally(() => {
+              // Call pushUndoStop after the streaming process to mark the end of the operation
+              editor.pushUndoStop();
+
               resolve();
             });
         } else {
@@ -81,6 +112,9 @@ export async function convertToFlowchart(prompt: string) {
         }
       })
       .catch((error) => {
+        window.alert(
+          "Sorry, there was an error converting the text to a flowchart. Try again later."
+        );
         console.error(
           "There has been a problem with your fetch operation:",
           error

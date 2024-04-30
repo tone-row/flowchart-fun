@@ -6,6 +6,7 @@ import { getDefaultText } from "../lib/getDefaultText";
 import { useEditorStore } from "../lib/useEditorStore";
 import { ConvertToFlowchart } from "./ConvertToFlowchart";
 import { EditWithAI } from "./EditWithAI";
+import { usePromptStore } from "../lib/usePromptStore";
 
 /**
  * Watch the current state of the graph and the users actions and determine
@@ -32,14 +33,20 @@ export function AiToolbar() {
     }
   }, [userPasted]);
 
+  const convertIsRunning = usePromptStore((s) => s.convertIsRunning);
+
   // Qualities for displaying Convert to Flowchart button:
-  // Is not the default text
-  // AND
-  //   Full text is selected and is more than 150 characters
-  //   OR
-  //   Less than 15 seconds have passed since user pasted more than 150 characters
+  //  OR
+  //    Convert is currently running
+  //    AND
+  //      Is not the default text
+  //      There is more than 150 characters
+  //      OR
+  //        Full text is selected and is more than 150 characters
+  //        Less than 15 seconds have passed since user pasted more than 150 characters
   const showConvertToFlowchart =
-    !isDefaultText && enoughCharacters && (fullTextSelected || userPasted);
+    convertIsRunning ||
+    (!isDefaultText && enoughCharacters && (fullTextSelected || userPasted));
 
   return (
     <div
