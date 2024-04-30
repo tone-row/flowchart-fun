@@ -10,8 +10,6 @@ import * as Toast from "@radix-ui/react-toast";
 import { Microphone } from "./Microphone";
 import { useIsProUser } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
-import classNames from "classnames";
-import { globalZ } from "../lib/globalZ";
 
 // The Graph type we send to AI is slightly different from internal representation
 type GraphForAI = {
