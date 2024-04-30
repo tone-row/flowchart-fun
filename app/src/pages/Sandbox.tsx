@@ -28,6 +28,7 @@ import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";
 import { EditWithAI } from "../components/EditWithAI";
+import { AiToolbar } from "../components/AiToolbar";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -129,7 +130,8 @@ const Sandbox = memo(function Edit() {
               }}
             />
             <EditorError />
-            <EditWithAI />
+            {/* <EditWithAI /> */}
+            <AiToolbar />
           </WithGraph>
         </Tabs.Root>
       </FlowchartLayout>

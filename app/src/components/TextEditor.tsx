@@ -47,6 +47,24 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
 
         // double set the theme
         monaco.editor.setTheme(theme);
+
+        // Listen to when the selection changes
+        editor.onDidChangeCursorSelection((e) => {
+          const selection = editor.getSelection();
+          if (selection) {
+            // get the text selected
+            const text = editor.getModel()?.getValueInRange(selection);
+            // store it in the editor
+            useEditorStore.setState({ selection: text });
+          } else {
+            useEditorStore.setState({ selection: "" });
+          }
+        });
+
+        // Listen to when the user pastes into the document
+        editor.onDidPaste(() => {
+          useEditorStore.setState({ userPasted: true });
+        });
       }}
       wrapperProps={{
         "data-testid": "Editor",
