@@ -174,33 +174,26 @@ export function EditWithAI() {
   return (
     <>
       <Popover.Root open={isOpen} onOpenChange={setIsOpen}>
-        <div
-          className={classNames(
-            "absolute top-2 right-2 drop-shadow-lg",
-            globalZ.editWithAiButton
-          )}
-        >
-          <Popover.Trigger asChild>
-            <Button2
-              leftIcon={
-                <MagicWand
-                  className="group-hover-tilt-shaking md:-mr-1 -mr-4"
-                  size={18}
-                />
-              }
-              color="purple"
-              size="sm"
-              rounded
-              className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
-              data-session-activity="Edit with AI: Open"
-              isLoading={isLoading}
-            >
-              <span className="text-[15px] hidden md:inline">
-                <Trans>Edit with AI</Trans>
-              </span>
-            </Button2>
-          </Popover.Trigger>
-        </div>
+        <Popover.Trigger asChild>
+          <Button2
+            leftIcon={
+              <MagicWand
+                className="group-hover-tilt-shaking md:-mr-1 -mr-4"
+                size={18}
+              />
+            }
+            color="purple"
+            size="sm"
+            rounded
+            className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
+            data-session-activity="Edit with AI: Open"
+            isLoading={isLoading}
+          >
+            <span className="text-[15px] hidden md:inline">
+              <Trans>Edit with AI</Trans>
+            </span>
+          </Button2>
+        </Popover.Trigger>
         <Popover.Portal>
           <Popover.Content
             side="bottom"

@@ -144,7 +144,7 @@ const button2Colors = {
   orange:
     "bg-orange-500 text-white hover:bg-orange-600 disabled:hover:bg-orange-500 disabled:hover:text-white",
   green:
-    "bg-green-500 text-white hover:bg-green-600 disabled:hover:bg-green-500 disabled:hover:text-white",
+    "bg-green-600 text-white hover:bg-green-700 disabled:hover:bg-green-600 disabled:hover:text-white",
   purple:
     "bg-purple-500 text-white hover:bg-purple-600 disabled:hover:bg-purple-500 disabled:hover:text-white",
   zinc: "bg-zinc-500 text-white hover:bg-zinc-600 disabled:hover:bg-zinc-500 disabled:hover:text-white",

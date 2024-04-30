@@ -4,6 +4,8 @@ import { useDoc } from "../lib/useDoc";
 import { useEffect, useMemo } from "react";
 import { getDefaultText } from "../lib/getDefaultText";
 import { useEditorStore } from "../lib/useEditorStore";
+import { ConvertToFlowchart } from "./ConvertToFlowchart";
+import { EditWithAI } from "./EditWithAI";
 
 /**
  * Watch the current state of the graph and the users actions and determine
@@ -42,15 +44,11 @@ export function AiToolbar() {
   return (
     <div
       className={classNames(
-        "absolute top-2 right-2 drop-shadow-lg",
+        "drop-shadow-lg absolute top-2 right-2",
         globalZ.editWithAiButton
       )}
     >
-      {showConvertToFlowchart ? (
-        <p>Convert to Flowchart</p>
-      ) : (
-        <p>Default Edit with AI button</p>
-      )}
+      {showConvertToFlowchart ? <ConvertToFlowchart /> : <EditWithAI />}
     </div>
   );
 }

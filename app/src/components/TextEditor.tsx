@@ -49,7 +49,7 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
         monaco.editor.setTheme(theme);
 
         // Listen to when the selection changes
-        editor.onDidChangeCursorSelection((e) => {
+        editor.onDidChangeCursorSelection(() => {
           const selection = editor.getSelection();
           if (selection) {
             // get the text selected
