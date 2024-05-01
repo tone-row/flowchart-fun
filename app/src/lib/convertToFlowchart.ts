@@ -2,7 +2,6 @@ import { t } from "@lingui/macro";
 import { useEditorStore } from "./useEditorStore";
 import { lockZoomToGraph } from "./useGraphStore";
 import { setLastResult } from "./usePromptStore";
-import { parseStreamPart } from "ai";
 
 export const RATE_LIMIT_EXCEEDED = "RATE_LIMIT_EXCEEDED";
 
@@ -62,30 +61,10 @@ export async function convertToFlowchart(prompt: string, sid?: string) {
               return Promise.resolve();
             }
 
-            const decoded = decoder
-              .decode(value, { stream: true })
-              .split("\n")
-              .filter((line) => line !== ""); // splitting leaves an empty string at the end
+            // Decode the stream value
+            const text = decoder.decode(value, { stream: true });
 
-            const parts = decoded
-              .map((str) => {
-                try {
-                  return parseStreamPart(str);
-                } catch (e) {
-                  console.error(e);
-                  console.log(`Error parsing: ${str}`);
-                  return null;
-                }
-              })
-              .filter(
-                (part): part is ReturnType<typeof parseStreamPart> =>
-                  part !== null
-              );
-            for (const { value, type } of parts) {
-              if (type === "text") {
-                accumulated += value;
-              }
-            }
+            accumulated += text;
 
             if (model) {
               model.pushEditOperations(

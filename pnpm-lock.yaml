@@ -20,6 +20,9 @@ importers:
 
   api:
     dependencies:
+      '@ai-sdk/openai':
+        specifier: ^0.0.9
+        version: 0.0.9(zod@3.22.4)
       '@notionhq/client':
         specifier: ^0.4.13
         version: 0.4.13
@@ -39,7 +42,7 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       ai:
-        specifier: 3.1.0
+        specifier: ^3.1.0
         version: 3.1.0(react@18.2.0)(solid-js@1.8.17)(svelte@4.2.15)(vue@3.4.26(typescript@5.2.2))(zod@3.22.4)
       ajv:
         specifier: ^8.12.0
@@ -220,7 +223,7 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       ai:
-        specifier: 3.1.0
+        specifier: ^3.1.0
         version: 3.1.0(react@18.2.0)(solid-js@1.8.17)(svelte@4.2.15)(vue@3.4.26(typescript@5.2.2))(zod@3.22.4)
       buffer:
         specifier: ^6.0.3
@@ -634,6 +637,15 @@ packages:
 
   '@adobe/css-tools@4.0.1':
     resolution: {integrity: sha512-+u76oB43nOHrF4DDWRLWDCtci7f3QJoEBigemIdIeTi1ODqjx6Tad9NCVnPRwewWlKkVab5PlK8DCtPTyX7S8g==}
+
+  '@ai-sdk/openai@0.0.9':
+    resolution: {integrity: sha512-SSZGtX4KFDXWYmQ9JuhVumo1XOx1JAdHybYy08iwVXuCud9xdjZjjxgZkNPytQK9gRxFsYDOw1h0V/WXO7XgfQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
 
   '@ai-sdk/provider-utils@0.0.5':
     resolution: {integrity: sha512-VVy9eQS+vS2j6cqTEQ9htMHz2nW/HFAkDXLvNFPoi1pZkviknJZEzb+DZUna6Od+jBf/TVA0HZwYnyGDaeI9cQ==}
@@ -11278,6 +11290,13 @@ snapshots:
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
   '@adobe/css-tools@4.0.1': {}
+
+  '@ai-sdk/openai@0.0.9(zod@3.22.4)':
+    dependencies:
+      '@ai-sdk/provider': 0.0.3
+      '@ai-sdk/provider-utils': 0.0.5(zod@3.22.4)
+    optionalDependencies:
+      zod: 3.22.4
 
   '@ai-sdk/provider-utils@0.0.5(zod@3.22.4)':
     dependencies:
