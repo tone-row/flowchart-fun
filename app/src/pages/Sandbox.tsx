@@ -28,6 +28,7 @@ import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";
 import { AiToolbar } from "../components/AiToolbar";
+import { FloatingTip } from "../components/FloatingTip";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -116,6 +117,7 @@ const Sandbox = memo(function Edit() {
           <WithGraph>
             <Tabs.Content value="Document" className="overflow-hidden relative">
               <TextEditor value={text} onChange={onChange} />
+              <FloatingTip />
             </Tabs.Content>
             <Tabs.Content value="Theme" className="overflow-hidden">
               <ThemeTab />

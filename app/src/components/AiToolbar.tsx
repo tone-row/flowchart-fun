@@ -22,6 +22,7 @@ export function AiToolbar() {
   const fullTextSelected = selection.trim() === text.trim();
   const userPasted = useEditorStore((s) => s.userPasted);
   const enoughCharacters = text.length > 150;
+  const lastResult = usePromptStore((s) => s.lastResult);
 
   // Set the user pasted back to false after 15 seconds, and on unmount
   useEffect(() => {
@@ -41,12 +42,16 @@ export function AiToolbar() {
   //    AND
   //      Is not the default text
   //      There is more than 150 characters
+  //      Text is not equal to the last result
   //      OR
   //        Full text is selected and is more than 150 characters
   //        Less than 15 seconds have passed since user pasted more than 150 characters
   const showConvertToFlowchart =
     convertIsRunning ||
-    (!isDefaultText && enoughCharacters && (fullTextSelected || userPasted));
+    (!isDefaultText &&
+      enoughCharacters &&
+      lastResult !== text &&
+      (fullTextSelected || userPasted));
 
   return (
     <div

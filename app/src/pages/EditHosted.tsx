@@ -26,7 +26,8 @@ import { useTabsStore } from "../lib/useTabsStore";
 import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
-import { EditWithAI } from "../components/EditWithAI";
+import { FloatingTip } from "../components/FloatingTip";
+import { AiToolbar } from "../components/AiToolbar";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
@@ -99,6 +100,7 @@ export default function EditHosted() {
                 readOnly: !isProUser,
               }}
             />
+            <FloatingTip />
           </Tabs.Content>
           <Tabs.Content value="Theme" className="overflow-hidden">
             <ThemeTab />
@@ -117,7 +119,7 @@ export default function EditHosted() {
             }}
           />
           <EditorError />
-          <EditWithAI />
+          <AiToolbar />
         </WithGraph>
       </Tabs.Root>
     </FlowchartLayout>

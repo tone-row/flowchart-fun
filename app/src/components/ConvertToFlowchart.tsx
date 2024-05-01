@@ -74,7 +74,7 @@ export function ConvertToFlowchart() {
         size="sm"
         rounded
         className="!pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
-        data-session-activity="Edit with AI: Open"
+        data-session-activity="Convert To Flowchart"
         isLoading={convertIsRunning}
       >
         <span className="text-[15px] hidden md:inline">

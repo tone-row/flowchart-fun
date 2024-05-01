@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { useEditorStore } from "./useEditorStore";
 import { lockZoomToGraph } from "./useGraphStore";
+import { setLastResult } from "./usePromptStore";
 
 export const RATE_LIMIT_EXCEEDED = "RATE_LIMIT_EXCEEDED";
 
@@ -55,7 +56,10 @@ export async function convertToFlowchart(prompt: string, sid?: string) {
             done,
             value,
           }: ReadableStreamReadResult<Uint8Array>): Promise<void> => {
-            if (done) return Promise.resolve();
+            if (done) {
+              setLastResult(accumulated);
+              return Promise.resolve();
+            }
 
             const chunk = decoder.decode(value, { stream: true });
 
