@@ -8,7 +8,10 @@ import { getDefaultText } from "../lib/getDefaultText";
  */
 export function FloatingTip() {
   const text = useDoc((state) => state.text);
-  if (text !== getDefaultText()) return null;
+  const touched = useDoc((state) => state.details.touched);
+  const show =
+    touched === false || text === getDefaultText() || text.trim() === "";
+  if (!show) return null;
   return (
     <p className="absolute bottom-0 p-8 text-xs text-gray-500 dark:text-gray-400 left-0 right-0 flex items-center justify-center">
       <Lightbulb size={16} className="mr-2" />

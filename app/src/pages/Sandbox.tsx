@@ -84,7 +84,18 @@ const Sandbox = memo(function Edit() {
   useEffect(() => useDoc.subscribe(storeDoc), [storeDoc]);
 
   const onChange = useCallback<OnChange>(
-    (value) => useDoc.setState({ text: value ?? "" }, false, "Edit/text"),
+    (value) =>
+      useDoc.setState(
+        (state) => ({
+          text: value ?? "",
+          details: {
+            ...state.details,
+            touched: true,
+          },
+        }),
+        false,
+        "Edit/text"
+      ),
     []
   );
 
@@ -181,6 +192,7 @@ async function loadWorkspace() {
       id: "",
       title: "",
       isHosted: false,
+      touched: false,
     },
   });
 
