@@ -45,7 +45,7 @@ export default async function handler(req: Request) {
     redis: kv,
     limiter: isPro
       ? Ratelimit.slidingWindow(3, "1m") // Pro users: 3 requests per minute
-      : Ratelimit.fixedWindow(1, "30d"), // Unauthenticated users: 1 request per month
+      : Ratelimit.fixedWindow(5, "30d"), // Unauthenticated users: 5 requests per month
   });
 
   // Determine the key for rate limiting

@@ -219,6 +219,9 @@ importers:
       '@tone-row/strip-comments':
         specifier: ^2.0.1
         version: 2.0.1
+      ai:
+        specifier: ^3.1.0
+        version: 3.1.0(react@18.2.0)(solid-js@1.8.17)(svelte@4.2.15)(vue@3.4.26(typescript@5.2.2))(zod@3.22.4)
       buffer:
         specifier: ^6.0.3
         version: 6.0.3

@@ -2,6 +2,7 @@ import { t } from "@lingui/macro";
 import { useEditorStore } from "./useEditorStore";
 import { lockZoomToGraph } from "./useGraphStore";
 import { setLastResult } from "./usePromptStore";
+import { parseStreamPart } from "ai";
 
 export const RATE_LIMIT_EXCEEDED = "RATE_LIMIT_EXCEEDED";
 
@@ -61,44 +62,29 @@ export async function convertToFlowchart(prompt: string, sid?: string) {
               return Promise.resolve();
             }
 
-            const chunk = decoder.decode(value, { stream: true });
+            const decoded = decoder
+              .decode(value, { stream: true })
+              .split("\n")
+              .filter((line) => line !== ""); // splitting leaves an empty string at the end
 
-            // Get SSE events from the chunk
-            const events = chunk.split("\n");
-
-            const model = editor.getModel();
-
-            // Process each event
-            for (const event of events) {
-              if (!event) {
-                continue;
+            const parts = decoded.map(parseStreamPart).filter(Boolean);
+            for (const { value, type } of parts) {
+              if (type === "text") {
+                accumulated += value;
               }
+            }
 
-              // Slice of '0:' to remove the event name
-              const data = event.slice(2);
-
-              try {
-                // parse it as a string
-                const parsed = JSON.parse(data);
-
-                // Append the new chunk to the editor content using executeEdits API
-                if (model) {
-                  accumulated += parsed;
-
-                  model.pushEditOperations(
-                    [],
-                    [
-                      {
-                        range: model.getFullModelRange(),
-                        text: accumulated,
-                      },
-                    ],
-                    () => null
-                  );
-                }
-              } catch (error) {
-                console.error("Failed to parse event:", error);
-              }
+            if (model) {
+              model.pushEditOperations(
+                [],
+                [
+                  {
+                    range: model.getFullModelRange(),
+                    text: accumulated,
+                  },
+                ],
+                () => null
+              );
             }
 
             // Read some more, and call this function again
