@@ -37,10 +37,6 @@ msgstr "<0>आपके पास वर्तमान में एक मु�
 msgid "A new version of the app is available. Please reload to update."
 msgstr "एप्प का एक नया वर्जन उपलब्ध है। अपडेट करने के लिए रीलोड करें।"
 
-#: src/components/EditWithAI.tsx:29
-msgid "AI-Powered Diagramming"
-msgstr "एआई-संचालित आरेखण"
-
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "एआई-पावर्ड फ्लोचार्ट निर्माण"
@@ -255,8 +251,8 @@ msgid "Comment"
 msgstr "टिप्पणी"
 
 #: src/pages/Pricing2.tsx:197
-msgid "Complete access to all features for just $3/month!"
-msgstr "सिर्फ $3/महीने में सभी सुविधाओं का पूरा पहुंच!"
+msgid "Complete access to all features for just $6/month!"
+msgstr "सिर्फ $6/माह के लिए सभी सुविधाओं का पूरा उपयोग!"
 
 #: src/lib/graphOptions.ts:18
 msgid "Concentric"
@@ -286,6 +282,14 @@ msgstr "कंटेनर उन नोड्स हैं जो अन्य 
 #: src/components/ImportDataDialog.tsx:712
 msgid "Continue"
 msgstr "जारी रखें"
+
+#: src/components/ConvertToFlowchart.tsx:36
+msgid "Convert text to flowcharts and diagrams as easily as copy and paste. Get unlimited usage of this feature by upgrading to Flowchart Fun Pro."
+msgstr "पाठ को फ्लोचार्ट और डायग्राम में कॉपी और पेस्ट करने के तरीके से बदलें। Flowchart Fun Pro में अपग्रेड करके इस सुविधा का असीमित उपयोग प्राप्त करें।"
+
+#: src/components/ConvertToFlowchart.tsx:81
+msgid "Convert to Flowchart"
+msgstr "फ्लोचार्ट में बदलें"
 
 #: src/components/RenameButton.tsx:125
 msgid "Convert to hosted chart?"
@@ -335,8 +339,8 @@ msgid "Create a New Chart"
 msgstr "एक नया चार्ट बनाएं"
 
 #: src/pages/Pricing.tsx:92
-msgid "Create unlimited diagrams for just $3/month!"
-msgstr "केवल 3 डॉलर महीने में असीमित डायग्राम बनाएं!"
+msgid "Create unlimited diagrams for just $6/month!"
+msgstr "सिर्फ $6/माह के लिए असीमित डायग्राम बनाएं!"
 
 #: src/pages/Pricing.tsx:18
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
@@ -496,7 +500,8 @@ msgstr "स्रोत नोड पंक्ति में किन्ह�
 msgid "Edges in Target Node Row"
 msgstr "लक्ष्य नोड पंक्ति में किन्हें"
 
-#: src/components/EditWithAI.tsx:199
+#: src/components/EditWithAI.tsx:27
+#: src/components/EditWithAI.tsx:191
 msgid "Edit with AI"
 msgstr "एआई के साथ संपादित करें"
 
@@ -547,8 +552,8 @@ msgid "Exclusive Office Hours"
 msgstr "अनन्य ऑफिस घंटे"
 
 #: src/components/LoadFileButton.tsx:77
-msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
-msgstr "अपने फ्लोचार्ट में स्थानीय फ़ाइलों को डायरेक्टली लोड करने की क्षमता और सुरक्षा का अनुभव करें। फ्लोचार्ट फन प्रो के साथ इस विशेष प्रो फीचर और अधिक को अनलॉक करें, जो केवल 3/महीने या 30/वर्ष के लिए उपलब्ध है।"
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
+msgstr "व्यवसाय से संबंधित दस्तावेजों को ऑफलाइन में प्रबंधित करने के लिए स्थानीय फ़ाइलों को अपने फ्लोचार्ट में सीधे लोड करने की कुशलता और सुरक्षा का अनुभव करें। Flowchart Fun Pro के साथ इस अनूठे प्रो सुविधा और अन्य को खोलें, सिर्फ $6/माह में उपलब्ध है।"
 
 #: src/components/ShareDialog.tsx:56
 #: src/components/ShareDialog.tsx:162
@@ -578,8 +583,8 @@ msgid "Fixed Node Height"
 msgstr "निर्धारित नोड ऊंचाई"
 
 #: src/lib/paywallCopy.ts:5
-msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
-msgstr "फ्लोचार्ट फन प्रो आपको असीमित पारितकथाओं, असीमित सहयोगियों और मात्र $ 3 / महीने या $ 30 / साल के लिए असीमित स्टोरेज प्रदान करता है।"
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
+msgstr "Flowchart Fun Pro आपको सिर्फ $6/माह के लिए असीमित फ्लोचार्ट, असीमित सहयोगी और असीमित स्टोरेज देता है।"
 
 #: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
@@ -702,8 +707,8 @@ msgid "Import your diagram it into Microsoft Visio using one of these CSV files.
 msgstr "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
-msgstr "डेटा आयात एक प्रो फीचर है। आप केवल $ 3/महीने या $ 30/वर्ष के लिए फ्लोचार्ट फन प्रो में अपग्रेड कर सकते हैं।"
+msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $6/month."
+msgstr "डेटा आयात करना एक पेशकश कौशल है। आप केवल $6/महीने में फ्लोचार्ट फन प्रो पर अपग्रेड कर सकते हैं।"
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -738,8 +743,8 @@ msgstr "भाषा"
 msgid "Layout"
 msgstr "रूपरेखा"
 
-#: src/components/GraphFloatingMenu.tsx:88
-#: src/components/GraphFloatingMenu.tsx:90
+#: src/components/GraphFloatingMenu.tsx:82
+#: src/components/GraphFloatingMenu.tsx:84
 msgid "Layout Frozen"
 msgstr "लेआउट फ्रोज़न"
 
@@ -820,8 +825,8 @@ msgstr "लोड लेआउट और शैलियां"
 msgid "Local File Support"
 msgstr "स्थानीय फ़ाइल समर्थन"
 
-#: src/components/GraphFloatingMenu.tsx:73
-#: src/components/GraphFloatingMenu.tsx:75
+#: src/components/GraphFloatingMenu.tsx:72
+#: src/components/GraphFloatingMenu.tsx:74
 msgid "Lock Zoom to Graph"
 msgstr "ग्राफ पर जूम लॉक करें"
 
@@ -1050,6 +1055,10 @@ msgstr "त्वरित डिप्लॉयमेंट टेम्पल�
 msgid "Rapid Templates"
 msgstr "त्वरित टेम्पलेट्स"
 
+#: src/components/ConvertToFlowchart.tsx:42
+msgid "Rate limit exceeded. Please try again later."
+msgstr "रेट लिमिट पार हो गई है। कृपया बाद में पुनः प्रयास करें।"
+
 #: src/components/FlowchartHeader.tsx:49
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
@@ -1109,8 +1118,8 @@ msgstr "अनुरोध जादू लिंक"
 msgid "Request Password Reset"
 msgstr "पासवर्ड रीसेट का अनुरोध करें"
 
-#: src/components/GraphFloatingMenu.tsx:38
-#: src/components/GraphFloatingMenu.tsx:41
+#: src/components/GraphFloatingMenu.tsx:37
+#: src/components/GraphFloatingMenu.tsx:40
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -1200,6 +1209,11 @@ msgstr "<0>Google</0> के साथ साइन इन करें"
 msgid "Sorry! This page is only available in English."
 msgstr "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।"
 
+#: src/lib/convertToFlowchart.ts:125
+#: src/lib/convertToFlowchart.ts:125
+msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
+msgstr "क्षमा करें, टेक्स्ट को फ्लोचार्ट में रूपांतरित करने में एक त्रुटि हुई। बाद में पुनः प्रयास करें।"
+
 #: src/components/Tabs/ThemeTab.tsx:418
 #: src/components/Tabs/ThemeTab.tsx:419
 msgid "Source Arrow Shape"
@@ -1256,7 +1270,7 @@ msgstr "किसी नोड से संबंधित किसी भी 
 msgid "Style Classes"
 msgstr "शैली क्लासेज"
 
-#: src/components/EditWithAI.tsx:251
+#: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:81
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
@@ -1448,6 +1462,10 @@ msgstr "ऊपर से नीचे"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को सेकंड में प्रोफेशनल डायरेक्टरी में रूपांतरित करें"
 
+#: src/components/ConvertToFlowchart.tsx:35
+msgid "Transform text into diagrams instantly"
+msgstr "पाठ को तुरंत आरेख में बदलें"
+
 #: src/pages/Pricing2.tsx:192
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को पेशेवर डायग्राम में बदलें सेकंडों में"
@@ -1578,6 +1596,10 @@ msgstr "Github पर देखें"
 msgid "Voice-to-Diagram Dictation"
 msgstr "आवाज़ से डायग्राम बनाना"
 
+#: src/components/FloatingTip.tsx:15
+msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
+msgstr "क्या आप एक दस्तावेज़ से फ्लोचार्ट बनाना चाहते हैं? संपादक में इसे पेस्ट करें और 'फ्लोचार्ट में परिवर्तित करें' पर क्लिक करें।"
+
 #: src/pages/Pricing2.tsx:67
 msgid "Watermark-Free Diagrams"
 msgstr "वॉटरमार्क-मुक्त आरेख"
@@ -1607,9 +1629,9 @@ msgstr "चौड़ाई"
 msgid "Width and Height"
 msgstr "चौड़ाई और ऊँचाई"
 
-#: src/components/EditWithAI.tsx:30
-msgid "With Flowchart Fun's Pro version, you can tap into AI to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $3/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "फ्लोचार्ट फन के प्रो संस्करण के साथ, आप आर्थिक दृष्टिकोण से अपने फ्लोचार्ट विवरणों को तेजी से बढ़ा सकते हैं, जो गतिशील आरेखण बनाने के लिए आदर्श है। $3/माह के लिए, आसान एआई संपादन की सुविधा प्राप्त करें और अपने फ्लोचार्टिंग अनुभव को बेहतर बनाएं।"
+#: src/components/EditWithAI.tsx:28
+msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience."
+msgstr "फ्लोचार्ट फन के प्रो संस्करण के साथ, आप अपने फ्लोचार्ट विवरणों को तेजी से बढ़ाने के लिए प्राकृतिक भाषा कमांड का उपयोग कर सकते हैं, जो यात्रा पर आरेख बनाने के लिए आदर्श है। $6/महीने के लिए, सुलभ AI संपादन की सुविधा प्राप्त करें और अपने फ्लोचार्ट अनुभव को बेहतर बनाएं।"
 
 #: src/pages/Pricing.tsx:39
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
@@ -1619,7 +1641,7 @@ msgstr "प्रो संस्करण के साथ आप स्था�
 msgid "Would you like to continue?"
 msgstr "क्या आप जारी रखना चाहते हैं?"
 
-#: src/components/EditWithAI.tsx:225
+#: src/components/EditWithAI.tsx:216
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "अपना प्रॉम्प्ट यहां लिखें या माइक्रोफोन को सक्षम करने के लिए क्लिक करें, फिर रिकॉर्ड करने के लिए दबाएं और रखें।"
 
@@ -1671,13 +1693,13 @@ msgstr "आपके चार्ट केवल पढ़ने के लि�
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "आपका सदस्यता <0>{statusDisplay}</0> है।"
 
-#: src/components/GraphFloatingMenu.tsx:53
-#: src/components/GraphFloatingMenu.tsx:57
+#: src/components/GraphFloatingMenu.tsx:52
+#: src/components/GraphFloatingMenu.tsx:56
 msgid "Zoom In"
 msgstr "ज़ूम इन करें"
 
-#: src/components/GraphFloatingMenu.tsx:63
-#: src/components/GraphFloatingMenu.tsx:67
+#: src/components/GraphFloatingMenu.tsx:62
+#: src/components/GraphFloatingMenu.tsx:66
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 
