@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "1.48.5",
+  "version": "1.49.0",
   "main": "module/module.js",
   "license": "MIT",
   "scripts": {
