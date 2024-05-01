@@ -59,7 +59,7 @@
     "@svgr/webpack": "^6.3.1",
     "@tone-row/slang": "^1.2.35",
     "@tone-row/strip-comments": "^2.0.1",
-    "ai": "^3.1.0",
+    "ai": "3.1.0",
     "buffer": "^6.0.3",
     "classnames": "^2.3.2",
     "construct-style-sheets-polyfill": "^3.1.0",

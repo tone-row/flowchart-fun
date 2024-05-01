@@ -67,7 +67,20 @@ export async function convertToFlowchart(prompt: string, sid?: string) {
               .split("\n")
               .filter((line) => line !== ""); // splitting leaves an empty string at the end
 
-            const parts = decoded.map(parseStreamPart).filter(Boolean);
+            const parts = decoded
+              .map((str) => {
+                try {
+                  return parseStreamPart(str);
+                } catch (e) {
+                  console.error(e);
+                  console.log(`Error parsing: ${str}`);
+                  return null;
+                }
+              })
+              .filter(
+                (part): part is ReturnType<typeof parseStreamPart> =>
+                  part !== null
+              );
             for (const { value, type } of parts) {
               if (type === "text") {
                 accumulated += value;
