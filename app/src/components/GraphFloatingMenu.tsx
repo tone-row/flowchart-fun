@@ -3,8 +3,7 @@ import { ArrowsClockwise, MagnifyingGlass, Minus, Plus } from "phosphor-react";
 import { useCallback } from "react";
 import { FaRegSnowflake } from "react-icons/fa";
 
-import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
-import { useGraphStore } from "../lib/useGraphStore";
+import { lockZoomToGraph, useGraphStore } from "../lib/useGraphStore";
 import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
 import { resetGraph } from "../lib/useUnmountStore";
 import { IconButton2, IconToggleButton, Tooltip2 } from "../ui/Shared";
@@ -75,12 +74,7 @@ export function GraphFloatingMenu() {
           aria-label={t`Lock Zoom to Graph`}
           size="xs"
           pressed={autoFit}
-          onPressedChange={(pressed) => {
-            if (pressed && window.__cy) {
-              window.__cy.fit(undefined, DEFAULT_GRAPH_PADDING);
-            }
-            useGraphStore.setState({ autoFit: pressed });
-          }}
+          onPressedChange={lockZoomToGraph}
         >
           <MagnifyingGlass size={16} />
         </IconToggleButton>

@@ -139,7 +139,7 @@ function CanSaveButton() {
             setOpen(true);
           }}
         >
-          Save
+          <Trans>Save</Trans>
         </Button2>
       </Dialog.Trigger>
       <Dialog.Portal>

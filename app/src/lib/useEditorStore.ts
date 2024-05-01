@@ -16,11 +16,17 @@ export const useEditorStore = create<{
   isDragging: boolean;
   /** The markers currently on the model */
   markers: editor.IMarkerData[];
+  /** The current text selection */
+  selection: string;
+  /** Becomes true after the user pastes into the document */
+  userPasted: boolean;
 }>((_set) => ({
   editor: null,
   monaco: null,
   isDragging: false,
   markers: [],
+  selection: "",
+  userPasted: false,
 }));
 
 export function updateModelMarkers() {

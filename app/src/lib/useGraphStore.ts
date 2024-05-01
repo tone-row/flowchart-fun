@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 import { GraphOptionsObject } from "./constants";
+import { DEFAULT_GRAPH_PADDING } from "./graphOptions";
 
 type StoreGraph = {
   layout: GraphOptionsObject["layout"];
@@ -29,3 +30,11 @@ export const useGraphStore = create<StoreGraph>(() => ({
   elements: [],
   autoFit: true,
 }));
+
+/** Fits the screen and locks the zoom to the graph */
+export function lockZoomToGraph(pressed: boolean = true) {
+  if (pressed && window.__cy) {
+    window.__cy.fit(undefined, DEFAULT_GRAPH_PADDING);
+  }
+  useGraphStore.setState({ autoFit: pressed });
+}

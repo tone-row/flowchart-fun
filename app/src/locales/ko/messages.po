@@ -37,10 +37,6 @@ msgstr "<0>현재 당신은 무료 계정을 가지고 있습니다. <1/><2>프�
 msgid "A new version of the app is available. Please reload to update."
 msgstr "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면 다시로드하십시오."
 
-#: src/components/EditWithAI.tsx:29
-msgid "AI-Powered Diagramming"
-msgstr "AI 기반 다이어그램 작성"
-
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "인공지능 기반 플로우차트 생성"
@@ -255,8 +251,8 @@ msgid "Comment"
 msgstr "댓글 달기"
 
 #: src/pages/Pricing2.tsx:197
-msgid "Complete access to all features for just $3/month!"
-msgstr "매월 단지 $3로 모든 기능에 완전한 액세스!"
+msgid "Complete access to all features for just $6/month!"
+msgstr "매달 $6로 모든 기능에 대한 완전한 액세스!"
 
 #: src/lib/graphOptions.ts:18
 msgid "Concentric"
@@ -286,6 +282,10 @@ msgstr "컨테이너는 다른 노드를 포함하는 노드입니다. 중괄호
 #: src/components/ImportDataDialog.tsx:712
 msgid "Continue"
 msgstr "계속하기"
+
+#: src/components/ConvertToFlowchart.tsx:81
+msgid "Convert to Flowchart"
+msgstr "흐름도로 변환"
 
 #: src/components/RenameButton.tsx:125
 msgid "Convert to hosted chart?"
@@ -335,8 +335,8 @@ msgid "Create a New Chart"
 msgstr "새 차트 만들기"
 
 #: src/pages/Pricing.tsx:92
-msgid "Create unlimited diagrams for just $3/month!"
-msgstr "3달러에 무한한 다이어그램을 만들어보세요!"
+msgid "Create unlimited diagrams for just $6/month!"
+msgstr "매달 $6로 무제한 다이어그램 생성!"
 
 #: src/pages/Pricing.tsx:18
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
@@ -496,7 +496,8 @@ msgstr "출발 노드 행에 간선"
 msgid "Edges in Target Node Row"
 msgstr "도착 노드 행에 간선"
 
-#: src/components/EditWithAI.tsx:199
+#: src/components/EditWithAI.tsx:27
+#: src/components/EditWithAI.tsx:191
 msgid "Edit with AI"
 msgstr "AI로 편집하기"
 
@@ -547,8 +548,8 @@ msgid "Exclusive Office Hours"
 msgstr "독점 오피스 시간"
 
 #: src/components/LoadFileButton.tsx:77
-msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
-msgstr "로컬 파일을 흐름도에 직접 로드하여 효율과 보안을 체험하십시오. 이 고급 Pro 기능 및 Flowchart Fun Pro의 다른 기능은 매월 3 달러 또는 연간 30 달러로 사용할 수 있습니다."
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
+msgstr "로컬 파일을 직접 흐름도에 로드하여 작업 관련 문서를 오프라인으로 관리하는 효율성과 보안을 경험해보세요. Flowchart Fun Pro의 독점 기능과 더 많은 기능을 매달 $6로 이용할 수 있습니다."
 
 #: src/components/ShareDialog.tsx:56
 #: src/components/ShareDialog.tsx:162
@@ -578,8 +579,8 @@ msgid "Fixed Node Height"
 msgstr "고정된 노드 높이"
 
 #: src/lib/paywallCopy.ts:5
-msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
-msgstr "Flowchart Fun Pro은 무제한 플로차트, 무제한 협력자 및 무제한 저장 공간을 제공하며 월 3 달러 또는 연간 30 달러로 제공됩니다."
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
+msgstr "Flowchart Fun Pro는 매달 $6로 무제한 흐름도, 무제한 공동 작업자, 무제한 저장 공간을 제공합니다."
 
 #: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
@@ -702,8 +703,8 @@ msgid "Import your diagram it into Microsoft Visio using one of these CSV files.
 msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다."
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
-msgstr "데이터 가져오기는 프로 기능입니다. Flowchart Fun Pro을 월 3 달러 또는 연 30 달러로 업그레이드 할 수 있습니다."
+msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $6/month."
+msgstr "데이터를 가져오는 것은 프로 기능입니다. Flowchart Fun Pro로 업그레이드하면 매월 $6로 사용할 수 있습니다."
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -738,8 +739,8 @@ msgstr "언어"
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/components/GraphFloatingMenu.tsx:88
-#: src/components/GraphFloatingMenu.tsx:90
+#: src/components/GraphFloatingMenu.tsx:82
+#: src/components/GraphFloatingMenu.tsx:84
 msgid "Layout Frozen"
 msgstr "레이아웃 동결"
 
@@ -820,8 +821,8 @@ msgstr "레이아웃과 스타일 로드"
 msgid "Local File Support"
 msgstr "로컬 파일 지원"
 
-#: src/components/GraphFloatingMenu.tsx:73
-#: src/components/GraphFloatingMenu.tsx:75
+#: src/components/GraphFloatingMenu.tsx:72
+#: src/components/GraphFloatingMenu.tsx:74
 msgid "Lock Zoom to Graph"
 msgstr "그래프에 룩 줌을 고정하다"
 
@@ -1050,6 +1051,10 @@ msgstr "빠른 배포 템플릿"
 msgid "Rapid Templates"
 msgstr "급변화 템플릿"
 
+#: src/components/ConvertToFlowchart.tsx:42
+msgid "Rate limit exceeded. Please try again later."
+msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
+
 #: src/components/FlowchartHeader.tsx:49
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
@@ -1109,8 +1114,8 @@ msgstr "마법 링크 요청"
 msgid "Request Password Reset"
 msgstr "비밀번호 재설정 요청"
 
-#: src/components/GraphFloatingMenu.tsx:38
-#: src/components/GraphFloatingMenu.tsx:41
+#: src/components/GraphFloatingMenu.tsx:37
+#: src/components/GraphFloatingMenu.tsx:40
 msgid "Reset"
 msgstr "재설정"
 
@@ -1146,6 +1151,7 @@ msgid "Rotate Label"
 msgstr "라벨 회전"
 
 #: src/components/FlowchartHeader.tsx:117
+#: src/components/FlowchartHeader.tsx:142
 msgid "Save"
 msgstr "구하다"
 
@@ -1199,6 +1205,11 @@ msgstr "<0>Google</0>으로 로그인"
 #: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
 msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
+
+#: src/lib/convertToFlowchart.ts:125
+#: src/lib/convertToFlowchart.ts:125
+msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
+msgstr "죄송합니다, 텍스트를 플로우차트로 변환하는 중에 오류가 발생했습니다. 나중에 다시 시도해주세요."
 
 #: src/components/Tabs/ThemeTab.tsx:418
 #: src/components/Tabs/ThemeTab.tsx:419
@@ -1256,7 +1267,7 @@ msgstr "노드에 관련된 모든 데이터 저장하기"
 msgid "Style Classes"
 msgstr "스타일 클래스"
 
-#: src/components/EditWithAI.tsx:251
+#: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:81
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
@@ -1448,6 +1459,10 @@ msgstr "위에서 아래로"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 
+#: src/components/ConvertToFlowchart.tsx:35
+msgid "Transform text into diagrams instantly"
+msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
+
 #: src/pages/Pricing2.tsx:192
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "아이디어를 몇 초만에 전문적인 다이어그램으로 변환하세요."
@@ -1475,6 +1490,10 @@ msgstr "두 개의 간선이 같은 ID를 가지고 있습니다"
 #: src/lib/parserErrors.tsx:50
 msgid "Two nodes have the same ID"
 msgstr "두 개의 노드가 같은 ID를 가지고 있습니다"
+
+#: src/components/ConvertToFlowchart.tsx:36
+msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
+msgstr "이런, 무료 요청이 모두 소진되었습니다! 무제한 다이어그램 변환을 위해 Flowchart Fun Pro로 업그레이드하고 텍스트를 복사하여 쉽게 명확한 시각적 흐름도로 변환하세요."
 
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Unique text value to identify a node"
@@ -1578,6 +1597,10 @@ msgstr "Github에서 보기"
 msgid "Voice-to-Diagram Dictation"
 msgstr "음성으로 다이어그램 작성하기"
 
+#: src/components/FloatingTip.tsx:18
+msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
+msgstr "문서에서 플로우차트를 만들고 싶으세요? 편집기에 붙여넣고 '플로우차트로 변환'을 클릭하세요."
+
 #: src/pages/Pricing2.tsx:67
 msgid "Watermark-Free Diagrams"
 msgstr "워터마크 없는 다이어그램"
@@ -1607,9 +1630,9 @@ msgstr "너비"
 msgid "Width and Height"
 msgstr "너비와 높이"
 
-#: src/components/EditWithAI.tsx:30
-msgid "With Flowchart Fun's Pro version, you can tap into AI to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $3/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "Flowchart Fun의 프로 버전에서는 AI를 활용하여 빠르게 플로우차트 세부 정보를 작성할 수 있으며, 이동 중에 다이어그램을 만드는 데 이상적입니다. 월 $3에 AI 편집의 편리함을 누려보세요. "
+#: src/components/EditWithAI.tsx:28
+msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience."
+msgstr "Flowchart Fun의 프로 버전을 사용하면 자연어 명령을 사용하여 플로우차트 세부 정보를 빠르게 완성할 수 있으며, 이동 중에 다이어그램을 만드는 데 이상적입니다. 매월 $6에 액세스 가능한 AI 편집의 편리함을 누려보세요."
 
 #: src/pages/Pricing.tsx:39
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
@@ -1619,7 +1642,7 @@ msgstr "프로 버전으로는 로컬 파일을 저장하고 불러올 수 있�
 msgid "Would you like to continue?"
 msgstr "계속하시겠습니까?"
 
-#: src/components/EditWithAI.tsx:225
+#: src/components/EditWithAI.tsx:216
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "여기에 프롬프트를 작성하거나 마이크를 활성화하려면 클릭한 다음 눌러서 녹음하세요."
 
@@ -1671,13 +1694,13 @@ msgstr "계정이 더 이상 활성화되지 않아서 차트는 읽기 전용�
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "귀하의 구독 상태는 <0>{statusDisplay}</0>입니다."
 
-#: src/components/GraphFloatingMenu.tsx:53
-#: src/components/GraphFloatingMenu.tsx:57
+#: src/components/GraphFloatingMenu.tsx:52
+#: src/components/GraphFloatingMenu.tsx:56
 msgid "Zoom In"
 msgstr "확대"
 
-#: src/components/GraphFloatingMenu.tsx:63
-#: src/components/GraphFloatingMenu.tsx:67
+#: src/components/GraphFloatingMenu.tsx:62
+#: src/components/GraphFloatingMenu.tsx:66
 msgid "Zoom Out"
 msgstr "축소하기"
 

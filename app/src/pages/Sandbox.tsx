@@ -27,7 +27,8 @@ import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";
-import { EditWithAI } from "../components/EditWithAI";
+import { AiToolbar } from "../components/AiToolbar";
+import { FloatingTip } from "../components/FloatingTip";
 
 const Sandbox = memo(function Edit() {
   const isProUser = useIsProUser();
@@ -83,7 +84,18 @@ const Sandbox = memo(function Edit() {
   useEffect(() => useDoc.subscribe(storeDoc), [storeDoc]);
 
   const onChange = useCallback<OnChange>(
-    (value) => useDoc.setState({ text: value ?? "" }, false, "Edit/text"),
+    (value) =>
+      useDoc.setState(
+        (state) => ({
+          text: value ?? "",
+          details: {
+            ...state.details,
+            touched: true,
+          },
+        }),
+        false,
+        "Edit/text"
+      ),
     []
   );
 
@@ -116,6 +128,7 @@ const Sandbox = memo(function Edit() {
           <WithGraph>
             <Tabs.Content value="Document" className="overflow-hidden relative">
               <TextEditor value={text} onChange={onChange} />
+              <FloatingTip />
             </Tabs.Content>
             <Tabs.Content value="Theme" className="overflow-hidden">
               <ThemeTab />
@@ -129,7 +142,8 @@ const Sandbox = memo(function Edit() {
               }}
             />
             <EditorError />
-            <EditWithAI />
+            {/* <EditWithAI /> */}
+            <AiToolbar />
           </WithGraph>
         </Tabs.Root>
       </FlowchartLayout>
@@ -178,6 +192,7 @@ async function loadWorkspace() {
       id: "",
       title: "",
       isHosted: false,
+      touched: false,
     },
   });
 
