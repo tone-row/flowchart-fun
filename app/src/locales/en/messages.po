@@ -283,10 +283,6 @@ msgstr "Containers are nodes that contain other nodes. They are declared using c
 msgid "Continue"
 msgstr "Continue"
 
-#: src/components/ConvertToFlowchart.tsx:36
-msgid "Convert text to flowcharts and diagrams as easily as copy and paste. Get unlimited usage of this feature by upgrading to Flowchart Fun Pro."
-msgstr "Convert text to flowcharts and diagrams as easily as copy and paste. Get unlimited usage of this feature by upgrading to Flowchart Fun Pro."
-
 #: src/components/ConvertToFlowchart.tsx:81
 msgid "Convert to Flowchart"
 msgstr "Convert to Flowchart"
@@ -1155,6 +1151,7 @@ msgid "Rotate Label"
 msgstr "Rotate Label"
 
 #: src/components/FlowchartHeader.tsx:117
+#: src/components/FlowchartHeader.tsx:142
 msgid "Save"
 msgstr "Save"
 
@@ -1494,6 +1491,10 @@ msgstr "Two edges have the same ID"
 msgid "Two nodes have the same ID"
 msgstr "Two nodes have the same ID"
 
+#: src/components/ConvertToFlowchart.tsx:36
+msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
+msgstr "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
+
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Unique text value to identify a node"
 msgstr "Unique text value to identify a node"
@@ -1596,7 +1597,7 @@ msgstr "View on Github"
 msgid "Voice-to-Diagram Dictation"
 msgstr "Voice-to-Diagram Dictation"
 
-#: src/components/FloatingTip.tsx:15
+#: src/components/FloatingTip.tsx:18
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 

@@ -283,10 +283,6 @@ msgstr "कंटेनर उन नोड्स हैं जो अन्य 
 msgid "Continue"
 msgstr "जारी रखें"
 
-#: src/components/ConvertToFlowchart.tsx:36
-msgid "Convert text to flowcharts and diagrams as easily as copy and paste. Get unlimited usage of this feature by upgrading to Flowchart Fun Pro."
-msgstr "पाठ को फ्लोचार्ट और डायग्राम में कॉपी और पेस्ट करने के तरीके से बदलें। Flowchart Fun Pro में अपग्रेड करके इस सुविधा का असीमित उपयोग प्राप्त करें।"
-
 #: src/components/ConvertToFlowchart.tsx:81
 msgid "Convert to Flowchart"
 msgstr "फ्लोचार्ट में बदलें"
@@ -1155,6 +1151,7 @@ msgid "Rotate Label"
 msgstr "लेबल को घुमाएँ"
 
 #: src/components/FlowchartHeader.tsx:117
+#: src/components/FlowchartHeader.tsx:142
 msgid "Save"
 msgstr "सहेजें"
 
@@ -1494,6 +1491,10 @@ msgstr "दो किनारे उसी आईडी के हैं"
 msgid "Two nodes have the same ID"
 msgstr "दो नोड उसी आईडी के हैं"
 
+#: src/components/ConvertToFlowchart.tsx:36
+msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
+msgstr "उह ओह, आपके पास मुफ्त अनुरोधों की सीमा पूरी हो गई है! असीमित डायग्राम परिवर्तन के लिए Flowchart Fun Pro पर अपग्रेड करें, और पाठ को स्पष्ट, दृश्यमान फ्लोचार्ट में आसानी से कॉपी और पेस्ट करते रहें।"
+
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Unique text value to identify a node"
 msgstr "एक नोड को पहचानने के लिए अद्वितीय पाठ मूल्य"
@@ -1596,7 +1597,7 @@ msgstr "Github पर देखें"
 msgid "Voice-to-Diagram Dictation"
 msgstr "आवाज़ से डायग्राम बनाना"
 
-#: src/components/FloatingTip.tsx:15
+#: src/components/FloatingTip.tsx:18
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "क्या आप एक दस्तावेज़ से फ्लोचार्ट बनाना चाहते हैं? संपादक में इसे पेस्ट करें और 'फ्लोचार्ट में परिवर्तित करें' पर क्लिक करें।"
 

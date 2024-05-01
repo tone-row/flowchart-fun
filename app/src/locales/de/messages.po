@@ -283,10 +283,6 @@ msgstr "Container sind Knoten, die andere Knoten enthalten. Sie werden mit gesch
 msgid "Continue"
 msgstr "Weiter"
 
-#: src/components/ConvertToFlowchart.tsx:36
-msgid "Convert text to flowcharts and diagrams as easily as copy and paste. Get unlimited usage of this feature by upgrading to Flowchart Fun Pro."
-msgstr "Konvertieren Sie Texte so einfach wie Kopieren und Einfügen in Flussdiagramme und Diagramme. Erhalten Sie unbegrenzte Nutzung dieser Funktion durch ein Upgrade auf Flowchart Fun Pro."
-
 #: src/components/ConvertToFlowchart.tsx:81
 msgid "Convert to Flowchart"
 msgstr "In Flussdiagramm konvertieren"
@@ -1155,6 +1151,7 @@ msgid "Rotate Label"
 msgstr "Label drehen"
 
 #: src/components/FlowchartHeader.tsx:117
+#: src/components/FlowchartHeader.tsx:142
 msgid "Save"
 msgstr "Speichern"
 
@@ -1494,6 +1491,10 @@ msgstr "Zwei Kanten haben die gleiche ID"
 msgid "Two nodes have the same ID"
 msgstr "Zwei Knoten haben die gleiche ID"
 
+#: src/components/ConvertToFlowchart.tsx:36
+msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
+msgstr "Oh oh, du hast keine kostenlosen Anfragen mehr! Upgrade auf Flowchart Fun Pro für unbegrenzte Diagramm-Konvertierungen und verwandle Text weiterhin mühelos in klare, visuelle Flussdiagramme wie durch Kopieren und Einfügen."
+
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Unique text value to identify a node"
 msgstr "Einzigartiger Textwert, um einen Knoten zu identifizieren"
@@ -1596,9 +1597,9 @@ msgstr "Auf Github ansehen"
 msgid "Voice-to-Diagram Dictation"
 msgstr "Sprache-zu-Diagramm-Diktion"
 
-#: src/components/FloatingTip.tsx:15
+#: src/components/FloatingTip.tsx:18
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
-msgstr "Möchten Sie ein Flussdiagramm aus einem Dokument erstellen? Fügen Sie es in den Editor ein und klicken Sie auf "In Flussdiagramm umwandeln"."
+msgstr "Möchten Sie ein Flussdiagramm aus einem Dokument erstellen? Fügen Sie es in den Editor ein und klicken Sie auf \"In Flussdiagramm umwandeln\"."
 
 #: src/pages/Pricing2.tsx:67
 msgid "Watermark-Free Diagrams"

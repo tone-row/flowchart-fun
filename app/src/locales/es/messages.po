@@ -283,10 +283,6 @@ msgstr "Los contenedores son nodos que contienen otros nodos. Se declaran usando
 msgid "Continue"
 msgstr "Continuar"
 
-#: src/components/ConvertToFlowchart.tsx:36
-msgid "Convert text to flowcharts and diagrams as easily as copy and paste. Get unlimited usage of this feature by upgrading to Flowchart Fun Pro."
-msgstr "Convierta texto en diagramas y flujos de trabajo tan fácilmente como copiar y pegar. Obtenga uso ilimitado de esta función al actualizar a Flowchart Fun Pro."
-
 #: src/components/ConvertToFlowchart.tsx:81
 msgid "Convert to Flowchart"
 msgstr "Convertir a Diagrama de Flujo"
@@ -1155,6 +1151,7 @@ msgid "Rotate Label"
 msgstr "Rotar etiqueta"
 
 #: src/components/FlowchartHeader.tsx:117
+#: src/components/FlowchartHeader.tsx:142
 msgid "Save"
 msgstr "Guardar"
 
@@ -1494,6 +1491,10 @@ msgstr "Dos bordes tienen el mismo ID"
 msgid "Two nodes have the same ID"
 msgstr "Dos nodos tienen el mismo ID"
 
+#: src/components/ConvertToFlowchart.tsx:36
+msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
+msgstr "¡Ups, se acabaron tus solicitudes gratuitas! Actualiza a Flowchart Fun Pro para conversiones de diagramas ilimitadas, y sigue transformando texto en claros y visuales flujogramas tan fácilmente como copiar y pegar."
+
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Unique text value to identify a node"
 msgstr "Valor de texto único para identificar un nodo"
@@ -1596,9 +1597,9 @@ msgstr "Ver en Github "
 msgid "Voice-to-Diagram Dictation"
 msgstr "Dictado de Voz a Diagrama"
 
-#: src/components/FloatingTip.tsx:15
+#: src/components/FloatingTip.tsx:18
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
-msgstr "¿Quieres crear un diagrama a partir de un documento? Pégalo en el editor y haz clic en "Convertir a diagrama"."
+msgstr "¿Quieres crear un diagrama a partir de un documento? Pégalo en el editor y haz clic en \"Convertir a diagrama\"."
 
 #: src/pages/Pricing2.tsx:67
 msgid "Watermark-Free Diagrams"

@@ -33,7 +33,7 @@ export function ConvertToFlowchart() {
         // Show paywall
         showPaywall({
           title: t`Transform text into diagrams instantly`,
-          content: t`Convert text to flowcharts and diagrams as easily as copy and paste. Get unlimited usage of this feature by upgrading to Flowchart Fun Pro.`,
+          content: t`Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste.`,
           imgUrl: "/images/ai-convert.png",
           toPricingCode: "ConvertToFlowchart",
         });

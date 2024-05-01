@@ -283,10 +283,6 @@ msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 msgid "Continue"
 msgstr "继续"
 
-#: src/components/ConvertToFlowchart.tsx:36
-msgid "Convert text to flowcharts and diagrams as easily as copy and paste. Get unlimited usage of this feature by upgrading to Flowchart Fun Pro."
-msgstr "将文本转换为流程图和图表就像复制粘贴一样简单。通过升级到Flowchart Fun Pro，无限使用此功能。"
-
 #: src/components/ConvertToFlowchart.tsx:81
 msgid "Convert to Flowchart"
 msgstr "转换为流程图"
@@ -1155,6 +1151,7 @@ msgid "Rotate Label"
 msgstr "旋转标签"
 
 #: src/components/FlowchartHeader.tsx:117
+#: src/components/FlowchartHeader.tsx:142
 msgid "Save"
 msgstr "救球"
 
@@ -1494,6 +1491,10 @@ msgstr "两个边有相同的ID"
 msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
+#: src/components/ConvertToFlowchart.tsx:36
+msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
+msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
+
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Unique text value to identify a node"
 msgstr "用于标识节点的唯一文本值"
@@ -1596,7 +1597,7 @@ msgstr "在 Github 上查看"
 msgid "Voice-to-Diagram Dictation"
 msgstr "语音转图表口述"
 
-#: src/components/FloatingTip.tsx:15
+#: src/components/FloatingTip.tsx:18
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "想要从文档创建流程图吗？ 将其粘贴到编辑器中，然后单击“转换为流程图”"
 
