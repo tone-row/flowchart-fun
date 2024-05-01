@@ -61,44 +61,22 @@ export async function convertToFlowchart(prompt: string, sid?: string) {
               return Promise.resolve();
             }
 
-            const chunk = decoder.decode(value, { stream: true });
+            // Decode the stream value
+            const text = decoder.decode(value, { stream: true });
 
-            // Get SSE events from the chunk
-            const events = chunk.split("\n");
+            accumulated += text;
 
-            const model = editor.getModel();
-
-            // Process each event
-            for (const event of events) {
-              if (!event) {
-                continue;
-              }
-
-              // Slice of '0:' to remove the event name
-              const data = event.slice(2);
-
-              try {
-                // parse it as a string
-                const parsed = JSON.parse(data);
-
-                // Append the new chunk to the editor content using executeEdits API
-                if (model) {
-                  accumulated += parsed;
-
-                  model.pushEditOperations(
-                    [],
-                    [
-                      {
-                        range: model.getFullModelRange(),
-                        text: accumulated,
-                      },
-                    ],
-                    () => null
-                  );
-                }
-              } catch (error) {
-                console.error("Failed to parse event:", error);
-              }
+            if (model) {
+              model.pushEditOperations(
+                [],
+                [
+                  {
+                    range: model.getFullModelRange(),
+                    text: accumulated,
+                  },
+                ],
+                () => null
+              );
             }
 
             // Read some more, and call this function again
