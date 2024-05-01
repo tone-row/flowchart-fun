@@ -194,7 +194,7 @@ export default function Pricing2() {
             </Trans>
           </h1>
           <p className="text-lg md:text-xl text-purple-500 font-bold text-wrap-balance leading-normal md:leading-tight text-center -mt-2 mb-10 dark:text-purple-100/70 dark:font-normal">
-            <Trans>Complete access to all features for just $3/month!</Trans>
+            <Trans>Complete access to all features for just $6/month!</Trans>
           </p>
           <div
             ref={videoRef}

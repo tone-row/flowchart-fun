@@ -89,7 +89,7 @@ export default function Pricing() {
             </Trans>
           </p>
           <p className="text-base md:text-lg text-neutral-500 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
-            <Trans>Create unlimited diagrams for just $3/month!</Trans>
+            <Trans>Create unlimited diagrams for just $6/month!</Trans>
           </p>
         </div>
         <div

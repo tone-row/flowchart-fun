@@ -54,7 +54,7 @@ export function ImportDataUnauthenticatedDialog() {
                 </Trans>{" "}
                 <Trans>
                   Importing data is a pro feature. You can upgrade to Flowchart
-                  Fun Pro for just $3/month or $30/year.
+                  Fun Pro for just $6/month.
                 </Trans>
               </p>
               <Button2
