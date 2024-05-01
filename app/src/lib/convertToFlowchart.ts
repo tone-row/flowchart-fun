@@ -1,7 +1,10 @@
+import { t } from "@lingui/macro";
 import { useEditorStore } from "./useEditorStore";
 import { lockZoomToGraph } from "./useGraphStore";
 
-export async function convertToFlowchart(prompt: string) {
+export const RATE_LIMIT_EXCEEDED = "RATE_LIMIT_EXCEEDED";
+
+export async function convertToFlowchart(prompt: string, sid?: string) {
   // store the accumulated text
   let accumulated = "";
 
@@ -10,6 +13,7 @@ export async function convertToFlowchart(prompt: string) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: sid ? `Bearer ${sid}` : "",
       },
       body: JSON.stringify({ prompt }),
     })
@@ -108,18 +112,17 @@ export async function convertToFlowchart(prompt: string) {
               resolve();
             });
         } else {
-          throw new Error("Failed to fetch");
+          if (response.status === 429) {
+            reject(new Error(RATE_LIMIT_EXCEEDED));
+          }
+
+          reject(
+            new Error(
+              t`Sorry, there was an error converting the text to a flowchart. Try again later.`
+            )
+          );
         }
       })
-      .catch((error) => {
-        window.alert(
-          "Sorry, there was an error converting the text to a flowchart. Try again later."
-        );
-        console.error(
-          "There has been a problem with your fetch operation:",
-          error
-        );
-        reject(error);
-      });
+      .catch(reject);
   });
 }
