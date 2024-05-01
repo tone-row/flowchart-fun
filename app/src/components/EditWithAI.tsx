@@ -10,8 +10,6 @@ import * as Toast from "@radix-ui/react-toast";
 import { Microphone } from "./Microphone";
 import { useIsProUser } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
-import classNames from "classnames";
-import { globalZ } from "../lib/globalZ";
 
 // The Graph type we send to AI is slightly different from internal representation
 type GraphForAI = {
@@ -26,8 +24,8 @@ type GraphForAI = {
   }[];
 };
 
-const title = t`AI-Powered Diagramming`;
-const content = t`With Flowchart Fun's Pro version, you can tap into AI to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $3/month, get the ease of accessible AI editing to enhance your flowcharting experience.`;
+const title = t`Edit with AI`;
+const content = t`With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience.`;
 
 export function EditWithAI() {
   const [message, setMessage] = useState<string | null>(null);
@@ -174,33 +172,26 @@ export function EditWithAI() {
   return (
     <>
       <Popover.Root open={isOpen} onOpenChange={setIsOpen}>
-        <div
-          className={classNames(
-            "absolute top-2 right-2 drop-shadow-lg",
-            globalZ.editWithAiButton
-          )}
-        >
-          <Popover.Trigger asChild>
-            <Button2
-              leftIcon={
-                <MagicWand
-                  className="group-hover-tilt-shaking md:-mr-1 -mr-4"
-                  size={18}
-                />
-              }
-              color="purple"
-              size="sm"
-              rounded
-              className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
-              data-session-activity="Edit with AI: Open"
-              isLoading={isLoading}
-            >
-              <span className="text-[15px] hidden md:inline">
-                <Trans>Edit with AI</Trans>
-              </span>
-            </Button2>
-          </Popover.Trigger>
-        </div>
+        <Popover.Trigger asChild>
+          <Button2
+            leftIcon={
+              <MagicWand
+                className="group-hover-tilt-shaking md:-mr-1 -mr-4"
+                size={18}
+              />
+            }
+            color="purple"
+            size="sm"
+            rounded
+            className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
+            data-session-activity="Edit with AI: Open"
+            isLoading={isLoading}
+          >
+            <span className="text-[15px] hidden md:inline">
+              <Trans>Edit with AI</Trans>
+            </span>
+          </Button2>
+        </Popover.Trigger>
         <Popover.Portal>
           <Popover.Content
             side="bottom"

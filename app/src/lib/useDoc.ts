@@ -26,6 +26,8 @@ export type Details = {
   isPublic?: boolean;
   /** The public ID for the chart */
   publicId?: string;
+  /** Whether the chart has been "touched" yet */
+  touched?: boolean;
 };
 
 export type Doc = {

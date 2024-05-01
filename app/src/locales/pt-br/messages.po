@@ -37,10 +37,6 @@ msgstr "<0>Você atualmente tem uma conta gratuita. <1/><2>Saiba mais sobre noss
 msgid "A new version of the app is available. Please reload to update."
 msgstr "Uma nova versão do aplicativo está disponível. Por favor, recarregue para atualizar."
 
-#: src/components/EditWithAI.tsx:29
-msgid "AI-Powered Diagramming"
-msgstr "Diagramação com Inteligência Artificial"
-
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "Criação de fluxogramas com Inteligência Artificial"
@@ -255,8 +251,8 @@ msgid "Comment"
 msgstr "Comente"
 
 #: src/pages/Pricing2.tsx:197
-msgid "Complete access to all features for just $3/month!"
-msgstr "Acesso completo a todas as funcionalidades por apenas $3/mês!"
+msgid "Complete access to all features for just $6/month!"
+msgstr "Acesso completo a todas as funcionalidades por apenas $6/mês!"
 
 #: src/lib/graphOptions.ts:18
 msgid "Concentric"
@@ -286,6 +282,10 @@ msgstr "Os containers são nós que contêm outros nós. Eles são declarados us
 #: src/components/ImportDataDialog.tsx:712
 msgid "Continue"
 msgstr "Continuar"
+
+#: src/components/ConvertToFlowchart.tsx:81
+msgid "Convert to Flowchart"
+msgstr "Converter para Fluxograma"
 
 #: src/components/RenameButton.tsx:125
 msgid "Convert to hosted chart?"
@@ -335,8 +335,8 @@ msgid "Create a New Chart"
 msgstr "Criar um Novo Gráfico"
 
 #: src/pages/Pricing.tsx:92
-msgid "Create unlimited diagrams for just $3/month!"
-msgstr "Crie diagramas ilimitados por apenas US$ 3 por mês!"
+msgid "Create unlimited diagrams for just $6/month!"
+msgstr "Crie diagramas ilimitados por apenas $6/mês!"
 
 #: src/pages/Pricing.tsx:18
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
@@ -496,7 +496,8 @@ msgstr "Bordas na Linha do Nó de Origem"
 msgid "Edges in Target Node Row"
 msgstr "Bordas na Linha do Nó de Destino"
 
-#: src/components/EditWithAI.tsx:199
+#: src/components/EditWithAI.tsx:27
+#: src/components/EditWithAI.tsx:191
 msgid "Edit with AI"
 msgstr "Edição com IA"
 
@@ -547,8 +548,8 @@ msgid "Exclusive Office Hours"
 msgstr "Horário de atendimento exclusivo"
 
 #: src/components/LoadFileButton.tsx:77
-msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $3/month or $30/year."
-msgstr "Experimente a eficiência e segurança de carregar arquivos locais diretamente em seu fluxograma, perfeito para gerenciar documentos relacionados ao trabalho offline. Desbloqueie este recurso exclusivo Pro e mais com o Flowchart Fun Pro, disponível por apenas $3/mês ou $30/ano."
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
+msgstr "Experimente a eficiência e segurança de carregar arquivos locais diretamente em seu fluxograma, perfeito para gerenciar documentos relacionados ao trabalho offline. Desbloqueie esta exclusiva funcionalidade Pro e muito mais com o Flowchart Fun Pro, disponível por apenas $6/mês."
 
 #: src/components/ShareDialog.tsx:56
 #: src/components/ShareDialog.tsx:162
@@ -578,8 +579,8 @@ msgid "Fixed Node Height"
 msgstr "Altura do Nó Fixa"
 
 #: src/lib/paywallCopy.ts:5
-msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $3/month or $30/year."
-msgstr "O Flowchart Fun Pro oferece fluxogramas ilimitados, colaboradores ilimitados e armazenamento ilimitado por apenas US $ 3 / mês ou US $ 30 / ano."
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
+msgstr "O Flowchart Fun Pro oferece fluxogramas ilimitados, colaboradores ilimitados e armazenamento ilimitado por apenas $6/mês."
 
 #: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
@@ -702,8 +703,8 @@ msgid "Import your diagram it into Microsoft Visio using one of these CSV files.
 msgstr "Importe seu diagrama para o Microsoft Visio usando um desses arquivos CSV."
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $3/month or $30/year."
-msgstr "Importar dados é um recurso avançado. Você pode atualizar para o Flowchart Fun Pro por apenas US $ 3/mês ou US $ 30/ano."
+msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $6/month."
+msgstr "Importar dados é um recurso profissional. Você pode fazer upgrade para o Flowchart Fun Pro por apenas $6/mês."
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -738,8 +739,8 @@ msgstr "Idioma"
 msgid "Layout"
 msgstr "Layout"
 
-#: src/components/GraphFloatingMenu.tsx:88
-#: src/components/GraphFloatingMenu.tsx:90
+#: src/components/GraphFloatingMenu.tsx:82
+#: src/components/GraphFloatingMenu.tsx:84
 msgid "Layout Frozen"
 msgstr "Layout Congelado"
 
@@ -820,8 +821,8 @@ msgstr "Carregar layout e estilos"
 msgid "Local File Support"
 msgstr "Suporte de Arquivo Local"
 
-#: src/components/GraphFloatingMenu.tsx:73
-#: src/components/GraphFloatingMenu.tsx:75
+#: src/components/GraphFloatingMenu.tsx:72
+#: src/components/GraphFloatingMenu.tsx:74
 msgid "Lock Zoom to Graph"
 msgstr "Bloquear Zoom para o Gráfico"
 
@@ -1050,6 +1051,10 @@ msgstr "Modelos de implantação rápida"
 msgid "Rapid Templates"
 msgstr "Modelos Rápidos"
 
+#: src/components/ConvertToFlowchart.tsx:42
+msgid "Rate limit exceeded. Please try again later."
+msgstr "Limite de taxa excedido. Por favor, tente novamente mais tarde."
+
 #: src/components/FlowchartHeader.tsx:49
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
@@ -1109,8 +1114,8 @@ msgstr "Solicitar Link Mágico"
 msgid "Request Password Reset"
 msgstr "Solicitar Redefinição de Senha"
 
-#: src/components/GraphFloatingMenu.tsx:38
-#: src/components/GraphFloatingMenu.tsx:41
+#: src/components/GraphFloatingMenu.tsx:37
+#: src/components/GraphFloatingMenu.tsx:40
 msgid "Reset"
 msgstr "Resetar"
 
@@ -1146,6 +1151,7 @@ msgid "Rotate Label"
 msgstr "Rotular Rotação"
 
 #: src/components/FlowchartHeader.tsx:117
+#: src/components/FlowchartHeader.tsx:142
 msgid "Save"
 msgstr "Salvar"
 
@@ -1199,6 +1205,11 @@ msgstr "Entrar com <0>Google</0>"
 #: src/components/OnlyInEnglish.tsx:20
 msgid "Sorry! This page is only available in English."
 msgstr "Sinto muito! Esta página só está disponível em inglês."
+
+#: src/lib/convertToFlowchart.ts:125
+#: src/lib/convertToFlowchart.ts:125
+msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
+msgstr "Desculpe, houve um erro ao converter o texto em um fluxograma. Tente novamente mais tarde."
 
 #: src/components/Tabs/ThemeTab.tsx:418
 #: src/components/Tabs/ThemeTab.tsx:419
@@ -1256,7 +1267,7 @@ msgstr "Armazenar quaisquer dados associados a um nó"
 msgid "Style Classes"
 msgstr "Classes de Estilo"
 
-#: src/components/EditWithAI.tsx:251
+#: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:81
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
@@ -1448,6 +1459,10 @@ msgstr "De cima para baixo"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "Transforme Suas Ideias em Diagramas Profissionais em Segundos"
 
+#: src/components/ConvertToFlowchart.tsx:35
+msgid "Transform text into diagrams instantly"
+msgstr "Transforme texto em diagramas instantaneamente."
+
 #: src/pages/Pricing2.tsx:192
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "Transforme suas Ideias em Diagramas Profissionais em Segundos"
@@ -1475,6 +1490,10 @@ msgstr "Dois bordos têm o mesmo ID"
 #: src/lib/parserErrors.tsx:50
 msgid "Two nodes have the same ID"
 msgstr "Dois nós têm o mesmo ID"
+
+#: src/components/ConvertToFlowchart.tsx:36
+msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
+msgstr "Ops, você esgotou suas solicitações gratuitas! Atualize para o Flowchart Fun Pro e tenha conversões ilimitadas de diagramas, e continue transformando textos em fluxogramas claros e visuais com a mesma facilidade de copiar e colar."
 
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Unique text value to identify a node"
@@ -1578,6 +1597,10 @@ msgstr "Visualizar no Github"
 msgid "Voice-to-Diagram Dictation"
 msgstr "Ditado de Voz para Diagramas"
 
+#: src/components/FloatingTip.tsx:18
+msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
+msgstr "Quer criar um fluxograma a partir de um documento? Cole-o no editor e clique em 'Converter em Fluxograma'."
+
 #: src/pages/Pricing2.tsx:67
 msgid "Watermark-Free Diagrams"
 msgstr "Diagramas sem marca d'água"
@@ -1607,9 +1630,9 @@ msgstr "Largura"
 msgid "Width and Height"
 msgstr "Largura e Altura"
 
-#: src/components/EditWithAI.tsx:30
-msgid "With Flowchart Fun's Pro version, you can tap into AI to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $3/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "Com a versão Pro do Flowchart Fun, você pode aproveitar a IA para rapidamente preencher os detalhes do seu fluxograma, ideal para criar diagramas em movimento. Por $3/mês, tenha a facilidade da edição acessível com IA para melhorar sua experiência de diagramação."
+#: src/components/EditWithAI.tsx:28
+msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience."
+msgstr "Com a versão Pro do Flowchart Fun, você pode usar comandos de linguagem natural para rapidamente detalhar o seu fluxograma, ideal para criar diagramas em movimento. Por $6/mês, obtenha a facilidade da edição acessível de IA para aprimorar sua experiência de fluxograma."
 
 #: src/pages/Pricing.tsx:39
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
@@ -1619,7 +1642,7 @@ msgstr "Com a versão pro, você pode salvar e carregar arquivos locais. É perf
 msgid "Would you like to continue?"
 msgstr "Você gostaria de continuar?"
 
-#: src/components/EditWithAI.tsx:225
+#: src/components/EditWithAI.tsx:216
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Escreva sua instrução aqui ou clique para ativar o microfone, depois pressione e segure para gravar."
 
@@ -1671,13 +1694,13 @@ msgstr "Seus gráficos são somente leitura porque sua conta não está mais ati
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "Sua assinatura está <0>{statusDisplay}</0>."
 
-#: src/components/GraphFloatingMenu.tsx:53
-#: src/components/GraphFloatingMenu.tsx:57
+#: src/components/GraphFloatingMenu.tsx:52
+#: src/components/GraphFloatingMenu.tsx:56
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: src/components/GraphFloatingMenu.tsx:63
-#: src/components/GraphFloatingMenu.tsx:67
+#: src/components/GraphFloatingMenu.tsx:62
+#: src/components/GraphFloatingMenu.tsx:66
 msgid "Zoom Out"
 msgstr "Diminuir o zoom"
 
