@@ -99,13 +99,20 @@ export function Checkout({
           )}
         >
           <Trans>
-            You're already a Pro User!
+            You're already a Pro User.{" "}
+            <Link
+              to="/a"
+              className={classNames("hover:text-blue-500 font-bold underline", {
+                "hover:text-white": pricing2,
+              })}
+            >
+              <Trans>Manage Subscription</Trans>
+            </Link>
             <br />
-            Have questions or feature requests?
-            <br />
+            Have questions or feature requests?{" "}
             <Link
               to="/o"
-              className={classNames("hover:text-blue-500", {
+              className={classNames("hover:text-blue-500 font-bold underline", {
                 "hover:text-white": pricing2,
               })}
             >
