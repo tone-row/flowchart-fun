@@ -29,7 +29,7 @@ msgstr "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
 msgid "<0>Sign In</0> / <1>Sign Up</1> with email and password"
 msgstr "<0>Sign In</0> / <1>Sign Up</1> with email and password"
 
-#: src/pages/Account.tsx:557
+#: src/pages/Account.tsx:565
 msgid "<0>You currently have a free account.<1/><2>Learn about our Pro Features and subscribe on our pricing page</2>.</0>"
 msgstr "<0>You currently have a free account.<1/><2>Learn about our Pro Features and subscribe on our pricing page</2>.</0>"
 
@@ -45,11 +45,15 @@ msgstr "AI-Powered Flowchart Creation"
 msgid "About"
 msgstr "About"
 
-#: src/components/Header.tsx:173
-#: src/components/Header.tsx:412
-#: src/pages/Account.tsx:116
+#: src/components/Header.tsx:178
+#: src/components/Header.tsx:426
+#: src/pages/Account.tsx:120
 msgid "Account"
 msgstr "Account"
+
+#: src/lib/parserErrors.tsx:47
+msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
+msgstr "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 
 #: src/components/Tabs/ThemeTab.tsx:544
 msgid "Advanced"
@@ -59,7 +63,7 @@ msgstr "Advanced"
 msgid "Advanced Export Options (PNG, JPG, SVG)"
 msgstr "Advanced Export Options (PNG, JPG, SVG)"
 
-#: src/pages/Account.tsx:274
+#: src/pages/Account.tsx:278
 msgid "Amount"
 msgstr "Amount"
 
@@ -115,21 +119,21 @@ msgstr "Become a Pro User"
 msgid "Begin Typing"
 msgstr "Begin Typing"
 
-#: src/components/Checkout.tsx:134
+#: src/components/Checkout.tsx:141
 msgid "Billed annually at $24"
 msgstr "Billed annually at $24"
 
-#: src/components/Checkout.tsx:146
+#: src/components/Checkout.tsx:153
 msgid "Billed monthly at $6"
 msgstr "Billed monthly at $6"
 
-#: src/components/Header.tsx:133
-#: src/components/Header.tsx:370
+#: src/components/Header.tsx:138
+#: src/components/Header.tsx:384
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "Blog"
 
-#: src/pages/Account.tsx:144
+#: src/pages/Account.tsx:148
 msgid "Book a Meeting"
 msgstr "Book a Meeting"
 
@@ -155,14 +159,14 @@ msgstr "Breadthfirst"
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/RenameButton.tsx:157
-#: src/pages/Account.tsx:297
-#: src/pages/Account.tsx:310
-#: src/pages/Account.tsx:405
-#: src/pages/Account.tsx:455
+#: src/pages/Account.tsx:323
+#: src/pages/Account.tsx:335
+#: src/pages/Account.tsx:426
+#: src/pages/Account.tsx:476
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/pages/Account.tsx:300
+#: src/pages/Account.tsx:326
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Cancel your subscription. Your hosted charts will become read-only."
 
@@ -170,18 +174,18 @@ msgstr "Cancel your subscription. Your hosted charts will become read-only."
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Certain attributes can be used to customize the appearance or functionality of elements."
 
-#: src/pages/Account.tsx:228
+#: src/pages/Account.tsx:232
 msgid "Change Email Address"
 msgstr "Change Email Address"
 
-#: src/components/Header.tsx:142
-#: src/components/Header.tsx:376
+#: src/components/Header.tsx:147
+#: src/components/Header.tsx:390
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "Changelog"
 
-#: src/components/Header.tsx:101
-#: src/components/Header.tsx:348
+#: src/components/Header.tsx:106
+#: src/components/Header.tsx:362
 msgid "Charts"
 msgstr "Charts"
 
@@ -201,7 +205,7 @@ msgstr "Choose"
 msgid "Choose Template"
 msgstr "Choose Template"
 
-#: src/components/Checkout.tsx:123
+#: src/components/Checkout.tsx:130
 msgid "Choose a Plan"
 msgstr "Choose a Plan"
 
@@ -258,7 +262,7 @@ msgstr "Complete access to all features for just $6/month!"
 msgid "Concentric"
 msgstr "Concentric"
 
-#: src/pages/Account.tsx:220
+#: src/pages/Account.tsx:224
 msgid "Confirm New Email"
 msgstr "Confirm New Email"
 
@@ -301,11 +305,11 @@ msgstr "Cookie Policy"
 msgid "Copy"
 msgstr "Copy"
 
-#: src/components/GraphContextMenu.tsx:188
+#: src/components/GraphContextMenu.tsx:192
 msgid "Copy PNG Image"
 msgstr "Copy PNG Image"
 
-#: src/components/GraphContextMenu.tsx:149
+#: src/components/GraphContextMenu.tsx:153
 msgid "Copy SVG Code"
 msgstr "Copy SVG Code"
 
@@ -364,7 +368,7 @@ msgstr "Custom CSS"
 msgid "Custom Sharing Options"
 msgstr "Custom Sharing Options"
 
-#: src/pages/Account.tsx:238
+#: src/pages/Account.tsx:242
 msgid "Customer Portal"
 msgstr "Customer Portal"
 
@@ -385,7 +389,7 @@ msgstr "Dark Mode"
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "Data Import (Visio, Lucidchart, CSV)"
 
-#: src/pages/Account.tsx:271
+#: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "Date"
 
@@ -408,15 +412,15 @@ msgstr "Document"
 msgid "Download"
 msgstr "Download"
 
-#: src/components/GraphContextMenu.tsx:96
+#: src/components/GraphContextMenu.tsx:100
 msgid "Download JPG"
 msgstr "Download JPG"
 
-#: src/components/GraphContextMenu.tsx:73
+#: src/components/GraphContextMenu.tsx:77
 msgid "Download PNG"
 msgstr "Download PNG"
 
-#: src/components/GraphContextMenu.tsx:116
+#: src/components/GraphContextMenu.tsx:120
 msgid "Download SVG"
 msgstr "Download SVG"
 
@@ -505,8 +509,8 @@ msgstr "Edit with AI"
 msgid "Editable"
 msgstr "Editable"
 
-#: src/components/Header.tsx:84
-#: src/components/Header.tsx:336
+#: src/components/Header.tsx:89
+#: src/components/Header.tsx:350
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "Editor"
@@ -565,8 +569,8 @@ msgid "Export to PNG, JPG, and SVG"
 msgstr "Export to PNG, JPG, and SVG"
 
 #: src/components/Feedback.tsx:44
-#: src/components/Header.tsx:109
-#: src/components/Header.tsx:362
+#: src/components/Header.tsx:114
+#: src/components/Header.tsx:376
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -618,7 +622,7 @@ msgstr "Go back home"
 msgid "Go to the Editor"
 msgstr "Go to the Editor"
 
-#: src/pages/Charts.tsx:294
+#: src/pages/Charts.tsx:285
 msgid "Go to your Sandbox"
 msgstr "Go to your Sandbox"
 
@@ -631,7 +635,7 @@ msgstr "Graph"
 msgid "Grid"
 msgstr "Grid"
 
-#: src/pages/Account.tsx:133
+#: src/pages/Account.tsx:137
 msgid "Have complex questions or issues? We're here to help."
 msgstr "Have complex questions or issues? We're here to help."
 
@@ -639,7 +643,7 @@ msgstr "Have complex questions or issues? We're here to help."
 msgid "Here are some Pro features you can now enjoy."
 msgstr "Here are some Pro features you can now enjoy."
 
-#: src/pages/Account.tsx:261
+#: src/pages/Account.tsx:265
 msgid "History"
 msgstr "History"
 
@@ -710,7 +714,7 @@ msgstr "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro fo
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 
-#: src/components/Header.tsx:122
+#: src/components/Header.tsx:127
 msgid "Info"
 msgstr "Info"
 
@@ -771,6 +775,10 @@ msgstr "Learn about Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "Left to Right"
 
+#: src/pages/Account.tsx:406
+msgid "Let us know why you're canceling. We're always looking to improve."
+msgstr "Let us know why you're canceling. We're always looking to improve."
+
 #: src/lib/graphOptions.ts:46
 msgid "Light"
 msgstr "Light"
@@ -826,12 +834,12 @@ msgstr "Local File Support"
 msgid "Lock Zoom to Graph"
 msgstr "Lock Zoom to Graph"
 
-#: src/components/Header.tsx:181
-#: src/components/Header.tsx:420
+#: src/components/Header.tsx:194
+#: src/components/Header.tsx:434
 msgid "Log In"
 msgstr "Log In"
 
-#: src/pages/Account.tsx:124
+#: src/pages/Account.tsx:128
 msgid "Log Out"
 msgstr "Log Out"
 
@@ -851,7 +859,7 @@ msgstr "Make a One-Time Donation"
 msgid "Make publicly accessible"
 msgstr "Make publicly accessible"
 
-#: src/pages/Account.tsx:538
+#: src/pages/Account.tsx:559
 msgid "Manage Billing"
 msgstr "Manage Billing"
 
@@ -859,13 +867,17 @@ msgstr "Manage Billing"
 msgid "Map Data"
 msgstr "Map Data"
 
-#: src/components/Checkout.tsx:145
+#: src/components/Checkout.tsx:152
 msgid "Monthly"
 msgstr "Monthly"
 
 #: src/lib/parserErrors.tsx:29
 msgid "Multiple pointers on same line"
 msgstr "Multiple pointers on same line"
+
+#: src/pages/Account.tsx:411
+msgid "My dog ate my credit card!"
+msgstr "My dog ate my credit card!"
 
 #: src/pages/New.tsx:155
 #: src/pages/New.tsx:163
@@ -876,18 +888,18 @@ msgstr "Name Chart"
 msgid "Name your chart"
 msgstr "Name your chart"
 
-#: src/components/Header.tsx:92
-#: src/components/Header.tsx:342
+#: src/components/Header.tsx:97
+#: src/components/Header.tsx:356
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "New"
 
-#: src/pages/Account.tsx:213
+#: src/pages/Account.tsx:217
 msgid "New Email"
 msgstr "New Email"
 
-#: src/pages/Account.tsx:167
-#: src/pages/Account.tsx:451
+#: src/pages/Account.tsx:171
+#: src/pages/Account.tsx:472
 msgid "Next charge"
 msgstr "Next charge"
 
@@ -933,10 +945,6 @@ msgstr "Node Shape"
 msgid "Node Shapes"
 msgstr "Node Shapes"
 
-#: src/lib/parserErrors.tsx:45
-msgid "Node and pointer on same line"
-msgstr "Node and pointer on same line"
-
 #: src/components/Tabs/ThemeTab.tsx:190
 msgid "Nodes"
 msgstr "Nodes"
@@ -965,17 +973,13 @@ msgstr "Once in a while the magic link will end up in your spam folder. If you d
 msgid "One on One Support"
 msgstr "One on One Support"
 
-#: src/pages/Account.tsx:130
+#: src/pages/Account.tsx:134
 msgid "One-on-One Support"
 msgstr "One-on-One Support"
 
-#: src/pages/Account.tsx:252
+#: src/pages/Account.tsx:256
 msgid "Open Customer Portal"
 msgstr "Open Customer Portal"
-
-#: src/pages/Account.tsx:542
-msgid "Or, you can <0>create a new subscription</0>."
-msgstr "Or, you can <0>create a new subscription</0>."
 
 #: src/components/ShareDialog.tsx:551
 #: src/lib/templates/templates.ts:40
@@ -995,7 +999,7 @@ msgstr "Page not found"
 msgid "Password"
 msgstr "Password"
 
-#: src/lib/hooks.ts:72
+#: src/lib/hooks.ts:84
 msgid "Past Due"
 msgstr "Past Due"
 
@@ -1015,8 +1019,8 @@ msgstr "Pointer and container on same line"
 msgid "Priority One-on-One Support"
 msgstr "Priority One-on-One Support"
 
-#: src/components/Header.tsx:158
-#: src/components/Header.tsx:426
+#: src/components/Header.tsx:163
+#: src/components/Header.tsx:440
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
@@ -1028,10 +1032,6 @@ msgstr "Process Diagram"
 #: src/components/ImportDataDialog.tsx:265
 msgid "Processing Data"
 msgstr "Processing Data"
-
-#: src/pages/Account.tsx:390
-msgid "Product is too expensive..."
-msgstr "Product is too expensive..."
 
 #: src/components/ShareDialog.tsx:479
 #: src/components/ShareDialog.tsx:503
@@ -1123,14 +1123,14 @@ msgstr "Reset"
 msgid "Reset Password"
 msgstr "Reset Password"
 
-#: src/pages/Account.tsx:195
-#: src/pages/Account.tsx:441
-#: src/pages/Account.tsx:449
-#: src/pages/Account.tsx:463
+#: src/pages/Account.tsx:199
+#: src/pages/Account.tsx:462
+#: src/pages/Account.tsx:470
+#: src/pages/Account.tsx:484
 msgid "Resume Subscription"
 msgstr "Resume Subscription"
 
-#: src/pages/Account.tsx:397
+#: src/pages/Account.tsx:418
 msgid "Return"
 msgstr "Return"
 
@@ -1139,8 +1139,8 @@ msgstr "Return"
 msgid "Right to Left"
 msgstr "Right to Left"
 
-#: src/components/Header.tsx:150
-#: src/components/Header.tsx:382
+#: src/components/Header.tsx:155
+#: src/components/Header.tsx:396
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "Roadmap"
@@ -1179,8 +1179,8 @@ msgstr "Set Content"
 msgid "Set Fixed Node Height"
 msgstr "Set Fixed Node Height"
 
-#: src/components/Header.tsx:166
-#: src/components/Header.tsx:387
+#: src/components/Header.tsx:171
+#: src/components/Header.tsx:401
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "Settings"
@@ -1206,8 +1206,8 @@ msgstr "Sign in with <0>Google</0>"
 msgid "Sorry! This page is only available in English."
 msgstr "Sorry! This page is only available in English."
 
-#: src/lib/convertToFlowchart.ts:125
-#: src/lib/convertToFlowchart.ts:125
+#: src/lib/convertToFlowchart.ts:103
+#: src/lib/convertToFlowchart.ts:103
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Sorry, there was an error converting the text to a flowchart. Try again later."
 
@@ -1243,7 +1243,7 @@ msgstr "Spacing"
 msgid "Special Attributes"
 msgstr "Special Attributes"
 
-#: src/pages/Account.tsx:179
+#: src/pages/Account.tsx:183
 msgid "Start"
 msgstr "Start"
 
@@ -1251,11 +1251,11 @@ msgstr "Start"
 msgid "Start Over"
 msgstr "Start Over"
 
-#: src/components/Checkout.tsx:166
+#: src/components/Checkout.tsx:173
 msgid "Start free trial"
 msgstr "Start free trial"
 
-#: src/pages/Account.tsx:158
+#: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "Status"
 
@@ -1277,7 +1277,7 @@ msgstr "Submit"
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "Subscribe to Pro and flowchart the fun way!"
 
-#: src/pages/Account.tsx:153
+#: src/pages/Account.tsx:157
 msgid "Subscription"
 msgstr "Subscription"
 
@@ -1285,7 +1285,7 @@ msgstr "Subscription"
 msgid "Subscription Successful!"
 msgstr "Subscription Successful!"
 
-#: src/pages/Account.tsx:190
+#: src/pages/Account.tsx:194
 msgid "Subscription will end"
 msgstr "Subscription will end"
 
@@ -1422,21 +1422,17 @@ msgstr "This will replace your current sandbox."
 msgid "Tip"
 msgstr "Tip"
 
-#: src/lib/parserErrors.tsx:56
+#: src/lib/parserErrors.tsx:61
 msgid "To fix this change one of the edge IDs"
 msgstr "To fix this change one of the edge IDs"
 
-#: src/lib/parserErrors.tsx:51
+#: src/lib/parserErrors.tsx:56
 msgid "To fix this change one of the node IDs"
 msgstr "To fix this change one of the node IDs"
 
 #: src/lib/parserErrors.tsx:30
 msgid "To fix this move one pointer to the next line"
 msgstr "To fix this move one pointer to the next line"
-
-#: src/lib/parserErrors.tsx:46
-msgid "To fix this move the pointer to the next line"
-msgstr "To fix this move the pointer to the next line"
 
 #: src/lib/parserErrors.tsx:36
 msgid "To fix this start the container <0/> on a different line"
@@ -1471,7 +1467,7 @@ msgstr "Transform your Ideas into Professional Diagrams in Seconds"
 msgid "Trusted by over 100,000 users across businesses and universities"
 msgstr "Trusted by over 100,000 users across businesses and universities"
 
-#: src/components/Header.tsx:197
+#: src/components/Header.tsx:210
 msgid "Try Pro for Free"
 msgstr "Try Pro for Free"
 
@@ -1479,15 +1475,15 @@ msgstr "Try Pro for Free"
 msgid "Try again"
 msgstr "Try again"
 
-#: src/components/Checkout.tsx:126
+#: src/components/Checkout.tsx:133
 msgid "Try it for free for two days. Cancel anytime."
 msgstr "Try it for free for two days. Cancel anytime."
 
-#: src/lib/parserErrors.tsx:55
+#: src/lib/parserErrors.tsx:60
 msgid "Two edges have the same ID"
 msgstr "Two edges have the same ID"
 
-#: src/lib/parserErrors.tsx:50
+#: src/lib/parserErrors.tsx:55
 msgid "Two nodes have the same ID"
 msgstr "Two nodes have the same ID"
 
@@ -1495,15 +1491,19 @@ msgstr "Two nodes have the same ID"
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 
+#: src/lib/parserErrors.tsx:45
+msgid "Unescaped special character"
+msgstr "Unescaped special character"
+
 #: src/components/LearnSyntaxDialog.tsx:138
 msgid "Unique text value to identify a node"
 msgstr "Unique text value to identify a node"
 
-#: src/lib/hooks.ts:76
+#: src/lib/hooks.ts:88
 msgid "Unknown"
 msgstr "Unknown"
 
-#: src/lib/parserErrors.tsx:60
+#: src/lib/parserErrors.tsx:65
 msgid "Unknown Parsing Error"
 msgstr "Unknown Parsing Error"
 
@@ -1512,15 +1512,15 @@ msgstr "Unknown Parsing Error"
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Unlimited Permanent Flowcharts"
 
-#: src/lib/hooks.ts:74
+#: src/lib/hooks.ts:86
 msgid "Unpaid"
 msgstr "Unpaid"
 
-#: src/pages/Account.tsx:206
+#: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "Update Email"
 
-#: src/components/Header.tsx:395
+#: src/components/Header.tsx:409
 msgid "Upgrade to Pro"
 msgstr "Upgrade to Pro"
 
@@ -1569,7 +1569,7 @@ msgstr "Use the attribute <0>src</0> to set the image of a node. The image will 
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 
-#: src/pages/Account.tsx:241
+#: src/pages/Account.tsx:245
 msgid "Use the customer portal to change your billing information."
 msgstr "Use the customer portal to change your billing information."
 
@@ -1585,7 +1585,7 @@ msgstr "Use this file for org charts, hierarchies, and other organizational stru
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Use this file for sequences, processes, and workflows."
 
-#: src/pages/Account.tsx:120
+#: src/pages/Account.tsx:124
 msgid "User"
 msgstr "User"
 
@@ -1609,15 +1609,11 @@ msgstr "Watermark-Free Diagrams"
 msgid "Watermarks"
 msgstr "Watermarks"
 
-#: src/pages/Account.tsx:383
-msgid "We're sorry to hear that you're considering canceling your subscription. Please let us know why you're canceling so we can improve our service. Thank you!"
-msgstr "We're sorry to hear that you're considering canceling your subscription. Please let us know why you're canceling so we can improve our service. Thank you!"
-
 #: src/pages/Pricing2.tsx:287
 msgid "What's Included"
 msgstr "What's Included"
 
-#: src/pages/Charts.tsx:299
+#: src/pages/Charts.tsx:290
 msgid "What's this?"
 msgstr "What's this?"
 
@@ -1646,7 +1642,7 @@ msgstr "Would you like to continue?"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Write your prompt here or click to enable the microphone, then press and hold to record."
 
-#: src/components/Checkout.tsx:133
+#: src/components/Checkout.tsx:140
 msgid "Yearly"
 msgstr "Yearly"
 
@@ -1671,14 +1667,14 @@ msgid "You need to log in to access this page."
 msgstr "You need to log in to access this page."
 
 #: src/components/Checkout.tsx:101
-msgid "You're already a Pro User!<0/>Have questions or feature requests?<1/><2>Let Us Know</2>"
-msgstr "You're already a Pro User!<0/>Have questions or feature requests?<1/><2>Let Us Know</2>"
+msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
+msgstr "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "Your Charts"
 
-#: src/pages/Charts.tsx:304
+#: src/pages/Charts.tsx:295
 msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."
 msgstr "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."
 
@@ -1687,10 +1683,10 @@ msgid "Your Work is Important"
 msgstr "Your Work is Important"
 
 #: src/pages/Charts.tsx:264
-msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more. You can <1>upgrade to pro</1> to regain editing access to your charts"
-msgstr "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more. You can <1>upgrade to pro</1> to regain editing access to your charts"
+msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
+msgstr "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
 
-#: src/pages/Account.tsx:524
+#: src/pages/Account.tsx:545
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "Your subscription is <0>{statusDisplay}</0>."
 
@@ -1704,7 +1700,7 @@ msgstr "Zoom In"
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
-#: src/components/Checkout.tsx:199
+#: src/components/Checkout.tsx:206
 msgid "month"
 msgstr "month"
 
