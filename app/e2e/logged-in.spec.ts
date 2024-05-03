@@ -13,6 +13,9 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByRole("link", { name: "Account" })).toBeVisible();
 });
 
+// skip if not chrome
+test.skip(({ browserName }) => browserName !== "chromium", "Chrome Only");
+
 /* Everything the user can do when logged in, but not pro */
 test("can do things when logged in", async ({ page }) => {
   await page.getByRole("link", { name: "New" }).click();
