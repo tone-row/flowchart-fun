@@ -71,7 +71,7 @@ export function useHasProAccess() {
  * Use this to determine if they were a pro user.
  * Specifically, if their subscription is canceled, past due, or unpaid.
  */
-export function useCanSalvageSubscription() {
+export function useAccountNeedsAttention() {
   const { customer } = useContext(AppContext);
   const status = customer?.subscription?.status;
   return status && ["past_due", "unpaid"].includes(status);

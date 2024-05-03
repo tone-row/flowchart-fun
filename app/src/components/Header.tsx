@@ -32,7 +32,11 @@ import {
 import { Link, LinkProps, useLocation } from "react-router-dom";
 
 import { DISCORD_URL } from "../lib/constants";
-import { useIsLoggedIn, useIsProUser } from "../lib/hooks";
+import {
+  useAccountNeedsAttention,
+  useIsLoggedIn,
+  useIsProUser,
+} from "../lib/hooks";
 import { track } from "../lib/track";
 import { useLastChart } from "../lib/useLastChart";
 import { ReactComponent as BrandSvg } from "./brand.svg";
@@ -67,6 +71,7 @@ export const Header = memo(function SharedHeader() {
   const isLoggedIn = useIsLoggedIn();
   const isProUser = useIsProUser();
   const lastChart = useLastChart((state) => state.lastChart);
+  const accountNeedsAttention = useAccountNeedsAttention();
   return (
     <>
       <NavigationMenu.Root asChild>
@@ -173,8 +178,16 @@ export const Header = memo(function SharedHeader() {
                   label={t`Account`}
                   icon={<User height={16} width={16} weight="fill" />}
                   aria-current={isAccountPage ? "page" : undefined}
+                  className="relative"
                   to="/a"
-                />
+                >
+                  {accountNeedsAttention && (
+                    <span className="flex h-3 w-3 absolute top-2 left-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
+                    </span>
+                  )}
+                </HeaderClientLink>
               ) : (
                 <HeaderClientLink
                   to="/l"
@@ -249,11 +262,12 @@ type HeaderClientLink = {
 } & LinkProps;
 
 const HeaderClientLink = forwardRef<HTMLAnchorElement, HeaderClientLink>(
-  ({ label: children, icon, className = "", ...props }, ref) => {
+  ({ label, children, icon, className = "", ...props }, ref) => {
     return (
       <Link className={`${btnClasses} ${className}`} {...props} ref={ref}>
         {icon && <span className="shared-header-btn__icon">{icon}</span>}
-        <span>{children}</span>
+        <span>{label}</span>
+        {children}
       </Link>
     );
   }

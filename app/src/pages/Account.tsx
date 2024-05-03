@@ -26,7 +26,7 @@ import styles from "./Account.module.css";
 import {
   useIsProUser,
   useSubscriptionStatusDisplay,
-  useCanSalvageSubscription,
+  useAccountNeedsAttention,
   useHasProAccess,
 } from "../lib/hooks";
 import type { default as Stripe } from "stripe";
@@ -506,7 +506,7 @@ function InfoCell({
  * from our blog post. To learn more about Pro Features on our pricing page.
  */
 function SubscriptionOptions() {
-  const canSalvageSubscription = useCanSalvageSubscription();
+  const accountNeedsAttention = useAccountNeedsAttention();
   const statusDisplay = useSubscriptionStatusDisplay();
   const returnUrl = useMemo(() => window.location.href, []);
   const customerId = useContext(AppContext).customer?.customerId;
@@ -537,9 +537,9 @@ function SubscriptionOptions() {
     <Section>
       <SectionTitle>Subscription</SectionTitle>
       <div className="grid gap-4">
-        {canSalvageSubscription ? (
+        {accountNeedsAttention ? (
           <div className="grid gap-4 justify-start justify-items-start">
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 p-4 rounded-lg bg-red-100 text-red-800 font-bold tracking-wide">
               <Warning className="w-5 h-5" />
               <span>
                 <Trans>
