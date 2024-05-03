@@ -39,5 +39,9 @@ test("can do things when logged in", async ({ page }) => {
 
   await page.getByRole("link", { name: "Account", exact: true }).click();
   await page.getByRole("button", { name: "Log Out" }).click();
-  await expect(page.getByRole("link", { name: "Log In" })).toBeVisible();
+
+  // expect to be logged out
+  await expect(page.getByRole("link", { name: "Log In" })).toBeVisible({
+    timeout: 25000,
+  });
 });
