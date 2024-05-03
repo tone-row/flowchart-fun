@@ -25,7 +25,7 @@ jobs:
           URL=https://$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .url')
           echo ::set-output name=preview_url::$(echo $URL)
       - name: Checkout Code
-        uses: actions/checkout
+        uses: actions/checkout@v4
       - name: Add env
         run: |
           touch app/.env
@@ -36,8 +36,8 @@ jobs:
           echo TESTING_EMAIL_PRO=${{ secrets.TESTING_EMAIL_PRO }} >> app/.env
           echo TESTING_PASS_PRO=${{ secrets.TESTING_PASS_PRO }} >> app/.env
       - name: Setup Node
-        uses: actions/setup-node
-      - uses: pnpm/action-setup
+        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v3
         with:
           version: 8
       - name: Install Playwright
@@ -48,7 +48,7 @@ jobs:
         run: pnpm install
       - name: Run E2E Tests on Vercel Preview URL
         run: E2E_START_URL="${{ steps.get_url.outputs.preview_url }}" pnpm -F app e2e
-      - uses: actions/upload-artifact
+      - uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
           name: test-results

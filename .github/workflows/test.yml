@@ -5,11 +5,11 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout
-      - uses: actions/setup-node
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - uses: pnpm/action-setup
+      - uses: pnpm/action-setup@v3
         name: Install pnpm
         id: pnpm-install
         with:
@@ -19,7 +19,7 @@ jobs:
       - name: Test
         run: pnpm -F app test:coverage
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: ./app/coverage/*.json # optional
