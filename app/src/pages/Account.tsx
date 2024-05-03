@@ -28,6 +28,7 @@ import {
   useSubscriptionStatusDisplay,
   useCanSalvageSubscription,
 } from "../lib/hooks";
+import type { default as Stripe } from "stripe";
 
 export default function Account() {
   const { customer, session, customerIsLoading } = useContext(AppContext);
@@ -48,6 +49,7 @@ export default function Account() {
     customer?.subscription?.id
   );
   const subscription = customer?.subscription;
+  console.log(subscription);
 
   const changeEmail = useMutation((event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -289,30 +291,45 @@ export default function Account() {
           </Box>
         </Section>
       ) : null}
-      {!subscription?.cancel_at_period_end &&
-        subscription?.created &&
-        subscription?.status === "active" && (
-          <Section>
-            <SectionTitle>
-              <Trans>Cancel</Trans>
-            </SectionTitle>
-            <p className="text-sm leading-normal">
-              <Trans>
-                Cancel your subscription. Your hosted charts will become
-                read-only.
-              </Trans>
-            </p>
-            <ConfirmCancel isOpen={cancelModal} onOpenChange={setCancelModal}>
-              <Button2
-                onClick={() => setCancelModal(true)}
-                className="justify-self-start"
-              >
-                <Trans>Cancel</Trans>
-              </Button2>
-            </ConfirmCancel>
-          </Section>
-        )}
+      <CancelButton
+        subscription={subscription as Stripe.Subscription}
+        cancelModal={cancelModal}
+        setCancelModal={setCancelModal}
+      />
     </Page>
+  );
+}
+
+function CancelButton({
+  subscription,
+  cancelModal,
+  setCancelModal,
+}: {
+  subscription: Stripe.Subscription;
+  cancelModal: boolean;
+  setCancelModal: (open: boolean) => void;
+}) {
+  if (!["active", "trialing"].includes(subscription.status)) return null;
+  if (subscription.cancel_at_period_end) return null;
+  return (
+    <Section>
+      <SectionTitle>
+        <Trans>Cancel</Trans>
+      </SectionTitle>
+      <p className="text-sm leading-normal">
+        <Trans>
+          Cancel your subscription. Your hosted charts will become read-only.
+        </Trans>
+      </p>
+      <ConfirmCancel isOpen={cancelModal} onOpenChange={setCancelModal}>
+        <Button2
+          onClick={() => setCancelModal(true)}
+          className="justify-self-start"
+        >
+          <Trans>Cancel</Trans>
+        </Button2>
+      </ConfirmCancel>
+    </Section>
   );
 }
 
@@ -379,15 +396,13 @@ function ConfirmCancel({
       <Overlay />
       <Content maxWidthClass="max-w-[500px]">
         <h2 className="text-lg font-bold">Cancel Subscription</h2>
-        <p className="text-xs leading-normal">
+        <p className="text-sm leading-normal">
           <Trans>
-            We're sorry to hear that you're considering canceling your
-            subscription. Please let us know why you're canceling so we can
-            improve our service. Thank you!
+            Let us know why you're canceling. We're always looking to improve.
           </Trans>
         </p>
         <Textarea
-          placeholder={t`Product is too expensive...`}
+          placeholder={t`My dog ate my credit card!`}
           value={reason}
           onChange={(e) => setReason(e.target.value)}
           className="p-1 h-[160px]"

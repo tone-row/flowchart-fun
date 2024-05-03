@@ -16,22 +16,18 @@ export default async function customerInfo(
       status: "all",
     });
 
-    // find the first valid subscription
+    // get subscriptions with known prices
     const validSubscriptions = subscriptions.filter((subscription) => {
       const priceId = subscription.items.data[0].plan.id;
       return validStripePrices.includes(priceId);
     });
 
-    // Sort active subscriptions to the top
+    // sort them by creation date, newest first
     validSubscriptions.sort((a, b) => {
-      if (["trialing", "active"].includes(a.status)) return -1;
-      if (["trialing", "active"].includes(b.status)) return 1;
-      return 0;
+      return new Date(b.created).getTime() - new Date(a.created).getTime();
     });
 
-    const subscription = validSubscriptions.length
-      ? validSubscriptions[0]
-      : undefined;
+    const subscription = validSubscriptions?.[0];
 
     res.json({ customerId: customer.id, subscription });
   } catch (error) {

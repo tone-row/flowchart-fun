@@ -42,8 +42,13 @@ export function getParserError(code: ParserErrorCode): {
       };
     case "NODE_AND_POINTER_ON_SAME_LINE":
       return {
-        message: t`Node and pointer on same line`,
-        resolution: t`To fix this move the pointer to the next line`,
+        message: t`Unescaped special character`,
+        resolution: (
+          <Trans>
+            Add a backslash (<code>\</code>) before any special characters:{" "}
+            <code>(</code>, <code>:</code>, <code>#</code>, or <code>.</code>`
+          </Trans>
+        ),
       };
     case "DUPLICATE_NODE_ID":
       return {

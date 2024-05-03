@@ -82,6 +82,7 @@ export default async function handler(req: Request) {
   const result = await streamText({
     model: openai.chat("gpt-4-turbo"),
     system: systemMessage,
+    temperature: 0.15,
     messages: [
       {
         role: "user",

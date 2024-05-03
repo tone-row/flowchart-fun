@@ -14,7 +14,7 @@ export default async function deleteDevUsers() {
   const stripeTestModeSecretKey = process.env.STRIPE_TEST_MODE_SK;
   if (!stripeTestModeSecretKey) throw new Error("Stripe secret key not found");
   const stripe = new Stripe(stripeTestModeSecretKey, {
-    apiVersion: "2022-11-15",
+    apiVersion: "2024-04-10",
   });
 
   if (!process.env.EXCLUDED_USER_FROM_DELETION)
