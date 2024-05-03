@@ -23,7 +23,7 @@ import { useTrackLastChart } from "../lib/useLastChart";
 import sandboxStyles from "./Sandbox.module.css";
 import styles from "./EditHosted.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
-import { useIsProUser } from "../lib/hooks";
+import { useHasProAccess } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { FloatingTip } from "../components/FloatingTip";
@@ -68,7 +68,7 @@ export default function EditHosted() {
 
   const url = useLocation().pathname;
   useTrackLastChart(url);
-  const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
 
   const selectedTab = useTabsStore((s) => s.selectedTab);
   useEffect(() => {
@@ -97,7 +97,7 @@ export default function EditHosted() {
               value={text}
               onChange={onChange}
               extendOptions={{
-                readOnly: !isProUser,
+                readOnly: !hasProAccess,
               }}
             />
             <FloatingTip />

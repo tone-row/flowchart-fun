@@ -9,7 +9,11 @@ import { FiDownload } from "react-icons/fi";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
-import { useDownloadFilename, useIsFirefox, useIsProUser } from "../lib/hooks";
+import {
+  useHasProAccess,
+  useDownloadFilename,
+  useIsFirefox,
+} from "../lib/hooks";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { useDoc } from "../lib/useDoc";
 import { Box } from "../slang";
@@ -30,9 +34,9 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
   const isFirefox = useIsFirefox();
   const filename = useDownloadFilename();
 
-  const isProUser = useIsProUser();
-  const watermark = !isProUser;
-  const scale = isProUser ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
+  const hasProAccess = useHasProAccess();
+  const watermark = !hasProAccess;
+  const scale = hasProAccess ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
 
   return (
     <Menu
@@ -49,7 +53,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
       <NodeSubmenu />
       <EdgeSubmenu />
       {!isFirefox && <CopyPNG watermark={watermark} scale={scale} />}
-      {isProUser && <CopySVG />}
+      {hasProAccess && <CopySVG />}
       <Item
         onClick={() => {
           if (!window.__cy) return;
@@ -96,7 +100,7 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
           <Trans>Download JPG</Trans>
         </WithIcon>
       </Item>
-      {isProUser && (
+      {hasProAccess && (
         <Item
           onClick={async () => {
             const cy = window.__cy;

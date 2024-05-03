@@ -8,7 +8,7 @@ import { parse, stringify, Graph as GSGraph } from "graph-selector";
 import { useMutation } from "react-query";
 import * as Toast from "@radix-ui/react-toast";
 import { Microphone } from "./Microphone";
-import { useIsProUser } from "../lib/hooks";
+import { useHasProAccess } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
 
 // The Graph type we send to AI is slightly different from internal representation
@@ -31,7 +31,7 @@ export function EditWithAI() {
   const [message, setMessage] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [transcriptionLoading, setTranscriptionLoading] = useState(false);
-  const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
 
   const { mutate: edit, isLoading: editIsLoading } = useMutation({
     mutationFn: async (body: { prompt: string; graph: GraphForAI }) => {
@@ -75,7 +75,7 @@ export function EditWithAI() {
 
   const submitPrompt = useCallback(
     (prompt: string) => {
-      if (!isProUser) {
+      if (!hasProAccess) {
         showPaywall({
           title,
           content,
@@ -133,7 +133,7 @@ export function EditWithAI() {
 
       edit({ prompt, graph });
     },
-    [edit, isProUser]
+    [edit, hasProAccess]
   );
 
   const [txtPrompt, setTxtPrompt] = useState("");
@@ -151,7 +151,7 @@ export function EditWithAI() {
   );
 
   const handleSend = useCallback(() => {
-    if (isProUser) {
+    if (hasProAccess) {
       setTranscriptionLoading(true);
       setIsOpen(false);
     } else {
@@ -163,7 +163,7 @@ export function EditWithAI() {
       });
       return;
     }
-  }, [isProUser]);
+  }, [hasProAccess]);
 
   const formRef = useRef<HTMLFormElement>(null);
 

@@ -4,7 +4,7 @@ import { supabase } from "./_supabase";
 
 export async function getCustomerFromToken(
   token?: string
-): Promise<Stripe.Customer> {
+): Promise<Stripe.Customer | null> {
   if (!token) throw new Error("No token provided");
 
   // get supabase user from the token
@@ -13,23 +13,31 @@ export async function getCustomerFromToken(
   const user = data.user;
 
   // if no user, throw an error
-  if (!user) throw new Error("No user found");
+  if (!user) return null;
 
   // if user, grab user email
   const email = user.email;
 
   // if no email, throw an error
-  if (!email) throw new Error("No email found");
+  if (!email) return null;
 
   const customers = await stripe.customers.list({
     email,
+    limit: 10,
+  });
+
+  const sorted = customers.data.slice(0);
+
+  // sort them by the created date to get the most recent customer
+  sorted.sort((a, b) => {
+    return new Date(b.created).getTime() - new Date(a.created).getTime();
   });
 
   // grab the customer that was created the most recently
-  const customer = customers.data[0];
+  const customer = sorted?.[0];
 
   // if no customer id, throw an error
-  if (!customer) throw new Error("No customer found");
+  if (!customer) return null;
 
   return customer;
 }

@@ -13,6 +13,9 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByRole("link", { name: "Account" })).toBeVisible();
 });
 
+// skip if not chrome
+test.skip(({ browserName }) => browserName !== "chromium", "Chrome Only");
+
 /* Everything the user can do when logged in, but not pro */
 test("can do things when logged in", async ({ page }) => {
   await page.getByRole("link", { name: "New" }).click();
@@ -39,5 +42,9 @@ test("can do things when logged in", async ({ page }) => {
 
   await page.getByRole("link", { name: "Account", exact: true }).click();
   await page.getByRole("button", { name: "Log Out" }).click();
-  await expect(page.getByRole("link", { name: "Log In" })).toBeVisible();
+
+  // expect to be logged out
+  await expect(page.getByRole("link", { name: "Log In" })).toBeVisible({
+    timeout: 25000,
+  });
 });

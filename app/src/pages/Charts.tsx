@@ -16,7 +16,7 @@ import * as Popover from "@radix-ui/react-popover";
 
 import { AppContext } from "../components/AppContextProvider";
 import Loading from "../components/Loading";
-import { useIsProUser } from "../lib/hooks";
+import { useHasProAccess } from "../lib/hooks";
 import {
   copyHostedChartById,
   deleteChart,
@@ -29,7 +29,7 @@ import { Button2, Page, popoverContentProps } from "../ui/Shared";
 import { PageTitle } from "../ui/Typography";
 
 export default function Charts() {
-  const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
   const customerIsLoading = useContext(AppContext).customerIsLoading;
   const { data: persistentCharts, isLoading } = useHostedCharts();
   const isLoadingAnything = isLoading || customerIsLoading;
@@ -83,8 +83,8 @@ export default function Charts() {
     }
   );
 
-  const notProButHasCharts =
-    !isProUser && persistentCharts && persistentCharts?.length > 0;
+  const notProButHasCharts = Boolean(persistentCharts?.length) && !hasProAccess;
+
   return (
     <Page>
       <header className="grid md:grid-flow-col md:justify-between items-end">
@@ -111,7 +111,7 @@ export default function Charts() {
           <>
             {notProButHasCharts ? (
               <InactiveAccount />
-            ) : !isProUser ? (
+            ) : !hasProAccess ? (
               <ProFeatureLink />
             ) : null}
             <div className="grid gap-1">
@@ -267,16 +267,7 @@ function InactiveAccount() {
             <Link to="/a" className="underline underline-offset-2">
               account
             </Link>{" "}
-            page to learn more. You can{" "}
-            <Link
-              to="/pricing"
-              className="underline underline-offset-2"
-              data-testid="to-pricing"
-              data-to-pricing="Charts Page: Inactive Account"
-            >
-              upgrade to pro
-            </Link>{" "}
-            to regain editing access to your charts
+            page to learn more.
           </Trans>
         </span>
       </div>

@@ -5,7 +5,7 @@ import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 
 import { isError, slugify, titleToLocalStorageKey } from "../lib/helpers";
-import { useIsProUser } from "../lib/hooks";
+import { useHasProAccess } from "../lib/hooks";
 import { makeChart, renameChart } from "../lib/queries";
 import { useRenameDialogStore } from "../lib/renameDialogStore";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
@@ -23,7 +23,7 @@ export const RenameButton = memo(function RenameButton({
   children: ReactNode;
 }) {
   const fullText = useDoc(docToString);
-  const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
   const session = useSession();
   const initialName = useDocDetails("title", "flowchart.fun");
   const isHosted = useDocDetails("isHosted");
@@ -119,7 +119,7 @@ export const RenameButton = memo(function RenameButton({
               <SectionTitle className="mb-[-8px]">
                 <Trans>Rename</Trans>
               </SectionTitle>
-              {isProUser && !isHosted ? (
+              {hasProAccess && !isHosted ? (
                 <label className="flex gap-2 item-center mt-2">
                   <span className="text-xs opacity-80">
                     <Trans>Convert to hosted chart?</Trans>

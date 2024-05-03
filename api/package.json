@@ -32,7 +32,7 @@
     "notion-to-md": "^2.5.5",
     "openai": "^4.24.2",
     "shared": "workspace:*",
-    "stripe": "^11.11.0",
+    "stripe": "^15.5.0",
     "zod": "^3.22.4",
     "zod-to-json-schema": "^3.22.3"
   },

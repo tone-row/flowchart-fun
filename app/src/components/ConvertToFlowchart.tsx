@@ -16,20 +16,20 @@ import { useEditorStore } from "../lib/useEditorStore";
 import { useCallback, useContext, useState } from "react";
 import { AppContext } from "./AppContextProvider";
 import { isError } from "../lib/helpers";
-import { useIsProUser } from "../lib/hooks";
+import { useHasProAccess } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
 
 export function ConvertToFlowchart() {
   const convertIsRunning = usePromptStore((s) => s.convertIsRunning);
   const customer = useContext(AppContext).customer;
   const sid = customer?.subscription?.id;
-  const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   // Handle the error based on status
   const handleError = useCallback(
     (error: Error) => {
-      if (!isProUser && error.message === RATE_LIMIT_EXCEEDED) {
+      if (!hasProAccess && error.message === RATE_LIMIT_EXCEEDED) {
         // Show paywall
         showPaywall({
           title: t`Transform text into diagrams instantly`,
@@ -45,7 +45,7 @@ export function ConvertToFlowchart() {
         }
       }
     },
-    [isProUser]
+    [hasProAccess]
   );
 
   return (
