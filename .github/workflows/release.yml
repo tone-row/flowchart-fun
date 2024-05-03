@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Automatic GitHub Release
-        uses: justincy/github-action-npm-release@2.0.1
+        uses: justincy/github-action-npm-release@2.0.2
         id: release
         with:
           path: "${{ github.workspace }}/app"

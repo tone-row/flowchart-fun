@@ -15,7 +15,7 @@ import { ReactNode, useContext, useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
-import { useDownloadFilename, useIsProUser } from "../lib/hooks";
+import { useHasProAccess, useDownloadFilename } from "../lib/hooks";
 import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
@@ -45,9 +45,9 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
   const readOnly = `${new URL(window.location.href).origin}/c#${shareLink}`;
   const editable = `${new URL(window.location.href).origin}/#load:${shareLink}`;
   const filename = useDownloadFilename();
-  const isProUser = useIsProUser();
-  const watermark = !isProUser;
-  const scale = isProUser ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
+  const hasProAccess = useHasProAccess();
+  const watermark = !hasProAccess;
+  const scale = hasProAccess ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
 
   return (
     <Dialog.Root
@@ -113,7 +113,7 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
             </Button2>
             <SvgProOnlyPopover>
               <Button2
-                disabled={!isProUser}
+                disabled={!hasProAccess}
                 aria-label="Download SVG"
                 data-session-activity="Download SVG"
                 onClick={async () => {
@@ -133,7 +133,7 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
           </div>
         </Column>
         {isHosted ? <HostedOptions /> : null}
-        {isProUser && (
+        {hasProAccess && (
           <Column>
             <SectionTitle className="mb-1">
               <Trans>Link</Trans>

@@ -26,8 +26,10 @@ import styles from "./Account.module.css";
 import {
   useIsProUser,
   useSubscriptionStatusDisplay,
-  useCanSalvageSubscription,
+  useAccountNeedsAttention,
+  useHasProAccess,
 } from "../lib/hooks";
+import type { default as Stripe } from "stripe";
 
 export default function Account() {
   const { customer, session, customerIsLoading } = useContext(AppContext);
@@ -48,6 +50,7 @@ export default function Account() {
     customer?.subscription?.id
   );
   const subscription = customer?.subscription;
+  console.log(subscription);
 
   const changeEmail = useMutation((event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -107,6 +110,7 @@ export default function Account() {
   });
 
   const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
 
   if (customerIsLoading) return <Loading />;
 
@@ -147,7 +151,7 @@ export default function Account() {
           </a>
         </Section>
       ) : null}
-      {isProUser ? (
+      {hasProAccess ? (
         <Section>
           <SectionTitle>
             <Trans>Subscription</Trans>
@@ -289,30 +293,49 @@ export default function Account() {
           </Box>
         </Section>
       ) : null}
-      {!subscription?.cancel_at_period_end &&
-        subscription?.created &&
-        subscription?.status === "active" && (
-          <Section>
-            <SectionTitle>
-              <Trans>Cancel</Trans>
-            </SectionTitle>
-            <p className="text-sm leading-normal">
-              <Trans>
-                Cancel your subscription. Your hosted charts will become
-                read-only.
-              </Trans>
-            </p>
-            <ConfirmCancel isOpen={cancelModal} onOpenChange={setCancelModal}>
-              <Button2
-                onClick={() => setCancelModal(true)}
-                className="justify-self-start"
-              >
-                <Trans>Cancel</Trans>
-              </Button2>
-            </ConfirmCancel>
-          </Section>
-        )}
+      <CancelButton
+        subscription={subscription}
+        cancelModal={cancelModal}
+        setCancelModal={setCancelModal}
+      />
     </Page>
+  );
+}
+
+function CancelButton({
+  subscription,
+  cancelModal,
+  setCancelModal,
+}: {
+  subscription?: Stripe.Subscription;
+  cancelModal: boolean;
+  setCancelModal: (open: boolean) => void;
+}) {
+  if (!subscription) return null;
+  if (
+    !["active", "trialing", "past_due", "unpaid"].includes(subscription.status)
+  )
+    return null;
+  if (subscription.cancel_at_period_end) return null;
+  return (
+    <Section>
+      <SectionTitle>
+        <Trans>Cancel</Trans>
+      </SectionTitle>
+      <p className="text-sm leading-normal">
+        <Trans>
+          Cancel your subscription. Your hosted charts will become read-only.
+        </Trans>
+      </p>
+      <ConfirmCancel isOpen={cancelModal} onOpenChange={setCancelModal}>
+        <Button2
+          onClick={() => setCancelModal(true)}
+          className="justify-self-start"
+        >
+          <Trans>Cancel</Trans>
+        </Button2>
+      </ConfirmCancel>
+    </Section>
   );
 }
 
@@ -379,15 +402,13 @@ function ConfirmCancel({
       <Overlay />
       <Content maxWidthClass="max-w-[500px]">
         <h2 className="text-lg font-bold">Cancel Subscription</h2>
-        <p className="text-xs leading-normal">
+        <p className="text-sm leading-normal">
           <Trans>
-            We're sorry to hear that you're considering canceling your
-            subscription. Please let us know why you're canceling so we can
-            improve our service. Thank you!
+            Let us know why you're canceling. We're always looking to improve.
           </Trans>
         </p>
         <Textarea
-          placeholder={t`Product is too expensive...`}
+          placeholder={t`My dog ate my credit card!`}
           value={reason}
           onChange={(e) => setReason(e.target.value)}
           className="p-1 h-[160px]"
@@ -485,7 +506,7 @@ function InfoCell({
  * from our blog post. To learn more about Pro Features on our pricing page.
  */
 function SubscriptionOptions() {
-  const canSalvageSubscription = useCanSalvageSubscription();
+  const accountNeedsAttention = useAccountNeedsAttention();
   const statusDisplay = useSubscriptionStatusDisplay();
   const returnUrl = useMemo(() => window.location.href, []);
   const customerId = useContext(AppContext).customer?.customerId;
@@ -516,9 +537,9 @@ function SubscriptionOptions() {
     <Section>
       <SectionTitle>Subscription</SectionTitle>
       <div className="grid gap-4">
-        {canSalvageSubscription ? (
+        {accountNeedsAttention ? (
           <div className="grid gap-4 justify-start justify-items-start">
-            <p className="flex items-center gap-2">
+            <p className="flex items-center gap-2 p-4 rounded-lg bg-red-100 text-red-800 font-bold tracking-wide">
               <Warning className="w-5 h-5" />
               <span>
                 <Trans>
@@ -538,19 +559,6 @@ function SubscriptionOptions() {
                 <Trans>Manage Billing</Trans>
               </Button2>
             </form>
-            <p>
-              <Trans>
-                Or, you can{" "}
-                <Link
-                  to="/pricing"
-                  className="underline underline-offset-2"
-                  data-to-pricing="Account Page: Create a new subscription"
-                >
-                  create a new subscription
-                </Link>
-                .
-              </Trans>
-            </p>
           </div>
         ) : (
           <>

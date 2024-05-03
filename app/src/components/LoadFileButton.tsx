@@ -6,7 +6,7 @@ import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Content, Overlay } from "../ui/Dialog";
 import { Button2 } from "../ui/Shared";
-import { useIsProUser } from "../lib/hooks";
+import { useHasProAccess } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
 import { getExpirationDate } from "../lib/getExpirationDate";
 import { docToString } from "../lib/useDoc";
@@ -17,7 +17,7 @@ export function LoadFileButton() {
   const [chart, setChart] = useState<null | Awaited<
     ReturnType<typeof prepareChart>
   >>(null);
-  const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
 
   return (
     <>
@@ -71,7 +71,7 @@ export function LoadFileButton() {
         data-testid="load-file-button"
         data-session-activity="Load File"
         onClick={() => {
-          if (!isProUser) {
+          if (!hasProAccess) {
             showPaywall({
               title: t`Load Files`,
               content: t`Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month`,
