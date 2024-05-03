@@ -10,7 +10,7 @@ import { languages } from "../locales/i18n";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
 import { useMutation } from "react-query";
 import { supabase } from "../lib/supabaseClient";
-import { useIsProUser, useUserId } from "../lib/hooks";
+import { useHasProAccess, useUserId } from "../lib/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import { sample } from "../lib/sample";
 import { showPaywall } from "../lib/usePaywallModalStore";
@@ -109,11 +109,11 @@ export default function New2() {
     }
   );
 
-  const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      if (!isProUser) {
+      if (!hasProAccess) {
         showPaywall({
           title: createUnlimitedTitle(),
           content: createUnlimitedContent(),
@@ -139,7 +139,7 @@ export default function New2() {
 
       createChartMutation.mutate(options);
     },
-    [createChartMutation, isProUser]
+    [createChartMutation, hasProAccess]
   );
 
   const language = useContext(AppContext).language;
@@ -237,7 +237,7 @@ export default function New2() {
         </Tabs.Root>
       </Section>
       <div className="grid justify-center justify-items-center gap-2">
-        {!isProUser && (
+        {!hasProAccess && (
           <div className="justify-items-center grid">
             <Warning>
               <Link

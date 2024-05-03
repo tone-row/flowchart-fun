@@ -5,4 +5,6 @@ const secret = process.env.DB_SECRET;
 
 if (!url || !secret) throw new Error("No Supabase URL or secret provided");
 
-export const supabase = createClient(url, secret);
+export const supabase = createClient(url, secret, {
+  auth: { persistSession: false },
+});

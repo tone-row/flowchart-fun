@@ -23,7 +23,6 @@ import { newDelimiters, SANDBOX_STORAGE_KEY } from "../lib/constants";
 import { SandboxWarning } from "../components/SandboxWarning";
 import { useSandboxWarning } from "../lib/useSandboxWarning";
 import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
-import { useIsProUser } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";

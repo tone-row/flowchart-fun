@@ -52,7 +52,19 @@ export function useIsProUser() {
   const { customer, customerIsLoading } = useContext(AppContext);
   const status = customer?.subscription?.status;
   if (customerIsLoading) return undefined;
-  return Boolean(status && ["trialing", "active"].includes(status));
+  return Boolean(
+    status && ["trialing", "active", "past_due", "unpaid"].includes(status)
+  );
+}
+
+/**
+ * This determines whether a person can perform pro actions
+ * based on their subscription existence and status.
+ */
+export function useHasProAccess() {
+  const { customer } = useContext(AppContext);
+  const status = customer?.subscription?.status;
+  return status && ["trialing", "active"].includes(status);
 }
 
 /**

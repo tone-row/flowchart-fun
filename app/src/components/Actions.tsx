@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { useIsProUser } from "../lib/hooks";
+import { useHasProAccess } from "../lib/hooks";
 import { ImportDataDialog } from "./ImportDataDialog";
 import { ImportDataUnauthenticatedDialog } from "./ImportDataUnauthenticatedDialog";
 import { LearnSyntaxDialog } from "./LearnSyntaxDialog";
@@ -13,7 +13,7 @@ import classNames from "classnames";
 import { globalZ } from "../lib/globalZ";
 
 export function Actions() {
-  const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
   const isSandbox = useLocation().pathname === "/";
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -39,7 +39,11 @@ export function Actions() {
         <LoadTemplateDialog />
         <LearnSyntaxDialog />
         {isSandbox ? <LoadFileButton /> : null}
-        {isProUser ? <ImportDataDialog /> : <ImportDataUnauthenticatedDialog />}
+        {hasProAccess ? (
+          <ImportDataDialog />
+        ) : (
+          <ImportDataUnauthenticatedDialog />
+        )}
       </div>
       <DropdownMenu.Root open={open} onOpenChange={setOpen}>
         <DropdownMenu.Trigger asChild>
@@ -58,7 +62,7 @@ export function Actions() {
           <LoadTemplateDialog />
           <LearnSyntaxDialog />
           {isSandbox ? <LoadFileButton /> : null}
-          {isProUser ? (
+          {hasProAccess ? (
             <ImportDataDialog />
           ) : (
             <ImportDataUnauthenticatedDialog />

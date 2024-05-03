@@ -27,6 +27,7 @@ import {
   useIsProUser,
   useSubscriptionStatusDisplay,
   useCanSalvageSubscription,
+  useHasProAccess,
 } from "../lib/hooks";
 import type { default as Stripe } from "stripe";
 
@@ -109,6 +110,7 @@ export default function Account() {
   });
 
   const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
 
   if (customerIsLoading) return <Loading />;
 
@@ -149,7 +151,7 @@ export default function Account() {
           </a>
         </Section>
       ) : null}
-      {isProUser ? (
+      {hasProAccess ? (
         <Section>
           <SectionTitle>
             <Trans>Subscription</Trans>
@@ -292,7 +294,7 @@ export default function Account() {
         </Section>
       ) : null}
       <CancelButton
-        subscription={subscription as Stripe.Subscription}
+        subscription={subscription}
         cancelModal={cancelModal}
         setCancelModal={setCancelModal}
       />
@@ -305,11 +307,15 @@ function CancelButton({
   cancelModal,
   setCancelModal,
 }: {
-  subscription: Stripe.Subscription;
+  subscription?: Stripe.Subscription;
   cancelModal: boolean;
   setCancelModal: (open: boolean) => void;
 }) {
-  if (!["active", "trialing"].includes(subscription.status)) return null;
+  if (!subscription) return null;
+  if (
+    !["active", "trialing", "past_due", "unpaid"].includes(subscription.status)
+  )
+    return null;
   if (subscription.cancel_at_period_end) return null;
   return (
     <Section>
@@ -553,19 +559,6 @@ function SubscriptionOptions() {
                 <Trans>Manage Billing</Trans>
               </Button2>
             </form>
-            <p>
-              <Trans>
-                Or, you can{" "}
-                <Link
-                  to="/pricing"
-                  className="underline underline-offset-2"
-                  data-to-pricing="Account Page: Create a new subscription"
-                >
-                  create a new subscription
-                </Link>
-                .
-              </Trans>
-            </p>
           </div>
         ) : (
           <>

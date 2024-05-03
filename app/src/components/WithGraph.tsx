@@ -1,6 +1,6 @@
 import { memo, ReactNode, Suspense, useCallback, useState } from "react";
 
-import { useFullscreen, useIsProUser } from "../lib/hooks";
+import { useHasProAccess, useFullscreen } from "../lib/hooks";
 import { useUnmountStore } from "../lib/useUnmountStore";
 import { CloneButton } from "./CloneButton";
 import Graph from "./Graph";
@@ -21,7 +21,7 @@ const WithGraph = memo(({ children }: MainProps) => {
   const trigger = useCallback(() => triggerResize((n) => n + 1), []);
   const isFullscreen = useFullscreen();
   const unmount = useUnmountStore((state) => state.unmount);
-  const isProUser = useIsProUser();
+  const hasProAccess = useHasProAccess();
   const tab = useMobileStore((state) => state.tab);
   const selectedTab = useTabsStore((state) => state.selectedTab);
 
@@ -38,7 +38,7 @@ const WithGraph = memo(({ children }: MainProps) => {
       )}
       <GraphWrapper>
         {unmount ? <Loading /> : <Graph shouldResize={shouldResize} />}
-        {isFullscreen && isProUser ? (
+        {isFullscreen && hasProAccess ? (
           <div className={styles.CopyButtonWrapper}>
             <CloneButton />
           </div>

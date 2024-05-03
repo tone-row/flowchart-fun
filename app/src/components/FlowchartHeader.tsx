@@ -1,6 +1,6 @@
 import { Trans } from "@lingui/macro";
 import { useContext, useEffect, useRef, useState } from "react";
-import { useIsLoggedIn, useIsProUser, useIsReadOnly } from "../lib/hooks";
+import { useHasProAccess, useIsLoggedIn, useIsReadOnly } from "../lib/hooks";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Button2, Input } from "../ui/Shared";
 import { AppContext } from "./AppContextProvider";
@@ -26,7 +26,7 @@ export function FlowchartHeader() {
   const title = useDocDetails("title", "flowchart.fun");
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
-  const isPro = useIsProUser();
+  const hasProAccess = useHasProAccess();
   const pageTitle = title || "flowchart.fun";
   const isSandbox = useLocation().pathname === "/";
   return (
@@ -49,7 +49,7 @@ export function FlowchartHeader() {
             <Trans>Read-only</Trans>
           </span>
         )}
-        {isReadOnly && isPro ? <CloneButton /> : null}
+        {isReadOnly && hasProAccess ? <CloneButton /> : null}
         {!isReadOnly ? (
           <>
             {isSandbox ? <SaveButton /> : null}
@@ -73,9 +73,9 @@ export function FlowchartHeader() {
 
 function SaveButton() {
   const isLoggedIn = useIsLoggedIn();
-  const isPro = useIsProUser();
+  const hasProAccess = useHasProAccess();
   return isLoggedIn ? (
-    isPro ? (
+    hasProAccess ? (
       <CanSaveButton />
     ) : (
       <CannotSaveButton />

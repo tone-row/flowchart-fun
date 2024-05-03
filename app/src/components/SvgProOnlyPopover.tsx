@@ -2,7 +2,7 @@ import { Trans } from "@lingui/macro";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import { ReactNode } from "react";
 
-import { useIsProUser } from "../lib/hooks";
+import { useHasProAccess } from "../lib/hooks";
 
 /**
  * Returns no wrapper if valid sponsor, otherwise wraps children in a popover
@@ -10,8 +10,8 @@ import { useIsProUser } from "../lib/hooks";
  * sponsor page.
  */
 export function SvgProOnlyPopover({ children }: { children: ReactNode }) {
-  const isProUser = useIsProUser();
-  if (isProUser) return <>{children}</>;
+  const hasProAccess = useHasProAccess();
+  if (hasProAccess) return <>{children}</>;
   return (
     <HoverCard.Root>
       <HoverCard.Trigger asChild>{children}</HoverCard.Trigger>
