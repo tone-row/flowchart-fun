@@ -337,8 +337,8 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2(postcss@8.4.31)
       posthog-js:
-        specifier: ^1.128.1
-        version: 1.128.1
+        specifier: ^1.133.0
+        version: 1.133.0
       prettier:
         specifier: ^2.3.1
         version: 2.7.1
@@ -386,7 +386,7 @@ importers:
         version: 6.14.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-scripts:
         specifier: 5.0.1
-        version: 5.0.1(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.23.0))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.23.0))(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/babel__core@7.20.2)(bufferutil@4.0.6)(eslint@8.50.0)(react@18.2.0)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(type-fest@2.19.0)(typescript@5.2.2)(utf-8-validate@5.0.9)
+        version: 5.0.1(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.19.3))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.19.3))(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/babel__core@7.20.2)(bufferutil@4.0.6)(eslint@8.50.0)(react@18.2.0)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(type-fest@2.19.0)(typescript@5.2.2)(utf-8-validate@5.0.9)
       react-use-localstorage:
         specifier: ^3.5.3
         version: 3.5.3(react@18.2.0)
@@ -414,7 +414,7 @@ importers:
     devDependencies:
       '@lingui/cli':
         specifier: ^3.17.2
-        version: 3.17.2(@babel/core@7.23.0)(@types/node@18.16.17)(babel-plugin-macros@3.1.0)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(typescript@5.2.2)
+        version: 3.17.2(@babel/core@7.19.3)(@types/node@18.16.17)(babel-plugin-macros@3.1.0)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(typescript@5.2.2)
       '@lingui/macro':
         specifier: ^3.13.2
         version: 3.14.0(@lingui/core@3.14.0)(@lingui/react@3.14.0(react@18.2.0))(babel-plugin-macros@3.1.0)(typescript@5.2.2)
@@ -9371,8 +9371,8 @@ packages:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  posthog-js@1.128.1:
-    resolution: {integrity: sha512-+CIiZf+ijhgAF8g6K+PfaDbSBiADfRaXzrlYKmu5IEN8ghunFd06EV5QM68cwLUEkti4FXn7AAM3k9/KxJgvcA==}
+  posthog-js@1.133.0:
+    resolution: {integrity: sha512-d+TfOqWTPRGoFuxaxRaGhh/XCg1tR5TyjdxCIW1Qp1XQE22zqite2/vg5l+mE6VdZfjMqeBStx0wjmxOj3uUDA==}
 
   posthtml-parser@0.10.2:
     resolution: {integrity: sha512-PId6zZ/2lyJi9LiKfe+i2xv57oEjJgWbsHGGANwos5AvdQp98i6AtamAl8gzSVFGfQ43Glb5D614cvZf012VKg==}
@@ -12120,6 +12120,11 @@ snapshots:
       '@babel/core': 7.23.0
       '@babel/helper-plugin-utils': 7.22.5
 
+  '@babel/plugin-syntax-flow@7.22.5(@babel/core@7.19.3)':
+    dependencies:
+      '@babel/core': 7.19.3
+      '@babel/helper-plugin-utils': 7.22.5
+
   '@babel/plugin-syntax-flow@7.22.5(@babel/core@7.23.0)':
     dependencies:
       '@babel/core': 7.23.0
@@ -12697,6 +12702,15 @@ snapshots:
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.19.3)
       '@babel/types': 7.22.5
+
+  '@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.19.3)':
+    dependencies:
+      '@babel/core': 7.19.3
+      '@babel/helper-annotate-as-pure': 7.22.5
+      '@babel/helper-module-imports': 7.22.15
+      '@babel/helper-plugin-utils': 7.22.5
+      '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.19.3)
+      '@babel/types': 7.23.0
 
   '@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.23.0)':
     dependencies:
@@ -13901,12 +13915,12 @@ snapshots:
       - ts-node
       - typescript
 
-  '@lingui/cli@3.17.2(@babel/core@7.23.0)(@types/node@18.16.17)(babel-plugin-macros@3.1.0)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(typescript@5.2.2)':
+  '@lingui/cli@3.17.2(@babel/core@7.19.3)(@types/node@18.16.17)(babel-plugin-macros@3.1.0)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(typescript@5.2.2)':
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.19.3
       '@babel/generator': 7.22.9
       '@babel/parser': 7.22.7
-      '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.23.0)
+      '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.19.3)
       '@babel/runtime': 7.22.6
       '@babel/types': 7.22.5
       '@lingui/babel-plugin-extract-messages': 3.17.2(@types/node@18.16.17)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(typescript@5.2.2)
@@ -15691,51 +15705,51 @@ snapshots:
 
   '@svgr/babel-plugin-add-jsx-attribute@5.4.0': {}
 
-  '@svgr/babel-plugin-add-jsx-attribute@6.3.1(@babel/core@7.23.0)':
+  '@svgr/babel-plugin-add-jsx-attribute@6.3.1(@babel/core@7.19.3)':
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.19.3
 
   '@svgr/babel-plugin-remove-jsx-attribute@5.4.0': {}
 
-  '@svgr/babel-plugin-remove-jsx-attribute@6.3.1(@babel/core@7.23.0)':
+  '@svgr/babel-plugin-remove-jsx-attribute@6.3.1(@babel/core@7.19.3)':
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.19.3
 
   '@svgr/babel-plugin-remove-jsx-empty-expression@5.0.1': {}
 
-  '@svgr/babel-plugin-remove-jsx-empty-expression@6.3.1(@babel/core@7.23.0)':
+  '@svgr/babel-plugin-remove-jsx-empty-expression@6.3.1(@babel/core@7.19.3)':
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.19.3
 
   '@svgr/babel-plugin-replace-jsx-attribute-value@5.0.1': {}
 
-  '@svgr/babel-plugin-replace-jsx-attribute-value@6.3.1(@babel/core@7.23.0)':
+  '@svgr/babel-plugin-replace-jsx-attribute-value@6.3.1(@babel/core@7.19.3)':
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.19.3
 
   '@svgr/babel-plugin-svg-dynamic-title@5.4.0': {}
 
-  '@svgr/babel-plugin-svg-dynamic-title@6.3.1(@babel/core@7.23.0)':
+  '@svgr/babel-plugin-svg-dynamic-title@6.3.1(@babel/core@7.19.3)':
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.19.3
 
   '@svgr/babel-plugin-svg-em-dimensions@5.4.0': {}
 
-  '@svgr/babel-plugin-svg-em-dimensions@6.3.1(@babel/core@7.23.0)':
+  '@svgr/babel-plugin-svg-em-dimensions@6.3.1(@babel/core@7.19.3)':
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.19.3
 
   '@svgr/babel-plugin-transform-react-native-svg@5.4.0': {}
 
-  '@svgr/babel-plugin-transform-react-native-svg@6.3.1(@babel/core@7.23.0)':
+  '@svgr/babel-plugin-transform-react-native-svg@6.3.1(@babel/core@7.19.3)':
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.19.3
 
   '@svgr/babel-plugin-transform-svg-component@5.5.0': {}
 
-  '@svgr/babel-plugin-transform-svg-component@6.3.1(@babel/core@7.23.0)':
+  '@svgr/babel-plugin-transform-svg-component@6.3.1(@babel/core@7.19.3)':
     dependencies:
-      '@babel/core': 7.23.0
+      '@babel/core': 7.19.3
 
   '@svgr/babel-preset@5.5.0':
     dependencies:
@@ -15751,26 +15765,14 @@ snapshots:
   '@svgr/babel-preset@6.4.0(@babel/core@7.19.3)':
     dependencies:
       '@babel/core': 7.19.3
-      '@svgr/babel-plugin-add-jsx-attribute': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-remove-jsx-attribute': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-remove-jsx-empty-expression': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-replace-jsx-attribute-value': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-svg-dynamic-title': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-svg-em-dimensions': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-transform-react-native-svg': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-transform-svg-component': 6.3.1(@babel/core@7.23.0)
-
-  '@svgr/babel-preset@6.4.0(@babel/core@7.23.0)':
-    dependencies:
-      '@babel/core': 7.23.0
-      '@svgr/babel-plugin-add-jsx-attribute': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-remove-jsx-attribute': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-remove-jsx-empty-expression': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-replace-jsx-attribute-value': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-svg-dynamic-title': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-svg-em-dimensions': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-transform-react-native-svg': 6.3.1(@babel/core@7.23.0)
-      '@svgr/babel-plugin-transform-svg-component': 6.3.1(@babel/core@7.23.0)
+      '@svgr/babel-plugin-add-jsx-attribute': 6.3.1(@babel/core@7.19.3)
+      '@svgr/babel-plugin-remove-jsx-attribute': 6.3.1(@babel/core@7.19.3)
+      '@svgr/babel-plugin-remove-jsx-empty-expression': 6.3.1(@babel/core@7.19.3)
+      '@svgr/babel-plugin-replace-jsx-attribute-value': 6.3.1(@babel/core@7.19.3)
+      '@svgr/babel-plugin-svg-dynamic-title': 6.3.1(@babel/core@7.19.3)
+      '@svgr/babel-plugin-svg-em-dimensions': 6.3.1(@babel/core@7.19.3)
+      '@svgr/babel-plugin-transform-react-native-svg': 6.3.1(@babel/core@7.19.3)
+      '@svgr/babel-plugin-transform-svg-component': 6.3.1(@babel/core@7.19.3)
 
   '@svgr/core@5.5.0':
     dependencies:
@@ -15780,9 +15782,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@svgr/core@6.4.0(@babel/core@7.23.0)':
+  '@svgr/core@6.4.0(@babel/core@7.19.3)':
     dependencies:
-      '@svgr/babel-preset': 6.4.0(@babel/core@7.23.0)
+      '@svgr/babel-preset': 6.4.0(@babel/core@7.19.3)
       '@svgr/plugin-jsx': 6.4.0(@svgr/core@6.4.0(@babel/core@7.19.3))
       camelcase: 6.3.0
       cosmiconfig: 7.0.1
@@ -15812,7 +15814,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.19.3
       '@svgr/babel-preset': 6.4.0(@babel/core@7.19.3)
-      '@svgr/core': 6.4.0(@babel/core@7.23.0)
+      '@svgr/core': 6.4.0(@babel/core@7.19.3)
       '@svgr/hast-util-to-babel-ast': 6.4.0
       svg-parser: 2.0.4
     transitivePeerDependencies:
@@ -15826,7 +15828,7 @@ snapshots:
 
   '@svgr/plugin-svgo@6.3.1(@svgr/core@6.4.0(@babel/core@7.19.3))':
     dependencies:
-      '@svgr/core': 6.4.0(@babel/core@7.23.0)
+      '@svgr/core': 6.4.0(@babel/core@7.19.3)
       cosmiconfig: 7.0.1
       deepmerge: 4.2.2
       svgo: 2.8.0
@@ -15851,7 +15853,7 @@ snapshots:
       '@babel/preset-env': 7.19.3(@babel/core@7.19.3)
       '@babel/preset-react': 7.18.6(@babel/core@7.19.3)
       '@babel/preset-typescript': 7.18.6(@babel/core@7.19.3)
-      '@svgr/core': 6.4.0(@babel/core@7.23.0)
+      '@svgr/core': 6.4.0(@babel/core@7.19.3)
       '@svgr/plugin-jsx': 6.4.0(@svgr/core@6.4.0(@babel/core@7.19.3))
       '@svgr/plugin-svgo': 6.3.1(@svgr/core@6.4.0(@babel/core@7.19.3))
     transitivePeerDependencies:
@@ -18740,7 +18742,7 @@ snapshots:
     dependencies:
       eslint: 8.50.0
 
-  eslint-config-react-app@7.0.1(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.23.0))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.23.0))(eslint@8.50.0)(jest@27.5.1(bufferutil@4.0.6)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(utf-8-validate@5.0.9))(typescript@5.2.2):
+  eslint-config-react-app@7.0.1(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.19.3))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.19.3))(eslint@8.50.0)(jest@27.5.1(bufferutil@4.0.6)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(utf-8-validate@5.0.9))(typescript@5.2.2):
     dependencies:
       '@babel/core': 7.23.0
       '@babel/eslint-parser': 7.22.15(@babel/core@7.23.0)(eslint@8.50.0)
@@ -18750,7 +18752,7 @@ snapshots:
       babel-preset-react-app: 10.0.1
       confusing-browser-globals: 1.0.11
       eslint: 8.50.0
-      eslint-plugin-flowtype: 8.0.3(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.23.0))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.23.0))(eslint@8.50.0)
+      eslint-plugin-flowtype: 8.0.3(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.19.3))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.19.3))(eslint@8.50.0)
       eslint-plugin-import: 2.28.1(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.2.2))(eslint@8.50.0)
       eslint-plugin-jest: 25.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.50.0)(typescript@5.2.2))(eslint@8.50.0)(typescript@5.2.2))(eslint@8.50.0)(jest@27.5.1(bufferutil@4.0.6)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(utf-8-validate@5.0.9))(typescript@5.2.2)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.50.0)
@@ -18795,10 +18797,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-flowtype@8.0.3(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.23.0))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.23.0))(eslint@8.50.0):
+  eslint-plugin-flowtype@8.0.3(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.19.3))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.19.3))(eslint@8.50.0):
     dependencies:
-      '@babel/plugin-syntax-flow': 7.22.5(@babel/core@7.23.0)
-      '@babel/plugin-transform-react-jsx': 7.22.15(@babel/core@7.23.0)
+      '@babel/plugin-syntax-flow': 7.22.5(@babel/core@7.19.3)
+      '@babel/plugin-transform-react-jsx': 7.22.15(@babel/core@7.19.3)
       eslint: 8.50.0
       lodash: 4.17.21
       string-natural-compare: 3.0.1
@@ -22409,7 +22411,7 @@ snapshots:
       picocolors: 1.0.0
       source-map-js: 1.2.0
 
-  posthog-js@1.128.1:
+  posthog-js@1.133.0:
     dependencies:
       fflate: 0.4.8
       preact: 10.20.2
@@ -22724,7 +22726,7 @@ snapshots:
       '@remix-run/router': 1.7.2
       react: 18.2.0
 
-  react-scripts@5.0.1(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.23.0))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.23.0))(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/babel__core@7.20.2)(bufferutil@4.0.6)(eslint@8.50.0)(react@18.2.0)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(type-fest@2.19.0)(typescript@5.2.2)(utf-8-validate@5.0.9):
+  react-scripts@5.0.1(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.19.3))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.19.3))(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/babel__core@7.20.2)(bufferutil@4.0.6)(eslint@8.50.0)(react@18.2.0)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(type-fest@2.19.0)(typescript@5.2.2)(utf-8-validate@5.0.9):
     dependencies:
       '@babel/core': 7.23.0
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.11(react-refresh@0.11.0)(type-fest@2.19.0)(webpack-dev-server@4.15.1(bufferutil@4.0.6)(utf-8-validate@5.0.9)(webpack@5.88.2(@swc/core@1.3.92(@swc/helpers@0.5.3))))(webpack@5.88.2(@swc/core@1.3.92(@swc/helpers@0.5.3)))
@@ -22742,7 +22744,7 @@ snapshots:
       dotenv: 10.0.0
       dotenv-expand: 5.1.0
       eslint: 8.50.0
-      eslint-config-react-app: 7.0.1(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.23.0))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.23.0))(eslint@8.50.0)(jest@27.5.1(bufferutil@4.0.6)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(utf-8-validate@5.0.9))(typescript@5.2.2)
+      eslint-config-react-app: 7.0.1(@babel/plugin-syntax-flow@7.22.5(@babel/core@7.19.3))(@babel/plugin-transform-react-jsx@7.22.15(@babel/core@7.19.3))(eslint@8.50.0)(jest@27.5.1(bufferutil@4.0.6)(ts-node@10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.2.2))(utf-8-validate@5.0.9))(typescript@5.2.2)
       eslint-webpack-plugin: 3.2.0(eslint@8.50.0)(webpack@5.88.2(@swc/core@1.3.92(@swc/helpers@0.5.3)))
       file-loader: 6.2.0(webpack@5.88.2(@swc/core@1.3.92(@swc/helpers@0.5.3)))
       fs-extra: 10.1.0
