@@ -20,7 +20,7 @@ export const templates: {
   {
     key: "flowchart",
     img: "template11.png",
-    bgColor: "#F1F3F5",
+    bgColor: "#FFFFFF",
     title: () => `Flowchart`,
     promptType: "flowchart",
     accentClasses: ["color_blue", "color_green"],
@@ -28,7 +28,7 @@ export const templates: {
   {
     key: "org-chart",
     img: "template17.png",
-    bgColor: "#fefdf9",
+    bgColor: "#FFFFFF",
     title: () => t`Organization Chart`,
     promptType: "flowchart",
     accentClasses: ["color_blue", "color_orange"],
