@@ -119,11 +119,11 @@ msgstr "Become a Pro User"
 msgid "Begin Typing"
 msgstr "Begin Typing"
 
-#: src/components/Checkout.tsx:141
+#: src/components/Checkout.tsx:144
 msgid "Billed annually at $24"
 msgstr "Billed annually at $24"
 
-#: src/components/Checkout.tsx:153
+#: src/components/Checkout.tsx:156
 msgid "Billed monthly at $6"
 msgstr "Billed monthly at $6"
 
@@ -254,7 +254,7 @@ msgstr "Column"
 msgid "Comment"
 msgstr "Comment"
 
-#: src/pages/Pricing2.tsx:197
+#: src/pages/Pricing2.tsx:202
 msgid "Complete access to all features for just $6/month!"
 msgstr "Complete access to all features for just $6/month!"
 
@@ -610,6 +610,10 @@ msgstr "Free"
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
+#: src/components/Checkout.tsx:133
+msgid "Gain access to AI Features and never lose your work with a Pro account."
+msgstr "Gain access to AI Features and never lose your work with a Pro account."
+
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "General"
@@ -867,7 +871,7 @@ msgstr "Manage Billing"
 msgid "Map Data"
 msgstr "Map Data"
 
-#: src/components/Checkout.tsx:152
+#: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "Monthly"
 
@@ -1251,10 +1255,6 @@ msgstr "Start"
 msgid "Start Over"
 msgstr "Start Over"
 
-#: src/components/Checkout.tsx:173
-msgid "Start free trial"
-msgstr "Start free trial"
-
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "Status"
@@ -1273,7 +1273,7 @@ msgstr "Style Classes"
 msgid "Submit"
 msgstr "Submit"
 
-#: src/pages/Pricing2.tsx:362
+#: src/pages/Pricing2.tsx:367
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "Subscribe to Pro and flowchart the fun way!"
 
@@ -1459,25 +1459,17 @@ msgstr "Transform Your Ideas into Professional Diagrams in Seconds"
 msgid "Transform text into diagrams instantly"
 msgstr "Transform text into diagrams instantly"
 
-#: src/pages/Pricing2.tsx:192
+#: src/pages/Pricing2.tsx:197
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "Transform your Ideas into Professional Diagrams in Seconds"
 
-#: src/pages/Pricing2.tsx:260
+#: src/pages/Pricing2.tsx:265
 msgid "Trusted by over 100,000 users across businesses and universities"
 msgstr "Trusted by over 100,000 users across businesses and universities"
-
-#: src/components/Header.tsx:210
-msgid "Try Pro for Free"
-msgstr "Try Pro for Free"
 
 #: src/components/App.tsx:79
 msgid "Try again"
 msgstr "Try again"
-
-#: src/components/Checkout.tsx:133
-msgid "Try it for free for two days. Cancel anytime."
-msgstr "Try it for free for two days. Cancel anytime."
 
 #: src/lib/parserErrors.tsx:60
 msgid "Two edges have the same ID"
@@ -1609,7 +1601,7 @@ msgstr "Watermark-Free Diagrams"
 msgid "Watermarks"
 msgstr "Watermarks"
 
-#: src/pages/Pricing2.tsx:287
+#: src/pages/Pricing2.tsx:292
 msgid "What's Included"
 msgstr "What's Included"
 
@@ -1642,7 +1634,7 @@ msgstr "Would you like to continue?"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Write your prompt here or click to enable the microphone, then press and hold to record."
 
-#: src/components/Checkout.tsx:140
+#: src/components/Checkout.tsx:143
 msgid "Yearly"
 msgstr "Yearly"
 
@@ -1700,10 +1692,14 @@ msgstr "Zoom In"
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
-#: src/components/Checkout.tsx:206
+#: src/components/Checkout.tsx:213
 msgid "month"
 msgstr "month"
 
 #: src/pages/LogIn.tsx:205
 msgid "or"
 msgstr "or"
+
+#: src/components/Checkout.tsx:176
+msgid "{0}"
+msgstr "{0}"

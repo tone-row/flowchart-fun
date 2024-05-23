@@ -56,7 +56,7 @@ export function AiToolbar() {
   return (
     <div
       className={classNames(
-        "drop-shadow-lg absolute top-2 right-2",
+        "drop-shadow-lg absolute bottom-2 right-2",
         globalZ.editWithAiButton
       )}
     >
