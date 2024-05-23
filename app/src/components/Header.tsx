@@ -1,6 +1,6 @@
 import "./Header.css";
 
-import { Trans, t } from "@lingui/macro";
+import { t } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
