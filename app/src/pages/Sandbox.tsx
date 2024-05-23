@@ -27,7 +27,6 @@ import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";
 import { AiToolbar } from "../components/AiToolbar";
-import { FloatingTip } from "../components/FloatingTip";
 
 const Sandbox = memo(function Edit() {
   // Wait 1 minute and trigger a sandbox modal overtop of the editor

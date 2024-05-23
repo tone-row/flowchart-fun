@@ -119,11 +119,11 @@ msgstr "프로 사용자가 되기"
 msgid "Begin Typing"
 msgstr "입력을 시작하세요."
 
-#: src/components/Checkout.tsx:141
+#: src/components/Checkout.tsx:144
 msgid "Billed annually at $24"
 msgstr "매년 $24로 청구됩니다"
 
-#: src/components/Checkout.tsx:153
+#: src/components/Checkout.tsx:156
 msgid "Billed monthly at $6"
 msgstr "매월 $6로 청구됩니다"
 
@@ -254,7 +254,7 @@ msgstr "열"
 msgid "Comment"
 msgstr "댓글 달기"
 
-#: src/pages/Pricing2.tsx:197
+#: src/pages/Pricing2.tsx:202
 msgid "Complete access to all features for just $6/month!"
 msgstr "매달 $6로 모든 기능에 대한 완전한 액세스!"
 
@@ -610,6 +610,10 @@ msgstr "무료"
 msgid "Fullscreen"
 msgstr "전체 화면"
 
+#: src/components/Checkout.tsx:133
+msgid "Gain access to AI Features and never lose your work with a Pro account."
+msgstr "Pro 계정으로 AI 기능에 접근하고 작업을 잃어버리지 않습니다."
+
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "일반"
@@ -867,7 +871,7 @@ msgstr "청구 관리"
 msgid "Map Data"
 msgstr "데이터 지도"
 
-#: src/components/Checkout.tsx:152
+#: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "월간"
 
@@ -1251,10 +1255,6 @@ msgstr "시작"
 msgid "Start Over"
 msgstr "처음부터 다시 시작하기"
 
-#: src/components/Checkout.tsx:173
-msgid "Start free trial"
-msgstr "무료 체험 시작"
-
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "상태"
@@ -1273,7 +1273,7 @@ msgstr "스타일 클래스"
 msgid "Submit"
 msgstr "보내다"
 
-#: src/pages/Pricing2.tsx:362
+#: src/pages/Pricing2.tsx:367
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "프로를 구독하고 재미있게 플로우차트 작성하기!"
 
@@ -1459,25 +1459,17 @@ msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 msgid "Transform text into diagrams instantly"
 msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
 
-#: src/pages/Pricing2.tsx:192
+#: src/pages/Pricing2.tsx:197
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "아이디어를 몇 초만에 전문적인 다이어그램으로 변환하세요."
 
-#: src/pages/Pricing2.tsx:260
+#: src/pages/Pricing2.tsx:265
 msgid "Trusted by over 100,000 users across businesses and universities"
 msgstr "비즈니스와 대학에서 10만 명 이상의 사용자에게 신뢰받는 서비스입니다."
-
-#: src/components/Header.tsx:210
-msgid "Try Pro for Free"
-msgstr "무료로 Pro를 시도해보세요"
 
 #: src/components/App.tsx:79
 msgid "Try again"
 msgstr "다시 시도하세요"
-
-#: src/components/Checkout.tsx:133
-msgid "Try it for free for two days. Cancel anytime."
-msgstr "무료로 두 일 동안 시도해보세요. 언제든지 취소할 수 있습니다."
 
 #: src/lib/parserErrors.tsx:60
 msgid "Two edges have the same ID"
@@ -1609,7 +1601,7 @@ msgstr "워터마크 없는 다이어그램"
 msgid "Watermarks"
 msgstr "물감"
 
-#: src/pages/Pricing2.tsx:287
+#: src/pages/Pricing2.tsx:292
 msgid "What's Included"
 msgstr "포함된 내용"
 
@@ -1642,7 +1634,7 @@ msgstr "계속하시겠습니까?"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "여기에 프롬프트를 작성하거나 마이크를 활성화하려면 클릭한 다음 눌러서 녹음하세요."
 
-#: src/components/Checkout.tsx:140
+#: src/components/Checkout.tsx:143
 msgid "Yearly"
 msgstr "연간"
 
@@ -1700,10 +1692,14 @@ msgstr "확대"
 msgid "Zoom Out"
 msgstr "축소하기"
 
-#: src/components/Checkout.tsx:206
+#: src/components/Checkout.tsx:213
 msgid "month"
 msgstr "월"
 
 #: src/pages/LogIn.tsx:205
 msgid "or"
 msgstr "또는"
+
+#: src/components/Checkout.tsx:176
+msgid "{0}"
+msgstr "{0}"
