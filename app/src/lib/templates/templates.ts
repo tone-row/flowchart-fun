@@ -26,14 +26,6 @@ export const templates: {
     accentClasses: ["color_blue", "color_green"],
   },
   {
-    key: "mindmap",
-    img: "template19.png",
-    bgColor: "#FFFFFF",
-    title: () => `Mind Map`,
-    promptType: "knowledge",
-    accentClasses: ["size_lg", "color_blue", "color_green", "color_orange"],
-  },
-  {
     key: "org-chart",
     img: "template17.png",
     bgColor: "#fefdf9",
@@ -48,6 +40,14 @@ export const templates: {
     title: () => t`Process Diagram`,
     promptType: "flowchart",
     accentClasses: ["color_blue", "color_green", "color_purple"],
+  },
+  {
+    key: "mindmap",
+    img: "template19.png",
+    bgColor: "#FFFFFF",
+    title: () => `Mind Map`,
+    promptType: "knowledge",
+    accentClasses: ["size_lg", "color_blue", "color_green", "color_orange"],
   },
   {
     key: "knowledge-graph",

@@ -336,6 +336,7 @@ export function getStyleStringFromMeta(meta: any) {
   if (customCssOnly) {
     return cytoscapeStyle;
   } else {
-    return `${toTheme(themeEditor).style}\n${cytoscapeStyle}`;
+    const theme = toTheme(themeEditor);
+    return `${theme.style}\n${cytoscapeStyle}\n${theme.postStyle}`;
   }
 }
