@@ -119,11 +119,11 @@ msgstr "प्रो उपयोगकर्ता बनें"
 msgid "Begin Typing"
 msgstr "टाइपिंग शुरू करें"
 
-#: src/components/Checkout.tsx:141
+#: src/components/Checkout.tsx:144
 msgid "Billed annually at $24"
 msgstr "वार्षिक रूप से $24 का बिल बनाया जाएगा"
 
-#: src/components/Checkout.tsx:153
+#: src/components/Checkout.tsx:156
 msgid "Billed monthly at $6"
 msgstr "मासिक रूप से $6 का बिल बनाया जाएगा"
 
@@ -254,7 +254,7 @@ msgstr "स्तंभ"
 msgid "Comment"
 msgstr "टिप्पणी"
 
-#: src/pages/Pricing2.tsx:197
+#: src/pages/Pricing2.tsx:202
 msgid "Complete access to all features for just $6/month!"
 msgstr "सिर्फ $6/माह के लिए सभी सुविधाओं का पूरा उपयोग!"
 
@@ -610,6 +610,10 @@ msgstr "मुफ्त"
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
+#: src/components/Checkout.tsx:133
+msgid "Gain access to AI Features and never lose your work with a Pro account."
+msgstr "प्रो खाते से AI फीचर्स तक पहुंच प्राप्त करें और कभी भी अपना काम न खोएं।"
+
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "सामान्य"
@@ -867,7 +871,7 @@ msgstr "बिलिंग प्रबंधित करें"
 msgid "Map Data"
 msgstr "डेटा मैप"
 
-#: src/components/Checkout.tsx:152
+#: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "मासिक"
 
@@ -1251,10 +1255,6 @@ msgstr "शुरू"
 msgid "Start Over"
 msgstr "शुरू करें"
 
-#: src/components/Checkout.tsx:173
-msgid "Start free trial"
-msgstr "मुफ्त परीक्षण शुरू करें"
-
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "स्टेटस"
@@ -1273,7 +1273,7 @@ msgstr "शैली क्लासेज"
 msgid "Submit"
 msgstr "भेजना"
 
-#: src/pages/Pricing2.tsx:362
+#: src/pages/Pricing2.tsx:367
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "प्रो की सदस्यता लें और मजेदार तरीके से फ्लोचार्ट करें!"
 
@@ -1459,25 +1459,17 @@ msgstr "अपने विचारों को सेकंड में प�
 msgid "Transform text into diagrams instantly"
 msgstr "पाठ को तुरंत आरेख में बदलें"
 
-#: src/pages/Pricing2.tsx:192
+#: src/pages/Pricing2.tsx:197
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को पेशेवर डायग्राम में बदलें सेकंडों में"
 
-#: src/pages/Pricing2.tsx:260
+#: src/pages/Pricing2.tsx:265
 msgid "Trusted by over 100,000 users across businesses and universities"
 msgstr "व्यापार और विश्वविद्यालयों में 100,000 से अधिक उपयोगकर्ताओं द्वारा विश्वसनीय"
-
-#: src/components/Header.tsx:210
-msgid "Try Pro for Free"
-msgstr "मुफ्त के लिए प्रो ट्राय करें"
 
 #: src/components/App.tsx:79
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
-
-#: src/components/Checkout.tsx:133
-msgid "Try it for free for two days. Cancel anytime."
-msgstr "दो दिन के लिए इसे मुफ्त में ट्राय करें। कभी भी रद्द कर सकते हैं।"
 
 #: src/lib/parserErrors.tsx:60
 msgid "Two edges have the same ID"
@@ -1609,7 +1601,7 @@ msgstr "वॉटरमार्क-मुक्त आरेख"
 msgid "Watermarks"
 msgstr "वॉटरमार्क"
 
-#: src/pages/Pricing2.tsx:287
+#: src/pages/Pricing2.tsx:292
 msgid "What's Included"
 msgstr "क्या शामिल है"
 
@@ -1642,7 +1634,7 @@ msgstr "क्या आप जारी रखना चाहते हैं?
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "अपना प्रॉम्प्ट यहां लिखें या माइक्रोफोन को सक्षम करने के लिए क्लिक करें, फिर रिकॉर्ड करने के लिए दबाएं और रखें।"
 
-#: src/components/Checkout.tsx:140
+#: src/components/Checkout.tsx:143
 msgid "Yearly"
 msgstr "वार्षिक"
 
@@ -1700,10 +1692,14 @@ msgstr "ज़ूम इन करें"
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 
-#: src/components/Checkout.tsx:206
+#: src/components/Checkout.tsx:213
 msgid "month"
 msgstr "महीना"
 
 #: src/pages/LogIn.tsx:205
 msgid "or"
 msgstr "या"
+
+#: src/components/Checkout.tsx:176
+msgid "{0}"
+msgstr "{0}"

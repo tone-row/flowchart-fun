@@ -26,7 +26,6 @@ import { useTabsStore } from "../lib/useTabsStore";
 import { useHasProAccess } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
-import { FloatingTip } from "../components/FloatingTip";
 import { AiToolbar } from "../components/AiToolbar";
 
 export default function EditHosted() {
@@ -100,7 +99,6 @@ export default function EditHosted() {
                 readOnly: !hasProAccess,
               }}
             />
-            <FloatingTip />
           </Tabs.Content>
           <Tabs.Content value="Theme" className="overflow-hidden">
             <ThemeTab />

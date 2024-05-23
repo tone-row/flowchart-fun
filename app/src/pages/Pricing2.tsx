@@ -97,6 +97,11 @@ const pricingRows = () => [
 
 const companies: { svg: string; name: string; className?: string }[] = [
   {
+    svg: "netflix.svg",
+    name: "Netflix",
+    className: "h-8 w-auto shrink-0",
+  },
+  {
     svg: "bytedance.svg",
     name: "Bytedance",
     className: "h-8 w-auto shrink-0 dark:invert",
@@ -187,7 +192,7 @@ export default function Pricing2() {
           alt=""
         />
         <Container className="text-center grid relative">
-          <span className="font-bold sm:text-lg mb-3">Flowchart Fun PRO</span>
+          <span className="font-bold sm:text-lg mb-3">Flowchart Fun Pro</span>
           <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold !leading-tight mb-8">
             <Trans>
               Transform your Ideas into Professional Diagrams in Seconds
@@ -398,7 +403,7 @@ function Cell({
       {center ? (
         children
       ) : (
-        <p className="text-sm sm:text-base md:text-lg text-neutral-500 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
+        <p className="text-sm sm:text-base md:text-[18px] text-neutral-600 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
           {children}
         </p>
       )}

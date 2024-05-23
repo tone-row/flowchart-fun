@@ -119,11 +119,11 @@ msgstr "成为专业用户"
 msgid "Begin Typing"
 msgstr "开始输入"
 
-#: src/components/Checkout.tsx:141
+#: src/components/Checkout.tsx:144
 msgid "Billed annually at $24"
 msgstr "年度账单为$24"
 
-#: src/components/Checkout.tsx:153
+#: src/components/Checkout.tsx:156
 msgid "Billed monthly at $6"
 msgstr "月度账单为$6"
 
@@ -254,7 +254,7 @@ msgstr "列"
 msgid "Comment"
 msgstr "评论"
 
-#: src/pages/Pricing2.tsx:197
+#: src/pages/Pricing2.tsx:202
 msgid "Complete access to all features for just $6/month!"
 msgstr "仅需6美元/月即可获得所有功能的完全访问权限！"
 
@@ -610,6 +610,10 @@ msgstr "免费"
 msgid "Fullscreen"
 msgstr "全屏"
 
+#: src/components/Checkout.tsx:133
+msgid "Gain access to AI Features and never lose your work with a Pro account."
+msgstr "获得AI功能的访问权限，并通过专业版账户永远不会丢失您的工作。"
+
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "一般"
@@ -867,7 +871,7 @@ msgstr "付款管理"
 msgid "Map Data"
 msgstr "對應資料"
 
-#: src/components/Checkout.tsx:152
+#: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "每月"
 
@@ -1251,10 +1255,6 @@ msgstr "开始"
 msgid "Start Over"
 msgstr "重新開始"
 
-#: src/components/Checkout.tsx:173
-msgid "Start free trial"
-msgstr "开始免费试用"
-
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "状态"
@@ -1273,7 +1273,7 @@ msgstr "樣式類別"
 msgid "Submit"
 msgstr "提交"
 
-#: src/pages/Pricing2.tsx:362
+#: src/pages/Pricing2.tsx:367
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "订阅专业版，以有趣的方式制作流程图！"
 
@@ -1459,25 +1459,17 @@ msgstr "秒转换您的想法成专业图表"
 msgid "Transform text into diagrams instantly"
 msgstr "即时将文本转换为图表"
 
-#: src/pages/Pricing2.tsx:192
+#: src/pages/Pricing2.tsx:197
 msgid "Transform your Ideas into Professional Diagrams in Seconds"
 msgstr "在几秒钟内将您的想法转变为专业图表"
 
-#: src/pages/Pricing2.tsx:260
+#: src/pages/Pricing2.tsx:265
 msgid "Trusted by over 100,000 users across businesses and universities"
 msgstr "受到超过10万家企业和大学用户的信任"
-
-#: src/components/Header.tsx:210
-msgid "Try Pro for Free"
-msgstr "免费试用专业版"
 
 #: src/components/App.tsx:79
 msgid "Try again"
 msgstr "重试"
-
-#: src/components/Checkout.tsx:133
-msgid "Try it for free for two days. Cancel anytime."
-msgstr "免费试用两天，随时取消。"
 
 #: src/lib/parserErrors.tsx:60
 msgid "Two edges have the same ID"
@@ -1609,7 +1601,7 @@ msgstr "无水印图表"
 msgid "Watermarks"
 msgstr "水印"
 
-#: src/pages/Pricing2.tsx:287
+#: src/pages/Pricing2.tsx:292
 msgid "What's Included"
 msgstr "包括什么"
 
@@ -1642,7 +1634,7 @@ msgstr "您想继续吗？"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "在此处输入您的提示，或点击启用麦克风，然后按住录制。"
 
-#: src/components/Checkout.tsx:140
+#: src/components/Checkout.tsx:143
 msgid "Yearly"
 msgstr "每年"
 
@@ -1700,10 +1692,14 @@ msgstr "放大"
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/components/Checkout.tsx:206
+#: src/components/Checkout.tsx:213
 msgid "month"
 msgstr "月份"
 
 #: src/pages/LogIn.tsx:205
 msgid "or"
 msgstr "或"
+
+#: src/components/Checkout.tsx:176
+msgid "{0}"
+msgstr "{0}"

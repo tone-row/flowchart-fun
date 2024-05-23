@@ -302,6 +302,7 @@ function DynamicClassesMenu({
       {Object.entries(dynamicClasses).map(([name, options]) => (
         <Submenu
           key={name}
+          // className="max-h-[200px] overflow-y-auto"
           label={
             <span className="text-sm capitalize">
               {name.replace(/-/g, " ")}

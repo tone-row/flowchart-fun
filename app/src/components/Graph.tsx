@@ -306,7 +306,7 @@ function getGraphUpdater({
 
     try {
       const themeEditor = getThemeEditor(doc);
-      const { layout, style: themeStyle } = toTheme(themeEditor);
+      const { layout, style: themeStyle, postStyle } = toTheme(themeEditor);
 
       // Eventually, this will become cytoscape again...
       const customCss = (doc.meta.cytoscapeStyle as string) ?? "";
@@ -315,7 +315,9 @@ function getGraphUpdater({
       const customCssOnly = (doc.meta?.customCssOnly as boolean) ?? false;
 
       const { style } = preprocessStyle(
-        customCssOnly ? customCss : [themeStyle, customCss].join("\n")
+        customCssOnly
+          ? customCss
+          : [themeStyle, customCss, postStyle].join("\n")
       );
 
       elements = getElements(doc.text);

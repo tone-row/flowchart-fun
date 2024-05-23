@@ -126,11 +126,14 @@ export function Checkout({
 
   return (
     <div>
-      <h2 className="text-white text-4xl font-bold text-center mb-2">
+      <h2 className="text-white text-4xl font-bold text-center mb-2 tracking-wide">
         <Trans>Choose a Plan</Trans>
       </h2>
-      <p className="text-white text-[24px] text-center mb-8">
-        <Trans>Try it for free for two days. Cancel anytime.</Trans>
+      <p className="text-white text-[24px] text-center mb-8 text-wrap-balance leading-tight opacity-80">
+        <Trans>
+          Gain access to AI Features and never lose your work with a Pro
+          account.
+        </Trans>
       </p>
       <div className="grid sm:grid-cols-2 gap-3 mb-8">
         <PlanButton
@@ -165,12 +168,16 @@ export function Checkout({
               "animate-pulse": createCheckoutSession.isLoading,
             }
           )}
-          data-session-activity="Start Free Trial"
           onClick={() => {
             createCheckoutSession.mutate(plan);
           }}
+          data-session-activity="Upgrade Account"
         >
-          <Trans>Start free trial</Trans>
+          <Trans>
+            {createCheckoutSession.isLoading
+              ? "Processing..."
+              : "Upgrade to Pro"}
+          </Trans>
         </button>
       </div>
     </div>

@@ -133,7 +133,7 @@ export function toTheme(theme: FFTheme) {
     }
   }
 
-  const elementStyles: cytoscape.StylesheetCSS[] = [
+  const preStyles: cytoscape.StylesheetCSS[] = [
     {
       selector: ":childless",
       css: node as any,
@@ -169,10 +169,25 @@ export function toTheme(theme: FFTheme) {
         "active-bg-opacity": 0,
       },
     },
+  ];
+  const postStyles: cytoscape.StylesheetCSS[] = [
     ...edgeStyleClasses,
     ...childlessShapeClasses,
     ...createSmartChildlessBorderClasses(theme.borderWidth || theme.edgeWidth),
     ...createSmartShapeClasses(width),
+    // for width and height in the form [w=100][h=100]
+    {
+      selector: ":childless[w]",
+      css: {
+        width: "data(width)",
+      },
+    },
+    {
+      selector: ":childless[h]",
+      css: {
+        height: "data(height)",
+      },
+    },
   ];
 
   const variables = [
@@ -182,17 +197,19 @@ export function toTheme(theme: FFTheme) {
     `$background: ${theme.background};`,
   ].join("\n");
 
-  const style = [variables, styleToString(elementStyles)];
+  const preStyle = [variables, styleToString(preStyles)];
+  const postStyle = styleToString(postStyles);
 
   // Add font style
   let knownFont = fonts.find((f) => f.name === theme.fontFamily);
   if (knownFont) {
-    style.unshift(knownFont.importSnippet);
+    preStyle.unshift(knownFont.importSnippet);
   }
 
   return {
     layout,
-    style: style.join("\n"),
+    style: preStyle.join("\n"),
+    postStyle,
   };
 }
 
