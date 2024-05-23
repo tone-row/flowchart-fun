@@ -207,7 +207,9 @@ export const Header = memo(function SharedHeader() {
                     track("sponsor", "click");
                   }}
                 >
-                  <Trans>Try Pro for Free</Trans>
+                  <Trans>
+                    <span>Flowchart Fun&nbsp;</span>Pro
+                  </Trans>
                 </Link>
               ) : null}
             </nav>

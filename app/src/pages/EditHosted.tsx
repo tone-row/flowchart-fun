@@ -100,7 +100,6 @@ export default function EditHosted() {
                 readOnly: !hasProAccess,
               }}
             />
-            <FloatingTip />
           </Tabs.Content>
           <Tabs.Content value="Theme" className="overflow-hidden">
             <ThemeTab />

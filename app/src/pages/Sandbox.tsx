@@ -124,7 +124,6 @@ const Sandbox = memo(function Edit() {
           <WithGraph>
             <Tabs.Content value="Document" className="overflow-hidden relative">
               <TextEditor value={text} onChange={onChange} />
-              <FloatingTip />
             </Tabs.Content>
             <Tabs.Content value="Theme" className="overflow-hidden">
               <ThemeTab />
