@@ -42,44 +42,44 @@ export function LoadTemplateDialog() {
     setContent(getContentInitialValue);
   }, []);
 
-  const load = useCallback(() => {
-    (async () => {
-      if (!template || !templateData) return;
+  const load = useCallback(async () => {
+    if (!template || !templateData) return;
 
-      const importTemplate = await import(
-        `../lib/templates/${template}-template.ts`
-      );
-      const templateContent = importTemplate.content;
-      const theme: FFTheme = importTemplate.theme;
-      const cytoscapeStyle: string = importTemplate.cytoscapeStyle ?? "";
+    const importTemplate = await import(
+      `../lib/templates/${template}-template.ts`
+    );
+    const templateContent = importTemplate.content;
+    const theme: FFTheme = importTemplate.theme;
+    const cytoscapeStyle: string = importTemplate.cytoscapeStyle ?? "";
 
-      const { text, meta: _meta, details } = useDoc.getState();
+    const { text, meta: _meta, details } = useDoc.getState();
 
-      const nextContent = content ? templateContent : text;
+    const nextContent = content ? templateContent : text;
 
-      const meta = {
-        ..._meta,
-        cytoscapeStyle,
-        themeEditor: theme,
-      };
+    const meta = {
+      ..._meta,
+      cytoscapeStyle,
+      themeEditor: theme,
+      // Unfreeze the doc
+      nodePositions: undefined,
+    };
 
-      reset();
-      setOpen(false);
+    reset();
+    setOpen(false);
 
-      unmountGraph();
-      // The reason this is done is because the unmounting
-      // of the graph happens effectually, i.e. not immediately
-      // and when an elk layout is run, but the graph is no longer
-      // there we get an error, this ensures the graph is actually
-      // unmounted, therefore the layout doesn't begin to run
-      requestAnimationFrame(() => {
-        prepareChart({
-          doc: `${nextContent}\n=====${JSON.stringify(meta)}=====`,
-          details,
-        });
-        mountGraph();
+    unmountGraph();
+    // The reason this is done is because the unmounting
+    // of the graph happens effectually, i.e. not immediately
+    // and when an elk layout is run, but the graph is no longer
+    // there we get an error, this ensures the graph is actually
+    // unmounted, therefore the layout doesn't begin to run
+    requestAnimationFrame(() => {
+      prepareChart({
+        doc: `${nextContent}\n=====${JSON.stringify(meta)}=====`,
+        details,
       });
-    })();
+      mountGraph();
+    });
   }, [template, templateData, content, reset]);
 
   return (

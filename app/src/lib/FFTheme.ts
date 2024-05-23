@@ -25,7 +25,7 @@ export type Direction = "RIGHT" | "LEFT" | "DOWN" | "UP";
 
 export type Shape = "rectangle" | "roundrectangle" | "ellipse";
 
-export type CurveStyle = "bezier" | "taxi";
+export type CurveStyle = "bezier" | "taxi" | "round-taxi";
 
 export type Border = "none" | "solid" | "dashed" | "dotted" | "double";
 

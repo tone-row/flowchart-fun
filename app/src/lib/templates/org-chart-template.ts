@@ -1,17 +1,7 @@
 import { FFTheme } from "../FFTheme";
 
 export const content = `
-Saraswati Sharma .size_lg.color_pink
-  Robert Wilson .color_red
-    Sarah Thompson .color_yellow
-    David Brown .color_yellow
-      Jennifer Lee .color_blue
-        Andrew Miller .color_green
-        Carrie Richards .color_green
-          Terry Peralta .border_dashed
-  Lisa Anderson .color_red
-    Camille Mitchell .color_yellow
-      Christopher White .color_blue
+Saraswati Sharma .size_lg.color_black\n  Robert Wilson\n    Sarah Thompson\n    David Brown\n      Jennifer Lee\n        Andrew Miller .color_green\n        Carrie Richards .color_green\n          Terry Peralta .color_green\n  Lisa Anderson .color_purple\n    Camille Mitchell .color_purple\n      Christopher White .color_purple\n
 `;
 
 export const theme: FFTheme = {
@@ -20,23 +10,23 @@ export const theme: FFTheme = {
   spacingFactor: 0.96,
   lineHeight: 1.4,
   shape: "roundrectangle",
-  background: "#fefdf9",
-  textMaxWidth: 176,
-  padding: 14,
-  fontFamily: "Onest",
-  curveStyle: "taxi",
-  textMarginY: 1,
-  borderWidth: 1,
+  background: "#ffffff",
+  textMaxWidth: 142,
+  padding: 16,
+  fontFamily: "Overpass",
+  curveStyle: "round-taxi",
+  textMarginY: 2.5,
+  borderWidth: 2,
   edgeTextSize: 1,
-  edgeWidth: 1,
+  edgeWidth: 2,
   useFixedHeight: false,
   fixedHeight: 60,
   sourceArrowShape: "none",
   targetArrowShape: "none",
-  edgeColor: "#2a2a26",
-  borderColor: "#2a2a26",
-  nodeBackground: "#fefdf9",
-  nodeForeground: "#2a2a26",
+  edgeColor: "#b6b6b6",
+  borderColor: "#dadada",
+  nodeBackground: "#f4f4f4",
+  nodeForeground: "#2a2a2a",
   sourceDistanceFromNode: 0,
   targetDistanceFromNode: 0,
   arrowScale: 1,
@@ -44,4 +34,4 @@ export const theme: FFTheme = {
 };
 
 export const cytoscapeStyle =
-  "$red: #f1bfb8;\n$orange: #ff8e16;\n$yellow: #f8edba;\n$green: #b1d1d3;\n$blue: #c1e1f8;\n$pink: #e9b5da;\n$purple: #d0a9e1;\n$grey: #cacaca;\n\n:childless {\n  font-weight: 300;\n}\n\n:childless.color_red {\n  background-color: $red;\n  border-color: #be8179;\n}\n:childless.color_yellow {\n  background-color: $yellow;\n  border-color: #c8bd84;\n}\n:childless.color_green {\n  background-color: $green;\n  border-color: #7ea9a5;\n}\n:childless.color_blue {\n  background-color: $blue;\n  border-color: #89add1;\n}\n:childless.color_purple {\n  background-color: $purple;\n  border-color: #aa82ba;\n}\n:childless.color_pink {\n  background-color: $pink;\n  border-color: #a585b1;\n}\n\n:childless.size_lg {\n  font-size: 24;\n  padding: 18;\n  width: 250;\n  text-max-width: 218;\n  text-margin-y: 2;\n}";
+  "edge {taxi-radius: 40px;}\n\n$red: #ffd1cb;\n$orange: #ff8e16;\n$yellow: #fff7d5;\n$green: #bcfcff;\n$blue: #c1e1f8;\n$pink: #ffe7f7;\n$purple: #eec6ff;\n$grey: #cacaca;\n\n:childless {\n  font-weight: 300;\n}\n\n:childless.color_red {\n  background-color: $red;\n  border-color: #b38d88;\n}\n:childless.color_yellow {\n  background-color: $yellow;\n  border-color: #c8bd84;\n}\n:childless.color_green {\n  background-color: $green;\n  border-color: #60c8bd;\n}\n:childless.color_blue {\n  background-color: $blue;\n  border-color: #89add1;\n}\n:childless.color_purple {\n  background-color: $purple;\n  border-color: #aa82ba;\n}\n:childless.color_pink {\n  background-color: $pink;\n  border-color: #c5aacf;\n}\n:childless.color_black {\n  background-color: black;\n  border-color: black;\n  color: white;\n}\n\n:childless.size_lg {\n  font-size: 24;\n  padding: 18;\n  width: 250;\n  text-max-width: 218;\n  text-margin-y: 3;\n}";

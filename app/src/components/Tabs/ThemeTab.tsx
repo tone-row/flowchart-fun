@@ -376,6 +376,7 @@ const Form = createForm<{
           options: [
             { label: "Bezier", value: "bezier" },
             { label: "Taxi", value: "taxi" },
+            { label: "Round Taxi", value: "round-taxi" },
           ],
         },
         {
@@ -631,7 +632,7 @@ export function ThemeTab() {
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <>
-      <h2 className="font-bold text-blue-600 text-base -mb-8 ml-3 dark:text-blue-400">
+      <h2 className="font-bold text-neutral-800 text-base -mb-8 ml-px dark:text-blue-400">
         {title}
       </h2>
       <div className="border border-blue-100 dark:border-neutral-800 rounded-xl relative w-full overflow-hidden">

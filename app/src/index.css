@@ -447,3 +447,7 @@ body.dark .pricing-highlights {
 .plan-button[aria-current="true"] {
   transform: scale(1) translateZ(0);
 }
+
+.react-contexify .react-contexify__submenu {
+  @apply max-h-[300px] overflow-y-auto;
+}
