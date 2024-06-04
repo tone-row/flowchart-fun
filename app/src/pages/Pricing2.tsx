@@ -194,12 +194,10 @@ export default function Pricing2() {
         <Container className="text-center grid relative">
           <span className="font-bold sm:text-lg mb-3">Flowchart Fun Pro</span>
           <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold !leading-tight mb-8">
-            <Trans>
-              Transform your Ideas into Professional Diagrams in Seconds
-            </Trans>
+            <Trans>Turn your ideas into professional diagrams in seconds</Trans>
           </h1>
           <p className="text-lg md:text-xl text-purple-500 font-bold text-wrap-balance leading-normal md:leading-tight text-center -mt-2 mb-10 dark:text-purple-100/70 dark:font-normal">
-            <Trans>Complete access to all features for just $6/month!</Trans>
+            <Trans>Upgrade to Pro for just $4/month</Trans>
           </p>
           <div
             ref={videoRef}
@@ -223,7 +221,7 @@ export default function Pricing2() {
       <div className="pricing-highlights pt-12">
         <div className="max-w-6xl mx-auto py-12 grid gap-12 px-4 md:px-8">
           <div>
-            <SectionTitle>Highlights</SectionTitle>
+            <SectionTitle>Features</SectionTitle>
             <div className="grid md:grid-cols-2 gap-4">
               {features().map((feature) => (
                 <div
@@ -262,9 +260,7 @@ export default function Pricing2() {
       <div className="trusted">
         <Container className="py-12">
           <SectionTitle className="text-center sm:mb-8">
-            <Trans>
-              Trusted by over 100,000 users across businesses and universities
-            </Trans>
+            <Trans>Trusted by Professionals and Academics Alike</Trans>
           </SectionTitle>
           <div className="flex items-center gap-4 sm:gap-x-12 sm:gap-y-8 flex-wrap justify-center">
             {companies.map((company) => (
@@ -293,8 +289,8 @@ export default function Pricing2() {
           </SectionTitle>
           <div className="border-neutral-400/50 grid grid-cols-[minmax(0,1fr)_auto_auto] rounded-xl border shadow overflow-hidden bg-white dark:bg-neutral-900">
             <span>&nbsp;</span>
-            <ColumnHeader>Free</ColumnHeader>
             <ColumnHeader>Pro</ColumnHeader>
+            <ColumnHeader>Free</ColumnHeader>
             {pricingRows().map((row, i) => {
               const Icon = row.icon;
               return (
@@ -323,6 +319,13 @@ export default function Pricing2() {
                       </>
                     )}
                   </Cell>
+                  <Cell center available>
+                    <Check
+                      size={24}
+                      weight="bold"
+                      className="text-green-600 dark:text-green-500"
+                    />
+                  </Cell>
                   <Cell center available={row.free}>
                     {row.free ? (
                       <Check
@@ -334,16 +337,9 @@ export default function Pricing2() {
                       <X
                         size={24}
                         weight="bold"
-                        className="text-red-300 dark:text-red-600/50"
+                        className="text-red-400 dark:text-red-600/50"
                       />
                     )}
-                  </Cell>
-                  <Cell center available>
-                    <Check
-                      size={24}
-                      weight="bold"
-                      className="text-green-600 dark:text-green-500"
-                    />
                   </Cell>
                 </Fragment>
               );
@@ -395,8 +391,8 @@ function Cell({
         {
           "flex items-center justify-center border-l": center,
           "px-4 pr-10": !center,
-          "bg-green-100 dark:bg-green-500/10": available,
-          "bg-red-50 dark:bg-red-600/5": available === false,
+          "bg-green-200 dark:bg-green-500/10": available,
+          "bg-red-600/10 dark:bg-red-600/5": available === false,
         }
       )}
     >
