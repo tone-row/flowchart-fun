@@ -153,9 +153,9 @@ export function Checkout({
             setPlan("monthly");
           }}
           planTitle={t`Monthly`}
-          description={t`Billed monthly at $6`}
+          description={t`Billed monthly at $4`}
           data-testid="monthly-plan-button"
-          monthlyPrice="6"
+          monthlyPrice="4"
           aria-current={plan === "monthly"}
           data-session-activity="Choose Monthly Plan"
         />
@@ -216,7 +216,7 @@ function PlanButton({
       <span className="opacity-50 text-[15px]">{description}</span>
       {save ? (
         <span className="absolute top-0 right-0 bg-purple-700 text-white font-bold pb-[14px] pt-[8px] pl-[17px] pr-[9px] rounded-tr-2xl rounded-bl-3xl -mr-px">
-          Save 60%
+          Save 50%
         </span>
       ) : null}
     </button>

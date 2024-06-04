@@ -13,21 +13,21 @@ export const features = (): {
   imgPath: string;
 }[] => [
   {
-    title: t`Create Unlimited Flowcharts`,
+    title: t`Unlimited Flowcharts`,
     points: [
       t`Create unlimited flowcharts stored in the cloud– accessible anywhere!`,
     ],
     imgPath: "launch",
   },
   {
-    title: t`Save Time with AI & Dictation`,
+    title: t`AI Creation & Editing`,
     points: [
-      t`Together, speech-to-text and AI make creating diagrams a breeze!`,
+      t`Save time with AI and dictation, making it easy to create diagrams.`,
     ],
     imgPath: "AI",
   },
   {
-    title: t`Use External Data`,
+    title: t`Connect your Data`,
     points: [
       t`Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!`,
     ],
@@ -89,7 +89,7 @@ export default function Pricing() {
             </Trans>
           </p>
           <p className="text-base md:text-lg text-neutral-500 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
-            <Trans>Create unlimited diagrams for just $6/month!</Trans>
+            <Trans>Create unlimited diagrams for just $4/month!</Trans>
           </p>
         </div>
         <div
