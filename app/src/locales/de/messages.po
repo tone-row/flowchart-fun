@@ -17,7 +17,7 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 Vorläufiger Flussdiagramm"
 
-#: src/components/Tabs/ThemeTab.tsx:610
+#: src/components/Tabs/ThemeTab.tsx:611
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>Nur benutzerdefiniertes CSS</0> ist aktiviert. Nur die Layout- und Erweiterten Einstellungen werden angewandt."
 
@@ -37,6 +37,10 @@ msgstr "<0>Sie haben derzeit ein kostenloses Konto.<1/><2>Erfahren Sie mehr übe
 msgid "A new version of the app is available. Please reload to update."
 msgstr "Eine neue Version der App ist verfügbar. Bitte neu laden, um zu aktualisieren."
 
+#: src/pages/Pricing.tsx:23
+msgid "AI Creation & Editing"
+msgstr "KI-Erstellung & Bearbeitung"
+
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "KI-unterstützte Erstellung von Flussdiagrammen"
@@ -55,7 +59,7 @@ msgstr "Konto"
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "Fügen Sie einen Backslash (<0>\\</0>) vor jedem Sonderzeichen ein: <1>(</1>, <2>:</2>, <3>#</3>, oder <4>.</4>`"
 
-#: src/components/Tabs/ThemeTab.tsx:544
+#: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
 msgstr "Fortgeschritten"
 
@@ -75,8 +79,8 @@ msgstr "Es ist ein Fehler aufgetreten. Versuchen Sie, es erneut einzureichen ode
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
-#: src/components/Tabs/ThemeTab.tsx:498
 #: src/components/Tabs/ThemeTab.tsx:499
+#: src/components/Tabs/ThemeTab.tsx:500
 msgid "Arrow Size"
 msgstr "Größe des Pfeils"
 
@@ -124,8 +128,8 @@ msgid "Billed annually at $24"
 msgstr "Jährlich abgerechnet für $24"
 
 #: src/components/Checkout.tsx:156
-msgid "Billed monthly at $6"
-msgstr "Monatlich abgerechnet für $6"
+msgid "Billed monthly at $4"
+msgstr "Monatlich für $4 berechnet"
 
 #: src/components/Header.tsx:138
 #: src/components/Header.tsx:384
@@ -237,8 +241,8 @@ msgstr "Klon"
 msgid "Close"
 msgstr "Schließen"
 
-#: src/components/Tabs/ThemeTab.tsx:397
 #: src/components/Tabs/ThemeTab.tsx:398
+#: src/components/Tabs/ThemeTab.tsx:399
 msgid "Color"
 msgstr "Farbe"
 
@@ -254,10 +258,6 @@ msgstr "Spalte"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: src/pages/Pricing2.tsx:202
-msgid "Complete access to all features for just $6/month!"
-msgstr "Vollständiger Zugriff auf alle Funktionen für nur 6 $ pro Monat!"
-
 #: src/lib/graphOptions.ts:18
 msgid "Concentric"
 msgstr "Konzentrisch"
@@ -270,6 +270,10 @@ msgstr "Neue E-Mail bestätigen"
 #: src/pages/LogIn.tsx:232
 msgid "Confirm your email address to sign in."
 msgstr "Bestätigen Sie Ihre E-Mail-Adresse, um sich anzumelden."
+
+#: src/pages/Pricing.tsx:30
+msgid "Connect your Data"
+msgstr "Verbinden Sie Ihre Daten"
 
 #: src/lib/getDefaultText.ts:5
 msgid "Consider: Adding a Label"
@@ -330,7 +334,6 @@ msgid "Create Flowcharts using AI"
 msgstr "Erstellen Sie Flussdiagramme mit KI"
 
 #: src/lib/paywallCopy.ts:3
-#: src/pages/Pricing.tsx:16
 msgid "Create Unlimited Flowcharts"
 msgstr "Erstellen Sie unbegrenzte Flussdiagramme"
 
@@ -339,8 +342,8 @@ msgid "Create a New Chart"
 msgstr "Nein Diagramm erstellen"
 
 #: src/pages/Pricing.tsx:92
-msgid "Create unlimited diagrams for just $6/month!"
-msgstr "Erstellen Sie unbegrenzt viele Diagramme für nur 6 $ pro Monat!"
+msgid "Create unlimited diagrams for just $4/month!"
+msgstr "Erstellen Sie unbegrenzt Diagramme für nur $4/Monat!"
 
 #: src/pages/Pricing.tsx:18
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
@@ -358,8 +361,8 @@ msgstr "Eine Kante zwischen zwei Knoten wird erstellt, indem der zweite Knoten u
 msgid "Curve Style"
 msgstr "Kurvenstil"
 
-#: src/components/Tabs/ThemeTab.tsx:552
 #: src/components/Tabs/ThemeTab.tsx:553
+#: src/components/Tabs/ThemeTab.tsx:554
 msgid "Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
 
@@ -453,8 +456,8 @@ msgstr "Spalte mit Kantenbeschriftung"
 msgid "Edge Style"
 msgstr "Kantenstil"
 
-#: src/components/Tabs/ThemeTab.tsx:513
 #: src/components/Tabs/ThemeTab.tsx:514
+#: src/components/Tabs/ThemeTab.tsx:515
 msgid "Edge Text Size"
 msgstr "Kanten Textgröße"
 
@@ -552,8 +555,8 @@ msgid "Exclusive Office Hours"
 msgstr "Exklusive Bürozeiten"
 
 #: src/components/LoadFileButton.tsx:77
-msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
-msgstr "Erleben Sie die Effizienz und Sicherheit des direkten Ladens lokaler Dateien in Ihr Flussdiagramm, perfekt für die Verwaltung von Offline-Dokumenten. Entsperren Sie diese exklusive Pro-Funktion und mehr mit Flowchart Fun Pro, erhältlich für nur 6 $ pro Monat."
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
+msgstr "Erleben Sie die Effizienz und Sicherheit des direkten Ladens lokaler Dateien in Ihre Flussdiagramme, ideal für die Verwaltung von Arbeitsdokumenten offline. Entsperren Sie diese exklusive Pro-Funktion und mehr mit Flowchart Fun Pro, erhältlich für nur $4/Monat."
 
 #: src/components/ShareDialog.tsx:56
 #: src/components/ShareDialog.tsx:162
@@ -583,8 +586,8 @@ msgid "Fixed Node Height"
 msgstr "Fester Knotenhöhe"
 
 #: src/lib/paywallCopy.ts:5
-msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
-msgstr "Flowchart Fun Pro bietet Ihnen unbegrenzte Flussdiagramme, unbegrenzte Zusammenarbeit und unbegrenzten Speicherplatz für nur 6 $ pro Monat."
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $4/month."
+msgstr "Mit Flowchart Fun Pro erhalten Sie unbegrenzte Flussdiagramme, unbegrenzte Mitarbeiter und unbegrenzten Speicherplatz für nur $4/Monat."
 
 #: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
@@ -711,8 +714,8 @@ msgid "Import your diagram it into Microsoft Visio using one of these CSV files.
 msgstr "Importieren Sie Ihr Diagramm mithilfe einer dieser CSV-Dateien in Microsoft Visio."
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $6/month."
-msgstr "Das Importieren von Daten ist eine Pro-Funktion. Sie können für nur 6 $/Monat auf Flowchart Fun Pro upgraden."
+msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
+msgstr "Der Import von Daten ist eine Pro-Funktion. Sie können auf Flowchart Fun Pro für nur $4/Monat upgraden."
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -986,7 +989,7 @@ msgid "Open Customer Portal"
 msgstr "Öffnen Sie das Kundenportal"
 
 #: src/components/ShareDialog.tsx:551
-#: src/lib/templates/templates.ts:40
+#: src/lib/templates/templates.ts:32
 msgid "Organization Chart"
 msgstr "Organigramm"
 
@@ -1029,7 +1032,7 @@ msgstr "Priorisierte Einzelunterstützung"
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
 
-#: src/lib/templates/templates.ts:48
+#: src/lib/templates/templates.ts:40
 msgid "Process Diagram"
 msgstr "Prozessdiagramm"
 
@@ -1149,8 +1152,8 @@ msgstr "Von rechts nach links"
 msgid "Roadmap"
 msgstr "Fahrplan"
 
-#: src/components/Tabs/ThemeTab.tsx:528
 #: src/components/Tabs/ThemeTab.tsx:529
+#: src/components/Tabs/ThemeTab.tsx:530
 msgid "Rotate Label"
 msgstr "Label drehen"
 
@@ -1159,9 +1162,9 @@ msgstr "Label drehen"
 msgid "Save"
 msgstr "Speichern"
 
-#: src/pages/Pricing.tsx:23
-msgid "Save Time with AI & Dictation"
-msgstr "Spare Zeit mit KI und Diktat"
+#: src/pages/Pricing.tsx:25
+msgid "Save time with AI and dictation, making it easy to create diagrams."
+msgstr "Sparen Sie Zeit mit KI und Diktat, um Diagramme einfach zu erstellen."
 
 #: src/components/FlowchartHeader.tsx:161
 msgid "Save to Cloud"
@@ -1215,8 +1218,8 @@ msgstr "Entschuldigung! Diese Seite ist nur auf Englisch verfügbar."
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Entschuldigung, es gab einen Fehler bei der Konvertierung des Textes in einen Flussdiagramm. Versuchen Sie es später erneut."
 
-#: src/components/Tabs/ThemeTab.tsx:418
 #: src/components/Tabs/ThemeTab.tsx:419
+#: src/components/Tabs/ThemeTab.tsx:420
 msgid "Source Arrow Shape"
 msgstr "Pfeilform der Quelle"
 
@@ -1229,8 +1232,8 @@ msgstr "Quellspalte"
 msgid "Source Delimiter"
 msgstr "Quell-Trennzeichen"
 
-#: src/components/Tabs/ThemeTab.tsx:460
 #: src/components/Tabs/ThemeTab.tsx:461
+#: src/components/Tabs/ThemeTab.tsx:462
 msgid "Source Distance From Node"
 msgstr "Abstand der Quelle vom Knoten"
 
@@ -1273,7 +1276,7 @@ msgstr "Stil-Klassen"
 msgid "Submit"
 msgstr "Einsenden"
 
-#: src/pages/Pricing2.tsx:367
+#: src/pages/Pricing2.tsx:363
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "Abonniere Pro und erstelle Flussdiagramme auf unterhaltsame Weise!"
 
@@ -1289,8 +1292,8 @@ msgstr "Abonnement erfolgreich!"
 msgid "Subscription will end"
 msgstr "Abonnement wird beendet"
 
-#: src/components/Tabs/ThemeTab.tsx:439
 #: src/components/Tabs/ThemeTab.tsx:440
+#: src/components/Tabs/ThemeTab.tsx:441
 msgid "Target Arrow Shape"
 msgstr "Pfeilform des Ziels"
 
@@ -1303,8 +1306,8 @@ msgstr "Ziel-Spalte"
 msgid "Target Delimiter"
 msgstr "Ziel-Trennzeichen"
 
-#: src/components/Tabs/ThemeTab.tsx:478
 #: src/components/Tabs/ThemeTab.tsx:479
+#: src/components/Tabs/ThemeTab.tsx:480
 msgid "Target Distance From Node"
 msgstr "Zielabstand vom Knoten "
 
@@ -1442,10 +1445,6 @@ msgstr "Um dies zu beheben, starten Sie den Container <0/> auf einer anderen Zei
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "Um mehr darüber zu erfahren, warum wir Sie zum Anmelden auffordern, lesen Sie bitte <0>diesen Blog-Beitrag</0>."
 
-#: src/pages/Pricing.tsx:25
-msgid "Together, speech-to-text and AI make creating diagrams a breeze!"
-msgstr "Zusammen machen Sprache-zu-Text und KI das Erstellen von Diagrammen zum Kinderspiel!"
-
 #: src/lib/graphOptions.ts:31
 #: src/lib/graphOptions.ts:38
 msgid "Top to Bottom"
@@ -1459,17 +1458,17 @@ msgstr "Transformieren Sie Ihre Ideen in professionelle Diagramme in Sekunden"
 msgid "Transform text into diagrams instantly"
 msgstr "Verwandeln Sie Texte sofort in Diagramme"
 
-#: src/pages/Pricing2.tsx:197
-msgid "Transform your Ideas into Professional Diagrams in Seconds"
-msgstr "Verwandeln Sie Ihre Ideen in professionelle Diagramme in Sekundenschnelle"
-
-#: src/pages/Pricing2.tsx:265
-msgid "Trusted by over 100,000 users across businesses and universities"
-msgstr "Vertraut von über 100.000 Benutzern aus Unternehmen und Universitäten"
+#: src/pages/Pricing2.tsx:263
+msgid "Trusted by Professionals and Academics Alike"
+msgstr "Vertraut von Profis und Akademikern gleichermaßen"
 
 #: src/components/App.tsx:79
 msgid "Try again"
 msgstr "Erneut versuchen"
+
+#: src/pages/Pricing2.tsx:197
+msgid "Turn your ideas into professional diagrams in seconds"
+msgstr "Verwandeln Sie Ihre Ideen in professionelle Diagramme in Sekundenschnelle"
 
 #: src/lib/parserErrors.tsx:60
 msgid "Two edges have the same ID"
@@ -1499,6 +1498,10 @@ msgstr "Unbekannt"
 msgid "Unknown Parsing Error"
 msgstr "Unbekannter Parser-Fehler"
 
+#: src/pages/Pricing.tsx:16
+msgid "Unlimited Flowcharts"
+msgstr "Unbegrenzte Flowcharts"
+
 #: src/pages/Pricing.tsx:62
 #: src/pages/Pricing2.tsx:42
 msgid "Unlimited Permanent Flowcharts"
@@ -1516,6 +1519,10 @@ msgstr "E-Mail aktualisieren"
 msgid "Upgrade to Pro"
 msgstr "Auf Pro upgraden"
 
+#: src/pages/Pricing2.tsx:200
+msgid "Upgrade to Pro for just $4/month"
+msgstr "Upgraden Sie auf Pro für nur $4/Monat."
+
 #: src/components/ImportDataDialog.tsx:204
 msgid "Upload your File"
 msgstr "Laden Sie Ihre Datei hoch"
@@ -1524,18 +1531,14 @@ msgstr "Laden Sie Ihre Datei hoch"
 msgid "Use AI"
 msgstr "Künstliche Intelligenz verwenden"
 
-#: src/components/Tabs/ThemeTab.tsx:569
 #: src/components/Tabs/ThemeTab.tsx:570
+#: src/components/Tabs/ThemeTab.tsx:571
 msgid "Use Custom CSS Only"
 msgstr "Nur benutzerdefinierte CSS verwenden"
 
 #: src/pages/New.tsx:212
 msgid "Use Default Content"
 msgstr "Standardinhalt verwenden"
-
-#: src/pages/Pricing.tsx:30
-msgid "Use External Data"
-msgstr "Verwenden Sie externe Daten"
 
 #: src/pages/Pricing.tsx:32
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
@@ -1565,7 +1568,7 @@ msgstr "Verwenden Sie die Attribute <0>w</0> und <1>h</1>, um die Breite und Hö
 msgid "Use the customer portal to change your billing information."
 msgstr "Verwenden Sie das Kundenportal, um Ihre Rechnungsinformationen zu ändern."
 
-#: src/components/Tabs/ThemeTab.tsx:603
+#: src/components/Tabs/ThemeTab.tsx:604
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Verwenden Sie diese Einstellungen, um das Aussehen und Verhalten Ihrer Flussdiagramme anzupassen"
 
@@ -1601,7 +1604,7 @@ msgstr "Wasserzeichenfreie Diagramme"
 msgid "Watermarks"
 msgstr "Wasserzeichen"
 
-#: src/pages/Pricing2.tsx:292
+#: src/pages/Pricing2.tsx:288
 msgid "What's Included"
 msgstr "Was ist enthalten"
 
@@ -1609,8 +1612,8 @@ msgstr "Was ist enthalten"
 msgid "What's this?"
 msgstr "Was ist das?"
 
-#: src/components/Tabs/ThemeTab.tsx:382
 #: src/components/Tabs/ThemeTab.tsx:383
+#: src/components/Tabs/ThemeTab.tsx:384
 msgid "Width"
 msgstr "Breite"
 
@@ -1619,8 +1622,8 @@ msgid "Width and Height"
 msgstr "Breite und Höhe"
 
 #: src/components/EditWithAI.tsx:28
-msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "Mit der Pro-Version von Flowchart Fun können Sie natürliche Sprachbefehle verwenden, um schnell Details in Ihrem Flussdiagramm auszuarbeiten, ideal für die Erstellung von Diagrammen unterwegs. Für 6 $/Monat erhalten Sie die einfache Bedienbarkeit von zugänglicher KI-Bearbeitung, um Ihr Flussdiagramm-Erlebnis zu verbessern."
+msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
+msgstr "Mit der Pro-Version von Flowchart Fun können Sie natürliche Sprachbefehle verwenden, um schnell Ihre Flussdiagrammdetails auszuarbeiten, ideal für die Erstellung von Diagrammen unterwegs. Für 4 $/Monat erhalten Sie die Leichtigkeit der zugänglichen KI-Bearbeitung, um Ihre Flussdiagrammerfahrung zu verbessern."
 
 #: src/pages/Pricing.tsx:39
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."

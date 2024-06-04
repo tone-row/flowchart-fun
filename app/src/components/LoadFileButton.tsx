@@ -74,7 +74,7 @@ export function LoadFileButton() {
           if (!hasProAccess) {
             showPaywall({
               title: t`Load Files`,
-              content: t`Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month`,
+              content: t`Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month`,
               movieUrl:
                 "https://res.cloudinary.com/tone-row/video/upload/v1697510980/b6u3smok1vc2jqb56tb1.mp4",
               toPricingCode: "Local Files",

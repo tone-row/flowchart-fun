@@ -25,7 +25,7 @@ type GraphForAI = {
 };
 
 const title = t`Edit with AI`;
-const content = t`With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience.`;
+const content = t`With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience.`;
 
 export function EditWithAI() {
   const [message, setMessage] = useState<string | null>(null);
