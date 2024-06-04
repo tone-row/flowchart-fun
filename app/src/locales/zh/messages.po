@@ -17,7 +17,7 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 临时流程图"
 
-#: src/components/Tabs/ThemeTab.tsx:610
+#: src/components/Tabs/ThemeTab.tsx:611
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>仅启用自定义CSS</0>。仅应用布局和高级设置。"
 
@@ -37,6 +37,10 @@ msgstr "<0>您目前拥有免费帐户。<1/><2>了解我们的Pro功能，并�
 msgid "A new version of the app is available. Please reload to update."
 msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 
+#: src/pages/Pricing.tsx:23
+msgid "AI Creation & Editing"
+msgstr "AI创建与编辑"
+
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI驱动的流程图创建"
@@ -55,7 +59,7 @@ msgstr "帐户"
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "在任何特殊字符之前添加反斜杠 (<0>\\</0>)： <1>(</1>、<2>:</2>、<3>#</3>或<4>.</4>"
 
-#: src/components/Tabs/ThemeTab.tsx:544
+#: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
 msgstr "高级"
 
@@ -75,8 +79,8 @@ msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件
 msgid "Appearance"
 msgstr "外观"
 
-#: src/components/Tabs/ThemeTab.tsx:498
 #: src/components/Tabs/ThemeTab.tsx:499
+#: src/components/Tabs/ThemeTab.tsx:500
 msgid "Arrow Size"
 msgstr "箭头大小"
 
@@ -124,8 +128,8 @@ msgid "Billed annually at $24"
 msgstr "年度账单为$24"
 
 #: src/components/Checkout.tsx:156
-msgid "Billed monthly at $6"
-msgstr "月度账单为$6"
+msgid "Billed monthly at $4"
+msgstr "每月收费$4"
 
 #: src/components/Header.tsx:138
 #: src/components/Header.tsx:384
@@ -237,8 +241,8 @@ msgstr "克隆"
 msgid "Close"
 msgstr "关闭"
 
-#: src/components/Tabs/ThemeTab.tsx:397
 #: src/components/Tabs/ThemeTab.tsx:398
+#: src/components/Tabs/ThemeTab.tsx:399
 msgid "Color"
 msgstr "颜色"
 
@@ -254,10 +258,6 @@ msgstr "列"
 msgid "Comment"
 msgstr "评论"
 
-#: src/pages/Pricing2.tsx:202
-msgid "Complete access to all features for just $6/month!"
-msgstr "仅需6美元/月即可获得所有功能的完全访问权限！"
-
 #: src/lib/graphOptions.ts:18
 msgid "Concentric"
 msgstr "同心"
@@ -270,6 +270,10 @@ msgstr "确认新电子邮件"
 #: src/pages/LogIn.tsx:232
 msgid "Confirm your email address to sign in."
 msgstr "確認您的電子郵件地址以登入。"
+
+#: src/pages/Pricing.tsx:30
+msgid "Connect your Data"
+msgstr "连接您的数据"
 
 #: src/lib/getDefaultText.ts:5
 msgid "Consider: Adding a Label"
@@ -330,7 +334,6 @@ msgid "Create Flowcharts using AI"
 msgstr "使用AI创建流程图"
 
 #: src/lib/paywallCopy.ts:3
-#: src/pages/Pricing.tsx:16
 msgid "Create Unlimited Flowcharts"
 msgstr "创建无限流程图"
 
@@ -339,8 +342,8 @@ msgid "Create a New Chart"
 msgstr "创建新图表"
 
 #: src/pages/Pricing.tsx:92
-msgid "Create unlimited diagrams for just $6/month!"
-msgstr "仅需6美元/月即可创建无限数量的图表！"
+msgid "Create unlimited diagrams for just $4/month!"
+msgstr "仅需每月$4，即可创建无限的图表！"
 
 #: src/pages/Pricing.tsx:18
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
@@ -358,8 +361,8 @@ msgstr "在两个节点之间创建边缘是通过将第二个节点缩进第一
 msgid "Curve Style"
 msgstr "曲线样式"
 
-#: src/components/Tabs/ThemeTab.tsx:552
 #: src/components/Tabs/ThemeTab.tsx:553
+#: src/components/Tabs/ThemeTab.tsx:554
 msgid "Custom CSS"
 msgstr "自定义CSS"
 
@@ -453,8 +456,8 @@ msgstr "邊緣標籤欄"
 msgid "Edge Style"
 msgstr "邊緣樣式"
 
-#: src/components/Tabs/ThemeTab.tsx:513
 #: src/components/Tabs/ThemeTab.tsx:514
+#: src/components/Tabs/ThemeTab.tsx:515
 msgid "Edge Text Size"
 msgstr "边缘文本大小"
 
@@ -552,8 +555,8 @@ msgid "Exclusive Office Hours"
 msgstr "专属办公时间"
 
 #: src/components/LoadFileButton.tsx:77
-msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
-msgstr "体验将本地文件直接加载到流程图中的效率和安全性，非常适合离线管理工作相关文件。通过Flowchart Fun Pro解锁这个独家的专业功能和更多，仅售6美元/月。"
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
+msgstr "体验将本地文件直接加载到流程图中的效率和安全性，非常适合离线管理工作相关文件。解锁这个独有的专业功能以及更多功能，Flowchart Fun Pro仅需每月$4即可使用。"
 
 #: src/components/ShareDialog.tsx:56
 #: src/components/ShareDialog.tsx:162
@@ -583,8 +586,8 @@ msgid "Fixed Node Height"
 msgstr "固定节点高度"
 
 #: src/lib/paywallCopy.ts:5
-msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
-msgstr "Flowchart Fun Pro为您提供无限的流程图、无限的协作者和无限的存储空间，仅需6美元/月即可获得。"
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $4/month."
+msgstr "Flowchart Fun Pro为您提供无限的流程图、无限的协作者和无限的存储空间，仅需每月$4即可享用。"
 
 #: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
@@ -711,8 +714,8 @@ msgid "Import your diagram it into Microsoft Visio using one of these CSV files.
 msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $6/month."
-msgstr "导入数据是一项专业功能。 您可以升级到Flowchart Fun Pro，仅需每月6美元。"
+msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
+msgstr "导入数据是一项专业功能。您可以升级到Flowchart Fun Pro，仅需每月4美元。"
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -986,7 +989,7 @@ msgid "Open Customer Portal"
 msgstr "打开客户门户"
 
 #: src/components/ShareDialog.tsx:551
-#: src/lib/templates/templates.ts:40
+#: src/lib/templates/templates.ts:32
 msgid "Organization Chart"
 msgstr "组织结构图"
 
@@ -1029,7 +1032,7 @@ msgstr "优先一对一支持"
 msgid "Privacy Policy"
 msgstr "隱私政策"
 
-#: src/lib/templates/templates.ts:48
+#: src/lib/templates/templates.ts:40
 msgid "Process Diagram"
 msgstr "流程图"
 
@@ -1149,8 +1152,8 @@ msgstr "从右到左"
 msgid "Roadmap"
 msgstr "路线图"
 
-#: src/components/Tabs/ThemeTab.tsx:528
 #: src/components/Tabs/ThemeTab.tsx:529
+#: src/components/Tabs/ThemeTab.tsx:530
 msgid "Rotate Label"
 msgstr "旋转标签"
 
@@ -1159,9 +1162,9 @@ msgstr "旋转标签"
 msgid "Save"
 msgstr "救球"
 
-#: src/pages/Pricing.tsx:23
-msgid "Save Time with AI & Dictation"
-msgstr "通过人工智能和口述节省时间"
+#: src/pages/Pricing.tsx:25
+msgid "Save time with AI and dictation, making it easy to create diagrams."
+msgstr "使用人工智能和口述功能，节省时间，轻松创建图表。"
 
 #: src/components/FlowchartHeader.tsx:161
 msgid "Save to Cloud"
@@ -1215,8 +1218,8 @@ msgstr "抱歉！此页面只有英语版。"
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "抱歉，转换文本为流程图时出错。 请稍后再试。"
 
-#: src/components/Tabs/ThemeTab.tsx:418
 #: src/components/Tabs/ThemeTab.tsx:419
+#: src/components/Tabs/ThemeTab.tsx:420
 msgid "Source Arrow Shape"
 msgstr "源箭头形状"
 
@@ -1229,8 +1232,8 @@ msgstr "源列"
 msgid "Source Delimiter"
 msgstr "源分隔符"
 
-#: src/components/Tabs/ThemeTab.tsx:460
 #: src/components/Tabs/ThemeTab.tsx:461
+#: src/components/Tabs/ThemeTab.tsx:462
 msgid "Source Distance From Node"
 msgstr "源节点距离"
 
@@ -1273,7 +1276,7 @@ msgstr "樣式類別"
 msgid "Submit"
 msgstr "提交"
 
-#: src/pages/Pricing2.tsx:367
+#: src/pages/Pricing2.tsx:363
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "订阅专业版，以有趣的方式制作流程图！"
 
@@ -1289,8 +1292,8 @@ msgstr "訂閱成功！"
 msgid "Subscription will end"
 msgstr "订阅即将到期"
 
-#: src/components/Tabs/ThemeTab.tsx:439
 #: src/components/Tabs/ThemeTab.tsx:440
+#: src/components/Tabs/ThemeTab.tsx:441
 msgid "Target Arrow Shape"
 msgstr "目标箭头形状"
 
@@ -1303,8 +1306,8 @@ msgstr "目標欄"
 msgid "Target Delimiter"
 msgstr "目標分隔符"
 
-#: src/components/Tabs/ThemeTab.tsx:478
 #: src/components/Tabs/ThemeTab.tsx:479
+#: src/components/Tabs/ThemeTab.tsx:480
 msgid "Target Distance From Node"
 msgstr "目標距離節點"
 
@@ -1442,10 +1445,6 @@ msgstr "要修复这个，将容器<0/>放在另一行"
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
 msgstr "要了解更多關於我們為什麼要求您登錄的原因，請閱讀<0>這篇博客文章</0>。"
 
-#: src/pages/Pricing.tsx:25
-msgid "Together, speech-to-text and AI make creating diagrams a breeze!"
-msgstr "结合语音转文本和人工智能，轻松创建图表！"
-
 #: src/lib/graphOptions.ts:31
 #: src/lib/graphOptions.ts:38
 msgid "Top to Bottom"
@@ -1459,17 +1458,17 @@ msgstr "秒转换您的想法成专业图表"
 msgid "Transform text into diagrams instantly"
 msgstr "即时将文本转换为图表"
 
-#: src/pages/Pricing2.tsx:197
-msgid "Transform your Ideas into Professional Diagrams in Seconds"
-msgstr "在几秒钟内将您的想法转变为专业图表"
-
-#: src/pages/Pricing2.tsx:265
-msgid "Trusted by over 100,000 users across businesses and universities"
-msgstr "受到超过10万家企业和大学用户的信任"
+#: src/pages/Pricing2.tsx:263
+msgid "Trusted by Professionals and Academics Alike"
+msgstr "专业人士和学术界都信任我们"
 
 #: src/components/App.tsx:79
 msgid "Try again"
 msgstr "重试"
+
+#: src/pages/Pricing2.tsx:197
+msgid "Turn your ideas into professional diagrams in seconds"
+msgstr "在几秒钟内将您的想法转化为专业图表"
 
 #: src/lib/parserErrors.tsx:60
 msgid "Two edges have the same ID"
@@ -1499,6 +1498,10 @@ msgstr "未知"
 msgid "Unknown Parsing Error"
 msgstr "未知的解析错误"
 
+#: src/pages/Pricing.tsx:16
+msgid "Unlimited Flowcharts"
+msgstr "无限制的流程图"
+
 #: src/pages/Pricing.tsx:62
 #: src/pages/Pricing2.tsx:42
 msgid "Unlimited Permanent Flowcharts"
@@ -1516,6 +1519,10 @@ msgstr "更新电子邮件"
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
+#: src/pages/Pricing2.tsx:200
+msgid "Upgrade to Pro for just $4/month"
+msgstr "仅需每月4美元升级到专业版"
+
 #: src/components/ImportDataDialog.tsx:204
 msgid "Upload your File"
 msgstr "上传您的文件"
@@ -1524,18 +1531,14 @@ msgstr "上传您的文件"
 msgid "Use AI"
 msgstr "使用AI"
 
-#: src/components/Tabs/ThemeTab.tsx:569
 #: src/components/Tabs/ThemeTab.tsx:570
+#: src/components/Tabs/ThemeTab.tsx:571
 msgid "Use Custom CSS Only"
 msgstr "僅使用自定義CSS"
 
 #: src/pages/New.tsx:212
 msgid "Use Default Content"
 msgstr "使用默认内容"
-
-#: src/pages/Pricing.tsx:30
-msgid "Use External Data"
-msgstr "使用外部数据"
 
 #: src/pages/Pricing.tsx:32
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
@@ -1565,7 +1568,7 @@ msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 msgid "Use the customer portal to change your billing information."
 msgstr "使用客户门户更改您的账单信息。"
 
-#: src/components/Tabs/ThemeTab.tsx:603
+#: src/components/Tabs/ThemeTab.tsx:604
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "使用这些设置来调整流程图的外观和行为"
 
@@ -1601,7 +1604,7 @@ msgstr "无水印图表"
 msgid "Watermarks"
 msgstr "水印"
 
-#: src/pages/Pricing2.tsx:292
+#: src/pages/Pricing2.tsx:288
 msgid "What's Included"
 msgstr "包括什么"
 
@@ -1609,8 +1612,8 @@ msgstr "包括什么"
 msgid "What's this?"
 msgstr "这是什么？"
 
-#: src/components/Tabs/ThemeTab.tsx:382
 #: src/components/Tabs/ThemeTab.tsx:383
+#: src/components/Tabs/ThemeTab.tsx:384
 msgid "Width"
 msgstr "宽度"
 
@@ -1619,8 +1622,8 @@ msgid "Width and Height"
 msgstr "宽度和高度"
 
 #: src/components/EditWithAI.tsx:28
-msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "使用Flowchart Fun的Pro版本，您可以使用自然语言命令快速填充流程图细节，非常适合随时随地创建图表。 每月6美元，获得易于访问的AI编辑功能，提升您的流程图体验。"
+msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
+msgstr "通过Flowchart Fun的专业版，您可以使用自然语言命令快速完善您的流程图细节，非常适合在旅途中创建图表。每月4美元，享受易于访问的人工智能编辑，提升您的流程图体验。"
 
 #: src/pages/Pricing.tsx:39
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
