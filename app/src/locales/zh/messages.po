@@ -19,7 +19,7 @@ msgstr "1 临时流程图"
 
 #: src/components/Tabs/ThemeTab.tsx:611
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
-msgstr "<0>仅启用自定义CSS</0>。仅应用布局和高级设置。"
+msgstr "<0>仅启用自定义 CSS</0>。仅应用布局和高级设置。"
 
 #: src/components/Settings.tsx:95
 msgid "<0>Flowchart Fun</0> is an open source project made by <1>Tone Row</1>"
@@ -31,7 +31,7 @@ msgstr "<0>登录</0> / <1>注册</1> 使用电子邮件和密码"
 
 #: src/pages/Account.tsx:565
 msgid "<0>You currently have a free account.<1/><2>Learn about our Pro Features and subscribe on our pricing page</2>.</0>"
-msgstr "<0>您目前拥有免费帐户。<1/><2>了解我们的Pro功能，并在我们的定价页面上订阅</2>。</0>"
+msgstr "<0>您目前拥有免费帐户。<1/><2>了解我们的 Pro 功能，并在我们的定价页面上订阅</2>。</0>"
 
 #: src/components/VersionCheck.tsx:22
 msgid "A new version of the app is available. Please reload to update."
@@ -39,11 +39,11 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 
 #: src/pages/Pricing.tsx:23
 msgid "AI Creation & Editing"
-msgstr "AI创建与编辑"
+msgstr "AI 创建与编辑"
 
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
-msgstr "AI驱动的流程图创建"
+msgstr "AI 驱动的流程图创建"
 
 #: src/components/Settings.tsx:92
 msgid "About"
@@ -203,7 +203,7 @@ msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口
 
 #: src/pages/LogIn.tsx:271
 msgid "Choose"
-msgstr "選擇"
+msgstr "选择"
 
 #: src/pages/New.tsx:166
 msgid "Choose Template"
@@ -269,7 +269,7 @@ msgstr "确认新电子邮件"
 #: src/pages/LogIn.tsx:232
 #: src/pages/LogIn.tsx:232
 msgid "Confirm your email address to sign in."
-msgstr "確認您的電子郵件地址以登入。"
+msgstr "确认您的电子邮件地址以登入。"
 
 #: src/pages/Pricing.tsx:30
 msgid "Connect your Data"
@@ -323,7 +323,7 @@ msgstr "将你的 Excalidraw 代码复制并粘贴到<0>excalidraw.com</0>以进
 
 #: src/components/ShareDialog.tsx:357
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
-msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。"
+msgstr "复制您的 mermaid.js 代码或直接在 mermaid.js 实时编辑器中打开它。"
 
 #: src/pages/New.tsx:268
 msgid "Create"
@@ -351,7 +351,7 @@ msgstr "在云中存储无限流程图- 随时随地可访问！"
 
 #: src/pages/Success.tsx:54
 msgid "Create with AI"
-msgstr "通過AI創建"
+msgstr "通过AI创建"
 
 #: src/components/LearnSyntaxDialog.tsx:167
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
@@ -429,7 +429,7 @@ msgstr "下载 SVG"
 
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
-msgstr "将CSV文件拖放到此处，或单击以选择文件"
+msgstr "将 CSV 文件拖放到此处，或单击以选择文件"
 
 #: src/components/LearnSyntaxDialog.tsx:248
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
@@ -437,24 +437,24 @@ msgstr "通过引用开始行从多个节点绘制边缘"
 
 #: src/components/ImportDataDialog.tsx:242
 msgid "Drop the file here ..."
-msgstr "將檔案拖放到這裡..."
+msgstr "将档案拖放到这裡..."
 
 #: src/components/LearnSyntaxDialog.tsx:188
 msgid "Edge ID, Classes, Attributes"
-msgstr "邊緣ID、類別和屬性"
+msgstr "边缘ID、类别和属性"
 
 #: src/components/LearnSyntaxDialog.tsx:176
 msgid "Edge Label"
-msgstr "邊緣標籤"
+msgstr "边缘标籤"
 
 #: src/components/ImportDataDialog.tsx:464
 #: src/components/ImportDataDialog.tsx:504
 msgid "Edge Label Column"
-msgstr "邊緣標籤欄"
+msgstr "边缘标籤栏"
 
 #: src/components/LearnSyntaxDialog.tsx:311
 msgid "Edge Style"
-msgstr "邊緣樣式"
+msgstr "边缘样式"
 
 #: src/components/Tabs/ThemeTab.tsx:514
 #: src/components/Tabs/ThemeTab.tsx:515
@@ -536,11 +536,11 @@ msgstr "输入您要创建图表所需的提示或信息。"
 
 #: src/pages/LogIn.tsx:138
 msgid "Enter your email address and we'll send you a magic link to sign in."
-msgstr "輸入您的電子郵件地址，我們將發送給您一個魔法鏈接以登入。"
+msgstr "输入您的电子邮件地址，我们将发送给您一个魔法链接以登入。"
 
 #: src/pages/ForgotPassword.tsx:37
 msgid "Enter your email address below and we'll send you a link to reset your password."
-msgstr "在下面輸入您的電子郵件地址，我們將發送給您一個重置密碼的鏈接。"
+msgstr "在下面输入您的电子邮件地址，我们将发送给您一个重置密码的链接。"
 
 #: src/components/ImportDataDialog.tsx:552
 msgid "Equal To"
@@ -556,7 +556,7 @@ msgstr "专属办公时间"
 
 #: src/components/LoadFileButton.tsx:77
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
-msgstr "体验将本地文件直接加载到流程图中的效率和安全性，非常适合离线管理工作相关文件。解锁这个独有的专业功能以及更多功能，Flowchart Fun Pro仅需每月$4即可使用。"
+msgstr "体验将本地文件直接加载到流程图中的效率和安全性，非常适合离线管理工作相关文件。解锁这个独有的专业功能以及更多功能，Flowchart Fun Pro 仅需每月$4即可使用。"
 
 #: src/components/ShareDialog.tsx:56
 #: src/components/ShareDialog.tsx:162
@@ -565,11 +565,11 @@ msgstr "导出"
 
 #: src/pages/Pricing.tsx:52
 msgid "Export to PNG & JPG"
-msgstr "导出为PNG和JPG"
+msgstr "导出为 PNG 和 JPG"
 
 #: src/pages/Pricing.tsx:65
 msgid "Export to PNG, JPG, and SVG"
-msgstr "导出为PNG，JPG和SVG"
+msgstr "导出为 PNG，JPG 和 SVG"
 
 #: src/components/Feedback.tsx:44
 #: src/components/Header.tsx:114
@@ -579,7 +579,7 @@ msgstr "反馈"
 
 #: src/pages/Success.tsx:66
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
-msgstr "如果您有任何問題，請隨意探索並通過<0>反饋</0>頁面與我們聯繫。"
+msgstr "如果您有任何问题，请随意探索并通过<0>反馈</0>页面与我们联繫。"
 
 #: src/components/Tabs/ThemeTab.tsx:337
 msgid "Fixed Node Height"
@@ -587,11 +587,11 @@ msgstr "固定节点高度"
 
 #: src/lib/paywallCopy.ts:5
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $4/month."
-msgstr "Flowchart Fun Pro为您提供无限的流程图、无限的协作者和无限的存储空间，仅需每月$4即可享用。"
+msgstr "Flowchart Fun Pro 为您提供无限的流程图、无限的协作者和无限的存储空间，仅需每月$4即可享用。"
 
 #: src/components/Settings.tsx:119
 msgid "Follow Us on Twitter"
-msgstr "在Twitter上关注我们"
+msgstr "在 Twitter 上关注我们"
 
 #: src/components/Tabs/ThemeTab.tsx:175
 msgid "Font Family"
@@ -599,11 +599,11 @@ msgstr "字体系列"
 
 #: src/pages/LogIn.tsx:334
 msgid "Forgot your password?"
-msgstr "忘記密碼了？"
+msgstr "忘记密码了？"
 
 #: src/components/Feedback.tsx:47
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
-msgstr "如果发现了一个 bug？有功能请求？我们很乐意听到您的意见！"
+msgstr "如果发现了一个漏洞？有功能请求？我们很乐意听到您的意见！"
 
 #: src/pages/Pricing.tsx:47
 msgid "Free"
@@ -627,7 +627,7 @@ msgstr "回家"
 
 #: src/pages/Success.tsx:81
 msgid "Go to the Editor"
-msgstr "前往編輯器"
+msgstr "前往编辑器"
 
 #: src/pages/Charts.tsx:285
 msgid "Go to your Sandbox"
@@ -648,7 +648,7 @@ msgstr "有复杂的问题或问题吗？我们在这里帮助你。"
 
 #: src/pages/Success.tsx:45
 msgid "Here are some Pro features you can now enjoy."
-msgstr "現在您可以享受以下專業功能。"
+msgstr "现在您可以享受以下专业功能。"
 
 #: src/pages/Account.tsx:265
 msgid "History"
@@ -672,7 +672,7 @@ msgstr "ID"
 
 #: src/pages/ForgotPassword.tsx:70
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
-msgstr "如果該電子郵件存在該帳戶，我們已經發送給您一封電子郵件，其中包含如何重置您的密碼的說明。"
+msgstr "如果该电子邮件存在该帐户，我们已经发送给您一封电子邮件，其中包含如何重置您的密码的说明。"
 
 #: src/components/Settings.tsx:138
 msgid "If you enjoy using <0>Flowchart Fun</0>, please consider supporting the project"
@@ -695,27 +695,27 @@ msgstr "导入数据"
 
 #: src/components/ImportDataDialog.tsx:100
 msgid "Import data from a CSV file."
-msgstr "从CSV文件导入数据。"
+msgstr "从 CSV 文件导入数据。"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:50
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
-msgstr "從任何CSV檔案匯入資料並將其映射到新的流程圖。這是從Lucidchart、Google Sheets和Visio等其他來源匯入資料的一個很棒的方法。"
+msgstr "从任何 CSV 档案汇入资料并将其映射到新的流程图。这是从 Lucidchart、Google Sheets 和 Visio 等其他来源汇入资料的一个很棒的方法。"
 
 #: src/pages/Success.tsx:59
 msgid "Import from CSV"
-msgstr "從CSV導入"
+msgstr "从 CSV 导入"
 
 #: src/pages/Pricing.tsx:68
 msgid "Import from Visio, Lucidchart, and CSV"
-msgstr "从Visio，Lucidchart和CSV导入"
+msgstr "从 Visio，Lucidchart 和 CSV 导入"
 
 #: src/components/ShareDialog.tsx:518
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
-msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
+msgstr "使用其中一个 CSV 文件将您的图表导入到 Microsoft Visio 中。"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
-msgstr "导入数据是一项专业功能。您可以升级到Flowchart Fun Pro，仅需每月4美元。"
+msgstr "导入数据是一项专业功能。您可以升级到 Flowchart Fun Pro，仅需每月4美元。"
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -731,7 +731,7 @@ msgstr "是"
 
 #: src/components/ShareDialog.tsx:645
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
-msgstr "JSON画布是您的图表的JSON表示，由<0>Obsidian</0> Canvas和其他应用程序使用。"
+msgstr "JSON 画布是您的图表的 JSON 表示，由<0>Obsidian</0> Canvas 和其他应用程序使用。"
 
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
@@ -757,7 +757,7 @@ msgstr "布局已冻结"
 
 #: src/components/LearnSyntaxDialog.tsx:245
 msgid "Leading References"
-msgstr "主要參考"
+msgstr "主要参考"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:68
 #: src/components/PaywallModal.tsx:69
@@ -767,7 +767,7 @@ msgstr "学到更多"
 #: src/components/LearnSyntaxDialog.tsx:84
 #: src/components/LearnSyntaxDialog.tsx:109
 msgid "Learn Syntax"
-msgstr "學習語法"
+msgstr "学习语法"
 
 #: src/components/SandboxWarning.tsx:71
 msgid "Learn about <0>Flowchart Fun Pro</0>"
@@ -801,7 +801,7 @@ msgstr "链接"
 
 #: src/components/LoadTemplateDialog.tsx:173
 msgid "Load"
-msgstr "載入"
+msgstr "载入"
 
 #: src/components/LoadFileButton.tsx:101
 msgid "Load Chart"
@@ -821,7 +821,7 @@ msgstr "加载模板"
 
 #: src/components/LoadTemplateDialog.tsx:145
 msgid "Load default content"
-msgstr "載入預設內容"
+msgstr "载入预设内容"
 
 #: src/components/LoadFromHashDialog.tsx:36
 msgid "Load from link?"
@@ -829,7 +829,7 @@ msgstr "从链接加载？"
 
 #: src/components/LoadTemplateDialog.tsx:142
 msgid "Load layout and styles"
-msgstr "載入版面和樣式"
+msgstr "载入版面和样式"
 
 #: src/pages/Pricing.tsx:63
 #: src/pages/Pricing2.tsx:61
@@ -872,7 +872,7 @@ msgstr "付款管理"
 
 #: src/components/ImportDataDialog.tsx:380
 msgid "Map Data"
-msgstr "對應資料"
+msgstr "对应资料"
 
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
@@ -912,7 +912,7 @@ msgstr "下次扣费"
 
 #: src/components/ImportDataDialog.tsx:414
 msgid "No Edges"
-msgstr "沒有邊緣"
+msgstr "没有边缘"
 
 #: src/pages/Pricing.tsx:67
 msgid "No Watermarks!"
@@ -932,11 +932,11 @@ msgstr "节点颜色"
 
 #: src/components/ImportDataDialog.tsx:385
 msgid "Node ID"
-msgstr "节点ID"
+msgstr "节点 ID"
 
 #: src/components/LearnSyntaxDialog.tsx:134
 msgid "Node ID, Classes, Attributes"
-msgstr "节点ID、类、属性"
+msgstr "节点 ID、类、属性"
 
 #: src/components/ImportDataDialog.tsx:393
 #: src/components/LearnSyntaxDialog.tsx:123
@@ -1004,7 +1004,7 @@ msgstr "找不到页面"
 
 #: src/pages/LogIn.tsx:306
 msgid "Password"
-msgstr "密碼"
+msgstr "密码"
 
 #: src/lib/hooks.ts:84
 msgid "Past Due"
@@ -1030,7 +1030,7 @@ msgstr "优先一对一支持"
 #: src/components/Header.tsx:440
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
-msgstr "隱私政策"
+msgstr "隐私政策"
 
 #: src/lib/templates/templates.ts:40
 msgid "Process Diagram"
@@ -1093,7 +1093,7 @@ msgstr "通过其确切标签引用节点"
 
 #: src/components/LearnSyntaxDialog.tsx:224
 msgid "Referencing a node by its unique ID"
-msgstr "通过其唯一ID引用节点"
+msgstr "通过其唯一 ID 引用节点"
 
 #: src/components/LearnSyntaxDialog.tsx:234
 msgid "Referencing multiple nodes with the same assigned class"
@@ -1115,11 +1115,11 @@ msgstr "重命名"
 
 #: src/pages/LogIn.tsx:164
 msgid "Request Magic Link"
-msgstr "請求魔法鏈接"
+msgstr "请求魔法链接"
 
 #: src/pages/ForgotPassword.tsx:62
 msgid "Request Password Reset"
-msgstr "請求密碼重置"
+msgstr "请求密码重置"
 
 #: src/components/GraphFloatingMenu.tsx:37
 #: src/components/GraphFloatingMenu.tsx:40
@@ -1128,7 +1128,7 @@ msgstr "重置"
 
 #: src/pages/ForgotPassword.tsx:34
 msgid "Reset Password"
-msgstr "重置密碼"
+msgstr "重置密码"
 
 #: src/pages/Account.tsx:199
 #: src/pages/Account.tsx:462
@@ -1199,7 +1199,7 @@ msgstr "分享"
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
 msgid "Sign In"
-msgstr "登錄"
+msgstr "登录"
 
 #: src/pages/LogIn.tsx:132
 msgid "Sign in with <0>GitHub</0>"
@@ -1256,7 +1256,7 @@ msgstr "开始"
 
 #: src/components/ImportDataDialog.tsx:277
 msgid "Start Over"
-msgstr "重新開始"
+msgstr "重新开始"
 
 #: src/pages/Account.tsx:162
 msgid "Status"
@@ -1264,11 +1264,11 @@ msgstr "状态"
 
 #: src/components/LearnSyntaxDialog.tsx:156
 msgid "Store any data associated to a node"
-msgstr "將任何與節點相關的資料儲存"
+msgstr "将任何与节点相关的资料储存"
 
 #: src/components/LearnSyntaxDialog.tsx:275
 msgid "Style Classes"
-msgstr "樣式類別"
+msgstr "样式类别"
 
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:81
@@ -1286,7 +1286,7 @@ msgstr "订阅"
 
 #: src/pages/Success.tsx:41
 msgid "Subscription Successful!"
-msgstr "訂閱成功！"
+msgstr "订阅成功！"
 
 #: src/pages/Account.tsx:194
 msgid "Subscription will end"
@@ -1300,25 +1300,25 @@ msgstr "目标箭头形状"
 #: src/components/ImportDataDialog.tsx:438
 #: src/components/ImportDataDialog.tsx:524
 msgid "Target Column"
-msgstr "目標欄"
+msgstr "目标栏"
 
 #: src/components/ImportDataDialog.tsx:449
 msgid "Target Delimiter"
-msgstr "目標分隔符"
+msgstr "目标分隔符"
 
 #: src/components/Tabs/ThemeTab.tsx:479
 #: src/components/Tabs/ThemeTab.tsx:480
 msgid "Target Distance From Node"
-msgstr "目標距離節點"
+msgstr "目标距离节点"
 
 #: src/components/LoadTemplateDialog.tsx:112
 msgid "Templates"
-msgstr "範本"
+msgstr "范本"
 
 #: src/components/Tabs/ThemeTab.tsx:226
 #: src/components/Tabs/ThemeTab.tsx:228
 msgid "Text Color"
-msgstr "文字顏色"
+msgstr "文字颜色"
 
 #: src/components/Tabs/ThemeTab.tsx:325
 msgid "Text Horizontal Offset"
@@ -1360,11 +1360,11 @@ msgstr "包含边标签的列"
 
 #: src/components/ImportDataDialog.tsx:482
 msgid "The column that contains the source node ID(s)"
-msgstr "包含源节点ID的列"
+msgstr "包含源节点 ID 的列"
 
 #: src/components/ImportDataDialog.tsx:439
 msgid "The column that contains the target node ID(s)"
-msgstr "包含目标节点ID的列"
+msgstr "包含目标节点 ID 的列"
 
 #: src/components/ImportDataDialog.tsx:492
 msgid "The delimiter used to separate multiple source nodes"
@@ -1382,7 +1382,7 @@ msgstr "可能的形状是："
 #: src/components/Tabs/EditorTabList.tsx:39
 #: src/components/Tabs/EditorTabList.tsx:49
 msgid "Theme"
-msgstr "主題"
+msgstr "主题"
 
 #: src/pages/Pricing2.tsx:29
 msgid "Theme Customization Editor"
@@ -1415,7 +1415,7 @@ msgstr "这可能需要30秒到2分钟的时间，取决于您输入的长度。
 
 #: src/components/LoadTemplateDialog.tsx:159
 msgid "This will replace the current content."
-msgstr "這將取代目前的內容。"
+msgstr "这将取代目前的内容。"
 
 #: src/components/LoadFromHashDialog.tsx:41
 msgid "This will replace your current sandbox."
@@ -1443,7 +1443,7 @@ msgstr "要修复这个，将容器<0/>放在另一行"
 
 #: src/pages/LogIn.tsx:181
 msgid "To learn more about why we require you to log in, please read <0>this blog post</0>."
-msgstr "要了解更多關於我們為什麼要求您登錄的原因，請閱讀<0>這篇博客文章</0>。"
+msgstr "要了解更多关于我们为什么要求您登录的原因，请阅读<0>这篇博客文章</0>。"
 
 #: src/lib/graphOptions.ts:31
 #: src/lib/graphOptions.ts:38
@@ -1480,7 +1480,7 @@ msgstr "两个节点有相同的ID"
 
 #: src/components/ConvertToFlowchart.tsx:36
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
-msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
+msgstr "哎呀，你的免费请求用完了！升级到 Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -1517,7 +1517,7 @@ msgstr "更新电子邮件"
 
 #: src/components/Header.tsx:409
 msgid "Upgrade to Pro"
-msgstr "升級到專業版"
+msgstr "升级到专业版"
 
 #: src/pages/Pricing2.tsx:200
 msgid "Upgrade to Pro for just $4/month"
@@ -1534,7 +1534,7 @@ msgstr "使用AI"
 #: src/components/Tabs/ThemeTab.tsx:570
 #: src/components/Tabs/ThemeTab.tsx:571
 msgid "Use Custom CSS Only"
-msgstr "僅使用自定義CSS"
+msgstr "仅使用自定义 CSS"
 
 #: src/pages/New.tsx:212
 msgid "Use Default Content"
@@ -1542,11 +1542,11 @@ msgstr "使用默认内容"
 
 #: src/pages/Pricing.tsx:32
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
-msgstr "使用Lucidchart或Visio？CSV导入使从任何来源获取数据变得容易！"
+msgstr "使用 Lucidchart 或 Visio？CSV 导入使从任何来源获取数据变得容易！"
 
 #: src/lib/getDefaultText.ts:7
 msgid "Use an ID to Connect"
-msgstr "使用ID连接"
+msgstr "使用 ID 连接"
 
 #: src/components/LearnSyntaxDialog.tsx:147
 msgid "Use classes to group nodes"
@@ -1623,7 +1623,7 @@ msgstr "宽度和高度"
 
 #: src/components/EditWithAI.tsx:28
 msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "通过Flowchart Fun的专业版，您可以使用自然语言命令快速完善您的流程图细节，非常适合在旅途中创建图表。每月4美元，享受易于访问的人工智能编辑，提升您的流程图体验。"
+msgstr "通过 Flowchart Fun 的专业版，您可以使用自然语言命令快速完善您的流程图细节，非常适合在旅途中创建图表。每月4美元，享受易于访问的人工智能编辑，提升您的流程图体验。"
 
 #: src/pages/Pricing.tsx:39
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
@@ -1643,7 +1643,7 @@ msgstr "每年"
 
 #: src/lib/getDefaultText.ts:6
 msgid "Yes: Option A"
-msgstr "是：选项A"
+msgstr "是：选项 A"
 
 #: src/components/ImportDataDialog.tsx:693
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
@@ -1683,7 +1683,7 @@ msgstr "您的图表是只读的，因为您的帐户已不再活跃。请访问
 
 #: src/pages/Account.tsx:545
 msgid "Your subscription is <0>{statusDisplay}</0>."
-msgstr "您的訂閱狀態為<0>{statusDisplay}</0>。"
+msgstr "您的订阅状态为<0>{statusDisplay}</0>。"
 
 #: src/components/GraphFloatingMenu.tsx:52
 #: src/components/GraphFloatingMenu.tsx:56
@@ -1693,7 +1693,7 @@ msgstr "放大"
 #: src/components/GraphFloatingMenu.tsx:62
 #: src/components/GraphFloatingMenu.tsx:66
 msgid "Zoom Out"
-msgstr "縮小"
+msgstr "缩小"
 
 #: src/components/Checkout.tsx:213
 msgid "month"
