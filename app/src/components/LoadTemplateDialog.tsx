@@ -14,6 +14,7 @@ import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { mountGraph, unmountGraph } from "../lib/useUnmountStore";
 import { FFTheme } from "../lib/FFTheme";
 import { getDefaultText } from "../lib/getDefaultText";
+import { RequestTemplate } from "./RequestTemplate";
 
 /**
  * We want to load template content if the user has no content
@@ -107,10 +108,16 @@ export function LoadTemplateDialog() {
           className="overflow-y-auto max-h-[calc(100vh-2rem)] h-[650px] grid-rows-[auto_minmax(0,1fr)]"
         >
           <Close />
-          <Dialog.Title className="text-xl font-bold flex items-center">
-            <PiShapesDuotone className="mr-2" />
-            <Trans>Templates</Trans>
-          </Dialog.Title>
+          <div className="grid gap-1 sm:flex justify-between items-baseline">
+            <Dialog.Title className="text-xl font-bold flex items-baseline">
+              <PiShapesDuotone className="mr-2 translate-y-1" />
+
+              <span className="mr-4">
+                <Trans>Templates</Trans>
+              </span>
+            </Dialog.Title>
+            <RequestTemplate />
+          </div>
           <Dialog.Description asChild>
             {templateData ? (
               <div className="grid gap-2 h-full grid-rows-[auto_minmax(0,1fr)]">

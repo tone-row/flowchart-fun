@@ -18,7 +18,12 @@ const msg = {
 };
 
 export default function Feedback() {
-  const { register, handleSubmit, reset, watch } = useForm<FormData>();
+  const { register, handleSubmit, reset, watch } = useForm<FormData>({
+    defaultValues: {
+      from: "",
+      text: new URLSearchParams(window.location.search).get("text") || "",
+    },
+  });
   const fields = watch();
   const isValid = fields.from && fields.text;
   const [success, setSuccess] = useState(false);
@@ -37,6 +42,7 @@ export default function Feedback() {
     (data: FormData) => send({ ...msg, ...data }),
     [send]
   );
+
   return (
     <Page data-testid="feedback" size="sm" className="gap-8">
       <header className="grid gap-4">
