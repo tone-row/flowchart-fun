@@ -47,6 +47,6 @@
     "@vercel/node": "^2.15.10",
     "eslint": "^8.3.0",
     "jest": "^29.4.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.5.3"
   }
 }
