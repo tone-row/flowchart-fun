@@ -71,7 +71,7 @@ msgstr "Options d'exportation avancées (PNG, JPG, SVG)"
 msgid "Amount"
 msgstr "Montant"
 
-#: src/components/Feedback.tsx:86
+#: src/components/Feedback.tsx:92
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "Une erreur s'est produite. Essayez de l'envoyer à nouveau ou bien envoyez un e-mail à l'adresse {0}."
 
@@ -92,11 +92,11 @@ msgstr "Attributs"
 msgid "August 2023"
 msgstr "Août 2023"
 
-#: src/components/LoadTemplateDialog.tsx:124
+#: src/components/LoadTemplateDialog.tsx:131
 msgid "Back"
 msgstr "Retour"
 
-#: src/components/Feedback.tsx:109
+#: src/components/Feedback.tsx:115
 msgid "Back To Editor"
 msgstr "Retour à l'éditeur"
 
@@ -205,7 +205,7 @@ msgstr "Vérifiez votre e-mail pour un lien de connexion. Vous pouvez fermer cet
 msgid "Choose"
 msgstr "Choisir"
 
-#: src/pages/New.tsx:166
+#: src/pages/New.tsx:167
 msgid "Choose Template"
 msgstr "Choisir un modèle"
 
@@ -254,7 +254,7 @@ msgstr "Les couleurs incluent le rouge, l'orange, le jaune, le bleu, le pourpre,
 msgid "Column"
 msgstr "Colonne"
 
-#: src/components/Feedback.tsx:72
+#: src/components/Feedback.tsx:78
 msgid "Comment"
 msgstr "Commenter"
 
@@ -325,7 +325,7 @@ msgstr "Copiez votre code Excalidraw et collez-le sur <0>excalidraw.com</0> pour
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en direct mermaid.js."
 
-#: src/pages/New.tsx:268
+#: src/pages/New.tsx:269
 msgid "Create"
 msgstr "Créer"
 
@@ -337,7 +337,7 @@ msgstr "Créer des organigrammes à l'aide de l'IA"
 msgid "Create Unlimited Flowcharts"
 msgstr "Créer des diagrammes illimités"
 
-#: src/pages/New.tsx:153
+#: src/pages/New.tsx:154
 msgid "Create a New Chart"
 msgstr "Créer un nouveau graphique"
 
@@ -518,7 +518,7 @@ msgstr "Modifiable"
 msgid "Editor"
 msgstr "Éditeur"
 
-#: src/components/Feedback.tsx:62
+#: src/components/Feedback.tsx:68
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
 #: src/pages/LogIn.tsx:145
@@ -530,7 +530,7 @@ msgstr "E-mail"
 msgid "Empty"
 msgstr "Vide"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:227
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "Entrez une invite ou des informations que vous souhaitez utiliser pour créer un graphique."
 
@@ -571,7 +571,7 @@ msgstr "Exporter en PNG et JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "Exporter en PNG, JPG et SVG"
 
-#: src/components/Feedback.tsx:44
+#: src/components/Feedback.tsx:50
 #: src/components/Header.tsx:114
 #: src/components/Header.tsx:376
 msgid "Feedback"
@@ -601,7 +601,7 @@ msgstr "Famille de polices"
 msgid "Forgot your password?"
 msgstr "Mot de passe oublié ?"
 
-#: src/components/Feedback.tsx:47
+#: src/components/Feedback.tsx:53
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "Vous avez trouvé un bug ? Vous souhaitez faire une demande de fonctionnalité ? Nous aimerions beaucoup vous entendre !"
 
@@ -665,6 +665,10 @@ msgstr "Comment les bords sont-ils déclarés dans ces données?"
 #: src/components/FlowchartHeader.tsx:152
 msgid "How would you like to save your chart?"
 msgstr "Comment souhaitez-vous enregistrer votre graphique?"
+
+#: src/components/RequestTemplate.tsx:8
+msgid "I would like to request a new template:"
+msgstr "Je voudrais demander un nouveau modèle :"
 
 #: src/components/LearnSyntaxDialog.tsx:136
 msgid "ID's"
@@ -799,7 +803,7 @@ msgstr "Mode lumineux"
 msgid "Link"
 msgstr "Lien"
 
-#: src/components/LoadTemplateDialog.tsx:173
+#: src/components/LoadTemplateDialog.tsx:180
 msgid "Load"
 msgstr "Charger"
 
@@ -815,11 +819,11 @@ msgstr "Charger le fichier"
 msgid "Load Files"
 msgstr "Charger des fichiers"
 
-#: src/components/LoadTemplateDialog.tsx:99
+#: src/components/LoadTemplateDialog.tsx:100
 msgid "Load Template"
 msgstr "Charger le modèle"
 
-#: src/components/LoadTemplateDialog.tsx:145
+#: src/components/LoadTemplateDialog.tsx:152
 msgid "Load default content"
 msgstr "Charger le contenu par défaut"
 
@@ -827,7 +831,7 @@ msgstr "Charger le contenu par défaut"
 msgid "Load from link?"
 msgstr "Charger à partir du lien?"
 
-#: src/components/LoadTemplateDialog.tsx:142
+#: src/components/LoadTemplateDialog.tsx:149
 msgid "Load layout and styles"
 msgstr "Charger la mise en page et les styles"
 
@@ -874,6 +878,10 @@ msgstr "Gérer la facturation"
 msgid "Map Data"
 msgstr "Cartographier les données"
 
+#: src/components/RequestTemplate.tsx:13
+msgid "Missing a template? Suggest one here!"
+msgstr "Un modèle manquant ? Proposez-en un ici !"
+
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "Mensuel"
@@ -886,8 +894,8 @@ msgstr "Plusieurs pointeurs sur la même ligne"
 msgid "My dog ate my credit card!"
 msgstr "Mon chien a mangé ma carte de crédit!"
 
-#: src/pages/New.tsx:155
-#: src/pages/New.tsx:163
+#: src/pages/New.tsx:156
+#: src/pages/New.tsx:164
 msgid "Name Chart"
 msgstr "Nommer le graphique"
 
@@ -1178,7 +1186,7 @@ msgstr "Enregistrer dans un fichier"
 msgid "Save your Work"
 msgstr "Enregistrer votre travail"
 
-#: src/pages/New.tsx:206
+#: src/pages/New.tsx:207
 msgid "Set Content"
 msgstr "Définir le contenu"
 
@@ -1271,7 +1279,7 @@ msgid "Style Classes"
 msgstr "Classes de style"
 
 #: src/components/EditWithAI.tsx:242
-#: src/components/Feedback.tsx:81
+#: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
 msgstr "Soumettre"
@@ -1311,7 +1319,7 @@ msgstr "Délimiteur cible"
 msgid "Target Distance From Node"
 msgstr "Distance cible du nœud"
 
-#: src/components/LoadTemplateDialog.tsx:112
+#: src/components/LoadTemplateDialog.tsx:116
 msgid "Templates"
 msgstr "Modèles"
 
@@ -1346,7 +1354,7 @@ msgstr "Texte suivi d'un deux-points + espace crée un bord avec le texte comme 
 msgid "Text on a line creates a node with the text as the label"
 msgstr "Texte sur une ligne crée un nœud avec le texte comme étiquette"
 
-#: src/components/Feedback.tsx:106
+#: src/components/Feedback.tsx:112
 msgid "Thank you for your feedback!"
 msgstr "Merci pour votre commentaire !"
 
@@ -1409,11 +1417,11 @@ msgstr "Cette fonctionnalité est uniquement disponible pour les utilisateurs pr
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "Ceci est votre bac à sable. C'est un endroit idéal pour expérimenter, mais <0>il se réinitialise quotidiennement</0>."
 
-#: src/pages/New.tsx:272
+#: src/pages/New.tsx:273
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "Cela peut prendre entre 30 secondes et 2 minutes en fonction de la longueur de votre entrée."
 
-#: src/components/LoadTemplateDialog.tsx:159
+#: src/components/LoadTemplateDialog.tsx:166
 msgid "This will replace the current content."
 msgstr "Cela remplacera le contenu actuel."
 
@@ -1527,7 +1535,7 @@ msgstr "Passez à la version Pro pour seulement 4 $ par mois"
 msgid "Upload your File"
 msgstr "Téléchargez votre fichier"
 
-#: src/pages/New.tsx:220
+#: src/pages/New.tsx:221
 msgid "Use AI"
 msgstr "Utiliser l'intelligence artificielle"
 
@@ -1536,7 +1544,7 @@ msgstr "Utiliser l'intelligence artificielle"
 msgid "Use Custom CSS Only"
 msgstr "Utiliser uniquement du CSS personnalisé"
 
-#: src/pages/New.tsx:212
+#: src/pages/New.tsx:213
 msgid "Use Default Content"
 msgstr "Utiliser le contenu par défaut"
 
@@ -1649,7 +1657,7 @@ msgstr "Oui : Option A"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Vous êtes sur le point d'ajouter {numNodes} nœuds et {numEdges} arêtes à votre graphe."
 
-#: src/pages/New.tsx:250
+#: src/pages/New.tsx:251
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "Vous pouvez créer des diagrammes de flux illimités et permanents avec <0>Flowchart Fun Pro</0>."
 

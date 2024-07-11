@@ -20,6 +20,7 @@ import {
 } from "../lib/paywallCopy";
 import { Warning } from "../components/Warning";
 import { FFTheme } from "../lib/FFTheme";
+import { RequestTemplate } from "../components/RequestTemplate";
 
 type CreateChartOptions = {
   name: string;
@@ -163,7 +164,7 @@ export default function New2() {
           aria-label={t`Name Chart`}
         />
       </Section>
-      <Section title={t`Choose Template`}>
+      <Section title={t`Choose Template`} right={<RequestTemplate />}>
         <RadioGroup.Root asChild name="template" defaultValue="default">
           <div
             className="grid gap-x-2 gap-y-6 sm:grid-cols-2 md:grid-cols-3"
@@ -292,13 +293,18 @@ function Trigger(props: Parameters<typeof Tabs.Trigger>[0]) {
 function Section({
   children,
   title,
+  right,
 }: {
   children: React.ReactNode;
   title: string;
+  right?: React.ReactNode;
 }) {
   return (
     <section className="grid gap-4">
-      <h1 className="text-xl">{title}</h1>
+      <div className="grid gap-1 sm:flex justify-between items-end">
+        <h1 className="text-xl">{title}</h1>
+        {right}
+      </div>
       {children}
     </section>
   );

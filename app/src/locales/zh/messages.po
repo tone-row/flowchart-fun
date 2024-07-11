@@ -71,7 +71,7 @@ msgstr "高级导出选项（PNG，JPG，SVG）"
 msgid "Amount"
 msgstr "数量"
 
-#: src/components/Feedback.tsx:86
+#: src/components/Feedback.tsx:92
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件至{0}。"
 
@@ -92,11 +92,11 @@ msgstr "属性"
 msgid "August 2023"
 msgstr "2023 年 8 月"
 
-#: src/components/LoadTemplateDialog.tsx:124
+#: src/components/LoadTemplateDialog.tsx:131
 msgid "Back"
 msgstr "返回"
 
-#: src/components/Feedback.tsx:109
+#: src/components/Feedback.tsx:115
 msgid "Back To Editor"
 msgstr "返回编辑器"
 
@@ -205,7 +205,7 @@ msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口
 msgid "Choose"
 msgstr "選擇"
 
-#: src/pages/New.tsx:166
+#: src/pages/New.tsx:167
 msgid "Choose Template"
 msgstr "选择模板"
 
@@ -254,7 +254,7 @@ msgstr "颜色包括红色，橙色，黄色，蓝色，紫色，黑色，白色
 msgid "Column"
 msgstr "列"
 
-#: src/components/Feedback.tsx:72
+#: src/components/Feedback.tsx:78
 msgid "Comment"
 msgstr "评论"
 
@@ -325,7 +325,7 @@ msgstr "将你的 Excalidraw 代码复制并粘贴到<0>excalidraw.com</0>以进
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。"
 
-#: src/pages/New.tsx:268
+#: src/pages/New.tsx:269
 msgid "Create"
 msgstr "创建"
 
@@ -337,7 +337,7 @@ msgstr "使用AI创建流程图"
 msgid "Create Unlimited Flowcharts"
 msgstr "创建无限流程图"
 
-#: src/pages/New.tsx:153
+#: src/pages/New.tsx:154
 msgid "Create a New Chart"
 msgstr "创建新图表"
 
@@ -518,7 +518,7 @@ msgstr "可编辑"
 msgid "Editor"
 msgstr "编辑器"
 
-#: src/components/Feedback.tsx:62
+#: src/components/Feedback.tsx:68
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
 #: src/pages/LogIn.tsx:145
@@ -530,7 +530,7 @@ msgstr "电子邮件"
 msgid "Empty"
 msgstr "空"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:227
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "输入您要创建图表所需的提示或信息。"
 
@@ -571,7 +571,7 @@ msgstr "导出为PNG和JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "导出为PNG，JPG和SVG"
 
-#: src/components/Feedback.tsx:44
+#: src/components/Feedback.tsx:50
 #: src/components/Header.tsx:114
 #: src/components/Header.tsx:376
 msgid "Feedback"
@@ -601,7 +601,7 @@ msgstr "字体系列"
 msgid "Forgot your password?"
 msgstr "忘記密碼了？"
 
-#: src/components/Feedback.tsx:47
+#: src/components/Feedback.tsx:53
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "如果发现了一个 bug？有功能请求？我们很乐意听到您的意见！"
 
@@ -665,6 +665,10 @@ msgstr "在这个数据中如何声明边缘？"
 #: src/components/FlowchartHeader.tsx:152
 msgid "How would you like to save your chart?"
 msgstr "您想如何保存您的流程图？"
+
+#: src/components/RequestTemplate.tsx:8
+msgid "I would like to request a new template:"
+msgstr "我想请求一个新的模板："
 
 #: src/components/LearnSyntaxDialog.tsx:136
 msgid "ID's"
@@ -799,7 +803,7 @@ msgstr "浅色模式"
 msgid "Link"
 msgstr "链接"
 
-#: src/components/LoadTemplateDialog.tsx:173
+#: src/components/LoadTemplateDialog.tsx:180
 msgid "Load"
 msgstr "載入"
 
@@ -815,11 +819,11 @@ msgstr "加载文件"
 msgid "Load Files"
 msgstr "加载多个文件"
 
-#: src/components/LoadTemplateDialog.tsx:99
+#: src/components/LoadTemplateDialog.tsx:100
 msgid "Load Template"
 msgstr "加载模板"
 
-#: src/components/LoadTemplateDialog.tsx:145
+#: src/components/LoadTemplateDialog.tsx:152
 msgid "Load default content"
 msgstr "載入預設內容"
 
@@ -827,7 +831,7 @@ msgstr "載入預設內容"
 msgid "Load from link?"
 msgstr "从链接加载？"
 
-#: src/components/LoadTemplateDialog.tsx:142
+#: src/components/LoadTemplateDialog.tsx:149
 msgid "Load layout and styles"
 msgstr "載入版面和樣式"
 
@@ -874,6 +878,10 @@ msgstr "付款管理"
 msgid "Map Data"
 msgstr "對應資料"
 
+#: src/components/RequestTemplate.tsx:13
+msgid "Missing a template? Suggest one here!"
+msgstr "缺少模板？在这里提出建议！"
+
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "每月"
@@ -886,8 +894,8 @@ msgstr "同一行上的多个指针"
 msgid "My dog ate my credit card!"
 msgstr "我的狗吃了我的信用卡！"
 
-#: src/pages/New.tsx:155
-#: src/pages/New.tsx:163
+#: src/pages/New.tsx:156
+#: src/pages/New.tsx:164
 msgid "Name Chart"
 msgstr "命名图表"
 
@@ -1178,7 +1186,7 @@ msgstr "保存到文件"
 msgid "Save your Work"
 msgstr "保存您的工作"
 
-#: src/pages/New.tsx:206
+#: src/pages/New.tsx:207
 msgid "Set Content"
 msgstr "设置内容"
 
@@ -1271,7 +1279,7 @@ msgid "Style Classes"
 msgstr "樣式類別"
 
 #: src/components/EditWithAI.tsx:242
-#: src/components/Feedback.tsx:81
+#: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
 msgstr "提交"
@@ -1311,7 +1319,7 @@ msgstr "目標分隔符"
 msgid "Target Distance From Node"
 msgstr "目標距離節點"
 
-#: src/components/LoadTemplateDialog.tsx:112
+#: src/components/LoadTemplateDialog.tsx:116
 msgid "Templates"
 msgstr "範本"
 
@@ -1346,7 +1354,7 @@ msgstr "以冒号加空格结尾的文本将创建一个边，文本作为标签
 msgid "Text on a line creates a node with the text as the label"
 msgstr "在一行中的文本将创建一个节点，文本作为标签"
 
-#: src/components/Feedback.tsx:106
+#: src/components/Feedback.tsx:112
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
@@ -1409,11 +1417,11 @@ msgstr "只有专业用户才能使用此功能。 <0>成为专业用户</0>解�
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "这是你的沙盒。这是一个很好的实验场所，但<0>它每天都会重置</0>。"
 
-#: src/pages/New.tsx:272
+#: src/pages/New.tsx:273
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "这可能需要30秒到2分钟的时间，取决于您输入的长度。"
 
-#: src/components/LoadTemplateDialog.tsx:159
+#: src/components/LoadTemplateDialog.tsx:166
 msgid "This will replace the current content."
 msgstr "這將取代目前的內容。"
 
@@ -1527,7 +1535,7 @@ msgstr "仅需每月4美元升级到专业版"
 msgid "Upload your File"
 msgstr "上传您的文件"
 
-#: src/pages/New.tsx:220
+#: src/pages/New.tsx:221
 msgid "Use AI"
 msgstr "使用AI"
 
@@ -1536,7 +1544,7 @@ msgstr "使用AI"
 msgid "Use Custom CSS Only"
 msgstr "僅使用自定義CSS"
 
-#: src/pages/New.tsx:212
+#: src/pages/New.tsx:213
 msgid "Use Default Content"
 msgstr "使用默认内容"
 
@@ -1649,7 +1657,7 @@ msgstr "是：选项A"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 
-#: src/pages/New.tsx:250
+#: src/pages/New.tsx:251
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "你可以使用<0>Flowchart Fun Pro</0>创建无限的永久流程图。"
 

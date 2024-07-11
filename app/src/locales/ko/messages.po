@@ -71,7 +71,7 @@ msgstr "고급 내보내기 옵션 (PNG, JPG, SVG)"
 msgid "Amount"
 msgstr "금액"
 
-#: src/components/Feedback.tsx:86
+#: src/components/Feedback.tsx:92
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접 이메일을 보내주십시오."
 
@@ -92,11 +92,11 @@ msgstr "속성"
 msgid "August 2023"
 msgstr "2023년 8월"
 
-#: src/components/LoadTemplateDialog.tsx:124
+#: src/components/LoadTemplateDialog.tsx:131
 msgid "Back"
 msgstr "뒤로"
 
-#: src/components/Feedback.tsx:109
+#: src/components/Feedback.tsx:115
 msgid "Back To Editor"
 msgstr "편집기로 돌아가기"
 
@@ -205,7 +205,7 @@ msgstr "로그인할 링크가 들어있는 이메일을 확인하세요. 이 �
 msgid "Choose"
 msgstr "선택하세요"
 
-#: src/pages/New.tsx:166
+#: src/pages/New.tsx:167
 msgid "Choose Template"
 msgstr "템플릿 선택"
 
@@ -254,7 +254,7 @@ msgstr "색상에는 빨강, 주황, 노랑, 파랑, 보라, 검정, 흰색, 회
 msgid "Column"
 msgstr "열"
 
-#: src/components/Feedback.tsx:72
+#: src/components/Feedback.tsx:78
 msgid "Comment"
 msgstr "댓글 달기"
 
@@ -325,7 +325,7 @@ msgstr "Excalidraw 코드를 복사해서 <0>excalidraw.com</0>에 붙여넣어�
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "mermaid.js 코드를 복사하거나 mermaid.js 라이브 편집기에서 직접 열어주세요."
 
-#: src/pages/New.tsx:268
+#: src/pages/New.tsx:269
 msgid "Create"
 msgstr "만들기"
 
@@ -337,7 +337,7 @@ msgstr "AI를 사용하여 플로차트를 만들어보세요"
 msgid "Create Unlimited Flowcharts"
 msgstr "무제한 플로차트 만들기"
 
-#: src/pages/New.tsx:153
+#: src/pages/New.tsx:154
 msgid "Create a New Chart"
 msgstr "새 차트 만들기"
 
@@ -518,7 +518,7 @@ msgstr "편집 가능"
 msgid "Editor"
 msgstr "에디터"
 
-#: src/components/Feedback.tsx:62
+#: src/components/Feedback.tsx:68
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
 #: src/pages/LogIn.tsx:145
@@ -530,7 +530,7 @@ msgstr "이메일"
 msgid "Empty"
 msgstr "비어 있음"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:227
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "차트를 만들기 위한 프롬프트 또는 정보를 입력하십시오."
 
@@ -571,7 +571,7 @@ msgstr "PNG 및 JPG로 내보내기"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG 및 SVG로 내보내기"
 
-#: src/components/Feedback.tsx:44
+#: src/components/Feedback.tsx:50
 #: src/components/Header.tsx:114
 #: src/components/Header.tsx:376
 msgid "Feedback"
@@ -601,7 +601,7 @@ msgstr "글꼴 가족"
 msgid "Forgot your password?"
 msgstr "비밀번호를 잊으셨나요?"
 
-#: src/components/Feedback.tsx:47
+#: src/components/Feedback.tsx:53
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "버그를 발견했습니까? 기능 요청이 있습니까? 우리는 당신과의 소통을 사랑합니다!"
 
@@ -665,6 +665,10 @@ msgstr "이 데이터에서 간선은 어떻게 선언됩니까?"
 #: src/components/FlowchartHeader.tsx:152
 msgid "How would you like to save your chart?"
 msgstr "당신의 차트를 저장하려면 어떻게 하시겠습니까?"
+
+#: src/components/RequestTemplate.tsx:8
+msgid "I would like to request a new template:"
+msgstr "새로운 템플릿을 요청하고 싶습니다:"
 
 #: src/components/LearnSyntaxDialog.tsx:136
 msgid "ID's"
@@ -799,7 +803,7 @@ msgstr "라이트 모드"
 msgid "Link"
 msgstr "링크"
 
-#: src/components/LoadTemplateDialog.tsx:173
+#: src/components/LoadTemplateDialog.tsx:180
 msgid "Load"
 msgstr "로드"
 
@@ -815,11 +819,11 @@ msgstr "로드 파일"
 msgid "Load Files"
 msgstr "로드 파일"
 
-#: src/components/LoadTemplateDialog.tsx:99
+#: src/components/LoadTemplateDialog.tsx:100
 msgid "Load Template"
 msgstr "템플릿 로드"
 
-#: src/components/LoadTemplateDialog.tsx:145
+#: src/components/LoadTemplateDialog.tsx:152
 msgid "Load default content"
 msgstr "기본 내용 로드"
 
@@ -827,7 +831,7 @@ msgstr "기본 내용 로드"
 msgid "Load from link?"
 msgstr "링크에서 불러오기?"
 
-#: src/components/LoadTemplateDialog.tsx:142
+#: src/components/LoadTemplateDialog.tsx:149
 msgid "Load layout and styles"
 msgstr "레이아웃과 스타일 로드"
 
@@ -874,6 +878,10 @@ msgstr "청구 관리"
 msgid "Map Data"
 msgstr "데이터 지도"
 
+#: src/components/RequestTemplate.tsx:13
+msgid "Missing a template? Suggest one here!"
+msgstr "템플릿이 없나요? 여기에서 제안해주세요!"
+
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "월간"
@@ -886,8 +894,8 @@ msgstr "같은 줄에 여러 포인터"
 msgid "My dog ate my credit card!"
 msgstr "내 개가 내 신용 카드를 먹었어요!"
 
-#: src/pages/New.tsx:155
-#: src/pages/New.tsx:163
+#: src/pages/New.tsx:156
+#: src/pages/New.tsx:164
 msgid "Name Chart"
 msgstr "차트 이름"
 
@@ -1178,7 +1186,7 @@ msgstr "파일에 저장하기"
 msgid "Save your Work"
 msgstr "작업 저장"
 
-#: src/pages/New.tsx:206
+#: src/pages/New.tsx:207
 msgid "Set Content"
 msgstr "콘텐츠 설정"
 
@@ -1271,7 +1279,7 @@ msgid "Style Classes"
 msgstr "스타일 클래스"
 
 #: src/components/EditWithAI.tsx:242
-#: src/components/Feedback.tsx:81
+#: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
 msgstr "보내다"
@@ -1311,7 +1319,7 @@ msgstr "대상 구분자"
 msgid "Target Distance From Node"
 msgstr "노드로부터의 목표 거리"
 
-#: src/components/LoadTemplateDialog.tsx:112
+#: src/components/LoadTemplateDialog.tsx:116
 msgid "Templates"
 msgstr "템플릿"
 
@@ -1346,7 +1354,7 @@ msgstr "콜론 뒤에 공백이 따라오는 텍스트는 텍스트를 레이블
 msgid "Text on a line creates a node with the text as the label"
 msgstr "한 줄에 있는 텍스트는 텍스트를 레이블로 하는 노드를 만듭니다."
 
-#: src/components/Feedback.tsx:106
+#: src/components/Feedback.tsx:112
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
@@ -1409,11 +1417,11 @@ msgstr "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사�
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "이것은 당신의 모래상자입니다. 실험을 위한 멋진 장소이지만 <0>매일 초기화됩니다</0>."
 
-#: src/pages/New.tsx:272
+#: src/pages/New.tsx:273
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "입력 길이에 따라 30초에서 2분 사이의 시간이 소요될 수 있습니다."
 
-#: src/components/LoadTemplateDialog.tsx:159
+#: src/components/LoadTemplateDialog.tsx:166
 msgid "This will replace the current content."
 msgstr "이것은 현재 내용을 대체합니다."
 
@@ -1527,7 +1535,7 @@ msgstr "매월 $4에 프로로 업그레이드하세요."
 msgid "Upload your File"
 msgstr "파일을 업로드하세요."
 
-#: src/pages/New.tsx:220
+#: src/pages/New.tsx:221
 msgid "Use AI"
 msgstr "AI 사용"
 
@@ -1536,7 +1544,7 @@ msgstr "AI 사용"
 msgid "Use Custom CSS Only"
 msgstr "사용자 정의 CSS만 사용"
 
-#: src/pages/New.tsx:212
+#: src/pages/New.tsx:213
 msgid "Use Default Content"
 msgstr "기본 콘텐츠 사용"
 
@@ -1649,7 +1657,7 @@ msgstr "예: 옵션 A"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "그래프에 {numNodes}개의 노드와 {numEdges}개의 간선을 추가하려고 합니다."
 
-#: src/pages/New.tsx:250
+#: src/pages/New.tsx:251
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "<0>Flowchart Fun Pro</0>으로 무제한 영구적인 플로차트를 만들 수 있습니다."
 
