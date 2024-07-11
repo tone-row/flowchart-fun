@@ -71,7 +71,7 @@ msgstr "उन्नत निर्यात विकल्प (PNG, JPG, SVG)
 msgid "Amount"
 msgstr "रकम"
 
-#: src/components/Feedback.tsx:86
+#: src/components/Feedback.tsx:92
 msgid "An error occurred. Try resubmitting or email {0} directly."
 msgstr "एक एरर हो गया. फिर से सबमिट करने की कोशिश करें या सीधे {0} ईमेल करें."
 
@@ -92,11 +92,11 @@ msgstr "गुण"
 msgid "August 2023"
 msgstr "2023 अगस्त"
 
-#: src/components/LoadTemplateDialog.tsx:124
+#: src/components/LoadTemplateDialog.tsx:131
 msgid "Back"
 msgstr "वापस"
 
-#: src/components/Feedback.tsx:109
+#: src/components/Feedback.tsx:115
 msgid "Back To Editor"
 msgstr "संपादक पर वापस जाएं"
 
@@ -205,7 +205,7 @@ msgstr "लॉग इन करने के लिए अपने ईमेल
 msgid "Choose"
 msgstr "चुनें"
 
-#: src/pages/New.tsx:166
+#: src/pages/New.tsx:167
 msgid "Choose Template"
 msgstr "टेम्पलेट चुनें"
 
@@ -254,7 +254,7 @@ msgstr "रंग में लाल, नारंगी, पीला, नी�
 msgid "Column"
 msgstr "स्तंभ"
 
-#: src/components/Feedback.tsx:72
+#: src/components/Feedback.tsx:78
 msgid "Comment"
 msgstr "टिप्पणी"
 
@@ -325,7 +325,7 @@ msgstr "अपने Excalidraw कोड को कॉपी करें औ�
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "अपना मर्मेड.जेएस कोड कॉपी करें या मर्मेड.जेएस लाइव एडिटर में सीधे खोलें।"
 
-#: src/pages/New.tsx:268
+#: src/pages/New.tsx:269
 msgid "Create"
 msgstr "बनाएं"
 
@@ -337,7 +337,7 @@ msgstr "एआई का उपयोग करके फ्लोचार्�
 msgid "Create Unlimited Flowcharts"
 msgstr "असीमित पारितकथाओं बनाएं"
 
-#: src/pages/New.tsx:153
+#: src/pages/New.tsx:154
 msgid "Create a New Chart"
 msgstr "एक नया चार्ट बनाएं"
 
@@ -518,7 +518,7 @@ msgstr "संपादन योग्य"
 msgid "Editor"
 msgstr "संपादक"
 
-#: src/components/Feedback.tsx:62
+#: src/components/Feedback.tsx:68
 #: src/pages/ForgotPassword.tsx:53
 #: src/pages/ForgotPassword.tsx:57
 #: src/pages/LogIn.tsx:145
@@ -530,7 +530,7 @@ msgstr "ईमेल"
 msgid "Empty"
 msgstr "खाली"
 
-#: src/pages/New.tsx:226
+#: src/pages/New.tsx:227
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "एक प्रॉम्प्ट या जानकारी दर्ज करें जिससे आप एक चार्ट बना सकें।"
 
@@ -571,7 +571,7 @@ msgstr "PNG और JPG में निर्यात करें"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG और SVG में निर्यात करें"
 
-#: src/components/Feedback.tsx:44
+#: src/components/Feedback.tsx:50
 #: src/components/Header.tsx:114
 #: src/components/Header.tsx:376
 msgid "Feedback"
@@ -601,7 +601,7 @@ msgstr "फॉन्ट परिवार"
 msgid "Forgot your password?"
 msgstr "अपना पासवर्ड भूल गए?"
 
-#: src/components/Feedback.tsx:47
+#: src/components/Feedback.tsx:53
 msgid "Found a bug? Have a feature request? We would love to hear from you!"
 msgstr "एक बग पाया? एक सुविधा अनुरोध है? हम आपसे सुनने के लिए प्रसन्न होंगे!"
 
@@ -665,6 +665,10 @@ msgstr "इस डेटा में कैसे किन्हीं कड�
 #: src/components/FlowchartHeader.tsx:152
 msgid "How would you like to save your chart?"
 msgstr "आप अपने चार्ट को कैसे सहेजना चाहेंगे?"
+
+#: src/components/RequestTemplate.tsx:8
+msgid "I would like to request a new template:"
+msgstr "मैं एक नया टेम्पलेट अनुरोध करना चाहता हूँ:"
 
 #: src/components/LearnSyntaxDialog.tsx:136
 msgid "ID's"
@@ -799,7 +803,7 @@ msgstr "लाइट मोड"
 msgid "Link"
 msgstr "लिंक"
 
-#: src/components/LoadTemplateDialog.tsx:173
+#: src/components/LoadTemplateDialog.tsx:180
 msgid "Load"
 msgstr "लोड"
 
@@ -815,11 +819,11 @@ msgstr "फ़ाइल लोड करें"
 msgid "Load Files"
 msgstr "फ़ाइलें लोड करें"
 
-#: src/components/LoadTemplateDialog.tsx:99
+#: src/components/LoadTemplateDialog.tsx:100
 msgid "Load Template"
 msgstr "टेम्पलेट लोड करें"
 
-#: src/components/LoadTemplateDialog.tsx:145
+#: src/components/LoadTemplateDialog.tsx:152
 msgid "Load default content"
 msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 
@@ -827,7 +831,7 @@ msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 msgid "Load from link?"
 msgstr "लिंक से लोड करें?"
 
-#: src/components/LoadTemplateDialog.tsx:142
+#: src/components/LoadTemplateDialog.tsx:149
 msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
 
@@ -874,6 +878,10 @@ msgstr "बिलिंग प्रबंधित करें"
 msgid "Map Data"
 msgstr "डेटा मैप"
 
+#: src/components/RequestTemplate.tsx:13
+msgid "Missing a template? Suggest one here!"
+msgstr "कोई टेम्पलेट गायब है? यहाँ एक सुझाव दें!"
+
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "मासिक"
@@ -886,8 +894,8 @@ msgstr "एक ही लाइन पर कई प्रतीक"
 msgid "My dog ate my credit card!"
 msgstr "मेरा कुत्ता मेरा क्रेडिट कार्ड खा गया!"
 
-#: src/pages/New.tsx:155
-#: src/pages/New.tsx:163
+#: src/pages/New.tsx:156
+#: src/pages/New.tsx:164
 msgid "Name Chart"
 msgstr "चार्ट का नाम"
 
@@ -1178,7 +1186,7 @@ msgstr "फाइल में सेव करें"
 msgid "Save your Work"
 msgstr "अपनी कार्यवाही सुरक्षित करें"
 
-#: src/pages/New.tsx:206
+#: src/pages/New.tsx:207
 msgid "Set Content"
 msgstr "सामग्री सेट करें"
 
@@ -1271,7 +1279,7 @@ msgid "Style Classes"
 msgstr "शैली क्लासेज"
 
 #: src/components/EditWithAI.tsx:242
-#: src/components/Feedback.tsx:81
+#: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
 msgstr "भेजना"
@@ -1311,7 +1319,7 @@ msgstr "लक्ष्य डेलीमीटर"
 msgid "Target Distance From Node"
 msgstr "नोड से लक्ष्य दूरी"
 
-#: src/components/LoadTemplateDialog.tsx:112
+#: src/components/LoadTemplateDialog.tsx:116
 msgid "Templates"
 msgstr "टेम्पलेट्स"
 
@@ -1346,7 +1354,7 @@ msgstr "स्क्लीन के बाद कोलन + स्पेस �
 msgid "Text on a line creates a node with the text as the label"
 msgstr "एक पंक्ति पर पाठ एक नोड बनाता है जिसका पाठ लेबल है"
 
-#: src/components/Feedback.tsx:106
+#: src/components/Feedback.tsx:112
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
@@ -1409,11 +1417,11 @@ msgstr "यह सुविधा केवल प्रो उपयोगक�
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "यह आपका सैंडबॉक्स है। यह प्रयोग करने के लिए एक बहुत अच्छा स्थान है, लेकिन <0>यह रोजाना रीसेट होता है</0>।"
 
-#: src/pages/New.tsx:272
+#: src/pages/New.tsx:273
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "आपके इनपुट की लंबाई के आधार पर, यह 30 सेकंड से 2 मिनट तक लग सकता है।"
 
-#: src/components/LoadTemplateDialog.tsx:159
+#: src/components/LoadTemplateDialog.tsx:166
 msgid "This will replace the current content."
 msgstr "यह वर्तमान सामग्री को बदल देगा।"
 
@@ -1527,7 +1535,7 @@ msgstr "केवल $4/माह के लिए प्रो पर अपग
 msgid "Upload your File"
 msgstr "अपनी फाइल अपलोड करें"
 
-#: src/pages/New.tsx:220
+#: src/pages/New.tsx:221
 msgid "Use AI"
 msgstr "AI का उपयोग करें"
 
@@ -1536,7 +1544,7 @@ msgstr "AI का उपयोग करें"
 msgid "Use Custom CSS Only"
 msgstr "केवल कस्टम CSS का उपयोग करें"
 
-#: src/pages/New.tsx:212
+#: src/pages/New.tsx:213
 msgid "Use Default Content"
 msgstr "डिफ़ॉल्ट सामग्री का उपयोग करें"
 
@@ -1649,7 +1657,7 @@ msgstr "हाँ: विकल्प A"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "आप अपने ग्राफ में {numNodes} नोड्स और {numEdges} एड्ज़ जोड़ने वाले हैं।"
 
-#: src/pages/New.tsx:250
+#: src/pages/New.tsx:251
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "<0>Flowchart Fun Pro</0> के साथ आप असीमित स्थायी फ्लोचार्ट बना सकते हैं।"
 
