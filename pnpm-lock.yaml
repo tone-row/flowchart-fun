@@ -576,7 +576,7 @@ importers:
         version: 1.82.1
       tailwindcss:
         specifier: ^3.2.6
-        version: 3.2.6(postcss@8.4.31)(ts-node@10.9.1(@swc/core@1.3.92)(@types/node@18.16.17)(typescript@5.5.3))
+        version: 3.2.6(postcss@8.4.31)(ts-node@10.9.1(@types/node@18.16.17)(typescript@5.5.3))
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@swc/core@1.3.92)(@types/node@18.16.17)(typescript@5.5.3)
@@ -22237,21 +22237,13 @@ snapshots:
       postcss: 8.4.31
       postcss-value-parser: 4.2.0
 
-  postcss-load-config@3.1.4(postcss@8.4.31)(ts-node@10.9.1(@swc/core@1.3.92)(@types/node@18.16.17)(typescript@5.5.3)):
-    dependencies:
-      lilconfig: 2.0.6
-      yaml: 1.10.2
-    optionalDependencies:
-      postcss: 8.4.31
-      ts-node: 10.9.1(@swc/core@1.3.92)(@types/node@18.16.17)(typescript@5.5.3)
-
   postcss-load-config@3.1.4(postcss@8.4.31)(ts-node@10.9.1(@types/node@18.16.17)(typescript@5.5.3)):
     dependencies:
       lilconfig: 2.0.6
       yaml: 1.10.2
     optionalDependencies:
       postcss: 8.4.31
-      ts-node: 10.9.1(@swc/core@1.3.92(@swc/helpers@0.5.3))(@types/node@18.16.17)(typescript@5.5.3)
+      ts-node: 10.9.1(@swc/core@1.3.92)(@types/node@18.16.17)(typescript@5.5.3)
 
   postcss-loader@6.2.1(postcss@8.4.31)(webpack@5.88.2(@swc/core@1.3.92)):
     dependencies:
@@ -22901,7 +22893,7 @@ snapshots:
       semver: 7.5.4
       source-map-loader: 3.0.2(webpack@5.88.2(@swc/core@1.3.92))
       style-loader: 3.3.3(webpack@5.88.2(@swc/core@1.3.92))
-      tailwindcss: 3.2.6(postcss@8.4.31)(ts-node@10.9.1(@swc/core@1.3.92)(@types/node@18.16.17)(typescript@5.5.3))
+      tailwindcss: 3.2.6(postcss@8.4.31)(ts-node@10.9.1(@types/node@18.16.17)(typescript@5.5.3))
       terser-webpack-plugin: 5.3.9(@swc/core@1.3.92)(webpack@5.88.2(@swc/core@1.3.92))
       webpack: 5.88.2(@swc/core@1.3.92)
       webpack-dev-server: 4.15.1(bufferutil@4.0.6)(utf-8-validate@5.0.9)(webpack@5.88.2(@swc/core@1.3.92))
@@ -23826,34 +23818,6 @@ snapshots:
       vue: 3.4.26(typescript@5.5.3)
 
   symbol-tree@3.2.4: {}
-
-  tailwindcss@3.2.6(postcss@8.4.31)(ts-node@10.9.1(@swc/core@1.3.92)(@types/node@18.16.17)(typescript@5.5.3)):
-    dependencies:
-      arg: 5.0.2
-      chokidar: 3.5.3
-      color-name: 1.1.4
-      detective: 5.2.1
-      didyoumean: 1.2.2
-      dlv: 1.1.3
-      fast-glob: 3.3.1
-      glob-parent: 6.0.2
-      is-glob: 4.0.3
-      lilconfig: 2.1.0
-      micromatch: 4.0.5
-      normalize-path: 3.0.0
-      object-hash: 3.0.0
-      picocolors: 1.0.0
-      postcss: 8.4.31
-      postcss-import: 14.1.0(postcss@8.4.31)
-      postcss-js: 4.0.1(postcss@8.4.31)
-      postcss-load-config: 3.1.4(postcss@8.4.31)(ts-node@10.9.1(@swc/core@1.3.92)(@types/node@18.16.17)(typescript@5.5.3))
-      postcss-nested: 6.0.0(postcss@8.4.31)
-      postcss-selector-parser: 6.0.13
-      postcss-value-parser: 4.2.0
-      quick-lru: 5.1.1
-      resolve: 1.22.6
-    transitivePeerDependencies:
-      - ts-node
 
   tailwindcss@3.2.6(postcss@8.4.31)(ts-node@10.9.1(@types/node@18.16.17)(typescript@5.5.3)):
     dependencies:
