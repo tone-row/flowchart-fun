@@ -9,6 +9,7 @@ import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import Loading from "./Loading";
 import { usePromptStore } from "../lib/usePromptStore";
 import classNames from "classnames";
+import { sanitizeOnPaste } from "../lib/sanitizeOnPaste";
 
 type TextEditorProps = EditorProps & {
   extendOptions?: editor.IEditorOptions;
@@ -67,8 +68,19 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
         });
 
         // Listen to when the user pastes into the document
-        editor.onDidPaste(() => {
-          useEditorStore.setState({ userPasted: true });
+        editor.onDidPaste((e) => {
+          // get the text in the range
+          const text = editor.getModel()?.getValueInRange(e.range);
+          if (text) {
+            // store it in the editor
+            useEditorStore.setState({ userPasted: text });
+
+            // sanitize it if necessary
+            const sanitized = sanitizeOnPaste(text);
+            if (sanitized) {
+              replaceRange(editor, e.range, sanitized);
+            }
+          }
         });
       }}
       wrapperProps={{
@@ -112,4 +124,26 @@ function useEditorHover(hoverLineNumber?: number) {
       decorations.current = editor.deltaDecorations(decorations.current, []);
     };
   }, [hoverLineNumber]);
+}
+
+/**
+ * Given the instance of the editor, the range to replace, and the new text
+ * replace that range with the new text
+ */
+/**
+ * Given the instance of the editor, the range to replace, and the new text
+ * replace that range with the new text
+ */
+function replaceRange(
+  editor: editor.IStandaloneCodeEditor,
+  range: editor.ISingleEditOperation["range"],
+  text: string
+) {
+  editor.executeEdits("", [
+    {
+      range: range,
+      text: text,
+      forceMoveMarkers: true,
+    },
+  ]);
 }

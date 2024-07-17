@@ -60,7 +60,7 @@ export function ConvertToFlowchart() {
             })
             .finally(() => {
               stopConvert();
-              useEditorStore.setState({ userPasted: false });
+              useEditorStore.setState({ userPasted: "" });
             });
         }}
         disabled={convertIsRunning}

@@ -28,7 +28,7 @@ export function AiToolbar() {
   useEffect(() => {
     if (userPasted) {
       const timeout = setTimeout(() => {
-        useEditorStore.setState({ userPasted: false });
+        useEditorStore.setState({ userPasted: "" });
       }, 15000);
       return () => clearTimeout(timeout);
     }
