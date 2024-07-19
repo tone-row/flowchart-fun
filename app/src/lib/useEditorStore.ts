@@ -18,15 +18,15 @@ export const useEditorStore = create<{
   markers: editor.IMarkerData[];
   /** The current text selection */
   selection: string;
-  /** Becomes true after the user pastes into the document */
-  userPasted: boolean;
+  /** Stores the text the user recently pasted into the editor */
+  userPasted: string;
 }>((_set) => ({
   editor: null,
   monaco: null,
   isDragging: false,
   markers: [],
   selection: "",
-  userPasted: false,
+  userPasted: "",
 }));
 
 export function updateModelMarkers() {
