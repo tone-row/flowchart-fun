@@ -15,18 +15,6 @@ test("capabilities", async ({ page }) => {
   // change text in editor
   await changeEditorText(page, "Hello\n  World");
 
-  // Open mermaid.live
-  await page.getByLabel("Export").click();
-  const page1Promise = page.waitForEvent("popup");
-
-  // Wait for the page to load
-  await page.getByTestId("Mermaid Live").click();
-  const page1 = await page1Promise;
-  expect(page1.url()).toBe(
-    "https://mermaid.live/edit#pako:eNo1zrEKwzAMBNBfMZqTIRkzdOrQpVOHDlUHYSuNwbaKkCkl5N9rUrIdj-O4FbwEhgnmJB-_kBoWtDI8EC6ckiA8dxgb3EVTOGBwfX9yZYQOMmumGNrIisU5BFs4M8LUYuCZajIELFurUjW5fYuHybRyB_UdyPgc6aWUD-QQTfT6_7Xf2355ejiC"
-  );
-  await page.click('[data-testid="close-button"]');
-
   // Play with Theme Editor
   await page.getByTestId("Editor Tab: Theme").click();
   await page.getByLabel("Layout", { exact: true }).selectOption("klay");
@@ -46,8 +34,21 @@ test("capabilities", async ({ page }) => {
   const _download1 = await download1Promise;
   await page.click('[data-testid="close-button"]');
 
-  // View the Learn Syntax Modal
   await page.getByTestId("Editor Tab: Document").click();
+
+  // Open mermaid.live
+  await page.getByLabel("Export").click();
+  const page1Promise = page.waitForEvent("popup");
+
+  // Wait for the page to load
+  await page.getByTestId("Mermaid Live").click();
+  const page1 = await page1Promise;
+  expect(page1.url()).toBe(
+    "https://mermaid.live/edit#pako:eNo1zrEKwzAMBNBfMZqTIRkzdOrQpVOHDlUHYSuNwbaKkCkl5N9rUrIdj-O4FbwEhgnmJB-_kBoWtDI8EC6ckiA8dxgb3EVTOGBwfX9yZYQOMmumGNrIisU5BFs4M8LUYuCZajIELFurUjW5fYuHybRyB_UdyPgc6aWUD-QQTfT6_7Xf2355ejiC"
+  );
+  await page.click('[data-testid="close-button"]');
+
+  // View the Learn Syntax Modal
   await page.getByRole("button", { name: "Learn Syntax" }).click();
   await expect(
     page.getByRole("heading", { name: "Learn Syntax" })
