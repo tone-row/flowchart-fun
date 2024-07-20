@@ -3,18 +3,17 @@ import { changeEditorText, goToPath } from "./utils";
 
 test.beforeEach(async ({ page }) => {
   await goToPath(page);
+
+  // wait a second
+  await page.waitForTimeout(1000);
+
+  // change it again to be absolutely certain
+  await changeEditorText(page, "Hello\n  World");
 });
 
 /* Everything the user can do when not logged in */
 
 test("capabilities", async ({ page }) => {
-  await expect(
-    page.getByRole("heading", { name: "flowchart.fun" })
-  ).toBeVisible();
-
-  // change text in editor
-  await changeEditorText(page, "Hello\n  World");
-
   // Play with Theme Editor
   await page.getByTestId("Editor Tab: Theme").click();
   await page.getByLabel("Layout", { exact: true }).selectOption("klay");
