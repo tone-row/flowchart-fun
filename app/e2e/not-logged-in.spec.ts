@@ -7,26 +7,25 @@ test.beforeEach(async ({ page }) => {
 
 /* Everything the user can do when not logged in */
 
-test("can do things when not logged in", async ({ page }) => {
+test("capabilities", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "flowchart.fun" })
   ).toBeVisible();
+
+  // change text in editor
+  await changeEditorText(page, "Hello\n  World");
 
   // Open mermaid.live
   await page.getByLabel("Export").click();
   const page1Promise = page.waitForEvent("popup");
 
   // Wait for the page to load
-  await page.waitForTimeout(1000);
   await page.getByTestId("Mermaid Live").click();
   const page1 = await page1Promise;
   expect(page1.url()).toBe(
-    "https://mermaid.live/edit#pako:eNpdU11v2zAM_CucHooESIo6_U6BAd26Dn0oMKwrimEeBsViEqGy6El0k6zofx9lx56xN4k83lE86lUVZFDN1dLRpljrwLnP2Wc_cvWErqASgQluuyTc1v5drn42oJmA7snY5Q54LTjccgJHRLByCtrHJYUSrJeohl4ByDcFwa7WfNixHY9GuXr0BkNk7Y31K3jYedbbXI3HDeJE9B44EWwsr4XR6QU6oAAGCxst-Z7sVKCPEaEgRz5OwNlnhIPfNfHVp23lKCBQxVIR5220rzxLImvaQBVoFTAm2laiQmnOF7seei7Qa2OgcDpGjOnt2jGGRjWAPALiWlcIo8Mm8mvhahx31RdS_TVNYFo4WzynoXixInYjLAdN9pKX-3dd33WR7EhCX3RklIEYKuoSPaeGqWZnfWOfrpmmBfkXlNn970bPnWXN07XIfqc6wBOF5z6XvL6hjXekTWLv2HYJ-c_ZF6sbaw90RfGqIWuPsKiZBwZlMJ1Crj4jQ2MpmlxJ6D34WZ-Xy3G7Gi34A66sh2-7SnajQ58MATf7NYhd9nSYvUv2MchKgkyr6kFnQ9DHOjKV9g922fM-K5eLYW-XrSPtJTsaprJsP9H9daYmqsRQamvkq73mHkRK5lSKzFyOBpe6dpyr3L8JNPklu1-oOYcaJ6qujGa8sXoVdNkF0VimcN_-3uYTv_0F3BpJCg"
+    "https://mermaid.live/edit#pako:eNo1zrEKwzAMBNBfMZqTIRkzdOrQpVOHDlUHYSuNwbaKkCkl5N9rUrIdj-O4FbwEhgnmJB-_kBoWtDI8EC6ckiA8dxgb3EVTOGBwfX9yZYQOMmumGNrIisU5BFs4M8LUYuCZajIELFurUjW5fYuHybRyB_UdyPgc6aWUD-QQTfT6_7Xf2355ejiC"
   );
   await page.click('[data-testid="close-button"]');
-
-  // change text in editor
-  await changeEditorText(page, "Hello\n  World");
 
   // Play with Theme Editor
   await page.getByTestId("Editor Tab: Theme").click();
@@ -100,7 +99,7 @@ test("can do things when not logged in", async ({ page }) => {
 });
 
 /* Everything the user cannot do when not logged in */
-test("cannot do things when not logged in", async ({ page }) => {
+test("paywalls", async ({ page }) => {
   await page.getByRole("link", { name: "New" }).click();
   await expect(
     page.getByText("You need to log in to access this page.")
