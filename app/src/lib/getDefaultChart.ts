@@ -24,5 +24,6 @@ export function getDefaultLocalChart() {
     ...defaultMeta,
     expires: getExpirationDate(),
   };
-  return `${getDefaultText()}\n=====\n${JSON.stringify(meta, null, 2)}\n=====`;
+  // No text, only layout
+  return `\n=====\n${JSON.stringify(meta, null, 2)}\n=====`;
 }

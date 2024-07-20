@@ -23,15 +23,24 @@ export type GraphOptionsObject = {
   background?: string;
 };
 
-export const editorOptions: EditorProps["options"] = {
-  minimap: { enabled: false },
+export const editorStyleOptions: EditorProps["options"] = {
+  fontFamily:
+    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  fontSize: 16,
+  lineHeight: 32,
+  tabSize: 2,
   insertSpaces: true,
+  lineDecorationsWidth: "10px",
+  cursorWidth: 2,
+};
+
+export const editorFunctionalOptions: EditorProps["options"] = {
+  minimap: { enabled: false },
   wordBasedSuggestions: false,
   occurrencesHighlight: false,
   renderLineHighlight: "none",
   // scrollBeyondLastLine: false,
   overviewRulerBorder: false,
-  lineDecorationsWidth: "10px",
   renderValidationDecorations: "on",
   roundedSelection: false,
   colorDecorators: false,
@@ -39,15 +48,15 @@ export const editorOptions: EditorProps["options"] = {
   matchBrackets: "never",
   selectionHighlight: false,
   lineNumbersMinChars: 3,
-  cursorWidth: 2,
   automaticLayout: true,
   lineNumbers: "off",
   contextmenu: false,
-  fontFamily:
-    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-  fontSize: 16,
-  lineHeight: 32,
-  tabSize: 2,
+};
+
+// Combine both options for use in the editor
+export const editorOptions: EditorProps["options"] = {
+  ...editorStyleOptions,
+  ...editorFunctionalOptions,
 };
 
 export const delimiters = "~~~";

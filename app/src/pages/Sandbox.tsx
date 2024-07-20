@@ -1,6 +1,6 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import throttle from "lodash.throttle";
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { ClearTextButton } from "../components/ClearTextButton";
@@ -27,18 +27,30 @@ import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";
 import { AiToolbar } from "../components/AiToolbar";
+import { writeEditorText } from "../lib/writeEditorText";
+import type { editor } from "monaco-editor";
+import { getDefaultText } from "../lib/getDefaultText";
 
 const Sandbox = memo(function Edit() {
   // Wait 1 minute and trigger a sandbox modal overtop of the editor
   // if it's never been triggered before for this particular chart
+  // and if the text isn't the default text
+  const warningTimeout = useRef<NodeJS.Timeout | null>(null);
   useEffect(() => {
     // If it's already been displayed for this chart, bail
     if (useDoc.getState().meta?.hasSeenSandboxWarning) return;
 
-    let t = setTimeout(() => {
-      // Check if there is a div with a role="dialog" and if so, create
-      // a mutation observer to watch for it to be removed
-      // and show the dialog when it's removed
+    const showWarningAfterDelay = () => {
+      const docText = useDoc.getState().text;
+      const isDefaultText = docText === getDefaultText();
+
+      // If it's the default text, reset the timeout
+      if (isDefaultText) {
+        if (warningTimeout.current) clearTimeout(warningTimeout.current);
+        warningTimeout.current = setTimeout(showWarningAfterDelay, 1000 * 60);
+        return;
+      }
+
       const dialog = document.querySelector('[role="dialog"]');
       if (dialog) {
         const observer = new MutationObserver((mutations) => {
@@ -58,10 +70,13 @@ const Sandbox = memo(function Edit() {
       } else {
         useSandboxWarning.setState({ isOpen: true });
       }
-    }, 1000 * 60);
+    };
+
+    // Show the warning after 1 minute
+    warningTimeout.current = setTimeout(showWarningAfterDelay, 1000 * 60);
 
     return () => {
-      clearTimeout(t);
+      if (warningTimeout.current) clearTimeout(warningTimeout.current);
     };
   }, []);
 
@@ -105,6 +120,19 @@ const Sandbox = memo(function Edit() {
     };
   }, []);
 
+  // Check for access directly to the editor
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const onEditorReady = useCallback(
+    (editor: editor.IStandaloneCodeEditor) => {
+      // if the text isn't empty, forget about it
+      if (text.trim().length > 0) return;
+      // Animate the text to the editor
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      writeEditorText(intervalRef.current, editor, getDefaultText());
+    },
+    [text]
+  );
+
   return (
     <>
       <FlowchartLayout>
@@ -122,7 +150,11 @@ const Sandbox = memo(function Edit() {
           </div>
           <WithGraph>
             <Tabs.Content value="Document" className="overflow-hidden relative">
-              <TextEditor value={text} onChange={onChange} />
+              <TextEditor
+                value={text}
+                onChange={onChange}
+                onReady={onEditorReady}
+              />
             </Tabs.Content>
             <Tabs.Content value="Theme" className="overflow-hidden">
               <ThemeTab />
