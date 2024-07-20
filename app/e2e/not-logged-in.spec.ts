@@ -1,8 +1,12 @@
 import { test, expect } from "@playwright/test";
 import { BASE_URL, changeEditorText } from "./utils";
 
+// Add this constant for the no-animation URL
+const NO_ANIMATION_URL = `${BASE_URL}?skipAnimation=true`;
+
 test.beforeEach(async ({ page }) => {
-  await page.goto(BASE_URL);
+  // Update the beforeEach hook to use the NO_ANIMATION_URL
+  await page.goto(NO_ANIMATION_URL);
 });
 
 /* Everything the user can do when not logged in */
@@ -15,10 +19,13 @@ test("can do things when not logged in", async ({ page }) => {
   // Open mermaid.live
   await page.getByLabel("Export").click();
   const page1Promise = page.waitForEvent("popup");
+
+  // Wait for the page to load
+  await page.waitForTimeout(1000);
   await page.getByTestId("Mermaid Live").click();
   const page1 = await page1Promise;
   expect(page1.url()).toBe(
-    "https://mermaid.live/edit#pako:eNpdkUFrwzAMhf-KpnN7aEsp5DBo10th6w7bDmPewYuV1JDIwVHoQul_n6hjNnYwyN97Es_WBcvgCAusmnAuTzaKYSO8-DC4o9ozvI6d59rg540vlW-dUwIWHu0XNVlZqfLciQ8M24mVgZlKUeGtJ7AMhz1IgIeEc-P6t3GX2UbZMZyBotVOOemhb9ERDiSO4AXGMMSemuoutyxgPgeDOrz3jqJBvd8DL1PsJL5Tn_kqhb5dppx_nceQjesU8r9xKpNngzNsKbbWO_3Ji2HQEZq6JYOFlo4qOzT6YsNXtdpBwsvIJRYSB5rh0DkrtPe2jrbNkJyXEJ_Scm47uv4ASGaNww"
+    "https://mermaid.live/edit#pako:eNpdU11v2zAM_CucHooESIo6_U6BAd26Dn0oMKwrimEeBsViEqGy6El0k6zofx9lx56xN4k83lE86lUVZFDN1dLRpljrwLnP2Wc_cvWErqASgQluuyTc1v5drn42oJmA7snY5Q54LTjccgJHRLByCtrHJYUSrJeohl4ByDcFwa7WfNixHY9GuXr0BkNk7Y31K3jYedbbXI3HDeJE9B44EWwsr4XR6QU6oAAGCxst-Z7sVKCPEaEgRz5OwNlnhIPfNfHVp23lKCBQxVIR5220rzxLImvaQBVoFTAm2laiQmnOF7seei7Qa2OgcDpGjOnt2jGGRjWAPALiWlcIo8Mm8mvhahx31RdS_TVNYFo4WzynoXixInYjLAdN9pKX-3dd33WR7EhCX3RklIEYKuoSPaeGqWZnfWOfrpmmBfkXlNn970bPnWXN07XIfqc6wBOF5z6XvL6hjXekTWLv2HYJ-c_ZF6sbaw90RfGqIWuPsKiZBwZlMJ1Crj4jQ2MpmlxJ6D34WZ-Xy3G7Gi34A66sh2-7SnajQ58MATf7NYhd9nSYvUv2MchKgkyr6kFnQ9DHOjKV9g922fM-K5eLYW-XrSPtJTsaprJsP9H9daYmqsRQamvkq73mHkRK5lSKzFyOBpe6dpyr3L8JNPklu1-oOYcaJ6qujGa8sXoVdNkF0VimcN_-3uYTv_0F3BpJCg"
   );
   await page.click('[data-testid="close-button"]');
 
@@ -115,8 +122,8 @@ test("cannot do things when not logged in", async ({ page }) => {
 });
 
 test("Cannot load a file", async ({ page }) => {
-  // click on file
-  await page.goto(BASE_URL);
+  // Update this test to use NO_ANIMATION_URL
+  await page.goto(NO_ANIMATION_URL);
   await page.getByTestId("load-file-button").click();
   await page.getByRole("button", { name: "Learn More" }).click();
   // expect to be at /pricing
