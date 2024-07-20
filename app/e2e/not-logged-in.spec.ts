@@ -6,6 +6,7 @@ const NO_ANIMATION_URL = `${BASE_URL}?skipAnimation=true`;
 
 test.beforeEach(async ({ page }) => {
   // Update the beforeEach hook to use the NO_ANIMATION_URL
+  console.log(`Going to ${NO_ANIMATION_URL}`);
   await page.goto(NO_ANIMATION_URL);
 });
 
