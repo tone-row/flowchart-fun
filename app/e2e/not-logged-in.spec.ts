@@ -1,13 +1,8 @@
 import { test, expect } from "@playwright/test";
-import { BASE_URL, changeEditorText } from "./utils";
-
-// Add this constant for the no-animation URL
-const NO_ANIMATION_URL = `${BASE_URL}?skipAnimation=true`;
+import { changeEditorText, goToPath } from "./utils";
 
 test.beforeEach(async ({ page }) => {
-  // Update the beforeEach hook to use the NO_ANIMATION_URL
-  console.log(`Going to ${NO_ANIMATION_URL}`);
-  await page.goto(NO_ANIMATION_URL);
+  await goToPath(page);
 });
 
 /* Everything the user can do when not logged in */
@@ -124,7 +119,7 @@ test("cannot do things when not logged in", async ({ page }) => {
 
 test("Cannot load a file", async ({ page }) => {
   // Update this test to use NO_ANIMATION_URL
-  await page.goto(NO_ANIMATION_URL);
+  await goToPath(page);
   await page.getByTestId("load-file-button").click();
   await page.getByRole("button", { name: "Learn More" }).click();
   // expect to be at /pricing

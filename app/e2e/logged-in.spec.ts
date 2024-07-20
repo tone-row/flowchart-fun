@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
-import { BASE_URL, TESTING_EMAIL, TESTING_PASSWORD } from "./utils";
+import { TESTING_EMAIL, TESTING_PASSWORD, goToPath } from "./utils";
 
 /* Log In */
 test.beforeEach(async ({ page }) => {
-  await page.goto(BASE_URL);
+  await goToPath(page);
   await page.getByRole("link", { name: "Log In" }).click();
   await page.getByTestId("sign-in-email").click();
   await page.getByTestId("sign-in-email").fill(TESTING_EMAIL);
