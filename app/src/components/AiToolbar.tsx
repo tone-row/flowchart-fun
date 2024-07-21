@@ -34,7 +34,7 @@ export function AiToolbar() {
     }
   }, [userPasted]);
 
-  const convertIsRunning = usePromptStore((s) => s.convertIsRunning);
+  const convertIsRunning = usePromptStore((s) => s.isRunning);
 
   // Qualities for displaying Convert to Flowchart button:
   //  OR

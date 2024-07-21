@@ -257,21 +257,28 @@ export const IconButton2 = forwardRef<
     >
 >(
   (
-    { children, color = "default", size = "sm", className = "", ...props },
+    {
+      children,
+      color = "default",
+      size = "sm",
+      className = "",
+      isLoading,
+      ...props
+    },
     ref
   ) => {
     return (
       <button
         className={`${focusClasses} ${pSize[size]} ${button2Classes} ${button2Colors[color]} ${className}`}
         {...props}
-        disabled={props.disabled || props.isLoading}
-        data-is-loading={props.isLoading}
+        disabled={props.disabled || isLoading}
+        data-is-loading={isLoading}
         ref={ref}
       >
         <span className="group-data-[is-loading=true]:opacity-0">
           {children}
         </span>
-        {props.isLoading && (
+        {isLoading && (
           <Spinner
             r={8}
             s={2}
