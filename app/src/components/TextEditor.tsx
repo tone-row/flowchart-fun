@@ -1,22 +1,28 @@
 import Editor, { EditorProps } from "@monaco-editor/react";
 import { highlight } from "graph-selector";
 import { editor } from "monaco-editor";
-import { useEffect, useRef } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 
-import { editorOptions } from "../lib/constants";
+import { editorOptions, editorStyleOptions } from "../lib/constants";
 import { useLightOrDarkMode } from "../lib/hooks";
 import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import Loading from "./Loading";
 import { usePromptStore } from "../lib/usePromptStore";
 import classNames from "classnames";
 import { sanitizeOnPaste } from "../lib/sanitizeOnPaste";
+import { getDefaultText } from "../lib/getDefaultText";
 
 type TextEditorProps = EditorProps & {
   extendOptions?: editor.IEditorOptions;
+  onReady?: (editor: editor.IStandaloneCodeEditor) => void;
 };
 
 /** A Monaco editor which stays in sync with the current parser */
-export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
+export function TextEditor({
+  extendOptions = {},
+  onReady,
+  ...props
+}: TextEditorProps) {
   const mode = useLightOrDarkMode();
   const theme =
     mode === "light" ? highlight.defaultTheme : highlight.defaultThemeDark;
@@ -38,59 +44,64 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
   const convertIsRunning = usePromptStore((s) => s.convertIsRunning);
 
   return (
-    <Editor
-      {...props}
-      defaultLanguage={highlight.languageId}
-      options={{ ...editorOptions, ...extendOptions, theme }}
-      loading={<Loading />}
-      beforeMount={highlight.registerHighlighter}
-      onMount={(editor, monaco) => {
-        // Store the refs in client side zustand state
-        useEditorStore.setState({ editor, monaco });
+    <>
+      <Editor
+        {...props}
+        defaultLanguage={highlight.languageId}
+        options={{ ...editorOptions, ...extendOptions, theme }}
+        loading={<Loading />}
+        beforeMount={highlight.registerHighlighter}
+        onMount={(editor, monaco) => {
+          // Store the refs in client side zustand state
+          useEditorStore.setState({ editor, monaco });
 
-        // Draw any current model markers
-        updateModelMarkers();
+          // Draw any current model markers
+          updateModelMarkers();
 
-        // double set the theme
-        monaco.editor.setTheme(theme);
+          // double set the theme
+          monaco.editor.setTheme(theme);
 
-        // Listen to when the selection changes
-        editor.onDidChangeCursorSelection(() => {
-          const selection = editor.getSelection();
-          if (selection) {
-            // get the text selected
-            const text = editor.getModel()?.getValueInRange(selection);
-            // store it in the editor
-            useEditorStore.setState({ selection: text });
-          } else {
-            useEditorStore.setState({ selection: "" });
-          }
-        });
-
-        // Listen to when the user pastes into the document
-        editor.onDidPaste((e) => {
-          // get the text in the range
-          const text = editor.getModel()?.getValueInRange(e.range);
-          if (text) {
-            // store it in the editor
-            useEditorStore.setState({ userPasted: text });
-
-            // sanitize it if necessary
-            const sanitized = sanitizeOnPaste(text);
-            if (sanitized) {
-              replaceRange(editor, e.range, sanitized);
+          // Listen to when the selection changes
+          editor.onDidChangeCursorSelection(() => {
+            const selection = editor.getSelection();
+            if (selection) {
+              // get the text selected
+              const text = editor.getModel()?.getValueInRange(selection);
+              // store it in the editor
+              useEditorStore.setState({ selection: text });
+            } else {
+              useEditorStore.setState({ selection: "" });
             }
-          }
-        });
-      }}
-      wrapperProps={{
-        "data-testid": "Editor",
-        className: classNames("bg-white dark:bg-neutral-900", {
-          "overflow-hidden": isDragging,
-          "cursor-wait pointer-events-none opacity-50": convertIsRunning,
-        }),
-      }}
-    />
+          });
+
+          // Listen to when the user pastes into the document
+          editor.onDidPaste((e) => {
+            // get the text in the range
+            const text = editor.getModel()?.getValueInRange(e.range);
+            if (text) {
+              // store it in the editor
+              useEditorStore.setState({ userPasted: text });
+
+              // sanitize it if necessary
+              const sanitized = sanitizeOnPaste(text);
+              if (sanitized) {
+                replaceRange(editor, e.range, sanitized);
+              }
+            }
+          });
+
+          onReady?.(editor);
+        }}
+        wrapperProps={{
+          "data-testid": "Editor",
+          className: classNames("bg-white dark:bg-neutral-900", {
+            "overflow-hidden": isDragging,
+            "cursor-wait pointer-events-none opacity-50": convertIsRunning,
+          }),
+        }}
+      />
+      {props.value === "" ? <Placeholder /> : null}
+    </>
   );
 }
 
@@ -146,4 +157,20 @@ function replaceRange(
       forceMoveMarkers: true,
     },
   ]);
+}
+
+function Placeholder() {
+  return (
+    <div className="absolute top-0 left-[26px] w-full">
+      <pre
+        className="text-gray-500 dark:text-gray-400 leading-normal"
+        style={{
+          ...(editorStyleOptions as CSSProperties),
+          lineHeight: editorStyleOptions?.lineHeight + "px",
+        }}
+      >
+        {getDefaultText()}
+      </pre>
+    </div>
+  );
 }

@@ -59,6 +59,10 @@ msgstr "Cuenta"
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "Agregue una barra invertida (<0>\\</0>) antes de cualquier carácter especial: <1>(</1>, <2>:</2>, <3>#</3>, o <4>.</4>"
 
+#: src/lib/getDefaultText.ts:10
+msgid "Add classes to alter color and shape"
+msgstr "Agregar clases para cambiar el color y la forma"
+
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
 msgstr "Avanzado"
@@ -119,7 +123,7 @@ msgstr "Convierte en un Patrocinador de Github"
 msgid "Become a Pro User"
 msgstr "Convierte en un Usuario Pro"
 
-#: src/lib/getDefaultText.ts:4
+#: src/lib/getDefaultText.ts:7
 msgid "Begin Typing"
 msgstr "Comienza a escribir"
 
@@ -205,7 +209,7 @@ msgstr "Revise su correo electrónico para obtener un enlace para iniciar sesió
 msgid "Choose"
 msgstr "Seleccionar"
 
-#: src/pages/New.tsx:167
+#: src/pages/New.tsx:168
 msgid "Choose Template"
 msgstr "Elige plantilla"
 
@@ -275,10 +279,6 @@ msgstr "Confirma tu dirección de correo electrónico para iniciar sesión."
 msgid "Connect your Data"
 msgstr "Conecta tus datos"
 
-#: src/lib/getDefaultText.ts:5
-msgid "Consider: Adding a Label"
-msgstr "Considere: Agregar una etiqueta"
-
 #: src/components/LearnSyntaxDialog.tsx:260
 msgid "Containers"
 msgstr "Contenedores"
@@ -325,7 +325,7 @@ msgstr "Copia tu código Excalidraw y pégalo en <0>excalidraw.com</0> para edit
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copia tu código mermaid.js o abrilo directamente en el editor en vivo de mermaid.js."
 
-#: src/pages/New.tsx:269
+#: src/pages/New.tsx:298
 msgid "Create"
 msgstr "Crear"
 
@@ -337,9 +337,13 @@ msgstr "Crear diagramas de flujo con IA"
 msgid "Create Unlimited Flowcharts"
 msgstr "Crear diagramas de flujo ilimitados"
 
-#: src/pages/New.tsx:154
+#: src/pages/New.tsx:155
 msgid "Create a New Chart"
 msgstr "Crea un nuevo gráfico"
+
+#: src/pages/New.tsx:349
+msgid "Create a flowchart showing the steps of planning and executing a school fundraising event"
+msgstr "Crear un diagrama de flujo que muestre los pasos de planificación y ejecución de un evento de recaudación de fondos escolar"
 
 #: src/pages/Pricing.tsx:92
 msgid "Create unlimited diagrams for just $4/month!"
@@ -375,6 +379,10 @@ msgstr "Opciones de compartición personalizadas"
 msgid "Customer Portal"
 msgstr "Portal del cliente"
 
+#: src/lib/getDefaultText.ts:10
+msgid "Customize"
+msgstr "Personalizar"
+
 #: src/pages/Pricing2.tsx:27
 msgid "Daily Sandbox Editor"
 msgstr "Editor de Sandbox diario"
@@ -395,6 +403,18 @@ msgstr "Importación de datos (Visio, Lucidchart, CSV)"
 #: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "Fecha"
+
+#: src/lib/getDefaultText.ts:8
+msgid "Decisions"
+msgstr "Decisiones"
+
+#: src/pages/New.tsx:347
+msgid "Design a software development lifecycle flowchart for an agile team"
+msgstr "Diseñar un diagrama de flujo del ciclo de vida de desarrollo de software para un equipo ágil"
+
+#: src/pages/New.tsx:348
+msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
+msgstr "Desarrollar un árbol de decisiones para que un CEO evalúe posibles nuevas oportunidades de mercado"
 
 #: src/components/Tabs/ThemeTab.tsx:112
 #: src/components/Tabs/ThemeTab.tsx:114
@@ -426,6 +446,10 @@ msgstr "Descargar PNG"
 #: src/components/GraphContextMenu.tsx:120
 msgid "Download SVG"
 msgstr "Descargar SVG"
+
+#: src/lib/getDefaultText.ts:15
+msgid "Download or convert your flowchart via the 'Share' button."
+msgstr "Descarga o convierte tu diagrama de flujo a través del botón 'Compartir'."
 
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
@@ -530,7 +554,7 @@ msgstr "Correo electrónico"
 msgid "Empty"
 msgstr "Vacío"
 
-#: src/pages/New.tsx:227
+#: src/pages/New.tsx:228
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "Introduce una solicitud o información de la que desea crear un gráfico."
 
@@ -545,6 +569,10 @@ msgstr "Ingresa tu dirección de correo electrónico a continuación y te enviar
 #: src/components/ImportDataDialog.tsx:552
 msgid "Equal To"
 msgstr "Igual a"
+
+#: src/pages/New.tsx:235
+msgid "Examples:"
+msgstr "Ejemplos:"
 
 #: src/lib/graphOptions.ts:48
 msgid "Excalidraw"
@@ -620,6 +648,10 @@ msgstr "Obtenga acceso a funciones de inteligencia artificial y nunca pierda su 
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "General"
+
+#: src/lib/getDefaultText.ts:5
+msgid "Get Started"
+msgstr "Empezar"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -724,6 +756,10 @@ msgstr "Importar datos es una función profesional. Puedes actualizar a Flowchar
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Incluye un título usando un atributo <0>title</0>. Para usar el color de Visio, agrega un atributo <1>roleType</1> igual a uno de los siguientes:"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Indent for steps"
+msgstr "Sangría para pasos"
 
 #: src/components/Header.tsx:127
 msgid "Info"
@@ -882,6 +918,10 @@ msgstr "Datos de mapa"
 msgid "Missing a template? Suggest one here!"
 msgstr "¿Falta una plantilla? ¡Sugerir una aquí!"
 
+#: src/lib/getDefaultText.ts:5
+msgid "Modify the text to see it transform into a flowchart on the right."
+msgstr "Modifica el texto para ver cómo se transforma en un diagrama de flujo a la derecha."
+
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "Mensual"
@@ -894,8 +934,8 @@ msgstr "Múltiples punteros en la misma línea"
 msgid "My dog ate my credit card!"
 msgstr "¡Mi perro se comió mi tarjeta de crédito!"
 
-#: src/pages/New.tsx:156
-#: src/pages/New.tsx:164
+#: src/pages/New.tsx:157
+#: src/pages/New.tsx:165
 msgid "Name Chart"
 msgstr "Nombre del gráfico"
 
@@ -925,10 +965,6 @@ msgstr "Sin Bordes"
 #: src/pages/Pricing.tsx:67
 msgid "No Watermarks!"
 msgstr "¡Sin marcas de agua!"
-
-#: src/lib/getDefaultText.ts:8
-msgid "No: Option B"
-msgstr "No: Opción B"
 
 #: src/components/LearnSyntaxDialog.tsx:340
 msgid "Node Border Style"
@@ -972,10 +1008,6 @@ msgstr "Los nodos se pueden estilizar con líneas discontinuas, punteadas o dobl
 msgid "Not Empty"
 msgstr "No vacío "
 
-#: src/lib/getDefaultText.ts:10
-msgid "Now erase the text and try it yourself!"
-msgstr "¡Ahora borra el texto y pruebalo tú mismo!"
-
 #: src/pages/Pricing.tsx:72
 msgid "Office Hours"
 msgstr "Horas de oficina "
@@ -1017,6 +1049,10 @@ msgstr "Contraseña"
 #: src/lib/hooks.ts:84
 msgid "Past Due"
 msgstr "Vencido"
+
+#: src/lib/getDefaultText.ts:13
+msgid "Paste a document or outline to auto-convert into a flowchart."
+msgstr "Pega un documento o esquema para convertirlo automáticamente en un diagrama de flujo."
 
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
@@ -1154,6 +1190,10 @@ msgstr "Devolver"
 msgid "Right to Left"
 msgstr "De derecha a izquierda"
 
+#: src/lib/getDefaultText.ts:11
+msgid "Right-click on nodes to see more options."
+msgstr "Haz clic derecho en los nodos para ver más opciones."
+
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:396
 #: src/pages/Roadmap.tsx:25
@@ -1186,7 +1226,7 @@ msgstr "Guardar en archivo"
 msgid "Save your Work"
 msgstr "Guarda tu trabajo"
 
-#: src/pages/New.tsx:207
+#: src/pages/New.tsx:208
 msgid "Set Content"
 msgstr "Establecer contenido"
 
@@ -1203,6 +1243,14 @@ msgstr "Configuración"
 #: src/components/FlowchartHeader.tsx:64
 msgid "Share"
 msgstr "Compartir"
+
+#: src/lib/getDefaultText.ts:14
+msgid "Share Your Work"
+msgstr "Comparte tu trabajo"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Show progression or dependency."
+msgstr "Muestra progresión o dependencia."
 
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
@@ -1265,6 +1313,10 @@ msgstr "Comienzo"
 #: src/components/ImportDataDialog.tsx:277
 msgid "Start Over"
 msgstr "Empezar de nuevo"
+
+#: src/lib/getDefaultText.ts:7
+msgid "Start with a label or decision."
+msgstr "Comienza con una etiqueta o decisión."
 
 #: src/pages/Account.tsx:162
 msgid "Status"
@@ -1417,7 +1469,7 @@ msgstr "Esta característica solo está disponible para usuarios profesionales. 
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "Esta es tu caja de arena. Es un gran lugar para experimentar, pero <0>se reinicia diariamente</0>."
 
-#: src/pages/New.tsx:273
+#: src/pages/New.tsx:302
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "Esto puede tardar entre 30 segundos y 2 minutos dependiendo de la longitud de su entrada."
 
@@ -1490,6 +1542,10 @@ msgstr "Dos nodos tienen el mismo ID"
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "¡Ups, se acabaron tus solicitudes gratuitas! Actualiza a Flowchart Fun Pro para conversiones de diagramas ilimitadas, y sigue transformando texto en claros y visuales flujogramas tan fácilmente como copiar y pegar."
 
+#: src/lib/getDefaultText.ts:6
+msgid "Understanding Syntax"
+msgstr "Entendiendo la sintaxis"
+
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
 msgstr "Carácter especial sin escape"
@@ -1535,7 +1591,8 @@ msgstr "Actualiza a Pro por solo $4/mes."
 msgid "Upload your File"
 msgstr "Subir tu archivo"
 
-#: src/pages/New.tsx:221
+#: src/lib/getDefaultText.ts:12
+#: src/pages/New.tsx:222
 msgid "Use AI"
 msgstr "Usar IA"
 
@@ -1544,7 +1601,7 @@ msgstr "Usar IA"
 msgid "Use Custom CSS Only"
 msgstr "Usar solo CSS personalizado"
 
-#: src/pages/New.tsx:213
+#: src/pages/New.tsx:214
 msgid "Use Default Content"
 msgstr "Usar contenido predeterminado"
 
@@ -1552,13 +1609,13 @@ msgstr "Usar contenido predeterminado"
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
 msgstr "¿Usas Lucidchart o Visio? ¡La importación de CSV facilita obtener datos de cualquier fuente!"
 
-#: src/lib/getDefaultText.ts:7
-msgid "Use an ID to Connect"
-msgstr "Usa un ID para conectar"
-
 #: src/components/LearnSyntaxDialog.tsx:147
 msgid "Use classes to group nodes"
 msgstr "Usar clases para agrupar nodos"
+
+#: src/lib/getDefaultText.ts:8
+msgid "Use colons, like \"Explore options:\"."
+msgstr "Usa dos puntos, como \"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1612,6 +1669,10 @@ msgstr "Diagramas sin marca de agua"
 msgid "Watermarks"
 msgstr "Marcas de agua"
 
+#: src/lib/getDefaultText.ts:4
+msgid "Welcome to Flowchart Fun!"
+msgstr "¡Bienvenido a Flowchart Fun!"
+
 #: src/pages/Pricing2.tsx:288
 msgid "What's Included"
 msgstr "¿Qué está incluido?"
@@ -1649,15 +1710,11 @@ msgstr "Escribe tu instrucción aquí o haz clic para activar el micrófono, lue
 msgid "Yearly"
 msgstr "Anualmente"
 
-#: src/lib/getDefaultText.ts:6
-msgid "Yes: Option A"
-msgstr "Sí: Opción A"
-
 #: src/components/ImportDataDialog.tsx:693
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Estás a punto de agregar {numNodes} nodos y {numEdges} bordes a tu gráfico."
 
-#: src/pages/New.tsx:251
+#: src/pages/New.tsx:280
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "Puede crear diagramas de flujo ilimitados y permanentes con <0>Flowchart Fun Pro</0>."
 

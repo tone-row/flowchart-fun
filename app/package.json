@@ -144,7 +144,7 @@
   "devDependencies": {
     "@lingui/cli": "^3.17.2",
     "@lingui/macro": "^3.13.2",
-    "@playwright/test": "1.36.2",
+    "@playwright/test": "1.45.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",

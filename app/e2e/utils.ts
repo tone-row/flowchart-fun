@@ -17,7 +17,12 @@ export const BASE_URL = process.env.E2E_START_URL ?? "http://localhost:3000";
 const EMAIL_DOMAINS_LIST: string[] = [];
 
 export async function goToPath(page: Page, path = "") {
-  await page.goto(`${BASE_URL}/${path}`);
+  await page.goto(`${BASE_URL}${path ? `/${path}` : ""}?skipAnimation=true`);
+
+  // If we're on the root route, also wait until the .monaco-editor is present
+  if (path === "") {
+    await page.waitForSelector(".monaco-editor");
+  }
 }
 
 export async function goToTab(page: Page, tabName: string) {
@@ -72,15 +77,10 @@ export async function deleteCustomerByEmail(email: string) {
   }
 }
 
-const delay = 50;
-
 export async function changeEditorText(page: Page, text: string) {
-  const monacoEditor = page.locator(".monaco-editor").nth(0);
-  await monacoEditor.click();
-  await page.keyboard.press("Meta+KeyA", { delay });
-  // delete the selected text
-  await page.keyboard.press("Backspace", { delay });
-  await page.keyboard.type(text, { delay });
+  await page.evaluate((text) => {
+    window.__set_text(text);
+  }, text);
 }
 
 const TESTING_EMAIL = process.env.TESTING_EMAIL as string;

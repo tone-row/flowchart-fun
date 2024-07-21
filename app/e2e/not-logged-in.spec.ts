@@ -1,30 +1,19 @@
 import { test, expect } from "@playwright/test";
-import { BASE_URL, changeEditorText } from "./utils";
+import { changeEditorText, goToPath } from "./utils";
 
 test.beforeEach(async ({ page }) => {
-  await page.goto(BASE_URL);
+  await goToPath(page);
+
+  // wait a second
+  await page.waitForTimeout(1000);
+
+  // change it again to be absolutely certain
+  await changeEditorText(page, "Hello\n  World");
 });
 
 /* Everything the user can do when not logged in */
 
-test("can do things when not logged in", async ({ page }) => {
-  await expect(
-    page.getByRole("heading", { name: "flowchart.fun" })
-  ).toBeVisible();
-
-  // Open mermaid.live
-  await page.getByLabel("Export").click();
-  const page1Promise = page.waitForEvent("popup");
-  await page.getByTestId("Mermaid Live").click();
-  const page1 = await page1Promise;
-  expect(page1.url()).toBe(
-    "https://mermaid.live/edit#pako:eNpdkUFrwzAMhf-KpnN7aEsp5DBo10th6w7bDmPewYuV1JDIwVHoQul_n6hjNnYwyN97Es_WBcvgCAusmnAuTzaKYSO8-DC4o9ozvI6d59rg540vlW-dUwIWHu0XNVlZqfLciQ8M24mVgZlKUeGtJ7AMhz1IgIeEc-P6t3GX2UbZMZyBotVOOemhb9ERDiSO4AXGMMSemuoutyxgPgeDOrz3jqJBvd8DL1PsJL5Tn_kqhb5dppx_nceQjesU8r9xKpNngzNsKbbWO_3Ji2HQEZq6JYOFlo4qOzT6YsNXtdpBwsvIJRYSB5rh0DkrtPe2jrbNkJyXEJ_Scm47uv4ASGaNww"
-  );
-  await page.click('[data-testid="close-button"]');
-
-  // change text in editor
-  await changeEditorText(page, "Hello\n  World");
-
+test("capabilities", async ({ page }) => {
   // Play with Theme Editor
   await page.getByTestId("Editor Tab: Theme").click();
   await page.getByLabel("Layout", { exact: true }).selectOption("klay");
@@ -44,8 +33,21 @@ test("can do things when not logged in", async ({ page }) => {
   const _download1 = await download1Promise;
   await page.click('[data-testid="close-button"]');
 
-  // View the Learn Syntax Modal
   await page.getByTestId("Editor Tab: Document").click();
+
+  // Open mermaid.live
+  await page.getByLabel("Export").click();
+  const page1Promise = page.waitForEvent("popup");
+
+  // Wait for the page to load
+  await page.getByTestId("Mermaid Live").click();
+  const page1 = await page1Promise;
+  expect(page1.url()).toBe(
+    "https://mermaid.live/edit#pako:eNo1zrEKwzAMBNBfMZqTIRkzdOrQpVOHDlUHYSuNwbaKkCkl5N9rUrIdj-O4FbwEhgnmJB-_kBoWtDI8EC6ckiA8dxgb3EVTOGBwfX9yZYQOMmumGNrIisU5BFs4M8LUYuCZajIELFurUjW5fYuHybRyB_UdyPgc6aWUD-QQTfT6_7Xf2355ejiC"
+  );
+  await page.click('[data-testid="close-button"]');
+
+  // View the Learn Syntax Modal
   await page.getByRole("button", { name: "Learn Syntax" }).click();
   await expect(
     page.getByRole("heading", { name: "Learn Syntax" })
@@ -97,7 +99,7 @@ test("can do things when not logged in", async ({ page }) => {
 });
 
 /* Everything the user cannot do when not logged in */
-test("cannot do things when not logged in", async ({ page }) => {
+test("paywalls", async ({ page }) => {
   await page.getByRole("link", { name: "New" }).click();
   await expect(
     page.getByText("You need to log in to access this page.")
@@ -115,8 +117,8 @@ test("cannot do things when not logged in", async ({ page }) => {
 });
 
 test("Cannot load a file", async ({ page }) => {
-  // click on file
-  await page.goto(BASE_URL);
+  // Update this test to use NO_ANIMATION_URL
+  await goToPath(page);
   await page.getByTestId("load-file-button").click();
   await page.getByRole("button", { name: "Learn More" }).click();
   // expect to be at /pricing

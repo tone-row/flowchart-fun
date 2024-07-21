@@ -1,7 +1,7 @@
 import { expect, Page, test } from "@playwright/test";
 import jsdom from "jsdom";
 
-import { BASE_URL, getTempEmail, getTempEmailMessage } from "./utils";
+import { BASE_URL, getTempEmail, getTempEmailMessage, goToPath } from "./utils";
 
 let page: Page;
 let email = "";
@@ -16,7 +16,7 @@ test.skip();
 
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
-  await page.goto(BASE_URL);
+  await goToPath(page);
 });
 
 test.afterAll(async () => {

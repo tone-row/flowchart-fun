@@ -59,6 +59,10 @@ msgstr "帐户"
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "在任何特殊字符之前添加反斜杠 (<0>\\</0>)： <1>(</1>、<2>:</2>、<3>#</3>或<4>.</4>"
 
+#: src/lib/getDefaultText.ts:10
+msgid "Add classes to alter color and shape"
+msgstr "添加类别来改变颜色和形状"
+
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
 msgstr "高级"
@@ -119,7 +123,7 @@ msgstr "成为Github赞助商"
 msgid "Become a Pro User"
 msgstr "成为专业用户"
 
-#: src/lib/getDefaultText.ts:4
+#: src/lib/getDefaultText.ts:7
 msgid "Begin Typing"
 msgstr "开始输入"
 
@@ -205,7 +209,7 @@ msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口
 msgid "Choose"
 msgstr "選擇"
 
-#: src/pages/New.tsx:167
+#: src/pages/New.tsx:168
 msgid "Choose Template"
 msgstr "选择模板"
 
@@ -275,10 +279,6 @@ msgstr "確認您的電子郵件地址以登入。"
 msgid "Connect your Data"
 msgstr "连接您的数据"
 
-#: src/lib/getDefaultText.ts:5
-msgid "Consider: Adding a Label"
-msgstr "考虑：添加标签"
-
 #: src/components/LearnSyntaxDialog.tsx:260
 msgid "Containers"
 msgstr "容器"
@@ -325,7 +325,7 @@ msgstr "将你的 Excalidraw 代码复制并粘贴到<0>excalidraw.com</0>以进
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。"
 
-#: src/pages/New.tsx:269
+#: src/pages/New.tsx:298
 msgid "Create"
 msgstr "创建"
 
@@ -337,9 +337,13 @@ msgstr "使用AI创建流程图"
 msgid "Create Unlimited Flowcharts"
 msgstr "创建无限流程图"
 
-#: src/pages/New.tsx:154
+#: src/pages/New.tsx:155
 msgid "Create a New Chart"
 msgstr "创建新图表"
+
+#: src/pages/New.tsx:349
+msgid "Create a flowchart showing the steps of planning and executing a school fundraising event"
+msgstr "创建一个流程图，展示规划和执行学校筹款活动的步骤"
 
 #: src/pages/Pricing.tsx:92
 msgid "Create unlimited diagrams for just $4/month!"
@@ -375,6 +379,10 @@ msgstr "自定义分享选项"
 msgid "Customer Portal"
 msgstr "客户门户"
 
+#: src/lib/getDefaultText.ts:10
+msgid "Customize"
+msgstr "自定义"
+
 #: src/pages/Pricing2.tsx:27
 msgid "Daily Sandbox Editor"
 msgstr "每日沙盒编辑器"
@@ -395,6 +403,18 @@ msgstr "数据导入（Visio，Lucidchart，CSV）"
 #: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "日期"
+
+#: src/lib/getDefaultText.ts:8
+msgid "Decisions"
+msgstr "决策"
+
+#: src/pages/New.tsx:347
+msgid "Design a software development lifecycle flowchart for an agile team"
+msgstr "为敏捷团队设计一个软件开发生命周期流程图"
+
+#: src/pages/New.tsx:348
+msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
+msgstr "为CEO设计一个决策树，评估潜在的新市场机会"
 
 #: src/components/Tabs/ThemeTab.tsx:112
 #: src/components/Tabs/ThemeTab.tsx:114
@@ -426,6 +446,10 @@ msgstr "下载 PNG"
 #: src/components/GraphContextMenu.tsx:120
 msgid "Download SVG"
 msgstr "下载 SVG"
+
+#: src/lib/getDefaultText.ts:15
+msgid "Download or convert your flowchart via the 'Share' button."
+msgstr "通过“分享”按钮下载或转换您的流程图。"
 
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
@@ -530,7 +554,7 @@ msgstr "电子邮件"
 msgid "Empty"
 msgstr "空"
 
-#: src/pages/New.tsx:227
+#: src/pages/New.tsx:228
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "输入您要创建图表所需的提示或信息。"
 
@@ -545,6 +569,10 @@ msgstr "在下面輸入您的電子郵件地址，我們將發送給您一個重
 #: src/components/ImportDataDialog.tsx:552
 msgid "Equal To"
 msgstr "等于"
+
+#: src/pages/New.tsx:235
+msgid "Examples:"
+msgstr "示例："
 
 #: src/lib/graphOptions.ts:48
 msgid "Excalidraw"
@@ -620,6 +648,10 @@ msgstr "获得AI功能的访问权限，并通过专业版账户永远不会丢�
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "一般"
+
+#: src/lib/getDefaultText.ts:5
+msgid "Get Started"
+msgstr "开始"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -724,6 +756,10 @@ msgstr "导入数据是一项专业功能。您可以升级到Flowchart Fun Pro�
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
+
+#: src/lib/getDefaultText.ts:9
+msgid "Indent for steps"
+msgstr "为步骤缩进"
 
 #: src/components/Header.tsx:127
 msgid "Info"
@@ -882,6 +918,10 @@ msgstr "對應資料"
 msgid "Missing a template? Suggest one here!"
 msgstr "缺少模板？在这里提出建议！"
 
+#: src/lib/getDefaultText.ts:5
+msgid "Modify the text to see it transform into a flowchart on the right."
+msgstr "修改文本，即可在右侧转换为流程图。"
+
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
 msgstr "每月"
@@ -894,8 +934,8 @@ msgstr "同一行上的多个指针"
 msgid "My dog ate my credit card!"
 msgstr "我的狗吃了我的信用卡！"
 
-#: src/pages/New.tsx:156
-#: src/pages/New.tsx:164
+#: src/pages/New.tsx:157
+#: src/pages/New.tsx:165
 msgid "Name Chart"
 msgstr "命名图表"
 
@@ -925,10 +965,6 @@ msgstr "沒有邊緣"
 #: src/pages/Pricing.tsx:67
 msgid "No Watermarks!"
 msgstr "无水印！"
-
-#: src/lib/getDefaultText.ts:8
-msgid "No: Option B"
-msgstr "不：选项B"
 
 #: src/components/LearnSyntaxDialog.tsx:340
 msgid "Node Border Style"
@@ -972,10 +1008,6 @@ msgstr "节点可以使用虚线、点线或双线样式。边框也可以使用
 msgid "Not Empty"
 msgstr "不为空"
 
-#: src/lib/getDefaultText.ts:10
-msgid "Now erase the text and try it yourself!"
-msgstr "现在擦除文本，自己试一试！"
-
 #: src/pages/Pricing.tsx:72
 msgid "Office Hours"
 msgstr "工作时间"
@@ -1017,6 +1049,10 @@ msgstr "密碼"
 #: src/lib/hooks.ts:84
 msgid "Past Due"
 msgstr "过期"
+
+#: src/lib/getDefaultText.ts:13
+msgid "Paste a document or outline to auto-convert into a flowchart."
+msgstr "粘贴文档或大纲，自动转换为流程图。"
 
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
@@ -1154,6 +1190,10 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
+#: src/lib/getDefaultText.ts:11
+msgid "Right-click on nodes to see more options."
+msgstr "右键单击节点以查看更多选项。"
+
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:396
 #: src/pages/Roadmap.tsx:25
@@ -1186,7 +1226,7 @@ msgstr "保存到文件"
 msgid "Save your Work"
 msgstr "保存您的工作"
 
-#: src/pages/New.tsx:207
+#: src/pages/New.tsx:208
 msgid "Set Content"
 msgstr "设置内容"
 
@@ -1203,6 +1243,14 @@ msgstr "设置"
 #: src/components/FlowchartHeader.tsx:64
 msgid "Share"
 msgstr "分享"
+
+#: src/lib/getDefaultText.ts:14
+msgid "Share Your Work"
+msgstr "分享你的工作"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Show progression or dependency."
+msgstr "显示进度或依赖关系。"
 
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
@@ -1265,6 +1313,10 @@ msgstr "开始"
 #: src/components/ImportDataDialog.tsx:277
 msgid "Start Over"
 msgstr "重新開始"
+
+#: src/lib/getDefaultText.ts:7
+msgid "Start with a label or decision."
+msgstr "从标签或决策开始。"
 
 #: src/pages/Account.tsx:162
 msgid "Status"
@@ -1417,7 +1469,7 @@ msgstr "只有专业用户才能使用此功能。 <0>成为专业用户</0>解�
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "这是你的沙盒。这是一个很好的实验场所，但<0>它每天都会重置</0>。"
 
-#: src/pages/New.tsx:273
+#: src/pages/New.tsx:302
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "这可能需要30秒到2分钟的时间，取决于您输入的长度。"
 
@@ -1490,6 +1542,10 @@ msgstr "两个节点有相同的ID"
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
 
+#: src/lib/getDefaultText.ts:6
+msgid "Understanding Syntax"
+msgstr "理解句法"
+
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
 msgstr "未转义的特殊字符"
@@ -1535,7 +1591,8 @@ msgstr "仅需每月4美元升级到专业版"
 msgid "Upload your File"
 msgstr "上传您的文件"
 
-#: src/pages/New.tsx:221
+#: src/lib/getDefaultText.ts:12
+#: src/pages/New.tsx:222
 msgid "Use AI"
 msgstr "使用AI"
 
@@ -1544,7 +1601,7 @@ msgstr "使用AI"
 msgid "Use Custom CSS Only"
 msgstr "僅使用自定義CSS"
 
-#: src/pages/New.tsx:213
+#: src/pages/New.tsx:214
 msgid "Use Default Content"
 msgstr "使用默认内容"
 
@@ -1552,13 +1609,13 @@ msgstr "使用默认内容"
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
 msgstr "使用Lucidchart或Visio？CSV导入使从任何来源获取数据变得容易！"
 
-#: src/lib/getDefaultText.ts:7
-msgid "Use an ID to Connect"
-msgstr "使用ID连接"
-
 #: src/components/LearnSyntaxDialog.tsx:147
 msgid "Use classes to group nodes"
 msgstr "使用类来分组节点"
+
+#: src/lib/getDefaultText.ts:8
+msgid "Use colons, like \"Explore options:\"."
+msgstr "使用冒号，如 \"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1612,6 +1669,10 @@ msgstr "无水印图表"
 msgid "Watermarks"
 msgstr "水印"
 
+#: src/lib/getDefaultText.ts:4
+msgid "Welcome to Flowchart Fun!"
+msgstr "欢迎来到流程图乐趣！"
+
 #: src/pages/Pricing2.tsx:288
 msgid "What's Included"
 msgstr "包括什么"
@@ -1649,15 +1710,11 @@ msgstr "在此处输入您的提示，或点击启用麦克风，然后按住录
 msgid "Yearly"
 msgstr "每年"
 
-#: src/lib/getDefaultText.ts:6
-msgid "Yes: Option A"
-msgstr "是：选项A"
-
 #: src/components/ImportDataDialog.tsx:693
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 
-#: src/pages/New.tsx:251
+#: src/pages/New.tsx:280
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "你可以使用<0>Flowchart Fun Pro</0>创建无限的永久流程图。"
 
