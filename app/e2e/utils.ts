@@ -17,7 +17,9 @@ export const BASE_URL = process.env.E2E_START_URL ?? "http://localhost:3000";
 const EMAIL_DOMAINS_LIST: string[] = [];
 
 export async function goToPath(page: Page, path = "") {
-  await page.goto(`${BASE_URL}${path ? `/${path}` : ""}?skipAnimation=true`);
+  await page.goto(`${BASE_URL}${path ? `/${path}` : ""}?skipAnimation=true`, {
+    waitUntil: "networkidle",
+  });
 }
 
 export async function goToTab(page: Page, tabName: string) {
