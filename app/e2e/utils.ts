@@ -17,9 +17,12 @@ export const BASE_URL = process.env.E2E_START_URL ?? "http://localhost:3000";
 const EMAIL_DOMAINS_LIST: string[] = [];
 
 export async function goToPath(page: Page, path = "") {
-  await page.goto(`${BASE_URL}${path ? `/${path}` : ""}?skipAnimation=true`, {
-    waitUntil: "networkidle",
-  });
+  await page.goto(`${BASE_URL}${path ? `/${path}` : ""}?skipAnimation=true`);
+
+  // If we're on the root route, also wait until the .monaco-editor is present
+  if (path === "") {
+    await page.waitForSelector(".monaco-editor");
+  }
 }
 
 export async function goToTab(page: Page, tabName: string) {
