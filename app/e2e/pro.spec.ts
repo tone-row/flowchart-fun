@@ -122,7 +122,7 @@ test("Create chart from AI", async () => {
   await page
     .locator('textarea[name="subject"]')
     .fill("the stages of the water cycle");
-  await page.getByRole("button", { name: "Create" }).click();
+  await page.getByTestId("Create Chart").click();
   // expect url to be regex BASE_URL + /u/\d+
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
     timeout: 1000 * 60 * 4,

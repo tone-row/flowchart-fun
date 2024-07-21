@@ -294,6 +294,7 @@ export default function New2() {
           leftIcon={<Plus size={16} />}
           type="submit"
           isLoading={createChartMutation.isLoading}
+          data-testid="Create Chart"
         >
           <Trans>Create</Trans>
         </Button2>
