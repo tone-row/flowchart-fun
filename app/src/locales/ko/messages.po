@@ -209,7 +209,7 @@ msgstr "로그인할 링크가 들어있는 이메일을 확인하세요. 이 �
 msgid "Choose"
 msgstr "선택하세요"
 
-#: src/pages/New.tsx:168
+#: src/pages/New.tsx:169
 msgid "Choose Template"
 msgstr "템플릿 선택"
 
@@ -291,7 +291,11 @@ msgstr "컨테이너는 다른 노드를 포함하는 노드입니다. 중괄호
 msgid "Continue"
 msgstr "계속하기"
 
-#: src/components/ConvertToFlowchart.tsx:81
+#: src/components/AiToolbar2.tsx:34
+msgid "Convert"
+msgstr "변환하기"
+
+#: src/components/ConvertToFlowchart.tsx:78
 msgid "Convert to Flowchart"
 msgstr "흐름도로 변환"
 
@@ -325,7 +329,7 @@ msgstr "Excalidraw 코드를 복사해서 <0>excalidraw.com</0>에 붙여넣어�
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "mermaid.js 코드를 복사하거나 mermaid.js 라이브 편집기에서 직접 열어주세요."
 
-#: src/pages/New.tsx:298
+#: src/pages/New.tsx:300
 msgid "Create"
 msgstr "만들기"
 
@@ -337,11 +341,11 @@ msgstr "AI를 사용하여 플로차트를 만들어보세요"
 msgid "Create Unlimited Flowcharts"
 msgstr "무제한 플로차트 만들기"
 
-#: src/pages/New.tsx:155
+#: src/pages/New.tsx:156
 msgid "Create a New Chart"
 msgstr "새 차트 만들기"
 
-#: src/pages/New.tsx:349
+#: src/pages/createExamples.tsx:10
 msgid "Create a flowchart showing the steps of planning and executing a school fundraising event"
 msgstr "학교 모금 행사를 계획하고 실행하는 단계를 보여주는 플로우차트를 작성하십시오."
 
@@ -408,11 +412,11 @@ msgstr "날짜"
 msgid "Decisions"
 msgstr "결정"
 
-#: src/pages/New.tsx:347
+#: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
 msgstr "애자일 팀을 위한 소프트웨어 개발 라이프사이클 플로우차트를 디자인하십시오."
 
-#: src/pages/New.tsx:348
+#: src/pages/createExamples.tsx:9
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "CEO가 잠재적인 새 시장 기회를 평가하기 위해 사용할 수 있는 의사결정 트리를 개발하십시오."
 
@@ -527,6 +531,10 @@ msgstr "출발 노드 행에 간선"
 msgid "Edges in Target Node Row"
 msgstr "도착 노드 행에 간선"
 
+#: src/components/AiToolbar2.tsx:36
+msgid "Edit"
+msgstr "편집하기"
+
 #: src/components/EditWithAI.tsx:27
 #: src/components/EditWithAI.tsx:191
 msgid "Edit with AI"
@@ -554,7 +562,7 @@ msgstr "이메일"
 msgid "Empty"
 msgstr "비어 있음"
 
-#: src/pages/New.tsx:228
+#: src/pages/New.tsx:229
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "차트를 만들기 위한 프롬프트 또는 정보를 입력하십시오."
 
@@ -570,7 +578,7 @@ msgstr "아래에 이메일 주소를 입력하면 비밀번호 재설정을 위
 msgid "Equal To"
 msgstr "같음"
 
-#: src/pages/New.tsx:235
+#: src/pages/New.tsx:236
 msgid "Examples:"
 msgstr "예시:"
 
@@ -582,7 +590,7 @@ msgstr "Excalidraw"
 msgid "Exclusive Office Hours"
 msgstr "독점 오피스 시간"
 
-#: src/components/LoadFileButton.tsx:77
+#: src/components/LoadFileButton.tsx:76
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
 msgstr "로컬 파일을 직접 플로우차트에 로드하여 효율성과 보안성을 경험해보세요. 오프라인에서 업무 관련 문서를 관리하기에 완벽한 기능입니다. Flowchart Fun Pro를 구독하면 이 독점적인 프로 기능과 더 많은 기능을 이용할 수 있습니다. 매달 $4로 이용 가능합니다."
 
@@ -843,15 +851,15 @@ msgstr "링크"
 msgid "Load"
 msgstr "로드"
 
-#: src/components/LoadFileButton.tsx:101
+#: src/components/LoadFileButton.tsx:100
 msgid "Load Chart"
 msgstr "로드 차트"
 
-#: src/components/LoadFileButton.tsx:93
+#: src/components/LoadFileButton.tsx:92
 msgid "Load File"
 msgstr "로드 파일"
 
-#: src/components/LoadFileButton.tsx:76
+#: src/components/LoadFileButton.tsx:75
 msgid "Load Files"
 msgstr "로드 파일"
 
@@ -934,8 +942,8 @@ msgstr "같은 줄에 여러 포인터"
 msgid "My dog ate my credit card!"
 msgstr "내 개가 내 신용 카드를 먹었어요!"
 
-#: src/pages/New.tsx:157
-#: src/pages/New.tsx:165
+#: src/pages/New.tsx:158
+#: src/pages/New.tsx:166
 msgid "Name Chart"
 msgstr "차트 이름"
 
@@ -1054,6 +1062,10 @@ msgstr "연체"
 msgid "Paste a document or outline to auto-convert into a flowchart."
 msgstr "문서나 개요를 붙여넣으면 자동으로 플로우차트로 변환됩니다."
 
+#: src/components/AiToolbar2.tsx:23
+msgid "Paste your document or outline here to convert it into an organized flowchart."
+msgstr "문서나 개요를 여기에 붙여넣어 조직화된 플로우차트로 변환하세요."
+
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "영구 차트는 프로 기능입니다"
@@ -1084,6 +1096,10 @@ msgstr "프로세스 다이어그램"
 msgid "Processing Data"
 msgstr "데이터 처리"
 
+#: src/components/AiToolbar2.tsx:32
+msgid "Prompt"
+msgstr "프롬프트"
+
 #: src/components/ShareDialog.tsx:479
 #: src/components/ShareDialog.tsx:503
 msgid "Public"
@@ -1102,7 +1118,8 @@ msgstr "빠른 배포 템플릿"
 msgid "Rapid Templates"
 msgstr "급변화 템플릿"
 
-#: src/components/ConvertToFlowchart.tsx:42
+#: src/components/ConvertToFlowchart.tsx:39
+#: src/lib/usePromptStore.ts:106
 msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
 
@@ -1226,7 +1243,7 @@ msgstr "파일에 저장하기"
 msgid "Save your Work"
 msgstr "작업 저장"
 
-#: src/pages/New.tsx:208
+#: src/pages/New.tsx:209
 msgid "Set Content"
 msgstr "콘텐츠 설정"
 
@@ -1269,8 +1286,8 @@ msgstr "<0>Google</0>으로 로그인"
 msgid "Sorry! This page is only available in English."
 msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 
-#: src/lib/convertToFlowchart.ts:103
-#: src/lib/convertToFlowchart.ts:103
+#: src/lib/runAi.ts:114
+#: src/lib/runAi.ts:114
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "죄송합니다, 텍스트를 플로우차트로 변환하는 중에 오류가 발생했습니다. 나중에 다시 시도해주세요."
 
@@ -1330,6 +1347,7 @@ msgstr "노드에 관련된 모든 데이터 저장하기"
 msgid "Style Classes"
 msgstr "스타일 클래스"
 
+#: src/components/AiToolbar2.tsx:139
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
@@ -1469,7 +1487,7 @@ msgstr "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사�
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "이것은 당신의 모래상자입니다. 실험을 위한 멋진 장소이지만 <0>매일 초기화됩니다</0>."
 
-#: src/pages/New.tsx:302
+#: src/pages/New.tsx:304
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "입력 길이에 따라 30초에서 2분 사이의 시간이 소요될 수 있습니다."
 
@@ -1514,7 +1532,8 @@ msgstr "위에서 아래로"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 
-#: src/components/ConvertToFlowchart.tsx:35
+#: src/components/ConvertToFlowchart.tsx:32
+#: src/lib/usePromptStore.ts:99
 msgid "Transform text into diagrams instantly"
 msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
 
@@ -1538,7 +1557,8 @@ msgstr "두 개의 간선이 같은 ID를 가지고 있습니다"
 msgid "Two nodes have the same ID"
 msgstr "두 개의 노드가 같은 ID를 가지고 있습니다"
 
-#: src/components/ConvertToFlowchart.tsx:36
+#: src/components/ConvertToFlowchart.tsx:33
+#: src/lib/usePromptStore.ts:100
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "이런, 무료 요청이 모두 소진되었습니다! 무제한 다이어그램 변환을 위해 Flowchart Fun Pro로 업그레이드하고 텍스트를 복사하여 쉽게 명확한 시각적 흐름도로 변환하세요."
 
@@ -1592,7 +1612,7 @@ msgid "Upload your File"
 msgstr "파일을 업로드하세요."
 
 #: src/lib/getDefaultText.ts:12
-#: src/pages/New.tsx:222
+#: src/pages/New.tsx:223
 msgid "Use AI"
 msgstr "AI 사용"
 
@@ -1601,7 +1621,7 @@ msgstr "AI 사용"
 msgid "Use Custom CSS Only"
 msgstr "사용자 정의 CSS만 사용"
 
-#: src/pages/New.tsx:214
+#: src/pages/New.tsx:215
 msgid "Use Default Content"
 msgstr "기본 콘텐츠 사용"
 
@@ -1615,7 +1635,7 @@ msgstr "노드를 그룹화하기 위해 클래스를 사용하십시오."
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons, like \"Explore options:\"."
-msgstr "콜론을 사용하십시오, 예를 들어 \"
+msgstr "콜론을 사용하십시오, 예를 들어 \\"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1644,6 +1664,10 @@ msgstr "조직도, 계층 구조 및 기타 조직 구조를 위해 이 파일�
 #: src/components/ShareDialog.tsx:547
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오."
+
+#: src/components/AiToolbar2.tsx:25
+msgid "Use this mode to modify and enhance your current chart."
+msgstr "현재 차트를 수정하고 개선하는 데 이 모드를 사용하세요."
 
 #: src/pages/Account.tsx:124
 msgid "User"
@@ -1714,7 +1738,7 @@ msgstr "연간"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "그래프에 {numNodes}개의 노드와 {numEdges}개의 간선을 추가하려고 합니다."
 
-#: src/pages/New.tsx:280
+#: src/pages/New.tsx:281
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "<0>Flowchart Fun Pro</0>으로 무제한 영구적인 플로차트를 만들 수 있습니다."
 

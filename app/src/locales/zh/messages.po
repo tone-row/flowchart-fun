@@ -209,7 +209,7 @@ msgstr "检查您的电子邮件以获取登录链接。您可以关闭此窗口
 msgid "Choose"
 msgstr "選擇"
 
-#: src/pages/New.tsx:168
+#: src/pages/New.tsx:169
 msgid "Choose Template"
 msgstr "选择模板"
 
@@ -291,7 +291,11 @@ msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 msgid "Continue"
 msgstr "继续"
 
-#: src/components/ConvertToFlowchart.tsx:81
+#: src/components/AiToolbar2.tsx:34
+msgid "Convert"
+msgstr "转换"
+
+#: src/components/ConvertToFlowchart.tsx:78
 msgid "Convert to Flowchart"
 msgstr "转换为流程图"
 
@@ -325,7 +329,7 @@ msgstr "将你的 Excalidraw 代码复制并粘贴到<0>excalidraw.com</0>以进
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。"
 
-#: src/pages/New.tsx:298
+#: src/pages/New.tsx:300
 msgid "Create"
 msgstr "创建"
 
@@ -337,11 +341,11 @@ msgstr "使用AI创建流程图"
 msgid "Create Unlimited Flowcharts"
 msgstr "创建无限流程图"
 
-#: src/pages/New.tsx:155
+#: src/pages/New.tsx:156
 msgid "Create a New Chart"
 msgstr "创建新图表"
 
-#: src/pages/New.tsx:349
+#: src/pages/createExamples.tsx:10
 msgid "Create a flowchart showing the steps of planning and executing a school fundraising event"
 msgstr "创建一个流程图，展示规划和执行学校筹款活动的步骤"
 
@@ -408,11 +412,11 @@ msgstr "日期"
 msgid "Decisions"
 msgstr "决策"
 
-#: src/pages/New.tsx:347
+#: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
 msgstr "为敏捷团队设计一个软件开发生命周期流程图"
 
-#: src/pages/New.tsx:348
+#: src/pages/createExamples.tsx:9
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "为CEO设计一个决策树，评估潜在的新市场机会"
 
@@ -527,6 +531,10 @@ msgstr "边在源节点行"
 msgid "Edges in Target Node Row"
 msgstr "边在目标节点行"
 
+#: src/components/AiToolbar2.tsx:36
+msgid "Edit"
+msgstr "编辑"
+
 #: src/components/EditWithAI.tsx:27
 #: src/components/EditWithAI.tsx:191
 msgid "Edit with AI"
@@ -554,7 +562,7 @@ msgstr "电子邮件"
 msgid "Empty"
 msgstr "空"
 
-#: src/pages/New.tsx:228
+#: src/pages/New.tsx:229
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "输入您要创建图表所需的提示或信息。"
 
@@ -570,7 +578,7 @@ msgstr "在下面輸入您的電子郵件地址，我們將發送給您一個重
 msgid "Equal To"
 msgstr "等于"
 
-#: src/pages/New.tsx:235
+#: src/pages/New.tsx:236
 msgid "Examples:"
 msgstr "示例："
 
@@ -582,7 +590,7 @@ msgstr "Excalidraw"
 msgid "Exclusive Office Hours"
 msgstr "专属办公时间"
 
-#: src/components/LoadFileButton.tsx:77
+#: src/components/LoadFileButton.tsx:76
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
 msgstr "体验将本地文件直接加载到流程图中的效率和安全性，非常适合离线管理工作相关文件。解锁这个独有的专业功能以及更多功能，Flowchart Fun Pro仅需每月$4即可使用。"
 
@@ -843,15 +851,15 @@ msgstr "链接"
 msgid "Load"
 msgstr "載入"
 
-#: src/components/LoadFileButton.tsx:101
+#: src/components/LoadFileButton.tsx:100
 msgid "Load Chart"
 msgstr "加载流程图"
 
-#: src/components/LoadFileButton.tsx:93
+#: src/components/LoadFileButton.tsx:92
 msgid "Load File"
 msgstr "加载文件"
 
-#: src/components/LoadFileButton.tsx:76
+#: src/components/LoadFileButton.tsx:75
 msgid "Load Files"
 msgstr "加载多个文件"
 
@@ -934,8 +942,8 @@ msgstr "同一行上的多个指针"
 msgid "My dog ate my credit card!"
 msgstr "我的狗吃了我的信用卡！"
 
-#: src/pages/New.tsx:157
-#: src/pages/New.tsx:165
+#: src/pages/New.tsx:158
+#: src/pages/New.tsx:166
 msgid "Name Chart"
 msgstr "命名图表"
 
@@ -1054,6 +1062,10 @@ msgstr "过期"
 msgid "Paste a document or outline to auto-convert into a flowchart."
 msgstr "粘贴文档或大纲，自动转换为流程图。"
 
+#: src/components/AiToolbar2.tsx:23
+msgid "Paste your document or outline here to convert it into an organized flowchart."
+msgstr "将您的文档或大纲粘贴到此处，将其转换为有组织的流程图。"
+
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "永久图表是专业功能"
@@ -1084,6 +1096,10 @@ msgstr "流程图"
 msgid "Processing Data"
 msgstr "处理数据"
 
+#: src/components/AiToolbar2.tsx:32
+msgid "Prompt"
+msgstr "提示"
+
 #: src/components/ShareDialog.tsx:479
 #: src/components/ShareDialog.tsx:503
 msgid "Public"
@@ -1102,7 +1118,8 @@ msgstr "快速部署模板"
 msgid "Rapid Templates"
 msgstr "快速模板"
 
-#: src/components/ConvertToFlowchart.tsx:42
+#: src/components/ConvertToFlowchart.tsx:39
+#: src/lib/usePromptStore.ts:106
 msgid "Rate limit exceeded. Please try again later."
 msgstr "速率限制超出。 请稍后再试。"
 
@@ -1226,7 +1243,7 @@ msgstr "保存到文件"
 msgid "Save your Work"
 msgstr "保存您的工作"
 
-#: src/pages/New.tsx:208
+#: src/pages/New.tsx:209
 msgid "Set Content"
 msgstr "设置内容"
 
@@ -1269,8 +1286,8 @@ msgstr "使用<0>Google</0>登录"
 msgid "Sorry! This page is only available in English."
 msgstr "抱歉！此页面只有英语版。"
 
-#: src/lib/convertToFlowchart.ts:103
-#: src/lib/convertToFlowchart.ts:103
+#: src/lib/runAi.ts:114
+#: src/lib/runAi.ts:114
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "抱歉，转换文本为流程图时出错。 请稍后再试。"
 
@@ -1330,6 +1347,7 @@ msgstr "將任何與節點相關的資料儲存"
 msgid "Style Classes"
 msgstr "樣式類別"
 
+#: src/components/AiToolbar2.tsx:139
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
@@ -1469,7 +1487,7 @@ msgstr "只有专业用户才能使用此功能。 <0>成为专业用户</0>解�
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "这是你的沙盒。这是一个很好的实验场所，但<0>它每天都会重置</0>。"
 
-#: src/pages/New.tsx:302
+#: src/pages/New.tsx:304
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "这可能需要30秒到2分钟的时间，取决于您输入的长度。"
 
@@ -1514,7 +1532,8 @@ msgstr "从上到下"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "秒转换您的想法成专业图表"
 
-#: src/components/ConvertToFlowchart.tsx:35
+#: src/components/ConvertToFlowchart.tsx:32
+#: src/lib/usePromptStore.ts:99
 msgid "Transform text into diagrams instantly"
 msgstr "即时将文本转换为图表"
 
@@ -1538,7 +1557,8 @@ msgstr "两个边有相同的ID"
 msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
-#: src/components/ConvertToFlowchart.tsx:36
+#: src/components/ConvertToFlowchart.tsx:33
+#: src/lib/usePromptStore.ts:100
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
 
@@ -1592,7 +1612,7 @@ msgid "Upload your File"
 msgstr "上传您的文件"
 
 #: src/lib/getDefaultText.ts:12
-#: src/pages/New.tsx:222
+#: src/pages/New.tsx:223
 msgid "Use AI"
 msgstr "使用AI"
 
@@ -1601,7 +1621,7 @@ msgstr "使用AI"
 msgid "Use Custom CSS Only"
 msgstr "僅使用自定義CSS"
 
-#: src/pages/New.tsx:214
+#: src/pages/New.tsx:215
 msgid "Use Default Content"
 msgstr "使用默认内容"
 
@@ -1615,7 +1635,7 @@ msgstr "使用类来分组节点"
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons, like \"Explore options:\"."
-msgstr "使用冒号，如 \"
+msgstr "使用冒号，如 \\"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1644,6 +1664,10 @@ msgstr "使用此文件制作组织图、层次结构和其他组织结构。"
 #: src/components/ShareDialog.tsx:547
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "使用此文件进行顺序、流程和工作流程。"
+
+#: src/components/AiToolbar2.tsx:25
+msgid "Use this mode to modify and enhance your current chart."
+msgstr "使用此模式来修改和增强您当前的图表。"
 
 #: src/pages/Account.tsx:124
 msgid "User"
@@ -1714,7 +1738,7 @@ msgstr "每年"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 
-#: src/pages/New.tsx:280
+#: src/pages/New.tsx:281
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "你可以使用<0>Flowchart Fun Pro</0>创建无限的永久流程图。"
 
