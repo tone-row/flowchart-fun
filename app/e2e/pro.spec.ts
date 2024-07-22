@@ -132,7 +132,7 @@ test("Create chart from AI", async () => {
 test("Create chart from imported data", async () => {
   try {
     await page.getByRole("link", { name: "New" }).click();
-    await page.getByRole("button", { name: "Create" }).click();
+    await page.getByTestId("Create Chart").click();
     await page.waitForURL(new RegExp(`${BASE_URL}/u/\\d+`));
     await page.getByRole("button", { name: "Import Data" }).click();
 
