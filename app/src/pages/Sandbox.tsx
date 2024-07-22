@@ -29,7 +29,7 @@ import { useEditorStore } from "../lib/useEditorStore";
 import { writeEditorText } from "../lib/writeEditorText";
 import type { editor } from "monaco-editor";
 import { getDefaultText } from "../lib/getDefaultText";
-import { AiToolbar2 } from "../components/AiToolbar2";
+import { AiToolbar } from "../components/AiToolbar";
 
 const Sandbox = memo(function Edit() {
   // Wait 1 minute and trigger a sandbox modal overtop of the editor
@@ -153,7 +153,7 @@ const Sandbox = memo(function Edit() {
               value="Document"
               className="bg-white dark:bg-black overflow-hidden relative grid grid-rows-[auto_minmax(0,1fr)] h-full"
             >
-              <AiToolbar2 />
+              <AiToolbar />
               <TextEditor
                 value={text}
                 onChange={onChange}

@@ -11,6 +11,7 @@ import { usePromptStore } from "../lib/usePromptStore";
 import classNames from "classnames";
 import { repairText } from "../lib/repairText";
 import { getDefaultText } from "../lib/getDefaultText";
+import { ConvertOnPasteOverlay } from "./ConvertOnPasteOverlay";
 
 type TextEditorProps = EditorProps & {
   extendOptions?: editor.IEditorOptions;
@@ -68,64 +69,67 @@ export function TextEditor({
   }
 
   return (
-    <div className="relative h-full">
-      <Editor
-        {...props}
-        defaultLanguage={highlight.languageId}
-        options={{ ...editorOptions, ...extendOptions, theme }}
-        loading={<Loading />}
-        beforeMount={highlight.registerHighlighter}
-        onMount={(editor, monaco) => {
-          // Store the refs in client side zustand state
-          useEditorStore.setState({ editor, monaco });
+    <>
+      <div className="relative h-full">
+        <Editor
+          {...props}
+          defaultLanguage={highlight.languageId}
+          options={{ ...editorOptions, ...extendOptions, theme }}
+          loading={<Loading />}
+          beforeMount={highlight.registerHighlighter}
+          onMount={(editor, monaco) => {
+            // Store the refs in client side zustand state
+            useEditorStore.setState({ editor, monaco });
 
-          // Draw any current model markers
-          updateModelMarkers();
+            // Draw any current model markers
+            updateModelMarkers();
 
-          // double set the theme
-          monaco.editor.setTheme(theme);
+            // double set the theme
+            monaco.editor.setTheme(theme);
 
-          // Listen to when the selection changes
-          editor.onDidChangeCursorSelection(() => {
-            const selection = editor.getSelection();
-            if (selection) {
-              // get the text selected
-              const text = editor.getModel()?.getValueInRange(selection);
-              // store it in the editor
-              useEditorStore.setState({ selection: text });
-            } else {
-              useEditorStore.setState({ selection: "" });
-            }
-          });
-
-          // Listen to when the user pastes into the document
-          editor.onDidPaste((e) => {
-            // get the text in the range
-            const text = editor.getModel()?.getValueInRange(e.range);
-            if (text) {
-              // store it in the editor
-              useEditorStore.setState({ userPasted: text });
-
-              // sanitize it if necessary
-              const sanitized = repairText(text);
-              if (sanitized) {
-                replaceRange(editor, e.range, sanitized);
+            // Listen to when the selection changes
+            editor.onDidChangeCursorSelection(() => {
+              const selection = editor.getSelection();
+              if (selection) {
+                // get the text selected
+                const text = editor.getModel()?.getValueInRange(selection);
+                // store it in the editor
+                useEditorStore.setState({ selection: text });
+              } else {
+                useEditorStore.setState({ selection: "" });
               }
-            }
-          });
+            });
 
-          onReady?.(editor);
-        }}
-        wrapperProps={{
-          "data-testid": "Editor",
-          className: classNames("bg-white dark:bg-neutral-900", {
-            "overflow-hidden": isDragging,
-            "cursor-wait pointer-events-none opacity-50": convertIsRunning,
-          }),
-        }}
-      />
-      {props.value === "" && !convertIsRunning ? <Placeholder /> : null}
-    </div>
+            // Listen to when the user pastes into the document
+            editor.onDidPaste((e) => {
+              // get the text in the range
+              const text = editor.getModel()?.getValueInRange(e.range);
+              if (text) {
+                // store it in the editor
+                useEditorStore.setState({ userPasted: text });
+
+                // sanitize it if necessary
+                const sanitized = repairText(text);
+                if (sanitized) {
+                  replaceRange(editor, e.range, sanitized);
+                }
+              }
+            });
+
+            onReady?.(editor);
+          }}
+          wrapperProps={{
+            "data-testid": "Editor",
+            className: classNames("bg-white dark:bg-neutral-900", {
+              "overflow-hidden": isDragging,
+              "cursor-wait pointer-events-none opacity-50": convertIsRunning,
+            }),
+          }}
+        />
+        {props.value === "" && !convertIsRunning ? <Placeholder /> : null}
+      </div>
+      <ConvertOnPasteOverlay />
+    </>
   );
 }
 
