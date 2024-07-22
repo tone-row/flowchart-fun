@@ -135,6 +135,7 @@ export function AiToolbar2() {
               className="dark:bg-purple-700/50 dark:text-purple-100"
               disabled={isRunning}
               onClick={runAiWithStore}
+              data-session-activity={`Run AI: ${currentMode}`}
             >
               {!isRunning ? t`Submit` : "..."}
             </Button2>
