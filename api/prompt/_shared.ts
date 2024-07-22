@@ -55,15 +55,16 @@ export async function handleRateLimit(req: Request) {
 export async function processRequest(
   req: Request,
   systemMessage: string,
-  content: string
+  content: string,
+  model: Parameters<typeof openai.chat>[0] = "gpt-4-turbo"
 ) {
   const rateLimitResponse = await handleRateLimit(req);
   if (rateLimitResponse) return rateLimitResponse;
 
   const result = await streamText({
-    model: openai.chat("gpt-4-turbo"),
+    model: openai.chat(model),
     system: systemMessage,
-    temperature: 0.15,
+    temperature: 1,
     messages: [
       {
         role: "user",
@@ -89,3 +90,14 @@ function getIp(req: Request) {
     req.headers.get
   );
 }
+
+export const systemMessageStyle = `You can style nodes using classes at the end of a node. Available styles include:
+- Colors: .color_blue, .color_red, .color_green, .color_yellow, .color_orange
+- Shapes: .shape_circle, .shape_diamond, .shape_ellipse, .shape_right-rhomboid`;
+
+export const systemMessageExample = `Node A
+  Node B .shape_circle
+  \\(Secret Node)
+  Node C
+    label from c to d: Node D .color_green.shape_diamond
+      label from d to a: (Node A)`;

@@ -28,6 +28,7 @@
     "theme:schema:generate": "pnpx ts-json-schema-generator --path 'src/lib/FFTheme.ts' --type 'FFTheme' -f tsconfig.json --strict-tuples -o src/lib/FFTheme.schema.json --minify --no-top-ref"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.37",
     "@formkit/auto-animate": "1.0.0-beta.6",
     "@lingui/core": "^3.8.9",
     "@lingui/react": "^3.8.9",
@@ -59,7 +60,7 @@
     "@svgr/webpack": "^6.3.1",
     "@tone-row/slang": "^1.2.35",
     "@tone-row/strip-comments": "^2.0.1",
-    "ai": "^3.2.19",
+    "ai": "^3.2.32",
     "buffer": "^6.0.3",
     "classnames": "^2.3.2",
     "construct-style-sheets-polyfill": "^3.1.0",

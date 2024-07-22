@@ -6,7 +6,10 @@ import { useDoc } from "./useDoc";
 
 export const RATE_LIMIT_EXCEEDED = "RATE_LIMIT_EXCEEDED";
 
-// New function to handle editor operations
+/**
+ * Writes text to the editor, better than setting text in the doc
+ * when streaming back the response.
+ */
 function writeToEditor(text: string) {
   const editor = useEditorStore.getState().editor;
   if (!editor) {
@@ -44,7 +47,7 @@ export async function runAi({
 }) {
   let accumulated = "";
 
-  return new Promise<void>((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     fetch(`/api/prompt/${endpoint}`, {
       method: "POST",
       headers: {
@@ -83,9 +86,12 @@ export async function runAi({
 
             const text = decoder.decode(value, { stream: true });
             accumulated += text;
+
+            // If we are editing, we want to set the diff
             if (endpoint === "edit") {
               setDiff(accumulated);
             } else {
+              // If we are not editing, we want to write the text to the editor
               writeToEditor(accumulated);
             }
 
@@ -97,7 +103,7 @@ export async function runAi({
             .then(processText)
             .finally(() => {
               editor.pushUndoStop();
-              resolve();
+              resolve(accumulated);
             });
         } else {
           if (response.status === 429) {

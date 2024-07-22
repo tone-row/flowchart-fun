@@ -9,6 +9,7 @@ import { useEditorStore } from "./useEditorStore";
 import { AppContext } from "../components/AppContextProvider";
 import { unfreezeDoc } from "./useIsFrozen";
 import { useDoc } from "./useDoc";
+import { repairText } from "./repairText";
 
 export type Mode = "prompt" | "convert" | "edit";
 type PromptStore = {
@@ -127,6 +128,15 @@ export function useRunAiWithStore() {
     runAi({ endpoint: store.mode, prompt: store.currentText, sid })
       .catch((err) => {
         if (isError(err)) handleError(err);
+      })
+      .then((result) => {
+        // Just in case there is an error, run repair text on the result
+        if (result) {
+          const text = repairText(result);
+          if (text) {
+            useDoc.setState({ text });
+          }
+        }
       })
       .finally(() => {
         stopConvert();

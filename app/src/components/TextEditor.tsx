@@ -9,7 +9,7 @@ import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import Loading from "./Loading";
 import { usePromptStore } from "../lib/usePromptStore";
 import classNames from "classnames";
-import { sanitizeOnPaste } from "../lib/sanitizeOnPaste";
+import { repairText } from "../lib/repairText";
 import { getDefaultText } from "../lib/getDefaultText";
 
 type TextEditorProps = EditorProps & {
@@ -107,7 +107,7 @@ export function TextEditor({
               useEditorStore.setState({ userPasted: text });
 
               // sanitize it if necessary
-              const sanitized = sanitizeOnPaste(text);
+              const sanitized = repairText(text);
               if (sanitized) {
                 replaceRange(editor, e.range, sanitized);
               }

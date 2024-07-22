@@ -34,7 +34,8 @@ export default async function handler(req: Request) {
   return processRequest(
     req,
     systemMessage,
-    getContent(parsed.data.prompt, parsed.data.document)
+    getContent(parsed.data.prompt, parsed.data.document),
+    "gpt-4-turbo-2024-04-09"
   );
 }
 
