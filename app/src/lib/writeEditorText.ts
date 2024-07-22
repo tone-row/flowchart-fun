@@ -10,7 +10,7 @@ export function writeEditorText(
   interval: NodeJS.Timeout | null,
   editor: editor.IStandaloneCodeEditor,
   text: string,
-  speed: number = 40
+  speed: number = 30
 ) {
   // Check for e2e test query parameter
   const urlParams = new URLSearchParams(window.location.search);
