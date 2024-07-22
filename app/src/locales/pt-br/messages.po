@@ -209,7 +209,7 @@ msgstr "Verifique seu e-mail para um link para fazer login. Você pode fechar es
 msgid "Choose"
 msgstr "Escolha"
 
-#: src/pages/New.tsx:168
+#: src/pages/New.tsx:169
 msgid "Choose Template"
 msgstr "Escolha o Modelo"
 
@@ -291,7 +291,11 @@ msgstr "Os containers são nós que contêm outros nós. Eles são declarados us
 msgid "Continue"
 msgstr "Continuar"
 
-#: src/components/ConvertToFlowchart.tsx:81
+#: src/components/AiToolbar2.tsx:34
+msgid "Convert"
+msgstr "Converter"
+
+#: src/components/ConvertToFlowchart.tsx:78
 msgid "Convert to Flowchart"
 msgstr "Converter para Fluxograma"
 
@@ -325,7 +329,7 @@ msgstr "Copie o seu código Excalidraw e cole-o em <0>excalidraw.com</0> para ed
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copie seu código mermaid.js ou abra diretamente no editor ao vivo mermaid.js."
 
-#: src/pages/New.tsx:298
+#: src/pages/New.tsx:300
 msgid "Create"
 msgstr "Criar"
 
@@ -337,11 +341,11 @@ msgstr "Criar Fluxogramas usando IA"
 msgid "Create Unlimited Flowcharts"
 msgstr "Crie fluxogramas ilimitados"
 
-#: src/pages/New.tsx:155
+#: src/pages/New.tsx:156
 msgid "Create a New Chart"
 msgstr "Criar um Novo Gráfico"
 
-#: src/pages/New.tsx:349
+#: src/pages/createExamples.tsx:10
 msgid "Create a flowchart showing the steps of planning and executing a school fundraising event"
 msgstr "Criar um fluxograma mostrando os passos de planejamento e execução de um evento de arrecadação de fundos escolar"
 
@@ -408,11 +412,11 @@ msgstr "Data"
 msgid "Decisions"
 msgstr "Decisões"
 
-#: src/pages/New.tsx:347
+#: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
 msgstr "Projetar um fluxograma do ciclo de vida de desenvolvimento de software para uma equipe ágil"
 
-#: src/pages/New.tsx:348
+#: src/pages/createExamples.tsx:9
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "Desenvolver uma árvore de decisão para um CEO avaliar novas oportunidades de mercado potenciais"
 
@@ -527,6 +531,10 @@ msgstr "Bordas na Linha do Nó de Origem"
 msgid "Edges in Target Node Row"
 msgstr "Bordas na Linha do Nó de Destino"
 
+#: src/components/AiToolbar2.tsx:36
+msgid "Edit"
+msgstr "Editar"
+
 #: src/components/EditWithAI.tsx:27
 #: src/components/EditWithAI.tsx:191
 msgid "Edit with AI"
@@ -554,7 +562,7 @@ msgstr "E-mail"
 msgid "Empty"
 msgstr "Vazio"
 
-#: src/pages/New.tsx:228
+#: src/pages/New.tsx:229
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "Insira um prompt ou informação que você gostaria de criar um gráfico."
 
@@ -570,7 +578,7 @@ msgstr "Digite seu endereço de e-mail abaixo e enviaremos um link para redefini
 msgid "Equal To"
 msgstr "Igual a"
 
-#: src/pages/New.tsx:235
+#: src/pages/New.tsx:236
 msgid "Examples:"
 msgstr "Exemplos:"
 
@@ -582,7 +590,7 @@ msgstr "Excalidraw"
 msgid "Exclusive Office Hours"
 msgstr "Horário de atendimento exclusivo"
 
-#: src/components/LoadFileButton.tsx:77
+#: src/components/LoadFileButton.tsx:76
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
 msgstr "Experimente a eficiência e segurança de carregar arquivos locais diretamente em seu fluxograma, perfeito para gerenciar documentos relacionados ao trabalho offline. Desbloqueie esse recurso exclusivo do Pro e muito mais com o Flowchart Fun Pro, disponível por apenas $4/mês."
 
@@ -843,15 +851,15 @@ msgstr "Link"
 msgid "Load"
 msgstr "Carregar"
 
-#: src/components/LoadFileButton.tsx:101
+#: src/components/LoadFileButton.tsx:100
 msgid "Load Chart"
 msgstr "Carregar Gráfico"
 
-#: src/components/LoadFileButton.tsx:93
+#: src/components/LoadFileButton.tsx:92
 msgid "Load File"
 msgstr "Carregar Arquivo"
 
-#: src/components/LoadFileButton.tsx:76
+#: src/components/LoadFileButton.tsx:75
 msgid "Load Files"
 msgstr "Carregar Arquivos"
 
@@ -934,8 +942,8 @@ msgstr "Múltiplos ponteiros na mesma linha"
 msgid "My dog ate my credit card!"
 msgstr "Meu cachorro comeu meu cartão de crédito!"
 
-#: src/pages/New.tsx:157
-#: src/pages/New.tsx:165
+#: src/pages/New.tsx:158
+#: src/pages/New.tsx:166
 msgid "Name Chart"
 msgstr "Nome do Gráfico"
 
@@ -1054,6 +1062,10 @@ msgstr "Atrasado"
 msgid "Paste a document or outline to auto-convert into a flowchart."
 msgstr "Cole um documento ou esboço para converter automaticamente em um fluxograma."
 
+#: src/components/AiToolbar2.tsx:23
+msgid "Paste your document or outline here to convert it into an organized flowchart."
+msgstr "Cole seu documento ou esboço aqui para convertê-lo em um fluxograma organizado."
+
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "Gráficos permanentes são um recurso Pro"
@@ -1084,6 +1096,10 @@ msgstr "Diagrama de processo"
 msgid "Processing Data"
 msgstr "Processando Dados"
 
+#: src/components/AiToolbar2.tsx:32
+msgid "Prompt"
+msgstr "Sugestão"
+
 #: src/components/ShareDialog.tsx:479
 #: src/components/ShareDialog.tsx:503
 msgid "Public"
@@ -1102,7 +1118,8 @@ msgstr "Modelos de implantação rápida"
 msgid "Rapid Templates"
 msgstr "Modelos Rápidos"
 
-#: src/components/ConvertToFlowchart.tsx:42
+#: src/components/ConvertToFlowchart.tsx:39
+#: src/lib/usePromptStore.ts:106
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Limite de taxa excedido. Por favor, tente novamente mais tarde."
 
@@ -1226,7 +1243,7 @@ msgstr "Salvar para Arquivo"
 msgid "Save your Work"
 msgstr "Salve seu trabalho"
 
-#: src/pages/New.tsx:208
+#: src/pages/New.tsx:209
 msgid "Set Content"
 msgstr "Definir conteúdo"
 
@@ -1269,8 +1286,8 @@ msgstr "Entrar com <0>Google</0>"
 msgid "Sorry! This page is only available in English."
 msgstr "Sinto muito! Esta página só está disponível em inglês."
 
-#: src/lib/convertToFlowchart.ts:103
-#: src/lib/convertToFlowchart.ts:103
+#: src/lib/runAi.ts:114
+#: src/lib/runAi.ts:114
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Desculpe, houve um erro ao converter o texto em um fluxograma. Tente novamente mais tarde."
 
@@ -1330,6 +1347,7 @@ msgstr "Armazenar quaisquer dados associados a um nó"
 msgid "Style Classes"
 msgstr "Classes de Estilo"
 
+#: src/components/AiToolbar2.tsx:139
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
@@ -1469,7 +1487,7 @@ msgstr "Esta funcionalidade está disponível apenas para usuários Pro. <0>Torn
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "Este é o seu sandbox. É um ótimo lugar para experimentação, mas <0>ele é redefinido diariamente</0>."
 
-#: src/pages/New.tsx:302
+#: src/pages/New.tsx:304
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "Isso pode levar entre 30 segundos e 2 minutos, dependendo do tamanho da sua entrada."
 
@@ -1514,7 +1532,8 @@ msgstr "De cima para baixo"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "Transforme Suas Ideias em Diagramas Profissionais em Segundos"
 
-#: src/components/ConvertToFlowchart.tsx:35
+#: src/components/ConvertToFlowchart.tsx:32
+#: src/lib/usePromptStore.ts:99
 msgid "Transform text into diagrams instantly"
 msgstr "Transforme texto em diagramas instantaneamente."
 
@@ -1538,7 +1557,8 @@ msgstr "Dois bordos têm o mesmo ID"
 msgid "Two nodes have the same ID"
 msgstr "Dois nós têm o mesmo ID"
 
-#: src/components/ConvertToFlowchart.tsx:36
+#: src/components/ConvertToFlowchart.tsx:33
+#: src/lib/usePromptStore.ts:100
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "Ops, você esgotou suas solicitações gratuitas! Atualize para o Flowchart Fun Pro e tenha conversões ilimitadas de diagramas, e continue transformando textos em fluxogramas claros e visuais com a mesma facilidade de copiar e colar."
 
@@ -1592,7 +1612,7 @@ msgid "Upload your File"
 msgstr "Faça o upload do seu arquivo"
 
 #: src/lib/getDefaultText.ts:12
-#: src/pages/New.tsx:222
+#: src/pages/New.tsx:223
 msgid "Use AI"
 msgstr "Usar IA"
 
@@ -1601,7 +1621,7 @@ msgstr "Usar IA"
 msgid "Use Custom CSS Only"
 msgstr "Usar Somente CSS Personalizado"
 
-#: src/pages/New.tsx:214
+#: src/pages/New.tsx:215
 msgid "Use Default Content"
 msgstr "Usar conteúdo padrão"
 
@@ -1615,7 +1635,7 @@ msgstr "Use classes para agrupar nós"
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons, like \"Explore options:\"."
-msgstr "Use dois pontos, como \"
+msgstr "Use dois pontos, como \\"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1644,6 +1664,10 @@ msgstr "Use este arquivo para organogramas, hierarquias e outras estruturas orga
 #: src/components/ShareDialog.tsx:547
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Use este arquivo para sequências, processos e fluxos de trabalho."
+
+#: src/components/AiToolbar2.tsx:25
+msgid "Use this mode to modify and enhance your current chart."
+msgstr "Use este modo para modificar e aprimorar seu fluxograma atual."
 
 #: src/pages/Account.tsx:124
 msgid "User"
@@ -1714,7 +1738,7 @@ msgstr "Anualmente"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Você está prestes a adicionar {numNodes} nós e {numEdges} arestas ao seu gráfico."
 
-#: src/pages/New.tsx:280
+#: src/pages/New.tsx:281
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "Você pode criar fluxogramas permanentes ilimitados com <0>Flowchart Fun Pro</0>."
 

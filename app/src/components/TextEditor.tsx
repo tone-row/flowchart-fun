@@ -1,4 +1,4 @@
-import Editor, { EditorProps } from "@monaco-editor/react";
+import Editor, { EditorProps, DiffEditor } from "@monaco-editor/react";
 import { highlight } from "graph-selector";
 import { editor } from "monaco-editor";
 import { CSSProperties, useEffect, useRef } from "react";
@@ -9,7 +9,7 @@ import { updateModelMarkers, useEditorStore } from "../lib/useEditorStore";
 import Loading from "./Loading";
 import { usePromptStore } from "../lib/usePromptStore";
 import classNames from "classnames";
-import { sanitizeOnPaste } from "../lib/sanitizeOnPaste";
+import { repairText } from "../lib/repairText";
 import { getDefaultText } from "../lib/getDefaultText";
 
 type TextEditorProps = EditorProps & {
@@ -41,10 +41,34 @@ export function TextEditor({
   useEditorHover(hoverLineNumber);
 
   // Is converted flowchart text being written to the editor?
-  const convertIsRunning = usePromptStore((s) => s.convertIsRunning);
+  const convertIsRunning = usePromptStore((s) => s.isRunning);
+
+  const diff = usePromptStore((s) => s.diff);
+
+  if (diff) {
+    return (
+      <DiffEditor
+        original={props.value}
+        modified={diff}
+        options={{
+          ...editorOptions,
+          ...extendOptions,
+          renderSideBySide: false,
+        }}
+        loading={<Loading />}
+        wrapperProps={{
+          "data-testid": "Editor",
+          className: classNames("bg-white dark:bg-neutral-900", {
+            "overflow-hidden": isDragging,
+            "cursor-wait pointer-events-none opacity-50": convertIsRunning,
+          }),
+        }}
+      />
+    );
+  }
 
   return (
-    <>
+    <div className="relative h-full">
       <Editor
         {...props}
         defaultLanguage={highlight.languageId}
@@ -83,7 +107,7 @@ export function TextEditor({
               useEditorStore.setState({ userPasted: text });
 
               // sanitize it if necessary
-              const sanitized = sanitizeOnPaste(text);
+              const sanitized = repairText(text);
               if (sanitized) {
                 replaceRange(editor, e.range, sanitized);
               }
@@ -100,8 +124,8 @@ export function TextEditor({
           }),
         }}
       />
-      {props.value === "" ? <Placeholder /> : null}
-    </>
+      {props.value === "" && !convertIsRunning ? <Placeholder /> : null}
+    </div>
   );
 }
 
@@ -161,9 +185,9 @@ function replaceRange(
 
 function Placeholder() {
   return (
-    <div className="absolute top-0 left-[26px] w-full">
+    <div className="absolute top-[12px] left-[26px] w-full">
       <pre
-        className="text-gray-500 dark:text-gray-400 leading-normal"
+        className="text-gray-400 dark:text-gray-500 leading-normal"
         style={{
           ...(editorStyleOptions as CSSProperties),
           lineHeight: editorStyleOptions?.lineHeight + "px",

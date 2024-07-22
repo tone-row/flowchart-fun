@@ -26,10 +26,10 @@ import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";
-import { AiToolbar } from "../components/AiToolbar";
 import { writeEditorText } from "../lib/writeEditorText";
 import type { editor } from "monaco-editor";
 import { getDefaultText } from "../lib/getDefaultText";
+import { AiToolbar2 } from "../components/AiToolbar2";
 
 const Sandbox = memo(function Edit() {
   // Wait 1 minute and trigger a sandbox modal overtop of the editor
@@ -149,7 +149,11 @@ const Sandbox = memo(function Edit() {
             <Actions />
           </div>
           <WithGraph>
-            <Tabs.Content value="Document" className="overflow-hidden relative">
+            <Tabs.Content
+              value="Document"
+              className="bg-white dark:bg-black overflow-hidden relative grid grid-rows-[auto_minmax(0,1fr)] h-full"
+            >
+              <AiToolbar2 />
               <TextEditor
                 value={text}
                 onChange={onChange}
@@ -168,8 +172,6 @@ const Sandbox = memo(function Edit() {
               }}
             />
             <EditorError />
-            {/* <EditWithAI /> */}
-            <AiToolbar />
           </WithGraph>
         </Tabs.Root>
       </FlowchartLayout>

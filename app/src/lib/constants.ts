@@ -32,6 +32,7 @@ export const editorStyleOptions: EditorProps["options"] = {
   insertSpaces: true,
   lineDecorationsWidth: "10px",
   cursorWidth: 2,
+  padding: { top: 10, bottom: 10 },
 };
 
 export const editorFunctionalOptions: EditorProps["options"] = {

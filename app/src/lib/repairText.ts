@@ -2,13 +2,11 @@ import { parse } from "graph-selector";
 import { isError } from "./helpers";
 
 /**
- * Given the pasted text, this function checks if it is valid
- * Flowchart Fun Syntax.
- * - If it returns any errors which indicate
- * parentheses issues, it will escape parentheses in the text
- * and return the sanitized text.
+ * Given some text, this function checks if it is valid
+ * Flowchart Fun Syntax. If it is valid, it returns null.
+ * If it is not valid, it attemps to repair the text.
  */
-export function sanitizeOnPaste(text: string) {
+export function repairText(text: string) {
   let newText: string | null = null,
     hasError = true,
     count = 0;

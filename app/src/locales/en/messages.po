@@ -209,7 +209,7 @@ msgstr "Check your email for a link to log in.<0/>You can close this window."
 msgid "Choose"
 msgstr "Choose"
 
-#: src/pages/New.tsx:168
+#: src/pages/New.tsx:169
 msgid "Choose Template"
 msgstr "Choose Template"
 
@@ -291,7 +291,11 @@ msgstr "Containers are nodes that contain other nodes. They are declared using c
 msgid "Continue"
 msgstr "Continue"
 
-#: src/components/ConvertToFlowchart.tsx:81
+#: src/components/AiToolbar2.tsx:34
+msgid "Convert"
+msgstr "Convert"
+
+#: src/components/ConvertToFlowchart.tsx:78
 msgid "Convert to Flowchart"
 msgstr "Convert to Flowchart"
 
@@ -325,7 +329,7 @@ msgstr "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edi
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 
-#: src/pages/New.tsx:298
+#: src/pages/New.tsx:300
 msgid "Create"
 msgstr "Create"
 
@@ -337,11 +341,11 @@ msgstr "Create Flowcharts using AI"
 msgid "Create Unlimited Flowcharts"
 msgstr "Create Unlimited Flowcharts"
 
-#: src/pages/New.tsx:155
+#: src/pages/New.tsx:156
 msgid "Create a New Chart"
 msgstr "Create a New Chart"
 
-#: src/pages/New.tsx:349
+#: src/pages/createExamples.tsx:10
 msgid "Create a flowchart showing the steps of planning and executing a school fundraising event"
 msgstr "Create a flowchart showing the steps of planning and executing a school fundraising event"
 
@@ -408,11 +412,11 @@ msgstr "Date"
 msgid "Decisions"
 msgstr "Decisions"
 
-#: src/pages/New.tsx:347
+#: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
 msgstr "Design a software development lifecycle flowchart for an agile team"
 
-#: src/pages/New.tsx:348
+#: src/pages/createExamples.tsx:9
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 
@@ -527,6 +531,10 @@ msgstr "Edges in Source Node Row"
 msgid "Edges in Target Node Row"
 msgstr "Edges in Target Node Row"
 
+#: src/components/AiToolbar2.tsx:36
+msgid "Edit"
+msgstr "Edit"
+
 #: src/components/EditWithAI.tsx:27
 #: src/components/EditWithAI.tsx:191
 msgid "Edit with AI"
@@ -554,7 +562,7 @@ msgstr "Email"
 msgid "Empty"
 msgstr "Empty"
 
-#: src/pages/New.tsx:228
+#: src/pages/New.tsx:229
 msgid "Enter a prompt or information you would like to create a chart from."
 msgstr "Enter a prompt or information you would like to create a chart from."
 
@@ -570,7 +578,7 @@ msgstr "Enter your email address below and we'll send you a link to reset your p
 msgid "Equal To"
 msgstr "Equal To"
 
-#: src/pages/New.tsx:235
+#: src/pages/New.tsx:236
 msgid "Examples:"
 msgstr "Examples:"
 
@@ -582,7 +590,7 @@ msgstr "Excalidraw"
 msgid "Exclusive Office Hours"
 msgstr "Exclusive Office Hours"
 
-#: src/components/LoadFileButton.tsx:77
+#: src/components/LoadFileButton.tsx:76
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
 msgstr "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
 
@@ -843,15 +851,15 @@ msgstr "Link"
 msgid "Load"
 msgstr "Load"
 
-#: src/components/LoadFileButton.tsx:101
+#: src/components/LoadFileButton.tsx:100
 msgid "Load Chart"
 msgstr "Load Chart"
 
-#: src/components/LoadFileButton.tsx:93
+#: src/components/LoadFileButton.tsx:92
 msgid "Load File"
 msgstr "Load File"
 
-#: src/components/LoadFileButton.tsx:76
+#: src/components/LoadFileButton.tsx:75
 msgid "Load Files"
 msgstr "Load Files"
 
@@ -934,8 +942,8 @@ msgstr "Multiple pointers on same line"
 msgid "My dog ate my credit card!"
 msgstr "My dog ate my credit card!"
 
-#: src/pages/New.tsx:157
-#: src/pages/New.tsx:165
+#: src/pages/New.tsx:158
+#: src/pages/New.tsx:166
 msgid "Name Chart"
 msgstr "Name Chart"
 
@@ -1054,6 +1062,10 @@ msgstr "Past Due"
 msgid "Paste a document or outline to auto-convert into a flowchart."
 msgstr "Paste a document or outline to auto-convert into a flowchart."
 
+#: src/components/AiToolbar2.tsx:23
+msgid "Paste your document or outline here to convert it into an organized flowchart."
+msgstr "Paste your document or outline here to convert it into an organized flowchart."
+
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "Permanent Charts are a Pro Feature"
@@ -1084,6 +1096,10 @@ msgstr "Process Diagram"
 msgid "Processing Data"
 msgstr "Processing Data"
 
+#: src/components/AiToolbar2.tsx:32
+msgid "Prompt"
+msgstr "Prompt"
+
 #: src/components/ShareDialog.tsx:479
 #: src/components/ShareDialog.tsx:503
 msgid "Public"
@@ -1102,7 +1118,8 @@ msgstr "Rapid Deployment Templates"
 msgid "Rapid Templates"
 msgstr "Rapid Templates"
 
-#: src/components/ConvertToFlowchart.tsx:42
+#: src/components/ConvertToFlowchart.tsx:39
+#: src/lib/usePromptStore.ts:106
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Rate limit exceeded. Please try again later."
 
@@ -1226,7 +1243,7 @@ msgstr "Save to File"
 msgid "Save your Work"
 msgstr "Save your Work"
 
-#: src/pages/New.tsx:208
+#: src/pages/New.tsx:209
 msgid "Set Content"
 msgstr "Set Content"
 
@@ -1269,8 +1286,8 @@ msgstr "Sign in with <0>Google</0>"
 msgid "Sorry! This page is only available in English."
 msgstr "Sorry! This page is only available in English."
 
-#: src/lib/convertToFlowchart.ts:103
-#: src/lib/convertToFlowchart.ts:103
+#: src/lib/runAi.ts:114
+#: src/lib/runAi.ts:114
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Sorry, there was an error converting the text to a flowchart. Try again later."
 
@@ -1330,6 +1347,7 @@ msgstr "Store any data associated to a node"
 msgid "Style Classes"
 msgstr "Style Classes"
 
+#: src/components/AiToolbar2.tsx:139
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
@@ -1469,7 +1487,7 @@ msgstr "This feature is only available to pro users. <0>Become a pro user</0> to
 msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 msgstr "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
 
-#: src/pages/New.tsx:302
+#: src/pages/New.tsx:304
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "This may take between 30 seconds and 2 minutes depending on the length of your input."
 
@@ -1514,7 +1532,8 @@ msgstr "Top to Bottom"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "Transform Your Ideas into Professional Diagrams in Seconds"
 
-#: src/components/ConvertToFlowchart.tsx:35
+#: src/components/ConvertToFlowchart.tsx:32
+#: src/lib/usePromptStore.ts:99
 msgid "Transform text into diagrams instantly"
 msgstr "Transform text into diagrams instantly"
 
@@ -1538,7 +1557,8 @@ msgstr "Two edges have the same ID"
 msgid "Two nodes have the same ID"
 msgstr "Two nodes have the same ID"
 
-#: src/components/ConvertToFlowchart.tsx:36
+#: src/components/ConvertToFlowchart.tsx:33
+#: src/lib/usePromptStore.ts:100
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 
@@ -1592,7 +1612,7 @@ msgid "Upload your File"
 msgstr "Upload your File"
 
 #: src/lib/getDefaultText.ts:12
-#: src/pages/New.tsx:222
+#: src/pages/New.tsx:223
 msgid "Use AI"
 msgstr "Use AI"
 
@@ -1601,7 +1621,7 @@ msgstr "Use AI"
 msgid "Use Custom CSS Only"
 msgstr "Use Custom CSS Only"
 
-#: src/pages/New.tsx:214
+#: src/pages/New.tsx:215
 msgid "Use Default Content"
 msgstr "Use Default Content"
 
@@ -1644,6 +1664,10 @@ msgstr "Use this file for org charts, hierarchies, and other organizational stru
 #: src/components/ShareDialog.tsx:547
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Use this file for sequences, processes, and workflows."
+
+#: src/components/AiToolbar2.tsx:25
+msgid "Use this mode to modify and enhance your current chart."
+msgstr "Use this mode to modify and enhance your current chart."
 
 #: src/pages/Account.tsx:124
 msgid "User"
@@ -1714,7 +1738,7 @@ msgstr "Yearly"
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 
-#: src/pages/New.tsx:280
+#: src/pages/New.tsx:281
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 
