@@ -84,3 +84,17 @@ export function useDocDetails<K extends keyof Details>(
 ) {
   return useDoc((state) => state.details[prop] || fallback) as Details[K];
 }
+
+// For E2E tests, let's put a __set_text function in the global scope
+// that will set the text of the doc
+declare global {
+  interface Window {
+    __set_text: (text: string) => void;
+  }
+}
+
+if (typeof window !== "undefined") {
+  window.__set_text = (text: string) => {
+    useDoc.setState({ text });
+  };
+}

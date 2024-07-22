@@ -42,7 +42,7 @@ jobs:
           version: 8
       - name: Install Playwright
         run: |
-          pnpm add -g playwright@1.36.2
+          pnpm add -g playwright@1.45.2
           playwright install
       - name: Install Deps
         run: pnpm install

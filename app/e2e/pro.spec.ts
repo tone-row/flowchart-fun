@@ -1,5 +1,10 @@
 import { test, expect, Page } from "@playwright/test";
-import { BASE_URL, TESTING_EMAIL_PRO, TESTING_PASS_PRO } from "./utils";
+import {
+  BASE_URL,
+  TESTING_EMAIL_PRO,
+  TESTING_PASS_PRO,
+  goToPath,
+} from "./utils";
 import path from "path";
 
 let page: Page;
@@ -12,7 +17,7 @@ test.skip(({ browserName }) => browserName !== "chromium", "Chrome Only");
 /* Log In */
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
-  await page.goto(BASE_URL);
+  await goToPath(page);
   await page.getByRole("link", { name: "Log In" }).click();
   await page.getByTestId("sign-in-email").click();
   await page.getByTestId("sign-in-email").fill(TESTING_EMAIL_PRO);
@@ -74,7 +79,7 @@ test("Publish Chart & Clone from Public", async () => {
 });
 
 test("Open Chart From Charts Page", async () => {
-  await page.goto(BASE_URL);
+  await goToPath(page);
   await page.getByRole("link", { name: "Charts" }).click();
   await page
     .getByRole("link", { name: /to publish.*/gi })
@@ -94,7 +99,7 @@ test("Download SVG", async () => {
 });
 
 test("Go to Sandbox. Save Sandbox Chart", async () => {
-  await page.goto(BASE_URL);
+  await goToPath(page);
 
   // wait for the test-id "pro-link" to disappear
   await page.getByTestId("pro-link").waitFor({ state: "detached" });
@@ -117,7 +122,7 @@ test("Create chart from AI", async () => {
   await page
     .locator('textarea[name="subject"]')
     .fill("the stages of the water cycle");
-  await page.getByRole("button", { name: "Create" }).click();
+  await page.getByTestId("Create Chart").click();
   // expect url to be regex BASE_URL + /u/\d+
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
     timeout: 1000 * 60 * 4,
@@ -127,7 +132,7 @@ test("Create chart from AI", async () => {
 test("Create chart from imported data", async () => {
   try {
     await page.getByRole("link", { name: "New" }).click();
-    await page.getByRole("button", { name: "Create" }).click();
+    await page.getByTestId("Create Chart").click();
     await page.waitForURL(new RegExp(`${BASE_URL}/u/\\d+`));
     await page.getByRole("button", { name: "Import Data" }).click();
 
@@ -174,7 +179,7 @@ test("Create chart from imported data", async () => {
 });
 
 test("Can load a file", async () => {
-  await page.goto(BASE_URL);
+  await goToPath(page);
 
   // wait for the test-id "pro-link" to disappear
   await page.getByTestId("pro-link").waitFor({ state: "detached" });

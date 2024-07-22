@@ -94,6 +94,10 @@ module.exports = {
           from: { opacity: 0, transform: "translateY(2px)" },
           to: { opacity: 1, transform: "translateY(0)" },
         },
+        slideUpFadeLarge: {
+          from: { opacity: 0, transform: "translateY(10px)" },
+          to: { opacity: 1, transform: "translateY(0)" },
+        },
         slideRightAndFade: {
           from: { opacity: 0, transform: "translateX(-2px)" },
           to: { opacity: 1, transform: "translateX(0)" },
@@ -135,6 +139,8 @@ module.exports = {
           "slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideLeftAndFade:
           "slideLeftAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        slideUpFadeLarge:
+          "slideUpFadeLarge 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         pulse: "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         hide: "hide 100ms ease-in",
         slideIn: "slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1)",

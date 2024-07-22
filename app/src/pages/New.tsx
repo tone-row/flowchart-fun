@@ -21,6 +21,7 @@ import {
 import { Warning } from "../components/Warning";
 import { FFTheme } from "../lib/FFTheme";
 import { RequestTemplate } from "../components/RequestTemplate";
+import { createExamples } from "./createExamples";
 
 type CreateChartOptions = {
   name: string;
@@ -294,6 +295,7 @@ export default function New2() {
           leftIcon={<Plus size={16} />}
           type="submit"
           isLoading={createChartMutation.isLoading}
+          data-testid="Create Chart"
         >
           <Trans>Create</Trans>
         </Button2>
@@ -337,15 +339,4 @@ function Section({
       {children}
     </section>
   );
-}
-
-/**
- * Prompt examples
- */
-function createExamples() {
-  return [
-    t`Design a software development lifecycle flowchart for an agile team`,
-    t`Develop a decision tree for a CEO to evaluate potential new market opportunities`,
-    t`Create a flowchart showing the steps of planning and executing a school fundraising event`,
-  ];
 }

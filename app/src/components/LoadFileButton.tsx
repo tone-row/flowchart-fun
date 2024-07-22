@@ -43,7 +43,6 @@ export function LoadFileButton() {
                 },
               })
                 .then((chart) => {
-                  console.log({ chart });
                   if (chart) {
                     // build a chart with a normal expiry date
                     const { text, details, ...rest } = chart;

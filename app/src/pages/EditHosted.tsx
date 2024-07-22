@@ -91,7 +91,11 @@ export default function EditHosted() {
           <Actions />
         </div>
         <WithGraph>
-          <Tabs.Content value="Document" className="overflow-hidden">
+          <Tabs.Content
+            value="Document"
+            className="bg-white dark:bg-black overflow-hidden relative grid grid-rows-[auto_minmax(0,1fr)] h-full"
+          >
+            <AiToolbar />
             <TextEditor
               value={text}
               onChange={onChange}
@@ -117,7 +121,6 @@ export default function EditHosted() {
             }}
           />
           <EditorError />
-          <AiToolbar />
         </WithGraph>
       </Tabs.Root>
     </FlowchartLayout>

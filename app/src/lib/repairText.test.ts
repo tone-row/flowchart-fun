@@ -1,26 +1,26 @@
-import { sanitizeOnPaste } from "./sanitizeOnPaste";
+import { repairText } from "./repairText";
 
-describe("sanitizeOnPaste", () => {
+describe("repairText", () => {
   test("returns null for valid text", () => {
-    expect(sanitizeOnPaste("hello world")).toBe(null);
+    expect(repairText("hello world")).toBe(null);
   });
   test("returns text with escaped parentheses for invalid text", () => {
-    expect(sanitizeOnPaste("hello (world)")).toBe("hello \\(world\\)");
+    expect(repairText("hello (world)")).toBe("hello \\(world\\)");
   });
 
   test("returns escaped for multiple pointers", () => {
-    expect(sanitizeOnPaste("hello (world) (again)")).toBe(
+    expect(repairText("hello (world) (again)")).toBe(
       "hello \\(world\\) \\(again\\)"
     );
   });
 
   test("handles colon", () => {
-    expect(sanitizeOnPaste("hello: world")).toBe("hello\\: world");
+    expect(repairText("hello: world")).toBe("hello\\: world");
   });
 
   test("Edge missing indentation", () => {
     expect(
-      sanitizeOnPaste(
+      repairText(
         "export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {"
       )
     ).toBe(
@@ -29,8 +29,8 @@ describe("sanitizeOnPaste", () => {
   });
 
   test("Pointer bug", () => {
-    expect(
-      sanitizeOnPaste(`export function sanitizeOnPaste(text: string) {`)
-    ).toBe(`export function sanitizeOnPaste\\(text\\: string\\) {`);
+    expect(repairText(`export function repairText(text: string) {`)).toBe(
+      `export function repairText\\(text\\: string\\) {`
+    );
   });
 });

@@ -3,10 +3,7 @@ import { Button2 } from "../ui/Shared";
 import { TreeStructure } from "phosphor-react";
 import { useDoc } from "../lib/useDoc";
 import * as Toast from "@radix-ui/react-toast";
-import {
-  RATE_LIMIT_EXCEEDED,
-  convertToFlowchart,
-} from "../lib/convertToFlowchart";
+import { RATE_LIMIT_EXCEEDED, runAi } from "../lib/runAi";
 import {
   startConvert,
   stopConvert,
@@ -20,7 +17,7 @@ import { useHasProAccess } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
 
 export function ConvertToFlowchart() {
-  const convertIsRunning = usePromptStore((s) => s.convertIsRunning);
+  const convertIsRunning = usePromptStore((s) => s.isRunning);
   const customer = useContext(AppContext).customer;
   const sid = customer?.subscription?.id;
   const hasProAccess = useHasProAccess();
@@ -54,7 +51,7 @@ export function ConvertToFlowchart() {
         onClick={() => {
           const prompt = useDoc.getState().text;
           startConvert();
-          convertToFlowchart(prompt, sid)
+          runAi({ prompt, sid, endpoint: "convert" })
             .catch((err) => {
               if (isError(err)) handleError(err);
             })
