@@ -1,66 +1,147 @@
-import classNames from "classnames";
-import { globalZ } from "../lib/globalZ";
-import { useDoc } from "../lib/useDoc";
-import { useEffect, useMemo } from "react";
-import { getDefaultText } from "../lib/getDefaultText";
-import { useEditorStore } from "../lib/useEditorStore";
-import { ConvertToFlowchart } from "./ConvertToFlowchart";
-import { EditWithAI } from "./EditWithAI";
-import { usePromptStore } from "../lib/usePromptStore";
+import { Button2, IconButton2, Textarea } from "../ui/Shared";
+import { CaretDown, CaretUp, MagicWand } from "phosphor-react";
+import cx from "classnames";
+import { t } from "@lingui/macro";
+import { createExamples } from "../pages/createExamples";
+import {
+  Mode,
+  acceptDiff,
+  rejectDiff,
+  setCurrentText,
+  setIsOpen,
+  setMode,
+  usePromptStore,
+  useRunAiWithStore,
+} from "../lib/usePromptStore";
 
-/**
- * Watch the current state of the graph and the users actions and determine
- * which, if any, AI tools to display to the user.
- */
+function getModeDescription(mode: Mode): string {
+  const prompts = createExamples();
+  switch (mode) {
+    case "prompt":
+      return `E.G., "${prompts[0]}"`;
+    case "convert":
+      return t`Paste your document or outline here to convert it into an organized flowchart.`;
+    case "edit":
+      return t`Use this mode to modify and enhance your current chart.`;
+  }
+}
+
+function getModeTitle(mode: Mode): string {
+  switch (mode) {
+    case "prompt":
+      return t`Prompt`;
+    case "convert":
+      return t`Convert`;
+    case "edit":
+      return t`Edit`;
+  }
+}
+
 export function AiToolbar() {
-  const text = useDoc((state) => state.text);
-  const defaultText = useMemo(() => {
-    return getDefaultText();
-  }, []);
-  const isDefaultText = text === defaultText;
-  const selection = useEditorStore((s) => s.selection);
-  const fullTextSelected = selection.trim() === text.trim();
-  const userPasted = useEditorStore((s) => s.userPasted);
-  const enoughCharacters = text.length > 150;
-  const lastResult = usePromptStore((s) => s.lastResult);
+  const isOpen = usePromptStore((state) => state.isOpen);
+  const currentMode = usePromptStore((state) => state.mode);
+  const isRunning = usePromptStore((state) => state.isRunning);
+  const runAiWithStore = useRunAiWithStore();
+  const diff = usePromptStore((state) => state.diff);
 
-  // Set the user pasted back to false after 15 seconds, and on unmount
-  useEffect(() => {
-    if (userPasted) {
-      const timeout = setTimeout(() => {
-        useEditorStore.setState({ userPasted: "" });
-      }, 15000);
-      return () => clearTimeout(timeout);
-    }
-  }, [userPasted]);
+  const toggleOpen = () => setIsOpen(!isOpen);
 
-  const convertIsRunning = usePromptStore((s) => s.isRunning);
+  const handleModeChange = (mode: Mode) => {
+    setMode(mode);
+    if (!isOpen) setIsOpen(true);
+  };
 
-  // Qualities for displaying Convert to Flowchart button:
-  //  OR
-  //    Convert is currently running
-  //    AND
-  //      Is not the default text
-  //      There is more than 150 characters
-  //      Text is not equal to the last result
-  //      OR
-  //        Full text is selected and is more than 150 characters
-  //        Less than 15 seconds have passed since user pasted more than 150 characters
-  const showConvertToFlowchart =
-    convertIsRunning ||
-    (!isDefaultText &&
-      enoughCharacters &&
-      lastResult !== text &&
-      (fullTextSelected || userPasted));
+  const currentText = usePromptStore((state) => state.currentText);
+
+  const showAcceptDiffButton = diff && !isRunning;
 
   return (
-    <div
-      className={classNames(
-        "drop-shadow-lg absolute bottom-2 right-2",
-        globalZ.editWithAiButton
+    <div className="bg-purple-300/60 dark:bg-purple-800/20">
+      <div className="flex items-center justify-between p-2">
+        <div className="flex items-center space-x-2">
+          <MagicWand
+            size={24}
+            className="text-purple-600 dark:text-white mx-1"
+          />
+          {!showAcceptDiffButton ? (
+            (["prompt", "convert", "edit"] as Mode[]).map((mode) => (
+              <Button2
+                key={mode}
+                color={mode === currentMode ? "purple" : "default"}
+                size="xs"
+                onClick={() => handleModeChange(mode)}
+                className={cx({
+                  "hover:bg-white dark:hover:bg-neutral-700":
+                    mode !== currentMode,
+                  "dark:bg-purple-700 dark:text-purple-100":
+                    mode === currentMode,
+                })}
+              >
+                {getModeTitle(mode)}
+              </Button2>
+            ))
+          ) : (
+            <span className="text-sm text-purple-600 dark:text-white">
+              Keep changes?
+            </span>
+          )}
+        </div>
+        {!showAcceptDiffButton ? (
+          <IconButton2
+            onClick={toggleOpen}
+            color="purple"
+            size="xs"
+            className="flex items-center justify-center dark:bg-purple-700/50 dark:text-purple-100"
+            isLoading={isRunning}
+          >
+            {!isOpen ? <CaretDown size={16} /> : <CaretUp size={16} />}
+          </IconButton2>
+        ) : (
+          <div className="flex space-x-2">
+            <Button2 color="green" size="xs" onClick={acceptDiff}>
+              Accept
+            </Button2>
+            <Button2 color="red" size="xs" onClick={rejectDiff}>
+              Reject
+            </Button2>
+          </div>
+        )}
+      </div>
+      {isOpen && (
+        <div className="grid p-4 pt-0">
+          <p className="text-xs text-purple-600 dark:text-white mb-2 text-wrap-balance leading-normal">
+            {getModeDescription(currentMode)}
+          </p>
+          <Textarea
+            value={currentText}
+            box={{
+              className:
+                "bg-white dark:bg-purple-800/50 !rounded-md w-full mb-2 border-2 border-purple-400 dark:border-purple-700 rounded-md focus:ring-purple-500 focus:border-purple-500",
+            }}
+            onChange={(e) => setCurrentText(e.target.value)}
+            className="resize-none dark:text-white dark:bg-transparent"
+            disabled={isRunning}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                runAiWithStore();
+              }
+            }}
+          />
+          <div className="flex justify-end">
+            <Button2
+              color="purple"
+              size="xs"
+              className="dark:bg-purple-700/50 dark:text-purple-100"
+              disabled={isRunning}
+              onClick={runAiWithStore}
+              data-session-activity={`Run AI: ${currentMode}`}
+            >
+              {!isRunning ? t`Submit` : "..."}
+            </Button2>
+          </div>
+        </div>
       )}
-    >
-      {showConvertToFlowchart ? <ConvertToFlowchart /> : <EditWithAI />}
     </div>
   );
 }
