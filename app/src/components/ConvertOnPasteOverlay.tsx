@@ -34,8 +34,6 @@ export function ConvertOnPasteOverlay() {
     }
   }, [userPasted]);
 
-  const convertIsRunning = usePromptStore((s) => s.isRunning);
-
   // Qualities for displaying Convert to Flowchart button:
   //  OR
   //    Convert is currently running
@@ -47,8 +45,7 @@ export function ConvertOnPasteOverlay() {
   //        Full text is selected and is more than 150 characters
   //        Less than 15 seconds have passed since user pasted more than 150 characters
   const showConvertToFlowchart =
-    convertIsRunning ||
-    (!isDefaultText && enoughCharacters && lastResult !== text && userPasted);
+    !isDefaultText && enoughCharacters && lastResult !== text && userPasted;
 
   if (showConvertToFlowchart) return <Overlay />;
 

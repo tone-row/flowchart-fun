@@ -104,6 +104,7 @@ export function TextEditor({
             editor.onDidPaste((e) => {
               // get the text in the range
               const text = editor.getModel()?.getValueInRange(e.range);
+
               if (text) {
                 // store it in the editor
                 useEditorStore.setState({ userPasted: text });
