@@ -60,8 +60,8 @@ msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:
 msgstr "Agregue una barra invertida (<0>\\</0>) antes de cualquier carácter especial: <1>(</1>, <2>:</2>, <3>#</3>, o <4>.</4>"
 
 #: src/lib/getDefaultText.ts:10
-msgid "Add classes to alter color and shape"
-msgstr "Agregar clases para cambiar el color y la forma"
+msgid "Add classes to change color and shape"
+msgstr "Agregar clases para cambiar color y forma"
 
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
@@ -70,6 +70,11 @@ msgstr "Avanzado"
 #: src/pages/Pricing2.tsx:35
 msgid "Advanced Export Options (PNG, JPG, SVG)"
 msgstr "Opciones avanzadas de exportación (PNG, JPG, SVG)"
+
+#: src/components/GraphFloatingMenu.tsx:103
+#: src/components/GraphFloatingMenu.tsx:107
+msgid "Align Nodes"
+msgstr "Alinear nodos"
 
 #: src/pages/Account.tsx:278
 msgid "Amount"
@@ -292,7 +297,7 @@ msgid "Continue"
 msgstr "Continuar"
 
 #: src/components/AiToolbar.tsx:34
-#: src/components/ConvertOnPasteOverlay.tsx:110
+#: src/components/ConvertOnPasteOverlay.tsx:107
 msgid "Convert"
 msgstr "Convertir"
 
@@ -426,7 +431,7 @@ msgstr "Desarrollar un árbol de decisiones para que un CEO evalúe posibles nue
 msgid "Direction"
 msgstr "Dirección"
 
-#: src/components/ConvertOnPasteOverlay.tsx:81
+#: src/components/ConvertOnPasteOverlay.tsx:78
 msgid "Dismiss"
 msgstr "Descartar"
 
@@ -457,8 +462,8 @@ msgid "Download SVG"
 msgstr "Descargar SVG"
 
 #: src/lib/getDefaultText.ts:15
-msgid "Download or convert your flowchart via the 'Share' button."
-msgstr "Descarga o convierte tu diagrama de flujo a través del botón 'Compartir'."
+msgid "Download or share your flowchart using the 'Share' button."
+msgstr "Descargar o compartir tu diagrama de flujo usando el botón 'Compartir'."
 
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
@@ -662,10 +667,6 @@ msgstr "Obtenga acceso a funciones de inteligencia artificial y nunca pierda su 
 msgid "General"
 msgstr "General"
 
-#: src/lib/getDefaultText.ts:5
-msgid "Get Started"
-msgstr "Empezar"
-
 #: src/pages/404.tsx:12
 msgid "Go back home"
 msgstr "Vuelve a casa"
@@ -771,8 +772,12 @@ msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, ad
 msgstr "Incluye un título usando un atributo <0>title</0>. Para usar el color de Visio, agrega un atributo <1>roleType</1> igual a uno de los siguientes:"
 
 #: src/lib/getDefaultText.ts:9
-msgid "Indent for steps"
-msgstr "Sangría para pasos"
+msgid "Indent for Steps"
+msgstr "Sangrar para pasos"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Indicate progression or dependency."
+msgstr "Indicar progresión o dependencia."
 
 #: src/components/Header.tsx:127
 msgid "Info"
@@ -782,7 +787,7 @@ msgstr "Información"
 msgid "Is"
 msgstr "Es"
 
-#: src/components/ConvertOnPasteOverlay.tsx:69
+#: src/components/ConvertOnPasteOverlay.tsx:66
 msgid "Is this a document? Would you like to convert it to a flowchart?"
 msgstr "¿Es este un documento? ¿Te gustaría convertirlo en un diagrama de flujo? "
 
@@ -807,8 +812,8 @@ msgstr "Idioma"
 msgid "Layout"
 msgstr "Diseño"
 
-#: src/components/GraphFloatingMenu.tsx:82
-#: src/components/GraphFloatingMenu.tsx:84
+#: src/components/GraphFloatingMenu.tsx:89
+#: src/components/GraphFloatingMenu.tsx:91
 msgid "Layout Frozen"
 msgstr "Diseño Congelado"
 
@@ -893,8 +898,8 @@ msgstr "Cargar diseño y estilos"
 msgid "Local File Support"
 msgstr "Soporte de archivos locales"
 
-#: src/components/GraphFloatingMenu.tsx:72
-#: src/components/GraphFloatingMenu.tsx:74
+#: src/components/GraphFloatingMenu.tsx:79
+#: src/components/GraphFloatingMenu.tsx:81
 msgid "Lock Zoom to Graph"
 msgstr "Bloquear Zoom al gráfico"
 
@@ -936,8 +941,8 @@ msgid "Missing a template? Suggest one here!"
 msgstr "¿Falta una plantilla? ¡Sugerir una aquí!"
 
 #: src/lib/getDefaultText.ts:5
-msgid "Modify the text to see it transform into a flowchart on the right."
-msgstr "Modifica el texto para ver cómo se transforma en un diagrama de flujo a la derecha."
+msgid "Modify text to see it transform into a flowchart on the right."
+msgstr "Modificar texto para ver cómo se transforma en un diagrama de flujo a la derecha."
 
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
@@ -1068,8 +1073,8 @@ msgid "Past Due"
 msgstr "Vencido"
 
 #: src/lib/getDefaultText.ts:13
-msgid "Paste a document or outline to auto-convert into a flowchart."
-msgstr "Pega un documento o esquema para convertirlo automáticamente en un diagrama de flujo."
+msgid "Paste a document to convert it into a flowchart."
+msgstr "Pegar un documento para convertirlo en un diagrama de flujo."
 
 #: src/components/AiToolbar.tsx:23
 msgid "Paste your document or outline here to convert it into an organized flowchart."
@@ -1191,8 +1196,8 @@ msgstr "Solicitar enlace mágico"
 msgid "Request Password Reset"
 msgstr "Solicitar restablecimiento de contraseña"
 
-#: src/components/GraphFloatingMenu.tsx:37
-#: src/components/GraphFloatingMenu.tsx:40
+#: src/components/GraphFloatingMenu.tsx:44
+#: src/components/GraphFloatingMenu.tsx:47
 msgid "Reset"
 msgstr "Restablecer"
 
@@ -1217,8 +1222,8 @@ msgid "Right to Left"
 msgstr "De derecha a izquierda"
 
 #: src/lib/getDefaultText.ts:11
-msgid "Right-click on nodes to see more options."
-msgstr "Haz clic derecho en los nodos para ver más opciones."
+msgid "Right-click nodes for more options."
+msgstr "Haz clic derecho en los nodos para más opciones."
 
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:396
@@ -1274,10 +1279,6 @@ msgstr "Compartir"
 msgid "Share Your Work"
 msgstr "Comparte tu trabajo"
 
-#: src/lib/getDefaultText.ts:9
-msgid "Show progression or dependency."
-msgstr "Muestra progresión o dependencia."
-
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
 msgid "Sign In"
@@ -1332,6 +1333,7 @@ msgstr "Espaciado"
 msgid "Special Attributes"
 msgstr "Atributos Especiales"
 
+#: src/lib/getDefaultText.ts:5
 #: src/pages/Account.tsx:183
 msgid "Start"
 msgstr "Comienzo"
@@ -1572,8 +1574,8 @@ msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unli
 msgstr "¡Ups, se acabaron tus solicitudes gratuitas! Actualiza a Flowchart Fun Pro para conversiones de diagramas ilimitadas, y sigue transformando texto en claros y visuales flujogramas tan fácilmente como copiar y pegar."
 
 #: src/lib/getDefaultText.ts:6
-msgid "Understanding Syntax"
-msgstr "Entendiendo la sintaxis"
+msgid "Understand Syntax"
+msgstr "Entender la sintaxis"
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -1643,8 +1645,8 @@ msgid "Use classes to group nodes"
 msgstr "Usar clases para agrupar nodos"
 
 #: src/lib/getDefaultText.ts:8
-msgid "Use colons, like \"Explore options:\"."
-msgstr "Usa dos puntos, como \\"
+msgid "Use colons like \"Decisions:\"."
+msgstr "Usa dos puntos como \"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1783,13 +1785,13 @@ msgstr "Tus gráficos son de solo lectura porque tu cuenta ya no está activa. V
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "Su suscripción es <0>{statusDisplay}</0>."
 
-#: src/components/GraphFloatingMenu.tsx:52
-#: src/components/GraphFloatingMenu.tsx:56
+#: src/components/GraphFloatingMenu.tsx:59
+#: src/components/GraphFloatingMenu.tsx:63
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: src/components/GraphFloatingMenu.tsx:62
-#: src/components/GraphFloatingMenu.tsx:66
+#: src/components/GraphFloatingMenu.tsx:69
+#: src/components/GraphFloatingMenu.tsx:73
 msgid "Zoom Out"
 msgstr "Zoom Out"
 

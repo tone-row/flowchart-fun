@@ -60,8 +60,8 @@ msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:
 msgstr "在任何特殊字符之前添加反斜杠 (<0>\\</0>)： <1>(</1>、<2>:</2>、<3>#</3>或<4>.</4>"
 
 #: src/lib/getDefaultText.ts:10
-msgid "Add classes to alter color and shape"
-msgstr "添加类别来改变颜色和形状"
+msgid "Add classes to change color and shape"
+msgstr "添加类别以改变颜色和形状"
 
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
@@ -70,6 +70,11 @@ msgstr "高级"
 #: src/pages/Pricing2.tsx:35
 msgid "Advanced Export Options (PNG, JPG, SVG)"
 msgstr "高级导出选项（PNG，JPG，SVG）"
+
+#: src/components/GraphFloatingMenu.tsx:103
+#: src/components/GraphFloatingMenu.tsx:107
+msgid "Align Nodes"
+msgstr "对齐节点"
 
 #: src/pages/Account.tsx:278
 msgid "Amount"
@@ -292,7 +297,7 @@ msgid "Continue"
 msgstr "继续"
 
 #: src/components/AiToolbar.tsx:34
-#: src/components/ConvertOnPasteOverlay.tsx:110
+#: src/components/ConvertOnPasteOverlay.tsx:107
 msgid "Convert"
 msgstr "转换"
 
@@ -426,7 +431,7 @@ msgstr "为CEO设计一个决策树，评估潜在的新市场机会"
 msgid "Direction"
 msgstr "方向"
 
-#: src/components/ConvertOnPasteOverlay.tsx:81
+#: src/components/ConvertOnPasteOverlay.tsx:78
 msgid "Dismiss"
 msgstr "解散"
 
@@ -457,8 +462,8 @@ msgid "Download SVG"
 msgstr "下载 SVG"
 
 #: src/lib/getDefaultText.ts:15
-msgid "Download or convert your flowchart via the 'Share' button."
-msgstr "通过“分享”按钮下载或转换您的流程图。"
+msgid "Download or share your flowchart using the 'Share' button."
+msgstr "使用“分享”按钮下载或分享您的流程图。"
 
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
@@ -662,10 +667,6 @@ msgstr "获得AI功能的访问权限，并通过专业版账户永远不会丢�
 msgid "General"
 msgstr "一般"
 
-#: src/lib/getDefaultText.ts:5
-msgid "Get Started"
-msgstr "开始"
-
 #: src/pages/404.tsx:12
 msgid "Go back home"
 msgstr "回家"
@@ -771,8 +772,12 @@ msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, ad
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
 #: src/lib/getDefaultText.ts:9
-msgid "Indent for steps"
-msgstr "为步骤缩进"
+msgid "Indent for Steps"
+msgstr "缩进步骤"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Indicate progression or dependency."
+msgstr "指示进展或依赖关系。"
 
 #: src/components/Header.tsx:127
 msgid "Info"
@@ -782,7 +787,7 @@ msgstr "信息"
 msgid "Is"
 msgstr "是"
 
-#: src/components/ConvertOnPasteOverlay.tsx:69
+#: src/components/ConvertOnPasteOverlay.tsx:66
 msgid "Is this a document? Would you like to convert it to a flowchart?"
 msgstr "这是一个文档吗？您想将其转换为流程图吗？"
 
@@ -807,8 +812,8 @@ msgstr "语言"
 msgid "Layout"
 msgstr "布局"
 
-#: src/components/GraphFloatingMenu.tsx:82
-#: src/components/GraphFloatingMenu.tsx:84
+#: src/components/GraphFloatingMenu.tsx:89
+#: src/components/GraphFloatingMenu.tsx:91
 msgid "Layout Frozen"
 msgstr "布局已冻结"
 
@@ -893,8 +898,8 @@ msgstr "載入版面和樣式"
 msgid "Local File Support"
 msgstr "本地文件支持"
 
-#: src/components/GraphFloatingMenu.tsx:72
-#: src/components/GraphFloatingMenu.tsx:74
+#: src/components/GraphFloatingMenu.tsx:79
+#: src/components/GraphFloatingMenu.tsx:81
 msgid "Lock Zoom to Graph"
 msgstr "锁定缩放到图表"
 
@@ -936,8 +941,8 @@ msgid "Missing a template? Suggest one here!"
 msgstr "缺少模板？在这里提出建议！"
 
 #: src/lib/getDefaultText.ts:5
-msgid "Modify the text to see it transform into a flowchart on the right."
-msgstr "修改文本，即可在右侧转换为流程图。"
+msgid "Modify text to see it transform into a flowchart on the right."
+msgstr "修改文本，即可在右侧看到它变成流程图。"
 
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
@@ -1068,8 +1073,8 @@ msgid "Past Due"
 msgstr "过期"
 
 #: src/lib/getDefaultText.ts:13
-msgid "Paste a document or outline to auto-convert into a flowchart."
-msgstr "粘贴文档或大纲，自动转换为流程图。"
+msgid "Paste a document to convert it into a flowchart."
+msgstr "将文档粘贴到转换为流程图。"
 
 #: src/components/AiToolbar.tsx:23
 msgid "Paste your document or outline here to convert it into an organized flowchart."
@@ -1191,8 +1196,8 @@ msgstr "請求魔法鏈接"
 msgid "Request Password Reset"
 msgstr "請求密碼重置"
 
-#: src/components/GraphFloatingMenu.tsx:37
-#: src/components/GraphFloatingMenu.tsx:40
+#: src/components/GraphFloatingMenu.tsx:44
+#: src/components/GraphFloatingMenu.tsx:47
 msgid "Reset"
 msgstr "重置"
 
@@ -1217,8 +1222,8 @@ msgid "Right to Left"
 msgstr "从右到左"
 
 #: src/lib/getDefaultText.ts:11
-msgid "Right-click on nodes to see more options."
-msgstr "右键单击节点以查看更多选项。"
+msgid "Right-click nodes for more options."
+msgstr "单击节点以获取更多选项。"
 
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:396
@@ -1274,10 +1279,6 @@ msgstr "分享"
 msgid "Share Your Work"
 msgstr "分享你的工作"
 
-#: src/lib/getDefaultText.ts:9
-msgid "Show progression or dependency."
-msgstr "显示进度或依赖关系。"
-
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
 msgid "Sign In"
@@ -1332,6 +1333,7 @@ msgstr "间距"
 msgid "Special Attributes"
 msgstr "特殊属性"
 
+#: src/lib/getDefaultText.ts:5
 #: src/pages/Account.tsx:183
 msgid "Start"
 msgstr "开始"
@@ -1572,8 +1574,8 @@ msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unli
 msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
 
 #: src/lib/getDefaultText.ts:6
-msgid "Understanding Syntax"
-msgstr "理解句法"
+msgid "Understand Syntax"
+msgstr "理解语法"
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -1643,8 +1645,8 @@ msgid "Use classes to group nodes"
 msgstr "使用类来分组节点"
 
 #: src/lib/getDefaultText.ts:8
-msgid "Use colons, like \"Explore options:\"."
-msgstr "使用冒号，如 \\"
+msgid "Use colons like \"Decisions:\"."
+msgstr "使用冒号（：）表示\"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1783,13 +1785,13 @@ msgstr "您的图表是只读的，因为您的帐户已不再活跃。请访问
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "您的訂閱狀態為<0>{statusDisplay}</0>。"
 
-#: src/components/GraphFloatingMenu.tsx:52
-#: src/components/GraphFloatingMenu.tsx:56
+#: src/components/GraphFloatingMenu.tsx:59
+#: src/components/GraphFloatingMenu.tsx:63
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/components/GraphFloatingMenu.tsx:62
-#: src/components/GraphFloatingMenu.tsx:66
+#: src/components/GraphFloatingMenu.tsx:69
+#: src/components/GraphFloatingMenu.tsx:73
 msgid "Zoom Out"
 msgstr "縮小"
 
