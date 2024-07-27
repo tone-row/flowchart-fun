@@ -60,8 +60,8 @@ msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:
 msgstr "특수 문자 앞에는 역슬래시 (<0>\\</0>)를 추가하세요: <1>(</1>, <2>:</2>, <3>#</3>, 또는 <4>.</4>"
 
 #: src/lib/getDefaultText.ts:10
-msgid "Add classes to alter color and shape"
-msgstr "색상과 모양을 변경하기 위해 클래스를 추가하십시오."
+msgid "Add classes to change color and shape"
+msgstr "색상과 모양을 변경하기 위해 클래스를 추가하세요."
 
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
@@ -70,6 +70,11 @@ msgstr "고급"
 #: src/pages/Pricing2.tsx:35
 msgid "Advanced Export Options (PNG, JPG, SVG)"
 msgstr "고급 내보내기 옵션 (PNG, JPG, SVG)"
+
+#: src/components/GraphFloatingMenu.tsx:103
+#: src/components/GraphFloatingMenu.tsx:107
+msgid "Align Nodes"
+msgstr "노드 정렬하기"
 
 #: src/pages/Account.tsx:278
 msgid "Amount"
@@ -292,7 +297,7 @@ msgid "Continue"
 msgstr "계속하기"
 
 #: src/components/AiToolbar.tsx:34
-#: src/components/ConvertOnPasteOverlay.tsx:110
+#: src/components/ConvertOnPasteOverlay.tsx:107
 msgid "Convert"
 msgstr "변환하기"
 
@@ -426,7 +431,7 @@ msgstr "CEO가 잠재적인 새 시장 기회를 평가하기 위해 사용할 �
 msgid "Direction"
 msgstr "방향"
 
-#: src/components/ConvertOnPasteOverlay.tsx:81
+#: src/components/ConvertOnPasteOverlay.tsx:78
 msgid "Dismiss"
 msgstr "해지"
 
@@ -457,8 +462,8 @@ msgid "Download SVG"
 msgstr "SVG 다운로드"
 
 #: src/lib/getDefaultText.ts:15
-msgid "Download or convert your flowchart via the 'Share' button."
-msgstr "'공유' 버튼을 통해 플로우차트를 다운로드하거나 변환하세요."
+msgid "Download or share your flowchart using the 'Share' button."
+msgstr "'공유' 버튼을 사용하여 플로우차트를 다운로드하거나 공유하세요."
 
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
@@ -662,10 +667,6 @@ msgstr "Pro 계정으로 AI 기능에 접근하고 작업을 잃어버리지 않
 msgid "General"
 msgstr "일반"
 
-#: src/lib/getDefaultText.ts:5
-msgid "Get Started"
-msgstr "시작하기"
-
 #: src/pages/404.tsx:12
 msgid "Go back home"
 msgstr "집으로 돌아가기"
@@ -771,8 +772,12 @@ msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, ad
 msgstr "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Visio 색상을 사용하려면 다음 중 하나와 같은 <1>roleType</1> 속성을 추가하십시오:"
 
 #: src/lib/getDefaultText.ts:9
-msgid "Indent for steps"
-msgstr "단계를 위한 들여쓰기"
+msgid "Indent for Steps"
+msgstr "단계를 위해 들여쓰기하기"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Indicate progression or dependency."
+msgstr "진행 또는 의존성을 나타내세요."
 
 #: src/components/Header.tsx:127
 msgid "Info"
@@ -782,7 +787,7 @@ msgstr "정보"
 msgid "Is"
 msgstr "있다"
 
-#: src/components/ConvertOnPasteOverlay.tsx:69
+#: src/components/ConvertOnPasteOverlay.tsx:66
 msgid "Is this a document? Would you like to convert it to a flowchart?"
 msgstr "이것은 문서입니까? 플로우 차트로 변환하시겠습니까?"
 
@@ -807,8 +812,8 @@ msgstr "언어"
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/components/GraphFloatingMenu.tsx:82
-#: src/components/GraphFloatingMenu.tsx:84
+#: src/components/GraphFloatingMenu.tsx:89
+#: src/components/GraphFloatingMenu.tsx:91
 msgid "Layout Frozen"
 msgstr "레이아웃 동결"
 
@@ -893,8 +898,8 @@ msgstr "레이아웃과 스타일 로드"
 msgid "Local File Support"
 msgstr "로컬 파일 지원"
 
-#: src/components/GraphFloatingMenu.tsx:72
-#: src/components/GraphFloatingMenu.tsx:74
+#: src/components/GraphFloatingMenu.tsx:79
+#: src/components/GraphFloatingMenu.tsx:81
 msgid "Lock Zoom to Graph"
 msgstr "그래프에 룩 줌을 고정하다"
 
@@ -936,8 +941,8 @@ msgid "Missing a template? Suggest one here!"
 msgstr "템플릿이 없나요? 여기에서 제안해주세요!"
 
 #: src/lib/getDefaultText.ts:5
-msgid "Modify the text to see it transform into a flowchart on the right."
-msgstr "텍스트를 수정하여 오른쪽에 있는 플로우차트로 변환해보세요."
+msgid "Modify text to see it transform into a flowchart on the right."
+msgstr "오른쪽에서 플로우차트로 변환되는 것을 보려면 텍스트를 수정하세요."
 
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
@@ -1068,8 +1073,8 @@ msgid "Past Due"
 msgstr "연체"
 
 #: src/lib/getDefaultText.ts:13
-msgid "Paste a document or outline to auto-convert into a flowchart."
-msgstr "문서나 개요를 붙여넣으면 자동으로 플로우차트로 변환됩니다."
+msgid "Paste a document to convert it into a flowchart."
+msgstr "흐름도로 변환하려면 문서를 붙여넣으세요."
 
 #: src/components/AiToolbar.tsx:23
 msgid "Paste your document or outline here to convert it into an organized flowchart."
@@ -1191,8 +1196,8 @@ msgstr "마법 링크 요청"
 msgid "Request Password Reset"
 msgstr "비밀번호 재설정 요청"
 
-#: src/components/GraphFloatingMenu.tsx:37
-#: src/components/GraphFloatingMenu.tsx:40
+#: src/components/GraphFloatingMenu.tsx:44
+#: src/components/GraphFloatingMenu.tsx:47
 msgid "Reset"
 msgstr "재설정"
 
@@ -1217,8 +1222,8 @@ msgid "Right to Left"
 msgstr "오른쪽에서 왼쪽으로"
 
 #: src/lib/getDefaultText.ts:11
-msgid "Right-click on nodes to see more options."
-msgstr "노드를 마우스 오른쪽 버튼으로 클릭하여 더 많은 옵션을 볼 수 있습니다."
+msgid "Right-click nodes for more options."
+msgstr "더 많은 옵션을 보려면 노드를 오른쪽 클릭하세요."
 
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:396
@@ -1274,10 +1279,6 @@ msgstr "공유하기"
 msgid "Share Your Work"
 msgstr "작업 공유"
 
-#: src/lib/getDefaultText.ts:9
-msgid "Show progression or dependency."
-msgstr "진행 또는 종속성 표시"
-
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
 msgid "Sign In"
@@ -1332,6 +1333,7 @@ msgstr "간격"
 msgid "Special Attributes"
 msgstr "특별한 속성"
 
+#: src/lib/getDefaultText.ts:5
 #: src/pages/Account.tsx:183
 msgid "Start"
 msgstr "시작"
@@ -1572,8 +1574,8 @@ msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unli
 msgstr "이런, 무료 요청이 모두 소진되었습니다! 무제한 다이어그램 변환을 위해 Flowchart Fun Pro로 업그레이드하고 텍스트를 복사하여 쉽게 명확한 시각적 흐름도로 변환하세요."
 
 #: src/lib/getDefaultText.ts:6
-msgid "Understanding Syntax"
-msgstr "구문 이해"
+msgid "Understand Syntax"
+msgstr "구문을 이해하세요."
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -1643,8 +1645,8 @@ msgid "Use classes to group nodes"
 msgstr "노드를 그룹화하기 위해 클래스를 사용하십시오."
 
 #: src/lib/getDefaultText.ts:8
-msgid "Use colons, like \"Explore options:\"."
-msgstr "콜론을 사용하십시오, 예를 들어 \\"
+msgid "Use colons like \"Decisions:\"."
+msgstr "\와 같이 콜론을 사용하세요."
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1783,13 +1785,13 @@ msgstr "당신의 차트는 계정이 더 이상 활성화되지 않았기 때�
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "귀하의 구독 상태는 <0>{statusDisplay}</0>입니다."
 
-#: src/components/GraphFloatingMenu.tsx:52
-#: src/components/GraphFloatingMenu.tsx:56
+#: src/components/GraphFloatingMenu.tsx:59
+#: src/components/GraphFloatingMenu.tsx:63
 msgid "Zoom In"
 msgstr "확대"
 
-#: src/components/GraphFloatingMenu.tsx:62
-#: src/components/GraphFloatingMenu.tsx:66
+#: src/components/GraphFloatingMenu.tsx:69
+#: src/components/GraphFloatingMenu.tsx:73
 msgid "Zoom Out"
 msgstr "축소하기"
 

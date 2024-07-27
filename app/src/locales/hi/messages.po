@@ -60,8 +60,8 @@ msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:
 msgstr "किसी भी विशेष वर्ण के पहले एक बैकस्लैश (<0>\\</0>) जोड़ें: <1>(</1>, <2>:</2>, <3>#</3>, या <4>.</4>"
 
 #: src/lib/getDefaultText.ts:10
-msgid "Add classes to alter color and shape"
-msgstr "रंग और आकार को बदलने के लिए क्लासेस जोड़ें"
+msgid "Add classes to change color and shape"
+msgstr "रंग और आकार बदलने के लिए क्लासेस जोड़ें"
 
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
@@ -70,6 +70,11 @@ msgstr "उन्नत"
 #: src/pages/Pricing2.tsx:35
 msgid "Advanced Export Options (PNG, JPG, SVG)"
 msgstr "उन्नत निर्यात विकल्प (PNG, JPG, SVG)"
+
+#: src/components/GraphFloatingMenu.tsx:103
+#: src/components/GraphFloatingMenu.tsx:107
+msgid "Align Nodes"
+msgstr "नोड्स को संरेखित करें"
 
 #: src/pages/Account.tsx:278
 msgid "Amount"
@@ -292,7 +297,7 @@ msgid "Continue"
 msgstr "जारी रखें"
 
 #: src/components/AiToolbar.tsx:34
-#: src/components/ConvertOnPasteOverlay.tsx:110
+#: src/components/ConvertOnPasteOverlay.tsx:107
 msgid "Convert"
 msgstr "परिवर्तन करें"
 
@@ -426,7 +431,7 @@ msgstr "एक सीईओ के लिए नए बाजार के अ�
 msgid "Direction"
 msgstr "दिशा"
 
-#: src/components/ConvertOnPasteOverlay.tsx:81
+#: src/components/ConvertOnPasteOverlay.tsx:78
 msgid "Dismiss"
 msgstr "खारिज करें"
 
@@ -457,8 +462,8 @@ msgid "Download SVG"
 msgstr "SVG डाउनलोड करें"
 
 #: src/lib/getDefaultText.ts:15
-msgid "Download or convert your flowchart via the 'Share' button."
-msgstr "'शेयर' बटन के माध्यम से अपने फ्लोचार्ट को डाउनलोड या परिवर्तित करें। "
+msgid "Download or share your flowchart using the 'Share' button."
+msgstr "'शेयर' बटन का उपयोग करके अपना फ़्लोचार्ट डाउनलोड या साझा करें।"
 
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
@@ -662,10 +667,6 @@ msgstr "प्रो खाते से AI फीचर्स तक पहु�
 msgid "General"
 msgstr "सामान्य"
 
-#: src/lib/getDefaultText.ts:5
-msgid "Get Started"
-msgstr "शुरू करें"
-
 #: src/pages/404.tsx:12
 msgid "Go back home"
 msgstr "घर वापस जाओ"
@@ -771,8 +772,12 @@ msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, ad
 msgstr "एक <0>title</0> विशेषता का उपयोग करके एक शीर्षक शामिल करें। Visio रंगीनी का उपयोग करने के लिए, निम्नलिखित में से किसी एक के बराबर एक <1>roleType</1> विशेषता जोड़ें:"
 
 #: src/lib/getDefaultText.ts:9
-msgid "Indent for steps"
-msgstr "चरणों के लिए इंडेंट करें"
+msgid "Indent for Steps"
+msgstr "स्टेप्स के लिए इंडेंट करें"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Indicate progression or dependency."
+msgstr "प्रगति या आश्रितता की दर्शाएं।"
 
 #: src/components/Header.tsx:127
 msgid "Info"
@@ -782,7 +787,7 @@ msgstr "जानकारी"
 msgid "Is"
 msgstr "हाँ"
 
-#: src/components/ConvertOnPasteOverlay.tsx:69
+#: src/components/ConvertOnPasteOverlay.tsx:66
 msgid "Is this a document? Would you like to convert it to a flowchart?"
 msgstr "क्या यह एक दस्तावेज़ है? क्या आप इसे फ्लोचार्ट में बदलना चाहेंगे?"
 
@@ -807,8 +812,8 @@ msgstr "भाषा"
 msgid "Layout"
 msgstr "रूपरेखा"
 
-#: src/components/GraphFloatingMenu.tsx:82
-#: src/components/GraphFloatingMenu.tsx:84
+#: src/components/GraphFloatingMenu.tsx:89
+#: src/components/GraphFloatingMenu.tsx:91
 msgid "Layout Frozen"
 msgstr "लेआउट फ्रोज़न"
 
@@ -893,8 +898,8 @@ msgstr "लोड लेआउट और शैलियां"
 msgid "Local File Support"
 msgstr "स्थानीय फ़ाइल समर्थन"
 
-#: src/components/GraphFloatingMenu.tsx:72
-#: src/components/GraphFloatingMenu.tsx:74
+#: src/components/GraphFloatingMenu.tsx:79
+#: src/components/GraphFloatingMenu.tsx:81
 msgid "Lock Zoom to Graph"
 msgstr "ग्राफ पर जूम लॉक करें"
 
@@ -936,8 +941,8 @@ msgid "Missing a template? Suggest one here!"
 msgstr "कोई टेम्पलेट गायब है? यहाँ एक सुझाव दें!"
 
 #: src/lib/getDefaultText.ts:5
-msgid "Modify the text to see it transform into a flowchart on the right."
-msgstr "दाईं ओर फ्लोचार्ट में इसे बदलने के लिए पाठ को संशोधित करें।"
+msgid "Modify text to see it transform into a flowchart on the right."
+msgstr "दायीं ओर फ़्लोचार्ट में टेक्स्ट को संशोधित करें ताकि उसे फ़्लोचार्ट में बदला जा सके।"
 
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
@@ -1068,8 +1073,8 @@ msgid "Past Due"
 msgstr "पिछले दौरान"
 
 #: src/lib/getDefaultText.ts:13
-msgid "Paste a document or outline to auto-convert into a flowchart."
-msgstr "एक दस्तावेज़ या आउटलाइन पेस्ट करें और ऑटो-परिवर्तन के लिए फ्लोचार्ट में बदलें।"
+msgid "Paste a document to convert it into a flowchart."
+msgstr "एक दस्तावेज़ को पेस्ट करें और इसे एक फ्लोचार्ट में बदलें।"
 
 #: src/components/AiToolbar.tsx:23
 msgid "Paste your document or outline here to convert it into an organized flowchart."
@@ -1191,8 +1196,8 @@ msgstr "अनुरोध जादू लिंक"
 msgid "Request Password Reset"
 msgstr "पासवर्ड रीसेट का अनुरोध करें"
 
-#: src/components/GraphFloatingMenu.tsx:37
-#: src/components/GraphFloatingMenu.tsx:40
+#: src/components/GraphFloatingMenu.tsx:44
+#: src/components/GraphFloatingMenu.tsx:47
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -1217,8 +1222,8 @@ msgid "Right to Left"
 msgstr "दाएं से बाएं"
 
 #: src/lib/getDefaultText.ts:11
-msgid "Right-click on nodes to see more options."
-msgstr "अधिक विकल्प देखने के लिए नोड पर दायां क्लिक करें।"
+msgid "Right-click nodes for more options."
+msgstr "अधिक विकल्पों के लिए नोड पर दायां क्लिक करें।"
 
 #: src/components/Header.tsx:155
 #: src/components/Header.tsx:396
@@ -1274,10 +1279,6 @@ msgstr "साझा करें"
 msgid "Share Your Work"
 msgstr "अपना काम साझा करें"
 
-#: src/lib/getDefaultText.ts:9
-msgid "Show progression or dependency."
-msgstr "प्रगति या आश्रितता दिखाएं।"
-
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
 msgid "Sign In"
@@ -1332,6 +1333,7 @@ msgstr "अंतराल"
 msgid "Special Attributes"
 msgstr "विशेष गुण"
 
+#: src/lib/getDefaultText.ts:5
 #: src/pages/Account.tsx:183
 msgid "Start"
 msgstr "शुरू"
@@ -1572,8 +1574,8 @@ msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unli
 msgstr "उह ओह, आपके पास मुफ्त अनुरोधों की सीमा पूरी हो गई है! असीमित डायग्राम परिवर्तन के लिए Flowchart Fun Pro पर अपग्रेड करें, और पाठ को स्पष्ट, दृश्यमान फ्लोचार्ट में आसानी से कॉपी और पेस्ट करते रहें।"
 
 #: src/lib/getDefaultText.ts:6
-msgid "Understanding Syntax"
-msgstr "वाक्य रचना को समझें"
+msgid "Understand Syntax"
+msgstr "वाक्य रचना समझें"
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -1643,8 +1645,8 @@ msgid "Use classes to group nodes"
 msgstr "नोड्स को समूहों में सम्मिलित करने के लिए वर्ग उपयोग करें"
 
 #: src/lib/getDefaultText.ts:8
-msgid "Use colons, like \"Explore options:\"."
-msgstr "अवशिष्ट, जैसे \\ का उपयोग करें।"
+msgid "Use colons like \"Decisions:\"."
+msgstr "\ की तरह कोलन का उपयोग करें। "
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1783,13 +1785,13 @@ msgstr "आपके चार्ट रीड-ओनली हैं क्य�
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "आपका सदस्यता <0>{statusDisplay}</0> है।"
 
-#: src/components/GraphFloatingMenu.tsx:52
-#: src/components/GraphFloatingMenu.tsx:56
+#: src/components/GraphFloatingMenu.tsx:59
+#: src/components/GraphFloatingMenu.tsx:63
 msgid "Zoom In"
 msgstr "ज़ूम इन करें"
 
-#: src/components/GraphFloatingMenu.tsx:62
-#: src/components/GraphFloatingMenu.tsx:66
+#: src/components/GraphFloatingMenu.tsx:69
+#: src/components/GraphFloatingMenu.tsx:73
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 
