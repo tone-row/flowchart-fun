@@ -1,6 +1,8 @@
 import { cytoscape } from "../lib/cytoscape";
 
-export function getNodePositionsFromCy() {
+export type NodePositions = Record<string, cytoscape.Position>;
+
+export function getNodePositionsFromCy(): NodePositions {
   if (!window.__cy) return {};
   const nodes = (window.__cy.json() as any).elements
     .nodes as cytoscape.ElementDefinition[];
