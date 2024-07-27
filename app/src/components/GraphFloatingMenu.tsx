@@ -1,5 +1,11 @@
 import { t } from "@lingui/macro";
-import { ArrowsClockwise, MagnifyingGlass, Minus, Plus } from "phosphor-react";
+import {
+  ArrowsClockwise,
+  MagnifyingGlass,
+  Minus,
+  Plus,
+  AlignCenterVertical,
+} from "phosphor-react";
 import { useCallback } from "react";
 import { FaRegSnowflake } from "react-icons/fa";
 
@@ -7,6 +13,7 @@ import { lockZoomToGraph, useGraphStore } from "../lib/useGraphStore";
 import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
 import { resetGraph } from "../lib/useUnmountStore";
 import { IconButton2, IconToggleButton, Tooltip2 } from "../ui/Shared";
+import { alignNodes } from "../lib/alignNodes";
 
 const ZOOM_STEP = 0.5;
 
@@ -92,6 +99,18 @@ export function GraphFloatingMenu() {
         >
           <FaRegSnowflake size={16} />
         </IconToggleButton>
+      </Tooltip2>
+      <Tooltip2 content={t`Align Nodes`}>
+        <IconButton2
+          size="xs"
+          onClick={alignNodes}
+          aria-label={t`Align Nodes`}
+          data-testid="Align Nodes"
+          data-session-activity="align-nodes"
+          disabled={!isFrozen}
+        >
+          <AlignCenterVertical size={16} />
+        </IconButton2>
       </Tooltip2>
     </div>
   );
