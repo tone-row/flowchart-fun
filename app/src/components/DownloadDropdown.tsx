@@ -93,26 +93,47 @@ export function DownloadDropdown({ children }: { children: React.ReactNode }) {
           sideOffset={5}
           className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-md shadow-lg p-1 min-w-[160px]"
         >
-          <DropdownMenuItem onClick={() => handleDownload("png")} icon={Image}>
+          <DropdownMenuItem
+            onClick={() => handleDownload("png")}
+            icon={Image}
+            data-session-activity="Download Dropdown: Download PNG"
+          >
             Download PNG
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleDownload("jpg")} icon={Image}>
+          <DropdownMenuItem
+            onClick={() => handleDownload("jpg")}
+            icon={Image}
+            data-session-activity="Download Dropdown: Download JPG"
+          >
             Download JPG
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => handleSvgAction("download")}
             icon={FileImage}
+            data-session-activity="Download Dropdown: Download SVG"
           >
             Download SVG
           </DropdownMenuItem>
           <DropdownMenu.Separator className="h-px bg-neutral-200 dark:bg-neutral-700 my-1" />
-          <DropdownMenuItem onClick={() => handleCopy("png")} icon={Copy}>
+          <DropdownMenuItem
+            onClick={() => handleCopy("png")}
+            icon={Copy}
+            data-session-activity="Download Dropdown: Copy PNG"
+          >
             Copy PNG
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleCopy("jpg")} icon={Copy}>
+          <DropdownMenuItem
+            onClick={() => handleCopy("jpg")}
+            icon={Copy}
+            data-session-activity="Download Dropdown: Copy JPG"
+          >
             Copy JPG
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleSvgAction("copy")} icon={Copy}>
+          <DropdownMenuItem
+            onClick={() => handleSvgAction("copy")}
+            icon={Copy}
+            data-session-activity="Download Dropdown: Copy SVG"
+          >
             Copy SVG
           </DropdownMenuItem>
         </DropdownMenu.Content>
