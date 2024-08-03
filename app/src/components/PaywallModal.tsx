@@ -26,7 +26,7 @@ export function PaywallModal() {
         <Overlay />
         <Content
           maxWidthClass="max-w-[520px]"
-          className="content-start text-center"
+          className="content-start text-center overflow-auto"
           noPadding
         >
           {movieUrl ? (

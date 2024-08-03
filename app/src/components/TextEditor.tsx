@@ -70,7 +70,7 @@ export function TextEditor({
 
   return (
     <>
-      <div className="relative h-full">
+      <div className="relative h-full w-full overflow-hidden">
         <Editor
           {...props}
           defaultLanguage={highlight.languageId}

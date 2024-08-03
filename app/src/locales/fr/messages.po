@@ -313,6 +313,14 @@ msgstr "Convertir en graphique hébergé ?"
 msgid "Cookie Policy"
 msgstr "Politique de cookies"
 
+#: src/components/DownloadDropdown.tsx:49
+msgid "Copied SVG code to clipboard"
+msgstr "Code SVG copié dans le presse-papier"
+
+#: src/components/DownloadDropdown.tsx:67
+msgid "Copied {format} to clipboard"
+msgstr "{format} copié dans le presse-papier"
+
 #: src/components/ShareDialog.tsx:277
 #: src/components/ShareDialog.tsx:280
 #: src/components/ShareDialog.tsx:394
@@ -444,6 +452,7 @@ msgstr "Souhaitez-vous supprimer ceci ?"
 msgid "Document"
 msgstr "Document"
 
+#: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
 #: src/components/ShareDialog.tsx:617
 msgid "Download"
@@ -463,7 +472,7 @@ msgstr "Télécharger SVG"
 
 #: src/lib/getDefaultText.ts:15
 msgid "Download or share your flowchart using the 'Share' button."
-msgstr "Télécharger ou partager votre organigramme en utilisant le bouton "Partager"."
+msgstr "Télécharger ou partager votre organigramme en utilisant le bouton \"Partager\"."
 
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
@@ -708,7 +717,7 @@ msgstr "Accueil"
 msgid "How are edges declared in this data?"
 msgstr "Comment les bords sont-ils déclarés dans ces données?"
 
-#: src/components/FlowchartHeader.tsx:152
+#: src/components/FlowchartHeader.tsx:157
 msgid "How would you like to save your chart?"
 msgstr "Comment souhaitez-vous enregistrer votre graphique?"
 
@@ -912,7 +921,7 @@ msgstr "Connexion"
 msgid "Log Out"
 msgstr "Déconnexion"
 
-#: src/components/FlowchartHeader.tsx:99
+#: src/components/FlowchartHeader.tsx:105
 msgid "Log in to Save"
 msgstr "Connectez-vous pour enregistrer"
 
@@ -961,7 +970,7 @@ msgstr "Mon chien a mangé ma carte de crédit!"
 msgid "Name Chart"
 msgstr "Nommer le graphique"
 
-#: src/components/FlowchartHeader.tsx:226
+#: src/components/FlowchartHeader.tsx:231
 msgid "Name your chart"
 msgstr "Nommez votre graphique"
 
@@ -1137,7 +1146,7 @@ msgstr "Modèles rapides"
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Limite de taux dépassée. Veuillez réessayer plus tard."
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:50
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "Lecture seulement"
@@ -1236,8 +1245,12 @@ msgstr "Roadmap"
 msgid "Rotate Label"
 msgstr "Faire pivoter l'étiquette"
 
-#: src/components/FlowchartHeader.tsx:117
-#: src/components/FlowchartHeader.tsx:142
+#: src/components/DownloadDropdown.tsx:80
+msgid "SVG Export is a Pro Feature"
+msgstr "L'exportation SVG est une fonctionnalité Pro"
+
+#: src/components/FlowchartHeader.tsx:123
+#: src/components/FlowchartHeader.tsx:147
 msgid "Save"
 msgstr "Sauver"
 
@@ -1245,11 +1258,11 @@ msgstr "Sauver"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "Gagnez du temps avec l'IA et la dictée, ce qui facilite la création de diagrammes."
 
-#: src/components/FlowchartHeader.tsx:161
+#: src/components/FlowchartHeader.tsx:166
 msgid "Save to Cloud"
 msgstr "Enregistrer dans le Cloud"
 
-#: src/components/FlowchartHeader.tsx:178
+#: src/components/FlowchartHeader.tsx:183
 msgid "Save to File"
 msgstr "Enregistrer dans un fichier"
 
@@ -1610,6 +1623,10 @@ msgstr "Impayé"
 msgid "Update Email"
 msgstr "Mettre à jour l'e-mail"
 
+#: src/components/DownloadDropdown.tsx:81
+msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
+msgstr "Mettez à niveau vers Flowchart Fun Pro pour débloquer les exportations SVG et profiter de fonctionnalités avancées pour vos diagrammes."
+
 #: src/components/Header.tsx:409
 msgid "Upgrade to Pro"
 msgstr "Mettez à niveau vers Pro"
@@ -1646,7 +1663,7 @@ msgstr "Utilisez des classes pour regrouper les nœuds"
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons like \"Decisions:\"."
-msgstr "Utilisez des deux-points comme \"
+msgstr "Utilisez des deux-points comme \\"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."

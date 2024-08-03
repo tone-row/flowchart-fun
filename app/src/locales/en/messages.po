@@ -313,6 +313,14 @@ msgstr "Convert to hosted chart?"
 msgid "Cookie Policy"
 msgstr "Cookie Policy"
 
+#: src/components/DownloadDropdown.tsx:49
+msgid "Copied SVG code to clipboard"
+msgstr "Copied SVG code to clipboard"
+
+#: src/components/DownloadDropdown.tsx:67
+msgid "Copied {format} to clipboard"
+msgstr "Copied {format} to clipboard"
+
 #: src/components/ShareDialog.tsx:277
 #: src/components/ShareDialog.tsx:280
 #: src/components/ShareDialog.tsx:394
@@ -444,6 +452,7 @@ msgstr "Do you want to delete this?"
 msgid "Document"
 msgstr "Document"
 
+#: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
 #: src/components/ShareDialog.tsx:617
 msgid "Download"
@@ -708,7 +717,7 @@ msgstr "Home"
 msgid "How are edges declared in this data?"
 msgstr "How are edges declared in this data?"
 
-#: src/components/FlowchartHeader.tsx:152
+#: src/components/FlowchartHeader.tsx:157
 msgid "How would you like to save your chart?"
 msgstr "How would you like to save your chart?"
 
@@ -912,7 +921,7 @@ msgstr "Log In"
 msgid "Log Out"
 msgstr "Log Out"
 
-#: src/components/FlowchartHeader.tsx:99
+#: src/components/FlowchartHeader.tsx:105
 msgid "Log in to Save"
 msgstr "Log in to Save"
 
@@ -961,7 +970,7 @@ msgstr "My dog ate my credit card!"
 msgid "Name Chart"
 msgstr "Name Chart"
 
-#: src/components/FlowchartHeader.tsx:226
+#: src/components/FlowchartHeader.tsx:231
 msgid "Name your chart"
 msgstr "Name your chart"
 
@@ -1137,7 +1146,7 @@ msgstr "Rapid Templates"
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Rate limit exceeded. Please try again later."
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:50
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "Read-only"
@@ -1236,8 +1245,12 @@ msgstr "Roadmap"
 msgid "Rotate Label"
 msgstr "Rotate Label"
 
-#: src/components/FlowchartHeader.tsx:117
-#: src/components/FlowchartHeader.tsx:142
+#: src/components/DownloadDropdown.tsx:80
+msgid "SVG Export is a Pro Feature"
+msgstr "SVG Export is a Pro Feature"
+
+#: src/components/FlowchartHeader.tsx:123
+#: src/components/FlowchartHeader.tsx:147
 msgid "Save"
 msgstr "Save"
 
@@ -1245,11 +1258,11 @@ msgstr "Save"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "Save time with AI and dictation, making it easy to create diagrams."
 
-#: src/components/FlowchartHeader.tsx:161
+#: src/components/FlowchartHeader.tsx:166
 msgid "Save to Cloud"
 msgstr "Save to Cloud"
 
-#: src/components/FlowchartHeader.tsx:178
+#: src/components/FlowchartHeader.tsx:183
 msgid "Save to File"
 msgstr "Save to File"
 
@@ -1609,6 +1622,10 @@ msgstr "Unpaid"
 #: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "Update Email"
+
+#: src/components/DownloadDropdown.tsx:81
+msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
+msgstr "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 
 #: src/components/Header.tsx:409
 msgid "Upgrade to Pro"
