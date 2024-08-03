@@ -313,6 +313,14 @@ msgstr "In gehostetes Diagramm konvertieren?"
 msgid "Cookie Policy"
 msgstr "Cookie-Richtlinie"
 
+#: src/components/DownloadDropdown.tsx:49
+msgid "Copied SVG code to clipboard"
+msgstr "SVG-Code in Zwischenablage kopiert"
+
+#: src/components/DownloadDropdown.tsx:67
+msgid "Copied {format} to clipboard"
+msgstr "{Format} in Zwischenablage kopiert"
+
 #: src/components/ShareDialog.tsx:277
 #: src/components/ShareDialog.tsx:280
 #: src/components/ShareDialog.tsx:394
@@ -444,6 +452,7 @@ msgstr "Möchten Sie dies löschen?"
 msgid "Document"
 msgstr "Document"
 
+#: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
 #: src/components/ShareDialog.tsx:617
 msgid "Download"
@@ -708,7 +717,7 @@ msgstr "Startseite"
 msgid "How are edges declared in this data?"
 msgstr "Wie werden Kanten in diesen Daten deklariert?"
 
-#: src/components/FlowchartHeader.tsx:152
+#: src/components/FlowchartHeader.tsx:157
 msgid "How would you like to save your chart?"
 msgstr "Wie möchten Sie Ihren Chart speichern?"
 
@@ -912,7 +921,7 @@ msgstr "Anmelden"
 msgid "Log Out"
 msgstr "Abmelden"
 
-#: src/components/FlowchartHeader.tsx:99
+#: src/components/FlowchartHeader.tsx:105
 msgid "Log in to Save"
 msgstr "Einloggen, um zu speichern"
 
@@ -961,7 +970,7 @@ msgstr "Mein Hund hat meine Kreditkarte gefressen!"
 msgid "Name Chart"
 msgstr "Diagramm benennen"
 
-#: src/components/FlowchartHeader.tsx:226
+#: src/components/FlowchartHeader.tsx:231
 msgid "Name your chart"
 msgstr "Benennen Sie Ihren Chart"
 
@@ -1137,7 +1146,7 @@ msgstr "Schnelle Vorlagen"
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Die Rate-Limit wurde überschritten. Bitte versuchen Sie es später erneut."
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:50
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "Schreibgeschützt"
@@ -1236,8 +1245,12 @@ msgstr "Fahrplan"
 msgid "Rotate Label"
 msgstr "Label drehen"
 
-#: src/components/FlowchartHeader.tsx:117
-#: src/components/FlowchartHeader.tsx:142
+#: src/components/DownloadDropdown.tsx:80
+msgid "SVG Export is a Pro Feature"
+msgstr "SVG-Export ist eine Pro-Funktion"
+
+#: src/components/FlowchartHeader.tsx:123
+#: src/components/FlowchartHeader.tsx:147
 msgid "Save"
 msgstr "Speichern"
 
@@ -1245,11 +1258,11 @@ msgstr "Speichern"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "Sparen Sie Zeit mit KI und Diktat, um Diagramme einfach zu erstellen."
 
-#: src/components/FlowchartHeader.tsx:161
+#: src/components/FlowchartHeader.tsx:166
 msgid "Save to Cloud"
 msgstr "In die Cloud speichern"
 
-#: src/components/FlowchartHeader.tsx:178
+#: src/components/FlowchartHeader.tsx:183
 msgid "Save to File"
 msgstr "In Datei speichern"
 
@@ -1610,6 +1623,10 @@ msgstr "Unbezahlt"
 msgid "Update Email"
 msgstr "E-Mail aktualisieren"
 
+#: src/components/DownloadDropdown.tsx:81
+msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
+msgstr "Upgrade auf Flowchart Fun Pro, um SVG-Export freizuschalten und mehr fortschrittliche Funktionen für Ihre Diagramme zu nutzen."
+
 #: src/components/Header.tsx:409
 msgid "Upgrade to Pro"
 msgstr "Auf Pro upgraden"
@@ -1646,7 +1663,7 @@ msgstr "Verwenden Sie Klassen, um Knoten zu gruppieren"
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons like \"Decisions:\"."
-msgstr "Verwenden Sie Doppelpunkte wie \"
+msgstr "Verwenden Sie Doppelpunkte wie \\"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."

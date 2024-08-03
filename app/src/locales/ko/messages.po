@@ -313,6 +313,14 @@ msgstr "호스팅 차트로 변환하시겠습니까?"
 msgid "Cookie Policy"
 msgstr "쿠키 정책"
 
+#: src/components/DownloadDropdown.tsx:49
+msgid "Copied SVG code to clipboard"
+msgstr "클립보드에 SVG 코드 복사"
+
+#: src/components/DownloadDropdown.tsx:67
+msgid "Copied {format} to clipboard"
+msgstr "클립보드에 {format} 복사"
+
 #: src/components/ShareDialog.tsx:277
 #: src/components/ShareDialog.tsx:280
 #: src/components/ShareDialog.tsx:394
@@ -444,6 +452,7 @@ msgstr "본 항목을 삭제하시겠습니까?"
 msgid "Document"
 msgstr "문서"
 
+#: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
 #: src/components/ShareDialog.tsx:617
 msgid "Download"
@@ -708,7 +717,7 @@ msgstr "집"
 msgid "How are edges declared in this data?"
 msgstr "이 데이터에서 간선은 어떻게 선언됩니까?"
 
-#: src/components/FlowchartHeader.tsx:152
+#: src/components/FlowchartHeader.tsx:157
 msgid "How would you like to save your chart?"
 msgstr "당신의 차트를 저장하려면 어떻게 하시겠습니까?"
 
@@ -912,7 +921,7 @@ msgstr "로그인"
 msgid "Log Out"
 msgstr "로그아웃"
 
-#: src/components/FlowchartHeader.tsx:99
+#: src/components/FlowchartHeader.tsx:105
 msgid "Log in to Save"
 msgstr "로그인하여 저장하기"
 
@@ -961,7 +970,7 @@ msgstr "내 개가 내 신용 카드를 먹었어요!"
 msgid "Name Chart"
 msgstr "차트 이름"
 
-#: src/components/FlowchartHeader.tsx:226
+#: src/components/FlowchartHeader.tsx:231
 msgid "Name your chart"
 msgstr "차트 이름 지정"
 
@@ -1137,7 +1146,7 @@ msgstr "급변화 템플릿"
 msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:50
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "읽기 전용"
@@ -1236,8 +1245,12 @@ msgstr "로드맵"
 msgid "Rotate Label"
 msgstr "라벨 회전"
 
-#: src/components/FlowchartHeader.tsx:117
-#: src/components/FlowchartHeader.tsx:142
+#: src/components/DownloadDropdown.tsx:80
+msgid "SVG Export is a Pro Feature"
+msgstr "SVG 내보내기는 프로 기능입니다"
+
+#: src/components/FlowchartHeader.tsx:123
+#: src/components/FlowchartHeader.tsx:147
 msgid "Save"
 msgstr "구하다"
 
@@ -1245,11 +1258,11 @@ msgstr "구하다"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "인공지능과 딕테이션을 통해 시간을 절약하고 쉽게 다이어그램을 작성할 수 있습니다."
 
-#: src/components/FlowchartHeader.tsx:161
+#: src/components/FlowchartHeader.tsx:166
 msgid "Save to Cloud"
 msgstr "클라우드에 저장하기"
 
-#: src/components/FlowchartHeader.tsx:178
+#: src/components/FlowchartHeader.tsx:183
 msgid "Save to File"
 msgstr "파일에 저장하기"
 
@@ -1610,6 +1623,10 @@ msgstr "미납"
 msgid "Update Email"
 msgstr "이메일 업데이트"
 
+#: src/components/DownloadDropdown.tsx:81
+msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
+msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 해제하고 다이어그램에 대한 더 고급 기능을 즐기세요."
+
 #: src/components/Header.tsx:409
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
@@ -1646,7 +1663,7 @@ msgstr "노드를 그룹화하기 위해 클래스를 사용하십시오."
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons like \"Decisions:\"."
-msgstr "\와 같이 콜론을 사용하세요."
+msgstr "\\와 같이 콜론을 사용하세요."
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."

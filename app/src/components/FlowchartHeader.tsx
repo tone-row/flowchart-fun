@@ -44,7 +44,7 @@ export function FlowchartHeader() {
           <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
         </RenameButton>
       )}
-      <div className="flex items-center gap-1 p-1 border border-neutral-300 dark:border-neutral-700 rounded-md">
+      <div className="flex items-center gap-1 p-1 border-2 border-neutral-300 dark:border-neutral-700 rounded-xl">
         {isReadOnly && (
           <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
             <Trans>Read-only</Trans>

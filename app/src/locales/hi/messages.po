@@ -313,6 +313,14 @@ msgstr "होस्टेड चार्ट में कनवर्ट क�
 msgid "Cookie Policy"
 msgstr "कुकी नीति"
 
+#: src/components/DownloadDropdown.tsx:49
+msgid "Copied SVG code to clipboard"
+msgstr "क्लिपबोर्ड पर SVG कोड कॉपी किया गया"
+
+#: src/components/DownloadDropdown.tsx:67
+msgid "Copied {format} to clipboard"
+msgstr "क्लिपबोर्ड पर {प्रारूप} कॉपी किया गया"
+
 #: src/components/ShareDialog.tsx:277
 #: src/components/ShareDialog.tsx:280
 #: src/components/ShareDialog.tsx:394
@@ -444,6 +452,7 @@ msgstr "क्या आप इसे डिलीट करना चाहत�
 msgid "Document"
 msgstr "दस्तावेज़"
 
+#: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
 #: src/components/ShareDialog.tsx:617
 msgid "Download"
@@ -708,7 +717,7 @@ msgstr "होम"
 msgid "How are edges declared in this data?"
 msgstr "इस डेटा में कैसे किन्हीं कड़ियाँ घोषित होती हैं?"
 
-#: src/components/FlowchartHeader.tsx:152
+#: src/components/FlowchartHeader.tsx:157
 msgid "How would you like to save your chart?"
 msgstr "आप अपने चार्ट को कैसे सहेजना चाहेंगे?"
 
@@ -912,7 +921,7 @@ msgstr "लॉग इन करें"
 msgid "Log Out"
 msgstr "लॉग आउट"
 
-#: src/components/FlowchartHeader.tsx:99
+#: src/components/FlowchartHeader.tsx:105
 msgid "Log in to Save"
 msgstr "सेव में लॉग इन करें"
 
@@ -961,7 +970,7 @@ msgstr "मेरा कुत्ता मेरा क्रेडिट क�
 msgid "Name Chart"
 msgstr "चार्ट का नाम"
 
-#: src/components/FlowchartHeader.tsx:226
+#: src/components/FlowchartHeader.tsx:231
 msgid "Name your chart"
 msgstr "अपने चार्ट को नाम दें"
 
@@ -1137,7 +1146,7 @@ msgstr "त्वरित टेम्पलेट्स"
 msgid "Rate limit exceeded. Please try again later."
 msgstr "रेट लिमिट पार हो गई है। कृपया बाद में पुनः प्रयास करें।"
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:50
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
@@ -1236,8 +1245,12 @@ msgstr "रोडमैप"
 msgid "Rotate Label"
 msgstr "लेबल को घुमाएँ"
 
-#: src/components/FlowchartHeader.tsx:117
-#: src/components/FlowchartHeader.tsx:142
+#: src/components/DownloadDropdown.tsx:80
+msgid "SVG Export is a Pro Feature"
+msgstr "SVG निर्यात एक प्रो सुविधा है"
+
+#: src/components/FlowchartHeader.tsx:123
+#: src/components/FlowchartHeader.tsx:147
 msgid "Save"
 msgstr "सहेजें"
 
@@ -1245,11 +1258,11 @@ msgstr "सहेजें"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "एआई और बोलने की सुविधा के साथ समय बचाएं, जो आसान डायग्राम बनाने को बनाता है।"
 
-#: src/components/FlowchartHeader.tsx:161
+#: src/components/FlowchartHeader.tsx:166
 msgid "Save to Cloud"
 msgstr "क्लौड में सेव करें"
 
-#: src/components/FlowchartHeader.tsx:178
+#: src/components/FlowchartHeader.tsx:183
 msgid "Save to File"
 msgstr "फाइल में सेव करें"
 
@@ -1610,6 +1623,10 @@ msgstr "अवैतनिक"
 msgid "Update Email"
 msgstr "ईमेल अपडेट करें"
 
+#: src/components/DownloadDropdown.tsx:81
+msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
+msgstr "अपने डायग्राम के लिए एसवीजी निर्यात और अधिक उन्नत सुविधाओं का आनंद लेने के लिए फ्लोचार्ट फन प्रो पर अपग्रेड करें।"
+
 #: src/components/Header.tsx:409
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
@@ -1646,7 +1663,7 @@ msgstr "नोड्स को समूहों में सम्मिल�
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons like \"Decisions:\"."
-msgstr "\ की तरह कोलन का उपयोग करें। "
+msgstr "\\ की तरह कोलन का उपयोग करें। "
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."

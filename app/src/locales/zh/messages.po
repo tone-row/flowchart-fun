@@ -313,6 +313,14 @@ msgstr "是否转换为托管图表？"
 msgid "Cookie Policy"
 msgstr "Cookie政策"
 
+#: src/components/DownloadDropdown.tsx:49
+msgid "Copied SVG code to clipboard"
+msgstr "将SVG代码复制到剪贴板"
+
+#: src/components/DownloadDropdown.tsx:67
+msgid "Copied {format} to clipboard"
+msgstr "将{format}复制到剪贴板"
+
 #: src/components/ShareDialog.tsx:277
 #: src/components/ShareDialog.tsx:280
 #: src/components/ShareDialog.tsx:394
@@ -444,6 +452,7 @@ msgstr "您要将其删除吗？"
 msgid "Document"
 msgstr "文档"
 
+#: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
 #: src/components/ShareDialog.tsx:617
 msgid "Download"
@@ -708,7 +717,7 @@ msgstr "主页"
 msgid "How are edges declared in this data?"
 msgstr "在这个数据中如何声明边缘？"
 
-#: src/components/FlowchartHeader.tsx:152
+#: src/components/FlowchartHeader.tsx:157
 msgid "How would you like to save your chart?"
 msgstr "您想如何保存您的流程图？"
 
@@ -912,7 +921,7 @@ msgstr "登录"
 msgid "Log Out"
 msgstr "登出"
 
-#: src/components/FlowchartHeader.tsx:99
+#: src/components/FlowchartHeader.tsx:105
 msgid "Log in to Save"
 msgstr "登录以保存"
 
@@ -961,7 +970,7 @@ msgstr "我的狗吃了我的信用卡！"
 msgid "Name Chart"
 msgstr "命名图表"
 
-#: src/components/FlowchartHeader.tsx:226
+#: src/components/FlowchartHeader.tsx:231
 msgid "Name your chart"
 msgstr "为您的流程图命名"
 
@@ -1137,7 +1146,7 @@ msgstr "快速模板"
 msgid "Rate limit exceeded. Please try again later."
 msgstr "速率限制超出。 请稍后再试。"
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:50
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "只读"
@@ -1236,8 +1245,12 @@ msgstr "路线图"
 msgid "Rotate Label"
 msgstr "旋转标签"
 
-#: src/components/FlowchartHeader.tsx:117
-#: src/components/FlowchartHeader.tsx:142
+#: src/components/DownloadDropdown.tsx:80
+msgid "SVG Export is a Pro Feature"
+msgstr "SVG导出是专业功能"
+
+#: src/components/FlowchartHeader.tsx:123
+#: src/components/FlowchartHeader.tsx:147
 msgid "Save"
 msgstr "救球"
 
@@ -1245,11 +1258,11 @@ msgstr "救球"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "使用人工智能和口述功能，节省时间，轻松创建图表。"
 
-#: src/components/FlowchartHeader.tsx:161
+#: src/components/FlowchartHeader.tsx:166
 msgid "Save to Cloud"
 msgstr "保存到云"
 
-#: src/components/FlowchartHeader.tsx:178
+#: src/components/FlowchartHeader.tsx:183
 msgid "Save to File"
 msgstr "保存到文件"
 
@@ -1610,6 +1623,10 @@ msgstr "未付"
 msgid "Update Email"
 msgstr "更新电子邮件"
 
+#: src/components/DownloadDropdown.tsx:81
+msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
+msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高级功能来创建您的图表。"
+
 #: src/components/Header.tsx:409
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
@@ -1646,7 +1663,7 @@ msgstr "使用类来分组节点"
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons like \"Decisions:\"."
-msgstr "使用冒号（：）表示\"
+msgstr "使用冒号（：）表示\\"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
