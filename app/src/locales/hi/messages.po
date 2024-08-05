@@ -49,6 +49,10 @@ msgstr "एआई अनुरोध सीमा प्राप्त हु�
 msgid "AI-Powered Flowchart Creation"
 msgstr "एआई-पावर्ड फ्लोचार्ट निर्माण"
 
+#: src/components/SandboxWarning.tsx:63
+msgid "AI-powered editing to supercharge your workflow"
+msgstr "एआई पावर्ड संपादन आपके वर्कफ्लो को तेज करने के लिए"
+
 #: src/components/Settings.tsx:92
 msgid "About"
 msgstr "के बारे में"
@@ -79,6 +83,10 @@ msgstr "उन्नत निर्यात विकल्प (PNG, JPG, SVG)
 #: src/components/GraphFloatingMenu.tsx:107
 msgid "Align Nodes"
 msgstr "नोड्स को संरेखित करें"
+
+#: src/components/SandboxWarning.tsx:74
+msgid "All this for just $4/month - less than your daily coffee ☕"
+msgstr "सिर्फ $4/महीने में यह सब - आपके दैनिक कॉफ़ी से कम ☕"
 
 #: src/pages/Account.tsx:278
 msgid "Amount"
@@ -300,6 +308,10 @@ msgstr "कंटेनर उन नोड्स हैं जो अन्य 
 msgid "Continue"
 msgstr "जारी रखें"
 
+#: src/components/SandboxWarning.tsx:102
+msgid "Continue in Sandbox (Resets daily, work not saved)"
+msgstr "सैंडबॉक्स में जारी रखें (दैनिक रूप से रीसेट होता है, काम सहेजा नहीं जाता)"
+
 #: src/components/AiToolbar.tsx:34
 #: src/components/ConvertOnPasteOverlay.tsx:107
 msgid "Convert"
@@ -421,6 +433,10 @@ msgstr "डार्क मोड"
 #: src/pages/Pricing2.tsx:73
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "डेटा आयात (विशियो, ल्यूसिडचार्ट, सीएसवी)"
+
+#: src/components/SandboxWarning.tsx:66
+msgid "Data import feature for complex diagrams"
+msgstr "जटिल आरेखों के लिए डेटा आयात सुविधा"
 
 #: src/pages/Account.tsx:275
 msgid "Date"
@@ -808,6 +824,10 @@ msgstr "क्या यह एक दस्तावेज़ है? क्य
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON कैनवास आपके द्वारा बनाई गई आपकी आरेख का एक JSON प्रतिनिधि है, जो <0>Obsidian</0> कैनवास और अन्य एप्लिकेशनों द्वारा उपयोग किया जाता है।"
 
+#: src/components/SandboxWarning.tsx:79
+msgid "Join 2000+ professionals who've upgraded their workflow"
+msgstr "अपने वर्कफ्लो को अपग्रेड कर चुके 2000+ पेशेवरों में शामिल हों"
+
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "चीजों को निजी रखें"
@@ -842,10 +862,6 @@ msgstr "और अधिक जानें"
 #: src/components/LearnSyntaxDialog.tsx:109
 msgid "Learn Syntax"
 msgstr "सिंटैक्स सीखें"
-
-#: src/components/SandboxWarning.tsx:71
-msgid "Learn about <0>Flowchart Fun Pro</0>"
-msgstr "<0>फ्लोचार्ट फन प्रो</0> के बारे में जानें"
 
 #: src/pages/Charts.tsx:247
 msgid "Learn about Flowchart Fun Pro"
@@ -909,6 +925,10 @@ msgstr "लोड लेआउट और शैलियां"
 #: src/pages/Pricing2.tsx:61
 msgid "Local File Support"
 msgstr "स्थानीय फ़ाइल समर्थन"
+
+#: src/components/SandboxWarning.tsx:69
+msgid "Local saving for offline access"
+msgstr "ऑफ़लाइन उपयोग के लिए स्थानीय सहेजना"
 
 #: src/components/GraphFloatingMenu.tsx:79
 #: src/components/GraphFloatingMenu.tsx:81
@@ -1510,13 +1530,13 @@ msgstr "इस क्रिया को पूर्ववत नहीं क�
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।"
 
-#: src/components/SandboxWarning.tsx:48
-msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
-msgstr "यह आपका सैंडबॉक्स है। यह प्रयोग करने के लिए एक बहुत अच्छा स्थान है, लेकिन <0>यह रोजाना रीसेट होता है</0>।"
-
 #: src/pages/New.tsx:304
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "आपके इनपुट की लंबाई के आधार पर, यह 30 सेकंड से 2 मिनट तक लग सकता है।"
+
+#: src/components/SandboxWarning.tsx:49
+msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
+msgstr "यह सैंडबॉक्स प्रयोग करने के लिए परफेक्ट है, लेकिन ध्यान रखें - यह दैनिक रूप से रीसेट होता है। अभी अपग्रेड करें और अपना वर्तमान काम रखें!"
 
 #: src/components/LoadTemplateDialog.tsx:166
 msgid "This will replace the current content."
@@ -1616,6 +1636,10 @@ msgstr "असीमित फ्लोचार्ट्स"
 msgid "Unlimited Permanent Flowcharts"
 msgstr "असीमित स्थायी प्रवाहगतीं "
 
+#: src/components/SandboxWarning.tsx:60
+msgid "Unlimited cloud-saved flowcharts"
+msgstr "असीमित क्लाउड-सहेजे फ्लोचार्ट्स"
+
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
 msgstr "अवैतनिक"
@@ -1624,9 +1648,17 @@ msgstr "अवैतनिक"
 msgid "Update Email"
 msgstr "ईमेल अपडेट करें"
 
+#: src/components/SandboxWarning.tsx:95
+msgid "Upgrade Now - Save My Work"
+msgstr "अपग्रेड करें अब - मेरा काम सहेजें"
+
 #: src/lib/usePromptStore.ts:103
 msgid "Upgrade for Unlimited AI"
 msgstr "असीमित एआई के लिए अपग्रेड करें"
+
+#: src/components/SandboxWarning.tsx:56
+msgid "Upgrade to Flowchart Fun Pro and unlock:"
+msgstr "फ्लोचार्ट फन प्रो पर अपग्रेड करें और अनलॉक करें:"
 
 #: src/components/DownloadDropdown.tsx:81
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
@@ -1775,10 +1807,6 @@ msgstr "आप अपने ग्राफ में {numNodes} नोड्स
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "<0>Flowchart Fun Pro</0> के साथ आप असीमित स्थायी फ्लोचार्ट बना सकते हैं।"
 
-#: src/components/SandboxWarning.tsx:54
-msgid "You can save unlimited flowcharts in the cloud or to your computer, as well as get access to features like AI Editing and Data Imports for less than the price of a cup of coffee."
-msgstr "आप बादल में असीमित फ्लोचार्ट सहेज सकते हैं या अपने कंप्यूटर पर, साथ ही कॉफी के कप की कीमत से कम कीमत पर एआई संपादन और डेटा आयात जैसी सुविधाओं तक पहुंच प्राप्त कर सकते हैं।"
-
 #: src/pages/LogIn.tsx:178
 msgid "You need to log in to access this page."
 msgstr "इस पृष्ठ तक पहुँचने के लिए आपको लॉग इन करना होगा।"
@@ -1795,13 +1823,13 @@ msgstr "आपने आज सभी नि: शुल्क एआई पर�
 msgid "Your Charts"
 msgstr "आपके चार्ट"
 
+#: src/components/SandboxWarning.tsx:46
+msgid "Your Creativity Deserves to be Saved"
+msgstr "आपकी रचनात्मकता को सहेजने का हकदार है।"
+
 #: src/pages/Charts.tsx:295
 msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."
 msgstr "आपका सैंडबॉक्स हमारी फ्लोचार्ट टूल के साथ निःशुल्क प्रयोग करने के लिए एक स्थान है, जो हर दिन एक नए शुरुआत के लिए रीसेट होता है।"
-
-#: src/components/SandboxWarning.tsx:45
-msgid "Your Work is Important"
-msgstr "आपका काम महत्वपूर्ण है"
 
 #: src/pages/Charts.tsx:264
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
