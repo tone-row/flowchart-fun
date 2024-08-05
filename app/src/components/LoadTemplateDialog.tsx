@@ -96,8 +96,9 @@ export function LoadTemplateDialog() {
         <EditorActionTextButton
           icon={PiShapesDuotone}
           data-session-activity="Load Template: Open Dialog"
+          iconClassName="fill-zinc-500"
         >
-          <Trans>Load Template</Trans>
+          <Trans>Examples</Trans>
         </EditorActionTextButton>
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -113,7 +114,7 @@ export function LoadTemplateDialog() {
               <PiShapesDuotone className="mr-2 translate-y-1" />
 
               <span className="mr-4">
-                <Trans>Templates</Trans>
+                <Trans>Examples</Trans>
               </span>
             </Dialog.Title>
             <RequestTemplate />

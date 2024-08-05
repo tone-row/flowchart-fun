@@ -113,7 +113,7 @@ msgstr "गुण"
 msgid "August 2023"
 msgstr "2023 अगस्त"
 
-#: src/components/LoadTemplateDialog.tsx:131
+#: src/components/LoadTemplateDialog.tsx:132
 msgid "Back"
 msgstr "वापस"
 
@@ -617,6 +617,11 @@ msgstr "नीचे अपना ईमेल पता दर्ज करे�
 msgid "Equal To"
 msgstr "बराबर"
 
+#: src/components/LoadTemplateDialog.tsx:101
+#: src/components/LoadTemplateDialog.tsx:117
+msgid "Examples"
+msgstr "उदाहरण"
+
 #: src/pages/New.tsx:236
 msgid "Examples:"
 msgstr "उदाहरण:"
@@ -889,7 +894,7 @@ msgstr "लाइट मोड"
 msgid "Link"
 msgstr "लिंक"
 
-#: src/components/LoadTemplateDialog.tsx:180
+#: src/components/LoadTemplateDialog.tsx:181
 msgid "Load"
 msgstr "लोड"
 
@@ -905,11 +910,7 @@ msgstr "फ़ाइल लोड करें"
 msgid "Load Files"
 msgstr "फ़ाइलें लोड करें"
 
-#: src/components/LoadTemplateDialog.tsx:100
-msgid "Load Template"
-msgstr "टेम्पलेट लोड करें"
-
-#: src/components/LoadTemplateDialog.tsx:152
+#: src/components/LoadTemplateDialog.tsx:153
 msgid "Load default content"
 msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 
@@ -917,7 +918,7 @@ msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 msgid "Load from link?"
 msgstr "लिंक से लोड करें?"
 
-#: src/components/LoadTemplateDialog.tsx:149
+#: src/components/LoadTemplateDialog.tsx:150
 msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
 
@@ -967,10 +968,6 @@ msgstr "बिलिंग प्रबंधित करें"
 #: src/components/ImportDataDialog.tsx:380
 msgid "Map Data"
 msgstr "डेटा मैप"
-
-#: src/components/RequestTemplate.tsx:13
-msgid "Missing a template? Suggest one here!"
-msgstr "कोई टेम्पलेट गायब है? यहाँ एक सुझाव दें!"
 
 #: src/lib/getDefaultText.ts:5
 msgid "Modify text to see it transform into a flowchart on the right."
@@ -1436,10 +1433,6 @@ msgstr "लक्ष्य डेलीमीटर"
 msgid "Target Distance From Node"
 msgstr "नोड से लक्ष्य दूरी"
 
-#: src/components/LoadTemplateDialog.tsx:116
-msgid "Templates"
-msgstr "टेम्पलेट्स"
-
 #: src/components/Tabs/ThemeTab.tsx:226
 #: src/components/Tabs/ThemeTab.tsx:228
 msgid "Text Color"
@@ -1538,7 +1531,7 @@ msgstr "आपके इनपुट की लंबाई के आधार 
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "यह सैंडबॉक्स प्रयोग करने के लिए परफेक्ट है, लेकिन ध्यान रखें - यह दैनिक रूप से रीसेट होता है। अभी अपग्रेड करें और अपना वर्तमान काम रखें!"
 
-#: src/components/LoadTemplateDialog.tsx:166
+#: src/components/LoadTemplateDialog.tsx:167
 msgid "This will replace the current content."
 msgstr "यह वर्तमान सामग्री को बदल देगा।"
 
@@ -1790,6 +1783,10 @@ msgstr "प्रो संस्करण के साथ आप स्था�
 #: src/components/ImportDataDialog.tsx:695
 msgid "Would you like to continue?"
 msgstr "क्या आप जारी रखना चाहते हैं?"
+
+#: src/components/RequestTemplate.tsx:13
+msgid "Would you like to suggest a new example?"
+msgstr "क्या आप एक नया उदाहरण सुझाना चाहेंगे?"
 
 #: src/components/EditWithAI.tsx:216
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."

@@ -10,7 +10,7 @@ export function RequestTemplate() {
       className="text-[14px] font-normal opacity-50 hover:opacity-1000"
       data-session-activity="Request Template"
     >
-      <Trans>Missing a template? Suggest one here!</Trans>
+      <Trans>Would you like to suggest a new example?</Trans>
     </Link>
   );
 }
