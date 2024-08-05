@@ -84,7 +84,7 @@ export function SandboxWarning() {
             color="purple"
             size="sm"
             className="mt-3"
-            data-testid="sandbox-warning-upgrade"
+            data-testid="sandbox-warning-learn-more"
             data-to-pricing="Sandbox Warning"
             data-session-activity="SandboxWarning/upgrade"
             onClick={() => {
