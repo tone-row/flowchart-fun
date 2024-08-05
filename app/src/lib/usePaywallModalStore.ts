@@ -10,6 +10,7 @@ type PaywallModalStore = {
    * This is a unique code that will be used to track the user's journey
    */
   toPricingCode: string;
+  buttonText?: string; // New field
 };
 
 export const usePaywallModalStore = create<PaywallModalStore>((_set) => ({
@@ -17,6 +18,7 @@ export const usePaywallModalStore = create<PaywallModalStore>((_set) => ({
   title: "",
   content: "",
   toPricingCode: "Unknown",
+  buttonText: "Learn More", // Default value
 }));
 
 const paywallImageUrl = "/images/paywall.png";
@@ -32,6 +34,7 @@ export function showPaywall({
   movieUrl,
   imgUrl = paywallImageUrl,
   toPricingCode,
+  buttonText = "Learn More", // New parameter with default value
 }: Omit<PaywallModalStore, "open">) {
   // If there is no movie URL, we will preload the image
   if (!movieUrl) {
@@ -51,6 +54,7 @@ export function showPaywall({
       movieUrl,
       imgUrl,
       toPricingCode,
+      buttonText, // Include buttonText in setState
     });
   }
 }

@@ -14,6 +14,7 @@ export function PaywallModal() {
   const movieUrl = usePaywallModalStore((s) => s.movieUrl);
   const imgUrl = usePaywallModalStore((s) => s.imgUrl);
   const toPricingCode = usePaywallModalStore((s) => s.toPricingCode);
+  const buttonText = usePaywallModalStore((s) => s.buttonText);
   return (
     <Dialog.Root
       modal
@@ -66,7 +67,7 @@ export function PaywallModal() {
                     navigate("/pricing");
                   }}
                 >
-                  <Trans>Learn More</Trans>
+                  <Trans>{buttonText}</Trans>
                 </Button2>
               </Dialog.Close>
             </div>

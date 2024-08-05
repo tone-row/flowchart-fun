@@ -96,10 +96,11 @@ export function useRunAiWithStore() {
       if (!hasProAccess && error.message === RATE_LIMIT_EXCEEDED) {
         // Show paywall
         showPaywall({
-          title: t`Transform text into diagrams instantly`,
-          content: t`Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste.`,
-          imgUrl: "/images/ai-convert.png",
+          title: t`AI Request Limit Reached`,
+          content: t`You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!`,
+          movieUrl: "/images/ai-convert.mp4",
           toPricingCode: "ConvertToFlowchart",
+          buttonText: t`Upgrade for Unlimited AI`,
         });
       } else {
         if (error.message === RATE_LIMIT_EXCEEDED) {
