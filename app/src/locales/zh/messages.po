@@ -41,6 +41,10 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 msgid "AI Creation & Editing"
 msgstr "AI创建与编辑"
 
+#: src/lib/usePromptStore.ts:99
+msgid "AI Request Limit Reached"
+msgstr "AI请求限制已达到"
+
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI驱动的流程图创建"
@@ -831,7 +835,6 @@ msgid "Leading References"
 msgstr "主要參考"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:68
-#: src/components/PaywallModal.tsx:69
 msgid "Learn More"
 msgstr "学到更多"
 
@@ -1142,7 +1145,7 @@ msgid "Rapid Templates"
 msgstr "快速模板"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:106
+#: src/lib/usePromptStore.ts:107
 msgid "Rate limit exceeded. Please try again later."
 msgstr "速率限制超出。 请稍后再试。"
 
@@ -1557,7 +1560,6 @@ msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "秒转换您的想法成专业图表"
 
 #: src/components/ConvertToFlowchart.tsx:32
-#: src/lib/usePromptStore.ts:99
 msgid "Transform text into diagrams instantly"
 msgstr "即时将文本转换为图表"
 
@@ -1582,7 +1584,6 @@ msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
 #: src/components/ConvertToFlowchart.tsx:33
-#: src/lib/usePromptStore.ts:100
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
 
@@ -1622,6 +1623,10 @@ msgstr "未付"
 #: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "更新电子邮件"
+
+#: src/lib/usePromptStore.ts:103
+msgid "Upgrade for Unlimited AI"
+msgstr "升级获取无限AI功能"
 
 #: src/components/DownloadDropdown.tsx:81
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
@@ -1782,6 +1787,10 @@ msgstr "您需要登录才能访问此页面。"
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "您已经是专业用户。 <0>管理订阅</0><1/>有问题或功能请求？ <2>告诉我们</2>"
 
+#: src/lib/usePromptStore.ts:100
+msgid "You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
+msgstr "您已经使用完了今天的所有免费AI转换。升级至专业版，享受无限AI使用、自定义主题、私密共享等功能。继续轻松创建精彩的流程图！"
+
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "您的图表"
@@ -1823,3 +1832,7 @@ msgstr "或"
 #: src/components/Checkout.tsx:176
 msgid "{0}"
 msgstr "{0}"
+
+#: src/components/PaywallModal.tsx:70
+msgid "{buttonText}"
+msgstr "{buttonText}"

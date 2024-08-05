@@ -41,6 +41,10 @@ msgstr "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면
 msgid "AI Creation & Editing"
 msgstr "AI 생성 및 편집"
 
+#: src/lib/usePromptStore.ts:99
+msgid "AI Request Limit Reached"
+msgstr "AI 요청 제한에 도달했습니다."
+
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "인공지능 기반 플로우차트 생성"
@@ -831,7 +835,6 @@ msgid "Leading References"
 msgstr "주목할만한 참고"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:68
-#: src/components/PaywallModal.tsx:69
 msgid "Learn More"
 msgstr "더 알아보기"
 
@@ -1142,7 +1145,7 @@ msgid "Rapid Templates"
 msgstr "급변화 템플릿"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:106
+#: src/lib/usePromptStore.ts:107
 msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
 
@@ -1557,7 +1560,6 @@ msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 
 #: src/components/ConvertToFlowchart.tsx:32
-#: src/lib/usePromptStore.ts:99
 msgid "Transform text into diagrams instantly"
 msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
 
@@ -1582,7 +1584,6 @@ msgid "Two nodes have the same ID"
 msgstr "두 개의 노드가 같은 ID를 가지고 있습니다"
 
 #: src/components/ConvertToFlowchart.tsx:33
-#: src/lib/usePromptStore.ts:100
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "이런, 무료 요청이 모두 소진되었습니다! 무제한 다이어그램 변환을 위해 Flowchart Fun Pro로 업그레이드하고 텍스트를 복사하여 쉽게 명확한 시각적 흐름도로 변환하세요."
 
@@ -1622,6 +1623,10 @@ msgstr "미납"
 #: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "이메일 업데이트"
+
+#: src/lib/usePromptStore.ts:103
+msgid "Upgrade for Unlimited AI"
+msgstr "무제한 AI 업그레이드"
 
 #: src/components/DownloadDropdown.tsx:81
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
@@ -1782,6 +1787,10 @@ msgstr "페이지에 접근하려면 로그인해야합니다."
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "이미 프로 사용자입니다. <0>구독 관리</0><1/>질문이나 기능 요청이 있으신가요? <2>문의하기</2>"
 
+#: src/lib/usePromptStore.ts:100
+msgid "You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
+msgstr "오늘 무료 AI 변환을 모두 사용하셨습니다. 무제한 AI 사용, 사용자 정의 테마, 개인 공유 등을 위해 Pro로 업그레이드하세요. 쉽게 멋진 플로우차트를 만들어보세요!"
+
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "당신의 차트"
@@ -1823,3 +1832,7 @@ msgstr "또는"
 #: src/components/Checkout.tsx:176
 msgid "{0}"
 msgstr "{0}"
+
+#: src/components/PaywallModal.tsx:70
+msgid "{buttonText}"
+msgstr "{buttonText}"

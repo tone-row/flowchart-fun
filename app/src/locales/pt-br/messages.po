@@ -41,6 +41,10 @@ msgstr "Uma nova versão do aplicativo está disponível. Por favor, recarregue 
 msgid "AI Creation & Editing"
 msgstr "Criação e Edição de IA"
 
+#: src/lib/usePromptStore.ts:99
+msgid "AI Request Limit Reached"
+msgstr "Limite de solicitação de IA atingido"
+
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "Criação de fluxogramas com Inteligência Artificial"
@@ -831,7 +835,6 @@ msgid "Leading References"
 msgstr "Principais Referências"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:68
-#: src/components/PaywallModal.tsx:69
 msgid "Learn More"
 msgstr "Saber mais"
 
@@ -1142,7 +1145,7 @@ msgid "Rapid Templates"
 msgstr "Modelos Rápidos"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:106
+#: src/lib/usePromptStore.ts:107
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Limite de taxa excedido. Por favor, tente novamente mais tarde."
 
@@ -1557,7 +1560,6 @@ msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "Transforme Suas Ideias em Diagramas Profissionais em Segundos"
 
 #: src/components/ConvertToFlowchart.tsx:32
-#: src/lib/usePromptStore.ts:99
 msgid "Transform text into diagrams instantly"
 msgstr "Transforme texto em diagramas instantaneamente."
 
@@ -1582,7 +1584,6 @@ msgid "Two nodes have the same ID"
 msgstr "Dois nós têm o mesmo ID"
 
 #: src/components/ConvertToFlowchart.tsx:33
-#: src/lib/usePromptStore.ts:100
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "Ops, você esgotou suas solicitações gratuitas! Atualize para o Flowchart Fun Pro e tenha conversões ilimitadas de diagramas, e continue transformando textos em fluxogramas claros e visuais com a mesma facilidade de copiar e colar."
 
@@ -1622,6 +1623,10 @@ msgstr "Não pago"
 #: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "Atualizar e-mail"
+
+#: src/lib/usePromptStore.ts:103
+msgid "Upgrade for Unlimited AI"
+msgstr "Atualize para IA ilimitada"
 
 #: src/components/DownloadDropdown.tsx:81
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
@@ -1782,6 +1787,10 @@ msgstr "Você precisa fazer login para acessar esta página."
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "Você já é um usuário Pro. <0>Gerenciar Assinatura</0><1/>Tem perguntas ou solicitações de recursos? <2>Deixe-nos saber</2>"
 
+#: src/lib/usePromptStore.ts:100
+msgid "You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
+msgstr "Você usou todas as conversões de IA gratuitas para hoje. Atualize para o Pro para uso ilimitado de IA, temas personalizados, compartilhamento privado e muito mais. Continue criando fluxogramas incríveis sem esforço!"
+
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "Seus Gráficos"
@@ -1823,3 +1832,7 @@ msgstr "ou"
 #: src/components/Checkout.tsx:176
 msgid "{0}"
 msgstr "{0}"
+
+#: src/components/PaywallModal.tsx:70
+msgid "{buttonText}"
+msgstr "{buttonText}"
