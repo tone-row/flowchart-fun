@@ -113,7 +113,7 @@ msgstr "Attributs"
 msgid "August 2023"
 msgstr "Août 2023"
 
-#: src/components/LoadTemplateDialog.tsx:131
+#: src/components/LoadTemplateDialog.tsx:132
 msgid "Back"
 msgstr "Retour"
 
@@ -617,6 +617,11 @@ msgstr "Entrez votre adresse e-mail ci-dessous et nous vous enverrons un lien po
 msgid "Equal To"
 msgstr "Égal à"
 
+#: src/components/LoadTemplateDialog.tsx:101
+#: src/components/LoadTemplateDialog.tsx:117
+msgid "Examples"
+msgstr "Exemples"
+
 #: src/pages/New.tsx:236
 msgid "Examples:"
 msgstr "Exemples :"
@@ -889,7 +894,7 @@ msgstr "Mode lumineux"
 msgid "Link"
 msgstr "Lien"
 
-#: src/components/LoadTemplateDialog.tsx:180
+#: src/components/LoadTemplateDialog.tsx:181
 msgid "Load"
 msgstr "Charger"
 
@@ -905,11 +910,7 @@ msgstr "Charger le fichier"
 msgid "Load Files"
 msgstr "Charger des fichiers"
 
-#: src/components/LoadTemplateDialog.tsx:100
-msgid "Load Template"
-msgstr "Charger le modèle"
-
-#: src/components/LoadTemplateDialog.tsx:152
+#: src/components/LoadTemplateDialog.tsx:153
 msgid "Load default content"
 msgstr "Charger le contenu par défaut"
 
@@ -917,7 +918,7 @@ msgstr "Charger le contenu par défaut"
 msgid "Load from link?"
 msgstr "Charger à partir du lien?"
 
-#: src/components/LoadTemplateDialog.tsx:149
+#: src/components/LoadTemplateDialog.tsx:150
 msgid "Load layout and styles"
 msgstr "Charger la mise en page et les styles"
 
@@ -967,10 +968,6 @@ msgstr "Gérer la facturation"
 #: src/components/ImportDataDialog.tsx:380
 msgid "Map Data"
 msgstr "Cartographier les données"
-
-#: src/components/RequestTemplate.tsx:13
-msgid "Missing a template? Suggest one here!"
-msgstr "Un modèle manquant ? Proposez-en un ici !"
 
 #: src/lib/getDefaultText.ts:5
 msgid "Modify text to see it transform into a flowchart on the right."
@@ -1436,10 +1433,6 @@ msgstr "Délimiteur cible"
 msgid "Target Distance From Node"
 msgstr "Distance cible du nœud"
 
-#: src/components/LoadTemplateDialog.tsx:116
-msgid "Templates"
-msgstr "Modèles"
-
 #: src/components/Tabs/ThemeTab.tsx:226
 #: src/components/Tabs/ThemeTab.tsx:228
 msgid "Text Color"
@@ -1538,7 +1531,7 @@ msgstr "Cela peut prendre entre 30 secondes et 2 minutes en fonction de la longu
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "Ce bac à sable est parfait pour expérimenter, mais n'oubliez pas - il se réinitialise quotidiennement. Mettez à niveau maintenant et conservez votre travail actuel!"
 
-#: src/components/LoadTemplateDialog.tsx:166
+#: src/components/LoadTemplateDialog.tsx:167
 msgid "This will replace the current content."
 msgstr "Cela remplacera le contenu actuel."
 
@@ -1790,6 +1783,10 @@ msgstr "Avec la version pro, vous pouvez enregistrer et charger des fichiers loc
 #: src/components/ImportDataDialog.tsx:695
 msgid "Would you like to continue?"
 msgstr "Voulez-vous continuer ?"
+
+#: src/components/RequestTemplate.tsx:13
+msgid "Would you like to suggest a new example?"
+msgstr "Souhaitez-vous suggérer un nouvel exemple ?"
 
 #: src/components/EditWithAI.tsx:216
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
