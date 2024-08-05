@@ -49,6 +49,10 @@ msgstr "Limite de demande d'IA atteinte"
 msgid "AI-Powered Flowchart Creation"
 msgstr "Création de diagrammes de flux alimentés par l'IA"
 
+#: src/components/SandboxWarning.tsx:63
+msgid "AI-powered editing to supercharge your workflow"
+msgstr "Édition alimentée par l'IA pour booster votre flux de travail"
+
 #: src/components/Settings.tsx:92
 msgid "About"
 msgstr "À propos"
@@ -79,6 +83,10 @@ msgstr "Options d'exportation avancées (PNG, JPG, SVG)"
 #: src/components/GraphFloatingMenu.tsx:107
 msgid "Align Nodes"
 msgstr "Aligner les nœuds"
+
+#: src/components/SandboxWarning.tsx:74
+msgid "All this for just $4/month - less than your daily coffee ☕"
+msgstr "Tout cela pour seulement 4 $ par mois - moins que votre café quotidien ☕"
 
 #: src/pages/Account.tsx:278
 msgid "Amount"
@@ -300,6 +308,10 @@ msgstr "Les conteneurs sont des nœuds qui contiennent d'autres nœuds. Ils sont
 msgid "Continue"
 msgstr "Continuer"
 
+#: src/components/SandboxWarning.tsx:102
+msgid "Continue in Sandbox (Resets daily, work not saved)"
+msgstr "Continuer dans le bac à sable (Réinitialisé quotidiennement, travail non sauvegardé)"
+
 #: src/components/AiToolbar.tsx:34
 #: src/components/ConvertOnPasteOverlay.tsx:107
 msgid "Convert"
@@ -421,6 +433,10 @@ msgstr "Mode sombre"
 #: src/pages/Pricing2.tsx:73
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "Importation de données (Visio, Lucidchart, CSV)"
+
+#: src/components/SandboxWarning.tsx:66
+msgid "Data import feature for complex diagrams"
+msgstr "Fonction d'importation de données pour des diagrammes complexes"
 
 #: src/pages/Account.tsx:275
 msgid "Date"
@@ -808,6 +824,10 @@ msgstr "Est-ce un document ? Souhaitez-vous le convertir en organigramme ?"
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON Canvas est une représentation JSON de votre diagramme utilisée par <0>Obsidian</0> Canvas et d'autres applications."
 
+#: src/components/SandboxWarning.tsx:79
+msgid "Join 2000+ professionals who've upgraded their workflow"
+msgstr "Rejoignez plus de 2000 professionnels qui ont amélioré leur flux de travail"
+
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "Garder les choses privées"
@@ -842,10 +862,6 @@ msgstr "En savoir plus"
 #: src/components/LearnSyntaxDialog.tsx:109
 msgid "Learn Syntax"
 msgstr "Apprendre la syntaxe"
-
-#: src/components/SandboxWarning.tsx:71
-msgid "Learn about <0>Flowchart Fun Pro</0>"
-msgstr "Apprenez à connaître <0>Flowchart Fun Pro</0>"
 
 #: src/pages/Charts.tsx:247
 msgid "Learn about Flowchart Fun Pro"
@@ -909,6 +925,10 @@ msgstr "Charger la mise en page et les styles"
 #: src/pages/Pricing2.tsx:61
 msgid "Local File Support"
 msgstr "Support de fichier local"
+
+#: src/components/SandboxWarning.tsx:69
+msgid "Local saving for offline access"
+msgstr "Enregistrement local pour un accès hors ligne"
 
 #: src/components/GraphFloatingMenu.tsx:79
 #: src/components/GraphFloatingMenu.tsx:81
@@ -1510,13 +1530,13 @@ msgstr "Cette action ne peut pas être annulée."
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "Cette fonctionnalité est uniquement disponible pour les utilisateurs pro. <0>Devenez un utilisateur pro</0> pour la débloquer."
 
-#: src/components/SandboxWarning.tsx:48
-msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
-msgstr "Ceci est votre bac à sable. C'est un endroit idéal pour expérimenter, mais <0>il se réinitialise quotidiennement</0>."
-
 #: src/pages/New.tsx:304
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "Cela peut prendre entre 30 secondes et 2 minutes en fonction de la longueur de votre entrée."
+
+#: src/components/SandboxWarning.tsx:49
+msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
+msgstr "Ce bac à sable est parfait pour expérimenter, mais n'oubliez pas - il se réinitialise quotidiennement. Mettez à niveau maintenant et conservez votre travail actuel!"
 
 #: src/components/LoadTemplateDialog.tsx:166
 msgid "This will replace the current content."
@@ -1616,6 +1636,10 @@ msgstr "Flowcharts illimités"
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Flux de diagrammes permanents illimités"
 
+#: src/components/SandboxWarning.tsx:60
+msgid "Unlimited cloud-saved flowcharts"
+msgstr "Des organigrammes sauvegardés dans le cloud en illimité"
+
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
 msgstr "Impayé"
@@ -1624,9 +1648,17 @@ msgstr "Impayé"
 msgid "Update Email"
 msgstr "Mettre à jour l'e-mail"
 
+#: src/components/SandboxWarning.tsx:95
+msgid "Upgrade Now - Save My Work"
+msgstr "Mettre à niveau maintenant - Sauvegarder mon travail"
+
 #: src/lib/usePromptStore.ts:103
 msgid "Upgrade for Unlimited AI"
 msgstr "Mise à niveau pour une IA illimitée"
+
+#: src/components/SandboxWarning.tsx:56
+msgid "Upgrade to Flowchart Fun Pro and unlock:"
+msgstr "Passez à Flowchart Fun Pro et débloquez:"
 
 #: src/components/DownloadDropdown.tsx:81
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
@@ -1775,10 +1807,6 @@ msgstr "Vous êtes sur le point d'ajouter {numNodes} nœuds et {numEdges} arête
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "Vous pouvez créer des diagrammes de flux illimités et permanents avec <0>Flowchart Fun Pro</0>."
 
-#: src/components/SandboxWarning.tsx:54
-msgid "You can save unlimited flowcharts in the cloud or to your computer, as well as get access to features like AI Editing and Data Imports for less than the price of a cup of coffee."
-msgstr "Vous pouvez enregistrer un nombre illimité de diagrammes de flux dans le cloud ou sur votre ordinateur, ainsi que bénéficier de fonctionnalités telles que l'édition AI et les imports de données pour moins que le prix d'une tasse de café."
-
 #: src/pages/LogIn.tsx:178
 msgid "You need to log in to access this page."
 msgstr "Vous devez vous connecter pour accéder à cette page."
@@ -1795,13 +1823,13 @@ msgstr "Vous avez utilisé toutes les conversions d'IA gratuites pour aujourd'hu
 msgid "Your Charts"
 msgstr "Vos diagrammes"
 
+#: src/components/SandboxWarning.tsx:46
+msgid "Your Creativity Deserves to be Saved"
+msgstr "Votre créativité mérite d'être sauvegardée"
+
 #: src/pages/Charts.tsx:295
 msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."
 msgstr "Votre bac à sable est un espace pour expérimenter librement avec nos outils de diagramme, se réinitialisant chaque jour pour un nouveau départ."
-
-#: src/components/SandboxWarning.tsx:45
-msgid "Your Work is Important"
-msgstr "Votre travail est important."
 
 #: src/pages/Charts.tsx:264
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."

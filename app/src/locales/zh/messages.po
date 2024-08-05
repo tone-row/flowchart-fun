@@ -49,6 +49,10 @@ msgstr "AI请求限制已达到"
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI驱动的流程图创建"
 
+#: src/components/SandboxWarning.tsx:63
+msgid "AI-powered editing to supercharge your workflow"
+msgstr "AI动力编辑，让您的工作流程更加高效"
+
 #: src/components/Settings.tsx:92
 msgid "About"
 msgstr "关于"
@@ -79,6 +83,10 @@ msgstr "高级导出选项（PNG，JPG，SVG）"
 #: src/components/GraphFloatingMenu.tsx:107
 msgid "Align Nodes"
 msgstr "对齐节点"
+
+#: src/components/SandboxWarning.tsx:74
+msgid "All this for just $4/month - less than your daily coffee ☕"
+msgstr "所有这些仅需每月4美元 - 不到您每天的咖啡☕"
 
 #: src/pages/Account.tsx:278
 msgid "Amount"
@@ -300,6 +308,10 @@ msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 msgid "Continue"
 msgstr "继续"
 
+#: src/components/SandboxWarning.tsx:102
+msgid "Continue in Sandbox (Resets daily, work not saved)"
+msgstr "继续使用沙盒（每天重置，工作不会被保存）"
+
 #: src/components/AiToolbar.tsx:34
 #: src/components/ConvertOnPasteOverlay.tsx:107
 msgid "Convert"
@@ -421,6 +433,10 @@ msgstr "深色模式"
 #: src/pages/Pricing2.tsx:73
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "数据导入（Visio，Lucidchart，CSV）"
+
+#: src/components/SandboxWarning.tsx:66
+msgid "Data import feature for complex diagrams"
+msgstr "数据导入功能，适用于复杂的图表"
 
 #: src/pages/Account.tsx:275
 msgid "Date"
@@ -808,6 +824,10 @@ msgstr "这是一个文档吗？您想将其转换为流程图吗？"
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON画布是您的图表的JSON表示，由<0>Obsidian</0> Canvas和其他应用程序使用。"
 
+#: src/components/SandboxWarning.tsx:79
+msgid "Join 2000+ professionals who've upgraded their workflow"
+msgstr "加入2000多位专业人士，升级他们的工作流程"
+
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "保持事物私密"
@@ -842,10 +862,6 @@ msgstr "学到更多"
 #: src/components/LearnSyntaxDialog.tsx:109
 msgid "Learn Syntax"
 msgstr "學習語法"
-
-#: src/components/SandboxWarning.tsx:71
-msgid "Learn about <0>Flowchart Fun Pro</0>"
-msgstr "了解<0>流程图乐趣专业版</0>"
 
 #: src/pages/Charts.tsx:247
 msgid "Learn about Flowchart Fun Pro"
@@ -909,6 +925,10 @@ msgstr "載入版面和樣式"
 #: src/pages/Pricing2.tsx:61
 msgid "Local File Support"
 msgstr "本地文件支持"
+
+#: src/components/SandboxWarning.tsx:69
+msgid "Local saving for offline access"
+msgstr "本地保存，实现离线访问"
 
 #: src/components/GraphFloatingMenu.tsx:79
 #: src/components/GraphFloatingMenu.tsx:81
@@ -1510,13 +1530,13 @@ msgstr "此操作无法撤销。"
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。"
 
-#: src/components/SandboxWarning.tsx:48
-msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
-msgstr "这是你的沙盒。这是一个很好的实验场所，但<0>它每天都会重置</0>。"
-
 #: src/pages/New.tsx:304
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "这可能需要30秒到2分钟的时间，取决于您输入的长度。"
+
+#: src/components/SandboxWarning.tsx:49
+msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
+msgstr "这个沙盒非常适合实验，但请记住 - 它每天都会重置。立即升级，保留您当前的工作！"
 
 #: src/components/LoadTemplateDialog.tsx:166
 msgid "This will replace the current content."
@@ -1616,6 +1636,10 @@ msgstr "无限制的流程图"
 msgid "Unlimited Permanent Flowcharts"
 msgstr "无限永久流程图"
 
+#: src/components/SandboxWarning.tsx:60
+msgid "Unlimited cloud-saved flowcharts"
+msgstr "无限云端保存的流程图"
+
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
 msgstr "未付"
@@ -1624,9 +1648,17 @@ msgstr "未付"
 msgid "Update Email"
 msgstr "更新电子邮件"
 
+#: src/components/SandboxWarning.tsx:95
+msgid "Upgrade Now - Save My Work"
+msgstr "立即升级 - 保存我的工作"
+
 #: src/lib/usePromptStore.ts:103
 msgid "Upgrade for Unlimited AI"
 msgstr "升级获取无限AI功能"
+
+#: src/components/SandboxWarning.tsx:56
+msgid "Upgrade to Flowchart Fun Pro and unlock:"
+msgstr "升级到Flowchart Fun Pro并解锁："
 
 #: src/components/DownloadDropdown.tsx:81
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
@@ -1775,10 +1807,6 @@ msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "你可以使用<0>Flowchart Fun Pro</0>创建无限的永久流程图。"
 
-#: src/components/SandboxWarning.tsx:54
-msgid "You can save unlimited flowcharts in the cloud or to your computer, as well as get access to features like AI Editing and Data Imports for less than the price of a cup of coffee."
-msgstr "你可以在云端或电脑上保存无限数量的流程图，还可以以比一杯咖啡更低的价格获得AI编辑和数据导入等功能。"
-
 #: src/pages/LogIn.tsx:178
 msgid "You need to log in to access this page."
 msgstr "您需要登录才能访问此页面。"
@@ -1795,13 +1823,13 @@ msgstr "您已经使用完了今天的所有免费AI转换。升级至专业版�
 msgid "Your Charts"
 msgstr "您的图表"
 
+#: src/components/SandboxWarning.tsx:46
+msgid "Your Creativity Deserves to be Saved"
+msgstr "您的创造力值得被保存"
+
 #: src/pages/Charts.tsx:295
 msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."
 msgstr "你的沙盒是一个可以自由尝试我们的流程图工具的空间，每天都会重置，以便于重新开始。"
-
-#: src/components/SandboxWarning.tsx:45
-msgid "Your Work is Important"
-msgstr "你的工作很重要。"
 
 #: src/pages/Charts.tsx:264
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
