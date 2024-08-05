@@ -8,7 +8,7 @@ import { CloneButton } from "./CloneButton";
 import styles from "./FlowchartHeader.module.css";
 import { RenameButton } from "./RenameButton";
 import ShareDialog from "./ShareDialog";
-import { Cloud, FloppyDisk, Export, File } from "phosphor-react";
+import { Cloud, FloppyDisk, File, Share, DownloadSimple } from "phosphor-react";
 import classNames from "classnames";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -21,6 +21,7 @@ import {
 import { useMutation } from "react-query";
 import { makeChart } from "../lib/queries";
 import { saveAs } from "file-saver";
+import { DownloadDropdown } from "./DownloadDropdown";
 
 export function FlowchartHeader() {
   const title = useDocDetails("title", "flowchart.fun");
@@ -43,7 +44,7 @@ export function FlowchartHeader() {
           <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
         </RenameButton>
       )}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 p-1 border-2 border-neutral-300 dark:border-neutral-700 rounded-xl">
         {isReadOnly && (
           <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
             <Trans>Read-only</Trans>
@@ -55,9 +56,8 @@ export function FlowchartHeader() {
             {isSandbox ? <SaveButton /> : null}
             <ShareDialog>
               <Button2
-                color="blue"
                 onClick={() => setShareModal(true)}
-                leftIcon={<Export weight="bold" className="w-5 h-5" />}
+                leftIcon={<Share weight="bold" className="w-5 h-5" />}
                 aria-label="Export"
                 data-session-activity="Share Chart"
               >
@@ -66,6 +66,13 @@ export function FlowchartHeader() {
             </ShareDialog>
           </>
         ) : null}
+        <DownloadDropdown>
+          <Button2
+            leftIcon={<DownloadSimple weight="bold" className="w-5 h-5" />}
+          >
+            <Trans>Download</Trans>
+          </Button2>
+        </DownloadDropdown>
       </div>
     </header>
   );
@@ -90,7 +97,6 @@ function LogInToSaveButton() {
   return (
     <Button2
       leftIcon={<FloppyDisk weight="bold" className="w-5 h-5" />}
-      color="default"
       data-session-activity="Save Chart: Log in"
       onClick={() => {
         navigate("/l");
@@ -133,7 +139,6 @@ function CanSaveButton() {
       <Dialog.Trigger asChild>
         <Button2
           leftIcon={<FloppyDisk weight="bold" className="w-5 h-5" />}
-          color="zinc"
           data-session-activity="Save Chart"
           onClick={() => {
             setOpen(true);
@@ -234,7 +239,6 @@ function SaveForm() {
         />
       </label>
       <Button2
-        color="blue"
         leftIcon={<FloppyDisk className="w-5 h-5" />}
         isLoading={createChartMutation.isLoading}
       >

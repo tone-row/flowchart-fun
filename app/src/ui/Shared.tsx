@@ -139,7 +139,7 @@ const button2Classes =
   "group relative rounded-md active:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed";
 const button2Colors = {
   default:
-    "bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 disabled:hover:bg-neutral-200 disabled:hover:text-neutral-700 dark:disabled:hover:bg-neutral-800 dark:disabled:hover:text-neutral-300",
+    "bg-neutral-300 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-400 dark:hover:bg-neutral-700 disabled:hover:bg-neutral-200 disabled:hover:text-neutral-700 dark:disabled:hover:bg-neutral-800 dark:disabled:hover:text-neutral-300",
   blue: "bg-blue-500 text-white hover:bg-blue-600 disabled:hover:bg-blue-500 disabled:hover:text-white",
   orange:
     "bg-orange-500 text-white hover:bg-orange-600 disabled:hover:bg-orange-500 disabled:hover:text-white",
@@ -155,7 +155,7 @@ const button2Colors = {
 
 const pSize = {
   xs: "p-2 text-[12px]",
-  sm: "p-2 py-3 text-sm",
+  sm: "p-2 py-2.5 text-sm",
   md: "p-4 text-sm",
   lg: "p-5 text-base",
 };
@@ -164,7 +164,7 @@ const pxButtonSize = {
   xs: (left: boolean, right: boolean) =>
     `${left ? "pl-2" : "pl-3"} ${right ? "pr-2" : "pr-3"}`,
   sm: (left: boolean, right: boolean) =>
-    `${left ? "pl-4" : "pl-5"} ${right ? "pr-4" : "pr-5"}`, // only the default size has a min-width
+    `${left ? "pl-2" : "pl-3"} ${right ? "pr-2" : "pr-3"}`, // only the default size has a min-width
   md: (left: boolean, right: boolean) =>
     `${left ? "pl-5" : "pl-6"} ${right ? "pr-5" : "pr-6"}`,
   lg: (left: boolean, right: boolean) =>
@@ -202,7 +202,7 @@ export const Button2 = forwardRef<
   ) => {
     return (
       <button
-        className={`flex font-bold items-center justify-center gap-3 whitespace-nowrap ${button2Classes} ${pxButtonSize[
+        className={`flex font-bold items-center justify-center gap-2 whitespace-nowrap ${button2Classes} ${pxButtonSize[
           size
         ](!!leftIcon, !!rightIcon)} ${button2Colors[color]}
       ${pSize[size]} ${focusClasses} ${

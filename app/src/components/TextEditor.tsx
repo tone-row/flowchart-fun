@@ -15,15 +15,10 @@ import { ConvertOnPasteOverlay } from "./ConvertOnPasteOverlay";
 
 type TextEditorProps = EditorProps & {
   extendOptions?: editor.IEditorOptions;
-  onReady?: (editor: editor.IStandaloneCodeEditor) => void;
 };
 
 /** A Monaco editor which stays in sync with the current parser */
-export function TextEditor({
-  extendOptions = {},
-  onReady,
-  ...props
-}: TextEditorProps) {
+export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
   const mode = useLightOrDarkMode();
   const theme =
     mode === "light" ? highlight.defaultTheme : highlight.defaultThemeDark;
@@ -70,7 +65,7 @@ export function TextEditor({
 
   return (
     <>
-      <div className="relative h-full">
+      <div className="relative h-full w-full overflow-hidden">
         <Editor
           {...props}
           defaultLanguage={highlight.languageId}
@@ -116,8 +111,6 @@ export function TextEditor({
                 }
               }
             });
-
-            onReady?.(editor);
           }}
           wrapperProps={{
             "data-testid": "Editor",

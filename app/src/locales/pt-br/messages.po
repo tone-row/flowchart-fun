@@ -41,9 +41,17 @@ msgstr "Uma nova versão do aplicativo está disponível. Por favor, recarregue 
 msgid "AI Creation & Editing"
 msgstr "Criação e Edição de IA"
 
+#: src/lib/usePromptStore.ts:99
+msgid "AI Request Limit Reached"
+msgstr "Limite de solicitação de IA atingido"
+
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "Criação de fluxogramas com Inteligência Artificial"
+
+#: src/components/SandboxWarning.tsx:63
+msgid "AI-powered editing to supercharge your workflow"
+msgstr "Edição com inteligência artificial para turbinar seu fluxo de trabalho"
 
 #: src/components/Settings.tsx:92
 msgid "About"
@@ -76,6 +84,10 @@ msgstr "Opções avançadas de exportação (PNG, JPG, SVG)"
 msgid "Align Nodes"
 msgstr "Alinhar Nós"
 
+#: src/components/SandboxWarning.tsx:74
+msgid "All this for just $4/month - less than your daily coffee ☕"
+msgstr "Tudo isso por apenas $4/mês - menos que o seu café diário ☕"
+
 #: src/pages/Account.tsx:278
 msgid "Amount"
 msgstr "Total"
@@ -101,7 +113,7 @@ msgstr "Atributos"
 msgid "August 2023"
 msgstr "Agosto de 2023"
 
-#: src/components/LoadTemplateDialog.tsx:131
+#: src/components/LoadTemplateDialog.tsx:132
 msgid "Back"
 msgstr "Voltar"
 
@@ -296,6 +308,10 @@ msgstr "Os containers são nós que contêm outros nós. Eles são declarados us
 msgid "Continue"
 msgstr "Continuar"
 
+#: src/components/SandboxWarning.tsx:102
+msgid "Continue in Sandbox (Resets daily, work not saved)"
+msgstr "Continuar no Sandbox (Redefine diariamente, trabalho não salvo)"
+
 #: src/components/AiToolbar.tsx:34
 #: src/components/ConvertOnPasteOverlay.tsx:107
 msgid "Convert"
@@ -312,6 +328,14 @@ msgstr "Converter em diagrama hospedado?"
 #: src/components/Settings.tsx:131
 msgid "Cookie Policy"
 msgstr "Política de Cookies"
+
+#: src/components/DownloadDropdown.tsx:49
+msgid "Copied SVG code to clipboard"
+msgstr "Código SVG copiado para a área de transferência"
+
+#: src/components/DownloadDropdown.tsx:67
+msgid "Copied {format} to clipboard"
+msgstr "{format} copiado para a área de transferência"
 
 #: src/components/ShareDialog.tsx:277
 #: src/components/ShareDialog.tsx:280
@@ -410,6 +434,10 @@ msgstr "Modo escuro"
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "Importação de dados (Visio, Lucidchart, CSV)"
 
+#: src/components/SandboxWarning.tsx:66
+msgid "Data import feature for complex diagrams"
+msgstr "Funcionalidade de importação de dados para diagramas complexos"
+
 #: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "Data"
@@ -444,6 +472,7 @@ msgstr "Você deseja deletar isso?"
 msgid "Document"
 msgstr "Documento"
 
+#: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
 #: src/components/ShareDialog.tsx:617
 msgid "Download"
@@ -588,6 +617,11 @@ msgstr "Digite seu endereço de e-mail abaixo e enviaremos um link para redefini
 msgid "Equal To"
 msgstr "Igual a"
 
+#: src/components/LoadTemplateDialog.tsx:101
+#: src/components/LoadTemplateDialog.tsx:117
+msgid "Examples"
+msgstr "Exemplos"
+
 #: src/pages/New.tsx:236
 msgid "Examples:"
 msgstr "Exemplos:"
@@ -708,7 +742,7 @@ msgstr "Página inicial"
 msgid "How are edges declared in this data?"
 msgstr "Como as arestas são declaradas nestes dados?"
 
-#: src/components/FlowchartHeader.tsx:152
+#: src/components/FlowchartHeader.tsx:157
 msgid "How would you like to save your chart?"
 msgstr "Como você gostaria de salvar seu gráfico?"
 
@@ -795,6 +829,10 @@ msgstr "Isso é um documento? Gostaria de convertê-lo em um fluxograma?"
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "O JSON Canvas é uma representação JSON do seu diagrama usado pelo <0>Obsidian</0> Canvas e outras aplicações."
 
+#: src/components/SandboxWarning.tsx:79
+msgid "Join 2000+ professionals who've upgraded their workflow"
+msgstr "Junte-se a mais de 2000 profissionais que aprimoraram seu fluxo de trabalho"
+
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "Mantenha as coisas privadas"
@@ -822,7 +860,6 @@ msgid "Leading References"
 msgstr "Principais Referências"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:68
-#: src/components/PaywallModal.tsx:69
 msgid "Learn More"
 msgstr "Saber mais"
 
@@ -830,10 +867,6 @@ msgstr "Saber mais"
 #: src/components/LearnSyntaxDialog.tsx:109
 msgid "Learn Syntax"
 msgstr "Aprender Sintaxe"
-
-#: src/components/SandboxWarning.tsx:71
-msgid "Learn about <0>Flowchart Fun Pro</0>"
-msgstr "Aprenda sobre <0>Flowchart Fun Pro</0>"
 
 #: src/pages/Charts.tsx:247
 msgid "Learn about Flowchart Fun Pro"
@@ -861,7 +894,7 @@ msgstr "Modo claro"
 msgid "Link"
 msgstr "Link"
 
-#: src/components/LoadTemplateDialog.tsx:180
+#: src/components/LoadTemplateDialog.tsx:181
 msgid "Load"
 msgstr "Carregar"
 
@@ -877,11 +910,7 @@ msgstr "Carregar Arquivo"
 msgid "Load Files"
 msgstr "Carregar Arquivos"
 
-#: src/components/LoadTemplateDialog.tsx:100
-msgid "Load Template"
-msgstr "Carregar modelo"
-
-#: src/components/LoadTemplateDialog.tsx:152
+#: src/components/LoadTemplateDialog.tsx:153
 msgid "Load default content"
 msgstr "Carregar conteúdo padrão"
 
@@ -889,7 +918,7 @@ msgstr "Carregar conteúdo padrão"
 msgid "Load from link?"
 msgstr "Carregar a partir do link?"
 
-#: src/components/LoadTemplateDialog.tsx:149
+#: src/components/LoadTemplateDialog.tsx:150
 msgid "Load layout and styles"
 msgstr "Carregar layout e estilos"
 
@@ -897,6 +926,10 @@ msgstr "Carregar layout e estilos"
 #: src/pages/Pricing2.tsx:61
 msgid "Local File Support"
 msgstr "Suporte de Arquivo Local"
+
+#: src/components/SandboxWarning.tsx:69
+msgid "Local saving for offline access"
+msgstr "Salvamento local para acesso offline"
 
 #: src/components/GraphFloatingMenu.tsx:79
 #: src/components/GraphFloatingMenu.tsx:81
@@ -912,7 +945,7 @@ msgstr "Acessar"
 msgid "Log Out"
 msgstr "Deslogar"
 
-#: src/components/FlowchartHeader.tsx:99
+#: src/components/FlowchartHeader.tsx:105
 msgid "Log in to Save"
 msgstr "Faça login para salvar"
 
@@ -936,10 +969,6 @@ msgstr "Gerenciar Faturamento"
 msgid "Map Data"
 msgstr "Mapear Dados"
 
-#: src/components/RequestTemplate.tsx:13
-msgid "Missing a template? Suggest one here!"
-msgstr "Faltando um modelo? Sugira um aqui!"
-
 #: src/lib/getDefaultText.ts:5
 msgid "Modify text to see it transform into a flowchart on the right."
 msgstr "Modificar texto para vê-lo transformar em um fluxograma à direita."
@@ -961,7 +990,7 @@ msgstr "Meu cachorro comeu meu cartão de crédito!"
 msgid "Name Chart"
 msgstr "Nome do Gráfico"
 
-#: src/components/FlowchartHeader.tsx:226
+#: src/components/FlowchartHeader.tsx:231
 msgid "Name your chart"
 msgstr "Dê um nome ao seu gráfico"
 
@@ -1133,11 +1162,11 @@ msgid "Rapid Templates"
 msgstr "Modelos Rápidos"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:106
+#: src/lib/usePromptStore.ts:107
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Limite de taxa excedido. Por favor, tente novamente mais tarde."
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:50
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "Somente leitura"
@@ -1236,8 +1265,12 @@ msgstr "Roteiro"
 msgid "Rotate Label"
 msgstr "Rotular Rotação"
 
-#: src/components/FlowchartHeader.tsx:117
-#: src/components/FlowchartHeader.tsx:142
+#: src/components/DownloadDropdown.tsx:80
+msgid "SVG Export is a Pro Feature"
+msgstr "A exportação de SVG é uma funcionalidade Pro"
+
+#: src/components/FlowchartHeader.tsx:123
+#: src/components/FlowchartHeader.tsx:147
 msgid "Save"
 msgstr "Salvar"
 
@@ -1245,11 +1278,11 @@ msgstr "Salvar"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "Economize tempo com IA e ditado, facilitando a criação de diagramas."
 
-#: src/components/FlowchartHeader.tsx:161
+#: src/components/FlowchartHeader.tsx:166
 msgid "Save to Cloud"
 msgstr "Salvar para Nuvem"
 
-#: src/components/FlowchartHeader.tsx:178
+#: src/components/FlowchartHeader.tsx:183
 msgid "Save to File"
 msgstr "Salvar para Arquivo"
 
@@ -1400,10 +1433,6 @@ msgstr "Delimitador Alvo"
 msgid "Target Distance From Node"
 msgstr "Distância-alvo do Nó"
 
-#: src/components/LoadTemplateDialog.tsx:116
-msgid "Templates"
-msgstr "Modelos"
-
 #: src/components/Tabs/ThemeTab.tsx:226
 #: src/components/Tabs/ThemeTab.tsx:228
 msgid "Text Color"
@@ -1494,15 +1523,15 @@ msgstr "Esta ação não pode ser desfeita."
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "Esta funcionalidade está disponível apenas para usuários Pro. <0>Torne-se um usuário Pro</0> para desbloqueá-la."
 
-#: src/components/SandboxWarning.tsx:48
-msgid "This is your sandbox. It's a great place for experimentation, but <0>it resets daily</0>."
-msgstr "Este é o seu sandbox. É um ótimo lugar para experimentação, mas <0>ele é redefinido diariamente</0>."
-
 #: src/pages/New.tsx:304
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "Isso pode levar entre 30 segundos e 2 minutos, dependendo do tamanho da sua entrada."
 
-#: src/components/LoadTemplateDialog.tsx:166
+#: src/components/SandboxWarning.tsx:49
+msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
+msgstr "Esta caixa de areia é perfeita para experimentar, mas lembre-se - ela é resetada diariamente. Faça o upgrade agora e mantenha seu trabalho atual!"
+
+#: src/components/LoadTemplateDialog.tsx:167
 msgid "This will replace the current content."
 msgstr "Isso substituirá o conteúdo atual."
 
@@ -1544,7 +1573,6 @@ msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "Transforme Suas Ideias em Diagramas Profissionais em Segundos"
 
 #: src/components/ConvertToFlowchart.tsx:32
-#: src/lib/usePromptStore.ts:99
 msgid "Transform text into diagrams instantly"
 msgstr "Transforme texto em diagramas instantaneamente."
 
@@ -1569,7 +1597,6 @@ msgid "Two nodes have the same ID"
 msgstr "Dois nós têm o mesmo ID"
 
 #: src/components/ConvertToFlowchart.tsx:33
-#: src/lib/usePromptStore.ts:100
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "Ops, você esgotou suas solicitações gratuitas! Atualize para o Flowchart Fun Pro e tenha conversões ilimitadas de diagramas, e continue transformando textos em fluxogramas claros e visuais com a mesma facilidade de copiar e colar."
 
@@ -1602,6 +1629,10 @@ msgstr "Fluxogramas ilimitados."
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Fluxogramas Permanentes Ilimitados"
 
+#: src/components/SandboxWarning.tsx:60
+msgid "Unlimited cloud-saved flowcharts"
+msgstr "Fluxogramas ilimitados salvos na nuvem"
+
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
 msgstr "Não pago"
@@ -1609,6 +1640,22 @@ msgstr "Não pago"
 #: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "Atualizar e-mail"
+
+#: src/components/SandboxWarning.tsx:95
+msgid "Upgrade Now - Save My Work"
+msgstr "Faça o upgrade agora - Salve Meu Trabalho"
+
+#: src/lib/usePromptStore.ts:103
+msgid "Upgrade for Unlimited AI"
+msgstr "Atualize para IA ilimitada"
+
+#: src/components/SandboxWarning.tsx:56
+msgid "Upgrade to Flowchart Fun Pro and unlock:"
+msgstr "Faça o upgrade para o Flowchart Fun Pro e desbloqueie:"
+
+#: src/components/DownloadDropdown.tsx:81
+msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
+msgstr "Atualize para o Flowchart Fun Pro para desbloquear a exportação de SVG e aproveitar recursos mais avançados para seus diagramas."
 
 #: src/components/Header.tsx:409
 msgid "Upgrade to Pro"
@@ -1646,7 +1693,7 @@ msgstr "Use classes para agrupar nós"
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons like \"Decisions:\"."
-msgstr "Use dois pontos como \"
+msgstr "Use dois pontos como \\"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1737,6 +1784,10 @@ msgstr "Com a versão pro, você pode salvar e carregar arquivos locais. É perf
 msgid "Would you like to continue?"
 msgstr "Você gostaria de continuar?"
 
+#: src/components/RequestTemplate.tsx:13
+msgid "Would you like to suggest a new example?"
+msgstr "Gostaria de sugerir um novo exemplo?"
+
 #: src/components/EditWithAI.tsx:216
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Escreva sua instrução aqui ou clique para ativar o microfone, depois pressione e segure para gravar."
@@ -1753,10 +1804,6 @@ msgstr "Você está prestes a adicionar {numNodes} nós e {numEdges} arestas ao 
 msgid "You can create unlimited permanent flowcharts with <0>Flowchart Fun Pro</0>."
 msgstr "Você pode criar fluxogramas permanentes ilimitados com <0>Flowchart Fun Pro</0>."
 
-#: src/components/SandboxWarning.tsx:54
-msgid "You can save unlimited flowcharts in the cloud or to your computer, as well as get access to features like AI Editing and Data Imports for less than the price of a cup of coffee."
-msgstr "Você pode salvar fluxogramas ilimitados na nuvem ou em seu computador, além de ter acesso a recursos como Edição de IA e Importação de Dados por menos do que o preço de uma xícara de café."
-
 #: src/pages/LogIn.tsx:178
 msgid "You need to log in to access this page."
 msgstr "Você precisa fazer login para acessar esta página."
@@ -1765,17 +1812,21 @@ msgstr "Você precisa fazer login para acessar esta página."
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "Você já é um usuário Pro. <0>Gerenciar Assinatura</0><1/>Tem perguntas ou solicitações de recursos? <2>Deixe-nos saber</2>"
 
+#: src/lib/usePromptStore.ts:100
+msgid "You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
+msgstr "Você usou todas as conversões de IA gratuitas para hoje. Atualize para o Pro para uso ilimitado de IA, temas personalizados, compartilhamento privado e muito mais. Continue criando fluxogramas incríveis sem esforço!"
+
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "Seus Gráficos"
 
+#: src/components/SandboxWarning.tsx:46
+msgid "Your Creativity Deserves to be Saved"
+msgstr "Sua criatividade merece ser salva."
+
 #: src/pages/Charts.tsx:295
 msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."
 msgstr "Sua caixa de areia é um espaço para experimentar livremente com nossas ferramentas de fluxograma, resetando todos os dias para um começo fresco."
-
-#: src/components/SandboxWarning.tsx:45
-msgid "Your Work is Important"
-msgstr "Seu trabalho é importante."
 
 #: src/pages/Charts.tsx:264
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
@@ -1806,3 +1857,7 @@ msgstr "ou"
 #: src/components/Checkout.tsx:176
 msgid "{0}"
 msgstr "{0}"
+
+#: src/components/PaywallModal.tsx:70
+msgid "{buttonText}"
+msgstr "{buttonText}"

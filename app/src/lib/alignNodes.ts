@@ -12,7 +12,7 @@ export function alignNodes() {
   const nodePositions = meta.nodePositions as NodePositions;
   if (!nodePositions) return;
 
-  const threshold = 20; // Adjust this value to change the alignment sensitivity
+  const threshold = 40; // Adjust this value to change the alignment sensitivity
   const alignedPositions: NodePositions = {};
 
   // Iterate through all nodes

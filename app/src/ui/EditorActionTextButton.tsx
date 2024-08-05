@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { BracketsAngle } from "phosphor-react";
 import { forwardRef, ReactNode } from "react";
 import { IconType } from "react-icons/lib";
@@ -11,9 +12,10 @@ export const EditorActionTextButton = forwardRef<
   {
     icon: typeof BracketsAngle | IconType;
     children: ReactNode;
+    iconClassName?: string;
   } & React.ButtonHTMLAttributes<HTMLButtonElement>
 >(function EditorActionTextButton(
-  { icon: Icon, children, className = "", ...props },
+  { icon: Icon, children, iconClassName = "", className = "", ...props },
   ref
 ) {
   return (
@@ -22,7 +24,10 @@ export const EditorActionTextButton = forwardRef<
       className={`px-2 py-1.5 text-left font-bold text-[14px] text-foreground/50 rounded-md flex items-center gap-2 hover:bg-white dark:hover:bg-white/10 dark:hover:text-white hover:text-foreground focus:shadow-none dark:text-white dark:active:text-green-200 ${className}`}
       {...props}
     >
-      <Icon size={20} className="hidden lg:block" />
+      <Icon
+        size={20}
+        className={classNames("hidden lg:block", iconClassName)}
+      />
       {children}
     </button>
   );

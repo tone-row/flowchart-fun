@@ -26,8 +26,6 @@ import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore } from "../lib/useEditorStore";
-import { writeEditorText } from "../lib/writeEditorText";
-import type { editor } from "monaco-editor";
 import { getDefaultText } from "../lib/getDefaultText";
 import { AiToolbar } from "../components/AiToolbar";
 
@@ -120,19 +118,6 @@ const Sandbox = memo(function Edit() {
     };
   }, []);
 
-  // Check for access directly to the editor
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const onEditorReady = useCallback(
-    (editor: editor.IStandaloneCodeEditor) => {
-      // if the text isn't empty, forget about it
-      if (text.trim().length > 0) return;
-      // Animate the text to the editor
-      if (intervalRef.current) clearInterval(intervalRef.current);
-      writeEditorText(intervalRef.current, editor, getDefaultText());
-    },
-    [text]
-  );
-
   return (
     <>
       <FlowchartLayout>
@@ -154,11 +139,7 @@ const Sandbox = memo(function Edit() {
               className="bg-white dark:bg-black overflow-hidden relative grid grid-rows-[auto_minmax(0,1fr)] h-full"
             >
               <AiToolbar />
-              <TextEditor
-                value={text}
-                onChange={onChange}
-                onReady={onEditorReady}
-              />
+              <TextEditor value={text} onChange={onChange} />
             </Tabs.Content>
             <Tabs.Content value="Theme" className="overflow-hidden">
               <ThemeTab />

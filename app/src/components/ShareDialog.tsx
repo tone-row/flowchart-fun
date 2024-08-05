@@ -63,8 +63,8 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
         data-location="Share Dialog"
       >
         <Close />
+        <PreviewImage watermark={watermark} scale={scale} />
         <Column>
-          <PreviewImage watermark={watermark} scale={scale} />
           <SectionTitle className="mb-1">
             <Trans>Download</Trans>
           </SectionTitle>
