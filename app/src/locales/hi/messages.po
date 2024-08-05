@@ -41,6 +41,10 @@ msgstr "एप्प का एक नया वर्जन उपलब्ध 
 msgid "AI Creation & Editing"
 msgstr "एआई निर्माण और संपादन"
 
+#: src/lib/usePromptStore.ts:99
+msgid "AI Request Limit Reached"
+msgstr "एआई अनुरोध सीमा प्राप्त हुई"
+
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "एआई-पावर्ड फ्लोचार्ट निर्माण"
@@ -831,7 +835,6 @@ msgid "Leading References"
 msgstr "प्रमुख संदर्भ"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:68
-#: src/components/PaywallModal.tsx:69
 msgid "Learn More"
 msgstr "और अधिक जानें"
 
@@ -1142,7 +1145,7 @@ msgid "Rapid Templates"
 msgstr "त्वरित टेम्पलेट्स"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:106
+#: src/lib/usePromptStore.ts:107
 msgid "Rate limit exceeded. Please try again later."
 msgstr "रेट लिमिट पार हो गई है। कृपया बाद में पुनः प्रयास करें।"
 
@@ -1557,7 +1560,6 @@ msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को सेकंड में प्रोफेशनल डायरेक्टरी में रूपांतरित करें"
 
 #: src/components/ConvertToFlowchart.tsx:32
-#: src/lib/usePromptStore.ts:99
 msgid "Transform text into diagrams instantly"
 msgstr "पाठ को तुरंत आरेख में बदलें"
 
@@ -1582,7 +1584,6 @@ msgid "Two nodes have the same ID"
 msgstr "दो नोड उसी आईडी के हैं"
 
 #: src/components/ConvertToFlowchart.tsx:33
-#: src/lib/usePromptStore.ts:100
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "उह ओह, आपके पास मुफ्त अनुरोधों की सीमा पूरी हो गई है! असीमित डायग्राम परिवर्तन के लिए Flowchart Fun Pro पर अपग्रेड करें, और पाठ को स्पष्ट, दृश्यमान फ्लोचार्ट में आसानी से कॉपी और पेस्ट करते रहें।"
 
@@ -1622,6 +1623,10 @@ msgstr "अवैतनिक"
 #: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "ईमेल अपडेट करें"
+
+#: src/lib/usePromptStore.ts:103
+msgid "Upgrade for Unlimited AI"
+msgstr "असीमित एआई के लिए अपग्रेड करें"
 
 #: src/components/DownloadDropdown.tsx:81
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
@@ -1782,6 +1787,10 @@ msgstr "इस पृष्ठ तक पहुँचने के लिए आ
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "आप पहले से ही एक प्रो उपयोगकर्ता हैं। <0>सदस्यता प्रबंधित करें</0><1/>क्या आपके पास कोई सवाल या सुविधा अनुरोध है? <2>हमें बताएं</2>"
 
+#: src/lib/usePromptStore.ts:100
+msgid "You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
+msgstr "आपने आज सभी नि: शुल्क एआई परिवर्तनों का उपयोग किया है। असीमित एआई उपयोग, कस्टम थीम, निजी साझा करने और अधिक के लिए प्रो में अपग्रेड करें। अब आसानी से शानदार फ्लोचार्ट बनाते रहें!"
+
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "आपके चार्ट"
@@ -1823,3 +1832,7 @@ msgstr "या"
 #: src/components/Checkout.tsx:176
 msgid "{0}"
 msgstr "{0}"
+
+#: src/components/PaywallModal.tsx:70
+msgid "{buttonText}"
+msgstr "{buttonText}"
