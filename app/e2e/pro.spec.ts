@@ -30,7 +30,7 @@ test.beforeAll(async ({ browser }) => {
 });
 
 test("Create new chart", async () => {
-  await page.getByRole("link", { name: "New" }).click();
+  await page.getByTestId("new-chart-link").click();
   await page.getByLabel("Name Chart").fill("my new chart");
   await page.getByRole("button", { name: "Create" }).click();
   // expect url to be regex BASE_URL + /u/\d+
@@ -116,7 +116,7 @@ test("Go to Sandbox. Save Sandbox Chart", async () => {
 });
 
 test("Create chart from AI", async () => {
-  await page.getByRole("link", { name: "New" }).click();
+  await page.getByTestId("new-chart-link").click();
   await page.getByTestId("Use AI").click();
   await page.locator('textarea[name="subject"]').click();
   await page
@@ -131,7 +131,7 @@ test("Create chart from AI", async () => {
 
 test("Create chart from imported data", async () => {
   try {
-    await page.getByRole("link", { name: "New" }).click();
+    await page.getByTestId("new-chart-link").click();
     await page.getByTestId("Create Chart").click();
     await page.waitForURL(new RegExp(`${BASE_URL}/u/\\d+`));
     await page.getByRole("button", { name: "Import Data" }).click();
