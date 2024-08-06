@@ -99,6 +99,7 @@ export const Header = memo(function SharedHeader() {
                   className="shared-header__new"
                   aria-current={isNewPage ? "page" : undefined}
                   to="/new"
+                  data-testid="new-chart-link"
                 />
               </NavigationMenu.Item>
               <NavigationMenu.Item asChild>
