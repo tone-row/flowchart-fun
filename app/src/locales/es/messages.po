@@ -1693,7 +1693,7 @@ msgstr "Usar clases para agrupar nodos"
 
 #: src/lib/getDefaultText.ts:8
 msgid "Use colons like \"Decisions:\"."
-msgstr "Usa dos puntos como \\"
+msgstr "Usa dos puntos como \"Decisiones\\:\"."
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
