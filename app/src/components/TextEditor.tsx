@@ -1,4 +1,4 @@
-import Editor, { EditorProps, DiffEditor } from "@monaco-editor/react";
+import Editor, { EditorProps, DiffEditor, loader } from "@monaco-editor/react";
 import { highlight } from "graph-selector";
 import { editor } from "monaco-editor";
 import { CSSProperties, useEffect, useRef } from "react";
@@ -16,6 +16,12 @@ import { ConvertOnPasteOverlay } from "./ConvertOnPasteOverlay";
 type TextEditorProps = EditorProps & {
   extendOptions?: editor.IEditorOptions;
 };
+
+loader.config({
+  paths: {
+    vs: "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs",
+  },
+});
 
 /** A Monaco editor which stays in sync with the current parser */
 export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
@@ -71,7 +77,7 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
           defaultLanguage={highlight.languageId}
           options={{ ...editorOptions, ...extendOptions, theme }}
           loading={<Loading />}
-          beforeMount={highlight.registerHighlighter}
+          beforeMount={highlight.registerHighlighter as any}
           onMount={(editor, monaco) => {
             // Store the refs in client side zustand state
             useEditorStore.setState({ editor, monaco });
