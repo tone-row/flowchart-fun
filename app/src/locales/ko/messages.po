@@ -57,8 +57,8 @@ msgstr "워크플로우를 강화하기 위한 AI 기반 편집 기능"
 msgid "About"
 msgstr "소개"
 
-#: src/components/Header.tsx:178
-#: src/components/Header.tsx:426
+#: src/components/Header.tsx:179
+#: src/components/Header.tsx:427
 #: src/pages/Account.tsx:120
 msgid "Account"
 msgstr "계정"
@@ -152,8 +152,8 @@ msgstr "매년 $24로 청구됩니다"
 msgid "Billed monthly at $4"
 msgstr "매달 $4에 청구됩니다."
 
-#: src/components/Header.tsx:138
-#: src/components/Header.tsx:384
+#: src/components/Header.tsx:139
+#: src/components/Header.tsx:385
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "블로그"
@@ -203,14 +203,14 @@ msgstr "일부 속성은 요소의 모양 또는 기능을 사용자 정의하�
 msgid "Change Email Address"
 msgstr "이메일 주소 변경"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:390
+#: src/components/Header.tsx:148
+#: src/components/Header.tsx:391
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "변경 로그"
 
-#: src/components/Header.tsx:106
-#: src/components/Header.tsx:362
+#: src/components/Header.tsx:107
+#: src/components/Header.tsx:363
 msgid "Charts"
 msgstr "차트"
 
@@ -313,7 +313,7 @@ msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "샌드박스에서 계속하기 (매일 초기화되며 작업은 저장되지 않음)"
 
 #: src/components/AiToolbar.tsx:34
-#: src/components/ConvertOnPasteOverlay.tsx:107
+#: src/components/ConvertOnPasteOverlay.tsx:102
 msgid "Convert"
 msgstr "변환하기"
 
@@ -459,7 +459,7 @@ msgstr "CEO가 잠재적인 새 시장 기회를 평가하기 위해 사용할 �
 msgid "Direction"
 msgstr "방향"
 
-#: src/components/ConvertOnPasteOverlay.tsx:78
+#: src/components/ConvertOnPasteOverlay.tsx:73
 msgid "Dismiss"
 msgstr "해지"
 
@@ -471,6 +471,10 @@ msgstr "본 항목을 삭제하시겠습니까?"
 #: src/components/Tabs/EditorTabList.tsx:28
 msgid "Document"
 msgstr "문서"
+
+#: src/components/SandboxWarning.tsx:46
+msgid "Don't Lose Your Work"
+msgstr "당신의 작업을 잃지 마세요"
 
 #: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
@@ -584,7 +588,7 @@ msgid "Editable"
 msgstr "편집 가능"
 
 #: src/components/Header.tsx:89
-#: src/components/Header.tsx:350
+#: src/components/Header.tsx:351
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "에디터"
@@ -652,8 +656,8 @@ msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG 및 SVG로 내보내기"
 
 #: src/components/Feedback.tsx:50
-#: src/components/Header.tsx:114
-#: src/components/Header.tsx:376
+#: src/components/Header.tsx:115
+#: src/components/Header.tsx:377
 msgid "Feedback"
 msgstr "피드백"
 
@@ -813,7 +817,7 @@ msgstr "단계를 위해 들여쓰기하기"
 msgid "Indicate progression or dependency."
 msgstr "진행 또는 의존성을 나타내세요."
 
-#: src/components/Header.tsx:127
+#: src/components/Header.tsx:128
 msgid "Info"
 msgstr "정보"
 
@@ -821,7 +825,7 @@ msgstr "정보"
 msgid "Is"
 msgstr "있다"
 
-#: src/components/ConvertOnPasteOverlay.tsx:66
+#: src/components/ConvertOnPasteOverlay.tsx:61
 msgid "Is this a document? Would you like to convert it to a flowchart?"
 msgstr "이것은 문서입니까? 플로우 차트로 변환하시겠습니까?"
 
@@ -936,8 +940,8 @@ msgstr "오프라인 접속을 위한 로컬 저장 기능"
 msgid "Lock Zoom to Graph"
 msgstr "그래프에 룩 줌을 고정하다"
 
-#: src/components/Header.tsx:194
-#: src/components/Header.tsx:434
+#: src/components/Header.tsx:195
+#: src/components/Header.tsx:435
 msgid "Log In"
 msgstr "로그인"
 
@@ -995,7 +999,7 @@ msgid "Name your chart"
 msgstr "차트 이름 지정"
 
 #: src/components/Header.tsx:97
-#: src/components/Header.tsx:356
+#: src/components/Header.tsx:357
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "신규"
@@ -1125,8 +1129,8 @@ msgstr "같은 줄에 포인터와 컨테이너"
 msgid "Priority One-on-One Support"
 msgstr "우선순위 일대일 지원"
 
-#: src/components/Header.tsx:163
-#: src/components/Header.tsx:440
+#: src/components/Header.tsx:164
+#: src/components/Header.tsx:441
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "개인정보보호정책"
@@ -1254,8 +1258,8 @@ msgstr "오른쪽에서 왼쪽으로"
 msgid "Right-click nodes for more options."
 msgstr "더 많은 옵션을 보려면 노드를 오른쪽 클릭하세요."
 
-#: src/components/Header.tsx:155
-#: src/components/Header.tsx:396
+#: src/components/Header.tsx:156
+#: src/components/Header.tsx:397
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "로드맵"
@@ -1298,8 +1302,8 @@ msgstr "콘텐츠 설정"
 msgid "Set Fixed Node Height"
 msgstr "고정 노드 높이 설정"
 
-#: src/components/Header.tsx:171
-#: src/components/Header.tsx:401
+#: src/components/Header.tsx:172
+#: src/components/Header.tsx:402
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "설정"
@@ -1657,7 +1661,7 @@ msgstr "Flowchart Fun Pro로 업그레이드하고 다음을 잠금 해제하세
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 해제하고 다이어그램에 대한 더 고급 기능을 즐기세요."
 
-#: src/components/Header.tsx:409
+#: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
@@ -1819,10 +1823,6 @@ msgstr "오늘 무료 AI 변환을 모두 사용하셨습니다. 무제한 AI �
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "당신의 차트"
-
-#: src/components/SandboxWarning.tsx:46
-msgid "Your Creativity Deserves to be Saved"
-msgstr "당신의 창의력은 저장되어야합니다."
 
 #: src/pages/Charts.tsx:295
 msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."

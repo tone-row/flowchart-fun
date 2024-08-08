@@ -38,10 +38,10 @@ test("Create new chart", async () => {
 });
 
 test("Rename Chart", async () => {
-  await page.getByLabel("Rename").click();
+  await page.getByTestId("rename-button").click();
   await page.getByRole("textbox").fill("to publish");
   await page.getByRole("button", { name: "Rename" }).click();
-  await expect(page.getByLabel("Rename")).toHaveText("to publish");
+  await expect(page.getByTestId("rename-button")).toHaveText("to publish");
 });
 
 test("Publish Chart & Clone from Public", async () => {

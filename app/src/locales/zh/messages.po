@@ -57,8 +57,8 @@ msgstr "AI动力编辑，让您的工作流程更加高效"
 msgid "About"
 msgstr "关于"
 
-#: src/components/Header.tsx:178
-#: src/components/Header.tsx:426
+#: src/components/Header.tsx:179
+#: src/components/Header.tsx:427
 #: src/pages/Account.tsx:120
 msgid "Account"
 msgstr "帐户"
@@ -152,8 +152,8 @@ msgstr "年度账单为$24"
 msgid "Billed monthly at $4"
 msgstr "每月收费$4"
 
-#: src/components/Header.tsx:138
-#: src/components/Header.tsx:384
+#: src/components/Header.tsx:139
+#: src/components/Header.tsx:385
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "博客"
@@ -203,14 +203,14 @@ msgstr "某些属性可用于自定义元素的外观或功能。"
 msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:390
+#: src/components/Header.tsx:148
+#: src/components/Header.tsx:391
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "变更日志"
 
-#: src/components/Header.tsx:106
-#: src/components/Header.tsx:362
+#: src/components/Header.tsx:107
+#: src/components/Header.tsx:363
 msgid "Charts"
 msgstr "图表"
 
@@ -313,7 +313,7 @@ msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "继续使用沙盒（每天重置，工作不会被保存）"
 
 #: src/components/AiToolbar.tsx:34
-#: src/components/ConvertOnPasteOverlay.tsx:107
+#: src/components/ConvertOnPasteOverlay.tsx:102
 msgid "Convert"
 msgstr "转换"
 
@@ -459,7 +459,7 @@ msgstr "为CEO设计一个决策树，评估潜在的新市场机会"
 msgid "Direction"
 msgstr "方向"
 
-#: src/components/ConvertOnPasteOverlay.tsx:78
+#: src/components/ConvertOnPasteOverlay.tsx:73
 msgid "Dismiss"
 msgstr "解散"
 
@@ -471,6 +471,10 @@ msgstr "您要将其删除吗？"
 #: src/components/Tabs/EditorTabList.tsx:28
 msgid "Document"
 msgstr "文档"
+
+#: src/components/SandboxWarning.tsx:46
+msgid "Don't Lose Your Work"
+msgstr "不要丢失你的工作"
 
 #: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
@@ -584,7 +588,7 @@ msgid "Editable"
 msgstr "可编辑"
 
 #: src/components/Header.tsx:89
-#: src/components/Header.tsx:350
+#: src/components/Header.tsx:351
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "编辑器"
@@ -652,8 +656,8 @@ msgid "Export to PNG, JPG, and SVG"
 msgstr "导出为PNG，JPG和SVG"
 
 #: src/components/Feedback.tsx:50
-#: src/components/Header.tsx:114
-#: src/components/Header.tsx:376
+#: src/components/Header.tsx:115
+#: src/components/Header.tsx:377
 msgid "Feedback"
 msgstr "反馈"
 
@@ -813,7 +817,7 @@ msgstr "缩进步骤"
 msgid "Indicate progression or dependency."
 msgstr "指示进展或依赖关系。"
 
-#: src/components/Header.tsx:127
+#: src/components/Header.tsx:128
 msgid "Info"
 msgstr "信息"
 
@@ -821,7 +825,7 @@ msgstr "信息"
 msgid "Is"
 msgstr "是"
 
-#: src/components/ConvertOnPasteOverlay.tsx:66
+#: src/components/ConvertOnPasteOverlay.tsx:61
 msgid "Is this a document? Would you like to convert it to a flowchart?"
 msgstr "这是一个文档吗？您想将其转换为流程图吗？"
 
@@ -936,8 +940,8 @@ msgstr "本地保存，实现离线访问"
 msgid "Lock Zoom to Graph"
 msgstr "锁定缩放到图表"
 
-#: src/components/Header.tsx:194
-#: src/components/Header.tsx:434
+#: src/components/Header.tsx:195
+#: src/components/Header.tsx:435
 msgid "Log In"
 msgstr "登录"
 
@@ -995,7 +999,7 @@ msgid "Name your chart"
 msgstr "为您的流程图命名"
 
 #: src/components/Header.tsx:97
-#: src/components/Header.tsx:356
+#: src/components/Header.tsx:357
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "新"
@@ -1125,8 +1129,8 @@ msgstr "同一行上的指针和容器"
 msgid "Priority One-on-One Support"
 msgstr "优先一对一支持"
 
-#: src/components/Header.tsx:163
-#: src/components/Header.tsx:440
+#: src/components/Header.tsx:164
+#: src/components/Header.tsx:441
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "隱私政策"
@@ -1254,8 +1258,8 @@ msgstr "从右到左"
 msgid "Right-click nodes for more options."
 msgstr "单击节点以获取更多选项。"
 
-#: src/components/Header.tsx:155
-#: src/components/Header.tsx:396
+#: src/components/Header.tsx:156
+#: src/components/Header.tsx:397
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "路线图"
@@ -1298,8 +1302,8 @@ msgstr "设置内容"
 msgid "Set Fixed Node Height"
 msgstr "设置固定节点高度"
 
-#: src/components/Header.tsx:171
-#: src/components/Header.tsx:401
+#: src/components/Header.tsx:172
+#: src/components/Header.tsx:402
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "设置"
@@ -1657,7 +1661,7 @@ msgstr "升级到Flowchart Fun Pro并解锁："
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高级功能来创建您的图表。"
 
-#: src/components/Header.tsx:409
+#: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
@@ -1819,10 +1823,6 @@ msgstr "您已经使用完了今天的所有免费AI转换。升级至专业版�
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "您的图表"
-
-#: src/components/SandboxWarning.tsx:46
-msgid "Your Creativity Deserves to be Saved"
-msgstr "您的创造力值得被保存"
 
 #: src/pages/Charts.tsx:295
 msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."
