@@ -333,7 +333,7 @@ function CustomCSSEditor({
           overviewRulerBorder: false,
           hideCursorInOverviewRuler: true,
           renderLineHighlight: "none",
-          renderFinalNewline: "off",
+          renderFinalNewline: false,
           fontSize: 14,
           guides: {
             indentation: false,

@@ -57,8 +57,8 @@ msgstr "एआई पावर्ड संपादन आपके वर्�
 msgid "About"
 msgstr "के बारे में"
 
-#: src/components/Header.tsx:178
-#: src/components/Header.tsx:426
+#: src/components/Header.tsx:179
+#: src/components/Header.tsx:427
 #: src/pages/Account.tsx:120
 msgid "Account"
 msgstr "खाता"
@@ -152,8 +152,8 @@ msgstr "वार्षिक रूप से $24 का बिल बनाय
 msgid "Billed monthly at $4"
 msgstr "मासिक रूप से $4 पर बिल किया जाता है"
 
-#: src/components/Header.tsx:138
-#: src/components/Header.tsx:384
+#: src/components/Header.tsx:139
+#: src/components/Header.tsx:385
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "ब्लॉग"
@@ -203,14 +203,14 @@ msgstr "कुछ गुण तत्वों की दिखता या क
 msgid "Change Email Address"
 msgstr "ईमेल पता बदलें"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:390
+#: src/components/Header.tsx:148
+#: src/components/Header.tsx:391
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "बदलाव का"
 
-#: src/components/Header.tsx:106
-#: src/components/Header.tsx:362
+#: src/components/Header.tsx:107
+#: src/components/Header.tsx:363
 msgid "Charts"
 msgstr "चार्ट"
 
@@ -313,7 +313,7 @@ msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "सैंडबॉक्स में जारी रखें (दैनिक रूप से रीसेट होता है, काम सहेजा नहीं जाता)"
 
 #: src/components/AiToolbar.tsx:34
-#: src/components/ConvertOnPasteOverlay.tsx:107
+#: src/components/ConvertOnPasteOverlay.tsx:102
 msgid "Convert"
 msgstr "परिवर्तन करें"
 
@@ -459,7 +459,7 @@ msgstr "एक सीईओ के लिए नए बाजार के अ�
 msgid "Direction"
 msgstr "दिशा"
 
-#: src/components/ConvertOnPasteOverlay.tsx:78
+#: src/components/ConvertOnPasteOverlay.tsx:73
 msgid "Dismiss"
 msgstr "खारिज करें"
 
@@ -471,6 +471,10 @@ msgstr "क्या आप इसे डिलीट करना चाहत�
 #: src/components/Tabs/EditorTabList.tsx:28
 msgid "Document"
 msgstr "दस्तावेज़"
+
+#: src/components/SandboxWarning.tsx:46
+msgid "Don't Lose Your Work"
+msgstr "अपना काम न खो दें"
 
 #: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
@@ -584,7 +588,7 @@ msgid "Editable"
 msgstr "संपादन योग्य"
 
 #: src/components/Header.tsx:89
-#: src/components/Header.tsx:350
+#: src/components/Header.tsx:351
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "संपादक"
@@ -652,8 +656,8 @@ msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG और SVG में निर्यात करें"
 
 #: src/components/Feedback.tsx:50
-#: src/components/Header.tsx:114
-#: src/components/Header.tsx:376
+#: src/components/Header.tsx:115
+#: src/components/Header.tsx:377
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
@@ -813,7 +817,7 @@ msgstr "स्टेप्स के लिए इंडेंट करें"
 msgid "Indicate progression or dependency."
 msgstr "प्रगति या आश्रितता की दर्शाएं।"
 
-#: src/components/Header.tsx:127
+#: src/components/Header.tsx:128
 msgid "Info"
 msgstr "जानकारी"
 
@@ -821,7 +825,7 @@ msgstr "जानकारी"
 msgid "Is"
 msgstr "हाँ"
 
-#: src/components/ConvertOnPasteOverlay.tsx:66
+#: src/components/ConvertOnPasteOverlay.tsx:61
 msgid "Is this a document? Would you like to convert it to a flowchart?"
 msgstr "क्या यह एक दस्तावेज़ है? क्या आप इसे फ्लोचार्ट में बदलना चाहेंगे?"
 
@@ -936,8 +940,8 @@ msgstr "ऑफ़लाइन उपयोग के लिए स्थान�
 msgid "Lock Zoom to Graph"
 msgstr "ग्राफ पर जूम लॉक करें"
 
-#: src/components/Header.tsx:194
-#: src/components/Header.tsx:434
+#: src/components/Header.tsx:195
+#: src/components/Header.tsx:435
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -995,7 +999,7 @@ msgid "Name your chart"
 msgstr "अपने चार्ट को नाम दें"
 
 #: src/components/Header.tsx:97
-#: src/components/Header.tsx:356
+#: src/components/Header.tsx:357
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "नया"
@@ -1125,8 +1129,8 @@ msgstr "प्रतीक और कंटेनर एक ही लाइन 
 msgid "Priority One-on-One Support"
 msgstr "प्राथमिकता वाला एक-से-एक समर्थन"
 
-#: src/components/Header.tsx:163
-#: src/components/Header.tsx:440
+#: src/components/Header.tsx:164
+#: src/components/Header.tsx:441
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "गोपनीयता नीति "
@@ -1254,8 +1258,8 @@ msgstr "दाएं से बाएं"
 msgid "Right-click nodes for more options."
 msgstr "अधिक विकल्पों के लिए नोड पर दायां क्लिक करें।"
 
-#: src/components/Header.tsx:155
-#: src/components/Header.tsx:396
+#: src/components/Header.tsx:156
+#: src/components/Header.tsx:397
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "रोडमैप"
@@ -1298,8 +1302,8 @@ msgstr "सामग्री सेट करें"
 msgid "Set Fixed Node Height"
 msgstr "नोड ऊंचाई को सेट करें"
 
-#: src/components/Header.tsx:171
-#: src/components/Header.tsx:401
+#: src/components/Header.tsx:172
+#: src/components/Header.tsx:402
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "सेटिंग"
@@ -1657,7 +1661,7 @@ msgstr "फ्लोचार्ट फन प्रो पर अपग्र�
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "अपने डायग्राम के लिए एसवीजी निर्यात और अधिक उन्नत सुविधाओं का आनंद लेने के लिए फ्लोचार्ट फन प्रो पर अपग्रेड करें।"
 
-#: src/components/Header.tsx:409
+#: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
 
@@ -1819,10 +1823,6 @@ msgstr "आपने आज सभी नि: शुल्क एआई पर�
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "आपके चार्ट"
-
-#: src/components/SandboxWarning.tsx:46
-msgid "Your Creativity Deserves to be Saved"
-msgstr "आपकी रचनात्मकता को सहेजने का हकदार है।"
 
 #: src/pages/Charts.tsx:295
 msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."

@@ -42,8 +42,8 @@ export function SandboxWarning() {
           maxWidthClass="max-w-lg w-[calc(100%-3rem)]"
           data-testid="sandbox-warning"
         >
-          <h2 className="font-bold text-xl leading-tight text-center text-wrap-balance">
-            <Trans>Your Creativity Deserves to be Saved</Trans>
+          <h2 className="font-bold text-xl leading-tighter text-center text-wrap-balance">
+            <Trans>Don't Lose Your Work</Trans>
           </h2>
           <P>
             <Trans>

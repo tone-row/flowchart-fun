@@ -41,7 +41,7 @@ export const Content = forwardRef<
       ref={ref}
       {...props}
       className={`${
-        overflowV ? "dialog-content-v-overflow overflow-auto " : ""
+        overflowV ? "dialog-content-v-overflow overflow-auto ff-dialog" : ""
       }data-[state=open]:animate-contentShow bg-background text-foreground dark:bg-foreground dark:text-background fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] ${maxWidthClass} translate-x-[-50%] translate-y-[-50%] rounded-lg bg-background shadow-lg focus:outline-none ${
         globalZ.defaultDialog
       } ${noPadding ? "" : "p-4 grid gap-3"} ${className}`}

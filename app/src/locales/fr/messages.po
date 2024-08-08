@@ -57,8 +57,8 @@ msgstr "Édition alimentée par l'IA pour booster votre flux de travail"
 msgid "About"
 msgstr "À propos"
 
-#: src/components/Header.tsx:178
-#: src/components/Header.tsx:426
+#: src/components/Header.tsx:179
+#: src/components/Header.tsx:427
 #: src/pages/Account.tsx:120
 msgid "Account"
 msgstr "Compte"
@@ -152,8 +152,8 @@ msgstr "Facturé annuellement à 24 $"
 msgid "Billed monthly at $4"
 msgstr "Facturé mensuellement à 4 $"
 
-#: src/components/Header.tsx:138
-#: src/components/Header.tsx:384
+#: src/components/Header.tsx:139
+#: src/components/Header.tsx:385
 #: src/pages/Blog.tsx:28
 msgid "Blog"
 msgstr "Blog"
@@ -203,14 +203,14 @@ msgstr "Certains attributs peuvent être utilisés pour personnaliser l'apparenc
 msgid "Change Email Address"
 msgstr "Changer l'adresse email"
 
-#: src/components/Header.tsx:147
-#: src/components/Header.tsx:390
+#: src/components/Header.tsx:148
+#: src/components/Header.tsx:391
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "Journal des modifications"
 
-#: src/components/Header.tsx:106
-#: src/components/Header.tsx:362
+#: src/components/Header.tsx:107
+#: src/components/Header.tsx:363
 msgid "Charts"
 msgstr "Graphiques"
 
@@ -313,7 +313,7 @@ msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "Continuer dans le bac à sable (Réinitialisé quotidiennement, travail non sauvegardé)"
 
 #: src/components/AiToolbar.tsx:34
-#: src/components/ConvertOnPasteOverlay.tsx:107
+#: src/components/ConvertOnPasteOverlay.tsx:102
 msgid "Convert"
 msgstr "Convertir"
 
@@ -459,7 +459,7 @@ msgstr "Élaborer un arbre de décision pour un PDG afin d'évaluer de nouvelles
 msgid "Direction"
 msgstr "Direction"
 
-#: src/components/ConvertOnPasteOverlay.tsx:78
+#: src/components/ConvertOnPasteOverlay.tsx:73
 msgid "Dismiss"
 msgstr "Ignorer"
 
@@ -471,6 +471,10 @@ msgstr "Souhaitez-vous supprimer ceci ?"
 #: src/components/Tabs/EditorTabList.tsx:28
 msgid "Document"
 msgstr "Document"
+
+#: src/components/SandboxWarning.tsx:46
+msgid "Don't Lose Your Work"
+msgstr "Ne perdez pas votre travail"
 
 #: src/components/FlowchartHeader.tsx:73
 #: src/components/ShareDialog.tsx:69
@@ -584,7 +588,7 @@ msgid "Editable"
 msgstr "Modifiable"
 
 #: src/components/Header.tsx:89
-#: src/components/Header.tsx:350
+#: src/components/Header.tsx:351
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "Éditeur"
@@ -652,8 +656,8 @@ msgid "Export to PNG, JPG, and SVG"
 msgstr "Exporter en PNG, JPG et SVG"
 
 #: src/components/Feedback.tsx:50
-#: src/components/Header.tsx:114
-#: src/components/Header.tsx:376
+#: src/components/Header.tsx:115
+#: src/components/Header.tsx:377
 msgid "Feedback"
 msgstr "Commentaire"
 
@@ -813,7 +817,7 @@ msgstr "Indenter pour les étapes"
 msgid "Indicate progression or dependency."
 msgstr "Indiquer la progression ou la dépendance."
 
-#: src/components/Header.tsx:127
+#: src/components/Header.tsx:128
 msgid "Info"
 msgstr "Info"
 
@@ -821,7 +825,7 @@ msgstr "Info"
 msgid "Is"
 msgstr "Est"
 
-#: src/components/ConvertOnPasteOverlay.tsx:66
+#: src/components/ConvertOnPasteOverlay.tsx:61
 msgid "Is this a document? Would you like to convert it to a flowchart?"
 msgstr "Est-ce un document ? Souhaitez-vous le convertir en organigramme ?"
 
@@ -936,8 +940,8 @@ msgstr "Enregistrement local pour un accès hors ligne"
 msgid "Lock Zoom to Graph"
 msgstr "Verrouiller le Zoom sur le Graphique"
 
-#: src/components/Header.tsx:194
-#: src/components/Header.tsx:434
+#: src/components/Header.tsx:195
+#: src/components/Header.tsx:435
 msgid "Log In"
 msgstr "Connexion"
 
@@ -995,7 +999,7 @@ msgid "Name your chart"
 msgstr "Nommez votre graphique"
 
 #: src/components/Header.tsx:97
-#: src/components/Header.tsx:356
+#: src/components/Header.tsx:357
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "Nouveau"
@@ -1125,8 +1129,8 @@ msgstr "Pointeur et conteneur sur la même ligne"
 msgid "Priority One-on-One Support"
 msgstr "Support prioritaire en tête-à-tête"
 
-#: src/components/Header.tsx:163
-#: src/components/Header.tsx:440
+#: src/components/Header.tsx:164
+#: src/components/Header.tsx:441
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
@@ -1254,8 +1258,8 @@ msgstr "De droite à gauche"
 msgid "Right-click nodes for more options."
 msgstr "Cliquez avec le bouton droit sur les nœuds pour plus d'options."
 
-#: src/components/Header.tsx:155
-#: src/components/Header.tsx:396
+#: src/components/Header.tsx:156
+#: src/components/Header.tsx:397
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "Roadmap"
@@ -1298,8 +1302,8 @@ msgstr "Définir le contenu"
 msgid "Set Fixed Node Height"
 msgstr "Définir une hauteur de nœud fixe"
 
-#: src/components/Header.tsx:171
-#: src/components/Header.tsx:401
+#: src/components/Header.tsx:172
+#: src/components/Header.tsx:402
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "Paramètres"
@@ -1657,7 +1661,7 @@ msgstr "Passez à Flowchart Fun Pro et débloquez:"
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Mettez à niveau vers Flowchart Fun Pro pour débloquer les exportations SVG et profiter de fonctionnalités avancées pour vos diagrammes."
 
-#: src/components/Header.tsx:409
+#: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "Mettez à niveau vers Pro"
 
@@ -1819,10 +1823,6 @@ msgstr "Vous avez utilisé toutes les conversions d'IA gratuites pour aujourd'hu
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
 msgstr "Vos diagrammes"
-
-#: src/components/SandboxWarning.tsx:46
-msgid "Your Creativity Deserves to be Saved"
-msgstr "Votre créativité mérite d'être sauvegardée"
 
 #: src/pages/Charts.tsx:295
 msgid "Your Sandbox is a space to freely experiment with our flowchart tools, resetting every day for a fresh start."
