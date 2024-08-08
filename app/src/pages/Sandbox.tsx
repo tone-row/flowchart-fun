@@ -49,7 +49,7 @@ const Sandbox = memo(function Edit() {
         return;
       }
 
-      const dialog = document.querySelector('[role="dialog"]');
+      const dialog = document.querySelector(".ff-dialog");
       if (dialog) {
         const observer = new MutationObserver((mutations) => {
           mutations.forEach((mutation) => {
