@@ -38,7 +38,7 @@ test("Create new chart", async () => {
 });
 
 test("Rename Chart", async () => {
-  await page.getByLabel("Rename").click();
+  await page.getByTestId("rename-button").click();
   await page.getByRole("textbox").fill("to publish");
   await page.getByRole("button", { name: "Rename" }).click();
   await expect(page.getByLabel("Rename")).toHaveText("to publish");
