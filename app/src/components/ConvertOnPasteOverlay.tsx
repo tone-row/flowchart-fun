@@ -18,10 +18,14 @@ export function ConvertOnPasteOverlay() {
     return getDefaultText();
   }, []);
   const isDefaultText = text === defaultText;
-  // const selection = useEditorStore((s) => s.selection);
-  // const fullTextSelected = selection.trim() === text.trim();
   const userPasted = useEditorStore((s) => s.userPasted);
-  const enoughCharacters = text.length > 150;
+  const pastedContent = userPasted || "";
+  const pastedLines = pastedContent
+    .split("\n")
+    .filter((line) => line.trim() !== "");
+  const isPastedContentLong =
+    pastedLines.length >= 3 ||
+    (pastedLines.length === 1 && pastedContent.length >= 100);
   const lastResult = usePromptStore((s) => s.lastResult);
 
   // Set the user pasted back to false after 15 seconds, and on unmount
@@ -34,18 +38,9 @@ export function ConvertOnPasteOverlay() {
     }
   }, [userPasted]);
 
-  // Qualities for displaying Convert to Flowchart button:
-  //  OR
-  //    Convert is currently running
-  //    AND
-  //      Is not the default text
-  //      There is more than 150 characters
-  //      Text is not equal to the last result
-  //      OR
-  //        Full text is selected and is more than 150 characters
-  //        Less than 15 seconds have passed since user pasted more than 150 characters
+  // Updated conditions for showing Convert to Flowchart button
   const showConvertToFlowchart =
-    !isDefaultText && enoughCharacters && lastResult !== text && userPasted;
+    !isDefaultText && isPastedContentLong && lastResult !== text && userPasted;
 
   if (showConvertToFlowchart) return <Overlay />;
 
@@ -60,17 +55,17 @@ function Overlay() {
   const isRunning = usePromptStore((s) => s.isRunning);
   const pasted = useEditorStore((s) => s.userPasted);
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 convert-on-paste-overlay dark:from-purple-900/95 dark:via-purple-850/95 dark:to-purple-800/95 pb-8 pt-16 animate-overlayShow">
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-6 w-screen max-w-4xl mx-auto px-6 animate-slideUpFadeLarge">
-        <p className="dark:text-purple-100 text-lg font-semibold text-wrap-balance leading-snug">
+    <div className="fixed bottom-0 left-0 right-0 z-50 convert-on-paste-overlay dark:from-purple-900/90 dark:via-purple-850/90 dark:to-purple-800/90 pb-6 pt-12 animate-overlayShow">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-screen max-w-4xl mx-auto px-4 animate-slideUpFadeLarge">
+        <p className="dark:text-purple-100 text-base font-medium text-wrap-balance leading-snug">
           <Trans>
             Is this a document? Would you like to convert it to a flowchart?
           </Trans>
         </p>
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           <Button2
             color="inverted"
-            size="sm"
+            size="xs"
             onClick={() => {
               useEditorStore.setState({ userPasted: "" });
             }}
@@ -79,9 +74,9 @@ function Overlay() {
           </Button2>
           <Button2
             color="purple"
-            size="sm"
+            size="xs"
             className="group"
-            leftIcon={<MagicWand size={20} weight="fill" />}
+            leftIcon={<MagicWand size={18} weight="fill" />}
             onClick={() => {
               // first set the mode to convert, and add pasted text
               usePromptStore.setState({
