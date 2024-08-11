@@ -41,10 +41,6 @@ msgstr "Eine neue Version der App ist verfügbar. Bitte neu laden, um zu aktuali
 msgid "AI Creation & Editing"
 msgstr "KI-Erstellung & Bearbeitung"
 
-#: src/lib/usePromptStore.ts:99
-msgid "AI Request Limit Reached"
-msgstr "AI Anforderungslimit erreicht"
-
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "KI-unterstützte Erstellung von Flussdiagrammen"
@@ -183,7 +179,7 @@ msgstr "In die Breite"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:157
+#: src/components/RenameButton.tsx:158
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -321,7 +317,7 @@ msgstr "Umwandeln"
 msgid "Convert to Flowchart"
 msgstr "In Flussdiagramm konvertieren"
 
-#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:126
 msgid "Convert to hosted chart?"
 msgstr "In gehostetes Diagramm konvertieren?"
 
@@ -704,6 +700,10 @@ msgstr "Erhalten Sie Zugang zu KI-Funktionen und verlieren Sie nie Ihre Arbeit m
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "Allgemein"
+
+#: src/lib/usePromptStore.ts:99
+msgid "Get Unlimited AI Requests"
+msgstr "Erhalten Sie unbegrenzte KI-Anfragen"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -1216,8 +1216,8 @@ msgid "Reload to Update"
 msgstr "Neu laden, um zu aktualisieren"
 
 #: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:120
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:121
+#: src/components/RenameButton.tsx:161
 msgid "Rename"
 msgstr "Umbenennen"
 
@@ -1817,8 +1817,8 @@ msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions o
 msgstr "Sie sind bereits ein Pro-Benutzer. <0>Abonnement verwalten</0><1/>Haben Sie Fragen oder Feature-Anfragen? <2>Lassen Sie es uns wissen</2>"
 
 #: src/lib/usePromptStore.ts:100
-msgid "You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
-msgstr "Du hast alle kostenlosen KI-Konvertierungen für heute genutzt. Upgrade auf Pro für unbegrenzte KI-Nutzung, benutzerdefinierte Themen, private Freigabe und mehr. Erstelle mühelos weiterhin erstaunliche Flussdiagramme!"
+msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
+msgstr "Sie haben alle Ihre kostenlosen KI-Konvertierungen verwendet. Upgrade auf Pro für unbegrenzte KI-Nutzung, individuelle Themen, private Freigabe und mehr. Erstellen Sie mühelos weiterhin erstaunliche Flussdiagramme!"
 
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"

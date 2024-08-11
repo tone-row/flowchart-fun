@@ -41,10 +41,6 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 msgid "AI Creation & Editing"
 msgstr "AI创建与编辑"
 
-#: src/lib/usePromptStore.ts:99
-msgid "AI Request Limit Reached"
-msgstr "AI请求限制已达到"
-
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI驱动的流程图创建"
@@ -183,7 +179,7 @@ msgstr "宽度优先"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:157
+#: src/components/RenameButton.tsx:158
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -321,7 +317,7 @@ msgstr "转换"
 msgid "Convert to Flowchart"
 msgstr "转换为流程图"
 
-#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:126
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
@@ -704,6 +700,10 @@ msgstr "获得AI功能的访问权限，并通过专业版账户永远不会丢�
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "一般"
+
+#: src/lib/usePromptStore.ts:99
+msgid "Get Unlimited AI Requests"
+msgstr "获得无限的AI请求"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -1216,8 +1216,8 @@ msgid "Reload to Update"
 msgstr "重新加载以更新"
 
 #: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:120
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:121
+#: src/components/RenameButton.tsx:161
 msgid "Rename"
 msgstr "重命名"
 
@@ -1817,8 +1817,8 @@ msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions o
 msgstr "您已经是专业用户。 <0>管理订阅</0><1/>有问题或功能请求？ <2>告诉我们</2>"
 
 #: src/lib/usePromptStore.ts:100
-msgid "You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
-msgstr "您已经使用完了今天的所有免费AI转换。升级至专业版，享受无限AI使用、自定义主题、私密共享等功能。继续轻松创建精彩的流程图！"
+msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
+msgstr "您已经使用完了所有的免费AI转换。升级到专业版，享受无限的AI使用、定制主题、私人共享等功能。轻松地创建出令人惊叹的流程图吧！"
 
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
