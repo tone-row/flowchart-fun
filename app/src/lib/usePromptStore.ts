@@ -96,8 +96,8 @@ export function useRunAiWithStore() {
       if (!hasProAccess && error.message === RATE_LIMIT_EXCEEDED) {
         // Show paywall
         showPaywall({
-          title: t`AI Request Limit Reached`,
-          content: t`You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!`,
+          title: t`Get Unlimited AI Requests`,
+          content: t`You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!`,
           movieUrl: "/images/ai-convert.mp4",
           toPricingCode: "ConvertToFlowchart",
           buttonText: t`Upgrade for Unlimited AI`,

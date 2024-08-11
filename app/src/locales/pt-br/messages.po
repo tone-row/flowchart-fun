@@ -41,10 +41,6 @@ msgstr "Uma nova versão do aplicativo está disponível. Por favor, recarregue 
 msgid "AI Creation & Editing"
 msgstr "Criação e Edição de IA"
 
-#: src/lib/usePromptStore.ts:99
-msgid "AI Request Limit Reached"
-msgstr "Limite de solicitação de IA atingido"
-
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "Criação de fluxogramas com Inteligência Artificial"
@@ -183,7 +179,7 @@ msgstr "Por extensão"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:157
+#: src/components/RenameButton.tsx:158
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -321,7 +317,7 @@ msgstr "Converter"
 msgid "Convert to Flowchart"
 msgstr "Converter para Fluxograma"
 
-#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:126
 msgid "Convert to hosted chart?"
 msgstr "Converter em diagrama hospedado?"
 
@@ -704,6 +700,10 @@ msgstr "Tenha acesso às funcionalidades de IA e nunca perca seu trabalho com um
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "Geral"
+
+#: src/lib/usePromptStore.ts:99
+msgid "Get Unlimited AI Requests"
+msgstr "Obtenha solicitações ilimitadas de IA"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -1216,8 +1216,8 @@ msgid "Reload to Update"
 msgstr "Recarregar para Atualizar"
 
 #: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:120
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:121
+#: src/components/RenameButton.tsx:161
 msgid "Rename"
 msgstr "Renomear"
 
@@ -1817,8 +1817,8 @@ msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions o
 msgstr "Você já é um usuário Pro. <0>Gerenciar Assinatura</0><1/>Tem perguntas ou solicitações de recursos? <2>Deixe-nos saber</2>"
 
 #: src/lib/usePromptStore.ts:100
-msgid "You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
-msgstr "Você usou todas as conversões de IA gratuitas para hoje. Atualize para o Pro para uso ilimitado de IA, temas personalizados, compartilhamento privado e muito mais. Continue criando fluxogramas incríveis sem esforço!"
+msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
+msgstr "Você usou todas as suas conversões de IA gratuitas. Faça upgrade para o Pro e tenha uso ilimitado de IA, temas personalizados, compartilhamento privado e muito mais. Continue criando incríveis fluxogramas sem esforço!"
 
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
