@@ -41,10 +41,6 @@ msgstr "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면
 msgid "AI Creation & Editing"
 msgstr "AI 생성 및 편집"
 
-#: src/lib/usePromptStore.ts:99
-msgid "AI Request Limit Reached"
-msgstr "AI 요청 제한에 도달했습니다."
-
 #: src/pages/Pricing2.tsx:48
 msgid "AI-Powered Flowchart Creation"
 msgstr "인공지능 기반 플로우차트 생성"
@@ -183,7 +179,7 @@ msgstr "폭 우선"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:157
+#: src/components/RenameButton.tsx:158
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -321,7 +317,7 @@ msgstr "변환하기"
 msgid "Convert to Flowchart"
 msgstr "흐름도로 변환"
 
-#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:126
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
@@ -704,6 +700,10 @@ msgstr "Pro 계정으로 AI 기능에 접근하고 작업을 잃어버리지 않
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "일반"
+
+#: src/lib/usePromptStore.ts:99
+msgid "Get Unlimited AI Requests"
+msgstr "무제한 AI 요청 받기"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -1216,8 +1216,8 @@ msgid "Reload to Update"
 msgstr "업데이트하려면 다시 로드하기 "
 
 #: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:120
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:121
+#: src/components/RenameButton.tsx:161
 msgid "Rename"
 msgstr "이름 바꾸기"
 
@@ -1817,8 +1817,8 @@ msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions o
 msgstr "이미 프로 사용자입니다. <0>구독 관리</0><1/>질문이나 기능 요청이 있으신가요? <2>문의하기</2>"
 
 #: src/lib/usePromptStore.ts:100
-msgid "You've used all free AI conversions for today. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
-msgstr "오늘 무료 AI 변환을 모두 사용하셨습니다. 무제한 AI 사용, 사용자 정의 테마, 개인 공유 등을 위해 Pro로 업그레이드하세요. 쉽게 멋진 플로우차트를 만들어보세요!"
+msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
+msgstr "모든 무료 AI 변환을 사용하셨습니다. 무제한 AI 사용, 사용자 정의 테마, 개인 공유 등을 위해 Pro로 업그레이드하세요. 쉽게 멋진 플로우차트를 만들어 나가세요!"
 
 #: src/pages/Charts.tsx:93
 msgid "Your Charts"
