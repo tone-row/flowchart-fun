@@ -29,6 +29,8 @@ import { useEditorStore } from "../lib/useEditorStore";
 import { getDefaultText } from "../lib/getDefaultText";
 import { AiToolbar } from "../components/AiToolbar";
 
+const SANDBOX_WARNING_TIME = 3 * 60 * 1000; // 3 minutes
+
 const Sandbox = memo(function Edit() {
   // Wait 1 minute and trigger a sandbox modal overtop of the editor
   // if it's never been triggered before for this particular chart
@@ -45,7 +47,10 @@ const Sandbox = memo(function Edit() {
       // If it's the default text, reset the timeout
       if (isDefaultText) {
         if (warningTimeout.current) clearTimeout(warningTimeout.current);
-        warningTimeout.current = setTimeout(showWarningAfterDelay, 1000 * 60);
+        warningTimeout.current = setTimeout(
+          showWarningAfterDelay,
+          SANDBOX_WARNING_TIME
+        );
         return;
       }
 
@@ -71,7 +76,10 @@ const Sandbox = memo(function Edit() {
     };
 
     // Show the warning after 1 minute
-    warningTimeout.current = setTimeout(showWarningAfterDelay, 1000 * 60);
+    warningTimeout.current = setTimeout(
+      showWarningAfterDelay,
+      SANDBOX_WARNING_TIME
+    );
 
     return () => {
       if (warningTimeout.current) clearTimeout(warningTimeout.current);
