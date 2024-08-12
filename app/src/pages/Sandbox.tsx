@@ -29,7 +29,9 @@ import { useEditorStore } from "../lib/useEditorStore";
 import { getDefaultText } from "../lib/getDefaultText";
 import { AiToolbar } from "../components/AiToolbar";
 
-const SANDBOX_WARNING_TIME = 3 * 60 * 1000; // 3 minutes
+const isE2E =
+  new URLSearchParams(window.location.search).get("isE2E") === "true";
+const SANDBOX_WARNING_TIME = isE2E ? 20 * 1000 : 3 * 60 * 1000; // 10 seconds for E2E, 3 minutes otherwise
 
 const Sandbox = memo(function Edit() {
   // Wait 1 minute and trigger a sandbox modal overtop of the editor
