@@ -75,10 +75,20 @@ msgstr "Avancé "
 msgid "Advanced Export Options (PNG, JPG, SVG)"
 msgstr "Options d'exportation avancées (PNG, JPG, SVG)"
 
-#: src/components/GraphFloatingMenu.tsx:103
-#: src/components/GraphFloatingMenu.tsx:107
+#: src/components/GraphFloatingMenu.tsx:142
+#: src/components/GraphFloatingMenu.tsx:146
+msgid "Align Horizontally"
+msgstr "Aligner Horizontalement"
+
+#: src/components/GraphFloatingMenu.tsx:130
+#: src/components/GraphFloatingMenu.tsx:134
 msgid "Align Nodes"
 msgstr "Aligner les nœuds"
+
+#: src/components/GraphFloatingMenu.tsx:154
+#: src/components/GraphFloatingMenu.tsx:158
+msgid "Align Vertically"
+msgstr "Aligner Verticalement"
 
 #: src/components/SandboxWarning.tsx:74
 msgid "All this for just $4/month - less than your daily coffee ☕"
@@ -854,8 +864,8 @@ msgstr "Langue"
 msgid "Layout"
 msgstr "Disposition "
 
-#: src/components/GraphFloatingMenu.tsx:89
-#: src/components/GraphFloatingMenu.tsx:91
+#: src/components/GraphFloatingMenu.tsx:116
+#: src/components/GraphFloatingMenu.tsx:118
 msgid "Layout Frozen"
 msgstr "Mise en page gelée"
 
@@ -935,8 +945,8 @@ msgstr "Support de fichier local"
 msgid "Local saving for offline access"
 msgstr "Enregistrement local pour un accès hors ligne"
 
-#: src/components/GraphFloatingMenu.tsx:79
-#: src/components/GraphFloatingMenu.tsx:81
+#: src/components/GraphFloatingMenu.tsx:106
+#: src/components/GraphFloatingMenu.tsx:108
 msgid "Lock Zoom to Graph"
 msgstr "Verrouiller le Zoom sur le Graphique"
 
@@ -1229,8 +1239,8 @@ msgstr "Demandez un lien magique"
 msgid "Request Password Reset"
 msgstr "Demandez une réinitialisation du mot de passe "
 
-#: src/components/GraphFloatingMenu.tsx:44
-#: src/components/GraphFloatingMenu.tsx:47
+#: src/components/GraphFloatingMenu.tsx:71
+#: src/components/GraphFloatingMenu.tsx:74
 msgid "Reset"
 msgstr "Réinitialiser"
 
@@ -1836,13 +1846,13 @@ msgstr "Vos graphiques sont en lecture seule car votre compte n'est plus actif. 
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "Votre abonnement est <0>{statusDisplay}</0>."
 
-#: src/components/GraphFloatingMenu.tsx:59
-#: src/components/GraphFloatingMenu.tsx:63
+#: src/components/GraphFloatingMenu.tsx:86
+#: src/components/GraphFloatingMenu.tsx:90
 msgid "Zoom In"
 msgstr "Zoomer"
 
-#: src/components/GraphFloatingMenu.tsx:69
-#: src/components/GraphFloatingMenu.tsx:73
+#: src/components/GraphFloatingMenu.tsx:96
+#: src/components/GraphFloatingMenu.tsx:100
 msgid "Zoom Out"
 msgstr "Zoomer vers l'extérieur"
 

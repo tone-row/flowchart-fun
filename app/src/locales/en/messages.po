@@ -75,10 +75,20 @@ msgstr "Advanced"
 msgid "Advanced Export Options (PNG, JPG, SVG)"
 msgstr "Advanced Export Options (PNG, JPG, SVG)"
 
-#: src/components/GraphFloatingMenu.tsx:103
-#: src/components/GraphFloatingMenu.tsx:107
+#: src/components/GraphFloatingMenu.tsx:142
+#: src/components/GraphFloatingMenu.tsx:146
+msgid "Align Horizontally"
+msgstr "Align Horizontally"
+
+#: src/components/GraphFloatingMenu.tsx:130
+#: src/components/GraphFloatingMenu.tsx:134
 msgid "Align Nodes"
 msgstr "Align Nodes"
+
+#: src/components/GraphFloatingMenu.tsx:154
+#: src/components/GraphFloatingMenu.tsx:158
+msgid "Align Vertically"
+msgstr "Align Vertically"
 
 #: src/components/SandboxWarning.tsx:74
 msgid "All this for just $4/month - less than your daily coffee ☕"
@@ -854,8 +864,8 @@ msgstr "Language"
 msgid "Layout"
 msgstr "Layout"
 
-#: src/components/GraphFloatingMenu.tsx:89
-#: src/components/GraphFloatingMenu.tsx:91
+#: src/components/GraphFloatingMenu.tsx:116
+#: src/components/GraphFloatingMenu.tsx:118
 msgid "Layout Frozen"
 msgstr "Layout Frozen"
 
@@ -935,8 +945,8 @@ msgstr "Local File Support"
 msgid "Local saving for offline access"
 msgstr "Local saving for offline access"
 
-#: src/components/GraphFloatingMenu.tsx:79
-#: src/components/GraphFloatingMenu.tsx:81
+#: src/components/GraphFloatingMenu.tsx:106
+#: src/components/GraphFloatingMenu.tsx:108
 msgid "Lock Zoom to Graph"
 msgstr "Lock Zoom to Graph"
 
@@ -1229,8 +1239,8 @@ msgstr "Request Magic Link"
 msgid "Request Password Reset"
 msgstr "Request Password Reset"
 
-#: src/components/GraphFloatingMenu.tsx:44
-#: src/components/GraphFloatingMenu.tsx:47
+#: src/components/GraphFloatingMenu.tsx:71
+#: src/components/GraphFloatingMenu.tsx:74
 msgid "Reset"
 msgstr "Reset"
 
@@ -1836,13 +1846,13 @@ msgstr "Your charts are read-only because your account is no longer active. Visi
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "Your subscription is <0>{statusDisplay}</0>."
 
-#: src/components/GraphFloatingMenu.tsx:59
-#: src/components/GraphFloatingMenu.tsx:63
+#: src/components/GraphFloatingMenu.tsx:86
+#: src/components/GraphFloatingMenu.tsx:90
 msgid "Zoom In"
 msgstr "Zoom In"
 
-#: src/components/GraphFloatingMenu.tsx:69
-#: src/components/GraphFloatingMenu.tsx:73
+#: src/components/GraphFloatingMenu.tsx:96
+#: src/components/GraphFloatingMenu.tsx:100
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
