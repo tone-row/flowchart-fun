@@ -8,7 +8,7 @@ import {
   AlignCenterVertical,
   SquaresFour,
 } from "phosphor-react";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { FaRegSnowflake } from "react-icons/fa";
 
 import { lockZoomToGraph, useGraphStore } from "../lib/useGraphStore";
@@ -46,6 +46,25 @@ export function GraphFloatingMenu() {
   const autoFit = useGraphStore((s) => s.autoFit);
 
   const selectedNodes = useGraphStore((s) => s.selectedNodes);
+  const alignButtonsEnabled = isFrozen && selectedNodes.length > 1;
+
+  useEffect(() => {
+    if (alignButtonsEnabled) {
+      const handleKeyPress = (event: KeyboardEvent) => {
+        if (event.key === "h") {
+          alignNodesHorizontally(selectedNodes);
+        } else if (event.key === "v") {
+          alignNodesVertically(selectedNodes);
+        }
+      };
+
+      window.addEventListener("keydown", handleKeyPress);
+
+      return () => {
+        window.removeEventListener("keydown", handleKeyPress);
+      };
+    }
+  }, [alignButtonsEnabled, selectedNodes]);
 
   return (
     <div className="absolute bottom-4 right-4 flex bg-white shadow-md rounded-lg overflow-hidden gap-1 p-1 items-center dark:bg-neutral-600">
@@ -127,7 +146,7 @@ export function GraphFloatingMenu() {
           aria-label={t`Align Horizontally`}
           data-testid="Align Horizontally"
           data-session-activity="align-nodes-horizontally"
-          disabled={!isFrozen || selectedNodes.length < 2}
+          disabled={!alignButtonsEnabled}
         >
           <AlignCenterHorizontal size={16} />
         </IconButton2>
@@ -139,7 +158,7 @@ export function GraphFloatingMenu() {
           aria-label={t`Align Vertically`}
           data-testid="Align Vertically"
           data-session-activity="align-nodes-vertically"
-          disabled={!isFrozen || selectedNodes.length < 2}
+          disabled={!alignButtonsEnabled}
         >
           <AlignCenterVertical size={16} />
         </IconButton2>
