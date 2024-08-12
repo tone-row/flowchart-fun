@@ -95,12 +95,12 @@ export function SandboxWarning() {
               <Trans>Upgrade Now - Save My Work</Trans>
             </Link>
           </Button2>
-          <button
+          <Dialog.DialogClose
             className="text-xs text-neutral-400 hover:text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-300 transition-colors"
             onClick={() => useSandboxWarning.setState({ isOpen: false })}
           >
             <Trans>Continue in Sandbox (Resets daily, work not saved)</Trans>
-          </button>
+          </Dialog.DialogClose>
         </Content>
       </Dialog.Portal>
     </Dialog.Root>

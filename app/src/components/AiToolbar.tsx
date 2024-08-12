@@ -56,7 +56,7 @@ export function AiToolbar() {
   const showAcceptDiffButton = diff && !isRunning;
 
   return (
-    <div className="bg-purple-300/60 dark:bg-purple-800/20">
+    <div className="bg-purple-600/10 dark:bg-purple-800/20">
       <div className="flex items-center justify-between p-2">
         <div className="flex items-center space-x-2">
           <MagicWand

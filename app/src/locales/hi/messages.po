@@ -75,10 +75,20 @@ msgstr "उन्नत"
 msgid "Advanced Export Options (PNG, JPG, SVG)"
 msgstr "उन्नत निर्यात विकल्प (PNG, JPG, SVG)"
 
-#: src/components/GraphFloatingMenu.tsx:103
-#: src/components/GraphFloatingMenu.tsx:107
+#: src/components/GraphFloatingMenu.tsx:142
+#: src/components/GraphFloatingMenu.tsx:146
+msgid "Align Horizontally"
+msgstr "आड़े सारी तरफ"
+
+#: src/components/GraphFloatingMenu.tsx:130
+#: src/components/GraphFloatingMenu.tsx:134
 msgid "Align Nodes"
 msgstr "नोड्स को संरेखित करें"
+
+#: src/components/GraphFloatingMenu.tsx:154
+#: src/components/GraphFloatingMenu.tsx:158
+msgid "Align Vertically"
+msgstr "ऊपर-नीचे सारी तरफ"
 
 #: src/components/SandboxWarning.tsx:74
 msgid "All this for just $4/month - less than your daily coffee ☕"
@@ -854,8 +864,8 @@ msgstr "भाषा"
 msgid "Layout"
 msgstr "रूपरेखा"
 
-#: src/components/GraphFloatingMenu.tsx:89
-#: src/components/GraphFloatingMenu.tsx:91
+#: src/components/GraphFloatingMenu.tsx:116
+#: src/components/GraphFloatingMenu.tsx:118
 msgid "Layout Frozen"
 msgstr "लेआउट फ्रोज़न"
 
@@ -935,8 +945,8 @@ msgstr "स्थानीय फ़ाइल समर्थन"
 msgid "Local saving for offline access"
 msgstr "ऑफ़लाइन उपयोग के लिए स्थानीय सहेजना"
 
-#: src/components/GraphFloatingMenu.tsx:79
-#: src/components/GraphFloatingMenu.tsx:81
+#: src/components/GraphFloatingMenu.tsx:106
+#: src/components/GraphFloatingMenu.tsx:108
 msgid "Lock Zoom to Graph"
 msgstr "ग्राफ पर जूम लॉक करें"
 
@@ -1229,8 +1239,8 @@ msgstr "अनुरोध जादू लिंक"
 msgid "Request Password Reset"
 msgstr "पासवर्ड रीसेट का अनुरोध करें"
 
-#: src/components/GraphFloatingMenu.tsx:44
-#: src/components/GraphFloatingMenu.tsx:47
+#: src/components/GraphFloatingMenu.tsx:71
+#: src/components/GraphFloatingMenu.tsx:74
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -1836,13 +1846,13 @@ msgstr "आपके चार्ट रीड-ओनली हैं क्य�
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "आपका सदस्यता <0>{statusDisplay}</0> है।"
 
-#: src/components/GraphFloatingMenu.tsx:59
-#: src/components/GraphFloatingMenu.tsx:63
+#: src/components/GraphFloatingMenu.tsx:86
+#: src/components/GraphFloatingMenu.tsx:90
 msgid "Zoom In"
 msgstr "ज़ूम इन करें"
 
-#: src/components/GraphFloatingMenu.tsx:69
-#: src/components/GraphFloatingMenu.tsx:73
+#: src/components/GraphFloatingMenu.tsx:96
+#: src/components/GraphFloatingMenu.tsx:100
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 

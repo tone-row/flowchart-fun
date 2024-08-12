@@ -16,6 +16,11 @@ type StoreGraph = {
   zoom?: number;
   /** Pan on the graph when auto-fit is false */
   pan?: cytoscape.Position;
+
+  /**
+   * The currently selected nodes id's
+   */
+  selectedNodes: string[];
 };
 
 /**
@@ -29,6 +34,7 @@ export const useGraphStore = create<StoreGraph>(() => ({
   layout: {},
   elements: [],
   autoFit: true,
+  selectedNodes: [],
 }));
 
 /** Fits the screen and locks the zoom to the graph */
