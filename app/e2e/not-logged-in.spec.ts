@@ -61,9 +61,9 @@ test("capabilities", async ({ page }) => {
   ).toBeVisible();
   await page.click('[data-testid="close-dialog"]');
 
-  // Expect sandbox window to show (about 1 minute wait time)
+  // Expect sandbox warning to show
   await expect(page.getByTestId("sandbox-warning")).toBeVisible({
-    timeout: 60000,
+    timeout: 25000, // 25 seconds
   });
   // Click on test id sandbox-warning-learn-more
   await page.getByTestId("sandbox-warning-learn-more").click();

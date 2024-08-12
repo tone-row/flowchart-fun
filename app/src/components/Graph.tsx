@@ -254,6 +254,26 @@ function initializeGraph({
       }
     });
 
+    // Store selected nodes
+    cyCurrent.on("select", "node", () => {
+      useGraphStore.setState({
+        selectedNodes: cyCurrent
+          .$(":selected")
+          .nodes()
+          .toArray()
+          .map((n) => n.id()),
+      });
+    });
+    cyCurrent.on("unselect", "node", () => {
+      useGraphStore.setState({
+        selectedNodes: cyCurrent
+          .$(":selected")
+          .nodes()
+          .toArray()
+          .map((n) => n.id()),
+      });
+    });
+
     document.getElementById("cy")?.addEventListener("mouseout", handleMouseOut);
 
     return () => {
