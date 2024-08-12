@@ -1,4 +1,11 @@
-import { memo, ReactNode, Suspense, useCallback, useState } from "react";
+import {
+  memo,
+  ReactNode,
+  Suspense,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 
 import { useHasProAccess, useFullscreen } from "../lib/hooks";
 import { useUnmountStore } from "../lib/useUnmountStore";
@@ -10,6 +17,7 @@ import styles from "./WithGraph.module.css";
 import TabPane from "./TabPane";
 import { useMobileStore } from "../lib/useMobileStore";
 import { useTabsStore } from "../lib/useTabsStore";
+import { redo, undo } from "../lib/undoStack";
 
 type MainProps = {
   children?: ReactNode;
@@ -24,6 +32,27 @@ const WithGraph = memo(({ children }: MainProps) => {
   const hasProAccess = useHasProAccess();
   const tab = useMobileStore((state) => state.tab);
   const selectedTab = useTabsStore((state) => state.selectedTab);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.metaKey || event.ctrlKey) {
+        if (event.key === "z") {
+          if (event.shiftKey) {
+            redo();
+          } else {
+            undo();
+          }
+          event.preventDefault();
+        } else if (event.key === "y") {
+          redo();
+          event.preventDefault();
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <div

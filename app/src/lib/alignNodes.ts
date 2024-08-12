@@ -1,5 +1,6 @@
 import { NodePositions } from "../components/getNodePositionsFromCy";
 import { useDoc } from "./useDoc";
+import { addToUndoStack } from "./undoStack";
 
 /**
  * This function tries to align nodes vertical and horiontal on their center
@@ -14,6 +15,9 @@ export function alignNodes() {
 
   const threshold = 40; // Adjust this value to change the alignment sensitivity
   const alignedPositions: NodePositions = {};
+
+  // Store the original positions for undo
+  const originalPositions = { ...nodePositions };
 
   // Iterate through all nodes
   Object.entries(nodePositions).forEach(([nodeId, position]) => {
@@ -56,6 +60,26 @@ export function alignNodes() {
       nodePositions: alignedPositions,
     },
   }));
+
+  // Add the action to the undo stack
+  addToUndoStack({
+    undo: () => {
+      useDoc.setState((state) => ({
+        meta: {
+          ...state.meta,
+          nodePositions: originalPositions,
+        },
+      }));
+    },
+    redo: () => {
+      useDoc.setState((state) => ({
+        meta: {
+          ...state.meta,
+          nodePositions: alignedPositions,
+        },
+      }));
+    },
+  });
 }
 
 /**
@@ -67,6 +91,9 @@ export function alignNodesHorizontally(nodeIds: string[]) {
   const meta = useDoc.getState().meta;
   const nodePositions = meta.nodePositions as NodePositions;
   if (!nodePositions) return;
+
+  // Store the original positions for undo
+  const originalPositions = { ...nodePositions };
 
   // Calculate the average x position
   let sumX = 0;
@@ -99,6 +126,26 @@ export function alignNodesHorizontally(nodeIds: string[]) {
       nodePositions: alignedPositions,
     },
   }));
+
+  // Add the action to the undo stack
+  addToUndoStack({
+    undo: () => {
+      useDoc.setState((state) => ({
+        meta: {
+          ...state.meta,
+          nodePositions: originalPositions,
+        },
+      }));
+    },
+    redo: () => {
+      useDoc.setState((state) => ({
+        meta: {
+          ...state.meta,
+          nodePositions: alignedPositions,
+        },
+      }));
+    },
+  });
 }
 
 /**
@@ -110,6 +157,9 @@ export function alignNodesVertically(nodeIds: string[]) {
   const meta = useDoc.getState().meta;
   const nodePositions = meta.nodePositions as NodePositions;
   if (!nodePositions) return;
+
+  // Store the original positions for undo
+  const originalPositions = { ...nodePositions };
 
   // Calculate the average y position
   let sumY = 0;
@@ -142,4 +192,24 @@ export function alignNodesVertically(nodeIds: string[]) {
       nodePositions: alignedPositions,
     },
   }));
+
+  // Add the action to the undo stack
+  addToUndoStack({
+    undo: () => {
+      useDoc.setState((state) => ({
+        meta: {
+          ...state.meta,
+          nodePositions: originalPositions,
+        },
+      }));
+    },
+    redo: () => {
+      useDoc.setState((state) => ({
+        meta: {
+          ...state.meta,
+          nodePositions: alignedPositions,
+        },
+      }));
+    },
+  });
 }
