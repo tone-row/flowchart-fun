@@ -52,6 +52,35 @@ export async function handleRateLimit(req: Request) {
   return null;
 }
 
+/**
+ * Rate limit for template requests
+ */
+export async function templateRateLimit(req: Request) {
+  const ip = getIp(req);
+
+  const ratelimit = new Ratelimit({
+    redis: kv,
+    limiter: Ratelimit.slidingWindow(3, "1m"),
+  });
+  const rateLimitKey = `template_${ip}`;
+  const { success, limit, reset, remaining } = await ratelimit.limit(
+    rateLimitKey
+  );
+
+  if (!success) {
+    return new Response("You have reached your request limit for templates.", {
+      status: 429,
+      headers: {
+        "X-RateLimit-Limit": limit.toString(),
+        "X-RateLimit-Remaining": remaining.toString(),
+        "X-RateLimit-Reset": reset.toString(),
+      },
+    });
+  }
+
+  return null;
+}
+
 export async function processRequest(
   req: Request,
   systemMessage: string,

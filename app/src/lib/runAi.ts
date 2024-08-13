@@ -3,6 +3,8 @@ import { useEditorStore } from "./useEditorStore";
 import { lockZoomToGraph } from "./useGraphStore";
 import { setDiff, setLastResult } from "./usePromptStore";
 import { useDoc } from "./useDoc";
+import { FFTheme } from "./FFTheme";
+import { prepareChart } from "./prepareChart/prepareChart";
 
 export const RATE_LIMIT_EXCEEDED = "RATE_LIMIT_EXCEEDED";
 
@@ -46,6 +48,14 @@ export async function runAi({
   sid?: string;
 }) {
   let accumulated = "";
+
+  if (endpoint === "prompt" || endpoint === "convert") {
+    try {
+      await loadTemplate(prompt, sid);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return new Promise<string>((resolve, reject) => {
     fetch(`/api/prompt/${endpoint}`, {
@@ -117,5 +127,46 @@ export async function runAi({
         }
       })
       .catch(reject);
+  });
+}
+
+async function loadTemplate(prompt: string, sid?: string) {
+  // Choose a template by hitting the /api/prompt/choose-template endpoint
+  const response = await fetch("/api/prompt/choose-template", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: sid ? `Bearer ${sid}` : "",
+    },
+    body: JSON.stringify({ prompt }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to load template: ${response.statusText}`);
+  }
+
+  const { template } = (await response.json()) as { template: string };
+
+  // Dynamic import of the template
+  const importTemplate = await import(
+    `../lib/templates/${template}-template.ts`
+  );
+  const templateContent = importTemplate.content;
+  const theme: FFTheme = importTemplate.theme;
+  const cytoscapeStyle: string = importTemplate.cytoscapeStyle ?? "";
+
+  const { meta: _meta, details } = useDoc.getState();
+
+  const meta = {
+    ..._meta,
+    cytoscapeStyle,
+    themeEditor: theme,
+    // Unfreeze the doc
+    nodePositions: undefined,
+  };
+
+  prepareChart({
+    doc: `${templateContent}\n=====${JSON.stringify(meta)}=====`,
+    details,
   });
 }
