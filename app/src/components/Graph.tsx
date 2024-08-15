@@ -37,6 +37,7 @@ import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import classNames from "classnames";
 import { getThemeEditor, toTheme, useBackground } from "../lib/toTheme";
 import equal from "fast-deep-equal";
+import { runMappers } from "../lib/runMappers";
 declare global {
   interface Window {
     __cy?: cytoscape.Core;
@@ -389,6 +390,7 @@ function getGraphUpdater({
 
       // Update
       cy.current.json({ elements, style });
+      runMappers(cy.current);
 
       // Determine whether to fit
       const autoFit = useGraphStore.getState().autoFit;

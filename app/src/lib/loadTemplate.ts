@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import type { FFTheme } from "./FFTheme";
 import { prepareChart } from "./prepareChart/prepareChart";
-import { templates } from "./templates/templates";
+import { templates } from "./templates";
 import { useDoc } from "./useDoc";
 import { mountGraph, unmountGraph } from "./useUnmountStore";
 
@@ -19,8 +19,7 @@ export async function loadTemplate(
 ) {
   if (!template) return;
 
-  const templateData = templates.find((t) => t.key === template);
-  if (!templateData) return;
+  if (!templates.includes(template)) return;
 
   const importTemplate = await import(
     `../lib/templates/${template}-template.ts`

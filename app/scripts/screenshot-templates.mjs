@@ -3,6 +3,7 @@ import fs from "fs";
 import { chromium } from "playwright";
 import { exec } from "child_process";
 import util from "util";
+import { writeFile } from "fs/promises";
 
 const execAsync = util.promisify(exec);
 
@@ -14,6 +15,9 @@ const __dirname = path.dirname(__filename);
 const screenshotsDir = path.join(__dirname, "../public/template-screenshots");
 
 async function main() {
+  // eslint-disable-next-line no-undef
+  const filter = process.argv[2]; // Get the filter from the command line arguments
+
   if (!fs.existsSync(screenshotsDir)) {
     fs.mkdirSync(screenshotsDir, { recursive: true });
     console.log("Created folder: ", screenshotsDir);
@@ -23,9 +27,23 @@ async function main() {
   const templates = fs
     .readdirSync(path.join(__dirname, "../src/lib/templates"))
     // remove templates.ts
-    .filter((template) => template !== "templates.ts")
+    .filter((template) => template !== "index.ts")
     .map((template) => template.replace("-template.ts", ""));
 
+  // Apply the filter if provided
+  const filteredTemplates = filter
+    ? templates.filter((template) => template.includes(filter))
+    : templates;
+
+  await screenshotTemplates(filteredTemplates);
+  await createThumbnails(filteredTemplates);
+  await createTemplatesIndex(templates); // Always create index with all templates
+}
+
+/**
+ * @param {string[]} templates
+ */
+async function screenshotTemplates(templates) {
   // Use Playwright to take a screenshot
   const browser = await chromium.launch();
 
@@ -34,9 +52,6 @@ async function main() {
   }
 
   await browser.close();
-
-  // Create smaller versions of the screenshots
-  await createThumbnails();
 }
 
 /**
@@ -75,6 +90,11 @@ async function takeScreenshot(browser, template) {
   // go to the full page link
   await page.goto(screenshotLink);
 
+  // Wait for element to be visible
+  await page.waitForSelector('[data-flowchart-fun-canvas="true"]', {
+    state: "visible",
+  });
+
   // Capture only the element with data-flowchart-fun-canvas="true"
   const element = await page.$('[data-flowchart-fun-canvas="true"]');
   await element.screenshot({
@@ -88,12 +108,15 @@ async function takeScreenshot(browser, template) {
   return screenshotLink;
 }
 
-async function createThumbnails() {
+async function createThumbnails(templates) {
   console.log("Creating thumbnails...");
   const files = fs.readdirSync(screenshotsDir);
 
   for (const file of files) {
-    if (file.endsWith(".png")) {
+    if (
+      file.endsWith(".png") &&
+      templates.some((template) => file.startsWith(template))
+    ) {
       const inputPath = path.join(screenshotsDir, file);
       const outputPath = path.join(screenshotsDir, `thumb_${file}`);
 
@@ -111,6 +134,23 @@ async function createThumbnails() {
         }
       }
     }
+  }
+}
+
+async function createTemplatesIndex(templates) {
+  console.log("Creating templates index...");
+  const indexPath = path.join(__dirname, "../src/lib/templates/index.ts");
+  const indexContent = `export const templates = ${JSON.stringify(
+    templates,
+    null,
+    2
+  )};`;
+
+  try {
+    await writeFile(indexPath, indexContent, "utf8");
+    console.log("✅ Created templates index file");
+  } catch (error) {
+    console.error("Error creating templates index file:", error);
   }
 }
 

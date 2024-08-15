@@ -1,6 +1,6 @@
 import { Plus, Rocket } from "phosphor-react";
 import { Button2, Input } from "../ui/Shared";
-import { templates } from "../lib/templates/templates";
+import { templates } from "../lib/templates";
 import { Trans, t } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { useCallback, useContext, useState } from "react";
@@ -38,10 +38,6 @@ export default function New2() {
       if (!supabase) throw new Error("No supabase");
       const { data } = await supabase.auth.getSession();
       if (!data.session) throw new Error("No Session");
-
-      // Get Template
-      const templateData = templates.find((t) => t.key === options.template);
-      if (!templateData) throw new Error("No Template");
 
       // Get Template
       const importTemplate = await import(
@@ -89,9 +85,6 @@ export default function New2() {
       const template = data.get("template")?.toString();
       if (!name || !template) return;
 
-      const templateObj = templates.find((t) => t.key === template);
-      if (!templateObj) return;
-
       const options: CreateChartOptions = {
         name,
         template,
@@ -131,8 +124,8 @@ export default function New2() {
           >
             {templates.map((template) => (
               <RadioGroup.Item
-                key={template.key}
-                value={template.key}
+                key={template}
+                value={template}
                 asChild
                 disabled={createChartMutation.isLoading}
               >
@@ -140,16 +133,16 @@ export default function New2() {
                   {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
                   <div className="h-[283px] text-[0px] rounded-sm border border-foreground/10 opacity-70 hover:opacity-100 group-data-[state=checked]:opacity-100 group-data-[state=checked]:border-foreground/30 overflow-hidden group-data-[state=checked]:shadow-sm">
                     <img
-                      key={template.key}
-                      src={`/template-screenshots/thumb_${template.key}.png`}
+                      key={template}
+                      src={`/template-screenshots/thumb_${template}.png`}
                       className="w-full h-full object-contain object-center"
-                      alt={template.key}
+                      alt={template}
                     />
                   </div>
-                  <div className="flex gap-2 items-center justify-center">
+                  <div className="flex gap-2 items-center justify-center mt-2">
                     <span className="w-3 h-3 rounded-full border border-foreground/60 group-data-[state=checked]:border-foreground group-data-[state=checked]:bg-foreground dark:group-data-[state=checked]:bg-white dark:group-data-[state=checked]:border-white dark:border-background/50" />
-                    <h2 className="text-center text-sm text-foreground/60 group-data-[state=checked]:text-foreground dark:text-background/60 dark:group-data-[state=checked]:text-white">
-                      {template.title()}
+                    <h2 className="text-xs text-foreground/60 group-data-[state=checked]:text-foreground dark:text-background/60 dark:group-data-[state=checked]:text-white font-mono tracking-wide">
+                      {template}
                     </h2>
                   </div>
                 </button>

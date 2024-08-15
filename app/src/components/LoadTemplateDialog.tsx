@@ -4,7 +4,7 @@ import { EditorActionTextButton } from "../ui/EditorActionTextButton";
 import { Check, WarningCircle, ArrowLeft } from "phosphor-react";
 import { PiShapesDuotone } from "react-icons/pi";
 import { Trans } from "@lingui/macro";
-import { templates } from "../lib/templates/templates";
+import { templates } from "../lib/templates";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { useCallback, useState } from "react";
 import { Button2 } from "../ui/Shared";
@@ -24,10 +24,7 @@ function getContentInitialValue() {
 
 export function LoadTemplateDialog() {
   const [open, setOpen] = useState(false);
-  const [template, setTemplate] = useState<
-    null | typeof templates[number]["key"]
-  >(null);
-  const templateData = templates.find((t) => t.key === template);
+  const [template, setTemplate] = useState<null | string>(null);
   const [layout, setLayout] = useState(true);
   // Whether to load the content or not
   const [replaceContent, setReplaceContent] = useState(getContentInitialValue);
@@ -85,8 +82,11 @@ export function LoadTemplateDialog() {
             </Dialog.Title>
             <RequestTemplate />
           </div>
-          <Dialog.Description asChild>
-            {templateData ? (
+          <Dialog.Description
+            asChild
+            className="content-start grid overflow-hidden"
+          >
+            {template ? (
               <div className="grid gap-2 h-full grid-rows-[auto_minmax(0,1fr)]">
                 <button
                   onClick={() => {
@@ -100,8 +100,8 @@ export function LoadTemplateDialog() {
                 <div className="grid sm:grid-cols-[2fr,1fr] gap-6">
                   <div className="h-full w-full overflow-hidden rounded-lg shadow-md">
                     <img
-                      src={`/template-screenshots/${templateData.key}.png`}
-                      alt={templateData.key}
+                      src={`/template-screenshots/${template}.png`}
+                      alt={template}
                       className="rounded w-full h-full object-contain object-center"
                     />
                   </div>
@@ -141,7 +141,7 @@ export function LoadTemplateDialog() {
                       onClick={load}
                       className="mt-2"
                       data-session-activity="Load Template: Load"
-                      data-template={templateData.key}
+                      data-template={template}
                     >
                       <Trans>Load</Trans>
                     </Button2>
@@ -149,24 +149,26 @@ export function LoadTemplateDialog() {
                 </div>
               </div>
             ) : (
-              <div
-                className="grid gap-3 grid-cols-2 md:grid-cols-3"
-                aria-label="Templates"
-              >
-                {templates.map((template) => (
-                  <button
-                    key={template.key}
-                    onClick={() => setTemplate(template.key)}
-                    className="rounded overflow-hidden md:h-[280px] shadow-sm opacity-70 hover:opacity-100"
-                  >
-                    <img
-                      key={template.key}
-                      src={`/template-screenshots/thumb_${template.key}.png`}
-                      className="rounded-lg object-contain object-center aspect-square"
-                      alt={template.key}
-                    />
-                  </button>
-                ))}
+              <div className="h-full overflow-y-auto">
+                <div
+                  className="grid gap-1 grid-cols-2 md:grid-cols-3"
+                  aria-label="Templates"
+                >
+                  {templates.map((template) => (
+                    <button
+                      key={template}
+                      onClick={() => setTemplate(template)}
+                      className="overflow-hidden shadow-sm opacity-70 hover:opacity-100 aspect-square"
+                    >
+                      <img
+                        key={template}
+                        src={`/template-screenshots/thumb_${template}.png`}
+                        className="rounded object-contain object-center w-full h-full"
+                        alt={template}
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </Dialog.Description>
