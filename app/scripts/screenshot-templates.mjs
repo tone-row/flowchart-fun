@@ -1,6 +1,10 @@
 import path from "path";
 import fs from "fs";
 import { chromium } from "playwright";
+import { exec } from "child_process";
+import util from "util";
+
+const execAsync = util.promisify(exec);
 
 // Get Directory for Template
 const __filename = import.meta.url.slice(7);
@@ -22,8 +26,6 @@ async function main() {
     .filter((template) => template !== "templates.ts")
     .map((template) => template.replace("-template.ts", ""));
 
-  // const templates = ["flowchart"];
-
   // Use Playwright to take a screenshot
   const browser = await chromium.launch();
 
@@ -32,6 +34,9 @@ async function main() {
   }
 
   await browser.close();
+
+  // Create smaller versions of the screenshots
+  await createThumbnails();
 }
 
 /**
@@ -83,4 +88,30 @@ async function takeScreenshot(browser, template) {
   return screenshotLink;
 }
 
-main();
+async function createThumbnails() {
+  console.log("Creating thumbnails...");
+  const files = fs.readdirSync(screenshotsDir);
+
+  for (const file of files) {
+    if (file.endsWith(".png")) {
+      const inputPath = path.join(screenshotsDir, file);
+      const outputPath = path.join(screenshotsDir, `thumb_${file}`);
+
+      try {
+        await execAsync(
+          `convert "${inputPath}" -resize 275x275^ -gravity center -extent 275x275 "${outputPath}"`
+        );
+        console.log(`✅ Created thumbnail for ${file}`);
+      } catch (error) {
+        console.error(`Error creating thumbnail for ${file}:`, error.message);
+        if (error.message.includes("command not found")) {
+          throw new Error(
+            "ImageMagick is not installed or not available in the system PATH."
+          );
+        }
+      }
+    }
+  }
+}
+
+main().catch(console.error);

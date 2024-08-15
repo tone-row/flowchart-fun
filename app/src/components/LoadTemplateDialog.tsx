@@ -98,9 +98,9 @@ export function LoadTemplateDialog() {
                   <Trans>Back</Trans>
                 </button>
                 <div className="grid sm:grid-cols-[2fr,1fr] gap-6">
-                  <div className="h-full w-full overflow-hidden p-4 rounded-lg shadow-md">
+                  <div className="h-full w-full overflow-hidden rounded-lg shadow-md">
                     <img
-                      src={`/templates/${templateData.img}`}
+                      src={`/template-screenshots/${templateData.key}.png`}
                       alt={templateData.key}
                       className="rounded w-full h-full object-contain object-center"
                     />
@@ -157,11 +157,11 @@ export function LoadTemplateDialog() {
                   <button
                     key={template.key}
                     onClick={() => setTemplate(template.key)}
-                    className="rounded overflow-hidden md:h-[280px] shadow-sm p-2"
+                    className="rounded overflow-hidden md:h-[280px] shadow-sm opacity-70 hover:opacity-100"
                   >
                     <img
-                      key={template.img}
-                      src={`/templates/${template.img}`}
+                      key={template.key}
+                      src={`/template-screenshots/thumb_${template.key}.png`}
                       className="rounded-lg object-contain object-center aspect-square"
                       alt={template.key}
                     />
