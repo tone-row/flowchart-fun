@@ -1,10 +1,9 @@
-import { Article, MagicWand, Plus, Rocket } from "phosphor-react";
-import { Button2, Input, Textarea } from "../ui/Shared";
+import { Plus, Rocket } from "phosphor-react";
+import { Button2, Input } from "../ui/Shared";
 import { templates } from "../lib/templates/templates";
 import { Trans, t } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
-import * as Tabs from "@radix-ui/react-tabs";
-import { Fragment, useCallback, useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { AppContext } from "../components/AppContextProvider";
 import { languages } from "../locales/i18n";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
@@ -12,7 +11,6 @@ import { useMutation } from "react-query";
 import { supabase } from "../lib/supabaseClient";
 import { useHasProAccess, useUserId } from "../lib/hooks";
 import { Link, useNavigate } from "react-router-dom";
-import { sample } from "../lib/sample";
 import { showPaywall } from "../lib/usePaywallModalStore";
 import {
   createUnlimitedContent,
@@ -21,13 +19,10 @@ import {
 import { Warning } from "../components/Warning";
 import { FFTheme } from "../lib/FFTheme";
 import { RequestTemplate } from "../components/RequestTemplate";
-import { createExamples } from "./createExamples";
 
 type CreateChartOptions = {
   name: string;
   template: string;
-  promptType: string;
-  subject?: string;
 };
 
 export default function New2() {
@@ -55,40 +50,6 @@ export default function New2() {
       let content: string = importTemplate.content;
       const theme: FFTheme = importTemplate.theme;
       const cytoscapeStyle = importTemplate.cytoscapeStyle ?? "";
-
-      // Prompts
-      if (options.subject) {
-        setIsAI(true);
-        // Scroll to End of Page
-        requestAnimationFrame(() =>
-          window.scrollTo(0, document.body.scrollHeight)
-        );
-        const startTime = performance.now();
-        const response = await fetch("/api/prompt/text", {
-          method: "POST",
-          body: JSON.stringify({
-            promptType: options.promptType,
-            subject: options.subject,
-            accentClasses: templateData.accentClasses,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${data.session.access_token}`,
-          },
-        }).then((res) => res.json());
-        const endTime = performance.now();
-        const elapsedTime = endTime - startTime;
-        // TO DO: Show Error Here
-        if (response.text) {
-          content = response.text;
-          sample({
-            template: options.template,
-            subject: options.subject,
-            runningTime: elapsedTime,
-            result: response.text,
-          });
-        }
-      }
 
       const chart = `${content}\n=====${JSON.stringify({
         themeEditor: theme,
@@ -126,7 +87,6 @@ export default function New2() {
       const data = new FormData(e.currentTarget);
       const name = data.get("name")?.toString();
       const template = data.get("template")?.toString();
-      const subject = data.get("subject")?.toString();
       if (!name || !template) return;
 
       const templateObj = templates.find((t) => t.key === template);
@@ -135,8 +95,6 @@ export default function New2() {
       const options: CreateChartOptions = {
         name,
         template,
-        promptType: templateObj.promptType,
-        subject,
       };
 
       createChartMutation.mutate(options);
@@ -145,7 +103,6 @@ export default function New2() {
   );
 
   const language = useContext(AppContext).language;
-  const [examples] = useState(createExamples());
 
   return (
     <form
@@ -201,67 +158,6 @@ export default function New2() {
           </div>
         </RadioGroup.Root>
       </Section>
-      <Section title={t`Set Content`}>
-        <Tabs.Root defaultValue="default">
-          <Tabs.List asChild>
-            <div className="flex">
-              <Trigger value="default" disabled={createChartMutation.isLoading}>
-                <Article size={16} />
-                <Trans>Use Default Content</Trans>
-              </Trigger>
-              <Trigger
-                value="ai"
-                disabled={createChartMutation.isLoading}
-                data-testid="Use AI"
-              >
-                <MagicWand size={16} />
-                <Trans>Use AI</Trans>
-              </Trigger>
-            </div>
-          </Tabs.List>
-          <Tabs.Content value="ai" className="pt-4 grid gap-1">
-            <p className="text-neutral-700 leading-6 text-sm dark:text-neutral-300">
-              <Trans>
-                Enter a prompt or information you would like to create a chart
-                from.
-              </Trans>
-            </p>
-            <div className="text-neutral-700 text-xs dark:text-neutral-300 leading-6">
-              <span className="font-bold">
-                <Trans>Examples:</Trans>&nbsp;&nbsp;
-              </span>
-              {examples.map((example, index) => (
-                <Fragment key={example}>
-                  {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-                  <span
-                    className="italic opacity-80 hover:opacity-100 cursor-pointer hover:underline"
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => {
-                      // set example in textarea
-                      const textarea = document.querySelector(
-                        "#ai-prompt"
-                      ) as HTMLTextAreaElement;
-                      if (textarea) textarea.value = example;
-                    }}
-                  >
-                    {example}
-                  </span>
-                  {index < examples.length - 1 && (
-                    <span className="mx-2">|</span>
-                  )}
-                </Fragment>
-              ))}
-            </div>
-            <Textarea
-              id="ai-prompt"
-              className="h-[120px]"
-              name="subject"
-              disabled={createChartMutation.isLoading}
-            />
-          </Tabs.Content>
-        </Tabs.Root>
-      </Section>
       <div className="grid justify-center justify-items-center gap-2">
         {!hasProAccess && (
           <div className="justify-items-center grid">
@@ -304,15 +200,6 @@ export default function New2() {
         )}
       </div>
     </form>
-  );
-}
-
-function Trigger(props: Parameters<typeof Tabs.Trigger>[0]) {
-  return (
-    <Tabs.Trigger
-      className="pb-3 px-2 rounded-md rounded-none border-0 border-b-2 border-solid border-b-foreground/10 data-[state=active]:border-foreground text-foreground/40 data-[state=active]:text-foreground dark:border-b-neutral-800 dark:text-background/40 dark:data-[state=active]:text-white dark:data-[state=active]:border-white flex items-center gap-2"
-      {...props}
-    />
   );
 }
 
