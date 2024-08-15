@@ -98,12 +98,7 @@ export function LoadTemplateDialog() {
                   <Trans>Back</Trans>
                 </button>
                 <div className="grid sm:grid-cols-[2fr,1fr] gap-6">
-                  <div
-                    className="h-full w-full overflow-hidden p-4 rounded-lg shadow-md"
-                    // style={{
-                    //   backgroundColor: templateData.bgColor,
-                    // }}
-                  >
+                  <div className="h-full w-full overflow-hidden p-4 rounded-lg shadow-md">
                     <img
                       src={`/templates/${templateData.img}`}
                       alt={templateData.key}
@@ -163,7 +158,6 @@ export function LoadTemplateDialog() {
                     key={template.key}
                     onClick={() => setTemplate(template.key)}
                     className="rounded overflow-hidden md:h-[280px] shadow-sm p-2"
-                    style={{ backgroundColor: template.bgColor }}
                   >
                     <img
                       key={template.img}

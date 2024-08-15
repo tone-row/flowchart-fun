@@ -181,10 +181,7 @@ export default function New2() {
               >
                 <button className="grid gap-2 group focus:outline-foreground/10 focus:outline-2 outline-offset-4 rounded-md">
                   {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-                  <div
-                    className="p-1 h-[283px] rounded-sm border border-foreground/10 opacity-70 hover:opacity-100 group-data-[state=checked]:opacity-100 group-data-[state=checked]:border-foreground/30 overflow-hidden group-data-[state=checked]:shadow-sm"
-                    style={{ backgroundColor: template.bgColor }}
-                  >
+                  <div className="p-1 h-[283px] rounded-sm border border-foreground/10 opacity-70 hover:opacity-100 group-data-[state=checked]:opacity-100 group-data-[state=checked]:border-foreground/30 overflow-hidden group-data-[state=checked]:shadow-sm">
                     <img
                       key={template.img}
                       src={`/templates/${template.img}`}
