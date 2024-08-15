@@ -123,6 +123,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       style={{ background: bg }}
       onContextMenu={show}
       className={classNames(styles.GraphContainer, "graph")}
+      data-flowchart-fun-canvas="true"
     >
       <Box id="cy" overflow="hidden" />
       <GraphContextMenu />

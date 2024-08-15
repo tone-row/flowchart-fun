@@ -10,9 +10,7 @@ import { useCallback, useState } from "react";
 import { Button2 } from "../ui/Shared";
 import classNames from "classnames";
 import { useDoc } from "../lib/useDoc";
-import { prepareChart } from "../lib/prepareChart/prepareChart";
-import { mountGraph, unmountGraph } from "../lib/useUnmountStore";
-import { FFTheme } from "../lib/FFTheme";
+import { loadTemplate } from "../lib/loadTemplate";
 import { getDefaultText } from "../lib/getDefaultText";
 import { RequestTemplate } from "./RequestTemplate";
 
@@ -31,8 +29,9 @@ export function LoadTemplateDialog() {
   >(null);
   const templateData = templates.find((t) => t.key === template);
   const [layout, setLayout] = useState(true);
-  const [content, setContent] = useState(getContentInitialValue);
-  const disabled = !layout && !content;
+  // Whether to load the content or not
+  const [replaceContent, setReplaceContent] = useState(getContentInitialValue);
+  const disabled = !layout && !replaceContent;
 
   /**
    * reset the state of the dialog
@@ -40,48 +39,15 @@ export function LoadTemplateDialog() {
   const reset = useCallback(() => {
     setTemplate(null);
     setLayout(true);
-    setContent(getContentInitialValue);
+    setReplaceContent(getContentInitialValue);
   }, []);
 
   const load = useCallback(async () => {
-    if (!template || !templateData) return;
-
-    const importTemplate = await import(
-      `../lib/templates/${template}-template.ts`
-    );
-    const templateContent = importTemplate.content;
-    const theme: FFTheme = importTemplate.theme;
-    const cytoscapeStyle: string = importTemplate.cytoscapeStyle ?? "";
-
-    const { text, meta: _meta, details } = useDoc.getState();
-
-    const nextContent = content ? templateContent : text;
-
-    const meta = {
-      ..._meta,
-      cytoscapeStyle,
-      themeEditor: theme,
-      // Unfreeze the doc
-      nodePositions: undefined,
-    };
-
-    reset();
-    setOpen(false);
-
-    unmountGraph();
-    // The reason this is done is because the unmounting
-    // of the graph happens effectually, i.e. not immediately
-    // and when an elk layout is run, but the graph is no longer
-    // there we get an error, this ensures the graph is actually
-    // unmounted, therefore the layout doesn't begin to run
-    requestAnimationFrame(() => {
-      prepareChart({
-        doc: `${nextContent}\n=====${JSON.stringify(meta)}=====`,
-        details,
-      });
-      mountGraph();
+    loadTemplate(template, replaceContent, () => {
+      reset();
+      setOpen(false);
     });
-  }, [template, templateData, content, reset]);
+  }, [template, replaceContent, reset]);
 
   return (
     <Dialog.Root
@@ -89,7 +55,7 @@ export function LoadTemplateDialog() {
       onOpenChange={(open) => {
         if (!open) reset();
         setOpen(open);
-        setContent(getContentInitialValue);
+        setReplaceContent(getContentInitialValue);
       }}
     >
       <Dialog.Trigger asChild>
@@ -134,9 +100,9 @@ export function LoadTemplateDialog() {
                 <div className="grid sm:grid-cols-[2fr,1fr] gap-6">
                   <div
                     className="h-full w-full overflow-hidden p-4 rounded-lg shadow-md"
-                    style={{
-                      backgroundColor: templateData.bgColor,
-                    }}
+                    // style={{
+                    //   backgroundColor: templateData.bgColor,
+                    // }}
                   >
                     <img
                       src={`/templates/${templateData.img}`}
@@ -149,19 +115,23 @@ export function LoadTemplateDialog() {
                     <Option id="layout" checked={layout} set={setLayout}>
                       <Trans>Load layout and styles</Trans>
                     </Option>
-                    <Option id="content" checked={content} set={setContent}>
+                    <Option
+                      id="content"
+                      checked={replaceContent}
+                      set={setReplaceContent}
+                    >
                       <Trans>Load default content</Trans>
                     </Option>
                     <div
                       className={classNames(
                         "text-xs text-neutral-500 rounded transition-opacity duration-200 flex gap-1 justify-start items-center",
                         {
-                          "opacity-100": content,
-                          "opacity-0": !content,
+                          "opacity-100": replaceContent,
+                          "opacity-0": !replaceContent,
                         }
                       )}
                     >
-                      {content ? (
+                      {replaceContent ? (
                         <>
                           <WarningCircle size={16} className="shrink-0" />
                           <Trans>This will replace the current content.</Trans>

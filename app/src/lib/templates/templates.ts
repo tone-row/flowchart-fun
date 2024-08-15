@@ -2,14 +2,16 @@ import { t } from "@lingui/macro";
 
 export type PromptType = "knowledge" | "flowchart";
 
-export const templates: {
+type Template = {
   key: string;
   img: string;
   bgColor: string;
   title: () => string;
   promptType: PromptType;
   accentClasses?: string[];
-}[] = [
+};
+
+export const templates: Template[] = [
   {
     key: "default",
     img: "template21.png",
