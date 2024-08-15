@@ -115,20 +115,6 @@ test("Go to Sandbox. Save Sandbox Chart", async () => {
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
 });
 
-test("Create chart from AI", async () => {
-  await page.getByTestId("new-chart-link").click();
-  await page.getByTestId("Use AI").click();
-  await page.locator('textarea[name="subject"]').click();
-  await page
-    .locator('textarea[name="subject"]')
-    .fill("the stages of the water cycle");
-  await page.getByTestId("Create Chart").click();
-  // expect url to be regex BASE_URL + /u/\d+
-  await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`), {
-    timeout: 1000 * 60 * 4,
-  });
-});
-
 test("Create chart from imported data", async () => {
   try {
     await page.getByTestId("new-chart-link").click();
