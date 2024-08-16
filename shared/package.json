@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "dev": "tsc --watch",
     "clean": "rimraf dist",
     "prebuild": "npm run clean"
   },
