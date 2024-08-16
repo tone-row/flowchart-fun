@@ -568,6 +568,9 @@ importers:
       msw:
         specifier: ^1.2.3
         version: 1.2.3(typescript@5.5.3)
+      playwright:
+        specifier: 1.45.2
+        version: 1.45.2
       react@latest:
         specifier: link:@@testing-library/react@latest
         version: link:@@testing-library/react@latest

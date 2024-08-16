@@ -25,7 +25,8 @@
     "generate:types": "export $(cat .env.local | xargs) && supabase gen types typescript --project-id \"${PROJECT_ID}\" > src/types/database.types.ts",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "autotranslations": "node scripts/autotranslations.mjs",
-    "theme:schema:generate": "pnpx ts-json-schema-generator --path 'src/lib/FFTheme.ts' --type 'FFTheme' -f tsconfig.json --strict-tuples -o src/lib/FFTheme.schema.json --minify --no-top-ref"
+    "theme:schema:generate": "pnpx ts-json-schema-generator --path 'src/lib/FFTheme.ts' --type 'FFTheme' -f tsconfig.json --strict-tuples -o src/lib/FFTheme.schema.json --minify --no-top-ref",
+    "screenshot-templates": "node scripts/screenshot-templates.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.37",
@@ -201,7 +202,8 @@
     "ts-node": "^10.9.1",
     "ts-unused-exports": "^7.0.3",
     "typescript": "^5.5.3",
-    "web-worker": "^1.2.0"
+    "web-worker": "^1.2.0",
+    "playwright": "1.45.2"
   },
   "jest": {
     "testMatch": [

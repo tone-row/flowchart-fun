@@ -32,11 +32,15 @@ const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
 const Success = lazy(() => import("../pages/Success"));
 import Page404 from "../pages/404";
 import { useSupportLegacyNRoute } from "../lib/useSupportLegacyNRoute";
+import { useEnsureLoadTemplate } from "../lib/loadTemplate";
+import { useEnsureGetScreenshotLink } from "../lib/useEnsureGetScreenshotLink";
 const Fullscreen = lazy(() => import("../pages/Fullscreen"));
 
 export default function Router() {
   usePageViews();
   useSupportLegacyNRoute();
+  useEnsureLoadTemplate();
+  useEnsureGetScreenshotLink();
   return (
     <Routes>
       <Route path="/" element={<Wrapper />}>
