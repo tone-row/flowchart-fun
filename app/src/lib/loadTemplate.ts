@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import type { FFTheme } from "./FFTheme";
 import { prepareChart } from "./prepareChart/prepareChart";
-import { templates } from "./templates";
+import { templates } from "shared";
 import { useDoc } from "./useDoc";
 import { mountGraph, unmountGraph } from "./useUnmountStore";
 
@@ -9,7 +9,7 @@ import { mountGraph, unmountGraph } from "./useUnmountStore";
  * Loads a template given a template key
  */
 export async function loadTemplate(
-  template: string | null,
+  template: typeof templates[number] | null,
   /** Whether to replace the content or not */
   replaceContent: boolean,
   /**

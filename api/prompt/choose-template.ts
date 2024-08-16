@@ -2,18 +2,10 @@ import { z } from "zod";
 import { templateRateLimit } from "./_shared";
 import { generateObject } from "ai";
 import { openai } from "@ai-sdk/openai";
-
-const templateNames = [
-  //   "default",
-  "flowchart",
-  "org-chart",
-  "code-flow",
-  "mindmap",
-  "knowledge-graph",
-] as const;
+import { templates } from "shared";
 
 const schema = z.object({
-  template: z.enum(templateNames),
+  template: z.enum(templates),
 });
 
 const reqSchema = z.object({
@@ -24,9 +16,7 @@ export const config = {
   runtime: "edge",
 };
 
-const systemMessage = `You are the Flowchart Fun template assistant. When given a prompt, analyze it and choose the most appropriate template from the following options: ${templateNames.join(
-  ", "
-)}. Respond only with the chosen template name.`;
+const systemMessage = `You're the Flowchart Fun Template Picker. From the list of templates, find the most interesting one to use for the user's prompt. Avoid using default.`;
 
 export default async function handler(req: Request) {
   const rateLimitResponse = await templateRateLimit(req);
@@ -54,5 +44,5 @@ export default async function handler(req: Request) {
 }
 
 function getContent(prompt: string): string {
-  return `Based on the following prompt, choose the most appropriate template (default, cytoscape, or theme):\n\n${prompt}`;
+  return `Which template would you like to use for the following prompt?\n\n'''${prompt}'''`;
 }

@@ -4,7 +4,7 @@ import { EditorActionTextButton } from "../ui/EditorActionTextButton";
 import { Check, WarningCircle, ArrowLeft } from "phosphor-react";
 import { PiShapesDuotone } from "react-icons/pi";
 import { Trans } from "@lingui/macro";
-import { templates } from "../lib/templates";
+import { templates } from "shared";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { useCallback, useState } from "react";
 import { Button2 } from "../ui/Shared";
@@ -24,7 +24,9 @@ function getContentInitialValue() {
 
 export function LoadTemplateDialog() {
   const [open, setOpen] = useState(false);
-  const [template, setTemplate] = useState<null | string>(null);
+  const [template, setTemplate] = useState<null | typeof templates[number]>(
+    null
+  );
   const [layout, setLayout] = useState(true);
   // Whether to load the content or not
   const [replaceContent, setReplaceContent] = useState(getContentInitialValue);
