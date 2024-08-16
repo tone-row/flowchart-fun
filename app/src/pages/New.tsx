@@ -1,10 +1,9 @@
-import { Article, MagicWand, Plus, Rocket } from "phosphor-react";
-import { Button2, Input, Textarea } from "../ui/Shared";
-import { templates } from "../lib/templates/templates";
+import { Plus, Rocket } from "phosphor-react";
+import { Button2, Input } from "../ui/Shared";
+import { templates } from "shared";
 import { Trans, t } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
-import * as Tabs from "@radix-ui/react-tabs";
-import { Fragment, useCallback, useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { AppContext } from "../components/AppContextProvider";
 import { languages } from "../locales/i18n";
 import { getFunFlowchartName } from "../lib/getFunFlowchartName";
@@ -12,7 +11,6 @@ import { useMutation } from "react-query";
 import { supabase } from "../lib/supabaseClient";
 import { useHasProAccess, useUserId } from "../lib/hooks";
 import { Link, useNavigate } from "react-router-dom";
-import { sample } from "../lib/sample";
 import { showPaywall } from "../lib/usePaywallModalStore";
 import {
   createUnlimitedContent,
@@ -21,13 +19,10 @@ import {
 import { Warning } from "../components/Warning";
 import { FFTheme } from "../lib/FFTheme";
 import { RequestTemplate } from "../components/RequestTemplate";
-import { createExamples } from "./createExamples";
 
 type CreateChartOptions = {
   name: string;
   template: string;
-  promptType: string;
-  subject?: string;
 };
 
 export default function New2() {
@@ -45,50 +40,12 @@ export default function New2() {
       if (!data.session) throw new Error("No Session");
 
       // Get Template
-      const templateData = templates.find((t) => t.key === options.template);
-      if (!templateData) throw new Error("No Template");
-
-      // Get Template
       const importTemplate = await import(
         `../lib/templates/${options.template}-template.ts`
       );
       let content: string = importTemplate.content;
       const theme: FFTheme = importTemplate.theme;
       const cytoscapeStyle = importTemplate.cytoscapeStyle ?? "";
-
-      // Prompts
-      if (options.subject) {
-        setIsAI(true);
-        // Scroll to End of Page
-        requestAnimationFrame(() =>
-          window.scrollTo(0, document.body.scrollHeight)
-        );
-        const startTime = performance.now();
-        const response = await fetch("/api/prompt/text", {
-          method: "POST",
-          body: JSON.stringify({
-            promptType: options.promptType,
-            subject: options.subject,
-            accentClasses: templateData.accentClasses,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${data.session.access_token}`,
-          },
-        }).then((res) => res.json());
-        const endTime = performance.now();
-        const elapsedTime = endTime - startTime;
-        // TO DO: Show Error Here
-        if (response.text) {
-          content = response.text;
-          sample({
-            template: options.template,
-            subject: options.subject,
-            runningTime: elapsedTime,
-            result: response.text,
-          });
-        }
-      }
 
       const chart = `${content}\n=====${JSON.stringify({
         themeEditor: theme,
@@ -126,17 +83,11 @@ export default function New2() {
       const data = new FormData(e.currentTarget);
       const name = data.get("name")?.toString();
       const template = data.get("template")?.toString();
-      const subject = data.get("subject")?.toString();
       if (!name || !template) return;
-
-      const templateObj = templates.find((t) => t.key === template);
-      if (!templateObj) return;
 
       const options: CreateChartOptions = {
         name,
         template,
-        promptType: templateObj.promptType,
-        subject,
       };
 
       createChartMutation.mutate(options);
@@ -145,7 +96,6 @@ export default function New2() {
   );
 
   const language = useContext(AppContext).language;
-  const [examples] = useState(createExamples());
 
   return (
     <form
@@ -174,30 +124,25 @@ export default function New2() {
           >
             {templates.map((template) => (
               <RadioGroup.Item
-                key={template.key}
-                value={template.key}
+                key={template}
+                value={template}
                 asChild
                 disabled={createChartMutation.isLoading}
               >
                 <button className="grid gap-2 group focus:outline-foreground/10 focus:outline-2 outline-offset-4 rounded-md">
                   {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-                  <div
-                    className="p-1 h-[283px] rounded-sm border border-foreground/10 opacity-70 hover:opacity-100 group-data-[state=checked]:opacity-100 group-data-[state=checked]:border-foreground/30 overflow-hidden group-data-[state=checked]:shadow-sm"
-                    style={{ backgroundColor: template.bgColor }}
-                  >
+                  <div className="h-[283px] text-[0px] rounded-sm border border-foreground/10 opacity-70 hover:opacity-100 group-data-[state=checked]:opacity-100 group-data-[state=checked]:border-foreground/30 overflow-hidden group-data-[state=checked]:shadow-sm">
                     <img
-                      key={template.img}
-                      src={`/templates/${template.img}`}
-                      className="rounded w-full h-full object-contain object-center"
-                      alt={template.key}
-                      height={273}
-                      width={273}
+                      key={template}
+                      src={`/template-screenshots/thumb_${template}.png`}
+                      className="w-full h-full object-contain object-center"
+                      alt={template}
                     />
                   </div>
-                  <div className="flex gap-2 items-center justify-center">
+                  <div className="flex gap-2 items-center justify-center mt-2">
                     <span className="w-3 h-3 rounded-full border border-foreground/60 group-data-[state=checked]:border-foreground group-data-[state=checked]:bg-foreground dark:group-data-[state=checked]:bg-white dark:group-data-[state=checked]:border-white dark:border-background/50" />
-                    <h2 className="text-center text-sm text-foreground/60 group-data-[state=checked]:text-foreground dark:text-background/60 dark:group-data-[state=checked]:text-white">
-                      {template.title()}
+                    <h2 className="text-xs text-foreground/60 group-data-[state=checked]:text-foreground dark:text-background/60 dark:group-data-[state=checked]:text-white font-mono tracking-wide">
+                      {template}
                     </h2>
                   </div>
                 </button>
@@ -205,67 +150,6 @@ export default function New2() {
             ))}
           </div>
         </RadioGroup.Root>
-      </Section>
-      <Section title={t`Set Content`}>
-        <Tabs.Root defaultValue="default">
-          <Tabs.List asChild>
-            <div className="flex">
-              <Trigger value="default" disabled={createChartMutation.isLoading}>
-                <Article size={16} />
-                <Trans>Use Default Content</Trans>
-              </Trigger>
-              <Trigger
-                value="ai"
-                disabled={createChartMutation.isLoading}
-                data-testid="Use AI"
-              >
-                <MagicWand size={16} />
-                <Trans>Use AI</Trans>
-              </Trigger>
-            </div>
-          </Tabs.List>
-          <Tabs.Content value="ai" className="pt-4 grid gap-1">
-            <p className="text-neutral-700 leading-6 text-sm dark:text-neutral-300">
-              <Trans>
-                Enter a prompt or information you would like to create a chart
-                from.
-              </Trans>
-            </p>
-            <div className="text-neutral-700 text-xs dark:text-neutral-300 leading-6">
-              <span className="font-bold">
-                <Trans>Examples:</Trans>&nbsp;&nbsp;
-              </span>
-              {examples.map((example, index) => (
-                <Fragment key={example}>
-                  {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-                  <span
-                    className="italic opacity-80 hover:opacity-100 cursor-pointer hover:underline"
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => {
-                      // set example in textarea
-                      const textarea = document.querySelector(
-                        "#ai-prompt"
-                      ) as HTMLTextAreaElement;
-                      if (textarea) textarea.value = example;
-                    }}
-                  >
-                    {example}
-                  </span>
-                  {index < examples.length - 1 && (
-                    <span className="mx-2">|</span>
-                  )}
-                </Fragment>
-              ))}
-            </div>
-            <Textarea
-              id="ai-prompt"
-              className="h-[120px]"
-              name="subject"
-              disabled={createChartMutation.isLoading}
-            />
-          </Tabs.Content>
-        </Tabs.Root>
       </Section>
       <div className="grid justify-center justify-items-center gap-2">
         {!hasProAccess && (
@@ -309,15 +193,6 @@ export default function New2() {
         )}
       </div>
     </form>
-  );
-}
-
-function Trigger(props: Parameters<typeof Tabs.Trigger>[0]) {
-  return (
-    <Tabs.Trigger
-      className="pb-3 px-2 rounded-md rounded-none border-0 border-b-2 border-solid border-b-foreground/10 data-[state=active]:border-foreground text-foreground/40 data-[state=active]:text-foreground dark:border-b-neutral-800 dark:text-background/40 dark:data-[state=active]:text-white dark:data-[state=active]:border-white flex items-center gap-2"
-      {...props}
-    />
   );
 }
 
