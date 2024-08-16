@@ -1,6 +1,6 @@
 import { Plus, Rocket } from "phosphor-react";
 import { Button2, Input } from "../ui/Shared";
-import { templates } from "../lib/templates";
+import { templates } from "shared";
 import { Trans, t } from "@lingui/macro";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { useCallback, useContext, useState } from "react";

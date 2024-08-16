@@ -139,12 +139,12 @@ async function createThumbnails(templates) {
 
 async function createTemplatesIndex(templates) {
   console.log("Creating templates index...");
-  const indexPath = path.join(__dirname, "../src/lib/templates/index.ts");
+  const indexPath = path.join(__dirname, "../../shared/templates.ts");
   const indexContent = `export const templates = ${JSON.stringify(
     templates,
     null,
     2
-  )};`;
+  )} as const;`;
 
   try {
     await writeFile(indexPath, indexContent, "utf8");

@@ -11,4 +11,4 @@ export const templates = [
   "org-chart",
   "pert-light",
   "playful-mindmap",
-];
+] as const;

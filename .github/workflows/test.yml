@@ -16,5 +16,7 @@ jobs:
           version: 8
       - name: Install Dependencies
         run: pnpm install
+      - name: Build shared
+        run: pnpm -F shared build
       - name: Test
         run: pnpm -F app test:coverage
