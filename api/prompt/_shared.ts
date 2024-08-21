@@ -3,17 +3,16 @@ import { streamText } from "ai";
 import { stripe } from "../_lib/_stripe";
 import { kv } from "@vercel/kv";
 import { Ratelimit } from "@upstash/ratelimit";
-import { openai } from "@ai-sdk/openai";
+import { createOpenAI, type openai as OpenAI } from "@ai-sdk/openai";
 
 export const reqSchema = z.object({
   prompt: z.string().min(1),
   document: z.string(),
 });
 
-export async function handleRateLimit(req: Request) {
-  const ip = getIp(req);
-  let isPro = false,
-    customerId: null | string = null;
+async function checkUserStatus(req: Request) {
+  let isPro = false;
+  let customerId: null | string = null;
 
   const token = req.headers.get("Authorization");
 
@@ -25,6 +24,16 @@ export async function handleRateLimit(req: Request) {
       customerId = sub.customer as string;
     }
   }
+
+  return { isPro, customerId };
+}
+
+export async function handleRateLimit(
+  req: Request,
+  isPro: boolean,
+  customerId: string | null
+) {
+  const ip = getIp(req);
 
   const ratelimit = new Ratelimit({
     redis: kv,
@@ -85,10 +94,15 @@ export async function processRequest(
   req: Request,
   systemMessage: string,
   content: string,
-  model: Parameters<typeof openai.chat>[0] = "gpt-4-turbo"
+  model: Parameters<typeof OpenAI.chat>[0] = "gpt-4-turbo"
 ) {
-  const rateLimitResponse = await handleRateLimit(req);
+  const { isPro, customerId } = await checkUserStatus(req);
+  const rateLimitResponse = await handleRateLimit(req, isPro, customerId);
   if (rateLimitResponse) return rateLimitResponse;
+
+  const openai = createOpenAI({
+    apiKey: getOpenAiApiKey(isPro),
+  });
 
   const result = await streamText({
     model: openai.chat(model),
@@ -103,6 +117,19 @@ export async function processRequest(
   });
 
   return result.toTextStreamResponse();
+}
+
+/**
+ * Returns the right api key depending on the user's subscription
+ * so we can track usage. Bear in mind a development key is used for
+ * anything that's not production.
+ */
+function getOpenAiApiKey(isPro: boolean) {
+  if (isPro) {
+    return process.env.OPENAI_API_KEY_PRO;
+  }
+
+  return process.env.OPENAI_API_KEY_FREE;
 }
 
 function getIp(req: Request) {
