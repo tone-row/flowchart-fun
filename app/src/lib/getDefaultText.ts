@@ -1,17 +1,21 @@
 import { t } from "@lingui/macro";
 
 export function getDefaultText() {
-  return `${t`Welcome to Flowchart Fun!`}
-  ${t`Start`}: ${t`Modify text to see it transform into a flowchart on the right.`}
-  ${t`Understand Syntax`} .shape_circle
-    ${t`Begin Typing`}: ${t`Start with a label or decision.`}
-    ${t`Decisions`}: ${t`Use colons like "Decisions:".`}
-    ${t`Indent for Steps`}: ${t`Indicate progression or dependency.`}
-    ${t`Customize`}: ${t`Add classes to change color and shape`} \\(.color_red)
-    ${t`Right-click nodes for more options.`}
-  ${t`Use AI`} .color_green
-    ${t`Paste a document to convert it into a flowchart.`}
-  ${t`Share Your Work`} .color_blue
-    ${t`Download or share your flowchart using the 'Share' button.`}
+  return `${t`Welcome to Flowchart Fun`}
+  ${t`Begin your journey`}
+    ${t`Add some steps`}
+      ${t`Step 1`}: ${t`Write like an outline`}
+      ${t`Step 2`}: ${t`Each line becomes a node`}
+      ${t`Step 3`}: ${t`Indent to connect nodes`}
+    ${t`Style with classes`}
+      ${t`Green?`} .color_green
+      ${t`Or maybe blue!`} .color_blue
+    ${t`Wrap text in parentheses to connect to any node`}
+      ${t`Link back`}: (Begin your journey)
+  ${t`Time to decide`}: ${t`What's next?`}
+    ${t`Explore more`}: ${t`Right-click nodes for options`}
+    ${t`Try AI`}: ${t`Paste a document to convert it`}
+    ${t`Keep practicing`}: ${t`You're doing great!`}
+      ${t`Now you're thinking with flowcharts!`}
 `;
 }

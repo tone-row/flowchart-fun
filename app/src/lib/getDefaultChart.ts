@@ -5,7 +5,7 @@ const defaultMeta = {
   themeEditor: {
     layoutName: "dagre",
     direction: "RIGHT",
-    spacingFactor: 1.35,
+    spacingFactor: 1.15,
     background: "#ffffff",
     fontFamily: "IBM Plex Sans",
     shape: "roundrectangle",
