@@ -286,8 +286,8 @@ importers:
         specifier: ^10.13.1
         version: 10.13.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       graph-selector:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.5.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.5.3)
       gray-matter:
         specifier: ^4.0.2
         version: 4.0.3
@@ -7513,6 +7513,9 @@ packages:
 
   graph-selector@0.11.1:
     resolution: {integrity: sha512-oY4QfZHd7fuUCGtC4V+UaK6HY9bDALmnFR+ePMSO97s1SIIOfjCp2oebaUCsT9QQHXHOkPlHa59TLSnR7dm9VQ==}
+
+  graph-selector@0.11.2:
+    resolution: {integrity: sha512-wr3IXy6tBQfM7lII8606mzFFML03EN9mLpQNk2Ekl1k1+IzRpaxEaCGATBK2vyKh+Ez+FMIWeHVunS1t+C9qmw==}
 
   grapheme-splitter@1.0.4:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
@@ -20473,6 +20476,18 @@ snapshots:
   graceful-fs@4.2.11: {}
 
   graph-selector@0.11.1(typescript@5.5.3):
+    dependencies:
+      '@tone-row/strip-comments': 2.0.6
+      '@types/cytoscape': 3.21.1
+      '@types/strip-comments': 2.0.4
+      html-entities: 2.4.0
+      monaco-editor: 0.43.0
+      pkgroll: 2.4.1(typescript@5.5.3)
+      strip-comments: 2.0.1
+    transitivePeerDependencies:
+      - typescript
+
+  graph-selector@0.11.2(typescript@5.5.3):
     dependencies:
       '@tone-row/strip-comments': 2.0.6
       '@types/cytoscape': 3.21.1
