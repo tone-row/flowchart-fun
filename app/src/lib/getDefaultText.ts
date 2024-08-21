@@ -11,7 +11,7 @@ export function getDefaultText() {
       ${t`Green?`} .color_green
       ${t`Or maybe blue!`} .color_blue
     ${t`Wrap text in parentheses to connect to any node`}
-      ${t`Link back`}: (Begin your journey)
+      ${t`Link back`}: (${t`Begin your journey`})
   ${t`Time to decide`}: ${t`What's next?`}
     ${t`Explore more`}: ${t`Right-click nodes for options`}
     ${t`Try AI`}: ${t`Paste a document to convert it`}

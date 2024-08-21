@@ -63,9 +63,9 @@ msgstr "帐户"
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "在任何特殊字符之前添加反斜杠 (<0>\\</0>)： <1>(</1>、<2>:</2>、<3>#</3>或<4>.</4>"
 
-#: src/lib/getDefaultText.ts:10
-msgid "Add classes to change color and shape"
-msgstr "添加类别以改变颜色和形状"
+#: src/lib/getDefaultText.ts:6
+msgid "Add some steps"
+msgstr "添加一些步骤"
 
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
@@ -146,9 +146,9 @@ msgstr "成为Github赞助商"
 msgid "Become a Pro User"
 msgstr "成为专业用户"
 
-#: src/lib/getDefaultText.ts:7
-msgid "Begin Typing"
-msgstr "开始输入"
+#: src/lib/getDefaultText.ts:5
+msgid "Begin your journey"
+msgstr "开始你的旅程"
 
 #: src/components/Checkout.tsx:144
 msgid "Billed annually at $24"
@@ -419,10 +419,6 @@ msgstr "自定义分享选项"
 msgid "Customer Portal"
 msgstr "客户门户"
 
-#: src/lib/getDefaultText.ts:10
-msgid "Customize"
-msgstr "自定义"
-
 #: src/pages/Pricing2.tsx:27
 msgid "Daily Sandbox Editor"
 msgstr "每日沙盒编辑器"
@@ -447,10 +443,6 @@ msgstr "数据导入功能，适用于复杂的图表"
 #: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "日期"
-
-#: src/lib/getDefaultText.ts:8
-msgid "Decisions"
-msgstr "决策"
 
 #: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
@@ -500,10 +492,6 @@ msgstr "下载 PNG"
 msgid "Download SVG"
 msgstr "下载 SVG"
 
-#: src/lib/getDefaultText.ts:15
-msgid "Download or share your flowchart using the 'Share' button."
-msgstr "使用“分享”按钮下载或分享您的流程图。"
-
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "将CSV文件拖放到此处，或单击以选择文件"
@@ -515,6 +503,10 @@ msgstr "通过引用开始行从多个节点绘制边缘"
 #: src/components/ImportDataDialog.tsx:242
 msgid "Drop the file here ..."
 msgstr "將檔案拖放到這裡..."
+
+#: src/lib/getDefaultText.ts:8
+msgid "Each line becomes a node"
+msgstr "每一行都变成一个节点"
 
 #: src/components/LearnSyntaxDialog.tsx:188
 msgid "Edge ID, Classes, Attributes"
@@ -640,6 +632,10 @@ msgstr "专属办公时间"
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
 msgstr "体验将本地文件直接加载到流程图中的效率和安全性，非常适合离线管理工作相关文件。解锁这个独有的专业功能以及更多功能，Flowchart Fun Pro仅需每月$4即可使用。"
 
+#: src/lib/getDefaultText.ts:16
+msgid "Explore more"
+msgstr "探索更多"
+
 #: src/components/ShareDialog.tsx:56
 #: src/components/ShareDialog.tsx:162
 msgid "Export"
@@ -723,6 +719,10 @@ msgstr "去你的沙盒"
 #: src/components/Tabs/EditorTabList.tsx:50
 msgid "Graph"
 msgstr "图表"
+
+#: src/lib/getDefaultText.ts:11
+msgid "Green?"
+msgstr "绿色的？"
 
 #: src/lib/graphOptions.ts:21
 msgid "Grid"
@@ -812,12 +812,8 @@ msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, ad
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
 #: src/lib/getDefaultText.ts:9
-msgid "Indent for Steps"
-msgstr "缩进步骤"
-
-#: src/lib/getDefaultText.ts:9
-msgid "Indicate progression or dependency."
-msgstr "指示进展或依赖关系。"
+msgid "Indent to connect nodes"
+msgstr "缩进以连接节点"
 
 #: src/components/Header.tsx:128
 msgid "Info"
@@ -842,6 +838,10 @@ msgstr "加入2000多位专业人士，升级他们的工作流程"
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "保持事物私密"
+
+#: src/lib/getDefaultText.ts:18
+msgid "Keep practicing"
+msgstr "继续练习"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -895,6 +895,10 @@ msgstr "浅色模式"
 #: src/components/ShareDialog.tsx:139
 msgid "Link"
 msgstr "链接"
+
+#: src/lib/getDefaultText.ts:14
+msgid "Link back"
+msgstr "链接回来"
 
 #: src/components/LoadTemplateDialog.tsx:148
 msgid "Load"
@@ -970,10 +974,6 @@ msgstr "付款管理"
 #: src/components/ImportDataDialog.tsx:380
 msgid "Map Data"
 msgstr "對應資料"
-
-#: src/lib/getDefaultText.ts:5
-msgid "Modify text to see it transform into a flowchart on the right."
-msgstr "修改文本，即可在右侧看到它变成流程图。"
 
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
@@ -1061,6 +1061,10 @@ msgstr "节点可以使用虚线、点线或双线样式。边框也可以使用
 msgid "Not Empty"
 msgstr "不为空"
 
+#: src/lib/getDefaultText.ts:19
+msgid "Now you're thinking with flowcharts!"
+msgstr "现在你在用流程图思考了！"
+
 #: src/pages/Pricing.tsx:72
 msgid "Office Hours"
 msgstr "工作时间"
@@ -1080,6 +1084,10 @@ msgstr "一对一支持"
 #: src/pages/Account.tsx:256
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
+
+#: src/lib/getDefaultText.ts:12
+msgid "Or maybe blue!"
+msgstr "或者也许是蓝色！"
 
 #: src/components/ShareDialog.tsx:551
 msgid "Organization Chart"
@@ -1102,9 +1110,9 @@ msgstr "密碼"
 msgid "Past Due"
 msgstr "过期"
 
-#: src/lib/getDefaultText.ts:13
-msgid "Paste a document to convert it into a flowchart."
-msgstr "将文档粘贴到转换为流程图。"
+#: src/lib/getDefaultText.ts:17
+msgid "Paste a document to convert it"
+msgstr "粘贴一个文档来转换它"
 
 #: src/components/AiToolbar.tsx:23
 msgid "Paste your document or outline here to convert it into an organized flowchart."
@@ -1247,9 +1255,9 @@ msgstr "返回"
 msgid "Right to Left"
 msgstr "从右到左"
 
-#: src/lib/getDefaultText.ts:11
-msgid "Right-click nodes for more options."
-msgstr "单击节点以获取更多选项。"
+#: src/lib/getDefaultText.ts:16
+msgid "Right-click nodes for options"
+msgstr "右键点击节点以获得选项"
 
 #: src/components/Header.tsx:156
 #: src/components/Header.tsx:397
@@ -1300,10 +1308,6 @@ msgstr "设置"
 #: src/components/FlowchartHeader.tsx:64
 msgid "Share"
 msgstr "分享"
-
-#: src/lib/getDefaultText.ts:14
-msgid "Share Your Work"
-msgstr "分享你的工作"
 
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
@@ -1359,7 +1363,6 @@ msgstr "间距"
 msgid "Special Attributes"
 msgstr "特殊属性"
 
-#: src/lib/getDefaultText.ts:5
 #: src/pages/Account.tsx:183
 msgid "Start"
 msgstr "开始"
@@ -1368,13 +1371,21 @@ msgstr "开始"
 msgid "Start Over"
 msgstr "重新開始"
 
-#: src/lib/getDefaultText.ts:7
-msgid "Start with a label or decision."
-msgstr "从标签或决策开始。"
-
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "状态"
+
+#: src/lib/getDefaultText.ts:7
+msgid "Step 1"
+msgstr "步骤1"
+
+#: src/lib/getDefaultText.ts:8
+msgid "Step 2"
+msgstr "步骤2"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Step 3"
+msgstr "步骤3"
 
 #: src/components/LearnSyntaxDialog.tsx:156
 msgid "Store any data associated to a node"
@@ -1383,6 +1394,10 @@ msgstr "將任何與節點相關的資料儲存"
 #: src/components/LearnSyntaxDialog.tsx:275
 msgid "Style Classes"
 msgstr "樣式類別"
+
+#: src/lib/getDefaultText.ts:10
+msgid "Style with classes"
+msgstr "用类别进行样式设置"
 
 #: src/components/AiToolbar.tsx:140
 #: src/components/EditWithAI.tsx:242
@@ -1532,6 +1547,10 @@ msgstr "這將取代目前的內容。"
 msgid "This will replace your current sandbox."
 msgstr "这将替换您当前的沙盒。"
 
+#: src/lib/getDefaultText.ts:15
+msgid "Time to decide"
+msgstr "决定的时间到了"
+
 #: src/components/ShareDialog.tsx:626
 msgid "Tip"
 msgstr "提示"
@@ -1573,6 +1592,10 @@ msgstr "即时将文本转换为图表"
 msgid "Trusted by Professionals and Academics Alike"
 msgstr "专业人士和学术界都信任我们"
 
+#: src/lib/getDefaultText.ts:17
+msgid "Try AI"
+msgstr "尝试人工智能"
+
 #: src/components/App.tsx:82
 msgid "Try again"
 msgstr "重试"
@@ -1592,10 +1615,6 @@ msgstr "两个节点有相同的ID"
 #: src/components/ConvertToFlowchart.tsx:33
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
-
-#: src/lib/getDefaultText.ts:6
-msgid "Understand Syntax"
-msgstr "理解语法"
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -1662,10 +1681,6 @@ msgstr "仅需每月4美元升级到专业版"
 msgid "Upload your File"
 msgstr "上传您的文件"
 
-#: src/lib/getDefaultText.ts:12
-msgid "Use AI"
-msgstr "使用AI"
-
 #: src/components/Tabs/ThemeTab.tsx:570
 #: src/components/Tabs/ThemeTab.tsx:571
 msgid "Use Custom CSS Only"
@@ -1678,10 +1693,6 @@ msgstr "使用Lucidchart或Visio？CSV导入使从任何来源获取数据变得
 #: src/components/LearnSyntaxDialog.tsx:147
 msgid "Use classes to group nodes"
 msgstr "使用类来分组节点"
-
-#: src/lib/getDefaultText.ts:8
-msgid "Use colons like \"Decisions:\"."
-msgstr "使用冒号\\（：）表示\\"
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1740,12 +1751,16 @@ msgid "Watermarks"
 msgstr "水印"
 
 #: src/lib/getDefaultText.ts:4
-msgid "Welcome to Flowchart Fun!"
-msgstr "欢迎来到流程图乐趣！"
+msgid "Welcome to Flowchart Fun"
+msgstr "欢迎来到流程图乐趣"
 
 #: src/pages/Pricing2.tsx:288
 msgid "What's Included"
 msgstr "包括什么"
+
+#: src/lib/getDefaultText.ts:15
+msgid "What's next?"
+msgstr "接下来是什么？"
 
 #: src/pages/Charts.tsx:290
 msgid "What's this?"
@@ -1776,6 +1791,14 @@ msgstr "您想继续吗？"
 msgid "Would you like to suggest a new example?"
 msgstr "您想提出一个新的示例吗？"
 
+#: src/lib/getDefaultText.ts:13
+msgid "Wrap text in parentheses to connect to any node"
+msgstr "用括号将文本连接到任何节点"
+
+#: src/lib/getDefaultText.ts:7
+msgid "Write like an outline"
+msgstr "像写大纲一样"
+
 #: src/components/EditWithAI.tsx:216
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "在此处输入您的提示，或点击启用麦克风，然后按住录制。"
@@ -1799,6 +1822,10 @@ msgstr "您需要登录才能访问此页面。"
 #: src/components/Checkout.tsx:101
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "您已经是专业用户。 <0>管理订阅</0><1/>有问题或功能请求？ <2>告诉我们</2>"
+
+#: src/lib/getDefaultText.ts:18
+msgid "You're doing great!"
+msgstr "你做得很棒！"
 
 #: src/lib/usePromptStore.ts:100
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
