@@ -151,11 +151,11 @@ msgstr "成为专业用户"
 msgid "Begin your journey"
 msgstr "开始你的旅程"
 
-#: src/components/Checkout.tsx:144
+#: src/components/Checkout.tsx:142
 msgid "Billed annually at $24"
 msgstr "年度账单为$24"
 
-#: src/components/Checkout.tsx:156
+#: src/components/Checkout.tsx:154
 msgid "Billed monthly at $4"
 msgstr "每月收费$4"
 
@@ -198,6 +198,10 @@ msgstr "宽度优先"
 msgid "Cancel"
 msgstr "取消"
 
+#: src/components/Checkout.tsx:191
+msgid "Cancel anytime"
+msgstr "随时取消"
+
 #: src/pages/Account.tsx:326
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
@@ -236,10 +240,6 @@ msgstr "選擇"
 #: src/pages/New.tsx:119
 msgid "Choose Template"
 msgstr "选择模板"
-
-#: src/components/Checkout.tsx:130
-msgid "Choose a Plan"
-msgstr "选择一个计划"
 
 #: src/components/LearnSyntaxDialog.tsx:327
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
@@ -692,13 +692,13 @@ msgstr "免费"
 msgid "Fullscreen"
 msgstr "全屏"
 
-#: src/components/Checkout.tsx:133
-msgid "Gain access to AI Features and never lose your work with a Pro account."
-msgstr "获得AI功能的访问权限，并通过专业版账户永远不会丢失您的工作。"
-
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "一般"
+
+#: src/components/Checkout.tsx:177
+msgid "Get Pro Access Now"
+msgstr "立即获取专业访问权限"
 
 #: src/lib/usePromptStore.ts:99
 msgid "Get Unlimited AI Requests"
@@ -956,7 +956,7 @@ msgstr "登出"
 msgid "Log in to Save"
 msgstr "登录以保存"
 
-#: src/components/Checkout.tsx:74
+#: src/components/Checkout.tsx:73
 msgid "Log in to upgrade your account"
 msgstr "登录升级您的账户"
 
@@ -980,7 +980,7 @@ msgstr "付款管理"
 msgid "Map Data"
 msgstr "對應資料"
 
-#: src/components/Checkout.tsx:155
+#: src/components/Checkout.tsx:153
 msgid "Monthly"
 msgstr "每月"
 
@@ -1149,6 +1149,10 @@ msgstr "隱私政策"
 msgid "Processing Data"
 msgstr "处理数据"
 
+#: src/components/Checkout.tsx:176
+msgid "Processing..."
+msgstr "处理中..."
+
 #: src/components/AiToolbar.tsx:32
 msgid "Prompt"
 msgstr "提示"
@@ -1279,6 +1283,10 @@ msgstr "旋转标签"
 msgid "SVG Export is a Pro Feature"
 msgstr "SVG导出是专业功能"
 
+#: src/components/Checkout.tsx:197
+msgid "Satisfaction guaranteed or first payment refunded"
+msgstr "满意保证或第一次付款退款"
+
 #: src/components/FlowchartHeader.tsx:123
 #: src/components/FlowchartHeader.tsx:147
 msgid "Save"
@@ -1299,6 +1307,10 @@ msgstr "保存到文件"
 #: src/pages/Success.tsx:49
 msgid "Save your Work"
 msgstr "保存您的工作"
+
+#: src/components/Checkout.tsx:185
+msgid "Secure payment"
+msgstr "安全付款"
 
 #: src/components/Tabs/ThemeTab.tsx:326
 msgid "Set Fixed Node Height"
@@ -1650,6 +1662,10 @@ msgstr "无限永久流程图"
 msgid "Unlimited cloud-saved flowcharts"
 msgstr "无限云端保存的流程图"
 
+#: src/components/Checkout.tsx:132
+msgid "Unlock AI Features and never lose your work with a Pro account."
+msgstr "解锁AI功能，通过专业账户永远不会丢失您的工作。"
+
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
 msgstr "未付"
@@ -1674,6 +1690,7 @@ msgstr "升级到Flowchart Fun Pro并解锁："
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高级功能来创建您的图表。"
 
+#: src/components/Checkout.tsx:129
 #: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
@@ -1808,7 +1825,7 @@ msgstr "像写大纲一样"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "在此处输入您的提示，或点击启用麦克风，然后按住录制。"
 
-#: src/components/Checkout.tsx:143
+#: src/components/Checkout.tsx:141
 msgid "Yearly"
 msgstr "每年"
 
@@ -1824,7 +1841,7 @@ msgstr "你可以使用<0>Flowchart Fun Pro</0>创建无限的永久流程图。
 msgid "You need to log in to access this page."
 msgstr "您需要登录才能访问此页面。"
 
-#: src/components/Checkout.tsx:101
+#: src/components/Checkout.tsx:100
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "您已经是专业用户。 <0>管理订阅</0><1/>有问题或功能请求？ <2>告诉我们</2>"
 
@@ -1862,7 +1879,7 @@ msgstr "放大"
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/components/Checkout.tsx:213
+#: src/components/Checkout.tsx:232
 msgid "month"
 msgstr "月份"
 
@@ -1870,7 +1887,7 @@ msgstr "月份"
 msgid "or"
 msgstr "或"
 
-#: src/components/Checkout.tsx:176
+#: src/components/Checkout.tsx:174
 msgid "{0}"
 msgstr "{0}"
 

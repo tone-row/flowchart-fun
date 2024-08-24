@@ -151,11 +151,11 @@ msgstr "프로 사용자가 되기"
 msgid "Begin your journey"
 msgstr "여정을 시작하세요."
 
-#: src/components/Checkout.tsx:144
+#: src/components/Checkout.tsx:142
 msgid "Billed annually at $24"
 msgstr "매년 $24로 청구됩니다"
 
-#: src/components/Checkout.tsx:156
+#: src/components/Checkout.tsx:154
 msgid "Billed monthly at $4"
 msgstr "매달 $4에 청구됩니다."
 
@@ -198,6 +198,10 @@ msgstr "폭 우선"
 msgid "Cancel"
 msgstr "취소"
 
+#: src/components/Checkout.tsx:191
+msgid "Cancel anytime"
+msgstr "언제든 취소 가능"
+
 #: src/pages/Account.tsx:326
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다."
@@ -236,10 +240,6 @@ msgstr "선택하세요"
 #: src/pages/New.tsx:119
 msgid "Choose Template"
 msgstr "템플릿 선택"
-
-#: src/components/Checkout.tsx:130
-msgid "Choose a Plan"
-msgstr "계획을 선택하세요 "
 
 #: src/components/LearnSyntaxDialog.tsx:327
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
@@ -692,13 +692,13 @@ msgstr "무료"
 msgid "Fullscreen"
 msgstr "전체 화면"
 
-#: src/components/Checkout.tsx:133
-msgid "Gain access to AI Features and never lose your work with a Pro account."
-msgstr "Pro 계정으로 AI 기능에 접근하고 작업을 잃어버리지 않습니다."
-
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "일반"
+
+#: src/components/Checkout.tsx:177
+msgid "Get Pro Access Now"
+msgstr "지금 프로 액세스 받기"
 
 #: src/lib/usePromptStore.ts:99
 msgid "Get Unlimited AI Requests"
@@ -956,7 +956,7 @@ msgstr "로그아웃"
 msgid "Log in to Save"
 msgstr "로그인하여 저장하기"
 
-#: src/components/Checkout.tsx:74
+#: src/components/Checkout.tsx:73
 msgid "Log in to upgrade your account"
 msgstr "계정 업그레이드를 위해 로그인"
 
@@ -980,7 +980,7 @@ msgstr "청구 관리"
 msgid "Map Data"
 msgstr "데이터 지도"
 
-#: src/components/Checkout.tsx:155
+#: src/components/Checkout.tsx:153
 msgid "Monthly"
 msgstr "월간"
 
@@ -1149,6 +1149,10 @@ msgstr "개인정보보호정책"
 msgid "Processing Data"
 msgstr "데이터 처리"
 
+#: src/components/Checkout.tsx:176
+msgid "Processing..."
+msgstr "처리 중..."
+
 #: src/components/AiToolbar.tsx:32
 msgid "Prompt"
 msgstr "프롬프트"
@@ -1279,6 +1283,10 @@ msgstr "라벨 회전"
 msgid "SVG Export is a Pro Feature"
 msgstr "SVG 내보내기는 프로 기능입니다"
 
+#: src/components/Checkout.tsx:197
+msgid "Satisfaction guaranteed or first payment refunded"
+msgstr "만족도 보장 또는 첫 번째 결제 환불"
+
 #: src/components/FlowchartHeader.tsx:123
 #: src/components/FlowchartHeader.tsx:147
 msgid "Save"
@@ -1299,6 +1307,10 @@ msgstr "파일에 저장하기"
 #: src/pages/Success.tsx:49
 msgid "Save your Work"
 msgstr "작업 저장"
+
+#: src/components/Checkout.tsx:185
+msgid "Secure payment"
+msgstr "안전한 결제"
 
 #: src/components/Tabs/ThemeTab.tsx:326
 msgid "Set Fixed Node Height"
@@ -1650,6 +1662,10 @@ msgstr "무제한 영구 플로차트"
 msgid "Unlimited cloud-saved flowcharts"
 msgstr "무제한 클라우드 저장 플로우차트"
 
+#: src/components/Checkout.tsx:132
+msgid "Unlock AI Features and never lose your work with a Pro account."
+msgstr "AI 기능 잠금 해제 및 프로 계정으로 작업을 절대 잃지 않습니다."
+
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
 msgstr "미납"
@@ -1674,6 +1690,7 @@ msgstr "Flowchart Fun Pro로 업그레이드하고 다음을 잠금 해제하세
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 해제하고 다이어그램에 대한 더 고급 기능을 즐기세요."
 
+#: src/components/Checkout.tsx:129
 #: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
@@ -1808,7 +1825,7 @@ msgstr "아웃라인처럼 작성하세요"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "여기에 프롬프트를 작성하거나 마이크를 활성화하려면 클릭한 다음 눌러서 녹음하세요."
 
-#: src/components/Checkout.tsx:143
+#: src/components/Checkout.tsx:141
 msgid "Yearly"
 msgstr "연간"
 
@@ -1824,7 +1841,7 @@ msgstr "<0>Flowchart Fun Pro</0>으로 무제한 영구적인 플로차트를 �
 msgid "You need to log in to access this page."
 msgstr "페이지에 접근하려면 로그인해야합니다."
 
-#: src/components/Checkout.tsx:101
+#: src/components/Checkout.tsx:100
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "이미 프로 사용자입니다. <0>구독 관리</0><1/>질문이나 기능 요청이 있으신가요? <2>문의하기</2>"
 
@@ -1862,7 +1879,7 @@ msgstr "확대"
 msgid "Zoom Out"
 msgstr "축소하기"
 
-#: src/components/Checkout.tsx:213
+#: src/components/Checkout.tsx:232
 msgid "month"
 msgstr "월"
 
@@ -1870,7 +1887,7 @@ msgstr "월"
 msgid "or"
 msgstr "또는"
 
-#: src/components/Checkout.tsx:176
+#: src/components/Checkout.tsx:174
 msgid "{0}"
 msgstr "{0}"
 

@@ -151,11 +151,11 @@ msgstr "Se torne um usuário Pro"
 msgid "Begin your journey"
 msgstr "Comece sua jornada"
 
-#: src/components/Checkout.tsx:144
+#: src/components/Checkout.tsx:142
 msgid "Billed annually at $24"
 msgstr "Cobrado anualmente a $24"
 
-#: src/components/Checkout.tsx:156
+#: src/components/Checkout.tsx:154
 msgid "Billed monthly at $4"
 msgstr "Cobrado mensalmente em $4"
 
@@ -198,6 +198,10 @@ msgstr "Por extensão"
 msgid "Cancel"
 msgstr "Cancelar"
 
+#: src/components/Checkout.tsx:191
+msgid "Cancel anytime"
+msgstr "Cancelar a qualquer momento"
+
 #: src/pages/Account.tsx:326
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Cancele sua inscrição. Seus diagramas hospedados não serão modificáveis."
@@ -236,10 +240,6 @@ msgstr "Escolha"
 #: src/pages/New.tsx:119
 msgid "Choose Template"
 msgstr "Escolha o Modelo"
-
-#: src/components/Checkout.tsx:130
-msgid "Choose a Plan"
-msgstr "Escolha um Plano"
 
 #: src/components/LearnSyntaxDialog.tsx:327
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
@@ -692,13 +692,13 @@ msgstr "Grátis "
 msgid "Fullscreen"
 msgstr "Tela cheia"
 
-#: src/components/Checkout.tsx:133
-msgid "Gain access to AI Features and never lose your work with a Pro account."
-msgstr "Tenha acesso às funcionalidades de IA e nunca perca seu trabalho com uma conta Pro."
-
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "Geral"
+
+#: src/components/Checkout.tsx:177
+msgid "Get Pro Access Now"
+msgstr "Obtenha acesso Pro agora"
 
 #: src/lib/usePromptStore.ts:99
 msgid "Get Unlimited AI Requests"
@@ -956,7 +956,7 @@ msgstr "Deslogar"
 msgid "Log in to Save"
 msgstr "Faça login para salvar"
 
-#: src/components/Checkout.tsx:74
+#: src/components/Checkout.tsx:73
 msgid "Log in to upgrade your account"
 msgstr "Faça login para atualizar sua conta"
 
@@ -980,7 +980,7 @@ msgstr "Gerenciar Faturamento"
 msgid "Map Data"
 msgstr "Mapear Dados"
 
-#: src/components/Checkout.tsx:155
+#: src/components/Checkout.tsx:153
 msgid "Monthly"
 msgstr "Mensal"
 
@@ -1149,6 +1149,10 @@ msgstr "Política de Privacidade"
 msgid "Processing Data"
 msgstr "Processando Dados"
 
+#: src/components/Checkout.tsx:176
+msgid "Processing..."
+msgstr "Processando..."
+
 #: src/components/AiToolbar.tsx:32
 msgid "Prompt"
 msgstr "Sugestão"
@@ -1279,6 +1283,10 @@ msgstr "Rotular Rotação"
 msgid "SVG Export is a Pro Feature"
 msgstr "A exportação de SVG é uma funcionalidade Pro"
 
+#: src/components/Checkout.tsx:197
+msgid "Satisfaction guaranteed or first payment refunded"
+msgstr "Satisfação garantida ou primeiro pagamento reembolsado"
+
 #: src/components/FlowchartHeader.tsx:123
 #: src/components/FlowchartHeader.tsx:147
 msgid "Save"
@@ -1299,6 +1307,10 @@ msgstr "Salvar para Arquivo"
 #: src/pages/Success.tsx:49
 msgid "Save your Work"
 msgstr "Salve seu trabalho"
+
+#: src/components/Checkout.tsx:185
+msgid "Secure payment"
+msgstr "Pagamento seguro"
 
 #: src/components/Tabs/ThemeTab.tsx:326
 msgid "Set Fixed Node Height"
@@ -1650,6 +1662,10 @@ msgstr "Fluxogramas Permanentes Ilimitados"
 msgid "Unlimited cloud-saved flowcharts"
 msgstr "Fluxogramas ilimitados salvos na nuvem"
 
+#: src/components/Checkout.tsx:132
+msgid "Unlock AI Features and never lose your work with a Pro account."
+msgstr "Desbloqueie recursos de IA e nunca perca seu trabalho com uma conta Pro."
+
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
 msgstr "Não pago"
@@ -1674,6 +1690,7 @@ msgstr "Faça o upgrade para o Flowchart Fun Pro e desbloqueie:"
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Atualize para o Flowchart Fun Pro para desbloquear a exportação de SVG e aproveitar recursos mais avançados para seus diagramas."
 
+#: src/components/Checkout.tsx:129
 #: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "Atualize para Pro"
@@ -1808,7 +1825,7 @@ msgstr "Escreva como um esboço"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Escreva sua instrução aqui ou clique para ativar o microfone, depois pressione e segure para gravar."
 
-#: src/components/Checkout.tsx:143
+#: src/components/Checkout.tsx:141
 msgid "Yearly"
 msgstr "Anualmente"
 
@@ -1824,7 +1841,7 @@ msgstr "Você pode criar fluxogramas permanentes ilimitados com <0>Flowchart Fun
 msgid "You need to log in to access this page."
 msgstr "Você precisa fazer login para acessar esta página."
 
-#: src/components/Checkout.tsx:101
+#: src/components/Checkout.tsx:100
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "Você já é um usuário Pro. <0>Gerenciar Assinatura</0><1/>Tem perguntas ou solicitações de recursos? <2>Deixe-nos saber</2>"
 
@@ -1862,7 +1879,7 @@ msgstr "Zoom In"
 msgid "Zoom Out"
 msgstr "Diminuir o zoom"
 
-#: src/components/Checkout.tsx:213
+#: src/components/Checkout.tsx:232
 msgid "month"
 msgstr "mês"
 
@@ -1870,7 +1887,7 @@ msgstr "mês"
 msgid "or"
 msgstr "ou"
 
-#: src/components/Checkout.tsx:176
+#: src/components/Checkout.tsx:174
 msgid "{0}"
 msgstr "{0}"
 
