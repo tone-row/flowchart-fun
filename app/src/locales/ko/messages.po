@@ -147,6 +147,7 @@ msgid "Become a Pro User"
 msgstr "프로 사용자가 되기"
 
 #: src/lib/getDefaultText.ts:5
+#: src/lib/getDefaultText.ts:14
 msgid "Begin your journey"
 msgstr "여정을 시작하세요."
 
@@ -958,6 +959,10 @@ msgstr "로그인하여 저장하기"
 #: src/components/Checkout.tsx:74
 msgid "Log in to upgrade your account"
 msgstr "계정 업그레이드를 위해 로그인"
+
+#: src/components/Layout.tsx:108
+msgid "Love Flowchart Fun? Support us with a vote on Product Hunt!"
+msgstr "러브 플로우차트 펀을 좋아하시나요? 제품헌트에서 투표로 우리를 지원해주세요!"
 
 #: src/components/Settings.tsx:151
 msgid "Make a One-Time Donation"

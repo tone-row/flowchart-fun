@@ -147,6 +147,7 @@ msgid "Become a Pro User"
 msgstr "成为专业用户"
 
 #: src/lib/getDefaultText.ts:5
+#: src/lib/getDefaultText.ts:14
 msgid "Begin your journey"
 msgstr "开始你的旅程"
 
@@ -958,6 +959,10 @@ msgstr "登录以保存"
 #: src/components/Checkout.tsx:74
 msgid "Log in to upgrade your account"
 msgstr "登录升级您的账户"
+
+#: src/components/Layout.tsx:108
+msgid "Love Flowchart Fun? Support us with a vote on Product Hunt!"
+msgstr "喜欢《爱情流程图乐趣》吗？ 在Product Hunt上给我们投票支持吧！"
 
 #: src/components/Settings.tsx:151
 msgid "Make a One-Time Donation"

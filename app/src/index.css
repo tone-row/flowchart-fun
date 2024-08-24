@@ -495,3 +495,13 @@ body.dark .convert-on-paste-overlay {
     hsl(265.79, 79.08%, 30%) 100%
   );
 }
+
+.clip-path-rectangle {
+  @apply relative;
+  clip-path: polygon(
+    calc(100% - 64px) 0,
+    100% 0,
+    100% 100%,
+    calc(100% - 64px) 100%
+  );
+}
