@@ -151,11 +151,11 @@ msgstr "प्रो उपयोगकर्ता बनें"
 msgid "Begin your journey"
 msgstr "अपनी यात्रा शुरू करें"
 
-#: src/components/Checkout.tsx:144
+#: src/components/Checkout.tsx:142
 msgid "Billed annually at $24"
 msgstr "वार्षिक रूप से $24 का बिल बनाया जाएगा"
 
-#: src/components/Checkout.tsx:156
+#: src/components/Checkout.tsx:154
 msgid "Billed monthly at $4"
 msgstr "मासिक रूप से $4 पर बिल किया जाता है"
 
@@ -198,6 +198,10 @@ msgstr "चौड़ाई पहले"
 msgid "Cancel"
 msgstr "रद्द करें"
 
+#: src/components/Checkout.tsx:191
+msgid "Cancel anytime"
+msgstr "कभी भी रद्द करें"
+
 #: src/pages/Account.tsx:326
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "अपनी सदस्यता रद्द करें. आपके होस्ट किये गए चार्ट सिर्फ़ पढ़े जा सकेंगे."
@@ -236,10 +240,6 @@ msgstr "चुनें"
 #: src/pages/New.tsx:119
 msgid "Choose Template"
 msgstr "टेम्पलेट चुनें"
-
-#: src/components/Checkout.tsx:130
-msgid "Choose a Plan"
-msgstr "एक योजना चुनें"
 
 #: src/components/LearnSyntaxDialog.tsx:327
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
@@ -692,13 +692,13 @@ msgstr "मुफ्त"
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
-#: src/components/Checkout.tsx:133
-msgid "Gain access to AI Features and never lose your work with a Pro account."
-msgstr "प्रो खाते से AI फीचर्स तक पहुंच प्राप्त करें और कभी भी अपना काम न खोएं।"
-
 #: src/components/Tabs/ThemeTab.tsx:155
 msgid "General"
 msgstr "सामान्य"
+
+#: src/components/Checkout.tsx:177
+msgid "Get Pro Access Now"
+msgstr "अब प्रो एक्सेस प्राप्त करें"
 
 #: src/lib/usePromptStore.ts:99
 msgid "Get Unlimited AI Requests"
@@ -956,7 +956,7 @@ msgstr "लॉग आउट"
 msgid "Log in to Save"
 msgstr "सेव में लॉग इन करें"
 
-#: src/components/Checkout.tsx:74
+#: src/components/Checkout.tsx:73
 msgid "Log in to upgrade your account"
 msgstr "अपने खाते को अपग्रेड करने के लिए लॉग इन करें"
 
@@ -980,7 +980,7 @@ msgstr "बिलिंग प्रबंधित करें"
 msgid "Map Data"
 msgstr "डेटा मैप"
 
-#: src/components/Checkout.tsx:155
+#: src/components/Checkout.tsx:153
 msgid "Monthly"
 msgstr "मासिक"
 
@@ -1149,6 +1149,10 @@ msgstr "गोपनीयता नीति "
 msgid "Processing Data"
 msgstr "डेटा प्रसंस्करण"
 
+#: src/components/Checkout.tsx:176
+msgid "Processing..."
+msgstr "प्रसंस्करण हो रहा है..."
+
 #: src/components/AiToolbar.tsx:32
 msgid "Prompt"
 msgstr "प्रश्न"
@@ -1279,6 +1283,10 @@ msgstr "लेबल को घुमाएँ"
 msgid "SVG Export is a Pro Feature"
 msgstr "SVG निर्यात एक प्रो सुविधा है"
 
+#: src/components/Checkout.tsx:197
+msgid "Satisfaction guaranteed or first payment refunded"
+msgstr "संतुष्टि की गारंटी या पहली भुगतान की राशि वापस कर दी जाएगी"
+
 #: src/components/FlowchartHeader.tsx:123
 #: src/components/FlowchartHeader.tsx:147
 msgid "Save"
@@ -1299,6 +1307,10 @@ msgstr "फाइल में सेव करें"
 #: src/pages/Success.tsx:49
 msgid "Save your Work"
 msgstr "अपनी कार्यवाही सुरक्षित करें"
+
+#: src/components/Checkout.tsx:185
+msgid "Secure payment"
+msgstr "सुरक्षित भुगतान"
 
 #: src/components/Tabs/ThemeTab.tsx:326
 msgid "Set Fixed Node Height"
@@ -1650,6 +1662,10 @@ msgstr "असीमित स्थायी प्रवाहगतीं "
 msgid "Unlimited cloud-saved flowcharts"
 msgstr "असीमित क्लाउड-सहेजे फ्लोचार्ट्स"
 
+#: src/components/Checkout.tsx:132
+msgid "Unlock AI Features and never lose your work with a Pro account."
+msgstr "प्रो खाते से AI फीचर्स खोलें और कभी भी अपना काम न खोएं।"
+
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
 msgstr "अवैतनिक"
@@ -1674,6 +1690,7 @@ msgstr "फ्लोचार्ट फन प्रो पर अपग्र�
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "अपने डायग्राम के लिए एसवीजी निर्यात और अधिक उन्नत सुविधाओं का आनंद लेने के लिए फ्लोचार्ट फन प्रो पर अपग्रेड करें।"
 
+#: src/components/Checkout.tsx:129
 #: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
@@ -1808,7 +1825,7 @@ msgstr "आउटलाइन की तरह लिखें"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "अपना प्रॉम्प्ट यहां लिखें या माइक्रोफोन को सक्षम करने के लिए क्लिक करें, फिर रिकॉर्ड करने के लिए दबाएं और रखें।"
 
-#: src/components/Checkout.tsx:143
+#: src/components/Checkout.tsx:141
 msgid "Yearly"
 msgstr "वार्षिक"
 
@@ -1824,7 +1841,7 @@ msgstr "<0>Flowchart Fun Pro</0> के साथ आप असीमित स�
 msgid "You need to log in to access this page."
 msgstr "इस पृष्ठ तक पहुँचने के लिए आपको लॉग इन करना होगा।"
 
-#: src/components/Checkout.tsx:101
+#: src/components/Checkout.tsx:100
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "आप पहले से ही एक प्रो उपयोगकर्ता हैं। <0>सदस्यता प्रबंधित करें</0><1/>क्या आपके पास कोई सवाल या सुविधा अनुरोध है? <2>हमें बताएं</2>"
 
@@ -1862,7 +1879,7 @@ msgstr "ज़ूम इन करें"
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 
-#: src/components/Checkout.tsx:213
+#: src/components/Checkout.tsx:232
 msgid "month"
 msgstr "महीना"
 
@@ -1870,7 +1887,7 @@ msgstr "महीना"
 msgid "or"
 msgstr "या"
 
-#: src/components/Checkout.tsx:176
+#: src/components/Checkout.tsx:174
 msgid "{0}"
 msgstr "{0}"
 
