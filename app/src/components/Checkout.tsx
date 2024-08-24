@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 import { useMutation } from "react-query";
 import { Trans, t } from "@lingui/macro";
-// import { PlanButton } from "./PlanButton";
-// import { PaymentStepperTitle } from "./PaymentStepperTitle";
 import classNames from "classnames";
+import { LockSimple, CreditCard, ArrowClockwise } from "phosphor-react";
 
 export function Checkout({
   pricing2,
@@ -126,13 +125,12 @@ export function Checkout({
 
   return (
     <div>
-      <h2 className="text-white text-4xl font-bold text-center mb-2 tracking-wide">
-        <Trans>Choose a Plan</Trans>
+      <h2 className="text-white text-5xl font-bold text-center mb-3 tracking-wide">
+        <Trans>Upgrade to Pro</Trans>
       </h2>
-      <p className="text-white text-[24px] text-center mb-8 text-wrap-balance leading-tight opacity-80">
+      <p className="text-white text-[26px] text-center mb-10 text-wrap-balance leading-tight opacity-90">
         <Trans>
-          Gain access to AI Features and never lose your work with a Pro
-          account.
+          Unlock AI Features and never lose your work with a Pro account.
         </Trans>
       </p>
       <div className="grid sm:grid-cols-2 gap-3 mb-8">
@@ -163,7 +161,7 @@ export function Checkout({
       <div className="px-[48px]">
         <button
           className={classNames(
-            "w-full bg-[#FFCD1F] text-black rounded-3xl text-[20px] font-bold py-5 shadow-sm hover:bg-[#FFD63F] hover:shadow",
+            "w-full bg-[#FFCD1F] text-black rounded-3xl text-[22px] font-bold py-6 shadow-md hover:bg-[#FFE063] hover:shadow-lg transition-all duration-300",
             {
               "animate-pulse": createCheckoutSession.isLoading,
             }
@@ -175,10 +173,31 @@ export function Checkout({
         >
           <Trans>
             {createCheckoutSession.isLoading
-              ? "Processing..."
-              : "Upgrade to Pro"}
+              ? t`Processing...`
+              : t`Get Pro Access Now`}
           </Trans>
         </button>
+
+        <div className="mt-8 text-base text-white bg-purple-600 rounded-lg p-5 shadow-md">
+          <div className="flex items-center mb-2">
+            <LockSimple className="mr-2" size={18} />
+            <span>
+              <Trans>Secure payment</Trans>
+            </span>
+          </div>
+          <div className="flex items-center mb-2">
+            <CreditCard className="mr-2" size={18} />
+            <span>
+              <Trans>Cancel anytime</Trans>
+            </span>
+          </div>
+          <div className="flex items-center">
+            <ArrowClockwise className="mr-2" size={18} />
+            <span>
+              <Trans>Satisfaction guaranteed or first payment refunded</Trans>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );
