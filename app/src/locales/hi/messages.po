@@ -147,6 +147,7 @@ msgid "Become a Pro User"
 msgstr "प्रो उपयोगकर्ता बनें"
 
 #: src/lib/getDefaultText.ts:5
+#: src/lib/getDefaultText.ts:14
 msgid "Begin your journey"
 msgstr "अपनी यात्रा शुरू करें"
 
@@ -958,6 +959,10 @@ msgstr "सेव में लॉग इन करें"
 #: src/components/Checkout.tsx:74
 msgid "Log in to upgrade your account"
 msgstr "अपने खाते को अपग्रेड करने के लिए लॉग इन करें"
+
+#: src/components/Layout.tsx:108
+msgid "Love Flowchart Fun? Support us with a vote on Product Hunt!"
+msgstr "क्या आप प्यार फ्लोचार्ट फन को समर्थन करते हैं? हमें प्रोडक्ट हंट पर एक वोट देकर समर्थन करें!"
 
 #: src/components/Settings.tsx:151
 msgid "Make a One-Time Donation"

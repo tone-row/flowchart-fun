@@ -142,5 +142,5 @@ export function isPHBannerTime() {
   const [date] = pstDate.split(", ");
   const [month, day, year] = date.split("/").map(Number);
 
-  return year === 2024 && month === 8 && day === 24;
+  return year === 2024 && month === 8 && day === 25;
 }
