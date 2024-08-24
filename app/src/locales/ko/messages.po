@@ -63,9 +63,9 @@ msgstr "계정"
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "특수 문자 앞에는 역슬래시 (<0>\\</0>)를 추가하세요: <1>(</1>, <2>:</2>, <3>#</3>, 또는 <4>.</4>"
 
-#: src/lib/getDefaultText.ts:10
-msgid "Add classes to change color and shape"
-msgstr "색상과 모양을 변경하기 위해 클래스를 추가하세요."
+#: src/lib/getDefaultText.ts:6
+msgid "Add some steps"
+msgstr "몇 가지 단계를 추가하세요."
 
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
@@ -146,9 +146,9 @@ msgstr "깃허브 스폰서가 되기"
 msgid "Become a Pro User"
 msgstr "프로 사용자가 되기"
 
-#: src/lib/getDefaultText.ts:7
-msgid "Begin Typing"
-msgstr "입력을 시작하세요."
+#: src/lib/getDefaultText.ts:5
+msgid "Begin your journey"
+msgstr "여정을 시작하세요."
 
 #: src/components/Checkout.tsx:144
 msgid "Billed annually at $24"
@@ -419,10 +419,6 @@ msgstr "커스텀 공유 옵션"
 msgid "Customer Portal"
 msgstr "고객 포털"
 
-#: src/lib/getDefaultText.ts:10
-msgid "Customize"
-msgstr "맞춤 설정"
-
 #: src/pages/Pricing2.tsx:27
 msgid "Daily Sandbox Editor"
 msgstr "매일 샌드박스 편집기"
@@ -447,10 +443,6 @@ msgstr "복잡한 다이어그램을 위한 데이터 가져오기 기능"
 #: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "날짜"
-
-#: src/lib/getDefaultText.ts:8
-msgid "Decisions"
-msgstr "결정"
 
 #: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
@@ -500,10 +492,6 @@ msgstr "PNG 다운로드"
 msgid "Download SVG"
 msgstr "SVG 다운로드"
 
-#: src/lib/getDefaultText.ts:15
-msgid "Download or share your flowchart using the 'Share' button."
-msgstr "'공유' 버튼을 사용하여 플로우차트를 다운로드하거나 공유하세요."
-
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV 파일을 여기에 드래그 앤 드롭하거나 파일을 선택하려면 클릭하세요."
@@ -515,6 +503,10 @@ msgstr "참조를 시작하여 여러 노드로부터 엣지를 그립니다."
 #: src/components/ImportDataDialog.tsx:242
 msgid "Drop the file here ..."
 msgstr "파일을 여기에 드롭하세요 ..."
+
+#: src/lib/getDefaultText.ts:8
+msgid "Each line becomes a node"
+msgstr "각 줄은 노드가 됩니다."
 
 #: src/components/LearnSyntaxDialog.tsx:188
 msgid "Edge ID, Classes, Attributes"
@@ -640,6 +632,10 @@ msgstr "독점 오피스 시간"
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
 msgstr "로컬 파일을 직접 플로우차트에 로드하여 효율성과 보안성을 경험해보세요. 오프라인에서 업무 관련 문서를 관리하기에 완벽한 기능입니다. Flowchart Fun Pro를 구독하면 이 독점적인 프로 기능과 더 많은 기능을 이용할 수 있습니다. 매달 $4로 이용 가능합니다."
 
+#: src/lib/getDefaultText.ts:16
+msgid "Explore more"
+msgstr "더 탐험하세요."
+
 #: src/components/ShareDialog.tsx:56
 #: src/components/ShareDialog.tsx:162
 msgid "Export"
@@ -723,6 +719,10 @@ msgstr "너의 샌드박스로 가기"
 #: src/components/Tabs/EditorTabList.tsx:50
 msgid "Graph"
 msgstr "그래프"
+
+#: src/lib/getDefaultText.ts:11
+msgid "Green?"
+msgstr "초록색?"
 
 #: src/lib/graphOptions.ts:21
 msgid "Grid"
@@ -812,12 +812,8 @@ msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, ad
 msgstr "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Visio 색상을 사용하려면 다음 중 하나와 같은 <1>roleType</1> 속성을 추가하십시오:"
 
 #: src/lib/getDefaultText.ts:9
-msgid "Indent for Steps"
-msgstr "단계를 위해 들여쓰기하기"
-
-#: src/lib/getDefaultText.ts:9
-msgid "Indicate progression or dependency."
-msgstr "진행 또는 의존성을 나타내세요."
+msgid "Indent to connect nodes"
+msgstr "노드를 연결하기 위해 들여쓰기하세요."
 
 #: src/components/Header.tsx:128
 msgid "Info"
@@ -842,6 +838,10 @@ msgstr "워크플로우를 업그레이드한 2000명 이상의 전문가들과 
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "개인 정보 유지하기"
+
+#: src/lib/getDefaultText.ts:18
+msgid "Keep practicing"
+msgstr "계속 연습하세요"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -895,6 +895,10 @@ msgstr "라이트 모드"
 #: src/components/ShareDialog.tsx:139
 msgid "Link"
 msgstr "링크"
+
+#: src/lib/getDefaultText.ts:14
+msgid "Link back"
+msgstr "링크를 걸어 돌아가세요"
 
 #: src/components/LoadTemplateDialog.tsx:148
 msgid "Load"
@@ -970,10 +974,6 @@ msgstr "청구 관리"
 #: src/components/ImportDataDialog.tsx:380
 msgid "Map Data"
 msgstr "데이터 지도"
-
-#: src/lib/getDefaultText.ts:5
-msgid "Modify text to see it transform into a flowchart on the right."
-msgstr "오른쪽에서 플로우차트로 변환되는 것을 보려면 텍스트를 수정하세요."
 
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
@@ -1061,6 +1061,10 @@ msgstr "노드는 점선, 점점선 또는 이중 선으로 스타일링 할 수
 msgid "Not Empty"
 msgstr "비어 있지 않음"
 
+#: src/lib/getDefaultText.ts:19
+msgid "Now you're thinking with flowcharts!"
+msgstr "이제 플로우차트로 생각하고 있어요!"
+
 #: src/pages/Pricing.tsx:72
 msgid "Office Hours"
 msgstr "근무 시간"
@@ -1080,6 +1084,10 @@ msgstr "일대일 지원"
 #: src/pages/Account.tsx:256
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
+
+#: src/lib/getDefaultText.ts:12
+msgid "Or maybe blue!"
+msgstr "아니면 파란색으로!"
 
 #: src/components/ShareDialog.tsx:551
 msgid "Organization Chart"
@@ -1102,9 +1110,9 @@ msgstr "비밀번호"
 msgid "Past Due"
 msgstr "연체"
 
-#: src/lib/getDefaultText.ts:13
-msgid "Paste a document to convert it into a flowchart."
-msgstr "흐름도로 변환하려면 문서를 붙여넣으세요."
+#: src/lib/getDefaultText.ts:17
+msgid "Paste a document to convert it"
+msgstr "문서를 붙여서 변환하세요"
 
 #: src/components/AiToolbar.tsx:23
 msgid "Paste your document or outline here to convert it into an organized flowchart."
@@ -1247,9 +1255,9 @@ msgstr "반품"
 msgid "Right to Left"
 msgstr "오른쪽에서 왼쪽으로"
 
-#: src/lib/getDefaultText.ts:11
-msgid "Right-click nodes for more options."
-msgstr "더 많은 옵션을 보려면 노드를 오른쪽 클릭하세요."
+#: src/lib/getDefaultText.ts:16
+msgid "Right-click nodes for options"
+msgstr "옵션을 위해 노드를 오른쪽 클릭하세요"
 
 #: src/components/Header.tsx:156
 #: src/components/Header.tsx:397
@@ -1300,10 +1308,6 @@ msgstr "설정"
 #: src/components/FlowchartHeader.tsx:64
 msgid "Share"
 msgstr "공유하기"
-
-#: src/lib/getDefaultText.ts:14
-msgid "Share Your Work"
-msgstr "작업 공유"
 
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
@@ -1359,7 +1363,6 @@ msgstr "간격"
 msgid "Special Attributes"
 msgstr "특별한 속성"
 
-#: src/lib/getDefaultText.ts:5
 #: src/pages/Account.tsx:183
 msgid "Start"
 msgstr "시작"
@@ -1368,13 +1371,21 @@ msgstr "시작"
 msgid "Start Over"
 msgstr "처음부터 다시 시작하기"
 
-#: src/lib/getDefaultText.ts:7
-msgid "Start with a label or decision."
-msgstr "레이블이나 결정부터 시작"
-
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "상태"
+
+#: src/lib/getDefaultText.ts:7
+msgid "Step 1"
+msgstr "단계 1"
+
+#: src/lib/getDefaultText.ts:8
+msgid "Step 2"
+msgstr "단계 2"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Step 3"
+msgstr "단계 3"
 
 #: src/components/LearnSyntaxDialog.tsx:156
 msgid "Store any data associated to a node"
@@ -1383,6 +1394,10 @@ msgstr "노드에 관련된 모든 데이터 저장하기"
 #: src/components/LearnSyntaxDialog.tsx:275
 msgid "Style Classes"
 msgstr "스타일 클래스"
+
+#: src/lib/getDefaultText.ts:10
+msgid "Style with classes"
+msgstr "클래스로 스타일링"
 
 #: src/components/AiToolbar.tsx:140
 #: src/components/EditWithAI.tsx:242
@@ -1532,6 +1547,10 @@ msgstr "이것은 현재 내용을 대체합니다."
 msgid "This will replace your current sandbox."
 msgstr "이것은 현재 샌드 박스를 대체합니다."
 
+#: src/lib/getDefaultText.ts:15
+msgid "Time to decide"
+msgstr "결정할 시간"
+
 #: src/components/ShareDialog.tsx:626
 msgid "Tip"
 msgstr "팁"
@@ -1573,6 +1592,10 @@ msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
 msgid "Trusted by Professionals and Academics Alike"
 msgstr "전문가와 학계에서 신뢰하는 프로그램"
 
+#: src/lib/getDefaultText.ts:17
+msgid "Try AI"
+msgstr "AI 시도해보기"
+
 #: src/components/App.tsx:82
 msgid "Try again"
 msgstr "다시 시도하세요"
@@ -1592,10 +1615,6 @@ msgstr "두 개의 노드가 같은 ID를 가지고 있습니다"
 #: src/components/ConvertToFlowchart.tsx:33
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "이런, 무료 요청이 모두 소진되었습니다! 무제한 다이어그램 변환을 위해 Flowchart Fun Pro로 업그레이드하고 텍스트를 복사하여 쉽게 명확한 시각적 흐름도로 변환하세요."
-
-#: src/lib/getDefaultText.ts:6
-msgid "Understand Syntax"
-msgstr "구문을 이해하세요."
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -1662,10 +1681,6 @@ msgstr "매월 $4에 프로로 업그레이드하세요."
 msgid "Upload your File"
 msgstr "파일을 업로드하세요."
 
-#: src/lib/getDefaultText.ts:12
-msgid "Use AI"
-msgstr "AI 사용"
-
 #: src/components/Tabs/ThemeTab.tsx:570
 #: src/components/Tabs/ThemeTab.tsx:571
 msgid "Use Custom CSS Only"
@@ -1678,10 +1693,6 @@ msgstr "Lucidchart나 Visio를 사용하고 계신가요? CSV 가져오기를 �
 #: src/components/LearnSyntaxDialog.tsx:147
 msgid "Use classes to group nodes"
 msgstr "노드를 그룹화하기 위해 클래스를 사용하십시오."
-
-#: src/lib/getDefaultText.ts:8
-msgid "Use colons like \"Decisions:\"."
-msgstr "\\와 같이 콜론을 사용하세요."
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1740,12 +1751,16 @@ msgid "Watermarks"
 msgstr "물감"
 
 #: src/lib/getDefaultText.ts:4
-msgid "Welcome to Flowchart Fun!"
-msgstr "플로우차트 재미있게 사용해보세요!"
+msgid "Welcome to Flowchart Fun"
+msgstr "Flowchart Fun에 오신 것을 환영합니다"
 
 #: src/pages/Pricing2.tsx:288
 msgid "What's Included"
 msgstr "포함된 내용"
+
+#: src/lib/getDefaultText.ts:15
+msgid "What's next?"
+msgstr "다음은 무엇인가요?"
 
 #: src/pages/Charts.tsx:290
 msgid "What's this?"
@@ -1776,6 +1791,14 @@ msgstr "계속하시겠습니까?"
 msgid "Would you like to suggest a new example?"
 msgstr "새로운 예시를 제안하시겠습니까?"
 
+#: src/lib/getDefaultText.ts:13
+msgid "Wrap text in parentheses to connect to any node"
+msgstr "괄호 안에 텍스트를 감싸서 어떤 노드에 연결하세요"
+
+#: src/lib/getDefaultText.ts:7
+msgid "Write like an outline"
+msgstr "아웃라인처럼 작성하세요"
+
 #: src/components/EditWithAI.tsx:216
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "여기에 프롬프트를 작성하거나 마이크를 활성화하려면 클릭한 다음 눌러서 녹음하세요."
@@ -1799,6 +1822,10 @@ msgstr "페이지에 접근하려면 로그인해야합니다."
 #: src/components/Checkout.tsx:101
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "이미 프로 사용자입니다. <0>구독 관리</0><1/>질문이나 기능 요청이 있으신가요? <2>문의하기</2>"
+
+#: src/lib/getDefaultText.ts:18
+msgid "You're doing great!"
+msgstr "잘하고 있어요!"
 
 #: src/lib/usePromptStore.ts:100
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"

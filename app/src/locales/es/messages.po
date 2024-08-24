@@ -63,9 +63,9 @@ msgstr "Cuenta"
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "Agregue una barra invertida (<0>\\</0>) antes de cualquier carácter especial: <1>(</1>, <2>:</2>, <3>#</3>, o <4>.</4>"
 
-#: src/lib/getDefaultText.ts:10
-msgid "Add classes to change color and shape"
-msgstr "Agregar clases para cambiar color y forma"
+#: src/lib/getDefaultText.ts:6
+msgid "Add some steps"
+msgstr "Agrega algunos pasos"
 
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
@@ -146,9 +146,9 @@ msgstr "Convierte en un Patrocinador de Github"
 msgid "Become a Pro User"
 msgstr "Convierte en un Usuario Pro"
 
-#: src/lib/getDefaultText.ts:7
-msgid "Begin Typing"
-msgstr "Comienza a escribir"
+#: src/lib/getDefaultText.ts:5
+msgid "Begin your journey"
+msgstr "Comienza tu viaje"
 
 #: src/components/Checkout.tsx:144
 msgid "Billed annually at $24"
@@ -419,10 +419,6 @@ msgstr "Opciones de compartición personalizadas"
 msgid "Customer Portal"
 msgstr "Portal del cliente"
 
-#: src/lib/getDefaultText.ts:10
-msgid "Customize"
-msgstr "Personalizar"
-
 #: src/pages/Pricing2.tsx:27
 msgid "Daily Sandbox Editor"
 msgstr "Editor de Sandbox diario"
@@ -447,10 +443,6 @@ msgstr "Función de importación de datos para diagramas complejos"
 #: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "Fecha"
-
-#: src/lib/getDefaultText.ts:8
-msgid "Decisions"
-msgstr "Decisiones"
 
 #: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
@@ -500,10 +492,6 @@ msgstr "Descargar PNG"
 msgid "Download SVG"
 msgstr "Descargar SVG"
 
-#: src/lib/getDefaultText.ts:15
-msgid "Download or share your flowchart using the 'Share' button."
-msgstr "Descargar o compartir tu diagrama de flujo usando el botón 'Compartir'."
-
 #: src/components/ImportDataDialog.tsx:244
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "Arrastre y suelte un archivo CSV aquí o haga clic para seleccionar un archivo"
@@ -515,6 +503,10 @@ msgstr "Dibuje un borde desde varios nodos comenzando la línea con una referenc
 #: src/components/ImportDataDialog.tsx:242
 msgid "Drop the file here ..."
 msgstr "Suelta el archivo aquí ..."
+
+#: src/lib/getDefaultText.ts:8
+msgid "Each line becomes a node"
+msgstr "Cada línea se convierte en un nodo"
 
 #: src/components/LearnSyntaxDialog.tsx:188
 msgid "Edge ID, Classes, Attributes"
@@ -640,6 +632,10 @@ msgstr "Horario de oficina exclusivo"
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
 msgstr "Experimenta la eficiencia y seguridad de cargar archivos locales directamente en tu diagrama de flujo, perfecto para manejar documentos relacionados con el trabajo sin conexión. Desbloquea esta función exclusiva de Pro y más con Flowchart Fun Pro, disponible por solo $4 al mes."
 
+#: src/lib/getDefaultText.ts:16
+msgid "Explore more"
+msgstr "Explora más"
+
 #: src/components/ShareDialog.tsx:56
 #: src/components/ShareDialog.tsx:162
 msgid "Export"
@@ -723,6 +719,10 @@ msgstr "Ve a tu Sandbox"
 #: src/components/Tabs/EditorTabList.tsx:50
 msgid "Graph"
 msgstr "Gráfico"
+
+#: src/lib/getDefaultText.ts:11
+msgid "Green?"
+msgstr "¿Verde?"
 
 #: src/lib/graphOptions.ts:21
 msgid "Grid"
@@ -812,12 +812,8 @@ msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, ad
 msgstr "Incluye un título usando un atributo <0>title</0>. Para usar el color de Visio, agrega un atributo <1>roleType</1> igual a uno de los siguientes:"
 
 #: src/lib/getDefaultText.ts:9
-msgid "Indent for Steps"
-msgstr "Sangrar para pasos"
-
-#: src/lib/getDefaultText.ts:9
-msgid "Indicate progression or dependency."
-msgstr "Indicar progresión o dependencia."
+msgid "Indent to connect nodes"
+msgstr "Indenta para conectar nodos"
 
 #: src/components/Header.tsx:128
 msgid "Info"
@@ -842,6 +838,10 @@ msgstr "Únete a más de 2000 profesionales que han mejorado su flujo de trabajo
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "Mantener las cosas privadas"
+
+#: src/lib/getDefaultText.ts:18
+msgid "Keep practicing"
+msgstr "Sigue practicando"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -895,6 +895,10 @@ msgstr "Modo de luz"
 #: src/components/ShareDialog.tsx:139
 msgid "Link"
 msgstr "Enlace"
+
+#: src/lib/getDefaultText.ts:14
+msgid "Link back"
+msgstr "Volver al enlace"
 
 #: src/components/LoadTemplateDialog.tsx:148
 msgid "Load"
@@ -970,10 +974,6 @@ msgstr "Administrar facturación"
 #: src/components/ImportDataDialog.tsx:380
 msgid "Map Data"
 msgstr "Datos de mapa"
-
-#: src/lib/getDefaultText.ts:5
-msgid "Modify text to see it transform into a flowchart on the right."
-msgstr "Modificar texto para ver cómo se transforma en un diagrama de flujo a la derecha."
 
 #: src/components/Checkout.tsx:155
 msgid "Monthly"
@@ -1061,6 +1061,10 @@ msgstr "Los nodos se pueden estilizar con líneas discontinuas, punteadas o dobl
 msgid "Not Empty"
 msgstr "No vacío "
 
+#: src/lib/getDefaultText.ts:19
+msgid "Now you're thinking with flowcharts!"
+msgstr "¡Ahora estás pensando con diagramas de flujo!"
+
 #: src/pages/Pricing.tsx:72
 msgid "Office Hours"
 msgstr "Horas de oficina "
@@ -1080,6 +1084,10 @@ msgstr "Soporte individual"
 #: src/pages/Account.tsx:256
 msgid "Open Customer Portal"
 msgstr "Abrir portal de clientes"
+
+#: src/lib/getDefaultText.ts:12
+msgid "Or maybe blue!"
+msgstr "¡O tal vez azul!"
 
 #: src/components/ShareDialog.tsx:551
 msgid "Organization Chart"
@@ -1102,9 +1110,9 @@ msgstr "Contraseña"
 msgid "Past Due"
 msgstr "Vencido"
 
-#: src/lib/getDefaultText.ts:13
-msgid "Paste a document to convert it into a flowchart."
-msgstr "Pegar un documento para convertirlo en un diagrama de flujo."
+#: src/lib/getDefaultText.ts:17
+msgid "Paste a document to convert it"
+msgstr "Pegue un documento para convertirlo"
 
 #: src/components/AiToolbar.tsx:23
 msgid "Paste your document or outline here to convert it into an organized flowchart."
@@ -1247,9 +1255,9 @@ msgstr "Devolver"
 msgid "Right to Left"
 msgstr "De derecha a izquierda"
 
-#: src/lib/getDefaultText.ts:11
-msgid "Right-click nodes for more options."
-msgstr "Haz clic derecho en los nodos para más opciones."
+#: src/lib/getDefaultText.ts:16
+msgid "Right-click nodes for options"
+msgstr "Haga clic derecho en los nodos para ver las opciones"
 
 #: src/components/Header.tsx:156
 #: src/components/Header.tsx:397
@@ -1300,10 +1308,6 @@ msgstr "Configuración"
 #: src/components/FlowchartHeader.tsx:64
 msgid "Share"
 msgstr "Compartir"
-
-#: src/lib/getDefaultText.ts:14
-msgid "Share Your Work"
-msgstr "Comparte tu trabajo"
 
 #: src/pages/LogIn.tsx:102
 #: src/pages/LogIn.tsx:325
@@ -1359,7 +1363,6 @@ msgstr "Espaciado"
 msgid "Special Attributes"
 msgstr "Atributos Especiales"
 
-#: src/lib/getDefaultText.ts:5
 #: src/pages/Account.tsx:183
 msgid "Start"
 msgstr "Comienzo"
@@ -1368,13 +1371,21 @@ msgstr "Comienzo"
 msgid "Start Over"
 msgstr "Empezar de nuevo"
 
-#: src/lib/getDefaultText.ts:7
-msgid "Start with a label or decision."
-msgstr "Comienza con una etiqueta o decisión."
-
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "Estado"
+
+#: src/lib/getDefaultText.ts:7
+msgid "Step 1"
+msgstr "Paso 1"
+
+#: src/lib/getDefaultText.ts:8
+msgid "Step 2"
+msgstr "Paso 2"
+
+#: src/lib/getDefaultText.ts:9
+msgid "Step 3"
+msgstr "Paso 3"
 
 #: src/components/LearnSyntaxDialog.tsx:156
 msgid "Store any data associated to a node"
@@ -1383,6 +1394,10 @@ msgstr "Almacenar cualquier dato asociado a un nodo"
 #: src/components/LearnSyntaxDialog.tsx:275
 msgid "Style Classes"
 msgstr "Clases de Estilo"
+
+#: src/lib/getDefaultText.ts:10
+msgid "Style with classes"
+msgstr "Estilo con clases"
 
 #: src/components/AiToolbar.tsx:140
 #: src/components/EditWithAI.tsx:242
@@ -1532,6 +1547,10 @@ msgstr "Esto reemplazará el contenido actual."
 msgid "This will replace your current sandbox."
 msgstr "Esto reemplazará su sandbox actual."
 
+#: src/lib/getDefaultText.ts:15
+msgid "Time to decide"
+msgstr "Hora de decidir"
+
 #: src/components/ShareDialog.tsx:626
 msgid "Tip"
 msgstr "Consejo"
@@ -1573,6 +1592,10 @@ msgstr "Transforma texto en diagramas al instante."
 msgid "Trusted by Professionals and Academics Alike"
 msgstr "Confiado por profesionales y académicos por igual"
 
+#: src/lib/getDefaultText.ts:17
+msgid "Try AI"
+msgstr "Prueba IA"
+
 #: src/components/App.tsx:82
 msgid "Try again"
 msgstr "Inténtalo de nuevo"
@@ -1592,10 +1615,6 @@ msgstr "Dos nodos tienen el mismo ID"
 #: src/components/ConvertToFlowchart.tsx:33
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "¡Ups, se acabaron tus solicitudes gratuitas! Actualiza a Flowchart Fun Pro para conversiones de diagramas ilimitadas, y sigue transformando texto en claros y visuales flujogramas tan fácilmente como copiar y pegar."
-
-#: src/lib/getDefaultText.ts:6
-msgid "Understand Syntax"
-msgstr "Entender la sintaxis"
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -1662,10 +1681,6 @@ msgstr "Actualiza a Pro por solo $4/mes."
 msgid "Upload your File"
 msgstr "Subir tu archivo"
 
-#: src/lib/getDefaultText.ts:12
-msgid "Use AI"
-msgstr "Usar IA"
-
 #: src/components/Tabs/ThemeTab.tsx:570
 #: src/components/Tabs/ThemeTab.tsx:571
 msgid "Use Custom CSS Only"
@@ -1678,10 +1693,6 @@ msgstr "¿Usas Lucidchart o Visio? ¡La importación de CSV facilita obtener dat
 #: src/components/LearnSyntaxDialog.tsx:147
 msgid "Use classes to group nodes"
 msgstr "Usar clases para agrupar nodos"
-
-#: src/lib/getDefaultText.ts:8
-msgid "Use colons like \"Decisions:\"."
-msgstr "Usa dos puntos como \"Decisiones\\:\"."
 
 #: src/components/LearnSyntaxDialog.tsx:394
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
@@ -1740,12 +1751,16 @@ msgid "Watermarks"
 msgstr "Marcas de agua"
 
 #: src/lib/getDefaultText.ts:4
-msgid "Welcome to Flowchart Fun!"
-msgstr "¡Bienvenido a Flowchart Fun!"
+msgid "Welcome to Flowchart Fun"
+msgstr "Bienvenido a Flowchart Divertido"
 
 #: src/pages/Pricing2.tsx:288
 msgid "What's Included"
 msgstr "¿Qué está incluido?"
+
+#: src/lib/getDefaultText.ts:15
+msgid "What's next?"
+msgstr "¿Qué sigue?"
 
 #: src/pages/Charts.tsx:290
 msgid "What's this?"
@@ -1776,6 +1791,14 @@ msgstr "¿Te gustaría continuar?"
 msgid "Would you like to suggest a new example?"
 msgstr "¿Te gustaría sugerir un nuevo ejemplo?"
 
+#: src/lib/getDefaultText.ts:13
+msgid "Wrap text in parentheses to connect to any node"
+msgstr "Envuelve el texto entre paréntesis para conectarlo a cualquier nodo"
+
+#: src/lib/getDefaultText.ts:7
+msgid "Write like an outline"
+msgstr "Escribe como un esquema"
+
 #: src/components/EditWithAI.tsx:216
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Escribe tu instrucción aquí o haz clic para activar el micrófono, luego mantén presionado para grabar."
@@ -1799,6 +1822,10 @@ msgstr "Necesitas iniciar sesión para acceder a esta página."
 #: src/components/Checkout.tsx:101
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "Ya eres un usuario Pro. <0>Gestionar suscripción</0><1/>¿Tienes preguntas o solicitudes de funciones? <2>Háganos saber</2>"
+
+#: src/lib/getDefaultText.ts:18
+msgid "You're doing great!"
+msgstr "¡Lo estás haciendo genial!"
 
 #: src/lib/usePromptStore.ts:100
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
