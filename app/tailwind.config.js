@@ -114,6 +114,10 @@ module.exports = {
           "0%, 100%": { opacity: 1 },
           "50%": { opacity: 0.5 },
         },
+        pulseIn: {
+          "0%, 100%": { opacity: 0 },
+          "50%": { opacity: 0.5 },
+        },
         hide: {
           from: { opacity: 1 },
           to: { opacity: 0 },
@@ -145,6 +149,7 @@ module.exports = {
         hide: "hide 100ms ease-in",
         slideIn: "slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         swipeOut: "swipeOut 100ms ease-out",
+        pulseIn: "pulseIn 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       fontSize: {
         xs: ["14px", { lineHeight: "16px" }],
