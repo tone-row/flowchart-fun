@@ -1,7 +1,7 @@
 import { format, parse, parseISO } from "date-fns";
 
-export function niceDate(d: string) {
-  return format(parse(d, "yyyy-MM-dd", new Date()), "LLLL d, yyyy");
+export function niceDate(d: Date) {
+  return format(d, "LLLL d, yyyy");
 }
 
 export function dateString(d: string) {
