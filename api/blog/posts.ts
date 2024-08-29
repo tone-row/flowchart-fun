@@ -1,31 +1,59 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import { dateAsNumber, dateString, niceDate } from "../_lib/_dates";
-import { notion, getNestedProperties } from "../_lib/_notion";
+import { niceDate } from "../_lib/_dates";
+import { notion } from "../_lib/_notion";
+import { z } from "zod";
+import { BlogPost, NotionPost } from "shared";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const response = await notion.databases.query({
     database_id: "b7a09b10aa83485b94092269239a8b38",
   });
-  const posts = response.results.map((page) => {
-    if (!("properties" in page)) throw new Error("No properties");
-    const { properties = {}, id } = page;
-    const { date, ...props } = getNestedProperties(properties);
-    if (!("title" in props)) throw new Error("No title");
-    if (!("status" in props)) throw new Error("No status");
-    if (!("slug" in props)) throw new Error("No slug");
-    if (!("description" in props)) throw new Error("No description");
 
-    if (!date) throw new Error("No date");
+  const notionPosts = response.results.filter(
+    isValidNotionPost
+  ) as unknown as NotionPost[];
 
-    const sanitizedDate = dateString(date);
-    const publishDate = niceDate(date);
-    const rawDate = dateAsNumber(date);
-
-    return { id, rawDate, date: sanitizedDate, publishDate, ...props };
-  });
+  const posts = notionPosts.map(notionPostToBlogPost);
 
   // Cache for 1 week, stale-while-revalidate
   res.setHeader("Cache-Control", "s-maxage=1, stale-while-revalidate");
 
   res.json(posts);
+}
+
+const postSchema: z.ZodType<NotionPost> = z.object({
+  id: z.string(),
+  created_time: z.string(),
+  properties: z.object({
+    title: z.object({
+      title: z.array(z.object({ plain_text: z.string() })).min(1),
+    }),
+    description: z.object({
+      rich_text: z.array(z.object({ plain_text: z.string() })).min(1),
+    }),
+    status: z.object({
+      status: z.object({ name: z.string() }),
+    }),
+    slug: z.object({
+      rich_text: z.array(z.object({ plain_text: z.string() })).min(1),
+    }),
+  }),
+});
+
+function isValidNotionPost(post: unknown): post is NotionPost {
+  const parsed = postSchema.safeParse(post);
+  if (parsed.success) return true;
+  return false;
+}
+
+function notionPostToBlogPost(post: NotionPost): BlogPost {
+  return {
+    id: post.id,
+    publishDate: new Date(post.created_time).getTime(),
+    niceDate: niceDate(new Date(post.created_time)),
+    description: post.properties.description.rich_text[0].plain_text,
+    slug: post.properties.slug.rich_text[0].plain_text,
+    status: post.properties.status.status.name,
+    title: post.properties.title.title[0].plain_text,
+  };
 }

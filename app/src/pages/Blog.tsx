@@ -8,11 +8,13 @@ import { InfoHeader } from "../components/InfoHeader";
 import { Box } from "../slang";
 import { Page } from "../ui/Shared";
 import { SectionTitle } from "../ui/Typography";
+import type { BlogPost } from "shared";
 export default function Blog() {
   const posts = useQuery("posts", getAndPreparePosts, {
     staleTime: Infinity,
     suspense: true,
   });
+
   return (
     <>
       <Helmet>
@@ -41,7 +43,7 @@ export default function Blog() {
   );
 }
 
-function Post({ post }: { post: PostType }) {
+function Post({ post }: { post: BlogPost }) {
   return (
     <Link
       className={`grid gap-4 p-2 md:p-5 rounded transition-all
@@ -52,7 +54,7 @@ function Post({ post }: { post: PostType }) {
     >
       <header className="grid gap-2">
         <span className="text-xs text-neutral-500 dark:text-neutral-400">
-          {post.publishDate}
+          {post.niceDate}
         </span>
         <SectionTitle>{post.title}</SectionTitle>
       </header>
@@ -65,20 +67,8 @@ function Post({ post }: { post: PostType }) {
 
 async function getAndPreparePosts() {
   const response = await axios.get("/api/blog/posts");
-  const posts = (response.data as PostType[])
-    .sort((a, b) => b.rawDate - a.rawDate)
-    // only show posts with status "Done"
+  const posts = (response.data as BlogPost[])
+    .sort((a, b) => b.publishDate - a.publishDate)
     .filter((post) => post.status === "Done");
   return posts;
 }
-
-export type PostType = {
-  id: string;
-  rawDate: number;
-  date: string;
-  publishDate: string;
-  description: string;
-  status: string;
-  slug: string;
-  title: string;
-};
