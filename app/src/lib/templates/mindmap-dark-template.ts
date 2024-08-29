@@ -38,7 +38,7 @@ export const theme: FFTheme = {
   targetArrowShape: "none",
   sourceDistanceFromNode: 5,
   targetDistanceFromNode: 5,
-  edgeTextSize: 10,
+  edgeTextSize: 1,
   rotateEdgeLabel: false,
   direction: "DOWN",
   fixedHeight: 300,
