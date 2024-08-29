@@ -27,8 +27,25 @@ export function toTheme(theme: FFTheme) {
       // Tree is actually called mr-tree
       algorithm: theme.layoutName,
     };
+
+    if (theme.layoutName === "stress") {
+      // @ts-ignore
+      layout.elk.interactive = true;
+      // @ts-ignore
+      layout.animate = true;
+      // @ts-ignore
+      layout.animationDuration = 150;
+      // @ts-ignore
+      layout.animationEasing = "ease-in-out";
+    }
   } else if (theme.layoutName === "cose") {
     layout.name = "fcose";
+    // @ts-ignore
+    layout.animate = true;
+    // @ts-ignore
+    layout.animationDuration = 150;
+    // @ts-ignore
+    layout.animationEasing = "ease-in-out";
   } else {
     layout.name = theme.layoutName;
   }
@@ -207,7 +224,7 @@ export function toTheme(theme: FFTheme) {
   }
 
   return {
-    layout,
+    layout: layout as cytoscape.LayoutOptions,
     style: preStyle.join("\n"),
     postStyle,
   };

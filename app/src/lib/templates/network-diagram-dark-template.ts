@@ -48,7 +48,7 @@ export const theme: FFTheme = {
   sourceDistanceFromNode: 0,
   targetDistanceFromNode: 6,
   arrowScale: 0.8,
-  edgeTextSize: 10,
+  edgeTextSize: 1,
   rotateEdgeLabel: false,
   fixedHeight: 100,
 };
