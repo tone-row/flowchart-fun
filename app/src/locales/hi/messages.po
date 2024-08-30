@@ -119,7 +119,7 @@ msgstr "गुण"
 msgid "August 2023"
 msgstr "2023 अगस्त"
 
-#: src/components/LoadTemplateDialog.tsx:100
+#: src/components/LoadTemplateDialog.tsx:102
 msgid "Back"
 msgstr "वापस"
 
@@ -161,7 +161,7 @@ msgstr "मासिक रूप से $4 पर बिल किया जा
 
 #: src/components/Header.tsx:139
 #: src/components/Header.tsx:385
-#: src/pages/Blog.tsx:28
+#: src/pages/Blog.tsx:30
 msgid "Blog"
 msgstr "ब्लॉग"
 
@@ -616,8 +616,8 @@ msgstr "नीचे अपना ईमेल पता दर्ज करे�
 msgid "Equal To"
 msgstr "बराबर"
 
-#: src/components/LoadTemplateDialog.tsx:66
-#: src/components/LoadTemplateDialog.tsx:82
+#: src/components/LoadTemplateDialog.tsx:68
+#: src/components/LoadTemplateDialog.tsx:84
 msgid "Examples"
 msgstr "उदाहरण"
 
@@ -901,7 +901,7 @@ msgstr "लिंक"
 msgid "Link back"
 msgstr "वापस लिंक करें"
 
-#: src/components/LoadTemplateDialog.tsx:148
+#: src/components/LoadTemplateDialog.tsx:150
 msgid "Load"
 msgstr "लोड"
 
@@ -917,7 +917,7 @@ msgstr "फ़ाइल लोड करें"
 msgid "Load Files"
 msgstr "फ़ाइलें लोड करें"
 
-#: src/components/LoadTemplateDialog.tsx:120
+#: src/components/LoadTemplateDialog.tsx:122
 msgid "Load default content"
 msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 
@@ -925,7 +925,7 @@ msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 msgid "Load from link?"
 msgstr "लिंक से लोड करें?"
 
-#: src/components/LoadTemplateDialog.tsx:113
+#: src/components/LoadTemplateDialog.tsx:115
 msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
 
@@ -959,10 +959,6 @@ msgstr "सेव में लॉग इन करें"
 #: src/components/Checkout.tsx:73
 msgid "Log in to upgrade your account"
 msgstr "अपने खाते को अपग्रेड करने के लिए लॉग इन करें"
-
-#: src/components/Layout.tsx:108
-msgid "Love Flowchart Fun? Support us with a vote on Product Hunt!"
-msgstr "क्या आप प्यार फ्लोचार्ट फन को समर्थन करते हैं? हमें प्रोडक्ट हंट पर एक वोट देकर समर्थन करें!"
 
 #: src/components/Settings.tsx:151
 msgid "Make a One-Time Donation"
@@ -1556,7 +1552,7 @@ msgstr "आपके इनपुट की लंबाई के आधार 
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "यह सैंडबॉक्स प्रयोग करने के लिए परफेक्ट है, लेकिन ध्यान रखें - यह दैनिक रूप से रीसेट होता है। अभी अपग्रेड करें और अपना वर्तमान काम रखें!"
 
-#: src/components/LoadTemplateDialog.tsx:134
+#: src/components/LoadTemplateDialog.tsx:136
 msgid "This will replace the current content."
 msgstr "यह वर्तमान सामग्री को बदल देगा।"
 
