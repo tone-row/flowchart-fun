@@ -359,6 +359,8 @@ function getGraphUpdater({
       if (layout.name === "fcose") {
         if (isFirstRender.current) {
           // @ts-ignore
+          layout.animate = false;
+          // @ts-ignore
           layout.randomize = true;
           // @ts-ignore
           layout.quality = "proof";
