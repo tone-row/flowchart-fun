@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 import { Page } from "../../ui/Shared";
 import { PageTitle } from "../../ui/Typography";
-import { PostType } from "../Blog";
+
 import { Helmet } from "react-helmet";
 
 export default function Post() {
@@ -78,3 +78,14 @@ async function getPost(
   const post = response.data;
   return post;
 }
+
+export type PostType = {
+  id: string;
+  rawDate: number;
+  date: string;
+  publishDate: string;
+  description: string;
+  status: string;
+  slug: string;
+  title: string;
+};

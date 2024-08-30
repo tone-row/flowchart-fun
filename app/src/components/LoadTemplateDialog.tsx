@@ -48,6 +48,8 @@ export function LoadTemplateDialog() {
     });
   }, [template, replaceContent, reset]);
 
+  console.log(templates);
+
   return (
     <Dialog.Root
       open={open}

@@ -37,7 +37,9 @@ async function main() {
 
   await screenshotTemplates(filteredTemplates);
   await createThumbnails(filteredTemplates);
-  await createTemplatesIndex(templates); // Always create index with all templates
+  console.log(
+    "Don't forget to add the new templates to `shared/src/templates.ts` file."
+  );
 }
 
 /**
@@ -75,8 +77,8 @@ async function takeScreenshot(browser, template) {
     console.error("Error loading template", error);
   }
 
-  // wait a few seconds
-  await page.waitForTimeout(3000);
+  // wait 3 seconds
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   // get the full page link
   const screenshotLink = await page.evaluate(() => {
@@ -134,23 +136,6 @@ async function createThumbnails(templates) {
         }
       }
     }
-  }
-}
-
-async function createTemplatesIndex(templates) {
-  console.log("Creating templates index...");
-  const indexPath = path.join(__dirname, "../../shared/templates.ts");
-  const indexContent = `export const templates = ${JSON.stringify(
-    templates,
-    null,
-    2
-  )} as const;`;
-
-  try {
-    await writeFile(indexPath, indexContent, "utf8");
-    console.log("✅ Created templates index file");
-  } catch (error) {
-    console.error("Error creating templates index file:", error);
   }
 }
 

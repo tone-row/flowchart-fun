@@ -135,6 +135,11 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 export default Graph;
 
 function handleDragFree() {
+  // If the layout is fcose, we don't want to freeze the layout
+  // because people may not expect that behavior / Subject to change!
+  const layout = useGraphStore.getState().layout;
+  if (layout.name === "fcose" || layout.name === "stress") return;
+
   const nodePositions = getNodePositionsFromCy();
   useDoc.setState(
     (state) => {
@@ -240,6 +245,10 @@ function initializeGraph({
       }
     );
 
+    cyCurrent.on("dragstart", "node", () => {
+      // stop the layout from running
+      window.__cy?.stop();
+    });
     cyCurrent.on("dragfree", handleDragFree);
 
     // on zoom
@@ -344,14 +353,13 @@ function getGraphUpdater({
 
       elements = getElements(doc.text);
 
-      // Test
-      cyErrorCatcher.current.json({ elements, layout, style });
-
       // Very specific bug wrt to cose layouts
       // If it's the first render, randomize cannot be false
       // Because the graph has no positions yet
       if (layout.name === "fcose") {
         if (isFirstRender.current) {
+          // @ts-ignore
+          layout.animate = false;
           // @ts-ignore
           layout.randomize = true;
           // @ts-ignore
@@ -362,8 +370,20 @@ function getGraphUpdater({
         }
       }
 
+      // Stress layout, need to turn off interactive and animation on first render
       // @ts-ignore
-      layout.animate = false;
+      if (layout.name === "elk" && layout.elk.algorithm === "stress") {
+        if (isFirstRender.current) {
+          // @ts-ignore
+          layout.elk.interactive = false;
+          // @ts-ignore
+          layout.animate = false;
+          // @ts-ignore
+          delete layout.animationDuration;
+          // @ts-ignore
+          delete layout.animationEasing;
+        }
+      }
 
       // Finally we get rid of layouts when user has dragged
       // Apply the preset layout if nodePositions is defined
@@ -375,6 +395,9 @@ function getGraphUpdater({
         // @ts-ignore
         delete layout.spacingFactor;
       }
+
+      // Test
+      cyErrorCatcher.current.json({ elements, layout, style });
 
       cyErrorCatcher.current.layout(layout);
 
