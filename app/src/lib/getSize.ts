@@ -57,7 +57,7 @@ export function getSize(label: string, classes: string[]) {
       .join(" ")}`
   );
 
-  resizer.innerHTML = text;
+  resizer.textContent = text;
 
   if (resizer.firstChild) {
     const range = document.createRange();
