@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -176,6 +176,10 @@ div[data-reach-tooltip] {
 /** Text-wrap balance utility */
 .text-wrap-balance {
   text-wrap: balance;
+}
+
+.text-wrap-pretty {
+  text-wrap: pretty;
 }
 
 #theme-editor-wrapper > section {
