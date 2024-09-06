@@ -34,17 +34,26 @@ export function FlowchartHeader() {
     <header
       className={classNames(
         styles.HeaderTitle,
-        "flex items-center gap-2 justify-between flex-wrap p-4 md:p-2"
+        "grid gap-2 md:flex items-end justify-between p-4 md:p-2 md:mb-2"
       )}
     >
       {isSandbox ? (
-        <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
+        <div className="grid gap-0.5 content-end">
+          <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
+          <p className="text-xs text-neutral-500 dark:text-neutral-300/80 font-medium leading-tight text-wrap-pretty">
+            <Trans>
+              Create flowcharts instantly: Type or paste text, see it
+              visualized.
+            </Trans>
+          </p>
+        </div>
       ) : (
         <RenameButton key={pageTitle}>
           <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
         </RenameButton>
       )}
-      <div className="flex items-center gap-1 p-1 border-2 border-neutral-300 dark:border-neutral-700 rounded-xl">
+
+      <div className="flex items-center gap-1">
         {isReadOnly && (
           <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
             <Trans>Read-only</Trans>
@@ -57,7 +66,7 @@ export function FlowchartHeader() {
             <ShareDialog>
               <Button2
                 onClick={() => setShareModal(true)}
-                leftIcon={<Share weight="bold" className="w-5 h-5" />}
+                leftIcon={<Share weight="bold" className="w-4 h-4" />}
                 aria-label="Export"
                 data-session-activity="Share Chart"
               >
@@ -68,7 +77,7 @@ export function FlowchartHeader() {
         ) : null}
         <DownloadDropdown>
           <Button2
-            leftIcon={<DownloadSimple weight="bold" className="w-5 h-5" />}
+            leftIcon={<DownloadSimple weight="bold" className="w-4 h-4" />}
           >
             <Trans>Download</Trans>
           </Button2>
@@ -96,7 +105,7 @@ function LogInToSaveButton() {
   const navigate = useNavigate();
   return (
     <Button2
-      leftIcon={<FloppyDisk weight="bold" className="w-5 h-5" />}
+      leftIcon={<FloppyDisk weight="bold" className="w-4 h-4" />}
       data-session-activity="Save Chart: Log in"
       onClick={() => {
         navigate("/l");
@@ -110,7 +119,7 @@ function LogInToSaveButton() {
 function CannotSaveButton() {
   return (
     <Button2
-      leftIcon={<FloppyDisk weight="bold" className="w-5 h-5" />}
+      leftIcon={<FloppyDisk weight="bold" className="w-4 h-4" />}
       data-session-activity="Save Chart: Upgrade"
       onClick={() => {
         showPaywall({
@@ -138,7 +147,7 @@ function CanSaveButton() {
     >
       <Dialog.Trigger asChild>
         <Button2
-          leftIcon={<FloppyDisk weight="bold" className="w-5 h-5" />}
+          leftIcon={<FloppyDisk weight="bold" className="w-4 h-4" />}
           data-session-activity="Save Chart"
           onClick={() => {
             setOpen(true);
@@ -157,7 +166,7 @@ function CanSaveButton() {
                   <Trans>How would you like to save your chart?</Trans>
                 </p>
                 <Button2
-                  leftIcon={<Cloud weight="bold" className="w-5 h-5" />}
+                  leftIcon={<Cloud weight="bold" className="w-4 h-4" />}
                   data-session-activity="Save Chart: Cloud"
                   onClick={() => {
                     setCreateType("cloud");
@@ -166,7 +175,7 @@ function CanSaveButton() {
                   <Trans>Save to Cloud</Trans>
                 </Button2>
                 <Button2
-                  leftIcon={<File weight="bold" className="w-5 h-5" />}
+                  leftIcon={<File weight="bold" className="w-4 h-4" />}
                   data-session-activity="Save Chart: File"
                   onClick={() => {
                     setOpen(false);
@@ -239,7 +248,7 @@ function SaveForm() {
         />
       </label>
       <Button2
-        leftIcon={<FloppyDisk className="w-5 h-5" />}
+        leftIcon={<FloppyDisk className="w-4 h-4" />}
         isLoading={createChartMutation.isLoading}
       >
         Save
@@ -256,7 +265,7 @@ function FlowchartTitle({
   return (
     <h1
       className={classNames(
-        "text-lg sm:text-xl md:text-2xl font-bold -translate-y-[2px]",
+        "text-lg sm:text-xl md:text-[30px] tracking-[0.5px] font-bold -translate-y-[2px]",
         className
       )}
       {...props}

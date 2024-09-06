@@ -1,7 +1,7 @@
 import { Button2, IconButton2, Textarea } from "../ui/Shared";
 import { CaretDown, CaretUp, MagicWand } from "phosphor-react";
 import cx from "classnames";
-import { t } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import { createExamples } from "../pages/createExamples";
 import {
   Mode,
@@ -47,8 +47,12 @@ export function AiToolbar() {
   const toggleOpen = () => setIsOpen(!isOpen);
 
   const handleModeChange = (mode: Mode) => {
-    setMode(mode);
-    if (!isOpen) setIsOpen(true);
+    if (mode === currentMode && isOpen) {
+      setIsOpen(false);
+    } else {
+      setMode(mode);
+      setIsOpen(true);
+    }
   };
 
   const currentText = usePromptStore((state) => state.currentText);
@@ -56,25 +60,28 @@ export function AiToolbar() {
   const showAcceptDiffButton = diff && !isRunning;
 
   return (
-    <div className="bg-purple-600/10 dark:bg-purple-800/20">
+    <div className="bg-white dark:bg-foreground border-b border-neutral-200 dark:border-neutral-800">
       <div className="flex items-center justify-between p-2">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-0.5">
           <MagicWand
-            size={24}
-            className="text-purple-600 dark:text-white mx-1"
+            size={20}
+            className={cx("mx-2 transition-all duration-200", {
+              "text-purple-600 dark:text-purple-200 scale-110 -rotate-12":
+                isOpen,
+              "text-neutral-500 dark:text-neutral-400": !isOpen,
+            })}
           />
           {!showAcceptDiffButton ? (
             (["prompt", "convert", "edit"] as Mode[]).map((mode) => (
               <Button2
                 key={mode}
-                color={mode === currentMode ? "purple" : "default"}
+                color={mode === currentMode && isOpen ? "purple" : "default"}
                 size="xs"
                 onClick={() => handleModeChange(mode)}
                 className={cx({
-                  "hover:bg-white dark:hover:bg-neutral-700":
-                    mode !== currentMode,
+                  "dark:hover:bg-neutral-700": mode !== currentMode,
                   "dark:bg-purple-700 dark:text-purple-100":
-                    mode === currentMode,
+                    mode === currentMode && isOpen,
                 })}
               >
                 {getModeTitle(mode)}
@@ -82,19 +89,23 @@ export function AiToolbar() {
             ))
           ) : (
             <span className="text-sm text-purple-600 dark:text-white">
-              Keep changes?
+              <Trans>Keep changes?</Trans>
             </span>
           )}
         </div>
         {!showAcceptDiffButton ? (
           <IconButton2
             onClick={toggleOpen}
-            color="purple"
+            color="default"
             size="xs"
-            className="flex items-center justify-center dark:bg-purple-700/50 dark:text-purple-100"
+            className="flex items-center justify-center dark:bg-neutral-800 dark:text-neutral-400"
             isLoading={isRunning}
           >
-            {!isOpen ? <CaretDown size={16} /> : <CaretUp size={16} />}
+            {!isOpen ? (
+              <CaretDown size={16} weight="bold" />
+            ) : (
+              <CaretUp size={16} weight="bold" />
+            )}
           </IconButton2>
         ) : (
           <div className="flex space-x-2">
@@ -109,17 +120,17 @@ export function AiToolbar() {
       </div>
       {isOpen && (
         <div className="grid p-4 pt-0">
-          <p className="text-xs text-purple-600 dark:text-white mb-2 text-wrap-balance leading-normal">
+          <p className="text-xs font-medium text-neutral-400 dark:text-neutral-400 mb-1 text-wrap-balance leading-normal">
             {getModeDescription(currentMode)}
           </p>
           <Textarea
             value={currentText}
             box={{
               className:
-                "bg-white dark:bg-purple-800/50 !rounded-md w-full mb-2 border-2 border-purple-400 dark:border-purple-700 rounded-md focus:ring-purple-500 focus:border-purple-500",
+                "bg-white dark:bg-neutral-800 !rounded-md w-full mb-1 border border-neutral-400/50 dark:border-neutral-700 rounded-md focus:ring-neutral-500 focus:border-neutral-500",
             }}
             onChange={(e) => setCurrentText(e.target.value)}
-            className="resize-none dark:text-white dark:bg-transparent"
+            className="resize-none text-neutral-900 dark:text-neutral-100 bg-transparent"
             disabled={isRunning}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey) {
@@ -132,7 +143,7 @@ export function AiToolbar() {
             <Button2
               color="purple"
               size="xs"
-              className="dark:bg-purple-700/50 dark:text-purple-100"
+              className="dark:bg-purple-700 dark:hover:bg-purple-600 dark:text-purple-100"
               disabled={isRunning}
               onClick={runAiWithStore}
               data-session-activity={`Run AI: ${currentMode}`}

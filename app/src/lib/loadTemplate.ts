@@ -38,6 +38,7 @@ export async function loadTemplate(
     themeEditor: theme,
     // Unfreeze the doc
     nodePositions: undefined,
+    customCssOnly: false,
   };
 
   callback?.();
