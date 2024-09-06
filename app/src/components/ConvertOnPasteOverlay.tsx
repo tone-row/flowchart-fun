@@ -3,7 +3,6 @@ import { useEffect, useMemo } from "react";
 import { getDefaultText } from "../lib/getDefaultText";
 import { useEditorStore } from "../lib/useEditorStore";
 import { usePromptStore, useRunAiWithStore } from "../lib/usePromptStore";
-import { ArrowRight } from "phosphor-react";
 import { Button2 } from "../ui/Shared";
 import { Trans } from "@lingui/macro";
 import { MagicWand } from "phosphor-react";
@@ -55,17 +54,17 @@ function Overlay() {
   const isRunning = usePromptStore((s) => s.isRunning);
   const pasted = useEditorStore((s) => s.userPasted);
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 convert-on-paste-overlay dark:from-purple-900/90 dark:via-purple-850/90 dark:to-purple-800/90 pb-6 pt-12 animate-overlayShow">
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-screen max-w-4xl mx-auto px-4 animate-slideUpFadeLarge">
-        <p className="dark:text-purple-100 text-base font-medium text-wrap-balance leading-snug">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-purple-800/80 backdrop-blur-lg py-6 animate-overlayShow">
+      <div className="grid sm:flex items-center gap-4 w-screen mx-auto px-6 animate-slideUpFadeLarge">
+        <p className="text-white text-sm font-semibold leading-tight text-wrap-balance">
           <Trans>
-            Is this a document? Would you like to convert it to a flowchart?
+            Pasted content detected. Convert to Flowchart Fun syntax?
           </Trans>
         </p>
-        <div className="flex gap-3">
+        <div className="flex justify-end gap-3">
           <Button2
             color="inverted"
-            size="xs"
+            size="sm"
             onClick={() => {
               useEditorStore.setState({ userPasted: "" });
             }}
@@ -74,29 +73,18 @@ function Overlay() {
           </Button2>
           <Button2
             color="purple"
-            size="xs"
-            className="group"
+            size="sm"
             leftIcon={<MagicWand size={18} weight="fill" />}
             onClick={() => {
-              // first set the mode to convert, and add pasted text
               usePromptStore.setState({
                 mode: "convert",
                 currentText: pasted,
               });
-              // move this off the main thread
               requestAnimationFrame(() => {
                 runAiWithStore();
-                // clear the pasted text
                 useEditorStore.setState({ userPasted: "" });
               });
             }}
-            rightIcon={
-              <ArrowRight
-                size={20}
-                weight="bold"
-                className="inline-block ml-2 group-hover:translate-x-1 transition-transform"
-              />
-            }
             isLoading={isRunning}
           >
             <Trans>Convert</Trans>

@@ -83,8 +83,8 @@ module.exports = {
       },
       keyframes: {
         overlayShow: {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
+          from: { transform: "translateY(100%)" },
+          to: { transform: "translateY(0)" },
         },
         contentShow: {
           from: { opacity: 0, transform: "translate(-50%, -48%) scale(0.96)" },
