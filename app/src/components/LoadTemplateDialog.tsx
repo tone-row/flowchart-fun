@@ -160,7 +160,7 @@ export function LoadTemplateDialog() {
                     <button
                       key={template}
                       onClick={() => setTemplate(template)}
-                      className="overflow-hidden shadow-sm opacity-70 hover:opacity-100 aspect-square"
+                      className="overflow-hidden shadow-sm opacity-70 dark:opacity-90 hover:opacity-100 aspect-square"
                     >
                       <img
                         key={template}

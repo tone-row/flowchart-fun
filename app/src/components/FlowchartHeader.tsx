@@ -41,7 +41,10 @@ export function FlowchartHeader() {
         <div className="grid gap-0.5 content-end">
           <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
           <p className="text-xs text-neutral-500 dark:text-neutral-300/80 font-medium leading-tight text-wrap-pretty">
-            Create flowcharts instantly: Type or paste text, see it visualized.
+            <Trans>
+              Create flowcharts instantly: Type or paste text, see it
+              visualized.
+            </Trans>
           </p>
         </div>
       ) : (
