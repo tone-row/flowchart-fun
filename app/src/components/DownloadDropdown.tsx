@@ -24,18 +24,22 @@ export function DownloadDropdown({ children }: { children: React.ReactNode }) {
       const svg = await getSvg({ cy: window.__cy });
       downloadSvg({ svg, filename });
     } else {
-      const { canvas } = await getCanvas({
-        cy: window.__cy,
-        type: format as "png" | "jpg",
-        watermark,
-        scale,
-      });
-      downloadCanvas({
-        canvas,
-        filename,
-        type: format as "png" | "jpg",
-        cleanup: () => {},
-      });
+      try {
+        const { canvas } = await getCanvas({
+          cy: window.__cy,
+          type: format as "png" | "jpg",
+          watermark,
+          scale,
+        });
+        downloadCanvas({
+          canvas,
+          filename,
+          type: format as "png" | "jpg",
+          cleanup: () => {},
+        });
+      } catch (err) {
+        console.error(`Failed to download ${format}:`, err);
+      }
     }
   };
 
