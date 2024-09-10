@@ -8,6 +8,10 @@ import { getBackground } from "../lib/toTheme";
 // padding, gets divided in half
 const PADDING = 60;
 
+const MAX_ATTEMPTS = 8;
+const SCALE_REDUCTION_FACTOR = 0.75;
+const CANVAS_SIZE_ERROR = "`canvas.toBlob()` sent a null value in its callback";
+
 /**
  * Returns the SVG code for the current graph
  */
@@ -136,12 +140,36 @@ export async function getCanvas({
   cleanup: () => void;
 }> {
   const bg = getBackground();
-  const blob = await cy[type]({
-    full: true,
-    scale,
-    output: "blob-promise",
-    bg,
-  });
+  let blob: Blob | null = null;
+  let currentScale = scale;
+  let attempts = 0;
+
+  // Try to create the blob, reducing scale if necessary
+  while (attempts < MAX_ATTEMPTS) {
+    try {
+      blob = await cy[type]({
+        full: true,
+        scale: currentScale,
+        output: "blob-promise",
+        bg,
+      });
+      break; // Success, exit the loop
+    } catch (error) {
+      if (error instanceof Error && error.message.includes(CANVAS_SIZE_ERROR)) {
+        attempts++;
+        currentScale *= SCALE_REDUCTION_FACTOR;
+        console.warn(
+          `Canvas size too large. Reducing scale to ${currentScale}`
+        );
+      } else {
+        throw error; // Rethrow if it's not the expected error
+      }
+    }
+  }
+
+  if (!blob) {
+    throw new Error("Failed to create canvas after maximum attempts");
+  }
 
   // Get width and height of flowchart
   const { w, h } = await new Promise<{ w: number; h: number }>((resolve) => {
@@ -227,6 +255,7 @@ export function downloadCanvas({
 }: {
   filename: string;
 } & Awaited<ReturnType<typeof getCanvas>>) {
+  console.log("downloadCanvas", canvas, type, filename);
   const mime = type === "png" ? "image/png" : "image/jpeg";
   saveAs(canvas.toDataURL(mime), `${filename}.${type}`);
   cleanup();
