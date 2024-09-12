@@ -1,7 +1,14 @@
 import classNames from "classnames";
 import { features } from "./Pricing";
 import { Trans, t } from "@lingui/macro";
-import { CSSProperties, Fragment, useEffect, useRef } from "react";
+import {
+  CSSProperties,
+  Fragment,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   ChartBar,
   Check,
@@ -222,38 +229,7 @@ export default function Pricing2() {
         <div className="max-w-6xl mx-auto py-12 grid gap-12 px-4 md:px-8">
           <div>
             <SectionTitle>Features</SectionTitle>
-            <div className="grid md:grid-cols-2 gap-4">
-              {features().map((feature) => (
-                <div
-                  key={feature.title}
-                  className="feature group relative overflow-hidden p-6 rounded-xl bg-neutral-100 border border-neutral-400/50 aspect-[2.5] flex items-center justify-center hover:bg-white hover:shadow-sm transition-colors dark:bg-neutral-900 dark:border-none dark:hover:bg-neutral-800"
-                  style={
-                    {
-                      "--accent-color": "#fafa00",
-                    } as CSSProperties
-                  }
-                >
-                  <div className="grid gap-1 sm:gap-3 sm:group-hover:-translate-y-6 transition-transform z-10">
-                    <h3 className="text-center text-[18px] sm:text-lg lg:text-xl font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-hover:text-white">
-                      {feature.title}
-                    </h3>
-                    {feature.points.map((point) => (
-                      <p
-                        key={point}
-                        className="text-center text-sm lg:text-base text-neutral-500 dark:text-neutral-400 text-wrap-balance !leading-normal"
-                      >
-                        {point}
-                      </p>
-                    ))}
-                  </div>
-                  <img
-                    src={`images/pricing/${feature.imgPath}.svg`}
-                    alt={feature.title}
-                    className="pricing-feature-img h-[125px] w-[125px] dark:invert absolute bottom-[-50px] left-1/2 opacity-5 blur-[2px] sm:group-hover:opacity-100 group-hover:blur-0 group-hover:bottom-[-40px] transition-all duration-[400ms]"
-                  />
-                </div>
-              ))}
-            </div>
+            <FeaturesSlideshow />
           </div>
         </div>
       </div>
@@ -439,5 +415,75 @@ function SectionTitle({
     >
       {children}
     </h2>
+  );
+}
+
+function FeaturesSlideshow() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [f] = useState(features());
+  const interval = useRef<NodeJS.Timeout | null>(null);
+  useEffect(() => {
+    interval.current = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % f.length);
+    }, 3000);
+    return () => {
+      if (interval.current) clearInterval(interval.current);
+    };
+  }, [f.length]);
+
+  const setIndex = useCallback((index: number) => {
+    setActiveIndex(index);
+    if (interval.current) clearInterval(interval.current);
+  }, []);
+
+  const resetInterval = useCallback(() => {
+    if (interval.current) clearInterval(interval.current);
+    interval.current = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % f.length);
+    }, 3000);
+  }, [f.length]);
+
+  return (
+    <div
+      className="grid md:grid-cols-2 gap-4"
+      onMouseLeave={resetInterval}
+      role="tablist"
+      tabIndex={0}
+    >
+      {f.map((feature, index) => (
+        <div
+          key={feature.title}
+          className="feature group relative overflow-hidden p-6 rounded-xl bg-neutral-100 border border-neutral-400/50 aspect-[2.5] flex items-center justify-center data-[is-active=true]:bg-white data-[is-active=true]:shadow-sm transition-colors dark:bg-neutral-900 dark:border-none dark:data-[is-active=true]:bg-neutral-800"
+          data-is-active={index === activeIndex}
+          onMouseEnter={() => setIndex(index)}
+          role="button"
+          tabIndex={index === activeIndex ? 0 : -1}
+          style={
+            {
+              "--accent-color": "#fafa00",
+            } as CSSProperties
+          }
+        >
+          <div className="grid gap-1 sm:gap-3 sm:group-data-[is-active=true]:-translate-y-6 transition-transform z-10">
+            <h3 className="text-center text-[18px] sm:text-lg lg:text-xl font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-data-[is-active=true]:text-white">
+              {feature.title}
+            </h3>
+            {feature.points.map((point) => (
+              <p
+                key={point}
+                className="text-center text-sm lg:text-base text-neutral-500 dark:text-neutral-400 text-wrap-balance !leading-normal"
+              >
+                {point}
+              </p>
+            ))}
+          </div>
+          <img
+            src={`images/pricing/${feature.imgPath}.svg`}
+            alt={feature.title}
+            className="pricing-feature-img h-[125px] w-[125px] dark:invert absolute bottom-[-50px] left-1/2 opacity-5 blur-[2px] sm:group-data-[is-active=true]:opacity-100 group-data-[is-active=true]:blur-0 group-data-[is-active=true]:bottom-[-40px] transition-all duration-[400ms]"
+          />
+        </div>
+      ))}
+    </div>
   );
 }

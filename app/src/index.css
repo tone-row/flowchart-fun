@@ -365,7 +365,7 @@ and --mouse-x
   @apply transition-opacity duration-[400ms];
 }
 
-.feature:hover::after {
+.feature[data-is-active="true"]::after {
   opacity: 1;
 }
 
