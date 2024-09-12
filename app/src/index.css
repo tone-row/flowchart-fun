@@ -320,7 +320,7 @@ and --mouse-x
 }
 
 .feature:nth-child(1) {
-  --hover-accent: theme("colors.purple.300");
+  --hover-accent: theme("colors.purple.400");
 }
 .feature:nth-child(2) {
   --hover-accent: theme("colors.green.300");
@@ -329,7 +329,7 @@ and --mouse-x
   --hover-accent: theme("colors.orange.300");
 }
 .feature:nth-child(4) {
-  --hover-accent: theme("colors.blue.300");
+  --hover-accent: theme("colors.red.300");
 }
 
 .feature::after {
