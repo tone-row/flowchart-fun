@@ -125,14 +125,11 @@ export function Checkout({
 
   return (
     <div>
-      <h2 className="text-white text-5xl font-bold text-center mb-3 tracking-wide">
-        <Trans>Upgrade to Pro</Trans>
-      </h2>
-      <p className="text-white text-[26px] text-center mb-10 text-wrap-balance leading-tight opacity-90">
+      <h2 className="text-white text-lg font-medium sm:text-3xl text-center mb-10 text-wrap-balance leading-tight opacity-90">
         <Trans>
           Unlock AI Features and never lose your work with a Pro account.
         </Trans>
-      </p>
+      </h2>
       <div className="grid sm:grid-cols-2 gap-3 mb-8">
         <PlanButton
           onClick={() => {

@@ -104,6 +104,11 @@ const pricingRows = () => [
 
 const companies: { svg: string; name: string; className?: string }[] = [
   {
+    svg: "bbva.svg",
+    name: "BBVA",
+    className: "h-8 w-auto shrink-0",
+  },
+  {
     svg: "netflix.svg",
     name: "Netflix",
     className: "h-8 w-auto shrink-0",
@@ -117,11 +122,6 @@ const companies: { svg: string; name: string; className?: string }[] = [
     svg: "boston-dynamics.svg",
     name: "Boston Dynamics",
     className: "h-[55px] w-auto shrink-0",
-  },
-  {
-    svg: "bbva.svg",
-    name: "BBVA",
-    className: "h-8 w-auto shrink-0",
   },
   {
     svg: "razer.svg",
@@ -237,7 +237,7 @@ export default function Pricing2() {
       </div>
       <div className="trusted">
         <Container className="py-12">
-          <SectionTitle className="text-center sm:mb-12">
+          <SectionTitle className="text-center sm:mb-14">
             <Trans>Trusted by Professionals and Academics</Trans>
           </SectionTitle>
           <div className="flex items-center gap-4 sm:gap-x-20 sm:gap-y-12 flex-wrap justify-center">
@@ -336,7 +336,7 @@ export default function Pricing2() {
           alt=""
         />
       </div>
-      <div className="bg-purple-700 text-white">
+      <div className="bg-purple-900 text-white">
         <p className="text-center text-lg font-bold py-8 cursor-pointer">
           <Trans>Subscribe to Pro and flowchart the fun way!</Trans>
         </p>
