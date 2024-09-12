@@ -191,26 +191,26 @@ export default function Pricing2() {
   }, []);
   return (
     <div>
-      <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-purple-100 to-purple-600/80 pt-12 dark:to-purple-900/50 dark:from-[#0c0c0c]">
+      <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-purple-50 to-purple-600/70 pt-16 md:pt-24 dark:to-purple-900/50 dark:from-[#0c0c0c]">
         <img
           src="/images/arrows-purple.svg"
           draggable="false"
           className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-20 dark:opacity-50"
           alt=""
         />
-        <Container className="text-center grid relative">
-          <span className="font-medium sm:text-xl mb-8 text-purple-500">
+        <Container className="text-center grid relative justify-items-center items-center gap-8 md:gap-12">
+          <span className="font-bold sm:text-xl text-purple-700/80 dark:text-white/70 -mb-2">
             Flowchart Fun Pro
           </span>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold tracking-tight !leading-tight mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-6xl text-wrap-balance font-bold tracking-tight !leading-[1.25]">
             <Trans>Turn your ideas into professional diagrams in seconds</Trans>
           </h1>
-          <p className="text-lg md:text-xl text-purple-500 font-medium text-wrap-balance leading-normal md:leading-tight text-center -mt-2 mb-12 dark:text-purple-100/70">
+          <p className="inline-block text-lg md:text-xl text-white font-semibold text-wrap-balance leading-normal md:leading-tight text-center px-6 py-4 rounded-full bg-gradient-to-r from-purple-700/80 to-purple-800">
             <Trans>Upgrade to Pro for $2/month</Trans>
           </p>
           <div
             ref={videoRef}
-            className="pricing-video text-[0] bg-white max-w-xl w-full mx-auto rounded-2xl drop-shadow-xl shadow-neutral-900/50 overflow-hidden -mb-12 aspect-[1.3]"
+            className="pricing-video text-[0] bg-white max-w-xl w-full mx-auto rounded-2xl drop-shadow-xl shadow-neutral-900/50 overflow-hidden aspect-[1.3] mt-6 -mb-12"
             style={
               {
                 "--mouse-x": 0,
@@ -263,7 +263,7 @@ export default function Pricing2() {
       <div className="whats-included py-12 px-4 md:px-8">
         <div className="md:w-max mx-auto">
           <SectionTitle>
-            <Trans>What's Included</Trans>
+            <Trans>Feature Breakdown</Trans>
           </SectionTitle>
           <div className="border-neutral-400/50 grid grid-cols-[minmax(0,1fr)_100px_100px] rounded-xl border shadow overflow-hidden bg-neutral-50/50 dark:bg-neutral-900">
             <span>&nbsp;</span>
