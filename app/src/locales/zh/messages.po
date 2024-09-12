@@ -41,7 +41,7 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 msgid "AI Creation & Editing"
 msgstr "AI创建与编辑"
 
-#: src/pages/Pricing2.tsx:48
+#: src/pages/Pricing2.tsx:61
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI驱动的流程图创建"
 
@@ -70,10 +70,6 @@ msgstr "添加一些步骤"
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
 msgstr "高级"
-
-#: src/pages/Pricing2.tsx:35
-msgid "Advanced Export Options (PNG, JPG, SVG)"
-msgstr "高级导出选项（PNG，JPG，SVG）"
 
 #: src/components/GraphFloatingMenu.tsx:142
 #: src/components/GraphFloatingMenu.tsx:146
@@ -151,11 +147,11 @@ msgstr "成为专业用户"
 msgid "Begin your journey"
 msgstr "开始你的旅程"
 
-#: src/components/Checkout.tsx:142
+#: src/components/Checkout.tsx:139
 msgid "Billed annually at $24"
 msgstr "年度账单为$24"
 
-#: src/components/Checkout.tsx:154
+#: src/components/Checkout.tsx:151
 msgid "Billed monthly at $4"
 msgstr "每月收费$4"
 
@@ -198,7 +194,7 @@ msgstr "宽度优先"
 msgid "Cancel"
 msgstr "取消"
 
-#: src/components/Checkout.tsx:191
+#: src/components/Checkout.tsx:188
 msgid "Cancel anytime"
 msgstr "随时取消"
 
@@ -336,11 +332,11 @@ msgstr "是否转换为托管图表？"
 msgid "Cookie Policy"
 msgstr "Cookie政策"
 
-#: src/components/DownloadDropdown.tsx:49
+#: src/components/DownloadDropdown.tsx:53
 msgid "Copied SVG code to clipboard"
 msgstr "将SVG代码复制到剪贴板"
 
-#: src/components/DownloadDropdown.tsx:67
+#: src/components/DownloadDropdown.tsx:71
 msgid "Copied {format} to clipboard"
 msgstr "将{format}复制到剪贴板"
 
@@ -416,7 +412,7 @@ msgid "Custom CSS"
 msgstr "自定义CSS"
 
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:79
+#: src/pages/Pricing2.tsx:86
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
@@ -424,7 +420,7 @@ msgstr "自定义分享选项"
 msgid "Customer Portal"
 msgstr "客户门户"
 
-#: src/pages/Pricing2.tsx:27
+#: src/pages/Pricing2.tsx:34
 msgid "Daily Sandbox Editor"
 msgstr "每日沙盒编辑器"
 
@@ -437,7 +433,7 @@ msgstr "深色"
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: src/pages/Pricing2.tsx:73
+#: src/pages/Pricing2.tsx:80
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "数据导入（Visio，Lucidchart，CSV）"
 
@@ -629,7 +625,7 @@ msgstr "示例"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:91
+#: src/pages/Pricing2.tsx:98
 msgid "Exclusive Office Hours"
 msgstr "专属办公时间"
 
@@ -653,6 +649,10 @@ msgstr "导出为PNG和JPG"
 #: src/pages/Pricing.tsx:65
 msgid "Export to PNG, JPG, and SVG"
 msgstr "导出为PNG，JPG和SVG"
+
+#: src/pages/Pricing2.tsx:266
+msgid "Feature Breakdown"
+msgstr "功能分解"
 
 #: src/components/Feedback.tsx:50
 #: src/components/Header.tsx:115
@@ -700,7 +700,7 @@ msgstr "全屏"
 msgid "General"
 msgstr "一般"
 
-#: src/components/Checkout.tsx:177
+#: src/components/Checkout.tsx:174
 msgid "Get Pro Access Now"
 msgstr "立即获取专业访问权限"
 
@@ -934,7 +934,7 @@ msgid "Load layout and styles"
 msgstr "載入版面和樣式"
 
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:61
+#: src/pages/Pricing2.tsx:68
 msgid "Local File Support"
 msgstr "本地文件支持"
 
@@ -980,7 +980,7 @@ msgstr "付款管理"
 msgid "Map Data"
 msgstr "對應資料"
 
-#: src/components/Checkout.tsx:153
+#: src/components/Checkout.tsx:150
 msgid "Monthly"
 msgstr "每月"
 
@@ -1139,7 +1139,7 @@ msgstr "剧本"
 msgid "Pointer and container on same line"
 msgstr "同一行上的指针和容器"
 
-#: src/pages/Pricing2.tsx:85
+#: src/pages/Pricing2.tsx:92
 msgid "Priority One-on-One Support"
 msgstr "优先一对一支持"
 
@@ -1153,7 +1153,7 @@ msgstr "隱私政策"
 msgid "Processing Data"
 msgstr "处理数据"
 
-#: src/components/Checkout.tsx:176
+#: src/components/Checkout.tsx:173
 msgid "Processing..."
 msgstr "处理中..."
 
@@ -1170,7 +1170,7 @@ msgstr "公开"
 msgid "Random"
 msgstr "随机"
 
-#: src/pages/Pricing2.tsx:40
+#: src/pages/Pricing2.tsx:41
 msgid "Rapid Deployment Templates"
 msgstr "快速部署模板"
 
@@ -1178,6 +1178,10 @@ msgstr "快速部署模板"
 #: src/pages/Pricing.tsx:66
 msgid "Rapid Templates"
 msgstr "快速模板"
+
+#: src/pages/Pricing2.tsx:43
+msgid "Raster Export (PNG, JPG)"
+msgstr "光栅导出（PNG，JPG）"
 
 #: src/components/ConvertToFlowchart.tsx:39
 #: src/lib/usePromptStore.ts:107
@@ -1283,11 +1287,11 @@ msgstr "路线图"
 msgid "Rotate Label"
 msgstr "旋转标签"
 
-#: src/components/DownloadDropdown.tsx:80
+#: src/components/DownloadDropdown.tsx:84
 msgid "SVG Export is a Pro Feature"
 msgstr "SVG导出是专业功能"
 
-#: src/components/Checkout.tsx:197
+#: src/components/Checkout.tsx:194
 msgid "Satisfaction guaranteed or first payment refunded"
 msgstr "满意保证或第一次付款退款"
 
@@ -1312,7 +1316,7 @@ msgstr "保存到文件"
 msgid "Save your Work"
 msgstr "保存您的工作"
 
-#: src/components/Checkout.tsx:185
+#: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "安全付款"
 
@@ -1427,7 +1431,7 @@ msgstr "用类别进行样式设置"
 msgid "Submit"
 msgstr "提交"
 
-#: src/pages/Pricing2.tsx:363
+#: src/pages/Pricing2.tsx:341
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "订阅专业版，以有趣的方式制作流程图！"
 
@@ -1531,7 +1535,7 @@ msgstr "可能的形状是："
 msgid "Theme"
 msgstr "主題"
 
-#: src/pages/Pricing2.tsx:29
+#: src/pages/Pricing2.tsx:36
 msgid "Theme Customization Editor"
 msgstr "主题定制编辑器"
 
@@ -1609,9 +1613,9 @@ msgstr "秒转换您的想法成专业图表"
 msgid "Transform text into diagrams instantly"
 msgstr "即时将文本转换为图表"
 
-#: src/pages/Pricing2.tsx:263
-msgid "Trusted by Professionals and Academics Alike"
-msgstr "专业人士和学术界都信任我们"
+#: src/pages/Pricing2.tsx:241
+msgid "Trusted by Professionals and Academics"
+msgstr "受专业人士和学者信任"
 
 #: src/lib/getDefaultText.ts:17
 msgid "Try AI"
@@ -1621,7 +1625,7 @@ msgstr "尝试人工智能"
 msgid "Try again"
 msgstr "重试"
 
-#: src/pages/Pricing2.tsx:197
+#: src/pages/Pricing2.tsx:206
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "在几秒钟内将您的想法转化为专业图表"
 
@@ -1658,7 +1662,7 @@ msgid "Unlimited Flowcharts"
 msgstr "无限制的流程图"
 
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:42
+#: src/pages/Pricing2.tsx:55
 msgid "Unlimited Permanent Flowcharts"
 msgstr "无限永久流程图"
 
@@ -1666,7 +1670,7 @@ msgstr "无限永久流程图"
 msgid "Unlimited cloud-saved flowcharts"
 msgstr "无限云端保存的流程图"
 
-#: src/components/Checkout.tsx:132
+#: src/components/Checkout.tsx:129
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "解锁AI功能，通过专业账户永远不会丢失您的工作。"
 
@@ -1690,18 +1694,17 @@ msgstr "升级获取无限AI功能"
 msgid "Upgrade to Flowchart Fun Pro and unlock:"
 msgstr "升级到Flowchart Fun Pro并解锁："
 
-#: src/components/DownloadDropdown.tsx:81
+#: src/components/DownloadDropdown.tsx:85
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高级功能来创建您的图表。"
 
-#: src/components/Checkout.tsx:129
 #: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
-#: src/pages/Pricing2.tsx:200
-msgid "Upgrade to Pro for just $4/month"
-msgstr "仅需每月4美元升级到专业版"
+#: src/pages/Pricing2.tsx:209
+msgid "Upgrade to Pro for $2/month"
+msgstr "升级至专业版每月$2"
 
 #: src/components/ImportDataDialog.tsx:204
 msgid "Upload your File"
@@ -1756,19 +1759,19 @@ msgstr "使用此模式来修改和增强您当前的图表。"
 msgid "User"
 msgstr "用户"
 
+#: src/pages/Pricing2.tsx:49
+msgid "Vector Export (SVG)"
+msgstr "矢量导出（SVG）"
+
 #: src/components/Settings.tsx:113
 msgid "View on Github"
 msgstr "在 Github 上查看"
-
-#: src/pages/Pricing2.tsx:55
-msgid "Voice-to-Diagram Dictation"
-msgstr "语音转图表口述"
 
 #: src/components/FloatingTip.tsx:18
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "想要从文档创建流程图吗？ 将其粘贴到编辑器中，然后单击“转换为流程图”"
 
-#: src/pages/Pricing2.tsx:67
+#: src/pages/Pricing2.tsx:74
 msgid "Watermark-Free Diagrams"
 msgstr "无水印图表"
 
@@ -1779,10 +1782,6 @@ msgstr "水印"
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
 msgstr "欢迎来到流程图乐趣"
-
-#: src/pages/Pricing2.tsx:288
-msgid "What's Included"
-msgstr "包括什么"
 
 #: src/lib/getDefaultText.ts:15
 msgid "What's next?"
@@ -1829,7 +1828,7 @@ msgstr "像写大纲一样"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "在此处输入您的提示，或点击启用麦克风，然后按住录制。"
 
-#: src/components/Checkout.tsx:141
+#: src/components/Checkout.tsx:138
 msgid "Yearly"
 msgstr "每年"
 
@@ -1883,7 +1882,7 @@ msgstr "放大"
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/components/Checkout.tsx:232
+#: src/components/Checkout.tsx:228
 msgid "month"
 msgstr "月份"
 
@@ -1891,7 +1890,7 @@ msgstr "月份"
 msgid "or"
 msgstr "或"
 
-#: src/components/Checkout.tsx:174
+#: src/components/Checkout.tsx:171
 msgid "{0}"
 msgstr "{0}"
 
