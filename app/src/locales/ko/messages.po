@@ -41,7 +41,7 @@ msgstr "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면
 msgid "AI Creation & Editing"
 msgstr "AI 생성 및 편집"
 
-#: src/pages/Pricing2.tsx:48
+#: src/pages/Pricing2.tsx:61
 msgid "AI-Powered Flowchart Creation"
 msgstr "인공지능 기반 플로우차트 생성"
 
@@ -70,10 +70,6 @@ msgstr "몇 가지 단계를 추가하세요."
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
 msgstr "고급"
-
-#: src/pages/Pricing2.tsx:35
-msgid "Advanced Export Options (PNG, JPG, SVG)"
-msgstr "고급 내보내기 옵션 (PNG, JPG, SVG)"
 
 #: src/components/GraphFloatingMenu.tsx:142
 #: src/components/GraphFloatingMenu.tsx:146
@@ -151,11 +147,11 @@ msgstr "프로 사용자가 되기"
 msgid "Begin your journey"
 msgstr "여정을 시작하세요."
 
-#: src/components/Checkout.tsx:142
+#: src/components/Checkout.tsx:139
 msgid "Billed annually at $24"
 msgstr "매년 $24로 청구됩니다"
 
-#: src/components/Checkout.tsx:154
+#: src/components/Checkout.tsx:151
 msgid "Billed monthly at $4"
 msgstr "매달 $4에 청구됩니다."
 
@@ -198,7 +194,7 @@ msgstr "폭 우선"
 msgid "Cancel"
 msgstr "취소"
 
-#: src/components/Checkout.tsx:191
+#: src/components/Checkout.tsx:188
 msgid "Cancel anytime"
 msgstr "언제든 취소 가능"
 
@@ -336,11 +332,11 @@ msgstr "호스팅 차트로 변환하시겠습니까?"
 msgid "Cookie Policy"
 msgstr "쿠키 정책"
 
-#: src/components/DownloadDropdown.tsx:49
+#: src/components/DownloadDropdown.tsx:53
 msgid "Copied SVG code to clipboard"
 msgstr "클립보드에 SVG 코드 복사"
 
-#: src/components/DownloadDropdown.tsx:67
+#: src/components/DownloadDropdown.tsx:71
 msgid "Copied {format} to clipboard"
 msgstr "클립보드에 {format} 복사"
 
@@ -416,7 +412,7 @@ msgid "Custom CSS"
 msgstr "사용자 정의 CSS"
 
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:79
+#: src/pages/Pricing2.tsx:86
 msgid "Custom Sharing Options"
 msgstr "커스텀 공유 옵션"
 
@@ -424,7 +420,7 @@ msgstr "커스텀 공유 옵션"
 msgid "Customer Portal"
 msgstr "고객 포털"
 
-#: src/pages/Pricing2.tsx:27
+#: src/pages/Pricing2.tsx:34
 msgid "Daily Sandbox Editor"
 msgstr "매일 샌드박스 편집기"
 
@@ -437,7 +433,7 @@ msgstr "다크"
 msgid "Dark Mode"
 msgstr "다크 모드"
 
-#: src/pages/Pricing2.tsx:73
+#: src/pages/Pricing2.tsx:80
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "데이터 가져오기 (Visio, Lucidchart, CSV)"
 
@@ -629,7 +625,7 @@ msgstr "예시"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:91
+#: src/pages/Pricing2.tsx:98
 msgid "Exclusive Office Hours"
 msgstr "독점 오피스 시간"
 
@@ -653,6 +649,10 @@ msgstr "PNG 및 JPG로 내보내기"
 #: src/pages/Pricing.tsx:65
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG 및 SVG로 내보내기"
+
+#: src/pages/Pricing2.tsx:266
+msgid "Feature Breakdown"
+msgstr "기능 분해"
 
 #: src/components/Feedback.tsx:50
 #: src/components/Header.tsx:115
@@ -700,7 +700,7 @@ msgstr "전체 화면"
 msgid "General"
 msgstr "일반"
 
-#: src/components/Checkout.tsx:177
+#: src/components/Checkout.tsx:174
 msgid "Get Pro Access Now"
 msgstr "지금 프로 액세스 받기"
 
@@ -934,7 +934,7 @@ msgid "Load layout and styles"
 msgstr "레이아웃과 스타일 로드"
 
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:61
+#: src/pages/Pricing2.tsx:68
 msgid "Local File Support"
 msgstr "로컬 파일 지원"
 
@@ -980,7 +980,7 @@ msgstr "청구 관리"
 msgid "Map Data"
 msgstr "데이터 지도"
 
-#: src/components/Checkout.tsx:153
+#: src/components/Checkout.tsx:150
 msgid "Monthly"
 msgstr "월간"
 
@@ -1139,7 +1139,7 @@ msgstr "플레이북"
 msgid "Pointer and container on same line"
 msgstr "같은 줄에 포인터와 컨테이너"
 
-#: src/pages/Pricing2.tsx:85
+#: src/pages/Pricing2.tsx:92
 msgid "Priority One-on-One Support"
 msgstr "우선순위 일대일 지원"
 
@@ -1153,7 +1153,7 @@ msgstr "개인정보보호정책"
 msgid "Processing Data"
 msgstr "데이터 처리"
 
-#: src/components/Checkout.tsx:176
+#: src/components/Checkout.tsx:173
 msgid "Processing..."
 msgstr "처리 중..."
 
@@ -1170,7 +1170,7 @@ msgstr "공용"
 msgid "Random"
 msgstr "무작위"
 
-#: src/pages/Pricing2.tsx:40
+#: src/pages/Pricing2.tsx:41
 msgid "Rapid Deployment Templates"
 msgstr "빠른 배포 템플릿"
 
@@ -1178,6 +1178,10 @@ msgstr "빠른 배포 템플릿"
 #: src/pages/Pricing.tsx:66
 msgid "Rapid Templates"
 msgstr "급변화 템플릿"
+
+#: src/pages/Pricing2.tsx:43
+msgid "Raster Export (PNG, JPG)"
+msgstr "래스터 내보내기 (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
 #: src/lib/usePromptStore.ts:107
@@ -1283,11 +1287,11 @@ msgstr "로드맵"
 msgid "Rotate Label"
 msgstr "라벨 회전"
 
-#: src/components/DownloadDropdown.tsx:80
+#: src/components/DownloadDropdown.tsx:84
 msgid "SVG Export is a Pro Feature"
 msgstr "SVG 내보내기는 프로 기능입니다"
 
-#: src/components/Checkout.tsx:197
+#: src/components/Checkout.tsx:194
 msgid "Satisfaction guaranteed or first payment refunded"
 msgstr "만족도 보장 또는 첫 번째 결제 환불"
 
@@ -1312,7 +1316,7 @@ msgstr "파일에 저장하기"
 msgid "Save your Work"
 msgstr "작업 저장"
 
-#: src/components/Checkout.tsx:185
+#: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "안전한 결제"
 
@@ -1427,7 +1431,7 @@ msgstr "클래스로 스타일링"
 msgid "Submit"
 msgstr "보내다"
 
-#: src/pages/Pricing2.tsx:363
+#: src/pages/Pricing2.tsx:341
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "프로를 구독하고 재미있게 플로우차트 작성하기!"
 
@@ -1531,7 +1535,7 @@ msgstr "가능한 모양은 다음과 같습니다:"
 msgid "Theme"
 msgstr "테마"
 
-#: src/pages/Pricing2.tsx:29
+#: src/pages/Pricing2.tsx:36
 msgid "Theme Customization Editor"
 msgstr "테마 커스터마이즈 편집기"
 
@@ -1609,9 +1613,9 @@ msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 msgid "Transform text into diagrams instantly"
 msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
 
-#: src/pages/Pricing2.tsx:263
-msgid "Trusted by Professionals and Academics Alike"
-msgstr "전문가와 학계에서 신뢰하는 프로그램"
+#: src/pages/Pricing2.tsx:241
+msgid "Trusted by Professionals and Academics"
+msgstr "전문가와 학술인들에게 신뢰받는다"
 
 #: src/lib/getDefaultText.ts:17
 msgid "Try AI"
@@ -1621,7 +1625,7 @@ msgstr "AI 시도해보기"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/pages/Pricing2.tsx:197
+#: src/pages/Pricing2.tsx:206
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "아이디어를 몇 초 만에 전문적인 다이어그램으로 변환하세요."
 
@@ -1658,7 +1662,7 @@ msgid "Unlimited Flowcharts"
 msgstr "무제한 다이어그램"
 
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:42
+#: src/pages/Pricing2.tsx:55
 msgid "Unlimited Permanent Flowcharts"
 msgstr "무제한 영구 플로차트"
 
@@ -1666,7 +1670,7 @@ msgstr "무제한 영구 플로차트"
 msgid "Unlimited cloud-saved flowcharts"
 msgstr "무제한 클라우드 저장 플로우차트"
 
-#: src/components/Checkout.tsx:132
+#: src/components/Checkout.tsx:129
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "AI 기능 잠금 해제 및 프로 계정으로 작업을 절대 잃지 않습니다."
 
@@ -1690,18 +1694,17 @@ msgstr "무제한 AI 업그레이드"
 msgid "Upgrade to Flowchart Fun Pro and unlock:"
 msgstr "Flowchart Fun Pro로 업그레이드하고 다음을 잠금 해제하세요:"
 
-#: src/components/DownloadDropdown.tsx:81
+#: src/components/DownloadDropdown.tsx:85
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 해제하고 다이어그램에 대한 더 고급 기능을 즐기세요."
 
-#: src/components/Checkout.tsx:129
 #: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
-#: src/pages/Pricing2.tsx:200
-msgid "Upgrade to Pro for just $4/month"
-msgstr "매월 $4에 프로로 업그레이드하세요."
+#: src/pages/Pricing2.tsx:209
+msgid "Upgrade to Pro for $2/month"
+msgstr "프로로 업그레이드하면 매달 $2"
 
 #: src/components/ImportDataDialog.tsx:204
 msgid "Upload your File"
@@ -1756,19 +1759,19 @@ msgstr "현재 차트를 수정하고 개선하는 데 이 모드를 사용하�
 msgid "User"
 msgstr "사용자"
 
+#: src/pages/Pricing2.tsx:49
+msgid "Vector Export (SVG)"
+msgstr "벡터 내보내기 (SVG)"
+
 #: src/components/Settings.tsx:113
 msgid "View on Github"
 msgstr "Github에서 보기"
-
-#: src/pages/Pricing2.tsx:55
-msgid "Voice-to-Diagram Dictation"
-msgstr "음성으로 다이어그램 작성하기"
 
 #: src/components/FloatingTip.tsx:18
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "문서에서 플로우차트를 만들고 싶으세요? 편집기에 붙여넣고 '플로우차트로 변환'을 클릭하세요."
 
-#: src/pages/Pricing2.tsx:67
+#: src/pages/Pricing2.tsx:74
 msgid "Watermark-Free Diagrams"
 msgstr "워터마크 없는 다이어그램"
 
@@ -1779,10 +1782,6 @@ msgstr "물감"
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
 msgstr "Flowchart Fun에 오신 것을 환영합니다"
-
-#: src/pages/Pricing2.tsx:288
-msgid "What's Included"
-msgstr "포함된 내용"
 
 #: src/lib/getDefaultText.ts:15
 msgid "What's next?"
@@ -1829,7 +1828,7 @@ msgstr "아웃라인처럼 작성하세요"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "여기에 프롬프트를 작성하거나 마이크를 활성화하려면 클릭한 다음 눌러서 녹음하세요."
 
-#: src/components/Checkout.tsx:141
+#: src/components/Checkout.tsx:138
 msgid "Yearly"
 msgstr "연간"
 
@@ -1883,7 +1882,7 @@ msgstr "확대"
 msgid "Zoom Out"
 msgstr "축소하기"
 
-#: src/components/Checkout.tsx:232
+#: src/components/Checkout.tsx:228
 msgid "month"
 msgstr "월"
 
@@ -1891,7 +1890,7 @@ msgstr "월"
 msgid "or"
 msgstr "또는"
 
-#: src/components/Checkout.tsx:174
+#: src/components/Checkout.tsx:171
 msgid "{0}"
 msgstr "{0}"
 

@@ -320,7 +320,7 @@ and --mouse-x
 }
 
 .feature:nth-child(1) {
-  --hover-accent: theme("colors.purple.300");
+  --hover-accent: theme("colors.purple.400");
 }
 .feature:nth-child(2) {
   --hover-accent: theme("colors.green.300");
@@ -329,7 +329,7 @@ and --mouse-x
   --hover-accent: theme("colors.orange.300");
 }
 .feature:nth-child(4) {
-  --hover-accent: theme("colors.blue.300");
+  --hover-accent: theme("colors.red.300");
 }
 
 .feature::after {
@@ -365,7 +365,7 @@ and --mouse-x
   @apply transition-opacity duration-[400ms];
 }
 
-.feature:hover::after {
+.feature[data-is-active="true"]::after {
   opacity: 1;
 }
 
@@ -408,12 +408,22 @@ and --mouse-x
       #e3dff3 32px 33px
     ),
     linear-gradient(90deg, #f5f4f91f, #f5f4f91f 30px);
-  background-position: 0 0;
   background-repeat: repeat, repeat, repeat, repeat;
-  background-size: 100% 100%;
+  background-size: 120% 120%;
   background-attachment: scroll, scroll, scroll, scroll;
   background-origin: padding-box, padding-box, padding-box, padding-box;
   background-clip: border-box, border-box, border-box, border-box;
+  background-position: 0px 0px;
+  animation: move-background 3s linear infinite;
+}
+
+@keyframes move-background {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -33px -5px;
+  }
 }
 
 body.dark .pricing-highlights {
