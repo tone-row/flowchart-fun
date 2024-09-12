@@ -41,7 +41,7 @@ msgstr "Eine neue Version der App ist verfügbar. Bitte neu laden, um zu aktuali
 msgid "AI Creation & Editing"
 msgstr "KI-Erstellung & Bearbeitung"
 
-#: src/pages/Pricing2.tsx:48
+#: src/pages/Pricing2.tsx:61
 msgid "AI-Powered Flowchart Creation"
 msgstr "KI-unterstützte Erstellung von Flussdiagrammen"
 
@@ -70,10 +70,6 @@ msgstr "Füge einige Schritte hinzu"
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
 msgstr "Fortgeschritten"
-
-#: src/pages/Pricing2.tsx:35
-msgid "Advanced Export Options (PNG, JPG, SVG)"
-msgstr "Erweiterte Exportoptionen (PNG, JPG, SVG)"
 
 #: src/components/GraphFloatingMenu.tsx:142
 #: src/components/GraphFloatingMenu.tsx:146
@@ -151,11 +147,11 @@ msgstr "Werden Sie ein Pro-Benutzer"
 msgid "Begin your journey"
 msgstr "Beginne deine Reise"
 
-#: src/components/Checkout.tsx:142
+#: src/components/Checkout.tsx:139
 msgid "Billed annually at $24"
 msgstr "Jährlich abgerechnet für $24"
 
-#: src/components/Checkout.tsx:154
+#: src/components/Checkout.tsx:151
 msgid "Billed monthly at $4"
 msgstr "Monatlich für $4 berechnet"
 
@@ -198,7 +194,7 @@ msgstr "In die Breite"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/components/Checkout.tsx:191
+#: src/components/Checkout.tsx:188
 msgid "Cancel anytime"
 msgstr "Jederzeit kündbar"
 
@@ -336,11 +332,11 @@ msgstr "In gehostetes Diagramm konvertieren?"
 msgid "Cookie Policy"
 msgstr "Cookie-Richtlinie"
 
-#: src/components/DownloadDropdown.tsx:49
+#: src/components/DownloadDropdown.tsx:53
 msgid "Copied SVG code to clipboard"
 msgstr "SVG-Code in Zwischenablage kopiert"
 
-#: src/components/DownloadDropdown.tsx:67
+#: src/components/DownloadDropdown.tsx:71
 msgid "Copied {format} to clipboard"
 msgstr "{Format} in Zwischenablage kopiert"
 
@@ -416,7 +412,7 @@ msgid "Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
 
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:79
+#: src/pages/Pricing2.tsx:86
 msgid "Custom Sharing Options"
 msgstr "Benutzerdefinierte Freigabeoptionen"
 
@@ -424,7 +420,7 @@ msgstr "Benutzerdefinierte Freigabeoptionen"
 msgid "Customer Portal"
 msgstr "Kundenportal"
 
-#: src/pages/Pricing2.tsx:27
+#: src/pages/Pricing2.tsx:34
 msgid "Daily Sandbox Editor"
 msgstr "Täglicher Sandbox-Editor"
 
@@ -437,7 +433,7 @@ msgstr "Dunkel"
 msgid "Dark Mode"
 msgstr "Dunkelmodus"
 
-#: src/pages/Pricing2.tsx:73
+#: src/pages/Pricing2.tsx:80
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "Datenimport (Visio, Lucidchart, CSV)"
 
@@ -629,7 +625,7 @@ msgstr "Beispiele"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:91
+#: src/pages/Pricing2.tsx:98
 msgid "Exclusive Office Hours"
 msgstr "Exklusive Bürozeiten"
 
@@ -653,6 +649,10 @@ msgstr "Exportieren Sie nach PNG & JPG"
 #: src/pages/Pricing.tsx:65
 msgid "Export to PNG, JPG, and SVG"
 msgstr "Exportieren Sie nach PNG, JPG und SVG"
+
+#: src/pages/Pricing2.tsx:266
+msgid "Feature Breakdown"
+msgstr "Funktionsübersicht"
 
 #: src/components/Feedback.tsx:50
 #: src/components/Header.tsx:115
@@ -700,7 +700,7 @@ msgstr "Vollbild"
 msgid "General"
 msgstr "Allgemein"
 
-#: src/components/Checkout.tsx:177
+#: src/components/Checkout.tsx:174
 msgid "Get Pro Access Now"
 msgstr "Erhalten Sie jetzt Pro-Zugang"
 
@@ -934,7 +934,7 @@ msgid "Load layout and styles"
 msgstr "Layout und Stile laden"
 
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:61
+#: src/pages/Pricing2.tsx:68
 msgid "Local File Support"
 msgstr "Lokale Dateiunterstützung"
 
@@ -980,7 +980,7 @@ msgstr "Abrechnung verwalten"
 msgid "Map Data"
 msgstr "Daten abbilden"
 
-#: src/components/Checkout.tsx:153
+#: src/components/Checkout.tsx:150
 msgid "Monthly"
 msgstr "Monatlich"
 
@@ -1139,7 +1139,7 @@ msgstr "Spielbuch"
 msgid "Pointer and container on same line"
 msgstr "Zeiger und Container auf derselben Zeile"
 
-#: src/pages/Pricing2.tsx:85
+#: src/pages/Pricing2.tsx:92
 msgid "Priority One-on-One Support"
 msgstr "Priorisierte Einzelunterstützung"
 
@@ -1153,7 +1153,7 @@ msgstr "Datenschutzerklärung"
 msgid "Processing Data"
 msgstr "Datenverarbeitung"
 
-#: src/components/Checkout.tsx:176
+#: src/components/Checkout.tsx:173
 msgid "Processing..."
 msgstr "Verarbeitung..."
 
@@ -1170,7 +1170,7 @@ msgstr "Öffentlich"
 msgid "Random"
 msgstr "Zufällig"
 
-#: src/pages/Pricing2.tsx:40
+#: src/pages/Pricing2.tsx:41
 msgid "Rapid Deployment Templates"
 msgstr "Schnellbereitstellungsvorlagen"
 
@@ -1178,6 +1178,10 @@ msgstr "Schnellbereitstellungsvorlagen"
 #: src/pages/Pricing.tsx:66
 msgid "Rapid Templates"
 msgstr "Schnelle Vorlagen"
+
+#: src/pages/Pricing2.tsx:43
+msgid "Raster Export (PNG, JPG)"
+msgstr "Raster-Export (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
 #: src/lib/usePromptStore.ts:107
@@ -1283,11 +1287,11 @@ msgstr "Fahrplan"
 msgid "Rotate Label"
 msgstr "Label drehen"
 
-#: src/components/DownloadDropdown.tsx:80
+#: src/components/DownloadDropdown.tsx:84
 msgid "SVG Export is a Pro Feature"
 msgstr "SVG-Export ist eine Pro-Funktion"
 
-#: src/components/Checkout.tsx:197
+#: src/components/Checkout.tsx:194
 msgid "Satisfaction guaranteed or first payment refunded"
 msgstr "Zufriedenheitsgarantie oder erste Zahlung erstattet"
 
@@ -1312,7 +1316,7 @@ msgstr "In Datei speichern"
 msgid "Save your Work"
 msgstr "Speichern Sie Ihre Arbeit"
 
-#: src/components/Checkout.tsx:185
+#: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "Sichere Zahlung"
 
@@ -1427,7 +1431,7 @@ msgstr "Mit Klassen gestalten"
 msgid "Submit"
 msgstr "Einsenden"
 
-#: src/pages/Pricing2.tsx:363
+#: src/pages/Pricing2.tsx:341
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "Abonniere Pro und erstelle Flussdiagramme auf unterhaltsame Weise!"
 
@@ -1531,7 +1535,7 @@ msgstr "Die möglichen Formen sind:"
 msgid "Theme"
 msgstr "Thema "
 
-#: src/pages/Pricing2.tsx:29
+#: src/pages/Pricing2.tsx:36
 msgid "Theme Customization Editor"
 msgstr "Theme-Anpassungseditor"
 
@@ -1609,9 +1613,9 @@ msgstr "Transformieren Sie Ihre Ideen in professionelle Diagramme in Sekunden"
 msgid "Transform text into diagrams instantly"
 msgstr "Verwandeln Sie Texte sofort in Diagramme"
 
-#: src/pages/Pricing2.tsx:263
-msgid "Trusted by Professionals and Academics Alike"
-msgstr "Vertraut von Profis und Akademikern gleichermaßen"
+#: src/pages/Pricing2.tsx:241
+msgid "Trusted by Professionals and Academics"
+msgstr "Vertrauenswürdig von Profis und Akademikern"
 
 #: src/lib/getDefaultText.ts:17
 msgid "Try AI"
@@ -1621,7 +1625,7 @@ msgstr "Probieren Sie KI"
 msgid "Try again"
 msgstr "Erneut versuchen"
 
-#: src/pages/Pricing2.tsx:197
+#: src/pages/Pricing2.tsx:206
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "Verwandeln Sie Ihre Ideen in professionelle Diagramme in Sekundenschnelle"
 
@@ -1658,7 +1662,7 @@ msgid "Unlimited Flowcharts"
 msgstr "Unbegrenzte Flowcharts"
 
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:42
+#: src/pages/Pricing2.tsx:55
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Unbegrenzte permanente Flowcharts"
 
@@ -1666,7 +1670,7 @@ msgstr "Unbegrenzte permanente Flowcharts"
 msgid "Unlimited cloud-saved flowcharts"
 msgstr "Unbegrenzte in der Cloud gespeicherte Flussdiagramme"
 
-#: src/components/Checkout.tsx:132
+#: src/components/Checkout.tsx:129
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "Entsperren Sie KI-Funktionen und verlieren Sie nie wieder Ihre Arbeit mit einem Pro-Konto."
 
@@ -1690,18 +1694,17 @@ msgstr "Upgrade für unbegrenzte KI"
 msgid "Upgrade to Flowchart Fun Pro and unlock:"
 msgstr "Upgrade auf Flowchart Fun Pro und schalte frei:"
 
-#: src/components/DownloadDropdown.tsx:81
+#: src/components/DownloadDropdown.tsx:85
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Upgrade auf Flowchart Fun Pro, um SVG-Export freizuschalten und mehr fortschrittliche Funktionen für Ihre Diagramme zu nutzen."
 
-#: src/components/Checkout.tsx:129
 #: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "Auf Pro upgraden"
 
-#: src/pages/Pricing2.tsx:200
-msgid "Upgrade to Pro for just $4/month"
-msgstr "Upgraden Sie auf Pro für nur $4/Monat."
+#: src/pages/Pricing2.tsx:209
+msgid "Upgrade to Pro for $2/month"
+msgstr "Upgrade auf Pro für $2/Monat"
 
 #: src/components/ImportDataDialog.tsx:204
 msgid "Upload your File"
@@ -1756,19 +1759,19 @@ msgstr "Verwenden Sie diesen Modus, um Ihre aktuelle Tabelle zu ändern und zu v
 msgid "User"
 msgstr "Benutzer"
 
+#: src/pages/Pricing2.tsx:49
+msgid "Vector Export (SVG)"
+msgstr "Vektor-Export (SVG)"
+
 #: src/components/Settings.tsx:113
 msgid "View on Github"
 msgstr "Auf Github ansehen"
-
-#: src/pages/Pricing2.tsx:55
-msgid "Voice-to-Diagram Dictation"
-msgstr "Sprache-zu-Diagramm-Diktion"
 
 #: src/components/FloatingTip.tsx:18
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "Möchten Sie ein Flussdiagramm aus einem Dokument erstellen? Fügen Sie es in den Editor ein und klicken Sie auf \"In Flussdiagramm umwandeln\"."
 
-#: src/pages/Pricing2.tsx:67
+#: src/pages/Pricing2.tsx:74
 msgid "Watermark-Free Diagrams"
 msgstr "Wasserzeichenfreie Diagramme"
 
@@ -1779,10 +1782,6 @@ msgstr "Wasserzeichen"
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
 msgstr "Willkommen bei Flowchart Spaß"
-
-#: src/pages/Pricing2.tsx:288
-msgid "What's Included"
-msgstr "Was ist enthalten"
 
 #: src/lib/getDefaultText.ts:15
 msgid "What's next?"
@@ -1829,7 +1828,7 @@ msgstr "Schreiben Sie wie eine Gliederung"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Schreiben Sie hier Ihre Aufforderung oder klicken Sie auf das Mikrofon, um es zu aktivieren, dann halten Sie es gedrückt, um aufzunehmen."
 
-#: src/components/Checkout.tsx:141
+#: src/components/Checkout.tsx:138
 msgid "Yearly"
 msgstr "Jährlich"
 
@@ -1883,7 +1882,7 @@ msgstr "Vergrößern"
 msgid "Zoom Out"
 msgstr "Verkleinern"
 
-#: src/components/Checkout.tsx:232
+#: src/components/Checkout.tsx:228
 msgid "month"
 msgstr "Monat"
 
@@ -1891,7 +1890,7 @@ msgstr "Monat"
 msgid "or"
 msgstr "oder"
 
-#: src/components/Checkout.tsx:174
+#: src/components/Checkout.tsx:171
 msgid "{0}"
 msgstr "{0}"
 

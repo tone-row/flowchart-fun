@@ -41,7 +41,7 @@ msgstr "एप्प का एक नया वर्जन उपलब्ध 
 msgid "AI Creation & Editing"
 msgstr "एआई निर्माण और संपादन"
 
-#: src/pages/Pricing2.tsx:48
+#: src/pages/Pricing2.tsx:61
 msgid "AI-Powered Flowchart Creation"
 msgstr "एआई-पावर्ड फ्लोचार्ट निर्माण"
 
@@ -70,10 +70,6 @@ msgstr "कुछ चरण जोड़ें"
 #: src/components/Tabs/ThemeTab.tsx:545
 msgid "Advanced"
 msgstr "उन्नत"
-
-#: src/pages/Pricing2.tsx:35
-msgid "Advanced Export Options (PNG, JPG, SVG)"
-msgstr "उन्नत निर्यात विकल्प (PNG, JPG, SVG)"
 
 #: src/components/GraphFloatingMenu.tsx:142
 #: src/components/GraphFloatingMenu.tsx:146
@@ -151,11 +147,11 @@ msgstr "प्रो उपयोगकर्ता बनें"
 msgid "Begin your journey"
 msgstr "अपनी यात्रा शुरू करें"
 
-#: src/components/Checkout.tsx:142
+#: src/components/Checkout.tsx:139
 msgid "Billed annually at $24"
 msgstr "वार्षिक रूप से $24 का बिल बनाया जाएगा"
 
-#: src/components/Checkout.tsx:154
+#: src/components/Checkout.tsx:151
 msgid "Billed monthly at $4"
 msgstr "मासिक रूप से $4 पर बिल किया जाता है"
 
@@ -198,7 +194,7 @@ msgstr "चौड़ाई पहले"
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: src/components/Checkout.tsx:191
+#: src/components/Checkout.tsx:188
 msgid "Cancel anytime"
 msgstr "कभी भी रद्द करें"
 
@@ -336,11 +332,11 @@ msgstr "होस्टेड चार्ट में कनवर्ट क�
 msgid "Cookie Policy"
 msgstr "कुकी नीति"
 
-#: src/components/DownloadDropdown.tsx:49
+#: src/components/DownloadDropdown.tsx:53
 msgid "Copied SVG code to clipboard"
 msgstr "क्लिपबोर्ड पर SVG कोड कॉपी किया गया"
 
-#: src/components/DownloadDropdown.tsx:67
+#: src/components/DownloadDropdown.tsx:71
 msgid "Copied {format} to clipboard"
 msgstr "क्लिपबोर्ड पर {प्रारूप} कॉपी किया गया"
 
@@ -416,7 +412,7 @@ msgid "Custom CSS"
 msgstr "कस्टम CSS"
 
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:79
+#: src/pages/Pricing2.tsx:86
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
@@ -424,7 +420,7 @@ msgstr "कस्टम शेयरिंग विकल्प"
 msgid "Customer Portal"
 msgstr "ग्राहक पोर्टल"
 
-#: src/pages/Pricing2.tsx:27
+#: src/pages/Pricing2.tsx:34
 msgid "Daily Sandbox Editor"
 msgstr "दैनिक सैंडबॉक्स संपादक"
 
@@ -437,7 +433,7 @@ msgstr "डार्क"
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/pages/Pricing2.tsx:73
+#: src/pages/Pricing2.tsx:80
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "डेटा आयात (विशियो, ल्यूसिडचार्ट, सीएसवी)"
 
@@ -629,7 +625,7 @@ msgstr "उदाहरण"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:91
+#: src/pages/Pricing2.tsx:98
 msgid "Exclusive Office Hours"
 msgstr "अनन्य ऑफिस घंटे"
 
@@ -653,6 +649,10 @@ msgstr "PNG और JPG में निर्यात करें"
 #: src/pages/Pricing.tsx:65
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG और SVG में निर्यात करें"
+
+#: src/pages/Pricing2.tsx:266
+msgid "Feature Breakdown"
+msgstr "विशेषता विभाजन"
 
 #: src/components/Feedback.tsx:50
 #: src/components/Header.tsx:115
@@ -700,7 +700,7 @@ msgstr "फ़ुलस्क्रीन"
 msgid "General"
 msgstr "सामान्य"
 
-#: src/components/Checkout.tsx:177
+#: src/components/Checkout.tsx:174
 msgid "Get Pro Access Now"
 msgstr "अब प्रो एक्सेस प्राप्त करें"
 
@@ -934,7 +934,7 @@ msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
 
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:61
+#: src/pages/Pricing2.tsx:68
 msgid "Local File Support"
 msgstr "स्थानीय फ़ाइल समर्थन"
 
@@ -980,7 +980,7 @@ msgstr "बिलिंग प्रबंधित करें"
 msgid "Map Data"
 msgstr "डेटा मैप"
 
-#: src/components/Checkout.tsx:153
+#: src/components/Checkout.tsx:150
 msgid "Monthly"
 msgstr "मासिक"
 
@@ -1139,7 +1139,7 @@ msgstr "प्लेबुक"
 msgid "Pointer and container on same line"
 msgstr "प्रतीक और कंटेनर एक ही लाइन पर"
 
-#: src/pages/Pricing2.tsx:85
+#: src/pages/Pricing2.tsx:92
 msgid "Priority One-on-One Support"
 msgstr "प्राथमिकता वाला एक-से-एक समर्थन"
 
@@ -1153,7 +1153,7 @@ msgstr "गोपनीयता नीति "
 msgid "Processing Data"
 msgstr "डेटा प्रसंस्करण"
 
-#: src/components/Checkout.tsx:176
+#: src/components/Checkout.tsx:173
 msgid "Processing..."
 msgstr "प्रसंस्करण हो रहा है..."
 
@@ -1170,7 +1170,7 @@ msgstr "पब्लिक"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/pages/Pricing2.tsx:40
+#: src/pages/Pricing2.tsx:41
 msgid "Rapid Deployment Templates"
 msgstr "त्वरित डिप्लॉयमेंट टेम्पलेट्स"
 
@@ -1178,6 +1178,10 @@ msgstr "त्वरित डिप्लॉयमेंट टेम्पल�
 #: src/pages/Pricing.tsx:66
 msgid "Rapid Templates"
 msgstr "त्वरित टेम्पलेट्स"
+
+#: src/pages/Pricing2.tsx:43
+msgid "Raster Export (PNG, JPG)"
+msgstr "रास्टर निर्यात (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
 #: src/lib/usePromptStore.ts:107
@@ -1283,11 +1287,11 @@ msgstr "रोडमैप"
 msgid "Rotate Label"
 msgstr "लेबल को घुमाएँ"
 
-#: src/components/DownloadDropdown.tsx:80
+#: src/components/DownloadDropdown.tsx:84
 msgid "SVG Export is a Pro Feature"
 msgstr "SVG निर्यात एक प्रो सुविधा है"
 
-#: src/components/Checkout.tsx:197
+#: src/components/Checkout.tsx:194
 msgid "Satisfaction guaranteed or first payment refunded"
 msgstr "संतुष्टि की गारंटी या पहली भुगतान की राशि वापस कर दी जाएगी"
 
@@ -1312,7 +1316,7 @@ msgstr "फाइल में सेव करें"
 msgid "Save your Work"
 msgstr "अपनी कार्यवाही सुरक्षित करें"
 
-#: src/components/Checkout.tsx:185
+#: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "सुरक्षित भुगतान"
 
@@ -1427,7 +1431,7 @@ msgstr "क्लासेस के साथ स्टाइल"
 msgid "Submit"
 msgstr "भेजना"
 
-#: src/pages/Pricing2.tsx:363
+#: src/pages/Pricing2.tsx:341
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "प्रो की सदस्यता लें और मजेदार तरीके से फ्लोचार्ट करें!"
 
@@ -1531,7 +1535,7 @@ msgstr "संभव आकृतियाँ हैं:"
 msgid "Theme"
 msgstr "थीम"
 
-#: src/pages/Pricing2.tsx:29
+#: src/pages/Pricing2.tsx:36
 msgid "Theme Customization Editor"
 msgstr "थीम कस्टमाइज़ेशन संपादक"
 
@@ -1609,9 +1613,9 @@ msgstr "अपने विचारों को सेकंड में प�
 msgid "Transform text into diagrams instantly"
 msgstr "पाठ को तुरंत आरेख में बदलें"
 
-#: src/pages/Pricing2.tsx:263
-msgid "Trusted by Professionals and Academics Alike"
-msgstr "पेशेवरों और शिक्षाविदों द्वारा भरोसे की जाती है"
+#: src/pages/Pricing2.tsx:241
+msgid "Trusted by Professionals and Academics"
+msgstr "पेशेवरों और शिक्षकों द्वारा विश्वसनीय"
 
 #: src/lib/getDefaultText.ts:17
 msgid "Try AI"
@@ -1621,7 +1625,7 @@ msgstr "एआई को आजमाएं"
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
-#: src/pages/Pricing2.tsx:197
+#: src/pages/Pricing2.tsx:206
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "अपने विचारों को पेशेवर डायग्राम में सेकंडों में बदलें"
 
@@ -1658,7 +1662,7 @@ msgid "Unlimited Flowcharts"
 msgstr "असीमित फ्लोचार्ट्स"
 
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:42
+#: src/pages/Pricing2.tsx:55
 msgid "Unlimited Permanent Flowcharts"
 msgstr "असीमित स्थायी प्रवाहगतीं "
 
@@ -1666,7 +1670,7 @@ msgstr "असीमित स्थायी प्रवाहगतीं "
 msgid "Unlimited cloud-saved flowcharts"
 msgstr "असीमित क्लाउड-सहेजे फ्लोचार्ट्स"
 
-#: src/components/Checkout.tsx:132
+#: src/components/Checkout.tsx:129
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "प्रो खाते से AI फीचर्स खोलें और कभी भी अपना काम न खोएं।"
 
@@ -1690,18 +1694,17 @@ msgstr "असीमित एआई के लिए अपग्रेड क�
 msgid "Upgrade to Flowchart Fun Pro and unlock:"
 msgstr "फ्लोचार्ट फन प्रो पर अपग्रेड करें और अनलॉक करें:"
 
-#: src/components/DownloadDropdown.tsx:81
+#: src/components/DownloadDropdown.tsx:85
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "अपने डायग्राम के लिए एसवीजी निर्यात और अधिक उन्नत सुविधाओं का आनंद लेने के लिए फ्लोचार्ट फन प्रो पर अपग्रेड करें।"
 
-#: src/components/Checkout.tsx:129
 #: src/components/Header.tsx:410
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
 
-#: src/pages/Pricing2.tsx:200
-msgid "Upgrade to Pro for just $4/month"
-msgstr "केवल $4/माह के लिए प्रो पर अपग्रेड करें"
+#: src/pages/Pricing2.tsx:209
+msgid "Upgrade to Pro for $2/month"
+msgstr "$2/महीने के लिए प्रो पर अपग्रेड करें"
 
 #: src/components/ImportDataDialog.tsx:204
 msgid "Upload your File"
@@ -1756,19 +1759,19 @@ msgstr "अपने मौजूदा चार्ट को संशोध�
 msgid "User"
 msgstr "यूज़र"
 
+#: src/pages/Pricing2.tsx:49
+msgid "Vector Export (SVG)"
+msgstr "वेक्टर निर्यात (SVG)"
+
 #: src/components/Settings.tsx:113
 msgid "View on Github"
 msgstr "Github पर देखें"
-
-#: src/pages/Pricing2.tsx:55
-msgid "Voice-to-Diagram Dictation"
-msgstr "आवाज़ से डायग्राम बनाना"
 
 #: src/components/FloatingTip.tsx:18
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "क्या आप एक दस्तावेज़ से फ्लोचार्ट बनाना चाहते हैं? संपादक में इसे पेस्ट करें और 'फ्लोचार्ट में परिवर्तित करें' पर क्लिक करें।"
 
-#: src/pages/Pricing2.tsx:67
+#: src/pages/Pricing2.tsx:74
 msgid "Watermark-Free Diagrams"
 msgstr "वॉटरमार्क-मुक्त आरेख"
 
@@ -1779,10 +1782,6 @@ msgstr "वॉटरमार्क"
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
 msgstr "फ्लोचार्ट फन में आपका स्वागत है"
-
-#: src/pages/Pricing2.tsx:288
-msgid "What's Included"
-msgstr "क्या शामिल है"
 
 #: src/lib/getDefaultText.ts:15
 msgid "What's next?"
@@ -1829,7 +1828,7 @@ msgstr "आउटलाइन की तरह लिखें"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "अपना प्रॉम्प्ट यहां लिखें या माइक्रोफोन को सक्षम करने के लिए क्लिक करें, फिर रिकॉर्ड करने के लिए दबाएं और रखें।"
 
-#: src/components/Checkout.tsx:141
+#: src/components/Checkout.tsx:138
 msgid "Yearly"
 msgstr "वार्षिक"
 
@@ -1883,7 +1882,7 @@ msgstr "ज़ूम इन करें"
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 
-#: src/components/Checkout.tsx:232
+#: src/components/Checkout.tsx:228
 msgid "month"
 msgstr "महीना"
 
@@ -1891,7 +1890,7 @@ msgstr "महीना"
 msgid "or"
 msgstr "या"
 
-#: src/components/Checkout.tsx:174
+#: src/components/Checkout.tsx:171
 msgid "{0}"
 msgstr "{0}"
 
