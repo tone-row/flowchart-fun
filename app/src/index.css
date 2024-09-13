@@ -320,7 +320,7 @@ and --mouse-x
 }
 
 .feature:nth-child(1) {
-  --hover-accent: theme("colors.purple.400");
+  --hover-accent: theme("colors.purple.300");
 }
 .feature:nth-child(2) {
   --hover-accent: theme("colors.green.300");
@@ -414,16 +414,6 @@ and --mouse-x
   background-origin: padding-box, padding-box, padding-box, padding-box;
   background-clip: border-box, border-box, border-box, border-box;
   background-position: 0px 0px;
-  animation: move-background 3s linear infinite;
-}
-
-@keyframes move-background {
-  0% {
-    background-position: 0px 0px;
-  }
-  100% {
-    background-position: -33px -5px;
-  }
 }
 
 body.dark .pricing-highlights {
