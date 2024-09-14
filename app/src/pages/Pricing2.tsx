@@ -142,11 +142,11 @@ const companies: { svg: string; name: string; className?: string }[] = [
     name: "SAS UPenn",
     className: "h-[50px] w-auto shrink-0 dark:invert",
   },
-  {
-    svg: "technologico-de-monterrey.svg",
-    name: "Tecnológico de Monterrey",
-    className: "h-12 w-auto shrink-0 dark:invert",
-  },
+  // {
+  //   svg: "technologico-de-monterrey.svg",
+  //   name: "Tecnológico de Monterrey",
+  //   className: "h-12 w-auto shrink-0 dark:invert",
+  // },
   // {
   //   svg: "ualaska.svg",
   //   name: "University of Alaska",
@@ -191,26 +191,23 @@ export default function Pricing2() {
   }, []);
   return (
     <div>
-      <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-purple-50 to-purple-600/70 pt-16 md:pt-24 dark:to-purple-900/50 dark:from-[#0c0c0c]">
+      <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-purple-50/5 to-purple-400/40 pt-8 dark:to-purple-900/50 dark:from-[#0c0c0c]">
         <img
           src="/images/arrows-purple.svg"
           draggable="false"
-          className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-20 dark:opacity-50"
+          className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-5 dark:opacity-50"
           alt=""
         />
-        <Container className="text-center grid relative justify-items-center items-center gap-8 md:gap-12">
-          <span className="font-bold sm:text-xl text-purple-700/80 dark:text-white/70 -mb-2">
+        <Container className="text-center grid relative justify-items-center items-center gap-6 md:gap-8 mb-0">
+          <span className="font-bold sm:text-[22px] text-purple-600/90 dark:text-white/70 -mb-2">
             Flowchart Fun Pro
           </span>
-          <h1 className="text-2xl sm:text-3xl md:text-6xl text-wrap-balance font-bold tracking-tight !leading-[1.25]">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold tracking-tight !leading-[1.25]">
             <Trans>Turn your ideas into professional diagrams in seconds</Trans>
           </h1>
-          <p className="inline-block text-lg md:text-xl text-white font-semibold text-wrap-balance leading-normal md:leading-tight text-center px-6 py-4 rounded-full bg-gradient-to-r from-purple-700/80 to-purple-800">
-            <Trans>Upgrade to Pro for $2/month</Trans>
-          </p>
           <div
             ref={videoRef}
-            className="pricing-video text-[0] bg-white max-w-xl w-full mx-auto rounded-2xl drop-shadow-xl shadow-neutral-900/50 overflow-hidden aspect-[1.3] mt-6 -mb-12"
+            className="pricing-video text-[0] bg-white max-w-[510px] w-full mx-auto rounded-2xl drop-shadow-xl shadow-neutral-900/50 overflow-hidden aspect-[1.3] mt-6 -mb-12"
             style={
               {
                 "--mouse-x": 0,
@@ -227,17 +224,17 @@ export default function Pricing2() {
           </div>
         </Container>
       </header>
-      <div className="pricing-highlights pt-12">
-        <div className="max-w-5xl mx-auto py-12 grid gap-12 px-4 md:px-8">
-          <div>
-            <SectionTitle>Highlights</SectionTitle>
-            <FeaturesSlideshow />
-          </div>
+      <div className="pricing-highlights pt-16">
+        <div className="max-w-5xl mx-auto py-8 grid gap-8 px-4 md:px-6">
+          <FeaturesSlideshow />
         </div>
       </div>
+      <p className="w-max mx-auto md:text-lg text-white font-semibold text-wrap-balance leading-normal md:leading-tight text-center px-6 py-4 rounded-full bg-gradient-to-r from-purple-700/80 to-purple-800 my-12">
+        <Trans>Upgrade to Pro for $2/month</Trans>
+      </p>
       <div className="trusted">
-        <Container className="py-12">
-          <SectionTitle className="text-center sm:mb-14">
+        <Container className="py-8">
+          <SectionTitle className="text-center mb-8 md:mb-14">
             <Trans>Trusted by Professionals and Academics</Trans>
           </SectionTitle>
           <div className="flex items-center gap-4 sm:gap-x-20 sm:gap-y-12 flex-wrap justify-center">
@@ -260,7 +257,7 @@ export default function Pricing2() {
           </div>
         </Container>
       </div>
-      <div className="whats-included py-12 px-4 md:px-8">
+      <div className="whats-included py-8 px-4 md:px-6">
         <div className="md:w-max mx-auto">
           <SectionTitle>
             <Trans>Feature Breakdown</Trans>
@@ -325,7 +322,7 @@ export default function Pricing2() {
           </div>
         </div>
       </div>
-      <div className="checkout-wrapper py-14 relative overflow-hidden px-4 md:px-8">
+      <div className="checkout-wrapper py-10 relative overflow-hidden px-4 md:px-6">
         <div className="max-w-2xl mx-auto relative z-10">
           <Checkout pricing2 />
         </div>
@@ -377,7 +374,7 @@ function Cell({
       {center ? (
         children
       ) : (
-        <p className="text-sm sm:text-base md:text-[24px] text-neutral-800 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
+        <p className="text-sm sm:text-base text-neutral-800 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
           {children}
         </p>
       )}
@@ -395,7 +392,7 @@ function Container({
   return (
     <div
       className={classNames(
-        "max-w-3xl md:max-w-[974px] mx-auto px-8",
+        "max-w-3xl md:max-w-[974px] mx-auto px-6 my-12",
         className
       )}
     >
@@ -413,7 +410,7 @@ function SectionTitle({
 }) {
   return (
     <h2
-      className={`text-2xl font-medium text-foreground mb-4 sm:mb-6 dark:text-background ${className}`}
+      className={`text-xl font-medium text-foreground mb-3 sm:mb-4 dark:text-background ${className}`}
     >
       {children}
     </h2>
@@ -455,7 +452,7 @@ function FeaturesSlideshow() {
       {f.map((feature, index) => (
         <div
           key={feature.title}
-          className="feature group relative overflow-hidden p-6 rounded-xl bg-neutral-100 border border-neutral-400/50 aspect-[6/3] flex items-center justify-center data-[is-active=true]:bg-white data-[is-active=true]:shadow-sm transition-colors dark:bg-neutral-900 dark:border-none dark:data-[is-active=true]:bg-neutral-800"
+          className="feature group relative overflow-hidden p-6 rounded-xl bg-white shadow-md aspect-[6/3] flex items-center justify-center transition-colors dark:bg-neutral-900 dark:border-none dark:data-[is-active=true]:bg-neutral-800"
           data-is-active={index === activeIndex}
           onMouseEnter={() => setIndex(index)}
           role="button"
@@ -467,7 +464,7 @@ function FeaturesSlideshow() {
           }
         >
           <div className="grid gap-1 sm:gap-3 sm:group-data-[is-active=true]:-translate-y-6 transition-transform z-10">
-            <h3 className="text-center text-[18px] sm:text-lg lg:text-xl font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-data-[is-active=true]:text-white">
+            <h3 className="text-center text-[18px] sm:text-base lg:text-lg font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-data-[is-active=true]:text-white">
               {feature.title}
             </h3>
             {feature.points.map((point) => (
