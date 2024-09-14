@@ -17,6 +17,10 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 अस्थायी फ्लोचार्ट"
 
+#: src/lib/getAIPaywallCopy.experiment.ts:29
+msgid "5,000+ Users Love AI Flowcharts - Join Now"
+msgstr "5,000+ उपयोगकर्ताओं को AI फ्लोचार्ट्स पसंद हैं - अभी शामिल हों"
+
 #: src/components/Tabs/ThemeTab.tsx:611
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>कस्टम CSS केवल</0> सक्षम है। केवल लेआउट और एडवांस्ड सेटिंग्स लागू की जाएगी।"
@@ -40,6 +44,10 @@ msgstr "एप्प का एक नया वर्जन उपलब्ध 
 #: src/pages/Pricing.tsx:23
 msgid "AI Creation & Editing"
 msgstr "एआई निर्माण और संपादन"
+
+#: src/lib/getAIPaywallCopy.experiment.ts:27
+msgid "AI Flowcharts Anytime - $2/mo (billed yearly)"
+msgstr "AI फ्लोचार्ट्स कभी भी - $2/महीना (वार्षिक बिलिंग)"
 
 #: src/pages/Pricing2.tsx:61
 msgid "AI-Powered Flowchart Creation"
@@ -320,7 +328,7 @@ msgstr "सैंडबॉक्स में जारी रखें (दै�
 msgid "Convert"
 msgstr "परिवर्तन करें"
 
-#: src/components/ConvertToFlowchart.tsx:78
+#: src/components/ConvertToFlowchart.tsx:80
 msgid "Convert to Flowchart"
 msgstr "फ्लोचार्ट में बदलें"
 
@@ -650,7 +658,7 @@ msgstr "PNG और JPG में निर्यात करें"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG और SVG में निर्यात करें"
 
-#: src/pages/Pricing2.tsx:266
+#: src/pages/Pricing2.tsx:263
 msgid "Feature Breakdown"
 msgstr "विशेषता विभाजन"
 
@@ -835,6 +843,10 @@ msgstr "JSON कैनवास आपके द्वारा बनाई ग
 #: src/components/SandboxWarning.tsx:79
 msgid "Join 2000+ professionals who've upgraded their workflow"
 msgstr "अपने वर्कफ्लो को अपग्रेड कर चुके 2000+ पेशेवरों में शामिल हों"
+
+#: src/lib/getAIPaywallCopy.experiment.ts:23
+msgid "Join 5,000+ AI Flowchart Creators. $4/mo"
+msgstr "5,000+ AI फ्लोचार्ट निर्माताओं के साथ शामिल हों। $4/महीना"
 
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
@@ -1183,7 +1195,7 @@ msgstr "त्वरित टेम्पलेट्स"
 msgid "Raster Export (PNG, JPG)"
 msgstr "रास्टर निर्यात (PNG, JPG)"
 
-#: src/components/ConvertToFlowchart.tsx:39
+#: src/components/ConvertToFlowchart.tsx:41
 #: src/lib/usePromptStore.ts:107
 msgid "Rate limit exceeded. Please try again later."
 msgstr "रेट लिमिट पार हो गई है। कृपया बाद में पुनः प्रयास करें।"
@@ -1431,7 +1443,7 @@ msgstr "क्लासेस के साथ स्टाइल"
 msgid "Submit"
 msgstr "भेजना"
 
-#: src/pages/Pricing2.tsx:341
+#: src/pages/Pricing2.tsx:338
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "प्रो की सदस्यता लें और मजेदार तरीके से फ्लोचार्ट करें!"
 
@@ -1609,11 +1621,11 @@ msgstr "ऊपर से नीचे"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "अपने विचारों को सेकंड में प्रोफेशनल डायरेक्टरी में रूपांतरित करें"
 
-#: src/components/ConvertToFlowchart.tsx:32
+#: src/components/ConvertToFlowchart.tsx:33
 msgid "Transform text into diagrams instantly"
 msgstr "पाठ को तुरंत आरेख में बदलें"
 
-#: src/pages/Pricing2.tsx:241
+#: src/pages/Pricing2.tsx:238
 msgid "Trusted by Professionals and Academics"
 msgstr "पेशेवरों और शिक्षकों द्वारा विश्वसनीय"
 
@@ -1637,7 +1649,7 @@ msgstr "दो किनारे उसी आईडी के हैं"
 msgid "Two nodes have the same ID"
 msgstr "दो नोड उसी आईडी के हैं"
 
-#: src/components/ConvertToFlowchart.tsx:33
+#: src/components/ConvertToFlowchart.tsx:34
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "उह ओह, आपके पास मुफ्त अनुरोधों की सीमा पूरी हो गई है! असीमित डायग्राम परिवर्तन के लिए Flowchart Fun Pro पर अपग्रेड करें, और पाठ को स्पष्ट, दृश्यमान फ्लोचार्ट में आसानी से कॉपी और पेस्ट करते रहें।"
 
@@ -1657,6 +1669,14 @@ msgstr "अज्ञात"
 msgid "Unknown Parsing Error"
 msgstr "अज्ञात पार्सिंग त्रुटि"
 
+#: src/lib/getAIPaywallCopy.experiment.ts:25
+msgid "Unlimited AI Flowcharts - Boost Productivity Now"
+msgstr "असीमित AI फ्लोचार्ट्स - उत्पादकता को बढ़ाएं"
+
+#: src/lib/getAIPaywallCopy.experiment.ts:21
+msgid "Unlimited AI Flowcharts: $2/mo (billed yearly)"
+msgstr "असीमित AI फ्लोचार्ट्स: $2/महीना (वार्षिक बिलिंग)"
+
 #: src/pages/Pricing.tsx:16
 msgid "Unlimited Flowcharts"
 msgstr "असीमित फ्लोचार्ट्स"
@@ -1673,6 +1693,10 @@ msgstr "असीमित क्लाउड-सहेजे फ्लोचा
 #: src/components/Checkout.tsx:129
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "प्रो खाते से AI फीचर्स खोलें और कभी भी अपना काम न खोएं।"
+
+#: src/lib/getAIPaywallCopy.experiment.ts:31
+msgid "Unlock Unlimited AI Flowcharts"
+msgstr "असीमित AI फ्लोचार्ट्स को अनलॉक करें"
 
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
@@ -1702,7 +1726,7 @@ msgstr "अपने डायग्राम के लिए एसवीज�
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
 
-#: src/pages/Pricing2.tsx:209
+#: src/pages/Pricing2.tsx:233
 msgid "Upgrade to Pro for $2/month"
 msgstr "$2/महीने के लिए प्रो पर अपग्रेड करें"
 

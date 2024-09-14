@@ -17,6 +17,10 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 Organigramme temporaire"
 
+#: src/lib/getAIPaywallCopy.experiment.ts:29
+msgid "5,000+ Users Love AI Flowcharts - Join Now"
+msgstr "Plus de 5 000 utilisateurs adorent les organigrammes AI Flowcharts - Rejoignez-nous maintenant"
+
 #: src/components/Tabs/ThemeTab.tsx:611
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>Seul le CSS personnalisé</0> est activé. Seuls les paramètres de mise en page et avancés seront appliqués."
@@ -40,6 +44,10 @@ msgstr "Une nouvelle version de l'application est disponible. Veuillez recharger
 #: src/pages/Pricing.tsx:23
 msgid "AI Creation & Editing"
 msgstr "Création et édition d'IA"
+
+#: src/lib/getAIPaywallCopy.experiment.ts:27
+msgid "AI Flowcharts Anytime - $2/mo (billed yearly)"
+msgstr "AI Flowcharts à tout moment - 2 €/mois (facturé annuellement)"
 
 #: src/pages/Pricing2.tsx:61
 msgid "AI-Powered Flowchart Creation"
@@ -320,7 +328,7 @@ msgstr "Continuer dans le bac à sable (Réinitialisé quotidiennement, travail 
 msgid "Convert"
 msgstr "Convertir"
 
-#: src/components/ConvertToFlowchart.tsx:78
+#: src/components/ConvertToFlowchart.tsx:80
 msgid "Convert to Flowchart"
 msgstr "Convertir en diagramme"
 
@@ -650,7 +658,7 @@ msgstr "Exporter en PNG et JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "Exporter en PNG, JPG et SVG"
 
-#: src/pages/Pricing2.tsx:266
+#: src/pages/Pricing2.tsx:263
 msgid "Feature Breakdown"
 msgstr "Démontage des fonctionnalités"
 
@@ -835,6 +843,10 @@ msgstr "JSON Canvas est une représentation JSON de votre diagramme utilisée pa
 #: src/components/SandboxWarning.tsx:79
 msgid "Join 2000+ professionals who've upgraded their workflow"
 msgstr "Rejoignez plus de 2000 professionnels qui ont amélioré leur flux de travail"
+
+#: src/lib/getAIPaywallCopy.experiment.ts:23
+msgid "Join 5,000+ AI Flowchart Creators. $4/mo"
+msgstr "Rejoignez plus de 5 000 créateurs d'organigrammes AI Flowchart - 4 €/mois"
 
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
@@ -1183,7 +1195,7 @@ msgstr "Modèles rapides"
 msgid "Raster Export (PNG, JPG)"
 msgstr "Exportation de rasters (PNG, JPG)"
 
-#: src/components/ConvertToFlowchart.tsx:39
+#: src/components/ConvertToFlowchart.tsx:41
 #: src/lib/usePromptStore.ts:107
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Limite de taux dépassée. Veuillez réessayer plus tard."
@@ -1431,7 +1443,7 @@ msgstr "Style avec des classes"
 msgid "Submit"
 msgstr "Soumettre"
 
-#: src/pages/Pricing2.tsx:341
+#: src/pages/Pricing2.tsx:338
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "Abonnez-vous à Pro et créez des organigrammes de manière amusante !"
 
@@ -1609,11 +1621,11 @@ msgstr "De haut en bas"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "Transformez vos idées en diagrammes professionnels en quelques secondes"
 
-#: src/components/ConvertToFlowchart.tsx:32
+#: src/components/ConvertToFlowchart.tsx:33
 msgid "Transform text into diagrams instantly"
 msgstr "Transformez instantanément du texte en diagrammes"
 
-#: src/pages/Pricing2.tsx:241
+#: src/pages/Pricing2.tsx:238
 msgid "Trusted by Professionals and Academics"
 msgstr "Fait confiance aux professionnels et aux universitaires"
 
@@ -1637,7 +1649,7 @@ msgstr "Deux arêtes ont le même ID"
 msgid "Two nodes have the same ID"
 msgstr "Deux nœuds ont le même ID"
 
-#: src/components/ConvertToFlowchart.tsx:33
+#: src/components/ConvertToFlowchart.tsx:34
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "Oh oh, vous n'avez plus de demandes gratuites ! Passez à Flowchart Fun Pro pour des conversions de diagrammes illimitées et continuez à transformer du texte en des flux visuels clairs aussi facilement que copier-coller."
 
@@ -1657,6 +1669,14 @@ msgstr "Inconnu"
 msgid "Unknown Parsing Error"
 msgstr "Erreur d'analyse inconnue"
 
+#: src/lib/getAIPaywallCopy.experiment.ts:25
+msgid "Unlimited AI Flowcharts - Boost Productivity Now"
+msgstr "Organigrammes AI illimités - Augmentez votre productivité dès maintenant"
+
+#: src/lib/getAIPaywallCopy.experiment.ts:21
+msgid "Unlimited AI Flowcharts: $2/mo (billed yearly)"
+msgstr "Organigrammes AI illimités : 2 €/mois (facturé annuellement)"
+
 #: src/pages/Pricing.tsx:16
 msgid "Unlimited Flowcharts"
 msgstr "Flowcharts illimités"
@@ -1673,6 +1693,10 @@ msgstr "Des organigrammes sauvegardés dans le cloud en illimité"
 #: src/components/Checkout.tsx:129
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "Débloquez les fonctionnalités de l'IA et ne perdez jamais votre travail avec un compte Pro."
+
+#: src/lib/getAIPaywallCopy.experiment.ts:31
+msgid "Unlock Unlimited AI Flowcharts"
+msgstr "Débloquez des organigrammes AI illimités"
 
 #: src/lib/hooks.ts:86
 msgid "Unpaid"
@@ -1702,7 +1726,7 @@ msgstr "Mettez à niveau vers Flowchart Fun Pro pour débloquer les exportations
 msgid "Upgrade to Pro"
 msgstr "Mettez à niveau vers Pro"
 
-#: src/pages/Pricing2.tsx:209
+#: src/pages/Pricing2.tsx:233
 msgid "Upgrade to Pro for $2/month"
 msgstr "Passer à la version Pro pour 2 $ par mois"
 
