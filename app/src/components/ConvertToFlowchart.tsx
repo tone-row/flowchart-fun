@@ -15,6 +15,7 @@ import { AppContext } from "./AppContextProvider";
 import { isError } from "../lib/helpers";
 import { useHasProAccess } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
+import { getAIPaywallCopy } from "../lib/getAIPaywallCopy.experiment";
 
 export function ConvertToFlowchart() {
   const convertIsRunning = usePromptStore((s) => s.isRunning);
@@ -33,6 +34,7 @@ export function ConvertToFlowchart() {
           content: t`Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste.`,
           imgUrl: "/images/ai-convert.png",
           toPricingCode: "ConvertToFlowchart",
+          buttonText: getAIPaywallCopy(),
         });
       } else {
         if (error.message === RATE_LIMIT_EXCEEDED) {
