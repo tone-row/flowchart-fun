@@ -10,6 +10,7 @@ import { AppContext } from "../components/AppContextProvider";
 import { unfreezeDoc } from "./useIsFrozen";
 import { useDoc } from "./useDoc";
 import { repairText } from "./repairText";
+import { useGetAIPaywallCopy } from "./useGetAIPaywallCopy.experiment";
 
 export type Mode = "prompt" | "convert" | "edit";
 type PromptStore = {
@@ -90,17 +91,19 @@ export function useRunAiWithStore() {
   const hasProAccess = useHasProAccess();
   const customer = useContext(AppContext).customer;
   const sid = customer?.subscription?.id;
+  const getAIPaywallCopy = useGetAIPaywallCopy();
 
   const handleError = useCallback(
     (error: Error) => {
       if (!hasProAccess && error.message === RATE_LIMIT_EXCEEDED) {
+        const buttonText = getAIPaywallCopy();
         // Show paywall
         showPaywall({
           title: t`Get Unlimited AI Requests`,
           content: t`You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!`,
           movieUrl: "/images/ai-convert.mp4",
           toPricingCode: "ConvertToFlowchart",
-          buttonText: t`Upgrade for Unlimited AI`,
+          buttonText,
         });
       } else {
         if (error.message === RATE_LIMIT_EXCEEDED) {
@@ -110,7 +113,7 @@ export function useRunAiWithStore() {
         }
       }
     },
-    [hasProAccess]
+    [getAIPaywallCopy, hasProAccess]
   );
 
   return useCallback(() => {
