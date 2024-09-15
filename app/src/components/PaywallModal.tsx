@@ -5,8 +5,9 @@ import { Trans } from "@lingui/macro";
 import { Button2 } from "../ui/Shared";
 import { useNavigate } from "react-router-dom";
 import { usePaywallModalStore } from "../lib/usePaywallModalStore";
+import { usePostHog } from "posthog-js/react";
 
-export function PaywallModal() {
+export default function PaywallModal() {
   const navigate = useNavigate();
   const open = usePaywallModalStore((s) => s.open);
   const title = usePaywallModalStore((s) => s.title);
@@ -15,6 +16,7 @@ export function PaywallModal() {
   const imgUrl = usePaywallModalStore((s) => s.imgUrl);
   const toPricingCode = usePaywallModalStore((s) => s.toPricingCode);
   const buttonText = usePaywallModalStore((s) => s.buttonText);
+  const posthog = usePostHog();
   return (
     <Dialog.Root
       modal
@@ -64,6 +66,7 @@ export function PaywallModal() {
                   className="mt-4"
                   data-to-pricing={toPricingCode}
                   onClick={() => {
+                    posthog.capture("clicked-paywall-button");
                     navigate("/pricing");
                   }}
                 >
