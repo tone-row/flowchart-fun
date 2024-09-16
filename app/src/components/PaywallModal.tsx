@@ -63,7 +63,7 @@ export default function PaywallModal() {
               <Dialog.Close asChild>
                 <Button2
                   color="blue"
-                  className="mt-4"
+                  className="mt-4 !whitespace-normal !leading-tight"
                   data-to-pricing={toPricingCode}
                   onClick={() => {
                     posthog.capture("clicked-paywall-button");
