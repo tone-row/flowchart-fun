@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { create } from "zustand";
 
 type PaywallModalStore = {
@@ -34,8 +35,12 @@ export function showPaywall({
   movieUrl,
   imgUrl = paywallImageUrl,
   toPricingCode,
-  buttonText = "Learn More", // New parameter with default value
+  buttonText,
 }: Omit<PaywallModalStore, "open">) {
+  if (!buttonText) {
+    buttonText = t`Learn More`;
+  }
+
   // If there is no movie URL, we will preload the image
   if (!movieUrl) {
     // Pre-load the paywall image
