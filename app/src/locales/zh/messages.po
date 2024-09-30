@@ -17,10 +17,6 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 临时流程图"
 
-#: src/lib/getAIPaywallCopy.experiment.ts:29
-msgid "5,000+ Users Love AI Flowcharts - Join Now"
-msgstr "5,000+用户喜爱AI流程图-立即加入"
-
 #: src/components/Tabs/ThemeTab.tsx:611
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>仅启用自定义CSS</0>。仅应用布局和高级设置。"
@@ -44,10 +40,6 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 #: src/pages/Pricing.tsx:23
 msgid "AI Creation & Editing"
 msgstr "AI创建与编辑"
-
-#: src/lib/getAIPaywallCopy.experiment.ts:27
-msgid "AI Flowcharts Anytime - $2/mo (billed yearly)"
-msgstr "随时使用AI流程图-每月$2（年度账单）"
 
 #: src/pages/Pricing2.tsx:61
 msgid "AI-Powered Flowchart Creation"
@@ -328,7 +320,7 @@ msgstr "继续使用沙盒（每天重置，工作不会被保存）"
 msgid "Convert"
 msgstr "转换"
 
-#: src/components/ConvertToFlowchart.tsx:80
+#: src/components/ConvertToFlowchart.tsx:78
 msgid "Convert to Flowchart"
 msgstr "转换为流程图"
 
@@ -844,10 +836,6 @@ msgstr "JSON画布是您的图表的JSON表示，由<0>Obsidian</0> Canvas和其
 msgid "Join 2000+ professionals who've upgraded their workflow"
 msgstr "加入2000多位专业人士，升级他们的工作流程"
 
-#: src/lib/getAIPaywallCopy.experiment.ts:23
-msgid "Join 5,000+ AI Flowchart Creators. $4/mo"
-msgstr "加入5,000+ AI流程图创建者。每月$4"
-
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "保持事物私密"
@@ -879,6 +867,7 @@ msgid "Leading References"
 msgstr "主要參考"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:68
+#: src/lib/usePaywallModalStore.ts:41
 msgid "Learn More"
 msgstr "学到更多"
 
@@ -1195,7 +1184,7 @@ msgstr "快速模板"
 msgid "Raster Export (PNG, JPG)"
 msgstr "光栅导出（PNG，JPG）"
 
-#: src/components/ConvertToFlowchart.tsx:41
+#: src/components/ConvertToFlowchart.tsx:39
 #: src/lib/usePromptStore.ts:107
 msgid "Rate limit exceeded. Please try again later."
 msgstr "速率限制超出。 请稍后再试。"
@@ -1621,7 +1610,7 @@ msgstr "从上到下"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "秒转换您的想法成专业图表"
 
-#: src/components/ConvertToFlowchart.tsx:33
+#: src/components/ConvertToFlowchart.tsx:32
 msgid "Transform text into diagrams instantly"
 msgstr "即时将文本转换为图表"
 
@@ -1649,7 +1638,7 @@ msgstr "两个边有相同的ID"
 msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
-#: src/components/ConvertToFlowchart.tsx:34
+#: src/components/ConvertToFlowchart.tsx:33
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
 
@@ -1669,14 +1658,6 @@ msgstr "未知"
 msgid "Unknown Parsing Error"
 msgstr "未知的解析错误"
 
-#: src/lib/getAIPaywallCopy.experiment.ts:25
-msgid "Unlimited AI Flowcharts - Boost Productivity Now"
-msgstr "无限制使用AI流程图-立即提升生产力"
-
-#: src/lib/getAIPaywallCopy.experiment.ts:21
-msgid "Unlimited AI Flowcharts: $2/mo (billed yearly)"
-msgstr "无限制使用AI流程图：每月$2（年度账单）"
-
 #: src/pages/Pricing.tsx:16
 msgid "Unlimited Flowcharts"
 msgstr "无限制的流程图"
@@ -1694,7 +1675,7 @@ msgstr "无限云端保存的流程图"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "解锁AI功能，通过专业账户永远不会丢失您的工作。"
 
-#: src/lib/getAIPaywallCopy.experiment.ts:31
+#: src/lib/usePromptStore.ts:103
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "解锁无限制使用AI流程图"
 
@@ -1709,10 +1690,6 @@ msgstr "更新电子邮件"
 #: src/components/SandboxWarning.tsx:95
 msgid "Upgrade Now - Save My Work"
 msgstr "立即升级 - 保存我的工作"
-
-#: src/lib/usePromptStore.ts:103
-msgid "Upgrade for Unlimited AI"
-msgstr "升级获取无限AI功能"
 
 #: src/components/SandboxWarning.tsx:56
 msgid "Upgrade to Flowchart Fun Pro and unlock:"
@@ -1918,6 +1895,6 @@ msgstr "或"
 msgid "{0}"
 msgstr "{0}"
 
-#: src/components/PaywallModal.tsx:70
+#: src/components/PaywallModal.tsx:73
 msgid "{buttonText}"
 msgstr "{buttonText}"
