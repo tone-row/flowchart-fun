@@ -17,10 +17,6 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 임시 플로차트"
 
-#: src/lib/getAIPaywallCopy.experiment.ts:29
-msgid "5,000+ Users Love AI Flowcharts - Join Now"
-msgstr "5,000명 이상의 사용자가 AI 플로우차트를 사랑합니다 - 지금 가입하세요"
-
 #: src/components/Tabs/ThemeTab.tsx:611
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>사용자 정의 CSS만</0>이 활성화되었습니다. 레이아웃과 고급 설정만 적용됩니다."
@@ -44,10 +40,6 @@ msgstr "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면
 #: src/pages/Pricing.tsx:23
 msgid "AI Creation & Editing"
 msgstr "AI 생성 및 편집"
-
-#: src/lib/getAIPaywallCopy.experiment.ts:27
-msgid "AI Flowcharts Anytime - $2/mo (billed yearly)"
-msgstr "언제든지 이용 가능한 AI 플로우차트 - 연간 $2 (연간 청구)"
 
 #: src/pages/Pricing2.tsx:61
 msgid "AI-Powered Flowchart Creation"
@@ -328,7 +320,7 @@ msgstr "샌드박스에서 계속하기 (매일 초기화되며 작업은 저장
 msgid "Convert"
 msgstr "변환하기"
 
-#: src/components/ConvertToFlowchart.tsx:80
+#: src/components/ConvertToFlowchart.tsx:78
 msgid "Convert to Flowchart"
 msgstr "흐름도로 변환"
 
@@ -844,10 +836,6 @@ msgstr "JSON 캔버스는 <0>Obsidian</0> 캔버스 및 다른 응용 프로그�
 msgid "Join 2000+ professionals who've upgraded their workflow"
 msgstr "워크플로우를 업그레이드한 2000명 이상의 전문가들과 함께하세요"
 
-#: src/lib/getAIPaywallCopy.experiment.ts:23
-msgid "Join 5,000+ AI Flowchart Creators. $4/mo"
-msgstr "5,000명 이상의 AI 플로우차트 제작자들과 함께 가입하세요 - 월 $4"
-
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "개인 정보 유지하기"
@@ -879,6 +867,7 @@ msgid "Leading References"
 msgstr "주목할만한 참고"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:68
+#: src/lib/usePaywallModalStore.ts:41
 msgid "Learn More"
 msgstr "더 알아보기"
 
@@ -1195,7 +1184,7 @@ msgstr "급변화 템플릿"
 msgid "Raster Export (PNG, JPG)"
 msgstr "래스터 내보내기 (PNG, JPG)"
 
-#: src/components/ConvertToFlowchart.tsx:41
+#: src/components/ConvertToFlowchart.tsx:39
 #: src/lib/usePromptStore.ts:107
 msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
@@ -1621,7 +1610,7 @@ msgstr "위에서 아래로"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 
-#: src/components/ConvertToFlowchart.tsx:33
+#: src/components/ConvertToFlowchart.tsx:32
 msgid "Transform text into diagrams instantly"
 msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
 
@@ -1649,7 +1638,7 @@ msgstr "두 개의 간선이 같은 ID를 가지고 있습니다"
 msgid "Two nodes have the same ID"
 msgstr "두 개의 노드가 같은 ID를 가지고 있습니다"
 
-#: src/components/ConvertToFlowchart.tsx:34
+#: src/components/ConvertToFlowchart.tsx:33
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "이런, 무료 요청이 모두 소진되었습니다! 무제한 다이어그램 변환을 위해 Flowchart Fun Pro로 업그레이드하고 텍스트를 복사하여 쉽게 명확한 시각적 흐름도로 변환하세요."
 
@@ -1669,14 +1658,6 @@ msgstr "알 수 없음"
 msgid "Unknown Parsing Error"
 msgstr "알 수 없는 구문 분석 오류"
 
-#: src/lib/getAIPaywallCopy.experiment.ts:25
-msgid "Unlimited AI Flowcharts - Boost Productivity Now"
-msgstr "무제한 AI 플로우차트 - 생산성 향상을 위해 지금 바로 이용하세요"
-
-#: src/lib/getAIPaywallCopy.experiment.ts:21
-msgid "Unlimited AI Flowcharts: $2/mo (billed yearly)"
-msgstr "무제한 AI 플로우차트: 연간 $2 (연간 청구)"
-
 #: src/pages/Pricing.tsx:16
 msgid "Unlimited Flowcharts"
 msgstr "무제한 다이어그램"
@@ -1694,7 +1675,7 @@ msgstr "무제한 클라우드 저장 플로우차트"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "AI 기능 잠금 해제 및 프로 계정으로 작업을 절대 잃지 않습니다."
 
-#: src/lib/getAIPaywallCopy.experiment.ts:31
+#: src/lib/usePromptStore.ts:103
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "무제한 AI 플로우차트 잠금 해제"
 
@@ -1709,10 +1690,6 @@ msgstr "이메일 업데이트"
 #: src/components/SandboxWarning.tsx:95
 msgid "Upgrade Now - Save My Work"
 msgstr "지금 업그레이드 - 내 작업 저장"
-
-#: src/lib/usePromptStore.ts:103
-msgid "Upgrade for Unlimited AI"
-msgstr "무제한 AI 업그레이드"
 
 #: src/components/SandboxWarning.tsx:56
 msgid "Upgrade to Flowchart Fun Pro and unlock:"
@@ -1918,6 +1895,6 @@ msgstr "또는"
 msgid "{0}"
 msgstr "{0}"
 
-#: src/components/PaywallModal.tsx:70
+#: src/components/PaywallModal.tsx:73
 msgid "{buttonText}"
 msgstr "{buttonText}"
