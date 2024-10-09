@@ -39,13 +39,15 @@ function writeToEditor(text: string) {
  * Runs an AI endpoint and streams the response back into the editor
  */
 export async function runAi({
-  prompt,
   endpoint,
+  prompt,
   sid,
+  signal,
 }: {
+  endpoint: string;
   prompt: string;
-  endpoint: "prompt" | "convert" | "edit";
   sid?: string;
+  signal?: AbortSignal;
 }) {
   let accumulated = "";
 
@@ -65,6 +67,7 @@ export async function runAi({
         Authorization: sid ? `Bearer ${sid}` : "",
       },
       body: JSON.stringify({ prompt, document: useDoc.getState().text }),
+      signal,
     })
       .then((response) => {
         if (response.ok && response.body) {
@@ -81,8 +84,8 @@ export async function runAi({
           if (endpoint === "edit") {
             // No setup...
           } else {
-            editor.pushUndoStop(); // Make sure you can undo the changes
-            writeToEditor(""); // Clear the editor content
+            editor.pushUndoStop();
+            writeToEditor("");
           }
 
           const processText = ({
@@ -91,42 +94,42 @@ export async function runAi({
           }: ReadableStreamReadResult<Uint8Array>): Promise<void> => {
             if (done) {
               setLastResult(accumulated);
+              resolve(accumulated);
               return Promise.resolve();
             }
 
             const text = decoder.decode(value, { stream: true });
             accumulated += text;
 
-            // If we are editing, we want to set the diff
             if (endpoint === "edit") {
               setDiff(accumulated);
             } else {
-              // If we are not editing, we want to write the text to the editor
               writeToEditor(accumulated);
             }
 
-            return reader.read().then(processText);
+            return reader.read().then(processText).catch(reject);
           };
 
-          reader
-            .read()
-            .then(processText)
-            .finally(() => {
-              editor.pushUndoStop();
-              resolve(accumulated);
-            });
+          reader.read().then(processText).catch(reject);
         } else {
           if (response.status === 429) {
             reject(new Error(RATE_LIMIT_EXCEEDED));
+          } else {
+            reject(
+              new Error(
+                t`Sorry, there was an error converting the text to a flowchart. Try again later.`
+              )
+            );
           }
-          reject(
-            new Error(
-              t`Sorry, there was an error converting the text to a flowchart. Try again later.`
-            )
-          );
         }
       })
-      .catch(reject);
+      .catch((error) => {
+        if (error.name === "AbortError") {
+          reject(new Error("Operation canceled"));
+        } else {
+          reject(error);
+        }
+      });
   });
 }
 

@@ -1,5 +1,5 @@
 import { Button2, IconButton2, Textarea } from "../ui/Shared";
-import { CaretDown, CaretUp, MagicWand } from "phosphor-react";
+import { CaretDown, CaretUp, MagicWand, Stop } from "phosphor-react";
 import cx from "classnames";
 import { t, Trans } from "@lingui/macro";
 import { createExamples } from "../pages/createExamples";
@@ -44,7 +44,7 @@ export function AiToolbar() {
   const isOpen = usePromptStore((state) => state.isOpen);
   const currentMode = usePromptStore((state) => state.mode);
   const isRunning = usePromptStore((state) => state.isRunning);
-  const runAiWithStore = useRunAiWithStore();
+  const { runAi, cancelAi } = useRunAiWithStore();
   const diff = usePromptStore((state) => state.diff);
 
   const toggleOpen = () => setIsOpen(!isOpen);
@@ -109,19 +109,33 @@ export function AiToolbar() {
           )}
         </div>
         {!showAcceptDiffButton ? (
-          <IconButton2
-            onClick={toggleOpen}
-            color="default"
-            size="xs"
-            className="flex items-center justify-center dark:bg-neutral-800 dark:text-neutral-400"
-            isLoading={isRunning}
-          >
-            {!isOpen ? (
-              <CaretDown size={16} weight="bold" />
-            ) : (
-              <CaretUp size={16} weight="bold" />
-            )}
-          </IconButton2>
+          <>
+            <div className="relative">
+              <IconButton2
+                onClick={toggleOpen}
+                color="default"
+                size="xs"
+                className="flex items-center justify-center dark:bg-neutral-800 dark:text-neutral-400"
+                isLoading={isRunning}
+              >
+                {!isOpen ? (
+                  <CaretDown size={16} weight="bold" />
+                ) : (
+                  <CaretUp size={16} weight="bold" />
+                )}
+              </IconButton2>
+              {isRunning ? (
+                <IconButton2
+                  color="red"
+                  size="xs"
+                  className="flex items-center justify-center !absolute top-0 left-0 opacity-0 hover:opacity-100"
+                  onClick={cancelAi}
+                >
+                  <Stop size={16} weight="bold" />
+                </IconButton2>
+              ) : null}
+            </div>
+          </>
         ) : (
           <div className="flex space-x-2">
             <Button2 color="green" size="xs" onClick={acceptDiff}>
@@ -150,7 +164,7 @@ export function AiToolbar() {
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey) {
                 e.preventDefault();
-                runAiWithStore();
+                runAi();
               }
             }}
           />
@@ -160,7 +174,7 @@ export function AiToolbar() {
               size="xs"
               className="dark:bg-purple-700 dark:hover:bg-purple-600 dark:text-purple-100"
               disabled={isRunning}
-              onClick={runAiWithStore}
+              onClick={runAi}
               data-session-activity={`Run AI: ${currentMode}`}
             >
               {!isRunning ? t`Submit` : "..."}
