@@ -55,15 +55,22 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
         options={{
           ...editorOptions,
           ...extendOptions,
-          renderSideBySide: false,
+          renderSideBySide: true,
         }}
         loading={<Loading />}
+        theme={mode === "light" ? "vs" : "vs-dark"}
+        onMount={(_, monaco) => {
+          monaco.editor.setTheme(mode === "light" ? "vs" : "vs-dark");
+        }}
         wrapperProps={{
           "data-testid": "Editor",
-          className: classNames("bg-white dark:bg-neutral-900", {
-            "overflow-hidden": isDragging,
-            "cursor-wait pointer-events-none opacity-50": convertIsRunning,
-          }),
+          className: classNames(
+            "bg-white dark:bg-neutral-900 dark:text-white",
+            {
+              "overflow-hidden": isDragging,
+              "cursor-wait pointer-events-none opacity-50": convertIsRunning,
+            }
+          ),
         }}
       />
     );
