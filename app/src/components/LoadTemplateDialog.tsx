@@ -61,7 +61,6 @@ export function LoadTemplateDialog() {
         <EditorActionTextButton
           icon={PiShapesDuotone}
           data-session-activity="Load Template: Open Dialog"
-          iconClassName="fill-zinc-500"
         >
           <Trans>Examples</Trans>
         </EditorActionTextButton>
