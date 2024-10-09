@@ -50,7 +50,7 @@ export function ConvertOnPasteOverlay() {
  * This is positioned at the bottom across the whole screen
  */
 function Overlay() {
-  const runAiWithStore = useRunAiWithStore();
+  const { runAi: runAiWithStore } = useRunAiWithStore();
   const isRunning = usePromptStore((s) => s.isRunning);
   const pasted = useEditorStore((s) => s.userPasted);
   return (

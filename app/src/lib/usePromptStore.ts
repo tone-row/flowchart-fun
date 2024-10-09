@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import { RATE_LIMIT_EXCEEDED, runAi } from "./runAi";
-import { isError } from "./helpers";
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useState } from "react";
 import { useHasProAccess } from "./hooks";
 import { showPaywall } from "./usePaywallModalStore";
 import { t } from "@lingui/macro";
@@ -90,11 +89,14 @@ export function useRunAiWithStore() {
   const hasProAccess = useHasProAccess();
   const customer = useContext(AppContext).customer;
   const sid = customer?.subscription?.id;
+  const [abortController, setAbortController] =
+    useState<AbortController | null>(null);
 
   const handleError = useCallback(
     (error: Error) => {
-      if (!hasProAccess && error.message === RATE_LIMIT_EXCEEDED) {
-        // Show paywall
+      if (error.name === "AbortError") {
+        setError(t`Operation canceled`);
+      } else if (!hasProAccess && error.message === RATE_LIMIT_EXCEEDED) {
         showPaywall({
           title: t`Get Unlimited AI Requests`,
           content: t`You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!`,
@@ -113,25 +115,28 @@ export function useRunAiWithStore() {
     [hasProAccess]
   );
 
-  return useCallback(() => {
+  const runAiCallback = useCallback(() => {
     const store = usePromptStore.getState();
     if (store.isRunning) return;
 
-    // close the toolbar
     setIsOpen(false);
     startConvert();
 
-    // If we're creating, we need to unfreeze the editor
     if (store.mode === "convert" || store.mode === "prompt") {
       unfreezeDoc();
     }
 
-    runAi({ endpoint: store.mode, prompt: store.currentText, sid })
-      .catch((err) => {
-        if (isError(err)) handleError(err);
-      })
+    const newAbortController = new AbortController();
+    setAbortController(newAbortController);
+
+    runAi({
+      endpoint: store.mode,
+      prompt: store.currentText,
+      sid,
+      signal: newAbortController.signal,
+    })
+      .catch(handleError)
       .then((result) => {
-        // Just in case there is an error, run repair text on the result
         if (result) {
           const text = repairText(result);
           if (text) {
@@ -142,6 +147,17 @@ export function useRunAiWithStore() {
       .finally(() => {
         stopConvert();
         useEditorStore.setState({ userPasted: "" });
+        setAbortController(null);
       });
   }, [handleError, sid]);
+
+  const cancelAi = useCallback(() => {
+    if (abortController) {
+      abortController.abort();
+      stopConvert();
+      setAbortController(null);
+    }
+  }, [abortController]);
+
+  return { runAi: runAiCallback, cancelAi };
 }
