@@ -115,7 +115,7 @@ msgstr "Atributos"
 msgid "August 2023"
 msgstr "Agosto 2023"
 
-#: src/components/LoadTemplateDialog.tsx:100
+#: src/components/LoadTemplateDialog.tsx:99
 msgid "Back"
 msgstr "Atrás"
 
@@ -315,7 +315,7 @@ msgstr "Continuar"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "Continuar en el Área de Pruebas (Se reinicia diariamente, el trabajo no se guarda)"
 
-#: src/components/AiToolbar.tsx:34
+#: src/components/AiToolbar.tsx:37
 #: src/components/ConvertOnPasteOverlay.tsx:90
 msgid "Convert"
 msgstr "Convertir"
@@ -573,7 +573,7 @@ msgstr "Bordes en la fila del nodo de origen"
 msgid "Edges in Target Node Row"
 msgstr "Bordes en la fila del nodo de destino"
 
-#: src/components/AiToolbar.tsx:36
+#: src/components/AiToolbar.tsx:39
 msgid "Edit"
 msgstr "Editar"
 
@@ -616,8 +616,8 @@ msgstr "Ingresa tu dirección de correo electrónico a continuación y te enviar
 msgid "Equal To"
 msgstr "Igual a"
 
-#: src/components/LoadTemplateDialog.tsx:66
-#: src/components/LoadTemplateDialog.tsx:82
+#: src/components/LoadTemplateDialog.tsx:65
+#: src/components/LoadTemplateDialog.tsx:81
 msgid "Examples"
 msgstr "Ejemplos"
 
@@ -704,7 +704,7 @@ msgstr "General"
 msgid "Get Pro Access Now"
 msgstr "Obtén acceso Pro ahora"
 
-#: src/lib/usePromptStore.ts:99
+#: src/lib/usePromptStore.ts:101
 msgid "Get Unlimited AI Requests"
 msgstr "Obtén solicitudes de IA ilimitadas"
 
@@ -840,7 +840,7 @@ msgstr "Únete a más de 2000 profesionales que han mejorado su flujo de trabajo
 msgid "Keep Things Private"
 msgstr "Mantener las cosas privadas"
 
-#: src/components/AiToolbar.tsx:92
+#: src/components/AiToolbar.tsx:107
 msgid "Keep changes?"
 msgstr "¿Mantener cambios?"
 
@@ -906,7 +906,7 @@ msgstr "Enlace"
 msgid "Link back"
 msgstr "Volver al enlace"
 
-#: src/components/LoadTemplateDialog.tsx:148
+#: src/components/LoadTemplateDialog.tsx:147
 msgid "Load"
 msgstr "Cargar"
 
@@ -922,7 +922,7 @@ msgstr "Cargar archivo"
 msgid "Load Files"
 msgstr "Cargar archivos"
 
-#: src/components/LoadTemplateDialog.tsx:120
+#: src/components/LoadTemplateDialog.tsx:119
 msgid "Load default content"
 msgstr "Cargar contenido predeterminado"
 
@@ -930,7 +930,7 @@ msgstr "Cargar contenido predeterminado"
 msgid "Load from link?"
 msgstr "¿Cargar desde el enlace?"
 
-#: src/components/LoadTemplateDialog.tsx:113
+#: src/components/LoadTemplateDialog.tsx:112
 msgid "Load layout and styles"
 msgstr "Cargar diseño y estilos"
 
@@ -1091,6 +1091,10 @@ msgstr "Soporte individual"
 msgid "Open Customer Portal"
 msgstr "Abrir portal de clientes"
 
+#: src/lib/usePromptStore.ts:98
+msgid "Operation canceled"
+msgstr "Operación cancelada"
+
 #: src/lib/getDefaultText.ts:12
 msgid "Or maybe blue!"
 msgstr "¡O tal vez azul!"
@@ -1120,7 +1124,7 @@ msgstr "Vencido"
 msgid "Paste a document to convert it"
 msgstr "Pegue un documento para convertirlo"
 
-#: src/components/AiToolbar.tsx:23
+#: src/components/AiToolbar.tsx:26
 msgid "Paste your document or outline here to convert it into an organized flowchart."
 msgstr "Pegue su documento o esquema aquí para convertirlo en un diagrama de flujo organizado."
 
@@ -1158,7 +1162,7 @@ msgstr "Procesamiento de datos"
 msgid "Processing..."
 msgstr "Procesando..."
 
-#: src/components/AiToolbar.tsx:32
+#: src/components/AiToolbar.tsx:35
 msgid "Prompt"
 msgstr "Indicación"
 
@@ -1185,7 +1189,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "Exportación de ráster (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:107
+#: src/lib/usePromptStore.ts:109
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Límite de tasa excedido. Por favor, inténtalo de nuevo más tarde."
 
@@ -1317,6 +1321,14 @@ msgstr "Guardar en archivo"
 msgid "Save your Work"
 msgstr "Guarda tu trabajo"
 
+#: src/components/Layout.tsx:38
+msgid "Scheduled Maintenance"
+msgstr "Mantenimiento programado"
+
+#: src/components/Layout.tsx:114
+msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
+msgstr "El mantenimiento programado de la base de datos se llevará a cabo el viernes 8 de noviembre a las 12:00 AM hora del este. Los servicios pueden estar temporalmente no disponibles durante este período."
+
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "Pago seguro"
@@ -1352,8 +1364,8 @@ msgstr "Iniciar sesión con <0>Google</0>"
 msgid "Sorry! This page is only available in English."
 msgstr "¡Lo sentimos! Esta página solo está disponible en inglés."
 
-#: src/lib/runAi.ts:124
-#: src/lib/runAi.ts:124
+#: src/lib/runAi.ts:120
+#: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Lo siento, hubo un error al convertir el texto en un diagrama. Inténtalo de nuevo más tarde."
 
@@ -1425,7 +1437,7 @@ msgstr "Clases de Estilo"
 msgid "Style with classes"
 msgstr "Estilo con clases"
 
-#: src/components/AiToolbar.tsx:151
+#: src/components/AiToolbar.tsx:180
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
@@ -1530,6 +1542,10 @@ msgstr "El delimitador utilizado para separar múltiples nodos de destino"
 msgid "The possible shapes are:"
 msgstr "Las formas posibles son:"
 
+#: src/components/Layout.tsx:49
+msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
+msgstr "El servicio estará de vuelta en línea a la 1:00 AM hora del este. Gracias por su paciencia."
+
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
 #: src/components/Tabs/EditorTabList.tsx:49
@@ -1565,7 +1581,7 @@ msgstr "Esto puede tardar entre 30 segundos y 2 minutos dependiendo de la longit
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "Esta caja de arena es perfecta para experimentar, pero recuerda: se reinicia diariamente. ¡Actualiza ahora y guarda tu trabajo actual!"
 
-#: src/components/LoadTemplateDialog.tsx:134
+#: src/components/LoadTemplateDialog.tsx:133
 msgid "This will replace the current content."
 msgstr "Esto reemplazará el contenido actual."
 
@@ -1675,7 +1691,7 @@ msgstr "Diagramas de flujo guardados en la nube de forma ilimitada"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "Desbloquea las funciones de IA y nunca pierdas tu trabajo con una cuenta Pro."
 
-#: src/lib/usePromptStore.ts:103
+#: src/lib/usePromptStore.ts:105
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "Desbloquea diagramas de flujo de IA ilimitados"
 
@@ -1752,7 +1768,7 @@ msgstr "Utilice este archivo para diagramas de organización, jerarquías y otra
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Utilice este archivo para secuencias, procesos y flujos de trabajo."
 
-#: src/components/AiToolbar.tsx:25
+#: src/components/AiToolbar.tsx:28
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "Utilice este modo para modificar y mejorar su gráfico actual."
 
@@ -1779,6 +1795,10 @@ msgstr "Diagramas sin marca de agua"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "Marcas de agua"
+
+#: src/components/Layout.tsx:43
+msgid "We are currently performing a database upgrade to improve our service."
+msgstr "Actualmente estamos realizando una actualización de la base de datos para mejorar nuestro servicio."
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
@@ -1853,7 +1873,7 @@ msgstr "Ya eres un usuario Pro. <0>Gestionar suscripción</0><1/>¿Tienes pregun
 msgid "You're doing great!"
 msgstr "¡Lo estás haciendo genial!"
 
-#: src/lib/usePromptStore.ts:100
+#: src/lib/usePromptStore.ts:102
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "Has utilizado todas tus conversiones de IA gratuitas. Actualiza a Pro para un uso ilimitado de IA, temas personalizados, uso privado compartido y más. ¡Sigue creando increíbles diagramas de flujo sin esfuerzo!"
 
