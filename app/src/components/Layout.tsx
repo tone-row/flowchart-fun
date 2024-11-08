@@ -20,44 +20,6 @@ const Layout = memo(({ children }: { children: ReactNode }) => {
   let [showBanner, message, messageType] = getShowBannerAndMessage();
   const isEditorView = useIsEditorView();
 
-  // Check if we're in maintenance window
-  const maintenanceStart = new Date("2024-11-08T00:00:00-05:00");
-  const maintenanceEnd = new Date("2024-11-08T01:00:00-05:00");
-  const now = new Date();
-  const isMaintenanceWindow = now >= maintenanceStart && now < maintenanceEnd;
-
-  if (isMaintenanceWindow) {
-    return (
-      <Dialog.Root open>
-        <Dialog.Portal>
-          <Overlay />
-          <Content className="grid gap-6 max-w-md p-8">
-            <div className="grid gap-4">
-              <Wrench className="mx-auto" size={32} weight="duotone" />
-              <Dialog.Title className="text-2xl font-bold">
-                <Trans>Scheduled Maintenance</Trans>
-              </Dialog.Title>
-            </div>
-            <Dialog.Description className="grid gap-4">
-              <p className="leading-normal text-wrap-pretty">
-                <Trans>
-                  We are currently performing a database upgrade to improve our
-                  service.
-                </Trans>
-              </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-normal text-wrap-pretty">
-                <Trans>
-                  The service will be back online at 1:00 AM Eastern Time. Thank
-                  you for your patience.
-                </Trans>
-              </p>
-            </Dialog.Description>
-          </Content>
-        </Dialog.Portal>
-      </Dialog.Root>
-    );
-  }
-
   // Don't show banner if it's been dismissed or if in fullscreen
   showBanner = showBanner && !bannerDismissed;
 
@@ -105,17 +67,6 @@ Layout.displayName = "Layout";
 export default Layout;
 
 function getShowBannerAndMessage(): [boolean, string, "error" | "info"] {
-  // Database migration banner
-  const migrationDate = new Date("2024-11-08T00:00:00-05:00"); // Midnight Eastern Time
-  const now = new Date();
-  if (now < migrationDate) {
-    return [
-      true,
-      t`Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period.`,
-      "info",
-    ];
-  }
-
   const hash = window.location.hash;
   if (hash.startsWith("#message=")) {
     return [true, decodeURIComponent(hash.slice("#message=".length)), "info"];
