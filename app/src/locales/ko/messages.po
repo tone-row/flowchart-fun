@@ -115,7 +115,7 @@ msgstr "속성"
 msgid "August 2023"
 msgstr "2023년 8월"
 
-#: src/components/LoadTemplateDialog.tsx:100
+#: src/components/LoadTemplateDialog.tsx:99
 msgid "Back"
 msgstr "뒤로"
 
@@ -315,7 +315,7 @@ msgstr "계속하기"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "샌드박스에서 계속하기 (매일 초기화되며 작업은 저장되지 않음)"
 
-#: src/components/AiToolbar.tsx:34
+#: src/components/AiToolbar.tsx:37
 #: src/components/ConvertOnPasteOverlay.tsx:90
 msgid "Convert"
 msgstr "변환하기"
@@ -573,7 +573,7 @@ msgstr "출발 노드 행에 간선"
 msgid "Edges in Target Node Row"
 msgstr "도착 노드 행에 간선"
 
-#: src/components/AiToolbar.tsx:36
+#: src/components/AiToolbar.tsx:39
 msgid "Edit"
 msgstr "편집하기"
 
@@ -616,8 +616,8 @@ msgstr "아래에 이메일 주소를 입력하면 비밀번호 재설정을 위
 msgid "Equal To"
 msgstr "같음"
 
-#: src/components/LoadTemplateDialog.tsx:66
-#: src/components/LoadTemplateDialog.tsx:82
+#: src/components/LoadTemplateDialog.tsx:65
+#: src/components/LoadTemplateDialog.tsx:81
 msgid "Examples"
 msgstr "예시"
 
@@ -704,7 +704,7 @@ msgstr "일반"
 msgid "Get Pro Access Now"
 msgstr "지금 프로 액세스 받기"
 
-#: src/lib/usePromptStore.ts:99
+#: src/lib/usePromptStore.ts:101
 msgid "Get Unlimited AI Requests"
 msgstr "무제한 AI 요청 받기"
 
@@ -840,7 +840,7 @@ msgstr "워크플로우를 업그레이드한 2000명 이상의 전문가들과 
 msgid "Keep Things Private"
 msgstr "개인 정보 유지하기"
 
-#: src/components/AiToolbar.tsx:92
+#: src/components/AiToolbar.tsx:107
 msgid "Keep changes?"
 msgstr "변경 사항을 유지하시겠습니까?"
 
@@ -906,7 +906,7 @@ msgstr "링크"
 msgid "Link back"
 msgstr "링크를 걸어 돌아가세요"
 
-#: src/components/LoadTemplateDialog.tsx:148
+#: src/components/LoadTemplateDialog.tsx:147
 msgid "Load"
 msgstr "로드"
 
@@ -922,7 +922,7 @@ msgstr "로드 파일"
 msgid "Load Files"
 msgstr "로드 파일"
 
-#: src/components/LoadTemplateDialog.tsx:120
+#: src/components/LoadTemplateDialog.tsx:119
 msgid "Load default content"
 msgstr "기본 내용 로드"
 
@@ -930,7 +930,7 @@ msgstr "기본 내용 로드"
 msgid "Load from link?"
 msgstr "링크에서 불러오기?"
 
-#: src/components/LoadTemplateDialog.tsx:113
+#: src/components/LoadTemplateDialog.tsx:112
 msgid "Load layout and styles"
 msgstr "레이아웃과 스타일 로드"
 
@@ -1091,6 +1091,10 @@ msgstr "일대일 지원"
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
 
+#: src/lib/usePromptStore.ts:98
+msgid "Operation canceled"
+msgstr "작업이 취소되었습니다."
+
 #: src/lib/getDefaultText.ts:12
 msgid "Or maybe blue!"
 msgstr "아니면 파란색으로!"
@@ -1120,7 +1124,7 @@ msgstr "연체"
 msgid "Paste a document to convert it"
 msgstr "문서를 붙여서 변환하세요"
 
-#: src/components/AiToolbar.tsx:23
+#: src/components/AiToolbar.tsx:26
 msgid "Paste your document or outline here to convert it into an organized flowchart."
 msgstr "문서나 개요를 여기에 붙여넣어 조직화된 플로우차트로 변환하세요."
 
@@ -1158,7 +1162,7 @@ msgstr "데이터 처리"
 msgid "Processing..."
 msgstr "처리 중..."
 
-#: src/components/AiToolbar.tsx:32
+#: src/components/AiToolbar.tsx:35
 msgid "Prompt"
 msgstr "프롬프트"
 
@@ -1185,7 +1189,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "래스터 내보내기 (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:107
+#: src/lib/usePromptStore.ts:109
 msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
 
@@ -1317,6 +1321,14 @@ msgstr "파일에 저장하기"
 msgid "Save your Work"
 msgstr "작업 저장"
 
+#: src/components/Layout.tsx:38
+msgid "Scheduled Maintenance"
+msgstr "예정된 유지보수"
+
+#: src/components/Layout.tsx:114
+msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
+msgstr "예정된 데이터베이스 유지보수는 11월 8일 금요일 오전 12시 미국 동부 시간에 진행될 예정입니다. 이 기간 동안 일시적으로 서비스를 이용할 수 없을 수 있습니다."
+
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "안전한 결제"
@@ -1352,8 +1364,8 @@ msgstr "<0>Google</0>으로 로그인"
 msgid "Sorry! This page is only available in English."
 msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 
-#: src/lib/runAi.ts:124
-#: src/lib/runAi.ts:124
+#: src/lib/runAi.ts:120
+#: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "죄송합니다, 텍스트를 플로우차트로 변환하는 중에 오류가 발생했습니다. 나중에 다시 시도해주세요."
 
@@ -1425,7 +1437,7 @@ msgstr "스타일 클래스"
 msgid "Style with classes"
 msgstr "클래스로 스타일링"
 
-#: src/components/AiToolbar.tsx:151
+#: src/components/AiToolbar.tsx:180
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
@@ -1530,6 +1542,10 @@ msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 �
 msgid "The possible shapes are:"
 msgstr "가능한 모양은 다음과 같습니다:"
 
+#: src/components/Layout.tsx:49
+msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
+msgstr "서비스는 미국 동부 시간 오전 1시에 다시 온라인으로 돌아올 예정입니다. 이용에 불편을 드려 죄송합니다."
+
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
 #: src/components/Tabs/EditorTabList.tsx:49
@@ -1565,7 +1581,7 @@ msgstr "입력 길이에 따라 30초에서 2분 사이의 시간이 소요될 �
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "이 모래상자는 실험하기에 완벽하지만 기억하세요 - 매일 초기화됩니다. 지금 업그레이드하고 현재 작업을 유지하세요!"
 
-#: src/components/LoadTemplateDialog.tsx:134
+#: src/components/LoadTemplateDialog.tsx:133
 msgid "This will replace the current content."
 msgstr "이것은 현재 내용을 대체합니다."
 
@@ -1675,7 +1691,7 @@ msgstr "무제한 클라우드 저장 플로우차트"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "AI 기능 잠금 해제 및 프로 계정으로 작업을 절대 잃지 않습니다."
 
-#: src/lib/usePromptStore.ts:103
+#: src/lib/usePromptStore.ts:105
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "무제한 AI 플로우차트 잠금 해제"
 
@@ -1752,7 +1768,7 @@ msgstr "조직도, 계층 구조 및 기타 조직 구조를 위해 이 파일�
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오."
 
-#: src/components/AiToolbar.tsx:25
+#: src/components/AiToolbar.tsx:28
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "현재 차트를 수정하고 개선하는 데 이 모드를 사용하세요."
 
@@ -1779,6 +1795,10 @@ msgstr "워터마크 없는 다이어그램"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "물감"
+
+#: src/components/Layout.tsx:43
+msgid "We are currently performing a database upgrade to improve our service."
+msgstr "현재 우리는 서비스를 개선하기 위해 데이터베이스 업그레이드를 진행 중입니다."
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
@@ -1853,7 +1873,7 @@ msgstr "이미 프로 사용자입니다. <0>구독 관리</0><1/>질문이나 �
 msgid "You're doing great!"
 msgstr "잘하고 있어요!"
 
-#: src/lib/usePromptStore.ts:100
+#: src/lib/usePromptStore.ts:102
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "모든 무료 AI 변환을 사용하셨습니다. 무제한 AI 사용, 사용자 정의 테마, 개인 공유 등을 위해 Pro로 업그레이드하세요. 쉽게 멋진 플로우차트를 만들어 나가세요!"
 

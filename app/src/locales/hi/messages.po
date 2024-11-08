@@ -115,7 +115,7 @@ msgstr "गुण"
 msgid "August 2023"
 msgstr "2023 अगस्त"
 
-#: src/components/LoadTemplateDialog.tsx:100
+#: src/components/LoadTemplateDialog.tsx:99
 msgid "Back"
 msgstr "वापस"
 
@@ -315,7 +315,7 @@ msgstr "जारी रखें"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "सैंडबॉक्स में जारी रखें (दैनिक रूप से रीसेट होता है, काम सहेजा नहीं जाता)"
 
-#: src/components/AiToolbar.tsx:34
+#: src/components/AiToolbar.tsx:37
 #: src/components/ConvertOnPasteOverlay.tsx:90
 msgid "Convert"
 msgstr "परिवर्तन करें"
@@ -573,7 +573,7 @@ msgstr "स्रोत नोड पंक्ति में किन्ह�
 msgid "Edges in Target Node Row"
 msgstr "लक्ष्य नोड पंक्ति में किन्हें"
 
-#: src/components/AiToolbar.tsx:36
+#: src/components/AiToolbar.tsx:39
 msgid "Edit"
 msgstr "संपादित करें"
 
@@ -616,8 +616,8 @@ msgstr "नीचे अपना ईमेल पता दर्ज करे�
 msgid "Equal To"
 msgstr "बराबर"
 
-#: src/components/LoadTemplateDialog.tsx:66
-#: src/components/LoadTemplateDialog.tsx:82
+#: src/components/LoadTemplateDialog.tsx:65
+#: src/components/LoadTemplateDialog.tsx:81
 msgid "Examples"
 msgstr "उदाहरण"
 
@@ -704,7 +704,7 @@ msgstr "सामान्य"
 msgid "Get Pro Access Now"
 msgstr "अब प्रो एक्सेस प्राप्त करें"
 
-#: src/lib/usePromptStore.ts:99
+#: src/lib/usePromptStore.ts:101
 msgid "Get Unlimited AI Requests"
 msgstr "असीमित एआई अनुरोध प्राप्त करें"
 
@@ -840,7 +840,7 @@ msgstr "अपने वर्कफ्लो को अपग्रेड क�
 msgid "Keep Things Private"
 msgstr "चीजों को निजी रखें"
 
-#: src/components/AiToolbar.tsx:92
+#: src/components/AiToolbar.tsx:107
 msgid "Keep changes?"
 msgstr "परिवर्तन रखें?"
 
@@ -906,7 +906,7 @@ msgstr "लिंक"
 msgid "Link back"
 msgstr "वापस लिंक करें"
 
-#: src/components/LoadTemplateDialog.tsx:148
+#: src/components/LoadTemplateDialog.tsx:147
 msgid "Load"
 msgstr "लोड"
 
@@ -922,7 +922,7 @@ msgstr "फ़ाइल लोड करें"
 msgid "Load Files"
 msgstr "फ़ाइलें लोड करें"
 
-#: src/components/LoadTemplateDialog.tsx:120
+#: src/components/LoadTemplateDialog.tsx:119
 msgid "Load default content"
 msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 
@@ -930,7 +930,7 @@ msgstr "डिफ़ॉल्ट सामग्री लोड करें"
 msgid "Load from link?"
 msgstr "लिंक से लोड करें?"
 
-#: src/components/LoadTemplateDialog.tsx:113
+#: src/components/LoadTemplateDialog.tsx:112
 msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
 
@@ -1091,6 +1091,10 @@ msgstr "एक-पर-एक समर्थन"
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
+#: src/lib/usePromptStore.ts:98
+msgid "Operation canceled"
+msgstr "ऑपरेशन रद्द किया गया है"
+
 #: src/lib/getDefaultText.ts:12
 msgid "Or maybe blue!"
 msgstr "या शायद नीला!"
@@ -1120,7 +1124,7 @@ msgstr "पिछले दौरान"
 msgid "Paste a document to convert it"
 msgstr "एक दस्तावेज़ को पेस्ट करें और उसे रूपांतरित करें"
 
-#: src/components/AiToolbar.tsx:23
+#: src/components/AiToolbar.tsx:26
 msgid "Paste your document or outline here to convert it into an organized flowchart."
 msgstr "अपने दस्तावेज़ या रूपरेखा को यहां पेस्ट करें ताकि इसे एक व्यवस्थित फ्लोचार्ट में बदला जा सके।"
 
@@ -1158,7 +1162,7 @@ msgstr "डेटा प्रसंस्करण"
 msgid "Processing..."
 msgstr "प्रसंस्करण हो रहा है..."
 
-#: src/components/AiToolbar.tsx:32
+#: src/components/AiToolbar.tsx:35
 msgid "Prompt"
 msgstr "प्रश्न"
 
@@ -1185,7 +1189,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "रास्टर निर्यात (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:107
+#: src/lib/usePromptStore.ts:109
 msgid "Rate limit exceeded. Please try again later."
 msgstr "रेट लिमिट पार हो गई है। कृपया बाद में पुनः प्रयास करें।"
 
@@ -1317,6 +1321,14 @@ msgstr "फाइल में सेव करें"
 msgid "Save your Work"
 msgstr "अपनी कार्यवाही सुरक्षित करें"
 
+#: src/components/Layout.tsx:38
+msgid "Scheduled Maintenance"
+msgstr "निर्धारित रखरखाव"
+
+#: src/components/Layout.tsx:114
+msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
+msgstr "निर्धारित डेटाबेस रखरखाव शुक्रवार, 8 नवंबर को 12:00 बजे पूर्वी समय पर होगा। इस अवधि के दौरान सेवाएं अस्थायी रूप से अनुपलब्ध हो सकती हैं।"
+
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "सुरक्षित भुगतान"
@@ -1352,8 +1364,8 @@ msgstr "<0>Google</0> के साथ साइन इन करें"
 msgid "Sorry! This page is only available in English."
 msgstr "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।"
 
-#: src/lib/runAi.ts:124
-#: src/lib/runAi.ts:124
+#: src/lib/runAi.ts:120
+#: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "क्षमा करें, टेक्स्ट को फ्लोचार्ट में रूपांतरित करने में एक त्रुटि हुई। बाद में पुनः प्रयास करें।"
 
@@ -1425,7 +1437,7 @@ msgstr "शैली क्लासेज"
 msgid "Style with classes"
 msgstr "क्लासेस के साथ स्टाइल"
 
-#: src/components/AiToolbar.tsx:151
+#: src/components/AiToolbar.tsx:180
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
@@ -1530,6 +1542,10 @@ msgstr "कई लक्ष्य नोड्स को अलग करने 
 msgid "The possible shapes are:"
 msgstr "संभव आकृतियाँ हैं:"
 
+#: src/components/Layout.tsx:49
+msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
+msgstr "सेवा 1:00 बजे पूर्वी समय पर ऑनलाइन वापस होगी। आपके धैर्य के लिए धन्यवाद।"
+
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
 #: src/components/Tabs/EditorTabList.tsx:49
@@ -1565,7 +1581,7 @@ msgstr "आपके इनपुट की लंबाई के आधार 
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "यह सैंडबॉक्स प्रयोग करने के लिए परफेक्ट है, लेकिन ध्यान रखें - यह दैनिक रूप से रीसेट होता है। अभी अपग्रेड करें और अपना वर्तमान काम रखें!"
 
-#: src/components/LoadTemplateDialog.tsx:134
+#: src/components/LoadTemplateDialog.tsx:133
 msgid "This will replace the current content."
 msgstr "यह वर्तमान सामग्री को बदल देगा।"
 
@@ -1675,7 +1691,7 @@ msgstr "असीमित क्लाउड-सहेजे फ्लोचा
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "प्रो खाते से AI फीचर्स खोलें और कभी भी अपना काम न खोएं।"
 
-#: src/lib/usePromptStore.ts:103
+#: src/lib/usePromptStore.ts:105
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "असीमित AI फ्लोचार्ट्स को अनलॉक करें"
 
@@ -1752,7 +1768,7 @@ msgstr "संगठनात्मक चार्ट, पदानुक्र
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "अनुक्रमों, प्रक्रियाओं और कार्यप्रवाहों के लिए इस फ़ाइल का उपयोग करें।"
 
-#: src/components/AiToolbar.tsx:25
+#: src/components/AiToolbar.tsx:28
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "अपने मौजूदा चार्ट को संशोधित और सुधारित करने के लिए इस मोड का उपयोग करें।"
 
@@ -1779,6 +1795,10 @@ msgstr "वॉटरमार्क-मुक्त आरेख"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "वॉटरमार्क"
+
+#: src/components/Layout.tsx:43
+msgid "We are currently performing a database upgrade to improve our service."
+msgstr "हम वर्तमान में हमारी सेवा को बेहतर बनाने के लिए डेटाबेस अपग्रेड कर रहे हैं।"
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
@@ -1853,7 +1873,7 @@ msgstr "आप पहले से ही एक प्रो उपयोगक
 msgid "You're doing great!"
 msgstr "आप बहुत अच्छा कर रहे हैं!"
 
-#: src/lib/usePromptStore.ts:100
+#: src/lib/usePromptStore.ts:102
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "आपने अपने सभी नि: शुल्क एआई रूपांतरण का उपयोग किया है। असीमित एआई उपयोग, कस्टम थीम, निजी साझाकरण और अधिक के लिए प्रो पर अपग्रेड करें। अब आसानी से शानदार फ्लोचार्ट बनाते रहें!"
 
