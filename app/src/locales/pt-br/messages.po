@@ -115,7 +115,7 @@ msgstr "Atributos"
 msgid "August 2023"
 msgstr "Agosto de 2023"
 
-#: src/components/LoadTemplateDialog.tsx:100
+#: src/components/LoadTemplateDialog.tsx:99
 msgid "Back"
 msgstr "Voltar"
 
@@ -315,7 +315,7 @@ msgstr "Continuar"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "Continuar no Sandbox (Redefine diariamente, trabalho não salvo)"
 
-#: src/components/AiToolbar.tsx:34
+#: src/components/AiToolbar.tsx:37
 #: src/components/ConvertOnPasteOverlay.tsx:90
 msgid "Convert"
 msgstr "Converter"
@@ -573,7 +573,7 @@ msgstr "Bordas na Linha do Nó de Origem"
 msgid "Edges in Target Node Row"
 msgstr "Bordas na Linha do Nó de Destino"
 
-#: src/components/AiToolbar.tsx:36
+#: src/components/AiToolbar.tsx:39
 msgid "Edit"
 msgstr "Editar"
 
@@ -616,8 +616,8 @@ msgstr "Digite seu endereço de e-mail abaixo e enviaremos um link para redefini
 msgid "Equal To"
 msgstr "Igual a"
 
-#: src/components/LoadTemplateDialog.tsx:66
-#: src/components/LoadTemplateDialog.tsx:82
+#: src/components/LoadTemplateDialog.tsx:65
+#: src/components/LoadTemplateDialog.tsx:81
 msgid "Examples"
 msgstr "Exemplos"
 
@@ -704,7 +704,7 @@ msgstr "Geral"
 msgid "Get Pro Access Now"
 msgstr "Obtenha acesso Pro agora"
 
-#: src/lib/usePromptStore.ts:99
+#: src/lib/usePromptStore.ts:101
 msgid "Get Unlimited AI Requests"
 msgstr "Obtenha solicitações ilimitadas de IA"
 
@@ -840,7 +840,7 @@ msgstr "Junte-se a mais de 2000 profissionais que aprimoraram seu fluxo de traba
 msgid "Keep Things Private"
 msgstr "Mantenha as coisas privadas"
 
-#: src/components/AiToolbar.tsx:92
+#: src/components/AiToolbar.tsx:107
 msgid "Keep changes?"
 msgstr "Manter alterações?"
 
@@ -906,7 +906,7 @@ msgstr "Link"
 msgid "Link back"
 msgstr "Voltar ao link"
 
-#: src/components/LoadTemplateDialog.tsx:148
+#: src/components/LoadTemplateDialog.tsx:147
 msgid "Load"
 msgstr "Carregar"
 
@@ -922,7 +922,7 @@ msgstr "Carregar Arquivo"
 msgid "Load Files"
 msgstr "Carregar Arquivos"
 
-#: src/components/LoadTemplateDialog.tsx:120
+#: src/components/LoadTemplateDialog.tsx:119
 msgid "Load default content"
 msgstr "Carregar conteúdo padrão"
 
@@ -930,7 +930,7 @@ msgstr "Carregar conteúdo padrão"
 msgid "Load from link?"
 msgstr "Carregar a partir do link?"
 
-#: src/components/LoadTemplateDialog.tsx:113
+#: src/components/LoadTemplateDialog.tsx:112
 msgid "Load layout and styles"
 msgstr "Carregar layout e estilos"
 
@@ -1091,6 +1091,10 @@ msgstr "Suporte Individual"
 msgid "Open Customer Portal"
 msgstr "Abra o portal do cliente"
 
+#: src/lib/usePromptStore.ts:98
+msgid "Operation canceled"
+msgstr "Operação cancelada"
+
 #: src/lib/getDefaultText.ts:12
 msgid "Or maybe blue!"
 msgstr "Ou talvez azul!"
@@ -1120,7 +1124,7 @@ msgstr "Atrasado"
 msgid "Paste a document to convert it"
 msgstr "Cole um documento para convertê-lo"
 
-#: src/components/AiToolbar.tsx:23
+#: src/components/AiToolbar.tsx:26
 msgid "Paste your document or outline here to convert it into an organized flowchart."
 msgstr "Cole seu documento ou esboço aqui para convertê-lo em um fluxograma organizado."
 
@@ -1158,7 +1162,7 @@ msgstr "Processando Dados"
 msgid "Processing..."
 msgstr "Processando..."
 
-#: src/components/AiToolbar.tsx:32
+#: src/components/AiToolbar.tsx:35
 msgid "Prompt"
 msgstr "Sugestão"
 
@@ -1185,7 +1189,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "Exportação de Raster (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:107
+#: src/lib/usePromptStore.ts:109
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Limite de taxa excedido. Por favor, tente novamente mais tarde."
 
@@ -1317,6 +1321,14 @@ msgstr "Salvar para Arquivo"
 msgid "Save your Work"
 msgstr "Salve seu trabalho"
 
+#: src/components/Layout.tsx:38
+msgid "Scheduled Maintenance"
+msgstr "Manutenção agendada"
+
+#: src/components/Layout.tsx:114
+msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
+msgstr "A manutenção agendada do banco de dados ocorrerá na sexta-feira, 8 de novembro, às 12h, horário do leste. Os serviços podem ficar temporariamente indisponíveis durante este período."
+
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "Pagamento seguro"
@@ -1352,8 +1364,8 @@ msgstr "Entrar com <0>Google</0>"
 msgid "Sorry! This page is only available in English."
 msgstr "Sinto muito! Esta página só está disponível em inglês."
 
-#: src/lib/runAi.ts:124
-#: src/lib/runAi.ts:124
+#: src/lib/runAi.ts:120
+#: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Desculpe, houve um erro ao converter o texto em um fluxograma. Tente novamente mais tarde."
 
@@ -1425,7 +1437,7 @@ msgstr "Classes de Estilo"
 msgid "Style with classes"
 msgstr "Estilizar com classes"
 
-#: src/components/AiToolbar.tsx:151
+#: src/components/AiToolbar.tsx:180
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
@@ -1530,6 +1542,10 @@ msgstr "O delimitador usado para separar vários nós de destino"
 msgid "The possible shapes are:"
 msgstr "As formas possíveis são:"
 
+#: src/components/Layout.tsx:49
+msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
+msgstr "O serviço estará de volta online às 1h, horário do leste. Agradecemos sua paciência."
+
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
 #: src/components/Tabs/EditorTabList.tsx:49
@@ -1565,7 +1581,7 @@ msgstr "Isso pode levar entre 30 segundos e 2 minutos, dependendo do tamanho da 
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "Esta caixa de areia é perfeita para experimentar, mas lembre-se - ela é resetada diariamente. Faça o upgrade agora e mantenha seu trabalho atual!"
 
-#: src/components/LoadTemplateDialog.tsx:134
+#: src/components/LoadTemplateDialog.tsx:133
 msgid "This will replace the current content."
 msgstr "Isso substituirá o conteúdo atual."
 
@@ -1675,7 +1691,7 @@ msgstr "Fluxogramas ilimitados salvos na nuvem"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "Desbloqueie recursos de IA e nunca perca seu trabalho com uma conta Pro."
 
-#: src/lib/usePromptStore.ts:103
+#: src/lib/usePromptStore.ts:105
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "Desbloqueie Fluxogramas de IA ilimitados"
 
@@ -1752,7 +1768,7 @@ msgstr "Use este arquivo para organogramas, hierarquias e outras estruturas orga
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Use este arquivo para sequências, processos e fluxos de trabalho."
 
-#: src/components/AiToolbar.tsx:25
+#: src/components/AiToolbar.tsx:28
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "Use este modo para modificar e aprimorar seu fluxograma atual."
 
@@ -1779,6 +1795,10 @@ msgstr "Diagramas sem marca d'água"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "Marca d'água"
+
+#: src/components/Layout.tsx:43
+msgid "We are currently performing a database upgrade to improve our service."
+msgstr "Atualmente, estamos realizando uma atualização do banco de dados para melhorar nosso serviço."
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
@@ -1853,7 +1873,7 @@ msgstr "Você já é um usuário Pro. <0>Gerenciar Assinatura</0><1/>Tem pergunt
 msgid "You're doing great!"
 msgstr "Você está indo muito bem!"
 
-#: src/lib/usePromptStore.ts:100
+#: src/lib/usePromptStore.ts:102
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "Você usou todas as suas conversões de IA gratuitas. Faça upgrade para o Pro e tenha uso ilimitado de IA, temas personalizados, compartilhamento privado e muito mais. Continue criando incríveis fluxogramas sem esforço!"
 

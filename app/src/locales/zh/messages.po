@@ -115,7 +115,7 @@ msgstr "属性"
 msgid "August 2023"
 msgstr "2023 年 8 月"
 
-#: src/components/LoadTemplateDialog.tsx:100
+#: src/components/LoadTemplateDialog.tsx:99
 msgid "Back"
 msgstr "返回"
 
@@ -315,7 +315,7 @@ msgstr "继续"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "继续使用沙盒（每天重置，工作不会被保存）"
 
-#: src/components/AiToolbar.tsx:34
+#: src/components/AiToolbar.tsx:37
 #: src/components/ConvertOnPasteOverlay.tsx:90
 msgid "Convert"
 msgstr "转换"
@@ -573,7 +573,7 @@ msgstr "边在源节点行"
 msgid "Edges in Target Node Row"
 msgstr "边在目标节点行"
 
-#: src/components/AiToolbar.tsx:36
+#: src/components/AiToolbar.tsx:39
 msgid "Edit"
 msgstr "编辑"
 
@@ -616,8 +616,8 @@ msgstr "在下面輸入您的電子郵件地址，我們將發送給您一個重
 msgid "Equal To"
 msgstr "等于"
 
-#: src/components/LoadTemplateDialog.tsx:66
-#: src/components/LoadTemplateDialog.tsx:82
+#: src/components/LoadTemplateDialog.tsx:65
+#: src/components/LoadTemplateDialog.tsx:81
 msgid "Examples"
 msgstr "示例"
 
@@ -704,7 +704,7 @@ msgstr "一般"
 msgid "Get Pro Access Now"
 msgstr "立即获取专业访问权限"
 
-#: src/lib/usePromptStore.ts:99
+#: src/lib/usePromptStore.ts:101
 msgid "Get Unlimited AI Requests"
 msgstr "获得无限的AI请求"
 
@@ -840,7 +840,7 @@ msgstr "加入2000多位专业人士，升级他们的工作流程"
 msgid "Keep Things Private"
 msgstr "保持事物私密"
 
-#: src/components/AiToolbar.tsx:92
+#: src/components/AiToolbar.tsx:107
 msgid "Keep changes?"
 msgstr "保留更改吗？"
 
@@ -906,7 +906,7 @@ msgstr "链接"
 msgid "Link back"
 msgstr "链接回来"
 
-#: src/components/LoadTemplateDialog.tsx:148
+#: src/components/LoadTemplateDialog.tsx:147
 msgid "Load"
 msgstr "載入"
 
@@ -922,7 +922,7 @@ msgstr "加载文件"
 msgid "Load Files"
 msgstr "加载多个文件"
 
-#: src/components/LoadTemplateDialog.tsx:120
+#: src/components/LoadTemplateDialog.tsx:119
 msgid "Load default content"
 msgstr "載入預設內容"
 
@@ -930,7 +930,7 @@ msgstr "載入預設內容"
 msgid "Load from link?"
 msgstr "从链接加载？"
 
-#: src/components/LoadTemplateDialog.tsx:113
+#: src/components/LoadTemplateDialog.tsx:112
 msgid "Load layout and styles"
 msgstr "載入版面和樣式"
 
@@ -1091,6 +1091,10 @@ msgstr "一对一支持"
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
 
+#: src/lib/usePromptStore.ts:98
+msgid "Operation canceled"
+msgstr "操作已取消"
+
 #: src/lib/getDefaultText.ts:12
 msgid "Or maybe blue!"
 msgstr "或者也许是蓝色！"
@@ -1120,7 +1124,7 @@ msgstr "过期"
 msgid "Paste a document to convert it"
 msgstr "粘贴一个文档来转换它"
 
-#: src/components/AiToolbar.tsx:23
+#: src/components/AiToolbar.tsx:26
 msgid "Paste your document or outline here to convert it into an organized flowchart."
 msgstr "将您的文档或大纲粘贴到此处，将其转换为有组织的流程图。"
 
@@ -1158,7 +1162,7 @@ msgstr "处理数据"
 msgid "Processing..."
 msgstr "处理中..."
 
-#: src/components/AiToolbar.tsx:32
+#: src/components/AiToolbar.tsx:35
 msgid "Prompt"
 msgstr "提示"
 
@@ -1185,7 +1189,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "光栅导出（PNG，JPG）"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:107
+#: src/lib/usePromptStore.ts:109
 msgid "Rate limit exceeded. Please try again later."
 msgstr "速率限制超出。 请稍后再试。"
 
@@ -1317,6 +1321,14 @@ msgstr "保存到文件"
 msgid "Save your Work"
 msgstr "保存您的工作"
 
+#: src/components/Layout.tsx:38
+msgid "Scheduled Maintenance"
+msgstr "计划维护"
+
+#: src/components/Layout.tsx:114
+msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
+msgstr "计划的数据库维护将于11月8日星期五上午12:00东部时间进行。在此期间，服务可能暂时不可用。"
+
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "安全付款"
@@ -1352,8 +1364,8 @@ msgstr "使用<0>Google</0>登录"
 msgid "Sorry! This page is only available in English."
 msgstr "抱歉！此页面只有英语版。"
 
-#: src/lib/runAi.ts:124
-#: src/lib/runAi.ts:124
+#: src/lib/runAi.ts:120
+#: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "抱歉，转换文本为流程图时出错。 请稍后再试。"
 
@@ -1425,7 +1437,7 @@ msgstr "樣式類別"
 msgid "Style with classes"
 msgstr "用类别进行样式设置"
 
-#: src/components/AiToolbar.tsx:151
+#: src/components/AiToolbar.tsx:180
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:87
 #: src/components/ImportDataDialog.tsx:577
@@ -1530,6 +1542,10 @@ msgstr "用于分隔多个目标节点的分隔符"
 msgid "The possible shapes are:"
 msgstr "可能的形状是："
 
+#: src/components/Layout.tsx:49
+msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
+msgstr "服务将在东部时间上午1:00恢复在线。感谢您的耐心等待。"
+
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
 #: src/components/Tabs/EditorTabList.tsx:49
@@ -1565,7 +1581,7 @@ msgstr "这可能需要30秒到2分钟的时间，取决于您输入的长度。
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "这个沙盒非常适合实验，但请记住 - 它每天都会重置。立即升级，保留您当前的工作！"
 
-#: src/components/LoadTemplateDialog.tsx:134
+#: src/components/LoadTemplateDialog.tsx:133
 msgid "This will replace the current content."
 msgstr "這將取代目前的內容。"
 
@@ -1675,7 +1691,7 @@ msgstr "无限云端保存的流程图"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "解锁AI功能，通过专业账户永远不会丢失您的工作。"
 
-#: src/lib/usePromptStore.ts:103
+#: src/lib/usePromptStore.ts:105
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "解锁无限制使用AI流程图"
 
@@ -1752,7 +1768,7 @@ msgstr "使用此文件制作组织图、层次结构和其他组织结构。"
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "使用此文件进行顺序、流程和工作流程。"
 
-#: src/components/AiToolbar.tsx:25
+#: src/components/AiToolbar.tsx:28
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "使用此模式来修改和增强您当前的图表。"
 
@@ -1779,6 +1795,10 @@ msgstr "无水印图表"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "水印"
+
+#: src/components/Layout.tsx:43
+msgid "We are currently performing a database upgrade to improve our service."
+msgstr "我们目前正在进行数据库升级，以改善我们的服务。"
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
@@ -1853,7 +1873,7 @@ msgstr "您已经是专业用户。 <0>管理订阅</0><1/>有问题或功能请
 msgid "You're doing great!"
 msgstr "你做得很棒！"
 
-#: src/lib/usePromptStore.ts:100
+#: src/lib/usePromptStore.ts:102
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "您已经使用完了所有的免费AI转换。升级到专业版，享受无限的AI使用、定制主题、私人共享等功能。轻松地创建出令人惊叹的流程图吧！"
 
