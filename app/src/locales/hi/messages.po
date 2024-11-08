@@ -1321,14 +1321,6 @@ msgstr "फाइल में सेव करें"
 msgid "Save your Work"
 msgstr "अपनी कार्यवाही सुरक्षित करें"
 
-#: src/components/Layout.tsx:38
-msgid "Scheduled Maintenance"
-msgstr "निर्धारित रखरखाव"
-
-#: src/components/Layout.tsx:114
-msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
-msgstr "निर्धारित डेटाबेस रखरखाव शुक्रवार, 8 नवंबर को 12:00 बजे पूर्वी समय पर होगा। इस अवधि के दौरान सेवाएं अस्थायी रूप से अनुपलब्ध हो सकती हैं।"
-
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "सुरक्षित भुगतान"
@@ -1541,10 +1533,6 @@ msgstr "कई लक्ष्य नोड्स को अलग करने 
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
 msgstr "संभव आकृतियाँ हैं:"
-
-#: src/components/Layout.tsx:49
-msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
-msgstr "सेवा 1:00 बजे पूर्वी समय पर ऑनलाइन वापस होगी। आपके धैर्य के लिए धन्यवाद।"
 
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
@@ -1795,10 +1783,6 @@ msgstr "वॉटरमार्क-मुक्त आरेख"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "वॉटरमार्क"
-
-#: src/components/Layout.tsx:43
-msgid "We are currently performing a database upgrade to improve our service."
-msgstr "हम वर्तमान में हमारी सेवा को बेहतर बनाने के लिए डेटाबेस अपग्रेड कर रहे हैं।"
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"

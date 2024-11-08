@@ -1321,14 +1321,6 @@ msgstr "Save to File"
 msgid "Save your Work"
 msgstr "Save your Work"
 
-#: src/components/Layout.tsx:38
-msgid "Scheduled Maintenance"
-msgstr "Scheduled Maintenance"
-
-#: src/components/Layout.tsx:114
-msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
-msgstr "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
-
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "Secure payment"
@@ -1541,10 +1533,6 @@ msgstr "The delimiter used to separate multiple target nodes"
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
 msgstr "The possible shapes are:"
-
-#: src/components/Layout.tsx:49
-msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
-msgstr "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
 
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
@@ -1795,10 +1783,6 @@ msgstr "Watermark-Free Diagrams"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "Watermarks"
-
-#: src/components/Layout.tsx:43
-msgid "We are currently performing a database upgrade to improve our service."
-msgstr "We are currently performing a database upgrade to improve our service."
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
