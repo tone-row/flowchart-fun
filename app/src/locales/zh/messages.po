@@ -1321,14 +1321,6 @@ msgstr "保存到文件"
 msgid "Save your Work"
 msgstr "保存您的工作"
 
-#: src/components/Layout.tsx:38
-msgid "Scheduled Maintenance"
-msgstr "计划维护"
-
-#: src/components/Layout.tsx:114
-msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
-msgstr "计划的数据库维护将于11月8日星期五上午12:00东部时间进行。在此期间，服务可能暂时不可用。"
-
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "安全付款"
@@ -1541,10 +1533,6 @@ msgstr "用于分隔多个目标节点的分隔符"
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
 msgstr "可能的形状是："
-
-#: src/components/Layout.tsx:49
-msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
-msgstr "服务将在东部时间上午1:00恢复在线。感谢您的耐心等待。"
 
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
@@ -1795,10 +1783,6 @@ msgstr "无水印图表"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "水印"
-
-#: src/components/Layout.tsx:43
-msgid "We are currently performing a database upgrade to improve our service."
-msgstr "我们目前正在进行数据库升级，以改善我们的服务。"
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"

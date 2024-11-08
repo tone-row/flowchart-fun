@@ -1321,14 +1321,6 @@ msgstr "파일에 저장하기"
 msgid "Save your Work"
 msgstr "작업 저장"
 
-#: src/components/Layout.tsx:38
-msgid "Scheduled Maintenance"
-msgstr "예정된 유지보수"
-
-#: src/components/Layout.tsx:114
-msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
-msgstr "예정된 데이터베이스 유지보수는 11월 8일 금요일 오전 12시 미국 동부 시간에 진행될 예정입니다. 이 기간 동안 일시적으로 서비스를 이용할 수 없을 수 있습니다."
-
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "안전한 결제"
@@ -1541,10 +1533,6 @@ msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 �
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
 msgstr "가능한 모양은 다음과 같습니다:"
-
-#: src/components/Layout.tsx:49
-msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
-msgstr "서비스는 미국 동부 시간 오전 1시에 다시 온라인으로 돌아올 예정입니다. 이용에 불편을 드려 죄송합니다."
 
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
@@ -1795,10 +1783,6 @@ msgstr "워터마크 없는 다이어그램"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "물감"
-
-#: src/components/Layout.tsx:43
-msgid "We are currently performing a database upgrade to improve our service."
-msgstr "현재 우리는 서비스를 개선하기 위해 데이터베이스 업그레이드를 진행 중입니다."
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"

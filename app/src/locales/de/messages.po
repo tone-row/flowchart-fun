@@ -1321,14 +1321,6 @@ msgstr "In Datei speichern"
 msgid "Save your Work"
 msgstr "Speichern Sie Ihre Arbeit"
 
-#: src/components/Layout.tsx:38
-msgid "Scheduled Maintenance"
-msgstr "Geplante Wartung"
-
-#: src/components/Layout.tsx:114
-msgid "Scheduled database maintenance will occur on Friday, November 8th at 12:00 AM Eastern Time. Services may be temporarily unavailable during this period."
-msgstr "Geplante Datenbankwartung wird am Freitag, den 8. November um 12:00 Uhr Eastern Time stattfinden. Während dieser Zeit können die Dienste vorübergehend nicht verfügbar sein."
-
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "Sichere Zahlung"
@@ -1541,10 +1533,6 @@ msgstr "Der Trennzeichen, das verwendet wird, um mehrere Zielknoten zu trennen"
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
 msgstr "Die möglichen Formen sind:"
-
-#: src/components/Layout.tsx:49
-msgid "The service will be back online at 1:00 AM Eastern Time. Thank you for your patience."
-msgstr "Der Service wird um 1:00 Uhr Eastern Time wieder online sein. Vielen Dank für Ihre Geduld."
 
 #: src/components/Tabs/EditorTabList.tsx:38
 #: src/components/Tabs/EditorTabList.tsx:39
@@ -1795,10 +1783,6 @@ msgstr "Wasserzeichenfreie Diagramme"
 #: src/pages/Pricing.tsx:54
 msgid "Watermarks"
 msgstr "Wasserzeichen"
-
-#: src/components/Layout.tsx:43
-msgid "We are currently performing a database upgrade to improve our service."
-msgstr "Wir führen derzeit ein Datenbank-Upgrade durch, um unseren Service zu verbessern."
 
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
