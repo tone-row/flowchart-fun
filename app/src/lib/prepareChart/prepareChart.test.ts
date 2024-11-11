@@ -1,8 +1,6 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-import { cytoscapeStyle as style } from "../themes/original";
-import { cytoscapeStyle as darkStyle } from "../themes/original-dark";
 import { theme, cytoscapeStyle } from "../templates/default-template";
 import { initialDoc } from "../useDoc";
 import { prepareChart } from "./prepareChart";
