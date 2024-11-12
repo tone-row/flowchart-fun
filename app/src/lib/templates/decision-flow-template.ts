@@ -1,57 +1,43 @@
 import { FFTheme } from "../FFTheme";
 
 export const content = `
-Should we launch the product? .decision
-  Yes: High demand
-    Prepare marketing campaign .action
-      Set budget .input
-      Create ads .input
-    Scale production .action
-      Hire staff .input
-      Increase inventory .input
-  No: More research needed
-    Conduct market analysis .action.color_blue
-      Positive results: Proceed
-        (Should we launch the product?)
-      Negative results: Abandon
-        End project .terminal.color_red
-    Improve product .action.color_green
-      Minor changes
-        (Should we launch the product?)
-      Major overhaul
-        Seek additional funding .action.color_orange
-          Approved: Continue
-            (Should we launch the product?)
-          Denied: Abandon
-            (End project)
+Start
+  Should we launch the product? .decision
+    Yes: Market ready
+      Launch campaign .action
+        Set budget .input
+          Launch .terminal.color_blue
+    No: Need improvements
+      Improve product .action.color_green
+        (Market ready)
 `;
 
 export const theme: FFTheme = {
-  layoutName: "layered",
+  layoutName: "mrtree",
   direction: "DOWN",
-  spacingFactor: 1.25,
+  spacingFactor: 1.2,
 
-  background: "#f2e9e4",
+  background: "#ffffff",
   fontFamily: "Roboto",
-  nodeBackground: "#4a4e69",
-  nodeForeground: "#ffffff",
-  borderWidth: 0,
-  edgeColor: "#22223b",
+  nodeBackground: "#f8fafc",
+  nodeForeground: "#1e293b",
+  borderWidth: 2,
+  edgeColor: "#64748b",
   padding: 16,
-  borderColor: "#ced4da",
+  borderColor: "#64748b",
   textMaxWidth: 150,
   lineHeight: 1.3,
-  textMarginY: 0,
+  textMarginY: 1.75,
   useFixedHeight: false,
   shape: "rectangle",
-  curveStyle: "round-taxi",
+  curveStyle: "bezier",
   edgeWidth: 2,
   sourceArrowShape: "none",
   targetArrowShape: "triangle",
   sourceDistanceFromNode: 0,
-  targetDistanceFromNode: 10,
-  arrowScale: 1.2,
-  edgeTextSize: 12,
+  targetDistanceFromNode: 0,
+  arrowScale: 1.75,
+  edgeTextSize: 0.9,
   rotateEdgeLabel: false,
   fixedHeight: 100,
 };
@@ -59,92 +45,48 @@ export const theme: FFTheme = {
 export const cytoscapeStyle = `
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
-node {
-  font-weight: 500;
-  text-halign: center;
-  text-valign: center;
-  color: #ffffff;
-  background-color: #4a4e69;
-  border-width: 0;
-  font-size: 14px;
-  text-wrap: wrap;
-  text-max-width: 130px;
-  padding: 12px;
-  width: 160px;
-  height: 80px;
-  text-outline-color: #22223b;
-  text-outline-width: 1px;
-  text-outline-opacity: 0.5;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-edge {
-  taxi-direction: downward;
-  target-arrow-shape: triangle;
-  target-arrow-color: #22223b;
-  line-color: #22223b;
-  width: 2px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #22223b;
-  text-background-color: #f2e9e4;
-  text-background-opacity: 1;
-  text-background-padding: 3px;
-  curve-style: unbundled-bezier;
-  control-point-distances: 0 -20 -20 20 0;
-  control-point-weights: 0.25 0.5 0.75;
-}
-
 .decision {
   shape: diamond;
-  background-color: #f72585;
-  width: 160px;
-  height: 160px;
+  background-color: #f1f5f9;
+  height: 150px;
 }
 
 .action {
   shape: rectangle;
-  background-color: #4361ee;
+  background-color: #bfdbfe;
+  border-color: #3b82f6;
 }
 
 .input {
   shape: parallelogram;
-  background-color: #4cc9f0;
-  width: 140px;
-  height: 70px;
+  background-color: #ddd6fe;
+  border-color: #7c3aed;
 }
 
 .terminal {
   shape: ellipse;
-  background-color: #7209b7;
-  width: 140px;
-  height: 70px;
-}
-
-.recurse {
-  shape: rectangle;
-  background-color: #4895ef;
-  border-width: 3px;
-  border-style: dashed;
-  border-color: #f72585;
-  width: 140px;
-  height: 70px;
+  background-color: #fecaca;
+  border-color: #dc2626;
 }
 
 .color_blue {
-  background-color: #4cc9f0;
+  background-color: #bfdbfe;
+  border-color: #3b82f6;
 }
 
 .color_green {
-  background-color: #52b788;
+  background-color: #bbf7d0;
+  border-color: #16a34a;
 }
 
 .color_red {
-  background-color: #e63946;
+  background-color: #fecaca;
+  border-color: #dc2626;
 }
 
 .color_orange {
-  background-color: #fb8500;
+  background-color: #fed7aa;
+  border-color: #f97316;
 }
 
 @keyframes pulse {
