@@ -465,3 +465,16 @@ body.dark .pricing-highlights {
     calc(100% - 64px) 100%
   );
 }
+
+.minimal-scrollbar::-webkit-scrollbar {
+  @apply w-2;
+}
+.minimal-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-800 rounded-full cursor-pointer;
+}
+.minimal-scrollbar:hover::-webkit-scrollbar-thumb {
+  @apply bg-neutral-400 dark:bg-neutral-700;
+}
+.minimal-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}

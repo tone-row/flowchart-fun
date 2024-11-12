@@ -86,6 +86,10 @@ module.exports = {
           from: { transform: "translateY(100%)" },
           to: { transform: "translateY(0)" },
         },
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
         contentShow: {
           from: { opacity: 0, transform: "translate(-50%, -48%) scale(0.96)" },
           to: { opacity: 1, transform: "translate(-50%, -50%) scale(1)" },
@@ -135,6 +139,7 @@ module.exports = {
       },
       animation: {
         overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        fadeIn: "fadeIn 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         contentShow: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideUpAndFade: "slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideRightAndFade:

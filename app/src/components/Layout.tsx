@@ -1,5 +1,5 @@
 import cx from "classnames";
-import { X, Wrench } from "phosphor-react";
+import { X } from "phosphor-react";
 import { lazy, memo, ReactNode, Suspense, useState } from "react";
 
 import { useFullscreen, useIsEditorView } from "../lib/hooks";
@@ -9,9 +9,6 @@ import { Header } from "./Header";
 import styles from "./Layout.module.css";
 import Loading from "./Loading";
 import { VersionCheck } from "./VersionCheck";
-import * as Dialog from "@radix-ui/react-dialog";
-import { Overlay, Content } from "../ui/Dialog";
-import { Trans, t } from "@lingui/macro";
 const PaywallModal = lazy(() => import("./PaywallModal"));
 
 const Layout = memo(({ children }: { children: ReactNode }) => {
