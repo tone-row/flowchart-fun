@@ -150,23 +150,26 @@ export function LoadTemplateDialog() {
                 </div>
               </div>
             ) : (
-              <div className="h-full overflow-y-auto">
+              <div className="h-full overflow-y-auto minimal-scrollbar">
                 <div
-                  className="grid gap-1 grid-cols-2 md:grid-cols-3"
+                  className="grid gap-2 grid-cols-2 md:grid-cols-3"
                   aria-label="Templates"
                 >
                   {templates.map((template) => (
                     <button
                       key={template}
                       onClick={() => setTemplate(template)}
-                      className="overflow-hidden shadow-sm opacity-70 dark:opacity-90 hover:opacity-100 aspect-square"
+                      className="overflow-hidden aspect-square relative group rounded-md"
                     >
                       <img
                         key={template}
                         src={`/template-screenshots/thumb_${template}.png`}
-                        className="rounded object-contain object-center w-full h-full"
+                        className="object-contain object-center w-full h-full"
                         alt={template}
                       />
+                      <div className="group-hover:opacity-100 opacity-0 transition-opacity duration-200 absolute bottom-0 left-0 right-0 bg-black/80 flex items-center justify-center text-white py-2 text-xs font-mono">
+                        {template}
+                      </div>
                     </button>
                   ))}
                 </div>

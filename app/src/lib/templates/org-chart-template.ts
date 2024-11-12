@@ -1,21 +1,30 @@
 import { FFTheme } from "../FFTheme";
 
 export const content = `
-Saraswati Sharma .size_lg.color_black\n  Robert Wilson\n    Sarah Thompson\n    David Brown\n      Jennifer Lee\n        Andrew Miller .color_green\n        Carrie Richards .color_green\n          Terry Peralta .color_green\n  Lisa Anderson .color_purple\n    Camille Mitchell .color_purple\n      Christopher White .color_purple\n
+Sarah Chen .size_lg.color_black
+  Robert Wilson .color_blue
+    David Brown
+      Jennifer Lee
+        Andrew Miller .color_green
+        Carrie Richards .color_green
+          Terry Peralta .color_green
+  Lisa Anderson .color_purple
+    Camille Mitchell .color_purple
+      Christopher White .color_purple
 `;
 
 export const theme: FFTheme = {
   layoutName: "dagre",
   direction: "DOWN",
-  spacingFactor: 0.96,
+  spacingFactor: 1.15,
   lineHeight: 1.4,
   shape: "roundrectangle",
   background: "#ffffff",
   textMaxWidth: 142,
   padding: 16,
-  fontFamily: "Overpass",
+  fontFamily: "IBM Plex Sans",
   curveStyle: "round-taxi",
-  textMarginY: 2.5,
+  textMarginY: 1,
   borderWidth: 2,
   edgeTextSize: 1,
   edgeWidth: 2,
@@ -23,15 +32,69 @@ export const theme: FFTheme = {
   fixedHeight: 60,
   sourceArrowShape: "none",
   targetArrowShape: "none",
-  edgeColor: "#b6b6b6",
-  borderColor: "#dadada",
-  nodeBackground: "#f4f4f4",
-  nodeForeground: "#2a2a2a",
+  edgeColor: "#94a3b8",
+  borderColor: "#cbd5e1",
+  nodeBackground: "#ffffff",
+  nodeForeground: "#1e293b",
   sourceDistanceFromNode: 0,
   targetDistanceFromNode: 0,
   arrowScale: 1,
   rotateEdgeLabel: false,
 };
 
-export const cytoscapeStyle =
-  "edge {taxi-radius: 40px;}\n\n$red: #ffd1cb;\n$orange: #ff8e16;\n$yellow: #fff7d5;\n$green: #bcfcff;\n$blue: #c1e1f8;\n$pink: #ffe7f7;\n$purple: #eec6ff;\n$grey: #cacaca;\n\n:childless {\n  font-weight: 300;\n}\n\n:childless.color_red {\n  background-color: $red;\n  border-color: #b38d88;\n}\n:childless.color_yellow {\n  background-color: $yellow;\n  border-color: #c8bd84;\n}\n:childless.color_green {\n  background-color: $green;\n  border-color: #60c8bd;\n}\n:childless.color_blue {\n  background-color: $blue;\n  border-color: #89add1;\n}\n:childless.color_purple {\n  background-color: $purple;\n  border-color: #aa82ba;\n}\n:childless.color_pink {\n  background-color: $pink;\n  border-color: #c5aacf;\n}\n:childless.color_black {\n  background-color: black;\n  border-color: black;\n  color: white;\n}\n\n:childless.size_lg {\n  font-size: 24;\n  padding: 18;\n  width: 250;\n  text-max-width: 218;\n  text-margin-y: 3;\n}";
+export const cytoscapeStyle = `
+edge {
+  taxi-radius: 40px;
+}
+
+$red: #fecaca;
+$orange: #fed7aa; 
+$yellow: #fef08a;
+$green: #bbf7d0;
+$blue: #bfdbfe;
+$purple: #ddd6fe;
+$grey: #f1f5f9;
+
+:childless {
+  font-weight: 400;
+  text-outline-width: 0;
+  text-outline-color: transparent;
+  shadow-blur: 4;
+  shadow-color: #0000000d;
+  shadow-offset-x: 0;
+  shadow-offset-y: 2;
+}
+
+:childless.color_red {
+  background-color: $red;
+  border-color: #dc2626;
+}
+:childless.color_yellow {
+  background-color: $yellow;
+  border-color: #ca8a04;
+}
+:childless.color_green {
+  background-color: $green;
+  border-color: #16a34a;
+}
+:childless.color_blue {
+  background-color: $blue;
+  border-color: #2563eb;
+}
+:childless.color_purple {
+  background-color: $purple;
+  border-color: #7c3aed;
+}
+:childless.color_black {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+:childless.size_lg {
+  font-size: 24;
+  padding: 18;
+  width: 250;
+  text-max-width: 218;
+  text-margin-y: 2;
+}`;

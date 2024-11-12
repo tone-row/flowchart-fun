@@ -3,7 +3,6 @@ import fs from "fs";
 import { chromium } from "playwright";
 import { exec } from "child_process";
 import util from "util";
-import { writeFile } from "fs/promises";
 
 const execAsync = util.promisify(exec);
 
