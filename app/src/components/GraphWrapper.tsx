@@ -7,6 +7,7 @@ import styles from "./GraphWrapper.module.css";
 import Loading from "./Loading";
 import TextResizer from "./TextResizer";
 import classNames from "classnames";
+import { GraphTip } from "./GraphTip";
 
 export default function GraphWrapper({
   children,
@@ -36,6 +37,7 @@ export default function GraphWrapper({
           >
             {children}
             <GraphFloatingMenu />
+            <GraphTip />
           </Box>
         )}
         <TextResizer />
