@@ -84,8 +84,22 @@ const Form = createForm<{
       elements: [
         {
           id: "layoutName",
-          title: () => <Graph className="w-5 h-5" />,
-          label: t`Layout`,
+          title: () => (
+            <div className="grid gap-1">
+              <div className="flex items-center gap-2">
+                <Graph className="w-5 h-5" />
+                <span className="font-semibold">
+                  <Trans>Layout Algorithm</Trans>
+                </span>
+              </div>
+              <span className="text-xs text-neutral-500 font-normal">
+                <Trans>
+                  Choose how nodes are automatically arranged in your flowchart
+                </Trans>
+              </span>
+            </div>
+          ),
+          label: t`Layout Algorithm`,
           control: "select",
           value(data) {
             return data.theme.layoutName;
@@ -109,7 +123,18 @@ const Form = createForm<{
           ],
         },
         {
-          title: () => t`Direction`,
+          title: () => (
+            <div className="grid gap-1">
+              <span className="font-semibold">
+                <Trans>Direction</Trans>
+              </span>
+              <span className="text-xs text-neutral-500 font-normal">
+                <Trans>
+                  Controls the flow direction of hierarchical layouts
+                </Trans>
+              </span>
+            </div>
+          ),
           id: "klayDirection",
           label: t`Direction`,
           control: "select",
