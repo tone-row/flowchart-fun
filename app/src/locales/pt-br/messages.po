@@ -861,11 +861,11 @@ msgid "Language"
 msgstr "Idioma"
 
 #: src/components/Tabs/ThemeTab.tsx:79
+#: src/components/Tabs/ThemeTab.tsx:102
 msgid "Layout"
 msgstr "Layout"
 
 #: src/components/Tabs/ThemeTab.tsx:92
-#: src/components/Tabs/ThemeTab.tsx:102
 msgid "Layout Algorithm"
 msgstr "Algoritmo de layout"
 
