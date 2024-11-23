@@ -99,7 +99,7 @@ const Form = createForm<{
               </span>
             </div>
           ),
-          label: t`Layout Algorithm`,
+          label: t`Layout`,
           control: "select",
           value(data) {
             return data.theme.layoutName;
