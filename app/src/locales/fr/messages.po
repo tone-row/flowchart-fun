@@ -17,7 +17,7 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 Organigramme temporaire"
 
-#: src/components/Tabs/ThemeTab.tsx:611
+#: src/components/Tabs/ThemeTab.tsx:636
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>Seul le CSS personnalisé</0> est activé. Seuls les paramètres de mise en page et avancés seront appliqués."
 
@@ -67,7 +67,7 @@ msgstr "Ajoutez un backslash (<0>\\</0>) avant tout caractère spécial: <1>(</1
 msgid "Add some steps"
 msgstr "Ajouter des étapes"
 
-#: src/components/Tabs/ThemeTab.tsx:545
+#: src/components/Tabs/ThemeTab.tsx:570
 msgid "Advanced"
 msgstr "Avancé "
 
@@ -102,8 +102,8 @@ msgstr "Une erreur s'est produite. Essayez de l'envoyer à nouveau ou bien envoy
 msgid "Appearance"
 msgstr "Thème"
 
-#: src/components/Tabs/ThemeTab.tsx:499
-#: src/components/Tabs/ThemeTab.tsx:500
+#: src/components/Tabs/ThemeTab.tsx:524
+#: src/components/Tabs/ThemeTab.tsx:525
 msgid "Arrow Size"
 msgstr "Taille de la flèche"
 
@@ -123,10 +123,10 @@ msgstr "Retour"
 msgid "Back To Editor"
 msgstr "Retour à l'éditeur"
 
-#: src/components/Tabs/ThemeTab.tsx:162
-#: src/components/Tabs/ThemeTab.tsx:163
-#: src/components/Tabs/ThemeTab.tsx:214
-#: src/components/Tabs/ThemeTab.tsx:217
+#: src/components/Tabs/ThemeTab.tsx:187
+#: src/components/Tabs/ThemeTab.tsx:188
+#: src/components/Tabs/ThemeTab.tsx:239
+#: src/components/Tabs/ThemeTab.tsx:242
 msgid "Background Color"
 msgstr "Couleur de fond"
 
@@ -165,13 +165,13 @@ msgstr "Blog"
 msgid "Book a Meeting"
 msgstr "Réserver une réunion"
 
-#: src/components/Tabs/ThemeTab.tsx:268
-#: src/components/Tabs/ThemeTab.tsx:269
+#: src/components/Tabs/ThemeTab.tsx:293
+#: src/components/Tabs/ThemeTab.tsx:294
 msgid "Border Color"
 msgstr "Couleur de bordure"
 
-#: src/components/Tabs/ThemeTab.tsx:253
-#: src/components/Tabs/ThemeTab.tsx:254
+#: src/components/Tabs/ThemeTab.tsx:278
+#: src/components/Tabs/ThemeTab.tsx:279
 msgid "Border Width"
 msgstr "Largeur de bordure"
 
@@ -241,6 +241,10 @@ msgstr "Choisir un modèle"
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Choisissez parmi une variété de formes de flèches pour la source et la cible d'un bord. Les formes incluent triangle, triangle-tee, cercle-triangle, triangle-croix, triangle-backcurve, vee, tee, carré, cercle, diamant, chevron, aucun."
 
+#: src/components/Tabs/ThemeTab.tsx:96
+msgid "Choose how nodes are automatically arranged in your flowchart"
+msgstr "Choisissez comment les nœuds sont automatiquement disposés dans votre organigramme"
+
 #: src/lib/graphOptions.ts:19
 msgid "Circle"
 msgstr "Cercle"
@@ -265,8 +269,8 @@ msgstr "Cloner"
 msgid "Close"
 msgstr "Fermer"
 
-#: src/components/Tabs/ThemeTab.tsx:398
-#: src/components/Tabs/ThemeTab.tsx:399
+#: src/components/Tabs/ThemeTab.tsx:423
+#: src/components/Tabs/ThemeTab.tsx:424
 msgid "Color"
 msgstr "Couleur"
 
@@ -314,6 +318,10 @@ msgstr "Continuer"
 #: src/components/SandboxWarning.tsx:102
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "Continuer dans le bac à sable (Réinitialisé quotidiennement, travail non sauvegardé)"
+
+#: src/components/Tabs/ThemeTab.tsx:132
+msgid "Controls the flow direction of hierarchical layouts"
+msgstr "Contrôle la direction du flux des mises en page hiérarchiques"
 
 #: src/components/AiToolbar.tsx:37
 #: src/components/ConvertOnPasteOverlay.tsx:90
@@ -402,12 +410,12 @@ msgstr "Créer avec l'intelligence artificielle"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Créer une arête entre deux nœuds est fait en indentant le second nœud sous le premier"
 
-#: src/components/Tabs/ThemeTab.tsx:366
+#: src/components/Tabs/ThemeTab.tsx:391
 msgid "Curve Style"
 msgstr "Style de courbe"
 
-#: src/components/Tabs/ThemeTab.tsx:553
-#: src/components/Tabs/ThemeTab.tsx:554
+#: src/components/Tabs/ThemeTab.tsx:578
+#: src/components/Tabs/ThemeTab.tsx:579
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
 
@@ -453,8 +461,8 @@ msgstr "Concevoir un organigramme du cycle de développement de logiciels pour u
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "Élaborer un arbre de décision pour un PDG afin d'évaluer de nouvelles opportunités de marché potentielles"
 
-#: src/components/Tabs/ThemeTab.tsx:112
-#: src/components/Tabs/ThemeTab.tsx:114
+#: src/components/Tabs/ThemeTab.tsx:129
+#: src/components/Tabs/ThemeTab.tsx:139
 msgid "Direction"
 msgstr "Direction"
 
@@ -526,8 +534,8 @@ msgstr "Colonne d'étiquette Edge"
 msgid "Edge Style"
 msgstr "Style Edge"
 
-#: src/components/Tabs/ThemeTab.tsx:514
-#: src/components/Tabs/ThemeTab.tsx:515
+#: src/components/Tabs/ThemeTab.tsx:539
+#: src/components/Tabs/ThemeTab.tsx:540
 msgid "Edge Text Size"
 msgstr "Taille du texte de bord"
 
@@ -537,7 +545,7 @@ msgstr "Indentation manquante du bord"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:359
+#: src/components/Tabs/ThemeTab.tsx:384
 msgid "Edges"
 msgstr "Bords"
 
@@ -664,7 +672,7 @@ msgstr "Commentaire"
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "N'hésitez pas à explorer et à nous contacter via la page <0>Commentaires</0> si vous avez des inquiétudes."
 
-#: src/components/Tabs/ThemeTab.tsx:337
+#: src/components/Tabs/ThemeTab.tsx:362
 msgid "Fixed Node Height"
 msgstr "Hauteur de nœud fixe"
 
@@ -676,7 +684,7 @@ msgstr "Flowchart Fun Pro vous offre des organigrammes illimités, des collabora
 msgid "Follow Us on Twitter"
 msgstr "Suivez-nous sur Twitter"
 
-#: src/components/Tabs/ThemeTab.tsx:175
+#: src/components/Tabs/ThemeTab.tsx:200
 msgid "Font Family"
 msgstr "Famille de polices"
 
@@ -696,7 +704,7 @@ msgstr "Gratuit "
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#: src/components/Tabs/ThemeTab.tsx:155
+#: src/components/Tabs/ThemeTab.tsx:180
 msgid "General"
 msgstr "Général "
 
@@ -853,9 +861,13 @@ msgid "Language"
 msgstr "Langue"
 
 #: src/components/Tabs/ThemeTab.tsx:79
-#: src/components/Tabs/ThemeTab.tsx:88
 msgid "Layout"
 msgstr "Disposition "
+
+#: src/components/Tabs/ThemeTab.tsx:92
+#: src/components/Tabs/ThemeTab.tsx:102
+msgid "Layout Algorithm"
+msgstr "Algorithme de mise en page"
 
 #: src/components/GraphFloatingMenu.tsx:116
 #: src/components/GraphFloatingMenu.tsx:118
@@ -1046,8 +1058,8 @@ msgstr "Identifiant de nœud, classes, attributs"
 msgid "Node Label"
 msgstr "Étiquette de nœud"
 
-#: src/components/Tabs/ThemeTab.tsx:197
-#: src/components/Tabs/ThemeTab.tsx:199
+#: src/components/Tabs/ThemeTab.tsx:222
+#: src/components/Tabs/ThemeTab.tsx:224
 msgid "Node Shape"
 msgstr "Forme de nœud"
 
@@ -1055,7 +1067,7 @@ msgstr "Forme de nœud"
 msgid "Node Shapes"
 msgstr "Formes de nœud"
 
-#: src/components/Tabs/ThemeTab.tsx:190
+#: src/components/Tabs/ThemeTab.tsx:215
 msgid "Nodes"
 msgstr "Nœuds"
 
@@ -1103,8 +1115,8 @@ msgstr "Ou peut-être bleu !"
 msgid "Organization Chart"
 msgstr "Organigramme"
 
-#: src/components/Tabs/ThemeTab.tsx:238
-#: src/components/Tabs/ThemeTab.tsx:239
+#: src/components/Tabs/ThemeTab.tsx:263
+#: src/components/Tabs/ThemeTab.tsx:264
 msgid "Padding"
 msgstr "Rembourrage"
 
@@ -1287,8 +1299,8 @@ msgstr "Cliquez avec le bouton droit sur les nœuds pour voir les options"
 msgid "Roadmap"
 msgstr "Roadmap"
 
-#: src/components/Tabs/ThemeTab.tsx:529
-#: src/components/Tabs/ThemeTab.tsx:530
+#: src/components/Tabs/ThemeTab.tsx:554
+#: src/components/Tabs/ThemeTab.tsx:555
 msgid "Rotate Label"
 msgstr "Faire pivoter l'étiquette"
 
@@ -1325,7 +1337,7 @@ msgstr "Enregistrer votre travail"
 msgid "Secure payment"
 msgstr "Paiement sécurisé"
 
-#: src/components/Tabs/ThemeTab.tsx:326
+#: src/components/Tabs/ThemeTab.tsx:351
 msgid "Set Fixed Node Height"
 msgstr "Définir une hauteur de nœud fixe"
 
@@ -1361,8 +1373,8 @@ msgstr "Désolé ! Cette page n'est disponible qu'en anglais."
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Désolé, une erreur s'est produite lors de la conversion du texte en diagramme. Veuillez réessayer plus tard."
 
-#: src/components/Tabs/ThemeTab.tsx:419
-#: src/components/Tabs/ThemeTab.tsx:420
+#: src/components/Tabs/ThemeTab.tsx:444
+#: src/components/Tabs/ThemeTab.tsx:445
 msgid "Source Arrow Shape"
 msgstr "Forme de la flèche source"
 
@@ -1375,8 +1387,8 @@ msgstr "Colonne source"
 msgid "Source Delimiter"
 msgstr "Délimiteur source"
 
-#: src/components/Tabs/ThemeTab.tsx:461
-#: src/components/Tabs/ThemeTab.tsx:462
+#: src/components/Tabs/ThemeTab.tsx:486
+#: src/components/Tabs/ThemeTab.tsx:487
 msgid "Source Distance From Node"
 msgstr "Distance de la source du nœud"
 
@@ -1384,8 +1396,8 @@ msgstr "Distance de la source du nœud"
 msgid "Source/Target Arrow Shape"
 msgstr "Forme de flèche source / cible"
 
-#: src/components/Tabs/ThemeTab.tsx:136
-#: src/components/Tabs/ThemeTab.tsx:138
+#: src/components/Tabs/ThemeTab.tsx:161
+#: src/components/Tabs/ThemeTab.tsx:163
 msgid "Spacing"
 msgstr "Espacement"
 
@@ -1452,8 +1464,8 @@ msgstr "Abonnement réussi !"
 msgid "Subscription will end"
 msgstr "L'abonnement prendra fin"
 
-#: src/components/Tabs/ThemeTab.tsx:440
-#: src/components/Tabs/ThemeTab.tsx:441
+#: src/components/Tabs/ThemeTab.tsx:465
+#: src/components/Tabs/ThemeTab.tsx:466
 msgid "Target Arrow Shape"
 msgstr "Forme de la flèche cible"
 
@@ -1466,31 +1478,31 @@ msgstr "Colonne cible"
 msgid "Target Delimiter"
 msgstr "Délimiteur cible"
 
-#: src/components/Tabs/ThemeTab.tsx:479
-#: src/components/Tabs/ThemeTab.tsx:480
+#: src/components/Tabs/ThemeTab.tsx:504
+#: src/components/Tabs/ThemeTab.tsx:505
 msgid "Target Distance From Node"
 msgstr "Distance cible du nœud"
 
-#: src/components/Tabs/ThemeTab.tsx:226
-#: src/components/Tabs/ThemeTab.tsx:228
+#: src/components/Tabs/ThemeTab.tsx:251
+#: src/components/Tabs/ThemeTab.tsx:253
 msgid "Text Color"
 msgstr "Couleur du texte"
 
-#: src/components/Tabs/ThemeTab.tsx:325
+#: src/components/Tabs/ThemeTab.tsx:350
 msgid "Text Horizontal Offset"
 msgstr "Décalage horizontal du texte"
 
-#: src/components/Tabs/ThemeTab.tsx:295
-#: src/components/Tabs/ThemeTab.tsx:296
+#: src/components/Tabs/ThemeTab.tsx:320
+#: src/components/Tabs/ThemeTab.tsx:321
 msgid "Text Leading"
 msgstr "Texte principal"
 
-#: src/components/Tabs/ThemeTab.tsx:280
+#: src/components/Tabs/ThemeTab.tsx:305
 msgid "Text Max Width"
 msgstr "Largeur maximale du texte"
 
-#: src/components/Tabs/ThemeTab.tsx:310
-#: src/components/Tabs/ThemeTab.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:335
+#: src/components/Tabs/ThemeTab.tsx:336
 msgid "Text Vertical Offset"
 msgstr "Décalage vertical du texte"
 
@@ -1715,8 +1727,8 @@ msgstr "Passer à la version Pro pour 2 $ par mois"
 msgid "Upload your File"
 msgstr "Téléchargez votre fichier"
 
-#: src/components/Tabs/ThemeTab.tsx:570
-#: src/components/Tabs/ThemeTab.tsx:571
+#: src/components/Tabs/ThemeTab.tsx:595
+#: src/components/Tabs/ThemeTab.tsx:596
 msgid "Use Custom CSS Only"
 msgstr "Utiliser uniquement du CSS personnalisé"
 
@@ -1744,7 +1756,7 @@ msgstr "Utilisez les attributs <0>w</0> et <1>h</1> pour définir explicitement 
 msgid "Use the customer portal to change your billing information."
 msgstr "Utilisez le portail client pour modifier vos informations de facturation."
 
-#: src/components/Tabs/ThemeTab.tsx:604
+#: src/components/Tabs/ThemeTab.tsx:629
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Utilisez ces paramètres pour adapter l'apparence et le comportement de vos diagrammes de flux"
 
@@ -1796,8 +1808,8 @@ msgstr "Quelle est la prochaine étape ?"
 msgid "What's this?"
 msgstr "Qu'est-ce que c'est?"
 
-#: src/components/Tabs/ThemeTab.tsx:383
-#: src/components/Tabs/ThemeTab.tsx:384
+#: src/components/Tabs/ThemeTab.tsx:408
+#: src/components/Tabs/ThemeTab.tsx:409
 msgid "Width"
 msgstr "Largeur"
 
