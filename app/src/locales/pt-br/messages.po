@@ -1166,6 +1166,10 @@ msgstr "Suporte prioritário um a um"
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
+#: src/components/GraphTip.tsx:32
+msgid "Pro tip: Right-click any node to customize its shape and color"
+msgstr "Dica profissional: Clique com o botão direito em qualquer nó para personalizar sua forma e cor."
+
 #: src/components/ImportDataDialog.tsx:265
 msgid "Processing Data"
 msgstr "Processando Dados"

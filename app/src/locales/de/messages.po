@@ -1166,6 +1166,10 @@ msgstr "Priorisierte Einzelunterstützung"
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
 
+#: src/components/GraphTip.tsx:32
+msgid "Pro tip: Right-click any node to customize its shape and color"
+msgstr "Pro-Tipp: Klicken Sie mit der rechten Maustaste auf einen Knoten, um seine Form und Farbe anzupassen."
+
 #: src/components/ImportDataDialog.tsx:265
 msgid "Processing Data"
 msgstr "Datenverarbeitung"

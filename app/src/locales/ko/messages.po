@@ -1166,6 +1166,10 @@ msgstr "우선순위 일대일 지원"
 msgid "Privacy Policy"
 msgstr "개인정보보호정책"
 
+#: src/components/GraphTip.tsx:32
+msgid "Pro tip: Right-click any node to customize its shape and color"
+msgstr "팁: 노드를 우클릭하여 모양과 색상을 사용자 정의할 수 있습니다."
+
 #: src/components/ImportDataDialog.tsx:265
 msgid "Processing Data"
 msgstr "데이터 처리"

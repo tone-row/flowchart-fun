@@ -1166,6 +1166,10 @@ msgstr "优先一对一支持"
 msgid "Privacy Policy"
 msgstr "隱私政策"
 
+#: src/components/GraphTip.tsx:32
+msgid "Pro tip: Right-click any node to customize its shape and color"
+msgstr "专业提示：右键点击任何节点可自定义其形状和颜色"
+
 #: src/components/ImportDataDialog.tsx:265
 msgid "Processing Data"
 msgstr "处理数据"
