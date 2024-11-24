@@ -478,3 +478,10 @@ body.dark .pricing-highlights {
 .minimal-scrollbar::-webkit-scrollbar-track {
   @apply bg-transparent;
 }
+
+/** Remove focusvisible states of header links */
+.header-btn,
+.header-btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
