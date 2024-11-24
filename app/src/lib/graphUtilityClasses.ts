@@ -66,6 +66,14 @@ export const childlessShapeClasses: StylesheetCSS[] = shapes.map((shape) => ({
   },
 }));
 
+childlessShapeClasses.push({
+  selector: ":childless.shape_iso-trapezoid",
+  css: {
+    shape: "polygon",
+    "shape-polygon-points": "-1 1  1 1  0.5 -1  -0.5 -1",
+  },
+});
+
 const arrowSuffixes = [
   "triangle",
   "triangle-tee",
