@@ -20,7 +20,6 @@ export function GraphTip() {
     <div
       className={`
         absolute top-4 left-4 
-        max-w-[200px]
         text-xs text-gray-500/60 dark:text-gray-400/60
         transition-opacity duration-1000
         ${isFading ? "opacity-0" : "opacity-100"}

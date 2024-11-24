@@ -75,19 +75,24 @@ export const Header = memo(function SharedHeader() {
   return (
     <>
       <NavigationMenu.Root asChild>
-        <header className="grid-flow-col justify-between hidden md:grid bg-[var(--color-foreground)] dark:bg-[var(--color-background)]">
+        <header className="grid-flow-col justify-between hidden md:grid bg-neutral-200 border-b border-neutral-300 dark:bg-[var(--color-background)] dark:border-neutral-800">
           <NavigationMenu.List asChild>
             <nav className="flex items-center">
               <Link
                 to="/"
                 className="shared-header__logo w-16 flex justify-center"
               >
-                <BrandSvg width={36} className="fill-background" />
+                <BrandSvg
+                  width={36}
+                  className="fill-neutral-800 dark:fill-white transition-colors"
+                />
               </Link>
               <NavigationMenu.Item asChild>
                 <HeaderClientLink
                   label={t`Editor`}
-                  icon={<TreeStructure height={16} width={16} weight="fill" />}
+                  icon={
+                    <TreeStructure height={16} width={16} weight="regular" />
+                  }
                   aria-current={isEditor ? "page" : undefined}
                   to={lastChart}
                 />
@@ -132,13 +137,15 @@ export const Header = memo(function SharedHeader() {
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content
                   align="start"
-                  className="shared-header__dropdown bg-[var(--color-foreground)] dark:bg-[var(--color-background)] shadow dark:bg-neutral-900"
+                  className="bg-neutral-100 border border-neutral-300 shadow-lg rounded-md py-1 dark:bg-neutral-900 dark:border-neutral-800"
                 >
                   <DropdownMenu.Item asChild>
                     <HeaderClientLink
                       label={t`Blog`}
                       aria-current={isBlogPage ? "page" : undefined}
-                      icon={<PencilLine height={16} width={16} weight="fill" />}
+                      icon={
+                        <PencilLine height={16} width={16} weight="regular" />
+                      }
                       to="/blog"
                     />
                   </DropdownMenu.Item>
@@ -147,7 +154,9 @@ export const Header = memo(function SharedHeader() {
                       to="/changelog"
                       label={t`Changelog`}
                       aria-current={isChangelogPage ? "page" : undefined}
-                      icon={<Notebook height={16} width={16} weight="fill" />}
+                      icon={
+                        <Notebook height={16} width={16} weight="regular" />
+                      }
                     />
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
@@ -155,7 +164,9 @@ export const Header = memo(function SharedHeader() {
                       to="/roadmap"
                       label={t`Roadmap`}
                       aria-current={isRoadmapPage ? "page" : undefined}
-                      icon={<Signpost height={16} width={16} weight="fill" />}
+                      icon={
+                        <Signpost height={16} width={16} weight="regular" />
+                      }
                     />
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
@@ -163,7 +174,7 @@ export const Header = memo(function SharedHeader() {
                       to="/privacy-policy"
                       label={t`Privacy Policy`}
                       aria-current={isPrivacyPolicyPage ? "page" : undefined}
-                      icon={<Lock height={16} width={16} weight="fill" />}
+                      icon={<Lock height={16} width={16} weight="regular" />}
                     />
                   </DropdownMenu.Item>
                 </DropdownMenu.Content>
@@ -203,11 +214,12 @@ export const Header = memo(function SharedHeader() {
                   data-testid="pro-link"
                   data-to-pricing="Navigation Button"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="font-bold px-4 flex items-center bg-gradient-to-t from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-600 text-white dark:bg-purple-800 dark:text-white dark:hover:ring-2 dark:hover:ring-white/10"
+                  className="flex items-center gap-2 px-4 font-semibold bg-gradient-to-b from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-sm transition-all hover:shadow-purple-200/50 dark:hover:shadow-purple-900/30 dark:from-purple-600 dark:to-purple-700 dark:hover:from-purple-500 dark:hover:to-purple-600"
                   onClick={() => {
                     track("sponsor", "click");
                   }}
                 >
+                  <RocketLaunch weight="regular" className="h-4 w-4" />
                   Flowchart Fun Pro
                 </Link>
               ) : null}
@@ -233,7 +245,7 @@ export const Header = memo(function SharedHeader() {
 });
 
 const btnClasses =
-  "flex items-center gap-1 p-2.5 px-3.5 text-[16px] md:text-white hover:bg-white/10 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:aria-[current=page]:text-green-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-green-400";
+  "header-btn flex items-center gap-2 p-2.5 px-3.5 text-[15px] font-medium text-neutral-600 hover:bg-neutral-300/50 focus-visible:bg-neutral-300/50 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-300/70 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800";
 
 type HeaderButtonProps = {
   label: string;
@@ -349,7 +361,7 @@ function MobileHeader({
           <Dialog.Content className="mobile-header__content">
             <HeaderClientLink
               label={t`Editor`}
-              icon={<TreeStructure height={16} width={16} weight="fill" />}
+              icon={<TreeStructure height={16} width={16} weight="regular" />}
               aria-current={isEditor ? "page" : undefined}
               to={lastChart}
             />
