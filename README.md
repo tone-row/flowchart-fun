@@ -4,6 +4,20 @@
 
 <img src="https://github.com/tone-row/flowchart-fun/blob/main/app.png?raw=true" alt="screenshot" width="600" />
 
+## Features 
+
+Flowchart Fun is actively working on implementing new and innovative features! Some of are features include:
+  -Editing with AI
+  -Importing Data
+  -Variety of Templates
+  -Importing Data
+  -Different Themes 
+  -10 Layout Designs
+  -Different Background Colors
+  -Different Node Shapes and Colors
+  -Log In to Save Your Charts! Creating An Account is Quick and Easy! 
+  -Try Out FlowChart Fun Pro For a Variety of Premium Features! 
+  
 ## 📝 Example
 
 For an example of how Flowchart Fun works, take the following input:
@@ -21,7 +35,16 @@ You can generate this flowchart with just a few clicks:
 
 ## 🛠️ Development
 
+Before making a contribution to Flowchart Fun, you should know a little bit about the technologies we're using.
+After that, you should be ready to help out! 
+
 Flowchart Fun is built with [React](https://reactjs.org/) and [cytoscape.js](https://github.com/cytoscape/cytoscape.js).
+
+-**React:** A JavaScript library for building dynamic user interfaces based on components.
+  -Want to familiarize yourself with React? Read the official React documentation (https://reactjs.org/docs/getting-started.html)
+   to learn more. 
+-**Cytoscape:** CytoScape is a Graph theory (network) library for visualisation and analysis. 
+  -Learn more about Cytoscape on its offical website (https://js.cytoscape.org/#introduction/factsheet). 
 
 ### 💡 Prerequisites
 
@@ -44,6 +67,16 @@ Note: You will need to create a [Vercel account](https://vercel.com/signup) and 
 `pnpm dev`
 
 ### 🌐 Translations
+
+Flowchart Fun is available in a variety of languages: 
+-Deutsch
+-English
+-Español
+-Fançais
+-हिन्दी
+-한국어
+-Português
+-中文
 
 We welcome anyone interested in helping us add translations to Flowchart Fun. Translations can be added to the .po files located in /app/src/locales/[language]/messages.po. After adding translations, please run `pnpm -F app compile`. We would appreciate your help in making Flowchart Fun accessible in even more languages!
 
