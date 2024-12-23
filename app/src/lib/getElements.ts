@@ -14,12 +14,18 @@ export function getElements(text: string): ElementDefinition[] {
     if ("source" in element.data) return element;
 
     let size: ReturnType<typeof getSize>;
+    let style: any = {};
 
     if ("w" in element.data || "h" in element.data) {
       size = {
-        width: element.data.w || "label",
-        height: element.data.h || "label",
+        width: "label",
+        height: "label",
       };
+      if ("w" in element.data) {
+        size.width = element.data.w;
+        style["text-max-width"] = element.data.w;
+      }
+      if ("h" in element.data) size.height = element.data.h;
     } else {
       const classes = element.classes
         ? Array.isArray(element.classes)
@@ -39,6 +45,7 @@ export function getElements(text: string): ElementDefinition[] {
 
     return {
       ...element,
+      style,
       data: {
         ...element.data,
         ...size,

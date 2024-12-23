@@ -39,7 +39,7 @@ export async function handleRateLimit(
     redis: kv,
     limiter: isPro
       ? Ratelimit.slidingWindow(3, "1m")
-      : Ratelimit.fixedWindow(3, "15d"),
+      : Ratelimit.fixedWindow(2, "30d"),
   });
 
   const rateLimitKey = isPro ? `pro_${customerId}` : `unauth_${ip}`;
