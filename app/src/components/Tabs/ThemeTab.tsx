@@ -303,7 +303,19 @@ const Form = createForm<{
         },
         {
           label: t`Text Max Width`,
-          title: () => <Article className="w-5 h-5" />,
+          title: () => (
+            <div className="grid gap-1">
+              <div className="flex items-center gap-2">
+                <Article className="w-5 h-5" />
+                <span className="font-semibold">
+                  <Trans>Text Max Width</Trans>
+                </span>
+              </div>
+              <span className="text-xs text-neutral-500 font-normal">
+                <Trans>Maximum width of text inside nodes</Trans>
+              </span>
+            </div>
+          ),
           id: "textMaxWidth",
           control: "range",
           value(data) {
@@ -348,7 +360,18 @@ const Form = createForm<{
         },
         {
           label: t`Text Horizontal Offset`,
-          title: () => t`Set Fixed Node Height`,
+          title: () => (
+            <div className="grid gap-1">
+              <div className="flex items-center gap-2">
+                <span className="font-semibold">
+                  <Trans>Fixed Node Height</Trans>
+                </span>
+              </div>
+              <span className="text-xs text-neutral-500 font-normal">
+                <Trans>Enable to set a consistent height for all nodes</Trans>
+              </span>
+            </div>
+          ),
           id: "useFixedHeight",
           control: "checkbox",
           value(data) {
@@ -360,7 +383,19 @@ const Form = createForm<{
         },
         {
           label: t`Fixed Node Height`,
-          title: () => <ArrowsOutLineVertical className="w-5 h-5" />,
+          title: () => (
+            <div className="grid gap-1">
+              <div className="flex items-center gap-2">
+                <ArrowsOutLineVertical className="w-5 h-5" />
+                <span className="font-semibold">
+                  <Trans>Fixed Height</Trans>
+                </span>
+              </div>
+              <span className="text-xs text-neutral-500 font-normal">
+                <Trans>Set a consistent height for all nodes</Trans>
+              </span>
+            </div>
+          ),
           id: "fixedHeight",
           control: "range",
           hidden(data) {
@@ -389,7 +424,19 @@ const Form = createForm<{
       elements: [
         {
           label: t`Curve Style`,
-          title: () => <LineSegment className="w-5 h-5" />,
+          title: () => (
+            <div className="grid gap-1">
+              <div className="flex items-center gap-2">
+                <LineSegment className="w-5 h-5" />
+                <span className="font-semibold">
+                  <Trans>Edge Style</Trans>
+                </span>
+              </div>
+              <span className="text-xs text-neutral-500 font-normal">
+                <Trans>Choose how edges connect between nodes</Trans>
+              </span>
+            </div>
+          ),
           id: "curveStyle",
           control: "select",
           value(data) {

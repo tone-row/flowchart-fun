@@ -17,7 +17,7 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 अस्थायी फ्लोचार्ट"
 
-#: src/components/Tabs/ThemeTab.tsx:636
+#: src/components/Tabs/ThemeTab.tsx:683
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>कस्टम CSS केवल</0> सक्षम है। केवल लेआउट और एडवांस्ड सेटिंग्स लागू की जाएगी।"
 
@@ -53,8 +53,8 @@ msgstr "एआई पावर्ड संपादन आपके वर्�
 msgid "About"
 msgstr "के बारे में"
 
-#: src/components/Header.tsx:179
-#: src/components/Header.tsx:427
+#: src/components/Header.tsx:190
+#: src/components/Header.tsx:439
 #: src/pages/Account.tsx:120
 msgid "Account"
 msgstr "खाता"
@@ -67,7 +67,7 @@ msgstr "किसी भी विशेष वर्ण के पहले ए
 msgid "Add some steps"
 msgstr "कुछ चरण जोड़ें"
 
-#: src/components/Tabs/ThemeTab.tsx:570
+#: src/components/Tabs/ThemeTab.tsx:617
 msgid "Advanced"
 msgstr "उन्नत"
 
@@ -102,8 +102,8 @@ msgstr "एक एरर हो गया. फिर से सबमिट क�
 msgid "Appearance"
 msgstr "दिखावट"
 
-#: src/components/Tabs/ThemeTab.tsx:524
-#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:571
+#: src/components/Tabs/ThemeTab.tsx:572
 msgid "Arrow Size"
 msgstr "तीर आकार"
 
@@ -155,8 +155,8 @@ msgstr "वार्षिक रूप से $24 का बिल बनाय
 msgid "Billed monthly at $4"
 msgstr "मासिक रूप से $4 पर बिल किया जाता है"
 
-#: src/components/Header.tsx:139
-#: src/components/Header.tsx:385
+#: src/components/Header.tsx:144
+#: src/components/Header.tsx:397
 #: src/pages/Blog.tsx:30
 msgid "Blog"
 msgstr "ब्लॉग"
@@ -186,7 +186,7 @@ msgstr "चौड़ाई पहले"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:158
+#: src/components/RenameButton.tsx:157
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -210,14 +210,14 @@ msgstr "कुछ गुण तत्वों की दिखता या क
 msgid "Change Email Address"
 msgstr "ईमेल पता बदलें"
 
-#: src/components/Header.tsx:148
-#: src/components/Header.tsx:391
+#: src/components/Header.tsx:155
+#: src/components/Header.tsx:403
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "बदलाव का"
 
-#: src/components/Header.tsx:107
-#: src/components/Header.tsx:363
+#: src/components/Header.tsx:112
+#: src/components/Header.tsx:375
 msgid "Charts"
 msgstr "चार्ट"
 
@@ -240,6 +240,10 @@ msgstr "टेम्पलेट चुनें"
 #: src/components/LearnSyntaxDialog.tsx:327
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।"
+
+#: src/components/Tabs/ThemeTab.tsx:436
+msgid "Choose how edges connect between nodes"
+msgstr "नोड्स के बीच एज कैसे कनेक्ट करें चुनें"
 
 #: src/components/Tabs/ThemeTab.tsx:96
 msgid "Choose how nodes are automatically arranged in your flowchart"
@@ -269,8 +273,8 @@ msgstr "क्लोन करें"
 msgid "Close"
 msgstr "बंद करें"
 
-#: src/components/Tabs/ThemeTab.tsx:423
-#: src/components/Tabs/ThemeTab.tsx:424
+#: src/components/Tabs/ThemeTab.tsx:470
+#: src/components/Tabs/ThemeTab.tsx:471
 msgid "Color"
 msgstr "रंग"
 
@@ -294,7 +298,6 @@ msgstr "गाढ़ा"
 msgid "Confirm New Email"
 msgstr "नई ईमेल की पुष्टि करें"
 
-#: src/pages/LogIn.tsx:232
 #: src/pages/LogIn.tsx:232
 msgid "Confirm your email address to sign in."
 msgstr "साइन इन करने के लिए अपना ईमेल पता पुष्टि करें।"
@@ -332,7 +335,7 @@ msgstr "परिवर्तन करें"
 msgid "Convert to Flowchart"
 msgstr "फ्लोचार्ट में बदलें"
 
-#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:125
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
@@ -410,12 +413,12 @@ msgstr "AI के साथ बनाएं"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "दो नोड्स के बीच एक एज बनाने के लिए दूसरा नोड पहले वाले के नीचे इंडेंट करना होता है"
 
-#: src/components/Tabs/ThemeTab.tsx:391
+#: src/components/Tabs/ThemeTab.tsx:426
 msgid "Curve Style"
 msgstr "वक्र शैली"
 
-#: src/components/Tabs/ThemeTab.tsx:578
-#: src/components/Tabs/ThemeTab.tsx:579
+#: src/components/Tabs/ThemeTab.tsx:625
+#: src/components/Tabs/ThemeTab.tsx:626
 msgid "Custom CSS"
 msgstr "कस्टम CSS"
 
@@ -531,11 +534,12 @@ msgid "Edge Label Column"
 msgstr "किनारे लेबल कॉलम"
 
 #: src/components/LearnSyntaxDialog.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edge Style"
 msgstr "किनारे शैली"
 
-#: src/components/Tabs/ThemeTab.tsx:539
-#: src/components/Tabs/ThemeTab.tsx:540
+#: src/components/Tabs/ThemeTab.tsx:586
+#: src/components/Tabs/ThemeTab.tsx:587
 msgid "Edge Text Size"
 msgstr "एड्ज टेक्स्ट आकार"
 
@@ -545,7 +549,7 @@ msgstr "एड्ज अंतराल गुम है"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:384
+#: src/components/Tabs/ThemeTab.tsx:419
 msgid "Edges"
 msgstr "किन्तुओं"
 
@@ -594,8 +598,8 @@ msgstr "एआई के साथ संपादित करें"
 msgid "Editable"
 msgstr "संपादन योग्य"
 
-#: src/components/Header.tsx:89
-#: src/components/Header.tsx:351
+#: src/components/Header.tsx:92
+#: src/components/Header.tsx:363
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "संपादक"
@@ -611,6 +615,10 @@ msgstr "ईमेल"
 #: src/components/ImportDataDialog.tsx:550
 msgid "Empty"
 msgstr "खाली"
+
+#: src/components/Tabs/ThemeTab.tsx:371
+msgid "Enable to set a consistent height for all nodes"
+msgstr "सभी नोड्स के लिए एक समान ऊंचाई सेट करने के लिए सक्षम करें"
 
 #: src/pages/LogIn.tsx:138
 msgid "Enter your email address and we'll send you a magic link to sign in."
@@ -663,8 +671,8 @@ msgid "Feature Breakdown"
 msgstr "विशेषता विभाजन"
 
 #: src/components/Feedback.tsx:50
-#: src/components/Header.tsx:115
-#: src/components/Header.tsx:377
+#: src/components/Header.tsx:120
+#: src/components/Header.tsx:389
 msgid "Feedback"
 msgstr "फ़ीडबैक"
 
@@ -672,7 +680,12 @@ msgstr "फ़ीडबैक"
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "किसी भी चिंता के लिए हमसे फीडबैक पेज के माध्यम से संपर्क करने के लिए स्वतंत्रता से अन्वेषण करें और प्रवेश करें।"
 
-#: src/components/Tabs/ThemeTab.tsx:362
+#: src/components/Tabs/ThemeTab.tsx:391
+msgid "Fixed Height"
+msgstr "निश्चित ऊंचाई"
+
+#: src/components/Tabs/ThemeTab.tsx:367
+#: src/components/Tabs/ThemeTab.tsx:385
 msgid "Fixed Node Height"
 msgstr "निर्धारित नोड ऊंचाई"
 
@@ -828,7 +841,7 @@ msgstr "एक <0>title</0> विशेषता का उपयोग कर�
 msgid "Indent to connect nodes"
 msgstr "नोड को जोड़ने के लिए इंडेंट करें"
 
-#: src/components/Header.tsx:128
+#: src/components/Header.tsx:133
 msgid "Info"
 msgstr "जानकारी"
 
@@ -960,8 +973,8 @@ msgstr "ऑफ़लाइन उपयोग के लिए स्थान�
 msgid "Lock Zoom to Graph"
 msgstr "ग्राफ पर जूम लॉक करें"
 
-#: src/components/Header.tsx:195
-#: src/components/Header.tsx:435
+#: src/components/Header.tsx:206
+#: src/components/Header.tsx:447
 msgid "Log In"
 msgstr "लॉग इन करें"
 
@@ -993,6 +1006,10 @@ msgstr "बिलिंग प्रबंधित करें"
 msgid "Map Data"
 msgstr "डेटा मैप"
 
+#: src/components/Tabs/ThemeTab.tsx:315
+msgid "Maximum width of text inside nodes"
+msgstr "नोड्स के अंदर टेक्स्ट की अधिकतम चौड़ाई"
+
 #: src/components/Checkout.tsx:150
 msgid "Monthly"
 msgstr "मासिक"
@@ -1014,8 +1031,8 @@ msgstr "चार्ट का नाम"
 msgid "Name your chart"
 msgstr "अपने चार्ट को नाम दें"
 
-#: src/components/Header.tsx:97
-#: src/components/Header.tsx:357
+#: src/components/Header.tsx:102
+#: src/components/Header.tsx:369
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "नया"
@@ -1160,13 +1177,13 @@ msgstr "प्रतीक और कंटेनर एक ही लाइन 
 msgid "Priority One-on-One Support"
 msgstr "प्राथमिकता वाला एक-से-एक समर्थन"
 
-#: src/components/Header.tsx:164
-#: src/components/Header.tsx:441
+#: src/components/Header.tsx:175
+#: src/components/Header.tsx:453
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "गोपनीयता नीति "
 
-#: src/components/GraphTip.tsx:32
+#: src/components/GraphTip.tsx:31
 msgid "Pro tip: Right-click any node to customize its shape and color"
 msgstr "प्रो टिप: किसी भी नोड पर दायां-तीर क्लिक करें और उसकी आकृति और रंग को अनुकूलित करें।"
 
@@ -1256,7 +1273,7 @@ msgstr "अपडेट करने के लिए रीलोड करे�
 
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:161
+#: src/components/RenameButton.tsx:160
 msgid "Rename"
 msgstr "फिर से नाम बदलें"
 
@@ -1297,14 +1314,14 @@ msgstr "दाएं से बाएं"
 msgid "Right-click nodes for options"
 msgstr "विकल्पों के लिए नोड को दायां-बांयां क्लिक करें"
 
-#: src/components/Header.tsx:156
-#: src/components/Header.tsx:397
+#: src/components/Header.tsx:165
+#: src/components/Header.tsx:409
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "रोडमैप"
 
-#: src/components/Tabs/ThemeTab.tsx:554
-#: src/components/Tabs/ThemeTab.tsx:555
+#: src/components/Tabs/ThemeTab.tsx:601
+#: src/components/Tabs/ThemeTab.tsx:602
 msgid "Rotate Label"
 msgstr "लेबल को घुमाएँ"
 
@@ -1341,12 +1358,12 @@ msgstr "अपनी कार्यवाही सुरक्षित कर
 msgid "Secure payment"
 msgstr "सुरक्षित भुगतान"
 
-#: src/components/Tabs/ThemeTab.tsx:351
-msgid "Set Fixed Node Height"
-msgstr "नोड ऊंचाई को सेट करें"
+#: src/components/Tabs/ThemeTab.tsx:395
+msgid "Set a consistent height for all nodes"
+msgstr "सभी नोड्स के लिए एक समान ऊंचाई सेट करें"
 
-#: src/components/Header.tsx:172
-#: src/components/Header.tsx:402
+#: src/components/Header.tsx:183
+#: src/components/Header.tsx:414
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "सेटिंग"
@@ -1373,12 +1390,11 @@ msgid "Sorry! This page is only available in English."
 msgstr "माफ़ करें! यह पेज केवल अंग्रेजी में उपलब्ध है।"
 
 #: src/lib/runAi.ts:120
-#: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "क्षमा करें, टेक्स्ट को फ्लोचार्ट में रूपांतरित करने में एक त्रुटि हुई। बाद में पुनः प्रयास करें।"
 
-#: src/components/Tabs/ThemeTab.tsx:444
-#: src/components/Tabs/ThemeTab.tsx:445
+#: src/components/Tabs/ThemeTab.tsx:491
+#: src/components/Tabs/ThemeTab.tsx:492
 msgid "Source Arrow Shape"
 msgstr "स्रोत तीर आकार"
 
@@ -1391,8 +1407,8 @@ msgstr "स्रोत स्तंभ"
 msgid "Source Delimiter"
 msgstr "स्रोत डिलिमिटर"
 
-#: src/components/Tabs/ThemeTab.tsx:486
-#: src/components/Tabs/ThemeTab.tsx:487
+#: src/components/Tabs/ThemeTab.tsx:533
+#: src/components/Tabs/ThemeTab.tsx:534
 msgid "Source Distance From Node"
 msgstr "नोड से स्रोत दूरी"
 
@@ -1468,8 +1484,8 @@ msgstr "सदस्यता सफल हुआ!"
 msgid "Subscription will end"
 msgstr "सदस्यता समाप्त हो जाएगी"
 
-#: src/components/Tabs/ThemeTab.tsx:465
-#: src/components/Tabs/ThemeTab.tsx:466
+#: src/components/Tabs/ThemeTab.tsx:512
+#: src/components/Tabs/ThemeTab.tsx:513
 msgid "Target Arrow Shape"
 msgstr "लक्ष्य तीर आकार"
 
@@ -1482,8 +1498,8 @@ msgstr "लक्ष्य कॉलम"
 msgid "Target Delimiter"
 msgstr "लक्ष्य डेलीमीटर"
 
-#: src/components/Tabs/ThemeTab.tsx:504
-#: src/components/Tabs/ThemeTab.tsx:505
+#: src/components/Tabs/ThemeTab.tsx:551
+#: src/components/Tabs/ThemeTab.tsx:552
 msgid "Target Distance From Node"
 msgstr "नोड से लक्ष्य दूरी"
 
@@ -1492,21 +1508,22 @@ msgstr "नोड से लक्ष्य दूरी"
 msgid "Text Color"
 msgstr "पाठ रंग"
 
-#: src/components/Tabs/ThemeTab.tsx:350
+#: src/components/Tabs/ThemeTab.tsx:362
 msgid "Text Horizontal Offset"
 msgstr "टेक्स्ट की क्षैतिज ओफसेट"
 
-#: src/components/Tabs/ThemeTab.tsx:320
-#: src/components/Tabs/ThemeTab.tsx:321
+#: src/components/Tabs/ThemeTab.tsx:332
+#: src/components/Tabs/ThemeTab.tsx:333
 msgid "Text Leading"
 msgstr "पाठ प्रमुख"
 
 #: src/components/Tabs/ThemeTab.tsx:305
+#: src/components/Tabs/ThemeTab.tsx:311
 msgid "Text Max Width"
 msgstr "टेक्स्ट की अधिकतम चौड़ाई"
 
-#: src/components/Tabs/ThemeTab.tsx:335
-#: src/components/Tabs/ThemeTab.tsx:336
+#: src/components/Tabs/ThemeTab.tsx:347
+#: src/components/Tabs/ThemeTab.tsx:348
 msgid "Text Vertical Offset"
 msgstr "पाठ लंबाई ऑफसेट"
 
@@ -1719,7 +1736,7 @@ msgstr "फ्लोचार्ट फन प्रो पर अपग्र�
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "अपने डायग्राम के लिए एसवीजी निर्यात और अधिक उन्नत सुविधाओं का आनंद लेने के लिए फ्लोचार्ट फन प्रो पर अपग्रेड करें।"
 
-#: src/components/Header.tsx:410
+#: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
 
@@ -1731,8 +1748,8 @@ msgstr "$2/महीने के लिए प्रो पर अपग्र�
 msgid "Upload your File"
 msgstr "अपनी फाइल अपलोड करें"
 
-#: src/components/Tabs/ThemeTab.tsx:595
-#: src/components/Tabs/ThemeTab.tsx:596
+#: src/components/Tabs/ThemeTab.tsx:642
+#: src/components/Tabs/ThemeTab.tsx:643
 msgid "Use Custom CSS Only"
 msgstr "केवल कस्टम CSS का उपयोग करें"
 
@@ -1760,7 +1777,7 @@ msgstr "नोड की विशिष्ट चौड़ाई और ऊँ�
 msgid "Use the customer portal to change your billing information."
 msgstr "अपनी बिलिंग जानकारी बदलने के लिए ग्राहक पोर्टल का उपयोग करें।"
 
-#: src/components/Tabs/ThemeTab.tsx:629
+#: src/components/Tabs/ThemeTab.tsx:676
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "अपने फ्लोचार्ट की दिखता और व्यवहार को अनुकूलित करने के लिए इन सेटिंग्स का उपयोग करें"
 
@@ -1812,8 +1829,8 @@ msgstr "अगला क्या है?"
 msgid "What's this?"
 msgstr "यह क्या है?"
 
-#: src/components/Tabs/ThemeTab.tsx:408
-#: src/components/Tabs/ThemeTab.tsx:409
+#: src/components/Tabs/ThemeTab.tsx:455
+#: src/components/Tabs/ThemeTab.tsx:456
 msgid "Width"
 msgstr "चौड़ाई"
 

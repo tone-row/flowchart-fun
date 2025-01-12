@@ -298,6 +298,7 @@ export async function makeChartPublic(id: number, isPublic: boolean) {
       message: "Duplicate key value violates unique constraint",
       details: "",
       hint: "",
+      name: "PostgrestError",
     };
     // If unique violation, generate a new public id
     let result;
