@@ -14,7 +14,7 @@
     "prebuild": "npm run clean"
   },
   "devDependencies": {
-    "typescript": "^5.5.3",
+    "typescript": "5.5.3",
     "rimraf": "^3.0.2"
   }
 }

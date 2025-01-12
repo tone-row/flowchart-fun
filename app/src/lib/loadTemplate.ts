@@ -9,7 +9,7 @@ import { mountGraph, unmountGraph } from "./useUnmountStore";
  * Loads a template given a template key
  */
 export async function loadTemplate(
-  template: typeof templates[number] | null,
+  template: (typeof templates)[number] | null,
   /** Whether to replace the content or not */
   replaceContent: boolean,
   /**
