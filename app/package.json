@@ -217,5 +217,8 @@
   },
   "overrides": {
     "fork-ts-checker-webpack-plugin": "^6.5.3"
+  },
+  "engines": {
+    "node": "^22"
   }
 }
