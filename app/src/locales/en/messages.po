@@ -17,7 +17,7 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 Temporary Flowchart"
 
-#: src/components/Tabs/ThemeTab.tsx:636
+#: src/components/Tabs/ThemeTab.tsx:683
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 
@@ -53,8 +53,8 @@ msgstr "AI-powered editing to supercharge your workflow"
 msgid "About"
 msgstr "About"
 
-#: src/components/Header.tsx:179
-#: src/components/Header.tsx:427
+#: src/components/Header.tsx:190
+#: src/components/Header.tsx:439
 #: src/pages/Account.tsx:120
 msgid "Account"
 msgstr "Account"
@@ -67,7 +67,7 @@ msgstr "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>
 msgid "Add some steps"
 msgstr "Add some steps"
 
-#: src/components/Tabs/ThemeTab.tsx:570
+#: src/components/Tabs/ThemeTab.tsx:617
 msgid "Advanced"
 msgstr "Advanced"
 
@@ -102,8 +102,8 @@ msgstr "An error occurred. Try resubmitting or email {0} directly."
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/components/Tabs/ThemeTab.tsx:524
-#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:571
+#: src/components/Tabs/ThemeTab.tsx:572
 msgid "Arrow Size"
 msgstr "Arrow Size"
 
@@ -155,8 +155,8 @@ msgstr "Billed annually at $24"
 msgid "Billed monthly at $4"
 msgstr "Billed monthly at $4"
 
-#: src/components/Header.tsx:139
-#: src/components/Header.tsx:385
+#: src/components/Header.tsx:144
+#: src/components/Header.tsx:397
 #: src/pages/Blog.tsx:30
 msgid "Blog"
 msgstr "Blog"
@@ -186,7 +186,7 @@ msgstr "Breadthfirst"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:158
+#: src/components/RenameButton.tsx:157
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -210,14 +210,14 @@ msgstr "Certain attributes can be used to customize the appearance or functional
 msgid "Change Email Address"
 msgstr "Change Email Address"
 
-#: src/components/Header.tsx:148
-#: src/components/Header.tsx:391
+#: src/components/Header.tsx:155
+#: src/components/Header.tsx:403
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "Changelog"
 
-#: src/components/Header.tsx:107
-#: src/components/Header.tsx:363
+#: src/components/Header.tsx:112
+#: src/components/Header.tsx:375
 msgid "Charts"
 msgstr "Charts"
 
@@ -240,6 +240,10 @@ msgstr "Choose Template"
 #: src/components/LearnSyntaxDialog.tsx:327
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
+
+#: src/components/Tabs/ThemeTab.tsx:436
+msgid "Choose how edges connect between nodes"
+msgstr "Choose how edges connect between nodes"
 
 #: src/components/Tabs/ThemeTab.tsx:96
 msgid "Choose how nodes are automatically arranged in your flowchart"
@@ -269,8 +273,8 @@ msgstr "Clone"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/Tabs/ThemeTab.tsx:423
-#: src/components/Tabs/ThemeTab.tsx:424
+#: src/components/Tabs/ThemeTab.tsx:470
+#: src/components/Tabs/ThemeTab.tsx:471
 msgid "Color"
 msgstr "Color"
 
@@ -294,7 +298,6 @@ msgstr "Concentric"
 msgid "Confirm New Email"
 msgstr "Confirm New Email"
 
-#: src/pages/LogIn.tsx:232
 #: src/pages/LogIn.tsx:232
 msgid "Confirm your email address to sign in."
 msgstr "Confirm your email address to sign in."
@@ -332,7 +335,7 @@ msgstr "Convert"
 msgid "Convert to Flowchart"
 msgstr "Convert to Flowchart"
 
-#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:125
 msgid "Convert to hosted chart?"
 msgstr "Convert to hosted chart?"
 
@@ -410,12 +413,12 @@ msgstr "Create with AI"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Creating an edge between two nodes is done by indenting the second node below the first"
 
-#: src/components/Tabs/ThemeTab.tsx:391
+#: src/components/Tabs/ThemeTab.tsx:426
 msgid "Curve Style"
 msgstr "Curve Style"
 
-#: src/components/Tabs/ThemeTab.tsx:578
-#: src/components/Tabs/ThemeTab.tsx:579
+#: src/components/Tabs/ThemeTab.tsx:625
+#: src/components/Tabs/ThemeTab.tsx:626
 msgid "Custom CSS"
 msgstr "Custom CSS"
 
@@ -531,11 +534,12 @@ msgid "Edge Label Column"
 msgstr "Edge Label Column"
 
 #: src/components/LearnSyntaxDialog.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edge Style"
 msgstr "Edge Style"
 
-#: src/components/Tabs/ThemeTab.tsx:539
-#: src/components/Tabs/ThemeTab.tsx:540
+#: src/components/Tabs/ThemeTab.tsx:586
+#: src/components/Tabs/ThemeTab.tsx:587
 msgid "Edge Text Size"
 msgstr "Edge Text Size"
 
@@ -545,7 +549,7 @@ msgstr "Edge missing indentation"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:384
+#: src/components/Tabs/ThemeTab.tsx:419
 msgid "Edges"
 msgstr "Edges"
 
@@ -594,8 +598,8 @@ msgstr "Edit with AI"
 msgid "Editable"
 msgstr "Editable"
 
-#: src/components/Header.tsx:89
-#: src/components/Header.tsx:351
+#: src/components/Header.tsx:92
+#: src/components/Header.tsx:363
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "Editor"
@@ -611,6 +615,10 @@ msgstr "Email"
 #: src/components/ImportDataDialog.tsx:550
 msgid "Empty"
 msgstr "Empty"
+
+#: src/components/Tabs/ThemeTab.tsx:371
+msgid "Enable to set a consistent height for all nodes"
+msgstr "Enable to set a consistent height for all nodes"
 
 #: src/pages/LogIn.tsx:138
 msgid "Enter your email address and we'll send you a magic link to sign in."
@@ -663,8 +671,8 @@ msgid "Feature Breakdown"
 msgstr "Feature Breakdown"
 
 #: src/components/Feedback.tsx:50
-#: src/components/Header.tsx:115
-#: src/components/Header.tsx:377
+#: src/components/Header.tsx:120
+#: src/components/Header.tsx:389
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -672,7 +680,12 @@ msgstr "Feedback"
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 
-#: src/components/Tabs/ThemeTab.tsx:362
+#: src/components/Tabs/ThemeTab.tsx:391
+msgid "Fixed Height"
+msgstr "Fixed Height"
+
+#: src/components/Tabs/ThemeTab.tsx:367
+#: src/components/Tabs/ThemeTab.tsx:385
 msgid "Fixed Node Height"
 msgstr "Fixed Node Height"
 
@@ -828,7 +841,7 @@ msgstr "Include a title using a <0>title</0> attribute. To use Visio coloring, a
 msgid "Indent to connect nodes"
 msgstr "Indent to connect nodes"
 
-#: src/components/Header.tsx:128
+#: src/components/Header.tsx:133
 msgid "Info"
 msgstr "Info"
 
@@ -960,8 +973,8 @@ msgstr "Local saving for offline access"
 msgid "Lock Zoom to Graph"
 msgstr "Lock Zoom to Graph"
 
-#: src/components/Header.tsx:195
-#: src/components/Header.tsx:435
+#: src/components/Header.tsx:206
+#: src/components/Header.tsx:447
 msgid "Log In"
 msgstr "Log In"
 
@@ -993,6 +1006,10 @@ msgstr "Manage Billing"
 msgid "Map Data"
 msgstr "Map Data"
 
+#: src/components/Tabs/ThemeTab.tsx:315
+msgid "Maximum width of text inside nodes"
+msgstr "Maximum width of text inside nodes"
+
 #: src/components/Checkout.tsx:150
 msgid "Monthly"
 msgstr "Monthly"
@@ -1014,8 +1031,8 @@ msgstr "Name Chart"
 msgid "Name your chart"
 msgstr "Name your chart"
 
-#: src/components/Header.tsx:97
-#: src/components/Header.tsx:357
+#: src/components/Header.tsx:102
+#: src/components/Header.tsx:369
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "New"
@@ -1160,13 +1177,13 @@ msgstr "Pointer and container on same line"
 msgid "Priority One-on-One Support"
 msgstr "Priority One-on-One Support"
 
-#: src/components/Header.tsx:164
-#: src/components/Header.tsx:441
+#: src/components/Header.tsx:175
+#: src/components/Header.tsx:453
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
-#: src/components/GraphTip.tsx:32
+#: src/components/GraphTip.tsx:31
 msgid "Pro tip: Right-click any node to customize its shape and color"
 msgstr "Pro tip: Right-click any node to customize its shape and color"
 
@@ -1256,7 +1273,7 @@ msgstr "Reload to Update"
 
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:161
+#: src/components/RenameButton.tsx:160
 msgid "Rename"
 msgstr "Rename"
 
@@ -1297,14 +1314,14 @@ msgstr "Right to Left"
 msgid "Right-click nodes for options"
 msgstr "Right-click nodes for options"
 
-#: src/components/Header.tsx:156
-#: src/components/Header.tsx:397
+#: src/components/Header.tsx:165
+#: src/components/Header.tsx:409
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "Roadmap"
 
-#: src/components/Tabs/ThemeTab.tsx:554
-#: src/components/Tabs/ThemeTab.tsx:555
+#: src/components/Tabs/ThemeTab.tsx:601
+#: src/components/Tabs/ThemeTab.tsx:602
 msgid "Rotate Label"
 msgstr "Rotate Label"
 
@@ -1341,12 +1358,12 @@ msgstr "Save your Work"
 msgid "Secure payment"
 msgstr "Secure payment"
 
-#: src/components/Tabs/ThemeTab.tsx:351
-msgid "Set Fixed Node Height"
-msgstr "Set Fixed Node Height"
+#: src/components/Tabs/ThemeTab.tsx:395
+msgid "Set a consistent height for all nodes"
+msgstr "Set a consistent height for all nodes"
 
-#: src/components/Header.tsx:172
-#: src/components/Header.tsx:402
+#: src/components/Header.tsx:183
+#: src/components/Header.tsx:414
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "Settings"
@@ -1373,12 +1390,11 @@ msgid "Sorry! This page is only available in English."
 msgstr "Sorry! This page is only available in English."
 
 #: src/lib/runAi.ts:120
-#: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Sorry, there was an error converting the text to a flowchart. Try again later."
 
-#: src/components/Tabs/ThemeTab.tsx:444
-#: src/components/Tabs/ThemeTab.tsx:445
+#: src/components/Tabs/ThemeTab.tsx:491
+#: src/components/Tabs/ThemeTab.tsx:492
 msgid "Source Arrow Shape"
 msgstr "Source Arrow Shape"
 
@@ -1391,8 +1407,8 @@ msgstr "Source Column"
 msgid "Source Delimiter"
 msgstr "Source Delimiter"
 
-#: src/components/Tabs/ThemeTab.tsx:486
-#: src/components/Tabs/ThemeTab.tsx:487
+#: src/components/Tabs/ThemeTab.tsx:533
+#: src/components/Tabs/ThemeTab.tsx:534
 msgid "Source Distance From Node"
 msgstr "Source Distance From Node"
 
@@ -1468,8 +1484,8 @@ msgstr "Subscription Successful!"
 msgid "Subscription will end"
 msgstr "Subscription will end"
 
-#: src/components/Tabs/ThemeTab.tsx:465
-#: src/components/Tabs/ThemeTab.tsx:466
+#: src/components/Tabs/ThemeTab.tsx:512
+#: src/components/Tabs/ThemeTab.tsx:513
 msgid "Target Arrow Shape"
 msgstr "Target Arrow Shape"
 
@@ -1482,8 +1498,8 @@ msgstr "Target Column"
 msgid "Target Delimiter"
 msgstr "Target Delimiter"
 
-#: src/components/Tabs/ThemeTab.tsx:504
-#: src/components/Tabs/ThemeTab.tsx:505
+#: src/components/Tabs/ThemeTab.tsx:551
+#: src/components/Tabs/ThemeTab.tsx:552
 msgid "Target Distance From Node"
 msgstr "Target Distance From Node"
 
@@ -1492,21 +1508,22 @@ msgstr "Target Distance From Node"
 msgid "Text Color"
 msgstr "Text Color"
 
-#: src/components/Tabs/ThemeTab.tsx:350
+#: src/components/Tabs/ThemeTab.tsx:362
 msgid "Text Horizontal Offset"
 msgstr "Text Horizontal Offset"
 
-#: src/components/Tabs/ThemeTab.tsx:320
-#: src/components/Tabs/ThemeTab.tsx:321
+#: src/components/Tabs/ThemeTab.tsx:332
+#: src/components/Tabs/ThemeTab.tsx:333
 msgid "Text Leading"
 msgstr "Text Leading"
 
 #: src/components/Tabs/ThemeTab.tsx:305
+#: src/components/Tabs/ThemeTab.tsx:311
 msgid "Text Max Width"
 msgstr "Text Max Width"
 
-#: src/components/Tabs/ThemeTab.tsx:335
-#: src/components/Tabs/ThemeTab.tsx:336
+#: src/components/Tabs/ThemeTab.tsx:347
+#: src/components/Tabs/ThemeTab.tsx:348
 msgid "Text Vertical Offset"
 msgstr "Text Vertical Offset"
 
@@ -1719,7 +1736,7 @@ msgstr "Upgrade to Flowchart Fun Pro and unlock:"
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 
-#: src/components/Header.tsx:410
+#: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "Upgrade to Pro"
 
@@ -1731,8 +1748,8 @@ msgstr "Upgrade to Pro for $2/month"
 msgid "Upload your File"
 msgstr "Upload your File"
 
-#: src/components/Tabs/ThemeTab.tsx:595
-#: src/components/Tabs/ThemeTab.tsx:596
+#: src/components/Tabs/ThemeTab.tsx:642
+#: src/components/Tabs/ThemeTab.tsx:643
 msgid "Use Custom CSS Only"
 msgstr "Use Custom CSS Only"
 
@@ -1760,7 +1777,7 @@ msgstr "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and
 msgid "Use the customer portal to change your billing information."
 msgstr "Use the customer portal to change your billing information."
 
-#: src/components/Tabs/ThemeTab.tsx:629
+#: src/components/Tabs/ThemeTab.tsx:676
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Use these settings to adapt the look and behavior of your flowcharts"
 
@@ -1812,8 +1829,8 @@ msgstr "What's next?"
 msgid "What's this?"
 msgstr "What's this?"
 
-#: src/components/Tabs/ThemeTab.tsx:408
-#: src/components/Tabs/ThemeTab.tsx:409
+#: src/components/Tabs/ThemeTab.tsx:455
+#: src/components/Tabs/ThemeTab.tsx:456
 msgid "Width"
 msgstr "Width"
 

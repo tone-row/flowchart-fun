@@ -1,7 +1,9 @@
+import { Configuration, OpenAIApi } from "openai";
+
 import dotenv from "dotenv";
 import fs from "fs";
-import { Configuration, OpenAIApi } from "openai";
 import path from "path";
+
 dotenv.config("./env");
 
 // Between Calls To Avoid Rate Limiting
@@ -124,7 +126,7 @@ for (const locale of locales) {
     /** pop off the first 6 phrases  */
     const batch = phrases.splice(0, 6);
 
-    const prompt = `Translate phrases from en to ${locale}\n\nEN\n${batch
+    const prompt = `Translate the following UI text strings for a flowcharting app from English to ${locale}.\n\nEN\n${batch
       .map((phrase) => `- ${phrase.text}`)
       .join("\n")}\n\n${locale.toUpperCase()}\n`;
 

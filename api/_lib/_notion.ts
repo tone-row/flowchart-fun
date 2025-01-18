@@ -66,6 +66,7 @@ export async function getPostHtmlFromId(id: string) {
           type: "html",
           parent: videoHtml,
           children: [],
+          blockId: block.blockId,
         };
       }
     }
@@ -73,7 +74,7 @@ export async function getPostHtmlFromId(id: string) {
   });
 
   const mdString = n2m.toMarkdownString(mdblocks);
-  const html = marked(mdString);
+  const html = marked(mdString.parent);
   return html;
 }
 
@@ -95,6 +96,7 @@ Takes a block in the format
   and returns an HTML <video /> element with audio muted and autoplay, looping enabled
 
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function videoBlockToHtml(block: any) {
   const markdown = block.parent;
   const url = markdown.match(/\(([^)]+)\)/)[1];
