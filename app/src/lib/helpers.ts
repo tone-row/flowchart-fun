@@ -70,3 +70,19 @@ export function hasOwnProperty<
   // eslint-disable-next-line no-prototype-builtins
   return obj.hasOwnProperty(prop);
 }
+
+export function isUrl(str: string): boolean {
+  try {
+    // Check if it starts with a protocol
+    if (str.startsWith("http://") || str.startsWith("https://")) {
+      return true;
+    }
+    // Check if it looks like a domain (e.g., example.com, www.example.com)
+    if (/^(www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}/.test(str)) {
+      return true;
+    }
+    return false;
+  } catch {
+    return false;
+  }
+}
