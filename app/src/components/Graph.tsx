@@ -135,11 +135,6 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 export default Graph;
 
 function handleDragFree() {
-  // If the layout is fcose, we don't want to freeze the layout
-  // because people may not expect that behavior / Subject to change!
-  const layout = useGraphStore.getState().layout;
-  if (layout.name === "fcose" || layout.name === "stress") return;
-
   const nodePositions = getNodePositionsFromCy();
   useDoc.setState(
     (state) => {
