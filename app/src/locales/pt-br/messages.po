@@ -17,7 +17,7 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 Fluxograma Temporário"
 
-#: src/components/Tabs/ThemeTab.tsx:636
+#: src/components/Tabs/ThemeTab.tsx:683
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>Somente CSS Personalizado</0> está habilitado. Somente as configurações de Layout e Avançadas serão aplicadas."
 
@@ -53,8 +53,8 @@ msgstr "Edição com inteligência artificial para turbinar seu fluxo de trabalh
 msgid "About"
 msgstr "Sobre"
 
-#: src/components/Header.tsx:179
-#: src/components/Header.tsx:427
+#: src/components/Header.tsx:190
+#: src/components/Header.tsx:439
 #: src/pages/Account.tsx:120
 msgid "Account"
 msgstr "Conta"
@@ -67,7 +67,7 @@ msgstr "Adicione uma barra invertida (<0>\\</0>) antes de quaisquer caracteres e
 msgid "Add some steps"
 msgstr "Adicione alguns passos"
 
-#: src/components/Tabs/ThemeTab.tsx:570
+#: src/components/Tabs/ThemeTab.tsx:617
 msgid "Advanced"
 msgstr "Avançado"
 
@@ -102,8 +102,8 @@ msgstr "Ocorreu um erro. Tente reenviar ou envie um e-mail direto para {0}."
 msgid "Appearance"
 msgstr "Aparência"
 
-#: src/components/Tabs/ThemeTab.tsx:524
-#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:571
+#: src/components/Tabs/ThemeTab.tsx:572
 msgid "Arrow Size"
 msgstr "Tamanho da Seta"
 
@@ -155,8 +155,8 @@ msgstr "Cobrado anualmente a $24"
 msgid "Billed monthly at $4"
 msgstr "Cobrado mensalmente em $4"
 
-#: src/components/Header.tsx:139
-#: src/components/Header.tsx:385
+#: src/components/Header.tsx:144
+#: src/components/Header.tsx:397
 #: src/pages/Blog.tsx:30
 msgid "Blog"
 msgstr "Blog"
@@ -186,7 +186,7 @@ msgstr "Por extensão"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:158
+#: src/components/RenameButton.tsx:157
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -210,14 +210,14 @@ msgstr "Certos atributos podem ser usados para personalizar a aparência ou func
 msgid "Change Email Address"
 msgstr "Mude o endereço de email"
 
-#: src/components/Header.tsx:148
-#: src/components/Header.tsx:391
+#: src/components/Header.tsx:155
+#: src/components/Header.tsx:403
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "Registro de alterações"
 
-#: src/components/Header.tsx:107
-#: src/components/Header.tsx:363
+#: src/components/Header.tsx:112
+#: src/components/Header.tsx:375
 msgid "Charts"
 msgstr "Diagramas"
 
@@ -240,6 +240,10 @@ msgstr "Escolha o Modelo"
 #: src/components/LearnSyntaxDialog.tsx:327
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Escolha entre uma variedade de formas de seta para a origem e o destino de uma aresta. As formas incluem triângulo, triângulo-tee, triângulo-círculo, triângulo-cruz, triângulo-curva-inversa, vee, tee, quadrado, círculo, diamante, chevron e nenhum."
+
+#: src/components/Tabs/ThemeTab.tsx:436
+msgid "Choose how edges connect between nodes"
+msgstr "Escolha como as arestas se conectam entre os nós"
 
 #: src/components/Tabs/ThemeTab.tsx:96
 msgid "Choose how nodes are automatically arranged in your flowchart"
@@ -269,8 +273,8 @@ msgstr "Clonar"
 msgid "Close"
 msgstr "Fechar"
 
-#: src/components/Tabs/ThemeTab.tsx:423
-#: src/components/Tabs/ThemeTab.tsx:424
+#: src/components/Tabs/ThemeTab.tsx:470
+#: src/components/Tabs/ThemeTab.tsx:471
 msgid "Color"
 msgstr "Cor"
 
@@ -294,7 +298,6 @@ msgstr "Concêntrico"
 msgid "Confirm New Email"
 msgstr "Confirme o novo email"
 
-#: src/pages/LogIn.tsx:232
 #: src/pages/LogIn.tsx:232
 msgid "Confirm your email address to sign in."
 msgstr "Confirme seu endereço de e-mail para fazer login."
@@ -332,7 +335,7 @@ msgstr "Converter"
 msgid "Convert to Flowchart"
 msgstr "Converter para Fluxograma"
 
-#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:125
 msgid "Convert to hosted chart?"
 msgstr "Converter em diagrama hospedado?"
 
@@ -410,12 +413,12 @@ msgstr "Crie com IA"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Criar uma aresta entre dois nós é feito indentando o segundo nó abaixo do primeiro"
 
-#: src/components/Tabs/ThemeTab.tsx:391
+#: src/components/Tabs/ThemeTab.tsx:426
 msgid "Curve Style"
 msgstr "Estilo de Curva"
 
-#: src/components/Tabs/ThemeTab.tsx:578
-#: src/components/Tabs/ThemeTab.tsx:579
+#: src/components/Tabs/ThemeTab.tsx:625
+#: src/components/Tabs/ThemeTab.tsx:626
 msgid "Custom CSS"
 msgstr "CSS Personalizado"
 
@@ -531,11 +534,12 @@ msgid "Edge Label Column"
 msgstr "Coluna de Rótulo de Borda"
 
 #: src/components/LearnSyntaxDialog.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edge Style"
 msgstr "Estilo de Borda"
 
-#: src/components/Tabs/ThemeTab.tsx:539
-#: src/components/Tabs/ThemeTab.tsx:540
+#: src/components/Tabs/ThemeTab.tsx:586
+#: src/components/Tabs/ThemeTab.tsx:587
 msgid "Edge Text Size"
 msgstr "Tamanho do Texto da Borda"
 
@@ -545,7 +549,7 @@ msgstr "Recuo em falta na borda"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:384
+#: src/components/Tabs/ThemeTab.tsx:419
 msgid "Edges"
 msgstr "Bordas"
 
@@ -594,8 +598,8 @@ msgstr "Edição com IA"
 msgid "Editable"
 msgstr "Editável"
 
-#: src/components/Header.tsx:89
-#: src/components/Header.tsx:351
+#: src/components/Header.tsx:92
+#: src/components/Header.tsx:363
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "Editor"
@@ -611,6 +615,10 @@ msgstr "E-mail"
 #: src/components/ImportDataDialog.tsx:550
 msgid "Empty"
 msgstr "Vazio"
+
+#: src/components/Tabs/ThemeTab.tsx:371
+msgid "Enable to set a consistent height for all nodes"
+msgstr "Ativar para definir uma altura consistente para todos os nós"
 
 #: src/pages/LogIn.tsx:138
 msgid "Enter your email address and we'll send you a magic link to sign in."
@@ -663,8 +671,8 @@ msgid "Feature Breakdown"
 msgstr "Descrição das funcionalidades"
 
 #: src/components/Feedback.tsx:50
-#: src/components/Header.tsx:115
-#: src/components/Header.tsx:377
+#: src/components/Header.tsx:120
+#: src/components/Header.tsx:389
 msgid "Feedback"
 msgstr "Feedback"
 
@@ -672,7 +680,12 @@ msgstr "Feedback"
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "Sinta-se à vontade para explorar e entrar em contato conosco através da página <0>Feedback</0> se tiver alguma preocupação."
 
-#: src/components/Tabs/ThemeTab.tsx:362
+#: src/components/Tabs/ThemeTab.tsx:391
+msgid "Fixed Height"
+msgstr "Altura fixa"
+
+#: src/components/Tabs/ThemeTab.tsx:367
+#: src/components/Tabs/ThemeTab.tsx:385
 msgid "Fixed Node Height"
 msgstr "Altura do Nó Fixa"
 
@@ -828,7 +841,7 @@ msgstr "Inclua um título usando um atributo <0>title</0>. Para usar a coloraç�
 msgid "Indent to connect nodes"
 msgstr "Identar para conectar os nós"
 
-#: src/components/Header.tsx:128
+#: src/components/Header.tsx:133
 msgid "Info"
 msgstr "Informações"
 
@@ -960,8 +973,8 @@ msgstr "Salvamento local para acesso offline"
 msgid "Lock Zoom to Graph"
 msgstr "Bloquear Zoom para o Gráfico"
 
-#: src/components/Header.tsx:195
-#: src/components/Header.tsx:435
+#: src/components/Header.tsx:206
+#: src/components/Header.tsx:447
 msgid "Log In"
 msgstr "Acessar"
 
@@ -993,6 +1006,10 @@ msgstr "Gerenciar Faturamento"
 msgid "Map Data"
 msgstr "Mapear Dados"
 
+#: src/components/Tabs/ThemeTab.tsx:315
+msgid "Maximum width of text inside nodes"
+msgstr "Largura máxima do texto dentro dos nós"
+
 #: src/components/Checkout.tsx:150
 msgid "Monthly"
 msgstr "Mensal"
@@ -1014,8 +1031,8 @@ msgstr "Nome do Gráfico"
 msgid "Name your chart"
 msgstr "Dê um nome ao seu gráfico"
 
-#: src/components/Header.tsx:97
-#: src/components/Header.tsx:357
+#: src/components/Header.tsx:102
+#: src/components/Header.tsx:369
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "Novo"
@@ -1160,13 +1177,13 @@ msgstr "Ponteiro e contêiner na mesma linha"
 msgid "Priority One-on-One Support"
 msgstr "Suporte prioritário um a um"
 
-#: src/components/Header.tsx:164
-#: src/components/Header.tsx:441
+#: src/components/Header.tsx:175
+#: src/components/Header.tsx:453
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
-#: src/components/GraphTip.tsx:32
+#: src/components/GraphTip.tsx:31
 msgid "Pro tip: Right-click any node to customize its shape and color"
 msgstr "Dica profissional: Clique com o botão direito em qualquer nó para personalizar sua forma e cor."
 
@@ -1256,7 +1273,7 @@ msgstr "Recarregar para Atualizar"
 
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:161
+#: src/components/RenameButton.tsx:160
 msgid "Rename"
 msgstr "Renomear"
 
@@ -1297,14 +1314,14 @@ msgstr "Da direita para esquerda"
 msgid "Right-click nodes for options"
 msgstr "Clique com o botão direito nos nós para ver as opções"
 
-#: src/components/Header.tsx:156
-#: src/components/Header.tsx:397
+#: src/components/Header.tsx:165
+#: src/components/Header.tsx:409
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "Roteiro"
 
-#: src/components/Tabs/ThemeTab.tsx:554
-#: src/components/Tabs/ThemeTab.tsx:555
+#: src/components/Tabs/ThemeTab.tsx:601
+#: src/components/Tabs/ThemeTab.tsx:602
 msgid "Rotate Label"
 msgstr "Rotular Rotação"
 
@@ -1341,12 +1358,12 @@ msgstr "Salve seu trabalho"
 msgid "Secure payment"
 msgstr "Pagamento seguro"
 
-#: src/components/Tabs/ThemeTab.tsx:351
-msgid "Set Fixed Node Height"
-msgstr "Definir Altura Fixa do Nó"
+#: src/components/Tabs/ThemeTab.tsx:395
+msgid "Set a consistent height for all nodes"
+msgstr "Definir uma altura consistente para todos os nós"
 
-#: src/components/Header.tsx:172
-#: src/components/Header.tsx:402
+#: src/components/Header.tsx:183
+#: src/components/Header.tsx:414
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "Configurações"
@@ -1373,12 +1390,11 @@ msgid "Sorry! This page is only available in English."
 msgstr "Sinto muito! Esta página só está disponível em inglês."
 
 #: src/lib/runAi.ts:120
-#: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Desculpe, houve um erro ao converter o texto em um fluxograma. Tente novamente mais tarde."
 
-#: src/components/Tabs/ThemeTab.tsx:444
-#: src/components/Tabs/ThemeTab.tsx:445
+#: src/components/Tabs/ThemeTab.tsx:491
+#: src/components/Tabs/ThemeTab.tsx:492
 msgid "Source Arrow Shape"
 msgstr "Forma da Seta de Origem"
 
@@ -1391,8 +1407,8 @@ msgstr "Coluna de Origem"
 msgid "Source Delimiter"
 msgstr "Delimitador de Origem"
 
-#: src/components/Tabs/ThemeTab.tsx:486
-#: src/components/Tabs/ThemeTab.tsx:487
+#: src/components/Tabs/ThemeTab.tsx:533
+#: src/components/Tabs/ThemeTab.tsx:534
 msgid "Source Distance From Node"
 msgstr "Distância da Origem ao Nó"
 
@@ -1468,8 +1484,8 @@ msgstr "Assinatura bem-sucedida!"
 msgid "Subscription will end"
 msgstr "Inscrição acabará"
 
-#: src/components/Tabs/ThemeTab.tsx:465
-#: src/components/Tabs/ThemeTab.tsx:466
+#: src/components/Tabs/ThemeTab.tsx:512
+#: src/components/Tabs/ThemeTab.tsx:513
 msgid "Target Arrow Shape"
 msgstr "Forma da Seta de Destino"
 
@@ -1482,8 +1498,8 @@ msgstr "Coluna Alvo"
 msgid "Target Delimiter"
 msgstr "Delimitador Alvo"
 
-#: src/components/Tabs/ThemeTab.tsx:504
-#: src/components/Tabs/ThemeTab.tsx:505
+#: src/components/Tabs/ThemeTab.tsx:551
+#: src/components/Tabs/ThemeTab.tsx:552
 msgid "Target Distance From Node"
 msgstr "Distância-alvo do Nó"
 
@@ -1492,21 +1508,22 @@ msgstr "Distância-alvo do Nó"
 msgid "Text Color"
 msgstr "Cor do Texto"
 
-#: src/components/Tabs/ThemeTab.tsx:350
+#: src/components/Tabs/ThemeTab.tsx:362
 msgid "Text Horizontal Offset"
 msgstr "Deslocamento Horizontal do Texto"
 
-#: src/components/Tabs/ThemeTab.tsx:320
-#: src/components/Tabs/ThemeTab.tsx:321
+#: src/components/Tabs/ThemeTab.tsx:332
+#: src/components/Tabs/ThemeTab.tsx:333
 msgid "Text Leading"
 msgstr "Texto Principal"
 
 #: src/components/Tabs/ThemeTab.tsx:305
+#: src/components/Tabs/ThemeTab.tsx:311
 msgid "Text Max Width"
 msgstr "Largura Máxima do Texto"
 
-#: src/components/Tabs/ThemeTab.tsx:335
-#: src/components/Tabs/ThemeTab.tsx:336
+#: src/components/Tabs/ThemeTab.tsx:347
+#: src/components/Tabs/ThemeTab.tsx:348
 msgid "Text Vertical Offset"
 msgstr "Deslocamento Vertical do Texto"
 
@@ -1719,7 +1736,7 @@ msgstr "Faça o upgrade para o Flowchart Fun Pro e desbloqueie:"
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Atualize para o Flowchart Fun Pro para desbloquear a exportação de SVG e aproveitar recursos mais avançados para seus diagramas."
 
-#: src/components/Header.tsx:410
+#: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "Atualize para Pro"
 
@@ -1731,8 +1748,8 @@ msgstr "Atualize para a versão Pro por $2/mês"
 msgid "Upload your File"
 msgstr "Faça o upload do seu arquivo"
 
-#: src/components/Tabs/ThemeTab.tsx:595
-#: src/components/Tabs/ThemeTab.tsx:596
+#: src/components/Tabs/ThemeTab.tsx:642
+#: src/components/Tabs/ThemeTab.tsx:643
 msgid "Use Custom CSS Only"
 msgstr "Usar Somente CSS Personalizado"
 
@@ -1760,7 +1777,7 @@ msgstr "Use os atributos <0>w</0> e <1>h</1> para definir explicitamente a largu
 msgid "Use the customer portal to change your billing information."
 msgstr "Use o portal do cliente para alterar suas informações de cobrança."
 
-#: src/components/Tabs/ThemeTab.tsx:629
+#: src/components/Tabs/ThemeTab.tsx:676
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Use essas configurações para adaptar a aparência e o comportamento de seus fluxogramas"
 
@@ -1812,8 +1829,8 @@ msgstr "E o próximo passo?"
 msgid "What's this?"
 msgstr "O que é isso?"
 
-#: src/components/Tabs/ThemeTab.tsx:408
-#: src/components/Tabs/ThemeTab.tsx:409
+#: src/components/Tabs/ThemeTab.tsx:455
+#: src/components/Tabs/ThemeTab.tsx:456
 msgid "Width"
 msgstr "Largura"
 

@@ -24,7 +24,7 @@ function getContentInitialValue() {
 
 export function LoadTemplateDialog() {
   const [open, setOpen] = useState(false);
-  const [template, setTemplate] = useState<null | typeof templates[number]>(
+  const [template, setTemplate] = useState<null | (typeof templates)[number]>(
     null
   );
   const [layout, setLayout] = useState(true);

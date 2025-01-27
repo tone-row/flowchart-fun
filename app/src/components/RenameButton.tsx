@@ -121,11 +121,13 @@ export const RenameButton = memo(function RenameButton({
                 <Trans>Rename</Trans>
               </SectionTitle>
               {hasProAccess && !isHosted ? (
-                <label className="flex gap-2 item-center mt-2">
-                  <span className="text-xs opacity-80">
-                    <Trans>Convert to hosted chart?</Trans>
-                  </span>
+                <label
+                  htmlFor="convert-to-hosted"
+                  className="flex gap-2 items-center mt-2 text-xs opacity-80"
+                >
+                  <Trans>Convert to hosted chart?</Trans>
                   <input
+                    id="convert-to-hosted"
                     type="checkbox"
                     checked={convertToHosted}
                     onChange={(e) => {

@@ -17,7 +17,7 @@ msgstr ""
 msgid "1 Temporary Flowchart"
 msgstr "1 임시 플로차트"
 
-#: src/components/Tabs/ThemeTab.tsx:636
+#: src/components/Tabs/ThemeTab.tsx:683
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>사용자 정의 CSS만</0>이 활성화되었습니다. 레이아웃과 고급 설정만 적용됩니다."
 
@@ -53,8 +53,8 @@ msgstr "워크플로우를 강화하기 위한 AI 기반 편집 기능"
 msgid "About"
 msgstr "소개"
 
-#: src/components/Header.tsx:179
-#: src/components/Header.tsx:427
+#: src/components/Header.tsx:190
+#: src/components/Header.tsx:439
 #: src/pages/Account.tsx:120
 msgid "Account"
 msgstr "계정"
@@ -67,7 +67,7 @@ msgstr "특수 문자 앞에는 역슬래시 (<0>\\</0>)를 추가하세요: <1>
 msgid "Add some steps"
 msgstr "몇 가지 단계를 추가하세요."
 
-#: src/components/Tabs/ThemeTab.tsx:570
+#: src/components/Tabs/ThemeTab.tsx:617
 msgid "Advanced"
 msgstr "고급"
 
@@ -102,8 +102,8 @@ msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접
 msgid "Appearance"
 msgstr "외관"
 
-#: src/components/Tabs/ThemeTab.tsx:524
-#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:571
+#: src/components/Tabs/ThemeTab.tsx:572
 msgid "Arrow Size"
 msgstr "화살표 크기"
 
@@ -155,8 +155,8 @@ msgstr "매년 $24로 청구됩니다"
 msgid "Billed monthly at $4"
 msgstr "매달 $4에 청구됩니다."
 
-#: src/components/Header.tsx:139
-#: src/components/Header.tsx:385
+#: src/components/Header.tsx:144
+#: src/components/Header.tsx:397
 #: src/pages/Blog.tsx:30
 msgid "Blog"
 msgstr "블로그"
@@ -186,7 +186,7 @@ msgstr "폭 우선"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:158
+#: src/components/RenameButton.tsx:157
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -210,14 +210,14 @@ msgstr "일부 속성은 요소의 모양 또는 기능을 사용자 정의하�
 msgid "Change Email Address"
 msgstr "이메일 주소 변경"
 
-#: src/components/Header.tsx:148
-#: src/components/Header.tsx:391
+#: src/components/Header.tsx:155
+#: src/components/Header.tsx:403
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "변경 로그"
 
-#: src/components/Header.tsx:107
-#: src/components/Header.tsx:363
+#: src/components/Header.tsx:112
+#: src/components/Header.tsx:375
 msgid "Charts"
 msgstr "차트"
 
@@ -240,6 +240,10 @@ msgstr "템플릿 선택"
 #: src/components/LearnSyntaxDialog.tsx:327
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "에지의 소스와 목적지를 위한 다양한 화살표 모양을 선택합니다. 모양에는 삼각형, 삼각형-티, 원-삼각형, 삼각형-가위형, 삼각형-뒤곡선, 베이, 티, 사각형, 원, 다이아몬드, 쉐브론, 없음이 포함됩니다."
+
+#: src/components/Tabs/ThemeTab.tsx:436
+msgid "Choose how edges connect between nodes"
+msgstr "노드 간 연결 방식 선택"
 
 #: src/components/Tabs/ThemeTab.tsx:96
 msgid "Choose how nodes are automatically arranged in your flowchart"
@@ -269,8 +273,8 @@ msgstr "클론"
 msgid "Close"
 msgstr "닫기"
 
-#: src/components/Tabs/ThemeTab.tsx:423
-#: src/components/Tabs/ThemeTab.tsx:424
+#: src/components/Tabs/ThemeTab.tsx:470
+#: src/components/Tabs/ThemeTab.tsx:471
 msgid "Color"
 msgstr "색상"
 
@@ -294,7 +298,6 @@ msgstr "동심"
 msgid "Confirm New Email"
 msgstr "새 이메일 확인"
 
-#: src/pages/LogIn.tsx:232
 #: src/pages/LogIn.tsx:232
 msgid "Confirm your email address to sign in."
 msgstr "로그인하려면 이메일 주소를 확인하세요."
@@ -332,7 +335,7 @@ msgstr "변환하기"
 msgid "Convert to Flowchart"
 msgstr "흐름도로 변환"
 
-#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:125
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
@@ -410,12 +413,12 @@ msgstr "AI로 만들기"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "두 노드 사이에 엣지를 만드는 것은 첫 번째 노드 아래에 두 번째 노드를 들여 쓰는 것으로 합니다."
 
-#: src/components/Tabs/ThemeTab.tsx:391
+#: src/components/Tabs/ThemeTab.tsx:426
 msgid "Curve Style"
 msgstr "곡선 스타일"
 
-#: src/components/Tabs/ThemeTab.tsx:578
-#: src/components/Tabs/ThemeTab.tsx:579
+#: src/components/Tabs/ThemeTab.tsx:625
+#: src/components/Tabs/ThemeTab.tsx:626
 msgid "Custom CSS"
 msgstr "사용자 정의 CSS"
 
@@ -531,11 +534,12 @@ msgid "Edge Label Column"
 msgstr "가장자리 라벨 열"
 
 #: src/components/LearnSyntaxDialog.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edge Style"
 msgstr "가장자리 스타일"
 
-#: src/components/Tabs/ThemeTab.tsx:539
-#: src/components/Tabs/ThemeTab.tsx:540
+#: src/components/Tabs/ThemeTab.tsx:586
+#: src/components/Tabs/ThemeTab.tsx:587
 msgid "Edge Text Size"
 msgstr "가장자리 텍스트 크기"
 
@@ -545,7 +549,7 @@ msgstr "들여쓰기가 누락된 가장자리"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:384
+#: src/components/Tabs/ThemeTab.tsx:419
 msgid "Edges"
 msgstr "가장자리"
 
@@ -594,8 +598,8 @@ msgstr "AI로 편집하기"
 msgid "Editable"
 msgstr "편집 가능"
 
-#: src/components/Header.tsx:89
-#: src/components/Header.tsx:351
+#: src/components/Header.tsx:92
+#: src/components/Header.tsx:363
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "에디터"
@@ -611,6 +615,10 @@ msgstr "이메일"
 #: src/components/ImportDataDialog.tsx:550
 msgid "Empty"
 msgstr "비어 있음"
+
+#: src/components/Tabs/ThemeTab.tsx:371
+msgid "Enable to set a consistent height for all nodes"
+msgstr "모든 노드의 일관된 높이 설정 가능"
 
 #: src/pages/LogIn.tsx:138
 msgid "Enter your email address and we'll send you a magic link to sign in."
@@ -663,8 +671,8 @@ msgid "Feature Breakdown"
 msgstr "기능 분해"
 
 #: src/components/Feedback.tsx:50
-#: src/components/Header.tsx:115
-#: src/components/Header.tsx:377
+#: src/components/Header.tsx:120
+#: src/components/Header.tsx:389
 msgid "Feedback"
 msgstr "피드백"
 
@@ -672,7 +680,12 @@ msgstr "피드백"
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "우리에게 연락하고 자유롭게 탐색하시고 <0>피드백</0> 페이지를 통해 의견을 제시하실 수 있습니다."
 
-#: src/components/Tabs/ThemeTab.tsx:362
+#: src/components/Tabs/ThemeTab.tsx:391
+msgid "Fixed Height"
+msgstr "고정 높이"
+
+#: src/components/Tabs/ThemeTab.tsx:367
+#: src/components/Tabs/ThemeTab.tsx:385
 msgid "Fixed Node Height"
 msgstr "고정된 노드 높이"
 
@@ -828,7 +841,7 @@ msgstr "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Vis
 msgid "Indent to connect nodes"
 msgstr "노드를 연결하기 위해 들여쓰기하세요."
 
-#: src/components/Header.tsx:128
+#: src/components/Header.tsx:133
 msgid "Info"
 msgstr "정보"
 
@@ -960,8 +973,8 @@ msgstr "오프라인 접속을 위한 로컬 저장 기능"
 msgid "Lock Zoom to Graph"
 msgstr "그래프에 룩 줌을 고정하다"
 
-#: src/components/Header.tsx:195
-#: src/components/Header.tsx:435
+#: src/components/Header.tsx:206
+#: src/components/Header.tsx:447
 msgid "Log In"
 msgstr "로그인"
 
@@ -993,6 +1006,10 @@ msgstr "청구 관리"
 msgid "Map Data"
 msgstr "데이터 지도"
 
+#: src/components/Tabs/ThemeTab.tsx:315
+msgid "Maximum width of text inside nodes"
+msgstr "노드 내부 텍스트의 최대 너비"
+
 #: src/components/Checkout.tsx:150
 msgid "Monthly"
 msgstr "월간"
@@ -1014,8 +1031,8 @@ msgstr "차트 이름"
 msgid "Name your chart"
 msgstr "차트 이름 지정"
 
-#: src/components/Header.tsx:97
-#: src/components/Header.tsx:357
+#: src/components/Header.tsx:102
+#: src/components/Header.tsx:369
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "신규"
@@ -1160,13 +1177,13 @@ msgstr "같은 줄에 포인터와 컨테이너"
 msgid "Priority One-on-One Support"
 msgstr "우선순위 일대일 지원"
 
-#: src/components/Header.tsx:164
-#: src/components/Header.tsx:441
+#: src/components/Header.tsx:175
+#: src/components/Header.tsx:453
 #: src/components/Settings.tsx:125
 msgid "Privacy Policy"
 msgstr "개인정보보호정책"
 
-#: src/components/GraphTip.tsx:32
+#: src/components/GraphTip.tsx:31
 msgid "Pro tip: Right-click any node to customize its shape and color"
 msgstr "팁: 노드를 우클릭하여 모양과 색상을 사용자 정의할 수 있습니다."
 
@@ -1256,7 +1273,7 @@ msgstr "업데이트하려면 다시 로드하기 "
 
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:161
+#: src/components/RenameButton.tsx:160
 msgid "Rename"
 msgstr "이름 바꾸기"
 
@@ -1297,14 +1314,14 @@ msgstr "오른쪽에서 왼쪽으로"
 msgid "Right-click nodes for options"
 msgstr "옵션을 위해 노드를 오른쪽 클릭하세요"
 
-#: src/components/Header.tsx:156
-#: src/components/Header.tsx:397
+#: src/components/Header.tsx:165
+#: src/components/Header.tsx:409
 #: src/pages/Roadmap.tsx:25
 msgid "Roadmap"
 msgstr "로드맵"
 
-#: src/components/Tabs/ThemeTab.tsx:554
-#: src/components/Tabs/ThemeTab.tsx:555
+#: src/components/Tabs/ThemeTab.tsx:601
+#: src/components/Tabs/ThemeTab.tsx:602
 msgid "Rotate Label"
 msgstr "라벨 회전"
 
@@ -1341,12 +1358,12 @@ msgstr "작업 저장"
 msgid "Secure payment"
 msgstr "안전한 결제"
 
-#: src/components/Tabs/ThemeTab.tsx:351
-msgid "Set Fixed Node Height"
-msgstr "고정 노드 높이 설정"
+#: src/components/Tabs/ThemeTab.tsx:395
+msgid "Set a consistent height for all nodes"
+msgstr "모든 노드의 일관된 높이 설정하기"
 
-#: src/components/Header.tsx:172
-#: src/components/Header.tsx:402
+#: src/components/Header.tsx:183
+#: src/components/Header.tsx:414
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "설정"
@@ -1373,12 +1390,11 @@ msgid "Sorry! This page is only available in English."
 msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 
 #: src/lib/runAi.ts:120
-#: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "죄송합니다, 텍스트를 플로우차트로 변환하는 중에 오류가 발생했습니다. 나중에 다시 시도해주세요."
 
-#: src/components/Tabs/ThemeTab.tsx:444
-#: src/components/Tabs/ThemeTab.tsx:445
+#: src/components/Tabs/ThemeTab.tsx:491
+#: src/components/Tabs/ThemeTab.tsx:492
 msgid "Source Arrow Shape"
 msgstr "소스 화살표 모양"
 
@@ -1391,8 +1407,8 @@ msgstr "소스 열"
 msgid "Source Delimiter"
 msgstr "소스 구분자"
 
-#: src/components/Tabs/ThemeTab.tsx:486
-#: src/components/Tabs/ThemeTab.tsx:487
+#: src/components/Tabs/ThemeTab.tsx:533
+#: src/components/Tabs/ThemeTab.tsx:534
 msgid "Source Distance From Node"
 msgstr "노드에서 소스 거리"
 
@@ -1468,8 +1484,8 @@ msgstr "구독 성공!"
 msgid "Subscription will end"
 msgstr "구독이 종료될 예정입니다."
 
-#: src/components/Tabs/ThemeTab.tsx:465
-#: src/components/Tabs/ThemeTab.tsx:466
+#: src/components/Tabs/ThemeTab.tsx:512
+#: src/components/Tabs/ThemeTab.tsx:513
 msgid "Target Arrow Shape"
 msgstr "대상 화살표 모양"
 
@@ -1482,8 +1498,8 @@ msgstr "대상 열"
 msgid "Target Delimiter"
 msgstr "대상 구분자"
 
-#: src/components/Tabs/ThemeTab.tsx:504
-#: src/components/Tabs/ThemeTab.tsx:505
+#: src/components/Tabs/ThemeTab.tsx:551
+#: src/components/Tabs/ThemeTab.tsx:552
 msgid "Target Distance From Node"
 msgstr "노드로부터의 목표 거리"
 
@@ -1492,21 +1508,22 @@ msgstr "노드로부터의 목표 거리"
 msgid "Text Color"
 msgstr "텍스트 색상"
 
-#: src/components/Tabs/ThemeTab.tsx:350
+#: src/components/Tabs/ThemeTab.tsx:362
 msgid "Text Horizontal Offset"
 msgstr "텍스트 수평 오프셋"
 
-#: src/components/Tabs/ThemeTab.tsx:320
-#: src/components/Tabs/ThemeTab.tsx:321
+#: src/components/Tabs/ThemeTab.tsx:332
+#: src/components/Tabs/ThemeTab.tsx:333
 msgid "Text Leading"
 msgstr "텍스트 리딩"
 
 #: src/components/Tabs/ThemeTab.tsx:305
+#: src/components/Tabs/ThemeTab.tsx:311
 msgid "Text Max Width"
 msgstr "텍스트 최대 너비"
 
-#: src/components/Tabs/ThemeTab.tsx:335
-#: src/components/Tabs/ThemeTab.tsx:336
+#: src/components/Tabs/ThemeTab.tsx:347
+#: src/components/Tabs/ThemeTab.tsx:348
 msgid "Text Vertical Offset"
 msgstr "텍스트 수직 오프셋"
 
@@ -1719,7 +1736,7 @@ msgstr "Flowchart Fun Pro로 업그레이드하고 다음을 잠금 해제하세
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 해제하고 다이어그램에 대한 더 고급 기능을 즐기세요."
 
-#: src/components/Header.tsx:410
+#: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
@@ -1731,8 +1748,8 @@ msgstr "프로로 업그레이드하면 매달 $2"
 msgid "Upload your File"
 msgstr "파일을 업로드하세요."
 
-#: src/components/Tabs/ThemeTab.tsx:595
-#: src/components/Tabs/ThemeTab.tsx:596
+#: src/components/Tabs/ThemeTab.tsx:642
+#: src/components/Tabs/ThemeTab.tsx:643
 msgid "Use Custom CSS Only"
 msgstr "사용자 정의 CSS만 사용"
 
@@ -1760,7 +1777,7 @@ msgstr "노드의 너비와 높이를 명시적으로 설정하려면 <0>w</0> �
 msgid "Use the customer portal to change your billing information."
 msgstr "청구 정보를 변경하려면 고객 포털을 사용하십시오."
 
-#: src/components/Tabs/ThemeTab.tsx:629
+#: src/components/Tabs/ThemeTab.tsx:676
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "이 설정을 사용하여 흐름 도표의 모양과 동작을 조정하십시오"
 
@@ -1812,8 +1829,8 @@ msgstr "다음은 무엇인가요?"
 msgid "What's this?"
 msgstr "이것이 무엇인가요?"
 
-#: src/components/Tabs/ThemeTab.tsx:408
-#: src/components/Tabs/ThemeTab.tsx:409
+#: src/components/Tabs/ThemeTab.tsx:455
+#: src/components/Tabs/ThemeTab.tsx:456
 msgid "Width"
 msgstr "너비"
 
