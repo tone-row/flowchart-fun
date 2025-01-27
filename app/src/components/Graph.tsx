@@ -16,7 +16,7 @@ import { monacoMarkerErrorSeverity } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getElements } from "../lib/getElements";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
-import { isError } from "../lib/helpers";
+import { isError, isUrl } from "../lib/helpers";
 import { useCanEdit } from "../lib/hooks";
 import {
   preprocessStyle,
@@ -135,11 +135,6 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 export default Graph;
 
 function handleDragFree() {
-  // If the layout is fcose, we don't want to freeze the layout
-  // because people may not expect that behavior / Subject to change!
-  const layout = useGraphStore.getState().layout;
-  if (layout.name === "fcose" || layout.name === "stress") return;
-
   const nodePositions = getNodePositionsFromCy();
   useDoc.setState(
     (state) => {
@@ -229,9 +224,13 @@ function initializeGraph({
     });
     // on node tap, if has a href, open it
     cyCurrent.on("tap", "node", function handleTap(this: NodeSingular) {
-      const { href } = this.data();
-      if (href) {
-        window.open(href, "_blank");
+      const { href, label } = this.data();
+      const url =
+        href || (typeof label === "string" && isUrl(label) ? label : null);
+      if (url) {
+        // Add https:// if no protocol is specified
+        const fullUrl = url.startsWith("http") ? url : `https://${url}`;
+        window.open(fullUrl, "_blank");
       }
     });
 
