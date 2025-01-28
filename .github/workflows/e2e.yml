@@ -26,7 +26,7 @@ jobs:
             
             if [ ! -z "$READY_URL" ]; then
               echo "Found ready deployment!"
-              echo "url=https://$READY_URL" >> $GITHUB_OUTPUT
+              echo "preview_url=https://$READY_URL" >> $GITHUB_OUTPUT
               exit 0
             fi
             
@@ -59,6 +59,8 @@ jobs:
           echo TESTING_PASS_PRO=${{ secrets.TESTING_PASS_PRO }} >> app/.env
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - uses: pnpm/action-setup@v3
         with:
           version: 8
