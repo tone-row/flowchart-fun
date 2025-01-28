@@ -241,7 +241,7 @@ importers:
         specifier: ^3.18.1
         version: 3.40.0
       cytoscape:
-        specifier: ^3.29.2
+        specifier: ^3.31.0
         version: 3.31.0
       cytoscape-cose-bilkent:
         specifier: ^4.1.0
@@ -250,7 +250,7 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0(cytoscape@3.31.0)
       cytoscape-elk:
-        specifier: ^2.1.0
+        specifier: ^2.3.0
         version: 2.3.0(cytoscape@3.31.0)
       cytoscape-fcose:
         specifier: ^2.2.0
@@ -437,10 +437,10 @@ importers:
         specifier: ^0.0.7
         version: 0.0.7
       '@types/cytoscape':
-        specifier: ^3.21.1
+        specifier: ^3.21.9
         version: 3.21.9
       '@types/cytoscape-fcose':
-        specifier: ^2.2.2
+        specifier: ^2.2.4
         version: 2.2.4
       '@types/download':
         specifier: ^6.2.4
