@@ -7,7 +7,11 @@ const options: Partial<PostHogConfig> = {
 };
 
 export function PosthogWrapper({ children }: { children: React.ReactNode }) {
-  if (process.env.REACT_APP_VERCEL_ENV !== "production") {
+  if (
+    process.env.REACT_APP_VERCEL_ENV !== "production" ||
+    !process.env.REACT_APP_PUBLIC_POSTHOG_KEY ||
+    !process.env.REACT_APP_PUBLIC_POSTHOG_HOST
+  ) {
     return <>{children}</>;
   }
 
