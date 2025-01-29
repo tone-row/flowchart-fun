@@ -10,20 +10,42 @@ jobs:
       - name: Get preview url
         id: get_url
         run: |
-          STATE="not ready"
           CURRENT_HASH=${{ github.event.pull_request.head.sha }}
-          echo $CURRENT_HASH
-          until [ "$STATE" = '"READY"' ]
+          echo "Looking for deployment for commit: $CURRENT_HASH"
+
+          MAX_ATTEMPTS=60  # 5 minutes maximum wait time
+          ATTEMPT=0
+
+          while [ $ATTEMPT -lt $MAX_ATTEMPTS ]
           do
             RESULTS=$(curl -s -H 'Accept: application/json' -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" "https://api.vercel.com/v6/now/deployments?teamId=tone-row&name=flowchart-fun")
-            CLEAN=$(echo $RESULTS | tr -d '[:cntrl:]');
-            STATE=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .state');
-            echo $STATE
+            CLEAN=$(echo $RESULTS | tr -d '[:cntrl:]')
+            
+            # Check if there's any READY deployment for this commit
+            READY_URL=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" -r '.deployments[] | select(.meta.githubCommitSha==$h and .state=="READY") | .url' | head -n1)
+            
+            if [ ! -z "$READY_URL" ]; then
+              echo "Found ready deployment!"
+              echo "preview_url=https://$READY_URL" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+            
+            # If no READY deployment found, check if all deployments for this commit have errored
+            ALL_STATES=$(echo $CLEAN | jq --arg h "$CURRENT_HASH" -r '.deployments[] | select(.meta.githubCommitSha==$h) | .state')
+            
+            if [ ! -z "$ALL_STATES" ] && [ -z "$(echo "$ALL_STATES" | grep -v "ERROR")" ]; then
+              echo "All deployments have failed for this commit"
+              exit 1
+            fi
+            
+            echo "Waiting for deployment... (Attempt $ATTEMPT of $MAX_ATTEMPTS)"
+            ATTEMPT=$((ATTEMPT + 1))
             sleep 5
           done
-          echo "Deployment is ready!"
-          URL=https://$(echo $CLEAN | jq --arg h "$CURRENT_HASH" '.deployments[] | select(.meta.githubCommitSha==$h) | .url')
-          echo ::set-output name=preview_url::$(echo $URL)
+
+          echo "Timeout waiting for deployment"
+          exit 1
+
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Add env
@@ -37,6 +59,8 @@ jobs:
           echo TESTING_PASS_PRO=${{ secrets.TESTING_PASS_PRO }} >> app/.env
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - uses: pnpm/action-setup@v3
         with:
           version: 8
