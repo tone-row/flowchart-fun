@@ -77,5 +77,13 @@ function getShowBannerAndMessage(): [boolean, string, "error" | "info"] {
       return [true, errorDescription, "error"];
     }
   }
-  return [false, "", "info"];
+
+  // return [false, "", "info"];
+
+  // Temporary banner while our auth provider is down
+  return [
+    true,
+    "Login is temporarily unavailable. We apologize for the inconvenience. Please check back soon.",
+    "error",
+  ];
 }
