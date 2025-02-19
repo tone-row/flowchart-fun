@@ -77,5 +77,6 @@ function getShowBannerAndMessage(): [boolean, string, "error" | "info"] {
       return [true, errorDescription, "error"];
     }
   }
+
   return [false, "", "info"];
 }
