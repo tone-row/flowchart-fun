@@ -230,9 +230,18 @@ export default function Pricing2() {
           <FeaturesSlideshow />
         </div>
       </div>
-      <p className="w-max mx-auto md:text-lg text-white font-semibold text-wrap-balance leading-normal md:leading-tight text-center px-6 py-4 rounded-full bg-gradient-to-r from-purple-700/80 to-purple-800 my-12">
+      <button
+        className="w-max mx-auto md:text-lg text-white font-semibold text-wrap-balance leading-normal md:leading-tight text-center px-6 py-4 rounded-full bg-gradient-to-r from-purple-700/80 to-purple-800 my-12 justify-self-center block transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-[1.03] hover:from-purple-600/90 hover:to-purple-700"
+        onClick={() => {
+          // scroll to the bottom of the page
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        }}
+      >
         <Trans>Upgrade to Pro for $2/month</Trans>
-      </p>
+      </button>
 
       <div className="trusted">
         <Container className="py-8">
