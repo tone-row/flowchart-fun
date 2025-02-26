@@ -41,7 +41,7 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 msgid "AI Creation & Editing"
 msgstr "AI创建与编辑"
 
-#: src/pages/Pricing2.tsx:61
+#: src/pages/Pricing2.tsx:62
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI驱动的流程图创建"
 
@@ -186,7 +186,7 @@ msgstr "宽度优先"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:157
+#: src/components/RenameButton.tsx:160
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -335,7 +335,7 @@ msgstr "转换"
 msgid "Convert to Flowchart"
 msgstr "转换为流程图"
 
-#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:128
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
@@ -423,7 +423,7 @@ msgid "Custom CSS"
 msgstr "自定义CSS"
 
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:86
+#: src/pages/Pricing2.tsx:87
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
@@ -431,7 +431,7 @@ msgstr "自定义分享选项"
 msgid "Customer Portal"
 msgstr "客户门户"
 
-#: src/pages/Pricing2.tsx:34
+#: src/pages/Pricing2.tsx:35
 msgid "Daily Sandbox Editor"
 msgstr "每日沙盒编辑器"
 
@@ -444,7 +444,7 @@ msgstr "深色"
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: src/pages/Pricing2.tsx:80
+#: src/pages/Pricing2.tsx:81
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "数据导入（Visio，Lucidchart，CSV）"
 
@@ -641,7 +641,7 @@ msgstr "示例"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:98
+#: src/pages/Pricing2.tsx:99
 msgid "Exclusive Office Hours"
 msgstr "专属办公时间"
 
@@ -666,7 +666,7 @@ msgstr "导出为PNG和JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "导出为PNG，JPG和SVG"
 
-#: src/pages/Pricing2.tsx:263
+#: src/pages/Pricing2.tsx:266
 msgid "Feature Breakdown"
 msgstr "功能分解"
 
@@ -857,6 +857,10 @@ msgstr "JSON画布是您的图表的JSON表示，由<0>Obsidian</0> Canvas和其
 msgid "Join 2000+ professionals who've upgraded their workflow"
 msgstr "加入2000多位专业人士，升级他们的工作流程"
 
+#: src/components/Testimonials.tsx:127
+msgid "Join thousands of happy users who love Flowchart Fun"
+msgstr "加入成千上万的快乐用户，他们都爱流程图乐趣"
+
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "保持事物私密"
@@ -960,7 +964,7 @@ msgid "Load layout and styles"
 msgstr "載入版面和樣式"
 
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:68
+#: src/pages/Pricing2.tsx:69
 msgid "Local File Support"
 msgstr "本地文件支持"
 
@@ -1173,7 +1177,7 @@ msgstr "剧本"
 msgid "Pointer and container on same line"
 msgstr "同一行上的指针和容器"
 
-#: src/pages/Pricing2.tsx:92
+#: src/pages/Pricing2.tsx:93
 msgid "Priority One-on-One Support"
 msgstr "优先一对一支持"
 
@@ -1208,7 +1212,7 @@ msgstr "公开"
 msgid "Random"
 msgstr "随机"
 
-#: src/pages/Pricing2.tsx:41
+#: src/pages/Pricing2.tsx:42
 msgid "Rapid Deployment Templates"
 msgstr "快速部署模板"
 
@@ -1217,7 +1221,7 @@ msgstr "快速部署模板"
 msgid "Rapid Templates"
 msgstr "快速模板"
 
-#: src/pages/Pricing2.tsx:43
+#: src/pages/Pricing2.tsx:44
 msgid "Raster Export (PNG, JPG)"
 msgstr "光栅导出（PNG，JPG）"
 
@@ -1273,7 +1277,7 @@ msgstr "重新加载以更新"
 
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:163
 msgid "Rename"
 msgstr "重命名"
 
@@ -1357,6 +1361,10 @@ msgstr "保存您的工作"
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "安全付款"
+
+#: src/components/Testimonials.tsx:152
+msgid "See more reviews on Product Hunt"
+msgstr "在Product Hunt上查看更多评论"
 
 #: src/components/Tabs/ThemeTab.tsx:395
 msgid "Set a consistent height for all nodes"
@@ -1468,7 +1476,7 @@ msgstr "用类别进行样式设置"
 msgid "Submit"
 msgstr "提交"
 
-#: src/pages/Pricing2.tsx:338
+#: src/pages/Pricing2.tsx:344
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "订阅专业版，以有趣的方式制作流程图！"
 
@@ -1573,7 +1581,7 @@ msgstr "可能的形状是："
 msgid "Theme"
 msgstr "主題"
 
-#: src/pages/Pricing2.tsx:36
+#: src/pages/Pricing2.tsx:37
 msgid "Theme Customization Editor"
 msgstr "主题定制编辑器"
 
@@ -1651,7 +1659,7 @@ msgstr "秒转换您的想法成专业图表"
 msgid "Transform text into diagrams instantly"
 msgstr "即时将文本转换为图表"
 
-#: src/pages/Pricing2.tsx:238
+#: src/pages/Pricing2.tsx:240
 msgid "Trusted by Professionals and Academics"
 msgstr "受专业人士和学者信任"
 
@@ -1663,7 +1671,7 @@ msgstr "尝试人工智能"
 msgid "Try again"
 msgstr "重试"
 
-#: src/pages/Pricing2.tsx:206
+#: src/pages/Pricing2.tsx:207
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "在几秒钟内将您的想法转化为专业图表"
 
@@ -1700,7 +1708,7 @@ msgid "Unlimited Flowcharts"
 msgstr "无限制的流程图"
 
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:55
+#: src/pages/Pricing2.tsx:56
 msgid "Unlimited Permanent Flowcharts"
 msgstr "无限永久流程图"
 
@@ -1740,7 +1748,7 @@ msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高�
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
-#: src/pages/Pricing2.tsx:233
+#: src/pages/Pricing2.tsx:234
 msgid "Upgrade to Pro for $2/month"
 msgstr "升级至专业版每月$2"
 
@@ -1797,7 +1805,7 @@ msgstr "使用此模式来修改和增强您当前的图表。"
 msgid "User"
 msgstr "用户"
 
-#: src/pages/Pricing2.tsx:49
+#: src/pages/Pricing2.tsx:50
 msgid "Vector Export (SVG)"
 msgstr "矢量导出（SVG）"
 
@@ -1809,7 +1817,7 @@ msgstr "在 Github 上查看"
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "想要从文档创建流程图吗？ 将其粘贴到编辑器中，然后单击“转换为流程图”"
 
-#: src/pages/Pricing2.tsx:74
+#: src/pages/Pricing2.tsx:75
 msgid "Watermark-Free Diagrams"
 msgstr "无水印图表"
 
@@ -1820,6 +1828,10 @@ msgstr "水印"
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
 msgstr "欢迎来到流程图乐趣"
+
+#: src/components/Testimonials.tsx:124
+msgid "What our users are saying"
+msgstr "我们的用户都说什么了"
 
 #: src/lib/getDefaultText.ts:15
 msgid "What's next?"

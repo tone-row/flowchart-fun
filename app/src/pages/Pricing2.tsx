@@ -27,6 +27,7 @@ import {
   X,
 } from "phosphor-react";
 import { Checkout } from "../components/Checkout";
+import Testimonials from "../components/Testimonials";
 import throttle from "lodash.throttle";
 import { Link } from "react-router-dom";
 
@@ -229,9 +230,19 @@ export default function Pricing2() {
           <FeaturesSlideshow />
         </div>
       </div>
-      <p className="w-max mx-auto md:text-lg text-white font-semibold text-wrap-balance leading-normal md:leading-tight text-center px-6 py-4 rounded-full bg-gradient-to-r from-purple-700/80 to-purple-800 my-12">
+      <button
+        className="w-max mx-auto md:text-lg text-white font-semibold text-wrap-balance leading-normal md:leading-tight text-center px-6 py-4 rounded-full bg-gradient-to-r from-purple-700/80 to-purple-800 my-12 justify-self-center block transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-[1.03] hover:from-purple-600/90 hover:to-purple-700"
+        onClick={() => {
+          // scroll to the bottom of the page
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        }}
+      >
         <Trans>Upgrade to Pro for $2/month</Trans>
-      </p>
+      </button>
+
       <div className="trusted">
         <Container className="py-8">
           <SectionTitle className="text-center mb-8 md:mb-14">
@@ -257,6 +268,7 @@ export default function Pricing2() {
           </div>
         </Container>
       </div>
+
       <div className="whats-included py-8 px-4 md:px-6">
         <div className="md:w-max mx-auto">
           <SectionTitle>
@@ -322,6 +334,9 @@ export default function Pricing2() {
           </div>
         </div>
       </div>
+
+      <Testimonials />
+
       <div className="checkout-wrapper py-10 relative overflow-hidden px-4 md:px-6">
         <div className="max-w-2xl mx-auto relative z-10">
           <Checkout pricing2 />

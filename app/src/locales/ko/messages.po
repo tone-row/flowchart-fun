@@ -41,7 +41,7 @@ msgstr "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면
 msgid "AI Creation & Editing"
 msgstr "AI 생성 및 편집"
 
-#: src/pages/Pricing2.tsx:61
+#: src/pages/Pricing2.tsx:62
 msgid "AI-Powered Flowchart Creation"
 msgstr "인공지능 기반 플로우차트 생성"
 
@@ -186,7 +186,7 @@ msgstr "폭 우선"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:157
+#: src/components/RenameButton.tsx:160
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -335,7 +335,7 @@ msgstr "변환하기"
 msgid "Convert to Flowchart"
 msgstr "흐름도로 변환"
 
-#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:128
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
@@ -423,7 +423,7 @@ msgid "Custom CSS"
 msgstr "사용자 정의 CSS"
 
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:86
+#: src/pages/Pricing2.tsx:87
 msgid "Custom Sharing Options"
 msgstr "커스텀 공유 옵션"
 
@@ -431,7 +431,7 @@ msgstr "커스텀 공유 옵션"
 msgid "Customer Portal"
 msgstr "고객 포털"
 
-#: src/pages/Pricing2.tsx:34
+#: src/pages/Pricing2.tsx:35
 msgid "Daily Sandbox Editor"
 msgstr "매일 샌드박스 편집기"
 
@@ -444,7 +444,7 @@ msgstr "다크"
 msgid "Dark Mode"
 msgstr "다크 모드"
 
-#: src/pages/Pricing2.tsx:80
+#: src/pages/Pricing2.tsx:81
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "데이터 가져오기 (Visio, Lucidchart, CSV)"
 
@@ -641,7 +641,7 @@ msgstr "예시"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:98
+#: src/pages/Pricing2.tsx:99
 msgid "Exclusive Office Hours"
 msgstr "독점 오피스 시간"
 
@@ -666,7 +666,7 @@ msgstr "PNG 및 JPG로 내보내기"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG 및 SVG로 내보내기"
 
-#: src/pages/Pricing2.tsx:263
+#: src/pages/Pricing2.tsx:266
 msgid "Feature Breakdown"
 msgstr "기능 분해"
 
@@ -857,6 +857,10 @@ msgstr "JSON 캔버스는 <0>Obsidian</0> 캔버스 및 다른 응용 프로그�
 msgid "Join 2000+ professionals who've upgraded their workflow"
 msgstr "워크플로우를 업그레이드한 2000명 이상의 전문가들과 함께하세요"
 
+#: src/components/Testimonials.tsx:127
+msgid "Join thousands of happy users who love Flowchart Fun"
+msgstr "플로우 차트 어플을 사랑하는 수천 명의 행복한 사용자들과 함께하세요"
+
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "개인 정보 유지하기"
@@ -960,7 +964,7 @@ msgid "Load layout and styles"
 msgstr "레이아웃과 스타일 로드"
 
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:68
+#: src/pages/Pricing2.tsx:69
 msgid "Local File Support"
 msgstr "로컬 파일 지원"
 
@@ -1173,7 +1177,7 @@ msgstr "플레이북"
 msgid "Pointer and container on same line"
 msgstr "같은 줄에 포인터와 컨테이너"
 
-#: src/pages/Pricing2.tsx:92
+#: src/pages/Pricing2.tsx:93
 msgid "Priority One-on-One Support"
 msgstr "우선순위 일대일 지원"
 
@@ -1208,7 +1212,7 @@ msgstr "공용"
 msgid "Random"
 msgstr "무작위"
 
-#: src/pages/Pricing2.tsx:41
+#: src/pages/Pricing2.tsx:42
 msgid "Rapid Deployment Templates"
 msgstr "빠른 배포 템플릿"
 
@@ -1217,7 +1221,7 @@ msgstr "빠른 배포 템플릿"
 msgid "Rapid Templates"
 msgstr "급변화 템플릿"
 
-#: src/pages/Pricing2.tsx:43
+#: src/pages/Pricing2.tsx:44
 msgid "Raster Export (PNG, JPG)"
 msgstr "래스터 내보내기 (PNG, JPG)"
 
@@ -1273,7 +1277,7 @@ msgstr "업데이트하려면 다시 로드하기 "
 
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:163
 msgid "Rename"
 msgstr "이름 바꾸기"
 
@@ -1357,6 +1361,10 @@ msgstr "작업 저장"
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "안전한 결제"
+
+#: src/components/Testimonials.tsx:152
+msgid "See more reviews on Product Hunt"
+msgstr "Product Hunt에서 더 많은 리뷰를 확인하세요"
 
 #: src/components/Tabs/ThemeTab.tsx:395
 msgid "Set a consistent height for all nodes"
@@ -1468,7 +1476,7 @@ msgstr "클래스로 스타일링"
 msgid "Submit"
 msgstr "보내다"
 
-#: src/pages/Pricing2.tsx:338
+#: src/pages/Pricing2.tsx:344
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "프로를 구독하고 재미있게 플로우차트 작성하기!"
 
@@ -1573,7 +1581,7 @@ msgstr "가능한 모양은 다음과 같습니다:"
 msgid "Theme"
 msgstr "테마"
 
-#: src/pages/Pricing2.tsx:36
+#: src/pages/Pricing2.tsx:37
 msgid "Theme Customization Editor"
 msgstr "테마 커스터마이즈 편집기"
 
@@ -1651,7 +1659,7 @@ msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 msgid "Transform text into diagrams instantly"
 msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
 
-#: src/pages/Pricing2.tsx:238
+#: src/pages/Pricing2.tsx:240
 msgid "Trusted by Professionals and Academics"
 msgstr "전문가와 학술인들에게 신뢰받는다"
 
@@ -1663,7 +1671,7 @@ msgstr "AI 시도해보기"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/pages/Pricing2.tsx:206
+#: src/pages/Pricing2.tsx:207
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "아이디어를 몇 초 만에 전문적인 다이어그램으로 변환하세요."
 
@@ -1700,7 +1708,7 @@ msgid "Unlimited Flowcharts"
 msgstr "무제한 다이어그램"
 
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:55
+#: src/pages/Pricing2.tsx:56
 msgid "Unlimited Permanent Flowcharts"
 msgstr "무제한 영구 플로차트"
 
@@ -1740,7 +1748,7 @@ msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 �
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
-#: src/pages/Pricing2.tsx:233
+#: src/pages/Pricing2.tsx:234
 msgid "Upgrade to Pro for $2/month"
 msgstr "프로로 업그레이드하면 매달 $2"
 
@@ -1797,7 +1805,7 @@ msgstr "현재 차트를 수정하고 개선하는 데 이 모드를 사용하�
 msgid "User"
 msgstr "사용자"
 
-#: src/pages/Pricing2.tsx:49
+#: src/pages/Pricing2.tsx:50
 msgid "Vector Export (SVG)"
 msgstr "벡터 내보내기 (SVG)"
 
@@ -1809,7 +1817,7 @@ msgstr "Github에서 보기"
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "문서에서 플로우차트를 만들고 싶으세요? 편집기에 붙여넣고 '플로우차트로 변환'을 클릭하세요."
 
-#: src/pages/Pricing2.tsx:74
+#: src/pages/Pricing2.tsx:75
 msgid "Watermark-Free Diagrams"
 msgstr "워터마크 없는 다이어그램"
 
@@ -1820,6 +1828,10 @@ msgstr "물감"
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
 msgstr "Flowchart Fun에 오신 것을 환영합니다"
+
+#: src/components/Testimonials.tsx:124
+msgid "What our users are saying"
+msgstr "우리 사용자들의 이야기"
 
 #: src/lib/getDefaultText.ts:15
 msgid "What's next?"
