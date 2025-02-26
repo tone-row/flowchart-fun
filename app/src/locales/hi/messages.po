@@ -41,7 +41,7 @@ msgstr "एप्प का एक नया वर्जन उपलब्ध 
 msgid "AI Creation & Editing"
 msgstr "एआई निर्माण और संपादन"
 
-#: src/pages/Pricing2.tsx:61
+#: src/pages/Pricing2.tsx:62
 msgid "AI-Powered Flowchart Creation"
 msgstr "एआई-पावर्ड फ्लोचार्ट निर्माण"
 
@@ -186,7 +186,7 @@ msgstr "चौड़ाई पहले"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:157
+#: src/components/RenameButton.tsx:160
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -335,7 +335,7 @@ msgstr "परिवर्तन करें"
 msgid "Convert to Flowchart"
 msgstr "फ्लोचार्ट में बदलें"
 
-#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:128
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
@@ -423,7 +423,7 @@ msgid "Custom CSS"
 msgstr "कस्टम CSS"
 
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:86
+#: src/pages/Pricing2.tsx:87
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
@@ -431,7 +431,7 @@ msgstr "कस्टम शेयरिंग विकल्प"
 msgid "Customer Portal"
 msgstr "ग्राहक पोर्टल"
 
-#: src/pages/Pricing2.tsx:34
+#: src/pages/Pricing2.tsx:35
 msgid "Daily Sandbox Editor"
 msgstr "दैनिक सैंडबॉक्स संपादक"
 
@@ -444,7 +444,7 @@ msgstr "डार्क"
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/pages/Pricing2.tsx:80
+#: src/pages/Pricing2.tsx:81
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "डेटा आयात (विशियो, ल्यूसिडचार्ट, सीएसवी)"
 
@@ -641,7 +641,7 @@ msgstr "उदाहरण"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:98
+#: src/pages/Pricing2.tsx:99
 msgid "Exclusive Office Hours"
 msgstr "अनन्य ऑफिस घंटे"
 
@@ -666,7 +666,7 @@ msgstr "PNG और JPG में निर्यात करें"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG और SVG में निर्यात करें"
 
-#: src/pages/Pricing2.tsx:263
+#: src/pages/Pricing2.tsx:266
 msgid "Feature Breakdown"
 msgstr "विशेषता विभाजन"
 
@@ -857,6 +857,10 @@ msgstr "JSON कैनवास आपके द्वारा बनाई ग
 msgid "Join 2000+ professionals who've upgraded their workflow"
 msgstr "अपने वर्कफ्लो को अपग्रेड कर चुके 2000+ पेशेवरों में शामिल हों"
 
+#: src/components/Testimonials.tsx:127
+msgid "Join thousands of happy users who love Flowchart Fun"
+msgstr "हजारों खुश उपयोगकर्ताओं के साथ शामिल हों जो Flowchart Fun से प्यार करते हैं"
+
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "चीजों को निजी रखें"
@@ -960,7 +964,7 @@ msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
 
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:68
+#: src/pages/Pricing2.tsx:69
 msgid "Local File Support"
 msgstr "स्थानीय फ़ाइल समर्थन"
 
@@ -1173,7 +1177,7 @@ msgstr "प्लेबुक"
 msgid "Pointer and container on same line"
 msgstr "प्रतीक और कंटेनर एक ही लाइन पर"
 
-#: src/pages/Pricing2.tsx:92
+#: src/pages/Pricing2.tsx:93
 msgid "Priority One-on-One Support"
 msgstr "प्राथमिकता वाला एक-से-एक समर्थन"
 
@@ -1208,7 +1212,7 @@ msgstr "पब्लिक"
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/pages/Pricing2.tsx:41
+#: src/pages/Pricing2.tsx:42
 msgid "Rapid Deployment Templates"
 msgstr "त्वरित डिप्लॉयमेंट टेम्पलेट्स"
 
@@ -1217,7 +1221,7 @@ msgstr "त्वरित डिप्लॉयमेंट टेम्पल�
 msgid "Rapid Templates"
 msgstr "त्वरित टेम्पलेट्स"
 
-#: src/pages/Pricing2.tsx:43
+#: src/pages/Pricing2.tsx:44
 msgid "Raster Export (PNG, JPG)"
 msgstr "रास्टर निर्यात (PNG, JPG)"
 
@@ -1273,7 +1277,7 @@ msgstr "अपडेट करने के लिए रीलोड करे�
 
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:163
 msgid "Rename"
 msgstr "फिर से नाम बदलें"
 
@@ -1357,6 +1361,10 @@ msgstr "अपनी कार्यवाही सुरक्षित कर
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "सुरक्षित भुगतान"
+
+#: src/components/Testimonials.tsx:152
+msgid "See more reviews on Product Hunt"
+msgstr "Product Hunt पर अधिक समीक्षा देखें"
 
 #: src/components/Tabs/ThemeTab.tsx:395
 msgid "Set a consistent height for all nodes"
@@ -1468,7 +1476,7 @@ msgstr "क्लासेस के साथ स्टाइल"
 msgid "Submit"
 msgstr "भेजना"
 
-#: src/pages/Pricing2.tsx:338
+#: src/pages/Pricing2.tsx:344
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "प्रो की सदस्यता लें और मजेदार तरीके से फ्लोचार्ट करें!"
 
@@ -1573,7 +1581,7 @@ msgstr "संभव आकृतियाँ हैं:"
 msgid "Theme"
 msgstr "थीम"
 
-#: src/pages/Pricing2.tsx:36
+#: src/pages/Pricing2.tsx:37
 msgid "Theme Customization Editor"
 msgstr "थीम कस्टमाइज़ेशन संपादक"
 
@@ -1651,7 +1659,7 @@ msgstr "अपने विचारों को सेकंड में प�
 msgid "Transform text into diagrams instantly"
 msgstr "पाठ को तुरंत आरेख में बदलें"
 
-#: src/pages/Pricing2.tsx:238
+#: src/pages/Pricing2.tsx:240
 msgid "Trusted by Professionals and Academics"
 msgstr "पेशेवरों और शिक्षकों द्वारा विश्वसनीय"
 
@@ -1663,7 +1671,7 @@ msgstr "एआई को आजमाएं"
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
-#: src/pages/Pricing2.tsx:206
+#: src/pages/Pricing2.tsx:207
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "अपने विचारों को पेशेवर डायग्राम में सेकंडों में बदलें"
 
@@ -1700,7 +1708,7 @@ msgid "Unlimited Flowcharts"
 msgstr "असीमित फ्लोचार्ट्स"
 
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:55
+#: src/pages/Pricing2.tsx:56
 msgid "Unlimited Permanent Flowcharts"
 msgstr "असीमित स्थायी प्रवाहगतीं "
 
@@ -1740,7 +1748,7 @@ msgstr "अपने डायग्राम के लिए एसवीज�
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
 
-#: src/pages/Pricing2.tsx:233
+#: src/pages/Pricing2.tsx:234
 msgid "Upgrade to Pro for $2/month"
 msgstr "$2/महीने के लिए प्रो पर अपग्रेड करें"
 
@@ -1797,7 +1805,7 @@ msgstr "अपने मौजूदा चार्ट को संशोध�
 msgid "User"
 msgstr "यूज़र"
 
-#: src/pages/Pricing2.tsx:49
+#: src/pages/Pricing2.tsx:50
 msgid "Vector Export (SVG)"
 msgstr "वेक्टर निर्यात (SVG)"
 
@@ -1809,7 +1817,7 @@ msgstr "Github पर देखें"
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "क्या आप एक दस्तावेज़ से फ्लोचार्ट बनाना चाहते हैं? संपादक में इसे पेस्ट करें और 'फ्लोचार्ट में परिवर्तित करें' पर क्लिक करें।"
 
-#: src/pages/Pricing2.tsx:74
+#: src/pages/Pricing2.tsx:75
 msgid "Watermark-Free Diagrams"
 msgstr "वॉटरमार्क-मुक्त आरेख"
 
@@ -1820,6 +1828,10 @@ msgstr "वॉटरमार्क"
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
 msgstr "फ्लोचार्ट फन में आपका स्वागत है"
+
+#: src/components/Testimonials.tsx:124
+msgid "What our users are saying"
+msgstr "हमारे उपयोगकर्ताओं के क्या कहने हैं"
 
 #: src/lib/getDefaultText.ts:15
 msgid "What's next?"
