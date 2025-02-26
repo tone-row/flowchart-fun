@@ -41,7 +41,7 @@ msgstr "A new version of the app is available. Please reload to update."
 msgid "AI Creation & Editing"
 msgstr "AI Creation & Editing"
 
-#: src/pages/Pricing2.tsx:61
+#: src/pages/Pricing2.tsx:62
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI-Powered Flowchart Creation"
 
@@ -186,7 +186,7 @@ msgstr "Breadthfirst"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:157
+#: src/components/RenameButton.tsx:160
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -335,7 +335,7 @@ msgstr "Convert"
 msgid "Convert to Flowchart"
 msgstr "Convert to Flowchart"
 
-#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:128
 msgid "Convert to hosted chart?"
 msgstr "Convert to hosted chart?"
 
@@ -423,7 +423,7 @@ msgid "Custom CSS"
 msgstr "Custom CSS"
 
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:86
+#: src/pages/Pricing2.tsx:87
 msgid "Custom Sharing Options"
 msgstr "Custom Sharing Options"
 
@@ -431,7 +431,7 @@ msgstr "Custom Sharing Options"
 msgid "Customer Portal"
 msgstr "Customer Portal"
 
-#: src/pages/Pricing2.tsx:34
+#: src/pages/Pricing2.tsx:35
 msgid "Daily Sandbox Editor"
 msgstr "Daily Sandbox Editor"
 
@@ -444,7 +444,7 @@ msgstr "Dark"
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/pages/Pricing2.tsx:80
+#: src/pages/Pricing2.tsx:81
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "Data Import (Visio, Lucidchart, CSV)"
 
@@ -641,7 +641,7 @@ msgstr "Examples"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:98
+#: src/pages/Pricing2.tsx:99
 msgid "Exclusive Office Hours"
 msgstr "Exclusive Office Hours"
 
@@ -666,7 +666,7 @@ msgstr "Export to PNG & JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "Export to PNG, JPG, and SVG"
 
-#: src/pages/Pricing2.tsx:263
+#: src/pages/Pricing2.tsx:266
 msgid "Feature Breakdown"
 msgstr "Feature Breakdown"
 
@@ -857,6 +857,10 @@ msgstr "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian
 msgid "Join 2000+ professionals who've upgraded their workflow"
 msgstr "Join 2000+ professionals who've upgraded their workflow"
 
+#: src/components/Testimonials.tsx:127
+msgid "Join thousands of happy users who love Flowchart Fun"
+msgstr "Join thousands of happy users who love Flowchart Fun"
+
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "Keep Things Private"
@@ -960,7 +964,7 @@ msgid "Load layout and styles"
 msgstr "Load layout and styles"
 
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:68
+#: src/pages/Pricing2.tsx:69
 msgid "Local File Support"
 msgstr "Local File Support"
 
@@ -1173,7 +1177,7 @@ msgstr "Playbook"
 msgid "Pointer and container on same line"
 msgstr "Pointer and container on same line"
 
-#: src/pages/Pricing2.tsx:92
+#: src/pages/Pricing2.tsx:93
 msgid "Priority One-on-One Support"
 msgstr "Priority One-on-One Support"
 
@@ -1208,7 +1212,7 @@ msgstr "Public"
 msgid "Random"
 msgstr "Random"
 
-#: src/pages/Pricing2.tsx:41
+#: src/pages/Pricing2.tsx:42
 msgid "Rapid Deployment Templates"
 msgstr "Rapid Deployment Templates"
 
@@ -1217,7 +1221,7 @@ msgstr "Rapid Deployment Templates"
 msgid "Rapid Templates"
 msgstr "Rapid Templates"
 
-#: src/pages/Pricing2.tsx:43
+#: src/pages/Pricing2.tsx:44
 msgid "Raster Export (PNG, JPG)"
 msgstr "Raster Export (PNG, JPG)"
 
@@ -1273,7 +1277,7 @@ msgstr "Reload to Update"
 
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:163
 msgid "Rename"
 msgstr "Rename"
 
@@ -1357,6 +1361,10 @@ msgstr "Save your Work"
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "Secure payment"
+
+#: src/components/Testimonials.tsx:152
+msgid "See more reviews on Product Hunt"
+msgstr "See more reviews on Product Hunt"
 
 #: src/components/Tabs/ThemeTab.tsx:395
 msgid "Set a consistent height for all nodes"
@@ -1468,7 +1476,7 @@ msgstr "Style with classes"
 msgid "Submit"
 msgstr "Submit"
 
-#: src/pages/Pricing2.tsx:338
+#: src/pages/Pricing2.tsx:344
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "Subscribe to Pro and flowchart the fun way!"
 
@@ -1573,7 +1581,7 @@ msgstr "The possible shapes are:"
 msgid "Theme"
 msgstr "Theme"
 
-#: src/pages/Pricing2.tsx:36
+#: src/pages/Pricing2.tsx:37
 msgid "Theme Customization Editor"
 msgstr "Theme Customization Editor"
 
@@ -1651,7 +1659,7 @@ msgstr "Transform Your Ideas into Professional Diagrams in Seconds"
 msgid "Transform text into diagrams instantly"
 msgstr "Transform text into diagrams instantly"
 
-#: src/pages/Pricing2.tsx:238
+#: src/pages/Pricing2.tsx:240
 msgid "Trusted by Professionals and Academics"
 msgstr "Trusted by Professionals and Academics"
 
@@ -1663,7 +1671,7 @@ msgstr "Try AI"
 msgid "Try again"
 msgstr "Try again"
 
-#: src/pages/Pricing2.tsx:206
+#: src/pages/Pricing2.tsx:207
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "Turn your ideas into professional diagrams in seconds"
 
@@ -1700,7 +1708,7 @@ msgid "Unlimited Flowcharts"
 msgstr "Unlimited Flowcharts"
 
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:55
+#: src/pages/Pricing2.tsx:56
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Unlimited Permanent Flowcharts"
 
@@ -1740,7 +1748,7 @@ msgstr "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanc
 msgid "Upgrade to Pro"
 msgstr "Upgrade to Pro"
 
-#: src/pages/Pricing2.tsx:233
+#: src/pages/Pricing2.tsx:234
 msgid "Upgrade to Pro for $2/month"
 msgstr "Upgrade to Pro for $2/month"
 
@@ -1797,7 +1805,7 @@ msgstr "Use this mode to modify and enhance your current chart."
 msgid "User"
 msgstr "User"
 
-#: src/pages/Pricing2.tsx:49
+#: src/pages/Pricing2.tsx:50
 msgid "Vector Export (SVG)"
 msgstr "Vector Export (SVG)"
 
@@ -1809,7 +1817,7 @@ msgstr "View on Github"
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 
-#: src/pages/Pricing2.tsx:74
+#: src/pages/Pricing2.tsx:75
 msgid "Watermark-Free Diagrams"
 msgstr "Watermark-Free Diagrams"
 
@@ -1820,6 +1828,10 @@ msgstr "Watermarks"
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
 msgstr "Welcome to Flowchart Fun"
+
+#: src/components/Testimonials.tsx:124
+msgid "What our users are saying"
+msgstr "What our users are saying"
 
 #: src/lib/getDefaultText.ts:15
 msgid "What's next?"

@@ -41,7 +41,7 @@ msgstr "Una nueva versión de la aplicación está disponible. Por favor, recarg
 msgid "AI Creation & Editing"
 msgstr "Creación y edición de IA"
 
-#: src/pages/Pricing2.tsx:61
+#: src/pages/Pricing2.tsx:62
 msgid "AI-Powered Flowchart Creation"
 msgstr "Creación de diagramas de flujo con inteligencia artificial"
 
@@ -186,7 +186,7 @@ msgstr "Primero en amplitud"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
-#: src/components/RenameButton.tsx:157
+#: src/components/RenameButton.tsx:160
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -335,7 +335,7 @@ msgstr "Convertir"
 msgid "Convert to Flowchart"
 msgstr "Convertir a Diagrama de Flujo"
 
-#: src/components/RenameButton.tsx:125
+#: src/components/RenameButton.tsx:128
 msgid "Convert to hosted chart?"
 msgstr "¿Convertir a gráfico hospedado?"
 
@@ -423,7 +423,7 @@ msgid "Custom CSS"
 msgstr "CSS personalizado"
 
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:86
+#: src/pages/Pricing2.tsx:87
 msgid "Custom Sharing Options"
 msgstr "Opciones de compartición personalizadas"
 
@@ -431,7 +431,7 @@ msgstr "Opciones de compartición personalizadas"
 msgid "Customer Portal"
 msgstr "Portal del cliente"
 
-#: src/pages/Pricing2.tsx:34
+#: src/pages/Pricing2.tsx:35
 msgid "Daily Sandbox Editor"
 msgstr "Editor de Sandbox diario"
 
@@ -444,7 +444,7 @@ msgstr "Oscuro"
 msgid "Dark Mode"
 msgstr "Modo oscuro"
 
-#: src/pages/Pricing2.tsx:80
+#: src/pages/Pricing2.tsx:81
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "Importación de datos (Visio, Lucidchart, CSV)"
 
@@ -641,7 +641,7 @@ msgstr "Ejemplos"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:98
+#: src/pages/Pricing2.tsx:99
 msgid "Exclusive Office Hours"
 msgstr "Horario de oficina exclusivo"
 
@@ -666,7 +666,7 @@ msgstr "Exportar a PNG y JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "Exportar a PNG, JPG y SVG"
 
-#: src/pages/Pricing2.tsx:263
+#: src/pages/Pricing2.tsx:266
 msgid "Feature Breakdown"
 msgstr "Desglose de características"
 
@@ -857,6 +857,10 @@ msgstr "JSON Canvas es una representación JSON de tu diagrama utilizada por <0>
 msgid "Join 2000+ professionals who've upgraded their workflow"
 msgstr "Únete a más de 2000 profesionales que han mejorado su flujo de trabajo"
 
+#: src/components/Testimonials.tsx:127
+msgid "Join thousands of happy users who love Flowchart Fun"
+msgstr "Únete a miles de usuarios felices que aman Flowchart Fun"
+
 #: src/pages/Pricing.tsx:37
 msgid "Keep Things Private"
 msgstr "Mantener las cosas privadas"
@@ -960,7 +964,7 @@ msgid "Load layout and styles"
 msgstr "Cargar diseño y estilos"
 
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:68
+#: src/pages/Pricing2.tsx:69
 msgid "Local File Support"
 msgstr "Soporte de archivos locales"
 
@@ -1173,7 +1177,7 @@ msgstr "Libreta de juegos"
 msgid "Pointer and container on same line"
 msgstr "Puntero y contenedor en la misma línea"
 
-#: src/pages/Pricing2.tsx:92
+#: src/pages/Pricing2.tsx:93
 msgid "Priority One-on-One Support"
 msgstr "Soporte prioritario uno a uno"
 
@@ -1208,7 +1212,7 @@ msgstr "Público"
 msgid "Random"
 msgstr "Aleatorio"
 
-#: src/pages/Pricing2.tsx:41
+#: src/pages/Pricing2.tsx:42
 msgid "Rapid Deployment Templates"
 msgstr "Plantillas de implementación rápida"
 
@@ -1217,7 +1221,7 @@ msgstr "Plantillas de implementación rápida"
 msgid "Rapid Templates"
 msgstr "Plantillas rápidas"
 
-#: src/pages/Pricing2.tsx:43
+#: src/pages/Pricing2.tsx:44
 msgid "Raster Export (PNG, JPG)"
 msgstr "Exportación de ráster (PNG, JPG)"
 
@@ -1273,7 +1277,7 @@ msgstr "Recargar para actualizar"
 
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:163
 msgid "Rename"
 msgstr "Renombrar"
 
@@ -1357,6 +1361,10 @@ msgstr "Guarda tu trabajo"
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "Pago seguro"
+
+#: src/components/Testimonials.tsx:152
+msgid "See more reviews on Product Hunt"
+msgstr "Ver más reseñas en Product Hunt"
 
 #: src/components/Tabs/ThemeTab.tsx:395
 msgid "Set a consistent height for all nodes"
@@ -1468,7 +1476,7 @@ msgstr "Estilo con clases"
 msgid "Submit"
 msgstr "Enviar"
 
-#: src/pages/Pricing2.tsx:338
+#: src/pages/Pricing2.tsx:344
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "Suscríbete a Pro y crea diagramas de flujo de manera divertida!"
 
@@ -1573,7 +1581,7 @@ msgstr "Las formas posibles son:"
 msgid "Theme"
 msgstr "Tema"
 
-#: src/pages/Pricing2.tsx:36
+#: src/pages/Pricing2.tsx:37
 msgid "Theme Customization Editor"
 msgstr "Editor de Personalización de Temas"
 
@@ -1651,7 +1659,7 @@ msgstr "Transforma tus ideas en diagramas profesionales en segundos"
 msgid "Transform text into diagrams instantly"
 msgstr "Transforma texto en diagramas al instante."
 
-#: src/pages/Pricing2.tsx:238
+#: src/pages/Pricing2.tsx:240
 msgid "Trusted by Professionals and Academics"
 msgstr "Confiable por profesionales y académicos"
 
@@ -1663,7 +1671,7 @@ msgstr "Prueba IA"
 msgid "Try again"
 msgstr "Inténtalo de nuevo"
 
-#: src/pages/Pricing2.tsx:206
+#: src/pages/Pricing2.tsx:207
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "Convierte tus ideas en diagramas profesionales en segundos"
 
@@ -1700,7 +1708,7 @@ msgid "Unlimited Flowcharts"
 msgstr "Flujos de trabajo ilimitados"
 
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:55
+#: src/pages/Pricing2.tsx:56
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Flujo de gráficos permanentes ilimitados"
 
@@ -1740,7 +1748,7 @@ msgstr "Actualiza a Flowchart Fun Pro para desbloquear la exportación de SVG y 
 msgid "Upgrade to Pro"
 msgstr "Actualizar a Pro"
 
-#: src/pages/Pricing2.tsx:233
+#: src/pages/Pricing2.tsx:234
 msgid "Upgrade to Pro for $2/month"
 msgstr "Actualiza a Pro por $2/mes"
 
@@ -1797,7 +1805,7 @@ msgstr "Utilice este modo para modificar y mejorar su gráfico actual."
 msgid "User"
 msgstr "Usuario "
 
-#: src/pages/Pricing2.tsx:49
+#: src/pages/Pricing2.tsx:50
 msgid "Vector Export (SVG)"
 msgstr "Exportación de vectores (SVG)"
 
@@ -1809,7 +1817,7 @@ msgstr "Ver en Github "
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "¿Quieres crear un diagrama a partir de un documento? Pégalo en el editor y haz clic en \"Convertir a diagrama\"."
 
-#: src/pages/Pricing2.tsx:74
+#: src/pages/Pricing2.tsx:75
 msgid "Watermark-Free Diagrams"
 msgstr "Diagramas sin marca de agua"
 
@@ -1820,6 +1828,10 @@ msgstr "Marcas de agua"
 #: src/lib/getDefaultText.ts:4
 msgid "Welcome to Flowchart Fun"
 msgstr "Bienvenido a Flowchart Divertido"
+
+#: src/components/Testimonials.tsx:124
+msgid "What our users are saying"
+msgstr "Lo que dicen nuestros usuarios"
 
 #: src/lib/getDefaultText.ts:15
 msgid "What's next?"
