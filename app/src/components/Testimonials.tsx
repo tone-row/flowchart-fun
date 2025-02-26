@@ -46,9 +46,9 @@ function Testimonial({
   const firstLetter = username.charAt(0).toUpperCase();
 
   return (
-    <div className="bg-white dark:bg-neutral-900 rounded-xl shadow-sm border border-neutral-300/80 dark:border-neutral-800/70 flex flex-col justify-between h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow overflow-hidden max-w-md w-full m-2">
+    <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-sm border border-neutral-300/80 dark:border-neutral-800/70 flex flex-col justify-between h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow overflow-hidden max-w-md w-full m-2">
       <div className="p-6 relative">
-        <span className="absolute -top-4 left-6 text-7xl opacity-[0.05] text-purple-700 dark:text-purple-400 -ml-10 mt-4 select-none">
+        <span className="absolute -top-4 left-6 text-7xl opacity-[0.05] text-purple-700 dark:text-purple-400 dark:opacity-[0.15] -ml-10 mt-4 select-none">
           <RiDoubleQuotesL />
         </span>
 
@@ -110,7 +110,7 @@ function Testimonial({
 
 function Testimonials() {
   return (
-    <div className="py-16 md:py-20 overflow-hidden relative bg-gradient-to-b from-white to-neutral-50 dark:bg-neutral-900/20">
+    <div className="py-16 md:py-20 overflow-hidden relative bg-gradient-to-b from-white to-neutral-50 dark:from-transparent dark:to-neutral-900 dark:bg-neutral-900/20">
       <div className="absolute inset-0 overflow-hidden opacity-5 dark:opacity-10">
         <div
           className="absolute -inset-40 bg-center bg-no-repeat bg-[length:100px_100px]"
