@@ -487,3 +487,14 @@ body.dark .pricing-highlights {
   outline: none !important;
   box-shadow: none !important;
 }
+
+.feature-breakdown-grid::after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  z-index: 10;
+  width: 80px;
+  height: 10px;
+  @apply bg-gradient-to-r from-purple-500 to-purple-600 rounded-b-lg;
+}

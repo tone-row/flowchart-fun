@@ -30,7 +30,7 @@ import { Checkout } from "../components/Checkout";
 import Testimonials from "../components/Testimonials";
 import throttle from "lodash.throttle";
 import { Link } from "react-router-dom";
-import FeatureBreakdown from "../components/FeatureBreakdown";
+import { FeatureBreakdown } from "../components/FeatureBreakdown";
 
 const pricingRows = () => [
   { text: t`Daily Sandbox Editor`, free: true, pro: true, icon: Eraser },
