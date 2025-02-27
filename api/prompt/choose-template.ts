@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { templateRateLimit } from "./_shared";
 import { generateObject } from "ai";
-import { openai } from "@ai-sdk/openai";
+import { createAnthropic } from "@ai-sdk/anthropic";
 import { templates } from "shared";
 
 const schema = z.object({
@@ -28,8 +28,16 @@ export default async function handler(req: Request) {
     return new Response(JSON.stringify(parsed.error), { status: 400 });
   }
 
+  if (!process.env.ANTHROPIC_API_KEY_FREE) {
+    throw new Error("No Anthropic API key provided");
+  }
+
+  const anthropic = createAnthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY_FREE,
+  });
+
   const result = await generateObject({
-    model: openai("gpt-3.5-turbo"),
+    model: anthropic("claude-3-5-sonnet-latest"),
     schema,
     prompt: getContent(parsed.data.prompt),
     system: systemMessage,
