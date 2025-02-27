@@ -30,6 +30,7 @@ import { Checkout } from "../components/Checkout";
 import Testimonials from "../components/Testimonials";
 import throttle from "lodash.throttle";
 import { Link } from "react-router-dom";
+import FeatureBreakdown from "../components/FeatureBreakdown";
 
 const pricingRows = () => [
   { text: t`Daily Sandbox Editor`, free: true, pro: true, icon: Eraser },
@@ -269,71 +270,7 @@ export default function Pricing2() {
         </Container>
       </div>
 
-      <div className="whats-included py-8 px-4 md:px-6">
-        <div className="md:w-max mx-auto">
-          <SectionTitle>
-            <Trans>Feature Breakdown</Trans>
-          </SectionTitle>
-          <div className="border-neutral-400/50 grid grid-cols-[minmax(0,1fr)_100px_100px] rounded-xl border shadow overflow-hidden bg-neutral-50/50 dark:bg-neutral-900">
-            <span>&nbsp;</span>
-            <ColumnHeader>Free</ColumnHeader>
-            <ColumnHeader>Pro</ColumnHeader>
-            {pricingRows().map((row, i) => {
-              const Icon = row.icon;
-              return (
-                <Fragment key={i}>
-                  <Cell>
-                    {row.link ? (
-                      <Link
-                        to={row.link}
-                        className="flex items-center hover:text-purple-500"
-                      >
-                        <Icon
-                          size={32}
-                          weight="duotone"
-                          className="mr-3 hidden sm:inline -mt-[2px]"
-                        />
-                        {row.text}
-                      </Link>
-                    ) : (
-                      <>
-                        <Icon
-                          size={32}
-                          weight="duotone"
-                          className="mr-3 hidden sm:inline -mt-[2px]"
-                        />
-                        {row.text}
-                      </>
-                    )}
-                  </Cell>
-                  <Cell center available={row.free}>
-                    {row.free ? (
-                      <Check
-                        size={32}
-                        weight="bold"
-                        className="text-green-600 dark:text-green-500"
-                      />
-                    ) : (
-                      <X
-                        size={32}
-                        weight="bold"
-                        className="text-red-400 dark:text-red-600/50"
-                      />
-                    )}
-                  </Cell>
-                  <Cell center available>
-                    <Check
-                      size={32}
-                      weight="bold"
-                      className="text-green-600 dark:text-green-500"
-                    />
-                  </Cell>
-                </Fragment>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      <FeatureBreakdown />
 
       <Testimonials />
 
