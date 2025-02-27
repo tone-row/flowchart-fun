@@ -57,7 +57,6 @@ const features: Feature[] = [
     description: "High-quality exports with embedded fonts",
     icon: RiFileList3Line,
     free: false,
-    proLabel: "Pro Quality",
   },
   {
     name: "Unlimited Permanent Flowcharts",
@@ -75,6 +74,12 @@ const features: Feature[] = [
     proLabel: "Time-Saver",
   },
   {
+    name: "Watermark-Free Diagrams",
+    description: "Export clean diagrams without branding",
+    icon: RiWaterFlashLine,
+    free: false,
+  },
+  {
     name: "Local File Support",
     description: "Keep your data private on your computer",
     icon: RiHardDriveLine,
@@ -82,18 +87,10 @@ const features: Feature[] = [
     proLabel: "Privacy",
   },
   {
-    name: "Watermark-Free Diagrams",
-    description: "Export clean diagrams without branding",
-    icon: RiWaterFlashLine,
-    free: false,
-    proLabel: "Professional",
-  },
-  {
     name: "Data Import (Visio, Lucidchart, CSV)",
     description: "Import from popular diagram tools",
     icon: RiDownload2Line,
     free: false,
-    proLabel: "Compatibility",
   },
   {
     name: "Custom Sharing Options",
@@ -107,14 +104,13 @@ const features: Feature[] = [
     description: "Get rapid responses to your questions",
     icon: RiCustomerService2Line,
     free: false,
-    proLabel: "Support",
   },
   {
     name: "Exclusive Office Hours",
     description: "Schedule personal consultation sessions",
     icon: RiTeamLine,
     free: false,
-    proLabel: "Premium",
+    proLabel: "Support",
   },
 ];
 
@@ -165,7 +161,7 @@ export function FeatureBreakdown() {
                   <div
                     className={classNames("flex items-center p-5 border-b", {
                       "border-neutral-200": nextFeatureIsPro,
-                      "border-purple-100": !nextFeatureIsPro,
+                      "border-purple-100/70": !nextFeatureIsPro,
                     })}
                   >
                     <feature.icon
@@ -179,11 +175,11 @@ export function FeatureBreakdown() {
                         <p className="text-sm font-medium text-neutral-900 dark:text-white">
                           {feature.name}
                         </p>
-                        {feature.proLabel && !feature.free && (
+                        {/* {feature.proLabel && !feature.free && (
                           <span className="ml-2 inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-purple-900/40 dark:text-purple-300">
                             {feature.proLabel}
                           </span>
-                        )}
+                        )} */}
                       </div>
                       <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
                         {feature.description}
@@ -201,15 +197,13 @@ export function FeatureBreakdown() {
                   >
                     {feature.free ? (
                       <Check weight="bold" className="h-6 w-6 text-green-500" />
-                    ) : (
-                      <X
-                        weight="bold"
-                        className="h-6 w-6 text-neutral-400/50 dark:text-neutral-600"
-                      />
-                    )}
+                    ) : null}
                   </div>
                   <div className="grid place-items-center bg-gradient-to-r from-purple-500 to-purple-600 dark:bg-purple-900/20 py-3 border-b border-transparent">
-                    <Check weight="bold" className="h-5 w-5 text-white" />
+                    <Check
+                      weight="bold"
+                      className="h-5 w-5 text-white drop-shadow-sm drop-shadow-purple-900"
+                    />
                   </div>
                 </div>
               );

@@ -147,7 +147,7 @@ function Testimonials() {
             href="https://www.producthunt.com/products/flowchart-fun"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 rounded-full text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 transition-colors font-medium text-sm shadow-sm hover:shadow"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-300"
           >
             <Trans>See more reviews on Product Hunt</Trans>
           </a>

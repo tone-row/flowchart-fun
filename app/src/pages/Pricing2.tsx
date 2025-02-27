@@ -1,108 +1,11 @@
 import classNames from "classnames";
 import { features } from "./Pricing";
-import { Trans, t } from "@lingui/macro";
-import {
-  CSSProperties,
-  Fragment,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import {
-  ChartBar,
-  Check,
-  ClockCounterClockwise,
-  Eraser,
-  FileArrowDown,
-  FileArrowUp,
-  FolderNotchOpen,
-  Headset,
-  LightbulbFilament,
-  ImageSquare,
-  Notification,
-  Nut,
-  PaintBrushBroad,
-  ShareNetwork,
-  X,
-} from "phosphor-react";
+import { Trans } from "@lingui/macro";
+import { CSSProperties, useCallback, useEffect, useRef, useState } from "react";
 import { Checkout } from "../components/Checkout";
 import Testimonials from "../components/Testimonials";
 import throttle from "lodash.throttle";
-import { Link } from "react-router-dom";
 import { FeatureBreakdown } from "../components/FeatureBreakdown";
-
-const pricingRows = () => [
-  { text: t`Daily Sandbox Editor`, free: true, pro: true, icon: Eraser },
-  {
-    text: t`Theme Customization Editor`,
-    free: true,
-    pro: true,
-    icon: PaintBrushBroad,
-  },
-  { text: t`Rapid Deployment Templates`, free: true, pro: true, icon: Nut },
-  {
-    text: t`Raster Export (PNG, JPG)`,
-    free: true,
-    pro: true,
-    icon: FileArrowUp,
-  },
-  {
-    text: t`Vector Export (SVG)`,
-    free: false,
-    pro: true,
-    icon: ImageSquare,
-  },
-  {
-    text: t`Unlimited Permanent Flowcharts`,
-    free: false,
-    pro: true,
-    icon: ChartBar,
-  },
-  {
-    text: t`AI-Powered Flowchart Creation`,
-    free: false,
-    pro: true,
-    icon: LightbulbFilament,
-    link: "/blog/post/ai-flowchart-generator",
-  },
-  {
-    text: t`Local File Support`,
-    free: false,
-    pro: true,
-    icon: FolderNotchOpen,
-  },
-  {
-    text: t`Watermark-Free Diagrams`,
-    free: false,
-    pro: true,
-    icon: Notification,
-  },
-  {
-    text: t`Data Import (Visio, Lucidchart, CSV)`,
-    free: false,
-    pro: true,
-    icon: FileArrowDown,
-  },
-  {
-    text: t`Custom Sharing Options`,
-    free: false,
-    pro: true,
-    icon: ShareNetwork,
-  },
-  {
-    text: t`Priority One-on-One Support`,
-    free: false,
-    pro: true,
-    icon: Headset,
-  },
-  {
-    text: t`Exclusive Office Hours`,
-    free: false,
-    pro: true,
-    icon: ClockCounterClockwise,
-  },
-];
 
 const companies: { svg: string; name: string; className?: string }[] = [
   {
@@ -232,7 +135,7 @@ export default function Pricing2() {
         </div>
       </div>
       <button
-        className="w-max mx-auto md:text-lg text-white font-semibold text-wrap-balance leading-normal md:leading-tight text-center px-6 py-4 rounded-full bg-gradient-to-r from-purple-700/80 to-purple-800 my-12 justify-self-center block transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-[1.03] hover:from-purple-600/90 hover:to-purple-700"
+        className="w-max mx-auto block items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-300"
         onClick={() => {
           // scroll to the bottom of the page
           window.scrollTo({
