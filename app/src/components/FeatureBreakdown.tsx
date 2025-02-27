@@ -116,8 +116,8 @@ const features: Feature[] = [
 
 export function FeatureBreakdown() {
   return (
-    <div className="bg-white py-16 dark:bg-neutral-900">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div className="bg-white py-16 dark:bg-transparent">
+      <div className="mx-auto max-w-4xl sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
             <Trans>Feature Breakdown</Trans>
@@ -133,13 +133,13 @@ export function FeatureBreakdown() {
         <div className="mt-12">
           {/* Table headers */}
           <div className="grid grid-cols-[auto_80px_80px]">
-            <div className="text-sm font-semibold text-neutral-900 dark:text-white py-2 border-b border-neutral-200">
+            <div className="text-sm font-semibold text-neutral-900 dark:text-white py-3 pl-4 sm:pl-px border-b border-neutral-200 dark:border-neutral-800">
               Features
             </div>
-            <div className="text-center text-sm font-medium text-neutral-600 dark:text-neutral-400 py-2 border-b border-neutral-200">
+            <div className="text-center text-sm font-medium text-neutral-600 dark:text-neutral-400 py-3 border-b border-neutral-200 dark:border-neutral-800">
               Free
             </div>
-            <div className="text-center text-sm font-bold text-white rounded-t-lg bg-gradient-to-r from-purple-500 to-purple-600 py-2">
+            <div className="text-center text-sm font-bold text-white rounded-t-lg bg-gradient-to-r from-purple-500 to-purple-600 py-3 dark:from-purple-700 dark:to-purple-800">
               Pro
             </div>
           </div>
@@ -151,35 +151,46 @@ export function FeatureBreakdown() {
                 <div
                   key={index}
                   className={classNames(
-                    "grid grid-cols-[auto_80px_80px] border-l border-neutral-200",
+                    "grid grid-cols-[auto_80px_80px] sm:border-l",
                     {
-                      "bg-purple-500/[0.05] dark:bg-purple-900/5 border-purple-100":
+                      "border-neutral-200 dark:border-neutral-800":
+                        feature.free,
+                      "bg-purple-500/[0.05] dark:bg-purple-500/10 border-purple-100 dark:border-purple-300/20":
                         !feature.free,
                     }
                   )}
                 >
                   <div
-                    className={classNames("flex items-center p-5 border-b", {
-                      "border-neutral-200": nextFeatureIsPro,
-                      "border-purple-100/70": !nextFeatureIsPro,
-                    })}
+                    className={classNames(
+                      "flex items-center p-4 sm:p-5 border-b",
+                      {
+                        "border-neutral-200 dark:border-neutral-800":
+                          nextFeatureIsPro,
+                        "border-purple-100 dark:border-purple-300/20":
+                          !nextFeatureIsPro,
+                      }
+                    )}
                   >
                     <feature.icon
-                      className={classNames("h-6 w-6 mr-5 flex-shrink-0", {
-                        "text-neutral-600 dark:text-neutral-400": feature.free,
-                        "text-purple-600 dark:text-purple-400": !feature.free,
-                      })}
+                      className={classNames(
+                        "h-6 w-6 mr-5 flex-shrink-0 hidden sm:block",
+                        {
+                          "text-neutral-600 dark:text-neutral-400":
+                            feature.free,
+                          "text-purple-600 dark:text-purple-400": !feature.free,
+                        }
+                      )}
                     />
                     <div>
                       <div className="flex items-center">
                         <p className="text-sm font-medium text-neutral-900 dark:text-white">
                           {feature.name}
                         </p>
-                        {/* {feature.proLabel && !feature.free && (
-                          <span className="ml-2 inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-purple-900/40 dark:text-purple-300">
+                        {feature.proLabel && !feature.free && (
+                          <span className="ml-2 inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-[12px] font-medium text-purple-800 dark:bg-purple-400/40 dark:text-white hidden sm:block">
                             {feature.proLabel}
                           </span>
-                        )} */}
+                        )}
                       </div>
                       <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
                         {feature.description}
@@ -189,9 +200,10 @@ export function FeatureBreakdown() {
 
                   <div
                     className={classNames(
-                      "grid place-items-center border-b border-neutral-200",
+                      "grid place-items-center border-b border-neutral-200 dark:border-neutral-800",
                       {
-                        "border-purple-100": !nextFeatureIsPro,
+                        "border-purple-100 dark:border-purple-300/20":
+                          !nextFeatureIsPro,
                       }
                     )}
                   >
@@ -199,7 +211,7 @@ export function FeatureBreakdown() {
                       <Check weight="bold" className="h-6 w-6 text-green-500" />
                     ) : null}
                   </div>
-                  <div className="grid place-items-center bg-gradient-to-r from-purple-500 to-purple-600 dark:bg-purple-900/20 py-3 border-b border-transparent">
+                  <div className="grid place-items-center bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-700 dark:to-purple-800 py-3 border-b border-transparent">
                     <Check
                       weight="bold"
                       className="h-5 w-5 text-white drop-shadow-sm drop-shadow-purple-900"
