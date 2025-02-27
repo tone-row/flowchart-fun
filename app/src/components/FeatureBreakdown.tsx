@@ -1,4 +1,4 @@
-import { Trans } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 import { Check, X } from "phosphor-react";
@@ -29,85 +29,85 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    name: "Daily Sandbox Editor",
-    description: "Quick experimentation space that resets daily",
+    name: t`Daily Sandbox Editor`,
+    description: t`Quick experimentation space that resets daily`,
     icon: RiEdit2Line,
     free: true,
   },
   {
-    name: "Theme Customization Editor",
-    description: "Fine-tune layouts and visual styles",
+    name: t`Theme Customization Editor`,
+    description: t`Fine-tune layouts and visual styles`,
     icon: RiPaletteLine,
     free: true,
   },
   {
-    name: "Rapid Deployment Templates",
-    description: "Start faster with use-case specific templates",
+    name: t`Rapid Deployment Templates`,
+    description: t`Start faster with use-case specific templates`,
     icon: RiLayoutMasonryLine,
     free: true,
   },
   {
-    name: "Raster Export (PNG, JPG)",
-    description: "Perfect for docs and quick sharing",
+    name: t`Raster Export (PNG, JPG)`,
+    description: t`Perfect for docs and quick sharing`,
     icon: RiImageLine,
     free: true,
   },
   {
-    name: "Vector Export (SVG)",
-    description: "High-quality exports with embedded fonts",
+    name: t`Vector Export (SVG)`,
+    description: t`High-quality exports with embedded fonts`,
     icon: RiFileList3Line,
     free: false,
   },
   {
-    name: "Unlimited Permanent Flowcharts",
-    description: "Build your personal flowchart library",
+    name: t`Unlimited Permanent Flowcharts`,
+    description: t`Build your personal flowchart library`,
     icon: RiStackLine,
     free: false,
     proLabel: "Most Popular",
   },
   {
-    name: "AI-Powered Flowchart Creation",
-    description: "Generate flowcharts from text automatically",
+    name: t`AI-Powered Flowchart Creation`,
+    description: t`Generate flowcharts from text automatically`,
     icon: RiBrainLine,
     free: false,
     link: "/blog/post/ai-flowchart-generator",
     proLabel: "Time-Saver",
   },
   {
-    name: "Watermark-Free Diagrams",
-    description: "Export clean diagrams without branding",
+    name: t`Watermark-Free Diagrams`,
+    description: t`Export clean diagrams without branding`,
     icon: RiWaterFlashLine,
     free: false,
   },
   {
-    name: "Local File Support",
-    description: "Keep your data private on your computer",
+    name: t`Local File Support`,
+    description: t`Keep your data private on your computer`,
     icon: RiHardDriveLine,
     free: false,
     proLabel: "Privacy",
   },
   {
-    name: "Data Import (Visio, Lucidchart, CSV)",
-    description: "Import from popular diagram tools",
+    name: t`Data Import (Visio, Lucidchart, CSV)`,
+    description: t`Import from popular diagram tools`,
     icon: RiDownload2Line,
     free: false,
   },
   {
-    name: "Custom Sharing Options",
-    description: "Full-screen, read-only, and template sharing",
+    name: t`Custom Sharing Options`,
+    description: t`Full-screen, read-only, and template sharing`,
     icon: RiShareLine,
     free: false,
     proLabel: "Collaboration",
   },
   {
-    name: "Priority One-on-One Support",
-    description: "Get rapid responses to your questions",
+    name: t`Priority One-on-One Support`,
+    description: t`Get rapid responses to your questions`,
     icon: RiCustomerService2Line,
     free: false,
   },
   {
-    name: "Exclusive Office Hours",
-    description: "Schedule personal consultation sessions",
+    name: t`Exclusive Office Hours`,
+    description: t`Schedule personal consultation sessions`,
     icon: RiTeamLine,
     free: false,
     proLabel: "Support",
@@ -200,16 +200,23 @@ export function FeatureBreakdown() {
 
                   <div
                     className={classNames(
-                      "grid place-items-center border-b border-neutral-200 dark:border-neutral-800",
+                      "grid place-items-center border-b border-neutral-200 dark:border-neutral-800 border-l",
                       {
-                        "border-purple-100 dark:border-purple-300/20":
+                        "border-b-purple-100 dark:border-b-purple-300/20":
                           !nextFeatureIsPro,
+                        "border-l-purple-100 dark:border-l-purple-300/20":
+                          !feature.free,
                       }
                     )}
                   >
                     {feature.free ? (
                       <Check weight="bold" className="h-6 w-6 text-green-500" />
-                    ) : null}
+                    ) : (
+                      <X
+                        weight="bold"
+                        className="h-6 w-6 text-neutral-500/20"
+                      />
+                    )}
                   </div>
                   <div className="grid place-items-center bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-700 dark:to-purple-800 py-3 border-b border-transparent">
                     <Check

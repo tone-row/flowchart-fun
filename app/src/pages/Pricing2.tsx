@@ -197,46 +197,6 @@ export default function Pricing2() {
   );
 }
 
-function ColumnHeader({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="bg-neutral-50 border-neutral-400/50 border-l text-center text-lg font-bold text-neutral-700 text-wrap-balance leading-normal md:leading-tight px-4 py-2 dark:bg-transparent dark:text-white">
-      {children}
-    </div>
-  );
-}
-
-function Cell({
-  children,
-  center,
-  available,
-}: {
-  children: React.ReactNode;
-  center?: boolean;
-  available?: boolean;
-}) {
-  return (
-    <div
-      className={classNames(
-        "text-sm sm:text-base border-neutral-400/50 border-t border-neutral-200 py-2 sm:py-4 ",
-        {
-          "flex items-center justify-center border-l": center,
-          "px-4 pr-10": !center,
-          "bg-green-200 dark:bg-green-500/10": available,
-          "bg-red-600/10 dark:bg-red-600/5": available === false,
-        }
-      )}
-    >
-      {center ? (
-        children
-      ) : (
-        <p className="text-sm sm:text-base text-neutral-800 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
-          {children}
-        </p>
-      )}
-    </div>
-  );
-}
-
 function Container({
   children,
   className = "",
