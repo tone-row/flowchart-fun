@@ -123,7 +123,7 @@ function Testimonials() {
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
             <Trans>What our users are saying</Trans>
           </h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-normal text-balance">
             <Trans>Join thousands of happy users who love Flowchart Fun</Trans>
           </p>
         </div>
@@ -147,7 +147,7 @@ function Testimonials() {
             href="https://www.producthunt.com/products/flowchart-fun"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 rounded-full text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 transition-colors font-medium text-sm shadow-sm hover:shadow"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-300"
           >
             <Trans>See more reviews on Product Hunt</Trans>
           </a>

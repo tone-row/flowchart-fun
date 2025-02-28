@@ -1,107 +1,11 @@
 import classNames from "classnames";
 import { features } from "./Pricing";
-import { Trans, t } from "@lingui/macro";
-import {
-  CSSProperties,
-  Fragment,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import {
-  ChartBar,
-  Check,
-  ClockCounterClockwise,
-  Eraser,
-  FileArrowDown,
-  FileArrowUp,
-  FolderNotchOpen,
-  Headset,
-  LightbulbFilament,
-  ImageSquare,
-  Notification,
-  Nut,
-  PaintBrushBroad,
-  ShareNetwork,
-  X,
-} from "phosphor-react";
+import { Trans } from "@lingui/macro";
+import { CSSProperties, useCallback, useEffect, useRef, useState } from "react";
 import { Checkout } from "../components/Checkout";
 import Testimonials from "../components/Testimonials";
 import throttle from "lodash.throttle";
-import { Link } from "react-router-dom";
-
-const pricingRows = () => [
-  { text: t`Daily Sandbox Editor`, free: true, pro: true, icon: Eraser },
-  {
-    text: t`Theme Customization Editor`,
-    free: true,
-    pro: true,
-    icon: PaintBrushBroad,
-  },
-  { text: t`Rapid Deployment Templates`, free: true, pro: true, icon: Nut },
-  {
-    text: t`Raster Export (PNG, JPG)`,
-    free: true,
-    pro: true,
-    icon: FileArrowUp,
-  },
-  {
-    text: t`Vector Export (SVG)`,
-    free: false,
-    pro: true,
-    icon: ImageSquare,
-  },
-  {
-    text: t`Unlimited Permanent Flowcharts`,
-    free: false,
-    pro: true,
-    icon: ChartBar,
-  },
-  {
-    text: t`AI-Powered Flowchart Creation`,
-    free: false,
-    pro: true,
-    icon: LightbulbFilament,
-    link: "/blog/post/ai-flowchart-generator",
-  },
-  {
-    text: t`Local File Support`,
-    free: false,
-    pro: true,
-    icon: FolderNotchOpen,
-  },
-  {
-    text: t`Watermark-Free Diagrams`,
-    free: false,
-    pro: true,
-    icon: Notification,
-  },
-  {
-    text: t`Data Import (Visio, Lucidchart, CSV)`,
-    free: false,
-    pro: true,
-    icon: FileArrowDown,
-  },
-  {
-    text: t`Custom Sharing Options`,
-    free: false,
-    pro: true,
-    icon: ShareNetwork,
-  },
-  {
-    text: t`Priority One-on-One Support`,
-    free: false,
-    pro: true,
-    icon: Headset,
-  },
-  {
-    text: t`Exclusive Office Hours`,
-    free: false,
-    pro: true,
-    icon: ClockCounterClockwise,
-  },
-];
+import { FeatureBreakdown } from "../components/FeatureBreakdown";
 
 const companies: { svg: string; name: string; className?: string }[] = [
   {
@@ -200,7 +104,7 @@ export default function Pricing2() {
           alt=""
         />
         <Container className="text-center grid relative justify-items-center items-center gap-6 md:gap-8 mb-0">
-          <span className="font-bold sm:text-[22px] text-purple-600/90 dark:text-white/70 -mb-2">
+          <span className="font-medium sm:text-[22px] text-purple-600/90 dark:text-white/70 -mb-2">
             Flowchart Fun Pro
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold tracking-tight !leading-[1.25]">
@@ -231,7 +135,7 @@ export default function Pricing2() {
         </div>
       </div>
       <button
-        className="w-max mx-auto md:text-lg text-white font-semibold text-wrap-balance leading-normal md:leading-tight text-center px-6 py-4 rounded-full bg-gradient-to-r from-purple-700/80 to-purple-800 my-12 justify-self-center block transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-[1.03] hover:from-purple-600/90 hover:to-purple-700"
+        className="w-max mx-auto block items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-300"
         onClick={() => {
           // scroll to the bottom of the page
           window.scrollTo({
@@ -243,7 +147,7 @@ export default function Pricing2() {
         <Trans>Upgrade to Pro for $2/month</Trans>
       </button>
 
-      <div className="trusted">
+      <div className="trusted sm:mt-24">
         <Container className="py-8">
           <SectionTitle className="text-center mb-8 md:mb-14">
             <Trans>Trusted by Professionals and Academics</Trans>
@@ -269,71 +173,7 @@ export default function Pricing2() {
         </Container>
       </div>
 
-      <div className="whats-included py-8 px-4 md:px-6">
-        <div className="md:w-max mx-auto">
-          <SectionTitle>
-            <Trans>Feature Breakdown</Trans>
-          </SectionTitle>
-          <div className="border-neutral-400/50 grid grid-cols-[minmax(0,1fr)_100px_100px] rounded-xl border shadow overflow-hidden bg-neutral-50/50 dark:bg-neutral-900">
-            <span>&nbsp;</span>
-            <ColumnHeader>Free</ColumnHeader>
-            <ColumnHeader>Pro</ColumnHeader>
-            {pricingRows().map((row, i) => {
-              const Icon = row.icon;
-              return (
-                <Fragment key={i}>
-                  <Cell>
-                    {row.link ? (
-                      <Link
-                        to={row.link}
-                        className="flex items-center hover:text-purple-500"
-                      >
-                        <Icon
-                          size={32}
-                          weight="duotone"
-                          className="mr-3 hidden sm:inline -mt-[2px]"
-                        />
-                        {row.text}
-                      </Link>
-                    ) : (
-                      <>
-                        <Icon
-                          size={32}
-                          weight="duotone"
-                          className="mr-3 hidden sm:inline -mt-[2px]"
-                        />
-                        {row.text}
-                      </>
-                    )}
-                  </Cell>
-                  <Cell center available={row.free}>
-                    {row.free ? (
-                      <Check
-                        size={32}
-                        weight="bold"
-                        className="text-green-600 dark:text-green-500"
-                      />
-                    ) : (
-                      <X
-                        size={32}
-                        weight="bold"
-                        className="text-red-400 dark:text-red-600/50"
-                      />
-                    )}
-                  </Cell>
-                  <Cell center available>
-                    <Check
-                      size={32}
-                      weight="bold"
-                      className="text-green-600 dark:text-green-500"
-                    />
-                  </Cell>
-                </Fragment>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      <FeatureBreakdown />
 
       <Testimonials />
 
@@ -353,46 +193,6 @@ export default function Pricing2() {
           <Trans>Subscribe to Pro and flowchart the fun way!</Trans>
         </p>
       </div>
-    </div>
-  );
-}
-
-function ColumnHeader({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="bg-neutral-50 border-neutral-400/50 border-l text-center text-lg font-bold text-neutral-700 text-wrap-balance leading-normal md:leading-tight px-4 py-2 dark:bg-transparent dark:text-white">
-      {children}
-    </div>
-  );
-}
-
-function Cell({
-  children,
-  center,
-  available,
-}: {
-  children: React.ReactNode;
-  center?: boolean;
-  available?: boolean;
-}) {
-  return (
-    <div
-      className={classNames(
-        "text-sm sm:text-base border-neutral-400/50 border-t border-neutral-200 py-2 sm:py-4 ",
-        {
-          "flex items-center justify-center border-l": center,
-          "px-4 pr-10": !center,
-          "bg-green-200 dark:bg-green-500/10": available,
-          "bg-red-600/10 dark:bg-red-600/5": available === false,
-        }
-      )}
-    >
-      {center ? (
-        children
-      ) : (
-        <p className="text-sm sm:text-base text-neutral-800 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
-          {children}
-        </p>
-      )}
     </div>
   );
 }

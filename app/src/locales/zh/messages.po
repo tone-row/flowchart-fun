@@ -41,7 +41,7 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 msgid "AI Creation & Editing"
 msgstr "AI创建与编辑"
 
-#: src/pages/Pricing2.tsx:62
+#: src/components/FeatureBreakdown.tsx:69
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI驱动的流程图创建"
 
@@ -184,6 +184,10 @@ msgstr "从下到上"
 msgid "Breadthfirst"
 msgstr "宽度优先"
 
+#: src/components/FeatureBreakdown.tsx:63
+msgid "Build your personal flowchart library"
+msgstr "建立您的个人流程图库"
+
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/RenameButton.tsx:160
@@ -289,6 +293,10 @@ msgstr "列"
 #: src/components/Feedback.tsx:78
 msgid "Comment"
 msgstr "评论"
+
+#: src/components/FeatureBreakdown.tsx:126
+msgid "Compare our plans and find the perfect fit for your flowcharting needs"
+msgstr "比较我们的计划，找到最适合您流程图需求的方案"
 
 #: src/lib/graphOptions.ts:18
 msgid "Concentric"
@@ -422,8 +430,8 @@ msgstr "曲线样式"
 msgid "Custom CSS"
 msgstr "自定义CSS"
 
+#: src/components/FeatureBreakdown.tsx:96
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:87
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
 
@@ -431,7 +439,7 @@ msgstr "自定义分享选项"
 msgid "Customer Portal"
 msgstr "客户门户"
 
-#: src/pages/Pricing2.tsx:35
+#: src/components/FeatureBreakdown.tsx:32
 msgid "Daily Sandbox Editor"
 msgstr "每日沙盒编辑器"
 
@@ -444,7 +452,7 @@ msgstr "深色"
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: src/pages/Pricing2.tsx:81
+#: src/components/FeatureBreakdown.tsx:90
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "数据导入（Visio，Lucidchart，CSV）"
 
@@ -641,7 +649,7 @@ msgstr "示例"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:99
+#: src/components/FeatureBreakdown.tsx:109
 msgid "Exclusive Office Hours"
 msgstr "专属办公时间"
 
@@ -658,6 +666,10 @@ msgstr "探索更多"
 msgid "Export"
 msgstr "导出"
 
+#: src/components/FeatureBreakdown.tsx:78
+msgid "Export clean diagrams without branding"
+msgstr "导出无品牌标识的清晰图表"
+
 #: src/pages/Pricing.tsx:52
 msgid "Export to PNG & JPG"
 msgstr "导出为PNG和JPG"
@@ -666,7 +678,7 @@ msgstr "导出为PNG和JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "导出为PNG，JPG和SVG"
 
-#: src/pages/Pricing2.tsx:266
+#: src/components/FeatureBreakdown.tsx:123
 msgid "Feature Breakdown"
 msgstr "功能分解"
 
@@ -679,6 +691,10 @@ msgstr "反馈"
 #: src/pages/Success.tsx:66
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "如果您有任何問題，請隨意探索並通過<0>反饋</0>頁面與我們聯繫。"
+
+#: src/components/FeatureBreakdown.tsx:39
+msgid "Fine-tune layouts and visual styles"
+msgstr "调整布局和视觉风格"
 
 #: src/components/Tabs/ThemeTab.tsx:391
 msgid "Fixed Height"
@@ -713,6 +729,10 @@ msgstr "如果发现了一个 bug？有功能请求？我们很乐意听到您�
 msgid "Free"
 msgstr "免费"
 
+#: src/components/FeatureBreakdown.tsx:97
+msgid "Full-screen, read-only, and template sharing"
+msgstr "全屏、只读和模板共享"
+
 #: src/components/ShareDialog.tsx:144
 msgid "Fullscreen"
 msgstr "全屏"
@@ -721,6 +741,10 @@ msgstr "全屏"
 msgid "General"
 msgstr "一般"
 
+#: src/components/FeatureBreakdown.tsx:70
+msgid "Generate flowcharts from text automatically"
+msgstr "自动从文本生成流程图"
+
 #: src/components/Checkout.tsx:174
 msgid "Get Pro Access Now"
 msgstr "立即获取专业访问权限"
@@ -728,6 +752,14 @@ msgstr "立即获取专业访问权限"
 #: src/lib/usePromptStore.ts:101
 msgid "Get Unlimited AI Requests"
 msgstr "获得无限的AI请求"
+
+#: src/components/FeatureBreakdown.tsx:104
+msgid "Get rapid responses to your questions"
+msgstr "快速获取您的问题的回答"
+
+#: src/components/FeatureBreakdown.tsx:235
+msgid "Get unlimited flowcharts and premium features"
+msgstr "获取无限流程图和高级功能"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -761,6 +793,10 @@ msgstr "有复杂的问题或问题吗？我们在这里帮助你。"
 #: src/pages/Success.tsx:45
 msgid "Here are some Pro features you can now enjoy."
 msgstr "現在您可以享受以下專業功能。"
+
+#: src/components/FeatureBreakdown.tsx:57
+msgid "High-quality exports with embedded fonts"
+msgstr "高质量的导出，内嵌字体"
 
 #: src/pages/Account.tsx:265
 msgid "History"
@@ -825,6 +861,10 @@ msgstr "從CSV導入"
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "从Visio，Lucidchart和CSV导入"
 
+#: src/components/FeatureBreakdown.tsx:91
+msgid "Import from popular diagram tools"
+msgstr "从流行的图表工具导入"
+
 #: src/components/ShareDialog.tsx:518
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
@@ -872,6 +912,10 @@ msgstr "保留更改吗？"
 #: src/lib/getDefaultText.ts:18
 msgid "Keep practicing"
 msgstr "继续练习"
+
+#: src/components/FeatureBreakdown.tsx:84
+msgid "Keep your data private on your computer"
+msgstr "在您的电脑上保护您的数据隐私"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -963,8 +1007,8 @@ msgstr "从链接加载？"
 msgid "Load layout and styles"
 msgstr "載入版面和樣式"
 
+#: src/components/FeatureBreakdown.tsx:83
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:69
 msgid "Local File Support"
 msgstr "本地文件支持"
 
@@ -1165,6 +1209,10 @@ msgstr "将您的文档或大纲粘贴到此处，将其转换为有组织的流
 msgid "Pasted content detected. Convert to Flowchart Fun syntax?"
 msgstr "检测到粘贴内容。转换为流程图乐趣语法？"
 
+#: src/components/FeatureBreakdown.tsx:51
+msgid "Perfect for docs and quick sharing"
+msgstr "适用于文档和快速分享"
+
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "永久图表是专业功能"
@@ -1177,7 +1225,7 @@ msgstr "剧本"
 msgid "Pointer and container on same line"
 msgstr "同一行上的指针和容器"
 
-#: src/pages/Pricing2.tsx:93
+#: src/components/FeatureBreakdown.tsx:103
 msgid "Priority One-on-One Support"
 msgstr "优先一对一支持"
 
@@ -1208,11 +1256,15 @@ msgstr "提示"
 msgid "Public"
 msgstr "公开"
 
+#: src/components/FeatureBreakdown.tsx:33
+msgid "Quick experimentation space that resets daily"
+msgstr "每日重置的快速实验空间"
+
 #: src/lib/graphOptions.ts:20
 msgid "Random"
 msgstr "随机"
 
-#: src/pages/Pricing2.tsx:42
+#: src/components/FeatureBreakdown.tsx:44
 msgid "Rapid Deployment Templates"
 msgstr "快速部署模板"
 
@@ -1221,7 +1273,7 @@ msgstr "快速部署模板"
 msgid "Rapid Templates"
 msgstr "快速模板"
 
-#: src/pages/Pricing2.tsx:44
+#: src/components/FeatureBreakdown.tsx:50
 msgid "Raster Export (PNG, JPG)"
 msgstr "光栅导出（PNG，JPG）"
 
@@ -1358,6 +1410,10 @@ msgstr "保存到文件"
 msgid "Save your Work"
 msgstr "保存您的工作"
 
+#: src/components/FeatureBreakdown.tsx:110
+msgid "Schedule personal consultation sessions"
+msgstr "安排个人咨询会话"
+
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "安全付款"
@@ -1441,6 +1497,10 @@ msgstr "开始"
 msgid "Start Over"
 msgstr "重新開始"
 
+#: src/components/FeatureBreakdown.tsx:45
+msgid "Start faster with use-case specific templates"
+msgstr "使用特定用例模板加快启动"
+
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "状态"
@@ -1476,7 +1536,7 @@ msgstr "用类别进行样式设置"
 msgid "Submit"
 msgstr "提交"
 
-#: src/pages/Pricing2.tsx:344
+#: src/pages/Pricing2.tsx:193
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "订阅专业版，以有趣的方式制作流程图！"
 
@@ -1581,7 +1641,7 @@ msgstr "可能的形状是："
 msgid "Theme"
 msgstr "主題"
 
-#: src/pages/Pricing2.tsx:37
+#: src/components/FeatureBreakdown.tsx:38
 msgid "Theme Customization Editor"
 msgstr "主题定制编辑器"
 
@@ -1659,7 +1719,7 @@ msgstr "秒转换您的想法成专业图表"
 msgid "Transform text into diagrams instantly"
 msgstr "即时将文本转换为图表"
 
-#: src/pages/Pricing2.tsx:240
+#: src/pages/Pricing2.tsx:153
 msgid "Trusted by Professionals and Academics"
 msgstr "受专业人士和学者信任"
 
@@ -1671,7 +1731,7 @@ msgstr "尝试人工智能"
 msgid "Try again"
 msgstr "重试"
 
-#: src/pages/Pricing2.tsx:207
+#: src/pages/Pricing2.tsx:111
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "在几秒钟内将您的想法转化为专业图表"
 
@@ -1707,8 +1767,8 @@ msgstr "未知的解析错误"
 msgid "Unlimited Flowcharts"
 msgstr "无限制的流程图"
 
+#: src/components/FeatureBreakdown.tsx:62
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:56
 msgid "Unlimited Permanent Flowcharts"
 msgstr "无限永久流程图"
 
@@ -1744,11 +1804,12 @@ msgstr "升级到Flowchart Fun Pro并解锁："
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高级功能来创建您的图表。"
 
+#: src/components/FeatureBreakdown.tsx:247
 #: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
-#: src/pages/Pricing2.tsx:234
+#: src/pages/Pricing2.tsx:147
 msgid "Upgrade to Pro for $2/month"
 msgstr "升级至专业版每月$2"
 
@@ -1805,7 +1866,7 @@ msgstr "使用此模式来修改和增强您当前的图表。"
 msgid "User"
 msgstr "用户"
 
-#: src/pages/Pricing2.tsx:50
+#: src/components/FeatureBreakdown.tsx:56
 msgid "Vector Export (SVG)"
 msgstr "矢量导出（SVG）"
 
@@ -1817,7 +1878,7 @@ msgstr "在 Github 上查看"
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "想要从文档创建流程图吗？ 将其粘贴到编辑器中，然后单击“转换为流程图”"
 
-#: src/pages/Pricing2.tsx:75
+#: src/components/FeatureBreakdown.tsx:77
 msgid "Watermark-Free Diagrams"
 msgstr "无水印图表"
 
