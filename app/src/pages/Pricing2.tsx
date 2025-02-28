@@ -104,7 +104,7 @@ export default function Pricing2() {
           alt=""
         />
         <Container className="text-center grid relative justify-items-center items-center gap-6 md:gap-8 mb-0">
-          <span className="font-bold sm:text-[22px] text-purple-600/90 dark:text-white/70 -mb-2">
+          <span className="font-medium sm:text-[22px] text-purple-600/90 dark:text-white/70 -mb-2">
             Flowchart Fun Pro
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold tracking-tight !leading-[1.25]">
@@ -147,7 +147,7 @@ export default function Pricing2() {
         <Trans>Upgrade to Pro for $2/month</Trans>
       </button>
 
-      <div className="trusted">
+      <div className="trusted sm:mt-24">
         <Container className="py-8">
           <SectionTitle className="text-center mb-8 md:mb-14">
             <Trans>Trusted by Professionals and Academics</Trans>

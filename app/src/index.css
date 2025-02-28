@@ -496,5 +496,5 @@ body.dark .pricing-highlights {
   z-index: 10;
   width: 80px;
   height: 10px;
-  @apply bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-700 dark:to-purple-800 rounded-b-lg;
+  @apply bg-gradient-to-r from-purple-400 to-purple-700 dark:from-purple-700 dark:to-purple-900 rounded-b-lg;
 }

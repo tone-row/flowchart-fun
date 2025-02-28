@@ -21,7 +21,7 @@ import {
 type Feature = {
   name: string;
   description: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: typeof RiEdit2Line;
   free: boolean;
   link?: string;
   proLabel?: string;
@@ -114,6 +114,26 @@ const features: Feature[] = [
   },
 ];
 
+const styles = {
+  lightBorder: "border-neutral-400/50 dark:border-neutral-700",
+  accentBorder: "border-purple-200 dark:border-purple-300/50",
+  accentBorderBottom: "border-b-purple-200 dark:border-b-purple-300/50",
+  accentBorderLeft: "border-l-purple-200 dark:border-l-purple-300/50",
+  proBg:
+    "bg-gradient-to-r from-purple-400 to-purple-700 dark:from-purple-700 dark:to-purple-900",
+};
+
+const proLabelColors = [
+  "bg-green-600",
+  "bg-blue-600",
+  "bg-yellow-600",
+  "bg-red-600",
+  "bg-purple-600",
+  "bg-orange-600",
+  "bg-pink-600",
+  "bg-gray-600",
+];
+
 export function FeatureBreakdown() {
   return (
     <div className="bg-white py-16 dark:bg-transparent">
@@ -133,13 +153,32 @@ export function FeatureBreakdown() {
         <div className="mt-12">
           {/* Table headers */}
           <div className="grid grid-cols-[auto_80px_80px]">
-            <div className="text-sm font-semibold text-neutral-900 dark:text-white py-3 pl-4 sm:pl-px border-b border-neutral-200 dark:border-neutral-800">
+            <div
+              className={classNames(
+                "text-sm font-semibold text-neutral-900 dark:text-white py-3 pl-4 sm:pl-px border-b",
+                {
+                  [styles.lightBorder]: true,
+                }
+              )}
+            >
               Features
             </div>
-            <div className="text-center text-sm font-medium text-neutral-600 dark:text-neutral-400 py-3 border-b border-neutral-200 dark:border-neutral-800">
+            <div
+              className={classNames(
+                "text-center text-sm font-medium text-neutral-600 dark:text-neutral-400 py-3 border-b",
+                {
+                  [styles.lightBorder]: true,
+                }
+              )}
+            >
               Free
             </div>
-            <div className="text-center text-sm font-bold text-white rounded-t-lg bg-gradient-to-r from-purple-500 to-purple-600 py-3 dark:from-purple-700 dark:to-purple-800">
+            <div
+              className={classNames(
+                "text-center text-sm font-bold text-white rounded-t-lg bg-gradient-to-r py-3",
+                styles.proBg
+              )}
+            >
               Pro
             </div>
           </div>
@@ -147,15 +186,18 @@ export function FeatureBreakdown() {
           <div className="grid feature-breakdown-grid relative">
             {features.map((feature, index) => {
               const nextFeatureIsPro = features[index + 1]?.free;
+              const proLabelIndex = feature.proLabel
+                ? features.filter((f) => !!f.proLabel).indexOf(feature)
+                : -1;
               return (
                 <div
                   key={index}
                   className={classNames(
                     "grid grid-cols-[auto_80px_80px] sm:border-l",
                     {
-                      "border-neutral-200 dark:border-neutral-800":
-                        feature.free,
-                      "bg-purple-500/[0.05] dark:bg-purple-500/10 border-purple-100 dark:border-purple-300/20":
+                      [styles.lightBorder]: feature.free,
+                      [styles.accentBorderLeft]: !feature.free,
+                      "bg-purple-500/[0.05] dark:bg-purple-500/30":
                         !feature.free,
                     }
                   )}
@@ -164,10 +206,8 @@ export function FeatureBreakdown() {
                     className={classNames(
                       "flex items-center p-4 sm:p-5 border-b",
                       {
-                        "border-neutral-200 dark:border-neutral-800":
-                          nextFeatureIsPro,
-                        "border-purple-100 dark:border-purple-300/20":
-                          !nextFeatureIsPro,
+                        [styles.lightBorder]: nextFeatureIsPro,
+                        [styles.accentBorder]: !nextFeatureIsPro,
                       }
                     )}
                   >
@@ -175,24 +215,38 @@ export function FeatureBreakdown() {
                       className={classNames(
                         "h-6 w-6 mr-5 flex-shrink-0 hidden sm:block",
                         {
-                          "text-neutral-600 dark:text-neutral-400":
+                          "text-neutral-400 dark:text-neutral-400":
                             feature.free,
-                          "text-purple-600 dark:text-purple-400": !feature.free,
+                          "text-purple-500/90 dark:text-purple-400":
+                            !feature.free,
                         }
                       )}
                     />
                     <div>
                       <div className="flex items-center">
-                        <p className="text-sm font-medium text-neutral-900 dark:text-white">
+                        <p className="text-base font-medium text-foreground dark:text-white mb-1.5">
                           {feature.name}
                         </p>
                         {feature.proLabel && !feature.free && (
-                          <span className="ml-2 inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-[12px] font-medium text-purple-800 dark:bg-purple-400/40 dark:text-white hidden sm:block">
+                          <span
+                            className={classNames(
+                              "ml-2 inline-flex -mt-2 items-center rounded-full text-white px-2.5 pt-[4px] pb-[4px] text-[12px] font-bold text-purple-800 hidden sm:block rotate-[-2deg] shadow-[3px_3px_0px_rgba(0,0,0,0.1)]",
+                              proLabelColors[proLabelIndex]
+                            )}
+                          >
                             {feature.proLabel}
                           </span>
                         )}
                       </div>
-                      <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                      <p
+                        className={classNames(
+                          "text-xs text-neutral-700 dark:text-neutral-300",
+                          {
+                            "!text-foreground/80 dark:!text-neutral-100":
+                              !feature.free,
+                          }
+                        )}
+                      >
                         {feature.description}
                       </p>
                     </div>
@@ -200,12 +254,11 @@ export function FeatureBreakdown() {
 
                   <div
                     className={classNames(
-                      "grid place-items-center border-b border-neutral-200 dark:border-neutral-800 border-l",
+                      "grid place-items-center border-b border-l",
+                      styles.lightBorder,
                       {
-                        "border-b-purple-100 dark:border-b-purple-300/20":
-                          !nextFeatureIsPro,
-                        "border-l-purple-100 dark:border-l-purple-300/20":
-                          !feature.free,
+                        [styles.accentBorderBottom]: !nextFeatureIsPro,
+                        [styles.accentBorderLeft]: !feature.free,
                       }
                     )}
                   >
@@ -214,11 +267,18 @@ export function FeatureBreakdown() {
                     ) : (
                       <X
                         weight="bold"
-                        className="h-6 w-6 text-neutral-500/20"
+                        className="h-6 w-6 text-neutral-700/20"
                       />
                     )}
                   </div>
-                  <div className="grid place-items-center bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-700 dark:to-purple-800 py-3 border-b border-transparent">
+                  <div
+                    className={classNames(
+                      "grid place-items-center py-3 border-b border-transparent",
+                      {
+                        [styles.proBg]: true,
+                      }
+                    )}
+                  >
                     <Check
                       weight="bold"
                       className="h-5 w-5 text-white drop-shadow-sm drop-shadow-purple-900"
