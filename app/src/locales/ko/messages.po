@@ -41,7 +41,7 @@ msgstr "새로운 버전의 앱이 사용 가능합니다. 업데이트하려면
 msgid "AI Creation & Editing"
 msgstr "AI 생성 및 편집"
 
-#: src/pages/Pricing2.tsx:62
+#: src/components/FeatureBreakdown.tsx:69
 msgid "AI-Powered Flowchart Creation"
 msgstr "인공지능 기반 플로우차트 생성"
 
@@ -184,6 +184,10 @@ msgstr "아래에서 위로"
 msgid "Breadthfirst"
 msgstr "폭 우선"
 
+#: src/components/FeatureBreakdown.tsx:63
+msgid "Build your personal flowchart library"
+msgstr "개인용 플로우차트 라이브러리 만들기"
+
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/RenameButton.tsx:160
@@ -289,6 +293,10 @@ msgstr "열"
 #: src/components/Feedback.tsx:78
 msgid "Comment"
 msgstr "댓글 달기"
+
+#: src/components/FeatureBreakdown.tsx:126
+msgid "Compare our plans and find the perfect fit for your flowcharting needs"
+msgstr "우리의 요금제를 비교하고 당신의 플로우차트 작성 요구에 맞는 완벽한 선택을 찾으세요"
 
 #: src/lib/graphOptions.ts:18
 msgid "Concentric"
@@ -422,8 +430,8 @@ msgstr "곡선 스타일"
 msgid "Custom CSS"
 msgstr "사용자 정의 CSS"
 
+#: src/components/FeatureBreakdown.tsx:96
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:87
 msgid "Custom Sharing Options"
 msgstr "커스텀 공유 옵션"
 
@@ -431,7 +439,7 @@ msgstr "커스텀 공유 옵션"
 msgid "Customer Portal"
 msgstr "고객 포털"
 
-#: src/pages/Pricing2.tsx:35
+#: src/components/FeatureBreakdown.tsx:32
 msgid "Daily Sandbox Editor"
 msgstr "매일 샌드박스 편집기"
 
@@ -444,7 +452,7 @@ msgstr "다크"
 msgid "Dark Mode"
 msgstr "다크 모드"
 
-#: src/pages/Pricing2.tsx:81
+#: src/components/FeatureBreakdown.tsx:90
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "데이터 가져오기 (Visio, Lucidchart, CSV)"
 
@@ -641,7 +649,7 @@ msgstr "예시"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:99
+#: src/components/FeatureBreakdown.tsx:109
 msgid "Exclusive Office Hours"
 msgstr "독점 오피스 시간"
 
@@ -658,6 +666,10 @@ msgstr "더 탐험하세요."
 msgid "Export"
 msgstr "내보내기"
 
+#: src/components/FeatureBreakdown.tsx:78
+msgid "Export clean diagrams without branding"
+msgstr "브랜딩 없이 깔끔한 다이어그램 내보내기"
+
 #: src/pages/Pricing.tsx:52
 msgid "Export to PNG & JPG"
 msgstr "PNG 및 JPG로 내보내기"
@@ -666,7 +678,7 @@ msgstr "PNG 및 JPG로 내보내기"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG 및 SVG로 내보내기"
 
-#: src/pages/Pricing2.tsx:266
+#: src/components/FeatureBreakdown.tsx:123
 msgid "Feature Breakdown"
 msgstr "기능 분해"
 
@@ -679,6 +691,10 @@ msgstr "피드백"
 #: src/pages/Success.tsx:66
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "우리에게 연락하고 자유롭게 탐색하시고 <0>피드백</0> 페이지를 통해 의견을 제시하실 수 있습니다."
+
+#: src/components/FeatureBreakdown.tsx:39
+msgid "Fine-tune layouts and visual styles"
+msgstr "레이아웃과 시각적 스타일을 세밀하게 조정하기"
 
 #: src/components/Tabs/ThemeTab.tsx:391
 msgid "Fixed Height"
@@ -713,6 +729,10 @@ msgstr "버그를 발견했습니까? 기능 요청이 있습니까? 우리는 �
 msgid "Free"
 msgstr "무료"
 
+#: src/components/FeatureBreakdown.tsx:97
+msgid "Full-screen, read-only, and template sharing"
+msgstr "전체 화면, 읽기 전용, 그리고 템플릿 공유"
+
 #: src/components/ShareDialog.tsx:144
 msgid "Fullscreen"
 msgstr "전체 화면"
@@ -721,6 +741,10 @@ msgstr "전체 화면"
 msgid "General"
 msgstr "일반"
 
+#: src/components/FeatureBreakdown.tsx:70
+msgid "Generate flowcharts from text automatically"
+msgstr "텍스트로부터 자동으로 플로우차트 생성하기"
+
 #: src/components/Checkout.tsx:174
 msgid "Get Pro Access Now"
 msgstr "지금 프로 액세스 받기"
@@ -728,6 +752,14 @@ msgstr "지금 프로 액세스 받기"
 #: src/lib/usePromptStore.ts:101
 msgid "Get Unlimited AI Requests"
 msgstr "무제한 AI 요청 받기"
+
+#: src/components/FeatureBreakdown.tsx:104
+msgid "Get rapid responses to your questions"
+msgstr "귀하의 질문에 신속한 답변 받기"
+
+#: src/components/FeatureBreakdown.tsx:235
+msgid "Get unlimited flowcharts and premium features"
+msgstr "무제한 플로우차트 및 프리미엄 기능 이용하기"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -761,6 +793,10 @@ msgstr "복잡한 문제가 있나요? 여기에서 도와드리겠습니다."
 #: src/pages/Success.tsx:45
 msgid "Here are some Pro features you can now enjoy."
 msgstr "이제 즐길 수 있는 Pro 기능들이 있습니다."
+
+#: src/components/FeatureBreakdown.tsx:57
+msgid "High-quality exports with embedded fonts"
+msgstr "내장된 글꼴로 고품질의 내보내기"
 
 #: src/pages/Account.tsx:265
 msgid "History"
@@ -825,6 +861,10 @@ msgstr "CSV로 가져오기"
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Visio, Lucidchart 및 CSV에서 가져오기"
 
+#: src/components/FeatureBreakdown.tsx:91
+msgid "Import from popular diagram tools"
+msgstr "인기 있는 다이어그램 도구에서 가져오기"
+
 #: src/components/ShareDialog.tsx:518
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다."
@@ -872,6 +912,10 @@ msgstr "변경 사항을 유지하시겠습니까?"
 #: src/lib/getDefaultText.ts:18
 msgid "Keep practicing"
 msgstr "계속 연습하세요"
+
+#: src/components/FeatureBreakdown.tsx:84
+msgid "Keep your data private on your computer"
+msgstr "컴퓨터에서 데이터를 개인적으로 보호하기"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -963,8 +1007,8 @@ msgstr "링크에서 불러오기?"
 msgid "Load layout and styles"
 msgstr "레이아웃과 스타일 로드"
 
+#: src/components/FeatureBreakdown.tsx:83
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:69
 msgid "Local File Support"
 msgstr "로컬 파일 지원"
 
@@ -1165,6 +1209,10 @@ msgstr "문서나 개요를 여기에 붙여넣어 조직화된 플로우차트�
 msgid "Pasted content detected. Convert to Flowchart Fun syntax?"
 msgstr "붙여넣은 내용이 감지되었습니다. Flowchart Fun 구문으로 변환하시겠습니까?"
 
+#: src/components/FeatureBreakdown.tsx:51
+msgid "Perfect for docs and quick sharing"
+msgstr "문서 작성 및 빠른 공유에 완벽함"
+
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "영구 차트는 프로 기능입니다"
@@ -1177,7 +1225,7 @@ msgstr "플레이북"
 msgid "Pointer and container on same line"
 msgstr "같은 줄에 포인터와 컨테이너"
 
-#: src/pages/Pricing2.tsx:93
+#: src/components/FeatureBreakdown.tsx:103
 msgid "Priority One-on-One Support"
 msgstr "우선순위 일대일 지원"
 
@@ -1208,11 +1256,15 @@ msgstr "프롬프트"
 msgid "Public"
 msgstr "공용"
 
+#: src/components/FeatureBreakdown.tsx:33
+msgid "Quick experimentation space that resets daily"
+msgstr "매일 초기화되는 빠른 실험 공간"
+
 #: src/lib/graphOptions.ts:20
 msgid "Random"
 msgstr "무작위"
 
-#: src/pages/Pricing2.tsx:42
+#: src/components/FeatureBreakdown.tsx:44
 msgid "Rapid Deployment Templates"
 msgstr "빠른 배포 템플릿"
 
@@ -1221,7 +1273,7 @@ msgstr "빠른 배포 템플릿"
 msgid "Rapid Templates"
 msgstr "급변화 템플릿"
 
-#: src/pages/Pricing2.tsx:44
+#: src/components/FeatureBreakdown.tsx:50
 msgid "Raster Export (PNG, JPG)"
 msgstr "래스터 내보내기 (PNG, JPG)"
 
@@ -1358,6 +1410,10 @@ msgstr "파일에 저장하기"
 msgid "Save your Work"
 msgstr "작업 저장"
 
+#: src/components/FeatureBreakdown.tsx:110
+msgid "Schedule personal consultation sessions"
+msgstr "개인 상담 세션 일정 잡기"
+
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "안전한 결제"
@@ -1441,6 +1497,10 @@ msgstr "시작"
 msgid "Start Over"
 msgstr "처음부터 다시 시작하기"
 
+#: src/components/FeatureBreakdown.tsx:45
+msgid "Start faster with use-case specific templates"
+msgstr "사용 사례에 맞는 템플릿으로 더 빠르게 시작하기"
+
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "상태"
@@ -1476,7 +1536,7 @@ msgstr "클래스로 스타일링"
 msgid "Submit"
 msgstr "보내다"
 
-#: src/pages/Pricing2.tsx:344
+#: src/pages/Pricing2.tsx:193
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "프로를 구독하고 재미있게 플로우차트 작성하기!"
 
@@ -1581,7 +1641,7 @@ msgstr "가능한 모양은 다음과 같습니다:"
 msgid "Theme"
 msgstr "테마"
 
-#: src/pages/Pricing2.tsx:37
+#: src/components/FeatureBreakdown.tsx:38
 msgid "Theme Customization Editor"
 msgstr "테마 커스터마이즈 편집기"
 
@@ -1659,7 +1719,7 @@ msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 msgid "Transform text into diagrams instantly"
 msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
 
-#: src/pages/Pricing2.tsx:240
+#: src/pages/Pricing2.tsx:153
 msgid "Trusted by Professionals and Academics"
 msgstr "전문가와 학술인들에게 신뢰받는다"
 
@@ -1671,7 +1731,7 @@ msgstr "AI 시도해보기"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/pages/Pricing2.tsx:207
+#: src/pages/Pricing2.tsx:111
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "아이디어를 몇 초 만에 전문적인 다이어그램으로 변환하세요."
 
@@ -1707,8 +1767,8 @@ msgstr "알 수 없는 구문 분석 오류"
 msgid "Unlimited Flowcharts"
 msgstr "무제한 다이어그램"
 
+#: src/components/FeatureBreakdown.tsx:62
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:56
 msgid "Unlimited Permanent Flowcharts"
 msgstr "무제한 영구 플로차트"
 
@@ -1744,11 +1804,12 @@ msgstr "Flowchart Fun Pro로 업그레이드하고 다음을 잠금 해제하세
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 해제하고 다이어그램에 대한 더 고급 기능을 즐기세요."
 
+#: src/components/FeatureBreakdown.tsx:247
 #: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
-#: src/pages/Pricing2.tsx:234
+#: src/pages/Pricing2.tsx:147
 msgid "Upgrade to Pro for $2/month"
 msgstr "프로로 업그레이드하면 매달 $2"
 
@@ -1805,7 +1866,7 @@ msgstr "현재 차트를 수정하고 개선하는 데 이 모드를 사용하�
 msgid "User"
 msgstr "사용자"
 
-#: src/pages/Pricing2.tsx:50
+#: src/components/FeatureBreakdown.tsx:56
 msgid "Vector Export (SVG)"
 msgstr "벡터 내보내기 (SVG)"
 
@@ -1817,7 +1878,7 @@ msgstr "Github에서 보기"
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "문서에서 플로우차트를 만들고 싶으세요? 편집기에 붙여넣고 '플로우차트로 변환'을 클릭하세요."
 
-#: src/pages/Pricing2.tsx:75
+#: src/components/FeatureBreakdown.tsx:77
 msgid "Watermark-Free Diagrams"
 msgstr "워터마크 없는 다이어그램"
 
