@@ -123,7 +123,7 @@ function Testimonials() {
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
             <Trans>What our users are saying</Trans>
           </h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-normal text-balance">
             <Trans>Join thousands of happy users who love Flowchart Fun</Trans>
           </p>
         </div>

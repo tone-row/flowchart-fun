@@ -41,7 +41,7 @@ msgstr "A new version of the app is available. Please reload to update."
 msgid "AI Creation & Editing"
 msgstr "AI Creation & Editing"
 
-#: src/pages/Pricing2.tsx:62
+#: src/components/FeatureBreakdown.tsx:69
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI-Powered Flowchart Creation"
 
@@ -184,6 +184,10 @@ msgstr "Bottom to Top"
 msgid "Breadthfirst"
 msgstr "Breadthfirst"
 
+#: src/components/FeatureBreakdown.tsx:63
+msgid "Build your personal flowchart library"
+msgstr "Build your personal flowchart library"
+
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/RenameButton.tsx:160
@@ -289,6 +293,10 @@ msgstr "Column"
 #: src/components/Feedback.tsx:78
 msgid "Comment"
 msgstr "Comment"
+
+#: src/components/FeatureBreakdown.tsx:126
+msgid "Compare our plans and find the perfect fit for your flowcharting needs"
+msgstr "Compare our plans and find the perfect fit for your flowcharting needs"
 
 #: src/lib/graphOptions.ts:18
 msgid "Concentric"
@@ -422,8 +430,8 @@ msgstr "Curve Style"
 msgid "Custom CSS"
 msgstr "Custom CSS"
 
+#: src/components/FeatureBreakdown.tsx:96
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:87
 msgid "Custom Sharing Options"
 msgstr "Custom Sharing Options"
 
@@ -431,7 +439,7 @@ msgstr "Custom Sharing Options"
 msgid "Customer Portal"
 msgstr "Customer Portal"
 
-#: src/pages/Pricing2.tsx:35
+#: src/components/FeatureBreakdown.tsx:32
 msgid "Daily Sandbox Editor"
 msgstr "Daily Sandbox Editor"
 
@@ -444,7 +452,7 @@ msgstr "Dark"
 msgid "Dark Mode"
 msgstr "Dark Mode"
 
-#: src/pages/Pricing2.tsx:81
+#: src/components/FeatureBreakdown.tsx:90
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "Data Import (Visio, Lucidchart, CSV)"
 
@@ -641,7 +649,7 @@ msgstr "Examples"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:99
+#: src/components/FeatureBreakdown.tsx:109
 msgid "Exclusive Office Hours"
 msgstr "Exclusive Office Hours"
 
@@ -658,6 +666,10 @@ msgstr "Explore more"
 msgid "Export"
 msgstr "Export"
 
+#: src/components/FeatureBreakdown.tsx:78
+msgid "Export clean diagrams without branding"
+msgstr "Export clean diagrams without branding"
+
 #: src/pages/Pricing.tsx:52
 msgid "Export to PNG & JPG"
 msgstr "Export to PNG & JPG"
@@ -666,7 +678,7 @@ msgstr "Export to PNG & JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "Export to PNG, JPG, and SVG"
 
-#: src/pages/Pricing2.tsx:266
+#: src/components/FeatureBreakdown.tsx:123
 msgid "Feature Breakdown"
 msgstr "Feature Breakdown"
 
@@ -679,6 +691,10 @@ msgstr "Feedback"
 #: src/pages/Success.tsx:66
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
+
+#: src/components/FeatureBreakdown.tsx:39
+msgid "Fine-tune layouts and visual styles"
+msgstr "Fine-tune layouts and visual styles"
 
 #: src/components/Tabs/ThemeTab.tsx:391
 msgid "Fixed Height"
@@ -713,6 +729,10 @@ msgstr "Found a bug? Have a feature request? We would love to hear from you!"
 msgid "Free"
 msgstr "Free"
 
+#: src/components/FeatureBreakdown.tsx:97
+msgid "Full-screen, read-only, and template sharing"
+msgstr "Full-screen, read-only, and template sharing"
+
 #: src/components/ShareDialog.tsx:144
 msgid "Fullscreen"
 msgstr "Fullscreen"
@@ -721,6 +741,10 @@ msgstr "Fullscreen"
 msgid "General"
 msgstr "General"
 
+#: src/components/FeatureBreakdown.tsx:70
+msgid "Generate flowcharts from text automatically"
+msgstr "Generate flowcharts from text automatically"
+
 #: src/components/Checkout.tsx:174
 msgid "Get Pro Access Now"
 msgstr "Get Pro Access Now"
@@ -728,6 +752,14 @@ msgstr "Get Pro Access Now"
 #: src/lib/usePromptStore.ts:101
 msgid "Get Unlimited AI Requests"
 msgstr "Get Unlimited AI Requests"
+
+#: src/components/FeatureBreakdown.tsx:104
+msgid "Get rapid responses to your questions"
+msgstr "Get rapid responses to your questions"
+
+#: src/components/FeatureBreakdown.tsx:235
+msgid "Get unlimited flowcharts and premium features"
+msgstr "Get unlimited flowcharts and premium features"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -761,6 +793,10 @@ msgstr "Have complex questions or issues? We're here to help."
 #: src/pages/Success.tsx:45
 msgid "Here are some Pro features you can now enjoy."
 msgstr "Here are some Pro features you can now enjoy."
+
+#: src/components/FeatureBreakdown.tsx:57
+msgid "High-quality exports with embedded fonts"
+msgstr "High-quality exports with embedded fonts"
 
 #: src/pages/Account.tsx:265
 msgid "History"
@@ -825,6 +861,10 @@ msgstr "Import from CSV"
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Import from Visio, Lucidchart, and CSV"
 
+#: src/components/FeatureBreakdown.tsx:91
+msgid "Import from popular diagram tools"
+msgstr "Import from popular diagram tools"
+
 #: src/components/ShareDialog.tsx:518
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Import your diagram it into Microsoft Visio using one of these CSV files."
@@ -872,6 +912,10 @@ msgstr "Keep changes?"
 #: src/lib/getDefaultText.ts:18
 msgid "Keep practicing"
 msgstr "Keep practicing"
+
+#: src/components/FeatureBreakdown.tsx:84
+msgid "Keep your data private on your computer"
+msgstr "Keep your data private on your computer"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -963,8 +1007,8 @@ msgstr "Load from link?"
 msgid "Load layout and styles"
 msgstr "Load layout and styles"
 
+#: src/components/FeatureBreakdown.tsx:83
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:69
 msgid "Local File Support"
 msgstr "Local File Support"
 
@@ -1165,6 +1209,10 @@ msgstr "Paste your document or outline here to convert it into an organized flow
 msgid "Pasted content detected. Convert to Flowchart Fun syntax?"
 msgstr "Pasted content detected. Convert to Flowchart Fun syntax?"
 
+#: src/components/FeatureBreakdown.tsx:51
+msgid "Perfect for docs and quick sharing"
+msgstr "Perfect for docs and quick sharing"
+
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "Permanent Charts are a Pro Feature"
@@ -1177,7 +1225,7 @@ msgstr "Playbook"
 msgid "Pointer and container on same line"
 msgstr "Pointer and container on same line"
 
-#: src/pages/Pricing2.tsx:93
+#: src/components/FeatureBreakdown.tsx:103
 msgid "Priority One-on-One Support"
 msgstr "Priority One-on-One Support"
 
@@ -1208,11 +1256,15 @@ msgstr "Prompt"
 msgid "Public"
 msgstr "Public"
 
+#: src/components/FeatureBreakdown.tsx:33
+msgid "Quick experimentation space that resets daily"
+msgstr "Quick experimentation space that resets daily"
+
 #: src/lib/graphOptions.ts:20
 msgid "Random"
 msgstr "Random"
 
-#: src/pages/Pricing2.tsx:42
+#: src/components/FeatureBreakdown.tsx:44
 msgid "Rapid Deployment Templates"
 msgstr "Rapid Deployment Templates"
 
@@ -1221,7 +1273,7 @@ msgstr "Rapid Deployment Templates"
 msgid "Rapid Templates"
 msgstr "Rapid Templates"
 
-#: src/pages/Pricing2.tsx:44
+#: src/components/FeatureBreakdown.tsx:50
 msgid "Raster Export (PNG, JPG)"
 msgstr "Raster Export (PNG, JPG)"
 
@@ -1358,6 +1410,10 @@ msgstr "Save to File"
 msgid "Save your Work"
 msgstr "Save your Work"
 
+#: src/components/FeatureBreakdown.tsx:110
+msgid "Schedule personal consultation sessions"
+msgstr "Schedule personal consultation sessions"
+
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "Secure payment"
@@ -1441,6 +1497,10 @@ msgstr "Start"
 msgid "Start Over"
 msgstr "Start Over"
 
+#: src/components/FeatureBreakdown.tsx:45
+msgid "Start faster with use-case specific templates"
+msgstr "Start faster with use-case specific templates"
+
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "Status"
@@ -1476,7 +1536,7 @@ msgstr "Style with classes"
 msgid "Submit"
 msgstr "Submit"
 
-#: src/pages/Pricing2.tsx:344
+#: src/pages/Pricing2.tsx:193
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "Subscribe to Pro and flowchart the fun way!"
 
@@ -1581,7 +1641,7 @@ msgstr "The possible shapes are:"
 msgid "Theme"
 msgstr "Theme"
 
-#: src/pages/Pricing2.tsx:37
+#: src/components/FeatureBreakdown.tsx:38
 msgid "Theme Customization Editor"
 msgstr "Theme Customization Editor"
 
@@ -1659,7 +1719,7 @@ msgstr "Transform Your Ideas into Professional Diagrams in Seconds"
 msgid "Transform text into diagrams instantly"
 msgstr "Transform text into diagrams instantly"
 
-#: src/pages/Pricing2.tsx:240
+#: src/pages/Pricing2.tsx:153
 msgid "Trusted by Professionals and Academics"
 msgstr "Trusted by Professionals and Academics"
 
@@ -1671,7 +1731,7 @@ msgstr "Try AI"
 msgid "Try again"
 msgstr "Try again"
 
-#: src/pages/Pricing2.tsx:207
+#: src/pages/Pricing2.tsx:111
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "Turn your ideas into professional diagrams in seconds"
 
@@ -1707,8 +1767,8 @@ msgstr "Unknown Parsing Error"
 msgid "Unlimited Flowcharts"
 msgstr "Unlimited Flowcharts"
 
+#: src/components/FeatureBreakdown.tsx:62
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:56
 msgid "Unlimited Permanent Flowcharts"
 msgstr "Unlimited Permanent Flowcharts"
 
@@ -1744,11 +1804,12 @@ msgstr "Upgrade to Flowchart Fun Pro and unlock:"
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 
+#: src/components/FeatureBreakdown.tsx:247
 #: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "Upgrade to Pro"
 
-#: src/pages/Pricing2.tsx:234
+#: src/pages/Pricing2.tsx:147
 msgid "Upgrade to Pro for $2/month"
 msgstr "Upgrade to Pro for $2/month"
 
@@ -1805,7 +1866,7 @@ msgstr "Use this mode to modify and enhance your current chart."
 msgid "User"
 msgstr "User"
 
-#: src/pages/Pricing2.tsx:50
+#: src/components/FeatureBreakdown.tsx:56
 msgid "Vector Export (SVG)"
 msgstr "Vector Export (SVG)"
 
@@ -1817,7 +1878,7 @@ msgstr "View on Github"
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 
-#: src/pages/Pricing2.tsx:75
+#: src/components/FeatureBreakdown.tsx:77
 msgid "Watermark-Free Diagrams"
 msgstr "Watermark-Free Diagrams"
 

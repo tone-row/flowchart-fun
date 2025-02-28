@@ -41,7 +41,7 @@ msgstr "एप्प का एक नया वर्जन उपलब्ध 
 msgid "AI Creation & Editing"
 msgstr "एआई निर्माण और संपादन"
 
-#: src/pages/Pricing2.tsx:62
+#: src/components/FeatureBreakdown.tsx:69
 msgid "AI-Powered Flowchart Creation"
 msgstr "एआई-पावर्ड फ्लोचार्ट निर्माण"
 
@@ -184,6 +184,10 @@ msgstr "नीचे से शीर्ष तक"
 msgid "Breadthfirst"
 msgstr "चौड़ाई पहले"
 
+#: src/components/FeatureBreakdown.tsx:63
+msgid "Build your personal flowchart library"
+msgstr "अपनी निजी फ्लोचार्ट लाइब्रेरी बनाएं"
+
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/RenameButton.tsx:160
@@ -289,6 +293,10 @@ msgstr "स्तंभ"
 #: src/components/Feedback.tsx:78
 msgid "Comment"
 msgstr "टिप्पणी"
+
+#: src/components/FeatureBreakdown.tsx:126
+msgid "Compare our plans and find the perfect fit for your flowcharting needs"
+msgstr "हमारे प्लानों की तुलना करें और अपनी फ्लोचार्टिंग की आवश्यकताओं के लिए सही विकल्प खोजें"
 
 #: src/lib/graphOptions.ts:18
 msgid "Concentric"
@@ -422,8 +430,8 @@ msgstr "वक्र शैली"
 msgid "Custom CSS"
 msgstr "कस्टम CSS"
 
+#: src/components/FeatureBreakdown.tsx:96
 #: src/pages/Pricing.tsx:70
-#: src/pages/Pricing2.tsx:87
 msgid "Custom Sharing Options"
 msgstr "कस्टम शेयरिंग विकल्प"
 
@@ -431,7 +439,7 @@ msgstr "कस्टम शेयरिंग विकल्प"
 msgid "Customer Portal"
 msgstr "ग्राहक पोर्टल"
 
-#: src/pages/Pricing2.tsx:35
+#: src/components/FeatureBreakdown.tsx:32
 msgid "Daily Sandbox Editor"
 msgstr "दैनिक सैंडबॉक्स संपादक"
 
@@ -444,7 +452,7 @@ msgstr "डार्क"
 msgid "Dark Mode"
 msgstr "डार्क मोड"
 
-#: src/pages/Pricing2.tsx:81
+#: src/components/FeatureBreakdown.tsx:90
 msgid "Data Import (Visio, Lucidchart, CSV)"
 msgstr "डेटा आयात (विशियो, ल्यूसिडचार्ट, सीएसवी)"
 
@@ -641,7 +649,7 @@ msgstr "उदाहरण"
 msgid "Excalidraw"
 msgstr "Excalidraw"
 
-#: src/pages/Pricing2.tsx:99
+#: src/components/FeatureBreakdown.tsx:109
 msgid "Exclusive Office Hours"
 msgstr "अनन्य ऑफिस घंटे"
 
@@ -658,6 +666,10 @@ msgstr "और ज्ञान प्राप्त करें"
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
+#: src/components/FeatureBreakdown.tsx:78
+msgid "Export clean diagrams without branding"
+msgstr "ब्रांडिंग के बिना साफ आरेख निर्यात करें"
+
 #: src/pages/Pricing.tsx:52
 msgid "Export to PNG & JPG"
 msgstr "PNG और JPG में निर्यात करें"
@@ -666,7 +678,7 @@ msgstr "PNG और JPG में निर्यात करें"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG और SVG में निर्यात करें"
 
-#: src/pages/Pricing2.tsx:266
+#: src/components/FeatureBreakdown.tsx:123
 msgid "Feature Breakdown"
 msgstr "विशेषता विभाजन"
 
@@ -679,6 +691,10 @@ msgstr "फ़ीडबैक"
 #: src/pages/Success.tsx:66
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "किसी भी चिंता के लिए हमसे फीडबैक पेज के माध्यम से संपर्क करने के लिए स्वतंत्रता से अन्वेषण करें और प्रवेश करें।"
+
+#: src/components/FeatureBreakdown.tsx:39
+msgid "Fine-tune layouts and visual styles"
+msgstr "लेआउट और दृश्य शैलियों को समायोजित करें"
 
 #: src/components/Tabs/ThemeTab.tsx:391
 msgid "Fixed Height"
@@ -713,6 +729,10 @@ msgstr "एक बग पाया? एक सुविधा अनुरोध
 msgid "Free"
 msgstr "मुफ्त"
 
+#: src/components/FeatureBreakdown.tsx:97
+msgid "Full-screen, read-only, and template sharing"
+msgstr "पूर्ण स्क्रीन, केवल पढ़ने के लिए और टेम्पलेट साझा करें"
+
 #: src/components/ShareDialog.tsx:144
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
@@ -721,6 +741,10 @@ msgstr "फ़ुलस्क्रीन"
 msgid "General"
 msgstr "सामान्य"
 
+#: src/components/FeatureBreakdown.tsx:70
+msgid "Generate flowcharts from text automatically"
+msgstr "पाठ से स्वचालित रूप से फ्लोचार्ट उत्पन्न करें"
+
 #: src/components/Checkout.tsx:174
 msgid "Get Pro Access Now"
 msgstr "अब प्रो एक्सेस प्राप्त करें"
@@ -728,6 +752,14 @@ msgstr "अब प्रो एक्सेस प्राप्त करे�
 #: src/lib/usePromptStore.ts:101
 msgid "Get Unlimited AI Requests"
 msgstr "असीमित एआई अनुरोध प्राप्त करें"
+
+#: src/components/FeatureBreakdown.tsx:104
+msgid "Get rapid responses to your questions"
+msgstr "अपने सवालों के लिए त्वरित प्रतिक्रियाएं प्राप्त करें"
+
+#: src/components/FeatureBreakdown.tsx:235
+msgid "Get unlimited flowcharts and premium features"
+msgstr "असीमित फ्लोचार्ट और प्रीमियम सुविधाओं का लाभ लें"
 
 #: src/pages/404.tsx:12
 msgid "Go back home"
@@ -761,6 +793,10 @@ msgstr "जटिल सवाल या समस्याएं हैं? ह
 #: src/pages/Success.tsx:45
 msgid "Here are some Pro features you can now enjoy."
 msgstr "यहाँ आपको कुछ प्रो फीचर आनंद लेने को मिल रहे हैं।"
+
+#: src/components/FeatureBreakdown.tsx:57
+msgid "High-quality exports with embedded fonts"
+msgstr "एम्बेडेड फोंट के साथ उच्च गुणवत्ता वाले निर्यात"
 
 #: src/pages/Account.tsx:265
 msgid "History"
@@ -825,6 +861,10 @@ msgstr "CSV से आयात करें"
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "Visio, Lucidchart और CSV से आयात करें"
 
+#: src/components/FeatureBreakdown.tsx:91
+msgid "Import from popular diagram tools"
+msgstr "प्रसिद्ध आरेख उपकरणों से आयात करें"
+
 #: src/components/ShareDialog.tsx:518
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।"
@@ -872,6 +912,10 @@ msgstr "परिवर्तन रखें?"
 #: src/lib/getDefaultText.ts:18
 msgid "Keep practicing"
 msgstr "अभ्यास जारी रखें"
+
+#: src/components/FeatureBreakdown.tsx:84
+msgid "Keep your data private on your computer"
+msgstr "अपने डेटा को अपने कंप्यूटर पर निजी रखें"
 
 #: src/components/Settings.tsx:39
 msgid "Language"
@@ -963,8 +1007,8 @@ msgstr "लिंक से लोड करें?"
 msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
 
+#: src/components/FeatureBreakdown.tsx:83
 #: src/pages/Pricing.tsx:63
-#: src/pages/Pricing2.tsx:69
 msgid "Local File Support"
 msgstr "स्थानीय फ़ाइल समर्थन"
 
@@ -1165,6 +1209,10 @@ msgstr "अपने दस्तावेज़ या रूपरेखा �
 msgid "Pasted content detected. Convert to Flowchart Fun syntax?"
 msgstr "पेस्ट की गई सामग्री का पता लगाया गया है। फ्लोचार्ट फन सिंटैक्स में रूपांतरित करें?"
 
+#: src/components/FeatureBreakdown.tsx:51
+msgid "Perfect for docs and quick sharing"
+msgstr "दस्तावेज़ और त्वरित साझाकरण के लिए उपयुक्त"
+
 #: src/pages/Charts.tsx:239
 msgid "Permanent Charts are a Pro Feature"
 msgstr "स्थायी चार्ट एक प्रो सुविधा हैं"
@@ -1177,7 +1225,7 @@ msgstr "प्लेबुक"
 msgid "Pointer and container on same line"
 msgstr "प्रतीक और कंटेनर एक ही लाइन पर"
 
-#: src/pages/Pricing2.tsx:93
+#: src/components/FeatureBreakdown.tsx:103
 msgid "Priority One-on-One Support"
 msgstr "प्राथमिकता वाला एक-से-एक समर्थन"
 
@@ -1208,11 +1256,15 @@ msgstr "प्रश्न"
 msgid "Public"
 msgstr "पब्लिक"
 
+#: src/components/FeatureBreakdown.tsx:33
+msgid "Quick experimentation space that resets daily"
+msgstr "रोजाना रीसेट होने वाला त्वरित प्रयोग क्षेत्र"
+
 #: src/lib/graphOptions.ts:20
 msgid "Random"
 msgstr "अनियमित"
 
-#: src/pages/Pricing2.tsx:42
+#: src/components/FeatureBreakdown.tsx:44
 msgid "Rapid Deployment Templates"
 msgstr "त्वरित डिप्लॉयमेंट टेम्पलेट्स"
 
@@ -1221,7 +1273,7 @@ msgstr "त्वरित डिप्लॉयमेंट टेम्पल�
 msgid "Rapid Templates"
 msgstr "त्वरित टेम्पलेट्स"
 
-#: src/pages/Pricing2.tsx:44
+#: src/components/FeatureBreakdown.tsx:50
 msgid "Raster Export (PNG, JPG)"
 msgstr "रास्टर निर्यात (PNG, JPG)"
 
@@ -1358,6 +1410,10 @@ msgstr "फाइल में सेव करें"
 msgid "Save your Work"
 msgstr "अपनी कार्यवाही सुरक्षित करें"
 
+#: src/components/FeatureBreakdown.tsx:110
+msgid "Schedule personal consultation sessions"
+msgstr "निजी परामर्श सत्रों की अनुसूची बनाएं"
+
 #: src/components/Checkout.tsx:182
 msgid "Secure payment"
 msgstr "सुरक्षित भुगतान"
@@ -1441,6 +1497,10 @@ msgstr "शुरू"
 msgid "Start Over"
 msgstr "शुरू करें"
 
+#: src/components/FeatureBreakdown.tsx:45
+msgid "Start faster with use-case specific templates"
+msgstr "उपयोग मामले विशिष्ट टेम्पलेट के साथ तेजी से शुरू करें"
+
 #: src/pages/Account.tsx:162
 msgid "Status"
 msgstr "स्टेटस"
@@ -1476,7 +1536,7 @@ msgstr "क्लासेस के साथ स्टाइल"
 msgid "Submit"
 msgstr "भेजना"
 
-#: src/pages/Pricing2.tsx:344
+#: src/pages/Pricing2.tsx:193
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "प्रो की सदस्यता लें और मजेदार तरीके से फ्लोचार्ट करें!"
 
@@ -1581,7 +1641,7 @@ msgstr "संभव आकृतियाँ हैं:"
 msgid "Theme"
 msgstr "थीम"
 
-#: src/pages/Pricing2.tsx:37
+#: src/components/FeatureBreakdown.tsx:38
 msgid "Theme Customization Editor"
 msgstr "थीम कस्टमाइज़ेशन संपादक"
 
@@ -1659,7 +1719,7 @@ msgstr "अपने विचारों को सेकंड में प�
 msgid "Transform text into diagrams instantly"
 msgstr "पाठ को तुरंत आरेख में बदलें"
 
-#: src/pages/Pricing2.tsx:240
+#: src/pages/Pricing2.tsx:153
 msgid "Trusted by Professionals and Academics"
 msgstr "पेशेवरों और शिक्षकों द्वारा विश्वसनीय"
 
@@ -1671,7 +1731,7 @@ msgstr "एआई को आजमाएं"
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
-#: src/pages/Pricing2.tsx:207
+#: src/pages/Pricing2.tsx:111
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "अपने विचारों को पेशेवर डायग्राम में सेकंडों में बदलें"
 
@@ -1707,8 +1767,8 @@ msgstr "अज्ञात पार्सिंग त्रुटि"
 msgid "Unlimited Flowcharts"
 msgstr "असीमित फ्लोचार्ट्स"
 
+#: src/components/FeatureBreakdown.tsx:62
 #: src/pages/Pricing.tsx:62
-#: src/pages/Pricing2.tsx:56
 msgid "Unlimited Permanent Flowcharts"
 msgstr "असीमित स्थायी प्रवाहगतीं "
 
@@ -1744,11 +1804,12 @@ msgstr "फ्लोचार्ट फन प्रो पर अपग्र�
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "अपने डायग्राम के लिए एसवीजी निर्यात और अधिक उन्नत सुविधाओं का आनंद लेने के लिए फ्लोचार्ट फन प्रो पर अपग्रेड करें।"
 
+#: src/components/FeatureBreakdown.tsx:247
 #: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
 
-#: src/pages/Pricing2.tsx:234
+#: src/pages/Pricing2.tsx:147
 msgid "Upgrade to Pro for $2/month"
 msgstr "$2/महीने के लिए प्रो पर अपग्रेड करें"
 
@@ -1805,7 +1866,7 @@ msgstr "अपने मौजूदा चार्ट को संशोध�
 msgid "User"
 msgstr "यूज़र"
 
-#: src/pages/Pricing2.tsx:50
+#: src/components/FeatureBreakdown.tsx:56
 msgid "Vector Export (SVG)"
 msgstr "वेक्टर निर्यात (SVG)"
 
@@ -1817,7 +1878,7 @@ msgstr "Github पर देखें"
 msgid "Want to create a flowchart from a document? Paste it in the editor and click 'Convert to Flowchart'"
 msgstr "क्या आप एक दस्तावेज़ से फ्लोचार्ट बनाना चाहते हैं? संपादक में इसे पेस्ट करें और 'फ्लोचार्ट में परिवर्तित करें' पर क्लिक करें।"
 
-#: src/pages/Pricing2.tsx:75
+#: src/components/FeatureBreakdown.tsx:77
 msgid "Watermark-Free Diagrams"
 msgstr "वॉटरमार्क-मुक्त आरेख"
 
