@@ -3,7 +3,7 @@ import { streamText } from "ai";
 import { stripe } from "../_lib/_stripe";
 import { kv } from "@vercel/kv";
 import { Ratelimit } from "@upstash/ratelimit";
-import { createOpenAI, type openai as OpenAI } from "@ai-sdk/openai";
+import { createAnthropic } from "@ai-sdk/anthropic";
 
 export const reqSchema = z.object({
   prompt: z.string().min(1),
@@ -94,18 +94,18 @@ export async function processRequest(
   req: Request,
   systemMessage: string,
   content: string,
-  model: Parameters<typeof OpenAI.chat>[0] = "gpt-4-turbo"
+  model = "claude-3-5-sonnet-latest"
 ) {
   const { isPro, customerId } = await checkUserStatus(req);
   const rateLimitResponse = await handleRateLimit(req, isPro, customerId);
   if (rateLimitResponse) return rateLimitResponse;
 
-  const openai = createOpenAI({
-    apiKey: getOpenAiApiKey(isPro),
+  const anthropic = createAnthropic({
+    apiKey: getAnthropicApiKey(isPro),
   });
 
   const result = await streamText({
-    model: openai.chat(model),
+    model: anthropic(model),
     system: systemMessage,
     temperature: 1,
     messages: [
@@ -124,12 +124,12 @@ export async function processRequest(
  * so we can track usage. Bear in mind a development key is used for
  * anything that's not production.
  */
-function getOpenAiApiKey(isPro: boolean) {
+function getAnthropicApiKey(isPro: boolean) {
   if (isPro) {
-    return process.env.OPENAI_API_KEY_PRO;
+    return process.env.ANTHROPIC_API_KEY_PRO;
   }
 
-  return process.env.OPENAI_API_KEY_FREE;
+  return process.env.ANTHROPIC_API_KEY_FREE;
 }
 
 function getIp(req: Request) {
