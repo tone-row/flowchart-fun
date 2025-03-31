@@ -102,6 +102,10 @@ msgstr "An error occurred. Try resubmitting or email {0} directly."
 msgid "Appearance"
 msgstr "Appearance"
 
+#: src/components/LoadTemplateDialog.tsx:121
+msgid "Are you sure?"
+msgstr "Are you sure?"
+
 #: src/components/Tabs/ThemeTab.tsx:571
 #: src/components/Tabs/ThemeTab.tsx:572
 msgid "Arrow Size"
@@ -115,7 +119,7 @@ msgstr "Attributes"
 msgid "August 2023"
 msgstr "August 2023"
 
-#: src/components/LoadTemplateDialog.tsx:99
+#: src/components/LoadTemplateDialog.tsx:104
 msgid "Back"
 msgstr "Back"
 
@@ -190,6 +194,7 @@ msgstr "Build your personal flowchart library"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
+#: src/components/LoadTemplateDialog.tsx:149
 #: src/components/RenameButton.tsx:160
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
@@ -294,7 +299,7 @@ msgstr "Column"
 msgid "Comment"
 msgstr "Comment"
 
-#: src/components/FeatureBreakdown.tsx:126
+#: src/components/FeatureBreakdown.tsx:146
 msgid "Compare our plans and find the perfect fit for your flowcharting needs"
 msgstr "Compare our plans and find the perfect fit for your flowcharting needs"
 
@@ -640,8 +645,8 @@ msgstr "Enter your email address below and we'll send you a link to reset your p
 msgid "Equal To"
 msgstr "Equal To"
 
-#: src/components/LoadTemplateDialog.tsx:65
-#: src/components/LoadTemplateDialog.tsx:81
+#: src/components/LoadTemplateDialog.tsx:71
+#: src/components/LoadTemplateDialog.tsx:86
 msgid "Examples"
 msgstr "Examples"
 
@@ -678,7 +683,7 @@ msgstr "Export to PNG & JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "Export to PNG, JPG, and SVG"
 
-#: src/components/FeatureBreakdown.tsx:123
+#: src/components/FeatureBreakdown.tsx:143
 msgid "Feature Breakdown"
 msgstr "Feature Breakdown"
 
@@ -757,7 +762,7 @@ msgstr "Get Unlimited AI Requests"
 msgid "Get rapid responses to your questions"
 msgstr "Get rapid responses to your questions"
 
-#: src/components/FeatureBreakdown.tsx:235
+#: src/components/FeatureBreakdown.tsx:295
 msgid "Get unlimited flowcharts and premium features"
 msgstr "Get unlimited flowcharts and premium features"
 
@@ -979,7 +984,7 @@ msgstr "Link"
 msgid "Link back"
 msgstr "Link back"
 
-#: src/components/LoadTemplateDialog.tsx:147
+#: src/components/LoadTemplateDialog.tsx:194
 msgid "Load"
 msgstr "Load"
 
@@ -995,7 +1000,7 @@ msgstr "Load File"
 msgid "Load Files"
 msgstr "Load Files"
 
-#: src/components/LoadTemplateDialog.tsx:119
+#: src/components/LoadTemplateDialog.tsx:164
 msgid "Load default content"
 msgstr "Load default content"
 
@@ -1003,7 +1008,7 @@ msgstr "Load default content"
 msgid "Load from link?"
 msgstr "Load from link?"
 
-#: src/components/LoadTemplateDialog.tsx:112
+#: src/components/LoadTemplateDialog.tsx:157
 msgid "Load layout and styles"
 msgstr "Load layout and styles"
 
@@ -1670,9 +1675,13 @@ msgstr "This may take between 30 seconds and 2 minutes depending on the length o
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 
-#: src/components/LoadTemplateDialog.tsx:133
+#: src/components/LoadTemplateDialog.tsx:178
 msgid "This will replace the current content."
 msgstr "This will replace the current content."
+
+#: src/components/LoadTemplateDialog.tsx:125
+msgid "This will replace your current chart content with the template content."
+msgstr "This will replace your current chart content with the template content."
 
 #: src/components/LoadFromHashDialog.tsx:41
 msgid "This will replace your current sandbox."
@@ -1804,7 +1813,7 @@ msgstr "Upgrade to Flowchart Fun Pro and unlock:"
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 
-#: src/components/FeatureBreakdown.tsx:247
+#: src/components/FeatureBreakdown.tsx:307
 #: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "Upgrade to Pro"
@@ -1942,6 +1951,10 @@ msgstr "Write your prompt here or click to enable the microphone, then press and
 #: src/components/Checkout.tsx:138
 msgid "Yearly"
 msgstr "Yearly"
+
+#: src/components/LoadTemplateDialog.tsx:139
+msgid "Yes, Replace Content"
+msgstr "Yes, Replace Content"
 
 #: src/components/ImportDataDialog.tsx:693
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."

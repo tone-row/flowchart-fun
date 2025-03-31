@@ -102,6 +102,10 @@ msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件
 msgid "Appearance"
 msgstr "外观"
 
+#: src/components/LoadTemplateDialog.tsx:121
+msgid "Are you sure?"
+msgstr "你确定吗？"
+
 #: src/components/Tabs/ThemeTab.tsx:571
 #: src/components/Tabs/ThemeTab.tsx:572
 msgid "Arrow Size"
@@ -115,7 +119,7 @@ msgstr "属性"
 msgid "August 2023"
 msgstr "2023 年 8 月"
 
-#: src/components/LoadTemplateDialog.tsx:99
+#: src/components/LoadTemplateDialog.tsx:104
 msgid "Back"
 msgstr "返回"
 
@@ -190,6 +194,7 @@ msgstr "建立您的个人流程图库"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
+#: src/components/LoadTemplateDialog.tsx:149
 #: src/components/RenameButton.tsx:160
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
@@ -294,7 +299,7 @@ msgstr "列"
 msgid "Comment"
 msgstr "评论"
 
-#: src/components/FeatureBreakdown.tsx:126
+#: src/components/FeatureBreakdown.tsx:146
 msgid "Compare our plans and find the perfect fit for your flowcharting needs"
 msgstr "比较我们的计划，找到最适合您流程图需求的方案"
 
@@ -640,8 +645,8 @@ msgstr "在下面輸入您的電子郵件地址，我們將發送給您一個重
 msgid "Equal To"
 msgstr "等于"
 
-#: src/components/LoadTemplateDialog.tsx:65
-#: src/components/LoadTemplateDialog.tsx:81
+#: src/components/LoadTemplateDialog.tsx:71
+#: src/components/LoadTemplateDialog.tsx:86
 msgid "Examples"
 msgstr "示例"
 
@@ -678,7 +683,7 @@ msgstr "导出为PNG和JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "导出为PNG，JPG和SVG"
 
-#: src/components/FeatureBreakdown.tsx:123
+#: src/components/FeatureBreakdown.tsx:143
 msgid "Feature Breakdown"
 msgstr "功能分解"
 
@@ -757,7 +762,7 @@ msgstr "获得无限的AI请求"
 msgid "Get rapid responses to your questions"
 msgstr "快速获取您的问题的回答"
 
-#: src/components/FeatureBreakdown.tsx:235
+#: src/components/FeatureBreakdown.tsx:295
 msgid "Get unlimited flowcharts and premium features"
 msgstr "获取无限流程图和高级功能"
 
@@ -979,7 +984,7 @@ msgstr "链接"
 msgid "Link back"
 msgstr "链接回来"
 
-#: src/components/LoadTemplateDialog.tsx:147
+#: src/components/LoadTemplateDialog.tsx:194
 msgid "Load"
 msgstr "載入"
 
@@ -995,7 +1000,7 @@ msgstr "加载文件"
 msgid "Load Files"
 msgstr "加载多个文件"
 
-#: src/components/LoadTemplateDialog.tsx:119
+#: src/components/LoadTemplateDialog.tsx:164
 msgid "Load default content"
 msgstr "載入預設內容"
 
@@ -1003,7 +1008,7 @@ msgstr "載入預設內容"
 msgid "Load from link?"
 msgstr "从链接加载？"
 
-#: src/components/LoadTemplateDialog.tsx:112
+#: src/components/LoadTemplateDialog.tsx:157
 msgid "Load layout and styles"
 msgstr "載入版面和樣式"
 
@@ -1670,9 +1675,13 @@ msgstr "这可能需要30秒到2分钟的时间，取决于您输入的长度。
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "这个沙盒非常适合实验，但请记住 - 它每天都会重置。立即升级，保留您当前的工作！"
 
-#: src/components/LoadTemplateDialog.tsx:133
+#: src/components/LoadTemplateDialog.tsx:178
 msgid "This will replace the current content."
 msgstr "這將取代目前的內容。"
+
+#: src/components/LoadTemplateDialog.tsx:125
+msgid "This will replace your current chart content with the template content."
+msgstr "这将用模板内容替换您当前的图表内容。"
 
 #: src/components/LoadFromHashDialog.tsx:41
 msgid "This will replace your current sandbox."
@@ -1804,7 +1813,7 @@ msgstr "升级到Flowchart Fun Pro并解锁："
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高级功能来创建您的图表。"
 
-#: src/components/FeatureBreakdown.tsx:247
+#: src/components/FeatureBreakdown.tsx:307
 #: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
@@ -1942,6 +1951,10 @@ msgstr "在此处输入您的提示，或点击启用麦克风，然后按住录
 #: src/components/Checkout.tsx:138
 msgid "Yearly"
 msgstr "每年"
+
+#: src/components/LoadTemplateDialog.tsx:139
+msgid "Yes, Replace Content"
+msgstr "是的，替换内容。"
 
 #: src/components/ImportDataDialog.tsx:693
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."

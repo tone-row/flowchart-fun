@@ -102,6 +102,10 @@ msgstr "Es ist ein Fehler aufgetreten. Versuchen Sie, es erneut einzureichen ode
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
+#: src/components/LoadTemplateDialog.tsx:121
+msgid "Are you sure?"
+msgstr "Bist du sicher?"
+
 #: src/components/Tabs/ThemeTab.tsx:571
 #: src/components/Tabs/ThemeTab.tsx:572
 msgid "Arrow Size"
@@ -115,7 +119,7 @@ msgstr "Attribute"
 msgid "August 2023"
 msgstr "August 2023"
 
-#: src/components/LoadTemplateDialog.tsx:99
+#: src/components/LoadTemplateDialog.tsx:104
 msgid "Back"
 msgstr "Zurück"
 
@@ -190,6 +194,7 @@ msgstr "Erstellen Sie Ihre persönliche Flussdiagramm-Bibliothek"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
+#: src/components/LoadTemplateDialog.tsx:149
 #: src/components/RenameButton.tsx:160
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
@@ -294,7 +299,7 @@ msgstr "Spalte"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: src/components/FeatureBreakdown.tsx:126
+#: src/components/FeatureBreakdown.tsx:146
 msgid "Compare our plans and find the perfect fit for your flowcharting needs"
 msgstr "Vergleichen Sie unsere Pläne und finden Sie die perfekte Lösung für Ihre Flussdiagramm-Bedürfnisse"
 
@@ -640,8 +645,8 @@ msgstr "Geben Sie unten Ihre E-Mail-Adresse ein, und wir senden Ihnen einen Link
 msgid "Equal To"
 msgstr "Gleich"
 
-#: src/components/LoadTemplateDialog.tsx:65
-#: src/components/LoadTemplateDialog.tsx:81
+#: src/components/LoadTemplateDialog.tsx:71
+#: src/components/LoadTemplateDialog.tsx:86
 msgid "Examples"
 msgstr "Beispiele"
 
@@ -678,7 +683,7 @@ msgstr "Exportieren Sie nach PNG & JPG"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "Exportieren Sie nach PNG, JPG und SVG"
 
-#: src/components/FeatureBreakdown.tsx:123
+#: src/components/FeatureBreakdown.tsx:143
 msgid "Feature Breakdown"
 msgstr "Funktionsübersicht"
 
@@ -757,7 +762,7 @@ msgstr "Erhalten Sie unbegrenzte KI-Anfragen"
 msgid "Get rapid responses to your questions"
 msgstr "Erhalten Sie schnelle Antworten auf Ihre Fragen"
 
-#: src/components/FeatureBreakdown.tsx:235
+#: src/components/FeatureBreakdown.tsx:295
 msgid "Get unlimited flowcharts and premium features"
 msgstr "Erhalten Sie unbegrenzte Flussdiagramme und Premium-Funktionen"
 
@@ -979,7 +984,7 @@ msgstr "Link"
 msgid "Link back"
 msgstr "Verlinke zurück"
 
-#: src/components/LoadTemplateDialog.tsx:147
+#: src/components/LoadTemplateDialog.tsx:194
 msgid "Load"
 msgstr "Laden"
 
@@ -995,7 +1000,7 @@ msgstr "Datei laden"
 msgid "Load Files"
 msgstr "Dateien laden"
 
-#: src/components/LoadTemplateDialog.tsx:119
+#: src/components/LoadTemplateDialog.tsx:164
 msgid "Load default content"
 msgstr "Standardinhalt laden"
 
@@ -1003,7 +1008,7 @@ msgstr "Standardinhalt laden"
 msgid "Load from link?"
 msgstr "Von Link laden?"
 
-#: src/components/LoadTemplateDialog.tsx:112
+#: src/components/LoadTemplateDialog.tsx:157
 msgid "Load layout and styles"
 msgstr "Layout und Stile laden"
 
@@ -1670,9 +1675,13 @@ msgstr "Dies kann je nach Länge Ihrer Eingabe zwischen 30 Sekunden und 2 Minute
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "Diese Sandbox ist perfekt zum Experimentieren, aber denk daran - sie wird täglich zurückgesetzt. Upgrade jetzt und behalte deine aktuelle Arbeit!"
 
-#: src/components/LoadTemplateDialog.tsx:133
+#: src/components/LoadTemplateDialog.tsx:178
 msgid "This will replace the current content."
 msgstr "Dies ersetzt den aktuellen Inhalt."
+
+#: src/components/LoadTemplateDialog.tsx:125
+msgid "This will replace your current chart content with the template content."
+msgstr "Dies ersetzt den aktuellen Inhalt deines Diagramms mit dem Vorlageneinhalt."
 
 #: src/components/LoadFromHashDialog.tsx:41
 msgid "This will replace your current sandbox."
@@ -1804,7 +1813,7 @@ msgstr "Upgrade auf Flowchart Fun Pro und schalte frei:"
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Upgrade auf Flowchart Fun Pro, um SVG-Export freizuschalten und mehr fortschrittliche Funktionen für Ihre Diagramme zu nutzen."
 
-#: src/components/FeatureBreakdown.tsx:247
+#: src/components/FeatureBreakdown.tsx:307
 #: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "Auf Pro upgraden"
@@ -1942,6 +1951,10 @@ msgstr "Schreiben Sie hier Ihre Aufforderung oder klicken Sie auf das Mikrofon, 
 #: src/components/Checkout.tsx:138
 msgid "Yearly"
 msgstr "Jährlich"
+
+#: src/components/LoadTemplateDialog.tsx:139
+msgid "Yes, Replace Content"
+msgstr "Ja, Inhalt ersetzen"
 
 #: src/components/ImportDataDialog.tsx:693
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
