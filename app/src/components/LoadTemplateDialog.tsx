@@ -30,6 +30,7 @@ export function LoadTemplateDialog() {
   const [layout, setLayout] = useState(true);
   // Whether to load the content or not
   const [replaceContent, setReplaceContent] = useState(getContentInitialValue);
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const disabled = !layout && !replaceContent;
 
   /**
@@ -39,14 +40,19 @@ export function LoadTemplateDialog() {
     setTemplate(null);
     setLayout(true);
     setReplaceContent(getContentInitialValue);
+    setShowConfirmation(false);
   }, []);
 
   const load = useCallback(async () => {
+    if (replaceContent && !showConfirmation) {
+      setShowConfirmation(true);
+      return;
+    }
     loadTemplate(template, replaceContent, () => {
       reset();
       setOpen(false);
     });
-  }, [template, replaceContent, reset]);
+  }, [template, replaceContent, reset, showConfirmation]);
 
   return (
     <Dialog.Root
@@ -76,7 +82,6 @@ export function LoadTemplateDialog() {
           <div className="grid gap-1 sm:flex justify-between items-baseline">
             <Dialog.Title className="text-xl font-bold flex items-baseline">
               <PiShapesDuotone className="mr-2 translate-y-1" />
-
               <span className="mr-4">
                 <Trans>Examples</Trans>
               </span>
@@ -98,7 +103,7 @@ export function LoadTemplateDialog() {
                   <ArrowLeft className="mr-2" />
                   <Trans>Back</Trans>
                 </button>
-                <div className="grid sm:grid-cols-[2fr,1fr] gap-6">
+                <div className="grid sm:grid-cols-[minmax(0,2fr),minmax(0,1fr)] gap-6">
                   <div className="h-full w-full overflow-hidden rounded-lg shadow-md">
                     <img
                       src={`/template-screenshots/${template}.png`}
@@ -107,45 +112,89 @@ export function LoadTemplateDialog() {
                     />
                   </div>
                   <div className="self-center grid gap-3">
-                    <h2 className="text-lg mb-2">Options</h2>
-                    <Option id="layout" checked={layout} set={setLayout}>
-                      <Trans>Load layout and styles</Trans>
-                    </Option>
-                    <Option
-                      id="content"
-                      checked={replaceContent}
-                      set={setReplaceContent}
-                    >
-                      <Trans>Load default content</Trans>
-                    </Option>
-                    <div
-                      className={classNames(
-                        "text-xs text-neutral-500 rounded transition-opacity duration-200 flex gap-1 justify-start items-center",
-                        {
-                          "opacity-100": replaceContent,
-                          "opacity-0": !replaceContent,
-                        }
-                      )}
-                    >
-                      {replaceContent ? (
-                        <>
-                          <WarningCircle size={16} className="shrink-0" />
-                          <Trans>This will replace the current content.</Trans>
-                        </>
-                      ) : (
-                        <>&nbsp;</>
-                      )}
-                    </div>
-                    <Button2
-                      color="blue"
-                      disabled={disabled}
-                      onClick={load}
-                      className="mt-2"
-                      data-session-activity="Load Template: Load"
-                      data-template={template}
-                    >
-                      <Trans>Load</Trans>
-                    </Button2>
+                    {showConfirmation ? (
+                      <>
+                        <div className="grid gap-2 bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                          <div className="flex gap-2 items-center text-yellow-800 dark:text-yellow-200">
+                            <WarningCircle size={20} className="shrink-0" />
+                            <h2 className="font-semibold">
+                              <Trans>Are you sure?</Trans>
+                            </h2>
+                          </div>
+                          <p className="text-sm text-yellow-800/90 dark:text-yellow-200/90">
+                            <Trans>
+                              This will replace your current chart content with
+                              the template content.
+                            </Trans>
+                          </p>
+                        </div>
+                        <div className="grid gap-2">
+                          <Button2
+                            color="blue"
+                            onClick={load}
+                            data-session-activity="Load Template: Confirm Load"
+                            data-template={template}
+                            className="w-full"
+                          >
+                            <Trans>Yes, Replace Content</Trans>
+                          </Button2>
+                          <Button2
+                            color="default"
+                            onClick={() => {
+                              setShowConfirmation(false);
+                            }}
+                            data-session-activity="Load Template: Cancel Confirmation"
+                            className="w-full"
+                          >
+                            <Trans>Cancel</Trans>
+                          </Button2>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <h2 className="text-lg mb-2">Options</h2>
+                        <Option id="layout" checked={layout} set={setLayout}>
+                          <Trans>Load layout and styles</Trans>
+                        </Option>
+                        <Option
+                          id="content"
+                          checked={replaceContent}
+                          set={setReplaceContent}
+                        >
+                          <Trans>Load default content</Trans>
+                        </Option>
+                        <div
+                          className={classNames(
+                            "text-xs text-neutral-500 rounded transition-opacity duration-200 flex gap-1 justify-start items-center",
+                            {
+                              "opacity-100": replaceContent,
+                              "opacity-0": !replaceContent,
+                            }
+                          )}
+                        >
+                          {replaceContent ? (
+                            <>
+                              <WarningCircle size={16} className="shrink-0" />
+                              <Trans>
+                                This will replace the current content.
+                              </Trans>
+                            </>
+                          ) : (
+                            <>&nbsp;</>
+                          )}
+                        </div>
+                        <Button2
+                          color="blue"
+                          disabled={disabled}
+                          onClick={load}
+                          className="mt-2"
+                          data-session-activity="Load Template: Load"
+                          data-template={template}
+                        >
+                          <Trans>Load</Trans>
+                        </Button2>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
