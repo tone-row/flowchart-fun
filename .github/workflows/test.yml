@@ -13,7 +13,7 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 8
+          version: 10
       - name: Install Dependencies
         run: pnpm install
       - name: Build shared

@@ -102,6 +102,10 @@ msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접
 msgid "Appearance"
 msgstr "외관"
 
+#: src/components/LoadTemplateDialog.tsx:121
+msgid "Are you sure?"
+msgstr "확실합니까?"
+
 #: src/components/Tabs/ThemeTab.tsx:571
 #: src/components/Tabs/ThemeTab.tsx:572
 msgid "Arrow Size"
@@ -115,7 +119,7 @@ msgstr "속성"
 msgid "August 2023"
 msgstr "2023년 8월"
 
-#: src/components/LoadTemplateDialog.tsx:99
+#: src/components/LoadTemplateDialog.tsx:104
 msgid "Back"
 msgstr "뒤로"
 
@@ -190,6 +194,7 @@ msgstr "개인용 플로우차트 라이브러리 만들기"
 
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
+#: src/components/LoadTemplateDialog.tsx:149
 #: src/components/RenameButton.tsx:160
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
@@ -294,7 +299,7 @@ msgstr "열"
 msgid "Comment"
 msgstr "댓글 달기"
 
-#: src/components/FeatureBreakdown.tsx:126
+#: src/components/FeatureBreakdown.tsx:146
 msgid "Compare our plans and find the perfect fit for your flowcharting needs"
 msgstr "우리의 요금제를 비교하고 당신의 플로우차트 작성 요구에 맞는 완벽한 선택을 찾으세요"
 
@@ -640,8 +645,8 @@ msgstr "아래에 이메일 주소를 입력하면 비밀번호 재설정을 위
 msgid "Equal To"
 msgstr "같음"
 
-#: src/components/LoadTemplateDialog.tsx:65
-#: src/components/LoadTemplateDialog.tsx:81
+#: src/components/LoadTemplateDialog.tsx:71
+#: src/components/LoadTemplateDialog.tsx:86
 msgid "Examples"
 msgstr "예시"
 
@@ -678,7 +683,7 @@ msgstr "PNG 및 JPG로 내보내기"
 msgid "Export to PNG, JPG, and SVG"
 msgstr "PNG, JPG 및 SVG로 내보내기"
 
-#: src/components/FeatureBreakdown.tsx:123
+#: src/components/FeatureBreakdown.tsx:143
 msgid "Feature Breakdown"
 msgstr "기능 분해"
 
@@ -757,7 +762,7 @@ msgstr "무제한 AI 요청 받기"
 msgid "Get rapid responses to your questions"
 msgstr "귀하의 질문에 신속한 답변 받기"
 
-#: src/components/FeatureBreakdown.tsx:235
+#: src/components/FeatureBreakdown.tsx:295
 msgid "Get unlimited flowcharts and premium features"
 msgstr "무제한 플로우차트 및 프리미엄 기능 이용하기"
 
@@ -979,7 +984,7 @@ msgstr "링크"
 msgid "Link back"
 msgstr "링크를 걸어 돌아가세요"
 
-#: src/components/LoadTemplateDialog.tsx:147
+#: src/components/LoadTemplateDialog.tsx:194
 msgid "Load"
 msgstr "로드"
 
@@ -995,7 +1000,7 @@ msgstr "로드 파일"
 msgid "Load Files"
 msgstr "로드 파일"
 
-#: src/components/LoadTemplateDialog.tsx:119
+#: src/components/LoadTemplateDialog.tsx:164
 msgid "Load default content"
 msgstr "기본 내용 로드"
 
@@ -1003,7 +1008,7 @@ msgstr "기본 내용 로드"
 msgid "Load from link?"
 msgstr "링크에서 불러오기?"
 
-#: src/components/LoadTemplateDialog.tsx:112
+#: src/components/LoadTemplateDialog.tsx:157
 msgid "Load layout and styles"
 msgstr "레이아웃과 스타일 로드"
 
@@ -1670,9 +1675,13 @@ msgstr "입력 길이에 따라 30초에서 2분 사이의 시간이 소요될 �
 msgid "This sandbox is perfect for experimenting, but remember - it resets daily. Upgrade now and keep your current work!"
 msgstr "이 모래상자는 실험하기에 완벽하지만 기억하세요 - 매일 초기화됩니다. 지금 업그레이드하고 현재 작업을 유지하세요!"
 
-#: src/components/LoadTemplateDialog.tsx:133
+#: src/components/LoadTemplateDialog.tsx:178
 msgid "This will replace the current content."
 msgstr "이것은 현재 내용을 대체합니다."
+
+#: src/components/LoadTemplateDialog.tsx:125
+msgid "This will replace your current chart content with the template content."
+msgstr "이것은 템플릿 콘텐츠로 현재 차트 콘텐츠를 대체합니다."
 
 #: src/components/LoadFromHashDialog.tsx:41
 msgid "This will replace your current sandbox."
@@ -1804,7 +1813,7 @@ msgstr "Flowchart Fun Pro로 업그레이드하고 다음을 잠금 해제하세
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 해제하고 다이어그램에 대한 더 고급 기능을 즐기세요."
 
-#: src/components/FeatureBreakdown.tsx:247
+#: src/components/FeatureBreakdown.tsx:307
 #: src/components/Header.tsx:422
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
@@ -1942,6 +1951,10 @@ msgstr "여기에 프롬프트를 작성하거나 마이크를 활성화하려�
 #: src/components/Checkout.tsx:138
 msgid "Yearly"
 msgstr "연간"
+
+#: src/components/LoadTemplateDialog.tsx:139
+msgid "Yes, Replace Content"
+msgstr "예, 콘텐츠 대체하기"
 
 #: src/components/ImportDataDialog.tsx:693
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."

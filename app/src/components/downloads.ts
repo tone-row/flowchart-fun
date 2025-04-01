@@ -4,6 +4,13 @@ import { saveAs } from "file-saver";
 import { UNAUTH_IMG_SCALE } from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
 import { getBackground } from "../lib/toTheme";
+import {
+  WATERMARK_BASE64,
+  WATERMARK_ORIGINAL_WIDTH,
+  WATERMARK_ORIGINAL_HEIGHT,
+  WATERMARK_WIDTH_PERCENTAGE,
+  WATERMARK_MARGIN,
+} from "../lib/constants";
 
 // padding, gets divided in half
 const PADDING = 60;
@@ -205,17 +212,21 @@ export async function getCanvas({
   // take the blob and draw it on center of canvas
   const img = new Image();
   img.src = window.URL.createObjectURL(blob);
+
   return new Promise((resolve) => {
-    img.onload = () => {
+    img.onload = async () => {
       ctx.drawImage(img, PADDING / 2, PADDING / 2);
       window.URL.revokeObjectURL(img.src);
-      // add watermark
-      if (watermark)
-        addWatermark({
+
+      // add watermark if needed
+      if (watermark) {
+        await addWatermark({
           ctx,
           width: canvas.width,
           height: canvas.height,
         });
+      }
+
       resolve({
         canvas,
         type,
@@ -237,14 +248,38 @@ async function addWatermark({
   width: number;
   height: number;
 }) {
-  // get a size that is 3% of the canvas height
-  const heightRelativeSize = Math.floor(height * 0.03);
-  const widthRelativeSize = Math.floor(width * 0.05);
-  // take the smaller of the two
-  const size = Math.min(heightRelativeSize, widthRelativeSize);
-  ctx.font = `${Math.floor(size)}px Helvetica`;
-  ctx.fillStyle = "#000000";
-  ctx.fillText("flowchart.fun", 5, height - size / 2);
+  return new Promise<void>((resolve) => {
+    // Create a new image for the watermark
+    const watermarkImage = new Image();
+
+    // Set up image load handler
+    watermarkImage.onload = () => {
+      // Calculate watermark dimensions
+      const targetWidth = Math.floor(width * WATERMARK_WIDTH_PERCENTAGE);
+      const scale = targetWidth / WATERMARK_ORIGINAL_WIDTH;
+      const targetHeight = Math.floor(WATERMARK_ORIGINAL_HEIGHT * scale);
+
+      // Position watermark in bottom-left corner with margin
+      const x = WATERMARK_MARGIN;
+      const y = height - targetHeight - WATERMARK_MARGIN;
+
+      // Draw watermark with calculated dimensions
+      ctx.globalAlpha = 0.8; // Adjust transparency if needed
+      ctx.drawImage(watermarkImage, x, y, targetWidth, targetHeight);
+      ctx.globalAlpha = 1.0; // Reset transparency
+
+      resolve();
+    };
+
+    // Handle loading errors
+    watermarkImage.onerror = () => {
+      console.error("Failed to load watermark image");
+      resolve(); // Resolve anyway to not block export
+    };
+
+    // Set image source from base64
+    watermarkImage.src = `data:image/png;base64,${WATERMARK_BASE64}`;
+  });
 }
 
 export function downloadCanvas({
