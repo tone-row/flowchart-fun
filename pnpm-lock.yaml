@@ -571,9 +571,6 @@ importers:
       playwright:
         specifier: 1.45.2
         version: 1.45.2
-      react@latest:
-        specifier: link:@@testing-library/react@latest
-        version: link:@@testing-library/react@latest
       source-map-explorer:
         specifier: ^2.5.2
         version: 2.5.3
