@@ -63,7 +63,7 @@ jobs:
           node-version: "22"
       - uses: pnpm/action-setup@v3
         with:
-          version: 8
+          version: 10
       - name: Install Playwright
         run: |
           pnpm add -g playwright@1.45.2
