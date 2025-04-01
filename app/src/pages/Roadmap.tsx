@@ -4,8 +4,14 @@ import { useQuery } from "react-query";
 
 import { InfoHeader } from "../components/InfoHeader";
 import { Page } from "../ui/Shared";
-import { SectionTitle } from "../ui/Typography";
 import { Helmet } from "react-helmet";
+
+const img = `<img
+          src="/images/roadmap.png"
+          alt="Roadmap"
+          style="width: 100%;"
+          class="md:!max-w-[360px] rounded-2xl md:float-right md:!ml-6 md:!translate-y-11 md:rotate-2"
+        />`;
 
 export default function Roadmap() {
   const { data } = useQuery("roadmap", getRoadmap, {
@@ -24,11 +30,10 @@ export default function Roadmap() {
       <Page>
         <InfoHeader title={t`Roadmap`} />
         <section className="grid gap-5">
-          <SectionTitle>Areas of Research</SectionTitle>
           {data && (
             <div
               className="issues post-content"
-              dangerouslySetInnerHTML={{ __html: data.areasOfResearch }}
+              dangerouslySetInnerHTML={{ __html: img + data.areasOfResearch }}
             />
           )}
         </section>
