@@ -102,6 +102,14 @@ msgstr "오류가 발생하였습니다. 다시 제출하거나 {0}으로 직접
 msgid "Appearance"
 msgstr "외관"
 
+#: src/components/FAQ.tsx:26
+msgid "Are my flowcharts private?"
+msgstr "내 플로우차트는 비공개 상태인가요?"
+
+#: src/components/FAQ.tsx:22
+msgid "Are there usage limits?"
+msgstr "사용 제한 사항이 있나요?"
+
 #: src/components/LoadTemplateDialog.tsx:121
 msgid "Are you sure?"
 msgstr "확실합니까?"
@@ -210,6 +218,10 @@ msgstr "언제든 취소 가능"
 #: src/pages/Account.tsx:326
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전용이 됩니다."
+
+#: src/components/FAQ.tsx:35
+msgid "Canceling is easy. Simply go to your account page, scroll to the bottom, and click cancel. If you're not completely satisfied, we offer a refund on your first payment."
+msgstr "취소는 간단합니다. 계정 페이지로 이동하고 맨 아래로 스크롤한 다음 취소 버튼을 클릭하세요. 만족하지 않으시면 첫 번째 결제 금액에 대해 환불해 드립니다."
 
 #: src/components/LearnSyntaxDialog.tsx:358
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
@@ -486,6 +498,14 @@ msgstr "방향"
 msgid "Dismiss"
 msgstr "해지"
 
+#: src/components/FAQ.tsx:14
+msgid "Do you have a free trial?"
+msgstr "무료 체험 기간이 있나요?"
+
+#: src/components/FAQ.tsx:30
+msgid "Do you offer a non-profit discount?"
+msgstr "비영리 단체 할인을 제공하나요?"
+
 #: src/pages/Charts.tsx:199
 msgid "Do you want to delete this?"
 msgstr "본 항목을 삭제하시겠습니까?"
@@ -645,6 +665,10 @@ msgstr "아래에 이메일 주소를 입력하면 비밀번호 재설정을 위
 msgid "Equal To"
 msgstr "같음"
 
+#: src/components/FAQ.tsx:57
+msgid "Everything you need to know about Flowchart Fun Pro"
+msgstr "Flowchart Fun Pro에 대해 알아야 할 모든 것"
+
 #: src/components/LoadTemplateDialog.tsx:71
 #: src/components/LoadTemplateDialog.tsx:86
 msgid "Examples"
@@ -734,6 +758,10 @@ msgstr "버그를 발견했습니까? 기능 요청이 있습니까? 우리는 �
 msgid "Free"
 msgstr "무료"
 
+#: src/components/FAQ.tsx:54
+msgid "Frequently Asked Questions"
+msgstr "자주 묻는 질문들"
+
 #: src/components/FeatureBreakdown.tsx:97
 msgid "Full-screen, read-only, and template sharing"
 msgstr "전체 화면, 읽기 전용, 그리고 템플릿 공유"
@@ -814,6 +842,14 @@ msgstr "집"
 #: src/components/ImportDataDialog.tsx:403
 msgid "How are edges declared in this data?"
 msgstr "이 데이터에서 간선은 어떻게 선언됩니까?"
+
+#: src/components/FAQ.tsx:34
+msgid "How do I cancel my subscription?"
+msgstr "구독을 어떻게 취소하나요?"
+
+#: src/components/FAQ.tsx:18
+msgid "How does AI flowchart generation work?"
+msgstr "AI 플로우차트 생성은 어떻게 작동하나요?"
 
 #: src/components/FlowchartHeader.tsx:166
 msgid "How would you like to save your chart?"
@@ -1107,6 +1143,10 @@ msgstr "노드 없음"
 msgid "No Watermarks!"
 msgstr "물방울 없음!"
 
+#: src/components/FAQ.tsx:23
+msgid "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
+msgstr "아니오, Pro 플랜에는 사용 제한이 없습니다. 무제한 플로우차트 생성 및 AI 기능을 즐겨보세요. 이는 제한 없이 탐색하고 혁신할 수 있도록 해줍니다."
+
 #: src/components/LearnSyntaxDialog.tsx:340
 msgid "Node Border Style"
 msgstr "노드 경계 스타일"
@@ -1184,6 +1224,10 @@ msgstr "아니면 파란색으로!"
 #: src/components/ShareDialog.tsx:551
 msgid "Organization Chart"
 msgstr "조직도"
+
+#: src/components/FAQ.tsx:19
+msgid "Our AI creates diagrams from your text prompts, allowing for seamless manual edits or AI-assisted adjustments. Unlike others, our Pro plan offers unlimited AI generations and edits, empowering you to create without limits."
+msgstr "우리의 AI는 텍스트 프롬프트에서 다이어그램을 생성하여 수동 편집이나 AI 지원 조정이 가능하도록 합니다. 다른 사람들과 달리, 우리의 Pro 플랜은 무제한 AI 생성 및 편집을 제공하여 제한 없이 창작할 수 있도록 해줍니다."
 
 #: src/components/Tabs/ThemeTab.tsx:263
 #: src/components/Tabs/ThemeTab.tsx:264
@@ -1377,7 +1421,7 @@ msgstr "옵션을 위해 노드를 오른쪽 클릭하세요"
 
 #: src/components/Header.tsx:165
 #: src/components/Header.tsx:409
-#: src/pages/Roadmap.tsx:25
+#: src/pages/Roadmap.tsx:31
 msgid "Roadmap"
 msgstr "로드맵"
 
@@ -1541,7 +1585,7 @@ msgstr "클래스로 스타일링"
 msgid "Submit"
 msgstr "보내다"
 
-#: src/pages/Pricing2.tsx:193
+#: src/pages/Pricing2.tsx:196
 msgid "Subscribe to Pro and flowchart the fun way!"
 msgstr "프로를 구독하고 재미있게 플로우차트 작성하기!"
 
@@ -1728,7 +1772,7 @@ msgstr "초 내에 전문 다이어그램으로 생각을 변형하세요."
 msgid "Transform text into diagrams instantly"
 msgstr "텍스트를 즉시 다이어그램으로 변환하세요."
 
-#: src/pages/Pricing2.tsx:153
+#: src/pages/Pricing2.tsx:154
 msgid "Trusted by Professionals and Academics"
 msgstr "전문가와 학술인들에게 신뢰받는다"
 
@@ -1740,7 +1784,7 @@ msgstr "AI 시도해보기"
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/pages/Pricing2.tsx:111
+#: src/pages/Pricing2.tsx:112
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "아이디어를 몇 초 만에 전문적인 다이어그램으로 변환하세요."
 
@@ -1818,7 +1862,7 @@ msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 �
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
-#: src/pages/Pricing2.tsx:147
+#: src/pages/Pricing2.tsx:148
 msgid "Upgrade to Pro for $2/month"
 msgstr "프로로 업그레이드하면 매달 $2"
 
@@ -1911,6 +1955,10 @@ msgstr "다음은 무엇인가요?"
 msgid "What's this?"
 msgstr "이것이 무엇인가요?"
 
+#: src/components/FAQ.tsx:15
+msgid "While we don't offer a free trial, our pricing is designed to be as accessible as possible, especially for students and educators. At just $4 for a month, you can explore all the features and decide if it's right for you. Feel free to subscribe, try it out, and re-subscribe whenever you need."
+msgstr "무료 체험판은 제공하지 않지만, 우리의 가격 책정은 특히 학생과 교육자들을 위해 가능한 접근성 있게 설계되었습니다. 매달 $4로 모든 기능을 탐색하고 당신에게 적합한지 결정할 수 있습니다. 구독하고 시도해보고 필요할 때마다 다시 구독하세요."
+
 #: src/components/Tabs/ThemeTab.tsx:455
 #: src/components/Tabs/ThemeTab.tsx:456
 msgid "Width"
@@ -1955,6 +2003,14 @@ msgstr "연간"
 #: src/components/LoadTemplateDialog.tsx:139
 msgid "Yes, Replace Content"
 msgstr "예, 콘텐츠 대체하기"
+
+#: src/components/FAQ.tsx:31
+msgid "Yes, we support non-profits with special discounts. Contact us with your non-profit status to learn more about how we can assist your organization."
+msgstr "네, 비영리 단체에게 특별 할인을 지원합니다. 비영리 단체 승인을 함께 연락하시면 당신의 조직을 어떻게 돕는지에 대해 더 알아보세요."
+
+#: src/components/FAQ.tsx:27
+msgid "Yes, your cloud flowcharts are accessible only when you're logged in. Additionally, you can save and load files locally, perfect for managing sensitive work-related documents offline."
+msgstr "네, 클라우드 플로우차트는 로그인한 경우에만 접근할 수 있습니다. 또한 로컬로 파일을 저장하고 불러올 수 있어서 오프라인에서 민감한 업무 문서를 관리하기에 완벽합니다."
 
 #: src/components/ImportDataDialog.tsx:693
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
