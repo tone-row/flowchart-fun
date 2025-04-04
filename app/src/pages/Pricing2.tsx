@@ -6,6 +6,7 @@ import { Checkout } from "../components/Checkout";
 import Testimonials from "../components/Testimonials";
 import throttle from "lodash.throttle";
 import { FeatureBreakdown } from "../components/FeatureBreakdown";
+import FAQ from "../components/FAQ";
 
 const companies: { svg: string; name: string; className?: string }[] = [
   {
@@ -176,6 +177,8 @@ export default function Pricing2() {
       <FeatureBreakdown />
 
       <Testimonials />
+
+      <FAQ />
 
       <div className="checkout-wrapper py-10 relative overflow-hidden px-4 md:px-6">
         <div className="max-w-2xl mx-auto relative z-10">

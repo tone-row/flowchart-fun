@@ -98,6 +98,14 @@ module.exports = {
           from: { opacity: 0, transform: "translateY(2px)" },
           to: { opacity: 1, transform: "translateY(0)" },
         },
+        slideUp: {
+          from: { height: "var(--radix-collapsible-content-height)" },
+          to: { height: 0 },
+        },
+        slideDown: {
+          from: { height: 0 },
+          to: { height: "var(--radix-collapsible-content-height)" },
+        },
         slideUpFadeLarge: {
           from: { opacity: 0, transform: "translateY(10px)" },
           to: { opacity: 1, transform: "translateY(0)" },
@@ -142,6 +150,8 @@ module.exports = {
         fadeIn: "fadeIn 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         contentShow: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideUpAndFade: "slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+        slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         slideRightAndFade:
           "slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideDownAndFade:
