@@ -96,7 +96,7 @@ export default function Pricing2() {
     };
   }, []);
   return (
-    <div>
+    <div className="overflow-hidden">
       <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-purple-50/5 to-purple-400/40 pt-8 dark:to-purple-900/50 dark:from-[#0c0c0c]">
         <img
           src="/images/arrows-purple.svg"
