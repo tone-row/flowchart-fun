@@ -6,6 +6,7 @@ import { Checkout } from "../components/Checkout";
 import Testimonials from "../components/Testimonials";
 import throttle from "lodash.throttle";
 import { FeatureBreakdown } from "../components/FeatureBreakdown";
+import FAQ from "../components/FAQ";
 
 const companies: { svg: string; name: string; className?: string }[] = [
   {
@@ -95,7 +96,7 @@ export default function Pricing2() {
     };
   }, []);
   return (
-    <div>
+    <div className="overflow-hidden">
       <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-purple-50/5 to-purple-400/40 pt-8 dark:to-purple-900/50 dark:from-[#0c0c0c]">
         <img
           src="/images/arrows-purple.svg"
@@ -176,6 +177,8 @@ export default function Pricing2() {
       <FeatureBreakdown />
 
       <Testimonials />
+
+      <FAQ />
 
       <div className="checkout-wrapper py-10 relative overflow-hidden px-4 md:px-6">
         <div className="max-w-2xl mx-auto relative z-10">

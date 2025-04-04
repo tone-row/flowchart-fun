@@ -137,7 +137,7 @@ const proLabelColors = [
 export function FeatureBreakdown() {
   return (
     <div className="bg-white py-16 dark:bg-transparent">
-      <div className="mx-auto max-w-4xl sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-2 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
             <Trans>Feature Breakdown</Trans>
@@ -193,7 +193,7 @@ export function FeatureBreakdown() {
                 <div
                   key={index}
                   className={classNames(
-                    "grid grid-cols-[auto_80px_80px] sm:border-l",
+                    "grid grid-cols-[auto_80px_80px] border-l",
                     {
                       [styles.lightBorder]: feature.free,
                       [styles.accentBorderLeft]: !feature.free,
@@ -240,7 +240,7 @@ export function FeatureBreakdown() {
                       </div>
                       <p
                         className={classNames(
-                          "text-xs text-neutral-700 dark:text-neutral-300",
+                          "text-xs text-neutral-700 dark:text-neutral-300 leading-normal",
                           {
                             "!text-foreground/80 dark:!text-neutral-100":
                               !feature.free,
