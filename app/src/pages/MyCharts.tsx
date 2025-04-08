@@ -14,7 +14,6 @@ import {
 import { EmptyState } from "../components/charts/EmptyState";
 import { ChartItem, SortConfig } from "../components/charts/types";
 import { ArrowRight } from "phosphor-react";
-import { Button2 } from "../ui/Shared";
 import {
   useItemsByParentId,
   useCreateFolder,
