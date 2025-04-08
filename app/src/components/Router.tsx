@@ -30,6 +30,7 @@ const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const CookiePolicy = lazy(() => import("../pages/CookiePolicy"));
 const Success = lazy(() => import("../pages/Success"));
+const MyCharts = lazy(() => import("../pages/MyCharts"));
 import Page404 from "../pages/404";
 import { useSupportLegacyNRoute } from "../lib/useSupportLegacyNRoute";
 import { useEnsureLoadTemplate } from "../lib/loadTemplate";
@@ -84,6 +85,7 @@ export default function Router() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/my-charts" element={<MyCharts />} />
         <Route path="*" element={<Page404 />} />
       </Route>
     </Routes>
