@@ -21,18 +21,30 @@ async function fetchItemsByParentId(
   if (!supabase) throw new Error("No supabase client");
 
   // Fetch folders
-  const { data: folders, error: foldersError } = await supabase
-    .from("folders")
-    .select("*")
-    .eq("parent_id", parentId);
+  const folderQuery = supabase.from("folders").select("*");
+
+  // Handle null parent_id properly
+  if (parentId === null) {
+    folderQuery.is("parent_id", null);
+  } else {
+    folderQuery.eq("parent_id", parentId);
+  }
+
+  const { data: folders, error: foldersError } = await folderQuery;
 
   if (foldersError) throw foldersError;
 
   // Fetch charts
-  const { data: charts, error: chartsError } = await supabase
-    .from("user_charts")
-    .select("*")
-    .eq("folder_id", parentId);
+  const chartQuery = supabase.from("user_charts").select("*");
+
+  // Handle null folder_id properly
+  if (parentId === null) {
+    chartQuery.is("folder_id", null);
+  } else {
+    chartQuery.eq("folder_id", parentId);
+  }
+
+  const { data: charts, error: chartsError } = await chartQuery;
 
   if (chartsError) throw chartsError;
 

@@ -11,9 +11,10 @@ import {
   ArrowSquareOut,
 } from "phosphor-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { useState } from "react";
-import { ChartItem } from "./types";
+import { useEffect, useState, useRef } from "react";
+import { ChartItem, FolderItem } from "./types";
 import { formatDate } from "../../lib/formatDate";
+import { useItemsByParentId } from "../../lib/folderQueries";
 
 interface ChartListItemProps {
   item: ChartItem;
@@ -36,11 +37,41 @@ export function ChartListItem({
 }: ChartListItemProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const isFolder = item.type === "folder";
+  const hasFetchedData = useRef(false);
 
-  const toggleExpand = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  // Only fetch folder contents when this folder is expanded
+  const { data: folderContents = [] } = useItemsByParentId(
+    isFolder && isExpanded ? item.id : null
+  );
+
+  // Update the folder's items when we get new data
+  useEffect(() => {
+    // Only update folder contents if:
+    // 1. It's a folder and it's expanded
+    // 2. AND we have actual content OR we haven't fetched data before
+    if (isFolder && isExpanded) {
+      if (folderContents.length > 0) {
+        (item as FolderItem).items = folderContents;
+        hasFetchedData.current = true;
+      } else if (!hasFetchedData.current) {
+        // Only update with empty data if we haven't successfully fetched data before
+        (item as FolderItem).items = folderContents;
+      }
+    }
+
+    // Reset the ref when component unmounts
+    return () => {
+      if (isFolder) {
+        hasFetchedData.current = false;
+      }
+    };
+  }, [isFolder, isExpanded, folderContents, item]);
+
+  const handleClick = () => {
     if (isFolder) {
       setIsExpanded((prev) => !prev);
+    } else {
+      onOpen(item);
     }
   };
 
@@ -60,11 +91,11 @@ export function ChartListItem({
           border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700
         `}
         style={{ marginLeft: `${level * 16}px` }}
-        onClick={() => !isFolder && onOpen(item)}
+        onClick={handleClick}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            !isFolder && onOpen(item);
+            handleClick();
           }
         }}
         role="button"
@@ -72,12 +103,9 @@ export function ChartListItem({
       >
         <div className="flex items-center gap-2 overflow-hidden">
           {isFolder && (
-            <button
-              onClick={toggleExpand}
-              className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
-            >
+            <span className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
               {isExpanded ? <CaretDown size={16} /> : <CaretRight size={16} />}
-            </button>
+            </span>
           )}
 
           <div className="flex items-center p-1 bg-white dark:bg-neutral-800 rounded">
@@ -165,18 +193,27 @@ export function ChartListItem({
 
       {isFolder && isExpanded && (
         <div className="mt-1 space-y-1 mb-1">
-          {(item as any).items.map((childItem: ChartItem) => (
-            <ChartListItem
-              key={childItem.id}
-              item={childItem}
-              onDelete={onDelete}
-              onClone={onClone}
-              onRename={onRename}
-              onMove={onMove}
-              onOpen={onOpen}
-              level={level + 1}
-            />
-          ))}
+          {folderContents.length > 0 ? (
+            folderContents.map((childItem: ChartItem) => (
+              <ChartListItem
+                key={childItem.id}
+                item={childItem}
+                onDelete={onDelete}
+                onClone={onClone}
+                onRename={onRename}
+                onMove={onMove}
+                onOpen={onOpen}
+                level={level + 1}
+              />
+            ))
+          ) : (
+            <div
+              className="p-3 text-neutral-500 dark:text-neutral-400 text-sm italic"
+              style={{ marginLeft: `${(level + 1) * 16}px` }}
+            >
+              <Trans>No items in this folder</Trans>
+            </div>
+          )}
         </div>
       )}
     </div>

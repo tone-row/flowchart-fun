@@ -1,6 +1,7 @@
 import { Trans } from "@lingui/macro";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../components/AppContextProvider";
 import { ChartsToolbar } from "../components/charts/ChartsToolbar";
 import { ChartListItem } from "../components/charts/ChartListItem";
 import {
@@ -12,13 +13,20 @@ import {
 } from "../components/charts/ChartModals";
 import { EmptyState } from "../components/charts/EmptyState";
 import { ChartItem, SortConfig } from "../components/charts/types";
-import {
-  filterChartItems,
-  generateMockChartData,
-  sortChartItems,
-} from "../lib/mockChartData";
-import { Button2 } from "../ui/Shared";
 import { ArrowRight } from "phosphor-react";
+import { Button2 } from "../ui/Shared";
+import {
+  useItemsByParentId,
+  useCreateFolder,
+  useDeleteFolder,
+  useDeleteChart,
+  useRenameFolder,
+  useRenameChart,
+  useMoveFolder,
+  useMoveChart,
+  useCloneChart,
+} from "../lib/folderQueries";
+import { useMemo } from "react";
 
 // Component for the main page title
 function PageTitle({ children }: { children: React.ReactNode }) {
@@ -31,9 +39,18 @@ function PageTitle({ children }: { children: React.ReactNode }) {
 
 export default function MyCharts() {
   const navigate = useNavigate();
-  // State for chart data
-  const [chartItems, setChartItems] = useState<ChartItem[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { session } = useContext(AppContext);
+  const userId = session?.user?.id;
+
+  // State for folder navigation
+  const [currentFolderId, setCurrentFolderId] = useState<string | null>(null);
+
+  // Fetch data using the query hook
+  const {
+    data: chartItems = [],
+    isLoading: loading,
+    error,
+  } = useItemsByParentId(currentFolderId);
 
   // State for search and sort
   const [searchQuery, setSearchQuery] = useState("");
@@ -53,173 +70,133 @@ export default function MyCharts() {
   const [moveModalItem, setMoveModalItem] = useState<ChartItem | null>(null);
   const [isNewFolderModalOpen, setIsNewFolderModalOpen] = useState(false);
 
-  // Load mock data on mount
-  useEffect(() => {
-    // Simulate API request
-    const timer = setTimeout(() => {
-      setChartItems(generateMockChartData());
-      setLoading(false);
-    }, 500);
+  // Setup mutation hooks
+  const deleteFolder = useDeleteFolder();
+  const deleteChart = useDeleteChart();
+  const renameFolder = useRenameFolder();
+  const renameChart = useRenameChart();
+  const moveFolder = useMoveFolder();
+  const moveChart = useMoveChart();
+  const cloneChart = useCloneChart();
+  const createFolder = useCreateFolder();
 
-    return () => clearTimeout(timer);
-  }, []);
+  // Filter items based on search query
+  const filteredItems = useMemo(() => {
+    if (!searchQuery.trim()) return chartItems;
 
-  // Filter and sort items based on search query and sort config
+    const query = searchQuery.toLowerCase();
+    return chartItems.filter((item) => item.name.toLowerCase().includes(query));
+  }, [chartItems, searchQuery]);
+
+  // Sort items
   const filteredAndSortedItems = useMemo(() => {
-    const filtered = filterChartItems(chartItems, searchQuery);
-    return sortChartItems(filtered, sortConfig.sortBy, sortConfig.direction);
-  }, [chartItems, searchQuery, sortConfig]);
+    return [...filteredItems].sort((a, b) => {
+      const aValue = a[sortConfig.sortBy];
+      const bValue = b[sortConfig.sortBy];
 
-  // Get all folders for the move modal
-  const allFolders = useMemo(() => {
-    return chartItems.filter((item) => item.type === "folder");
-  }, [chartItems]);
+      if (sortConfig.sortBy === "name") {
+        const comparison = (a.name || "").localeCompare(b.name || "");
+        return sortConfig.direction === "asc" ? comparison : -comparison;
+      } else {
+        const comparison =
+          new Date(bValue).getTime() - new Date(aValue).getTime();
+        return sortConfig.direction === "asc" ? -comparison : comparison;
+      }
+    });
+  }, [filteredItems, sortConfig]);
 
   // Handlers for chart operations
   const handleDeleteConfirm = useCallback(() => {
     if (!deleteModalItem) return;
 
-    setChartItems((prev) =>
-      prev.filter((item) => item.id !== deleteModalItem.id)
-    );
+    if (deleteModalItem.type === "folder") {
+      deleteFolder.mutate({ id: deleteModalItem.id });
+    } else {
+      deleteChart.mutate({ id: deleteModalItem.id });
+    }
+
     setDeleteModalItem(null);
-  }, [deleteModalItem]);
+  }, [deleteModalItem, deleteFolder, deleteChart]);
 
   const handleCloneConfirm = useCallback(
     (newName: string) => {
-      if (!cloneModalItem || cloneModalItem.type !== "chart") return;
+      if (!cloneModalItem || cloneModalItem.type !== "chart" || !userId) return;
 
-      const newChart: ChartItem = {
-        ...cloneModalItem,
-        id: `cloned-${Date.now()}`,
-        name: newName,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
+      cloneChart.mutate({
+        id: cloneModalItem.id,
+        newName,
+        userId,
+      });
 
-      setChartItems((prev) => [...prev, newChart]);
       setCloneModalItem(null);
     },
-    [cloneModalItem]
+    [cloneModalItem, cloneChart, userId]
   );
 
   const handleRenameConfirm = useCallback(
     (newName: string) => {
       if (!renameModalItem) return;
 
-      setChartItems((prev) =>
-        prev.map((item) =>
-          item.id === renameModalItem.id
-            ? { ...item, name: newName, updatedAt: new Date() }
-            : item
-        )
-      );
+      if (renameModalItem.type === "folder") {
+        renameFolder.mutate({
+          id: renameModalItem.id,
+          name: newName,
+        });
+      } else {
+        renameChart.mutate({
+          id: renameModalItem.id,
+          name: newName,
+        });
+      }
+
       setRenameModalItem(null);
     },
-    [renameModalItem]
+    [renameModalItem, renameFolder, renameChart]
   );
 
   const handleMoveConfirm = useCallback(
     (destinationFolderId: string | null) => {
       if (!moveModalItem) return;
 
-      // Helper function to deep clone a chart item (to avoid reference issues)
-      const deepClone = (item: ChartItem): ChartItem => {
-        const clone = { ...item };
-        if (item.type === "folder") {
-          (clone as any).items = (item as any).items.map(deepClone);
-        }
-        return clone;
-      };
-
-      // Helper function to remove item from a list or from nested folders
-      const removeItemFromList = (
-        items: ChartItem[],
-        itemId: string
-      ): ChartItem[] => {
-        const newItems = items.filter((item) => item.id !== itemId);
-
-        // Also check for and remove from nested folders
-        return newItems.map((item) => {
-          if (item.type === "folder") {
-            return {
-              ...item,
-              items: removeItemFromList((item as any).items, itemId),
-            };
-          }
-          return item;
+      if (moveModalItem.type === "folder") {
+        moveFolder.mutate({
+          id: moveModalItem.id,
+          newParentId: destinationFolderId,
         });
-      };
-
-      // Helper function to add item to a specific folder
-      const addItemToFolder = (
-        items: ChartItem[],
-        folderId: string,
-        itemToAdd: ChartItem
-      ): ChartItem[] => {
-        return items.map((item) => {
-          if (item.id === folderId && item.type === "folder") {
-            return {
-              ...item,
-              items: [...(item as any).items, deepClone(itemToAdd)],
-              updatedAt: new Date(), // Update the folder's timestamp
-            };
-          } else if (item.type === "folder") {
-            return {
-              ...item,
-              items: addItemToFolder((item as any).items, folderId, itemToAdd),
-            };
-          }
-          return item;
-        });
-      };
-
-      // Clone the item we're moving to avoid reference issues
-      const itemToMove = deepClone(moveModalItem);
-
-      // Step 1: Remove the item from its current location (could be root or nested)
-      let updatedItems = removeItemFromList(chartItems, moveModalItem.id);
-
-      // Step 2: Add the item to its new location
-      if (destinationFolderId === null) {
-        // Moving to root
-        updatedItems.push(itemToMove);
       } else {
-        // Moving to a specific folder (which could be nested)
-        updatedItems = addItemToFolder(
-          updatedItems,
-          destinationFolderId,
-          itemToMove
-        );
+        moveChart.mutate({
+          id: moveModalItem.id,
+          newFolderId: destinationFolderId,
+        });
       }
 
-      setChartItems(updatedItems);
       setMoveModalItem(null);
     },
-    [moveModalItem, chartItems]
+    [moveModalItem, moveFolder, moveChart]
   );
 
-  const handleNewFolderConfirm = useCallback((name: string) => {
-    const newFolder: ChartItem = {
-      id: `folder-${Date.now()}`,
-      name,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      type: "folder",
-      items: [],
-      parent_id: null,
-      user_id: "mock-user-id",
-    };
+  const handleNewFolderConfirm = useCallback(
+    (name: string) => {
+      if (!userId) return;
 
-    setChartItems((prev) => [...prev, newFolder]);
-    setIsNewFolderModalOpen(false);
-  }, []);
+      createFolder.mutate({
+        name,
+        parent_id: currentFolderId,
+        user_id: userId,
+      });
+
+      setIsNewFolderModalOpen(false);
+    },
+    [currentFolderId, createFolder, userId]
+  );
 
   const handleOpenChart = useCallback(
     (item: ChartItem) => {
       if (item.type === "chart") {
-        // Replace with actual navigation logic
         navigate(`/chart/${item.id}`);
+      } else if (item.type === "folder") {
+        // Navigate to folder
+        setCurrentFolderId(item.id);
       }
     },
     [navigate]
@@ -232,6 +209,21 @@ export default function MyCharts() {
   const handleNewChart = useCallback(() => {
     navigate("/new");
   }, [navigate]);
+
+  // Get all folders for the move modal (for the folder selector)
+  const allFolders = useMemo(() => {
+    return chartItems.filter((item) => item.type === "folder");
+  }, [chartItems]);
+
+  if (error) {
+    return (
+      <div className="max-w-4xl w-full mx-auto px-4 py-8">
+        <div className="text-red-600 p-4 rounded-md bg-red-50 dark:bg-red-900/20 dark:text-red-400">
+          <p>Error loading charts: {(error as Error).message}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl w-full mx-auto px-4 py-8">

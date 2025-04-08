@@ -409,7 +409,7 @@ export function MoveModal({
                 p-3 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800
                 ${
                   selectedFolderId === null
-                    ? "bg-blue-50 dark:bg-blue-900/20"
+                    ? "bg-blue-100 dark:bg-blue-900/20"
                     : ""
                 }
               `}
