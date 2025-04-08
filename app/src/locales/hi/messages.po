@@ -110,6 +110,18 @@ msgstr "क्या मेरे फ्लोचार्ट निजी ह�
 msgid "Are there usage limits?"
 msgstr "क्या उपयोग सीमाएं हैं?"
 
+#: src/components/charts/ChartModals.tsx:50
+msgid "Are you sure you want to delete the flowchart \"{0}\"? This action cannot be undone."
+msgstr "क्या आप वाकई फ्लोचार्ट को हटाना चाहते हैं? "
+
+#: src/components/charts/ChartModals.tsx:39
+msgid "Are you sure you want to delete the folder \"{0}\" and all its contents? This action cannot be undone."
+msgstr "क्या आप वाकई फ़ोल्डर को हटाना चाहते हैं? "
+
+#: src/components/charts/ChartModals.tsx:44
+msgid "Are you sure you want to delete the folder \"{0}\"? This action cannot be undone."
+msgstr "क्या आप वाकई फ़ोल्डर को हटाना चाहते हैं? "
+
 #: src/components/LoadTemplateDialog.tsx:121
 msgid "Are you sure?"
 msgstr "क्या आप निश्चित हैं?"
@@ -204,6 +216,11 @@ msgstr "अपनी निजी फ्लोचार्ट लाइब्र
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/LoadTemplateDialog.tsx:149
 #: src/components/RenameButton.tsx:160
+#: src/components/charts/ChartModals.tsx:59
+#: src/components/charts/ChartModals.tsx:129
+#: src/components/charts/ChartModals.tsx:207
+#: src/components/charts/ChartModals.tsx:277
+#: src/components/charts/ChartModals.tsx:440
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -287,8 +304,14 @@ msgid "Clear text?"
 msgstr "पाठ साफ़ करें?"
 
 #: src/components/CloneButton.tsx:48
+#: src/components/charts/ChartListItem.tsx:191
+#: src/components/charts/ChartModals.tsx:136
 msgid "Clone"
 msgstr "क्लोन करें"
+
+#: src/components/charts/ChartModals.tsx:111
+msgid "Clone Flowchart"
+msgstr "फ्लोचार्ट को क्लोन करें "
 
 #: src/components/LearnSyntaxDialog.tsx:413
 msgid "Close"
@@ -398,6 +421,7 @@ msgstr "अपने Excalidraw कोड को कॉपी करें औ�
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "अपना मर्मेड.जेएस कोड कॉपी करें या मर्मेड.जेएस लाइव एडिटर में सीधे खोलें।"
 
+#: src/components/charts/ChartModals.tsx:284
 #: src/pages/New.tsx:184
 msgid "Create"
 msgstr "बनाएं"
@@ -418,6 +442,10 @@ msgstr "एक नया चार्ट बनाएं"
 msgid "Create a flowchart showing the steps of planning and executing a school fundraising event"
 msgstr "एक स्कूल रेस्ट्रोइज़िंग इवेंट की योजना और निष्पादन के चरणों को दिखाने वाला फ्लोचार्ट बनाएं"
 
+#: src/components/charts/EmptyState.tsx:41
+msgid "Create a new flowchart to get started or organize your work with folders."
+msgstr "शुरू करने के लिए एक नया फ्लोचार्ट बनाएं या फ़ोल्डर के साथ अपना काम संगठित करें। "
+
 #: src/components/FlowchartHeader.tsx:44
 msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "तुरंत फ्लोचार्ट बनाएं: पाठ लिखें या पेस्ट करें, उसे दृश्यीकृत करें।"
@@ -433,6 +461,10 @@ msgstr "आकार में असीमित फ्लोचार्ट �
 #: src/pages/Success.tsx:54
 msgid "Create with AI"
 msgstr "AI के साथ बनाएं"
+
+#: src/components/charts/ChartsToolbar.tsx:103
+msgid "Created Date"
+msgstr "बनाई गई तारीख"
 
 #: src/components/LearnSyntaxDialog.tsx:167
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
@@ -480,6 +512,15 @@ msgstr "जटिल आरेखों के लिए डेटा आया�
 #: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "तारीख़"
+
+#: src/components/charts/ChartListItem.tsx:205
+#: src/components/charts/ChartModals.tsx:62
+msgid "Delete"
+msgstr "हटाएँ"
+
+#: src/components/charts/ChartModals.tsx:33
+msgid "Delete {0}"
+msgstr "हटाएँ {0}"
 
 #: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
@@ -653,6 +694,18 @@ msgstr "खाली"
 msgid "Enable to set a consistent height for all nodes"
 msgstr "सभी नोड्स के लिए एक समान ऊंचाई सेट करने के लिए सक्षम करें"
 
+#: src/components/charts/ChartModals.tsx:115
+msgid "Enter a name for the cloned flowchart."
+msgstr "क्लोन फ्लोचार्ट के लिए एक नाम दर्ज करें।"
+
+#: src/components/charts/ChartModals.tsx:263
+msgid "Enter a name for the new folder."
+msgstr "नए फोल्डर के लिए एक नाम दर्ज करें।"
+
+#: src/components/charts/ChartModals.tsx:191
+msgid "Enter a new name for the {0}."
+msgstr "{0} के लिए एक नया नाम दर्ज करें।"
+
 #: src/pages/LogIn.tsx:138
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "अपना ईमेल पता दर्ज करें और हम आपको साइन इन करने के लिए एक जादूगरी लिंक भेजेंगे।"
@@ -803,6 +856,7 @@ msgid "Go to the Editor"
 msgstr "संपादक पर जाएं"
 
 #: src/pages/Charts.tsx:285
+#: src/pages/MyCharts.tsx:241
 msgid "Go to your Sandbox"
 msgstr "अपने सैंडबॉक्स पर जाएं"
 
@@ -1048,6 +1102,10 @@ msgstr "लिंक से लोड करें?"
 msgid "Load layout and styles"
 msgstr "लोड लेआउट और शैलियां"
 
+#: src/components/charts/ChartListItem.tsx:236
+msgid "Loading..."
+msgstr "लोड हो रहा है..."
+
 #: src/components/FeatureBreakdown.tsx:83
 #: src/pages/Pricing.tsx:63
 msgid "Local File Support"
@@ -1103,6 +1161,15 @@ msgstr "नोड्स के अंदर टेक्स्ट की अध�
 msgid "Monthly"
 msgstr "मासिक"
 
+#: src/components/charts/ChartListItem.tsx:179
+#: src/components/charts/ChartModals.tsx:443
+msgid "Move"
+msgstr "चलो"
+
+#: src/components/charts/ChartModals.tsx:398
+msgid "Move {0}"
+msgstr "चलो {0}"
+
 #: src/lib/parserErrors.tsx:29
 msgid "Multiple pointers on same line"
 msgstr "एक ही लाइन पर कई प्रतीक"
@@ -1110,6 +1177,10 @@ msgstr "एक ही लाइन पर कई प्रतीक"
 #: src/pages/Account.tsx:411
 msgid "My dog ate my credit card!"
 msgstr "मेरा कुत्ता मेरा क्रेडिट कार्ड खा गया!"
+
+#: src/components/charts/ChartsToolbar.tsx:97
+msgid "Name"
+msgstr "नाम"
 
 #: src/pages/New.tsx:108
 #: src/pages/New.tsx:116
@@ -1130,6 +1201,17 @@ msgstr "नया"
 msgid "New Email"
 msgstr "नई ईमेल"
 
+#: src/components/charts/ChartsToolbar.tsx:139
+#: src/components/charts/EmptyState.tsx:55
+msgid "New Flowchart"
+msgstr "नया फ्लोचार्ट"
+
+#: src/components/charts/ChartModals.tsx:259
+#: src/components/charts/ChartsToolbar.tsx:147
+#: src/components/charts/EmptyState.tsx:62
+msgid "New Folder"
+msgstr "नया फोल्डर"
+
 #: src/pages/Account.tsx:171
 #: src/pages/Account.tsx:472
 msgid "Next charge"
@@ -1139,9 +1221,25 @@ msgstr "अगला चार्ज"
 msgid "No Edges"
 msgstr "कोई किनारे नहीं"
 
+#: src/components/charts/ChartModals.tsx:429
+msgid "No Folder (Root)"
+msgstr "कोई फोल्डर नहीं (मूल)"
+
 #: src/pages/Pricing.tsx:67
 msgid "No Watermarks!"
 msgstr "कोई वॉटरमार्क्स नहीं!"
+
+#: src/components/charts/EmptyState.tsx:30
+msgid "No charts yet"
+msgstr "अभी तक कोई चार्ट नहीं"
+
+#: src/components/charts/ChartListItem.tsx:253
+msgid "No items in this folder"
+msgstr "इस फोल्डर में कोई आइटम नहीं"
+
+#: src/components/charts/EmptyState.tsx:28
+msgid "No matching charts found"
+msgstr "कोई मिलते जुलते चार्ट नहीं मिले"
 
 #: src/components/FAQ.tsx:23
 msgid "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
@@ -1379,8 +1477,14 @@ msgstr "अपडेट करने के लिए रीलोड करे�
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
 #: src/components/RenameButton.tsx:163
+#: src/components/charts/ChartListItem.tsx:168
+#: src/components/charts/ChartModals.tsx:214
 msgid "Rename"
 msgstr "फिर से नाम बदलें"
+
+#: src/components/charts/ChartModals.tsx:187
+msgid "Rename {0}"
+msgstr "नाम बदलें {0}"
 
 #: src/pages/LogIn.tsx:164
 msgid "Request Magic Link"
@@ -1471,6 +1575,10 @@ msgstr "सुरक्षित भुगतान"
 msgid "See more reviews on Product Hunt"
 msgstr "Product Hunt पर अधिक समीक्षा देखें"
 
+#: src/components/charts/ChartModals.tsx:402
+msgid "Select a destination folder for \"{0}\"."
+msgstr "के लिए एक लक्षित फोल्डर का चयन करें \"
+
 #: src/components/Tabs/ThemeTab.tsx:395
 msgid "Set a consistent height for all nodes"
 msgstr "सभी नोड्स के लिए एक समान ऊंचाई सेट करें"
@@ -1505,6 +1613,18 @@ msgstr "माफ़ करें! यह पेज केवल अंग्र
 #: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "क्षमा करें, टेक्स्ट को फ्लोचार्ट में रूपांतरित करने में एक त्रुटि हुई। बाद में पुनः प्रयास करें।"
+
+#: src/components/charts/ChartsToolbar.tsx:124
+msgid "Sort Ascending"
+msgstr "आरोही क्रम में छाँटें"
+
+#: src/components/charts/ChartsToolbar.tsx:119
+msgid "Sort Descending"
+msgstr "अवरोहण करें"
+
+#: src/components/charts/ChartsToolbar.tsx:79
+msgid "Sort by {0}"
+msgstr "{0} द्वारा क्रमबद्ध करें"
 
 #: src/components/Tabs/ThemeTab.tsx:491
 #: src/components/Tabs/ThemeTab.tsx:492
@@ -1780,6 +1900,10 @@ msgstr "पेशेवरों और शिक्षकों द्वार
 msgid "Try AI"
 msgstr "एआई को आजमाएं"
 
+#: src/components/charts/EmptyState.tsx:36
+msgid "Try adjusting your search or filters to find what you're looking for."
+msgstr "अपनी खोज या फ़िल्टरों को समायोजित करने का प्रयास करें ताकि आप जो ढूंढ रहे हैं उसे ढूंढ सकें।"
+
 #: src/components/App.tsx:82
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
@@ -1844,6 +1968,10 @@ msgstr "अवैतनिक"
 #: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "ईमेल अपडेट करें"
+
+#: src/components/charts/ChartsToolbar.tsx:109
+msgid "Updated Date"
+msgstr "अपडेट की गई तारीख"
 
 #: src/components/SandboxWarning.tsx:95
 msgid "Upgrade Now - Save My Work"
@@ -2037,6 +2165,7 @@ msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI
 msgstr "आपने अपने सभी नि: शुल्क एआई रूपांतरण का उपयोग किया है। असीमित एआई उपयोग, कस्टम थीम, निजी साझाकरण और अधिक के लिए प्रो पर अपग्रेड करें। अब आसानी से शानदार फ्लोचार्ट बनाते रहें!"
 
 #: src/pages/Charts.tsx:93
+#: src/pages/MyCharts.tsx:235
 msgid "Your Charts"
 msgstr "आपके चार्ट"
 

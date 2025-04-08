@@ -110,6 +110,18 @@ msgstr "Sind meine Flussdiagramme privat?"
 msgid "Are there usage limits?"
 msgstr "Gibt es Nutzungsbeschränkungen?"
 
+#: src/components/charts/ChartModals.tsx:50
+msgid "Are you sure you want to delete the flowchart \"{0}\"? This action cannot be undone."
+msgstr "Sind Sie sicher, dass Sie den Flussdiagramm löschen möchten? "
+
+#: src/components/charts/ChartModals.tsx:39
+msgid "Are you sure you want to delete the folder \"{0}\" and all its contents? This action cannot be undone."
+msgstr "Sind Sie sicher, dass Sie den Ordner löschen möchten? "
+
+#: src/components/charts/ChartModals.tsx:44
+msgid "Are you sure you want to delete the folder \"{0}\"? This action cannot be undone."
+msgstr "Sind Sie sicher, dass Sie den Ordner löschen möchten? "
+
 #: src/components/LoadTemplateDialog.tsx:121
 msgid "Are you sure?"
 msgstr "Bist du sicher?"
@@ -204,6 +216,11 @@ msgstr "Erstellen Sie Ihre persönliche Flussdiagramm-Bibliothek"
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/LoadTemplateDialog.tsx:149
 #: src/components/RenameButton.tsx:160
+#: src/components/charts/ChartModals.tsx:59
+#: src/components/charts/ChartModals.tsx:129
+#: src/components/charts/ChartModals.tsx:207
+#: src/components/charts/ChartModals.tsx:277
+#: src/components/charts/ChartModals.tsx:440
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -287,8 +304,14 @@ msgid "Clear text?"
 msgstr "Text löschen?"
 
 #: src/components/CloneButton.tsx:48
+#: src/components/charts/ChartListItem.tsx:191
+#: src/components/charts/ChartModals.tsx:136
 msgid "Clone"
 msgstr "Klon"
+
+#: src/components/charts/ChartModals.tsx:111
+msgid "Clone Flowchart"
+msgstr "Flussdiagramm klonen "
 
 #: src/components/LearnSyntaxDialog.tsx:413
 msgid "Close"
@@ -398,6 +421,7 @@ msgstr "Kopiere deinen Excalidraw-Code und füge ihn in <0>excalidraw.com</0> ei
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Kopieren Sie Ihren mermaid.js-Code oder öffnen Sie ihn direkt im mermaid.js Live-Editor."
 
+#: src/components/charts/ChartModals.tsx:284
 #: src/pages/New.tsx:184
 msgid "Create"
 msgstr "Erstellen"
@@ -418,6 +442,10 @@ msgstr "Nein Diagramm erstellen"
 msgid "Create a flowchart showing the steps of planning and executing a school fundraising event"
 msgstr "Erstelle einen Flussdiagramm, das die Schritte zur Planung und Durchführung eines Schul-Fundraising-Events zeigt"
 
+#: src/components/charts/EmptyState.tsx:41
+msgid "Create a new flowchart to get started or organize your work with folders."
+msgstr "Erstellen Sie ein neues Flussdiagramm, um zu beginnen oder organisieren Sie Ihre Arbeit mit Ordnern. "
+
 #: src/components/FlowchartHeader.tsx:44
 msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "Erstellen Sie sofort Flussdiagramme: Tippen oder fügen Sie Text ein, sehen Sie ihn visualisiert."
@@ -433,6 +461,10 @@ msgstr "Erstellen Sie unbegrenzte Flussdiagramme, die in der Cloud gespeichert s
 #: src/pages/Success.tsx:54
 msgid "Create with AI"
 msgstr "Erstellen mit KI"
+
+#: src/components/charts/ChartsToolbar.tsx:103
+msgid "Created Date"
+msgstr "Erstellungsdatum"
 
 #: src/components/LearnSyntaxDialog.tsx:167
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
@@ -480,6 +512,15 @@ msgstr "Datenimportfunktion für komplexe Diagramme"
 #: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "Datum"
+
+#: src/components/charts/ChartListItem.tsx:205
+#: src/components/charts/ChartModals.tsx:62
+msgid "Delete"
+msgstr "Löschen"
+
+#: src/components/charts/ChartModals.tsx:33
+msgid "Delete {0}"
+msgstr "Lösche {0}"
 
 #: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
@@ -653,6 +694,18 @@ msgstr "Leer"
 msgid "Enable to set a consistent height for all nodes"
 msgstr "Aktivieren Sie die Einstellung einer einheitlichen Höhe für alle Knoten"
 
+#: src/components/charts/ChartModals.tsx:115
+msgid "Enter a name for the cloned flowchart."
+msgstr "Geben Sie einen Namen für den geklonten Flussdiagramm ein."
+
+#: src/components/charts/ChartModals.tsx:263
+msgid "Enter a name for the new folder."
+msgstr "Geben Sie einen Namen für den neuen Ordner ein."
+
+#: src/components/charts/ChartModals.tsx:191
+msgid "Enter a new name for the {0}."
+msgstr "Geben Sie einen neuen Namen für den {0} ein."
+
 #: src/pages/LogIn.tsx:138
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "Geben Sie Ihre E-Mail-Adresse ein, und wir senden Ihnen einen magischen Link, um sich anzumelden."
@@ -803,6 +856,7 @@ msgid "Go to the Editor"
 msgstr "Gehe zum Editor"
 
 #: src/pages/Charts.tsx:285
+#: src/pages/MyCharts.tsx:241
 msgid "Go to your Sandbox"
 msgstr "Gehe zu deinem Sandkasten"
 
@@ -1048,6 +1102,10 @@ msgstr "Von Link laden?"
 msgid "Load layout and styles"
 msgstr "Layout und Stile laden"
 
+#: src/components/charts/ChartListItem.tsx:236
+msgid "Loading..."
+msgstr "Wird geladen..."
+
 #: src/components/FeatureBreakdown.tsx:83
 #: src/pages/Pricing.tsx:63
 msgid "Local File Support"
@@ -1103,6 +1161,15 @@ msgstr "Maximale Breite des Textes innerhalb der Knoten"
 msgid "Monthly"
 msgstr "Monatlich"
 
+#: src/components/charts/ChartListItem.tsx:179
+#: src/components/charts/ChartModals.tsx:443
+msgid "Move"
+msgstr "Verschieben"
+
+#: src/components/charts/ChartModals.tsx:398
+msgid "Move {0}"
+msgstr "Verschieben {0}"
+
 #: src/lib/parserErrors.tsx:29
 msgid "Multiple pointers on same line"
 msgstr "Mehrere Zeiger auf derselben Zeile"
@@ -1110,6 +1177,10 @@ msgstr "Mehrere Zeiger auf derselben Zeile"
 #: src/pages/Account.tsx:411
 msgid "My dog ate my credit card!"
 msgstr "Mein Hund hat meine Kreditkarte gefressen!"
+
+#: src/components/charts/ChartsToolbar.tsx:97
+msgid "Name"
+msgstr "Name"
 
 #: src/pages/New.tsx:108
 #: src/pages/New.tsx:116
@@ -1130,6 +1201,17 @@ msgstr "Neues"
 msgid "New Email"
 msgstr "Neue e-mail"
 
+#: src/components/charts/ChartsToolbar.tsx:139
+#: src/components/charts/EmptyState.tsx:55
+msgid "New Flowchart"
+msgstr "Neue Flussdiagramm"
+
+#: src/components/charts/ChartModals.tsx:259
+#: src/components/charts/ChartsToolbar.tsx:147
+#: src/components/charts/EmptyState.tsx:62
+msgid "New Folder"
+msgstr "Neuer Ordner"
+
 #: src/pages/Account.tsx:171
 #: src/pages/Account.tsx:472
 msgid "Next charge"
@@ -1139,9 +1221,25 @@ msgstr "Nächste Gebühr"
 msgid "No Edges"
 msgstr "Keine Kanten"
 
+#: src/components/charts/ChartModals.tsx:429
+msgid "No Folder (Root)"
+msgstr "Kein Ordner (Hauptverzeichnis)"
+
 #: src/pages/Pricing.tsx:67
 msgid "No Watermarks!"
 msgstr "Keine Wasserzeichen!"
+
+#: src/components/charts/EmptyState.tsx:30
+msgid "No charts yet"
+msgstr "Keine Diagramme vorhanden"
+
+#: src/components/charts/ChartListItem.tsx:253
+msgid "No items in this folder"
+msgstr "Keine Elemente in diesem Ordner"
+
+#: src/components/charts/EmptyState.tsx:28
+msgid "No matching charts found"
+msgstr "Keine übereinstimmenden Diagramme gefunden"
 
 #: src/components/FAQ.tsx:23
 msgid "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
@@ -1379,8 +1477,14 @@ msgstr "Neu laden, um zu aktualisieren"
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
 #: src/components/RenameButton.tsx:163
+#: src/components/charts/ChartListItem.tsx:168
+#: src/components/charts/ChartModals.tsx:214
 msgid "Rename"
 msgstr "Umbenennen"
+
+#: src/components/charts/ChartModals.tsx:187
+msgid "Rename {0}"
+msgstr "{0} umbenennen"
 
 #: src/pages/LogIn.tsx:164
 msgid "Request Magic Link"
@@ -1471,6 +1575,10 @@ msgstr "Sichere Zahlung"
 msgid "See more reviews on Product Hunt"
 msgstr "Schau dir weitere Bewertungen auf Product Hunt an"
 
+#: src/components/charts/ChartModals.tsx:402
+msgid "Select a destination folder for \"{0}\"."
+msgstr "Wählen Sie einen Zielordner für \"
+
 #: src/components/Tabs/ThemeTab.tsx:395
 msgid "Set a consistent height for all nodes"
 msgstr "Legen Sie eine einheitliche Höhe für alle Knoten fest"
@@ -1505,6 +1613,18 @@ msgstr "Entschuldigung! Diese Seite ist nur auf Englisch verfügbar."
 #: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "Entschuldigung, es gab einen Fehler bei der Konvertierung des Textes in einen Flussdiagramm. Versuchen Sie es später erneut."
+
+#: src/components/charts/ChartsToolbar.tsx:124
+msgid "Sort Ascending"
+msgstr "Aufsteigend sortieren"
+
+#: src/components/charts/ChartsToolbar.tsx:119
+msgid "Sort Descending"
+msgstr "Absteigend sortieren"
+
+#: src/components/charts/ChartsToolbar.tsx:79
+msgid "Sort by {0}"
+msgstr "Sortieren nach {0}"
 
 #: src/components/Tabs/ThemeTab.tsx:491
 #: src/components/Tabs/ThemeTab.tsx:492
@@ -1780,6 +1900,10 @@ msgstr "Vertrauenswürdig von Profis und Akademikern"
 msgid "Try AI"
 msgstr "Probieren Sie KI"
 
+#: src/components/charts/EmptyState.tsx:36
+msgid "Try adjusting your search or filters to find what you're looking for."
+msgstr "Versuche, deine Suche oder Filter anzupassen, um das Gewünschte zu finden."
+
 #: src/components/App.tsx:82
 msgid "Try again"
 msgstr "Erneut versuchen"
@@ -1844,6 +1968,10 @@ msgstr "Unbezahlt"
 #: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "E-Mail aktualisieren"
+
+#: src/components/charts/ChartsToolbar.tsx:109
+msgid "Updated Date"
+msgstr "Aktualisierungsdatum "
 
 #: src/components/SandboxWarning.tsx:95
 msgid "Upgrade Now - Save My Work"
@@ -2037,6 +2165,7 @@ msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI
 msgstr "Sie haben alle Ihre kostenlosen KI-Konvertierungen verwendet. Upgrade auf Pro für unbegrenzte KI-Nutzung, individuelle Themen, private Freigabe und mehr. Erstellen Sie mühelos weiterhin erstaunliche Flussdiagramme!"
 
 #: src/pages/Charts.tsx:93
+#: src/pages/MyCharts.tsx:235
 msgid "Your Charts"
 msgstr "Ihre Diagramme"
 
