@@ -9,12 +9,15 @@ import {
   CaretRight,
   CaretDown,
   ArrowSquareOut,
+  FolderOpen,
+  Link as LinkIcon,
 } from "phosphor-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useEffect, useState, useRef } from "react";
 import { ChartItem, FolderItem } from "./types";
 import { formatDate } from "../../lib/formatDate";
 import { useItemsByParentId } from "../../lib/folderQueries";
+import { Link } from "react-router-dom";
 
 interface ChartListItemProps {
   item: ChartItem;
@@ -75,121 +78,155 @@ export function ChartListItem({
     }
   };
 
-  return (
-    <div className="animate-fadeIn">
-      <div
-        className={`
-          flex items-center justify-between p-3 rounded-md
-          ${
-            isFolder
-              ? "bg-neutral-200/50 dark:bg-neutral-800/50"
-              : "bg-white dark:bg-neutral-900"
-          }
-          hover:bg-neutral-200 dark:hover:bg-neutral-800
-          cursor-pointer
-          transition-colors
-          border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700
-        `}
-        style={{ marginLeft: `${level * 16}px` }}
-        onClick={handleClick}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            handleClick();
-          }
-        }}
-        role="button"
-        tabIndex={0}
-      >
-        <div className="flex items-center gap-2 overflow-hidden">
-          {isFolder && (
-            <span className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
-              {isExpanded ? <CaretDown size={16} /> : <CaretRight size={16} />}
-            </span>
-          )}
+  // Render appropriate content based on item type
+  const renderItemContent = () => (
+    <div
+      className={`
+        flex items-center justify-between p-3 rounded-md w-full
+        ${
+          isFolder
+            ? "bg-neutral-200/50 dark:bg-neutral-800/50"
+            : "bg-white dark:bg-neutral-900"
+        }
+        hover:bg-neutral-200 dark:hover:bg-neutral-800
+        cursor-pointer
+        border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700
+      `}
+      style={{ marginLeft: `${level * 16}px` }}
+      onClick={isFolder ? handleClick : undefined}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+      role="button"
+      tabIndex={0}
+    >
+      <div className="flex items-center gap-2 overflow-hidden">
+        {isFolder && (
+          <span className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
+            {isExpanded ? <CaretDown size={16} /> : <CaretRight size={16} />}
+          </span>
+        )}
 
-          <div className="flex items-center p-1 bg-white dark:bg-neutral-800 rounded">
-            {isFolder ? (
-              <Folder size={20} weight="fill" className="text-blue-500" />
+        <div className="flex items-center p-1 bg-white dark:bg-neutral-800 rounded">
+          {isFolder ? (
+            isExpanded ? (
+              <FolderOpen size={20} weight="fill" className="text-blue-500" />
             ) : (
-              <File size={20} weight="fill" className="text-purple-500" />
-            )}
-          </div>
-
-          <div className="min-w-0 flex-1">
-            <div className="font-medium text-neutral-800 dark:text-neutral-200 truncate">
-              {item.name}
-            </div>
-            <div className="text-xs text-neutral-500 dark:text-neutral-400">
-              {formatDate(item.updatedAt)}{" "}
-              {isFolder ? <Trans>(Folder)</Trans> : ""}
-            </div>
-          </div>
+              <Folder size={20} weight="fill" className="text-blue-500" />
+            )
+          ) : (
+            <File size={20} weight="fill" className="text-purple-500" />
+          )}
         </div>
 
-        <DropdownMenu.Root>
-          <DropdownMenu.Trigger asChild>
-            <button
-              className="p-1 rounded-full text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300/50 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-700/50"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <DotsThree size={20} weight="bold" />
-            </button>
-          </DropdownMenu.Trigger>
-          <DropdownMenu.Content
-            align="end"
-            className="bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 shadow-lg rounded-md py-1 min-w-[150px] z-10"
-          >
-            <DropdownMenu.Item
-              className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm flex gap-2 items-center"
-              onClick={(e) => {
-                e.stopPropagation();
-                onRename(item);
-              }}
-            >
-              <PencilSimple size={16} />
-              <Trans>Rename</Trans>
-            </DropdownMenu.Item>
-
-            <DropdownMenu.Item
-              className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm flex gap-2 items-center"
-              onClick={(e) => {
-                e.stopPropagation();
-                onMove(item);
-              }}
-            >
-              <ArrowSquareOut size={16} />
-              <Trans>Move</Trans>
-            </DropdownMenu.Item>
-
-            {!isFolder && (
-              <DropdownMenu.Item
-                className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm flex gap-2 items-center"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onClone(item);
-                }}
+        <div className="min-w-0 flex-1">
+          <div className="font-medium text-neutral-800 dark:text-neutral-200 truncate flex items-center gap-2">
+            {item.name}
+            {!isFolder && item.is_public && item.public_id && (
+              <Link
+                to={`/p/${item.public_id}`}
+                className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
+                onClick={(e) => e.stopPropagation()}
+                title={`View public chart: ${item.name}`}
               >
-                <Copy size={16} />
-                <Trans>Clone</Trans>
-              </DropdownMenu.Item>
+                <LinkIcon size={16} />
+              </Link>
             )}
+          </div>
+          {isFolder ? null : (
+            <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
+              {formatDate(item.updatedAt)}{" "}
+            </div>
+          )}
+        </div>
+      </div>
 
-            <DropdownMenu.Separator className="h-px bg-neutral-300 dark:bg-neutral-700 my-1" />
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger asChild>
+          <button
+            className="p-1 rounded-full text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300/50 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-700/50"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <DotsThree size={20} weight="bold" />
+          </button>
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Content
+          align="end"
+          className="bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 shadow-lg rounded-md py-1 min-w-[150px] z-10"
+        >
+          <DropdownMenu.Item
+            className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm flex gap-2 items-center"
+            onClick={(e) => {
+              e.stopPropagation();
+              onRename(item);
+            }}
+          >
+            <PencilSimple size={16} />
+            <Trans>Rename</Trans>
+          </DropdownMenu.Item>
 
+          <DropdownMenu.Item
+            className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm flex gap-2 items-center"
+            onClick={(e) => {
+              e.stopPropagation();
+              onMove(item);
+            }}
+          >
+            <ArrowSquareOut size={16} />
+            <Trans>Move</Trans>
+          </DropdownMenu.Item>
+
+          {!isFolder && (
             <DropdownMenu.Item
-              className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-red-500 text-sm flex gap-2 items-center"
+              className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm flex gap-2 items-center"
               onClick={(e) => {
                 e.stopPropagation();
-                onDelete(item);
+                onClone(item);
               }}
             >
-              <Trash size={16} />
-              <Trans>Delete</Trans>
+              <Copy size={16} />
+              <Trans>Clone</Trans>
             </DropdownMenu.Item>
-          </DropdownMenu.Content>
-        </DropdownMenu.Root>
-      </div>
+          )}
+
+          <DropdownMenu.Separator className="h-px bg-neutral-300 dark:bg-neutral-700 my-1" />
+
+          <DropdownMenu.Item
+            className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-red-500 text-sm flex gap-2 items-center"
+            onClick={(e) => {
+              e.stopPropagation();
+              onDelete(item);
+            }}
+          >
+            <Trash size={16} />
+            <Trans>Delete</Trans>
+          </DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </DropdownMenu.Root>
+    </div>
+  );
+
+  return (
+    <div className="animate-fadeIn">
+      {isFolder ? (
+        renderItemContent()
+      ) : (
+        <Link
+          to={`/u/${item.id}`}
+          className="block"
+          onClick={(e) => {
+            // Don't trigger Link navigation when clicking dropdown menu
+            if ((e.target as HTMLElement).closest('[role="menu"]')) {
+              e.preventDefault();
+            }
+          }}
+        >
+          {renderItemContent()}
+        </Link>
+      )}
 
       {isFolder && isExpanded && (
         <div className="mt-1 space-y-1 mb-1">

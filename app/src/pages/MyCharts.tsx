@@ -90,7 +90,12 @@ export default function MyCharts() {
 
   // Sort items
   const filteredAndSortedItems = useMemo(() => {
-    return [...filteredItems].sort((a, b) => {
+    // First separate folders and charts
+    const folders = filteredItems.filter((item) => item.type === "folder");
+    const charts = filteredItems.filter((item) => item.type === "chart");
+
+    // Only sort the charts based on the sort configuration
+    const sortedCharts = [...charts].sort((a, b) => {
       const aValue = a[sortConfig.sortBy];
       const bValue = b[sortConfig.sortBy];
 
@@ -103,6 +108,9 @@ export default function MyCharts() {
         return sortConfig.direction === "asc" ? -comparison : comparison;
       }
     });
+
+    // Return folders first, then sorted charts
+    return [...folders, ...sortedCharts];
   }, [filteredItems, sortConfig]);
 
   // Handlers for chart operations
