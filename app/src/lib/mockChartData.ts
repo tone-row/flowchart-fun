@@ -37,6 +37,10 @@ const generateFlowchart = (id?: string): FlowchartItem => {
     updatedAt: updated,
     type: "chart",
     content: `This is a sample flowchart content`,
+    is_public: false,
+    public_id: null,
+    folder_id: null,
+    user_id: "mock-user-id",
   };
 };
 
@@ -69,6 +73,8 @@ const generateFolder = (depth = 0, id?: string): FolderItem => {
     updatedAt: updated,
     type: "folder",
     items,
+    parent_id: null,
+    user_id: "mock-user-id",
   };
 };
 

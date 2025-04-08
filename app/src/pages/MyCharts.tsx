@@ -207,6 +207,8 @@ export default function MyCharts() {
       updatedAt: new Date(),
       type: "folder",
       items: [],
+      parent_id: null,
+      user_id: "mock-user-id",
     };
 
     setChartItems((prev) => [...prev, newFolder]);
