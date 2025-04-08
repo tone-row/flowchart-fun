@@ -8,6 +8,7 @@ import {
   CloneModal,
   RenameModal,
   NewFolderModal,
+  MoveModal,
 } from "../components/charts/ChartModals";
 import { EmptyState } from "../components/charts/EmptyState";
 import { ChartItem, SortConfig } from "../components/charts/types";
@@ -49,6 +50,7 @@ export default function MyCharts() {
   const [renameModalItem, setRenameModalItem] = useState<ChartItem | null>(
     null
   );
+  const [moveModalItem, setMoveModalItem] = useState<ChartItem | null>(null);
   const [isNewFolderModalOpen, setIsNewFolderModalOpen] = useState(false);
 
   // Load mock data on mount
@@ -67,6 +69,11 @@ export default function MyCharts() {
     const filtered = filterChartItems(chartItems, searchQuery);
     return sortChartItems(filtered, sortConfig.sortBy, sortConfig.direction);
   }, [chartItems, searchQuery, sortConfig]);
+
+  // Get all folders for the move modal
+  const allFolders = useMemo(() => {
+    return chartItems.filter((item) => item.type === "folder");
+  }, [chartItems]);
 
   // Handlers for chart operations
   const handleDeleteConfirm = useCallback(() => {
@@ -112,6 +119,86 @@ export default function MyCharts() {
     [renameModalItem]
   );
 
+  const handleMoveConfirm = useCallback(
+    (destinationFolderId: string | null) => {
+      if (!moveModalItem) return;
+
+      // Helper function to deep clone a chart item (to avoid reference issues)
+      const deepClone = (item: ChartItem): ChartItem => {
+        const clone = { ...item };
+        if (item.type === "folder") {
+          (clone as any).items = (item as any).items.map(deepClone);
+        }
+        return clone;
+      };
+
+      // Helper function to remove item from a list or from nested folders
+      const removeItemFromList = (
+        items: ChartItem[],
+        itemId: string
+      ): ChartItem[] => {
+        const newItems = items.filter((item) => item.id !== itemId);
+
+        // Also check for and remove from nested folders
+        return newItems.map((item) => {
+          if (item.type === "folder") {
+            return {
+              ...item,
+              items: removeItemFromList((item as any).items, itemId),
+            };
+          }
+          return item;
+        });
+      };
+
+      // Helper function to add item to a specific folder
+      const addItemToFolder = (
+        items: ChartItem[],
+        folderId: string,
+        itemToAdd: ChartItem
+      ): ChartItem[] => {
+        return items.map((item) => {
+          if (item.id === folderId && item.type === "folder") {
+            return {
+              ...item,
+              items: [...(item as any).items, deepClone(itemToAdd)],
+              updatedAt: new Date(), // Update the folder's timestamp
+            };
+          } else if (item.type === "folder") {
+            return {
+              ...item,
+              items: addItemToFolder((item as any).items, folderId, itemToAdd),
+            };
+          }
+          return item;
+        });
+      };
+
+      // Clone the item we're moving to avoid reference issues
+      const itemToMove = deepClone(moveModalItem);
+
+      // Step 1: Remove the item from its current location (could be root or nested)
+      let updatedItems = removeItemFromList(chartItems, moveModalItem.id);
+
+      // Step 2: Add the item to its new location
+      if (destinationFolderId === null) {
+        // Moving to root
+        updatedItems.push(itemToMove);
+      } else {
+        // Moving to a specific folder (which could be nested)
+        updatedItems = addItemToFolder(
+          updatedItems,
+          destinationFolderId,
+          itemToMove
+        );
+      }
+
+      setChartItems(updatedItems);
+      setMoveModalItem(null);
+    },
+    [moveModalItem, chartItems]
+  );
+
   const handleNewFolderConfirm = useCallback((name: string) => {
     const newFolder: ChartItem = {
       id: `folder-${Date.now()}`,
@@ -146,7 +233,7 @@ export default function MyCharts() {
 
   return (
     <div className="max-w-4xl w-full mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mt-8">
         <PageTitle>
           <Trans>Your Charts</Trans>
         </PageTitle>
@@ -196,6 +283,7 @@ export default function MyCharts() {
               onDelete={setDeleteModalItem}
               onClone={setCloneModalItem}
               onRename={setRenameModalItem}
+              onMove={setMoveModalItem}
               onOpen={handleOpenChart}
             />
           ))}
@@ -222,6 +310,14 @@ export default function MyCharts() {
         onClose={() => setRenameModalItem(null)}
         item={renameModalItem}
         onConfirm={handleRenameConfirm}
+      />
+
+      <MoveModal
+        isOpen={!!moveModalItem}
+        onClose={() => setMoveModalItem(null)}
+        item={moveModalItem}
+        folders={allFolders}
+        onConfirm={handleMoveConfirm}
       />
 
       <NewFolderModal

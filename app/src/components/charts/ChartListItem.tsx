@@ -8,6 +8,7 @@ import {
   Copy,
   CaretRight,
   CaretDown,
+  ArrowSquareOut,
 } from "phosphor-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useState } from "react";
@@ -19,6 +20,7 @@ interface ChartListItemProps {
   onDelete: (item: ChartItem) => void;
   onClone: (item: ChartItem) => void;
   onRename: (item: ChartItem) => void;
+  onMove: (item: ChartItem) => void;
   onOpen: (item: ChartItem) => void;
   level?: number;
 }
@@ -28,6 +30,7 @@ export function ChartListItem({
   onDelete,
   onClone,
   onRename,
+  onMove,
   onOpen,
   level = 0,
 }: ChartListItemProps) {
@@ -120,6 +123,17 @@ export function ChartListItem({
               <Trans>Rename</Trans>
             </DropdownMenu.Item>
 
+            <DropdownMenu.Item
+              className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm flex gap-2 items-center"
+              onClick={(e) => {
+                e.stopPropagation();
+                onMove(item);
+              }}
+            >
+              <ArrowSquareOut size={16} />
+              <Trans>Move</Trans>
+            </DropdownMenu.Item>
+
             {!isFolder && (
               <DropdownMenu.Item
                 className="px-3 py-2 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm flex gap-2 items-center"
@@ -158,6 +172,7 @@ export function ChartListItem({
               onDelete={onDelete}
               onClone={onClone}
               onRename={onRename}
+              onMove={onMove}
               onOpen={onOpen}
               level={level + 1}
             />
