@@ -46,8 +46,8 @@ export function ChartsToolbar({
   );
 
   return (
-    <div className="flex items-center justify-between py-4 border-b border-neutral-300 dark:border-neutral-800 mb-4">
-      <div className="flex items-center gap-2">
+    <div className="gap-2 grid md:flex items-center justify-between py-4 border-b border-neutral-300 dark:border-neutral-800 mb-4">
+      <div className="flex items-center">
         <div className="relative">
           <input
             type="text"

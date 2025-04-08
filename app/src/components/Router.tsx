@@ -24,7 +24,6 @@ const Changelog = lazy(() => import("../pages/Changelog"));
 const Roadmap = lazy(() => import("../pages/Roadmap"));
 const Account = lazy(() => import("../pages/Account"));
 const New = lazy(() => import("../pages/New"));
-const Charts = lazy(() => import("../pages/Charts"));
 const ForgotPassword = lazy(() => import("../pages/ForgotPassword"));
 const DesignSystem = lazy(() => import("../pages/DesignSystem"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
@@ -49,10 +48,10 @@ export default function Router() {
         <Route path="/pricing" element={<Pricing2 />} />
         {/* "y" for "your charts" */}
         <Route
-          path="/y"
+          path="/charts"
           element={
             <AuthWall>
-              <Charts />
+              <MyCharts />
             </AuthWall>
           }
         />
@@ -85,7 +84,6 @@ export default function Router() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/success" element={<Success />} />
-        <Route path="/my-charts" element={<MyCharts />} />
         <Route path="*" element={<Page404 />} />
       </Route>
     </Routes>

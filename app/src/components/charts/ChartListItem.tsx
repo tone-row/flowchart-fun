@@ -43,7 +43,7 @@ export function ChartListItem({
   const hasFetchedData = useRef(false);
 
   // Only fetch folder contents when this folder is expanded
-  const { data: folderContents = [] } = useItemsByParentId(
+  const { data: folderContents = [], isLoading } = useItemsByParentId(
     isFolder && isExpanded ? item.id : null
   );
 
@@ -92,7 +92,7 @@ export function ChartListItem({
         cursor-pointer
         border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700
       `}
-      style={{ marginLeft: `${level * 16}px` }}
+      // style={{ marginLeft: `${level * 16}px` }}
       onClick={isFolder ? handleClick : undefined}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -229,8 +229,13 @@ export function ChartListItem({
       )}
 
       {isFolder && isExpanded && (
-        <div className="mt-1 space-y-1 mb-1">
-          {folderContents.length > 0 ? (
+        <div className="mt-1 space-y-1 mb-1 pl-6">
+          {isLoading ? (
+            <div className="p-3 text-neutral-500 dark:text-neutral-400 text-sm flex items-center gap-2 overflow-hidden">
+              <div className="w-4 h-4 border-2 border-neutral-300 dark:border-neutral-600 border-t-neutral-500 dark:border-t-neutral-400 rounded-full animate-spin"></div>
+              <Trans>Loading...</Trans>
+            </div>
+          ) : folderContents.length > 0 ? (
             folderContents.map((childItem: ChartItem) => (
               <ChartListItem
                 key={childItem.id}
@@ -244,10 +249,7 @@ export function ChartListItem({
               />
             ))
           ) : (
-            <div
-              className="p-3 text-neutral-500 dark:text-neutral-400 text-sm italic"
-              style={{ marginLeft: `${(level + 1) * 16}px` }}
-            >
+            <div className="p-3 text-neutral-500 dark:text-neutral-400 text-sm italic">
               <Trans>No items in this folder</Trans>
             </div>
           )}

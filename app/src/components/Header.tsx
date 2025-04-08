@@ -44,7 +44,7 @@ import { ReactComponent as BrandSvg } from "./brand.svg";
 export const Header = memo(function SharedHeader() {
   const { pathname } = useLocation();
   const isSponsorPage = pathname === "/pricing";
-  const isChartsPage = pathname === "/y";
+  const isChartsPage = pathname === "/charts";
   const isSettingsPage = pathname === "/s";
   const isAccountPage = pathname === "/a";
   const isFeedbackPage = pathname === "/o";
@@ -110,7 +110,7 @@ export const Header = memo(function SharedHeader() {
               <NavigationMenu.Item asChild>
                 <HeaderClientLink
                   label={t`Charts`}
-                  to="/y"
+                  to="/charts"
                   icon={<Folder height={16} width={16} weight="fill" />}
                   aria-current={isChartsPage ? "page" : undefined}
                 />
@@ -373,7 +373,7 @@ function MobileHeader({
             />
             <HeaderClientLink
               label={t`Charts`}
-              to="/y"
+              to="/charts"
               icon={<Folder height={16} width={16} weight="fill" />}
               aria-current={isChartsPage ? "page" : undefined}
             />

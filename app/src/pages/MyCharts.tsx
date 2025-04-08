@@ -31,7 +31,7 @@ import { useMemo } from "react";
 // Component for the main page title
 function PageTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h1 className="text-2xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-100 mb-4">
+    <h1 className="text-2xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-100">
       {children}
     </h1>
   );
@@ -210,10 +210,6 @@ export default function MyCharts() {
     [navigate]
   );
 
-  const handleJumpToSandbox = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const handleNewChart = useCallback(() => {
     navigate("/new");
   }, [navigate]);
@@ -234,20 +230,18 @@ export default function MyCharts() {
   }
 
   return (
-    <div className="max-w-4xl w-full mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mt-8">
+    <div className="max-w-4xl w-full mx-auto px-4 py-8 overflow-hidden">
+      <div className="md:flex justify-between items-center mt-8 md:mb-4 mb-2">
         <PageTitle>
           <Trans>Your Charts</Trans>
         </PageTitle>
-        <Button2
-          color="default"
-          size="sm"
-          rightIcon={<ArrowRight size={16} />}
-          onClick={handleJumpToSandbox}
-          className="text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 bg-transparent"
+        <a
+          href="/"
+          className="flex items-center gap-2 font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors mt-1 md:mt-0"
         >
           <Trans>Go to your Sandbox</Trans>
-        </Button2>
+          <ArrowRight size={16} />
+        </a>
       </div>
 
       <ChartsToolbar
