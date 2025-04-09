@@ -110,6 +110,18 @@ msgstr "내 플로우차트는 비공개 상태인가요?"
 msgid "Are there usage limits?"
 msgstr "사용 제한 사항이 있나요?"
 
+#: src/components/charts/ChartModals.tsx:50
+msgid "Are you sure you want to delete the flowchart \"{0}\"? This action cannot be undone."
+msgstr "플로우차트를 삭제하시겠습니까?"
+
+#: src/components/charts/ChartModals.tsx:39
+msgid "Are you sure you want to delete the folder \"{0}\" and all its contents? This action cannot be undone."
+msgstr "폴더를 삭제하시겠습니까?"
+
+#: src/components/charts/ChartModals.tsx:44
+msgid "Are you sure you want to delete the folder \"{0}\"? This action cannot be undone."
+msgstr "폴더를 복제하시겠습니까?"
+
 #: src/components/LoadTemplateDialog.tsx:121
 msgid "Are you sure?"
 msgstr "확실합니까?"
@@ -204,6 +216,11 @@ msgstr "개인용 플로우차트 라이브러리 만들기"
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/LoadTemplateDialog.tsx:149
 #: src/components/RenameButton.tsx:160
+#: src/components/charts/ChartModals.tsx:59
+#: src/components/charts/ChartModals.tsx:129
+#: src/components/charts/ChartModals.tsx:207
+#: src/components/charts/ChartModals.tsx:277
+#: src/components/charts/ChartModals.tsx:440
 #: src/pages/Account.tsx:323
 #: src/pages/Account.tsx:335
 #: src/pages/Account.tsx:426
@@ -287,8 +304,14 @@ msgid "Clear text?"
 msgstr "텍스트를 지우시겠습니까?"
 
 #: src/components/CloneButton.tsx:48
+#: src/components/charts/ChartListItem.tsx:191
+#: src/components/charts/ChartModals.tsx:136
 msgid "Clone"
 msgstr "클론"
+
+#: src/components/charts/ChartModals.tsx:111
+msgid "Clone Flowchart"
+msgstr "플로우차트 복제"
 
 #: src/components/LearnSyntaxDialog.tsx:413
 msgid "Close"
@@ -398,6 +421,7 @@ msgstr "Excalidraw 코드를 복사해서 <0>excalidraw.com</0>에 붙여넣어�
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "mermaid.js 코드를 복사하거나 mermaid.js 라이브 편집기에서 직접 열어주세요."
 
+#: src/components/charts/ChartModals.tsx:284
 #: src/pages/New.tsx:184
 msgid "Create"
 msgstr "만들기"
@@ -418,6 +442,10 @@ msgstr "새 차트 만들기"
 msgid "Create a flowchart showing the steps of planning and executing a school fundraising event"
 msgstr "학교 모금 행사를 계획하고 실행하는 단계를 보여주는 플로우차트를 작성하십시오."
 
+#: src/components/charts/EmptyState.tsx:41
+msgid "Create a new flowchart to get started or organize your work with folders."
+msgstr "새로운 플로우차트를 만들어 시작하거나 폴더로 작업을 정리하세요."
+
 #: src/components/FlowchartHeader.tsx:44
 msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "즉시 플로우차트 생성: 텍스트를 입력하거나 붙여넣고 시각화해보세요."
@@ -433,6 +461,10 @@ msgstr "클라우드에 저장된 무한 플로우 차트 생성 - 어디서나 
 #: src/pages/Success.tsx:54
 msgid "Create with AI"
 msgstr "AI로 만들기"
+
+#: src/components/charts/ChartsToolbar.tsx:103
+msgid "Created Date"
+msgstr "생성일자"
 
 #: src/components/LearnSyntaxDialog.tsx:167
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
@@ -480,6 +512,15 @@ msgstr "복잡한 다이어그램을 위한 데이터 가져오기 기능"
 #: src/pages/Account.tsx:275
 msgid "Date"
 msgstr "날짜"
+
+#: src/components/charts/ChartListItem.tsx:205
+#: src/components/charts/ChartModals.tsx:62
+msgid "Delete"
+msgstr "삭제"
+
+#: src/components/charts/ChartModals.tsx:33
+msgid "Delete {0}"
+msgstr "{0} 삭제"
 
 #: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
@@ -653,6 +694,18 @@ msgstr "비어 있음"
 msgid "Enable to set a consistent height for all nodes"
 msgstr "모든 노드의 일관된 높이 설정 가능"
 
+#: src/components/charts/ChartModals.tsx:115
+msgid "Enter a name for the cloned flowchart."
+msgstr "복제된 플로우차트의 이름을 입력하세요."
+
+#: src/components/charts/ChartModals.tsx:263
+msgid "Enter a name for the new folder."
+msgstr "새 폴더의 이름을 입력하세요."
+
+#: src/components/charts/ChartModals.tsx:191
+msgid "Enter a new name for the {0}."
+msgstr "{0}의 새 이름을 입력하세요."
+
 #: src/pages/LogIn.tsx:138
 msgid "Enter your email address and we'll send you a magic link to sign in."
 msgstr "이메일 주소를 입력하면 자동으로 로그인할 수 있는 링크를 보내드립니다."
@@ -803,6 +856,7 @@ msgid "Go to the Editor"
 msgstr "편집기로 가기"
 
 #: src/pages/Charts.tsx:285
+#: src/pages/MyCharts.tsx:241
 msgid "Go to your Sandbox"
 msgstr "너의 샌드박스로 가기"
 
@@ -1048,6 +1102,10 @@ msgstr "링크에서 불러오기?"
 msgid "Load layout and styles"
 msgstr "레이아웃과 스타일 로드"
 
+#: src/components/charts/ChartListItem.tsx:236
+msgid "Loading..."
+msgstr "로딩 중..."
+
 #: src/components/FeatureBreakdown.tsx:83
 #: src/pages/Pricing.tsx:63
 msgid "Local File Support"
@@ -1103,6 +1161,15 @@ msgstr "노드 내부 텍스트의 최대 너비"
 msgid "Monthly"
 msgstr "월간"
 
+#: src/components/charts/ChartListItem.tsx:179
+#: src/components/charts/ChartModals.tsx:443
+msgid "Move"
+msgstr "이동"
+
+#: src/components/charts/ChartModals.tsx:398
+msgid "Move {0}"
+msgstr "이동 {0}"
+
 #: src/lib/parserErrors.tsx:29
 msgid "Multiple pointers on same line"
 msgstr "같은 줄에 여러 포인터"
@@ -1110,6 +1177,10 @@ msgstr "같은 줄에 여러 포인터"
 #: src/pages/Account.tsx:411
 msgid "My dog ate my credit card!"
 msgstr "내 개가 내 신용 카드를 먹었어요!"
+
+#: src/components/charts/ChartsToolbar.tsx:97
+msgid "Name"
+msgstr "이름"
 
 #: src/pages/New.tsx:108
 #: src/pages/New.tsx:116
@@ -1130,6 +1201,17 @@ msgstr "신규"
 msgid "New Email"
 msgstr "새 이메일"
 
+#: src/components/charts/ChartsToolbar.tsx:139
+#: src/components/charts/EmptyState.tsx:55
+msgid "New Flowchart"
+msgstr "새 플로우차트"
+
+#: src/components/charts/ChartModals.tsx:259
+#: src/components/charts/ChartsToolbar.tsx:147
+#: src/components/charts/EmptyState.tsx:62
+msgid "New Folder"
+msgstr "새 폴더"
+
 #: src/pages/Account.tsx:171
 #: src/pages/Account.tsx:472
 msgid "Next charge"
@@ -1139,9 +1221,25 @@ msgstr "다음 청구 금액"
 msgid "No Edges"
 msgstr "노드 없음"
 
+#: src/components/charts/ChartModals.tsx:429
+msgid "No Folder (Root)"
+msgstr "폴더 없음 (루트)"
+
 #: src/pages/Pricing.tsx:67
 msgid "No Watermarks!"
 msgstr "물방울 없음!"
+
+#: src/components/charts/EmptyState.tsx:30
+msgid "No charts yet"
+msgstr "아직 차트가 없습니다"
+
+#: src/components/charts/ChartListItem.tsx:253
+msgid "No items in this folder"
+msgstr "이 폴더에 항목이 없습니다"
+
+#: src/components/charts/EmptyState.tsx:28
+msgid "No matching charts found"
+msgstr "일치하는 차트를 찾을 수 없습니다"
 
 #: src/components/FAQ.tsx:23
 msgid "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
@@ -1379,8 +1477,14 @@ msgstr "업데이트하려면 다시 로드하기 "
 #: src/components/RenameButton.tsx:100
 #: src/components/RenameButton.tsx:121
 #: src/components/RenameButton.tsx:163
+#: src/components/charts/ChartListItem.tsx:168
+#: src/components/charts/ChartModals.tsx:214
 msgid "Rename"
 msgstr "이름 바꾸기"
+
+#: src/components/charts/ChartModals.tsx:187
+msgid "Rename {0}"
+msgstr "{0}의 이름 바꾸기"
 
 #: src/pages/LogIn.tsx:164
 msgid "Request Magic Link"
@@ -1471,6 +1575,10 @@ msgstr "안전한 결제"
 msgid "See more reviews on Product Hunt"
 msgstr "Product Hunt에서 더 많은 리뷰를 확인하세요"
 
+#: src/components/charts/ChartModals.tsx:402
+msgid "Select a destination folder for \"{0}\"."
+msgstr "\에 대한 대상 폴더 선택"
+
 #: src/components/Tabs/ThemeTab.tsx:395
 msgid "Set a consistent height for all nodes"
 msgstr "모든 노드의 일관된 높이 설정하기"
@@ -1505,6 +1613,18 @@ msgstr "죄송합니다! 이 페이지는 영어로만 제공됩니다."
 #: src/lib/runAi.ts:120
 msgid "Sorry, there was an error converting the text to a flowchart. Try again later."
 msgstr "죄송합니다, 텍스트를 플로우차트로 변환하는 중에 오류가 발생했습니다. 나중에 다시 시도해주세요."
+
+#: src/components/charts/ChartsToolbar.tsx:124
+msgid "Sort Ascending"
+msgstr "오름차순 정렬하기"
+
+#: src/components/charts/ChartsToolbar.tsx:119
+msgid "Sort Descending"
+msgstr "내림차순 정렬"
+
+#: src/components/charts/ChartsToolbar.tsx:79
+msgid "Sort by {0}"
+msgstr "{0}로 정렬"
 
 #: src/components/Tabs/ThemeTab.tsx:491
 #: src/components/Tabs/ThemeTab.tsx:492
@@ -1780,6 +1900,10 @@ msgstr "전문가와 학술인들에게 신뢰받는다"
 msgid "Try AI"
 msgstr "AI 시도해보기"
 
+#: src/components/charts/EmptyState.tsx:36
+msgid "Try adjusting your search or filters to find what you're looking for."
+msgstr "검색 또는 필터를 조정하여 원하는 내용을 찾아보세요."
+
 #: src/components/App.tsx:82
 msgid "Try again"
 msgstr "다시 시도하세요"
@@ -1844,6 +1968,10 @@ msgstr "미납"
 #: src/pages/Account.tsx:210
 msgid "Update Email"
 msgstr "이메일 업데이트"
+
+#: src/components/charts/ChartsToolbar.tsx:109
+msgid "Updated Date"
+msgstr "업데이트 날짜"
 
 #: src/components/SandboxWarning.tsx:95
 msgid "Upgrade Now - Save My Work"
@@ -2037,6 +2165,7 @@ msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI
 msgstr "모든 무료 AI 변환을 사용하셨습니다. 무제한 AI 사용, 사용자 정의 테마, 개인 공유 등을 위해 Pro로 업그레이드하세요. 쉽게 멋진 플로우차트를 만들어 나가세요!"
 
 #: src/pages/Charts.tsx:93
+#: src/pages/MyCharts.tsx:235
 msgid "Your Charts"
 msgstr "당신의 차트"
 
