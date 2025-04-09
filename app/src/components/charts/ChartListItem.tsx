@@ -104,7 +104,7 @@ export function ChartListItem({
           },
         },
       }
-    : { element: Link, props: { to: "/" } };
+    : { element: Link, props: { to: `/u/${item.id}` } };
 
   // Render appropriate content based on item type
   const renderItemContent = () => (
