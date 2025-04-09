@@ -78,11 +78,39 @@ export function ChartListItem({
     }
   };
 
+  const Clickable:
+    | {
+        element: "button";
+        props: {
+          onClick: () => void;
+          onKeyDown: (e: React.KeyboardEvent<HTMLButtonElement>) => void;
+        };
+      }
+    | {
+        element: typeof Link;
+        props: {
+          to: string;
+        };
+      } = isFolder
+    ? {
+        element: "button",
+        props: {
+          onClick: handleClick,
+          onKeyDown(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleClick();
+            }
+          },
+        },
+      }
+    : { element: Link, props: { to: "/" } };
+
   // Render appropriate content based on item type
   const renderItemContent = () => (
     <div
       className={`
-        flex items-center justify-between p-3 rounded-md w-full
+        grid items-center grid-cols-[minmax(0,1fr)_auto] p-3 rounded-md w-full
         ${
           isFolder
             ? "bg-neutral-200/50 dark:bg-neutral-800/50"
@@ -92,18 +120,12 @@ export function ChartListItem({
         cursor-pointer
         border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700
       `}
-      // style={{ marginLeft: `${level * 16}px` }}
-      onClick={isFolder ? handleClick : undefined}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          handleClick();
-        }
-      }}
-      role="button"
-      tabIndex={0}
     >
-      <div className="flex items-center gap-2 overflow-hidden">
+      {/* @ts-ignore */}
+      <Clickable.element
+        {...Clickable.props}
+        className="flex items-center gap-2 overflow-hidden"
+      >
         {isFolder && (
           <span className="text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200">
             {isExpanded ? <CaretDown size={16} /> : <CaretRight size={16} />}
@@ -142,7 +164,7 @@ export function ChartListItem({
             </div>
           )}
         </div>
-      </div>
+      </Clickable.element>
 
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>
@@ -211,22 +233,7 @@ export function ChartListItem({
 
   return (
     <div className="animate-fadeIn">
-      {isFolder ? (
-        renderItemContent()
-      ) : (
-        <Link
-          to={`/u/${item.id}`}
-          className="block"
-          onClick={(e) => {
-            // Don't trigger Link navigation when clicking dropdown menu
-            if ((e.target as HTMLElement).closest('[role="menu"]')) {
-              e.preventDefault();
-            }
-          }}
-        >
-          {renderItemContent()}
-        </Link>
-      )}
+      {renderItemContent()}
 
       {isFolder && isExpanded && (
         <div className="mt-1 space-y-1 mb-1 pl-6">
