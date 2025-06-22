@@ -19,6 +19,7 @@ import {
 import { Warning } from "../components/Warning";
 import { FFTheme } from "../lib/FFTheme";
 import { RequestTemplate } from "../components/RequestTemplate";
+import { analytics } from "../lib/analyticsService";
 
 type CreateChartOptions = {
   name: string;
@@ -61,9 +62,36 @@ export default function New2() {
       onSettled: () => {
         setIsAI(false);
       },
-      onSuccess: (response: any) => {
+      onSuccess: (response: any, variables: CreateChartOptions) => {
         const chartId = response.data[0]?.id;
+        
+        // Track flowchart creation
+        analytics.trackFlowchartCreated({
+          template: variables.template,
+          name: variables.name,
+          source: 'new_page',
+          user_type: hasProAccess ? 'pro' : 'free',
+          is_first_chart: false, // Could be enhanced with actual first chart detection
+        });
+        
+        // Track template usage
+        analytics.trackTemplateUsed(variables.template, {
+          user_type: hasProAccess ? 'pro' : 'free',
+          chart_id: chartId,
+        });
+        
         if (chartId) navigate(`/u/${chartId}`);
+      },
+      onError: (error: any, variables: CreateChartOptions) => {
+        // Track creation failure
+        analytics.trackError(
+          error.message || 'Failed to create flowchart',
+          'flowchart_creation',
+          {
+            template: variables.template,
+            user_type: hasProAccess ? 'pro' : 'free',
+          }
+        );
       },
     }
   );
@@ -72,7 +100,15 @@ export default function New2() {
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
+      const data = new FormData(e.currentTarget);
+      
       if (!hasProAccess) {
+        // Track paywall shown
+        analytics.trackPaywallShown('flowchart_creation', {
+          attempted_template: data.get("template")?.toString(),
+          attempted_name: data.get("name")?.toString(),
+        });
+        
         showPaywall({
           title: createUnlimitedTitle(),
           content: createUnlimitedContent(),
@@ -80,7 +116,6 @@ export default function New2() {
         });
         return;
       }
-      const data = new FormData(e.currentTarget);
       const name = data.get("name")?.toString();
       const template = data.get("template")?.toString();
       if (!name || !template) return;

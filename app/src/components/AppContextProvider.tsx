@@ -20,6 +20,7 @@ import { languages } from "../locales/i18n";
 import { colors, darkTheme } from "../slang/config";
 import { supabase } from "../lib/supabaseClient";
 import { usePostHog } from "posthog-js/react";
+import { analytics } from "../lib/analyticsService";
 
 type Theme = typeof colors;
 
@@ -122,19 +123,50 @@ const Provider = ({ children }: { children?: ReactNode }) => {
     }
   }, [settings.mode]);
 
-  // Accurate Page Views
+  // Initialize analytics service
   const posthog = usePostHog();
   useEffect(() => {
-    if (!posthog || !isProd) return;
-    posthog.capture("$pageview");
-  }, [posthog, pathname]);
+    if (posthog) {
+      analytics.setPostHog(posthog);
+    }
+  }, [posthog]);
 
-  // ID
+  // Enhanced Page Views with context
+  useEffect(() => {
+    if (!posthog || !isProd) return;
+    
+    analytics.trackPageView(pathname, {
+      user_type: customer?.subscription ? 'pro' : 'free',
+      is_authenticated: !!session,
+      timestamp: new Date().toISOString()
+    });
+  }, [posthog, pathname, customer?.subscription, session]);
+
+  // Enhanced User Identification
   const email = session?.user?.email ?? "";
   useEffect(() => {
     if (!posthog || !email || !isProd) return;
-    posthog.identify(email);
-  }, [posthog, email]);
+    
+    const hasProAccess = !!customer?.subscription;
+    const userCreatedAt = session?.user?.created_at;
+    
+    analytics.identifyUser(email, {
+      hasProAccess,
+      signupDate: userCreatedAt,
+      customerId: customer?.customerId,
+      subscriptionStatus: customer?.subscription?.status,
+      subscriptionPlan: customer?.subscription?.items?.data?.[0]?.price?.nickname,
+      totalCharts: 0, // This could be enhanced with actual count
+    });
+
+    // Set additional user properties
+    analytics.setUserProperties({
+      last_login: new Date().toISOString(),
+      user_agent: navigator.userAgent,
+      language: navigator.language,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    });
+  }, [posthog, email, customer]);
 
   // Get Session
   useEffect(() => {
@@ -151,12 +183,19 @@ const Provider = ({ children }: { children?: ReactNode }) => {
         } = await supabase.auth.getSession();
         setSession(session);
         setCheckedSession(true);
-        supabase.auth.onAuthStateChange((_event, session) => {
+        supabase.auth.onAuthStateChange((event, session) => {
           setSession(session);
+
+          // Track authentication events
+          if (event === 'SIGNED_IN' && session?.user?.email) {
+            analytics.trackUserSignIn('email'); // Could be enhanced to detect method
+          } else if (event === 'SIGNED_OUT') {
+            analytics.trackUserSignOut();
+          }
 
           // Reset PostHog if we're logged out
           if (posthog && !session && isProd) {
-            posthog.reset();
+            analytics.reset();
           }
         });
       })();

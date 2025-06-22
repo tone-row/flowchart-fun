@@ -80,12 +80,19 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
                   watermark,
                   scale,
                 })
-                  .then((canvas) =>
+                  .then((canvas) => {
                     downloadCanvas({
                       ...canvas,
                       filename,
-                    })
-                  )
+                    });
+                    
+                    analytics.trackFlowchartShared({
+                      chart_id: shareLink || 'unknown',
+                      share_method: 'download',
+                      export_format: 'png',
+                      user_type: hasProAccess ? 'pro' : 'free',
+                    });
+                  })
                   .catch(console.error);
               }}
             >
@@ -101,12 +108,19 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
                   type: "jpg",
                   watermark,
                   scale,
-                }).then((canvas) =>
+                }).then((canvas) => {
                   downloadCanvas({
                     ...canvas,
                     filename,
-                  })
-                );
+                  });
+                  
+                  analytics.trackFlowchartShared({
+                    chart_id: shareLink || 'unknown',
+                    share_method: 'download',
+                    export_format: 'jpg',
+                    user_type: hasProAccess ? 'pro' : 'free',
+                  });
+                });
               }}
             >
               JPG
@@ -124,6 +138,13 @@ export default function ShareDialog({ children }: { children?: ReactNode }) {
                   downloadSvg({
                     svg,
                     filename,
+                  });
+                  
+                  analytics.trackFlowchartShared({
+                    chart_id: shareLink || 'unknown',
+                    share_method: 'download',
+                    export_format: 'svg',
+                    user_type: hasProAccess ? 'pro' : 'free',
                   });
                 }}
               >
@@ -239,6 +260,13 @@ function LinkCopy({
   async function copyText() {
     await navigator.clipboard.writeText(value);
     setCopied(true);
+    
+    // Track link sharing
+    analytics.trackFlowchartShared({
+      chart_id: 'unknown', // Could be enhanced with actual chart ID
+      share_method: 'link',
+      user_type: 'unknown', // Could be enhanced with actual user status
+    });
   }
 
   return (

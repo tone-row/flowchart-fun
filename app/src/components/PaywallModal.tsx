@@ -6,6 +6,7 @@ import { Button2 } from "../ui/Shared";
 import { useNavigate } from "react-router-dom";
 import { usePaywallModalStore } from "../lib/usePaywallModalStore";
 import { usePostHog } from "posthog-js/react";
+import { analytics } from "../lib/analyticsService";
 
 export default function PaywallModal() {
   const navigate = useNavigate();
@@ -66,7 +67,10 @@ export default function PaywallModal() {
                   className="mt-4 !whitespace-normal !leading-tight"
                   data-to-pricing={toPricingCode}
                   onClick={() => {
-                    posthog.capture("clicked-paywall-button");
+                    analytics.trackPaywallClicked(toPricingCode || 'unknown', {
+                      title,
+                      source: 'paywall_modal'
+                    });
                     navigate("/pricing");
                   }}
                 >
