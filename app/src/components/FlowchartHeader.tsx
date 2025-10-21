@@ -1,4 +1,5 @@
 import { Trans } from "@lingui/macro";
+import { Helmet } from "react-helmet";
 import { useContext, useEffect, useRef, useState } from "react";
 import { useHasProAccess, useIsLoggedIn, useIsReadOnly } from "../lib/hooks";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
@@ -31,12 +32,16 @@ export function FlowchartHeader() {
   const pageTitle = title || "flowchart.fun";
   const isSandbox = useLocation().pathname === "/";
   return (
-    <header
-      className={classNames(
-        styles.HeaderTitle,
-        "grid gap-2 md:flex items-end justify-between p-4 md:p-2 md:mb-2"
-      )}
-    >
+    <>
+      <Helmet>
+        <title>{`${pageTitle} - Flowchart Fun`}</title>
+      </Helmet>
+      <header
+        className={classNames(
+          styles.HeaderTitle,
+          "grid gap-2 md:flex items-end justify-between p-4 md:p-2 md:mb-2"
+        )}
+      >
       {isSandbox ? (
         <div className="grid gap-0.5 content-end">
           <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
@@ -84,6 +89,7 @@ export function FlowchartHeader() {
         </DownloadDropdown>
       </div>
     </header>
+    </>
   );
 }
 
