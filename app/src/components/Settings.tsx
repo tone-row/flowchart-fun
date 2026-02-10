@@ -181,7 +181,7 @@ const GroupButton = memo(
         className={[
           styles.GroupButton,
           isActive
-            ? "!bg-blue-600 !text-white !opacity-100 !cursor-default"
+            ? "!bg-[#2563eb] !text-white !opacity-100 !cursor-default"
             : "!bg-neutral-100 !text-neutral-600 hover:!bg-neutral-200 dark:!bg-neutral-800 dark:!text-neutral-400 dark:hover:!bg-neutral-700",
           className,
         ].join(" ")}

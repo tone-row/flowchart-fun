@@ -130,7 +130,6 @@ export const Header = memo(function SharedHeader() {
               <DropdownMenu.Root modal={false}>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
-                    utility
                     label={t`Info`}
                     icon={<Info height={16} width={16} weight="fill" />}
                     aria-current={isInfoPage ? "page" : undefined}
@@ -181,7 +180,6 @@ export const Header = memo(function SharedHeader() {
                 </DropdownMenu.Content>
               </DropdownMenu.Root>
               <HeaderClientLink
-                utility
                 label={t`Settings`}
                 icon={<Gear height={16} width={16} weight="fill" />}
                 aria-current={isSettingsPage ? "page" : undefined}
@@ -189,7 +187,6 @@ export const Header = memo(function SharedHeader() {
               />
               {isLoggedIn ? (
                 <HeaderClientLink
-                  utility
                   label={t`Account`}
                   icon={<User height={16} width={16} weight="fill" />}
                   aria-current={isAccountPage ? "page" : undefined}
@@ -205,7 +202,6 @@ export const Header = memo(function SharedHeader() {
                 </HeaderClientLink>
               ) : (
                 <HeaderClientLink
-                  utility
                   to="/l"
                   label={t`Log In`}
                   icon={<User height={16} width={16} weight="fill" />}
@@ -251,13 +247,9 @@ export const Header = memo(function SharedHeader() {
 const btnClasses =
   "header-btn flex items-center gap-2 p-2.5 px-3.5 text-[15px] font-medium text-neutral-700 hover:bg-neutral-300/50 focus-visible:bg-neutral-300/50 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-300/70 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800";
 
-const utilityBtnClasses =
-  "header-btn flex items-center gap-2 p-2.5 px-3.5 text-[15px] font-medium text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300/50 focus-visible:bg-neutral-300/50 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-300/70 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800";
-
 type HeaderButtonProps = {
   label: string;
   icon: ReactNode;
-  utility?: boolean;
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
@@ -265,13 +257,9 @@ type HeaderButtonProps = {
 
 // forward ref
 const HeaderButton = forwardRef<HTMLButtonElement, HeaderButtonProps>(
-  ({ label: children, icon, utility, ...props }, ref) => {
+  ({ label: children, icon, ...props }, ref) => {
     return (
-      <button
-        className={utility ? utilityBtnClasses : btnClasses}
-        {...props}
-        ref={ref}
-      >
+      <button className={btnClasses} {...props} ref={ref}>
         <span className="shared-header-btn__icon">{icon}</span>
         <span>{children}</span>
       </button>
@@ -284,17 +272,12 @@ HeaderButton.displayName = "HeaderButton";
 type HeaderClientLink = {
   label: string;
   icon?: ReactNode;
-  utility?: boolean;
 } & LinkProps;
 
 const HeaderClientLink = forwardRef<HTMLAnchorElement, HeaderClientLink>(
-  ({ label, children, icon, className = "", utility, ...props }, ref) => {
+  ({ label, children, icon, className = "", ...props }, ref) => {
     return (
-      <Link
-        className={`${utility ? utilityBtnClasses : btnClasses} ${className}`}
-        {...props}
-        ref={ref}
-      >
+      <Link className={`${btnClasses} ${className}`} {...props} ref={ref}>
         {icon && <span className="shared-header-btn__icon">{icon}</span>}
         <span>{label}</span>
         {children}
