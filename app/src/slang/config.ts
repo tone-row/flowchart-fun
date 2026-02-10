@@ -19,7 +19,7 @@ export const palette = {
 };
 
 export const colors = {
-  background: palette.white[0],
+  background: "#FAFAF7",
   backgroundHsl: "0, 0%, 100%",
   foreground: palette.black[1],
   foregroundHsl: "0, 0%, 13%",

@@ -162,11 +162,12 @@ export default function Pricing2() {
                 <img
                   src={`/images/company_logos/${company.svg}`}
                   alt={company.name}
-                  className={
+                  className={classNames(
+                    "grayscale opacity-50 hover:grayscale-0 hover:opacity-80 transition-all duration-200",
                     company.className
                       ? company.className
                       : "h-12 w-auto shrink-0"
-                  }
+                  )}
                 />
               </div>
             ))}
@@ -180,7 +181,7 @@ export default function Pricing2() {
 
       <FAQ />
 
-      <div className="checkout-wrapper py-10 relative overflow-hidden px-4 md:px-6">
+      <div className="checkout-wrapper py-14 relative overflow-hidden px-4 md:px-6">
         <div className="max-w-2xl mx-auto relative z-10">
           <Checkout pricing2 />
         </div>
@@ -192,8 +193,8 @@ export default function Pricing2() {
         />
       </div>
       <div className="bg-purple-900 text-white">
-        <p className="text-center text-lg font-bold py-8 cursor-pointer">
-          <Trans>Subscribe to Pro and flowchart the fun way!</Trans>
+        <p className="text-center text-lg font-bold py-14 px-8 cursor-pointer">
+          <Trans>Your next diagram should be your best one.</Trans>
         </p>
       </div>
     </div>
@@ -294,11 +295,9 @@ function FeaturesSlideshow() {
               </p>
             ))}
           </div>
-          <img
-            src={`images/pricing/${feature.imgPath}.svg`}
-            alt={feature.title}
-            className="pricing-feature-img h-[125px] w-[125px] dark:invert absolute bottom-[-50px] left-1/2 opacity-5 blur-[2px] sm:group-data-[is-active=true]:opacity-100 group-data-[is-active=true]:blur-0 group-data-[is-active=true]:bottom-[-40px] transition-all duration-[400ms]"
-          />
+          <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 h-[80px] w-[80px] flex items-center justify-center text-blue-500 dark:text-blue-400 opacity-5 blur-[2px] sm:group-data-[is-active=true]:opacity-100 group-data-[is-active=true]:blur-0 group-data-[is-active=true]:bottom-[-10px] transition-all duration-[400ms]">
+            <feature.icon size={48} weight="duotone" />
+          </div>
         </div>
       ))}
     </div>

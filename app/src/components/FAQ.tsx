@@ -48,7 +48,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto py-16 px-4 sm:py-24 sm:px-6">
+    <div className="max-w-3xl mx-auto py-20 px-4 sm:py-28 sm:px-6">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
           <Trans>Frequently Asked Questions</Trans>
@@ -68,7 +68,7 @@ export default function FAQ() {
               "rounded-lg border border-neutral-200 dark:border-neutral-800",
               "bg-white dark:bg-neutral-900",
               "transition-all duration-200 ease-in-out",
-              "hover:border-purple-200 dark:hover:border-purple-800"
+              "hover:border-blue-200 dark:hover:border-blue-800"
             )}
           >
             <Collapsible.Trigger className="w-full p-6 flex justify-between items-center text-left">
