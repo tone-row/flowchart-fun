@@ -218,7 +218,7 @@ export const Header = memo(function SharedHeader() {
                   data-testid="pro-link"
                   data-to-pricing="Navigation Button"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="flex items-center gap-2 px-4 font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-sm transition-all hover:scale-[1.02]"
+                  className="flex items-center gap-2 px-4 font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-sm transition-all self-stretch"
                   onClick={() => {
                     track("sponsor", "click");
                   }}
