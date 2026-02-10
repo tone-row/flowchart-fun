@@ -481,6 +481,20 @@ body.dark .pricing-highlights {
   @apply bg-transparent;
 }
 
+/** Global focus-visible ring */
+:focus-visible {
+  outline: 2px solid #5c6fff;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  border-color: #5c6fff;
+  box-shadow: 0 0 0 3px rgba(92, 111, 255, 0.15);
+  outline: none;
+}
+
 /** Remove focusvisible states of header links */
 .header-btn,
 .header-btn:focus-visible {

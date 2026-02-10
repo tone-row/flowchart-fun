@@ -1,12 +1,20 @@
 import classNames from "classnames";
 import { features } from "./Pricing";
 import { Trans } from "@lingui/macro";
-import { CSSProperties, useCallback, useEffect, useRef, useState } from "react";
+import {
+  CSSProperties,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Checkout } from "../components/Checkout";
 import Testimonials from "../components/Testimonials";
 import throttle from "lodash.throttle";
 import { FeatureBreakdown } from "../components/FeatureBreakdown";
 import FAQ from "../components/FAQ";
+import { useFadeIn } from "../lib/useFadeIn";
 
 const companies: { svg: string; name: string; className?: string }[] = [
   {
@@ -130,13 +138,15 @@ export default function Pricing2() {
           </div>
         </Container>
       </header>
-      <div className="pricing-highlights pt-16">
-        <div className="max-w-5xl mx-auto py-8 grid gap-8 px-4 md:px-6">
-          <FeaturesSlideshow />
+      <FadeIn>
+        <div className="pricing-highlights pt-16">
+          <div className="max-w-5xl mx-auto py-8 grid gap-8 px-4 md:px-6">
+            <FeaturesSlideshow />
+          </div>
         </div>
-      </div>
+      </FadeIn>
       <button
-        className="w-max mx-auto block items-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300"
+        className="w-max mx-auto block items-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 hover:scale-[1.02]"
         onClick={() => {
           // scroll to the bottom of the page
           window.scrollTo({
@@ -148,38 +158,46 @@ export default function Pricing2() {
         <Trans>Upgrade to Pro for $2/month</Trans>
       </button>
 
-      <div className="trusted sm:mt-24">
-        <Container className="py-8">
-          <SectionTitle className="text-center mb-8 md:mb-14">
-            <Trans>Trusted by Professionals and Academics</Trans>
-          </SectionTitle>
-          <div className="flex items-center gap-4 sm:gap-x-20 sm:gap-y-12 flex-wrap justify-center">
-            {companies.map((company) => (
-              <div
-                key={company.name}
-                className="flex items-center justify-center"
-              >
-                <img
-                  src={`/images/company_logos/${company.svg}`}
-                  alt={company.name}
-                  className={classNames(
-                    "grayscale opacity-50 hover:grayscale-0 hover:opacity-80 transition-all duration-200",
-                    company.className
-                      ? company.className
-                      : "h-12 w-auto shrink-0"
-                  )}
-                />
-              </div>
-            ))}
-          </div>
-        </Container>
-      </div>
+      <FadeIn>
+        <div className="trusted sm:mt-24">
+          <Container className="py-8">
+            <SectionTitle className="text-center mb-8 md:mb-14">
+              <Trans>Trusted by Professionals and Academics</Trans>
+            </SectionTitle>
+            <div className="flex items-center gap-4 sm:gap-x-20 sm:gap-y-12 flex-wrap justify-center">
+              {companies.map((company) => (
+                <div
+                  key={company.name}
+                  className="flex items-center justify-center"
+                >
+                  <img
+                    src={`/images/company_logos/${company.svg}`}
+                    alt={company.name}
+                    className={classNames(
+                      "grayscale opacity-50 hover:grayscale-0 hover:opacity-80 transition-all duration-200",
+                      company.className
+                        ? company.className
+                        : "h-12 w-auto shrink-0"
+                    )}
+                  />
+                </div>
+              ))}
+            </div>
+          </Container>
+        </div>
+      </FadeIn>
 
-      <FeatureBreakdown />
+      <FadeIn>
+        <FeatureBreakdown />
+      </FadeIn>
 
-      <Testimonials />
+      <FadeIn>
+        <Testimonials />
+      </FadeIn>
 
-      <FAQ />
+      <FadeIn>
+        <FAQ />
+      </FadeIn>
 
       <div className="checkout-wrapper py-14 relative overflow-hidden px-4 md:px-6">
         <div className="max-w-2xl mx-auto relative z-10">
@@ -233,6 +251,15 @@ function SectionTitle({
     >
       {children}
     </h2>
+  );
+}
+
+function FadeIn({ children }: { children: ReactNode }) {
+  const fadeIn = useFadeIn();
+  return (
+    <div ref={fadeIn.ref} className={fadeIn.className}>
+      {children}
+    </div>
   );
 }
 

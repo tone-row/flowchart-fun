@@ -53,7 +53,7 @@ function Post({ post }: { post: BlogPost }) {
       to={`/blog/post/${post.slug}`}
     >
       <header className="grid gap-2">
-        <span className="text-xs text-neutral-500 dark:text-neutral-400">
+        <span className="text-xs text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
           {post.niceDate}
         </span>
         <SectionTitle>{post.title}</SectionTitle>

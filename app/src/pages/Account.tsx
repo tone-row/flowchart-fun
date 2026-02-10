@@ -119,185 +119,199 @@ export default function Account() {
       <PageTitle className="text-center">
         <Trans>Account</Trans>
       </PageTitle>
-      <Section>
-        <SectionTitle>
-          <Trans>User</Trans>
-        </SectionTitle>
-        <Description>{session?.user?.email}</Description>
-        <Button2 onClick={signOut} className="justify-self-start">
-          <Trans>Log Out</Trans>
-        </Button2>
-      </Section>
-      {isProUser ? (
-        <Section>
-          <SectionTitle>
-            <Trans>One-on-One Support</Trans>
-          </SectionTitle>
-          <p className="text-neutral-500 text-sm">
-            <Trans>
-              Have complex questions or issues? We&apos;re here to help.
-            </Trans>
-          </p>
-          <a
-            className="flex gap-2 text-xs text-blue-500 items-center"
-            href="https://calendly.com/tone-row/flowchart-fun"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>
-              <Trans>Book a Meeting</Trans>
-            </span>
-            <ArrowSquareOut size={16} />
-          </a>
-        </Section>
-      ) : null}
-      {hasProAccess ? (
-        <Section>
-          <SectionTitle>
-            <Trans>Subscription</Trans>
-          </SectionTitle>
-          <div className="grid gap-5">
-            <div className="grid gap-1">
-              <Label size="xs">
-                <Trans>Status</Trans>
-              </Label>
-              <InfoCell className="uppercase">{subscription?.status}</InfoCell>
-            </div>
-            {subscription?.current_period_end &&
-              !subscription?.cancel_at_period_end &&
-              subscription?.status === "active" && (
+      <div className="bg-white rounded-lg border border-neutral-200/60 dark:bg-neutral-900 dark:border-neutral-800 p-8 md:p-10">
+        <div className="grid gap-10">
+          <Section>
+            <SectionTitle>
+              <Trans>User</Trans>
+            </SectionTitle>
+            <Description>{session?.user?.email}</Description>
+            <button
+              onClick={signOut}
+              className="justify-self-start border border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:border-neutral-400 dark:hover:border-neutral-600 rounded-md px-4 py-2 text-sm font-medium transition-colors"
+            >
+              <Trans>Log Out</Trans>
+            </button>
+          </Section>
+          {isProUser ? (
+            <Section>
+              <SectionTitle>
+                <Trans>One-on-One Support</Trans>
+              </SectionTitle>
+              <p className="text-neutral-500 text-sm">
+                <Trans>
+                  Have complex questions or issues? We&apos;re here to help.
+                </Trans>
+              </p>
+              <a
+                className="flex gap-2 text-xs text-blue-500 items-center"
+                href="https://calendly.com/tone-row/flowchart-fun"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>
+                  <Trans>Book a Meeting</Trans>
+                </span>
+                <ArrowSquareOut size={16} />
+              </a>
+            </Section>
+          ) : null}
+          {hasProAccess ? (
+            <Section>
+              <SectionTitle>
+                <Trans>Subscription</Trans>
+              </SectionTitle>
+              <div className="grid gap-5">
                 <div className="grid gap-1">
                   <Label size="xs">
-                    <Trans>Next charge</Trans>
+                    <Trans>Status</Trans>
                   </Label>
-                  <InfoCell>
-                    {formatDate(subscription?.current_period_end.toString())}
+                  <InfoCell className="uppercase">
+                    {subscription?.status}
                   </InfoCell>
                 </div>
-              )}
-            {!subscription?.cancel_at_period_end &&
-              subscription?.created &&
-              subscription?.status === "active" && (
-                <div className="grid gap-1">
-                  <Label size="xs">
-                    <Trans>Start</Trans>
-                  </Label>
-                  <InfoCell>
-                    {formatDate(subscription.created.toString())}
-                  </InfoCell>
+                {subscription?.current_period_end &&
+                  !subscription?.cancel_at_period_end &&
+                  subscription?.status === "active" && (
+                    <div className="grid gap-1">
+                      <Label size="xs">
+                        <Trans>Next charge</Trans>
+                      </Label>
+                      <InfoCell>
+                        {formatDate(
+                          subscription?.current_period_end.toString()
+                        )}
+                      </InfoCell>
+                    </div>
+                  )}
+                {!subscription?.cancel_at_period_end &&
+                  subscription?.created &&
+                  subscription?.status === "active" && (
+                    <div className="grid gap-1">
+                      <Label size="xs">
+                        <Trans>Start</Trans>
+                      </Label>
+                      <InfoCell>
+                        {formatDate(subscription.created.toString())}
+                      </InfoCell>
+                    </div>
+                  )}
+              </div>
+              {subscription?.cancel_at_period_end && (
+                <div className="flex gap-4 justify-start items-center">
+                  <Notice>
+                    <Trans>Subscription will end</Trans>{" "}
+                    {formatDate(subscription.current_period_end.toString())}
+                  </Notice>
+                  <ConfirmResume
+                    isOpen={resumeModal}
+                    onOpenChange={setResumeModal}
+                  >
+                    <Button2 onClick={() => setResumeModal(true)}>
+                      <Trans>Resume Subscription</Trans>
+                    </Button2>
+                  </ConfirmResume>
                 </div>
               )}
-          </div>
-          {subscription?.cancel_at_period_end && (
-            <div className="flex gap-4 justify-start items-center">
-              <Notice>
-                <Trans>Subscription will end</Trans>{" "}
-                {formatDate(subscription.current_period_end.toString())}
-              </Notice>
-              <ConfirmResume isOpen={resumeModal} onOpenChange={setResumeModal}>
-                <Button2 onClick={() => setResumeModal(true)}>
-                  <Trans>Resume Subscription</Trans>
-                </Button2>
-              </ConfirmResume>
-            </div>
+            </Section>
+          ) : (
+            <SubscriptionOptions />
           )}
-        </Section>
-      ) : (
-        <SubscriptionOptions />
-      )}
-      <Section>
-        <SectionTitle>
-          <Trans>Update Email</Trans>
-        </SectionTitle>
-        <Box as="form" gap={2} items="start" onSubmit={changeEmail.mutate}>
-          <Input
-            type="email"
-            name="email"
-            required
-            placeholder={t`New Email`}
-            disabled={changeEmail.isLoading}
-          />
-          <Input
-            type="email"
-            name="emailConfirm"
-            required
-            placeholder={t`Confirm New Email`}
-            disabled={changeEmail.isLoading}
-          />
-          <Button2
-            type="submit"
-            disabled={changeEmail.isLoading}
-            className="justify-self-start"
-          >
-            <Trans>Change Email Address</Trans>
-          </Button2>
-          {changeEmail.isError && (
-            <Notice>{(changeEmail.error as Error).message}</Notice>
-          )}
-        </Box>
-      </Section>
-      {isProUser && customerPortalLink ? (
-        <Section>
-          <SectionTitle>
-            <Trans>Customer Portal</Trans>
-          </SectionTitle>
-          <p className="text-neutral-500 text-sm">
-            <Trans>
-              Use the customer portal to change your billing information.
-            </Trans>
-          </p>
-          <a
-            href={customerPortalLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex gap-2 text-xs text-blue-500"
-          >
-            <span>
-              <Trans>Open Customer Portal</Trans>
-            </span>
-            <ArrowSquareOut size={16} />
-          </a>
-        </Section>
-      ) : null}
-      {isProUser ? (
-        <Section>
-          <SectionTitle>
-            <Trans>History</Trans>
-          </SectionTitle>
-          <Box as="table" className={styles.InvoicesTable} rad={1}>
-            <colgroup>
-              <col width="50%" />
-              <col width="50%" />
-            </colgroup>
-            <thead>
-              <tr>
-                <Td>
-                  <Trans>Date</Trans>
-                </Td>
-                <Td>
-                  <Trans>Amount</Trans>
-                </Td>
-              </tr>
-            </thead>
-            <tbody>
-              {invoices &&
-                invoices.map((invoice) => (
-                  <tr key={invoice.id}>
-                    <Td className="whitespace-nowrap">
-                      {formatDate(invoice.created.toString())}
+          <Section>
+            <SectionTitle>
+              <Trans>Update Email</Trans>
+            </SectionTitle>
+            <Box as="form" gap={2} items="start" onSubmit={changeEmail.mutate}>
+              <Input
+                type="email"
+                name="email"
+                required
+                placeholder={t`New Email`}
+                disabled={changeEmail.isLoading}
+              />
+              <Input
+                type="email"
+                name="emailConfirm"
+                required
+                placeholder={t`Confirm New Email`}
+                disabled={changeEmail.isLoading}
+              />
+              <button
+                type="submit"
+                disabled={changeEmail.isLoading}
+                className="justify-self-start border border-blue-300 dark:border-blue-700 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:opacity-50"
+              >
+                <Trans>Change Email Address</Trans>
+              </button>
+              {changeEmail.isError && (
+                <Notice>{(changeEmail.error as Error).message}</Notice>
+              )}
+            </Box>
+          </Section>
+          {isProUser && customerPortalLink ? (
+            <Section>
+              <SectionTitle>
+                <Trans>Customer Portal</Trans>
+              </SectionTitle>
+              <p className="text-neutral-500 text-sm">
+                <Trans>
+                  Use the customer portal to change your billing information.
+                </Trans>
+              </p>
+              <a
+                href={customerPortalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-2 text-xs text-blue-500"
+              >
+                <span>
+                  <Trans>Open Customer Portal</Trans>
+                </span>
+                <ArrowSquareOut size={16} />
+              </a>
+            </Section>
+          ) : null}
+          {isProUser ? (
+            <Section>
+              <SectionTitle>
+                <Trans>History</Trans>
+              </SectionTitle>
+              <Box as="table" className={styles.InvoicesTable} rad={1}>
+                <colgroup>
+                  <col width="50%" />
+                  <col width="50%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <Td>
+                      <Trans>Date</Trans>
                     </Td>
-                    <Td>{formatCents(invoice.amount_paid)}</Td>
+                    <Td>
+                      <Trans>Amount</Trans>
+                    </Td>
                   </tr>
-                ))}
-            </tbody>
-          </Box>
-        </Section>
-      ) : null}
-      <CancelButton
-        subscription={subscription}
-        cancelModal={cancelModal}
-        setCancelModal={setCancelModal}
-      />
+                </thead>
+                <tbody>
+                  {invoices &&
+                    invoices.map((invoice) => (
+                      <tr key={invoice.id}>
+                        <Td className="whitespace-nowrap">
+                          {formatDate(invoice.created.toString())}
+                        </Td>
+                        <Td>{formatCents(invoice.amount_paid)}</Td>
+                      </tr>
+                    ))}
+                </tbody>
+              </Box>
+            </Section>
+          ) : null}
+          <CancelButton
+            subscription={subscription}
+            cancelModal={cancelModal}
+            setCancelModal={setCancelModal}
+          />
+        </div>
+      </div>
     </Page>
   );
 }
@@ -561,22 +575,18 @@ function SubscriptionOptions() {
             </form>
           </div>
         ) : (
-          <>
-            <Trans>
-              <p className="text-sm leading-normal">
-                You currently have a free account.
-                <br />
-                <Link
-                  to="/pricing"
-                  className="text-blue-500"
-                  data-to-pricing="Account Page: Learn"
-                >
-                  Learn about our Pro Features and subscribe on our pricing page
-                </Link>
-                .
-              </p>
-            </Trans>
-          </>
+          <div className="grid gap-2">
+            <p className="text-sm leading-normal text-neutral-600 dark:text-neutral-400">
+              <Trans>You&apos;re on the free plan.</Trans>
+            </p>
+            <Link
+              to="/pricing"
+              className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+              data-to-pricing="Account Page: Learn"
+            >
+              <Trans>Explore Pro</Trans> &rarr;
+            </Link>
+          </div>
         )}
       </div>
     </Section>

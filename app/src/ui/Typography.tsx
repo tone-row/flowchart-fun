@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { ReactNode } from "react";
 
-export const pageTitle = "text-2xl md:text-3xl font-extrabold";
+export const pageTitle = "text-2xl md:text-3xl font-bold tracking-tight";
 export function PageTitle({
   children,
   className = "",
@@ -14,7 +14,8 @@ export function PageTitle({
   );
 }
 
-export const sectionTitle = "text-lg md:text-xl font-bold";
+export const sectionTitle =
+  "text-lg font-semibold text-neutral-700 dark:text-neutral-300";
 export function SectionTitle({
   children,
   className = "",
