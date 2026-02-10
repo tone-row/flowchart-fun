@@ -322,7 +322,7 @@ and --mouse-x
 }
 
 .feature:nth-child(1) {
-  --hover-accent: theme("colors.purple.300");
+  --hover-accent: theme("colors.blue.300");
 }
 .feature:nth-child(2) {
   --hover-accent: theme("colors.green.300");
@@ -426,13 +426,13 @@ body.dark .pricing-highlights {
       100deg,
       #0f0f0f00,
       #0f0f0f00 32px,
-      #5312ab75 32px 33px
+      #3238b075 32px 33px
     ),
     repeating-linear-gradient(
       10deg,
       #f6f6f600,
       #f6f6f600 32px,
-      #5312ab75 32px 33px
+      #3238b075 32px 33px
     ),
     linear-gradient(90deg, #0f0f0f, #0f0f0f 30px);
   background-position: 0 0;

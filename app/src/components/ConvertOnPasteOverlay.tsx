@@ -54,7 +54,7 @@ function Overlay() {
   const isRunning = usePromptStore((s) => s.isRunning);
   const pasted = useEditorStore((s) => s.userPasted);
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-purple-800/80 backdrop-blur-lg py-6 animate-overlayShow">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-blue-800/80 backdrop-blur-lg py-6 animate-overlayShow">
       <div className="grid sm:flex items-center gap-4 w-screen mx-auto px-6 animate-slideUpFadeLarge">
         <p className="text-white text-sm font-semibold leading-tight text-wrap-balance">
           <Trans>
@@ -72,7 +72,7 @@ function Overlay() {
             <Trans>Dismiss</Trans>
           </Button2>
           <Button2
-            color="purple"
+            color="blue"
             size="sm"
             leftIcon={<MagicWand size={18} weight="fill" />}
             onClick={() => {

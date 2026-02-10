@@ -197,8 +197,7 @@ export function FeatureBreakdown() {
                     {
                       [styles.lightBorder]: feature.free,
                       [styles.accentBorderLeft]: !feature.free,
-                      "bg-purple-500/[0.05] dark:bg-purple-500/30":
-                        !feature.free,
+                      "bg-blue-500/[0.05] dark:bg-blue-500/30": !feature.free,
                     }
                   )}
                 >
@@ -217,8 +216,7 @@ export function FeatureBreakdown() {
                         {
                           "text-neutral-400 dark:text-neutral-400":
                             feature.free,
-                          "text-purple-500/90 dark:text-purple-400":
-                            !feature.free,
+                          "text-blue-500/90 dark:text-blue-400": !feature.free,
                         }
                       )}
                     />
@@ -281,7 +279,7 @@ export function FeatureBreakdown() {
                   >
                     <Check
                       weight="bold"
-                      className="h-5 w-5 text-white drop-shadow-sm drop-shadow-purple-900"
+                      className="h-5 w-5 text-white drop-shadow-sm drop-shadow-blue-900"
                     />
                   </div>
                 </div>
@@ -296,7 +294,7 @@ export function FeatureBreakdown() {
           </div>
           <Link
             to="/pricing"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-300"
+            className="inline-flex items-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300"
             onClick={() => {
               window.scrollTo({
                 top: document.body.scrollHeight,

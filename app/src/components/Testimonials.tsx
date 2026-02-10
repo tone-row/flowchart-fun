@@ -30,7 +30,7 @@ const siteColorScheme: Record<string, { text: string; darkText: string }> = {
 };
 
 // Rotating colors for avatar placeholder backgrounds
-const avatarColors = ["bg-blue-500", "bg-purple-500", "bg-orange-500"];
+const avatarColors = ["bg-blue-500", "bg-blue-400", "bg-orange-500"];
 
 function Testimonial({
   quote,
@@ -96,7 +96,7 @@ function Testimonial({
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-purple-600 dark:text-neutral-500 dark:hover:text-purple-400 transition-colors ml-auto flex-shrink-0"
+              className="text-neutral-400 hover:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-400 transition-colors ml-auto flex-shrink-0"
               aria-label={`View original post on ${site}`}
             >
               <SiteIcon size={16} />
@@ -147,7 +147,7 @@ function Testimonials() {
             href="https://www.producthunt.com/products/flowchart-fun"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-300"
+            className="inline-flex items-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300"
           >
             <Trans>See more reviews on Product Hunt</Trans>
           </a>

@@ -140,7 +140,7 @@ export function ChartListItem({
               <Folder size={20} weight="fill" className="text-blue-500" />
             )
           ) : (
-            <File size={20} weight="fill" className="text-purple-500" />
+            <File size={20} weight="fill" className="text-neutral-400" />
           )}
         </div>
 

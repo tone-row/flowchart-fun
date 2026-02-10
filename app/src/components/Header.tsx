@@ -214,7 +214,7 @@ export const Header = memo(function SharedHeader() {
                   data-testid="pro-link"
                   data-to-pricing="Navigation Button"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="flex items-center gap-2 px-4 font-semibold bg-gradient-to-b from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-sm transition-all hover:shadow-purple-200/50 dark:hover:shadow-purple-900/30 dark:from-purple-600 dark:to-purple-700 dark:hover:from-purple-500 dark:hover:to-purple-600"
+                  className="flex items-center gap-2 px-4 font-semibold bg-gradient-to-b from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-sm transition-all hover:shadow-blue-200/50 dark:hover:shadow-blue-900/30 dark:from-blue-600 dark:to-blue-700 dark:hover:from-blue-500 dark:hover:to-blue-600"
                   onClick={() => {
                     track("sponsor", "click");
                   }}

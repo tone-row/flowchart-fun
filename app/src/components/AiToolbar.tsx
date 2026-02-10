@@ -74,8 +74,7 @@ export function AiToolbar() {
           <MagicWand
             size={20}
             className={cx("mx-2 transition-all duration-200", {
-              "text-purple-600 dark:text-purple-200 scale-110 -rotate-12":
-                isOpen,
+              "text-blue-600 dark:text-blue-200 scale-110 -rotate-12": isOpen,
               "text-neutral-500 dark:text-neutral-400": !isOpen,
             })}
           />
@@ -89,12 +88,12 @@ export function AiToolbar() {
               return (
                 <Button2
                   key={mode}
-                  color={mode === currentMode && isOpen ? "purple" : "default"}
+                  color={mode === currentMode && isOpen ? "blue" : "default"}
                   size="xs"
                   onClick={() => handleModeChange(mode)}
                   className={cx("disabled:opacity-50", {
                     "dark:hover:bg-neutral-700": mode !== currentMode,
-                    "dark:bg-purple-700 dark:text-purple-100":
+                    "dark:bg-blue-700 dark:text-blue-100":
                       mode === currentMode && isOpen,
                   })}
                 >
@@ -103,7 +102,7 @@ export function AiToolbar() {
               );
             })
           ) : (
-            <span className="text-sm text-purple-600 dark:text-white">
+            <span className="text-sm text-blue-600 dark:text-white">
               <Trans>Keep changes?</Trans>
             </span>
           )}
@@ -170,9 +169,9 @@ export function AiToolbar() {
           />
           <div className="flex justify-end">
             <Button2
-              color="purple"
+              color="blue"
               size="xs"
-              className="dark:bg-purple-700 dark:hover:bg-purple-600 dark:text-purple-100"
+              className="dark:bg-blue-700 dark:hover:bg-blue-600 dark:text-blue-100"
               disabled={isRunning}
               onClick={runAi}
               data-session-activity={`Run AI: ${currentMode}`}

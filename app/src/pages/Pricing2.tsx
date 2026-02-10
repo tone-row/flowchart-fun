@@ -97,7 +97,7 @@ export default function Pricing2() {
   }, []);
   return (
     <div className="overflow-hidden">
-      <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-purple-50/5 to-purple-400/40 pt-8 dark:to-purple-900/50 dark:from-[#0c0c0c]">
+      <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-blue-50/5 to-blue-400/40 pt-8 dark:to-blue-900/50 dark:from-[#0c0c0c]">
         <img
           src="/images/arrows-purple.svg"
           draggable="false"
@@ -105,7 +105,7 @@ export default function Pricing2() {
           alt=""
         />
         <Container className="text-center grid relative justify-items-center items-center gap-6 md:gap-8 mb-0">
-          <span className="font-medium sm:text-[22px] text-purple-600/90 dark:text-white/70 -mb-2">
+          <span className="font-medium sm:text-[22px] text-blue-600/90 dark:text-white/70 -mb-2">
             Flowchart Fun Pro
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold tracking-tight !leading-[1.25]">
@@ -136,7 +136,7 @@ export default function Pricing2() {
         </div>
       </div>
       <button
-        className="w-max mx-auto block items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-300"
+        className="w-max mx-auto block items-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300"
         onClick={() => {
           // scroll to the bottom of the page
           window.scrollTo({
@@ -192,7 +192,7 @@ export default function Pricing2() {
           alt=""
         />
       </div>
-      <div className="bg-purple-900 text-white">
+      <div className="bg-blue-900 text-white">
         <p className="text-center text-lg font-bold py-14 px-8 cursor-pointer">
           <Trans>Your next diagram should be your best one.</Trans>
         </p>
