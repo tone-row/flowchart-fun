@@ -33,7 +33,7 @@ export default function Post() {
       <Page>
         <div className="grid gap-6">
           <header className="grid gap-4 text-center">
-            <span className="text-neutral-400 translate-x-[2px] dark:text-neutral-400 tracking-wide uppercase font-bold text-lg">
+            <span className="text-xs text-neutral-400 dark:text-neutral-500 uppercase tracking-widest font-medium">
               {data.publishDate}
             </span>
             <PageTitle className="text-wrap-balance">{data.title}</PageTitle>
@@ -45,7 +45,7 @@ export default function Post() {
             className="post-content"
             dangerouslySetInnerHTML={{ __html: data.htmlContent }}
           />
-          <div className="byline vcard post-content text-sm text-neutral-500 dark:text-neutral-700">
+          <div className="byline vcard post-content text-xs text-neutral-400 dark:text-neutral-500">
             <address className="author inline">
               By{" "}
               <a

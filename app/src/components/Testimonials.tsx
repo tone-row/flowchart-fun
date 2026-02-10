@@ -30,7 +30,7 @@ const siteColorScheme: Record<string, { text: string; darkText: string }> = {
 };
 
 // Rotating colors for avatar placeholder backgrounds
-const avatarColors = ["bg-blue-500", "bg-purple-500", "bg-orange-500"];
+const avatarColors = ["bg-blue-500", "bg-blue-400", "bg-orange-500"];
 
 function Testimonial({
   quote,
@@ -46,9 +46,9 @@ function Testimonial({
   const firstLetter = username.charAt(0).toUpperCase();
 
   return (
-    <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-sm border border-neutral-300/80 dark:border-neutral-800/70 flex flex-col justify-between h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow overflow-hidden max-w-md w-full m-2">
+    <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800/50 flex flex-col justify-between h-full overflow-hidden max-w-md w-full m-2">
       <div className="p-6 relative">
-        <span className="absolute -top-4 left-6 text-7xl opacity-[0.05] text-purple-700 dark:text-purple-400 dark:opacity-[0.15] -ml-10 mt-4 select-none">
+        <span className="absolute -top-4 left-6 text-7xl opacity-[0.05] text-blue-700 dark:text-blue-400 dark:opacity-[0.15] -ml-10 mt-4 select-none">
           <RiDoubleQuotesL />
         </span>
 
@@ -96,7 +96,7 @@ function Testimonial({
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-purple-600 dark:text-neutral-500 dark:hover:text-purple-400 transition-colors ml-auto flex-shrink-0"
+              className="text-neutral-400 hover:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-400 transition-colors ml-auto flex-shrink-0"
               aria-label={`View original post on ${site}`}
             >
               <SiteIcon size={16} />
@@ -147,7 +147,7 @@ function Testimonials() {
             href="https://www.producthunt.com/products/flowchart-fun"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-300"
+            className="inline-flex items-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 hover:scale-[1.02]"
           >
             <Trans>See more reviews on Product Hunt</Trans>
           </a>

@@ -110,15 +110,16 @@ export function ChartListItem({
   const renderItemContent = () => (
     <div
       className={`
-        grid items-center grid-cols-[minmax(0,1fr)_auto] p-3 rounded-md w-full
+        group/item grid items-center grid-cols-[minmax(0,1fr)_auto] py-4 px-3 rounded-md w-full
         ${
           isFolder
             ? "bg-neutral-200/50 dark:bg-neutral-800/50"
             : "bg-white dark:bg-neutral-900"
         }
-        hover:bg-neutral-200 dark:hover:bg-neutral-800
+        hover:bg-blue-50/50 dark:hover:bg-blue-900/20
         cursor-pointer
-        border border-transparent hover:border-neutral-300 dark:hover:border-neutral-700
+        border border-transparent hover:border-blue-200/60 dark:hover:border-blue-800/40
+        transition-colors duration-100
       `}
     >
       {/* @ts-ignore */}
@@ -140,7 +141,7 @@ export function ChartListItem({
               <Folder size={20} weight="fill" className="text-blue-500" />
             )
           ) : (
-            <File size={20} weight="fill" className="text-purple-500" />
+            <File size={20} weight="fill" className="text-neutral-400" />
           )}
         </div>
 
@@ -169,7 +170,7 @@ export function ChartListItem({
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>
           <button
-            className="p-1 rounded-full text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300/50 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-700/50"
+            className="p-1 rounded-full text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300/50 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-700/50 opacity-0 group-hover/item:opacity-100 focus:opacity-100 transition-opacity"
             onClick={(e) => e.stopPropagation()}
           >
             <DotsThree size={20} weight="bold" />

@@ -81,7 +81,7 @@ export function SandboxWarning() {
             </Trans>
           </P>
           <Button2
-            color="purple"
+            color="blue"
             size="sm"
             className="mt-3"
             data-testid="sandbox-warning-learn-more"

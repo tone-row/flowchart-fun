@@ -20,7 +20,7 @@
 .GroupButton[aria-pressed="true"],
 .GroupButton:disabled {
   cursor: default;
-  z-index: -1;
+  z-index: 0;
 }
 
 .GroupButton:hover,

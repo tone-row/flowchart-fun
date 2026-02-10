@@ -288,7 +288,7 @@ main .monaco-editor {
 
 .checkout-wrapper {
   background-blend-mode: normal;
-  background: radial-gradient(circle, #8252eb, #8252eb 20%, #baabf2 120%) 0 0/100%
+  background: radial-gradient(circle, #4750f3, #4750f3 20%, #a8bdff 120%) 0 0/100%
     100%;
 }
 
@@ -297,9 +297,9 @@ body.dark .checkout-wrapper {
   background-color: #0000;
   background-image: radial-gradient(
       circle,
-      #8252eb8a,
-      #8252eb8a 0%,
-      #44108a5e 63%
+      #4750f38a,
+      #4750f38a 0%,
+      #2f358d5e 63%
     ),
     conic-gradient(at 0 100%, #000, #000 30deg);
   background-position: 0 0;
@@ -322,7 +322,7 @@ and --mouse-x
 }
 
 .feature:nth-child(1) {
-  --hover-accent: theme("colors.purple.300");
+  --hover-accent: theme("colors.blue.300");
 }
 .feature:nth-child(2) {
   --hover-accent: theme("colors.green.300");
@@ -401,13 +401,13 @@ and --mouse-x
       100deg,
       #f6f6f600,
       #f6f6f600 32px,
-      #e3dff3 32px 33px
+      #dfe3f1 32px 33px
     ),
     repeating-linear-gradient(
       10deg,
       #f6f6f600,
       #f6f6f600 32px,
-      #e3dff3 32px 33px
+      #dfe3f1 32px 33px
     ),
     linear-gradient(90deg, #f5f4f91f, #f5f4f91f 30px);
   background-repeat: repeat, repeat, repeat, repeat;
@@ -426,13 +426,13 @@ body.dark .pricing-highlights {
       100deg,
       #0f0f0f00,
       #0f0f0f00 32px,
-      #5312ab75 32px 33px
+      #3238b075 32px 33px
     ),
     repeating-linear-gradient(
       10deg,
       #f6f6f600,
       #f6f6f600 32px,
-      #5312ab75 32px 33px
+      #3238b075 32px 33px
     ),
     linear-gradient(90deg, #0f0f0f, #0f0f0f 30px);
   background-position: 0 0;
@@ -481,6 +481,20 @@ body.dark .pricing-highlights {
   @apply bg-transparent;
 }
 
+/** Global focus-visible ring */
+:focus-visible {
+  outline: 2px solid #5c6fff;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  border-color: #5c6fff;
+  box-shadow: 0 0 0 3px rgba(92, 111, 255, 0.15);
+  outline: none;
+}
+
 /** Remove focusvisible states of header links */
 .header-btn,
 .header-btn:focus-visible {
@@ -496,5 +510,5 @@ body.dark .pricing-highlights {
   z-index: 10;
   width: 80px;
   height: 10px;
-  @apply bg-gradient-to-r from-purple-400 to-purple-700 dark:from-purple-700 dark:to-purple-900 rounded-b-lg;
+  @apply bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-700 dark:to-blue-900 rounded-b-lg;
 }

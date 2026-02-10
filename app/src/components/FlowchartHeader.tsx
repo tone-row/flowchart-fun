@@ -42,53 +42,53 @@ export function FlowchartHeader() {
           "grid gap-2 md:flex items-end justify-between p-4 md:p-2 md:mb-2"
         )}
       >
-      {isSandbox ? (
-        <div className="grid gap-0.5 content-end">
-          <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
-          <p className="text-xs text-neutral-500 dark:text-neutral-300/80 font-medium leading-tight text-wrap-pretty">
-            <Trans>
-              Create flowcharts instantly: Type or paste text, see it
-              visualized.
-            </Trans>
-          </p>
-        </div>
-      ) : (
-        <RenameButton key={pageTitle}>
-          <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
-        </RenameButton>
-      )}
-
-      <div className="flex items-center gap-1">
-        {isReadOnly && (
-          <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
-            <Trans>Read-only</Trans>
-          </span>
+        {isSandbox ? (
+          <div className="grid gap-0.5 content-end">
+            <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
+            <p className="text-xs text-neutral-500 dark:text-neutral-300/80 font-medium leading-tight text-wrap-pretty">
+              <Trans>
+                Create flowcharts instantly: Type or paste text, see it
+                visualized.
+              </Trans>
+            </p>
+          </div>
+        ) : (
+          <RenameButton key={pageTitle}>
+            <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
+          </RenameButton>
         )}
-        {isReadOnly && hasProAccess ? <CloneButton /> : null}
-        {!isReadOnly ? (
-          <>
-            {isSandbox ? <SaveButton /> : null}
-            <ShareDialog>
-              <Button2
-                onClick={() => setShareModal(true)}
-                leftIcon={<Share weight="bold" className="w-4 h-4" />}
-                aria-label="Export"
-                data-session-activity="Share Chart"
-              >
-                <Trans>Share</Trans>
-              </Button2>
-            </ShareDialog>
-          </>
-        ) : null}
-        <DownloadDropdown>
-          <Button2
-            leftIcon={<DownloadSimple weight="bold" className="w-4 h-4" />}
-          >
-            <Trans>Download</Trans>
-          </Button2>
-        </DownloadDropdown>
-      </div>
-    </header>
+
+        <div className="flex items-center gap-1">
+          {isReadOnly && (
+            <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
+              <Trans>Read-only</Trans>
+            </span>
+          )}
+          {isReadOnly && hasProAccess ? <CloneButton /> : null}
+          {!isReadOnly ? (
+            <>
+              {isSandbox ? <SaveButton /> : null}
+              <ShareDialog>
+                <Button2
+                  onClick={() => setShareModal(true)}
+                  leftIcon={<Share weight="bold" className="w-4 h-4" />}
+                  aria-label="Export"
+                  data-session-activity="Share Chart"
+                >
+                  <Trans>Share</Trans>
+                </Button2>
+              </ShareDialog>
+            </>
+          ) : null}
+          <DownloadDropdown>
+            <Button2
+              leftIcon={<DownloadSimple weight="bold" className="w-4 h-4" />}
+            >
+              <Trans>Download</Trans>
+            </Button2>
+          </DownloadDropdown>
+        </div>
+      </header>
     </>
   );
 }

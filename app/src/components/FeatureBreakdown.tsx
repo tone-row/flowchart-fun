@@ -116,11 +116,11 @@ const features: Feature[] = [
 
 const styles = {
   lightBorder: "border-neutral-400/50 dark:border-neutral-700",
-  accentBorder: "border-purple-200 dark:border-purple-300/50",
-  accentBorderBottom: "border-b-purple-200 dark:border-b-purple-300/50",
-  accentBorderLeft: "border-l-purple-200 dark:border-l-purple-300/50",
+  accentBorder: "border-blue-200 dark:border-blue-300/50",
+  accentBorderBottom: "border-b-blue-200 dark:border-b-blue-300/50",
+  accentBorderLeft: "border-l-blue-200 dark:border-l-blue-900/50",
   proBg:
-    "bg-gradient-to-r from-purple-400 to-purple-700 dark:from-purple-700 dark:to-purple-900",
+    "bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-700 dark:to-blue-900",
 };
 
 const proLabelColors = [
@@ -136,7 +136,7 @@ const proLabelColors = [
 
 export function FeatureBreakdown() {
   return (
-    <div className="bg-white py-16 dark:bg-transparent">
+    <div className="bg-white py-20 dark:bg-transparent">
       <div className="mx-auto max-w-4xl px-2 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
@@ -197,8 +197,7 @@ export function FeatureBreakdown() {
                     {
                       [styles.lightBorder]: feature.free,
                       [styles.accentBorderLeft]: !feature.free,
-                      "bg-purple-500/[0.05] dark:bg-purple-500/30":
-                        !feature.free,
+                      "bg-blue-500/[0.05] dark:bg-blue-500/30": !feature.free,
                     }
                   )}
                 >
@@ -217,8 +216,7 @@ export function FeatureBreakdown() {
                         {
                           "text-neutral-400 dark:text-neutral-400":
                             feature.free,
-                          "text-purple-500/90 dark:text-purple-400":
-                            !feature.free,
+                          "text-blue-500/90 dark:text-blue-400": !feature.free,
                         }
                       )}
                     />
@@ -281,7 +279,7 @@ export function FeatureBreakdown() {
                   >
                     <Check
                       weight="bold"
-                      className="h-5 w-5 text-white drop-shadow-sm drop-shadow-purple-900"
+                      className="h-5 w-5 text-white drop-shadow-sm drop-shadow-blue-900"
                     />
                   </div>
                 </div>
@@ -296,7 +294,7 @@ export function FeatureBreakdown() {
           </div>
           <Link
             to="/pricing"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-300"
+            className="inline-flex items-center rounded-full bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 hover:scale-[1.02]"
             onClick={() => {
               window.scrollTo({
                 top: document.body.scrollHeight,

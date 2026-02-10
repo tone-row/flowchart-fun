@@ -126,7 +126,7 @@ export const Header = memo(function SharedHeader() {
             </nav>
           </NavigationMenu.List>
           <NavigationMenu.List asChild>
-            <nav className="flex">
+            <nav className="flex items-center ml-4">
               <DropdownMenu.Root modal={false}>
                 <DropdownMenu.Trigger asChild>
                   <HeaderButton
@@ -214,7 +214,7 @@ export const Header = memo(function SharedHeader() {
                   data-testid="pro-link"
                   data-to-pricing="Navigation Button"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="flex items-center gap-2 px-4 font-semibold bg-gradient-to-b from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-sm transition-all hover:shadow-purple-200/50 dark:hover:shadow-purple-900/30 dark:from-purple-600 dark:to-purple-700 dark:hover:from-purple-500 dark:hover:to-purple-600"
+                  className="flex items-center gap-2 px-4 font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-sm transition-all self-stretch"
                   onClick={() => {
                     track("sponsor", "click");
                   }}
@@ -245,7 +245,7 @@ export const Header = memo(function SharedHeader() {
 });
 
 const btnClasses =
-  "header-btn flex items-center gap-2 p-2.5 px-3.5 text-[15px] font-medium text-neutral-600 hover:bg-neutral-300/50 focus-visible:bg-neutral-300/50 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-300/70 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800";
+  "header-btn flex items-center gap-2 p-2.5 px-3.5 text-[15px] font-medium text-neutral-700 hover:bg-neutral-300/50 focus-visible:bg-neutral-300/50 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-300/70 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800";
 
 type HeaderButtonProps = {
   label: string;
@@ -259,7 +259,7 @@ type HeaderButtonProps = {
 const HeaderButton = forwardRef<HTMLButtonElement, HeaderButtonProps>(
   ({ label: children, icon, ...props }, ref) => {
     return (
-      <button className={`${btnClasses}`} {...props} ref={ref}>
+      <button className={btnClasses} {...props} ref={ref}>
         <span className="shared-header-btn__icon">{icon}</span>
         <span>{children}</span>
       </button>

@@ -53,7 +53,7 @@ export default function Success() {
             <ProFeature
               title={t`Create with AI`}
               icon={MagicWand}
-              className="text-purple-500"
+              className="text-blue-500"
             />
             <ProFeature
               title={t`Import from CSV`}
@@ -88,7 +88,7 @@ export default function Success() {
             height={windowSize[1]}
             numberOfPieces={numPieces}
             wind={0.02}
-            colors={["#e9efff", "#7f96ff", "#ffe590", "#e3ffdc", "#8252eb"]}
+            colors={["#e9efff", "#7f96ff", "#ffe590", "#e3ffdc", "#5c6fff"]}
           />
         </Suspense>
       )}
