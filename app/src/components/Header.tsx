@@ -218,7 +218,7 @@ export const Header = memo(function SharedHeader() {
                   data-testid="pro-link"
                   data-to-pricing="Navigation Button"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="flex items-center gap-2 px-4 font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all hover:scale-[1.02] dark:bg-blue-600 dark:hover:bg-blue-500"
+                  className="flex items-center gap-2 px-4 font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-sm transition-all hover:scale-[1.02]"
                   onClick={() => {
                     track("sponsor", "click");
                   }}
@@ -252,7 +252,7 @@ const btnClasses =
   "header-btn flex items-center gap-2 p-2.5 px-3.5 text-[15px] font-medium text-neutral-700 hover:bg-neutral-300/50 focus-visible:bg-neutral-300/50 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-300/70 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800";
 
 const utilityBtnClasses =
-  "header-btn flex items-center gap-2 p-2.5 px-3.5 text-[15px] font-medium text-neutral-400 hover:text-neutral-700 hover:bg-neutral-300/50 focus-visible:bg-neutral-300/50 dark:text-neutral-500 dark:hover:text-neutral-200 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-300/70 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800";
+  "header-btn flex items-center gap-2 p-2.5 px-3.5 text-[15px] font-medium text-neutral-500 hover:text-neutral-700 hover:bg-neutral-300/50 focus-visible:bg-neutral-300/50 dark:text-neutral-400 dark:hover:text-neutral-200 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-300/70 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800";
 
 type HeaderButtonProps = {
   label: string;
