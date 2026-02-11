@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { templateRateLimit } from "./_shared";
-import { generateObject } from "ai";
-import { openai } from "@ai-sdk/openai";
+import { generateText, Output } from "ai";
 import { templates } from "shared";
 
 const schema = z.object({
@@ -28,15 +27,19 @@ export default async function handler(req: Request) {
     return new Response(JSON.stringify(parsed.error), { status: 400 });
   }
 
-  const result = await generateObject({
-    model: openai("gpt-3.5-turbo"),
-    schema,
+  const result = await generateText({
+    model: "openai/gpt-oss-120b",
+    output: Output.object({ schema }),
     prompt: getContent(parsed.data.prompt),
     system: systemMessage,
+    providerOptions: {
+      gateway: {
+        order: ["cerebras"],
+      },
+    },
   });
 
-  // Parse the result to ensure it matches one of the template options
-  const templateChoice = schema.parse(result.object);
+  const templateChoice = schema.parse(result.output);
 
   return new Response(JSON.stringify({ template: templateChoice.template }), {
     headers: { "Content-Type": "application/json" },
