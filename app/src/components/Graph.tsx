@@ -30,6 +30,7 @@ import {
   useEditorStore,
 } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
+import { usePromptStore } from "../lib/usePromptStore";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
 import styles from "./Graph.module.css";
@@ -80,8 +81,15 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
       fireImmediately: true,
       equalityFn: equal,
     });
+    const unsubscribeDiff = usePromptStore.subscribe(
+      (s) => s.diff,
+      () => {
+        update(useDoc.getState());
+      }
+    );
     return () => {
       unsubscribe();
+      unsubscribeDiff();
       if (destroy) destroy();
     };
   }, []);
@@ -350,7 +358,8 @@ function getGraphUpdater({
           : [themeStyle, customCss, postStyle].join("\n")
       );
 
-      elements = getElements(doc.text);
+      const diffText = usePromptStore.getState().diff;
+      elements = getElements(diffText ?? doc.text);
 
       // Very specific bug wrt to cose layouts
       // If it's the first render, randomize cannot be false

@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { subscribeWithSelector } from "zustand/middleware";
 import { RATE_LIMIT_EXCEEDED, runAi } from "./runAi";
 import { useCallback, useContext, useState } from "react";
 import { useHasProAccess } from "./hooks";
@@ -46,16 +47,18 @@ type PromptStore = {
   showUndoButton: boolean;
 };
 
-export const usePromptStore = create<PromptStore>(() => ({
-  isRunning: false,
-  lastResult: null,
-  error: null,
-  currentText: "",
-  mode: "prompt",
-  isOpen: false,
-  diff: null,
-  showUndoButton: false,
-}));
+export const usePromptStore = create(
+  subscribeWithSelector<PromptStore>(() => ({
+    isRunning: false,
+    lastResult: null,
+    error: null,
+    currentText: "",
+    mode: "prompt",
+    isOpen: false,
+    diff: null,
+    showUndoButton: false,
+  }))
+);
 
 export function startConvert() {
   usePromptStore.setState({ isRunning: true, showUndoButton: false });
