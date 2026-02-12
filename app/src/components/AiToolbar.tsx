@@ -1,5 +1,11 @@
 import { Button2, IconButton2 } from "../ui/Shared";
-import { CaretDown, CaretUp, MagicWand, Stop } from "phosphor-react";
+import {
+  ArrowCounterClockwise,
+  CaretDown,
+  CaretUp,
+  MagicWand,
+  Stop,
+} from "phosphor-react";
 import cx from "classnames";
 import { t, Trans } from "@lingui/macro";
 import { createExamples } from "../pages/createExamples";
@@ -16,6 +22,7 @@ import {
 import { getDefaultText } from "../lib/getDefaultText";
 import { useMemo } from "react";
 import { useDoc } from "../lib/useDoc";
+import { undo } from "../lib/undoStack";
 
 function getModeDescription(mode: Mode): string {
   const prompts = createExamples();
@@ -46,6 +53,7 @@ export function AiToolbar() {
   const isRunning = usePromptStore((state) => state.isRunning);
   const { runAi, cancelAi } = useRunAiWithStore();
   const diff = usePromptStore((state) => state.diff);
+  const showUndoButton = usePromptStore((state) => state.showUndoButton);
 
   const toggleOpen = () => setIsOpen(!isOpen);
 
@@ -79,28 +87,43 @@ export function AiToolbar() {
             })}
           />
           {!showAcceptDiffButton ? (
-            (["prompt", "convert", "edit"] as Mode[]).map((mode) => {
-              // If the mode is edit and the text is not editable, don't show the button
-              if (mode === "edit" && !isTextEditable) {
-                return null;
-              }
+            <>
+              {(["prompt", "convert", "edit"] as Mode[]).map((mode) => {
+                // If the mode is edit and the text is not editable, don't show the button
+                if (mode === "edit" && !isTextEditable) {
+                  return null;
+                }
 
-              return (
+                return (
+                  <Button2
+                    key={mode}
+                    color={mode === currentMode && isOpen ? "blue" : "default"}
+                    size="xs"
+                    onClick={() => handleModeChange(mode)}
+                    className={cx("disabled:opacity-50", {
+                      "dark:hover:bg-neutral-700": mode !== currentMode,
+                      "dark:bg-blue-700 dark:text-blue-100":
+                        mode === currentMode && isOpen,
+                    })}
+                  >
+                    {getModeTitle(mode)}
+                  </Button2>
+                );
+              })}
+              {showUndoButton && !isRunning && (
                 <Button2
-                  key={mode}
-                  color={mode === currentMode && isOpen ? "blue" : "default"}
+                  color="default"
                   size="xs"
-                  onClick={() => handleModeChange(mode)}
-                  className={cx("disabled:opacity-50", {
-                    "dark:hover:bg-neutral-700": mode !== currentMode,
-                    "dark:bg-blue-700 dark:text-blue-100":
-                      mode === currentMode && isOpen,
-                  })}
+                  leftIcon={<ArrowCounterClockwise size={14} />}
+                  onClick={() => {
+                    undo();
+                    usePromptStore.setState({ showUndoButton: false });
+                  }}
                 >
-                  {getModeTitle(mode)}
+                  <Trans>Undo</Trans>
                 </Button2>
-              );
-            })
+              )}
+            </>
           ) : (
             <span className="text-sm text-blue-600 dark:text-white">
               <Trans>Keep changes?</Trans>

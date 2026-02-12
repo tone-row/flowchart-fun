@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Pricing2.tsx:365
+#: src/pages/Pricing2.tsx:378
 msgid "$24/year (save 50%) · Cancel anytime"
 msgstr "每年$24（节省50%）· 随时取消"
 
-#: src/pages/Pricing2.tsx:332
+#: src/pages/Pricing2.tsx:345
 msgid "$4/mo"
 msgstr "每月$4"
 
@@ -57,7 +57,7 @@ msgstr "AI生成和编辑"
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI驱动的流程图创建"
 
-#: src/pages/Pricing2.tsx:289
+#: src/pages/Pricing2.tsx:303
 msgid "AI-generated from plain text in under 5 seconds."
 msgstr "从普通文本中在5秒内生成AI"
 
@@ -390,7 +390,7 @@ msgstr "继续使用沙盒（每天重置，工作不会被保存）"
 msgid "Controls the flow direction of hierarchical layouts"
 msgstr "控制层次布局的流向"
 
-#: src/components/AiToolbar.tsx:37
+#: src/components/AiToolbar.tsx:44
 #: src/components/ConvertOnPasteOverlay.tsx:90
 msgid "Convert"
 msgstr "转换"
@@ -546,7 +546,7 @@ msgstr "删除 {0}"
 msgid "Describe it and it appears"
 msgstr "描述它，它就会出现"
 
-#: src/pages/Pricing2.tsx:153
+#: src/pages/Pricing2.tsx:169
 msgid "Describe your idea. Get a diagram worth presenting."
 msgstr "描述您的想法。得到一个值得展示的图表。"
 
@@ -683,7 +683,7 @@ msgstr "边在源节点行"
 msgid "Edges in Target Node Row"
 msgstr "边在目标节点行"
 
-#: src/components/AiToolbar.tsx:39
+#: src/components/AiToolbar.tsx:46
 msgid "Edit"
 msgstr "编辑"
 
@@ -871,7 +871,7 @@ msgstr "自动从文本生成流程图"
 msgid "Get Pro Access Now"
 msgstr "立即获取专业访问权限"
 
-#: src/lib/usePromptStore.ts:101
+#: src/lib/usePromptStore.ts:121
 msgid "Get Unlimited AI Requests"
 msgstr "获得无限的AI请求"
 
@@ -1040,7 +1040,7 @@ msgstr "加入成千上万的快乐用户，他们都爱流程图乐趣"
 msgid "Keep Things Private"
 msgstr "保持事物私密"
 
-#: src/components/AiToolbar.tsx:106
+#: src/components/AiToolbar.tsx:129
 msgid "Keep changes?"
 msgstr "保留更改吗？"
 
@@ -1181,7 +1181,7 @@ msgstr "登录升级您的账户"
 msgid "Make a One-Time Donation"
 msgstr "进行一次性捐赠"
 
-#: src/pages/Pricing2.tsx:335
+#: src/pages/Pricing2.tsx:348
 msgid "Make it yours"
 msgstr "让它成为你的"
 
@@ -1351,7 +1351,7 @@ msgstr "一对一支持"
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
 
-#: src/lib/usePromptStore.ts:98
+#: src/lib/usePromptStore.ts:118
 msgid "Operation canceled"
 msgstr "操作已取消"
 
@@ -1388,7 +1388,7 @@ msgstr "过期"
 msgid "Paste a document to convert it"
 msgstr "粘贴一个文档来转换它"
 
-#: src/components/AiToolbar.tsx:26
+#: src/components/AiToolbar.tsx:33
 msgid "Paste your document or outline here to convert it into an organized flowchart."
 msgstr "将您的文档或大纲粘贴到此处，将其转换为有组织的流程图。"
 
@@ -1426,7 +1426,7 @@ msgstr "优先支持"
 msgid "Privacy Policy"
 msgstr "隱私政策"
 
-#: src/pages/Pricing2.tsx:382
+#: src/pages/Pricing2.tsx:395
 msgid "Pro starts at $2/mo billed yearly. Cancel anytime."
 msgstr "专业版每月2美元，年付。随时取消。"
 
@@ -1442,7 +1442,7 @@ msgstr "处理数据"
 msgid "Processing..."
 msgstr "处理中..."
 
-#: src/components/AiToolbar.tsx:35
+#: src/components/AiToolbar.tsx:42
 msgid "Prompt"
 msgstr "提示"
 
@@ -1477,7 +1477,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "光栅导出（PNG，JPG）"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:109
+#: src/lib/usePromptStore.ts:129
 msgid "Rate limit exceeded. Please try again later."
 msgstr "速率限制超出。 请稍后再试。"
 
@@ -1635,7 +1635,7 @@ msgstr "安全付款"
 msgid "See more reviews on Product Hunt"
 msgstr "在Product Hunt上查看更多评论"
 
-#: src/pages/Pricing2.tsx:304
+#: src/pages/Pricing2.tsx:318
 msgid "See what's possible"
 msgstr "查看可行性"
 
@@ -1738,7 +1738,7 @@ msgstr "重新開始"
 msgid "Start faster with use-case specific templates"
 msgstr "使用特定用例模板加快启动"
 
-#: src/pages/Pricing2.tsx:325
+#: src/pages/Pricing2.tsx:339
 msgid "Start for free"
 msgstr "免费开始"
 
@@ -1770,7 +1770,7 @@ msgstr "樣式類別"
 msgid "Style with classes"
 msgstr "用类别进行样式设置"
 
-#: src/components/AiToolbar.tsx:179
+#: src/components/AiToolbar.tsx:201
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
@@ -1856,7 +1856,7 @@ msgstr "在一行中的文本将创建一个节点，文本作为标签"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/pages/Pricing2.tsx:230
+#: src/pages/Pricing2.tsx:245
 msgid "The beauty and magic reside in the minimalism."
 msgstr "美和魔力都在于简约。"
 
@@ -1884,7 +1884,7 @@ msgstr "用于分隔多个源节点的分隔符"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "用于分隔多个目标节点的分隔符"
 
-#: src/pages/Pricing2.tsx:158
+#: src/pages/Pricing2.tsx:172
 msgid "The fastest way to turn what's in your head into something everyone else can understand."
 msgstr "将你脑海中的想法快速转化成其他人都能理解的东西。"
 
@@ -2000,7 +2000,7 @@ msgstr "尝试调整您的搜索或筛选条件以找到您想要的内容。"
 msgid "Try again"
 msgstr "重试"
 
-#: src/pages/Pricing2.tsx:185
+#: src/pages/Pricing2.tsx:199
 msgid "Try it free"
 msgstr "免费试用"
 
@@ -2012,7 +2012,7 @@ msgstr "两个边有相同的ID"
 msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
-#: src/pages/Pricing2.tsx:272
+#: src/pages/Pricing2.tsx:286
 msgid "Type it. See it."
 msgstr "输入，即可查看"
 
@@ -2023,6 +2023,10 @@ msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享�
 #: src/components/FAQ.tsx:21
 msgid "Under 60 seconds. Type a few lines of text or describe what you need to the AI, and your diagram appears instantly. Export or share it with one click."
 msgstr "不到60秒。输入几行文字或向AI描述您需要的内容，即可立即显示您的图表。一键导出或分享。"
+
+#: src/components/AiToolbar.tsx:123
+msgid "Undo"
+msgstr ""
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -2061,7 +2065,7 @@ msgstr "无限保存的图表"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "解锁AI功能，通过专业账户永远不会丢失您的工作。"
 
-#: src/lib/usePromptStore.ts:105
+#: src/lib/usePromptStore.ts:125
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "解锁无限制使用AI流程图"
 
@@ -2091,7 +2095,7 @@ msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高�
 
 #: src/components/FeatureBreakdown.tsx:305
 #: src/components/Header.tsx:422
-#: src/pages/Pricing2.tsx:360
+#: src/pages/Pricing2.tsx:373
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
@@ -2144,11 +2148,11 @@ msgstr "使用此文件制作组织图、层次结构和其他组织结构。"
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "使用此文件进行顺序、流程和工作流程。"
 
-#: src/components/AiToolbar.tsx:28
+#: src/components/AiToolbar.tsx:35
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "使用此模式来修改和增强您当前的图表。"
 
-#: src/pages/Pricing2.tsx:195
+#: src/pages/Pricing2.tsx:209
 msgid "Used at"
 msgstr "使用于"
 
@@ -2281,7 +2285,7 @@ msgstr "你做得很棒！"
 msgid "You're on the free plan."
 msgstr "您当前使用的是免费计划。"
 
-#: src/lib/usePromptStore.ts:102
+#: src/lib/usePromptStore.ts:122
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "您已经使用完了所有的免费AI转换。升级到专业版，享受无限的AI使用、定制主题、私人共享等功能。轻松地创建出令人惊叹的流程图吧！"
 
@@ -2298,7 +2302,7 @@ msgstr "你的沙盒是一个可以自由尝试我们的流程图工具的空间
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
 msgstr "您的图表是只读的，因为您的帐户已不再活跃。请访问您的<0>帐户</0>页面了解更多信息。"
 
-#: src/pages/Pricing2.tsx:379
+#: src/pages/Pricing2.tsx:392
 msgid "Your next diagram should be your best one."
 msgstr "您的下一张图表应该是最好的一张。"
 
@@ -2329,10 +2333,10 @@ msgid "or"
 msgstr "或"
 
 #: src/components/Checkout.tsx:171
-#: src/pages/Pricing2.tsx:257
-#: src/pages/Pricing2.tsx:260
-#: src/pages/Pricing2.tsx:317
-#: src/pages/Pricing2.tsx:348
+#: src/pages/Pricing2.tsx:271
+#: src/pages/Pricing2.tsx:274
+#: src/pages/Pricing2.tsx:331
+#: src/pages/Pricing2.tsx:361
 msgid "{0}"
 msgstr "{0}"
 

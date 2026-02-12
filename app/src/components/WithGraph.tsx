@@ -17,7 +17,8 @@ import styles from "./WithGraph.module.css";
 import TabPane from "./TabPane";
 import { useMobileStore } from "../lib/useMobileStore";
 import { useTabsStore } from "../lib/useTabsStore";
-import { redo, undo } from "../lib/undoStack";
+import { redo, undo, canUndo, canRedo } from "../lib/undoStack";
+import { useEditorStore } from "../lib/useEditorStore";
 
 type MainProps = {
   children?: ReactNode;
@@ -35,15 +36,28 @@ const WithGraph = memo(({ children }: MainProps) => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.metaKey || event.ctrlKey) {
-        if (event.key === "z") {
-          if (event.shiftKey) {
+      if (!(event.metaKey || event.ctrlKey)) return;
+
+      const editor = useEditorStore.getState().editor;
+      const editorHasFocus = editor?.hasTextFocus();
+
+      if (event.key === "z") {
+        if (editorHasFocus) return; // Let Monaco handle undo/redo natively
+
+        if (event.shiftKey) {
+          if (canRedo()) {
             redo();
-          } else {
-            undo();
+            event.preventDefault();
           }
-          event.preventDefault();
-        } else if (event.key === "y") {
+        } else {
+          if (canUndo()) {
+            undo();
+            event.preventDefault();
+          }
+        }
+      } else if (event.key === "y") {
+        if (editorHasFocus) return;
+        if (canRedo()) {
           redo();
           event.preventDefault();
         }

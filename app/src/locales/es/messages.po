@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Pricing2.tsx:365
+#: src/pages/Pricing2.tsx:378
 msgid "$24/year (save 50%) · Cancel anytime"
 msgstr "$24/año (ahorra 50%) · Cancelar en cualquier momento"
 
-#: src/pages/Pricing2.tsx:332
+#: src/pages/Pricing2.tsx:345
 msgid "$4/mo"
 msgstr "$4/mes"
 
@@ -57,7 +57,7 @@ msgstr "Generación y edición de IA"
 msgid "AI-Powered Flowchart Creation"
 msgstr "Creación de diagramas de flujo con inteligencia artificial"
 
-#: src/pages/Pricing2.tsx:289
+#: src/pages/Pricing2.tsx:303
 msgid "AI-generated from plain text in under 5 seconds."
 msgstr "Generado por IA a partir de texto plano en menos de 5 segundos."
 
@@ -390,7 +390,7 @@ msgstr "Continuar en el Área de Pruebas (Se reinicia diariamente, el trabajo no
 msgid "Controls the flow direction of hierarchical layouts"
 msgstr "Controla la dirección del flujo de los diseños jerárquicos"
 
-#: src/components/AiToolbar.tsx:37
+#: src/components/AiToolbar.tsx:44
 #: src/components/ConvertOnPasteOverlay.tsx:90
 msgid "Convert"
 msgstr "Convertir"
@@ -546,7 +546,7 @@ msgstr "Borrar {0}"
 msgid "Describe it and it appears"
 msgstr "Descríbelo y aparecerá"
 
-#: src/pages/Pricing2.tsx:153
+#: src/pages/Pricing2.tsx:169
 msgid "Describe your idea. Get a diagram worth presenting."
 msgstr "Describe tu idea. Obtén un diagrama que valga la pena presentar."
 
@@ -683,7 +683,7 @@ msgstr "Bordes en la fila del nodo de origen"
 msgid "Edges in Target Node Row"
 msgstr "Bordes en la fila del nodo de destino"
 
-#: src/components/AiToolbar.tsx:39
+#: src/components/AiToolbar.tsx:46
 msgid "Edit"
 msgstr "Editar"
 
@@ -871,7 +871,7 @@ msgstr "Genera diagramas de flujo automáticamente a partir de texto"
 msgid "Get Pro Access Now"
 msgstr "Obtén acceso Pro ahora"
 
-#: src/lib/usePromptStore.ts:101
+#: src/lib/usePromptStore.ts:121
 msgid "Get Unlimited AI Requests"
 msgstr "Obtén solicitudes de IA ilimitadas"
 
@@ -1040,7 +1040,7 @@ msgstr "Únete a miles de usuarios felices que aman Flowchart Fun"
 msgid "Keep Things Private"
 msgstr "Mantener las cosas privadas"
 
-#: src/components/AiToolbar.tsx:106
+#: src/components/AiToolbar.tsx:129
 msgid "Keep changes?"
 msgstr "¿Mantener cambios?"
 
@@ -1181,7 +1181,7 @@ msgstr "Iniciar sesión para actualizar tu cuenta"
 msgid "Make a One-Time Donation"
 msgstr "Realizar una donación única"
 
-#: src/pages/Pricing2.tsx:335
+#: src/pages/Pricing2.tsx:348
 msgid "Make it yours"
 msgstr "Hazlo tuyo"
 
@@ -1351,7 +1351,7 @@ msgstr "Soporte individual"
 msgid "Open Customer Portal"
 msgstr "Abrir portal de clientes"
 
-#: src/lib/usePromptStore.ts:98
+#: src/lib/usePromptStore.ts:118
 msgid "Operation canceled"
 msgstr "Operación cancelada"
 
@@ -1388,7 +1388,7 @@ msgstr "Vencido"
 msgid "Paste a document to convert it"
 msgstr "Pegue un documento para convertirlo"
 
-#: src/components/AiToolbar.tsx:26
+#: src/components/AiToolbar.tsx:33
 msgid "Paste your document or outline here to convert it into an organized flowchart."
 msgstr "Pegue su documento o esquema aquí para convertirlo en un diagrama de flujo organizado."
 
@@ -1426,7 +1426,7 @@ msgstr "Soporte prioritario"
 msgid "Privacy Policy"
 msgstr "Política de privacidad"
 
-#: src/pages/Pricing2.tsx:382
+#: src/pages/Pricing2.tsx:395
 msgid "Pro starts at $2/mo billed yearly. Cancel anytime."
 msgstr "La versión Pro comienza en $2/mes facturado anualmente. Cancelar en cualquier momento."
 
@@ -1442,7 +1442,7 @@ msgstr "Procesamiento de datos"
 msgid "Processing..."
 msgstr "Procesando..."
 
-#: src/components/AiToolbar.tsx:35
+#: src/components/AiToolbar.tsx:42
 msgid "Prompt"
 msgstr "Indicación"
 
@@ -1477,7 +1477,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "Exportación de ráster (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:109
+#: src/lib/usePromptStore.ts:129
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Límite de tasa excedido. Por favor, inténtalo de nuevo más tarde."
 
@@ -1635,7 +1635,7 @@ msgstr "Pago seguro"
 msgid "See more reviews on Product Hunt"
 msgstr "Ver más reseñas en Product Hunt"
 
-#: src/pages/Pricing2.tsx:304
+#: src/pages/Pricing2.tsx:318
 msgid "See what's possible"
 msgstr "Ver lo que es posible"
 
@@ -1738,7 +1738,7 @@ msgstr "Empezar de nuevo"
 msgid "Start faster with use-case specific templates"
 msgstr "Comenzar más rápido con plantillas específicas para casos de uso"
 
-#: src/pages/Pricing2.tsx:325
+#: src/pages/Pricing2.tsx:339
 msgid "Start for free"
 msgstr "Comenzar gratis"
 
@@ -1770,7 +1770,7 @@ msgstr "Clases de Estilo"
 msgid "Style with classes"
 msgstr "Estilo con clases"
 
-#: src/components/AiToolbar.tsx:179
+#: src/components/AiToolbar.tsx:201
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
@@ -1856,7 +1856,7 @@ msgstr "El texto en una línea crea un nodo con el texto como etiqueta"
 msgid "Thank you for your feedback!"
 msgstr "¡Gracias por tu comentario!"
 
-#: src/pages/Pricing2.tsx:230
+#: src/pages/Pricing2.tsx:245
 msgid "The beauty and magic reside in the minimalism."
 msgstr "La belleza y la magia residen en el minimalismo."
 
@@ -1884,7 +1884,7 @@ msgstr "El delimitador utilizado para separar múltiples nodos de origen"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "El delimitador utilizado para separar múltiples nodos de destino"
 
-#: src/pages/Pricing2.tsx:158
+#: src/pages/Pricing2.tsx:172
 msgid "The fastest way to turn what's in your head into something everyone else can understand."
 msgstr "La forma más rápida de convertir lo que tienes en mente en algo que todos puedan entender."
 
@@ -2000,7 +2000,7 @@ msgstr "Prueba a ajustar tu búsqueda o filtros para encontrar lo que estás bus
 msgid "Try again"
 msgstr "Inténtalo de nuevo"
 
-#: src/pages/Pricing2.tsx:185
+#: src/pages/Pricing2.tsx:199
 msgid "Try it free"
 msgstr "Pruébalo gratis"
 
@@ -2012,7 +2012,7 @@ msgstr "Dos bordes tienen el mismo ID"
 msgid "Two nodes have the same ID"
 msgstr "Dos nodos tienen el mismo ID"
 
-#: src/pages/Pricing2.tsx:272
+#: src/pages/Pricing2.tsx:286
 msgid "Type it. See it."
 msgstr "Escríbelo. Míralo."
 
@@ -2023,6 +2023,10 @@ msgstr "¡Ups, se acabaron tus solicitudes gratuitas! Actualiza a Flowchart Fun 
 #: src/components/FAQ.tsx:21
 msgid "Under 60 seconds. Type a few lines of text or describe what you need to the AI, and your diagram appears instantly. Export or share it with one click."
 msgstr "En menos de 60 segundos. Escribe unas pocas líneas de texto o describe lo que necesitas al AI, y tu diagrama aparece al instante. Exporta o compártelo con un solo clic."
+
+#: src/components/AiToolbar.tsx:123
+msgid "Undo"
+msgstr ""
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -2061,7 +2065,7 @@ msgstr "Diagramas guardados ilimitados"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "Desbloquea las funciones de IA y nunca pierdas tu trabajo con una cuenta Pro."
 
-#: src/lib/usePromptStore.ts:105
+#: src/lib/usePromptStore.ts:125
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "Desbloquea diagramas de flujo de IA ilimitados"
 
@@ -2091,7 +2095,7 @@ msgstr "Actualiza a Flowchart Fun Pro para desbloquear la exportación de SVG y 
 
 #: src/components/FeatureBreakdown.tsx:305
 #: src/components/Header.tsx:422
-#: src/pages/Pricing2.tsx:360
+#: src/pages/Pricing2.tsx:373
 msgid "Upgrade to Pro"
 msgstr "Actualizar a Pro"
 
@@ -2144,11 +2148,11 @@ msgstr "Utilice este archivo para diagramas de organización, jerarquías y otra
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Utilice este archivo para secuencias, procesos y flujos de trabajo."
 
-#: src/components/AiToolbar.tsx:28
+#: src/components/AiToolbar.tsx:35
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "Utilice este modo para modificar y mejorar su gráfico actual."
 
-#: src/pages/Pricing2.tsx:195
+#: src/pages/Pricing2.tsx:209
 msgid "Used at"
 msgstr "Utilizado en"
 
@@ -2281,7 +2285,7 @@ msgstr "¡Lo estás haciendo genial!"
 msgid "You're on the free plan."
 msgstr "Estás en el plan gratuito."
 
-#: src/lib/usePromptStore.ts:102
+#: src/lib/usePromptStore.ts:122
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "Has utilizado todas tus conversiones de IA gratuitas. Actualiza a Pro para un uso ilimitado de IA, temas personalizados, uso privado compartido y más. ¡Sigue creando increíbles diagramas de flujo sin esfuerzo!"
 
@@ -2298,7 +2302,7 @@ msgstr "Su Sandbox es un espacio para experimentar libremente con nuestras herra
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
 msgstr "Tus gráficos son de solo lectura porque tu cuenta ya no está activa. Visita la página de tu <0>cuenta</0> para obtener más información."
 
-#: src/pages/Pricing2.tsx:379
+#: src/pages/Pricing2.tsx:392
 msgid "Your next diagram should be your best one."
 msgstr "Tu próximo diagrama debería ser el mejor."
 
@@ -2329,10 +2333,10 @@ msgid "or"
 msgstr "o"
 
 #: src/components/Checkout.tsx:171
-#: src/pages/Pricing2.tsx:257
-#: src/pages/Pricing2.tsx:260
-#: src/pages/Pricing2.tsx:317
-#: src/pages/Pricing2.tsx:348
+#: src/pages/Pricing2.tsx:271
+#: src/pages/Pricing2.tsx:274
+#: src/pages/Pricing2.tsx:331
+#: src/pages/Pricing2.tsx:361
 msgid "{0}"
 msgstr "{0}"
 

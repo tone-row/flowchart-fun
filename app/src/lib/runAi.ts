@@ -4,7 +4,7 @@ import { lockZoomToGraph } from "./useGraphStore";
 import { setDiff, setLastResult } from "./usePromptStore";
 import { useDoc } from "./useDoc";
 import { FFTheme } from "./FFTheme";
-import { prepareChart } from "./prepareChart/prepareChart";
+import { preprocessStyle, getStyleStringFromMeta } from "./preprocessStyle";
 
 export const RATE_LIMIT_EXCEEDED = "RATE_LIMIT_EXCEEDED";
 
@@ -154,11 +154,10 @@ async function loadTemplate(prompt: string, sid?: string) {
   const importTemplate = await import(
     `../lib/templates/${template}-template.ts`
   );
-  const templateContent = importTemplate.content;
   const theme: FFTheme = importTemplate.theme;
   const cytoscapeStyle: string = importTemplate.cytoscapeStyle ?? "";
 
-  const { meta: _meta, details } = useDoc.getState();
+  const { meta: _meta } = useDoc.getState();
 
   const meta = {
     ..._meta,
@@ -168,8 +167,11 @@ async function loadTemplate(prompt: string, sid?: string) {
     nodePositions: undefined,
   };
 
-  prepareChart({
-    doc: `${templateContent}\n=====${JSON.stringify(meta)}=====`,
-    details,
-  });
+  // Apply theme CSS (font imports, dynamic classes)
+  preprocessStyle(getStyleStringFromMeta(meta));
+
+  // Only set meta (theme) — don't set text.
+  // The template text is a visual placeholder that gets overwritten by streaming.
+  // Setting it would create a spurious undo entry in Monaco.
+  useDoc.setState({ meta }, false, "loadTemplate");
 }

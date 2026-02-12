@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Pricing2.tsx:365
+#: src/pages/Pricing2.tsx:378
 msgid "$24/year (save 50%) · Cancel anytime"
 msgstr "$24/वर्ष (50% बचाएं) · कभी भी रद्द करें"
 
-#: src/pages/Pricing2.tsx:332
+#: src/pages/Pricing2.tsx:345
 msgid "$4/mo"
 msgstr "$4/महीना"
 
@@ -57,7 +57,7 @@ msgstr "एआई उत्पादन और संपादन"
 msgid "AI-Powered Flowchart Creation"
 msgstr "एआई-पावर्ड फ्लोचार्ट निर्माण"
 
-#: src/pages/Pricing2.tsx:289
+#: src/pages/Pricing2.tsx:303
 msgid "AI-generated from plain text in under 5 seconds."
 msgstr "एआई द्वारा सादा पाठ से 5 सेकंड के अंदर उत्पन्न किया गया।"
 
@@ -390,7 +390,7 @@ msgstr "सैंडबॉक्स में जारी रखें (दै�
 msgid "Controls the flow direction of hierarchical layouts"
 msgstr "वर्गीकृत लेआउट की धारा को नियंत्रित करता है"
 
-#: src/components/AiToolbar.tsx:37
+#: src/components/AiToolbar.tsx:44
 #: src/components/ConvertOnPasteOverlay.tsx:90
 msgid "Convert"
 msgstr "परिवर्तन करें"
@@ -546,7 +546,7 @@ msgstr "हटाएँ {0}"
 msgid "Describe it and it appears"
 msgstr "इसे वर्णन करें और वह दिखाई देगा"
 
-#: src/pages/Pricing2.tsx:153
+#: src/pages/Pricing2.tsx:169
 msgid "Describe your idea. Get a diagram worth presenting."
 msgstr "अपनी विचारों का वर्णन करें। प्रस्तुत करने योग्य आरेख प्राप्त करें।"
 
@@ -683,7 +683,7 @@ msgstr "स्रोत नोड पंक्ति में किन्ह�
 msgid "Edges in Target Node Row"
 msgstr "लक्ष्य नोड पंक्ति में किन्हें"
 
-#: src/components/AiToolbar.tsx:39
+#: src/components/AiToolbar.tsx:46
 msgid "Edit"
 msgstr "संपादित करें"
 
@@ -871,7 +871,7 @@ msgstr "पाठ से स्वचालित रूप से फ्लो�
 msgid "Get Pro Access Now"
 msgstr "अब प्रो एक्सेस प्राप्त करें"
 
-#: src/lib/usePromptStore.ts:101
+#: src/lib/usePromptStore.ts:121
 msgid "Get Unlimited AI Requests"
 msgstr "असीमित एआई अनुरोध प्राप्त करें"
 
@@ -1040,7 +1040,7 @@ msgstr "हजारों खुश उपयोगकर्ताओं के
 msgid "Keep Things Private"
 msgstr "चीजों को निजी रखें"
 
-#: src/components/AiToolbar.tsx:106
+#: src/components/AiToolbar.tsx:129
 msgid "Keep changes?"
 msgstr "परिवर्तन रखें?"
 
@@ -1181,7 +1181,7 @@ msgstr "अपने खाते को अपग्रेड करने क�
 msgid "Make a One-Time Donation"
 msgstr "एक बार दान करें"
 
-#: src/pages/Pricing2.tsx:335
+#: src/pages/Pricing2.tsx:348
 msgid "Make it yours"
 msgstr "अपना बनाएं"
 
@@ -1351,7 +1351,7 @@ msgstr "एक-पर-एक समर्थन"
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
-#: src/lib/usePromptStore.ts:98
+#: src/lib/usePromptStore.ts:118
 msgid "Operation canceled"
 msgstr "ऑपरेशन रद्द किया गया है"
 
@@ -1388,7 +1388,7 @@ msgstr "पिछले दौरान"
 msgid "Paste a document to convert it"
 msgstr "एक दस्तावेज़ को पेस्ट करें और उसे रूपांतरित करें"
 
-#: src/components/AiToolbar.tsx:26
+#: src/components/AiToolbar.tsx:33
 msgid "Paste your document or outline here to convert it into an organized flowchart."
 msgstr "अपने दस्तावेज़ या रूपरेखा को यहां पेस्ट करें ताकि इसे एक व्यवस्थित फ्लोचार्ट में बदला जा सके।"
 
@@ -1426,7 +1426,7 @@ msgstr "प्राथमिकता समर्थन"
 msgid "Privacy Policy"
 msgstr "गोपनीयता नीति "
 
-#: src/pages/Pricing2.tsx:382
+#: src/pages/Pricing2.tsx:395
 msgid "Pro starts at $2/mo billed yearly. Cancel anytime."
 msgstr "प्रो शुरू होता है $2/माह वार्षिक बिल किया जाता है। कभी भी रद्द करें।"
 
@@ -1442,7 +1442,7 @@ msgstr "डेटा प्रसंस्करण"
 msgid "Processing..."
 msgstr "प्रसंस्करण हो रहा है..."
 
-#: src/components/AiToolbar.tsx:35
+#: src/components/AiToolbar.tsx:42
 msgid "Prompt"
 msgstr "प्रश्न"
 
@@ -1477,7 +1477,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "रास्टर निर्यात (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:109
+#: src/lib/usePromptStore.ts:129
 msgid "Rate limit exceeded. Please try again later."
 msgstr "रेट लिमिट पार हो गई है। कृपया बाद में पुनः प्रयास करें।"
 
@@ -1635,7 +1635,7 @@ msgstr "सुरक्षित भुगतान"
 msgid "See more reviews on Product Hunt"
 msgstr "Product Hunt पर अधिक समीक्षा देखें"
 
-#: src/pages/Pricing2.tsx:304
+#: src/pages/Pricing2.tsx:318
 msgid "See what's possible"
 msgstr "क्या संभव है देखें"
 
@@ -1738,7 +1738,7 @@ msgstr "शुरू करें"
 msgid "Start faster with use-case specific templates"
 msgstr "उपयोग मामले विशिष्ट टेम्पलेट के साथ तेजी से शुरू करें"
 
-#: src/pages/Pricing2.tsx:325
+#: src/pages/Pricing2.tsx:339
 msgid "Start for free"
 msgstr "मुफ़्त शुरू करें"
 
@@ -1770,7 +1770,7 @@ msgstr "शैली क्लासेज"
 msgid "Style with classes"
 msgstr "क्लासेस के साथ स्टाइल"
 
-#: src/components/AiToolbar.tsx:179
+#: src/components/AiToolbar.tsx:201
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
@@ -1856,7 +1856,7 @@ msgstr "एक पंक्ति पर पाठ एक नोड बनात
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
-#: src/pages/Pricing2.tsx:230
+#: src/pages/Pricing2.tsx:245
 msgid "The beauty and magic reside in the minimalism."
 msgstr "सुंदरता और जादू संक्षेपता में हैं।"
 
@@ -1884,7 +1884,7 @@ msgstr "कई स्रोत नोड्स को अलग करने क
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
-#: src/pages/Pricing2.tsx:158
+#: src/pages/Pricing2.tsx:172
 msgid "The fastest way to turn what's in your head into something everyone else can understand."
 msgstr "अपने दिमाग में क्या है उसे कुछ ऐसा बनाएं कि सभी उसे समझ सकें।"
 
@@ -2000,7 +2000,7 @@ msgstr "अपनी खोज या फ़िल्टरों को सम�
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
-#: src/pages/Pricing2.tsx:185
+#: src/pages/Pricing2.tsx:199
 msgid "Try it free"
 msgstr "इसे मुफ्त में आज़माएं"
 
@@ -2012,7 +2012,7 @@ msgstr "दो किनारे उसी आईडी के हैं"
 msgid "Two nodes have the same ID"
 msgstr "दो नोड उसी आईडी के हैं"
 
-#: src/pages/Pricing2.tsx:272
+#: src/pages/Pricing2.tsx:286
 msgid "Type it. See it."
 msgstr "इसे टाइप करें। देखें।"
 
@@ -2023,6 +2023,10 @@ msgstr "उह ओह, आपके पास मुफ्त अनुरोध
 #: src/components/FAQ.tsx:21
 msgid "Under 60 seconds. Type a few lines of text or describe what you need to the AI, and your diagram appears instantly. Export or share it with one click."
 msgstr "60 सेकंड से कम समय में। कुछ पंक्तियां टाइप करें या AI को बताएं, और आपका आरेख तुरंत दिखाई देगा। एक क्लिक से निर्यात या साझा करें।"
+
+#: src/components/AiToolbar.tsx:123
+msgid "Undo"
+msgstr ""
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -2061,7 +2065,7 @@ msgstr "असीमित सहेजे गए आरेख"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "प्रो खाते से AI फीचर्स खोलें और कभी भी अपना काम न खोएं।"
 
-#: src/lib/usePromptStore.ts:105
+#: src/lib/usePromptStore.ts:125
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "असीमित AI फ्लोचार्ट्स को अनलॉक करें"
 
@@ -2091,7 +2095,7 @@ msgstr "अपने डायग्राम के लिए एसवीज�
 
 #: src/components/FeatureBreakdown.tsx:305
 #: src/components/Header.tsx:422
-#: src/pages/Pricing2.tsx:360
+#: src/pages/Pricing2.tsx:373
 msgid "Upgrade to Pro"
 msgstr "प्रो को अपग्रेड करें"
 
@@ -2144,11 +2148,11 @@ msgstr "संगठनात्मक चार्ट, पदानुक्र
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "अनुक्रमों, प्रक्रियाओं और कार्यप्रवाहों के लिए इस फ़ाइल का उपयोग करें।"
 
-#: src/components/AiToolbar.tsx:28
+#: src/components/AiToolbar.tsx:35
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "अपने मौजूदा चार्ट को संशोधित और सुधारित करने के लिए इस मोड का उपयोग करें।"
 
-#: src/pages/Pricing2.tsx:195
+#: src/pages/Pricing2.tsx:209
 msgid "Used at"
 msgstr "इस्तेमाल किया गया"
 
@@ -2281,7 +2285,7 @@ msgstr "आप बहुत अच्छा कर रहे हैं!"
 msgid "You're on the free plan."
 msgstr "आप मुफ़्त योजना पर हैं।"
 
-#: src/lib/usePromptStore.ts:102
+#: src/lib/usePromptStore.ts:122
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "आपने अपने सभी नि: शुल्क एआई रूपांतरण का उपयोग किया है। असीमित एआई उपयोग, कस्टम थीम, निजी साझाकरण और अधिक के लिए प्रो पर अपग्रेड करें। अब आसानी से शानदार फ्लोचार्ट बनाते रहें!"
 
@@ -2298,7 +2302,7 @@ msgstr "आपका सैंडबॉक्स हमारी फ्लोच
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
 msgstr "आपके चार्ट रीड-ओनली हैं क्योंकि आपका खाता अब सक्रिय नहीं है। अपने <0>खाता</0> पेज पर जाकर अधिक जानकारी प्राप्त करें।"
 
-#: src/pages/Pricing2.tsx:379
+#: src/pages/Pricing2.tsx:392
 msgid "Your next diagram should be your best one."
 msgstr "आपकी अगली डायग्राम आपकी सबसे अच्छी होनी चाहिए।"
 
@@ -2329,10 +2333,10 @@ msgid "or"
 msgstr "या"
 
 #: src/components/Checkout.tsx:171
-#: src/pages/Pricing2.tsx:257
-#: src/pages/Pricing2.tsx:260
-#: src/pages/Pricing2.tsx:317
-#: src/pages/Pricing2.tsx:348
+#: src/pages/Pricing2.tsx:271
+#: src/pages/Pricing2.tsx:274
+#: src/pages/Pricing2.tsx:331
+#: src/pages/Pricing2.tsx:361
 msgid "{0}"
 msgstr "{0}"
 
