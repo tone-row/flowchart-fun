@@ -4,12 +4,27 @@ import { useCallback, useContext, useState } from "react";
 import { useHasProAccess } from "./hooks";
 import { showPaywall } from "./usePaywallModalStore";
 import { t } from "@lingui/macro";
-import { useEditorStore, writeToEditorSafe } from "./useEditorStore";
+import {
+  useEditorStore,
+  writeToEditorSafe,
+  setEditorValueAndClearUndo,
+} from "./useEditorStore";
 import { AppContext } from "../components/AppContextProvider";
 import { unfreezeDoc } from "./useIsFrozen";
 import { useDoc } from "./useDoc";
 import { repairText } from "./repairText";
 import { addToUndoStack } from "./undoStack";
+
+let _hasUserEditedSinceAi = false;
+export function markUserEditedSinceAi() {
+  _hasUserEditedSinceAi = true;
+}
+export function hasUserEditedSinceAi(): boolean {
+  return _hasUserEditedSinceAi;
+}
+export function resetHasUserEditedSinceAi() {
+  _hasUserEditedSinceAi = false;
+}
 
 export type Mode = "prompt" | "convert" | "edit";
 type PromptStore = {
@@ -87,13 +102,17 @@ export function acceptDiff() {
   addToUndoStack({
     undo: () => {
       useDoc.setState({ text: snapshotText, meta: metaCopy });
-      writeToEditorSafe(snapshotText);
+      setEditorValueAndClearUndo(snapshotText);
+      resetHasUserEditedSinceAi();
     },
     redo: () => {
       useDoc.setState({ text: diff });
-      writeToEditorSafe(diff);
+      setEditorValueAndClearUndo(diff);
+      resetHasUserEditedSinceAi();
     },
   });
+  setEditorValueAndClearUndo(diff);
+  resetHasUserEditedSinceAi();
   usePromptStore.setState({ showUndoButton: true });
 }
 
@@ -185,13 +204,17 @@ export function useRunAiWithStore() {
           addToUndoStack({
             undo: () => {
               useDoc.setState({ text: snapshotText, meta: metaCopy });
-              writeToEditorSafe(snapshotText);
+              setEditorValueAndClearUndo(snapshotText);
+              resetHasUserEditedSinceAi();
             },
             redo: () => {
               useDoc.setState({ text: afterText, meta: afterMeta });
-              writeToEditorSafe(afterText);
+              setEditorValueAndClearUndo(afterText);
+              resetHasUserEditedSinceAi();
             },
           });
+          setEditorValueAndClearUndo(afterText);
+          resetHasUserEditedSinceAi();
           usePromptStore.setState({ showUndoButton: true });
         }
       });

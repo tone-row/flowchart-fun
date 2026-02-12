@@ -25,9 +25,10 @@ import { useSandboxWarning } from "../lib/useSandboxWarning";
 import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
-import { useEditorStore } from "../lib/useEditorStore";
+import { useEditorStore, isInternalWrite } from "../lib/useEditorStore";
 import { getDefaultText } from "../lib/getDefaultText";
 import { AiToolbar } from "../components/AiToolbar";
+import { markUserEditedSinceAi, usePromptStore } from "../lib/usePromptStore";
 
 const isE2E =
   new URLSearchParams(window.location.search).get("isE2E") === "true";
@@ -101,21 +102,22 @@ const Sandbox = memo(function Edit() {
 
   useEffect(() => useDoc.subscribe(storeDoc), [storeDoc]);
 
-  const onChange = useCallback<OnChange>(
-    (value) =>
-      useDoc.setState(
-        (state) => ({
-          text: value ?? "",
-          details: {
-            ...state.details,
-            touched: true,
-          },
-        }),
-        false,
-        "Edit/text"
-      ),
-    []
-  );
+  const onChange = useCallback<OnChange>((value) => {
+    useDoc.setState(
+      (state) => ({
+        text: value ?? "",
+        details: {
+          ...state.details,
+          touched: true,
+        },
+      }),
+      false,
+      "Edit/text"
+    );
+    if (!isInternalWrite() && !usePromptStore.getState().isRunning) {
+      markUserEditedSinceAi();
+    }
+  }, []);
 
   const url = useLocation().pathname;
   useTrackLastChart(url);
