@@ -180,6 +180,161 @@ Pro access is determined by Stripe subscription status (`active` or `trialing`) 
 
 The sandbox warning modal (`SandboxWarning.tsx`) appears after 3 minutes of editing to encourage upgrade.
 
+## Examples, Themes & Layouts
+
+### Templates Overview
+
+13 templates defined in `shared/src/templates.ts` (single source of truth, `as const` array). Each template is a file at `app/src/lib/templates/{name}-template.ts` exporting three things:
+
+- `content: string` — starter DSL text for the editor
+- `theme: FFTheme` — layout + visual config object (26 properties)
+- `cytoscapeStyle: string` — Cytoscape CSS with variables, color/shape class definitions, and advanced selectors
+
+Template names: code-flow, default, process-flow, flowchart, org-chart, network-diagram-dark, decision-flow, pert-light, knowledge-graph, network-diagram-icons, mindmap, playful-mindmap, mindmap-dark.
+
+### FFTheme Schema
+
+- Type definition at `app/src/lib/FFTheme.ts`
+- **If you change FFTheme, run `pnpm -F app theme:schema:generate`** to regenerate `FFTheme.schema.json`
+- 26 properties in 4 groups:
+  - **Global:** fontFamily, background, lineHeight
+  - **Layout:** layoutName (10 options), direction (RIGHT/LEFT/DOWN/UP), spacingFactor
+  - **Node:** shape, textMaxWidth, padding, borderWidth, borderColor, nodeBackground, nodeForeground, textMarginY, curveStyle, useFixedHeight, fixedHeight
+  - **Edge:** edgeWidth, edgeColor, sourceArrowShape, targetArrowShape, sourceDistanceFromNode, targetDistanceFromNode, arrowScale, edgeTextSize, rotateEdgeLabel
+- Edited via ThemeTab UI (`app/src/components/Tabs/ThemeTab.tsx`) using the formulaic library
+- Stored in document metadata as `meta.themeEditor`
+- Conversion: `toTheme(themeEditor)` in `app/src/lib/toTheme.ts` → returns `{ layout, style, postStyle }`
+
+### Available Layouts
+
+10 layout algorithms (from `LayoutName` type in `FFTheme.ts`):
+
+| Layout | Engine | Best For |
+|--------|--------|----------|
+| dagre | dagre | Hierarchical flowcharts |
+| klay | klayjs | Hierarchical (alternative) |
+| layered | ELK | Hierarchical with balanced alignment |
+| mrtree | ELK | Tree structures |
+| stress | ELK | Force-directed, interactive |
+| radial | ELK | Radial/spoke layouts |
+| cose | fcose | Force-directed with animation |
+| breadthfirst | cytoscape | Breadth-first tree |
+| concentric | cytoscape | Concentric circles |
+| circle | cytoscape | Simple circle |
+
+Direction property maps to layout-specific direction configs (dagre: rankDir TB/LR/RL/BT; klay: klay.direction; ELK: elk.direction). Reference: https://js.cytoscape.org/ for Cytoscape layout/CSS docs.
+
+### Cytoscape CSS (Not Browser CSS)
+
+All CSS in `cytoscapeStyle` is **Cytoscape CSS** — different property names, selectors, and values from browser CSS. Reference: https://js.cytoscape.org/#style
+
+Key features:
+- **Variables:** `$varname: value;` — preprocessed by `app/src/lib/preprocessStyle.ts`, substituted throughout
+- **Font imports:** `@import url(...)` — extracted and loaded via FontFace API
+- **Dynamic class detection:** classes matching `type_name` pattern (e.g., `color_blue`, `shape_diamond`) auto-detected and made available in the right-click context menu on nodes/edges (`GraphContextMenu.tsx`)
+- **Selectors:** `:childless` (leaf nodes), `:parent` (group nodes), `edge`, `[in_degree < 1]` (data attributes)
+- **Three-stage pipeline:** themeStyle (generated from FFTheme) → customCss (user's cytoscapeStyle) → postStyle (utility classes). All concatenated unless `customCssOnly: true` in metadata.
+
+Example from flowchart-template.ts cytoscapeStyle:
+```css
+$blue: #e3f2fd;
+:childless.color_blue {
+  background-color: $blue;
+  color: $color;
+}
+:childless[in_degree > 0][out_degree > 1] {
+  shape: diamond;
+  height: $width;
+}
+```
+
+### Built-in Utility Classes
+
+From `app/src/lib/graphUtilityClasses.ts` (generated as postStyle, always available):
+
+- **Shape classes** (`.shape_*`): All Cytoscape shapes (rectangle, roundrectangle, ellipse, triangle, diamond, star, hexagon, etc.) + "smart shapes" (circle, square, roundsquare) that enforce 1:1 aspect ratio
+- **Border classes** (`.border_*`): none, solid, dashed, dotted, double — works on both nodes and edges
+- **Color classes** (`.color_*`): **Defined per-template** in cytoscapeStyle, NOT global. Common set across most templates: red, orange, yellow, green, blue, pink, grey, white, black. Each template defines its own color values.
+- **Text size classes** (from `getSize.ts`): text-sm (0.75x), text-base (1x), text-lg (1.5x), text-xl (2x)
+
+Applied in the DSL with dot notation: `Node Name .color_blue .shape_diamond`
+
+### How to Add a New Template
+
+1. Create `app/src/lib/templates/{name}-template.ts` exporting `content`, `theme` (FFTheme), and `cytoscapeStyle`
+2. Add the template name string to the array in `shared/src/templates.ts`
+3. Rebuild shared: `pnpm -F shared build`
+4. Generate screenshots (requires dev server running on port 3000 + ImageMagick installed):
+   ```bash
+   # Terminal 1:
+   pnpm start
+   # Terminal 2:
+   pnpm -F app screenshot-templates {name}
+   ```
+5. Verify: `app/public/template-screenshots/thumb_{name}.png` (275x275) and `{name}.png` (full) exist
+6. The template will automatically appear in LoadTemplateDialog, New chart page, and AI template chooser
+
+### How to Edit an Existing Template
+
+1. Modify the template file in `app/src/lib/templates/`
+2. If visual changes were made, regenerate its screenshot: `pnpm -F app screenshot-templates {name}`
+3. If FFTheme type was changed: `pnpm -F app theme:schema:generate`
+
+### How to Remove a Template
+
+1. Delete the template file from `app/src/lib/templates/`
+2. Remove the name from `shared/src/templates.ts`
+3. Rebuild shared: `pnpm -F shared build`
+4. Delete the screenshot files from `app/public/template-screenshots/` ({name}.png and thumb_{name}.png)
+
+### Screenshot System
+
+- **Script:** `app/scripts/screenshot-templates.mjs`
+- **Command:** `pnpm -F app screenshot-templates [optional-filter]`
+- **Prerequisites:** Dev server on port 3000 (`pnpm start`), ImageMagick installed (`convert` command)
+- **Process:**
+  1. Playwright launches Chromium (1000x1000 viewport)
+  2. Navigates to localhost:3000
+  3. Calls `window.__load_template__(name, true)` to load each template
+  4. Waits 3s for render, gets fullscreen link via `window.__get_screenshot_link__()`
+  5. Navigates to fullscreen URL, screenshots the `[data-flowchart-fun-canvas="true"]` element
+  6. ImageMagick resizes to 275x275 centered thumbnails
+- **Output:** `app/public/template-screenshots/{name}.png` + `thumb_{name}.png`
+- **Filter:** Pass a string to only screenshot matching templates (e.g., `pnpm -F app screenshot-templates mindmap` screenshots all mindmap variants)
+- **Window globals** set up by `app/src/lib/loadTemplate.ts` (`useEnsureLoadTemplate` hook) and `app/src/lib/useEnsureGetScreenshotLink.ts`
+
+### Templates in the AI Pipeline
+
+- When user runs AI "prompt" or "convert", `runAi()` (`app/src/lib/runAi.ts`) first calls `/api/prompt/choose-template` to auto-select the best template for the user's prompt
+- The choose-template endpoint uses a short system prompt to pick from the 13 template names (avoids "default"); the specific model is documented in the AI Integration table
+- Selected template's `theme` and `cytoscapeStyle` are applied to the document **before** the AI streams generated text — so the graph looks right as text arrives
+- Edit mode does NOT use template selection (it edits existing text in-place, preserving the current theme)
+
+### Templates in Chart Creation UI
+
+- **LoadTemplateDialog** (`app/src/components/LoadTemplateDialog.tsx`): "Examples" button in toolbar; shows grid of 13 thumbnails; user can independently toggle "Load layout and styles" and "Load default content" checkboxes
+- **New hosted chart** (`app/src/pages/New.tsx`): template selector during creation; template content+theme baked into the chart at insert time
+- **loadTemplate()** (`app/src/lib/loadTemplate.ts`): dynamically imports template module, merges theme into doc metadata, unfreezes nodePositions, unmounts/remounts graph for clean re-layout
+
+### Key File Reference
+
+| Component | File |
+|-----------|------|
+| Template names (source of truth) | `shared/src/templates.ts` |
+| Template data files | `app/src/lib/templates/{name}-template.ts` |
+| FFTheme type definition | `app/src/lib/FFTheme.ts` |
+| Theme → Cytoscape conversion | `app/src/lib/toTheme.ts` |
+| CSS preprocessing (variables, fonts, dynamic classes) | `app/src/lib/preprocessStyle.ts` |
+| Utility classes (shapes, borders) | `app/src/lib/graphUtilityClasses.ts` |
+| Node sizing + text size classes | `app/src/lib/getSize.ts` |
+| Template loading function | `app/src/lib/loadTemplate.ts` |
+| Screenshot script | `app/scripts/screenshot-templates.mjs` |
+| Screenshot assets | `app/public/template-screenshots/` |
+| ThemeTab UI | `app/src/components/Tabs/ThemeTab.tsx` |
+| LoadTemplateDialog UI | `app/src/components/LoadTemplateDialog.tsx` |
+| AI template chooser endpoint | `api/prompt/choose-template.ts` |
+| AI runner (template integration) | `app/src/lib/runAi.ts` |
+
 ## Tech Stack Details
 
 ### Frontend (app/)
