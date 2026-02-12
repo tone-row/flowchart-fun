@@ -1,4 +1,4 @@
-import { Button2, IconButton2, Textarea } from "../ui/Shared";
+import { Button2, IconButton2 } from "../ui/Shared";
 import { CaretDown, CaretUp, MagicWand, Stop } from "phosphor-react";
 import cx from "classnames";
 import { t, Trans } from "@lingui/macro";
@@ -151,22 +151,21 @@ export function AiToolbar() {
           <p className="text-xs font-medium text-neutral-400 dark:text-neutral-400 mb-1 text-wrap-balance leading-normal">
             {getModeDescription(currentMode)}
           </p>
-          <Textarea
-            value={currentText}
-            box={{
-              className:
-                "bg-white dark:bg-neutral-800 !rounded-md w-full mb-1 border border-neutral-400/50 dark:border-neutral-700 rounded-md focus:ring-neutral-500 focus:border-neutral-500",
-            }}
-            onChange={(e) => setCurrentText(e.target.value)}
-            className="resize-none text-neutral-900 dark:text-neutral-100 bg-transparent"
-            disabled={isRunning}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                runAi();
-              }
-            }}
-          />
+          <div className="w-full mb-1 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 transition-colors focus-within:border-blue-500 dark:focus-within:border-blue-400">
+            <textarea
+              value={currentText}
+              onChange={(e) => setCurrentText(e.target.value)}
+              className="w-full resize-none text-sm text-neutral-900 dark:text-neutral-100 bg-transparent p-3 focus:outline-none rounded-md"
+              disabled={isRunning}
+              rows={3}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  runAi();
+                }
+              }}
+            />
+          </div>
           <div className="flex justify-end">
             <Button2
               color="blue"
