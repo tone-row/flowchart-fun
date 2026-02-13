@@ -342,7 +342,7 @@ export default function Pricing2() {
             {/* Pro card */}
             <div className="rounded-xl border-2 border-blue-600 bg-white dark:bg-neutral-900 p-8 flex flex-col">
               <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
-                Pro — <Trans>$4/mo</Trans>
+                Pro — <Trans>$6/mo</Trans>
               </h3>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 mb-6">
                 <Trans>Make it yours</Trans>
@@ -375,7 +375,7 @@ export default function Pricing2() {
             </div>
           </div>
           <p className="text-center text-sm text-neutral-500 dark:text-neutral-400 mt-6">
-            <Trans>$24/year (save 50%) · Cancel anytime</Trans>
+            <Trans>$48/year (save 33%) · Cancel anytime</Trans>
           </p>
         </Container>
       </FadeIn>
@@ -392,7 +392,7 @@ export default function Pricing2() {
             <Trans>Your next diagram should be your best one.</Trans>
           </h2>
           <p className="text-base text-neutral-600 dark:text-neutral-400 mb-10">
-            <Trans>Pro starts at $2/mo billed yearly. Cancel anytime.</Trans>
+            <Trans>Pro starts at $4/mo billed yearly. Cancel anytime.</Trans>
           </p>
         </Container>
         <div className="checkout-wrapper py-14 relative overflow-hidden px-4 md:px-6">

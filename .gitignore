@@ -16,3 +16,4 @@ flowchart-fun.feature-reacher.json
 
 speech*.mp4
 .env*.local
+stripe-scripts/
