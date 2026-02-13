@@ -17,7 +17,9 @@ import styles from "./WithGraph.module.css";
 import TabPane from "./TabPane";
 import { useMobileStore } from "../lib/useMobileStore";
 import { useTabsStore } from "../lib/useTabsStore";
-import { redo, undo } from "../lib/undoStack";
+import { redo, undo, canUndo, canRedo } from "../lib/undoStack";
+import { useEditorStore } from "../lib/useEditorStore";
+import { hasUserEditedSinceAi, usePromptStore } from "../lib/usePromptStore";
 
 type MainProps = {
   children?: ReactNode;
@@ -35,23 +37,68 @@ const WithGraph = memo(({ children }: MainProps) => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.metaKey || event.ctrlKey) {
-        if (event.key === "z") {
-          if (event.shiftKey) {
+      if (!(event.metaKey || event.ctrlKey)) return;
+
+      // Don't intercept undo/redo in text inputs (e.g. AI toolbar textarea)
+      const active = document.activeElement;
+      if (
+        active instanceof HTMLTextAreaElement ||
+        active instanceof HTMLInputElement
+      )
+        return;
+
+      const editor = useEditorStore.getState().editor;
+      const editorHasFocus = editor?.hasTextFocus();
+
+      if (event.key === "z") {
+        if (event.shiftKey) {
+          // Redo: Cmd+Shift+Z
+          if (canRedo() && !hasUserEditedSinceAi()) {
+            event.preventDefault();
+            event.stopPropagation();
             redo();
-          } else {
-            undo();
+            usePromptStore.setState({ showUndoButton: true });
+            return;
           }
+          if (!editorHasFocus && canRedo()) {
+            redo();
+            event.preventDefault();
+            return;
+          }
+        } else {
+          // Undo: Cmd+Z
+          if (canUndo() && !hasUserEditedSinceAi()) {
+            event.preventDefault();
+            event.stopPropagation();
+            undo();
+            usePromptStore.setState({ showUndoButton: false });
+            return;
+          }
+          if (!editorHasFocus && canUndo()) {
+            undo();
+            event.preventDefault();
+            return;
+          }
+        }
+      } else if (event.key === "y") {
+        // Redo: Ctrl+Y
+        if (canRedo() && !hasUserEditedSinceAi()) {
           event.preventDefault();
-        } else if (event.key === "y") {
+          event.stopPropagation();
+          redo();
+          usePromptStore.setState({ showUndoButton: true });
+          return;
+        }
+        if (!editorHasFocus && canRedo()) {
           redo();
           event.preventDefault();
         }
       }
     };
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown, { capture: true });
+    return () =>
+      window.removeEventListener("keydown", handleKeyDown, { capture: true });
   }, []);
 
   return (

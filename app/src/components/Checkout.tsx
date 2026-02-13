@@ -136,9 +136,9 @@ export function Checkout({
             setPlan("yearly");
           }}
           planTitle={t`Yearly`}
-          description={t`Billed annually at $24`}
+          description={t`Billed annually at $48`}
           data-testid="yearly-plan-button"
-          monthlyPrice="2"
+          monthlyPrice="4"
           aria-current={plan === "yearly"}
           data-session-activity="Choose Yearly Plan"
           save
@@ -148,9 +148,9 @@ export function Checkout({
             setPlan("monthly");
           }}
           planTitle={t`Monthly`}
-          description={t`Billed monthly at $4`}
+          description={t`Billed monthly at $6`}
           data-testid="monthly-plan-button"
-          monthlyPrice="4"
+          monthlyPrice="6"
           aria-current={plan === "monthly"}
           data-session-activity="Choose Monthly Plan"
         />
@@ -175,7 +175,7 @@ export function Checkout({
         </Trans>
       </button>
 
-      <div className="mt-8 text-base text-white bg-purple-600 rounded-lg p-5 shadow-md">
+      <div className="mt-8 text-base text-white bg-blue-600 rounded-lg p-5 shadow-md">
         <div className="flex items-center mb-2">
           <LockSimple className="mr-2" size={18} />
           <span>
@@ -215,7 +215,7 @@ function PlanButton({
 }: PlanButtonProps) {
   return (
     <button
-      className="plan-button group w-full bg-white text-black rounded-3xl p-4 sm:py-5 sm:px-6 sm:h-[210px] grid content-start border-[4px] border-solid border-purple-700 relative aria-[current=true]:border-purple-700 transition-all aria-[current=false]:hover:opacity-100 opacity-80 aria-[current=true]:opacity-100"
+      className="plan-button group w-full bg-white text-black rounded-3xl p-4 sm:py-5 sm:px-6 sm:h-[210px] grid content-start border-[4px] border-solid border-blue-700 relative aria-[current=true]:border-blue-700 transition-all aria-[current=false]:hover:opacity-100 opacity-80 aria-[current=true]:opacity-100"
       {...props}
     >
       <span className="text-lg font-bold justify-self-start mb-2 sm:mb-6">
@@ -230,8 +230,8 @@ function PlanButton({
       </div>
       <span className="opacity-50 text-[15px]">{description}</span>
       {save ? (
-        <span className="absolute top-0 right-0 bg-purple-700 text-white font-bold pb-[14px] pt-[8px] pl-[17px] pr-[9px] rounded-tr-2xl rounded-bl-3xl -mr-px">
-          Save 50%
+        <span className="absolute top-0 right-0 bg-blue-700 text-white font-bold pb-[14px] pt-[8px] pl-[17px] pr-[9px] rounded-tr-2xl rounded-bl-3xl -mr-px">
+          Save 33%
         </span>
       ) : null}
     </button>

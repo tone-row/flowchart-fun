@@ -1,4 +1,4 @@
-import { Plus, Rocket } from "phosphor-react";
+import { Plus } from "phosphor-react";
 import { Button2, Input } from "../ui/Shared";
 import { templates } from "shared";
 import { Trans, t } from "@lingui/macro";
@@ -16,7 +16,6 @@ import {
   createUnlimitedContent,
   createUnlimitedTitle,
 } from "../lib/paywallCopy";
-import { Warning } from "../components/Warning";
 import { FFTheme } from "../lib/FFTheme";
 import { RequestTemplate } from "../components/RequestTemplate";
 
@@ -119,7 +118,7 @@ export default function New2() {
       <Section title={t`Choose Template`} right={<RequestTemplate />}>
         <RadioGroup.Root asChild name="template" defaultValue="default">
           <div
-            className="grid gap-x-2 gap-y-6 sm:grid-cols-2 md:grid-cols-3"
+            className="grid gap-x-4 gap-y-6 sm:grid-cols-2 md:grid-cols-3"
             aria-label="Templates"
           >
             {templates.map((template) => (
@@ -140,8 +139,8 @@ export default function New2() {
                     />
                   </div>
                   <div className="flex gap-2 items-center justify-center mt-2">
-                    <span className="w-3 h-3 rounded-full border border-foreground/60 group-data-[state=checked]:border-foreground group-data-[state=checked]:bg-foreground dark:group-data-[state=checked]:bg-white dark:group-data-[state=checked]:border-white dark:border-background/50" />
-                    <h2 className="text-xs text-foreground/60 group-data-[state=checked]:text-foreground dark:text-background/60 dark:group-data-[state=checked]:text-white font-mono tracking-wide">
+                    <span className="w-3 h-3 rounded-full border border-neutral-400 group-data-[state=checked]:border-blue-600 group-data-[state=checked]:bg-blue-600 dark:group-data-[state=checked]:bg-blue-500 dark:group-data-[state=checked]:border-blue-500 dark:border-neutral-600" />
+                    <h2 className="text-xs text-neutral-500 group-data-[state=checked]:text-blue-700 dark:text-neutral-400 dark:group-data-[state=checked]:text-blue-400 font-mono tracking-wide">
                       {template}
                     </h2>
                   </div>
@@ -151,38 +150,31 @@ export default function New2() {
           </div>
         </RadioGroup.Root>
       </Section>
-      <div className="grid justify-center justify-items-center gap-2">
-        {!hasProAccess && (
-          <div className="justify-items-center grid">
-            <Warning>
-              <Link
-                to="/pricing"
-                className="flex items-center"
-                data-to-pricing="New Page: Create Chart"
-              >
-                <Rocket size={24} className="mr-2" />
-                <p>
-                  <Trans>
-                    You can create unlimited permanent flowcharts with{" "}
-                    <span className="underline underline-offset-2">
-                      Flowchart Fun Pro
-                    </span>
-                    .
-                  </Trans>
-                </p>
-              </Link>
-            </Warning>
-          </div>
-        )}
+      <div className="grid justify-center justify-items-center gap-4">
         <Button2
           color="blue"
           leftIcon={<Plus size={16} />}
           type="submit"
           isLoading={createChartMutation.isLoading}
           data-testid="Create Chart"
+          className="hover:scale-[1.02] transition-transform"
         >
           <Trans>Create</Trans>
         </Button2>
+        {!hasProAccess && (
+          <p className="text-xs text-neutral-400 text-center">
+            <Trans>
+              Free users: charts in the sandbox expire after 7 days.
+            </Trans>{" "}
+            <Link
+              to="/pricing"
+              className="text-blue-500 hover:text-blue-600 transition-colors"
+              data-to-pricing="New Page: Create Chart"
+            >
+              <Trans>Upgrade to Pro for permanent charts.</Trans>
+            </Link>
+          </p>
+        )}
         {isAI && (
           <p className="text-neutral-700 leading-6 text-xs dark:text-neutral-300">
             <Trans>

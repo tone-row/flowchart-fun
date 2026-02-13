@@ -18,7 +18,7 @@ import { TextEditor } from "../components/TextEditor";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { getHostedChart, updateChartText } from "../lib/queries";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
-import { useEditorStore } from "../lib/useEditorStore";
+import { useEditorStore, isInternalWrite } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
 import sandboxStyles from "./Sandbox.module.css";
 import styles from "./EditHosted.module.css";
@@ -27,6 +27,7 @@ import { useHasProAccess } from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { AiToolbar } from "../components/AiToolbar";
+import { markUserEditedSinceAi, usePromptStore } from "../lib/usePromptStore";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
@@ -60,10 +61,12 @@ export default function EditHosted() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onChange = useCallback<OnChange>(
-    (value) => useDoc.setState({ text: value ?? "" }, false, "EditHosted/text"),
-    []
-  );
+  const onChange = useCallback<OnChange>((value) => {
+    useDoc.setState({ text: value ?? "" }, false, "EditHosted/text");
+    if (!isInternalWrite() && !usePromptStore.getState().isRunning) {
+      markUserEditedSinceAi();
+    }
+  }, []);
 
   const url = useLocation().pathname;
   useTrackLastChart(url);

@@ -236,10 +236,13 @@ export default function MyCharts() {
         </PageTitle>
         <a
           href="/"
-          className="flex items-center gap-2 font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors mt-1 md:mt-0"
+          className="group flex items-center gap-2 font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors mt-1 md:mt-0"
         >
           <Trans>Go to your Sandbox</Trans>
-          <ArrowRight size={16} />
+          <ArrowRight
+            size={16}
+            className="transition-transform group-hover:translate-x-1"
+          />
         </a>
       </div>
 

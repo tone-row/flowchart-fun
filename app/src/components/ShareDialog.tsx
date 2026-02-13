@@ -493,7 +493,7 @@ function HostedOptions() {
           }}
         />
         {makePublic.isLoading && (
-          <Spinner r={6} s={2} c="var(--palette-purple-0)" />
+          <Spinner r={6} s={2} c="var(--color-highlightColor)" />
         )}
       </Box>
       {isPublic && (

@@ -72,7 +72,7 @@ export function SandboxWarning() {
           </div>
           <P>
             <Trans>
-              All this for just $4/month - less than your daily coffee ☕
+              All this for just $6/month - less than your daily coffee ☕
             </Trans>
           </P>
           <P className="text-sm text-neutral-600 dark:text-neutral-400">
@@ -81,7 +81,7 @@ export function SandboxWarning() {
             </Trans>
           </P>
           <Button2
-            color="purple"
+            color="blue"
             size="sm"
             className="mt-3"
             data-testid="sandbox-warning-learn-more"

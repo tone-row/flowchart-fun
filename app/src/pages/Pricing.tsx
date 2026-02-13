@@ -1,6 +1,13 @@
 import { t, Trans } from "@lingui/macro";
-import { Check } from "phosphor-react";
-import { ReactNode } from "react";
+import {
+  Check,
+  Sparkle,
+  MagicWand,
+  DownloadSimple,
+  LockKey,
+  IconProps,
+} from "phosphor-react";
+import { ReactNode, ComponentType } from "react";
 
 import styles from "./Pricing.module.css";
 
@@ -11,6 +18,7 @@ export const features = (): {
   title: string;
   points: string[];
   imgPath: string;
+  icon: ComponentType<IconProps>;
 }[] => [
   {
     title: t`Unlimited Flowcharts`,
@@ -18,6 +26,7 @@ export const features = (): {
       t`Create unlimited flowcharts stored in the cloud– accessible anywhere!`,
     ],
     imgPath: "launch",
+    icon: Sparkle,
   },
   {
     title: t`AI Creation & Editing`,
@@ -25,6 +34,7 @@ export const features = (): {
       t`Save time with AI and dictation, making it easy to create diagrams.`,
     ],
     imgPath: "AI",
+    icon: MagicWand,
   },
   {
     title: t`Connect your Data`,
@@ -32,6 +42,7 @@ export const features = (): {
       t`Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!`,
     ],
     imgPath: "Performance-Chart",
+    icon: DownloadSimple,
   },
   {
     title: t`Keep Things Private`,
@@ -39,6 +50,7 @@ export const features = (): {
       t`With the pro version you can save and load local files. It's perfect for managing work-related documents offline.`,
     ],
     imgPath: "Code-Script",
+    icon: LockKey,
   },
 ];
 
@@ -89,7 +101,7 @@ export default function Pricing() {
             </Trans>
           </p>
           <p className="text-base md:text-lg text-neutral-500 dark:text-neutral-400 text-wrap-balance leading-normal md:leading-tight">
-            <Trans>Create unlimited diagrams for just $4/month!</Trans>
+            <Trans>Create unlimited diagrams for just $6/month!</Trans>
           </p>
         </div>
         <div

@@ -25,7 +25,7 @@ type GraphForAI = {
 };
 
 const title = t`Edit with AI`;
-const content = t`With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience.`;
+const content = t`With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience.`;
 
 export function EditWithAI() {
   const [message, setMessage] = useState<string | null>(null);
@@ -180,10 +180,10 @@ export function EditWithAI() {
                 size={18}
               />
             }
-            color="purple"
+            color="blue"
             size="sm"
             rounded
-            className="aria-[expanded=true]:bg-purple-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
+            className="aria-[expanded=true]:bg-blue-700 !pt-2 !pb-[9px] !pl-3 !pr-4 disabled:!opacity-100"
             data-session-activity="Edit with AI: Open"
             isLoading={isLoading}
           >
@@ -197,7 +197,7 @@ export function EditWithAI() {
             side="bottom"
             sideOffset={10}
             align="end"
-            className="w-[300px] bg-white rounded-xl shadow border border-purple-300 p-2 !z-[100] animate-slideDownAndFade dark:bg-neutral-200 dark:text-neutral-800 dark:border-neutral-300"
+            className="w-[300px] bg-white rounded-xl shadow border border-blue-300 p-2 !z-[100] animate-slideDownAndFade dark:bg-neutral-200 dark:text-neutral-800 dark:border-neutral-300"
             onOpenAutoFocus={(e) => {
               e.preventDefault();
               if (!formRef.current) return;
@@ -236,7 +236,7 @@ export function EditWithAI() {
               </div>
               <Button2
                 size="sm"
-                color="purple"
+                color="blue"
                 data-session-activity="Edit with AI: Submit"
               >
                 <Trans>Submit</Trans>

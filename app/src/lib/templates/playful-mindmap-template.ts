@@ -1,31 +1,31 @@
 import { FFTheme } from "../FFTheme";
 
 export const content = `
-My Favorite Things! .root
-  Animals .category
-    Dogs .subcategory
-      Fluffy .item
-      Spotty .item
-    Cats .subcategory
-      Whiskers .item
-      Mittens .item
-    Unicorns .subcategory
-  Food .category
-    Pizza .subcategory
-      Cheese .item
-      Pepperoni .item
-    Ice Cream .subcategory
-      Chocolate .item
-      Vanilla .item
-    Cookies .subcategory
-  Hobbies .category
-    Drawing .subcategory
-    Dancing .subcategory
-    Singing .subcategory
-  Places .category
-    Beach .subcategory
-    Mountains .subcategory
-    Space .subcategory
+My Favorite Things! .color_pink .size_lg
+  Animals .color_yellow
+    Dogs .color_blue
+      Fluffy .color_green
+      Spotty .color_green
+    Cats .color_blue
+      Whiskers .color_green
+      Mittens .color_green
+    Unicorns .color_blue
+  Food .color_yellow
+    Pizza .color_blue
+      Cheese .color_green
+      Pepperoni .color_green
+    Ice Cream .color_blue
+      Chocolate .color_green
+      Vanilla .color_green
+    Cookies .color_blue
+  Hobbies .color_yellow
+    Drawing .color_blue
+    Dancing .color_blue
+    Singing .color_blue
+  Places .color_yellow
+    Beach .color_blue
+    Mountains .color_blue
+    Space .color_blue
 `;
 
 export const theme: FFTheme = {
@@ -49,13 +49,13 @@ export const theme: FFTheme = {
 
   curveStyle: "bezier",
   edgeWidth: 2,
-  edgeColor: "#4CAF50",
+  edgeColor: "#888888",
   sourceArrowShape: "none",
   targetArrowShape: "none",
   sourceDistanceFromNode: 5,
   targetDistanceFromNode: 5,
   arrowScale: 1,
-  edgeTextSize: 12,
+  edgeTextSize: 0.875,
   rotateEdgeLabel: false,
   fixedHeight: 100,
 };
@@ -63,54 +63,61 @@ export const theme: FFTheme = {
 export const cytoscapeStyle = `
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
-node {
-  font-weight: normal;
-  font-size: 16px;
-  text-halign: center;
-  text-valign: center;
-  color: #333333;
-  text-wrap: wrap;
-  text-max-width: 100px;
-  padding: 10px;
-  shape: ellipse;
-  width: 120px;
-  height: 60px;
-  border-width: 2px;
-  border-color: #FF69B4;
+$pink: #FF69B4;
+$yellow: #FFD700;
+$blue: #87CEFA;
+$green: #98FB98;
+$red: #FF6B6B;
+$orange: #FFB347;
+$purple: #DDA0DD;
+$grey: #D3D3D3;
+
+:childless.size_lg {
+  font-size: 30;
+  width: 150;
+  line-height: 1;
+  text-max-width: 130;
 }
 
-edge {
-  width: 2px;
-  line-color: #4CAF50;
-  opacity: 0.8;
-  curve-style: unbundled-bezier;
-  control-point-distances: 20 -40 20;
-  control-point-weights: 0.25 0.5 0.75;
-}
-
-.root {
-  background-color: #FF69B4;
-  border-width: 3px;
+:childless.color_pink {
+  background-color: $pink;
   border-color: #FF1493;
-  width: 180px;
-  height: 90px;
-  font-size: 20px;
   color: #FFFFFF;
 }
 
-.category {
-  background-color: #FFD700;
+:childless.color_yellow {
+  background-color: $yellow;
   border-color: #FFA500;
 }
 
-.subcategory {
-  background-color: #87CEFA;
+:childless.color_blue {
+  background-color: $blue;
   border-color: #4169E1;
 }
 
-.item {
-  background-color: #98FB98;
+:childless.color_green {
+  background-color: $green;
   border-color: #32CD32;
+}
+
+:childless.color_red {
+  background-color: $red;
+  border-color: #CC0000;
+}
+
+:childless.color_orange {
+  background-color: $orange;
+  border-color: #FF8C00;
+}
+
+:childless.color_purple {
+  background-color: $purple;
+  border-color: #9B30FF;
+}
+
+:childless.color_grey {
+  background-color: $grey;
+  border-color: #A9A9A9;
 }
 
 node:selected {

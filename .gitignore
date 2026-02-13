@@ -15,3 +15,5 @@ flowchart-fun.feature-reacher.json
 .parcel-cache
 
 speech*.mp4
+.env*.local
+stripe-scripts/

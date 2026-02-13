@@ -29,6 +29,37 @@ export const useEditorStore = create<{
   userPasted: "",
 }));
 
+/** Write text to the editor model via pushEditOperations (preserves undo stack).
+ *  No-ops silently if the editor is not mounted. */
+export function writeToEditorSafe(text: string) {
+  const editor = useEditorStore.getState().editor;
+  if (!editor) return;
+  const model = editor.getModel();
+  if (!model) return;
+  model.pushEditOperations(
+    [],
+    [{ range: model.getFullModelRange(), text }],
+    () => null
+  );
+}
+
+let _isInternalWrite = false;
+
+export function isInternalWrite(): boolean {
+  return _isInternalWrite;
+}
+
+/** Sets text AND clears Monaco's undo stack so Cmd+Z can't independently undo just text. */
+export function setEditorValueAndClearUndo(text: string) {
+  const editor = useEditorStore.getState().editor;
+  if (!editor) return;
+  const model = editor.getModel();
+  if (!model) return;
+  _isInternalWrite = true;
+  model.setValue(text);
+  _isInternalWrite = false;
+}
+
 export function updateModelMarkers() {
   const { monaco, editor, markers } = useEditorStore.getState();
   if (!monaco || !editor) return;
