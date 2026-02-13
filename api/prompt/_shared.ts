@@ -3,7 +3,6 @@ import { streamText } from "ai";
 import { stripe } from "../_lib/_stripe";
 import { kv } from "@vercel/kv";
 import { Ratelimit } from "@upstash/ratelimit";
-import { createOpenAI, type openai as OpenAI } from "@ai-sdk/openai";
 
 export const reqSchema = z.object({
   prompt: z.string().min(1),
@@ -90,24 +89,29 @@ export async function templateRateLimit(req: Request) {
   return null;
 }
 
+export const DEFAULT_MODEL = "openai/gpt-oss-120b";
+
+export const GATEWAY_OPTIONS = {
+  gateway: {
+    order: ["cerebras"],
+  },
+};
+
 export async function processRequest(
   req: Request,
   systemMessage: string,
   content: string,
-  model: Parameters<typeof OpenAI.chat>[0] = "gpt-4-turbo"
+  model: string = DEFAULT_MODEL
 ) {
   const { isPro, customerId } = await checkUserStatus(req);
   const rateLimitResponse = await handleRateLimit(req, isPro, customerId);
   if (rateLimitResponse) return rateLimitResponse;
 
-  const openai = createOpenAI({
-    apiKey: getOpenAiApiKey(isPro),
-  });
-
-  const result = await streamText({
-    model: openai.chat(model),
+  const result = streamText({
+    model,
     system: systemMessage,
-    temperature: 1,
+    temperature: 0.1,
+    providerOptions: GATEWAY_OPTIONS,
     messages: [
       {
         role: "user",
@@ -117,19 +121,6 @@ export async function processRequest(
   });
 
   return result.toTextStreamResponse();
-}
-
-/**
- * Returns the right api key depending on the user's subscription
- * so we can track usage. Bear in mind a development key is used for
- * anything that's not production.
- */
-function getOpenAiApiKey(isPro: boolean) {
-  if (isPro) {
-    return process.env.OPENAI_API_KEY_PRO;
-  }
-
-  return process.env.OPENAI_API_KEY_FREE;
 }
 
 function getIp(req: Request) {
@@ -157,3 +148,16 @@ export const systemMessageExample = `Node A
   Node C
     label from c to d: Node D .color_green.shape_diamond
       label from d to a: (Node A)`;
+
+export const systemMessageSyntax = `Flowchart Fun Syntax:
+- Indentation creates parent→child edges (tree-shaped graph).
+- Text before a colon labels the edge: "yes: Next Step" creates an edge labeled "yes".
+- Reference a previously declared node by wrapping its label in parentheses: (Node Name).
+- Escape these characters in node/edge labels: ( ) : # . \\
+- Style nodes with classes at the end: Node A .color_blue.shape_diamond`;
+
+export const systemMessagePitfalls = `Common mistakes to avoid:
+- NEVER start a line with an edge label at the root level (no indentation). "start: Node A" on the first line is invalid because there is no parent node to draw an edge from. Create the source node first, then indent the labeled edge beneath it.
+- Only reference nodes that have already been declared above. (Node X) is invalid if Node X has not appeared yet.
+- Indentation must be consistent. Use spaces (not tabs). Each indent level adds children to the nearest less-indented node above.
+- Do NOT wrap your output in markdown code fences (\`\`\`). Return raw Flowchart Fun syntax only.`;

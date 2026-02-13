@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Pricing2.tsx:365
+#: src/pages/Pricing2.tsx:378
 msgid "$24/year (save 50%) · Cancel anytime"
 msgstr "연간 $24 (50% 할인) · 언제든지 취소 가능"
 
-#: src/pages/Pricing2.tsx:332
+#: src/pages/Pricing2.tsx:345
 msgid "$4/mo"
 msgstr "월 $4"
 
@@ -57,7 +57,7 @@ msgstr "AI 생성 및 편집"
 msgid "AI-Powered Flowchart Creation"
 msgstr "인공지능 기반 플로우차트 생성"
 
-#: src/pages/Pricing2.tsx:289
+#: src/pages/Pricing2.tsx:303
 msgid "AI-generated from plain text in under 5 seconds."
 msgstr "일반 텍스트에서 5초 이내에 AI로 생성됨."
 
@@ -390,7 +390,7 @@ msgstr "샌드박스에서 계속하기 (매일 초기화되며 작업은 저장
 msgid "Controls the flow direction of hierarchical layouts"
 msgstr "계층적 레이아웃의 흐름 방향을 제어합니다."
 
-#: src/components/AiToolbar.tsx:37
+#: src/components/AiToolbar.tsx:44
 #: src/components/ConvertOnPasteOverlay.tsx:90
 msgid "Convert"
 msgstr "변환하기"
@@ -546,7 +546,7 @@ msgstr "{0} 삭제"
 msgid "Describe it and it appears"
 msgstr "설명하면 나타납니다"
 
-#: src/pages/Pricing2.tsx:153
+#: src/pages/Pricing2.tsx:169
 msgid "Describe your idea. Get a diagram worth presenting."
 msgstr "아이디어를 설명하세요. 발표할 가치가 있는 다이어그램을 얻으세요."
 
@@ -683,7 +683,7 @@ msgstr "출발 노드 행에 간선"
 msgid "Edges in Target Node Row"
 msgstr "도착 노드 행에 간선"
 
-#: src/components/AiToolbar.tsx:39
+#: src/components/AiToolbar.tsx:46
 msgid "Edit"
 msgstr "편집하기"
 
@@ -871,7 +871,7 @@ msgstr "텍스트로부터 자동으로 플로우차트 생성하기"
 msgid "Get Pro Access Now"
 msgstr "지금 프로 액세스 받기"
 
-#: src/lib/usePromptStore.ts:101
+#: src/lib/usePromptStore.ts:121
 msgid "Get Unlimited AI Requests"
 msgstr "무제한 AI 요청 받기"
 
@@ -1040,7 +1040,7 @@ msgstr "플로우 차트 어플을 사랑하는 수천 명의 행복한 사용�
 msgid "Keep Things Private"
 msgstr "개인 정보 유지하기"
 
-#: src/components/AiToolbar.tsx:106
+#: src/components/AiToolbar.tsx:129
 msgid "Keep changes?"
 msgstr "변경 사항을 유지하시겠습니까?"
 
@@ -1181,7 +1181,7 @@ msgstr "계정 업그레이드를 위해 로그인"
 msgid "Make a One-Time Donation"
 msgstr "한 번 선물하기"
 
-#: src/pages/Pricing2.tsx:335
+#: src/pages/Pricing2.tsx:348
 msgid "Make it yours"
 msgstr "나만의 것으로 만들기"
 
@@ -1351,7 +1351,7 @@ msgstr "일대일 지원"
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
 
-#: src/lib/usePromptStore.ts:98
+#: src/lib/usePromptStore.ts:118
 msgid "Operation canceled"
 msgstr "작업이 취소되었습니다."
 
@@ -1388,7 +1388,7 @@ msgstr "연체"
 msgid "Paste a document to convert it"
 msgstr "문서를 붙여서 변환하세요"
 
-#: src/components/AiToolbar.tsx:26
+#: src/components/AiToolbar.tsx:33
 msgid "Paste your document or outline here to convert it into an organized flowchart."
 msgstr "문서나 개요를 여기에 붙여넣어 조직화된 플로우차트로 변환하세요."
 
@@ -1426,7 +1426,7 @@ msgstr "우선순위 지원"
 msgid "Privacy Policy"
 msgstr "개인정보보호정책"
 
-#: src/pages/Pricing2.tsx:382
+#: src/pages/Pricing2.tsx:395
 msgid "Pro starts at $2/mo billed yearly. Cancel anytime."
 msgstr "Pro는 연간 $2에 시작합니다. 언제든지 취소할 수 있습니다."
 
@@ -1442,7 +1442,7 @@ msgstr "데이터 처리"
 msgid "Processing..."
 msgstr "처리 중..."
 
-#: src/components/AiToolbar.tsx:35
+#: src/components/AiToolbar.tsx:42
 msgid "Prompt"
 msgstr "프롬프트"
 
@@ -1477,7 +1477,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "래스터 내보내기 (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:109
+#: src/lib/usePromptStore.ts:129
 msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
 
@@ -1635,7 +1635,7 @@ msgstr "안전한 결제"
 msgid "See more reviews on Product Hunt"
 msgstr "Product Hunt에서 더 많은 리뷰를 확인하세요"
 
-#: src/pages/Pricing2.tsx:304
+#: src/pages/Pricing2.tsx:318
 msgid "See what's possible"
 msgstr "가능한 것을 확인하세요"
 
@@ -1738,7 +1738,7 @@ msgstr "처음부터 다시 시작하기"
 msgid "Start faster with use-case specific templates"
 msgstr "사용 사례에 맞는 템플릿으로 더 빠르게 시작하기"
 
-#: src/pages/Pricing2.tsx:325
+#: src/pages/Pricing2.tsx:339
 msgid "Start for free"
 msgstr "무료로 시작하기"
 
@@ -1770,7 +1770,7 @@ msgstr "스타일 클래스"
 msgid "Style with classes"
 msgstr "클래스로 스타일링"
 
-#: src/components/AiToolbar.tsx:179
+#: src/components/AiToolbar.tsx:201
 #: src/components/EditWithAI.tsx:242
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
@@ -1856,7 +1856,7 @@ msgstr "한 줄에 있는 텍스트는 텍스트를 레이블로 하는 노드�
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
-#: src/pages/Pricing2.tsx:230
+#: src/pages/Pricing2.tsx:245
 msgid "The beauty and magic reside in the minimalism."
 msgstr "아름다움과 마법은 최소주의에 있습니다."
 
@@ -1884,7 +1884,7 @@ msgstr "여러 개의 소스 노드를 구분하기 위해 사용되는 구분 �
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 기호"
 
-#: src/pages/Pricing2.tsx:158
+#: src/pages/Pricing2.tsx:172
 msgid "The fastest way to turn what's in your head into something everyone else can understand."
 msgstr "머리 속에 있는 것을 다른 사람들이 이해할 수 있는 것으로 바꾸는 가장 빠른 방법입니다."
 
@@ -2000,7 +2000,7 @@ msgstr "검색 또는 필터를 조정하여 원하는 내용을 찾아보세요
 msgid "Try again"
 msgstr "다시 시도하세요"
 
-#: src/pages/Pricing2.tsx:185
+#: src/pages/Pricing2.tsx:199
 msgid "Try it free"
 msgstr "무료로 시도해보세요"
 
@@ -2012,7 +2012,7 @@ msgstr "두 개의 간선이 같은 ID를 가지고 있습니다"
 msgid "Two nodes have the same ID"
 msgstr "두 개의 노드가 같은 ID를 가지고 있습니다"
 
-#: src/pages/Pricing2.tsx:272
+#: src/pages/Pricing2.tsx:286
 msgid "Type it. See it."
 msgstr "입력하고 보세요."
 
@@ -2023,6 +2023,10 @@ msgstr "이런, 무료 요청이 모두 소진되었습니다! 무제한 다이�
 #: src/components/FAQ.tsx:21
 msgid "Under 60 seconds. Type a few lines of text or describe what you need to the AI, and your diagram appears instantly. Export or share it with one click."
 msgstr "60초 이내에. 몇 줄의 텍스트를 입력하거나 인공지능에게 필요한 것을 설명하면 즉시 다이어그램이 나타납니다. 한 번의 클릭으로 내보내거나 공유하세요."
+
+#: src/components/AiToolbar.tsx:123
+msgid "Undo"
+msgstr ""
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -2061,7 +2065,7 @@ msgstr "무제한 저장된 다이어그램"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "AI 기능 잠금 해제 및 프로 계정으로 작업을 절대 잃지 않습니다."
 
-#: src/lib/usePromptStore.ts:105
+#: src/lib/usePromptStore.ts:125
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "무제한 AI 플로우차트 잠금 해제"
 
@@ -2091,7 +2095,7 @@ msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 �
 
 #: src/components/FeatureBreakdown.tsx:305
 #: src/components/Header.tsx:422
-#: src/pages/Pricing2.tsx:360
+#: src/pages/Pricing2.tsx:373
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
@@ -2144,11 +2148,11 @@ msgstr "조직도, 계층 구조 및 기타 조직 구조를 위해 이 파일�
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오."
 
-#: src/components/AiToolbar.tsx:28
+#: src/components/AiToolbar.tsx:35
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "현재 차트를 수정하고 개선하는 데 이 모드를 사용하세요."
 
-#: src/pages/Pricing2.tsx:195
+#: src/pages/Pricing2.tsx:209
 msgid "Used at"
 msgstr "사용처"
 
@@ -2281,7 +2285,7 @@ msgstr "잘하고 있어요!"
 msgid "You're on the free plan."
 msgstr "무료 요금제를 사용 중입니다."
 
-#: src/lib/usePromptStore.ts:102
+#: src/lib/usePromptStore.ts:122
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "모든 무료 AI 변환을 사용하셨습니다. 무제한 AI 사용, 사용자 정의 테마, 개인 공유 등을 위해 Pro로 업그레이드하세요. 쉽게 멋진 플로우차트를 만들어 나가세요!"
 
@@ -2298,7 +2302,7 @@ msgstr "당신의 샌드박스는 우리의 플로우차트 도구로 자유롭�
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
 msgstr "당신의 차트는 계정이 더 이상 활성화되지 않았기 때문에 읽기 전용입니다. <0>계정</0> 페이지를 방문하여 자세한 내용을 알아보세요."
 
-#: src/pages/Pricing2.tsx:379
+#: src/pages/Pricing2.tsx:392
 msgid "Your next diagram should be your best one."
 msgstr "다음 다이어그램은 최고의 작품이 되어야 합니다."
 
@@ -2329,10 +2333,10 @@ msgid "or"
 msgstr "또는"
 
 #: src/components/Checkout.tsx:171
-#: src/pages/Pricing2.tsx:257
-#: src/pages/Pricing2.tsx:260
-#: src/pages/Pricing2.tsx:317
-#: src/pages/Pricing2.tsx:348
+#: src/pages/Pricing2.tsx:271
+#: src/pages/Pricing2.tsx:274
+#: src/pages/Pricing2.tsx:331
+#: src/pages/Pricing2.tsx:361
 msgid "{0}"
 msgstr "{0}"
 

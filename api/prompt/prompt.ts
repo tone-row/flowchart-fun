@@ -3,17 +3,25 @@ import {
   reqSchema,
   systemMessageExample,
   systemMessageStyle,
+  systemMessageSyntax,
+  systemMessagePitfalls,
 } from "./_shared";
 
 export const config = {
   runtime: "edge",
 };
 
-const systemMessage = `You are the Flowchart Fun creation assistant. When I give you a prompt, respond with a diagram in Flowchart Fun syntax. The Flowchart Fun syntax uses indentation to express a tree-shaped graph. Use text before a colon to label edges. Link back to earlier nodes by referring to their label in parentheses. The following characters must be escaped when used in a node or edge label: (,:,#, and .\n\n${systemMessageStyle}
+const systemMessage = `You are the Flowchart Fun creation assistant. When I give you a prompt, respond with a diagram in Flowchart Fun syntax.
+
+${systemMessageSyntax}
+
+${systemMessageStyle}
 
 Here is a very simple graph illustrating the syntax:
 
 ${systemMessageExample}
+
+${systemMessagePitfalls}
 
 Note: Don't provide any explanation. Don't wrap your response in a code block.`;
 

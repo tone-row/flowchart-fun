@@ -310,7 +310,6 @@ body.dark .checkout-wrapper {
   background-clip: border-box, border-box;
 }
 
-
 /** Hack to prevent text from shifting when transitioning scale */
 .plan-button {
   transform: scale(0.94) translateZ(0);

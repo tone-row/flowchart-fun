@@ -1,14 +1,31 @@
 import { create } from "zustand";
+import { subscribeWithSelector } from "zustand/middleware";
 import { RATE_LIMIT_EXCEEDED, runAi } from "./runAi";
 import { useCallback, useContext, useState } from "react";
 import { useHasProAccess } from "./hooks";
 import { showPaywall } from "./usePaywallModalStore";
 import { t } from "@lingui/macro";
-import { useEditorStore } from "./useEditorStore";
+import {
+  useEditorStore,
+  writeToEditorSafe,
+  setEditorValueAndClearUndo,
+} from "./useEditorStore";
 import { AppContext } from "../components/AppContextProvider";
 import { unfreezeDoc } from "./useIsFrozen";
 import { useDoc } from "./useDoc";
 import { repairText } from "./repairText";
+import { addToUndoStack } from "./undoStack";
+
+let _hasUserEditedSinceAi = false;
+export function markUserEditedSinceAi() {
+  _hasUserEditedSinceAi = true;
+}
+export function hasUserEditedSinceAi(): boolean {
+  return _hasUserEditedSinceAi;
+}
+export function resetHasUserEditedSinceAi() {
+  _hasUserEditedSinceAi = false;
+}
 
 export type Mode = "prompt" | "convert" | "edit";
 type PromptStore = {
@@ -26,20 +43,25 @@ type PromptStore = {
   isOpen: boolean;
   /** The current diff */
   diff: string | null;
+  /** Whether to show the undo button after an AI operation */
+  showUndoButton: boolean;
 };
 
-export const usePromptStore = create<PromptStore>(() => ({
-  isRunning: false,
-  lastResult: null,
-  error: null,
-  currentText: "",
-  mode: "prompt",
-  isOpen: false,
-  diff: null,
-}));
+export const usePromptStore = create(
+  subscribeWithSelector<PromptStore>(() => ({
+    isRunning: false,
+    lastResult: null,
+    error: null,
+    currentText: "",
+    mode: "prompt",
+    isOpen: false,
+    diff: null,
+    showUndoButton: false,
+  }))
+);
 
 export function startConvert() {
-  usePromptStore.setState({ isRunning: true });
+  usePromptStore.setState({ isRunning: true, showUndoButton: false });
 }
 
 export function stopConvert() {
@@ -59,7 +81,7 @@ export function setCurrentText(text: string) {
 }
 
 export function setMode(mode: Mode) {
-  usePromptStore.setState({ mode, currentText: "" });
+  usePromptStore.setState({ mode, currentText: "", showUndoButton: false });
 }
 
 export function setIsOpen(isOpen: boolean) {
@@ -73,8 +95,28 @@ export function setDiff(diff: string) {
 export function acceptDiff() {
   const diff = usePromptStore.getState().diff;
   if (!diff) return;
+
+  const { text: snapshotText, meta: snapshotMeta } = useDoc.getState();
+  const metaCopy = JSON.parse(JSON.stringify(snapshotMeta));
+
   useDoc.setState({ text: diff });
   usePromptStore.setState({ diff: null, currentText: "" });
+
+  addToUndoStack({
+    undo: () => {
+      useDoc.setState({ text: snapshotText, meta: metaCopy });
+      setEditorValueAndClearUndo(snapshotText);
+      resetHasUserEditedSinceAi();
+    },
+    redo: () => {
+      useDoc.setState({ text: diff });
+      setEditorValueAndClearUndo(diff);
+      resetHasUserEditedSinceAi();
+    },
+  });
+  setEditorValueAndClearUndo(diff);
+  resetHasUserEditedSinceAi();
+  usePromptStore.setState({ showUndoButton: true });
 }
 
 export function rejectDiff() {
@@ -119,6 +161,10 @@ export function useRunAiWithStore() {
     const store = usePromptStore.getState();
     if (store.isRunning) return;
 
+    // Snapshot BEFORE any state mutations (unfreezeDoc, loadTemplate, etc.)
+    const { text: snapshotText, meta: snapshotMeta } = useDoc.getState();
+    const metaCopy = JSON.parse(JSON.stringify(snapshotMeta));
+
     setIsOpen(false);
     startConvert();
 
@@ -140,7 +186,8 @@ export function useRunAiWithStore() {
         if (result) {
           const text = repairText(result);
           if (text) {
-            useDoc.setState({ text });
+            writeToEditorSafe(text); // Write to model first
+            useDoc.setState({ text }); // Model already matches — no-op from @monaco-editor/react
           }
         }
       })
@@ -148,6 +195,31 @@ export function useRunAiWithStore() {
         stopConvert();
         useEditorStore.setState({ userPasted: "" });
         setAbortController(null);
+
+        // Capture post-AI state for redo closure
+        const afterState = useDoc.getState();
+        if (
+          afterState.text !== snapshotText ||
+          afterState.meta !== snapshotMeta
+        ) {
+          const afterText = afterState.text;
+          const afterMeta = JSON.parse(JSON.stringify(afterState.meta));
+          addToUndoStack({
+            undo: () => {
+              useDoc.setState({ text: snapshotText, meta: metaCopy });
+              setEditorValueAndClearUndo(snapshotText);
+              resetHasUserEditedSinceAi();
+            },
+            redo: () => {
+              useDoc.setState({ text: afterText, meta: afterMeta });
+              setEditorValueAndClearUndo(afterText);
+              resetHasUserEditedSinceAi();
+            },
+          });
+          setEditorValueAndClearUndo(afterText);
+          resetHasUserEditedSinceAi();
+          usePromptStore.setState({ showUndoButton: true });
+        }
       });
   }, [handleError, sid]);
 

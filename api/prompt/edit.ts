@@ -1,4 +1,9 @@
-import { processRequest, reqSchema } from "./_shared";
+import {
+  processRequest,
+  reqSchema,
+  systemMessageStyle,
+  systemMessagePitfalls,
+} from "./_shared";
 
 export const config = {
   runtime: "edge",
@@ -13,6 +18,8 @@ Flowchart Fun Syntax:
 - Escape the following characters when used in a node or edge label: (,:,#, and \\.
 - Use classes at the end of a node to apply styles. (e.g., .color_blue,.shape_circle)
 
+${systemMessageStyle}
+
 Example:
     Node A
       Node B .color_blue
@@ -20,6 +27,8 @@ Example:
       Node C
         label from c to d: Node D
           label from d to a: (Node A)
+
+${systemMessagePitfalls}
 
 When editing, ensure that the Flowchart Fun syntax remains valid and consistent.`;
 
@@ -34,8 +43,7 @@ export default async function handler(req: Request) {
   return processRequest(
     req,
     systemMessage,
-    getContent(parsed.data.prompt, parsed.data.document),
-    "gpt-4-turbo-2024-04-09"
+    getContent(parsed.data.prompt, parsed.data.document)
   );
 }
 
