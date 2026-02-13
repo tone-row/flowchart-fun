@@ -26,7 +26,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: t`What if I just need it for one project?`,
-    answer: t`The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $4/mo — cancel anytime with no commitment.`,
+    answer: t`The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $6/mo — cancel anytime with no commitment.`,
   },
   {
     question: t`Is my data private?`,

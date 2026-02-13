@@ -14,12 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/pages/Pricing2.tsx:378
-msgid "$24/year (save 50%) · Cancel anytime"
-msgstr "$24/वर्ष (50% बचाएं) · कभी भी रद्द करें"
+msgid "$48/year (save 33%) · Cancel anytime"
+msgstr "$48/वर्ष (33% बचाएं) · कभी भी रद्द करें"
 
 #: src/pages/Pricing2.tsx:345
-msgid "$4/mo"
-msgstr "$4/महीना"
+msgid "$6/mo"
+msgstr "$6/महीना"
 
 #: src/pages/Pricing.tsx:62
 msgid "1 Temporary Flowchart"
@@ -103,8 +103,8 @@ msgid "Align Vertically"
 msgstr "ऊपर-नीचे सारी तरफ"
 
 #: src/components/SandboxWarning.tsx:74
-msgid "All this for just $4/month - less than your daily coffee ☕"
-msgstr "सिर्फ $4/महीने में यह सब - आपके दैनिक कॉफ़ी से कम ☕"
+msgid "All this for just $6/month - less than your daily coffee ☕"
+msgstr "सिर्फ $6/महीने में यह सब - आपके दैनिक कॉफ़ी से कम ☕"
 
 #: src/pages/Pricing2.tsx:83
 msgid "Always presentation-ready"
@@ -184,12 +184,12 @@ msgid "Begin your journey"
 msgstr "अपनी यात्रा शुरू करें"
 
 #: src/components/Checkout.tsx:139
-msgid "Billed annually at $24"
-msgstr "वार्षिक रूप से $24 का बिल बनाया जाएगा"
+msgid "Billed annually at $48"
+msgstr "वार्षिक रूप से $48 का बिल बनाया जाएगा"
 
 #: src/components/Checkout.tsx:151
-msgid "Billed monthly at $4"
-msgstr "मासिक रूप से $4 पर बिल किया जाता है"
+msgid "Billed monthly at $6"
+msgstr "मासिक रूप से $6 पर बिल किया जाता है"
 
 #: src/components/Header.tsx:144
 #: src/components/Header.tsx:397
@@ -467,8 +467,8 @@ msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "तुरंत फ्लोचार्ट बनाएं: पाठ लिखें या पेस्ट करें, उसे दृश्यीकृत करें।"
 
 #: src/pages/Pricing.tsx:104
-msgid "Create unlimited diagrams for just $4/month!"
-msgstr "सिर्फ $4/महीने में असीमित आरेख बनाएं!"
+msgid "Create unlimited diagrams for just $6/month!"
+msgstr "सिर्फ $6/महीने में असीमित आरेख बनाएं!"
 
 #: src/pages/Pricing.tsx:26
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
@@ -764,8 +764,8 @@ msgid "Exclusive Office Hours"
 msgstr "अनन्य ऑफिस घंटे"
 
 #: src/components/LoadFileButton.tsx:76
-msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
-msgstr "अपने फ्लोचार्ट में स्थानीय फाइलों को सीधे लोड करने की क्षमता का अनुभव करें, जो काम से संबंधित दस्तावेजों को ऑफ़लाइन प्रबंधित करने के लिए उत्कृष्ट है। फ्लोचार्ट फन प्रो के साथ इस अनूठे प्रो फीचर को और भी खोलें, सिर्फ $4/महीने में उपलब्ध है।"
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
+msgstr "अपने फ्लोचार्ट में स्थानीय फाइलों को सीधे लोड करने की क्षमता का अनुभव करें, जो काम से संबंधित दस्तावेजों को ऑफ़लाइन प्रबंधित करने के लिए उत्कृष्ट है। फ्लोचार्ट फन प्रो के साथ इस अनूठे प्रो फीचर को और भी खोलें, सिर्फ $6/महीने में उपलब्ध है।"
 
 #: src/pages/Account.tsx:587
 msgid "Explore Pro"
@@ -820,8 +820,8 @@ msgid "Fixed Node Height"
 msgstr "निर्धारित नोड ऊंचाई"
 
 #: src/lib/paywallCopy.ts:5
-msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $4/month."
-msgstr "फ्लोचार्ट फन प्रो आपको सिर्फ $4/महीने में असीमित फ्लोचार्ट, असीमित सहयोगी और असीमित स्टोरेज प्रदान करता है।"
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
+msgstr "फ्लोचार्ट फन प्रो आपको सिर्फ $6/महीने में असीमित फ्लोचार्ट, असीमित सहयोगी और असीमित स्टोरेज प्रदान करता है।"
 
 #: src/components/Settings.tsx:136
 msgid "Flowchart Fun is built and maintained by one developer. Your support keeps it going."
@@ -871,7 +871,7 @@ msgstr "पाठ से स्वचालित रूप से फ्लो�
 msgid "Get Pro Access Now"
 msgstr "अब प्रो एक्सेस प्राप्त करें"
 
-#: src/lib/usePromptStore.ts:121
+#: src/lib/usePromptStore.ts:143
 msgid "Get Unlimited AI Requests"
 msgstr "असीमित एआई अनुरोध प्राप्त करें"
 
@@ -1001,8 +1001,8 @@ msgid "Import your diagram it into Microsoft Visio using one of these CSV files.
 msgstr "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
-msgstr "डेटा आयात करना एक पेशेवर सुविधा है। आप केवल $4/माह के लिए Flowchart Fun Pro पर अपग्रेड कर सकते हैं।"
+msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $6/month."
+msgstr "डेटा आयात करना एक पेशेवर सुविधा है। आप केवल $6/माह के लिए Flowchart Fun Pro पर अपग्रेड कर सकते हैं।"
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -1351,7 +1351,7 @@ msgstr "एक-पर-एक समर्थन"
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
-#: src/lib/usePromptStore.ts:118
+#: src/lib/usePromptStore.ts:140
 msgid "Operation canceled"
 msgstr "ऑपरेशन रद्द किया गया है"
 
@@ -1427,8 +1427,8 @@ msgid "Privacy Policy"
 msgstr "गोपनीयता नीति "
 
 #: src/pages/Pricing2.tsx:395
-msgid "Pro starts at $2/mo billed yearly. Cancel anytime."
-msgstr "प्रो शुरू होता है $2/माह वार्षिक बिल किया जाता है। कभी भी रद्द करें।"
+msgid "Pro starts at $4/mo billed yearly. Cancel anytime."
+msgstr "प्रो शुरू होता है $4/माह वार्षिक बिल किया जाता है। कभी भी रद्द करें।"
 
 #: src/components/GraphTip.tsx:31
 msgid "Pro tip: Right-click any node to customize its shape and color"
@@ -1477,7 +1477,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "रास्टर निर्यात (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:129
+#: src/lib/usePromptStore.ts:151
 msgid "Rate limit exceeded. Please try again later."
 msgstr "रेट लिमिट पार हो गई है। कृपया बाद में पुनः प्रयास करें।"
 
@@ -1889,8 +1889,8 @@ msgid "The fastest way to turn what's in your head into something everyone else 
 msgstr "अपने दिमाग में क्या है उसे कुछ ऐसा बनाएं कि सभी उसे समझ सकें।"
 
 #: src/components/FAQ.tsx:29
-msgid "The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $4/mo — cancel anytime with no commitment."
-msgstr "फ्री प्लान दैनिक उपयोग के लिए बहुत अच्छा काम करता है। अगर आपको प्रो फीचर्स की आवश्यकता है, तो महीने-ब्य-महीने $4 का खर्चा होगा - कोई बाध्यता के साथ कभी भी रद्द कर सकते हैं।"
+msgid "The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $6/mo — cancel anytime with no commitment."
+msgstr "फ्री प्लान दैनिक उपयोग के लिए बहुत अच्छा काम करता है। अगर आपको प्रो फीचर्स की आवश्यकता है, तो महीने-ब्य-महीने $6 का खर्चा होगा - कोई बाध्यता के साथ कभी भी रद्द कर सकते हैं।"
 
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
@@ -2026,7 +2026,7 @@ msgstr "60 सेकंड से कम समय में। कुछ पं
 
 #: src/components/AiToolbar.tsx:123
 msgid "Undo"
-msgstr ""
+msgstr "वापस ले जाएं"
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -2065,7 +2065,7 @@ msgstr "असीमित सहेजे गए आरेख"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "प्रो खाते से AI फीचर्स खोलें और कभी भी अपना काम न खोएं।"
 
-#: src/lib/usePromptStore.ts:125
+#: src/lib/usePromptStore.ts:147
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "असीमित AI फ्लोचार्ट्स को अनलॉक करें"
 
@@ -2214,8 +2214,8 @@ msgid "Will my diagrams actually look professional?"
 msgstr "क्या मेरे डायग्राम वास्तव में पेशेवर दिखेंगे?"
 
 #: src/components/EditWithAI.tsx:28
-msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "फ्लोचार्ट फन के प्रो संस्करण के साथ, आप प्राकृतिक भाषा के आदेशों का उपयोग करके अपने फ्लोचार्ट विवरणों को त्वरित रूप से समाप्त कर सकते हैं, यात्रा पर आरेख बनाने के लिए आदर्श। $4/महीने के लिए, अपने फ्लोचार्टिंग अनुभव को बढ़ाने के लिए पहुंचने योग्य AI संपादन की सुविधा प्राप्त करें।"
+msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience."
+msgstr "फ्लोचार्ट फन के प्रो संस्करण के साथ, आप प्राकृतिक भाषा के आदेशों का उपयोग करके अपने फ्लोचार्ट विवरणों को त्वरित रूप से समाप्त कर सकते हैं, यात्रा पर आरेख बनाने के लिए आदर्श। $6/महीने के लिए, अपने फ्लोचार्टिंग अनुभव को बढ़ाने के लिए पहुंचने योग्य AI संपादन की सुविधा प्राप्त करें।"
 
 #: src/pages/Pricing.tsx:50
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
@@ -2285,7 +2285,7 @@ msgstr "आप बहुत अच्छा कर रहे हैं!"
 msgid "You're on the free plan."
 msgstr "आप मुफ़्त योजना पर हैं।"
 
-#: src/lib/usePromptStore.ts:122
+#: src/lib/usePromptStore.ts:144
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "आपने अपने सभी नि: शुल्क एआई रूपांतरण का उपयोग किया है। असीमित एआई उपयोग, कस्टम थीम, निजी साझाकरण और अधिक के लिए प्रो पर अपग्रेड करें। अब आसानी से शानदार फ्लोचार्ट बनाते रहें!"
 

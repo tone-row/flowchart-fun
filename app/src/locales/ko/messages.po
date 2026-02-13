@@ -14,12 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/pages/Pricing2.tsx:378
-msgid "$24/year (save 50%) · Cancel anytime"
-msgstr "연간 $24 (50% 할인) · 언제든지 취소 가능"
+msgid "$48/year (save 33%) · Cancel anytime"
+msgstr "연간 $48 (33% 할인) · 언제든지 취소 가능"
 
 #: src/pages/Pricing2.tsx:345
-msgid "$4/mo"
-msgstr "월 $4"
+msgid "$6/mo"
+msgstr "월 $6"
 
 #: src/pages/Pricing.tsx:62
 msgid "1 Temporary Flowchart"
@@ -103,8 +103,8 @@ msgid "Align Vertically"
 msgstr "수직 정렬"
 
 #: src/components/SandboxWarning.tsx:74
-msgid "All this for just $4/month - less than your daily coffee ☕"
-msgstr "하루 커피 값보다 저렴한 월 $4로 이 모든 것을 이용하세요 ☕"
+msgid "All this for just $6/month - less than your daily coffee ☕"
+msgstr "하루 커피 값보다 저렴한 월 $6로 이 모든 것을 이용하세요 ☕"
 
 #: src/pages/Pricing2.tsx:83
 msgid "Always presentation-ready"
@@ -184,12 +184,12 @@ msgid "Begin your journey"
 msgstr "여정을 시작하세요."
 
 #: src/components/Checkout.tsx:139
-msgid "Billed annually at $24"
-msgstr "매년 $24로 청구됩니다"
+msgid "Billed annually at $48"
+msgstr "매년 $48로 청구됩니다"
 
 #: src/components/Checkout.tsx:151
-msgid "Billed monthly at $4"
-msgstr "매달 $4에 청구됩니다."
+msgid "Billed monthly at $6"
+msgstr "매달 $6에 청구됩니다."
 
 #: src/components/Header.tsx:144
 #: src/components/Header.tsx:397
@@ -467,8 +467,8 @@ msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "즉시 플로우차트 생성: 텍스트를 입력하거나 붙여넣고 시각화해보세요."
 
 #: src/pages/Pricing.tsx:104
-msgid "Create unlimited diagrams for just $4/month!"
-msgstr "매달 $4로 무제한 다이어그램을 생성하세요!"
+msgid "Create unlimited diagrams for just $6/month!"
+msgstr "매달 $6로 무제한 다이어그램을 생성하세요!"
 
 #: src/pages/Pricing.tsx:26
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
@@ -764,8 +764,8 @@ msgid "Exclusive Office Hours"
 msgstr "독점 오피스 시간"
 
 #: src/components/LoadFileButton.tsx:76
-msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
-msgstr "로컬 파일을 직접 플로우차트에 로드하여 효율성과 보안성을 경험해보세요. 오프라인에서 업무 관련 문서를 관리하기에 완벽한 기능입니다. Flowchart Fun Pro를 구독하면 이 독점적인 프로 기능과 더 많은 기능을 이용할 수 있습니다. 매달 $4로 이용 가능합니다."
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
+msgstr "로컬 파일을 직접 플로우차트에 로드하여 효율성과 보안성을 경험해보세요. 오프라인에서 업무 관련 문서를 관리하기에 완벽한 기능입니다. Flowchart Fun Pro를 구독하면 이 독점적인 프로 기능과 더 많은 기능을 이용할 수 있습니다. 매달 $6로 이용 가능합니다."
 
 #: src/pages/Account.tsx:587
 msgid "Explore Pro"
@@ -820,8 +820,8 @@ msgid "Fixed Node Height"
 msgstr "고정된 노드 높이"
 
 #: src/lib/paywallCopy.ts:5
-msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $4/month."
-msgstr "Flowchart Fun Pro는 매달 $4로 무제한 플로우차트, 무제한 공동 작업자 및 무제한 저장 공간을 제공합니다."
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
+msgstr "Flowchart Fun Pro는 매달 $6로 무제한 플로우차트, 무제한 공동 작업자 및 무제한 저장 공간을 제공합니다."
 
 #: src/components/Settings.tsx:136
 msgid "Flowchart Fun is built and maintained by one developer. Your support keeps it going."
@@ -871,7 +871,7 @@ msgstr "텍스트로부터 자동으로 플로우차트 생성하기"
 msgid "Get Pro Access Now"
 msgstr "지금 프로 액세스 받기"
 
-#: src/lib/usePromptStore.ts:121
+#: src/lib/usePromptStore.ts:143
 msgid "Get Unlimited AI Requests"
 msgstr "무제한 AI 요청 받기"
 
@@ -1001,8 +1001,8 @@ msgid "Import your diagram it into Microsoft Visio using one of these CSV files.
 msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다."
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
-msgstr "데이터를 가져오는 것은 프로 기능입니다. Flowchart Fun Pro로 업그레이드하면 매월 $4에 이용할 수 있습니다."
+msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $6/month."
+msgstr "데이터를 가져오는 것은 프로 기능입니다. Flowchart Fun Pro로 업그레이드하면 매월 $6에 이용할 수 있습니다."
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -1351,7 +1351,7 @@ msgstr "일대일 지원"
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
 
-#: src/lib/usePromptStore.ts:118
+#: src/lib/usePromptStore.ts:140
 msgid "Operation canceled"
 msgstr "작업이 취소되었습니다."
 
@@ -1427,8 +1427,8 @@ msgid "Privacy Policy"
 msgstr "개인정보보호정책"
 
 #: src/pages/Pricing2.tsx:395
-msgid "Pro starts at $2/mo billed yearly. Cancel anytime."
-msgstr "Pro는 연간 $2에 시작합니다. 언제든지 취소할 수 있습니다."
+msgid "Pro starts at $4/mo billed yearly. Cancel anytime."
+msgstr "Pro는 연간 $4에 시작합니다. 언제든지 취소할 수 있습니다."
 
 #: src/components/GraphTip.tsx:31
 msgid "Pro tip: Right-click any node to customize its shape and color"
@@ -1477,7 +1477,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "래스터 내보내기 (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:129
+#: src/lib/usePromptStore.ts:151
 msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
 
@@ -1889,8 +1889,8 @@ msgid "The fastest way to turn what's in your head into something everyone else 
 msgstr "머리 속에 있는 것을 다른 사람들이 이해할 수 있는 것으로 바꾸는 가장 빠른 방법입니다."
 
 #: src/components/FAQ.tsx:29
-msgid "The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $4/mo — cancel anytime with no commitment."
-msgstr "무료 요금제는 일상적인 사용에 적합합니다. Pro 기능이 필요한 경우 매월 $4로 이용 가능하며, 언제든지 해지할 수 있습니다."
+msgid "The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $6/mo — cancel anytime with no commitment."
+msgstr "무료 요금제는 일상적인 사용에 적합합니다. Pro 기능이 필요한 경우 매월 $6로 이용 가능하며, 언제든지 해지할 수 있습니다."
 
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
@@ -2026,7 +2026,7 @@ msgstr "60초 이내에. 몇 줄의 텍스트를 입력하거나 인공지능에
 
 #: src/components/AiToolbar.tsx:123
 msgid "Undo"
-msgstr ""
+msgstr "취소"
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -2065,7 +2065,7 @@ msgstr "무제한 저장된 다이어그램"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "AI 기능 잠금 해제 및 프로 계정으로 작업을 절대 잃지 않습니다."
 
-#: src/lib/usePromptStore.ts:125
+#: src/lib/usePromptStore.ts:147
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "무제한 AI 플로우차트 잠금 해제"
 
@@ -2214,8 +2214,8 @@ msgid "Will my diagrams actually look professional?"
 msgstr "내 다이어그램이 전문적으로 보일까요?"
 
 #: src/components/EditWithAI.tsx:28
-msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "Flowchart Fun의 Pro 버전을 사용하면 자연어 명령을 사용하여 흐름도 세부 정보를 빠르게 완성할 수 있으며, 이동 중에 다이어그램을 만드는 데 이상적입니다. 매월 $4로 접근 가능한 AI 편집의 편리함을 느껴보세요."
+msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience."
+msgstr "Flowchart Fun의 Pro 버전을 사용하면 자연어 명령을 사용하여 흐름도 세부 정보를 빠르게 완성할 수 있으며, 이동 중에 다이어그램을 만드는 데 이상적입니다. 매월 $6로 접근 가능한 AI 편집의 편리함을 느껴보세요."
 
 #: src/pages/Pricing.tsx:50
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
@@ -2285,7 +2285,7 @@ msgstr "잘하고 있어요!"
 msgid "You're on the free plan."
 msgstr "무료 요금제를 사용 중입니다."
 
-#: src/lib/usePromptStore.ts:122
+#: src/lib/usePromptStore.ts:144
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "모든 무료 AI 변환을 사용하셨습니다. 무제한 AI 사용, 사용자 정의 테마, 개인 공유 등을 위해 Pro로 업그레이드하세요. 쉽게 멋진 플로우차트를 만들어 나가세요!"
 

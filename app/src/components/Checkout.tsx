@@ -136,9 +136,9 @@ export function Checkout({
             setPlan("yearly");
           }}
           planTitle={t`Yearly`}
-          description={t`Billed annually at $24`}
+          description={t`Billed annually at $48`}
           data-testid="yearly-plan-button"
-          monthlyPrice="2"
+          monthlyPrice="4"
           aria-current={plan === "yearly"}
           data-session-activity="Choose Yearly Plan"
           save
@@ -148,9 +148,9 @@ export function Checkout({
             setPlan("monthly");
           }}
           planTitle={t`Monthly`}
-          description={t`Billed monthly at $4`}
+          description={t`Billed monthly at $6`}
           data-testid="monthly-plan-button"
-          monthlyPrice="4"
+          monthlyPrice="6"
           aria-current={plan === "monthly"}
           data-session-activity="Choose Monthly Plan"
         />
@@ -231,7 +231,7 @@ function PlanButton({
       <span className="opacity-50 text-[15px]">{description}</span>
       {save ? (
         <span className="absolute top-0 right-0 bg-blue-700 text-white font-bold pb-[14px] pt-[8px] pl-[17px] pr-[9px] rounded-tr-2xl rounded-bl-3xl -mr-px">
-          Save 50%
+          Save 33%
         </span>
       ) : null}
     </button>

@@ -14,12 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/pages/Pricing2.tsx:378
-msgid "$24/year (save 50%) · Cancel anytime"
-msgstr "24 $/an (économisez 50%) · Annulez à tout moment"
+msgid "$48/year (save 33%) · Cancel anytime"
+msgstr "48 $/an (économisez 33%) · Annulez à tout moment"
 
 #: src/pages/Pricing2.tsx:345
-msgid "$4/mo"
-msgstr "4 $/mois"
+msgid "$6/mo"
+msgstr "6 $/mois"
 
 #: src/pages/Pricing.tsx:62
 msgid "1 Temporary Flowchart"
@@ -103,8 +103,8 @@ msgid "Align Vertically"
 msgstr "Aligner Verticalement"
 
 #: src/components/SandboxWarning.tsx:74
-msgid "All this for just $4/month - less than your daily coffee ☕"
-msgstr "Tout cela pour seulement 4 $ par mois - moins que votre café quotidien ☕"
+msgid "All this for just $6/month - less than your daily coffee ☕"
+msgstr "Tout cela pour seulement 6 $ par mois - moins que votre café quotidien ☕"
 
 #: src/pages/Pricing2.tsx:83
 msgid "Always presentation-ready"
@@ -184,12 +184,12 @@ msgid "Begin your journey"
 msgstr "Commencez votre voyage"
 
 #: src/components/Checkout.tsx:139
-msgid "Billed annually at $24"
-msgstr "Facturé annuellement à 24 $"
+msgid "Billed annually at $48"
+msgstr "Facturé annuellement à 48 $"
 
 #: src/components/Checkout.tsx:151
-msgid "Billed monthly at $4"
-msgstr "Facturé mensuellement à 4 $"
+msgid "Billed monthly at $6"
+msgstr "Facturé mensuellement à 6 $"
 
 #: src/components/Header.tsx:144
 #: src/components/Header.tsx:397
@@ -467,8 +467,8 @@ msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "Créez des organigrammes instantanément : Tapez ou collez du texte, visualisez-le."
 
 #: src/pages/Pricing.tsx:104
-msgid "Create unlimited diagrams for just $4/month!"
-msgstr "Créez des diagrammes illimités pour seulement 4 $/mois !"
+msgid "Create unlimited diagrams for just $6/month!"
+msgstr "Créez des diagrammes illimités pour seulement 6 $/mois !"
 
 #: src/pages/Pricing.tsx:26
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
@@ -764,8 +764,8 @@ msgid "Exclusive Office Hours"
 msgstr "Heures de bureau exclusives"
 
 #: src/components/LoadFileButton.tsx:76
-msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
-msgstr "Découvrez l'efficacité et la sécurité du chargement de fichiers locaux directement dans votre organigramme, idéal pour gérer des documents professionnels hors ligne. Débloquez cette fonctionnalité exclusive Pro et bien plus encore avec Flowchart Fun Pro, disponible pour seulement 4 $/mois."
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
+msgstr "Découvrez l'efficacité et la sécurité du chargement de fichiers locaux directement dans votre organigramme, idéal pour gérer des documents professionnels hors ligne. Débloquez cette fonctionnalité exclusive Pro et bien plus encore avec Flowchart Fun Pro, disponible pour seulement 6 $/mois."
 
 #: src/pages/Account.tsx:587
 msgid "Explore Pro"
@@ -820,8 +820,8 @@ msgid "Fixed Node Height"
 msgstr "Hauteur de nœud fixe"
 
 #: src/lib/paywallCopy.ts:5
-msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $4/month."
-msgstr "Flowchart Fun Pro vous offre des organigrammes illimités, des collaborateurs illimités et un stockage illimité pour seulement 4 $/mois."
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
+msgstr "Flowchart Fun Pro vous offre des organigrammes illimités, des collaborateurs illimités et un stockage illimité pour seulement 6 $/mois."
 
 #: src/components/Settings.tsx:136
 msgid "Flowchart Fun is built and maintained by one developer. Your support keeps it going."
@@ -871,7 +871,7 @@ msgstr "Générez automatiquement des diagrammes de flux à partir de texte"
 msgid "Get Pro Access Now"
 msgstr "Obtenez un accès Pro maintenant"
 
-#: src/lib/usePromptStore.ts:121
+#: src/lib/usePromptStore.ts:143
 msgid "Get Unlimited AI Requests"
 msgstr "Obtenez des demandes illimitées d'IA"
 
@@ -1001,8 +1001,8 @@ msgid "Import your diagram it into Microsoft Visio using one of these CSV files.
 msgstr "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces fichiers CSV."
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
-msgstr "L'importation de données est une fonctionnalité professionnelle. Vous pouvez passer à Flowchart Fun Pro pour seulement 4 $ par mois."
+msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $6/month."
+msgstr "L'importation de données est une fonctionnalité professionnelle. Vous pouvez passer à Flowchart Fun Pro pour seulement 6 $ par mois."
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -1351,7 +1351,7 @@ msgstr "Assistance individuelle"
 msgid "Open Customer Portal"
 msgstr "Ouvrir le portail client"
 
-#: src/lib/usePromptStore.ts:118
+#: src/lib/usePromptStore.ts:140
 msgid "Operation canceled"
 msgstr "Opération annulée"
 
@@ -1427,8 +1427,8 @@ msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
 
 #: src/pages/Pricing2.tsx:395
-msgid "Pro starts at $2/mo billed yearly. Cancel anytime."
-msgstr "La version Pro commence à 2€/mois facturés annuellement. Annulez à tout moment."
+msgid "Pro starts at $4/mo billed yearly. Cancel anytime."
+msgstr "La version Pro commence à 4€/mois facturés annuellement. Annulez à tout moment."
 
 #: src/components/GraphTip.tsx:31
 msgid "Pro tip: Right-click any node to customize its shape and color"
@@ -1477,7 +1477,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "Exportation de rasters (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:129
+#: src/lib/usePromptStore.ts:151
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Limite de taux dépassée. Veuillez réessayer plus tard."
 
@@ -1889,8 +1889,8 @@ msgid "The fastest way to turn what's in your head into something everyone else 
 msgstr "Le moyen le plus rapide de transformer ce qui se trouve dans votre tête en quelque chose que tout le monde peut comprendre."
 
 #: src/components/FAQ.tsx:29
-msgid "The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $4/mo — cancel anytime with no commitment."
-msgstr "Le plan gratuit fonctionne parfaitement pour une utilisation quotidienne. Si vous avez besoin de fonctionnalités Pro, c'est mois par mois à 4€/mois - annulez à tout moment sans engagement."
+msgid "The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $6/mo — cancel anytime with no commitment."
+msgstr "Le plan gratuit fonctionne parfaitement pour une utilisation quotidienne. Si vous avez besoin de fonctionnalités Pro, c'est mois par mois à 6€/mois - annulez à tout moment sans engagement."
 
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
@@ -2026,7 +2026,7 @@ msgstr "Moins de 60 secondes. Tapez quelques lignes de texte ou décrivez ce don
 
 #: src/components/AiToolbar.tsx:123
 msgid "Undo"
-msgstr ""
+msgstr "Annuler"
 
 #: src/lib/parserErrors.tsx:45
 msgid "Unescaped special character"
@@ -2065,7 +2065,7 @@ msgstr "Diagrammes sauvegardés illimités"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "Débloquez les fonctionnalités de l'IA et ne perdez jamais votre travail avec un compte Pro."
 
-#: src/lib/usePromptStore.ts:125
+#: src/lib/usePromptStore.ts:147
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "Débloquez des organigrammes AI illimités"
 
@@ -2214,8 +2214,8 @@ msgid "Will my diagrams actually look professional?"
 msgstr "Est-ce que mes diagrammes auront un aspect professionnel ?"
 
 #: src/components/EditWithAI.tsx:28
-msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "Avec la version Pro de Flowchart Fun, vous pouvez utiliser des commandes en langage naturel pour rapidement détailler votre organigramme, idéal pour créer des diagrammes en déplacement. Pour 4 $ par mois, profitez de la facilité de l'édition accessible par l'IA pour améliorer votre expérience de création d'organigrammes."
+msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience."
+msgstr "Avec la version Pro de Flowchart Fun, vous pouvez utiliser des commandes en langage naturel pour rapidement détailler votre organigramme, idéal pour créer des diagrammes en déplacement. Pour 6 $ par mois, profitez de la facilité de l'édition accessible par l'IA pour améliorer votre expérience de création d'organigrammes."
 
 #: src/pages/Pricing.tsx:50
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
@@ -2285,7 +2285,7 @@ msgstr "Vous vous en sortez très bien !"
 msgid "You're on the free plan."
 msgstr "Vous êtes sur le plan gratuit."
 
-#: src/lib/usePromptStore.ts:122
+#: src/lib/usePromptStore.ts:144
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "Vous avez utilisé toutes vos conversions gratuites d'IA. Passez à la version Pro pour une utilisation illimitée de l'IA, des thèmes personnalisés, un partage privé et plus encore. Continuez à créer des diagrammes de flux incroyables sans effort !"
 
