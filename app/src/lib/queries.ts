@@ -88,15 +88,16 @@ async function orderHistory(
   }[]
 > {
   if (!customerId || !subscriptionId) return [];
+  if (!supabase) return [];
+  const auth = await supabase.auth.getSession();
+  if (!auth.data.session) return [];
+  const accessToken = auth.data.session.access_token;
   const response = await fetch("/api/order-history", {
     method: "post",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`,
     },
-    body: JSON.stringify({
-      customerId,
-      subscriptionId,
-    }),
   });
   const { error, invoices } = await response.json();
   if (error) throw error;
