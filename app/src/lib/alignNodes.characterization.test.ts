@@ -316,6 +316,13 @@ describe("alignNodesVertically (sets a SHARED Y = average; preserves each X)", (
     expect(out.A).toEqual({ x: 7, y: 8 });
     expect(out.B).toEqual({ x: 9, y: 10 });
   });
+
+  test("early-return when nodePositions undefined: no undo push", () => {
+    useDoc.setState(() => ({ meta: {} }));
+    const undoBefore = canUndo();
+    alignNodesVertically(["A"]);
+    expect(canUndo()).toBe(undoBefore);
+  });
 });
 
 describe("undo / redo round-trip (guards the shallow-copy of originalPositions)", () => {
@@ -355,6 +362,26 @@ describe("undo / redo round-trip (guards the shallow-copy of originalPositions)"
     const afterUndo = getPositions()!;
     expect(afterUndo.A).toEqual({ x: 0, y: 1 });
     expect(afterUndo.B).toEqual({ x: 200, y: 2 });
+  });
+
+  test("alignNodesVertically: undo() restores original Y values; redo() re-applies", () => {
+    seed({
+      A: { x: 1, y: 0 },
+      B: { x: 2, y: 200 },
+    });
+
+    alignNodesVertically(["A", "B"]);
+    expect(getPositions()!.A.y).toBe(100); // avg of 0 and 200
+
+    undo();
+    const afterUndo = getPositions()!;
+    expect(afterUndo.A).toEqual({ x: 1, y: 0 });
+    expect(afterUndo.B).toEqual({ x: 2, y: 200 });
+
+    redo();
+    const afterRedo = getPositions()!;
+    expect(afterRedo.A).toEqual({ x: 1, y: 100 });
+    expect(afterRedo.B).toEqual({ x: 2, y: 100 });
   });
 });
 
