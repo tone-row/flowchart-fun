@@ -385,10 +385,10 @@ describe("undo / redo round-trip (guards the shallow-copy of originalPositions)"
   });
 });
 
-describe("undo-stack pollution: even a NO-OP align pushes an undo entry and clears redo", () => {
-  test("a no-op alignNodes still pushes undo and wipes redo history (customer-visible landmine)", () => {
-    // CHARACTERIZATION: align functions ALWAYS setState + push undo, even when
-    // nothing changes. A no-op align therefore destroys redo history.
+describe("undo-stack hygiene: a NO-OP align does NOT push an undo entry and preserves redo", () => {
+  test("a no-op alignNodes leaves undo/redo history untouched (no pollution)", () => {
+    // A no-op align (nodes far apart on both axes -> nothing snaps) must NOT
+    // setState or push undo, so it must NOT destroy redo history.
 
     // 1. Do a real align so there's something to undo, then undo it so redo is
     //    available.
@@ -398,26 +398,26 @@ describe("undo-stack pollution: even a NO-OP align pushes an undo entry and clea
     expect(canRedo()).toBe(true);
 
     // 2. Now perform a NO-OP align (nodes far apart on both axes -> nothing
-    //    snaps). It still pushes an undo entry AND clears the redo stack.
+    //    snaps). It must leave both stacks exactly as they were.
     seed({ A: { x: 0, y: 0 }, Far: { x: 9000, y: 9000 } });
     const undoCountBefore = canUndo();
     alignNodes();
 
-    // redo history wiped by the no-op.
-    expect(canRedo()).toBe(false);
-    // an undo entry exists from the no-op.
-    expect(canUndo()).toBe(true);
+    // redo history preserved (the no-op did not wipe it).
+    expect(canRedo()).toBe(true);
+    // no undo entry added by the no-op.
+    expect(canUndo()).toBe(false);
     expect(undoCountBefore).toBe(false); // pre-condition: after the undo above, undo stack was empty
   });
 
-  test("alignNodesHorizontally with a single id is a no-op-on-position but still pushes an undo entry", () => {
+  test("alignNodesHorizontally with a single id is a no-op-on-position and does NOT push an undo entry", () => {
     seed({ A: { x: 50, y: 7 }, B: { x: 999, y: 8 } });
     // Single id -> averageX = its own x -> A unchanged.
     alignNodesHorizontally(["A"]);
 
     const out = getPositions()!;
     expect(out.A).toEqual({ x: 50, y: 7 }); // unchanged
-    // But an undo entry was still pushed.
-    expect(canUndo()).toBe(true);
+    // No undo entry was pushed since nothing changed.
+    expect(canUndo()).toBe(false);
   });
 });

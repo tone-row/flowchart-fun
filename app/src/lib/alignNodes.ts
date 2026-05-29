@@ -3,6 +3,25 @@ import { useDoc } from "./useDoc";
 import { addToUndoStack } from "./undoStack";
 
 /**
+ * Deep equality over two position maps. Returns true when both maps have the
+ * exact same set of ids and each id's x and y are identical. Used to detect
+ * no-op aligns so we can skip the setState + undo-stack push (which would
+ * otherwise pollute the undo stack and wipe redo history).
+ */
+function positionsAreEqual(a: NodePositions, b: NodePositions): boolean {
+  const aKeys = Object.keys(a);
+  const bKeys = Object.keys(b);
+  if (aKeys.length !== bKeys.length) return false;
+  for (const id of aKeys) {
+    const aPos = a[id];
+    const bPos = b[id];
+    if (!bPos) return false;
+    if (aPos.x !== bPos.x || aPos.y !== bPos.y) return false;
+  }
+  return true;
+}
+
+/**
  * This function tries to align nodes vertical and horiontal on their center
  * axis by iterating over all the nodes, finding their centers, looking for other
  * nodes that are close to them, and then moving them to the center of the
@@ -52,6 +71,10 @@ export function alignNodes() {
       y: closestVertical ? closestVertical.y : position.y,
     };
   });
+
+  // No-op guard: if nothing actually moved, don't touch state or the undo
+  // stack (avoids polluting undo and wiping the user's redo history).
+  if (positionsAreEqual(originalPositions, alignedPositions)) return;
 
   // Update the node positions in the document state
   useDoc.setState((state) => ({
@@ -119,6 +142,10 @@ export function alignNodesHorizontally(nodeIds: string[]) {
     }
   }
 
+  // No-op guard: if nothing actually moved, don't touch state or the undo
+  // stack (avoids polluting undo and wiping the user's redo history).
+  if (positionsAreEqual(originalPositions, alignedPositions)) return;
+
   // Update the node positions in the document state
   useDoc.setState((state) => ({
     meta: {
@@ -184,6 +211,10 @@ export function alignNodesVertically(nodeIds: string[]) {
       };
     }
   }
+
+  // No-op guard: if nothing actually moved, don't touch state or the undo
+  // stack (avoids polluting undo and wiping the user's redo history).
+  if (positionsAreEqual(originalPositions, alignedPositions)) return;
 
   // Update the node positions in the document state
   useDoc.setState((state) => ({
