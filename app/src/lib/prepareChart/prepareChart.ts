@@ -69,12 +69,12 @@ export async function prepareChart({
     typeof meta.cytoscapeStyle === "undefined" &&
     typeof meta.themeEditor === "undefined"
   ) {
-    meta.themeEditor = theme;
+    meta.themeEditor = { ...theme };
     meta.cytoscapeStyle = cytoscapeStyle;
   } else if (typeof meta.themeEditor === "undefined") {
     // or if there is cytoscapeStyle but no themeEditor, then
     // set the default theme but disable it
-    meta.themeEditor = theme;
+    meta.themeEditor = { ...theme };
     meta.customCssOnly = true;
   }
 

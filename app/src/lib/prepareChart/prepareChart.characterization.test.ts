@@ -22,16 +22,16 @@ import { prepareChart } from "./prepareChart";
  * theme backfill, layout migration and text normalization WITHOUT touching jsdom or
  * the zustand store. A small number of { set: true } cases pin the side-effect path.
  *
- * IMPORTANT MUTATION HAZARD (see "shared default theme" test): prepareChart assigns
- * `meta.themeEditor = theme` (the SAME imported module-level object) and then mutates
- * .layoutName / .spacingFactor on it during legacy-layout migration. That permanently
- * mutates the shared `theme` import and LEAKS across subsequent prepareChart calls in
- * the same module. We capture the pristine default values up-front so the leak can be
- * pinned deterministically, and we keep the leak-inducing test isolated/last.
+ * THEME CLONING (see "shared default theme" test): prepareChart backfills
+ * `meta.themeEditor` with a CLONE of the default theme ({ ...theme }), not the shared
+ * imported object, so legacy-layout migration mutating .layoutName / .spacingFactor no
+ * longer leaks into the shared `theme` import or across subsequent prepareChart calls.
+ * We capture the pristine default values up-front and assert the shared import stays
+ * pristine after a mutating call.
  */
 
-// Capture the PRISTINE default theme values BEFORE any prepareChart call runs,
-// because prepareChart mutates the shared `theme` object in place.
+// Capture the PRISTINE default theme values BEFORE any prepareChart call runs, so we
+// can assert the shared `theme` import is NOT mutated by prepareChart (it clones).
 const PRISTINE_LAYOUT_NAME = theme.layoutName; // "dagre"
 const PRISTINE_SPACING_FACTOR = theme.spacingFactor; // 1.1
 const PRISTINE_THEME_SNAPSHOT = JSON.parse(JSON.stringify(theme));
@@ -65,8 +65,10 @@ describe("prepareChart (characterization)", () => {
       "themeEditor",
     ]);
     expect(result.meta.cytoscapeStyle).toBe(cytoscapeStyle);
-    // themeEditor is the (still-pristine here) default theme object reference
-    expect(result.meta.themeEditor).toBe(theme);
+    // themeEditor is a CLONE of the default theme (not the shared import ref),
+    // so it deep-equals the default but is a distinct object
+    expect(result.meta.themeEditor).not.toBe(theme);
+    expect(result.meta.themeEditor).toEqual(theme);
     expect((result.meta.themeEditor as any).layoutName).toBe(
       PRISTINE_LAYOUT_NAME
     );
@@ -179,8 +181,9 @@ describe("prepareChart (characterization)", () => {
 
     // user's cytoscapeStyle preserved (NOT overwritten with default)
     expect(result.meta.cytoscapeStyle).toBe("node { background-color: red; }");
-    // default theme backfilled (shared `theme` reference)
-    expect(result.meta.themeEditor).toBe(theme);
+    // default theme backfilled as a CLONE (not the shared `theme` reference)
+    expect(result.meta.themeEditor).not.toBe(theme);
+    expect(result.meta.themeEditor).toEqual(theme);
     // CHARACTERIZATION: the easy-to-lose customCssOnly flag that disables the
     // backfilled default theme at render time
     expect(result.meta.customCssOnly).toBe(true);
@@ -469,17 +472,18 @@ describe("prepareChart (characterization)", () => {
   });
 
   // ---------------------------------------------------------------------------
-  // SHARED DEFAULT THEME MUTATION HAZARD — keep LAST; it permanently mutates the
-  // imported `theme` object for the rest of this module's lifetime.
+  // SHARED DEFAULT THEME — the default-theme backfill now assigns a CLONE of the
+  // imported `theme` object, so legacy-layout migration can no longer mutate the
+  // shared import or leak across calls.
   // ---------------------------------------------------------------------------
-  test("MUTATION HAZARD: legacy-layout migration mutates the shared imported default theme and leaks into a later default chart", async () => {
-    // Confirm the import is still pristine right before we trigger the leak.
+  test("legacy-layout migration does NOT mutate the shared imported default theme and does NOT leak into a later default chart", async () => {
+    // Confirm the import is pristine right before we run the migration.
     expect(theme.layoutName).toBe(PRISTINE_LAYOUT_NAME);
     expect(theme.spacingFactor).toBe(PRISTINE_SPACING_FACTOR);
 
     // Chart 1: legacy `layout` present AND themeEditor defaulted (no themeEditor
-    // in meta) -> prepareChart assigns meta.themeEditor = theme (shared ref) and
-    // then mutates layoutName/spacingFactor on it.
+    // in meta) -> prepareChart assigns meta.themeEditor = { ...theme } (a CLONE)
+    // and then mutates layoutName/spacingFactor only on that clone.
     const chart1 = await prepareChart({
       doc: `n1\n=====\n${JSON.stringify({
         layout: { name: "cose", spacingFactor: 5 },
@@ -488,23 +492,30 @@ describe("prepareChart (characterization)", () => {
       set: false,
     });
     expect((chart1.meta.themeEditor as any).layoutName).toBe("cose");
+    expect((chart1.meta.themeEditor as any).spacingFactor).toBe(5);
 
-    // CHARACTERIZATION (likely a bug): the shared module-level `theme` object is
-    // now mutated in place.
-    expect(theme.layoutName).toBe("cose");
-    expect(theme.spacingFactor).toBe(5);
+    // The shared module-level `theme` object is UNCHANGED (still pristine).
+    expect(theme.layoutName).toBe(PRISTINE_LAYOUT_NAME);
+    expect(theme.spacingFactor).toBe(PRISTINE_SPACING_FACTOR);
 
-    // Chart 2: a plain default chart with no metadata. It assigns the SAME shared
-    // (now-mutated) theme object, so it inherits 'cose' / 5 instead of the
-    // pristine 'dagre' / 1.1 defaults. The state has leaked across calls.
+    // Chart 2: a plain default chart with no metadata. It assigns a fresh CLONE
+    // of the pristine theme, so it gets the default 'dagre' / 1.1 values — the
+    // earlier migration did NOT leak across calls.
     const chart2 = await prepareChart({
       doc: `just text`,
       details: initialDoc.details,
       set: false,
     });
-    expect((chart2.meta.themeEditor as any).layoutName).toBe("cose");
-    expect((chart2.meta.themeEditor as any).spacingFactor).toBe(5);
-    // chart1 and chart2 themeEditor are literally the same object reference
-    expect(chart2.meta.themeEditor).toBe(chart1.meta.themeEditor);
+    expect((chart2.meta.themeEditor as any).layoutName).toBe(
+      PRISTINE_LAYOUT_NAME
+    );
+    expect((chart2.meta.themeEditor as any).spacingFactor).toBe(
+      PRISTINE_SPACING_FACTOR
+    );
+    // chart1 and chart2 themeEditor are DISTINCT objects (each a fresh clone),
+    // and neither is the shared import.
+    expect(chart2.meta.themeEditor).not.toBe(chart1.meta.themeEditor);
+    expect(chart2.meta.themeEditor).not.toBe(theme);
+    expect(chart1.meta.themeEditor).not.toBe(theme);
   });
 });
