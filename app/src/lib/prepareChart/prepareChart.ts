@@ -64,7 +64,12 @@ export async function prepareChart({
   text = `${text.trim()}\n`;
 
   // If cytoscapeStyle is not defined, and themeEditor is not defined
-  // load the default theme
+  // load the default theme.
+  // NOTE: spread-clone `theme` rather than assigning it directly. The
+  // legacy-layout migration below mutates themeEditor.layoutName/spacingFactor
+  // in place, and `theme` is the shared default-template import — without the
+  // clone that mutation leaks into every subsequent chart in the session.
+  // A shallow clone suffices because only top-level scalars are mutated.
   if (
     typeof meta.cytoscapeStyle === "undefined" &&
     typeof meta.themeEditor === "undefined"
