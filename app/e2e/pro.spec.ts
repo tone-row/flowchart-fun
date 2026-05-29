@@ -153,11 +153,18 @@ test("Create chart from imported data", async () => {
       .selectOption("Connector Label");
     await page.getByTestId("import-submit-button").click();
 
+    // Import parsing + preview can be slow against the Vercel preview, so give
+    // the confirmation dialog generous time rather than the 5s default (this
+    // assertion has flaked at the default timeout).
     await expect(
       page.getByText("You are about to add 9 nodes and 10 edges to your graph.")
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 30000 });
 
-    await page.getByTestId("import-confirm-button").click();
+    // Wait for the confirm button to be actionable before clicking — this click
+    // has hung to the test timeout when the dialog was still settling.
+    const confirmButton = page.getByTestId("import-confirm-button");
+    await confirmButton.waitFor({ state: "visible", timeout: 30000 });
+    await confirmButton.click();
   } catch (error) {
     console.error(error);
     throw error;

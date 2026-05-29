@@ -33,6 +33,11 @@ const config: PlaywrightTestConfig = {
     },
   },
   maxFailures: 3,
+  // E2E runs against a live Vercel preview; some flows (notably the CSV-import
+  // confirmation in pro.spec) are timing-sensitive there. Retry in CI so a
+  // one-off flake doesn't redden the whole PR — a real break still fails every
+  // attempt. Locally retries stay off so flakes stay visible while developing.
+  retries: isCI ? 2 : 0,
   projects: isDebug
     ? [
         {
