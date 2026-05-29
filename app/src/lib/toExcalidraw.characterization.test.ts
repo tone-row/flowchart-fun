@@ -222,10 +222,9 @@ describe("toExcalidraw characterization", () => {
     expect(targetArrowBindings).toEqual([{ type: "arrow", id: arrow.id }]);
   });
 
-  it("LABELED edge: boundElements on endpoints reference the LABEL element id (type 'arrow'), NOT the arrow id", () => {
-    // CHARACTERIZATION: documents current behavior, may be a bug.
-    // createEdge returns [labelNode, edge] when a label exists, but the caller
-    // pushes edgeAndLabel[0].id (the LABEL) into boundElements as type 'arrow'.
+  it("LABELED edge: boundElements on endpoints reference the actual ARROW element id (type 'arrow'), NOT the label id", () => {
+    // The caller binds the actual arrow element's id regardless of whether a
+    // label exists, so endpoints reference the arrow (not the edge label).
     const n1 = makeNode({
       id: "n1",
       x: 100,
@@ -281,10 +280,10 @@ describe("toExcalidraw characterization", () => {
       (b: any) => b.type === "arrow"
     );
 
-    // BUG: the pushed id is the LABEL's id, not the arrow's id
-    expect(sourceArrowBinding.id).toBe(edgeLabel.id);
-    expect(targetArrowBinding.id).toBe(edgeLabel.id);
-    expect(sourceArrowBinding.id).not.toBe(arrow.id);
+    // the pushed id is the actual arrow's id, not the label's id
+    expect(sourceArrowBinding.id).toBe(arrow.id);
+    expect(targetArrowBinding.id).toBe(arrow.id);
+    expect(sourceArrowBinding.id).not.toBe(edgeLabel.id);
 
     // edge label's containerId points to the arrow id
     expect(edgeLabel.containerId).toBe(arrow.id);
@@ -314,10 +313,8 @@ describe("toExcalidraw characterization", () => {
     expect(shape.strokeColor).toBe("#111111");
   });
 
-  it("rgbToHex: channel value < 16 is NOT zero-padded; rgb(5,5,5) -> malformed '#555'", () => {
-    // CHARACTERIZATION: documents current behavior, may be a bug.
-    // No padStart(2,'0'), so channels < 16 emit a single hex digit. Excalidraw
-    // interprets '#555' as the 3-char shorthand #555555 (a different gray).
+  it("rgbToHex: channel value < 16 is zero-padded; rgb(5,5,5) -> '#050505'", () => {
+    // Each channel is padded to 2 hex digits, so the result is always #rrggbb.
     setCy(
       [
         makeNode({
@@ -337,9 +334,9 @@ describe("toExcalidraw characterization", () => {
     );
     const parsed = JSON.parse(toExcalidraw());
     const [shape, text] = parsed.elements;
-    expect(shape.backgroundColor).toBe("#555");
-    // rgb(10,200,30) -> 'a' + 'c8' + '1e' = '#ac81e' (5 chars, garbage)
-    expect(text.strokeColor).toBe("#ac81e");
+    expect(shape.backgroundColor).toBe("#050505");
+    // rgb(10,200,30) -> '0a' + 'c8' + '1e' = '#0ac81e'
+    expect(text.strokeColor).toBe("#0ac81e");
   });
 
   it("node with border-width 0px: strokeColor short-circuits to literal 'transparent' (border-color not converted)", () => {
