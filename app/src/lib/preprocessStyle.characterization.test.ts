@@ -94,10 +94,10 @@ describe("preprocessStyle - $variable substitution (processScss)", () => {
     expect(useProcessStyleStore.getState().variables.blue).toBe("#e3f2fd");
   });
 
-  it("CHARACTERIZATION: variable replace has NO word boundary so a prefix collides (likely bug)", () => {
+  it("variable replace has a trailing boundary so a prefix does NOT collide", () => {
     // $color is a prefix of $colorDark. Insertion order: color first, then colorDark.
-    // When substituting $color (no \b), it will replace the "$color" prefix inside
-    // "$colorDark" too, leaving "Dark" appended to color's value.
+    // With the trailing negative lookahead, substituting $color must NOT rewrite
+    // the "$color" prefix inside "$colorDark"; each variable resolves to its own value.
     const style = `$color: red;
 $colorDark: blue;
 node {
@@ -106,11 +106,9 @@ node {
 }`;
     const result = preprocessStyle(style);
 
-    // CHARACTERIZATION: documents current behavior, may be a bug
-    // $color -> "red", and $colorDark's reference gets its "$color" prefix
-    // replaced first, yielding "redDark"
+    // $color -> "red" and $colorDark -> "blue", with no prefix collision
     expect(result.style).toContain("color: red;");
-    expect(result.style).toContain("border-color: redDark;");
+    expect(result.style).toContain("border-color: blue;");
     expect(result.variables).toEqual({ color: "red", colorDark: "blue" });
   });
 

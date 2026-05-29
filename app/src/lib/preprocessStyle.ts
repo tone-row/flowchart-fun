@@ -313,7 +313,14 @@ function processScss(scss: string): {
   const updatedScss = updatedLines
     .map((line) => {
       for (const variable in variables) {
-        const regex = new RegExp(`\\$${variable}`, "g");
+        // Escape the variable name for safe use in a regex, then add a
+        // negative lookahead so a variable only matches when it is NOT
+        // immediately followed by another valid variable-name character.
+        // Variable names are tokenized as [a-z0-9-_] (case-insensitive),
+        // so e.g. substituting $color must not rewrite the "$color" prefix
+        // inside "$colorDark".
+        const escaped = variable.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const regex = new RegExp(`\\$${escaped}(?![a-zA-Z0-9_-])`, "g");
         line = line.replace(regex, variables[variable]);
       }
       return line;
