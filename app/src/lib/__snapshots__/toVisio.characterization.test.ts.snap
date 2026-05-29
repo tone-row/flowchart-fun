@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toVisioFlowchart — characterization node with 1 outgoing but multiple incoming is Process (not Decision/End) 1`] = `
+"\\"Process Step ID\\",\\"Process Step Description\\",\\"Next Step ID\\",\\"Connector Label\\",\\"Shape Type\\"
+\\"n1\\",\\"a\\",\\"n3\\",\\"\\",\\"Start\\"
+\\"n2\\",\\"b\\",\\"n3\\",\\"\\",\\"Start\\"
+\\"n3\\",\\"c\\",\\"n4\\",\\"\\",\\"Process\\"
+\\"n4\\",\\"d\\",\\"\\",\\"\\",\\"End\\""
+`;
+
+exports[`toVisioFlowchart — characterization node with incoming AND >1 outgoing is Decision 1`] = `
+"\\"Process Step ID\\",\\"Process Step Description\\",\\"Next Step ID\\",\\"Connector Label\\",\\"Shape Type\\"
+\\"n1\\",\\"a\\",\\"n2\\",\\"b\\",\\"Start\\"
+\\"n2\\",\\"b\\",\\"n3,n4\\",\\",\\",\\"Decision\\"
+\\"n3\\",\\"c\\",\\"\\",\\"\\",\\"End\\"
+\\"n4\\",\\"d\\",\\"\\",\\"\\",\\"End\\""
+`;

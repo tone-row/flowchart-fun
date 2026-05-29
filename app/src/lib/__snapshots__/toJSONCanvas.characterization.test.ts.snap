@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toJSONCanvas characterization full structural snapshot for a representative two-node + edge graph 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "fromEnd": undefined,
+      "fromNode": "a",
+      "fromSide": "right",
+      "id": "e",
+      "label": "goes to",
+      "toEnd": undefined,
+      "toNode": "b",
+      "toSide": "left",
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "color": "#e3f2fd",
+      "height": 66,
+      "id": "a",
+      "text": "Start",
+      "type": "text",
+      "width": 86,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "color": "#e3f2fd",
+      "height": 66,
+      "id": "b",
+      "text": "End",
+      "type": "text",
+      "width": 86,
+      "x": 200,
+      "y": 0,
+    },
+  ],
+}
+`;
