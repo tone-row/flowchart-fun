@@ -13,6 +13,11 @@ dotenv.config({ path: envPath });
 
 const config: PlaywrightTestConfig = {
   testDir: "e2e",
+  // Visual-regression specs live under e2e/visual and run via their own
+  // playwright.visual.config.ts (local-only, platform-specific goldens). Keep
+  // them OUT of the e2e suite — they'd otherwise run against the Linux preview
+  // in CI with no matching goldens and fail.
+  testIgnore: "**/visual/**",
   timeout: 120000,
   workers: 12,
   use: {

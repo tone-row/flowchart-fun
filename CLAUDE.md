@@ -550,6 +550,21 @@ No test files exist in the `shared` package.
 
 > **Maintainer note:** E2E test coverage is between "bad and moderate" — roughly 50% of happy paths, with no edge case or error coverage. They've been problematic over the years. Unit tests are well-maintained and passing. If we ever migrate off CRA, E2E tests will become much more important and we'll need to write more.
 
+### Visual Regression (templates)
+
+Pixel-diffs all 13 templates' rendered graphs against committed golden images — the rendering half of the safety net (the logic half is the characterization tests in `app/src/lib/*.characterization.test.ts`). Runs via its own config (`app/playwright.visual.config.ts`), NOT the e2e config. See `app/e2e/visual/README.md`.
+
+> **⚠️ RUN THIS ON ANY VISUALLY SIGNIFICANT CHANGE.** It is currently a **local, manual gate — NOT wired to CI** (goldens are macOS-specific; Linux goldens via the Playwright Docker image is a follow-up). So CI will NOT catch a rendering regression for you. If you touch anything that can change how a chart renders — `toTheme.ts`, `graphUtilityClasses.ts`, `getSize.ts`, `preprocessStyle.ts`, the Cytoscape style/layout pipeline, `FFTheme`, or any template file — you must run it yourself.
+
+```bash
+# the app must be served; if :3000 is taken by another project, use another port:
+BROWSER=none PORT=3001 pnpm -F app dev
+E2E_START_URL=http://localhost:3001 pnpm -F app visual          # compare against goldens
+E2E_START_URL=http://localhost:3001 pnpm -F app visual:update   # regenerate after an INTENTIONAL change
+```
+
+After an intentional visual change: regenerate goldens, **eyeball the diff**, then commit the updated `*.png` goldens. The 3 force-directed mindmap templates use frozen-position fixtures (`pnpm -F app visual:fixtures`); regenerate those only if their content/theme changes.
+
 ## CI/CD
 
 - **GitHub Actions:**
