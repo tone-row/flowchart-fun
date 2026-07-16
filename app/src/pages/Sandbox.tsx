@@ -28,6 +28,7 @@ import { FlowchartLayout } from "../components/FlowchartLayout";
 import { useEditorStore, isInternalWrite } from "../lib/useEditorStore";
 import { getDefaultText } from "../lib/getDefaultText";
 import { AiToolbar } from "../components/AiToolbar";
+import { MoreFromToneRow } from "../components/MoreFromToneRow";
 import { markUserEditedSinceAi, usePromptStore } from "../lib/usePromptStore";
 
 const isE2E =
@@ -144,6 +145,7 @@ const Sandbox = memo(function Edit() {
           <div className="flex justify-between md:justify-start items-end gap-4">
             <EditorTabList />
             <Actions />
+            <MoreFromToneRow className="hidden md:block ml-auto pb-2" />
           </div>
           <WithGraph>
             <Tabs.Content
