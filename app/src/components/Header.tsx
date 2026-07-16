@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import {
+  ArrowSquareOut,
   Chat,
   DiscordLogo,
   Folder,
@@ -39,6 +40,7 @@ import {
 } from "../lib/hooks";
 import { track } from "../lib/track";
 import { useLastChart } from "../lib/useLastChart";
+import { toneRowProjects } from "../lib/toneRowProjects";
 import { ReactComponent as BrandSvg } from "./brand.svg";
 
 export const Header = memo(function SharedHeader() {
@@ -456,6 +458,17 @@ function MobileHeader({
               className="mobile-only"
               to="/privacy-policy"
             />
+            {toneRowProjects.map((project) => (
+              <HeaderLink
+                key={project.name}
+                label={project.name}
+                icon={<ArrowSquareOut height={16} width={16} weight="fill" />}
+                href={project.href}
+                target="_blank"
+                rel="noopener"
+                className="mobile-only"
+              />
+            ))}
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
