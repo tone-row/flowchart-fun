@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://flowchart.fun/</loc>
-<lastmod>2021-04-16</lastmod>
+<lastmod>2026-07-16</lastmod>
+</url>
+<url>
+<loc>https://flowchart.fun/pricing</loc>
+<lastmod>2026-07-16</lastmod>
+</url>
+<url>
+<loc>https://flowchart.fun/blog</loc>
+<lastmod>2026-07-16</lastmod>
+</url>
+<url>
+<loc>https://flowchart.fun/roadmap</loc>
+<lastmod>2026-07-16</lastmod>
+</url>
+<url>
+<loc>https://flowchart.fun/changelog</loc>
+<lastmod>2026-07-16</lastmod>
+</url>
+<url>
+<loc>https://flowchart.fun/s</loc>
+<lastmod>2026-07-16</lastmod>
 </url>
 </urlset>

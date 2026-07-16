@@ -8,6 +8,7 @@ import { PageTitle, SectionTitle } from "../ui/Typography";
 import { AppContext } from "./AppContextProvider";
 import styles from "./Settings.module.css";
 import { DISCORD_URL } from "../lib/constants";
+import { toneRowProjects } from "../lib/toneRowProjects";
 
 const Settings = memo(() => {
   const { updateUserSettings, mode, language } = useContext(AppContext);
@@ -130,6 +131,22 @@ const Settings = memo(() => {
           </Section>
           <Section>
             <SectionTitle>
+              <Trans>More from Tone Row</Trans>
+            </SectionTitle>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {toneRowProjects.map((project) => (
+                <ToneRowProject
+                  key={project.name}
+                  href={project.href}
+                  name={project.name}
+                  domain={project.domain}
+                  description={project.description()}
+                />
+              ))}
+            </div>
+          </Section>
+          <Section>
+            <SectionTitle>
               <Trans>Support</Trans>
             </SectionTitle>
             <p className="text-sm md:text-base md:leading-normal text-neutral-600 dark:text-neutral-400">
@@ -194,3 +211,38 @@ const GroupButton = memo(
 );
 
 GroupButton.displayName = "GroupButton";
+
+const ToneRowProject = memo(
+  ({
+    href,
+    name,
+    domain,
+    description,
+  }: {
+    href: string;
+    name: string;
+    domain: string;
+    description: string;
+  }) => {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener"
+        className="group grid gap-1 rounded-md border border-neutral-200 dark:border-neutral-800 p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+      >
+        <span className="text-sm font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          {name}{" "}
+          <span className="font-normal text-neutral-400 dark:text-neutral-500">
+            {domain}
+          </span>
+        </span>
+        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+          {description}
+        </span>
+      </a>
+    );
+  }
+);
+
+ToneRowProject.displayName = "ToneRowProject";

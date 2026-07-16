@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "1.64.2",
+  "version": "1.65.0",
   "main": "module/module.js",
   "license": "MIT",
   "scripts": {
@@ -22,6 +22,9 @@
     "e2e": "playwright test --config=playwright.config.ts",
     "e2e:debug": "DEBUG=1 pnpm run e2e --workers 1 --ui",
     "e2e:generate": "npx playwright codegen localhost:3000",
+    "visual": "playwright test --config=playwright.visual.config.ts",
+    "visual:update": "playwright test --config=playwright.visual.config.ts --update-snapshots",
+    "visual:fixtures": "node scripts/generate-frozen-fixtures.mjs",
     "generate:types": "export $(cat .env.local | xargs) && supabase gen types typescript --project-id \"${PROJECT_ID}\" > src/types/database.types.ts",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "autotranslations": "node scripts/autotranslations.mjs",

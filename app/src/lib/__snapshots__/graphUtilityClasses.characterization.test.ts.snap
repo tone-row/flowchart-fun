@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`graphUtilityClasses characterization childlessShapeClasses (module-load-time built array) snapshots the full 21-rule array including the appended iso-trapezoid 1`] = `
+Array [
+  Object {
+    "css": Object {
+      "shape": "rectangle",
+    },
+    "selector": ":childless.shape_rectangle",
+  },
+  Object {
+    "css": Object {
+      "shape": "roundrectangle",
+    },
+    "selector": ":childless.shape_roundrectangle",
+  },
+  Object {
+    "css": Object {
+      "shape": "ellipse",
+    },
+    "selector": ":childless.shape_ellipse",
+  },
+  Object {
+    "css": Object {
+      "shape": "triangle",
+    },
+    "selector": ":childless.shape_triangle",
+  },
+  Object {
+    "css": Object {
+      "shape": "pentagon",
+    },
+    "selector": ":childless.shape_pentagon",
+  },
+  Object {
+    "css": Object {
+      "shape": "hexagon",
+    },
+    "selector": ":childless.shape_hexagon",
+  },
+  Object {
+    "css": Object {
+      "shape": "heptagon",
+    },
+    "selector": ":childless.shape_heptagon",
+  },
+  Object {
+    "css": Object {
+      "shape": "octagon",
+    },
+    "selector": ":childless.shape_octagon",
+  },
+  Object {
+    "css": Object {
+      "shape": "star",
+    },
+    "selector": ":childless.shape_star",
+  },
+  Object {
+    "css": Object {
+      "shape": "barrel",
+    },
+    "selector": ":childless.shape_barrel",
+  },
+  Object {
+    "css": Object {
+      "shape": "diamond",
+    },
+    "selector": ":childless.shape_diamond",
+  },
+  Object {
+    "css": Object {
+      "shape": "vee",
+    },
+    "selector": ":childless.shape_vee",
+  },
+  Object {
+    "css": Object {
+      "shape": "rhomboid",
+    },
+    "selector": ":childless.shape_rhomboid",
+  },
+  Object {
+    "css": Object {
+      "shape": "right-rhomboid",
+    },
+    "selector": ":childless.shape_right-rhomboid",
+  },
+  Object {
+    "css": Object {
+      "shape": "polygon",
+    },
+    "selector": ":childless.shape_polygon",
+  },
+  Object {
+    "css": Object {
+      "shape": "tag",
+    },
+    "selector": ":childless.shape_tag",
+  },
+  Object {
+    "css": Object {
+      "shape": "round-rectangle",
+    },
+    "selector": ":childless.shape_round-rectangle",
+  },
+  Object {
+    "css": Object {
+      "shape": "cut-rectangle",
+    },
+    "selector": ":childless.shape_cut-rectangle",
+  },
+  Object {
+    "css": Object {
+      "shape": "bottom-round-rectangle",
+    },
+    "selector": ":childless.shape_bottom-round-rectangle",
+  },
+  Object {
+    "css": Object {
+      "shape": "concave-hexagon",
+    },
+    "selector": ":childless.shape_concave-hexagon",
+  },
+  Object {
+    "css": Object {
+      "shape": "polygon",
+      "shape-polygon-points": "-1 1  1 1  0.5 -1  -0.5 -1",
+    },
+    "selector": ":childless.shape_iso-trapezoid",
+  },
+]
+`;
+
+exports[`graphUtilityClasses characterization createSmartChildlessBorderClasses(width) snapshots full output for a representative width 1`] = `
+Array [
+  Object {
+    "css": Object {
+      "border-style": "none",
+      "border-width": 5,
+    },
+    "selector": ":childless.border_none",
+  },
+  Object {
+    "css": Object {
+      "border-style": "solid",
+      "border-width": 5,
+    },
+    "selector": ":childless.border_solid",
+  },
+  Object {
+    "css": Object {
+      "border-style": "dashed",
+      "border-width": 5,
+    },
+    "selector": ":childless.border_dashed",
+  },
+  Object {
+    "css": Object {
+      "border-style": "dotted",
+      "border-width": 5,
+    },
+    "selector": ":childless.border_dotted",
+  },
+  Object {
+    "css": Object {
+      "border-style": "double",
+      "border-width": 5,
+    },
+    "selector": ":childless.border_double",
+  },
+]
+`;
+
+exports[`graphUtilityClasses characterization createSmartShapeClasses(width) snapshots full output for a representative width 1`] = `
+Array [
+  Object {
+    "css": Object {
+      "height": 30,
+      "shape": "rectangle",
+      "width": 30,
+    },
+    "selector": ":childless.shape_square",
+  },
+  Object {
+    "css": Object {
+      "height": 30,
+      "shape": "roundrectangle",
+      "width": 30,
+    },
+    "selector": ":childless.shape_roundsquare",
+  },
+  Object {
+    "css": Object {
+      "height": 30,
+      "shape": "ellipse",
+      "width": 30,
+    },
+    "selector": ":childless.shape_circle",
+  },
+  Object {
+    "css": Object {
+      "height": 30,
+      "shape": "star",
+      "width": 30,
+    },
+    "selector": ":childless.shape_star",
+  },
+  Object {
+    "css": Object {
+      "height": 30,
+      "shape": "diamond",
+      "width": 30,
+    },
+    "selector": ":childless.shape_diamond",
+  },
+  Object {
+    "css": Object {
+      "height": 30,
+      "shape": "pentagon",
+      "width": 30,
+    },
+    "selector": ":childless.shape_pentagon",
+  },
+  Object {
+    "css": Object {
+      "height": 30,
+      "shape": "hexagon",
+      "width": 30,
+    },
+    "selector": ":childless.shape_hexagon",
+  },
+  Object {
+    "css": Object {
+      "height": 30,
+      "shape": "heptagon",
+      "width": 30,
+    },
+    "selector": ":childless.shape_heptagon",
+  },
+  Object {
+    "css": Object {
+      "height": 30,
+      "shape": "octagon",
+      "width": 30,
+    },
+    "selector": ":childless.shape_octagon",
+  },
+]
+`;
+
+exports[`graphUtilityClasses characterization nodeBorderClasses (dead export, conflicting semantics) snapshots the 5-rule array 1`] = `
+Array [
+  Object {
+    "css": Object {
+      "border-style": "solid",
+    },
+    "selector": ":childless.border_solid",
+  },
+  Object {
+    "css": Object {
+      "border-style": "dashed",
+    },
+    "selector": ":childless.border_dashed",
+  },
+  Object {
+    "css": Object {
+      "border-style": "dotted",
+    },
+    "selector": ":childless.border_dotted",
+  },
+  Object {
+    "css": Object {
+      "border-style": "double",
+    },
+    "selector": ":childless.border_double",
+  },
+  Object {
+    "css": Object {
+      "border-width": 0,
+    },
+    "selector": ":childless.border_none",
+  },
+]
+`;

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toTheme - default theme (canonical baseline) produces stable layout + style + postStyle for the default-template theme (dagre/DOWN): default-layout 1`] = `
+Object {
+  "name": "dagre",
+  "rankDir": "TB",
+  "spacingFactor": 1.1,
+}
+`;
+
+exports[`toTheme - default theme (canonical baseline) produces stable layout + style + postStyle for the default-template theme (dagre/DOWN): default-postStyle 1`] = `
+"edge.border_dashed { line-style: dashed; }
+edge.border_dotted { line-style: dotted; }
+edge.border_solid { line-style: solid; }
+:childless.shape_rectangle { shape: rectangle; }
+:childless.shape_roundrectangle { shape: roundrectangle; }
+:childless.shape_ellipse { shape: ellipse; }
+:childless.shape_triangle { shape: triangle; }
+:childless.shape_pentagon { shape: pentagon; }
+:childless.shape_hexagon { shape: hexagon; }
+:childless.shape_heptagon { shape: heptagon; }
+:childless.shape_octagon { shape: octagon; }
+:childless.shape_star { shape: star; }
+:childless.shape_barrel { shape: barrel; }
+:childless.shape_diamond { shape: diamond; }
+:childless.shape_vee { shape: vee; }
+:childless.shape_rhomboid { shape: rhomboid; }
+:childless.shape_right-rhomboid { shape: right-rhomboid; }
+:childless.shape_polygon { shape: polygon; }
+:childless.shape_tag { shape: tag; }
+:childless.shape_round-rectangle { shape: round-rectangle; }
+:childless.shape_cut-rectangle { shape: cut-rectangle; }
+:childless.shape_bottom-round-rectangle { shape: bottom-round-rectangle; }
+:childless.shape_concave-hexagon { shape: concave-hexagon; }
+:childless.shape_iso-trapezoid { shape: polygon; shape-polygon-points: -1 1  1 1  0.5 -1  -0.5 -1; }
+:childless.border_none { border-width: 2; border-style: none; }
+:childless.border_solid { border-width: 2; border-style: solid; }
+:childless.border_dashed { border-width: 2; border-style: dashed; }
+:childless.border_dotted { border-width: 2; border-style: dotted; }
+:childless.border_double { border-width: 2; border-style: double; }
+:childless.shape_square { shape: rectangle; width: 178; height: 178; }
+:childless.shape_roundsquare { shape: roundrectangle; width: 178; height: 178; }
+:childless.shape_circle { shape: ellipse; width: 178; height: 178; }
+:childless.shape_star { shape: star; width: 178; height: 178; }
+:childless.shape_diamond { shape: diamond; width: 178; height: 178; }
+:childless.shape_pentagon { shape: pentagon; width: 178; height: 178; }
+:childless.shape_hexagon { shape: hexagon; width: 178; height: 178; }
+:childless.shape_heptagon { shape: heptagon; width: 178; height: 178; }
+:childless.shape_octagon { shape: octagon; width: 178; height: 178; }
+:childless[w] { width: data(width); }
+:childless[h] { height: data(height); }"
+`;
+
+exports[`toTheme - default theme (canonical baseline) produces stable layout + style + postStyle for the default-template theme (dagre/DOWN): default-style 1`] = `
+"@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
+$width: 178px;
+$height: 50px;
+
+$background: #ffffff;
+:childless { shape: roundrectangle; label: data(label); text-valign: center; text-halign: center; text-wrap: wrap; text-max-width: 146px; width: 178; height: label; padding: 16; line-height: 1.3; font-family: \\"IBM Plex Sans\\"; background-color: #e6e6e6; color: #000000; border-width: 0; border-color: #000000; text-margin-y: 0; font-size: 16; }
+edge { curve-style: bezier; source-arrow-shape: none; target-arrow-shape: triangle; source-arrow-color: #606ef6; target-arrow-color: #606ef6; line-color: #606ef6; text-background-color: #ffffff; text-background-opacity: 1; text-background-padding: 2; color: #606ef6; width: 2; font-size: 14; label: data(label); line-height: 1.3; font-family: \\"IBM Plex Sans\\"; source-distance-from-node: 0; target-distance-from-node: 0; arrow-scale: 1; text-rotation: none; }
+:parent { padding: 10; border-style: solid; border-width: 2; border-color: #606ef6; background-color: #ffffff; text-valign: top; font-family: \\"IBM Plex Sans\\"; label: data(label); color: #000000; font-size: 24; text-margin-y: -5; }
+:active { overlay-color: #000000; overlay-opacity: 0; }
+:selected { opacity: 0.5; }
+core { selection-box-color: #606ef6; selection-box-opacity: 0.25; selection-box-border-width: 0; active-bg-opacity: 0; }"
+`;

@@ -1,10 +1,12 @@
 import classNames from "classnames";
 import { Trans, t } from "@lingui/macro";
 import { ReactNode } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Checkout } from "../components/Checkout";
 import FAQ from "../components/FAQ";
 import { useFadeIn } from "../lib/useFadeIn";
+import { TONE_ROW_URL, toneRowProjects } from "../lib/toneRowProjects";
 import {
   Sparkle,
   Export,
@@ -148,6 +150,13 @@ function CodeExample() {
 export default function Pricing2() {
   return (
     <div className="overflow-hidden">
+      <Helmet>
+        <title>{t`Pricing`} - Flowchart Fun</title>
+        <meta
+          name="description"
+          content={t`Upgrade to Flowchart Fun Pro for unlimited hosted charts, watermark-free high-resolution exports, AI editing, and more. $4/month billed yearly.`}
+        />
+      </Helmet>
       {/* Hero */}
       <header className="relative bg-white dark:bg-[#0c0c0c] bg-gradient-to-b from-blue-50/50 to-white dark:from-blue-900/20 dark:to-[#0c0c0c] pt-12 pb-16 md:pt-16 md:pb-20 overflow-hidden">
         <img
@@ -401,6 +410,41 @@ export default function Pricing2() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="border-t border-neutral-200 dark:border-neutral-800 py-10 text-center text-sm text-neutral-500 dark:text-neutral-400">
+        <Container className="my-0 grid gap-4">
+          <p>
+            <Trans>
+              Flowchart Fun is an open source project made by{" "}
+              <a
+                href={TONE_ROW_URL}
+                className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Tone&nbsp;Row
+              </a>
+            </Trans>
+          </p>
+          <p className="flex flex-wrap justify-center gap-x-3 gap-y-1">
+            <span>
+              <Trans>More from Tone Row:</Trans>
+            </span>
+            {toneRowProjects.map((project) => (
+              <span key={project.name}>
+                <a
+                  href={project.href}
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {project.name}
+                </a>{" "}
+                <span className="text-neutral-400 dark:text-neutral-500">
+                  — {project.description()}
+                </span>
+              </span>
+            ))}
+          </p>
+        </Container>
+      </footer>
     </div>
   );
 }

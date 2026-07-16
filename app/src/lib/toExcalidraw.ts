@@ -78,19 +78,23 @@ export function toExcalidraw() {
       label,
     });
 
+    // find the actual arrow element (createEdge may also return a label node)
+    const arrowElement = edgeAndLabel.find((x) => x.type === "arrow");
+    const arrowId = arrowElement?.id;
+
     // add the edge to the elements
     const fromIndex = elements.findIndex((x) => x.id === fromId);
-    if (fromIndex > -1) {
+    if (fromIndex > -1 && arrowId) {
       elements[fromIndex].boundElements.push({
         type: "arrow",
-        id: edgeAndLabel[0].id,
+        id: arrowId,
       });
     }
     const toIndex = elements.findIndex((x) => x.id === toId);
-    if (toIndex > -1) {
+    if (toIndex > -1 && arrowId) {
       elements[toIndex].boundElements.push({
         type: "arrow",
-        id: edgeAndLabel[0].id,
+        id: arrowId,
       });
     }
 
@@ -306,7 +310,9 @@ function rgbToHex(rgb: string) {
     .split(",")
     .map((x) => parseInt(x));
 
-  return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
+  return `#${r.toString(16).padStart(2, "0")}${g
+    .toString(16)
+    .padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
 }
 
 /**
