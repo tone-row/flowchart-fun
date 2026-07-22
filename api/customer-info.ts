@@ -3,6 +3,7 @@ import { validStripePrices } from "./_lib/_validStripePrices";
 import { stripe } from "./_lib/_stripe";
 import type { default as Stripe } from "stripe";
 import { getCustomerFromToken } from "./_lib/_helpers";
+import { getActivePass } from "./_lib/_pass";
 
 export default async function customerInfo(
   req: VercelRequest,
@@ -14,15 +15,23 @@ export default async function customerInfo(
     let subscription: Stripe.Subscription | null = null;
 
     if (!customer) {
-      res.json({ customerId: null, subscription: null });
+      res.json({ customerId: null, subscription: null, pass: null });
       return;
     }
 
-    const { data: subscriptions } = await stripe.subscriptions.list({
-      customer: customer.id,
-      limit: 100,
-      status: "all",
-    });
+    const [{ data: subscriptions }, { data: paymentIntents }] =
+      await Promise.all([
+        stripe.subscriptions.list({
+          customer: customer.id,
+          limit: 100,
+          status: "all",
+        }),
+        stripe.paymentIntents.list({
+          customer: customer.id,
+          limit: 100,
+          expand: ["data.latest_charge"],
+        }),
+      ]);
 
     // get subscriptions with known prices
     const appSubs = subscriptions.filter((subscription) => {
@@ -37,7 +46,9 @@ export default async function customerInfo(
 
     subscription = appSubs?.[0] ?? null;
 
-    res.json({ customerId: customer.id, subscription });
+    const pass = getActivePass(paymentIntents, Math.floor(Date.now() / 1000));
+
+    res.json({ customerId: customer.id, subscription, pass });
   } catch (error) {
     console.error(error);
     return res.status(400).json({ error });

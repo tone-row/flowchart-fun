@@ -53,6 +53,8 @@ type TAppContext = {
 type CustomerInfo = {
   customerId: string;
   subscription?: Stripe.Subscription;
+  /** Active 30-Day Pass, if any. expiresAt is epoch seconds. */
+  pass?: { expiresAt: number; paymentIntentId: string } | null;
 };
 
 export const AppContext = createContext({} as TAppContext);

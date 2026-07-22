@@ -10,16 +10,14 @@ import {
   usePromptStore,
 } from "../lib/usePromptStore";
 import { useEditorStore } from "../lib/useEditorStore";
-import { useCallback, useContext, useState } from "react";
-import { AppContext } from "./AppContextProvider";
+import { useCallback, useState } from "react";
 import { isError } from "../lib/helpers";
-import { useHasProAccess } from "../lib/hooks";
+import { useHasProAccess, useProAiToken } from "../lib/hooks";
 import { showPaywall } from "../lib/usePaywallModalStore";
 
 export function ConvertToFlowchart() {
   const convertIsRunning = usePromptStore((s) => s.isRunning);
-  const customer = useContext(AppContext).customer;
-  const sid = customer?.subscription?.id;
+  const sid = useProAiToken();
   const hasProAccess = useHasProAccess();
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 

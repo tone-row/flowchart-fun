@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Pricing2.tsx:387
+#: src/pages/Pricing2.tsx:395
 msgid "$48/year (save 33%) · Cancel anytime"
 msgstr "48€/Jahr (33% sparen) · Jederzeit kündbar"
 
-#: src/pages/Pricing2.tsx:354
+#: src/pages/Pricing2.tsx:362
 msgid "$6/mo"
 msgstr "6€/Monat"
 
@@ -28,6 +28,14 @@ msgstr "1 Vorläufiger Flussdiagramm"
 #: src/pages/Pricing2.tsx:104
 msgid "1 diagram at a time"
 msgstr "1 Diagramm zur gleichen Zeit"
+
+#: src/pages/Pricing2.tsx:422
+msgid "30 days"
+msgstr "30 Tage"
+
+#: src/pages/Account.tsx:224
+msgid "30-Day Pass"
+msgstr "30-Tage-Pass"
 
 #: src/components/Tabs/ThemeTab.tsx:683
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
@@ -57,7 +65,7 @@ msgstr "KI-Generierung & Bearbeitung"
 msgid "AI-Powered Flowchart Creation"
 msgstr "KI-unterstützte Erstellung von Flussdiagrammen"
 
-#: src/pages/Pricing2.tsx:312
+#: src/pages/Pricing2.tsx:320
 msgid "AI-generated from plain text in under 5 seconds."
 msgstr "In unter 5 Sekunden aus einfachem Text generiert."
 
@@ -69,11 +77,19 @@ msgstr "KI-unterstützte Bearbeitung zur Beschleunigung Ihres Arbeitsablaufs"
 msgid "About"
 msgstr "Über"
 
+#: src/pages/Account.tsx:237
+msgid "Access until"
+msgstr "Zugriff bis"
+
 #: src/components/Header.tsx:192
 #: src/components/Header.tsx:441
-#: src/pages/Account.tsx:120
+#: src/pages/Account.tsx:124
 msgid "Account"
 msgstr "Konto"
+
+#: src/pages/Account.tsx:232
+msgid "Active"
+msgstr "Aktiv"
 
 #: src/lib/parserErrors.tsx:47
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
@@ -110,7 +126,7 @@ msgstr "All dies für nur $6/Monat - weniger als Ihr täglicher Kaffee ☕"
 msgid "Always presentation-ready"
 msgstr "Immer präsentationsbereit"
 
-#: src/pages/Account.tsx:290
+#: src/pages/Account.tsx:324
 msgid "Amount"
 msgstr "Betrag"
 
@@ -183,11 +199,11 @@ msgstr "Werden Sie ein Pro-Benutzer"
 msgid "Begin your journey"
 msgstr "Beginne deine Reise"
 
-#: src/components/Checkout.tsx:139
+#: src/components/Checkout.tsx:158
 msgid "Billed annually at $48"
 msgstr "Jährlich abgerechnet für $48"
 
-#: src/components/Checkout.tsx:151
+#: src/components/Checkout.tsx:170
 msgid "Billed monthly at $6"
 msgstr "Monatlich für $6 berechnet"
 
@@ -197,7 +213,7 @@ msgstr "Monatlich für $6 berechnet"
 msgid "Blog"
 msgstr "Blog"
 
-#: src/pages/Account.tsx:153
+#: src/pages/Account.tsx:157
 msgid "Book a Meeting"
 msgstr "Ein Treffen buchen"
 
@@ -224,7 +240,7 @@ msgstr "In die Breite"
 msgid "Build your personal flowchart library"
 msgstr "Erstellen Sie Ihre persönliche Flussdiagramm-Bibliothek"
 
-#: src/components/FAQ.tsx:24
+#: src/components/FAQ.tsx:27
 msgid "Can I import my existing diagrams?"
 msgstr "Kann ich meine bestehenden Diagramme importieren?"
 
@@ -237,18 +253,18 @@ msgstr "Kann ich meine bestehenden Diagramme importieren?"
 #: src/components/charts/ChartModals.tsx:207
 #: src/components/charts/ChartModals.tsx:277
 #: src/components/charts/ChartModals.tsx:440
-#: src/pages/Account.tsx:337
-#: src/pages/Account.tsx:349
-#: src/pages/Account.tsx:440
-#: src/pages/Account.tsx:490
+#: src/pages/Account.tsx:371
+#: src/pages/Account.tsx:383
+#: src/pages/Account.tsx:474
+#: src/pages/Account.tsx:524
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/components/Checkout.tsx:188
+#: src/components/Checkout.tsx:207
 msgid "Cancel anytime"
 msgstr "Jederzeit kündbar"
 
-#: src/pages/Account.tsx:340
+#: src/pages/Account.tsx:374
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "Kündigen Sie Ihr Abonnement. Ihre gehosteten Diagramme werden schreibgeschützt."
 
@@ -256,7 +272,7 @@ msgstr "Kündigen Sie Ihr Abonnement. Ihre gehosteten Diagramme werden schreibge
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Bestimmte Attribute können verwendet werden, um das Aussehen oder die Funktionalität von Elementen anzupassen."
 
-#: src/pages/Account.tsx:244
+#: src/pages/Account.tsx:278
 msgid "Change Email Address"
 msgstr "E-Mail Adresse ändern"
 
@@ -358,7 +374,7 @@ msgstr "Vergleichen Sie unsere Pläne und finden Sie die perfekte Lösung für I
 msgid "Concentric"
 msgstr "Konzentrisch"
 
-#: src/pages/Account.tsx:236
+#: src/pages/Account.tsx:270
 msgid "Confirm New Email"
 msgstr "Neue E-Mail bestätigen"
 
@@ -382,7 +398,7 @@ msgstr "Container sind Knoten, die andere Knoten enthalten. Sie werden mit gesch
 msgid "Continue"
 msgstr "Weiter"
 
-#: src/components/SandboxWarning.tsx:102
+#: src/components/SandboxWarning.tsx:114
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "Weiter im Sandbox-Modus (wird täglich zurückgesetzt, Arbeit wird nicht gespeichert)"
 
@@ -395,7 +411,7 @@ msgstr "Steuert die Flussrichtung von hierarchischen Layouts"
 msgid "Convert"
 msgstr "Umwandeln"
 
-#: src/components/ConvertToFlowchart.tsx:78
+#: src/components/ConvertToFlowchart.tsx:76
 msgid "Convert to Flowchart"
 msgstr "In Flussdiagramm konvertieren"
 
@@ -474,7 +490,7 @@ msgstr "Erstellen Sie unbegrenzt Diagramme für nur $6/Monat!"
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
 msgstr "Erstellen Sie unbegrenzte Flussdiagramme, die in der Cloud gespeichert sind und überall zugänglich sind!"
 
-#: src/pages/Success.tsx:54
+#: src/pages/Success.tsx:77
 msgid "Create with AI"
 msgstr "Erstellen mit KI"
 
@@ -504,7 +520,7 @@ msgstr "Benutzerdefinierte Freigabeoptionen"
 msgid "Custom sharing & public links"
 msgstr "Individuelle Freigabe und öffentliche Links"
 
-#: src/pages/Account.tsx:254
+#: src/pages/Account.tsx:288
 msgid "Customer Portal"
 msgstr "Kundenportal"
 
@@ -529,7 +545,7 @@ msgstr "Datenimport (Visio, Lucidchart, CSV)"
 msgid "Data import feature for complex diagrams"
 msgstr "Datenimportfunktion für komplexe Diagramme"
 
-#: src/pages/Account.tsx:287
+#: src/pages/Account.tsx:321
 msgid "Date"
 msgstr "Datum"
 
@@ -546,7 +562,7 @@ msgstr "Lösche {0}"
 msgid "Describe it and it appears"
 msgstr "Beschreiben Sie es und es erscheint"
 
-#: src/pages/Pricing2.tsx:178
+#: src/pages/Pricing2.tsx:186
 msgid "Describe your idea. Get a diagram worth presenting."
 msgstr "Beschreiben Sie Ihre Idee. Erhalten Sie ein präsentationswürdiges Diagramm."
 
@@ -567,7 +583,7 @@ msgstr "Richtung"
 msgid "Dismiss"
 msgstr "Entlassen"
 
-#: src/components/FAQ.tsx:36
+#: src/components/FAQ.tsx:42
 msgid "Do you offer discounts for students or nonprofits?"
 msgstr "Bieten Sie Rabatte für Studenten oder gemeinnützige Organisationen an?"
 
@@ -746,7 +762,7 @@ msgstr "Gleich"
 msgid "Every diagram exports as crisp PNG, SVG, or shareable link — ready for the meeting, the doc, or the deck."
 msgstr "Jedes Diagramm wird als gestochen scharfes PNG, SVG oder teilbarer Link exportiert - bereit für das Meeting, das Dokument oder die Präsentation."
 
-#: src/components/FAQ.tsx:67
+#: src/components/FAQ.tsx:74
 msgid "Everything you need to know about Flowchart Fun Pro"
 msgstr "Alles, was du über Flowchart Fun Pro wissen musst"
 
@@ -767,7 +783,7 @@ msgstr "Exklusive Bürozeiten"
 msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
 msgstr "Erleben Sie die Effizienz und Sicherheit des direkten Ladens lokaler Dateien in Ihre Flussdiagramme, ideal für die Verwaltung von Arbeitsdokumenten offline. Entsperren Sie diese exklusive Pro-Funktion und mehr mit Flowchart Fun Pro, erhältlich für nur $6/Monat."
 
-#: src/pages/Account.tsx:587
+#: src/pages/Account.tsx:621
 msgid "Explore Pro"
 msgstr "Erkunde Pro"
 
@@ -802,7 +818,7 @@ msgstr "Funktionsübersicht"
 msgid "Feedback"
 msgstr "Feedback"
 
-#: src/pages/Success.tsx:66
+#: src/pages/Success.tsx:89
 msgid "Feel free to explore and reach out to us through the <0>Feedback</0> page should you have any concerns."
 msgstr "Fühlen Sie sich frei, zu erkunden und uns über die <0>Feedback</0>-Seite zu kontaktieren, sollten Sie irgendwelche Bedenken haben."
 
@@ -823,7 +839,7 @@ msgstr "Fester Knotenhöhe"
 msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
 msgstr "Mit Flowchart Fun Pro erhalten Sie unbegrenzte Flussdiagramme, unbegrenzte Mitarbeiter und unbegrenzten Speicherplatz für nur $6/Monat."
 
-#: src/pages/Pricing2.tsx:418
+#: src/pages/Pricing2.tsx:470
 msgid "Flowchart Fun is an open source project made by <0>Tone Row</0>"
 msgstr "Flowchart Spaß ist ein Open-Source-Projekt von <0>Tone Row</0>"
 
@@ -851,7 +867,7 @@ msgstr "Kostenlos"
 msgid "Free users: charts in the sandbox expire after 7 days."
 msgstr "Kostenlose Benutzer: Diagramme im Sandbox-Modus laufen nach 7 Tagen ab."
 
-#: src/components/FAQ.tsx:64
+#: src/components/FAQ.tsx:71
 msgid "Frequently Asked Questions"
 msgstr "Häufig gestellte Fragen"
 
@@ -871,13 +887,25 @@ msgstr "Allgemein"
 msgid "Generate flowcharts from text automatically"
 msgstr "Generieren Sie automatisch Flussdiagramme aus Texten"
 
-#: src/components/Checkout.tsx:174
+#: src/components/Checkout.tsx:193
 msgid "Get Pro Access Now"
 msgstr "Erhalten Sie jetzt Pro-Zugang"
 
-#: src/lib/usePromptStore.ts:143
+#: src/lib/usePromptStore.ts:141
 msgid "Get Unlimited AI Requests"
 msgstr "Erhalten Sie unbegrenzte KI-Anfragen"
+
+#: src/pages/Pricing2.tsx:434
+msgid "Get a 30-Day Pass"
+msgstr "Holen Sie sich einen 30-Tage-Pass"
+
+#: src/components/Checkout.tsx:245
+msgid "Get a 30-Day Pass — $9"
+msgstr "Holen Sie sich einen 30-Tage-Pass - $9"
+
+#: src/components/Checkout.tsx:225
+msgid "Get every Pro feature for 30 days with a single payment. No subscription — it simply ends."
+msgstr "Erhalten Sie alle Pro-Funktionen für 30 Tage mit einer einzigen Zahlung. Kein Abonnement - es endet einfach."
 
 #: src/components/FeatureBreakdown.tsx:104
 msgid "Get rapid responses to your questions"
@@ -891,7 +919,7 @@ msgstr "Erhalten Sie unbegrenzte Flussdiagramme und Premium-Funktionen"
 msgid "Go back home"
 msgstr "Geh zurück nach Hause"
 
-#: src/pages/Success.tsx:81
+#: src/pages/Success.tsx:104
 msgid "Go to the Editor"
 msgstr "Gehe zum Editor"
 
@@ -899,6 +927,10 @@ msgstr "Gehe zum Editor"
 #: src/pages/MyCharts.tsx:241
 msgid "Go to your Sandbox"
 msgstr "Gehe zu deinem Sandkasten"
+
+#: src/components/FAQ.tsx:34
+msgid "Grab a 30-Day Pass: every Pro feature for 30 days, one $9 payment, no subscription. It never renews on its own — and when it ends, your charts are never deleted. Hosted charts simply become read-only until you upgrade again. Rather keep Pro around? It's month-to-month at $6/mo — cancel anytime."
+msgstr "Holen Sie sich einen 30-Tage-Pass: alle Pro-Funktionen für 30 Tage, eine Zahlung von $9, kein Abonnement. Es erneuert sich nie automatisch - und wenn es endet, werden Ihre Diagramme nie gelöscht. Gehostete Diagramme werden einfach schreibgeschützt, bis Sie wieder upgraden. Möchten Sie Pro behalten? Es ist monatlich für $6/mo - jederzeit kündbar."
 
 #: src/components/MobileTabToggle.tsx:12
 #: src/components/Tabs/EditorTabList.tsx:50
@@ -917,11 +949,11 @@ msgstr "Raster"
 msgid "Group ranking and ranked-choice voting, free"
 msgstr "Gruppen-Ranking und Rangfolge-Wahl, kostenlos"
 
-#: src/pages/Account.tsx:142
+#: src/pages/Account.tsx:146
 msgid "Have complex questions or issues? We're here to help."
 msgstr "Haben Sie komplexe Fragen oder Probleme? Wir sind hier, um zu helfen."
 
-#: src/pages/Success.tsx:45
+#: src/pages/Success.tsx:67
 msgid "Here are some Pro features you can now enjoy."
 msgstr "Hier sind einige Pro-Funktionen, die Sie jetzt genießen können."
 
@@ -929,7 +961,7 @@ msgstr "Hier sind einige Pro-Funktionen, die Sie jetzt genießen können."
 msgid "High-quality exports with embedded fonts"
 msgstr "Hochwertige Exporte mit eingebetteten Schriftarten"
 
-#: src/pages/Account.tsx:277
+#: src/pages/Account.tsx:311
 msgid "History"
 msgstr "Verlauf"
 
@@ -941,7 +973,7 @@ msgstr "Startseite"
 msgid "How are edges declared in this data?"
 msgstr "Wie werden Kanten in diesen Daten deklariert?"
 
-#: src/components/FAQ.tsx:20
+#: src/components/FAQ.tsx:22
 msgid "How fast can I actually make something?"
 msgstr "Wie schnell kann ich tatsächlich etwas erstellen?"
 
@@ -984,7 +1016,7 @@ msgstr "Daten aus einer CSV-Datei importieren."
 msgid "Import data from any CSV file and map it to a new flowchart. This is a great way to import data from other sources like Lucidchart, Google Sheets, and Visio."
 msgstr "Daten aus jeder CSV-Datei importieren und auf einem neuen Flussdiagramm abbilden. Dies ist eine großartige Möglichkeit, Daten aus anderen Quellen wie Lucidchart, Google Sheets und Visio zu importieren."
 
-#: src/pages/Success.tsx:59
+#: src/pages/Success.tsx:82
 msgid "Import from CSV"
 msgstr "Importieren Sie aus CSV"
 
@@ -1028,7 +1060,7 @@ msgstr "Info"
 msgid "Is"
 msgstr "Ist"
 
-#: src/components/FAQ.tsx:32
+#: src/components/FAQ.tsx:37
 msgid "Is my data private?"
 msgstr "Ist meine Daten privat?"
 
@@ -1043,6 +1075,19 @@ msgstr "Werden Sie Teil von über 2000 Fachleuten, die ihren Arbeitsablauf verbe
 #: src/components/Testimonials.tsx:127
 msgid "Join thousands of happy users who love Flowchart Fun"
 msgstr "Werde Teil von Tausenden zufriedenen Nutzern, die Flowchart Fun lieben"
+
+#: src/pages/Pricing2.tsx:408
+msgid "Just need it for one project?"
+msgstr "Brauchen Sie es nur für ein Projekt?"
+
+#: src/components/Checkout.tsx:222
+msgid "Just need it this once?"
+msgstr "Brauchen Sie es nur einmal?"
+
+#: src/components/PaywallModal.tsx:89
+#: src/components/SandboxWarning.tsx:105
+msgid "Just need it this once? Get a 30-Day Pass for $9 — no subscription."
+msgstr "Brauchen Sie es nur einmal? Holen Sie sich einen 30-Tage-Pass für $9 - kein Abonnement."
 
 #: src/pages/Pricing.tsx:48
 msgid "Keep Things Private"
@@ -1101,7 +1146,7 @@ msgstr "Erfahren Sie mehr über Flowchart Fun Pro"
 msgid "Left to Right"
 msgstr "Von links nach rechts"
 
-#: src/pages/Account.tsx:420
+#: src/pages/Account.tsx:454
 msgid "Let us know why you're canceling. We're always looking to improve."
 msgstr "Lassen Sie uns wissen, warum Sie stornieren. Wir sind immer auf der Suche nach Verbesserungen."
 
@@ -1173,7 +1218,7 @@ msgstr "Zoom an Graph anpassen"
 msgid "Log In"
 msgstr "Anmelden"
 
-#: src/pages/Account.tsx:133
+#: src/pages/Account.tsx:137
 msgid "Log Out"
 msgstr "Abmelden"
 
@@ -1181,7 +1226,7 @@ msgstr "Abmelden"
 msgid "Log in to Save"
 msgstr "Einloggen, um zu speichern"
 
-#: src/components/Checkout.tsx:73
+#: src/components/Checkout.tsx:83
 msgid "Log in to upgrade your account"
 msgstr "Melde dich an, um dein Konto zu aktualisieren"
 
@@ -1193,7 +1238,7 @@ msgstr "Hergestellt von <0>Tone Row</0>"
 msgid "Make a One-Time Donation"
 msgstr "Machen Sie eine einmalige Spende"
 
-#: src/pages/Pricing2.tsx:357
+#: src/pages/Pricing2.tsx:365
 msgid "Make it yours"
 msgstr "Mach es zu deinem"
 
@@ -1201,7 +1246,7 @@ msgstr "Mach es zu deinem"
 msgid "Make publicly accessible"
 msgstr "Öffentlich zugänglich machen"
 
-#: src/pages/Account.tsx:573
+#: src/pages/Account.tsx:607
 msgid "Manage Billing"
 msgstr "Abrechnung verwalten"
 
@@ -1213,7 +1258,7 @@ msgstr "Daten abbilden"
 msgid "Maximum width of text inside nodes"
 msgstr "Maximale Breite des Textes innerhalb der Knoten"
 
-#: src/components/Checkout.tsx:150
+#: src/components/Checkout.tsx:169
 msgid "Monthly"
 msgstr "Monatlich"
 
@@ -1221,7 +1266,7 @@ msgstr "Monatlich"
 msgid "More from Tone Row"
 msgstr "Mehr von Tone Row"
 
-#: src/pages/Pricing2.tsx:430
+#: src/pages/Pricing2.tsx:482
 msgid "More from Tone Row:"
 msgstr "Mehr von Tone Row:"
 
@@ -1242,7 +1287,7 @@ msgstr "Verschieben {0}"
 msgid "Multiple pointers on same line"
 msgstr "Mehrere Zeiger auf derselben Zeile"
 
-#: src/pages/Account.tsx:425
+#: src/pages/Account.tsx:459
 msgid "My dog ate my credit card!"
 msgstr "Mein Hund hat meine Kreditkarte gefressen!"
 
@@ -1265,7 +1310,7 @@ msgstr "Benennen Sie Ihren Chart"
 msgid "New"
 msgstr "Neues"
 
-#: src/pages/Account.tsx:229
+#: src/pages/Account.tsx:263
 msgid "New Email"
 msgstr "Neue e-mail"
 
@@ -1280,8 +1325,8 @@ msgstr "Neue Flussdiagramm"
 msgid "New Folder"
 msgstr "Neuer Ordner"
 
-#: src/pages/Account.tsx:178
-#: src/pages/Account.tsx:486
+#: src/pages/Account.tsx:182
+#: src/pages/Account.tsx:520
 msgid "Next charge"
 msgstr "Nächste Gebühr"
 
@@ -1367,15 +1412,24 @@ msgstr "legentlich landet der magische Link in Ihrem Spam-Ordner. Wenn Sie ihn n
 msgid "One on One Support"
 msgstr "Eins-zu-eins-Unterstützung"
 
-#: src/pages/Account.tsx:139
+#: src/components/Checkout.tsx:248
+#: src/pages/Pricing2.tsx:437
+msgid "One payment. Never renews."
+msgstr "Eine Zahlung. Erneuert sich nie."
+
+#: src/pages/Account.tsx:143
 msgid "One-on-One Support"
 msgstr "One-on-One-Support"
 
-#: src/pages/Account.tsx:268
+#: src/pages/Pricing2.tsx:404
+msgid "One-time"
+msgstr "Einmalig"
+
+#: src/pages/Account.tsx:302
 msgid "Open Customer Portal"
 msgstr "Öffnen Sie das Kundenportal"
 
-#: src/lib/usePromptStore.ts:140
+#: src/lib/usePromptStore.ts:138
 msgid "Operation canceled"
 msgstr "Operation abgebrochen"
 
@@ -1404,7 +1458,7 @@ msgstr "Seite nicht gefunden"
 msgid "Password"
 msgstr "Passwort"
 
-#: src/lib/hooks.ts:84
+#: src/lib/hooks.ts:124
 msgid "Past Due"
 msgstr "Überfällig"
 
@@ -1436,7 +1490,7 @@ msgstr "Spielbuch"
 msgid "Pointer and container on same line"
 msgstr "Zeiger und Container auf derselben Zeile"
 
-#: src/pages/Pricing2.tsx:154
+#: src/pages/Pricing2.tsx:162
 msgid "Pricing"
 msgstr "Preisgestaltung"
 
@@ -1454,7 +1508,7 @@ msgstr "Prioritätssupport"
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
 
-#: src/pages/Pricing2.tsx:404
+#: src/pages/Pricing2.tsx:456
 msgid "Pro starts at $4/mo billed yearly. Cancel anytime."
 msgstr "Pro beginnt bei $4/Monat jährlich abgerechnet. Jederzeit kündbar."
 
@@ -1466,7 +1520,7 @@ msgstr "Pro-Tipp: Klicken Sie mit der rechten Maustaste auf einen Knoten, um sei
 msgid "Processing Data"
 msgstr "Datenverarbeitung"
 
-#: src/components/Checkout.tsx:173
+#: src/components/Checkout.tsx:192
 msgid "Processing..."
 msgstr "Verarbeitung..."
 
@@ -1504,8 +1558,8 @@ msgstr "Schnelle Vorlagen"
 msgid "Raster Export (PNG, JPG)"
 msgstr "Raster-Export (PNG, JPG)"
 
-#: src/components/ConvertToFlowchart.tsx:39
-#: src/lib/usePromptStore.ts:151
+#: src/components/ConvertToFlowchart.tsx:37
+#: src/lib/usePromptStore.ts:149
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Die Rate-Limit wurde überschritten. Bitte versuchen Sie es später erneut."
 
@@ -1583,14 +1637,14 @@ msgstr "Zurücksetzen"
 msgid "Reset Password"
 msgstr "Passwort zurücksetzen"
 
-#: src/pages/Account.tsx:211
-#: src/pages/Account.tsx:476
-#: src/pages/Account.tsx:484
-#: src/pages/Account.tsx:498
+#: src/pages/Account.tsx:215
+#: src/pages/Account.tsx:510
+#: src/pages/Account.tsx:518
+#: src/pages/Account.tsx:532
 msgid "Resume Subscription"
 msgstr "Abonnement fortsetzen"
 
-#: src/pages/Account.tsx:432
+#: src/pages/Account.tsx:466
 msgid "Return"
 msgstr "Zurückkehren"
 
@@ -1622,7 +1676,7 @@ msgstr "SVG-Export ist eine Pro-Funktion"
 msgid "SVG, PDF & all export formats"
 msgstr "SVG, PDF und alle Exportformate"
 
-#: src/components/Checkout.tsx:194
+#: src/components/Checkout.tsx:213
 msgid "Satisfaction guaranteed or first payment refunded"
 msgstr "Zufriedenheitsgarantie oder erste Zahlung erstattet"
 
@@ -1647,7 +1701,7 @@ msgstr "In die Cloud speichern"
 msgid "Save to File"
 msgstr "In Datei speichern"
 
-#: src/pages/Success.tsx:49
+#: src/pages/Success.tsx:72
 msgid "Save your Work"
 msgstr "Speichern Sie Ihre Arbeit"
 
@@ -1655,7 +1709,7 @@ msgstr "Speichern Sie Ihre Arbeit"
 msgid "Schedule personal consultation sessions"
 msgstr "Persönliche Beratungssitzungen planen"
 
-#: src/components/Checkout.tsx:182
+#: src/components/Checkout.tsx:201
 msgid "Secure payment"
 msgstr "Sichere Zahlung"
 
@@ -1663,7 +1717,7 @@ msgstr "Sichere Zahlung"
 msgid "See more reviews on Product Hunt"
 msgstr "Schau dir weitere Bewertungen auf Product Hunt an"
 
-#: src/pages/Pricing2.tsx:327
+#: src/pages/Pricing2.tsx:335
 msgid "See what's possible"
 msgstr "Sehen, was möglich ist"
 
@@ -1671,7 +1725,7 @@ msgstr "Sehen, was möglich ist"
 msgid "Select a destination folder for \"{0}\"."
 msgstr "Wählen Sie einen Zielordner für \\"
 
-#: src/components/FAQ.tsx:43
+#: src/components/FAQ.tsx:50
 msgid "Send us a message"
 msgstr "Schreiben Sie uns eine Nachricht"
 
@@ -1754,7 +1808,7 @@ msgstr "Abstand"
 msgid "Special Attributes"
 msgstr "Spezielle Attribute"
 
-#: src/pages/Account.tsx:192
+#: src/pages/Account.tsx:196
 msgid "Start"
 msgstr "Start"
 
@@ -1766,11 +1820,12 @@ msgstr "Von vorne anfangen"
 msgid "Start faster with use-case specific templates"
 msgstr "Schnellerer Einstieg mit anwendungsspezifischen Vorlagen"
 
-#: src/pages/Pricing2.tsx:348
+#: src/pages/Pricing2.tsx:356
 msgid "Start for free"
 msgstr "Kostenlos starten"
 
-#: src/pages/Account.tsx:167
+#: src/pages/Account.tsx:171
+#: src/pages/Account.tsx:229
 msgid "Status"
 msgstr "Status"
 
@@ -1805,15 +1860,15 @@ msgstr "Mit Klassen gestalten"
 msgid "Submit"
 msgstr "Einsenden"
 
-#: src/pages/Account.tsx:162
+#: src/pages/Account.tsx:166
 msgid "Subscription"
 msgstr "Abonnement"
 
-#: src/pages/Success.tsx:41
+#: src/pages/Success.tsx:51
 msgid "Subscription Successful!"
 msgstr "Abonnement erfolgreich!"
 
-#: src/pages/Account.tsx:203
+#: src/pages/Account.tsx:207
 msgid "Subscription will end"
 msgstr "Abonnement wird beendet"
 
@@ -1884,7 +1939,11 @@ msgstr "Text in einer Zeile erstellt einen Knoten mit dem Text als Label"
 msgid "Thank you for your feedback!"
 msgstr "Danke für Ihr Feedback!"
 
-#: src/pages/Pricing2.tsx:254
+#: src/pages/Pricing2.tsx:411
+msgid "The 30-Day Pass unlocks everything in Pro with a single payment. No subscription, no auto-renew, nothing to cancel — it simply ends."
+msgstr "Der 30-Tage-Pass schaltet alles in Pro mit einer einzigen Zahlung frei. Kein Abonnement, keine automatische Verlängerung, nichts zu kündigen - es endet einfach."
+
+#: src/pages/Pricing2.tsx:262
 msgid "The beauty and magic reside in the minimalism."
 msgstr "Die Schönheit und Magie stecken im Minimalismus."
 
@@ -1912,13 +1971,9 @@ msgstr "Der Trennzeichen, das verwendet wird, um mehrere Quellknoten zu trennen"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "Der Trennzeichen, das verwendet wird, um mehrere Zielknoten zu trennen"
 
-#: src/pages/Pricing2.tsx:181
+#: src/pages/Pricing2.tsx:189
 msgid "The fastest way to turn what's in your head into something everyone else can understand."
 msgstr "Der schnellste Weg, um das, was in deinem Kopf ist, in etwas zu verwandeln, das jeder andere verstehen kann."
-
-#: src/components/FAQ.tsx:29
-msgid "The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $6/mo — cancel anytime with no commitment."
-msgstr "Der kostenlose Plan eignet sich hervorragend für den täglichen Gebrauch. Wenn du Pro-Funktionen benötigst, ist es monatlich für $6 erhältlich - jederzeit kündbar ohne Verpflichtung."
 
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
@@ -2012,7 +2067,7 @@ msgstr "Von oben nach unten"
 msgid "Transform Your Ideas into Professional Diagrams in Seconds"
 msgstr "Transformieren Sie Ihre Ideen in professionelle Diagramme in Sekunden"
 
-#: src/components/ConvertToFlowchart.tsx:32
+#: src/components/ConvertToFlowchart.tsx:30
 msgid "Transform text into diagrams instantly"
 msgstr "Verwandeln Sie Texte sofort in Diagramme"
 
@@ -2028,7 +2083,7 @@ msgstr "Versuche, deine Suche oder Filter anzupassen, um das Gewünschte zu find
 msgid "Try again"
 msgstr "Erneut versuchen"
 
-#: src/pages/Pricing2.tsx:208
+#: src/pages/Pricing2.tsx:216
 msgid "Try it free"
 msgstr "Kostenlos ausprobieren"
 
@@ -2044,15 +2099,15 @@ msgstr "Zwei Kanten haben die gleiche ID"
 msgid "Two nodes have the same ID"
 msgstr "Zwei Knoten haben die gleiche ID"
 
-#: src/pages/Pricing2.tsx:295
+#: src/pages/Pricing2.tsx:303
 msgid "Type it. See it."
 msgstr "Schreib es. Sieh es."
 
-#: src/components/ConvertToFlowchart.tsx:33
+#: src/components/ConvertToFlowchart.tsx:31
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "Oh oh, du hast keine kostenlosen Anfragen mehr! Upgrade auf Flowchart Fun Pro für unbegrenzte Diagramm-Konvertierungen und verwandle Text weiterhin mühelos in klare, visuelle Flussdiagramme wie durch Kopieren und Einfügen."
 
-#: src/components/FAQ.tsx:21
+#: src/components/FAQ.tsx:24
 msgid "Under 60 seconds. Type a few lines of text or describe what you need to the AI, and your diagram appears instantly. Export or share it with one click."
 msgstr "Unter 60 Sekunden. Tippe ein paar Zeilen Text ein oder beschreibe der KI, was du brauchst, und dein Diagramm erscheint sofort. Exportiere oder teile es mit nur einem Klick."
 
@@ -2068,7 +2123,7 @@ msgstr "Nicht maskiertes Sonderzeichen"
 msgid "Unique text value to identify a node"
 msgstr "Einzigartiger Textwert, um einen Knoten zu identifizieren"
 
-#: src/lib/hooks.ts:88
+#: src/lib/hooks.ts:128
 msgid "Unknown"
 msgstr "Unbekannt"
 
@@ -2093,19 +2148,19 @@ msgstr "Unbegrenzte in der Cloud gespeicherte Flussdiagramme"
 msgid "Unlimited saved diagrams"
 msgstr "Unbegrenzt gespeicherte Diagramme"
 
-#: src/components/Checkout.tsx:129
+#: src/components/Checkout.tsx:139
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "Entsperren Sie KI-Funktionen und verlieren Sie nie wieder Ihre Arbeit mit einem Pro-Konto."
 
-#: src/lib/usePromptStore.ts:147
+#: src/lib/usePromptStore.ts:145
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "Entsperren Sie unbegrenzte AI-Flussdiagramme"
 
-#: src/lib/hooks.ts:86
+#: src/lib/hooks.ts:126
 msgid "Unpaid"
 msgstr "Unbezahlt"
 
-#: src/pages/Account.tsx:222
+#: src/pages/Account.tsx:256
 msgid "Update Email"
 msgstr "E-Mail aktualisieren"
 
@@ -2121,7 +2176,7 @@ msgstr "Jetzt upgraden - Meine Arbeit speichern"
 msgid "Upgrade to Flowchart Fun Pro and unlock:"
 msgstr "Upgrade auf Flowchart Fun Pro und schalte frei:"
 
-#: src/pages/Pricing2.tsx:157
+#: src/pages/Pricing2.tsx:165
 msgid "Upgrade to Flowchart Fun Pro for unlimited hosted charts, watermark-free high-resolution exports, AI editing, and more. $4/month billed yearly."
 msgstr "Upgrade auf Flowchart Fun Pro für unbegrenzte gehostete Diagramme, wasserzeichenfreie hochauflösende Exporte, KI-Bearbeitung und mehr. 4€/Monat jährlich in Rechnung gestellt."
 
@@ -2131,7 +2186,7 @@ msgstr "Upgrade auf Flowchart Fun Pro, um SVG-Export freizuschalten und mehr for
 
 #: src/components/FeatureBreakdown.tsx:305
 #: src/components/Header.tsx:424
-#: src/pages/Pricing2.tsx:382
+#: src/pages/Pricing2.tsx:390
 msgid "Upgrade to Pro"
 msgstr "Auf Pro upgraden"
 
@@ -2168,7 +2223,7 @@ msgstr "Verwenden Sie das Attribut <0>src</0>, um das Bild eines Knotens zu setz
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Verwenden Sie die Attribute <0>w</0> und <1>h</1>, um die Breite und Höhe eines Knotens explizit festzulegen."
 
-#: src/pages/Account.tsx:257
+#: src/pages/Account.tsx:291
 msgid "Use the customer portal to change your billing information."
 msgstr "Verwenden Sie das Kundenportal, um Ihre Rechnungsinformationen zu ändern."
 
@@ -2188,11 +2243,11 @@ msgstr "Verwenden Sie diese Datei für Sequenzen, Prozesse und Workflows."
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "Verwenden Sie diesen Modus, um Ihre aktuelle Tabelle zu ändern und zu verbessern."
 
-#: src/pages/Pricing2.tsx:218
+#: src/pages/Pricing2.tsx:226
 msgid "Used at"
 msgstr "Verwendet bei"
 
-#: src/pages/Account.tsx:126
+#: src/pages/Account.tsx:130
 msgid "User"
 msgstr "Benutzer"
 
@@ -2220,7 +2275,7 @@ msgstr "Wasserzeichen"
 msgid "Welcome to Flowchart Fun"
 msgstr "Willkommen bei Flowchart Spaß"
 
-#: src/components/FAQ.tsx:28
+#: src/components/FAQ.tsx:32
 msgid "What if I just need it for one project?"
 msgstr "Was ist, wenn ich es nur für ein Projekt brauche?"
 
@@ -2245,7 +2300,7 @@ msgstr "Breite"
 msgid "Width and Height"
 msgstr "Breite und Höhe"
 
-#: src/components/FAQ.tsx:16
+#: src/components/FAQ.tsx:17
 msgid "Will my diagrams actually look professional?"
 msgstr "Werden meine Diagramme tatsächlich professionell aussehen?"
 
@@ -2277,11 +2332,11 @@ msgstr "Schreiben Sie wie eine Gliederung"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Schreiben Sie hier Ihre Aufforderung oder klicken Sie auf das Mikrofon, um es zu aktivieren, dann halten Sie es gedrückt, um aufzunehmen."
 
-#: src/components/Checkout.tsx:138
+#: src/components/Checkout.tsx:157
 msgid "Yearly"
 msgstr "Jährlich"
 
-#: src/components/FAQ.tsx:37
+#: src/components/FAQ.tsx:44
 msgid "Yes — send us a message and we'll set you up with a discounted rate."
 msgstr "Ja - schicken Sie uns eine Nachricht und wir werden Ihnen einen ermäßigten Preis anbieten."
 
@@ -2289,15 +2344,15 @@ msgstr "Ja - schicken Sie uns eine Nachricht und wir werden Ihnen einen ermäßi
 msgid "Yes, Replace Content"
 msgstr "Ja, Inhalt ersetzen"
 
-#: src/components/FAQ.tsx:17
+#: src/components/FAQ.tsx:19
 msgid "Yes. Every diagram uses balanced, automatic layouts with clean typography. You can customize themes, colors, and styles — and export as crisp SVG or high-resolution PNG that looks great in any presentation or document."
 msgstr "Ja. Jedes Diagramm verwendet ausgewogene, automatische Layouts mit sauberer Typografie. Sie können Themen, Farben und Stile anpassen - und als scharfes SVG oder hochauflösendes PNG exportieren, das in jeder Präsentation oder jedem Dokument großartig aussieht."
 
-#: src/components/FAQ.tsx:25
+#: src/components/FAQ.tsx:29
 msgid "Yes. Pro supports importing from Visio, Lucidchart, and CSV — so you can bring in what you already have without recreating it from scratch."
 msgstr "Ja. Pro unterstützt den Import von Visio, Lucidchart und CSV - so können Sie bereits vorhandene Diagramme ohne Neuerstellung importieren."
 
-#: src/components/FAQ.tsx:33
+#: src/components/FAQ.tsx:39
 msgid "Yes. You can save and load files locally, work entirely offline, and control exactly who sees your diagrams. No data leaves your machine unless you choose to share."
 msgstr "Ja. Du kannst Dateien lokal speichern und laden, komplett offline arbeiten und genau kontrollieren, wer deine Diagramme sehen kann. Keine Daten verlassen deine Maschine, es sei denn, du entscheidest dich für eine Freigabe."
 
@@ -2305,11 +2360,19 @@ msgstr "Ja. Du kannst Dateien lokal speichern und laden, komplett offline arbeit
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "Sie sind dabei, {numNodes} Knoten und {numEdges} Kanten zu Ihrem Graphen hinzuzufügen."
 
+#: src/components/Checkout.tsx:145
+msgid "You have an active 30-Day Pass until {0}. Want to keep Pro around? Subscribe below."
+msgstr "Sie haben einen aktiven 30-Tage-Pass bis zum {0}. Möchten Sie Pro behalten? Abonnieren Sie unten."
+
+#: src/pages/Success.tsx:57
+msgid "You have full Pro access until {0}. Here are some Pro features you can now enjoy."
+msgstr "Sie haben vollen Pro-Zugriff bis zum {0}. Hier sind einige Pro-Funktionen, die Sie jetzt genießen können."
+
 #: src/pages/LogIn.tsx:178
 msgid "You need to log in to access this page."
 msgstr "Sie müssen sich anmelden, um auf diese Seite zuzugreifen."
 
-#: src/components/Checkout.tsx:100
+#: src/components/Checkout.tsx:110
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "Sie sind bereits ein Pro-Benutzer. <0>Abonnement verwalten</0><1/>Haben Sie Fragen oder Feature-Anfragen? <2>Lassen Sie es uns wissen</2>"
 
@@ -2317,13 +2380,17 @@ msgstr "Sie sind bereits ein Pro-Benutzer. <0>Abonnement verwalten</0><1/>Haben 
 msgid "You're doing great!"
 msgstr "Du machst das super!"
 
-#: src/pages/Account.tsx:580
+#: src/pages/Account.tsx:614
 msgid "You're on the free plan."
 msgstr "Du bist auf dem kostenlosen Plan."
 
-#: src/lib/usePromptStore.ts:144
+#: src/lib/usePromptStore.ts:142
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "Sie haben alle Ihre kostenlosen KI-Konvertierungen verwendet. Upgrade auf Pro für unbegrenzte KI-Nutzung, individuelle Themen, private Freigabe und mehr. Erstellen Sie mühelos weiterhin erstaunliche Flussdiagramme!"
+
+#: src/pages/Success.tsx:49
+msgid "Your 30-Day Pass is Active!"
+msgstr "Ihr 30-Tage-Pass ist aktiv!"
 
 #: src/pages/Charts.tsx:93
 #: src/pages/MyCharts.tsx:235
@@ -2338,11 +2405,15 @@ msgstr "Dein Sandkasten ist ein Raum, um frei mit unseren Flussdiagramm-Tools zu
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
 msgstr "Ihre Diagramme sind schreibgeschützt, da Ihr Konto nicht mehr aktiv ist. Besuchen Sie Ihre <0>Kontoseite</0>, um mehr zu erfahren."
 
-#: src/pages/Pricing2.tsx:401
+#: src/pages/Pricing2.tsx:453
 msgid "Your next diagram should be your best one."
 msgstr "Dein nächstes Diagramm sollte dein bestes sein."
 
-#: src/pages/Account.tsx:559
+#: src/pages/Account.tsx:245
+msgid "Your pass never renews. When it ends, your hosted charts become read-only — nothing is ever deleted."
+msgstr "Ihr Pass verlängert sich nie. Wenn er endet, werden Ihre gehosteten Diagramme schreibgeschützt - es wird nie etwas gelöscht."
+
+#: src/pages/Account.tsx:593
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "Ihre Abonnement ist <0>{statusDisplay}</0>."
 
@@ -2360,7 +2431,7 @@ msgstr "Vergrößern"
 msgid "Zoom Out"
 msgstr "Verkleinern"
 
-#: src/components/Checkout.tsx:228
+#: src/components/Checkout.tsx:283
 msgid "month"
 msgstr "Monat"
 
@@ -2368,14 +2439,14 @@ msgstr "Monat"
 msgid "or"
 msgstr "oder"
 
-#: src/components/Checkout.tsx:171
-#: src/pages/Pricing2.tsx:280
-#: src/pages/Pricing2.tsx:283
-#: src/pages/Pricing2.tsx:340
-#: src/pages/Pricing2.tsx:370
+#: src/components/Checkout.tsx:190
+#: src/pages/Pricing2.tsx:288
+#: src/pages/Pricing2.tsx:291
+#: src/pages/Pricing2.tsx:348
+#: src/pages/Pricing2.tsx:378
 msgid "{0}"
 msgstr "{0}"
 
-#: src/components/PaywallModal.tsx:73
+#: src/components/PaywallModal.tsx:75
 msgid "{buttonText}"
 msgstr "{buttonText}"

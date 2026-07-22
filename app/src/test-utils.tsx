@@ -242,6 +242,39 @@ export const fakeCustomer = {
   },
 };
 
+const NOW_SECONDS = Math.floor(Date.now() / 1000);
+const DAY_SECONDS = 24 * 60 * 60;
+
+/** Customer holding an active 30-Day Pass and no subscription */
+export const fakePassCustomer = {
+  customerId: "cus_pass",
+  pass: {
+    expiresAt: NOW_SECONDS + 20 * DAY_SECONDS,
+    paymentIntentId: "pi_pass_xxx",
+  },
+};
+
+/** Customer whose 30-Day Pass has expired (server normally returns null,
+ * but the client-side clock check must also handle a stale cached value) */
+export const fakeExpiredPassCustomer = {
+  customerId: "cus_pass_expired",
+  pass: {
+    expiresAt: NOW_SECONDS - 1 * DAY_SECONDS,
+    paymentIntentId: "pi_pass_expired",
+  },
+};
+
+/** Lapsed subscriber (past_due) who bought a 30-Day Pass — the pass's core
+ * persona; the pass, not the dead subscription, must drive entitlement */
+export const fakeLapsedSubWithPassCustomer = {
+  customerId: "cus_lapsed_pass",
+  subscription: { ...fakeCustomer.subscription, status: "past_due" },
+  pass: {
+    expiresAt: NOW_SECONDS + 20 * DAY_SECONDS,
+    paymentIntentId: "pi_pass_xxx",
+  },
+};
+
 export const fakeMakeCartResponse = {
   error: null,
   data: [

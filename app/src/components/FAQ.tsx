@@ -6,35 +6,42 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 
 type FAQItem = {
-  question: string;
-  answer: string;
+  // Lazy so the active locale (loaded after module eval) is applied
+  question: () => string;
+  answer: () => string;
   extra?: ReactNode;
 };
 
 const faqs: FAQItem[] = [
   {
-    question: t`Will my diagrams actually look professional?`,
-    answer: t`Yes. Every diagram uses balanced, automatic layouts with clean typography. You can customize themes, colors, and styles — and export as crisp SVG or high-resolution PNG that looks great in any presentation or document.`,
+    question: () => t`Will my diagrams actually look professional?`,
+    answer: () =>
+      t`Yes. Every diagram uses balanced, automatic layouts with clean typography. You can customize themes, colors, and styles — and export as crisp SVG or high-resolution PNG that looks great in any presentation or document.`,
   },
   {
-    question: t`How fast can I actually make something?`,
-    answer: t`Under 60 seconds. Type a few lines of text or describe what you need to the AI, and your diagram appears instantly. Export or share it with one click.`,
+    question: () => t`How fast can I actually make something?`,
+    answer: () =>
+      t`Under 60 seconds. Type a few lines of text or describe what you need to the AI, and your diagram appears instantly. Export or share it with one click.`,
   },
   {
-    question: t`Can I import my existing diagrams?`,
-    answer: t`Yes. Pro supports importing from Visio, Lucidchart, and CSV — so you can bring in what you already have without recreating it from scratch.`,
+    question: () => t`Can I import my existing diagrams?`,
+    answer: () =>
+      t`Yes. Pro supports importing from Visio, Lucidchart, and CSV — so you can bring in what you already have without recreating it from scratch.`,
   },
   {
-    question: t`What if I just need it for one project?`,
-    answer: t`The free plan works great for day-to-day use. If you need Pro features, it's month-to-month at $6/mo — cancel anytime with no commitment.`,
+    question: () => t`What if I just need it for one project?`,
+    answer: () =>
+      t`Grab a 30-Day Pass: every Pro feature for 30 days, one $9 payment, no subscription. It never renews on its own — and when it ends, your charts are never deleted. Hosted charts simply become read-only until you upgrade again. Rather keep Pro around? It's month-to-month at $6/mo — cancel anytime.`,
   },
   {
-    question: t`Is my data private?`,
-    answer: t`Yes. You can save and load files locally, work entirely offline, and control exactly who sees your diagrams. No data leaves your machine unless you choose to share.`,
+    question: () => t`Is my data private?`,
+    answer: () =>
+      t`Yes. You can save and load files locally, work entirely offline, and control exactly who sees your diagrams. No data leaves your machine unless you choose to share.`,
   },
   {
-    question: t`Do you offer discounts for students or nonprofits?`,
-    answer: t`Yes — send us a message and we'll set you up with a discounted rate.`,
+    question: () => t`Do you offer discounts for students or nonprofits?`,
+    answer: () =>
+      t`Yes — send us a message and we'll set you up with a discounted rate.`,
     extra: (
       <Link
         to="/o"
@@ -83,7 +90,7 @@ export default function FAQ() {
           >
             <Collapsible.Trigger className="w-full p-6 flex justify-between items-center text-left">
               <span className="text-lg font-medium text-neutral-900 dark:text-white">
-                {faq.question}
+                {faq.question()}
               </span>
               <CaretDown
                 className={classNames(
@@ -96,7 +103,7 @@ export default function FAQ() {
             </Collapsible.Trigger>
             <Collapsible.Content className="overflow-hidden transition-all data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
               <div className="p-6 pt-0 text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                {faq.answer}
+                {faq.answer()}
                 {faq.extra && <div className="mt-2">{faq.extra}</div>}
               </div>
             </Collapsible.Content>

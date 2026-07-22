@@ -66,12 +66,31 @@ export default function PaywallModal() {
                   className="mt-4 !whitespace-normal !leading-tight"
                   data-to-pricing={toPricingCode}
                   onClick={() => {
-                    posthog.capture("clicked-paywall-button");
+                    posthog.capture("clicked-paywall-button", {
+                      target: "plans",
+                    });
                     navigate("/pricing");
                   }}
                 >
                   <Trans>{buttonText}</Trans>
                 </Button2>
+              </Dialog.Close>
+              <Dialog.Close asChild>
+                <button
+                  className="text-sm text-neutral-600 dark:text-neutral-400 text-center hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  data-to-pricing={`${toPricingCode}: Pass`}
+                  onClick={() => {
+                    posthog.capture("clicked-paywall-button", {
+                      target: "pass",
+                    });
+                    navigate("/pricing#pass");
+                  }}
+                >
+                  <Trans>
+                    Just need it this once? Get a 30-Day Pass for $9 — no
+                    subscription.
+                  </Trans>
+                </button>
               </Dialog.Close>
             </div>
           </Dialog.Description>
