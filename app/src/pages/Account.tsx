@@ -27,7 +27,7 @@ import {
   useIsProUser,
   useSubscriptionStatusDisplay,
   useAccountNeedsAttention,
-  useHasProAccess,
+  useHasActivePass,
 } from "../lib/hooks";
 import type { default as Stripe } from "stripe";
 
@@ -50,7 +50,6 @@ export default function Account() {
     customer?.subscription?.id
   );
   const subscription = customer?.subscription;
-  console.log(subscription);
 
   const changeEmail = useMutation((event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -110,7 +109,12 @@ export default function Account() {
   });
 
   const isProUser = useIsProUser();
-  const hasProAccess = useHasProAccess();
+  const hasActivePass = useHasActivePass();
+  // The subscription section only makes sense for a qualifying subscription;
+  // a pass-only holder gets the pass section instead.
+  const subscriptionHasProAccess = Boolean(
+    subscription && ["trialing", "active"].includes(subscription.status)
+  );
 
   if (customerIsLoading) return <Loading />;
 
@@ -156,7 +160,7 @@ export default function Account() {
               </a>
             </Section>
           ) : null}
-          {hasProAccess ? (
+          {subscriptionHasProAccess ? (
             <Section>
               <SectionTitle>
                 <Trans>Subscription</Trans>
@@ -214,6 +218,36 @@ export default function Account() {
                 </div>
               )}
             </Section>
+          ) : hasActivePass && customer?.pass ? (
+            <Section>
+              <SectionTitle>
+                <Trans>30-Day Pass</Trans>
+              </SectionTitle>
+              <div className="grid gap-5">
+                <div className="grid gap-1">
+                  <Label size="xs">
+                    <Trans>Status</Trans>
+                  </Label>
+                  <InfoCell className="uppercase">
+                    <Trans>Active</Trans>
+                  </InfoCell>
+                </div>
+                <div className="grid gap-1">
+                  <Label size="xs">
+                    <Trans>Access until</Trans>
+                  </Label>
+                  <InfoCell>
+                    {formatDate(customer.pass.expiresAt.toString())}
+                  </InfoCell>
+                </div>
+              </div>
+              <p className="text-neutral-500 text-sm">
+                <Trans>
+                  Your pass never renews. When it ends, your hosted charts
+                  become read-only — nothing is ever deleted.
+                </Trans>
+              </p>
+            </Section>
           ) : (
             <SubscriptionOptions />
           )}
@@ -248,7 +282,7 @@ export default function Account() {
               )}
             </Box>
           </Section>
-          {isProUser && customerPortalLink ? (
+          {subscription && isProUser && customerPortalLink ? (
             <Section>
               <SectionTitle>
                 <Trans>Customer Portal</Trans>
@@ -271,7 +305,7 @@ export default function Account() {
               </a>
             </Section>
           ) : null}
-          {isProUser ? (
+          {subscription && isProUser ? (
             <Section>
               <SectionTitle>
                 <Trans>History</Trans>

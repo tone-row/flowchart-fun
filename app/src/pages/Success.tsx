@@ -3,22 +3,29 @@ import { Button2, Page } from "../ui/Shared";
 import { FileCsv, FloppyDisk, MagicWand, TreeStructure } from "phosphor-react";
 import classNames from "classnames";
 import { Trans, t } from "@lingui/macro";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useSession } from "../lib/hooks";
-import { loopsNewSubscriber } from "../lib/sendLoopsEvent";
+import { loopsNewPassHolder, loopsNewSubscriber } from "../lib/sendLoopsEvent";
+import { formatDate } from "../lib/helpers";
 const Confetti = lazy(() => import("react-confetti"));
 
 export default function Success() {
   const [windowSize, setWindowSize] = useState<[number, number] | null>(null);
   const [numPieces, setNumPieces] = useState(200);
   const session = useSession();
+  const [searchParams] = useSearchParams();
+  const isPass = searchParams.get("pass") === "true";
 
   // Wait until the email is present then send welcome email
   useEffect(() => {
     if (session?.user?.email) {
-      loopsNewSubscriber(session.user.email);
+      if (isPass) {
+        loopsNewPassHolder(session.user.email);
+      } else {
+        loopsNewSubscriber(session.user.email);
+      }
     }
-  }, [session?.user?.email]);
+  }, [session?.user?.email, isPass]);
 
   useEffect(() => {
     setWindowSize([window.innerWidth, window.innerHeight]);
@@ -38,12 +45,28 @@ export default function Success() {
     <>
       <Page className="justify-center">
         <h2 className="text-3xl font-bold text-center">
-          <Trans>Subscription Successful!</Trans>
+          {isPass ? (
+            <Trans>Your 30-Day Pass is Active!</Trans>
+          ) : (
+            <Trans>Subscription Successful!</Trans>
+          )}
         </h2>
         <div className="grid gap-6 mb-6">
-          <p className="text-center text-lg text-wrap-balance leading-normal">
-            <Trans>Here are some Pro features you can now enjoy.</Trans>
-          </p>
+          {isPass ? (
+            <p className="text-center text-lg text-wrap-balance leading-normal">
+              <Trans>
+                You have full Pro access until{" "}
+                {formatDate(
+                  Math.floor(Date.now() / 1000 + 30 * 24 * 60 * 60).toString()
+                )}
+                . Here are some Pro features you can now enjoy.
+              </Trans>
+            </p>
+          ) : (
+            <p className="text-center text-lg text-wrap-balance leading-normal">
+              <Trans>Here are some Pro features you can now enjoy.</Trans>
+            </p>
+          )}
           <div className="grid grid-cols-3">
             <ProFeature
               title={t`Save your Work`}

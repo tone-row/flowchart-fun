@@ -95,6 +95,18 @@ export function SandboxWarning() {
               <Trans>Upgrade Now - Save My Work</Trans>
             </Link>
           </Button2>
+          <Link
+            to="/pricing#pass"
+            className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            data-to-pricing="Sandbox Warning: Pass"
+            data-session-activity="SandboxWarning/pass"
+            onClick={() => useSandboxWarning.setState({ isOpen: false })}
+          >
+            <Trans>
+              Just need it this once? Get a 30-Day Pass for $9 — no
+              subscription.
+            </Trans>
+          </Link>
           <Dialog.DialogClose
             className="text-xs text-neutral-400 hover:text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-300 transition-colors"
             onClick={() => useSandboxWarning.setState({ isOpen: false })}

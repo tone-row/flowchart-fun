@@ -44,3 +44,10 @@ export function loopsNewSubscriber(email: string) {
     eventName: "new_subscriber",
   });
 }
+
+export function loopsNewPassHolder(email: string) {
+  sendLoopsEvent({
+    email,
+    eventName: "new_pass_holder",
+  });
+}

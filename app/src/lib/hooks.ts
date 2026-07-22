@@ -42,38 +42,78 @@ export function useSession() {
   return session;
 }
 
+/**
+ * True while the customer holds an unexpired 30-Day Pass. The clock check
+ * runs client-side so a pass expiring mid-session degrades without a refetch
+ * (customer-info is cached with staleTime: Infinity).
+ */
+export function useHasActivePass() {
+  const { customer } = useContext(AppContext);
+  const pass = customer?.pass;
+  return Boolean(pass && pass.expiresAt * 1000 > Date.now());
+}
+
 /** Use this to determine if the sponsor is valid.
- * That means their subscription is currently active.
+ * That means their subscription is currently active,
+ * or they hold an active 30-Day Pass.
  * i.e. They're in good standing, etc.
  *
  * Should be undefined until the customer is loaded.
  * */
 export function useIsProUser() {
   const { customer, customerIsLoading } = useContext(AppContext);
+  const hasActivePass = useHasActivePass();
   const status = customer?.subscription?.status;
   if (customerIsLoading) return undefined;
-  return Boolean(
-    status && ["trialing", "active", "past_due", "unpaid"].includes(status)
+  return (
+    Boolean(
+      status && ["trialing", "active", "past_due", "unpaid"].includes(status)
+    ) || hasActivePass
   );
 }
 
 /**
  * This determines whether a person can perform pro actions
- * based on their subscription existence and status.
+ * based on their subscription existence and status,
+ * or an active 30-Day Pass.
  */
 export function useHasProAccess() {
   const { customer } = useContext(AppContext);
+  const hasActivePass = useHasActivePass();
   const status = customer?.subscription?.status;
-  return status && ["trialing", "active"].includes(status);
+  return (
+    Boolean(status && ["trialing", "active"].includes(status)) || hasActivePass
+  );
+}
+
+/**
+ * The credential sent as the AI endpoints' bearer token. customer-info
+ * returns the newest subscription regardless of status, so a lapsed
+ * subscriber still has a subscription id — only an active/trialing
+ * subscription is a valid credential; otherwise fall back to the pass's
+ * PaymentIntent id.
+ */
+export function useProAiToken() {
+  const { customer } = useContext(AppContext);
+  const hasActivePass = useHasActivePass();
+  const subscription = customer?.subscription;
+  if (subscription && ["trialing", "active"].includes(subscription.status)) {
+    return subscription.id;
+  }
+  if (hasActivePass) return customer?.pass?.paymentIntentId;
+  return undefined;
 }
 
 /**
  * Use this to determine if they were a pro user.
  * Specifically, if their subscription is canceled, past due, or unpaid.
+ * Suppressed while a 30-Day Pass is active — the user is paid up.
  */
 export function useAccountNeedsAttention() {
   const { customer } = useContext(AppContext);
+  const hasActivePass = useHasActivePass();
   const status = customer?.subscription?.status;
+  if (hasActivePass) return false;
   return status && ["past_due", "unpaid"].includes(status);
 }
 

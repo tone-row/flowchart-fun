@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AppContext, useSession } from "./AppContextProvider";
-import { useIsProUser } from "../lib/hooks";
+import { useHasActivePass } from "../lib/hooks";
+import { formatDate } from "../lib/helpers";
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 import { useMutation } from "react-query";
@@ -18,11 +19,20 @@ export function Checkout({
 }) {
   const session = useSession();
   const sessionEmail = session?.user?.email;
-  const { checkedSession, customerIsLoading } = useContext(AppContext);
-  const isProUser = useIsProUser();
+  const { checkedSession, customerIsLoading, customer } =
+    useContext(AppContext);
+  // Deliberately keyed to the subscription, not useIsProUser(): a pass-only
+  // holder should still be able to subscribe mid-pass (the pass never
+  // renews, so there is no double-billing risk).
+  const subStatus = customer?.subscription?.status;
+  const subscriptionIsPro = Boolean(
+    subStatus &&
+      ["trialing", "active", "past_due", "unpaid"].includes(subStatus)
+  );
+  const hasActivePass = useHasActivePass();
   const [plan, setPlan] = useState<"monthly" | "yearly">("yearly");
   const createCheckoutSession = useMutation(
-    async (plan: "monthly" | "yearly") => {
+    async (plan: "monthly" | "yearly" | "pass") => {
       const response = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: {
@@ -86,7 +96,7 @@ export function Checkout({
     );
   }
 
-  if (isProUser) {
+  if (subscriptionIsPro) {
     return (
       <div className="w-full h-full flex items-center justify-center">
         <p
@@ -130,6 +140,15 @@ export function Checkout({
           Unlock AI Features and never lose your work with a Pro account.
         </Trans>
       </h2>
+      {hasActivePass && customer?.pass ? (
+        <div className="mb-8 rounded-lg bg-white/15 text-white text-center text-sm py-3 px-4">
+          <Trans>
+            You have an active 30-Day Pass until{" "}
+            {formatDate(customer.pass.expiresAt.toString())}. Want to keep Pro
+            around? Subscribe below.
+          </Trans>
+        </div>
+      ) : null}
       <div className="grid sm:grid-cols-2 gap-3 mb-8">
         <PlanButton
           onClick={() => {
@@ -195,6 +214,42 @@ export function Checkout({
           </span>
         </div>
       </div>
+
+      {!hasActivePass ? (
+        <div className="mt-8 rounded-2xl border-2 border-dashed border-white/40 p-5 grid gap-4 sm:flex sm:items-center sm:justify-between text-white">
+          <div className="grid gap-1">
+            <p className="font-bold text-lg leading-tight">
+              <Trans>Just need it this once?</Trans>
+            </p>
+            <p className="text-sm opacity-80 max-w-[40ch]">
+              <Trans>
+                Get every Pro feature for 30 days with a single payment. No
+                subscription — it simply ends.
+              </Trans>
+            </p>
+          </div>
+          <div className="grid gap-1.5 justify-items-center shrink-0">
+            <button
+              className={classNames(
+                "bg-white text-blue-700 rounded-3xl font-bold text-base py-3 px-6 shadow-md hover:shadow-lg hover:scale-[1.02] transition-all",
+                {
+                  "animate-pulse": createCheckoutSession.isLoading,
+                }
+              )}
+              onClick={() => {
+                createCheckoutSession.mutate("pass");
+              }}
+              data-testid="pass-button"
+              data-session-activity="Get 30-Day Pass"
+            >
+              <Trans>Get a 30-Day Pass — $9</Trans>
+            </button>
+            <span className="text-xs opacity-80">
+              <Trans>One payment. Never renews.</Trans>
+            </span>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
