@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { streamText } from "ai";
 import { stripe } from "../_lib/_stripe";
+import { isPaymentIntentActivePass } from "../_lib/_pass";
 import { kv } from "@vercel/kv";
 import { Ratelimit } from "@upstash/ratelimit";
 
@@ -17,10 +18,30 @@ async function checkUserStatus(req: Request) {
 
   if (token) {
     const sid = token.split(" ")[1];
-    const sub = await stripe.subscriptions.retrieve(sid);
-    if (sub.status === "active" || sub.status === "trialing") {
-      isPro = true;
-      customerId = sub.customer as string;
+    try {
+      if (sid?.startsWith("sub_")) {
+        const sub = await stripe.subscriptions.retrieve(sid);
+        if (sub.status === "active" || sub.status === "trialing") {
+          isPro = true;
+          customerId = sub.customer as string;
+        }
+      } else if (sid?.startsWith("pi_")) {
+        // 30-Day Pass holders authenticate with their PaymentIntent id
+        const pi = await stripe.paymentIntents.retrieve(sid, {
+          expand: ["latest_charge"],
+        });
+        const passCustomer =
+          typeof pi.customer === "string" ? pi.customer : pi.customer?.id;
+        if (
+          passCustomer &&
+          isPaymentIntentActivePass(pi, Math.floor(Date.now() / 1000))
+        ) {
+          isPro = true;
+          customerId = passCustomer;
+        }
+      }
+    } catch {
+      // Unknown or malformed token — treat as anonymous
     }
   }
 

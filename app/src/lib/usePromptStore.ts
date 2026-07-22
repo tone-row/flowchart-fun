@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 import { RATE_LIMIT_EXCEEDED, runAi } from "./runAi";
-import { useCallback, useContext, useState } from "react";
-import { useHasProAccess } from "./hooks";
+import { useCallback, useState } from "react";
+import { useHasProAccess, useProAiToken } from "./hooks";
 import { showPaywall } from "./usePaywallModalStore";
 import { t } from "@lingui/macro";
 import {
@@ -10,7 +10,6 @@ import {
   writeToEditorSafe,
   setEditorValueAndClearUndo,
 } from "./useEditorStore";
-import { AppContext } from "../components/AppContextProvider";
 import { unfreezeDoc } from "./useIsFrozen";
 import { useDoc } from "./useDoc";
 import { repairText } from "./repairText";
@@ -129,8 +128,7 @@ export function rejectDiff() {
  */
 export function useRunAiWithStore() {
   const hasProAccess = useHasProAccess();
-  const customer = useContext(AppContext).customer;
-  const sid = customer?.subscription?.id;
+  const sid = useProAiToken();
   const [abortController, setAbortController] =
     useState<AbortController | null>(null);
 
