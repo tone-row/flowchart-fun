@@ -29,7 +29,8 @@
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "autotranslations": "node scripts/autotranslations.mjs",
     "theme:schema:generate": "pnpx ts-json-schema-generator --path 'src/lib/FFTheme.ts' --type 'FFTheme' -f tsconfig.json --strict-tuples -o src/lib/FFTheme.schema.json --minify --no-top-ref",
-    "screenshot-templates": "node scripts/screenshot-templates.mjs"
+    "screenshot-templates": "node scripts/screenshot-templates.mjs",
+    "font:previews": "node scripts/generate-font-previews.mjs"
   },
   "dependencies": {
     "@formkit/auto-animate": "1.0.0-beta.6",
@@ -196,6 +197,7 @@
     "jsdom": "^20.0.3",
     "minimist": "^1.2.5",
     "msw": "^1.2.3",
+    "opentype.js": "^2.0.0",
     "playwright": "1.45.2",
     "source-map-explorer": "^2.5.2",
     "supabase": "^1.82.1",

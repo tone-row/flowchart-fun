@@ -1,7 +1,7 @@
 import cytoscape from "cytoscape";
 import { Doc, useDoc } from "./useDoc";
 import { Direction, FFTheme, LayoutDirection } from "./FFTheme";
-import { fonts } from "./fonts";
+import { allFonts } from "./fonts";
 import {
   childlessShapeClasses,
   createSmartChildlessBorderClasses,
@@ -218,7 +218,7 @@ export function toTheme(theme: FFTheme) {
   const postStyle = styleToString(postStyles);
 
   // Add font style
-  let knownFont = fonts.find((f) => f.name === theme.fontFamily);
+  let knownFont = allFonts.find((f) => f.name === theme.fontFamily);
   if (knownFont) {
     preStyle.unshift(knownFont.importSnippet);
   }

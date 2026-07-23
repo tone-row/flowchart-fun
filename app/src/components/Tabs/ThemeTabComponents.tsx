@@ -2,7 +2,7 @@ import * as Slider from "@radix-ui/react-slider";
 import { Control } from "formulaic";
 import * as Popover from "@radix-ui/react-popover";
 import { ReactNode, useState } from "react";
-import { fonts } from "../../lib/fonts";
+import { allFonts, fonts } from "../../lib/fonts";
 import classNames from "classnames";
 import { Editor } from "@monaco-editor/react";
 import { useLightOrDarkMode } from "../../lib/hooks";
@@ -178,7 +178,7 @@ export const fontpicker: Control<string, BaseProps> = (
   { label },
   globals
 ) => {
-  const isKnownFont = fonts.some((font) => font.name === value);
+  const isKnownFont = allFonts.some((font) => font.name === value);
   const disabled = globals?.canEdit === false;
   return (
     <>
@@ -250,7 +250,15 @@ function Fontpicker({
                 setOpen(false);
               }}
             >
-              {font.name}
+              {font.preview ? (
+                <img
+                  src={font.preview}
+                  alt={font.name}
+                  className="h-5 dark:invert"
+                />
+              ) : (
+                font.name
+              )}
             </FontpickerButton>
           ))}
         </Popover.Content>
