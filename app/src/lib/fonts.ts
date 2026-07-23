@@ -55,4 +55,33 @@ export const fonts: {
     importSnippet:
       "@import url('https://fonts.googleapis.com/css2?family=REM:wght@400;500&display=swap');",
   },
+  // Self-hosted families (app/public/fonts)
+  {
+    name: "Satoshi",
+    importSnippet: "@import url('/fonts/Satoshi.css');",
+  },
+  {
+    name: "General Sans",
+    importSnippet: "@import url('/fonts/GeneralSans.css');",
+  },
+  {
+    name: "Public Sans",
+    importSnippet: "@import url('/fonts/PublicSans.css');",
+  },
+  {
+    name: "Hubot Sans",
+    importSnippet: "@import url('/fonts/HubotSans.css');",
+  },
+  {
+    name: "Open Runde",
+    importSnippet: "@import url('/fonts/OpenRunde.css');",
+  },
+  {
+    name: "Cabinet Grotesk",
+    importSnippet: "@import url('/fonts/CabinetGrotesk.css');",
+  },
+  {
+    name: "Switzer",
+    importSnippet: "@import url('/fonts/Switzer.css');",
+  },
 ];

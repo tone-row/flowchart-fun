@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "General Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/GeneralSans-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: "General Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/GeneralSans-Medium.otf') format('opentype');
+}
+@font-face {
+  font-family: "General Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/GeneralSans-Semibold.otf') format('opentype');
+}

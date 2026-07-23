@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/PublicSans-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/PublicSans-Medium.otf') format('opentype');
+}
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/PublicSans-SemiBold.otf') format('opentype');
+}

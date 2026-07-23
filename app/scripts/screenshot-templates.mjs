@@ -67,7 +67,7 @@ async function takeScreenshot(browser, template) {
   await page.setViewportSize({ width: 1000, height: 1000 });
 
   // go to root page
-  await page.goto("http://localhost:3000");
+  await page.goto(process.env.E2E_START_URL ?? "http://localhost:3000");
 
   // execute the global command to load a template
   try {

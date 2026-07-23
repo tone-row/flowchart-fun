@@ -135,7 +135,7 @@ export function toTheme(theme: FFTheme) {
   };
 
   // taxi-direction
-  if (theme.curveStyle === "taxi") {
+  if (theme.curveStyle === "taxi" || theme.curveStyle === "round-taxi") {
     if (isHierarchical(theme.layoutName)) {
       if (theme.layoutName === "mrtree") {
         // @ts-ignore

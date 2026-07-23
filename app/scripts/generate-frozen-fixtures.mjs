@@ -26,7 +26,7 @@ const ORIGIN = process.env.E2E_START_URL || "http://localhost:3000";
 
 // Empirically non-deterministic templates (confirmed via the stability check).
 // Keep in sync with FROZEN_TEMPLATES in e2e/visual/frozen-templates.ts.
-const FROZEN = ["mindmap", "playful-mindmap", "mindmap-dark"];
+const FROZEN = ["ink-mindmap", "constellation"];
 
 const DELIM = "=====";
 
