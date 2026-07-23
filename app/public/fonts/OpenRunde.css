@@ -2,17 +2,17 @@
   font-family: "Open Runde";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/OpenRunde-Regular.otf') format('opentype');
+  src: url('/fonts/OpenRunde-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: "Open Runde";
   font-style: normal;
   font-weight: 500;
-  src: url('/fonts/OpenRunde-Medium.otf') format('opentype');
+  src: url('/fonts/OpenRunde-Medium.woff2') format('woff2');
 }
 @font-face {
   font-family: "Open Runde";
   font-style: normal;
   font-weight: 600;
-  src: url('/fonts/OpenRunde-Semibold.otf') format('opentype');
+  src: url('/fonts/OpenRunde-Semibold.woff2') format('woff2');
 }

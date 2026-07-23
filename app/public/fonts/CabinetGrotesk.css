@@ -2,17 +2,17 @@
   font-family: "Cabinet Grotesk";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/CabinetGrotesk-Regular.otf') format('opentype');
+  src: url('/fonts/CabinetGrotesk-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: "Cabinet Grotesk";
   font-style: normal;
   font-weight: 500;
-  src: url('/fonts/CabinetGrotesk-Medium.otf') format('opentype');
+  src: url('/fonts/CabinetGrotesk-Medium.woff2') format('woff2');
 }
 @font-face {
   font-family: "Cabinet Grotesk";
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/CabinetGrotesk-Bold.otf') format('opentype');
+  src: url('/fonts/CabinetGrotesk-Bold.woff2') format('woff2');
 }

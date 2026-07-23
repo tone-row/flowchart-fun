@@ -2,5 +2,5 @@
   font-family: "Skriva";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/Skriva-Regular.otf') format('opentype');
+  src: url('/fonts/Skriva-Regular.woff2') format('woff2');
 }

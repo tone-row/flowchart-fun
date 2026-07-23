@@ -16,6 +16,19 @@ describe("picker fonts", () => {
       expect(cssMatch).not.toBeNull();
       const cssPath = path.join(__dirname, "../../public", cssMatch![1]);
       expect(fs.existsSync(cssPath)).toBe(true);
+
+      // every binary the css references must exist too
+      const css = fs.readFileSync(cssPath, "utf8");
+      const srcs = [...css.matchAll(/url\('(\/fonts\/[^']+)'\)/g)].map(
+        (m) => m[1]
+      );
+      expect(srcs.length).toBeGreaterThan(0);
+      for (const src of srcs) {
+        expect({
+          src,
+          exists: fs.existsSync(path.join(__dirname, "../../public", src)),
+        }).toEqual({ src, exists: true });
+      }
     }
   );
 });

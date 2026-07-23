@@ -2,5 +2,5 @@
   font-family: "Satoshi";
   font-style: normal;
   font-weight: 300 900;
-  src: url('/fonts/Satoshi-Variable.ttf') format('truetype-variations');
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
 }

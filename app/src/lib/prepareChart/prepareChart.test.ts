@@ -1,7 +1,10 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-import { theme, cytoscapeStyle } from "../templates/default-template";
+import {
+  legacyDefaultTheme as theme,
+  legacyDefaultCytoscapeStyle as cytoscapeStyle,
+} from "../legacyDefaultTheme";
 import { initialDoc } from "../useDoc";
 import { prepareChart } from "./prepareChart";
 
@@ -226,3 +229,13 @@ longer label text
 function getFixture(name: string) {
   return readFileSync(join(__dirname, "examples", name), "utf8");
 }
+
+test("legacy fallback theme stays frozen — it must NOT track the current default template", async () => {
+  const current = await import("../templates/default-template");
+  // The whole point of legacyDefaultTheme is that pre-metadata documents keep
+  // their historical look. If this fails, someone re-pointed the fallback at
+  // the (evolving) default template — see legacyDefaultTheme.ts.
+  expect(theme.fontFamily).toBe("IBM Plex Sans");
+  expect(theme.nodeBackground).toBe("#e6e6e6");
+  expect(current.theme).not.toEqual(theme);
+});
