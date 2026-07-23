@@ -62,11 +62,6 @@ $blue: #e8eff8;
 $purple: #efeaf7;
 $grey: #eef2f7;
 
-node {
-  font-family: Cabinet Grotesk;
-  font-size: 16px;
-}
-
 :childless {
   corner-radius: 8;
   font-weight: 500;
@@ -96,7 +91,6 @@ edge {
   corner-radius: 10;
   border-width: 1.5;
   border-color: #d5d9e0;
-  background-color: #f7f9fc;
   background-opacity: 0.6;
   color: #6b7488;
   font-size: 14;

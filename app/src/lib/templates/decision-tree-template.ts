@@ -59,11 +59,6 @@ $blue: #5c7599;
 $purple: #8c6a88;
 $grey: #f4f1ea;
 
-node {
-  font-family: General Sans;
-  font-size: 16px;
-}
-
 :childless {
   corner-radius: 8;
   font-weight: 500;

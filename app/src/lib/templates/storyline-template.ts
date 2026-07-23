@@ -58,11 +58,6 @@ $bad: #a03d3d;
 $secret: #6f4f9e;
 $grey: #3a3150;
 
-node {
-  font-family: General Sans;
-  font-size: 16px;
-}
-
 :childless {
   corner-radius: 12;
   font-weight: 400;
@@ -87,7 +82,6 @@ edge {
   target-endpoint: outside-to-node;
   color: $candle;
   font-style: italic;
-  text-background-color: $night;
   text-background-opacity: 1;
   text-background-shape: round-rectangle;
   text-background-padding: 5;
@@ -112,7 +106,6 @@ edge.loop_back {
   corner-radius: 14;
   border-width: 1;
   border-color: $veil;
-  background-color: #1d1630;
   background-opacity: 0.5;
   color: #b8a9cf;
   font-size: 15;

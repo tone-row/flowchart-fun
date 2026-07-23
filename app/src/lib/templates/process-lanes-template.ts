@@ -68,11 +68,6 @@ $blue: #4d7fb2;
 $purple: #82689f;
 $grey: #eef1f5;
 
-node {
-  font-family: Public Sans;
-  font-size: 16px;
-}
-
 :childless {
   corner-radius: 8;
   font-weight: 500;
@@ -97,7 +92,6 @@ edge {
   border-width: 1.5;
   border-style: dashed;
   border-color: $laneBorder;
-  background-color: $lane;
   background-opacity: 1;
   color: #4c5560;
   font-size: 15;

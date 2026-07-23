@@ -59,11 +59,6 @@ $blue: #e8edfc;
 $purple: #f1eafb;
 $grey: #f1f4f8;
 
-node {
-  font-family: Satoshi;
-  font-size: 16px;
-}
-
 :childless {
   corner-radius: 10;
   font-weight: 500;
@@ -78,7 +73,6 @@ edge {
   taxi-radius: 16;
   source-endpoint: outside-to-node;
   target-endpoint: outside-to-node;
-  text-background-color: $pill;
   text-background-opacity: 1;
   text-background-shape: round-rectangle;
   text-background-padding: 5;
@@ -96,7 +90,6 @@ edge {
   corner-radius: 14;
   border-width: 1.5;
   border-color: #d9dee8;
-  background-color: #f8fafc;
   background-opacity: 0.6;
   color: #5b657a;
   font-size: 15;

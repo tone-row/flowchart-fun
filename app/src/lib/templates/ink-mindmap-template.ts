@@ -65,11 +65,6 @@ $blue: #46658c;
 $purple: #7d5a78;
 $grey: #efe9dd;
 
-node {
-  font-family: Open Runde;
-  font-size: 16px;
-}
-
 :childless {
   corner-radius: 999;
   font-weight: 500;
@@ -98,7 +93,6 @@ edge {
   corner-radius: 20;
   border-width: 2;
   border-color: #e2d7c2;
-  background-color: $paper;
   background-opacity: 0.6;
   color: #8a6f4d;
   font-size: 15;

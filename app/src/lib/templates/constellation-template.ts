@@ -38,8 +38,8 @@ export const theme: FFTheme = {
   textMaxWidth: 120,
   lineHeight: 1.25,
   textMarginY: 8,
-  useFixedHeight: false,
-  fixedHeight: 50,
+  useFixedHeight: true,
+  fixedHeight: 26,
 
   curveStyle: "bezier",
   edgeWidth: 1,
@@ -69,23 +69,16 @@ $blue: #9db8e8;
 $purple: #af97d8;
 $grey: #a8b0c4;
 
-node {
-  font-family: Satoshi;
-  font-size: 16px;
-}
-
-/* Stars: small glowing points, serif labels beneath */
+/* Stars: small glowing points, labels beneath.
+   Size, colors, border and margins come from the FFTheme object so the
+   theme editor stays in control; only knob-free props live here. */
 :childless {
   width: 26;
-  height: 26;
   background-fill: radial-gradient;
   background-gradient-stop-colors: $goldLight $gold $goldDark;
   background-gradient-stop-positions: 0 45 100;
-  border-width: 0;
   text-valign: bottom;
   text-halign: center;
-  text-margin-y: 8;
-  color: $warmWhite;
   font-weight: 400;
   text-outline-color: $bg;
   text-outline-width: 2;
@@ -114,18 +107,15 @@ node {
 
 /* Constellation lines */
 edge {
-  curve-style: straight;
   source-endpoint: outside-to-node;
   target-endpoint: outside-to-node;
   color: #8a93ad;
   font-weight: 400;
-  text-background-color: $bg;
   text-background-opacity: 1;
   text-background-padding: 4;
 }
 
 :parent {
-  background-color: #111a38;
   background-opacity: 0.4;
   border-width: 1;
   border-style: dashed;

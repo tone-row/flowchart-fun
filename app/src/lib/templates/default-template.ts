@@ -55,11 +55,6 @@ $blue: #3e63dd;
 $purple: #8e4ec6;
 $grey: #f1f5f9;
 
-node {
-  font-family: Satoshi;
-  font-size: 16px;
-}
-
 :childless {
   corner-radius: 10;
   font-weight: 500;
@@ -82,7 +77,6 @@ edge {
   corner-radius: 14;
   border-width: 1.5;
   border-color: #d9dee8;
-  background-color: #f8fafc;
   background-opacity: 0.6;
   color: #5b657a;
   font-size: 15;

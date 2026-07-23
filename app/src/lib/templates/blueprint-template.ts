@@ -66,11 +66,6 @@ $blue: #6ea8ff;
 $purple: #a98be8;
 $grey: #8ba0cc;
 
-node {
-  font-family: Hubot Sans;
-  font-size: 16px;
-}
-
 :childless {
   corner-radius: 10;
   font-weight: 500;
@@ -92,7 +87,6 @@ edge {
   border-width: 1.5;
   border-style: dashed;
   border-color: #38508f;
-  background-color: $glow;
   background-opacity: 0.06;
   color: $line;
   font-size: 15;

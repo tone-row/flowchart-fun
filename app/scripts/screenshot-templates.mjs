@@ -26,7 +26,7 @@ async function main() {
   const templates = fs
     .readdirSync(path.join(__dirname, "../src/lib/templates"))
     // remove templates.ts
-    .filter((template) => template !== "index.ts")
+    .filter((template) => template.endsWith("-template.ts"))
     .map((template) => template.replace("-template.ts", ""));
 
   // Apply the filter if provided

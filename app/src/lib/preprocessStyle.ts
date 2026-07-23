@@ -289,7 +289,7 @@ function sanitizeFontFamily(fontFamily: string) {
 }
 
 /** Reads any unindented scss-style variables and replaces them throughout the rest of the css */
-function processScss(scss: string): {
+export function processScss(scss: string): {
   updatedScss: string;
   variables: { [key: string]: string };
 } {

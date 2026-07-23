@@ -60,11 +60,6 @@ $blue: #3e63dd;
 $purple: #8e4ec6;
 $grey: #8b94a6;
 
-node {
-  font-family: Switzer;
-  font-size: 16px;
-}
-
 :childless {
   corner-radius: 6;
   font-weight: 500;
@@ -104,7 +99,6 @@ edge.link_dashed {
   corner-radius: 12;
   border-width: 1.5;
   border-color: #dbe0ea;
-  background-color: #f6f8fb;
   background-opacity: 0.6;
   color: #5b657a;
   font-size: 15;
