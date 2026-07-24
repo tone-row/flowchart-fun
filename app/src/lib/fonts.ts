@@ -48,9 +48,9 @@ export const fonts: FontEntry[] = [
     preview: "/font-previews/Switzer.svg",
   },
   {
-    name: "Skriva",
-    importSnippet: "@import url('/fonts/Skriva.css');",
-    preview: "/font-previews/Skriva.svg",
+    name: "Shantell Sans",
+    importSnippet: "@import url('/fonts/ShantellSans.css');",
+    preview: "/font-previews/ShantellSans.svg",
   },
 ];
 

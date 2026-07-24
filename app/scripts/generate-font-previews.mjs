@@ -25,7 +25,7 @@ const PREVIEW_SOURCES = {
   "Open Runde": "OpenRunde-Medium.otf",
   "Cabinet Grotesk": "CabinetGrotesk-Medium.otf",
   Switzer: "Switzer-Medium.otf",
-  Skriva: "Skriva-Regular.otf",
+  "Shantell Sans": "ShantellSans-wght.ttf",
 };
 
 const FONT_SIZE = 28;
@@ -63,7 +63,7 @@ for (const [name, file] of Object.entries(PREVIEW_SOURCES)) {
   );
   // Compose glyph-by-glyph (charToGlyph + kerning) instead of font.getPath:
   // string shaping can route through GSUB alternates whose charstrings
-  // opentype.js fails to extract (observed with Skriva — letters vanished).
+  // opentype.js fails to extract (observed with handwriting fonts — letters vanished).
   const scale = FONT_SIZE / font.unitsPerEm;
   let x = 1;
   let d = "";
@@ -73,7 +73,7 @@ for (const [name, file] of Object.entries(PREVIEW_SOURCES)) {
     if (prev) x += font.getKerningValue(prev, glyph) * scale;
     const p = glyph.getPath(x, BASELINE, FONT_SIZE);
     // Serialize by hand: opentype's Path.toPathData() can emit a literal
-    // NaN at certain coordinate offsets (seen with Skriva's "i" dot), and a
+    // NaN at certain coordinate offsets (seen with a handwriting font's "i" dot), and a
     // single invalid token makes SVG parsers drop the REST of the path.
     d += serialize(p.commands);
     x += glyph.advanceWidth * scale;
