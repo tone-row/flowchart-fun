@@ -1,0 +1,21 @@
+Plan the team offsite
+  Location .color_orange
+    Mountain lodge
+    Beach house
+  Agenda .color_blue
+    Workshops
+    Team retro
+    2027 roadmap
+  Food .color_green
+    Local caterer
+    Group cooking night
+  Fun .color_purple
+    Big hike
+    Trivia night
+  Budget .color_yellow
+    Travel costs
+    Lodging
+
+=====
+{"themeEditor":{"layoutName":"cose","direction":"DOWN","spacingFactor":1.2,"background":"#faf7f0","fontFamily":"Open Runde","shape":"roundrectangle","nodeBackground":"#fffdf8","nodeForeground":"#4b3317","padding":12,"borderWidth":2,"borderColor":"#bb7125","textMaxWidth":140,"lineHeight":1.3,"textMarginY":0,"useFixedHeight":false,"fixedHeight":50,"curveStyle":"bezier","edgeWidth":2.5,"edgeColor":"#c9a06a","sourceArrowShape":"none","targetArrowShape":"none","sourceDistanceFromNode":6,"targetDistanceFromNode":6,"arrowScale":1,"edgeTextSize":0.875,"rotateEdgeLabel":false},"cytoscapeStyle":"@import url('/fonts/OpenRunde.css');\n\n$ink: #4b3317;\n$paper: #fffdf8;\n$accent: #bb7125;\n$red: #c55347;\n$orange: #d98137;\n$yellow: #e5b83c;\n$green: #648f7b;\n$blue: #46658c;\n$purple: #7d5a78;\n$grey: #efe9dd;\n\n:childless {\n  corner-radius: 999;\n  font-weight: 500;\n}\n\n/* The root idea: filled sienna, bigger, round */\n:childless[in_degree < 1] {\n  shape: ellipse;\n  background-color: $accent;\n  border-color: #9c5c1c;\n  color: $paper;\n  font-size: 20;\n  font-weight: 600;\n  padding: 20;\n}\n\nedge {\n  source-endpoint: outside-to-node;\n  target-endpoint: outside-to-node;\n  text-background-padding: 4;\n  color: #8a6f4d;\n  font-weight: 500;\n}\n\n:parent {\n  corner-radius: 20;\n  border-width: 2;\n  border-color: #e2d7c2;\n  background-opacity: 0.6;\n  color: #8a6f4d;\n  font-size: 15;\n  padding: 18;\n}\n\n:childless:selected {\n  underlay-color: $accent;\n  underlay-opacity: 0.25;\n  underlay-padding: 6;\n  underlay-shape: round-rectangle;\n  opacity: 1;\n  border-color: $accent;\n}\n\nedge:selected {\n  line-color: $accent;\n  target-arrow-color: $accent;\n  opacity: 1;\n  width: 3;\n}\n\n:childless.color_red {\n  background-color: #f7e5e1;\n  border-color: $red;\n  color: $ink;\n}\n:childless.color_orange {\n  background-color: #f9ecdc;\n  border-color: $orange;\n  color: $ink;\n}\n:childless.color_yellow {\n  background-color: #faf1d6;\n  border-color: $yellow;\n  color: $ink;\n}\n:childless.color_green {\n  background-color: #e7efe9;\n  border-color: $green;\n  color: $ink;\n}\n:childless.color_blue {\n  background-color: #e4e9f0;\n  border-color: $blue;\n  color: $ink;\n}\n:childless.color_purple {\n  background-color: #efe6ee;\n  border-color: $purple;\n  color: $ink;\n}\n:childless.color_grey {\n  background-color: $grey;\n  border-color: #cfc4ab;\n  color: $ink;\n}\n\n:parent.color_white {\n  background-color: white;\n}\n:parent.color_grey {\n  background-color: $grey;\n}\n","expires":"2026-07-24T18:07:44.102Z","customCssOnly":false,"nodePositions":{"n1":{"x":-3.6109320815028467,"y":-21.858377853490506},"n2":{"x":38.5560657566158,"y":160.93813913307037},"n3":{"x":142.864796768456,"y":259.5072072415701},"n4":{"x":-136.3320040056654,"y":239.22956898194025},"n5":{"x":-94.49251447267262,"y":-164.83194306745096},"n6":{"x":199.21468454964702,"y":-182.42449382121856},"n7":{"x":42.489014215053146,"y":-252.2519356787781},"n8":{"x":-223.96769353456338,"y":-259.5072072415701},"n9":{"x":-20.03070307592419,"y":95.95724343832237},"n10":{"x":272.0375009789857,"y":38.11176096425583},"n11":{"x":294.988786313034,"y":144.17202324901842},"n12":{"x":-309.6645735952521,"y":44.27619013442382},"n13":{"x":-498.59219560574724,"y":119.50773827702645},"n14":{"x":-600.3430524122833,"y":-15.271219789830933},"n15":{"x":308.60273302319325,"y":-61.19713449676052},"n16":{"x":545.9573646631833,"y":9.613584656035878},"n17":{"x":600.3430524122834,"y":-116.91078063637805}}}
+=====

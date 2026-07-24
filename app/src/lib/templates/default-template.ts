@@ -1,45 +1,143 @@
 import { FFTheme } from "../FFTheme";
 
 export const content = `
-Begin Typing
-  Consider: Adding a Label
-    Yes: Option A
-      Use an ID to Connect #connect
-    No: Option B
-      (#connect)
-        Now erase the text and try it yourself!`;
+Big Idea .color_purple
+  Build a prototype
+    Test it with real users
+      Ready to launch?
+        no: Learn & iterate
+          (Build a prototype)
+        yes: Ship it! .color_green
+          Tell the world 🎉
+`;
 
 export const theme: FFTheme = {
   layoutName: "dagre",
   direction: "DOWN",
-  spacingFactor: 1.1,
+  spacingFactor: 1.05,
 
   background: "#ffffff",
-  fontFamily: "IBM Plex Sans",
+  fontFamily: "Satoshi",
 
   shape: "roundrectangle",
-  nodeBackground: "#e6e6e6",
-  nodeForeground: "#000000",
-  padding: 16,
-  borderWidth: 0,
-  borderColor: "#000000",
-  textMaxWidth: 146,
+  nodeBackground: "#ffffff",
+  nodeForeground: "#1a1f36",
+  padding: 14,
+  borderWidth: 1.5,
+  borderColor: "#d9dee8",
+  textMaxWidth: 160,
   lineHeight: 1.3,
   textMarginY: 0,
   useFixedHeight: false,
   fixedHeight: 50,
 
-  curveStyle: "bezier",
+  curveStyle: "round-taxi",
   edgeWidth: 2,
-  edgeColor: "#606ef6",
+  edgeColor: "#a3adc2",
   sourceArrowShape: "none",
-  targetArrowShape: "triangle",
-  sourceDistanceFromNode: 0,
-  targetDistanceFromNode: 0,
-  arrowScale: 1,
+  targetArrowShape: "vee",
+  sourceDistanceFromNode: 4,
+  targetDistanceFromNode: 4,
+  arrowScale: 0.9,
   edgeTextSize: 0.875,
   rotateEdgeLabel: false,
 };
 
-export const cytoscapeStyle =
-  "$color: #000000;\n$red: #e63946;\n$orange: #f4a261;\n$yellow: #f1fa3b;\n$green: #2a9d8f;\n$blue: #606ef6;\n$purple: #6d4a7c;\n$grey: #f2eded;\n\n/** Start - uncomment to use\n:childless[in_degree < 1][out_degree > 0] {\n  border-width: 0;\n  shape: roundrectangle;\n  background-color: $green;\n  color: white;\n}\n*/\n\n/** Terminal - uncomment to use\n:childless[out_degree < 1][in_degree > 0] {\n  border-width: 0;\n  shape: roundrectangle;\n  background-color: $red;\n  color: white;\n}\n*/\n\n/** Branching - uncomment to use\n:childless[in_degree > 0][in_degree < 2][out_degree > 1] {\n  shape: diamond;\n  background-color: $blue;\n  color: white;\n  height: $width;\n  border-width: 0;\n  text-margin-y: 2;\n}\n*/\n\n/** Merging **/\n:childless[in_degree > 1][out_degree > 0][out_degree < 2] {\n}\n\n:childless.color_red {\n  background-color: $red;\n  color: white;\n}\n:childless.color_orange {\n  background-color: $orange;\n  color: white;\n}\n:childless.color_yellow {\n  background-color: $yellow;\n}\n:childless.color_green {\n  background-color: $green;\n  color: white;\n}\n:childless.color_blue {\n  background-color: $blue;\n  color: white;\n}\n:childless.color_purple {\n  background-color: $purple;\n  color: white;\n}\n:childless.color_grey {\n  background-color: $grey;\n}\n\n:parent.color_white {\n  background-color: white;\n}\n:parent.color_grey {\n  background-color: $grey;\n}";
+export const cytoscapeStyle = `@import url('/fonts/Satoshi.css');
+
+$ink: #1a1f36;
+$accent: #606ef6;
+$red: #e5484d;
+$orange: #f76b15;
+$yellow: #ffc53d;
+$green: #30a46c;
+$blue: #3e63dd;
+$purple: #8e4ec6;
+$grey: #f1f5f9;
+
+:childless {
+  corner-radius: 10;
+  font-weight: 500;
+  underlay-color: #1e293b;
+  underlay-opacity: 0.07;
+  underlay-padding: 3;
+  underlay-shape: round-rectangle;
+}
+
+edge {
+  taxi-radius: 12;
+  source-endpoint: outside-to-node;
+  target-endpoint: outside-to-node;
+  text-background-padding: 4;
+  color: #5b657a;
+  font-weight: 500;
+}
+
+:parent {
+  corner-radius: 14;
+  border-width: 1.5;
+  border-color: #d9dee8;
+  background-opacity: 0.6;
+  color: #5b657a;
+  font-size: 15;
+  padding: 18;
+}
+
+:childless:selected {
+  underlay-color: $accent;
+  underlay-opacity: 0.25;
+  underlay-padding: 6;
+  opacity: 1;
+  border-color: $accent;
+}
+
+edge:selected {
+  line-color: $accent;
+  target-arrow-color: $accent;
+  opacity: 1;
+  width: 3;
+}
+
+:childless.color_red {
+  background-color: $red;
+  border-color: #c93a3f;
+  color: white;
+}
+:childless.color_orange {
+  background-color: $orange;
+  border-color: #d95b0e;
+  color: white;
+}
+:childless.color_yellow {
+  background-color: $yellow;
+  border-color: #e0a92e;
+  color: #453915;
+}
+:childless.color_green {
+  background-color: $green;
+  border-color: #26875a;
+  color: white;
+}
+:childless.color_blue {
+  background-color: $blue;
+  border-color: #3353c4;
+  color: white;
+}
+:childless.color_purple {
+  background-color: $purple;
+  border-color: #7a3fb0;
+  color: white;
+}
+:childless.color_grey {
+  background-color: $grey;
+  border-color: #d5dbe3;
+  color: #3c4657;
+}
+
+:parent.color_white {
+  background-color: white;
+}
+:parent.color_grey {
+  background-color: $grey;
+}
+`;

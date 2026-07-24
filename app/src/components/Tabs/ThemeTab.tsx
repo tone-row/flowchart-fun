@@ -691,7 +691,7 @@ export function ThemeTab() {
           </Warning>
         )}
       </div>
-      <form className="grid gap-8 pb-10">
+      <form className="grid gap-8 pb-10" onSubmit={(e) => e.preventDefault()}>
         <Form
           data={{ theme, customCssOnly, cytoscapeStyle }}
           globals={{ canEdit }}

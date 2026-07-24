@@ -8,7 +8,10 @@ import {
 } from "../constants";
 import { getStyleStringFromMeta, preprocessStyle } from "../preprocessStyle";
 import { Details, useDoc } from "../useDoc";
-import { cytoscapeStyle, theme } from "../templates/default-template";
+import {
+  legacyDefaultCytoscapeStyle,
+  legacyDefaultTheme,
+} from "../legacyDefaultTheme";
 import { FFTheme } from "../FFTheme";
 
 /**
@@ -63,29 +66,32 @@ export async function prepareChart({
 
   text = `${text.trim()}\n`;
 
-  // If cytoscapeStyle is not defined, and themeEditor is not defined
-  // load the default theme.
-  // NOTE: spread-clone `theme` rather than assigning it directly. The
-  // legacy-layout migration below mutates themeEditor.layoutName/spacingFactor
-  // in place, and `theme` is the shared default-template import — without the
-  // clone that mutation leaks into every subsequent chart in the session.
-  // A shallow clone suffices because only top-level scalars are mutated.
+  // If cytoscapeStyle is not defined, and themeEditor is not defined,
+  // load the FROZEN legacy default theme: only pre-2024 documents reach this
+  // branch (new docs always carry baked meta), and they must keep rendering
+  // the way their owners last saw them — not pick up the current default.
+  // NOTE: spread-clone rather than assigning directly. The legacy-layout
+  // migration below mutates themeEditor.layoutName/spacingFactor in place,
+  // and the import is shared — without the clone that mutation leaks into
+  // every subsequent chart in the session. A shallow clone suffices because
+  // only top-level scalars are mutated.
   if (
     typeof meta.cytoscapeStyle === "undefined" &&
     typeof meta.themeEditor === "undefined"
   ) {
-    meta.themeEditor = { ...theme };
-    meta.cytoscapeStyle = cytoscapeStyle;
+    meta.themeEditor = { ...legacyDefaultTheme };
+    meta.cytoscapeStyle = legacyDefaultCytoscapeStyle;
   } else if (typeof meta.themeEditor === "undefined") {
     // or if there is cytoscapeStyle but no themeEditor, then
-    // set the default theme but disable it
-    meta.themeEditor = { ...theme };
+    // set the legacy default theme but disable it
+    meta.themeEditor = { ...legacyDefaultTheme };
     meta.customCssOnly = true;
   }
 
   // If an old layout is defined, migrate it into the themeEditor
   if (typeof meta.layout !== "undefined") {
-    let { name = "", spacingFactor = theme.spacingFactor } = meta.layout;
+    let { name = "", spacingFactor = legacyDefaultTheme.spacingFactor } =
+      meta.layout;
     if (name.startsWith("elk-")) {
       name = name.slice(4);
     }

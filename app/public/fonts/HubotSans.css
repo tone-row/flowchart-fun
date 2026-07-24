@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Hubot Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/HubotSans-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: "Hubot Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/HubotSans-Medium.woff2') format('woff2');
+}

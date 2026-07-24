@@ -2,7 +2,7 @@ import * as Slider from "@radix-ui/react-slider";
 import { Control } from "formulaic";
 import * as Popover from "@radix-ui/react-popover";
 import { ReactNode, useState } from "react";
-import { fonts } from "../../lib/fonts";
+import { allFonts, fonts } from "../../lib/fonts";
 import classNames from "classnames";
 import { Editor } from "@monaco-editor/react";
 import { useLightOrDarkMode } from "../../lib/hooks";
@@ -178,7 +178,7 @@ export const fontpicker: Control<string, BaseProps> = (
   { label },
   globals
 ) => {
-  const isKnownFont = fonts.some((font) => font.name === value);
+  const isKnownFont = allFonts.some((font) => font.name === value);
   const disabled = globals?.canEdit === false;
   return (
     <>
@@ -211,26 +211,48 @@ function Fontpicker({
 }) {
   const [open, setOpen] = useState(false);
   const [hovering, setHovering] = useState(false);
+  const [editing, setEditing] = useState(false);
+  // Show the selected font's pre-rendered preview on the closed control;
+  // while the input is focused it becomes plain text again so custom font
+  // names can still be typed.
+  const preview = fonts.find((f) => f.name === value)?.preview;
+  const showPreview = Boolean(preview) && !editing;
   return (
     <>
-      <input
-        placeholder="system-ui"
-        disabled={disabled}
-        aria-label={label}
-        className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200"
-        onFocus={() => setOpen(true)}
-        onBlur={() => {
-          if (!hovering) setOpen(false);
-        }}
-        value={value}
-        onChange={(e) => {
-          onValueChange(e.target.value);
-        }}
-        // on escape key, close the popover
-        onKeyDown={(e) => {
-          if (e.key === "Escape") setOpen(false);
-        }}
-      />
+      <div className="relative grid">
+        <input
+          placeholder="system-ui"
+          disabled={disabled}
+          aria-label={label}
+          className={`p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 ${
+            showPreview ? "text-transparent" : ""
+          }`}
+          onFocus={() => {
+            setEditing(true);
+            setOpen(true);
+          }}
+          onBlur={() => {
+            setEditing(false);
+            if (!hovering) setOpen(false);
+          }}
+          value={value}
+          onChange={(e) => {
+            onValueChange(e.target.value);
+          }}
+          // on escape key, close the popover
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setOpen(false);
+          }}
+        />
+        {showPreview ? (
+          <img
+            src={preview}
+            alt=""
+            aria-hidden
+            className="absolute left-3 top-1/2 -translate-y-1/2 h-5 pointer-events-none dark:invert"
+          />
+        ) : null}
+      </div>
       <Popover.Root open={open} modal={false}>
         <Popover.Trigger className="w-full h-0" />
         <Popover.Content
@@ -250,7 +272,15 @@ function Fontpicker({
                 setOpen(false);
               }}
             >
-              {font.name}
+              {font.preview ? (
+                <img
+                  src={font.preview}
+                  alt={font.name}
+                  className="h-5 dark:invert"
+                />
+              ) : (
+                font.name
+              )}
             </FontpickerButton>
           ))}
         </Popover.Content>
@@ -268,6 +298,9 @@ function FontpickerButton({
 }) {
   return (
     <button
+      // never "submit" — this button lives inside the theme editor's <form>,
+      // and a default-type button submits it as a GET navigation (full reload)
+      type="button"
       className="w-full p-2 hover:bg-gray-100 text-left text-sm dark:hover:bg-neutral-700"
       onClick={onClick}
     >

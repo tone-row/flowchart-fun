@@ -1,7 +1,10 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-import { theme, cytoscapeStyle } from "../templates/default-template";
+import {
+  legacyDefaultTheme as theme,
+  legacyDefaultCytoscapeStyle as cytoscapeStyle,
+} from "../legacyDefaultTheme";
 import { initialDoc, useDoc } from "../useDoc";
 import {
   delimiters,
@@ -347,7 +350,7 @@ describe("prepareChart (characterization)", () => {
     expect(te.spacingFactor).toBe(3);
   });
 
-  test("legacy layout with NO spacingFactor defaults spacingFactor to the CURRENT theme.spacingFactor", async () => {
+  test("legacy layout with NO spacingFactor defaults spacingFactor to the legacy default theme's spacingFactor", async () => {
     // CHARACTERIZATION + MUTATION HAZARD: the default for spacingFactor is
     // `theme.spacingFactor` read off the shared (possibly-already-mutated) object.
     // We assert it equals whatever theme.spacingFactor is RIGHT NOW.
