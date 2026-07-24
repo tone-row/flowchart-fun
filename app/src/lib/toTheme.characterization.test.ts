@@ -36,19 +36,19 @@ describe("toTheme - default theme (canonical baseline)", () => {
     // @ts-expect-error - rankDir is not on the typed LayoutOptions
     expect(result.layout.rankDir).toBe("TB"); // DOWN -> TB
     // @ts-expect-error - spacingFactor is written via @ts-ignore
-    expect(result.layout.spacingFactor).toBe(1.1);
+    expect(result.layout.spacingFactor).toBe(1.05);
   });
 
-  it("default style begins with the IBM Plex Sans @import (known font prepend)", () => {
+  it("default style begins with the Satoshi @import (known font prepend)", () => {
     const result = toTheme(makeTheme());
     expect(result.style.startsWith("@import url(")).toBe(true);
-    expect(result.style).toContain("IBM+Plex+Sans");
+    expect(result.style).toContain("/fonts/Satoshi.css");
   });
 
   it("default style contains $width and $background variables", () => {
     const result = toTheme(makeTheme());
-    // width = textMaxWidth(146) + padding(16)*2 = 178
-    expect(result.style).toContain("$width: 178px;");
+    // width = textMaxWidth(160) + padding(14)*2 = 188
+    expect(result.style).toContain("$width: 188px;");
     expect(result.style).toContain("$background: #ffffff;");
   });
 
@@ -220,8 +220,9 @@ describe("toTheme - taxi-direction narrow conjunction", () => {
     expect(result.style).toContain("taxi-direction: vertical;");
   });
 
-  it("curveStyle 'round-taxi' does NOT trigger taxi-direction", () => {
-    // CHARACTERIZATION: only literal 'taxi' triggers the branch; 'round-taxi' does not.
+  it("curveStyle 'round-taxi' triggers taxi-direction like 'taxi'", () => {
+    // Fixed 2026-07: round-taxi previously fell through the branch and got no
+    // taxi-direction; it now receives the same direction mapping as 'taxi'.
     const result = toTheme(
       makeTheme({
         curveStyle: "round-taxi",
@@ -229,7 +230,7 @@ describe("toTheme - taxi-direction narrow conjunction", () => {
         direction: "DOWN",
       })
     );
-    expect(result.style).not.toContain("taxi-direction");
+    expect(result.style).toContain("taxi-direction: vertical;");
   });
 
   it("curveStyle 'taxi' + non-hierarchical layout (cose) gets NO taxi-direction", () => {
