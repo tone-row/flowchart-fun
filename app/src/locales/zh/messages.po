@@ -13,26 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Pricing2.tsx:395
-msgid "$48/year (save 33%) · Cancel anytime"
-msgstr "每年$48（节省33%）· 随时取消"
-
-#: src/pages/Pricing2.tsx:362
-msgid "$6/mo"
-msgstr "每月$6"
-
 #: src/pages/Pricing.tsx:62
 msgid "1 Temporary Flowchart"
 msgstr "1 临时流程图"
 
-#: src/pages/Pricing2.tsx:104
-msgid "1 diagram at a time"
-msgstr "同时只能有1个图表"
-
-#: src/pages/Pricing2.tsx:422
-msgid "30 days"
-msgstr "30天"
-
+#: src/components/Checkout.tsx:210
 #: src/pages/Account.tsx:224
 msgid "30-Day Pass"
 msgstr "30天通行证"
@@ -57,17 +42,9 @@ msgstr "一个新版本的应用程序可用。请重新加载以更新。"
 msgid "AI Creation & Editing"
 msgstr "AI创建与编辑"
 
-#: src/pages/Pricing2.tsx:113
-msgid "AI generation & editing"
-msgstr "AI生成和编辑"
-
 #: src/components/FeatureBreakdown.tsx:69
 msgid "AI-Powered Flowchart Creation"
 msgstr "AI驱动的流程图创建"
-
-#: src/pages/Pricing2.tsx:320
-msgid "AI-generated from plain text in under 5 seconds."
-msgstr "从普通文本中在5秒内生成AI"
 
 #: src/components/SandboxWarning.tsx:63
 msgid "AI-powered editing to supercharge your workflow"
@@ -119,12 +96,8 @@ msgid "Align Vertically"
 msgstr "垂直对齐"
 
 #: src/components/SandboxWarning.tsx:74
-msgid "All this for just $6/month - less than your daily coffee ☕"
-msgstr "所有这些仅需每月6美元 - 不到您每天的咖啡☕"
-
-#: src/pages/Pricing2.tsx:85
-msgid "Always presentation-ready"
-msgstr "总是准备好展示"
+msgid "All this for just $4/month - less than your daily coffee ☕"
+msgstr "所有这些仅需每月$4-比您每天的咖啡☕还便宜"
 
 #: src/pages/Account.tsx:324
 msgid "Amount"
@@ -137,6 +110,14 @@ msgstr "发生了一个错误。请尝试重新提交或直接发送电子邮件
 #: src/components/Settings.tsx:61
 msgid "Appearance"
 msgstr "外观"
+
+#: src/components/FAQ.tsx:37
+msgid "Are my flowcharts private?"
+msgstr "我的流程图是私密的吗？"
+
+#: src/components/FAQ.tsx:27
+msgid "Are there usage limits?"
+msgstr "有使用限制吗？"
 
 #: src/components/charts/ChartModals.tsx:50
 msgid "Are you sure you want to delete the flowchart \"{0}\"? This action cannot be undone."
@@ -199,13 +180,13 @@ msgstr "成为专业用户"
 msgid "Begin your journey"
 msgstr "开始你的旅程"
 
-#: src/components/Checkout.tsx:158
-msgid "Billed annually at $48"
-msgstr "年度账单为$48"
+#: src/components/Checkout.tsx:184
+msgid "Billed annually at $24"
+msgstr "年度账单为$24"
 
-#: src/components/Checkout.tsx:170
-msgid "Billed monthly at $6"
-msgstr "每月收费$6"
+#: src/components/Checkout.tsx:199
+msgid "Billed monthly at $4"
+msgstr "月度账单为$4"
 
 #: src/components/Header.tsx:146
 #: src/components/Header.tsx:399
@@ -240,10 +221,6 @@ msgstr "宽度优先"
 msgid "Build your personal flowchart library"
 msgstr "建立您的个人流程图库"
 
-#: src/components/FAQ.tsx:27
-msgid "Can I import my existing diagrams?"
-msgstr "我能导入我的现有图表吗？"
-
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/LoadTemplateDialog.tsx:149
@@ -260,13 +237,17 @@ msgstr "我能导入我的现有图表吗？"
 msgid "Cancel"
 msgstr "取消"
 
-#: src/components/Checkout.tsx:207
+#: src/components/Checkout.tsx:254
 msgid "Cancel anytime"
 msgstr "随时取消"
 
 #: src/pages/Account.tsx:374
 msgid "Cancel your subscription. Your hosted charts will become read-only."
 msgstr "取消订阅。您的托管图表将变为只读。"
+
+#: src/components/FAQ.tsx:57
+msgid "Canceling is easy. Simply go to your account page, scroll to the bottom, and click cancel. If you're not completely satisfied, we offer a refund on your first payment."
+msgstr "取消很容易。只需转到您的账户页面，滚动到底部，然后点击取消。如果您不完全满意，我们会退还您第一次付款的费用。"
 
 #: src/components/LearnSyntaxDialog.tsx:358
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
@@ -361,10 +342,6 @@ msgstr "列"
 #: src/components/Feedback.tsx:82
 msgid "Comment"
 msgstr "评论"
-
-#: src/pages/Pricing2.tsx:107
-msgid "Community templates"
-msgstr "社区模板"
 
 #: src/components/FeatureBreakdown.tsx:146
 msgid "Compare our plans and find the perfect fit for your flowcharting needs"
@@ -483,8 +460,8 @@ msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "即时创建流程图：输入或粘贴文本，即可可视化。"
 
 #: src/pages/Pricing.tsx:104
-msgid "Create unlimited diagrams for just $6/month!"
-msgstr "仅需每月$6，即可创建无限的图表！"
+msgid "Create unlimited diagrams for just $4/month!"
+msgstr "仅需$4/月，即可创建无限量的流程图！"
 
 #: src/pages/Pricing.tsx:26
 msgid "Create unlimited flowcharts stored in the cloud– accessible anywhere!"
@@ -515,10 +492,6 @@ msgstr "自定义CSS"
 #: src/pages/Pricing.tsx:82
 msgid "Custom Sharing Options"
 msgstr "自定义分享选项"
-
-#: src/pages/Pricing2.tsx:115
-msgid "Custom sharing & public links"
-msgstr "自定义共享和公共链接"
 
 #: src/pages/Account.tsx:288
 msgid "Customer Portal"
@@ -558,14 +531,6 @@ msgstr "删除"
 msgid "Delete {0}"
 msgstr "删除 {0}"
 
-#: src/pages/Pricing2.tsx:79
-msgid "Describe it and it appears"
-msgstr "描述它，它就会出现"
-
-#: src/pages/Pricing2.tsx:186
-msgid "Describe your idea. Get a diagram worth presenting."
-msgstr "描述您的想法。得到一个值得展示的图表。"
-
 #: src/pages/createExamples.tsx:8
 msgid "Design a software development lifecycle flowchart for an agile team"
 msgstr "为敏捷团队设计一个软件开发生命周期流程图"
@@ -583,9 +548,13 @@ msgstr "方向"
 msgid "Dismiss"
 msgstr "解散"
 
+#: src/components/FAQ.tsx:17
+msgid "Do you have a free trial?"
+msgstr "你有免费试用吗？"
+
 #: src/components/FAQ.tsx:42
-msgid "Do you offer discounts for students or nonprofits?"
-msgstr "是否为学生或非营利组织提供折扣？"
+msgid "Do you offer a non-profit discount?"
+msgstr "你提供非营利组织折扣吗？"
 
 #: src/pages/Charts.tsx:199
 msgid "Do you want to delete this?"
@@ -758,11 +727,11 @@ msgstr "在下面輸入您的電子郵件地址，我們將發送給您一個重
 msgid "Equal To"
 msgstr "等于"
 
-#: src/pages/Pricing2.tsx:87
-msgid "Every diagram exports as crisp PNG, SVG, or shareable link — ready for the meeting, the doc, or the deck."
-msgstr "每个图表都可以导出为清晰的PNG、SVG或可共享的链接 - 准备好参加会议、文档或演示文稿。"
+#: src/pages/Pricing2.tsx:210
+msgid "Every Pro feature for 30 days. One $9 payment. No subscription — it simply ends."
+msgstr "每个专业功能可用30天。只需支付9美元，无需订阅 - 它将自动结束。"
 
-#: src/components/FAQ.tsx:74
+#: src/components/FAQ.tsx:79
 msgid "Everything you need to know about Flowchart Fun Pro"
 msgstr "有关流程图乐趣专业版的所有信息"
 
@@ -780,8 +749,8 @@ msgid "Exclusive Office Hours"
 msgstr "专属办公时间"
 
 #: src/components/LoadFileButton.tsx:76
-msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $6/month"
-msgstr "体验将本地文件直接加载到流程图中的效率和安全性，非常适合离线管理工作相关文件。解锁这个独有的专业功能以及更多功能，Flowchart Fun Pro仅需每月$6即可使用。"
+msgid "Experience the efficiency and security of loading local files directly into your flowchart, perfect for managing work-related documents offline. Unlock this exclusive Pro feature and more with Flowchart Fun Pro, available for only $4/month"
+msgstr "体验将本地文件直接加载到流程图中的效率和安全性，非常适合离线管理工作相关文档。解锁这个独家专业功能以及更多功能，Flowchart Fun Pro仅售$4/月。"
 
 #: src/pages/Account.tsx:621
 msgid "Explore Pro"
@@ -836,10 +805,10 @@ msgid "Fixed Node Height"
 msgstr "固定节点高度"
 
 #: src/lib/paywallCopy.ts:5
-msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $6/month."
-msgstr "Flowchart Fun Pro为您提供无限的流程图、无限的协作者和无限的存储空间，仅需每月$6即可享用。"
+msgid "Flowchart Fun Pro gives you unlimited flowcharts, unlimited collaborators, and unlimited storage for just $4/month."
+msgstr "Flowchart Fun Pro为您提供无限的流程图、无限的协作者和无限的存储空间，仅需$4/月。"
 
-#: src/pages/Pricing2.tsx:470
+#: src/pages/Pricing2.tsx:283
 msgid "Flowchart Fun is an open source project made by <0>Tone Row</0>"
 msgstr "Flowchart Fun是由<0>Tone Row</0>制作的开源项目"
 
@@ -867,7 +836,7 @@ msgstr "免费"
 msgid "Free users: charts in the sandbox expire after 7 days."
 msgstr "免费用户：沙盒中的图表在7天后将过期。"
 
-#: src/components/FAQ.tsx:71
+#: src/components/FAQ.tsx:76
 msgid "Frequently Asked Questions"
 msgstr "经常问的问题"
 
@@ -887,7 +856,7 @@ msgstr "一般"
 msgid "Generate flowcharts from text automatically"
 msgstr "自动从文本生成流程图"
 
-#: src/components/Checkout.tsx:193
+#: src/components/Checkout.tsx:155
 msgid "Get Pro Access Now"
 msgstr "立即获取专业访问权限"
 
@@ -895,23 +864,19 @@ msgstr "立即获取专业访问权限"
 msgid "Get Unlimited AI Requests"
 msgstr "获得无限的AI请求"
 
-#: src/pages/Pricing2.tsx:434
+#: src/pages/Pricing2.tsx:226
 msgid "Get a 30-Day Pass"
 msgstr "获得一个30天通行证"
 
-#: src/components/Checkout.tsx:245
+#: src/components/Checkout.tsx:154
 msgid "Get a 30-Day Pass — $9"
 msgstr "获得一个30天通行证 — $9"
-
-#: src/components/Checkout.tsx:225
-msgid "Get every Pro feature for 30 days with a single payment. No subscription — it simply ends."
-msgstr "用一次付款就可以享受30天的所有专业功能。没有订阅 - 它会自动结束。"
 
 #: src/components/FeatureBreakdown.tsx:104
 msgid "Get rapid responses to your questions"
 msgstr "快速获取您的问题的回答"
 
-#: src/components/FeatureBreakdown.tsx:293
+#: src/components/FeatureBreakdown.tsx:295
 msgid "Get unlimited flowcharts and premium features"
 msgstr "获取无限流程图和高级功能"
 
@@ -929,8 +894,8 @@ msgid "Go to your Sandbox"
 msgstr "去你的沙盒"
 
 #: src/components/FAQ.tsx:34
-msgid "Grab a 30-Day Pass: every Pro feature for 30 days, one $9 payment, no subscription. It never renews on its own — and when it ends, your charts are never deleted. Hosted charts simply become read-only until you upgrade again. Rather keep Pro around? It's month-to-month at $6/mo — cancel anytime."
-msgstr "购买30天通行证：30天内的所有专业功能，一次支付9美元，没有订阅。它不会自动续订 - 结束后，您的图表将永远不会被删除。托管的图表只会变成只读，直到您再次升级。想要保留专业功能？每月6美元，可以随时取消。"
+msgid "Grab a 30-Day Pass: every Pro feature for 30 days, one $9 payment, no subscription. It never renews on its own — and when it ends, your charts are never deleted. Hosted charts simply become read-only until you upgrade again. Rather keep Pro around? It's month-to-month at $4/mo — cancel anytime."
+msgstr "购买30天通行证：享受Pro功能30天，只需支付9美元，无需订阅。通行证不会自动续订，到期后您的图表也不会被删除。托管的图表将变为只读模式，直到您再次升级。想要保留Pro吗？每月只需支付4美元，随时可取消。"
 
 #: src/components/MobileTabToggle.tsx:12
 #: src/components/Tabs/EditorTabList.tsx:50
@@ -973,9 +938,13 @@ msgstr "主页"
 msgid "How are edges declared in this data?"
 msgstr "在这个数据中如何声明边缘？"
 
+#: src/components/FAQ.tsx:55
+msgid "How do I cancel my subscription?"
+msgstr "如何取消我的订阅？"
+
 #: src/components/FAQ.tsx:22
-msgid "How fast can I actually make something?"
-msgstr "我到底能有多快地制作出东西？"
+msgid "How does AI flowchart generation work?"
+msgstr "AI流程图生成是如何工作的？"
 
 #: src/components/FlowchartHeader.tsx:172
 msgid "How would you like to save your chart?"
@@ -1020,17 +989,9 @@ msgstr "從任何CSV檔案匯入資料並將其映射到新的流程圖。這是
 msgid "Import from CSV"
 msgstr "從CSV導入"
 
-#: src/pages/Pricing2.tsx:114
-msgid "Import from Visio, Lucidchart, CSV"
-msgstr "从Visio、Lucidchart、CSV导入"
-
 #: src/pages/Pricing.tsx:80
 msgid "Import from Visio, Lucidchart, and CSV"
 msgstr "从Visio，Lucidchart和CSV导入"
-
-#: src/pages/Pricing2.tsx:91
-msgid "Import from anywhere"
-msgstr "从任何地方导入"
 
 #: src/components/FeatureBreakdown.tsx:91
 msgid "Import from popular diagram tools"
@@ -1041,8 +1002,8 @@ msgid "Import your diagram it into Microsoft Visio using one of these CSV files.
 msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
 
 #: src/components/ImportDataUnauthenticatedDialog.tsx:55
-msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $6/month."
-msgstr "导入数据是一项专业功能。您可以升级到Flowchart Fun Pro，仅需每月6美元。"
+msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
+msgstr "导入数据是Pro功能。您可以升级到Flowchart Fun Pro，每月仅需4美元。"
 
 #: src/components/ShareDialog.tsx:566
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
@@ -1060,10 +1021,6 @@ msgstr "信息"
 msgid "Is"
 msgstr "是"
 
-#: src/components/FAQ.tsx:37
-msgid "Is my data private?"
-msgstr "我的数据是否私密？"
-
 #: src/components/ShareDialog.tsx:645
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON画布是您的图表的JSON表示，由<0>Obsidian</0> Canvas和其他应用程序使用。"
@@ -1076,13 +1033,9 @@ msgstr "加入2000多位专业人士，升级他们的工作流程"
 msgid "Join thousands of happy users who love Flowchart Fun"
 msgstr "加入成千上万的快乐用户，他们都爱流程图乐趣"
 
-#: src/pages/Pricing2.tsx:408
+#: src/pages/Pricing2.tsx:207
 msgid "Just need it for one project?"
 msgstr "只需要一个项目吗？"
-
-#: src/components/Checkout.tsx:222
-msgid "Just need it this once?"
-msgstr "只需要这一次吗？"
 
 #: src/components/PaywallModal.tsx:89
 #: src/components/SandboxWarning.tsx:105
@@ -1226,7 +1179,7 @@ msgstr "登出"
 msgid "Log in to Save"
 msgstr "登录以保存"
 
-#: src/components/Checkout.tsx:83
+#: src/components/Checkout.tsx:92
 msgid "Log in to upgrade your account"
 msgstr "登录升级您的账户"
 
@@ -1237,10 +1190,6 @@ msgstr "由<0>Tone Row</0>制作"
 #: src/components/Settings.tsx:169
 msgid "Make a One-Time Donation"
 msgstr "进行一次性捐赠"
-
-#: src/pages/Pricing2.tsx:365
-msgid "Make it yours"
-msgstr "让它成为你的"
 
 #: src/components/ShareDialog.tsx:483
 msgid "Make publicly accessible"
@@ -1258,7 +1207,7 @@ msgstr "對應資料"
 msgid "Maximum width of text inside nodes"
 msgstr "节点内文本的最大宽度"
 
-#: src/components/Checkout.tsx:169
+#: src/components/Checkout.tsx:198
 msgid "Monthly"
 msgstr "每月"
 
@@ -1266,7 +1215,7 @@ msgstr "每月"
 msgid "More from Tone Row"
 msgstr "来自Tone Row的更多内容"
 
-#: src/pages/Pricing2.tsx:482
+#: src/pages/Pricing2.tsx:295
 msgid "More from Tone Row:"
 msgstr "来自Tone Row的更多内容："
 
@@ -1354,6 +1303,10 @@ msgstr "此文件夹中没有项目"
 msgid "No matching charts found"
 msgstr "没有找到匹配的图表"
 
+#: src/components/FAQ.tsx:29
+msgid "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
+msgstr "不，Pro计划没有使用限制。您可以无限制地创建流程图和使用AI功能，让您自由探索和创新，没有任何限制。"
+
 #: src/components/LearnSyntaxDialog.tsx:340
 msgid "Node Border Style"
 msgstr "节点边框样式"
@@ -1412,8 +1365,7 @@ msgstr "偶尔，魔法链接会被放入您的垃圾邮件文件夹。如果几
 msgid "One on One Support"
 msgstr "一对一支持"
 
-#: src/components/Checkout.tsx:248
-#: src/pages/Pricing2.tsx:437
+#: src/components/Checkout.tsx:211
 msgid "One payment. Never renews."
 msgstr "一次付款。不会自动续订。"
 
@@ -1421,7 +1373,7 @@ msgstr "一次付款。不会自动续订。"
 msgid "One-on-One Support"
 msgstr "一对一支持"
 
-#: src/pages/Pricing2.tsx:404
+#: src/components/Checkout.tsx:218
 msgid "One-time"
 msgstr "一次性"
 
@@ -1441,9 +1393,9 @@ msgstr "或者也许是蓝色！"
 msgid "Organization Chart"
 msgstr "组织结构图"
 
-#: src/pages/Pricing2.tsx:105
-msgid "PNG & JPG export"
-msgstr "PNG和JPG导出"
+#: src/components/FAQ.tsx:24
+msgid "Our AI creates diagrams from your text prompts, allowing for seamless manual edits or AI-assisted adjustments. Unlike others, our Pro plan offers unlimited AI generations and edits, empowering you to create without limits."
+msgstr "我们的AI根据您的文本提示创建图表，允许您进行无缝的手动编辑或AI辅助调整。与其他平台不同，我们的Pro计划提供无限的AI生成和编辑功能，让您可以无限制地创作。"
 
 #: src/components/Tabs/ThemeTab.tsx:263
 #: src/components/Tabs/ThemeTab.tsx:264
@@ -1453,6 +1405,10 @@ msgstr "填充"
 #: src/pages/404.tsx:9
 msgid "Page not found"
 msgstr "找不到页面"
+
+#: src/components/Checkout.tsx:266
+msgid "Pass and subscription both unlock every Pro feature. When a pass ends, your charts are never deleted — hosted charts become read-only until you upgrade again."
+msgstr "通行证和订阅都能解锁所有专业功能。当通行证到期时，您的图表永远不会被删除 - 托管的图表变为只读，直到您再次升级。"
 
 #: src/pages/LogIn.tsx:306
 msgid "Password"
@@ -1490,7 +1446,7 @@ msgstr "剧本"
 msgid "Pointer and container on same line"
 msgstr "同一行上的指针和容器"
 
-#: src/pages/Pricing2.tsx:162
+#: src/pages/Pricing2.tsx:126
 msgid "Pricing"
 msgstr "价格"
 
@@ -1498,19 +1454,11 @@ msgstr "价格"
 msgid "Priority One-on-One Support"
 msgstr "优先一对一支持"
 
-#: src/pages/Pricing2.tsx:116
-msgid "Priority support"
-msgstr "优先支持"
-
 #: src/components/Header.tsx:177
 #: src/components/Header.tsx:455
 #: src/components/Settings.tsx:122
 msgid "Privacy Policy"
 msgstr "隱私政策"
-
-#: src/pages/Pricing2.tsx:456
-msgid "Pro starts at $4/mo billed yearly. Cancel anytime."
-msgstr "专业版每月4美元，年付。随时取消。"
 
 #: src/components/GraphTip.tsx:31
 msgid "Pro tip: Right-click any node to customize its shape and color"
@@ -1520,7 +1468,7 @@ msgstr "专业提示：右键点击任何节点可自定义其形状和颜色"
 msgid "Processing Data"
 msgstr "处理数据"
 
-#: src/components/Checkout.tsx:192
+#: src/components/Checkout.tsx:152
 msgid "Processing..."
 msgstr "处理中..."
 
@@ -1532,10 +1480,6 @@ msgstr "提示"
 #: src/components/ShareDialog.tsx:503
 msgid "Public"
 msgstr "公开"
-
-#: src/pages/Pricing2.tsx:93
-msgid "Pull in data from Visio, Lucidchart, CSV, or start from a template. No recreating what already exists."
-msgstr "从Visio，Lucidchart，CSV中导入数据，或从模板开始。无需重新创建已存在的内容。"
 
 #: src/components/FeatureBreakdown.tsx:33
 msgid "Quick experimentation space that resets daily"
@@ -1672,11 +1616,7 @@ msgstr "旋转标签"
 msgid "SVG Export is a Pro Feature"
 msgstr "SVG导出是专业功能"
 
-#: src/pages/Pricing2.tsx:112
-msgid "SVG, PDF & all export formats"
-msgstr "支持SVG，PDF和所有导出格式"
-
-#: src/components/Checkout.tsx:213
+#: src/components/Checkout.tsx:260
 msgid "Satisfaction guaranteed or first payment refunded"
 msgstr "满意保证或第一次付款退款"
 
@@ -1685,9 +1625,9 @@ msgstr "满意保证或第一次付款退款"
 msgid "Save"
 msgstr "救球"
 
-#: src/pages/Pricing2.tsx:99
-msgid "Save locally, work offline, and control exactly who sees what. No data leaves your machine unless you say so."
-msgstr "本地保存，离线工作，并且可以精确控制谁可以看到什么。除非您允许，否则不会将数据传输到其他地方。"
+#: src/components/Checkout.tsx:190
+msgid "Save 50%"
+msgstr "省50%"
 
 #: src/pages/Pricing.tsx:34
 msgid "Save time with AI and dictation, making it easy to create diagrams."
@@ -1709,17 +1649,13 @@ msgstr "保存您的工作"
 msgid "Schedule personal consultation sessions"
 msgstr "安排个人咨询会话"
 
-#: src/components/Checkout.tsx:201
+#: src/components/Checkout.tsx:248
 msgid "Secure payment"
 msgstr "安全付款"
 
 #: src/components/Testimonials.tsx:152
 msgid "See more reviews on Product Hunt"
 msgstr "在Product Hunt上查看更多评论"
-
-#: src/pages/Pricing2.tsx:335
-msgid "See what's possible"
-msgstr "查看可行性"
 
 #: src/components/charts/ChartModals.tsx:402
 msgid "Select a destination folder for \"{0}\"."
@@ -1820,10 +1756,6 @@ msgstr "重新開始"
 msgid "Start faster with use-case specific templates"
 msgstr "使用特定用例模板加快启动"
 
-#: src/pages/Pricing2.tsx:356
-msgid "Start for free"
-msgstr "免费开始"
-
 #: src/pages/Account.tsx:171
 #: src/pages/Account.tsx:229
 msgid "Status"
@@ -1860,6 +1792,10 @@ msgstr "用类别进行样式设置"
 msgid "Submit"
 msgstr "提交"
 
+#: src/pages/Pricing2.tsx:278
+msgid "Subscribe to Pro and flowchart the fun way!"
+msgstr "订阅专业版，用最有趣的方式绘制流程图！"
+
 #: src/pages/Account.tsx:166
 msgid "Subscription"
 msgstr "订阅"
@@ -1894,10 +1830,6 @@ msgstr "目標分隔符"
 #: src/components/Tabs/ThemeTab.tsx:552
 msgid "Target Distance From Node"
 msgstr "目標距離節點"
-
-#: src/pages/Pricing2.tsx:81
-msgid "Tell the AI what you need in plain English. Your diagram builds itself in seconds."
-msgstr "用简单的英语告诉AI你需要什么。你的图表将在几秒钟内建立。"
 
 #: src/components/Feedback.tsx:57
 msgid "Tell us what's working and what isn't. Every message is read by the developer."
@@ -1939,14 +1871,6 @@ msgstr "在一行中的文本将创建一个节点，文本作为标签"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/pages/Pricing2.tsx:411
-msgid "The 30-Day Pass unlocks everything in Pro with a single payment. No subscription, no auto-renew, nothing to cancel — it simply ends."
-msgstr "30天通行证通过一次付款解锁Pro的所有功能。没有订阅，没有自动续订，没有需要取消的东西 - 它只是结束。"
-
-#: src/pages/Pricing2.tsx:262
-msgid "The beauty and magic reside in the minimalism."
-msgstr "美和魔力都在于简约。"
-
 #: src/components/LearnSyntaxDialog.tsx:278
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "更改样式的最佳方式是右键单击节点或边缘，然后选择所需的样式。"
@@ -1971,10 +1895,6 @@ msgstr "用于分隔多个源节点的分隔符"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "用于分隔多个目标节点的分隔符"
 
-#: src/pages/Pricing2.tsx:189
-msgid "The fastest way to turn what's in your head into something everyone else can understand."
-msgstr "将你脑海中的想法快速转化成其他人都能理解的东西。"
-
 #: src/components/LearnSyntaxDialog.tsx:300
 msgid "The possible shapes are:"
 msgstr "可能的形状是："
@@ -1992,10 +1912,6 @@ msgstr "主题定制编辑器"
 #: src/pages/Pricing.tsx:63
 #: src/pages/Pricing.tsx:76
 msgid "Theme Editor"
-msgstr "主题编辑器"
-
-#: src/pages/Pricing2.tsx:106
-msgid "Theme editor"
 msgstr "主题编辑器"
 
 #: src/components/ImportDataDialog.tsx:415
@@ -2071,6 +1987,10 @@ msgstr "秒转换您的想法成专业图表"
 msgid "Transform text into diagrams instantly"
 msgstr "即时将文本转换为图表"
 
+#: src/pages/Pricing2.tsx:233
+msgid "Trusted by Professionals and Academics"
+msgstr "受专业人士和学术界的信任"
+
 #: src/lib/getDefaultText.ts:17
 msgid "Try AI"
 msgstr "尝试人工智能"
@@ -2083,13 +2003,13 @@ msgstr "尝试调整您的搜索或筛选条件以找到您想要的内容。"
 msgid "Try again"
 msgstr "重试"
 
-#: src/pages/Pricing2.tsx:216
-msgid "Try it free"
-msgstr "免费试用"
-
 #: src/lib/toneRowProjects.ts:20
 msgid "Turn documents into diagrams with AI"
 msgstr "使用人工智能将文档转换为图表"
+
+#: src/pages/Pricing2.tsx:144
+msgid "Turn your ideas into professional diagrams in seconds"
+msgstr "将您的想法在几秒钟内转变成专业的图表"
 
 #: src/lib/parserErrors.tsx:60
 msgid "Two edges have the same ID"
@@ -2099,17 +2019,9 @@ msgstr "两个边有相同的ID"
 msgid "Two nodes have the same ID"
 msgstr "两个节点有相同的ID"
 
-#: src/pages/Pricing2.tsx:303
-msgid "Type it. See it."
-msgstr "输入，即可查看"
-
 #: src/components/ConvertToFlowchart.tsx:31
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
-
-#: src/components/FAQ.tsx:24
-msgid "Under 60 seconds. Type a few lines of text or describe what you need to the AI, and your diagram appears instantly. Export or share it with one click."
-msgstr "不到60秒。输入几行文字或向AI描述您需要的内容，即可立即显示您的图表。一键导出或分享。"
 
 #: src/components/AiToolbar.tsx:123
 msgid "Undo"
@@ -2144,11 +2056,7 @@ msgstr "无限永久流程图"
 msgid "Unlimited cloud-saved flowcharts"
 msgstr "无限云端保存的流程图"
 
-#: src/pages/Pricing2.tsx:111
-msgid "Unlimited saved diagrams"
-msgstr "无限保存的图表"
-
-#: src/components/Checkout.tsx:139
+#: src/components/Checkout.tsx:160
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "解锁AI功能，通过专业账户永远不会丢失您的工作。"
 
@@ -2176,19 +2084,22 @@ msgstr "立即升级 - 保存我的工作"
 msgid "Upgrade to Flowchart Fun Pro and unlock:"
 msgstr "升级到Flowchart Fun Pro并解锁："
 
-#: src/pages/Pricing2.tsx:165
-msgid "Upgrade to Flowchart Fun Pro for unlimited hosted charts, watermark-free high-resolution exports, AI editing, and more. $4/month billed yearly."
-msgstr "升级至Flowchart Fun Pro，享受无限托管图表、无水印高清导出、人工智能编辑等功能。每月$4，年付。"
+#: src/pages/Pricing2.tsx:129
+msgid "Upgrade to Flowchart Fun Pro for unlimited hosted charts, watermark-free high-resolution exports, AI editing, and more. $2/month billed yearly, or a $9 30-Day Pass."
+msgstr "升级到 Flowchart Fun Pro，享受无限托管图表、无水印高分辨率导出、AI编辑等功能。每月2美元，按年计费，或者9美元的30天通行证。"
 
 #: src/components/DownloadDropdown.tsx:85
 msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advanced features for your diagrams."
 msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高级功能来创建您的图表。"
 
-#: src/components/FeatureBreakdown.tsx:305
+#: src/components/FeatureBreakdown.tsx:307
 #: src/components/Header.tsx:424
-#: src/pages/Pricing2.tsx:390
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
+
+#: src/pages/Pricing2.tsx:180
+msgid "Upgrade to Pro for $2/month"
+msgstr "升级至专业版，每月仅需$2"
 
 #: src/pages/New.tsx:174
 msgid "Upgrade to Pro for permanent charts."
@@ -2243,10 +2154,6 @@ msgstr "使用此文件进行顺序、流程和工作流程。"
 msgid "Use this mode to modify and enhance your current chart."
 msgstr "使用此模式来修改和增强您当前的图表。"
 
-#: src/pages/Pricing2.tsx:226
-msgid "Used at"
-msgstr "使用于"
-
 #: src/pages/Account.tsx:130
 msgid "User"
 msgstr "用户"
@@ -2291,6 +2198,10 @@ msgstr "接下来是什么？"
 msgid "What's this?"
 msgstr "这是什么？"
 
+#: src/components/FAQ.tsx:19
+msgid "While we don't offer a free trial, you can get every Pro feature for 30 days with a one-time $9 Pass — no subscription, nothing to cancel. Prefer to subscribe? Pro is $4/month or $24/year, and you can cancel anytime."
+msgstr "虽然我们不提供免费试用，但您可以通过一次性支付$9的通行证，在30天内获得所有专业版功能，无需订阅，也无需取消。更喜欢订阅？专业版每月$4或每年$24，随时可取消。"
+
 #: src/components/Tabs/ThemeTab.tsx:455
 #: src/components/Tabs/ThemeTab.tsx:456
 msgid "Width"
@@ -2300,13 +2211,9 @@ msgstr "宽度"
 msgid "Width and Height"
 msgstr "宽度和高度"
 
-#: src/components/FAQ.tsx:17
-msgid "Will my diagrams actually look professional?"
-msgstr "我的图表会看起来专业吗？"
-
 #: src/components/EditWithAI.tsx:28
-msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $6/month, get the ease of accessible AI editing to enhance your flowcharting experience."
-msgstr "通过Flowchart Fun的专业版，您可以使用自然语言命令快速完善您的流程图细节，非常适合在旅途中创建图表。每月6美元，享受易于访问的人工智能编辑，提升您的流程图体验。"
+msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
+msgstr "使用Flowchart Fun的专业版，您可以使用自然语言命令快速完善流程图细节，非常适合在移动端创建图表。每月$4，享受易于使用的AI编辑功能，提升您的流程图体验。"
 
 #: src/pages/Pricing.tsx:50
 msgid "With the pro version you can save and load local files. It's perfect for managing work-related documents offline."
@@ -2332,35 +2239,27 @@ msgstr "像写大纲一样"
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "在此处输入您的提示，或点击启用麦克风，然后按住录制。"
 
-#: src/components/Checkout.tsx:157
+#: src/components/Checkout.tsx:183
 msgid "Yearly"
 msgstr "每年"
-
-#: src/components/FAQ.tsx:44
-msgid "Yes — send us a message and we'll set you up with a discounted rate."
-msgstr "是的 - 给我们发消息，我们会为您设置折扣率。"
 
 #: src/components/LoadTemplateDialog.tsx:139
 msgid "Yes, Replace Content"
 msgstr "是的，替换内容。"
 
-#: src/components/FAQ.tsx:19
-msgid "Yes. Every diagram uses balanced, automatic layouts with clean typography. You can customize themes, colors, and styles — and export as crisp SVG or high-resolution PNG that looks great in any presentation or document."
-msgstr "是的。每个图表都使用平衡的、自动的布局和干净的排版。您可以自定义主题、颜色和样式，并导出为清晰的SVG或高分辨率的PNG，在任何演示文稿或文档中都会表现出色。"
-
-#: src/components/FAQ.tsx:29
-msgid "Yes. Pro supports importing from Visio, Lucidchart, and CSV — so you can bring in what you already have without recreating it from scratch."
-msgstr "是的。专业版支持从Visio、Lucidchart和CSV导入 - 这样您就可以将现有的内容带入，而不必从头开始重建。"
+#: src/components/FAQ.tsx:44
+msgid "Yes, we support non-profits with special discounts. Contact us with your non-profit status to learn more about how we can assist your organization."
+msgstr "是的，我们为非营利组织提供特别折扣。请联系我们，提供您的非营利组织身份，了解我们如何帮助您的机构。"
 
 #: src/components/FAQ.tsx:39
-msgid "Yes. You can save and load files locally, work entirely offline, and control exactly who sees your diagrams. No data leaves your machine unless you choose to share."
-msgstr "是的。您可以在本地保存和加载文件，完全离线工作，并且可以控制谁可以看到您的图表。除非您选择分享，否则不会有任何数据离开您的计算机。"
+msgid "Yes, your cloud flowcharts are accessible only when you're logged in. Additionally, you can save and load files locally, perfect for managing sensitive work-related documents offline."
+msgstr "是的，您的云端流程图仅在您登录时可访问。此外，您还可以本地保存和加载文件，非常适合离线管理敏感工作文件。"
 
 #: src/components/ImportDataDialog.tsx:693
 msgid "You are about to add {numNodes} nodes and {numEdges} edges to your graph."
 msgstr "您即将为您的图添加{numNodes}个节点和{numEdges}条边。"
 
-#: src/components/Checkout.tsx:145
+#: src/components/Checkout.tsx:166
 msgid "You have an active 30-Day Pass until {0}. Want to keep Pro around? Subscribe below."
 msgstr "您拥有的30天通行证有效期至{0}。想要继续使用Pro吗？请在下方订阅。"
 
@@ -2372,7 +2271,7 @@ msgstr "您拥有完整的Pro访问权限至{0}。现在您可以享受一些Pro
 msgid "You need to log in to access this page."
 msgstr "您需要登录才能访问此页面。"
 
-#: src/components/Checkout.tsx:110
+#: src/components/Checkout.tsx:119
 msgid "You're already a Pro User. <0>Manage Subscription</0><1/>Have questions or feature requests? <2>Let Us Know</2>"
 msgstr "您已经是专业用户。 <0>管理订阅</0><1/>有问题或功能请求？ <2>告诉我们</2>"
 
@@ -2405,10 +2304,6 @@ msgstr "你的沙盒是一个可以自由尝试我们的流程图工具的空间
 msgid "Your charts are read-only because your account is no longer active. Visit your <0>account</0> page to learn more."
 msgstr "您的图表是只读的，因为您的帐户已不再活跃。请访问您的<0>帐户</0>页面了解更多信息。"
 
-#: src/pages/Pricing2.tsx:453
-msgid "Your next diagram should be your best one."
-msgstr "您的下一张图表应该是最好的一张。"
-
 #: src/pages/Account.tsx:245
 msgid "Your pass never renews. When it ends, your hosted charts become read-only — nothing is ever deleted."
 msgstr "您的通行证不会自动续订。到期后，您的托管图表将变为只读 - 没有任何内容会被删除。"
@@ -2416,10 +2311,6 @@ msgstr "您的通行证不会自动续订。到期后，您的托管图表将变
 #: src/pages/Account.tsx:593
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "您的訂閱狀態為<0>{statusDisplay}</0>。"
-
-#: src/pages/Pricing2.tsx:97
-msgid "Your work stays yours"
-msgstr "您的工作始终属于您。"
 
 #: src/components/GraphFloatingMenu.tsx:86
 #: src/components/GraphFloatingMenu.tsx:90
@@ -2431,21 +2322,21 @@ msgstr "放大"
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/components/Checkout.tsx:283
+#: src/components/Checkout.tsx:313
 msgid "month"
 msgstr "月份"
+
+#: src/components/Checkout.tsx:214
+msgid "once"
+msgstr "一次"
 
 #: src/pages/LogIn.tsx:205
 msgid "or"
 msgstr "或"
 
-#: src/components/Checkout.tsx:190
-#: src/pages/Pricing2.tsx:288
-#: src/pages/Pricing2.tsx:291
-#: src/pages/Pricing2.tsx:348
-#: src/pages/Pricing2.tsx:378
-msgid "{0}"
-msgstr "{0}"
+#: src/pages/Pricing2.tsx:183
+msgid "or get a <0>30-Day Pass for $9</0> — one payment, never renews"
+msgstr "或者购买<0>30天通行证，售价$9</0> — 一次付款，永不续费 "
 
 #: src/components/PaywallModal.tsx:75
 msgid "{buttonText}"
