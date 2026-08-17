@@ -14,42 +14,47 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: () => t`Will my diagrams actually look professional?`,
+    question: () => t`Do you have a free trial?`,
     answer: () =>
-      t`Yes. Every diagram uses balanced, automatic layouts with clean typography. You can customize themes, colors, and styles — and export as crisp SVG or high-resolution PNG that looks great in any presentation or document.`,
+      t`While we don't offer a free trial, you can get every Pro feature for 30 days with a one-time $9 Pass — no subscription, nothing to cancel. Prefer to subscribe? Pro is $4/month or $24/year, and you can cancel anytime.`,
   },
   {
-    question: () => t`How fast can I actually make something?`,
+    question: () => t`How does AI flowchart generation work?`,
     answer: () =>
-      t`Under 60 seconds. Type a few lines of text or describe what you need to the AI, and your diagram appears instantly. Export or share it with one click.`,
+      t`Our AI creates diagrams from your text prompts, allowing for seamless manual edits or AI-assisted adjustments. Unlike others, our Pro plan offers unlimited AI generations and edits, empowering you to create without limits.`,
   },
   {
-    question: () => t`Can I import my existing diagrams?`,
+    question: () => t`Are there usage limits?`,
     answer: () =>
-      t`Yes. Pro supports importing from Visio, Lucidchart, and CSV — so you can bring in what you already have without recreating it from scratch.`,
+      t`No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions.`,
   },
   {
     question: () => t`What if I just need it for one project?`,
     answer: () =>
-      t`Grab a 30-Day Pass: every Pro feature for 30 days, one $9 payment, no subscription. It never renews on its own — and when it ends, your charts are never deleted. Hosted charts simply become read-only until you upgrade again. Rather keep Pro around? It's month-to-month at $6/mo — cancel anytime.`,
+      t`Grab a 30-Day Pass: every Pro feature for 30 days, one $9 payment, no subscription. It never renews on its own — and when it ends, your charts are never deleted. Hosted charts simply become read-only until you upgrade again. Rather keep Pro around? It's month-to-month at $4/mo — cancel anytime.`,
   },
   {
-    question: () => t`Is my data private?`,
+    question: () => t`Are my flowcharts private?`,
     answer: () =>
-      t`Yes. You can save and load files locally, work entirely offline, and control exactly who sees your diagrams. No data leaves your machine unless you choose to share.`,
+      t`Yes, your cloud flowcharts are accessible only when you're logged in. Additionally, you can save and load files locally, perfect for managing sensitive work-related documents offline.`,
   },
   {
-    question: () => t`Do you offer discounts for students or nonprofits?`,
+    question: () => t`Do you offer a non-profit discount?`,
     answer: () =>
-      t`Yes — send us a message and we'll set you up with a discounted rate.`,
+      t`Yes, we support non-profits with special discounts. Contact us with your non-profit status to learn more about how we can assist your organization.`,
     extra: (
       <Link
         to="/o"
-        className="text-blue-600 dark:text-blue-400 underline hover:no-underline"
+        className="text-purple-600 dark:text-purple-400 underline hover:no-underline"
       >
         <Trans>Send us a message</Trans>
       </Link>
     ),
+  },
+  {
+    question: () => t`How do I cancel my subscription?`,
+    answer: () =>
+      t`Canceling is easy. Simply go to your account page, scroll to the bottom, and click cancel. If you're not completely satisfied, we offer a refund on your first payment.`,
   },
 ];
 
@@ -65,7 +70,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto py-20 px-4 sm:py-28 sm:px-6">
+    <div className="max-w-3xl mx-auto py-16 px-4 sm:py-24 sm:px-6">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white mb-4">
           <Trans>Frequently Asked Questions</Trans>
@@ -85,7 +90,7 @@ export default function FAQ() {
               "rounded-lg border border-neutral-200 dark:border-neutral-800",
               "bg-white dark:bg-neutral-900",
               "transition-all duration-200 ease-in-out",
-              "hover:border-blue-200 dark:hover:border-blue-800"
+              "hover:border-purple-200 dark:hover:border-purple-800"
             )}
           >
             <Collapsible.Trigger className="w-full p-6 flex justify-between items-center text-left">
