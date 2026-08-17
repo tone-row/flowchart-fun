@@ -16,7 +16,7 @@ export const BasicSelect = ({
 } & Select.SelectProps) => {
   return (
     <Select.Root {...props}>
-      <Select.Trigger className="inline-flex items-center justify-center rounded px-3 text-xs leading-none h-[35px] gap-2 focus:show-md outline-none bg-background text-neutral-800 hover:bg-neutral-200 data-[placeholder]:text-neutral-500 dark:bg-[var(--color-background)] dark:data-[placeholder]:text-neutral-500 dark:text-neutral-300 dark:hover:bg-neutral-900 dark:hover:text-neutral-100">
+      <Select.Trigger className="inline-flex items-center justify-center rounded px-3 text-sm leading-none h-[35px] gap-2 outline-none bg-background text-neutral-800 hover:bg-neutral-200 data-[placeholder]:text-neutral-500 dark:bg-[var(--color-background)] dark:data-[placeholder]:text-neutral-500 dark:text-neutral-300 dark:hover:bg-neutral-900 dark:hover:text-neutral-100">
         <Select.Value placeholder={placeholder} />
         <Select.Icon className="text-neutral-600 dark:text-neutral-500">
           <CaretDown />
@@ -50,7 +50,7 @@ const SelectItem = forwardRef<
   return (
     <Select.Item
       className={classnames(
-        "text-xs leading-none flex rounded-xs flex items-center py-2 pl-3 pr-[25px] relative select-none data-[disabled]:pointer-events-none data-[highlighted]:outline-none",
+        "text-sm leading-none flex rounded-sm items-center py-2 pl-3 pr-[25px] relative select-none data-[disabled]:pointer-events-none data-[highlighted]:outline-none",
         "data-[highlighted]:bg-neutral-200 data-[highlighted]:text-neutral-900 text-foreground data-[disabled]:text-neutral-400 dark:text-neutral-300 dark:data-[disabled]:text-neutral-500 dark:data-[highlighted]:bg-neutral-800 dark:data-[highlighted]:text-neutral-100",
         className
       )}
