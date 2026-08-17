@@ -60,7 +60,7 @@ export function FlowchartHeader() {
 
         <div className="flex items-center gap-1">
           {isReadOnly && (
-            <span className="text-xs text-neutral-400 dark:text-neutral-600 font-extrabold uppercase tracking-tight">
+            <span className="text-xs text-neutral-500 dark:text-neutral-500 font-semibold uppercase tracking-wide">
               <Trans>Read-only</Trans>
             </span>
           )}
@@ -271,7 +271,7 @@ function FlowchartTitle({
   return (
     <h1
       className={classNames(
-        "text-lg sm:text-xl md:text-[30px] tracking-[0.5px] font-bold -translate-y-[2px]",
+        "text-xl sm:text-2xl md:text-3xl font-bold -translate-y-[2px]",
         className
       )}
       {...props}

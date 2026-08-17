@@ -140,7 +140,7 @@ export default function Pricing2() {
           <span className="font-medium sm:text-[22px] text-purple-600/90 dark:text-white/70 -mb-2">
             Flowchart Fun Pro
           </span>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl text-wrap-balance font-bold tracking-tight !leading-[1.25]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-wrap-balance font-bold tracking-tight !leading-[1.25]">
             <Trans>Turn your ideas into professional diagrams in seconds</Trans>
           </h1>
           <div
@@ -383,7 +383,7 @@ function FeaturesSlideshow() {
       {f.map((feature, index) => (
         <div
           key={feature.title}
-          className="feature group relative overflow-hidden p-6 rounded-xl bg-white shadow-md aspect-[6/3] flex items-center justify-center transition-colors dark:bg-neutral-900 dark:border-none dark:data-[is-active=true]:bg-neutral-800"
+          className="feature group relative overflow-hidden p-6 rounded-xl bg-white shadow-md aspect-[6/3] flex items-center justify-center transition-colors dark:bg-neutral-900 dark:border dark:border-neutral-800 dark:data-[is-active=true]:bg-neutral-800"
           data-is-active={index === activeIndex}
           onMouseEnter={() => setIndex(index)}
           role="button"
@@ -395,13 +395,13 @@ function FeaturesSlideshow() {
           }
         >
           <div className="grid gap-1 sm:gap-3 sm:group-data-[is-active=true]:-translate-y-6 transition-transform z-10">
-            <h3 className="text-center text-[18px] sm:text-base lg:text-lg font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-data-[is-active=true]:text-white">
+            <h3 className="text-center text-lg lg:text-2xl font-bold text-foreground dark:text-neutral-300 text-wrap-balance leading-normal md:leading-tight dark:group-data-[is-active=true]:text-white">
               {feature.title}
             </h3>
             {feature.points.map((point) => (
               <p
                 key={point}
-                className="text-center text-sm lg:text-base text-neutral-500 dark:text-neutral-400 text-wrap-balance !leading-normal"
+                className="text-center text-base lg:text-lg text-neutral-500 dark:text-neutral-400 text-wrap-balance !leading-normal"
               >
                 {point}
               </p>

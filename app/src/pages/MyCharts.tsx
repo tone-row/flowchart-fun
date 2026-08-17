@@ -30,7 +30,7 @@ import { useMemo } from "react";
 // Component for the main page title
 function PageTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h1 className="text-2xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-100">
+    <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
       {children}
     </h1>
   );

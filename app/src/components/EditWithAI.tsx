@@ -214,7 +214,7 @@ export function EditWithAI() {
               <div className="relative">
                 <textarea
                   placeholder={t`Write your prompt here or click to enable the microphone, then press and hold to record.`}
-                  className="text-xs w-full resize-none h-24 p-2 leading-normal dark:bg-neutral-200"
+                  className="text-base sm:text-sm w-full resize-none h-24 p-2 leading-normal dark:bg-neutral-200"
                   name="prompt"
                   required
                   value={txtPrompt}

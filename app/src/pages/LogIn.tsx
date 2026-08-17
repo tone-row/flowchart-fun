@@ -173,8 +173,8 @@ export default function Login() {
 
 function AuthWallWarning() {
   return (
-    <div className="bg-yellow-100 text-foreground p-4 text-center text-md grid gap-2 mb-6 leading-normal rounded-lg">
-      <p className="font-bold">
+    <div className="bg-yellow-100 text-foreground p-4 text-center text-sm grid gap-2 mb-6 leading-normal rounded-lg">
+      <p className="font-semibold">
         <Trans>You need to log in to access this page.</Trans>
       </p>
       <p className="text-wrap-balance">

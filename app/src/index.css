@@ -1,8 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap");
+/* IBM Plex Sans — the DISPLAY face (wordmark, page titles).
+   Deliberately still loaded from the Google CDN and NOT self-hosted: the same
+   family name is a legacy chart font (lib/fonts.ts legacyFonts, used by
+   legacyDefaultTheme), and `customCssOnly` charts receive no importSnippet at
+   all, so they depend on this document-level availability. Self-hosting a
+   subset under this family name would put two @font-face sets in competition
+   for charts that ~500 paying customers own. 600 is included because
+   pageTitle renders at semibold. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Inter — the UI face — is declared in public/index.html, NOT here.
+   CRA's css-loader tries to resolve url("/fonts/...") in a src/ stylesheet as
+   a webpack module and fails; the file lives in public/. Declaring the
+   @font-face inline in index.html also puts it next to the <link rel=preload>
+   and removes a CSS round-trip before the font can start downloading. */
+
+/* slang.css is imported AFTER this file and sets
+   `html { font-family: var(--base-font-family) }` at equal specificity to
+   Tailwind's preflight — so it wins, and changing tailwind.config.js alone
+   would NOT change the inherited UI font. slang declares the variable at
+   `:where(:root)` (specificity 0), so this plain `:root` overrides it
+   regardless of order. Keep in sync with fontFamily.sans in designTokens.js
+   and with baseFontFamily in src/slang/config.ts. */
+:root {
+  --base-font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
 
 *,
 *::before,
@@ -486,15 +513,15 @@ body.dark .pricing-highlights {
 
 /** Global focus-visible ring */
 :focus-visible {
-  outline: 2px solid #5c6fff;
+  outline: 2px solid #2267dd;
   outline-offset: 2px;
   border-radius: 3px;
 }
 
 input:focus-visible,
 textarea:focus-visible {
-  border-color: #5c6fff;
-  box-shadow: 0 0 0 3px rgba(92, 111, 255, 0.15);
+  border-color: #2267dd;
+  box-shadow: 0 0 0 3px rgba(34, 103, 221, 0.15);
   outline: none;
 }
 
@@ -513,5 +540,8 @@ textarea:focus-visible {
   z-index: 10;
   width: 80px;
   height: 10px;
-  @apply bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-700 dark:to-blue-900 rounded-b-lg;
+  @apply bg-gradient-to-r from-blue-400 to-blue-600 dark:from-blue-700 dark:to-blue-900;
+  /* explicit: the box is 10px tall, so a token radius would clamp anyway */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

@@ -34,7 +34,7 @@ const Settings = memo(() => {
       <PageTitle className="text-center w-full">
         <Trans>Settings</Trans>
       </PageTitle>
-      <div className="bg-white rounded-lg border border-neutral-200/60 dark:bg-neutral-900 dark:border-neutral-800 p-8 md:p-10">
+      <div className="bg-white rounded-xl border border-neutral-200 shadow-sm dark:bg-neutral-900 dark:border-neutral-800 p-6 md:p-10">
         <div className="grid gap-10">
           <Section>
             <SectionTitle>
@@ -90,7 +90,7 @@ const Settings = memo(() => {
                 <span>Flowchart Fun</span> is an open source project made by{" "}
                 <a
                   href="https://tone-row.com"
-                  className="font-bold text-blue-500"
+                  className="font-semibold text-blue-600 dark:text-blue-400"
                 >
                   Tone&nbsp;Row
                 </a>
@@ -198,8 +198,10 @@ const GroupButton = memo(
         className={[
           styles.GroupButton,
           isActive
-            ? "!bg-blue-600 !text-white !opacity-100 !cursor-default"
-            : "!bg-neutral-100 !text-neutral-600 hover:!bg-neutral-200 dark:!bg-neutral-800 dark:!text-neutral-400 dark:hover:!bg-neutral-700",
+            ? // grayscale-0 because `disabled` here means "current", not
+              // "unavailable" — Button2 desaturates disabled buttons.
+              "!bg-blue-600 !text-white !opacity-100 !cursor-default !grayscale-0"
+            : "!bg-neutral-100 !text-neutral-600 hover:!bg-neutral-200 hover:!text-neutral-900 dark:!bg-neutral-800 dark:!text-neutral-400 dark:hover:!bg-neutral-700",
           className,
         ].join(" ")}
         {...props}
@@ -229,9 +231,9 @@ const ToneRowProject = memo(
         href={href}
         target="_blank"
         rel="noopener"
-        className="group grid gap-1 rounded-md border border-neutral-200 dark:border-neutral-800 p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+        className="group grid gap-1 rounded-lg border border-neutral-200 dark:border-neutral-800 p-4 hover:border-blue-400 hover:bg-neutral-50 dark:hover:border-blue-700 dark:hover:bg-neutral-800/50 transition-colors"
       >
-        <span className="text-sm font-bold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+        <span className="text-sm font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {name}{" "}
           <span className="font-normal text-neutral-400 dark:text-neutral-500">
             {domain}

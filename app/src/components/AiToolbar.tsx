@@ -178,7 +178,7 @@ export function AiToolbar() {
             <textarea
               value={currentText}
               onChange={(e) => setCurrentText(e.target.value)}
-              className="w-full resize-none text-sm text-neutral-900 dark:text-neutral-100 bg-transparent p-3 focus:outline-none rounded-md"
+              className="w-full resize-none text-base sm:text-sm text-neutral-900 dark:text-neutral-100 bg-transparent p-3 focus:outline-none rounded-md"
               disabled={isRunning}
               rows={3}
               onKeyDown={(e) => {

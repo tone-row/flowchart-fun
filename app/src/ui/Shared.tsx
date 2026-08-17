@@ -63,12 +63,12 @@ type InputProps = { isLoading?: boolean } & React.DetailedHTMLProps<
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ isLoading, className = "", ...props }, ref) => {
     return (
-      <div className={classNames("p-3 rounded", styles.Input, className)}>
+      <div className={classNames("p-3 rounded-md", styles.Input, className)}>
         <input
           autoComplete="off"
           type="text"
           ref={ref}
-          className={`${styles.InputText} text-xs`}
+          className={styles.InputText}
           data-1p-ignore
           {...props}
         />
@@ -102,7 +102,14 @@ export const Textarea = forwardRef<
       className={[styles.Input, boxProps.className ?? ""].join(" ")}
       {...boxProps}
     >
-      <textarea autoComplete="off" ref={ref} className="text-sm" {...props} />
+      <textarea
+        autoComplete="off"
+        ref={ref}
+        /* 16px, not text-sm: iOS Safari zooms the page when a focused
+           text control renders below 16px. Same reason as .InputText. */
+        className={styles.InputText}
+        {...props}
+      />
     </Box>
   );
 });
@@ -121,10 +128,10 @@ export function Notice({
     <div
       data-style={style}
       className={cx(
-        "py-3 pl-2 pr-4 flex items-center gap-2 rounded-md text-sm",
+        "py-3 px-4 flex items-center gap-2 rounded-md text-sm border",
         {
-          "bg-yellow-100 text-yellow-700": style === "warning",
-          "bg-blue-100 text-blue-700": style === "info",
+          "bg-orange-50 text-orange-800 border-orange-200": style === "warning",
+          "bg-blue-50 text-blue-800 border-blue-200": style === "info",
         }
       )}
     >
@@ -134,12 +141,12 @@ export function Notice({
   );
 }
 
-export const focusClasses = `focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-offset-[var(--color-background)] focus-visible:ring-blue-500 focus-visible:outline-none focus-visible:ring-opacity-60`;
+export const focusClasses = `focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-offset-[var(--color-background)] focus-visible:ring-blue-600 focus-visible:outline-none focus-visible:ring-opacity-60`;
 const button2Classes =
-  "group relative rounded-md active:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed";
+  "group relative rounded-md active:opacity-90 disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed";
 const button2Colors = {
   default:
-    "bg-neutral-300/60 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-700 disabled:hover:bg-neutral-200 disabled:hover:text-neutral-700 dark:disabled:hover:bg-neutral-800 dark:disabled:hover:text-neutral-300",
+    "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 disabled:hover:bg-neutral-100 disabled:hover:text-neutral-700 dark:disabled:hover:bg-neutral-800 dark:disabled:hover:text-neutral-300",
   blue: "bg-blue-500 text-white hover:bg-blue-600 disabled:hover:bg-blue-500 disabled:hover:text-white",
   orange:
     "bg-orange-500 text-white hover:bg-orange-600 disabled:hover:bg-orange-500 disabled:hover:text-white",
@@ -153,8 +160,10 @@ const button2Colors = {
   red: "bg-red-500 text-white hover:bg-red-600 disabled:hover:bg-red-500 disabled:hover:text-white",
 };
 
+// NOTE: these shrink with the 2026 type scale (sm/md 16->14, lg 19->16).
+// That is intended — every button gets smaller and less shouty.
 const pSize = {
-  xs: "p-2 text-[12px]",
+  xs: "p-2 text-xs",
   sm: "p-2 py-2.5 text-sm",
   md: "p-4 text-sm",
   lg: "p-5 text-base",
@@ -202,7 +211,7 @@ export const Button2 = forwardRef<
   ) => {
     return (
       <button
-        className={`flex font-bold items-center justify-center gap-2 whitespace-nowrap ${button2Classes} ${pxButtonSize[
+        className={`flex font-semibold items-center justify-center gap-2 whitespace-nowrap ${button2Classes} ${pxButtonSize[
           size
         ](!!leftIcon, !!rightIcon)} ${button2Colors[color]}
       ${pSize[size]} ${focusClasses} ${
@@ -332,7 +341,7 @@ export const IconOutlineButton = forwardRef<
 >(({ children, ...props }, ref) => {
   return (
     <button
-      className={`h-10 w-10 ${focusClasses} rounded-md grid content-center justify-center border border-solid border-neutral-400 shadow-sm text-neutral-600 dark:border-neutral-400 dark:text-neutral-300`}
+      className={`h-10 w-10 ${focusClasses} rounded-md grid content-center justify-center border border-solid border-neutral-300 shadow-sm text-neutral-600 dark:border-neutral-700 dark:text-neutral-300`}
       {...props}
       ref={ref}
     >
@@ -344,7 +353,7 @@ export const IconOutlineButton = forwardRef<
 IconOutlineButton.displayName = "IconOutlineButton";
 
 const tooltipPopoverContentShared =
-  "bg-background border border-neutral-400 dark:border-neutral-600 text-xs dark:bg-neutral-800 rounded-md px-4 py-3 leading-none shadow-sm";
+  "bg-background border border-neutral-200 dark:border-neutral-700 text-sm dark:bg-neutral-800 rounded-md px-4 py-3 leading-none shadow-md";
 
 export const tooltipContentProps: TooltipContentProps = {
   side: "bottom",
@@ -392,7 +401,7 @@ export function InputWithLabel({
 }) {
   return (
     <input
-      className="p-4 mt-1 border bg-background dark:bg-[#0f0f0f] border-gray-300 rounded-lg hover:border-gray-400 focus:outline-none focus:ring focus:ring-neutral-400 focus:ring-opacity-25 focus:ring-offset-1 dark:text-neutral-50"
+      className="p-4 mt-1 border bg-white dark:bg-[#0f0f0f] border-neutral-300 dark:border-neutral-700 rounded-lg hover:border-neutral-400 dark:hover:border-neutral-600 focus:outline-none dark:text-neutral-50"
       placeholder={label}
       {...inputProps}
     />

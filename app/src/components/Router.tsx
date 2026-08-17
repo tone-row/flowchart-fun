@@ -36,6 +36,8 @@ import { useEnsureLoadTemplate } from "../lib/loadTemplate";
 import { useEnsureGetScreenshotLink } from "../lib/useEnsureGetScreenshotLink";
 const Fullscreen = lazy(() => import("../pages/Fullscreen"));
 
+const showDesignSystem = process.env.REACT_APP_VERCEL_ENV !== "production";
+
 export default function Router() {
   usePageViews();
   useSupportLegacyNRoute();
@@ -78,7 +80,13 @@ export default function Router() {
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/blog/post/:slug" element={<Post />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/d" element={<DesignSystem />} />
+        {/* Internal design system. Hidden on the production host; the house
+            idiom for this is REACT_APP_VERCEL_ENV (see PosthogWrapper), which
+            is "preview" on Vercel previews and unset locally. Note this only
+            removes the *route* — the lazy chunk is still emitted. */}
+        {showDesignSystem ? (
+          <Route path="/d" element={<DesignSystem />} />
+        ) : null}
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

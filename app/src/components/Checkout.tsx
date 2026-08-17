@@ -284,6 +284,11 @@ type PlanButtonProps = {
   badge?: { label: ReactNode; className: string };
 } & React.ComponentProps<"button">;
 
+// sm:min-h-[210px] is a deliberate visual floor, NOT a height equaliser — the
+// sm:grid-cols-3 parent already stretches the cards to the tallest. Do not
+// delete it as redundant. Measured under the 2026 type scale: content is 183px
+// tall (was ~192px), so the floor stays active and the card outline is
+// unchanged from what shipped.
 function PlanButton({
   planTitle,
   description,
@@ -307,7 +312,10 @@ function PlanButton({
           <span className="text-xl font-bold">{unit}</span>
         ) : (
           <>
-            <span className="text-2xl font-bold -translate-y-[4px] -mr-px">
+            {/* Optical nudge, re-measured for the 2026 type scale: the old
+                50px/33px pairing at -4px put the slash 2px below the price's
+                optical centre; 24px against 48px needs -7px for the same 2px. */}
+            <span className="text-2xl font-bold -translate-y-[7px] -mr-px">
               /
             </span>
             <span className="text-xl font-bold">
@@ -316,7 +324,7 @@ function PlanButton({
           </>
         )}
       </div>
-      <span className="opacity-50 text-[15px]">{description}</span>
+      <span className="opacity-50 text-sm">{description}</span>
       {badge ? (
         <span
           className={classNames(

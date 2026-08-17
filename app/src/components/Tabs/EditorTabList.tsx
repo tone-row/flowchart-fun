@@ -4,10 +4,12 @@ import { useRef } from "react";
 import classNames from "classnames";
 import { useIsReadOnly } from "../../lib/hooks";
 
+// Colour, not opacity, carries the selected state — opacity dimmed the
+// background along with the label and made the inactive tabs look disabled.
 const btn =
-  "bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 px-4 py-2.5 md:px-6 md:py-3 text-[18px] opacity-50 font-bold";
+  "bg-white dark:bg-neutral-900 text-neutral-500 dark:text-neutral-500 px-4 py-2.5 md:px-6 md:py-3 text-sm font-semibold rounded-t-lg transition-colors hover:text-neutral-700 dark:hover:text-neutral-300";
 const selected =
-  "aria-[selected=true]:opacity-100 aria-[selected=true]:shadow-xl data-[is-selected=true]:opacity-100 data-[is-selected=true]:shadow-xl";
+  "aria-[selected=true]:text-neutral-900 dark:aria-[selected=true]:text-neutral-50 aria-[selected=true]:shadow-md data-[is-selected=true]:text-neutral-900 dark:data-[is-selected=true]:text-neutral-50 data-[is-selected=true]:shadow-md";
 
 export function EditorTabList() {
   const tabsListRef = useRef<HTMLDivElement>(null);

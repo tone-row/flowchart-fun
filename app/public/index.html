@@ -18,6 +18,30 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- The UI face. Preloaded because it is the design, not decoration. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="%PUBLIC_URL%/fonts/Inter-Variable.woff2"
+      crossorigin
+    />
+    <!--
+      Inter — the UI face. Self-hosted, subset to latin + latin-ext with the
+      opsz axis pinned to 14 (the text-size optical default), which halves the
+      file to ~100KB while keeping the full 100-900 weight range.
+      Declared here rather than in src/index.css because CRA's css-loader tries
+      to resolve url("/fonts/...") as a webpack module.
+    -->
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("%PUBLIC_URL%/fonts/Inter-Variable.woff2") format("woff2");
+      }
+    </style>
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#00aba9" />
