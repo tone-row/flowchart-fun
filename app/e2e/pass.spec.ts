@@ -27,7 +27,7 @@ async function logIn(page: Page, email: string, password: string) {
  * account stays non-pro for the paywall assertions in logged-in.spec.ts.
  */
 test.describe("30-Day Pass CTAs", () => {
-  test("pricing page shows the pass ticket; logged-out checkout asks for login", async ({
+  test("pricing page shows the pass callout; logged-out checkout asks for login", async ({
     page,
   }) => {
     await page.goto(`${BASE_URL}/pricing?isE2E=true`);
@@ -46,7 +46,8 @@ test.describe("30-Day Pass CTAs", () => {
   }) => {
     await logIn(page, TESTING_EMAIL, TESTING_PASSWORD);
     await page.goto(`${BASE_URL}/pricing?isE2E=true`);
-    await page.getByTestId("pass-button").click();
+    await page.getByTestId("pass-plan-button").click();
+    await page.getByTestId("checkout-button").click();
     await page.waitForURL(/checkout\.stripe\.com/, { timeout: 30_000 });
     await expect(page.getByText("$9.00").first()).toBeVisible();
     await expect(page.getByText(/30-Day Pass/).first()).toBeVisible();
@@ -58,7 +59,7 @@ test.describe("30-Day Pass CTAs", () => {
     await page.getByTestId("pro-link").waitFor({ state: "detached" });
     await page.goto(`${BASE_URL}/pricing?isE2E=true`);
     await expect(page.getByText("You're already a Pro User")).toBeVisible();
-    await expect(page.getByTestId("pass-button")).toHaveCount(0);
+    await expect(page.getByTestId("pass-plan-button")).toHaveCount(0);
   });
 });
 
@@ -99,7 +100,8 @@ test.describe("30-Day Pass full purchase", () => {
       TESTING_PASS_PASS as string
     );
     await page.goto(`${BASE_URL}/pricing?isE2E=true`);
-    await page.getByTestId("pass-button").click();
+    await page.getByTestId("pass-plan-button").click();
+    await page.getByTestId("checkout-button").click();
     await page.waitForURL(/checkout\.stripe\.com/, { timeout: 30_000 });
 
     // Stripe hosted checkout, test mode

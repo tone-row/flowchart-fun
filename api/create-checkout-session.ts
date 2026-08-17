@@ -2,7 +2,7 @@ import { VercelApiHandler } from "@vercel/node";
 import type { default as Stripe } from "stripe";
 import { stripe } from "./_lib/_stripe";
 import { getBaseUrl } from "./_lib/_helpers";
-import { PASS_METADATA_KEY } from "./_lib/_pass";
+import { PASS_METADATA_KEY, getActivePass } from "./_lib/_pass";
 
 const plans = {
   monthly: {
@@ -43,6 +43,27 @@ const handler: VercelApiHandler = async (req, res) => {
       const customer = existing.data
         .filter((c) => !c.deleted)
         .sort((a, b) => b.created - a.created)[0];
+
+      // A pass never renews and there are no webhooks, so this is the only
+      // server-side guard against charging an active pass holder twice
+      // (e.g. a stale "pass" selection on the pricing page).
+      if (customer) {
+        const paymentIntents = await stripe.paymentIntents.list({
+          customer: customer.id,
+          limit: 100,
+          expand: ["data.latest_charge"],
+        });
+        const activePass = getActivePass(
+          paymentIntents.data,
+          Math.floor(Date.now() / 1000)
+        );
+        if (activePass) {
+          res.status(400).json({
+            error: { message: "You already have an active 30-Day Pass" },
+          });
+          return;
+        }
+      }
 
       session = await stripe.checkout.sessions.create({
         mode: "payment",
