@@ -18,20 +18,27 @@ export const palette = {
   orange: ["#ff7044", "#ffa500"],
 };
 
+/**
+ * These are written to :root as --color-* custom properties at runtime by
+ * components/ColorMode.tsx — that, not the baked values in slang.css, is what
+ * actually paints the app. Keep the *Hsl entries in sync by hand: nothing
+ * derives them from the hexes, and backgroundHsl had already drifted.
+ * The neutral values here mirror the `neutral` ramp in lib/designTokens.js.
+ */
 export const colors = {
-  background: "#FAFAF7",
-  backgroundHsl: "0, 0%, 100%",
-  foreground: palette.black[1],
-  foregroundHsl: "0, 0%, 13%",
-  lineColor: palette.white[6],
-  uiAccent: palette.white[1],
-  nodeHover: palette.white[2],
-  edgeHover: palette.white[3],
-  lineNumbers: palette.white[4],
-  buttonFocus: palette.purple[0],
+  background: "#FAFAFA",
+  backgroundHsl: "0, 0%, 98%",
+  foreground: "#18181B",
+  foregroundHsl: "240, 6%, 10%",
+  lineColor: "#F4F4F5",
+  uiAccent: "#D4D4D8",
+  nodeHover: "#F4F4F5",
+  edgeHover: "#A1A1AA",
+  lineNumbers: "#A1A1AA",
+  buttonFocus: "#2267dd",
   highlightColor: palette.purple[0],
   overlayColor: "0, 50%, 0%",
-  input: palette.white[5],
+  input: "#FFFFFF",
   brandHsl: "233, 100%, 68%",
   darkHighlight: palette.purple[4],
   headerBtnHover: palette.purple[3],
@@ -43,14 +50,14 @@ export const colors = {
 export const darkTheme: typeof colors = {
   background: "#0f0f0f",
   backgroundHsl: "0, 0%, 6%",
-  foreground: "rgb(250, 250, 250)",
-  foregroundHsl: "0, 0%, 100%",
-  edgeHover: palette.black[2],
-  lineColor: "#2e2e2e",
-  lineNumbers: "#737373",
-  nodeHover: "#2e2e2e",
-  uiAccent: palette.black[3],
-  buttonFocus: palette.purple[0],
+  foreground: "#FAFAFA",
+  foregroundHsl: "0, 0%, 98%",
+  edgeHover: "#52525B",
+  lineColor: "#27272A",
+  lineNumbers: "#71717A",
+  nodeHover: "#27272A",
+  uiAccent: "#3F3F46",
+  buttonFocus: "#2267dd",
   highlightColor: palette.purple[0],
   overlayColor: "0, 50%, 100%",
   input: palette.black[1],
@@ -63,7 +70,10 @@ export const darkTheme: typeof colors = {
 };
 
 const config: Partial<SlangConfig> = {
-  baseFontFamily: "IBM Plex Sans, sans-serif",
+  // Keep in sync with --base-font-family in index.css (which overrides the
+  // generated slang.css) and fontFamily.sans in lib/designTokens.js.
+  baseFontFamily:
+    'Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
   baseFontSizePx: 16,
   typeScaleBase: 1.2,
   baseFontLineHeight: 1.5,

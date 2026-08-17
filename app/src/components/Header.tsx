@@ -77,7 +77,7 @@ export const Header = memo(function SharedHeader() {
   return (
     <>
       <NavigationMenu.Root asChild>
-        <header className="grid-flow-col justify-between hidden md:grid bg-neutral-200 border-b border-neutral-300 dark:bg-[var(--color-background)] dark:border-neutral-800">
+        <header className="grid-flow-col justify-between hidden md:grid bg-neutral-50 border-b border-neutral-200 dark:bg-[var(--color-background)] dark:border-neutral-800">
           <NavigationMenu.List asChild>
             <nav className="flex items-center">
               <Link
@@ -139,7 +139,7 @@ export const Header = memo(function SharedHeader() {
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content
                   align="start"
-                  className="bg-neutral-100 border border-neutral-300 shadow-lg rounded-md py-1 dark:bg-neutral-900 dark:border-neutral-800"
+                  className="bg-white border border-neutral-200 shadow-lg rounded-lg py-1 dark:bg-neutral-900 dark:border-neutral-800"
                 >
                   <DropdownMenu.Item asChild>
                     <HeaderClientLink
@@ -216,7 +216,11 @@ export const Header = memo(function SharedHeader() {
                   data-testid="pro-link"
                   data-to-pricing="Navigation Button"
                   aria-current={isSponsorPage ? "page" : undefined}
-                  className="flex items-center gap-2 px-4 font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all self-stretch"
+                  /* Hand-rolled rather than <Button2 color="blue">: Button2
+                     hard-renders a <button> with no `as`/`asChild`, and this
+                     has to be a react-router <Link>. Its blue variant is also
+                     blue-500, not the blue-600 wanted here. */
+                  className="flex items-center gap-2 px-4 text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all self-stretch"
                   onClick={() => {
                     track("sponsor", "click");
                   }}
@@ -247,7 +251,7 @@ export const Header = memo(function SharedHeader() {
 });
 
 const btnClasses =
-  "header-btn flex items-center gap-2 p-2.5 px-3.5 text-[15px] font-medium text-neutral-700 hover:bg-neutral-300/50 focus-visible:bg-neutral-300/50 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-300/70 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800";
+  "header-btn flex items-center gap-2 p-2.5 px-3.5 text-sm font-medium text-neutral-600 hover:bg-neutral-200/70 hover:text-neutral-900 focus-visible:bg-neutral-200/70 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus-visible:bg-neutral-800 focus:outline-none transition-colors aria-[current=page]:bg-neutral-200 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:bg-neutral-800 dark:aria-[current=page]:text-neutral-50";
 
 type HeaderButtonProps = {
   label: string;

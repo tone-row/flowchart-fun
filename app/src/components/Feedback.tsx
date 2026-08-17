@@ -52,7 +52,7 @@ export default function Feedback() {
       <PageTitle className="text-center">
         <Trans>Feedback</Trans>
       </PageTitle>
-      <div className="bg-white rounded-lg border border-neutral-200/60 dark:bg-neutral-900 dark:border-neutral-800 p-8 md:p-10 max-w-md mx-auto w-full">
+      <div className="bg-white rounded-xl border border-neutral-200 shadow-sm dark:bg-neutral-900 dark:border-neutral-800 p-6 md:p-10 max-w-md mx-auto w-full">
         <p className="text-center text-neutral-500 dark:text-neutral-400 text-sm mb-6 leading-normal">
           <Trans>
             Tell us what&apos;s working and what isn&apos;t. Every message is
@@ -113,7 +113,7 @@ function Success() {
   const lastChart = useLastChart((s) => s.lastChart);
   return (
     <div className="grid gap-4 text-center">
-      <h2 className="text-lg font-semibold text-neutral-700 dark:text-neutral-300">
+      <h2 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
         <Trans>Thank you for your feedback!</Trans>
       </h2>
       <Link

@@ -31,7 +31,7 @@ export const select: Control<
       onChange={(e) => {
         onValueChange(e.target.value);
       }}
-      className="p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200"
+      className="p-3 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:border-blue-600 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200"
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
@@ -64,7 +64,7 @@ export const range: Control<
     >
       <Slider.Track
         className={classNames(
-          "w-full h-1 bg-gray-200 rounded-full relative grow dark:bg-neutral-700",
+          "w-full h-1 bg-neutral-200 rounded-full relative grow dark:bg-neutral-700",
           {
             "opacity-50": disabled,
           }
@@ -103,7 +103,7 @@ export const text: Control<string, BaseProps> = (
       onChange={(e) => {
         onValueChange(e.target.value);
       }}
-      className="p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50"
+      className="p-3 border border-neutral-300 rounded-md shadow-sm focus:ring-blue-600 focus:border-blue-600 sm:text-sm disabled:opacity-50"
     />
   );
 };
@@ -120,7 +120,7 @@ export const color: Control<string, BaseProps> = (
       <Popover.Root modal={true}>
         <Popover.Trigger
           id={id}
-          className="rounded-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 p-1 border border-solid border-gray-300 dark:border-neutral-700"
+          className="rounded-full shadow-sm focus:ring-blue-600 focus:border-blue-600 sm:text-sm disabled:opacity-50 p-1 border border-solid border-neutral-300 dark:border-neutral-700"
           disabled={disabled}
         >
           <div
@@ -163,7 +163,7 @@ export const checkbox: Control<boolean, BaseProps> = (
       onCheckedChange={(checked) => {
         onValueChange(!!checked);
       }}
-      className="h-6 w-6 border border-solid border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 flex items-center justify-center"
+      className="h-6 w-6 border border-solid border-neutral-300 rounded-md shadow-sm focus:ring-blue-600 focus:border-blue-600 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 flex items-center justify-center"
     >
       <Checkbox.Indicator>
         <Check size={16} />
@@ -224,7 +224,7 @@ function Fontpicker({
           placeholder="system-ui"
           disabled={disabled}
           aria-label={label}
-          className={`p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 ${
+          className={`p-3 border border-neutral-300 rounded-md shadow-sm focus:ring-blue-600 focus:border-blue-600 text-base sm:text-sm disabled:opacity-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 ${
             showPreview ? "text-transparent" : ""
           }`}
           onFocus={() => {
@@ -257,7 +257,7 @@ function Fontpicker({
         <Popover.Trigger className="w-full h-0" />
         <Popover.Content
           onOpenAutoFocus={(event) => event.preventDefault()}
-          className="grid bg-white z-10 rounded shadow-lg w-full border border-gray-200 overflow-hidden p-1 dark:bg-neutral-800 dark:border-neutral-700"
+          className="grid bg-white z-10 rounded shadow-lg w-full border border-neutral-200 overflow-hidden p-1 dark:bg-neutral-800 dark:border-neutral-700"
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
           side="bottom"
@@ -301,7 +301,7 @@ function FontpickerButton({
       // never "submit" — this button lives inside the theme editor's <form>,
       // and a default-type button submits it as a GET navigation (full reload)
       type="button"
-      className="w-full p-2 hover:bg-gray-100 text-left text-sm dark:hover:bg-neutral-700"
+      className="w-full p-2 hover:bg-neutral-100 text-left text-sm dark:hover:bg-neutral-700"
       onClick={onClick}
     >
       {children}

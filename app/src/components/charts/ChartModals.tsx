@@ -29,7 +29,7 @@ export function DeleteModal({
       <Dialog.Portal>
         <Overlay />
         <Content className="max-w-md">
-          <Dialog.Title className="text-lg font-bold mb-2">
+          <Dialog.Title className="text-lg font-semibold mb-2">
             <Trans>Delete {isFolder ? "Folder" : "Flowchart"}</Trans>
           </Dialog.Title>
 
@@ -107,7 +107,7 @@ export function CloneModal({
       <Dialog.Portal>
         <Overlay />
         <Content className="max-w-md">
-          <Dialog.Title className="text-lg font-bold mb-2">
+          <Dialog.Title className="text-lg font-semibold mb-2">
             <Trans>Clone Flowchart</Trans>
           </Dialog.Title>
 
@@ -183,7 +183,7 @@ export function RenameModal({
       <Dialog.Portal>
         <Overlay />
         <Content className="max-w-md">
-          <Dialog.Title className="text-lg font-bold mb-2">
+          <Dialog.Title className="text-lg font-semibold mb-2">
             <Trans>Rename {isFolder ? "Folder" : "Flowchart"}</Trans>
           </Dialog.Title>
 
@@ -255,7 +255,7 @@ export function NewFolderModal({
       <Dialog.Portal>
         <Overlay />
         <Content className="max-w-md">
-          <Dialog.Title className="text-lg font-bold mb-2">
+          <Dialog.Title className="text-lg font-semibold mb-2">
             <Trans>New Folder</Trans>
           </Dialog.Title>
 
@@ -394,7 +394,7 @@ export function MoveModal({
       <Dialog.Portal>
         <Overlay />
         <Content className="max-w-md">
-          <Dialog.Title className="text-lg font-bold mb-2">
+          <Dialog.Title className="text-lg font-semibold mb-2">
             <Trans>Move {isFolder ? "Folder" : "Flowchart"}</Trans>
           </Dialog.Title>
 

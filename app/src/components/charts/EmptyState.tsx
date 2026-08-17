@@ -23,7 +23,7 @@ export function EmptyState({
         />
       </div>
 
-      <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-2">
+      <h3 className="text-xl font-semibold text-neutral-800 dark:text-neutral-200 mb-2">
         {isFiltered ? (
           <Trans>No matching charts found</Trans>
         ) : (

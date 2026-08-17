@@ -268,7 +268,7 @@ function LinkCopy({
           type="text"
           value={value}
           readOnly
-          className={`text-[12px] px-2 font-mono text-neutral-500 dark:text-neutral-400 border border-neutral-300 dark:border-neutral-700 rounded overflow-hidden bg-transparent`}
+          className={`text-base sm:text-[12px] px-2 font-mono text-neutral-500 dark:text-neutral-400 border border-neutral-300 dark:border-neutral-700 rounded overflow-hidden bg-transparent`}
           onFocus={copyText}
           data-testid={`Copy ${rawTitle}`}
         />
