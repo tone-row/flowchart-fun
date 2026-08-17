@@ -1,4 +1,20 @@
 .TextResizer {
+  /* Font pinned deliberately — DO NOT let this inherit the UI font.
+     This hidden element measures node label text for getSize(), whose result
+     is written into every node's data as width/height/shapeWidth/shapeHeight
+     (see getElements.ts). findFontData() only reads a rule whose selector is
+     exactly `node`, but toTheme() emits its node styles under `:childless`,
+     so fontData is {} for every current chart and nothing is written inline.
+     Without this pin the element would inherit html's font-family, and
+     changing the app's typeface would silently resize nodes on any chart
+     whose custom CSS reads data(shapeWidth) / data(shapeHeight).
+     When a theme *does* supply font data, getSize writes it inline and
+     correctly wins over these rules. */
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+
   position: absolute;
   bottom: 30px;
   right: 30px;

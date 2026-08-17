@@ -101,7 +101,7 @@ export default function New2() {
       className="max-w-4xl mx-auto py-6 pt-10 px-4 w-full grid gap-12 content-start"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-2xl font-bold md:mt-10 text-center">
+      <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight md:mt-10 text-center">
         <Trans>Create a New Chart</Trans>
       </h1>
       <Section title={t`Name Chart`}>

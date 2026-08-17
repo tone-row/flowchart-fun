@@ -528,7 +528,7 @@ const MappingData = () => {
               items={columnSelectionValues}
             />
           </Label>
-          <h2 className="mt-2 italics text-neutral-600">
+          <h2 className="mt-2 italic text-neutral-600">
             Row Represents Edge When...
           </h2>
           <Label label={t`Column`}>

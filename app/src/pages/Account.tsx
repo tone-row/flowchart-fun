@@ -449,7 +449,7 @@ function ConfirmCancel({
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Overlay />
       <Content maxWidthClass="max-w-[500px]">
-        <h2 className="text-lg font-bold">Cancel Subscription</h2>
+        <h2 className="text-lg font-semibold">Cancel Subscription</h2>
         <p className="text-sm leading-normal">
           <Trans>
             Let us know why you're canceling. We're always looking to improve.
@@ -587,7 +587,7 @@ function SubscriptionOptions() {
       <div className="grid gap-4">
         {accountNeedsAttention ? (
           <div className="grid gap-4 justify-start justify-items-start">
-            <p className="flex items-center gap-2 p-4 rounded-lg bg-red-100 text-red-800 font-bold tracking-wide">
+            <p className="flex items-center gap-2 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800 font-semibold">
               <Warning className="w-5 h-5" />
               <span>
                 <Trans>
