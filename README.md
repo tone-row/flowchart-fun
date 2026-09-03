@@ -33,6 +33,8 @@ If you plan on developing the premium features, you will need accounts on [Verce
 1. Copy `.env.example` to `.env` and add env variables
 1. `pnpm install` and `vercel dev`
 
+Note: `shared` and `formulaic` must be built before the app will run — run `pnpm -F shared build && pnpm -F formulaic build` after installing.
+
 #### 🔒 To run with login features:
 
 `vercel dev`
