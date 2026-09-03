@@ -18,7 +18,7 @@ flowchart-fun/
 ├── formulaic/  → React form-building library (compiled with microbundle)
 ```
 
-**Package manager:** pnpm (v10)
+**Package manager:** pnpm 9.9.0 (lockfile v9.0). Nothing pins it — there's no `packageManager` field — so a machine with pnpm 10 installed will still run, but match 9.9.0 to avoid lockfile churn.
 **Node version:** 22 (see `.node-version`)
 
 > **Maintainer note:** The monorepo structure with all these packages partly exists because of CRA/webpack limitations that needed workarounds. Some of this sprawl is historical.
