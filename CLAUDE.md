@@ -93,6 +93,19 @@ Multiple feature PRs may accumulate on `dev` before a single version bump + rele
 
 The version in `app/package.json` is the source of truth. Tags are created automatically.
 
+### ⚠️ Always open feature PRs against `dev` — pass `--base dev` explicitly
+
+The repo's **default branch is `main`**, so `gh pr create` *without* `--base` silently targets `main`, which is wrong for every feature PR. Some tooling also reports `main` as "the branch you usually use for PRs" — ignore that here. Only the version-bump release PR (step 3) targets `main`, and it comes from `dev`, never from a feature branch.
+
+```bash
+git checkout -b robgordon/<short-description>      # branch off dev
+gh pr create --base dev --title "..." --body "..."  # --base dev is REQUIRED
+```
+
+`dev` is protected and has a **merge queue** (squash). So `gh pr merge` fails on it — a PR has to be *enqueued*, either with `gh pr merge --auto --squash` or the `enqueuePullRequest` GraphQL mutation. Don't retry a plain `gh pr merge` and conclude the repo is broken.
+
+Note that a branch protection rule uses the glob `[dm][ea][vi]*`, which matches **both** `dev` and `main` and requires status checks plus an approving review. That is intentional but easy to misread as applying to only one branch.
+
 ## Core Architecture
 
 ### The Graph-Selector DSL
