@@ -18,7 +18,7 @@ flowchart-fun/
 ├── formulaic/  → React form-building library (compiled with microbundle)
 ```
 
-**Package manager:** pnpm (v10)
+**Package manager:** pnpm 9.9.0 (lockfile v9.0). Nothing pins it — there's no `packageManager` field — so a machine with pnpm 10 installed will still run, but match 9.9.0 to avoid lockfile churn.
 **Node version:** 22 (see `.node-version`)
 
 > **Maintainer note:** The monorepo structure with all these packages partly exists because of CRA/webpack limitations that needed workarounds. Some of this sprawl is historical.
@@ -58,6 +58,17 @@ Key variables (see `app/.env.example`):
 - `SENDGRID_API_KEY` — Email via SendGrid
 - `NOTION_ACCESS_TOKEN` — Notion integration (blog/roadmap)
 
+### Bringing Up a Fresh Clone (e.g. a secondary or dispatch machine)
+
+A clean `git clone` **cannot run the app** — four things live outside the repo. In order:
+
+1. **Node 22 + pnpm.** `.node-version` pins v22.13.0; pnpm is 9.9.0. If node is managed by `fnm`, note that `fnm env` is typically sourced from `.zshrc`, which **non-interactive shells do not read** — so `ssh host 'pnpm -v'` and any dispatched agent will fail with "command not found: node" even though it works in a terminal. Put the node bin dir on `PATH` from `.zshenv` instead.
+2. **Env files.** Not in git and not creatable from `.env.example` alone: `app/.env` (~40 vars), `app/.env.local` (`PROJECT_ID`), and `app/.env.e2e` (test-account credentials, needed only for e2e). Either `pnpm env:pull` or copy them from a machine that has them. Note `app/.env` holds the **dev** Supabase project and Stripe **test** keys (`sk_test_…`/`pk_test_…`), never production — so local work can't touch real customer data or charge real cards. If you genuinely need production values, pull them explicitly rather than assuming this file has them.
+3. **Vercel CLI login + project link.** `pnpm start` is `vercel dev`, which needs both an authenticated CLI (`vercel whoami`) and `.vercel/project.json`. `.vercel/` is gitignored, so copy `project.json` and log in (or copy `~/Library/Application Support/com.vercel.cli/auth.json`).
+4. **`vercel.json`.** The committed file contains the SPA `"rewrites"` rule required in production; it **breaks `vercel dev`** locally, so delete that one line in your working copy. See the `vercel.json is Special` gotcha — the pre-commit hook keeps it unstaged. Any `git checkout`/`stash` of that file silently reinstates it, and the symptom is confusing (client routes stop resolving), so re-check it if local routing breaks.
+
+Then `pnpm install && pnpm -F formulaic build && pnpm -F shared build`, and `pnpm start`. To run e2e or visual on that machine, also `npx playwright install chromium firefox`.
+
 ## Build Order
 
 Strict dependency order:
@@ -81,6 +92,19 @@ If you modify `shared/` or `formulaic/`, rebuild them before the app will pick u
 Multiple feature PRs may accumulate on `dev` before a single version bump + release to `main`, or a single feature may get its own release. All merges to `main` come exclusively from `dev` — never direct feature branch → main.
 
 The version in `app/package.json` is the source of truth. Tags are created automatically.
+
+### ⚠️ Always open feature PRs against `dev` — pass `--base dev` explicitly
+
+The repo's **default branch is `main`**, so `gh pr create` *without* `--base` silently targets `main`, which is wrong for every feature PR. Some tooling also reports `main` as "the branch you usually use for PRs" — ignore that here. Only the version-bump release PR (step 3) targets `main`, and it comes from `dev`, never from a feature branch.
+
+```bash
+git checkout -b robgordon/<short-description>      # branch off dev
+gh pr create --base dev --title "..." --body "..."  # --base dev is REQUIRED
+```
+
+`dev` is protected and has a **merge queue** (squash). So `gh pr merge` fails on it — a PR has to be *enqueued*, either with `gh pr merge --auto --squash` or the `enqueuePullRequest` GraphQL mutation. Don't retry a plain `gh pr merge` and conclude the repo is broken.
+
+Note that a branch protection rule uses the glob `[dm][ea][vi]*`, which matches **both** `dev` and `main` and requires status checks plus an approving review. That is intentional but easy to misread as applying to only one branch.
 
 ## Core Architecture
 
@@ -184,13 +208,15 @@ The sandbox warning modal (`SandboxWarning.tsx`) appears after 3 minutes of edit
 
 ### Templates Overview
 
-13 templates defined in `shared/src/templates.ts` (single source of truth, `as const` array). Each template is a file at `app/src/lib/templates/{name}-template.ts` exporting three things:
+10 templates defined in `shared/src/templates.ts` (single source of truth, `as const` array). Each template is a file at `app/src/lib/templates/{name}-template.ts` exporting three things:
 
 - `content: string` — starter DSL text for the editor
 - `theme: FFTheme` — layout + visual config object (26 properties)
 - `cytoscapeStyle: string` — Cytoscape CSS with variables, color/shape class definitions, and advanced selectors
 
-Template names: code-flow, default, process-flow, flowchart, org-chart, network-diagram-dark, decision-flow, pert-light, knowledge-graph, network-diagram-icons, mindmap, playful-mindmap, mindmap-dark.
+Template names: default, decision-tree, process-lanes, blueprint, ink-mindmap, constellation, org-chart, sitemap, timeline, storyline.
+
+> Always read `shared/src/templates.ts` rather than trusting this list — the set was fully replaced in the July 2026 theme overhaul and may change again.
 
 ### FFTheme Schema
 
@@ -473,8 +499,8 @@ pnpm -F app e2e
 
 **Command:** `pnpm -F app test -- --watchAll=false`
 **Framework:** Jest via react-scripts + React Testing Library
-**Status:** 23 suites, 322 passed, 5 todo, 0 failures
-**Duration:** ~30 seconds
+**Status:** 25 suites, 564 passed, 5 todo, 0 failures (verified 2026-09-03)
+**Duration:** ~30s on Apple Silicon, ~90s on an older Intel Mac
 
 Test files are in `app/src/` alongside source code (e.g., `Graph.test.tsx`, `AppContextProvider.test.tsx`, `toVisio.test.ts`).
 
@@ -527,17 +553,39 @@ pnpm -F app e2e:debug
 - Tests add `?isE2E=true` to URLs for special E2E handling
 - `window.__set_text()` is used to programmatically set editor content
 
-**Current E2E Status (with `pnpm start` / vercel dev):**
-- `not-logged-in.spec.ts`: **5/6 pass** — 1 flaky: Mermaid Live popup URL check has a timing issue (test reads URL before redirect completes)
-- `logged-in.spec.ts`: **7/7 pass** (1 Firefox skipped by design)
-- `pro.spec.ts`: **all pass** (Chromium only, serial execution)
+**Current E2E Status (with `pnpm start` / vercel dev), verified 2026-09-03:**
+- `not-logged-in.spec.ts`: **6/6 pass** on both Chromium and Firefox
+- `logged-in.spec.ts`: **pass** (Chromium; Firefox skipped by design)
+- `pro.spec.ts`: **8/8 pass** (Chromium only, serial execution)
 - `sign-up.spec.ts`: entirely **skipped** (test.skip())
 
 **Known E2E Issues:**
-- Pro tests depend on the `.env.e2e` pro account (`rob.gordon+111@tone-row.com`) having an active Stripe subscription — if it lapses, all pro tests fail
-- The Mermaid Live test in `not-logged-in.spec.ts:45` is flaky due to popup redirect timing
+- The `capabilities` test in `not-logged-in.spec.ts` submits the feedback form, which sends a **real email via SendGrid**. Running the suite repeatedly in quick succession can make that one assertion ("Thank you for your feedback!") flake. Re-run before investigating.
 - `sign-up.spec.ts` is entirely skipped
 - **Must use `pnpm start` (vercel dev)**, not `pnpm dev` — tests that hit API routes will fail without the serverless functions
+
+**Pro tests depend on a live Stripe test-mode subscription.** They authenticate as the pro account named by `TESTING_EMAIL_PRO` in `app/.env.e2e`; if its subscription lapses, every pro test fails with the same misleading symptom — "Create new chart" hangs on `/new` and never redirects to `/u/:id`. This is **not** a code or setup bug, so check the subscription before debugging anything else.
+
+To diagnose and fix (all in **Stripe test mode** — `STRIPE_KEY` in `app/.env` is `sk_test_…`, so no real money is involved; verify `livemode: false` on anything you create):
+
+```bash
+SK=$(grep '^STRIPE_KEY=' app/.env | cut -d= -f2- | tr -d '"')
+# 1. The API resolves the MOST RECENTLY CREATED customer for the email
+#    (see getCustomerFromToken in api/_lib/_helpers.ts) — there are several
+#    duplicates for this address, so subscribe the newest one or it won't count.
+EMAIL=$(grep '^TESTING_EMAIL_PRO=' app/.env.e2e | cut -d= -f2- | tr -d '"')
+curl -s -G https://api.stripe.com/v1/customers -u "$SK:" \
+  --data-urlencode "email=$EMAIL" -d limit=10
+# 2. Check its subscriptions for status active|trialing
+curl -s -G https://api.stripe.com/v1/subscriptions -u "$SK:" -d "customer=$CUS" -d "status=all"
+# 3. If lapsed: attach a test card, make it default, subscribe to the yearly price
+curl -s -X POST https://api.stripe.com/v1/payment_methods/pm_card_visa/attach -u "$SK:" -d "customer=$CUS"
+curl -s -X POST https://api.stripe.com/v1/customers/$CUS -u "$SK:" -d "invoice_settings[default_payment_method]=$PM"
+curl -s -X POST https://api.stripe.com/v1/subscriptions -u "$SK:" \
+  -d "customer=$CUS" -d "items[0][price]=$STRIPE_PRICE_ID_YEARLY" -d "payment_behavior=error_if_incomplete"
+```
+
+The price must be one of `validStripePrices` (`api/_lib/_validStripePrices.ts` = `STRIPE_PRICE_ID` + `STRIPE_PRICE_ID_YEARLY` + `OTHER_VALID_STRIPE_PRICE_IDS`), otherwise the sub is active in Stripe but the app still won't grant pro. Last renewed 2026-09-03 on the yearly price, paid through 2027-09-03.
 
 ### Formulaic Tests
 
@@ -552,7 +600,7 @@ No test files exist in the `shared` package.
 
 ### Visual Regression (templates)
 
-Pixel-diffs all 13 templates' rendered graphs against committed golden images — the rendering half of the safety net (the logic half is the characterization tests in `app/src/lib/*.characterization.test.ts`). Runs via its own config (`app/playwright.visual.config.ts`), NOT the e2e config. See `app/e2e/visual/README.md`.
+Pixel-diffs all 10 templates' rendered graphs against committed golden images — the rendering half of the safety net (the logic half is the characterization tests in `app/src/lib/*.characterization.test.ts`). Runs via its own config (`app/playwright.visual.config.ts`), NOT the e2e config. See `app/e2e/visual/README.md`.
 
 > **⚠️ RUN THIS ON ANY VISUALLY SIGNIFICANT CHANGE.** It is currently a **local, manual gate — NOT wired to CI** (goldens are macOS-specific; Linux goldens via the Playwright Docker image is a follow-up). So CI will NOT catch a rendering regression for you. If you touch anything that can change how a chart renders — `toTheme.ts`, `graphUtilityClasses.ts`, `getSize.ts`, `preprocessStyle.ts`, the Cytoscape style/layout pipeline, `FFTheme`, or any template file — you must run it yourself.
 
@@ -563,7 +611,9 @@ E2E_START_URL=http://localhost:3001 pnpm -F app visual          # compare agains
 E2E_START_URL=http://localhost:3001 pnpm -F app visual:update   # regenerate after an INTENTIONAL change
 ```
 
-After an intentional visual change: regenerate goldens, **eyeball the diff**, then commit the updated `*.png` goldens. The 3 force-directed mindmap templates use frozen-position fixtures (`pnpm -F app visual:fixtures`); regenerate those only if their content/theme changes.
+After an intentional visual change: regenerate goldens, **eyeball the diff**, then commit the updated `*.png` goldens. The 2 force-directed templates (`ink-mindmap`, `constellation`) use frozen-position fixtures in `app/e2e/visual/fixtures/` (`pnpm -F app visual:fixtures`); regenerate those only if their content/theme changes.
+
+**Which machines the goldens are valid on.** The goldens are **macOS-specific**, but they are *not* CPU-architecture-specific: they were generated on Apple Silicon and verified 2026-09-03 to pass 10/10 unchanged on an older **Intel** Mac (macOS 15.7.9). So it is safe to run — and to trust a failure from — `pnpm -F app visual` on any macOS machine, including a secondary/dispatch box. What still does *not* work is **Linux**, which is why this is not in CI; a Linux golden set via the Playwright Docker image remains the follow-up. Never regenerate goldens on Linux and commit them.
 
 ## CI/CD
 
