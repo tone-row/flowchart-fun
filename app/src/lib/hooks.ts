@@ -203,6 +203,18 @@ export function useCanEdit() {
 }
 
 /**
+ * True when the current chart is a hosted chart (/u/:id) the user can no
+ * longer edit (lapsed subscription / expired 30-Day Pass). While the
+ * customer is still loading, useCanEdit() returns undefined — not false —
+ * so this never flashes true for active Pros.
+ */
+export function useIsReadOnlyHostedChart() {
+  const { pathname } = useLocation();
+  const canEdit = useCanEdit();
+  return pathname.startsWith("/u") && canEdit === false;
+}
+
+/**
  * Returns the user's id if available
  */
 export function useUserId() {

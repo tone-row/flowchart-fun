@@ -59,7 +59,7 @@ msgid "Access until"
 msgstr "Accès jusqu'à"
 
 #: src/components/Header.tsx:192
-#: src/components/Header.tsx:441
+#: src/components/Header.tsx:445
 #: src/pages/Account.tsx:124
 msgid "Account"
 msgstr "Compte"
@@ -80,18 +80,18 @@ msgstr "Ajouter des étapes"
 msgid "Advanced"
 msgstr "Avancé "
 
-#: src/components/GraphFloatingMenu.tsx:142
-#: src/components/GraphFloatingMenu.tsx:146
+#: src/components/GraphFloatingMenu.tsx:149
+#: src/components/GraphFloatingMenu.tsx:153
 msgid "Align Horizontally"
 msgstr "Aligner Horizontalement"
 
-#: src/components/GraphFloatingMenu.tsx:130
-#: src/components/GraphFloatingMenu.tsx:134
+#: src/components/GraphFloatingMenu.tsx:137
+#: src/components/GraphFloatingMenu.tsx:141
 msgid "Align Nodes"
 msgstr "Aligner les nœuds"
 
-#: src/components/GraphFloatingMenu.tsx:154
-#: src/components/GraphFloatingMenu.tsx:158
+#: src/components/GraphFloatingMenu.tsx:161
+#: src/components/GraphFloatingMenu.tsx:165
 msgid "Align Vertically"
 msgstr "Aligner Verticalement"
 
@@ -163,7 +163,7 @@ msgstr "Retour à l'éditeur"
 msgid "Background Color"
 msgstr "Couleur de fond"
 
-#: src/components/ShareDialog.tsx:537
+#: src/components/ShareDialog.tsx:539
 msgid "Basic Flowchart"
 msgstr "Diagramme de flux de base"
 
@@ -189,7 +189,7 @@ msgid "Billed monthly at $4"
 msgstr "Facturé mensuellement à 4 $"
 
 #: src/components/Header.tsx:146
-#: src/components/Header.tsx:399
+#: src/components/Header.tsx:403
 #: src/pages/Blog.tsx:30
 msgid "Blog"
 msgstr "Blog"
@@ -258,17 +258,17 @@ msgid "Change Email Address"
 msgstr "Changer l'adresse email"
 
 #: src/components/Header.tsx:157
-#: src/components/Header.tsx:405
+#: src/components/Header.tsx:409
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "Journal des modifications"
 
 #: src/components/Header.tsx:114
-#: src/components/Header.tsx:377
+#: src/components/Header.tsx:381
 msgid "Charts"
 msgstr "Graphiques"
 
-#: src/components/ShareDialog.tsx:524
+#: src/components/ShareDialog.tsx:526
 msgid "Check out the guide:"
 msgstr "Vérifiez le guide :"
 
@@ -414,11 +414,11 @@ msgstr "{format} copié dans le presse-papier"
 msgid "Copy"
 msgstr "Copier"
 
-#: src/components/GraphContextMenu.tsx:192
+#: src/components/GraphContextMenu.tsx:196
 msgid "Copy PNG Image"
 msgstr "Copier l'image PNG"
 
-#: src/components/GraphContextMenu.tsx:153
+#: src/components/GraphContextMenu.tsx:157
 msgid "Copy SVG Code"
 msgstr "Copier le code SVG"
 
@@ -455,7 +455,7 @@ msgstr "Créer un organigramme montrant les étapes de la planification et de l'
 msgid "Create a new flowchart to get started or organize your work with folders."
 msgstr "Créez un nouveau diagramme de flux pour commencer ou organisez votre travail avec des dossiers."
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:55
 msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "Créez des organigrammes instantanément : Tapez ou collez du texte, visualisez-le."
 
@@ -560,8 +560,8 @@ msgstr "Offrez-vous une réduction pour les organisations à but non lucratif ?"
 msgid "Do you want to delete this?"
 msgstr "Souhaitez-vous supprimer ceci ?"
 
-#: src/components/Tabs/EditorTabList.tsx:27
-#: src/components/Tabs/EditorTabList.tsx:28
+#: src/components/Tabs/EditorTabList.tsx:29
+#: src/components/Tabs/EditorTabList.tsx:30
 msgid "Document"
 msgstr "Document"
 
@@ -569,21 +569,21 @@ msgstr "Document"
 msgid "Don't Lose Your Work"
 msgstr "Ne perdez pas votre travail"
 
-#: src/components/FlowchartHeader.tsx:87
+#: src/components/FlowchartHeader.tsx:100
 #: src/components/ShareDialog.tsx:69
-#: src/components/ShareDialog.tsx:617
+#: src/components/ShareDialog.tsx:619
 msgid "Download"
 msgstr "Télécharger"
 
-#: src/components/GraphContextMenu.tsx:100
+#: src/components/GraphContextMenu.tsx:104
 msgid "Download JPG"
 msgstr "Télécharger JPG"
 
-#: src/components/GraphContextMenu.tsx:77
+#: src/components/GraphContextMenu.tsx:81
 msgid "Download PNG"
 msgstr "Télécharger PNG"
 
-#: src/components/GraphContextMenu.tsx:120
+#: src/components/GraphContextMenu.tsx:124
 msgid "Download SVG"
 msgstr "Télécharger SVG"
 
@@ -682,7 +682,7 @@ msgid "Editable"
 msgstr "Modifiable"
 
 #: src/components/Header.tsx:94
-#: src/components/Header.tsx:365
+#: src/components/Header.tsx:369
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "Éditeur"
@@ -783,7 +783,7 @@ msgstr "Démontage des fonctionnalités"
 
 #: src/components/Feedback.tsx:53
 #: src/components/Header.tsx:122
-#: src/components/Header.tsx:391
+#: src/components/Header.tsx:395
 msgid "Feedback"
 msgstr "Commentaire"
 
@@ -880,7 +880,7 @@ msgstr "Obtenez des réponses rapides à vos questions"
 msgid "Get unlimited flowcharts and premium features"
 msgstr "Obtenez des flux de travail illimités et des fonctionnalités premium"
 
-#: src/pages/404.tsx:12
+#: src/pages/404.tsx:15
 msgid "Go back home"
 msgstr "Retournez à la maison"
 
@@ -898,7 +898,7 @@ msgid "Grab a 30-Day Pass: every Pro feature for 30 days, one $9 payment, no sub
 msgstr "Obtenez un Pass de 30 jours : toutes les fonctionnalités Pro pendant 30 jours, un paiement de 9 $, pas d'abonnement. Il ne se renouvelle jamais automatiquement - et lorsque cela se termine, vos diagrammes ne sont jamais supprimés. Les diagrammes hébergés deviennent simplement en lecture seule jusqu'à ce que vous effectuiez une mise à niveau à nouveau. Préférez-vous conserver Pro ? C'est un abonnement mensuel à 4 $/mois - annulez à tout moment."
 
 #: src/components/MobileTabToggle.tsx:12
-#: src/components/Tabs/EditorTabList.tsx:50
+#: src/components/Tabs/EditorTabList.tsx:52
 msgid "Graph"
 msgstr "Graphique"
 
@@ -946,7 +946,7 @@ msgstr "Comment puis-je annuler mon abonnement ?"
 msgid "How does AI flowchart generation work?"
 msgstr "Comment fonctionne la génération de diagrammes avec l'IA ?"
 
-#: src/components/FlowchartHeader.tsx:172
+#: src/components/FlowchartHeader.tsx:185
 msgid "How would you like to save your chart?"
 msgstr "Comment souhaitez-vous enregistrer votre graphique?"
 
@@ -997,7 +997,7 @@ msgstr "Importer à partir de Visio, Lucidchart et CSV"
 msgid "Import from popular diagram tools"
 msgstr "Importez à partir d'outils de diagrammes populaires"
 
-#: src/components/ShareDialog.tsx:518
+#: src/components/ShareDialog.tsx:520
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces fichiers CSV."
 
@@ -1005,7 +1005,7 @@ msgstr "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces f
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
 msgstr "L'importation de données est une fonctionnalité Pro. Vous pouvez passer à Flowchart Fun Pro pour seulement 4 $ par mois."
 
-#: src/components/ShareDialog.tsx:566
+#: src/components/ShareDialog.tsx:568
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la coloration Visio, ajoutez un attribut <1>roleType</1> égal à l'un des éléments suivants:"
 
@@ -1021,7 +1021,7 @@ msgstr "Info"
 msgid "Is"
 msgstr "Est"
 
-#: src/components/ShareDialog.tsx:645
+#: src/components/ShareDialog.tsx:647
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON Canvas est une représentation JSON de votre diagramme utilisée par <0>Obsidian</0> Canvas et d'autres applications."
 
@@ -1071,8 +1071,8 @@ msgstr "Disposition "
 msgid "Layout Algorithm"
 msgstr "Algorithme de mise en page"
 
-#: src/components/GraphFloatingMenu.tsx:116
-#: src/components/GraphFloatingMenu.tsx:118
+#: src/components/GraphFloatingMenu.tsx:120
+#: src/components/GraphFloatingMenu.tsx:122
 msgid "Layout Frozen"
 msgstr "Mise en page gelée"
 
@@ -1161,13 +1161,13 @@ msgstr "Support de fichier local"
 msgid "Local saving for offline access"
 msgstr "Enregistrement local pour un accès hors ligne"
 
-#: src/components/GraphFloatingMenu.tsx:106
-#: src/components/GraphFloatingMenu.tsx:108
+#: src/components/GraphFloatingMenu.tsx:110
+#: src/components/GraphFloatingMenu.tsx:112
 msgid "Lock Zoom to Graph"
 msgstr "Verrouiller le Zoom sur le Graphique"
 
 #: src/components/Header.tsx:208
-#: src/components/Header.tsx:449
+#: src/components/Header.tsx:453
 msgid "Log In"
 msgstr "Connexion"
 
@@ -1175,7 +1175,7 @@ msgstr "Connexion"
 msgid "Log Out"
 msgstr "Déconnexion"
 
-#: src/components/FlowchartHeader.tsx:120
+#: src/components/FlowchartHeader.tsx:133
 msgid "Log in to Save"
 msgstr "Connectez-vous pour enregistrer"
 
@@ -1191,7 +1191,7 @@ msgstr "Réalisé par <0>Tone Row</0>"
 msgid "Make a One-Time Donation"
 msgstr "Faites un don unique"
 
-#: src/components/ShareDialog.tsx:483
+#: src/components/ShareDialog.tsx:484
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
@@ -1249,12 +1249,12 @@ msgstr "Nom"
 msgid "Name Chart"
 msgstr "Nommer le graphique"
 
-#: src/components/FlowchartHeader.tsx:246
+#: src/components/FlowchartHeader.tsx:259
 msgid "Name your chart"
 msgstr "Nommez votre graphique"
 
 #: src/components/Header.tsx:104
-#: src/components/Header.tsx:371
+#: src/components/Header.tsx:375
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "Nouveau"
@@ -1389,7 +1389,7 @@ msgstr "Opération annulée"
 msgid "Or maybe blue!"
 msgstr "Ou peut-être bleu !"
 
-#: src/components/ShareDialog.tsx:551
+#: src/components/ShareDialog.tsx:553
 msgid "Organization Chart"
 msgstr "Organigramme"
 
@@ -1455,7 +1455,7 @@ msgid "Priority One-on-One Support"
 msgstr "Support prioritaire en tête-à-tête"
 
 #: src/components/Header.tsx:177
-#: src/components/Header.tsx:455
+#: src/components/Header.tsx:459
 #: src/components/Settings.tsx:122
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
@@ -1476,8 +1476,8 @@ msgstr "Traitement en cours..."
 msgid "Prompt"
 msgstr "Invite"
 
-#: src/components/ShareDialog.tsx:479
-#: src/components/ShareDialog.tsx:503
+#: src/components/ShareDialog.tsx:480
+#: src/components/ShareDialog.tsx:505
 msgid "Public"
 msgstr "Public"
 
@@ -1507,7 +1507,7 @@ msgstr "Exportation de rasters (PNG, JPG)"
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Limite de taux dépassée. Veuillez réessayer plus tard."
 
-#: src/components/FlowchartHeader.tsx:64
+#: src/components/FlowchartHeader.tsx:77
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "Lecture seulement"
@@ -1572,8 +1572,8 @@ msgstr "Demandez un lien magique"
 msgid "Request Password Reset"
 msgstr "Demandez une réinitialisation du mot de passe "
 
-#: src/components/GraphFloatingMenu.tsx:71
-#: src/components/GraphFloatingMenu.tsx:74
+#: src/components/GraphFloatingMenu.tsx:75
+#: src/components/GraphFloatingMenu.tsx:78
 msgid "Reset"
 msgstr "Réinitialiser"
 
@@ -1602,7 +1602,7 @@ msgid "Right-click nodes for options"
 msgstr "Cliquez avec le bouton droit sur les nœuds pour voir les options"
 
 #: src/components/Header.tsx:167
-#: src/components/Header.tsx:411
+#: src/components/Header.tsx:415
 #: src/pages/Roadmap.tsx:31
 msgid "Roadmap"
 msgstr "Roadmap"
@@ -1620,8 +1620,8 @@ msgstr "L'exportation SVG est une fonctionnalité Pro"
 msgid "Satisfaction guaranteed or first payment refunded"
 msgstr "Satisfaction garantie ou remboursement du premier paiement"
 
-#: src/components/FlowchartHeader.tsx:138
-#: src/components/FlowchartHeader.tsx:162
+#: src/components/FlowchartHeader.tsx:151
+#: src/components/FlowchartHeader.tsx:175
 msgid "Save"
 msgstr "Sauver"
 
@@ -1633,11 +1633,11 @@ msgstr "Économisez 50%"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "Gagnez du temps avec l'IA et la dictée, ce qui facilite la création de diagrammes."
 
-#: src/components/FlowchartHeader.tsx:181
+#: src/components/FlowchartHeader.tsx:194
 msgid "Save to Cloud"
 msgstr "Enregistrer dans le Cloud"
 
-#: src/components/FlowchartHeader.tsx:198
+#: src/components/FlowchartHeader.tsx:211
 msgid "Save to File"
 msgstr "Enregistrer dans un fichier"
 
@@ -1670,12 +1670,12 @@ msgid "Set a consistent height for all nodes"
 msgstr "Définir une hauteur constante pour tous les nœuds"
 
 #: src/components/Header.tsx:185
-#: src/components/Header.tsx:416
+#: src/components/Header.tsx:420
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "Paramètres"
 
-#: src/components/FlowchartHeader.tsx:78
+#: src/components/FlowchartHeader.tsx:91
 msgid "Share"
 msgstr "Partager"
 
@@ -1899,9 +1899,9 @@ msgstr "Le délimiteur utilisé pour séparer plusieurs nœuds cibles"
 msgid "The possible shapes are:"
 msgstr "Les formes possibles sont :"
 
-#: src/components/Tabs/EditorTabList.tsx:38
-#: src/components/Tabs/EditorTabList.tsx:39
-#: src/components/Tabs/EditorTabList.tsx:49
+#: src/components/Tabs/EditorTabList.tsx:40
+#: src/components/Tabs/EditorTabList.tsx:41
+#: src/components/Tabs/EditorTabList.tsx:51
 msgid "Theme"
 msgstr "Thème"
 
@@ -1921,6 +1921,10 @@ msgstr "Il n'y a pas d'arêtes dans ces données"
 #: src/pages/Charts.tsx:202
 msgid "This action cannot be undone."
 msgstr "Cette action ne peut pas être annulée."
+
+#: src/components/ReadOnlyNotice.tsx:21
+msgid "This chart is read-only because you no longer have Pro access. Upgrade to resume editing, or use Download to save a copy."
+msgstr "Ce graphique est en lecture seule car vous n'avez plus accès à la version Pro. Mettez à niveau pour reprendre l'édition, ou utilisez Télécharger pour enregistrer une copie."
 
 #: src/components/SvgProOnlyPopover.tsx:21
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
@@ -1950,7 +1954,7 @@ msgstr "Cela remplacera votre bac à sable actuel."
 msgid "Time to decide"
 msgstr "Temps de décider"
 
-#: src/components/ShareDialog.tsx:626
+#: src/components/ShareDialog.tsx:628
 msgid "Tip"
 msgstr "Astuce"
 
@@ -2093,7 +2097,8 @@ msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advance
 msgstr "Mettez à niveau vers Flowchart Fun Pro pour débloquer les exportations SVG et profiter de fonctionnalités avancées pour vos diagrammes."
 
 #: src/components/FeatureBreakdown.tsx:307
-#: src/components/Header.tsx:424
+#: src/components/Header.tsx:428
+#: src/components/ReadOnlyNotice.tsx:33
 msgid "Upgrade to Pro"
 msgstr "Mettez à niveau vers Pro"
 
@@ -2142,11 +2147,11 @@ msgstr "Utilisez le portail client pour modifier vos informations de facturation
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Utilisez ces paramètres pour adapter l'apparence et le comportement de vos diagrammes de flux"
 
-#: src/components/ShareDialog.tsx:561
+#: src/components/ShareDialog.tsx:563
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "Utilisez ce fichier pour les organigrammes, les hiérarchies et autres structures organisationnelles."
 
-#: src/components/ShareDialog.tsx:547
+#: src/components/ShareDialog.tsx:549
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Utilisez ce fichier pour les séquences, les processus et les workflows."
 
@@ -2312,17 +2317,17 @@ msgstr "Votre pass ne se renouvelle jamais. Lorsqu'il se termine, vos graphiques
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "Votre abonnement est <0>{statusDisplay}</0>."
 
-#: src/components/GraphFloatingMenu.tsx:86
 #: src/components/GraphFloatingMenu.tsx:90
+#: src/components/GraphFloatingMenu.tsx:94
 msgid "Zoom In"
 msgstr "Zoomer"
 
-#: src/components/GraphFloatingMenu.tsx:96
 #: src/components/GraphFloatingMenu.tsx:100
+#: src/components/GraphFloatingMenu.tsx:104
 msgid "Zoom Out"
 msgstr "Zoomer vers l'extérieur"
 
-#: src/components/Checkout.tsx:313
+#: src/components/Checkout.tsx:322
 msgid "month"
 msgstr "mois"
 
