@@ -1,7 +1,12 @@
 import { Trans } from "@lingui/macro";
 import { Helmet } from "react-helmet";
 import { useContext, useEffect, useRef, useState } from "react";
-import { useHasProAccess, useIsLoggedIn, useIsReadOnly } from "../lib/hooks";
+import {
+  useHasProAccess,
+  useIsLoggedIn,
+  useIsReadOnly,
+  useIsReadOnlyHostedChart,
+} from "../lib/hooks";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
 import { Button2, Input } from "../ui/Shared";
 import { AppContext } from "./AppContextProvider";
@@ -28,6 +33,7 @@ export function FlowchartHeader() {
   const title = useDocDetails("title", "flowchart.fun");
   const { setShareModal } = useContext(AppContext);
   const isReadOnly = useIsReadOnly();
+  const isReadOnlyHostedChart = useIsReadOnlyHostedChart();
   const hasProAccess = useHasProAccess();
   const pageTitle = title || "flowchart.fun";
   const isSandbox = useLocation().pathname === "/";
@@ -52,6 +58,13 @@ export function FlowchartHeader() {
               </Trans>
             </p>
           </div>
+        ) : isReadOnlyHostedChart ? (
+          // renameChart is an unguarded server write — no rename affordance
+          // on a chart the user can no longer edit. truncate replaces the
+          // ellipsis styling that targets RenameButton's trigger button.
+          <FlowchartTitle title={title} className="truncate w-full">
+            {pageTitle}
+          </FlowchartTitle>
         ) : (
           <RenameButton key={pageTitle}>
             <FlowchartTitle title={title}>{pageTitle}</FlowchartTitle>
@@ -59,7 +72,7 @@ export function FlowchartHeader() {
         )}
 
         <div className="flex items-center gap-1">
-          {isReadOnly && (
+          {(isReadOnly || isReadOnlyHostedChart) && (
             <span className="text-xs text-neutral-500 dark:text-neutral-500 font-semibold uppercase tracking-wide">
               <Trans>Read-only</Trans>
             </span>

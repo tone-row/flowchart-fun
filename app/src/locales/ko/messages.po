@@ -59,7 +59,7 @@ msgid "Access until"
 msgstr "~까지 이용 가능"
 
 #: src/components/Header.tsx:192
-#: src/components/Header.tsx:441
+#: src/components/Header.tsx:445
 #: src/pages/Account.tsx:124
 msgid "Account"
 msgstr "계정"
@@ -80,18 +80,18 @@ msgstr "몇 가지 단계를 추가하세요."
 msgid "Advanced"
 msgstr "고급"
 
-#: src/components/GraphFloatingMenu.tsx:142
-#: src/components/GraphFloatingMenu.tsx:146
+#: src/components/GraphFloatingMenu.tsx:149
+#: src/components/GraphFloatingMenu.tsx:153
 msgid "Align Horizontally"
 msgstr "수평 정렬"
 
-#: src/components/GraphFloatingMenu.tsx:130
-#: src/components/GraphFloatingMenu.tsx:134
+#: src/components/GraphFloatingMenu.tsx:137
+#: src/components/GraphFloatingMenu.tsx:141
 msgid "Align Nodes"
 msgstr "노드 정렬하기"
 
-#: src/components/GraphFloatingMenu.tsx:154
-#: src/components/GraphFloatingMenu.tsx:158
+#: src/components/GraphFloatingMenu.tsx:161
+#: src/components/GraphFloatingMenu.tsx:165
 msgid "Align Vertically"
 msgstr "수직 정렬"
 
@@ -163,7 +163,7 @@ msgstr "편집기로 돌아가기"
 msgid "Background Color"
 msgstr "배경색"
 
-#: src/components/ShareDialog.tsx:537
+#: src/components/ShareDialog.tsx:539
 msgid "Basic Flowchart"
 msgstr "기본 플로우 차트"
 
@@ -189,7 +189,7 @@ msgid "Billed monthly at $4"
 msgstr "월 $4로 청구됩니다"
 
 #: src/components/Header.tsx:146
-#: src/components/Header.tsx:399
+#: src/components/Header.tsx:403
 #: src/pages/Blog.tsx:30
 msgid "Blog"
 msgstr "블로그"
@@ -258,17 +258,17 @@ msgid "Change Email Address"
 msgstr "이메일 주소 변경"
 
 #: src/components/Header.tsx:157
-#: src/components/Header.tsx:405
+#: src/components/Header.tsx:409
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "변경 로그"
 
 #: src/components/Header.tsx:114
-#: src/components/Header.tsx:377
+#: src/components/Header.tsx:381
 msgid "Charts"
 msgstr "차트"
 
-#: src/components/ShareDialog.tsx:524
+#: src/components/ShareDialog.tsx:526
 msgid "Check out the guide:"
 msgstr "가이드를 확인하세요:"
 
@@ -414,11 +414,11 @@ msgstr "클립보드에 {format} 복사"
 msgid "Copy"
 msgstr "복사"
 
-#: src/components/GraphContextMenu.tsx:192
+#: src/components/GraphContextMenu.tsx:196
 msgid "Copy PNG Image"
 msgstr "PNG 이미지 복사"
 
-#: src/components/GraphContextMenu.tsx:153
+#: src/components/GraphContextMenu.tsx:157
 msgid "Copy SVG Code"
 msgstr "SVG 코드 복사"
 
@@ -455,7 +455,7 @@ msgstr "학교 모금 행사를 계획하고 실행하는 단계를 보여주는
 msgid "Create a new flowchart to get started or organize your work with folders."
 msgstr "새로운 플로우차트를 만들어 시작하거나 폴더로 작업을 정리하세요."
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:55
 msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "즉시 플로우차트 생성: 텍스트를 입력하거나 붙여넣고 시각화해보세요."
 
@@ -560,8 +560,8 @@ msgstr "비영리 단체 할인을 제공하나요?"
 msgid "Do you want to delete this?"
 msgstr "본 항목을 삭제하시겠습니까?"
 
-#: src/components/Tabs/EditorTabList.tsx:27
-#: src/components/Tabs/EditorTabList.tsx:28
+#: src/components/Tabs/EditorTabList.tsx:29
+#: src/components/Tabs/EditorTabList.tsx:30
 msgid "Document"
 msgstr "문서"
 
@@ -569,21 +569,21 @@ msgstr "문서"
 msgid "Don't Lose Your Work"
 msgstr "당신의 작업을 잃지 마세요"
 
-#: src/components/FlowchartHeader.tsx:87
+#: src/components/FlowchartHeader.tsx:100
 #: src/components/ShareDialog.tsx:69
-#: src/components/ShareDialog.tsx:617
+#: src/components/ShareDialog.tsx:619
 msgid "Download"
 msgstr "다운로드"
 
-#: src/components/GraphContextMenu.tsx:100
+#: src/components/GraphContextMenu.tsx:104
 msgid "Download JPG"
 msgstr "JPG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:77
+#: src/components/GraphContextMenu.tsx:81
 msgid "Download PNG"
 msgstr "PNG 다운로드"
 
-#: src/components/GraphContextMenu.tsx:120
+#: src/components/GraphContextMenu.tsx:124
 msgid "Download SVG"
 msgstr "SVG 다운로드"
 
@@ -682,7 +682,7 @@ msgid "Editable"
 msgstr "편집 가능"
 
 #: src/components/Header.tsx:94
-#: src/components/Header.tsx:365
+#: src/components/Header.tsx:369
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "에디터"
@@ -783,7 +783,7 @@ msgstr "기능 분해"
 
 #: src/components/Feedback.tsx:53
 #: src/components/Header.tsx:122
-#: src/components/Header.tsx:391
+#: src/components/Header.tsx:395
 msgid "Feedback"
 msgstr "피드백"
 
@@ -880,7 +880,7 @@ msgstr "귀하의 질문에 신속한 답변 받기"
 msgid "Get unlimited flowcharts and premium features"
 msgstr "무제한 플로우차트 및 프리미엄 기능 이용하기"
 
-#: src/pages/404.tsx:12
+#: src/pages/404.tsx:15
 msgid "Go back home"
 msgstr "집으로 돌아가기"
 
@@ -898,7 +898,7 @@ msgid "Grab a 30-Day Pass: every Pro feature for 30 days, one $9 payment, no sub
 msgstr "30일 패스를 받으세요: 30일 동안 모든 프로 기능을 이용할 수 있고, $9의 결제로 구독하지 않습니다. 자동 갱신되지 않으며, 만료되면 차트가 삭제되지 않습니다. 호스팅된 차트는 업그레이드할 때까지 읽기 전용으로 유지됩니다. 프로를 유지하고 싶으신가요? 매달 $4에 이용 가능하며, 언제든지 취소할 수 있습니다."
 
 #: src/components/MobileTabToggle.tsx:12
-#: src/components/Tabs/EditorTabList.tsx:50
+#: src/components/Tabs/EditorTabList.tsx:52
 msgid "Graph"
 msgstr "그래프"
 
@@ -946,7 +946,7 @@ msgstr "구독을 취소하는 방법은 무엇인가요?"
 msgid "How does AI flowchart generation work?"
 msgstr "AI 플로우차트 생성은 어떻게 작동하나요?"
 
-#: src/components/FlowchartHeader.tsx:172
+#: src/components/FlowchartHeader.tsx:185
 msgid "How would you like to save your chart?"
 msgstr "당신의 차트를 저장하려면 어떻게 하시겠습니까?"
 
@@ -997,7 +997,7 @@ msgstr "Visio, Lucidchart 및 CSV에서 가져오기"
 msgid "Import from popular diagram tools"
 msgstr "인기 있는 다이어그램 도구에서 가져오기"
 
-#: src/components/ShareDialog.tsx:518
+#: src/components/ShareDialog.tsx:520
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다."
 
@@ -1005,7 +1005,7 @@ msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Micro
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
 msgstr "데이터 가져오기는 프로 기능입니다. Flowchart Fun Pro로 업그레이드하면 매달 $4로 이용할 수 있습니다."
 
-#: src/components/ShareDialog.tsx:566
+#: src/components/ShareDialog.tsx:568
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Visio 색상을 사용하려면 다음 중 하나와 같은 <1>roleType</1> 속성을 추가하십시오:"
 
@@ -1021,7 +1021,7 @@ msgstr "정보"
 msgid "Is"
 msgstr "있다"
 
-#: src/components/ShareDialog.tsx:645
+#: src/components/ShareDialog.tsx:647
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON 캔버스는 <0>Obsidian</0> 캔버스 및 다른 응용 프로그램에서 사용되는 다이어그램의 JSON 표현입니다."
 
@@ -1071,8 +1071,8 @@ msgstr "레이아웃"
 msgid "Layout Algorithm"
 msgstr "레이아웃 알고리즘"
 
-#: src/components/GraphFloatingMenu.tsx:116
-#: src/components/GraphFloatingMenu.tsx:118
+#: src/components/GraphFloatingMenu.tsx:120
+#: src/components/GraphFloatingMenu.tsx:122
 msgid "Layout Frozen"
 msgstr "레이아웃 동결"
 
@@ -1161,13 +1161,13 @@ msgstr "로컬 파일 지원"
 msgid "Local saving for offline access"
 msgstr "오프라인 접속을 위한 로컬 저장 기능"
 
-#: src/components/GraphFloatingMenu.tsx:106
-#: src/components/GraphFloatingMenu.tsx:108
+#: src/components/GraphFloatingMenu.tsx:110
+#: src/components/GraphFloatingMenu.tsx:112
 msgid "Lock Zoom to Graph"
 msgstr "그래프에 룩 줌을 고정하다"
 
 #: src/components/Header.tsx:208
-#: src/components/Header.tsx:449
+#: src/components/Header.tsx:453
 msgid "Log In"
 msgstr "로그인"
 
@@ -1175,7 +1175,7 @@ msgstr "로그인"
 msgid "Log Out"
 msgstr "로그아웃"
 
-#: src/components/FlowchartHeader.tsx:120
+#: src/components/FlowchartHeader.tsx:133
 msgid "Log in to Save"
 msgstr "로그인하여 저장하기"
 
@@ -1191,7 +1191,7 @@ msgstr "<0>Tone Row</0>가 만들었습니다."
 msgid "Make a One-Time Donation"
 msgstr "한 번 선물하기"
 
-#: src/components/ShareDialog.tsx:483
+#: src/components/ShareDialog.tsx:484
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
@@ -1249,12 +1249,12 @@ msgstr "이름"
 msgid "Name Chart"
 msgstr "차트 이름"
 
-#: src/components/FlowchartHeader.tsx:246
+#: src/components/FlowchartHeader.tsx:259
 msgid "Name your chart"
 msgstr "차트 이름 지정"
 
 #: src/components/Header.tsx:104
-#: src/components/Header.tsx:371
+#: src/components/Header.tsx:375
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "신규"
@@ -1389,7 +1389,7 @@ msgstr "작업이 취소되었습니다."
 msgid "Or maybe blue!"
 msgstr "아니면 파란색으로!"
 
-#: src/components/ShareDialog.tsx:551
+#: src/components/ShareDialog.tsx:553
 msgid "Organization Chart"
 msgstr "조직도"
 
@@ -1455,7 +1455,7 @@ msgid "Priority One-on-One Support"
 msgstr "우선순위 일대일 지원"
 
 #: src/components/Header.tsx:177
-#: src/components/Header.tsx:455
+#: src/components/Header.tsx:459
 #: src/components/Settings.tsx:122
 msgid "Privacy Policy"
 msgstr "개인정보보호정책"
@@ -1476,8 +1476,8 @@ msgstr "처리 중..."
 msgid "Prompt"
 msgstr "프롬프트"
 
-#: src/components/ShareDialog.tsx:479
-#: src/components/ShareDialog.tsx:503
+#: src/components/ShareDialog.tsx:480
+#: src/components/ShareDialog.tsx:505
 msgid "Public"
 msgstr "공용"
 
@@ -1507,7 +1507,7 @@ msgstr "래스터 내보내기 (PNG, JPG)"
 msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
 
-#: src/components/FlowchartHeader.tsx:64
+#: src/components/FlowchartHeader.tsx:77
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "읽기 전용"
@@ -1572,8 +1572,8 @@ msgstr "마법 링크 요청"
 msgid "Request Password Reset"
 msgstr "비밀번호 재설정 요청"
 
-#: src/components/GraphFloatingMenu.tsx:71
-#: src/components/GraphFloatingMenu.tsx:74
+#: src/components/GraphFloatingMenu.tsx:75
+#: src/components/GraphFloatingMenu.tsx:78
 msgid "Reset"
 msgstr "재설정"
 
@@ -1602,7 +1602,7 @@ msgid "Right-click nodes for options"
 msgstr "옵션을 위해 노드를 오른쪽 클릭하세요"
 
 #: src/components/Header.tsx:167
-#: src/components/Header.tsx:411
+#: src/components/Header.tsx:415
 #: src/pages/Roadmap.tsx:31
 msgid "Roadmap"
 msgstr "로드맵"
@@ -1620,8 +1620,8 @@ msgstr "SVG 내보내기는 프로 기능입니다"
 msgid "Satisfaction guaranteed or first payment refunded"
 msgstr "만족도 보장 또는 첫 번째 결제 환불"
 
-#: src/components/FlowchartHeader.tsx:138
-#: src/components/FlowchartHeader.tsx:162
+#: src/components/FlowchartHeader.tsx:151
+#: src/components/FlowchartHeader.tsx:175
 msgid "Save"
 msgstr "구하다"
 
@@ -1633,11 +1633,11 @@ msgstr "50% 절약"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "인공지능과 딕테이션을 통해 시간을 절약하고 쉽게 다이어그램을 작성할 수 있습니다."
 
-#: src/components/FlowchartHeader.tsx:181
+#: src/components/FlowchartHeader.tsx:194
 msgid "Save to Cloud"
 msgstr "클라우드에 저장하기"
 
-#: src/components/FlowchartHeader.tsx:198
+#: src/components/FlowchartHeader.tsx:211
 msgid "Save to File"
 msgstr "파일에 저장하기"
 
@@ -1670,12 +1670,12 @@ msgid "Set a consistent height for all nodes"
 msgstr "모든 노드의 일관된 높이 설정하기"
 
 #: src/components/Header.tsx:185
-#: src/components/Header.tsx:416
+#: src/components/Header.tsx:420
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "설정"
 
-#: src/components/FlowchartHeader.tsx:78
+#: src/components/FlowchartHeader.tsx:91
 msgid "Share"
 msgstr "공유하기"
 
@@ -1899,9 +1899,9 @@ msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 �
 msgid "The possible shapes are:"
 msgstr "가능한 모양은 다음과 같습니다:"
 
-#: src/components/Tabs/EditorTabList.tsx:38
-#: src/components/Tabs/EditorTabList.tsx:39
-#: src/components/Tabs/EditorTabList.tsx:49
+#: src/components/Tabs/EditorTabList.tsx:40
+#: src/components/Tabs/EditorTabList.tsx:41
+#: src/components/Tabs/EditorTabList.tsx:51
 msgid "Theme"
 msgstr "테마"
 
@@ -1921,6 +1921,10 @@ msgstr "이 데이터에는 엣지가 없습니다."
 #: src/pages/Charts.tsx:202
 msgid "This action cannot be undone."
 msgstr "이 작업은 취소할 수 없습니다."
+
+#: src/components/ReadOnlyNotice.tsx:21
+msgid "This chart is read-only because you no longer have Pro access. Upgrade to resume editing, or use Download to save a copy."
+msgstr "이 차트는 더 이상 Pro 액세스 권한이 없기 때문에 읽기 전용입니다. 편집을 계속하려면 업그레이드하세요. 또는 다운로드를 사용하여 사본을 저장할 수 있습니다."
 
 #: src/components/SvgProOnlyPopover.tsx:21
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
@@ -1950,7 +1954,7 @@ msgstr "이것은 현재 샌드 박스를 대체합니다."
 msgid "Time to decide"
 msgstr "결정할 시간"
 
-#: src/components/ShareDialog.tsx:626
+#: src/components/ShareDialog.tsx:628
 msgid "Tip"
 msgstr "팁"
 
@@ -2093,7 +2097,8 @@ msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advance
 msgstr "Flowchart Fun Pro로 업그레이드하여 SVG 내보내기를 잠금 해제하고 다이어그램에 대한 더 고급 기능을 즐기세요."
 
 #: src/components/FeatureBreakdown.tsx:307
-#: src/components/Header.tsx:424
+#: src/components/Header.tsx:428
+#: src/components/ReadOnlyNotice.tsx:33
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
@@ -2142,11 +2147,11 @@ msgstr "청구 정보를 변경하려면 고객 포털을 사용하십시오."
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "이 설정을 사용하여 흐름 도표의 모양과 동작을 조정하십시오"
 
-#: src/components/ShareDialog.tsx:561
+#: src/components/ShareDialog.tsx:563
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "조직도, 계층 구조 및 기타 조직 구조를 위해 이 파일을 사용하십시오."
 
-#: src/components/ShareDialog.tsx:547
+#: src/components/ShareDialog.tsx:549
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오."
 
@@ -2312,17 +2317,17 @@ msgstr "이용권은 자동 갱신되지 않습니다. 만료되면 호스팅된
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "귀하의 구독 상태는 <0>{statusDisplay}</0>입니다."
 
-#: src/components/GraphFloatingMenu.tsx:86
 #: src/components/GraphFloatingMenu.tsx:90
+#: src/components/GraphFloatingMenu.tsx:94
 msgid "Zoom In"
 msgstr "확대"
 
-#: src/components/GraphFloatingMenu.tsx:96
 #: src/components/GraphFloatingMenu.tsx:100
+#: src/components/GraphFloatingMenu.tsx:104
 msgid "Zoom Out"
 msgstr "축소하기"
 
-#: src/components/Checkout.tsx:313
+#: src/components/Checkout.tsx:322
 msgid "month"
 msgstr "월"
 

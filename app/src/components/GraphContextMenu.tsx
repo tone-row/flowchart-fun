@@ -10,6 +10,7 @@ import { HiOutlineClipboardCopy } from "react-icons/hi";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
 import {
+  useCanEdit,
   useHasProAccess,
   useDownloadFilename,
   useIsFirefox,
@@ -35,6 +36,9 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
   const filename = useDownloadFilename();
 
   const hasProAccess = useHasProAccess();
+  // canEdit === false covers lapsed-Pro hosted charts AND the route-based
+  // read-only pages (/p, /r, /c) — no class edits from the context menu there.
+  const canEdit = useCanEdit();
   const watermark = !hasProAccess;
   const scale = hasProAccess ? AUTH_IMG_SCALE : UNAUTH_IMG_SCALE;
 
@@ -50,8 +54,8 @@ export const GraphContextMenu = memo(function GraphContextMenu() {
         });
       }}
     >
-      <NodeSubmenu />
-      <EdgeSubmenu />
+      {canEdit === false ? null : <NodeSubmenu />}
+      {canEdit === false ? null : <EdgeSubmenu />}
       {!isFirefox && <CopyPNG watermark={watermark} scale={scale} />}
       {hasProAccess && <CopySVG />}
       <Item

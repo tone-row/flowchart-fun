@@ -35,6 +35,9 @@ test("Create new chart", async () => {
   await page.getByRole("button", { name: "Create" }).click();
   // expect url to be regex BASE_URL + /u/\d+
   await expect(page).toHaveURL(new RegExp(`${BASE_URL}/u/\\d+`));
+  // guard against the editor pane collapsing to zero height on /u/:id
+  // (its grid template switches on the read-only state)
+  await page.waitForSelector(".monaco-editor");
 });
 
 test("Rename Chart", async () => {

@@ -59,7 +59,7 @@ msgid "Access until"
 msgstr "访问直到"
 
 #: src/components/Header.tsx:192
-#: src/components/Header.tsx:441
+#: src/components/Header.tsx:445
 #: src/pages/Account.tsx:124
 msgid "Account"
 msgstr "帐户"
@@ -80,18 +80,18 @@ msgstr "添加一些步骤"
 msgid "Advanced"
 msgstr "高级"
 
-#: src/components/GraphFloatingMenu.tsx:142
-#: src/components/GraphFloatingMenu.tsx:146
+#: src/components/GraphFloatingMenu.tsx:149
+#: src/components/GraphFloatingMenu.tsx:153
 msgid "Align Horizontally"
 msgstr "水平对齐"
 
-#: src/components/GraphFloatingMenu.tsx:130
-#: src/components/GraphFloatingMenu.tsx:134
+#: src/components/GraphFloatingMenu.tsx:137
+#: src/components/GraphFloatingMenu.tsx:141
 msgid "Align Nodes"
 msgstr "对齐节点"
 
-#: src/components/GraphFloatingMenu.tsx:154
-#: src/components/GraphFloatingMenu.tsx:158
+#: src/components/GraphFloatingMenu.tsx:161
+#: src/components/GraphFloatingMenu.tsx:165
 msgid "Align Vertically"
 msgstr "垂直对齐"
 
@@ -163,7 +163,7 @@ msgstr "返回编辑器"
 msgid "Background Color"
 msgstr "背景颜色"
 
-#: src/components/ShareDialog.tsx:537
+#: src/components/ShareDialog.tsx:539
 msgid "Basic Flowchart"
 msgstr "基本流程图"
 
@@ -189,7 +189,7 @@ msgid "Billed monthly at $4"
 msgstr "月度账单为$4"
 
 #: src/components/Header.tsx:146
-#: src/components/Header.tsx:399
+#: src/components/Header.tsx:403
 #: src/pages/Blog.tsx:30
 msgid "Blog"
 msgstr "博客"
@@ -258,17 +258,17 @@ msgid "Change Email Address"
 msgstr "更改电子邮件地址"
 
 #: src/components/Header.tsx:157
-#: src/components/Header.tsx:405
+#: src/components/Header.tsx:409
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "变更日志"
 
 #: src/components/Header.tsx:114
-#: src/components/Header.tsx:377
+#: src/components/Header.tsx:381
 msgid "Charts"
 msgstr "图表"
 
-#: src/components/ShareDialog.tsx:524
+#: src/components/ShareDialog.tsx:526
 msgid "Check out the guide:"
 msgstr "查看指南："
 
@@ -414,11 +414,11 @@ msgstr "将{format}复制到剪贴板"
 msgid "Copy"
 msgstr "复制"
 
-#: src/components/GraphContextMenu.tsx:192
+#: src/components/GraphContextMenu.tsx:196
 msgid "Copy PNG Image"
 msgstr "复制PNG图像"
 
-#: src/components/GraphContextMenu.tsx:153
+#: src/components/GraphContextMenu.tsx:157
 msgid "Copy SVG Code"
 msgstr "复制 SVG 代码"
 
@@ -455,7 +455,7 @@ msgstr "创建一个流程图，展示规划和执行学校筹款活动的步骤
 msgid "Create a new flowchart to get started or organize your work with folders."
 msgstr "创建一个新的流程图开始或使用文件夹组织您的工作。"
 
-#: src/components/FlowchartHeader.tsx:49
+#: src/components/FlowchartHeader.tsx:55
 msgid "Create flowcharts instantly: Type or paste text, see it visualized."
 msgstr "即时创建流程图：输入或粘贴文本，即可可视化。"
 
@@ -560,8 +560,8 @@ msgstr "你提供非营利组织折扣吗？"
 msgid "Do you want to delete this?"
 msgstr "您要将其删除吗？"
 
-#: src/components/Tabs/EditorTabList.tsx:27
-#: src/components/Tabs/EditorTabList.tsx:28
+#: src/components/Tabs/EditorTabList.tsx:29
+#: src/components/Tabs/EditorTabList.tsx:30
 msgid "Document"
 msgstr "文档"
 
@@ -569,21 +569,21 @@ msgstr "文档"
 msgid "Don't Lose Your Work"
 msgstr "不要丢失你的工作"
 
-#: src/components/FlowchartHeader.tsx:87
+#: src/components/FlowchartHeader.tsx:100
 #: src/components/ShareDialog.tsx:69
-#: src/components/ShareDialog.tsx:617
+#: src/components/ShareDialog.tsx:619
 msgid "Download"
 msgstr "下载"
 
-#: src/components/GraphContextMenu.tsx:100
+#: src/components/GraphContextMenu.tsx:104
 msgid "Download JPG"
 msgstr "下载 JPG"
 
-#: src/components/GraphContextMenu.tsx:77
+#: src/components/GraphContextMenu.tsx:81
 msgid "Download PNG"
 msgstr "下载 PNG"
 
-#: src/components/GraphContextMenu.tsx:120
+#: src/components/GraphContextMenu.tsx:124
 msgid "Download SVG"
 msgstr "下载 SVG"
 
@@ -682,7 +682,7 @@ msgid "Editable"
 msgstr "可编辑"
 
 #: src/components/Header.tsx:94
-#: src/components/Header.tsx:365
+#: src/components/Header.tsx:369
 #: src/components/MobileTabToggle.tsx:12
 msgid "Editor"
 msgstr "编辑器"
@@ -783,7 +783,7 @@ msgstr "功能分解"
 
 #: src/components/Feedback.tsx:53
 #: src/components/Header.tsx:122
-#: src/components/Header.tsx:391
+#: src/components/Header.tsx:395
 msgid "Feedback"
 msgstr "反馈"
 
@@ -880,7 +880,7 @@ msgstr "快速获取您的问题的回答"
 msgid "Get unlimited flowcharts and premium features"
 msgstr "获取无限流程图和高级功能"
 
-#: src/pages/404.tsx:12
+#: src/pages/404.tsx:15
 msgid "Go back home"
 msgstr "回家"
 
@@ -898,7 +898,7 @@ msgid "Grab a 30-Day Pass: every Pro feature for 30 days, one $9 payment, no sub
 msgstr "购买30天通行证：享受Pro功能30天，只需支付9美元，无需订阅。通行证不会自动续订，到期后您的图表也不会被删除。托管的图表将变为只读模式，直到您再次升级。想要保留Pro吗？每月只需支付4美元，随时可取消。"
 
 #: src/components/MobileTabToggle.tsx:12
-#: src/components/Tabs/EditorTabList.tsx:50
+#: src/components/Tabs/EditorTabList.tsx:52
 msgid "Graph"
 msgstr "图表"
 
@@ -946,7 +946,7 @@ msgstr "如何取消我的订阅？"
 msgid "How does AI flowchart generation work?"
 msgstr "AI流程图生成是如何工作的？"
 
-#: src/components/FlowchartHeader.tsx:172
+#: src/components/FlowchartHeader.tsx:185
 msgid "How would you like to save your chart?"
 msgstr "您想如何保存您的流程图？"
 
@@ -997,7 +997,7 @@ msgstr "从Visio，Lucidchart和CSV导入"
 msgid "Import from popular diagram tools"
 msgstr "从流行的图表工具导入"
 
-#: src/components/ShareDialog.tsx:518
+#: src/components/ShareDialog.tsx:520
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
 
@@ -1005,7 +1005,7 @@ msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
 msgstr "导入数据是Pro功能。您可以升级到Flowchart Fun Pro，每月仅需4美元。"
 
-#: src/components/ShareDialog.tsx:566
+#: src/components/ShareDialog.tsx:568
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
@@ -1021,7 +1021,7 @@ msgstr "信息"
 msgid "Is"
 msgstr "是"
 
-#: src/components/ShareDialog.tsx:645
+#: src/components/ShareDialog.tsx:647
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON画布是您的图表的JSON表示，由<0>Obsidian</0> Canvas和其他应用程序使用。"
 
@@ -1071,8 +1071,8 @@ msgstr "布局"
 msgid "Layout Algorithm"
 msgstr "布局算法"
 
-#: src/components/GraphFloatingMenu.tsx:116
-#: src/components/GraphFloatingMenu.tsx:118
+#: src/components/GraphFloatingMenu.tsx:120
+#: src/components/GraphFloatingMenu.tsx:122
 msgid "Layout Frozen"
 msgstr "布局已冻结"
 
@@ -1161,13 +1161,13 @@ msgstr "本地文件支持"
 msgid "Local saving for offline access"
 msgstr "本地保存，实现离线访问"
 
-#: src/components/GraphFloatingMenu.tsx:106
-#: src/components/GraphFloatingMenu.tsx:108
+#: src/components/GraphFloatingMenu.tsx:110
+#: src/components/GraphFloatingMenu.tsx:112
 msgid "Lock Zoom to Graph"
 msgstr "锁定缩放到图表"
 
 #: src/components/Header.tsx:208
-#: src/components/Header.tsx:449
+#: src/components/Header.tsx:453
 msgid "Log In"
 msgstr "登录"
 
@@ -1175,7 +1175,7 @@ msgstr "登录"
 msgid "Log Out"
 msgstr "登出"
 
-#: src/components/FlowchartHeader.tsx:120
+#: src/components/FlowchartHeader.tsx:133
 msgid "Log in to Save"
 msgstr "登录以保存"
 
@@ -1191,7 +1191,7 @@ msgstr "由<0>Tone Row</0>制作"
 msgid "Make a One-Time Donation"
 msgstr "进行一次性捐赠"
 
-#: src/components/ShareDialog.tsx:483
+#: src/components/ShareDialog.tsx:484
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
@@ -1249,12 +1249,12 @@ msgstr "名称"
 msgid "Name Chart"
 msgstr "命名图表"
 
-#: src/components/FlowchartHeader.tsx:246
+#: src/components/FlowchartHeader.tsx:259
 msgid "Name your chart"
 msgstr "为您的流程图命名"
 
 #: src/components/Header.tsx:104
-#: src/components/Header.tsx:371
+#: src/components/Header.tsx:375
 #: src/pages/Charts.tsx:100
 msgid "New"
 msgstr "新"
@@ -1389,7 +1389,7 @@ msgstr "操作已取消"
 msgid "Or maybe blue!"
 msgstr "或者也许是蓝色！"
 
-#: src/components/ShareDialog.tsx:551
+#: src/components/ShareDialog.tsx:553
 msgid "Organization Chart"
 msgstr "组织结构图"
 
@@ -1455,7 +1455,7 @@ msgid "Priority One-on-One Support"
 msgstr "优先一对一支持"
 
 #: src/components/Header.tsx:177
-#: src/components/Header.tsx:455
+#: src/components/Header.tsx:459
 #: src/components/Settings.tsx:122
 msgid "Privacy Policy"
 msgstr "隱私政策"
@@ -1476,8 +1476,8 @@ msgstr "处理中..."
 msgid "Prompt"
 msgstr "提示"
 
-#: src/components/ShareDialog.tsx:479
-#: src/components/ShareDialog.tsx:503
+#: src/components/ShareDialog.tsx:480
+#: src/components/ShareDialog.tsx:505
 msgid "Public"
 msgstr "公开"
 
@@ -1507,7 +1507,7 @@ msgstr "光栅导出（PNG，JPG）"
 msgid "Rate limit exceeded. Please try again later."
 msgstr "速率限制超出。 请稍后再试。"
 
-#: src/components/FlowchartHeader.tsx:64
+#: src/components/FlowchartHeader.tsx:77
 #: src/components/ShareDialog.tsx:154
 msgid "Read-only"
 msgstr "只读"
@@ -1572,8 +1572,8 @@ msgstr "請求魔法鏈接"
 msgid "Request Password Reset"
 msgstr "請求密碼重置"
 
-#: src/components/GraphFloatingMenu.tsx:71
-#: src/components/GraphFloatingMenu.tsx:74
+#: src/components/GraphFloatingMenu.tsx:75
+#: src/components/GraphFloatingMenu.tsx:78
 msgid "Reset"
 msgstr "重置"
 
@@ -1602,7 +1602,7 @@ msgid "Right-click nodes for options"
 msgstr "右键点击节点以获得选项"
 
 #: src/components/Header.tsx:167
-#: src/components/Header.tsx:411
+#: src/components/Header.tsx:415
 #: src/pages/Roadmap.tsx:31
 msgid "Roadmap"
 msgstr "路线图"
@@ -1620,8 +1620,8 @@ msgstr "SVG导出是专业功能"
 msgid "Satisfaction guaranteed or first payment refunded"
 msgstr "满意保证或第一次付款退款"
 
-#: src/components/FlowchartHeader.tsx:138
-#: src/components/FlowchartHeader.tsx:162
+#: src/components/FlowchartHeader.tsx:151
+#: src/components/FlowchartHeader.tsx:175
 msgid "Save"
 msgstr "救球"
 
@@ -1633,11 +1633,11 @@ msgstr "省50%"
 msgid "Save time with AI and dictation, making it easy to create diagrams."
 msgstr "使用人工智能和口述功能，节省时间，轻松创建图表。"
 
-#: src/components/FlowchartHeader.tsx:181
+#: src/components/FlowchartHeader.tsx:194
 msgid "Save to Cloud"
 msgstr "保存到云"
 
-#: src/components/FlowchartHeader.tsx:198
+#: src/components/FlowchartHeader.tsx:211
 msgid "Save to File"
 msgstr "保存到文件"
 
@@ -1670,12 +1670,12 @@ msgid "Set a consistent height for all nodes"
 msgstr "设置所有节点的统一高度"
 
 #: src/components/Header.tsx:185
-#: src/components/Header.tsx:416
+#: src/components/Header.tsx:420
 #: src/components/Settings.tsx:35
 msgid "Settings"
 msgstr "设置"
 
-#: src/components/FlowchartHeader.tsx:78
+#: src/components/FlowchartHeader.tsx:91
 msgid "Share"
 msgstr "分享"
 
@@ -1899,9 +1899,9 @@ msgstr "用于分隔多个目标节点的分隔符"
 msgid "The possible shapes are:"
 msgstr "可能的形状是："
 
-#: src/components/Tabs/EditorTabList.tsx:38
-#: src/components/Tabs/EditorTabList.tsx:39
-#: src/components/Tabs/EditorTabList.tsx:49
+#: src/components/Tabs/EditorTabList.tsx:40
+#: src/components/Tabs/EditorTabList.tsx:41
+#: src/components/Tabs/EditorTabList.tsx:51
 msgid "Theme"
 msgstr "主題"
 
@@ -1921,6 +1921,10 @@ msgstr "此数据中没有边"
 #: src/pages/Charts.tsx:202
 msgid "This action cannot be undone."
 msgstr "此操作无法撤销。"
+
+#: src/components/ReadOnlyNotice.tsx:21
+msgid "This chart is read-only because you no longer have Pro access. Upgrade to resume editing, or use Download to save a copy."
+msgstr "该图表为只读状态，因为您不再拥有专业版访问权限。升级以恢复编辑，或使用下载功能保存副本。"
 
 #: src/components/SvgProOnlyPopover.tsx:21
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
@@ -1950,7 +1954,7 @@ msgstr "这将替换您当前的沙盒。"
 msgid "Time to decide"
 msgstr "决定的时间到了"
 
-#: src/components/ShareDialog.tsx:626
+#: src/components/ShareDialog.tsx:628
 msgid "Tip"
 msgstr "提示"
 
@@ -2093,7 +2097,8 @@ msgid "Upgrade to Flowchart Fun Pro to unlock SVG exports and enjoy more advance
 msgstr "升级到Flowchart Fun Pro，解锁SVG导出功能，并享受更多高级功能来创建您的图表。"
 
 #: src/components/FeatureBreakdown.tsx:307
-#: src/components/Header.tsx:424
+#: src/components/Header.tsx:428
+#: src/components/ReadOnlyNotice.tsx:33
 msgid "Upgrade to Pro"
 msgstr "升級到專業版"
 
@@ -2142,11 +2147,11 @@ msgstr "使用客户门户更改您的账单信息。"
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "使用这些设置来调整流程图的外观和行为"
 
-#: src/components/ShareDialog.tsx:561
+#: src/components/ShareDialog.tsx:563
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "使用此文件制作组织图、层次结构和其他组织结构。"
 
-#: src/components/ShareDialog.tsx:547
+#: src/components/ShareDialog.tsx:549
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "使用此文件进行顺序、流程和工作流程。"
 
@@ -2312,17 +2317,17 @@ msgstr "您的通行证不会自动续订。到期后，您的托管图表将变
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "您的訂閱狀態為<0>{statusDisplay}</0>。"
 
-#: src/components/GraphFloatingMenu.tsx:86
 #: src/components/GraphFloatingMenu.tsx:90
+#: src/components/GraphFloatingMenu.tsx:94
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/components/GraphFloatingMenu.tsx:96
 #: src/components/GraphFloatingMenu.tsx:100
+#: src/components/GraphFloatingMenu.tsx:104
 msgid "Zoom Out"
 msgstr "縮小"
 
-#: src/components/Checkout.tsx:313
+#: src/components/Checkout.tsx:322
 msgid "month"
 msgstr "月份"
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { useHasProAccess } from "../lib/hooks";
+import { useCanEdit, useHasProAccess } from "../lib/hooks";
 import { ImportDataDialog } from "./ImportDataDialog";
 import { ImportDataUnauthenticatedDialog } from "./ImportDataUnauthenticatedDialog";
 import { LearnSyntaxDialog } from "./LearnSyntaxDialog";
@@ -14,6 +14,7 @@ import { globalZ } from "../lib/globalZ";
 
 export function Actions() {
   const hasProAccess = useHasProAccess();
+  const canEdit = useCanEdit();
   const isSandbox = useLocation().pathname === "/";
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -36,14 +37,16 @@ export function Actions() {
   return (
     <>
       <div className="hidden md:flex justify-start w-full gap-x-2 items-center whitespace-nowrap flex-wrap py-2">
-        <LoadTemplateDialog />
+        {canEdit !== false ? <LoadTemplateDialog /> : null}
         <LearnSyntaxDialog />
         {isSandbox ? <LoadFileButton /> : null}
-        {hasProAccess ? (
-          <ImportDataDialog />
-        ) : (
-          <ImportDataUnauthenticatedDialog />
-        )}
+        {canEdit !== false ? (
+          hasProAccess ? (
+            <ImportDataDialog />
+          ) : (
+            <ImportDataUnauthenticatedDialog />
+          )
+        ) : null}
       </div>
       <DropdownMenu.Root open={open} onOpenChange={setOpen}>
         <DropdownMenu.Trigger asChild>
@@ -59,14 +62,16 @@ export function Actions() {
           )}
           id="editor-options"
         >
-          <LoadTemplateDialog />
+          {canEdit !== false ? <LoadTemplateDialog /> : null}
           <LearnSyntaxDialog />
           {isSandbox ? <LoadFileButton /> : null}
-          {hasProAccess ? (
-            <ImportDataDialog />
-          ) : (
-            <ImportDataUnauthenticatedDialog />
-          )}
+          {canEdit !== false ? (
+            hasProAccess ? (
+              <ImportDataDialog />
+            ) : (
+              <ImportDataUnauthenticatedDialog />
+            )
+          ) : null}
         </DropdownMenu.Content>
       </DropdownMenu.Root>
     </>
