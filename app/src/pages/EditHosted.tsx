@@ -13,6 +13,7 @@ import WithGraph from "../components/WithGraph";
 import Spinner from "../components/Spinner";
 import { EditorTabList } from "../components/Tabs/EditorTabList";
 import { OnChange } from "@monaco-editor/react";
+import classNames from "classnames";
 
 import { TextEditor } from "../components/TextEditor";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
@@ -23,10 +24,15 @@ import { useTrackLastChart } from "../lib/useLastChart";
 import sandboxStyles from "./Sandbox.module.css";
 import styles from "./EditHosted.module.css";
 import { useTabsStore } from "../lib/useTabsStore";
-import { useHasProAccess } from "../lib/hooks";
+import {
+  useCanEdit,
+  useHasProAccess,
+  useIsReadOnlyHostedChart,
+} from "../lib/hooks";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { AiToolbar } from "../components/AiToolbar";
+import { ReadOnlyNotice } from "../components/ReadOnlyNotice";
 import { markUserEditedSinceAi, usePromptStore } from "../lib/usePromptStore";
 
 export default function EditHosted() {
@@ -49,7 +55,17 @@ export default function EditHosted() {
   } = useDebouncedCallback((doc: Doc) => {
     mutate(docToString(doc));
   }, 1000);
-  useEffect(() => useDoc.subscribe(debounceMutate), [debounceMutate]);
+  const canEdit = useCanEdit();
+  const isReadOnly = useIsReadOnlyHostedChart();
+
+  // Persist changes only when the user is allowed to edit this chart.
+  // canEdit is undefined while customer-info loads and false for lapsed
+  // Pro users — in both cases nothing may be written to the server
+  // (updateChartText performs no entitlement check of its own).
+  useEffect(() => {
+    if (!canEdit) return;
+    return useDoc.subscribe(debounceMutate);
+  }, [debounceMutate, canEdit]);
 
   const text = useDoc((state) => state.text);
 
@@ -82,50 +98,69 @@ export default function EditHosted() {
   return (
     <FlowchartLayout>
       <FlowchartHeader />
-      <Tabs.Root
-        value={selectedTab}
-        onValueChange={(selectedTab: any) => {
-          useTabsStore.setState({ selectedTab });
-        }}
-        className={sandboxStyles.Tabs}
+      {/* Switch the row template instead of leaving an empty auto track:
+          Tabs.Root is 100%-height and would collapse in an auto row. */}
+      <div
+        className={classNames(
+          "grid min-h-0",
+          isReadOnly
+            ? "grid-rows-[auto_minmax(0,1fr)]"
+            : "grid-rows-[minmax(0,1fr)]"
+        )}
       >
-        <div className="flex justify-start items-end gap-4">
-          <EditorTabList />
-          <Actions />
-        </div>
-        <WithGraph>
-          <Tabs.Content
-            value="Document"
-            className="bg-white dark:bg-black overflow-hidden relative grid grid-rows-[auto_minmax(0,1fr)] h-full"
-          >
-            <AiToolbar />
-            <TextEditor
-              value={text}
-              onChange={onChange}
-              extendOptions={{
-                readOnly: !hasProAccess,
-              }}
-            />
-          </Tabs.Content>
-          <Tabs.Content value="Theme" className="overflow-hidden">
-            <ThemeTab />
-          </Tabs.Content>
-          <LoadingState isLoading={isLoading} pending={pending()} />
-          <ClearTextButton
-            handleClear={() => {
-              useDoc.setState(
-                { text: "", meta: {} },
-                false,
-                "EditHosted/clear"
-              );
-              const editor = useEditorStore.getState().editor;
-              if (!editor) return;
-              editor.focus();
-            }}
-          />
-          <EditorError />
-        </WithGraph>
-      </Tabs.Root>
+        {isReadOnly ? <ReadOnlyNotice /> : null}
+        <Tabs.Root
+          value={selectedTab}
+          onValueChange={(selectedTab: any) => {
+            useTabsStore.setState({ selectedTab });
+          }}
+          className={sandboxStyles.Tabs}
+        >
+          <div className="flex justify-start items-end gap-4">
+            <EditorTabList />
+            <Actions />
+          </div>
+          <WithGraph>
+            <Tabs.Content
+              value="Document"
+              className={classNames(
+                "bg-white dark:bg-black overflow-hidden relative grid h-full",
+                isReadOnly
+                  ? "grid-rows-[minmax(0,1fr)]"
+                  : "grid-rows-[auto_minmax(0,1fr)]"
+              )}
+            >
+              {isReadOnly ? null : <AiToolbar />}
+              <TextEditor
+                value={text}
+                onChange={onChange}
+                extendOptions={{
+                  readOnly: !hasProAccess,
+                }}
+              />
+            </Tabs.Content>
+            <Tabs.Content value="Theme" className="overflow-hidden">
+              <ThemeTab />
+            </Tabs.Content>
+            <LoadingState isLoading={isLoading} pending={pending()} />
+            {isReadOnly ? null : (
+              <ClearTextButton
+                handleClear={() => {
+                  useDoc.setState(
+                    { text: "", meta: {} },
+                    false,
+                    "EditHosted/clear"
+                  );
+                  const editor = useEditorStore.getState().editor;
+                  if (!editor) return;
+                  editor.focus();
+                }}
+              />
+            )}
+            <EditorError />
+          </WithGraph>
+        </Tabs.Root>
+      </div>
     </FlowchartLayout>
   );
 }

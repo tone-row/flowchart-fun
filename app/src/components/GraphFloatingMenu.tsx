@@ -11,6 +11,7 @@ import {
 import { useCallback, useEffect } from "react";
 import { FaRegSnowflake } from "react-icons/fa";
 
+import { useCanEdit } from "../lib/hooks";
 import { lockZoomToGraph, useGraphStore } from "../lib/useGraphStore";
 import { unfreezeDoc, useIsFrozen } from "../lib/useIsFrozen";
 import { resetGraph } from "../lib/useUnmountStore";
@@ -46,7 +47,10 @@ export function GraphFloatingMenu() {
   const autoFit = useGraphStore((s) => s.autoFit);
 
   const selectedNodes = useGraphStore((s) => s.selectedNodes);
-  const alignButtonsEnabled = isFrozen && selectedNodes.length > 1;
+  // canEdit also gates the h/v window hotkeys below, which share this flag
+  const canEdit = useCanEdit();
+  const alignButtonsEnabled =
+    isFrozen && selectedNodes.length > 1 && canEdit !== false;
 
   useEffect(() => {
     if (alignButtonsEnabled) {
@@ -118,7 +122,10 @@ export function GraphFloatingMenu() {
           aria-label={t`Layout Frozen`}
           size="xs"
           pressed={isFrozen}
+          disabled={canEdit === false}
+          className="disabled:opacity-40 disabled:cursor-not-allowed"
           onPressedChange={(pressed) => {
+            if (canEdit === false) return;
             if (!pressed) {
               unfreezeDoc();
             }
@@ -134,7 +141,7 @@ export function GraphFloatingMenu() {
           aria-label={t`Align Nodes`}
           data-testid="Align Nodes"
           data-session-activity="align-nodes"
-          disabled={!isFrozen}
+          disabled={!isFrozen || canEdit === false}
         >
           <SquaresFour size={16} />
         </IconButton2>

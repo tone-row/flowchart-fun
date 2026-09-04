@@ -15,7 +15,7 @@ import { ReactNode, useContext, useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 
 import { AUTH_IMG_SCALE, UNAUTH_IMG_SCALE } from "../lib/constants";
-import { useHasProAccess, useDownloadFilename } from "../lib/hooks";
+import { useCanEdit, useHasProAccess, useDownloadFilename } from "../lib/hooks";
 import { makeChartPublic } from "../lib/queries";
 import { toVisioFlowchart, toVisioOrgChart } from "../lib/toVisio";
 import { docToString, useDoc, useDocDetails } from "../lib/useDoc";
@@ -448,6 +448,7 @@ function Excalidraw() {
 }
 
 function HostedOptions() {
+  const canEdit = useCanEdit();
   const id = useDocDetails("id");
   if (typeof id !== "number") throw new Error("id is not a number");
 
@@ -487,6 +488,7 @@ function HostedOptions() {
           name="isPublic"
           id="isPublic"
           defaultChecked={isPublic}
+          disabled={canEdit === false}
           data-session-activity="Toggle Make Public"
           onChange={(e) => {
             makePublic.mutate(e.target.checked);

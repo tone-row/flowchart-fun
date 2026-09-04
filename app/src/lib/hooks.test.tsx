@@ -1,5 +1,6 @@
 import { renderHook } from "@testing-library/react";
 import { ReactNode } from "react";
+import { MemoryRouter } from "react-router-dom";
 
 import { AppContext } from "../components/AppContextProvider";
 import {
@@ -10,9 +11,11 @@ import {
 } from "../test-utils";
 import {
   useAccountNeedsAttention,
+  useCanEdit,
   useHasActivePass,
   useHasProAccess,
   useIsProUser,
+  useIsReadOnlyHostedChart,
   useProAiToken,
 } from "./hooks";
 
@@ -91,5 +94,102 @@ describe("useAccountNeedsAttention", () => {
     expect(run(useAccountNeedsAttention, fakeLapsedSubWithPassCustomer)).toBe(
       false
     );
+  });
+});
+
+/**
+ * Route-aware variant of contextWrapper for hooks that read the location
+ * (useCanEdit, useIsReadOnlyHostedChart).
+ */
+function routeWrapper(
+  path: string,
+  customer: unknown,
+  customerIsLoading = false
+) {
+  return ({ children }: { children: ReactNode }) => (
+    <MemoryRouter initialEntries={[path]}>
+      <AppContext.Provider
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        value={{ customer, customerIsLoading } as any}
+      >
+        {children}
+      </AppContext.Provider>
+    </MemoryRouter>
+  );
+}
+
+function runAt<T>(
+  path: string,
+  hook: () => T,
+  customer: unknown,
+  customerIsLoading = false
+) {
+  return renderHook(hook, {
+    wrapper: routeWrapper(path, customer, customerIsLoading),
+  }).result.current;
+}
+
+const fakeCanceledCustomer = {
+  customerId: "cus_canceled",
+  subscription: { ...fakeCustomer.subscription, status: "canceled" },
+};
+
+const fakePastDueCustomer = {
+  customerId: "cus_past_due",
+  subscription: { ...fakeCustomer.subscription, status: "past_due" },
+};
+
+describe("useIsReadOnlyHostedChart", () => {
+  test("hosted chart with a canceled subscription is read-only", () => {
+    expect(runAt("/u/123", useCanEdit, fakeCanceledCustomer)).toBe(false);
+    expect(
+      runAt("/u/123", useIsReadOnlyHostedChart, fakeCanceledCustomer)
+    ).toBe(true);
+  });
+
+  test("hosted chart with an active subscription is editable", () => {
+    expect(runAt("/u/123", useCanEdit, fakeCustomer)).toBe(true);
+    expect(runAt("/u/123", useIsReadOnlyHostedChart, fakeCustomer)).toBe(false);
+  });
+
+  test("hosted chart with an active 30-Day Pass is editable", () => {
+    expect(runAt("/u/123", useCanEdit, fakePassCustomer)).toBe(true);
+    expect(runAt("/u/123", useIsReadOnlyHostedChart, fakePassCustomer)).toBe(
+      false
+    );
+  });
+
+  test("hosted chart with an expired pass is read-only", () => {
+    expect(runAt("/u/123", useCanEdit, fakeExpiredPassCustomer)).toBe(false);
+    expect(
+      runAt("/u/123", useIsReadOnlyHostedChart, fakeExpiredPassCustomer)
+    ).toBe(true);
+  });
+
+  test("never flashes read-only while the customer is loading", () => {
+    expect(runAt("/u/123", useCanEdit, undefined, true)).toBeUndefined();
+    expect(runAt("/u/123", useIsReadOnlyHostedChart, undefined, true)).toBe(
+      false
+    );
+  });
+
+  test("past_due keeps edit access, matching ThemeTab/Graph today", () => {
+    expect(runAt("/u/123", useCanEdit, fakePastDueCustomer)).toBe(true);
+    expect(runAt("/u/123", useIsReadOnlyHostedChart, fakePastDueCustomer)).toBe(
+      false
+    );
+  });
+
+  test("sandbox is always editable, even for lapsed users", () => {
+    expect(runAt("/", useCanEdit, fakeCanceledCustomer)).toBe(true);
+    expect(runAt("/", useIsReadOnlyHostedChart, fakeCanceledCustomer)).toBe(
+      false
+    );
+  });
+
+  test("route-based read-only pages are not hosted-read-only", () => {
+    expect(
+      runAt("/c/abc", useIsReadOnlyHostedChart, fakeCanceledCustomer)
+    ).toBe(false);
   });
 });
