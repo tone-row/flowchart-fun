@@ -37,7 +37,7 @@ Preconditions:
 
 ## Gotchas
 
-- **The pro test account has 1000+ charts** (e2e runs never delete theirs), and the `/charts` list fetch caps at 1000 rows without the newest ones (observed 2026-10-08: 1000 rows, none created that day). A chart created now does **not** appear in `/charts` for that account. Assert creation through the URL and `ff.supabase`, not the list, until the account is purged or the query is fixed. (This is also a real bug for any user with over 1000 charts.)
+- `/charts` fetches at most 1000 rows and the newest are not among them, so an account with more than 1000 charts cannot see new ones there (a real product bug). `pro.spec.ts` never deletes the charts it creates, so the pro test account climbs toward that cap; it was purged on 2026-10-08 (1,585 charts). If a new chart is missing from `/charts`, count the account's `user_charts` before debugging the list.
 - How you open a chart changes what happens: `page.goto("/u/:id")` is a full load (customer-info not yet cached, no autosave on load); clicking **Editor** reopens the last chart in-app (customer-info cached, autosave fires). The Editor link target lives in memory, so a `page.goto` resets it to `/`. In-app navigations need `waitForURL(..., { waitUntil: "commit" })`.
 - Saves are debounced 1s and skipped entirely while `canEdit` is still loading; arm the PATCH wait before typing or you race it.
 - The `/charts` row "…" menu button has no accessible name; locate it as the last `button` inside the row.
