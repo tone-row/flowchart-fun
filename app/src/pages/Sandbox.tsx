@@ -14,6 +14,7 @@ import { OnChange } from "@monaco-editor/react";
 
 import { TextEditor } from "../components/TextEditor";
 import { getDefaultLocalChart } from "../lib/getDefaultChart";
+import { withFreshExpiry } from "../lib/getExpirationDate";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
@@ -93,8 +94,10 @@ const Sandbox = memo(function Edit() {
   const storeDoc = useMemo(() => {
     return throttle(
       (doc: Doc) => {
-        const docString = docToString(doc);
-        localStorage.setItem(SANDBOX_STORAGE_KEY, docString);
+        localStorage.setItem(
+          SANDBOX_STORAGE_KEY,
+          docToString(withFreshExpiry(doc))
+        );
       },
       1000,
       { trailing: true }
