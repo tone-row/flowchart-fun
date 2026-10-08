@@ -17,10 +17,6 @@ const PADDING = 60;
 
 export type Rect = { x: number; y: number; w: number; h: number };
 
-/**
- * Geometry of an exported image: the canvas size, where the chart goes,
- * and where the free-tier watermark goes (null when not watermarking).
- */
 export function exportLayout({
   contentW,
   contentH,
@@ -36,24 +32,31 @@ export function exportLayout({
   markRect: Rect | null;
 } {
   const canvasW = contentW + PADDING;
-  const canvasH = contentH + PADDING;
   const contentRect = {
     x: PADDING / 2,
     y: PADDING / 2,
     w: contentW,
     h: contentH,
   };
-  if (!watermark) return { canvasW, canvasH, contentRect, markRect: null };
+  if (!watermark) {
+    return {
+      canvasW,
+      canvasH: contentH + PADDING,
+      contentRect,
+      markRect: null,
+    };
+  }
   const markW = Math.floor(canvasW * WATERMARK_WIDTH_PERCENTAGE);
   const markH = Math.floor(
     WATERMARK_ORIGINAL_HEIGHT * (markW / WATERMARK_ORIGINAL_WIDTH)
   );
   const markRect = {
-    x: WATERMARK_MARGIN,
-    y: canvasH - markH - WATERMARK_MARGIN,
+    x: contentRect.x,
+    y: contentRect.y + contentH + WATERMARK_MARGIN,
     w: markW,
     h: markH,
   };
+  const canvasH = markRect.y + markH + WATERMARK_MARGIN;
   return { canvasW, canvasH, contentRect, markRect };
 }
 
