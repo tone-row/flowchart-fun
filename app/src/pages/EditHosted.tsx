@@ -1,6 +1,6 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { Check, DotsThree } from "phosphor-react";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useLocation, useParams } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
@@ -47,13 +47,17 @@ export default function EditHosted() {
   const { mutate, isLoading } = useMutation((text: string) =>
     updateChartText(text, id)
   );
+  const serverDoc = useRef<string | undefined>(undefined);
   // get debounced mutate
   const {
     callback: debounceMutate,
     flush,
     pending,
   } = useDebouncedCallback((doc: Doc) => {
-    mutate(docToString(doc));
+    const next = docToString(doc);
+    if (next === serverDoc.current) return;
+    serverDoc.current = next;
+    mutate(next);
   }, 1000);
   const canEdit = useCanEdit();
   const isReadOnly = useIsReadOnlyHostedChart();
@@ -64,6 +68,7 @@ export default function EditHosted() {
   // (updateChartText performs no entitlement check of its own).
   useEffect(() => {
     if (!canEdit) return;
+    serverDoc.current = docToString(useDoc.getState());
     return useDoc.subscribe(debounceMutate);
   }, [debounceMutate, canEdit]);
 
