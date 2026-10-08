@@ -16,6 +16,8 @@ jobs:
           version: 10
       - name: Install Dependencies
         run: pnpm install
+      - name: Build formulaic
+        run: pnpm -F formulaic build
       - name: Build shared
         run: pnpm -F shared build
       - name: Test
