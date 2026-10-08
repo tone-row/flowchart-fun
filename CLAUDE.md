@@ -499,7 +499,6 @@ pnpm -F app e2e
 
 **Command:** `pnpm -F app test -- --watchAll=false`
 **Framework:** Jest via react-scripts + React Testing Library
-**Status:** 25 suites, 564 passed, 5 todo, 0 failures (verified 2026-09-03)
 **Duration:** ~30s on Apple Silicon, ~90s on an older Intel Mac
 
 Test files are in `app/src/` alongside source code (e.g., `Graph.test.tsx`, `AppContextProvider.test.tsx`, `toVisio.test.ts`).
@@ -552,12 +551,6 @@ pnpm -F app e2e:debug
 - Max 3 failures before stopping
 - Tests add `?isE2E=true` to URLs for special E2E handling
 - `window.__set_text()` is used to programmatically set editor content
-
-**Current E2E Status (with `pnpm start` / vercel dev), verified 2026-09-03:**
-- `not-logged-in.spec.ts`: **6/6 pass** on both Chromium and Firefox
-- `logged-in.spec.ts`: **pass** (Chromium; Firefox skipped by design)
-- `pro.spec.ts`: **8/8 pass** (Chromium only, serial execution)
-- `sign-up.spec.ts`: entirely **skipped** (test.skip())
 
 **Known E2E Issues:**
 - The `capabilities` test in `not-logged-in.spec.ts` submits the feedback form, which sends a **real email via SendGrid**. Running the suite repeatedly in quick succession can make that one assertion ("Thank you for your feedback!") flake. Re-run before investigating.
@@ -618,7 +611,7 @@ After an intentional visual change: regenerate goldens, **eyeball the diff**, th
 ## CI/CD
 
 - **GitHub Actions:**
-  - `test.yml` — runs on all pushes (build shared, run app tests + api type check)
+  - `test.yml` — runs on all pushes (builds formulaic and shared, then runs the app unit tests with coverage; it does **not** run the api type check or api tests)
   - `e2e.yml` — runs on PRs (waits for Vercel preview, runs Playwright)
   - `release.yml` — runs on push to main (auto GitHub release from app/package.json version)
 - **Vercel:** auto-deploys on push, preview deployments on PRs
