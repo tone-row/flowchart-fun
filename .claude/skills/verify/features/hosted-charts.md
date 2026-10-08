@@ -10,7 +10,7 @@ Pro users (subscription or 30-day pass) keep unlimited charts in the cloud. A ho
 - `hosted-save-sandbox` — sandbox Save → Save to Cloud → name → lands on `/u/:id`. _Not yet driven_ (covered by `app/e2e/pro.spec.ts`).
 - `hosted-list` — `/charts` lists charts and folders with rename/move/clone/delete. _Not yet driven_; see Gotchas for why it is broken for the test account.
 - `hosted-publish` — Export → "Make publicly accessible" yields a `/p/…` link that renders read-only with a Clone button. _Not yet driven_ (covered by `app/e2e/pro.spec.ts`).
-- `hosted-open-no-write` — opening a chart without editing must not save it. **Currently fails** for in-app opens (Editor link, back from Account): the chart is PATCHed and `updated_at` bumps every time. Full page loads do not write. Repro: watch PATCHes to `user_charts` while reopening via `getByRole("link", { name: "Editor" })` after visiting Account.
+- `hosted-open-no-write` — opening a chart without editing sends no PATCH and leaves `updated_at` alone, including in-app reopens (Editor link) where autosave is already live while the chart loads; an edit afterwards still saves. Driven by `examples/hosted-open-no-write.mjs`.
 - `hosted-read-only` — a lapsed or free user opening `/u/:id` sees `data-testid="read-only-notice"` and no saves are sent. _Not yet driven._
 
 ## How to get to it (user POV)
