@@ -90,6 +90,35 @@ export default async ({ page, ff, step, expect }) => {
   await tap(page, bg);
   await expect.poll(async () => (await editorState(page)).selectedText).toBe(null);
 
+  step("tap Start, then Document -> Theme -> Document: the highlight survives the editor remount");
+  await tap(page, start);
+  await page.mouse.move(bg.x, bg.y);
+  await expect.poll(async () => (await editorState(page)).selectedText).toBe("Start");
+  await page.getByTestId("Editor Tab: Theme").click();
+  await page.getByTestId("Editor Tab: Document").click();
+  await ff.waitForEditor();
+  await expect
+    .poll(async () => (await editorState(page)).selectedText, { message: "highlight after remount" })
+    .toBe("Start");
+  await ff.shot("after-remount", page);
+
+  step("tap Start again: the highlight stays");
+  await tap(page, start);
+  await page.mouse.move(bg.x, bg.y);
+  await page.waitForTimeout(400);
+  expect((await editorState(page)).selectedText, "highlight after re-tapping the same node").toBe("Start");
+
+  step("tap Start then Middle 100ms apart: not a double-click, Middle highlighted, editor unfocused");
+  const middle = await nodePoint(page, ff, "Middle");
+  await tap(page, start);
+  await page.waitForTimeout(100);
+  await page.mouse.click(middle.x, middle.y);
+  await page.mouse.move(bg.x, bg.y);
+  await expect.poll(async () => (await editorState(page)).selectedText).toBe("Middle");
+  const quick = await editorState(page);
+  ff.note({ quick });
+  expect(quick.editorFocused, "two quick taps on different nodes must not focus the editor").toBe(false);
+
   step("double-click Last node: editor focuses, cursor on its line, line scrolled into view");
   expect((await editorState(page)).rendered).not.toContain("Last node");
   const last = await nodePoint(page, ff, "Last node");
