@@ -7,7 +7,8 @@ export type MisclosedContainer = {
   kind: "never-closed" | "swallows-outdented-lines";
 };
 
-type OpenContainer = Omit<MisclosedContainer, "kind"> & {
+type OpenContainer = {
+  range: Omit<MisclosedContainer, "kind">;
   indent: number;
   swallows: boolean;
 };
@@ -20,10 +21,8 @@ export function findMisclosedContainers(text: string): MisclosedContainer[] {
   const rawLines = text.split("\n");
   const open: OpenContainer[] = [];
   const result: MisclosedContainer[] = [];
-  const report = (
-    { indent, swallows, ...container }: OpenContainer,
-    kind: MisclosedContainer["kind"]
-  ) => result.push({ ...container, kind });
+  const report = ({ range }: OpenContainer, kind: MisclosedContainer["kind"]) =>
+    result.push({ ...range, kind });
 
   lines.forEach((line, index) => {
     if (!line.trim()) return;
@@ -38,9 +37,11 @@ export function findMisclosedContainers(text: string): MisclosedContainer[] {
     }
     if (line.endsWith("{")) {
       open.push({
-        lineNumber: index + 1,
-        startColumn: indent + 1,
-        endColumn: rawLines[index].length + 1,
+        range: {
+          lineNumber: index + 1,
+          startColumn: indent + 1,
+          endColumn: rawLines[index].length + 1,
+        },
         indent,
         swallows: false,
       });
