@@ -76,6 +76,33 @@ export default async ({ page, ff, step, expect }) => {
     await page.keyboard.press("Meta+ArrowUp");
     await expect.poll(async () => (await measure()).caretLine).toBe(1);
   };
+  const showEditorTop = (pg, visible) =>
+    pg.evaluate((visible) => {
+      const ed = document.querySelector('[aria-label="Custom CSS"]');
+      const panel = ed.closest(".theme-tab");
+      const visibleBottom = Math.min(panel.getBoundingClientRect().bottom, window.innerHeight);
+      panel.scrollTop += ed.getBoundingClientRect().top - (visibleBottom - visible);
+    }, visible);
+  const withPhone = async (fn) => {
+    const phoneContext = await page.context().browser().newContext({
+      baseURL: ff.base,
+      viewport: { width: 390, height: 844 },
+      hasTouch: true,
+      isMobile: true,
+    });
+    try {
+      const phone = await phoneContext.newPage();
+      await phone.addInitScript(hookMonaco);
+      await phone.goto("/");
+      await phone.getByTestId("Editor Tab: Theme").click();
+      const phoneEditor = phone.getByLabel("Custom CSS", { exact: true });
+      await phoneEditor.locator(".view-line").first().waitFor();
+      expect(await phone.evaluate(() => window.matchMedia("(pointer: coarse)").matches), "coarse pointer").toBe(true);
+      await fn(phone, phoneEditor);
+    } finally {
+      await phoneContext.close();
+    }
+  };
 
   await page.setViewportSize({ width: 1366, height: 768 });
   await ff.open("/");
@@ -101,13 +128,8 @@ export default async ({ page, ff, step, expect }) => {
 
   await check("with only the editor's top 300px in the panel, ArrowDown from line 1 keeps the caret in the panel", async () => {
     await caretToFirstLine();
-    await page.evaluate((visible) => {
-      document.activeElement.blur();
-      const ed = document.querySelector('[aria-label="Custom CSS"]');
-      const panel = ed.closest(".theme-tab");
-      const visibleBottom = Math.min(panel.getBoundingClientRect().bottom, window.innerHeight);
-      panel.scrollTop += ed.getBoundingClientRect().top - (visibleBottom - visible);
-    }, 300);
+    await page.evaluate(() => document.activeElement.blur());
+    await showEditorTop(page, 300);
     await editor.locator(".view-line").first().click({ position: { x: 5, y: 5 } });
     const start = await measure();
     expect(start.caretLine, "click landed on line 1").toBe(1);
@@ -121,6 +143,21 @@ export default async ({ page, ff, step, expect }) => {
     await ff.shot("owner300-end");
     expect(end.caretLine).toBe(lineCount);
     expect(offscreen, "presses that left the caret outside the visible panel").toEqual([]);
+  });
+
+  await check("with the panel scrolled away from the focused editor, typing brings the caret back on screen", async () => {
+    await caretToFirstLine();
+    for (let i = 0; i < 10; i++) await page.keyboard.press("ArrowDown");
+    await page.evaluate(() => (document.querySelector('[aria-label="Custom CSS"]').closest(".theme-tab").scrollTop = 0));
+    const away = await measure();
+    expect(away.caretOnScreen, "caret off screen before typing").toBe(false);
+    await page.keyboard.type("x");
+    await expect.poll(async () => (await measure()).caretOnScreen, "caret on screen after typing").toBe(true);
+    const typed = await measure();
+    await ff.shot("typed-after-scroll-away");
+    await page.keyboard.press("Backspace");
+    ff.note({ typeAway: { away, typed, windowScrollY: await page.evaluate(() => window.scrollY) } });
+    expect(typed.caretLine).toBe(11);
   });
 
   await check("Cmd+F for a string on the last lines shows the match on screen", async () => {
@@ -188,20 +225,7 @@ export default async ({ page, ff, step, expect }) => {
   });
 
   await check("touch 390x844: editor is at most half the panel and a swipe beside it scrolls the panel", async () => {
-    const phoneContext = await page.context().browser().newContext({
-      baseURL: ff.base,
-      viewport: { width: 390, height: 844 },
-      hasTouch: true,
-      isMobile: true,
-    });
-    try {
-      const phone = await phoneContext.newPage();
-      await phone.addInitScript(hookMonaco);
-      await phone.goto("/");
-      await phone.getByTestId("Editor Tab: Theme").click();
-      const phoneEditor = phone.getByLabel("Custom CSS", { exact: true });
-      await phoneEditor.locator(".view-line").first().waitFor();
-      expect(await phone.evaluate(() => window.matchMedia("(pointer: coarse)").matches), "coarse pointer").toBe(true);
+    await withPhone(async (phone, phoneEditor) => {
       await phoneEditor.evaluate((el) => el.scrollIntoView({ block: "center" }));
       await phone.waitForTimeout(300);
       const m = await measure(phoneEditor);
@@ -214,13 +238,32 @@ export default async ({ page, ff, step, expect }) => {
         const box = el.getBoundingClientRect();
         return { x: Math.round(box.left + box.width / 2), y: Math.round((Math.max(panel.top, 0) + box.top) / 2) };
       });
-      const cdp = await phoneContext.newCDPSession(phone);
+      const cdp = await phone.context().newCDPSession(phone);
       await cdp.send("Input.synthesizeScrollGesture", { x, y, yDistance: 150, gestureSourceType: "touch", speed: 1500 });
       await expect.poll(async () => (await measure(phoneEditor)).panelScrollTop).toBeLessThan(m.panelScrollTop);
       ff.note({ swipe: { x, y, before: m.panelScrollTop, after: (await measure(phoneEditor)).panelScrollTop } });
-    } finally {
-      await phoneContext.close();
-    }
+    });
+  });
+
+  await check("touch 390x844: with only the editor's top 200px in the panel, a tap on line 5 puts the caret on line 5", async () => {
+    await withPhone(async (phone, phoneEditor) => {
+      await showEditorTop(phone, 200);
+      await phone.waitForTimeout(300);
+      const before = await measure(phoneEditor);
+      const line = await phoneEditor.evaluate((el) => {
+        const css = window.__editors.filter((e) => e.getModel()?.getLanguageId() === "scss").pop();
+        const at = css.getScrolledVisiblePosition({ lineNumber: 5, column: 1 });
+        const box = css.getDomNode().getBoundingClientRect();
+        return { x: box.left + at.left + 30, y: box.top + at.top + at.height / 2 };
+      });
+      await phone.touchscreen.tap(line.x, line.y);
+      await phone.waitForTimeout(400);
+      const after = await measure(phoneEditor);
+      await ff.shot("touch-tap-line-5", phone);
+      ff.note({ touchTap: { before, after } });
+      expect(after.caretLine, "caret on the tapped line").toBe(5);
+      expect(after.panelScrollTop, "panel did not scroll on tap").toBe(before.panelScrollTop);
+    });
   });
 
   if (failures.length) throw new Error(`failed checks: ${failures.join("; ")}`);
