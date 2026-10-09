@@ -56,6 +56,12 @@ export const fonts: FontEntry[] = [
     preview: "/font-previews/Switzer.svg",
   },
   {
+    name: "Literata",
+    category: "serif",
+    importSnippet: "@import url('/fonts/Literata.css');",
+    preview: "/font-previews/Literata.svg",
+  },
+  {
     name: "Shantell Sans",
     category: "hand",
     importSnippet: "@import url('/fonts/ShantellSans.css');",
