@@ -327,6 +327,8 @@ export const customCss: Control<string, BaseProps> = (
   );
 };
 
+const MIN_CSS_EDITOR_HEIGHT = 300;
+
 function CustomCSSEditor({
   value,
   onValueChange,
@@ -339,21 +341,29 @@ function CustomCSSEditor({
   label: string;
 }) {
   const mode = useLightOrDarkMode();
+  const [height, setHeight] = useState(MIN_CSS_EDITOR_HEIGHT);
   return (
     <div
-      className="theme-editor-monaco bg-neutral-50 dark:bg-neutral-900"
+      className="theme-editor-monaco bg-neutral-50 dark:bg-neutral-900 [contain:inline-size]"
       id="theme-editor-wrapper"
     >
       <Editor
-        height={300}
+        height={height}
         width="100%"
         defaultLanguage="scss"
         value={value}
         onChange={(value) => {
           onValueChange(value ?? "");
         }}
+        onMount={(editor) => {
+          const fit = (contentHeight: number) =>
+            setHeight(Math.max(MIN_CSS_EDITOR_HEIGHT, contentHeight));
+          fit(editor.getContentHeight());
+          editor.onDidContentSizeChange((e) => fit(e.contentHeight));
+        }}
         options={{
           minimap: { enabled: false },
+          scrollbar: { handleMouseWheel: false },
           lineNumbers: "off",
           lineDecorationsWidth: 0,
           lineNumbersMinChars: 0,
