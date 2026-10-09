@@ -6,6 +6,7 @@ import { devtools } from "zustand/middleware";
 import { resetGraph } from "./useUnmountStore";
 import { FFTheme } from "./FFTheme";
 import { toTheme } from "./toTheme";
+import { theme as defaultTheme } from "./templates/default-template";
 
 (async () => {
   try {
@@ -57,7 +58,6 @@ export const useProcessStyleStore = create<{
  * and makes sure they are enqued to load, before the style hits cytoscape
  */
 export function preprocessStyle(style: string) {
-  style = stripCssComments(style);
   const importRegex = /@import\s+url\(['"]([^'"]+)['"]\);/;
   const imports = [];
   let match = style.match(importRegex);
@@ -115,15 +115,6 @@ export function preprocessStyle(style: string) {
   });
 
   return { style: updatedScss, imports, variables };
-}
-
-/**
- * cytoscape's own comment stripping backtracks exponentially on a comment
- * that is never closed, so comments are removed before the style reaches it.
- * An unclosed comment runs to the end of the stylesheet, as in CSS.
- */
-function stripCssComments(css: string) {
-  return css.replace(/\/\*[\s\S]*?(?:\*\/|$)/g, "");
 }
 
 interface FontFaceDescriptor {
@@ -341,14 +332,17 @@ export function processScss(scss: string): {
 }
 
 /**
- * This function looks at the customCssOnly property
- * and concatenates the themeEditor and cytoscapeStyle
- * if it's false or returns the cytoscapeStyle if it's true
+ * cytoscape's own comment stripping backtracks exponentially on a comment
+ * that is never closed, so comments are removed before the style reaches it.
  */
+function stripCssComments(css: string) {
+  return css.replace(/\/\*[\s\S]*?(?:\*\/|$)/g, "");
+}
+
 export function getStyleStringFromMeta(meta: any) {
   const customCssOnly: boolean = meta?.customCssOnly ?? false;
-  const cytoscapeStyle: string = meta?.cytoscapeStyle ?? "";
-  const themeEditor: FFTheme = meta?.themeEditor ?? "";
+  const cytoscapeStyle = stripCssComments(meta?.cytoscapeStyle ?? "");
+  const themeEditor: FFTheme = meta?.themeEditor || defaultTheme;
 
   if (customCssOnly) {
     return cytoscapeStyle;

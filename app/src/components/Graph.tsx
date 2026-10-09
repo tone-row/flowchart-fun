@@ -25,6 +25,7 @@ import { getContainerWarning } from "../lib/parserErrors";
 import { useCanEdit } from "../lib/hooks";
 import {
   preprocessStyle,
+  getStyleStringFromMeta,
   useCytoscapeStyleImports,
 } from "../lib/preprocessStyle";
 import { useContextMenuState } from "../lib/useContextMenuState";
@@ -365,19 +366,8 @@ function getGraphUpdater({
 
     try {
       const themeEditor = getThemeEditor(doc);
-      const { layout, style: themeStyle, postStyle } = toTheme(themeEditor);
-
-      // Eventually, this will become cytoscape again...
-      const customCss = (doc.meta.cytoscapeStyle as string) ?? "";
-
-      // Whether or not to only use the custom css
-      const customCssOnly = (doc.meta?.customCssOnly as boolean) ?? false;
-
-      const { style } = preprocessStyle(
-        customCssOnly
-          ? customCss
-          : [themeStyle, customCss, postStyle].join("\n")
-      );
+      const { layout } = toTheme(themeEditor);
+      const { style } = preprocessStyle(getStyleStringFromMeta(doc.meta));
 
       const text = usePromptStore.getState().diff ?? doc.text;
       elements = getElements(text);
