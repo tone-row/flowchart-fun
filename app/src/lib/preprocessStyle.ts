@@ -57,6 +57,7 @@ export const useProcessStyleStore = create<{
  * and makes sure they are enqued to load, before the style hits cytoscape
  */
 export function preprocessStyle(style: string) {
+  style = stripCssComments(style);
   const importRegex = /@import\s+url\(['"]([^'"]+)['"]\);/;
   const imports = [];
   let match = style.match(importRegex);
@@ -114,6 +115,15 @@ export function preprocessStyle(style: string) {
   });
 
   return { style: updatedScss, imports, variables };
+}
+
+/**
+ * cytoscape's own comment stripping backtracks exponentially on a comment
+ * that is never closed, so comments are removed before the style reaches it.
+ * An unclosed comment runs to the end of the stylesheet, as in CSS.
+ */
+function stripCssComments(css: string) {
+  return css.replace(/\/\*[\s\S]*?(?:\*\/|$)/g, "");
 }
 
 interface FontFaceDescriptor {
