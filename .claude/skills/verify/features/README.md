@@ -34,6 +34,7 @@ Each feature file starts with an H1 and one paragraph of user-visible behavior, 
 - [Themes and templates](./themes-and-templates.md) — Theme tab controls and the Examples dialog restyle and re-lay-out the graph.
 - [Export](./export.md) — PNG/JPG/SVG downloads, Mermaid/Visio/Excalidraw/JSON Canvas exports, share links.
 - [Hosted charts](./hosted-charts.md) — pro users create, edit, rename, publish and list cloud charts.
+- [References and containers](./references-and-containers.md) — `(Label)` pointers draw edges to existing nodes, and only to nodes; `{ }` groups lines into a container.
 - [Access and paywalls](./access-and-paywalls.md) — what logged-out and free users are stopped from, and where they are sent.
 
 ## Not yet mapped
