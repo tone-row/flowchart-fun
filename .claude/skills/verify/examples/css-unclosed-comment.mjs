@@ -21,8 +21,9 @@ export default async (ctx) => {
 async function drive({ page, ff, step, expect }) {
   await page.setViewportSize({ width: 1366, height: 768 });
   await ff.open("/");
-  const before = await ff.waitForGraph();
-  expect(before.nodes.length).toBeGreaterThan(0);
+  await ff.typeDoc("Start .shape_diamond\n  End");
+  const before = await ff.waitForGraph((g) => g.nodes.length === 2);
+  expect(await shapeOf(page, "Start")).toBe("diamond");
 
   step("Theme tab, caret at the end of the Custom CSS");
   await page.getByTestId("Editor Tab: Theme").click();
@@ -42,10 +43,11 @@ async function drive({ page, ff, step, expect }) {
     ff.note({ typed: ch, ms: Date.now() - t0 });
   }
 
-  step("the chart still renders with the unclosed comment in the stylesheet");
+  step("the chart still renders and the .shape_diamond utility class still applies with the comment unclosed");
   await page.waitForTimeout(500);
   const after = await withDeadline(ff.waitForGraph(), "the typed comment");
   expect(after.nodes.length).toBe(before.nodes.length);
+  expect(await shapeOf(page, "Start")).toBe("diamond");
   await ff.shot("unclosed-comment", ff.canvas());
 
   step("closing the comment keeps the page responsive too");
@@ -53,4 +55,12 @@ async function drive({ page, ff, step, expect }) {
   await withDeadline(page.evaluate(() => 1), "closing the comment");
   const closed = await withDeadline(ff.waitForGraph(), "the closed comment");
   expect(closed.nodes.length).toBe(before.nodes.length);
+  expect(await shapeOf(page, "Start")).toBe("diamond");
+}
+
+function shapeOf(page, label) {
+  return page.evaluate(
+    (label) => window.__cy.nodes().filter((n) => n.data("label") === label)[0]?.style("shape"),
+    label
+  );
 }
