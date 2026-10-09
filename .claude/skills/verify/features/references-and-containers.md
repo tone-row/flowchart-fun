@@ -30,6 +30,8 @@ Preconditions:
 ## Gotchas
 
 - `getElements` tags every edge with `parallel`, the count of edges on its unordered node pair. The post style (`graphUtilityClasses.ts`, applied after the user's custom CSS) sets `edge[parallel > 1] { curve-style: bezier }` and a 90px `control-point-step-size` from three up, so parallel edges fan apart under taxi, round-taxi and straight themes. Cytoscape resolves style by order, not specificity, so this rule beats a custom `edge { curve-style }`; "Use Custom CSS Only" skips it. Read `e.midpoint()` from `window.__cy` to prove the fan: collapsed edges share one midpoint.
+- The same order rule beats a template's class rule on a parallel edge. Storyline's `edge.loop_back { curve-style: unbundled-bezier }` turns bezier when the `loop_back` edge reverses an existing edge (`Start -> Next` plus `Next -> Start`); a `loop_back` edge with no reverse partner keeps unbundled-bezier. Self-loops count as parallel too, so three or more loops on one node fan out as visible arcs.
+- The `references` golden compares with `maxDiffPixels: 100`. Under the suite-wide 1% ratio, trunk's collapsed render (2,122px different) passed.
 
 - Monaco auto-closes `{` when typed, so `ff.typeDoc` of a doc with a container leaves one extra `}` line after the doc. Compare with `startsWith(DOC)`; the stray `}` parses as nothing.
 - Edge-id endpoints never reach Cytoscape: `app/src/lib/parseGraph.ts` filters them for render, Mermaid, Visio and Edit with AI. Excalidraw and JSON Canvas export read from `window.__cy`, so they inherit the filter.

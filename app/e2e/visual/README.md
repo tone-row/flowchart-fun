@@ -51,7 +51,9 @@ a rendering path no template starter content reaches (today: `references`,
 three edges on one node pair plus an A <-> B pair). Each is a committed
 document at `fixtures/{name}.doc.txt` in the default theme with a
 deterministic layout, rendered through the same `/f` URL as the frozen
-templates. Regenerate its golden with
+templates. Fixture tests compare with `maxDiffPixels: 100` instead of the
+suite-wide 1% ratio, because a fixture chart covers a small part of the canvas
+and a broken render of it can stay under 1%. Regenerate its golden with
 `visual:update -g <name>` after an intentional change; `visual:fixtures` does
 not touch these files.
 
