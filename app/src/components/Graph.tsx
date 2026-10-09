@@ -243,7 +243,9 @@ function initializeGraph({
       }
     });
 
+    let lastTwoTapTargets: [unknown, unknown] = [undefined, undefined];
     cyCurrent.on("tap", function handleTapHighlightLine(e) {
+      lastTwoTapTargets = [lastTwoTapTargets[1], e.target];
       if (e.target === cyCurrent) {
         useEditorStore.setState({ selectedLineNumber: undefined });
       } else {
@@ -256,6 +258,9 @@ function initializeGraph({
       "dblclick",
       "node, edge",
       function handleDblClick(this: NodeSingular | EdgeSingular) {
+        // Cytoscape fires dblclick for two quick clicks even on different elements
+        const [previous, latest] = lastTwoTapTargets;
+        if (previous !== latest) return;
         const { lineNumber } = this.data();
         moveCursorToLine(lineNumber);
       }

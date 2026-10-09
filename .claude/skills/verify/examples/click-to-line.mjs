@@ -47,7 +47,7 @@ async function backgroundPoint(page, ff) {
   return { x: box.x + box.width - 5, y: box.y + Math.min(box.height - 5, bb.y2 + 20) };
 }
 
-// Cytoscape fires dblclick for any two clicks within 250ms, even on different targets.
+// Two clicks on the same element within 250ms are a double-click.
 const tap = async (page, pt) => {
   await page.waitForTimeout(400);
   await page.mouse.click(pt.x, pt.y);
