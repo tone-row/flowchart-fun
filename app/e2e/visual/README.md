@@ -44,6 +44,17 @@ E2E_START_URL=http://localhost:3001 pnpm -F app visual:fixtures
 E2E_START_URL=http://localhost:3001 pnpm -F app visual:update -- -g mindmap
 ```
 
+## Fixture charts
+
+`FIXTURE_CHARTS` in `frozen-templates.ts` lists hand-written charts that cover
+a rendering path no template starter content reaches (today: `references`,
+three edges on one node pair plus an A <-> B pair). Each is a committed
+document at `fixtures/{name}.doc.txt` in the default theme with a
+deterministic layout, rendered through the same `/f` URL as the frozen
+templates. Regenerate its golden with
+`visual:update -g <name>` after an intentional change; `visual:fixtures` does
+not touch these files.
+
 ## Not yet wired to CI
 
 Playwright goldens are platform-specific (suffixed `-darwin` here). CI is Linux,

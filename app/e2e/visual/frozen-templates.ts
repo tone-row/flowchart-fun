@@ -18,6 +18,8 @@ import { compressToEncodedURIComponent } from "lz-string";
  */
 export const FROZEN_TEMPLATES: string[] = ["ink-mindmap", "constellation"];
 
+export const FIXTURE_CHARTS: string[] = ["references"];
+
 const ORIGIN = process.env.E2E_START_URL || "http://localhost:3000";
 
 /**
