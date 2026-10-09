@@ -2,7 +2,7 @@ import { t, Trans } from "@lingui/macro";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Tabs from "@radix-ui/react-tabs";
 import { saveAs } from "file-saver";
-import { parse, toMermaid } from "graph-selector";
+import { toMermaid } from "graph-selector";
 import produce from "immer";
 import { compressToEncodedURIComponent } from "lz-string";
 import {
@@ -32,6 +32,7 @@ import { SvgProOnlyPopover } from "./SvgProOnlyPopover";
 import { toExcalidraw } from "../lib/toExcalidraw";
 import { Link } from "react-router-dom";
 import { toJSONCanvas } from "../lib/toJSONCanvas";
+import { parseGraph } from "../lib/parseGraph";
 import { slugify } from "../lib/helpers";
 
 export default function ShareDialog({ children }: { children?: ReactNode }) {
@@ -323,7 +324,7 @@ function PreviewImage({
 }
 
 function getMermaidText() {
-  return toMermaid(parse(useDoc.getState().text));
+  return toMermaid(parseGraph(useDoc.getState().text));
 }
 
 function Mermaid() {
@@ -539,7 +540,9 @@ function VisioCSVDownload() {
           title={t`Basic Flowchart`}
           rawTitle="Basic Flowchart"
           handleDownload={async () => {
-            const csv = await toVisioFlowchart(parse(useDoc.getState().text));
+            const csv = await toVisioFlowchart(
+              parseGraph(useDoc.getState().text)
+            );
             const bom = new Uint8Array([0xef, 0xbb, 0xbf]);
             const blob = new Blob([bom, csv], { type: "text/csv" });
             saveAs(blob, `${filename}-visio-flow.csv`);
@@ -553,7 +556,9 @@ function VisioCSVDownload() {
           title={t`Organization Chart`}
           rawTitle="Organization Chart"
           handleDownload={async () => {
-            const csv = await toVisioOrgChart(parse(useDoc.getState().text));
+            const csv = await toVisioOrgChart(
+              parseGraph(useDoc.getState().text)
+            );
             const bom = new Uint8Array([0xef, 0xbb, 0xbf]);
             const blob = new Blob([bom, csv], { type: "text/csv" });
             saveAs(blob, `${filename}-visio-org.csv`);

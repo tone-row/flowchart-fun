@@ -145,6 +145,29 @@ describe("getElements characterization", () => {
     expect([es[0].data.source, es[0].data.target]).toEqual(["n2", "a"]);
   });
 
+  it("a label pointer that also matches an edge label only produces node-to-node edges", () => {
+    const els = getElements("A\n  null: C\n  B\n    fail: (null)\n  null");
+    const nodeIds = new Set(nodes(els).map((n) => n.data.id));
+    const es = edges(els);
+
+    for (const e of es) {
+      expect(nodeIds.has(e.data.source)).toBe(true);
+      expect(nodeIds.has(e.data.target)).toBe(true);
+    }
+    const byLabel = Object.fromEntries(
+      nodes(els).map((n) => [n.data.label, n.data.id])
+    );
+    expect(es.map((e) => `${e.data.source}->${e.data.target}`)).toEqual([
+      `${byLabel.A}->${byLabel.C}`,
+      `${byLabel.A}->${byLabel.B}`,
+      `${byLabel.A}->${byLabel.null}`,
+      `${byLabel.B}->${byLabel.null}`,
+    ]);
+    expect(
+      nodes(els).find((n) => n.data.label === "null")!.data.in_degree
+    ).toBe(2);
+  });
+
   describe("[w]/[h] data attribute sizing (LANDMINE, backward-compat path)", () => {
     it("node with [w] and [h] uses attribute sizing and sets style['text-max-width']", () => {
       // NOTE: a SPACE before the bracket is required for attribute parsing.
