@@ -98,6 +98,36 @@ describe("getElements characterization", () => {
     expect(byLabel("B").out_degree).toBe(0);
   });
 
+  it("each edge carries parallel = number of edges on its unordered node pair", () => {
+    const els = getElements(
+      [
+        "Start",
+        "  Check",
+        "    no: (Start)",
+        "    yes: Validate",
+        "      Error page",
+        "      bad input: (Error page)",
+        "      timeout: (Error page)",
+      ].join("\n")
+    );
+    const label = (id: string) =>
+      nodes(els).find((n) => n.data.id === id)!.data.label;
+    const parallelByEdge = edges(els)
+      .map((e) => [
+        `${label(e.data.source)} -> ${label(e.data.target)} [${e.data.label}]`,
+        e.data.parallel,
+      ])
+      .sort();
+    expect(parallelByEdge).toEqual([
+      ["Check -> Start [no]", 2],
+      ["Check -> Validate [yes]", 1],
+      ["Start -> Check []", 2],
+      ["Validate -> Error page []", 3],
+      ["Validate -> Error page [bad input]", 3],
+      ["Validate -> Error page [timeout]", 3],
+    ]);
+  });
+
   it("classes are attached and parsed; parser emits a leading space; only the FIRST .class is kept", () => {
     const els = getElements("Hello .color_blue .shape_diamond");
     const n = nodes(els)[0];
