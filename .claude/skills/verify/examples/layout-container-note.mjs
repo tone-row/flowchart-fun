@@ -52,10 +52,12 @@ export default async ({ page, ff, step, expect }) => {
     await expect(note).toBeVisible();
     expect(await color(note)).toBe(await color(helper));
     await ff.waitForGraph((g) => g.nodes.some((n) => n.label === "Other"));
+    await page.waitForTimeout(1000);
     await ff.shot(`${mode}-circle`);
     await select.selectOption("dagre");
     await expect(note).toHaveCount(0);
     await ff.waitForGraph((g) => g.nodes.some((n) => n.label === "Other"));
+    await page.waitForTimeout(1000);
     await ff.shot(`${mode}-dagre`);
   }
 };

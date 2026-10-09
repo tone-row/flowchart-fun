@@ -36,3 +36,4 @@ Preconditions:
 - Monaco auto-closes `{` when typed, so `ff.typeDoc` of a doc with a container leaves one extra `}` line after the doc. Compare with `startsWith(DOC)`; the stray `}` parses as nothing.
 - Edge-id endpoints never reach Cytoscape: `app/src/lib/parseGraph.ts` filters them for render, Mermaid, Visio and Edit with AI. Excalidraw and JSON Canvas export read from `window.__cy`, so they inherit the filter.
 - `\(` escapes a literal parenthesis in a label (`Run fallback \(flag is off)`); an unescaped `(…)` at the end of a line is a pointer.
+- Breadthfirst, Concentric, Circle and Radial draw a container's box over unrelated nodes; the Theme tab says so under the Layout select (`themes-and-templates.md`, `theme-layout-container-note`). Drive containers on a layout that supports them.
