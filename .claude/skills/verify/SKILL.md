@@ -48,6 +48,8 @@ export default async ({ page, context, ff, step, expect }) => {
 };
 ```
 
+A drive that tests for a page freeze must put a deadline on every Playwright call it makes after the freeze can occur: a frozen page never answers, so a plain `await page.evaluate(...)` or `ff.waitForGraph()` waits forever and the run never reaches FAIL. Wrap each such call in a `Promise.race` against a timer (see `examples/css-unclosed-comment.mjs`). Only the harness teardown (screenshot, trace, browser close) carries its own deadline.
+
 Each run gets a fresh browser context: empty localStorage, no login, nothing shared with the user's Chrome. `page` is Playwright 1.45 and `expect` is `@playwright/test`'s auto-retrying expect. `ff` holds the repo-specific moves:
 
 | Helper | What it does |
