@@ -268,8 +268,12 @@ const ff = {
 
 // A page frozen by a synchronous loop never answers a screenshot or a trace stop.
 const TEARDOWN_MS = 5000;
-const teardown = (promise) =>
-  Promise.race([promise, new Promise((r) => setTimeout(r, TEARDOWN_MS))]).catch(() => {});
+const teardown = (promise) => {
+  let timer;
+  return Promise.race([promise, new Promise((r) => (timer = setTimeout(r, TEARDOWN_MS)))])
+    .catch(() => {})
+    .finally(() => clearTimeout(timer));
+};
 
 const result = { ok: false, label, url: null, steps, evidence: OUT };
 try {
