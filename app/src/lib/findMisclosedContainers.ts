@@ -7,10 +7,18 @@ export type MisclosedContainer = {
   kind: "never-closed" | "swallows-outdented-lines";
 };
 
+type Body = "empty" | "indented" | "flush" | "swallowing";
+
 type OpenContainer = {
   range: Omit<MisclosedContainer, "kind">;
   indent: number;
-  swallows: boolean;
+  body: Body;
+};
+
+const nextBody = (body: Body, deeper: boolean): Body => {
+  if (body === "empty") return deeper ? "indented" : "flush";
+  if (body === "indented" && !deeper) return "swallowing";
+  return body;
 };
 
 const linesAsGraphSelectorReadsThem = (text: string) =>
@@ -29,10 +37,11 @@ export function findMisclosedContainers(text: string): MisclosedContainer[] {
     const indent = line.length - line.trimStart().length;
     if (/^\s*\}/.test(line)) {
       const closed = open.pop();
-      if (closed?.swallows) report(closed, "swallows-outdented-lines");
+      if (closed?.body === "swallowing")
+        report(closed, "swallows-outdented-lines");
     } else {
       for (const container of open) {
-        if (indent <= container.indent) container.swallows = true;
+        container.body = nextBody(container.body, indent > container.indent);
       }
     }
     if (line.endsWith("{")) {
@@ -43,7 +52,7 @@ export function findMisclosedContainers(text: string): MisclosedContainer[] {
           endColumn: rawLines[index].length + 1,
         },
         indent,
-        swallows: false,
+        body: "empty",
       });
     }
   });
