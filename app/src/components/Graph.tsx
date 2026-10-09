@@ -36,6 +36,7 @@ import {
   useEditorStore,
 } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
+import { isEdge } from "../lib/utils";
 import { usePromptStore } from "../lib/usePromptStore";
 import { Box } from "../slang";
 import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
@@ -439,8 +440,16 @@ function getGraphUpdater({
         cy.current.on("layoutstop", onLayoutReady);
       }
 
-      // Update
-      cy.current.json({ elements, style });
+      // cytoscape only moves an existing node out of its container when
+      // `parent` is present in the node's data, and graph-selector omits it
+      cy.current.json({
+        elements: elements.map((element) =>
+          isEdge(element)
+            ? element
+            : { ...element, data: { parent: null, ...element.data } }
+        ),
+        style,
+      });
       runMappers(cy.current);
 
       // Determine whether to fit
