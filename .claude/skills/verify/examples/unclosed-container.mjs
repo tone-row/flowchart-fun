@@ -62,4 +62,24 @@ export default async ({ page, ff, step, expect }) => {
   await ff.waitForGraph((g) => g.nodes.find((n) => n.label === "Test")?.parent === null);
   await page.waitForTimeout(1000);
   await ff.shot("closed");
+
+  for (const [doc, inside, outside] of [
+    ["Group {\nB\nC\n}\nD", { B: "Group", C: "Group" }, "D"],
+    ["Outer {\n  Inner {\n  x\n  }\n}\nY", { Inner: "Outer", x: "Inner" }, "Y"],
+  ]) {
+    step(`children flush with a correctly closed { line get no warning: ${JSON.stringify(doc)}`);
+    await ff.pasteDoc(doc);
+    const dismiss = page.getByRole("button", { name: "Dismiss" });
+    if (await dismiss.isVisible().catch(() => false)) await dismiss.click();
+    await expect.poll(() => ff.editorText()).toBe(doc);
+    const g = await ff.waitForGraph((g) => g.nodes.some((n) => n.label === outside));
+    const label = Object.fromEntries(g.nodes.map((n) => [n.id, n.label]));
+    const parentOf = (name) => label[g.nodes.find((n) => n.label === name).parent] ?? null;
+    for (const [child, parent] of Object.entries(inside)) expect(parentOf(child)).toBe(parent);
+    expect(parentOf(outside)).toBe(null);
+    await page.waitForTimeout(1000);
+    expect(await markers(page)).toEqual([]);
+    ff.note({ doc, markers: await markers(page) });
+    await ff.shot(`flush-${outside}`);
+  }
 };

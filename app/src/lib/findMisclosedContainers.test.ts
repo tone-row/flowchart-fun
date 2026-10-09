@@ -53,6 +53,31 @@ describe("findMisclosedContainers", () => {
     ).toEqual([]);
   });
 
+  test("a closed container whose children are flush with its { line is not flagged", () => {
+    const text = "Group {\nB\nC\n}\nD";
+    expect(lines(text)).toEqual([]);
+    const parents = Object.fromEntries(
+      parse(text).nodes.map((n) => [n.data.label, n.data.parent])
+    );
+    expect(parents).toEqual({
+      Group: undefined,
+      B: "n1",
+      C: "n1",
+      D: undefined,
+    });
+    expect(lines("Group {\nB\n  C\nD\n}")).toEqual([]);
+  });
+
+  test("a nested container with flush children is not flagged", () => {
+    expect(lines("Outer {\n  Inner {\n  x\n  }\n}")).toEqual([]);
+  });
+
+  test("a top-level container with indented children still warns when its } swallows a sibling", () => {
+    expect(lines("Build {\n  Compile\nTest\n}")).toEqual([
+      { lineNumber: 1, kind: "swallows-outdented-lines" },
+    ]);
+  });
+
   test("lines indented under a } are edges from the container, not swallowed", () => {
     const text = [
       "Request",
