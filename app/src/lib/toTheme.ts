@@ -1,6 +1,6 @@
 import cytoscape from "cytoscape";
 import { Doc, useDoc } from "./useDoc";
-import { Direction, FFTheme, LayoutDirection } from "./FFTheme";
+import { Direction, FFTheme, LayoutDirection, LayoutName } from "./FFTheme";
 import { allFonts } from "./fonts";
 import {
   childlessShapeClasses,
@@ -260,6 +260,13 @@ export function updateThemeEditor(theme: Partial<FFTheme>) {
     },
   }));
 }
+
+export const layoutsWithoutContainers: readonly LayoutName[] = [
+  "breadthfirst",
+  "concentric",
+  "circle",
+  "radial",
+];
 
 function isHierarchical(layoutName: string) {
   return ["dagre", "klay", "layered", "mrtree"].includes(layoutName);

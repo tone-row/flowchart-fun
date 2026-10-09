@@ -22,7 +22,7 @@ msgstr "1 临时流程图"
 msgid "30-Day Pass"
 msgstr "30天通行证"
 
-#: src/components/Tabs/ThemeTab.tsx:683
+#: src/components/Tabs/ThemeTab.tsx:696
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>仅启用自定义CSS</0>。仅应用布局和高级设置。"
 
@@ -76,7 +76,7 @@ msgstr "在任何特殊字符之前添加反斜杠 (<0>\\</0>)： <1>(</1>、<2>
 msgid "Add some steps"
 msgstr "添加一些步骤"
 
-#: src/components/Tabs/ThemeTab.tsx:617
+#: src/components/Tabs/ThemeTab.tsx:630
 msgid "Advanced"
 msgstr "高级"
 
@@ -135,8 +135,8 @@ msgstr "您确定要删除文件夹吗？"
 msgid "Are you sure?"
 msgstr "你确定吗？"
 
-#: src/components/Tabs/ThemeTab.tsx:571
-#: src/components/Tabs/ThemeTab.tsx:572
+#: src/components/Tabs/ThemeTab.tsx:584
+#: src/components/Tabs/ThemeTab.tsx:585
 msgid "Arrow Size"
 msgstr "箭头大小"
 
@@ -156,14 +156,14 @@ msgstr "返回"
 msgid "Back To Editor"
 msgstr "返回编辑器"
 
-#: src/components/Tabs/ThemeTab.tsx:187
-#: src/components/Tabs/ThemeTab.tsx:188
-#: src/components/Tabs/ThemeTab.tsx:239
-#: src/components/Tabs/ThemeTab.tsx:242
+#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:201
+#: src/components/Tabs/ThemeTab.tsx:252
+#: src/components/Tabs/ThemeTab.tsx:255
 msgid "Background Color"
 msgstr "背景颜色"
 
-#: src/components/ShareDialog.tsx:539
+#: src/components/ShareDialog.tsx:540
 msgid "Basic Flowchart"
 msgstr "基本流程图"
 
@@ -198,13 +198,13 @@ msgstr "博客"
 msgid "Book a Meeting"
 msgstr "预订会议"
 
-#: src/components/Tabs/ThemeTab.tsx:293
-#: src/components/Tabs/ThemeTab.tsx:294
+#: src/components/Tabs/ThemeTab.tsx:306
+#: src/components/Tabs/ThemeTab.tsx:307
 msgid "Border Color"
 msgstr "边框颜色"
 
-#: src/components/Tabs/ThemeTab.tsx:278
-#: src/components/Tabs/ThemeTab.tsx:279
+#: src/components/Tabs/ThemeTab.tsx:291
+#: src/components/Tabs/ThemeTab.tsx:292
 msgid "Border Width"
 msgstr "边框宽度"
 
@@ -268,7 +268,7 @@ msgstr "变更日志"
 msgid "Charts"
 msgstr "图表"
 
-#: src/components/ShareDialog.tsx:526
+#: src/components/ShareDialog.tsx:527
 msgid "Check out the guide:"
 msgstr "查看指南："
 
@@ -288,11 +288,11 @@ msgstr "选择模板"
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "为边缘的源和目标选择各种箭头形状。形状包括三角形，三角形-T，圆形-三角形，三角形-十字，三角形-后曲线，V形，T形，正方形，圆形，菱形，雪花形，无。"
 
-#: src/components/Tabs/ThemeTab.tsx:436
+#: src/components/Tabs/ThemeTab.tsx:449
 msgid "Choose how edges connect between nodes"
 msgstr "选择节点之间的边缘连接方式"
 
-#: src/components/Tabs/ThemeTab.tsx:96
+#: src/components/Tabs/ThemeTab.tsx:100
 msgid "Choose how nodes are automatically arranged in your flowchart"
 msgstr "选择如何自动排列您的流程图中的节点"
 
@@ -326,8 +326,8 @@ msgstr "克隆流程图"
 msgid "Close"
 msgstr "关闭"
 
-#: src/components/Tabs/ThemeTab.tsx:470
-#: src/components/Tabs/ThemeTab.tsx:471
+#: src/components/Tabs/ThemeTab.tsx:483
+#: src/components/Tabs/ThemeTab.tsx:484
 msgid "Color"
 msgstr "颜色"
 
@@ -387,7 +387,7 @@ msgstr "继续"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "继续使用沙盒（每天重置，工作不会被保存）"
 
-#: src/components/Tabs/ThemeTab.tsx:132
+#: src/components/Tabs/ThemeTab.tsx:145
 msgid "Controls the flow direction of hierarchical layouts"
 msgstr "控制层次布局的流向"
 
@@ -416,9 +416,9 @@ msgstr "将SVG代码复制到剪贴板"
 msgid "Copied {format} to clipboard"
 msgstr "将{format}复制到剪贴板"
 
-#: src/components/ShareDialog.tsx:277
-#: src/components/ShareDialog.tsx:280
-#: src/components/ShareDialog.tsx:394
+#: src/components/ShareDialog.tsx:278
+#: src/components/ShareDialog.tsx:281
+#: src/components/ShareDialog.tsx:395
 msgid "Copy"
 msgstr "复制"
 
@@ -430,11 +430,11 @@ msgstr "复制PNG图像"
 msgid "Copy SVG Code"
 msgstr "复制 SVG 代码"
 
-#: src/components/ShareDialog.tsx:417
+#: src/components/ShareDialog.tsx:418
 msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
 msgstr "将你的 Excalidraw 代码复制并粘贴到<0>excalidraw.com</0>以进行编辑。此功能为实验性质，可能无法与所有图表一起使用。如果您发现错误，请<1>告诉我们</1>。"
 
-#: src/components/ShareDialog.tsx:357
+#: src/components/ShareDialog.tsx:358
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "复制您的mermaid.js代码或直接在mermaid.js实时编辑器中打开它。"
 
@@ -487,12 +487,12 @@ msgstr "创建日期"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "在两个节点之间创建边缘是通过将第二个节点缩进第一个节点来完成的"
 
-#: src/components/Tabs/ThemeTab.tsx:426
+#: src/components/Tabs/ThemeTab.tsx:439
 msgid "Curve Style"
 msgstr "曲线样式"
 
-#: src/components/Tabs/ThemeTab.tsx:625
-#: src/components/Tabs/ThemeTab.tsx:626
+#: src/components/Tabs/ThemeTab.tsx:638
+#: src/components/Tabs/ThemeTab.tsx:639
 msgid "Custom CSS"
 msgstr "自定义CSS"
 
@@ -547,8 +547,8 @@ msgstr "为敏捷团队设计一个软件开发生命周期流程图"
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "为CEO设计一个决策树，评估潜在的新市场机会"
 
-#: src/components/Tabs/ThemeTab.tsx:129
-#: src/components/Tabs/ThemeTab.tsx:139
+#: src/components/Tabs/ThemeTab.tsx:142
+#: src/components/Tabs/ThemeTab.tsx:152
 msgid "Direction"
 msgstr "方向"
 
@@ -578,8 +578,8 @@ msgid "Don't Lose Your Work"
 msgstr "不要丢失你的工作"
 
 #: src/components/FlowchartHeader.tsx:100
-#: src/components/ShareDialog.tsx:69
-#: src/components/ShareDialog.tsx:619
+#: src/components/ShareDialog.tsx:70
+#: src/components/ShareDialog.tsx:624
 msgid "Download"
 msgstr "下载"
 
@@ -625,12 +625,12 @@ msgid "Edge Label Column"
 msgstr "邊緣標籤欄"
 
 #: src/components/LearnSyntaxDialog.tsx:311
-#: src/components/Tabs/ThemeTab.tsx:432
+#: src/components/Tabs/ThemeTab.tsx:445
 msgid "Edge Style"
 msgstr "邊緣樣式"
 
-#: src/components/Tabs/ThemeTab.tsx:586
-#: src/components/Tabs/ThemeTab.tsx:587
+#: src/components/Tabs/ThemeTab.tsx:599
+#: src/components/Tabs/ThemeTab.tsx:600
 msgid "Edge Text Size"
 msgstr "边缘文本大小"
 
@@ -640,7 +640,7 @@ msgstr "缺少缩进的边"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:419
+#: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edges"
 msgstr "边"
 
@@ -680,12 +680,12 @@ msgstr "边在目标节点行"
 msgid "Edit"
 msgstr "编辑"
 
-#: src/components/EditWithAI.tsx:27
-#: src/components/EditWithAI.tsx:191
+#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:192
 msgid "Edit with AI"
 msgstr "利用AI进行编辑"
 
-#: src/components/ShareDialog.tsx:149
+#: src/components/ShareDialog.tsx:150
 msgid "Editable"
 msgstr "可编辑"
 
@@ -707,7 +707,7 @@ msgstr "电子邮件"
 msgid "Empty"
 msgstr "空"
 
-#: src/components/Tabs/ThemeTab.tsx:371
+#: src/components/Tabs/ThemeTab.tsx:384
 msgid "Enable to set a consistent height for all nodes"
 msgstr "启用统一设置所有节点的高度"
 
@@ -768,8 +768,8 @@ msgstr "探索专业版"
 msgid "Explore more"
 msgstr "探索更多"
 
-#: src/components/ShareDialog.tsx:56
-#: src/components/ShareDialog.tsx:162
+#: src/components/ShareDialog.tsx:57
+#: src/components/ShareDialog.tsx:163
 msgid "Export"
 msgstr "导出"
 
@@ -803,12 +803,12 @@ msgstr "如果您有任何問題，請隨意探索並通過<0>反饋</0>頁面�
 msgid "Fine-tune layouts and visual styles"
 msgstr "调整布局和视觉风格"
 
-#: src/components/Tabs/ThemeTab.tsx:391
+#: src/components/Tabs/ThemeTab.tsx:404
 msgid "Fixed Height"
 msgstr "固定高度"
 
-#: src/components/Tabs/ThemeTab.tsx:367
-#: src/components/Tabs/ThemeTab.tsx:385
+#: src/components/Tabs/ThemeTab.tsx:380
+#: src/components/Tabs/ThemeTab.tsx:398
 msgid "Fixed Node Height"
 msgstr "固定节点高度"
 
@@ -828,7 +828,7 @@ msgstr "Flowchart Fun由一位开发者构建和维护。您的支持使其持�
 msgid "Follow Us on Twitter"
 msgstr "在Twitter上关注我们"
 
-#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:213
 msgid "Font Family"
 msgstr "字体系列"
 
@@ -852,11 +852,11 @@ msgstr "经常问的问题"
 msgid "Full-screen, read-only, and template sharing"
 msgstr "全屏、只读和模板共享"
 
-#: src/components/ShareDialog.tsx:144
+#: src/components/ShareDialog.tsx:145
 msgid "Fullscreen"
 msgstr "全屏"
 
-#: src/components/Tabs/ThemeTab.tsx:180
+#: src/components/Tabs/ThemeTab.tsx:193
 msgid "General"
 msgstr "一般"
 
@@ -1005,7 +1005,7 @@ msgstr "从Visio，Lucidchart和CSV导入"
 msgid "Import from popular diagram tools"
 msgstr "从流行的图表工具导入"
 
-#: src/components/ShareDialog.tsx:520
+#: src/components/ShareDialog.tsx:521
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。"
 
@@ -1013,7 +1013,7 @@ msgstr "使用其中一个CSV文件将您的图表导入到Microsoft Visio中。
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
 msgstr "导入数据是Pro功能。您可以升级到Flowchart Fun Pro，每月仅需4美元。"
 
-#: src/components/ShareDialog.tsx:568
+#: src/components/ShareDialog.tsx:573
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "使用<0>title</0>属性添加标题。要使用 Visio 颜色，请添加一个等于以下内容之一的<1>roleType</1>属性："
 
@@ -1029,7 +1029,7 @@ msgstr "信息"
 msgid "Is"
 msgstr "是"
 
-#: src/components/ShareDialog.tsx:647
+#: src/components/ShareDialog.tsx:652
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON画布是您的图表的JSON表示，由<0>Obsidian</0> Canvas和其他应用程序使用。"
 
@@ -1070,12 +1070,12 @@ msgstr "在您的电脑上保护您的数据隐私"
 msgid "Language"
 msgstr "语言"
 
-#: src/components/Tabs/ThemeTab.tsx:79
-#: src/components/Tabs/ThemeTab.tsx:102
+#: src/components/Tabs/ThemeTab.tsx:83
+#: src/components/Tabs/ThemeTab.tsx:106
 msgid "Layout"
 msgstr "布局"
 
-#: src/components/Tabs/ThemeTab.tsx:92
+#: src/components/Tabs/ThemeTab.tsx:96
 msgid "Layout Algorithm"
 msgstr "布局算法"
 
@@ -1120,7 +1120,7 @@ msgstr "浅色"
 msgid "Light Mode"
 msgstr "浅色模式"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:140
 msgid "Link"
 msgstr "链接"
 
@@ -1199,7 +1199,7 @@ msgstr "由<0>Tone Row</0>制作"
 msgid "Make a One-Time Donation"
 msgstr "进行一次性捐赠"
 
-#: src/components/ShareDialog.tsx:484
+#: src/components/ShareDialog.tsx:485
 msgid "Make publicly accessible"
 msgstr "设为公开访问"
 
@@ -1211,7 +1211,7 @@ msgstr "付款管理"
 msgid "Map Data"
 msgstr "對應資料"
 
-#: src/components/Tabs/ThemeTab.tsx:315
+#: src/components/Tabs/ThemeTab.tsx:328
 msgid "Maximum width of text inside nodes"
 msgstr "节点内文本的最大宽度"
 
@@ -1336,8 +1336,8 @@ msgstr "节点ID、类、属性"
 msgid "Node Label"
 msgstr "节点标签"
 
-#: src/components/Tabs/ThemeTab.tsx:222
-#: src/components/Tabs/ThemeTab.tsx:224
+#: src/components/Tabs/ThemeTab.tsx:235
+#: src/components/Tabs/ThemeTab.tsx:237
 msgid "Node Shape"
 msgstr "节点形状"
 
@@ -1345,7 +1345,7 @@ msgstr "节点形状"
 msgid "Node Shapes"
 msgstr "节点形状"
 
-#: src/components/Tabs/ThemeTab.tsx:215
+#: src/components/Tabs/ThemeTab.tsx:228
 msgid "Nodes"
 msgstr "节点"
 
@@ -1397,7 +1397,7 @@ msgstr "操作已取消"
 msgid "Or maybe blue!"
 msgstr "或者也许是蓝色！"
 
-#: src/components/ShareDialog.tsx:553
+#: src/components/ShareDialog.tsx:556
 msgid "Organization Chart"
 msgstr "组织结构图"
 
@@ -1405,8 +1405,8 @@ msgstr "组织结构图"
 msgid "Our AI creates diagrams from your text prompts, allowing for seamless manual edits or AI-assisted adjustments. Unlike others, our Pro plan offers unlimited AI generations and edits, empowering you to create without limits."
 msgstr "我们的AI根据您的文本提示创建图表，允许您进行无缝的手动编辑或AI辅助调整。与其他平台不同，我们的Pro计划提供无限的AI生成和编辑功能，让您可以无限制地创作。"
 
-#: src/components/Tabs/ThemeTab.tsx:263
-#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:276
+#: src/components/Tabs/ThemeTab.tsx:277
 msgid "Padding"
 msgstr "填充"
 
@@ -1484,8 +1484,8 @@ msgstr "处理中..."
 msgid "Prompt"
 msgstr "提示"
 
-#: src/components/ShareDialog.tsx:480
-#: src/components/ShareDialog.tsx:505
+#: src/components/ShareDialog.tsx:481
+#: src/components/ShareDialog.tsx:506
 msgid "Public"
 msgstr "公开"
 
@@ -1516,7 +1516,7 @@ msgid "Rate limit exceeded. Please try again later."
 msgstr "速率限制超出。 请稍后再试。"
 
 #: src/components/FlowchartHeader.tsx:77
-#: src/components/ShareDialog.tsx:154
+#: src/components/ShareDialog.tsx:155
 msgid "Read-only"
 msgstr "只读"
 
@@ -1615,8 +1615,8 @@ msgstr "右键点击节点以获得选项"
 msgid "Roadmap"
 msgstr "路线图"
 
-#: src/components/Tabs/ThemeTab.tsx:601
-#: src/components/Tabs/ThemeTab.tsx:602
+#: src/components/Tabs/ThemeTab.tsx:614
+#: src/components/Tabs/ThemeTab.tsx:615
 msgid "Rotate Label"
 msgstr "旋转标签"
 
@@ -1673,7 +1673,7 @@ msgstr "选择一个目标文件夹 \\"
 msgid "Send us a message"
 msgstr "发送我们消息"
 
-#: src/components/Tabs/ThemeTab.tsx:395
+#: src/components/Tabs/ThemeTab.tsx:408
 msgid "Set a consistent height for all nodes"
 msgstr "设置所有节点的统一高度"
 
@@ -1720,8 +1720,8 @@ msgstr "倒序排列"
 msgid "Sort by {0}"
 msgstr "按{0}排序"
 
-#: src/components/Tabs/ThemeTab.tsx:491
-#: src/components/Tabs/ThemeTab.tsx:492
+#: src/components/Tabs/ThemeTab.tsx:504
+#: src/components/Tabs/ThemeTab.tsx:505
 msgid "Source Arrow Shape"
 msgstr "源箭头形状"
 
@@ -1734,8 +1734,8 @@ msgstr "源列"
 msgid "Source Delimiter"
 msgstr "源分隔符"
 
-#: src/components/Tabs/ThemeTab.tsx:533
-#: src/components/Tabs/ThemeTab.tsx:534
+#: src/components/Tabs/ThemeTab.tsx:546
+#: src/components/Tabs/ThemeTab.tsx:547
 msgid "Source Distance From Node"
 msgstr "源节点距离"
 
@@ -1743,8 +1743,8 @@ msgstr "源节点距离"
 msgid "Source/Target Arrow Shape"
 msgstr "源/目标箭头形状"
 
-#: src/components/Tabs/ThemeTab.tsx:161
-#: src/components/Tabs/ThemeTab.tsx:163
+#: src/components/Tabs/ThemeTab.tsx:174
+#: src/components/Tabs/ThemeTab.tsx:176
 msgid "Spacing"
 msgstr "间距"
 
@@ -1794,7 +1794,7 @@ msgid "Style with classes"
 msgstr "用类别进行样式设置"
 
 #: src/components/AiToolbar.tsx:201
-#: src/components/EditWithAI.tsx:242
+#: src/components/EditWithAI.tsx:243
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
@@ -1820,8 +1820,8 @@ msgstr "订阅即将到期"
 msgid "Support"
 msgstr "支持"
 
-#: src/components/Tabs/ThemeTab.tsx:512
-#: src/components/Tabs/ThemeTab.tsx:513
+#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:526
 msgid "Target Arrow Shape"
 msgstr "目标箭头形状"
 
@@ -1834,8 +1834,8 @@ msgstr "目標欄"
 msgid "Target Delimiter"
 msgstr "目標分隔符"
 
-#: src/components/Tabs/ThemeTab.tsx:551
-#: src/components/Tabs/ThemeTab.tsx:552
+#: src/components/Tabs/ThemeTab.tsx:564
+#: src/components/Tabs/ThemeTab.tsx:565
 msgid "Target Distance From Node"
 msgstr "目標距離節點"
 
@@ -1843,27 +1843,27 @@ msgstr "目標距離節點"
 msgid "Tell us what's working and what isn't. Every message is read by the developer."
 msgstr "告诉我们什么是有效的，什么是无效的。每条消息都会被开发者阅读。"
 
-#: src/components/Tabs/ThemeTab.tsx:251
-#: src/components/Tabs/ThemeTab.tsx:253
+#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:266
 msgid "Text Color"
 msgstr "文字顏色"
 
-#: src/components/Tabs/ThemeTab.tsx:362
+#: src/components/Tabs/ThemeTab.tsx:375
 msgid "Text Horizontal Offset"
 msgstr "文本水平偏移"
 
-#: src/components/Tabs/ThemeTab.tsx:332
-#: src/components/Tabs/ThemeTab.tsx:333
+#: src/components/Tabs/ThemeTab.tsx:345
+#: src/components/Tabs/ThemeTab.tsx:346
 msgid "Text Leading"
 msgstr "文字行距"
 
-#: src/components/Tabs/ThemeTab.tsx:305
-#: src/components/Tabs/ThemeTab.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:318
+#: src/components/Tabs/ThemeTab.tsx:324
 msgid "Text Max Width"
 msgstr "文本最大宽度"
 
-#: src/components/Tabs/ThemeTab.tsx:347
-#: src/components/Tabs/ThemeTab.tsx:348
+#: src/components/Tabs/ThemeTab.tsx:360
+#: src/components/Tabs/ThemeTab.tsx:361
 msgid "Text Vertical Offset"
 msgstr "文字垂直偏移"
 
@@ -1938,6 +1938,10 @@ msgstr "该图表为只读状态，因为您不再拥有专业版访问权限。
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "只有专业用户才能使用此功能。 <0>成为专业用户</0>解锁。"
 
+#: src/components/Tabs/ThemeTab.tsx:134
+msgid "This layout doesn't support containers."
+msgstr "此布局不支持容器。"
+
 #: src/pages/New.tsx:180
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "这可能需要30秒到2分钟的时间，取决于您输入的长度。"
@@ -1962,7 +1966,7 @@ msgstr "这将替换您当前的沙盒。"
 msgid "Time to decide"
 msgstr "决定的时间到了"
 
-#: src/components/ShareDialog.tsx:628
+#: src/components/ShareDialog.tsx:633
 msgid "Tip"
 msgstr "提示"
 
@@ -2122,8 +2126,8 @@ msgstr "升级至专业版，拥有永久的图表。"
 msgid "Upload your File"
 msgstr "上传您的文件"
 
-#: src/components/Tabs/ThemeTab.tsx:642
-#: src/components/Tabs/ThemeTab.tsx:643
+#: src/components/Tabs/ThemeTab.tsx:655
+#: src/components/Tabs/ThemeTab.tsx:656
 msgid "Use Custom CSS Only"
 msgstr "僅使用自定義CSS"
 
@@ -2151,15 +2155,15 @@ msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 msgid "Use the customer portal to change your billing information."
 msgstr "使用客户门户更改您的账单信息。"
 
-#: src/components/Tabs/ThemeTab.tsx:676
+#: src/components/Tabs/ThemeTab.tsx:689
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "使用这些设置来调整流程图的外观和行为"
 
-#: src/components/ShareDialog.tsx:563
+#: src/components/ShareDialog.tsx:568
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "使用此文件制作组织图、层次结构和其他组织结构。"
 
-#: src/components/ShareDialog.tsx:549
+#: src/components/ShareDialog.tsx:552
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "使用此文件进行顺序、流程和工作流程。"
 
@@ -2215,8 +2219,8 @@ msgstr "这是什么？"
 msgid "While we don't offer a free trial, you can get every Pro feature for 30 days with a one-time $9 Pass — no subscription, nothing to cancel. Prefer to subscribe? Pro is $4/month or $24/year, and you can cancel anytime."
 msgstr "虽然我们不提供免费试用，但您可以通过一次性支付$9的通行证，在30天内获得所有专业版功能，无需订阅，也无需取消。更喜欢订阅？专业版每月$4或每年$24，随时可取消。"
 
-#: src/components/Tabs/ThemeTab.tsx:455
-#: src/components/Tabs/ThemeTab.tsx:456
+#: src/components/Tabs/ThemeTab.tsx:468
+#: src/components/Tabs/ThemeTab.tsx:469
 msgid "Width"
 msgstr "宽度"
 
@@ -2224,7 +2228,7 @@ msgstr "宽度"
 msgid "Width and Height"
 msgstr "宽度和高度"
 
-#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:29
 msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
 msgstr "使用Flowchart Fun的专业版，您可以使用自然语言命令快速完善流程图细节，非常适合在移动端创建图表。每月$4，享受易于使用的AI编辑功能，提升您的流程图体验。"
 
@@ -2248,7 +2252,7 @@ msgstr "用括号将文本连接到任何节点"
 msgid "Write like an outline"
 msgstr "像写大纲一样"
 
-#: src/components/EditWithAI.tsx:216
+#: src/components/EditWithAI.tsx:217
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "在此处输入您的提示，或点击启用麦克风，然后按住录制。"
 
