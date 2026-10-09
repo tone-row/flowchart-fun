@@ -1,6 +1,8 @@
 import { t, Trans } from "@lingui/macro";
 import { ReactNode } from "react";
 
+import { MisclosedContainer } from "./findMisclosedContainers";
+
 export type ParserErrorCode =
   | "EDGE_LABEL_WITHOUT_PARENT"
   | "MULTIPLE_POINTERS_ON_SAME_LINE"
@@ -64,5 +66,15 @@ export function getParserError(code: ParserErrorCode): {
       return {
         message: t`Unknown Parsing Error`,
       };
+  }
+}
+
+export function getContainerWarning(kind: MisclosedContainer["kind"]): string {
+  const brace = "}";
+  switch (kind) {
+    case "never-closed":
+      return t`Container is never closed, so every line below it is inside it. Add a ${brace} on its own line after the container's last child.`;
+    case "swallows-outdented-lines":
+      return t`Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its ${brace} up to just after its last indented line.`;
   }
 }

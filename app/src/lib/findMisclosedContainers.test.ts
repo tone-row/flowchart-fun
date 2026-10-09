@@ -66,6 +66,34 @@ describe("findMisclosedContainers", () => {
     expect(lines(text)).toEqual([]);
   });
 
+  test("a reported chart with edges hanging off a container's } is not flagged", () => {
+    const text = [
+      "Request",
+      "  Detect test-load header",
+      "    true: (Apply test-loader header)",
+      "    false: Check for fallback",
+      "      true: Run fallback \\(flag is off)",
+      "      false: Throw auth error",
+      '    "without bypass": getProducerCodeAccessCandidate {',
+      "      Extract token",
+      "        fail: (null)",
+      "        Decode token",
+      "          fail: (null)",
+      "          Get OU",
+      "            fail: (null)",
+      "            Detect role",
+      "              fail: (null)",
+      "              Get flag \\(by Auth0 user ID)",
+      "                fail: (null)",
+      "      null",
+      "    }",
+      "      null: Apply test-loader header",
+      "      candidate: Populate producer user code access cache & context",
+    ].join("\n");
+    expect(lines(text)).toEqual([]);
+    expect(lines(`${text}\n}`)).toEqual([]);
+  });
+
   test("a { inside a comment is not a container", () => {
     expect(lines("A // B {\n  C")).toEqual([]);
   });

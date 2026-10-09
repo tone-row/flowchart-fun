@@ -12,11 +12,16 @@ import React, {
 import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
-import { monacoMarkerErrorSeverity } from "../lib/constants";
+import {
+  monacoMarkerErrorSeverity,
+  monacoMarkerWarningSeverity,
+} from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
+import { findMisclosedContainers } from "../lib/findMisclosedContainers";
 import { getElements } from "../lib/getElements";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
 import { isError, isUrl } from "../lib/helpers";
+import { getContainerWarning } from "../lib/parserErrors";
 import { useCanEdit } from "../lib/hooks";
 import {
   preprocessStyle,
@@ -373,8 +378,8 @@ function getGraphUpdater({
           : [themeStyle, customCss, postStyle].join("\n")
       );
 
-      const diffText = usePromptStore.getState().diff;
-      elements = getElements(diffText ?? doc.text);
+      const text = usePromptStore.getState().diff ?? doc.text;
+      elements = getElements(text);
 
       // Very specific bug wrt to cose layouts
       // If it's the first render, randomize cannot be false
@@ -460,8 +465,18 @@ function getGraphUpdater({
         parserErrorCode: "",
       });
 
-      // Remove parse error markers
-      useEditorStore.setState({ markers: [] });
+      useEditorStore.setState({
+        markers: findMisclosedContainers(text).map(
+          ({ lineNumber, startColumn, endColumn, kind }) => ({
+            startLineNumber: lineNumber,
+            endLineNumber: lineNumber,
+            startColumn,
+            endColumn,
+            message: getContainerWarning(kind),
+            severity: monacoMarkerWarningSeverity,
+          })
+        ),
+      });
       updateModelMarkers();
 
       // Update Graph Store
