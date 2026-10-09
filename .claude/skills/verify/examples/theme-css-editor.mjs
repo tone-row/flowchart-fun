@@ -1,0 +1,293 @@
+const MARGIN = 48;
+const MIN_HEIGHT = 300;
+
+const hookMonaco = () => {
+  let m;
+  window.__editors = [];
+  Object.defineProperty(window, "monaco", {
+    configurable: true,
+    get: () => m,
+    set(v) {
+      m = v;
+      v.editor.onDidCreateEditor((e) => window.__editors.push(e));
+    },
+  });
+};
+
+export default async ({ page, ff, step, expect }) => {
+  await page.addInitScript(hookMonaco);
+
+  const editor = page.getByLabel("Custom CSS", { exact: true });
+  const measure = (target = editor) =>
+    target.evaluate((el) => {
+      let panel = el.parentElement;
+      while (!/(auto|scroll)/.test(getComputedStyle(panel).overflowY)) panel = panel.parentElement;
+      const p = panel.getBoundingClientRect();
+      const top = Math.max(p.top, 0);
+      const bottom = Math.min(p.bottom, window.innerHeight);
+      const onScreen = (node) => {
+        const r = node?.getBoundingClientRect();
+        return Boolean(r && r.height > 0 && r.top >= top - 1 && r.bottom <= bottom + 1);
+      };
+      const css = window.__editors.filter((e) => e.getModel()?.getLanguageId() === "scss").pop();
+      const box = el.getBoundingClientRect();
+      return {
+        panelVisible: Math.round(bottom - top),
+        panelScrollTop: Math.round(panel.scrollTop),
+        editorH: Math.round(box.height),
+        editorW: Math.round(box.width),
+        editorFullyVisible: box.top >= top - 1 && box.bottom <= bottom + 1,
+        caretOnScreen: onScreen(el.querySelector(".cursors-layer .cursor")),
+        matchOnScreen: onScreen(el.querySelector(".currentFindMatch")),
+        caretLine: css.getPosition().lineNumber,
+        selectionEnd: css.getSelection().endLineNumber,
+        lineCount: css.getModel().getLineCount(),
+        editorScrollTop: Math.round(css.getScrollTop()),
+        editorScrollMax: Math.round(css.getScrollHeight() - css.getLayoutInfo().height),
+      };
+    });
+
+  const failures = [];
+  const check = async (name, fn) => {
+    step(name);
+    try {
+      await fn();
+    } catch (e) {
+      failures.push(name);
+      ff.note({ failed: name, error: String(e.message).split("\n").slice(0, 3).join(" | ") });
+    }
+  };
+  const fillsPanel = async (label) => {
+    await editor.evaluate((el) => el.scrollIntoView({ block: "center" }));
+    await expect
+      .poll(async () => {
+        const m = await measure();
+        return m.editorH >= Math.max(MIN_HEIGHT, m.panelVisible - MARGIN);
+      })
+      .toBe(true);
+    const m = await measure();
+    ff.note({ [label]: m });
+    expect(m.editorH, "editor fits within the visible panel").toBeLessThanOrEqual(Math.max(MIN_HEIGHT, m.panelVisible));
+    expect(m.editorFullyVisible, "whole editor on screen after scrolling it into view").toBe(true);
+  };
+  const caretToFirstLine = async () => {
+    await editor.evaluate((el) => el.scrollIntoView({ block: "center" }));
+    await editor.click({ position: { x: 20, y: 20 } });
+    await page.keyboard.press("Meta+ArrowUp");
+    await expect.poll(async () => (await measure()).caretLine).toBe(1);
+  };
+  const showEditorTop = (pg, visible) =>
+    pg.evaluate((visible) => {
+      const ed = document.querySelector('[aria-label="Custom CSS"]');
+      const panel = ed.closest(".theme-tab");
+      const visibleBottom = Math.min(panel.getBoundingClientRect().bottom, window.innerHeight);
+      panel.scrollTop += ed.getBoundingClientRect().top - (visibleBottom - visible);
+    }, visible);
+  const withPhone = async (fn) => {
+    const phoneContext = await page.context().browser().newContext({
+      baseURL: ff.base,
+      viewport: { width: 390, height: 844 },
+      hasTouch: true,
+      isMobile: true,
+    });
+    try {
+      const phone = await phoneContext.newPage();
+      await phone.addInitScript(hookMonaco);
+      await phone.goto("/");
+      await phone.getByTestId("Editor Tab: Theme").click();
+      const phoneEditor = phone.getByLabel("Custom CSS", { exact: true });
+      await phoneEditor.locator(".view-line").first().waitFor();
+      expect(await phone.evaluate(() => window.matchMedia("(pointer: coarse)").matches), "coarse pointer").toBe(true);
+      await fn(phone, phoneEditor);
+    } finally {
+      await phoneContext.close();
+    }
+  };
+
+  await page.setViewportSize({ width: 1366, height: 768 });
+  await ff.open("/");
+  await page.getByTestId("Editor Tab: Theme").click();
+  await editor.locator(".view-line").first().waitFor();
+  const { lineCount } = await measure();
+  expect(lineCount, "default stylesheet is longer than one screen").toBeGreaterThan(60);
+
+  await check("1366x768: editor fills the Theme panel's visible height", async () => {
+    await fillsPanel("desktop");
+    await ff.shot("desktop-editor");
+  });
+
+  await check("ArrowDown from line 1 to the last line keeps the caret on screen", async () => {
+    await caretToFirstLine();
+    for (let i = 0; i < lineCount + 20; i++) await page.keyboard.press("ArrowDown");
+    await expect.poll(async () => (await measure()).caretLine).toBe(lineCount);
+    const m = await measure();
+    ff.note({ arrowDown: m });
+    await ff.shot("arrowdown-last-line");
+    expect(m.caretOnScreen, "caret visible").toBe(true);
+  });
+
+  await check("with only the editor's top 300px in the panel, ArrowDown from line 1 keeps the caret in the panel", async () => {
+    await caretToFirstLine();
+    await page.evaluate(() => document.activeElement.blur());
+    await showEditorTop(page, 300);
+    await editor.locator(".view-line").first().click({ position: { x: 5, y: 5 } });
+    const start = await measure();
+    expect(start.caretLine, "click landed on line 1").toBe(1);
+    const offscreen = [];
+    for (let i = 1; i <= lineCount + 5; i++) {
+      await page.keyboard.press("ArrowDown");
+      if (!(await measure()).caretOnScreen) offscreen.push(i);
+    }
+    const end = await measure();
+    ff.note({ owner300: { start, end, offscreenPresses: offscreen.length, firstOffscreenAt: offscreen[0] ?? null } });
+    await ff.shot("owner300-end");
+    expect(end.caretLine).toBe(lineCount);
+    expect(offscreen, "presses that left the caret outside the visible panel").toEqual([]);
+  });
+
+  await check("with the panel scrolled away from the focused editor, typing brings the caret back on screen", async () => {
+    await caretToFirstLine();
+    for (let i = 0; i < 10; i++) await page.keyboard.press("ArrowDown");
+    await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+    await page.evaluate(() => (document.querySelector('[aria-label="Custom CSS"]').closest(".theme-tab").scrollTop = 0));
+    const away = await measure();
+    expect(away.caretOnScreen, "caret off screen before typing").toBe(false);
+    await page.keyboard.type("x");
+    await expect.poll(async () => (await measure()).caretOnScreen, "caret on screen after typing").toBe(true);
+    const typed = await measure();
+    await ff.shot("typed-after-scroll-away");
+    await page.keyboard.press("Backspace");
+    ff.note({ typeAway: { away, typed, windowScrollY: await page.evaluate(() => window.scrollY) } });
+    expect(typed.caretLine).toBe(11);
+  });
+
+  await check("Cmd+F for a string on the last lines shows the match on screen", async () => {
+    await caretToFirstLine();
+    await page.keyboard.press("Meta+f");
+    await page.keyboard.type(":parent.color_grey");
+    await page.keyboard.press("Enter");
+    await expect.poll(async () => (await measure()).caretLine).toBeGreaterThan(lineCount - 5);
+    const m = await measure();
+    ff.note({ find: m });
+    await ff.shot("find-last-lines");
+    await page.keyboard.press("Escape");
+    expect(m.matchOnScreen, "current find match visible").toBe(true);
+  });
+
+  await check("drag-select past the editor's bottom edge reaches the last line", async () => {
+    await caretToFirstLine();
+    const box = await editor.boundingBox();
+    const visibleLines = await editor.locator(".view-line").count();
+    await page.mouse.move(box.x + 20, box.y + 10);
+    await page.mouse.down();
+    await page.mouse.move(box.x + 60, page.viewportSize().height - 1, { steps: 8 });
+    await expect.poll(async () => (await measure()).selectionEnd).toBe(lineCount);
+    await page.mouse.up();
+    ff.note({ dragSelect: { visibleLines, selectionEnd: (await measure()).selectionEnd } });
+  });
+
+  await check("wheel scrolls the editor, then hands off to the panel at its bottom", async () => {
+    await caretToFirstLine();
+    const box = await editor.boundingBox();
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    const start = await measure();
+    await page.mouse.wheel(0, 200);
+    await expect.poll(async () => (await measure()).editorScrollTop).toBeGreaterThan(start.editorScrollTop);
+    expect((await measure()).panelScrollTop, "panel holds still while the editor scrolls").toBe(start.panelScrollTop);
+    for (let i = 0; i < 20 && (await measure()).editorScrollTop < start.editorScrollMax; i++) {
+      await page.mouse.wheel(0, 400);
+      await page.waitForTimeout(100);
+    }
+    const atBottom = await measure();
+    expect(atBottom.editorScrollTop, "editor reached its bottom").toBe(atBottom.editorScrollMax);
+    await page.mouse.wheel(0, 200);
+    await expect.poll(async () => (await measure()).panelScrollTop).toBeGreaterThan(atBottom.panelScrollTop);
+    ff.note({ wheel: { start, atBottom, after: await measure() } });
+  });
+
+  await check("narrowing the pane via the divider narrows the editor", async () => {
+    await editor.evaluate((el) => el.scrollIntoView({ block: "center" }));
+    const before = await measure();
+    const handle = page.locator("[data-dragging] button");
+    const hb = await handle.boundingBox();
+    await page.mouse.move(hb.x + hb.width / 2, hb.y + hb.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(hb.x - 300, hb.y + hb.height / 2, { steps: 10 });
+    await page.mouse.up();
+    await expect.poll(async () => (await measure()).editorW).toBeLessThan(before.editorW - 200);
+    ff.note({ narrowed: { before: before.editorW, after: (await measure()).editorW } });
+    await ff.shot("narrowed");
+  });
+
+  await check("loading a template's layout and styles via Examples leaves the Theme panel where it was", async () => {
+    await page.evaluate(() => {
+      document.activeElement.blur();
+      document.querySelector('[aria-label="Custom CSS"]').closest(".theme-tab").scrollTop = 400;
+    });
+    await page.waitForTimeout(150);
+    const before = await measure();
+    expect(before.panelScrollTop, "panel parked at 400").toBe(400);
+    await page.getByRole("button", { name: "Examples" }).click();
+    await page.getByRole("button", { name: "storyline" }).click();
+    const content = page.getByLabel("Load default content");
+    if (await content.isChecked()) await content.click();
+    await expect(page.getByLabel("Load layout and styles")).toBeChecked();
+    await page.getByRole("button", { name: "Load", exact: true }).click();
+    await expect.poll(async () => (await measure()).lineCount).not.toBe(before.lineCount);
+    await page.waitForTimeout(1000);
+    const after = await measure();
+    ff.note({ templateLoad: { before, after } });
+    await ff.shot("template-load");
+    expect(after.panelScrollTop, "panel scroll position after the template load").toBe(before.panelScrollTop);
+  });
+
+  await check("resizing the window to 390x844 refits the editor to the panel", async () => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await fillsPanel("phone");
+    await ff.shot("phone-editor");
+  });
+
+  await check("touch 390x844: editor is at most half the panel and a swipe beside it scrolls the panel", async () => {
+    await withPhone(async (phone, phoneEditor) => {
+      await phoneEditor.evaluate((el) => el.scrollIntoView({ block: "center" }));
+      await phone.waitForTimeout(300);
+      const m = await measure(phoneEditor);
+      ff.note({ touch: m });
+      await ff.shot("touch-editor", phone);
+      expect(m.editorH, "editor at most half the visible panel").toBeLessThanOrEqual(Math.ceil(m.panelVisible / 2));
+      expect(m.editorH, "editor keeps the 300px minimum").toBeGreaterThanOrEqual(Math.min(MIN_HEIGHT, m.panelVisible));
+      const { x, y } = await phoneEditor.evaluate((el) => {
+        const panel = el.closest(".theme-tab").getBoundingClientRect();
+        const box = el.getBoundingClientRect();
+        return { x: Math.round(box.left + box.width / 2), y: Math.round((Math.max(panel.top, 0) + box.top) / 2) };
+      });
+      const cdp = await phone.context().newCDPSession(phone);
+      await cdp.send("Input.synthesizeScrollGesture", { x, y, yDistance: 150, gestureSourceType: "touch", speed: 1500 });
+      await expect.poll(async () => (await measure(phoneEditor)).panelScrollTop).toBeLessThan(m.panelScrollTop);
+      ff.note({ swipe: { x, y, before: m.panelScrollTop, after: (await measure(phoneEditor)).panelScrollTop } });
+    });
+  });
+
+  await check("touch 390x844: with only the editor's top 200px in the panel, a tap on line 5 puts the caret on line 5", async () => {
+    await withPhone(async (phone, phoneEditor) => {
+      await showEditorTop(phone, 200);
+      await phone.waitForTimeout(300);
+      const before = await measure(phoneEditor);
+      const line = await phoneEditor.evaluate((el) => {
+        const css = window.__editors.filter((e) => e.getModel()?.getLanguageId() === "scss").pop();
+        const at = css.getScrolledVisiblePosition({ lineNumber: 5, column: 1 });
+        const box = css.getDomNode().getBoundingClientRect();
+        return { x: box.left + at.left + 30, y: box.top + at.top + at.height / 2 };
+      });
+      await phone.touchscreen.tap(line.x, line.y);
+      await phone.waitForTimeout(400);
+      const after = await measure(phoneEditor);
+      await ff.shot("touch-tap-line-5", phone);
+      ff.note({ touchTap: { before, after } });
+      expect(after.caretLine, "caret on the tapped line").toBe(5);
+      expect(after.panelScrollTop, "panel did not scroll on tap").toBe(before.panelScrollTop);
+    });
+  });
+
+  if (failures.length) throw new Error(`failed checks: ${failures.join("; ")}`);
+};
