@@ -10,6 +10,7 @@ The home page (`/`) is a split view: a Monaco text editor on the left and a live
 - `sandbox-expiry` — every save re-stamps `meta.expires` to now + 24h (also after the mobile Clear button, which writes `meta: {}`), so a chart being edited survives leaving `/` and coming back; an expired or missing stamp resets to the default chart on the next mount of `/`. Driven by `examples/sandbox-expiry.mjs`.
 - `sandbox-upsell` — after 3 min of editing (20s with `?isE2E=true`) the "Don't Lose Your Work" modal appears. _Not yet driven_ (covered by `app/e2e/not-logged-in.spec.ts`).
 - `sandbox-parse-error` — invalid text shows an editor error instead of crashing the graph. _Not yet driven._
+- `sandbox-container-warning` — a container whose `}` is missing, or sits below lines not indented under its `{`, gets a Monaco warning marker on the `{` line; the chart still renders, and moving the `}` up clears the marker and moves the outdented nodes out of the container. Driven by `examples/unclosed-container.mjs`.
 
 ## How to get to it (user POV)
 
@@ -36,6 +37,8 @@ Preconditions:
 - After a reload the doc has one extra trailing newline (it round-trips through `docToString`). Compare with `trimEnd()`.
 - Edge label syntax binds to the line it is on: `  Other: label` under `Start` is an edge `Start -> label [Other]`, not a node named `Other: label`.
 - The first graph render after `ff.open` is the default chart; wait for a predicate on your own labels, not just `nodes.length > 0`.
+- Monaco auto-closes `{`. Typing `Build {` then more lines pushes the auto-inserted `}` to the end of the doc, so `ff.typeDoc` of a container leaves one trailing `}`.
+- Read markers with `window.monaco.editor.getModelMarkers({})` (severity 8 error, 4 warning). The squiggle element sits under `.view-lines`, so Playwright's `hover()` on it times out; move the mouse to its bounding box instead.
 - The `Pro tip: Right-click any node…` banner overlays the top of the canvas in screenshots; it is expected.
 - `/` loads the sandbox only on mount: leaving for any other route (Feedback, Settings) and returning remounts it and re-runs the expiry check. A drive that wants to see the expiry reset must navigate away and back or reload; editing in place never triggers it.
 - The mobile Clear (trash) button has no accessible name; locate it with `page.locator("button.\\!absolute.bottom-1.right-1")` at a phone-width viewport (it is `md:hidden`).
