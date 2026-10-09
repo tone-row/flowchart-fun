@@ -415,28 +415,35 @@ function CustomCSSEditor({
           },
         }}
         theme={mode === "dark" ? "vs-dark" : "vs-light"}
-        onMount={(editor) => {
-          const reveal = () =>
-            wrapperRef.current?.scrollIntoView({ block: "nearest" });
-          // Scrolling during mousedown would move the text under the pointer before Monaco reads the click position.
-          let mouseHeld = false;
-          editor.getDomNode()?.addEventListener(
-            "mousedown",
-            () => {
-              mouseHeld = true;
-              window.addEventListener(
-                "mouseup",
-                () => {
-                  mouseHeld = false;
-                  reveal();
-                },
-                { once: true }
-              );
-            },
-            true
-          );
-          editor.onDidFocusEditorText(() => {
-            if (!mouseHeld) reveal();
+        onMount={(editor, monaco) => {
+          // Click, drag and touch tap all report source "mouse".
+          let frame = 0;
+          editor.onDidChangeCursorPosition((e) => {
+            if (
+              e.source === "mouse" ||
+              e.reason === monaco.editor.CursorChangeReason.ContentFlush
+            )
+              return;
+            cancelAnimationFrame(frame);
+            // Monaco reveals the caret in its own viewport on the next frame; measure after that render.
+            frame = requestAnimationFrame(() => {
+              const panel = wrapperRef.current?.closest(".theme-tab");
+              const node = editor.getDomNode();
+              const position = editor.getPosition();
+              if (!panel || !node || !position) return;
+              const caret = editor.getScrolledVisiblePosition(position);
+              if (!caret) return;
+              const caretTop = node.getBoundingClientRect().top + caret.top;
+              const caretBottom = caretTop + caret.height;
+              const rect = panel.getBoundingClientRect();
+              const visibleTop = Math.max(rect.top, 0);
+              const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+              if (caretBottom + caret.height > visibleBottom) {
+                panel.scrollTop += caretBottom + caret.height - visibleBottom;
+              } else if (caretTop - caret.height < visibleTop) {
+                panel.scrollTop -= visibleTop - (caretTop - caret.height);
+              }
+            });
           });
         }}
         beforeMount={(monaco) => {
