@@ -1,4 +1,3 @@
-// A frozen renderer also wedges the harness teardown, so on failure the browser is closed first.
 const RESPONSIVE_MS = 2000;
 
 const withDeadline = (promise, what) =>
@@ -9,16 +8,7 @@ const withDeadline = (promise, what) =>
     ),
   ]);
 
-export default async (ctx) => {
-  try {
-    await drive(ctx);
-  } catch (err) {
-    await ctx.page.context().browser().close().catch(() => {});
-    throw err;
-  }
-};
-
-async function drive({ page, ff, step, expect }) {
+export default async ({ page, ff, step, expect }) => {
   await page.setViewportSize({ width: 1366, height: 768 });
   await ff.open("/");
   await ff.typeDoc("Start .shape_diamond\n  End");
@@ -56,7 +46,7 @@ async function drive({ page, ff, step, expect }) {
   const closed = await withDeadline(ff.waitForGraph(), "the closed comment");
   expect(closed.nodes.length).toBe(before.nodes.length);
   expect(await shapeOf(page, "Start")).toBe("diamond");
-}
+};
 
 function shapeOf(page, label) {
   return page.evaluate(
