@@ -140,16 +140,21 @@ for (const locale of locales) {
       console.log(
         `Translating ${batch.length} phrases... (${retries} retries)`
       );
-      const response = await openai.createCompletion({
-        model: "gpt-3.5-turbo-instruct",
-        prompt,
+      const response = await openai.createChatCompletion({
+        model: "gpt-4.1-mini",
+        messages: [
+          {
+            role: "system",
+            content:
+              'You translate UI strings. Reply with only the translations, one per line, in the same order, each starting with "- ". Keep placeholders like {name} and {0}, ICU message syntax, and tags like <0></0> exactly as written.',
+          },
+          { role: "user", content: prompt },
+        ],
         max_tokens: 2048,
         temperature: 0.5,
-        // no stop sequence, we want to translate all phrases
-        stop: "",
       });
 
-      translations = response.data.choices[0].text.split("\n");
+      translations = response.data.choices[0].message.content.split("\n");
 
       retries--;
 
