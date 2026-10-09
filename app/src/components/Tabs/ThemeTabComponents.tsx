@@ -420,12 +420,13 @@ function CustomCSSEditor({
           let frame = 0;
           editor.onDidChangeCursorPosition((e) => {
             if (
+              !editor.hasWidgetFocus() ||
               e.source === "mouse" ||
               e.reason === monaco.editor.CursorChangeReason.ContentFlush
             )
               return;
             cancelAnimationFrame(frame);
-            // Monaco reveals the caret in its own viewport on the next frame; measure after that render.
+            // Monaco reveals the caret only after it fires this event.
             frame = requestAnimationFrame(() => {
               const panel = wrapperRef.current?.closest(".theme-tab");
               const node = editor.getDomNode();
