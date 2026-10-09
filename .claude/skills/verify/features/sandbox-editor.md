@@ -1,13 +1,13 @@
 # Sandbox editor
 
-The home page (`/`) is a split view: a Monaco text editor on the left and a live Cytoscape graph on the right. Each line becomes a node, indentation creates edges, `label: Target` labels an edge, `(Target)` links to an existing node, and `.color_x` / `.shape_x` add classes. Logged-out and free users get one chart, kept in localStorage for 24 hours.
+The home page (`/`) is a split view: a Monaco text editor on the left and a live Cytoscape graph on the right. Each line becomes a node, indentation creates edges, `label: Target` labels an edge, `(Target)` links to an existing node, and `.color_x` / `.shape_x` add classes. Logged-out and free users get one chart, kept in localStorage for 24 hours after the last save.
 
 ## Sub-features
 
 - `sandbox-render` — typed text re-renders the graph: nodes, edges, edge labels, classes. Driven by `examples/sandbox-edit.mjs`.
 - `sandbox-persist` — the doc is saved to `flowcharts.fun.sandbox` with `meta.expires` ≈ now + 24h and survives a reload. Driven by `examples/sandbox-edit.mjs`.
 - `sandbox-paste` — pasting 3+ lines also offers "Convert to Flowchart Fun syntax?". _Not yet driven_ beyond observing the overlay text.
-- `sandbox-expiry` — an expired `meta.expires` resets to the default chart on load. _Not yet driven._
+- `sandbox-expiry` — every save re-stamps `meta.expires` to now + 24h (also after the mobile Clear button, which writes `meta: {}`), so a chart being edited survives leaving `/` and coming back; an expired or missing stamp resets to the default chart on the next mount of `/`. Driven by `examples/sandbox-expiry.mjs`.
 - `sandbox-upsell` — after 3 min of editing (20s with `?isE2E=true`) the "Don't Lose Your Work" modal appears. _Not yet driven_ (covered by `app/e2e/not-logged-in.spec.ts`).
 - `sandbox-parse-error` — invalid text shows an editor error instead of crashing the graph. _Not yet driven._
 
@@ -37,3 +37,6 @@ Preconditions:
 - Edge label syntax binds to the line it is on: `  Other: label` under `Start` is an edge `Start -> label [Other]`, not a node named `Other: label`.
 - The first graph render after `ff.open` is the default chart; wait for a predicate on your own labels, not just `nodes.length > 0`.
 - The `Pro tip: Right-click any node…` banner overlays the top of the canvas in screenshots; it is expected.
+- `/` loads the sandbox only on mount: leaving for any other route (Feedback, Settings) and returning remounts it and re-runs the expiry check. A drive that wants to see the expiry reset must navigate away and back or reload; editing in place never triggers it.
+- The mobile Clear (trash) button has no accessible name; locate it with `page.locator("button.\\!absolute.bottom-1.right-1")` at a phone-width viewport (it is `md:hidden`).
+- Submitting Feedback in a drive needs `page.route("**/api/mail", ...)` fulfilling `{"success":true}`; an empty `{}` body makes the form show an error instead of "Thank you for your feedback!".
