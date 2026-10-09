@@ -209,7 +209,7 @@ describe("getStyleStringFromMeta", () => {
   });
 
   it("concatenates theme.style, cytoscapeStyle, theme.postStyle (in that order) when not customCssOnly", () => {
-    const cytoscapeStyle = "/* USER_CSS_MARKER */";
+    const cytoscapeStyle = ".user_css_marker { color: red; }";
     const meta = {
       customCssOnly: false,
       cytoscapeStyle,
@@ -238,13 +238,13 @@ describe("getStyleStringFromMeta", () => {
   it("CHARACTERIZATION: explicit customCssOnly=false falls through to concatenation (only null/undefined fall back)", () => {
     const meta = {
       customCssOnly: false,
-      cytoscapeStyle: "/* X */",
+      cytoscapeStyle: ".x { color: red; }",
       themeEditor: defaultTheme,
     };
     const result = getStyleStringFromMeta(meta);
-    expect(result).toContain("/* X */");
+    expect(result).toContain(".x { color: red; }");
     // not just the raw cytoscapeStyle
-    expect(result).not.toBe("/* X */");
+    expect(result).not.toBe(".x { color: red; }");
   });
 });
 

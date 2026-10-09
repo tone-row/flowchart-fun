@@ -266,23 +266,32 @@ const ff = {
   },
 };
 
+// A page frozen by a synchronous loop never answers a screenshot or a trace stop.
+const TEARDOWN_MS = 5000;
+const teardown = (promise) => {
+  let timer;
+  return Promise.race([promise, new Promise((r) => (timer = setTimeout(r, TEARDOWN_MS)))])
+    .catch(() => {})
+    .finally(() => clearTimeout(timer));
+};
+
 const result = { ok: false, label, url: null, steps, evidence: OUT };
 try {
   const mod = await import(pathToFileURL(path.resolve(stepsFile)).href);
   await mod.default({ page, context, ff, step, expect });
   result.ok = true;
-  await page.screenshot({ path: path.join(OUT, "final.png") }).catch(() => {});
+  await teardown(page.screenshot({ path: path.join(OUT, "final.png") }));
 } catch (err) {
   result.error = String(err?.stack ?? err);
   log(`ERROR ${String(err?.message ?? err)}`);
-  await page.screenshot({ path: path.join(OUT, "failure.png") }).catch(() => {});
+  await teardown(page.screenshot({ path: path.join(OUT, "failure.png") }));
 } finally {
   result.url = page.url();
-  await context.tracing.stop({ path: path.join(OUT, "trace.zip") }).catch(() => {});
+  await teardown(context.tracing.stop({ path: path.join(OUT, "trace.zip") }));
   writeFileSync(path.join(OUT, "console.json"), JSON.stringify(consoleEntries, null, 2));
   writeFileSync(path.join(OUT, "network.json"), JSON.stringify(networkEntries, null, 2));
   writeFileSync(path.join(OUT, "result.json"), JSON.stringify(result, null, 2));
-  await browser.close();
+  await teardown(browser.close());
 }
 
 // React dev-mode "Warning: …" messages arrive as console.error but are not failures.
