@@ -346,9 +346,18 @@ function CustomCSSEditor({
   useEffect(() => {
     const panel = wrapperRef.current?.closest(".theme-tab");
     if (!panel) return;
-    const observer = new ResizeObserver(([entry]) =>
-      setHeight(Math.max(MIN_CSS_EDITOR_HEIGHT, entry.contentRect.height))
-    );
+    const observer = new ResizeObserver(([entry]) => {
+      const panelHeight = entry.contentRect.height;
+      // Monaco cancels touchmove over the editor, so touch screens need room beside it to swipe the panel.
+      setHeight(
+        window.matchMedia("(pointer: coarse)").matches
+          ? Math.min(
+              panelHeight,
+              Math.max(MIN_CSS_EDITOR_HEIGHT, panelHeight / 2)
+            )
+          : Math.max(MIN_CSS_EDITOR_HEIGHT, panelHeight)
+      );
+    });
     observer.observe(panel);
     return () => observer.disconnect();
   }, []);
@@ -406,6 +415,30 @@ function CustomCSSEditor({
           },
         }}
         theme={mode === "dark" ? "vs-dark" : "vs-light"}
+        onMount={(editor) => {
+          const reveal = () =>
+            wrapperRef.current?.scrollIntoView({ block: "nearest" });
+          // Scrolling during mousedown would move the text under the pointer before Monaco reads the click position.
+          let mouseHeld = false;
+          editor.getDomNode()?.addEventListener(
+            "mousedown",
+            () => {
+              mouseHeld = true;
+              window.addEventListener(
+                "mouseup",
+                () => {
+                  mouseHeld = false;
+                  reveal();
+                },
+                { once: true }
+              );
+            },
+            true
+          );
+          editor.onDidFocusEditorText(() => {
+            if (!mouseHeld) reveal();
+          });
+        }}
         beforeMount={(monaco) => {
           // turn off validation
           monaco.languages.css.scssDefaults.setOptions({
