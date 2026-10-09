@@ -27,13 +27,14 @@ export default async ({ page, ff, step, expect }) => {
   ]);
   ff.note({ markers: await markers(page) });
   expect(await page.locator(".monaco-editor .squiggly-error").count()).toBe(0);
-  await ff.shot("warning", page.locator("main").first());
+  await ff.shot("warning");
 
   step("hovering the squiggle shows the message");
-  await page.locator(".monaco-editor .squiggly-warning").first().hover();
+  const squiggle = await page.locator(".monaco-editor .squiggly-warning").first().boundingBox();
+  await page.mouse.move(squiggle.x + squiggle.width / 2, squiggle.y + squiggle.height / 2);
   await expect(page.locator(".monaco-editor .monaco-hover").first()).toContainText("Container");
   ff.note({ hover: await page.locator(".monaco-editor .monaco-hover").first().textContent() });
-  await ff.shot("hover", page.locator(".monaco-editor").first());
+  await ff.shot("hover");
 
   step("move the } up under the container's last child: the warning clears");
   await page.locator(".monaco-editor .view-lines").first().click();
@@ -60,5 +61,7 @@ export default async ({ page, ff, step, expect }) => {
   await page.keyboard.press("ControlOrMeta+z");
   expect(await ff.editorText()).toBe("Start\n  Build {\n    Compile\n  }\n  Test\n    Done");
   await expect.poll(() => markers(page)).toEqual([]);
-  await ff.shot("closed", page.locator("main").first());
+  await ff.waitForGraph((g) => g.nodes.find((n) => n.label === "Test")?.parent === null);
+  await page.waitForTimeout(1000);
+  await ff.shot("closed");
 };
