@@ -147,8 +147,8 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
 
 function useLineDecoration(lineNumber: number | undefined, className: string) {
   const decorations = useRef<string[]>([]);
+  const editor = useEditorStore((s) => s.editor);
   useEffect(() => {
-    const editor = useEditorStore.getState().editor;
     if (!editor) return;
     if (typeof lineNumber === "number") {
       decorations.current = editor.deltaDecorations(
@@ -172,7 +172,7 @@ function useLineDecoration(lineNumber: number | undefined, className: string) {
     return () => {
       decorations.current = editor.deltaDecorations(decorations.current, []);
     };
-  }, [lineNumber, className]);
+  }, [editor, lineNumber, className]);
 }
 
 /**
