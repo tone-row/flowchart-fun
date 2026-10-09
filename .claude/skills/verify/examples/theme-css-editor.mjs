@@ -148,6 +148,7 @@ export default async ({ page, ff, step, expect }) => {
   await check("with the panel scrolled away from the focused editor, typing brings the caret back on screen", async () => {
     await caretToFirstLine();
     for (let i = 0; i < 10; i++) await page.keyboard.press("ArrowDown");
+    await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
     await page.evaluate(() => (document.querySelector('[aria-label="Custom CSS"]').closest(".theme-tab").scrollTop = 0));
     const away = await measure();
     expect(away.caretOnScreen, "caret off screen before typing").toBe(false);
@@ -216,6 +217,28 @@ export default async ({ page, ff, step, expect }) => {
     await expect.poll(async () => (await measure()).editorW).toBeLessThan(before.editorW - 200);
     ff.note({ narrowed: { before: before.editorW, after: (await measure()).editorW } });
     await ff.shot("narrowed");
+  });
+
+  await check("loading a template's layout and styles via Examples leaves the Theme panel where it was", async () => {
+    await page.evaluate(() => {
+      document.activeElement.blur();
+      document.querySelector('[aria-label="Custom CSS"]').closest(".theme-tab").scrollTop = 400;
+    });
+    await page.waitForTimeout(150);
+    const before = await measure();
+    expect(before.panelScrollTop, "panel parked at 400").toBe(400);
+    await page.getByRole("button", { name: "Examples" }).click();
+    await page.getByRole("button", { name: "storyline" }).click();
+    const content = page.getByLabel("Load default content");
+    if (await content.isChecked()) await content.click();
+    await expect(page.getByLabel("Load layout and styles")).toBeChecked();
+    await page.getByRole("button", { name: "Load", exact: true }).click();
+    await expect.poll(async () => (await measure()).lineCount).not.toBe(before.lineCount);
+    await page.waitForTimeout(1000);
+    const after = await measure();
+    ff.note({ templateLoad: { before, after } });
+    await ff.shot("template-load");
+    expect(after.panelScrollTop, "panel scroll position after the template load").toBe(before.panelScrollTop);
   });
 
   await check("resizing the window to 390x844 refits the editor to the panel", async () => {
