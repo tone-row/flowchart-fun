@@ -141,7 +141,7 @@ for (const locale of locales) {
         `Translating ${batch.length} phrases... (${retries} retries)`
       );
       const response = await openai.createChatCompletion({
-        model: "gpt-4.1-mini",
+        model: "gpt-5.4-mini",
         messages: [
           {
             role: "system",
@@ -150,8 +150,8 @@ for (const locale of locales) {
           },
           { role: "user", content: prompt },
         ],
-        max_tokens: 2048,
-        temperature: 0.5,
+        max_completion_tokens: 2048,
+        reasoning_effort: "none",
       });
 
       translations = response.data.choices[0].message.content.split("\n");
