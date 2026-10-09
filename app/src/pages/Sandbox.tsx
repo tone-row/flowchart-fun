@@ -14,8 +14,9 @@ import { OnChange } from "@monaco-editor/react";
 
 import { TextEditor } from "../components/TextEditor";
 import { getDefaultLocalChart } from "../lib/getDefaultChart";
-import { withFreshExpiry } from "../lib/getExpirationDate";
+import { getExpirationDate, withFreshExpiry } from "../lib/getExpirationDate";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
+import { theme as defaultTheme } from "../lib/templates/default-template";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import styles from "./Sandbox.module.css";
@@ -163,7 +164,17 @@ const Sandbox = memo(function Edit() {
             </Tabs.Content>
             <ClearTextButton
               handleClear={() => {
-                useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
+                useDoc.setState(
+                  {
+                    text: "",
+                    meta: {
+                      themeEditor: defaultTheme,
+                      expires: getExpirationDate(),
+                    },
+                  },
+                  false,
+                  "Edit/clear"
+                );
                 const editor = useEditorStore.getState().editor;
                 if (!editor) return;
                 editor.focus();
