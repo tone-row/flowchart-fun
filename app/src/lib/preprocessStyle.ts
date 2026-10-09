@@ -335,7 +335,7 @@ export function processScss(scss: string): {
  * cytoscape's own comment stripping backtracks exponentially on a comment
  * that is never closed, so comments are removed before the style reaches it.
  */
-function stripCssComments(css: string) {
+export function stripCssComments(css: string) {
   return css.replace(/\/\*[\s\S]*?(?:\*\/|$)/g, "");
 }
 

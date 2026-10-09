@@ -1,5 +1,9 @@
 import { spawnSync } from "child_process";
-import { getStyleStringFromMeta, preprocessStyle } from "./preprocessStyle";
+import {
+  getStyleStringFromMeta,
+  preprocessStyle,
+  stripCssComments,
+} from "./preprocessStyle";
 import {
   theme as storylineTheme,
   cytoscapeStyle as storylineCss,
@@ -65,5 +69,58 @@ describe("an unclosed comment at the end of the custom CSS", () => {
       })
     );
     expect(unclosed).toMatchObject({ signal: null, status: 0 });
+  });
+
+  it("removing a comment never splices its neighbours into a new /*", () => {
+    const unclosed = parseWithCytoscape(
+      finalStyle({
+        themeEditor: storylineTheme,
+        cytoscapeStyle: `//* x */*\n${storylineCss}`,
+      })
+    );
+    expect(unclosed).toMatchObject({ signal: null, status: 0 });
+  });
+});
+
+describe("stripCssComments", () => {
+  const alphabet = ["/", "*", " ", "a", "\n"];
+  const everyString = (length: number): string[] =>
+    length === 0
+      ? [""]
+      : everyString(length - 1).flatMap((s) => alphabet.map((c) => s + c));
+
+  it("leaves no /* in its output for any input up to 7 characters", () => {
+    for (let length = 0; length <= 7; length++) {
+      for (const input of everyString(length)) {
+        expect([input, stripCssComments(input)]).toEqual([
+          input,
+          expect.not.stringContaining("/*"),
+        ]);
+      }
+    }
+  });
+
+  it("cytoscape parses the final stylesheet within budget for splicing and random prefixes", () => {
+    let seed = 1;
+    const next = () => (seed = (seed * 48271) % 2147483647);
+    const random = () =>
+      Array.from({ length: 24 }, () => alphabet[next() % alphabet.length]).join(
+        ""
+      );
+    const prefixes = [
+      "//* x */*",
+      "//**/*",
+      ...Array.from({ length: 10 }, random),
+    ];
+    for (const prefix of prefixes) {
+      const style = finalStyle({
+        themeEditor: storylineTheme,
+        cytoscapeStyle: `${prefix}\n${storylineCss}\n${prefix}`,
+      });
+      expect([prefix, parseWithCytoscape(style)]).toEqual([
+        prefix,
+        expect.objectContaining({ signal: null, status: 0 }),
+      ]);
+    }
   });
 });
