@@ -68,7 +68,7 @@ msgstr "Konto"
 msgid "Active"
 msgstr "Aktiv"
 
-#: src/lib/parserErrors.tsx:47
+#: src/lib/parserErrors.tsx:49
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "Fügen Sie einen Backslash (<0>\\</0>) vor jedem Sonderzeichen ein: <1>(</1>, <2>:</2>, <3>#</3>, oder <4>.</4>`"
 
@@ -363,6 +363,14 @@ msgstr "Bestätigen Sie Ihre E-Mail-Adresse, um sich anzumelden."
 msgid "Connect your Data"
 msgstr "Verbinden Sie Ihre Daten"
 
+#: src/lib/parserErrors.tsx:76
+msgid "Container is never closed, so every line below it is inside it. Add a {brace} on its own line after the container's last child."
+msgstr "Der Container wird nie geschlossen, daher liegt jede Zeile darunter in ihm. Fügen Sie nach dem letzten Kind des Containers eine {brace} in einer eigenen Zeile hinzu."
+
+#: src/lib/parserErrors.tsx:78
+msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
+msgstr "Der Container wird nicht dort geschlossen, wo Sie es erwarten. Zeilen, die nicht darunter eingerückt sind, liegen ebenfalls in ihm. Verschieben Sie seine {brace} nach oben, direkt hinter seine letzte eingerückte Zeile."
+
 #: src/components/LearnSyntaxDialog.tsx:260
 msgid "Containers"
 msgstr "Behälter"
@@ -626,7 +634,7 @@ msgstr "Kantenstil"
 msgid "Edge Text Size"
 msgstr "Kanten Textgröße"
 
-#: src/lib/parserErrors.tsx:19
+#: src/lib/parserErrors.tsx:21
 msgid "Edge missing indentation"
 msgstr "Kante fehlende Einrückung"
 
@@ -962,7 +970,7 @@ msgstr "IDs"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "Wenn ein Konto mit dieser E-Mail vorhanden ist, haben wir Ihnen eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts gesendet."
 
-#: src/lib/parserErrors.tsx:21
+#: src/lib/parserErrors.tsx:23
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "Wenn Sie eine Kante erstellen möchten, rücken Sie diese Zeile ein. Wenn nicht, entkomme dem Doppelpunkt mit einem Backslash <0>\\:</0>"
 
@@ -1232,7 +1240,7 @@ msgstr "Verschieben"
 msgid "Move {0}"
 msgstr "Verschieben {0}"
 
-#: src/lib/parserErrors.tsx:29
+#: src/lib/parserErrors.tsx:31
 msgid "Multiple pointers on same line"
 msgstr "Mehrere Zeiger auf derselben Zeile"
 
@@ -1442,7 +1450,7 @@ msgstr "Permanente Diagramme sind eine Pro-Funktion"
 msgid "Playbook"
 msgstr "Spielbuch"
 
-#: src/lib/parserErrors.tsx:34
+#: src/lib/parserErrors.tsx:36
 msgid "Pointer and container on same line"
 msgstr "Zeiger und Container auf derselben Zeile"
 
@@ -1958,19 +1966,19 @@ msgstr "Zeit zum Entscheiden"
 msgid "Tip"
 msgstr "Tipp"
 
-#: src/lib/parserErrors.tsx:61
+#: src/lib/parserErrors.tsx:63
 msgid "To fix this change one of the edge IDs"
 msgstr "Um dies zu beheben, ändern Sie eine der Kanten-IDs"
 
-#: src/lib/parserErrors.tsx:56
+#: src/lib/parserErrors.tsx:58
 msgid "To fix this change one of the node IDs"
 msgstr "Um das zu beheben, ändern Sie eine der Knoten-IDs"
 
-#: src/lib/parserErrors.tsx:30
+#: src/lib/parserErrors.tsx:32
 msgid "To fix this move one pointer to the next line"
 msgstr "Um das zu beheben, verschieben Sie einen Zeiger auf die nächste Zeile"
 
-#: src/lib/parserErrors.tsx:36
+#: src/lib/parserErrors.tsx:38
 msgid "To fix this start the container <0/> on a different line"
 msgstr "Um dies zu beheben, starten Sie den Container <0/> auf einer anderen Zeile."
 
@@ -2015,11 +2023,11 @@ msgstr "Dokumente mit KI in Diagramme umwandeln"
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "Verwandeln Sie Ihre Ideen in professionelle Diagramme in Sekundenschnelle"
 
-#: src/lib/parserErrors.tsx:60
+#: src/lib/parserErrors.tsx:62
 msgid "Two edges have the same ID"
 msgstr "Zwei Kanten haben die gleiche ID"
 
-#: src/lib/parserErrors.tsx:55
+#: src/lib/parserErrors.tsx:57
 msgid "Two nodes have the same ID"
 msgstr "Zwei Knoten haben die gleiche ID"
 
@@ -2031,7 +2039,7 @@ msgstr "Oh oh, du hast keine kostenlosen Anfragen mehr! Upgrade auf Flowchart Fu
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: src/lib/parserErrors.tsx:45
+#: src/lib/parserErrors.tsx:47
 msgid "Unescaped special character"
 msgstr "Nicht maskiertes Sonderzeichen"
 
@@ -2043,7 +2051,7 @@ msgstr "Einzigartiger Textwert, um einen Knoten zu identifizieren"
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: src/lib/parserErrors.tsx:65
+#: src/lib/parserErrors.tsx:67
 msgid "Unknown Parsing Error"
 msgstr "Unbekannter Parser-Fehler"
 

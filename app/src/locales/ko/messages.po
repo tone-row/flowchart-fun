@@ -68,7 +68,7 @@ msgstr "계정"
 msgid "Active"
 msgstr "활성화"
 
-#: src/lib/parserErrors.tsx:47
+#: src/lib/parserErrors.tsx:49
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "특수 문자 앞에는 역슬래시 (<0>\\</0>)를 추가하세요: <1>(</1>, <2>:</2>, <3>#</3>, 또는 <4>.</4>"
 
@@ -363,6 +363,14 @@ msgstr "로그인하려면 이메일 주소를 확인하세요."
 msgid "Connect your Data"
 msgstr "데이터 연결"
 
+#: src/lib/parserErrors.tsx:76
+msgid "Container is never closed, so every line below it is inside it. Add a {brace} on its own line after the container's last child."
+msgstr "컨테이너가 닫히지 않아서 그 아래의 모든 줄이 컨테이너 안에 들어갑니다. 컨테이너의 마지막 자식 다음 줄에 {brace}만 따로 추가하세요."
+
+#: src/lib/parserErrors.tsx:78
+msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
+msgstr "컨테이너가 예상한 위치에서 닫히지 않았습니다. 그 아래로 들여쓰지 않은 줄도 컨테이너 안에 들어갑니다. {brace}를 마지막으로 들여쓴 줄 바로 다음으로 옮기세요."
+
 #: src/components/LearnSyntaxDialog.tsx:260
 msgid "Containers"
 msgstr "컨테이너"
@@ -626,7 +634,7 @@ msgstr "가장자리 스타일"
 msgid "Edge Text Size"
 msgstr "가장자리 텍스트 크기"
 
-#: src/lib/parserErrors.tsx:19
+#: src/lib/parserErrors.tsx:21
 msgid "Edge missing indentation"
 msgstr "들여쓰기가 누락된 가장자리"
 
@@ -962,7 +970,7 @@ msgstr "식별자"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "해당 이메일로 계정이 있다면 비밀번호 재설정을 위한 안내를 포함한 이메일을 보내드립니다."
 
-#: src/lib/parserErrors.tsx:21
+#: src/lib/parserErrors.tsx:23
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "만약 가장자리를 만들려면, 이 줄을 들여쓰기하십시오. 만약 그렇지 않다면, 콜론을 백슬래시로 이스케이프하십시오 <0>\\:</0>"
 
@@ -1232,7 +1240,7 @@ msgstr "이동"
 msgid "Move {0}"
 msgstr "이동 {0}"
 
-#: src/lib/parserErrors.tsx:29
+#: src/lib/parserErrors.tsx:31
 msgid "Multiple pointers on same line"
 msgstr "같은 줄에 여러 포인터"
 
@@ -1442,7 +1450,7 @@ msgstr "영구 차트는 프로 기능입니다"
 msgid "Playbook"
 msgstr "플레이북"
 
-#: src/lib/parserErrors.tsx:34
+#: src/lib/parserErrors.tsx:36
 msgid "Pointer and container on same line"
 msgstr "같은 줄에 포인터와 컨테이너"
 
@@ -1958,19 +1966,19 @@ msgstr "결정할 시간"
 msgid "Tip"
 msgstr "팁"
 
-#: src/lib/parserErrors.tsx:61
+#: src/lib/parserErrors.tsx:63
 msgid "To fix this change one of the edge IDs"
 msgstr "이를 수정하려면, 가장자리 ID 중 하나를 변경하십시오."
 
-#: src/lib/parserErrors.tsx:56
+#: src/lib/parserErrors.tsx:58
 msgid "To fix this change one of the node IDs"
 msgstr "이것을 수정하려면 노드 ID 중 하나를 변경하십시오"
 
-#: src/lib/parserErrors.tsx:30
+#: src/lib/parserErrors.tsx:32
 msgid "To fix this move one pointer to the next line"
 msgstr "이것을 수정하려면 포인터를 다음 줄로 이동하십시오"
 
-#: src/lib/parserErrors.tsx:36
+#: src/lib/parserErrors.tsx:38
 msgid "To fix this start the container <0/> on a different line"
 msgstr "이것을 수정하려면 컨테이너 <0/>을 다른 줄에 시작하십시오"
 
@@ -2015,11 +2023,11 @@ msgstr "문서를 AI로 다이어그램으로 변환"
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "아이디어를 몇 초만에 전문적인 다이어그램으로 변환하세요."
 
-#: src/lib/parserErrors.tsx:60
+#: src/lib/parserErrors.tsx:62
 msgid "Two edges have the same ID"
 msgstr "두 개의 간선이 같은 ID를 가지고 있습니다"
 
-#: src/lib/parserErrors.tsx:55
+#: src/lib/parserErrors.tsx:57
 msgid "Two nodes have the same ID"
 msgstr "두 개의 노드가 같은 ID를 가지고 있습니다"
 
@@ -2031,7 +2039,7 @@ msgstr "이런, 무료 요청이 모두 소진되었습니다! 무제한 다이�
 msgid "Undo"
 msgstr "취소"
 
-#: src/lib/parserErrors.tsx:45
+#: src/lib/parserErrors.tsx:47
 msgid "Unescaped special character"
 msgstr "이스케이프되지 않은 특수 문자"
 
@@ -2043,7 +2051,7 @@ msgstr "노드를 식별하기 위한 고유한 텍스트 값"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: src/lib/parserErrors.tsx:65
+#: src/lib/parserErrors.tsx:67
 msgid "Unknown Parsing Error"
 msgstr "알 수 없는 구문 분석 오류"
 
