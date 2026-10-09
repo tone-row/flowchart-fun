@@ -22,7 +22,7 @@ msgstr "1 Organigramme temporaire"
 msgid "30-Day Pass"
 msgstr "Pass de 30 jours"
 
-#: src/components/Tabs/ThemeTab.tsx:683
+#: src/components/Tabs/ThemeTab.tsx:696
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>Seul le CSS personnalisé</0> est activé. Seuls les paramètres de mise en page et avancés seront appliqués."
 
@@ -76,7 +76,7 @@ msgstr "Ajoutez un backslash (<0>\\</0>) avant tout caractère spécial: <1>(</1
 msgid "Add some steps"
 msgstr "Ajouter des étapes"
 
-#: src/components/Tabs/ThemeTab.tsx:617
+#: src/components/Tabs/ThemeTab.tsx:630
 msgid "Advanced"
 msgstr "Avancé "
 
@@ -135,8 +135,8 @@ msgstr "Êtes-vous sûr de vouloir supprimer le dossier ?"
 msgid "Are you sure?"
 msgstr "Êtes-vous sûr(e) ?"
 
-#: src/components/Tabs/ThemeTab.tsx:571
-#: src/components/Tabs/ThemeTab.tsx:572
+#: src/components/Tabs/ThemeTab.tsx:584
+#: src/components/Tabs/ThemeTab.tsx:585
 msgid "Arrow Size"
 msgstr "Taille de la flèche"
 
@@ -156,14 +156,14 @@ msgstr "Retour"
 msgid "Back To Editor"
 msgstr "Retour à l'éditeur"
 
-#: src/components/Tabs/ThemeTab.tsx:187
-#: src/components/Tabs/ThemeTab.tsx:188
-#: src/components/Tabs/ThemeTab.tsx:239
-#: src/components/Tabs/ThemeTab.tsx:242
+#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:201
+#: src/components/Tabs/ThemeTab.tsx:252
+#: src/components/Tabs/ThemeTab.tsx:255
 msgid "Background Color"
 msgstr "Couleur de fond"
 
-#: src/components/ShareDialog.tsx:539
+#: src/components/ShareDialog.tsx:540
 msgid "Basic Flowchart"
 msgstr "Diagramme de flux de base"
 
@@ -198,13 +198,13 @@ msgstr "Blog"
 msgid "Book a Meeting"
 msgstr "Réserver une réunion"
 
-#: src/components/Tabs/ThemeTab.tsx:293
-#: src/components/Tabs/ThemeTab.tsx:294
+#: src/components/Tabs/ThemeTab.tsx:306
+#: src/components/Tabs/ThemeTab.tsx:307
 msgid "Border Color"
 msgstr "Couleur de bordure"
 
-#: src/components/Tabs/ThemeTab.tsx:278
-#: src/components/Tabs/ThemeTab.tsx:279
+#: src/components/Tabs/ThemeTab.tsx:291
+#: src/components/Tabs/ThemeTab.tsx:292
 msgid "Border Width"
 msgstr "Largeur de bordure"
 
@@ -268,7 +268,7 @@ msgstr "Journal des modifications"
 msgid "Charts"
 msgstr "Graphiques"
 
-#: src/components/ShareDialog.tsx:526
+#: src/components/ShareDialog.tsx:527
 msgid "Check out the guide:"
 msgstr "Vérifiez le guide :"
 
@@ -288,11 +288,11 @@ msgstr "Choisir un modèle"
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Choisissez parmi une variété de formes de flèches pour la source et la cible d'un bord. Les formes incluent triangle, triangle-tee, cercle-triangle, triangle-croix, triangle-backcurve, vee, tee, carré, cercle, diamant, chevron, aucun."
 
-#: src/components/Tabs/ThemeTab.tsx:436
+#: src/components/Tabs/ThemeTab.tsx:449
 msgid "Choose how edges connect between nodes"
 msgstr "Choisissez comment les bords se connectent entre les nœuds"
 
-#: src/components/Tabs/ThemeTab.tsx:96
+#: src/components/Tabs/ThemeTab.tsx:100
 msgid "Choose how nodes are automatically arranged in your flowchart"
 msgstr "Choisissez comment les nœuds sont automatiquement disposés dans votre organigramme"
 
@@ -326,8 +326,8 @@ msgstr "Cloner le diagramme de flux"
 msgid "Close"
 msgstr "Fermer"
 
-#: src/components/Tabs/ThemeTab.tsx:470
-#: src/components/Tabs/ThemeTab.tsx:471
+#: src/components/Tabs/ThemeTab.tsx:483
+#: src/components/Tabs/ThemeTab.tsx:484
 msgid "Color"
 msgstr "Couleur"
 
@@ -387,7 +387,7 @@ msgstr "Continuer"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "Continuer dans le bac à sable (Réinitialisé quotidiennement, travail non sauvegardé)"
 
-#: src/components/Tabs/ThemeTab.tsx:132
+#: src/components/Tabs/ThemeTab.tsx:145
 msgid "Controls the flow direction of hierarchical layouts"
 msgstr "Contrôle la direction du flux des mises en page hiérarchiques"
 
@@ -416,9 +416,9 @@ msgstr "Code SVG copié dans le presse-papier"
 msgid "Copied {format} to clipboard"
 msgstr "{format} copié dans le presse-papier"
 
-#: src/components/ShareDialog.tsx:277
-#: src/components/ShareDialog.tsx:280
-#: src/components/ShareDialog.tsx:394
+#: src/components/ShareDialog.tsx:278
+#: src/components/ShareDialog.tsx:281
+#: src/components/ShareDialog.tsx:395
 msgid "Copy"
 msgstr "Copier"
 
@@ -430,11 +430,11 @@ msgstr "Copier l'image PNG"
 msgid "Copy SVG Code"
 msgstr "Copier le code SVG"
 
-#: src/components/ShareDialog.tsx:417
+#: src/components/ShareDialog.tsx:418
 msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
 msgstr "Copiez votre code Excalidraw et collez-le sur <0>excalidraw.com</0> pour le modifier. Cette fonctionnalité est expérimentale et peut ne pas fonctionner avec tous les diagrammes. Si vous trouvez un bug, <1>faites-le nous savoir</1>."
 
-#: src/components/ShareDialog.tsx:357
+#: src/components/ShareDialog.tsx:358
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Copiez votre code mermaid.js ou ouvrez-le directement dans l'éditeur en direct mermaid.js."
 
@@ -487,12 +487,12 @@ msgstr "Date de création"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Créer une arête entre deux nœuds est fait en indentant le second nœud sous le premier"
 
-#: src/components/Tabs/ThemeTab.tsx:426
+#: src/components/Tabs/ThemeTab.tsx:439
 msgid "Curve Style"
 msgstr "Style de courbe"
 
-#: src/components/Tabs/ThemeTab.tsx:625
-#: src/components/Tabs/ThemeTab.tsx:626
+#: src/components/Tabs/ThemeTab.tsx:638
+#: src/components/Tabs/ThemeTab.tsx:639
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
 
@@ -547,8 +547,8 @@ msgstr "Concevoir un organigramme du cycle de développement de logiciels pour u
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "Élaborer un arbre de décision pour un PDG afin d'évaluer de nouvelles opportunités de marché potentielles"
 
-#: src/components/Tabs/ThemeTab.tsx:129
-#: src/components/Tabs/ThemeTab.tsx:139
+#: src/components/Tabs/ThemeTab.tsx:142
+#: src/components/Tabs/ThemeTab.tsx:152
 msgid "Direction"
 msgstr "Direction"
 
@@ -578,8 +578,8 @@ msgid "Don't Lose Your Work"
 msgstr "Ne perdez pas votre travail"
 
 #: src/components/FlowchartHeader.tsx:100
-#: src/components/ShareDialog.tsx:69
-#: src/components/ShareDialog.tsx:619
+#: src/components/ShareDialog.tsx:70
+#: src/components/ShareDialog.tsx:624
 msgid "Download"
 msgstr "Télécharger"
 
@@ -625,12 +625,12 @@ msgid "Edge Label Column"
 msgstr "Colonne d'étiquette Edge"
 
 #: src/components/LearnSyntaxDialog.tsx:311
-#: src/components/Tabs/ThemeTab.tsx:432
+#: src/components/Tabs/ThemeTab.tsx:445
 msgid "Edge Style"
 msgstr "Style Edge"
 
-#: src/components/Tabs/ThemeTab.tsx:586
-#: src/components/Tabs/ThemeTab.tsx:587
+#: src/components/Tabs/ThemeTab.tsx:599
+#: src/components/Tabs/ThemeTab.tsx:600
 msgid "Edge Text Size"
 msgstr "Taille du texte de bord"
 
@@ -640,7 +640,7 @@ msgstr "Indentation manquante du bord"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:419
+#: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edges"
 msgstr "Bords"
 
@@ -680,12 +680,12 @@ msgstr "Bordures dans la Ligne du Nœud Cible"
 msgid "Edit"
 msgstr "Modifier"
 
-#: src/components/EditWithAI.tsx:27
-#: src/components/EditWithAI.tsx:191
+#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:192
 msgid "Edit with AI"
 msgstr "Modifier avec l'IA"
 
-#: src/components/ShareDialog.tsx:149
+#: src/components/ShareDialog.tsx:150
 msgid "Editable"
 msgstr "Modifiable"
 
@@ -707,7 +707,7 @@ msgstr "E-mail"
 msgid "Empty"
 msgstr "Vide"
 
-#: src/components/Tabs/ThemeTab.tsx:371
+#: src/components/Tabs/ThemeTab.tsx:384
 msgid "Enable to set a consistent height for all nodes"
 msgstr "Activer pour définir une hauteur constante pour tous les nœuds"
 
@@ -768,8 +768,8 @@ msgstr "Découvrez Pro"
 msgid "Explore more"
 msgstr "Explorez plus"
 
-#: src/components/ShareDialog.tsx:56
-#: src/components/ShareDialog.tsx:162
+#: src/components/ShareDialog.tsx:57
+#: src/components/ShareDialog.tsx:163
 msgid "Export"
 msgstr "Exporter"
 
@@ -803,12 +803,12 @@ msgstr "N'hésitez pas à explorer et à nous contacter via la page <0>Commentai
 msgid "Fine-tune layouts and visual styles"
 msgstr "Affinez les mises en page et les styles visuels"
 
-#: src/components/Tabs/ThemeTab.tsx:391
+#: src/components/Tabs/ThemeTab.tsx:404
 msgid "Fixed Height"
 msgstr "Hauteur fixe"
 
-#: src/components/Tabs/ThemeTab.tsx:367
-#: src/components/Tabs/ThemeTab.tsx:385
+#: src/components/Tabs/ThemeTab.tsx:380
+#: src/components/Tabs/ThemeTab.tsx:398
 msgid "Fixed Node Height"
 msgstr "Hauteur de nœud fixe"
 
@@ -828,7 +828,7 @@ msgstr "Flowchart Fun est construit et maintenu par un seul développeur. Votre 
 msgid "Follow Us on Twitter"
 msgstr "Suivez-nous sur Twitter"
 
-#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:213
 msgid "Font Family"
 msgstr "Famille de polices"
 
@@ -852,11 +852,11 @@ msgstr "Foire aux questions"
 msgid "Full-screen, read-only, and template sharing"
 msgstr "Partage en plein écran, en lecture seule et de modèles"
 
-#: src/components/ShareDialog.tsx:144
+#: src/components/ShareDialog.tsx:145
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#: src/components/Tabs/ThemeTab.tsx:180
+#: src/components/Tabs/ThemeTab.tsx:193
 msgid "General"
 msgstr "Général "
 
@@ -1005,7 +1005,7 @@ msgstr "Importer à partir de Visio, Lucidchart et CSV"
 msgid "Import from popular diagram tools"
 msgstr "Importez à partir d'outils de diagrammes populaires"
 
-#: src/components/ShareDialog.tsx:520
+#: src/components/ShareDialog.tsx:521
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces fichiers CSV."
 
@@ -1013,7 +1013,7 @@ msgstr "Importez votre diagramme dans Microsoft Visio à l'aide de l'un de ces f
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
 msgstr "L'importation de données est une fonctionnalité Pro. Vous pouvez passer à Flowchart Fun Pro pour seulement 4 $ par mois."
 
-#: src/components/ShareDialog.tsx:568
+#: src/components/ShareDialog.tsx:573
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Incluez un titre en utilisant un attribut <0>title</0>. Pour utiliser la coloration Visio, ajoutez un attribut <1>roleType</1> égal à l'un des éléments suivants:"
 
@@ -1029,7 +1029,7 @@ msgstr "Info"
 msgid "Is"
 msgstr "Est"
 
-#: src/components/ShareDialog.tsx:647
+#: src/components/ShareDialog.tsx:652
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON Canvas est une représentation JSON de votre diagramme utilisée par <0>Obsidian</0> Canvas et d'autres applications."
 
@@ -1070,12 +1070,12 @@ msgstr "Gardez vos données privées sur votre ordinateur"
 msgid "Language"
 msgstr "Langue"
 
-#: src/components/Tabs/ThemeTab.tsx:79
-#: src/components/Tabs/ThemeTab.tsx:102
+#: src/components/Tabs/ThemeTab.tsx:83
+#: src/components/Tabs/ThemeTab.tsx:106
 msgid "Layout"
 msgstr "Disposition "
 
-#: src/components/Tabs/ThemeTab.tsx:92
+#: src/components/Tabs/ThemeTab.tsx:96
 msgid "Layout Algorithm"
 msgstr "Algorithme de mise en page"
 
@@ -1120,7 +1120,7 @@ msgstr "Lumineux"
 msgid "Light Mode"
 msgstr "Mode lumineux"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:140
 msgid "Link"
 msgstr "Lien"
 
@@ -1199,7 +1199,7 @@ msgstr "Réalisé par <0>Tone Row</0>"
 msgid "Make a One-Time Donation"
 msgstr "Faites un don unique"
 
-#: src/components/ShareDialog.tsx:484
+#: src/components/ShareDialog.tsx:485
 msgid "Make publicly accessible"
 msgstr "Rendre accessible au public"
 
@@ -1211,7 +1211,7 @@ msgstr "Gérer la facturation"
 msgid "Map Data"
 msgstr "Cartographier les données"
 
-#: src/components/Tabs/ThemeTab.tsx:315
+#: src/components/Tabs/ThemeTab.tsx:328
 msgid "Maximum width of text inside nodes"
 msgstr "Largeur maximale du texte à l'intérieur des nœuds"
 
@@ -1336,8 +1336,8 @@ msgstr "Identifiant de nœud, classes, attributs"
 msgid "Node Label"
 msgstr "Étiquette de nœud"
 
-#: src/components/Tabs/ThemeTab.tsx:222
-#: src/components/Tabs/ThemeTab.tsx:224
+#: src/components/Tabs/ThemeTab.tsx:235
+#: src/components/Tabs/ThemeTab.tsx:237
 msgid "Node Shape"
 msgstr "Forme de nœud"
 
@@ -1345,7 +1345,7 @@ msgstr "Forme de nœud"
 msgid "Node Shapes"
 msgstr "Formes de nœud"
 
-#: src/components/Tabs/ThemeTab.tsx:215
+#: src/components/Tabs/ThemeTab.tsx:228
 msgid "Nodes"
 msgstr "Nœuds"
 
@@ -1397,7 +1397,7 @@ msgstr "Opération annulée"
 msgid "Or maybe blue!"
 msgstr "Ou peut-être bleu !"
 
-#: src/components/ShareDialog.tsx:553
+#: src/components/ShareDialog.tsx:556
 msgid "Organization Chart"
 msgstr "Organigramme"
 
@@ -1405,8 +1405,8 @@ msgstr "Organigramme"
 msgid "Our AI creates diagrams from your text prompts, allowing for seamless manual edits or AI-assisted adjustments. Unlike others, our Pro plan offers unlimited AI generations and edits, empowering you to create without limits."
 msgstr "Notre IA crée des diagrammes à partir de vos indications textuelles, permettant des modifications manuelles fluides ou des ajustements assistés par l'IA. Contrairement à d'autres, notre plan Pro offre des générations et modifications illimitées avec l'IA, vous permettant de créer sans limites."
 
-#: src/components/Tabs/ThemeTab.tsx:263
-#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:276
+#: src/components/Tabs/ThemeTab.tsx:277
 msgid "Padding"
 msgstr "Rembourrage"
 
@@ -1484,8 +1484,8 @@ msgstr "Traitement en cours..."
 msgid "Prompt"
 msgstr "Invite"
 
-#: src/components/ShareDialog.tsx:480
-#: src/components/ShareDialog.tsx:505
+#: src/components/ShareDialog.tsx:481
+#: src/components/ShareDialog.tsx:506
 msgid "Public"
 msgstr "Public"
 
@@ -1516,7 +1516,7 @@ msgid "Rate limit exceeded. Please try again later."
 msgstr "Limite de taux dépassée. Veuillez réessayer plus tard."
 
 #: src/components/FlowchartHeader.tsx:77
-#: src/components/ShareDialog.tsx:154
+#: src/components/ShareDialog.tsx:155
 msgid "Read-only"
 msgstr "Lecture seulement"
 
@@ -1615,8 +1615,8 @@ msgstr "Cliquez avec le bouton droit sur les nœuds pour voir les options"
 msgid "Roadmap"
 msgstr "Roadmap"
 
-#: src/components/Tabs/ThemeTab.tsx:601
-#: src/components/Tabs/ThemeTab.tsx:602
+#: src/components/Tabs/ThemeTab.tsx:614
+#: src/components/Tabs/ThemeTab.tsx:615
 msgid "Rotate Label"
 msgstr "Faire pivoter l'étiquette"
 
@@ -1673,7 +1673,7 @@ msgstr "Sélectionner un dossier de destination pour \\"
 msgid "Send us a message"
 msgstr "Envoyez-nous un message"
 
-#: src/components/Tabs/ThemeTab.tsx:395
+#: src/components/Tabs/ThemeTab.tsx:408
 msgid "Set a consistent height for all nodes"
 msgstr "Définir une hauteur constante pour tous les nœuds"
 
@@ -1720,8 +1720,8 @@ msgstr "Trier par ordre décroissant"
 msgid "Sort by {0}"
 msgstr "Trier par {0}"
 
-#: src/components/Tabs/ThemeTab.tsx:491
-#: src/components/Tabs/ThemeTab.tsx:492
+#: src/components/Tabs/ThemeTab.tsx:504
+#: src/components/Tabs/ThemeTab.tsx:505
 msgid "Source Arrow Shape"
 msgstr "Forme de la flèche source"
 
@@ -1734,8 +1734,8 @@ msgstr "Colonne source"
 msgid "Source Delimiter"
 msgstr "Délimiteur source"
 
-#: src/components/Tabs/ThemeTab.tsx:533
-#: src/components/Tabs/ThemeTab.tsx:534
+#: src/components/Tabs/ThemeTab.tsx:546
+#: src/components/Tabs/ThemeTab.tsx:547
 msgid "Source Distance From Node"
 msgstr "Distance de la source du nœud"
 
@@ -1743,8 +1743,8 @@ msgstr "Distance de la source du nœud"
 msgid "Source/Target Arrow Shape"
 msgstr "Forme de flèche source / cible"
 
-#: src/components/Tabs/ThemeTab.tsx:161
-#: src/components/Tabs/ThemeTab.tsx:163
+#: src/components/Tabs/ThemeTab.tsx:174
+#: src/components/Tabs/ThemeTab.tsx:176
 msgid "Spacing"
 msgstr "Espacement"
 
@@ -1794,7 +1794,7 @@ msgid "Style with classes"
 msgstr "Style avec des classes"
 
 #: src/components/AiToolbar.tsx:201
-#: src/components/EditWithAI.tsx:242
+#: src/components/EditWithAI.tsx:243
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
@@ -1820,8 +1820,8 @@ msgstr "L'abonnement prendra fin"
 msgid "Support"
 msgstr "Support"
 
-#: src/components/Tabs/ThemeTab.tsx:512
-#: src/components/Tabs/ThemeTab.tsx:513
+#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:526
 msgid "Target Arrow Shape"
 msgstr "Forme de la flèche cible"
 
@@ -1834,8 +1834,8 @@ msgstr "Colonne cible"
 msgid "Target Delimiter"
 msgstr "Délimiteur cible"
 
-#: src/components/Tabs/ThemeTab.tsx:551
-#: src/components/Tabs/ThemeTab.tsx:552
+#: src/components/Tabs/ThemeTab.tsx:564
+#: src/components/Tabs/ThemeTab.tsx:565
 msgid "Target Distance From Node"
 msgstr "Distance cible du nœud"
 
@@ -1843,27 +1843,27 @@ msgstr "Distance cible du nœud"
 msgid "Tell us what's working and what isn't. Every message is read by the developer."
 msgstr "Dites-nous ce qui fonctionne et ce qui ne fonctionne pas. Chaque message est lu par le développeur."
 
-#: src/components/Tabs/ThemeTab.tsx:251
-#: src/components/Tabs/ThemeTab.tsx:253
+#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:266
 msgid "Text Color"
 msgstr "Couleur du texte"
 
-#: src/components/Tabs/ThemeTab.tsx:362
+#: src/components/Tabs/ThemeTab.tsx:375
 msgid "Text Horizontal Offset"
 msgstr "Décalage horizontal du texte"
 
-#: src/components/Tabs/ThemeTab.tsx:332
-#: src/components/Tabs/ThemeTab.tsx:333
+#: src/components/Tabs/ThemeTab.tsx:345
+#: src/components/Tabs/ThemeTab.tsx:346
 msgid "Text Leading"
 msgstr "Texte principal"
 
-#: src/components/Tabs/ThemeTab.tsx:305
-#: src/components/Tabs/ThemeTab.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:318
+#: src/components/Tabs/ThemeTab.tsx:324
 msgid "Text Max Width"
 msgstr "Largeur maximale du texte"
 
-#: src/components/Tabs/ThemeTab.tsx:347
-#: src/components/Tabs/ThemeTab.tsx:348
+#: src/components/Tabs/ThemeTab.tsx:360
+#: src/components/Tabs/ThemeTab.tsx:361
 msgid "Text Vertical Offset"
 msgstr "Décalage vertical du texte"
 
@@ -1938,6 +1938,10 @@ msgstr "Ce graphique est en lecture seule car vous n'avez plus accès à la vers
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "Cette fonctionnalité est uniquement disponible pour les utilisateurs pro. <0>Devenez un utilisateur pro</0> pour la débloquer."
 
+#: src/components/Tabs/ThemeTab.tsx:134
+msgid "This layout doesn't support containers."
+msgstr "Cette disposition ne prend pas en charge les conteneurs."
+
 #: src/pages/New.tsx:180
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "Cela peut prendre entre 30 secondes et 2 minutes en fonction de la longueur de votre entrée."
@@ -1962,7 +1966,7 @@ msgstr "Cela remplacera votre bac à sable actuel."
 msgid "Time to decide"
 msgstr "Temps de décider"
 
-#: src/components/ShareDialog.tsx:628
+#: src/components/ShareDialog.tsx:633
 msgid "Tip"
 msgstr "Astuce"
 
@@ -2122,8 +2126,8 @@ msgstr "Passez à la version Pro pour des diagrammes permanents."
 msgid "Upload your File"
 msgstr "Téléchargez votre fichier"
 
-#: src/components/Tabs/ThemeTab.tsx:642
-#: src/components/Tabs/ThemeTab.tsx:643
+#: src/components/Tabs/ThemeTab.tsx:655
+#: src/components/Tabs/ThemeTab.tsx:656
 msgid "Use Custom CSS Only"
 msgstr "Utiliser uniquement du CSS personnalisé"
 
@@ -2151,15 +2155,15 @@ msgstr "Utilisez les attributs <0>w</0> et <1>h</1> pour définir explicitement 
 msgid "Use the customer portal to change your billing information."
 msgstr "Utilisez le portail client pour modifier vos informations de facturation."
 
-#: src/components/Tabs/ThemeTab.tsx:676
+#: src/components/Tabs/ThemeTab.tsx:689
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Utilisez ces paramètres pour adapter l'apparence et le comportement de vos diagrammes de flux"
 
-#: src/components/ShareDialog.tsx:563
+#: src/components/ShareDialog.tsx:568
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "Utilisez ce fichier pour les organigrammes, les hiérarchies et autres structures organisationnelles."
 
-#: src/components/ShareDialog.tsx:549
+#: src/components/ShareDialog.tsx:552
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Utilisez ce fichier pour les séquences, les processus et les workflows."
 
@@ -2215,8 +2219,8 @@ msgstr "Qu'est-ce que c'est?"
 msgid "While we don't offer a free trial, you can get every Pro feature for 30 days with a one-time $9 Pass — no subscription, nothing to cancel. Prefer to subscribe? Pro is $4/month or $24/year, and you can cancel anytime."
 msgstr "Bien que nous n'offrons pas d'essai gratuit, vous pouvez obtenir toutes les fonctionnalités Pro pendant 30 jours avec un Pass unique de 9€ - pas d'abonnement, rien à annuler. Préférez-vous vous abonner? Pro est à 4€/mois ou 24€/an et vous pouvez annuler à tout moment."
 
-#: src/components/Tabs/ThemeTab.tsx:455
-#: src/components/Tabs/ThemeTab.tsx:456
+#: src/components/Tabs/ThemeTab.tsx:468
+#: src/components/Tabs/ThemeTab.tsx:469
 msgid "Width"
 msgstr "Largeur"
 
@@ -2224,7 +2228,7 @@ msgstr "Largeur"
 msgid "Width and Height"
 msgstr "Largeur et hauteur"
 
-#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:29
 msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
 msgstr "Avec la version Pro de Flowchart Fun, vous pouvez utiliser des commandes en langage naturel pour rapidement détailler votre diagramme, idéal pour créer des diagrammes en déplacement. Pour 4€/mois, bénéficiez de la facilité de l'édition AI accessible pour améliorer votre expérience de création de diagrammes."
 
@@ -2248,7 +2252,7 @@ msgstr "Entourez le texte entre parenthèses pour le connecter à n'importe quel
 msgid "Write like an outline"
 msgstr "Écrivez comme un plan"
 
-#: src/components/EditWithAI.tsx:216
+#: src/components/EditWithAI.tsx:217
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Écrivez votre message ici ou cliquez pour activer le microphone, puis maintenez pour enregistrer."
 

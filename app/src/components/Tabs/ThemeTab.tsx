@@ -1,5 +1,9 @@
 import { createControls } from "formulaic";
-import { updateThemeEditor, useThemeEditor } from "../../lib/toTheme";
+import {
+  layoutsWithoutContainers,
+  updateThemeEditor,
+  useThemeEditor,
+} from "../../lib/toTheme";
 import {
   FFTheme,
   Shape,
@@ -120,6 +124,15 @@ const Form = createForm<{
             { value: "breadthfirst", label: "Breadthfirst" },
             { value: "concentric", label: "Concentric" },
             { value: "circle", label: "Circle" },
+          ],
+        },
+        {
+          hidden: (data) =>
+            !layoutsWithoutContainers.includes(data.theme.layoutName),
+          elements: [
+            <p key="containers-hint" className="text-xs text-neutral-500 -mt-2">
+              <Trans>This layout doesn't support containers.</Trans>
+            </p>,
           ],
         },
         {

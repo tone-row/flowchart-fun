@@ -22,7 +22,7 @@ msgstr "1 임시 플로차트"
 msgid "30-Day Pass"
 msgstr "30일 패스"
 
-#: src/components/Tabs/ThemeTab.tsx:683
+#: src/components/Tabs/ThemeTab.tsx:696
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>사용자 정의 CSS만</0>이 활성화되었습니다. 레이아웃과 고급 설정만 적용됩니다."
 
@@ -76,7 +76,7 @@ msgstr "특수 문자 앞에는 역슬래시 (<0>\\</0>)를 추가하세요: <1>
 msgid "Add some steps"
 msgstr "몇 가지 단계를 추가하세요."
 
-#: src/components/Tabs/ThemeTab.tsx:617
+#: src/components/Tabs/ThemeTab.tsx:630
 msgid "Advanced"
 msgstr "고급"
 
@@ -135,8 +135,8 @@ msgstr "폴더를 복제하시겠습니까?"
 msgid "Are you sure?"
 msgstr "확실합니까?"
 
-#: src/components/Tabs/ThemeTab.tsx:571
-#: src/components/Tabs/ThemeTab.tsx:572
+#: src/components/Tabs/ThemeTab.tsx:584
+#: src/components/Tabs/ThemeTab.tsx:585
 msgid "Arrow Size"
 msgstr "화살표 크기"
 
@@ -156,14 +156,14 @@ msgstr "뒤로"
 msgid "Back To Editor"
 msgstr "편집기로 돌아가기"
 
-#: src/components/Tabs/ThemeTab.tsx:187
-#: src/components/Tabs/ThemeTab.tsx:188
-#: src/components/Tabs/ThemeTab.tsx:239
-#: src/components/Tabs/ThemeTab.tsx:242
+#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:201
+#: src/components/Tabs/ThemeTab.tsx:252
+#: src/components/Tabs/ThemeTab.tsx:255
 msgid "Background Color"
 msgstr "배경색"
 
-#: src/components/ShareDialog.tsx:539
+#: src/components/ShareDialog.tsx:540
 msgid "Basic Flowchart"
 msgstr "기본 플로우 차트"
 
@@ -198,13 +198,13 @@ msgstr "블로그"
 msgid "Book a Meeting"
 msgstr "미팅 예약"
 
-#: src/components/Tabs/ThemeTab.tsx:293
-#: src/components/Tabs/ThemeTab.tsx:294
+#: src/components/Tabs/ThemeTab.tsx:306
+#: src/components/Tabs/ThemeTab.tsx:307
 msgid "Border Color"
 msgstr "테두리 색"
 
-#: src/components/Tabs/ThemeTab.tsx:278
-#: src/components/Tabs/ThemeTab.tsx:279
+#: src/components/Tabs/ThemeTab.tsx:291
+#: src/components/Tabs/ThemeTab.tsx:292
 msgid "Border Width"
 msgstr "테두리 너비"
 
@@ -268,7 +268,7 @@ msgstr "변경 로그"
 msgid "Charts"
 msgstr "차트"
 
-#: src/components/ShareDialog.tsx:526
+#: src/components/ShareDialog.tsx:527
 msgid "Check out the guide:"
 msgstr "가이드를 확인하세요:"
 
@@ -288,11 +288,11 @@ msgstr "템플릿 선택"
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "에지의 소스와 목적지를 위한 다양한 화살표 모양을 선택합니다. 모양에는 삼각형, 삼각형-티, 원-삼각형, 삼각형-가위형, 삼각형-뒤곡선, 베이, 티, 사각형, 원, 다이아몬드, 쉐브론, 없음이 포함됩니다."
 
-#: src/components/Tabs/ThemeTab.tsx:436
+#: src/components/Tabs/ThemeTab.tsx:449
 msgid "Choose how edges connect between nodes"
 msgstr "노드 간 연결 방식 선택"
 
-#: src/components/Tabs/ThemeTab.tsx:96
+#: src/components/Tabs/ThemeTab.tsx:100
 msgid "Choose how nodes are automatically arranged in your flowchart"
 msgstr "플로우차트에서 노드가 자동으로 정렬되는 방식을 선택하세요."
 
@@ -326,8 +326,8 @@ msgstr "플로우차트 복제"
 msgid "Close"
 msgstr "닫기"
 
-#: src/components/Tabs/ThemeTab.tsx:470
-#: src/components/Tabs/ThemeTab.tsx:471
+#: src/components/Tabs/ThemeTab.tsx:483
+#: src/components/Tabs/ThemeTab.tsx:484
 msgid "Color"
 msgstr "색상"
 
@@ -387,7 +387,7 @@ msgstr "계속하기"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "샌드박스에서 계속하기 (매일 초기화되며 작업은 저장되지 않음)"
 
-#: src/components/Tabs/ThemeTab.tsx:132
+#: src/components/Tabs/ThemeTab.tsx:145
 msgid "Controls the flow direction of hierarchical layouts"
 msgstr "계층적 레이아웃의 흐름 방향을 제어합니다."
 
@@ -416,9 +416,9 @@ msgstr "클립보드에 SVG 코드 복사"
 msgid "Copied {format} to clipboard"
 msgstr "클립보드에 {format} 복사"
 
-#: src/components/ShareDialog.tsx:277
-#: src/components/ShareDialog.tsx:280
-#: src/components/ShareDialog.tsx:394
+#: src/components/ShareDialog.tsx:278
+#: src/components/ShareDialog.tsx:281
+#: src/components/ShareDialog.tsx:395
 msgid "Copy"
 msgstr "복사"
 
@@ -430,11 +430,11 @@ msgstr "PNG 이미지 복사"
 msgid "Copy SVG Code"
 msgstr "SVG 코드 복사"
 
-#: src/components/ShareDialog.tsx:417
+#: src/components/ShareDialog.tsx:418
 msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
 msgstr "Excalidraw 코드를 복사해서 <0>excalidraw.com</0>에 붙여넣어서 편집하세요. 이 기능은 실험적이며 모든 다이어그램과 작동하지 않을 수 있습니다. 버그를 발견하면 <1>알려주세요</1>."
 
-#: src/components/ShareDialog.tsx:357
+#: src/components/ShareDialog.tsx:358
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "mermaid.js 코드를 복사하거나 mermaid.js 라이브 편집기에서 직접 열어주세요."
 
@@ -487,12 +487,12 @@ msgstr "생성일자"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "두 노드 사이에 엣지를 만드는 것은 첫 번째 노드 아래에 두 번째 노드를 들여 쓰는 것으로 합니다."
 
-#: src/components/Tabs/ThemeTab.tsx:426
+#: src/components/Tabs/ThemeTab.tsx:439
 msgid "Curve Style"
 msgstr "곡선 스타일"
 
-#: src/components/Tabs/ThemeTab.tsx:625
-#: src/components/Tabs/ThemeTab.tsx:626
+#: src/components/Tabs/ThemeTab.tsx:638
+#: src/components/Tabs/ThemeTab.tsx:639
 msgid "Custom CSS"
 msgstr "사용자 정의 CSS"
 
@@ -547,8 +547,8 @@ msgstr "애자일 팀을 위한 소프트웨어 개발 라이프사이클 플로
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "CEO가 잠재적인 새 시장 기회를 평가하기 위해 사용할 수 있는 의사결정 트리를 개발하십시오."
 
-#: src/components/Tabs/ThemeTab.tsx:129
-#: src/components/Tabs/ThemeTab.tsx:139
+#: src/components/Tabs/ThemeTab.tsx:142
+#: src/components/Tabs/ThemeTab.tsx:152
 msgid "Direction"
 msgstr "방향"
 
@@ -578,8 +578,8 @@ msgid "Don't Lose Your Work"
 msgstr "당신의 작업을 잃지 마세요"
 
 #: src/components/FlowchartHeader.tsx:100
-#: src/components/ShareDialog.tsx:69
-#: src/components/ShareDialog.tsx:619
+#: src/components/ShareDialog.tsx:70
+#: src/components/ShareDialog.tsx:624
 msgid "Download"
 msgstr "다운로드"
 
@@ -625,12 +625,12 @@ msgid "Edge Label Column"
 msgstr "가장자리 라벨 열"
 
 #: src/components/LearnSyntaxDialog.tsx:311
-#: src/components/Tabs/ThemeTab.tsx:432
+#: src/components/Tabs/ThemeTab.tsx:445
 msgid "Edge Style"
 msgstr "가장자리 스타일"
 
-#: src/components/Tabs/ThemeTab.tsx:586
-#: src/components/Tabs/ThemeTab.tsx:587
+#: src/components/Tabs/ThemeTab.tsx:599
+#: src/components/Tabs/ThemeTab.tsx:600
 msgid "Edge Text Size"
 msgstr "가장자리 텍스트 크기"
 
@@ -640,7 +640,7 @@ msgstr "들여쓰기가 누락된 가장자리"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:419
+#: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edges"
 msgstr "가장자리"
 
@@ -680,12 +680,12 @@ msgstr "도착 노드 행에 간선"
 msgid "Edit"
 msgstr "편집하기"
 
-#: src/components/EditWithAI.tsx:27
-#: src/components/EditWithAI.tsx:191
+#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:192
 msgid "Edit with AI"
 msgstr "AI로 편집하기"
 
-#: src/components/ShareDialog.tsx:149
+#: src/components/ShareDialog.tsx:150
 msgid "Editable"
 msgstr "편집 가능"
 
@@ -707,7 +707,7 @@ msgstr "이메일"
 msgid "Empty"
 msgstr "비어 있음"
 
-#: src/components/Tabs/ThemeTab.tsx:371
+#: src/components/Tabs/ThemeTab.tsx:384
 msgid "Enable to set a consistent height for all nodes"
 msgstr "모든 노드의 일관된 높이 설정 가능"
 
@@ -768,8 +768,8 @@ msgstr "Pro 모드 탐색"
 msgid "Explore more"
 msgstr "더 탐험하세요."
 
-#: src/components/ShareDialog.tsx:56
-#: src/components/ShareDialog.tsx:162
+#: src/components/ShareDialog.tsx:57
+#: src/components/ShareDialog.tsx:163
 msgid "Export"
 msgstr "내보내기"
 
@@ -803,12 +803,12 @@ msgstr "우리에게 연락하고 자유롭게 탐색하시고 <0>피드백</0> 
 msgid "Fine-tune layouts and visual styles"
 msgstr "레이아웃과 시각적 스타일을 세밀하게 조정하기"
 
-#: src/components/Tabs/ThemeTab.tsx:391
+#: src/components/Tabs/ThemeTab.tsx:404
 msgid "Fixed Height"
 msgstr "고정 높이"
 
-#: src/components/Tabs/ThemeTab.tsx:367
-#: src/components/Tabs/ThemeTab.tsx:385
+#: src/components/Tabs/ThemeTab.tsx:380
+#: src/components/Tabs/ThemeTab.tsx:398
 msgid "Fixed Node Height"
 msgstr "고정된 노드 높이"
 
@@ -828,7 +828,7 @@ msgstr "Flowchart Fun은 한 명의 개발자가 만들고 유지보수합니다
 msgid "Follow Us on Twitter"
 msgstr "트위터에서 우리를 팔로우하기"
 
-#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:213
 msgid "Font Family"
 msgstr "글꼴 가족"
 
@@ -852,11 +852,11 @@ msgstr "자주 묻는 질문들"
 msgid "Full-screen, read-only, and template sharing"
 msgstr "전체 화면, 읽기 전용, 그리고 템플릿 공유"
 
-#: src/components/ShareDialog.tsx:144
+#: src/components/ShareDialog.tsx:145
 msgid "Fullscreen"
 msgstr "전체 화면"
 
-#: src/components/Tabs/ThemeTab.tsx:180
+#: src/components/Tabs/ThemeTab.tsx:193
 msgid "General"
 msgstr "일반"
 
@@ -1005,7 +1005,7 @@ msgstr "Visio, Lucidchart 및 CSV에서 가져오기"
 msgid "Import from popular diagram tools"
 msgstr "인기 있는 다이어그램 도구에서 가져오기"
 
-#: src/components/ShareDialog.tsx:520
+#: src/components/ShareDialog.tsx:521
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Microsoft Visio로 가져옵니다."
 
@@ -1013,7 +1013,7 @@ msgstr "이러한 CSV 파일 중 하나를 사용하여 다이어그램을 Micro
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
 msgstr "데이터 가져오기는 프로 기능입니다. Flowchart Fun Pro로 업그레이드하면 매달 $4로 이용할 수 있습니다."
 
-#: src/components/ShareDialog.tsx:568
+#: src/components/ShareDialog.tsx:573
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "<0>title</0> 속성을 사용하여 제목을 포함시키십시오. Visio 색상을 사용하려면 다음 중 하나와 같은 <1>roleType</1> 속성을 추가하십시오:"
 
@@ -1029,7 +1029,7 @@ msgstr "정보"
 msgid "Is"
 msgstr "있다"
 
-#: src/components/ShareDialog.tsx:647
+#: src/components/ShareDialog.tsx:652
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON 캔버스는 <0>Obsidian</0> 캔버스 및 다른 응용 프로그램에서 사용되는 다이어그램의 JSON 표현입니다."
 
@@ -1070,12 +1070,12 @@ msgstr "컴퓨터에서 데이터를 개인적으로 보호하기"
 msgid "Language"
 msgstr "언어"
 
-#: src/components/Tabs/ThemeTab.tsx:79
-#: src/components/Tabs/ThemeTab.tsx:102
+#: src/components/Tabs/ThemeTab.tsx:83
+#: src/components/Tabs/ThemeTab.tsx:106
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/components/Tabs/ThemeTab.tsx:92
+#: src/components/Tabs/ThemeTab.tsx:96
 msgid "Layout Algorithm"
 msgstr "레이아웃 알고리즘"
 
@@ -1120,7 +1120,7 @@ msgstr "라이트"
 msgid "Light Mode"
 msgstr "라이트 모드"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:140
 msgid "Link"
 msgstr "링크"
 
@@ -1199,7 +1199,7 @@ msgstr "<0>Tone Row</0>가 만들었습니다."
 msgid "Make a One-Time Donation"
 msgstr "한 번 선물하기"
 
-#: src/components/ShareDialog.tsx:484
+#: src/components/ShareDialog.tsx:485
 msgid "Make publicly accessible"
 msgstr "공개적으로 액세스 가능하게 만들기"
 
@@ -1211,7 +1211,7 @@ msgstr "청구 관리"
 msgid "Map Data"
 msgstr "데이터 지도"
 
-#: src/components/Tabs/ThemeTab.tsx:315
+#: src/components/Tabs/ThemeTab.tsx:328
 msgid "Maximum width of text inside nodes"
 msgstr "노드 내부 텍스트의 최대 너비"
 
@@ -1336,8 +1336,8 @@ msgstr "노드 ID, 클래스, 속성"
 msgid "Node Label"
 msgstr "노드 라벨"
 
-#: src/components/Tabs/ThemeTab.tsx:222
-#: src/components/Tabs/ThemeTab.tsx:224
+#: src/components/Tabs/ThemeTab.tsx:235
+#: src/components/Tabs/ThemeTab.tsx:237
 msgid "Node Shape"
 msgstr "노드 모양"
 
@@ -1345,7 +1345,7 @@ msgstr "노드 모양"
 msgid "Node Shapes"
 msgstr "노드 모양"
 
-#: src/components/Tabs/ThemeTab.tsx:215
+#: src/components/Tabs/ThemeTab.tsx:228
 msgid "Nodes"
 msgstr "노드"
 
@@ -1397,7 +1397,7 @@ msgstr "작업이 취소되었습니다."
 msgid "Or maybe blue!"
 msgstr "아니면 파란색으로!"
 
-#: src/components/ShareDialog.tsx:553
+#: src/components/ShareDialog.tsx:556
 msgid "Organization Chart"
 msgstr "조직도"
 
@@ -1405,8 +1405,8 @@ msgstr "조직도"
 msgid "Our AI creates diagrams from your text prompts, allowing for seamless manual edits or AI-assisted adjustments. Unlike others, our Pro plan offers unlimited AI generations and edits, empowering you to create without limits."
 msgstr "우리의 AI는 텍스트 프롬프트에서 다이어그램을 생성하여 수동 편집이나 AI 지원 조정이 가능하도록 합니다. 다른 사람들과는 달리, 우리의 프로 플랜은 무제한 AI 생성 및 편집 기능을 제공하여 제한 없이 창조할 수 있도록 돕습니다."
 
-#: src/components/Tabs/ThemeTab.tsx:263
-#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:276
+#: src/components/Tabs/ThemeTab.tsx:277
 msgid "Padding"
 msgstr "채우기"
 
@@ -1484,8 +1484,8 @@ msgstr "처리 중..."
 msgid "Prompt"
 msgstr "프롬프트"
 
-#: src/components/ShareDialog.tsx:480
-#: src/components/ShareDialog.tsx:505
+#: src/components/ShareDialog.tsx:481
+#: src/components/ShareDialog.tsx:506
 msgid "Public"
 msgstr "공용"
 
@@ -1516,7 +1516,7 @@ msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
 
 #: src/components/FlowchartHeader.tsx:77
-#: src/components/ShareDialog.tsx:154
+#: src/components/ShareDialog.tsx:155
 msgid "Read-only"
 msgstr "읽기 전용"
 
@@ -1615,8 +1615,8 @@ msgstr "옵션을 위해 노드를 오른쪽 클릭하세요"
 msgid "Roadmap"
 msgstr "로드맵"
 
-#: src/components/Tabs/ThemeTab.tsx:601
-#: src/components/Tabs/ThemeTab.tsx:602
+#: src/components/Tabs/ThemeTab.tsx:614
+#: src/components/Tabs/ThemeTab.tsx:615
 msgid "Rotate Label"
 msgstr "라벨 회전"
 
@@ -1673,7 +1673,7 @@ msgstr "\\에 대한 대상 폴더 선택"
 msgid "Send us a message"
 msgstr "메시지 보내기"
 
-#: src/components/Tabs/ThemeTab.tsx:395
+#: src/components/Tabs/ThemeTab.tsx:408
 msgid "Set a consistent height for all nodes"
 msgstr "모든 노드의 일관된 높이 설정하기"
 
@@ -1720,8 +1720,8 @@ msgstr "내림차순 정렬"
 msgid "Sort by {0}"
 msgstr "{0}로 정렬"
 
-#: src/components/Tabs/ThemeTab.tsx:491
-#: src/components/Tabs/ThemeTab.tsx:492
+#: src/components/Tabs/ThemeTab.tsx:504
+#: src/components/Tabs/ThemeTab.tsx:505
 msgid "Source Arrow Shape"
 msgstr "소스 화살표 모양"
 
@@ -1734,8 +1734,8 @@ msgstr "소스 열"
 msgid "Source Delimiter"
 msgstr "소스 구분자"
 
-#: src/components/Tabs/ThemeTab.tsx:533
-#: src/components/Tabs/ThemeTab.tsx:534
+#: src/components/Tabs/ThemeTab.tsx:546
+#: src/components/Tabs/ThemeTab.tsx:547
 msgid "Source Distance From Node"
 msgstr "노드에서 소스 거리"
 
@@ -1743,8 +1743,8 @@ msgstr "노드에서 소스 거리"
 msgid "Source/Target Arrow Shape"
 msgstr "소스/대상 화살표 모양"
 
-#: src/components/Tabs/ThemeTab.tsx:161
-#: src/components/Tabs/ThemeTab.tsx:163
+#: src/components/Tabs/ThemeTab.tsx:174
+#: src/components/Tabs/ThemeTab.tsx:176
 msgid "Spacing"
 msgstr "간격"
 
@@ -1794,7 +1794,7 @@ msgid "Style with classes"
 msgstr "클래스로 스타일링"
 
 #: src/components/AiToolbar.tsx:201
-#: src/components/EditWithAI.tsx:242
+#: src/components/EditWithAI.tsx:243
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
@@ -1820,8 +1820,8 @@ msgstr "구독이 종료될 예정입니다."
 msgid "Support"
 msgstr "지원"
 
-#: src/components/Tabs/ThemeTab.tsx:512
-#: src/components/Tabs/ThemeTab.tsx:513
+#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:526
 msgid "Target Arrow Shape"
 msgstr "대상 화살표 모양"
 
@@ -1834,8 +1834,8 @@ msgstr "대상 열"
 msgid "Target Delimiter"
 msgstr "대상 구분자"
 
-#: src/components/Tabs/ThemeTab.tsx:551
-#: src/components/Tabs/ThemeTab.tsx:552
+#: src/components/Tabs/ThemeTab.tsx:564
+#: src/components/Tabs/ThemeTab.tsx:565
 msgid "Target Distance From Node"
 msgstr "노드로부터의 목표 거리"
 
@@ -1843,27 +1843,27 @@ msgstr "노드로부터의 목표 거리"
 msgid "Tell us what's working and what isn't. Every message is read by the developer."
 msgstr "잘 작동하는 부분과 문제가 있는 부분을 알려주세요. 모든 메시지는 개발자가 읽습니다."
 
-#: src/components/Tabs/ThemeTab.tsx:251
-#: src/components/Tabs/ThemeTab.tsx:253
+#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:266
 msgid "Text Color"
 msgstr "텍스트 색상"
 
-#: src/components/Tabs/ThemeTab.tsx:362
+#: src/components/Tabs/ThemeTab.tsx:375
 msgid "Text Horizontal Offset"
 msgstr "텍스트 수평 오프셋"
 
-#: src/components/Tabs/ThemeTab.tsx:332
-#: src/components/Tabs/ThemeTab.tsx:333
+#: src/components/Tabs/ThemeTab.tsx:345
+#: src/components/Tabs/ThemeTab.tsx:346
 msgid "Text Leading"
 msgstr "텍스트 리딩"
 
-#: src/components/Tabs/ThemeTab.tsx:305
-#: src/components/Tabs/ThemeTab.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:318
+#: src/components/Tabs/ThemeTab.tsx:324
 msgid "Text Max Width"
 msgstr "텍스트 최대 너비"
 
-#: src/components/Tabs/ThemeTab.tsx:347
-#: src/components/Tabs/ThemeTab.tsx:348
+#: src/components/Tabs/ThemeTab.tsx:360
+#: src/components/Tabs/ThemeTab.tsx:361
 msgid "Text Vertical Offset"
 msgstr "텍스트 수직 오프셋"
 
@@ -1938,6 +1938,10 @@ msgstr "이 차트는 더 이상 Pro 액세스 권한이 없기 때문에 읽기
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "이 기능은 프로 사용자에게만 제공됩니다. <0>프로 사용자가 되어</0> 이 기능을 사용할 수 있게 하세요."
 
+#: src/components/Tabs/ThemeTab.tsx:134
+msgid "This layout doesn't support containers."
+msgstr "이 레이아웃은 컨테이너를 지원하지 않습니다."
+
 #: src/pages/New.tsx:180
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "입력 길이에 따라 30초에서 2분 사이의 시간이 소요될 수 있습니다."
@@ -1962,7 +1966,7 @@ msgstr "이것은 현재 샌드 박스를 대체합니다."
 msgid "Time to decide"
 msgstr "결정할 시간"
 
-#: src/components/ShareDialog.tsx:628
+#: src/components/ShareDialog.tsx:633
 msgid "Tip"
 msgstr "팁"
 
@@ -2122,8 +2126,8 @@ msgstr "프로로 업그레이드하면 영구적인 차트를 사용할 수 있
 msgid "Upload your File"
 msgstr "파일을 업로드하세요."
 
-#: src/components/Tabs/ThemeTab.tsx:642
-#: src/components/Tabs/ThemeTab.tsx:643
+#: src/components/Tabs/ThemeTab.tsx:655
+#: src/components/Tabs/ThemeTab.tsx:656
 msgid "Use Custom CSS Only"
 msgstr "사용자 정의 CSS만 사용"
 
@@ -2151,15 +2155,15 @@ msgstr "노드의 너비와 높이를 명시적으로 설정하려면 <0>w</0> �
 msgid "Use the customer portal to change your billing information."
 msgstr "청구 정보를 변경하려면 고객 포털을 사용하십시오."
 
-#: src/components/Tabs/ThemeTab.tsx:676
+#: src/components/Tabs/ThemeTab.tsx:689
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "이 설정을 사용하여 흐름 도표의 모양과 동작을 조정하십시오"
 
-#: src/components/ShareDialog.tsx:563
+#: src/components/ShareDialog.tsx:568
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "조직도, 계층 구조 및 기타 조직 구조를 위해 이 파일을 사용하십시오."
 
-#: src/components/ShareDialog.tsx:549
+#: src/components/ShareDialog.tsx:552
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "시퀀스, 프로세스 및 워크플로우에 대해 이 파일을 사용하십시오."
 
@@ -2215,8 +2219,8 @@ msgstr "이것이 무엇인가요?"
 msgid "While we don't offer a free trial, you can get every Pro feature for 30 days with a one-time $9 Pass — no subscription, nothing to cancel. Prefer to subscribe? Pro is $4/month or $24/year, and you can cancel anytime."
 msgstr "무료 평가판은 제공하지 않지만, 1회성 $9 Pass로 30일간 모든 Pro 기능을 이용할 수 있습니다 - 구독 없이 취소할 필요가 없습니다. 구독을 원하시나요? Pro는 매월 $4 또는 연간 $24이며, 언제든지 취소할 수 있습니다."
 
-#: src/components/Tabs/ThemeTab.tsx:455
-#: src/components/Tabs/ThemeTab.tsx:456
+#: src/components/Tabs/ThemeTab.tsx:468
+#: src/components/Tabs/ThemeTab.tsx:469
 msgid "Width"
 msgstr "너비"
 
@@ -2224,7 +2228,7 @@ msgstr "너비"
 msgid "Width and Height"
 msgstr "너비와 높이"
 
-#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:29
 msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
 msgstr "Flowchart Fun의 Pro 버전을 사용하면 자연어 명령을 사용하여 빠르게 플로우차트 세부 정보를 작성할 수 있으며, 이동 중에 다이어그램을 만드는 데 이상적입니다. 매월 $4로, 액세스 가능한 AI 편집을 통해 편리하게 플로우차트 작성을 즐기세요."
 
@@ -2248,7 +2252,7 @@ msgstr "괄호 안에 텍스트를 감싸서 어떤 노드에 연결하세요"
 msgid "Write like an outline"
 msgstr "아웃라인처럼 작성하세요"
 
-#: src/components/EditWithAI.tsx:216
+#: src/components/EditWithAI.tsx:217
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "여기에 프롬프트를 작성하거나 마이크를 활성화하려면 클릭한 다음 눌러서 녹음하세요."
 
