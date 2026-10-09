@@ -1,6 +1,10 @@
 import type { editor } from "monaco-editor";
 
-import { moveCursorToLine, useEditorStore } from "./useEditorStore";
+import {
+  moveCursorToLine,
+  revealAndHighlightLine,
+  useEditorStore,
+} from "./useEditorStore";
 
 function mountFakeEditor() {
   const fake = {
@@ -15,7 +19,7 @@ function mountFakeEditor() {
 }
 
 afterEach(() => {
-  useEditorStore.setState({ editor: null });
+  useEditorStore.setState({ editor: null, selectedLineNumber: undefined });
 });
 
 test("moveCursorToLine focuses the editor, puts the cursor on the line, and scrolls it into view", () => {
@@ -29,4 +33,15 @@ test("moveCursorToLine focuses the editor, puts the cursor on the line, and scro
     column: Infinity,
   });
   expect(fake.revealLineInCenterIfOutsideViewport).toHaveBeenCalledWith(40);
+});
+
+test("revealAndHighlightLine scrolls to and highlights the line without taking focus or moving the cursor", () => {
+  const fake = mountFakeEditor();
+
+  revealAndHighlightLine(12);
+
+  expect(fake.revealLineInCenterIfOutsideViewport).toHaveBeenCalledWith(12);
+  expect(useEditorStore.getState().selectedLineNumber).toBe(12);
+  expect(fake.focus).not.toHaveBeenCalled();
+  expect(fake.setPosition).not.toHaveBeenCalled();
 });

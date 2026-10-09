@@ -26,6 +26,7 @@ import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
 import {
   moveCursorToLine,
+  revealAndHighlightLine,
   updateModelMarkers,
   useEditorStore,
 } from "../lib/useEditorStore";
@@ -242,6 +243,14 @@ function initializeGraph({
       }
     });
 
+    cyCurrent.on("tap", function handleTapHighlightLine(e) {
+      if (e.target === cyCurrent) {
+        useEditorStore.setState({ selectedLineNumber: undefined });
+      } else {
+        revealAndHighlightLine(e.target.data("lineNumber"));
+      }
+    });
+
     // on double click, focus the line number in the editor
     cyCurrent.on(
       "dblclick",
@@ -300,6 +309,7 @@ function initializeGraph({
       cy.current = undefined;
       cyErrorCatcher.current = undefined;
       delete window.__cy;
+      useEditorStore.setState({ selectedLineNumber: undefined });
       document
         .getElementById("cy")
         ?.removeEventListener("mouseout", handleMouseOut);

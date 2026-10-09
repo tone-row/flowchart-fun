@@ -38,9 +38,10 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
     monaco.editor.setTheme(theme);
   }, [theme]);
 
-  // Setup Hover Effect
   const hoverLineNumber = useEditorStore((s) => s.hoverLineNumber);
-  useEditorHover(hoverLineNumber);
+  useLineDecoration(hoverLineNumber, "node-hover");
+  const selectedLineNumber = useEditorStore((s) => s.selectedLineNumber);
+  useLineDecoration(selectedLineNumber, "node-selected");
 
   // Is converted flowchart text being written to the editor?
   const convertIsRunning = usePromptStore((s) => s.isRunning);
@@ -108,6 +109,10 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
               }
             });
 
+            editor.onDidChangeModelContent(function clearSelectedLineOnEdit() {
+              useEditorStore.setState({ selectedLineNumber: undefined });
+            });
+
             // Listen to when the user pastes into the document
             editor.onDidPaste((e) => {
               // get the text in the range
@@ -140,27 +145,25 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
   );
 }
 
-/** Keep track of decoratins on the current editor and show an indication of
- * hovering when the hover line number changes */
-function useEditorHover(hoverLineNumber?: number) {
+function useLineDecoration(lineNumber: number | undefined, className: string) {
   const decorations = useRef<string[]>([]);
   useEffect(() => {
     const editor = useEditorStore.getState().editor;
     if (!editor) return;
-    if (typeof hoverLineNumber === "number") {
+    if (typeof lineNumber === "number") {
       decorations.current = editor.deltaDecorations(
         [],
         [
           {
             range: {
-              startLineNumber: hoverLineNumber,
+              startLineNumber: lineNumber,
               startColumn: 1,
-              endLineNumber: hoverLineNumber,
+              endLineNumber: lineNumber,
               endColumn: 1,
             },
             options: {
               isWholeLine: true,
-              className: "node-hover",
+              className,
             },
           },
         ]
@@ -169,7 +172,7 @@ function useEditorHover(hoverLineNumber?: number) {
     return () => {
       decorations.current = editor.deltaDecorations(decorations.current, []);
     };
-  }, [hoverLineNumber]);
+  }, [lineNumber, className]);
 }
 
 /**
