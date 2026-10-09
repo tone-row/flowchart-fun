@@ -31,8 +31,6 @@ const CONTAINER_DOCS = [
 const FLAT_DOC =
   "A\n  B\n    C\n    D\n  E\n    F\n    G\n  H\n    I\n    J\n    K\n  L\n    M\n    N\n  O";
 
-// Stress overlaps nodes whether or not they are in a container, so a covered
-// node there says nothing about container support.
 const OVERLAPS_ANY_NODE: LayoutName[] = ["stress"];
 
 async function layOut(doc: string, layoutName: LayoutName) {
