@@ -1,0 +1,13 @@
+Start
+  Check
+    no: (Start)
+    yes: Validate
+      Error page
+      bad input: (Error page)
+      timeout: (Error page)
+      Save
+        ok: Done
+        audit: (Done)
+=====
+{"themeEditor": {"layoutName": "dagre", "direction": "RIGHT", "spacingFactor": 1.05, "background": "#ffffff", "fontFamily": "Satoshi", "shape": "roundrectangle", "nodeBackground": "#ffffff", "nodeForeground": "#1a1f36", "padding": 14, "borderWidth": 1.5, "borderColor": "#d9dee8", "textMaxWidth": 160, "lineHeight": 1.3, "textMarginY": 0, "useFixedHeight": false, "fixedHeight": 50, "curveStyle": "round-taxi", "edgeWidth": 2, "edgeColor": "#a3adc2", "sourceArrowShape": "none", "targetArrowShape": "vee", "sourceDistanceFromNode": 4, "targetDistanceFromNode": 4, "arrowScale": 0.9, "edgeTextSize": 0.875, "rotateEdgeLabel": false}, "cytoscapeStyle": "@import url('/fonts/Satoshi.css');\n\n$ink: #1a1f36;\n$accent: #606ef6;\n$red: #e5484d;\n$orange: #f76b15;\n$yellow: #ffc53d;\n$green: #30a46c;\n$blue: #3e63dd;\n$purple: #8e4ec6;\n$grey: #f1f5f9;\n\n:childless {\n  corner-radius: 10;\n  font-weight: 500;\n  underlay-color: #1e293b;\n  underlay-opacity: 0.07;\n  underlay-padding: 3;\n  underlay-shape: round-rectangle;\n}\n\nedge {\n  taxi-radius: 12;\n  source-endpoint: outside-to-node;\n  target-endpoint: outside-to-node;\n  text-background-padding: 4;\n  color: #5b657a;\n  font-weight: 500;\n}\n\n:parent {\n  corner-radius: 14;\n  border-width: 1.5;\n  border-color: #d9dee8;\n  background-opacity: 0.6;\n  color: #5b657a;\n  font-size: 15;\n  padding: 18;\n}\n\n:childless:selected {\n  underlay-color: $accent;\n  underlay-opacity: 0.25;\n  underlay-padding: 6;\n  opacity: 1;\n  border-color: $accent;\n}\n\nedge:selected {\n  line-color: $accent;\n  target-arrow-color: $accent;\n  opacity: 1;\n  width: 3;\n}\n\n:childless.color_red {\n  background-color: $red;\n  border-color: #c93a3f;\n  color: white;\n}\n:childless.color_orange {\n  background-color: $orange;\n  border-color: #d95b0e;\n  color: white;\n}\n:childless.color_yellow {\n  background-color: $yellow;\n  border-color: #e0a92e;\n  color: #453915;\n}\n:childless.color_green {\n  background-color: $green;\n  border-color: #26875a;\n  color: white;\n}\n:childless.color_blue {\n  background-color: $blue;\n  border-color: #3353c4;\n  color: white;\n}\n:childless.color_purple {\n  background-color: $purple;\n  border-color: #7a3fb0;\n  color: white;\n}\n:childless.color_grey {\n  background-color: $grey;\n  border-color: #d5dbe3;\n  color: #3c4657;\n}\n\n:parent.color_white {\n  background-color: white;\n}\n:parent.color_grey {\n  background-color: $grey;\n}\n"}
+=====

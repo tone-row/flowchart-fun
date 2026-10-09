@@ -6,6 +6,7 @@ Beyond indentation, the DSL links nodes with references and groups them with con
 
 - `ref-label-pointer` — `(Label)` under a line draws an edge to the existing node of that label; the node is not duplicated. Driven by `examples/reference-edges.mjs` (also `examples/sandbox-edit.mjs` via `(Ship it?)`).
 - `ref-node-only-edges` — when an edge label equals a referenced node label (`null: Apply` next to `fail: (null)`), every rendered edge still has node endpoints, so dragging the target carries all incoming edges with it. Driven by `examples/reference-edges.mjs`.
+- `ref-parallel-edges` — several edges on one node pair (three `(Error page)` references from `Validate`) and an A -> B plus B -> A pair (`Start` -> `Check`, `no: (Start)`) draw as separate lines with readable labels, whatever curve style the theme uses. Driven by `examples/parallel-references.mjs`; pixel golden `references` in the visual suite.
 - `ref-id-pointer` — `(#id)` targets a node by explicit id. _Not yet driven_ (unit-covered in `app/src/lib/getElements.characterization.test.ts`).
 - `container-group` — `Label {` … `}` renders a compound node containing the indented lines. _Not yet driven._
 - `container-edges` — lines indented under a closing `}` become edges from the container itself; dagre leaves such edges out of layout, so the child floats. _Not yet driven._
@@ -27,6 +28,10 @@ Preconditions:
 - **Drag the shared target.** Mouse-drag from the node's `renderedPosition()` offset by `ff.canvas().boundingBox()`. After `ff.waitForGraph()`, every incoming edge's `targetEndpoint()` lies inside the node's `boundingBox()`. `ff.shot("after-drag", ff.canvas())` shows all five lines ending at the moved node and none running to the top-left corner.
 
 ## Gotchas
+
+- `getElements` tags every edge with `parallel`, the count of edges on its unordered node pair. The post style (`graphUtilityClasses.ts`, applied after the user's custom CSS) sets `edge[parallel > 1] { curve-style: bezier }` and a 90px `control-point-step-size` from three up, so parallel edges fan apart under taxi, round-taxi and straight themes. Cytoscape resolves style by order, not specificity, so this rule beats a custom `edge { curve-style }`; "Use Custom CSS Only" skips it. Read `e.midpoint()` from `window.__cy` to prove the fan: collapsed edges share one midpoint.
+- The same order rule beats a template's class rule on a parallel edge. Storyline's `edge.loop_back { curve-style: unbundled-bezier }` turns bezier when the `loop_back` edge reverses an existing edge (`Start -> Next` plus `Next -> Start`); a `loop_back` edge with no reverse partner keeps unbundled-bezier. Self-loops count as parallel too, so three or more loops on one node fan out as visible arcs.
+- The `references` golden compares with `maxDiffPixels: 100`. Under the suite-wide 1% ratio, trunk's collapsed render (2,122px different) passed.
 
 - Monaco auto-closes `{` when typed, so `ff.typeDoc` of a doc with a container leaves one extra `}` line after the doc. Compare with `startsWith(DOC)`; the stray `}` parses as nothing.
 - Edge-id endpoints never reach Cytoscape: `app/src/lib/parseGraph.ts` filters them for render, Mermaid, Visio and Edit with AI. Excalidraw and JSON Canvas export read from `window.__cy`, so they inherit the filter.

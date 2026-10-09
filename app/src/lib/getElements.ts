@@ -1,8 +1,19 @@
-import { ElementDefinition } from "cytoscape";
+import {
+  EdgeDataDefinition,
+  ElementDefinition,
+  NodeDataDefinition,
+} from "cytoscape";
 import { toCytoscapeElements } from "graph-selector";
 
 import { getSize } from "./getSize";
 import { parseGraph } from "./parseGraph";
+
+const isEdge = (
+  data: NodeDataDefinition | EdgeDataDefinition
+): data is EdgeDataDefinition => "source" in data;
+
+const pairKey = (edge: EdgeDataDefinition) =>
+  [edge.source, edge.target].sort().join("\n");
 
 /**
  * Takes the text input and the getSize function
@@ -10,9 +21,22 @@ import { parseGraph } from "./parseGraph";
  */
 export function getElements(text: string): ElementDefinition[] {
   const cyElements = toCytoscapeElements(parseGraph(text));
+  const edgesPerPair = new Map<string, number>();
+  for (const { data } of cyElements) {
+    if (!isEdge(data)) continue;
+    const key = pairKey(data);
+    edgesPerPair.set(key, (edgesPerPair.get(key) ?? 0) + 1);
+  }
   return cyElements.map((element) => {
-    // if it's an edge continue
-    if ("source" in element.data) return element;
+    if (isEdge(element.data)) {
+      return {
+        ...element,
+        data: {
+          ...element.data,
+          parallel: edgesPerPair.get(pairKey(element.data)),
+        },
+      };
+    }
 
     let size: ReturnType<typeof getSize>;
     let style: any = {};
