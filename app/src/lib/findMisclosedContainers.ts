@@ -12,13 +12,11 @@ type OpenContainer = Omit<MisclosedContainer, "kind"> & {
   swallows: boolean;
 };
 
-// graph-selector puts every line between { and } inside the container
-// regardless of indentation, so a missing or late } draws the container over
-// the rest of the chart. Lines are preprocessed the way its parse() does.
+const linesAsGraphSelectorReadsThem = (text: string) =>
+  stripComments(text.replace(/(https?:)\/\//g, "$1\\/\\/")).split("\n");
+
 export function findMisclosedContainers(text: string): MisclosedContainer[] {
-  const lines = stripComments(text.replace(/(https?:)\/\//g, "$1\\/\\/")).split(
-    "\n"
-  );
+  const lines = linesAsGraphSelectorReadsThem(text);
   const rawLines = text.split("\n");
   const open: OpenContainer[] = [];
   const result: MisclosedContainer[] = [];

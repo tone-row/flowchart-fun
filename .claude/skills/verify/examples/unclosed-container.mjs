@@ -1,5 +1,3 @@
-// Sandbox editor: a container whose closing } is missing or misplaced gets a warning
-// marker on its { line, and the chart keeps rendering.
 const markers = (page) =>
   page.evaluate(() =>
     window.monaco.editor
