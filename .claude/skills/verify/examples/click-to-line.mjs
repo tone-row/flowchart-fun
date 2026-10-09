@@ -47,9 +47,9 @@ async function backgroundPoint(page, ff) {
   return { x: box.x + box.width - 5, y: box.y + Math.min(box.height - 5, bb.y2 + 20) };
 }
 
-// Two clicks on the same element within 250ms are a double-click.
-const tap = async (page, pt) => {
-  await page.waitForTimeout(400);
+const CYTOSCAPE_DOUBLE_CLICK_WINDOW_MS = 250;
+const clickOutsideDoubleClickWindow = async (page, pt) => {
+  await page.waitForTimeout(CYTOSCAPE_DOUBLE_CLICK_WINDOW_MS + 150);
   await page.mouse.click(pt.x, pt.y);
 };
 
@@ -64,12 +64,12 @@ export default async ({ page, ff, step, expect }) => {
 
   step("tap the background to leave the editor");
   const bg = await backgroundPoint(page, ff);
-  await tap(page, bg);
+  await clickOutsideDoubleClickWindow(page, bg);
   expect((await editorState(page)).editorFocused).toBe(false);
 
   step("tap Start: its line scrolls into view and stays highlighted, focus stays on the graph");
   const start = await nodePoint(page, ff, "Start");
-  await tap(page, start);
+  await clickOutsideDoubleClickWindow(page, start);
   expect(await page.evaluate(() => window.__cy.$(":selected").map((n) => n.data("label")))).toEqual(["Start"]);
   await page.mouse.move(bg.x, bg.y);
   await expect.poll(async () => (await editorState(page)).selectedText).toBe("Start");
@@ -81,17 +81,17 @@ export default async ({ page, ff, step, expect }) => {
 
   step("tap the Start -> Middle edge: the highlight moves to the line that defines it");
   const edge = await edgePoint(page, ff, "Start", "Middle");
-  await tap(page, edge);
+  await clickOutsideDoubleClickWindow(page, edge);
   await page.mouse.move(bg.x, bg.y);
   await expect.poll(async () => (await editorState(page)).selectedText).toBe("Middle");
   expect((await editorState(page)).editorFocused).toBe(false);
 
   step("tap the background: the highlight clears");
-  await tap(page, bg);
+  await clickOutsideDoubleClickWindow(page, bg);
   await expect.poll(async () => (await editorState(page)).selectedText).toBe(null);
 
   step("tap Start, then Document -> Theme -> Document: the highlight survives the editor remount");
-  await tap(page, start);
+  await clickOutsideDoubleClickWindow(page, start);
   await page.mouse.move(bg.x, bg.y);
   await expect.poll(async () => (await editorState(page)).selectedText).toBe("Start");
   await page.getByTestId("Editor Tab: Theme").click();
@@ -103,14 +103,14 @@ export default async ({ page, ff, step, expect }) => {
   await ff.shot("after-remount", page);
 
   step("tap Start again: the highlight stays");
-  await tap(page, start);
+  await clickOutsideDoubleClickWindow(page, start);
   await page.mouse.move(bg.x, bg.y);
   await page.waitForTimeout(400);
   expect((await editorState(page)).selectedText, "highlight after re-tapping the same node").toBe("Start");
 
   step("tap Start then Middle 100ms apart: not a double-click, Middle highlighted, editor unfocused");
   const middle = await nodePoint(page, ff, "Middle");
-  await tap(page, start);
+  await clickOutsideDoubleClickWindow(page, start);
   await page.waitForTimeout(100);
   await page.mouse.click(middle.x, middle.y);
   await page.mouse.move(bg.x, bg.y);
@@ -122,7 +122,7 @@ export default async ({ page, ff, step, expect }) => {
   step("double-click Last node: editor focuses, cursor on its line, line scrolled into view");
   expect((await editorState(page)).rendered).not.toContain("Last node");
   const last = await nodePoint(page, ff, "Last node");
-  await page.waitForTimeout(400);
+  await page.waitForTimeout(CYTOSCAPE_DOUBLE_CLICK_WINDOW_MS + 150);
   await page.mouse.dblclick(last.x, last.y);
   await expect.poll(async () => (await editorState(page)).cursorText).toBe("Last node");
   const dbl = await editorState(page);
