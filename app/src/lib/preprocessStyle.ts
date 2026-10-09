@@ -334,9 +334,11 @@ export function processScss(scss: string): {
 /**
  * cytoscape's own comment stripping backtracks exponentially on a comment
  * that is never closed, so comments are removed before the style reaches it.
+ * Each comment becomes a space so the characters either side of it cannot
+ * form a new comment opener.
  */
 export function stripCssComments(css: string) {
-  return css.replace(/\/\*[\s\S]*?(?:\*\/|$)/g, "");
+  return css.replace(/\/\*[\s\S]*?(?:\*\/|$)/g, " ");
 }
 
 export function getStyleStringFromMeta(meta: any) {
