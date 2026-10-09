@@ -26,6 +26,7 @@ import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
 import {
   moveCursorToLine,
+  revealAndHighlightLine,
   updateModelMarkers,
   useEditorStore,
 } from "../lib/useEditorStore";
@@ -242,11 +243,24 @@ function initializeGraph({
       }
     });
 
+    let lastTwoTapTargets: [unknown, unknown] = [undefined, undefined];
+    cyCurrent.on("tap", function handleTapHighlightLine(e) {
+      lastTwoTapTargets = [lastTwoTapTargets[1], e.target];
+      if (e.target === cyCurrent) {
+        useEditorStore.setState({ selectedLineNumber: undefined });
+      } else {
+        revealAndHighlightLine(e.target.data("lineNumber"));
+      }
+    });
+
     // on double click, focus the line number in the editor
     cyCurrent.on(
       "dblclick",
       "node, edge",
       function handleDblClick(this: NodeSingular | EdgeSingular) {
+        // Cytoscape fires dblclick for two quick clicks even on different elements
+        const [previous, latest] = lastTwoTapTargets;
+        if (previous !== latest) return;
         const { lineNumber } = this.data();
         moveCursorToLine(lineNumber);
       }
@@ -300,6 +314,7 @@ function initializeGraph({
       cy.current = undefined;
       cyErrorCatcher.current = undefined;
       delete window.__cy;
+      useEditorStore.setState({ selectedLineNumber: undefined });
       document
         .getElementById("cy")
         ?.removeEventListener("mouseout", handleMouseOut);

@@ -36,7 +36,8 @@ Each feature file starts with an H1 and one paragraph of user-visible behavior, 
 - [Hosted charts](./hosted-charts.md) — pro users create, edit, rename, publish and list cloud charts.
 - [References and containers](./references-and-containers.md) — `(Label)` pointers draw edges to existing nodes, and only to nodes; `{ }` groups lines into a container.
 - [Access and paywalls](./access-and-paywalls.md) — what logged-out and free users are stopped from, and where they are sent.
+- [Graph interaction](./graph-interaction.md) — tapping or double-clicking a node or edge reveals its editor line.
 
 ## Not yet mapped
 
-Graph interactions (right-click class menu, drag, align, freeze layout, zoom), Import Data (CSV/Visio/Lucid) and Load File for pro, AI convert/prompt/edit, Settings (language, dark mode), Feedback form, Account and subscription management, read-only routes `/r` `/c` `/f` `/p` opened cold, mobile layout. Add a file here when one of them becomes the subject of a change.
+Zoom, Import Data (CSV/Visio/Lucid) and Load File for pro, AI convert/prompt/edit, Settings (language, dark mode), Feedback form, Account and subscription management, read-only routes `/r` `/c` `/f` `/p` opened cold, mobile layout. Add a file here when one of them becomes the subject of a change.

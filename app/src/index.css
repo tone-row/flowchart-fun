@@ -57,6 +57,11 @@ html body {
   background: var(--color-lineColor);
 }
 
+.node-selected {
+  background: color-mix(in srgb, var(--color-highlightColor) 12%, transparent);
+  box-shadow: inset 2px 0 0 var(--color-highlightColor);
+}
+
 .view-line {
   box-shadow: inset 0px 0px 0px 0px var(--color-uiAccent);
   font-variant-numeric: tabular-nums;

@@ -12,6 +12,7 @@ export const useEditorStore = create<{
   monaco: null | typeof import("monaco-editor");
   /** The line potential line being hovered */
   hoverLineNumber?: number;
+  selectedLineNumber?: number;
   /** Whether or not the size of the editor is currently being dragged */
   isDragging: boolean;
   /** The markers currently on the model */
@@ -86,5 +87,11 @@ export function moveCursorToLine(line: number) {
     if (!editor) return;
     editor.focus();
     editor.setPosition({ lineNumber: line, column: Infinity });
+    editor.revealLineInCenterIfOutsideViewport(line);
   }
+}
+
+export function revealAndHighlightLine(line: number) {
+  useEditorStore.setState({ selectedLineNumber: line });
+  useEditorStore.getState().editor?.revealLineInCenterIfOutsideViewport(line);
 }
