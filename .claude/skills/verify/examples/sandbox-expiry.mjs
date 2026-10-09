@@ -90,6 +90,18 @@ export default async ({ page, ff, step, expect }) => {
     await page.keyboard.type(line);
   }
   await expect.poll(storedText).toBe(DOC);
+  const renderedStyle = () =>
+    page.evaluate(() => {
+      const root = window.__cy.nodes().filter((n) => n.data("label") === "James test")[0];
+      const canvas = document.querySelector('[data-flowchart-fun-canvas="true"]');
+      return {
+        canvasBg: getComputedStyle(canvas).backgroundColor,
+        nodeBg: root.style("background-color"),
+        nodeFont: root.style("font-family"),
+      };
+    });
+  const styleWhileTyping = await renderedStyle();
+  ff.note({ styleWhileTyping });
 
   step("the cleared-then-typed chart carries a fresh stamp and survives Feedback and back");
   ff.note({ metaAfterClearAndType: await storedMeta() });
@@ -100,4 +112,9 @@ export default async ({ page, ff, step, expect }) => {
   expect((await ff.editorText()).trimEnd()).toBe(DOC);
   expect(g2.nodes.length).toBe(4);
   await ff.shot("mobile-after-return");
+
+  step("it comes back in the same theme the user saw while typing, not the frozen legacy one");
+  const styleAfterReturn = await renderedStyle();
+  ff.note({ styleAfterReturn });
+  expect(styleAfterReturn).toEqual(styleWhileTyping);
 };
