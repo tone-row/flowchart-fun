@@ -20,6 +20,7 @@ import { useTabsStore } from "../lib/useTabsStore";
 import { redo, undo, canUndo, canRedo } from "../lib/undoStack";
 import { useEditorStore } from "../lib/useEditorStore";
 import { hasUserEditedSinceAi, usePromptStore } from "../lib/usePromptStore";
+import { isTypingTarget } from "../lib/isTypingTarget";
 
 type MainProps = {
   children?: ReactNode;
@@ -39,13 +40,7 @@ const WithGraph = memo(({ children }: MainProps) => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (!(event.metaKey || event.ctrlKey)) return;
 
-      // Don't intercept undo/redo in text inputs (e.g. AI toolbar textarea)
-      const active = document.activeElement;
-      if (
-        active instanceof HTMLTextAreaElement ||
-        active instanceof HTMLInputElement
-      )
-        return;
+      if (isTypingTarget(event.target)) return;
 
       const editor = useEditorStore.getState().editor;
       const editorHasFocus = editor?.hasTextFocus();
