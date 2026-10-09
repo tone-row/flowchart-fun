@@ -1,11 +1,9 @@
 const RESPONSIVE_MS = 2000;
 
-const withDeadline = (promise, what) =>
+const withDeadline = (promise, what, ms = RESPONSIVE_MS) =>
   Promise.race([
     promise,
-    new Promise((_, reject) =>
-      setTimeout(() => reject(new Error(`page unresponsive for ${RESPONSIVE_MS}ms after ${what}`)), RESPONSIVE_MS)
-    ),
+    new Promise((_, reject) => setTimeout(() => reject(new Error(`page unresponsive for ${ms}ms after ${what}`)), ms)),
   ]);
 
 export default async ({ page, ff, step, expect }) => {
@@ -46,6 +44,17 @@ export default async ({ page, ff, step, expect }) => {
   const closed = await withDeadline(ff.waitForGraph(), "the closed comment");
   expect(closed.nodes.length).toBe(before.nodes.length);
   expect(await shapeOf(page, "Start")).toBe("diamond");
+
+  step("a saved chart whose Custom CSS starts with //* x */* loads and renders");
+  const [text, metaJson] = (await ff.storage("flowcharts.fun.sandbox")).split("=====");
+  const meta = JSON.parse(metaJson);
+  meta.cytoscapeStyle = `//* x */*\n${meta.cytoscapeStyle}`;
+  await page.evaluate((d) => localStorage.setItem("flowcharts.fun.sandbox", d), `${text}=====${JSON.stringify(meta)}=====`);
+  await page.reload({ waitUntil: "domcontentloaded" });
+  const loaded = await withDeadline(ff.waitForGraph((g) => g.nodes.length === 2), "loading the saved chart", 5000);
+  expect(loaded.nodes.length).toBe(before.nodes.length);
+  expect(await withDeadline(shapeOf(page, "Start"), "reading the loaded chart")).toBe("diamond");
+  await ff.shot("saved-chart-loaded", ff.canvas());
 };
 
 function shapeOf(page, label) {
