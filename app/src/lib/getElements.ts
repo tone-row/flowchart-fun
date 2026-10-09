@@ -1,14 +1,15 @@
 import { ElementDefinition } from "cytoscape";
-import { parse, toCytoscapeElements } from "graph-selector";
+import { toCytoscapeElements } from "graph-selector";
 
 import { getSize } from "./getSize";
+import { parseGraph } from "./parseGraph";
 
 /**
  * Takes the text input and the getSize function
  * and returns the elements using the specified parser
  */
 export function getElements(text: string): ElementDefinition[] {
-  const cyElements = toCytoscapeElements(parse(text));
+  const cyElements = toCytoscapeElements(parseGraph(text));
   return cyElements.map((element) => {
     // if it's an edge continue
     if ("source" in element.data) return element;
