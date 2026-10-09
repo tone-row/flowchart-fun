@@ -68,7 +68,7 @@ msgstr "खाता"
 msgid "Active"
 msgstr "सक्रिय"
 
-#: src/lib/parserErrors.tsx:47
+#: src/lib/parserErrors.tsx:49
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "किसी भी विशेष वर्ण के पहले एक बैकस्लैश (<0>\\</0>) जोड़ें: <1>(</1>, <2>:</2>, <3>#</3>, या <4>.</4>"
 
@@ -363,6 +363,14 @@ msgstr "साइन इन करने के लिए अपना ईमे
 msgid "Connect your Data"
 msgstr "अपने डेटा को कनेक्ट करें"
 
+#: src/lib/parserErrors.tsx:76
+msgid "Container is never closed, so every line below it is inside it. Add a {brace} on its own line after the container's last child."
+msgstr "कंटेनर कभी बंद नहीं होता, इसलिए इसके नीचे की हर पंक्ति इसके अंदर है। कंटेनर के अंतिम चाइल्ड के बाद अपनी अलग पंक्ति में एक {brace} जोड़ें।"
+
+#: src/lib/parserErrors.tsx:78
+msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
+msgstr "कंटेनर वहाँ बंद नहीं होता जहाँ आप उम्मीद करते हैं। जो पंक्तियाँ इसके नीचे इंडेंट नहीं हैं, वे भी इसके अंदर हैं। इसके {brace} को इसकी अंतिम इंडेंट की गई पंक्ति के ठीक बाद ऊपर ले जाएँ।"
+
 #: src/components/LearnSyntaxDialog.tsx:260
 msgid "Containers"
 msgstr "कंटेनर"
@@ -626,7 +634,7 @@ msgstr "किनारे शैली"
 msgid "Edge Text Size"
 msgstr "एड्ज टेक्स्ट आकार"
 
-#: src/lib/parserErrors.tsx:19
+#: src/lib/parserErrors.tsx:21
 msgid "Edge missing indentation"
 msgstr "एड्ज अंतराल गुम है"
 
@@ -962,7 +970,7 @@ msgstr "आईडीज़"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "अगर उस ईमेल के साथ एक खाता मौजूद है, तो हमने आपको पासवर्ड रीसेट करने के लिए निर्देशों के साथ एक ईमेल भेजा है।"
 
-#: src/lib/parserErrors.tsx:21
+#: src/lib/parserErrors.tsx:23
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "यदि आप एक एड्ज बनाने के लिए मतलब है, तो इस लाइन को इंडेंट करें। यदि नहीं, तो कॉलन को बैक स्लैश के साथ भागो <0> \\: </0>"
 
@@ -1232,7 +1240,7 @@ msgstr "चलो"
 msgid "Move {0}"
 msgstr "चलो {0}"
 
-#: src/lib/parserErrors.tsx:29
+#: src/lib/parserErrors.tsx:31
 msgid "Multiple pointers on same line"
 msgstr "एक ही लाइन पर कई प्रतीक"
 
@@ -1442,7 +1450,7 @@ msgstr "स्थायी चार्ट एक प्रो सुविध�
 msgid "Playbook"
 msgstr "प्लेबुक"
 
-#: src/lib/parserErrors.tsx:34
+#: src/lib/parserErrors.tsx:36
 msgid "Pointer and container on same line"
 msgstr "प्रतीक और कंटेनर एक ही लाइन पर"
 
@@ -1958,19 +1966,19 @@ msgstr "फैसला लेने का समय"
 msgid "Tip"
 msgstr "सुझाव"
 
-#: src/lib/parserErrors.tsx:61
+#: src/lib/parserErrors.tsx:63
 msgid "To fix this change one of the edge IDs"
 msgstr "इसे ठीक करने के लिए एड्ज आईडी के एक को बदलें"
 
-#: src/lib/parserErrors.tsx:56
+#: src/lib/parserErrors.tsx:58
 msgid "To fix this change one of the node IDs"
 msgstr "इसे ठीक करने के लिए नोड आईडी के एक को बदलें"
 
-#: src/lib/parserErrors.tsx:30
+#: src/lib/parserErrors.tsx:32
 msgid "To fix this move one pointer to the next line"
 msgstr "इसे ठीक करने के लिए प्रतीक को अगली पंक्ति पर ले जाएं"
 
-#: src/lib/parserErrors.tsx:36
+#: src/lib/parserErrors.tsx:38
 msgid "To fix this start the container <0/> on a different line"
 msgstr "इसे ठीक करने के लिए कंटेनर <0/> को एक अलग पंक्ति पर शुरू करें"
 
@@ -2015,11 +2023,11 @@ msgstr "एआई के साथ दस्तावेज़ों को आ�
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "अपने विचारों को कुछ ही सेकंड में पेशेवर डायग्राम में बदलें"
 
-#: src/lib/parserErrors.tsx:60
+#: src/lib/parserErrors.tsx:62
 msgid "Two edges have the same ID"
 msgstr "दो किनारे उसी आईडी के हैं"
 
-#: src/lib/parserErrors.tsx:55
+#: src/lib/parserErrors.tsx:57
 msgid "Two nodes have the same ID"
 msgstr "दो नोड उसी आईडी के हैं"
 
@@ -2031,7 +2039,7 @@ msgstr "उह ओह, आपके पास मुफ्त अनुरोध
 msgid "Undo"
 msgstr "वापस ले जाएं"
 
-#: src/lib/parserErrors.tsx:45
+#: src/lib/parserErrors.tsx:47
 msgid "Unescaped special character"
 msgstr "अस्केप्ड विशेष वर्ण"
 
@@ -2043,7 +2051,7 @@ msgstr "एक नोड को पहचानने के लिए अद्
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: src/lib/parserErrors.tsx:65
+#: src/lib/parserErrors.tsx:67
 msgid "Unknown Parsing Error"
 msgstr "अज्ञात पार्सिंग त्रुटि"
 

@@ -68,7 +68,7 @@ msgstr "Compte"
 msgid "Active"
 msgstr "Actif"
 
-#: src/lib/parserErrors.tsx:47
+#: src/lib/parserErrors.tsx:49
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "Ajoutez un backslash (<0>\\</0>) avant tout caractère spécial: <1>(</1>, <2>:</2>, <3>#</3>, ou <4>.</4>"
 
@@ -363,6 +363,14 @@ msgstr "Confirmez votre adresse e-mail pour vous connecter."
 msgid "Connect your Data"
 msgstr "Connectez vos données"
 
+#: src/lib/parserErrors.tsx:76
+msgid "Container is never closed, so every line below it is inside it. Add a {brace} on its own line after the container's last child."
+msgstr "Le conteneur n'est jamais fermé, donc chaque ligne en dessous se retrouve à l'intérieur. Ajoutez une {brace} sur sa propre ligne après le dernier enfant du conteneur."
+
+#: src/lib/parserErrors.tsx:78
+msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
+msgstr "Le conteneur n'est pas fermé là où vous l'attendez. Des lignes qui ne sont pas indentées sous lui se retrouvent aussi à l'intérieur. Remontez sa {brace} juste après sa dernière ligne indentée."
+
 #: src/components/LearnSyntaxDialog.tsx:260
 msgid "Containers"
 msgstr "Conteneurs"
@@ -626,7 +634,7 @@ msgstr "Style Edge"
 msgid "Edge Text Size"
 msgstr "Taille du texte de bord"
 
-#: src/lib/parserErrors.tsx:19
+#: src/lib/parserErrors.tsx:21
 msgid "Edge missing indentation"
 msgstr "Indentation manquante du bord"
 
@@ -962,7 +970,7 @@ msgstr "ID"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "Si un compte avec cet e-mail existe, nous vous avons envoyé un e-mail avec des instructions sur la façon de réinitialiser votre mot de passe."
 
-#: src/lib/parserErrors.tsx:21
+#: src/lib/parserErrors.tsx:23
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "Si vous souhaitez créer un bord, faites une indentation de cette ligne. Sinon, échappez le deux-points avec une barre oblique <0>\\:</0>"
 
@@ -1232,7 +1240,7 @@ msgstr "Déplacer"
 msgid "Move {0}"
 msgstr "Déplacer {0}"
 
-#: src/lib/parserErrors.tsx:29
+#: src/lib/parserErrors.tsx:31
 msgid "Multiple pointers on same line"
 msgstr "Plusieurs pointeurs sur la même ligne"
 
@@ -1442,7 +1450,7 @@ msgstr "Les diagrammes permanents sont une fonctionnalité Pro"
 msgid "Playbook"
 msgstr "Livre-jeu"
 
-#: src/lib/parserErrors.tsx:34
+#: src/lib/parserErrors.tsx:36
 msgid "Pointer and container on same line"
 msgstr "Pointeur et conteneur sur la même ligne"
 
@@ -1958,19 +1966,19 @@ msgstr "Temps de décider"
 msgid "Tip"
 msgstr "Astuce"
 
-#: src/lib/parserErrors.tsx:61
+#: src/lib/parserErrors.tsx:63
 msgid "To fix this change one of the edge IDs"
 msgstr "Pour corriger cela, changez l'un des ID de bord"
 
-#: src/lib/parserErrors.tsx:56
+#: src/lib/parserErrors.tsx:58
 msgid "To fix this change one of the node IDs"
 msgstr "Pour corriger ceci, changez l'un des ID de nœud"
 
-#: src/lib/parserErrors.tsx:30
+#: src/lib/parserErrors.tsx:32
 msgid "To fix this move one pointer to the next line"
 msgstr "Pour corriger ceci, déplacez un pointeur vers la ligne suivante"
 
-#: src/lib/parserErrors.tsx:36
+#: src/lib/parserErrors.tsx:38
 msgid "To fix this start the container <0/> on a different line"
 msgstr "Pour corriger cela, commencez le conteneur <0/> sur une ligne différente."
 
@@ -2015,11 +2023,11 @@ msgstr "Transformez des documents en diagrammes avec l'IA"
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "Transformez vos idées en diagrammes professionnels en quelques secondes"
 
-#: src/lib/parserErrors.tsx:60
+#: src/lib/parserErrors.tsx:62
 msgid "Two edges have the same ID"
 msgstr "Deux arêtes ont le même ID"
 
-#: src/lib/parserErrors.tsx:55
+#: src/lib/parserErrors.tsx:57
 msgid "Two nodes have the same ID"
 msgstr "Deux nœuds ont le même ID"
 
@@ -2031,7 +2039,7 @@ msgstr "Oh oh, vous n'avez plus de demandes gratuites ! Passez à Flowchart Fun 
 msgid "Undo"
 msgstr "Annuler"
 
-#: src/lib/parserErrors.tsx:45
+#: src/lib/parserErrors.tsx:47
 msgid "Unescaped special character"
 msgstr "Caractère spécial non échappé"
 
@@ -2043,7 +2051,7 @@ msgstr "Valeur de texte unique pour identifier un nœud"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: src/lib/parserErrors.tsx:65
+#: src/lib/parserErrors.tsx:67
 msgid "Unknown Parsing Error"
 msgstr "Erreur d'analyse inconnue"
 

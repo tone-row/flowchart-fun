@@ -1,7 +1,7 @@
-import strip from "@tone-row/strip-comments";
+import { strip } from "@tone-row/strip-comments";
 import cytoscape from "cytoscape";
 
-export function stripComments(t: string) {
+export function stripComments(t: string): string {
   return strip(t, { preserveNewlines: true });
 }
 
