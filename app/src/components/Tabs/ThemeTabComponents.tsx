@@ -1,7 +1,7 @@
 import * as Slider from "@radix-ui/react-slider";
 import { Control } from "formulaic";
 import * as Popover from "@radix-ui/react-popover";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { allFonts, fonts } from "../../lib/fonts";
 import classNames from "classnames";
 import { Editor } from "@monaco-editor/react";
@@ -341,9 +341,20 @@ function CustomCSSEditor({
   label: string;
 }) {
   const mode = useLightOrDarkMode();
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(MIN_CSS_EDITOR_HEIGHT);
+  useEffect(() => {
+    const panel = wrapperRef.current?.closest(".theme-tab");
+    if (!panel) return;
+    const observer = new ResizeObserver(([entry]) =>
+      setHeight(Math.max(MIN_CSS_EDITOR_HEIGHT, entry.contentRect.height))
+    );
+    observer.observe(panel);
+    return () => observer.disconnect();
+  }, []);
   return (
     <div
+      ref={wrapperRef}
       className="theme-editor-monaco bg-neutral-50 dark:bg-neutral-900 [contain:inline-size]"
       id="theme-editor-wrapper"
     >
@@ -355,15 +366,9 @@ function CustomCSSEditor({
         onChange={(value) => {
           onValueChange(value ?? "");
         }}
-        onMount={(editor) => {
-          const fit = (contentHeight: number) =>
-            setHeight(Math.max(MIN_CSS_EDITOR_HEIGHT, contentHeight));
-          fit(editor.getContentHeight());
-          editor.onDidContentSizeChange((e) => fit(e.contentHeight));
-        }}
         options={{
           minimap: { enabled: false },
-          scrollbar: { handleMouseWheel: false },
+          scrollbar: { alwaysConsumeMouseWheel: false },
           lineNumbers: "off",
           lineDecorationsWidth: 0,
           lineNumbersMinChars: 0,

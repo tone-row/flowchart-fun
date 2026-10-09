@@ -10,7 +10,7 @@ The **Theme** tab edits the chart's look and layout (layout algorithm, direction
 - `template-style-only` — Examples → template → Load with "Load default content" unchecked restyles but keeps the text. Driven by `examples/theme-and-templates.mjs`.
 - `template-with-content` — with "Load default content" checked, the text is replaced after an "Are you sure?" confirm. _Not yet driven._
 - `theme-custom-css` — the Advanced section's custom CSS applies `.color_*`/`.shape_*` classes and variables. _Not yet driven._
-- `theme-css-editor-size` — the Advanced section's Custom CSS editor grows to its content (minimum 300px) so the Theme panel is the only scroller, the mouse wheel over it scrolls the panel, and narrowing the pane rewraps it. Driven by `examples/theme-css-editor.mjs`.
+- `theme-css-editor-size` — the Advanced section's Custom CSS editor is as tall as the Theme panel's visible content area (minimum 300px) and follows window resizes. It keeps its own scrolling, so ArrowDown, Cmd+F, and drag-select reveal lines below its viewport; the wheel scrolls the editor and hands off to the panel at the editor's top or bottom; narrowing the pane narrows it. Driven by `examples/theme-css-editor.mjs`.
 - `theme-fonts-colors` — font picker, colors, node/edge sliders. _Not yet driven._
 
 ## How to get to it (user POV)
@@ -38,7 +38,8 @@ Read metadata with `JSON.parse((await ff.storage("flowcharts.fun.sandbox")).spli
 - Assert layout by relative node order on an axis, not by bounding-box spread: wide nodes make a DOWN tree wider than tall.
 - `cose` and `stress` are force-directed and re-randomize each render; assert membership and edges, not positions.
 - Template buttons are named by the template id (the thumbnail `alt`), e.g. `org-chart`, not by a display title.
-- The Custom CSS editor is `getByLabel("Custom CSS", { exact: true })`. Count rendered lines with its `.view-line` elements; Monaco only renders lines inside its own viewport, so a count below the stylesheet length means the editor is clipping.
+- The Custom CSS editor is `getByLabel("Custom CSS", { exact: true })`. Monaco renders `.view-line` elements only for lines inside its own viewport, so count them to see how many lines are on screen, not how long the stylesheet is. Read the stylesheet length from the model.
+- Monaco runs with its macOS keymap in the headless browser: `Meta+ArrowUp` moves the caret to line 1, `Meta+f` opens find.
 - The pane divider is `[data-dragging] button`; drag it with `page.mouse` down, move with `steps`, up.
 - monaco-editor 0.33 has no `monaco.editor.getEditors()`. To read an editor instance, hook `onDidCreateEditor` from a `page.addInitScript` setter on `window.monaco`.
 - Any change here can alter rendering: also run `pnpm -F app visual` against the instance (see SKILL.md Evidence).
