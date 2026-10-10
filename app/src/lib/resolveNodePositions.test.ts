@@ -366,11 +366,8 @@ describe("resolveNodePositions", () => {
       resolverInput(getElements(text), () => ({ width: 100, height: 40 }));
     type Rect = { x1: number; y1: number; x2: number; y2: number };
     const rects = (nodes: NodeRef[], positions: NodePositions) => {
-      const out: Record<string, Rect> = {};
       const rectOf = (n: NodeRef): Rect => {
-        const inner = nodes
-          .filter((c) => c.parent === n.id)
-          .map((c) => rectOf(c));
+        const inner = nodes.filter((c) => c.parent === n.id).map(rectOf);
         if (inner.length === 0) {
           const { x, y } = positions[n.id];
           return { x1: x - 50, x2: x + 50, y1: y - 20, y2: y + 20 };
@@ -382,8 +379,7 @@ describe("resolveNodePositions", () => {
           y2: Math.max(...inner.map((r) => r.y2)) + PARENT_PADDING,
         };
       };
-      for (const n of nodes) out[n.label] = rectOf(n);
-      return out;
+      return Object.fromEntries(nodes.map((n) => [n.label, rectOf(n)]));
     };
     const hits = (a: Rect, b: Rect) =>
       a.x1 < b.x2 && b.x1 < a.x2 && a.y1 < b.y2 && b.y1 < a.y2;
