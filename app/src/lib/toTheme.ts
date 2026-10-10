@@ -10,11 +10,11 @@ import {
 } from "./graphUtilityClasses";
 import { theme as defaultTheme } from "./templates/default-template";
 
+export const PARENT_PADDING = 10;
+
 /**
  * Takes an FFTheme and returns cytoscape layout and style
  */
-export const PARENT_PADDING = 10;
-
 export function toTheme(theme: FFTheme) {
   const layout: cytoscape.LayoutOptions = {
     name: theme.layoutName,
