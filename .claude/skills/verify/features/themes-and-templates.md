@@ -12,7 +12,7 @@ The **Theme** tab edits the chart's look and layout (layout algorithm, direction
 - `template-with-content` — with "Load default content" checked, the text is replaced after an "Are you sure?" confirm. _Not yet driven._
 - `theme-custom-css` — the Advanced section's custom CSS applies `.color_*`/`.shape_*` classes and variables. _Not yet driven._
 - `theme-css-editor-size` — the Advanced section's Custom CSS editor is as tall as the Theme panel's visible content area (minimum 300px) and follows window resizes; on touch screens (`pointer: coarse`) it takes at most half the panel, so a swipe beside it scrolls the panel. It keeps its own scrolling, so ArrowDown, Cmd+F, and drag-select reveal lines below its viewport; the wheel scrolls the editor and hands off to the panel at the editor's top or bottom; narrowing the pane narrows it. A click, drag or tap never scrolls the panel (the caret lands where the pointer was); when a keyboard move, typing, undo or find moves the caret off the panel's visible area, the panel scrolls by the least amount that brings the caret line back with one line of margin, including after the panel was scrolled away from the focused editor. Loading a template's layout and styles via Examples leaves the panel where it was. Driven by `examples/theme-css-editor.mjs`.
-- `theme-fonts-colors` — font picker, colors, node/edge sliders. _Not yet driven._
+- `theme-fonts-colors` — font picker, colors, node/edge sliders. The picker lists `fonts` in `lib/fonts.ts` (sans first, then the Literata serif, then the Shantell Sans hand font); each entry's `category` is `sans`, `serif` or `hand`, and `fonts.test.ts` fails if a template's `theme.fontFamily` is not `sans` (only sans fonts lead a theme). Picking Literata is driven by `examples/font-picker-serif.mjs`; colors and sliders are _not yet driven._
 - `theme-css-unclosed-comment` — an unclosed `/*` typed at the end of the Custom CSS keeps the page responsive and the chart rendered; it comments out only the rest of the user's own CSS, so the built-in `.shape_*`/`.border_*`/text-size classes and the parallel-edge rule still apply (a `.shape_diamond` node stays a diamond) until it is closed. Driven by `examples/css-unclosed-comment.mjs`.
 
 ## How to get to it (user POV)
@@ -38,6 +38,8 @@ Read metadata with `JSON.parse((await ff.storage("flowcharts.fun.sandbox")).spli
 ## Gotchas
 
 - "Layout" needs `{ exact: true }`; the plain label also matches "Layout Algorithm".
+- The font picker popover opens below the Font Family input and does not flip, so at 1280x900 its lower entries sit below the viewport until the Theme panel is scrolled (`page.mouse.wheel` over the input first). Hover a picker entry before clicking it: the input's blur closes the popover unless the pointer has already entered it, and Playwright's instant move-and-click lands the mousedown before that hover commits.
+- Cytoscape reports a node's `font-family` with quotes (`"Satoshi"`), and `window.__cy` is briefly undefined while the graph remounts after a font change.
 - Assert layout by relative node order on an axis, not by bounding-box spread: wide nodes make a DOWN tree wider than tall.
 - `cose` and `stress` are force-directed and re-randomize each render; assert membership and edges, not positions.
 - Template buttons are named by the template id (the thumbnail `alt`), e.g. `org-chart`, not by a display title.
