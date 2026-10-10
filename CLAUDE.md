@@ -676,6 +676,8 @@ There is significant technical debt that is acknowledged but not yet prioritized
 Found and proven during the October 2026 feedback fixes (#821 to #841), then left alone on purpose. Each was reproduced with a verify drive; the evidence lives in the gitignored `.verify/feedback-program/` folder on the maintainer's machine.
 
 - **Leaving a hosted chart after a failed save.** If a save failed and the user navigates elsewhere in the app before the reconnect resend, the edit is lost. The "Changes not saved" warning shows until then. A save on unmount would close it, but `EditHosted` survives `/u/:id` changes, which makes that riskier.
+- **Hosted saves can land out of order.** Each debounced save is an independent `mutate`. If an earlier PATCH reaches the server more than about a second after a later one, the row keeps the older text while the indicator shows saved. The reconnect resend from #841 is one more way into the same race. Fix: one save in flight at a time, sending the latest text when it settles.
+- **Switching `/u/A` to `/u/B` while `EditHosted` stays mounted** (history back/forward) drops an edit to A still inside the 1 s debounce and sends B's unchanged text to B.
 - **No prompt when closing a tab with unsaved changes.** There is no `beforeunload` guard.
 - **Other Supabase writes may ignore `{ error }`.** postgrest-js reports network failures as a returned `error`, not a throw. `updateChartText` checks it since #841; the other writes in `queries.ts` and `folderQueries.ts` were not audited.
 - **AI undo discards later typing.** After an AI edit, Cmd+Z on the graph or the AI toolbar's Undo restores the pre-AI text and drops anything typed since.
