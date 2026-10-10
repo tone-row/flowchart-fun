@@ -262,8 +262,10 @@ async function runSeed(SEED, { page, ff, step, expect }) {
   ff.note({ seed: SEED, violations });
 
   step(`seed ${SEED}: Align Horizontally on two anchored nodes, then reload`);
-  const labels = (await snap(page)).filter((n) => !n.isParent && storedByLabel[n.label]).map((n) => n.label);
-  const [a, b] = labels.filter((l) => l !== "Request").slice(0, 2);
+  const anchored = (await snap(page)).filter((n) => !n.isParent && storedByLabel[n.label] && n.label !== "Request");
+  const a = anchored[0].label;
+  const b = anchored.find((n) => Math.abs(n.x - anchored[0].x) > 0.5)?.label;
+  if (!b) throw new Error(`seed ${SEED}: every anchored node already shares x with ${a}`);
   await selectPair(page, ff, a, b);
   const pre = await snap(page);
   await page.getByRole("button", { name: "Align Horizontally" }).click();
