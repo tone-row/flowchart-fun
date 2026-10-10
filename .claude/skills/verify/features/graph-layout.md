@@ -1,0 +1,47 @@
+# Graph layout
+
+The theme's layout algorithm places nodes until the user drags one. A drag freezes every node's position into the document (`meta.nodePositions`, the snowflake button turns on) and the chart is drawn with the `preset` layout from then on. Each render resolves that stored map onto the current text: a node keeps the position saved under its label (or its explicit `#id`), so inserting, deleting, reordering or renaming lines moves nothing, and a node with no saved position is placed next to a neighbour that has one. Only position actions write the map (drag, align, unfreeze). Opening a chart, editing its text, loading a template and AI streams never write it, so reopening a chart draws exactly what the session showed.
+
+## Sub-features
+
+- `layout-auto` — with no frozen positions, the Theme tab's layout and direction place the nodes. Driven by `examples/theme-and-templates.mjs`.
+- `layout-freeze-on-drag` — dragging a node writes every node's position (with its label) into `meta.nodePositions` and turns `Layout Frozen` on. Driven by `examples/frozen-layout.mjs`.
+- `layout-frozen-edit` — in a frozen chart, renaming a node in place, inserting a line above other nodes, appending a line, deleting a line, swapping sibling lines, and deleting a line then undoing it move none of the existing nodes, and the stored map stays as the drag left it. Driven by `examples/frozen-layout.mjs`, `examples/frozen-edit-sequences.mjs` and `examples/frozen-layout-reload.mjs`.
+- `layout-frozen-new-node` — a node added to a frozen chart gets a position next to its parent (or past the far edge of the chart when it has no placed neighbour) and does not overlap another node. Driven by `examples/frozen-layout.mjs`.
+- `layout-frozen-container` — a container in a frozen chart still wraps its children after edits. Driven by `examples/frozen-layout.mjs`.
+- `layout-frozen-duplicate-labels` — two nodes with the same label each keep their own position through inserts, and deleting the first leaves the second where it was. Driven by `examples/frozen-layout-reload.mjs`.
+- `layout-frozen-rename-collision` — renaming a node onto a label another node already carries moves neither node. Driven by `examples/frozen-layout-reload.mjs`.
+- `layout-legacy-map` — a chart frozen before labels were stored (`n<line>` keys, no labels) opens exactly as stored, and neither opening nor editing writes it. Until the next drag or align it resolves by id, as it always has (an insert shifts the nodes below it by one entry; the node that falls off the end is placed, not dropped at (0,0)). The first align or drag rewrites the map under the current ids with labels, after which text edits move nothing. Driven by `examples/frozen-legacy-no-write.mjs` and `examples/frozen-layout-reload.mjs`.
+- `layout-align` — Align (auto), Align Horizontally and Align Vertically work on the chart as drawn, including after edits re-keyed the nodes, and rewrite the stored map under the current ids. Driven by `examples/frozen-layout.mjs`, `examples/frozen-legacy-no-write.mjs` and `examples/align-hotkeys.mjs`.
+- `layout-unfreeze` — clicking `Layout Frozen` deletes `meta.nodePositions` and the theme layout runs again. Driven by `examples/frozen-layout.mjs`.
+- `layout-reload` — reopening a frozen chart draws what the session showed: after a rename, an insert above the renamed node, or two new nodes added in reverse text order. Driven by `examples/frozen-layout.mjs` and `examples/frozen-layout-reload.mjs`.
+- `layout-open-never-writes` — opening a hosted chart sends no PATCH, and opening a sandbox chart leaves its storage byte-identical. Driven by `examples/hosted-open-no-write.mjs` (full mode) and `examples/frozen-legacy-no-write.mjs`.
+
+## How to get to it (user POV)
+
+- Drag any node in the graph pane on `/` or `/u/:id`.
+- The floating menu at the bottom of the graph: `Layout Frozen` (snowflake), `Align`, `Align Horizontally`, `Align Vertically` (the last two need two or more selected nodes; `h`/`v` are their hotkeys).
+- Theme tab, Layout section, to change the algorithm or direction while unfrozen.
+
+## Driving it with drive.mjs
+
+Preconditions:
+
+- Healthy instance; client mode is enough for the sandbox.
+- Read positions with `window.__cy.nodes().filter((n) => !n.isParent())`: a container's position is derived from its children, so it moves whenever a child does.
+
+- **Freeze by dragging.** Move the mouse to a node's `renderedPosition()` plus the canvas box, `mouse.down`, several `mouse.move` steps, `mouse.up`. `expect.poll` until the stored `nodePositions` appears (the sandbox save is throttled to 1s), and `Layout Frozen` has `aria-pressed="true"`.
+- **Edit while frozen.** Move the Monaco cursor with keyboard presses and type (`examples/frozen-layout.mjs` has `gotoLine`, `insertLineAfter`, `deleteLine`, `appendLine`, `replaceLabel`). Snapshot positions by label before and after; the set of moved labels is `[]`. The stored map after the edit deep-equals the map before it.
+- **New node placement.** Compare the new node's `boundingBox({ includeLabels: false })` with every leaf node's box; no intersection.
+- **Legacy map.** Seed `flowcharts.fun.sandbox` with a document whose metadata has `expires` in the future and `nodePositions` without labels, reload, then compare the raw stored string with `toBe` after a few seconds.
+- **Align.** Shift-click two nodes, click `Align Vertically`; the two nodes share a `y` and `nodePositions` in storage is keyed by the current ids with a `label` on each entry.
+- **Unfreeze.** Click `Layout Frozen`; `nodePositions` disappears from storage.
+- **Reload.** Wait for the text (not the map) to reach storage, then `page.reload()`; the positions by label match the pre-reload snapshot.
+- **Gate.** `scripts/gate.sh <port> <label> <list>` runs a list of drives and writes a PASS/FAIL table; `gate.sh --compare a.tsv b.tsv` puts two runs side by side (used for trunk versus branch).
+
+## Gotchas
+
+- Node ids are positional (`n<line>`) unless a line carries `#id`, so a text edit re-keys every node below it. `resolveNodePositions` (`app/src/lib/resolveNodePositions.ts`) is a pure function of the stored map and the parsed nodes: explicit ids and label-less legacy entries match by id, then a label diff (longest common subsequence in line order, preferring same-line pairs, so duplicates follow their neighbours), then leftover labels anywhere, then unmatched stored and current lines inside one gap pair up as renames (most similar label first, by shared prefix and suffix), and whatever is left is placed next to a neighbour. The result for the current render lives in `useGraphStore.resolvedPositions` and the align tools read it from there, not from the doc.
+- Limits of resolving from the last drag: a renamed node is recognised by label similarity only, so a rename to an unrelated label followed by an insert above it before the next drag can hand the spot to the inserted node; a new node has no saved position until the next drag or align, so it is re-placed (deterministically) on every render; a legacy map (no labels) shifts by id on insert until the next drag or align. Dragging or aligning saves the current picture and clears all three.
+- The sandbox stores the doc on every doc-store change with a fresh `expires` stamp; it is throttled to 1s, so poll before reading storage after a drag or align.
+- `fcose` and `stress` force-directed layouts are only deterministic through the frozen-position fixtures used by the visual suite (`app/e2e/visual/fixtures/`).
