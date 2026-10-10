@@ -604,6 +604,14 @@ describe("resolveNodePositions", () => {
       expect(s.moved(["A", "D"])).toEqual([]);
     });
 
+    test("renaming a saved node keeps its spot when a line is inserted above it and the line below it is deleted", () => {
+      const s = session("Get OU\n  Detect role\n    Get flag\nEnd");
+      const spot = s.at("Detect role");
+      s.render("Get OU\n  New 2\n  Detect role r14\nEnd");
+      expect(s.at("Detect role r14")).toEqual(spot);
+      expect(s.moved(["Get OU", "End"])).toEqual([]);
+    });
+
     test("renaming a saved node keeps its spot even when inserted and deleted lines surround it", () => {
       const s = session(
         [
