@@ -23,6 +23,7 @@ export function resolverInput(
 ): ResolverInput {
   const nodes: NodeRef[] = [];
   const edges: EdgeRef[] = [];
+  const parents = new Set(elements.map(({ data }) => data.parent));
   for (const element of elements) {
     const { data } = element;
     if (isEdge(element)) {
@@ -37,7 +38,7 @@ export function resolverInput(
       id,
       label: typeof data.label === "string" ? data.label : "",
       ...(data.parent ? { parent: data.parent as string } : {}),
-      ...(data.isParent ? {} : { size: sizeOf(id) }),
+      ...(parents.has(id) ? {} : { size: sizeOf(id) }),
     });
   }
   return { nodes, edges };
