@@ -1,3 +1,5 @@
+import { Doc, useDoc } from "./useDoc";
+
 interface UndoAction {
   undo: () => void;
   redo: () => void;
@@ -5,6 +7,16 @@ interface UndoAction {
 
 let undoStack: UndoAction[] = [];
 let redoStack: UndoAction[] = [];
+
+const documentIdentity = ({ details }: Doc) =>
+  `${details.isHosted}:${details.id}`;
+
+function clearHistoryOfPreviousDocument() {
+  undoStack = [];
+  redoStack = [];
+}
+
+useDoc.subscribe(documentIdentity, clearHistoryOfPreviousDocument);
 
 export function addToUndoStack(action: UndoAction) {
   undoStack.push(action);

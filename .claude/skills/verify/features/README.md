@@ -37,7 +37,7 @@ Each feature file starts with an H1 and one paragraph of user-visible behavior, 
 - [References and containers](./references-and-containers.md) — `(Label)` pointers draw edges to existing nodes, and only to nodes; `{ }` groups lines into a container.
 - [Access and paywalls](./access-and-paywalls.md) — what logged-out and free users are stopped from, and where they are sent.
 - [Graph interaction](./graph-interaction.md) — tapping or double-clicking a node or edge reveals its editor line; the `h`/`v` align hotkeys.
-- [Graph layout](./graph-layout.md) — auto layout until a drag freezes positions; frozen charts survive text edits, legacy maps, align tools, unfreeze.
+- [Graph layout](./graph-layout.md) — auto layout until a drag freezes positions; snap on drop, undoable drags, undo scoped to the open chart; frozen charts survive text edits, legacy maps, align tools, unfreeze.
 
 ## Not yet mapped
 

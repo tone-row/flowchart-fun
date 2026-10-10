@@ -243,3 +243,43 @@ export function alignNodesVertically(nodeIds: string[]) {
     },
   });
 }
+
+export function snapToNeighbours(
+  positions: NodePositions,
+  drag: { grabbed: string; moved: string[] },
+  candidates: { connected: string[]; all: string[] },
+  threshold: number
+): NodePositions {
+  const grabbed = positions[drag.grabbed];
+  const moved = new Set(drag.moved);
+
+  const snapTo = (axis: "x" | "y") => {
+    for (const group of [candidates.connected, candidates.all]) {
+      let best: number | undefined;
+      let bestDiff = threshold;
+      for (const id of group) {
+        if (moved.has(id)) continue;
+        const diff = Math.abs(positions[id][axis] - grabbed[axis]);
+        if (diff <= bestDiff) {
+          best = positions[id][axis];
+          bestDiff = diff;
+        }
+      }
+      if (best !== undefined) return best;
+    }
+    return grabbed[axis];
+  };
+
+  const x = snapTo("x");
+  const y = snapTo("y");
+
+  const snapped = { ...positions };
+  for (const id of moved) {
+    const p = positions[id];
+    snapped[id] =
+      id === drag.grabbed
+        ? { ...p, x, y }
+        : { ...p, x: p.x + x - grabbed.x, y: p.y + y - grabbed.y };
+  }
+  return snapped;
+}
