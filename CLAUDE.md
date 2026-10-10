@@ -671,6 +671,17 @@ There is significant technical debt that is acknowledged but not yet prioritized
 
 > **Maintainer note:** There are a lot of open questions around dead code. Eventually we might tackle these, but not ready yet. Worth tracking as potential future work but don't attempt cleanup without explicit direction.
 
+## Known Behavior Gaps (Deliberately Left Open)
+
+Found and proven during the October 2026 feedback fixes (#821 to #841), then left alone on purpose. Each was reproduced with a verify drive; the evidence lives in the gitignored `.verify/feedback-program/` folder on the maintainer's machine.
+
+- **Leaving a hosted chart after a failed save.** If a save failed and the user navigates elsewhere in the app before the reconnect resend, the edit is lost. The "Changes not saved" warning shows until then. A save on unmount would close it, but `EditHosted` survives `/u/:id` changes, which makes that riskier.
+- **No prompt when closing a tab with unsaved changes.** There is no `beforeunload` guard.
+- **Other Supabase writes may ignore `{ error }`.** postgrest-js reports network failures as a returned `error`, not a throw. `updateChartText` checks it since #841; the other writes in `queries.ts` and `folderQueries.ts` were not audited.
+- **AI undo discards later typing.** After an AI edit, Cmd+Z on the graph or the AI toolbar's Undo restores the pre-AI text and drops anything typed since.
+- **Mobile Clear does not end the undo history.** Drag, Clear, then Cmd+Z writes the old chart's frozen map into the empty document.
+- **Frozen layout limits** (`app/src/lib/resolveNodePositions.ts`, details in `.claude/skills/verify/features/graph-layout.md`): two adjacent in-place renames can swap spots; a rename followed by an insert next to it can hand the spot to the new line; a container that gains a new child can grow over nodes it does not hold. A drag re-anchors the picture.
+
 ## API Endpoints
 
 Key serverless functions in `api/`:
