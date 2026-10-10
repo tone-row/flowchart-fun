@@ -256,5 +256,40 @@ export function snapToNeighbours(
   candidates: string[][],
   threshold: number
 ): NodePositions {
-  return positions;
+  const grabbed = positions[drag.grabbed];
+  if (!grabbed) return positions;
+  const moved = new Set(drag.moved);
+
+  const snapTo = (axis: "x" | "y") => {
+    for (const group of candidates) {
+      let best: number | undefined;
+      let bestDiff = threshold;
+      for (const id of group) {
+        const other = positions[id];
+        if (!other || moved.has(id)) continue;
+        const diff = Math.abs(other[axis] - grabbed[axis]);
+        if (diff <= bestDiff) {
+          best = other[axis];
+          bestDiff = diff;
+        }
+      }
+      if (best !== undefined) return best;
+    }
+    return grabbed[axis];
+  };
+
+  const x = snapTo("x");
+  const y = snapTo("y");
+  if (x === grabbed.x && y === grabbed.y) return positions;
+
+  const snapped = { ...positions };
+  for (const id of moved) {
+    const p = positions[id];
+    if (!p) continue;
+    snapped[id] =
+      id === drag.grabbed
+        ? { ...p, x, y }
+        : { ...p, x: p.x + x - grabbed.x, y: p.y + y - grabbed.y };
+  }
+  return snapped;
 }

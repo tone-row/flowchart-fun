@@ -1,4 +1,10 @@
-import { Core, EdgeSingular, NodeSingular } from "cytoscape";
+import {
+  Core,
+  EdgeSingular,
+  EventObject,
+  NodeCollection,
+  NodeSingular,
+} from "cytoscape";
 import { ParseError } from "graph-selector";
 import throttle from "lodash.throttle";
 import React, {
@@ -20,6 +26,7 @@ import { cytoscape } from "../lib/cytoscape";
 import { findMisclosedContainers } from "../lib/findMisclosedContainers";
 import { getElements } from "../lib/getElements";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
+import { snapToNeighbours } from "../lib/alignNodes";
 import { isError, isUrl } from "../lib/helpers";
 import { getContainerWarning } from "../lib/parserErrors";
 import { useCanEdit } from "../lib/hooks";
@@ -37,6 +44,7 @@ import {
   useEditorStore,
 } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
+import { addToUndoStack } from "../lib/undoStack";
 import { isEdge } from "../lib/utils";
 import { usePromptStore } from "../lib/usePromptStore";
 import { Box } from "../slang";
@@ -157,21 +165,46 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 
 export default Graph;
 
-function handleDragFree() {
-  const nodePositions = getNodePositionsFromCy();
-  useDoc.setState(
-    (state) => {
-      return {
-        ...state,
-        meta: {
-          ...state.meta,
-          nodePositions,
+/** Rendered px: a drop this close to a neighbour's row or column is a near miss, not a choice. */
+const SNAP_DISTANCE = 8;
+
+function handleDragFree(event: EventObject) {
+  const grabbed = event.target as NodeSingular;
+  const cy = event.cy;
+  const dropped = getNodePositionsFromCy();
+  const draggedWith = grabbed.selected() ? cy.nodes(":selected") : grabbed;
+  const leaves = (nodes: NodeCollection) =>
+    nodes.filter((n) => !n.isParent()).map((n) => n.id());
+  const nodePositions = grabbed.isParent()
+    ? dropped
+    : snapToNeighbours(
+        dropped,
+        {
+          grabbed: grabbed.id(),
+          moved: draggedWith
+            .union(draggedWith.descendants())
+            .map((n) => n.id()),
         },
-      };
-    },
-    false,
-    "Graph/handleDragFree"
-  );
+        [leaves(grabbed.neighborhood().nodes()), leaves(cy.nodes())],
+        SNAP_DISTANCE / cy.zoom()
+      );
+
+  const before = useDoc.getState().meta.nodePositions as
+    | NodePositions
+    | undefined;
+  const save = (nodePositions: NodePositions | undefined) =>
+    useDoc.setState(
+      (state) => ({ meta: { ...state.meta, nodePositions } }),
+      false,
+      "Graph/handleDragFree"
+    );
+  save(nodePositions);
+  addToUndoStack({
+    undo: () => save(before),
+    redo: () => save(nodePositions),
+  });
+  // The AI toolbar's Undo pops the newest action, which is now this drag
+  usePromptStore.setState({ showUndoButton: false });
 }
 
 function initializeGraph({
@@ -284,7 +317,7 @@ function initializeGraph({
       // stop the layout from running
       window.__cy?.stop();
     });
-    cyCurrent.on("dragfree", handleDragFree);
+    cyCurrent.on("dragfreeon", "node", handleDragFree);
 
     // on zoom
     cyCurrent.on("scrollzoom", () => {
