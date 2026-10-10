@@ -247,7 +247,11 @@ export async function getHostedChart(id?: string) {
 export async function updateChartText(chart: string, id?: string) {
   if (!id) return;
   if (!supabase) return;
-  return supabase.from("user_charts").update({ chart }).eq("id", id);
+  const { error } = await supabase
+    .from("user_charts")
+    .update({ chart })
+    .eq("id", id);
+  if (error) throw error;
 }
 
 export async function deleteChart({ chartId }: { chartId: number }) {

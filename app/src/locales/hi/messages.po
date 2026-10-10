@@ -80,18 +80,18 @@ msgstr "कुछ चरण जोड़ें"
 msgid "Advanced"
 msgstr "उन्नत"
 
-#: src/components/GraphFloatingMenu.tsx:149
-#: src/components/GraphFloatingMenu.tsx:153
+#: src/components/GraphFloatingMenu.tsx:151
+#: src/components/GraphFloatingMenu.tsx:155
 msgid "Align Horizontally"
 msgstr "आड़े सारी तरफ"
 
-#: src/components/GraphFloatingMenu.tsx:137
-#: src/components/GraphFloatingMenu.tsx:141
+#: src/components/GraphFloatingMenu.tsx:139
+#: src/components/GraphFloatingMenu.tsx:143
 msgid "Align Nodes"
 msgstr "नोड्स को संरेखित करें"
 
-#: src/components/GraphFloatingMenu.tsx:161
-#: src/components/GraphFloatingMenu.tsx:165
+#: src/components/GraphFloatingMenu.tsx:163
+#: src/components/GraphFloatingMenu.tsx:167
 msgid "Align Vertically"
 msgstr "ऊपर-नीचे सारी तरफ"
 
@@ -224,7 +224,7 @@ msgstr "अपनी निजी फ्लोचार्ट लाइब्र
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/LoadTemplateDialog.tsx:149
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:165
 #: src/components/charts/ChartModals.tsx:59
 #: src/components/charts/ChartModals.tsx:129
 #: src/components/charts/ChartModals.tsx:207
@@ -262,6 +262,10 @@ msgstr "ईमेल पता बदलें"
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "बदलाव का"
+
+#: src/pages/EditHosted.tsx:208
+msgid "Changes not saved"
+msgstr "परिवर्तन सहेजे नहीं गए"
 
 #: src/components/Header.tsx:114
 #: src/components/Header.tsx:381
@@ -400,7 +404,7 @@ msgstr "परिवर्तन करें"
 msgid "Convert to Flowchart"
 msgstr "फ्लोचार्ट में बदलें"
 
-#: src/components/RenameButton.tsx:128
+#: src/components/RenameButton.tsx:133
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
@@ -868,7 +872,7 @@ msgstr "पाठ से स्वचालित रूप से फ्लो�
 msgid "Get Pro Access Now"
 msgstr "अब प्रो एक्सेस प्राप्त करें"
 
-#: src/lib/usePromptStore.ts:141
+#: src/lib/usePromptStore.ts:124
 msgid "Get Unlimited AI Requests"
 msgstr "असीमित एआई अनुरोध प्राप्त करें"
 
@@ -1054,7 +1058,7 @@ msgstr "क्या इसे एक बार के लिए ही आव�
 msgid "Keep Things Private"
 msgstr "चीजों को निजी रखें"
 
-#: src/components/AiToolbar.tsx:129
+#: src/components/AiToolbar.tsx:126
 msgid "Keep changes?"
 msgstr "परिवर्तन रखें?"
 
@@ -1079,8 +1083,8 @@ msgstr "रूपरेखा"
 msgid "Layout Algorithm"
 msgstr "लेआउट एल्गोरिदम"
 
-#: src/components/GraphFloatingMenu.tsx:120
 #: src/components/GraphFloatingMenu.tsx:122
+#: src/components/GraphFloatingMenu.tsx:124
 msgid "Layout Frozen"
 msgstr "लेआउट फ्रोज़न"
 
@@ -1169,8 +1173,8 @@ msgstr "स्थानीय फ़ाइल समर्थन"
 msgid "Local saving for offline access"
 msgstr "ऑफ़लाइन उपयोग के लिए स्थानीय सहेजना"
 
-#: src/components/GraphFloatingMenu.tsx:110
 #: src/components/GraphFloatingMenu.tsx:112
+#: src/components/GraphFloatingMenu.tsx:114
 msgid "Lock Zoom to Graph"
 msgstr "ग्राफ पर जूम लॉक करें"
 
@@ -1389,7 +1393,7 @@ msgstr "एक बार"
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
-#: src/lib/usePromptStore.ts:138
+#: src/lib/usePromptStore.ts:121
 msgid "Operation canceled"
 msgstr "ऑपरेशन रद्द किया गया है"
 
@@ -1511,7 +1515,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "रास्टर निर्यात (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:37
-#: src/lib/usePromptStore.ts:149
+#: src/lib/usePromptStore.ts:132
 msgid "Rate limit exceeded. Please try again later."
 msgstr "रेट लिमिट पार हो गई है। कृपया बाद में पुनः प्रयास करें।"
 
@@ -1560,9 +1564,9 @@ msgstr "पृष्ठ को ताज़ा करें"
 msgid "Reload to Update"
 msgstr "अपडेट करने के लिए रीलोड करें"
 
-#: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:163
+#: src/components/RenameButton.tsx:105
+#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:168
 #: src/components/charts/ChartListItem.tsx:191
 #: src/components/charts/ChartModals.tsx:214
 msgid "Rename"
@@ -1580,8 +1584,8 @@ msgstr "अनुरोध जादू लिंक"
 msgid "Request Password Reset"
 msgstr "पासवर्ड रीसेट का अनुरोध करें"
 
-#: src/components/GraphFloatingMenu.tsx:75
-#: src/components/GraphFloatingMenu.tsx:78
+#: src/components/GraphFloatingMenu.tsx:77
+#: src/components/GraphFloatingMenu.tsx:80
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -1793,7 +1797,7 @@ msgstr "शैली क्लासेज"
 msgid "Style with classes"
 msgstr "क्लासेस के साथ स्टाइल"
 
-#: src/components/AiToolbar.tsx:201
+#: src/components/AiToolbar.tsx:198
 #: src/components/EditWithAI.tsx:243
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
@@ -2039,7 +2043,7 @@ msgstr "दो नोड उसी आईडी के हैं"
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "उह ओह, आपके पास मुफ्त अनुरोधों की सीमा पूरी हो गई है! असीमित डायग्राम परिवर्तन के लिए Flowchart Fun Pro पर अपग्रेड करें, और पाठ को स्पष्ट, दृश्यमान फ्लोचार्ट में आसानी से कॉपी और पेस्ट करते रहें।"
 
-#: src/components/AiToolbar.tsx:123
+#: src/components/AiToolbar.tsx:120
 msgid "Undo"
 msgstr "वापस ले जाएं"
 
@@ -2076,7 +2080,7 @@ msgstr "असीमित क्लाउड-सहेजे फ्लोचा
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "प्रो खाते से AI फीचर्स खोलें और कभी भी अपना काम न खोएं।"
 
-#: src/lib/usePromptStore.ts:145
+#: src/lib/usePromptStore.ts:128
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "असीमित AI फ्लोचार्ट्स को अनलॉक करें"
 
@@ -2300,7 +2304,7 @@ msgstr "आप बहुत अच्छा कर रहे हैं!"
 msgid "You're on the free plan."
 msgstr "आप मुफ़्त योजना पर हैं।"
 
-#: src/lib/usePromptStore.ts:142
+#: src/lib/usePromptStore.ts:125
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "आपने अपने सभी नि: शुल्क एआई रूपांतरण का उपयोग किया है। असीमित एआई उपयोग, कस्टम थीम, निजी साझाकरण और अधिक के लिए प्रो पर अपग्रेड करें। अब आसानी से शानदार फ्लोचार्ट बनाते रहें!"
 
@@ -2329,13 +2333,13 @@ msgstr "आपका पास कभी नवीनीकृत नहीं �
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "आपका सदस्यता <0>{statusDisplay}</0> है।"
 
-#: src/components/GraphFloatingMenu.tsx:90
-#: src/components/GraphFloatingMenu.tsx:94
+#: src/components/GraphFloatingMenu.tsx:92
+#: src/components/GraphFloatingMenu.tsx:96
 msgid "Zoom In"
 msgstr "ज़ूम इन करें"
 
-#: src/components/GraphFloatingMenu.tsx:100
-#: src/components/GraphFloatingMenu.tsx:104
+#: src/components/GraphFloatingMenu.tsx:102
+#: src/components/GraphFloatingMenu.tsx:106
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 
