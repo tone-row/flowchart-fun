@@ -80,18 +80,18 @@ msgstr "添加一些步骤"
 msgid "Advanced"
 msgstr "高级"
 
-#: src/components/GraphFloatingMenu.tsx:149
-#: src/components/GraphFloatingMenu.tsx:153
+#: src/components/GraphFloatingMenu.tsx:151
+#: src/components/GraphFloatingMenu.tsx:155
 msgid "Align Horizontally"
 msgstr "水平对齐"
 
-#: src/components/GraphFloatingMenu.tsx:137
-#: src/components/GraphFloatingMenu.tsx:141
+#: src/components/GraphFloatingMenu.tsx:139
+#: src/components/GraphFloatingMenu.tsx:143
 msgid "Align Nodes"
 msgstr "对齐节点"
 
-#: src/components/GraphFloatingMenu.tsx:161
-#: src/components/GraphFloatingMenu.tsx:165
+#: src/components/GraphFloatingMenu.tsx:163
+#: src/components/GraphFloatingMenu.tsx:167
 msgid "Align Vertically"
 msgstr "垂直对齐"
 
@@ -224,7 +224,7 @@ msgstr "建立您的个人流程图库"
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/LoadTemplateDialog.tsx:149
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:165
 #: src/components/charts/ChartModals.tsx:59
 #: src/components/charts/ChartModals.tsx:129
 #: src/components/charts/ChartModals.tsx:207
@@ -262,6 +262,10 @@ msgstr "更改电子邮件地址"
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "变更日志"
+
+#: src/pages/EditHosted.tsx:208
+msgid "Changes not saved"
+msgstr "更改未保存"
 
 #: src/components/Header.tsx:114
 #: src/components/Header.tsx:381
@@ -400,7 +404,7 @@ msgstr "转换"
 msgid "Convert to Flowchart"
 msgstr "转换为流程图"
 
-#: src/components/RenameButton.tsx:128
+#: src/components/RenameButton.tsx:133
 msgid "Convert to hosted chart?"
 msgstr "是否转换为托管图表？"
 
@@ -868,7 +872,7 @@ msgstr "自动从文本生成流程图"
 msgid "Get Pro Access Now"
 msgstr "立即获取专业访问权限"
 
-#: src/lib/usePromptStore.ts:141
+#: src/lib/usePromptStore.ts:124
 msgid "Get Unlimited AI Requests"
 msgstr "获得无限的AI请求"
 
@@ -1054,7 +1058,7 @@ msgstr "只需要这一次吗？用9美元购买30天通行证 - 没有订阅。
 msgid "Keep Things Private"
 msgstr "保持事物私密"
 
-#: src/components/AiToolbar.tsx:129
+#: src/components/AiToolbar.tsx:126
 msgid "Keep changes?"
 msgstr "保留更改吗？"
 
@@ -1079,8 +1083,8 @@ msgstr "布局"
 msgid "Layout Algorithm"
 msgstr "布局算法"
 
-#: src/components/GraphFloatingMenu.tsx:120
 #: src/components/GraphFloatingMenu.tsx:122
+#: src/components/GraphFloatingMenu.tsx:124
 msgid "Layout Frozen"
 msgstr "布局已冻结"
 
@@ -1169,8 +1173,8 @@ msgstr "本地文件支持"
 msgid "Local saving for offline access"
 msgstr "本地保存，实现离线访问"
 
-#: src/components/GraphFloatingMenu.tsx:110
 #: src/components/GraphFloatingMenu.tsx:112
+#: src/components/GraphFloatingMenu.tsx:114
 msgid "Lock Zoom to Graph"
 msgstr "锁定缩放到图表"
 
@@ -1389,7 +1393,7 @@ msgstr "一次性"
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
 
-#: src/lib/usePromptStore.ts:138
+#: src/lib/usePromptStore.ts:121
 msgid "Operation canceled"
 msgstr "操作已取消"
 
@@ -1511,7 +1515,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "光栅导出（PNG，JPG）"
 
 #: src/components/ConvertToFlowchart.tsx:37
-#: src/lib/usePromptStore.ts:149
+#: src/lib/usePromptStore.ts:132
 msgid "Rate limit exceeded. Please try again later."
 msgstr "速率限制超出。 请稍后再试。"
 
@@ -1560,9 +1564,9 @@ msgstr "刷新页面"
 msgid "Reload to Update"
 msgstr "重新加载以更新"
 
-#: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:163
+#: src/components/RenameButton.tsx:105
+#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:168
 #: src/components/charts/ChartListItem.tsx:191
 #: src/components/charts/ChartModals.tsx:214
 msgid "Rename"
@@ -1580,8 +1584,8 @@ msgstr "請求魔法鏈接"
 msgid "Request Password Reset"
 msgstr "請求密碼重置"
 
-#: src/components/GraphFloatingMenu.tsx:75
-#: src/components/GraphFloatingMenu.tsx:78
+#: src/components/GraphFloatingMenu.tsx:77
+#: src/components/GraphFloatingMenu.tsx:80
 msgid "Reset"
 msgstr "重置"
 
@@ -1793,7 +1797,7 @@ msgstr "樣式類別"
 msgid "Style with classes"
 msgstr "用类别进行样式设置"
 
-#: src/components/AiToolbar.tsx:201
+#: src/components/AiToolbar.tsx:198
 #: src/components/EditWithAI.tsx:243
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
@@ -2039,7 +2043,7 @@ msgstr "两个节点有相同的ID"
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "哎呀，你的免费请求用完了！升级到Flowchart Fun Pro，享受无限的图表转换功能，轻松将文本转换成清晰的可视化流程图，就像复制粘贴一样简单。"
 
-#: src/components/AiToolbar.tsx:123
+#: src/components/AiToolbar.tsx:120
 msgid "Undo"
 msgstr "撤消"
 
@@ -2076,7 +2080,7 @@ msgstr "无限云端保存的流程图"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "解锁AI功能，通过专业账户永远不会丢失您的工作。"
 
-#: src/lib/usePromptStore.ts:145
+#: src/lib/usePromptStore.ts:128
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "解锁无限制使用AI流程图"
 
@@ -2300,7 +2304,7 @@ msgstr "你做得很棒！"
 msgid "You're on the free plan."
 msgstr "您当前使用的是免费计划。"
 
-#: src/lib/usePromptStore.ts:142
+#: src/lib/usePromptStore.ts:125
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "您已经使用完了所有的免费AI转换。升级到专业版，享受无限的AI使用、定制主题、私人共享等功能。轻松地创建出令人惊叹的流程图吧！"
 
@@ -2329,13 +2333,13 @@ msgstr "您的通行证不会自动续订。到期后，您的托管图表将变
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "您的訂閱狀態為<0>{statusDisplay}</0>。"
 
-#: src/components/GraphFloatingMenu.tsx:90
-#: src/components/GraphFloatingMenu.tsx:94
+#: src/components/GraphFloatingMenu.tsx:92
+#: src/components/GraphFloatingMenu.tsx:96
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/components/GraphFloatingMenu.tsx:100
-#: src/components/GraphFloatingMenu.tsx:104
+#: src/components/GraphFloatingMenu.tsx:102
+#: src/components/GraphFloatingMenu.tsx:106
 msgid "Zoom Out"
 msgstr "縮小"
 

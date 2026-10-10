@@ -80,18 +80,18 @@ msgstr "몇 가지 단계를 추가하세요."
 msgid "Advanced"
 msgstr "고급"
 
-#: src/components/GraphFloatingMenu.tsx:149
-#: src/components/GraphFloatingMenu.tsx:153
+#: src/components/GraphFloatingMenu.tsx:151
+#: src/components/GraphFloatingMenu.tsx:155
 msgid "Align Horizontally"
 msgstr "수평 정렬"
 
-#: src/components/GraphFloatingMenu.tsx:137
-#: src/components/GraphFloatingMenu.tsx:141
+#: src/components/GraphFloatingMenu.tsx:139
+#: src/components/GraphFloatingMenu.tsx:143
 msgid "Align Nodes"
 msgstr "노드 정렬하기"
 
-#: src/components/GraphFloatingMenu.tsx:161
-#: src/components/GraphFloatingMenu.tsx:165
+#: src/components/GraphFloatingMenu.tsx:163
+#: src/components/GraphFloatingMenu.tsx:167
 msgid "Align Vertically"
 msgstr "수직 정렬"
 
@@ -224,7 +224,7 @@ msgstr "개인용 플로우차트 라이브러리 만들기"
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/LoadTemplateDialog.tsx:149
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:165
 #: src/components/charts/ChartModals.tsx:59
 #: src/components/charts/ChartModals.tsx:129
 #: src/components/charts/ChartModals.tsx:207
@@ -262,6 +262,10 @@ msgstr "이메일 주소 변경"
 #: src/pages/Changelog.tsx:26
 msgid "Changelog"
 msgstr "변경 로그"
+
+#: src/pages/EditHosted.tsx:208
+msgid "Changes not saved"
+msgstr "변경 사항이 저장되지 않았습니다"
 
 #: src/components/Header.tsx:114
 #: src/components/Header.tsx:381
@@ -400,7 +404,7 @@ msgstr "변환하기"
 msgid "Convert to Flowchart"
 msgstr "흐름도로 변환"
 
-#: src/components/RenameButton.tsx:128
+#: src/components/RenameButton.tsx:133
 msgid "Convert to hosted chart?"
 msgstr "호스팅 차트로 변환하시겠습니까?"
 
@@ -868,7 +872,7 @@ msgstr "텍스트로부터 자동으로 플로우차트 생성하기"
 msgid "Get Pro Access Now"
 msgstr "지금 프로 액세스 받기"
 
-#: src/lib/usePromptStore.ts:141
+#: src/lib/usePromptStore.ts:124
 msgid "Get Unlimited AI Requests"
 msgstr "무제한 AI 요청 받기"
 
@@ -1054,7 +1058,7 @@ msgstr "한 번만 필요하세요? 구독 없이 $9에 30일 패스를 받으�
 msgid "Keep Things Private"
 msgstr "개인 정보 유지하기"
 
-#: src/components/AiToolbar.tsx:129
+#: src/components/AiToolbar.tsx:126
 msgid "Keep changes?"
 msgstr "변경 사항을 유지하시겠습니까?"
 
@@ -1079,8 +1083,8 @@ msgstr "레이아웃"
 msgid "Layout Algorithm"
 msgstr "레이아웃 알고리즘"
 
-#: src/components/GraphFloatingMenu.tsx:120
 #: src/components/GraphFloatingMenu.tsx:122
+#: src/components/GraphFloatingMenu.tsx:124
 msgid "Layout Frozen"
 msgstr "레이아웃 동결"
 
@@ -1169,8 +1173,8 @@ msgstr "로컬 파일 지원"
 msgid "Local saving for offline access"
 msgstr "오프라인 접속을 위한 로컬 저장 기능"
 
-#: src/components/GraphFloatingMenu.tsx:110
 #: src/components/GraphFloatingMenu.tsx:112
+#: src/components/GraphFloatingMenu.tsx:114
 msgid "Lock Zoom to Graph"
 msgstr "그래프에 룩 줌을 고정하다"
 
@@ -1389,7 +1393,7 @@ msgstr "일회성"
 msgid "Open Customer Portal"
 msgstr "고객 포털 열기"
 
-#: src/lib/usePromptStore.ts:138
+#: src/lib/usePromptStore.ts:121
 msgid "Operation canceled"
 msgstr "작업이 취소되었습니다."
 
@@ -1511,7 +1515,7 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "래스터 내보내기 (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:37
-#: src/lib/usePromptStore.ts:149
+#: src/lib/usePromptStore.ts:132
 msgid "Rate limit exceeded. Please try again later."
 msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세요."
 
@@ -1560,9 +1564,9 @@ msgstr "페이지 새로 고침 "
 msgid "Reload to Update"
 msgstr "업데이트하려면 다시 로드하기 "
 
-#: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:163
+#: src/components/RenameButton.tsx:105
+#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:168
 #: src/components/charts/ChartListItem.tsx:191
 #: src/components/charts/ChartModals.tsx:214
 msgid "Rename"
@@ -1580,8 +1584,8 @@ msgstr "마법 링크 요청"
 msgid "Request Password Reset"
 msgstr "비밀번호 재설정 요청"
 
-#: src/components/GraphFloatingMenu.tsx:75
-#: src/components/GraphFloatingMenu.tsx:78
+#: src/components/GraphFloatingMenu.tsx:77
+#: src/components/GraphFloatingMenu.tsx:80
 msgid "Reset"
 msgstr "재설정"
 
@@ -1793,7 +1797,7 @@ msgstr "스타일 클래스"
 msgid "Style with classes"
 msgstr "클래스로 스타일링"
 
-#: src/components/AiToolbar.tsx:201
+#: src/components/AiToolbar.tsx:198
 #: src/components/EditWithAI.tsx:243
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
@@ -2039,7 +2043,7 @@ msgstr "두 개의 노드가 같은 ID를 가지고 있습니다"
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "이런, 무료 요청이 모두 소진되었습니다! 무제한 다이어그램 변환을 위해 Flowchart Fun Pro로 업그레이드하고 텍스트를 복사하여 쉽게 명확한 시각적 흐름도로 변환하세요."
 
-#: src/components/AiToolbar.tsx:123
+#: src/components/AiToolbar.tsx:120
 msgid "Undo"
 msgstr "취소"
 
@@ -2076,7 +2080,7 @@ msgstr "무제한 클라우드 저장 플로우차트"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "AI 기능 잠금 해제 및 프로 계정으로 작업을 절대 잃지 않습니다."
 
-#: src/lib/usePromptStore.ts:145
+#: src/lib/usePromptStore.ts:128
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "무제한 AI 플로우차트 잠금 해제"
 
@@ -2300,7 +2304,7 @@ msgstr "잘하고 있어요!"
 msgid "You're on the free plan."
 msgstr "무료 요금제를 사용 중입니다."
 
-#: src/lib/usePromptStore.ts:142
+#: src/lib/usePromptStore.ts:125
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "모든 무료 AI 변환을 사용하셨습니다. 무제한 AI 사용, 사용자 정의 테마, 개인 공유 등을 위해 Pro로 업그레이드하세요. 쉽게 멋진 플로우차트를 만들어 나가세요!"
 
@@ -2329,13 +2333,13 @@ msgstr "이용권은 자동 갱신되지 않습니다. 만료되면 호스팅된
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "귀하의 구독 상태는 <0>{statusDisplay}</0>입니다."
 
-#: src/components/GraphFloatingMenu.tsx:90
-#: src/components/GraphFloatingMenu.tsx:94
+#: src/components/GraphFloatingMenu.tsx:92
+#: src/components/GraphFloatingMenu.tsx:96
 msgid "Zoom In"
 msgstr "확대"
 
-#: src/components/GraphFloatingMenu.tsx:100
-#: src/components/GraphFloatingMenu.tsx:104
+#: src/components/GraphFloatingMenu.tsx:102
+#: src/components/GraphFloatingMenu.tsx:106
 msgid "Zoom Out"
 msgstr "축소하기"
 
