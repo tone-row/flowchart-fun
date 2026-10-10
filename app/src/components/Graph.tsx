@@ -40,7 +40,14 @@ import { useGraphStore } from "../lib/useGraphStore";
 import { isEdge } from "../lib/utils";
 import { usePromptStore } from "../lib/usePromptStore";
 import { Box } from "../slang";
-import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
+import {
+  getNodePositionsFromCy,
+  NodePositions,
+} from "./getNodePositionsFromCy";
+import {
+  resolveNodePositions,
+  resolverInput,
+} from "../lib/resolveNodePositions";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import classNames from "classnames";
@@ -406,10 +413,12 @@ function getGraphUpdater({
 
       // Finally we get rid of layouts when user has dragged
       // Apply the preset layout if nodePositions is defined
-      const nodePositions = doc.meta?.nodePositions;
-      if (typeof nodePositions === "object") {
-        // @ts-ignore
-        layout.positions = { ...nodePositions };
+      const stored =
+        typeof doc.meta?.nodePositions === "object" &&
+        doc.meta.nodePositions !== null
+          ? (doc.meta.nodePositions as NodePositions)
+          : undefined;
+      if (stored) {
         layout.name = "preset";
         // @ts-ignore
         delete layout.spacingFactor;
@@ -441,6 +450,21 @@ function getGraphUpdater({
         style,
       });
       runMappers(cy.current);
+
+      const live = cy.current;
+      const resolvedPositions =
+        stored &&
+        resolveNodePositions({
+          stored,
+          ...resolverInput(elements, (id) => {
+            const node = live.getElementById(id);
+            return { width: node.outerWidth(), height: node.outerHeight() };
+          }),
+          direction: themeEditor.direction,
+        });
+      if (resolvedPositions) {
+        (layout as cytoscape.PresetLayoutOptions).positions = resolvedPositions;
+      }
 
       // Determine whether to fit
       const autoFit = useGraphStore.getState().autoFit;
@@ -478,8 +502,7 @@ function getGraphUpdater({
       });
       updateModelMarkers();
 
-      // Update Graph Store
-      useGraphStore.setState({ layout, elements });
+      useGraphStore.setState({ layout, elements, resolvedPositions });
     } catch (e) {
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();

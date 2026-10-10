@@ -1,5 +1,6 @@
 import { NodePositions } from "../components/getNodePositionsFromCy";
 import { useDoc } from "./useDoc";
+import { useGraphStore } from "./useGraphStore";
 import { addToUndoStack } from "./undoStack";
 
 /**
@@ -28,8 +29,7 @@ function positionsAreEqual(a: NodePositions, b: NodePositions): boolean {
  * closest node.
  */
 export function alignNodes() {
-  const meta = useDoc.getState().meta;
-  const nodePositions = meta.nodePositions as NodePositions;
+  const nodePositions = useGraphStore.getState().resolvedPositions;
   if (!nodePositions) return;
 
   const threshold = 40; // Adjust this value to change the alignment sensitivity
@@ -69,6 +69,7 @@ export function alignNodes() {
     alignedPositions[nodeId] = {
       x: closestHorizontal ? closestHorizontal.x : position.x,
       y: closestVertical ? closestVertical.y : position.y,
+      label: position.label,
     };
   });
 
@@ -111,8 +112,7 @@ export function alignNodes() {
  * each node to the average x position.
  */
 export function alignNodesHorizontally(nodeIds: string[]) {
-  const meta = useDoc.getState().meta;
-  const nodePositions = meta.nodePositions as NodePositions;
+  const nodePositions = useGraphStore.getState().resolvedPositions;
   if (!nodePositions) return;
 
   // Store the original positions for undo
@@ -181,8 +181,7 @@ export function alignNodesHorizontally(nodeIds: string[]) {
  * each node to the average y position.
  */
 export function alignNodesVertically(nodeIds: string[]) {
-  const meta = useDoc.getState().meta;
-  const nodePositions = meta.nodePositions as NodePositions;
+  const nodePositions = useGraphStore.getState().resolvedPositions;
   if (!nodePositions) return;
 
   // Store the original positions for undo

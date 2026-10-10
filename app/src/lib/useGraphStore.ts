@@ -1,5 +1,6 @@
 import { create } from "zustand";
 
+import { NodePositions } from "../components/getNodePositionsFromCy";
 import { GraphOptionsObject } from "./constants";
 import { DEFAULT_GRAPH_PADDING } from "./graphOptions";
 
@@ -9,6 +10,7 @@ type StoreGraph = {
   // The items above are used by the mermaid renderer
   // The items below are meant more for client-side state
   // related to the graph component
+  resolvedPositions?: NodePositions;
   /** Whether or not to fit the graph within bounds on render */
   autoFit: boolean;
 
