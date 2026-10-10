@@ -15,7 +15,7 @@ The maintained source for verifying flowchart-fun's user-facing behavior. Read t
 - Edit documents with `ff.typeDoc` or `ff.pasteDoc`, never `window.__set_text`.
 - Prefer role + accessible name, then `aria-label`, then `data-testid`. The labels are English; a drive that switches language must switch back.
 - Graph assertions use `ff.waitForGraph(pred)` and compare node labels and edge `source`/`target` labels, not ids.
-- Mutations to shared dev data (hosted charts) use a `verify <timestamp>` name and delete it in a `finally`.
+- Hosted charts are named with `ff.chartName()`; drive.mjs deletes the ones a run created, by id, when the run ends. Never delete by name pattern.
 
 ## Proof and skip reporting
 

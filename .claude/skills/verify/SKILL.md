@@ -64,8 +64,11 @@ Each run gets a fresh browser context: empty localStorage, no login, nothing sha
 | `ff.download(() => click)` | Save a triggered download to `downloads/`. |
 | `ff.storage(key)` | Parsed localStorage value; the sandbox lives in `flowcharts.fun.sandbox`. |
 | `ff.login("basic" \| "pro")` | Sign in through the real `/l` form with the `app/.env.e2e` accounts. `pro` waits until the Upgrade link detaches. |
-| `ff.supabase(pathAndQuery, init)` | Dev Supabase REST as the logged-in user (their JWT, RLS applies). For reading stored side effects and cleanup. |
+| `ff.supabase(pathAndQuery, init)` | Dev Supabase REST as the logged-in user (their JWT, RLS applies). For reading stored side effects and seeding charts. |
+| `ff.chartName(suffix?)` | A hosted chart name unique to this run, `drive <run id> <suffix>`. The run id is the evidence dir name, so a chart left by a killed run traces back to its evidence. |
 | `ff.note(x)` | Append a line to `steps.log`. |
+
+Every hosted chart the run inserts, through the UI or a `ff.supabase` POST, is deleted by id when the run ends, whether the steps passed, failed or threw, and on SIGINT/SIGTERM. The harness reads each id from the insert's own response and deletes with `id=in.(...)` plus the inserting user's id, so a drive never needs a cleanup `finally` and can never delete a chart it did not create. `result.json` records `charts: { created, deleted }`; the summary line prints the counts. A chart the drive deleted itself shows as created but not deleted. Anything else a drive creates (folders, public links) it removes itself, by id.
 
 Runnable, passing examples for every mapped feature live in [`examples/`](examples/) — copy the nearest one rather than starting blank.
 
@@ -73,14 +76,14 @@ Handles, in order of preference: role + accessible name (`getByRole("button", { 
 
 ## Evidence
 
-Every run writes `.verify/evidence/<stamp>-<label>/` (gitignored) and prints its path plus a one-line `PASS`/`FAIL` summary:
+Every run writes `.verify/evidence/<stamp>-<label>-<4 hex>/` (gitignored; the dir name is the run id) and prints its path plus a one-line `PASS`/`FAIL` summary:
 
 - `steps.log` — timestamped steps, notes, shots, downloads, the error.
 - `trace.zip` — every action with before/after DOM and screenshots. Open with `npx -y playwright@1.45.2 show-trace <path>`.
 - `NN-<name>.png` from `ff.shot`, plus `final.png` or `failure.png`.
 - `console.json` — console errors/warnings and uncaught page errors. The summary excludes React dev-mode `Warning:` messages and Radix a11y nags; they are baseline noise on every page.
 - `network.json` — failed requests (navigation `ERR_ABORTED` dropped) and every `/api/*` response ≥ 400.
-- `downloads/`, `result.json`.
+- `downloads/`, `result.json` (with `charts: { created, deleted }`).
 
 Proof standards:
 
@@ -103,11 +106,11 @@ External systems — stay inside these lines:
 .claude/skills/verify/scripts/cleanup.sh 3001
 ```
 
-Kills only the process group `launch.sh` recorded for that port, confirms the port is free, copies the server log into `.verify/evidence/server-<port>-<stamp>.log`, and removes `.verify/run/<port>/`. Evidence is never deleted. Run it after every session, including failed ones. Data a drive created lives outside the instance: hosted-chart drives name charts `verify <timestamp>` and delete them in a `finally` (see `examples/hosted-chart.mjs`).
+Kills only the process group `launch.sh` recorded for that port, confirms the port is free, copies the server log into `.verify/evidence/server-<port>-<stamp>.log`, and removes `.verify/run/<port>/`. Evidence is never deleted. Run it after every session, including failed ones. Data a drive created lives outside the instance: drive.mjs deletes the hosted charts a run created when the run ends (see Drive). A run killed with SIGKILL cannot clean up; its charts are named `drive <run id> …`, so delete them by id once you have matched them to that run's evidence.
 
 ## Isolation
 
-Instances on different ports are fully separate: own process group, own run dir, and localStorage is per-origin. Drives against one instance are separate browser contexts. The shared pieces are the dev Supabase project and the two test accounts: two concurrent hosted-chart drives would sweep each other's `verify *` charts. Run account-mutating drives one at a time.
+Instances on different ports are fully separate: own process group, own run dir, and localStorage is per-origin. Drives against one instance are separate browser contexts. The shared pieces are the dev Supabase project and the two test accounts. Hosted drives can run concurrently because each run deletes only the charts it created (`examples/hosted-cleanup-isolation.mjs` proves it). What is still shared: `/charts` lists every run's charts, so find yours by `ff.chartName` or by id, never by position; and account-level state (the pro subscription, the account email, folders) is one per account, so a drive that changes it runs alone. Never clean up by name pattern: another run's charts match it.
 
 ## When the framework changes
 

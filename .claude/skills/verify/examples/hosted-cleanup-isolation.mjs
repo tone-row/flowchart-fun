@@ -1,17 +1,10 @@
-// Two agents drive the pro test account at once. This drive holds a chart of its own while
-// examples/hosted-chart.mjs runs as a separate drive (own process, own browser context), then
-// runs a drive that throws right after creating a chart. Its own chart must survive the other
-// drive's cleanup, and the drive that threw must leave no chart behind.
 import { spawn } from "node:child_process";
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const DRIVE = path.join(HERE, "../scripts/drive.mjs");
-const STAMP = Date.now();
-const OWN_NAME = `verify ${STAMP} bystander`;
-const THROWN_NAME = `cleanup-probe ${STAMP} thrown`;
 
 const throwingDrive = (name) => `
 export default async ({ page, ff }) => {
@@ -30,10 +23,16 @@ const runDrive = (file, port) =>
     let out = "";
     child.stdout.on("data", (d) => (out += d));
     child.stderr.on("data", (d) => (out += d));
-    child.on("close", (code) => resolve({ code, out }));
+    child.on("close", (code) => {
+      const evidence = out.match(/^evidence: (.+)$/m)?.[1];
+      const result = evidence && JSON.parse(readFileSync(path.join(HERE, "../../../..", evidence, "result.json"), "utf8"));
+      resolve({ code, summary: out.split("\n").filter((l) => /^(PASS|FAIL|evidence)/.test(l)), charts: result?.charts });
+    });
   });
 
 export default async ({ page, ff, step, expect }) => {
+  const OWN_NAME = ff.chartName("bystander");
+  const THROWN_NAME = ff.chartName("thrown");
   const port = new URL(ff.base).port;
   const failures = [];
   const check = async (name, fn) => {
@@ -45,8 +44,8 @@ export default async ({ page, ff, step, expect }) => {
       ff.note({ failed: name, error: String(e.message).split("\n").slice(0, 4).join(" | ") });
     }
   };
-  const idsNamed = async (name) =>
-    ((await ff.supabase(`user_charts?name=eq.${encodeURIComponent(name)}&select=id`)).body ?? []).map((r) => r.id);
+  const chartIds = async (filter) => (await ff.supabase(`user_charts?${filter}&select=id`)).body.map((r) => r.id);
+  const idsNamed = (name) => chartIds(`name=eq.${encodeURIComponent(name)}`);
 
   await ff.login("pro");
   const userId = await page.evaluate(() => {
@@ -54,7 +53,6 @@ export default async ({ page, ff, step, expect }) => {
     return JSON.parse(localStorage.getItem(k)).user.id;
   });
 
-  let ownId;
   try {
     step("create this drive's own chart");
     const res = await ff.supabase("user_charts", {
@@ -62,31 +60,32 @@ export default async ({ page, ff, step, expect }) => {
       body: JSON.stringify({ name: OWN_NAME, chart: "Held\n  Open", user_id: userId }),
     });
     expect(res.status).toBe(201);
-    ownId = res.body[0].id;
+    const ownId = res.body[0].id;
     ff.note({ ownId, OWN_NAME });
-
-    const swept = (await ff.supabase("user_charts?name=like.verify%20*&select=id")).body.map((r) => r.id);
-    if (swept.some((id) => id !== ownId))
-      throw new Error(`refusing to run: other 'verify *' charts exist (${swept.join(",")}) and hosted-chart.mjs would sweep them`);
 
     await check("examples/hosted-chart.mjs runs alongside and passes; this drive's chart survives it", async () => {
       const other = await runDrive(path.join(HERE, "hosted-chart.mjs"), port);
-      ff.note({ hostedChart: other.out.split("\n").filter((l) => /^(PASS|FAIL|evidence)/.test(l)) });
+      ff.note({ hostedChart: other.summary, charts: other.charts });
       expect(other.code, "hosted-chart.mjs exit code").toBe(0);
       expect(await idsNamed(OWN_NAME), "this drive's chart after the other drive's cleanup").toEqual([ownId]);
+      expect(other.charts.created, "charts the other drive created").toHaveLength(1);
+      expect(other.charts.deleted, "the other drive deleted exactly what it created").toEqual(other.charts.created);
+      expect(await chartIds(`id=in.(${other.charts.created})`), "the other drive's chart after its run").toEqual([]);
     });
 
     await check("a drive that throws right after creating a chart leaves no chart behind", async () => {
       const file = path.join(ff.out, "throw-after-create.mjs");
       writeFileSync(file, throwingDrive(THROWN_NAME));
       const thrown = await runDrive(file, port);
-      ff.note({ thrown: thrown.out.split("\n").filter((l) => /^(PASS|FAIL|evidence)/.test(l)) });
+      ff.note({ thrown: thrown.summary, charts: thrown.charts });
       expect(thrown.code, "the throwing drive fails").toBe(1);
+      expect(thrown.charts.created, "charts the throwing drive created").toHaveLength(1);
+      expect(thrown.charts.deleted, "the harness deleted it although the drive threw").toEqual(thrown.charts.created);
       expect(await idsNamed(THROWN_NAME), "charts left by the drive that threw").toEqual([]);
     });
   } finally {
-    const leftovers = [...(ownId ? [ownId] : []), ...(await idsNamed(THROWN_NAME))];
-    if (leftovers.length) await ff.supabase(`user_charts?id=in.(${leftovers.join(",")})`, { method: "DELETE" });
+    const leftovers = await idsNamed(THROWN_NAME);
+    if (leftovers.length) await ff.supabase(`user_charts?id=in.(${leftovers})`, { method: "DELETE" });
   }
 
   if (failures.length) throw new Error(`${failures.length} check(s) failed: ${failures.join("; ")}`);
