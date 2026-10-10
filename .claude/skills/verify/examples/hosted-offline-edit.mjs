@@ -1,8 +1,3 @@
-// An edit to a hosted chart must never be silently discarded by a failed save or by a
-// reload of the open chart. Covers: typing while offline then reconnecting, a save that
-// fails without an offline event (a wifi blip), a slow duplicate load landing after the
-// user started typing, and a reconnect with nothing unsaved (no write, undo history kept).
-// Normal online typing still sends exactly one PATCH per debounce.
 const TEXT = "Plan\n  Build\n    Review";
 const LAYOUT = { Plan: { x: 0, y: 0 }, Build: { x: 220, y: 140 }, Review: { x: 440, y: 280 } };
 const MAP = Object.fromEntries(Object.entries(LAYOUT).map(([label, p], i) => [`n${i + 1}`, { ...p, label }]));
