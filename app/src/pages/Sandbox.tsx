@@ -27,11 +27,10 @@ import { useSandboxWarning } from "../lib/useSandboxWarning";
 import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
-import { useEditorStore, isInternalWrite } from "../lib/useEditorStore";
+import { useEditorStore } from "../lib/useEditorStore";
 import { getDefaultText } from "../lib/getDefaultText";
 import { AiToolbar } from "../components/AiToolbar";
 import { MoreFromToneRow } from "../components/MoreFromToneRow";
-import { markUserEditedSinceAi, usePromptStore } from "../lib/usePromptStore";
 
 const isE2E =
   new URLSearchParams(window.location.search).get("isE2E") === "true";
@@ -119,9 +118,6 @@ const Sandbox = memo(function Edit() {
       false,
       "Edit/text"
     );
-    if (!isInternalWrite() && !usePromptStore.getState().isRunning) {
-      markUserEditedSinceAi();
-    }
   }, []);
 
   const url = useLocation().pathname;

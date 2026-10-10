@@ -1,49 +1,56 @@
-import { Doc, useDoc } from "./useDoc";
+import { create } from "zustand";
 
 interface UndoAction {
+  kind: "ai" | "layout";
   undo: () => void;
   redo: () => void;
 }
 
-let undoStack: UndoAction[] = [];
-let redoStack: UndoAction[] = [];
+const useUndoHistory = create<{ done: UndoAction[]; undone: UndoAction[] }>(
+  () => ({ done: [], undone: [] })
+);
 
-const documentIdentity = ({ details }: Doc) =>
-  `${details.isHosted}:${details.id}`;
-
-function clearHistoryOfPreviousDocument() {
-  undoStack = [];
-  redoStack = [];
+export function clearUndoHistory() {
+  useUndoHistory.setState({ done: [], undone: [] });
 }
 
-useDoc.subscribe(documentIdentity, clearHistoryOfPreviousDocument);
-
 export function addToUndoStack(action: UndoAction) {
-  undoStack.push(action);
-  redoStack = []; // Clear redo stack when a new action is performed
+  useUndoHistory.setState(({ done }) => ({
+    done: [...done, action],
+    undone: [],
+  }));
 }
 
 export function undo() {
-  const action = undoStack.pop();
-  if (action) {
-    action.undo();
-    redoStack.push(action);
-  }
+  const { done, undone } = useUndoHistory.getState();
+  const action = done.at(-1);
+  if (!action) return;
+  action.undo();
+  useUndoHistory.setState({
+    done: done.slice(0, -1),
+    undone: [...undone, action],
+  });
 }
 
 export function redo() {
-  const action = redoStack.pop();
-  if (action) {
-    action.redo();
-    undoStack.push(action);
-  }
+  const { done, undone } = useUndoHistory.getState();
+  const action = undone.at(-1);
+  if (!action) return;
+  action.redo();
+  useUndoHistory.setState({
+    done: [...done, action],
+    undone: undone.slice(0, -1),
+  });
 }
 
-// Optional: Add a function to check if undo/redo is available
 export function canUndo(): boolean {
-  return undoStack.length > 0;
+  return useUndoHistory.getState().done.length > 0;
 }
 
 export function canRedo(): boolean {
-  return redoStack.length > 0;
+  return useUndoHistory.getState().undone.length > 0;
+}
+
+export function useIsAiEditNewest() {
+  return useUndoHistory(({ done }) => done.at(-1)?.kind === "ai");
 }
