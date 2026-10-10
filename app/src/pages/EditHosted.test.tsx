@@ -99,4 +99,31 @@ describe("<EditHosted/> autosave", () => {
     expect(mockedUpdateChartText.mock.calls[0][0]).toContain("a\n  b\n  c");
     expect(mockedUpdateChartText.mock.calls[0][1]).toBe(CHART_ID);
   });
+
+  test("a failed save is kept, flagged and sent again on reconnect", async () => {
+    renderHosted();
+    await screen.findByText("loading");
+    await sleep(100);
+    mockedUpdateChartText.mockRejectedValueOnce(new Error("Failed to fetch"));
+
+    act(() => {
+      useDoc.setState({ text: "a\n  b\n  c" }, false, "EditHosted/text");
+    });
+    await sleep(1500);
+    expect(mockedUpdateChartText).toHaveBeenCalledTimes(1);
+    expect(
+      screen.getByRole("img", { name: "Changes not saved" })
+    ).toBeInTheDocument();
+
+    await act(async () => {
+      window.dispatchEvent(new Event("online"));
+      await sleep(1500);
+    });
+    expect(useDoc.getState().text).toBe("a\n  b\n  c");
+    expect(mockedUpdateChartText).toHaveBeenCalledTimes(2);
+    expect(mockedUpdateChartText.mock.calls[1][0]).toBe(
+      mockedUpdateChartText.mock.calls[0][0]
+    );
+    expect(screen.queryByRole("img", { name: "Changes not saved" })).toBeNull();
+  });
 });
