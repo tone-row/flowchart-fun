@@ -194,6 +194,7 @@ export function resolveNodePositions({
     }),
     { far: sign > 0 ? -Infinity : Infinity, min: Infinity, max: -Infinity }
   );
+  const containers = nodes.filter((node) => !node.size);
   for (const { node } of currentSeq) {
     if (positions[node.id]) continue;
     const size = node.size ?? { width: 0, height: 0 };
@@ -201,10 +202,18 @@ export function resolveNodePositions({
       .sort((a, b) => (lines.get(a) ?? 0) - (lines.get(b) ?? 0))
       .map(boxOf)
       .find(Boolean);
+    const lineage = new Set<string>();
+    for (let id: string | undefined = node.id; id; id = byId.get(id)?.parent) {
+      lineage.add(id);
+    }
+    const obstacles = containers.flatMap((container) => {
+      const box = lineage.has(container.id) ? undefined : boxOf(container.id);
+      return box ? [box] : [];
+    });
     const point = placeBox(
       toBox(size, { x: 0, y: 0 }),
       neighbor,
-      placed,
+      [...placed, ...obstacles],
       extent,
       sign
     );
