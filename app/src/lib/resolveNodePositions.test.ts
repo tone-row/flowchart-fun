@@ -306,6 +306,53 @@ describe("resolveNodePositions", () => {
     });
   });
 
+  describe("placement depends only on the parse and the stored map", () => {
+    const stored: NodePositions = {
+      n1: { x: 0, y: 0, label: "A" },
+      n2: { x: 500, y: 0, label: "B" },
+    };
+    const nodes = [node("n1", "A"), node("n2", "B"), node("n3", "C")];
+    const AC = { source: "n1", target: "n3" };
+    const BC = { source: "n2", target: "n3" };
+
+    test("edge order does not change where a new node is placed", () => {
+      const a = resolve(nodes, stored, [AC, BC]);
+      const b = resolve(nodes, stored, [BC, AC]);
+      expect(b.n3).toEqual(a.n3);
+    });
+
+    test("node order does not change the result", () => {
+      const a = resolve(nodes, stored, [AC, BC]);
+      const b = resolve([...nodes].reverse(), stored, [AC, BC]);
+      expect(b).toEqual(a);
+    });
+
+    test("a node hanging off a container is placed below the container's children, whatever size the container had before this render", () => {
+      const stored: NodePositions = {
+        n1: { x: 0, y: 0, label: "Start" },
+        n2: { x: 0, y: 100, label: "Box" },
+        n3: { x: 0, y: 100, label: "One" },
+      };
+      const positions = resolve(
+        [
+          node("n1", "Start"),
+          node("n2", "Box"),
+          node("n3", "One", "n2"),
+          node("n4", "Two", "n2"),
+          node("n5", "Three", "n2"),
+          node("n6", "After"),
+        ],
+        stored,
+        [...chain("n1", "n2"), { source: "n2", target: "n6" }]
+      );
+      const children = [positions.n3, positions.n4, positions.n5];
+      const bottom = Math.max(...children.map((p) => p.y + 20));
+      expect(positions.n6.y - 20).toBeGreaterThan(bottom);
+      const xs = children.map((p) => p.x);
+      expect(positions.n6.x).toBe((Math.min(...xs) + Math.max(...xs)) / 2);
+    });
+  });
+
   describe("edit sequences on a map saved at the last drag", () => {
     const graphOf = (text: string) => {
       const elements = getElements(text);
@@ -450,6 +497,39 @@ describe("resolveNodePositions", () => {
       expect(s.at("Cee")).toEqual(c);
       expect(s.at("B2")).toEqual(b);
       expect(s.moved(["A", "D"])).toEqual([]);
+    });
+
+    test("renaming a saved node keeps its spot even when inserted and deleted lines surround it", () => {
+      const s = session(
+        [
+          "Request",
+          "  Check for fallback",
+          "    Run fallback",
+          "  Candidate {",
+          "    Extract token",
+          "      Decode token",
+          "        Get OU",
+          "          Detect role",
+          "            Get flag",
+          "  }",
+        ].join("\n")
+      );
+      const spot = s.at("Detect role");
+      s.render(
+        [
+          "Request r1",
+          "  Check for fallback",
+          "    Run fallback r15",
+          "  Candidate {",
+          "    New 2",
+          "      New 3",
+          "        New 1",
+          "        New 5",
+          "        Detect role r16",
+          "  }",
+        ].join("\n")
+      );
+      expect(s.at("Detect role r16")).toEqual(spot);
     });
 
     test("typing a new node character by character between two duplicates keeps the first in place and the other two apart", () => {
