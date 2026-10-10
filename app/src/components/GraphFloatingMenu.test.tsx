@@ -19,7 +19,10 @@ function makeTarget(html: string) {
 beforeEach(() => {
   document.body.innerHTML = "";
   useDoc.setState({ meta: { nodePositions: { ...UNALIGNED } } });
-  useGraphStore.setState({ selectedNodes: ["a", "b"] });
+  useGraphStore.setState({
+    selectedNodes: ["a", "b"],
+    resolvedPositions: { ...UNALIGNED },
+  });
   render(<GraphFloatingMenu />);
 });
 

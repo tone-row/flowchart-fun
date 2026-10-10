@@ -20,6 +20,7 @@ import {
   alignNodesVertically,
 } from "./alignNodes";
 import { useDoc } from "./useDoc";
+import { useGraphStore } from "./useGraphStore";
 import { canRedo, canUndo, redo, undo } from "./undoStack";
 
 // Helpers to seed / read the store-backed input/output.
@@ -27,6 +28,7 @@ function seed(nodePositions: NodePositions | undefined, otherMeta = {}) {
   useDoc.setState(() => ({
     meta: { ...otherMeta, ...(nodePositions ? { nodePositions } : {}) },
   }));
+  useGraphStore.setState({ resolvedPositions: nodePositions });
 }
 
 function getPositions(): NodePositions | undefined {
@@ -46,6 +48,7 @@ beforeEach(() => {
   drainStacks();
   // Reset doc to a clean known state.
   useDoc.setState(() => ({ meta: {} }));
+  useGraphStore.setState({ resolvedPositions: undefined });
 });
 
 describe("alignNodes (auto-align to nearest within threshold 40)", () => {
