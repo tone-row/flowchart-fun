@@ -13,10 +13,14 @@
 //   console.json    console errors/warnings and uncaught page errors
 //   network.json    every failed request and every non-2xx/3xx /api/* response
 //   downloads/      files saved by ff.download()
-//   result.json     { ok, error, url, steps, evidence }
+//   result.json     { ok, error, url, steps, evidence, charts }
+//
+// Every hosted chart the run inserts (through the UI or ff.supabase) is deleted by id when the
+// run ends, whether it passed, failed, threw or was interrupted. Nothing else is ever deleted.
 import { createRequire } from "node:module";
 import { mkdirSync, writeFileSync, appendFileSync, readFileSync, existsSync } from "node:fs";
 import path from "node:path";
+import { randomBytes } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../..");
@@ -38,7 +42,8 @@ const PORT = argValue("--port") ?? "3001";
 const BASE = `http://localhost:${PORT}`;
 const label = (argValue("--label") ?? path.basename(stepsFile, ".mjs")).replace(/[^\w.-]+/g, "-");
 const stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\..+/, "").replace("T", "-");
-const OUT = path.join(ROOT, ".verify/evidence", `${stamp}-${label}`);
+const RUN_ID = `${stamp}-${label}-${randomBytes(2).toString("hex")}`;
+const OUT = path.join(ROOT, ".verify/evidence", RUN_ID);
 mkdirSync(path.join(OUT, "downloads"), { recursive: true });
 
 const steps = [];
@@ -58,6 +63,17 @@ function readEnvFile(file) {
       })
   );
 }
+
+const env = readEnvFile(path.join(ROOT, "app/.env"));
+
+// A page frozen by a synchronous loop never answers a screenshot or a trace stop.
+const TEARDOWN_MS = 5000;
+const teardown = (promise) => {
+  let timer;
+  return Promise.race([promise, new Promise((r) => (timer = setTimeout(r, TEARDOWN_MS)))])
+    .catch(() => {})
+    .finally(() => clearTimeout(timer));
+};
 
 const browser = await chromium.launch({ headless: !args.includes("--headed") });
 // A fresh context = empty localStorage and no cookies, so the sandbox starts from
@@ -90,6 +106,50 @@ const watch = (p) => {
 watch(page);
 context.on("page", watch);
 
+const charts = new Map();
+const pendingInserts = new Set();
+context.on("response", (r) => {
+  const req = r.request();
+  if (req.method() !== "POST" || !r.ok() || new URL(r.url()).pathname !== "/rest/v1/user_charts") return;
+  const auth = req.headers().authorization;
+  const read = r
+    .json()
+    .then((rows) => [rows].flat().forEach((row) => charts.set(row.id, auth)))
+    .catch((e) => log(`NOTE chart insert without a returned row, not tracked: ${e}`))
+    .finally(() => pendingInserts.delete(read));
+  pendingInserts.add(read);
+});
+
+const deleteWithoutPage = async (auth, ids) => {
+  const userId = JSON.parse(Buffer.from(auth.split(".")[1], "base64url")).sub;
+  const r = await fetch(`${env.REACT_APP_SUPABASE_URL}/rest/v1/user_charts?id=in.(${ids})&user_id=eq.${userId}&select=id`, {
+    method: "DELETE",
+    headers: { apikey: env.REACT_APP_SUPABASE_ANON_KEY, Authorization: auth, Prefer: "return=representation" },
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
+  return (await r.json()).map((row) => row.id);
+};
+
+let cleanup;
+const deleteOwnCharts = () =>
+  (cleanup ??= (async () => {
+    await teardown(Promise.allSettled(pendingInserts));
+    const deleted = [];
+    for (const [auth, entries] of Map.groupBy(charts, ([, a]) => a)) {
+      const ids = entries.map(([id]) => id);
+      try {
+        deleted.push(...(await deleteWithoutPage(auth, ids)));
+      } catch (e) {
+        log(`NOTE could not delete charts ${ids}: ${e}`);
+      }
+    }
+    log(`CHARTS created ${[...charts.keys()]} deleted ${deleted}`);
+    return { created: [...charts.keys()], deleted };
+  })());
+for (const signal of ["SIGINT", "SIGTERM"])
+  process.once(signal, () => deleteOwnCharts().finally(() => process.exit(130)));
+
 const step = (name) => {
   steps.push(name);
   log(`STEP ${name}`);
@@ -100,6 +160,10 @@ const ff = {
   base: BASE,
   out: OUT,
   note: (msg) => log(`NOTE ${typeof msg === "string" ? msg : JSON.stringify(msg)}`),
+
+  /** A hosted chart name unique to this run ("drive <run id> <suffix>"), so a chart left by a
+   *  killed run can be traced to its evidence dir. Cleanup goes by id, never by name. */
+  chartName: (suffix = "") => `drive ${RUN_ID}${suffix ? ` ${suffix}` : ""}`,
 
   /** Navigate to an app path ("/", "/u/12", "/pricing"). Pass {e2e:true} to add ?isE2E=true
    *  (shortens the sandbox upsell modal to 20s — only useful when testing that modal). */
@@ -248,7 +312,6 @@ const ff = {
    *  applies exactly as in the app). For reading side effects and cleaning up — never as a
    *  substitute for driving the UI.  e.g. ff.supabase("user_charts?id=eq.12", { method: "DELETE" }) */
   async supabase(pathAndQuery, init = {}) {
-    const env = readEnvFile(path.join(ROOT, "app/.env"));
     return page.evaluate(
       async ({ url, key, pathAndQuery, init }) => {
         const tokenKey = Object.keys(localStorage).find((k) => /^sb-.*-auth-token$/.test(k));
@@ -266,15 +329,6 @@ const ff = {
   },
 };
 
-// A page frozen by a synchronous loop never answers a screenshot or a trace stop.
-const TEARDOWN_MS = 5000;
-const teardown = (promise) => {
-  let timer;
-  return Promise.race([promise, new Promise((r) => (timer = setTimeout(r, TEARDOWN_MS)))])
-    .catch(() => {})
-    .finally(() => clearTimeout(timer));
-};
-
 const result = { ok: false, label, url: null, steps, evidence: OUT };
 try {
   const mod = await import(pathToFileURL(path.resolve(stepsFile)).href);
@@ -290,6 +344,7 @@ try {
   await teardown(context.tracing.stop({ path: path.join(OUT, "trace.zip") }));
   writeFileSync(path.join(OUT, "console.json"), JSON.stringify(consoleEntries, null, 2));
   writeFileSync(path.join(OUT, "network.json"), JSON.stringify(networkEntries, null, 2));
+  result.charts = await deleteOwnCharts();
   writeFileSync(path.join(OUT, "result.json"), JSON.stringify(result, null, 2));
   await teardown(browser.close());
 }
@@ -299,7 +354,8 @@ const pageErrors = consoleEntries.filter((e) => e.type === "pageerror").length;
 const consoleErrors = consoleEntries.filter((e) => e.type === "error" && !/^Warning: |DialogTitle|aria-describedby/.test(e.text)).length;
 console.log(
   `${result.ok ? "PASS" : "FAIL"} ${label} — ${steps.length} steps, ${pageErrors} uncaught page errors, ` +
-    `${consoleErrors} console errors (React dev warnings excluded), ${networkEntries.length} network problems`
+    `${consoleErrors} console errors (React dev warnings excluded), ${networkEntries.length} network problems` +
+    (result.charts.created.length ? `, deleted ${result.charts.deleted.length} of ${result.charts.created.length} charts it created` : "")
 );
 console.log(`evidence: ${path.relative(ROOT, OUT)}`);
 if (!result.ok) {

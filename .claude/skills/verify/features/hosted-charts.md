@@ -26,14 +26,13 @@ Preconditions:
 
 - Full mode (`launch.sh 3001`): login and customer-info go through `/api`.
 - `app/.env.e2e` present and the pro test subscription active (doctor checks the file; a lapsed sub shows up as `/new` never redirecting).
-- No other hosted drive running against the same account (cleanup sweeps all `verify *` charts).
 
 - **Log in.** `await ff.login("pro")`. The Account link is visible and the `pro-link` Upgrade link is gone.
-- **Create.** `page.getByTestId("new-chart-link").click()`, `page.getByLabel("Name Chart").fill("verify <ts>")`, `page.getByRole("button", { name: "Create" }).click()`. URL matches `/u/\d+$`.
+- **Create.** `page.getByTestId("new-chart-link").click()`, `page.getByLabel("Name Chart").fill(ff.chartName())`, `page.getByRole("button", { name: "Create" }).click()`. URL matches `/u/\d+$`.
 - **Autosave.** Arm `page.waitForResponse(r => r.url().includes("/rest/v1/user_charts") && r.request().method() === "PATCH" && r.ok())`, then `ff.typeDoc("Plan\n  Build\n    Review")`. The PATCH resolves; `ff.supabase("user_charts?id=eq.<id>&select=name,chart")` returns a `chart` starting with the doc.
 - **Reload.** `page.reload()`; editor text (trimmed) equals the doc and the graph is `Plan, Build, Review`.
 - **Rename.** `page.getByTestId("rename-button").click()`, `page.getByRole("textbox").fill("<name> renamed")`, `page.getByRole("button", { name: "Rename" }).click()`. The button text and the stored `name` both change.
-- **Cleanup (always, in `finally`).** `ff.supabase("user_charts?name=like.verify%20*&select=id,name", { method: "DELETE" })` returns 200 and the deleted rows.
+- **Cleanup.** Nothing to write: drive.mjs deletes every chart the run inserted, by id, when the run ends, even if the steps threw. The summary line ends `deleted 1 of 1 charts it created`; `result.json` has the ids. `examples/hosted-cleanup-isolation.mjs` runs `hosted-chart.mjs` beside a chart of its own and a drive that throws after creating one, and checks that each run deleted exactly its own charts.
 
 ## Gotchas
 
