@@ -85,8 +85,8 @@ export function alignNodes() {
     },
   }));
 
-  // Add the action to the undo stack
   addToUndoStack({
+    kind: "layout",
     undo: () => {
       useDoc.setState((state) => ({
         meta: {
@@ -154,8 +154,8 @@ export function alignNodesHorizontally(nodeIds: string[]) {
     },
   }));
 
-  // Add the action to the undo stack
   addToUndoStack({
+    kind: "layout",
     undo: () => {
       useDoc.setState((state) => ({
         meta: {
@@ -223,8 +223,8 @@ export function alignNodesVertically(nodeIds: string[]) {
     },
   }));
 
-  // Add the action to the undo stack
   addToUndoStack({
+    kind: "layout",
     undo: () => {
       useDoc.setState((state) => ({
         meta: {

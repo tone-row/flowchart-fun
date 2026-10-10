@@ -21,7 +21,7 @@ import {
 } from "./alignNodes";
 import { useDoc } from "./useDoc";
 import { useGraphStore } from "./useGraphStore";
-import { canRedo, canUndo, redo, undo } from "./undoStack";
+import { canRedo, canUndo, clearUndoHistory, redo, undo } from "./undoStack";
 
 // Helpers to seed / read the store-backed input/output.
 function seed(nodePositions: NodePositions | undefined, otherMeta = {}) {
@@ -35,17 +35,8 @@ function getPositions(): NodePositions | undefined {
   return useDoc.getState().meta.nodePositions as NodePositions | undefined;
 }
 
-// The undo/redo stacks are module-level singletons with no reset export.
-// Drain both stacks before each test so length-based assertions are isolated.
-function drainStacks() {
-  // redo() pops from redoStack; undo() pops from undoStack. Calling them does
-  // mutate useDoc, but we re-seed at the start of every test so that's fine.
-  while (canRedo()) redo();
-  while (canUndo()) undo();
-}
-
 beforeEach(() => {
-  drainStacks();
+  clearUndoHistory();
   // Reset doc to a clean known state.
   useDoc.setState(() => ({ meta: {} }));
   useGraphStore.setState({ resolvedPositions: undefined });

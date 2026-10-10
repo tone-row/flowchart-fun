@@ -22,7 +22,7 @@ import {
 import { getDefaultText } from "../lib/getDefaultText";
 import { useMemo } from "react";
 import { useDoc } from "../lib/useDoc";
-import { undo } from "../lib/undoStack";
+import { undo, useIsAiEditNewest } from "../lib/undoStack";
 
 function getModeDescription(mode: Mode): string {
   const prompts = createExamples();
@@ -53,7 +53,7 @@ export function AiToolbar() {
   const isRunning = usePromptStore((state) => state.isRunning);
   const { runAi, cancelAi } = useRunAiWithStore();
   const diff = usePromptStore((state) => state.diff);
-  const showUndoButton = usePromptStore((state) => state.showUndoButton);
+  const isAiEditNewest = useIsAiEditNewest();
 
   const toggleOpen = () => setIsOpen(!isOpen);
 
@@ -110,15 +110,12 @@ export function AiToolbar() {
                   </Button2>
                 );
               })}
-              {showUndoButton && !isRunning && (
+              {isAiEditNewest && !isRunning && (
                 <Button2
                   color="default"
                   size="xs"
                   leftIcon={<ArrowCounterClockwise size={14} />}
-                  onClick={() => {
-                    undo();
-                    usePromptStore.setState({ showUndoButton: false });
-                  }}
+                  onClick={undo}
                 >
                   <Trans>Undo</Trans>
                 </Button2>

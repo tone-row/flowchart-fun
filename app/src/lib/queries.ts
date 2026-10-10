@@ -262,7 +262,7 @@ export async function deleteChart({ chartId }: { chartId: number }) {
 }
 
 /**
- * Rename a hosted chart and clear the related cache
+ * Rename a hosted chart
  */
 export async function renameChart(id: number, name: string) {
   if (!supabase) return;
@@ -271,8 +271,6 @@ export async function renameChart(id: number, name: string) {
     .update({ name })
     .eq("id", id);
   if (error) throw error;
-  // clear cache
-  queryClient.invalidateQueries(["useHostedDoc", id.toString()]);
   return data;
 }
 

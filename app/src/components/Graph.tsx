@@ -202,10 +202,10 @@ function handleDragFree(event: EventObject) {
     );
   save(nodePositions);
   addToUndoStack({
+    kind: "layout",
     undo: () => save(before),
     redo: () => save(nodePositions),
   });
-  usePromptStore.setState({ showUndoButton: false });
 }
 
 function initializeGraph({

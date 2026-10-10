@@ -10,6 +10,7 @@ const TARGET_MAP = Object.fromEntries(
 );
 const TARGET_DOC = `${TARGET_TEXT}\n=====\n${JSON.stringify({ nodePositions: TARGET_MAP })}\n=====`;
 const CYTOSCAPE_DOUBLE_CLICK_WINDOW_MS = 250;
+const AUTOSAVE_DEBOUNCE_MS = 1000;
 
 const storedMap = (chart) => JSON.parse(chart.split("=====")[1] ?? "{}").nodePositions;
 
@@ -138,10 +139,10 @@ export default async ({ page, ff, step, expect }) => {
     expect(afterRow.updated_at).toBe(before.updated_at);
   };
 
-  step("create a source chart and four frozen target charts");
+  step("create a source chart and five frozen target charts");
   const source = await createChart("source", SOURCE);
   const targets = {};
-  for (const t of ["drag", "align", "sandbox", "own"]) targets[t] = await createChart(t, TARGET_DOC);
+  for (const t of ["drag", "align", "sandbox", "own", "rename"]) targets[t] = await createChart(t, TARGET_DOC);
   ff.note({ source, targets });
 
   const openSource = async () => {
@@ -193,10 +194,31 @@ export default async ({ page, ff, step, expect }) => {
     await clickBackground(page, ff);
     await page.keyboard.press("Meta+z");
     await expect.poll(() => positions(page), { message: "first Cmd+Z undoes B's drag" }).toEqual(TARGET_LAYOUT);
+    await page.waitForTimeout(AUTOSAVE_DEBOUNCE_MS + 500);
     await expect
       .poll(async () => storedMap((await row(targets.own.id)).chart), { message: "stored map back", timeout: 10000 })
       .toEqual(TARGET_MAP);
     await undoOutsideEditorLeavesTargetAlone(targets.own);
+  });
+
+  await check("renaming the open chart from the header keeps its undo history", async () => {
+    await page.goto(`/u/${targets.rename.id}`);
+    await ff.waitForEditor();
+    await ff.waitForGraph((g) => g.nodes.some((n) => n.label === "Review"));
+    await page.waitForTimeout(1500);
+    await drag(page, ff, "Build", 0, 90);
+    const dragged = await positions(page);
+    expect(dragged.Build, "Build moved").not.toEqual(TARGET_LAYOUT.Build);
+    await page.getByTestId("rename-button").click();
+    const input = page.locator('input[name="name"]');
+    await input.fill(`${targets.rename.name} renamed`);
+    await input.press("Enter");
+    await expect(page.getByTestId("rename-button")).toContainText("renamed");
+    await page.waitForTimeout(1500);
+    expect(await positions(page), "rename leaves the drag").toEqual(dragged);
+    await clickBackground(page, ff);
+    await page.keyboard.press("Meta+z");
+    await expect.poll(() => positions(page), { message: "Cmd+Z after the rename undoes the drag" }).toEqual(TARGET_LAYOUT);
   });
 
   if (failures.length) throw new Error(`${failures.length} check(s) failed: ${failures.join("; ")}`);

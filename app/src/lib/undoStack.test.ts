@@ -1,6 +1,14 @@
 import { alignNodesHorizontally } from "./alignNodes";
 import { prepareChart } from "./prepareChart/prepareChart";
-import { canRedo, canUndo, redo, undo } from "./undoStack";
+import { renderHook, act } from "@testing-library/react";
+import {
+  addToUndoStack,
+  canRedo,
+  canUndo,
+  redo,
+  undo,
+  useIsAiEditNewest,
+} from "./undoStack";
 import { Details, useDoc } from "./useDoc";
 import { useGraphStore } from "./useGraphStore";
 
@@ -29,6 +37,7 @@ async function alignOn(details: Details) {
 }
 
 afterEach(() => {
+  while (canRedo()) redo();
   while (canUndo()) undo();
 });
 
@@ -52,9 +61,57 @@ test("opening a hosted chart after the sandbox leaves nothing to undo or redo", 
   expect(useDoc.getState().meta.nodePositions).toEqual(bPositions);
 });
 
-test("reloading the same chart or loading a template into it keeps its history", async () => {
-  await alignOn(chartA);
-  await prepareChart({ doc: "Alpha\n  Beta\n", details: { ...chartA } });
+test("loading a document into the same chart (template, file, #load: link, reload) ends its history", async () => {
+  await alignOn(sandbox);
+  alignNodesHorizontally(["n1", "n2"]);
+  undo();
+  expect(canUndo() && canRedo()).toBe(true);
+
+  await prepareChart({ doc: chartBDoc, details: { ...sandbox } });
+
+  expect(canUndo()).toBe(false);
+  expect(canRedo()).toBe(false);
+  undo();
+  redo();
+  expect(useDoc.getState().meta.nodePositions).toEqual(bPositions);
+});
+
+test("parsing a document without loading it keeps the history", async () => {
+  await alignOn(sandbox);
+  await prepareChart({ doc: chartBDoc, details: sandbox, set: false });
 
   expect(canUndo()).toBe(true);
+});
+
+const noop = () => {};
+const push = (kind: "ai" | "layout") =>
+  act(() => addToUndoStack({ kind, undo: noop, redo: noop }));
+
+test("AI undo is offered only while an AI edit is the newest entry", () => {
+  const { result } = renderHook(() => useIsAiEditNewest());
+  expect(result.current).toBe(false);
+
+  push("ai");
+  expect(result.current).toBe(true);
+
+  push("layout");
+  expect(result.current).toBe(false);
+
+  act(undo);
+  expect(result.current).toBe(true);
+
+  act(undo);
+  expect(result.current).toBe(false);
+
+  act(redo);
+  expect(result.current).toBe(true);
+});
+
+test("redoing a layout change never offers AI undo", () => {
+  const { result } = renderHook(() => useIsAiEditNewest());
+  push("layout");
+  act(undo);
+  act(redo);
+
+  expect(result.current).toBe(false);
 });
