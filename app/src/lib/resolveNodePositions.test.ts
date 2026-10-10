@@ -1,4 +1,5 @@
 import { NodePositions } from "../components/getNodePositionsFromCy";
+import { Direction } from "./FFTheme";
 import { getElements } from "./getElements";
 import {
   EdgeRef,
@@ -6,6 +7,7 @@ import {
   resolveNodePositions,
   resolverInput,
 } from "./resolveNodePositions";
+import { PARENT_PADDING } from "./toTheme";
 
 const node = (id: string, label: string, parent?: string): NodeRef => ({
   id,
@@ -200,7 +202,7 @@ describe("resolveNodePositions", () => {
     expect(typedFirst).toEqual(textOrder);
   });
 
-  test("compound parents are not obstacles for placement", () => {
+  test("a node's own container is not an obstacle for its placement", () => {
     const stored: NodePositions = {
       group: { x: 50, y: 50, label: "Group" },
       n2: { x: 50, y: 50, label: "A" },
@@ -359,12 +361,92 @@ describe("resolveNodePositions", () => {
     });
   });
 
+  describe("containers in placement", () => {
+    const graphOf = (text: string) =>
+      resolverInput(getElements(text), () => ({ width: 100, height: 40 }));
+    type Rect = { x1: number; y1: number; x2: number; y2: number };
+    const rects = (nodes: NodeRef[], positions: NodePositions) => {
+      const out: Record<string, Rect> = {};
+      const rectOf = (n: NodeRef): Rect => {
+        const inner = nodes
+          .filter((c) => c.parent === n.id)
+          .map((c) => rectOf(c));
+        if (inner.length === 0) {
+          const { x, y } = positions[n.id];
+          return { x1: x - 50, x2: x + 50, y1: y - 20, y2: y + 20 };
+        }
+        return {
+          x1: Math.min(...inner.map((r) => r.x1)) - PARENT_PADDING,
+          y1: Math.min(...inner.map((r) => r.y1)) - PARENT_PADDING,
+          x2: Math.max(...inner.map((r) => r.x2)) + PARENT_PADDING,
+          y2: Math.max(...inner.map((r) => r.y2)) + PARENT_PADDING,
+        };
+      };
+      for (const n of nodes) out[n.label] = rectOf(n);
+      return out;
+    };
+    const hits = (a: Rect, b: Rect) =>
+      a.x1 < b.x2 && b.x1 < a.x2 && a.y1 < b.y2 && b.y1 < a.y2;
+    const drawnOn = (
+      text: string,
+      stored: NodePositions,
+      direction: Direction,
+      label: string
+    ) => {
+      const { nodes, edges } = graphOf(text);
+      const r = rects(
+        nodes,
+        resolveNodePositions({ nodes, edges, stored, direction })
+      );
+      return Object.keys(r).filter(
+        (other) => other !== label && hits(r[other], r[label])
+      );
+    };
+
+    test("an empty container is drawn as a node, so a new sibling is not placed on it", () => {
+      const stored: NodePositions = {
+        n1: { x: 0, y: 0, label: "Start" },
+        n2: { x: 0, y: 80, label: "Box" },
+      };
+      expect(
+        drawnOn("Start\n  Box {\n  }\n  New", stored, "DOWN", "New")
+      ).toEqual([]);
+    });
+
+    describe.each<
+      [Direction, (along: number, across: number) => { x: number; y: number }]
+    >([
+      ["DOWN", (along, across) => ({ x: across, y: along })],
+      ["UP", (along, across) => ({ x: across, y: -along })],
+      ["RIGHT", (along, across) => ({ x: along, y: across })],
+      ["LEFT", (along, across) => ({ x: -along, y: across })],
+    ])("direction %s", (direction, at) => {
+      const rank = direction === "DOWN" || direction === "UP" ? 100 : 160;
+      const stored: NodePositions = {
+        n1: { ...at(0, 0), label: "Start" },
+        n2: { ...at(rank, 0), label: "Box" },
+        n3: { ...at(rank, -300), label: "One" },
+        n4: { ...at(rank, 300), label: "Two" },
+      };
+
+      test("a new node is not placed in the gap between a container's children", () => {
+        const text = "Start\n  Box {\n    One\n    Two\n  }\n  New";
+        expect(drawnOn(text, stored, direction, "New")).toEqual([]);
+      });
+
+      test("a new child of the container is placed inside it, clear of its siblings", () => {
+        const text = "Start\n  Box {\n    One\n    New\n    Two\n  }";
+        expect(drawnOn(text, stored, direction, "New")).toEqual(["Box"]);
+      });
+    });
+  });
+
   describe("resolverInput", () => {
-    test("takes nodes and edges in parse order, children with their parent, containers without a size", () => {
+    test("takes nodes and edges in parse order, children with their parent, containers with children without a size", () => {
       const sizes: string[] = [];
       const { nodes, edges } = resolverInput(
         getElements(
-          "Start\n  Box {\n    One\n  }\n    After\nStart\n  (After)"
+          "Start\n  Box {\n    One\n  }\n    After\nStart\n  (After)\nEmpty {\n}"
         ),
         (id) => {
           sizes.push(id);
@@ -382,13 +464,14 @@ describe("resolveNodePositions", () => {
         },
         { id: "n5", label: "After", size: { width: 100, height: 40 } },
         { id: "n6", label: "Start", size: { width: 100, height: 40 } },
+        { id: "n8", label: "Empty", size: { width: 100, height: 40 } },
       ]);
       expect(edges).toEqual([
         { source: "n1", target: "n2" },
         { source: "n2", target: "n5" },
         { source: "n6", target: "n5" },
       ]);
-      expect(sizes).toEqual(["n1", "n3", "n5", "n6"]);
+      expect(sizes).toEqual(["n1", "n3", "n5", "n6", "n8"]);
     });
   });
 
