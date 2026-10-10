@@ -244,23 +244,17 @@ export function alignNodesVertically(nodeIds: string[]) {
   });
 }
 
-/**
- * Snaps a drop onto a neighbour's row or column when the grabbed node lands within
- * `threshold` of it. Each axis snaps on its own, to the nearest node in the first group of
- * `candidates` that has one in range. Every moved node shifts by the grabbed node's snap, so
- * a group keeps its shape.
- */
 export function snapToNeighbours(
   positions: NodePositions,
   drag: { grabbed: string; moved: string[] },
-  candidates: string[][],
+  candidates: { connected: string[]; all: string[] },
   threshold: number
 ): NodePositions {
   const grabbed = positions[drag.grabbed];
   const moved = new Set(drag.moved);
 
   const snapTo = (axis: "x" | "y") => {
-    for (const group of candidates) {
+    for (const group of [candidates.connected, candidates.all]) {
       let best: number | undefined;
       let bestDiff = threshold;
       for (const id of group) {

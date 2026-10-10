@@ -8,7 +8,7 @@ The graph pane is interactive. Tapping a node or edge selects it and highlights 
 - `graph-dblclick-cursor` — a double-click focuses the editor, puts the cursor at the end of the line, and scrolls it into view. Driven by `examples/click-to-line.mjs`.
 - `graph-hover-line` — hovering a node or edge adds `.node-hover` to its line. _Not yet driven._
 - `graph-context-menu` — right-click a node or edge to add `.color_*`/`.shape_*` classes. _Not yet driven._
-- `graph-drag-align` — drag nodes, freeze layout, align with the floating menu. See [Graph layout](./graph-layout.md); driven by `examples/frozen-layout.mjs`.
+- `graph-drag-align` — drag nodes, freeze layout, snap a near-miss drop onto a neighbour's row or column, align with the floating menu. See [Graph layout](./graph-layout.md); driven by `examples/frozen-layout.mjs` and `examples/snap-on-drop.mjs`.
 - `graph-align-hotkeys` — with a frozen layout and two or more nodes selected, `h` aligns their x and `v` their y, and Ctrl/Cmd+Z undoes it. Both keys do nothing while focus is in a text field (the document or Custom CSS Monaco editor, an input, a textarea, a select, or contenteditable), so the letter is only typed. Driven by `examples/align-hotkeys.mjs`.
 
 ## How to get to it (user POV)

@@ -1,8 +1,3 @@
-// Snap on drop: a node dropped a few px off a neighbour's row or column lands exactly on it
-// (round-taxi edges show any offset as a step), the snapped position is what gets saved and
-// reloaded, a farther drop stays where it was dropped, undo restores the pre-drag picture in
-// one step, a group drag snaps as one, dragging a container never snaps, and text edits
-// never snap.
 const KEY = "flowcharts.fun.sandbox";
 const DOC = ["Start", "  Left", "  Right", "    End", "Box {", "  Inner", "}"].join("\n");
 const LAYOUT = {
@@ -13,6 +8,7 @@ const LAYOUT = {
   Inner: { x: 0, y: 300 },
 };
 const CYTOSCAPE_DOUBLE_CLICK_WINDOW_MS = 250;
+const INSIDE_CONTAINER_PADDING_PX = 4;
 
 const docWithMeta = (meta) => `${DOC}\n\n=====\n${JSON.stringify(meta)}\n=====`;
 
@@ -21,7 +17,6 @@ const storedMeta = async (ff) => {
   return s?.split("=====")[1] ? JSON.parse(s.split("=====")[1]) : null;
 };
 
-/** Leaf positions by label, unrounded. Containers are derived from their children. */
 const positions = (page) =>
   page.evaluate(() =>
     Object.fromEntries(
@@ -78,16 +73,18 @@ const nodePoint = async (page, ff, label) =>
     )
   );
 
-/** A point inside the container's padding, left of its children, so the container itself is grabbed. */
 const containerGrabPoint = async (page, ff, label) =>
   onCanvas(
     page,
     ff,
-    await page.evaluate((l) => {
-      const c = window.__cy.nodes().filter((n) => n.data("label") === l)[0];
-      const bb = c.renderedBoundingBox({ includeLabels: false });
-      return { x: bb.x1 + 4, y: (bb.y1 + bb.y2) / 2 };
-    }, label)
+    await page.evaluate(
+      ([l, inset]) => {
+        const c = window.__cy.nodes().filter((n) => n.data("label") === l)[0];
+        const bb = c.renderedBoundingBox({ includeLabels: false });
+        return { x: bb.x1 + inset, y: (bb.y1 + bb.y2) / 2 };
+      },
+      [label, INSIDE_CONTAINER_PADDING_PX]
+    )
   );
 
 async function backgroundClick(page, ff) {
@@ -96,8 +93,7 @@ async function backgroundClick(page, ff) {
   await page.mouse.click(box.x + box.width - 5, box.y + box.height - 5);
 }
 
-/** Drag from a page point by a model-space offset. */
-async function dragBy(page, from, dx, dy) {
+async function dragByModelOffset(page, from, dx, dy) {
   const zoom = await page.evaluate(() => window.__cy.zoom());
   await page.waitForTimeout(CYTOSCAPE_DOUBLE_CLICK_WINDOW_MS + 150);
   await page.mouse.move(from.x, from.y);
@@ -143,7 +139,7 @@ export default async ({ page, ff, step, expect }) => {
   await check("row: End dropped 6px below Right's row lands on it (dy == 0), saved and reloaded", async () => {
     await seed(page, ff, LAYOUT);
     await backgroundClick(page, ff);
-    await dragBy(page, await nodePoint(page, ff, "End"), 40, 6);
+    await dragByModelOffset(page, await nodePoint(page, ff, "End"), 40, 6);
     await settle(page, ff);
     await ff.shot("row-drop", ff.canvas());
     const after = await positions(page);
@@ -165,7 +161,7 @@ export default async ({ page, ff, step, expect }) => {
   await check("column: End dropped 5px right of Right's column lands on it (dx == 0)", async () => {
     await seed(page, ff, LAYOUT);
     await backgroundClick(page, ff);
-    await dragBy(page, await nodePoint(page, ff, "End"), -245, 120);
+    await dragByModelOffset(page, await nodePoint(page, ff, "End"), -245, 120);
     await settle(page, ff);
     const after = await positions(page);
     ff.note({ column: { End: after.End, Right: after.Right } });
@@ -177,7 +173,7 @@ export default async ({ page, ff, step, expect }) => {
   await check("far: End dropped 30px off Right's row stays where it was dropped", async () => {
     await seed(page, ff, LAYOUT);
     await backgroundClick(page, ff);
-    await dragBy(page, await nodePoint(page, ff, "End"), 40, 30);
+    await dragByModelOffset(page, await nodePoint(page, ff, "End"), 40, 30);
     await settle(page, ff);
     const after = await positions(page);
     ff.note({ far: { End: after.End } });
@@ -189,7 +185,7 @@ export default async ({ page, ff, step, expect }) => {
     await seed(page, ff, LAYOUT);
     const metaBefore = await storedMeta(ff);
     await backgroundClick(page, ff);
-    await dragBy(page, await nodePoint(page, ff, "End"), 40, 6);
+    await dragByModelOffset(page, await nodePoint(page, ff, "End"), 40, 6);
     await settle(page, ff);
     const dropped = await positions(page);
     await page.keyboard.press("Meta+z");
@@ -203,7 +199,7 @@ export default async ({ page, ff, step, expect }) => {
     await seed(page, ff, null);
     const layout = await positions(page);
     await backgroundClick(page, ff);
-    await dragBy(page, await nodePoint(page, ff, "End"), 40, 30);
+    await dragByModelOffset(page, await nodePoint(page, ff, "End"), 40, 30);
     await settle(page, ff);
     await expect.poll(async () => !!(await storedMeta(ff))?.nodePositions, { message: "drag freezes" }).toBe(true);
     await page.keyboard.press("Meta+z");
@@ -224,7 +220,7 @@ export default async ({ page, ff, step, expect }) => {
     await page.keyboard.up("Shift");
     const selected = await page.evaluate(() => window.__cy.$("node:selected").map((n) => n.data("label")).sort());
     expect(selected).toEqual(["Left", "Right"]);
-    await dragBy(page, await nodePoint(page, ff, "Right"), 60, -95);
+    await dragByModelOffset(page, await nodePoint(page, ff, "Right"), 60, -95);
     await settle(page, ff);
     const after = await positions(page);
     ff.note({ group: { Left: after.Left, Right: after.Right, Start: after.Start } });
@@ -237,7 +233,7 @@ export default async ({ page, ff, step, expect }) => {
   await check("container: dragging Box moves Inner by exactly the drop, never snapped", async () => {
     await seed(page, ff, LAYOUT);
     await backgroundClick(page, ff);
-    await dragBy(page, await containerGrabPoint(page, ff, "Box"), 4, -197);
+    await dragByModelOffset(page, await containerGrabPoint(page, ff, "Box"), 4, -197);
     await settle(page, ff);
     const after = await positions(page);
     ff.note({ container: { Inner: after.Inner } });

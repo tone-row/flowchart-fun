@@ -165,8 +165,7 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 
 export default Graph;
 
-/** Rendered px: a drop this close to a neighbour's row or column is a near miss, not a choice. */
-const SNAP_DISTANCE = 8;
+const SNAP_DISTANCE_RENDERED_PX = 8;
 
 function handleDragFree(event: EventObject) {
   const grabbed = event.target as NodeSingular;
@@ -185,8 +184,11 @@ function handleDragFree(event: EventObject) {
             .union(draggedWith.descendants())
             .map((n) => n.id()),
         },
-        [leaves(grabbed.neighborhood().nodes()), leaves(cy.nodes())],
-        SNAP_DISTANCE / cy.zoom()
+        {
+          connected: leaves(grabbed.neighborhood().nodes()),
+          all: leaves(cy.nodes()),
+        },
+        SNAP_DISTANCE_RENDERED_PX / cy.zoom()
       );
 
   const before = useDoc.getState().meta.nodePositions as
@@ -203,7 +205,6 @@ function handleDragFree(event: EventObject) {
     undo: () => save(before),
     redo: () => save(nodePositions),
   });
-  // The AI toolbar's Undo pops the newest action, which is now this drag
   usePromptStore.setState({ showUndoButton: false });
 }
 
