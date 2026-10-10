@@ -44,8 +44,10 @@ import {
   getNodePositionsFromCy,
   NodePositions,
 } from "./getNodePositionsFromCy";
-import { resolveNodePositions } from "../lib/resolveNodePositions";
-import { Direction } from "../lib/FFTheme";
+import {
+  resolveNodePositions,
+  resolverInput,
+} from "../lib/resolveNodePositions";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import classNames from "classnames";
@@ -351,28 +353,6 @@ function initializeGraph({
   }
 }
 
-function resolveFrozen(
-  stored: NodePositions,
-  cy: cytoscape.Core,
-  direction: Direction
-): NodePositions {
-  return resolveNodePositions({
-    stored,
-    nodes: cy.nodes().map((n) => ({
-      id: n.id(),
-      label: typeof n.data("label") === "string" ? n.data("label") : "",
-      width: n.outerWidth(),
-      height: n.outerHeight(),
-      parent: n.isChild() ? n.parent().first().id() : undefined,
-    })),
-    edges: cy.edges().map((e) => ({
-      source: e.source().id(),
-      target: e.target().id(),
-    })),
-    direction,
-  });
-}
-
 /**
  * Returns a debounced function that only relies
  * on the document to update the graph
@@ -471,8 +451,17 @@ function getGraphUpdater({
       });
       runMappers(cy.current);
 
+      const live = cy.current;
       const resolvedPositions =
-        stored && resolveFrozen(stored, cy.current, themeEditor.direction);
+        stored &&
+        resolveNodePositions({
+          stored,
+          ...resolverInput(elements, (id) => {
+            const node = live.getElementById(id);
+            return { width: node.outerWidth(), height: node.outerHeight() };
+          }),
+          direction: themeEditor.direction,
+        });
       if (resolvedPositions) {
         (layout as cytoscape.PresetLayoutOptions).positions = resolvedPositions;
       }

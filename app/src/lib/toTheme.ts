@@ -13,6 +13,8 @@ import { theme as defaultTheme } from "./templates/default-template";
 /**
  * Takes an FFTheme and returns cytoscape layout and style
  */
+export const PARENT_PADDING = 10;
+
 export function toTheme(theme: FFTheme) {
   const layout: cytoscape.LayoutOptions = {
     name: theme.layoutName,
@@ -121,7 +123,7 @@ export function toTheme(theme: FFTheme) {
   };
 
   const parent = {
-    padding: 10,
+    padding: PARENT_PADDING,
     "border-style": "solid",
     "border-width": theme.edgeWidth,
     "border-color": theme.edgeColor,

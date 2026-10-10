@@ -1,13 +1,12 @@
 // Opening a chart never writes its frozen map, even right after an edit elsewhere whose
 // render threw. A duplicate #id in chart A leaves the render in its error path; opening
 // chart B (a legacy frozen map) afterwards must send no PATCH, leave the row as seeded,
-// and never put a different map into the doc store. Doc writes are observed through the
-// Redux DevTools hook that zustand's devtools middleware reports every useDoc action to.
-// Full mode (hosted charts).
+// and never put a different map into the doc store.
 const NAME = `verify ${Date.now()}`;
 const LEGACY = { n1: { x: 0, y: 0 }, n2: { x: -200, y: 150 }, n3: { x: 200, y: 300 } };
 const B_TEXT = "Plan\n  Build\n    Review";
 
+// zustand's devtools middleware reports every useDoc action to this hook.
 const recordDocActions = () => {
   window.__docActions = [];
   window.__REDUX_DEVTOOLS_EXTENSION__ = {

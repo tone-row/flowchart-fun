@@ -1,15 +1,47 @@
 import { NodePositions } from "../components/getNodePositionsFromCy";
+import { cytoscape } from "./cytoscape";
 import { Direction } from "./FFTheme";
+import { PARENT_PADDING } from "./toTheme";
+import { isEdge } from "./utils";
+
+export type NodeSize = { width: number; height: number };
 
 export type NodeRef = {
   id: string;
   label: string;
-  width: number;
-  height: number;
   parent?: string;
+  size?: NodeSize;
 };
 
 export type EdgeRef = { source: string; target: string };
+
+export type ResolverInput = { nodes: NodeRef[]; edges: EdgeRef[] };
+
+export function resolverInput(
+  elements: cytoscape.ElementDefinition[],
+  sizeOf: (id: string) => NodeSize
+): ResolverInput {
+  const nodes: NodeRef[] = [];
+  const edges: EdgeRef[] = [];
+  for (const element of elements) {
+    const { data } = element;
+    if (isEdge(element)) {
+      edges.push({
+        source: data.source as string,
+        target: data.target as string,
+      });
+      continue;
+    }
+    const id = data.id as string;
+    nodes.push({
+      id,
+      label: typeof data.label === "string" ? data.label : "",
+      ...(data.parent ? { parent: data.parent as string } : {}),
+      ...(data.isParent ? {} : { size: sizeOf(id) }),
+    });
+  }
+  return { nodes, edges };
+}
 
 const GAP = 40;
 
@@ -62,8 +94,11 @@ export function resolveNodePositions({
       (a, b) =>
         (a.line < 0 ? Infinity : a.line) - (b.line < 0 ? Infinity : b.line)
     );
+  const lines = new Map(
+    nodes.map((node, index) => [node.id, lineOf(node.id) ?? index + 1])
+  );
   const currentSeq = nodes
-    .map((node, index) => ({ node, line: lineOf(node.id) ?? index + 1 }))
+    .map((node) => ({ node, line: lines.get(node.id) as number }))
     .filter(({ node }) => !positions[node.id])
     .sort((a, b) => a.line - b.line);
   const labelled = ({ node, line }: { node: NodeRef; line: number }) => ({
@@ -101,7 +136,13 @@ export function resolveNodePositions({
     ci = j + 1;
   }
 
-  const compound = new Set(nodes.map((n) => n.parent).filter(Boolean));
+  const byId = new Map(nodes.map((node) => [node.id, node]));
+  const children = new Map<string, NodeRef[]>();
+  for (const node of nodes) {
+    if (node.parent) {
+      children.set(node.parent, [...(children.get(node.parent) ?? []), node]);
+    }
+  }
   const adjacent = new Map<string, string[]>();
   for (const { source, target } of edges) {
     adjacent.set(target, [...(adjacent.get(target) ?? []), source]);
@@ -110,19 +151,39 @@ export function resolveNodePositions({
   const axis = direction === "LEFT" || direction === "RIGHT" ? "x" : "y";
   const perp = axis === "x" ? "y" : "x";
   const sign = direction === "LEFT" || direction === "UP" ? -1 : 1;
-  const box = (node: NodeRef, at: { x: number; y: number }): Box => ({
+  const toBox = (size: NodeSize, at: { x: number; y: number }): Box => ({
     along: at[axis],
     across: at[perp],
-    alongSize: axis === "x" ? node.width : node.height,
-    acrossSize: axis === "x" ? node.height : node.width,
+    alongSize: axis === "x" ? size.width : size.height,
+    acrossSize: axis === "x" ? size.height : size.width,
   });
-  const boxes = new Map<string, Box>();
+  const boxOf = (id: string): Box | undefined => {
+    const node = byId.get(id);
+    if (!node) return undefined;
+    if (node.size) {
+      return positions[id] && toBox(node.size, positions[id]);
+    }
+    const inner = (children.get(id) ?? []).flatMap((child) => {
+      const b = boxOf(child.id);
+      return b ? [b] : [];
+    });
+    if (inner.length === 0) return undefined;
+    const lo = Math.min(...inner.map((b) => b.along - b.alongSize / 2));
+    const hi = Math.max(...inner.map((b) => b.along + b.alongSize / 2));
+    const near = Math.min(...inner.map((b) => b.across - b.acrossSize / 2));
+    const far = Math.max(...inner.map((b) => b.across + b.acrossSize / 2));
+    return {
+      along: (lo + hi) / 2,
+      across: (near + far) / 2,
+      alongSize: hi - lo + 2 * PARENT_PADDING,
+      acrossSize: far - near + 2 * PARENT_PADDING,
+    };
+  };
   const placed: Box[] = [];
   for (const node of nodes) {
-    if (!positions[node.id]) continue;
-    const placedBox = box(node, positions[node.id]);
-    boxes.set(node.id, placedBox);
-    if (!compound.has(node.id)) placed.push(placedBox);
+    if (node.size && positions[node.id]) {
+      placed.push(toBox(node.size, positions[node.id]));
+    }
   }
   const extent = Object.values(stored).reduce(
     (e, at) => ({
@@ -134,11 +195,13 @@ export function resolveNodePositions({
   );
   for (const { node } of currentSeq) {
     if (positions[node.id]) continue;
+    const size = node.size ?? { width: 0, height: 0 };
     const neighbor = (adjacent.get(node.id) ?? [])
-      .map((id) => boxes.get(id))
+      .sort((a, b) => (lines.get(a) ?? 0) - (lines.get(b) ?? 0))
+      .map(boxOf)
       .find(Boolean);
     const point = placeBox(
-      box(node, { x: 0, y: 0 }),
+      toBox(size, { x: 0, y: 0 }),
       neighbor,
       placed,
       extent,
@@ -148,9 +211,7 @@ export function resolveNodePositions({
     at[axis] = point.along;
     at[perp] = point.across;
     positions[node.id] = { ...at, label: node.label };
-    const placedBox = box(node, at);
-    boxes.set(node.id, placedBox);
-    if (!compound.has(node.id)) placed.push(placedBox);
+    if (node.size) placed.push(toBox(node.size, at));
   }
 
   return positions;
@@ -194,12 +255,11 @@ function alignByLabel(stored: Labelled, current: Labelled): [number, number][] {
 }
 
 function pairAsRenames(stored: Labelled, current: Labelled) {
-  const pairWeight = (stored.length + current.length) * 3 + 1;
   return monotonePairs(stored.length, current.length, (i, j) => {
     const sameLine = stored[i].line === current[j].line;
     return (
-      pairWeight +
-      2 * labelSimilarity(stored[i].label, current[j].label) +
+      1 +
+      4 * labelSimilarity(stored[i].label, current[j].label) +
       (sameLine ? 0.5 : 0)
     );
   });

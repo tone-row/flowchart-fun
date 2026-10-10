@@ -1,14 +1,20 @@
 import { NodePositions } from "../components/getNodePositionsFromCy";
 import { getElements } from "./getElements";
-import { EdgeRef, NodeRef, resolveNodePositions } from "./resolveNodePositions";
+import {
+  EdgeRef,
+  NodeRef,
+  resolveNodePositions,
+  resolverInput,
+} from "./resolveNodePositions";
 
 const node = (id: string, label: string, parent?: string): NodeRef => ({
   id,
   label,
-  width: 100,
-  height: 40,
+  size: { width: 100, height: 40 },
   ...(parent ? { parent } : {}),
 });
+
+const container = (id: string, label: string): NodeRef => ({ id, label });
 
 const chain = (...ids: string[]): EdgeRef[] =>
   ids.slice(1).map((target, i) => ({ source: ids[i], target }));
@@ -201,7 +207,7 @@ describe("resolveNodePositions", () => {
     };
     const positions = resolve(
       [
-        node("group", "Group"),
+        container("group", "Group"),
         node("n2", "A", "group"),
         node("n3", "New", "group"),
       ],
@@ -336,7 +342,7 @@ describe("resolveNodePositions", () => {
       const positions = resolve(
         [
           node("n1", "Start"),
-          node("n2", "Box"),
+          container("n2", "Box"),
           node("n3", "One", "n2"),
           node("n4", "Two", "n2"),
           node("n5", "Three", "n2"),
@@ -353,26 +359,42 @@ describe("resolveNodePositions", () => {
     });
   });
 
+  describe("resolverInput", () => {
+    test("takes nodes and edges in parse order, children with their parent, containers without a size", () => {
+      const sizes: string[] = [];
+      const { nodes, edges } = resolverInput(
+        getElements(
+          "Start\n  Box {\n    One\n  }\n    After\nStart\n  (After)"
+        ),
+        (id) => {
+          sizes.push(id);
+          return { width: 100, height: 40 };
+        }
+      );
+      expect(nodes).toEqual([
+        { id: "n1", label: "Start", size: { width: 100, height: 40 } },
+        { id: "n2", label: "Box" },
+        {
+          id: "n3",
+          label: "One",
+          parent: "n2",
+          size: { width: 100, height: 40 },
+        },
+        { id: "n5", label: "After", size: { width: 100, height: 40 } },
+        { id: "n6", label: "Start", size: { width: 100, height: 40 } },
+      ]);
+      expect(edges).toEqual([
+        { source: "n1", target: "n2" },
+        { source: "n2", target: "n5" },
+        { source: "n6", target: "n5" },
+      ]);
+      expect(sizes).toEqual(["n1", "n3", "n5", "n6"]);
+    });
+  });
+
   describe("edit sequences on a map saved at the last drag", () => {
-    const graphOf = (text: string) => {
-      const elements = getElements(text);
-      const nodes: NodeRef[] = elements
-        .filter((e) => !("source" in e.data))
-        .map((e) => ({
-          id: e.data.id as string,
-          label: typeof e.data.label === "string" ? e.data.label : "",
-          width: 100,
-          height: 40,
-          parent: (e.data.parent as string) || undefined,
-        }));
-      const edges: EdgeRef[] = elements
-        .filter((e) => "source" in e.data)
-        .map((e) => ({
-          source: e.data.source as string,
-          target: e.data.target as string,
-        }));
-      return { nodes, edges };
-    };
+    const graphOf = (text: string) =>
+      resolverInput(getElements(text), () => ({ width: 100, height: 40 }));
 
     const session = (text0: string) => {
       const stored: NodePositions = {};
