@@ -1,6 +1,3 @@
-// A node added to a frozen chart must not be drawn on a container: neither on an empty
-// container (`Box {` / `}`, which renders as a plain node) nor inside the rectangle of a
-// container whose children were dragged apart, where the gap between them looks free.
 const KEY = "flowcharts.fun.sandbox";
 
 const seed = async (page, ff, text, nodePositions) => {
