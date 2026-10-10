@@ -40,7 +40,12 @@ import { useGraphStore } from "../lib/useGraphStore";
 import { isEdge } from "../lib/utils";
 import { usePromptStore } from "../lib/usePromptStore";
 import { Box } from "../slang";
-import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
+import {
+  getNodePositionsFromCy,
+  NodePositions,
+} from "./getNodePositionsFromCy";
+import { resolveNodePositions } from "../lib/resolveNodePositions";
+import { Direction } from "../lib/FFTheme";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import classNames from "classnames";
@@ -346,6 +351,28 @@ function initializeGraph({
   }
 }
 
+function resolveFrozen(
+  stored: NodePositions,
+  cy: cytoscape.Core,
+  direction: Direction
+): NodePositions {
+  return resolveNodePositions({
+    stored,
+    nodes: cy.nodes().map((n) => ({
+      id: n.id(),
+      label: typeof n.data("label") === "string" ? n.data("label") : "",
+      width: n.outerWidth(),
+      height: n.outerHeight(),
+      parent: n.isChild() ? n.parent().first().id() : undefined,
+    })),
+    edges: cy.edges().map((e) => ({
+      source: e.source().id(),
+      target: e.target().id(),
+    })),
+    direction,
+  });
+}
+
 /**
  * Returns a debounced function that only relies
  * on the document to update the graph
@@ -406,10 +433,12 @@ function getGraphUpdater({
 
       // Finally we get rid of layouts when user has dragged
       // Apply the preset layout if nodePositions is defined
-      const nodePositions = doc.meta?.nodePositions;
-      if (typeof nodePositions === "object") {
-        // @ts-ignore
-        layout.positions = { ...nodePositions };
+      const stored =
+        typeof doc.meta?.nodePositions === "object" &&
+        doc.meta.nodePositions !== null
+          ? (doc.meta.nodePositions as NodePositions)
+          : undefined;
+      if (stored) {
         layout.name = "preset";
         // @ts-ignore
         delete layout.spacingFactor;
@@ -441,6 +470,12 @@ function getGraphUpdater({
         style,
       });
       runMappers(cy.current);
+
+      const resolvedPositions =
+        stored && resolveFrozen(stored, cy.current, themeEditor.direction);
+      if (resolvedPositions) {
+        (layout as cytoscape.PresetLayoutOptions).positions = resolvedPositions;
+      }
 
       // Determine whether to fit
       const autoFit = useGraphStore.getState().autoFit;
@@ -478,8 +513,7 @@ function getGraphUpdater({
       });
       updateModelMarkers();
 
-      // Update Graph Store
-      useGraphStore.setState({ layout, elements });
+      useGraphStore.setState({ layout, elements, resolvedPositions });
     } catch (e) {
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();
