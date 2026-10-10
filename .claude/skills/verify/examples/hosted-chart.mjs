@@ -17,6 +17,7 @@ export default async ({ page, ff, step, expect }) => {
 
   step("edit the text; the debounced save PATCHes user_charts");
   await ff.waitForEditor();
+  await ff.waitForGraph((g) => g.nodes.length > 0);
   const saved = page.waitForResponse(
     (r) => r.url().includes("/rest/v1/user_charts") && r.request().method() === "PATCH" && r.ok(),
     { timeout: 20000 }

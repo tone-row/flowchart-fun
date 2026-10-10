@@ -17,6 +17,7 @@ export default async ({ page, ff, step, expect }) => {
   await page.waitForURL(/\/u\/\d+$/);
   const id = new URL(page.url()).pathname.split("/").pop();
   await ff.waitForEditor();
+  await ff.waitForGraph((g) => g.nodes.length > 0);
   await ff.typeDoc(DOC);
   await expect.poll(() => patches.length, { timeout: 15000 }).toBeGreaterThan(0);
   await page.waitForTimeout(2500);
