@@ -235,9 +235,11 @@ const ToneRowProject = memo(
       >
         <span className="text-sm font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {name}{" "}
-          <span className="font-normal text-neutral-400 dark:text-neutral-500">
-            {domain}
-          </span>
+          {domain !== name && (
+            <span className="font-normal text-neutral-400 dark:text-neutral-500">
+              {domain}
+            </span>
+          )}
         </span>
         <span className="text-sm text-neutral-500 dark:text-neutral-400">
           {description}
