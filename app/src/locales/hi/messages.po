@@ -22,7 +22,7 @@ msgstr "1 अस्थायी फ्लोचार्ट"
 msgid "30-Day Pass"
 msgstr "30-दिन पास"
 
-#: src/components/Tabs/ThemeTab.tsx:683
+#: src/components/Tabs/ThemeTab.tsx:696
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>कस्टम CSS केवल</0> सक्षम है। केवल लेआउट और एडवांस्ड सेटिंग्स लागू की जाएगी।"
 
@@ -68,7 +68,7 @@ msgstr "खाता"
 msgid "Active"
 msgstr "सक्रिय"
 
-#: src/lib/parserErrors.tsx:47
+#: src/lib/parserErrors.tsx:49
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "किसी भी विशेष वर्ण के पहले एक बैकस्लैश (<0>\\</0>) जोड़ें: <1>(</1>, <2>:</2>, <3>#</3>, या <4>.</4>"
 
@@ -76,22 +76,22 @@ msgstr "किसी भी विशेष वर्ण के पहले ए
 msgid "Add some steps"
 msgstr "कुछ चरण जोड़ें"
 
-#: src/components/Tabs/ThemeTab.tsx:617
+#: src/components/Tabs/ThemeTab.tsx:630
 msgid "Advanced"
 msgstr "उन्नत"
 
-#: src/components/GraphFloatingMenu.tsx:149
-#: src/components/GraphFloatingMenu.tsx:153
+#: src/components/GraphFloatingMenu.tsx:151
+#: src/components/GraphFloatingMenu.tsx:155
 msgid "Align Horizontally"
 msgstr "आड़े सारी तरफ"
 
-#: src/components/GraphFloatingMenu.tsx:137
-#: src/components/GraphFloatingMenu.tsx:141
+#: src/components/GraphFloatingMenu.tsx:139
+#: src/components/GraphFloatingMenu.tsx:143
 msgid "Align Nodes"
 msgstr "नोड्स को संरेखित करें"
 
-#: src/components/GraphFloatingMenu.tsx:161
-#: src/components/GraphFloatingMenu.tsx:165
+#: src/components/GraphFloatingMenu.tsx:163
+#: src/components/GraphFloatingMenu.tsx:167
 msgid "Align Vertically"
 msgstr "ऊपर-नीचे सारी तरफ"
 
@@ -135,8 +135,8 @@ msgstr "क्या आप वाकई फ़ोल्डर को हटा�
 msgid "Are you sure?"
 msgstr "क्या आप निश्चित हैं?"
 
-#: src/components/Tabs/ThemeTab.tsx:571
-#: src/components/Tabs/ThemeTab.tsx:572
+#: src/components/Tabs/ThemeTab.tsx:584
+#: src/components/Tabs/ThemeTab.tsx:585
 msgid "Arrow Size"
 msgstr "तीर आकार"
 
@@ -156,14 +156,14 @@ msgstr "वापस"
 msgid "Back To Editor"
 msgstr "संपादक पर वापस जाएं"
 
-#: src/components/Tabs/ThemeTab.tsx:187
-#: src/components/Tabs/ThemeTab.tsx:188
-#: src/components/Tabs/ThemeTab.tsx:239
-#: src/components/Tabs/ThemeTab.tsx:242
+#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:201
+#: src/components/Tabs/ThemeTab.tsx:252
+#: src/components/Tabs/ThemeTab.tsx:255
 msgid "Background Color"
 msgstr "पृष्ठभूमि रंग"
 
-#: src/components/ShareDialog.tsx:539
+#: src/components/ShareDialog.tsx:540
 msgid "Basic Flowchart"
 msgstr "बेसिक फ्लोचार्ट"
 
@@ -198,13 +198,13 @@ msgstr "ब्लॉग"
 msgid "Book a Meeting"
 msgstr "एक बैठक बुक करें"
 
-#: src/components/Tabs/ThemeTab.tsx:293
-#: src/components/Tabs/ThemeTab.tsx:294
+#: src/components/Tabs/ThemeTab.tsx:306
+#: src/components/Tabs/ThemeTab.tsx:307
 msgid "Border Color"
 msgstr "सीमा रंग"
 
-#: src/components/Tabs/ThemeTab.tsx:278
-#: src/components/Tabs/ThemeTab.tsx:279
+#: src/components/Tabs/ThemeTab.tsx:291
+#: src/components/Tabs/ThemeTab.tsx:292
 msgid "Border Width"
 msgstr "सीमा चौड़ाई"
 
@@ -224,7 +224,7 @@ msgstr "अपनी निजी फ्लोचार्ट लाइब्र
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/LoadTemplateDialog.tsx:149
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:165
 #: src/components/charts/ChartModals.tsx:59
 #: src/components/charts/ChartModals.tsx:129
 #: src/components/charts/ChartModals.tsx:207
@@ -263,12 +263,16 @@ msgstr "ईमेल पता बदलें"
 msgid "Changelog"
 msgstr "बदलाव का"
 
+#: src/pages/EditHosted.tsx:208
+msgid "Changes not saved"
+msgstr "परिवर्तन सहेजे नहीं गए"
+
 #: src/components/Header.tsx:114
 #: src/components/Header.tsx:381
 msgid "Charts"
 msgstr "चार्ट"
 
-#: src/components/ShareDialog.tsx:526
+#: src/components/ShareDialog.tsx:527
 msgid "Check out the guide:"
 msgstr "गाइड की जाँच करें:"
 
@@ -288,11 +292,11 @@ msgstr "टेम्पलेट चुनें"
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।"
 
-#: src/components/Tabs/ThemeTab.tsx:436
+#: src/components/Tabs/ThemeTab.tsx:449
 msgid "Choose how edges connect between nodes"
 msgstr "नोड्स के बीच एज कैसे कनेक्ट करें चुनें"
 
-#: src/components/Tabs/ThemeTab.tsx:96
+#: src/components/Tabs/ThemeTab.tsx:100
 msgid "Choose how nodes are automatically arranged in your flowchart"
 msgstr "अपने फ्लोचार्ट में नोडों को स्वचालित रूप से व्यवस्थित कैसे करें चुनें"
 
@@ -326,8 +330,8 @@ msgstr "फ्लोचार्ट को क्लोन करें "
 msgid "Close"
 msgstr "बंद करें"
 
-#: src/components/Tabs/ThemeTab.tsx:470
-#: src/components/Tabs/ThemeTab.tsx:471
+#: src/components/Tabs/ThemeTab.tsx:483
+#: src/components/Tabs/ThemeTab.tsx:484
 msgid "Color"
 msgstr "रंग"
 
@@ -363,6 +367,14 @@ msgstr "साइन इन करने के लिए अपना ईमे
 msgid "Connect your Data"
 msgstr "अपने डेटा को कनेक्ट करें"
 
+#: src/lib/parserErrors.tsx:76
+msgid "Container is never closed, so every line below it is inside it. Add a {brace} on its own line after the container's last child."
+msgstr "कंटेनर कभी बंद नहीं होता, इसलिए इसके नीचे की हर पंक्ति इसके अंदर है। कंटेनर के अंतिम चाइल्ड के बाद अपनी अलग पंक्ति में एक {brace} जोड़ें।"
+
+#: src/lib/parserErrors.tsx:78
+msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
+msgstr "कंटेनर वहाँ बंद नहीं होता जहाँ आप उम्मीद करते हैं। जो पंक्तियाँ इसके नीचे इंडेंट नहीं हैं, वे भी इसके अंदर हैं। इसके {brace} को इसकी अंतिम इंडेंट की गई पंक्ति के ठीक बाद ऊपर ले जाएँ।"
+
 #: src/components/LearnSyntaxDialog.tsx:260
 msgid "Containers"
 msgstr "कंटेनर"
@@ -379,7 +391,7 @@ msgstr "जारी रखें"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "सैंडबॉक्स में जारी रखें (दैनिक रूप से रीसेट होता है, काम सहेजा नहीं जाता)"
 
-#: src/components/Tabs/ThemeTab.tsx:132
+#: src/components/Tabs/ThemeTab.tsx:145
 msgid "Controls the flow direction of hierarchical layouts"
 msgstr "वर्गीकृत लेआउट की धारा को नियंत्रित करता है"
 
@@ -392,7 +404,7 @@ msgstr "परिवर्तन करें"
 msgid "Convert to Flowchart"
 msgstr "फ्लोचार्ट में बदलें"
 
-#: src/components/RenameButton.tsx:128
+#: src/components/RenameButton.tsx:133
 msgid "Convert to hosted chart?"
 msgstr "होस्टेड चार्ट में कनवर्ट करें?"
 
@@ -408,9 +420,9 @@ msgstr "क्लिपबोर्ड पर SVG कोड कॉपी कि�
 msgid "Copied {format} to clipboard"
 msgstr "क्लिपबोर्ड पर {प्रारूप} कॉपी किया गया"
 
-#: src/components/ShareDialog.tsx:277
-#: src/components/ShareDialog.tsx:280
-#: src/components/ShareDialog.tsx:394
+#: src/components/ShareDialog.tsx:278
+#: src/components/ShareDialog.tsx:281
+#: src/components/ShareDialog.tsx:395
 msgid "Copy"
 msgstr "कॉपी करें"
 
@@ -422,11 +434,11 @@ msgstr "PNG छवि कॉपी करें"
 msgid "Copy SVG Code"
 msgstr "SVG कोड कॉपी करें"
 
-#: src/components/ShareDialog.tsx:417
+#: src/components/ShareDialog.tsx:418
 msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
 msgstr "अपने Excalidraw कोड को कॉपी करें और <0>excalidraw.com</0> में पेस्ट करें ताकि आप संपादित कर सकें। यह सुविधा प्रयोगात्मक है और सभी आरेखों के साथ काम नहीं कर सकती। यदि आपको कोई बग मिलता है, तो <1>हमें जानकारी दें।</1>"
 
-#: src/components/ShareDialog.tsx:357
+#: src/components/ShareDialog.tsx:358
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "अपना मर्मेड.जेएस कोड कॉपी करें या मर्मेड.जेएस लाइव एडिटर में सीधे खोलें।"
 
@@ -479,12 +491,12 @@ msgstr "बनाई गई तारीख"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "दो नोड्स के बीच एक एज बनाने के लिए दूसरा नोड पहले वाले के नीचे इंडेंट करना होता है"
 
-#: src/components/Tabs/ThemeTab.tsx:426
+#: src/components/Tabs/ThemeTab.tsx:439
 msgid "Curve Style"
 msgstr "वक्र शैली"
 
-#: src/components/Tabs/ThemeTab.tsx:625
-#: src/components/Tabs/ThemeTab.tsx:626
+#: src/components/Tabs/ThemeTab.tsx:638
+#: src/components/Tabs/ThemeTab.tsx:639
 msgid "Custom CSS"
 msgstr "कस्टम CSS"
 
@@ -539,8 +551,8 @@ msgstr "एक एजाइल टीम के लिए सॉफ्टवे�
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "एक सीईओ के लिए नए बाजार के अवसरों का मूल्यांकन करने के लिए एक फैसले का पेड़ विकसित करें"
 
-#: src/components/Tabs/ThemeTab.tsx:129
-#: src/components/Tabs/ThemeTab.tsx:139
+#: src/components/Tabs/ThemeTab.tsx:142
+#: src/components/Tabs/ThemeTab.tsx:152
 msgid "Direction"
 msgstr "दिशा"
 
@@ -570,8 +582,8 @@ msgid "Don't Lose Your Work"
 msgstr "अपना काम न खो दें"
 
 #: src/components/FlowchartHeader.tsx:100
-#: src/components/ShareDialog.tsx:69
-#: src/components/ShareDialog.tsx:619
+#: src/components/ShareDialog.tsx:70
+#: src/components/ShareDialog.tsx:624
 msgid "Download"
 msgstr "डाउनलोड"
 
@@ -617,22 +629,22 @@ msgid "Edge Label Column"
 msgstr "किनारे लेबल कॉलम"
 
 #: src/components/LearnSyntaxDialog.tsx:311
-#: src/components/Tabs/ThemeTab.tsx:432
+#: src/components/Tabs/ThemeTab.tsx:445
 msgid "Edge Style"
 msgstr "किनारे शैली"
 
-#: src/components/Tabs/ThemeTab.tsx:586
-#: src/components/Tabs/ThemeTab.tsx:587
+#: src/components/Tabs/ThemeTab.tsx:599
+#: src/components/Tabs/ThemeTab.tsx:600
 msgid "Edge Text Size"
 msgstr "एड्ज टेक्स्ट आकार"
 
-#: src/lib/parserErrors.tsx:19
+#: src/lib/parserErrors.tsx:21
 msgid "Edge missing indentation"
 msgstr "एड्ज अंतराल गुम है"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:419
+#: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edges"
 msgstr "किन्तुओं"
 
@@ -672,12 +684,12 @@ msgstr "लक्ष्य नोड पंक्ति में किन्�
 msgid "Edit"
 msgstr "संपादित करें"
 
-#: src/components/EditWithAI.tsx:27
-#: src/components/EditWithAI.tsx:191
+#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:192
 msgid "Edit with AI"
 msgstr "एआई के साथ संपादित करें"
 
-#: src/components/ShareDialog.tsx:149
+#: src/components/ShareDialog.tsx:150
 msgid "Editable"
 msgstr "संपादन योग्य"
 
@@ -699,7 +711,7 @@ msgstr "ईमेल"
 msgid "Empty"
 msgstr "खाली"
 
-#: src/components/Tabs/ThemeTab.tsx:371
+#: src/components/Tabs/ThemeTab.tsx:384
 msgid "Enable to set a consistent height for all nodes"
 msgstr "सभी नोड्स के लिए एक समान ऊंचाई सेट करने के लिए सक्षम करें"
 
@@ -760,8 +772,8 @@ msgstr "प्रो खोजें"
 msgid "Explore more"
 msgstr "और ज्ञान प्राप्त करें"
 
-#: src/components/ShareDialog.tsx:56
-#: src/components/ShareDialog.tsx:162
+#: src/components/ShareDialog.tsx:57
+#: src/components/ShareDialog.tsx:163
 msgid "Export"
 msgstr "एक्सपोर्ट करें"
 
@@ -795,12 +807,12 @@ msgstr "किसी भी चिंता के लिए हमसे फी
 msgid "Fine-tune layouts and visual styles"
 msgstr "लेआउट और दृश्य शैलियों को समायोजित करें"
 
-#: src/components/Tabs/ThemeTab.tsx:391
+#: src/components/Tabs/ThemeTab.tsx:404
 msgid "Fixed Height"
 msgstr "निश्चित ऊंचाई"
 
-#: src/components/Tabs/ThemeTab.tsx:367
-#: src/components/Tabs/ThemeTab.tsx:385
+#: src/components/Tabs/ThemeTab.tsx:380
+#: src/components/Tabs/ThemeTab.tsx:398
 msgid "Fixed Node Height"
 msgstr "निर्धारित नोड ऊंचाई"
 
@@ -820,7 +832,7 @@ msgstr "फ्लोचार्ट फन एक डेवलपर द्व�
 msgid "Follow Us on Twitter"
 msgstr "हमारे साथ ट्विटर पर फॉलो करें"
 
-#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:213
 msgid "Font Family"
 msgstr "फॉन्ट परिवार"
 
@@ -844,11 +856,11 @@ msgstr "अक्सर पूछे जाने वाले सवाल"
 msgid "Full-screen, read-only, and template sharing"
 msgstr "पूर्ण स्क्रीन, केवल पढ़ने के लिए और टेम्पलेट साझा करें"
 
-#: src/components/ShareDialog.tsx:144
+#: src/components/ShareDialog.tsx:145
 msgid "Fullscreen"
 msgstr "फ़ुलस्क्रीन"
 
-#: src/components/Tabs/ThemeTab.tsx:180
+#: src/components/Tabs/ThemeTab.tsx:193
 msgid "General"
 msgstr "सामान्य"
 
@@ -860,7 +872,7 @@ msgstr "पाठ से स्वचालित रूप से फ्लो�
 msgid "Get Pro Access Now"
 msgstr "अब प्रो एक्सेस प्राप्त करें"
 
-#: src/lib/usePromptStore.ts:141
+#: src/lib/usePromptStore.ts:124
 msgid "Get Unlimited AI Requests"
 msgstr "असीमित एआई अनुरोध प्राप्त करें"
 
@@ -962,7 +974,7 @@ msgstr "आईडीज़"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "अगर उस ईमेल के साथ एक खाता मौजूद है, तो हमने आपको पासवर्ड रीसेट करने के लिए निर्देशों के साथ एक ईमेल भेजा है।"
 
-#: src/lib/parserErrors.tsx:21
+#: src/lib/parserErrors.tsx:23
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "यदि आप एक एड्ज बनाने के लिए मतलब है, तो इस लाइन को इंडेंट करें। यदि नहीं, तो कॉलन को बैक स्लैश के साथ भागो <0> \\: </0>"
 
@@ -997,7 +1009,7 @@ msgstr "Visio, Lucidchart और CSV से आयात करें"
 msgid "Import from popular diagram tools"
 msgstr "प्रसिद्ध आरेख उपकरणों से आयात करें"
 
-#: src/components/ShareDialog.tsx:520
+#: src/components/ShareDialog.tsx:521
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "इन CSV फ़ाइलों में से एक का उपयोग करके अपनी आरेख Microsoft Visio में आयात करें।"
 
@@ -1005,7 +1017,7 @@ msgstr "इन CSV फ़ाइलों में से एक का उप�
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
 msgstr "डेटा आयात करना एक प्रो फीचर है। आप फ्लोचार्ट फन प्रो को केवल $4/महीने में अपग्रेड कर सकते हैं।"
 
-#: src/components/ShareDialog.tsx:568
+#: src/components/ShareDialog.tsx:573
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "एक <0>title</0> विशेषता का उपयोग करके एक शीर्षक शामिल करें। Visio रंगीनी का उपयोग करने के लिए, निम्नलिखित में से किसी एक के बराबर एक <1>roleType</1> विशेषता जोड़ें:"
 
@@ -1021,7 +1033,7 @@ msgstr "जानकारी"
 msgid "Is"
 msgstr "हाँ"
 
-#: src/components/ShareDialog.tsx:647
+#: src/components/ShareDialog.tsx:652
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON कैनवास आपके द्वारा बनाई गई आपकी आरेख का एक JSON प्रतिनिधि है, जो <0>Obsidian</0> कैनवास और अन्य एप्लिकेशनों द्वारा उपयोग किया जाता है।"
 
@@ -1046,7 +1058,7 @@ msgstr "क्या इसे एक बार के लिए ही आव�
 msgid "Keep Things Private"
 msgstr "चीजों को निजी रखें"
 
-#: src/components/AiToolbar.tsx:129
+#: src/components/AiToolbar.tsx:126
 msgid "Keep changes?"
 msgstr "परिवर्तन रखें?"
 
@@ -1062,17 +1074,17 @@ msgstr "अपने डेटा को अपने कंप्यूटर �
 msgid "Language"
 msgstr "भाषा"
 
-#: src/components/Tabs/ThemeTab.tsx:79
-#: src/components/Tabs/ThemeTab.tsx:102
+#: src/components/Tabs/ThemeTab.tsx:83
+#: src/components/Tabs/ThemeTab.tsx:106
 msgid "Layout"
 msgstr "रूपरेखा"
 
-#: src/components/Tabs/ThemeTab.tsx:92
+#: src/components/Tabs/ThemeTab.tsx:96
 msgid "Layout Algorithm"
 msgstr "लेआउट एल्गोरिदम"
 
-#: src/components/GraphFloatingMenu.tsx:120
 #: src/components/GraphFloatingMenu.tsx:122
+#: src/components/GraphFloatingMenu.tsx:124
 msgid "Layout Frozen"
 msgstr "लेआउट फ्रोज़न"
 
@@ -1112,7 +1124,7 @@ msgstr "लाइट"
 msgid "Light Mode"
 msgstr "लाइट मोड"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:140
 msgid "Link"
 msgstr "लिंक"
 
@@ -1161,8 +1173,8 @@ msgstr "स्थानीय फ़ाइल समर्थन"
 msgid "Local saving for offline access"
 msgstr "ऑफ़लाइन उपयोग के लिए स्थानीय सहेजना"
 
-#: src/components/GraphFloatingMenu.tsx:110
 #: src/components/GraphFloatingMenu.tsx:112
+#: src/components/GraphFloatingMenu.tsx:114
 msgid "Lock Zoom to Graph"
 msgstr "ग्राफ पर जूम लॉक करें"
 
@@ -1191,7 +1203,7 @@ msgstr "<0>टोन रो</0> द्वारा बनाया गया ह
 msgid "Make a One-Time Donation"
 msgstr "एक बार दान करें"
 
-#: src/components/ShareDialog.tsx:484
+#: src/components/ShareDialog.tsx:485
 msgid "Make publicly accessible"
 msgstr "सार्वजनिक रूप से एक्सेस दें"
 
@@ -1203,7 +1215,7 @@ msgstr "बिलिंग प्रबंधित करें"
 msgid "Map Data"
 msgstr "डेटा मैप"
 
-#: src/components/Tabs/ThemeTab.tsx:315
+#: src/components/Tabs/ThemeTab.tsx:328
 msgid "Maximum width of text inside nodes"
 msgstr "नोड्स के अंदर टेक्स्ट की अधिकतम चौड़ाई"
 
@@ -1232,7 +1244,7 @@ msgstr "चलो"
 msgid "Move {0}"
 msgstr "चलो {0}"
 
-#: src/lib/parserErrors.tsx:29
+#: src/lib/parserErrors.tsx:31
 msgid "Multiple pointers on same line"
 msgstr "एक ही लाइन पर कई प्रतीक"
 
@@ -1328,8 +1340,8 @@ msgstr "नोड आईडी, वर्ग, गुण"
 msgid "Node Label"
 msgstr "नोड लेबल"
 
-#: src/components/Tabs/ThemeTab.tsx:222
-#: src/components/Tabs/ThemeTab.tsx:224
+#: src/components/Tabs/ThemeTab.tsx:235
+#: src/components/Tabs/ThemeTab.tsx:237
 msgid "Node Shape"
 msgstr "नोड आकार"
 
@@ -1337,7 +1349,7 @@ msgstr "नोड आकार"
 msgid "Node Shapes"
 msgstr "नोड आकार"
 
-#: src/components/Tabs/ThemeTab.tsx:215
+#: src/components/Tabs/ThemeTab.tsx:228
 msgid "Nodes"
 msgstr "नोड्स"
 
@@ -1381,7 +1393,7 @@ msgstr "एक बार"
 msgid "Open Customer Portal"
 msgstr "ग्राहक पोर्टल खोलें"
 
-#: src/lib/usePromptStore.ts:138
+#: src/lib/usePromptStore.ts:121
 msgid "Operation canceled"
 msgstr "ऑपरेशन रद्द किया गया है"
 
@@ -1389,7 +1401,7 @@ msgstr "ऑपरेशन रद्द किया गया है"
 msgid "Or maybe blue!"
 msgstr "या शायद नीला!"
 
-#: src/components/ShareDialog.tsx:553
+#: src/components/ShareDialog.tsx:556
 msgid "Organization Chart"
 msgstr "संगठन चार्ट"
 
@@ -1397,8 +1409,8 @@ msgstr "संगठन चार्ट"
 msgid "Our AI creates diagrams from your text prompts, allowing for seamless manual edits or AI-assisted adjustments. Unlike others, our Pro plan offers unlimited AI generations and edits, empowering you to create without limits."
 msgstr "हमारा एआई आपके टेक्स्ट प्रॉम्प्ट से आरेख बनाता है, जो समग्र मैनुअल संपादन या एआई सहायित समायोजन की अनुमति देता है। अन्यों के विपरीत, हमारी प्रो योजना असीमित एआई जनरेशन और संपादन प्रदान करती है, जो आपको सीमाओं के बिना निर्माण करने की शक्ति देती है।"
 
-#: src/components/Tabs/ThemeTab.tsx:263
-#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:276
+#: src/components/Tabs/ThemeTab.tsx:277
 msgid "Padding"
 msgstr "पैडिंग"
 
@@ -1442,7 +1454,7 @@ msgstr "स्थायी चार्ट एक प्रो सुविध�
 msgid "Playbook"
 msgstr "प्लेबुक"
 
-#: src/lib/parserErrors.tsx:34
+#: src/lib/parserErrors.tsx:36
 msgid "Pointer and container on same line"
 msgstr "प्रतीक और कंटेनर एक ही लाइन पर"
 
@@ -1476,8 +1488,8 @@ msgstr "प्रसंस्करण हो रहा है..."
 msgid "Prompt"
 msgstr "प्रश्न"
 
-#: src/components/ShareDialog.tsx:480
-#: src/components/ShareDialog.tsx:505
+#: src/components/ShareDialog.tsx:481
+#: src/components/ShareDialog.tsx:506
 msgid "Public"
 msgstr "पब्लिक"
 
@@ -1503,12 +1515,12 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "रास्टर निर्यात (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:37
-#: src/lib/usePromptStore.ts:149
+#: src/lib/usePromptStore.ts:132
 msgid "Rate limit exceeded. Please try again later."
 msgstr "रेट लिमिट पार हो गई है। कृपया बाद में पुनः प्रयास करें।"
 
 #: src/components/FlowchartHeader.tsx:77
-#: src/components/ShareDialog.tsx:154
+#: src/components/ShareDialog.tsx:155
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
 
@@ -1552,9 +1564,9 @@ msgstr "पृष्ठ को ताज़ा करें"
 msgid "Reload to Update"
 msgstr "अपडेट करने के लिए रीलोड करें"
 
-#: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:163
+#: src/components/RenameButton.tsx:105
+#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:168
 #: src/components/charts/ChartListItem.tsx:191
 #: src/components/charts/ChartModals.tsx:214
 msgid "Rename"
@@ -1572,8 +1584,8 @@ msgstr "अनुरोध जादू लिंक"
 msgid "Request Password Reset"
 msgstr "पासवर्ड रीसेट का अनुरोध करें"
 
-#: src/components/GraphFloatingMenu.tsx:75
-#: src/components/GraphFloatingMenu.tsx:78
+#: src/components/GraphFloatingMenu.tsx:77
+#: src/components/GraphFloatingMenu.tsx:80
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -1607,8 +1619,8 @@ msgstr "विकल्पों के लिए नोड को दाया�
 msgid "Roadmap"
 msgstr "रोडमैप"
 
-#: src/components/Tabs/ThemeTab.tsx:601
-#: src/components/Tabs/ThemeTab.tsx:602
+#: src/components/Tabs/ThemeTab.tsx:614
+#: src/components/Tabs/ThemeTab.tsx:615
 msgid "Rotate Label"
 msgstr "लेबल को घुमाएँ"
 
@@ -1665,7 +1677,7 @@ msgstr "के लिए एक लक्षित फोल्डर का च
 msgid "Send us a message"
 msgstr "हमें एक संदेश भेजें"
 
-#: src/components/Tabs/ThemeTab.tsx:395
+#: src/components/Tabs/ThemeTab.tsx:408
 msgid "Set a consistent height for all nodes"
 msgstr "सभी नोड्स के लिए एक समान ऊंचाई सेट करें"
 
@@ -1712,8 +1724,8 @@ msgstr "अवरोहण करें"
 msgid "Sort by {0}"
 msgstr "{0} द्वारा क्रमबद्ध करें"
 
-#: src/components/Tabs/ThemeTab.tsx:491
-#: src/components/Tabs/ThemeTab.tsx:492
+#: src/components/Tabs/ThemeTab.tsx:504
+#: src/components/Tabs/ThemeTab.tsx:505
 msgid "Source Arrow Shape"
 msgstr "स्रोत तीर आकार"
 
@@ -1726,8 +1738,8 @@ msgstr "स्रोत स्तंभ"
 msgid "Source Delimiter"
 msgstr "स्रोत डिलिमिटर"
 
-#: src/components/Tabs/ThemeTab.tsx:533
-#: src/components/Tabs/ThemeTab.tsx:534
+#: src/components/Tabs/ThemeTab.tsx:546
+#: src/components/Tabs/ThemeTab.tsx:547
 msgid "Source Distance From Node"
 msgstr "नोड से स्रोत दूरी"
 
@@ -1735,8 +1747,8 @@ msgstr "नोड से स्रोत दूरी"
 msgid "Source/Target Arrow Shape"
 msgstr "स्रोत / लक्ष्य तीर आकार"
 
-#: src/components/Tabs/ThemeTab.tsx:161
-#: src/components/Tabs/ThemeTab.tsx:163
+#: src/components/Tabs/ThemeTab.tsx:174
+#: src/components/Tabs/ThemeTab.tsx:176
 msgid "Spacing"
 msgstr "अंतराल"
 
@@ -1785,8 +1797,8 @@ msgstr "शैली क्लासेज"
 msgid "Style with classes"
 msgstr "क्लासेस के साथ स्टाइल"
 
-#: src/components/AiToolbar.tsx:201
-#: src/components/EditWithAI.tsx:242
+#: src/components/AiToolbar.tsx:198
+#: src/components/EditWithAI.tsx:243
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
@@ -1812,8 +1824,8 @@ msgstr "सदस्यता समाप्त हो जाएगी"
 msgid "Support"
 msgstr "समर्थन"
 
-#: src/components/Tabs/ThemeTab.tsx:512
-#: src/components/Tabs/ThemeTab.tsx:513
+#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:526
 msgid "Target Arrow Shape"
 msgstr "लक्ष्य तीर आकार"
 
@@ -1826,8 +1838,8 @@ msgstr "लक्ष्य कॉलम"
 msgid "Target Delimiter"
 msgstr "लक्ष्य डेलीमीटर"
 
-#: src/components/Tabs/ThemeTab.tsx:551
-#: src/components/Tabs/ThemeTab.tsx:552
+#: src/components/Tabs/ThemeTab.tsx:564
+#: src/components/Tabs/ThemeTab.tsx:565
 msgid "Target Distance From Node"
 msgstr "नोड से लक्ष्य दूरी"
 
@@ -1835,27 +1847,27 @@ msgstr "नोड से लक्ष्य दूरी"
 msgid "Tell us what's working and what isn't. Every message is read by the developer."
 msgstr "हमें बताएं कि क्या काम कर रहा है और क्या नहीं। हर संदेश डेवलपर द्वारा पढ़ा जाता है।"
 
-#: src/components/Tabs/ThemeTab.tsx:251
-#: src/components/Tabs/ThemeTab.tsx:253
+#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:266
 msgid "Text Color"
 msgstr "पाठ रंग"
 
-#: src/components/Tabs/ThemeTab.tsx:362
+#: src/components/Tabs/ThemeTab.tsx:375
 msgid "Text Horizontal Offset"
 msgstr "टेक्स्ट की क्षैतिज ओफसेट"
 
-#: src/components/Tabs/ThemeTab.tsx:332
-#: src/components/Tabs/ThemeTab.tsx:333
+#: src/components/Tabs/ThemeTab.tsx:345
+#: src/components/Tabs/ThemeTab.tsx:346
 msgid "Text Leading"
 msgstr "पाठ प्रमुख"
 
-#: src/components/Tabs/ThemeTab.tsx:305
-#: src/components/Tabs/ThemeTab.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:318
+#: src/components/Tabs/ThemeTab.tsx:324
 msgid "Text Max Width"
 msgstr "टेक्स्ट की अधिकतम चौड़ाई"
 
-#: src/components/Tabs/ThemeTab.tsx:347
-#: src/components/Tabs/ThemeTab.tsx:348
+#: src/components/Tabs/ThemeTab.tsx:360
+#: src/components/Tabs/ThemeTab.tsx:361
 msgid "Text Vertical Offset"
 msgstr "पाठ लंबाई ऑफसेट"
 
@@ -1930,6 +1942,10 @@ msgstr "यह चार्ट केवल पढ़ने के लिए ह
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "यह सुविधा केवल प्रो उपयोगकर्ताओं के लिए उपलब्ध है। <0>प्रो उपयोगकर्ता बनें</0> इसे अनलॉक करने के लिए।"
 
+#: src/components/Tabs/ThemeTab.tsx:134
+msgid "This layout doesn't support containers."
+msgstr "यह लेआउट कंटेनरों का समर्थन नहीं करता है।"
+
 #: src/pages/New.tsx:180
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "आपके इनपुट की लंबाई के आधार पर, यह 30 सेकंड से 2 मिनट तक लग सकता है।"
@@ -1954,23 +1970,23 @@ msgstr "यह आपके वर्तमान सैंडबॉक्स �
 msgid "Time to decide"
 msgstr "फैसला लेने का समय"
 
-#: src/components/ShareDialog.tsx:628
+#: src/components/ShareDialog.tsx:633
 msgid "Tip"
 msgstr "सुझाव"
 
-#: src/lib/parserErrors.tsx:61
+#: src/lib/parserErrors.tsx:63
 msgid "To fix this change one of the edge IDs"
 msgstr "इसे ठीक करने के लिए एड्ज आईडी के एक को बदलें"
 
-#: src/lib/parserErrors.tsx:56
+#: src/lib/parserErrors.tsx:58
 msgid "To fix this change one of the node IDs"
 msgstr "इसे ठीक करने के लिए नोड आईडी के एक को बदलें"
 
-#: src/lib/parserErrors.tsx:30
+#: src/lib/parserErrors.tsx:32
 msgid "To fix this move one pointer to the next line"
 msgstr "इसे ठीक करने के लिए प्रतीक को अगली पंक्ति पर ले जाएं"
 
-#: src/lib/parserErrors.tsx:36
+#: src/lib/parserErrors.tsx:38
 msgid "To fix this start the container <0/> on a different line"
 msgstr "इसे ठीक करने के लिए कंटेनर <0/> को एक अलग पंक्ति पर शुरू करें"
 
@@ -2015,11 +2031,11 @@ msgstr "एआई के साथ दस्तावेज़ों को आ�
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "अपने विचारों को कुछ ही सेकंड में पेशेवर डायग्राम में बदलें"
 
-#: src/lib/parserErrors.tsx:60
+#: src/lib/parserErrors.tsx:62
 msgid "Two edges have the same ID"
 msgstr "दो किनारे उसी आईडी के हैं"
 
-#: src/lib/parserErrors.tsx:55
+#: src/lib/parserErrors.tsx:57
 msgid "Two nodes have the same ID"
 msgstr "दो नोड उसी आईडी के हैं"
 
@@ -2027,11 +2043,11 @@ msgstr "दो नोड उसी आईडी के हैं"
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "उह ओह, आपके पास मुफ्त अनुरोधों की सीमा पूरी हो गई है! असीमित डायग्राम परिवर्तन के लिए Flowchart Fun Pro पर अपग्रेड करें, और पाठ को स्पष्ट, दृश्यमान फ्लोचार्ट में आसानी से कॉपी और पेस्ट करते रहें।"
 
-#: src/components/AiToolbar.tsx:123
+#: src/components/AiToolbar.tsx:120
 msgid "Undo"
 msgstr "वापस ले जाएं"
 
-#: src/lib/parserErrors.tsx:45
+#: src/lib/parserErrors.tsx:47
 msgid "Unescaped special character"
 msgstr "अस्केप्ड विशेष वर्ण"
 
@@ -2043,7 +2059,7 @@ msgstr "एक नोड को पहचानने के लिए अद्
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: src/lib/parserErrors.tsx:65
+#: src/lib/parserErrors.tsx:67
 msgid "Unknown Parsing Error"
 msgstr "अज्ञात पार्सिंग त्रुटि"
 
@@ -2064,7 +2080,7 @@ msgstr "असीमित क्लाउड-सहेजे फ्लोचा
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "प्रो खाते से AI फीचर्स खोलें और कभी भी अपना काम न खोएं।"
 
-#: src/lib/usePromptStore.ts:145
+#: src/lib/usePromptStore.ts:128
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "असीमित AI फ्लोचार्ट्स को अनलॉक करें"
 
@@ -2114,8 +2130,8 @@ msgstr "प्रो अपग्रेड करें और स्थाय�
 msgid "Upload your File"
 msgstr "अपनी फाइल अपलोड करें"
 
-#: src/components/Tabs/ThemeTab.tsx:642
-#: src/components/Tabs/ThemeTab.tsx:643
+#: src/components/Tabs/ThemeTab.tsx:655
+#: src/components/Tabs/ThemeTab.tsx:656
 msgid "Use Custom CSS Only"
 msgstr "केवल कस्टम CSS का उपयोग करें"
 
@@ -2143,15 +2159,15 @@ msgstr "नोड की विशिष्ट चौड़ाई और ऊँ�
 msgid "Use the customer portal to change your billing information."
 msgstr "अपनी बिलिंग जानकारी बदलने के लिए ग्राहक पोर्टल का उपयोग करें।"
 
-#: src/components/Tabs/ThemeTab.tsx:676
+#: src/components/Tabs/ThemeTab.tsx:689
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "अपने फ्लोचार्ट की दिखता और व्यवहार को अनुकूलित करने के लिए इन सेटिंग्स का उपयोग करें"
 
-#: src/components/ShareDialog.tsx:563
+#: src/components/ShareDialog.tsx:568
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "संगठनात्मक चार्ट, पदानुक्रमों और अन्य संगठनात्मक संरचनाओं के लिए इस फ़ाइल का उपयोग करें।"
 
-#: src/components/ShareDialog.tsx:549
+#: src/components/ShareDialog.tsx:552
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "अनुक्रमों, प्रक्रियाओं और कार्यप्रवाहों के लिए इस फ़ाइल का उपयोग करें।"
 
@@ -2207,8 +2223,8 @@ msgstr "यह क्या है?"
 msgid "While we don't offer a free trial, you can get every Pro feature for 30 days with a one-time $9 Pass — no subscription, nothing to cancel. Prefer to subscribe? Pro is $4/month or $24/year, and you can cancel anytime."
 msgstr "हालांकि हम नि:शुल्क परीक्षण प्रदान नहीं करते हैं, लेकिन आप एक बारीक राशि $9 के साथ हर प्रो सुविधा को 30 दिनों के लिए प्राप्त कर सकते हैं - कोई सदस्यता, कुछ भी रद्द करने की जरूरत नहीं। सदस्यता लेना पसंद करते हैं? प्रो $4/महीने या $24/साल है, और आप कभी भी रद्द कर सकते हैं।"
 
-#: src/components/Tabs/ThemeTab.tsx:455
-#: src/components/Tabs/ThemeTab.tsx:456
+#: src/components/Tabs/ThemeTab.tsx:468
+#: src/components/Tabs/ThemeTab.tsx:469
 msgid "Width"
 msgstr "चौड़ाई"
 
@@ -2216,7 +2232,7 @@ msgstr "चौड़ाई"
 msgid "Width and Height"
 msgstr "चौड़ाई और ऊँचाई"
 
-#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:29
 msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
 msgstr "Flowchart Fun के प्रो संस्करण के साथ, आप अपने फ्लोचार्ट विवरणों को तेजी से भरने के लिए प्राकृतिक भाषा के आदेशों का उपयोग कर सकते हैं, जो यात्रा पर आरेख बनाने के लिए आदर्श है। $4/महीने के लिए, आसान एआई संपादन का आनंद लें और अपने फ्लोचार्टिंग अनुभव को बेहतर बनाएं।"
 
@@ -2240,7 +2256,7 @@ msgstr "किसी भी नोड से जुड़ने के लिए
 msgid "Write like an outline"
 msgstr "आउटलाइन की तरह लिखें"
 
-#: src/components/EditWithAI.tsx:216
+#: src/components/EditWithAI.tsx:217
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "अपना प्रॉम्प्ट यहां लिखें या माइक्रोफोन को सक्षम करने के लिए क्लिक करें, फिर रिकॉर्ड करने के लिए दबाएं और रखें।"
 
@@ -2288,7 +2304,7 @@ msgstr "आप बहुत अच्छा कर रहे हैं!"
 msgid "You're on the free plan."
 msgstr "आप मुफ़्त योजना पर हैं।"
 
-#: src/lib/usePromptStore.ts:142
+#: src/lib/usePromptStore.ts:125
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "आपने अपने सभी नि: शुल्क एआई रूपांतरण का उपयोग किया है। असीमित एआई उपयोग, कस्टम थीम, निजी साझाकरण और अधिक के लिए प्रो पर अपग्रेड करें। अब आसानी से शानदार फ्लोचार्ट बनाते रहें!"
 
@@ -2317,13 +2333,13 @@ msgstr "आपका पास कभी नवीनीकृत नहीं �
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "आपका सदस्यता <0>{statusDisplay}</0> है।"
 
-#: src/components/GraphFloatingMenu.tsx:90
-#: src/components/GraphFloatingMenu.tsx:94
+#: src/components/GraphFloatingMenu.tsx:92
+#: src/components/GraphFloatingMenu.tsx:96
 msgid "Zoom In"
 msgstr "ज़ूम इन करें"
 
-#: src/components/GraphFloatingMenu.tsx:100
-#: src/components/GraphFloatingMenu.tsx:104
+#: src/components/GraphFloatingMenu.tsx:102
+#: src/components/GraphFloatingMenu.tsx:106
 msgid "Zoom Out"
 msgstr "आउट ज़ूम करें"
 

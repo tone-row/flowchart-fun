@@ -14,7 +14,9 @@ import { OnChange } from "@monaco-editor/react";
 
 import { TextEditor } from "../components/TextEditor";
 import { getDefaultLocalChart } from "../lib/getDefaultChart";
+import { getExpirationDate, withFreshExpiry } from "../lib/getExpirationDate";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
+import { theme as defaultTheme } from "../lib/templates/default-template";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
 import { useTrackLastChart } from "../lib/useLastChart";
 import styles from "./Sandbox.module.css";
@@ -25,11 +27,10 @@ import { useSandboxWarning } from "../lib/useSandboxWarning";
 import { LoadFromHashDialog } from "../components/LoadFromHashDialog";
 import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
-import { useEditorStore, isInternalWrite } from "../lib/useEditorStore";
+import { useEditorStore } from "../lib/useEditorStore";
 import { getDefaultText } from "../lib/getDefaultText";
 import { AiToolbar } from "../components/AiToolbar";
 import { MoreFromToneRow } from "../components/MoreFromToneRow";
-import { markUserEditedSinceAi, usePromptStore } from "../lib/usePromptStore";
 
 const isE2E =
   new URLSearchParams(window.location.search).get("isE2E") === "true";
@@ -93,8 +94,10 @@ const Sandbox = memo(function Edit() {
   const storeDoc = useMemo(() => {
     return throttle(
       (doc: Doc) => {
-        const docString = docToString(doc);
-        localStorage.setItem(SANDBOX_STORAGE_KEY, docString);
+        localStorage.setItem(
+          SANDBOX_STORAGE_KEY,
+          docToString(withFreshExpiry(doc))
+        );
       },
       1000,
       { trailing: true }
@@ -115,9 +118,6 @@ const Sandbox = memo(function Edit() {
       false,
       "Edit/text"
     );
-    if (!isInternalWrite() && !usePromptStore.getState().isRunning) {
-      markUserEditedSinceAi();
-    }
   }, []);
 
   const url = useLocation().pathname;
@@ -160,7 +160,17 @@ const Sandbox = memo(function Edit() {
             </Tabs.Content>
             <ClearTextButton
               handleClear={() => {
-                useDoc.setState({ text: "", meta: {} }, false, "Edit/clear");
+                useDoc.setState(
+                  {
+                    text: "",
+                    meta: {
+                      themeEditor: defaultTheme,
+                      expires: getExpirationDate(),
+                    },
+                  },
+                  false,
+                  "Edit/clear"
+                );
                 const editor = useEditorStore.getState().editor;
                 if (!editor) return;
                 editor.focus();

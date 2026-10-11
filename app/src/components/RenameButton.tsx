@@ -41,6 +41,11 @@ export const RenameButton = memo(function RenameButton({
     async (newName: string) => {
       if (isHosted && id && typeof id === "number") {
         await renameChart(id, newName);
+        useDoc.setState(
+          (state) => ({ details: { ...state.details, title: newName } }),
+          false,
+          "RenameButton/title"
+        );
       } else if (convertToHosted) {
         if (session?.user?.id) {
           const response = await makeChart({

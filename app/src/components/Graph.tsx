@@ -1,4 +1,10 @@
-import { Core, EdgeSingular, NodeSingular } from "cytoscape";
+import {
+  Core,
+  EdgeSingular,
+  EventObject,
+  NodeCollection,
+  NodeSingular,
+} from "cytoscape";
 import { ParseError } from "graph-selector";
 import throttle from "lodash.throttle";
 import React, {
@@ -12,27 +18,44 @@ import React, {
 import { useContextMenu } from "react-contexify";
 import { useDebouncedCallback } from "use-debounce";
 
-import { monacoMarkerErrorSeverity } from "../lib/constants";
+import {
+  monacoMarkerErrorSeverity,
+  monacoMarkerWarningSeverity,
+} from "../lib/constants";
 import { cytoscape } from "../lib/cytoscape";
+import { findMisclosedContainers } from "../lib/findMisclosedContainers";
 import { getElements } from "../lib/getElements";
 import { DEFAULT_GRAPH_PADDING } from "../lib/graphOptions";
+import { snapToNeighbours } from "../lib/alignNodes";
 import { isError, isUrl } from "../lib/helpers";
+import { getContainerWarning } from "../lib/parserErrors";
 import { useCanEdit } from "../lib/hooks";
 import {
   preprocessStyle,
+  getStyleStringFromMeta,
   useCytoscapeStyleImports,
 } from "../lib/preprocessStyle";
 import { useContextMenuState } from "../lib/useContextMenuState";
 import { Doc, useDoc, useParseErrorStore } from "../lib/useDoc";
 import {
   moveCursorToLine,
+  revealAndHighlightLine,
   updateModelMarkers,
   useEditorStore,
 } from "../lib/useEditorStore";
 import { useGraphStore } from "../lib/useGraphStore";
+import { addToUndoStack } from "../lib/undoStack";
+import { isEdge } from "../lib/utils";
 import { usePromptStore } from "../lib/usePromptStore";
 import { Box } from "../slang";
-import { getNodePositionsFromCy } from "./getNodePositionsFromCy";
+import {
+  getNodePositionsFromCy,
+  NodePositions,
+} from "./getNodePositionsFromCy";
+import {
+  resolveNodePositions,
+  resolverInput,
+} from "../lib/resolveNodePositions";
 import styles from "./Graph.module.css";
 import { GRAPH_CONTEXT_MENU_ID, GraphContextMenu } from "./GraphContextMenu";
 import classNames from "classnames";
@@ -142,21 +165,47 @@ const Graph = memo(function Graph({ shouldResize }: { shouldResize: number }) {
 
 export default Graph;
 
-function handleDragFree() {
-  const nodePositions = getNodePositionsFromCy();
-  useDoc.setState(
-    (state) => {
-      return {
-        ...state,
-        meta: {
-          ...state.meta,
-          nodePositions,
+const SNAP_DISTANCE_RENDERED_PX = 8;
+
+function handleDragFree(event: EventObject) {
+  const grabbed = event.target as NodeSingular;
+  const cy = event.cy;
+  const dropped = getNodePositionsFromCy();
+  const draggedWith = grabbed.selected() ? cy.nodes(":selected") : grabbed;
+  const leaves = (nodes: NodeCollection) =>
+    nodes.filter((n) => !n.isParent()).map((n) => n.id());
+  const nodePositions = grabbed.isParent()
+    ? dropped
+    : snapToNeighbours(
+        dropped,
+        {
+          grabbed: grabbed.id(),
+          moved: draggedWith
+            .union(draggedWith.descendants())
+            .map((n) => n.id()),
         },
-      };
-    },
-    false,
-    "Graph/handleDragFree"
-  );
+        {
+          connected: leaves(grabbed.neighborhood().nodes()),
+          all: leaves(cy.nodes()),
+        },
+        SNAP_DISTANCE_RENDERED_PX / cy.zoom()
+      );
+
+  const before = useDoc.getState().meta.nodePositions as
+    | NodePositions
+    | undefined;
+  const save = (nodePositions: NodePositions | undefined) =>
+    useDoc.setState(
+      (state) => ({ meta: { ...state.meta, nodePositions } }),
+      false,
+      "Graph/handleDragFree"
+    );
+  save(nodePositions);
+  addToUndoStack({
+    kind: "layout",
+    undo: () => save(before),
+    redo: () => save(nodePositions),
+  });
 }
 
 function initializeGraph({
@@ -242,11 +291,24 @@ function initializeGraph({
       }
     });
 
+    let lastTwoTapTargets: [unknown, unknown] = [undefined, undefined];
+    cyCurrent.on("tap", function handleTapHighlightLine(e) {
+      lastTwoTapTargets = [lastTwoTapTargets[1], e.target];
+      if (e.target === cyCurrent) {
+        useEditorStore.setState({ selectedLineNumber: undefined });
+      } else {
+        revealAndHighlightLine(e.target.data("lineNumber"));
+      }
+    });
+
     // on double click, focus the line number in the editor
     cyCurrent.on(
       "dblclick",
       "node, edge",
       function handleDblClick(this: NodeSingular | EdgeSingular) {
+        // Cytoscape fires dblclick for two quick clicks even on different elements
+        const [previous, latest] = lastTwoTapTargets;
+        if (previous !== latest) return;
         const { lineNumber } = this.data();
         moveCursorToLine(lineNumber);
       }
@@ -256,7 +318,7 @@ function initializeGraph({
       // stop the layout from running
       window.__cy?.stop();
     });
-    cyCurrent.on("dragfree", handleDragFree);
+    cyCurrent.on("dragfreeon", "node", handleDragFree);
 
     // on zoom
     cyCurrent.on("scrollzoom", () => {
@@ -300,6 +362,7 @@ function initializeGraph({
       cy.current = undefined;
       cyErrorCatcher.current = undefined;
       delete window.__cy;
+      useEditorStore.setState({ selectedLineNumber: undefined });
       document
         .getElementById("cy")
         ?.removeEventListener("mouseout", handleMouseOut);
@@ -344,22 +407,11 @@ function getGraphUpdater({
 
     try {
       const themeEditor = getThemeEditor(doc);
-      const { layout, style: themeStyle, postStyle } = toTheme(themeEditor);
+      const { layout } = toTheme(themeEditor);
+      const { style } = preprocessStyle(getStyleStringFromMeta(doc.meta));
 
-      // Eventually, this will become cytoscape again...
-      const customCss = (doc.meta.cytoscapeStyle as string) ?? "";
-
-      // Whether or not to only use the custom css
-      const customCssOnly = (doc.meta?.customCssOnly as boolean) ?? false;
-
-      const { style } = preprocessStyle(
-        customCssOnly
-          ? customCss
-          : [themeStyle, customCss, postStyle].join("\n")
-      );
-
-      const diffText = usePromptStore.getState().diff;
-      elements = getElements(diffText ?? doc.text);
+      const text = usePromptStore.getState().diff ?? doc.text;
+      elements = getElements(text);
 
       // Very specific bug wrt to cose layouts
       // If it's the first render, randomize cannot be false
@@ -395,10 +447,12 @@ function getGraphUpdater({
 
       // Finally we get rid of layouts when user has dragged
       // Apply the preset layout if nodePositions is defined
-      const nodePositions = doc.meta?.nodePositions;
-      if (typeof nodePositions === "object") {
-        // @ts-ignore
-        layout.positions = { ...nodePositions };
+      const stored =
+        typeof doc.meta?.nodePositions === "object" &&
+        doc.meta.nodePositions !== null
+          ? (doc.meta.nodePositions as NodePositions)
+          : undefined;
+      if (stored) {
         layout.name = "preset";
         // @ts-ignore
         delete layout.spacingFactor;
@@ -419,9 +473,32 @@ function getGraphUpdater({
         cy.current.on("layoutstop", onLayoutReady);
       }
 
-      // Update
-      cy.current.json({ elements, style });
+      // cytoscape only moves an existing node out of its container when
+      // `parent` is present in the node's data, and graph-selector omits it
+      cy.current.json({
+        elements: elements.map((element) =>
+          isEdge(element)
+            ? element
+            : { ...element, data: { parent: null, ...element.data } }
+        ),
+        style,
+      });
       runMappers(cy.current);
+
+      const live = cy.current;
+      const resolvedPositions =
+        stored &&
+        resolveNodePositions({
+          stored,
+          ...resolverInput(elements, (id) => {
+            const node = live.getElementById(id);
+            return { width: node.outerWidth(), height: node.outerHeight() };
+          }),
+          direction: themeEditor.direction,
+        });
+      if (resolvedPositions) {
+        (layout as cytoscape.PresetLayoutOptions).positions = resolvedPositions;
+      }
 
       // Determine whether to fit
       const autoFit = useGraphStore.getState().autoFit;
@@ -445,12 +522,21 @@ function getGraphUpdater({
         parserErrorCode: "",
       });
 
-      // Remove parse error markers
-      useEditorStore.setState({ markers: [] });
+      useEditorStore.setState({
+        markers: findMisclosedContainers(text).map(
+          ({ lineNumber, startColumn, endColumn, kind }) => ({
+            startLineNumber: lineNumber,
+            endLineNumber: lineNumber,
+            startColumn,
+            endColumn,
+            message: getContainerWarning(kind),
+            severity: monacoMarkerWarningSeverity,
+          })
+        ),
+      });
       updateModelMarkers();
 
-      // Update Graph Store
-      useGraphStore.setState({ layout, elements });
+      useGraphStore.setState({ layout, elements, resolvedPositions });
     } catch (e) {
       cyErrorCatcher.current.destroy();
       cyErrorCatcher.current = cytoscape();

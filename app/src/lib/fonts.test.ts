@@ -3,6 +3,8 @@ import path from "path";
 import { fonts, legacyFonts, allFonts } from "./fonts";
 import { toTheme } from "./toTheme";
 import { theme as defaultTheme } from "./templates/default-template";
+import { templates } from "shared";
+import { FFTheme } from "./FFTheme";
 
 describe("picker fonts", () => {
   test.each(fonts.map((f) => [f.name, f] as const))(
@@ -78,5 +80,15 @@ describe("legacy fonts (backward compatibility)", () => {
     for (const legacy of legacyFonts) {
       expect(pickerNames.has(legacy.name)).toBe(false);
     }
+  });
+});
+
+describe("template default fonts", () => {
+  test.each(templates)("%s leads with a sans font", (name) => {
+    const {
+      theme,
+    }: { theme: FFTheme } = require(`./templates/${name}-template`);
+    const font = allFonts.find((f) => f.name === theme.fontFamily);
+    expect(font?.category).toBe("sans");
   });
 });

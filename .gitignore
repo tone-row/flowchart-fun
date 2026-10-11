@@ -17,3 +17,6 @@ flowchart-fun.feature-reacher.json
 speech*.mp4
 .env*.local
 stripe-scripts/
+
+# verify skill: run state + evidence (.claude/skills/verify)
+.verify/

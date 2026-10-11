@@ -12,6 +12,7 @@ export const useEditorStore = create<{
   monaco: null | typeof import("monaco-editor");
   /** The line potential line being hovered */
   hoverLineNumber?: number;
+  selectedLineNumber?: number;
   /** Whether or not the size of the editor is currently being dragged */
   isDragging: boolean;
   /** The markers currently on the model */
@@ -43,21 +44,13 @@ export function writeToEditorSafe(text: string) {
   );
 }
 
-let _isInternalWrite = false;
-
-export function isInternalWrite(): boolean {
-  return _isInternalWrite;
-}
-
 /** Sets text AND clears Monaco's undo stack so Cmd+Z can't independently undo just text. */
 export function setEditorValueAndClearUndo(text: string) {
   const editor = useEditorStore.getState().editor;
   if (!editor) return;
   const model = editor.getModel();
   if (!model) return;
-  _isInternalWrite = true;
   model.setValue(text);
-  _isInternalWrite = false;
 }
 
 export function updateModelMarkers() {
@@ -86,5 +79,11 @@ export function moveCursorToLine(line: number) {
     if (!editor) return;
     editor.focus();
     editor.setPosition({ lineNumber: line, column: Infinity });
+    editor.revealLineInCenterIfOutsideViewport(line);
   }
+}
+
+export function revealAndHighlightLine(line: number) {
+  useEditorStore.setState({ selectedLineNumber: line });
+  useEditorStore.getState().editor?.revealLineInCenterIfOutsideViewport(line);
 }

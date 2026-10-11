@@ -15,17 +15,6 @@ import { useDoc } from "./useDoc";
 import { repairText } from "./repairText";
 import { addToUndoStack } from "./undoStack";
 
-let _hasUserEditedSinceAi = false;
-export function markUserEditedSinceAi() {
-  _hasUserEditedSinceAi = true;
-}
-export function hasUserEditedSinceAi(): boolean {
-  return _hasUserEditedSinceAi;
-}
-export function resetHasUserEditedSinceAi() {
-  _hasUserEditedSinceAi = false;
-}
-
 export type Mode = "prompt" | "convert" | "edit";
 type PromptStore = {
   /** Whether we're currently converting text */
@@ -42,8 +31,6 @@ type PromptStore = {
   isOpen: boolean;
   /** The current diff */
   diff: string | null;
-  /** Whether to show the undo button after an AI operation */
-  showUndoButton: boolean;
 };
 
 export const usePromptStore = create(
@@ -55,12 +42,11 @@ export const usePromptStore = create(
     mode: "prompt",
     isOpen: false,
     diff: null,
-    showUndoButton: false,
   }))
 );
 
 export function startConvert() {
-  usePromptStore.setState({ isRunning: true, showUndoButton: false });
+  usePromptStore.setState({ isRunning: true });
 }
 
 export function stopConvert() {
@@ -80,7 +66,7 @@ export function setCurrentText(text: string) {
 }
 
 export function setMode(mode: Mode) {
-  usePromptStore.setState({ mode, currentText: "", showUndoButton: false });
+  usePromptStore.setState({ mode, currentText: "" });
 }
 
 export function setIsOpen(isOpen: boolean) {
@@ -102,20 +88,17 @@ export function acceptDiff() {
   usePromptStore.setState({ diff: null, currentText: "" });
 
   addToUndoStack({
+    kind: "ai",
     undo: () => {
       useDoc.setState({ text: snapshotText, meta: metaCopy });
       setEditorValueAndClearUndo(snapshotText);
-      resetHasUserEditedSinceAi();
     },
     redo: () => {
       useDoc.setState({ text: diff });
       setEditorValueAndClearUndo(diff);
-      resetHasUserEditedSinceAi();
     },
   });
   setEditorValueAndClearUndo(diff);
-  resetHasUserEditedSinceAi();
-  usePromptStore.setState({ showUndoButton: true });
 }
 
 export function rejectDiff() {
@@ -194,7 +177,6 @@ export function useRunAiWithStore() {
         useEditorStore.setState({ userPasted: "" });
         setAbortController(null);
 
-        // Capture post-AI state for redo closure
         const afterState = useDoc.getState();
         if (
           afterState.text !== snapshotText ||
@@ -203,20 +185,17 @@ export function useRunAiWithStore() {
           const afterText = afterState.text;
           const afterMeta = JSON.parse(JSON.stringify(afterState.meta));
           addToUndoStack({
+            kind: "ai",
             undo: () => {
               useDoc.setState({ text: snapshotText, meta: metaCopy });
               setEditorValueAndClearUndo(snapshotText);
-              resetHasUserEditedSinceAi();
             },
             redo: () => {
               useDoc.setState({ text: afterText, meta: afterMeta });
               setEditorValueAndClearUndo(afterText);
-              resetHasUserEditedSinceAi();
             },
           });
           setEditorValueAndClearUndo(afterText);
-          resetHasUserEditedSinceAi();
-          usePromptStore.setState({ showUndoButton: true });
         }
       });
   }, [handleError, sid]);

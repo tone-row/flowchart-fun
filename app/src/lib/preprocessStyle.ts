@@ -6,6 +6,7 @@ import { devtools } from "zustand/middleware";
 import { resetGraph } from "./useUnmountStore";
 import { FFTheme } from "./FFTheme";
 import { toTheme } from "./toTheme";
+import { theme as defaultTheme } from "./templates/default-template";
 
 (async () => {
   try {
@@ -331,14 +332,19 @@ export function processScss(scss: string): {
 }
 
 /**
- * This function looks at the customCssOnly property
- * and concatenates the themeEditor and cytoscapeStyle
- * if it's false or returns the cytoscapeStyle if it's true
+ * cytoscape's own comment stripping backtracks exponentially on a comment
+ * that is never closed, so comments are removed before the style reaches it.
+ * Each comment becomes a space so the characters either side of it cannot
+ * form a new comment opener.
  */
+export function stripCssComments(css: string) {
+  return css.replace(/\/\*[\s\S]*?(?:\*\/|$)/g, " ");
+}
+
 export function getStyleStringFromMeta(meta: any) {
   const customCssOnly: boolean = meta?.customCssOnly ?? false;
-  const cytoscapeStyle: string = meta?.cytoscapeStyle ?? "";
-  const themeEditor: FFTheme = meta?.themeEditor ?? "";
+  const cytoscapeStyle = stripCssComments(meta?.cytoscapeStyle ?? "");
+  const themeEditor: FFTheme = meta?.themeEditor || defaultTheme;
 
   if (customCssOnly) {
     return cytoscapeStyle;

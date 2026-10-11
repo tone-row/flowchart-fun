@@ -99,6 +99,20 @@ export const targetArrowSuffixes = arrowSuffixes.map(
 
 export const edgeStyleClasses: StylesheetCSS[] = [
   {
+    // taxi and straight edges have no offset, so several edges on one node
+    // pair draw as one line; bezier is the curve style cytoscape bundles
+    selector: "edge[parallel > 1]",
+    css: {
+      "curve-style": "bezier",
+    },
+  },
+  {
+    selector: "edge[parallel > 2]",
+    css: {
+      "control-point-step-size": 90,
+    },
+  },
+  {
     selector: "edge.border_dashed",
     css: {
       "line-style": "dashed",

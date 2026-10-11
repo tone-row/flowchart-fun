@@ -1,6 +1,7 @@
 import * as Tabs from "@radix-ui/react-tabs";
-import { Check, DotsThree } from "phosphor-react";
-import { useCallback, useEffect } from "react";
+import { t } from "@lingui/macro";
+import { Check, DotsThree, Warning } from "phosphor-react";
+import { useCallback, useEffect, useRef } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useLocation, useParams } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
@@ -19,7 +20,7 @@ import { TextEditor } from "../components/TextEditor";
 import { prepareChart } from "../lib/prepareChart/prepareChart";
 import { getHostedChart, updateChartText } from "../lib/queries";
 import { Doc, docToString, useDoc } from "../lib/useDoc";
-import { useEditorStore, isInternalWrite } from "../lib/useEditorStore";
+import { useEditorStore } from "../lib/useEditorStore";
 import { useTrackLastChart } from "../lib/useLastChart";
 import sandboxStyles from "./Sandbox.module.css";
 import styles from "./EditHosted.module.css";
@@ -33,19 +34,24 @@ import { ThemeTab } from "../components/Tabs/ThemeTab";
 import { FlowchartLayout } from "../components/FlowchartLayout";
 import { AiToolbar } from "../components/AiToolbar";
 import { ReadOnlyNotice } from "../components/ReadOnlyNotice";
-import { markUserEditedSinceAi, usePromptStore } from "../lib/usePromptStore";
 
 export default function EditHosted() {
   const { id } = useParams<{ id: string }>();
   useQuery(["useHostedDoc", id], () => loadHostedDoc(id ?? ""), {
     enabled: !!id,
     suspense: true,
-    staleTime: 0,
+    staleTime: Infinity,
     cacheTime: 0,
   });
 
-  const { mutate, isLoading } = useMutation((text: string) =>
-    updateChartText(text, id)
+  const serverDoc = useRef<string | undefined>(undefined);
+  const { mutate, isLoading, isError } = useMutation(
+    (text: string) => updateChartText(text, id),
+    {
+      onError: (_error, text) => {
+        if (serverDoc.current === text) serverDoc.current = undefined;
+      },
+    }
   );
   // get debounced mutate
   const {
@@ -53,7 +59,10 @@ export default function EditHosted() {
     flush,
     pending,
   } = useDebouncedCallback((doc: Doc) => {
-    mutate(docToString(doc));
+    const next = docToString(doc);
+    if (next === serverDoc.current) return;
+    serverDoc.current = next;
+    mutate(next);
   }, 1000);
   const canEdit = useCanEdit();
   const isReadOnly = useIsReadOnlyHostedChart();
@@ -64,7 +73,14 @@ export default function EditHosted() {
   // (updateChartText performs no entitlement check of its own).
   useEffect(() => {
     if (!canEdit) return;
-    return useDoc.subscribe(debounceMutate);
+    serverDoc.current = docToString(useDoc.getState());
+    const saveUnsaved = () => debounceMutate(useDoc.getState());
+    window.addEventListener("online", saveUnsaved);
+    const unsubscribe = useDoc.subscribe(debounceMutate);
+    return () => {
+      unsubscribe();
+      window.removeEventListener("online", saveUnsaved);
+    };
   }, [debounceMutate, canEdit]);
 
   const text = useDoc((state) => state.text);
@@ -79,9 +95,6 @@ export default function EditHosted() {
 
   const onChange = useCallback<OnChange>((value) => {
     useDoc.setState({ text: value ?? "" }, false, "EditHosted/text");
-    if (!isInternalWrite() && !usePromptStore.getState().isRunning) {
-      markUserEditedSinceAi();
-    }
   }, []);
 
   const url = useLocation().pathname;
@@ -142,7 +155,11 @@ export default function EditHosted() {
             <Tabs.Content value="Theme" className="overflow-hidden">
               <ThemeTab />
             </Tabs.Content>
-            <LoadingState isLoading={isLoading} pending={pending()} />
+            <LoadingState
+              isLoading={isLoading}
+              isError={isError}
+              pending={pending()}
+            />
             {isReadOnly ? null : (
               <ClearTextButton
                 handleClear={() => {
@@ -171,9 +188,11 @@ export default function EditHosted() {
 function LoadingState({
   pending,
   isLoading,
+  isError,
 }: {
   pending: boolean;
   isLoading: boolean;
+  isError: boolean;
 }) {
   return (
     <div className={styles.LoadingState}>
@@ -181,6 +200,13 @@ function LoadingState({
         <DotsThree size={18} color="var(--palette-purple-0)" />
       ) : isLoading ? (
         <Spinner r={4} s={1} c="var(--palette-purple-0)" />
+      ) : isError ? (
+        <Warning
+          size={17}
+          color="var(--palette-orange-0)"
+          role="img"
+          alt={t`Changes not saved`}
+        />
       ) : (
         <Check size={17} color="var(--palette-purple-0)" />
       )}

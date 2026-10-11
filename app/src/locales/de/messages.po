@@ -22,7 +22,7 @@ msgstr "1 Vorläufiger Flussdiagramm"
 msgid "30-Day Pass"
 msgstr "30-Tage-Pass"
 
-#: src/components/Tabs/ThemeTab.tsx:683
+#: src/components/Tabs/ThemeTab.tsx:696
 msgid "<0>Custom CSS Only</0> is enabled. Only the Layout and Advanced settings will be applied."
 msgstr "<0>Nur benutzerdefiniertes CSS</0> ist aktiviert. Nur die Layout- und Erweiterten Einstellungen werden angewandt."
 
@@ -68,7 +68,7 @@ msgstr "Konto"
 msgid "Active"
 msgstr "Aktiv"
 
-#: src/lib/parserErrors.tsx:47
+#: src/lib/parserErrors.tsx:49
 msgid "Add a backslash (<0>\\</0>) before any special characters: <1>(</1>, <2>:</2>, <3>#</3>, or <4>.</4>`"
 msgstr "Fügen Sie einen Backslash (<0>\\</0>) vor jedem Sonderzeichen ein: <1>(</1>, <2>:</2>, <3>#</3>, oder <4>.</4>`"
 
@@ -76,22 +76,22 @@ msgstr "Fügen Sie einen Backslash (<0>\\</0>) vor jedem Sonderzeichen ein: <1>(
 msgid "Add some steps"
 msgstr "Füge einige Schritte hinzu"
 
-#: src/components/Tabs/ThemeTab.tsx:617
+#: src/components/Tabs/ThemeTab.tsx:630
 msgid "Advanced"
 msgstr "Fortgeschritten"
 
-#: src/components/GraphFloatingMenu.tsx:149
-#: src/components/GraphFloatingMenu.tsx:153
+#: src/components/GraphFloatingMenu.tsx:151
+#: src/components/GraphFloatingMenu.tsx:155
 msgid "Align Horizontally"
 msgstr "Horizontal ausrichten"
 
-#: src/components/GraphFloatingMenu.tsx:137
-#: src/components/GraphFloatingMenu.tsx:141
+#: src/components/GraphFloatingMenu.tsx:139
+#: src/components/GraphFloatingMenu.tsx:143
 msgid "Align Nodes"
 msgstr "Ausrichten von Knoten"
 
-#: src/components/GraphFloatingMenu.tsx:161
-#: src/components/GraphFloatingMenu.tsx:165
+#: src/components/GraphFloatingMenu.tsx:163
+#: src/components/GraphFloatingMenu.tsx:167
 msgid "Align Vertically"
 msgstr "Vertikal ausrichten"
 
@@ -135,8 +135,8 @@ msgstr "Sind Sie sicher, dass Sie den Ordner löschen möchten? "
 msgid "Are you sure?"
 msgstr "Bist du sicher?"
 
-#: src/components/Tabs/ThemeTab.tsx:571
-#: src/components/Tabs/ThemeTab.tsx:572
+#: src/components/Tabs/ThemeTab.tsx:584
+#: src/components/Tabs/ThemeTab.tsx:585
 msgid "Arrow Size"
 msgstr "Größe des Pfeils"
 
@@ -156,14 +156,14 @@ msgstr "Zurück"
 msgid "Back To Editor"
 msgstr "Zurück zum Editor"
 
-#: src/components/Tabs/ThemeTab.tsx:187
-#: src/components/Tabs/ThemeTab.tsx:188
-#: src/components/Tabs/ThemeTab.tsx:239
-#: src/components/Tabs/ThemeTab.tsx:242
+#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:201
+#: src/components/Tabs/ThemeTab.tsx:252
+#: src/components/Tabs/ThemeTab.tsx:255
 msgid "Background Color"
 msgstr "Hintergrundfarbe"
 
-#: src/components/ShareDialog.tsx:539
+#: src/components/ShareDialog.tsx:540
 msgid "Basic Flowchart"
 msgstr "Grundlegender Flussdiagramm"
 
@@ -198,13 +198,13 @@ msgstr "Blog"
 msgid "Book a Meeting"
 msgstr "Ein Treffen buchen"
 
-#: src/components/Tabs/ThemeTab.tsx:293
-#: src/components/Tabs/ThemeTab.tsx:294
+#: src/components/Tabs/ThemeTab.tsx:306
+#: src/components/Tabs/ThemeTab.tsx:307
 msgid "Border Color"
 msgstr "Rahmenfarbe"
 
-#: src/components/Tabs/ThemeTab.tsx:278
-#: src/components/Tabs/ThemeTab.tsx:279
+#: src/components/Tabs/ThemeTab.tsx:291
+#: src/components/Tabs/ThemeTab.tsx:292
 msgid "Border Width"
 msgstr "Rahmenbreite"
 
@@ -224,7 +224,7 @@ msgstr "Erstellen Sie Ihre persönliche Flussdiagramm-Bibliothek"
 #: src/components/ClearTextButton.tsx:26
 #: src/components/ImportDataDialog.tsx:698
 #: src/components/LoadTemplateDialog.tsx:149
-#: src/components/RenameButton.tsx:160
+#: src/components/RenameButton.tsx:165
 #: src/components/charts/ChartModals.tsx:59
 #: src/components/charts/ChartModals.tsx:129
 #: src/components/charts/ChartModals.tsx:207
@@ -263,12 +263,16 @@ msgstr "E-Mail Adresse ändern"
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
+#: src/pages/EditHosted.tsx:208
+msgid "Changes not saved"
+msgstr "Änderungen nicht gespeichert"
+
 #: src/components/Header.tsx:114
 #: src/components/Header.tsx:381
 msgid "Charts"
 msgstr "Diagramme"
 
-#: src/components/ShareDialog.tsx:526
+#: src/components/ShareDialog.tsx:527
 msgid "Check out the guide:"
 msgstr "Schau dir die Anleitung an:"
 
@@ -288,11 +292,11 @@ msgstr "Vorlage auswählen"
 msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
 msgstr "Wählen Sie aus einer Vielzahl von Pfeilformen für die Quelle und das Ziel einer Kante aus. Formen beinhalten Dreieck, Dreieck-Tee, Kreis-Dreieck, Dreieck-Kreuz, Dreieck-Rückbiegung, Vee, Tee, Quadrat, Kreis, Diamant, Chevron und keine."
 
-#: src/components/Tabs/ThemeTab.tsx:436
+#: src/components/Tabs/ThemeTab.tsx:449
 msgid "Choose how edges connect between nodes"
 msgstr "Wählen Sie, wie Kanten zwischen Knoten verbunden werden"
 
-#: src/components/Tabs/ThemeTab.tsx:96
+#: src/components/Tabs/ThemeTab.tsx:100
 msgid "Choose how nodes are automatically arranged in your flowchart"
 msgstr "Wählen Sie aus, wie Knoten automatisch in Ihrem Flussdiagramm angeordnet werden"
 
@@ -326,8 +330,8 @@ msgstr "Flussdiagramm klonen "
 msgid "Close"
 msgstr "Schließen"
 
-#: src/components/Tabs/ThemeTab.tsx:470
-#: src/components/Tabs/ThemeTab.tsx:471
+#: src/components/Tabs/ThemeTab.tsx:483
+#: src/components/Tabs/ThemeTab.tsx:484
 msgid "Color"
 msgstr "Farbe"
 
@@ -363,6 +367,14 @@ msgstr "Bestätigen Sie Ihre E-Mail-Adresse, um sich anzumelden."
 msgid "Connect your Data"
 msgstr "Verbinden Sie Ihre Daten"
 
+#: src/lib/parserErrors.tsx:76
+msgid "Container is never closed, so every line below it is inside it. Add a {brace} on its own line after the container's last child."
+msgstr "Der Container wird nie geschlossen, daher liegt jede Zeile darunter in ihm. Fügen Sie nach dem letzten Kind des Containers eine {brace} in einer eigenen Zeile hinzu."
+
+#: src/lib/parserErrors.tsx:78
+msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
+msgstr "Der Container wird nicht dort geschlossen, wo Sie es erwarten. Zeilen, die nicht darunter eingerückt sind, liegen ebenfalls in ihm. Verschieben Sie seine {brace} nach oben, direkt hinter seine letzte eingerückte Zeile."
+
 #: src/components/LearnSyntaxDialog.tsx:260
 msgid "Containers"
 msgstr "Behälter"
@@ -379,7 +391,7 @@ msgstr "Weiter"
 msgid "Continue in Sandbox (Resets daily, work not saved)"
 msgstr "Weiter im Sandbox-Modus (wird täglich zurückgesetzt, Arbeit wird nicht gespeichert)"
 
-#: src/components/Tabs/ThemeTab.tsx:132
+#: src/components/Tabs/ThemeTab.tsx:145
 msgid "Controls the flow direction of hierarchical layouts"
 msgstr "Steuert die Flussrichtung von hierarchischen Layouts"
 
@@ -392,7 +404,7 @@ msgstr "Umwandeln"
 msgid "Convert to Flowchart"
 msgstr "In Flussdiagramm konvertieren"
 
-#: src/components/RenameButton.tsx:128
+#: src/components/RenameButton.tsx:133
 msgid "Convert to hosted chart?"
 msgstr "In gehostetes Diagramm konvertieren?"
 
@@ -408,9 +420,9 @@ msgstr "SVG-Code in Zwischenablage kopiert"
 msgid "Copied {format} to clipboard"
 msgstr "{Format} in Zwischenablage kopiert"
 
-#: src/components/ShareDialog.tsx:277
-#: src/components/ShareDialog.tsx:280
-#: src/components/ShareDialog.tsx:394
+#: src/components/ShareDialog.tsx:278
+#: src/components/ShareDialog.tsx:281
+#: src/components/ShareDialog.tsx:395
 msgid "Copy"
 msgstr "Kopieren"
 
@@ -422,11 +434,11 @@ msgstr "PNG-Bild kopieren"
 msgid "Copy SVG Code"
 msgstr "Kopieren Sie den SVG-Code"
 
-#: src/components/ShareDialog.tsx:417
+#: src/components/ShareDialog.tsx:418
 msgid "Copy your Excalidraw code and paste it into <0>excalidraw.com</0> to edit. This feature is experimental and may not work with all diagrams. If you find a bug, please <1>let us know</1>."
 msgstr "Kopiere deinen Excalidraw-Code und füge ihn in <0>excalidraw.com</0> ein, um ihn zu bearbeiten. Diese Funktion ist experimentell und funktioniert möglicherweise nicht mit allen Diagrammen. Wenn du einen Fehler findest, <1>lass es uns wissen</1>."
 
-#: src/components/ShareDialog.tsx:357
+#: src/components/ShareDialog.tsx:358
 msgid "Copy your mermaid.js code or open it directly in the mermaid.js live editor."
 msgstr "Kopieren Sie Ihren mermaid.js-Code oder öffnen Sie ihn direkt im mermaid.js Live-Editor."
 
@@ -479,12 +491,12 @@ msgstr "Erstellungsdatum"
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Eine Kante zwischen zwei Knoten wird erstellt, indem der zweite Knoten unter dem ersten eingerückt wird"
 
-#: src/components/Tabs/ThemeTab.tsx:426
+#: src/components/Tabs/ThemeTab.tsx:439
 msgid "Curve Style"
 msgstr "Kurvenstil"
 
-#: src/components/Tabs/ThemeTab.tsx:625
-#: src/components/Tabs/ThemeTab.tsx:626
+#: src/components/Tabs/ThemeTab.tsx:638
+#: src/components/Tabs/ThemeTab.tsx:639
 msgid "Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
 
@@ -539,8 +551,8 @@ msgstr "Entwerfe einen Software-Entwicklungs-Lebenszyklus-Flussdiagramm für ein
 msgid "Develop a decision tree for a CEO to evaluate potential new market opportunities"
 msgstr "Entwickle einen Entscheidungsbaum für einen CEO, um potenzielle neue Marktmöglichkeiten zu bewerten."
 
-#: src/components/Tabs/ThemeTab.tsx:129
-#: src/components/Tabs/ThemeTab.tsx:139
+#: src/components/Tabs/ThemeTab.tsx:142
+#: src/components/Tabs/ThemeTab.tsx:152
 msgid "Direction"
 msgstr "Richtung"
 
@@ -570,8 +582,8 @@ msgid "Don't Lose Your Work"
 msgstr "Verliere deine Arbeit nicht"
 
 #: src/components/FlowchartHeader.tsx:100
-#: src/components/ShareDialog.tsx:69
-#: src/components/ShareDialog.tsx:619
+#: src/components/ShareDialog.tsx:70
+#: src/components/ShareDialog.tsx:624
 msgid "Download"
 msgstr "Herunterladen"
 
@@ -617,22 +629,22 @@ msgid "Edge Label Column"
 msgstr "Spalte mit Kantenbeschriftung"
 
 #: src/components/LearnSyntaxDialog.tsx:311
-#: src/components/Tabs/ThemeTab.tsx:432
+#: src/components/Tabs/ThemeTab.tsx:445
 msgid "Edge Style"
 msgstr "Kantenstil"
 
-#: src/components/Tabs/ThemeTab.tsx:586
-#: src/components/Tabs/ThemeTab.tsx:587
+#: src/components/Tabs/ThemeTab.tsx:599
+#: src/components/Tabs/ThemeTab.tsx:600
 msgid "Edge Text Size"
 msgstr "Kanten Textgröße"
 
-#: src/lib/parserErrors.tsx:19
+#: src/lib/parserErrors.tsx:21
 msgid "Edge missing indentation"
 msgstr "Kante fehlende Einrückung"
 
 #: src/components/ImportDataDialog.tsx:402
 #: src/components/LearnSyntaxDialog.tsx:164
-#: src/components/Tabs/ThemeTab.tsx:419
+#: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edges"
 msgstr "Kanten"
 
@@ -672,12 +684,12 @@ msgstr "Kanten in Zielknotenzeile"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: src/components/EditWithAI.tsx:27
-#: src/components/EditWithAI.tsx:191
+#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:192
 msgid "Edit with AI"
 msgstr "Mit KI bearbeiten"
 
-#: src/components/ShareDialog.tsx:149
+#: src/components/ShareDialog.tsx:150
 msgid "Editable"
 msgstr "Editierbar"
 
@@ -699,7 +711,7 @@ msgstr "E-Mail"
 msgid "Empty"
 msgstr "Leer"
 
-#: src/components/Tabs/ThemeTab.tsx:371
+#: src/components/Tabs/ThemeTab.tsx:384
 msgid "Enable to set a consistent height for all nodes"
 msgstr "Aktivieren Sie die Einstellung einer einheitlichen Höhe für alle Knoten"
 
@@ -760,8 +772,8 @@ msgstr "Erkunde Pro"
 msgid "Explore more"
 msgstr "Erkunde mehr"
 
-#: src/components/ShareDialog.tsx:56
-#: src/components/ShareDialog.tsx:162
+#: src/components/ShareDialog.tsx:57
+#: src/components/ShareDialog.tsx:163
 msgid "Export"
 msgstr "Exportieren"
 
@@ -795,12 +807,12 @@ msgstr "Fühlen Sie sich frei, zu erkunden und uns über die <0>Feedback</0>-Sei
 msgid "Fine-tune layouts and visual styles"
 msgstr "Feinabstimmung von Layouts und visuellen Stilen"
 
-#: src/components/Tabs/ThemeTab.tsx:391
+#: src/components/Tabs/ThemeTab.tsx:404
 msgid "Fixed Height"
 msgstr "Feste Höhe"
 
-#: src/components/Tabs/ThemeTab.tsx:367
-#: src/components/Tabs/ThemeTab.tsx:385
+#: src/components/Tabs/ThemeTab.tsx:380
+#: src/components/Tabs/ThemeTab.tsx:398
 msgid "Fixed Node Height"
 msgstr "Fester Knotenhöhe"
 
@@ -820,7 +832,7 @@ msgstr "Flowchart Fun wird von einem Entwickler gebaut und gepflegt. Deine Unter
 msgid "Follow Us on Twitter"
 msgstr "Folgen Sie uns auf Twitter"
 
-#: src/components/Tabs/ThemeTab.tsx:200
+#: src/components/Tabs/ThemeTab.tsx:213
 msgid "Font Family"
 msgstr "Schriftfamilie"
 
@@ -844,11 +856,11 @@ msgstr "Häufig gestellte Fragen"
 msgid "Full-screen, read-only, and template sharing"
 msgstr "Vollbild, Nur-Lesen und Vorlagenfreigabe"
 
-#: src/components/ShareDialog.tsx:144
+#: src/components/ShareDialog.tsx:145
 msgid "Fullscreen"
 msgstr "Vollbild"
 
-#: src/components/Tabs/ThemeTab.tsx:180
+#: src/components/Tabs/ThemeTab.tsx:193
 msgid "General"
 msgstr "Allgemein"
 
@@ -860,7 +872,7 @@ msgstr "Generieren Sie automatisch Flussdiagramme aus Texten"
 msgid "Get Pro Access Now"
 msgstr "Erhalten Sie jetzt Pro-Zugang"
 
-#: src/lib/usePromptStore.ts:141
+#: src/lib/usePromptStore.ts:124
 msgid "Get Unlimited AI Requests"
 msgstr "Erhalten Sie unbegrenzte KI-Anfragen"
 
@@ -962,7 +974,7 @@ msgstr "IDs"
 msgid "If an account with that email exists, we've sent you an email with instructions on how to reset your password."
 msgstr "Wenn ein Konto mit dieser E-Mail vorhanden ist, haben wir Ihnen eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts gesendet."
 
-#: src/lib/parserErrors.tsx:21
+#: src/lib/parserErrors.tsx:23
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "Wenn Sie eine Kante erstellen möchten, rücken Sie diese Zeile ein. Wenn nicht, entkomme dem Doppelpunkt mit einem Backslash <0>\\:</0>"
 
@@ -997,7 +1009,7 @@ msgstr "Importieren Sie von Visio, Lucidchart und CSV"
 msgid "Import from popular diagram tools"
 msgstr "Importieren Sie aus beliebten Diagramm-Tools"
 
-#: src/components/ShareDialog.tsx:520
+#: src/components/ShareDialog.tsx:521
 msgid "Import your diagram it into Microsoft Visio using one of these CSV files."
 msgstr "Importieren Sie Ihr Diagramm mithilfe einer dieser CSV-Dateien in Microsoft Visio."
 
@@ -1005,7 +1017,7 @@ msgstr "Importieren Sie Ihr Diagramm mithilfe einer dieser CSV-Dateien in Micros
 msgid "Importing data is a pro feature. You can upgrade to Flowchart Fun Pro for just $4/month."
 msgstr "Das Importieren von Daten ist eine Pro-Funktion. Sie können jederzeit auf Flowchart Fun Pro für nur $4/Monat upgraden."
 
-#: src/components/ShareDialog.tsx:568
+#: src/components/ShareDialog.tsx:573
 msgid "Include a title using a <0>title</0> attribute. To use Visio coloring, add a <1>roleType</1> attribute equal to one of the following:"
 msgstr "Fügen Sie einen Titel mit einem <0>title</0>-Attribut ein. Um die Visio-Farbgebung zu verwenden, fügen Sie ein <1>roleType</1>-Attribut gleich einem der folgenden hinzu:"
 
@@ -1021,7 +1033,7 @@ msgstr "Info"
 msgid "Is"
 msgstr "Ist"
 
-#: src/components/ShareDialog.tsx:647
+#: src/components/ShareDialog.tsx:652
 msgid "JSON Canvas is a JSON representation of your diagram used by <0>Obsidian</0> Canvas and other applications."
 msgstr "JSON Canvas ist eine JSON-Repräsentation Ihres Diagramms, die von <0>Obsidian</0> Canvas und anderen Anwendungen verwendet wird."
 
@@ -1046,7 +1058,7 @@ msgstr "Brauchen Sie es nur einmal? Holen Sie sich einen 30-Tage-Pass für $9 - 
 msgid "Keep Things Private"
 msgstr "Halte Dinge privat"
 
-#: src/components/AiToolbar.tsx:129
+#: src/components/AiToolbar.tsx:126
 msgid "Keep changes?"
 msgstr "Änderungen speichern?"
 
@@ -1062,17 +1074,17 @@ msgstr "Halten Sie Ihre Daten privat auf Ihrem Computer"
 msgid "Language"
 msgstr "Sprache"
 
-#: src/components/Tabs/ThemeTab.tsx:79
-#: src/components/Tabs/ThemeTab.tsx:102
+#: src/components/Tabs/ThemeTab.tsx:83
+#: src/components/Tabs/ThemeTab.tsx:106
 msgid "Layout"
 msgstr "Layout"
 
-#: src/components/Tabs/ThemeTab.tsx:92
+#: src/components/Tabs/ThemeTab.tsx:96
 msgid "Layout Algorithm"
 msgstr "Layout-Algorithmus"
 
-#: src/components/GraphFloatingMenu.tsx:120
 #: src/components/GraphFloatingMenu.tsx:122
+#: src/components/GraphFloatingMenu.tsx:124
 msgid "Layout Frozen"
 msgstr "Layout eingefroren"
 
@@ -1112,7 +1124,7 @@ msgstr "Hell"
 msgid "Light Mode"
 msgstr "Heller Modus"
 
-#: src/components/ShareDialog.tsx:139
+#: src/components/ShareDialog.tsx:140
 msgid "Link"
 msgstr "Link"
 
@@ -1161,8 +1173,8 @@ msgstr "Lokale Dateiunterstützung"
 msgid "Local saving for offline access"
 msgstr "Lokales Speichern für den Offline-Zugriff"
 
-#: src/components/GraphFloatingMenu.tsx:110
 #: src/components/GraphFloatingMenu.tsx:112
+#: src/components/GraphFloatingMenu.tsx:114
 msgid "Lock Zoom to Graph"
 msgstr "Zoom an Graph anpassen"
 
@@ -1191,7 +1203,7 @@ msgstr "Hergestellt von <0>Tone Row</0>"
 msgid "Make a One-Time Donation"
 msgstr "Machen Sie eine einmalige Spende"
 
-#: src/components/ShareDialog.tsx:484
+#: src/components/ShareDialog.tsx:485
 msgid "Make publicly accessible"
 msgstr "Öffentlich zugänglich machen"
 
@@ -1203,7 +1215,7 @@ msgstr "Abrechnung verwalten"
 msgid "Map Data"
 msgstr "Daten abbilden"
 
-#: src/components/Tabs/ThemeTab.tsx:315
+#: src/components/Tabs/ThemeTab.tsx:328
 msgid "Maximum width of text inside nodes"
 msgstr "Maximale Breite des Textes innerhalb der Knoten"
 
@@ -1232,7 +1244,7 @@ msgstr "Verschieben"
 msgid "Move {0}"
 msgstr "Verschieben {0}"
 
-#: src/lib/parserErrors.tsx:29
+#: src/lib/parserErrors.tsx:31
 msgid "Multiple pointers on same line"
 msgstr "Mehrere Zeiger auf derselben Zeile"
 
@@ -1328,8 +1340,8 @@ msgstr "Knoten-ID, Klassen, Attribute"
 msgid "Node Label"
 msgstr "Knotenbeschriftung"
 
-#: src/components/Tabs/ThemeTab.tsx:222
-#: src/components/Tabs/ThemeTab.tsx:224
+#: src/components/Tabs/ThemeTab.tsx:235
+#: src/components/Tabs/ThemeTab.tsx:237
 msgid "Node Shape"
 msgstr "Knotenform"
 
@@ -1337,7 +1349,7 @@ msgstr "Knotenform"
 msgid "Node Shapes"
 msgstr "Knotenformen"
 
-#: src/components/Tabs/ThemeTab.tsx:215
+#: src/components/Tabs/ThemeTab.tsx:228
 msgid "Nodes"
 msgstr "Knoten"
 
@@ -1381,7 +1393,7 @@ msgstr "Einmalig"
 msgid "Open Customer Portal"
 msgstr "Öffnen Sie das Kundenportal"
 
-#: src/lib/usePromptStore.ts:138
+#: src/lib/usePromptStore.ts:121
 msgid "Operation canceled"
 msgstr "Operation abgebrochen"
 
@@ -1389,7 +1401,7 @@ msgstr "Operation abgebrochen"
 msgid "Or maybe blue!"
 msgstr "Oder vielleicht blau!"
 
-#: src/components/ShareDialog.tsx:553
+#: src/components/ShareDialog.tsx:556
 msgid "Organization Chart"
 msgstr "Organigramm"
 
@@ -1397,8 +1409,8 @@ msgstr "Organigramm"
 msgid "Our AI creates diagrams from your text prompts, allowing for seamless manual edits or AI-assisted adjustments. Unlike others, our Pro plan offers unlimited AI generations and edits, empowering you to create without limits."
 msgstr "Unsere KI erstellt Diagramme aus Ihren Texteingaben und ermöglicht nahtlose manuelle Bearbeitungen oder KI-unterstützte Anpassungen. Im Gegensatz zu anderen bietet unser Pro-Plan unbegrenzte KI-Generierungen und Bearbeitungen, die es Ihnen ermöglichen, ohne Grenzen zu kreieren."
 
-#: src/components/Tabs/ThemeTab.tsx:263
-#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:276
+#: src/components/Tabs/ThemeTab.tsx:277
 msgid "Padding"
 msgstr "Polsterung"
 
@@ -1442,7 +1454,7 @@ msgstr "Permanente Diagramme sind eine Pro-Funktion"
 msgid "Playbook"
 msgstr "Spielbuch"
 
-#: src/lib/parserErrors.tsx:34
+#: src/lib/parserErrors.tsx:36
 msgid "Pointer and container on same line"
 msgstr "Zeiger und Container auf derselben Zeile"
 
@@ -1476,8 +1488,8 @@ msgstr "Verarbeitung..."
 msgid "Prompt"
 msgstr "Aufforderung"
 
-#: src/components/ShareDialog.tsx:480
-#: src/components/ShareDialog.tsx:505
+#: src/components/ShareDialog.tsx:481
+#: src/components/ShareDialog.tsx:506
 msgid "Public"
 msgstr "Öffentlich"
 
@@ -1503,12 +1515,12 @@ msgid "Raster Export (PNG, JPG)"
 msgstr "Raster-Export (PNG, JPG)"
 
 #: src/components/ConvertToFlowchart.tsx:37
-#: src/lib/usePromptStore.ts:149
+#: src/lib/usePromptStore.ts:132
 msgid "Rate limit exceeded. Please try again later."
 msgstr "Die Rate-Limit wurde überschritten. Bitte versuchen Sie es später erneut."
 
 #: src/components/FlowchartHeader.tsx:77
-#: src/components/ShareDialog.tsx:154
+#: src/components/ShareDialog.tsx:155
 msgid "Read-only"
 msgstr "Schreibgeschützt"
 
@@ -1552,9 +1564,9 @@ msgstr "Seite aktualisieren"
 msgid "Reload to Update"
 msgstr "Neu laden, um zu aktualisieren"
 
-#: src/components/RenameButton.tsx:100
-#: src/components/RenameButton.tsx:121
-#: src/components/RenameButton.tsx:163
+#: src/components/RenameButton.tsx:105
+#: src/components/RenameButton.tsx:126
+#: src/components/RenameButton.tsx:168
 #: src/components/charts/ChartListItem.tsx:191
 #: src/components/charts/ChartModals.tsx:214
 msgid "Rename"
@@ -1572,8 +1584,8 @@ msgstr "Magic-Link anfordern"
 msgid "Request Password Reset"
 msgstr "Passwort zurücksetzen anfordern"
 
-#: src/components/GraphFloatingMenu.tsx:75
-#: src/components/GraphFloatingMenu.tsx:78
+#: src/components/GraphFloatingMenu.tsx:77
+#: src/components/GraphFloatingMenu.tsx:80
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -1607,8 +1619,8 @@ msgstr "Klicke mit der rechten Maustaste auf Knoten für Optionen"
 msgid "Roadmap"
 msgstr "Fahrplan"
 
-#: src/components/Tabs/ThemeTab.tsx:601
-#: src/components/Tabs/ThemeTab.tsx:602
+#: src/components/Tabs/ThemeTab.tsx:614
+#: src/components/Tabs/ThemeTab.tsx:615
 msgid "Rotate Label"
 msgstr "Label drehen"
 
@@ -1665,7 +1677,7 @@ msgstr "Wählen Sie einen Zielordner für \\"
 msgid "Send us a message"
 msgstr "Schreiben Sie uns eine Nachricht"
 
-#: src/components/Tabs/ThemeTab.tsx:395
+#: src/components/Tabs/ThemeTab.tsx:408
 msgid "Set a consistent height for all nodes"
 msgstr "Legen Sie eine einheitliche Höhe für alle Knoten fest"
 
@@ -1712,8 +1724,8 @@ msgstr "Absteigend sortieren"
 msgid "Sort by {0}"
 msgstr "Sortieren nach {0}"
 
-#: src/components/Tabs/ThemeTab.tsx:491
-#: src/components/Tabs/ThemeTab.tsx:492
+#: src/components/Tabs/ThemeTab.tsx:504
+#: src/components/Tabs/ThemeTab.tsx:505
 msgid "Source Arrow Shape"
 msgstr "Pfeilform der Quelle"
 
@@ -1726,8 +1738,8 @@ msgstr "Quellspalte"
 msgid "Source Delimiter"
 msgstr "Quell-Trennzeichen"
 
-#: src/components/Tabs/ThemeTab.tsx:533
-#: src/components/Tabs/ThemeTab.tsx:534
+#: src/components/Tabs/ThemeTab.tsx:546
+#: src/components/Tabs/ThemeTab.tsx:547
 msgid "Source Distance From Node"
 msgstr "Abstand der Quelle vom Knoten"
 
@@ -1735,8 +1747,8 @@ msgstr "Abstand der Quelle vom Knoten"
 msgid "Source/Target Arrow Shape"
 msgstr "Quelle/Ziel-Pfeilform"
 
-#: src/components/Tabs/ThemeTab.tsx:161
-#: src/components/Tabs/ThemeTab.tsx:163
+#: src/components/Tabs/ThemeTab.tsx:174
+#: src/components/Tabs/ThemeTab.tsx:176
 msgid "Spacing"
 msgstr "Abstand"
 
@@ -1785,8 +1797,8 @@ msgstr "Stil-Klassen"
 msgid "Style with classes"
 msgstr "Mit Klassen gestalten"
 
-#: src/components/AiToolbar.tsx:201
-#: src/components/EditWithAI.tsx:242
+#: src/components/AiToolbar.tsx:198
+#: src/components/EditWithAI.tsx:243
 #: src/components/Feedback.tsx:91
 #: src/components/ImportDataDialog.tsx:577
 msgid "Submit"
@@ -1812,8 +1824,8 @@ msgstr "Abonnement wird beendet"
 msgid "Support"
 msgstr "Unterstützung"
 
-#: src/components/Tabs/ThemeTab.tsx:512
-#: src/components/Tabs/ThemeTab.tsx:513
+#: src/components/Tabs/ThemeTab.tsx:525
+#: src/components/Tabs/ThemeTab.tsx:526
 msgid "Target Arrow Shape"
 msgstr "Pfeilform des Ziels"
 
@@ -1826,8 +1838,8 @@ msgstr "Ziel-Spalte"
 msgid "Target Delimiter"
 msgstr "Ziel-Trennzeichen"
 
-#: src/components/Tabs/ThemeTab.tsx:551
-#: src/components/Tabs/ThemeTab.tsx:552
+#: src/components/Tabs/ThemeTab.tsx:564
+#: src/components/Tabs/ThemeTab.tsx:565
 msgid "Target Distance From Node"
 msgstr "Zielabstand vom Knoten "
 
@@ -1835,27 +1847,27 @@ msgstr "Zielabstand vom Knoten "
 msgid "Tell us what's working and what isn't. Every message is read by the developer."
 msgstr "Sag uns, was funktioniert und was nicht. Jede Nachricht wird vom Entwickler gelesen."
 
-#: src/components/Tabs/ThemeTab.tsx:251
-#: src/components/Tabs/ThemeTab.tsx:253
+#: src/components/Tabs/ThemeTab.tsx:264
+#: src/components/Tabs/ThemeTab.tsx:266
 msgid "Text Color"
 msgstr "Textfarbe "
 
-#: src/components/Tabs/ThemeTab.tsx:362
+#: src/components/Tabs/ThemeTab.tsx:375
 msgid "Text Horizontal Offset"
 msgstr "Text Horizontaler Versatz"
 
-#: src/components/Tabs/ThemeTab.tsx:332
-#: src/components/Tabs/ThemeTab.tsx:333
+#: src/components/Tabs/ThemeTab.tsx:345
+#: src/components/Tabs/ThemeTab.tsx:346
 msgid "Text Leading"
 msgstr "Textführung "
 
-#: src/components/Tabs/ThemeTab.tsx:305
-#: src/components/Tabs/ThemeTab.tsx:311
+#: src/components/Tabs/ThemeTab.tsx:318
+#: src/components/Tabs/ThemeTab.tsx:324
 msgid "Text Max Width"
 msgstr "Text Max Breite"
 
-#: src/components/Tabs/ThemeTab.tsx:347
-#: src/components/Tabs/ThemeTab.tsx:348
+#: src/components/Tabs/ThemeTab.tsx:360
+#: src/components/Tabs/ThemeTab.tsx:361
 msgid "Text Vertical Offset"
 msgstr "Textvertikaler Abstand "
 
@@ -1930,6 +1942,10 @@ msgstr "Diese Diagramm ist schreibgeschützt, da Sie keinen Pro-Zugang mehr habe
 msgid "This feature is only available to pro users. <0>Become a pro user</0> to unlock it."
 msgstr "Diese Funktion ist nur für Pro-Benutzer verfügbar. <0>Werden Sie Pro-Nutzer</0>, um es freizuschalten."
 
+#: src/components/Tabs/ThemeTab.tsx:134
+msgid "This layout doesn't support containers."
+msgstr "Dieses Layout unterstützt keine Container."
+
 #: src/pages/New.tsx:180
 msgid "This may take between 30 seconds and 2 minutes depending on the length of your input."
 msgstr "Dies kann je nach Länge Ihrer Eingabe zwischen 30 Sekunden und 2 Minuten dauern."
@@ -1954,23 +1970,23 @@ msgstr "Dies ersetzt deine aktuelle Sandbox."
 msgid "Time to decide"
 msgstr "Zeit zum Entscheiden"
 
-#: src/components/ShareDialog.tsx:628
+#: src/components/ShareDialog.tsx:633
 msgid "Tip"
 msgstr "Tipp"
 
-#: src/lib/parserErrors.tsx:61
+#: src/lib/parserErrors.tsx:63
 msgid "To fix this change one of the edge IDs"
 msgstr "Um dies zu beheben, ändern Sie eine der Kanten-IDs"
 
-#: src/lib/parserErrors.tsx:56
+#: src/lib/parserErrors.tsx:58
 msgid "To fix this change one of the node IDs"
 msgstr "Um das zu beheben, ändern Sie eine der Knoten-IDs"
 
-#: src/lib/parserErrors.tsx:30
+#: src/lib/parserErrors.tsx:32
 msgid "To fix this move one pointer to the next line"
 msgstr "Um das zu beheben, verschieben Sie einen Zeiger auf die nächste Zeile"
 
-#: src/lib/parserErrors.tsx:36
+#: src/lib/parserErrors.tsx:38
 msgid "To fix this start the container <0/> on a different line"
 msgstr "Um dies zu beheben, starten Sie den Container <0/> auf einer anderen Zeile."
 
@@ -2015,11 +2031,11 @@ msgstr "Dokumente mit KI in Diagramme umwandeln"
 msgid "Turn your ideas into professional diagrams in seconds"
 msgstr "Verwandeln Sie Ihre Ideen in professionelle Diagramme in Sekundenschnelle"
 
-#: src/lib/parserErrors.tsx:60
+#: src/lib/parserErrors.tsx:62
 msgid "Two edges have the same ID"
 msgstr "Zwei Kanten haben die gleiche ID"
 
-#: src/lib/parserErrors.tsx:55
+#: src/lib/parserErrors.tsx:57
 msgid "Two nodes have the same ID"
 msgstr "Zwei Knoten haben die gleiche ID"
 
@@ -2027,11 +2043,11 @@ msgstr "Zwei Knoten haben die gleiche ID"
 msgid "Uh oh, you're out of free requests! Upgrade to Flowchart Fun Pro for unlimited diagram conversions, and keep transforming text into clear, visual flowcharts as easily as copy and paste."
 msgstr "Oh oh, du hast keine kostenlosen Anfragen mehr! Upgrade auf Flowchart Fun Pro für unbegrenzte Diagramm-Konvertierungen und verwandle Text weiterhin mühelos in klare, visuelle Flussdiagramme wie durch Kopieren und Einfügen."
 
-#: src/components/AiToolbar.tsx:123
+#: src/components/AiToolbar.tsx:120
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: src/lib/parserErrors.tsx:45
+#: src/lib/parserErrors.tsx:47
 msgid "Unescaped special character"
 msgstr "Nicht maskiertes Sonderzeichen"
 
@@ -2043,7 +2059,7 @@ msgstr "Einzigartiger Textwert, um einen Knoten zu identifizieren"
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: src/lib/parserErrors.tsx:65
+#: src/lib/parserErrors.tsx:67
 msgid "Unknown Parsing Error"
 msgstr "Unbekannter Parser-Fehler"
 
@@ -2064,7 +2080,7 @@ msgstr "Unbegrenzte in der Cloud gespeicherte Flussdiagramme"
 msgid "Unlock AI Features and never lose your work with a Pro account."
 msgstr "Entsperren Sie KI-Funktionen und verlieren Sie nie wieder Ihre Arbeit mit einem Pro-Konto."
 
-#: src/lib/usePromptStore.ts:145
+#: src/lib/usePromptStore.ts:128
 msgid "Unlock Unlimited AI Flowcharts"
 msgstr "Entsperren Sie unbegrenzte AI-Flussdiagramme"
 
@@ -2114,8 +2130,8 @@ msgstr "Upgrade auf Pro für dauerhafte Charts."
 msgid "Upload your File"
 msgstr "Laden Sie Ihre Datei hoch"
 
-#: src/components/Tabs/ThemeTab.tsx:642
-#: src/components/Tabs/ThemeTab.tsx:643
+#: src/components/Tabs/ThemeTab.tsx:655
+#: src/components/Tabs/ThemeTab.tsx:656
 msgid "Use Custom CSS Only"
 msgstr "Nur benutzerdefinierte CSS verwenden"
 
@@ -2143,15 +2159,15 @@ msgstr "Verwenden Sie die Attribute <0>w</0> und <1>h</1>, um die Breite und Hö
 msgid "Use the customer portal to change your billing information."
 msgstr "Verwenden Sie das Kundenportal, um Ihre Rechnungsinformationen zu ändern."
 
-#: src/components/Tabs/ThemeTab.tsx:676
+#: src/components/Tabs/ThemeTab.tsx:689
 msgid "Use these settings to adapt the look and behavior of your flowcharts"
 msgstr "Verwenden Sie diese Einstellungen, um das Aussehen und Verhalten Ihrer Flussdiagramme anzupassen"
 
-#: src/components/ShareDialog.tsx:563
+#: src/components/ShareDialog.tsx:568
 msgid "Use this file for org charts, hierarchies, and other organizational structures."
 msgstr "Verwenden Sie diese Datei für Organigramme, Hierarchien und andere Organisationsstrukturen."
 
-#: src/components/ShareDialog.tsx:549
+#: src/components/ShareDialog.tsx:552
 msgid "Use this file for sequences, processes, and workflows."
 msgstr "Verwenden Sie diese Datei für Sequenzen, Prozesse und Workflows."
 
@@ -2207,8 +2223,8 @@ msgstr "Was ist das?"
 msgid "While we don't offer a free trial, you can get every Pro feature for 30 days with a one-time $9 Pass — no subscription, nothing to cancel. Prefer to subscribe? Pro is $4/month or $24/year, and you can cancel anytime."
 msgstr "Wir bieten zwar keine kostenlose Testversion an, aber Sie können alle Pro-Funktionen für 30 Tage mit einem einmaligen Pass von 9 € erhalten - keine Abonnement, nichts zu kündigen. Bevorzugen Sie ein Abonnement? Pro kostet 4 €/Monat oder 24 €/Jahr und Sie können jederzeit kündigen."
 
-#: src/components/Tabs/ThemeTab.tsx:455
-#: src/components/Tabs/ThemeTab.tsx:456
+#: src/components/Tabs/ThemeTab.tsx:468
+#: src/components/Tabs/ThemeTab.tsx:469
 msgid "Width"
 msgstr "Breite"
 
@@ -2216,7 +2232,7 @@ msgstr "Breite"
 msgid "Width and Height"
 msgstr "Breite und Höhe"
 
-#: src/components/EditWithAI.tsx:28
+#: src/components/EditWithAI.tsx:29
 msgid "With Flowchart Fun's Pro version, you can use natural language comamnds to quickly flesh out your flowchart details, ideal for creating diagrams on the go. For $4/month, get the ease of accessible AI editing to enhance your flowcharting experience."
 msgstr "Mit der Pro-Version von Flowchart Fun können Sie natürliche Sprachbefehle verwenden, um schnell Details in Ihrem Flussdiagramm auszuarbeiten, ideal für die Erstellung von Diagrammen unterwegs. Für 4 €/Monat erhalten Sie die Leichtigkeit der zugänglichen KI-Bearbeitung, um Ihr Flussdiagrammerlebnis zu verbessern."
 
@@ -2240,7 +2256,7 @@ msgstr "Verwenden Sie Klammern, um mit jedem Knoten zu verbinden"
 msgid "Write like an outline"
 msgstr "Schreiben Sie wie eine Gliederung"
 
-#: src/components/EditWithAI.tsx:216
+#: src/components/EditWithAI.tsx:217
 msgid "Write your prompt here or click to enable the microphone, then press and hold to record."
 msgstr "Schreiben Sie hier Ihre Aufforderung oder klicken Sie auf das Mikrofon, um es zu aktivieren, dann halten Sie es gedrückt, um aufzunehmen."
 
@@ -2288,7 +2304,7 @@ msgstr "Du machst das super!"
 msgid "You're on the free plan."
 msgstr "Du bist auf dem kostenlosen Plan."
 
-#: src/lib/usePromptStore.ts:142
+#: src/lib/usePromptStore.ts:125
 msgid "You've used all your free AI conversions. Upgrade to Pro for unlimited AI use, custom themes, private sharing, and more. Keep creating amazing flowcharts effortlessly!"
 msgstr "Sie haben alle Ihre kostenlosen KI-Konvertierungen verwendet. Upgrade auf Pro für unbegrenzte KI-Nutzung, individuelle Themen, private Freigabe und mehr. Erstellen Sie mühelos weiterhin erstaunliche Flussdiagramme!"
 
@@ -2317,13 +2333,13 @@ msgstr "Ihr Pass verlängert sich nie. Wenn er endet, werden Ihre gehosteten Dia
 msgid "Your subscription is <0>{statusDisplay}</0>."
 msgstr "Ihre Abonnement ist <0>{statusDisplay}</0>."
 
-#: src/components/GraphFloatingMenu.tsx:90
-#: src/components/GraphFloatingMenu.tsx:94
+#: src/components/GraphFloatingMenu.tsx:92
+#: src/components/GraphFloatingMenu.tsx:96
 msgid "Zoom In"
 msgstr "Vergrößern"
 
-#: src/components/GraphFloatingMenu.tsx:100
-#: src/components/GraphFloatingMenu.tsx:104
+#: src/components/GraphFloatingMenu.tsx:102
+#: src/components/GraphFloatingMenu.tsx:106
 msgid "Zoom Out"
 msgstr "Verkleinern"
 

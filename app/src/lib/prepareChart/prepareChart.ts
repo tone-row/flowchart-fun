@@ -13,6 +13,7 @@ import {
   legacyDefaultTheme,
 } from "../legacyDefaultTheme";
 import { FFTheme } from "../FFTheme";
+import { clearUndoHistory } from "../undoStack";
 
 /**
  * Ensures the document loaded externally or from local storage
@@ -113,6 +114,7 @@ export async function prepareChart({
   // pre-process style to load classes and font imports
   preprocessStyle(getStyleStringFromMeta(meta));
 
+  clearUndoHistory();
   useDoc.setState({ text, meta, details }, false, "prepareChart");
 
   return {

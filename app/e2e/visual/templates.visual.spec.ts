@@ -1,7 +1,11 @@
 import { test, expect, Page } from "@playwright/test";
 import { templates } from "shared";
 
-import { FROZEN_TEMPLATES, frozenScreenshotUrl } from "./frozen-templates";
+import {
+  FIXTURE_CHARTS,
+  FROZEN_TEMPLATES,
+  frozenScreenshotUrl,
+} from "./frozen-templates";
 
 /**
  * Visual-regression baseline for the 13 templates.
@@ -25,6 +29,7 @@ import { FROZEN_TEMPLATES, frozenScreenshotUrl } from "./frozen-templates";
 type TemplateName = (typeof templates)[number];
 
 const RENDER_SETTLE_MS = 3000;
+const FIXTURE_MAX_DIFF_PIXELS = 100;
 
 /** Wait for the fullscreen canvas to be visible, fonts loaded, and render settled. */
 async function waitForCanvas(page: Page) {
@@ -67,6 +72,18 @@ test.describe("template visual regression", () => {
       }
 
       await expect(canvas).toHaveScreenshot(`${name}.png`);
+    });
+  }
+});
+
+test.describe("fixture chart visual regression", () => {
+  for (const name of FIXTURE_CHARTS) {
+    test(name, async ({ page }) => {
+      await page.goto(frozenScreenshotUrl(name));
+      const canvas = await waitForCanvas(page);
+      await expect(canvas).toHaveScreenshot(`${name}.png`, {
+        maxDiffPixels: FIXTURE_MAX_DIFF_PIXELS,
+      });
     });
   }
 });

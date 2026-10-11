@@ -247,7 +247,11 @@ export async function getHostedChart(id?: string) {
 export async function updateChartText(chart: string, id?: string) {
   if (!id) return;
   if (!supabase) return;
-  return supabase.from("user_charts").update({ chart }).eq("id", id);
+  const { error } = await supabase
+    .from("user_charts")
+    .update({ chart })
+    .eq("id", id);
+  if (error) throw error;
 }
 
 export async function deleteChart({ chartId }: { chartId: number }) {
@@ -262,7 +266,7 @@ export async function deleteChart({ chartId }: { chartId: number }) {
 }
 
 /**
- * Rename a hosted chart and clear the related cache
+ * Rename a hosted chart
  */
 export async function renameChart(id: number, name: string) {
   if (!supabase) return;
@@ -271,8 +275,6 @@ export async function renameChart(id: number, name: string) {
     .update({ name })
     .eq("id", id);
   if (error) throw error;
-  // clear cache
-  queryClient.invalidateQueries(["useHostedDoc", id.toString()]);
   return data;
 }
 

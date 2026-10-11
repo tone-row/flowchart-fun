@@ -21,6 +21,7 @@ import {
   alignNodesHorizontally,
   alignNodesVertically,
 } from "../lib/alignNodes";
+import { isTypingTarget } from "../lib/isTypingTarget";
 
 const ZOOM_STEP = 0.5;
 
@@ -55,6 +56,7 @@ export function GraphFloatingMenu() {
   useEffect(() => {
     if (alignButtonsEnabled) {
       const handleKeyPress = (event: KeyboardEvent) => {
+        if (isTypingTarget(event.target)) return;
         if (event.key === "h") {
           alignNodesHorizontally(selectedNodes);
         } else if (event.key === "v") {

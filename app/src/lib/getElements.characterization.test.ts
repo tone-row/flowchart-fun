@@ -98,6 +98,36 @@ describe("getElements characterization", () => {
     expect(byLabel("B").out_degree).toBe(0);
   });
 
+  it("each edge carries parallel = number of edges on its unordered node pair", () => {
+    const els = getElements(
+      [
+        "Start",
+        "  Check",
+        "    no: (Start)",
+        "    yes: Validate",
+        "      Error page",
+        "      bad input: (Error page)",
+        "      timeout: (Error page)",
+      ].join("\n")
+    );
+    const label = (id: string) =>
+      nodes(els).find((n) => n.data.id === id)!.data.label;
+    const parallelByEdge = edges(els)
+      .map((e) => [
+        `${label(e.data.source)} -> ${label(e.data.target)} [${e.data.label}]`,
+        e.data.parallel,
+      ])
+      .sort();
+    expect(parallelByEdge).toEqual([
+      ["Check -> Start [no]", 2],
+      ["Check -> Validate [yes]", 1],
+      ["Start -> Check []", 2],
+      ["Validate -> Error page []", 3],
+      ["Validate -> Error page [bad input]", 3],
+      ["Validate -> Error page [timeout]", 3],
+    ]);
+  });
+
   it("classes are attached and parsed; parser emits a leading space; only the FIRST .class is kept", () => {
     const els = getElements("Hello .color_blue .shape_diamond");
     const n = nodes(els)[0];
@@ -143,6 +173,29 @@ describe("getElements characterization", () => {
     expect(ns.map((n) => n.data.id)).toEqual(["a", "n2"]);
     expect(es).toHaveLength(1);
     expect([es[0].data.source, es[0].data.target]).toEqual(["n2", "a"]);
+  });
+
+  it("a label pointer that also matches an edge label only produces node-to-node edges", () => {
+    const els = getElements("A\n  null: C\n  B\n    fail: (null)\n  null");
+    const nodeIds = new Set(nodes(els).map((n) => n.data.id));
+    const es = edges(els);
+
+    for (const e of es) {
+      expect(nodeIds.has(e.data.source)).toBe(true);
+      expect(nodeIds.has(e.data.target)).toBe(true);
+    }
+    const byLabel = Object.fromEntries(
+      nodes(els).map((n) => [n.data.label, n.data.id])
+    );
+    expect(es.map((e) => `${e.data.source}->${e.data.target}`)).toEqual([
+      `${byLabel.A}->${byLabel.C}`,
+      `${byLabel.A}->${byLabel.B}`,
+      `${byLabel.A}->${byLabel.null}`,
+      `${byLabel.B}->${byLabel.null}`,
+    ]);
+    expect(
+      nodes(els).find((n) => n.data.label === "null")!.data.in_degree
+    ).toBe(2);
   });
 
   describe("[w]/[h] data attribute sizing (LANDMINE, backward-compat path)", () => {

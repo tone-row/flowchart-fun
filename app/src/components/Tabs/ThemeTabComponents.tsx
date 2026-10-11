@@ -1,7 +1,7 @@
 import * as Slider from "@radix-ui/react-slider";
 import { Control } from "formulaic";
 import * as Popover from "@radix-ui/react-popover";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { allFonts, fonts } from "../../lib/fonts";
 import classNames from "classnames";
 import { Editor } from "@monaco-editor/react";
@@ -327,6 +327,8 @@ export const customCss: Control<string, BaseProps> = (
   );
 };
 
+const MIN_CSS_EDITOR_HEIGHT = 300;
+
 function CustomCSSEditor({
   value,
   onValueChange,
@@ -339,13 +341,34 @@ function CustomCSSEditor({
   label: string;
 }) {
   const mode = useLightOrDarkMode();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(MIN_CSS_EDITOR_HEIGHT);
+  useEffect(() => {
+    const panel = wrapperRef.current?.closest(".theme-tab");
+    if (!panel) return;
+    const observer = new ResizeObserver(([entry]) => {
+      const panelHeight = entry.contentRect.height;
+      // Monaco cancels touchmove over the editor, so touch screens need room beside it to swipe the panel.
+      setHeight(
+        window.matchMedia("(pointer: coarse)").matches
+          ? Math.min(
+              panelHeight,
+              Math.max(MIN_CSS_EDITOR_HEIGHT, panelHeight / 2)
+            )
+          : Math.max(MIN_CSS_EDITOR_HEIGHT, panelHeight)
+      );
+    });
+    observer.observe(panel);
+    return () => observer.disconnect();
+  }, []);
   return (
     <div
-      className="theme-editor-monaco bg-neutral-50 dark:bg-neutral-900"
+      ref={wrapperRef}
+      className="theme-editor-monaco bg-neutral-50 dark:bg-neutral-900 [contain:inline-size]"
       id="theme-editor-wrapper"
     >
       <Editor
-        height={300}
+        height={height}
         width="100%"
         defaultLanguage="scss"
         value={value}
@@ -354,6 +377,7 @@ function CustomCSSEditor({
         }}
         options={{
           minimap: { enabled: false },
+          scrollbar: { alwaysConsumeMouseWheel: false },
           lineNumbers: "off",
           lineDecorationsWidth: 0,
           lineNumbersMinChars: 0,
@@ -391,6 +415,38 @@ function CustomCSSEditor({
           },
         }}
         theme={mode === "dark" ? "vs-dark" : "vs-light"}
+        onMount={(editor, monaco) => {
+          // Click, drag and touch tap all report source "mouse".
+          let frame = 0;
+          editor.onDidChangeCursorPosition((e) => {
+            if (
+              !editor.hasWidgetFocus() ||
+              e.source === "mouse" ||
+              e.reason === monaco.editor.CursorChangeReason.ContentFlush
+            )
+              return;
+            cancelAnimationFrame(frame);
+            // Monaco reveals the caret only after it fires this event.
+            frame = requestAnimationFrame(() => {
+              const panel = wrapperRef.current?.closest(".theme-tab");
+              const node = editor.getDomNode();
+              const position = editor.getPosition();
+              if (!panel || !node || !position) return;
+              const caret = editor.getScrolledVisiblePosition(position);
+              if (!caret) return;
+              const caretTop = node.getBoundingClientRect().top + caret.top;
+              const caretBottom = caretTop + caret.height;
+              const rect = panel.getBoundingClientRect();
+              const visibleTop = Math.max(rect.top, 0);
+              const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+              if (caretBottom + caret.height > visibleBottom) {
+                panel.scrollTop += caretBottom + caret.height - visibleBottom;
+              } else if (caretTop - caret.height < visibleTop) {
+                panel.scrollTop -= visibleTop - (caretTop - caret.height);
+              }
+            });
+          });
+        }}
         beforeMount={(monaco) => {
           // turn off validation
           monaco.languages.css.scssDefaults.setOptions({

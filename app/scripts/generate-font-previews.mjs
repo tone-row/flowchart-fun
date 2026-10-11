@@ -25,6 +25,7 @@ const PREVIEW_SOURCES = {
   "Open Runde": "OpenRunde-Medium.otf",
   "Cabinet Grotesk": "CabinetGrotesk-Medium.otf",
   Switzer: "Switzer-Medium.otf",
+  Literata: "Literata-wght.ttf",
   "Shantell Sans": "ShantellSans-wght.ttf",
 };
 

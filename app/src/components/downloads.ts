@@ -15,6 +15,51 @@ import {
 // padding, gets divided in half
 const PADDING = 60;
 
+export type Rect = { x: number; y: number; w: number; h: number };
+
+export function exportLayout({
+  contentW,
+  contentH,
+  watermark,
+}: {
+  contentW: number;
+  contentH: number;
+  watermark: boolean;
+}): {
+  canvasW: number;
+  canvasH: number;
+  contentRect: Rect;
+  markRect: Rect | null;
+} {
+  const canvasW = contentW + PADDING;
+  const contentRect = {
+    x: PADDING / 2,
+    y: PADDING / 2,
+    w: contentW,
+    h: contentH,
+  };
+  if (!watermark) {
+    return {
+      canvasW,
+      canvasH: contentH + PADDING,
+      contentRect,
+      markRect: null,
+    };
+  }
+  const markW = Math.floor(canvasW * WATERMARK_WIDTH_PERCENTAGE);
+  const markH = Math.floor(
+    WATERMARK_ORIGINAL_HEIGHT * (markW / WATERMARK_ORIGINAL_WIDTH)
+  );
+  const markRect = {
+    x: contentRect.x,
+    y: contentRect.y + contentH + WATERMARK_MARGIN,
+    w: markW,
+    h: markH,
+  };
+  const canvasH = markRect.y + markH + WATERMARK_MARGIN;
+  return { canvasW, canvasH, contentRect, markRect };
+}
+
 const MAX_ATTEMPTS = 8;
 const SCALE_REDUCTION_FACTOR = 0.75;
 const CANVAS_SIZE_ERROR = "`canvas.toBlob()` sent a null value in its callback";
@@ -196,10 +241,10 @@ export async function getCanvas({
     }
   });
 
-  // Create canvas with size + padding
+  const layout = exportLayout({ contentW: w, contentH: h, watermark });
   const canvas = document.createElement("canvas");
-  canvas.width = w + PADDING;
-  canvas.height = h + PADDING;
+  canvas.width = layout.canvasW;
+  canvas.height = layout.canvasH;
 
   // add canvas to document and get context
   const ctx = canvas.getContext("2d");
@@ -215,16 +260,11 @@ export async function getCanvas({
 
   return new Promise((resolve) => {
     img.onload = async () => {
-      ctx.drawImage(img, PADDING / 2, PADDING / 2);
+      ctx.drawImage(img, layout.contentRect.x, layout.contentRect.y);
       window.URL.revokeObjectURL(img.src);
 
-      // add watermark if needed
-      if (watermark) {
-        await addWatermark({
-          ctx,
-          width: canvas.width,
-          height: canvas.height,
-        });
+      if (layout.markRect) {
+        await addWatermark({ ctx, rect: layout.markRect });
       }
 
       resolve({
@@ -241,33 +281,18 @@ export async function getCanvas({
 
 async function addWatermark({
   ctx,
-  width,
-  height,
+  rect,
 }: {
   ctx: CanvasRenderingContext2D;
-  width: number;
-  height: number;
+  rect: Rect;
 }) {
   return new Promise<void>((resolve) => {
-    // Create a new image for the watermark
     const watermarkImage = new Image();
 
-    // Set up image load handler
     watermarkImage.onload = () => {
-      // Calculate watermark dimensions
-      const targetWidth = Math.floor(width * WATERMARK_WIDTH_PERCENTAGE);
-      const scale = targetWidth / WATERMARK_ORIGINAL_WIDTH;
-      const targetHeight = Math.floor(WATERMARK_ORIGINAL_HEIGHT * scale);
-
-      // Position watermark in bottom-left corner with margin
-      const x = WATERMARK_MARGIN;
-      const y = height - targetHeight - WATERMARK_MARGIN;
-
-      // Draw watermark with calculated dimensions
-      ctx.globalAlpha = 0.8; // Adjust transparency if needed
-      ctx.drawImage(watermarkImage, x, y, targetWidth, targetHeight);
-      ctx.globalAlpha = 1.0; // Reset transparency
-
+      ctx.globalAlpha = 0.8;
+      ctx.drawImage(watermarkImage, rect.x, rect.y, rect.w, rect.h);
+      ctx.globalAlpha = 1.0;
       resolve();
     };
 

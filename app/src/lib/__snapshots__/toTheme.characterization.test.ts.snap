@@ -9,7 +9,9 @@ Object {
 `;
 
 exports[`toTheme - default theme (canonical baseline) produces stable layout + style + postStyle for the default-template theme (dagre/DOWN): default-postStyle 1`] = `
-"edge.border_dashed { line-style: dashed; }
+"edge[parallel > 1] { curve-style: bezier; }
+edge[parallel > 2] { control-point-step-size: 90; }
+edge.border_dashed { line-style: dashed; }
 edge.border_dotted { line-style: dotted; }
 edge.border_solid { line-style: solid; }
 :childless.shape_rectangle { shape: rectangle; }

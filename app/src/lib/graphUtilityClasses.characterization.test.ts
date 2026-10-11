@@ -218,8 +218,13 @@ describe("graphUtilityClasses characterization", () => {
   });
 
   describe("edgeStyleClasses", () => {
-    it("maps 3 edge.border_* selectors to line-style", () => {
+    it("fans parallel edges, then maps 3 edge.border_* selectors to line-style", () => {
       expect(edgeStyleClasses).toEqual([
+        { selector: "edge[parallel > 1]", css: { "curve-style": "bezier" } },
+        {
+          selector: "edge[parallel > 2]",
+          css: { "control-point-step-size": 90 },
+        },
         { selector: "edge.border_dashed", css: { "line-style": "dashed" } },
         { selector: "edge.border_dotted", css: { "line-style": "dotted" } },
         { selector: "edge.border_solid", css: { "line-style": "solid" } },

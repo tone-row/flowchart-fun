@@ -4,7 +4,8 @@ import * as Popover from "@radix-ui/react-popover";
 import { Trans, t } from "@lingui/macro";
 import { useCallback, useRef, useState } from "react";
 import { useDoc } from "../lib/useDoc";
-import { parse, stringify, Graph as GSGraph } from "graph-selector";
+import { stringify, Graph as GSGraph } from "graph-selector";
+import { parseGraph } from "../lib/parseGraph";
 import { useMutation } from "react-query";
 import * as Toast from "@radix-ui/react-toast";
 import { Microphone } from "./Microphone";
@@ -88,7 +89,7 @@ export function EditWithAI() {
       setIsOpen(false);
 
       const text = useDoc.getState().text;
-      const _graph = parse(text);
+      const _graph = parseGraph(text);
 
       const graph: GraphForAI = {
         nodes: _graph.nodes.map((node) => {
