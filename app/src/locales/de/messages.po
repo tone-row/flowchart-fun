@@ -326,9 +326,14 @@ msgstr "Klon"
 msgid "Clone Flowchart"
 msgstr "Flussdiagramm klonen "
 
+#: src/components/Layout.tsx:48
 #: src/components/LearnSyntaxDialog.tsx:413
 msgid "Close"
 msgstr "Schließen"
+
+#: src/components/FlowchartChatBar.tsx:63
+msgid "Close announcement"
+msgstr "Ankündigung schließen"
 
 #: src/components/Tabs/ThemeTab.tsx:483
 #: src/components/Tabs/ThemeTab.tsx:484
@@ -922,7 +927,7 @@ msgstr "Grün?"
 msgid "Grid"
 msgstr "Raster"
 
-#: src/lib/toneRowProjects.ts:14
+#: src/lib/toneRowProjects.ts:23
 msgid "Group ranking and ranked-choice voting, free"
 msgstr "Gruppen-Ranking und Rangfolge-Wahl, kostenlos"
 
@@ -1286,6 +1291,10 @@ msgstr "Neue Flussdiagramm"
 msgid "New Folder"
 msgstr "Neuer Ordner"
 
+#: src/components/FlowchartChatBar.tsx:26
+msgid "New from Flowchart Fun:"
+msgstr "Neu von Flowchart Fun:"
+
 #: src/pages/Account.tsx:182
 #: src/pages/Account.tsx:520
 msgid "Next charge"
@@ -1392,6 +1401,10 @@ msgstr "Einmalig"
 #: src/pages/Account.tsx:302
 msgid "Open Customer Portal"
 msgstr "Öffnen Sie das Kundenportal"
+
+#: src/components/FlowchartChatBar.tsx:55
+msgid "Open it in flowchart.chat →"
+msgstr "In flowchart.chat öffnen →"
 
 #: src/lib/usePromptStore.ts:121
 msgid "Operation canceled"
@@ -2023,7 +2036,15 @@ msgstr "Versuche, deine Suche oder Filter anzupassen, um das Gewünschte zu find
 msgid "Try again"
 msgstr "Erneut versuchen"
 
-#: src/lib/toneRowProjects.ts:20
+#: src/components/FlowchartChatBar.tsx:57
+msgid "Try flowchart.chat →"
+msgstr "flowchart.chat ausprobieren →"
+
+#: src/lib/toneRowProjects.ts:17
+msgid "Turn a written process into a flowchart, checklist and guide"
+msgstr "Verwandle einen schriftlichen Prozess in ein Flussdiagramm, eine Checkliste und einen Leitfaden"
+
+#: src/lib/toneRowProjects.ts:29
 msgid "Turn documents into diagrams with AI"
 msgstr "Dokumente mit KI in Diagramme umwandeln"
 
@@ -2343,6 +2364,10 @@ msgstr "Vergrößern"
 msgid "Zoom Out"
 msgstr "Verkleinern"
 
+#: src/components/FlowchartChatBar.tsx:35
+msgid "flowchart.chat turns a written process into a flowchart, a checklist and a guide."
+msgstr "flowchart.chat verwandelt einen schriftlichen Prozess in ein Flussdiagramm, eine Checkliste und einen Leitfaden."
+
 #: src/components/Checkout.tsx:322
 msgid "month"
 msgstr "Monat"
@@ -2358,6 +2383,10 @@ msgstr "oder"
 #: src/pages/Pricing2.tsx:183
 msgid "or get a <0>30-Day Pass for $9</0> — one payment, never renews"
 msgstr "oder erhalte einen <0>30-Tage-Pass für $9</0> - einmalige Zahlung, nie automatisch verlängern"
+
+#: src/components/FlowchartChatBar.tsx:30
+msgid "turn this chart into a step-by-step guide your team can click through."
+msgstr "Verwandeln Sie dieses Diagramm in eine Schritt-für-Schritt-Anleitung, durch die Ihr Team klicken kann."
 
 #: src/components/PaywallModal.tsx:75
 msgid "{buttonText}"
