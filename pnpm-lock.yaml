@@ -54,8 +54,8 @@ importers:
         specifier: ^2.29.3
         version: 2.30.0
       graph-selector:
-        specifier: ^0.13.0
-        version: 0.13.0(typescript@5.5.3)
+        specifier: ^0.15.0
+        version: 0.15.0(typescript@5.5.3)
       highlight.js:
         specifier: ^11.8.0
         version: 11.11.1
@@ -277,8 +277,8 @@ importers:
         specifier: ^10.13.1
         version: 10.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       graph-selector:
-        specifier: ^0.14.0
-        version: 0.14.0(typescript@5.5.3)
+        specifier: ^0.15.0
+        version: 0.15.0(typescript@5.5.3)
       gray-matter:
         specifier: ^4.0.2
         version: 4.0.3
@@ -6607,11 +6607,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  graph-selector@0.13.0:
-    resolution: {integrity: sha512-D3Yb3EGC7EADHGmKiWFMW/uighvZyOYFdzQmrStbgtYj+1AkjQjs19QsvrCZU6ayGJffZQGf9PxtPVyE6JTPjA==}
-
-  graph-selector@0.14.0:
-    resolution: {integrity: sha512-0XN+21Sn+G3/q861caVohO1ZPZpSu29+pRNR1UO8+4297iKcwNifg1fBIo55uasFpQh918mf54RUcIQ+iiQvxQ==}
+  graph-selector@0.15.0:
+    resolution: {integrity: sha512-W3rYR+MOAN4yNJRHRAn7vvrO3wSuEpy0O+nPI6HC9AXcTX04h8ifDj72SA1AEz6jSac8oZrhNcb/cT2YUCH/Bw==}
 
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
@@ -17985,27 +17982,12 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  graph-selector@0.13.0(typescript@5.5.3):
+  graph-selector@0.15.0(typescript@5.5.3):
     dependencies:
-      '@tone-row/strip-comments': 2.0.6
       '@types/cytoscape': 3.21.9
-      '@types/strip-comments': 2.0.4
       html-entities: 2.5.2
       monaco-editor: 0.43.0
       pkgroll: 2.6.1(typescript@5.5.3)
-      strip-comments: 2.0.1
-    transitivePeerDependencies:
-      - typescript
-
-  graph-selector@0.14.0(typescript@5.5.3):
-    dependencies:
-      '@tone-row/strip-comments': 2.0.6
-      '@types/cytoscape': 3.21.9
-      '@types/strip-comments': 2.0.4
-      html-entities: 2.5.2
-      monaco-editor: 0.43.0
-      pkgroll: 2.6.1(typescript@5.5.3)
-      strip-comments: 2.0.1
     transitivePeerDependencies:
       - typescript
 
