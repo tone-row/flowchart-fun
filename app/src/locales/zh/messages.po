@@ -326,9 +326,14 @@ msgstr "克隆"
 msgid "Clone Flowchart"
 msgstr "克隆流程图"
 
+#: src/components/Layout.tsx:48
 #: src/components/LearnSyntaxDialog.tsx:413
 msgid "Close"
 msgstr "关闭"
+
+#: src/components/FlowchartChatBar.tsx:63
+msgid "Close announcement"
+msgstr "关闭公告"
 
 #: src/components/Tabs/ThemeTab.tsx:483
 #: src/components/Tabs/ThemeTab.tsx:484
@@ -922,7 +927,7 @@ msgstr "绿色的？"
 msgid "Grid"
 msgstr "网格"
 
-#: src/lib/toneRowProjects.ts:14
+#: src/lib/toneRowProjects.ts:23
 msgid "Group ranking and ranked-choice voting, free"
 msgstr "群组排名和排名选择投票，免费"
 
@@ -1286,6 +1291,10 @@ msgstr "新流程图"
 msgid "New Folder"
 msgstr "新文件夹"
 
+#: src/components/FlowchartChatBar.tsx:26
+msgid "New from Flowchart Fun:"
+msgstr "来自 Flowchart Fun 的新内容："
+
 #: src/pages/Account.tsx:182
 #: src/pages/Account.tsx:520
 msgid "Next charge"
@@ -1392,6 +1401,10 @@ msgstr "一次性"
 #: src/pages/Account.tsx:302
 msgid "Open Customer Portal"
 msgstr "打开客户门户"
+
+#: src/components/FlowchartChatBar.tsx:55
+msgid "Open it in flowchart.chat →"
+msgstr "在 flowchart.chat 中打开 →"
 
 #: src/lib/usePromptStore.ts:121
 msgid "Operation canceled"
@@ -2023,7 +2036,15 @@ msgstr "尝试调整您的搜索或筛选条件以找到您想要的内容。"
 msgid "Try again"
 msgstr "重试"
 
-#: src/lib/toneRowProjects.ts:20
+#: src/components/FlowchartChatBar.tsx:57
+msgid "Try flowchart.chat →"
+msgstr "尝试 flowchart.chat →"
+
+#: src/lib/toneRowProjects.ts:17
+msgid "Turn a written process into a flowchart, checklist and guide"
+msgstr "将书面流程转换为流程图、清单和指南"
+
+#: src/lib/toneRowProjects.ts:29
 msgid "Turn documents into diagrams with AI"
 msgstr "使用人工智能将文档转换为图表"
 
@@ -2343,6 +2364,10 @@ msgstr "放大"
 msgid "Zoom Out"
 msgstr "縮小"
 
+#: src/components/FlowchartChatBar.tsx:35
+msgid "flowchart.chat turns a written process into a flowchart, a checklist and a guide."
+msgstr "flowchart.chat 会将书面流程转换为流程图、清单和指南。"
+
 #: src/components/Checkout.tsx:322
 msgid "month"
 msgstr "月份"
@@ -2358,6 +2383,10 @@ msgstr "或"
 #: src/pages/Pricing2.tsx:183
 msgid "or get a <0>30-Day Pass for $9</0> — one payment, never renews"
 msgstr "或者购买<0>30天通行证，售价$9</0> — 一次付款，永不续费 "
+
+#: src/components/FlowchartChatBar.tsx:30
+msgid "turn this chart into a step-by-step guide your team can click through."
+msgstr "将此图表转换为团队可以逐步点击浏览的指南。"
 
 #: src/components/PaywallModal.tsx:75
 msgid "{buttonText}"
