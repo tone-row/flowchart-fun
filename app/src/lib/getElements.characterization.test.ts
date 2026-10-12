@@ -175,6 +175,26 @@ describe("getElements characterization", () => {
     expect([es[0].data.source, es[0].data.target]).toEqual(["n2", "a"]);
   });
 
+  it("a reference at a container's top level places that node in the container", () => {
+    const els = getElements(
+      "Task A #a\nTask B #b\n  (#a)\nSprint #sprint {\n  (#a)\n  (#b)\n  Task C #c\n}\nBacklog #backlog {\n  Task D #d\n}\nLater #later {\n  (#d)\n    Task E #e\n}"
+    );
+    const parents = Object.fromEntries(
+      nodes(els).map((n) => [n.data.id, n.data.parent ?? null])
+    );
+
+    expect(parents).toMatchObject({
+      a: "sprint",
+      b: "sprint",
+      c: "sprint",
+      d: "backlog",
+      e: "later",
+    });
+    expect(edges(els).map((e) => `${e.data.source}->${e.data.target}`)).toEqual(
+      ["b->a", "d->e"]
+    );
+  });
+
   it("a label pointer that also matches an edge label only produces node-to-node edges", () => {
     const els = getElements("A\n  null: C\n  B\n    fail: (null)\n  null");
     const nodeIds = new Set(nodes(els).map((n) => n.data.id));
