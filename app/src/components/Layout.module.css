@@ -40,15 +40,10 @@
   overflow: hidden;
 }
 
-.LayoutWrapper[data-banner="true"]:not([data-fullscreen="true"]) {
-  /* grid-template: auto auto minmax(0, 1fr) / none; */
-  /* sm:grid-rows-[auto_auto_minmax(0,1fr)] */
-  @apply grid-rows-[auto_minmax(0,1fr)] sm:grid-rows-[auto_auto_minmax(0,1fr)] grid-cols-[auto];
+.LayoutWrapper[data-banner]:not([data-fullscreen="true"]) {
+  @apply grid-rows-[auto_minmax(0,1fr)] md:grid-rows-[auto_auto_minmax(0,1fr)] grid-cols-[auto];
 }
 
-.Banner {
-  background-color: var(--palette-purple-3);
-  font-weight: 700;
-  text-align: center;
-  color: var(--palette-purple-0);
+.LayoutWrapper[data-banner="flowchart-chat"] :global(.mobile-header__toggle) {
+  top: 37px;
 }
