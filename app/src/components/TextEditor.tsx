@@ -115,15 +115,26 @@ export function TextEditor({ extendOptions = {}, ...props }: TextEditorProps) {
 
             // Listen to when the user pastes into the document
             editor.onDidPaste((e) => {
+              const model = editor.getModel();
+              if (!model) return;
               // get the text in the range
-              const text = editor.getModel()?.getValueInRange(e.range);
+              const text = model.getValueInRange(e.range);
 
               if (text) {
                 // store it in the editor
                 useEditorStore.setState({ userPasted: text });
 
                 // sanitize it if necessary
-                const sanitized = repairText(text);
+                const value = model.getValue();
+                const sanitized = repairText(text, {
+                  before: value.slice(
+                    0,
+                    model.getOffsetAt(e.range.getStartPosition())
+                  ),
+                  after: value.slice(
+                    model.getOffsetAt(e.range.getEndPosition())
+                  ),
+                });
                 if (sanitized) {
                   replaceRange(editor, e.range, sanitized);
                 }
