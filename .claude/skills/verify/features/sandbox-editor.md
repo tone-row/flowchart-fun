@@ -7,6 +7,7 @@ The home page (`/`) is a split view: a Monaco text editor on the left and a live
 - `sandbox-render` — typed text re-renders the graph: nodes, edges, edge labels, classes. Driven by `examples/sandbox-edit.mjs`.
 - `sandbox-persist` — the doc is saved to `flowcharts.fun.sandbox` with `meta.expires` ≈ now + 24h and survives a reload. Driven by `examples/sandbox-edit.mjs`.
 - `sandbox-paste` — pasting 3+ lines also offers "Convert to Flowchart Fun syntax?". _Not yet driven_ beyond observing the overlay text.
+- `sandbox-paste-repair` — a paste that breaks the document where it lands gets its `:` or `(`/`)` escaped (`Test: test` at the top level becomes `Test\: test`). The check runs on the whole document, so an edge label pasted under a parent stays as pasted, and an error on another line leaves the paste alone. Driven by `examples/paste-repair.mjs`.
 - `sandbox-expiry` — every save re-stamps `meta.expires` to now + 24h (also after the mobile Clear button, which writes `meta: {}`), so a chart being edited survives leaving `/` and coming back; an expired or missing stamp resets to the default chart on the next mount of `/`. Driven by `examples/sandbox-expiry.mjs`.
 - `sandbox-upsell` — after 3 min of editing (20s with `?isE2E=true`) the "Don't Lose Your Work" modal appears. _Not yet driven_ (covered by `app/e2e/not-logged-in.spec.ts`).
 - `sandbox-parse-error` — invalid text shows an editor error instead of crashing the graph. _Not yet driven._
