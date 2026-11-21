@@ -1,0 +1,23 @@
+/** Code shown in the Learn Syntax dialog. `<span data-highlight>` marks the part each example teaches. */
+export const syntaxExamples = {
+  nodes: `Hello\nWorld`,
+  nodeIds: `Hello <span data-highlight>#x</span>\nWorld <span data-highlight>#y</span>`,
+  nodeClasses: `Cat <span data-highlight>.animals</span>\nDog <span data-highlight>.animals</span>`,
+  nodeData: `Hello #x.color_blue<span data-highlight>[letters=5]</span>\nWorld #y.color_red<span data-highlight>[letters=5]</span>`,
+  edges: `Hello\n  World`,
+  edgeLabels: `Hello\n  to the: World`,
+  edgeIds: `Hello\n  <span data-highlight>#x</span> to the: World`,
+  referenceByLabel: `Hello\n  World\n    <span data-highlight>(Hello)</span>`,
+  referenceById: `Hello #x\n  World #y\n    <span data-highlight>(#x)</span>`,
+  referenceByClass: `Cat .animals\nDog .animals\nAnimals\n  <span data-highlight>(.animals)</span>`,
+  referenceByClassAsSource: `Cat .animals\nDog .animals\n\n<span data-highlight>(.animals)</span>\n  are pets`,
+  containers: `Solar System <span data-highlight>{</span>\n  Earth\n    Mars\n<span data-highlight>}</span>`,
+  colors: `Hello <span data-highlight>.color_red</span>\n  World <span data-highlight>.color_blue</span>`,
+  shapes: `Hello <span data-highlight>.shape_diamond</span>\n  World <span data-highlight>.shape_ellipse</span>`,
+  edgeStyle: `Hello\n  <span data-highlight>.line_dashed</span> to the: world\n    <span data-highlight>.line_dotted</span>: (Hello)`,
+  arrowShapes: `a\n<span data-highlight>.source-triangle</span>: b\n  <span data-highlight>.source-circle.target-circle</span>: c\n    <span data-highlight>.target-chevron</span>: (a)`,
+  nodeBorders: `A <span data-highlight>.border_dashed</span>\nB <span data-highlight>.border_dotted</span>\nC <span data-highlight>.border_double</span>\nD <span data-highlight>.border_none</span>`,
+  nodeSize: `👋 <span data-highlight>[w=50]</span>\n👋 <span data-highlight>[h=50]</span>\n👋 <span data-highlight>[w=50][h=50]</span>`,
+  image: `Flowchart Fun <span data-highlight>[src="https://flowchart.fun/apple-touch-icon.png"]</span>[w=90][h=90]`,
+  link: `Open Twitter 🐦 <span data-highlight>[href="https://twitter.com"]</span>`,
+};
