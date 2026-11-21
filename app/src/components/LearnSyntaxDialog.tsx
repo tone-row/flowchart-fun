@@ -303,7 +303,7 @@ export function LearnSyntaxDialog() {
                   Choose from a variety of arrow shapes for the source and
                   target of an edge. Shapes include triangle, triangle-tee,
                   circle-triangle, triangle-cross, triangle-backcurve, vee, tee,
-                  square, circle, diamond, chevron, none. .
+                  square, circle, diamond, chevron, and none.
                 </Trans>
               </p>
               <CodeExample

@@ -1,4 +1,5 @@
 import { StylesheetCSS } from "cytoscape";
+import { BuiltinStyleClass, styleClasses } from "shared";
 
 export const shapes: cytoscape.Css.Node["shape"][] = [
   "rectangle",
@@ -74,29 +75,6 @@ childlessShapeClasses.push({
   },
 });
 
-const arrowSuffixes = [
-  "triangle",
-  "triangle-tee",
-  "circle-triangle",
-  "triangle-cross",
-  "triangle-backcurve",
-  "vee",
-  "tee",
-  "square",
-  "circle",
-  "diamond",
-  "chevron",
-  "none",
-];
-
-export const sourceArrowSuffixes = arrowSuffixes.map(
-  (suffix) => `source-${suffix}` as cytoscape.Css.ArrowShape
-);
-
-export const targetArrowSuffixes = arrowSuffixes.map(
-  (suffix) => `target-${suffix}` as cytoscape.Css.ArrowShape
-);
-
 export const edgeStyleClasses: StylesheetCSS[] = [
   {
     // taxi and straight edges have no offset, so several edges on one node
@@ -112,27 +90,18 @@ export const edgeStyleClasses: StylesheetCSS[] = [
       "control-point-step-size": 90,
     },
   },
-  {
-    selector: "edge.border_dashed",
-    css: {
-      "line-style": "dashed",
-    },
-  },
-  {
-    selector: "edge.border_dotted",
-    css: {
-      "line-style": "dotted",
-    },
-  },
-  {
-    selector: "edge.border_solid",
-    css: {
-      "line-style": "solid",
-    },
-  },
+  ...styleClasses
+    .filter(
+      (c): c is BuiltinStyleClass =>
+        c.owner === "builtin" && c.element === "edge"
+    )
+    .map(({ name, style }) => ({
+      selector: `edge.${name}`,
+      css: style as any,
+    })),
 ];
 
-const borders = ["none", "solid", "dashed", "dotted", "double"];
+const borders = ["solid", "dashed", "dotted", "double"];
 
 /**
  * When default nodes have no border width, we need a given width
@@ -141,44 +110,14 @@ const borders = ["none", "solid", "dashed", "dotted", "double"];
 export function createSmartChildlessBorderClasses(
   width: number
 ): StylesheetCSS[] {
-  return borders.map((border) => ({
-    selector: `:childless.border_${border}`,
-    css: {
-      "border-width": width,
-      "border-style": border as any,
-    },
-  }));
+  return [
+    { selector: ":childless.border_none", css: { "border-width": 0 } },
+    ...borders.map((border) => ({
+      selector: `:childless.border_${border}`,
+      css: {
+        "border-width": width,
+        "border-style": border as any,
+      },
+    })),
+  ];
 }
-
-export const nodeBorderClasses: StylesheetCSS[] = [
-  {
-    selector: ":childless.border_solid",
-    css: {
-      "border-style": "solid",
-    },
-  },
-  {
-    selector: ":childless.border_dashed",
-    css: {
-      "border-style": "dashed",
-    },
-  },
-  {
-    selector: ":childless.border_dotted",
-    css: {
-      "border-style": "dotted",
-    },
-  },
-  {
-    selector: ":childless.border_double",
-    css: {
-      "border-style": "double",
-    },
-  },
-  {
-    selector: ":childless.border_none",
-    css: {
-      "border-width": 0,
-    },
-  },
-];

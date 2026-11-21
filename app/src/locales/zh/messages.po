@@ -140,7 +140,7 @@ msgstr "你确定吗？"
 msgid "Arrow Size"
 msgstr "箭头大小"
 
-#: src/components/LearnSyntaxDialog.tsx:153
+#: src/components/LearnSyntaxDialog.tsx:150
 msgid "Attributes"
 msgstr "属性"
 
@@ -249,7 +249,7 @@ msgstr "取消订阅。您的托管图表将变为只读。"
 msgid "Canceling is easy. Simply go to your account page, scroll to the bottom, and click cancel. If you're not completely satisfied, we offer a refund on your first payment."
 msgstr "取消很容易。只需转到您的账户页面，滚动到底部，然后点击取消。如果您不完全满意，我们会退还您第一次付款的费用。"
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:330
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "某些属性可用于自定义元素的外观或功能。"
 
@@ -288,8 +288,8 @@ msgstr "選擇"
 msgid "Choose Template"
 msgstr "选择模板"
 
-#: src/components/LearnSyntaxDialog.tsx:327
-msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
+#: src/components/LearnSyntaxDialog.tsx:302
+msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, and none."
 msgstr "为边缘的源和目标选择各种箭头形状。形状包括三角形，三角形-T，圆形-三角形，三角形-十字，三角形-后曲线，V形，T形，正方形，圆形，菱形，雪花形，无。"
 
 #: src/components/Tabs/ThemeTab.tsx:449
@@ -304,7 +304,7 @@ msgstr "选择如何自动排列您的流程图中的节点"
 msgid "Circle"
 msgstr "圆圈"
 
-#: src/components/LearnSyntaxDialog.tsx:144
+#: src/components/LearnSyntaxDialog.tsx:143
 msgid "Classes"
 msgstr "类"
 
@@ -327,7 +327,7 @@ msgid "Clone Flowchart"
 msgstr "克隆流程图"
 
 #: src/components/Layout.tsx:48
-#: src/components/LearnSyntaxDialog.tsx:413
+#: src/components/LearnSyntaxDialog.tsx:376
 msgid "Close"
 msgstr "关闭"
 
@@ -340,7 +340,7 @@ msgstr "关闭公告"
 msgid "Color"
 msgstr "颜色"
 
-#: src/components/LearnSyntaxDialog.tsx:287
+#: src/components/LearnSyntaxDialog.tsx:268
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "颜色包括红色，橙色，黄色，蓝色，紫色，黑色，白色和灰色。"
 
@@ -380,11 +380,11 @@ msgstr "容器从未闭合，因此它下面的每一行都在容器内。请在
 msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
 msgstr "容器没有在你预期的位置闭合。没有缩进在它下面的行也被包含在容器内。请把它的 {brace} 上移到最后一个缩进行之后。"
 
-#: src/components/LearnSyntaxDialog.tsx:260
+#: src/components/LearnSyntaxDialog.tsx:244
 msgid "Containers"
 msgstr "容器"
 
-#: src/components/LearnSyntaxDialog.tsx:263
+#: src/components/LearnSyntaxDialog.tsx:247
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "容器是包含其他节点的节点。它们使用大括号声明。"
 
@@ -492,7 +492,7 @@ msgstr "通過AI創建"
 msgid "Created Date"
 msgstr "创建日期"
 
-#: src/components/LearnSyntaxDialog.tsx:167
+#: src/components/LearnSyntaxDialog.tsx:162
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "在两个节点之间创建边缘是通过将第二个节点缩进第一个节点来完成的"
 
@@ -608,7 +608,7 @@ msgstr "下载 SVG"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "将CSV文件拖放到此处，或单击以选择文件"
 
-#: src/components/LearnSyntaxDialog.tsx:248
+#: src/components/LearnSyntaxDialog.tsx:232
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "通过引用开始行从多个节点绘制边缘"
 
@@ -620,11 +620,11 @@ msgstr "將檔案拖放到這裡..."
 msgid "Each line becomes a node"
 msgstr "每一行都变成一个节点"
 
-#: src/components/LearnSyntaxDialog.tsx:188
+#: src/components/LearnSyntaxDialog.tsx:183
 msgid "Edge ID, Classes, Attributes"
 msgstr "邊緣ID、類別和屬性"
 
-#: src/components/LearnSyntaxDialog.tsx:176
+#: src/components/LearnSyntaxDialog.tsx:171
 msgid "Edge Label"
 msgstr "邊緣標籤"
 
@@ -633,7 +633,7 @@ msgstr "邊緣標籤"
 msgid "Edge Label Column"
 msgstr "邊緣標籤欄"
 
-#: src/components/LearnSyntaxDialog.tsx:311
+#: src/components/LearnSyntaxDialog.tsx:286
 #: src/components/Tabs/ThemeTab.tsx:445
 msgid "Edge Style"
 msgstr "邊緣樣式"
@@ -648,7 +648,7 @@ msgid "Edge missing indentation"
 msgstr "缺少缩进的边"
 
 #: src/components/ImportDataDialog.tsx:402
-#: src/components/LearnSyntaxDialog.tsx:164
+#: src/components/LearnSyntaxDialog.tsx:159
 #: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edges"
 msgstr "边"
@@ -665,11 +665,11 @@ msgstr "边声明在与目标节点相同的行中"
 msgid "Edges are declared in their own row"
 msgstr "边声明在自己的行中"
 
-#: src/components/LearnSyntaxDialog.tsx:191
+#: src/components/LearnSyntaxDialog.tsx:186
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "边在标签之前可以有ID，类和属性"
 
-#: src/components/LearnSyntaxDialog.tsx:314
+#: src/components/LearnSyntaxDialog.tsx:289
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "边可以用虚线，点线或实线样式"
 
@@ -971,7 +971,7 @@ msgstr "您想如何保存您的流程图？"
 msgid "I would like to request a new template:"
 msgstr "我想请求一个新的模板："
 
-#: src/components/LearnSyntaxDialog.tsx:136
+#: src/components/LearnSyntaxDialog.tsx:137
 msgid "ID's"
 msgstr "ID"
 
@@ -983,7 +983,7 @@ msgstr "如果該電子郵件存在該帳戶，我們已經發送給您一封電
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "如果你想创建一个边，缩进这一行。如果不，用反斜杠转义冒号<0>\\:</0>"
 
-#: src/components/LearnSyntaxDialog.tsx:377
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Images"
 msgstr "图像"
 
@@ -1093,7 +1093,7 @@ msgstr "布局算法"
 msgid "Layout Frozen"
 msgstr "布局已冻结"
 
-#: src/components/LearnSyntaxDialog.tsx:245
+#: src/components/LearnSyntaxDialog.tsx:229
 msgid "Leading References"
 msgstr "主要參考"
 
@@ -1102,8 +1102,8 @@ msgstr "主要參考"
 msgid "Learn More"
 msgstr "学到更多"
 
-#: src/components/LearnSyntaxDialog.tsx:84
-#: src/components/LearnSyntaxDialog.tsx:109
+#: src/components/LearnSyntaxDialog.tsx:85
+#: src/components/LearnSyntaxDialog.tsx:110
 msgid "Learn Syntax"
 msgstr "學習語法"
 
@@ -1328,11 +1328,11 @@ msgstr "没有找到匹配的图表"
 msgid "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
 msgstr "不，Pro计划没有使用限制。您可以无限制地创建流程图和使用AI功能，让您自由探索和创新，没有任何限制。"
 
-#: src/components/LearnSyntaxDialog.tsx:340
+#: src/components/LearnSyntaxDialog.tsx:315
 msgid "Node Border Style"
 msgstr "节点边框样式"
 
-#: src/components/LearnSyntaxDialog.tsx:284
+#: src/components/LearnSyntaxDialog.tsx:265
 msgid "Node Colors"
 msgstr "节点颜色"
 
@@ -1340,12 +1340,12 @@ msgstr "节点颜色"
 msgid "Node ID"
 msgstr "节点ID"
 
-#: src/components/LearnSyntaxDialog.tsx:134
+#: src/components/LearnSyntaxDialog.tsx:135
 msgid "Node ID, Classes, Attributes"
 msgstr "节点ID、类、属性"
 
 #: src/components/ImportDataDialog.tsx:393
-#: src/components/LearnSyntaxDialog.tsx:123
+#: src/components/LearnSyntaxDialog.tsx:124
 msgid "Node Label"
 msgstr "节点标签"
 
@@ -1354,7 +1354,7 @@ msgstr "节点标签"
 msgid "Node Shape"
 msgstr "节点形状"
 
-#: src/components/LearnSyntaxDialog.tsx:297
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Node Shapes"
 msgstr "节点形状"
 
@@ -1362,7 +1362,7 @@ msgstr "节点形状"
 msgid "Nodes"
 msgstr "节点"
 
-#: src/components/LearnSyntaxDialog.tsx:343
+#: src/components/LearnSyntaxDialog.tsx:318
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "节点可以使用虚线、点线或双线样式。边框也可以使用 border_none 来移除。"
 
@@ -1537,35 +1537,35 @@ msgstr "速率限制超出。 请稍后再试。"
 msgid "Read-only"
 msgstr "只读"
 
-#: src/components/LearnSyntaxDialog.tsx:231
+#: src/components/LearnSyntaxDialog.tsx:218
 msgid "Reference by Class"
 msgstr "按类引用"
 
-#: src/components/LearnSyntaxDialog.tsx:221
+#: src/components/LearnSyntaxDialog.tsx:211
 msgid "Reference by ID"
 msgstr "按 ID 参考"
 
-#: src/components/LearnSyntaxDialog.tsx:211
+#: src/components/LearnSyntaxDialog.tsx:204
 msgid "Reference by Label"
 msgstr "按标签参考"
 
-#: src/components/LearnSyntaxDialog.tsx:202
+#: src/components/LearnSyntaxDialog.tsx:195
 msgid "References"
 msgstr "参考"
 
-#: src/components/LearnSyntaxDialog.tsx:205
+#: src/components/LearnSyntaxDialog.tsx:198
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "参考用于在文档中其他位置创建的节点之间创建边"
 
-#: src/components/LearnSyntaxDialog.tsx:214
+#: src/components/LearnSyntaxDialog.tsx:207
 msgid "Referencing a node by its exact label"
 msgstr "通过其确切标签引用节点"
 
-#: src/components/LearnSyntaxDialog.tsx:224
+#: src/components/LearnSyntaxDialog.tsx:214
 msgid "Referencing a node by its unique ID"
 msgstr "通过其唯一ID引用节点"
 
-#: src/components/LearnSyntaxDialog.tsx:234
+#: src/components/LearnSyntaxDialog.tsx:221
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "使用相同分配的类引用多个节点"
 
@@ -1756,7 +1756,7 @@ msgstr "源分隔符"
 msgid "Source Distance From Node"
 msgstr "源节点距离"
 
-#: src/components/LearnSyntaxDialog.tsx:324
+#: src/components/LearnSyntaxDialog.tsx:299
 msgid "Source/Target Arrow Shape"
 msgstr "源/目标箭头形状"
 
@@ -1765,7 +1765,7 @@ msgstr "源/目标箭头形状"
 msgid "Spacing"
 msgstr "间距"
 
-#: src/components/LearnSyntaxDialog.tsx:355
+#: src/components/LearnSyntaxDialog.tsx:327
 msgid "Special Attributes"
 msgstr "特殊属性"
 
@@ -1798,11 +1798,11 @@ msgstr "步骤2"
 msgid "Step 3"
 msgstr "步骤3"
 
-#: src/components/LearnSyntaxDialog.tsx:156
+#: src/components/LearnSyntaxDialog.tsx:153
 msgid "Store any data associated to a node"
 msgstr "將任何與節點相關的資料儲存"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:256
 msgid "Style Classes"
 msgstr "樣式類別"
 
@@ -1884,11 +1884,11 @@ msgstr "文本最大宽度"
 msgid "Text Vertical Offset"
 msgstr "文字垂直偏移"
 
-#: src/components/LearnSyntaxDialog.tsx:179
+#: src/components/LearnSyntaxDialog.tsx:174
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "以冒号加空格结尾的文本将创建一个边，文本作为标签"
 
-#: src/components/LearnSyntaxDialog.tsx:126
+#: src/components/LearnSyntaxDialog.tsx:127
 msgid "Text on a line creates a node with the text as the label"
 msgstr "在一行中的文本将创建一个节点，文本作为标签"
 
@@ -1896,7 +1896,7 @@ msgstr "在一行中的文本将创建一个节点，文本作为标签"
 msgid "Thank you for your feedback!"
 msgstr "感谢您的反馈!"
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:259
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "更改样式的最佳方式是右键单击节点或边缘，然后选择所需的样式。"
 
@@ -1920,7 +1920,7 @@ msgstr "用于分隔多个源节点的分隔符"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "用于分隔多个目标节点的分隔符"
 
-#: src/components/LearnSyntaxDialog.tsx:300
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "The possible shapes are:"
 msgstr "可能的形状是："
 
@@ -2072,7 +2072,7 @@ msgstr "撤消"
 msgid "Unescaped special character"
 msgstr "未转义的特殊字符"
 
-#: src/components/LearnSyntaxDialog.tsx:138
+#: src/components/LearnSyntaxDialog.tsx:139
 msgid "Unique text value to identify a node"
 msgstr "用于标识节点的唯一文本值"
 
@@ -2160,19 +2160,19 @@ msgstr "僅使用自定義CSS"
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
 msgstr "使用Lucidchart或Visio？CSV导入使从任何来源获取数据变得容易！"
 
-#: src/components/LearnSyntaxDialog.tsx:147
+#: src/components/LearnSyntaxDialog.tsx:146
 msgid "Use classes to group nodes"
 msgstr "使用类来分组节点"
 
-#: src/components/LearnSyntaxDialog.tsx:394
+#: src/components/LearnSyntaxDialog.tsx:360
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "使用属性<0>href</0>在节点上设置一个在新标签页中打开的链接。"
 
-#: src/components/LearnSyntaxDialog.tsx:380
+#: src/components/LearnSyntaxDialog.tsx:349
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "使用属性<0>src</0>来设置节点的图像，图像将被缩放以适应节点，因此您可能需要调整节点的宽度和高度以获得期望的结果。仅支持公共图像（不受CORS阻止）。"
 
-#: src/components/LearnSyntaxDialog.tsx:367
+#: src/components/LearnSyntaxDialog.tsx:339
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "使用属性<0>w</0>和<1>h</1>显式设置节点的宽度和高度。"
 
@@ -2249,7 +2249,7 @@ msgstr "虽然我们不提供免费试用，但您可以通过一次性支付$9�
 msgid "Width"
 msgstr "宽度"
 
-#: src/components/LearnSyntaxDialog.tsx:364
+#: src/components/LearnSyntaxDialog.tsx:336
 msgid "Width and Height"
 msgstr "宽度和高度"
 

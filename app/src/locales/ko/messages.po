@@ -140,7 +140,7 @@ msgstr "확실합니까?"
 msgid "Arrow Size"
 msgstr "화살표 크기"
 
-#: src/components/LearnSyntaxDialog.tsx:153
+#: src/components/LearnSyntaxDialog.tsx:150
 msgid "Attributes"
 msgstr "속성"
 
@@ -249,7 +249,7 @@ msgstr "구독을 취소하십시오. 귀하의 호스트 차트가 읽기 전�
 msgid "Canceling is easy. Simply go to your account page, scroll to the bottom, and click cancel. If you're not completely satisfied, we offer a refund on your first payment."
 msgstr "취소는 간단합니다. 계정 페이지로 이동하여 맨 아래로 스크롤하고 취소를 클릭하면 됩니다. 만족하지 않으시면 첫 번째 결제에 대한 환불을 제공합니다."
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:330
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "일부 속성은 요소의 모양 또는 기능을 사용자 정의하기 위해 사용할 수 있습니다."
 
@@ -288,8 +288,8 @@ msgstr "선택하세요"
 msgid "Choose Template"
 msgstr "템플릿 선택"
 
-#: src/components/LearnSyntaxDialog.tsx:327
-msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
+#: src/components/LearnSyntaxDialog.tsx:302
+msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, and none."
 msgstr "에지의 소스와 목적지를 위한 다양한 화살표 모양을 선택합니다. 모양에는 삼각형, 삼각형-티, 원-삼각형, 삼각형-가위형, 삼각형-뒤곡선, 베이, 티, 사각형, 원, 다이아몬드, 쉐브론, 없음이 포함됩니다."
 
 #: src/components/Tabs/ThemeTab.tsx:449
@@ -304,7 +304,7 @@ msgstr "플로우차트에서 노드가 자동으로 정렬되는 방식을 선�
 msgid "Circle"
 msgstr "원"
 
-#: src/components/LearnSyntaxDialog.tsx:144
+#: src/components/LearnSyntaxDialog.tsx:143
 msgid "Classes"
 msgstr "클래스"
 
@@ -327,7 +327,7 @@ msgid "Clone Flowchart"
 msgstr "플로우차트 복제"
 
 #: src/components/Layout.tsx:48
-#: src/components/LearnSyntaxDialog.tsx:413
+#: src/components/LearnSyntaxDialog.tsx:376
 msgid "Close"
 msgstr "닫기"
 
@@ -340,7 +340,7 @@ msgstr "공지 닫기"
 msgid "Color"
 msgstr "색상"
 
-#: src/components/LearnSyntaxDialog.tsx:287
+#: src/components/LearnSyntaxDialog.tsx:268
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "색상에는 빨강, 주황, 노랑, 파랑, 보라, 검정, 흰색, 회색이 포함됩니다."
 
@@ -380,11 +380,11 @@ msgstr "컨테이너가 닫히지 않아서 그 아래의 모든 줄이 컨테�
 msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
 msgstr "컨테이너가 예상한 위치에서 닫히지 않았습니다. 그 아래로 들여쓰지 않은 줄도 컨테이너 안에 들어갑니다. {brace}를 마지막으로 들여쓴 줄 바로 다음으로 옮기세요."
 
-#: src/components/LearnSyntaxDialog.tsx:260
+#: src/components/LearnSyntaxDialog.tsx:244
 msgid "Containers"
 msgstr "컨테이너"
 
-#: src/components/LearnSyntaxDialog.tsx:263
+#: src/components/LearnSyntaxDialog.tsx:247
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "컨테이너는 다른 노드를 포함하는 노드입니다. 중괄호를 사용하여 선언됩니다."
 
@@ -492,7 +492,7 @@ msgstr "AI로 만들기"
 msgid "Created Date"
 msgstr "생성일자"
 
-#: src/components/LearnSyntaxDialog.tsx:167
+#: src/components/LearnSyntaxDialog.tsx:162
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "두 노드 사이에 엣지를 만드는 것은 첫 번째 노드 아래에 두 번째 노드를 들여 쓰는 것으로 합니다."
 
@@ -608,7 +608,7 @@ msgstr "SVG 다운로드"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV 파일을 여기에 드래그 앤 드롭하거나 파일을 선택하려면 클릭하세요."
 
-#: src/components/LearnSyntaxDialog.tsx:248
+#: src/components/LearnSyntaxDialog.tsx:232
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "참조를 시작하여 여러 노드로부터 엣지를 그립니다."
 
@@ -620,11 +620,11 @@ msgstr "파일을 여기에 드롭하세요 ..."
 msgid "Each line becomes a node"
 msgstr "각 줄은 노드가 됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:188
+#: src/components/LearnSyntaxDialog.tsx:183
 msgid "Edge ID, Classes, Attributes"
 msgstr "가장자리 ID, 클래스, 속성"
 
-#: src/components/LearnSyntaxDialog.tsx:176
+#: src/components/LearnSyntaxDialog.tsx:171
 msgid "Edge Label"
 msgstr "가장자리 라벨"
 
@@ -633,7 +633,7 @@ msgstr "가장자리 라벨"
 msgid "Edge Label Column"
 msgstr "가장자리 라벨 열"
 
-#: src/components/LearnSyntaxDialog.tsx:311
+#: src/components/LearnSyntaxDialog.tsx:286
 #: src/components/Tabs/ThemeTab.tsx:445
 msgid "Edge Style"
 msgstr "가장자리 스타일"
@@ -648,7 +648,7 @@ msgid "Edge missing indentation"
 msgstr "들여쓰기가 누락된 가장자리"
 
 #: src/components/ImportDataDialog.tsx:402
-#: src/components/LearnSyntaxDialog.tsx:164
+#: src/components/LearnSyntaxDialog.tsx:159
 #: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edges"
 msgstr "가장자리"
@@ -665,11 +665,11 @@ msgstr "가장자리는 목표 노드가 있는 같은 행에 선언됩니다."
 msgid "Edges are declared in their own row"
 msgstr "가장자리는 자신의 행에 선언됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:191
+#: src/components/LearnSyntaxDialog.tsx:186
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "라벨 앞에 ID, 클래스 및 속성도 가질 수 있습니다."
 
-#: src/components/LearnSyntaxDialog.tsx:314
+#: src/components/LearnSyntaxDialog.tsx:289
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "가장자리는 점선, 점선 또는 실선으로 스타일이 지정될 수 있습니다."
 
@@ -971,7 +971,7 @@ msgstr "당신의 차트를 저장하려면 어떻게 하시겠습니까?"
 msgid "I would like to request a new template:"
 msgstr "새로운 템플릿을 요청하고 싶습니다:"
 
-#: src/components/LearnSyntaxDialog.tsx:136
+#: src/components/LearnSyntaxDialog.tsx:137
 msgid "ID's"
 msgstr "식별자"
 
@@ -983,7 +983,7 @@ msgstr "해당 이메일로 계정이 있다면 비밀번호 재설정을 위한
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "만약 가장자리를 만들려면, 이 줄을 들여쓰기하십시오. 만약 그렇지 않다면, 콜론을 백슬래시로 이스케이프하십시오 <0>\\:</0>"
 
-#: src/components/LearnSyntaxDialog.tsx:377
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Images"
 msgstr "이미지"
 
@@ -1093,7 +1093,7 @@ msgstr "레이아웃 알고리즘"
 msgid "Layout Frozen"
 msgstr "레이아웃 동결"
 
-#: src/components/LearnSyntaxDialog.tsx:245
+#: src/components/LearnSyntaxDialog.tsx:229
 msgid "Leading References"
 msgstr "주목할만한 참고"
 
@@ -1102,8 +1102,8 @@ msgstr "주목할만한 참고"
 msgid "Learn More"
 msgstr "더 알아보기"
 
-#: src/components/LearnSyntaxDialog.tsx:84
-#: src/components/LearnSyntaxDialog.tsx:109
+#: src/components/LearnSyntaxDialog.tsx:85
+#: src/components/LearnSyntaxDialog.tsx:110
 msgid "Learn Syntax"
 msgstr "구문 배우기"
 
@@ -1328,11 +1328,11 @@ msgstr "일치하는 차트를 찾을 수 없습니다"
 msgid "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
 msgstr "아니요, 프로 플랜에는 사용량 제한이 없습니다. 무제한 플로우차트 생성 및 AI 기능을 즐겨보세요. 제한 없이 탐색하고 혁신할 수 있습니다."
 
-#: src/components/LearnSyntaxDialog.tsx:340
+#: src/components/LearnSyntaxDialog.tsx:315
 msgid "Node Border Style"
 msgstr "노드 경계 스타일"
 
-#: src/components/LearnSyntaxDialog.tsx:284
+#: src/components/LearnSyntaxDialog.tsx:265
 msgid "Node Colors"
 msgstr "노드 색상"
 
@@ -1340,12 +1340,12 @@ msgstr "노드 색상"
 msgid "Node ID"
 msgstr "노드 ID"
 
-#: src/components/LearnSyntaxDialog.tsx:134
+#: src/components/LearnSyntaxDialog.tsx:135
 msgid "Node ID, Classes, Attributes"
 msgstr "노드 ID, 클래스, 속성"
 
 #: src/components/ImportDataDialog.tsx:393
-#: src/components/LearnSyntaxDialog.tsx:123
+#: src/components/LearnSyntaxDialog.tsx:124
 msgid "Node Label"
 msgstr "노드 라벨"
 
@@ -1354,7 +1354,7 @@ msgstr "노드 라벨"
 msgid "Node Shape"
 msgstr "노드 모양"
 
-#: src/components/LearnSyntaxDialog.tsx:297
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Node Shapes"
 msgstr "노드 모양"
 
@@ -1362,7 +1362,7 @@ msgstr "노드 모양"
 msgid "Nodes"
 msgstr "노드"
 
-#: src/components/LearnSyntaxDialog.tsx:343
+#: src/components/LearnSyntaxDialog.tsx:318
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "노드는 점선, 점점선 또는 이중 선으로 스타일링 할 수 있습니다. 또한 border_none을 사용하여 테두리를 제거할 수도 있습니다."
 
@@ -1537,35 +1537,35 @@ msgstr "요청 제한이 초과되었습니다. 나중에 다시 시도해주세
 msgid "Read-only"
 msgstr "읽기 전용"
 
-#: src/components/LearnSyntaxDialog.tsx:231
+#: src/components/LearnSyntaxDialog.tsx:218
 msgid "Reference by Class"
 msgstr "클래스로 참조"
 
-#: src/components/LearnSyntaxDialog.tsx:221
+#: src/components/LearnSyntaxDialog.tsx:211
 msgid "Reference by ID"
 msgstr "ID로 참조"
 
-#: src/components/LearnSyntaxDialog.tsx:211
+#: src/components/LearnSyntaxDialog.tsx:204
 msgid "Reference by Label"
 msgstr "레이블로 참조"
 
-#: src/components/LearnSyntaxDialog.tsx:202
+#: src/components/LearnSyntaxDialog.tsx:195
 msgid "References"
 msgstr "참조"
 
-#: src/components/LearnSyntaxDialog.tsx:205
+#: src/components/LearnSyntaxDialog.tsx:198
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "참조는 문서 내부에서 만들어진 노드 사이에 간선을 만들기 위해 사용됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:214
+#: src/components/LearnSyntaxDialog.tsx:207
 msgid "Referencing a node by its exact label"
 msgstr "정확한 레이블로 노드를 참조하기"
 
-#: src/components/LearnSyntaxDialog.tsx:224
+#: src/components/LearnSyntaxDialog.tsx:214
 msgid "Referencing a node by its unique ID"
 msgstr "고유한 ID로 노드를 참조하기"
 
-#: src/components/LearnSyntaxDialog.tsx:234
+#: src/components/LearnSyntaxDialog.tsx:221
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "동일한 할당 된 클래스로 여러 노드를 참조하기 "
 
@@ -1756,7 +1756,7 @@ msgstr "소스 구분자"
 msgid "Source Distance From Node"
 msgstr "노드에서 소스 거리"
 
-#: src/components/LearnSyntaxDialog.tsx:324
+#: src/components/LearnSyntaxDialog.tsx:299
 msgid "Source/Target Arrow Shape"
 msgstr "소스/대상 화살표 모양"
 
@@ -1765,7 +1765,7 @@ msgstr "소스/대상 화살표 모양"
 msgid "Spacing"
 msgstr "간격"
 
-#: src/components/LearnSyntaxDialog.tsx:355
+#: src/components/LearnSyntaxDialog.tsx:327
 msgid "Special Attributes"
 msgstr "특별한 속성"
 
@@ -1798,11 +1798,11 @@ msgstr "단계 2"
 msgid "Step 3"
 msgstr "단계 3"
 
-#: src/components/LearnSyntaxDialog.tsx:156
+#: src/components/LearnSyntaxDialog.tsx:153
 msgid "Store any data associated to a node"
 msgstr "노드에 관련된 모든 데이터 저장하기"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:256
 msgid "Style Classes"
 msgstr "스타일 클래스"
 
@@ -1884,11 +1884,11 @@ msgstr "텍스트 최대 너비"
 msgid "Text Vertical Offset"
 msgstr "텍스트 수직 오프셋"
 
-#: src/components/LearnSyntaxDialog.tsx:179
+#: src/components/LearnSyntaxDialog.tsx:174
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "콜론 뒤에 공백이 따라오는 텍스트는 텍스트를 레이블로 하는 엣지를 만듭니다."
 
-#: src/components/LearnSyntaxDialog.tsx:126
+#: src/components/LearnSyntaxDialog.tsx:127
 msgid "Text on a line creates a node with the text as the label"
 msgstr "한 줄에 있는 텍스트는 텍스트를 레이블로 하는 노드를 만듭니다."
 
@@ -1896,7 +1896,7 @@ msgstr "한 줄에 있는 텍스트는 텍스트를 레이블로 하는 노드�
 msgid "Thank you for your feedback!"
 msgstr "피드백을 해주셔서 감사합니다!"
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:259
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "스타일을 변경하는 가장 좋은 방법은 노드 또는 엣지를 오른쪽 클릭하고 원하는 스타일을 선택하는 것입니다."
 
@@ -1920,7 +1920,7 @@ msgstr "여러 개의 소스 노드를 구분하기 위해 사용되는 구분 �
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "여러 개의 목표 노드를 구분하기 위해 사용되는 구분 기호"
 
-#: src/components/LearnSyntaxDialog.tsx:300
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "The possible shapes are:"
 msgstr "가능한 모양은 다음과 같습니다:"
 
@@ -2072,7 +2072,7 @@ msgstr "취소"
 msgid "Unescaped special character"
 msgstr "이스케이프되지 않은 특수 문자"
 
-#: src/components/LearnSyntaxDialog.tsx:138
+#: src/components/LearnSyntaxDialog.tsx:139
 msgid "Unique text value to identify a node"
 msgstr "노드를 식별하기 위한 고유한 텍스트 값"
 
@@ -2160,19 +2160,19 @@ msgstr "사용자 정의 CSS만 사용"
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
 msgstr "Lucidchart나 Visio를 사용하고 계신가요? CSV 가져오기를 통해 모든 소스에서 데이터를 쉽게 가져올 수 있습니다!"
 
-#: src/components/LearnSyntaxDialog.tsx:147
+#: src/components/LearnSyntaxDialog.tsx:146
 msgid "Use classes to group nodes"
 msgstr "노드를 그룹화하기 위해 클래스를 사용하십시오."
 
-#: src/components/LearnSyntaxDialog.tsx:394
+#: src/components/LearnSyntaxDialog.tsx:360
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "새 탭에서 링크를 설정하기 위해 속성 <0>href</0>을 사용하십시오."
 
-#: src/components/LearnSyntaxDialog.tsx:380
+#: src/components/LearnSyntaxDialog.tsx:349
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "노드의 이미지를 설정하려면 <0>src</0> 속성을 사용하세요. 이미지는 노드에 맞게 크기가 조정되므로 노드의 너비와 높이를 조절해야 할 수도 있습니다. CORS로 차단되지 않은 공개 이미지만 지원됩니다."
 
-#: src/components/LearnSyntaxDialog.tsx:367
+#: src/components/LearnSyntaxDialog.tsx:339
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "노드의 너비와 높이를 명시적으로 설정하려면 <0>w</0> 및 <1>h</1> 속성을 사용하세요."
 
@@ -2249,7 +2249,7 @@ msgstr "무료 평가판은 제공하지 않지만, 1회성 $9 Pass로 30일간 
 msgid "Width"
 msgstr "너비"
 
-#: src/components/LearnSyntaxDialog.tsx:364
+#: src/components/LearnSyntaxDialog.tsx:336
 msgid "Width and Height"
 msgstr "너비와 높이"
 

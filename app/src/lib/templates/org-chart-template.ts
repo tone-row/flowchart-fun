@@ -15,7 +15,7 @@ Maya Torres, CEO #ceo
     Growth Marketer .color_orange
   Head of Sales, hiring .role_vacant
 Board Advisor
-  .line_dotted advises: (#ceo)
+  .border_dotted advises: (#ceo)
 `;
 
 export const theme: FFTheme = {
@@ -108,7 +108,7 @@ edge {
 }
 
 /* Advisory / dotted-line reporting */
-edge.line_dotted {
+edge.border_dotted {
   line-style: dotted;
   line-color: #b8c0cc;
   width: 2;
