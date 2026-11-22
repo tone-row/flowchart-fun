@@ -11,9 +11,33 @@ Object {
 exports[`toTheme - default theme (canonical baseline) produces stable layout + style + postStyle for the default-template theme (dagre/DOWN): default-postStyle 1`] = `
 "edge[parallel > 1] { curve-style: bezier; }
 edge[parallel > 2] { control-point-step-size: 90; }
+edge.border_solid { line-style: solid; }
 edge.border_dashed { line-style: dashed; }
 edge.border_dotted { line-style: dotted; }
-edge.border_solid { line-style: solid; }
+edge.source-triangle { source-arrow-shape: triangle; }
+edge.source-triangle-tee { source-arrow-shape: triangle-tee; }
+edge.source-circle-triangle { source-arrow-shape: circle-triangle; }
+edge.source-triangle-cross { source-arrow-shape: triangle-cross; }
+edge.source-triangle-backcurve { source-arrow-shape: triangle-backcurve; }
+edge.source-vee { source-arrow-shape: vee; }
+edge.source-tee { source-arrow-shape: tee; }
+edge.source-square { source-arrow-shape: square; }
+edge.source-circle { source-arrow-shape: circle; }
+edge.source-diamond { source-arrow-shape: diamond; }
+edge.source-chevron { source-arrow-shape: chevron; }
+edge.source-none { source-arrow-shape: none; }
+edge.target-triangle { target-arrow-shape: triangle; }
+edge.target-triangle-tee { target-arrow-shape: triangle-tee; }
+edge.target-circle-triangle { target-arrow-shape: circle-triangle; }
+edge.target-triangle-cross { target-arrow-shape: triangle-cross; }
+edge.target-triangle-backcurve { target-arrow-shape: triangle-backcurve; }
+edge.target-vee { target-arrow-shape: vee; }
+edge.target-tee { target-arrow-shape: tee; }
+edge.target-square { target-arrow-shape: square; }
+edge.target-circle { target-arrow-shape: circle; }
+edge.target-diamond { target-arrow-shape: diamond; }
+edge.target-chevron { target-arrow-shape: chevron; }
+edge.target-none { target-arrow-shape: none; }
 :childless.shape_rectangle { shape: rectangle; }
 :childless.shape_roundrectangle { shape: roundrectangle; }
 :childless.shape_ellipse { shape: ellipse; }
@@ -35,7 +59,7 @@ edge.border_solid { line-style: solid; }
 :childless.shape_bottom-round-rectangle { shape: bottom-round-rectangle; }
 :childless.shape_concave-hexagon { shape: concave-hexagon; }
 :childless.shape_iso-trapezoid { shape: polygon; shape-polygon-points: -1 1  1 1  0.5 -1  -0.5 -1; }
-:childless.border_none { border-width: 1.5; border-style: none; }
+:childless.border_none { border-width: 0; }
 :childless.border_solid { border-width: 1.5; border-style: solid; }
 :childless.border_dashed { border-width: 1.5; border-style: dashed; }
 :childless.border_dotted { border-width: 1.5; border-style: dotted; }

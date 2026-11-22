@@ -140,7 +140,7 @@ msgstr "Are you sure?"
 msgid "Arrow Size"
 msgstr "Arrow Size"
 
-#: src/components/LearnSyntaxDialog.tsx:153
+#: src/components/LearnSyntaxDialog.tsx:150
 msgid "Attributes"
 msgstr "Attributes"
 
@@ -249,7 +249,7 @@ msgstr "Cancel your subscription. Your hosted charts will become read-only."
 msgid "Canceling is easy. Simply go to your account page, scroll to the bottom, and click cancel. If you're not completely satisfied, we offer a refund on your first payment."
 msgstr "Canceling is easy. Simply go to your account page, scroll to the bottom, and click cancel. If you're not completely satisfied, we offer a refund on your first payment."
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:330
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "Certain attributes can be used to customize the appearance or functionality of elements."
 
@@ -288,9 +288,9 @@ msgstr "Choose"
 msgid "Choose Template"
 msgstr "Choose Template"
 
-#: src/components/LearnSyntaxDialog.tsx:327
-msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
-msgstr "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
+#: src/components/LearnSyntaxDialog.tsx:302
+msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, and none."
+msgstr "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, and none."
 
 #: src/components/Tabs/ThemeTab.tsx:449
 msgid "Choose how edges connect between nodes"
@@ -304,7 +304,7 @@ msgstr "Choose how nodes are automatically arranged in your flowchart"
 msgid "Circle"
 msgstr "Circle"
 
-#: src/components/LearnSyntaxDialog.tsx:144
+#: src/components/LearnSyntaxDialog.tsx:143
 msgid "Classes"
 msgstr "Classes"
 
@@ -327,7 +327,7 @@ msgid "Clone Flowchart"
 msgstr "Clone Flowchart"
 
 #: src/components/Layout.tsx:48
-#: src/components/LearnSyntaxDialog.tsx:413
+#: src/components/LearnSyntaxDialog.tsx:376
 msgid "Close"
 msgstr "Close"
 
@@ -340,7 +340,7 @@ msgstr "Close announcement"
 msgid "Color"
 msgstr "Color"
 
-#: src/components/LearnSyntaxDialog.tsx:287
+#: src/components/LearnSyntaxDialog.tsx:268
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 
@@ -380,11 +380,11 @@ msgstr "Container is never closed, so every line below it is inside it. Add a {b
 msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
 msgstr "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
 
-#: src/components/LearnSyntaxDialog.tsx:260
+#: src/components/LearnSyntaxDialog.tsx:244
 msgid "Containers"
 msgstr "Containers"
 
-#: src/components/LearnSyntaxDialog.tsx:263
+#: src/components/LearnSyntaxDialog.tsx:247
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "Containers are nodes that contain other nodes. They are declared using curly braces."
 
@@ -492,7 +492,7 @@ msgstr "Create with AI"
 msgid "Created Date"
 msgstr "Created Date"
 
-#: src/components/LearnSyntaxDialog.tsx:167
+#: src/components/LearnSyntaxDialog.tsx:162
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "Creating an edge between two nodes is done by indenting the second node below the first"
 
@@ -608,7 +608,7 @@ msgstr "Download SVG"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "Drag and drop a CSV file here, or click to select a file"
 
-#: src/components/LearnSyntaxDialog.tsx:248
+#: src/components/LearnSyntaxDialog.tsx:232
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "Draw an edge from multiple nodes by beginning the line with a reference"
 
@@ -620,11 +620,11 @@ msgstr "Drop the file here ..."
 msgid "Each line becomes a node"
 msgstr "Each line becomes a node"
 
-#: src/components/LearnSyntaxDialog.tsx:188
+#: src/components/LearnSyntaxDialog.tsx:183
 msgid "Edge ID, Classes, Attributes"
 msgstr "Edge ID, Classes, Attributes"
 
-#: src/components/LearnSyntaxDialog.tsx:176
+#: src/components/LearnSyntaxDialog.tsx:171
 msgid "Edge Label"
 msgstr "Edge Label"
 
@@ -633,7 +633,7 @@ msgstr "Edge Label"
 msgid "Edge Label Column"
 msgstr "Edge Label Column"
 
-#: src/components/LearnSyntaxDialog.tsx:311
+#: src/components/LearnSyntaxDialog.tsx:286
 #: src/components/Tabs/ThemeTab.tsx:445
 msgid "Edge Style"
 msgstr "Edge Style"
@@ -648,7 +648,7 @@ msgid "Edge missing indentation"
 msgstr "Edge missing indentation"
 
 #: src/components/ImportDataDialog.tsx:402
-#: src/components/LearnSyntaxDialog.tsx:164
+#: src/components/LearnSyntaxDialog.tsx:159
 #: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edges"
 msgstr "Edges"
@@ -665,11 +665,11 @@ msgstr "Edges are declared in the same row as their target node"
 msgid "Edges are declared in their own row"
 msgstr "Edges are declared in their own row"
 
-#: src/components/LearnSyntaxDialog.tsx:191
+#: src/components/LearnSyntaxDialog.tsx:186
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "Edges can also have ID's, classes, and attributes before the label"
 
-#: src/components/LearnSyntaxDialog.tsx:314
+#: src/components/LearnSyntaxDialog.tsx:289
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "Edges can be styled with dashed, dotted, or solid lines"
 
@@ -971,7 +971,7 @@ msgstr "How would you like to save your chart?"
 msgid "I would like to request a new template:"
 msgstr "I would like to request a new template:"
 
-#: src/components/LearnSyntaxDialog.tsx:136
+#: src/components/LearnSyntaxDialog.tsx:137
 msgid "ID's"
 msgstr "ID's"
 
@@ -983,7 +983,7 @@ msgstr "If an account with that email exists, we've sent you an email with instr
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 
-#: src/components/LearnSyntaxDialog.tsx:377
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Images"
 msgstr "Images"
 
@@ -1093,7 +1093,7 @@ msgstr "Layout Algorithm"
 msgid "Layout Frozen"
 msgstr "Layout Frozen"
 
-#: src/components/LearnSyntaxDialog.tsx:245
+#: src/components/LearnSyntaxDialog.tsx:229
 msgid "Leading References"
 msgstr "Leading References"
 
@@ -1102,8 +1102,8 @@ msgstr "Leading References"
 msgid "Learn More"
 msgstr "Learn More"
 
-#: src/components/LearnSyntaxDialog.tsx:84
-#: src/components/LearnSyntaxDialog.tsx:109
+#: src/components/LearnSyntaxDialog.tsx:85
+#: src/components/LearnSyntaxDialog.tsx:110
 msgid "Learn Syntax"
 msgstr "Learn Syntax"
 
@@ -1328,11 +1328,11 @@ msgstr "No matching charts found"
 msgid "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
 msgstr "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
 
-#: src/components/LearnSyntaxDialog.tsx:340
+#: src/components/LearnSyntaxDialog.tsx:315
 msgid "Node Border Style"
 msgstr "Node Border Style"
 
-#: src/components/LearnSyntaxDialog.tsx:284
+#: src/components/LearnSyntaxDialog.tsx:265
 msgid "Node Colors"
 msgstr "Node Colors"
 
@@ -1340,12 +1340,12 @@ msgstr "Node Colors"
 msgid "Node ID"
 msgstr "Node ID"
 
-#: src/components/LearnSyntaxDialog.tsx:134
+#: src/components/LearnSyntaxDialog.tsx:135
 msgid "Node ID, Classes, Attributes"
 msgstr "Node ID, Classes, Attributes"
 
 #: src/components/ImportDataDialog.tsx:393
-#: src/components/LearnSyntaxDialog.tsx:123
+#: src/components/LearnSyntaxDialog.tsx:124
 msgid "Node Label"
 msgstr "Node Label"
 
@@ -1354,7 +1354,7 @@ msgstr "Node Label"
 msgid "Node Shape"
 msgstr "Node Shape"
 
-#: src/components/LearnSyntaxDialog.tsx:297
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Node Shapes"
 msgstr "Node Shapes"
 
@@ -1362,7 +1362,7 @@ msgstr "Node Shapes"
 msgid "Nodes"
 msgstr "Nodes"
 
-#: src/components/LearnSyntaxDialog.tsx:343
+#: src/components/LearnSyntaxDialog.tsx:318
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 
@@ -1537,35 +1537,35 @@ msgstr "Rate limit exceeded. Please try again later."
 msgid "Read-only"
 msgstr "Read-only"
 
-#: src/components/LearnSyntaxDialog.tsx:231
+#: src/components/LearnSyntaxDialog.tsx:218
 msgid "Reference by Class"
 msgstr "Reference by Class"
 
-#: src/components/LearnSyntaxDialog.tsx:221
+#: src/components/LearnSyntaxDialog.tsx:211
 msgid "Reference by ID"
 msgstr "Reference by ID"
 
-#: src/components/LearnSyntaxDialog.tsx:211
+#: src/components/LearnSyntaxDialog.tsx:204
 msgid "Reference by Label"
 msgstr "Reference by Label"
 
-#: src/components/LearnSyntaxDialog.tsx:202
+#: src/components/LearnSyntaxDialog.tsx:195
 msgid "References"
 msgstr "References"
 
-#: src/components/LearnSyntaxDialog.tsx:205
+#: src/components/LearnSyntaxDialog.tsx:198
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "References are used to create edges between nodes that are created elsewhere in the document"
 
-#: src/components/LearnSyntaxDialog.tsx:214
+#: src/components/LearnSyntaxDialog.tsx:207
 msgid "Referencing a node by its exact label"
 msgstr "Referencing a node by its exact label"
 
-#: src/components/LearnSyntaxDialog.tsx:224
+#: src/components/LearnSyntaxDialog.tsx:214
 msgid "Referencing a node by its unique ID"
 msgstr "Referencing a node by its unique ID"
 
-#: src/components/LearnSyntaxDialog.tsx:234
+#: src/components/LearnSyntaxDialog.tsx:221
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "Referencing multiple nodes with the same assigned class"
 
@@ -1756,7 +1756,7 @@ msgstr "Source Delimiter"
 msgid "Source Distance From Node"
 msgstr "Source Distance From Node"
 
-#: src/components/LearnSyntaxDialog.tsx:324
+#: src/components/LearnSyntaxDialog.tsx:299
 msgid "Source/Target Arrow Shape"
 msgstr "Source/Target Arrow Shape"
 
@@ -1765,7 +1765,7 @@ msgstr "Source/Target Arrow Shape"
 msgid "Spacing"
 msgstr "Spacing"
 
-#: src/components/LearnSyntaxDialog.tsx:355
+#: src/components/LearnSyntaxDialog.tsx:327
 msgid "Special Attributes"
 msgstr "Special Attributes"
 
@@ -1798,11 +1798,11 @@ msgstr "Step 2"
 msgid "Step 3"
 msgstr "Step 3"
 
-#: src/components/LearnSyntaxDialog.tsx:156
+#: src/components/LearnSyntaxDialog.tsx:153
 msgid "Store any data associated to a node"
 msgstr "Store any data associated to a node"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:256
 msgid "Style Classes"
 msgstr "Style Classes"
 
@@ -1884,11 +1884,11 @@ msgstr "Text Max Width"
 msgid "Text Vertical Offset"
 msgstr "Text Vertical Offset"
 
-#: src/components/LearnSyntaxDialog.tsx:179
+#: src/components/LearnSyntaxDialog.tsx:174
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "Text followed by colon+space creates an edge with the text as the label"
 
-#: src/components/LearnSyntaxDialog.tsx:126
+#: src/components/LearnSyntaxDialog.tsx:127
 msgid "Text on a line creates a node with the text as the label"
 msgstr "Text on a line creates a node with the text as the label"
 
@@ -1896,7 +1896,7 @@ msgstr "Text on a line creates a node with the text as the label"
 msgid "Thank you for your feedback!"
 msgstr "Thank you for your feedback!"
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:259
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "The best way to change styles is to right-click on a node or an edge and select the style you want."
 
@@ -1920,7 +1920,7 @@ msgstr "The delimiter used to separate multiple source nodes"
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "The delimiter used to separate multiple target nodes"
 
-#: src/components/LearnSyntaxDialog.tsx:300
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "The possible shapes are:"
 msgstr "The possible shapes are:"
 
@@ -2072,7 +2072,7 @@ msgstr "Undo"
 msgid "Unescaped special character"
 msgstr "Unescaped special character"
 
-#: src/components/LearnSyntaxDialog.tsx:138
+#: src/components/LearnSyntaxDialog.tsx:139
 msgid "Unique text value to identify a node"
 msgstr "Unique text value to identify a node"
 
@@ -2160,19 +2160,19 @@ msgstr "Use Custom CSS Only"
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
 msgstr "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
 
-#: src/components/LearnSyntaxDialog.tsx:147
+#: src/components/LearnSyntaxDialog.tsx:146
 msgid "Use classes to group nodes"
 msgstr "Use classes to group nodes"
 
-#: src/components/LearnSyntaxDialog.tsx:394
+#: src/components/LearnSyntaxDialog.tsx:360
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 
-#: src/components/LearnSyntaxDialog.tsx:380
+#: src/components/LearnSyntaxDialog.tsx:349
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 
-#: src/components/LearnSyntaxDialog.tsx:367
+#: src/components/LearnSyntaxDialog.tsx:339
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 
@@ -2249,7 +2249,7 @@ msgstr "While we don't offer a free trial, you can get every Pro feature for 30 
 msgid "Width"
 msgstr "Width"
 
-#: src/components/LearnSyntaxDialog.tsx:364
+#: src/components/LearnSyntaxDialog.tsx:336
 msgid "Width and Height"
 msgstr "Width and Height"
 

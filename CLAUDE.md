@@ -276,11 +276,12 @@ $blue: #e3f2fd;
 
 ### Built-in Utility Classes
 
-From `app/src/lib/graphUtilityClasses.ts` (generated as postStyle, always available):
+The class names users type into chart text are a public API (`docs/adr/0001-dsl-style-classes-are-a-public-api.md`). The catalog in `shared/src/styleClasses.ts` is the one list of them, and `app/src/lib/styleClassContract.test.ts` renders every class under every template. Never remove a class from the catalog. The rules are generated as postStyle in `app/src/lib/graphUtilityClasses.ts`, so they apply after template CSS:
 
 - **Shape classes** (`.shape_*`): All Cytoscape shapes (rectangle, roundrectangle, ellipse, triangle, diamond, star, hexagon, etc.) + "smart shapes" (circle, square, roundsquare) that enforce 1:1 aspect ratio
-- **Border classes** (`.border_*`): none, solid, dashed, dotted, double — works on both nodes and edges
-- **Color classes** (`.color_*`): **Defined per-template** in cytoscapeStyle, NOT global. Common set across most templates: red, orange, yellow, green, blue, pink, grey, white, black. Each template defines its own color values.
+- **Border classes** (`.border_*`): none, solid, dashed, dotted, double on nodes; solid, dashed, dotted on edges (sets `line-style`). There is no `.line_*` class.
+- **Arrow classes** (`.source-*`, `.target-*`): the 12 Cytoscape arrow shapes, edges only
+- **Color classes** (`.color_*`): **Defined per-template** in cytoscapeStyle, NOT global. Every template implements red, orange, yellow, green, blue, purple and grey on nodes; `color_white` is container-only. The contract test requires each to look distinct.
 - **Text size classes** (from `getSize.ts`): text-sm (0.75x), text-base (1x), text-lg (1.5x), text-xl (2x)
 
 Applied in the DSL with dot notation: `Node Name .color_blue .shape_diamond`

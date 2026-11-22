@@ -136,8 +136,7 @@ exports[`graphUtilityClasses characterization createSmartChildlessBorderClasses(
 Array [
   Object {
     "css": Object {
-      "border-style": "none",
-      "border-width": 5,
+      "border-width": 0,
     },
     "selector": ":childless.border_none",
   },
@@ -245,41 +244,6 @@ Array [
       "width": 30,
     },
     "selector": ":childless.shape_octagon",
-  },
-]
-`;
-
-exports[`graphUtilityClasses characterization nodeBorderClasses (dead export, conflicting semantics) snapshots the 5-rule array 1`] = `
-Array [
-  Object {
-    "css": Object {
-      "border-style": "solid",
-    },
-    "selector": ":childless.border_solid",
-  },
-  Object {
-    "css": Object {
-      "border-style": "dashed",
-    },
-    "selector": ":childless.border_dashed",
-  },
-  Object {
-    "css": Object {
-      "border-style": "dotted",
-    },
-    "selector": ":childless.border_dotted",
-  },
-  Object {
-    "css": Object {
-      "border-style": "double",
-    },
-    "selector": ":childless.border_double",
-  },
-  Object {
-    "css": Object {
-      "border-width": 0,
-    },
-    "selector": ":childless.border_none",
   },
 ]
 `;
