@@ -11,6 +11,7 @@ import { SectionTitle } from "../ui/Typography";
 import styles from "./LearnSyntaxDialog.module.css";
 import { globalZ } from "../lib/globalZ";
 import classNames from "classnames";
+import { syntaxExamples } from "./learnSyntaxExamples";
 
 const PAD = 4;
 
@@ -127,7 +128,7 @@ export function LearnSyntaxDialog() {
                   Text on a line creates a node with the text as the label
                 </Trans>
               </p>
-              <CodeExample code={`Hello\nWorld`} src="1" />
+              <CodeExample code={syntaxExamples.nodes} src="1" />
             </section>
             <section>
               <h1>
@@ -137,27 +138,21 @@ export function LearnSyntaxDialog() {
               <p>
                 <Trans>Unique text value to identify a node</Trans>
               </p>
-              <CodeExample
-                code={`Hello <span data-highlight>#x</span>\nWorld <span data-highlight>#y</span>`}
-              />
+              <CodeExample code={syntaxExamples.nodeIds} />
               <h2>
                 <Trans>Classes</Trans>
               </h2>
               <p>
                 <Trans>Use classes to group nodes</Trans>
               </p>
-              <CodeExample
-                code={`Cat <span data-highlight>.animals</span>\nDog <span data-highlight>.animals</span>`}
-              />
+              <CodeExample code={syntaxExamples.nodeClasses} />
               <h2>
                 <Trans>Attributes</Trans>
               </h2>
               <p>
                 <Trans>Store any data associated to a node</Trans>
               </p>
-              <CodeExample
-                code={`Hello #x.color_blue<span data-highlight>[letters=5]</span>\nWorld #y.color_red<span data-highlight>[letters=5]</span>`}
-              />
+              <CodeExample code={syntaxExamples.nodeData} />
             </section>
             <section>
               <h1>
@@ -169,7 +164,7 @@ export function LearnSyntaxDialog() {
                   second node below the first
                 </Trans>
               </p>
-              <CodeExample code={`Hello\n  World`} src="3" />
+              <CodeExample code={syntaxExamples.edges} src="3" />
             </section>
             <section>
               <h1>
@@ -181,7 +176,7 @@ export function LearnSyntaxDialog() {
                   the label
                 </Trans>
               </p>
-              <CodeExample code={`Hello\n  to the: World`} src="4" />
+              <CodeExample code={syntaxExamples.edgeLabels} src="4" />
             </section>
             <section>
               <h1>
@@ -193,9 +188,7 @@ export function LearnSyntaxDialog() {
                   the label
                 </Trans>
               </p>
-              <CodeExample
-                code={`Hello\n  <span data-highlight>#x</span> to the: World`}
-              />
+              <CodeExample code={syntaxExamples.edgeIds} />
             </section>
             <section>
               <h1>
@@ -213,20 +206,14 @@ export function LearnSyntaxDialog() {
               <p>
                 <Trans>Referencing a node by its exact label</Trans>
               </p>
-              <CodeExample
-                code={`Hello\n  World\n    <span data-highlight>(Hello)</span>`}
-                src="5"
-              />
+              <CodeExample code={syntaxExamples.referenceByLabel} src="5" />
               <h2>
                 <Trans>Reference by ID</Trans>
               </h2>
               <p>
                 <Trans>Referencing a node by its unique ID</Trans>
               </p>
-              <CodeExample
-                code={`Hello #x\n  World #y\n    <span data-highlight>(#x)</span>`}
-                src="5"
-              />
+              <CodeExample code={syntaxExamples.referenceById} src="5" />
               <h2>
                 <Trans>Reference by Class</Trans>
               </h2>
@@ -235,10 +222,7 @@ export function LearnSyntaxDialog() {
                   Referencing multiple nodes with the same assigned class
                 </Trans>
               </p>
-              <CodeExample
-                code={`Cat .animals\nDog .animals\nAnimals\n  <span data-highlight>(.animals)</span>`}
-                src="6"
-              />
+              <CodeExample code={syntaxExamples.referenceByClass} src="6" />
             </section>
             <section>
               <h1>
@@ -251,7 +235,7 @@ export function LearnSyntaxDialog() {
                 </Trans>
               </p>
               <CodeExample
-                code={`Cat .animals\nDog .animals\n\n<span data-highlight>(.animals)</span>\n  are pets`}
+                code={syntaxExamples.referenceByClassAsSource}
                 src="7"
               />
             </section>
@@ -265,10 +249,7 @@ export function LearnSyntaxDialog() {
                   declared using curly braces.
                 </Trans>
               </p>
-              <CodeExample
-                code={`Solar System <span data-highlight>{</span>\n  Earth\n    Mars\n<span data-highlight>}</span>`}
-                src="8"
-              />
+              <CodeExample code={syntaxExamples.containers} src="8" />
             </section>
             <section>
               <h1>
@@ -289,10 +270,7 @@ export function LearnSyntaxDialog() {
                   white, and gray.
                 </Trans>
               </p>
-              <CodeExample
-                code={`Hello <span data-highlight>.color_red</span>\n  World <span data-highlight>.color_blue</span>`}
-                src="9"
-              />
+              <CodeExample code={syntaxExamples.colors} src="9" />
               <h2>
                 <Trans>Node Shapes</Trans>
               </h2>
@@ -303,10 +281,7 @@ export function LearnSyntaxDialog() {
                 round-rectangle, cut-rectangle, bottom-round-rectangle, and
                 concave-hexagon
               </p>
-              <CodeExample
-                code={`Hello <span data-highlight>.shape_diamond</span>\n  World <span data-highlight>.shape_ellipse</span>`}
-                src="10"
-              />
+              <CodeExample code={syntaxExamples.shapes} src="10" />
               <h2>
                 <Trans>Edge Style</Trans>
               </h2>
@@ -316,7 +291,7 @@ export function LearnSyntaxDialog() {
                 </Trans>
               </p>
               <CodeExample
-                code={`Hello\n  <span data-highlight>.line_dashed</span> to the: world\n    <span data-highlight>.line_dotted</span>: (Hello)`}
+                code={syntaxExamples.edgeStyle}
                 src="12"
                 fontSize={13}
               />
@@ -328,11 +303,11 @@ export function LearnSyntaxDialog() {
                   Choose from a variety of arrow shapes for the source and
                   target of an edge. Shapes include triangle, triangle-tee,
                   circle-triangle, triangle-cross, triangle-backcurve, vee, tee,
-                  square, circle, diamond, chevron, none. .
+                  square, circle, diamond, chevron, and none.
                 </Trans>
               </p>
               <CodeExample
-                code={`a\n<span data-highlight>.source-triangle</span>: b\n  <span data-highlight>.source-circle.target-circle</span>: c\n    <span data-highlight>.target-chevron</span>: (a)`}
+                code={syntaxExamples.arrowShapes}
                 src="16"
                 fontSize={13}
               />
@@ -345,10 +320,7 @@ export function LearnSyntaxDialog() {
                   can also be removed with border_none.
                 </Trans>
               </p>
-              <CodeExample
-                code={`A <span data-highlight>.border_dashed</span>\nB <span data-highlight>.border_dotted</span>\nC <span data-highlight>.border_double</span>\nD <span data-highlight>.border_none</span>`}
-                src="13"
-              />
+              <CodeExample code={syntaxExamples.nodeBorders} src="13" />
             </section>
             <section>
               <h1>
@@ -369,10 +341,7 @@ export function LearnSyntaxDialog() {
                   explicitly set the width and height of a node.
                 </Trans>
               </p>
-              <CodeExample
-                code={`👋 <span data-highlight>[w=50]</span>\n👋 <span data-highlight>[h=50]</span>\n👋 <span data-highlight>[w=50][h=50]</span>`}
-                src="14"
-              />
+              <CodeExample code={syntaxExamples.nodeSize} src="14" />
               <h2>
                 <Trans>Images</Trans>
               </h2>
@@ -385,10 +354,7 @@ export function LearnSyntaxDialog() {
                   supported.
                 </Trans>
               </p>
-              <CodeExample
-                code={`Flowchart Fun <span data-highlight>[src="https://flowchart.fun/apple-touch-icon.png"]</span>[w=90][h=90]`}
-                src="15"
-              />
+              <CodeExample code={syntaxExamples.image} src="15" />
               <h2>Links</h2>
               <p>
                 <Trans>
@@ -396,10 +362,7 @@ export function LearnSyntaxDialog() {
                   that opens in a new tab.
                 </Trans>
               </p>
-              <CodeExample
-                code={`Open Twitter 🐦 <span data-highlight>[href="https://twitter.com"]</span>`}
-                src="17"
-              />
+              <CodeExample code={syntaxExamples.link} src="17" />
             </section>
           </Box>
           <Box

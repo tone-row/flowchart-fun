@@ -140,7 +140,7 @@ msgstr "क्या आप निश्चित हैं?"
 msgid "Arrow Size"
 msgstr "तीर आकार"
 
-#: src/components/LearnSyntaxDialog.tsx:153
+#: src/components/LearnSyntaxDialog.tsx:150
 msgid "Attributes"
 msgstr "गुण"
 
@@ -249,7 +249,7 @@ msgstr "अपनी सदस्यता रद्द करें. आपक�
 msgid "Canceling is easy. Simply go to your account page, scroll to the bottom, and click cancel. If you're not completely satisfied, we offer a refund on your first payment."
 msgstr "रद्द करना आसान है। बस अपने अकाउंट पेज पर जाएं, नीचे स्क्रॉल करें और रद्द करने पर क्लिक करें। अगर आप पूरी तरह से संतुष्ट नहीं हैं, तो हम आपको अपने पहले भुगतान पर रिफंड प्रदान करते हैं।"
 
-#: src/components/LearnSyntaxDialog.tsx:358
+#: src/components/LearnSyntaxDialog.tsx:330
 msgid "Certain attributes can be used to customize the appearance or functionality of elements."
 msgstr "कुछ गुण तत्वों की दिखता या कार्यक्षमता को अनुकूलित करने के लिए उपयोग किए जा सकते हैं।"
 
@@ -288,8 +288,8 @@ msgstr "चुनें"
 msgid "Choose Template"
 msgstr "टेम्पलेट चुनें"
 
-#: src/components/LearnSyntaxDialog.tsx:327
-msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, none. ."
+#: src/components/LearnSyntaxDialog.tsx:302
+msgid "Choose from a variety of arrow shapes for the source and target of an edge. Shapes include triangle, triangle-tee, circle-triangle, triangle-cross, triangle-backcurve, vee, tee, square, circle, diamond, chevron, and none."
 msgstr "एक किनारे के स्रोत और लक्ष्य के लिए विभिन्न तीर आकारों से चुनें। आकार शामिल हैं त्रिकोण, त्रिकोण-टी, सर्कल-त्रिकोण, त्रिकोण-क्रॉस, त्रिकोण-बैककर्व, वी, टी, चौकोर, हीरा, चेवरॉन और कोई नहीं।"
 
 #: src/components/Tabs/ThemeTab.tsx:449
@@ -304,7 +304,7 @@ msgstr "अपने फ्लोचार्ट में नोडों क�
 msgid "Circle"
 msgstr "परिधि"
 
-#: src/components/LearnSyntaxDialog.tsx:144
+#: src/components/LearnSyntaxDialog.tsx:143
 msgid "Classes"
 msgstr "वर्ग"
 
@@ -327,7 +327,7 @@ msgid "Clone Flowchart"
 msgstr "फ्लोचार्ट को क्लोन करें "
 
 #: src/components/Layout.tsx:48
-#: src/components/LearnSyntaxDialog.tsx:413
+#: src/components/LearnSyntaxDialog.tsx:376
 msgid "Close"
 msgstr "बंद करें"
 
@@ -340,7 +340,7 @@ msgstr "घोषणा बंद करें"
 msgid "Color"
 msgstr "रंग"
 
-#: src/components/LearnSyntaxDialog.tsx:287
+#: src/components/LearnSyntaxDialog.tsx:268
 msgid "Colors include red, orange, yellow, blue, purple, black, white, and gray."
 msgstr "रंग में लाल, नारंगी, पीला, नीला, बैंगनी, काला, सफेद, और ग्रे शामिल हैं।"
 
@@ -380,11 +380,11 @@ msgstr "कंटेनर कभी बंद नहीं होता, इस
 msgid "Container is not closed where you expect. Lines that are not indented under it are inside it too. Move its {brace} up to just after its last indented line."
 msgstr "कंटेनर वहाँ बंद नहीं होता जहाँ आप उम्मीद करते हैं। जो पंक्तियाँ इसके नीचे इंडेंट नहीं हैं, वे भी इसके अंदर हैं। इसके {brace} को इसकी अंतिम इंडेंट की गई पंक्ति के ठीक बाद ऊपर ले जाएँ।"
 
-#: src/components/LearnSyntaxDialog.tsx:260
+#: src/components/LearnSyntaxDialog.tsx:244
 msgid "Containers"
 msgstr "कंटेनर"
 
-#: src/components/LearnSyntaxDialog.tsx:263
+#: src/components/LearnSyntaxDialog.tsx:247
 msgid "Containers are nodes that contain other nodes. They are declared using curly braces."
 msgstr "कंटेनर उन नोड्स हैं जो अन्य नोड्स को सम्मिलित करते हैं। वे कर्ली ब्रेस का उपयोग करके घोषित किया जाता है।"
 
@@ -492,7 +492,7 @@ msgstr "AI के साथ बनाएं"
 msgid "Created Date"
 msgstr "बनाई गई तारीख"
 
-#: src/components/LearnSyntaxDialog.tsx:167
+#: src/components/LearnSyntaxDialog.tsx:162
 msgid "Creating an edge between two nodes is done by indenting the second node below the first"
 msgstr "दो नोड्स के बीच एक एज बनाने के लिए दूसरा नोड पहले वाले के नीचे इंडेंट करना होता है"
 
@@ -608,7 +608,7 @@ msgstr "SVG डाउनलोड करें"
 msgid "Drag and drop a CSV file here, or click to select a file"
 msgstr "CSV फ़ाइल यहां ड्रैग और ड्रॉप करें, या फ़ाइल का चयन करने के लिए क्लिक करें"
 
-#: src/components/LearnSyntaxDialog.tsx:248
+#: src/components/LearnSyntaxDialog.tsx:232
 msgid "Draw an edge from multiple nodes by beginning the line with a reference"
 msgstr "एक से अधिक नोड्स से एज ड्रा करने के लिए लाइन को एक संदर्भ के साथ शुरू करें"
 
@@ -620,11 +620,11 @@ msgstr "फाइल यहाँ ड्रॉप करें ..."
 msgid "Each line becomes a node"
 msgstr "प्रत्येक पंक्ति एक नोड बन जाती है"
 
-#: src/components/LearnSyntaxDialog.tsx:188
+#: src/components/LearnSyntaxDialog.tsx:183
 msgid "Edge ID, Classes, Attributes"
 msgstr "किनारे आईडी, वर्ग, गुण"
 
-#: src/components/LearnSyntaxDialog.tsx:176
+#: src/components/LearnSyntaxDialog.tsx:171
 msgid "Edge Label"
 msgstr "किनारे लेबल"
 
@@ -633,7 +633,7 @@ msgstr "किनारे लेबल"
 msgid "Edge Label Column"
 msgstr "किनारे लेबल कॉलम"
 
-#: src/components/LearnSyntaxDialog.tsx:311
+#: src/components/LearnSyntaxDialog.tsx:286
 #: src/components/Tabs/ThemeTab.tsx:445
 msgid "Edge Style"
 msgstr "किनारे शैली"
@@ -648,7 +648,7 @@ msgid "Edge missing indentation"
 msgstr "एड्ज अंतराल गुम है"
 
 #: src/components/ImportDataDialog.tsx:402
-#: src/components/LearnSyntaxDialog.tsx:164
+#: src/components/LearnSyntaxDialog.tsx:159
 #: src/components/Tabs/ThemeTab.tsx:432
 msgid "Edges"
 msgstr "किन्तुओं"
@@ -665,11 +665,11 @@ msgstr "उनके लक्ष्य नोड के ही पंक्त�
 msgid "Edges are declared in their own row"
 msgstr "किन्तुओं को अपनी खुद की पंक्ति में घोषणा की जाती है"
 
-#: src/components/LearnSyntaxDialog.tsx:191
+#: src/components/LearnSyntaxDialog.tsx:186
 msgid "Edges can also have ID's, classes, and attributes before the label"
 msgstr "लेबल से पहले, किन्तुओं को आईडीज़, क्लासेज़ और गुण देने की अनुमति होती है"
 
-#: src/components/LearnSyntaxDialog.tsx:314
+#: src/components/LearnSyntaxDialog.tsx:289
 msgid "Edges can be styled with dashed, dotted, or solid lines"
 msgstr "किन्तुओं को डैश्ड, डॉटेड या सॉलिड लाइन्स के साथ स्टाइल किया जा सकता है"
 
@@ -971,7 +971,7 @@ msgstr "आप अपने चार्ट को कैसे सहेजन�
 msgid "I would like to request a new template:"
 msgstr "मैं एक नया टेम्पलेट अनुरोध करना चाहता हूँ:"
 
-#: src/components/LearnSyntaxDialog.tsx:136
+#: src/components/LearnSyntaxDialog.tsx:137
 msgid "ID's"
 msgstr "आईडीज़"
 
@@ -983,7 +983,7 @@ msgstr "अगर उस ईमेल के साथ एक खाता म�
 msgid "If you mean to create an edge, indent this line. If not, escape the colon with a backslash <0>\\:</0>"
 msgstr "यदि आप एक एड्ज बनाने के लिए मतलब है, तो इस लाइन को इंडेंट करें। यदि नहीं, तो कॉलन को बैक स्लैश के साथ भागो <0> \\: </0>"
 
-#: src/components/LearnSyntaxDialog.tsx:377
+#: src/components/LearnSyntaxDialog.tsx:346
 msgid "Images"
 msgstr "छवियाँ"
 
@@ -1093,7 +1093,7 @@ msgstr "लेआउट एल्गोरिदम"
 msgid "Layout Frozen"
 msgstr "लेआउट फ्रोज़न"
 
-#: src/components/LearnSyntaxDialog.tsx:245
+#: src/components/LearnSyntaxDialog.tsx:229
 msgid "Leading References"
 msgstr "प्रमुख संदर्भ"
 
@@ -1102,8 +1102,8 @@ msgstr "प्रमुख संदर्भ"
 msgid "Learn More"
 msgstr "और अधिक जानें"
 
-#: src/components/LearnSyntaxDialog.tsx:84
-#: src/components/LearnSyntaxDialog.tsx:109
+#: src/components/LearnSyntaxDialog.tsx:85
+#: src/components/LearnSyntaxDialog.tsx:110
 msgid "Learn Syntax"
 msgstr "सिंटैक्स सीखें"
 
@@ -1328,11 +1328,11 @@ msgstr "कोई मिलते जुलते चार्ट नहीं �
 msgid "No, there are no usage limits with the Pro plan. Enjoy unlimited flowchart creation and AI features, giving you the freedom to explore and innovate without restrictions."
 msgstr "नहीं, प्रो योजना के साथ कोई उपयोग सीमाएं नहीं हैं। असीमित फ्लोचार्ट निर्माण और एआई फीचर का आनंद लें, जो आपको प्रतिबंधों के बिना खोजने और नवाचार करने की आज़ादी देता है।"
 
-#: src/components/LearnSyntaxDialog.tsx:340
+#: src/components/LearnSyntaxDialog.tsx:315
 msgid "Node Border Style"
 msgstr "नोड सीमा शैली"
 
-#: src/components/LearnSyntaxDialog.tsx:284
+#: src/components/LearnSyntaxDialog.tsx:265
 msgid "Node Colors"
 msgstr "नोड रंग"
 
@@ -1340,12 +1340,12 @@ msgstr "नोड रंग"
 msgid "Node ID"
 msgstr "नोड आईडी"
 
-#: src/components/LearnSyntaxDialog.tsx:134
+#: src/components/LearnSyntaxDialog.tsx:135
 msgid "Node ID, Classes, Attributes"
 msgstr "नोड आईडी, वर्ग, गुण"
 
 #: src/components/ImportDataDialog.tsx:393
-#: src/components/LearnSyntaxDialog.tsx:123
+#: src/components/LearnSyntaxDialog.tsx:124
 msgid "Node Label"
 msgstr "नोड लेबल"
 
@@ -1354,7 +1354,7 @@ msgstr "नोड लेबल"
 msgid "Node Shape"
 msgstr "नोड आकार"
 
-#: src/components/LearnSyntaxDialog.tsx:297
+#: src/components/LearnSyntaxDialog.tsx:275
 msgid "Node Shapes"
 msgstr "नोड आकार"
 
@@ -1362,7 +1362,7 @@ msgstr "नोड आकार"
 msgid "Nodes"
 msgstr "नोड्स"
 
-#: src/components/LearnSyntaxDialog.tsx:343
+#: src/components/LearnSyntaxDialog.tsx:318
 msgid "Nodes can be styled with dashed, dotted, or double. Borders can also be removed with border_none."
 msgstr "नोड्स को डैश्ड, डॉट्ड, या डबल के साथ शैलीयित किया जा सकता है। सीमाओं को बॉर्डर_नोन के साथ हटाया जा सकता है।"
 
@@ -1537,35 +1537,35 @@ msgstr "रेट लिमिट पार हो गई है। कृपय
 msgid "Read-only"
 msgstr "केवल पढ़ने के लिए"
 
-#: src/components/LearnSyntaxDialog.tsx:231
+#: src/components/LearnSyntaxDialog.tsx:218
 msgid "Reference by Class"
 msgstr "क्लास के द्वारा संदर्भ"
 
-#: src/components/LearnSyntaxDialog.tsx:221
+#: src/components/LearnSyntaxDialog.tsx:211
 msgid "Reference by ID"
 msgstr "आईडी द्वारा संदर्भ"
 
-#: src/components/LearnSyntaxDialog.tsx:211
+#: src/components/LearnSyntaxDialog.tsx:204
 msgid "Reference by Label"
 msgstr "लेबल द्वारा संदर्भ"
 
-#: src/components/LearnSyntaxDialog.tsx:202
+#: src/components/LearnSyntaxDialog.tsx:195
 msgid "References"
 msgstr "संदर्भ"
 
-#: src/components/LearnSyntaxDialog.tsx:205
+#: src/components/LearnSyntaxDialog.tsx:198
 msgid "References are used to create edges between nodes that are created elsewhere in the document"
 msgstr "संदर्भ दस्तावेज के अन्य भागों में बनाए गए नोड्स के बीच कड़ियाँ बनाने के लिए उपयोग किए जाते हैं"
 
-#: src/components/LearnSyntaxDialog.tsx:214
+#: src/components/LearnSyntaxDialog.tsx:207
 msgid "Referencing a node by its exact label"
 msgstr "सटीक लेबल द्वारा नोड का संदर्भ करना"
 
-#: src/components/LearnSyntaxDialog.tsx:224
+#: src/components/LearnSyntaxDialog.tsx:214
 msgid "Referencing a node by its unique ID"
 msgstr "अद्वितीय आईडी द्वारा नोड का संदर्भ करना"
 
-#: src/components/LearnSyntaxDialog.tsx:234
+#: src/components/LearnSyntaxDialog.tsx:221
 msgid "Referencing multiple nodes with the same assigned class"
 msgstr "एक ही निर्धारित कक्षा के साथ कई नोड का उल्लेख करना"
 
@@ -1756,7 +1756,7 @@ msgstr "स्रोत डिलिमिटर"
 msgid "Source Distance From Node"
 msgstr "नोड से स्रोत दूरी"
 
-#: src/components/LearnSyntaxDialog.tsx:324
+#: src/components/LearnSyntaxDialog.tsx:299
 msgid "Source/Target Arrow Shape"
 msgstr "स्रोत / लक्ष्य तीर आकार"
 
@@ -1765,7 +1765,7 @@ msgstr "स्रोत / लक्ष्य तीर आकार"
 msgid "Spacing"
 msgstr "अंतराल"
 
-#: src/components/LearnSyntaxDialog.tsx:355
+#: src/components/LearnSyntaxDialog.tsx:327
 msgid "Special Attributes"
 msgstr "विशेष गुण"
 
@@ -1798,11 +1798,11 @@ msgstr "कदम 2"
 msgid "Step 3"
 msgstr "कदम 3"
 
-#: src/components/LearnSyntaxDialog.tsx:156
+#: src/components/LearnSyntaxDialog.tsx:153
 msgid "Store any data associated to a node"
 msgstr "किसी नोड से संबंधित किसी भी डेटा स्टोर करें"
 
-#: src/components/LearnSyntaxDialog.tsx:275
+#: src/components/LearnSyntaxDialog.tsx:256
 msgid "Style Classes"
 msgstr "शैली क्लासेज"
 
@@ -1884,11 +1884,11 @@ msgstr "टेक्स्ट की अधिकतम चौड़ाई"
 msgid "Text Vertical Offset"
 msgstr "पाठ लंबाई ऑफसेट"
 
-#: src/components/LearnSyntaxDialog.tsx:179
+#: src/components/LearnSyntaxDialog.tsx:174
 msgid "Text followed by colon+space creates an edge with the text as the label"
 msgstr "स्क्लीन के बाद कोलन + स्पेस एक किरदार बनाता है जिसका पाठ लेबल है"
 
-#: src/components/LearnSyntaxDialog.tsx:126
+#: src/components/LearnSyntaxDialog.tsx:127
 msgid "Text on a line creates a node with the text as the label"
 msgstr "एक पंक्ति पर पाठ एक नोड बनाता है जिसका पाठ लेबल है"
 
@@ -1896,7 +1896,7 @@ msgstr "एक पंक्ति पर पाठ एक नोड बनात
 msgid "Thank you for your feedback!"
 msgstr "आपके फ़ीडबैक के लिए धन्यवाद!"
 
-#: src/components/LearnSyntaxDialog.tsx:278
+#: src/components/LearnSyntaxDialog.tsx:259
 msgid "The best way to change styles is to right-click on a node or an edge and select the style you want."
 msgstr "शैलीयित करने के लिए सर्वश्रेष्ठ तरीका नोड या एड्ज पर राइट-क्लिक करके आपके द्वारा चाहिए शैली का चयन करना है।"
 
@@ -1920,7 +1920,7 @@ msgstr "कई स्रोत नोड्स को अलग करने क
 msgid "The delimiter used to separate multiple target nodes"
 msgstr "कई लक्ष्य नोड्स को अलग करने के लिए उपयोग किया गया डिलिमिटर"
 
-#: src/components/LearnSyntaxDialog.tsx:300
+#: src/components/LearnSyntaxDialog.tsx:278
 msgid "The possible shapes are:"
 msgstr "संभव आकृतियाँ हैं:"
 
@@ -2072,7 +2072,7 @@ msgstr "वापस ले जाएं"
 msgid "Unescaped special character"
 msgstr "अस्केप्ड विशेष वर्ण"
 
-#: src/components/LearnSyntaxDialog.tsx:138
+#: src/components/LearnSyntaxDialog.tsx:139
 msgid "Unique text value to identify a node"
 msgstr "एक नोड को पहचानने के लिए अद्वितीय पाठ मूल्य"
 
@@ -2160,19 +2160,19 @@ msgstr "केवल कस्टम CSS का उपयोग करें"
 msgid "Use Lucidchart or Visio? CSV Import makes it easy to get data from any source!"
 msgstr "क्या आप Lucidchart या Visio का उपयोग करते हैं? CSV आयात किसी भी स्रोत से डेटा प्राप्त करने को आसान बनाता है!"
 
-#: src/components/LearnSyntaxDialog.tsx:147
+#: src/components/LearnSyntaxDialog.tsx:146
 msgid "Use classes to group nodes"
 msgstr "नोड्स को समूहों में सम्मिलित करने के लिए वर्ग उपयोग करें"
 
-#: src/components/LearnSyntaxDialog.tsx:394
+#: src/components/LearnSyntaxDialog.tsx:360
 msgid "Use the attribute <0>href</0> to set a link on a node that opens in a new tab."
 msgstr "नोड पर एक लिंक सेट करने के लिए गुण <0>href</0> उपयोग करें जो एक नये टैब में खुलेगा।"
 
-#: src/components/LearnSyntaxDialog.tsx:380
+#: src/components/LearnSyntaxDialog.tsx:349
 msgid "Use the attribute <0>src</0> to set the image of a node. The image will be scaled to fit the node, so you may need to adjust the width and height of the node to get the desired result. Only public images (not blocked by CORS) are supported."
 msgstr "नोड की छवि सेट करने के लिए <0>src</0> गुण का उपयोग करें। छवि नोड के आकार में स्केल की जाएगी, इसलिए आपको आवश्यक प्रतिस्थापित करने के लिए नोड की चौड़ाई और ऊँचाई को समायोजित करना होगा। केवल सार्वजनिक छवियाँ (CORS द्वारा ब्लॉक नहीं की गई) समर्थित हैं।"
 
-#: src/components/LearnSyntaxDialog.tsx:367
+#: src/components/LearnSyntaxDialog.tsx:339
 msgid "Use the attributes <0>w</0> and <1>h</1> to explicitly set the width and height of a node."
 msgstr "नोड की विशिष्ट चौड़ाई और ऊँचाई सेट करने के लिए <0>w</0> और <1>h</1> गुण का उपयोग करें।"
 
@@ -2249,7 +2249,7 @@ msgstr "हालांकि हम नि:शुल्क परीक्ष�
 msgid "Width"
 msgstr "चौड़ाई"
 
-#: src/components/LearnSyntaxDialog.tsx:364
+#: src/components/LearnSyntaxDialog.tsx:336
 msgid "Width and Height"
 msgstr "चौड़ाई और ऊँचाई"
 

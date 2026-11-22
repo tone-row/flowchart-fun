@@ -4,10 +4,7 @@ import {
   createSmartShapeClasses,
   childlessShapeClasses,
   createSmartChildlessBorderClasses,
-  nodeBorderClasses,
   edgeStyleClasses,
-  sourceArrowSuffixes,
-  targetArrowSuffixes,
 } from "./graphUtilityClasses";
 
 /**
@@ -149,25 +146,22 @@ describe("graphUtilityClasses characterization", () => {
   });
 
   describe("createSmartChildlessBorderClasses(width)", () => {
-    it("returns 5 rules setting border-width=width for EVERY border including none", () => {
-      // CHARACTERIZATION: LANDMINE — border_none gets border-width:<width>,
-      // NOT 0. border-style is set to the literal border name ("none", etc).
+    it("sets border-width=width for every border except none", () => {
       const result = createSmartChildlessBorderClasses(5);
       expect(result).toHaveLength(5);
-      result.forEach((rule) => {
-        expect((rule.css as any)["border-width"]).toBe(5);
-      });
+      result
+        .filter((r) => r.selector !== ":childless.border_none")
+        .forEach((rule) => {
+          expect((rule.css as any)["border-width"]).toBe(5);
+        });
     });
 
-    it("border_none sets border-style:'none' AND border-width:5 (not 0)", () => {
+    it("border_none sets border-width:0", () => {
       const result = createSmartChildlessBorderClasses(5);
       const none = result.find((r) => r.selector === ":childless.border_none");
       expect(none).toEqual({
         selector: ":childless.border_none",
-        css: {
-          "border-width": 5,
-          "border-style": "none",
-        },
+        css: { "border-width": 0 },
       });
     });
 
@@ -187,87 +181,23 @@ describe("graphUtilityClasses characterization", () => {
     });
   });
 
-  describe("nodeBorderClasses (dead export, conflicting semantics)", () => {
-    it("snapshots the 5-rule array", () => {
-      // CHARACTERIZATION: this export is imported nowhere in app code.
-      expect(nodeBorderClasses).toMatchSnapshot();
-    });
-
-    it("sets border-width:0 for border_none (contradicts the active factory)", () => {
-      // CHARACTERIZATION: LANDMINE — unused nodeBorderClasses sets width:0 for
-      // none, while the wired-up createSmartChildlessBorderClasses sets width:<width>.
-      const none = nodeBorderClasses.find(
-        (r) => r.selector === ":childless.border_none"
-      );
-      expect(none).toEqual({
-        selector: ":childless.border_none",
-        css: { "border-width": 0 },
-      });
-    });
-
-    it("has 5 rules: solid/dashed/dotted/double (border-style only) + none (border-width:0)", () => {
-      expect(nodeBorderClasses).toHaveLength(5);
-      expect(nodeBorderClasses.map((r) => r.selector)).toEqual([
-        ":childless.border_solid",
-        ":childless.border_dashed",
-        ":childless.border_dotted",
-        ":childless.border_double",
-        ":childless.border_none",
-      ]);
-    });
-  });
-
   describe("edgeStyleClasses", () => {
-    it("fans parallel edges, then maps 3 edge.border_* selectors to line-style", () => {
-      expect(edgeStyleClasses).toEqual([
+    it("fans parallel edges, then emits the catalog's edge classes", () => {
+      expect(edgeStyleClasses.slice(0, 5)).toEqual([
         { selector: "edge[parallel > 1]", css: { "curve-style": "bezier" } },
         {
           selector: "edge[parallel > 2]",
           css: { "control-point-step-size": 90 },
         },
+        { selector: "edge.border_solid", css: { "line-style": "solid" } },
         { selector: "edge.border_dashed", css: { "line-style": "dashed" } },
         { selector: "edge.border_dotted", css: { "line-style": "dotted" } },
-        { selector: "edge.border_solid", css: { "line-style": "solid" } },
       ]);
-    });
-  });
-
-  describe("sourceArrowSuffixes / targetArrowSuffixes (dead exports)", () => {
-    it("sourceArrowSuffixes is the 12 'source-' prefixed strings", () => {
-      // CHARACTERIZATION: imported nowhere; pinned so a migration drops them intentionally.
-      expect(sourceArrowSuffixes).toEqual([
-        "source-triangle",
-        "source-triangle-tee",
-        "source-circle-triangle",
-        "source-triangle-cross",
-        "source-triangle-backcurve",
-        "source-vee",
-        "source-tee",
-        "source-square",
-        "source-circle",
-        "source-diamond",
-        "source-chevron",
-        "source-none",
-      ]);
-      expect(sourceArrowSuffixes).toHaveLength(12);
-    });
-
-    it("targetArrowSuffixes is the 12 'target-' prefixed strings", () => {
-      expect(targetArrowSuffixes).toEqual([
-        "target-triangle",
-        "target-triangle-tee",
-        "target-circle-triangle",
-        "target-triangle-cross",
-        "target-triangle-backcurve",
-        "target-vee",
-        "target-tee",
-        "target-square",
-        "target-circle",
-        "target-diamond",
-        "target-chevron",
-        "target-none",
-      ]);
-      expect(targetArrowSuffixes).toHaveLength(12);
+      expect(edgeStyleClasses).toHaveLength(29);
+      expect(edgeStyleClasses).toContainEqual({
+        selector: "edge.target-chevron",
+        css: { "target-arrow-shape": "chevron" },
+      });
     });
   });
 });
